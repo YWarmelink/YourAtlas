@@ -1,0 +1,52 @@
+country_code,country_name,continent,status
+AU,Australia,Oceania,visited
+AT,Austria,Europe,visited
+BE,Belgium,Europe,visited
+BG,Bulgaria,Europe,visited
+KH,Cambodia,Asia,visited
+CA,Canada,North America,visited
+CV,Cape Verde,Africa,visited
+HR,Croatia,Europe,visited
+CY,Cyprus,Europe,visited
+CZ,Czech Republic,Europe,visited
+DK,Denmark,Europe,visited
+GB,England,Europe,visited
+EE,Estonia,Europe,visited
+FI,Finland,Europe,visited
+FR,France,Europe,visited
+DE,Germany,Europe,visited
+GR,Greece,Europe,visited
+GT,Guatemala,Central America,visited
+HU,Hungary,Europe,visited
+IN,India,Asia,visited
+ID,Indonesia,Asia,visited
+IE,Ireland,Europe,visited
+IT,Italy,Europe,visited
+LV,Latvia,Europe,visited
+LT,Lithuania,Europe,visited
+LU,Luxembourg,Europe,visited
+MT,Malta,Europe,visited
+MX,Mexico,North America,visited
+MC,Monaco,Europe,visited
+MA,Morocco,Africa,visited
+NL,Netherlands,Europe,visited
+NZ,New Zealand,Oceania,visited
+NO,Norway,Europe,visited
+PL,Poland,Europe,visited
+PT,Portugal,Europe,visited
+RO,Romania,Europe,visited
+GB,Scotland,Europe,visited
+SG,Singapore,Asia,visited
+SK,Slovakia,Europe,visited
+SI,Slovenia,Europe,visited
+ZA,South Africa,Africa,visited
+ES,Spain,Europe,visited
+LK,Sri Lanka,Asia,visited
+SE,Sweden,Europe,visited
+CH,Switzerland,Europe,visited
+TR,Turkey,Europe,visited
+UA,Ukraine,Europe,visited
+AE,United Arab Emirates,Asia,visited
+US,United States,North America,visited
+VA,Vatican,Europe,visited
+VN,Vietnam,Asia,visited

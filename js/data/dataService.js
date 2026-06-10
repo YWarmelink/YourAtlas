@@ -123,6 +123,27 @@ class DataService {
   }
 
   /**
+   * Returns countries list from the Countries sheet.
+   * Each entry: { country_code, country_name, continent, status }
+   * Deduplicates by country_code, keeping the highest-priority status
+   * (visited > planned > wishlist).
+   */
+  async getCountriesVisited() {
+    const raw = await this._load('countries');
+    const PRIORITY = { visited: 3, planned: 2, wishlist: 1 };
+    const map = {};
+    raw.forEach(c => {
+      const code = (c.country_code || '').toUpperCase().trim();
+      if (!code) return;
+      const status = (c.status || 'visited').toLowerCase().trim();
+      if (!map[code] || (PRIORITY[status] || 0) > (PRIORITY[map[code].status] || 0)) {
+        map[code] = { ...c, country_code: code, status };
+      }
+    });
+    return Object.values(map);
+  }
+
+  /**
    * Aggregates unique countries from all trips.
    * Returns [{ name, continent, trips[] }]
    */

@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Map | Youri's Travel Atlas</title>
+  <title>Travel Map | Youri's Travel Atlas</title>
+  <meta name="description" content="Interactive world map showing all countries Youri has visited.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,69 +13,102 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/map.css">
 </head>
 <body>
 
   <main>
+
+    <!-- Page header -->
     <div class="page-header">
       <div class="page-header-inner">
-        <div class="page-header-label">World Map</div>
+        <div class="page-header-label">Interactive World Map</div>
         <h1 class="page-header-title">Travel Map</h1>
-        <p class="page-header-subtitle">Interactive map of visited countries and trip routes</p>
+        <p class="page-header-subtitle">
+          <span id="mapStatsVisited">—</span> countries visited &nbsp;·&nbsp;
+          <span id="mapStatsDetail" style="color:rgba(255,255,255,.45)"></span>
+        </p>
       </div>
     </div>
 
-    <div class="section">
-      <div class="container">
-        <div style="
-          background: var(--atlas-navy);
-          border-radius: var(--r-2xl);
-          padding: var(--sp-20) var(--sp-12);
-          text-align: center;
-          max-width: 640px;
-          margin-inline: auto;
-        ">
-          <div style="font-size:5rem;margin-bottom:var(--sp-6)">🌍</div>
-          <h2 style="color:var(--atlas-white);margin-bottom:var(--sp-4)">Interactive Map Coming Soon</h2>
-          <p style="color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:var(--sp-8)">
-            The travel map will show all visited countries highlighted on a world map,
-            with trip routes, statistics, and the ability to click through to each trip.
-          </p>
+    <div class="map-page-section">
+      <div class="map-page-inner">
 
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-3);margin-bottom:var(--sp-8)">
-            <div style="background:rgba(255,255,255,.06);border-radius:var(--r-xl);padding:var(--sp-4);border:1px solid rgba(255,255,255,.1)">
-              <div style="font-size:1.5rem;margin-bottom:var(--sp-2)">🗺️</div>
-              <div style="color:var(--atlas-white);font-weight:600;font-size:0.9rem">Visited Countries</div>
-              <div style="color:rgba(255,255,255,.4);font-size:0.8rem">Highlighted on world map</div>
-            </div>
-            <div style="background:rgba(255,255,255,.06);border-radius:var(--r-xl);padding:var(--sp-4);border:1px solid rgba(255,255,255,.1)">
-              <div style="font-size:1.5rem;margin-bottom:var(--sp-2)">✈️</div>
-              <div style="color:var(--atlas-white);font-weight:600;font-size:0.9rem">Trip Routes</div>
-              <div style="color:rgba(255,255,255,.4);font-size:0.8rem">Animated flight paths</div>
-            </div>
-            <div style="background:rgba(255,255,255,.06);border-radius:var(--r-xl);padding:var(--sp-4);border:1px solid rgba(255,255,255,.1)">
-              <div style="font-size:1.5rem;margin-bottom:var(--sp-2)">📊</div>
-              <div style="color:var(--atlas-white);font-weight:600;font-size:0.9rem">Statistics</div>
-              <div style="color:rgba(255,255,255,.4);font-size:0.8rem">Distance, regions, counts</div>
-            </div>
-            <div style="background:rgba(255,255,255,.06);border-radius:var(--r-xl);padding:var(--sp-4);border:1px solid rgba(255,255,255,.1)">
-              <div style="font-size:1.5rem;margin-bottom:var(--sp-2)">🔍</div>
-              <div style="color:var(--atlas-white);font-weight:600;font-size:0.9rem">Click to Explore</div>
-              <div style="color:rgba(255,255,255,.4);font-size:0.8rem">Tap a country for details</div>
+        <!-- Controls: legend + stats -->
+        <div class="map-controls">
+          <div class="map-stats">
+            <div class="map-stat">
+              <div>
+                <div class="map-stat-number" id="mapStatsVisited2">—</div>
+                <div class="map-stat-label">Countries visited</div>
+              </div>
             </div>
           </div>
 
-          <a href="countries.html" class="btn btn-gold">Browse Countries →</a>
+          <div class="map-legend">
+            <div class="legend-item"><span class="legend-dot visited"></span>Visited</div>
+            <div class="legend-item"><span class="legend-dot wishlist"></span>Wishlist</div>
+            <div class="legend-item"><span class="legend-dot planned"></span>Planned</div>
+            <div class="legend-item"><span class="legend-dot default"></span>Not visited</div>
+          </div>
         </div>
+
+        <!-- Map -->
+        <div class="map-wrapper">
+          <div id="mapDiv">
+            <div class="loading-spinner" style="height:560px;justify-content:center">
+              <div class="spinner" style="border-color:rgba(255,255,255,.15);border-top-color:#0ea5e9"></div>
+              <p style="color:rgba(255,255,255,.4)">Loading map…</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Country list -->
+        <div class="country-list-header">
+          <div class="country-list-title">All Countries (<span id="mapStatsTotal">—</span>)</div>
+          <div class="country-filter-tabs">
+            <button class="country-tab active" data-filter="all">All</button>
+            <button class="country-tab" data-filter="visited">Visited</button>
+            <button class="country-tab" data-filter="wishlist">Wishlist</button>
+            <button class="country-tab" data-filter="planned">Planned</button>
+          </div>
+        </div>
+
+        <div id="countryList" class="country-grid-list">
+          <div class="loading-spinner" style="grid-column:1/-1">
+            <div class="spinner"></div><p>Loading countries…</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </main>
 
+  <!-- Core scripts -->
   <script src="js/config/users.js"></script>
   <script src="js/data/csvParser.js"></script>
   <script src="js/data/dataService.js"></script>
   <script src="js/utils/helpers.js"></script>
   <script src="js/components/navbar.js"></script>
   <script src="js/components/footer.js"></script>
+
+  <!-- amCharts 5 (free, CDN) -->
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+  <!-- Map page logic (MUST load after amCharts) -->
+  <script src="js/pages/map.js"></script>
+
+  <!-- Sync the second visited counter -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const a = document.getElementById('mapStatsVisited');
+      const b = document.getElementById('mapStatsVisited2');
+      const observer = new MutationObserver(() => { if (b) b.textContent = a.textContent; });
+      if (a) observer.observe(a, { childList: true, characterData: true, subtree: true });
+    });
+  </script>
 </body>
 </html>

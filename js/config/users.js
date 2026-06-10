@@ -21,6 +21,11 @@ const USERS = {
         url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSOk8DnxhAXV3yw9ZuegXNLcvQebAUFdz4mXcE8hjUqPBhlAFkSZ5uf9kSWufmRmOpsocPPbmHQGrvf/pub?gid=493454863&single=true&output=csv',
         fallback: 'data/youri/trip_notes.json',
       },
+      countries: {
+        type: 'google_sheets_csv',
+        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSOk8DnxhAXV3yw9ZuegXNLcvQebAUFdz4mXcE8hjUqPBhlAFkSZ5uf9kSWufmRmOpsocPPbmHQGrvf/pub?gid=1297443404&single=true&output=csv',
+        fallback: 'data/youri/countries.json',
+      },
     },
   },
   // Future users can be added here:
