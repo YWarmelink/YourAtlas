@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Trips | Youri's Travel Atlas</title>
+  <meta name="description" content="Browse all of Youri's trips — completed, planned and dreamed.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/trips.css">
+</head>
+<body>
+
+  <main>
+    <div class="page-header">
+      <div class="page-header-inner">
+        <div class="page-header-label">Trip Library</div>
+        <h1 class="page-header-title">All Trips</h1>
+        <p class="page-header-subtitle">Every adventure, from completed to dreaming</p>
+      </div>
+    </div>
+
+    <div class="trips-section">
+      <div class="trips-inner">
+
+        <div class="filter-bar">
+          <input type="search" id="searchInput" class="search-input" placeholder="🔍  Search trips, countries, types…">
+          <select id="filterContinent" class="filter-select">
+            <option value="">All Continents</option>
+          </select>
+          <select id="filterStatus" class="filter-select">
+            <option value="">All Statuses</option>
+          </select>
+          <select id="filterType" class="filter-select">
+            <option value="">All Types</option>
+          </select>
+          <select id="sortBy" class="filter-select">
+            <option value="default">Sort: Default</option>
+            <option value="name-az">Name A → Z</option>
+            <option value="name-za">Name Z → A</option>
+            <option value="duration">Longest First</option>
+            <option value="date-new">Newest First</option>
+            <option value="date-old">Oldest First</option>
+          </select>
+        </div>
+
+        <div id="tripsCount" class="trips-count"></div>
+        <div id="tripsGrid" class="trips-grid">
+          <div style="grid-column:1/-1">
+            <div class="loading-spinner"><div class="spinner"></div><p>Loading trips…</p></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="js/config/users.js"></script>
+  <script src="js/data/csvParser.js"></script>
+  <script src="js/data/dataService.js"></script>
+  <script src="js/utils/helpers.js"></script>
+  <script src="js/components/navbar.js"></script>
+  <script src="js/components/footer.js"></script>
+  <script src="js/pages/trips.js"></script>
+</body>
+</html>

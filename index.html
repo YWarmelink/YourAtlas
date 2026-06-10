@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youri's Travel Atlas — Personal Travel Dashboard</title>
+  <meta name="description" content="Youri's personal travel dashboard. Trips, itineraries, travel history and future adventures.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/home.css">
+</head>
+<body>
+
+  <!-- Navbar injected by navbar.js -->
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-label">Personal Travel Operating System</div>
+        <h1 class="hero-title">
+          Youri's<br><span>Travel Atlas</span>
+        </h1>
+        <p class="hero-subtitle">
+          Exploring the world one trip at a time. A living record of adventures past, present and future.
+        </p>
+        <div class="hero-cta">
+          <a href="trips.html" class="btn btn-gold">View All Trips</a>
+          <a href="countries.html" class="btn btn-outline" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.2)">Explore Countries</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS STRIP -->
+    <section class="stats-strip">
+      <div class="stats-strip-inner" id="statsStrip">
+        <!-- Populated by home.js -->
+        <div class="stat-item"><div class="stat-item-number"><em>—</em></div><div class="stat-item-label">Trips Completed</div></div>
+        <div class="stat-item"><div class="stat-item-number"><em>—</em></div><div class="stat-item-label">Countries Visited</div></div>
+        <div class="stat-item"><div class="stat-item-number"><em>—</em></div><div class="stat-item-label">Days Traveled</div></div>
+        <div class="stat-item"><div class="stat-item-number"><em>—</em></div><div class="stat-item-label">Continents</div></div>
+        <div class="stat-item"><div class="stat-item-number"><em>—</em></div><div class="stat-item-label">Trips Planned</div></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-section">
+      <div class="about-inner">
+        <div class="about-text">
+          <div class="hero-label">About This Platform</div>
+          <h2 class="section-title">More than a travel blog</h2>
+          <p>Youri's Travel Atlas is a personal travel operating system — a living dashboard that organises every trip, itinerary item, note and memory in one place.</p>
+          <p>Built on the YourIntineryPlan ecosystem, the Atlas connects trip planning with execution and reflection so no detail is ever lost.</p>
+
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="about-feature-icon">🗺️</div>
+              <div>
+                <div class="about-feature-title">Trip History</div>
+                <div class="about-feature-desc">Every completed trip with full itineraries and notes.</div>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">📋</div>
+              <div>
+                <div class="about-feature-title">Day-by-Day Itineraries</div>
+                <div class="about-feature-desc">Detailed activity timelines for each destination.</div>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">🌍</div>
+              <div>
+                <div class="about-feature-title">Countries & Continents</div>
+                <div class="about-feature-desc">Track every country visited, grouped by region.</div>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">✈️</div>
+              <div>
+                <div class="about-feature-title">Future Adventures</div>
+                <div class="about-feature-desc">Planned and booked trips waiting to happen.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-visual">
+          <div class="stat-card fade-in fade-in-delay-1">
+            <div class="stat-number" id="statTrips">—</div>
+            <div class="stat-label">Total Trips</div>
+          </div>
+          <div class="stat-card fade-in fade-in-delay-2">
+            <div class="stat-number" id="statCountries">—</div>
+            <div class="stat-label">Countries</div>
+          </div>
+          <div class="stat-card fade-in fade-in-delay-2">
+            <div class="stat-number" id="statDays">—</div>
+            <div class="stat-label">Days Abroad</div>
+          </div>
+          <div class="stat-card fade-in fade-in-delay-3">
+            <div class="stat-number" id="statItems">—</div>
+            <div class="stat-label">Activities Logged</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED TRIPS -->
+    <section class="featured-section">
+      <div class="featured-inner">
+        <div class="section-top">
+          <div>
+            <h2 class="section-title">All Trips</h2>
+            <p class="section-subtitle">Completed & upcoming adventures</p>
+          </div>
+          <a href="trips.html" class="btn btn-outline">View All →</a>
+        </div>
+        <div class="featured-grid" id="featuredGrid">
+          <!-- Populated by home.js -->
+          <div style="grid-column:1/-1">
+            <div class="loading-spinner"><div class="spinner"></div><p>Loading trips…</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUTURE TRIPS -->
+    <section class="future-section">
+      <div class="future-inner">
+        <div class="section-top">
+          <div>
+            <h2 class="section-title">On the Horizon</h2>
+            <p class="section-subtitle">Planned and upcoming trips</p>
+          </div>
+        </div>
+        <div id="futureList">
+          <div class="loading-spinner"><div class="spinner"></div><p>Loading…</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="categories-section">
+      <div class="categories-inner">
+        <h2 class="section-title">Travel Categories</h2>
+        <p class="section-subtitle">The different ways of exploring the world</p>
+        <div class="categories-grid">
+          <div class="category-tile"><div class="category-tile-icon">🏛️</div><div class="category-tile-name">Culture</div></div>
+          <div class="category-tile"><div class="category-tile-icon">🌿</div><div class="category-tile-name">Nature</div></div>
+          <div class="category-tile"><div class="category-tile-icon">🍜</div><div class="category-tile-name">Food</div></div>
+          <div class="category-tile"><div class="category-tile-icon">🏖️</div><div class="category-tile-name">Beach</div></div>
+          <div class="category-tile"><div class="category-tile-icon">🏔️</div><div class="category-tile-name">Adventure</div></div>
+          <div class="category-tile"><div class="category-tile-icon">🎒</div><div class="category-tile-name">Backpacking</div></div>
+          <div class="category-tile"><div class="category-tile-icon">🏙️</div><div class="category-tile-name">City Trips</div></div>
+          <div class="category-tile"><div class="category-tile-icon">🛣️</div><div class="category-tile-name">Road Trips</div></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer injected by footer.js -->
+
+  <!-- Core scripts -->
+  <script src="js/config/users.js"></script>
+  <script src="js/data/csvParser.js"></script>
+  <script src="js/data/dataService.js"></script>
+  <script src="js/utils/helpers.js"></script>
+  <script src="js/components/navbar.js"></script>
+  <script src="js/components/footer.js"></script>
+  <script src="js/pages/home.js"></script>
+
+  <!-- Update about-section stat cards once data is loaded -->
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const s = await dataService.getStats();
+        const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+        set('statTrips',     s.totalTrips);
+        set('statCountries', s.countriesVisited);
+        set('statDays',      s.totalDays);
+        set('statItems',     s.totalItems);
+      } catch(_) {}
+    });
+  </script>
+</body>
+</html>

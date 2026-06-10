@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found | Youri's Travel Atlas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <main>
+    <div style="
+      min-height: calc(100vh - var(--navbar-h));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--sp-8);
+    ">
+      <div style="text-align:center;max-width:480px">
+        <div style="font-size:5rem;margin-bottom:var(--sp-4)">🗺️</div>
+        <h1 style="font-size:var(--fs-5xl);font-weight:var(--fw-xbold);color:var(--atlas-text);margin-bottom:var(--sp-3)">404</h1>
+        <h2 style="font-size:var(--fs-2xl);margin-bottom:var(--sp-4)">Page Not Found</h2>
+        <p style="color:var(--atlas-text-muted);margin-bottom:var(--sp-8);line-height:1.6">
+          Looks like this destination doesn't exist (yet). Let's get you back on track.
+        </p>
+        <div style="display:flex;gap:var(--sp-3);justify-content:center;flex-wrap:wrap">
+          <a href="index.html" class="btn btn-primary">Go Home</a>
+          <a href="trips.html" class="btn btn-outline">Browse Trips</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/config/users.js"></script>
+  <script src="js/data/csvParser.js"></script>
+  <script src="js/data/dataService.js"></script>
+  <script src="js/utils/helpers.js"></script>
+  <script src="js/components/navbar.js"></script>
+  <script src="js/components/footer.js"></script>
+</body>
+</html>

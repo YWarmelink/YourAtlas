@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trip Notes | Youri's Travel Atlas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/notes.css">
+</head>
+<body>
+
+  <main>
+    <div class="page-header">
+      <div class="page-header-inner">
+        <a href="trips.html" class="back-link">← All Trips</a>
+        <div class="page-header-label">Trip Notes</div>
+        <h1 class="page-header-title" id="pageHeaderTitle">Notes</h1>
+        <p class="page-header-subtitle" id="pageHeaderSubtitle">Select a trip to view its notes</p>
+      </div>
+    </div>
+
+    <div class="notes-section">
+      <div class="notes-inner">
+
+        <div class="notes-trip-selector">
+          <label for="tripSelector">Select Trip</label>
+          <select id="tripSelector">
+            <option value="">— Choose a trip —</option>
+          </select>
+        </div>
+
+        <div id="notesContent"></div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="js/config/users.js"></script>
+  <script src="js/data/csvParser.js"></script>
+  <script src="js/data/dataService.js"></script>
+  <script src="js/utils/helpers.js"></script>
+  <script src="js/components/navbar.js"></script>
+  <script src="js/components/footer.js"></script>
+  <script src="js/pages/notes.js"></script>
+</body>
+</html>

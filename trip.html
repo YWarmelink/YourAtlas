@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trip Detail | Youri's Travel Atlas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/trip-detail.css">
+  <link rel="stylesheet" href="css/pages/itinerary.css">
+  <link rel="stylesheet" href="css/pages/notes.css">
+</head>
+<body>
+
+  <main>
+    <div id="tripApp">
+      <div class="loading-spinner" style="padding:5rem 1rem">
+        <div class="spinner"></div><p>Loading trip…</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/config/users.js"></script>
+  <script src="js/data/csvParser.js"></script>
+  <script src="js/data/dataService.js"></script>
+  <script src="js/utils/helpers.js"></script>
+  <script src="js/components/navbar.js"></script>
+  <script src="js/components/footer.js"></script>
+  <script src="js/pages/tripDetail.js"></script>
+</body>
+</html>

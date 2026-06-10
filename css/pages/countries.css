@@ -1,0 +1,102 @@
+.countries-section {
+  padding: var(--sp-12) 0 var(--sp-20);
+}
+
+.countries-inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.continent-group {
+  margin-bottom: var(--sp-12);
+}
+
+.continent-group-header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-6);
+  padding-bottom: var(--sp-4);
+  border-bottom: 2px solid var(--atlas-border);
+}
+
+.continent-group-title {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--atlas-text);
+}
+
+.continent-group-count {
+  font-size: var(--fs-sm);
+  color: var(--atlas-text-muted);
+  font-weight: var(--fw-normal);
+}
+
+.continent-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--r-full);
+  flex-shrink: 0;
+}
+
+.continent-dot-asia     { background: #ef4444; }
+.continent-dot-europe   { background: #3b82f6; }
+.continent-dot-americas { background: #10b981; }
+.continent-dot-africa   { background: #f59e0b; }
+.continent-dot-oceania  { background: #8b5cf6; }
+.continent-dot-other    { background: #64748b; }
+
+.countries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--sp-4);
+}
+
+.country-card-banner {
+  height: 6px;
+  border-radius: var(--r-full);
+  margin-bottom: var(--sp-4);
+}
+
+.country-card-trips {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin-top: var(--sp-3);
+}
+
+.country-trip-link {
+  font-size: var(--fs-sm);
+  color: var(--atlas-blue);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  transition: color var(--t-fast);
+}
+
+.country-trip-link:hover { color: var(--atlas-blue-dark); }
+
+.map-placeholder {
+  background: var(--atlas-navy);
+  border-radius: var(--r-2xl);
+  padding: var(--sp-16);
+  text-align: center;
+  margin-bottom: var(--sp-12);
+}
+
+.map-placeholder-icon { font-size: 4rem; margin-bottom: var(--sp-4); }
+
+.map-placeholder-title {
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-bold);
+  color: var(--atlas-white);
+  margin-bottom: var(--sp-3);
+}
+
+.map-placeholder-text {
+  color: rgb(255 255 255 / 0.55);
+  max-width: 480px;
+  margin-inline: auto;
+  line-height: 1.6;
+}

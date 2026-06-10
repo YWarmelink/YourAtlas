@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map | Youri's Travel Atlas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <main>
+    <div class="page-header">
+      <div class="page-header-inner">
+        <div class="page-header-label">World Map</div>
+        <h1 class="page-header-title">Travel Map</h1>
+        <p class="page-header-subtitle">Interactive map of visited countries and trip routes</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <div style="
+          background: var(--atlas-navy);
+          border-radius: var(--r-2xl);
+          padding: var(--sp-20) var(--sp-12);
+          text-align: center;
+          max-width: 640px;
+          margin-inline: auto;
+        ">
+          <div style="font-size:5rem;margin-bottom:var(--sp-6)">🌍</div>
+          <h2 style="color:var(--atlas-white);margin-bottom:var(--sp-4)">Interactive Map Coming Soon</h2>
+          <p style="color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:var(--sp-8)">
+            The travel map will show all visited countries highlighted on a world map,
+            with trip routes, statistics, and the ability to click through to each trip.
+          </p>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-3);margin-bottom:var(--sp-8)">
+            <div style="background:rgba(255,255,255,.06);border-radius:var(--r-xl);padding:var(--sp-4);border:1px solid rgba(255,255,255,.1)">
+              <div style="font-size:1.5rem;margin-bottom:var(--sp-2)">🗺️</div>
+              <div style="color:var(--atlas-white);font-weight:600;font-size:0.9rem">Visited Countries</div>
+              <div style="color:rgba(255,255,255,.4);font-size:0.8rem">Highlighted on world map</div>
+            </div>
+            <div style="background:rgba(255,255,255,.06);border-radius:var(--r-xl);padding:var(--sp-4);border:1px solid rgba(255,255,255,.1)">
+              <div style="font-size:1.5rem;margin-bottom:var(--sp-2)">✈️</div>
+              <div style="color:var(--atlas-white);font-weight:600;font-size:0.9rem">Trip Routes</div>
+              <div style="color:rgba(255,255,255,.4);font-size:0.8rem">Animated flight paths</div>
+            </div>
+            <div style="background:rgba(255,255,255,.06);border-radius:var(--r-xl);padding:var(--sp-4);border:1px solid rgba(255,255,255,.1)">
+              <div style="font-size:1.5rem;margin-bottom:var(--sp-2)">📊</div>
+              <div style="color:var(--atlas-white);font-weight:600;font-size:0.9rem">Statistics</div>
+              <div style="color:rgba(255,255,255,.4);font-size:0.8rem">Distance, regions, counts</div>
+            </div>
+            <div style="background:rgba(255,255,255,.06);border-radius:var(--r-xl);padding:var(--sp-4);border:1px solid rgba(255,255,255,.1)">
+              <div style="font-size:1.5rem;margin-bottom:var(--sp-2)">🔍</div>
+              <div style="color:var(--atlas-white);font-weight:600;font-size:0.9rem">Click to Explore</div>
+              <div style="color:rgba(255,255,255,.4);font-size:0.8rem">Tap a country for details</div>
+            </div>
+          </div>
+
+          <a href="countries.html" class="btn btn-gold">Browse Countries →</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/config/users.js"></script>
+  <script src="js/data/csvParser.js"></script>
+  <script src="js/data/dataService.js"></script>
+  <script src="js/utils/helpers.js"></script>
+  <script src="js/components/navbar.js"></script>
+  <script src="js/components/footer.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+.trips-section {
+  padding: var(--sp-12) 0 var(--sp-20);
+}
+
+.trips-inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.trips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--sp-6);
+}
+
+.trips-count {
+  font-size: var(--fs-sm);
+  color: var(--atlas-text-muted);
+  margin-bottom: var(--sp-6);
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--sp-16);
+  color: var(--atlas-text-muted);
+}
+
+.no-results-icon { font-size: 3rem; margin-bottom: var(--sp-4); }
