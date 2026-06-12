@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
@@ -43,11 +44,16 @@
                 <div class="map-stat-label">Countries visited</div>
               </div>
             </div>
+            <button class="wishlist-toggle" id="wishlistToggleBtn" title="Toggle wishlist on map">
+              <span class="legend-dot wishlist"></span>
+              <span class="wishlist-toggle-label">Wishlist</span>
+              <span class="wishlist-toggle-state">Off</span>
+            </button>
           </div>
 
           <div class="map-legend">
             <div class="legend-item"><span class="legend-dot visited"></span>Visited</div>
-            <div class="legend-item"><span class="legend-dot wishlist"></span>Wishlist</div>
+            <div class="legend-item legend-item--toggleable" id="legendWishlist" title="Click to toggle wishlist on map"><span class="legend-dot wishlist"></span>Wishlist</div>
             <div class="legend-item"><span class="legend-dot planned"></span>Planned</div>
             <div class="legend-item"><span class="legend-dot default"></span>Not visited</div>
           </div>
@@ -92,23 +98,11 @@
   <script src="js/components/navbar.js"></script>
   <script src="js/components/footer.js"></script>
 
-  <!-- amCharts 5 (free, CDN) -->
-  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-  <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
-  <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
-  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+  <!-- Leaflet + topojson -->
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
 
-  <!-- Map page logic (MUST load after amCharts) -->
   <script src="js/pages/map.js"></script>
 
-  <!-- Sync the second visited counter -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const a = document.getElementById('mapStatsVisited');
-      const b = document.getElementById('mapStatsVisited2');
-      const observer = new MutationObserver(() => { if (b) b.textContent = a.textContent; });
-      if (a) observer.observe(a, { childList: true, characterData: true, subtree: true });
-    });
-  </script>
 </body>
 </html>

@@ -135,7 +135,7 @@ class DataService {
     raw.forEach(c => {
       const code = (c.country_code || '').toUpperCase().trim();
       if (!code) return;
-      const status = (c.status || 'visited').toLowerCase().trim();
+      const status = (c.status || '').toLowerCase().trim();
       if (!map[code] || (PRIORITY[status] || 0) > (PRIORITY[map[code].status] || 0)) {
         map[code] = { ...c, country_code: code, status };
       }
