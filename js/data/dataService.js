@@ -164,28 +164,32 @@ class DataService {
 
   /** Computes summary statistics across all trips */
   async getStats() {
-    const [trips, items] = await Promise.all([this.getTrips(), this.getTripItems()]);
+    const [trips, items, countriesVisited] = await Promise.all([
+      this.getTrips(), this.getTripItems(), this.getCountriesVisited(),
+    ]);
 
     const completed = trips.filter(t => (t.status || '').toLowerCase() === 'completed');
     const planned   = trips.filter(t => ['planned', 'booked'].includes((t.status || '').toLowerCase()));
-    const countries  = new Set();
     const continents = new Set();
 
     trips.forEach(t => {
       if (t.continent) continents.add(t.continent.trim());
-      (t.country_region || '').split(/\s*[+,]\s*/).filter(Boolean).forEach(c => countries.add(c.trim()));
     });
 
     const totalDays = completed.reduce((s, t) => s + (parseInt(t.duration_days) || 0), 0);
 
+    const visitedCount = countriesVisited.filter(c => c.status === 'visited').length;
+    const worldPct = Math.round(visitedCount / 195 * 100);
+
     return {
-      totalTrips:       trips.length,
-      completedTrips:   completed.length,
-      plannedTrips:     planned.length,
-      countriesVisited: countries.size,
-      continentsVisited:continents.size,
+      totalTrips:        trips.length,
+      completedTrips:    completed.length,
+      plannedTrips:      planned.length,
+      countriesVisited:  visitedCount,
+      continentsVisited: continents.size,
       totalDays,
-      totalItems:       items.length,
+      totalItems:        items.length,
+      worldPct,
     };
   }
 

@@ -278,11 +278,34 @@
 }
 
 .trip-card-banner {
-  height: 130px;
+  height: 160px;
   position: relative;
   display: flex;
   align-items: flex-end;
   padding: var(--sp-4);
+  overflow: hidden;
+}
+
+.trip-card-banner-img {
+  background-size: cover;
+  background-position: center;
+}
+
+.trip-card-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.08) 100%);
+  pointer-events: none;
+}
+
+.trip-card-flag {
+  position: absolute;
+  bottom: var(--sp-3);
+  left: var(--sp-4);
+  font-size: 2rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+  z-index: 1;
 }
 
 .trip-card-banner-asia     { background: var(--grad-asia); }
@@ -296,6 +319,7 @@
   position: absolute;
   top: var(--sp-3);
   right: var(--sp-3);
+  z-index: 1;
 }
 
 .trip-card-body {

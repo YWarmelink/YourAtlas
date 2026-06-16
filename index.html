@@ -24,16 +24,35 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-inner">
-        <div class="hero-label">Personal Travel Operating System</div>
-        <h1 class="hero-title">
-          Youri's<br><span>Travel Atlas</span>
-        </h1>
-        <p class="hero-subtitle">
-          Exploring the world one trip at a time. A living record of adventures past, present and future.
-        </p>
-        <div class="hero-cta">
-          <a href="trips.html" class="btn btn-gold">View All Trips</a>
-          <a href="countries.html" class="btn btn-outline" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.2)">Explore Countries</a>
+        <div class="hero-text">
+          <div class="hero-label">Personal Travel Operating System</div>
+          <h1 class="hero-title">
+            Youri's<br><span>Travel Atlas</span>
+          </h1>
+          <p class="hero-subtitle">
+            Exploring the world one trip at a time. A living record of adventures past, present and future.
+          </p>
+          <div class="hero-cta">
+            <a href="trips.html" class="btn btn-gold">View All Trips</a>
+            <a href="countries.html" class="btn btn-outline" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.2)">Explore Countries</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="world-ring">
+            <svg class="world-ring-svg" viewBox="0 0 200 200" width="180" height="180">
+              <circle class="world-ring-track" cx="100" cy="100" r="80"/>
+              <circle class="world-ring-progress" cx="100" cy="100" r="80" id="worldRingProgress"/>
+            </svg>
+            <div class="world-ring-center">
+              <div class="world-ring-number" id="worldRingNumber">—</div>
+              <div class="world-ring-sub">countries</div>
+            </div>
+          </div>
+          <div class="world-ring-footer">
+            <span class="world-ring-pct" id="worldRingPct">—</span>
+            <span class="world-ring-caption">of the world explored</span>
+          </div>
         </div>
       </div>
     </section>
@@ -172,14 +191,14 @@
         <h2 class="section-title">Travel Categories</h2>
         <p class="section-subtitle">The different ways of exploring the world</p>
         <div class="categories-grid">
-          <div class="category-tile"><div class="category-tile-icon">🏛️</div><div class="category-tile-name">Culture</div></div>
-          <div class="category-tile"><div class="category-tile-icon">🌿</div><div class="category-tile-name">Nature</div></div>
-          <div class="category-tile"><div class="category-tile-icon">🍜</div><div class="category-tile-name">Food</div></div>
-          <div class="category-tile"><div class="category-tile-icon">🏖️</div><div class="category-tile-name">Beach</div></div>
-          <div class="category-tile"><div class="category-tile-icon">🏔️</div><div class="category-tile-name">Adventure</div></div>
-          <div class="category-tile"><div class="category-tile-icon">🎒</div><div class="category-tile-name">Backpacking</div></div>
-          <div class="category-tile"><div class="category-tile-icon">🏙️</div><div class="category-tile-name">City Trips</div></div>
-          <div class="category-tile"><div class="category-tile-icon">🛣️</div><div class="category-tile-name">Road Trips</div></div>
+          <a href="trips.html?q=Culture"      class="category-tile"><div class="category-tile-icon">🏛️</div><div class="category-tile-name">Culture</div></a>
+          <a href="trips.html?q=Nature"       class="category-tile"><div class="category-tile-icon">🌿</div><div class="category-tile-name">Nature</div></a>
+          <a href="trips.html?q=Food"         class="category-tile"><div class="category-tile-icon">🍜</div><div class="category-tile-name">Food</div></a>
+          <a href="trips.html?q=Beach"        class="category-tile"><div class="category-tile-icon">🏖️</div><div class="category-tile-name">Beach</div></a>
+          <a href="trips.html?q=Adventure"    class="category-tile"><div class="category-tile-icon">🏔️</div><div class="category-tile-name">Adventure</div></a>
+          <a href="trips.html?q=Backpacking"  class="category-tile"><div class="category-tile-icon">🎒</div><div class="category-tile-name">Backpacking</div></a>
+          <a href="trips.html?q=City"         class="category-tile"><div class="category-tile-icon">🏙️</div><div class="category-tile-name">City Trips</div></a>
+          <a href="trips.html?q=Road"         class="category-tile"><div class="category-tile-icon">🛣️</div><div class="category-tile-name">Road Trips</div></a>
         </div>
       </div>
     </section>

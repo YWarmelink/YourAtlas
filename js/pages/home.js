@@ -27,9 +27,36 @@ async function loadStats() {
       <div class="stat-item">
         <div class="stat-item-number"><em>${s.plannedTrips}</em></div>
         <div class="stat-item-label">Trips Planned</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item-number"><em>${s.worldPct}%</em></div>
+        <div class="stat-item-label">Of the World</div>
       </div>`;
+
+    animateWorldRing(s.countriesVisited, s.worldPct);
   } catch (e) {
     console.error('[home] stats failed', e);
+  }
+}
+
+function animateWorldRing(visited, pct) {
+  const circumference = 2 * Math.PI * 80;
+  const offset = circumference * (1 - pct / 100);
+
+  const ring = document.getElementById('worldRingProgress');
+  const numEl = document.getElementById('worldRingNumber');
+  const pctEl = document.getElementById('worldRingPct');
+
+  if (numEl) numEl.textContent = visited;
+  if (pctEl) pctEl.textContent = pct + '%';
+  if (ring) {
+    ring.style.strokeDasharray = circumference;
+    ring.style.strokeDashoffset = circumference;
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        ring.style.strokeDashoffset = offset;
+      });
+    });
   }
 }
 

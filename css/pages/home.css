@@ -36,6 +36,87 @@
   padding-inline: var(--container-pad);
   position: relative;
   z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--sp-16);
+  align-items: center;
+}
+
+/* === WORLD RING === */
+.hero-visual {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+.world-ring {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.world-ring-svg {
+  transform: rotate(-90deg);
+}
+
+.world-ring-track {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 14;
+}
+
+.world-ring-progress {
+  fill: none;
+  stroke: var(--atlas-gold);
+  stroke-width: 14;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.world-ring-center {
+  position: absolute;
+  text-align: center;
+  pointer-events: none;
+}
+
+.world-ring-number {
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-xbold);
+  color: var(--atlas-white);
+  line-height: 1;
+}
+
+.world-ring-sub {
+  font-size: var(--fs-xs);
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: var(--sp-1);
+}
+
+.world-ring-footer {
+  text-align: center;
+}
+
+.world-ring-pct {
+  display: block;
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-bold);
+  color: var(--atlas-gold);
+  line-height: 1;
+}
+
+.world-ring-caption {
+  font-size: var(--fs-sm);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-visual { display: none; }
 }
 
 .hero-label {
@@ -318,12 +399,16 @@
   border-radius: var(--r-xl);
   padding: var(--sp-5);
   text-align: center;
-  transition: background var(--t-base), transform var(--t-base);
+  transition: background var(--t-base), transform var(--t-base), border-color var(--t-base);
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
 }
 
 .category-tile:hover {
-  background: rgb(255 255 255 / 0.1);
-  transform: translateY(-2px);
+  background: rgb(255 255 255 / 0.12);
+  border-color: rgba(245, 158, 11, 0.4);
+  transform: translateY(-3px);
 }
 
 .category-tile-icon { font-size: 2rem; margin-bottom: var(--sp-2); }

@@ -2,6 +2,38 @@ function getURLParam(name) {
   return new URLSearchParams(window.location.search).get(name);
 }
 
+const DESTINATION_FLAGS = {
+  'south korea': '🇰🇷', 'korea': '🇰🇷',
+  'japan': '🇯🇵', 'taiwan': '🇹🇼',
+  'vietnam': '🇻🇳', 'cambodia': '🇰🇭', 'laos': '🇱🇦',
+  'thailand': '🇹🇭', 'malaysia': '🇲🇾', 'singapore': '🇸🇬',
+  'indonesia': '🇮🇩', 'bali': '🇮🇩', 'borneo': '🌴', 'brunei': '🇧🇳',
+  'india': '🇮🇳', 'sri lanka': '🇱🇰', 'nepal': '🇳🇵',
+  'china': '🇨🇳', 'hong kong': '🇭🇰',
+  'georgia': '🇬🇪', 'armenia': '🇦🇲', 'azerbaijan': '🇦🇿',
+  'uzbekistan': '🇺🇿', 'kyrgyzstan': '🇰🇬',
+  'turkey': '🇹🇷', 'egypt': '🇪🇬', 'morocco': '🇲🇦',
+  'south africa': '🇿🇦', 'cape verde': '🇨🇻',
+  'italy': '🇮🇹', 'spain': '🇪🇸', 'france': '🇫🇷', 'portugal': '🇵🇹',
+  'greece': '🇬🇷', 'croatia': '🇭🇷', 'balkan': '🌊',
+  'austria': '🇦🇹', 'switzerland': '🇨🇭', 'germany': '🇩🇪',
+  'iceland': '🇮🇸', 'norway': '🇳🇴', 'sweden': '🇸🇪', 'finland': '🇫🇮',
+  'ireland': '🇮🇪', 'scotland': '🏴󠁧󠁢󠁳󠁣󠁴󠁿', 'england': '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+  'peru': '🇵🇪', 'bolivia': '🇧🇴', 'colombia': '🇨🇴',
+  'brazil': '🇧🇷', 'argentina': '🇦🇷', 'mexico': '🇲🇽',
+  'canada': '🇨🇦', 'united states': '🇺🇸',
+  'australia': '🇦🇺', 'new zealand': '🇳🇿',
+  'united arab emirates': '🇦🇪', 'dubai': '🇦🇪',
+};
+
+function getTripFlag(trip) {
+  const name = ((trip.trip_name || '') + ' ' + (trip.country_region || '')).toLowerCase();
+  for (const [key, flag] of Object.entries(DESTINATION_FLAGS)) {
+    if (name.includes(key)) return flag;
+  }
+  return '✈️';
+}
+
 function formatDate(str) {
   if (!str) return '';
   const d = new Date(str);
@@ -83,12 +115,19 @@ function buildTripCard(trip) {
   const bannerClass = continentBannerClass(trip.continent);
   const sc = statusClass(trip.status);
   const sl = statusLabel(trip.status);
+  const flag = getTripFlag(trip);
   const datesStr = [trip.start_date && formatDateShort(trip.start_date), trip.end_date && formatDateShort(trip.end_date)]
     .filter(Boolean).join(' – ');
 
+  const coverImg = trip.cover_image || '';
+  const bannerStyle = coverImg ? ` style="background-image:url('${escapeHTML(coverImg)}')"` : '';
+  const bannerImgClass = coverImg ? ' trip-card-banner-img' : '';
+
   return `
     <a href="trip.html?id=${encodeURIComponent(trip.trip_id)}" class="trip-card">
-      <div class="trip-card-banner ${bannerClass}">
+      <div class="trip-card-banner ${bannerClass}${bannerImgClass}"${bannerStyle}>
+        <div class="trip-card-banner-overlay"></div>
+        <div class="trip-card-flag">${flag}</div>
         <span class="badge badge-status-${sc} trip-card-status">${sl}</span>
       </div>
       <div class="trip-card-body">
