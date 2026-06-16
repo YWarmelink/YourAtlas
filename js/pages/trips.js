@@ -1,8 +1,8 @@
 let allTrips = [];
+let currentView = 'grid';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const grid  = document.getElementById('tripsGrid');
-  const count = document.getElementById('tripsCount');
   if (!grid) return;
 
   grid.innerHTML = spinner();
@@ -25,6 +25,21 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('filterStatus')?.addEventListener('change', render);
   document.getElementById('filterType')?.addEventListener('change', render);
   document.getElementById('sortBy')?.addEventListener('change', render);
+
+  document.getElementById('viewGrid')?.addEventListener('click', () => {
+    currentView = 'grid';
+    document.getElementById('viewGrid').classList.add('active');
+    document.getElementById('viewTimeline').classList.remove('active');
+    document.getElementById('tripsGrid').className = 'trips-grid';
+    render();
+  });
+  document.getElementById('viewTimeline')?.addEventListener('click', () => {
+    currentView = 'timeline';
+    document.getElementById('viewTimeline').classList.add('active');
+    document.getElementById('viewGrid').classList.remove('active');
+    document.getElementById('tripsGrid').className = 'trips-timeline';
+    render();
+  });
 });
 
 function populateFilters() {
@@ -79,5 +94,61 @@ function render() {
     return;
   }
 
-  grid.innerHTML = result.map(buildTripCard).join('');
+  if (currentView === 'timeline') {
+    grid.innerHTML = renderTimeline(result);
+  } else {
+    grid.innerHTML = result.map(buildTripCard).join('');
+  }
+}
+
+function renderTimeline(trips) {
+  const byYear = {};
+  trips.forEach(t => {
+    let year = 'Upcoming';
+    if (t.start_date) {
+      const d = new Date(t.start_date);
+      if (!isNaN(d)) year = String(d.getFullYear());
+    }
+    if (!byYear[year]) byYear[year] = [];
+    byYear[year].push(t);
+  });
+
+  const years = Object.keys(byYear).sort((a, b) => {
+    if (a === 'Upcoming') return -1;
+    if (b === 'Upcoming') return 1;
+    return Number(b) - Number(a);
+  });
+
+  return years.map(year => `
+    <div class="tl-year">
+      <div class="tl-year-header">
+        <span class="tl-year-label">${year}</span>
+        <span class="tl-year-count">${byYear[year].length} trip${byYear[year].length !== 1 ? 's' : ''}</span>
+      </div>
+      <div class="tl-items">
+        ${byYear[year].map(t => {
+          const sc  = statusClass(t.status);
+          const sl  = statusLabel(t.status);
+          const flag = getTripFlag(t);
+          const dates = [t.start_date && formatDateShort(t.start_date), t.end_date && formatDateShort(t.end_date)]
+            .filter(Boolean).join(' – ');
+          return `
+            <a href="trip.html?id=${encodeURIComponent(t.trip_id)}" class="tl-item">
+              <div class="tl-item-flag">${flag}</div>
+              <div class="tl-item-content">
+                <div class="tl-item-name">${escapeHTML(t.trip_name)}</div>
+                <div class="tl-item-meta">
+                  ${t.continent ? `<span>${escapeHTML(t.continent)}</span>` : ''}
+                  ${t.duration_days ? `<span>📅 ${t.duration_days} days</span>` : ''}
+                  ${dates ? `<span>${dates}</span>` : ''}
+                </div>
+              </div>
+              <div class="tl-item-right">
+                <span class="badge badge-status-${sc}">${sl}</span>
+                ${t.type ? `<span class="tl-item-type">${escapeHTML(t.type)}</span>` : ''}
+              </div>
+            </a>`;
+        }).join('')}
+      </div>
+    </div>`).join('');
 }
