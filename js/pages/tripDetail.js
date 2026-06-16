@@ -44,9 +44,14 @@ function renderHeader(trip) {
   const datesStr = [trip.start_date && formatDate(trip.start_date), trip.end_date && formatDate(trip.end_date)]
     .filter(Boolean).join(' – ');
 
+  const coverImg = trip.cover_image || '';
+  const bannerImgStyle = coverImg
+    ? `background-image:url('${escapeHTML(coverImg)}');background-size:cover;background-position:center;`
+    : '';
+
   app.innerHTML = `
     <div class="trip-detail-header">
-      <div class="trip-detail-banner ${bannerClass}" style="height:200px">
+      <div class="trip-detail-banner ${bannerClass}${coverImg ? ' trip-detail-banner-img' : ''}" style="height:${coverImg ? 320 : 200}px;${bannerImgStyle}">
         <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(15,27,45,.85) 0%,transparent 70%);z-index:0"></div>
       </div>
       <div class="trip-detail-header-inner" style="position:relative;z-index:1">

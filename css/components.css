@@ -288,7 +288,8 @@
 
 .trip-card-banner-img {
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  height: 200px;
 }
 
 .trip-card-banner-overlay {
