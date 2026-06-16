@@ -20,7 +20,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     grid.innerHTML = errorMsg('Could not load trips. Check your connection or data source.');
   }
 
-  document.getElementById('searchInput')?.addEventListener('input',  render);
+  document.getElementById('searchInput')?.addEventListener('input', render);
+
+  document.addEventListener('keydown', e => {
+    const tag = document.activeElement?.tagName;
+    if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA' && tag !== 'SELECT') {
+      e.preventDefault();
+      const s = document.getElementById('searchInput');
+      if (s) { s.focus(); s.select(); }
+    }
+  });
   document.getElementById('filterContinent')?.addEventListener('change', render);
   document.getElementById('filterStatus')?.addEventListener('change', render);
   document.getElementById('filterType')?.addEventListener('change', render);

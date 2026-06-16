@@ -143,6 +143,20 @@ function buildTripCard(trip) {
     </a>`;
 }
 
+function countUp(el, target, duration, suffix) {
+  if (!el || isNaN(target)) return;
+  duration = duration || 1200;
+  suffix   = suffix || '';
+  const start = performance.now();
+  function step(now) {
+    const t = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - t, 3);
+    el.textContent = Math.round(eased * target) + suffix;
+    if (t < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
 function spinner() {
   return `<div class="loading-spinner"><div class="spinner"></div><p>Loading data…</p></div>`;
 }

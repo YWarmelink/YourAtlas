@@ -9,8 +9,17 @@ function renderNavbar() {
     { href: 'map.html',      label: 'Map' },
   ];
 
+  const SUBPAGES = {
+    'trips.html':    ['trip.html', 'itinerary.html'],
+    'countries.html': [],
+    'map.html':      [],
+  };
+
   const linksHTML = links.map(l => {
-    const active = page === l.href || (l.href === 'index.html' && page === '') ? ' active' : '';
+    const isHome   = l.href === 'index.html' && (page === '' || page === 'index.html');
+    const isDirect = page === l.href;
+    const isSub    = (SUBPAGES[l.href] || []).includes(page);
+    const active   = isHome || isDirect || isSub ? ' active' : '';
     return `<a href="${l.href}" class="nav-link${active}">${l.label}</a>`;
   }).join('');
 

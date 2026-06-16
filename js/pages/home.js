@@ -7,31 +7,23 @@ async function loadStats() {
   if (!el) return;
   try {
     const s = await dataService.getStats();
-    el.innerHTML = `
+    const items = [
+      { value: s.completedTrips,    suffix: '',  label: 'Trips Completed'  },
+      { value: s.countriesVisited,  suffix: '',  label: 'Countries Visited' },
+      { value: s.totalDays,         suffix: '',  label: 'Days Traveled'     },
+      { value: s.continentsVisited, suffix: '',  label: 'Continents'        },
+      { value: s.plannedTrips,      suffix: '',  label: 'Trips Planned'     },
+      { value: s.worldPct,          suffix: '%', label: 'Of the World'      },
+    ];
+    el.innerHTML = items.map(item => `
       <div class="stat-item">
-        <div class="stat-item-number"><em>${s.completedTrips}</em></div>
-        <div class="stat-item-label">Trips Completed</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-item-number"><em>${s.countriesVisited}</em></div>
-        <div class="stat-item-label">Countries Visited</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-item-number"><em>${s.totalDays}</em></div>
-        <div class="stat-item-label">Days Traveled</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-item-number"><em>${s.continentsVisited}</em></div>
-        <div class="stat-item-label">Continents</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-item-number"><em>${s.plannedTrips}</em></div>
-        <div class="stat-item-label">Trips Planned</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-item-number"><em>${s.worldPct}%</em></div>
-        <div class="stat-item-label">Of the World</div>
-      </div>`;
+        <div class="stat-item-number"><em data-target="${item.value}" data-suffix="${item.suffix}">0${item.suffix}</em></div>
+        <div class="stat-item-label">${item.label}</div>
+      </div>`).join('');
+
+    el.querySelectorAll('em[data-target]').forEach(numEl => {
+      countUp(numEl, parseInt(numEl.dataset.target), 1400, numEl.dataset.suffix);
+    });
 
     animateWorldRing(s.countriesVisited, s.worldPct);
   } catch (e) {
