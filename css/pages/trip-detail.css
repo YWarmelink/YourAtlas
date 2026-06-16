@@ -89,6 +89,8 @@
 .trip-sidebar {
   position: sticky;
   top: calc(var(--navbar-h) + var(--sp-4));
+  max-height: calc(100vh - var(--navbar-h) - var(--sp-8));
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: var(--sp-5);
