@@ -171,22 +171,42 @@ function renderNotes(notes) {
 
   const notesHTML = notes
     .sort((a, b) => (parseInt(a.priority) || 99) - (parseInt(b.priority) || 99))
-    .map(n => `
-      <div class="note-card priority-${(n.priority || '').toLowerCase()}">
-        ${n.title ? `<div class="note-card-title">${escapeHTML(n.title)}</div>` : ''}
-        ${n.note  ? `<div class="note-card-text">${escapeHTML(n.note)}</div>` : ''}
-        <div class="note-card-meta">
-          ${n.category     ? `<span class="badge badge-type">${escapeHTML(n.category)}</span>` : ''}
-          ${n.status       ? `<span class="badge badge-status-${statusClass(n.status)}">${escapeHTML(n.status)}</span>` : ''}
-          ${n.date_created ? `<span>${formatDate(n.date_created)}</span>` : ''}
-        </div>
-      </div>`).join('');
+    .map((n, i) => {
+      const id = `note-${i}`;
+      return `
+        <div class="note-accordion">
+          <button class="note-accordion-trigger" aria-expanded="false" aria-controls="${id}">
+            <span class="note-accordion-title">${escapeHTML(n.title || 'Note')}</span>
+            <div class="note-accordion-right">
+              ${n.category ? `<span class="badge badge-type">${escapeHTML(n.category)}</span>` : ''}
+              <span class="note-accordion-chevron">▾</span>
+            </div>
+          </button>
+          <div class="note-accordion-body" id="${id}" hidden>
+            ${n.note ? `<p class="note-accordion-text">${escapeHTML(n.note)}</p>` : ''}
+            ${n.status || n.date_created ? `
+              <div class="note-accordion-meta">
+                ${n.status       ? `<span class="badge badge-status-${statusClass(n.status)}">${escapeHTML(n.status)}</span>` : ''}
+                ${n.date_created ? `<span>${formatDate(n.date_created)}</span>` : ''}
+              </div>` : ''}
+          </div>
+        </div>`;
+    }).join('');
 
   main.insertAdjacentHTML('beforeend', `
     <div class="content-block">
       <div class="content-block-title">Notes (${notes.length})</div>
-      <div class="notes-grid">${notesHTML}</div>
+      <div class="notes-accordion">${notesHTML}</div>
     </div>`);
+
+  main.querySelectorAll('.note-accordion-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const body    = document.getElementById(btn.getAttribute('aria-controls'));
+      const open    = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !open);
+      body.hidden   = open;
+    });
+  });
 }
 
 function parseTripLinks(raw) {

@@ -194,11 +194,82 @@
   border-bottom: 2px solid var(--atlas-border);
 }
 
-/* === NOTES IN DETAIL === */
-.notes-grid {
+/* === NOTES ACCORDION === */
+.notes-accordion {
   display: flex;
   flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.note-accordion {
+  border: 1px solid var(--atlas-border);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+}
+
+.note-accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: var(--sp-4);
+  padding: var(--sp-4) var(--sp-5);
+  background: var(--atlas-card);
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--t-fast);
+}
+
+.note-accordion-trigger:hover { background: var(--atlas-bg); }
+
+.note-accordion-trigger[aria-expanded="true"] { background: var(--atlas-bg); }
+
+.note-accordion-title {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  color: var(--atlas-text);
+  flex: 1;
+}
+
+.note-accordion-right {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-shrink: 0;
+}
+
+.note-accordion-chevron {
+  font-size: var(--fs-base);
+  color: var(--atlas-text-muted);
+  transition: transform var(--t-fast);
+  display: inline-block;
+}
+
+.note-accordion-trigger[aria-expanded="true"] .note-accordion-chevron {
+  transform: rotate(180deg);
+}
+
+.note-accordion-body {
+  padding: var(--sp-4) var(--sp-5);
+  border-top: 1px solid var(--atlas-border);
+  background: var(--atlas-bg);
+}
+
+.note-accordion-text {
+  font-size: var(--fs-sm);
+  color: var(--atlas-text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--sp-3);
+}
+
+.note-accordion-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  align-items: center;
+  font-size: var(--fs-xs);
+  color: var(--atlas-text-light);
 }
 
 @media (max-width: 1024px) {
