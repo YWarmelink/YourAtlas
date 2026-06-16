@@ -189,26 +189,69 @@ function renderNotes(notes) {
     </div>`);
 }
 
+function parseTripLinks(raw) {
+  if (!raw) return [];
+  return raw.split(/\r?\n/)
+    .map(l => l.trim()).filter(Boolean)
+    .map(line => {
+      const sep = line.indexOf('::');
+      if (sep === -1) return { label: 'Link', url: line };
+      return { label: line.slice(0, sep).trim(), url: line.slice(sep + 2).trim() };
+    })
+    .filter(l => l.url.startsWith('http'));
+}
+
+function linkIcon(label, url) {
+  const s = (label + ' ' + url).toLowerCase();
+  if (s.includes('instagram'))           return '📸';
+  if (s.includes('facebook'))            return '👥';
+  if (s.includes('photos.google'))       return '🖼️';
+  if (s.includes('youtube'))             return '▶️';
+  if (s.includes('twitter') || s.includes('x.com')) return '🐦';
+  if (s.includes('maps'))                return '🗺️';
+  if (s.includes('spotify'))             return '🎵';
+  if (s.includes('tiktok'))              return '🎬';
+  if (s.includes('flickr'))              return '📷';
+  return '🔗';
+}
+
 function renderSidebar(trip, items, notes) {
   const sidebar = document.getElementById('tripSidebar');
   if (!sidebar) return;
 
-  const days = [...new Set(items.map(i => i.day).filter(Boolean))].length;
+  const days       = [...new Set(items.map(i => i.day).filter(Boolean))].length;
+  const extraLinks = parseTripLinks(trip.links);
+
+  const extraLinksHTML = extraLinks.map(l => `
+    <a href="${escapeHTML(l.url)}" target="_blank" rel="noopener" class="trip-link-btn">
+      <span class="trip-link-icon">${linkIcon(l.label, l.url)}</span>
+      <span class="trip-link-label">${escapeHTML(l.label)}</span>
+      <span class="trip-link-arrow">↗</span>
+    </a>`).join('');
 
   sidebar.innerHTML = `
     <div class="sidebar-card">
       <div class="sidebar-card-title">Trip Stats</div>
-      ${row('Status',   `<span class="badge badge-status-${statusClass(trip.status)}">${statusLabel(trip.status)}</span>`)}
-      ${row('Duration', trip.duration_days ? `${trip.duration_days} days` : '—')}
-      ${row('Days planned', days || '—')}
-      ${row('Activities', items.length || '—')}
-      ${row('Notes', notes.length || '—')}
-      ${row('Budget', formatBudget(trip.estimated_budget) || '—')}
+      ${row('Status',      `<span class="badge badge-status-${statusClass(trip.status)}">${statusLabel(trip.status)}</span>`)}
+      ${row('Duration',    trip.duration_days ? `${trip.duration_days} days` : '—')}
+      ${row('Days planned',days || '—')}
+      ${row('Activities',  items.length || '—')}
+      ${row('Notes',       notes.length || '—')}
+      ${row('Budget',      formatBudget(trip.estimated_budget) || '—')}
     </div>
     <div class="sidebar-card">
       <div class="sidebar-card-title">Links</div>
-      <a href="itinerary.html?trip=${encodeURIComponent(trip.trip_id)}" class="btn btn-outline btn-sm" style="width:100%;margin-bottom:0.5rem;justify-content:center">📋 Full Itinerary</a>
-      <a href="notes.html?trip=${encodeURIComponent(trip.trip_id)}" class="btn btn-outline btn-sm" style="width:100%;justify-content:center">📝 All Notes</a>
+      <div class="sidebar-links">
+        <a href="itinerary.html?trip=${encodeURIComponent(trip.trip_id)}" class="trip-link-btn trip-link-btn--internal">
+          <span class="trip-link-icon">📋</span>
+          <span class="trip-link-label">Full Itinerary</span>
+        </a>
+        <a href="notes.html?trip=${encodeURIComponent(trip.trip_id)}" class="trip-link-btn trip-link-btn--internal">
+          <span class="trip-link-icon">📝</span>
+          <span class="trip-link-label">All Notes</span>
+        </a>
+        ${extraLinksHTML}
+      </div>
     </div>`;
 }
 

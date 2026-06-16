@@ -131,6 +131,55 @@
   text-align: right;
 }
 
+/* === SIDEBAR LINKS === */
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.trip-link-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--atlas-border);
+  background: var(--atlas-bg);
+  text-decoration: none;
+  transition: background var(--t-fast), border-color var(--t-fast), transform var(--t-fast);
+}
+
+.trip-link-btn:hover {
+  background: var(--atlas-bg-alt);
+  border-color: var(--atlas-border-dark);
+  transform: translateX(2px);
+}
+
+.trip-link-btn--internal {
+  background: transparent;
+  border-color: var(--atlas-border);
+}
+
+.trip-link-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+  width: 20px;
+  text-align: center;
+}
+
+.trip-link-label {
+  flex: 1;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--atlas-text);
+}
+
+.trip-link-arrow {
+  font-size: var(--fs-xs);
+  color: var(--atlas-text-light);
+}
+
 /* === CONTENT BLOCKS === */
 .content-block {
   margin-bottom: var(--sp-10);
