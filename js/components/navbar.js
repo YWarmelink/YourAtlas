@@ -5,12 +5,14 @@ function renderNavbar() {
   const links = [
     { href: 'index.html',    label: 'Home' },
     { href: 'trips.html',    label: 'Trips' },
+    { href: 'route-builder.html', label: 'Route Builder' },
     { href: 'countries.html',label: 'Countries' },
     { href: 'map.html',      label: 'Map' },
   ];
 
   const SUBPAGES = {
     'trips.html':    ['trip.html', 'itinerary.html'],
+    'route-builder.html': [],
     'countries.html': [],
     'map.html':      [],
   };

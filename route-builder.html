@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Route Builder | Youri's Travel Atlas</title>
+  <meta name="description" content="Stack country blocks into one big long-term route.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/route-builder.css">
+</head>
+<body>
+
+  <main>
+    <div class="page-header">
+      <div class="page-header-inner">
+        <div class="page-header-label">Long-Term Planning</div>
+        <h1 class="page-header-title">Route Builder</h1>
+        <p class="page-header-subtitle">Stack country blocks into one big multi-month route</p>
+      </div>
+    </div>
+
+    <div class="rb-section">
+      <div class="rb-inner">
+
+        <div class="info-banner">
+          <span class="info-banner-icon">💡</span>
+          <p>Big routes are saved locally in this browser for now — your trip sheet doesn't have this structure yet. Once it does, these can move into the real trip data.</p>
+        </div>
+
+        <div class="loading-spinner" id="rbLoading"><div class="spinner"></div><p>Loading your country list…</p></div>
+
+        <!-- LIST VIEW -->
+        <div id="routeListView" hidden>
+          <div class="rb-list-toolbar">
+            <div class="rb-list-count" id="routeListCount"></div>
+            <div class="rb-list-toolbar-right">
+              <button class="btn btn-outline btn-sm" id="openLibraryBtn">📚 Block Library</button>
+              <button class="btn btn-primary" id="newRouteBtn">+ New Route</button>
+            </div>
+          </div>
+          <div class="rb-list-grid" id="routeListGrid"></div>
+        </div>
+
+        <!-- EDITOR VIEW -->
+        <div id="routeEditorView" hidden>
+          <button class="back-link-inline" id="backToListBtn">← All Routes</button>
+
+          <div class="rb-editor-card">
+            <div class="rb-editor-header">
+              <input type="text" id="rbNameInput" class="rb-name-input" placeholder="Name this route… (e.g. South America 2027)">
+              <button class="btn btn-outline btn-sm" id="deleteRouteBtn">Delete Route</button>
+            </div>
+
+            <div class="rb-details-panel">
+              <div class="rb-details-grid">
+                <div class="rb-field">
+                  <label>Status</label>
+                  <select class="rb-input" id="rbStatusInput">
+                    <option value="Idea">Idea</option>
+                    <option value="Planning">Planning</option>
+                    <option value="Active">Active</option>
+                    <option value="Completed">Completed</option>
+                  </select>
+                </div>
+                <div class="rb-field">
+                  <label>Travel Style <span class="rb-optional">optional</span></label>
+                  <input type="text" class="rb-input" id="rbTravelStyleInput" placeholder="e.g. Backpacking, slow travel">
+                </div>
+                <div class="rb-field">
+                  <label>Best Starting Month <span class="rb-optional">optional</span></label>
+                  <select class="rb-input" id="rbBestMonthInput">
+                    <option value="">— Any month —</option>
+                    <option>January</option><option>February</option><option>March</option><option>April</option>
+                    <option>May</option><option>June</option><option>July</option><option>August</option>
+                    <option>September</option><option>October</option><option>November</option><option>December</option>
+                  </select>
+                </div>
+              </div>
+              <div class="rb-field">
+                <label>Description <span class="rb-optional">optional</span></label>
+                <textarea class="rb-input" id="rbDescriptionInput" placeholder="What's this expedition about?"></textarea>
+              </div>
+              <div class="rb-details-grid-2">
+                <div class="rb-field">
+                  <label>Climate Summary <span class="rb-optional">optional</span></label>
+                  <textarea class="rb-input" id="rbClimateInput" placeholder="e.g. Dry season Nov–Mar, avoid monsoon in..."></textarea>
+                </div>
+                <div class="rb-field">
+                  <label>Notes <span class="rb-optional">optional</span></label>
+                  <textarea class="rb-input" id="rbRouteNotesInput" placeholder="Overall notes for this expedition"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="rb-library-toolbar">
+              <button class="btn btn-outline btn-sm" id="saveAsBlockBtn">💾 Save as Block</button>
+              <select class="rb-input" id="insertBlockSelect"></select>
+            </div>
+
+            <div class="rb-calendar-toolbar">
+              <div class="rb-field rb-field-startdate">
+                <label>Start date <span class="rb-optional">optional</span></label>
+                <input type="date" class="rb-input" id="rbStartDateInput">
+              </div>
+              <div class="rb-toolbar-buttons">
+                <button class="btn btn-outline btn-sm" id="toggleCalendarBtn">📅 Show Calendar</button>
+                <button class="btn btn-outline btn-sm" id="toggleMapBtn">🗺️ Show Map</button>
+              </div>
+            </div>
+
+            <div class="rb-calendar-panel" id="rbCalendarPanel" hidden></div>
+
+            <div class="rb-map-panel" id="rbMapPanel" hidden>
+              <div id="rbMapDiv" class="rb-map-div"></div>
+            </div>
+
+            <div class="rb-timeline-bar" id="rbTimelineBar"></div>
+
+            <div class="rb-blocks" id="rbBlocks"></div>
+
+            <button class="rb-add-block-btn" id="addBlockBtn">+ Add country block</button>
+
+            <div class="rb-summary" id="rbSummary"></div>
+          </div>
+        </div>
+
+        <!-- LIBRARY VIEW -->
+        <div id="routeLibraryView" hidden>
+          <button class="back-link-inline" id="backFromLibraryBtn">← All Routes</button>
+
+          <div class="rb-library-header">
+            <div>
+              <h2>Block Library</h2>
+              <p class="text-muted" id="libraryCount"></p>
+            </div>
+            <button class="btn btn-outline btn-sm" id="mergeLibBtn" disabled>🔗 Merge selected into new Block</button>
+          </div>
+
+          <div class="rb-list-grid" id="libraryGrid"></div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="js/config/users.js"></script>
+  <script src="js/data/csvParser.js"></script>
+  <script src="js/data/dataService.js"></script>
+  <script src="js/utils/helpers.js"></script>
+  <script src="js/utils/isoCountries.js"></script>
+  <script src="js/components/navbar.js"></script>
+  <script src="js/components/footer.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+
+  <script src="js/pages/routeBuilder.js"></script>
+</body>
+</html>

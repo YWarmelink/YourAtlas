@@ -1,0 +1,744 @@
+.rb-section {
+  padding: var(--sp-12) 0 var(--sp-20);
+}
+
+.rb-inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+/* === INFO BANNER === */
+.info-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  background: var(--atlas-blue-light);
+  border: 1px solid var(--atlas-blue);
+  border-radius: var(--r-xl);
+  padding: var(--sp-4) var(--sp-5);
+  margin-bottom: var(--sp-8);
+}
+
+.info-banner-icon { font-size: 1.1rem; line-height: 1.4; }
+
+.info-banner p {
+  font-size: var(--fs-sm);
+  color: var(--atlas-navy-mid);
+  line-height: 1.6;
+}
+
+/* === LIST VIEW === */
+.rb-list-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sp-6);
+  gap: var(--sp-4);
+}
+
+.rb-list-count {
+  font-size: var(--fs-sm);
+  color: var(--atlas-text-muted);
+}
+
+.rb-list-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+.rb-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--sp-6);
+}
+
+.route-card {
+  position: relative;
+  background: var(--atlas-card);
+  border-radius: var(--r-2xl);
+  border: 1px solid var(--atlas-border);
+  box-shadow: var(--shadow-card);
+  padding: var(--sp-5);
+  cursor: pointer;
+  transition: transform var(--t-base), box-shadow var(--t-base);
+}
+
+.route-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-xl);
+}
+
+.route-card-delete {
+  position: absolute;
+  top: var(--sp-3);
+  right: var(--sp-3);
+  width: 24px;
+  height: 24px;
+  border-radius: var(--r-full);
+  background: var(--atlas-bg-alt);
+  color: var(--atlas-text-muted);
+  font-size: var(--fs-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--t-fast), color var(--t-fast);
+  z-index: 1;
+}
+
+.route-card-delete:hover { background: #fee2e2; color: #b91c1c; }
+
+.route-card-status {
+  position: absolute;
+  top: var(--sp-3);
+  left: var(--sp-3);
+  z-index: 1;
+}
+
+.rb-status-idea       { background: #f1f5f9; color: #475569; }
+.rb-status-planning   { background: #fef3c7; color: #78350f; }
+.rb-status-active     { background: #e0f2fe; color: #075985; }
+.rb-status-completed  { background: #d1fae5; color: #065f46; }
+
+.route-card-bar {
+  display: flex;
+  height: 14px;
+  border-radius: var(--r-full);
+  overflow: hidden;
+  margin-bottom: var(--sp-4);
+  background: var(--atlas-bg-alt);
+}
+
+.route-card-name {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--atlas-text);
+  margin-bottom: var(--sp-3);
+  padding-right: var(--sp-6);
+}
+
+.route-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  font-size: var(--fs-sm);
+  color: var(--atlas-text-muted);
+}
+
+.route-card-open {
+  margin-top: var(--sp-4);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  color: var(--atlas-blue);
+}
+
+/* === BACK LINK (light bg) === */
+.back-link-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-sm);
+  color: var(--atlas-text-muted);
+  margin-bottom: var(--sp-6);
+  transition: color var(--t-fast);
+}
+
+.back-link-inline:hover { color: var(--atlas-blue); }
+
+/* === BLOCK LIBRARY === */
+.rb-library-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-6);
+  flex-wrap: wrap;
+}
+
+.rb-library-header h2 {
+  font-size: var(--fs-2xl);
+  margin-bottom: var(--sp-1);
+}
+
+.lib-card {
+  position: relative;
+  background: var(--atlas-card);
+  border-radius: var(--r-2xl);
+  border: 2px solid var(--atlas-border);
+  box-shadow: var(--shadow-card);
+  padding: var(--sp-5);
+  cursor: pointer;
+  transition: border-color var(--t-fast), transform var(--t-base);
+}
+
+.lib-card:hover { transform: translateY(-2px); }
+
+.lib-card--selected {
+  border-color: var(--atlas-blue);
+  background: var(--atlas-blue-light);
+}
+
+.lib-card-select {
+  position: absolute;
+  top: var(--sp-3);
+  left: var(--sp-3);
+  z-index: 1;
+}
+
+.lib-card-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--atlas-blue);
+}
+
+.lib-card-actions {
+  position: absolute;
+  top: var(--sp-3);
+  right: var(--sp-3);
+  display: flex;
+  gap: 4px;
+  z-index: 1;
+}
+
+.lib-icon-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--r-full);
+  background: var(--atlas-bg-alt);
+  color: var(--atlas-text-muted);
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--t-fast), color var(--t-fast);
+}
+
+.lib-icon-btn:hover { background: var(--atlas-white); color: var(--atlas-text); box-shadow: var(--shadow-sm); }
+
+.lib-icon-btn-danger:hover { background: #fee2e2; color: #b91c1c; }
+
+/* === EDITOR === */
+.rb-editor-card {
+  background: var(--atlas-card);
+  border-radius: var(--r-2xl);
+  border: 1px solid var(--atlas-border);
+  box-shadow: var(--shadow-card);
+  padding: var(--sp-6);
+}
+
+.rb-editor-header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-6);
+}
+
+.rb-name-input {
+  flex: 1;
+  border: none;
+  background: none;
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-bold);
+  color: var(--atlas-text);
+  padding: var(--sp-2) 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--t-fast);
+}
+
+.rb-name-input:focus {
+  outline: none;
+  border-bottom-color: var(--atlas-blue);
+}
+
+.rb-name-input::placeholder { color: var(--atlas-text-light); font-weight: var(--fw-medium); }
+
+/* === EXPEDITION DETAILS === */
+.rb-details-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  padding: var(--sp-5);
+  margin-bottom: var(--sp-6);
+  background: var(--atlas-bg);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--atlas-border);
+}
+
+.rb-details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+
+.rb-details-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+}
+
+.rb-details-panel textarea.rb-input {
+  resize: vertical;
+  min-height: 60px;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.rb-input-sm {
+  padding: 5px var(--sp-2);
+  font-size: var(--fs-xs);
+}
+
+.rb-library-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-6);
+  flex-wrap: wrap;
+}
+
+.rb-library-toolbar select {
+  min-width: 220px;
+  max-width: 100%;
+}
+
+/* === CALENDAR === */
+.rb-calendar-toolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-6);
+  flex-wrap: wrap;
+}
+
+.rb-field-startdate .rb-input {
+  max-width: 180px;
+}
+
+.rb-toolbar-buttons {
+  display: flex;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+/* === MAP === */
+.rb-map-panel {
+  margin-bottom: var(--sp-8);
+}
+
+.rb-map-div {
+  width: 100%;
+  height: 320px;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  border: 1px solid var(--atlas-border);
+  background: #b9d9e8;
+}
+
+.rb-map-div.leaflet-container {
+  background: #b9d9e8;
+  font-family: var(--font-sans);
+  outline: none;
+}
+
+.rb-calendar-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--sp-5);
+  margin-bottom: var(--sp-8);
+  padding: var(--sp-5);
+  background: var(--atlas-bg);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--atlas-border);
+}
+
+.rb-cal-month-label {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  color: var(--atlas-text);
+  margin-bottom: var(--sp-3);
+  text-align: center;
+}
+
+.rb-cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+}
+
+.rb-cal-weekday {
+  font-size: 10px;
+  font-weight: var(--fw-semi);
+  color: var(--atlas-text-light);
+  text-align: center;
+  padding-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.rb-cal-cell {
+  position: relative;
+  aspect-ratio: 1;
+  border: 1px solid var(--atlas-border);
+  border-radius: var(--r-sm);
+  background: var(--atlas-white);
+  padding: 2px 3px;
+  font-size: 10px;
+  overflow: hidden;
+}
+
+.rb-cal-cell--empty { border: none; background: none; }
+
+.rb-cal-daynum { color: var(--atlas-text-muted); }
+
+.rb-cal-flag {
+  position: absolute;
+  bottom: 1px;
+  right: 2px;
+  font-size: 11px;
+}
+
+/* === TIMELINE BAR === */
+.rb-timeline-bar {
+  display: flex;
+  height: 44px;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  margin-bottom: var(--sp-8);
+  background: var(--atlas-bg-alt);
+}
+
+.rb-bar-seg {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 var(--sp-3);
+  color: white;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semi);
+  white-space: nowrap;
+  overflow: hidden;
+  min-width: 4px;
+}
+
+.rb-bar-seg-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rb-bar-seg--mini { padding: 0; }
+
+.rb-bar-empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-sm);
+  color: var(--atlas-text-light);
+}
+
+/* === BLOCKS === */
+.rb-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-5);
+}
+
+.rb-block {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-4);
+  background: var(--atlas-bg);
+  border: 1px solid var(--atlas-border);
+  border-left: 4px solid var(--block-color, var(--atlas-blue));
+  border-radius: var(--r-xl);
+  padding: var(--sp-4);
+}
+
+.rb-block-order {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--r-full);
+  background: var(--block-color, var(--atlas-blue));
+  color: white;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rb-block-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.rb-block-top {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+
+.rb-block-fields {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--sp-3);
+  min-width: 260px;
+}
+
+.rb-field label {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--atlas-text-muted);
+  font-weight: var(--fw-medium);
+  margin-bottom: var(--sp-1);
+}
+
+.rb-optional {
+  color: var(--atlas-text-light);
+  font-weight: var(--fw-normal);
+  text-transform: none;
+}
+
+.rb-input {
+  width: 100%;
+  padding: var(--sp-2) var(--sp-3);
+  border: 1px solid var(--atlas-border);
+  border-radius: var(--r-md);
+  font-size: var(--fs-sm);
+  color: var(--atlas-text);
+  background: var(--atlas-white);
+  transition: border-color var(--t-fast);
+}
+
+.rb-input:focus {
+  outline: none;
+  border-color: var(--atlas-blue);
+  box-shadow: 0 0 0 3px rgb(14 165 233 / 0.1);
+}
+
+.rb-country-input {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  border: 1px solid var(--atlas-border);
+  border-radius: var(--r-md);
+  background: var(--atlas-white);
+  padding-inline: var(--sp-3);
+  transition: border-color var(--t-fast);
+}
+
+.rb-country-input:focus-within {
+  border-color: var(--atlas-blue);
+  box-shadow: 0 0 0 3px rgb(14 165 233 / 0.1);
+}
+
+.rb-flag { font-size: 1.1rem; flex-shrink: 0; }
+
+.rb-country-input .rb-input-country {
+  border: none;
+  padding: var(--sp-2) 0;
+  background: none;
+}
+
+.rb-country-input .rb-input-country:focus { box-shadow: none; }
+
+.rb-input-notes {
+  resize: vertical;
+  min-height: 44px;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.rb-block-range {
+  flex-shrink: 0;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semi);
+  color: var(--atlas-text-muted);
+  background: var(--atlas-bg-alt);
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--r-md);
+  white-space: nowrap;
+}
+
+.rb-block-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  flex-shrink: 0;
+  width: 130px;
+  align-self: flex-start;
+}
+
+.rb-block-actions-icons {
+  display: flex;
+  gap: var(--sp-1);
+}
+
+.rb-icon-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--r-md);
+  background: var(--atlas-white);
+  border: 1px solid var(--atlas-border);
+  color: var(--atlas-text-muted);
+  font-size: var(--fs-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--t-fast), color var(--t-fast);
+}
+
+.rb-icon-btn:hover:not(:disabled) { background: var(--atlas-bg-alt); color: var(--atlas-text); }
+
+.rb-icon-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.rb-icon-btn-danger:hover:not(:disabled) { background: #fee2e2; color: #b91c1c; border-color: #fecaca; }
+
+/* === DESTINATIONS === */
+.rb-destinations {
+  border-top: 1px dashed var(--atlas-border);
+  padding-top: var(--sp-3);
+}
+
+.rb-destinations-label {
+  font-size: var(--fs-xs);
+  color: var(--atlas-text-muted);
+  font-weight: var(--fw-medium);
+  margin-bottom: var(--sp-2);
+}
+
+.rb-destination-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-2);
+}
+
+.rb-destination-row {
+  display: flex;
+  gap: var(--sp-2);
+  align-items: center;
+}
+
+.rb-destination-row .rb-dest-name { flex: 1; max-width: 220px; }
+.rb-destination-row .rb-dest-note { flex: 2; }
+
+.rb-destination-add {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--atlas-blue);
+  padding: var(--sp-1) 0;
+}
+
+.rb-destination-add:hover { text-decoration: underline; }
+
+/* === REGION GROUPS === */
+.rb-region-group {
+  border: 1px dashed var(--atlas-border-dark);
+  border-radius: var(--r-xl);
+  padding: var(--sp-4);
+  background: rgba(14, 165, 233, 0.03);
+}
+
+.rb-region-header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--sp-2);
+}
+
+.rb-region-toggle {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: var(--atlas-text-muted);
+  font-size: var(--fs-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rb-region-name-input {
+  flex: 1;
+  min-width: 120px;
+  border: none;
+  background: none;
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+  color: var(--atlas-text);
+  padding: var(--sp-1) 0;
+  border-bottom: 2px solid transparent;
+}
+
+.rb-region-name-input:focus { outline: none; border-bottom-color: var(--atlas-blue); }
+
+.rb-region-stat {
+  font-size: var(--fs-xs);
+  color: var(--atlas-text-muted);
+  white-space: nowrap;
+}
+
+.rb-region-header .rb-region-season { width: 130px; }
+.rb-region-header .rb-region-budget { width: 100px; }
+
+.rb-region-notes {
+  margin-bottom: var(--sp-4);
+}
+
+.rb-region-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+/* === ADD BLOCK === */
+.rb-add-block-btn {
+  width: 100%;
+  padding: var(--sp-4);
+  border: 2px dashed var(--atlas-border-dark);
+  border-radius: var(--r-xl);
+  background: transparent;
+  color: var(--atlas-text-muted);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  transition: border-color var(--t-fast), color var(--t-fast), background var(--t-fast);
+  margin-bottom: var(--sp-8);
+}
+
+.rb-add-block-btn:hover {
+  border-color: var(--atlas-blue);
+  color: var(--atlas-blue);
+  background: var(--atlas-blue-light);
+}
+
+/* === SUMMARY === */
+.rb-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--sp-4);
+}
+
+@media (max-width: 768px) {
+  .rb-block { flex-wrap: wrap; }
+  .rb-block-fields { grid-template-columns: 1fr; min-width: 0; }
+  .rb-block-main { align-items: stretch; }
+  .rb-block-actions { width: 100%; flex-direction: row; align-items: center; }
+  .rb-block-actions-icons { flex: 1; }
+  .rb-editor-header { flex-wrap: wrap; }
+  .rb-details-grid { grid-template-columns: 1fr; }
+  .rb-details-grid-2 { grid-template-columns: 1fr; }
+  .rb-destination-row { flex-wrap: wrap; }
+  .rb-destination-row .rb-dest-name { max-width: none; }
+}

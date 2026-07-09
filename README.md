@@ -10,12 +10,19 @@ A personal travel dashboard built with vanilla HTML, CSS and JavaScript. Part of
 |------|-----|
 | Home | [/](https://ywarmelink.github.io/YourAtlas/) |
 | All Trips | [/trips.html](https://ywarmelink.github.io/YourAtlas/trips.html) |
+| Route Builder | [/route-builder.html](https://ywarmelink.github.io/YourAtlas/route-builder.html) |
 | Countries | [/countries.html](https://ywarmelink.github.io/YourAtlas/countries.html) |
 | Map | [/map.html](https://ywarmelink.github.io/YourAtlas/map.html) |
 
 ## Data
 
 Live data is pulled from a public Google Sheets spreadsheet (CSV). Fallback JSON files are in `data/youri/` when the sheet is unreachable.
+
+**Route Builder is the exception**: it stores big, multi-country routes in `localStorage`
+only (per browser, per device) — it doesn't touch the Google Sheet yet. There's a
+concrete plan to change that in [`ROUTE_BUILDER_SYNC.md`](ROUTE_BUILDER_SYNC.md) —
+new sheet tabs, Apps Script changes, client code — pick it up whenever you're ready
+to make routes sync across devices.
 
 ## Architecture
 
