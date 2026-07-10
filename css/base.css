@@ -1,5 +1,10 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* Author rules that set an explicit `display` (flex/grid/etc.) otherwise beat the
+   browser's default [hidden] { display: none }, so el.hidden = true silently does
+   nothing. This keeps [hidden] authoritative everywhere. */
+[hidden] { display: none !important; }
+
 html {
   font-size: 16px;
   scroll-behavior: smooth;

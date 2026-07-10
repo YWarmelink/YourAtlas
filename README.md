@@ -53,14 +53,26 @@ Everything above lives in `localStorage` (`atlas_grand_trips`,
 `atlas_route_blocks_library`) — see [`ROUTE_BUILDER_SYNC.md`](ROUTE_BUILDER_SYNC.md)
 for the plan to move it into the Google Sheet.
 
+## Recently fixed
+
+- **Route Builder stuck on "Loading your country list…" on the live site** — the
+  country data loaded fine, but `css/base.css` had `.loading-spinner { display: flex }`,
+  which beats the browser's default `[hidden] { display: none }` even after JS sets
+  `el.hidden = true`. Fixed with a global `[hidden] { display: none !important; }`
+  rule in `css/base.css`. This also silently fixes the same latent issue for
+  `.rb-calendar-panel` / `.rb-map-panel` (both toggle `.hidden` too and both had an
+  explicit `display: grid`/`flex`).
+
 ## Needs attention next time
 
-- **Never opened in a real browser yet** — built and syntax-checked, but not
-  click-tested end to end. Worth a pass through the actual UI before trusting it
-  with real planning data.
 - **Sheet sync still not started** — routes don't follow you across devices/browsers
   yet (see `ROUTE_BUILDER_SYNC.md` for the full plan: new sheet tabs, Apps Script
-  changes, client code).
+  changes, client code). **Next concrete step**: in the Google Sheet, add 4 new tabs
+  (`GrandTrips`, `GrandTripRegions`, `GrandTripBlocks`, `GrandTripDestinations` — exact
+  columns in `ROUTE_BUILDER_SYNC.md`) and publish each to the web as CSV. Once that's
+  done, paste the current Apps Script `doPost` code into a Claude Code conversation so
+  it can add a branch for `GrandTrip*` payloads without breaking the existing
+  country-status sync from the map.
 - **The two seeded expeditions need real numbers** — Eurasia Grand Tour and
   Pan-American Grand Tour have their countries/regions filled in, but no days or
   budget per country (not specified in the original brainstorm prompt).
