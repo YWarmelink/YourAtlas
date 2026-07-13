@@ -8,6 +8,7 @@
 const RB_STORAGE_KEY = 'atlas_grand_trips';
 const RB_LIBRARY_KEY = 'atlas_route_blocks_library';
 const RB_SEED_FLAG_KEY = 'atlas_grand_trips_seeded_v1';
+const RB_SEED_FLAG_KEY_MEA = 'atlas_grand_trips_seeded_mea_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
 
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbRoutes = rbLoad();
   rbLibrary = rbLoadLibrary();
   rbSeedPredefinedExpeditions();
+  rbSeedMEAExpedition();
   rbBindEvents();
 
   try {
@@ -989,6 +991,25 @@ function rbBuildSeedRoute(name, regionDefs, extra = {}) {
   };
 }
 
+function rbBuildFlatSeedRoute(name, countries, extra = {}) {
+  const blocks = countries.map(([code, countryName]) => rbBuildBlock(code, countryName));
+
+  return {
+    id: 'gt_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6),
+    name,
+    status: 'Idea',
+    start_date: '',
+    description: extra.description || '',
+    travel_style: extra.travel_style || '',
+    climate_summary: extra.climate_summary || '',
+    best_starting_month: extra.best_starting_month || '',
+    notes: extra.notes || '',
+    created_at: new Date().toISOString(),
+    regions: [],
+    blocks,
+  };
+}
+
 function rbSeedPredefinedExpeditions() {
   if (localStorage.getItem(RB_SEED_FLAG_KEY)) return;
   localStorage.setItem(RB_SEED_FLAG_KEY, '1');
@@ -1028,5 +1049,38 @@ function rbSeedPredefinedExpeditions() {
   });
 
   rbRoutes.push(eurasiaRoute, panAmRoute);
+  rbSave();
+}
+
+function rbSeedMEAExpedition() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_MEA)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_MEA, '1');
+
+  const meaRoute = rbBuildFlatSeedRoute('Middle East & Africa Expedition', [
+    ['JO', 'Jordan'],
+    ['EG', 'Egypt'],
+    ['OM', 'Oman'],
+    ['ET', 'Ethiopia'],
+    ['KE', 'Kenya'],
+    ['UG', 'Uganda'],
+    ['RW', 'Rwanda'],
+    ['TZ', 'Tanzania'],
+    ['MG', 'Madagascar'],
+    ['MU', 'Mauritius'],
+    ['MW', 'Malawi'],
+    ['MZ', 'Mozambique'],
+    ['ZM', 'Zambia'],
+    ['ZW', 'Zimbabwe'],
+    ['BW', 'Botswana'],
+    ['NA', 'Namibia'],
+    ['ZA', 'South Africa'],
+    ['LS', 'Lesotho'],
+    ['SZ', 'Eswatini'],
+  ], {
+    description: 'Overland route from the Middle East through East Africa, the islands, and Southern Africa. Target duration ~12 months.',
+    notes: 'Imported from a ChatGPT brainstorm — deliberately seeded with zero blocks (unlike Eurasia/Pan-American): group these 19 countries into your own blocks (e.g. Middle East, East Africa, Islands, Southern Africa, South Africa finale) via the region dropdown on each country, in whatever shape makes sense once you plan it for real. South Africa is already marked "visited" in your Countries sheet — worth checking before treating it as new.',
+  });
+
+  rbRoutes.push(meaRoute);
   rbSave();
 }
