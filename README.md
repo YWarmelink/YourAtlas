@@ -29,13 +29,16 @@ to make routes sync across devices.
 Plan long, multi-country "expeditions" by stacking country blocks in sequence — for
 trips that span months, not weeks. Lives at `route-builder.html`.
 
-- **Country blocks**: country, days, budget, free-form notes. Day ranges (Day 1–17,
-  Day 18–25, …) compute automatically from the sequence — reorder blocks with ↑/↓
-  and the ranges shift with them.
+- **Country blocks**: country, days, budget, free-form notes, and a "Transport to
+  next" field (how you get from this country to the next one in the sequence — flight,
+  overland bus, ferry, etc). Day ranges (Day 1–17, Day 18–25, …) compute automatically
+  from the sequence — reorder blocks with ↑/↓ and the ranges shift with them.
 - **Regional Blocks**: group a contiguous run of country blocks under a collapsible,
   named header with its own season, budget estimate and notes (e.g. "Balkans" = 5
   countries as one unit). Assign a block to a region via the dropdown on that block.
-- **Destinations**: an optional free-form list of places (+ notes) per country block.
+- **Destinations**: an optional free-form list of places (+ notes) per country block —
+  this is where the specific cities/sights for that country live (e.g. "Petra",
+  "Wadi Rum" under Jordan), separate from the country-level Note field.
 - **Expedition details**: Status (Idea / Planning / Active / Completed), Travel
   Style, Best Starting Month, Description, Climate Summary, and route-wide Notes.
 - **Calendar view**: set an optional start date to see the route laid out on real
@@ -45,15 +48,20 @@ trips that span months, not weeks. Lives at `route-builder.html`.
 - **Block Library**: save a route as a reusable, named group of countries; insert it
   into any other route later (as an independent copy — editing one never affects the
   other), or merge 2+ saved blocks into a new combined block.
-- Four predefined routes — **Eurasia Grand Tour**, **Pan-American Grand Tour**,
-  **Middle East & Africa Expedition**, and **Ancient Civilizations Expedition**
-  (all from ChatGPT brainstorms) — are seeded once on first load, each gated by its
-  own `localStorage` flag so adding a new one later still seeds it into existing
-  browsers. See "Needs attention" below. Eurasia/Pan-American are seeded with
-  countries pre-grouped into regions; Middle East & Africa and Ancient
-  Civilizations are seeded **flat, with zero regions** — that's now the default for
-  new expeditions — group their countries into your own blocks via the region
-  dropdown whenever you're ready to plan it for real.
+- Seven predefined routes — **Eurasia Grand Tour**, **Pan-American Grand Tour**,
+  **Middle East & Africa Expedition**, **Ancient Civilizations Expedition**,
+  **Arctic Circle Expedition**, **Patagonia & Antarctica Expedition**, and
+  **Himalaya & India Expedition** (all from ChatGPT brainstorms) — are seeded once on
+  first load, each gated by its own `localStorage` flag so adding a new one later still
+  seeds it into existing browsers. Eurasia/Pan-American are seeded with countries
+  pre-grouped into regions; the other five are seeded **flat, with zero regions** —
+  group their countries into your own blocks via the region dropdown whenever you're
+  ready to plan it for real. All seven now have per-country days, an estimated budget,
+  a Destinations list and a Transport-to-next note, sourced from
+  `RB_EXPEDITION_CONTENT` in `js/pages/routeBuilder.js` — a one-time
+  `rbPatchExpeditionContent()` patch fills these in for anyone who already had the
+  routes seeded before this content existed, without touching fields you've since
+  edited yourself.
 
 Everything above lives in `localStorage` (`atlas_grand_trips`,
 `atlas_route_blocks_library`) — see [`ROUTE_BUILDER_SYNC.md`](ROUTE_BUILDER_SYNC.md)
@@ -79,11 +87,22 @@ for the plan to move it into the Google Sheet.
   done, paste the current Apps Script `doPost` code into a Claude Code conversation so
   it can add a branch for `GrandTrip*` payloads without breaking the existing
   country-status sync from the map.
-- **All four seeded expeditions need real numbers** — they have their countries
-  (and, for Eurasia/Pan-American, regions) filled in, but no days or budget per
-  country (not specified in the original brainstorm prompts). Middle East & Africa
-  and Ancient Civilizations also have no blocks yet at all — that's intentional,
-  see above.
+- **Days/budget/destinations/transport are estimates, not researched bookings** —
+  all seven expeditions now have realistic-sounding per-country days, budgets (EUR),
+  destination lists and transport notes (drafted country-by-country), but none of it
+  has been checked against real prices, current border/visa rules, or your own travel
+  preferences. Treat it as a first draft to edit, not a plan to book.
+  - The Antarctica leg's budget (Patagonia & Antarctica Expedition) reflects a real
+    expedition-cruise price point, not backpacker-style estimates like the rest.
+  - Several Arctic Circle Expedition legs (Svalbard, Faroe Islands, Iceland,
+    Greenland) are flight-only hops, not one continuous overland route — the
+    Transport-to-next notes call this out per leg.
+- **Region-level Season/Budget still empty** — Eurasia Grand Tour and Pan-American
+  Grand Tour have regions (Balkans, Caucasus, Central Asia, etc.) but the Season and
+  Budget fields on each region are still blank; only the per-country fields were filled.
+- **Route-level Travel Style / Best Starting Month / Climate Summary mostly empty** —
+  only Pan-American Grand Tour has a Best Starting Month set. The other six expeditions
+  don't have a Travel Style, Best Starting Month or Climate Summary yet.
 - **Some seeded blocks overlap with data that already exists** — worth
   cross-checking before treating them as final:
   - "Balkans" (Eurasia Grand Tour) is identical to the existing "Balkan Loop" trip

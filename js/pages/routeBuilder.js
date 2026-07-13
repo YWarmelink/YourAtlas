@@ -10,6 +10,10 @@ const RB_LIBRARY_KEY = 'atlas_route_blocks_library';
 const RB_SEED_FLAG_KEY = 'atlas_grand_trips_seeded_v1';
 const RB_SEED_FLAG_KEY_MEA = 'atlas_grand_trips_seeded_mea_v1';
 const RB_SEED_FLAG_KEY_ANCIENT = 'atlas_grand_trips_seeded_ancient_v1';
+const RB_SEED_FLAG_KEY_ARCTIC = 'atlas_grand_trips_seeded_arctic_v1';
+const RB_SEED_FLAG_KEY_PATAGONIA = 'atlas_grand_trips_seeded_patagonia_v1';
+const RB_SEED_FLAG_KEY_HIMALAYA = 'atlas_grand_trips_seeded_himalaya_v1';
+const RB_CONTENT_PATCH_FLAG = 'atlas_grand_trips_content_patch_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
 
@@ -25,6 +29,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbSeedPredefinedExpeditions();
   rbSeedMEAExpedition();
   rbSeedAncientCivilizationsExpedition();
+  rbSeedArcticCircleExpedition();
+  rbSeedPatagoniaAntarcticaExpedition();
+  rbSeedHimalayaIndiaExpedition();
+  rbPatchExpeditionContent();
   rbBindEvents();
 
   try {
@@ -350,6 +358,11 @@ function rbRenderBlockRow(b, r, route) {
         <div class="rb-field rb-field-notes">
           <label>Note <span class="rb-optional">optional</span></label>
           <textarea class="rb-input rb-input-notes" placeholder="Short note about this leg… cities, visa, ideas">${escapeHTML(b.notes || '')}</textarea>
+        </div>
+
+        <div class="rb-field rb-field-transport">
+          <label>Transport to next <span class="rb-optional">optional</span></label>
+          <input type="text" class="rb-input rb-input-transport" placeholder="e.g. flight, overnight bus, ferry…" value="${escapeHTML(b.transport_to_next || '')}">
         </div>
 
         <div class="rb-destinations">
@@ -682,7 +695,10 @@ function rbBindEvents() {
     if (!route || !route.blocks.length) { alert('Add at least one country block first.'); return; }
     const name = prompt('Name for this saved block:', route.name || 'New Block');
     if (!name) return;
-    const blocks = route.blocks.map(b => ({ country: b.country, country_code: b.country_code, days: b.days, budget: b.budget, notes: b.notes }));
+    const blocks = route.blocks.map(b => ({
+      country: b.country, country_code: b.country_code, days: b.days, budget: b.budget, notes: b.notes,
+      transport_to_next: b.transport_to_next, destinations: (b.destinations || []).map(d => ({ name: d.name, notes: d.notes })),
+    }));
     rbLibrary.unshift({ id: rbNewLibId(), name, blocks, created_at: new Date().toISOString() });
     rbSaveLibrary();
     rbRenderInsertSelect();
@@ -697,7 +713,8 @@ function rbBindEvents() {
 
     const copies = item.blocks.map(b => ({
       id: rbNewBlockId(), country: b.country, country_code: b.country_code,
-      days: b.days, budget: b.budget, notes: b.notes,
+      days: b.days, budget: b.budget, notes: b.notes, transport_to_next: b.transport_to_next || '',
+      destinations: (b.destinations || []).map(d => ({ id: rbNewDestId(), name: d.name, notes: d.notes || '' })),
     }));
     route.blocks.push(...copies);
     rbSave();
@@ -813,7 +830,7 @@ function rbBindEvents() {
   document.getElementById('addBlockBtn').addEventListener('click', () => {
     const route = rbGetCurrent();
     if (!route) return;
-    route.blocks.push({ id: rbNewBlockId(), country: '', country_code: '', region_id: '', days: 7, budget: '', notes: '', destinations: [] });
+    route.blocks.push({ id: rbNewBlockId(), country: '', country_code: '', region_id: '', days: 7, budget: '', notes: '', transport_to_next: '', destinations: [] });
     rbSave();
     rbRenderEditor();
   });
@@ -849,6 +866,8 @@ function rbBindEvents() {
         block.budget = e.target.value === '' ? '' : parseFloat(e.target.value);
       } else if (e.target.classList.contains('rb-input-notes')) {
         block.notes = e.target.value;
+      } else if (e.target.classList.contains('rb-input-transport')) {
+        block.transport_to_next = e.target.value;
       } else {
         return;
       }
@@ -958,10 +977,20 @@ function rbBuildBlock(countryCode, countryName, opts = {}) {
     country: countryName,
     country_code: countryCode,
     region_id: opts.region_id || '',
-    days: '',
-    budget: '',
-    notes: '',
-    destinations: [],
+    days: opts.days ?? '',
+    budget: opts.budget ?? '',
+    notes: opts.notes || '',
+    transport_to_next: opts.transport_to_next || '',
+    destinations: (opts.destinations || []).map(d => ({ id: rbNewDestId(), name: d, notes: '' })),
+  };
+}
+
+/** A seed country entry is { code, name, days, budget, destinations: [string], transport_to_next, notes }. */
+function rbSeedBlockOpts(c, extraOpts = {}) {
+  return {
+    ...extraOpts,
+    days: c.days, budget: c.budget, notes: c.notes,
+    transport_to_next: c.transport_to_next, destinations: c.destinations,
   };
 }
 
@@ -972,8 +1001,8 @@ function rbBuildSeedRoute(name, regionDefs, extra = {}) {
 
   const blocks = [];
   regionDefs.forEach((rd, i) => {
-    rd.countries.forEach(([code, countryName]) => {
-      blocks.push(rbBuildBlock(code, countryName, { region_id: regions[i].id }));
+    rd.countries.forEach(c => {
+      blocks.push(rbBuildBlock(c.code, c.name, rbSeedBlockOpts(c, { region_id: regions[i].id })));
     });
   });
 
@@ -994,7 +1023,7 @@ function rbBuildSeedRoute(name, regionDefs, extra = {}) {
 }
 
 function rbBuildFlatSeedRoute(name, countries, extra = {}) {
-  const blocks = countries.map(([code, countryName]) => rbBuildBlock(code, countryName));
+  const blocks = countries.map(c => rbBuildBlock(c.code, c.name, rbSeedBlockOpts(c)));
 
   return {
     id: 'gt_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6),
@@ -1012,38 +1041,148 @@ function rbBuildFlatSeedRoute(name, countries, extra = {}) {
   };
 }
 
+// Per-country content (days, budget, destinations, transport to the next leg) for every seeded
+// expedition, keyed by expedition name then ISO country code. Single source of truth used both
+// when seeding a fresh route and when patching an already-seeded one (see rbPatchExpeditionContent).
+const RB_EXPEDITION_CONTENT = {
+  "Eurasia Grand Tour": {
+    BA: { days: 4, budget: 200, destinations: ["Sarajevo", "Mostar", "Blagaj", "Trebinje"], transport_to_next: "Bus over land (Mostar/Sarajevo naar Dubrovnik of Split), rechtstreekse grensovergang, geen visum nodig" },
+    HR: { days: 8, budget: 700, destinations: ["Dubrovnik", "Split", "Hvar", "Plitvicemeren", "Zagreb"], transport_to_next: "Bus langs de kust Dubrovnik-Kotor, korte grensovergang, drukte mogelijk in hoogseizoen" },
+    ME: { days: 4, budget: 250, destinations: ["Kotor", "Perast", "Budva", "Durmitor NP"], transport_to_next: "Bus Kotor/Podgorica naar Tirana of Shkodër, over land, eenvoudige grensovergang" },
+    AL: { days: 5, budget: 250, destinations: ["Shkodër", "Tirana", "Berat", "Gjirokastër", "Sarandë"], transport_to_next: "Bus Tirana-Ohrid of Tirana-Skopje, over land, meerdere uren" },
+    MK: { days: 4, budget: 180, destinations: ["Ohrid", "Bitola", "Skopje"], transport_to_next: "Vlucht Skopje-Istanbul (bus zou via Bulgarije/Griekenland >20 uur duren, vlucht is realistischer)" },
+    TR: { days: 12, budget: 650, destinations: ["Istanbul", "Cappadocië", "Pamukkale", "Antalya", "Efeze", "Ankara", "Kars/Trabzon"], transport_to_next: "Bus of trein vanaf Kars/Trabzon naar Tbilisi, grensovergang bij Posof/Sarpi, geen visum nodig voor Georgië" },
+    GE: { days: 7, budget: 350, destinations: ["Tbilisi", "Kazbegi", "Sighnaghi", "Kutaisi", "Mestia (Svaneti)", "Batumi"], transport_to_next: "Marshrutka (deelbusje) Tbilisi-Yerevan, over land, eenvoudige grensovergang, geen visum nodig" },
+    AM: { days: 5, budget: 250, destinations: ["Yerevan", "Khor Virap", "Lake Sevan", "Dilijan", "Tatev"], transport_to_next: "Geen directe grens (gesloten wegens conflict) — terugreizen via Georgië (Tbilisi) naar Baku, over land plus korte vlucht of bus" },
+    AZ: { days: 5, budget: 300, destinations: ["Baku", "Gobustan", "Sheki", "Qabala"], transport_to_next: "Vlucht Baku-Almaty (de veerboot over de Kaspische Zee Baku-Aktau heeft geen vast schema en is onbetrouwbaar)" },
+    KZ: { days: 8, budget: 500, destinations: ["Almaty", "Charyn Canyon", "Turkistan", "Shymkent", "Nur-Sultan"], transport_to_next: "Bus of deeltaxi Almaty-Bishkek, over land, drukke maar eenvoudige grensovergang" },
+    KG: { days: 7, budget: 350, destinations: ["Bishkek", "Issyk-Kul", "Karakol", "Song-Kul", "Osh"], transport_to_next: "Deeljeep over de Pamir Highway Osh-Khorog, over land, ruw traject, GBAO-permit/visum voor Tadzjikistan nodig" },
+    TJ: { days: 8, budget: 400, destinations: ["Khorog", "Pamir Highway", "Murghab", "Iskanderkul", "Dushanbe"], transport_to_next: "Bus of deeltaxi Dushanbe-Samarkand, over land, grensovergang kan tijdrovend zijn" },
+    UZ: { days: 8, budget: 400, destinations: ["Tashkent", "Samarkand", "Bukhara", "Khiva"], transport_to_next: "Bus/taxi over land naar Turkmenabat, grensovergang met vooraf geregeld Turkmeens transitvisum verplicht" },
+    TM: { days: 3, budget: 300, destinations: ["Ashgabat", "Darvaza (Gaskrater)", "Konye-Urgench", "Merv"], transport_to_next: "Vlucht Ashgabat-Urumqi (geen grens met China; overland zou moeten via Oezbekistan/Kirgizië, transitvisum laat maar kort verblijf toe)" },
+    CN: { days: 12, budget: 700, destinations: ["Kashgar", "Ürümqi", "Xi'an", "Chengdu", "Beijing", "Shanghai"], transport_to_next: "Trein Beijing-Ulaanbaatar (Trans-Mongolië-route), over land, visum voor Mongolië nodig" },
+    MN: { days: 6, budget: 350, destinations: ["Ulaanbaatar", "Terelj NP", "Kharkhorin", "Gobiwoestijn"], transport_to_next: "Vlucht Ulaanbaatar-Tokyo (via Beijing/Seoul, geen directe vlucht en geen landroute mogelijk)" },
+    JP: { days: 12, budget: 1800, destinations: ["Tokyo", "Hakone/Fuji", "Kyoto", "Nara", "Osaka", "Hiroshima"], transport_to_next: "Vlucht Osaka/Tokyo-Taipei, korte vlucht, geen visum nodig voor Taiwan" },
+    TW: { days: 6, budget: 450, destinations: ["Taipei", "Taroko-kloof", "Sun Moon Lake", "Tainan", "Kenting"], transport_to_next: "Vlucht Taipei-Hanoi, geen directe ferry/landroute beschikbaar" },
+    VN: { days: 10, budget: 450, destinations: ["Hanoi", "Ha Long Bay", "Hue", "Hoi An", "Da Lat", "Ho Chi Minh City"], transport_to_next: "Nachtbus Hanoi-Vientiane, over land, grensovergang bij Cau Treo, lange rit (~24u)" },
+    LA: { days: 7, budget: 300, destinations: ["Luang Prabang", "Vang Vieng", "Vientiane", "Si Phan Don (4000 eilanden)"], transport_to_next: "Bus Si Phan Don/Pakse-Siem Reap, over land, grensovergang bij Nong Nokkhien/Trapeang Kriel" },
+    KH: { days: 7, budget: 300, destinations: ["Siem Reap", "Angkor Wat", "Battambang", "Phnom Penh", "Koh Rong"], transport_to_next: "Bus Phnom Penh/Siem Reap-Bangkok, over land, grensovergang bij Poipet" },
+    TH: { days: 10, budget: 500, destinations: ["Bangkok", "Ayutthaya", "Sukhothai", "Chiang Mai", "Krabi/eilanden"], transport_to_next: "Vlucht Bangkok-Yangon (overland grensovergangen voor toeristen beperkt/onbetrouwbaar)" },
+    MM: { days: 7, budget: 300, destinations: ["Yangon", "Bagan", "Mandalay", "Inle Lake"], transport_to_next: "Vlucht Yangon-Kuala Lumpur (geen praktische overland route; check actuele reisadviezen wegens politieke situatie)" },
+    MY: { days: 8, budget: 400, destinations: ["Kuala Lumpur", "Cameron Highlands", "Penang", "Malacca", "Langkawi"], transport_to_next: "Trein of bus Kuala Lumpur-Singapore, over land, eenvoudige grensovergang" },
+    SG: { days: 3, budget: 450, destinations: ["Marina Bay", "Chinatown", "Sentosa", "Gardens by the Bay"], transport_to_next: "Vlucht Singapore-Bandar Seri Begawan, geen directe landroute/ferry praktisch" },
+    BN: { days: 2, budget: 200, destinations: ["Bandar Seri Begawan", "Kampong Ayer", "Ulu Temburong NP"], transport_to_next: "Vlucht Bandar Seri Begawan-Manila, meestal met overstap in Kota Kinabalu of Kuala Lumpur" },
+    PH: { days: 10, budget: 450, destinations: ["Manila", "Banaue", "Palawan (El Nido)", "Cebu", "Bohol", "Siargao"], transport_to_next: "Vlucht Manila/Cebu-Jakarta of Denpasar, doorgaans met overstap in Singapore of Kuala Lumpur" },
+    ID: { days: 12, budget: 500, destinations: ["Jakarta", "Yogyakarta", "Borobudur", "Ubud (Bali)", "Gili-eilanden", "Lombok", "Komodo"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Denpasar (Bali) of Jakarta" },
+  },
+  "Pan-American Grand Tour": {
+    MX: { days: 28, budget: 1000, destinations: ["Ciudad de México", "Oaxaca", "Palenque", "Mérida", "Tulum", "Bacalar", "San Cristóbal de las Casas"], transport_to_next: "Bus over land via de grensovergang La Mesilla/El Carmen naar Huehuetenango, Guatemala." },
+    GT: { days: 14, budget: 350, destinations: ["Quetzaltenango (Xela)", "Lake Atitlán", "Antigua", "Ciudad de Guatemala", "Semuc Champey", "Flores & Tikal"], transport_to_next: "Bus over land vanaf Flores naar de grensovergang bij Melchor de Menchos, door naar San Ignacio, Belize." },
+    BZ: { days: 8, budget: 450, destinations: ["San Ignacio", "Belize City", "Caye Caulker", "Ambergris Caye (San Pedro)", "Hopkins/Dangriga", "Placencia"], transport_to_next: "Veerboot vanaf Placencia/Dangriga (via Livingston, Guatemala) naar Puerto Cortés, Honduras." },
+    HN: { days: 12, budget: 320, destinations: ["Puerto Cortés", "Copán Ruinas", "Lago de Yojoa", "Tegucigalpa", "La Ceiba", "Roatán"], transport_to_next: "Bus over land via de grensovergang El Amatillo naar El Salvador." },
+    SV: { days: 8, budget: 220, destinations: ["San Salvador", "Santa Ana", "Cerro Verde & vulkanen", "Ruta de las Flores (Juayúa, Ataco)", "El Tunco", "Suchitoto"], transport_to_next: "Bus over land via Honduras (transit) naar de grensovergang El Espino/Guasaule, richting León, Nicaragua." },
+    NI: { days: 14, budget: 320, destinations: ["León", "Managua", "Granada", "Isla de Ometepe", "Laguna de Apoyo", "San Juan del Sur"], transport_to_next: "Bus over land via de grensovergang Peñas Blancas naar Costa Rica." },
+    CR: { days: 18, budget: 850, destinations: ["Liberia", "La Fortuna/Arenal", "Monteverde", "Santa Teresa", "Manuel Antonio", "Puerto Viejo de Talamanca"], transport_to_next: "Bus over land via de grensovergang Sixaola/Guabito naar Bocas del Toro, Panama." },
+    PA: { days: 12, budget: 500, destinations: ["Bocas del Toro", "Boquete", "Ciudad van Panama", "Casco Viejo", "Panamakanaal", "San Blas-eilanden"], transport_to_next: "Zeilboot (4-5 dagen) via de San Blas-eilanden naar Cartagena, Colombia — geen wegverbinding door de Darién Gap." },
+    CO: { days: 35, budget: 1000, destinations: ["Cartagena", "Santa Marta", "Parque Tayrona", "Medellín", "Salento & Koffiezone", "Bogotá", "San Agustín"], transport_to_next: "Bus over land via Pasto naar de grensovergang Ipiales–Tulcán, door naar Quito, Ecuador." },
+    EC: { days: 22, budget: 950, destinations: ["Quito", "Otavalo", "Mindo", "Baños", "Cuenca", "Galápagos-eilanden"], transport_to_next: "Bus over land via de grensovergang Huaquillas/Tumbes naar Noord-Peru, richting Máncora." },
+    PE: { days: 35, budget: 1050, destinations: ["Máncora", "Huaraz", "Lima", "Ica & Huacachina", "Arequipa", "Cusco & Vallei van de Inca's", "Puno (Titicacameer)"], transport_to_next: "Bus/boot van Puno via de grensovergang Yunguyo of Desaguadero naar Copacabana en La Paz, Bolivia." },
+    BO: { days: 20, budget: 400, destinations: ["Copacabana", "La Paz", "Uyuni-zoutvlakte", "Sucre", "Potosí", "Santa Cruz"], transport_to_next: "Jeeptocht via de Uyuni-zoutvlaktetour (3 dagen) over land naar San Pedro de Atacama, Chili." },
+    CL: { days: 12, budget: 480, destinations: ["San Pedro de Atacama", "Valle de la Luna", "Valle del Arcoíris", "Antofagasta", "Iquique"], transport_to_next: "Bus over land via de grensovergang Paso de Jama naar Salta/Jujuy, Argentinië." },
+    AR: { days: 14, budget: 500, destinations: ["Salta", "Cafayate", "Purmamarca", "Salinas Grandes", "Tilcara", "Humahuaca"], transport_to_next: "Vlucht van Salta (via Buenos Aires) naar Foz do Iguaçu of São Paulo, Brazilië — over land is dit een reis van meerdere dagen." },
+    BR: { days: 22, budget: 1000, destinations: ["Foz do Iguaçu (Iguazu-watervallen)", "Curitiba", "Ilha do Mel", "Florianópolis", "São Paulo", "Paraty", "Rio de Janeiro"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Rio de Janeiro (Galeão) of São Paulo (Guarulhos)." },
+  },
+  "Middle East & Africa Expedition": {
+    JO: { days: 12, budget: 950, destinations: ["Amman", "Jerash", "Wadi Rum", "Petra", "Dana Biosphere Reserve", "Dead Sea", "Aqaba"], transport_to_next: "Veerboot vanuit Aqaba naar Nuweiba (Sinaï); bij onregelmatige dienstregeling vlucht Amman-Caïro als alternatief." },
+    EG: { days: 21, budget: 1300, destinations: ["Caïro", "Gizeh", "Dahab", "Luxor", "Nijlcruise/felucca", "Aswan", "Alexandrië"], transport_to_next: "Vlucht Caïro-Muscat, geen directe landroute mogelijk over de Rode Zee." },
+    OM: { days: 12, budget: 1400, destinations: ["Muscat", "Nizwa", "Jebel Shams", "Wahiba Sands", "Sur", "Salalah"], transport_to_next: "Vlucht Muscat-Addis Abeba, geen landroute over de Arabische Zee of via Jemen (veiligheidssituatie)." },
+    ET: { days: 18, budget: 1300, destinations: ["Addis Abeba", "Lalibela", "Simien Mountains", "Gondar", "Danakil Depressie", "Omo Valley"], transport_to_next: "Over land via grensovergang Moyale (ruig, meerdaagse busrit), of vlucht Addis Abeba-Nairobi bij twijfel over veiligheid/wegconditie." },
+    KE: { days: 18, budget: 2200, destinations: ["Nairobi", "Maasai Mara", "Lake Nakuru", "Amboseli", "Mount Kenya", "Diani Beach/Mombasa"], transport_to_next: "Bus over land Nairobi-Kampala via grensovergang Busia of Malaba, goed begaanbare route." },
+    UG: { days: 14, budget: 1800, destinations: ["Kampala", "Jinja", "Kibale Forest", "Queen Elizabeth NP", "Bwindi Impenetrable Forest (gorilla's)", "Murchison Falls"], transport_to_next: "Bus over land Kampala-Kigali via grensovergang Gatuna/Katuna, vlotte verbinding." },
+    RW: { days: 8, budget: 1800, destinations: ["Kigali", "Volcanoes NP (gorillatrekking)", "Lake Kivu", "Nyungwe Forest"], transport_to_next: "Over land Kigali-Mwanza via grensovergang Rusumo en bootverbinding over het Victoriameer, of vlucht Kigali-Kilimanjaro/Dar es Salaam." },
+    TZ: { days: 24, budget: 2800, destinations: ["Arusha", "Ngorongoro Crater", "Serengeti", "Lake Manyara", "Zanzibar", "Kilimanjaro (regio)", "Dar es Salaam"], transport_to_next: "Vlucht Zanzibar/Dar es Salaam-Antananarivo, geen land- of veerbootverbinding mogelijk." },
+    MG: { days: 18, budget: 1400, destinations: ["Antananarivo", "Andasibe-Mantadia", "Avenue of the Baobabs", "Morondava", "Isalo NP", "Nosy Be"], transport_to_next: "Vlucht Antananarivo-Port Louis, geen andere optie beschikbaar." },
+    MU: { days: 7, budget: 1000, destinations: ["Port Louis", "Grand Baie", "Black River Gorges NP", "Chamarel", "Île aux Cerfs"], transport_to_next: "Vlucht Port Louis-Lilongwe, meestal met overstap in Johannesburg of Nairobi." },
+    MW: { days: 12, budget: 700, destinations: ["Lilongwe", "Lake Malawi (Cape Maclear)", "Liwonde NP", "Zomba Plateau", "Mount Mulanje"], transport_to_next: "Over land via grensovergang Mandimba of Zobwe/Zóbuè richting Mozambique." },
+    MZ: { days: 14, budget: 1000, destinations: ["Ilha de Moçambique", "Nampula", "Tofo", "Inhambane", "Bazaruto Archipel", "Maputo"], transport_to_next: "Over land via de Tete-corridor en grensovergang Cassacatiza/Zóbuè richting Zambia." },
+    ZM: { days: 14, budget: 1600, destinations: ["Lusaka", "South Luangwa NP", "Lower Zambezi NP", "Livingstone/Victoria Falls"], transport_to_next: "Over land via de grensovergang bij Victoria Falls/Livingstone naar Zimbabwe." },
+    ZW: { days: 12, budget: 1100, destinations: ["Victoria Falls", "Hwange NP", "Mana Pools", "Great Zimbabwe", "Bulawayo"], transport_to_next: "Over land via grensovergang Kazungula of Plumtree richting Botswana." },
+    BW: { days: 14, budget: 2200, destinations: ["Kasane", "Chobe NP", "Okavango Delta (Maun)", "Makgadikgadi Pans", "Central Kalahari"], transport_to_next: "Over land via grensovergang Mamuno/Buitepos richting Namibië." },
+    NA: { days: 18, budget: 1800, destinations: ["Windhoek", "Sossusvlei/Namib-Naukluft", "Swakopmund", "Damaraland", "Etosha NP", "Fish River Canyon"], transport_to_next: "Over land via grensovergang Vioolsdrif/Noordoewer richting Zuid-Afrika (zelf rijden)." },
+    ZA: { days: 24, budget: 2000, destinations: ["Kaapstad", "Winelands (Stellenbosch)", "Garden Route", "Addo Elephant Park", "Kruger NP", "Johannesburg", "Drakensberg"], transport_to_next: "Over land de enclave Lesotho in via grensovergang Maseru Bridge (of avontuurlijker via Sani Pass)." },
+    LS: { days: 6, budget: 350, destinations: ["Maseru", "Malealea", "Sani Pass/Thaba-Bosiu", "Roma", "Semonkong"], transport_to_next: "Over land terug door Zuid-Afrika naar grensovergang Golela/Lavumisa richting Eswatini." },
+    SZ: { days: 5, budget: 300, destinations: ["Mbabane", "Ezulwini Valley", "Mlilwane Wildlife Sanctuary", "Hlane Royal National Park"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit King Mswati III International Airport (Matsapha), eventueel via OR Tambo Johannesburg." },
+  },
+  "Ancient Civilizations Expedition": {
+    MA: { days: 12, budget: 550, destinations: ["Casablanca", "Chefchaouen", "Fès", "Atlasgebergte", "Aït Ben Haddou", "Merzouga (Sahara)", "Marrakech", "Essaouira"], transport_to_next: "Vlucht van Marrakech of Casablanca naar Tunis — geen praktische veerbootverbinding, directe vluchten beperkt maar standaard route" },
+    TN: { days: 7, budget: 230, destinations: ["Tunis", "Carthago", "Sidi Bou Said", "Dougga", "El Jem", "Tozeur", "Sahara"], transport_to_next: "Vlucht van Tunis naar Caïro — geen praktische land- of veerbootroute vanwege de grenssituatie via Libië" },
+    EG: { days: 14, budget: 650, destinations: ["Caïro", "Piramides van Gizeh", "Saqqara", "Luxor", "Karnak", "Vallei der Koningen", "Aswan", "Abu Simbel"], transport_to_next: "Veerboot van Nuweiba naar Aqaba (alternatief: vlucht Caïro–Amman)" },
+    JO: { days: 8, budget: 500, destinations: ["Wadi Rum", "Petra", "Dana Biosphere Reserve", "Dode Zee", "Amman", "Jerash"], transport_to_next: "Vlucht van Amman naar Muscat — geen landroute, aangezien overland via Saoedi-Arabië visumtechnisch onpraktisch is" },
+    OM: { days: 7, budget: 600, destinations: ["Muscat", "Nizwa", "Jebel Akhdar", "Wahiba Sands", "Wadi Shab", "Sur"], transport_to_next: "Over land naar de Verenigde Arabische Emiraten via de grensovergang bij Hatta — eenvoudige doorreis, geen visum nodig" },
+    AE: { days: 5, budget: 700, destinations: ["Hatta", "Dubai", "Woestijn", "Abu Dhabi"], transport_to_next: "Vlucht van Dubai naar Larnaca — geen directe verbinding over land of zee" },
+    CY: { days: 5, budget: 450, destinations: ["Larnaca", "Nicosia", "Troodos Mountains", "Paphos"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Larnaca" },
+  },
+  "Arctic Circle Expedition": {
+    FI: { days: 6, budget: 900, destinations: ["Helsinki", "Rovaniemi", "Inari", "Lemmenjoki National Park"], transport_to_next: "Trein of bus van Rovaniemi naar Kiruna (over land, via Zweeds Lapland)" },
+    SE: { days: 5, budget: 800, destinations: ["Kiruna", "Sami-cultuur", "Abisko National Park"], transport_to_next: "Trein Kiruna–Narvik (Malmbanan/Ofotbanen, over land, spectaculaire bergroute)" },
+    NO: { days: 12, budget: 1800, destinations: ["Narvik", "Lofoten", "Senja", "Tromsø", "Noordkaap"], transport_to_next: "Vlucht vanaf Tromsø naar Longyearbyen (enige realistische verbinding naar Svalbard)" },
+    SJ: { days: 6, budget: 2800, destinations: ["Longyearbyen", "Bootexpedities", "Gletsjers", "Wildlife", "Middernachtzon"], transport_to_next: "Vlucht via Oslo naar Kopenhagen, aansluitend naar Vágar (Faeröer) — geen directe verbinding, dus omweg nodig" },
+    FO: { days: 5, budget: 1200, destinations: ["Tórshavn", "Saksun", "Gjógv", "Kliffen", "Wandelroutes"], transport_to_next: "Korte vlucht Vágar–Reykjavik (of seizoensgebonden veerboot Smyril Line, alleen in zomer)" },
+    IS: { days: 12, budget: 2400, destinations: ["Reykjavik", "Golden Circle", "Zuidkust", "Vatnajökull", "Jökulsárlón", "Snæfellsnes", "Akureyri"], transport_to_next: "Vlucht Reykjavik–Ilulissat (via Nuuk), geen veerverbinding mogelijk" },
+    GL: { days: 7, budget: 2600, destinations: ["Nuuk", "Inuitcultuur", "Ilulissat", "IJsfjord", "Disko Bay", "Boottochten"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Nuuk (via Reykjavik of Kopenhagen)" },
+  },
+  "Patagonia & Antarctica Expedition": {
+    CL: { days: 15, budget: 2000, destinations: ["Chiloé Island", "Puerto Montt", "Carretera Austral (Pumalín & Queulat)", "Puerto Río Tranquilo & Marble Caves", "Cerro Castillo", "Puerto Natales", "Torres del Paine National Park", "Punta Arenas"], transport_to_next: "Overland per bus vanaf Puerto Natales naar El Calafate (grensovergang Chili-Argentinië, ca. 5-6 uur)" },
+    AR: { days: 11, budget: 1450, destinations: ["El Calafate", "Perito Moreno Glacier", "El Chaltén", "Fitz Roy & Laguna de los Tres", "Cerro Torre", "Ushuaia", "Tierra del Fuego National Park", "Beagle Channel"], transport_to_next: "Inschepen in Ushuaia voor de expeditiecruise — oversteek van de Drake Passage (ca. 2 dagen varen)" },
+    AQ: { days: 11, budget: 9500, destinations: ["Expedition Cruise from Ushuaia", "South Shetland Islands", "Antarctic Peninsula", "Glaciers & Icebergs", "Penguin colonies", "Whales", "Return to Ushuaia"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Ushuaia" },
+  },
+  "Himalaya & India Expedition": {
+    IN: { days: 26, budget: 1100, destinations: ["Delhi", "Agra & Jaipur (Golden Triangle)", "Pushkar, Jodhpur & Jaisalmer (West-Rajasthan)", "Udaipur", "Amritsar", "Dharamshala & Manali", "Rishikesh", "Varanasi"], transport_to_next: "Bus/trein naar Sunauli en te voet de grensovergang naar Belahiya (Nepal), dan bus door naar Lumbini/Pokhara — alternatief: korte vlucht Varanasi-Kathmandu" },
+    NP: { days: 17, budget: 800, destinations: ["Lumbini", "Chitwan National Park", "Pokhara", "Annapurna Region", "Kathmandu", "Patan", "Bhaktapur"], transport_to_next: "Vlucht Kathmandu-Paro (spectaculaire Himalaya-vlucht, alleen door Drukair of Bhutan Airlines uitgevoerd, Bhutan-visum/permit vooraf regelen)" },
+    BT: { days: 7, budget: 2000, destinations: ["Paro", "Thimphu", "Dochula Pass", "Punakha", "Bumthang (optioneel)", "Tiger's Nest Monastery"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Paro International Airport" },
+  },
+};
+
+/** Looks up the seeded content for one country within one expedition — {code, name, days, budget, destinations, transport_to_next}. */
+function rbContentFor(routeName, code, name) {
+  const c = (RB_EXPEDITION_CONTENT[routeName] || {})[code] || {};
+  return { code, name, days: c.days, budget: c.budget, destinations: c.destinations, transport_to_next: c.transport_to_next };
+}
+
 function rbSeedPredefinedExpeditions() {
   if (localStorage.getItem(RB_SEED_FLAG_KEY)) return;
   localStorage.setItem(RB_SEED_FLAG_KEY, '1');
 
+  const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour', code, name);
   const eurasiaRoute = rbBuildSeedRoute('Eurasia Grand Tour', [
-    { name: 'Balkans', countries: [['BA', 'Bosnia and Herzegovina'], ['HR', 'Croatia'], ['ME', 'Montenegro'], ['AL', 'Albania'], ['MK', 'North Macedonia']] },
-    { name: 'Turkey', countries: [['TR', 'Turkey']] },
-    { name: 'Caucasus', countries: [['GE', 'Georgia'], ['AM', 'Armenia'], ['AZ', 'Azerbaijan']] },
-    { name: 'Central Asia', countries: [['KZ', 'Kazakhstan'], ['KG', 'Kyrgyzstan'], ['TJ', 'Tajikistan'], ['UZ', 'Uzbekistan'], ['TM', 'Turkmenistan']] },
-    { name: 'China', countries: [['CN', 'China']] },
-    { name: 'Mongolia', countries: [['MN', 'Mongolia']] },
-    { name: 'Japan', countries: [['JP', 'Japan']] },
-    { name: 'Taiwan', countries: [['TW', 'Taiwan']] },
-    { name: 'Mainland Southeast Asia', countries: [['VN', 'Vietnam'], ['LA', 'Laos'], ['KH', 'Cambodia'], ['TH', 'Thailand'], ['MM', 'Myanmar']] },
-    { name: 'Maritime Southeast Asia', countries: [['MY', 'Malaysia'], ['SG', 'Singapore'], ['BN', 'Brunei'], ['PH', 'Philippines']] },
-    { name: 'Indonesia', countries: [['ID', 'Indonesia']] },
+    { name: 'Balkans', countries: [eurasia('BA', 'Bosnia and Herzegovina'), eurasia('HR', 'Croatia'), eurasia('ME', 'Montenegro'), eurasia('AL', 'Albania'), eurasia('MK', 'North Macedonia')] },
+    { name: 'Turkey', countries: [eurasia('TR', 'Turkey')] },
+    { name: 'Caucasus', countries: [eurasia('GE', 'Georgia'), eurasia('AM', 'Armenia'), eurasia('AZ', 'Azerbaijan')] },
+    { name: 'Central Asia', countries: [eurasia('KZ', 'Kazakhstan'), eurasia('KG', 'Kyrgyzstan'), eurasia('TJ', 'Tajikistan'), eurasia('UZ', 'Uzbekistan'), eurasia('TM', 'Turkmenistan')] },
+    { name: 'China', countries: [eurasia('CN', 'China')] },
+    { name: 'Mongolia', countries: [eurasia('MN', 'Mongolia')] },
+    { name: 'Japan', countries: [eurasia('JP', 'Japan')] },
+    { name: 'Taiwan', countries: [eurasia('TW', 'Taiwan')] },
+    { name: 'Mainland Southeast Asia', countries: [eurasia('VN', 'Vietnam'), eurasia('LA', 'Laos'), eurasia('KH', 'Cambodia'), eurasia('TH', 'Thailand'), eurasia('MM', 'Myanmar')] },
+    { name: 'Maritime Southeast Asia', countries: [eurasia('MY', 'Malaysia'), eurasia('SG', 'Singapore'), eurasia('BN', 'Brunei'), eurasia('PH', 'Philippines')] },
+    { name: 'Indonesia', countries: [eurasia('ID', 'Indonesia')] },
   ], {
     description: 'Overland route across Eurasia, region by region — from the Balkans through the Caucasus and Central Asia to East and Southeast Asia.',
     notes: 'Imported from a ChatGPT brainstorm — country lists per region are a reasonable starting point, adjust freely. Some countries here (parts of the Balkans, Maritime SE Asia) may already be visited or planned in your Trips sheet — worth cross-checking and possibly reusing as Block Library items instead.',
   });
 
+  const panAm = (code, name) => rbContentFor('Pan-American Grand Tour', code, name);
   const panAmRoute = rbBuildSeedRoute('Pan-American Grand Tour', [
-    { name: 'Mexico', countries: [['MX', 'Mexico']] },
-    { name: 'Northern Central America', countries: [['GT', 'Guatemala'], ['BZ', 'Belize'], ['HN', 'Honduras'], ['SV', 'El Salvador']] },
-    { name: 'Southern Central America', countries: [['NI', 'Nicaragua'], ['CR', 'Costa Rica'], ['PA', 'Panama']] },
-    { name: 'Colombia', countries: [['CO', 'Colombia']] },
-    { name: 'Ecuador', countries: [['EC', 'Ecuador']] },
-    { name: 'Peru', countries: [['PE', 'Peru']] },
-    { name: 'Bolivia', countries: [['BO', 'Bolivia']] },
-    { name: 'Northern Chile', countries: [['CL', 'Chile']], note: 'Northern Chile only (Atacama, Antofagasta) — Patagonia is a separate future expedition.' },
-    { name: 'Northern Argentina', countries: [['AR', 'Argentina']], note: 'Northern Argentina only (Salta, Jujuy) — Patagonia is a separate future expedition.' },
-    { name: 'Southern Brazil', countries: [['BR', 'Brazil']], note: 'Southern Brazil only — Northern Brazil is a separate future expedition.' },
+    { name: 'Mexico', countries: [panAm('MX', 'Mexico')] },
+    { name: 'Northern Central America', countries: [panAm('GT', 'Guatemala'), panAm('BZ', 'Belize'), panAm('HN', 'Honduras'), panAm('SV', 'El Salvador')] },
+    { name: 'Southern Central America', countries: [panAm('NI', 'Nicaragua'), panAm('CR', 'Costa Rica'), panAm('PA', 'Panama')] },
+    { name: 'Colombia', countries: [panAm('CO', 'Colombia')] },
+    { name: 'Ecuador', countries: [panAm('EC', 'Ecuador')] },
+    { name: 'Peru', countries: [panAm('PE', 'Peru')] },
+    { name: 'Bolivia', countries: [panAm('BO', 'Bolivia')] },
+    { name: 'Northern Chile', countries: [panAm('CL', 'Chile')], note: 'Northern Chile only (Atacama, Antofagasta) — Patagonia is a separate future expedition.' },
+    { name: 'Northern Argentina', countries: [panAm('AR', 'Argentina')], note: 'Northern Argentina only (Salta, Jujuy) — Patagonia is a separate future expedition.' },
+    { name: 'Southern Brazil', countries: [panAm('BR', 'Brazil')], note: 'Southern Brazil only — Northern Brazil is a separate future expedition.' },
   ], {
     best_starting_month: 'November',
     description: 'Climate-optimized route down the Americas, from Mexico to southern Brazil.',
@@ -1058,26 +1197,12 @@ function rbSeedMEAExpedition() {
   if (localStorage.getItem(RB_SEED_FLAG_KEY_MEA)) return;
   localStorage.setItem(RB_SEED_FLAG_KEY_MEA, '1');
 
+  const mea = (code, name) => rbContentFor('Middle East & Africa Expedition', code, name);
   const meaRoute = rbBuildFlatSeedRoute('Middle East & Africa Expedition', [
-    ['JO', 'Jordan'],
-    ['EG', 'Egypt'],
-    ['OM', 'Oman'],
-    ['ET', 'Ethiopia'],
-    ['KE', 'Kenya'],
-    ['UG', 'Uganda'],
-    ['RW', 'Rwanda'],
-    ['TZ', 'Tanzania'],
-    ['MG', 'Madagascar'],
-    ['MU', 'Mauritius'],
-    ['MW', 'Malawi'],
-    ['MZ', 'Mozambique'],
-    ['ZM', 'Zambia'],
-    ['ZW', 'Zimbabwe'],
-    ['BW', 'Botswana'],
-    ['NA', 'Namibia'],
-    ['ZA', 'South Africa'],
-    ['LS', 'Lesotho'],
-    ['SZ', 'Eswatini'],
+    mea('JO', 'Jordan'), mea('EG', 'Egypt'), mea('OM', 'Oman'), mea('ET', 'Ethiopia'), mea('KE', 'Kenya'),
+    mea('UG', 'Uganda'), mea('RW', 'Rwanda'), mea('TZ', 'Tanzania'), mea('MG', 'Madagascar'), mea('MU', 'Mauritius'),
+    mea('MW', 'Malawi'), mea('MZ', 'Mozambique'), mea('ZM', 'Zambia'), mea('ZW', 'Zimbabwe'), mea('BW', 'Botswana'),
+    mea('NA', 'Namibia'), mea('ZA', 'South Africa'), mea('LS', 'Lesotho'), mea('SZ', 'Eswatini'),
   ], {
     description: 'Overland route from the Middle East through East Africa, the islands, and Southern Africa. Target duration ~12 months.',
     notes: 'Imported from a ChatGPT brainstorm — deliberately seeded with zero blocks (unlike Eurasia/Pan-American): group these 19 countries into your own blocks (e.g. Middle East, East Africa, Islands, Southern Africa, South Africa finale) via the region dropdown on each country, in whatever shape makes sense once you plan it for real. South Africa is already marked "visited" in your Countries sheet — worth checking before treating it as new.',
@@ -1091,18 +1216,89 @@ function rbSeedAncientCivilizationsExpedition() {
   if (localStorage.getItem(RB_SEED_FLAG_KEY_ANCIENT)) return;
   localStorage.setItem(RB_SEED_FLAG_KEY_ANCIENT, '1');
 
+  const ancient = (code, name) => rbContentFor('Ancient Civilizations Expedition', code, name);
   const ancientRoute = rbBuildFlatSeedRoute('Ancient Civilizations Expedition', [
-    ['MA', 'Morocco'],
-    ['TN', 'Tunisia'],
-    ['EG', 'Egypt'],
-    ['JO', 'Jordan'],
-    ['OM', 'Oman'],
-    ['AE', 'United Arab Emirates'],
-    ['CY', 'Cyprus'],
+    ancient('MA', 'Morocco'), ancient('TN', 'Tunisia'), ancient('EG', 'Egypt'), ancient('JO', 'Jordan'),
+    ancient('OM', 'Oman'), ancient('AE', 'United Arab Emirates'), ancient('CY', 'Cyprus'),
   ], {
     notes: 'Seeded with zero blocks — group these 7 countries into your own blocks via the region dropdown on each country whenever you\'re ready to plan it for real.',
   });
 
   rbRoutes.push(ancientRoute);
+  rbSave();
+}
+
+function rbSeedArcticCircleExpedition() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_ARCTIC)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_ARCTIC, '1');
+
+  const arctic = (code, name) => rbContentFor('Arctic Circle Expedition', code, name);
+  const arcticRoute = rbBuildFlatSeedRoute('Arctic Circle Expedition', [
+    arctic('FI', 'Finland'), arctic('SE', 'Sweden'), arctic('NO', 'Norway'), arctic('SJ', 'Svalbard'),
+    arctic('FO', 'Faroe Islands'), arctic('IS', 'Iceland'), arctic('GL', 'Greenland'),
+  ], {
+    notes: 'Imported from a ChatGPT brainstorm — seeded with zero blocks: group these 7 countries into your own blocks via the region dropdown whenever you\'re ready to plan it for real. Svalbard and the Faroe Islands may not yet appear in the Countries sheet dropdown — cosmetic only, the block still works. Several legs (Svalbard, Faroe, Iceland, Greenland) are flight-only hops rather than one continuous overland trip.',
+  });
+
+  rbRoutes.push(arcticRoute);
+  rbSave();
+}
+
+function rbSeedPatagoniaAntarcticaExpedition() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_PATAGONIA)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_PATAGONIA, '1');
+
+  const patagonia = (code, name) => rbContentFor('Patagonia & Antarctica Expedition', code, name);
+  const patagoniaRoute = rbBuildFlatSeedRoute('Patagonia & Antarctica Expedition', [
+    patagonia('CL', 'Chile'), patagonia('AR', 'Argentina'), patagonia('AQ', 'Antarctica'),
+  ], {
+    notes: 'Imported from a ChatGPT brainstorm — seeded with zero blocks: group these 3 countries into your own blocks via the region dropdown whenever you\'re ready to plan it for real. Chile and Argentina here are the southern (Patagonia) portions — the northern portions already appear in Pan-American Grand Tour. Antarctica may not yet appear in the Countries sheet dropdown — cosmetic only, the block still works. The Antarctica budget reflects a real expedition-cruise price, not a backpacker estimate.',
+  });
+
+  rbRoutes.push(patagoniaRoute);
+  rbSave();
+}
+
+function rbSeedHimalayaIndiaExpedition() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_HIMALAYA)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_HIMALAYA, '1');
+
+  const himalaya = (code, name) => rbContentFor('Himalaya & India Expedition', code, name);
+  const himalayaRoute = rbBuildFlatSeedRoute('Himalaya & India Expedition', [
+    himalaya('IN', 'India'), himalaya('NP', 'Nepal'), himalaya('BT', 'Bhutan'),
+  ], {
+    notes: 'Imported from a ChatGPT brainstorm — seeded with zero blocks: group these 3 countries into your own blocks via the region dropdown whenever you\'re ready to plan it for real.',
+  });
+
+  rbRoutes.push(himalayaRoute);
+  rbSave();
+}
+
+/**
+ * One-time patch that fills in days/budget/destinations/transport_to_next for every block of
+ * every seeded expedition already in localStorage, using RB_EXPEDITION_CONTENT. Only touches
+ * fields that are still empty, so any manual edits you've already made are left alone. This
+ * covers routes seeded before this content existed — fresh seeds get it directly via rbContentFor.
+ */
+function rbPatchExpeditionContent() {
+  if (localStorage.getItem(RB_CONTENT_PATCH_FLAG)) return;
+  localStorage.setItem(RB_CONTENT_PATCH_FLAG, '1');
+
+  rbRoutes.forEach(route => {
+    const content = RB_EXPEDITION_CONTENT[route.name];
+    if (!content) return;
+
+    route.blocks.forEach(block => {
+      const c = content[block.country_code];
+      if (!c) return;
+      if (block.days === '' || block.days == null) block.days = c.days;
+      if (block.budget === '' || block.budget == null) block.budget = c.budget;
+      if (!block.transport_to_next) block.transport_to_next = c.transport_to_next;
+      if (!block.destinations || !block.destinations.length) {
+        block.destinations = (c.destinations || []).map(d => ({ id: rbNewDestId(), name: d, notes: '' }));
+      }
+    });
+  });
+
   rbSave();
 }
