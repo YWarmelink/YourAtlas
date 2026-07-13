@@ -45,13 +45,15 @@ trips that span months, not weeks. Lives at `route-builder.html`.
 - **Block Library**: save a route as a reusable, named group of countries; insert it
   into any other route later (as an independent copy — editing one never affects the
   other), or merge 2+ saved blocks into a new combined block.
-- Three predefined routes — **Eurasia Grand Tour**, **Pan-American Grand Tour**, and
-  **Middle East & Africa Expedition** (all from ChatGPT brainstorms) — are seeded
-  once on first load, each gated by its own `localStorage` flag so adding a new one
-  later still seeds it into existing browsers. See "Needs attention" below.
-  Eurasia/Pan-American are seeded with countries pre-grouped into regions; Middle
-  East & Africa is seeded **flat, with zero regions** — group its 19 countries into
-  your own blocks via the region dropdown whenever you're ready to plan it for real.
+- Four predefined routes — **Eurasia Grand Tour**, **Pan-American Grand Tour**,
+  **Middle East & Africa Expedition**, and **Ancient Civilizations Expedition**
+  (all from ChatGPT brainstorms) — are seeded once on first load, each gated by its
+  own `localStorage` flag so adding a new one later still seeds it into existing
+  browsers. See "Needs attention" below. Eurasia/Pan-American are seeded with
+  countries pre-grouped into regions; Middle East & Africa and Ancient
+  Civilizations are seeded **flat, with zero regions** — that's now the default for
+  new expeditions — group their countries into your own blocks via the region
+  dropdown whenever you're ready to plan it for real.
 
 Everything above lives in `localStorage` (`atlas_grand_trips`,
 `atlas_route_blocks_library`) — see [`ROUTE_BUILDER_SYNC.md`](ROUTE_BUILDER_SYNC.md)
@@ -77,11 +79,11 @@ for the plan to move it into the Google Sheet.
   done, paste the current Apps Script `doPost` code into a Claude Code conversation so
   it can add a branch for `GrandTrip*` payloads without breaking the existing
   country-status sync from the map.
-- **The three seeded expeditions need real numbers** — Eurasia Grand Tour,
-  Pan-American Grand Tour and Middle East & Africa Expedition have their countries
-  (and, for the first two, regions) filled in, but no days or budget per country
-  (not specified in the original brainstorm prompts). Middle East & Africa also
-  has no blocks yet at all — that's intentional, see above.
+- **All four seeded expeditions need real numbers** — they have their countries
+  (and, for Eurasia/Pan-American, regions) filled in, but no days or budget per
+  country (not specified in the original brainstorm prompts). Middle East & Africa
+  and Ancient Civilizations also have no blocks yet at all — that's intentional,
+  see above.
 - **Some seeded blocks overlap with data that already exists** — worth
   cross-checking before treating them as final:
   - "Balkans" (Eurasia Grand Tour) is identical to the existing "Balkan Loop" trip
@@ -91,6 +93,9 @@ for the plan to move it into the Google Sheet.
   - South Africa (Middle East & Africa Expedition) is already marked "visited" in
     your Countries sheet — the local fallback data has no other overlap for this
     expedition's 19 countries, but worth double-checking the live sheet too.
+  - Morocco, the UAE and Cyprus (Ancient Civilizations Expedition) are already
+    marked "visited" in your Countries sheet — Egypt, Jordan and Oman also appear
+    in Middle East & Africa Expedition (fine, expeditions can share countries).
   - Consider whether these should be pulled in as Block Library items from existing
     trips instead of living as separate, possibly-duplicate data.
 - **Region grouping only holds together while contiguous** — a Regional Block is

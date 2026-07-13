@@ -9,6 +9,7 @@ const RB_STORAGE_KEY = 'atlas_grand_trips';
 const RB_LIBRARY_KEY = 'atlas_route_blocks_library';
 const RB_SEED_FLAG_KEY = 'atlas_grand_trips_seeded_v1';
 const RB_SEED_FLAG_KEY_MEA = 'atlas_grand_trips_seeded_mea_v1';
+const RB_SEED_FLAG_KEY_ANCIENT = 'atlas_grand_trips_seeded_ancient_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
 
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbLibrary = rbLoadLibrary();
   rbSeedPredefinedExpeditions();
   rbSeedMEAExpedition();
+  rbSeedAncientCivilizationsExpedition();
   rbBindEvents();
 
   try {
@@ -1082,5 +1084,25 @@ function rbSeedMEAExpedition() {
   });
 
   rbRoutes.push(meaRoute);
+  rbSave();
+}
+
+function rbSeedAncientCivilizationsExpedition() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_ANCIENT)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_ANCIENT, '1');
+
+  const ancientRoute = rbBuildFlatSeedRoute('Ancient Civilizations Expedition', [
+    ['MA', 'Morocco'],
+    ['TN', 'Tunisia'],
+    ['EG', 'Egypt'],
+    ['JO', 'Jordan'],
+    ['OM', 'Oman'],
+    ['AE', 'United Arab Emirates'],
+    ['CY', 'Cyprus'],
+  ], {
+    notes: 'Seeded with zero blocks — group these 7 countries into your own blocks via the region dropdown on each country whenever you\'re ready to plan it for real.',
+  });
+
+  rbRoutes.push(ancientRoute);
   rbSave();
 }
