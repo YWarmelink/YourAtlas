@@ -138,6 +138,11 @@ for the plan to move it into the Google Sheet.
   (Oceania may need custom entries for smaller Pacific island nations not yet in the
   Countries sheet) once you've decided which countries/islands each should cover —
   same process used to flesh out North America Grand Traverse.
+- **North Africa & Middle East Expedition 🏜️ still needs an update** — a later
+  brainstorm round proposed adding Bahrain and Qatar to this route (currently just
+  Morocco, Tunisia, Egypt, Jordan, Oman, UAE, Cyprus), logically between the UAE and
+  Cyprus. Not yet added — still needs confirming and then the same per-country
+  days/budget/destinations/transport treatment as the rest of the route.
 - **Some seeded blocks overlap with data that already exists** — worth
   cross-checking before treating them as final:
   - "Balkans" (Eurasia Grand Tour) is identical to the existing "Balkan Loop" trip
