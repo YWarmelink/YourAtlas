@@ -48,20 +48,46 @@ trips that span months, not weeks. Lives at `route-builder.html`.
 - **Block Library**: save a route as a reusable, named group of countries; insert it
   into any other route later (as an independent copy — editing one never affects the
   other), or merge 2+ saved blocks into a new combined block.
-- Seven predefined routes — **Eurasia Grand Tour**, **Pan-American Grand Tour**,
-  **Middle East & Africa Expedition**, **Ancient Civilizations Expedition**,
-  **Arctic Circle Expedition**, **Patagonia & Antarctica Expedition**, and
-  **Himalaya & India Expedition** (all from ChatGPT brainstorms) — are seeded once on
-  first load, each gated by its own `localStorage` flag so adding a new one later still
-  seeds it into existing browsers. Eurasia/Pan-American are seeded with countries
-  pre-grouped into regions; the other five are seeded **flat, with zero regions** —
-  group their countries into your own blocks via the region dropdown whenever you're
-  ready to plan it for real. All seven now have per-country days, an estimated budget,
-  a Destinations list and a Transport-to-next note, sourced from
-  `RB_EXPEDITION_CONTENT` in `js/pages/routeBuilder.js` — a one-time
-  `rbPatchExpeditionContent()` patch fills these in for anyone who already had the
-  routes seeded before this content existed, without touching fields you've since
-  edited yourself.
+- Eleven predefined routes, each with an emoji suffix as its final name — **Eurasia
+  Grand Tour 🌏**, **Pan-American Grand Tour 🌎**, **Africa Grand Tour 🌍**,
+  **North Africa & Middle East Expedition 🏜️**, **Nordic Arctic Expedition ❄️**,
+  **Patagonia & Antarctica Expedition 🧊**, **India & Himalaya Expedition 🏔️**,
+  **North America Grand Traverse 🌎**, **Oceania Grand Expedition 🌊**,
+  **Caribbean Expedition 🏝️**, and **West & Central Africa Expedition 🌍** — are
+  seeded once on first load, each gated by its own `localStorage` flag so adding a new
+  one later still seeds it into existing browsers. Eurasia/Pan-American/North America
+  are seeded with countries pre-grouped into regions; Africa/North Africa & Middle
+  East/Nordic Arctic/Patagonia & Antarctica/India & Himalaya are seeded **flat, with
+  zero regions** — group their countries into your own blocks via the region dropdown
+  whenever you're ready to plan it for real. Oceania/Caribbean/West & Central Africa
+  are **backbone-only**: name and emoji, zero country blocks, seeded that way on
+  purpose since the countries/islands for those three haven't been decided yet — add
+  blocks yourself once they are. The other eight now have per-country days, an
+  estimated budget, a Destinations list and a Transport-to-next note.
+  Eurasia/Pan-American/Africa/North Africa & Middle East/Nordic Arctic/Patagonia &
+  Antarctica/India & Himalaya source this from `RB_EXPEDITION_CONTENT` in
+  `js/pages/routeBuilder.js` — a one-time `rbPatchExpeditionContent()` patch fills
+  these in for anyone who already had the routes seeded before this content existed,
+  without touching fields you've since edited yourself. North America Grand Traverse
+  is seeded directly in its own `rbSeedNorthAmericaExpedition()` function instead,
+  since it revisits Canada and the US across six separate legs rather than having one
+  entry per country — a shape `RB_EXPEDITION_CONTENT` (keyed one-entry-per-country-code
+  per route) can't hold.
+- **Two rounds of renames**, both applied retroactively by one-time migrations in
+  `js/pages/routeBuilder.js` so they also land on routes already seeded into a
+  browser, without touching any fields you'd already edited yourself:
+  - `rbMigrateExpeditionRenames()` — "Middle East & Africa Expedition" became
+    **Africa Grand Tour**, with Jordan and Oman moved out to **Ancient Civilizations
+    Expedition** (which already had its own Jordan/Oman entries), so that route is
+    purely African countries plus Egypt as the historical/geographic gateway — Egypt
+    still appears in both since it fits both themes. "Arctic Circle Expedition" and
+    "Himalaya & India Expedition" were renamed to "Nordic Arctic Expedition" and
+    "India & Himalaya Expedition" (country lists unchanged for both).
+  - `rbMigrateExpeditionEmojiNames()` — added the emoji suffix to all eight
+    then-existing routes, and renamed "Ancient Civilizations Expedition" to
+    **North Africa & Middle East Expedition 🏜️** for a name that says which region
+    it actually covers (same seven countries: Morocco, Tunisia, Egypt, Jordan, Oman,
+    UAE, Cyprus).
 
 Everything above lives in `localStorage` (`atlas_grand_trips`,
 `atlas_route_blocks_library`) — see [`ROUTE_BUILDER_SYNC.md`](ROUTE_BUILDER_SYNC.md)
@@ -88,33 +114,48 @@ for the plan to move it into the Google Sheet.
   it can add a branch for `GrandTrip*` payloads without breaking the existing
   country-status sync from the map.
 - **Days/budget/destinations/transport are estimates, not researched bookings** —
-  all seven expeditions now have realistic-sounding per-country days, budgets (EUR),
-  destination lists and transport notes (drafted country-by-country), but none of it
-  has been checked against real prices, current border/visa rules, or your own travel
-  preferences. Treat it as a first draft to edit, not a plan to book.
+  the eight content-bearing expeditions (all except the three backbone-only ones:
+  Oceania, Caribbean, West & Central Africa) have realistic-sounding per-country days,
+  budgets (EUR), destination lists and transport notes (drafted country-by-country),
+  but none of it has been checked against real prices, current border/visa rules, or
+  your own travel preferences. Treat it as a first draft to edit, not a plan to book.
   - The Antarctica leg's budget (Patagonia & Antarctica Expedition) reflects a real
     expedition-cruise price point, not backpacker-style estimates like the rest.
-  - Several Arctic Circle Expedition legs (Svalbard, Faroe Islands, Iceland,
+  - Several Nordic Arctic Expedition legs (Svalbard, Faroe Islands, Iceland,
     Greenland) are flight-only hops, not one continuous overland route — the
     Transport-to-next notes call this out per leg.
 - **Region-level Season/Budget still empty** — Eurasia Grand Tour and Pan-American
   Grand Tour have regions (Balkans, Caucasus, Central Asia, etc.) but the Season and
   Budget fields on each region are still blank; only the per-country fields were filled.
 - **Route-level Travel Style / Best Starting Month / Climate Summary mostly empty** —
-  only Pan-American Grand Tour has a Best Starting Month set. The other six expeditions
-  don't have a Travel Style, Best Starting Month or Climate Summary yet.
+  only Pan-American Grand Tour and North America Grand Traverse have these set. The
+  other six content-bearing expeditions don't have a Travel Style, Best Starting Month
+  or Climate Summary yet (the three backbone-only ones don't have anything yet, by
+  design — they're waiting on a country list first).
+- **Three backbone-only expeditions still need their country list** — Oceania Grand
+  Expedition 🌊, Caribbean Expedition 🏝️ and West & Central Africa Expedition 🌍 exist
+  as named, empty routes with zero country blocks. Add blocks via the country dropdown
+  (Oceania may need custom entries for smaller Pacific island nations not yet in the
+  Countries sheet) once you've decided which countries/islands each should cover —
+  same process used to flesh out North America Grand Traverse.
 - **Some seeded blocks overlap with data that already exists** — worth
   cross-checking before treating them as final:
   - "Balkans" (Eurasia Grand Tour) is identical to the existing "Balkan Loop" trip
     already in your Trips sheet.
   - "Maritime Southeast Asia" (Eurasia Grand Tour) includes Malaysia, Brunei and
     Singapore, already marked "visited" in your Countries sheet.
-  - South Africa (Middle East & Africa Expedition) is already marked "visited" in
+  - South Africa (Africa Grand Tour) is already marked "visited" in
     your Countries sheet — the local fallback data has no other overlap for this
-    expedition's 19 countries, but worth double-checking the live sheet too.
-  - Morocco, the UAE and Cyprus (Ancient Civilizations Expedition) are already
-    marked "visited" in your Countries sheet — Egypt, Jordan and Oman also appear
-    in Middle East & Africa Expedition (fine, expeditions can share countries).
+    expedition's 17 countries, but worth double-checking the live sheet too.
+  - Canada and the United States (North America Grand Traverse) are both already
+    marked "visited" in your Countries sheet — that just reflects a prior, different
+    trip there, so it doesn't mean this specific route is redundant, but worth
+    keeping in mind.
+  - Morocco, the UAE and Cyprus (North Africa & Middle East Expedition) are already
+    marked "visited" in your Countries sheet — Egypt also appears in Africa Grand
+    Tour (fine, expeditions can share countries; Jordan and Oman used to be shared
+    the same way until they were moved fully into North Africa & Middle East
+    Expedition).
   - Consider whether these should be pulled in as Block Library items from existing
     trips instead of living as separate, possibly-duplicate data.
 - **Region grouping only holds together while contiguous** — a Regional Block is

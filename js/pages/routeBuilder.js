@@ -13,6 +13,12 @@ const RB_SEED_FLAG_KEY_ANCIENT = 'atlas_grand_trips_seeded_ancient_v1';
 const RB_SEED_FLAG_KEY_ARCTIC = 'atlas_grand_trips_seeded_arctic_v1';
 const RB_SEED_FLAG_KEY_PATAGONIA = 'atlas_grand_trips_seeded_patagonia_v1';
 const RB_SEED_FLAG_KEY_HIMALAYA = 'atlas_grand_trips_seeded_himalaya_v1';
+const RB_SEED_FLAG_KEY_NORTHAMERICA = 'atlas_grand_trips_seeded_northamerica_v1';
+const RB_SEED_FLAG_KEY_OCEANIA = 'atlas_grand_trips_seeded_oceania_v1';
+const RB_SEED_FLAG_KEY_CARIBBEAN = 'atlas_grand_trips_seeded_caribbean_v1';
+const RB_SEED_FLAG_KEY_WCAFRICA = 'atlas_grand_trips_seeded_wcafrica_v1';
+const RB_MIGRATE_FLAG_2026_07 = 'atlas_grand_trips_migrate_2026_07_v1';
+const RB_MIGRATE_FLAG_2026_07_EMOJI = 'atlas_grand_trips_migrate_2026_07_emoji_v1';
 const RB_CONTENT_PATCH_FLAG = 'atlas_grand_trips_content_patch_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -32,6 +38,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbSeedArcticCircleExpedition();
   rbSeedPatagoniaAntarcticaExpedition();
   rbSeedHimalayaIndiaExpedition();
+  rbSeedNorthAmericaExpedition();
+  rbSeedOceaniaExpedition();
+  rbSeedCaribbeanExpedition();
+  rbSeedWestCentralAfricaExpedition();
+  rbMigrateExpeditionRenames();
+  rbMigrateExpeditionEmojiNames();
   rbPatchExpeditionContent();
   rbBindEvents();
 
@@ -996,7 +1008,7 @@ function rbSeedBlockOpts(c, extraOpts = {}) {
 
 function rbBuildSeedRoute(name, regionDefs, extra = {}) {
   const regions = regionDefs.map(rd => ({
-    id: rbNewRegionId(), name: rd.name, season: '', budget: '', notes: rd.note || '', collapsed: false,
+    id: rbNewRegionId(), name: rd.name, season: rd.season || '', budget: rd.budget ?? '', notes: rd.note || '', collapsed: false,
   }));
 
   const blocks = [];
@@ -1045,7 +1057,7 @@ function rbBuildFlatSeedRoute(name, countries, extra = {}) {
 // expedition, keyed by expedition name then ISO country code. Single source of truth used both
 // when seeding a fresh route and when patching an already-seeded one (see rbPatchExpeditionContent).
 const RB_EXPEDITION_CONTENT = {
-  "Eurasia Grand Tour": {
+  "Eurasia Grand Tour 🌏": {
     BA: { days: 4, budget: 200, destinations: ["Sarajevo", "Mostar", "Blagaj", "Trebinje"], transport_to_next: "Bus over land (Mostar/Sarajevo naar Dubrovnik of Split), rechtstreekse grensovergang, geen visum nodig" },
     HR: { days: 8, budget: 700, destinations: ["Dubrovnik", "Split", "Hvar", "Plitvicemeren", "Zagreb"], transport_to_next: "Bus langs de kust Dubrovnik-Kotor, korte grensovergang, drukte mogelijk in hoogseizoen" },
     ME: { days: 4, budget: 250, destinations: ["Kotor", "Perast", "Budva", "Durmitor NP"], transport_to_next: "Bus Kotor/Podgorica naar Tirana of Shkodër, over land, eenvoudige grensovergang" },
@@ -1075,7 +1087,7 @@ const RB_EXPEDITION_CONTENT = {
     PH: { days: 10, budget: 450, destinations: ["Manila", "Banaue", "Palawan (El Nido)", "Cebu", "Bohol", "Siargao"], transport_to_next: "Vlucht Manila/Cebu-Jakarta of Denpasar, doorgaans met overstap in Singapore of Kuala Lumpur" },
     ID: { days: 12, budget: 500, destinations: ["Jakarta", "Yogyakarta", "Borobudur", "Ubud (Bali)", "Gili-eilanden", "Lombok", "Komodo"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Denpasar (Bali) of Jakarta" },
   },
-  "Pan-American Grand Tour": {
+  "Pan-American Grand Tour 🌎": {
     MX: { days: 28, budget: 1000, destinations: ["Ciudad de México", "Oaxaca", "Palenque", "Mérida", "Tulum", "Bacalar", "San Cristóbal de las Casas"], transport_to_next: "Bus over land via de grensovergang La Mesilla/El Carmen naar Huehuetenango, Guatemala." },
     GT: { days: 14, budget: 350, destinations: ["Quetzaltenango (Xela)", "Lake Atitlán", "Antigua", "Ciudad de Guatemala", "Semuc Champey", "Flores & Tikal"], transport_to_next: "Bus over land vanaf Flores naar de grensovergang bij Melchor de Menchos, door naar San Ignacio, Belize." },
     BZ: { days: 8, budget: 450, destinations: ["San Ignacio", "Belize City", "Caye Caulker", "Ambergris Caye (San Pedro)", "Hopkins/Dangriga", "Placencia"], transport_to_next: "Veerboot vanaf Placencia/Dangriga (via Livingston, Guatemala) naar Puerto Cortés, Honduras." },
@@ -1092,10 +1104,8 @@ const RB_EXPEDITION_CONTENT = {
     AR: { days: 14, budget: 500, destinations: ["Salta", "Cafayate", "Purmamarca", "Salinas Grandes", "Tilcara", "Humahuaca"], transport_to_next: "Vlucht van Salta (via Buenos Aires) naar Foz do Iguaçu of São Paulo, Brazilië — over land is dit een reis van meerdere dagen." },
     BR: { days: 22, budget: 1000, destinations: ["Foz do Iguaçu (Iguazu-watervallen)", "Curitiba", "Ilha do Mel", "Florianópolis", "São Paulo", "Paraty", "Rio de Janeiro"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Rio de Janeiro (Galeão) of São Paulo (Guarulhos)." },
   },
-  "Middle East & Africa Expedition": {
-    JO: { days: 12, budget: 950, destinations: ["Amman", "Jerash", "Wadi Rum", "Petra", "Dana Biosphere Reserve", "Dead Sea", "Aqaba"], transport_to_next: "Veerboot vanuit Aqaba naar Nuweiba (Sinaï); bij onregelmatige dienstregeling vlucht Amman-Caïro als alternatief." },
-    EG: { days: 21, budget: 1300, destinations: ["Caïro", "Gizeh", "Dahab", "Luxor", "Nijlcruise/felucca", "Aswan", "Alexandrië"], transport_to_next: "Vlucht Caïro-Muscat, geen directe landroute mogelijk over de Rode Zee." },
-    OM: { days: 12, budget: 1400, destinations: ["Muscat", "Nizwa", "Jebel Shams", "Wahiba Sands", "Sur", "Salalah"], transport_to_next: "Vlucht Muscat-Addis Abeba, geen landroute over de Arabische Zee of via Jemen (veiligheidssituatie)." },
+  "Africa Grand Tour 🌍": {
+    EG: { days: 21, budget: 1300, destinations: ["Caïro", "Gizeh", "Dahab", "Luxor", "Nijlcruise/felucca", "Aswan", "Alexandrië"], transport_to_next: "Vlucht Caïro-Addis Abeba, geen directe landroute mogelijk (via Jordanië/Oman verloopt nu via de aparte Ancient Civilizations Expedition)." },
     ET: { days: 18, budget: 1300, destinations: ["Addis Abeba", "Lalibela", "Simien Mountains", "Gondar", "Danakil Depressie", "Omo Valley"], transport_to_next: "Over land via grensovergang Moyale (ruig, meerdaagse busrit), of vlucht Addis Abeba-Nairobi bij twijfel over veiligheid/wegconditie." },
     KE: { days: 18, budget: 2200, destinations: ["Nairobi", "Maasai Mara", "Lake Nakuru", "Amboseli", "Mount Kenya", "Diani Beach/Mombasa"], transport_to_next: "Bus over land Nairobi-Kampala via grensovergang Busia of Malaba, goed begaanbare route." },
     UG: { days: 14, budget: 1800, destinations: ["Kampala", "Jinja", "Kibale Forest", "Queen Elizabeth NP", "Bwindi Impenetrable Forest (gorilla's)", "Murchison Falls"], transport_to_next: "Bus over land Kampala-Kigali via grensovergang Gatuna/Katuna, vlotte verbinding." },
@@ -1113,7 +1123,7 @@ const RB_EXPEDITION_CONTENT = {
     LS: { days: 6, budget: 350, destinations: ["Maseru", "Malealea", "Sani Pass/Thaba-Bosiu", "Roma", "Semonkong"], transport_to_next: "Over land terug door Zuid-Afrika naar grensovergang Golela/Lavumisa richting Eswatini." },
     SZ: { days: 5, budget: 300, destinations: ["Mbabane", "Ezulwini Valley", "Mlilwane Wildlife Sanctuary", "Hlane Royal National Park"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit King Mswati III International Airport (Matsapha), eventueel via OR Tambo Johannesburg." },
   },
-  "Ancient Civilizations Expedition": {
+  "North Africa & Middle East Expedition 🏜️": {
     MA: { days: 12, budget: 550, destinations: ["Casablanca", "Chefchaouen", "Fès", "Atlasgebergte", "Aït Ben Haddou", "Merzouga (Sahara)", "Marrakech", "Essaouira"], transport_to_next: "Vlucht van Marrakech of Casablanca naar Tunis — geen praktische veerbootverbinding, directe vluchten beperkt maar standaard route" },
     TN: { days: 7, budget: 230, destinations: ["Tunis", "Carthago", "Sidi Bou Said", "Dougga", "El Jem", "Tozeur", "Sahara"], transport_to_next: "Vlucht van Tunis naar Caïro — geen praktische land- of veerbootroute vanwege de grenssituatie via Libië" },
     EG: { days: 14, budget: 650, destinations: ["Caïro", "Piramides van Gizeh", "Saqqara", "Luxor", "Karnak", "Vallei der Koningen", "Aswan", "Abu Simbel"], transport_to_next: "Veerboot van Nuweiba naar Aqaba (alternatief: vlucht Caïro–Amman)" },
@@ -1122,7 +1132,7 @@ const RB_EXPEDITION_CONTENT = {
     AE: { days: 5, budget: 700, destinations: ["Hatta", "Dubai", "Woestijn", "Abu Dhabi"], transport_to_next: "Vlucht van Dubai naar Larnaca — geen directe verbinding over land of zee" },
     CY: { days: 5, budget: 450, destinations: ["Larnaca", "Nicosia", "Troodos Mountains", "Paphos"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Larnaca" },
   },
-  "Arctic Circle Expedition": {
+  "Nordic Arctic Expedition ❄️": {
     FI: { days: 6, budget: 900, destinations: ["Helsinki", "Rovaniemi", "Inari", "Lemmenjoki National Park"], transport_to_next: "Trein of bus van Rovaniemi naar Kiruna (over land, via Zweeds Lapland)" },
     SE: { days: 5, budget: 800, destinations: ["Kiruna", "Sami-cultuur", "Abisko National Park"], transport_to_next: "Trein Kiruna–Narvik (Malmbanan/Ofotbanen, over land, spectaculaire bergroute)" },
     NO: { days: 12, budget: 1800, destinations: ["Narvik", "Lofoten", "Senja", "Tromsø", "Noordkaap"], transport_to_next: "Vlucht vanaf Tromsø naar Longyearbyen (enige realistische verbinding naar Svalbard)" },
@@ -1131,12 +1141,12 @@ const RB_EXPEDITION_CONTENT = {
     IS: { days: 12, budget: 2400, destinations: ["Reykjavik", "Golden Circle", "Zuidkust", "Vatnajökull", "Jökulsárlón", "Snæfellsnes", "Akureyri"], transport_to_next: "Vlucht Reykjavik–Ilulissat (via Nuuk), geen veerverbinding mogelijk" },
     GL: { days: 7, budget: 2600, destinations: ["Nuuk", "Inuitcultuur", "Ilulissat", "IJsfjord", "Disko Bay", "Boottochten"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Nuuk (via Reykjavik of Kopenhagen)" },
   },
-  "Patagonia & Antarctica Expedition": {
+  "Patagonia & Antarctica Expedition 🧊": {
     CL: { days: 15, budget: 2000, destinations: ["Chiloé Island", "Puerto Montt", "Carretera Austral (Pumalín & Queulat)", "Puerto Río Tranquilo & Marble Caves", "Cerro Castillo", "Puerto Natales", "Torres del Paine National Park", "Punta Arenas"], transport_to_next: "Overland per bus vanaf Puerto Natales naar El Calafate (grensovergang Chili-Argentinië, ca. 5-6 uur)" },
     AR: { days: 11, budget: 1450, destinations: ["El Calafate", "Perito Moreno Glacier", "El Chaltén", "Fitz Roy & Laguna de los Tres", "Cerro Torre", "Ushuaia", "Tierra del Fuego National Park", "Beagle Channel"], transport_to_next: "Inschepen in Ushuaia voor de expeditiecruise — oversteek van de Drake Passage (ca. 2 dagen varen)" },
     AQ: { days: 11, budget: 9500, destinations: ["Expedition Cruise from Ushuaia", "South Shetland Islands", "Antarctic Peninsula", "Glaciers & Icebergs", "Penguin colonies", "Whales", "Return to Ushuaia"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Ushuaia" },
   },
-  "Himalaya & India Expedition": {
+  "India & Himalaya Expedition 🏔️": {
     IN: { days: 26, budget: 1100, destinations: ["Delhi", "Agra & Jaipur (Golden Triangle)", "Pushkar, Jodhpur & Jaisalmer (West-Rajasthan)", "Udaipur", "Amritsar", "Dharamshala & Manali", "Rishikesh", "Varanasi"], transport_to_next: "Bus/trein naar Sunauli en te voet de grensovergang naar Belahiya (Nepal), dan bus door naar Lumbini/Pokhara — alternatief: korte vlucht Varanasi-Kathmandu" },
     NP: { days: 17, budget: 800, destinations: ["Lumbini", "Chitwan National Park", "Pokhara", "Annapurna Region", "Kathmandu", "Patan", "Bhaktapur"], transport_to_next: "Vlucht Kathmandu-Paro (spectaculaire Himalaya-vlucht, alleen door Drukair of Bhutan Airlines uitgevoerd, Bhutan-visum/permit vooraf regelen)" },
     BT: { days: 7, budget: 2000, destinations: ["Paro", "Thimphu", "Dochula Pass", "Punakha", "Bumthang (optioneel)", "Tiger's Nest Monastery"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Paro International Airport" },
@@ -1153,8 +1163,8 @@ function rbSeedPredefinedExpeditions() {
   if (localStorage.getItem(RB_SEED_FLAG_KEY)) return;
   localStorage.setItem(RB_SEED_FLAG_KEY, '1');
 
-  const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour', code, name);
-  const eurasiaRoute = rbBuildSeedRoute('Eurasia Grand Tour', [
+  const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
+  const eurasiaRoute = rbBuildSeedRoute('Eurasia Grand Tour 🌏', [
     { name: 'Balkans', countries: [eurasia('BA', 'Bosnia and Herzegovina'), eurasia('HR', 'Croatia'), eurasia('ME', 'Montenegro'), eurasia('AL', 'Albania'), eurasia('MK', 'North Macedonia')] },
     { name: 'Turkey', countries: [eurasia('TR', 'Turkey')] },
     { name: 'Caucasus', countries: [eurasia('GE', 'Georgia'), eurasia('AM', 'Armenia'), eurasia('AZ', 'Azerbaijan')] },
@@ -1171,8 +1181,8 @@ function rbSeedPredefinedExpeditions() {
     notes: 'Imported from a ChatGPT brainstorm — country lists per region are a reasonable starting point, adjust freely. Some countries here (parts of the Balkans, Maritime SE Asia) may already be visited or planned in your Trips sheet — worth cross-checking and possibly reusing as Block Library items instead.',
   });
 
-  const panAm = (code, name) => rbContentFor('Pan-American Grand Tour', code, name);
-  const panAmRoute = rbBuildSeedRoute('Pan-American Grand Tour', [
+  const panAm = (code, name) => rbContentFor('Pan-American Grand Tour 🌎', code, name);
+  const panAmRoute = rbBuildSeedRoute('Pan-American Grand Tour 🌎', [
     { name: 'Mexico', countries: [panAm('MX', 'Mexico')] },
     { name: 'Northern Central America', countries: [panAm('GT', 'Guatemala'), panAm('BZ', 'Belize'), panAm('HN', 'Honduras'), panAm('SV', 'El Salvador')] },
     { name: 'Southern Central America', countries: [panAm('NI', 'Nicaragua'), panAm('CR', 'Costa Rica'), panAm('PA', 'Panama')] },
@@ -1197,15 +1207,15 @@ function rbSeedMEAExpedition() {
   if (localStorage.getItem(RB_SEED_FLAG_KEY_MEA)) return;
   localStorage.setItem(RB_SEED_FLAG_KEY_MEA, '1');
 
-  const mea = (code, name) => rbContentFor('Middle East & Africa Expedition', code, name);
-  const meaRoute = rbBuildFlatSeedRoute('Middle East & Africa Expedition', [
-    mea('JO', 'Jordan'), mea('EG', 'Egypt'), mea('OM', 'Oman'), mea('ET', 'Ethiopia'), mea('KE', 'Kenya'),
+  const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
+  const meaRoute = rbBuildFlatSeedRoute('Africa Grand Tour 🌍', [
+    mea('EG', 'Egypt'), mea('ET', 'Ethiopia'), mea('KE', 'Kenya'),
     mea('UG', 'Uganda'), mea('RW', 'Rwanda'), mea('TZ', 'Tanzania'), mea('MG', 'Madagascar'), mea('MU', 'Mauritius'),
     mea('MW', 'Malawi'), mea('MZ', 'Mozambique'), mea('ZM', 'Zambia'), mea('ZW', 'Zimbabwe'), mea('BW', 'Botswana'),
     mea('NA', 'Namibia'), mea('ZA', 'South Africa'), mea('LS', 'Lesotho'), mea('SZ', 'Eswatini'),
   ], {
-    description: 'Overland route from the Middle East through East Africa, the islands, and Southern Africa. Target duration ~12 months.',
-    notes: 'Imported from a ChatGPT brainstorm — deliberately seeded with zero blocks (unlike Eurasia/Pan-American): group these 19 countries into your own blocks (e.g. Middle East, East Africa, Islands, Southern Africa, South Africa finale) via the region dropdown on each country, in whatever shape makes sense once you plan it for real. South Africa is already marked "visited" in your Countries sheet — worth checking before treating it as new.',
+    description: 'Overland route through East Africa, the islands, and Southern Africa, with Egypt as the northern gateway. Target duration ~12 months.',
+    notes: 'Imported from a ChatGPT brainstorm — deliberately seeded with zero blocks (unlike Eurasia/Pan-American): group these 17 countries into your own blocks (e.g. East Africa, Islands, Southern Africa, South Africa finale) via the region dropdown on each country, in whatever shape makes sense once you plan it for real. Jordan and Oman used to be part of this route but were moved to Ancient Civilizations Expedition so this stays purely African + Egypt as the historical/geographic gateway; Egypt itself still appears in both since it fits both themes. South Africa is already marked "visited" in your Countries sheet — worth checking before treating it as new.',
   });
 
   rbRoutes.push(meaRoute);
@@ -1216,8 +1226,8 @@ function rbSeedAncientCivilizationsExpedition() {
   if (localStorage.getItem(RB_SEED_FLAG_KEY_ANCIENT)) return;
   localStorage.setItem(RB_SEED_FLAG_KEY_ANCIENT, '1');
 
-  const ancient = (code, name) => rbContentFor('Ancient Civilizations Expedition', code, name);
-  const ancientRoute = rbBuildFlatSeedRoute('Ancient Civilizations Expedition', [
+  const ancient = (code, name) => rbContentFor('North Africa & Middle East Expedition 🏜️', code, name);
+  const ancientRoute = rbBuildFlatSeedRoute('North Africa & Middle East Expedition 🏜️', [
     ancient('MA', 'Morocco'), ancient('TN', 'Tunisia'), ancient('EG', 'Egypt'), ancient('JO', 'Jordan'),
     ancient('OM', 'Oman'), ancient('AE', 'United Arab Emirates'), ancient('CY', 'Cyprus'),
   ], {
@@ -1232,8 +1242,8 @@ function rbSeedArcticCircleExpedition() {
   if (localStorage.getItem(RB_SEED_FLAG_KEY_ARCTIC)) return;
   localStorage.setItem(RB_SEED_FLAG_KEY_ARCTIC, '1');
 
-  const arctic = (code, name) => rbContentFor('Arctic Circle Expedition', code, name);
-  const arcticRoute = rbBuildFlatSeedRoute('Arctic Circle Expedition', [
+  const arctic = (code, name) => rbContentFor('Nordic Arctic Expedition ❄️', code, name);
+  const arcticRoute = rbBuildFlatSeedRoute('Nordic Arctic Expedition ❄️', [
     arctic('FI', 'Finland'), arctic('SE', 'Sweden'), arctic('NO', 'Norway'), arctic('SJ', 'Svalbard'),
     arctic('FO', 'Faroe Islands'), arctic('IS', 'Iceland'), arctic('GL', 'Greenland'),
   ], {
@@ -1248,8 +1258,8 @@ function rbSeedPatagoniaAntarcticaExpedition() {
   if (localStorage.getItem(RB_SEED_FLAG_KEY_PATAGONIA)) return;
   localStorage.setItem(RB_SEED_FLAG_KEY_PATAGONIA, '1');
 
-  const patagonia = (code, name) => rbContentFor('Patagonia & Antarctica Expedition', code, name);
-  const patagoniaRoute = rbBuildFlatSeedRoute('Patagonia & Antarctica Expedition', [
+  const patagonia = (code, name) => rbContentFor('Patagonia & Antarctica Expedition 🧊', code, name);
+  const patagoniaRoute = rbBuildFlatSeedRoute('Patagonia & Antarctica Expedition 🧊', [
     patagonia('CL', 'Chile'), patagonia('AR', 'Argentina'), patagonia('AQ', 'Antarctica'),
   ], {
     notes: 'Imported from a ChatGPT brainstorm — seeded with zero blocks: group these 3 countries into your own blocks via the region dropdown whenever you\'re ready to plan it for real. Chile and Argentina here are the southern (Patagonia) portions — the northern portions already appear in Pan-American Grand Tour. Antarctica may not yet appear in the Countries sheet dropdown — cosmetic only, the block still works. The Antarctica budget reflects a real expedition-cruise price, not a backpacker estimate.',
@@ -1263,8 +1273,8 @@ function rbSeedHimalayaIndiaExpedition() {
   if (localStorage.getItem(RB_SEED_FLAG_KEY_HIMALAYA)) return;
   localStorage.setItem(RB_SEED_FLAG_KEY_HIMALAYA, '1');
 
-  const himalaya = (code, name) => rbContentFor('Himalaya & India Expedition', code, name);
-  const himalayaRoute = rbBuildFlatSeedRoute('Himalaya & India Expedition', [
+  const himalaya = (code, name) => rbContentFor('India & Himalaya Expedition 🏔️', code, name);
+  const himalayaRoute = rbBuildFlatSeedRoute('India & Himalaya Expedition 🏔️', [
     himalaya('IN', 'India'), himalaya('NP', 'Nepal'), himalaya('BT', 'Bhutan'),
   ], {
     notes: 'Imported from a ChatGPT brainstorm — seeded with zero blocks: group these 3 countries into your own blocks via the region dropdown whenever you\'re ready to plan it for real.',
@@ -1272,6 +1282,214 @@ function rbSeedHimalayaIndiaExpedition() {
 
   rbRoutes.push(himalayaRoute);
   rbSave();
+}
+
+/**
+ * North America Grand Traverse is a single-country-pair route (Canada then the US) built from
+ * six legs rather than six different countries, so it's seeded directly here instead of through
+ * RB_EXPEDITION_CONTENT — that table is keyed one-entry-per-country-code per route, which can't
+ * hold four distinct Canada legs and two distinct US legs at once.
+ */
+function rbSeedNorthAmericaExpedition() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_NORTHAMERICA)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_NORTHAMERICA, '1');
+
+  const northAmericaRoute = rbBuildSeedRoute('North America Grand Traverse 🌎', [
+    {
+      name: 'Atlantic Canada – Nova Scotia',
+      season: 'Juni',
+      budget: 900,
+      countries: [{
+        code: 'CA', name: 'Canada', days: 6, budget: 900,
+        destinations: ['Halifax', "Peggy's Cove", 'Lunenburg', 'Cape Breton Island & Cabot Trail'],
+        transport_to_next: "Vlucht Halifax-Quebec City (~2 uur) — geen praktische overlandroute gezien de afstand door onbewoond Oost-Canada",
+        notes: 'Startblok: vlucht Nederland-Halifax. Kennismaking met Canada via ruige Atlantische kust, vissersdorpjes, vuurtorens en Keltisch/Acadische cultuur op Cape Breton.',
+      }],
+      note: 'Startpunt van de expeditie — vlucht Nederland-Halifax. Ruige kust, vissersdorpen en vuurtorens; geen huurauto nodig, alles is met kleine afstanden te doen vanuit Halifax.',
+    },
+    {
+      name: 'Eastern Canada – Historic Cities',
+      season: 'Juni',
+      budget: 1500,
+      countries: [{
+        code: 'CA', name: 'Canada', days: 9, budget: 1500,
+        destinations: ['Quebec City (Vieux-Québec)', 'Montreal (Old Port & Mile End)', 'Ottawa (Parliament Hill & musea)', 'Toronto (skyline, met Niagara Falls als dagtrip)'],
+        transport_to_next: "Trein (Via Rail) Quebec City-Montreal-Ottawa-Toronto, daarna vlucht Toronto-Calgary (~4 uur) om de huurauto voor de Rockies op te halen",
+        notes: 'Geen lange autorit door Canada: de treinverbindingen tussen deze vier steden zijn snel en comfortabel. Franse cultuur en koloniale geschiedenis in Quebec City, eten en moderne stad in Montreal, politiek en musea in Ottawa, skyline en Niagara Falls vanuit Toronto.',
+      }],
+      note: 'Reizen per trein, geen huurauto in dit blok. Niagara Falls is een optionele dagtrip vanuit Toronto, geen apart blok.',
+    },
+    {
+      name: 'Canadian Rockies',
+      season: 'Juni-Juli',
+      budget: 2600,
+      countries: [{
+        code: 'CA', name: 'Canada', days: 13, budget: 2600,
+        destinations: ['Banff National Park', 'Lake Louise & Moraine Lake', 'Yoho National Park (Emerald Lake)', 'Icefields Parkway', 'Jasper National Park', 'Mount Robson Provincial Park', 'Whistler'],
+        transport_to_next: 'Auto Whistler-Vancouver (~2 uur), huurauto inleveren in Vancouver — dezelfde huurauto blijft binnen Canada, dus geen one-way- of grenskosten',
+        notes: 'Het natuurhoogtepunt van de hele expeditie: gletsjermeren, een van de mooiste wegen ter wereld (Icefields Parkway) en goede kans op wildlife (elanden, beren, bighorn sheep). Huurauto 2 wordt hier opgehaald in Calgary.',
+      }],
+      note: 'Huurauto 2 (Calgary-Vancouver). Reken op minstens 2-3 nachten per nationaal park om ook te kunnen wandelen, niet alleen doorrijden.',
+    },
+    {
+      name: 'Vancouver',
+      season: 'Juli',
+      budget: 700,
+      countries: [{
+        code: 'CA', name: 'Canada', days: 4, budget: 700,
+        destinations: ['Stanley Park', 'Granville Island', 'North Shore (Grouse Mountain / Capilano Suspension Bridge)', 'Gastown & Kitsilano Beach'],
+        transport_to_next: "Trein (Amtrak Cascades) of bus Vancouver-Seattle (~4 uur) — eenvoudige grensovergang; in Seattle wordt huurauto 3 voor de VS-roadtrip opgehaald",
+        notes: 'Laatste Canadese stop: stad tussen bergen en zee, goed te combineren met bergen (North Shore) en water (Stanley Park, Granville Island) zonder huurauto.',
+      }],
+      note: 'Geen huurauto nodig in Vancouver zelf. Onderzoek trein vs. bus vs. korte vlucht naar Seattle — trein is het meest schilderachtig en simpelst qua grens.',
+    },
+    {
+      name: 'Pacific Northwest & Northern California Roadtrip',
+      season: 'Juli-Augustus',
+      budget: 2200,
+      countries: [{
+        code: 'US', name: 'United States', days: 11, budget: 2200,
+        destinations: ['Seattle (Pike Place Market, Space Needle)', 'Olympic National Park (Hoh Rainforest & Hurricane Ridge)', 'Mount Rainier National Park', 'Oregon Coast (Cannon Beach, Astoria)', 'Redwood National & State Parks'],
+        transport_to_next: 'Auto verder naar San Francisco (~5-6 uur vanaf de Redwoods), huurauto inleveren in San Francisco',
+        notes: 'Amerikaanse natuur in het groot: regenwoud, vulkanen, ruige kustlijn en de hoogste bomen ter wereld. Huurauto 3 wordt hier opgehaald in Seattle.',
+      }],
+      note: 'Huurauto 3 (Seattle-San Francisco). Rustig tempo: liever 2-3 nachten bij een park dan elke dag doorrijden — dit is een kustroute, geen race.',
+    },
+    {
+      name: 'California Finale',
+      season: 'Augustus',
+      budget: 2100,
+      countries: [{
+        code: 'US', name: 'United States', days: 11, budget: 2100,
+        destinations: ['San Francisco (Golden Gate Bridge, Alcatraz, Mission District)', 'Yosemite Valley', 'Sequoia & Kings Canyon National Parks'],
+        transport_to_next: 'Einde van de expeditie — terugvlucht vanuit San Francisco (SFO) naar Nederland',
+        notes: "Van de stad direct de bergen in: Yosemite's granieten wanden en watervallen, gevolgd door de gigantische sequoia's van Sequoia/Kings Canyon. Geen nieuwe huurauto nodig — dagtochten of een korte huurperiode volstaan vanuit San Francisco.",
+      }],
+      note: 'Boek Yosemite Valley-verblijf ruim van tevoren (vergunt beperkt aantal plekken in hoogseizoen). Let op bosbrandrisico/luchtkwaliteit in augustus — check actuele parkmeldingen vlak voor vertrek.',
+    },
+  ], {
+    travel_style: "Backpacker/budget-comfort hybride — hostels, eenvoudige hotels en cabins, huurauto's alleen waar ze echt waarde toevoegen (Rockies, Pacific Northwest, Californië), rustig tempo met langere stops op mooie plekken in plaats van dagelijks verplaatsen.",
+    best_starting_month: 'June',
+    description: "Grote Noord-Amerika-expeditie die Atlantic Canada, de historische Oost-Canadese steden, de Canadian Rockies, Vancouver en een West-Amerikaanse kust-roadtrip tot en met Californië combineert — natuur, nationale parken, wildlife, historische steden, kustgebieden en roadtripgevoel in één doorlopende route van oost naar west.",
+    climate_summary: 'Vergeleken scenario\'s: (1) mei-juni loopt risico op restsneeuw en gesloten passen/wegen in de Rockies (Icefields Parkway, hooggelegen hikes) en een nog fris/mistig Nova Scotia; (2) juni-juli vermijdt beide en blijft ruim vóór de piek van het Californische/Pacific Northwest bosbrandseizoen (vooral augustus-oktober) en vóór het Atlantische orkaanseizoen dat richting Nova Scotia in augustus-oktober oploopt; (3) september geeft mooie herfstkleuren (Rockies-lariksen, Oost-Canada) maar verhoogt het risico op vroege sneeuw/wegsluitingen in de Rockies en valt samen met een groter deel van het orkaan- en bosbrandseizoen. Beste keuze: start begin juni in Nova Scotia, zodat de expeditie (6-8 weken) eindigt in Californië rond eind juli/begin augustus — nog vóór het zwaarste bosbrand- en orkaanseizoen, met open bergpassen en lange dagen voor de roadtrip-etappes.',
+    notes: 'Ingevuld vanuit een ChatGPT-brainstorm, uitgewerkt en gestructureerd door Claude in dezelfde stijl als de andere grote reizen.\n\n' +
+      'Transportstrategie (bewust 3 losse huurauto\'s + 1 treinetappe i.p.v. één grote huurauto): Huurauto 1 blijft binnen Nova Scotia (rondrit terug naar Halifax, geen one-way-kosten). Oost-Canadese steden per trein (Via Rail), geen auto nodig. Huurauto 2 van Calgary naar Vancouver (blijft in Canada, geen grenscomplicaties). Huurauto 3 van Seattle naar San Francisco (blijft in de VS). Zo worden dure one-way-fees, een grensoverschrijdende huurauto (CA/VS grensregels voor huurauto\'s zijn vaak beperkt of duur) en onnodige kilometers vermeden.\n\n' +
+      'Budgetindicatie (6-8 weken): solo ca. €9.000-10.000, met 3 personen ca. €6.500-7.500 per persoon. Richting verdeling: vluchten €900-1.500 (internationale vluchten + Halifax-Quebec + Toronto-Calgary), auto\'s + benzine solo €2.500-3.500 (gedeeld €900-1.300 p.p.), accommodatie €2.000-2.800, eten €1.800-2.500, activiteiten/parkfees €500-1.000. De 6 blok-budgetten hierboven (900+1.500+2.600+700+2.200+2.100 = €10.000) volgen deze verdeling voor de solo-variant.\n\n' +
+      'Voordelen: unieke combinatie van Atlantische kust, Franse/koloniale steden, wereldberoemde bergnatuur, Pacific-kustlijn en Californische parken in één samenhangende expeditie; backpacker-tempo met ruimte om langer te blijven op hoogtepunten; auto alleen ingezet waar die echt waarde toevoegt.\n' +
+      'Nadelen: drie aparte huurauto-etappes vragen meer planning dan één doorlopende huurauto; hoog totaalbudget vergeleken met andere blokken (Noord-Amerika is duurder dan bv. Zuidoost-Azië of de Balkan); juli-augustus is hoogseizoen in de Rockies en Californische parken (drukte, hogere prijzen, Yosemite-vergunningen tijdig regelen).\n\n' +
+      'Plaats binnen de wereldreisplanning: vult Noord-Amerika in naast Eurasia Grand Tour, Pan-American Grand Tour, Africa Grand Tour en de Pacific/overige routes — samen dekken deze de grote continentale blokken van de wereldreis. Dagen/budget/bestemmingen/transport hierboven zijn een eerste research-opzet (net als bij de andere expedities), nog niet getoetst aan actuele prijzen, grensregels of persoonlijke voorkeuren — behandel dit als een eerste concept om te verfijnen, geen boekbaar plan.',
+  });
+
+  rbRoutes.push(northAmericaRoute);
+  rbSave();
+}
+
+/**
+ * Backbone-only expeditions: name, emoji and an empty block list, seeded so they show up in the
+ * route list ready to receive country blocks once the countries/islands for each are decided.
+ */
+function rbSeedOceaniaExpedition() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_OCEANIA)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_OCEANIA, '1');
+
+  const oceaniaRoute = rbBuildFlatSeedRoute('Oceania Grand Expedition 🌊', [], {
+    notes: "Backbone only — no countries/islands decided yet. Add blocks yourself via the country dropdown (or type a custom entry if a Pacific island nation isn't in the Countries sheet) once you've picked which of Polynesia/Melanesia/Micronesia — and possibly Australia/New Zealand — to include.",
+  });
+
+  rbRoutes.push(oceaniaRoute);
+  rbSave();
+}
+
+function rbSeedCaribbeanExpedition() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_CARIBBEAN)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_CARIBBEAN, '1');
+
+  const caribbeanRoute = rbBuildFlatSeedRoute('Caribbean Expedition 🏝️', [], {
+    notes: "Backbone only — no islands decided yet. Add blocks yourself via the country dropdown once you've picked which islands to include.",
+  });
+
+  rbRoutes.push(caribbeanRoute);
+  rbSave();
+}
+
+function rbSeedWestCentralAfricaExpedition() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_WCAFRICA)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_WCAFRICA, '1');
+
+  const wcAfricaRoute = rbBuildFlatSeedRoute('West & Central Africa Expedition 🌍', [], {
+    notes: "Backbone only — no countries decided yet. Add blocks yourself via the country dropdown once you've picked which West/Central African countries to include.",
+  });
+
+  rbRoutes.push(wcAfricaRoute);
+  rbSave();
+}
+
+/**
+ * One-time rename + restructure for expeditions already seeded into a browser before this round
+ * of feedback: renames three expeditions, and splits Jordan/Oman out of the Africa route into
+ * Ancient Civilizations Expedition (which already has its own JO/OM entries). Runs once, only
+ * touches routes whose name still matches the old value, and no-ops entirely for a browser that's
+ * never seeded before (fresh seeds already use the new names/countries directly).
+ */
+function rbMigrateExpeditionRenames() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_07)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_07, '1');
+
+  const renames = {
+    'Middle East & Africa Expedition': 'Africa Grand Tour',
+    'Arctic Circle Expedition': 'Nordic Arctic Expedition',
+    'Himalaya & India Expedition': 'India & Himalaya Expedition',
+  };
+
+  let changed = false;
+  rbRoutes.forEach(route => {
+    if (renames[route.name]) {
+      route.name = renames[route.name];
+      changed = true;
+    }
+    if (route.name === 'Africa Grand Tour') {
+      const before = route.blocks.length;
+      route.blocks = route.blocks.filter(b => b.country_code !== 'JO' && b.country_code !== 'OM');
+      if (route.blocks.length !== before) changed = true;
+    }
+  });
+
+  if (changed) rbSave();
+}
+
+/**
+ * One-time follow-up rename round: adds the emoji suffix to every expedition name, and renames
+ * "Ancient Civilizations Expedition" to the clearer "North Africa & Middle East Expedition 🏜️"
+ * (same countries, just a name that says which region it actually covers). Keyed on the names as
+ * they existed right before this round, so it correctly picks up routes whether they went through
+ * rbMigrateExpeditionRenames() first (in the same page load) or were already on the intermediate
+ * names from a previous visit. No-ops for a browser that's never seeded before — fresh seeds
+ * already use the final emoji names directly.
+ */
+function rbMigrateExpeditionEmojiNames() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_07_EMOJI)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_07_EMOJI, '1');
+
+  const renames = {
+    'Eurasia Grand Tour': 'Eurasia Grand Tour 🌏',
+    'Pan-American Grand Tour': 'Pan-American Grand Tour 🌎',
+    'Africa Grand Tour': 'Africa Grand Tour 🌍',
+    'North America Grand Traverse': 'North America Grand Traverse 🌎',
+    'India & Himalaya Expedition': 'India & Himalaya Expedition 🏔️',
+    'Patagonia & Antarctica Expedition': 'Patagonia & Antarctica Expedition 🧊',
+    'Nordic Arctic Expedition': 'Nordic Arctic Expedition ❄️',
+    'Ancient Civilizations Expedition': 'North Africa & Middle East Expedition 🏜️',
+  };
+
+  let changed = false;
+  rbRoutes.forEach(route => {
+    if (renames[route.name]) {
+      route.name = renames[route.name];
+      changed = true;
+    }
+  });
+
+  if (changed) rbSave();
 }
 
 /**
