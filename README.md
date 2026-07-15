@@ -50,32 +50,34 @@ trips that span months, not weeks. Lives at `route-builder.html`.
   other), or merge 2+ saved blocks into a new combined block.
 - Eleven predefined routes, each with an emoji suffix as its final name — **Eurasia
   Grand Tour 🌏**, **Pan-American Grand Tour 🌎**, **Africa Grand Tour 🌍**,
-  **North Africa & Middle East Expedition 🏜️**, **Nordic Arctic Expedition ❄️**,
+  **Mediterranean Civilizations Expedition 🏛️**, **Nordic Arctic Expedition ❄️**,
   **Patagonia & Antarctica Expedition 🧊**, **India & Himalaya Expedition 🏔️**,
   **North America Grand Traverse 🌎**, **Oceania Grand Expedition 🌊**,
   **Caribbean Expedition 🏝️**, and **West & Central Africa Expedition 🌍** — are
   seeded once on first load, each gated by its own `localStorage` flag so adding a new
-  one later still seeds it into existing browsers. Eurasia/Pan-American/North America
-  are seeded with countries pre-grouped into regions; Africa/North Africa & Middle
-  East/Nordic Arctic/Patagonia & Antarctica/India & Himalaya are seeded **flat, with
-  zero regions** — group their countries into your own blocks via the region dropdown
-  whenever you're ready to plan it for real. Oceania/Caribbean/West & Central Africa
-  are **backbone-only**: name and emoji, zero country blocks, seeded that way on
-  purpose since the countries/islands for those three haven't been decided yet — add
-  blocks yourself once they are. The other eight now have per-country days, an
-  estimated budget, a Destinations list and a Transport-to-next note.
-  Eurasia/Pan-American/Africa/North Africa & Middle East/Nordic Arctic/Patagonia &
-  Antarctica/India & Himalaya source this from `RB_EXPEDITION_CONTENT` in
-  `js/pages/routeBuilder.js` — a one-time `rbPatchExpeditionContent()` patch fills
-  these in for anyone who already had the routes seeded before this content existed,
-  without touching fields you've since edited yourself. North America Grand Traverse
-  is seeded directly in its own `rbSeedNorthAmericaExpedition()` function instead,
-  since it revisits Canada and the US across six separate legs rather than having one
-  entry per country — a shape `RB_EXPEDITION_CONTENT` (keyed one-entry-per-country-code
-  per route) can't hold.
-- **Two rounds of renames**, both applied retroactively by one-time migrations in
-  `js/pages/routeBuilder.js` so they also land on routes already seeded into a
-  browser, without touching any fields you'd already edited yourself:
+  one later still seeds it into existing browsers. Eurasia/Pan-American/North
+  America/Mediterranean Civilizations are seeded with countries pre-grouped into
+  regions; Africa/Nordic Arctic/Patagonia & Antarctica/India & Himalaya are seeded
+  **flat, with zero regions** — group their countries into your own blocks via the
+  region dropdown whenever you're ready to plan it for real. Oceania/Caribbean/West &
+  Central Africa are **backbone-only**: name and emoji, zero country blocks, seeded
+  that way on purpose since the countries/islands for those three haven't been decided
+  yet — add blocks yourself once they are. The other eight now have per-country days,
+  an estimated budget, a Destinations list and a Transport-to-next note.
+  Eurasia/Pan-American/Africa/Nordic Arctic/Patagonia & Antarctica/India & Himalaya
+  source this from `RB_EXPEDITION_CONTENT` in `js/pages/routeBuilder.js` — a one-time
+  `rbPatchExpeditionContent()` patch fills these in for anyone who already had the
+  routes seeded before this content existed, without touching fields you've since
+  edited yourself. North America Grand Traverse and Mediterranean Civilizations
+  Expedition are each seeded directly in their own function instead
+  (`rbSeedNorthAmericaExpedition()` / `rbBuildMediterraneanExpeditionRoute()`), since
+  both revisit a country across multiple separate legs (Canada/US six times; Italy
+  four times, France and Greece twice each) — a shape `RB_EXPEDITION_CONTENT` (keyed
+  one-entry-per-country-code per route) can't hold.
+- **Three rounds of renames/overhauls**, all applied retroactively by one-time
+  migrations in `js/pages/routeBuilder.js` so they also land on routes already seeded
+  into a browser, without touching any fields you'd already edited yourself (except
+  the third, which is a deliberate wholesale content replacement, not a field patch):
   - `rbMigrateExpeditionRenames()` — "Middle East & Africa Expedition" became
     **Africa Grand Tour**, with Jordan and Oman moved out to **Ancient Civilizations
     Expedition** (which already had its own Jordan/Oman entries), so that route is
@@ -85,9 +87,14 @@ trips that span months, not weeks. Lives at `route-builder.html`.
     "India & Himalaya Expedition" (country lists unchanged for both).
   - `rbMigrateExpeditionEmojiNames()` — added the emoji suffix to all eight
     then-existing routes, and renamed "Ancient Civilizations Expedition" to
-    **North Africa & Middle East Expedition 🏜️** for a name that says which region
+    "North Africa & Middle East Expedition 🏜️" for a name that says which region
     it actually covers (same seven countries: Morocco, Tunisia, Egypt, Jordan, Oman,
     UAE, Cyprus).
+  - `rbMigrateAncientToMediterranean()` — replaces that same route entirely with
+    **Mediterranean Civilizations Expedition 🏛️**, a much larger 18-leg route from
+    Andalusia to Qatar (see below). Unlike the two renames above, this isn't a field
+    patch: the country list, region grouping and every block's content are all new,
+    so the migration removes the old route and inserts the new one wholesale.
 
 Everything above lives in `localStorage` (`atlas_grand_trips`,
 `atlas_route_blocks_library`) — see [`ROUTE_BUILDER_SYNC.md`](ROUTE_BUILDER_SYNC.md)
@@ -128,21 +135,29 @@ for the plan to move it into the Google Sheet.
   Grand Tour have regions (Balkans, Caucasus, Central Asia, etc.) but the Season and
   Budget fields on each region are still blank; only the per-country fields were filled.
 - **Route-level Travel Style / Best Starting Month / Climate Summary mostly empty** —
-  only Pan-American Grand Tour and North America Grand Traverse have these set. The
-  other six content-bearing expeditions don't have a Travel Style, Best Starting Month
-  or Climate Summary yet (the three backbone-only ones don't have anything yet, by
-  design — they're waiting on a country list first).
+  only Pan-American Grand Tour, North America Grand Traverse and Mediterranean
+  Civilizations Expedition have these set. The other five content-bearing expeditions
+  don't have a Travel Style, Best Starting Month or Climate Summary yet (the three
+  backbone-only ones don't have anything yet, by design — they're waiting on a
+  country list first).
 - **Three backbone-only expeditions still need their country list** — Oceania Grand
   Expedition 🌊, Caribbean Expedition 🏝️ and West & Central Africa Expedition 🌍 exist
   as named, empty routes with zero country blocks. Add blocks via the country dropdown
   (Oceania may need custom entries for smaller Pacific island nations not yet in the
   Countries sheet) once you've decided which countries/islands each should cover —
   same process used to flesh out North America Grand Traverse.
-- **North Africa & Middle East Expedition 🏜️ still needs an update** — a later
-  brainstorm round proposed adding Bahrain and Qatar to this route (currently just
-  Morocco, Tunisia, Egypt, Jordan, Oman, UAE, Cyprus), logically between the UAE and
-  Cyprus. Not yet added — still needs confirming and then the same per-country
-  days/budget/destinations/transport treatment as the rest of the route.
+- **North Africa & Middle East Expedition 🏜️ replaced by Mediterranean Civilizations
+  Expedition 🏛️** — the old flat 7-country route (Morocco, Tunisia, Egypt, Jordan,
+  Oman, UAE, Cyprus) is gone, replaced by an 18-leg, 13-country route from Andalusia
+  to Qatar (Spain, Morocco, Tunisia, Malta, Sicily, South Italy, Rome, Sardinia,
+  Corsica, South France, Greece, Crete, Cyprus, Turkey, Egypt, Jordan, Oman, Qatar —
+  UAE dropped, Qatar added as the earlier brainstorm proposed). Open threads on this
+  one specifically: Bahrain (between Oman and Qatar) is noted as a strong candidate
+  addition in the route notes but not yet added as a block; Algeria and Lebanon/Israel
+  were considered and deliberately left out (see the route notes for why); and several
+  island ferries on this route (Malta–Sicily, Piraeus–Heraklion, Corsica–Marseille)
+  run reduced winter schedules that should be checked against real timetables before
+  booking anything.
 - **Some seeded blocks overlap with data that already exists** — worth
   cross-checking before treating them as final:
   - "Balkans" (Eurasia Grand Tour) is identical to the existing "Balkan Loop" trip
@@ -156,11 +171,12 @@ for the plan to move it into the Google Sheet.
     marked "visited" in your Countries sheet — that just reflects a prior, different
     trip there, so it doesn't mean this specific route is redundant, but worth
     keeping in mind.
-  - Morocco, the UAE and Cyprus (North Africa & Middle East Expedition) are already
-    marked "visited" in your Countries sheet — Egypt also appears in Africa Grand
-    Tour (fine, expeditions can share countries; Jordan and Oman used to be shared
-    the same way until they were moved fully into North Africa & Middle East
-    Expedition).
+  - 8 of the 13 countries in Mediterranean Civilizations Expedition are already
+    marked "visited" in your Countries sheet — Spain, France, Greece, Italy, Malta,
+    Morocco, Cyprus and Turkey. Only Tunisia, Egypt, Jordan, Oman and Qatar are new.
+    Egypt also appears in Africa Grand Tour (fine, expeditions can share countries;
+    Jordan and Oman used to be shared the same way until they were moved fully into
+    what's now Mediterranean Civilizations Expedition).
   - Consider whether these should be pulled in as Block Library items from existing
     trips instead of living as separate, possibly-duplicate data.
 - **Region grouping only holds together while contiguous** — a Regional Block is
