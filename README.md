@@ -109,6 +109,37 @@ for the plan to move it into the Google Sheet.
   rule in `css/base.css`. This also silently fixes the same latent issue for
   `.rb-calendar-panel` / `.rb-map-panel` (both toggle `.hidden` too and both had an
   explicit `display: grid`/`flex`).
+- **Full time-realism audit, applied (2026-07)** — every country/leg across all eight
+  content-bearing expeditions was checked against a slow, backpacker-style travel pace
+  (enough time to actually experience a place, not just arrive/see the highlight/leave)
+  and corrected via `rbMigrateTimeAuditCorrections()` in `js/pages/routeBuilder.js`
+  (runs once, forces the corrected `days` onto already-seeded routes — a regular
+  content patch wouldn't have touched non-empty-but-wrong values). No countries were
+  added, removed or reordered. Biggest corrections: Eurasia Grand Tour 🌏 (200→344 days
+  — China 12→28, Turkey 12→24, Philippines 10→21, Indonesia 12→21 were the most
+  underestimated), Patagonia & Antarctica Expedition 🧊 (37→53 — both Chile and
+  Argentina underestimated how weather-dependent Patagonian trekking is), Africa Grand
+  Tour 🌍 (247→277), India & Himalaya Expedition 🏔️ (50→59), Nordic Arctic Expedition
+  ❄️ (53→68), North America Grand Traverse 🌎 (54→69), Mediterranean Civilizations
+  Expedition 🏛️ (138→147 — Rome and the Turkey/Anatolia leg were the weak spots).
+  Pan-American Grand Tour 🌎 was already the best-paced route (274→286, and two legs —
+  Chile-north/Argentina-north — were actually shortened, the only "too long" findings
+  in the whole audit).
+- **Region-level Season/Budget filled in** — Eurasia Grand Tour's 11 regions and
+  Pan-American Grand Tour's 10 regions now each have a Season and Budget (the budget is
+  the sum of that region's countries), reasoned from the route's overall
+  best-starting-month so the whole multi-region sequence stays climate-coherent leg to
+  leg instead of just having one single best-starting-month for the entire route.
+- **Route-level Travel Style / Best Starting Month / Climate Summary filled in for all
+  eight** — Eurasia Grand Tour, Africa Grand Tour, Nordic Arctic Expedition, Patagonia
+  & Antarctica Expedition and India & Himalaya Expedition had none of these set at all;
+  Pan-American Grand Tour had a Best Starting Month but no Travel Style/Climate
+  Summary. All eight now have a reasoned climate_summary comparing start-month
+  scenarios, in the same style as the pre-existing Mediterranean/North America ones.
+  Africa Grand Tour's is the one with an acknowledged, unresolved trade-off: keeping
+  the current country order (Egypt → ... → Eswatini) means no single start month puts
+  both East Africa and Southern Africa in their dry season at the same time — see the
+  route's own climate_summary for the reasoning and the compromise (start June).
 
 ## Needs attention next time
 
@@ -122,24 +153,33 @@ for the plan to move it into the Google Sheet.
   country-status sync from the map.
 - **Days/budget/destinations/transport are estimates, not researched bookings** —
   the eight content-bearing expeditions (all except the three backbone-only ones:
-  Oceania, Caribbean, West & Central Africa) have realistic-sounding per-country days,
-  budgets (EUR), destination lists and transport notes (drafted country-by-country),
-  but none of it has been checked against real prices, current border/visa rules, or
-  your own travel preferences. Treat it as a first draft to edit, not a plan to book.
+  Oceania, Caribbean, West & Central Africa) have realistic-sounding per-country days
+  (now passed through a full time-realism audit, see "Recently fixed" above), budgets
+  (EUR, not yet re-checked against the new day counts), destination lists and
+  transport notes, but none of it has been checked against real prices, current
+  border/visa rules, or your own travel preferences. Treat it as a refined draft to
+  edit, not a plan to book.
   - The Antarctica leg's budget (Patagonia & Antarctica Expedition) reflects a real
     expedition-cruise price point, not backpacker-style estimates like the rest.
   - Several Nordic Arctic Expedition legs (Svalbard, Faroe Islands, Iceland,
     Greenland) are flight-only hops, not one continuous overland route — the
     Transport-to-next notes call this out per leg.
-- **Region-level Season/Budget still empty** — Eurasia Grand Tour and Pan-American
-  Grand Tour have regions (Balkans, Caucasus, Central Asia, etc.) but the Season and
-  Budget fields on each region are still blank; only the per-country fields were filled.
-- **Route-level Travel Style / Best Starting Month / Climate Summary mostly empty** —
-  only Pan-American Grand Tour, North America Grand Traverse and Mediterranean
-  Civilizations Expedition have these set. The other five content-bearing expeditions
-  don't have a Travel Style, Best Starting Month or Climate Summary yet (the three
-  backbone-only ones don't have anything yet, by design — they're waiting on a
-  country list first).
+- **Eurasia Grand Tour is a genuinely long expedition (~11-12 months) even after the
+  time-realism audit** — its own climate_summary lays out a start-in-April sequence
+  where nearly every leg lands in its best season, but 11-12 months aaneengesloten is
+  a lot even for slow travel. Worth considering splitting it into two separate
+  expeditions (West-Eurasia through Central Asia, and East Asia/Southeast Asia through
+  Indonesia) rather than one continuous year.
+- **Africa Grand Tour still has no region groups** — unlike Eurasia/Pan-American, its
+  17 countries are still flat (no Balkans-style region blocks yet); grouping them (e.g.
+  East Africa, Islands, Southern Africa) would let per-region season/budget be added
+  the same way it now exists for the other two.
+- **Three backbone-only expeditions still need their country list** — Oceania Grand
+  Expedition 🌊, Caribbean Expedition 🏝️ and West & Central Africa Expedition 🌍 exist
+  as named, empty routes with zero country blocks. Add blocks via the country dropdown
+  (Oceania may need custom entries for smaller Pacific island nations not yet in the
+  Countries sheet) once you've decided which countries/islands each should cover —
+  same process used to flesh out North America Grand Traverse.
 - **Three backbone-only expeditions still need their country list** — Oceania Grand
   Expedition 🌊, Caribbean Expedition 🏝️ and West & Central Africa Expedition 🌍 exist
   as named, empty routes with zero country blocks. Add blocks via the country dropdown
