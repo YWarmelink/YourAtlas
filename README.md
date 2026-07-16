@@ -151,16 +151,18 @@ for the plan to move it into the Google Sheet.
   done, paste the current Apps Script `doPost` code into a Claude Code conversation so
   it can add a branch for `GrandTrip*` payloads without breaking the existing
   country-status sync from the map.
-- **Days/budget/destinations/transport are estimates, not researched bookings** —
-  the eight content-bearing expeditions (all except the three backbone-only ones:
-  Oceania, Caribbean, West & Central Africa) have realistic-sounding per-country days
-  (now passed through a full time-realism audit, see "Recently fixed" above), budgets
-  (EUR, not yet re-checked against the new day counts), destination lists and
-  transport notes, but none of it has been checked against real prices, current
-  border/visa rules, or your own travel preferences. Treat it as a refined draft to
-  edit, not a plan to book.
+- **Budgets rescaled, but still not researched bookings (2026-07)** — every
+  per-country/per-leg budget across all eight content-bearing expeditions (plus the
+  Eurasia/Pan-American region sums) has been rescaled proportionally to the
+  time-realism audit's corrected day counts (same daily rate, so more days =
+  proportionally more budget), via `rbMigrateBudgetAndRegionCorrections()` in
+  `js/pages/routeBuilder.js`. That fixes internal consistency (days vs. budget), not
+  accuracy — none of it has been checked against real prices, current border/visa
+  rules, or your own travel preferences. Treat it as a refined draft to edit, not a
+  plan to book.
   - The Antarctica leg's budget (Patagonia & Antarctica Expedition) reflects a real
-    expedition-cruise price point, not backpacker-style estimates like the rest.
+    expedition-cruise price point, not backpacker-style estimates like the rest, and
+    was deliberately left unscaled (its days didn't change either).
   - Several Nordic Arctic Expedition legs (Svalbard, Faroe Islands, Iceland,
     Greenland) are flight-only hops, not one continuous overland route — the
     Transport-to-next notes call this out per leg.
@@ -170,16 +172,12 @@ for the plan to move it into the Google Sheet.
   a lot even for slow travel. Worth considering splitting it into two separate
   expeditions (West-Eurasia through Central Asia, and East Asia/Southeast Asia through
   Indonesia) rather than one continuous year.
-- **Africa Grand Tour still has no region groups** — unlike Eurasia/Pan-American, its
-  17 countries are still flat (no Balkans-style region blocks yet); grouping them (e.g.
-  East Africa, Islands, Southern Africa) would let per-region season/budget be added
-  the same way it now exists for the other two.
-- **Three backbone-only expeditions still need their country list** — Oceania Grand
-  Expedition 🌊, Caribbean Expedition 🏝️ and West & Central Africa Expedition 🌍 exist
-  as named, empty routes with zero country blocks. Add blocks via the country dropdown
-  (Oceania may need custom entries for smaller Pacific island nations not yet in the
-  Countries sheet) once you've decided which countries/islands each should cover —
-  same process used to flesh out North America Grand Traverse.
+- **Africa Grand Tour and Nordic Arctic Expedition are now region-grouped too
+  (2026-07)** — Africa's 17 countries are grouped into 4 regions (Northeast & East
+  Africa, Islands, Southern Africa, South Africa Finale) and Nordic Arctic's 7 into 2
+  (Scandinavia, North Atlantic Islands), each with their own season/budget, matching
+  the Eurasia/Pan-American pattern. Patagonia & Antarctica and India & Himalaya were
+  deliberately left flat — only 3 legs each, too few to benefit from grouping.
 - **Three backbone-only expeditions still need their country list** — Oceania Grand
   Expedition 🌊, Caribbean Expedition 🏝️ and West & Central Africa Expedition 🌍 exist
   as named, empty routes with zero country blocks. Add blocks via the country dropdown
