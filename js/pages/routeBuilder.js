@@ -24,6 +24,7 @@ const RB_CONTENT_PATCH_FLAG = 'atlas_grand_trips_content_patch_v1';
 const RB_MIGRATE_FLAG_2026_07_TIMEAUDIT = 'atlas_grand_trips_migrate_2026_07_timeaudit_v1';
 const RB_MIGRATE_FLAG_2026_07_BUDGET_REGIONS = 'atlas_grand_trips_migrate_2026_07_budget_regions_v1';
 const RB_MIGRATE_FLAG_2026_07_EURASIA_COUNTRIES = 'atlas_grand_trips_migrate_2026_07_eurasia_countries_v1';
+const RB_MIGRATE_FLAG_2026_07_OCEANIA_BUILD = 'atlas_grand_trips_migrate_2026_07_oceania_build_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
 
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateTimeAuditCorrections();
   rbMigrateBudgetAndRegionCorrections();
   rbMigrateEurasiaCountryChanges();
+  rbMigrateOceaniaExpeditionBuild();
   rbBindEvents();
 
   try {
@@ -1628,12 +1630,148 @@ function rbSeedOceaniaExpedition() {
   if (localStorage.getItem(RB_SEED_FLAG_KEY_OCEANIA)) return;
   localStorage.setItem(RB_SEED_FLAG_KEY_OCEANIA, '1');
 
-  const oceaniaRoute = rbBuildFlatSeedRoute('Oceania Grand Expedition 🌊', [], {
-    notes: "Backbone only — no countries/islands decided yet. Add blocks yourself via the country dropdown (or type a custom entry if a Pacific island nation isn't in the Countries sheet) once you've picked which of Polynesia/Melanesia/Micronesia — and possibly Australia/New Zealand — to include.",
-  });
-
-  rbRoutes.push(oceaniaRoute);
+  rbRoutes.push(rbBuildOceaniaExpeditionRoute());
   rbSave();
+}
+
+/**
+ * Oceania Grand Expedition — designed 2026-07 in a Q&A session with Claude, based on Youri's own
+ * design brief (route, countries, Pacific island groups, Australia/New Zealand breakdown, travel
+ * time, budget, transport, season). Region-grouped (4 regions) like Eurasia/Pan-American/
+ * Mediterranean/North America, built directly here rather than through RB_EXPEDITION_CONTENT since
+ * Australia and New Zealand each appear as multiple distinct legs (repeated country codes), the
+ * same reason Mediterranean/North America are hand-authored. Days use the "ideal" tempo tier;
+ * budgets are the midpoint between Budget Backpacker and Comfort Backpacker (Youri's own chosen
+ * travel style, between the two). Shared by the fresh-seed path (rbSeedOceaniaExpedition) and the
+ * migration path (rbMigrateOceaniaExpeditionBuild), so both produce identical content.
+ */
+function rbBuildOceaniaExpeditionRoute() {
+  return rbBuildSeedRoute('Oceania Grand Expedition 🌊', [
+    {
+      name: 'Pacific Opener',
+      season: 'Mei-juni',
+      budget: 3310,
+      note: 'Vijf eilandengroepen in het droge seizoen, ruim vóór het cycloonseizoen (november-april) — de rustige, ontspannen opener van de expeditie.',
+      countries: [
+        {
+          code: 'FJ', name: 'Fiji', days: 14, budget: 875,
+          destinations: ['Nadi', 'Mamanuca-eilanden', 'Yasawa-eilanden', 'Taveuni'],
+          notes: "Beste backpacker-infrastructuur van de Pacific — eilandhoppen per boot (Yasawa Flyer) tussen de Mamanucas en Yasawas, snorkelen en duiken op de koraalriffen.",
+          transport_to_next: 'Vlucht Nadi-Port Vila (Fiji Airways, de belangrijkste Pacific-hub)',
+        },
+        {
+          code: 'VU', name: 'Vanuatu', days: 11, budget: 770,
+          destinations: ['Port Vila', 'Mount Yasur (Tanna)', 'SS President Coolidge wrak (Espiritu Santo)', 'Blue Holes'],
+          notes: "Een van de meest toegankelijke actieve vulkanen ter wereld — tot vlak bij de kraterrand van Mount Yasur. Wereldklasse wrakduik op de SS President Coolidge.",
+          transport_to_next: "Vlucht Port Vila-Apia (meestal met overstap via Fiji of Auckland)",
+        },
+        {
+          code: 'WS', name: 'Samoa', days: 9, budget: 565,
+          destinations: ['Apia', 'To Sua Ocean Trench', 'Lalomanu (beach fales)', 'Upolu'],
+          notes: "Authentieke Polynesische cultuur, nog weinig aangetast door massatoerisme. Beach fales zijn traditionele, budgetvriendelijke strandhutjes — precies de rustige, lokale ervaring die bij deze reisstijl past.",
+          transport_to_next: "Vlucht Apia-Nuku'alofa (meestal met overstap via Fiji)",
+        },
+        {
+          code: 'TO', name: 'Tonga', days: 8, budget: 540,
+          destinations: ["Nuku'alofa", "Vava'u (zwemmen met bultrugwalvissen)", "Ha'apai"],
+          notes: "Een van de weinige plekken ter wereld waar je legaal mag zwemmen met bultrugwalvissen — het beste seizoen daarvoor is juli-oktober, dus check de exacte timing bij het plannen van de startdatum.",
+          transport_to_next: "Vlucht Nuku'alofa-Rarotonga (lage frequentie, ruim van tevoren boeken)",
+        },
+        {
+          code: 'CK', name: 'Cook Islands', days: 7, budget: 560,
+          destinations: ['Rarotonga', 'Aitutaki-lagune'],
+          notes: "De Aitutaki-lagune is minstens zo mooi als Bora Bora, voor een fractie van de prijs — het beste prijs-kwaliteitpunt van de hele Pacific voor lagune-schoonheid.",
+          transport_to_next: 'Vlucht Rarotonga-Perth (lange vlucht, meestal met overstap via Auckland of Sydney) — de grootste enkele vliegverbinding van de hele expeditie, nodig om van de Pacific naar het droge seizoen in West-Australië te komen',
+        },
+      ],
+    },
+    {
+      name: 'Tropisch Australië',
+      season: 'Juni-augustus',
+      budget: 4905,
+      note: 'Droog seizoen: de Kimberley-wegen zijn begaanbaar, geen moesson, geen kwallenseizoen bij Cairns.',
+      countries: [
+        {
+          code: 'AU', name: 'Australia', days: 21, budget: 1840,
+          destinations: ['Perth', 'Ningaloo Reef (walvishaaien)', 'Kimberley & Bungle Bungles', 'Gibb River Road', 'Broome'],
+          notes: 'Ningaloo Reef en de Kimberley zijn spectaculair en kennen weinig massatoerisme — sterke match met natuur boven luxe. Wel de duurste/verste regio van de hele route qua afstanden; eerste kandidaat om in te korten als tijd/budget krap wordt.',
+          transport_to_next: 'Auto over land via de Gibb River Road en Kununurra naar Darwin, of vlucht Broome-Darwin voor wie de Kimberley liever per vliegtuig oversteekt',
+        },
+        {
+          code: 'AU', name: 'Australia', days: 14, budget: 1225,
+          destinations: ['Darwin', 'Kakadu National Park', 'Litchfield National Park', 'Uluru', 'Kata Tjuta', 'Kings Canyon'],
+          notes: 'Top End en Red Centre samen — de meest iconische landschappen van Australië. Juni-augustus is ook de koelste periode voor Uluru (overdag nog prima te wandelen, niet de verzengende hitte van de zomer).',
+          transport_to_next: 'Vlucht Alice Springs-Cairns of Darwin-Cairns (over land zou via de outback-highways dagenlang duren)',
+        },
+        {
+          code: 'AU', name: 'Australia', days: 21, budget: 1840,
+          destinations: ['Cairns', 'Daintree Rainforest', 'Great Barrier Reef', 'Whitsundays & Whitehaven Beach', "Fraser Island / K'gari"],
+          notes: 'Sterkste match met snorkelen/duiken/wildlife uit de wensenlijst. Droog seizoen betekent ook geen kwallenseizoen (dat loopt november-mei) bij Cairns.',
+          transport_to_next: 'Bus of camper over land langs de oostkust (Cairns-Brisbane-Byron Bay-Sydney), de klassieke backpacker-trail',
+        },
+      ],
+    },
+    {
+      name: 'Gematigd Australië',
+      season: 'Augustus-september',
+      budget: 3765,
+      note: 'Late winter/vroege lente — koeler dan de zomerpiek (december-februari), maar goed te doen; het bewuste compromis van deze route (zie de klimaatredenering van de hele expeditie).',
+      countries: [
+        {
+          code: 'AU', name: 'Australia', days: 12, budget: 1050,
+          destinations: ['Byron Bay', 'Sydney', 'Blue Mountains'],
+          notes: 'Klassieke backpacker-trail met goede infrastructuur; Sydney is te iconisch om over te slaan.',
+          transport_to_next: 'Auto over land via de kust of de Hume Highway naar Melbourne',
+        },
+        {
+          code: 'AU', name: 'Australia', days: 10, budget: 875,
+          destinations: ['Great Ocean Road', 'Melbourne', 'Grampians National Park'],
+          notes: 'De beste roadtrip-ervaring van het hele land — sluit perfect aan bij "roadtrips waar dat logisch is".',
+          transport_to_next: 'Veerboot Spirit of Tasmania (Melbourne-Devonport) of korte vlucht naar Hobart/Launceston',
+        },
+        {
+          code: 'AU', name: 'Australia', days: 12, budget: 1050,
+          destinations: ['Cradle Mountain', 'Wineglass Bay (Freycinet)', 'Overland Track', 'Hobart'],
+          notes: 'Ruige natuur, weinig massatoerisme — sterke match met deze reisstijl. Augustus-september is nog fris (soms sneeuw in het hooggebergte), dus pak warme kleding in.',
+          transport_to_next: 'Vlucht Hobart-Adelaide (meestal met overstap in Melbourne)',
+        },
+        {
+          code: 'AU', name: 'Australia', days: 9, budget: 790,
+          destinations: ['Adelaide', 'Kangaroo Island', 'Barossa Valley', 'Flinders Ranges'],
+          notes: "Kangaroo Island is uitstekend voor wildlife (zeeleeuwen, koala's) — de sterkste match met de wildlife-wens uit dit blok. Barossa Valley (wijn) is de eerste kandidaat om te laten vervallen als er ingekort moet worden.",
+          transport_to_next: 'Vlucht Adelaide-Christchurch (meestal met overstap in Sydney of Melbourne)',
+        },
+      ],
+    },
+    {
+      name: 'Nieuw-Zeeland Finale',
+      season: 'September-november',
+      budget: 2800,
+      note: 'Voorjaar — stabiel weer, rustiger dan de zomerdrukte (december-februari); door reisgidsen vaak aangeraden als shoulder season. Het emotionele hoogtepunt van de hele expeditie, bewust als afsluiter gekozen.',
+      countries: [
+        {
+          code: 'NZ', name: 'New Zealand', days: 21, budget: 1680,
+          destinations: ['Christchurch', 'Kaikoura', 'Abel Tasman', 'Franz Josef & Fox-gletsjers', 'Queenstown', 'Milford Sound & Fiordland', 'Dunedin & Catlins'],
+          notes: 'Concentreert het merendeel van de iconische Nieuw-Zeelandse natuur. Overweeg minstens één Great Walk (Milford Track, Routeburn of Kepler) als meerdaagse hut-to-hut-trek — ruim van tevoren reserveren.',
+          transport_to_next: 'Veerboot Picton-Wellington, over land verder het Noordereiland in',
+        },
+        {
+          code: 'NZ', name: 'New Zealand', days: 14, budget: 1120,
+          destinations: ['Wellington', 'Tongariro Alpine Crossing', 'Rotorua', 'Coromandel', 'Bay of Islands', 'Auckland'],
+          notes: 'De Tongariro Alpine Crossing is de beste dagwandeling van het land. Rotorua voor geothermische verschijnselen en Māori-cultuur.',
+          transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Auckland naar Nederland',
+        },
+      ],
+    },
+  ], {
+    travel_style: "Backpacker tussen budget en comfort in — hostels afgewisseld met privékamers, camper/huurauto voor de roadtrip-stukken (Australië, Nieuw-Zeeland), vluchten tussen de Pacific-eilanden (geen praktisch bootalternatief), ferry's waar dat kan (Spirit of Tasmania, Picton-Wellington).",
+    best_starting_month: 'Mei',
+    description: 'Complete reis door Oceanië: de mooiste Pacific-eilanden als rustige opener, gevolgd door tropisch en gematigd Australië, met Nieuw-Zeeland als emotionele afsluiter. Geoptimaliseerd voor de mooiste totaalervaring, niet voor het aantal landen.',
+    climate_summary: "Vergeleken scenario's: (1) de Pacific-eilanden en tropisch Australië (Kimberley, Top End, Cairns) willen allebei het droge seizoen (mei-oktober) — buiten dat venster is er cycloonrisico, moesson en afgesloten onverharde wegen; (2) Nieuw-Zeeland en gematigd Australië (Tasmanië, Victoria) willen juist hun eigen zomer (november-maart) — deze twee vensters overlappen niet en dekken samen het hele jaar. Door te beginnen bij de Pacific-eilanden (mei-juni) en tropisch Australië (juni-augustus), en te eindigen met gematigd Australië (augustus-september) en Nieuw-Zeeland (september-november), land je in het Nieuw-Zeelandse voorjaar — een door reisgidsen vaak aangeraden shoulder season met stabiel weer en minder drukte, ook al is het niet de absolute zomerpiek. Beste keuze: start begin mei bij Fiji, zodat de expeditie (circa 6 maanden) eind oktober/begin november in Nieuw-Zeeland eindigt. Alternatief: wie Nieuw-Zeeland/Tasmanië liever in hun volle zomer (december-februari) doet, kan een bewuste pauze van een paar maanden inbouwen tussen het tropische blok en Nieuw-Zeeland — dat maakt de expeditie 9-10 maanden in plaats van 6.",
+    notes: "Ontworpen in een Q&A-sessie met Claude (2026-07), op basis van een conceptvragenlijst van Youri over route, landen, eilandengroepen, Australië/Nieuw-Zeeland-indeling, reistijd, budget, transport en seizoen. Dagen zijn de 'ideale' tempo-schatting (niet het krappe minimum, niet het meest rustige tempo); budgetten zijn het gemiddelde van Budget Backpacker en Comfort Backpacker (Youri's zelfgekozen reisstijl, tussen die twee in).\n\n" +
+      "Bewust buiten deze route gelaten: Frans-Polynesië en Nieuw-Caledonië (mooi maar prijzig — alleen toevoegen als bewuste splurge, niet meegenomen in dit kernontwerp), en Palau, de Solomon-eilanden, Micronesië, Kiribati en Papoea-Nieuw-Guinea (geografisch een grote omweg, te duur, of logistiek te zwaar voor een soepele backpacker-flow — kandidaten voor een aparte, specialistische reis ooit).\n\n" +
+      "Totaal: 183 dagen (~6 maanden), €14.780 grondkosten + circa €3.500-4.000 aan vluchten (Europa-Oceanië, Australië-interne vluchten, Australië-Nieuw-Zeeland, en losse tickets tussen elk Pacific-eiland). Nog niet getoetst aan actuele prijzen of reisadviezen — behandel dit als een eerste concept, geen boekbaar plan.",
+  });
 }
 
 function rbSeedCaribbeanExpedition() {
@@ -2231,4 +2369,23 @@ function rbMigrateEurasiaCountryChanges() {
   }
 
   if (touched) rbSave();
+}
+
+/**
+ * Builds out the Oceania Grand Expedition (2026-07): it was seeded as backbone-only (zero blocks)
+ * long before this design existed, so a fresh-seed re-run won't pick up the new content — this
+ * wholesale-replaces the route the same way rbMigrateAncientToMediterranean() did for Mediterranean
+ * Civilizations Expedition. Only touches the route if it's still empty (respects any blocks Youri
+ * may have added by hand in the meantime).
+ */
+function rbMigrateOceaniaExpeditionBuild() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_07_OCEANIA_BUILD)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_07_OCEANIA_BUILD, '1');
+
+  const idx = rbRoutes.findIndex(r => r.name === 'Oceania Grand Expedition 🌊');
+  if (idx === -1) return;
+  if (rbRoutes[idx].blocks.length > 0) return;
+
+  rbRoutes.splice(idx, 1, rbBuildOceaniaExpeditionRoute());
+  rbSave();
 }

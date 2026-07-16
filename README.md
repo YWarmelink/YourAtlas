@@ -59,20 +59,21 @@ trips that span months, not weeks. Lives at `route-builder.html`.
   America/Mediterranean Civilizations are seeded with countries pre-grouped into
   regions; Africa/Nordic Arctic/Patagonia & Antarctica/India & Himalaya are seeded
   **flat, with zero regions** — group their countries into your own blocks via the
-  region dropdown whenever you're ready to plan it for real. Oceania/Caribbean/West &
+  region dropdown whenever you're ready to plan it for real. Caribbean/West &
   Central Africa are **backbone-only**: name and emoji, zero country blocks, seeded
-  that way on purpose since the countries/islands for those three haven't been decided
-  yet — add blocks yourself once they are. The other eight now have per-country days,
+  that way on purpose since the countries/islands for those two haven't been decided
+  yet — add blocks yourself once they are. The other nine now have per-country days,
   an estimated budget, a Destinations list and a Transport-to-next note.
   Eurasia/Pan-American/Africa/Nordic Arctic/Patagonia & Antarctica/India & Himalaya
   source this from `RB_EXPEDITION_CONTENT` in `js/pages/routeBuilder.js` — a one-time
   `rbPatchExpeditionContent()` patch fills these in for anyone who already had the
   routes seeded before this content existed, without touching fields you've since
-  edited yourself. North America Grand Traverse and Mediterranean Civilizations
-  Expedition are each seeded directly in their own function instead
-  (`rbSeedNorthAmericaExpedition()` / `rbBuildMediterraneanExpeditionRoute()`), since
-  both revisit a country across multiple separate legs (Canada/US six times; Italy
-  four times, France and Greece twice each) — a shape `RB_EXPEDITION_CONTENT` (keyed
+  edited yourself. North America Grand Traverse, Mediterranean Civilizations
+  Expedition and Oceania Grand Expedition are each seeded directly in their own
+  function instead (`rbSeedNorthAmericaExpedition()` / `rbBuildMediterraneanExpeditionRoute()` /
+  `rbBuildOceaniaExpeditionRoute()`), since each revisits a country across multiple
+  separate legs (Canada/US six times; Italy four times, France and Greece twice each;
+  Australia seven times, New Zealand twice) — a shape `RB_EXPEDITION_CONTENT` (keyed
   one-entry-per-country-code per route) can't hold.
 - **Three rounds of renames/overhauls**, all applied retroactively by one-time
   migrations in `js/pages/routeBuilder.js` so they also land on routes already seeded
@@ -140,6 +141,22 @@ for the plan to move it into the Google Sheet.
   the current country order (Egypt → ... → Eswatini) means no single start month puts
   both East Africa and Southern Africa in their dry season at the same time — see the
   route's own climate_summary for the reasoning and the compromise (start June).
+- **Eurasia Grand Tour's country list changed (2026-07)** — at your explicit request:
+  Turkmenistan and Myanmar removed (hard to visit/not realistic for this travel
+  style), East Timor added right after Indonesia (reachable via the Kupang/Batugade
+  land border), and Singapore moved from the middle of Maritime Southeast Asia to the
+  very last block of the whole expedition as a deliberate finale. New totals: 27
+  countries (was 28), 336 days, €20,000.
+- **Oceania Grand Expedition 🌊 built (2026-07)** — no longer backbone-only. Designed
+  in a Q&A session (route, countries, Pacific island groups, Australia/New Zealand
+  breakdown, travel time, budget, transport, season) and built the same way as
+  Mediterranean/North America: 14 legs across 4 regions (Pacific Opener: Fiji, Vanuatu,
+  Samoa, Tonga, Cook Islands; Tropisch Australië and Gematigd Australië: Australia
+  across 7 legs; Nieuw-Zeeland Finale: New Zealand across 2 legs). Days use the
+  "ideal" tempo tier; budgets are the midpoint between Budget Backpacker and Comfort
+  Backpacker (your own chosen travel style). 183 days total, €14,780 ground costs.
+  French Polynesia, New Caledonia, Palau, the Solomon Islands, Micronesia, Kiribati
+  and Papua New Guinea were deliberately left out — see the route's own notes for why.
 
 ## Needs attention next time
 
@@ -178,12 +195,11 @@ for the plan to move it into the Google Sheet.
   (Scandinavia, North Atlantic Islands), each with their own season/budget, matching
   the Eurasia/Pan-American pattern. Patagonia & Antarctica and India & Himalaya were
   deliberately left flat — only 3 legs each, too few to benefit from grouping.
-- **Three backbone-only expeditions still need their country list** — Oceania Grand
-  Expedition 🌊, Caribbean Expedition 🏝️ and West & Central Africa Expedition 🌍 exist
-  as named, empty routes with zero country blocks. Add blocks via the country dropdown
-  (Oceania may need custom entries for smaller Pacific island nations not yet in the
-  Countries sheet) once you've decided which countries/islands each should cover —
-  same process used to flesh out North America Grand Traverse.
+- **Two backbone-only expeditions still need their country list** — Caribbean
+  Expedition 🏝️ and West & Central Africa Expedition 🌍 exist as named, empty routes
+  with zero country blocks. Add blocks via the country dropdown once you've decided
+  which countries/islands each should cover — same process used to flesh out North
+  America Grand Traverse and Oceania Grand Expedition.
 - **North Africa & Middle East Expedition 🏜️ replaced by Mediterranean Civilizations
   Expedition 🏛️** — the old flat 7-country route (Morocco, Tunisia, Egypt, Jordan,
   Oman, UAE, Cyprus) is gone, replaced by an 18-leg, 13-country route from Andalusia
