@@ -23,6 +23,7 @@ const RB_MIGRATE_FLAG_2026_07_MEDITERRANEAN = 'atlas_grand_trips_migrate_2026_07
 const RB_CONTENT_PATCH_FLAG = 'atlas_grand_trips_content_patch_v1';
 const RB_MIGRATE_FLAG_2026_07_TIMEAUDIT = 'atlas_grand_trips_migrate_2026_07_timeaudit_v1';
 const RB_MIGRATE_FLAG_2026_07_BUDGET_REGIONS = 'atlas_grand_trips_migrate_2026_07_budget_regions_v1';
+const RB_MIGRATE_FLAG_2026_07_EURASIA_COUNTRIES = 'atlas_grand_trips_migrate_2026_07_eurasia_countries_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
 
@@ -51,6 +52,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbPatchExpeditionContent();
   rbMigrateTimeAuditCorrections();
   rbMigrateBudgetAndRegionCorrections();
+  rbMigrateEurasiaCountryChanges();
   rbBindEvents();
 
   try {
@@ -1076,8 +1078,7 @@ const RB_EXPEDITION_CONTENT = {
     KZ: { days: 12, budget: 750, destinations: ["Almaty", "Charyn Canyon", "Turkistan", "Shymkent", "Nur-Sultan"], transport_to_next: "Bus of deeltaxi Almaty-Bishkek, over land, drukke maar eenvoudige grensovergang" },
     KG: { days: 12, budget: 600, destinations: ["Bishkek", "Issyk-Kul", "Karakol", "Song-Kul", "Osh"], transport_to_next: "Deeljeep over de Pamir Highway Osh-Khorog, over land, ruw traject, GBAO-permit/visum voor Tadzjikistan nodig" },
     TJ: { days: 14, budget: 700, destinations: ["Khorog", "Pamir Highway", "Murghab", "Iskanderkul", "Dushanbe"], transport_to_next: "Bus of deeltaxi Dushanbe-Samarkand, over land, grensovergang kan tijdrovend zijn" },
-    UZ: { days: 11, budget: 550, destinations: ["Tashkent", "Samarkand", "Bukhara", "Khiva"], transport_to_next: "Bus/taxi over land naar Turkmenabat, grensovergang met vooraf geregeld Turkmeens transitvisum verplicht" },
-    TM: { days: 3, budget: 300, destinations: ["Ashgabat", "Darvaza (Gaskrater)", "Konye-Urgench", "Merv"], transport_to_next: "Vlucht Ashgabat-Urumqi (geen grens met China; overland zou moeten via Oezbekistan/Kirgizië, transitvisum laat maar kort verblijf toe)" },
+    UZ: { days: 11, budget: 550, destinations: ["Tashkent", "Samarkand", "Bukhara", "Khiva"], transport_to_next: "Vlucht Tasjkent-Ürümqi (rechtstreekse verbinding; door het schrappen van Turkmenistan als tussenstop is dit nu de praktische route naar China)" },
     CN: { days: 28, budget: 1625, destinations: ["Kashgar", "Ürümqi", "Xi'an", "Chengdu", "Beijing", "Shanghai"], transport_to_next: "Trein Beijing-Ulaanbaatar (Trans-Mongolië-route), over land, visum voor Mongolië nodig" },
     MN: { days: 10, budget: 575, destinations: ["Ulaanbaatar", "Terelj NP", "Kharkhorin", "Gobiwoestijn"], transport_to_next: "Vlucht Ulaanbaatar-Tokyo (via Beijing/Seoul, geen directe vlucht en geen landroute mogelijk)" },
     JP: { days: 18, budget: 2700, destinations: ["Tokyo", "Hakone/Fuji", "Kyoto", "Nara", "Osaka", "Hiroshima"], transport_to_next: "Vlucht Osaka/Tokyo-Taipei, korte vlucht, geen visum nodig voor Taiwan" },
@@ -1085,13 +1086,13 @@ const RB_EXPEDITION_CONTENT = {
     VN: { days: 18, budget: 800, destinations: ["Hanoi", "Ha Long Bay", "Hue", "Hoi An", "Da Lat", "Ho Chi Minh City"], transport_to_next: "Nachtbus Hanoi-Vientiane, over land, grensovergang bij Cau Treo, lange rit (~24u)" },
     LA: { days: 12, budget: 525, destinations: ["Luang Prabang", "Vang Vieng", "Vientiane", "Si Phan Don (4000 eilanden)"], transport_to_next: "Bus Si Phan Don/Pakse-Siem Reap, over land, grensovergang bij Nong Nokkhien/Trapeang Kriel" },
     KH: { days: 12, budget: 525, destinations: ["Siem Reap", "Angkor Wat", "Battambang", "Phnom Penh", "Koh Rong"], transport_to_next: "Bus Phnom Penh/Siem Reap-Bangkok, over land, grensovergang bij Poipet" },
-    TH: { days: 18, budget: 900, destinations: ["Bangkok", "Ayutthaya", "Sukhothai", "Chiang Mai", "Krabi/eilanden"], transport_to_next: "Vlucht Bangkok-Yangon (overland grensovergangen voor toeristen beperkt/onbetrouwbaar)" },
-    MM: { days: 12, budget: 525, destinations: ["Yangon", "Bagan", "Mandalay", "Inle Lake"], transport_to_next: "Vlucht Yangon-Kuala Lumpur (geen praktische overland route; check actuele reisadviezen wegens politieke situatie)" },
-    MY: { days: 10, budget: 500, destinations: ["Kuala Lumpur", "Cameron Highlands", "Penang", "Malacca", "Langkawi"], transport_to_next: "Trein of bus Kuala Lumpur-Singapore, over land, eenvoudige grensovergang" },
-    SG: { days: 3, budget: 450, destinations: ["Marina Bay", "Chinatown", "Sentosa", "Gardens by the Bay"], transport_to_next: "Vlucht Singapore-Bandar Seri Begawan, geen directe landroute/ferry praktisch" },
+    TH: { days: 18, budget: 900, destinations: ["Bangkok", "Ayutthaya", "Sukhothai", "Chiang Mai", "Krabi/eilanden"], transport_to_next: "Trein of bus Bangkok-Kuala Lumpur, over land door Zuid-Thailand naar Maleisië, eenvoudige grensovergang bij Padang Besar" },
+    MY: { days: 10, budget: 500, destinations: ["Kuala Lumpur", "Cameron Highlands", "Penang", "Malacca", "Langkawi"], transport_to_next: "Vlucht Kuala Lumpur-Bandar Seri Begawan (rechtstreekse verbinding, geen praktische landroute door Oost-Maleisië/Borneo)" },
+    SG: { days: 3, budget: 450, destinations: ["Marina Bay", "Chinatown", "Sentosa", "Gardens by the Bay"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Singapore (Changi) naar Nederland" },
     BN: { days: 2, budget: 200, destinations: ["Bandar Seri Begawan", "Kampong Ayer", "Ulu Temburong NP"], transport_to_next: "Vlucht Bandar Seri Begawan-Manila, meestal met overstap in Kota Kinabalu of Kuala Lumpur" },
     PH: { days: 21, budget: 950, destinations: ["Manila", "Banaue", "Palawan (El Nido)", "Cebu", "Bohol", "Siargao"], transport_to_next: "Vlucht Manila/Cebu-Jakarta of Denpasar, doorgaans met overstap in Singapore of Kuala Lumpur" },
-    ID: { days: 21, budget: 875, destinations: ["Jakarta", "Yogyakarta", "Borobudur", "Ubud (Bali)", "Gili-eilanden", "Lombok", "Komodo"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Denpasar (Bali) of Jakarta" },
+    ID: { days: 21, budget: 875, destinations: ["Jakarta", "Yogyakarta", "Borobudur", "Ubud (Bali)", "Gili-eilanden", "Lombok", "Komodo"], transport_to_next: "Bus over land via de grensovergang Mota'ain/Batugade (vanaf Kupang, West-Timor) naar Dili, Oost-Timor — of een korte vlucht Kupang-Dili" },
+    TL: { days: 7, budget: 400, destinations: ["Dili", "Atauro-eiland", "Jaco-eiland (Nino Konis Santana NP)", "Baucau", "Maubisse"], transport_to_next: "Vlucht Dili-Singapore (meestal met overstap in Denpasar/Bali of Jakarta, geen directe verbinding) — laatste etappe naar het eindpunt Singapore" },
   },
   "Pan-American Grand Tour 🌎": {
     MX: { days: 28, budget: 1000, destinations: ["Ciudad de México", "Oaxaca", "Palenque", "Mérida", "Tulum", "Bacalar", "San Cristóbal de las Casas"], transport_to_next: "Bus over land via de grensovergang La Mesilla/El Carmen naar Huehuetenango, Guatemala." },
@@ -1165,14 +1166,15 @@ function rbSeedPredefinedExpeditions() {
     { name: 'Balkans', season: 'April–juni', budget: 2850, note: 'Mild voorjaar, voor de zomerdrukte en -hitte — sluit aan op een vroege start van de hele expeditie.', countries: [eurasia('BA', 'Bosnia and Herzegovina'), eurasia('HR', 'Croatia'), eurasia('ME', 'Montenegro'), eurasia('AL', 'Albania'), eurasia('MK', 'North Macedonia')] },
     { name: 'Turkey', season: 'Juni', budget: 1300, note: 'Aansluitend op de Balkan, nog vóór de zwaarste zomerhitte in Cappadocië en het binnenland.', countries: [eurasia('TR', 'Turkey')] },
     { name: 'Caucasus', season: 'Juni–augustus', budget: 1475, note: 'Bergpassen en Svaneti zijn dan sneeuwvrij; sluit direct aan op het Centraal-Aziatische bergseizoen.', countries: [eurasia('GE', 'Georgia'), eurasia('AM', 'Armenia'), eurasia('AZ', 'Azerbaijan')] },
-    { name: 'Central Asia', season: 'Juni–september', budget: 2900, note: 'De Pamir Highway en hooggelegen passen zijn alleen in deze maanden begaanbaar — buiten dit venster ligt er sneeuw/ijs.', countries: [eurasia('KZ', 'Kazakhstan'), eurasia('KG', 'Kyrgyzstan'), eurasia('TJ', 'Tajikistan'), eurasia('UZ', 'Uzbekistan'), eurasia('TM', 'Turkmenistan')] },
+    { name: 'Central Asia', season: 'Juni–september', budget: 2600, note: 'De Pamir Highway en hooggelegen passen zijn alleen in deze maanden begaanbaar — buiten dit venster ligt er sneeuw/ijs. Turkmenistan is bewust geschrapt (lastig te bezoeken/niet reëel voor deze reisstijl).', countries: [eurasia('KZ', 'Kazakhstan'), eurasia('KG', 'Kyrgyzstan'), eurasia('TJ', 'Tajikistan'), eurasia('UZ', 'Uzbekistan')] },
     { name: 'China', season: 'September', budget: 1625, note: 'Na de zomerdrukte/-hitte, ruim vóór de Mongoolse winterkou die erna komt.', countries: [eurasia('CN', 'China')] },
     { name: 'Mongolia', season: 'Eind augustus–september', budget: 575, note: 'Vóór de vrieskou vanaf oktober; de Gobi is dan nog droog en warm genoeg voor een meerdaagse 4x4-tocht.', countries: [eurasia('MN', 'Mongolia')] },
     { name: 'Japan', season: 'Oktober–november', budget: 2700, note: 'Herfstkleuren, en rustiger dan de kersenbloesem-drukte in het voorjaar.', countries: [eurasia('JP', 'Japan')] },
     { name: 'Taiwan', season: 'November', budget: 750, note: 'Droog en mild, vóór het koelere winterseizoen in het noorden van het eiland.', countries: [eurasia('TW', 'Taiwan')] },
-    { name: 'Mainland Southeast Asia', season: 'December–februari', budget: 3275, note: 'Het droge seizoen op het vasteland van Zuidoost-Azië — geen moesson, aangename temperaturen.', countries: [eurasia('VN', 'Vietnam'), eurasia('LA', 'Laos'), eurasia('KH', 'Cambodia'), eurasia('TH', 'Thailand'), eurasia('MM', 'Myanmar')] },
-    { name: 'Maritime Southeast Asia', season: 'Februari–maart', budget: 2100, note: 'Nog droog in de meeste regio\'s, vóór de moesson die later in het voorjaar begint.', countries: [eurasia('MY', 'Malaysia'), eurasia('SG', 'Singapore'), eurasia('BN', 'Brunei'), eurasia('PH', 'Philippines')] },
-    { name: 'Indonesia', season: 'Maart', budget: 875, note: 'Droog seizoen loopt in de meeste regio\'s door tot april/mei — Bali, Gili, Lombok en Komodo nog prima begaanbaar.', countries: [eurasia('ID', 'Indonesia')] },
+    { name: 'Mainland Southeast Asia', season: 'December–februari', budget: 2750, note: 'Het droge seizoen op het vasteland van Zuidoost-Azië — geen moesson, aangename temperaturen. Myanmar is bewust geschrapt (lastig te bezoeken/niet reëel voor deze reisstijl).', countries: [eurasia('VN', 'Vietnam'), eurasia('LA', 'Laos'), eurasia('KH', 'Cambodia'), eurasia('TH', 'Thailand')] },
+    { name: 'Maritime Southeast Asia', season: 'Februari–maart', budget: 1650, note: 'Nog droog in de meeste regio\'s, vóór de moesson die later in het voorjaar begint.', countries: [eurasia('MY', 'Malaysia'), eurasia('BN', 'Brunei'), eurasia('PH', 'Philippines')] },
+    { name: 'Indonesia & Oost-Timor', season: 'Maart', budget: 1275, note: 'Droog seizoen loopt in de meeste regio\'s door tot april/mei — Bali, Gili, Lombok en Komodo nog prima begaanbaar. Oost-Timor sluit hier logisch op aan, via de landgrens bij Kupang (West-Timor).', countries: [eurasia('ID', 'Indonesia'), eurasia('TL', 'East Timor')] },
+    { name: 'Singapore Finale', season: 'Maart', budget: 450, note: 'Bewuste, compacte afsluiting van de hele Eurasia-expeditie — een rustige stadsstop na Oost-Timor.', countries: [eurasia('SG', 'Singapore')] },
   ], {
     best_starting_month: 'April',
     travel_style: 'Backpacker — overland waar mogelijk (bus, trein, marshrutka/deeltaxi), vluchten alleen waar geen praktische grondroute bestaat (Baku-Almaty, de eilandsprongen in Zuidoost-Azië). Lokale guesthouses en hostels boven internationale ketens.',
@@ -1180,7 +1182,8 @@ function rbSeedPredefinedExpeditions() {
     description: 'Overland route across Eurasia, region by region — from the Balkans through the Caucasus and Central Asia to East and Southeast Asia.',
     notes: 'Imported from a ChatGPT brainstorm — country lists per region are a reasonable starting point, adjust freely. Some countries here (parts of the Balkans, Maritime SE Asia) may already be visited or planned in your Trips sheet — worth cross-checking and possibly reusing as Block Library items instead.\n\n' +
       "Tijdscontrole (2026-07): dagen per land zijn na een volledige realismecontrole opgehoogd (van 200 naar 344 dagen totaal, ~11-12 maanden) zodat elk land ook echt te ervaren is in plaats van alleen aan te doen — vooral China (12→28), Turkije (12→24), Filipijnen (10→21) en Indonesië (12→21) waren fors onderschat. Turkmenistan (3 dagen) is bewust ongewijzigd gelaten — dat is een visumgrens (transitvisum), geen onderschatting. Landen en volgorde zijn ongewijzigd gebleven; alleen de duur per land, de regio-seizoenen/-budgetten hierboven en deze klimaatredenering zijn toegevoegd. Overweeg desondanks om deze route ooit te knippen in twee losse expedities (West-Eurazië t/m Centraal-Azië, en Oost-Eurazië/Azië) — 11-12 maanden aaneengesloten is fors, ook voor langzaam reizen.\n\n" +
-      "Vervolg (2026-07): budgetten per land meegeschaald met de opgehoogde dagen (zelfde dagprijs, dus meer dagen = evenredig meer budget) — regio-budgetten hierboven zijn de nieuwe sommen.",
+      "Vervolg (2026-07): budgetten per land meegeschaald met de opgehoogde dagen (zelfde dagprijs, dus meer dagen = evenredig meer budget) — regio-budgetten hierboven zijn de nieuwe sommen.\n\n" +
+      "Wijziging (2026-07): Turkmenistan en Myanmar verwijderd (lastig te bezoeken/niet reëel voor deze reisstijl), Oost-Timor toegevoegd direct na Indonesië, en Singapore verplaatst naar het allerlaatste blok van de hele expeditie als bewust eindpunt (was eerst onderdeel van Maritime Southeast Asia). Nieuw totaal: 27 landen (was 28), 336 dagen, €20.000.",
   });
 
   const panAm = (code, name) => rbContentFor('Pan-American Grand Tour 🌎', code, name);
@@ -2132,4 +2135,100 @@ function rbMigrateBudgetAndRegionCorrections() {
 
     if (touched) rbSave();
   });
+}
+
+/**
+ * Country-composition change for Eurasia Grand Tour (2026-07), per Youri's explicit request:
+ * remove Turkmenistan and Myanmar (hard to visit / not realistic for this travel style), insert
+ * East Timor right after Indonesia (geographically adjacent, reachable via the Kupang/Batugade
+ * land border), and move Singapore from the middle of Maritime Southeast Asia to the very last
+ * block of the whole expedition as a deliberate finale. Unlike the earlier migrations (which only
+ * changed field values), this one actually adds/removes/reorders blocks — so it force-rewrites the
+ * block array instead of using an empty-check, and creates a new "Singapore Finale" region. Own
+ * flag since this must run regardless of what the earlier migrations already did.
+ */
+function rbMigrateEurasiaCountryChanges() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_07_EURASIA_COUNTRIES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_07_EURASIA_COUNTRIES, '1');
+
+  const route = rbRoutes.find(r => r.name === 'Eurasia Grand Tour 🌏');
+  if (!route) return;
+
+  let touched = false;
+  const content = RB_EXPEDITION_CONTENT['Eurasia Grand Tour 🌏'];
+
+  // 1. Remove Turkmenistan and Myanmar entirely.
+  const beforeCount = route.blocks.length;
+  route.blocks = route.blocks.filter(b => b.country_code !== 'TM' && b.country_code !== 'MM');
+  if (route.blocks.length !== beforeCount) touched = true;
+
+  // 2. Pull Singapore out of its current spot — it gets re-appended at the very end below.
+  const sgIndex = route.blocks.findIndex(b => b.country_code === 'SG');
+  let sgBlock = null;
+  if (sgIndex !== -1) {
+    sgBlock = route.blocks.splice(sgIndex, 1)[0];
+    touched = true;
+  }
+
+  // 3. Insert East Timor right after Indonesia, in the same region, if not already present.
+  const idIndex = route.blocks.findIndex(b => b.country_code === 'ID');
+  let tlBlock = route.blocks.find(b => b.country_code === 'TL');
+  if (!tlBlock && idIndex !== -1 && content && content.TL) {
+    tlBlock = rbBuildBlock('TL', 'East Timor', rbSeedBlockOpts(content.TL, { region_id: route.blocks[idIndex].region_id }));
+    route.blocks.splice(idIndex + 1, 0, tlBlock);
+    touched = true;
+  }
+
+  // 4. Rename the "Indonesia" region to include Timor, and create a new final region for Singapore.
+  (route.regions || []).forEach(region => {
+    if (region.name === 'Indonesia') {
+      region.name = 'Indonesia & Oost-Timor';
+      region.budget = 1275;
+      touched = true;
+    }
+    if (region.name === 'Central Asia') { region.budget = 2600; touched = true; }
+    if (region.name === 'Mainland Southeast Asia') { region.budget = 2750; touched = true; }
+    if (region.name === 'Maritime Southeast Asia') { region.budget = 1650; touched = true; }
+  });
+
+  if (sgBlock) {
+    let singaporeRegion = (route.regions || []).find(r => r.name === 'Singapore Finale');
+    if (!singaporeRegion) {
+      singaporeRegion = {
+        id: rbNewRegionId(), name: 'Singapore Finale', season: 'Maart', budget: 450,
+        notes: 'Bewuste, compacte afsluiting van de hele Eurasia-expeditie — een rustige stadsstop na Oost-Timor.',
+        collapsed: false,
+      };
+      route.regions = route.regions || [];
+      route.regions.push(singaporeRegion);
+      touched = true;
+    }
+    if (sgBlock.region_id !== singaporeRegion.id) { sgBlock.region_id = singaporeRegion.id; touched = true; }
+    route.blocks.push(sgBlock);
+  }
+
+  // 5. Force-refresh transport_to_next (and days/budget) for every block whose route-order context changed.
+  if (content) {
+    ['UZ', 'TH', 'MY', 'ID', 'TL', 'SG'].forEach(code => {
+      const block = route.blocks.find(b => b.country_code === code);
+      const c = content[code];
+      if (!block || !c) return;
+      if (block.transport_to_next !== c.transport_to_next) { block.transport_to_next = c.transport_to_next; touched = true; }
+      if (block.days !== c.days) { block.days = c.days; touched = true; }
+      if (block.budget !== c.budget) { block.budget = c.budget; touched = true; }
+      if ((!block.destinations || !block.destinations.length) && c.destinations && c.destinations.length) {
+        block.destinations = c.destinations.map(d => ({ id: rbNewDestId(), name: d, notes: '' }));
+        touched = true;
+      }
+    });
+  }
+
+  // 6. Note the change.
+  const note = 'Wijziging (2026-07): Turkmenistan en Myanmar verwijderd (lastig te bezoeken/niet reëel voor deze reisstijl), Oost-Timor toegevoegd direct na Indonesië, en Singapore verplaatst naar het allerlaatste blok van de hele expeditie als bewust eindpunt. Nieuw totaal: 27 landen (was 28), 336 dagen, €20.000.';
+  if (route.notes && !route.notes.includes('Wijziging (2026-07)')) {
+    route.notes += '\n\n' + note;
+    touched = true;
+  }
+
+  if (touched) rbSave();
 }
