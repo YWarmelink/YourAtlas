@@ -48,15 +48,19 @@ trips that span months, not weeks. Lives at `route-builder.html`.
 - **Block Library**: save a route as a reusable, named group of countries; insert it
   into any other route later (as an independent copy — editing one never affects the
   other), or merge 2+ saved blocks into a new combined block.
-- Eleven predefined routes, each with an emoji suffix as its final name — **Eurasia
+- Twelve predefined routes, each with an emoji suffix as its final name — **Eurasia
   Grand Tour 🌏**, **Pan-American Grand Tour 🌎**, **Africa Grand Tour 🌍**,
   **Mediterranean Civilizations Expedition 🏛️**, **Nordic Arctic Expedition ❄️**,
   **Patagonia & Antarctica Expedition 🧊**, **India & Himalaya Expedition 🏔️**,
   **North America Grand Traverse 🌎**, **Oceania Grand Expedition 🌊**,
-  **Caribbean & Amazon Expedition 🌴**, and **West & Central Africa Expedition 🌍** —
-  are seeded once on first load, each gated by its own `localStorage` flag so adding a
-  new one later still seeds it into existing browsers. All eleven now have real
-  content — no more backbone-only routes. Eurasia/Pan-American/North
+  **Caribbean & Amazon Expedition 🌴**, **West & Central Africa Expedition 🌍**, and
+  **Central European Grand Roadtrip 🚗** — are seeded once on first load, each gated
+  by its own `localStorage` flag so adding a new one later still seeds it into
+  existing browsers. All twelve now have real content — no more backbone-only
+  routes. Central European Grand Roadtrip is the only self-driven (no-flight)
+  expedition: fuel/tolls/parking are shared per car and tracked once in its route
+  notes rather than folded into each leg's per-person budget, so those per-country
+  budget figures stay comparable to every other expedition. Eurasia/Pan-American/North
   America/Mediterranean Civilizations are seeded with countries pre-grouped into
   regions; Patagonia & Antarctica and India & Himalaya are seeded **flat, with zero
   regions** on purpose (only 3 legs each — too few to benefit from grouping). Every
@@ -67,17 +71,19 @@ trips that span months, not weeks. Lives at `route-builder.html`.
   `rbPatchExpeditionContent()` patch fills these in for anyone who already had the
   routes seeded before this content existed, without touching fields you've since
   edited yourself. North America Grand Traverse, Mediterranean Civilizations
-  Expedition, Oceania Grand Expedition, Caribbean & Amazon Expedition and West &
-  Central Africa Expedition are each seeded directly in their own function instead
-  (`rbSeedNorthAmericaExpedition()` / `rbBuildMediterraneanExpeditionRoute()` /
-  `rbBuildOceaniaExpeditionRoute()` / `rbBuildCaribbeanAmazonExpeditionRoute()` /
-  `rbBuildWestCentralAfricaExpeditionRoute()`) — the first three because each revisits
-  a country across multiple separate legs (Canada/US six times; Italy four times,
-  France and Greece twice each; Australia seven times, New Zealand twice) — a shape
-  `RB_EXPEDITION_CONTENT` (keyed one-entry-per-country-code per route) can't hold.
-  Caribbean & Amazon Expedition and West & Central Africa Expedition don't repeat any
-  country, but were seeded this way too since each replaced a previously-named or
-  empty backbone-only route (see below).
+  Expedition, Oceania Grand Expedition, Caribbean & Amazon Expedition, West &
+  Central Africa Expedition and Central European Grand Roadtrip are each seeded
+  directly in their own function instead (`rbSeedNorthAmericaExpedition()` /
+  `rbBuildMediterraneanExpeditionRoute()` / `rbBuildOceaniaExpeditionRoute()` /
+  `rbBuildCaribbeanAmazonExpeditionRoute()` / `rbBuildWestCentralAfricaExpeditionRoute()` /
+  `rbBuildCentralEuropeRoadtripRoute()`) — the first three (plus Central European
+  Grand Roadtrip) because each revisits a country across multiple separate legs
+  (Canada/US six times; Italy four times, France and Greece twice each; Australia
+  seven times, New Zealand twice; Central European Grand Roadtrip repeats Germany,
+  Italy and Czechia) — a shape `RB_EXPEDITION_CONTENT` (keyed one-entry-per-country-code
+  per route) can't hold. Caribbean & Amazon Expedition and West & Central Africa
+  Expedition don't repeat any country, but were seeded this way too since each
+  replaced a previously-named or empty backbone-only route (see below).
 - **Three rounds of renames/overhauls**, all applied retroactively by one-time
   migrations in `js/pages/routeBuilder.js` so they also land on routes already seeded
   into a browser, without touching any fields you'd already edited yourself (except
@@ -195,6 +201,25 @@ for the plan to move it into the Google Sheet.
   the rainy season by this route's own June-start design (see its climate_summary),
   and Angola shares that same accepted trade-off. New totals: 18 countries (was 17),
   288 days (was 277), €29,225 (was €27,725).
+
+- **Central European Grand Roadtrip 🚗 built (2026-07)** — the twelfth expedition,
+  and the first designed as a self-driven car trip from the Netherlands (no flights).
+  Designed in a Q&A session from Youri's own route brief, covering four regions:
+  Alpenlanden (France, Germany, Switzerland, Liechtenstein, Austria), Dolomieten &
+  Noord-Italië (Italy across six separate legs — Dolomites, Milan, Turin, Cinque
+  Terre, Tuscany, Venice — plus San Marino), Balkan (Slovenia, Croatia, Serbia,
+  Hungary) and Midden-Europa (Slovakia, Czechia across two legs — Brno, then
+  Prague — Poland, Germany again for the return leg). 70 days ideal (45 minimum),
+  €8,400 per-person ground costs (Realistisch tier, same €120/day rate as every
+  other expedition) plus €1,950 shared car costs (fuel/tolls/parking) — car costs
+  are tracked once in the route notes rather than folded into each leg's budget, so
+  per-country figures stay comparable to every other expedition. Two route-order
+  fixes made during design, both to avoid crossing the same longitude band twice:
+  Switzerland/Liechtenstein moved before Austria (saves ≈370 km and keeps the
+  Grossglockner→Lienz→Dolomites link intact), and Milan/Turin/Cinque Terre merged
+  into the existing Tuscany/San Marino dip after the Dolomites rather than placed
+  before Austria as first proposed (avoids two separate southward detours in favor
+  of one combined Northern-Italy loop). Recommended start: begin June.
 
 ## Needs attention next time
 

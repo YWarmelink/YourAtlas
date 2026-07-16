@@ -17,6 +17,7 @@ const RB_SEED_FLAG_KEY_NORTHAMERICA = 'atlas_grand_trips_seeded_northamerica_v1'
 const RB_SEED_FLAG_KEY_OCEANIA = 'atlas_grand_trips_seeded_oceania_v1';
 const RB_SEED_FLAG_KEY_CARIBBEAN = 'atlas_grand_trips_seeded_caribbean_v1';
 const RB_SEED_FLAG_KEY_WCAFRICA = 'atlas_grand_trips_seeded_wcafrica_v1';
+const RB_SEED_FLAG_KEY_CEROADTRIP = 'atlas_grand_trips_seeded_ceroadtrip_v1';
 const RB_MIGRATE_FLAG_2026_07 = 'atlas_grand_trips_migrate_2026_07_v1';
 const RB_MIGRATE_FLAG_2026_07_EMOJI = 'atlas_grand_trips_migrate_2026_07_emoji_v1';
 const RB_MIGRATE_FLAG_2026_07_MEDITERRANEAN = 'atlas_grand_trips_migrate_2026_07_mediterranean_v1';
@@ -50,6 +51,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbSeedOceaniaExpedition();
   rbSeedCaribbeanExpedition();
   rbSeedWestCentralAfricaExpedition();
+  rbSeedCentralEuropeRoadtripExpedition();
   rbMigrateExpeditionRenames();
   rbMigrateExpeditionEmojiNames();
   rbMigrateAncientToMediterranean();
@@ -2036,6 +2038,210 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
       "Twee aanpassingen na Youri's review van het ontwerp: (1) Taï National Park in Ivoorkust laten vervallen — afgelegen, kost 3-4 dagen extra voor chimpansees die ook elders te zien zijn; Ivoorkust blijft beperkt tot Abidjan + Grand-Bassam. (2) Kameroen aangepast: Mount Cameroon en Limbe liggen in de Zuidwest-regio, waar sinds 2016 een gewapend conflict speelt (de Anglophone Crisis) — vervangen door Douala, Kribi (Chutes de la Lobé) en Yaoundé, allemaal in de stabielere Franstalige regio's. Check de actuele veiligheidssituatie in het Zuidwesten vlak vóór vertrek.\n\n" +
       "Angola is bewust uit deze expeditie gehaald en verplaatst naar Africa Grand Tour in plaats daarvan — geografisch grenst het direct aan Namibië (al onderdeel van die route), een veel logischer aansluiting dan de geïsoleerde flight-only eindstop die het hier zou zijn. Dit verwijdert ook de onzekerste/duurste vlucht van deze route (Gabon-Angola); Gabon is nu het nieuwe, sterke eindpunt (Loango's surfende nijlpaarden). Let op: deze verplaatsing lost het seizoensprobleem niet op — Angola valt ook in Africa Grand Tour's Southern Africa-regio in het regenseizoen, hetzelfde al geaccepteerde compromis van die route.\n\n" +
       "Totaal: 93 dagen (~3,1 maanden), €5.160 grondkosten + circa €2.400-2.800 aan vluchten (Kaapverdië-Senegal, Gambia-Ivoorkust, Benin-Kameroen en de Centraal-Afrikaanse eilandsprongen zijn stuk voor stuk vluchten met weinig concurrentie, dus prijzig per afstand). Nog niet getoetst aan actuele prijzen, visumregels of reisadviezen — behandel dit als een eerste concept, geen boekbaar plan. Check vooral de veiligheidssituatie in Kameroens Zuidwest-regio vlak vóór vertrek.",
+  });
+}
+
+function rbSeedCentralEuropeRoadtripExpedition() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_CEROADTRIP)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_CEROADTRIP, '1');
+
+  rbRoutes.push(rbBuildCentralEuropeRoadtripRoute());
+  rbSave();
+}
+
+/**
+ * Central European Grand Roadtrip — designed 2026-07 in a Q&A session with Claude, based on
+ * Youri's own route brief for a self-driven car trip from the Netherlands (no flights). Unlike
+ * every other expedition, car costs (fuel, tolls/vignettes, parking) are shared per car regardless
+ * of group size and are NOT folded into each leg's per-country budget below — that budget field is
+ * per-person ground cost only (accommodation/food/activities at the "Realistisch" tier, Youri's own
+ * chosen style: €70 accommodation + €35 food + €15 activities = €120/day), so it stays consistent
+ * with how every other expedition's per-country budget works. Car costs are tracked once, route-wide,
+ * in this note instead. Region-grouped (4 regions) like every other multi-leg expedition. Germany,
+ * Italy and Czechia each appear as multiple distinct legs (repeated country codes) — same reason
+ * Mediterranean/North America/Oceania are hand-authored here instead of using RB_EXPEDITION_CONTENT.
+ *
+ * Two route-order corrections made during design, both to avoid backtracking across the same
+ * longitude twice: (1) Switzerland/Liechtenstein moved before Austria instead of after — Youri's
+ * original order (Bavaria→Austria→Liechtenstein→Switzerland) meant driving all the way east through
+ * Austria to Grossglockner, then backtracking ~370 km west for Liechtenstein/Switzerland, then east
+ * again to the Dolomites; doing Switzerland/Liechtenstein first turns that into one continuous
+ * eastward run, and preserves the Lienz-Cortina link (Grossglockner Hochalpenstrasse ends 90 km from
+ * the Dolomites). (2) Milan/Turin/Cinque Terre placed after the Dolomites, merged into the existing
+ * Tuscany/San Marino dip, rather than right after Switzerland as Youri first proposed — his proposed
+ * order would have crossed the ~12-13°E longitude band twice (once via Austria's Grossglockner/
+ * Salzburg, once again via Venice/the Dolomites) and created two separate southward detours instead
+ * of one combined Northern-Italy loop.
+ */
+function rbBuildCentralEuropeRoadtripRoute() {
+  return rbBuildSeedRoute('Central European Grand Roadtrip 🚗', [
+    {
+      name: 'Alpenlanden',
+      season: 'Juni',
+      budget: 2160,
+      note: 'Bergpassen en hooggelegen wandelpaden zijn pas vanaf half mei/juni volledig sneeuwvrij (Grossglockner Hochalpenstrasse opent meestal medio mei) — half juni-begin juli is het beste venster, net na de opening en nog vóór de julidrukte/-hitte in de dalen.',
+      countries: [
+        {
+          code: 'FR', name: 'France', days: 2, budget: 240,
+          destinations: ['Straatsburg', 'Colmar', 'Elzasser dorpen'],
+          notes: 'Compacte, korte culturele opener — meer tijd voegt weinig toe gezien de rest van de reis nog moet komen.',
+          transport_to_next: 'Auto, ≈300 km naar Neuschwanstein/Garmisch — geen tol of vignet nodig op dit traject.',
+        },
+        {
+          code: 'DE', name: 'Germany', days: 4, budget: 480,
+          destinations: ['Neuschwanstein', 'Garmisch-Partenkirchen', 'Zugspitze'],
+          notes: 'Neuschwanstein verdient een halve dag zelf al (wachtrijen, kasteel + omgeving); de Zugspitze-kabelbaan is weersafhankelijk, dus een buffer helpt.',
+          transport_to_next: 'Auto, ≈250 km naar Luzern/Interlaken — Zwitsers jaarvignet verplicht, koop het bij de grens.',
+        },
+        {
+          code: 'CH', name: 'Switzerland', days: 5, budget: 600,
+          destinations: ['Luzern/Vierwoudstrekenmeer', 'Interlaken', 'Lauterbrunnen', 'Berner Oberland'],
+          notes: 'Het Jungfrau-gebied (Lauterbrunnen/Berner Oberland) alleen al verdient meerdere wandeldagen — hoge kosten zijn een reden om het compact te houden, niet om het te haasten.',
+          transport_to_next: 'Auto, ≈150 km naar Vaduz — geen grenscontrole (Schengen), geen aparte tol.',
+        },
+        {
+          code: 'LI', name: 'Liechtenstein', days: 1, budget: 120,
+          destinations: ['Vaduz'],
+          notes: 'Klein land, één goede wandeling/stadswandeling volstaat ruimschoots.',
+          transport_to_next: 'Auto, ≈120 km naar Innsbruck — Oostenrijks jaarvignet verplicht voor de snelwegen.',
+        },
+        {
+          code: 'AT', name: 'Austria', days: 6, budget: 720,
+          destinations: ['Innsbruck/Tirol', 'Salzburg', 'Berchtesgaden/Königssee', 'Salzkammergut', 'Grossglockner Hochalpenstrasse'],
+          notes: 'Vier duidelijk verschillende deelgebieden (Tirol, Salzburg-cluster, merengebied, hooggebergte-rit) — elk verdient minstens één volle dag. Berchtesgaden ligt formeel in Duitsland maar hoort qua route bij Salzburg (20 minuten rijden) — behandel ze als één gecombineerde stop.',
+          transport_to_next: 'Auto, Grossglockner Hochalpenstrasse (aparte tolweg, ≈€38 per auto) tot Lienz, dan ≈90 km naar Cortina d\'Ampezzo — een van de mooiste rijverbindingen van de hele route.',
+        },
+      ],
+    },
+    {
+      name: 'Dolomieten & Noord-Italië',
+      season: 'Juli',
+      budget: 2280,
+      note: 'De Dolomieten meteen na de Alpenlanden-opener; Milaan/Turijn/Cinque Terre/Toscane/San Marino vormen samen één aaneengesloten lus in plaats van twee losse zuidwaartse uitstapjes (zie route-notities).',
+      countries: [
+        {
+          code: 'IT', name: 'Italy', days: 6, budget: 720,
+          destinations: ['Tre Cime', 'Lago di Braies', 'Seceda', 'Val Gardena'],
+          notes: 'Een van de grootste hoogtepunten van de hele reis — de bekende wandelingen (Tre Cime-rondje, Seceda) zijn elk een dag op zich.',
+          transport_to_next: 'Auto, ≈380 km naar Milaan — de langste enkele rit van de hele lus, vroeg vertrekken of splitsen met een tussenstop bij Verona/Brescia. Italiaanse autostrada rekent tol per kilometer.',
+        },
+        {
+          code: 'IT', name: 'Italy', days: 2, budget: 240,
+          destinations: ['Duomo', 'Galleria', 'Navigli', 'Laatste Avondmaal'],
+          notes: 'Eén volle dag voor de binnenstad, een tweede als je het Laatste Avondmaal (reservering vereist) wilt meepakken.',
+          transport_to_next: 'Auto, ≈140 km naar Turijn via de A4/A55, tolweg.',
+        },
+        {
+          code: 'IT', name: 'Italy', days: 2, budget: 240,
+          destinations: ['Egyptisch Museum', 'Mole Antonelliana', 'historisch centrum'],
+          notes: 'Compacte, onderschatte stad — het Egyptisch Museum (op één na grootste ter wereld) verdient zelf al een halve dag.',
+          transport_to_next: 'Auto tot een bewaakte parkeerplaats bij Monterosso/La Spezia (≈185 km) — de dorpjes zelf zijn grotendeels autovrij.',
+        },
+        {
+          code: 'IT', name: 'Italy', days: 3, budget: 360,
+          destinations: ['Monterosso', 'Vernazza', 'Corniglia', 'Manarola', 'Riomaggiore'],
+          notes: 'De vijf dorpjes en de wandelpaden ertussen (Sentiero Azzurro) zijn het hele punt — drie dagen voor rustig wandelen plus een boottochtje.',
+          transport_to_next: 'Auto, ≈140 km naar Florence via La Spezia-Lucca-Firenze.',
+        },
+        {
+          code: 'IT', name: 'Italy', days: 3, budget: 360,
+          destinations: ['Florence', 'Siena', 'San Gimignano', 'Chianti'],
+          notes: 'Compact gehouden ("een stukje Toscane") — Florence plus één dag Chianti/Siena/San Gimignano.',
+          transport_to_next: 'Auto, ≈180 km naar San Marino — Florence en San Marino liggen dicht bij elkaar.',
+        },
+        {
+          code: 'SM', name: 'San Marino', days: 1, budget: 120,
+          destinations: ['Historisch centrum'],
+          notes: 'Klein genoeg voor één dag, dicht bij Florence — een bewuste stop, geen omweg meer om over te twijfelen.',
+          transport_to_next: 'Auto, ≈300 km naar Venetië, met een overnachting daar — de stad zelf is autovrij, park bij Tronchetto of Mestre.',
+        },
+        {
+          code: 'IT', name: 'Italy', days: 2, budget: 240,
+          destinations: ['Piazza San Marco', 'Dorsoduro', 'Murano/Burano'],
+          notes: 'Ligt vrijwel exact op de weg terug van San Marino naar Slovenië — nauwelijks extra kilometers, dus een efficiënte toevoeging.',
+          transport_to_next: 'Auto, ≈280 km naar Bled — Sloveens vignet verplicht (goedkoop dagvignet beschikbaar).',
+        },
+      ],
+    },
+    {
+      name: 'Balkan',
+      season: 'Juli-augustus',
+      budget: 1920,
+      note: 'Mei-juni en september zijn hier het prettigst en juli-augustus kan warm zijn, maar is goed te doen — de watervallen bij Plitvice hebben dan nog volop water.',
+      countries: [
+        {
+          code: 'SI', name: 'Slovenia', days: 5, budget: 600,
+          destinations: ['Bled', 'Bohinj', 'Soča-vallei', 'Triglav NP', 'grotten (Postojna/Škocjan)'],
+          notes: 'Bled alleen al verdient meerdere dagen; de Soča-vallei en de grotten liggen er echt apart van.',
+          transport_to_next: 'Auto, ≈140 km naar Plitvice/Zagreb.',
+        },
+        {
+          code: 'HR', name: 'Croatia', days: 3, budget: 360,
+          destinations: ['Plitvice', 'Zagreb'],
+          notes: 'Plitvice verdient een volle dag (grote wandelroutes), Zagreb een korte stadstop.',
+          transport_to_next: 'Auto, ≈380 km naar Belgrado — Novi Sad ligt toevallig al precies onderweg, prima in één dag te doen.',
+        },
+        {
+          code: 'RS', name: 'Serbia', days: 5, budget: 600,
+          destinations: ['Belgrado', 'Novi Sad', 'Tara National Park'],
+          notes: 'Servië heeft verder weinig natuurhoogtepunten op deze route — Tara NP (Drina-rivier, bekende uitkijkpunten) is een bewuste omweg (+1 dag) die bij deze reisstijl past, in het zuidwesten van het land, een stuk uit de buurt van de directe route Zagreb-Belgrado-Boedapest.',
+          transport_to_next: 'Auto, ≈320 km naar Boedapest.',
+        },
+        {
+          code: 'HU', name: 'Hungary', days: 3, budget: 360,
+          destinations: ['Boedapest', 'thermale baden'],
+          notes: 'Boedapest verdient een rustige stadstop mét tijd voor een thermaal bad, niet alleen de hoogtepunten afvinken.',
+          transport_to_next: 'Auto, ≈200 km naar Bratislava.',
+        },
+      ],
+    },
+    {
+      name: 'Midden-Europa',
+      season: 'Augustus-september/begin oktober',
+      budget: 2040,
+      note: 'Hoge Tatra blijft ruim binnen het wandelseizoen (juni-september); de terugweg door Tsjechië/Polen/Duitsland is jaarrond prettig en geeft in september mooie herfstkleuren.',
+      countries: [
+        {
+          code: 'SK', name: 'Slovakia', days: 5, budget: 600,
+          destinations: ['Bratislava', 'Hoge Tatra', 'Slovenský Raj', 'Spiš Castle'],
+          notes: 'De Hoge Tatra vraagt echte wandeldagen; Bratislava is een korte aanvulling aan het begin.',
+          transport_to_next: 'Auto, Hoge Tatra-Brno ≈300 km.',
+        },
+        {
+          code: 'CZ', name: 'Czechia', days: 1, budget: 120,
+          destinations: ['Brno', 'Špilberk-burcht'],
+          notes: 'Breekt de lange rit Hoge Tatra-Praag (was ≈450 km in één keer) in tweeën, en is zelf de moeite waard, niet alleen een technische pauze.',
+          transport_to_next: 'Auto, ≈200 km naar Praag.',
+        },
+        {
+          code: 'CZ', name: 'Czechia', days: 5, budget: 600,
+          destinations: ['Praag', 'Český Krumlov', 'Boheems Paradijs'],
+          notes: 'Praag verdient alleen al 2-3 dagen; Český Krumlov en Boheems Paradijs zijn allebei losse dagtochten waard.',
+          transport_to_next: 'Auto, ≈270 km naar Wrocław.',
+        },
+        {
+          code: 'PL', name: 'Poland', days: 3, budget: 360,
+          destinations: ['Wrocław', 'Sudeten (optioneel)'],
+          notes: 'Wrocław is compact te doen; het Sudeten-gebergte is een leuke, niet-verplichte toevoeging.',
+          transport_to_next: 'Auto, ≈280 km naar Dresden — Polen heft voor personenauto\'s geen tol op de meeste snelwegen (alleen vrachtverkeer via e-TOLL).',
+        },
+        {
+          code: 'DE', name: 'Germany', days: 3, budget: 360,
+          destinations: ['Dresden', 'Saksisch Zwitserland'],
+          notes: 'Saksisch Zwitserland (rotsformaties, wandelen) verdient een volle dag naast de stadstop in Dresden.',
+          transport_to_next: 'Einde van de roadtrip — terugrit naar Nederland, ≈700 km, in één lange dag of gesplitst met een laatste overnachting onderweg.',
+        },
+      ],
+    },
+  ], {
+    travel_style: "Eigen auto vanuit Nederland, geen vliegtuig — rustig rijden, natuur en cultuur boven afvinken. Accommodatie/eten/activiteiten hieronder op het Realistische niveau (hostels/eenvoudige hotels, soms privékamer — hetzelfde niveau als de rest van de reizen). Brandstof, tol/vignetten en parkeren zijn per auto gedeeld (ongeacht groepsgrootte) en staan NIET in de bedragen per land hierboven — zie de route-notities voor die aparte optelling.",
+    best_starting_month: 'Juni',
+    description: "Grote lus met eigen auto vanuit Nederland: Elzas, de Alpenlanden, de Dolomieten, Noord-Italië en Toscane, de Balkan en Midden-Europa — en weer terug. Rustig rijden, natuur en cultuur boven afvinken.",
+    climate_summary: "Aanbevolen start: begin juni. Bergpassen en hooggelegen wandelpaden in Beieren/Oostenrijk/Zwitserland/de Dolomieten zijn pas vanaf half mei/juni volledig sneeuwvrij (Grossglockner Hochalpenstrasse opent meestal medio mei) — een meistart zou de Alpenlanden net vóór die opening zetten, een reëel risico voor het onderdeel dat de meeste tijd/aandacht krijgt. Een septemberstart lijkt aantrekkelijk (rustiger, geen zomerhitte) maar duwt bij een reis van ~10 weken de latere etappes (Hoge Tatra, Tsjechië, Polen, Duitsland) naar november-december, met een reële kans op vroege sneeuw in de Tatra. Bij een junistart krijgen de Alpen hun beste venster meteen aan het begin, Noord-Italië/Toscane vallen in juli (goed te doen, iets drukker), Servië/Hongarije in augustus, en de reis eindigt in september/begin oktober — aangenaam, met herfstkleuren in Tsjechië/Polen/Saksisch Zwitserland als bonus.",
+    notes: "Ontworpen in een Q&A-sessie met Claude (2026-07), op basis van Youri's eigen routebrief voor een zelfrijdende trip vanuit Nederland (geen vliegtuig). Dagen zijn de 'ideale' tempo-schatting; per-land-budgetten zijn het Realistische dagtarief (€70 accommodatie + €35 eten + €15 activiteiten = €120/dag per persoon) keer het aantal dagen — bewust hetzelfde niveau als de rest van Youri's reizen, zodat de bedragen per land vergelijkbaar blijven met elke andere expeditie in deze Travel Atlas.\n\n" +
+      "Twee routewijzigingen tijdens het ontwerp, allebei om te voorkomen dat dezelfde lengtegraad twee keer gekruist wordt: (1) Zwitserland/Liechtenstein vóór Oostenrijk in plaats van erna — scheelt ≈370 km t.o.v. Youri's oorspronkelijke volgorde (Beieren→Oostenrijk→Liechtenstein→Zwitserland), en behoudt de Lienz-Cortina-verbinding (90 km) naar de Dolomieten. (2) Milaan/Turijn/Cinque Terre ná de Dolomieten geplakt, samengevoegd met de bestaande Toscane/San Marino-dip, in plaats van vóór Oostenrijk zoals Youri eerst voorstelde — die volgorde had de ≈12-13°O-strook twee keer gekruist (via Oostenrijks Grossglockner/Salzburg, en later opnieuw via Venetië/de Dolomieten) en twee losse zuidwaartse uitstapjes gekost in plaats van één gecombineerde Noord-Italië-lus.\n\n" +
+      "Autokosten (gedeeld per auto, NIET in de bedragen per land hierboven): ≈9.050 km totale rijafstand, ≈€1.110 brandstof (7L/100km, €1,75/L), ≈€335 tol/vignetten (Zwitserland en Oostenrijk vragen een jaarvignet, Italië rekent per kilometer op de autostrada, Polen heft geen tol voor personenauto's), ≈€505 parkeren (steden plus een bewaakte parkeerplaats bij Cinque Terre's autoluwe dorpen) — totaal ≈€1.950 per auto, ongeacht met hoeveel personen je reist.\n\n" +
+      "Totaal: 45 dagen minimum / 70 dagen ideaal (~10 weken), €8.400 grondkosten per persoon (Realistisch tier) + €1.950 autokosten per auto. Per persoon bij 70 dagen: Budget €7.200 solo / €4.650 met 2 / €3.800 met 3 — Realistisch €10.350 solo / €6.925 met 2 / €5.783 met 3 — Comfortabel €14.900 solo / €10.075 met 2 / €8.467 met 3 (autokosten simpelweg gedeeld door het aantal reizigers, accommodatie ook, eten/activiteiten blijven per persoon gelijk). Nog niet getoetst aan actuele tol-/vignettarieven of prijzen — behandel dit als een eerste concept, geen boekbaar plan.",
   });
 }
 
