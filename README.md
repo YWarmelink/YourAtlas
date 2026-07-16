@@ -59,22 +59,25 @@ trips that span months, not weeks. Lives at `route-builder.html`.
   America/Mediterranean Civilizations are seeded with countries pre-grouped into
   regions; Africa/Nordic Arctic/Patagonia & Antarctica/India & Himalaya are seeded
   **flat, with zero regions** — group their countries into your own blocks via the
-  region dropdown whenever you're ready to plan it for real. Caribbean/West &
-  Central Africa are **backbone-only**: name and emoji, zero country blocks, seeded
-  that way on purpose since the countries/islands for those two haven't been decided
-  yet — add blocks yourself once they are. The other nine now have per-country days,
-  an estimated budget, a Destinations list and a Transport-to-next note.
+  region dropdown whenever you're ready to plan it for real. West & Central Africa is
+  the last **backbone-only** one: name and emoji, zero country blocks, seeded that way
+  on purpose since the countries haven't been decided yet — add blocks yourself once
+  they are. The other ten now have per-country days, an estimated budget, a
+  Destinations list and a Transport-to-next note.
   Eurasia/Pan-American/Africa/Nordic Arctic/Patagonia & Antarctica/India & Himalaya
   source this from `RB_EXPEDITION_CONTENT` in `js/pages/routeBuilder.js` — a one-time
   `rbPatchExpeditionContent()` patch fills these in for anyone who already had the
   routes seeded before this content existed, without touching fields you've since
   edited yourself. North America Grand Traverse, Mediterranean Civilizations
-  Expedition and Oceania Grand Expedition are each seeded directly in their own
-  function instead (`rbSeedNorthAmericaExpedition()` / `rbBuildMediterraneanExpeditionRoute()` /
-  `rbBuildOceaniaExpeditionRoute()`), since each revisits a country across multiple
-  separate legs (Canada/US six times; Italy four times, France and Greece twice each;
-  Australia seven times, New Zealand twice) — a shape `RB_EXPEDITION_CONTENT` (keyed
-  one-entry-per-country-code per route) can't hold.
+  Expedition, Oceania Grand Expedition and Caribbean & Amazon Expedition are each
+  seeded directly in their own function instead (`rbSeedNorthAmericaExpedition()` /
+  `rbBuildMediterraneanExpeditionRoute()` / `rbBuildOceaniaExpeditionRoute()` /
+  `rbBuildCaribbeanAmazonExpeditionRoute()`) — the first three because each revisits a
+  country across multiple separate legs (Canada/US six times; Italy four times, France
+  and Greece twice each; Australia seven times, New Zealand twice) — a shape
+  `RB_EXPEDITION_CONTENT` (keyed one-entry-per-country-code per route) can't hold.
+  Caribbean & Amazon Expedition doesn't repeat any country, but was seeded this way
+  too since it replaced a previously-named backbone-only route (see below).
 - **Three rounds of renames/overhauls**, all applied retroactively by one-time
   migrations in `js/pages/routeBuilder.js` so they also land on routes already seeded
   into a browser, without touching any fields you'd already edited yourself (except
@@ -157,6 +160,18 @@ for the plan to move it into the Google Sheet.
   Backpacker (your own chosen travel style). 183 days total, €14,780 ground costs.
   French Polynesia, New Caledonia, Palau, the Solomon Islands, Micronesia, Kiribati
   and Papua New Guinea were deliberately left out — see the route's own notes for why.
+- **Caribbean & Amazon Expedition 🌴 built (2026-07)** — no longer backbone-only, and
+  renamed from "Caribbean Expedition 🏝️". Designed in a Q&A session from a
+  ChatGPT-brainstormed country list, built the same way as Oceania: 10 legs across 4
+  regions (Grote Antillen: Cuba, Jamaica; Nederlandse Caraïben: Curaçao, Bonaire;
+  Kleine Antillen: Guadeloupe, Dominica, Saint Lucia, Grenada; Suriname & Amazone:
+  Suriname, Brazil). Days use the "ideal" tempo tier; budgets are the midpoint
+  between the Goedkoop and Normaal backpacker tiers from the design discussion (your
+  own chosen travel style). 97 days total, €6,955 ground costs. One change from the
+  original brainstorm order: the Dutch ABC islands moved to right after Jamaica
+  instead of after the Lesser Antilles, since they sit far west of both the Lesser
+  Antilles and Suriname — the original order would have meant backtracking west then
+  east again.
 
 ## Needs attention next time
 
@@ -195,11 +210,11 @@ for the plan to move it into the Google Sheet.
   (Scandinavia, North Atlantic Islands), each with their own season/budget, matching
   the Eurasia/Pan-American pattern. Patagonia & Antarctica and India & Himalaya were
   deliberately left flat — only 3 legs each, too few to benefit from grouping.
-- **Two backbone-only expeditions still need their country list** — Caribbean
-  Expedition 🏝️ and West & Central Africa Expedition 🌍 exist as named, empty routes
-  with zero country blocks. Add blocks via the country dropdown once you've decided
-  which countries/islands each should cover — same process used to flesh out North
-  America Grand Traverse and Oceania Grand Expedition.
+- **One backbone-only expedition still needs its country list** — West & Central
+  Africa Expedition 🌍 exists as a named, empty route with zero country blocks. Add
+  blocks via the country dropdown once you've decided which countries to cover — same
+  process used to flesh out North America Grand Traverse, Oceania Grand Expedition
+  and Caribbean & Amazon Expedition.
 - **North Africa & Middle East Expedition 🏜️ replaced by Mediterranean Civilizations
   Expedition 🏛️** — the old flat 7-country route (Morocco, Tunisia, Egypt, Jordan,
   Oman, UAE, Cyprus) is gone, replaced by an 18-leg, 13-country route from Andalusia

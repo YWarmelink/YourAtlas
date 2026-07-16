@@ -25,6 +25,7 @@ const RB_MIGRATE_FLAG_2026_07_TIMEAUDIT = 'atlas_grand_trips_migrate_2026_07_tim
 const RB_MIGRATE_FLAG_2026_07_BUDGET_REGIONS = 'atlas_grand_trips_migrate_2026_07_budget_regions_v1';
 const RB_MIGRATE_FLAG_2026_07_EURASIA_COUNTRIES = 'atlas_grand_trips_migrate_2026_07_eurasia_countries_v1';
 const RB_MIGRATE_FLAG_2026_07_OCEANIA_BUILD = 'atlas_grand_trips_migrate_2026_07_oceania_build_v1';
+const RB_MIGRATE_FLAG_2026_07_CARIBBEAN_AMAZON_BUILD = 'atlas_grand_trips_migrate_2026_07_caribbean_amazon_build_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
 
@@ -55,6 +56,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateBudgetAndRegionCorrections();
   rbMigrateEurasiaCountryChanges();
   rbMigrateOceaniaExpeditionBuild();
+  rbMigrateCaribbeanAmazonBuild();
   rbBindEvents();
 
   try {
@@ -1778,12 +1780,128 @@ function rbSeedCaribbeanExpedition() {
   if (localStorage.getItem(RB_SEED_FLAG_KEY_CARIBBEAN)) return;
   localStorage.setItem(RB_SEED_FLAG_KEY_CARIBBEAN, '1');
 
-  const caribbeanRoute = rbBuildFlatSeedRoute('Caribbean Expedition 🏝️', [], {
-    notes: "Backbone only — no islands decided yet. Add blocks yourself via the country dropdown once you've picked which islands to include.",
-  });
-
-  rbRoutes.push(caribbeanRoute);
+  rbRoutes.push(rbBuildCaribbeanAmazonExpeditionRoute());
   rbSave();
+}
+
+/**
+ * Caribbean & Amazon Expedition — designed 2026-07 in a Q&A session with Claude, based on a
+ * ChatGPT-brainstormed country list Youri brought in (Cuba, Jamaica, the Dutch ABC islands,
+ * four Lesser Antilles, Suriname, North Brazil) plus his own preferred name over ChatGPT's
+ * "Caribbean & Guianas Expedition". Region-grouped (4 regions) like Eurasia/Pan-American/
+ * Mediterranean/North America/Oceania. Days use the "ideal" tempo tier; budgets are the
+ * midpoint between the "Goedkoop" and "Normaal" backpacker tiers from the design discussion
+ * (Youri's own chosen travel style, between the two — same positioning as Oceania's
+ * Budget/Comfort midpoint). Route order was reordered from the original brainstorm: the Dutch
+ * ABC islands moved right after Jamaica (they sit far west of the Lesser Antilles and Suriname,
+ * so visiting them after the Lesser Antilles would mean backtracking west then east again).
+ * Shared by the fresh-seed path (rbSeedCaribbeanExpedition) and the migration path
+ * (rbMigrateCaribbeanAmazonBuild), so both produce identical content.
+ */
+function rbBuildCaribbeanAmazonExpeditionRoute() {
+  return rbBuildSeedRoute('Caribbean & Amazon Expedition 🌴', [
+    {
+      name: 'Grote Antillen',
+      season: 'December',
+      budget: 2160,
+      note: 'Droog seizoen, ruim na het orkaanseizoen (dat loopt juni-november) — een veilige, aangename opener.',
+      countries: [
+        {
+          code: 'CU', name: 'Cuba', days: 18, budget: 1260,
+          destinations: ['Havana (Habana Vieja)', 'Trinidad', 'Cienfuegos', 'Viñales-vallei'],
+          notes: "Havana en het UNESCO-koloniale Trinidad zijn de hoogtepunten; de rustige Viñales-vallei (tabak, karstlandschap) is de verborgen parel. Casas particulares (particuliere kamers) zijn de gangbare backpacker-accommodatie.",
+          transport_to_next: 'Vlucht Havana-Kingston (meestal met overstap via Panama City of Miami)',
+        },
+        {
+          code: 'JM', name: 'Jamaica', days: 12, budget: 900,
+          destinations: ['Kingston', 'Blue Mountains', "Dunn's River Falls", 'Port Antonio'],
+          notes: 'Blue Mountains (koffie, wandelen) en Port Antonio (rafting, watervallen, nauwelijks toeristen vergeleken met Negril/Ocho Rios) zijn de sterkste match met natuur boven luxe.',
+          transport_to_next: 'Vlucht Kingston-Curaçao (meestal met overstap via Panama City of Miami)',
+        },
+      ],
+    },
+    {
+      name: 'Nederlandse Caraïben',
+      season: 'December-januari',
+      budget: 1085,
+      note: 'Droog seizoen — helderder water voor snorkelen en duiken.',
+      countries: [
+        {
+          code: 'CW', name: 'Curaçao', days: 7, budget: 560,
+          destinations: ['Willemstad (UNESCO)', 'Shete Boka National Park', 'stranden'],
+          notes: 'Willemstad met zijn Nederlandse koloniale architectuur is de stedelijke tegenhanger van rustig Bonaire. Shete Boka (ruige noordkust) is de verborgen parel, veel rustiger dan de stranden.',
+          transport_to_next: 'Korte vlucht Curaçao-Bonaire',
+        },
+        {
+          code: 'BQ', name: 'Bonaire', days: 6, budget: 525,
+          destinations: ['Washington Slagbaai National Park', 'duiken/snorkelen (marine park)'],
+          notes: 'Wereldklasse duiken/snorkelen direct vanaf de kust. Washington Slagbaai NP (flamingo\'s, ruige natuur) is de verborgen parel, nauwelijks bezocht.',
+          transport_to_next: 'Vlucht Bonaire-Guadeloupe (meestal met overstap via Aruba, Panama City of San Juan)',
+        },
+      ],
+    },
+    {
+      name: 'Kleine Antillen',
+      season: 'Januari-februari',
+      budget: 2265,
+      note: "Droog seizoen (carême) — beste moment om te wandelen in Dominica's regenwoud. De eilandvolgorde volgt de natuurlijke noord-zuid keten, en toevallig ook de veerbootlijn L'Express des Îles.",
+      countries: [
+        {
+          code: 'GP', name: 'Guadeloupe', days: 7, budget: 615,
+          destinations: ['La Soufrière (vulkaan)', 'Carbet-watervallen', 'Îles des Saintes'],
+          notes: 'Franse Caraïbische cultuur gecombineerd met een actieve vulkaan. Îles des Saintes (kleine eilandjes voor de kust) is veel rustiger dan het hoofdeiland.',
+          transport_to_next: "Veerboot L'Express des Îles naar Dominica (via Martinique)",
+        },
+        {
+          code: 'DM', name: 'Dominica', days: 8, budget: 580,
+          destinations: ['Boiling Lake-trektocht', 'Trafalgar Falls', 'Champagne Reef'],
+          notes: '"Nature Island" — het minst ontwikkelde en meest ongerepte eiland van de vier. De Boiling Lake-trektocht is een zware hele dag op zich; reken op een rustdag ervoor of erna. Champagne Reef (vulkanische bubbels tijdens het snorkelen) is uniek.',
+          transport_to_next: "Veerboot L'Express des Îles naar St Lucia",
+        },
+        {
+          code: 'LC', name: 'Saint Lucia', days: 7, budget: 560,
+          destinations: ['The Pitons', 'Sulphur Springs (drive-in vulkaan)', 'Tet Paul Nature Trail'],
+          notes: 'De iconische Pitons, meer toeristisch ontwikkeld dan de andere drie. Tet Paul Nature Trail geeft hetzelfde uitzicht op de Pitons, veel rustiger dan de drukke wandelpaden.',
+          transport_to_next: 'Vlucht St Lucia-Grenada (niet op de veerbootlijn)',
+        },
+        {
+          code: 'GD', name: 'Grenada', days: 7, budget: 510,
+          destinations: ['Onderwaterbeeldenpark', 'kruidenplantages (nootmuskaat)', 'Grand Etang National Park'],
+          notes: 'Het minst toeristische van de vier eilanden. Grand Etang NP (regenwoud, kratermeer) is de verborgen parel.',
+          transport_to_next: 'Vlucht Grenada-Suriname (meestal met overstap via Trinidad)',
+        },
+      ],
+    },
+    {
+      name: 'Suriname & Amazone',
+      season: 'Februari-maart',
+      budget: 1445,
+      note: "Suriname's korte droge tijd valt hier precies goed voor jungle-/rivierentochten. Noord-Brazilië's duinenkust (Jericoacoara/Lençóis) is dan net buiten zijn absolute piekseizoen (juni-januari) — het enige geaccepteerde compromis van de hele route.",
+      countries: [
+        {
+          code: 'SR', name: 'Suriname', days: 11, budget: 605,
+          destinations: ['Paramaribo (UNESCO)', 'Marrondorpen aan de rivier', 'Brownsberg Nature Park'],
+          notes: 'Nederlandse koloniale geschiedenis in Paramaribo, gecombineerd met een rivierreis naar Marrondorpen in het binnenland — reken op 3-5 dagen voor een fatsoenlijke jungletocht naast de stad. Brownsberg (uitzicht over het Brokopondostuwmeer) is de verborgen parel.',
+          transport_to_next: 'Vlucht Paramaribo-Belém (schaarse rechtstreekse verbindingen; waarschijnlijk met overstap via Cayenne, Georgetown of een Braziliaanse hub — vooraf goed checken)',
+        },
+        {
+          code: 'BR', name: 'Brazil', days: 14, budget: 840,
+          destinations: ['Belém', 'Ilha do Marajó', 'Lençóis Maranhenses', 'Jericoacoara', 'Fortaleza'],
+          notes: 'De overgang van de Amazone-riviermonding (Belém, Marajó — buffels, ongerept rivierdelta-eiland) naar de compleet andere zandduinenkust (Lençóis Maranhenses, Jericoacoara) als adembenemende afsluiter. De afstanden langs de kust worden vaak onderschat.',
+          transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Fortaleza (of via São Paulo) naar Nederland',
+        },
+      ],
+    },
+  ], {
+    travel_style: "Backpacker tussen goedkoop en normaal in — hostels en casas particulares afgewisseld met af en toe een privékamer, de veerboot L'Express des Îles waar mogelijk (Guadeloupe-Dominica-St Lucia), vluchten voor de rest van de eilandsprongen (geen praktisch bootalternatief).",
+    best_starting_month: 'December',
+    description: 'Reis door de Caribische wereld en de overgang naar Zuid-Amerika: koloniale geschiedenis, vulkanische natuur en eilandculturen, gevolgd door Suriname en de Amazone-riviermonding in Noord-Brazilië als afsluiter. Geoptimaliseerd voor de meest unieke plekken, niet voor het aantal eilanden.',
+    climate_summary: "Vergeleken met Oceania is dit een relatief eenvoudige seizoenspuzzel: het orkaanseizoen in de Caribische Zee loopt 1 juni-30 november (piek half augustus-oktober), terwijl Suriname en Noord-Brazilië buiten de orkaangordel liggen (te dicht bij de evenaar). Bij een start op 1 december en een ideale duur van circa 97 dagen (~3,2 maanden) eindigt de expeditie begin maart — ruim binnen het droge/veilige seizoen (december-mei) voor het hele Caribische deel, zonder ooit dichtbij het orkaanseizoen te komen. Suriname's korte droge tijd (februari-maart) valt er ook nog net in. Enige compromis: Noord-Brazilië's duinenkust (Jericoacoara/Lençóis) is op zijn mooist juni-januari (droog, sterke wind voor de lagunes) — bij een decemberstart val je daar net buiten. Alternatief (3-4 maanden later starten) zou wél het beste Caribische droge seizoen missen en dichter bij het orkaanseizoen uitkomen — per saldo is 1 december de betere afweging.",
+    notes: "Ontworpen in een Q&A-sessie met Claude (2026-07), op basis van een ChatGPT-brainstorm die Youri aandroeg (route, landen, tijdsindeling, budget, logistiek). Naam \"Caribbean & Amazon Expedition\" gekozen boven ChatGPT's \"Caribbean & Guianas Expedition\" — herkenbaarder en dekt zowel Suriname's binnenland als Noord-Brazilië's regenwoud/kust beter dan de vaktechnische term \"Guianas\". Dagen zijn de 'ideale' tempo-schatting; budgetten zijn het gemiddelde van het Goedkope en Normale backpackbudget uit de ontwerpdiscussie (Youri's zelfgekozen reisstijl, tussen die twee in).\n\n" +
+      "Eén routewijziging t.o.v. de oorspronkelijke brainstorm: de Nederlandse ABC-eilanden (Curaçao/Bonaire) zijn verplaatst naar direct na Jamaica in plaats van na de Kleine Antillen — geografisch liggen ze fors westelijker dan de Kleine Antillen en Suriname, dus in de oorspronkelijke volgorde zou je eerst ver oostwaarts reizen en daarna weer helemaal terug naar het westen. De eilandvolgorde binnen de Kleine Antillen zelf (Guadeloupe-Dominica-St Lucia-Grenada) was al correct — dat is zowel de natuurlijke noord-zuid keten als de route van de veerboot L'Express des Îles.\n\n" +
+      "Overlap-controle: geen van de tien onderdelen is geschrapt — de vier Kleine Antillen lijken oppervlakkig op elkaar maar hebben elk een eigen signatuur (Guadeloupe: Franse cultuur + vulkaan; Dominica: meest ongerepte regenwoud; St Lucia: iconische Pitons, meer ontwikkeld; Grenada: kruiden + minst toeristisch), en Suriname/Noord-Brazilië zijn complementair (rivier-regenwoud met Marroncultuur versus riviermonding-delta plus een compleet andere duinenkust).\n\n" +
+      "Totaal: 97 dagen (~3,2 maanden), €6.955 grondkosten + circa €3.000-3.500 aan vluchten (Caribische eilandhop-vluchten zijn berucht prijzig per afstand door weinig concurrentie; Suriname-Noord-Brazilië is waarschijnlijk de lastigste/duurste losse verbinding). Nog niet getoetst aan actuele prijzen, visumregels of reisadviezen — behandel dit als een eerste concept, geen boekbaar plan.",
+  });
 }
 
 function rbSeedWestCentralAfricaExpedition() {
@@ -2387,5 +2505,25 @@ function rbMigrateOceaniaExpeditionBuild() {
   if (rbRoutes[idx].blocks.length > 0) return;
 
   rbRoutes.splice(idx, 1, rbBuildOceaniaExpeditionRoute());
+  rbSave();
+}
+
+/**
+ * Builds out the Caribbean & Amazon Expedition (2026-07): seeded as backbone-only under the name
+ * "Caribbean Expedition 🏝️" long before this design existed, so it needs both a rename and a
+ * wholesale content replace — same pattern as rbMigrateOceaniaExpeditionBuild(), just matched by
+ * the old name since the name itself changed too. Only touches the route if it's still empty
+ * (respects any blocks Youri may have added by hand in the meantime).
+ */
+function rbMigrateCaribbeanAmazonBuild() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_07_CARIBBEAN_AMAZON_BUILD)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_07_CARIBBEAN_AMAZON_BUILD, '1');
+
+  const oldNames = ['Caribbean Expedition 🏝️', 'Caribbean & Amazon Expedition 🌴'];
+  const idx = rbRoutes.findIndex(r => oldNames.includes(r.name));
+  if (idx === -1) return;
+  if (rbRoutes[idx].blocks.length > 0) return;
+
+  rbRoutes.splice(idx, 1, rbBuildCaribbeanAmazonExpeditionRoute());
   rbSave();
 }
