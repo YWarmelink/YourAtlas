@@ -302,6 +302,29 @@ for the plan to move it into the Google Sheet.
   block), but its dropdown will show as unselected until the sheet catches up.
   Cosmetic only.
 
+## Future plans
+
+- **British Isles & Celtic Regions Expedition** — a thirteenth expedition Youri is
+  planning to design next (2026-07). Not started yet — no route brief, countries or
+  content exist for it. Follow the established workflow when it comes up: a
+  standalone discussion artifact first (route/regions/timing/budget), Youri reviews
+  and adjusts, only then build it into `routeBuilder.js`.
+- **Route-line map view, not just per-country highlighting** — Youri wants a way to
+  see a route drawn as an actual path/line (start→finish, following the real
+  sequence of stops), rather than the current World map view which just highlights
+  whichever countries appear in the route with no sense of order or the specific
+  places within a country. This is a good fit for **Central European Grand Roadtrip**
+  in particular, since its whole point is a driving loop through specific cities
+  (Straatsburg → Neuschwanstein → Luzern → ... ), not a set of countries. Feasible:
+  Route Builder already uses Leaflet for its World map view
+  (`rbRenderMap()`/`rbGetWorldGeoJSON()` in `js/pages/routeBuilder.js`), and Leaflet
+  supports drawing a polyline between coordinates directly (`L.polyline([[lat,lng], ...])`)
+  plus markers for each stop. The main new work would be: (1) storing a lat/lng per
+  Destination (or per country block, as a fallback) instead of just a name, and (2) a
+  new map mode that draws the ordered path through those coordinates rather than
+  filling whole countries. Worth prototyping on this roadtrip route first since it
+  already has a clear point-to-point shape.
+
 ## Architecture
 
 ```
