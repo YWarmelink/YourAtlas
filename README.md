@@ -53,31 +53,31 @@ trips that span months, not weeks. Lives at `route-builder.html`.
   **Mediterranean Civilizations Expedition 🏛️**, **Nordic Arctic Expedition ❄️**,
   **Patagonia & Antarctica Expedition 🧊**, **India & Himalaya Expedition 🏔️**,
   **North America Grand Traverse 🌎**, **Oceania Grand Expedition 🌊**,
-  **Caribbean Expedition 🏝️**, and **West & Central Africa Expedition 🌍** — are
-  seeded once on first load, each gated by its own `localStorage` flag so adding a new
-  one later still seeds it into existing browsers. Eurasia/Pan-American/North
+  **Caribbean & Amazon Expedition 🌴**, and **West & Central Africa Expedition 🌍** —
+  are seeded once on first load, each gated by its own `localStorage` flag so adding a
+  new one later still seeds it into existing browsers. All eleven now have real
+  content — no more backbone-only routes. Eurasia/Pan-American/North
   America/Mediterranean Civilizations are seeded with countries pre-grouped into
-  regions; Africa/Nordic Arctic/Patagonia & Antarctica/India & Himalaya are seeded
-  **flat, with zero regions** — group their countries into your own blocks via the
-  region dropdown whenever you're ready to plan it for real. West & Central Africa is
-  the last **backbone-only** one: name and emoji, zero country blocks, seeded that way
-  on purpose since the countries haven't been decided yet — add blocks yourself once
-  they are. The other ten now have per-country days, an estimated budget, a
-  Destinations list and a Transport-to-next note.
+  regions; Patagonia & Antarctica and India & Himalaya are seeded **flat, with zero
+  regions** on purpose (only 3 legs each — too few to benefit from grouping). Every
+  other route now has per-country days, an estimated budget, a Destinations list and a
+  Transport-to-next note.
   Eurasia/Pan-American/Africa/Nordic Arctic/Patagonia & Antarctica/India & Himalaya
   source this from `RB_EXPEDITION_CONTENT` in `js/pages/routeBuilder.js` — a one-time
   `rbPatchExpeditionContent()` patch fills these in for anyone who already had the
   routes seeded before this content existed, without touching fields you've since
   edited yourself. North America Grand Traverse, Mediterranean Civilizations
-  Expedition, Oceania Grand Expedition and Caribbean & Amazon Expedition are each
-  seeded directly in their own function instead (`rbSeedNorthAmericaExpedition()` /
-  `rbBuildMediterraneanExpeditionRoute()` / `rbBuildOceaniaExpeditionRoute()` /
-  `rbBuildCaribbeanAmazonExpeditionRoute()`) — the first three because each revisits a
-  country across multiple separate legs (Canada/US six times; Italy four times, France
-  and Greece twice each; Australia seven times, New Zealand twice) — a shape
+  Expedition, Oceania Grand Expedition, Caribbean & Amazon Expedition and West &
+  Central Africa Expedition are each seeded directly in their own function instead
+  (`rbSeedNorthAmericaExpedition()` / `rbBuildMediterraneanExpeditionRoute()` /
+  `rbBuildOceaniaExpeditionRoute()` / `rbBuildCaribbeanAmazonExpeditionRoute()` /
+  `rbBuildWestCentralAfricaExpeditionRoute()`) — the first three because each revisits
+  a country across multiple separate legs (Canada/US six times; Italy four times,
+  France and Greece twice each; Australia seven times, New Zealand twice) — a shape
   `RB_EXPEDITION_CONTENT` (keyed one-entry-per-country-code per route) can't hold.
-  Caribbean & Amazon Expedition doesn't repeat any country, but was seeded this way
-  too since it replaced a previously-named backbone-only route (see below).
+  Caribbean & Amazon Expedition and West & Central Africa Expedition don't repeat any
+  country, but were seeded this way too since each replaced a previously-named or
+  empty backbone-only route (see below).
 - **Three rounds of renames/overhauls**, all applied retroactively by one-time
   migrations in `js/pages/routeBuilder.js` so they also land on routes already seeded
   into a browser, without touching any fields you'd already edited yourself (except
@@ -172,6 +172,29 @@ for the plan to move it into the Google Sheet.
   instead of after the Lesser Antilles, since they sit far west of both the Lesser
   Antilles and Suriname — the original order would have meant backtracking west then
   east again.
+- **West & Central Africa Expedition 🌍 built (2026-07)** — no longer backbone-only,
+  and the last of the eleven routes to get real content. Designed in a Q&A session
+  from a ChatGPT-brainstormed country list, built the same way as Oceania/Caribbean &
+  Amazon: 10 legs across 4 regions (Kaapverdische Eilanden: Cape Verde; Senegambia:
+  Senegal, Gambia; Golf van Guinee: Ivory Coast, Ghana, Togo, Benin; Centraal-Afrika &
+  Eilanden: Cameroon, São Tomé & Príncipe, Gabon). Days use the "ideal" tempo tier;
+  budgets are the midpoint between the Goedkoop and Realistisch tiers from the design
+  discussion. 93 days total, €5,160 ground costs. Two changes made after reviewing the
+  design: Taï National Park dropped from Ivory Coast (remote, costs 3-4 extra days for
+  content available elsewhere), and Cameroon's content shifted from Mount
+  Cameroon/Limbe (Southwest Region — an active conflict zone since 2016, the
+  "Anglophone Crisis") to Douala/Kribi/Yaoundé in the stable Francophone regions.
+  Angola was deliberately left out of this route — see below.
+- **Angola added to Africa Grand Tour 🌍 (2026-07)** — originally part of the West &
+  Central Africa brainstorm, but moved here instead via `rbMigrateAngolaIntoAfricaGrandTour()`:
+  it borders Namibia (real overland crossing at Oshikango/Santa Clara), already the
+  last country in that route's "Southern Africa" region, rather than being an isolated
+  flight-only endpoint on the West Africa route. Inserted right after Namibia, then a
+  flight from Luanda to Cape Town/Johannesburg to rejoin the South Africa Finale. This
+  does **not** fix any seasonal mismatch — the Southern Africa region already falls in
+  the rainy season by this route's own June-start design (see its climate_summary),
+  and Angola shares that same accepted trade-off. New totals: 18 countries (was 17),
+  288 days (was 277), €29,225 (was €27,725).
 
 ## Needs attention next time
 
@@ -205,16 +228,12 @@ for the plan to move it into the Google Sheet.
   expeditions (West-Eurasia through Central Asia, and East Asia/Southeast Asia through
   Indonesia) rather than one continuous year.
 - **Africa Grand Tour and Nordic Arctic Expedition are now region-grouped too
-  (2026-07)** — Africa's 17 countries are grouped into 4 regions (Northeast & East
-  Africa, Islands, Southern Africa, South Africa Finale) and Nordic Arctic's 7 into 2
-  (Scandinavia, North Atlantic Islands), each with their own season/budget, matching
-  the Eurasia/Pan-American pattern. Patagonia & Antarctica and India & Himalaya were
+  (2026-07)** — Africa's 18 countries (17 + Angola, added later — see "Recently
+  fixed") are grouped into 4 regions (Northeast & East Africa, Islands, Southern
+  Africa, South Africa Finale) and Nordic Arctic's 7 into 2 (Scandinavia, North
+  Atlantic Islands), each with their own season/budget, matching the
+  Eurasia/Pan-American pattern. Patagonia & Antarctica and India & Himalaya were
   deliberately left flat — only 3 legs each, too few to benefit from grouping.
-- **One backbone-only expedition still needs its country list** — West & Central
-  Africa Expedition 🌍 exists as a named, empty route with zero country blocks. Add
-  blocks via the country dropdown once you've decided which countries to cover — same
-  process used to flesh out North America Grand Traverse, Oceania Grand Expedition
-  and Caribbean & Amazon Expedition.
 - **North Africa & Middle East Expedition 🏜️ replaced by Mediterranean Civilizations
   Expedition 🏛️** — the old flat 7-country route (Morocco, Tunisia, Egypt, Jordan,
   Oman, UAE, Cyprus) is gone, replaced by an 18-leg, 13-country route from Andalusia

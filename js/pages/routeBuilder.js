@@ -26,6 +26,8 @@ const RB_MIGRATE_FLAG_2026_07_BUDGET_REGIONS = 'atlas_grand_trips_migrate_2026_0
 const RB_MIGRATE_FLAG_2026_07_EURASIA_COUNTRIES = 'atlas_grand_trips_migrate_2026_07_eurasia_countries_v1';
 const RB_MIGRATE_FLAG_2026_07_OCEANIA_BUILD = 'atlas_grand_trips_migrate_2026_07_oceania_build_v1';
 const RB_MIGRATE_FLAG_2026_07_CARIBBEAN_AMAZON_BUILD = 'atlas_grand_trips_migrate_2026_07_caribbean_amazon_build_v1';
+const RB_MIGRATE_FLAG_2026_07_WCAFRICA_BUILD = 'atlas_grand_trips_migrate_2026_07_wcafrica_build_v1';
+const RB_MIGRATE_FLAG_2026_07_ANGOLA_ADDITION = 'atlas_grand_trips_migrate_2026_07_angola_addition_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
 
@@ -57,6 +59,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateEurasiaCountryChanges();
   rbMigrateOceaniaExpeditionBuild();
   rbMigrateCaribbeanAmazonBuild();
+  rbMigrateWestCentralAfricaBuild();
+  rbMigrateAngolaIntoAfricaGrandTour();
   rbBindEvents();
 
   try {
@@ -1129,7 +1133,8 @@ const RB_EXPEDITION_CONTENT = {
     ZM: { days: 16, budget: 1825, destinations: ["Lusaka", "South Luangwa NP", "Lower Zambezi NP", "Livingstone/Victoria Falls"], transport_to_next: "Over land via de grensovergang bij Victoria Falls/Livingstone naar Zimbabwe." },
     ZW: { days: 14, budget: 1275, destinations: ["Victoria Falls", "Hwange NP", "Mana Pools", "Great Zimbabwe", "Bulawayo"], transport_to_next: "Over land via grensovergang Kazungula of Plumtree richting Botswana." },
     BW: { days: 16, budget: 2525, destinations: ["Kasane", "Chobe NP", "Okavango Delta (Maun)", "Makgadikgadi Pans", "Central Kalahari"], transport_to_next: "Over land via grensovergang Mamuno/Buitepos richting Namibië." },
-    NA: { days: 20, budget: 2000, destinations: ["Windhoek", "Sossusvlei/Namib-Naukluft", "Swakopmund", "Damaraland", "Etosha NP", "Fish River Canyon"], transport_to_next: "Over land via grensovergang Vioolsdrif/Noordoewer richting Zuid-Afrika (zelf rijden)." },
+    NA: { days: 20, budget: 2000, destinations: ["Windhoek", "Sossusvlei/Namib-Naukluft", "Swakopmund", "Damaraland", "Etosha NP", "Fish River Canyon"], transport_to_next: "Over land via de grensovergang Oshikango/Santa Clara richting Angola." },
+    AO: { days: 11, budget: 1500, destinations: ["Luanda", "Lubango", "Serra da Leba", "Tundavala-kloof", "Namibe-woestijn"], transport_to_next: "Vlucht Luanda-Kaapstad/Johannesburg (meestal met overstap) om weer aan te sluiten bij de South Africa Finale, in plaats van overland terug te reizen door Namibië." },
     ZA: { days: 24, budget: 2000, destinations: ["Kaapstad", "Winelands (Stellenbosch)", "Garden Route", "Addo Elephant Park", "Kruger NP", "Johannesburg", "Drakensberg"], transport_to_next: "Over land de enclave Lesotho in via grensovergang Maseru Bridge (of avontuurlijker via Sani Pass)." },
     LS: { days: 6, budget: 350, destinations: ["Maseru", "Malealea", "Sani Pass/Thaba-Bosiu", "Roma", "Semonkong"], transport_to_next: "Over land terug door Zuid-Afrika naar grensovergang Golela/Lavumisa richting Eswatini." },
     SZ: { days: 5, budget: 300, destinations: ["Mbabane", "Ezulwini Valley", "Mlilwane Wildlife Sanctuary", "Hlane Royal National Park"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit King Mswati III International Airport (Matsapha), eventueel via OR Tambo Johannesburg." },
@@ -1233,9 +1238,9 @@ function rbSeedMEAExpedition() {
       countries: [mea('MG', 'Madagascar'), mea('MU', 'Mauritius')],
     },
     {
-      name: 'Southern Africa', season: 'November–januari', budget: 9875,
-      note: 'Van Malawi tot Namibië — grote zelfrijafstanden, vooral in Namibië; valt bij deze volgorde grotendeels in het regenseizoen (zie de klimaatredenering van de hele route).',
-      countries: [mea('MW', 'Malawi'), mea('MZ', 'Mozambique'), mea('ZM', 'Zambia'), mea('ZW', 'Zimbabwe'), mea('BW', 'Botswana'), mea('NA', 'Namibia')],
+      name: 'Southern Africa', season: 'November–januari', budget: 11375,
+      note: 'Van Malawi tot Angola — grote zelfrijafstanden, vooral in Namibië; valt bij deze volgorde grotendeels in het regenseizoen (zie de klimaatredenering van de hele route). Angola toegevoegd na Namibië (grensovergang Oshikango/Santa Clara), vervolgens per vlucht terug naar Kaapstad/Johannesburg om aan te sluiten bij de South Africa Finale.',
+      countries: [mea('MW', 'Malawi'), mea('MZ', 'Mozambique'), mea('ZM', 'Zambia'), mea('ZW', 'Zimbabwe'), mea('BW', 'Botswana'), mea('NA', 'Namibia'), mea('AO', 'Angola')],
     },
     {
       name: 'South Africa Finale', season: 'Februari–maart', budget: 2650,
@@ -1249,7 +1254,8 @@ function rbSeedMEAExpedition() {
     description: 'Overland route through East Africa, the islands, and Southern Africa, with Egypt as the northern gateway. Target duration ~12 months.',
     notes: 'Imported from a ChatGPT brainstorm — deliberately seeded with zero blocks (unlike Eurasia/Pan-American): group these 17 countries into your own blocks (e.g. East Africa, Islands, Southern Africa, South Africa finale) via the region dropdown on each country, in whatever shape makes sense once you plan it for real. Jordan and Oman used to be part of this route but were moved to what is now Mediterranean Civilizations Expedition 🏛️ so this stays purely African + Egypt as the historical/geographic gateway; Egypt itself still appears in both since it fits both themes. South Africa is already marked "visited" in your Countries sheet — worth checking before treating it as new.\n\n' +
       'Tijdscontrole (2026-07): dagen per land opgehoogd na een realismecontrole (247→277 dagen totaal) — vooral Oeganda (gorillatrekking-logistiek), Madagaskar (berucht trage wegen) en Mozambique (het land strekt zich noord-zuid enorm uit) waren onderschat. Landen en volgorde zijn ongewijzigd; alleen de duur per land en de klimaatredenering hierboven zijn toegevoegd.\n\n' +
-      'Vervolg (2026-07): budgetten per land meegeschaald met de opgehoogde dagen (zelfde dagprijs, dus meer dagen = evenredig meer budget), en de 17 landen alsnog gegroepeerd in 4 regio\'s (Northeast & East Africa, Islands, Southern Africa, South Africa Finale) met eigen seizoen/budget per regio, zoals Eurasia en Pan-American die al hadden. Landen, volgorde en dagen zijn ongewijzigd.',
+      'Vervolg (2026-07): budgetten per land meegeschaald met de opgehoogde dagen (zelfde dagprijs, dus meer dagen = evenredig meer budget), en de 17 landen alsnog gegroepeerd in 4 regio\'s (Northeast & East Africa, Islands, Southern Africa, South Africa Finale) met eigen seizoen/budget per regio, zoals Eurasia en Pan-American die al hadden. Landen, volgorde en dagen zijn ongewijzigd.\n\n' +
+      "Toevoeging (2026-07): Angola toegevoegd aan de Southern Africa-regio, direct na Namibië (grensovergang Oshikango/Santa Clara), met een vlucht Luanda-Kaapstad/Johannesburg om weer aan te sluiten bij de South Africa Finale. Afkomstig uit de West & Central Africa-ontwerpsessie — daar paste Angola geografisch slechter (alleen per vlucht bereikbaar, geen buurlanden op die route). Let op: dit verandert niets aan het seizoenscompromis van deze regio (valt nog steeds in het regenseizoen bij de huidige juni-startmaand) — Angola deelt gewoon hetzelfde, al geaccepteerde compromis. Nieuw totaal: 18 landen (was 17), 288 dagen (was 277), €29.225 (was €27.725).",
   });
 
   rbRoutes.push(meaRoute);
@@ -1908,12 +1914,129 @@ function rbSeedWestCentralAfricaExpedition() {
   if (localStorage.getItem(RB_SEED_FLAG_KEY_WCAFRICA)) return;
   localStorage.setItem(RB_SEED_FLAG_KEY_WCAFRICA, '1');
 
-  const wcAfricaRoute = rbBuildFlatSeedRoute('West & Central Africa Expedition 🌍', [], {
-    notes: "Backbone only — no countries decided yet. Add blocks yourself via the country dropdown once you've picked which West/Central African countries to include.",
-  });
-
-  rbRoutes.push(wcAfricaRoute);
+  rbRoutes.push(rbBuildWestCentralAfricaExpeditionRoute());
   rbSave();
+}
+
+/**
+ * West & Central Africa Expedition — designed 2026-07 in a Q&A session with Claude, based on a
+ * ChatGPT-brainstormed country list Youri brought in (Cape Verde, Senegal, Gambia, Ivory Coast,
+ * Ghana, Togo, Benin, Cameroon, São Tomé & Príncipe, Gabon, Angola). Region-grouped (4 regions)
+ * like Eurasia/Pan-American/Mediterranean/North America/Oceania/Caribbean & Amazon. Days use the
+ * "ideal" tempo tier; budgets are the midpoint between the "Goedkoop" and "Realistisch" backpacker
+ * tiers from the design discussion. Two adjustments made after Youri reviewed the design: Taï
+ * National Park dropped from Ivory Coast (remote, costs 3-4 extra days), and Cameroon's content
+ * shifted from Mount Cameroon/Limbe (Southwest Region, an active conflict zone since 2016) to
+ * Douala/Kribi/Yaoundé (stable Francophone regions). Angola was deliberately moved out to Africa
+ * Grand Tour instead — see rbMigrateAngolaIntoAfricaGrandTour() — since it borders Namibia (already
+ * on that route) rather than sitting here as an isolated flight-only endpoint; Gabon is now this
+ * route's finale. Shared by the fresh-seed path (rbSeedWestCentralAfricaExpedition) and the
+ * migration path (rbMigrateWestCentralAfricaBuild), so both produce identical content.
+ */
+function rbBuildWestCentralAfricaExpeditionRoute() {
+  return rbBuildSeedRoute('West & Central Africa Expedition 🌍', [
+    {
+      name: 'Kaapverdische Eilanden',
+      season: 'November',
+      budget: 780,
+      note: 'Net na het regenseizoen (augustus-oktober) — het droge seizoen loopt tot juni. Rustige, aangename opener.',
+      countries: [
+        {
+          code: 'CV', name: 'Cape Verde', days: 13, budget: 780,
+          destinations: ['Santo Antão (Ribeira Grande, Paúl-vallei)', 'São Vicente (Mindelo)', 'Fogo (Pico do Fogo-vulkaan, wijngaarden)'],
+          notes: "Bewust andere eilanden dan een eerder bezoek (niet opnieuw Sal) — Santo Antão voor de dramatische wandelvalleien, São Vicente voor de muziekcultuur van Mindelo, Fogo voor de vulkaanbeklimming en wijnbouw op vulkanische grond. Onderling per veerboot (goedkoper, minder betrouwbaar schema) of Binter Cabo Verde-vlucht.",
+          transport_to_next: 'Vlucht Praia/Sal-Dakar, korte oversteek naar het vasteland.',
+        },
+      ],
+    },
+    {
+      name: 'Senegambia',
+      season: 'November-december',
+      budget: 858,
+      note: 'Begin van het West-Afrikaanse droge seizoen (november-april).',
+      countries: [
+        {
+          code: 'SN', name: 'Senegal', days: 13, budget: 618,
+          destinations: ['Dakar', 'Île de Gorée', 'Saint-Louis (UNESCO)', 'Sine-Saloum-delta', 'Lompoul-woestijn'],
+          notes: "Île de Gorée (slavernijgeschiedenis, korte boot vanaf Dakar) en Saint-Louis (koloniale hoofdstad) zijn de historische zwaartepunten; Sine-Saloum (mangroves, vogels) en de Lompoul-duinen geven een compleet ander natuurbeeld binnen één land.",
+          transport_to_next: 'Bus/deeltaxi over land naar Gambia via de Senegambia-brug (geopend 2019, een stuk vlotter dan de vroegere veerpont).',
+        },
+        {
+          code: 'GM', name: 'Gambia', days: 6, budget: 240,
+          destinations: ['Banjul', 'Gambia-rivier (bootcruise)', 'Kunta Kinteh Island (UNESCO, slavernijgeschiedenis)', 'Makasutu Culture Forest'],
+          notes: "Klein maar met een eigen, herkenbaar hoogtepunt: Kunta Kinteh Island (voorheen James Island) is een van de belangrijkste slavernij-erfgoedsites van West-Afrika.",
+          transport_to_next: 'Vlucht naar Abidjan — geen praktische landroute (Guinee-Bissau, Guinee, Sierra Leone en Liberia liggen ertussen, te veel omweg/visa voor deze reisstijl).',
+        },
+      ],
+    },
+    {
+      name: 'Golf van Guinee',
+      season: 'December-januari',
+      budget: 1634,
+      note: 'Harmattan-seizoen — droog maar stoffig, de beste periode om hier te reizen.',
+      countries: [
+        {
+          code: 'CI', name: 'Ivory Coast', days: 7, budget: 333,
+          destinations: ['Abidjan (Le Plateau)', 'Grand-Bassam (UNESCO koloniale stad)'],
+          notes: "Taï National Park is bewust weggelaten — prachtig, maar de afgelegen ligging kost 3-4 dagen extra reistijd voor chimpansees die ook elders in West-/Centraal-Afrika te zien zijn. Abidjan en Grand-Bassam houden dit land compact en de moeite waard.",
+          transport_to_next: 'Bus over land naar Ghana via de grensovergang Elubo — een gevestigde backpacker-route.',
+        },
+        {
+          code: 'GH', name: 'Ghana', days: 15, budget: 713,
+          destinations: ['Accra', 'Cape Coast Castle', 'Elmina Castle', 'Kakum National Park (boomtoppenpad)', 'Volta-regio (Wli-watervallen, Mount Afadjato)'],
+          notes: "Cape Coast en Elmina Castle zijn de zwaarste, belangrijkste slavernijgeschiedenis-sites van de hele expeditie. Ghana heeft verreweg het rijkste programma van de reis — vandaar de meeste tijd.",
+          transport_to_next: 'Bus over land naar Togo via de grensovergang Aflao.',
+        },
+        {
+          code: 'TG', name: 'Togo', days: 4, budget: 160,
+          destinations: ['Lomé', 'Togoville (Vodun-cultuur, Lac Togo)'],
+          notes: "Bewust kort — Togo voegt met zijn Duitse koloniale geschiedenis (vóór de latere Franse overname) wel een andere invalshoek toe dan Ghana/Benin, maar heeft weinig hoogtepunten. Ligt toch al direct op de route, dus lage extra kosten om aan te doen.",
+          transport_to_next: 'Bus over land naar Benin via de grensovergang Hillacondji.',
+        },
+        {
+          code: 'BJ', name: 'Benin', days: 9, budget: 428,
+          destinations: ['Ouidah (Route des Esclaves, Door of No Return)', 'Ganvié (paalwoningdorp op het meer)', 'Abomey (koninklijke paleizen, UNESCO)'],
+          notes: "Precies de combinatie die deze expeditie zoekt: oude koninkrijken (Abomey, het voormalige Dahomey), slavernijgeschiedenis (Ouidah) en levende Vodun-cultuur.",
+          transport_to_next: "Vlucht Cotonou-Douala (meestal met overstap) — overland door Nigeria is voor deze reis geen optie, de enige onvermijdelijke sprong van de hele route.",
+        },
+      ],
+    },
+    {
+      name: 'Centraal-Afrika & Eilanden',
+      season: 'Januari-februari',
+      budget: 1888,
+      note: "Kameroens minst natte periode (november-februari) en Gabons korte droge seizoen (december-februari) vallen hier samen; São Tomé is de uitzondering (regenseizoen, zie de klimaatredenering van de hele route).",
+      countries: [
+        {
+          code: 'CM', name: 'Cameroon', days: 8, budget: 380,
+          destinations: ['Douala', 'Kribi (Chutes de la Lobé, zwarte stranden)', 'Yaoundé'],
+          notes: 'Aangepast t.o.v. het oorspronkelijke plan: Mount Cameroon en Limbe liggen in de Zuidwest-regio, waar sinds 2016 een gewapend conflict speelt (de "Anglophone Crisis") — reisadviezen hebben dit gebied in verschillende periodes afgeraden. In plaats daarvan Douala, Kribi (de Chutes de la Lobé stromen letterlijk de zee in — uniek) en Yaoundé, allemaal in de stabielere Franstalige Littoral/Centre-regio\'s. Check de actuele situatie in het Zuidwesten vlak vóór vertrek — mocht die verbeterd zijn, dan is Mount Cameroon alsnog het overwegen waard als toevoeging.',
+          transport_to_next: 'Vlucht Douala-São Tomé (regionale verbinding).',
+        },
+        {
+          code: 'ST', name: 'São Tomé and Príncipe', days: 9, budget: 653,
+          destinations: ['São Tomé (roças/plantages, regenwoud)', 'Príncipe (afgelegen, minder bezocht)'],
+          notes: "Uniek in de hele Travel Atlas: Portugese koloniale plantagegeschiedenis op een klein, rustig tropisch eiland. Valt in het regenseizoen (oktober-mei) bij deze route — vooral middagbuien, geen aanhoudende moesson.",
+          transport_to_next: 'Vlucht São Tomé-Libreville (regionale verbinding).',
+        },
+        {
+          code: 'GA', name: 'Gabon', days: 9, budget: 855,
+          destinations: ['Loango National Park (surfende nijlpaarden, bosolifanten op het strand)', 'Libreville', 'regenwoud'],
+          notes: "Bewuste, sterke afsluiter van de hele expeditie — Loango is een van de weinige plekken ter wereld waar je olifanten en nijlpaarden op het strand ziet. Valt toevallig in zijn korte droge seizoen (december-februari) bij deze route.",
+          transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Libreville naar Nederland (meestal met overstap).',
+        },
+      ],
+    },
+  ], {
+    travel_style: "Backpacker, geen harde tijdslimiet — hostels/eenvoudige guesthouses met af en toe een privékamer, bus/deeltaxi overland waar mogelijk (Senegal t/m Benin), vluchten voor de onvermijdelijke sprongen (Kaapverdië-Senegal, Gambia-Ivoorkust, Benin-Kameroen, en tussen Kameroen/São Tomé/Gabon).",
+    best_starting_month: 'November',
+    description: 'Backpack-expeditie door West- en Centraal-Afrika: Atlantische eilandcultuur, oude West-Afrikaanse koninkrijken, slavernijgeschiedenis en Centraal-Afrikaans regenwoud/wildlife. Geoptimaliseerd voor de mooiste en meest unieke ervaring, niet voor het aantal landen.',
+    climate_summary: "Vergeleken scenario's: (1) een zomerstart (juni-augustus) zou Kaapverdië/Senegal t/m Benin middenin hun regenseizoen zetten (mei-oktober) — enige voordeel is dat het samenvalt met Gabons lange droge periode (juni-augustus), maar dat weegt niet op tegen de rest; (2) een start begin november laat vrijwel de hele route in zijn beste seizoen vallen: Kaapverdië net na het regenseizoen, Senegal t/m Benin in hun volledige droge seizoen (november-april, met de stoffige maar droge harmattan december-februari), Kameroen in zijn minst natte periode (november-februari), en Gabon toevallig in zijn korte droge periode (december-februari). Enige compromis: São Tomé & Príncipe's eigen droge seizoen (\"gravana\") loopt juni-september — bij een novemberstart val je daar in het regenseizoen, voornamelijk middagbuien in plaats van aanhoudende regen. Beste keuze: start begin november in Kaapverdië.",
+    notes: "Ontworpen in een Q&A-sessie met Claude (2026-07), op basis van een ChatGPT-brainstorm die Youri aandroeg (route, landen, tijdschema, budget, transport, veiligheid, omvang-check). Dagen zijn de 'ideale' tempo-schatting; budgetten zijn het gemiddelde van het Goedkope backpackbudget en het Realistische budget uit de ontwerpdiscussie.\n\n" +
+      "Twee aanpassingen na Youri's review van het ontwerp: (1) Taï National Park in Ivoorkust laten vervallen — afgelegen, kost 3-4 dagen extra voor chimpansees die ook elders te zien zijn; Ivoorkust blijft beperkt tot Abidjan + Grand-Bassam. (2) Kameroen aangepast: Mount Cameroon en Limbe liggen in de Zuidwest-regio, waar sinds 2016 een gewapend conflict speelt (de Anglophone Crisis) — vervangen door Douala, Kribi (Chutes de la Lobé) en Yaoundé, allemaal in de stabielere Franstalige regio's. Check de actuele veiligheidssituatie in het Zuidwesten vlak vóór vertrek.\n\n" +
+      "Angola is bewust uit deze expeditie gehaald en verplaatst naar Africa Grand Tour in plaats daarvan — geografisch grenst het direct aan Namibië (al onderdeel van die route), een veel logischer aansluiting dan de geïsoleerde flight-only eindstop die het hier zou zijn. Dit verwijdert ook de onzekerste/duurste vlucht van deze route (Gabon-Angola); Gabon is nu het nieuwe, sterke eindpunt (Loango's surfende nijlpaarden). Let op: deze verplaatsing lost het seizoensprobleem niet op — Angola valt ook in Africa Grand Tour's Southern Africa-regio in het regenseizoen, hetzelfde al geaccepteerde compromis van die route.\n\n" +
+      "Totaal: 93 dagen (~3,1 maanden), €5.160 grondkosten + circa €2.400-2.800 aan vluchten (Kaapverdië-Senegal, Gambia-Ivoorkust, Benin-Kameroen en de Centraal-Afrikaanse eilandsprongen zijn stuk voor stuk vluchten met weinig concurrentie, dus prijzig per afstand). Nog niet getoetst aan actuele prijzen, visumregels of reisadviezen — behandel dit als een eerste concept, geen boekbaar plan. Check vooral de veiligheidssituatie in Kameroens Zuidwest-regio vlak vóór vertrek.",
+  });
 }
 
 /**
@@ -2525,5 +2648,67 @@ function rbMigrateCaribbeanAmazonBuild() {
   if (rbRoutes[idx].blocks.length > 0) return;
 
   rbRoutes.splice(idx, 1, rbBuildCaribbeanAmazonExpeditionRoute());
+  rbSave();
+}
+
+/**
+ * Builds out the West & Central Africa Expedition (2026-07): seeded as backbone-only (zero blocks)
+ * long before this design existed, so a fresh-seed re-run won't pick up the new content — same
+ * wholesale-replace pattern as rbMigrateOceaniaExpeditionBuild(). Only touches the route if it's
+ * still empty (respects any blocks Youri may have added by hand in the meantime).
+ */
+function rbMigrateWestCentralAfricaBuild() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_07_WCAFRICA_BUILD)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_07_WCAFRICA_BUILD, '1');
+
+  const idx = rbRoutes.findIndex(r => r.name === 'West & Central Africa Expedition 🌍');
+  if (idx === -1) return;
+  if (rbRoutes[idx].blocks.length > 0) return;
+
+  rbRoutes.splice(idx, 1, rbBuildWestCentralAfricaExpeditionRoute());
+  rbSave();
+}
+
+/**
+ * Adds Angola to Africa Grand Tour's "Southern Africa" region (2026-07), right after Namibia —
+ * they share a real overland border crossing (Oshikango/Santa Clara). Angola was originally part
+ * of the West & Central Africa Expedition brainstorm but was moved here instead: geographically it
+ * has real neighbors in this route rather than being an isolated flight-only endpoint there. This
+ * does NOT fix any seasonal mismatch — Southern Africa here already falls in the rainy season by
+ * this route's own design (see its climate_summary), and Angola shares that same accepted
+ * trade-off, not a better one. From Angola, fly to Cape Town/Johannesburg to rejoin the South
+ * Africa Finale rather than backtracking overland through Namibia.
+ */
+function rbMigrateAngolaIntoAfricaGrandTour() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_07_ANGOLA_ADDITION)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_07_ANGOLA_ADDITION, '1');
+
+  const route = rbRoutes.find(r => r.name === 'Africa Grand Tour 🌍');
+  if (!route) return;
+  if (route.blocks.some(b => b.country_code === 'AO')) return;
+
+  const naIndex = route.blocks.findIndex(b => b.country_code === 'NA');
+  if (naIndex === -1) return;
+
+  const naBlock = route.blocks[naIndex];
+  naBlock.transport_to_next = 'Over land via de grensovergang Oshikango/Santa Clara richting Angola.';
+
+  const angolaBlock = rbBuildBlock('AO', 'Angola', {
+    region_id: naBlock.region_id,
+    days: 11, budget: 1500,
+    destinations: ['Luanda', 'Lubango', 'Serra da Leba', 'Tundavala-kloof', 'Namibe-woestijn'],
+    notes: "Toegevoegd vanuit de West & Central Africa-ontwerpsessie (2026-07) — hier past het geografisch beter (grenst direct aan Namibië) dan als geïsoleerde flight-only eindstop in die andere expeditie. Gestabiliseerd sinds het einde van de burgeroorlog (2002); grootste uitdaging is kosten/bureaucratie (Luanda is berucht duur), niet acute onveiligheid.",
+    transport_to_next: 'Vlucht Luanda-Kaapstad/Johannesburg (meestal met overstap) om weer aan te sluiten bij de South Africa Finale, in plaats van overland terug te reizen door Namibië.',
+  });
+  route.blocks.splice(naIndex + 1, 0, angolaBlock);
+
+  const southernRegion = (route.regions || []).find(r => r.name === 'Southern Africa');
+  if (southernRegion) southernRegion.budget = 11375;
+
+  const note = "Toevoeging (2026-07): Angola toegevoegd aan de Southern Africa-regio, direct na Namibië (grensovergang Oshikango/Santa Clara), met een vlucht Luanda-Kaapstad/Johannesburg om weer aan te sluiten bij de South Africa Finale. Afkomstig uit de West & Central Africa-ontwerpsessie — daar paste Angola geografisch slechter (alleen per vlucht bereikbaar, geen buurlanden op die route). Let op: dit verandert niets aan het seizoenscompromis van deze regio (valt nog steeds in het regenseizoen bij de huidige juni-startmaand) — Angola deelt gewoon hetzelfde, al geaccepteerde compromis. Nieuw totaal: 288 dagen (was 277), €29.225 (was €27.725).";
+  if (route.notes && !route.notes.includes('Toevoeging (2026-07): Angola')) {
+    route.notes += '\n\n' + note;
+  }
+
   rbSave();
 }
