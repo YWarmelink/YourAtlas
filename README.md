@@ -117,6 +117,27 @@ for the plan to move it into the Google Sheet.
 
 ## Recently fixed
 
+- **Eurasia Grand Tour 🌏 price/visa/travel-advisory verification (2026-07)** — second
+  route verified (after the Mediterranean pilot), all 27 countries checked the same
+  way. Days unchanged everywhere; budget corrections: North Macedonia (€46.40→€37/day,
+  was the cheapest country in the region but overbudgeted), Mongolia (€57.50→€65/day,
+  the Gobi jeep tour is a real separate cost pulling the average up), Brunei
+  (€100→€120/day, Ulu Temburong NP requires a mandatory guide/tour), Singapore
+  (€150→€125/day, still realistic for this travel style but €150 carried more margin
+  than needed). The other 23 countries were already accurate. Also added `notes` for
+  several countries flagging real separate costs not covered by the daily rate
+  (Tajikistan's Pamir Highway jeep, Mongolia's Gobi tour, Indonesia's Komodo boat
+  trips, Timor-Leste's Jaco Island 4x4) and border-safety specifics (Armenia's
+  Azerbaijan-border roads, Cambodia/Thailand's border zones). Fixed a real gap in
+  `rbContentFor()`: it builds blocks for the 6 `RB_EXPEDITION_CONTENT`-sourced routes
+  (Eurasia, Pan-American, Africa, Nordic Arctic, Patagonia & Antarctica, India &
+  Himalaya) but was silently dropping any `notes` field — added `notes: c.notes` to
+  its return value so future notes on any of those routes actually reach the app.
+  - **⚠️ Live finding**: the Cambodia–Thailand land border (Poipet) is currently
+    **closed** due to their border conflict (ceasefire holding since late 2025, but
+    the crossing itself hasn't reopened) — Cambodia's transport-to-next now says to
+    fly Siem Reap/Phnom Penh→Bangkok instead of taking the bus, dated and marked as a
+    snapshot to re-check on nederlandwereldwijd.nl before relying on it.
 - **Mediterranean Civilizations Expedition 🏛️ price/visa/travel-advisory verification
   (2026-07)** — pilot run for verifying real-world data across all 13 expeditions (the
   rest are still open, see "Needs attention next time"). All 13 countries checked via
@@ -330,9 +351,9 @@ for the plan to move it into the Google Sheet.
   `js/pages/routeBuilder.js`. That fixes internal consistency (days vs. budget), not
   accuracy — none of it has been checked against real prices, current border/visa
   rules, or your own travel preferences. Treat it as a refined draft to edit, not a
-  plan to book. Mediterranean Civilizations Expedition 🏛️ has since had this real
-  verification done as a pilot (see "Recently fixed" above) — the other twelve
-  expeditions still need the same treatment (prices + visa rules + Dutch travel
+  plan to book. Mediterranean Civilizations Expedition 🏛️ and Eurasia Grand Tour 🌏
+  have since had this real verification done (see "Recently fixed" above) — the other
+  eleven expeditions still need the same treatment (prices + visa rules + Dutch travel
   advisory, per country, recalibrated to Youri's own travel style). No route or
   priority order picked yet for which one comes next.
   - The Antarctica leg's budget (Patagonia & Antarctica Expedition) reflects a real
