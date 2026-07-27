@@ -117,6 +117,14 @@ for the plan to move it into the Google Sheet.
 
 ## Recently fixed
 
+- **Price/visa/travel-advisory verification, routes 10-11 (2026-07)** — North America
+  Grand Traverse 🌎 (all 6 legs confirmed accurate; refactored into its own
+  `rbBuildNorthAmericaRoute()` to fix the same migration gap described below) and
+  Oceania Grand Expedition 🌊 (9 of 14 legs corrected — mostly specialist activity
+  costs that a flat day-rate missed: Tonga's whale-swim tour, Vanuatu/Fiji inter-island
+  flights, Australia's remote regions — Kimberley, Uluru, Great Barrier Reef, Tasmania,
+  Kangaroo Island — and New Zealand's South Island — Milford Sound, glaciers, Great
+  Walks. New total €17,943, was €14,780). Details in each route's own notes.
 - **Price/visa/travel-advisory verification, routes 8-9, plus a critical migration
   fix (2026-07)** — Nordic Arctic Expedition ❄️ (all 7 confirmed accurate — this is
   deliberately the most expensive route in the app) and Pan-American Grand Tour 🌎
@@ -390,14 +398,13 @@ for the plan to move it into the Google Sheet.
   `js/pages/routeBuilder.js`. That fixes internal consistency (days vs. budget), not
   accuracy — none of it has been checked against real prices, current border/visa
   rules, or your own travel preferences. Treat it as a refined draft to edit, not a
-  plan to book. Nine expeditions have since had this real verification done: Mediterranean
+  plan to book. Eleven expeditions have since had this real verification done: Mediterranean
   Civilizations Expedition 🏛️, Eurasia Grand Tour 🌏, Central European Grand Roadtrip 🚗,
   Patagonia & Antarctica Expedition 🧊, India & Himalaya Expedition 🏔️, Caribbean & Amazon
-  Expedition 🌴, West & Central Africa Expedition 🌍, Nordic Arctic Expedition ❄️, and
-  Pan-American Grand Tour 🌎 (see "Recently fixed" above; details live in each route's own
-  notes, kept brief here by design). Four remain: Africa Grand Tour, North America Grand
-  Traverse, Oceania Grand Expedition, British Isles & Celtic Coast Expedition. Working
-  through them in no particular order.
+  Expedition 🌴, West & Central Africa Expedition 🌍, Nordic Arctic Expedition ❄️,
+  Pan-American Grand Tour 🌎, North America Grand Traverse 🌎, and Oceania Grand Expedition 🌊
+  (see "Recently fixed" above; details live in each route's own notes, kept brief here by
+  design). Two remain: Africa Grand Tour, British Isles & Celtic Coast Expedition.
   - The Antarctica leg's budget (Patagonia & Antarctica Expedition) reflects a real
     expedition-cruise price point, not backpacker-style estimates like the rest, and
     was deliberately left unscaled (its days didn't change either).

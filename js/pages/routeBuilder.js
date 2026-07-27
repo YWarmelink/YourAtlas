@@ -1608,7 +1608,12 @@ function rbSeedNorthAmericaExpedition() {
   if (localStorage.getItem(RB_SEED_FLAG_KEY_NORTHAMERICA)) return;
   localStorage.setItem(RB_SEED_FLAG_KEY_NORTHAMERICA, '1');
 
-  const northAmericaRoute = rbBuildSeedRoute('North America Grand Traverse 🌎', [
+  rbRoutes.push(rbBuildNorthAmericaRoute());
+  rbSave();
+}
+
+function rbBuildNorthAmericaRoute() {
+  return rbBuildSeedRoute('North America Grand Traverse 🌎', [
     {
       name: 'Atlantic Canada – Nova Scotia',
       season: 'Juni',
@@ -1617,7 +1622,7 @@ function rbSeedNorthAmericaExpedition() {
         code: 'CA', name: 'Canada', days: 8, budget: 1200,
         destinations: ['Halifax', "Peggy's Cove", 'Lunenburg', 'Cape Breton Island & Cabot Trail'],
         transport_to_next: "Vlucht Halifax-Quebec City (~2 uur) — geen praktische overlandroute gezien de afstand door onbewoond Oost-Canada",
-        notes: 'Startblok: vlucht Nederland-Halifax. Kennismaking met Canada via ruige Atlantische kust, vissersdorpjes, vuurtorens en Keltisch/Acadische cultuur op Cape Breton.',
+        notes: 'Startblok: vlucht Nederland-Halifax. Kennismaking met Canada via ruige Atlantische kust, vissersdorpjes, vuurtorens en Keltisch/Acadische cultuur op Cape Breton. Prijs geverifieerd (2026-07), klopt. eTA (bij inreis per vlucht) kost slechts ~€4,70, 5 jaar geldig.',
       }],
       note: 'Startpunt van de expeditie — vlucht Nederland-Halifax. Ruige kust, vissersdorpen en vuurtorens; geen huurauto nodig, alles is met kleine afstanden te doen vanuit Halifax.',
     },
@@ -1641,7 +1646,7 @@ function rbSeedNorthAmericaExpedition() {
         code: 'CA', name: 'Canada', days: 17, budget: 3400,
         destinations: ['Banff National Park', 'Lake Louise & Moraine Lake', 'Yoho National Park (Emerald Lake)', 'Icefields Parkway', 'Jasper National Park', 'Mount Robson Provincial Park', 'Whistler'],
         transport_to_next: 'Auto Whistler-Vancouver (~2 uur), huurauto inleveren in Vancouver — dezelfde huurauto blijft binnen Canada, dus geen one-way- of grenskosten',
-        notes: 'Het natuurhoogtepunt van de hele expeditie: gletsjermeren, een van de mooiste wegen ter wereld (Icefields Parkway) en goede kans op wildlife (elanden, beren, bighorn sheep). Huurauto 2 wordt hier opgehaald in Calgary.',
+        notes: 'Het natuurhoogtepunt van de hele expeditie: gletsjermeren, een van de mooiste wegen ter wereld (Icefields Parkway) en goede kans op wildlife (elanden, beren, bighorn sheep). Huurauto 2 wordt hier opgehaald in Calgary. Prijs geverifieerd (2026-07), klopt (mits ruim vooraf geboekt in hoogseizoen). ⚠️ Moraine Lake Road is alleen bereikbaar met de verplichte Parks Canada-shuttle (geen privéauto toegestaan) — boeking opent doorgaans medio april, beperkt aantal plekken, ruim vooraf regelen.',
       }],
       note: 'Huurauto 2 (Calgary-Vancouver). Reken op minstens 2-3 nachten per nationaal park om ook te kunnen wandelen, niet alleen doorrijden.',
     },
@@ -1665,7 +1670,7 @@ function rbSeedNorthAmericaExpedition() {
         code: 'US', name: 'United States', days: 15, budget: 3000,
         destinations: ['Seattle (Pike Place Market, Space Needle)', 'Olympic National Park (Hoh Rainforest & Hurricane Ridge)', 'Mount Rainier National Park', 'Oregon Coast (Cannon Beach, Astoria)', 'Redwood National & State Parks'],
         transport_to_next: 'Auto verder naar San Francisco (~5-6 uur vanaf de Redwoods), huurauto inleveren in San Francisco',
-        notes: 'Amerikaanse natuur in het groot: regenwoud, vulkanen, ruige kustlijn en de hoogste bomen ter wereld. Huurauto 3 wordt hier opgehaald in Seattle.',
+        notes: 'Amerikaanse natuur in het groot: regenwoud, vulkanen, ruige kustlijn en de hoogste bomen ter wereld. Huurauto 3 wordt hier opgehaald in Seattle. Prijs geverifieerd (2026-07), klopt. ESTA is per 30 sept. 2025 verhoogd naar $40,27 (was $21) — 2 jaar geldig.',
       }],
       note: 'Huurauto 3 (Seattle-San Francisco). Rustig tempo: liever 2-3 nachten bij een park dan elke dag doorrijden — dit is een kustroute, geen race.',
     },
@@ -1693,11 +1698,9 @@ function rbSeedNorthAmericaExpedition() {
       'Nadelen: drie aparte huurauto-etappes vragen meer planning dan één doorlopende huurauto; hoog totaalbudget vergeleken met andere blokken (Noord-Amerika is duurder dan bv. Zuidoost-Azië of de Balkan); juli-augustus is hoogseizoen in de Rockies en Californische parken (drukte, hogere prijzen, Yosemite-vergunningen tijdig regelen).\n\n' +
       'Plaats binnen de wereldreisplanning: vult Noord-Amerika in naast Eurasia Grand Tour, Pan-American Grand Tour, Africa Grand Tour en de Pacific/overige routes — samen dekken deze de grote continentale blokken van de wereldreis. Dagen/budget/bestemmingen/transport hierboven zijn een eerste research-opzet (net als bij de andere expedities), nog niet getoetst aan actuele prijzen, grensregels of persoonlijke voorkeuren — behandel dit als een eerste concept om te verfijnen, geen boekbaar plan.\n\n' +
       'Tijdscontrole (2026-07): kleine ophogingen bij vrijwel elke etappe (54→69 dagen totaal), vooral de Canadian Rockies (13→17, de eigen notitie "2-3 nachten per park" telt bij 6 parkgebieden sneller op dan gedacht) en de twee westkust-roadtrip-etappes (11→15 en 11→14, Yosemite en San Francisco verdienen allebei meer dan een paar dagen). Etappes en volgorde ongewijzigd; de juni-startmaand en klimaatredenering hierboven blijven kloppen met de extra dagen.\n\n' +
-      'Vervolg (2026-07): budgetten per etappe meegeschaald met de aangepaste dagen.',
+      'Vervolg (2026-07): budgetten per etappe meegeschaald met de aangepaste dagen.\n\n' +
+      "Prijzen/visum/reisadvies-verificatie (2026-07): alle 6 etappes bevestigd accuraat, geen budgetcorrecties nodig. eTA Canada ~€4,70 (5 jaar); ESTA VS onlangs verhoogd naar $40,27 (2 jaar). Moraine Lake Road: verplichte Parks Canada-shuttle, ruim vooraf boeken. Zie de losse etappe-notities hierboven voor details.",
   });
-
-  rbRoutes.push(northAmericaRoute);
-  rbSave();
 }
 
 /**
@@ -1728,37 +1731,37 @@ function rbBuildOceaniaExpeditionRoute() {
     {
       name: 'Pacific Opener',
       season: 'Mei-juni',
-      budget: 3310,
+      budget: 4125,
       note: 'Vijf eilandengroepen in het droge seizoen, ruim vóór het cycloonseizoen (november-april) — de rustige, ontspannen opener van de expeditie.',
       countries: [
         {
-          code: 'FJ', name: 'Fiji', days: 14, budget: 875,
+          code: 'FJ', name: 'Fiji', days: 14, budget: 1050,
           destinations: ['Nadi', 'Mamanuca-eilanden', 'Yasawa-eilanden', 'Taveuni'],
-          notes: "Beste backpacker-infrastructuur van de Pacific — eilandhoppen per boot (Yasawa Flyer) tussen de Mamanucas en Yasawas, snorkelen en duiken op de koraalriffen.",
+          notes: "Beste backpacker-infrastructuur van de Pacific — eilandhoppen per boot (Yasawa Flyer) tussen de Mamanucas en Yasawas, snorkelen en duiken op de koraalriffen. Prijscorrectie (2026-07): €62,50→€75/dag (Yasawa Flyer-bootpas + vlucht naar Taveuni waren niet gedekt).",
           transport_to_next: 'Vlucht Nadi-Port Vila (Fiji Airways, de belangrijkste Pacific-hub)',
         },
         {
-          code: 'VU', name: 'Vanuatu', days: 11, budget: 770,
+          code: 'VU', name: 'Vanuatu', days: 11, budget: 1045,
           destinations: ['Port Vila', 'Mount Yasur (Tanna)', 'SS President Coolidge wrak (Espiritu Santo)', 'Blue Holes'],
-          notes: "Een van de meest toegankelijke actieve vulkanen ter wereld — tot vlak bij de kraterrand van Mount Yasur. Wereldklasse wrakduik op de SS President Coolidge.",
+          notes: "Een van de meest toegankelijke actieve vulkanen ter wereld — tot vlak bij de kraterrand van Mount Yasur. Wereldklasse wrakduik op de SS President Coolidge. Prijscorrectie (2026-07): €70→€95/dag (binnenlandse vluchten naar Tanna/Santo + Yasur-tour waren niet gedekt; Air Vanuatu ging in 2024 failliet, vluchten zijn schaarser/duurder geworden).",
           transport_to_next: "Vlucht Port Vila-Apia (meestal met overstap via Fiji of Auckland)",
         },
         {
           code: 'WS', name: 'Samoa', days: 9, budget: 565,
           destinations: ['Apia', 'To Sua Ocean Trench', 'Lalomanu (beach fales)', 'Upolu'],
-          notes: "Authentieke Polynesische cultuur, nog weinig aangetast door massatoerisme. Beach fales zijn traditionele, budgetvriendelijke strandhutjes — precies de rustige, lokale ervaring die bij deze reisstijl past.",
+          notes: "Authentieke Polynesische cultuur, nog weinig aangetast door massatoerisme. Beach fales zijn traditionele, budgetvriendelijke strandhutjes — precies de rustige, lokale ervaring die bij deze reisstijl past. Prijs geverifieerd (2026-07), klopt — relatief goedkoop voor de Pacific.",
           transport_to_next: "Vlucht Apia-Nuku'alofa (meestal met overstap via Fiji)",
         },
         {
-          code: 'TO', name: 'Tonga', days: 8, budget: 540,
+          code: 'TO', name: 'Tonga', days: 8, budget: 800,
           destinations: ["Nuku'alofa", "Vava'u (zwemmen met bultrugwalvissen)", "Ha'apai"],
-          notes: "Een van de weinige plekken ter wereld waar je legaal mag zwemmen met bultrugwalvissen — het beste seizoen daarvoor is juli-oktober, dus check de exacte timing bij het plannen van de startdatum.",
+          notes: "Een van de weinige plekken ter wereld waar je legaal mag zwemmen met bultrugwalvissen — het beste seizoen daarvoor is juli-oktober, dus check de exacte timing bij het plannen van de startdatum. Prijscorrectie (2026-07): €67,50→€100/dag, de grootste correctie van de route — vlucht naar Vava'u + de whale-swim tour zelf (vaak €150-250/dag) waren niet gedekt.",
           transport_to_next: "Vlucht Nuku'alofa-Rarotonga (lage frequentie, ruim van tevoren boeken)",
         },
         {
-          code: 'CK', name: 'Cook Islands', days: 7, budget: 560,
+          code: 'CK', name: 'Cook Islands', days: 7, budget: 665,
           destinations: ['Rarotonga', 'Aitutaki-lagune'],
-          notes: "De Aitutaki-lagune is minstens zo mooi als Bora Bora, voor een fractie van de prijs — het beste prijs-kwaliteitpunt van de hele Pacific voor lagune-schoonheid.",
+          notes: "De Aitutaki-lagune is minstens zo mooi als Bora Bora, voor een fractie van de prijs — het beste prijs-kwaliteitpunt van de hele Pacific voor lagune-schoonheid. Prijscorrectie (2026-07): €80→€95/dag (Air Rarotonga heeft een monopolie op de Aitutaki-vlucht, plus lagune-cruise).",
           transport_to_next: 'Vlucht Rarotonga-Perth (lange vlucht, meestal met overstap via Auckland of Sydney) — de grootste enkele vliegverbinding van de hele expeditie, nodig om van de Pacific naar het droge seizoen in West-Australië te komen',
         },
       ],
@@ -1766,25 +1769,25 @@ function rbBuildOceaniaExpeditionRoute() {
     {
       name: 'Tropisch Australië',
       season: 'Juni-augustus',
-      budget: 4905,
+      budget: 6300,
       note: 'Droog seizoen: de Kimberley-wegen zijn begaanbaar, geen moesson, geen kwallenseizoen bij Cairns.',
       countries: [
         {
-          code: 'AU', name: 'Australia', days: 21, budget: 1840,
+          code: 'AU', name: 'Australia', days: 21, budget: 2520,
           destinations: ['Perth', 'Ningaloo Reef (walvishaaien)', 'Kimberley & Bungle Bungles', 'Gibb River Road', 'Broome'],
-          notes: 'Ningaloo Reef en de Kimberley zijn spectaculair en kennen weinig massatoerisme — sterke match met natuur boven luxe. Wel de duurste/verste regio van de hele route qua afstanden; eerste kandidaat om in te korten als tijd/budget krap wordt.',
+          notes: 'Ningaloo Reef en de Kimberley zijn spectaculair en kennen weinig massatoerisme — sterke match met natuur boven luxe. Wel de duurste/verste regio van de hele route qua afstanden; eerste kandidaat om in te korten als tijd/budget krap wordt. Prijscorrectie (2026-07): €87,62→€120/dag — de duurste regio bleek ook echt onderbegroot (walvishaai-tours, Bungle Bungles-vluchten, afgelegen roadhouse-prijzen).',
           transport_to_next: 'Auto over land via de Gibb River Road en Kununurra naar Darwin, of vlucht Broome-Darwin voor wie de Kimberley liever per vliegtuig oversteekt',
         },
         {
-          code: 'AU', name: 'Australia', days: 14, budget: 1225,
+          code: 'AU', name: 'Australia', days: 14, budget: 1470,
           destinations: ['Darwin', 'Kakadu National Park', 'Litchfield National Park', 'Uluru', 'Kata Tjuta', 'Kings Canyon'],
-          notes: 'Top End en Red Centre samen — de meest iconische landschappen van Australië. Juni-augustus is ook de koelste periode voor Uluru (overdag nog prima te wandelen, niet de verzengende hitte van de zomer).',
+          notes: 'Top End en Red Centre samen — de meest iconische landschappen van Australië. Juni-augustus is ook de koelste periode voor Uluru (overdag nog prima te wandelen, niet de verzengende hitte van de zomer). Prijscorrectie (2026-07): €87,50→€105/dag — Yulara/Uluru is een monopolie-resortstadje, ook budgetopties zijn er prijzig.',
           transport_to_next: 'Vlucht Alice Springs-Cairns of Darwin-Cairns (over land zou via de outback-highways dagenlang duren)',
         },
         {
-          code: 'AU', name: 'Australia', days: 21, budget: 1840,
+          code: 'AU', name: 'Australia', days: 21, budget: 2310,
           destinations: ['Cairns', 'Daintree Rainforest', 'Great Barrier Reef', 'Whitsundays & Whitehaven Beach', "Fraser Island / K'gari"],
-          notes: 'Sterkste match met snorkelen/duiken/wildlife uit de wensenlijst. Droog seizoen betekent ook geen kwallenseizoen (dat loopt november-mei) bij Cairns.',
+          notes: 'Sterkste match met snorkelen/duiken/wildlife uit de wensenlijst. Droog seizoen betekent ook geen kwallenseizoen (dat loopt november-mei) bij Cairns. Prijscorrectie (2026-07): €87,62→€110/dag — een Whitsundays-zeiltocht of Fraser Island-tour kost al snel €250-400 op zich.',
           transport_to_next: 'Bus of camper over land langs de oostkust (Cairns-Brisbane-Byron Bay-Sydney), de klassieke backpacker-trail',
         },
       ],
@@ -1792,31 +1795,31 @@ function rbBuildOceaniaExpeditionRoute() {
     {
       name: 'Gematigd Australië',
       season: 'Augustus-september',
-      budget: 3765,
+      budget: 4130,
       note: 'Late winter/vroege lente — koeler dan de zomerpiek (december-februari), maar goed te doen; het bewuste compromis van deze route (zie de klimaatredenering van de hele expeditie).',
       countries: [
         {
           code: 'AU', name: 'Australia', days: 12, budget: 1050,
           destinations: ['Byron Bay', 'Sydney', 'Blue Mountains'],
-          notes: 'Klassieke backpacker-trail met goede infrastructuur; Sydney is te iconisch om over te slaan.',
+          notes: 'Klassieke backpacker-trail met goede infrastructuur; Sydney is te iconisch om over te slaan. Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: 'Auto over land via de kust of de Hume Highway naar Melbourne',
         },
         {
           code: 'AU', name: 'Australia', days: 10, budget: 875,
           destinations: ['Great Ocean Road', 'Melbourne', 'Grampians National Park'],
-          notes: 'De beste roadtrip-ervaring van het hele land — sluit perfect aan bij "roadtrips waar dat logisch is".',
+          notes: 'De beste roadtrip-ervaring van het hele land — sluit perfect aan bij "roadtrips waar dat logisch is". Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: 'Veerboot Spirit of Tasmania (Melbourne-Devonport) of korte vlucht naar Hobart/Launceston',
         },
         {
-          code: 'AU', name: 'Australia', days: 12, budget: 1050,
+          code: 'AU', name: 'Australia', days: 12, budget: 1260,
           destinations: ['Cradle Mountain', 'Wineglass Bay (Freycinet)', 'Overland Track', 'Hobart'],
-          notes: 'Ruige natuur, weinig massatoerisme — sterke match met deze reisstijl. Augustus-september is nog fris (soms sneeuw in het hooggebergte), dus pak warme kleding in.',
+          notes: 'Ruige natuur, weinig massatoerisme — sterke match met deze reisstijl. Augustus-september is nog fris (soms sneeuw in het hooggebergte), dus pak warme kleding in. Prijscorrectie (2026-07): €87,50→€105/dag — het Overland Track-vergunning alleen al kost ~€120-150 p.p.',
           transport_to_next: 'Vlucht Hobart-Adelaide (meestal met overstap in Melbourne)',
         },
         {
-          code: 'AU', name: 'Australia', days: 9, budget: 790,
+          code: 'AU', name: 'Australia', days: 9, budget: 945,
           destinations: ['Adelaide', 'Kangaroo Island', 'Barossa Valley', 'Flinders Ranges'],
-          notes: "Kangaroo Island is uitstekend voor wildlife (zeeleeuwen, koala's) — de sterkste match met de wildlife-wens uit dit blok. Barossa Valley (wijn) is de eerste kandidaat om te laten vervallen als er ingekort moet worden.",
+          notes: "Kangaroo Island is uitstekend voor wildlife (zeeleeuwen, koala's) — de sterkste match met de wildlife-wens uit dit blok. Barossa Valley (wijn) is de eerste kandidaat om te laten vervallen als er ingekort moet worden. Prijscorrectie (2026-07): €87,78→€105/dag — de Kangaroo Island-veerboot plus schaarse/duurdere accommodatie daar.",
           transport_to_next: 'Vlucht Adelaide-Christchurch (meestal met overstap in Sydney of Melbourne)',
         },
       ],
@@ -1824,19 +1827,19 @@ function rbBuildOceaniaExpeditionRoute() {
     {
       name: 'Nieuw-Zeeland Finale',
       season: 'September-november',
-      budget: 2800,
+      budget: 3388,
       note: 'Voorjaar — stabiel weer, rustiger dan de zomerdrukte (december-februari); door reisgidsen vaak aangeraden als shoulder season. Het emotionele hoogtepunt van de hele expeditie, bewust als afsluiter gekozen.',
       countries: [
         {
-          code: 'NZ', name: 'New Zealand', days: 21, budget: 1680,
+          code: 'NZ', name: 'New Zealand', days: 21, budget: 2268,
           destinations: ['Christchurch', 'Kaikoura', 'Abel Tasman', 'Franz Josef & Fox-gletsjers', 'Queenstown', 'Milford Sound & Fiordland', 'Dunedin & Catlins'],
-          notes: 'Concentreert het merendeel van de iconische Nieuw-Zeelandse natuur. Overweeg minstens één Great Walk (Milford Track, Routeburn of Kepler) als meerdaagse hut-to-hut-trek — ruim van tevoren reserveren.',
+          notes: 'Concentreert het merendeel van de iconische Nieuw-Zeelandse natuur. Overweeg minstens één Great Walk (Milford Track, Routeburn of Kepler) als meerdaagse hut-to-hut-trek — ruim van tevoren reserveren. Prijscorrectie (2026-07): €80→€108/dag — Milford Sound-cruise, gletsjeractiviteiten en Great Walk hut-fees waren niet gedekt; Queenstown is bovengemiddeld duur.',
           transport_to_next: 'Veerboot Picton-Wellington, over land verder het Noordereiland in',
         },
         {
           code: 'NZ', name: 'New Zealand', days: 14, budget: 1120,
           destinations: ['Wellington', 'Tongariro Alpine Crossing', 'Rotorua', 'Coromandel', 'Bay of Islands', 'Auckland'],
-          notes: 'De Tongariro Alpine Crossing is de beste dagwandeling van het land. Rotorua voor geothermische verschijnselen en Māori-cultuur.',
+          notes: 'De Tongariro Alpine Crossing is de beste dagwandeling van het land. Rotorua voor geothermische verschijnselen en Māori-cultuur. Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Auckland naar Nederland',
         },
       ],
@@ -1848,7 +1851,8 @@ function rbBuildOceaniaExpeditionRoute() {
     climate_summary: "Vergeleken scenario's: (1) de Pacific-eilanden en tropisch Australië (Kimberley, Top End, Cairns) willen allebei het droge seizoen (mei-oktober) — buiten dat venster is er cycloonrisico, moesson en afgesloten onverharde wegen; (2) Nieuw-Zeeland en gematigd Australië (Tasmanië, Victoria) willen juist hun eigen zomer (november-maart) — deze twee vensters overlappen niet en dekken samen het hele jaar. Door te beginnen bij de Pacific-eilanden (mei-juni) en tropisch Australië (juni-augustus), en te eindigen met gematigd Australië (augustus-september) en Nieuw-Zeeland (september-november), land je in het Nieuw-Zeelandse voorjaar — een door reisgidsen vaak aangeraden shoulder season met stabiel weer en minder drukte, ook al is het niet de absolute zomerpiek. Beste keuze: start begin mei bij Fiji, zodat de expeditie (circa 6 maanden) eind oktober/begin november in Nieuw-Zeeland eindigt. Alternatief: wie Nieuw-Zeeland/Tasmanië liever in hun volle zomer (december-februari) doet, kan een bewuste pauze van een paar maanden inbouwen tussen het tropische blok en Nieuw-Zeeland — dat maakt de expeditie 9-10 maanden in plaats van 6.",
     notes: "Ontworpen in een Q&A-sessie met Claude (2026-07), op basis van een conceptvragenlijst van Youri over route, landen, eilandengroepen, Australië/Nieuw-Zeeland-indeling, reistijd, budget, transport en seizoen. Dagen zijn de 'ideale' tempo-schatting (niet het krappe minimum, niet het meest rustige tempo); budgetten zijn het gemiddelde van Budget Backpacker en Comfort Backpacker (Youri's zelfgekozen reisstijl, tussen die twee in).\n\n" +
       "Bewust buiten deze route gelaten: Frans-Polynesië en Nieuw-Caledonië (mooi maar prijzig — alleen toevoegen als bewuste splurge, niet meegenomen in dit kernontwerp), en Palau, de Solomon-eilanden, Micronesië, Kiribati en Papoea-Nieuw-Guinea (geografisch een grote omweg, te duur, of logistiek te zwaar voor een soepele backpacker-flow — kandidaten voor een aparte, specialistische reis ooit).\n\n" +
-      "Totaal: 183 dagen (~6 maanden), €14.780 grondkosten + circa €3.500-4.000 aan vluchten (Europa-Oceanië, Australië-interne vluchten, Australië-Nieuw-Zeeland, en losse tickets tussen elk Pacific-eiland). Nog niet getoetst aan actuele prijzen of reisadviezen — behandel dit als een eerste concept, geen boekbaar plan.",
+      "Totaal: 183 dagen (~6 maanden), €14.780 grondkosten + circa €3.500-4.000 aan vluchten (Europa-Oceanië, Australië-interne vluchten, Australië-Nieuw-Zeeland, en losse tickets tussen elk Pacific-eiland). Nog niet getoetst aan actuele prijzen of reisadviezen — behandel dit als een eerste concept, geen boekbaar plan.\n\n" +
+      "Prijzen/visum/reisadvies-verificatie (2026-07): grote bevinding — 9 van de 14 etappes waren onderbegroot, meestal doordat dure, specialistische activiteiten (walvis zwemmen, vulkaanbezoek, duurdere eilandvluchten, nationale-parkvergunningen, Milford Sound-cruises) niet in het vlakke dagtarief pasten. Pacific: Fiji (€62,50→€75), Vanuatu (€70→€95), Tonga (€67,50→€100, grootste correctie), Cook Islands (€80→€95); Samoa bevestigd accuraat. Australië: Perth/Kimberley (€87,62→€120), Darwin/Uluru (€87,50→€105), Cairns/GBR (€87,62→€110), Tasmanië (€87,50→€105), Adelaide/Kangaroo Island (€87,78→€105); Sydney-etappe en Great Ocean Road bevestigd accuraat. Nieuw-Zeeland: Zuidereiland (€80→€108, Milford Sound/gletsjers/Great Walks); Noordereiland bevestigd accuraat. Nieuw totaal: €17.943 grondkosten (was €14.780). Visum: Australië eVisitor is gratis (12 mnd geldig, max 3 mnd per bezoek); Nieuw-Zeeland NZeTA + verplichte IVL-toeristenheffing samen ~€60-63, geldig voor de hele reis. Reisadvies overal groen/routine — vooral seizoensgebonden natuurrisico's (cyclonen, bosbranden, kwallenseizoen in Noord-Australië nov-mei, niet relevant voor deze mei-november-planning).",
   });
 }
 
@@ -3231,6 +3235,8 @@ function rbMigratePriceVerificationRound1() {
     ['West & Central Africa Expedition 🌍', rbBuildWestCentralAfricaExpeditionRoute],
     ['Nordic Arctic Expedition ❄️', rbBuildArcticCircleRoute],
     ['Pan-American Grand Tour 🌎', rbBuildPanAmericanRoute],
+    ['North America Grand Traverse 🌎', rbBuildNorthAmericaRoute],
+    ['Oceania Grand Expedition 🌊', rbBuildOceaniaExpeditionRoute],
   ];
 
   let touched = false;
