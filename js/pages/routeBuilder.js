@@ -18,6 +18,7 @@ const RB_SEED_FLAG_KEY_OCEANIA = 'atlas_grand_trips_seeded_oceania_v1';
 const RB_SEED_FLAG_KEY_CARIBBEAN = 'atlas_grand_trips_seeded_caribbean_v1';
 const RB_SEED_FLAG_KEY_WCAFRICA = 'atlas_grand_trips_seeded_wcafrica_v1';
 const RB_SEED_FLAG_KEY_CEROADTRIP = 'atlas_grand_trips_seeded_ceroadtrip_v1';
+const RB_SEED_FLAG_KEY_BRITISHISLES = 'atlas_grand_trips_seeded_britishisles_v1';
 const RB_MIGRATE_FLAG_2026_07 = 'atlas_grand_trips_migrate_2026_07_v1';
 const RB_MIGRATE_FLAG_2026_07_EMOJI = 'atlas_grand_trips_migrate_2026_07_emoji_v1';
 const RB_MIGRATE_FLAG_2026_07_MEDITERRANEAN = 'atlas_grand_trips_migrate_2026_07_mediterranean_v1';
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbSeedCaribbeanExpedition();
   rbSeedWestCentralAfricaExpedition();
   rbSeedCentralEuropeRoadtripExpedition();
+  rbSeedBritishIslesExpedition();
   rbMigrateExpeditionRenames();
   rbMigrateExpeditionEmojiNames();
   rbMigrateAncientToMediterranean();
@@ -2251,6 +2253,190 @@ function rbBuildCentralEuropeRoadtripRoute() {
       "Twee routewijzigingen tijdens het ontwerp, allebei om te voorkomen dat dezelfde lengtegraad twee keer gekruist wordt: (1) Zwitserland/Liechtenstein vóór Oostenrijk in plaats van erna — scheelt ≈370 km t.o.v. Youri's oorspronkelijke volgorde (Beieren→Oostenrijk→Liechtenstein→Zwitserland), en behoudt de Lienz-Cortina-verbinding (90 km) naar de Dolomieten. (2) Milaan/Turijn/Cinque Terre ná de Dolomieten geplakt, samengevoegd met de bestaande Toscane/San Marino-dip, in plaats van vóór Oostenrijk zoals Youri eerst voorstelde — die volgorde had de ≈12-13°O-strook twee keer gekruist (via Oostenrijks Grossglockner/Salzburg, en later opnieuw via Venetië/de Dolomieten) en twee losse zuidwaartse uitstapjes gekost in plaats van één gecombineerde Noord-Italië-lus.\n\n" +
       "Autokosten (gedeeld per auto, NIET in de bedragen per land hierboven): ≈9.050 km totale rijafstand, ≈€1.110 brandstof (7L/100km, €1,75/L), ≈€335 tol/vignetten (Zwitserland en Oostenrijk vragen een jaarvignet, Italië rekent per kilometer op de autostrada, Polen heft geen tol voor personenauto's), ≈€505 parkeren (steden plus een bewaakte parkeerplaats bij Cinque Terre's autoluwe dorpen) — totaal ≈€1.950 per auto, ongeacht met hoeveel personen je reist.\n\n" +
       "Totaal: 45 dagen minimum / 70 dagen ideaal (~10 weken), €8.400 grondkosten per persoon (Realistisch tier) + €1.950 autokosten per auto. Per persoon bij 70 dagen: Budget €7.200 solo / €4.650 met 2 / €3.800 met 3 — Realistisch €10.350 solo / €6.925 met 2 / €5.783 met 3 — Comfortabel €14.900 solo / €10.075 met 2 / €8.467 met 3 (autokosten simpelweg gedeeld door het aantal reizigers, accommodatie ook, eten/activiteiten blijven per persoon gelijk). Nog niet getoetst aan actuele tol-/vignettarieven of prijzen — behandel dit als een eerste concept, geen boekbaar plan.",
+  });
+}
+
+function rbSeedBritishIslesExpedition() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_BRITISHISLES)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_BRITISHISLES, '1');
+
+  rbRoutes.push(rbBuildBritishIslesExpeditionRoute());
+  rbSave();
+}
+
+/**
+ * British Isles & Celtic Coast Expedition — designed 2026-07 in a Q&A session with Claude, based on
+ * a ChatGPT brainstorm Youri brought in. Self-driven (own car from the Netherlands), same style as
+ * Central European Grand Roadtrip — car costs (fuel/tolls/parking/ferries) are shared per car and
+ * tracked once in this note, NOT folded into each leg's per-person budget below. United Kingdom (GB)
+ * appears six times (South England, Cornwall, Wales, North England, Scotland, Northern Ireland) and
+ * Ireland (IE) twice (West, South & East) — repeated-country legs, same reason Mediterranean/North
+ * America/Oceania/Central European Roadtrip are hand-authored here instead of using
+ * RB_EXPEDITION_CONTENT.
+ *
+ * Two route-order corrections made during design, both from real ferry-geography research (Youri's
+ * brief already had the right instinct, just needed the ports checked): (1) Isle of Man moved from
+ * "its own stop before North England" to a detour nested inside the North England leg — Heysham, its
+ * only year-round car-ferry port, sits on the M6 corridor between North Wales and the Lake District,
+ * so it was never really "before" North England to begin with. (2) Ireland is driven north-to-south
+ * (Donegal → Kerry) and exits via Rosslare-Fishguard/Pembroke instead of backtracking to
+ * Dublin-Holyhead — Rosslare sits right by Cork/Kilkenny in the southeast, so this avoids re-crossing
+ * the country to Dublin just to leave. Exiting through Fishguard/Pembroke means transiting back through
+ * South Wales/South England toward Poole/Portsmouth for the Channel Islands ferry — that's pure transit
+ * through already-covered ground, not a second Wales leg.
+ *
+ * Isle of Man: Youri's own idea, confirmed after discussion — go as a foot passenger (Heysham-Douglas
+ * fares are a fraction of the car fare) and rent a car locally for one day specifically to drive the
+ * TT Mountain Road, rather than paying for a round-trip car crossing. Cheaper overall, keeps the one
+ * highlight (the TT course) that genuinely needs a car, and Manx public transport/heritage railways
+ * (Manx Electric Railway, Snaefell Mountain Railway) cover the rest.
+ *
+ * Known cosmetic gap: Isle of Man (IM), Jersey (JE) and Guernsey (GG) aren't in the ISO_NUM lookup
+ * used by the World map view's topojson data (js/utils/isoCountries.js) — same kind of gap as the
+ * existing "country dropdown depends on the live Countries sheet" limitation. Their blocks work fine
+ * everywhere else; they just won't highlight on the World map.
+ */
+function rbBuildBritishIslesExpeditionRoute() {
+  return rbBuildSeedRoute('British Isles & Celtic Coast Expedition 🍀', [
+    {
+      name: 'Engeland & Wales',
+      season: 'Juni',
+      budget: 3420,
+      note: 'De opening van de expeditie: van de kalkkliffen en historische steden van Zuid-Engeland via het ruige Cornwall naar de bergen van Wales, met Isle of Man als zijsprong vanuit Noord-Engeland vlak voordat de reis noordwaarts naar Schotland afbuigt.',
+      countries: [
+        {
+          code: 'GB', name: 'United Kingdom', days: 10, budget: 900,
+          destinations: ['Dover (White Cliffs)', 'Canterbury', 'Londen', 'Cotswolds', 'Bath', 'Stonehenge', 'Jurassic Coast'],
+          notes: "Brede opener met veel verschillende sferen: de krijtkliffen en kathedraal van Kent, een korte stedelijke kennismaking met Londen, de traditionele dorpjes van de Cotswolds, de Romeinse baden van Bath en de kustgeologie van de Jurassic Coast. Stonehenge is bewust als korte stop opgenomen (goed vanaf de weg te zien) — de eerste kandidaat om te laten vervallen als de reis ooit korter moet.",
+          transport_to_next: 'Auto, ≈450 km naar Cornwall via de A30 — geen tol onderweg.',
+        },
+        {
+          code: 'GB', name: 'United Kingdom', days: 7, budget: 630,
+          destinations: ['St Ives', "Land's End", "St Michael's Mount", 'Tintagel Castle', 'South West Coast Path'],
+          notes: 'Ruige kust en smalle wegen die tijd kosten — de South West Coast Path verdient meerdere hele wandeldagen, niet alleen uitzichtpunten vanaf de weg. St Michael\'s Mount is getijdenafhankelijk (alleen bij eb over de causeway); Tintagel draagt de Arthur-legende.',
+          transport_to_next: 'Auto, ≈300 km naar Wales via Bristol/de Severn-oeververbinding.',
+        },
+        {
+          code: 'GB', name: 'United Kingdom', days: 8, budget: 720,
+          destinations: ['Pembrokeshire Coast Path', 'Brecon Beacons/Bannau Brycheiniog', 'Snowdonia/Eryri', 'Conwy Castle'],
+          notes: 'Snowdonia alleen al verdient 2-3 dagen voor echte wandelingen (Snowdon zelf, Cadair Idris); Brecon Beacons en de Pembrokeshire-kust zijn allebei een dag apart waard. Conwy Castle als compacte historische afsluiter.',
+          transport_to_next: 'Auto, ≈250 km naar het Lake District via Chester en de M6 — geen ferry, gewoon doorrijden naar Noord-Engeland.',
+        },
+        {
+          code: 'GB', name: 'United Kingdom', days: 9, budget: 810,
+          destinations: ['Lake District (Windermere, Scafell Pike, Keswick)', 'Yorkshire Dales', 'York', 'Northumberland', 'Bamburgh Castle'],
+          notes: 'Het Lake District (wandelen) vraagt 3-4 dagen alleen al; York is een volwaardige historische stad, geen tussenstop. Northumberland/Bamburgh als rustige, minder toeristische kustafsluiter voor deze etappe.',
+          transport_to_next: "Auto terug naar Heysham (bij het Lake District) om de auto daar veilig achter te laten, dan als voetganger de ferry Heysham-Douglas (Isle of Man Steam Packet, ≈3u45, ~2x/dag jaarrond) — voetgangertarief is een fractie van het autotarief.",
+        },
+        {
+          code: 'IM', name: 'Isle of Man', days: 4, budget: 360,
+          destinations: ['Douglas', 'Peel', 'TT Mountain Road (Snaefell)', 'Manx Electric Railway', 'Snaefell Mountain Railway'],
+          notes: "Klein eiland met een eigen identiteit, prima te doen in vier dagen. Eén dag lokaal een auto huren specifiek om de TT Mountain Road zelf te rijden (Youri's eigen keuze na afweging — goedkoper dan de eigen auto op de ferry meenemen, en het enige onderdeel van het eiland dat echt een auto vraagt); de rest van het eiland is uitstekend te doen met de bus en de historische Manx Electric Railway/Snaefell Mountain Railway.",
+          transport_to_next: 'Ferry terug Douglas-Heysham (voetganger), auto weer ophalen, dan noordwaarts doorrijden naar Edinburgh (≈300 km via de M6/A74).',
+        },
+      ],
+    },
+    {
+      name: 'Schotland & Noord-Ierland',
+      season: 'Juli',
+      budget: 2430,
+      note: 'Het grootste enkelvoudige onderdeel van de hele expeditie — de Schotse Highlands en eilanden, gevolgd door de Noord-Ierse kust — en het venster waarin het start-in-juni-plan het meest telt: ruim vóór de muggenpiek van juli-augustus.',
+      countries: [
+        {
+          code: 'GB', name: 'United Kingdom', days: 22, budget: 1980,
+          destinations: ['Edinburgh', 'Cairngorms National Park', 'Glencoe', 'Glenfinnan Viaduct', 'Isle of Skye ⭐ (Old Man of Storr, Fairy Pools, Quiraing)', 'Loch Ness', 'Applecross Pass', 'North Coast 500 (gedeeltelijk)'],
+          notes: "Het hoogtepunt van de hele expeditie. Isle of Skye krijgt bewust 4-5 dagen in plaats van een dagtrip — Old Man of Storr, Fairy Pools en de Quiraing zijn elk een halve tot hele wandeldag. Reis hier vroeg in de zomer (eind juni-begin juli): de Schotse muggen (midges) pieken pas in juli-augustus, dus een vroege doortocht scheelt aanzienlijk.",
+          transport_to_next: 'Ferry Cairnryan-Belfast (Stena Line, ≈2u15, ~6x/dag) — Cairnryan ligt goed bereikbaar vanaf de Highlands via Glasgow/Ayrshire.',
+        },
+        {
+          code: 'GB', name: 'United Kingdom', days: 5, budget: 450,
+          destinations: ['Belfast', "Giant's Causeway", 'Causeway Coastal Route', 'Dark Hedges'],
+          notes: 'Compact maar met meerdere unieke stops dicht bij elkaar: de basaltzuilen van de Giant\'s Causeway (uniek, geen vergelijkbare plek elders op de route), de kustweg ernaartoe, en de Dark Hedges als korte fotostop.',
+          transport_to_next: 'Auto over de open landsgrens naar Donegal — geen ferry of grenscontrole nodig (Ierland/Noord-Ierland).',
+        },
+      ],
+    },
+    {
+      name: 'Ierland',
+      season: 'Augustus',
+      budget: 1980,
+      note: 'Van Donegal in het noordwesten via de westkust naar Kerry, dan zuidoost naar Rosslare — bewust noord-naar-zuid gereden om na de zuidkust direct via Rosslare te kunnen uitstappen, zonder terug te hoeven naar Dublin.',
+      countries: [
+        {
+          code: 'IE', name: 'Ireland', days: 11, budget: 990,
+          destinations: ['Donegal', 'Connemara', 'Galway', 'Cliffs of Moher', 'Wild Atlantic Way', 'Dingle Peninsula'],
+          notes: 'De kern van de Ierland-ervaring. Augustus is qua neerslag iets natter dan de piek van mei-juli, maar nog ruim voor het echt natte venster (oktober-januari, tot 50% meer regen op de westkust dan Dublin) — prima werkbaar voor kustwandelingen.',
+          transport_to_next: 'Auto zuidwaarts naar Kerry, ≈180 km.',
+        },
+        {
+          code: 'IE', name: 'Ireland', days: 11, budget: 990,
+          destinations: ['Ring of Kerry', 'Killarney National Park', 'Cork', 'Kilkenny', 'Dublin (kort)'],
+          notes: 'Ring of Kerry en Killarney National Park vragen tijd voor de vele uitzichtpunten; Cork en Kilkenny als historische steden, Dublin als korte afsluiter voordat de auto weer aan boord gaat.',
+          transport_to_next: "Ferry Rosslare-Fishguard/Pembroke (Stena Line/Irish Ferries, ≈3u15-4u, dagelijks), dan doorrijden door Zuid-Wales/Zuid-Engeland (al bezocht — puur transit, geen nieuwe stops) naar Poole/Portsmouth voor de oversteek naar de Kanaaleilanden.",
+        },
+      ],
+    },
+    {
+      name: 'Kanaaleilanden & Bretagne',
+      season: 'Eind augustus-september',
+      budget: 1350,
+      note: 'Van de Britse Kroonbezittingen in het Kanaal (met hun eigen bezettingsgeschiedenis uit de Tweede Wereldoorlog) naar de Keltische cultuur en megalieten van Bretagne — het beste najaarsvenster voordat het Franse kustweer in november omslaat.',
+      countries: [
+        {
+          code: 'GG', name: 'Guernsey', days: 2, budget: 180,
+          destinations: ['St Peter Port', 'kustwandelingen', 'Duitse bezettingsbunkers (WOII)'],
+          notes: 'Klein eiland met een eigen, minder bekende WOII-geschiedenis: de Kanaaleilanden waren de enige Britse grond die door Duitsland bezet werd — een interessant contrast met Normandië\'s bevrijdingsverhaal verderop in de route.',
+          transport_to_next: 'Ferry naar Jersey (Condor Ferries, interinsulair, kort).',
+        },
+        {
+          code: 'JE', name: 'Jersey', days: 3, budget: 270,
+          destinations: ['kust', 'kliffen', 'stranden', 'Jersey War Tunnels (WOII)'],
+          notes: 'Grootste en meest toeristische van de twee eilanden — beste stranden van de Kanaaleilanden, plus dezelfde bezettingsgeschiedenis als Guernsey via de War Tunnels.',
+          transport_to_next: 'Ferry Jersey-Saint-Malo (Condor Ferries, ≈1u25 snelboot) — weersgevoelig, hou een bufferdag aan.',
+        },
+        {
+          code: 'FR', name: 'France', days: 10, budget: 900,
+          destinations: ['Saint-Malo', 'Dinan', 'Cap Fréhel', 'Côte de Granit Rose', 'Quimper', 'Pointe du Raz', 'Carnac (megalieten)', 'Quiberon'],
+          notes: 'De langste, meest gevarieerde kustlijn van de hele expeditie — acht losstaande hoogtepunten in tien dagen is al krap, dus dit is de dichtst-gepakte etappe van de route. Carnac\'s megalieten (ouder dan Stonehenge) sluiten mooi aan op het geschiedenisthema.',
+          transport_to_next: 'Auto, ≈100 km naar Mont Saint-Michel/Normandië.',
+        },
+      ],
+    },
+    {
+      name: 'Normandië, Opaalkust & België',
+      season: 'September',
+      budget: 1170,
+      note: 'De laatste Franse etappes en België als rustige afsluiter, net binnen het laatste goede najaarsvenster voordat de kust in november nat en donker wordt.',
+      countries: [
+        {
+          code: 'FR', name: 'France', days: 7, budget: 630,
+          destinations: ['Mont Saint-Michel ⭐', 'Bayeux (wandtapijt)', 'Omaha Beach', 'Pointe du Hoc', 'Honfleur', 'Étretat', 'Rouen'],
+          notes: 'Mont Saint-Michel en de D-Day-stranden verdienen elk een volle dag. De D-Day-geschiedenis vormt een mooi tegenwicht met de bezettingsgeschiedenis van de Kanaaleilanden hiervoor: bezet versus bevrijding.',
+          transport_to_next: 'Auto langs de kust naar de Opaalkust, ≈350 km.',
+        },
+        {
+          code: 'FR', name: 'France', days: 3, budget: 270,
+          destinations: ['Cap Blanc-Nez', 'Cap Gris-Nez', 'Lille'],
+          notes: 'Korte, mooie kustwandeling langs de krijtkliffen van de Opaalkust, gevolgd door een korte stedelijke stop in Lille voordat de reis naar België afbuigt.',
+          transport_to_next: 'Auto, ≈110 km naar Gent.',
+        },
+        {
+          code: 'BE', name: 'Belgium', days: 3, budget: 270,
+          destinations: ['Gent', 'Brugge'],
+          notes: 'Twee historische steden die elk minstens anderhalve dag verdienen — een rustige afsluiter voordat de laatste rit terug naar Nederland volgt.',
+          transport_to_next: 'Einde van de expeditie — terugrit naar Nederland, ≈150 km.',
+        },
+      ],
+    },
+  ], {
+    travel_style: "Eigen auto vanuit Nederland, geen vliegtuig behalve waar geen ferry bestaat — rustig rijden, geen harde tijdslimiet, kwaliteit boven snelheid. Accommodatie/eten/activiteiten hieronder op het Realistische niveau (hostels/eenvoudige hotels, soms privékamer — hetzelfde niveau als de rest van de reizen). Brandstof, tol/parkeren en de zes auto-ferry's zijn per auto gedeeld (ongeacht groepsgrootte) en staan NIET in de bedragen per land hierboven — zie de route-notities voor die aparte optelling. Uitzondering: Isle of Man wordt als voetganger bezocht (zie die etappe), niet met de eigen auto.",
+    best_starting_month: 'Juni',
+    description: "Grote lus met eigen auto vanuit Nederland naar de Britse eilanden en terug via de Franse en Belgische kust: spectaculaire kusten, bergen, eilanden, Keltische cultuur, kastelen en historische steden door Engeland, Wales, Isle of Man, Schotland, Noord-Ierland, Ierland, de Kanaaleilanden, Bretagne, Normandië en België. Vijftien etappes in vijf regio's volgen één grote lus terug naar het startpunt.",
+    climate_summary: "Aanbevolen start: begin juni. Een start in september zou de zwaarste weersafhankelijke etappes (Wild Atlantic Way, Kanaaleilanden, Bretagne/Normandië) doorschuiven naar november-januari — de natste, donkerste periode van het jaar op precies de stukken die van droog weer en goed licht afhangen (Normandië haalt in november-december gemiddeld nog maar 1,5-2 uur zon per dag). Bij een junistart doorkruist de reis Schotland vóór de muggenpiek van juli-augustus (mei/begin juni/september zijn merkbaar rustiger qua midges dan het hoogseizoen), valt Ierland in augustus (droger dan het najaar, al iets natter dan de piek van mei-juli), en bereiken de Kanaaleilanden/Bretagne/Normandië hun laatste goede najaarsvenster in september, vlak voordat het Franse kustweer omslaat. De reis eindigt daarmee eind september in België, ruim vóór het natte Noord-Franse najaar.",
+    notes: "Ontworpen in een Q&A-sessie met Claude (2026-07), op basis van een uitgebreide ChatGPT-brainstorm die Youri aandroeg. Ferry- en klimaatonderzoek (via web search) bevestigde dat Youri's route grotendeels al klopte; de twee correcties en de Isle of Man-beslissing staan in de functie-documentatie hierboven. Dagen zijn de 'ideale' tempo-schatting — Youri's eigen instructie was 'mag lang zijn, als het maar niet te kort voelt op plekken', dus er is bewust niet richting het minimum afgerond. Per-land-budgetten zijn het Realistische dagtarief (€90/dag per persoon) keer het aantal dagen, bewust hetzelfde niveau als de rest van Youri's reizen.\n\n" +
+      "Ferrytabel (auto, enkele reis, auto+2p; onderzocht 2026-07, nog niet getoetst aan actuele prijzen): Calais/Duinkerke-Dover (P&O/DFDS/Irish Ferries, 1,5-2u, €60-150) als aanbevolen start i.p.v. IJmuiden-Newcastle (komt uit in Noordoost-Engeland, mist heel Zuid-Engeland); Heysham-Douglas (Isle of Man Steam Packet, ≈3u45, €150-250, maar hier als voetganger dus veel goedkoper); Cairnryan-Belfast (Stena Line, ≈2u15, €150-250); Rosslare-Fishguard/Pembroke (Stena Line/Irish Ferries, ≈3u15-4u, €150-250); Poole/Portsmouth-Guernsey (Condor Ferries, 3-10u, €150-400, weersgevoelig — bufferdagen inplannen); Guernsey/Jersey-Saint-Malo (Condor Ferries, ≈1,5-2u, €100-200).\n\n" +
+      "Autokosten (gedeeld per auto, NIET in de bedragen per land hierboven): brandstof/tol/parkeren over ≈9.000-10.000 km geschat op €2.800-3.200; vijf auto-ferry's (alle behalve Isle of Man, die als voetganger gaat) plus de lokale dagshuurauto op Isle of Man voor de TT Mountain Road samen ≈€1.400-1.600 — totaal ≈€4.200-4.800 per auto, ongeacht groepsgrootte.\n\n" +
+      "Totaal: 86 dagen minimum / 115 dagen ideaal (~3,8 maanden), €10.350 grondkosten per persoon solo (Realistisch tier, 115 dagen × €90) + ≈€4.200-4.800 autokosten per auto. Met 2-3 personen (gedeelde kamers): Goedkoop ≈€4.700-4.900 p.p. / Realistisch ≈€7.500-7.800 p.p. / Comfort ≈€11.500-12.000 p.p. Nog niet getoetst aan actuele prijzen, veerboottijden of visumregels (niet van toepassing binnen de EU/UK voor een Nederlands paspoort, maar controleer dit voor vertrek) — behandel dit als een eerste concept, geen boekbaar plan.",
   });
 }
 

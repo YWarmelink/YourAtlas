@@ -48,19 +48,21 @@ trips that span months, not weeks. Lives at `route-builder.html`.
 - **Block Library**: save a route as a reusable, named group of countries; insert it
   into any other route later (as an independent copy — editing one never affects the
   other), or merge 2+ saved blocks into a new combined block.
-- Twelve predefined routes, each with an emoji suffix as its final name — **Eurasia
+- Thirteen predefined routes, each with an emoji suffix as its final name — **Eurasia
   Grand Tour 🌏**, **Pan-American Grand Tour 🌎**, **Africa Grand Tour 🌍**,
   **Mediterranean Civilizations Expedition 🏛️**, **Nordic Arctic Expedition ❄️**,
   **Patagonia & Antarctica Expedition 🧊**, **India & Himalaya Expedition 🏔️**,
   **North America Grand Traverse 🌎**, **Oceania Grand Expedition 🌊**,
-  **Caribbean & Amazon Expedition 🌴**, **West & Central Africa Expedition 🌍**, and
-  **Central European Grand Roadtrip 🚗** — are seeded once on first load, each gated
-  by its own `localStorage` flag so adding a new one later still seeds it into
-  existing browsers. All twelve now have real content — no more backbone-only
-  routes. Central European Grand Roadtrip is the only self-driven (no-flight)
-  expedition: fuel/tolls/parking are shared per car and tracked once in its route
-  notes rather than folded into each leg's per-person budget, so those per-country
-  budget figures stay comparable to every other expedition. Eurasia/Pan-American/North
+  **Caribbean & Amazon Expedition 🌴**, **West & Central Africa Expedition 🌍**,
+  **Central European Grand Roadtrip 🚗**, and **British Isles & Celtic Coast
+  Expedition 🍀** — are seeded once on first load, each gated by its own
+  `localStorage` flag so adding a new one later still seeds it into existing
+  browsers. All thirteen now have real content — no more backbone-only routes.
+  Central European Grand Roadtrip and British Isles & Celtic Coast Expedition are
+  the two self-driven (mostly no-flight) expeditions: fuel/tolls/parking (and, for
+  British Isles, the six car-ferry crossings) are shared per car and tracked once in
+  their route notes rather than folded into each leg's per-person budget, so those
+  per-country budget figures stay comparable to every other expedition. Eurasia/Pan-American/North
   America/Mediterranean Civilizations are seeded with countries pre-grouped into
   regions; Patagonia & Antarctica and India & Himalaya are seeded **flat, with zero
   regions** on purpose (only 3 legs each — too few to benefit from grouping). Every
@@ -72,18 +74,21 @@ trips that span months, not weeks. Lives at `route-builder.html`.
   routes seeded before this content existed, without touching fields you've since
   edited yourself. North America Grand Traverse, Mediterranean Civilizations
   Expedition, Oceania Grand Expedition, Caribbean & Amazon Expedition, West &
-  Central Africa Expedition and Central European Grand Roadtrip are each seeded
-  directly in their own function instead (`rbSeedNorthAmericaExpedition()` /
-  `rbBuildMediterraneanExpeditionRoute()` / `rbBuildOceaniaExpeditionRoute()` /
-  `rbBuildCaribbeanAmazonExpeditionRoute()` / `rbBuildWestCentralAfricaExpeditionRoute()` /
-  `rbBuildCentralEuropeRoadtripRoute()`) — the first three (plus Central European
-  Grand Roadtrip) because each revisits a country across multiple separate legs
-  (Canada/US six times; Italy four times, France and Greece twice each; Australia
-  seven times, New Zealand twice; Central European Grand Roadtrip repeats Germany,
-  Italy and Czechia) — a shape `RB_EXPEDITION_CONTENT` (keyed one-entry-per-country-code
-  per route) can't hold. Caribbean & Amazon Expedition and West & Central Africa
-  Expedition don't repeat any country, but were seeded this way too since each
-  replaced a previously-named or empty backbone-only route (see below).
+  Central Africa Expedition, Central European Grand Roadtrip and British Isles &
+  Celtic Coast Expedition are each seeded directly in their own function instead
+  (`rbSeedNorthAmericaExpedition()` / `rbBuildMediterraneanExpeditionRoute()` /
+  `rbBuildOceaniaExpeditionRoute()` / `rbBuildCaribbeanAmazonExpeditionRoute()` /
+  `rbBuildWestCentralAfricaExpeditionRoute()` / `rbBuildCentralEuropeRoadtripRoute()` /
+  `rbBuildBritishIslesExpeditionRoute()`) — the first three (plus Central European
+  Grand Roadtrip and British Isles & Celtic Coast Expedition) because each revisits
+  a country across multiple separate legs (Canada/US six times; Italy four times,
+  France and Greece twice each; Australia seven times, New Zealand twice; Central
+  European Grand Roadtrip repeats Germany, Italy and Czechia; British Isles & Celtic
+  Coast Expedition repeats the United Kingdom six times and Ireland twice) — a shape
+  `RB_EXPEDITION_CONTENT` (keyed one-entry-per-country-code per route) can't hold.
+  Caribbean & Amazon Expedition and West & Central Africa Expedition don't repeat
+  any country, but were seeded this way too since each replaced a previously-named
+  or empty backbone-only route (see below).
 - **Three rounds of renames/overhauls**, all applied retroactively by one-time
   migrations in `js/pages/routeBuilder.js` so they also land on routes already seeded
   into a browser, without touching any fields you'd already edited yourself (except
@@ -112,6 +117,27 @@ for the plan to move it into the Google Sheet.
 
 ## Recently fixed
 
+- **British Isles & Celtic Coast Expedition 🍀 built (2026-07)** — the thirteenth
+  expedition, designed from a ChatGPT brainstorm Youri brought in, then reviewed and
+  adjusted in a Q&A session. Self-driven from the Netherlands, same style as Central
+  European Grand Roadtrip: England (South England, Cornwall, Wales, North England,
+  Scotland, Northern Ireland — six United Kingdom legs), Isle of Man, Ireland (West,
+  South & East), Guernsey, Jersey, France (Brittany, Normandy, Opal Coast & Lille) and
+  Belgium — fifteen legs across five regions. Two route-order corrections came out of
+  real ferry-geography research: Isle of Man moved from its own stop to a detour
+  nested inside the North England leg (Heysham, its only year-round car-ferry port,
+  sits on the route between North Wales and the Lake District anyway), and Ireland is
+  driven north-to-south, exiting via Rosslare-Fishguard/Pembroke instead of
+  backtracking to Dublin-Holyhead. Isle of Man itself is visited as a foot passenger
+  with a one-day local car rental just for the TT Mountain Road, rather than paying for
+  a round-trip car ferry — Youri's own idea, confirmed after discussion. Recommended
+  start: June (ahead of Scotland's July-August midge peak, while France/the Channel
+  Islands still get the last dry autumn window before their wet November). 86 days
+  minimum / 115 days ideal, €10,350 per-person ground costs (Realistisch tier) plus
+  ≈€4,200–4,800 shared car/ferry costs. Known cosmetic gap: Isle of Man, Jersey and
+  Guernsey aren't in the World map view's topojson lookup (`js/utils/isoCountries.js`)
+  so those three blocks won't highlight there — same kind of limitation as the existing
+  "country dropdown depends on the live Countries sheet" note below.
 - **Route Builder stuck on "Loading your country list…" on the live site** — the
   country data loaded fine, but `css/base.css` had `.loading-spinner { display: flex }`,
   which beats the browser's default `[hidden] { display: none }` even after JS sets
@@ -310,14 +336,16 @@ for the plan to move it into the Google Sheet.
   that sheet still works fine in a block (name/flag are stored directly on the
   block), but its dropdown will show as unselected until the sheet catches up.
   Cosmetic only.
+- **Isle of Man, Jersey and Guernsey don't highlight on the World map view** — a
+  related, separate gap: `js/utils/isoCountries.js`'s `ISO_NUM` lookup (used by
+  `rbRenderMap()`/`rbGetWorldGeoJSON()`) covers ISO 3166-1 sovereign-state codes from
+  the world-atlas topojson dataset, which doesn't include these three British Crown
+  Dependencies. Their British Isles & Celtic Coast Expedition 🍀 blocks work fine
+  everywhere else (day/budget/notes/destinations, calendar view); they just won't
+  light up on the World map. Cosmetic only.
 
 ## Future plans
 
-- **British Isles & Celtic Regions Expedition** — a thirteenth expedition Youri is
-  planning to design next (2026-07). Not started yet — no route brief, countries or
-  content exist for it. Follow the established workflow when it comes up: a
-  standalone discussion artifact first (route/regions/timing/budget), Youri reviews
-  and adjusts, only then build it into `routeBuilder.js`.
 - **Route-line map view, not just per-country highlighting** — Youri wants a way to
   see a route drawn as an actual path/line (start→finish, following the real
   sequence of stops), rather than the current World map view which just highlights
