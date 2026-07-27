@@ -117,6 +117,12 @@ for the plan to move it into the Google Sheet.
 
 ## Recently fixed
 
+- **Price/visa/travel-advisory verification, routes 4-5 (2026-07)** — Patagonia &
+  Antarctica Expedition 🧊 (Chile/Argentina/Antarctica all confirmed accurate, no
+  changes) and India & Himalaya Expedition 🏔️ (Nepal corrected €47.60→€60/day —
+  mandatory Annapurna guide/porter/permits weren't covered; India and Bhutan confirmed
+  accurate). Details in each route's own notes in the app (kept brief here going
+  forward — see "Needs attention next time" for what's still open).
 - **Central European Grand Roadtrip 🚗 price/visa/travel-advisory verification
   (2026-07)** — third route verified. This route previously used a flat €120/day rate
   for all 14 countries (deliberately, at the time) — the check found that doesn't hold
@@ -367,11 +373,14 @@ for the plan to move it into the Google Sheet.
   `js/pages/routeBuilder.js`. That fixes internal consistency (days vs. budget), not
   accuracy — none of it has been checked against real prices, current border/visa
   rules, or your own travel preferences. Treat it as a refined draft to edit, not a
-  plan to book. Mediterranean Civilizations Expedition 🏛️, Eurasia Grand Tour 🌏 and
-  Central European Grand Roadtrip 🚗 have since had this real verification done (see
-  "Recently fixed" above) — the other ten expeditions still need the same treatment
-  (prices + visa rules + Dutch travel advisory, per country, recalibrated to Youri's
-  own travel style). No route or priority order picked yet for which one comes next.
+  plan to book. Five expeditions have since had this real verification done: Mediterranean
+  Civilizations Expedition 🏛️, Eurasia Grand Tour 🌏, Central European Grand Roadtrip 🚗,
+  Patagonia & Antarctica Expedition 🧊, and India & Himalaya Expedition 🏔️ (see "Recently
+  fixed" above for the last two; details live in each route's own notes). Eight remain:
+  Pan-American Grand Tour, Africa Grand Tour, Nordic Arctic Expedition, North America
+  Grand Traverse, Oceania Grand Expedition, Caribbean & Amazon Expedition, West & Central
+  Africa Expedition, British Isles & Celtic Coast Expedition. Working through them in no
+  particular order.
   - The Antarctica leg's budget (Patagonia & Antarctica Expedition) reflects a real
     expedition-cruise price point, not backpacker-style estimates like the rest, and
     was deliberately left unscaled (its days didn't change either).
