@@ -29,6 +29,7 @@ const RB_MIGRATE_FLAG_2026_07_OCEANIA_BUILD = 'atlas_grand_trips_migrate_2026_07
 const RB_MIGRATE_FLAG_2026_07_CARIBBEAN_AMAZON_BUILD = 'atlas_grand_trips_migrate_2026_07_caribbean_amazon_build_v1';
 const RB_MIGRATE_FLAG_2026_07_WCAFRICA_BUILD = 'atlas_grand_trips_migrate_2026_07_wcafrica_build_v1';
 const RB_MIGRATE_FLAG_2026_07_ANGOLA_ADDITION = 'atlas_grand_trips_migrate_2026_07_angola_addition_v1';
+const RB_MIGRATE_FLAG_2026_07_BAHRAIN_ADDITION = 'atlas_grand_trips_migrate_2026_07_bahrain_addition_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
 
@@ -63,6 +64,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateCaribbeanAmazonBuild();
   rbMigrateWestCentralAfricaBuild();
   rbMigrateAngolaIntoAfricaGrandTour();
+  rbMigrateBahrainIntoMediterraneanExpedition();
   rbBindEvents();
 
   try {
@@ -1411,8 +1413,8 @@ function rbBuildMediterraneanExpeditionRoute() {
     {
       name: 'Egypte & het Arabisch Schiereiland',
       season: 'December-Januari',
-      budget: 2150,
-      note: "Van de oud-Egyptische beschaving via de Nabateese handelsroutes van Jordanië en de Arabische handelswereld van Oman naar het moderne Qatar als bewust hedendaags slotakkoord.",
+      budget: 2500,
+      note: "Van de oud-Egyptische beschaving via de Nabateese handelsroutes van Jordanië en de Arabische handelswereld van Oman en de Dilmun-beschaving van Bahrein naar het moderne Qatar als bewust hedendaags slotakkoord.",
       countries: [
         {
           code: 'EG', name: 'Egypt', days: 14, budget: 650,
@@ -1430,7 +1432,13 @@ function rbBuildMediterraneanExpeditionRoute() {
           code: 'OM', name: 'Oman', days: 7, budget: 600,
           destinations: ['Muscat', 'Nizwa', 'Jebel Shams', 'Wahiba Sands'],
           notes: "Arabische handelsroutes, forten (Nizwa) en zowel bergen (Jebel Shams, de \"Grand Canyon van Arabië\") als woestijn (Wahiba Sands) op korte afstand van elkaar. Verborgen parel: Bahla Fort en de eeuwenoude falaj-irrigatiekanalen bij Nizwa (beide UNESCO).",
-          transport_to_next: "Vlucht Muscat-Doha — korte Golfvlucht; overweeg een tussenstop in Bahrein (Qal'at al-Bahrein, UNESCO) als de reis ooit wordt uitgebreid",
+          transport_to_next: "Vlucht Muscat-Manama — korte Golfvlucht",
+        },
+        {
+          code: 'BH', name: 'Bahrain', days: 3, budget: 350,
+          destinations: ["Qal'at al-Bahrein (Bahrein Fort)", 'Bahrain National Museum', 'Al Fateh Grand Mosque', 'Tree of Life'],
+          notes: "Qal'at al-Bahrein (UNESCO) was de hoofdstad van de Dilmun-beschaving, een Bronstijd-handelsbeschaving die al rond 2000 v.Chr. tussen Mesopotamië en de Indusvallei handelde — een nog oudere laag geschiedenis dan de Nabateese en Arabische handelsroutes eerder in deze etappe. De Tree of Life, een eeuwenoude boom die op onverklaarde wijze midden in de woestijn overleeft, als natuurlijke curiositeit tussen de geschiedenis door.",
+          transport_to_next: "Vlucht Manama-Doha — korte Golfvlucht",
         },
         {
           code: 'QA', name: 'Qatar', days: 3, budget: 400,
@@ -1441,20 +1449,21 @@ function rbBuildMediterraneanExpeditionRoute() {
       ],
     },
   ], {
-    travel_style: "Backpacker — hostels met af en toe een hotel, openbaar vervoer waar mogelijk, ferry's tussen eilanden waar dat logisch is, vluchten alleen wanneer de afstand dat vereist (Marokko-Tunesië, Tunesië-Malta, Zuid-Frankrijk-Griekenland, Kreta-Cyprus, Cyprus-Turkije, Turkije-Egypte, Jordanië-Oman, Oman-Qatar).",
+    travel_style: "Backpacker — hostels met af en toe een hotel, openbaar vervoer waar mogelijk, ferry's tussen eilanden waar dat logisch is, vluchten alleen wanneer de afstand dat vereist (Marokko-Tunesië, Tunesië-Malta, Zuid-Frankrijk-Griekenland, Kreta-Cyprus, Cyprus-Turkije, Turkije-Egypte, Jordanië-Oman, Oman-Bahrein, Bahrein-Qatar).",
     best_starting_month: 'September',
     description: "Grote historische expeditie langs de beschavingen die de Mediterrane wereld hebben gevormd: van Moors Spanje via Noord-Afrika en Zuid-Europa naar de Levant en de Arabische handelswereld. Achttien etappes in zes regio's volgen Feniciërs, Carthagers, Grieken, Romeinen, Byzantijnen en de islamitische wereld door duizenden jaren geschiedenis.",
-    climate_summary: "Vergeleken scenario's: (1) een start in maart/april is voor het Europese deel (Spanje t/m Turkije) prettiger dan september — milder, minder druk — maar schuift de woestijn-/Golfetappes (Egypte, Jordanië, Oman, Qatar) door naar juli-oktober, middenin het zwaarste woestijnseizoen (regelmatig 40-48°C in Wadi Rum en het binnenland van Oman); (2) een start begin september laat het Europese deel nog in het najaarszonnetje vallen, brengt Griekenland/Kreta/Cyprus/Turkije in een aangenaam najaar (minder toeristen, nog warm genoeg voor ferry's) en laat de hele Egypte-Jordanië-Oman-Qatar-etappe in december-januari vallen — het beste seizoen voor de Golf en de Egyptische/Jordaanse woestijn (dagen rond 20-28°C in plaats van 40+). Beste keuze: start begin september in Andalusië, zodat de expeditie (circa 4,5-5 maanden) medio januari in Qatar eindigt, met de zwaarste woestijnhitte overgeslagen. Let wel: eind oktober/november draaien sommige eilandveerboten (Malta-Sicilië, Piraeus-Heraklion, Corsica-Marseille) op een verminderde winterdienstregeling — check actuele vaarschema's ruim van tevoren.",
+    climate_summary: "Vergeleken scenario's: (1) een start in maart/april is voor het Europese deel (Spanje t/m Turkije) prettiger dan september — milder, minder druk — maar schuift de woestijn-/Golfetappes (Egypte, Jordanië, Oman, Qatar) door naar juli-oktober, middenin het zwaarste woestijnseizoen (regelmatig 40-48°C in Wadi Rum en het binnenland van Oman); (2) een start begin september laat het Europese deel nog in het najaarszonnetje vallen, brengt Griekenland/Kreta/Cyprus/Turkije in een aangenaam najaar (minder toeristen, nog warm genoeg voor ferry's) en laat de hele Egypte-Jordanië-Oman-Qatar-etappe in december-januari vallen — het beste seizoen voor de Golf en de Egyptische/Jordaanse woestijn (dagen rond 20-28°C in plaats van 40+). Beste keuze: start begin september in Andalusië, zodat de expeditie (circa 4,5-5 maanden) medio januari in Qatar eindigt, met de zwaarste woestijnhitte overgeslagen. Let wel (nagezocht 2026-07): de veerboot Malta-Sicilië (Virtu Ferries, Pozzallo-Valletta) vaart het hele jaar door, maar met minder afvaarten in het najaar en kans op annulering bij slecht weer — dit is de echte risicoverbinding op deze route, check het actuele schema op book.virtuferries.com ruim van tevoren. Piraeus-Heraklion en de Corsicaanse oversteek (Corsica Ferries) blijken in de praktijk het hele jaar door met meerdere maatschappijen en (bijna) dagelijkse afvaarten te varen, dus daar is het risico kleiner dan gedacht — let bij Corsica wel op welke haven je gebruikt: Toulon en Bastia varen het vaakst, Marseille en Ajaccio minder frequent.",
     notes: "Ingevuld vanuit een uitgebreide ChatGPT-brainstorm (\"Mediterranean Civilizations Expedition\"), uitgewerkt en gestructureerd door Claude in dezelfde stijl als de andere grote reizen — dit vervangt de eerdere, veel kleinere \"Ancient Civilizations Expedition\"/\"North Africa & Middle East Expedition 🏜️\" (Marokko, Tunesië, Egypte, Jordanië, Oman, VAE, Cyprus) volledig.\n\n" +
       "Al bezocht vs. nieuw: 8 van de 13 landen in deze route staan al als \"visited\" in je Countries-sheet — Spanje, Frankrijk, Griekenland, Italië, Malta, Marokko, Cyprus en Turkije. Alleen Tunesië, Egypte, Jordanië, Oman en Qatar zijn nog onbezocht. Dat maakt dit voor een groot deel een verdiepingsreis (specifieke oude geschiedenis binnen al bekende landen) in plaats van nieuwe-landen-afvinken — de moeite waard om in het achterhoofd te houden, geen reden om iets te schrappen.\n\n" +
       "Kosteninschatting (circa 4,5-5 maanden, 138 dagen grondkosten + losse vluchten/ferry's ertussen): solo circa €10.500-11.500 (grondbudgetten €9.120 + internationale/tussenliggende vluchten en ferry's €1.400-2.400), met 3 personen circa €7.500-8.500 per persoon door gedeelde accommodatie en lokaal vervoer.\n\n" +
       "Transportstrategie: vooral ferry's tussen eilanden en over korte zeestraten waar dat logisch is (Spanje-Marokko, Malta-Sicilië, Sicilië-vasteland, Sardinië-Corsica, Corsica-Frankrijk, Piraeus-Kreta, Egypte-Jordanië) — dat zijn ook de mooiste/goedkoopste overgangen. Vluchten alleen waar geen praktische land-/zeeroute bestaat of politieke grenzen dat onmogelijk maken (Marokko-Tunesië door de gesloten Algerijnse grens, Tunesië-Malta, Frankrijk-Griekenland, Kreta-Cyprus, Cyprus-Turkije, Turkije-Egypte, Jordanië-Oman, Oman-Qatar).\n\n" +
-      "Mogelijke toevoegingen: Bahrein tussen Oman en Qatar (Qal'at al-Bahrein, UNESCO-fort, korte Golfvlucht) — dit stond al als idee genoteerd voor de oude \"North Africa & Middle East Expedition\" en past hier logischer. Algerije (Romeinse steden Timgad, Djemila, Tipasa) zou historisch goed passen tussen Marokko en Tunesië, maar is bewust weggelaten vanwege de gesloten grens met Marokko en een lastiger visumtraject. Libanon/Israël (het Fenicische kernland: Byblos, Tyrus, Sidon) zouden thematisch de sterkste aanvulling zijn — Feniciërs komen nu alleen via Carthago/Tunesië aan bod — maar zijn weggelaten vanwege reisadvies en grensgevoeligheden; heroverweeg dit apart als de situatie verandert.\n\n" +
+      "Nog openstaande kandidaten: Algerije (Romeinse steden Timgad, Djemila, Tipasa) zou historisch goed passen tussen Marokko en Tunesië, maar is bewust weggelaten vanwege de gesloten grens met Marokko en een lastiger visumtraject. Libanon/Israël (het Fenicische kernland: Byblos, Tyrus, Sidon) zouden thematisch de sterkste aanvulling zijn — Feniciërs komen nu alleen via Carthago/Tunesië aan bod — maar zijn weggelaten vanwege reisadvies en grensgevoeligheden; heroverweeg dit apart als de situatie verandert.\n\n" +
       "Mogelijke schrapping: Qatar is de enige etappe zonder oude geschiedenis (puur modern) en qua thema de uitzondering op de rest van de route — bewust gehandhaafd als hedendaags slotakkoord zoals in de brainstorm bedoeld, maar de eerste kandidaat om te laten vervallen als de reis korter moet.\n\n" +
       "Alternatieve route: de volgorde omkeren (Qatar/Oman/Jordanië/Egypte eerst, Spanje als laatste) zou de woestijn-/Golfetappes in het vroege najaar leggen — juist het warmste, minst comfortabele moment daar — en eindigt bovendien in het kille Zuid-Europese winterseizoen. De huidige volgorde (Spanje → Qatar, start september) is voor beide uitersten van de route het gunstigst.\n\n" +
       "Dagen/budget/bestemmingen/transport hierboven zijn een eerste research-opzet, nog niet getoetst aan actuele prijzen, visumregels of persoonlijke voorkeuren — behandel dit als een eerste concept om zelf te verfijnen, geen boekbaar plan.\n\n" +
       "Tijdscontrole (2026-07): Rome (4→7 dagen — de Vaticaanse Musea alleen al zijn een volle dag, en Rome is berucht de meest onderschatte stad in reisplanningen) en de Turkije/Anatolië-etappe (14→20 dagen — Istanbul plus Troje, Pergamon, Efeze, Pamukkale én Cappadocië is een landbrede route) waren te krap. De rest van de expeditie klopte al goed. Met de extra 9 dagen (totaal nu 147 in plaats van 138) schuift het einde van half januari naar begin februari, nog steeds ruim vóór de Golf-zomerhitte — de klimaatredenering hierboven blijft dus overeind.\n\n" +
-      "Vervolg (2026-07): budget voor Rome (400→700) en de Turkije/Anatolië-etappe (600→850) meegeschaald met de extra dagen; de rest van de expeditie ongewijzigd.",
+      "Vervolg (2026-07): budget voor Rome (400→700) en de Turkije/Anatolië-etappe (600→850) meegeschaald met de extra dagen; de rest van de expeditie ongewijzigd.\n\n" +
+      "Toevoeging (2026-07): Bahrein toegevoegd tussen Oman en Qatar in de regio 'Egypte & het Arabisch Schiereiland' — dit stond hier al genoteerd als kandidaat sinds deze route werd gebouwd. Qal'at al-Bahrein (UNESCO) was de hoofdstad van de Dilmun-beschaving, een Bronstijd-handelsbeschaving tussen Mesopotamië en de Indusvallei — een nog oudere laag geschiedenis dan de rest van deze etappe. Nieuw totaal: 150 dagen (was 147), regiobudget 'Egypte & het Arabisch Schiereiland' €2.500 (was €2.150).",
   });
 }
 
@@ -2913,6 +2922,40 @@ function rbMigrateAngolaIntoAfricaGrandTour() {
 
   const note = "Toevoeging (2026-07): Angola toegevoegd aan de Southern Africa-regio, direct na Namibië (grensovergang Oshikango/Santa Clara), met een vlucht Luanda-Kaapstad/Johannesburg om weer aan te sluiten bij de South Africa Finale. Afkomstig uit de West & Central Africa-ontwerpsessie — daar paste Angola geografisch slechter (alleen per vlucht bereikbaar, geen buurlanden op die route). Let op: dit verandert niets aan het seizoenscompromis van deze regio (valt nog steeds in het regenseizoen bij de huidige juni-startmaand) — Angola deelt gewoon hetzelfde, al geaccepteerde compromis. Nieuw totaal: 288 dagen (was 277), €29.225 (was €27.725).";
   if (route.notes && !route.notes.includes('Toevoeging (2026-07): Angola')) {
+    route.notes += '\n\n' + note;
+  }
+
+  rbSave();
+}
+
+function rbMigrateBahrainIntoMediterraneanExpedition() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_07_BAHRAIN_ADDITION)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_07_BAHRAIN_ADDITION, '1');
+
+  const route = rbRoutes.find(r => r.name === 'Mediterranean Civilizations Expedition 🏛️');
+  if (!route) return;
+  if (route.blocks.some(b => b.country_code === 'BH')) return;
+
+  const omIndex = route.blocks.findIndex(b => b.country_code === 'OM');
+  if (omIndex === -1) return;
+
+  const omBlock = route.blocks[omIndex];
+  omBlock.transport_to_next = 'Vlucht Muscat-Manama — korte Golfvlucht.';
+
+  const bahrainBlock = rbBuildBlock('BH', 'Bahrain', {
+    region_id: omBlock.region_id,
+    days: 3, budget: 350,
+    destinations: ["Qal'at al-Bahrein (Bahrein Fort)", 'Bahrain National Museum', 'Al Fateh Grand Mosque', 'Tree of Life'],
+    notes: "Qal'at al-Bahrein (UNESCO) was de hoofdstad van de Dilmun-beschaving, een Bronstijd-handelsbeschaving die al rond 2000 v.Chr. tussen Mesopotamië en de Indusvallei handelde — een nog oudere laag geschiedenis dan de Nabateese en Arabische handelsroutes eerder in deze etappe. De Tree of Life, een eeuwenoude boom die op onverklaarde wijze midden in de woestijn overleeft, als natuurlijke curiositeit tussen de geschiedenis door.",
+    transport_to_next: 'Vlucht Manama-Doha — korte Golfvlucht.',
+  });
+  route.blocks.splice(omIndex + 1, 0, bahrainBlock);
+
+  const arabianRegion = (route.regions || []).find(r => r.name === 'Egypte & het Arabisch Schiereiland');
+  if (arabianRegion) arabianRegion.budget = 2500;
+
+  const note = "Toevoeging (2026-07): Bahrein toegevoegd tussen Oman en Qatar in de regio 'Egypte & het Arabisch Schiereiland' — dit stond hier al genoteerd als kandidaat sinds deze route werd gebouwd. Qal'at al-Bahrein (UNESCO) was de hoofdstad van de Dilmun-beschaving, een Bronstijd-handelsbeschaving tussen Mesopotamië en de Indusvallei — een nog oudere laag geschiedenis dan de rest van deze etappe. Nieuw totaal: 150 dagen (was 147), regiobudget 'Egypte & het Arabisch Schiereiland' €2.500 (was €2.150).";
+  if (route.notes && !route.notes.includes('Toevoeging (2026-07): Bahrein')) {
     route.notes += '\n\n' + note;
   }
 

@@ -202,6 +202,19 @@ for the plan to move it into the Google Sheet.
   and Angola shares that same accepted trade-off. New totals: 18 countries (was 17),
   288 days (was 277), €29,225 (was €27,725).
 
+- **Bahrain added to Mediterranean Civilizations Expedition 🏛️ (2026-07)** — inserted
+  between Oman and Qatar via `rbMigrateBahrainIntoMediterraneanExpedition()`, closing
+  the candidate-addition noted since that route was first built. 3 days, €350
+  (Qal'at al-Bahrein/Dilmun civilisation, Bahrain National Museum, Al Fateh Grand
+  Mosque, Tree of Life). New totals: 150 days (was 147), €2,500 for the "Egypte & het
+  Arabisch Schiereiland" region (was €2,150).
+- **Ferry winter-schedule caveat researched (2026-07)** — the generic "check actual
+  timetables" warning on Malta-Sicily/Piraeus-Heraklion/Corsica-Marseille (Mediterranean
+  Civilizations Expedition) was replaced with actual findings: Malta-Sicily (Virtu
+  Ferries, Pozzallo-Valletta) is the genuine risk — fewer winter departures and
+  weather-cancellation risk. Piraeus-Heraklion and the Corsica crossing (Corsica
+  Ferries) both run near-daily, year-round with multiple operators — lower risk than
+  assumed, though on Corsica, Toulon/Bastia sail far more often than Marseille/Ajaccio.
 - **Central European Grand Roadtrip 🚗 built (2026-07)** — the twelfth expedition,
   and the first designed as a self-driven car trip from the Netherlands (no flights).
   Designed in a Q&A session from Youri's own route brief, covering four regions:
@@ -264,34 +277,30 @@ for the plan to move it into the Google Sheet.
   Oman, UAE, Cyprus) is gone, replaced by an 18-leg, 13-country route from Andalusia
   to Qatar (Spain, Morocco, Tunisia, Malta, Sicily, South Italy, Rome, Sardinia,
   Corsica, South France, Greece, Crete, Cyprus, Turkey, Egypt, Jordan, Oman, Qatar —
-  UAE dropped, Qatar added as the earlier brainstorm proposed). Open threads on this
-  one specifically: Bahrain (between Oman and Qatar) is noted as a strong candidate
-  addition in the route notes but not yet added as a block; Algeria and Lebanon/Israel
-  were considered and deliberately left out (see the route notes for why); and several
-  island ferries on this route (Malta–Sicily, Piraeus–Heraklion, Corsica–Marseille)
-  run reduced winter schedules that should be checked against real timetables before
-  booking anything.
-- **Some seeded blocks overlap with data that already exists** — worth
-  cross-checking before treating them as final:
+  UAE dropped, Qatar added as the earlier brainstorm proposed). Bahrain has since been
+  added (see "Recently fixed" above). Algeria and Lebanon/Israel were considered and
+  deliberately left out (see the route notes for why) and remain open candidates to
+  revisit later.
+- **Some seeded blocks overlap with data that already exists — accepted, not a bug
+  (decided 2026-07)**: Route Builder expeditions are epic/aspirational trips, while the
+  Trips sheet is realistic, plannable vacations — different enough purposes that
+  overlap between them (shared countries, or a region that resembles an existing trip)
+  is fine as-is. No dedup or Block-Library conversion planned for these. Worth
+  revisiting only if/when Youri wants to think through the Route Builder vs. Trips
+  distinction more deliberately (not urgent, no date set):
   - "Balkans" (Eurasia Grand Tour) is identical to the existing "Balkan Loop" trip
     already in your Trips sheet.
   - "Maritime Southeast Asia" (Eurasia Grand Tour) includes Malaysia, Brunei and
     Singapore, already marked "visited" in your Countries sheet.
-  - South Africa (Africa Grand Tour) is already marked "visited" in
-    your Countries sheet — the local fallback data has no other overlap for this
-    expedition's 17 countries, but worth double-checking the live sheet too.
-  - Canada and the United States (North America Grand Traverse) are both already
-    marked "visited" in your Countries sheet — that just reflects a prior, different
-    trip there, so it doesn't mean this specific route is redundant, but worth
-    keeping in mind.
+  - South Africa (Africa Grand Tour), Canada and the United States (North America
+    Grand Traverse) are already marked "visited" in your Countries sheet — reflects
+    prior, different trips there.
   - 8 of the 13 countries in Mediterranean Civilizations Expedition are already
     marked "visited" in your Countries sheet — Spain, France, Greece, Italy, Malta,
-    Morocco, Cyprus and Turkey. Only Tunisia, Egypt, Jordan, Oman and Qatar are new.
-    Egypt also appears in Africa Grand Tour (fine, expeditions can share countries;
-    Jordan and Oman used to be shared the same way until they were moved fully into
-    what's now Mediterranean Civilizations Expedition).
-  - Consider whether these should be pulled in as Block Library items from existing
-    trips instead of living as separate, possibly-duplicate data.
+    Morocco, Cyprus and Turkey. Only Tunisia, Egypt, Jordan, Oman, Bahrain and Qatar
+    are new. Egypt also appears in Africa Grand Tour (fine, expeditions can share
+    countries; Jordan and Oman used to be shared the same way until they were moved
+    fully into what's now Mediterranean Civilizations Expedition).
 - **Region grouping only holds together while contiguous** — a Regional Block is
   just a label on whichever countries currently sit next to each other in the
   sequence. Moving one country out of the middle of a region (↑/↓) splits that
