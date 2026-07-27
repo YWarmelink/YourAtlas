@@ -32,6 +32,7 @@ const RB_MIGRATE_FLAG_2026_07_WCAFRICA_BUILD = 'atlas_grand_trips_migrate_2026_0
 const RB_MIGRATE_FLAG_2026_07_ANGOLA_ADDITION = 'atlas_grand_trips_migrate_2026_07_angola_addition_v1';
 const RB_MIGRATE_FLAG_2026_07_BAHRAIN_ADDITION = 'atlas_grand_trips_migrate_2026_07_bahrain_addition_v1';
 const RB_MIGRATE_FLAG_2026_07_AFRICA_REORDER = 'atlas_grand_trips_migrate_2026_07_africa_reorder_v1';
+const RB_MIGRATE_FLAG_2026_07_PRICE_VERIFICATION_ROUND1 = 'atlas_grand_trips_migrate_2026_07_price_verification_round1_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
 
@@ -69,6 +70,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateAngolaIntoAfricaGrandTour();
   rbMigrateBahrainIntoMediterraneanExpedition();
   rbMigrateAfricaGrandTourReorder();
+  rbMigratePriceVerificationRound1();
   rbBindEvents();
 
   try {
@@ -1111,21 +1113,21 @@ const RB_EXPEDITION_CONTENT = {
     TL: { days: 7, budget: 400, destinations: ["Dili", "Atauro-eiland", "Jaco-eiland (Nino Konis Santana NP)", "Baucau", "Maubisse"], transport_to_next: "Vlucht Dili-Singapore (meestal met overstap in Denpasar/Bali of Jakarta, geen directe verbinding) — laatste etappe naar het eindpunt Singapore", notes: "Beperkte zorginfrastructuur (ziekenhuizen kunnen vooraf contante betaling vragen, ernstige gevallen vereisen medische evacuatie naar Bali/Darwin, geen Nederlandse ambassade ter plaatse) — een goede reisverzekering is hier extra belangrijk. Vermijd 's nachts rijden buiten Dili. Jaco Island is alleen bereikbaar met een 4x4+chauffeur ($85-150/dag) — deel de kosten met anderen indien mogelijk, aparte kostenpost bovenop de rest van de route." },
   },
   "Pan-American Grand Tour 🌎": {
-    MX: { days: 28, budget: 1000, destinations: ["Ciudad de México", "Oaxaca", "Palenque", "Mérida", "Tulum", "Bacalar", "San Cristóbal de las Casas"], transport_to_next: "Bus over land via de grensovergang La Mesilla/El Carmen naar Huehuetenango, Guatemala." },
-    GT: { days: 16, budget: 400, destinations: ["Quetzaltenango (Xela)", "Lake Atitlán", "Antigua", "Ciudad de Guatemala", "Semuc Champey", "Flores & Tikal"], transport_to_next: "Bus over land vanaf Flores naar de grensovergang bij Melchor de Menchos, door naar San Ignacio, Belize." },
-    BZ: { days: 10, budget: 575, destinations: ["San Ignacio", "Belize City", "Caye Caulker", "Ambergris Caye (San Pedro)", "Hopkins/Dangriga", "Placencia"], transport_to_next: "Veerboot vanaf Placencia/Dangriga (via Livingston, Guatemala) naar Puerto Cortés, Honduras." },
-    HN: { days: 14, budget: 375, destinations: ["Puerto Cortés", "Copán Ruinas", "Lago de Yojoa", "Tegucigalpa", "La Ceiba", "Roatán"], transport_to_next: "Bus over land via de grensovergang El Amatillo naar El Salvador." },
-    SV: { days: 10, budget: 275, destinations: ["San Salvador", "Santa Ana", "Cerro Verde & vulkanen", "Ruta de las Flores (Juayúa, Ataco)", "El Tunco", "Suchitoto"], transport_to_next: "Bus over land via Honduras (transit) naar de grensovergang El Espino/Guasaule, richting León, Nicaragua." },
-    NI: { days: 15, budget: 350, destinations: ["León", "Managua", "Granada", "Isla de Ometepe", "Laguna de Apoyo", "San Juan del Sur"], transport_to_next: "Bus over land via de grensovergang Peñas Blancas naar Costa Rica." },
-    CR: { days: 21, budget: 1000, destinations: ["Liberia", "La Fortuna/Arenal", "Monteverde", "Santa Teresa", "Manuel Antonio", "Puerto Viejo de Talamanca"], transport_to_next: "Bus over land via de grensovergang Sixaola/Guabito naar Bocas del Toro, Panama." },
-    PA: { days: 15, budget: 625, destinations: ["Bocas del Toro", "Boquete", "Ciudad van Panama", "Casco Viejo", "Panamakanaal", "San Blas-eilanden"], transport_to_next: "Zeilboot (4-5 dagen) via de San Blas-eilanden naar Cartagena, Colombia — geen wegverbinding door de Darién Gap." },
-    CO: { days: 35, budget: 1000, destinations: ["Cartagena", "Santa Marta", "Parque Tayrona", "Medellín", "Salento & Koffiezone", "Bogotá", "San Agustín"], transport_to_next: "Bus over land via Pasto naar de grensovergang Ipiales–Tulcán, door naar Quito, Ecuador." },
-    EC: { days: 24, budget: 1025, destinations: ["Quito", "Otavalo", "Mindo", "Baños", "Cuenca", "Galápagos-eilanden"], transport_to_next: "Bus over land via de grensovergang Huaquillas/Tumbes naar Noord-Peru, richting Máncora." },
-    PE: { days: 35, budget: 1050, destinations: ["Máncora", "Huaraz", "Lima", "Ica & Huacachina", "Arequipa", "Cusco & Vallei van de Inca's", "Puno (Titicacameer)"], transport_to_next: "Bus/boot van Puno via de grensovergang Yunguyo of Desaguadero naar Copacabana en La Paz, Bolivia." },
-    BO: { days: 21, budget: 425, destinations: ["Copacabana", "La Paz", "Uyuni-zoutvlakte", "Sucre", "Potosí", "Santa Cruz"], transport_to_next: "Jeeptocht via de Uyuni-zoutvlaktetour (3 dagen) over land naar San Pedro de Atacama, Chili." },
-    CL: { days: 10, budget: 400, destinations: ["San Pedro de Atacama", "Valle de la Luna", "Valle del Arcoíris", "Antofagasta", "Iquique"], transport_to_next: "Bus over land via de grensovergang Paso de Jama naar Salta/Jujuy, Argentinië." },
-    AR: { days: 10, budget: 350, destinations: ["Salta", "Cafayate", "Purmamarca", "Salinas Grandes", "Tilcara", "Humahuaca"], transport_to_next: "Vlucht van Salta (via Buenos Aires) naar Foz do Iguaçu of São Paulo, Brazilië — over land is dit een reis van meerdere dagen." },
-    BR: { days: 22, budget: 1000, destinations: ["Foz do Iguaçu (Iguazu-watervallen)", "Curitiba", "Ilha do Mel", "Florianópolis", "São Paulo", "Paraty", "Rio de Janeiro"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Rio de Janeiro (Galeão) of São Paulo (Guarulhos)." },
+    MX: { days: 28, budget: 1000, destinations: ["Ciudad de México", "Oaxaca", "Palenque", "Mérida", "Tulum", "Bacalar", "San Cristóbal de las Casas"], transport_to_next: "Bus over land via de grensovergang La Mesilla/El Carmen naar Huehuetenango, Guatemala.", notes: "Prijs geverifieerd (2026-07), klopt. Route 199 tussen San Cristóbal en Palenque: wegbanditisme (niet politiek), niet 's nachts rijden." },
+    GT: { days: 16, budget: 400, destinations: ["Quetzaltenango (Xela)", "Lake Atitlán", "Antigua", "Ciudad de Guatemala", "Semuc Champey", "Flores & Tikal"], transport_to_next: "Bus over land vanaf Flores naar de grensovergang bij Melchor de Menchos, door naar San Ignacio, Belize.", notes: "Prijs geverifieerd (2026-07), klopt — goedkoopste land van de route. Gebruik boten i.p.v. de weg Godínez-Panajachel bij Atitlán; Cerro de la Cruz in Antigua alleen begeleid/overdag." },
+    BZ: { days: 10, budget: 720, destinations: ["San Ignacio", "Belize City", "Caye Caulker", "Ambergris Caye (San Pedro)", "Hopkins/Dangriga", "Placencia"], transport_to_next: "Veerboot vanaf Placencia/Dangriga (via Livingston, Guatemala) naar Puerto Cortés, Honduras.", notes: "Prijscorrectie (2026-07): €57,50→€72/dag — de vele watertaxi's tussen eilanden ($15-45 p.p. enkele reis) waren niet meegenomen." },
+    HN: { days: 14, budget: 375, destinations: ["Puerto Cortés", "Copán Ruinas", "Lago de Yojoa", "Tegucigalpa", "La Ceiba", "Roatán"], transport_to_next: "Bus over land via de grensovergang El Amatillo naar El Salvador.", notes: "Prijs geverifieerd (2026-07), klopt. ⚠️ Tegucigalpa/La Ceiba/Puerto Cortés liggen in oranje provincies (bende-/drugsgerelateerde criminaliteit) — Roatán is de gele uitzondering." },
+    SV: { days: 10, budget: 275, destinations: ["San Salvador", "Santa Ana", "Cerro Verde & vulkanen", "Ruta de las Flores (Juayúa, Ataco)", "El Tunco", "Suchitoto"], transport_to_next: "Bus over land via Honduras (transit) naar de grensovergang El Espino/Guasaule, richting León, Nicaragua.", notes: "Prijs geverifieerd (2026-07), klopt. Veiligheidssituatie sterk verbeterd sinds de noodtoestand (2022) tegen bendes, nu geel — let wel: arrestatie zonder aanklacht blijft mogelijk, geen Nederlandse ambassade ter plaatse." },
+    NI: { days: 15, budget: 350, destinations: ["León", "Managua", "Granada", "Isla de Ometepe", "Laguna de Apoyo", "San Juan del Sur"], transport_to_next: "Bus over land via de grensovergang Peñas Blancas naar Costa Rica.", notes: "Prijs geverifieerd (2026-07), klopt. Regelmatige demonstraties kunnen wegen naar hoofdstad/vliegveld blokkeren; geen Nederlandse ambassade ter plaatse. CA-4-landen (Guatemala/Honduras/El Salvador/Nicaragua) tellen visumtechnisch als één gebied, max. 90 dagen gecombineerd — deze route blijft daar ruim onder." },
+    CR: { days: 21, budget: 1000, destinations: ["Liberia", "La Fortuna/Arenal", "Monteverde", "Santa Teresa", "Manuel Antonio", "Puerto Viejo de Talamanca"], transport_to_next: "Bus over land via de grensovergang Sixaola/Guabito naar Bocas del Toro, Panama.", notes: "Prijs geverifieerd (2026-07), klopt maar krap — nationale parken/tours ($15-22 entree) zijn een aparte kostenpost bovenop dit dagtarief." },
+    PA: { days: 15, budget: 625, destinations: ["Bocas del Toro", "Boquete", "Ciudad van Panama", "Casco Viejo", "Panamakanaal", "San Blas-eilanden"], transport_to_next: "Zeilboot (4-5 dagen) via de San Blas-eilanden naar Cartagena, Colombia — geen wegverbinding door de Darién Gap.", notes: "Prijs geverifieerd (2026-07), klopt. Darién-regio (niet op route) is oranje. San Blas-boot: check zwemvesten/twee buitenboordmotoren bij de operator vooraf." },
+    CO: { days: 35, budget: 1260, destinations: ["Cartagena", "Santa Marta", "Parque Tayrona", "Medellín", "Salento & Koffiezone", "Bogotá", "San Agustín"], transport_to_next: "Bus over land via Pasto naar de grensovergang Ipiales–Tulcán, door naar Quito, Ecuador.", notes: "Prijscorrectie (2026-07): €28,57→€36/dag, zo'n 18% te krap voor 35 dagen incl. duurdere steden (Cartagena, Bogotá). Route blijft buiten de rode/oranje grenszones. San Blas-Cartagena zeilboot: zelfde operator-check als bij Panama." },
+    EC: { days: 24, budget: 1650, destinations: ["Quito", "Otavalo", "Mindo", "Baños", "Cuenca", "Galápagos-eilanden"], transport_to_next: "Bus over land via de grensovergang Huaquillas/Tumbes naar Noord-Peru, richting Máncora.", notes: "⚠️ Prijscorrectie (2026-07): €1.025→€1.650 totaal, ~55-80% te laag. Galápagos alleen al kost sinds aug. 2024 $200 parkentree + $20 transitkaart p.p., plus $150-235/dag voor een budget boot-/landtour — voor 4-5 dagen al €800-950. Quito: pas op voor scopolamine-drogering in bars/taxi's en nep-taxi's." },
+    PE: { days: 35, budget: 1050, destinations: ["Máncora", "Huaraz", "Lima", "Ica & Huacachina", "Arequipa", "Cusco & Vallei van de Inca's", "Puno (Titicacameer)"], transport_to_next: "Bus/boot van Puno via de grensovergang Yunguyo of Desaguadero naar Copacabana en La Paz, Bolivia.", notes: "Prijs geverifieerd (2026-07), klopt (krap). Lima onder noodtoestand (crimineel geweld); regelmatige stakingen/wegblokkades landelijk. Machu Picchu (trein+entree, ~€150-250) is een aparte kostenpost." },
+    BO: { days: 21, budget: 425, destinations: ["Copacabana", "La Paz", "Uyuni-zoutvlakte", "Sucre", "Potosí", "Santa Cruz"], transport_to_next: "Jeeptocht via de Uyuni-zoutvlaktetour (3 dagen) over land naar San Pedro de Atacama, Chili.", notes: "Prijs geverifieerd (2026-07), klopt. Noodtoestand actief sinds 20 juni 2026 (~90 dagen) tegen wegblokkades — check actuele situatie, vluchten/wegen kunnen onverwacht sluiten. Uyuni-tour (~€140-180 all-in) is een aparte kostenpost." },
+    CL: { days: 10, budget: 520, destinations: ["San Pedro de Atacama", "Valle de la Luna", "Valle del Arcoíris", "Antofagasta", "Iquique"], transport_to_next: "Bus over land via de grensovergang Paso de Jama naar Salta/Jujuy, Argentinië.", notes: "Prijscorrectie (2026-07): €40→€52/dag — San Pedro is een van de duurste plekken van Chili. Gewapende straatroof gemeld in San Pedro/Antofagasta/Iquique/Calama/Arica, plus nep-taxi's op vliegvelden." },
+    AR: { days: 10, budget: 350, destinations: ["Salta", "Cafayate", "Purmamarca", "Salinas Grandes", "Tilcara", "Humahuaca"], transport_to_next: "Vlucht van Salta (via Buenos Aires) naar Foz do Iguaçu of São Paulo, Brazilië — over land is dit een reis van meerdere dagen.", notes: "Prijs geverifieerd (2026-07), klopt." },
+    BR: { days: 22, budget: 1166, destinations: ["Foz do Iguaçu (Iguazu-watervallen)", "Curitiba", "Ilha do Mel", "Florianópolis", "São Paulo", "Paraty", "Rio de Janeiro"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Rio de Janeiro (Galeão) of São Paulo (Guarulhos).", notes: "Prijscorrectie (2026-07): €45,45→€53/dag, vooral door Rio/São Paulo. Rio: vermijd favela's en verlaten stranden/straten 's nachts, extra oplettendheid tijdens Carnaval." },
   },
   "Africa Grand Tour 🌍": {
     EG: { days: 21, budget: 1300, destinations: ["Caïro", "Gizeh", "Dahab", "Luxor", "Nijlcruise/felucca", "Aswan", "Alexandrië"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Caïro International Airport naar Nederland." },
@@ -1148,13 +1150,13 @@ const RB_EXPEDITION_CONTENT = {
     SZ: { days: 5, budget: 300, destinations: ["Mbabane", "Ezulwini Valley", "Mlilwane Wildlife Sanctuary", "Hlane Royal National Park"], transport_to_next: "Over land via grensovergang Lomahasha/Namaacha richting Mozambique." },
   },
   "Nordic Arctic Expedition ❄️": {
-    FI: { days: 8, budget: 1200, destinations: ["Helsinki", "Rovaniemi", "Inari", "Lemmenjoki National Park"], transport_to_next: "Trein of bus van Rovaniemi naar Kiruna (over land, via Zweeds Lapland)" },
-    SE: { days: 6, budget: 950, destinations: ["Kiruna", "Sami-cultuur", "Abisko National Park"], transport_to_next: "Trein Kiruna–Narvik (Malmbanan/Ofotbanen, over land, spectaculaire bergroute)" },
-    NO: { days: 15, budget: 2250, destinations: ["Narvik", "Lofoten", "Senja", "Tromsø", "Noordkaap"], transport_to_next: "Vlucht vanaf Tromsø naar Longyearbyen (enige realistische verbinding naar Svalbard)" },
-    SJ: { days: 8, budget: 3725, destinations: ["Longyearbyen", "Bootexpedities", "Gletsjers", "Wildlife", "Middernachtzon"], transport_to_next: "Vlucht via Oslo naar Kopenhagen, aansluitend naar Vágar (Faeröer) — geen directe verbinding, dus omweg nodig" },
-    FO: { days: 7, budget: 1675, destinations: ["Tórshavn", "Saksun", "Gjógv", "Kliffen", "Wandelroutes"], transport_to_next: "Korte vlucht Vágar–Reykjavik (of seizoensgebonden veerboot Smyril Line, alleen in zomer)" },
-    IS: { days: 14, budget: 2800, destinations: ["Reykjavik", "Golden Circle", "Zuidkust", "Vatnajökull", "Jökulsárlón", "Snæfellsnes", "Akureyri"], transport_to_next: "Vlucht Reykjavik–Ilulissat (via Nuuk), geen veerverbinding mogelijk" },
-    GL: { days: 10, budget: 3725, destinations: ["Nuuk", "Inuitcultuur", "Ilulissat", "IJsfjord", "Disko Bay", "Boottochten"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Nuuk (via Reykjavik of Kopenhagen)" },
+    FI: { days: 8, budget: 1200, destinations: ["Helsinki", "Rovaniemi", "Inari", "Lemmenjoki National Park"], transport_to_next: "Trein of bus van Rovaniemi naar Kiruna (over land, via Zweeds Lapland)", notes: "Prijs geverifieerd (2026-07), klopt." },
+    SE: { days: 6, budget: 950, destinations: ["Kiruna", "Sami-cultuur", "Abisko National Park"], transport_to_next: "Trein Kiruna–Narvik (Malmbanan/Ofotbanen, over land, spectaculaire bergroute)", notes: "Prijs geverifieerd (2026-07), klopt." },
+    NO: { days: 15, budget: 2250, destinations: ["Narvik", "Lofoten", "Senja", "Tromsø", "Noordkaap"], transport_to_next: "Vlucht vanaf Tromsø naar Longyearbyen (enige realistische verbinding naar Svalbard)", notes: "Prijs geverifieerd (2026-07), klopt." },
+    SJ: { days: 8, budget: 3725, destinations: ["Longyearbyen", "Bootexpedities", "Gletsjers", "Wildlife", "Middernachtzon"], transport_to_next: "Vlucht via Oslo naar Kopenhagen, aansluitend naar Vágar (Faeröer) — geen directe verbinding, dus omweg nodig", notes: "Prijs geverifieerd (2026-07), klopt. Buiten Longyearbyen is een gewapende gids (ijsberen) verplicht — al inbegrepen in georganiseerde tochten." },
+    FO: { days: 7, budget: 1675, destinations: ["Tórshavn", "Saksun", "Gjógv", "Kliffen", "Wandelroutes"], transport_to_next: "Korte vlucht Vágar–Reykjavik (of seizoensgebonden veerboot Smyril Line, alleen in zomer)", notes: "Prijs geverifieerd (2026-07), klopt. Faeröer zijn geen EU/Schengen (wel Noordse Paspoortunie) — gewoon paspoort/ID nodig bij aankomst." },
+    IS: { days: 14, budget: 2800, destinations: ["Reykjavik", "Golden Circle", "Zuidkust", "Vatnajökull", "Jökulsárlón", "Snæfellsnes", "Akureyri"], transport_to_next: "Vlucht Reykjavik–Ilulissat (via Nuuk), geen veerverbinding mogelijk", notes: "Prijs geverifieerd (2026-07), klopt (incl. huurauto, vrijwel noodzakelijk). Geel reisadvies voor het Reykjanes-schiereiland vanwege aanhoudende vulkanische activiteit bij Grindavík." },
+    GL: { days: 10, budget: 3725, destinations: ["Nuuk", "Inuitcultuur", "Ilulissat", "IJsfjord", "Disko Bay", "Boottochten"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Nuuk (via Reykjavik of Kopenhagen)", notes: "Prijs geverifieerd (2026-07), krap maar houdbaar — binnenlandse vluchten tussen plaatsen (Air Greenland, vrijwel monopolie) zijn een structurele, geen incidentele kostenpost. Geen EU/Schengen (wel Rijk Denemarken) — paspoortcontrole bij aankomst/vertrek, EHIC niet geldig." },
   },
   "Patagonia & Antarctica Expedition 🧊": {
     CL: { days: 24, budget: 3200, destinations: ["Chiloé Island", "Puerto Montt", "Carretera Austral (Pumalín & Queulat)", "Puerto Río Tranquilo & Marble Caves", "Cerro Castillo", "Puerto Natales", "Torres del Paine National Park", "Punta Arenas"], transport_to_next: "Overland per bus vanaf Puerto Natales naar El Calafate (grensovergang Chili-Argentinië, ca. 5-6 uur)", notes: "Prijs geverifieerd (2026-07), klopt. Torres del Paine-piek: refugio-overnachtingen incl. maaltijden lopen op tot $100-150/nacht — buiten het park blijft het dagtarief haalbaar." },
@@ -1178,8 +1180,13 @@ function rbSeedPredefinedExpeditions() {
   if (localStorage.getItem(RB_SEED_FLAG_KEY)) return;
   localStorage.setItem(RB_SEED_FLAG_KEY, '1');
 
+  rbRoutes.push(rbBuildEurasiaRoute(), rbBuildPanAmericanRoute());
+  rbSave();
+}
+
+function rbBuildEurasiaRoute() {
   const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
-  const eurasiaRoute = rbBuildSeedRoute('Eurasia Grand Tour 🌏', [
+  return rbBuildSeedRoute('Eurasia Grand Tour 🌏', [
     { name: 'Balkans', season: 'April–juni', budget: 2784, note: 'Mild voorjaar, voor de zomerdrukte en -hitte — sluit aan op een vroege start van de hele expeditie.', countries: [eurasia('BA', 'Bosnia and Herzegovina'), eurasia('HR', 'Croatia'), eurasia('ME', 'Montenegro'), eurasia('AL', 'Albania'), eurasia('MK', 'North Macedonia')] },
     { name: 'Turkey', season: 'Juni', budget: 1300, note: 'Aansluitend op de Balkan, nog vóór de zwaarste zomerhitte in Cappadocië en het binnenland.', countries: [eurasia('TR', 'Turkey')] },
     { name: 'Caucasus', season: 'Juni–augustus', budget: 1475, note: 'Bergpassen en Svaneti zijn dan sneeuwvrij; sluit direct aan op het Centraal-Aziatische bergseizoen.', countries: [eurasia('GE', 'Georgia'), eurasia('AM', 'Armenia'), eurasia('AZ', 'Azerbaijan')] },
@@ -1205,19 +1212,21 @@ function rbSeedPredefinedExpeditions() {
       "Losstaande, praktische aanvullingen (geen prijswijziging maar wel budget-relevant): Tadzjikistan (Pamir-jeep €150-300 p.p. apart, GBAO-vergunning combineerbaar met de e-visa), Mongolië (Gobi-jeeptour €75-110/dag apart), Brunei (Temburong-tour apart, zie budgetcorrectie), Indonesië (Komodo-boottochten $40-135/dag apart), Oost-Timor (Jaco Island 4x4 $85-150/dag apart, beperkte zorginfrastructuur — goede reisverzekering belangrijk). Visumcheck: Balkanlanden/Georgië/Kazachstan/Kirgizië/Oezbekistan/Turkije/Japan/Taiwan/Vietnam/Thailand/Maleisië/Brunei/Filipijnen/Singapore visumvrij (duur varieert per land); Azerbeidzjan/Tajikistan/Laos/Cambodja/Indonesië/Oost-Timor werken met een e-visa of visa-on-arrival; China is tot en met 31 december 2026 30 dagen visumvrij (unilaterale regeling) — geen apart Xinjiang-permit nodig voor Kasjgar/Ürümqi zelf.\n\n" +
       "⚠️ Actuele situatie Cambodja-Thailand grens (juli 2026): de landgrensovergang bij Poipet is momenteel gesloten door het grensconflict tussen beide landen (bestand sinds eind 2025, grens zelf blijft dicht). Zolang dit zo is: vlucht Siem Reap/Phnom Penh-Bangkok i.p.v. de bus — zie de aangepaste transport-notitie bij Cambodja. Verder geen acuut gevaarlijke situaties gevonden op deze route; wel een paar grensstroken om te vermijden (Armenië-Azerbeidzjan grensstrook, Cambodja/Thailand-grensstrook 0-20km, Filipijnen se Mindanao/Sulu — geen van alle op deze route zelf) — zie de losse landnotities hierboven. Dit is een momentopname (2026-07); check nederlandwereldwijd.nl zelf vlak voor vertrek.",
   });
+}
 
+function rbBuildPanAmericanRoute() {
   const panAm = (code, name) => rbContentFor('Pan-American Grand Tour 🌎', code, name);
-  const panAmRoute = rbBuildSeedRoute('Pan-American Grand Tour 🌎', [
+  return rbBuildSeedRoute('Pan-American Grand Tour 🌎', [
     { name: 'Mexico', season: 'November–december', budget: 1000, note: 'Droog seizoen, na de zomerse regens.', countries: [panAm('MX', 'Mexico')] },
-    { name: 'Northern Central America', season: 'December–januari', budget: 1625, note: 'Droog seizoen, orkaanseizoen voorbij.', countries: [panAm('GT', 'Guatemala'), panAm('BZ', 'Belize'), panAm('HN', 'Honduras'), panAm('SV', 'El Salvador')] },
+    { name: 'Northern Central America', season: 'December–januari', budget: 1770, note: 'Droog seizoen, orkaanseizoen voorbij.', countries: [panAm('GT', 'Guatemala'), panAm('BZ', 'Belize'), panAm('HN', 'Honduras'), panAm('SV', 'El Salvador')] },
     { name: 'Southern Central America', season: 'Januari–februari', budget: 1975, note: 'Pacifische droge seizoen in Costa Rica/Panama — beste tijd voor de kust.', countries: [panAm('NI', 'Nicaragua'), panAm('CR', 'Costa Rica'), panAm('PA', 'Panama')] },
-    { name: 'Colombia', season: 'Februari–maart', budget: 1000, note: 'Droog in zowel de Caribische regio als de koffiezone/Andes.', countries: [panAm('CO', 'Colombia')] },
-    { name: 'Ecuador', season: 'Maart–april', budget: 1025, note: 'Sierra droog genoeg voor wandelen; Galápagos is jaarrond goed maar rustiger in dit seizoen.', countries: [panAm('EC', 'Ecuador')] },
+    { name: 'Colombia', season: 'Februari–maart', budget: 1260, note: 'Droog in zowel de Caribische regio als de koffiezone/Andes.', countries: [panAm('CO', 'Colombia')] },
+    { name: 'Ecuador', season: 'Maart–april', budget: 1650, note: 'Sierra droog genoeg voor wandelen; Galápagos is jaarrond goed maar rustiger in dit seizoen.', countries: [panAm('EC', 'Ecuador')] },
     { name: 'Peru', season: 'April–mei', budget: 1050, note: 'Het Andes-droogseizoen begint — ideaal voor Cusco/Vallei van de Inca\'s en Huaraz-trekking.', countries: [panAm('PE', 'Peru')] },
     { name: 'Bolivia', season: 'Mei–juni', budget: 425, note: 'Droog seizoen, heldere Uyuni-zoutvlakte (let op: geen spiegel-effect zoals in het natte seizoen — een bewuste ruil).', countries: [panAm('BO', 'Bolivia')] },
-    { name: 'Northern Chile', season: 'Juni–juli', budget: 400, note: 'Northern Chile only (Atacama, Antofagasta) — Patagonia is a separate future expedition. De Atacama is jaarrond droog; koude nachten in de Chileense winter, overdag prima.', countries: [panAm('CL', 'Chile')] },
+    { name: 'Northern Chile', season: 'Juni–juli', budget: 520, note: 'Northern Chile only (Atacama, Antofagasta) — Patagonia is a separate future expedition. De Atacama is jaarrond droog; koude nachten in de Chileense winter, overdag prima.', countries: [panAm('CL', 'Chile')] },
     { name: 'Northern Argentina', season: 'Juli', budget: 350, note: 'Northern Argentina only (Salta, Jujuy) — Patagonia is a separate future expedition. Droog hoogseizoen in Salta/Jujuy, koude nachten in het hooggebergte.', countries: [panAm('AR', 'Argentina')] },
-    { name: 'Southern Brazil', season: 'Juli–augustus', budget: 1000, note: 'Southern Brazil only — Northern Brazil is a separate future expedition. Zuid-Braziliaanse winter: mild en droog voor sightseeing (Iguaçu, koloniale steden), maar geen strandweer; voor strandtijd de hele reis 1-2 maanden later starten.', countries: [panAm('BR', 'Brazil')] },
+    { name: 'Southern Brazil', season: 'Juli–augustus', budget: 1166, note: 'Southern Brazil only — Northern Brazil is a separate future expedition. Zuid-Braziliaanse winter: mild en droog voor sightseeing (Iguaçu, koloniale steden), maar geen strandweer; voor strandtijd de hele reis 1-2 maanden later starten.', countries: [panAm('BR', 'Brazil')] },
   ], {
     best_starting_month: 'November',
     travel_style: 'Backpacker — lokale bussen (chicken bus tot luxere overlandbus) door Midden-Amerika en de Andes, af en toe een binnenlandse vlucht waar de afstand dat rechtvaardigt (bv. Salta-Foz do Iguaçu), zeilboot door de San Blas-eilanden i.p.v. vliegen over de Darién Gap.',
@@ -1225,11 +1234,9 @@ function rbSeedPredefinedExpeditions() {
     description: 'Climate-optimized route down the Americas, from Mexico to southern Brazil.',
     notes: 'Best started around November 1st (pick your target year and fill in the exact start date above). Patagonia, Antarctica, Northern Brazil, Suriname and the Caribbean are intentionally excluded — planned as separate future expeditions. Imported from a ChatGPT brainstorm — adjust country lists/regions as needed.\n\n' +
       "Tijdscontrole (2026-07): dit was al de best getempode expeditie (274→286 dagen, beperkt aangepast) — Guatemala t/m Ecuador en Bolivia kregen elk een paar dagen extra, terwijl Chili-noord en Argentinië-noord juist zijn ingekort (12→10 en 14→10) omdat één woestijnregio niet de volledige oorspronkelijke tijd nodig had; Mexico, Colombia en Peru waren al ideaal en zijn ongewijzigd. De region-niveau seizoenen hierboven volgen de novemberstart maand voor maand naar het zuiden toe; let op dat de Zuid-Brazilië-finale daardoor in de Zuid-Amerikaanse winter valt (mild, prima voor sightseeing, maar geen strandweer).\n\n" +
-      "Vervolg (2026-07): budgetten per land meegeschaald met de aangepaste dagen — regio-budgetten hierboven zijn de nieuwe sommen.",
+      "Vervolg (2026-07): budgetten per land meegeschaald met de aangepaste dagen — regio-budgetten hierboven zijn de nieuwe sommen.\n\n" +
+      "Prijzen/visum/reisadvies-verificatie (2026-07): Belize (€57,50→€72/dag, watertaxi's tussen eilanden), Colombia (€28,57→€36/dag), Ecuador (€1.025→€1.650 totaal, Galápagos-park/transitkosten + boot-/landtour waren niet gedekt), Chili-noord (€40→€52/dag, San Pedro is duur) en Brazilië-zuid (€45,45→€53/dag, Rio/São Paulo) gecorrigeerd. Mexico, Guatemala, Honduras, El Salvador, Nicaragua, Costa Rica, Panama, Peru, Bolivia en Argentinië-noord bevestigd accuraat. Zie de losse landnotities hierboven voor reisadvies/visumdetails (o.a. Honduras' oranje provincies, El Salvador's noodtoestand, CA-4 gecombineerde visumlimiet, Peru/Bolivia's actuele noodtoestanden).",
   });
-
-  rbRoutes.push(eurasiaRoute, panAmRoute);
-  rbSave();
 }
 
 function rbSeedMEAExpedition() {
@@ -1514,8 +1521,13 @@ function rbSeedArcticCircleExpedition() {
   if (localStorage.getItem(RB_SEED_FLAG_KEY_ARCTIC)) return;
   localStorage.setItem(RB_SEED_FLAG_KEY_ARCTIC, '1');
 
+  rbRoutes.push(rbBuildArcticCircleRoute());
+  rbSave();
+}
+
+function rbBuildArcticCircleRoute() {
   const arctic = (code, name) => rbContentFor('Nordic Arctic Expedition ❄️', code, name);
-  const arcticRoute = rbBuildSeedRoute('Nordic Arctic Expedition ❄️', [
+  return rbBuildSeedRoute('Nordic Arctic Expedition ❄️', [
     {
       name: 'Scandinavia', season: 'Juni', budget: 4400,
       note: 'Lapland en Noorse fjorden/eilanden per trein en bus — de enige etappe van deze expeditie die nog over land te doen is.',
@@ -1533,19 +1545,22 @@ function rbSeedArcticCircleExpedition() {
     description: 'Zomerexpeditie door het hoge noorden — van Lapland via Noorse fjorden en eilanden naar Spitsbergen, de Faeröer, IJsland en Groenland, met middernachtzon als rode draad.',
     notes: 'Imported from a ChatGPT brainstorm — originally seeded flat (no regions); Svalbard and the Faroe Islands may not yet appear in the Countries sheet dropdown — cosmetic only, the block still works. Several legs (Svalbard, Faroe, Iceland, Greenland) are flight-only hops rather than one continuous overland trip.\n\n' +
       'Tijdscontrole (2026-07): dagen per land licht opgehoogd (53→68 dagen totaal) — vooral Groenland (weersafhankelijke vluchten tussen plaatsen) en Noorwegen (Lofoten alleen al is fotografie/wandelen waard) waren krap. Landen ongewijzigd; alleen duur, best_starting_month en klimaatredenering zijn toegevoegd.\n\n' +
-      'Vervolg (2026-07): budgetten per land meegeschaald met de opgehoogde dagen, en de 7 landen alsnog gegroepeerd in 2 regio\'s (Scandinavia, North Atlantic Islands) met eigen seizoen/budget. Landen, volgorde en dagen zijn ongewijzigd.',
+      'Vervolg (2026-07): budgetten per land meegeschaald met de opgehoogde dagen, en de 7 landen alsnog gegroepeerd in 2 regio\'s (Scandinavia, North Atlantic Islands) met eigen seizoen/budget. Landen, volgorde en dagen zijn ongewijzigd.\n\n' +
+      'Prijzen/visum/reisadvies-verificatie (2026-07): alle 7 bevestigd accuraat, geen budgetcorrecties nodig — dit is de duurste route van de hele Travel Atlas en dat bleek terecht. Zie de losse landnotities hierboven voor details (Groenlandse binnenlandse vluchten, Faeröer/Groenland paspoortcontrole ondanks Deens koninkrijk, Svalbard-gids, IJsland-vulkaanactiviteit).',
   });
-
-  rbRoutes.push(arcticRoute);
-  rbSave();
 }
 
 function rbSeedPatagoniaAntarcticaExpedition() {
   if (localStorage.getItem(RB_SEED_FLAG_KEY_PATAGONIA)) return;
   localStorage.setItem(RB_SEED_FLAG_KEY_PATAGONIA, '1');
 
+  rbRoutes.push(rbBuildPatagoniaAntarcticaRoute());
+  rbSave();
+}
+
+function rbBuildPatagoniaAntarcticaRoute() {
   const patagonia = (code, name) => rbContentFor('Patagonia & Antarctica Expedition 🧊', code, name);
-  const patagoniaRoute = rbBuildFlatSeedRoute('Patagonia & Antarctica Expedition 🧊', [
+  return rbBuildFlatSeedRoute('Patagonia & Antarctica Expedition 🧊', [
     patagonia('CL', 'Chile'), patagonia('AR', 'Argentina'), patagonia('AQ', 'Antarctica'),
   ], {
     best_starting_month: 'November',
@@ -1557,17 +1572,19 @@ function rbSeedPatagoniaAntarcticaExpedition() {
       'Vervolg (2026-07): budgetten per land (Chili en Argentinië) meegeschaald met de opgehoogde dagen; Antarctica-budget ongewijzigd (cruise-prijs, niet dagen-afhankelijk).\n\n' +
       'Prijzen/visum/reisadvies-verificatie (2026-07): alle drie geverifieerd, geen aanpassingen nodig (Antarctica-cruisprijs bevestigd accuraat) — zie de losse landnotities hierboven voor details en caveats.',
   });
-
-  rbRoutes.push(patagoniaRoute);
-  rbSave();
 }
 
 function rbSeedHimalayaIndiaExpedition() {
   if (localStorage.getItem(RB_SEED_FLAG_KEY_HIMALAYA)) return;
   localStorage.setItem(RB_SEED_FLAG_KEY_HIMALAYA, '1');
 
+  rbRoutes.push(rbBuildHimalayaIndiaRoute());
+  rbSave();
+}
+
+function rbBuildHimalayaIndiaRoute() {
   const himalaya = (code, name) => rbContentFor('India & Himalaya Expedition 🏔️', code, name);
-  const himalayaRoute = rbBuildFlatSeedRoute('India & Himalaya Expedition 🏔️', [
+  return rbBuildFlatSeedRoute('India & Himalaya Expedition 🏔️', [
     himalaya('IN', 'India'), himalaya('NP', 'Nepal'), himalaya('BT', 'Bhutan'),
   ], {
     best_starting_month: 'Oktober',
@@ -1579,9 +1596,6 @@ function rbSeedHimalayaIndiaExpedition() {
       'Vervolg (2026-07): budgetten per land meegeschaald met de opgehoogde dagen.\n\n' +
       'Prijzen/visum/reisadvies-verificatie (2026-07): Nepal gecorrigeerd (€47,60→€60/dag, verplichte gids/porter + vergunningen op Annapurna-trekdagen niet gedekt); India en Bhutan bevestigd accuraat. Nieuw totaal: €1.260 Nepal (was €1.000). Zie de losse landnotities hierboven voor details.',
   });
-
-  rbRoutes.push(himalayaRoute);
-  rbSave();
 }
 
 /**
@@ -3187,6 +3201,47 @@ function rbMigrateAfricaGrandTourReorder() {
 
   rbRoutes.splice(idx, 1, rbBuildAfricaGrandTourRoute());
   rbSave();
+}
+
+/**
+ * One-time wholesale refresh (2026-07) for the first round of the price/visa/travel-advisory
+ * verification pass — covers every route touched by that pass so far. Each of these routes had its
+ * per-country budgets and/or notes corrected directly in its build function's source (see each
+ * route's own notes for the specific corrections and reasoning), but a browser that already seeded
+ * these routes before this pass won't see any of it — the seed functions are gated by flags that
+ * already fired. This migration re-runs each route's build function and wholesale-replaces the
+ * existing route with it, the same pattern as rbMigrateAncientToMediterranean() and
+ * rbMigrateAfricaGrandTourReorder() — full replace rather than a field patch, since hand-verifying
+ * a fix-list for every single changed field across 9 routes risked transcription drift from the
+ * source. Any manual edits Youri made to these specific routes' fields would be lost; no evidence
+ * he's made any. Does not touch Bahrain/Africa-reorder/British Isles — those already have their own
+ * migrations, and British Isles was seeded fresh with its final content from day one.
+ */
+function rbMigratePriceVerificationRound1() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_07_PRICE_VERIFICATION_ROUND1)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_07_PRICE_VERIFICATION_ROUND1, '1');
+
+  const replacements = [
+    ['Mediterranean Civilizations Expedition 🏛️', rbBuildMediterraneanExpeditionRoute],
+    ['Eurasia Grand Tour 🌏', rbBuildEurasiaRoute],
+    ['Central European Grand Roadtrip 🚗', rbBuildCentralEuropeRoadtripRoute],
+    ['Patagonia & Antarctica Expedition 🧊', rbBuildPatagoniaAntarcticaRoute],
+    ['India & Himalaya Expedition 🏔️', rbBuildHimalayaIndiaRoute],
+    ['Caribbean & Amazon Expedition 🌴', rbBuildCaribbeanAmazonExpeditionRoute],
+    ['West & Central Africa Expedition 🌍', rbBuildWestCentralAfricaExpeditionRoute],
+    ['Nordic Arctic Expedition ❄️', rbBuildArcticCircleRoute],
+    ['Pan-American Grand Tour 🌎', rbBuildPanAmericanRoute],
+  ];
+
+  let touched = false;
+  replacements.forEach(([name, buildFn]) => {
+    const idx = rbRoutes.findIndex(r => r.name === name);
+    if (idx === -1) return;
+    rbRoutes.splice(idx, 1, buildFn());
+    touched = true;
+  });
+
+  if (touched) rbSave();
 }
 
 function rbMigrateBahrainIntoMediterraneanExpedition() {
