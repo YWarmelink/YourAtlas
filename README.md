@@ -117,6 +117,34 @@ for the plan to move it into the Google Sheet.
 
 ## Recently fixed
 
+- **Mediterranean Civilizations Expedition 🏛️ price/visa/travel-advisory verification
+  (2026-07)** — pilot run for verifying real-world data across all 13 expeditions (the
+  rest are still open, see "Needs attention next time"). All 13 countries checked via
+  web research against current prices (recalibrated to Youri's actual travel style —
+  between budget- and comfort-backpacker, not the bare-minimum floor), visa rules and
+  the Dutch government's official travel advisory (nederlandwereldwijd.nl). Days are
+  unchanged everywhere; budgets corrected where the research disagreed: Malta
+  (€100→€75/day, was too high), Sardinia (€83→€100/day, island premium was
+  underestimated), Corsica (€90→€95/day, few hostels so a budget hotel is often
+  needed), mainland Greece (€58→€70/day, Delphi/Meteora/Peloponnese have few hostels
+  and KTEL intercity buses got ~10% pricier), Egypt (€46→€56/day, to cover major-site
+  entrance fees not otherwise budgeted), Oman (€85.70→€110/day, Jebel Shams/Wahiba
+  Sands need a rental car/tour, no public transport), Bahrain (€116.70→€100/day) and
+  Qatar (€133.30→€105/day, both were overbudgeted for what's actually available).
+  Spain, Morocco, Tunisia, Sicily, Naples, Rome, Provence, Crete, Cyprus, Turkey and
+  Jordan were already accurate. New route/region totals reflect these changes; see the
+  route's own notes for the full breakdown, including visa specifics per country and a
+  Jordan Pass tip.
+  - **⚠️ Live finding, not just a data correction**: research surfaced an active
+    regional Iran-US/Israel conflict (as of July 2026) with strikes on Jordan, Oman,
+    Qatar and Bahrain. Bahrain's Dutch travel advisory is currently **red (do not
+    travel)**; Jordan and Qatar are orange country-wide; Oman is orange only for
+    Musandam/Duqm/Salalah/Sohar (this route's Muscat/Nizwa/Jebel Shams/Wahiba Sands
+    area is yellow). A pause in strikes was reported in mid/late July, so this may
+    already have changed — treat it as a dated snapshot, not a fixed fact, and verify
+    on nederlandwereldwijd.nl yourself before any real travel. Flagged directly on the
+    Jordan/Oman/Bahrain/Qatar blocks in the app (⚠️ in their notes) as well as in the
+    route's own notes, not just here.
 - **Africa Grand Tour 🌍 reordered south-to-north (2026-07)** — the route's climate_summary
   had long claimed East Africa's and Southern Africa's dry seasons were "opposite," making
   the seasonal trade-off unfixable without cutting the country order down. Web research
@@ -302,7 +330,11 @@ for the plan to move it into the Google Sheet.
   `js/pages/routeBuilder.js`. That fixes internal consistency (days vs. budget), not
   accuracy — none of it has been checked against real prices, current border/visa
   rules, or your own travel preferences. Treat it as a refined draft to edit, not a
-  plan to book.
+  plan to book. Mediterranean Civilizations Expedition 🏛️ has since had this real
+  verification done as a pilot (see "Recently fixed" above) — the other twelve
+  expeditions still need the same treatment (prices + visa rules + Dutch travel
+  advisory, per country, recalibrated to Youri's own travel style). No route or
+  priority order picked yet for which one comes next.
   - The Antarctica leg's budget (Patagonia & Antarctica Expedition) reflects a real
     expedition-cruise price point, not backpacker-style estimates like the rest, and
     was deliberately left unscaled (its days didn't change either).

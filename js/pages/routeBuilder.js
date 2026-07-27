@@ -1352,11 +1352,11 @@ function rbBuildMediterraneanExpeditionRoute() {
     {
       name: 'Malta & Italië',
       season: 'Oktober',
-      budget: 2500,
+      budget: 2775,
       note: "Van tempels ouder dan de piramides (Malta) via Magna Graecia en Romeins Zuid-Italië naar het hart van het Romeinse Rijk, met de Nuraghe-beschaving van Sardinië als unieke afsluiter.",
       countries: [
         {
-          code: 'MT', name: 'Malta', days: 5, budget: 500,
+          code: 'MT', name: 'Malta', days: 5, budget: 375,
           destinations: ['Valletta', 'Mdina', 'Gozo', 'Ġgantija-tempels', 'Hypogeum'],
           notes: "De Ġgantija-tempels en het Hypogeum zijn ouder dan de piramides van Gizeh — een van de oudste vrijstaande bouwwerken ter wereld. Daarnaast de Ridders van Malta in Valletta en Mdina, met een rustiger Gozo als tegenhanger.",
           transport_to_next: "Veerboot Valletta-Pozzallo of Valletta-Catania (Virtu Ferries, 1,5-3 uur) naar Sicilië",
@@ -1380,7 +1380,7 @@ function rbBuildMediterraneanExpeditionRoute() {
           transport_to_next: "Vlucht Rome-Cagliari, of nachtveerboot Civitavecchia-Olbia/Cagliari (circa 7-8 uur) voor wie de boot verkiest boven vliegen",
         },
         {
-          code: 'IT', name: 'Italy', days: 6, budget: 500,
+          code: 'IT', name: 'Italy', days: 6, budget: 600,
           destinations: ['Cagliari', 'Su Nuraxi', 'Costa Smeralda'],
           notes: "De Nuraghe-beschaving (Su Nuraxi, UNESCO) is uniek voor Sardinië en ouder dan de Romeinse aanwezigheid op het eiland. Costa Smeralda voor de kust, de rustigere Costa Verde als minder toeristisch alternatief.",
           transport_to_next: "Veerboot Santa Teresa Gallura-Bonifacio (circa 1 uur) — de kortste oversteek van de hele route",
@@ -1390,11 +1390,11 @@ function rbBuildMediterraneanExpeditionRoute() {
     {
       name: 'Corsica & Zuid-Frankrijk',
       season: 'November',
-      budget: 1050,
+      budget: 1075,
       note: "Twee Franse etappes die Bonifacio's kliffen en de Gallo-Romeinse monumenten van de Provence verbinden, voordat de reis via een vlucht de Egeïsche Zee oversteekt.",
       countries: [
         {
-          code: 'FR', name: 'France', days: 5, budget: 450,
+          code: 'FR', name: 'France', days: 5, budget: 475,
           destinations: ['Bonifacio', 'Ajaccio', 'Bavella'],
           notes: "Mediterrane natuur op zijn best: de kalksteenkliffen van Bonifacio, de granieten naalden van Bavella. Franse en Italiaanse invloeden lopen hier door elkaar. Verborgen parel: het Scandola natuurreservaat, alleen per boot te bezoeken.",
           transport_to_next: "Veerboot Ajaccio/Bastia-Marseille of Toulon (Corsica Ferries/La Méridionale, circa 6-10 uur, vaak als nachtboot)",
@@ -1410,11 +1410,11 @@ function rbBuildMediterraneanExpeditionRoute() {
     {
       name: 'Griekenland & Cyprus',
       season: 'November-December',
-      budget: 1550,
+      budget: 1690,
       note: "Van de Griekse oudheid op het vasteland via de Minoïsche beschaving van Kreta naar de Grieks-Romeins-Byzantijnse laag van Cyprus, vlak voor de oversteek naar Anatolië.",
       countries: [
         {
-          code: 'GR', name: 'Greece', days: 12, budget: 700,
+          code: 'GR', name: 'Greece', days: 12, budget: 840,
           destinations: ['Athene', 'Delphi', 'Olympia', 'Meteora', 'Peloponnesos'],
           notes: "Griekse oudheid, filosofie, democratie en mythologie op de belangrijkste locaties zelf: de Akropolis, het orakel van Delphi, de oorspronkelijke Olympische Spelen in Olympia. Verborgen parel: Monemvasia en Nafplio op de Peloponnesos, veel rustiger dan Athene.",
           transport_to_next: "Nachtveerboot Piraeus-Heraklion (circa 7-9 uur) naar Kreta",
@@ -1436,7 +1436,7 @@ function rbBuildMediterraneanExpeditionRoute() {
     {
       name: 'Anatolië',
       season: 'December',
-      budget: 600,
+      budget: 850,
       note: "Eén grote etappe die Byzantium, het Ottomaanse Rijk en de Romeinse steden van de Egeïsche kust samenbrengt, met Cappadocië als brug naar de rest van Anatolië.",
       countries: [
         {
@@ -1450,37 +1450,37 @@ function rbBuildMediterraneanExpeditionRoute() {
     {
       name: 'Egypte & het Arabisch Schiereiland',
       season: 'December-Januari',
-      budget: 2500,
+      budget: 2669,
       note: "Van de oud-Egyptische beschaving via de Nabateese handelsroutes van Jordanië en de Arabische handelswereld van Oman en de Dilmun-beschaving van Bahrein naar het moderne Qatar als bewust hedendaags slotakkoord.",
       countries: [
         {
-          code: 'EG', name: 'Egypt', days: 14, budget: 650,
+          code: 'EG', name: 'Egypt', days: 14, budget: 784,
           destinations: ['Caïro', 'Gizeh', 'Luxor', 'Karnak', 'Aswan', 'Abu Simbel'],
-          notes: "De oud-Egyptische beschaving in haar geheel: piramides (Gizeh), tempels (Karnak, Abu Simbel) en de Nijl als verbindende rode draad. Verborgen parel: de Siwa-oase, ver van de gebruikelijke route maar wel een omweg waard.",
+          notes: "De oud-Egyptische beschaving in haar geheel: piramides (Gizeh), tempels (Karnak, Abu Simbel) en de Nijl als verbindende rode draad. Verborgen parel: de Siwa-oase, ver van de gebruikelijke route maar wel een omweg waard. Reisadvies (2026-07): geel voor Caïro/Gizeh/Luxor/Aswan/Abu Simbel — gewoon te bezoeken; alleen (Noord-)Sinaï buiten deze route is oranje/rood.",
           transport_to_next: "Veerboot Nuweiba-Aqaba (alternatief: vlucht Caïro-Amman) — kortste route naar Jordanië zonder om te vliegen via de Golf",
         },
         {
           code: 'JO', name: 'Jordan', days: 8, budget: 500,
           destinations: ['Amman', 'Jerash', 'Petra', 'Wadi Rum', 'Dode Zee'],
-          notes: "Nabateese handelsroutes (Petra), Romeinse geschiedenis (Jerash) en de woestijn van Wadi Rum. December geeft aangename dagtemperaturen voor de wandeling naar de Schatkamer en voor kamperen in Wadi Rum.",
+          notes: "Nabateese handelsroutes (Petra), Romeinse geschiedenis (Jerash) en de woestijn van Wadi Rum. December geeft aangename dagtemperaturen voor de wandeling naar de Schatkamer en voor kamperen in Wadi Rum. Praktische tip: de Jordan Pass (~50-60 JOD, ruim vooraf online kopen) bundelt toegang tot Petra/Jerash/Wadi Rum/40 andere sites en scheldt de losse 40 JOD-visumfee kwijt bij een verblijf van 3+ nachten — voordeliger dan losse tickets. ⚠️ Reisadvies (juli 2026): oranje voor heel Jordanië (normaal alleen de grensstreek met Syrië/Irak) door het regionale Iran-Israël/VS-conflict — check nederlandwereldwijd.nl vlak voor vertrek, dit kan alweer zijn gewijzigd.",
           transport_to_next: "Vlucht Amman-Muscat — geen landroute, overland via Saoedi-Arabië is visumtechnisch onpraktisch",
         },
         {
-          code: 'OM', name: 'Oman', days: 7, budget: 600,
+          code: 'OM', name: 'Oman', days: 7, budget: 770,
           destinations: ['Muscat', 'Nizwa', 'Jebel Shams', 'Wahiba Sands'],
-          notes: "Arabische handelsroutes, forten (Nizwa) en zowel bergen (Jebel Shams, de \"Grand Canyon van Arabië\") als woestijn (Wahiba Sands) op korte afstand van elkaar. Verborgen parel: Bahla Fort en de eeuwenoude falaj-irrigatiekanalen bij Nizwa (beide UNESCO).",
+          notes: "Arabische handelsroutes, forten (Nizwa) en zowel bergen (Jebel Shams, de \"Grand Canyon van Arabië\") als woestijn (Wahiba Sands) op korte afstand van elkaar. Verborgen parel: Bahla Fort en de eeuwenoude falaj-irrigatiekanalen bij Nizwa (beide UNESCO). Prijscheck (2026-07): Jebel Shams en Wahiba Sands zijn niet met openbaar vervoer te doen — een huurauto (4x4) of tour is hier verplicht, wat het dagbudget flink optrekt t.o.v. Muscat zelf. ⚠️ Reisadvies (juli 2026): oranje voor Musandam/Duqm/Salalah/Sohar (geraakt door Iraanse aanvallen), maar geel — dit hele traject — voor Muscat/Nizwa/Jebel Shams/Wahiba Sands. Check nederlandwereldwijd.nl vlak voor vertrek, de situatie is volatiel.",
           transport_to_next: "Vlucht Muscat-Manama — korte Golfvlucht",
         },
         {
-          code: 'BH', name: 'Bahrain', days: 3, budget: 350,
+          code: 'BH', name: 'Bahrain', days: 3, budget: 300,
           destinations: ["Qal'at al-Bahrein (Bahrein Fort)", 'Bahrain National Museum', 'Al Fateh Grand Mosque', 'Tree of Life'],
-          notes: "Qal'at al-Bahrein (UNESCO) was de hoofdstad van de Dilmun-beschaving, een Bronstijd-handelsbeschaving die al rond 2000 v.Chr. tussen Mesopotamië en de Indusvallei handelde — een nog oudere laag geschiedenis dan de Nabateese en Arabische handelsroutes eerder in deze etappe. De Tree of Life, een eeuwenoude boom die op onverklaarde wijze midden in de woestijn overleeft, als natuurlijke curiositeit tussen de geschiedenis door.",
+          notes: "Qal'at al-Bahrein (UNESCO) was de hoofdstad van de Dilmun-beschaving, een Bronstijd-handelsbeschaving die al rond 2000 v.Chr. tussen Mesopotamië en de Indusvallei handelde — een nog oudere laag geschiedenis dan de Nabateese en Arabische handelsroutes eerder in deze etappe. De Tree of Life, een eeuwenoude boom die op onverklaarde wijze midden in de woestijn overleeft, als natuurlijke curiositeit tussen de geschiedenis door. ⚠️ Reisadvies (juli 2026): ROOD — niet reizen. Iran voert aanvallen uit op militaire doelen in Bahrein, met waarschuwingen voor mogelijke aanslagen in centraal Manama; geen Nederlandse ambassade in Bahrein (dichtstbijzijnde: Koeweit). Op dit moment een harde no-go, geen budget-/planningskwestie — check nederlandwereldwijd.nl vlak voor vertrek, dit kan (hopelijk) weer zijn veranderd.",
           transport_to_next: "Vlucht Manama-Doha — korte Golfvlucht",
         },
         {
-          code: 'QA', name: 'Qatar', days: 3, budget: 400,
+          code: 'QA', name: 'Qatar', days: 3, budget: 315,
           destinations: ['Doha'],
-          notes: "Bewust modern en hedendaags als afsluiting: islamitische architectuur (Museum of Islamic Art) en musea als contrast met de duizenden jaren geschiedenis eerder in de reis.",
+          notes: "Bewust modern en hedendaags als afsluiting: islamitische architectuur (Museum of Islamic Art) en musea als contrast met de duizenden jaren geschiedenis eerder in de reis. ⚠️ Reisadvies (juli 2026): oranje — Qatar is geraakt door Iraanse raketten/drones gericht op Amerikaanse doelen. Reizen wordt alleen aangeraden als het noodzakelijk is. Check nederlandwereldwijd.nl vlak voor vertrek, de situatie kan alweer zijn gewijzigd.",
           transport_to_next: "Einde van de expeditie — terugvlucht vanuit Doha (Hamad International Airport) naar Nederland",
         },
       ],
@@ -1500,7 +1500,10 @@ function rbBuildMediterraneanExpeditionRoute() {
       "Dagen/budget/bestemmingen/transport hierboven zijn een eerste research-opzet, nog niet getoetst aan actuele prijzen, visumregels of persoonlijke voorkeuren — behandel dit als een eerste concept om zelf te verfijnen, geen boekbaar plan.\n\n" +
       "Tijdscontrole (2026-07): Rome (4→7 dagen — de Vaticaanse Musea alleen al zijn een volle dag, en Rome is berucht de meest onderschatte stad in reisplanningen) en de Turkije/Anatolië-etappe (14→20 dagen — Istanbul plus Troje, Pergamon, Efeze, Pamukkale én Cappadocië is een landbrede route) waren te krap. De rest van de expeditie klopte al goed. Met de extra 9 dagen (totaal nu 147 in plaats van 138) schuift het einde van half januari naar begin februari, nog steeds ruim vóór de Golf-zomerhitte — de klimaatredenering hierboven blijft dus overeind.\n\n" +
       "Vervolg (2026-07): budget voor Rome (400→700) en de Turkije/Anatolië-etappe (600→850) meegeschaald met de extra dagen; de rest van de expeditie ongewijzigd.\n\n" +
-      "Toevoeging (2026-07): Bahrein toegevoegd tussen Oman en Qatar in de regio 'Egypte & het Arabisch Schiereiland' — dit stond hier al genoteerd als kandidaat sinds deze route werd gebouwd. Qal'at al-Bahrein (UNESCO) was de hoofdstad van de Dilmun-beschaving, een Bronstijd-handelsbeschaving tussen Mesopotamië en de Indusvallei — een nog oudere laag geschiedenis dan de rest van deze etappe. Nieuw totaal: 150 dagen (was 147), regiobudget 'Egypte & het Arabisch Schiereiland' €2.500 (was €2.150).",
+      "Toevoeging (2026-07): Bahrein toegevoegd tussen Oman en Qatar in de regio 'Egypte & het Arabisch Schiereiland' — dit stond hier al genoteerd als kandidaat sinds deze route werd gebouwd. Qal'at al-Bahrein (UNESCO) was de hoofdstad van de Dilmun-beschaving, een Bronstijd-handelsbeschaving tussen Mesopotamië en de Indusvallei — een nog oudere laag geschiedenis dan de rest van deze etappe. Nieuw totaal: 150 dagen (was 147), regiobudget 'Egypte & het Arabisch Schiereiland' €2.500 (was €2.150).\n\n" +
+      "Prijzen/visum/reisadvies-verificatie (2026-07, pilot voor deze aanpak over alle 13 expedities): alle 13 landen gecheckt via web-onderzoek tegen actuele prijzen (bijgesteld naar Youri's reisstijl — tussen budget- en comfort-backpacker in, niet de kale bodemprijs), visumregels en Nederlands reisadvies. Dagen zijn overal ongewijzigd, alleen budgetten aangepast waar nodig. Prijscorrecties: Malta (€100→€75/dag — was te hoog), Sardinië (€83→€100/dag — eilandpremie onderschat, ligt qua prijsniveau dichter bij Rome dan bij de rest van Zuid-Italië), Corsica (€90→€95/dag — weinig hostels op het eiland, vaker aangewezen op een budgethotel), Griekenland-vasteland (€58→€70/dag — Delphi/Meteora/Peloponnesos hebben weinig hostels en de KTEL-intercitybussen zijn sinds maart 2026 zo'n 10% duurder), Egypte (€46→€56/dag — om de losse entreekosten van de grote sites, samen gemiddeld €8-12/dag, mee te nemen), Oman (€85,70→€110/dag — Jebel Shams en Wahiba Sands zijn niet met openbaar vervoer te doen, een huurauto/tour is verplicht), Bahrein (€116,70→€100/dag) en Qatar (€133,30→€105/dag — beide waren te hoog begroot voor wat er in de praktijk aan hostels/lokaal vervoer beschikbaar is). Spanje, Marokko, Tunesië, Sicilië, Napels, Rome, Provence, Kreta, Cyprus, Turkije en Jordanië bleken al accuraat — geen aanpassing.\n\n" +
+      "Visumcheck: Spanje t/m Cyprus zijn EU/Schengen dus visumvrij (Cyprus is EU maar geen Schengen, dus met paspoortcontrole aan de grens); Turkije is visumvrij tot 90 dagen; Egypte vraagt een e-visa (~$30, vooraf online via visa2egypt.gov.eg, paspoort moet nog 6+ maanden geldig zijn); Jordanië werkt met visa-on-arrival, te omzeilen met de Jordan Pass (zie de losse notitie bij Jordanië hierboven); Oman is visumvrij tot 14 dagen (dekt de 7 geplande dagen ruim); Qatar is visumvrij tot 90 dagen; Bahrein werkt met een e-visa (~€22) of visa-on-arrival (~€61) — momenteel sowieso niet van toepassing gezien het reisadvies hieronder.\n\n" +
+      "⚠️ Actuele reisadvies-situatie Golf-regio (juli 2026): een regionaal Iran-VS/Israël-conflict heeft geleid tot raket-/droneaanvallen op Jordanië, Oman, Qatar en Bahrein. Bahrein staat op dit moment op ROOD (niet reizen); Jordanië en Qatar op oranje voor het hele land; Oman op oranje voor Musandam/Duqm/Salalah/Sohar maar geel (dit traject) voor Muscat/Nizwa/Jebel Shams/Wahiba Sands. Er zou een pauze in de aanvallen zijn gemeld medio/eind juli 2026, dus dit kan alweer zijn veranderd — dit is uitdrukkelijk geen vaststaand feit maar een momentopname; check nederlandwereldwijd.nl zelf vlak voordat je hier ooit daadwerkelijk naartoe zou reizen. Zie ook de losse waarschuwingen bij Jordanië/Oman/Bahrein/Qatar hierboven.",
   });
 }
 
