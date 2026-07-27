@@ -31,6 +31,7 @@ const RB_MIGRATE_FLAG_2026_07_CARIBBEAN_AMAZON_BUILD = 'atlas_grand_trips_migrat
 const RB_MIGRATE_FLAG_2026_07_WCAFRICA_BUILD = 'atlas_grand_trips_migrate_2026_07_wcafrica_build_v1';
 const RB_MIGRATE_FLAG_2026_07_ANGOLA_ADDITION = 'atlas_grand_trips_migrate_2026_07_angola_addition_v1';
 const RB_MIGRATE_FLAG_2026_07_BAHRAIN_ADDITION = 'atlas_grand_trips_migrate_2026_07_bahrain_addition_v1';
+const RB_MIGRATE_FLAG_2026_07_AFRICA_REORDER = 'atlas_grand_trips_migrate_2026_07_africa_reorder_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
 
@@ -67,6 +68,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateWestCentralAfricaBuild();
   rbMigrateAngolaIntoAfricaGrandTour();
   rbMigrateBahrainIntoMediterraneanExpedition();
+  rbMigrateAfricaGrandTourReorder();
   rbBindEvents();
 
   try {
@@ -1126,24 +1128,24 @@ const RB_EXPEDITION_CONTENT = {
     BR: { days: 22, budget: 1000, destinations: ["Foz do Iguaçu (Iguazu-watervallen)", "Curitiba", "Ilha do Mel", "Florianópolis", "São Paulo", "Paraty", "Rio de Janeiro"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Rio de Janeiro (Galeão) of São Paulo (Guarulhos)." },
   },
   "Africa Grand Tour 🌍": {
-    EG: { days: 21, budget: 1300, destinations: ["Caïro", "Gizeh", "Dahab", "Luxor", "Nijlcruise/felucca", "Aswan", "Alexandrië"], transport_to_next: "Vlucht Caïro-Addis Abeba, geen directe landroute mogelijk (via Jordanië/Oman verloopt nu via de aparte Mediterranean Civilizations Expedition)." },
-    ET: { days: 20, budget: 1450, destinations: ["Addis Abeba", "Lalibela", "Simien Mountains", "Gondar", "Danakil Depressie", "Omo Valley"], transport_to_next: "Over land via grensovergang Moyale (ruig, meerdaagse busrit), of vlucht Addis Abeba-Nairobi bij twijfel over veiligheid/wegconditie." },
-    KE: { days: 18, budget: 2200, destinations: ["Nairobi", "Maasai Mara", "Lake Nakuru", "Amboseli", "Mount Kenya", "Diani Beach/Mombasa"], transport_to_next: "Bus over land Nairobi-Kampala via grensovergang Busia of Malaba, goed begaanbare route." },
-    UG: { days: 18, budget: 2325, destinations: ["Kampala", "Jinja", "Kibale Forest", "Queen Elizabeth NP", "Bwindi Impenetrable Forest (gorilla's)", "Murchison Falls"], transport_to_next: "Bus over land Kampala-Kigali via grensovergang Gatuna/Katuna, vlotte verbinding." },
-    RW: { days: 10, budget: 2250, destinations: ["Kigali", "Volcanoes NP (gorillatrekking)", "Lake Kivu", "Nyungwe Forest"], transport_to_next: "Over land Kigali-Mwanza via grensovergang Rusumo en bootverbinding over het Victoriameer, of vlucht Kigali-Kilimanjaro/Dar es Salaam." },
-    TZ: { days: 24, budget: 2800, destinations: ["Arusha", "Ngorongoro Crater", "Serengeti", "Lake Manyara", "Zanzibar", "Kilimanjaro (regio)", "Dar es Salaam"], transport_to_next: "Vlucht Zanzibar/Dar es Salaam-Antananarivo, geen land- of veerbootverbinding mogelijk." },
+    EG: { days: 21, budget: 1300, destinations: ["Caïro", "Gizeh", "Dahab", "Luxor", "Nijlcruise/felucca", "Aswan", "Alexandrië"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Caïro International Airport naar Nederland." },
+    ET: { days: 20, budget: 1450, destinations: ["Addis Abeba", "Lalibela", "Simien Mountains", "Gondar", "Danakil Depressie", "Omo Valley"], transport_to_next: "Vlucht Addis Abeba-Caïro, geen directe landroute mogelijk (via Jordanië/Oman verloopt nu via de aparte Mediterranean Civilizations Expedition)." },
+    KE: { days: 18, budget: 2200, destinations: ["Nairobi", "Maasai Mara", "Lake Nakuru", "Amboseli", "Mount Kenya", "Diani Beach/Mombasa"], transport_to_next: "Over land via grensovergang Moyale (ruig, meerdaagse busrit), of vlucht Nairobi-Addis Abeba bij twijfel over veiligheid/wegconditie." },
+    UG: { days: 18, budget: 2325, destinations: ["Kampala", "Jinja", "Kibale Forest", "Queen Elizabeth NP", "Bwindi Impenetrable Forest (gorilla's)", "Murchison Falls"], transport_to_next: "Bus over land Kampala-Nairobi via grensovergang Busia of Malaba, goed begaanbare route." },
+    RW: { days: 10, budget: 2250, destinations: ["Kigali", "Volcanoes NP (gorillatrekking)", "Lake Kivu", "Nyungwe Forest"], transport_to_next: "Bus over land Kigali-Kampala via grensovergang Gatuna/Katuna, vlotte verbinding." },
+    TZ: { days: 24, budget: 2800, destinations: ["Arusha", "Ngorongoro Crater", "Serengeti", "Lake Manyara", "Zanzibar", "Kilimanjaro (regio)", "Dar es Salaam"], transport_to_next: "Over land via grensovergang Rusumo en bootverbinding over het Victoriameer naar Kigali, of vlucht Dar es Salaam/Kilimanjaro-Kigali." },
     MG: { days: 24, budget: 1875, destinations: ["Antananarivo", "Andasibe-Mantadia", "Avenue of the Baobabs", "Morondava", "Isalo NP", "Nosy Be"], transport_to_next: "Vlucht Antananarivo-Port Louis, geen andere optie beschikbaar." },
-    MU: { days: 7, budget: 1000, destinations: ["Port Louis", "Grand Baie", "Black River Gorges NP", "Chamarel", "Île aux Cerfs"], transport_to_next: "Vlucht Port Louis-Lilongwe, meestal met overstap in Johannesburg of Nairobi." },
-    MW: { days: 14, budget: 825, destinations: ["Lilongwe", "Lake Malawi (Cape Maclear)", "Liwonde NP", "Zomba Plateau", "Mount Mulanje"], transport_to_next: "Over land via grensovergang Mandimba of Zobwe/Zóbuè richting Mozambique." },
-    MZ: { days: 20, budget: 1425, destinations: ["Ilha de Moçambique", "Nampula", "Tofo", "Inhambane", "Bazaruto Archipel", "Maputo"], transport_to_next: "Over land via de Tete-corridor en grensovergang Cassacatiza/Zóbuè richting Zambia." },
-    ZM: { days: 16, budget: 1825, destinations: ["Lusaka", "South Luangwa NP", "Lower Zambezi NP", "Livingstone/Victoria Falls"], transport_to_next: "Over land via de grensovergang bij Victoria Falls/Livingstone naar Zimbabwe." },
+    MU: { days: 7, budget: 1000, destinations: ["Port Louis", "Grand Baie", "Black River Gorges NP", "Chamarel", "Île aux Cerfs"], transport_to_next: "Vlucht Port Louis-Dar es Salaam/Zanzibar (Tanzania), meestal met overstap in Johannesburg of Nairobi." },
+    MW: { days: 14, budget: 825, destinations: ["Lilongwe", "Lake Malawi (Cape Maclear)", "Liwonde NP", "Zomba Plateau", "Mount Mulanje"], transport_to_next: "Vlucht (meestal via Johannesburg of Nairobi) naar Antananarivo, Madagaskar — geen directe verbinding vanuit Malawi." },
+    MZ: { days: 20, budget: 1425, destinations: ["Ilha de Moçambique", "Nampula", "Tofo", "Inhambane", "Bazaruto Archipel", "Maputo"], transport_to_next: "Over land via grensovergang Nyamapanda of Machipanda richting Zimbabwe." },
+    ZM: { days: 16, budget: 1825, destinations: ["Lusaka", "South Luangwa NP", "Lower Zambezi NP", "Livingstone/Victoria Falls"], transport_to_next: "Over land via grensovergang Mchinji/Chanida richting Malawi." },
     ZW: { days: 14, budget: 1275, destinations: ["Victoria Falls", "Hwange NP", "Mana Pools", "Great Zimbabwe", "Bulawayo"], transport_to_next: "Over land via grensovergang Kazungula of Plumtree richting Botswana." },
     BW: { days: 16, budget: 2525, destinations: ["Kasane", "Chobe NP", "Okavango Delta (Maun)", "Makgadikgadi Pans", "Central Kalahari"], transport_to_next: "Over land via grensovergang Mamuno/Buitepos richting Namibië." },
     NA: { days: 20, budget: 2000, destinations: ["Windhoek", "Sossusvlei/Namib-Naukluft", "Swakopmund", "Damaraland", "Etosha NP", "Fish River Canyon"], transport_to_next: "Over land via de grensovergang Oshikango/Santa Clara richting Angola." },
-    AO: { days: 11, budget: 1500, destinations: ["Luanda", "Lubango", "Serra da Leba", "Tundavala-kloof", "Namibe-woestijn"], transport_to_next: "Vlucht Luanda-Kaapstad/Johannesburg (meestal met overstap) om weer aan te sluiten bij de South Africa Finale, in plaats van overland terug te reizen door Namibië." },
+    AO: { days: 11, budget: 1500, destinations: ["Luanda", "Lubango", "Serra da Leba", "Tundavala-kloof", "Namibe-woestijn"], transport_to_next: "Over land via een grensovergang in het zuidoosten van Angola (bijvoorbeeld bij Jimbe) richting Zambia — minder bereisde grensovergang dan de rest van deze route, vooraf extra checken op actuele begaanbaarheid." },
     ZA: { days: 24, budget: 2000, destinations: ["Kaapstad", "Winelands (Stellenbosch)", "Garden Route", "Addo Elephant Park", "Kruger NP", "Johannesburg", "Drakensberg"], transport_to_next: "Over land de enclave Lesotho in via grensovergang Maseru Bridge (of avontuurlijker via Sani Pass)." },
     LS: { days: 6, budget: 350, destinations: ["Maseru", "Malealea", "Sani Pass/Thaba-Bosiu", "Roma", "Semonkong"], transport_to_next: "Over land terug door Zuid-Afrika naar grensovergang Golela/Lavumisa richting Eswatini." },
-    SZ: { days: 5, budget: 300, destinations: ["Mbabane", "Ezulwini Valley", "Mlilwane Wildlife Sanctuary", "Hlane Royal National Park"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit King Mswati III International Airport (Matsapha), eventueel via OR Tambo Johannesburg." },
+    SZ: { days: 5, budget: 300, destinations: ["Mbabane", "Ezulwini Valley", "Mlilwane Wildlife Sanctuary", "Hlane Royal National Park"], transport_to_next: "Over land via grensovergang Lomahasha/Namaacha richting Mozambique." },
   },
   "Nordic Arctic Expedition ❄️": {
     FI: { days: 8, budget: 1200, destinations: ["Helsinki", "Rovaniemi", "Inari", "Lemmenjoki National Park"], transport_to_next: "Trein of bus van Rovaniemi naar Kiruna (over land, via Zweeds Lapland)" },
@@ -1231,41 +1233,74 @@ function rbSeedMEAExpedition() {
   if (localStorage.getItem(RB_SEED_FLAG_KEY_MEA)) return;
   localStorage.setItem(RB_SEED_FLAG_KEY_MEA, '1');
 
+  rbRoutes.push(rbBuildAfricaGrandTourRoute());
+  rbSave();
+}
+
+/**
+ * Africa Grand Tour — reordered 2026-07 to fix a real seasonal problem, at Youri's request. The
+ * original north-to-south order (Egypt → East Africa → Islands → Southern Africa → South Africa
+ * Finale) claimed East Africa's and Southern Africa's dry seasons were "opposite" and therefore
+ * unfixable — verified via web research that this is FALSE: East Africa's dry season (June-October)
+ * and Southern Africa's dry season (May-October) mostly OVERLAP. The real problem was sequencing:
+ * doing both back-to-back with the Islands in between meant Southern Africa (the second of the two)
+ * only arrived in November, already past the shared window and into its wet season.
+ *
+ * Research also surfaced a second, previously undocumented problem: Ethiopia's main rains (kiremt)
+ * fall exactly June-September — the opposite of what the old route assumed when it bundled Ethiopia
+ * into the same "June-September dry season" logic as Kenya/Uganda/Rwanda/Tanzania. Ethiopia's own
+ * good window is October-March (peak December-February).
+ *
+ * Fix: reversed to a south-to-north sweep, starting in Southern Africa (which has no comparably good
+ * secondary season — its wet season genuinely degrades game viewing) and ending with East Africa's
+ * secondary dry pocket (January-February, still a recognized good window — southern Serengeti calving
+ * season) rather than forcing Southern Africa into that trade-off instead. Ethiopia and Egypt move to
+ * the very end as a "Hoorn van Afrika & Egypte" finale, landing in Ethiopia's actual good season and,
+ * as a bonus, moving Egypt out of early-summer heat into its comfortable cool season. No countries
+ * added or removed, no days/budget changed per country — same 18 countries, same total (288 days,
+ * €29.225), just resequenced. Every new adjacency uses a real border crossing or a realistic flight
+ * (see individual transport_to_next fields); the Angola-Zambia crossing is flagged as less-traveled
+ * and worth extra pre-trip verification.
+ */
+function rbBuildAfricaGrandTourRoute() {
   const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
-  const meaRoute = rbBuildSeedRoute('Africa Grand Tour 🌍', [
+  return rbBuildSeedRoute('Africa Grand Tour 🌍', [
     {
-      name: 'Northeast & East Africa', season: 'Juni–september', budget: 12325,
-      note: 'Egypte als historische/geografische poort, gevolgd door de Hoorn van Afrika en de Oost-Afrikaanse safarigordel — bij een junistart valt dit grotendeels in het droge seizoen (inclusief een deel van de Serengeti-trek).',
-      countries: [mea('EG', 'Egypt'), mea('ET', 'Ethiopia'), mea('KE', 'Kenya'), mea('UG', 'Uganda'), mea('RW', 'Rwanda'), mea('TZ', 'Tanzania')],
+      name: 'Zuid-Afrika, Lesotho & Eswatini', season: 'Juni–begin juli', budget: 2650,
+      note: 'De opener van de expeditie, met een echte internationale luchthaven als instappunt (Kaapstad/Johannesburg) — Kruger-wildlife spotten is hier op zijn best, ruim vóór het regenseizoen.',
+      countries: [mea('ZA', 'South Africa'), mea('LS', 'Lesotho'), mea('SZ', 'Eswatini')],
     },
     {
-      name: 'Islands', season: 'Oktober', budget: 2875,
+      name: 'Zuidelijk Afrika', season: 'Juli–oktober', budget: 11375,
+      note: "Van Mozambique tot Malawi via Zimbabwe, Botswana, Namibië, Angola en Zambia — valt bij deze volgorde vrijwel volledig in het droge seizoen (mei-oktober), met de beste wildlife-observatie juist tegen het einde (augustus-oktober). De Angola-Zambia grensovergang in het zuidoosten van Angola is minder bereisd dan de rest van deze route — vooraf extra checken.",
+      countries: [mea('MZ', 'Mozambique'), mea('ZW', 'Zimbabwe'), mea('BW', 'Botswana'), mea('NA', 'Namibia'), mea('AO', 'Angola'), mea('ZM', 'Zambia'), mea('MW', 'Malawi')],
+    },
+    {
+      name: 'Eilanden', season: 'Oktober–november', budget: 2875,
       note: 'Madagaskar en Mauritius — Madagaskars beruchte trage wegen zijn hier de grootste tijdsvreter, niet de bezienswaardigheden zelf.',
       countries: [mea('MG', 'Madagascar'), mea('MU', 'Mauritius')],
     },
     {
-      name: 'Southern Africa', season: 'November–januari', budget: 11375,
-      note: 'Van Malawi tot Angola — grote zelfrijafstanden, vooral in Namibië; valt bij deze volgorde grotendeels in het regenseizoen (zie de klimaatredenering van de hele route). Angola toegevoegd na Namibië (grensovergang Oshikango/Santa Clara), vervolgens per vlucht terug naar Kaapstad/Johannesburg om aan te sluiten bij de South Africa Finale.',
-      countries: [mea('MW', 'Malawi'), mea('MZ', 'Mozambique'), mea('ZM', 'Zambia'), mea('ZW', 'Zimbabwe'), mea('BW', 'Botswana'), mea('NA', 'Namibia'), mea('AO', 'Angola')],
+      name: 'Oost-Afrika', season: 'November–januari', budget: 9575,
+      note: 'Tanzania, Rwanda, Oeganda en Kenia — landt in de korte regentijd (oktober-december, lichte middagbuien, goed te doen) en de daaropvolgende korte droge periode (januari-februari), inclusief het kalfseizoen van de zuidelijke Serengeti. Niet de absolute piek (juni-oktober, die valt hier samen met Zuidelijk Afrika\'s enige goede seizoen), maar een erkend sterk alternatief.',
+      countries: [mea('TZ', 'Tanzania'), mea('RW', 'Rwanda'), mea('UG', 'Uganda'), mea('KE', 'Kenya')],
     },
     {
-      name: 'South Africa Finale', season: 'Februari–maart', budget: 2650,
-      note: 'Zuid-Afrika, Lesotho en Eswatini als afsluiting — Kruger-wildlife spotten is in dit seizoen iets lastiger, de rest (Kaapstad, Wijnlanden, Tuinroute) blijft jaarrond aangenaam.',
-      countries: [mea('ZA', 'South Africa'), mea('LS', 'Lesotho'), mea('SZ', 'Eswatini')],
+      name: 'Hoorn van Afrika & Egypte', season: 'Februari–maart', budget: 2750,
+      note: "Ethiopië en Egypte als afsluiting. Ethiopië's hoofdregenseizoen (kiremt) valt juni-september — de oude volgorde zette Ethiopië daar per ongeluk middenin; hier landt het in zijn eigen goede venster (oktober-maart, piek december-februari). Egypte profiteert als bijkomend voordeel van het koelere naseizoen in plaats van de vroege zomerhitte.",
+      countries: [mea('ET', 'Ethiopia'), mea('EG', 'Egypt')],
     },
   ], {
     best_starting_month: 'Juni',
-    travel_style: 'Overland/safaritrucks tussen parken, verplichte lokale gidsen bij gorillatrekking (Oeganda/Rwanda), mix van budgetlodges en kamperen in de nationale parken, vluchten alleen tussen Tanzania/Madagaskar/Mauritius (geen landroute mogelijk over water).',
-    climate_summary: "Vergeleken scenario's: (1) een start in de Europese winter (december-januari) vermijdt Egypte's zomerhitte, maar treft Oost-Afrika dan in de korte regentijd en laat zuidelijk Afrika aan het einde van de reis in hún regenseizoen vallen (november-maart, lastiger wildlife spotten); (2) een start in juni laat Egypte nog in een aangenaam voorjaar/vroege zomer vallen, brengt Oost-Afrika (Kenia, Tanzania, Oeganda, Rwanda) rond augustus-oktober in hun droge seizoen — inclusief een deel van de Serengeti-trek — maar laat zuidelijk Afrika (Zambia t/m Zuid-Afrika) rond januari-maart vallen, middenin hún regenseizoen. Bij het behouden van de huidige landvolgorde (Egypte als start, Zuid-Afrika/Lesotho/Eswatini als afsluiting) is er geen enkele startmaand die zowel Oost- als zuidelijk Afrika in hun droge seizoen laat vallen — de twee liggen op tegengestelde droge/natte cycli t.o.v. hoe lang deze reis duurt. Beste compromis: start juni, zodat het zwaartepunt van de reis (Oost-Afrika, de eilanden en de eerste helft van zuidelijk Afrika) wél in het droge seizoen valt; alleen de laatste etappes (Namibië, Zuid-Afrika, Lesotho, Eswatini) vallen dan in het regenseizoen — nog steeds goed te doen, want de grote zelfrijafstanden in Namibië en de Kaapse Wijnlanden/Tuinroute blijven jaarrond aangenaam; alleen Kruger-wildlife spotten is dan iets lastiger dan in het droge seizoen. Wie zuidelijk Afrika liever in het droge seizoen doet, kan ooit een omgekeerde volgorde overwegen (Zuid-Afrika eerst) — dat is een aparte, toekomstige afweging en verandert de huidige route niet.",
-    description: 'Overland route through East Africa, the islands, and Southern Africa, with Egypt as the northern gateway. Target duration ~12 months.',
-    notes: 'Imported from a ChatGPT brainstorm — deliberately seeded with zero blocks (unlike Eurasia/Pan-American): group these 17 countries into your own blocks (e.g. East Africa, Islands, Southern Africa, South Africa finale) via the region dropdown on each country, in whatever shape makes sense once you plan it for real. Jordan and Oman used to be part of this route but were moved to what is now Mediterranean Civilizations Expedition 🏛️ so this stays purely African + Egypt as the historical/geographic gateway; Egypt itself still appears in both since it fits both themes. South Africa is already marked "visited" in your Countries sheet — worth checking before treating it as new.\n\n' +
-      'Tijdscontrole (2026-07): dagen per land opgehoogd na een realismecontrole (247→277 dagen totaal) — vooral Oeganda (gorillatrekking-logistiek), Madagaskar (berucht trage wegen) en Mozambique (het land strekt zich noord-zuid enorm uit) waren onderschat. Landen en volgorde zijn ongewijzigd; alleen de duur per land en de klimaatredenering hierboven zijn toegevoegd.\n\n' +
-      'Vervolg (2026-07): budgetten per land meegeschaald met de opgehoogde dagen (zelfde dagprijs, dus meer dagen = evenredig meer budget), en de 17 landen alsnog gegroepeerd in 4 regio\'s (Northeast & East Africa, Islands, Southern Africa, South Africa Finale) met eigen seizoen/budget per regio, zoals Eurasia en Pan-American die al hadden. Landen, volgorde en dagen zijn ongewijzigd.\n\n' +
-      "Toevoeging (2026-07): Angola toegevoegd aan de Southern Africa-regio, direct na Namibië (grensovergang Oshikango/Santa Clara), met een vlucht Luanda-Kaapstad/Johannesburg om weer aan te sluiten bij de South Africa Finale. Afkomstig uit de West & Central Africa-ontwerpsessie — daar paste Angola geografisch slechter (alleen per vlucht bereikbaar, geen buurlanden op die route). Let op: dit verandert niets aan het seizoenscompromis van deze regio (valt nog steeds in het regenseizoen bij de huidige juni-startmaand) — Angola deelt gewoon hetzelfde, al geaccepteerde compromis. Nieuw totaal: 18 landen (was 17), 288 dagen (was 277), €29.225 (was €27.725).",
+    travel_style: 'Overland/safaritrucks tussen parken, verplichte lokale gidsen bij gorillatrekking (Oeganda/Rwanda), mix van budgetlodges en kamperen in de nationale parken, vluchten alleen tussen Malawi/Madagaskar/Mauritius/Tanzania (geen landroute mogelijk over water) en tussen Ethiopië en Egypte (geen praktische landroute door Soedan).',
+    climate_summary: "Vergeleken scenario's, na verificatie via onderzoek (2026-07) dat de \"tegengestelde droge/natte cycli\"-aanname uit de oude volgorde onjuist was: Oost-Afrika's droge seizoen (juni-oktober) en Zuidelijk Afrika's droge seizoen (mei-oktober) overlappen juist grotendeels. Het echte probleem was de vólgorde: bij een juni-start en de oude landvolgorde (Oost-Afrika eerst, Zuidelijk Afrika pas na de eilanden) arriveerde Zuidelijk Afrika pas in november — al voorbij het gedeelde venster en middenin het regenseizoen. Bij de huidige, omgedraaide volgorde (zuid naar noord) krijgt Zuidelijk Afrika — dat geen vergelijkbaar sterk alternatief seizoen heeft — het gedeelde juni-oktober-venster, en schuift Oost-Afrika door naar november-januari: niet de absolute piek, maar wél een erkend sterk seizoen (korte regentijd plus het kalfseizoen van de zuidelijke Serengeti in januari-februari). Een bijkomende fix: Ethiopië's hoofdregenseizoen (kiremt, juni-september) werd in de oude volgorde per ongeluk gebundeld met de rest van Oost-Afrika's droge seizoen — hier landt Ethiopië op zijn eigen goede venster (oktober-maart, piek december-februari) aan het einde van de reis, samen met Egypte dat zo ook uit de vroege-zomerhitte van de oude volgorde is gehaald. Beste keuze: start begin juni in Zuid-Afrika.",
+    description: 'Overland-route van zuidelijk Afrika via Oost-Afrika en de eilanden naar de Hoorn van Afrika en Egypte als finale. Beoogde duur ~9,5 maand.',
+    notes: 'Oorspronkelijk geïmporteerd uit een ChatGPT-brainstorm, met Egypte als startpunt/noordelijke poort. Jordanië en Oman hoorden ooit bij deze route maar zijn verplaatst naar wat nu Mediterranean Civilizations Expedition 🏛️ is, zodat dit zuiver Afrikaans blijft + Egypte als historische/geografische aansluiting; Egypte zelf komt in beide routes voor omdat het bij beide thema\'s past. Zuid-Afrika staat al als "visited" in je Countries-sheet — de moeite waard om te checken voordat je het als nieuw behandelt.\n\n' +
+      'Tijdscontrole (2026-07): dagen per land opgehoogd na een realismecontrole (247→277 dagen totaal) — vooral Oeganda (gorillatrekking-logistiek), Madagaskar (berucht trage wegen) en Mozambique (het land strekt zich noord-zuid enorm uit) waren onderschat.\n\n' +
+      'Vervolg (2026-07): budgetten per land meegeschaald met de opgehoogde dagen, en de 18 landen gegroepeerd in regio\'s met eigen seizoen/budget, zoals Eurasia en Pan-American die al hadden.\n\n' +
+      "Toevoeging (2026-07): Angola toegevoegd tussen Namibië en Zambia (grensovergang Oshikango/Santa Clara vanaf Namibië, verder naar Zambia via een minder bereisde grensovergang in het zuidoosten van Angola). Afkomstig uit de West & Central Africa-ontwerpsessie — daar paste Angola geografisch slechter (alleen per vlucht bereikbaar, geen buurlanden op die route). Nieuw totaal na deze toevoeging: 18 landen (was 17), 288 dagen (was 277), €29.225 (was €27.725).\n\n" +
+      "Omgedraaid naar een zuid-noord-volgorde (2026-07), op Youri's verzoek om het Oost-/Zuidelijk-Afrika-seizoenscompromis te verbeteren — zie de climate_summary hierboven voor de volledige redenering. Alle 18 landen, dagen en budgetten per land zijn ongewijzigd; alleen de volgorde, de regio-indeling/-namen, en de transport_to_next-routes (nu in omgekeerde richting, met een paar nieuwe grensovergangen waar de volgorde dat vereiste) zijn aangepast. Dit is een bewuste, volledige vervanging van de route (net als bij Mediterranean Civilizations Expedition destijds), niet een veld-patch — eventuele eigen aanpassingen die je zelf al had gemaakt aan losse velden gaan hierbij verloren.",
   });
-
-  rbRoutes.push(meaRoute);
-  rbSave();
 }
 
 function rbSeedAncientCivilizationsExpedition() {
@@ -3111,6 +3146,28 @@ function rbMigrateAngolaIntoAfricaGrandTour() {
     route.notes += '\n\n' + note;
   }
 
+  rbSave();
+}
+
+/**
+ * One-time wholesale reorder of Africa Grand Tour (2026-07), at Youri's request, to fix the
+ * East-Africa/Southern-Africa seasonal compromise — see rbBuildAfricaGrandTourRoute() for the full
+ * reasoning (the "opposite cycles" claim was verified false; the fix is a south-to-north resequence
+ * plus moving Ethiopia/Egypt to a February-March finale). Same country list, same days/budget per
+ * country, same wholesale-replace approach as rbMigrateAncientToMediterranean() — this is a full
+ * resequence (new regions, new transport_to_next directions throughout), not a field patch, so it
+ * replaces the whole route rather than touching individual fields. Runs once; no-ops for a browser
+ * that's never seeded before (fresh seeds already get the reordered version directly via
+ * rbSeedMEAExpedition/rbBuildAfricaGrandTourRoute).
+ */
+function rbMigrateAfricaGrandTourReorder() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_07_AFRICA_REORDER)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_07_AFRICA_REORDER, '1');
+
+  const idx = rbRoutes.findIndex(r => r.name === 'Africa Grand Tour 🌍');
+  if (idx === -1) return;
+
+  rbRoutes.splice(idx, 1, rbBuildAfricaGrandTourRoute());
   rbSave();
 }
 

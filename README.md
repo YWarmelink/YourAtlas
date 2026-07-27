@@ -117,6 +117,27 @@ for the plan to move it into the Google Sheet.
 
 ## Recently fixed
 
+- **Africa Grand Tour 🌍 reordered south-to-north (2026-07)** — the route's climate_summary
+  had long claimed East Africa's and Southern Africa's dry seasons were "opposite," making
+  the seasonal trade-off unfixable without cutting the country order down. Web research
+  (at Youri's request, to look at improving it) found this false: East Africa's dry season
+  (June-October) and Southern Africa's dry season (May-October) largely overlap — the real
+  problem was sequencing, since the old order only reached Southern Africa in November,
+  already past the shared window. Fix: reversed to a south-to-north sweep via
+  `rbBuildAfricaGrandTourRoute()`/`rbMigrateAfricaGrandTourReorder()` — South Africa/
+  Lesotho/Eswatini open the trip (June, their true dry season), then Southern Africa's loop
+  (July-October, its actual peak), then the Islands, then East Africa (November-January —
+  not the absolute peak, but a recognized strong window: short rains plus the southern
+  Serengeti's calving season), ending with a new "Hoorn van Afrika & Egypte" finale
+  (February-March). Research also surfaced a second, previously undocumented bug: Ethiopia's
+  main rains (kiremt) fall exactly June-September — the old route had bundled Ethiopia into
+  that same window assuming it was dry season. Ethiopia now lands in its own good window
+  (October-March, peak December-February) at the end of the trip instead. All 18 countries
+  and every country's days/budget are unchanged — same 288 days, €29,225 total — only the
+  order, region grouping and transport_to_next directions changed (a few new border
+  crossings were needed; the Angola-Zambia crossing is flagged as less-traveled and worth
+  extra pre-trip verification). Algeria/Lebanon/Israel (in the unrelated Mediterranean
+  Civilizations Expedition) stay deliberately excluded, unchanged.
 - **British Isles & Celtic Coast Expedition 🍀 built (2026-07)** — the thirteenth
   expedition, designed from a ChatGPT brainstorm Youri brought in, then reviewed and
   adjusted in a Q&A session. Self-driven from the Netherlands, same style as Central
@@ -172,10 +193,11 @@ for the plan to move it into the Google Sheet.
   Pan-American Grand Tour had a Best Starting Month but no Travel Style/Climate
   Summary. All eight now have a reasoned climate_summary comparing start-month
   scenarios, in the same style as the pre-existing Mediterranean/North America ones.
-  Africa Grand Tour's is the one with an acknowledged, unresolved trade-off: keeping
-  the current country order (Egypt → ... → Eswatini) means no single start month puts
-  both East Africa and Southern Africa in their dry season at the same time — see the
-  route's own climate_summary for the reasoning and the compromise (start June).
+  Africa Grand Tour's was, at the time, an acknowledged, unresolved trade-off: keeping
+  the then-current country order (Egypt → ... → Eswatini) meant no single start month
+  put both East Africa and Southern Africa in their dry season at the same time. This
+  was later found to be based on a false premise and fixed by reordering the route —
+  see "Africa Grand Tour reordered south-to-north" below.
 - **Eurasia Grand Tour's country list changed (2026-07)** — at your explicit request:
   Turkmenistan and Myanmar removed (hard to visit/not realistic for this travel
   style), East Timor added right after Indonesia (reachable via the Kupang/Batugade
@@ -221,11 +243,13 @@ for the plan to move it into the Google Sheet.
   Central Africa brainstorm, but moved here instead via `rbMigrateAngolaIntoAfricaGrandTour()`:
   it borders Namibia (real overland crossing at Oshikango/Santa Clara), already the
   last country in that route's "Southern Africa" region, rather than being an isolated
-  flight-only endpoint on the West Africa route. Inserted right after Namibia, then a
-  flight from Luanda to Cape Town/Johannesburg to rejoin the South Africa Finale. This
-  does **not** fix any seasonal mismatch — the Southern Africa region already falls in
-  the rainy season by this route's own June-start design (see its climate_summary),
-  and Angola shares that same accepted trade-off. New totals: 18 countries (was 17),
+  flight-only endpoint on the West Africa route. Inserted right after Namibia — at the
+  time, followed by a flight from Luanda to Cape Town/Johannesburg to rejoin the South
+  Africa Finale, since the whole "Southern Africa" region fell in the rainy season by
+  this route's then-current June-start design. Both the flight-onward routing and the
+  seasonal mismatch were superseded by the south-to-north reorder — see "Africa Grand
+  Tour reordered south-to-north" above; Angola now continues overland to Zambia
+  instead. New totals at the time of this addition: 18 countries (was 17),
   288 days (was 277), €29,225 (was €27,725).
 
 - **Bahrain added to Mediterranean Civilizations Expedition 🏛️ (2026-07)** — inserted
@@ -292,12 +316,13 @@ for the plan to move it into the Google Sheet.
   expeditions (West-Eurasia through Central Asia, and East Asia/Southeast Asia through
   Indonesia) rather than one continuous year.
 - **Africa Grand Tour and Nordic Arctic Expedition are now region-grouped too
-  (2026-07)** — Africa's 18 countries (17 + Angola, added later — see "Recently
-  fixed") are grouped into 4 regions (Northeast & East Africa, Islands, Southern
-  Africa, South Africa Finale) and Nordic Arctic's 7 into 2 (Scandinavia, North
-  Atlantic Islands), each with their own season/budget, matching the
-  Eurasia/Pan-American pattern. Patagonia & Antarctica and India & Himalaya were
-  deliberately left flat — only 3 legs each, too few to benefit from grouping.
+  (2026-07)** — Nordic Arctic's 7 countries are grouped into 2 regions (Scandinavia,
+  North Atlantic Islands), each with their own season/budget, matching the
+  Eurasia/Pan-American pattern. Africa Grand Tour was originally grouped into 4
+  regions this same way (Northeast & East Africa, Islands, Southern Africa, South
+  Africa Finale); it now has 5 after the south-to-north reorder — see "Africa Grand
+  Tour reordered south-to-north" above. Patagonia & Antarctica and India & Himalaya
+  were deliberately left flat — only 3 legs each, too few to benefit from grouping.
 - **North Africa & Middle East Expedition 🏜️ replaced by Mediterranean Civilizations
   Expedition 🏛️** — the old flat 7-country route (Morocco, Tunisia, Egypt, Jordan,
   Oman, UAE, Cyprus) is gone, replaced by an 18-leg, 13-country route from Andalusia
