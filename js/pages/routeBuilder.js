@@ -1865,19 +1865,19 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
     {
       name: 'Grote Antillen',
       season: 'December',
-      budget: 2160,
+      budget: 2340,
       note: 'Droog seizoen, ruim na het orkaanseizoen (dat loopt juni-november) — een veilige, aangename opener.',
       countries: [
         {
           code: 'CU', name: 'Cuba', days: 18, budget: 1260,
           destinations: ['Havana (Habana Vieja)', 'Trinidad', 'Cienfuegos', 'Viñales-vallei'],
-          notes: "Havana en het UNESCO-koloniale Trinidad zijn de hoogtepunten; de rustige Viñales-vallei (tabak, karstlandschap) is de verborgen parel. Casas particulares (particuliere kamers) zijn de gangbare backpacker-accommodatie.",
+          notes: "Havana en het UNESCO-koloniale Trinidad zijn de hoogtepunten; de rustige Viñales-vallei (tabak, karstlandschap) is de verborgen parel. Casas particulares (particuliere kamers) zijn de gangbare backpacker-accommodatie. Prijs geverifieerd (2026-07), klopt. ⚠️ Reisadvies oranje: dagelijkse stroomuitval, kaarten werken niet bij pinautomaten (contant meenemen), D'Viajeros-registratie + tourist card (~€20-30) verplicht vooraf.",
           transport_to_next: 'Vlucht Havana-Kingston (meestal met overstap via Panama City of Miami)',
         },
         {
-          code: 'JM', name: 'Jamaica', days: 12, budget: 900,
+          code: 'JM', name: 'Jamaica', days: 12, budget: 1080,
           destinations: ['Kingston', 'Blue Mountains', "Dunn's River Falls", 'Port Antonio'],
-          notes: 'Blue Mountains (koffie, wandelen) en Port Antonio (rafting, watervallen, nauwelijks toeristen vergeleken met Negril/Ocho Rios) zijn de sterkste match met natuur boven luxe.',
+          notes: 'Blue Mountains (koffie, wandelen) en Port Antonio (rafting, watervallen, nauwelijks toeristen vergeleken met Negril/Ocho Rios) zijn de sterkste match met natuur boven luxe. Prijscorrectie (2026-07): €75→€90/dag, Jamaica is duurder dan aangenomen (guesthouses + entreegelden).',
           transport_to_next: 'Vlucht Kingston-Curaçao (meestal met overstap via Panama City of Miami)',
         },
       ],
@@ -1885,19 +1885,19 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
     {
       name: 'Nederlandse Caraïben',
       season: 'December-januari',
-      budget: 1085,
+      budget: 1220,
       note: 'Droog seizoen — helderder water voor snorkelen en duiken.',
       countries: [
         {
           code: 'CW', name: 'Curaçao', days: 7, budget: 560,
           destinations: ['Willemstad (UNESCO)', 'Shete Boka National Park', 'stranden'],
-          notes: 'Willemstad met zijn Nederlandse koloniale architectuur is de stedelijke tegenhanger van rustig Bonaire. Shete Boka (ruige noordkust) is de verborgen parel, veel rustiger dan de stranden.',
+          notes: 'Willemstad met zijn Nederlandse koloniale architectuur is de stedelijke tegenhanger van rustig Bonaire. Shete Boka (ruige noordkust) is de verborgen parel, veel rustiger dan de stranden. Prijs geverifieerd (2026-07), klopt. Digital Immigration Card verplicht vooraf invullen (gratis).',
           transport_to_next: 'Korte vlucht Curaçao-Bonaire',
         },
         {
-          code: 'BQ', name: 'Bonaire', days: 6, budget: 525,
+          code: 'BQ', name: 'Bonaire', days: 6, budget: 660,
           destinations: ['Washington Slagbaai National Park', 'duiken/snorkelen (marine park)'],
-          notes: 'Wereldklasse duiken/snorkelen direct vanaf de kust. Washington Slagbaai NP (flamingo\'s, ruige natuur) is de verborgen parel, nauwelijks bezocht.',
+          notes: 'Wereldklasse duiken/snorkelen direct vanaf de kust. Washington Slagbaai NP (flamingo\'s, ruige natuur) is de verborgen parel, nauwelijks bezocht. Prijscorrectie (2026-07): €87,50→€110/dag (weinig budget-accommodatie, duiktrips zijn duur). Verplichte inreisbelasting ~€70 p.p. is een aparte kostenpost, niet in het dagtarief.',
           transport_to_next: 'Vlucht Bonaire-Guadeloupe (meestal met overstap via Aruba, Panama City of San Juan)',
         },
       ],
@@ -1905,31 +1905,31 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
     {
       name: 'Kleine Antillen',
       season: 'Januari-februari',
-      budget: 2265,
+      budget: 2445,
       note: "Droog seizoen (carême) — beste moment om te wandelen in Dominica's regenwoud. De eilandvolgorde volgt de natuurlijke noord-zuid keten, en toevallig ook de veerbootlijn L'Express des Îles.",
       countries: [
         {
           code: 'GP', name: 'Guadeloupe', days: 7, budget: 615,
           destinations: ['La Soufrière (vulkaan)', 'Carbet-watervallen', 'Îles des Saintes'],
-          notes: 'Franse Caraïbische cultuur gecombineerd met een actieve vulkaan. Îles des Saintes (kleine eilandjes voor de kust) is veel rustiger dan het hoofdeiland.',
+          notes: 'Franse Caraïbische cultuur gecombineerd met een actieve vulkaan. Îles des Saintes (kleine eilandjes voor de kust) is veel rustiger dan het hoofdeiland. Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: "Veerboot L'Express des Îles naar Dominica (via Martinique)",
         },
         {
-          code: 'DM', name: 'Dominica', days: 8, budget: 580,
+          code: 'DM', name: 'Dominica', days: 8, budget: 760,
           destinations: ['Boiling Lake-trektocht', 'Trafalgar Falls', 'Champagne Reef'],
-          notes: '"Nature Island" — het minst ontwikkelde en meest ongerepte eiland van de vier. De Boiling Lake-trektocht is een zware hele dag op zich; reken op een rustdag ervoor of erna. Champagne Reef (vulkanische bubbels tijdens het snorkelen) is uniek.',
+          notes: '"Nature Island" — het minst ontwikkelde en meest ongerepte eiland van de vier. De Boiling Lake-trektocht is een zware hele dag op zich; reken op een rustdag ervoor of erna. Champagne Reef (vulkanische bubbels tijdens het snorkelen) is uniek. Prijscorrectie (2026-07): €72,50→€95/dag (nauwelijks hostels, guesthouses vanaf ~€60-70/nacht, verplichte gids voor Boiling Lake ~€55-70).',
           transport_to_next: "Veerboot L'Express des Îles naar St Lucia",
         },
         {
           code: 'LC', name: 'Saint Lucia', days: 7, budget: 560,
           destinations: ['The Pitons', 'Sulphur Springs (drive-in vulkaan)', 'Tet Paul Nature Trail'],
-          notes: 'De iconische Pitons, meer toeristisch ontwikkeld dan de andere drie. Tet Paul Nature Trail geeft hetzelfde uitzicht op de Pitons, veel rustiger dan de drukke wandelpaden.',
+          notes: 'De iconische Pitons, meer toeristisch ontwikkeld dan de andere drie. Tet Paul Nature Trail geeft hetzelfde uitzicht op de Pitons, veel rustiger dan de drukke wandelpaden. Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: 'Vlucht St Lucia-Grenada (niet op de veerbootlijn)',
         },
         {
           code: 'GD', name: 'Grenada', days: 7, budget: 510,
           destinations: ['Onderwaterbeeldenpark', 'kruidenplantages (nootmuskaat)', 'Grand Etang National Park'],
-          notes: 'Het minst toeristische van de vier eilanden. Grand Etang NP (regenwoud, kratermeer) is de verborgen parel.',
+          notes: 'Het minst toeristische van de vier eilanden. Grand Etang NP (regenwoud, kratermeer) is de verborgen parel. Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: 'Vlucht Grenada-Suriname (meestal met overstap via Trinidad)',
         },
       ],
@@ -1943,13 +1943,13 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
         {
           code: 'SR', name: 'Suriname', days: 11, budget: 605,
           destinations: ['Paramaribo (UNESCO)', 'Marrondorpen aan de rivier', 'Brownsberg Nature Park'],
-          notes: 'Nederlandse koloniale geschiedenis in Paramaribo, gecombineerd met een rivierreis naar Marrondorpen in het binnenland — reken op 3-5 dagen voor een fatsoenlijke jungletocht naast de stad. Brownsberg (uitzicht over het Brokopondostuwmeer) is de verborgen parel.',
+          notes: 'Nederlandse koloniale geschiedenis in Paramaribo, gecombineerd met een rivierreis naar Marrondorpen in het binnenland — reken op 3-5 dagen voor een fatsoenlijke jungletocht naast de stad. Brownsberg (uitzicht over het Brokopondostuwmeer) is de verborgen parel. Prijs geverifieerd (2026-07): waarschijnlijk net genoeg, Brownsberg/Marrondorpen-tours ($70-120/dag) drukken het gemiddelde op. Let op: "visumvrij" is niet helemaal juist — een verplicht online ICF-immigratieformulier + gelekoortsbewijs is nodig vooraf.',
           transport_to_next: 'Vlucht Paramaribo-Belém (schaarse rechtstreekse verbindingen; waarschijnlijk met overstap via Cayenne, Georgetown of een Braziliaanse hub — vooraf goed checken)',
         },
         {
           code: 'BR', name: 'Brazil', days: 14, budget: 840,
           destinations: ['Belém', 'Ilha do Marajó', 'Lençóis Maranhenses', 'Jericoacoara', 'Fortaleza'],
-          notes: 'De overgang van de Amazone-riviermonding (Belém, Marajó — buffels, ongerept rivierdelta-eiland) naar de compleet andere zandduinenkust (Lençóis Maranhenses, Jericoacoara) als adembenemende afsluiter. De afstanden langs de kust worden vaak onderschat.',
+          notes: 'De overgang van de Amazone-riviermonding (Belém, Marajó — buffels, ongerept rivierdelta-eiland) naar de compleet andere zandduinenkust (Lençóis Maranhenses, Jericoacoara) als adembenemende afsluiter. De afstanden langs de kust worden vaak onderschat. Prijs geverifieerd (2026-07), klopt — de generieke Rio/São Paulo-veiligheidswaarschuwingen zijn niet relevant voor dit noordoostelijke traject.',
           transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Fortaleza (of via São Paulo) naar Nederland',
         },
       ],
@@ -1962,7 +1962,8 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
     notes: "Ontworpen in een Q&A-sessie met Claude (2026-07), op basis van een ChatGPT-brainstorm die Youri aandroeg (route, landen, tijdsindeling, budget, logistiek). Naam \"Caribbean & Amazon Expedition\" gekozen boven ChatGPT's \"Caribbean & Guianas Expedition\" — herkenbaarder en dekt zowel Suriname's binnenland als Noord-Brazilië's regenwoud/kust beter dan de vaktechnische term \"Guianas\". Dagen zijn de 'ideale' tempo-schatting; budgetten zijn het gemiddelde van het Goedkope en Normale backpackbudget uit de ontwerpdiscussie (Youri's zelfgekozen reisstijl, tussen die twee in).\n\n" +
       "Eén routewijziging t.o.v. de oorspronkelijke brainstorm: de Nederlandse ABC-eilanden (Curaçao/Bonaire) zijn verplaatst naar direct na Jamaica in plaats van na de Kleine Antillen — geografisch liggen ze fors westelijker dan de Kleine Antillen en Suriname, dus in de oorspronkelijke volgorde zou je eerst ver oostwaarts reizen en daarna weer helemaal terug naar het westen. De eilandvolgorde binnen de Kleine Antillen zelf (Guadeloupe-Dominica-St Lucia-Grenada) was al correct — dat is zowel de natuurlijke noord-zuid keten als de route van de veerboot L'Express des Îles.\n\n" +
       "Overlap-controle: geen van de tien onderdelen is geschrapt — de vier Kleine Antillen lijken oppervlakkig op elkaar maar hebben elk een eigen signatuur (Guadeloupe: Franse cultuur + vulkaan; Dominica: meest ongerepte regenwoud; St Lucia: iconische Pitons, meer ontwikkeld; Grenada: kruiden + minst toeristisch), en Suriname/Noord-Brazilië zijn complementair (rivier-regenwoud met Marroncultuur versus riviermonding-delta plus een compleet andere duinenkust).\n\n" +
-      "Totaal: 97 dagen (~3,2 maanden), €6.955 grondkosten + circa €3.000-3.500 aan vluchten (Caribische eilandhop-vluchten zijn berucht prijzig per afstand door weinig concurrentie; Suriname-Noord-Brazilië is waarschijnlijk de lastigste/duurste losse verbinding). Nog niet getoetst aan actuele prijzen, visumregels of reisadviezen — behandel dit als een eerste concept, geen boekbaar plan.",
+      "Totaal: 97 dagen (~3,2 maanden), €6.955 grondkosten + circa €3.000-3.500 aan vluchten (Caribische eilandhop-vluchten zijn berucht prijzig per afstand door weinig concurrentie; Suriname-Noord-Brazilië is waarschijnlijk de lastigste/duurste losse verbinding). Nog niet getoetst aan actuele prijzen, visumregels of reisadviezen — behandel dit als een eerste concept, geen boekbaar plan.\n\n" +
+      "Prijzen/visum/reisadvies-verificatie (2026-07): Jamaica (€75→€90/dag), Bonaire (€87,50→€110/dag) en Dominica (€72,50→€95/dag) gecorrigeerd. Rest bevestigd accuraat. Nieuw totaal: €7.450 grondkosten (was €6.955). Zie de losse landnotities hierboven voor reisadvies/visumdetails.",
   });
 }
 
@@ -2000,7 +2001,7 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
         {
           code: 'CV', name: 'Cape Verde', days: 13, budget: 780,
           destinations: ['Santo Antão (Ribeira Grande, Paúl-vallei)', 'São Vicente (Mindelo)', 'Fogo (Pico do Fogo-vulkaan, wijngaarden)'],
-          notes: "Bewust andere eilanden dan een eerder bezoek (niet opnieuw Sal) — Santo Antão voor de dramatische wandelvalleien, São Vicente voor de muziekcultuur van Mindelo, Fogo voor de vulkaanbeklimming en wijnbouw op vulkanische grond. Onderling per veerboot (goedkoper, minder betrouwbaar schema) of Binter Cabo Verde-vlucht.",
+          notes: "Bewust andere eilanden dan een eerder bezoek (niet opnieuw Sal) — Santo Antão voor de dramatische wandelvalleien, São Vicente voor de muziekcultuur van Mindelo, Fogo voor de vulkaanbeklimming en wijnbouw op vulkanische grond. Onderling per veerboot (goedkoper, minder betrouwbaar schema) of Binter Cabo Verde-vlucht. Prijs geverifieerd (2026-07), klopt — Fogo-vlucht (~€70-100 enkele reis, veerboot onbetrouwbaar) is een aparte kostenpost. Verplichte online EASE-registratie ≥5 dagen vooraf.",
           transport_to_next: 'Vlucht Praia/Sal-Dakar, korte oversteek naar het vasteland.',
         },
       ],
@@ -2014,13 +2015,13 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
         {
           code: 'SN', name: 'Senegal', days: 13, budget: 618,
           destinations: ['Dakar', 'Île de Gorée', 'Saint-Louis (UNESCO)', 'Sine-Saloum-delta', 'Lompoul-woestijn'],
-          notes: "Île de Gorée (slavernijgeschiedenis, korte boot vanaf Dakar) en Saint-Louis (koloniale hoofdstad) zijn de historische zwaartepunten; Sine-Saloum (mangroves, vogels) en de Lompoul-duinen geven een compleet ander natuurbeeld binnen één land.",
+          notes: "Île de Gorée (slavernijgeschiedenis, korte boot vanaf Dakar) en Saint-Louis (koloniale hoofdstad) zijn de historische zwaartepunten; Sine-Saloum (mangroves, vogels) en de Lompoul-duinen geven een compleet ander natuurbeeld binnen één land. Prijs geverifieerd (2026-07), klopt. Oranje grensstrook bij Gambia/Guinee-Bissau/Mali/Mauritanië — niet relevant voor deze route.",
           transport_to_next: 'Bus/deeltaxi over land naar Gambia via de Senegambia-brug (geopend 2019, een stuk vlotter dan de vroegere veerpont).',
         },
         {
           code: 'GM', name: 'Gambia', days: 6, budget: 240,
           destinations: ['Banjul', 'Gambia-rivier (bootcruise)', 'Kunta Kinteh Island (UNESCO, slavernijgeschiedenis)', 'Makasutu Culture Forest'],
-          notes: "Klein maar met een eigen, herkenbaar hoogtepunt: Kunta Kinteh Island (voorheen James Island) is een van de belangrijkste slavernij-erfgoedsites van West-Afrika.",
+          notes: "Klein maar met een eigen, herkenbaar hoogtepunt: Kunta Kinteh Island (voorheen James Island) is een van de belangrijkste slavernij-erfgoedsites van West-Afrika. Prijs geverifieerd (2026-07), klopt. Presidentsverkiezing 5 december 2026 — mogelijk onrust, check actuele situatie vlak voor vertrek.",
           transport_to_next: 'Vlucht naar Abidjan — geen praktische landroute (Guinee-Bissau, Guinee, Sierra Leone en Liberia liggen ertussen, te veel omweg/visa voor deze reisstijl).',
         },
       ],
@@ -2034,25 +2035,25 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
         {
           code: 'CI', name: 'Ivory Coast', days: 7, budget: 333,
           destinations: ['Abidjan (Le Plateau)', 'Grand-Bassam (UNESCO koloniale stad)'],
-          notes: "Taï National Park is bewust weggelaten — prachtig, maar de afgelegen ligging kost 3-4 dagen extra reistijd voor chimpansees die ook elders in West-/Centraal-Afrika te zien zijn. Abidjan en Grand-Bassam houden dit land compact en de moeite waard.",
+          notes: "Taï National Park is bewust weggelaten — prachtig, maar de afgelegen ligging kost 3-4 dagen extra reistijd voor chimpansees die ook elders in West-/Centraal-Afrika te zien zijn. Abidjan en Grand-Bassam houden dit land compact en de moeite waard. Prijs geverifieerd (2026-07), klopt. Rood/oranje alleen bij de Mali/Burkina Faso- en Liberia-grens — niet relevant hier.",
           transport_to_next: 'Bus over land naar Ghana via de grensovergang Elubo — een gevestigde backpacker-route.',
         },
         {
           code: 'GH', name: 'Ghana', days: 15, budget: 713,
           destinations: ['Accra', 'Cape Coast Castle', 'Elmina Castle', 'Kakum National Park (boomtoppenpad)', 'Volta-regio (Wli-watervallen, Mount Afadjato)'],
-          notes: "Cape Coast en Elmina Castle zijn de zwaarste, belangrijkste slavernijgeschiedenis-sites van de hele expeditie. Ghana heeft verreweg het rijkste programma van de reis — vandaar de meeste tijd.",
+          notes: "Cape Coast en Elmina Castle zijn de zwaarste, belangrijkste slavernijgeschiedenis-sites van de hele expeditie. Ghana heeft verreweg het rijkste programma van de reis — vandaar de meeste tijd. Prijs geverifieerd (2026-07), klopt, inclusief entreegelden Cape Coast/Kakum.",
           transport_to_next: 'Bus over land naar Togo via de grensovergang Aflao.',
         },
         {
           code: 'TG', name: 'Togo', days: 4, budget: 160,
           destinations: ['Lomé', 'Togoville (Vodun-cultuur, Lac Togo)'],
-          notes: "Bewust kort — Togo voegt met zijn Duitse koloniale geschiedenis (vóór de latere Franse overname) wel een andere invalshoek toe dan Ghana/Benin, maar heeft weinig hoogtepunten. Ligt toch al direct op de route, dus lage extra kosten om aan te doen.",
+          notes: "Bewust kort — Togo voegt met zijn Duitse koloniale geschiedenis (vóór de latere Franse overname) wel een andere invalshoek toe dan Ghana/Benin, maar heeft weinig hoogtepunten. Ligt toch al direct op de route, dus lage extra kosten om aan te doen. Prijs geverifieerd (2026-07), klopt. Visa-on-arrival is afgeschaft — alleen nog e-visa vooraf via het officiële evisa.gouv.tg (vermijd duurdere derde partijen).",
           transport_to_next: 'Bus over land naar Benin via de grensovergang Hillacondji.',
         },
         {
           code: 'BJ', name: 'Benin', days: 9, budget: 428,
           destinations: ['Ouidah (Route des Esclaves, Door of No Return)', 'Ganvié (paalwoningdorp op het meer)', 'Abomey (koninklijke paleizen, UNESCO)'],
-          notes: "Precies de combinatie die deze expeditie zoekt: oude koninkrijken (Abomey, het voormalige Dahomey), slavernijgeschiedenis (Ouidah) en levende Vodun-cultuur.",
+          notes: "Precies de combinatie die deze expeditie zoekt: oude koninkrijken (Abomey, het voormalige Dahomey), slavernijgeschiedenis (Ouidah) en levende Vodun-cultuur. Prijs geverifieerd (2026-07), klopt. Rood/oranje alleen in het noorden en de Nigeria-grensstrook — niet relevant hier.",
           transport_to_next: "Vlucht Cotonou-Douala (meestal met overstap) — overland door Nigeria is voor deze reis geen optie, de enige onvermijdelijke sprong van de hele route.",
         },
       ],
@@ -2066,19 +2067,19 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
         {
           code: 'CM', name: 'Cameroon', days: 8, budget: 380,
           destinations: ['Douala', 'Kribi (Chutes de la Lobé, zwarte stranden)', 'Yaoundé'],
-          notes: 'Aangepast t.o.v. het oorspronkelijke plan: Mount Cameroon en Limbe liggen in de Zuidwest-regio, waar sinds 2016 een gewapend conflict speelt (de "Anglophone Crisis") — reisadviezen hebben dit gebied in verschillende periodes afgeraden. In plaats daarvan Douala, Kribi (de Chutes de la Lobé stromen letterlijk de zee in — uniek) en Yaoundé, allemaal in de stabielere Franstalige Littoral/Centre-regio\'s. Check de actuele situatie in het Zuidwesten vlak vóór vertrek — mocht die verbeterd zijn, dan is Mount Cameroon alsnog het overwegen waard als toevoeging.',
+          notes: 'Aangepast t.o.v. het oorspronkelijke plan: Mount Cameroon en Limbe liggen in de Zuidwest-regio, waar sinds 2016 een gewapend conflict speelt (de "Anglophone Crisis") — reisadviezen hebben dit gebied in verschillende periodes afgeraden. In plaats daarvan Douala, Kribi (de Chutes de la Lobé stromen letterlijk de zee in — uniek) en Yaoundé, allemaal in de stabielere Franstalige Littoral/Centre-regio\'s. Check de actuele situatie in het Zuidwesten vlak vóór vertrek — mocht die verbeterd zijn, dan is Mount Cameroon alsnog het overwegen waard als toevoeging. Prijs geverifieerd (2026-07), klopt. Bevestigd: Anglophone Crisis nog steeds actief/rood in 2026 — de routekeuze blijft terecht. Verplicht e-visa vooraf (~€150-230), aparte kostenpost.',
           transport_to_next: 'Vlucht Douala-São Tomé (regionale verbinding).',
         },
         {
           code: 'ST', name: 'São Tomé and Príncipe', days: 9, budget: 653,
           destinations: ['São Tomé (roças/plantages, regenwoud)', 'Príncipe (afgelegen, minder bezocht)'],
-          notes: "Uniek in de hele Travel Atlas: Portugese koloniale plantagegeschiedenis op een klein, rustig tropisch eiland. Valt in het regenseizoen (oktober-mei) bij deze route — vooral middagbuien, geen aanhoudende moesson.",
+          notes: "Uniek in de hele Travel Atlas: Portugese koloniale plantagegeschiedenis op een klein, rustig tropisch eiland. Valt in het regenseizoen (oktober-mei) bij deze route — vooral middagbuien, geen aanhoudende moesson. Prijs geverifieerd (2026-07), klopt. Presidentsverkiezing 19 juli 2026 — mogelijk protesten rond die periode, check lokaal nieuws vlak voor vertrek.",
           transport_to_next: 'Vlucht São Tomé-Libreville (regionale verbinding).',
         },
         {
           code: 'GA', name: 'Gabon', days: 9, budget: 855,
           destinations: ['Loango National Park (surfende nijlpaarden, bosolifanten op het strand)', 'Libreville', 'regenwoud'],
-          notes: "Bewuste, sterke afsluiter van de hele expeditie — Loango is een van de weinige plekken ter wereld waar je olifanten en nijlpaarden op het strand ziet. Valt toevallig in zijn korte droge seizoen (december-februari) bij deze route.",
+          notes: "Bewuste, sterke afsluiter van de hele expeditie — Loango is een van de weinige plekken ter wereld waar je olifanten en nijlpaarden op het strand ziet. Valt toevallig in zijn korte droge seizoen (december-februari) bij deze route. ⚠️ Prijscheck (2026-07): het krapste/riskantste budget van de route — Loango-logistiek (gids/parkfees/eventuele chartervlucht) kan oplopen tot $100-300+/dag; €95/dag is alleen haalbaar met budgetvervoer (weg/piroque) en eenvoudige kampementen. Onvoldoende harde consensus voor een vaste correctie, maar reken op een reële kans dat dit hoger uitvalt.",
           transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Libreville naar Nederland (meestal met overstap).',
         },
       ],
@@ -2091,7 +2092,8 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
     notes: "Ontworpen in een Q&A-sessie met Claude (2026-07), op basis van een ChatGPT-brainstorm die Youri aandroeg (route, landen, tijdschema, budget, transport, veiligheid, omvang-check). Dagen zijn de 'ideale' tempo-schatting; budgetten zijn het gemiddelde van het Goedkope backpackbudget en het Realistische budget uit de ontwerpdiscussie.\n\n" +
       "Twee aanpassingen na Youri's review van het ontwerp: (1) Taï National Park in Ivoorkust laten vervallen — afgelegen, kost 3-4 dagen extra voor chimpansees die ook elders te zien zijn; Ivoorkust blijft beperkt tot Abidjan + Grand-Bassam. (2) Kameroen aangepast: Mount Cameroon en Limbe liggen in de Zuidwest-regio, waar sinds 2016 een gewapend conflict speelt (de Anglophone Crisis) — vervangen door Douala, Kribi (Chutes de la Lobé) en Yaoundé, allemaal in de stabielere Franstalige regio's. Check de actuele veiligheidssituatie in het Zuidwesten vlak vóór vertrek.\n\n" +
       "Angola is bewust uit deze expeditie gehaald en verplaatst naar Africa Grand Tour in plaats daarvan — geografisch grenst het direct aan Namibië (al onderdeel van die route), een veel logischer aansluiting dan de geïsoleerde flight-only eindstop die het hier zou zijn. Dit verwijdert ook de onzekerste/duurste vlucht van deze route (Gabon-Angola); Gabon is nu het nieuwe, sterke eindpunt (Loango's surfende nijlpaarden). Let op: deze verplaatsing lost het seizoensprobleem niet op — Angola valt ook in Africa Grand Tour's Southern Africa-regio in het regenseizoen, hetzelfde al geaccepteerde compromis van die route.\n\n" +
-      "Totaal: 93 dagen (~3,1 maanden), €5.160 grondkosten + circa €2.400-2.800 aan vluchten (Kaapverdië-Senegal, Gambia-Ivoorkust, Benin-Kameroen en de Centraal-Afrikaanse eilandsprongen zijn stuk voor stuk vluchten met weinig concurrentie, dus prijzig per afstand). Nog niet getoetst aan actuele prijzen, visumregels of reisadviezen — behandel dit als een eerste concept, geen boekbaar plan. Check vooral de veiligheidssituatie in Kameroens Zuidwest-regio vlak vóór vertrek.",
+      "Totaal: 93 dagen (~3,1 maanden), €5.160 grondkosten + circa €2.400-2.800 aan vluchten (Kaapverdië-Senegal, Gambia-Ivoorkust, Benin-Kameroen en de Centraal-Afrikaanse eilandsprongen zijn stuk voor stuk vluchten met weinig concurrentie, dus prijzig per afstand). Nog niet getoetst aan actuele prijzen, visumregels of reisadviezen — behandel dit als een eerste concept, geen boekbaar plan. Check vooral de veiligheidssituatie in Kameroens Zuidwest-regio vlak vóór vertrek.\n\n" +
+      "Prijzen/visum/reisadvies-verificatie (2026-07): alle 10 landen bevestigd accuraat, geen budgetcorrecties (Gabon is wel het krapste/riskantste — zie de eigen notitie). Anglophone Crisis in Kameroen bevestigd nog actief. Zie de losse landnotities hierboven voor reisadvies/visumdetails.",
   });
 }
 

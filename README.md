@@ -117,6 +117,11 @@ for the plan to move it into the Google Sheet.
 
 ## Recently fixed
 
+- **Price/visa/travel-advisory verification, routes 6-7 (2026-07)** — Caribbean &
+  Amazon Expedition 🌴 (Jamaica, Bonaire, Dominica corrected upward — €7,450 total,
+  was €6,955) and West & Central Africa Expedition 🌍 (all 10 countries confirmed
+  accurate, no budget changes; Gabon flagged as the tightest/riskiest budget due to
+  Loango logistics). Details in each route's own notes.
 - **Price/visa/travel-advisory verification, routes 4-5 (2026-07)** — Patagonia &
   Antarctica Expedition 🧊 (Chile/Argentina/Antarctica all confirmed accurate, no
   changes) and India & Himalaya Expedition 🏔️ (Nepal corrected €47.60→€60/day —
@@ -373,13 +378,13 @@ for the plan to move it into the Google Sheet.
   `js/pages/routeBuilder.js`. That fixes internal consistency (days vs. budget), not
   accuracy — none of it has been checked against real prices, current border/visa
   rules, or your own travel preferences. Treat it as a refined draft to edit, not a
-  plan to book. Five expeditions have since had this real verification done: Mediterranean
+  plan to book. Seven expeditions have since had this real verification done: Mediterranean
   Civilizations Expedition 🏛️, Eurasia Grand Tour 🌏, Central European Grand Roadtrip 🚗,
-  Patagonia & Antarctica Expedition 🧊, and India & Himalaya Expedition 🏔️ (see "Recently
-  fixed" above for the last two; details live in each route's own notes). Eight remain:
-  Pan-American Grand Tour, Africa Grand Tour, Nordic Arctic Expedition, North America
-  Grand Traverse, Oceania Grand Expedition, Caribbean & Amazon Expedition, West & Central
-  Africa Expedition, British Isles & Celtic Coast Expedition. Working through them in no
+  Patagonia & Antarctica Expedition 🧊, India & Himalaya Expedition 🏔️, Caribbean & Amazon
+  Expedition 🌴, and West & Central Africa Expedition 🌍 (see "Recently fixed" above; details
+  live in each route's own notes, kept brief here by design). Six remain: Pan-American Grand
+  Tour, Africa Grand Tour, Nordic Arctic Expedition, North America Grand Traverse, Oceania
+  Grand Expedition, British Isles & Celtic Coast Expedition. Working through them in no
   particular order.
   - The Antarctica leg's budget (Patagonia & Antarctica Expedition) reflects a real
     expedition-cruise price point, not backpacker-style estimates like the rest, and
