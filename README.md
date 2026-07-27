@@ -117,6 +117,22 @@ for the plan to move it into the Google Sheet.
 
 ## Recently fixed
 
+- **Central European Grand Roadtrip 🚗 price/visa/travel-advisory verification
+  (2026-07)** — third route verified. This route previously used a flat €120/day rate
+  for all 14 countries (deliberately, at the time) — the check found that doesn't hold
+  up per-country: Switzerland (€120→€200/day) and Liechtenstein (€120→€165/day) were
+  badly underbudgeted (Switzerland is one of the most expensive countries in Europe),
+  while Croatia (€120→€85), Serbia (€120→€60, the most extreme correction — less than
+  half), Hungary (€120→€90), Slovakia (€120→€80), Czechia's Brno leg (€120→€85), Poland
+  (€120→€65) and Germany's Dresden leg (€120→€95) were all overbudgeted. Czechia's
+  Prague leg went the other way (€120→€130 — Prague has gotten notably pricier).
+  France (Alsace), Germany (Bavaria), Austria, the Dolomites/Milan/Tuscany/San Marino
+  legs and Slovenia stayed within 15% of €120 and are unchanged. New total: €8,030
+  ground costs (was €8,400) — the increases and decreases mostly offset. Also
+  corrected a car-cost assumption: Austria only needs a 10-day highway vignette
+  (€12.80) for a trip this length, not the €106.80 annual one the route had assumed.
+  Added notes flagging Serbia's ongoing protest movement (Belgrade/Novi Sad, since
+  late 2024) and Croatia's landmine zones near Plitvice (stay on marked paths).
 - **Eurasia Grand Tour 🌏 price/visa/travel-advisory verification (2026-07)** — second
   route verified (after the Mediterranean pilot), all 27 countries checked the same
   way. Days unchanged everywhere; budget corrections: North Macedonia (€46.40→€37/day,
@@ -351,11 +367,11 @@ for the plan to move it into the Google Sheet.
   `js/pages/routeBuilder.js`. That fixes internal consistency (days vs. budget), not
   accuracy — none of it has been checked against real prices, current border/visa
   rules, or your own travel preferences. Treat it as a refined draft to edit, not a
-  plan to book. Mediterranean Civilizations Expedition 🏛️ and Eurasia Grand Tour 🌏
-  have since had this real verification done (see "Recently fixed" above) — the other
-  eleven expeditions still need the same treatment (prices + visa rules + Dutch travel
-  advisory, per country, recalibrated to Youri's own travel style). No route or
-  priority order picked yet for which one comes next.
+  plan to book. Mediterranean Civilizations Expedition 🏛️, Eurasia Grand Tour 🌏 and
+  Central European Grand Roadtrip 🚗 have since had this real verification done (see
+  "Recently fixed" above) — the other ten expeditions still need the same treatment
+  (prices + visa rules + Dutch travel advisory, per country, recalibrated to Youri's
+  own travel style). No route or priority order picked yet for which one comes next.
   - The Antarctica leg's budget (Patagonia & Antarctica Expedition) reflects a real
     expedition-cruise price point, not backpacker-style estimates like the rest, and
     was deliberately left unscaled (its days didn't change either).

@@ -2113,6 +2113,13 @@ function rbSeedCentralEuropeRoadtripExpedition() {
  * Italy and Czechia each appear as multiple distinct legs (repeated country codes) — same reason
  * Mediterranean/North America/Oceania are hand-authored here instead of using RB_EXPEDITION_CONTENT.
  *
+ * Price/visa/travel-advisory verification (2026-07): the flat €120/day didn't hold up per-country
+ * once checked — Switzerland/Liechtenstein were corrected upward (€200/€165, among the most expensive
+ * countries in Europe), Croatia/Serbia/Hungary/Slovakia/Czechia-Brno/Poland/Germany-Dresden corrected
+ * downward (Serbia most drastically, €120→€60), Czechia-Prague corrected upward (€130, notably pricier
+ * in recent years). France/Germany-Bavaria/Austria/the Dolomieten-Italy legs/San Marino/Slovenia stayed
+ * within 15% of €120 and are unchanged. See the route's own notes for the full breakdown.
+ *
  * Two route-order corrections made during design, both to avoid backtracking across the same
  * longitude twice: (1) Switzerland/Liechtenstein moved before Austria instead of after — Youri's
  * original order (Bavaria→Austria→Liechtenstein→Switzerland) meant driving all the way east through
@@ -2130,13 +2137,13 @@ function rbBuildCentralEuropeRoadtripRoute() {
     {
       name: 'Alpenlanden',
       season: 'Juni',
-      budget: 2160,
+      budget: 2605,
       note: 'Bergpassen en hooggelegen wandelpaden zijn pas vanaf half mei/juni volledig sneeuwvrij (Grossglockner Hochalpenstrasse opent meestal medio mei) — half juni-begin juli is het beste venster, net na de opening en nog vóór de julidrukte/-hitte in de dalen.',
       countries: [
         {
           code: 'FR', name: 'France', days: 2, budget: 240,
           destinations: ['Straatsburg', 'Colmar', 'Elzasser dorpen'],
-          notes: 'Compacte, korte culturele opener — meer tijd voegt weinig toe gezien de rest van de reis nog moet komen.',
+          notes: 'Compacte, korte culturele opener — meer tijd voegt weinig toe gezien de rest van de reis nog moet komen. Reisadvies (2026-07): Frankrijk zit sinds maart 2024 op het hoogste dreigingsniveau (3) voor terrorisme — een landelijke basisstatus, niet Elzas-specifiek, gewoon te bezoeken met normale oplettendheid.',
           transport_to_next: 'Auto, ≈300 km naar Neuschwanstein/Garmisch — geen tol of vignet nodig op dit traject.',
         },
         {
@@ -2146,16 +2153,16 @@ function rbBuildCentralEuropeRoadtripRoute() {
           transport_to_next: 'Auto, ≈250 km naar Luzern/Interlaken — Zwitsers jaarvignet verplicht, koop het bij de grens.',
         },
         {
-          code: 'CH', name: 'Switzerland', days: 5, budget: 600,
+          code: 'CH', name: 'Switzerland', days: 5, budget: 1000,
           destinations: ['Luzern/Vierwoudstrekenmeer', 'Interlaken', 'Lauterbrunnen', 'Berner Oberland'],
-          notes: 'Het Jungfrau-gebied (Lauterbrunnen/Berner Oberland) alleen al verdient meerdere wandeldagen — hoge kosten zijn een reden om het compact te houden, niet om het te haasten.',
+          notes: 'Het Jungfrau-gebied (Lauterbrunnen/Berner Oberland) alleen al verdient meerdere wandeldagen — hoge kosten zijn een reden om het compact te houden, niet om het te haasten. Prijscheck (2026-07): Zwitserland is een van de duurste landen van Europa — het oorspronkelijke vlakke €120/dag klopte hier niet, gecorrigeerd naar €200/dag.',
           transport_to_next: 'Auto, ≈150 km naar Vaduz — geen grenscontrole (Schengen), geen aparte tol.',
         },
         {
-          code: 'LI', name: 'Liechtenstein', days: 1, budget: 120,
+          code: 'LI', name: 'Liechtenstein', days: 1, budget: 165,
           destinations: ['Vaduz'],
-          notes: 'Klein land, één goede wandeling/stadswandeling volstaat ruimschoots.',
-          transport_to_next: 'Auto, ≈120 km naar Innsbruck — Oostenrijks jaarvignet verplicht voor de snelwegen.',
+          notes: 'Klein land, één goede wandeling/stadswandeling volstaat ruimschoots. Prijscheck (2026-07): prijsniveau volgt Zwitserland, gecorrigeerd van €120 naar €165/dag.',
+          transport_to_next: 'Auto, ≈120 km naar Innsbruck — Oostenrijks 10-dagenvignet nodig voor de snelwegen (€12,80, veel logischer voor een roadtrip dan het jaarvignet van €106,80).',
         },
         {
           code: 'AT', name: 'Austria', days: 6, budget: 720,
@@ -2168,7 +2175,7 @@ function rbBuildCentralEuropeRoadtripRoute() {
     {
       name: 'Dolomieten & Noord-Italië',
       season: 'Juli',
-      budget: 2280,
+      budget: 2385,
       note: 'De Dolomieten meteen na de Alpenlanden-opener; Milaan/Turijn/Cinque Terre/Toscane/San Marino vormen samen één aaneengesloten lus in plaats van twee losse zuidwaartse uitstapjes (zie route-notities).',
       countries: [
         {
@@ -2184,15 +2191,15 @@ function rbBuildCentralEuropeRoadtripRoute() {
           transport_to_next: 'Auto, ≈140 km naar Turijn via de A4/A55, tolweg.',
         },
         {
-          code: 'IT', name: 'Italy', days: 2, budget: 240,
+          code: 'IT', name: 'Italy', days: 2, budget: 190,
           destinations: ['Egyptisch Museum', 'Mole Antonelliana', 'historisch centrum'],
-          notes: 'Compacte, onderschatte stad — het Egyptisch Museum (op één na grootste ter wereld) verdient zelf al een halve dag.',
+          notes: 'Compacte, onderschatte stad — het Egyptisch Museum (op één na grootste ter wereld) verdient zelf al een halve dag. Prijscheck (2026-07): Turijn is goedkoper dan het vlakke €120/dag-tarief, gecorrigeerd naar €95/dag.',
           transport_to_next: 'Auto tot een bewaakte parkeerplaats bij Monterosso/La Spezia (≈185 km) — de dorpjes zelf zijn grotendeels autovrij.',
         },
         {
-          code: 'IT', name: 'Italy', days: 3, budget: 360,
+          code: 'IT', name: 'Italy', days: 3, budget: 435,
           destinations: ['Monterosso', 'Vernazza', 'Corniglia', 'Manarola', 'Riomaggiore'],
-          notes: 'De vijf dorpjes en de wandelpaden ertussen (Sentiero Azzurro) zijn het hele punt — drie dagen voor rustig wandelen plus een boottochtje.',
+          notes: 'De vijf dorpjes en de wandelpaden ertussen (Sentiero Azzurro) zijn het hele punt — drie dagen voor rustig wandelen plus een boottochtje. Prijscheck (2026-07): schaarse/dure accommodatie en toeristenopslag op eten duwen dit boven het vlakke €120/dag-tarief, gecorrigeerd naar €145/dag.',
           transport_to_next: 'Auto, ≈140 km naar Florence via La Spezia-Lucca-Firenze.',
         },
         {
@@ -2208,9 +2215,9 @@ function rbBuildCentralEuropeRoadtripRoute() {
           transport_to_next: 'Auto, ≈300 km naar Venetië, met een overnachting daar — de stad zelf is autovrij, park bij Tronchetto of Mestre.',
         },
         {
-          code: 'IT', name: 'Italy', days: 2, budget: 240,
+          code: 'IT', name: 'Italy', days: 2, budget: 320,
           destinations: ['Piazza San Marco', 'Dorsoduro', 'Murano/Burano'],
-          notes: 'Ligt vrijwel exact op de weg terug van San Marino naar Slovenië — nauwelijks extra kilometers, dus een efficiënte toevoeging.',
+          notes: 'Ligt vrijwel exact op de weg terug van San Marino naar Slovenië — nauwelijks extra kilometers, dus een efficiënte toevoeging. Prijscheck (2026-07): centraal Venetië is een bekende prijs-uitschieter (accommodatie 2-3x Mestre-niveau, dure vaporetto-dagpassen) — gecorrigeerd van €120 naar €160/dag.',
           transport_to_next: 'Auto, ≈280 km naar Bled — Sloveens vignet verplicht (goedkoop dagvignet beschikbaar).',
         },
       ],
@@ -2218,7 +2225,7 @@ function rbBuildCentralEuropeRoadtripRoute() {
     {
       name: 'Balkan',
       season: 'Juli-augustus',
-      budget: 1920,
+      budget: 1425,
       note: 'Mei-juni en september zijn hier het prettigst en juli-augustus kan warm zijn, maar is goed te doen — de watervallen bij Plitvice hebben dan nog volop water.',
       countries: [
         {
@@ -2228,21 +2235,21 @@ function rbBuildCentralEuropeRoadtripRoute() {
           transport_to_next: 'Auto, ≈140 km naar Plitvice/Zagreb.',
         },
         {
-          code: 'HR', name: 'Croatia', days: 3, budget: 360,
+          code: 'HR', name: 'Croatia', days: 3, budget: 255,
           destinations: ['Plitvice', 'Zagreb'],
-          notes: 'Plitvice verdient een volle dag (grote wandelroutes), Zagreb een korte stadstop.',
+          notes: 'Plitvice verdient een volle dag (grote wandelroutes), Zagreb een korte stadstop. Blijf op de gemarkeerde paden/wegen rond Plitvice — delen van het Kroatische binnenland hebben nog niet-geruimde landmijnen uit de jaren 90 (oranje zones). Prijscheck (2026-07): binnenland-Kroatië (niet de kust) is goedkoper dan het vlakke €120/dag-tarief, gecorrigeerd naar €85/dag (Plitvice-entree ~€35-40 apart, niet in het dagtarief).',
           transport_to_next: 'Auto, ≈380 km naar Belgrado — Novi Sad ligt toevallig al precies onderweg, prima in één dag te doen.',
         },
         {
-          code: 'RS', name: 'Serbia', days: 5, budget: 600,
+          code: 'RS', name: 'Serbia', days: 5, budget: 300,
           destinations: ['Belgrado', 'Novi Sad', 'Tara National Park'],
-          notes: 'Servië heeft verder weinig natuurhoogtepunten op deze route — Tara NP (Drina-rivier, bekende uitkijkpunten) is een bewuste omweg (+1 dag) die bij deze reisstijl past, in het zuidwesten van het land, een stuk uit de buurt van de directe route Zagreb-Belgrado-Boedapest.',
+          notes: "Servië heeft verder weinig natuurhoogtepunten op deze route — Tara NP (Drina-rivier, bekende uitkijkpunten) is een bewuste omweg (+1 dag) die bij deze reisstijl past, in het zuidwesten van het land, een stuk uit de buurt van de directe route Zagreb-Belgrado-Boedapest. ⚠️ Reisadvies (2026-07): er zijn regelmatig demonstraties in Servië, vooral in Belgrado en Novi Sad (aanhoudende protestbeweging sinds eind 2024) — soms wegblokkades, incidenteel geweld. Vermijd drukte/demonstraties, check actuele situatie vlak voor vertrek. Prijscheck (2026-07): Servië is veruit het goedkoopst van de Balkanlanden op deze route — het vlakke €120/dag was meer dan het dubbele van reëel, gecorrigeerd naar €60/dag.",
           transport_to_next: 'Auto, ≈320 km naar Boedapest.',
         },
         {
-          code: 'HU', name: 'Hungary', days: 3, budget: 360,
+          code: 'HU', name: 'Hungary', days: 3, budget: 270,
           destinations: ['Boedapest', 'thermale baden'],
-          notes: 'Boedapest verdient een rustige stadstop mét tijd voor een thermaal bad, niet alleen de hoogtepunten afvinken.',
+          notes: 'Boedapest verdient een rustige stadstop mét tijd voor een thermaal bad, niet alleen de hoogtepunten afvinken. Prijscheck (2026-07): gecorrigeerd van het vlakke €120/dag naar €90/dag (inclusief een thermaal bad-bezoek, ~€25-30 op zich).',
           transport_to_next: 'Auto, ≈200 km naar Bratislava.',
         },
       ],
@@ -2250,37 +2257,37 @@ function rbBuildCentralEuropeRoadtripRoute() {
     {
       name: 'Midden-Europa',
       season: 'Augustus-september/begin oktober',
-      budget: 2040,
+      budget: 1615,
       note: 'Hoge Tatra blijft ruim binnen het wandelseizoen (juni-september); de terugweg door Tsjechië/Polen/Duitsland is jaarrond prettig en geeft in september mooie herfstkleuren.',
       countries: [
         {
-          code: 'SK', name: 'Slovakia', days: 5, budget: 600,
+          code: 'SK', name: 'Slovakia', days: 5, budget: 400,
           destinations: ['Bratislava', 'Hoge Tatra', 'Slovenský Raj', 'Spiš Castle'],
-          notes: 'De Hoge Tatra vraagt echte wandeldagen; Bratislava is een korte aanvulling aan het begin.',
+          notes: 'De Hoge Tatra vraagt echte wandeldagen; Bratislava is een korte aanvulling aan het begin. Prijscheck (2026-07): gecorrigeerd van het vlakke €120/dag naar €80/dag.',
           transport_to_next: 'Auto, Hoge Tatra-Brno ≈300 km.',
         },
         {
-          code: 'CZ', name: 'Czechia', days: 1, budget: 120,
+          code: 'CZ', name: 'Czechia', days: 1, budget: 85,
           destinations: ['Brno', 'Špilberk-burcht'],
-          notes: 'Breekt de lange rit Hoge Tatra-Praag (was ≈450 km in één keer) in tweeën, en is zelf de moeite waard, niet alleen een technische pauze.',
+          notes: 'Breekt de lange rit Hoge Tatra-Praag (was ≈450 km in één keer) in tweeën, en is zelf de moeite waard, niet alleen een technische pauze. Prijscheck (2026-07): gecorrigeerd van het vlakke €120/dag naar €85/dag — buiten Praag is Tsjechië duidelijk goedkoper.',
           transport_to_next: 'Auto, ≈200 km naar Praag.',
         },
         {
-          code: 'CZ', name: 'Czechia', days: 5, budget: 600,
+          code: 'CZ', name: 'Czechia', days: 5, budget: 650,
           destinations: ['Praag', 'Český Krumlov', 'Boheems Paradijs'],
-          notes: 'Praag verdient alleen al 2-3 dagen; Český Krumlov en Boheems Paradijs zijn allebei losse dagtochten waard.',
+          notes: 'Praag verdient alleen al 2-3 dagen; Český Krumlov en Boheems Paradijs zijn allebei losse dagtochten waard. Prijscheck (2026-07): Praag is de laatste jaren duidelijk duurder geworden (centrumprijzen benaderen West-Europese steden) — gecorrigeerd van €120 naar €130/dag, de enige leg in deze route die omhoog moest ondanks dat de rest van Tsjechië/Centraal-Europa juist omlaag ging.',
           transport_to_next: 'Auto, ≈270 km naar Wrocław.',
         },
         {
-          code: 'PL', name: 'Poland', days: 3, budget: 360,
+          code: 'PL', name: 'Poland', days: 3, budget: 195,
           destinations: ['Wrocław', 'Sudeten (optioneel)'],
-          notes: 'Wrocław is compact te doen; het Sudeten-gebergte is een leuke, niet-verplichte toevoeging.',
+          notes: 'Wrocław is compact te doen; het Sudeten-gebergte is een leuke, niet-verplichte toevoeging. Prijscheck (2026-07): Polen is een van de goedkoopste landen op deze route — het vlakke €120/dag was fors te hoog, gecorrigeerd naar €65/dag.',
           transport_to_next: 'Auto, ≈280 km naar Dresden — Polen heft voor personenauto\'s geen tol op de meeste snelwegen (alleen vrachtverkeer via e-TOLL).',
         },
         {
-          code: 'DE', name: 'Germany', days: 3, budget: 360,
+          code: 'DE', name: 'Germany', days: 3, budget: 285,
           destinations: ['Dresden', 'Saksisch Zwitserland'],
-          notes: 'Saksisch Zwitserland (rotsformaties, wandelen) verdient een volle dag naast de stadstop in Dresden.',
+          notes: 'Saksisch Zwitserland (rotsformaties, wandelen) verdient een volle dag naast de stadstop in Dresden. Prijscheck (2026-07): Dresden is relatief goedkoop voor Duitsland — gecorrigeerd van €120 naar €95/dag.',
           transport_to_next: 'Einde van de roadtrip — terugrit naar Nederland, ≈700 km, in één lange dag of gesplitst met een laatste overnachting onderweg.',
         },
       ],
@@ -2292,8 +2299,9 @@ function rbBuildCentralEuropeRoadtripRoute() {
     climate_summary: "Aanbevolen start: begin juni. Bergpassen en hooggelegen wandelpaden in Beieren/Oostenrijk/Zwitserland/de Dolomieten zijn pas vanaf half mei/juni volledig sneeuwvrij (Grossglockner Hochalpenstrasse opent meestal medio mei) — een meistart zou de Alpenlanden net vóór die opening zetten, een reëel risico voor het onderdeel dat de meeste tijd/aandacht krijgt. Een septemberstart lijkt aantrekkelijk (rustiger, geen zomerhitte) maar duwt bij een reis van ~10 weken de latere etappes (Hoge Tatra, Tsjechië, Polen, Duitsland) naar november-december, met een reële kans op vroege sneeuw in de Tatra. Bij een junistart krijgen de Alpen hun beste venster meteen aan het begin, Noord-Italië/Toscane vallen in juli (goed te doen, iets drukker), Servië/Hongarije in augustus, en de reis eindigt in september/begin oktober — aangenaam, met herfstkleuren in Tsjechië/Polen/Saksisch Zwitserland als bonus.",
     notes: "Ontworpen in een Q&A-sessie met Claude (2026-07), op basis van Youri's eigen routebrief voor een zelfrijdende trip vanuit Nederland (geen vliegtuig). Dagen zijn de 'ideale' tempo-schatting; per-land-budgetten zijn het Realistische dagtarief (€70 accommodatie + €35 eten + €15 activiteiten = €120/dag per persoon) keer het aantal dagen — bewust hetzelfde niveau als de rest van Youri's reizen, zodat de bedragen per land vergelijkbaar blijven met elke andere expeditie in deze Travel Atlas.\n\n" +
       "Twee routewijzigingen tijdens het ontwerp, allebei om te voorkomen dat dezelfde lengtegraad twee keer gekruist wordt: (1) Zwitserland/Liechtenstein vóór Oostenrijk in plaats van erna — scheelt ≈370 km t.o.v. Youri's oorspronkelijke volgorde (Beieren→Oostenrijk→Liechtenstein→Zwitserland), en behoudt de Lienz-Cortina-verbinding (90 km) naar de Dolomieten. (2) Milaan/Turijn/Cinque Terre ná de Dolomieten geplakt, samengevoegd met de bestaande Toscane/San Marino-dip, in plaats van vóór Oostenrijk zoals Youri eerst voorstelde — die volgorde had de ≈12-13°O-strook twee keer gekruist (via Oostenrijks Grossglockner/Salzburg, en later opnieuw via Venetië/de Dolomieten) en twee losse zuidwaartse uitstapjes gekost in plaats van één gecombineerde Noord-Italië-lus.\n\n" +
-      "Autokosten (gedeeld per auto, NIET in de bedragen per land hierboven): ≈9.050 km totale rijafstand, ≈€1.110 brandstof (7L/100km, €1,75/L), ≈€335 tol/vignetten (Zwitserland en Oostenrijk vragen een jaarvignet, Italië rekent per kilometer op de autostrada, Polen heft geen tol voor personenauto's), ≈€505 parkeren (steden plus een bewaakte parkeerplaats bij Cinque Terre's autoluwe dorpen) — totaal ≈€1.950 per auto, ongeacht met hoeveel personen je reist.\n\n" +
-      "Totaal: 45 dagen minimum / 70 dagen ideaal (~10 weken), €8.400 grondkosten per persoon (Realistisch tier) + €1.950 autokosten per auto. Per persoon bij 70 dagen: Budget €7.200 solo / €4.650 met 2 / €3.800 met 3 — Realistisch €10.350 solo / €6.925 met 2 / €5.783 met 3 — Comfortabel €14.900 solo / €10.075 met 2 / €8.467 met 3 (autokosten simpelweg gedeeld door het aantal reizigers, accommodatie ook, eten/activiteiten blijven per persoon gelijk). Nog niet getoetst aan actuele tol-/vignettarieven of prijzen — behandel dit als een eerste concept, geen boekbaar plan.",
+      "Autokosten (gedeeld per auto, NIET in de bedragen per land hierboven): ≈9.050 km totale rijafstand, ≈€1.110 brandstof (7L/100km, €1,75/L), ≈€335 tol/vignetten (Zwitserland vraagt een jaarvignet — CHF 40/≈€43, geen kortere optie bestaat; Oostenrijk een 10-dagenvignet — €12,80, veel logischer voor deze reisduur dan het jaarvignet van €106,80; Italië rekent per kilometer op de autostrada; Polen heft geen tol voor personenauto's), ≈€505 parkeren (steden plus een bewaakte parkeerplaats bij Cinque Terre's autoluwe dorpen) — totaal ≈€1.950 per auto, ongeacht met hoeveel personen je reist.\n\n" +
+      "Prijzen/visum/reisadvies-verificatie (2026-07): alle 14 landen gecheckt via web-onderzoek. Grote bevinding: het vlakke €120/dag-tarief hield voor de helft van de landen niet stand — Zwitserland en Liechtenstein waren fors te laag begroot (respectievelijk €120→€200 en €120→€165, Zwitserland is een van de duurste landen van Europa), terwijl Kroatië, Servië, Hongarije, Slowakije, Tsjechië-Brno, Polen en Duitsland-Dresden juist te hoog begroot waren (Servië het felst: €120→€60, minder dan de helft). Enige uitzondering die juist omhoog moest binnen Centraal-Europa: Tsjechië-Praag (€120→€130 — Praag is de laatste jaren duidelijk duurder geworden). Frankrijk (Elzas), Duitsland (Beieren), Oostenrijk, de Dolomieten/Milaan/Toscane/San Marino en Slovenië bleven binnen 15% van €120 — geen aanpassing. Visumcheck: alle 14 landen zijn visumvrij voor een Nederlands paspoort; Slovenië/Kroatië/Hongarije/Tsjechië/Polen/Duitsland/Frankrijk/Oostenrijk zijn Schengen (geen grenscontrole), Zwitserland/Liechtenstein zijn Schengen maar geen EU, San Marino heeft een open grens met Italië, Servië is geen EU/Schengen dus met een echte paspoortcontrole aan de grens (wel visumvrij). Reisadvies: overal geel/groen, geen acuut gevaarlijke situaties — wel drie specifieke aandachtspunten toegevoegd bij de losse landen hierboven (Servië: aanhoudende protestbeweging in Belgrado/Novi Sad sinds eind 2024; Kroatië: niet-geruimde landmijnzones bij Plitvice, blijf op de paden; Frankrijk: langlopend hoogste dreigingsniveau, landelijke basisstatus).\n\n" +
+      "Totaal: 45 dagen minimum / 70 dagen ideaal (~10 weken), €8.030 grondkosten per persoon solo (Realistisch tier, na de prijsverificatie hierboven — was €8.400) + €1.950 autokosten per auto. Per persoon bij 70 dagen (zelfde rekenmethode als voorheen: accommodatie-aandeel gedeeld door het aantal reizigers, eten/activiteiten blijven per persoon gelijk, autokosten gedeeld): Realistisch €9.980 solo / €6.660 met 2 / €5.555 met 3. Budget en Comfortabel zijn evenredig herschaald t.o.v. de vorige verhouding — Budget ≈€6.950 solo / ≈€4.700 met 2 / ≈€3.950 met 3, Comfortabel ≈€14.350 solo / ≈€9.600 met 2 / ≈€8.000 met 3, maar deze twee zijn niet los per land opnieuw geverifieerd zoals het Realistische tarief hierboven. Nog niet getoetst aan actuele boekingsprijzen — behandel dit als een verfijnd concept, geen boekbaar plan.",
   });
 }
 
