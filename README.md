@@ -117,6 +117,19 @@ for the plan to move it into the Google Sheet.
 
 ## Recently fixed
 
+- **Price/visa/travel-advisory verification, route 13 — the last one (2026-07)** — British Isles &
+  Celtic Coast Expedition 🍀. All 15 legs checked; the route's flat €90/day rate (same
+  simplification Central European Grand Roadtrip originally used) needed correcting on 13 of them,
+  mostly +11% to +39% — only Wales and the Opal Coast/Lille leg were already close. Biggest
+  increases: Cornwall (summer premium), both Ireland legs (Ireland is now the EU's second most
+  expensive country), the Channel Islands, and the Scottish Highlands/Skye leg (Skye itself runs
+  far above the rest of the Highlands). New total €13,245 ground costs, was €10,350, 115 days
+  unchanged. ⚠️ New since the route was built: a UK ETA (€23/person) has been mandatory for Dutch/EU
+  visitors since April 2025, and as of April 2026 also covers the later Isle of Man/Jersey/Guernsey
+  ferry hops under the same authorisation. Also found: the Bayeux Tapestry is closed for renovation
+  until ~October 2027 (Bayeux's leg destinations updated accordingly), and Edinburgh's Fringe
+  Festival (7–31 Aug 2026) can triple accommodation prices if a real start date lands the Scotland
+  leg's Edinburgh nights inside that window. Details in each leg's own notes.
 - **Price/visa/travel-advisory verification, route 12 (2026-07)** — Africa Grand Tour 🌍 (all
   18 countries checked; 10 needed budget corrections — Namibia the biggest, €100→€200/day, since
   it lost visa-free status for Dutch passports in April 2025 and needs a 4x4 rental for nearly the
@@ -263,7 +276,8 @@ for the plan to move it into the Google Sheet.
   a round-trip car ferry — Youri's own idea, confirmed after discussion. Recommended
   start: June (ahead of Scotland's July-August midge peak, while France/the Channel
   Islands still get the last dry autumn window before their wet November). 86 days
-  minimum / 115 days ideal, €10,350 per-person ground costs (Realistisch tier) plus
+  minimum / 115 days ideal, €13,245 per-person ground costs (after the 2026-07
+  price/visa/advisory verification pass, was €10,350 — see "Recently fixed" below) plus
   ≈€4,200–4,800 shared car/ferry costs. Known cosmetic gap: Isle of Man, Jersey and
   Guernsey aren't in the World map view's topojson lookup (`js/utils/isoCountries.js`)
   so those three blocks won't highlight there — same kind of limitation as the existing
@@ -410,14 +424,15 @@ for the plan to move it into the Google Sheet.
   proportionally more budget), via `rbMigrateBudgetAndRegionCorrections()` in
   `js/pages/routeBuilder.js`. That fixes internal consistency (days vs. budget), not
   accuracy — none of it has been checked against real prices, current border/visa
-  rules, or your own travel preferences. Treat it as a refined draft to edit, not a
-  plan to book. Eleven expeditions have since had this real verification done: Mediterranean
-  Civilizations Expedition 🏛️, Eurasia Grand Tour 🌏, Central European Grand Roadtrip 🚗,
-  Patagonia & Antarctica Expedition 🧊, India & Himalaya Expedition 🏔️, Caribbean & Amazon
-  Expedition 🌴, West & Central Africa Expedition 🌍, Nordic Arctic Expedition ❄️,
-  Pan-American Grand Tour 🌎, North America Grand Traverse 🌎, Oceania Grand Expedition 🌊, and
-  Africa Grand Tour 🌍 (see "Recently fixed" above; details live in each route's own notes, kept
-  brief here by design). One remains: British Isles & Celtic Coast Expedition.
+  rules, or your own travel preferences. **All thirteen expeditions have now had this real
+  verification done** (see "Recently fixed" above; details live in each route's own notes, kept
+  brief here by design) — Mediterranean Civilizations Expedition 🏛️, Eurasia Grand Tour 🌏,
+  Central European Grand Roadtrip 🚗, Patagonia & Antarctica Expedition 🧊, India & Himalaya
+  Expedition 🏔️, Caribbean & Amazon Expedition 🌴, West & Central Africa Expedition 🌍, Nordic
+  Arctic Expedition ❄️, Pan-American Grand Tour 🌎, North America Grand Traverse 🌎, Oceania Grand
+  Expedition 🌊, Africa Grand Tour 🌍, and finally British Isles & Celtic Coast Expedition 🍀
+  (2026-07) — whose flat €90/day rate turned out to need correcting on 13 of its 15 legs, the
+  same flat-rate risk found earlier in Central European Grand Roadtrip.
   - The Antarctica leg's budget (Patagonia & Antarctica Expedition) reflects a real
     expedition-cruise price point, not backpacker-style estimates like the rest, and
     was deliberately left unscaled (its days didn't change either).
