@@ -591,12 +591,47 @@ let rbMiniMapLayer = null;
 let rbMiniMapLineLayer = null;
 let rbMapMode = 'countries'; // 'countries' | 'line'
 
+/**
+ * A handful of countries (Fiji, Russia, ...) have ring geometry that crosses the ±180° antimeridian.
+ * Without this, Leaflet draws a straight line across the entire map between e.g. lng 179 and -179
+ * instead of a short segment near the dateline — the stray horizontal lines Youri spotted on the
+ * "Landen" map. Fix: "unwrap" each ring's longitudes so they stay continuous past ±180 instead of
+ * jumping back — the map's maxBounds already extends to ±200 to accommodate exactly this, so an
+ * unwrapped point (e.g. lng 181 instead of -179) still renders in its correct on-screen position.
+ */
+function rbFixAntimeridian(geojson) {
+  const unwrapRing = ring => {
+    let offset = 0;
+    const out = [ring[0]];
+    for (let i = 1; i < ring.length; i++) {
+      const [lng, lat] = ring[i];
+      let adjusted = lng + offset;
+      const prevLng = out[i - 1][0];
+      while (adjusted - prevLng > 180) { offset -= 360; adjusted -= 360; }
+      while (prevLng - adjusted > 180) { offset += 360; adjusted += 360; }
+      out.push([adjusted, lat]);
+    }
+    return out;
+  };
+
+  geojson.features.forEach(f => {
+    if (!f.geometry) return;
+    if (f.geometry.type === 'Polygon') {
+      f.geometry.coordinates = f.geometry.coordinates.map(unwrapRing);
+    } else if (f.geometry.type === 'MultiPolygon') {
+      f.geometry.coordinates = f.geometry.coordinates.map(poly => poly.map(unwrapRing));
+    }
+  });
+  return geojson;
+}
+
 async function rbGetWorldGeoJSON() {
   if (rbWorldGeoJSON) return rbWorldGeoJSON;
   const res = await fetch(RB_WORLD_TOPOJSON_URL);
   const worldData = await res.json();
   const geojson = topojson.feature(worldData, worldData.objects.countries);
   geojson.features = geojson.features.filter(f => parseInt(f.id, 10) !== 10); // drop Antarctica
+  rbFixAntimeridian(geojson);
   rbWorldGeoJSON = geojson;
   return geojson;
 }
