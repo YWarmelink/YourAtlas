@@ -117,6 +117,19 @@ for the plan to move it into the Google Sheet.
 
 ## Recently fixed
 
+- **Price/visa/travel-advisory verification, route 12 (2026-07)** — Africa Grand Tour 🌍 (all
+  18 countries checked; 10 needed budget corrections — Namibia the biggest, €100→€200/day, since
+  it lost visa-free status for Dutch passports in April 2025 and needs a 4x4 rental for nearly the
+  whole route; Lesotho, Zimbabwe's base rate, Mauritius and Zambia confirmed accurate; Madagascar's
+  daily rate actually went down, €78→€69, with its real extra costs — the Nosy Be flight, 4x4
+  transfers — broken out as separate notes instead. New total €33,095, was €29,225, 288 days
+  unchanged). ⚠️ Live finding: Lalibela, Gondar, the Simien Mountains and the Danakil Depression are
+  currently **red** ("do not travel") on the Dutch advisory over the Amhara conflict and Afar
+  border instability — flagged directly on Ethiopia's block and kept in the route as-is (Youri's
+  call), but re-check nederlandwereldwijd.nl before any real booking. Also clarified Rwanda's "Lake
+  Kivu" stop means Kibuye/Karongi, not Rubavu (which faces M23-held Goma), and flagged a temporary
+  DRC-border closure (Ebola) plus a nearby 2025 ADF-linked attack near Uganda's Queen Elizabeth
+  NP/Bwindi corridor. Details in each country's own notes.
 - **Price/visa/travel-advisory verification, routes 10-11 (2026-07)** — North America
   Grand Traverse 🌎 (all 6 legs confirmed accurate; refactored into its own
   `rbBuildNorthAmericaRoute()` to fix the same migration gap described below) and
@@ -402,9 +415,9 @@ for the plan to move it into the Google Sheet.
   Civilizations Expedition 🏛️, Eurasia Grand Tour 🌏, Central European Grand Roadtrip 🚗,
   Patagonia & Antarctica Expedition 🧊, India & Himalaya Expedition 🏔️, Caribbean & Amazon
   Expedition 🌴, West & Central Africa Expedition 🌍, Nordic Arctic Expedition ❄️,
-  Pan-American Grand Tour 🌎, North America Grand Traverse 🌎, and Oceania Grand Expedition 🌊
-  (see "Recently fixed" above; details live in each route's own notes, kept brief here by
-  design). Two remain: Africa Grand Tour, British Isles & Celtic Coast Expedition.
+  Pan-American Grand Tour 🌎, North America Grand Traverse 🌎, Oceania Grand Expedition 🌊, and
+  Africa Grand Tour 🌍 (see "Recently fixed" above; details live in each route's own notes, kept
+  brief here by design). One remains: British Isles & Celtic Coast Expedition.
   - The Antarctica leg's budget (Patagonia & Antarctica Expedition) reflects a real
     expedition-cruise price point, not backpacker-style estimates like the rest, and
     was deliberately left unscaled (its days didn't change either).
