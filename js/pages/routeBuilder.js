@@ -35,7 +35,10 @@ const RB_MIGRATE_FLAG_2026_07_AFRICA_REORDER = 'atlas_grand_trips_migrate_2026_0
 const RB_MIGRATE_FLAG_2026_07_PRICE_VERIFICATION_ROUND1 = 'atlas_grand_trips_migrate_2026_07_price_verification_round1_v1';
 const RB_MIGRATE_FLAG_2026_07_PRICE_VERIFICATION_ROUND2 = 'atlas_grand_trips_migrate_2026_07_price_verification_round2_v1';
 const RB_MIGRATE_FLAG_2026_07_PRICE_VERIFICATION_ROUND3 = 'atlas_grand_trips_migrate_2026_07_price_verification_round3_v1';
+const RB_MIGRATE_FLAG_2026_07_ROUTE_LINE_COORDS = 'atlas_grand_trips_migrate_2026_07_route_line_coords_v1';
+const RB_MIGRATE_FLAG_2026_07_ROUTE_LINE_COORDS_ROUND2 = 'atlas_grand_trips_migrate_2026_07_route_line_coords_round2_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
+const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
 
 let rbRoutes = [];
@@ -75,6 +78,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigratePriceVerificationRound1();
   rbMigratePriceVerificationRound2();
   rbMigratePriceVerificationRound3();
+  rbMigrateRouteLineCoords();
+  rbMigrateRouteLineCoordsRound2();
   rbBindEvents();
 
   try {
@@ -578,11 +583,13 @@ function rbRenderMonthGrid(monthDate, routeStart, totalDays, blocks, dayBlockInd
     </div>`;
 }
 
-// ---- map view (highlights the route's countries on the world map) ----
+// ---- map view (highlights the route's countries, or draws the route as an ordered line) ----
 
 let rbWorldGeoJSON = null;
 let rbMiniMap = null;
 let rbMiniMapLayer = null;
+let rbMiniMapLineLayer = null;
+let rbMapMode = 'countries'; // 'countries' | 'line'
 
 async function rbGetWorldGeoJSON() {
   if (rbWorldGeoJSON) return rbWorldGeoJSON;
@@ -597,6 +604,22 @@ async function rbGetWorldGeoJSON() {
 function rbRenderMapIfVisible(route) {
   const panel = document.getElementById('rbMapPanel');
   if (panel && !panel.hidden) rbRenderMap(route);
+}
+
+function rbEnsureMiniMap(mapDiv) {
+  if (!rbMiniMap) {
+    rbMiniMap = L.map(mapDiv, {
+      center: [20, 10], zoom: 1.3, minZoom: 1, maxZoom: 9, zoomSnap: 0.5,
+      attributionControl: false, scrollWheelZoom: false,
+      maxBounds: [[-85, -200], [85, 200]], maxBoundsViscosity: 0.9,
+    });
+  }
+  return rbMiniMap;
+}
+
+function rbClearMapLayer(layer) {
+  if (layer && rbMiniMap) rbMiniMap.removeLayer(layer);
+  return null;
 }
 
 async function rbRenderMap(route) {
@@ -616,17 +639,23 @@ async function rbRenderMap(route) {
     return;
   }
 
-  if (!rbMiniMap) {
-    rbMiniMap = L.map(mapDiv, {
-      center: [20, 10], zoom: 1.3, minZoom: 1, maxZoom: 6, zoomSnap: 0.5,
-      attributionControl: false, scrollWheelZoom: false,
-      maxBounds: [[-85, -200], [85, 200]], maxBoundsViscosity: 0.9,
-    });
+  rbEnsureMiniMap(mapDiv);
+
+  if (rbMapMode === 'line') {
+    rbMiniMapLayer = rbClearMapLayer(rbMiniMapLayer);
+    rbRenderRouteLine(route, geojson);
+  } else {
+    rbMiniMapLineLayer = rbClearMapLayer(rbMiniMapLineLayer);
+    rbRenderCountriesLayer(route, geojson);
   }
 
+  setTimeout(() => rbMiniMap && rbMiniMap.invalidateSize(), 30);
+}
+
+function rbRenderCountriesLayer(route, geojson) {
   const codes = new Set(route.blocks.map(b => b.country_code).filter(Boolean));
 
-  if (rbMiniMapLayer) rbMiniMap.removeLayer(rbMiniMapLayer);
+  rbMiniMapLayer = rbClearMapLayer(rbMiniMapLayer);
   rbMiniMapLayer = L.geoJSON(geojson, {
     style: feature => {
       const code = ISO_NUM[parseInt(feature.id, 10)];
@@ -640,7 +669,75 @@ async function rbRenderMap(route) {
     },
   }).addTo(rbMiniMap);
 
-  setTimeout(() => rbMiniMap && rbMiniMap.invalidateSize(), 30);
+  rbMiniMap.setMaxZoom(6);
+  rbMiniMap.setView([20, 10], 1.3);
+}
+
+/**
+ * Draws the route as an ordered path: a dashed polyline connecting each leg's anchor point
+ * (block.lat/lng — one representative coordinate per leg, e.g. its main city; not a per-destination
+ * or turn-by-turn road route), with a numbered marker per stop. The line always starts and ends at
+ * RB_HOME_LATLNG (Utrecht) — every expedition begins and ends with leaving/returning to the
+ * Netherlands, whether by car or plane, so the loop closes there regardless of the route itself.
+ * Only legs that have both lat and lng render; a route with fewer than two such legs shows an
+ * empty-state message instead. See README's "Future plans" section for the plan this implements,
+ * and rbBuildCentralEuropeRoadtripRoute for the reference example of adding lat/lng to a route's blocks.
+ */
+function rbRenderRouteLine(route, geojson) {
+  const mapDiv = document.getElementById('rbMapDiv');
+  const stops = route.blocks
+    .map((b, i) => ({ block: b, index: i }))
+    .filter(({ block }) => typeof block.lat === 'number' && typeof block.lng === 'number');
+
+  rbMiniMapLineLayer = rbClearMapLayer(rbMiniMapLineLayer);
+
+  if (stops.length < 2) {
+    mapDiv.querySelector('.rb-map-empty')?.remove();
+    const empty = document.createElement('div');
+    empty.className = 'rb-map-empty';
+    empty.textContent = 'Deze route heeft nog geen routelijn-gegevens (lat/lng per etappe) — nog niet elke expeditie heeft die.';
+    mapDiv.appendChild(empty);
+    return;
+  }
+  mapDiv.querySelector('.rb-map-empty')?.remove();
+
+  const layerGroup = L.layerGroup();
+
+  // Faint, unhighlighted country outlines as geographic context under the line.
+  L.geoJSON(geojson, {
+    style: { fillColor: '#e2e8f0', fillOpacity: 0.5, color: '#94a3b8', weight: 0.5 },
+  }).addTo(layerGroup);
+
+  const stopLatlngs = stops.map(({ block }) => [block.lat, block.lng]);
+  const latlngs = [RB_HOME_LATLNG, ...stopLatlngs, RB_HOME_LATLNG];
+  L.polyline(latlngs, { color: '#0ea5e9', weight: 3, opacity: 0.85, dashArray: '6 8' }).addTo(layerGroup);
+
+  const homeIcon = L.divIcon({
+    className: 'rb-map-stop-icon rb-map-stop-icon--home',
+    html: `<span>🏠</span>`,
+    iconSize: [26, 26], iconAnchor: [13, 13],
+  });
+  L.marker(RB_HOME_LATLNG, { icon: homeIcon })
+    .bindTooltip('🇳🇱 Utrecht — vertrek & aankomst')
+    .addTo(layerGroup);
+
+  stops.forEach(({ block, index }, i) => {
+    const color = RB_BLOCK_COLORS[index % RB_BLOCK_COLORS.length];
+    const icon = L.divIcon({
+      className: 'rb-map-stop-icon',
+      html: `<span style="background:${color}">${i + 1}</span>`,
+      iconSize: [22, 22], iconAnchor: [11, 11],
+    });
+    const flag = rbFlagFor(block);
+    const days = parseInt(block.days) || 0;
+    L.marker([block.lat, block.lng], { icon })
+      .bindTooltip(`${flag} ${escapeHTML(block.country || '')}${days ? ` — ${days} dag${days !== 1 ? 'en' : ''}` : ''}`)
+      .addTo(layerGroup);
+  });
+
+  rbMiniMapLineLayer = layerGroup.addTo(rbMiniMap);
+  rbMiniMap.setMaxZoom(9);
+  rbMiniMap.fitBounds(L.latLngBounds(latlngs), { padding: [30, 30] });
 }
 
 // ---- shared helpers ----
@@ -869,6 +966,16 @@ function rbBindEvents() {
     if (!panel.hidden) rbRenderMap(route);
   });
 
+  document.querySelectorAll('.rb-map-mode-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (rbMapMode === btn.dataset.mode) return;
+      rbMapMode = btn.dataset.mode;
+      document.querySelectorAll('.rb-map-mode-btn').forEach(b => b.classList.toggle('is-active', b === btn));
+      const route = rbGetCurrent();
+      if (route) rbRenderMap(route);
+    });
+  });
+
   document.getElementById('addBlockBtn').addEventListener('click', () => {
     const route = rbGetCurrent();
     if (!route) return;
@@ -1024,15 +1131,20 @@ function rbBuildBlock(countryCode, countryName, opts = {}) {
     notes: opts.notes || '',
     transport_to_next: opts.transport_to_next || '',
     destinations: (opts.destinations || []).map(d => ({ id: rbNewDestId(), name: d, notes: '' })),
+    // Optional single anchor point for this leg (e.g. its main city), used only by the route-line
+    // map view to draw an ordered path — not every route has these yet (see rbRenderRouteLine).
+    lat: opts.lat ?? null,
+    lng: opts.lng ?? null,
   };
 }
 
-/** A seed country entry is { code, name, days, budget, destinations: [string], transport_to_next, notes }. */
+/** A seed country entry is { code, name, days, budget, destinations: [string], transport_to_next, notes, lat, lng }. */
 function rbSeedBlockOpts(c, extraOpts = {}) {
   return {
     ...extraOpts,
     days: c.days, budget: c.budget, notes: c.notes,
     transport_to_next: c.transport_to_next, destinations: c.destinations,
+    lat: c.lat, lng: c.lng,
   };
 }
 
@@ -1088,96 +1200,96 @@ function rbBuildFlatSeedRoute(name, countries, extra = {}) {
 // when seeding a fresh route and when patching an already-seeded one (see rbPatchExpeditionContent).
 const RB_EXPEDITION_CONTENT = {
   "Eurasia Grand Tour 🌏": {
-    BA: { days: 7, budget: 350, destinations: ["Sarajevo", "Mostar", "Blagaj", "Trebinje"], transport_to_next: "Bus over land (Mostar/Sarajevo naar Dubrovnik of Split), rechtstreekse grensovergang, geen visum nodig" },
-    HR: { days: 14, budget: 1225, destinations: ["Dubrovnik", "Split", "Hvar", "Plitvicemeren", "Zagreb"], transport_to_next: "Bus langs de kust Dubrovnik-Kotor, korte grensovergang, drukte mogelijk in hoogseizoen" },
-    ME: { days: 7, budget: 450, destinations: ["Kotor", "Perast", "Budva", "Durmitor NP"], transport_to_next: "Bus Kotor/Podgorica naar Tirana of Shkodër, over land, eenvoudige grensovergang" },
-    AL: { days: 10, budget: 500, destinations: ["Shkodër", "Tirana", "Berat", "Gjirokastër", "Sarandë"], transport_to_next: "Bus Tirana-Ohrid of Tirana-Skopje, over land, meerdere uren" },
-    MK: { days: 7, budget: 259, destinations: ["Ohrid", "Bitola", "Skopje"], transport_to_next: "Vlucht Skopje-Istanbul (bus zou via Bulgarije/Griekenland >20 uur duren, vlucht is realistischer)" },
-    TR: { days: 24, budget: 1300, destinations: ["Istanbul", "Cappadocië", "Pamukkale", "Antalya", "Efeze", "Ankara", "Kars/Trabzon"], transport_to_next: "Bus of trein vanaf Kars/Trabzon naar Tbilisi, grensovergang bij Posof/Sarpi, geen visum nodig voor Georgië" },
-    GE: { days: 13, budget: 650, destinations: ["Tbilisi", "Kazbegi", "Sighnaghi", "Kutaisi", "Mestia (Svaneti)", "Batumi"], transport_to_next: "Marshrutka (deelbusje) Tbilisi-Yerevan, over land, eenvoudige grensovergang, geen visum nodig", notes: "Mestia/Svaneti ligt qua prijsniveau boven de rest van de route (guesthouse met halfpension plus een duurdere marshrutka van/naar Mestia, ~€17) — het dagbudget werkt alleen als trip-breed gemiddelde met de goedkopere dagen elders (Tbilisi/Kutaisi/Batumi/Sighnaghi, realistisch €35-45/dag)." },
-    AM: { days: 8, budget: 400, destinations: ["Yerevan", "Khor Virap", "Lake Sevan", "Dilijan", "Tatev"], transport_to_next: "Geen directe grens (gesloten wegens conflict) — terugreizen via Georgië (Tbilisi) naar Baku, over land plus korte vlucht of bus", notes: "Blijf uit de buurt van de grensstrook met Azerbeidzjan: wegen H53/H26 bij Ijevan, de M14 langs de noordoostoever van Lake Sevan, en de M2 Yeraskh-Zangakatun/Yeraskh-Noravank (landmijnen) zijn oranje/rood (2026-07). Tatev (via Goris/Kapan) ligt dicht bij de grensregio Syunik — de standaardroute wordt als open/veilig gerapporteerd, blijf op de gebruikelijke toeristische route." },
-    AZ: { days: 7, budget: 425, destinations: ["Baku", "Gobustan", "Sheki", "Qabala"], transport_to_next: "Vlucht Baku-Almaty (de veerboot over de Kaspische Zee Baku-Aktau heeft geen vast schema en is onbetrouwbaar)" },
-    KZ: { days: 12, budget: 750, destinations: ["Almaty", "Charyn Canyon", "Turkistan", "Shymkent", "Nur-Sultan"], transport_to_next: "Bus of deeltaxi Almaty-Bishkek, over land, drukke maar eenvoudige grensovergang" },
-    KG: { days: 12, budget: 600, destinations: ["Bishkek", "Issyk-Kul", "Karakol", "Song-Kul", "Osh"], transport_to_next: "Deeljeep over de Pamir Highway Osh-Khorog, over land, ruw traject, GBAO-permit/visum voor Tadzjikistan nodig" },
-    TJ: { days: 14, budget: 700, destinations: ["Khorog", "Pamir Highway", "Murghab", "Iskanderkul", "Dushanbe"], transport_to_next: "Bus of deeltaxi Dushanbe-Samarkand, over land, grensovergang kan tijdrovend zijn", notes: "GBAO-vergunning voor de Pamir Highway kan direct worden toegevoegd aan de e-visa-aanvraag (vinkje aanzetten, +/-$20, totaal +/-$70). De Pamir-jeep/chauffeur (Khorog-Murghab e.o.) is een aparte, reële kostenpost bovenop het dagbudget: privé 4x4+chauffeur $150-400/dag (vaak gedeeld), gedeelde taxi vanaf ~$30-40 p.p. — regel dit via een lokale guesthouse/CBT/PECTA in Khorog. Khorog/GBAO kende in het verleden periodes van onrust (laatst 2022) — check de actuele situatie vlak voor vertrek." },
-    UZ: { days: 11, budget: 550, destinations: ["Tashkent", "Samarkand", "Bukhara", "Khiva"], transport_to_next: "Vlucht Tasjkent-Ürümqi (rechtstreekse verbinding; door het schrappen van Turkmenistan als tussenstop is dit nu de praktische route naar China)" },
-    CN: { days: 28, budget: 1625, destinations: ["Kashgar", "Ürümqi", "Xi'an", "Chengdu", "Beijing", "Shanghai"], transport_to_next: "Trein Beijing-Ulaanbaatar (Trans-Mongolië-route), over land, visum voor Mongolië nodig", notes: "Xinjiang (Kasjgar/Ürümqi) kent een structureel strenger veiligheidsregime dan de rest van China: verwacht controles met foto's/persoonsgegevens/telefooncontrole bij checkpoints — geen nieuwe escalatie, maar wel een blijvend gegeven, hou hier extra tijd/geduld voor aan." },
-    MN: { days: 10, budget: 650, destinations: ["Ulaanbaatar", "Terelj NP", "Kharkhorin", "Gobiwoestijn"], transport_to_next: "Vlucht Ulaanbaatar-Tokyo (via Beijing/Seoul, geen directe vlucht en geen landroute mogelijk)", notes: "De Gobiwoestijn-etappe vraagt een georganiseerde jeeptour (gedeelde 4x4 + chauffeur + gids + gerkampen) — reken $80-120 per dag p.p. voor die specifieke dagen, een aparte kostenpost bovenop de rest van de reis. Binnen 100 km van de grens met Rusland/China mag niet vrij gereisd worden zonder toestemming — check dat de touroperator hier rekening mee houdt, vooral in de zuidelijke Gobi dicht bij de Chinese grens." },
-    JP: { days: 18, budget: 2700, destinations: ["Tokyo", "Hakone/Fuji", "Kyoto", "Nara", "Osaka", "Hiroshima"], transport_to_next: "Vlucht Osaka/Tokyo-Taipei, korte vlucht, geen visum nodig voor Taiwan" },
-    TW: { days: 10, budget: 750, destinations: ["Taipei", "Taroko-kloof", "Sun Moon Lake", "Tainan", "Kenting"], transport_to_next: "Vlucht Taipei-Hanoi, geen directe ferry/landroute beschikbaar" },
-    VN: { days: 18, budget: 800, destinations: ["Hanoi", "Ha Long Bay", "Hue", "Hoi An", "Da Lat", "Ho Chi Minh City"], transport_to_next: "Nachtbus Hanoi-Vientiane, over land, grensovergang bij Cau Treo, lange rit (~24u)" },
-    LA: { days: 12, budget: 525, destinations: ["Luang Prabang", "Vang Vieng", "Vientiane", "Si Phan Don (4000 eilanden)"], transport_to_next: "Bus Si Phan Don/Pakse-Siem Reap, over land, grensovergang bij Nong Nokkhien/Trapeang Kriel" },
-    KH: { days: 12, budget: 525, destinations: ["Siem Reap", "Angkor Wat", "Battambang", "Phnom Penh", "Koh Rong"], transport_to_next: "⚠️ Grensovergang Poipet is momenteel gesloten (grensconflict Thailand-Cambodja, bestand sinds eind 2025 maar de landgrens zelf blijft dicht — check de status vlak voor vertrek op nederlandwereldwijd.nl). Zolang de grens dicht is: vlucht Siem Reap/Phnom Penh-Bangkok (1-1,5 uur, budgetmaatschappijen beschikbaar) in plaats van de bus.", notes: "Reisadvies (2026-07): geel voor de rest van het land, oranje voor de grensstrook met Thailand (5-20 km), rood binnen 5 km — niet relevant voor Siem Reap/Angkor Wat/Battambang/Phnom Penh/Koh Rong zelf, wel voor de grensovergang naar Thailand (zie transport-notitie). Angkor Wat-toegang (3-daags ticket ~$62) is een aparte kostenpost, niet alleen eten/verblijf/lokaal vervoer." },
-    TH: { days: 18, budget: 900, destinations: ["Bangkok", "Ayutthaya", "Sukhothai", "Chiang Mai", "Krabi/eilanden"], transport_to_next: "Trein of bus Bangkok-Kuala Lumpur, over land door Zuid-Thailand naar Maleisië, eenvoudige grensovergang bij Padang Besar", notes: "Reisadvies (2026-07): geel voor het hele reisgebied (Bangkok/Ayutthaya/Sukhothai/Chiang Mai/Krabi), met rood/oranje grensstroken bij Cambodja (zie Cambodja-notitie) en in het uiterste zuiden/Myanmar-grens — niet relevant voor deze route. Visumvrij verblijf wordt mogelijk verkort van 60 naar 30 dagen (kabinetsbesluit mei 2026, nog niet gepubliceerd) — check de actuele duur vlak voor vertrek." },
-    MY: { days: 10, budget: 500, destinations: ["Kuala Lumpur", "Cameron Highlands", "Penang", "Malacca", "Langkawi"], transport_to_next: "Vlucht Kuala Lumpur-Bandar Seri Begawan (rechtstreekse verbinding, geen praktische landroute door Oost-Maleisië/Borneo)" },
-    SG: { days: 3, budget: 375, destinations: ["Marina Bay", "Chinatown", "Sentosa", "Gardens by the Bay"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Singapore (Changi) naar Nederland" },
-    BN: { days: 2, budget: 240, destinations: ["Bandar Seri Begawan", "Kampong Ayer", "Ulu Temburong NP"], transport_to_next: "Vlucht Bandar Seri Begawan-Manila, meestal met overstap in Kota Kinabalu of Kuala Lumpur", notes: "Ulu Temburong NP is alleen te bezoeken met een verplichte gids/tour (geen zelfstandig bezoek toegestaan) — reken ~BND 140-180 (~€115-150) voor die dag inclusief boot, gids, entree en lunch, een aparte kostenpost." },
-    PH: { days: 21, budget: 950, destinations: ["Manila", "Banaue", "Palawan (El Nido)", "Cebu", "Bohol", "Siargao"], transport_to_next: "Vlucht Manila/Cebu-Jakarta of Denpasar, doorgaans met overstap in Singapore of Kuala Lumpur" },
-    ID: { days: 21, budget: 875, destinations: ["Jakarta", "Yogyakarta", "Borobudur", "Ubud (Bali)", "Gili-eilanden", "Lombok", "Komodo"], transport_to_next: "Bus over land via de grensovergang Mota'ain/Batugade (vanaf Kupang, West-Timor) naar Dili, Oost-Timor — of een korte vlucht Kupang-Dili", notes: "Komodo (boottochten) is de duurdere uitschieter binnen deze route: georganiseerde tours $75-135/dag, budget gedeelde speedboot/multi-daagse boottochten vanaf ~$40-50/dag — reken hier apart budget voor bovenop de rest van de route. Mount Rinjani (Lombok) is een actieve vulkaan zonder actuele eruptie-waarschuwing (2026-07) — check vlak voor vertrek." },
-    TL: { days: 7, budget: 400, destinations: ["Dili", "Atauro-eiland", "Jaco-eiland (Nino Konis Santana NP)", "Baucau", "Maubisse"], transport_to_next: "Vlucht Dili-Singapore (meestal met overstap in Denpasar/Bali of Jakarta, geen directe verbinding) — laatste etappe naar het eindpunt Singapore", notes: "Beperkte zorginfrastructuur (ziekenhuizen kunnen vooraf contante betaling vragen, ernstige gevallen vereisen medische evacuatie naar Bali/Darwin, geen Nederlandse ambassade ter plaatse) — een goede reisverzekering is hier extra belangrijk. Vermijd 's nachts rijden buiten Dili. Jaco Island is alleen bereikbaar met een 4x4+chauffeur ($85-150/dag) — deel de kosten met anderen indien mogelijk, aparte kostenpost bovenop de rest van de route." },
+    BA: { days: 7, budget: 350, lat: 43.8563, lng: 18.4131, destinations: ["Sarajevo", "Mostar", "Blagaj", "Trebinje"], transport_to_next: "Bus over land (Mostar/Sarajevo naar Dubrovnik of Split), rechtstreekse grensovergang, geen visum nodig" },
+    HR: { days: 14, budget: 1225, lat: 42.6507, lng: 18.0944, destinations: ["Dubrovnik", "Split", "Hvar", "Plitvicemeren", "Zagreb"], transport_to_next: "Bus langs de kust Dubrovnik-Kotor, korte grensovergang, drukte mogelijk in hoogseizoen" },
+    ME: { days: 7, budget: 450, lat: 42.4247, lng: 18.7712, destinations: ["Kotor", "Perast", "Budva", "Durmitor NP"], transport_to_next: "Bus Kotor/Podgorica naar Tirana of Shkodër, over land, eenvoudige grensovergang" },
+    AL: { days: 10, budget: 500, lat: 41.3275, lng: 19.8187, destinations: ["Shkodër", "Tirana", "Berat", "Gjirokastër", "Sarandë"], transport_to_next: "Bus Tirana-Ohrid of Tirana-Skopje, over land, meerdere uren" },
+    MK: { days: 7, budget: 259, lat: 41.1231, lng: 20.8016, destinations: ["Ohrid", "Bitola", "Skopje"], transport_to_next: "Vlucht Skopje-Istanbul (bus zou via Bulgarije/Griekenland >20 uur duren, vlucht is realistischer)" },
+    TR: { days: 24, budget: 1300, lat: 41.0082, lng: 28.9784, destinations: ["Istanbul", "Cappadocië", "Pamukkale", "Antalya", "Efeze", "Ankara", "Kars/Trabzon"], transport_to_next: "Bus of trein vanaf Kars/Trabzon naar Tbilisi, grensovergang bij Posof/Sarpi, geen visum nodig voor Georgië" },
+    GE: { days: 13, budget: 650, lat: 41.7151, lng: 44.8271, destinations: ["Tbilisi", "Kazbegi", "Sighnaghi", "Kutaisi", "Mestia (Svaneti)", "Batumi"], transport_to_next: "Marshrutka (deelbusje) Tbilisi-Yerevan, over land, eenvoudige grensovergang, geen visum nodig", notes: "Mestia/Svaneti ligt qua prijsniveau boven de rest van de route (guesthouse met halfpension plus een duurdere marshrutka van/naar Mestia, ~€17) — het dagbudget werkt alleen als trip-breed gemiddelde met de goedkopere dagen elders (Tbilisi/Kutaisi/Batumi/Sighnaghi, realistisch €35-45/dag)." },
+    AM: { days: 8, budget: 400, lat: 40.1792, lng: 44.4991, destinations: ["Yerevan", "Khor Virap", "Lake Sevan", "Dilijan", "Tatev"], transport_to_next: "Geen directe grens (gesloten wegens conflict) — terugreizen via Georgië (Tbilisi) naar Baku, over land plus korte vlucht of bus", notes: "Blijf uit de buurt van de grensstrook met Azerbeidzjan: wegen H53/H26 bij Ijevan, de M14 langs de noordoostoever van Lake Sevan, en de M2 Yeraskh-Zangakatun/Yeraskh-Noravank (landmijnen) zijn oranje/rood (2026-07). Tatev (via Goris/Kapan) ligt dicht bij de grensregio Syunik — de standaardroute wordt als open/veilig gerapporteerd, blijf op de gebruikelijke toeristische route." },
+    AZ: { days: 7, budget: 425, lat: 40.4093, lng: 49.8671, destinations: ["Baku", "Gobustan", "Sheki", "Qabala"], transport_to_next: "Vlucht Baku-Almaty (de veerboot over de Kaspische Zee Baku-Aktau heeft geen vast schema en is onbetrouwbaar)" },
+    KZ: { days: 12, budget: 750, lat: 43.2567, lng: 76.9286, destinations: ["Almaty", "Charyn Canyon", "Turkistan", "Shymkent", "Nur-Sultan"], transport_to_next: "Bus of deeltaxi Almaty-Bishkek, over land, drukke maar eenvoudige grensovergang" },
+    KG: { days: 12, budget: 600, lat: 42.8746, lng: 74.5698, destinations: ["Bishkek", "Issyk-Kul", "Karakol", "Song-Kul", "Osh"], transport_to_next: "Deeljeep over de Pamir Highway Osh-Khorog, over land, ruw traject, GBAO-permit/visum voor Tadzjikistan nodig" },
+    TJ: { days: 14, budget: 700, lat: 38.5598, lng: 68.787, destinations: ["Khorog", "Pamir Highway", "Murghab", "Iskanderkul", "Dushanbe"], transport_to_next: "Bus of deeltaxi Dushanbe-Samarkand, over land, grensovergang kan tijdrovend zijn", notes: "GBAO-vergunning voor de Pamir Highway kan direct worden toegevoegd aan de e-visa-aanvraag (vinkje aanzetten, +/-$20, totaal +/-$70). De Pamir-jeep/chauffeur (Khorog-Murghab e.o.) is een aparte, reële kostenpost bovenop het dagbudget: privé 4x4+chauffeur $150-400/dag (vaak gedeeld), gedeelde taxi vanaf ~$30-40 p.p. — regel dit via een lokale guesthouse/CBT/PECTA in Khorog. Khorog/GBAO kende in het verleden periodes van onrust (laatst 2022) — check de actuele situatie vlak voor vertrek." },
+    UZ: { days: 11, budget: 550, lat: 39.627, lng: 66.9749, destinations: ["Tashkent", "Samarkand", "Bukhara", "Khiva"], transport_to_next: "Vlucht Tasjkent-Ürümqi (rechtstreekse verbinding; door het schrappen van Turkmenistan als tussenstop is dit nu de praktische route naar China)" },
+    CN: { days: 28, budget: 1625, lat: 39.9042, lng: 116.4074, destinations: ["Kashgar", "Ürümqi", "Xi'an", "Chengdu", "Beijing", "Shanghai"], transport_to_next: "Trein Beijing-Ulaanbaatar (Trans-Mongolië-route), over land, visum voor Mongolië nodig", notes: "Xinjiang (Kasjgar/Ürümqi) kent een structureel strenger veiligheidsregime dan de rest van China: verwacht controles met foto's/persoonsgegevens/telefooncontrole bij checkpoints — geen nieuwe escalatie, maar wel een blijvend gegeven, hou hier extra tijd/geduld voor aan." },
+    MN: { days: 10, budget: 650, lat: 47.8864, lng: 106.9057, destinations: ["Ulaanbaatar", "Terelj NP", "Kharkhorin", "Gobiwoestijn"], transport_to_next: "Vlucht Ulaanbaatar-Tokyo (via Beijing/Seoul, geen directe vlucht en geen landroute mogelijk)", notes: "De Gobiwoestijn-etappe vraagt een georganiseerde jeeptour (gedeelde 4x4 + chauffeur + gids + gerkampen) — reken $80-120 per dag p.p. voor die specifieke dagen, een aparte kostenpost bovenop de rest van de reis. Binnen 100 km van de grens met Rusland/China mag niet vrij gereisd worden zonder toestemming — check dat de touroperator hier rekening mee houdt, vooral in de zuidelijke Gobi dicht bij de Chinese grens." },
+    JP: { days: 18, budget: 2700, lat: 35.6762, lng: 139.6503, destinations: ["Tokyo", "Hakone/Fuji", "Kyoto", "Nara", "Osaka", "Hiroshima"], transport_to_next: "Vlucht Osaka/Tokyo-Taipei, korte vlucht, geen visum nodig voor Taiwan" },
+    TW: { days: 10, budget: 750, lat: 25.033, lng: 121.5654, destinations: ["Taipei", "Taroko-kloof", "Sun Moon Lake", "Tainan", "Kenting"], transport_to_next: "Vlucht Taipei-Hanoi, geen directe ferry/landroute beschikbaar" },
+    VN: { days: 18, budget: 800, lat: 21.0285, lng: 105.8542, destinations: ["Hanoi", "Ha Long Bay", "Hue", "Hoi An", "Da Lat", "Ho Chi Minh City"], transport_to_next: "Nachtbus Hanoi-Vientiane, over land, grensovergang bij Cau Treo, lange rit (~24u)" },
+    LA: { days: 12, budget: 525, lat: 17.9757, lng: 102.6331, destinations: ["Luang Prabang", "Vang Vieng", "Vientiane", "Si Phan Don (4000 eilanden)"], transport_to_next: "Bus Si Phan Don/Pakse-Siem Reap, over land, grensovergang bij Nong Nokkhien/Trapeang Kriel" },
+    KH: { days: 12, budget: 525, lat: 13.3671, lng: 103.8448, destinations: ["Siem Reap", "Angkor Wat", "Battambang", "Phnom Penh", "Koh Rong"], transport_to_next: "⚠️ Grensovergang Poipet is momenteel gesloten (grensconflict Thailand-Cambodja, bestand sinds eind 2025 maar de landgrens zelf blijft dicht — check de status vlak voor vertrek op nederlandwereldwijd.nl). Zolang de grens dicht is: vlucht Siem Reap/Phnom Penh-Bangkok (1-1,5 uur, budgetmaatschappijen beschikbaar) in plaats van de bus.", notes: "Reisadvies (2026-07): geel voor de rest van het land, oranje voor de grensstrook met Thailand (5-20 km), rood binnen 5 km — niet relevant voor Siem Reap/Angkor Wat/Battambang/Phnom Penh/Koh Rong zelf, wel voor de grensovergang naar Thailand (zie transport-notitie). Angkor Wat-toegang (3-daags ticket ~$62) is een aparte kostenpost, niet alleen eten/verblijf/lokaal vervoer." },
+    TH: { days: 18, budget: 900, lat: 13.7563, lng: 100.5018, destinations: ["Bangkok", "Ayutthaya", "Sukhothai", "Chiang Mai", "Krabi/eilanden"], transport_to_next: "Trein of bus Bangkok-Kuala Lumpur, over land door Zuid-Thailand naar Maleisië, eenvoudige grensovergang bij Padang Besar", notes: "Reisadvies (2026-07): geel voor het hele reisgebied (Bangkok/Ayutthaya/Sukhothai/Chiang Mai/Krabi), met rood/oranje grensstroken bij Cambodja (zie Cambodja-notitie) en in het uiterste zuiden/Myanmar-grens — niet relevant voor deze route. Visumvrij verblijf wordt mogelijk verkort van 60 naar 30 dagen (kabinetsbesluit mei 2026, nog niet gepubliceerd) — check de actuele duur vlak voor vertrek." },
+    MY: { days: 10, budget: 500, lat: 3.139, lng: 101.6869, destinations: ["Kuala Lumpur", "Cameron Highlands", "Penang", "Malacca", "Langkawi"], transport_to_next: "Vlucht Kuala Lumpur-Bandar Seri Begawan (rechtstreekse verbinding, geen praktische landroute door Oost-Maleisië/Borneo)" },
+    SG: { days: 3, budget: 375, lat: 1.2838, lng: 103.8591, destinations: ["Marina Bay", "Chinatown", "Sentosa", "Gardens by the Bay"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Singapore (Changi) naar Nederland" },
+    BN: { days: 2, budget: 240, lat: 4.9031, lng: 114.9398, destinations: ["Bandar Seri Begawan", "Kampong Ayer", "Ulu Temburong NP"], transport_to_next: "Vlucht Bandar Seri Begawan-Manila, meestal met overstap in Kota Kinabalu of Kuala Lumpur", notes: "Ulu Temburong NP is alleen te bezoeken met een verplichte gids/tour (geen zelfstandig bezoek toegestaan) — reken ~BND 140-180 (~€115-150) voor die dag inclusief boot, gids, entree en lunch, een aparte kostenpost." },
+    PH: { days: 21, budget: 950, lat: 14.5995, lng: 120.9842, destinations: ["Manila", "Banaue", "Palawan (El Nido)", "Cebu", "Bohol", "Siargao"], transport_to_next: "Vlucht Manila/Cebu-Jakarta of Denpasar, doorgaans met overstap in Singapore of Kuala Lumpur" },
+    ID: { days: 21, budget: 875, lat: -8.5069, lng: 115.2625, destinations: ["Jakarta", "Yogyakarta", "Borobudur", "Ubud (Bali)", "Gili-eilanden", "Lombok", "Komodo"], transport_to_next: "Bus over land via de grensovergang Mota'ain/Batugade (vanaf Kupang, West-Timor) naar Dili, Oost-Timor — of een korte vlucht Kupang-Dili", notes: "Komodo (boottochten) is de duurdere uitschieter binnen deze route: georganiseerde tours $75-135/dag, budget gedeelde speedboot/multi-daagse boottochten vanaf ~$40-50/dag — reken hier apart budget voor bovenop de rest van de route. Mount Rinjani (Lombok) is een actieve vulkaan zonder actuele eruptie-waarschuwing (2026-07) — check vlak voor vertrek." },
+    TL: { days: 7, budget: 400, lat: 8.5586, lng: 125.5736, destinations: ["Dili", "Atauro-eiland", "Jaco-eiland (Nino Konis Santana NP)", "Baucau", "Maubisse"], transport_to_next: "Vlucht Dili-Singapore (meestal met overstap in Denpasar/Bali of Jakarta, geen directe verbinding) — laatste etappe naar het eindpunt Singapore", notes: "Beperkte zorginfrastructuur (ziekenhuizen kunnen vooraf contante betaling vragen, ernstige gevallen vereisen medische evacuatie naar Bali/Darwin, geen Nederlandse ambassade ter plaatse) — een goede reisverzekering is hier extra belangrijk. Vermijd 's nachts rijden buiten Dili. Jaco Island is alleen bereikbaar met een 4x4+chauffeur ($85-150/dag) — deel de kosten met anderen indien mogelijk, aparte kostenpost bovenop de rest van de route." },
   },
   "Pan-American Grand Tour 🌎": {
-    MX: { days: 28, budget: 1000, destinations: ["Ciudad de México", "Oaxaca", "Palenque", "Mérida", "Tulum", "Bacalar", "San Cristóbal de las Casas"], transport_to_next: "Bus over land via de grensovergang La Mesilla/El Carmen naar Huehuetenango, Guatemala.", notes: "Prijs geverifieerd (2026-07), klopt. Route 199 tussen San Cristóbal en Palenque: wegbanditisme (niet politiek), niet 's nachts rijden." },
-    GT: { days: 16, budget: 400, destinations: ["Quetzaltenango (Xela)", "Lake Atitlán", "Antigua", "Ciudad de Guatemala", "Semuc Champey", "Flores & Tikal"], transport_to_next: "Bus over land vanaf Flores naar de grensovergang bij Melchor de Menchos, door naar San Ignacio, Belize.", notes: "Prijs geverifieerd (2026-07), klopt — goedkoopste land van de route. Gebruik boten i.p.v. de weg Godínez-Panajachel bij Atitlán; Cerro de la Cruz in Antigua alleen begeleid/overdag." },
-    BZ: { days: 10, budget: 720, destinations: ["San Ignacio", "Belize City", "Caye Caulker", "Ambergris Caye (San Pedro)", "Hopkins/Dangriga", "Placencia"], transport_to_next: "Veerboot vanaf Placencia/Dangriga (via Livingston, Guatemala) naar Puerto Cortés, Honduras.", notes: "Prijscorrectie (2026-07): €57,50→€72/dag — de vele watertaxi's tussen eilanden ($15-45 p.p. enkele reis) waren niet meegenomen." },
-    HN: { days: 14, budget: 375, destinations: ["Puerto Cortés", "Copán Ruinas", "Lago de Yojoa", "Tegucigalpa", "La Ceiba", "Roatán"], transport_to_next: "Bus over land via de grensovergang El Amatillo naar El Salvador.", notes: "Prijs geverifieerd (2026-07), klopt. ⚠️ Tegucigalpa/La Ceiba/Puerto Cortés liggen in oranje provincies (bende-/drugsgerelateerde criminaliteit) — Roatán is de gele uitzondering." },
-    SV: { days: 10, budget: 275, destinations: ["San Salvador", "Santa Ana", "Cerro Verde & vulkanen", "Ruta de las Flores (Juayúa, Ataco)", "El Tunco", "Suchitoto"], transport_to_next: "Bus over land via Honduras (transit) naar de grensovergang El Espino/Guasaule, richting León, Nicaragua.", notes: "Prijs geverifieerd (2026-07), klopt. Veiligheidssituatie sterk verbeterd sinds de noodtoestand (2022) tegen bendes, nu geel — let wel: arrestatie zonder aanklacht blijft mogelijk, geen Nederlandse ambassade ter plaatse." },
-    NI: { days: 15, budget: 350, destinations: ["León", "Managua", "Granada", "Isla de Ometepe", "Laguna de Apoyo", "San Juan del Sur"], transport_to_next: "Bus over land via de grensovergang Peñas Blancas naar Costa Rica.", notes: "Prijs geverifieerd (2026-07), klopt. Regelmatige demonstraties kunnen wegen naar hoofdstad/vliegveld blokkeren; geen Nederlandse ambassade ter plaatse. CA-4-landen (Guatemala/Honduras/El Salvador/Nicaragua) tellen visumtechnisch als één gebied, max. 90 dagen gecombineerd — deze route blijft daar ruim onder." },
-    CR: { days: 21, budget: 1000, destinations: ["Liberia", "La Fortuna/Arenal", "Monteverde", "Santa Teresa", "Manuel Antonio", "Puerto Viejo de Talamanca"], transport_to_next: "Bus over land via de grensovergang Sixaola/Guabito naar Bocas del Toro, Panama.", notes: "Prijs geverifieerd (2026-07), klopt maar krap — nationale parken/tours ($15-22 entree) zijn een aparte kostenpost bovenop dit dagtarief." },
-    PA: { days: 15, budget: 625, destinations: ["Bocas del Toro", "Boquete", "Ciudad van Panama", "Casco Viejo", "Panamakanaal", "San Blas-eilanden"], transport_to_next: "Zeilboot (4-5 dagen) via de San Blas-eilanden naar Cartagena, Colombia — geen wegverbinding door de Darién Gap.", notes: "Prijs geverifieerd (2026-07), klopt. Darién-regio (niet op route) is oranje. San Blas-boot: check zwemvesten/twee buitenboordmotoren bij de operator vooraf." },
-    CO: { days: 35, budget: 1260, destinations: ["Cartagena", "Santa Marta", "Parque Tayrona", "Medellín", "Salento & Koffiezone", "Bogotá", "San Agustín"], transport_to_next: "Bus over land via Pasto naar de grensovergang Ipiales–Tulcán, door naar Quito, Ecuador.", notes: "Prijscorrectie (2026-07): €28,57→€36/dag, zo'n 18% te krap voor 35 dagen incl. duurdere steden (Cartagena, Bogotá). Route blijft buiten de rode/oranje grenszones. San Blas-Cartagena zeilboot: zelfde operator-check als bij Panama." },
-    EC: { days: 24, budget: 1650, destinations: ["Quito", "Otavalo", "Mindo", "Baños", "Cuenca", "Galápagos-eilanden"], transport_to_next: "Bus over land via de grensovergang Huaquillas/Tumbes naar Noord-Peru, richting Máncora.", notes: "⚠️ Prijscorrectie (2026-07): €1.025→€1.650 totaal, ~55-80% te laag. Galápagos alleen al kost sinds aug. 2024 $200 parkentree + $20 transitkaart p.p., plus $150-235/dag voor een budget boot-/landtour — voor 4-5 dagen al €800-950. Quito: pas op voor scopolamine-drogering in bars/taxi's en nep-taxi's." },
-    PE: { days: 35, budget: 1050, destinations: ["Máncora", "Huaraz", "Lima", "Ica & Huacachina", "Arequipa", "Cusco & Vallei van de Inca's", "Puno (Titicacameer)"], transport_to_next: "Bus/boot van Puno via de grensovergang Yunguyo of Desaguadero naar Copacabana en La Paz, Bolivia.", notes: "Prijs geverifieerd (2026-07), klopt (krap). Lima onder noodtoestand (crimineel geweld); regelmatige stakingen/wegblokkades landelijk. Machu Picchu (trein+entree, ~€150-250) is een aparte kostenpost." },
-    BO: { days: 21, budget: 425, destinations: ["Copacabana", "La Paz", "Uyuni-zoutvlakte", "Sucre", "Potosí", "Santa Cruz"], transport_to_next: "Jeeptocht via de Uyuni-zoutvlaktetour (3 dagen) over land naar San Pedro de Atacama, Chili.", notes: "Prijs geverifieerd (2026-07), klopt. Noodtoestand actief sinds 20 juni 2026 (~90 dagen) tegen wegblokkades — check actuele situatie, vluchten/wegen kunnen onverwacht sluiten. Uyuni-tour (~€140-180 all-in) is een aparte kostenpost." },
-    CL: { days: 10, budget: 520, destinations: ["San Pedro de Atacama", "Valle de la Luna", "Valle del Arcoíris", "Antofagasta", "Iquique"], transport_to_next: "Bus over land via de grensovergang Paso de Jama naar Salta/Jujuy, Argentinië.", notes: "Prijscorrectie (2026-07): €40→€52/dag — San Pedro is een van de duurste plekken van Chili. Gewapende straatroof gemeld in San Pedro/Antofagasta/Iquique/Calama/Arica, plus nep-taxi's op vliegvelden." },
-    AR: { days: 10, budget: 350, destinations: ["Salta", "Cafayate", "Purmamarca", "Salinas Grandes", "Tilcara", "Humahuaca"], transport_to_next: "Vlucht van Salta (via Buenos Aires) naar Foz do Iguaçu of São Paulo, Brazilië — over land is dit een reis van meerdere dagen.", notes: "Prijs geverifieerd (2026-07), klopt." },
-    BR: { days: 22, budget: 1166, destinations: ["Foz do Iguaçu (Iguazu-watervallen)", "Curitiba", "Ilha do Mel", "Florianópolis", "São Paulo", "Paraty", "Rio de Janeiro"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Rio de Janeiro (Galeão) of São Paulo (Guarulhos).", notes: "Prijscorrectie (2026-07): €45,45→€53/dag, vooral door Rio/São Paulo. Rio: vermijd favela's en verlaten stranden/straten 's nachts, extra oplettendheid tijdens Carnaval." },
+    MX: { days: 28, budget: 1000, lat: 19.4326, lng: -99.1332, destinations: ["Ciudad de México", "Oaxaca", "Palenque", "Mérida", "Tulum", "Bacalar", "San Cristóbal de las Casas"], transport_to_next: "Bus over land via de grensovergang La Mesilla/El Carmen naar Huehuetenango, Guatemala.", notes: "Prijs geverifieerd (2026-07), klopt. Route 199 tussen San Cristóbal en Palenque: wegbanditisme (niet politiek), niet 's nachts rijden." },
+    GT: { days: 16, budget: 400, lat: 14.5586, lng: -90.7295, destinations: ["Quetzaltenango (Xela)", "Lake Atitlán", "Antigua", "Ciudad de Guatemala", "Semuc Champey", "Flores & Tikal"], transport_to_next: "Bus over land vanaf Flores naar de grensovergang bij Melchor de Menchos, door naar San Ignacio, Belize.", notes: "Prijs geverifieerd (2026-07), klopt — goedkoopste land van de route. Gebruik boten i.p.v. de weg Godínez-Panajachel bij Atitlán; Cerro de la Cruz in Antigua alleen begeleid/overdag." },
+    BZ: { days: 10, budget: 720, lat: 17.4995, lng: -88.1962, destinations: ["San Ignacio", "Belize City", "Caye Caulker", "Ambergris Caye (San Pedro)", "Hopkins/Dangriga", "Placencia"], transport_to_next: "Veerboot vanaf Placencia/Dangriga (via Livingston, Guatemala) naar Puerto Cortés, Honduras.", notes: "Prijscorrectie (2026-07): €57,50→€72/dag — de vele watertaxi's tussen eilanden ($15-45 p.p. enkele reis) waren niet meegenomen." },
+    HN: { days: 14, budget: 375, lat: 14.8833, lng: -88.0333, destinations: ["Puerto Cortés", "Copán Ruinas", "Lago de Yojoa", "Tegucigalpa", "La Ceiba", "Roatán"], transport_to_next: "Bus over land via de grensovergang El Amatillo naar El Salvador.", notes: "Prijs geverifieerd (2026-07), klopt. ⚠️ Tegucigalpa/La Ceiba/Puerto Cortés liggen in oranje provincies (bende-/drugsgerelateerde criminaliteit) — Roatán is de gele uitzondering." },
+    SV: { days: 10, budget: 275, lat: 13.6929, lng: -89.2182, destinations: ["San Salvador", "Santa Ana", "Cerro Verde & vulkanen", "Ruta de las Flores (Juayúa, Ataco)", "El Tunco", "Suchitoto"], transport_to_next: "Bus over land via Honduras (transit) naar de grensovergang El Espino/Guasaule, richting León, Nicaragua.", notes: "Prijs geverifieerd (2026-07), klopt. Veiligheidssituatie sterk verbeterd sinds de noodtoestand (2022) tegen bendes, nu geel — let wel: arrestatie zonder aanklacht blijft mogelijk, geen Nederlandse ambassade ter plaatse." },
+    NI: { days: 15, budget: 350, lat: 11.93, lng: -85.9567, destinations: ["León", "Managua", "Granada", "Isla de Ometepe", "Laguna de Apoyo", "San Juan del Sur"], transport_to_next: "Bus over land via de grensovergang Peñas Blancas naar Costa Rica.", notes: "Prijs geverifieerd (2026-07), klopt. Regelmatige demonstraties kunnen wegen naar hoofdstad/vliegveld blokkeren; geen Nederlandse ambassade ter plaatse. CA-4-landen (Guatemala/Honduras/El Salvador/Nicaragua) tellen visumtechnisch als één gebied, max. 90 dagen gecombineerd — deze route blijft daar ruim onder." },
+    CR: { days: 21, budget: 1000, lat: 10.4667, lng: -84.6431, destinations: ["Liberia", "La Fortuna/Arenal", "Monteverde", "Santa Teresa", "Manuel Antonio", "Puerto Viejo de Talamanca"], transport_to_next: "Bus over land via de grensovergang Sixaola/Guabito naar Bocas del Toro, Panama.", notes: "Prijs geverifieerd (2026-07), klopt maar krap — nationale parken/tours ($15-22 entree) zijn een aparte kostenpost bovenop dit dagtarief." },
+    PA: { days: 15, budget: 625, lat: 8.9824, lng: -79.5199, destinations: ["Bocas del Toro", "Boquete", "Ciudad van Panama", "Casco Viejo", "Panamakanaal", "San Blas-eilanden"], transport_to_next: "Zeilboot (4-5 dagen) via de San Blas-eilanden naar Cartagena, Colombia — geen wegverbinding door de Darién Gap.", notes: "Prijs geverifieerd (2026-07), klopt. Darién-regio (niet op route) is oranje. San Blas-boot: check zwemvesten/twee buitenboordmotoren bij de operator vooraf." },
+    CO: { days: 35, budget: 1260, lat: 4.711, lng: -74.0721, destinations: ["Cartagena", "Santa Marta", "Parque Tayrona", "Medellín", "Salento & Koffiezone", "Bogotá", "San Agustín"], transport_to_next: "Bus over land via Pasto naar de grensovergang Ipiales–Tulcán, door naar Quito, Ecuador.", notes: "Prijscorrectie (2026-07): €28,57→€36/dag, zo'n 18% te krap voor 35 dagen incl. duurdere steden (Cartagena, Bogotá). Route blijft buiten de rode/oranje grenszones. San Blas-Cartagena zeilboot: zelfde operator-check als bij Panama." },
+    EC: { days: 24, budget: 1650, lat: -0.1807, lng: -78.4678, destinations: ["Quito", "Otavalo", "Mindo", "Baños", "Cuenca", "Galápagos-eilanden"], transport_to_next: "Bus over land via de grensovergang Huaquillas/Tumbes naar Noord-Peru, richting Máncora.", notes: "⚠️ Prijscorrectie (2026-07): €1.025→€1.650 totaal, ~55-80% te laag. Galápagos alleen al kost sinds aug. 2024 $200 parkentree + $20 transitkaart p.p., plus $150-235/dag voor een budget boot-/landtour — voor 4-5 dagen al €800-950. Quito: pas op voor scopolamine-drogering in bars/taxi's en nep-taxi's." },
+    PE: { days: 35, budget: 1050, lat: -12.0464, lng: -77.0428, destinations: ["Máncora", "Huaraz", "Lima", "Ica & Huacachina", "Arequipa", "Cusco & Vallei van de Inca's", "Puno (Titicacameer)"], transport_to_next: "Bus/boot van Puno via de grensovergang Yunguyo of Desaguadero naar Copacabana en La Paz, Bolivia.", notes: "Prijs geverifieerd (2026-07), klopt (krap). Lima onder noodtoestand (crimineel geweld); regelmatige stakingen/wegblokkades landelijk. Machu Picchu (trein+entree, ~€150-250) is een aparte kostenpost." },
+    BO: { days: 21, budget: 425, lat: -16.5, lng: -68.1193, destinations: ["Copacabana", "La Paz", "Uyuni-zoutvlakte", "Sucre", "Potosí", "Santa Cruz"], transport_to_next: "Jeeptocht via de Uyuni-zoutvlaktetour (3 dagen) over land naar San Pedro de Atacama, Chili.", notes: "Prijs geverifieerd (2026-07), klopt. Noodtoestand actief sinds 20 juni 2026 (~90 dagen) tegen wegblokkades — check actuele situatie, vluchten/wegen kunnen onverwacht sluiten. Uyuni-tour (~€140-180 all-in) is een aparte kostenpost." },
+    CL: { days: 10, budget: 520, lat: -22.9098, lng: -68.1997, destinations: ["San Pedro de Atacama", "Valle de la Luna", "Valle del Arcoíris", "Antofagasta", "Iquique"], transport_to_next: "Bus over land via de grensovergang Paso de Jama naar Salta/Jujuy, Argentinië.", notes: "Prijscorrectie (2026-07): €40→€52/dag — San Pedro is een van de duurste plekken van Chili. Gewapende straatroof gemeld in San Pedro/Antofagasta/Iquique/Calama/Arica, plus nep-taxi's op vliegvelden." },
+    AR: { days: 10, budget: 350, lat: -24.7859, lng: -65.4117, destinations: ["Salta", "Cafayate", "Purmamarca", "Salinas Grandes", "Tilcara", "Humahuaca"], transport_to_next: "Vlucht van Salta (via Buenos Aires) naar Foz do Iguaçu of São Paulo, Brazilië — over land is dit een reis van meerdere dagen.", notes: "Prijs geverifieerd (2026-07), klopt." },
+    BR: { days: 22, budget: 1166, lat: -22.9068, lng: -43.1729, destinations: ["Foz do Iguaçu (Iguazu-watervallen)", "Curitiba", "Ilha do Mel", "Florianópolis", "São Paulo", "Paraty", "Rio de Janeiro"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Rio de Janeiro (Galeão) of São Paulo (Guarulhos).", notes: "Prijscorrectie (2026-07): €45,45→€53/dag, vooral door Rio/São Paulo. Rio: vermijd favela's en verlaten stranden/straten 's nachts, extra oplettendheid tijdens Carnaval." },
   },
   "Africa Grand Tour 🌍": {
-    EG: { days: 21, budget: 1365, destinations: ["Caïro", "Gizeh", "Dahab", "Luxor", "Nijlcruise/felucca", "Aswan", "Alexandrië"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Caïro International Airport naar Nederland.", notes: "Prijscorrectie (2026-07): €62→€65/dag. Nijlcruise/felucca is een aparte kostenpost, niet in het dagbudget: een eenvoudige felucca (2-3 nachten) ~€115-160/nacht p.p., een standaard toeristenklasse cruiseboot (3-4 nachten Luxor-Aswan, all-in) ~€320-550 p.p. — dit laatste past het best bij Youri's stijl, reken dit apart voor die specifieke nachten (dubbeltel de dagbudget niet voor dezelfde dagen). Reisadvies: geel voor Caïro/Gizeh/Luxor/Aswan/Alexandrië/Nijlcruise en voor de Zuid-Sinaï-badplaatsen incl. Dahab zelf — voor die zone (Sharm/Dahab/Nuweiba) wordt wel aangeraden niet zelfstandig onbegeleid over land te reizen; georganiseerd vervoer erheen (kustroute of vlucht naar Sharm El Sheikh) blijft buiten het oranje/rode Centraal-/Noord-Sinaï. Visum: e-visa (visa2egypt.gov.eg), 30 dagen, prijs licht verhoogd in 2026 ($25-30 single-entry, bevestig bij aanvraag)." },
-    ET: { days: 20, budget: 1750, destinations: ["Addis Abeba", "Lalibela", "Simien Mountains", "Gondar", "Danakil Depressie", "Omo Valley"], transport_to_next: "Vlucht Addis Abeba-Caïro, geen directe landroute mogelijk (via Jordanië/Oman verloopt nu via de aparte Mediterranean Civilizations Expedition).", notes: "⚠️ Prijscorrectie (2026-07): €72,50→€87,50/dag, plus drie losse kostenposten buiten het dagbudget: een 3-daagse begeleide Danakil-tour (~€430 p.p., escorte/vergunningen inbegrepen), binnenlandse vluchten Addis Abeba-Lalibela-Gondar (~€400 totaal, zie de veiligheidsnotitie hieronder) en Simien Mountains-trekkosten (park/scout/gids/muildier, ~€175 voor 3-4 dagen). ⚠️⚠️ BELANGRIJKE REISADVIES-BEVINDING (2026-07): Lalibela, Gondar en de Simien Mountains liggen alle drie in de Amhara-regio, die het Nederlandse reisadvies momenteel volledig ROOD kleurt ('niet reizen') door het escalerende Fano-milities-tegen-regering-conflict (maart-mei 2026; wegen naar Bahir Dar omstreden; ontvoeringen van hulpverleners in Noord-Gondar). De Danakil Depressie ligt in de Afar-regio, ook ROOD, wegens instabiliteit bij de grens met Eritrea. Alleen Addis Abeba (geel) en de Omo Valley (impliciet geel) vallen buiten deze rode zones. Reisverslagen van 2026 melden dat georganiseerde fly-in-tours naar Lalibela/Gondar/Simien in de praktijk gewoon doorgaan zonder incidenten — maar dat is de inschatting van reisorganisaties, niet het officiële reisadvies, en een rode zone kan een Nederlandse reisverzekering ongeldig maken zelfs als het risico op de grond overzichtelijk aanvoelt. Youri heeft er bewust voor gekozen deze etappe te laten staan zoals gepland (Route Builder is de aspirational/someday-laag) — dit is een momentopname (juli 2026), check nederlandwereldwijd.nl zelf vlak vóór een eventuele echte reis en weeg ook de verzekeringsconsequentie mee, niet alleen het praktische risico. Visum: e-visa (evisa.gov.et), 30 dagen, prijs schommelt dit jaar ($50-82 per bron) — live bevestigen bij aanvraag." },
-    KE: { days: 18, budget: 2350, destinations: ["Nairobi", "Maasai Mara", "Lake Nakuru", "Amboseli", "Mount Kenya", "Diani Beach/Mombasa"], transport_to_next: "Over land via grensovergang Moyale (ruig, meerdaagse busrit), of vlucht Nairobi-Addis Abeba bij twijfel over veiligheid/wegconditie.", notes: "Prijscorrectie (2026-07): €122→€131/dag (buffer tegen gestegen Maasai Mara conservancy-/entreekosten). Visum: geen vrijstelling, eTA verplicht vooraf (prijs varieert per bron, $51 single-entry/$101 multiple-entry recentst — live checken op etakenya.go.ke, dit tarief is al eerder gewijzigd). Extra inreisscreening wegens de regionale Ebola-uitbraak (alleen screening, geen belemmering). Reisadvies: geel voor de hele route; rood alleen ver in het oosten (Somalië/Ethiopië-grens, niet op deze route), oranje voor Marsabit/Moyale/Tana-delta en 'bepaalde wijken' van Nairobi/Mombasa (niet de toeristische gebieden hier)." },
-    UG: { days: 18, budget: 2400, destinations: ["Kampala", "Jinja", "Kibale Forest", "Queen Elizabeth NP", "Bwindi Impenetrable Forest (gorilla's)", "Murchison Falls"], transport_to_next: "Bus over land Kampala-Nairobi via grensovergang Busia of Malaba, goed begaanbare route.", notes: "Prijs blijft nagenoeg gelijk (2026-07): €129→€133/dag, kleine buffer voor de nieuwe niet-restitueerbare boekingsregel hieronder — het gorillapermit ($800 hoogseizoen/$600 laagseizoen apr/mei/nov) en het chimpansee-trekkingpermit in Kibale ($250 p.p.) zaten al goed verwerkt in het bestaande budget. ⚠️ Sinds 1 maart 2026 is UWA's oude 7-dagen-optie-reservering afgeschaft — volledige, niet-restitueerbare betaling is nu verplicht bij het boeken, dus pas boeken zodra de reisdatum vaststaat. ⚠️ Veiligheid Queen Elizabeth NP/Bwindi-corridor: de DRC-grens is sinds 27 mei 2026 gesloten wegens een Ebola-uitbraak (laatste patiënt ontslagen 16 juli 2026, 42-dagen-klok loopt); daarnaast pleegden op 1 november 2025 ADF-gelieerde groepen gecoördineerde aanvallen op veiligheidsposten in Kasese, Bundibugyo en Fort Portal — dezelfde westelijke Rwenzori-corridor waar QENP en Bwindi liggen (het reisadvies noemt QENP ook al apart vanwege de dodelijke aanslag op toeristen daar in 2023). Tour-operators melden dat de trekking-sectoren (Buhoma/Ruhija/Rushaga/Nkuringo) gewoon open en veilig zijn, maar dat is branche-inschatting, geen officieel advies — blijf op de gangbare toeristische routes en vermijd de Ishasha-DRC-grensstrook. Visum: geen visum-bij-aankomst meer, alleen e-visa vooraf ($50), gele-koorts-bewijs verplicht." },
-    RW: { days: 10, budget: 2470, destinations: ["Kigali", "Volcanoes NP (gorillatrekking)", "Lake Kivu", "Nyungwe Forest"], transport_to_next: "Bus over land Kigali-Kampala via grensovergang Gatuna/Katuna, vlotte verbinding.", notes: "Prijscorrectie (2026-07): €225→€247/dag — het gorillapermit zelf ($1.500 p.p., ongewijzigd sinds 2017) blijft de dominante kostenpost, de correctie zit in de overige 9 dagen die eerder aan de krappe kant van de bandbreedte zaten. **Lake Kivu-verduidelijking (nieuw, nog niet eerder vastgelegd):** deze route bedoelt Kibuye/Karongi, NIET Rubavu/Gisenyi — Rubavu ligt direct tegenover Goma, dat momenteel in handen is van M23-rebellen, en valt onder het oranje ('alleen noodzakelijke reizen') reisadvies voor de DRC-grensstrook. Kibuye/Karongi ligt verderop langs het meer en blijft geel. Ook de Rwanda-Burundi-grens binnen het Nyungwe-regenwoud is sinds januari 2024 gesloten (los van het M23-conflict, niet relevant voor de geplande route zelf). Visum: geen vrijstelling voor Nederlanders — visum-bij-aankomst Kigali (~$50) of e-visa via Irembo vooraf." },
-    TZ: { days: 24, budget: 3100, destinations: ["Arusha", "Ngorongoro Crater", "Serengeti", "Lake Manyara", "Zanzibar", "Kilimanjaro (regio)", "Dar es Salaam"], transport_to_next: "Over land via grensovergang Rusumo en bootverbinding over het Victoriameer naar Kigali, of vlucht Dar es Salaam/Kilimanjaro-Kigali.", notes: "Prijscorrectie (2026-07): €117→€129/dag (buffer tegen recent verhoogde parkentrees Ngorongoro/Serengeti, nu $70-83/dag/park). Visum: los e-visa nodig, $50 (Tanzania valt niet onder de East Africa Tourist Visa). Reisadvies: geel voor de hele route; alleen het Mtwara-grensgebied met Mozambique (ver in het zuiden, niet op deze route) is oranje." },
-    MG: { days: 24, budget: 1650, destinations: ["Antananarivo", "Andasibe-Mantadia", "Avenue of the Baobabs", "Morondava", "Isalo NP", "Nosy Be"], transport_to_next: "Vlucht Antananarivo-Port Louis, geen andere optie beschikbaar.", notes: "Prijscorrectie (2026-07): €78→€69/dag (basiskosten logies/eten/lokaal vervoer bleken bij navraag lager dan aangenomen) — reken daarbovenop apart: Nosy Be is een eiland en vereist een binnenlandse vlucht (enkele reis ~€100-130, retour ~€210-250); de overige etappes (Tana-Andasibe-Morondava-Isalo) het best met een privé-4x4+chauffeur (~€50-70/dag) gezien de beruchte wegconditie — samen ~€400-500 extra. Visum: 30-dagen e-visa nodig voor deze 24-daagse trip (~€34, evisamada.gov.mg) — niet de goedkopere 15-dagen-tier. Reisadvies: geel, hele land — verhoogd risico rond Tsingy de Bemaraha (grenst aan de Morondava-regio, niet zelf bezocht) en de zuidoostelijke Anosy-regio (niet op deze route)." },
-    MU: { days: 7, budget: 1000, destinations: ["Port Louis", "Grand Baie", "Black River Gorges NP", "Chamarel", "Île aux Cerfs"], transport_to_next: "Vlucht Port Louis-Dar es Salaam/Zanzibar (Tanzania), meestal met overstap in Johannesburg of Nairobi.", notes: "Prijs geverifieerd (2026-07), klopt (€143/dag). Île aux Cerfs wordt vaak onderbudgetteerd: een kale veerpont kost ~€20-25 maar de gangbare georganiseerde dagtour (boot+lunch) ~€50-70 p.p. — reken dit apart voor die ene dag. Reisadvies: geel — zakkenrollerij expliciet genoemd in Port Louis en Grand Baie (beide op de route); piraterijrisico voor boten offshore (relevant voor de boottocht). Visum: visumvrij, 90 dagen." },
-    MW: { days: 14, budget: 875, destinations: ["Lilongwe", "Lake Malawi (Cape Maclear)", "Liwonde NP", "Zomba Plateau", "Mount Mulanje"], transport_to_next: "Vlucht (meestal via Johannesburg of Nairobi) naar Antananarivo, Madagaskar — geen directe verbinding vanuit Malawi.", notes: "Prijscorrectie (2026-07): €59→€62,50/dag (Liwonde NP-entree ~€25/dag tijdens die etappes). ⚠️ Visum aangescherpt: sinds 2 januari 2026 is een visum weer verplicht (was voor veel nationaliteiten vrijgesteld) — Nederlanders kunnen nog visum-bij-aankomst krijgen, maar Malawi stuurt nu aan op een e-visa vooraf (evisa.gov.mw, ~€45). Nieuwe regel: accommodatie moet in harde valuta (USD/GBP/EUR/ZAR) betaald worden, niet in Kwacha — zorg voor voldoende contant geld, kaarten zijn niet overal betrouwbaar. Mount Mulanje vereist een betaalde lokale gids (~€15-25/dag). Reisadvies: geel, hele land." },
-    MZ: { days: 20, budget: 1560, destinations: ["Ilha de Moçambique", "Nampula", "Tofo", "Inhambane", "Bazaruto Archipel", "Maputo"], transport_to_next: "Over land via grensovergang Nyamapanda of Machipanda richting Zimbabwe.", notes: "Prijscorrectie (2026-07): €71→€78/dag. Visum gewijzigd (11 feb 2026): nieuw ETA-systeem (evisa.gov.mz), ~€10, minimaal 48u vooraf aanvragen — vertrouw niet meer op visum-bij-aankomst, luchtvaartmaatschappijen controleren dit nu vooraf. Reisadvies: geel voor de hele route (Ilha de Moçambique, Nampula, Tofo, Inhambane, Bazaruto, Maputo); oranje is sinds 4 december 2025 uitgebreid naar de Nampula-provincie (Erati/Memba-districten, buurdistricten van deze etappe) door het aanhoudende Cabo Delgado-conflict — check dit vlak voor vertrek, het kan verder opschuiven. Deze etappe springt geografisch groot (Nampula-Tofo-Maputo, 1.500-2.500km) — reken 2 binnenlandse vluchten (~€300-400 totaal, LAM) en de Bazaruto-boot (~€80-140) als aparte kostenposten bovenop het dagbudget." },
-    ZM: { days: 16, budget: 1825, destinations: ["Lusaka", "South Luangwa NP", "Lower Zambezi NP", "Livingstone/Victoria Falls"], transport_to_next: "Over land via grensovergang Mchinji/Chanida richting Malawi.", notes: "Prijs geverifieerd (2026-07), klopt (€114/dag) — mits je bij South Luangwa/Lower Zambezi voor de zelfrijd-/kampeerstijl kiest (~€65-95/dag incl. parkentree) in plaats van de all-inclusive safari-lodges (€325-465/dag, een compleet andere prijscategorie). Grensovergang Angola-Zambia bevestigd: Jimbe (Angola)/Chavuma (Zambia), een reële maar pittige route — met de hand bijgehouden immigratieregisters, niet altijd bemand, alleen kleine 4x4 (geen vrachtwagens), volledige zelfvoorziening nodig (extra banden, bergingsmateriaal, meerdaagse brandstof/eten/water); praktisch venster juni-oktober, juli-september het beste. Een lokale gids uit Zambezi-stad (~€20-40/dag) wordt aangeraden. Visum: KAZA UniVisa (~€45) dekt Zambia+Zimbabwe plus een dagtrip naar Botswana, 30 dagen, bij aankomst verkrijgbaar in Lusaka/Livingstone of aan de grens. Reisadvies: geel voor de hele route." },
-    ZW: { days: 14, budget: 1275, destinations: ["Victoria Falls", "Hwange NP", "Mana Pools", "Great Zimbabwe", "Bulawayo"], transport_to_next: "Over land via grensovergang Kazungula of Plumtree richting Botswana.", notes: "Prijs geverifieerd (2026-07), klopt (€91/dag) voor Victoria Falls/Bulawayo/Great Zimbabwe. ⚠️ Mana Pools is een aparte, aanzienlijke kostenpost: een verplicht gegidste meerdaagse wandel-/kanosafari (3-4 dagen) kost €1.300-1.650 p.p. all-in (een afgeslankte halve-dag-optie kan al vanaf ~€100) — niet gedekt door het dagbudget. Victoria Falls-toegang (Zimbabwe-zijde) ~€46; Hwange NP-entree ~€22/dag + gegidste wandelingen extra. Visum: e-visa/visum-bij-aankomst $30. Reisadvies: geel, hele land." },
-    BW: { days: 16, budget: 2800, destinations: ["Kasane", "Chobe NP", "Okavango Delta (Maun)", "Makgadikgadi Pans", "Central Kalahari"], transport_to_next: "Over land via grensovergang Mamuno/Buitepos richting Namibië.", notes: "Prijscorrectie (2026-07): €158→€175/dag. Botswana heeft vrijwel geen goedkoop-onafhankelijk alternatief: Central Kalahari vereist een eigen 4x4-huurauto of gegidste mobiele safari (geen openbaar vervoer/goedkoop alternatief); Okavango Delta-tarieven lopen sterk uiteen (~€140 community-trust dagtrip tot €370+ voor scenic flying camps — dit budget gaat uit van de goedkopere stijl). Chobe-entreeprijs verhoogd naar BWP 270/dag (~€19) per 1 april 2026. Visum: visumvrij, 90 dagen, ongewijzigd. Reisadvies: geel, hele land." },
-    NA: { days: 20, budget: 4000, destinations: ["Windhoek", "Sossusvlei/Namib-Naukluft", "Swakopmund", "Damaraland", "Etosha NP", "Fish River Canyon"], transport_to_next: "Over land via de grensovergang Oshikango/Santa Clara richting Angola.", notes: "⚠️ Prijscorrectie (2026-07): €100→€200/dag — de grootste correctie van deze verificatieronde. Twee oorzaken: (1) Namibië is sinds 1 april 2025 niet meer visumvrij voor Nederlanders (reciprociteitskwestie) — e-visa/visum-bij-aankomst nu verplicht, ~N$1.600 (~€80), eenmalig; (2) een 4x4-huurauto is voor vrijwel de hele route noodzakelijk (Sossusvlei, Damaraland, Etosha en Fish River Canyon zijn zonder eigen (huur)voertuig niet praktisch te doen) — huur ~€70-90/dag. Parkentrees ook verhoogd: Etosha NAD 280 p.p. + NAD 60 voertuig (per 1 april 2026), Sossusvlei/Namib-Naukluft NAD 150 + NAD 50, Fish River Canyon NAD 160 + NAD 50 + eenmalige wandelvergunning N$540. Reisadvies: geel, hele land — waarschuwing tegen 's nachts rijden (wild op de weg)." },
-    AO: { days: 11, budget: 1700, destinations: ["Luanda", "Lubango", "Serra da Leba", "Tundavala-kloof", "Namibe-woestijn"], transport_to_next: "Over land via een grensovergang in het zuidoosten van Angola (bijvoorbeeld bij Jimbe) richting Zambia — minder bereisde grensovergang dan de rest van deze route, vooraf extra checken op actuele begaanbaarheid.", notes: "Prijscorrectie (2026-07): €136→€155/dag. Visum: goed nieuws — sinds Presidentieel Decreet 189/23 (begin 2024) is Angola visumvrij voor EU/Nederlandse toeristen, 30 dagen per bezoek (max 90/jaar), met een gele-koorts-vaccinatiebewijs — deze 11-daagse etappe blijft daar ruim onder. Oudere bronnen die een e-visa/$120-fee noemen zijn verouderd (of komen van visumbureaus die daar garen bij spinnen) — dubbelcheck bij Angola's officiële immigratieportaal voordat je erop vertrouwt. Angola is een van Afrika's duurdere reislanden (importgoederen, dun backpacker-netwerk buiten Luanda) — dit budget gaat uit van een huurauto/chauffeur voor het Lubango/Namibe/Tundavala-gebied, waar zelfstandig reizen amper infrastructuur heeft. Reisadvies: geel voor de hele route (Cabinda en de DRC-grensstrook in Lunda-Norte zijn oranje, niet op deze route)." },
-    ZA: { days: 24, budget: 2300, destinations: ["Kaapstad", "Winelands (Stellenbosch)", "Garden Route", "Addo Elephant Park", "Kruger NP", "Johannesburg", "Drakensberg"], transport_to_next: "Over land de enclave Lesotho in via grensovergang Maseru Bridge (of avontuurlijker via Sani Pass).", notes: "Prijscorrectie (2026-07): €83→€96/dag — inclusief Kruger NP-natuurbehoudsheffing (~R602/dag ≈ €29, SANParks) en Addo Elephant Park (~R492/dag ≈ €26) tijdens die etappes. ⚠️ Sinds 1 juli 2026 is een online 'Traveller Declaration' verplicht vóór in-/uitreis — nieuw, check dit vooraf. Reisadvies: geel, hele land — gewapende overvallen/carjacking blijven een reëel risico (vermijd nachtelijk rijden, minibus-taxi's, solo wandelen op Table Mountain/Lion's Head), hijacking-hotspot Gauteng (Johannesburg zit op deze route)." },
-    LS: { days: 6, budget: 350, destinations: ["Maseru", "Malealea", "Sani Pass/Thaba-Bosiu", "Roma", "Semonkong"], transport_to_next: "Over land terug door Zuid-Afrika naar grensovergang Golela/Lavumisa richting Eswatini.", notes: "Prijs geverifieerd (2026-07), klopt (€58/dag). Sani Pass is alleen met 4x4 te nemen — een gegidste dagtour vanuit Durban kost ~R3.845 (~€185), een aparte kostenpost. Visum: visumvrij maar slechts 14 dagen (korter dan Zuid-Afrika's 90 en Eswatini's 30) — let op bij het plannen. Bergpassen (Sani Pass, Semonkong) kunnen in de Lesotho-winter (juni-september) door sneeuw dicht gaan — bouw speelruimte in." },
-    SZ: { days: 5, budget: 325, destinations: ["Mbabane", "Ezulwini Valley", "Mlilwane Wildlife Sanctuary", "Hlane Royal National Park"], transport_to_next: "Over land via grensovergang Lomahasha/Namaacha richting Mozambique.", notes: "Prijscorrectie (2026-07): €60→€65/dag. ⚠️ Politieke situatie ernstiger dan vaak aangenomen: de regering gebruikt actief de Public Order Act/Suppression of Terrorism Act tegen dissidenten, geen verantwoording voor de crackdown op protesten in 2021, een PUDEMO-leider werd in september 2024 in ballingschap vergiftigd. Demonstraties in Mbabane/Manzini kunnen onverwacht escaleren — check lokaal nieuws vlak voor vertrek en vermijd samenscholingen. Hlane's gegidste game drives zijn niet openbaar geprijsd door Big Game Parks — reken ~€25-35 per activiteit als richtprijs, bevestig rechtstreeks." },
+    EG: { days: 21, budget: 1365, lat: 30.0444, lng: 31.2357, destinations: ["Caïro", "Gizeh", "Dahab", "Luxor", "Nijlcruise/felucca", "Aswan", "Alexandrië"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Caïro International Airport naar Nederland.", notes: "Prijscorrectie (2026-07): €62→€65/dag. Nijlcruise/felucca is een aparte kostenpost, niet in het dagbudget: een eenvoudige felucca (2-3 nachten) ~€115-160/nacht p.p., een standaard toeristenklasse cruiseboot (3-4 nachten Luxor-Aswan, all-in) ~€320-550 p.p. — dit laatste past het best bij Youri's stijl, reken dit apart voor die specifieke nachten (dubbeltel de dagbudget niet voor dezelfde dagen). Reisadvies: geel voor Caïro/Gizeh/Luxor/Aswan/Alexandrië/Nijlcruise en voor de Zuid-Sinaï-badplaatsen incl. Dahab zelf — voor die zone (Sharm/Dahab/Nuweiba) wordt wel aangeraden niet zelfstandig onbegeleid over land te reizen; georganiseerd vervoer erheen (kustroute of vlucht naar Sharm El Sheikh) blijft buiten het oranje/rode Centraal-/Noord-Sinaï. Visum: e-visa (visa2egypt.gov.eg), 30 dagen, prijs licht verhoogd in 2026 ($25-30 single-entry, bevestig bij aanvraag)." },
+    ET: { days: 20, budget: 1750, lat: 9.025, lng: 38.7469, destinations: ["Addis Abeba", "Lalibela", "Simien Mountains", "Gondar", "Danakil Depressie", "Omo Valley"], transport_to_next: "Vlucht Addis Abeba-Caïro, geen directe landroute mogelijk (via Jordanië/Oman verloopt nu via de aparte Mediterranean Civilizations Expedition).", notes: "⚠️ Prijscorrectie (2026-07): €72,50→€87,50/dag, plus drie losse kostenposten buiten het dagbudget: een 3-daagse begeleide Danakil-tour (~€430 p.p., escorte/vergunningen inbegrepen), binnenlandse vluchten Addis Abeba-Lalibela-Gondar (~€400 totaal, zie de veiligheidsnotitie hieronder) en Simien Mountains-trekkosten (park/scout/gids/muildier, ~€175 voor 3-4 dagen). ⚠️⚠️ BELANGRIJKE REISADVIES-BEVINDING (2026-07): Lalibela, Gondar en de Simien Mountains liggen alle drie in de Amhara-regio, die het Nederlandse reisadvies momenteel volledig ROOD kleurt ('niet reizen') door het escalerende Fano-milities-tegen-regering-conflict (maart-mei 2026; wegen naar Bahir Dar omstreden; ontvoeringen van hulpverleners in Noord-Gondar). De Danakil Depressie ligt in de Afar-regio, ook ROOD, wegens instabiliteit bij de grens met Eritrea. Alleen Addis Abeba (geel) en de Omo Valley (impliciet geel) vallen buiten deze rode zones. Reisverslagen van 2026 melden dat georganiseerde fly-in-tours naar Lalibela/Gondar/Simien in de praktijk gewoon doorgaan zonder incidenten — maar dat is de inschatting van reisorganisaties, niet het officiële reisadvies, en een rode zone kan een Nederlandse reisverzekering ongeldig maken zelfs als het risico op de grond overzichtelijk aanvoelt. Youri heeft er bewust voor gekozen deze etappe te laten staan zoals gepland (Route Builder is de aspirational/someday-laag) — dit is een momentopname (juli 2026), check nederlandwereldwijd.nl zelf vlak vóór een eventuele echte reis en weeg ook de verzekeringsconsequentie mee, niet alleen het praktische risico. Visum: e-visa (evisa.gov.et), 30 dagen, prijs schommelt dit jaar ($50-82 per bron) — live bevestigen bij aanvraag." },
+    KE: { days: 18, budget: 2350, lat: -1.2921, lng: 36.8219, destinations: ["Nairobi", "Maasai Mara", "Lake Nakuru", "Amboseli", "Mount Kenya", "Diani Beach/Mombasa"], transport_to_next: "Over land via grensovergang Moyale (ruig, meerdaagse busrit), of vlucht Nairobi-Addis Abeba bij twijfel over veiligheid/wegconditie.", notes: "Prijscorrectie (2026-07): €122→€131/dag (buffer tegen gestegen Maasai Mara conservancy-/entreekosten). Visum: geen vrijstelling, eTA verplicht vooraf (prijs varieert per bron, $51 single-entry/$101 multiple-entry recentst — live checken op etakenya.go.ke, dit tarief is al eerder gewijzigd). Extra inreisscreening wegens de regionale Ebola-uitbraak (alleen screening, geen belemmering). Reisadvies: geel voor de hele route; rood alleen ver in het oosten (Somalië/Ethiopië-grens, niet op deze route), oranje voor Marsabit/Moyale/Tana-delta en 'bepaalde wijken' van Nairobi/Mombasa (niet de toeristische gebieden hier)." },
+    UG: { days: 18, budget: 2400, lat: 0.3476, lng: 32.5825, destinations: ["Kampala", "Jinja", "Kibale Forest", "Queen Elizabeth NP", "Bwindi Impenetrable Forest (gorilla's)", "Murchison Falls"], transport_to_next: "Bus over land Kampala-Nairobi via grensovergang Busia of Malaba, goed begaanbare route.", notes: "Prijs blijft nagenoeg gelijk (2026-07): €129→€133/dag, kleine buffer voor de nieuwe niet-restitueerbare boekingsregel hieronder — het gorillapermit ($800 hoogseizoen/$600 laagseizoen apr/mei/nov) en het chimpansee-trekkingpermit in Kibale ($250 p.p.) zaten al goed verwerkt in het bestaande budget. ⚠️ Sinds 1 maart 2026 is UWA's oude 7-dagen-optie-reservering afgeschaft — volledige, niet-restitueerbare betaling is nu verplicht bij het boeken, dus pas boeken zodra de reisdatum vaststaat. ⚠️ Veiligheid Queen Elizabeth NP/Bwindi-corridor: de DRC-grens is sinds 27 mei 2026 gesloten wegens een Ebola-uitbraak (laatste patiënt ontslagen 16 juli 2026, 42-dagen-klok loopt); daarnaast pleegden op 1 november 2025 ADF-gelieerde groepen gecoördineerde aanvallen op veiligheidsposten in Kasese, Bundibugyo en Fort Portal — dezelfde westelijke Rwenzori-corridor waar QENP en Bwindi liggen (het reisadvies noemt QENP ook al apart vanwege de dodelijke aanslag op toeristen daar in 2023). Tour-operators melden dat de trekking-sectoren (Buhoma/Ruhija/Rushaga/Nkuringo) gewoon open en veilig zijn, maar dat is branche-inschatting, geen officieel advies — blijf op de gangbare toeristische routes en vermijd de Ishasha-DRC-grensstrook. Visum: geen visum-bij-aankomst meer, alleen e-visa vooraf ($50), gele-koorts-bewijs verplicht." },
+    RW: { days: 10, budget: 2470, lat: -1.9403, lng: 29.8739, destinations: ["Kigali", "Volcanoes NP (gorillatrekking)", "Lake Kivu", "Nyungwe Forest"], transport_to_next: "Bus over land Kigali-Kampala via grensovergang Gatuna/Katuna, vlotte verbinding.", notes: "Prijscorrectie (2026-07): €225→€247/dag — het gorillapermit zelf ($1.500 p.p., ongewijzigd sinds 2017) blijft de dominante kostenpost, de correctie zit in de overige 9 dagen die eerder aan de krappe kant van de bandbreedte zaten. **Lake Kivu-verduidelijking (nieuw, nog niet eerder vastgelegd):** deze route bedoelt Kibuye/Karongi, NIET Rubavu/Gisenyi — Rubavu ligt direct tegenover Goma, dat momenteel in handen is van M23-rebellen, en valt onder het oranje ('alleen noodzakelijke reizen') reisadvies voor de DRC-grensstrook. Kibuye/Karongi ligt verderop langs het meer en blijft geel. Ook de Rwanda-Burundi-grens binnen het Nyungwe-regenwoud is sinds januari 2024 gesloten (los van het M23-conflict, niet relevant voor de geplande route zelf). Visum: geen vrijstelling voor Nederlanders — visum-bij-aankomst Kigali (~$50) of e-visa via Irembo vooraf." },
+    TZ: { days: 24, budget: 3100, lat: -3.3869, lng: 36.683, destinations: ["Arusha", "Ngorongoro Crater", "Serengeti", "Lake Manyara", "Zanzibar", "Kilimanjaro (regio)", "Dar es Salaam"], transport_to_next: "Over land via grensovergang Rusumo en bootverbinding over het Victoriameer naar Kigali, of vlucht Dar es Salaam/Kilimanjaro-Kigali.", notes: "Prijscorrectie (2026-07): €117→€129/dag (buffer tegen recent verhoogde parkentrees Ngorongoro/Serengeti, nu $70-83/dag/park). Visum: los e-visa nodig, $50 (Tanzania valt niet onder de East Africa Tourist Visa). Reisadvies: geel voor de hele route; alleen het Mtwara-grensgebied met Mozambique (ver in het zuiden, niet op deze route) is oranje." },
+    MG: { days: 24, budget: 1650, lat: -18.8792, lng: 47.5079, destinations: ["Antananarivo", "Andasibe-Mantadia", "Avenue of the Baobabs", "Morondava", "Isalo NP", "Nosy Be"], transport_to_next: "Vlucht Antananarivo-Port Louis, geen andere optie beschikbaar.", notes: "Prijscorrectie (2026-07): €78→€69/dag (basiskosten logies/eten/lokaal vervoer bleken bij navraag lager dan aangenomen) — reken daarbovenop apart: Nosy Be is een eiland en vereist een binnenlandse vlucht (enkele reis ~€100-130, retour ~€210-250); de overige etappes (Tana-Andasibe-Morondava-Isalo) het best met een privé-4x4+chauffeur (~€50-70/dag) gezien de beruchte wegconditie — samen ~€400-500 extra. Visum: 30-dagen e-visa nodig voor deze 24-daagse trip (~€34, evisamada.gov.mg) — niet de goedkopere 15-dagen-tier. Reisadvies: geel, hele land — verhoogd risico rond Tsingy de Bemaraha (grenst aan de Morondava-regio, niet zelf bezocht) en de zuidoostelijke Anosy-regio (niet op deze route)." },
+    MU: { days: 7, budget: 1000, lat: -20.1609, lng: 57.5012, destinations: ["Port Louis", "Grand Baie", "Black River Gorges NP", "Chamarel", "Île aux Cerfs"], transport_to_next: "Vlucht Port Louis-Dar es Salaam/Zanzibar (Tanzania), meestal met overstap in Johannesburg of Nairobi.", notes: "Prijs geverifieerd (2026-07), klopt (€143/dag). Île aux Cerfs wordt vaak onderbudgetteerd: een kale veerpont kost ~€20-25 maar de gangbare georganiseerde dagtour (boot+lunch) ~€50-70 p.p. — reken dit apart voor die ene dag. Reisadvies: geel — zakkenrollerij expliciet genoemd in Port Louis en Grand Baie (beide op de route); piraterijrisico voor boten offshore (relevant voor de boottocht). Visum: visumvrij, 90 dagen." },
+    MW: { days: 14, budget: 875, lat: -13.9626, lng: 33.7741, destinations: ["Lilongwe", "Lake Malawi (Cape Maclear)", "Liwonde NP", "Zomba Plateau", "Mount Mulanje"], transport_to_next: "Vlucht (meestal via Johannesburg of Nairobi) naar Antananarivo, Madagaskar — geen directe verbinding vanuit Malawi.", notes: "Prijscorrectie (2026-07): €59→€62,50/dag (Liwonde NP-entree ~€25/dag tijdens die etappes). ⚠️ Visum aangescherpt: sinds 2 januari 2026 is een visum weer verplicht (was voor veel nationaliteiten vrijgesteld) — Nederlanders kunnen nog visum-bij-aankomst krijgen, maar Malawi stuurt nu aan op een e-visa vooraf (evisa.gov.mw, ~€45). Nieuwe regel: accommodatie moet in harde valuta (USD/GBP/EUR/ZAR) betaald worden, niet in Kwacha — zorg voor voldoende contant geld, kaarten zijn niet overal betrouwbaar. Mount Mulanje vereist een betaalde lokale gids (~€15-25/dag). Reisadvies: geel, hele land." },
+    MZ: { days: 20, budget: 1560, lat: -23.865, lng: 35.3833, destinations: ["Ilha de Moçambique", "Nampula", "Tofo", "Inhambane", "Bazaruto Archipel", "Maputo"], transport_to_next: "Over land via grensovergang Nyamapanda of Machipanda richting Zimbabwe.", notes: "Prijscorrectie (2026-07): €71→€78/dag. Visum gewijzigd (11 feb 2026): nieuw ETA-systeem (evisa.gov.mz), ~€10, minimaal 48u vooraf aanvragen — vertrouw niet meer op visum-bij-aankomst, luchtvaartmaatschappijen controleren dit nu vooraf. Reisadvies: geel voor de hele route (Ilha de Moçambique, Nampula, Tofo, Inhambane, Bazaruto, Maputo); oranje is sinds 4 december 2025 uitgebreid naar de Nampula-provincie (Erati/Memba-districten, buurdistricten van deze etappe) door het aanhoudende Cabo Delgado-conflict — check dit vlak voor vertrek, het kan verder opschuiven. Deze etappe springt geografisch groot (Nampula-Tofo-Maputo, 1.500-2.500km) — reken 2 binnenlandse vluchten (~€300-400 totaal, LAM) en de Bazaruto-boot (~€80-140) als aparte kostenposten bovenop het dagbudget." },
+    ZM: { days: 16, budget: 1825, lat: -15.3875, lng: 28.3228, destinations: ["Lusaka", "South Luangwa NP", "Lower Zambezi NP", "Livingstone/Victoria Falls"], transport_to_next: "Over land via grensovergang Mchinji/Chanida richting Malawi.", notes: "Prijs geverifieerd (2026-07), klopt (€114/dag) — mits je bij South Luangwa/Lower Zambezi voor de zelfrijd-/kampeerstijl kiest (~€65-95/dag incl. parkentree) in plaats van de all-inclusive safari-lodges (€325-465/dag, een compleet andere prijscategorie). Grensovergang Angola-Zambia bevestigd: Jimbe (Angola)/Chavuma (Zambia), een reële maar pittige route — met de hand bijgehouden immigratieregisters, niet altijd bemand, alleen kleine 4x4 (geen vrachtwagens), volledige zelfvoorziening nodig (extra banden, bergingsmateriaal, meerdaagse brandstof/eten/water); praktisch venster juni-oktober, juli-september het beste. Een lokale gids uit Zambezi-stad (~€20-40/dag) wordt aangeraden. Visum: KAZA UniVisa (~€45) dekt Zambia+Zimbabwe plus een dagtrip naar Botswana, 30 dagen, bij aankomst verkrijgbaar in Lusaka/Livingstone of aan de grens. Reisadvies: geel voor de hele route." },
+    ZW: { days: 14, budget: 1275, lat: -17.9243, lng: 25.8572, destinations: ["Victoria Falls", "Hwange NP", "Mana Pools", "Great Zimbabwe", "Bulawayo"], transport_to_next: "Over land via grensovergang Kazungula of Plumtree richting Botswana.", notes: "Prijs geverifieerd (2026-07), klopt (€91/dag) voor Victoria Falls/Bulawayo/Great Zimbabwe. ⚠️ Mana Pools is een aparte, aanzienlijke kostenpost: een verplicht gegidste meerdaagse wandel-/kanosafari (3-4 dagen) kost €1.300-1.650 p.p. all-in (een afgeslankte halve-dag-optie kan al vanaf ~€100) — niet gedekt door het dagbudget. Victoria Falls-toegang (Zimbabwe-zijde) ~€46; Hwange NP-entree ~€22/dag + gegidste wandelingen extra. Visum: e-visa/visum-bij-aankomst $30. Reisadvies: geel, hele land." },
+    BW: { days: 16, budget: 2800, lat: -19.9953, lng: 23.4239, destinations: ["Kasane", "Chobe NP", "Okavango Delta (Maun)", "Makgadikgadi Pans", "Central Kalahari"], transport_to_next: "Over land via grensovergang Mamuno/Buitepos richting Namibië.", notes: "Prijscorrectie (2026-07): €158→€175/dag. Botswana heeft vrijwel geen goedkoop-onafhankelijk alternatief: Central Kalahari vereist een eigen 4x4-huurauto of gegidste mobiele safari (geen openbaar vervoer/goedkoop alternatief); Okavango Delta-tarieven lopen sterk uiteen (~€140 community-trust dagtrip tot €370+ voor scenic flying camps — dit budget gaat uit van de goedkopere stijl). Chobe-entreeprijs verhoogd naar BWP 270/dag (~€19) per 1 april 2026. Visum: visumvrij, 90 dagen, ongewijzigd. Reisadvies: geel, hele land." },
+    NA: { days: 20, budget: 4000, lat: -22.5609, lng: 17.0658, destinations: ["Windhoek", "Sossusvlei/Namib-Naukluft", "Swakopmund", "Damaraland", "Etosha NP", "Fish River Canyon"], transport_to_next: "Over land via de grensovergang Oshikango/Santa Clara richting Angola.", notes: "⚠️ Prijscorrectie (2026-07): €100→€200/dag — de grootste correctie van deze verificatieronde. Twee oorzaken: (1) Namibië is sinds 1 april 2025 niet meer visumvrij voor Nederlanders (reciprociteitskwestie) — e-visa/visum-bij-aankomst nu verplicht, ~N$1.600 (~€80), eenmalig; (2) een 4x4-huurauto is voor vrijwel de hele route noodzakelijk (Sossusvlei, Damaraland, Etosha en Fish River Canyon zijn zonder eigen (huur)voertuig niet praktisch te doen) — huur ~€70-90/dag. Parkentrees ook verhoogd: Etosha NAD 280 p.p. + NAD 60 voertuig (per 1 april 2026), Sossusvlei/Namib-Naukluft NAD 150 + NAD 50, Fish River Canyon NAD 160 + NAD 50 + eenmalige wandelvergunning N$540. Reisadvies: geel, hele land — waarschuwing tegen 's nachts rijden (wild op de weg)." },
+    AO: { days: 11, budget: 1700, lat: -14.9077, lng: 13.4925, destinations: ["Luanda", "Lubango", "Serra da Leba", "Tundavala-kloof", "Namibe-woestijn"], transport_to_next: "Over land via een grensovergang in het zuidoosten van Angola (bijvoorbeeld bij Jimbe) richting Zambia — minder bereisde grensovergang dan de rest van deze route, vooraf extra checken op actuele begaanbaarheid.", notes: "Prijscorrectie (2026-07): €136→€155/dag. Visum: goed nieuws — sinds Presidentieel Decreet 189/23 (begin 2024) is Angola visumvrij voor EU/Nederlandse toeristen, 30 dagen per bezoek (max 90/jaar), met een gele-koorts-vaccinatiebewijs — deze 11-daagse etappe blijft daar ruim onder. Oudere bronnen die een e-visa/$120-fee noemen zijn verouderd (of komen van visumbureaus die daar garen bij spinnen) — dubbelcheck bij Angola's officiële immigratieportaal voordat je erop vertrouwt. Angola is een van Afrika's duurdere reislanden (importgoederen, dun backpacker-netwerk buiten Luanda) — dit budget gaat uit van een huurauto/chauffeur voor het Lubango/Namibe/Tundavala-gebied, waar zelfstandig reizen amper infrastructuur heeft. Reisadvies: geel voor de hele route (Cabinda en de DRC-grensstrook in Lunda-Norte zijn oranje, niet op deze route)." },
+    ZA: { days: 24, budget: 2300, lat: -26.2041, lng: 28.0473, destinations: ["Kaapstad", "Winelands (Stellenbosch)", "Garden Route", "Addo Elephant Park", "Kruger NP", "Johannesburg", "Drakensberg"], transport_to_next: "Over land de enclave Lesotho in via grensovergang Maseru Bridge (of avontuurlijker via Sani Pass).", notes: "Prijscorrectie (2026-07): €83→€96/dag — inclusief Kruger NP-natuurbehoudsheffing (~R602/dag ≈ €29, SANParks) en Addo Elephant Park (~R492/dag ≈ €26) tijdens die etappes. ⚠️ Sinds 1 juli 2026 is een online 'Traveller Declaration' verplicht vóór in-/uitreis — nieuw, check dit vooraf. Reisadvies: geel, hele land — gewapende overvallen/carjacking blijven een reëel risico (vermijd nachtelijk rijden, minibus-taxi's, solo wandelen op Table Mountain/Lion's Head), hijacking-hotspot Gauteng (Johannesburg zit op deze route)." },
+    LS: { days: 6, budget: 350, lat: -29.3151, lng: 27.4869, destinations: ["Maseru", "Malealea", "Sani Pass/Thaba-Bosiu", "Roma", "Semonkong"], transport_to_next: "Over land terug door Zuid-Afrika naar grensovergang Golela/Lavumisa richting Eswatini.", notes: "Prijs geverifieerd (2026-07), klopt (€58/dag). Sani Pass is alleen met 4x4 te nemen — een gegidste dagtour vanuit Durban kost ~R3.845 (~€185), een aparte kostenpost. Visum: visumvrij maar slechts 14 dagen (korter dan Zuid-Afrika's 90 en Eswatini's 30) — let op bij het plannen. Bergpassen (Sani Pass, Semonkong) kunnen in de Lesotho-winter (juni-september) door sneeuw dicht gaan — bouw speelruimte in." },
+    SZ: { days: 5, budget: 325, lat: -26.45, lng: 31.2, destinations: ["Mbabane", "Ezulwini Valley", "Mlilwane Wildlife Sanctuary", "Hlane Royal National Park"], transport_to_next: "Over land via grensovergang Lomahasha/Namaacha richting Mozambique.", notes: "Prijscorrectie (2026-07): €60→€65/dag. ⚠️ Politieke situatie ernstiger dan vaak aangenomen: de regering gebruikt actief de Public Order Act/Suppression of Terrorism Act tegen dissidenten, geen verantwoording voor de crackdown op protesten in 2021, een PUDEMO-leider werd in september 2024 in ballingschap vergiftigd. Demonstraties in Mbabane/Manzini kunnen onverwacht escaleren — check lokaal nieuws vlak voor vertrek en vermijd samenscholingen. Hlane's gegidste game drives zijn niet openbaar geprijsd door Big Game Parks — reken ~€25-35 per activiteit als richtprijs, bevestig rechtstreeks." },
   },
   "Nordic Arctic Expedition ❄️": {
-    FI: { days: 8, budget: 1200, destinations: ["Helsinki", "Rovaniemi", "Inari", "Lemmenjoki National Park"], transport_to_next: "Trein of bus van Rovaniemi naar Kiruna (over land, via Zweeds Lapland)", notes: "Prijs geverifieerd (2026-07), klopt." },
-    SE: { days: 6, budget: 950, destinations: ["Kiruna", "Sami-cultuur", "Abisko National Park"], transport_to_next: "Trein Kiruna–Narvik (Malmbanan/Ofotbanen, over land, spectaculaire bergroute)", notes: "Prijs geverifieerd (2026-07), klopt." },
-    NO: { days: 15, budget: 2250, destinations: ["Narvik", "Lofoten", "Senja", "Tromsø", "Noordkaap"], transport_to_next: "Vlucht vanaf Tromsø naar Longyearbyen (enige realistische verbinding naar Svalbard)", notes: "Prijs geverifieerd (2026-07), klopt." },
-    SJ: { days: 8, budget: 3725, destinations: ["Longyearbyen", "Bootexpedities", "Gletsjers", "Wildlife", "Middernachtzon"], transport_to_next: "Vlucht via Oslo naar Kopenhagen, aansluitend naar Vágar (Faeröer) — geen directe verbinding, dus omweg nodig", notes: "Prijs geverifieerd (2026-07), klopt. Buiten Longyearbyen is een gewapende gids (ijsberen) verplicht — al inbegrepen in georganiseerde tochten." },
-    FO: { days: 7, budget: 1675, destinations: ["Tórshavn", "Saksun", "Gjógv", "Kliffen", "Wandelroutes"], transport_to_next: "Korte vlucht Vágar–Reykjavik (of seizoensgebonden veerboot Smyril Line, alleen in zomer)", notes: "Prijs geverifieerd (2026-07), klopt. Faeröer zijn geen EU/Schengen (wel Noordse Paspoortunie) — gewoon paspoort/ID nodig bij aankomst." },
-    IS: { days: 14, budget: 2800, destinations: ["Reykjavik", "Golden Circle", "Zuidkust", "Vatnajökull", "Jökulsárlón", "Snæfellsnes", "Akureyri"], transport_to_next: "Vlucht Reykjavik–Ilulissat (via Nuuk), geen veerverbinding mogelijk", notes: "Prijs geverifieerd (2026-07), klopt (incl. huurauto, vrijwel noodzakelijk). Geel reisadvies voor het Reykjanes-schiereiland vanwege aanhoudende vulkanische activiteit bij Grindavík." },
-    GL: { days: 10, budget: 3725, destinations: ["Nuuk", "Inuitcultuur", "Ilulissat", "IJsfjord", "Disko Bay", "Boottochten"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Nuuk (via Reykjavik of Kopenhagen)", notes: "Prijs geverifieerd (2026-07), krap maar houdbaar — binnenlandse vluchten tussen plaatsen (Air Greenland, vrijwel monopolie) zijn een structurele, geen incidentele kostenpost. Geen EU/Schengen (wel Rijk Denemarken) — paspoortcontrole bij aankomst/vertrek, EHIC niet geldig." },
+    FI: { days: 8, budget: 1200, lat: 66.5039, lng: 25.7294, destinations: ["Helsinki", "Rovaniemi", "Inari", "Lemmenjoki National Park"], transport_to_next: "Trein of bus van Rovaniemi naar Kiruna (over land, via Zweeds Lapland)", notes: "Prijs geverifieerd (2026-07), klopt." },
+    SE: { days: 6, budget: 950, lat: 67.8558, lng: 20.2253, destinations: ["Kiruna", "Sami-cultuur", "Abisko National Park"], transport_to_next: "Trein Kiruna–Narvik (Malmbanan/Ofotbanen, over land, spectaculaire bergroute)", notes: "Prijs geverifieerd (2026-07), klopt." },
+    NO: { days: 15, budget: 2250, lat: 69.6492, lng: 18.9553, destinations: ["Narvik", "Lofoten", "Senja", "Tromsø", "Noordkaap"], transport_to_next: "Vlucht vanaf Tromsø naar Longyearbyen (enige realistische verbinding naar Svalbard)", notes: "Prijs geverifieerd (2026-07), klopt." },
+    SJ: { days: 8, budget: 3725, lat: 78.2232, lng: 15.6469, destinations: ["Longyearbyen", "Bootexpedities", "Gletsjers", "Wildlife", "Middernachtzon"], transport_to_next: "Vlucht via Oslo naar Kopenhagen, aansluitend naar Vágar (Faeröer) — geen directe verbinding, dus omweg nodig", notes: "Prijs geverifieerd (2026-07), klopt. Buiten Longyearbyen is een gewapende gids (ijsberen) verplicht — al inbegrepen in georganiseerde tochten." },
+    FO: { days: 7, budget: 1675, lat: 62.0107, lng: -6.7741, destinations: ["Tórshavn", "Saksun", "Gjógv", "Kliffen", "Wandelroutes"], transport_to_next: "Korte vlucht Vágar–Reykjavik (of seizoensgebonden veerboot Smyril Line, alleen in zomer)", notes: "Prijs geverifieerd (2026-07), klopt. Faeröer zijn geen EU/Schengen (wel Noordse Paspoortunie) — gewoon paspoort/ID nodig bij aankomst." },
+    IS: { days: 14, budget: 2800, lat: 64.1466, lng: -21.9426, destinations: ["Reykjavik", "Golden Circle", "Zuidkust", "Vatnajökull", "Jökulsárlón", "Snæfellsnes", "Akureyri"], transport_to_next: "Vlucht Reykjavik–Ilulissat (via Nuuk), geen veerverbinding mogelijk", notes: "Prijs geverifieerd (2026-07), klopt (incl. huurauto, vrijwel noodzakelijk). Geel reisadvies voor het Reykjanes-schiereiland vanwege aanhoudende vulkanische activiteit bij Grindavík." },
+    GL: { days: 10, budget: 3725, lat: 69.2198, lng: -51.1, destinations: ["Nuuk", "Inuitcultuur", "Ilulissat", "IJsfjord", "Disko Bay", "Boottochten"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Nuuk (via Reykjavik of Kopenhagen)", notes: "Prijs geverifieerd (2026-07), krap maar houdbaar — binnenlandse vluchten tussen plaatsen (Air Greenland, vrijwel monopolie) zijn een structurele, geen incidentele kostenpost. Geen EU/Schengen (wel Rijk Denemarken) — paspoortcontrole bij aankomst/vertrek, EHIC niet geldig." },
   },
   "Patagonia & Antarctica Expedition 🧊": {
-    CL: { days: 24, budget: 3200, destinations: ["Chiloé Island", "Puerto Montt", "Carretera Austral (Pumalín & Queulat)", "Puerto Río Tranquilo & Marble Caves", "Cerro Castillo", "Puerto Natales", "Torres del Paine National Park", "Punta Arenas"], transport_to_next: "Overland per bus vanaf Puerto Natales naar El Calafate (grensovergang Chili-Argentinië, ca. 5-6 uur)", notes: "Prijs geverifieerd (2026-07), klopt. Torres del Paine-piek: refugio-overnachtingen incl. maaltijden lopen op tot $100-150/nacht — buiten het park blijft het dagtarief haalbaar." },
-    AR: { days: 18, budget: 2375, destinations: ["El Calafate", "Perito Moreno Glacier", "El Chaltén", "Fitz Roy & Laguna de los Tres", "Cerro Torre", "Ushuaia", "Tierra del Fuego National Park", "Beagle Channel"], transport_to_next: "Inschepen in Ushuaia voor de expeditiecruise — oversteek van de Drake Passage (ca. 2 dagen varen)", notes: "Prijs geverifieerd (2026-07), klopt. Bosbrandseizoen december-maart in Patagonië (o.a. bij El Chaltén) — check actuele situatie vlak voor vertrek." },
-    AQ: { days: 11, budget: 9500, destinations: ["Expedition Cruise from Ushuaia", "South Shetland Islands", "Antarctic Peninsula", "Glaciers & Icebergs", "Penguin colonies", "Whales", "Return to Ushuaia"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Ushuaia", notes: "Prijs geverifieerd (2026-07): €9.500 zit prima binnen de reële bandbreedte voor een instap/gedeelde-hut Antarctica-cruise (2026: ≈$8.000-12.000)." },
+    CL: { days: 24, budget: 3200, lat: -50.9423, lng: -73.4068, destinations: ["Chiloé Island", "Puerto Montt", "Carretera Austral (Pumalín & Queulat)", "Puerto Río Tranquilo & Marble Caves", "Cerro Castillo", "Puerto Natales", "Torres del Paine National Park", "Punta Arenas"], transport_to_next: "Overland per bus vanaf Puerto Natales naar El Calafate (grensovergang Chili-Argentinië, ca. 5-6 uur)", notes: "Prijs geverifieerd (2026-07), klopt. Torres del Paine-piek: refugio-overnachtingen incl. maaltijden lopen op tot $100-150/nacht — buiten het park blijft het dagtarief haalbaar." },
+    AR: { days: 18, budget: 2375, lat: -54.8019, lng: -68.303, destinations: ["El Calafate", "Perito Moreno Glacier", "El Chaltén", "Fitz Roy & Laguna de los Tres", "Cerro Torre", "Ushuaia", "Tierra del Fuego National Park", "Beagle Channel"], transport_to_next: "Inschepen in Ushuaia voor de expeditiecruise — oversteek van de Drake Passage (ca. 2 dagen varen)", notes: "Prijs geverifieerd (2026-07), klopt. Bosbrandseizoen december-maart in Patagonië (o.a. bij El Chaltén) — check actuele situatie vlak voor vertrek." },
+    AQ: { days: 11, budget: 9500, lat: -62.2, lng: -58.6333, destinations: ["Expedition Cruise from Ushuaia", "South Shetland Islands", "Antarctic Peninsula", "Glaciers & Icebergs", "Penguin colonies", "Whales", "Return to Ushuaia"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Ushuaia", notes: "Prijs geverifieerd (2026-07): €9.500 zit prima binnen de reële bandbreedte voor een instap/gedeelde-hut Antarctica-cruise (2026: ≈$8.000-12.000)." },
   },
   "India & Himalaya Expedition 🏔️": {
-    IN: { days: 30, budget: 1275, destinations: ["Delhi", "Agra & Jaipur (Golden Triangle)", "Pushkar, Jodhpur & Jaisalmer (West-Rajasthan)", "Udaipur", "Amritsar", "Dharamshala & Manali", "Rishikesh", "Varanasi"], transport_to_next: "Bus/trein naar Sunauli en te voet de grensovergang naar Belahiya (Nepal), dan bus door naar Lumbini/Pokhara — alternatief: korte vlucht Varanasi-Kathmandu", notes: "Prijs geverifieerd (2026-07), klopt. Staakt-het-vuren India-Pakistan (mei 2025) houdt vooralsnog stand maar blijft onvoorspelbaar — niet relevant voor deze route (geen Kasjmir), wel checken als je vanuit Amritsar de Wagah Border-ceremonie bezoekt." },
-    NP: { days: 21, budget: 1260, destinations: ["Lumbini", "Chitwan National Park", "Pokhara", "Annapurna Region", "Kathmandu", "Patan", "Bhaktapur"], transport_to_next: "Vlucht Kathmandu-Paro (spectaculaire Himalaya-vlucht, alleen door Drukair of Bhutan Airlines uitgevoerd, Bhutan-visum/permit vooraf regelen)", notes: "Prijscorrectie (2026-07): €47,60→€60/dag. Annapurna-trekdagen zijn duurder dan het gemiddelde: verplichte gids (sinds 2023, geen individueel trekken meer) + porter samen al snel $50-60/dag, plus TIMS/ACAP-vergunningen (~$50 eenmalig)." },
-    BT: { days: 8, budget: 2275, destinations: ["Paro", "Thimphu", "Dochula Pass", "Punakha", "Bumthang (optioneel)", "Tiger's Nest Monastery"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Paro International Airport", notes: "Prijs geverifieerd (2026-07), klopt ruim — de verplichte Sustainable Development Fee ($100/nacht, ongewijzigd sinds 2023) zit al comfortabel in dit dagtarief verwerkt. Vlucht Paro-Kathmandu (~$400-500 enkele reis) is een aparte kostenpost, niet in dit dagtarief." },
+    IN: { days: 30, budget: 1275, lat: 28.6139, lng: 77.209, destinations: ["Delhi", "Agra & Jaipur (Golden Triangle)", "Pushkar, Jodhpur & Jaisalmer (West-Rajasthan)", "Udaipur", "Amritsar", "Dharamshala & Manali", "Rishikesh", "Varanasi"], transport_to_next: "Bus/trein naar Sunauli en te voet de grensovergang naar Belahiya (Nepal), dan bus door naar Lumbini/Pokhara — alternatief: korte vlucht Varanasi-Kathmandu", notes: "Prijs geverifieerd (2026-07), klopt. Staakt-het-vuren India-Pakistan (mei 2025) houdt vooralsnog stand maar blijft onvoorspelbaar — niet relevant voor deze route (geen Kasjmir), wel checken als je vanuit Amritsar de Wagah Border-ceremonie bezoekt." },
+    NP: { days: 21, budget: 1260, lat: 27.7172, lng: 85.324, destinations: ["Lumbini", "Chitwan National Park", "Pokhara", "Annapurna Region", "Kathmandu", "Patan", "Bhaktapur"], transport_to_next: "Vlucht Kathmandu-Paro (spectaculaire Himalaya-vlucht, alleen door Drukair of Bhutan Airlines uitgevoerd, Bhutan-visum/permit vooraf regelen)", notes: "Prijscorrectie (2026-07): €47,60→€60/dag. Annapurna-trekdagen zijn duurder dan het gemiddelde: verplichte gids (sinds 2023, geen individueel trekken meer) + porter samen al snel $50-60/dag, plus TIMS/ACAP-vergunningen (~$50 eenmalig)." },
+    BT: { days: 8, budget: 2275, lat: 27.4728, lng: 89.639, destinations: ["Paro", "Thimphu", "Dochula Pass", "Punakha", "Bumthang (optioneel)", "Tiger's Nest Monastery"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Paro International Airport", notes: "Prijs geverifieerd (2026-07), klopt ruim — de verplichte Sustainable Development Fee ($100/nacht, ongewijzigd sinds 2023) zit al comfortabel in dit dagtarief verwerkt. Vlucht Paro-Kathmandu (~$400-500 enkele reis) is een aparte kostenpost, niet in dit dagtarief." },
   },
 };
 
 /** Looks up the seeded content for one country within one expedition — {code, name, days, budget, destinations, transport_to_next}. */
 function rbContentFor(routeName, code, name) {
   const c = (RB_EXPEDITION_CONTENT[routeName] || {})[code] || {};
-  return { code, name, days: c.days, budget: c.budget, destinations: c.destinations, transport_to_next: c.transport_to_next, notes: c.notes };
+  return { code, name, days: c.days, budget: c.budget, destinations: c.destinations, transport_to_next: c.transport_to_next, notes: c.notes, lat: c.lat, lng: c.lng };
 }
 
 function rbSeedPredefinedExpeditions() {
@@ -1346,19 +1458,19 @@ function rbBuildMediterraneanExpeditionRoute() {
       note: "Van Moors Spanje via Berbercultuur in Marokko naar Punisch/Romeins Tunesië — het westelijke Middellandse Zeegebied waar Feniciërs, Carthagers, Romeinen en de islamitische wereld elkaar opvolgden.",
       countries: [
         {
-          code: 'ES', name: 'Spain', days: 10, budget: 600,
+          code: 'ES', name: 'Spain', days: 10, budget: 600, lat: 37.3891, lng: -5.9845,
           destinations: ['Málaga', 'Granada (Alhambra)', 'Córdoba (Mezquita)', 'Sevilla'],
           notes: "Openingsetappe van de expeditie: Moorse en Romeinse geschiedenis in Andalusië, van de Alhambra in Granada tot de Mezquita in Córdoba. Historische binnensteden als rustige start voor de rest van de reis. Verborgen parel: Ronda, met zijn kloofbrug, als tussenstop tussen Málaga en Sevilla.",
           transport_to_next: "Veerboot Tarifa/Algeciras-Tanger (35-90 minuten, meerdere afvaarten per dag) — kortste en goedkoopste oversteek naar Afrika, geen vlucht nodig",
         },
         {
-          code: 'MA', name: 'Morocco', days: 10, budget: 450,
+          code: 'MA', name: 'Morocco', days: 10, budget: 450, lat: 31.6295, lng: -7.9811,
           destinations: ['Tanger', 'Chefchaouen', 'Fes', 'Volubilis', 'Marrakech'],
           notes: "Berbercultuur, islamitische geschiedenis en Romeinse overblijfselen (Volubilis) naast elkaar. Medina's van Fes en Marrakech en de blauwe stad Chefchaouen als hoogtepunten; treinen tussen de grote steden zijn goed en goedkoop.",
           transport_to_next: "Vlucht Marrakech/Casablanca-Tunis — geen praktische land- of veerbootroute door de gesloten grens met Algerije",
         },
         {
-          code: 'TN', name: 'Tunisia', days: 6, budget: 220,
+          code: 'TN', name: 'Tunisia', days: 6, budget: 220, lat: 36.8065, lng: 10.1815,
           destinations: ['Tunis', 'Carthago', 'Dougga', 'El Jem', 'Sidi Bou Said'],
           notes: "Carthaagse beschaving (Carthago) en Romeins Noord-Afrika (Dougga, het amfitheater van El Jem, groter dan dat van Rome zelf) dicht bij elkaar; Sidi Bou Said als rustig, schilderachtig dorpje tussen de geschiedenis door.",
           transport_to_next: "Vlucht Tunis-Malta — geen betrouwbare jaarronde veerbootverbinding, alleen incidentele zomerdiensten",
@@ -1372,31 +1484,31 @@ function rbBuildMediterraneanExpeditionRoute() {
       note: "Van tempels ouder dan de piramides (Malta) via Magna Graecia en Romeins Zuid-Italië naar het hart van het Romeinse Rijk, met de Nuraghe-beschaving van Sardinië als unieke afsluiter.",
       countries: [
         {
-          code: 'MT', name: 'Malta', days: 5, budget: 375,
+          code: 'MT', name: 'Malta', days: 5, budget: 375, lat: 35.8989, lng: 14.5146,
           destinations: ['Valletta', 'Mdina', 'Gozo', 'Ġgantija-tempels', 'Hypogeum'],
           notes: "De Ġgantija-tempels en het Hypogeum zijn ouder dan de piramides van Gizeh — een van de oudste vrijstaande bouwwerken ter wereld. Daarnaast de Ridders van Malta in Valletta en Mdina, met een rustiger Gozo als tegenhanger.",
           transport_to_next: "Veerboot Valletta-Pozzallo of Valletta-Catania (Virtu Ferries, 1,5-3 uur) naar Sicilië",
         },
         {
-          code: 'IT', name: 'Italy', days: 10, budget: 650,
+          code: 'IT', name: 'Italy', days: 10, budget: 650, lat: 38.1157, lng: 13.3613,
           destinations: ['Palermo', 'Cefalù', 'Taormina', 'Syracuse', 'Agrigento (Valle dei Templi)', 'Etna'],
           notes: "Magna Graecia (Agrigento, Syracuse), Romeinse, Normandische en Arabische invloeden door elkaar op één eiland, met de Etna als natuurlijke afwisseling. Verborgen parel: het vissersdorpje Marzamemi, veel rustiger dan Taormina.",
           transport_to_next: "Veerboot over de Straat van Messina (Messina-Villa San Giovanni, 20-30 minuten) naar het vasteland, dan verder naar Napels",
         },
         {
-          code: 'IT', name: 'Italy', days: 6, budget: 450,
+          code: 'IT', name: 'Italy', days: 6, budget: 450, lat: 40.8518, lng: 14.2681,
           destinations: ['Reggio Calabria', 'Napels', 'Pompeï', 'Herculaneum'],
           notes: "Romeinse geschiedenis in het echt bevroren: Pompeï en Herculaneum, beide verwoest en geconserveerd door de Vesuvius. Napels zelf als levendige, chaotische contramal.",
           transport_to_next: "Trein Napoli-Roma (hogesnelheidstrein, circa 1 uur 10 minuten)",
         },
         {
-          code: 'IT', name: 'Italy', days: 7, budget: 700,
+          code: 'IT', name: 'Italy', days: 7, budget: 700, lat: 41.9028, lng: 12.4964,
           destinations: ['Colosseum', 'Forum Romanum', 'Pantheon', 'Vaticaan'],
           notes: "Het hart van het Romeinse Rijk en de klassieke geschiedenis waar de hele expeditie steeds weer naar teruggrijpt — Romeinse invloeden duiken ook op in Spanje, Tunesië, Turkije, Egypte en Jordanië.",
           transport_to_next: "Vlucht Rome-Cagliari, of nachtveerboot Civitavecchia-Olbia/Cagliari (circa 7-8 uur) voor wie de boot verkiest boven vliegen",
         },
         {
-          code: 'IT', name: 'Italy', days: 6, budget: 600,
+          code: 'IT', name: 'Italy', days: 6, budget: 600, lat: 39.2238, lng: 9.1217,
           destinations: ['Cagliari', 'Su Nuraxi', 'Costa Smeralda'],
           notes: "De Nuraghe-beschaving (Su Nuraxi, UNESCO) is uniek voor Sardinië en ouder dan de Romeinse aanwezigheid op het eiland. Costa Smeralda voor de kust, de rustigere Costa Verde als minder toeristisch alternatief.",
           transport_to_next: "Veerboot Santa Teresa Gallura-Bonifacio (circa 1 uur) — de kortste oversteek van de hele route",
@@ -1410,13 +1522,13 @@ function rbBuildMediterraneanExpeditionRoute() {
       note: "Twee Franse etappes die Bonifacio's kliffen en de Gallo-Romeinse monumenten van de Provence verbinden, voordat de reis via een vlucht de Egeïsche Zee oversteekt.",
       countries: [
         {
-          code: 'FR', name: 'France', days: 5, budget: 475,
+          code: 'FR', name: 'France', days: 5, budget: 475, lat: 41.9192, lng: 8.7386,
           destinations: ['Bonifacio', 'Ajaccio', 'Bavella'],
           notes: "Mediterrane natuur op zijn best: de kalksteenkliffen van Bonifacio, de granieten naalden van Bavella. Franse en Italiaanse invloeden lopen hier door elkaar. Verborgen parel: het Scandola natuurreservaat, alleen per boot te bezoeken.",
           transport_to_next: "Veerboot Ajaccio/Bastia-Marseille of Toulon (Corsica Ferries/La Méridionale, circa 6-10 uur, vaak als nachtboot)",
         },
         {
-          code: 'FR', name: 'France', days: 6, budget: 600,
+          code: 'FR', name: 'France', days: 6, budget: 600, lat: 43.2965, lng: 5.3698,
           destinations: ['Marseille', 'Arles', 'Nîmes', 'Pont du Gard'],
           notes: "Gallo-Romeinse geschiedenis (het aquaduct van de Pont du Gard, de arena's van Arles en Nîmes) in Provençaalse sfeer. Verborgen parel: de Camargue bij Arles, met wilde paarden en flamingo's, als natuurpauze.",
           transport_to_next: "Vlucht Marseille-Athene — geen praktische land- of veerbootroute gezien de afstand",
@@ -1430,19 +1542,19 @@ function rbBuildMediterraneanExpeditionRoute() {
       note: "Van de Griekse oudheid op het vasteland via de Minoïsche beschaving van Kreta naar de Grieks-Romeins-Byzantijnse laag van Cyprus, vlak voor de oversteek naar Anatolië.",
       countries: [
         {
-          code: 'GR', name: 'Greece', days: 12, budget: 840,
+          code: 'GR', name: 'Greece', days: 12, budget: 840, lat: 37.9838, lng: 23.7275,
           destinations: ['Athene', 'Delphi', 'Olympia', 'Meteora', 'Peloponnesos'],
           notes: "Griekse oudheid, filosofie, democratie en mythologie op de belangrijkste locaties zelf: de Akropolis, het orakel van Delphi, de oorspronkelijke Olympische Spelen in Olympia. Verborgen parel: Monemvasia en Nafplio op de Peloponnesos, veel rustiger dan Athene.",
           transport_to_next: "Nachtveerboot Piraeus-Heraklion (circa 7-9 uur) naar Kreta",
         },
         {
-          code: 'GR', name: 'Greece', days: 7, budget: 450,
+          code: 'GR', name: 'Greece', days: 7, budget: 450, lat: 35.3387, lng: 25.1442,
           destinations: ['Heraklion', 'Knossos', 'Chania', 'Samariakloof'],
           notes: "De Minoïsche beschaving (Knossos) als oudste laag van de Griekse geschiedenis, gevolgd door eilandcultuur in Chania en een stevige wandeling door de Samariakloof. Verborgen parel: het roze zandstrand van Elafonisi, in het uiterste westen van het eiland.",
           transport_to_next: "Vlucht Heraklion-Larnaca (meestal met overstap in Athene) — geen betrouwbare directe veerbootverbinding",
         },
         {
-          code: 'CY', name: 'Cyprus', days: 5, budget: 400,
+          code: 'CY', name: 'Cyprus', days: 5, budget: 400, lat: 35.1856, lng: 33.3823,
           destinations: ['Paphos', 'Limassol', 'Nicosia'],
           notes: "Griekse, Romeinse en Byzantijnse lagen op één eiland: de mozaïeken van Paphos (UNESCO), het Romeinse theater van Kourion bij Limassol als verborgen parel, en de gedeelde hoofdstad Nicosia.",
           transport_to_next: "Vlucht Larnaca-Istanbul — rechtstreeks en kort, geen praktisch alternatief over water",
@@ -1456,7 +1568,7 @@ function rbBuildMediterraneanExpeditionRoute() {
       note: "Eén grote etappe die Byzantium, het Ottomaanse Rijk en de Romeinse steden van de Egeïsche kust samenbrengt, met Cappadocië als brug naar de rest van Anatolië.",
       countries: [
         {
-          code: 'TR', name: 'Turkey', days: 20, budget: 850,
+          code: 'TR', name: 'Turkey', days: 20, budget: 850, lat: 41.0082, lng: 28.9784,
           destinations: ['Istanbul', 'Troje', 'Pergamon', 'Efeze', 'Pamukkale', 'Cappadocië'],
           notes: "Byzantijnse en Ottomaanse geschiedenis in Istanbul, Romeinse steden (Efeze, Pergamon) en oude Anatolische beschavingen (Troje) op één lijn, met de rotsformaties van Cappadocië en de kalksteenterrassen van Pamukkale als natuurlijke hoogtepunten. Verborgen parel: Assos en Aphrodisias, veel rustiger dan Efeze maar minstens zo indrukwekkend.",
           transport_to_next: "Vlucht Istanbul-Caïro — geen praktische land- of zeeroute via Syrië/Libanon",
@@ -1470,31 +1582,31 @@ function rbBuildMediterraneanExpeditionRoute() {
       note: "Van de oud-Egyptische beschaving via de Nabateese handelsroutes van Jordanië en de Arabische handelswereld van Oman en de Dilmun-beschaving van Bahrein naar het moderne Qatar als bewust hedendaags slotakkoord.",
       countries: [
         {
-          code: 'EG', name: 'Egypt', days: 14, budget: 784,
+          code: 'EG', name: 'Egypt', days: 14, budget: 784, lat: 30.0444, lng: 31.2357,
           destinations: ['Caïro', 'Gizeh', 'Luxor', 'Karnak', 'Aswan', 'Abu Simbel'],
           notes: "De oud-Egyptische beschaving in haar geheel: piramides (Gizeh), tempels (Karnak, Abu Simbel) en de Nijl als verbindende rode draad. Verborgen parel: de Siwa-oase, ver van de gebruikelijke route maar wel een omweg waard. Reisadvies (2026-07): geel voor Caïro/Gizeh/Luxor/Aswan/Abu Simbel — gewoon te bezoeken; alleen (Noord-)Sinaï buiten deze route is oranje/rood.",
           transport_to_next: "Veerboot Nuweiba-Aqaba (alternatief: vlucht Caïro-Amman) — kortste route naar Jordanië zonder om te vliegen via de Golf",
         },
         {
-          code: 'JO', name: 'Jordan', days: 8, budget: 500,
+          code: 'JO', name: 'Jordan', days: 8, budget: 500, lat: 31.9454, lng: 35.9284,
           destinations: ['Amman', 'Jerash', 'Petra', 'Wadi Rum', 'Dode Zee'],
           notes: "Nabateese handelsroutes (Petra), Romeinse geschiedenis (Jerash) en de woestijn van Wadi Rum. December geeft aangename dagtemperaturen voor de wandeling naar de Schatkamer en voor kamperen in Wadi Rum. Praktische tip: de Jordan Pass (~50-60 JOD, ruim vooraf online kopen) bundelt toegang tot Petra/Jerash/Wadi Rum/40 andere sites en scheldt de losse 40 JOD-visumfee kwijt bij een verblijf van 3+ nachten — voordeliger dan losse tickets. ⚠️ Reisadvies (juli 2026): oranje voor heel Jordanië (normaal alleen de grensstreek met Syrië/Irak) door het regionale Iran-Israël/VS-conflict — check nederlandwereldwijd.nl vlak voor vertrek, dit kan alweer zijn gewijzigd.",
           transport_to_next: "Vlucht Amman-Muscat — geen landroute, overland via Saoedi-Arabië is visumtechnisch onpraktisch",
         },
         {
-          code: 'OM', name: 'Oman', days: 7, budget: 770,
+          code: 'OM', name: 'Oman', days: 7, budget: 770, lat: 23.588, lng: 58.3829,
           destinations: ['Muscat', 'Nizwa', 'Jebel Shams', 'Wahiba Sands'],
           notes: "Arabische handelsroutes, forten (Nizwa) en zowel bergen (Jebel Shams, de \"Grand Canyon van Arabië\") als woestijn (Wahiba Sands) op korte afstand van elkaar. Verborgen parel: Bahla Fort en de eeuwenoude falaj-irrigatiekanalen bij Nizwa (beide UNESCO). Prijscheck (2026-07): Jebel Shams en Wahiba Sands zijn niet met openbaar vervoer te doen — een huurauto (4x4) of tour is hier verplicht, wat het dagbudget flink optrekt t.o.v. Muscat zelf. ⚠️ Reisadvies (juli 2026): oranje voor Musandam/Duqm/Salalah/Sohar (geraakt door Iraanse aanvallen), maar geel — dit hele traject — voor Muscat/Nizwa/Jebel Shams/Wahiba Sands. Check nederlandwereldwijd.nl vlak voor vertrek, de situatie is volatiel.",
           transport_to_next: "Vlucht Muscat-Manama — korte Golfvlucht",
         },
         {
-          code: 'BH', name: 'Bahrain', days: 3, budget: 300,
+          code: 'BH', name: 'Bahrain', days: 3, budget: 300, lat: 26.2285, lng: 50.586,
           destinations: ["Qal'at al-Bahrein (Bahrein Fort)", 'Bahrain National Museum', 'Al Fateh Grand Mosque', 'Tree of Life'],
           notes: "Qal'at al-Bahrein (UNESCO) was de hoofdstad van de Dilmun-beschaving, een Bronstijd-handelsbeschaving die al rond 2000 v.Chr. tussen Mesopotamië en de Indusvallei handelde — een nog oudere laag geschiedenis dan de Nabateese en Arabische handelsroutes eerder in deze etappe. De Tree of Life, een eeuwenoude boom die op onverklaarde wijze midden in de woestijn overleeft, als natuurlijke curiositeit tussen de geschiedenis door. ⚠️ Reisadvies (juli 2026): ROOD — niet reizen. Iran voert aanvallen uit op militaire doelen in Bahrein, met waarschuwingen voor mogelijke aanslagen in centraal Manama; geen Nederlandse ambassade in Bahrein (dichtstbijzijnde: Koeweit). Op dit moment een harde no-go, geen budget-/planningskwestie — check nederlandwereldwijd.nl vlak voor vertrek, dit kan (hopelijk) weer zijn veranderd.",
           transport_to_next: "Vlucht Manama-Doha — korte Golfvlucht",
         },
         {
-          code: 'QA', name: 'Qatar', days: 3, budget: 315,
+          code: 'QA', name: 'Qatar', days: 3, budget: 315, lat: 25.2854, lng: 51.531,
           destinations: ['Doha'],
           notes: "Bewust modern en hedendaags als afsluiting: islamitische architectuur (Museum of Islamic Art) en musea als contrast met de duizenden jaren geschiedenis eerder in de reis. ⚠️ Reisadvies (juli 2026): oranje — Qatar is geraakt door Iraanse raketten/drones gericht op Amerikaanse doelen. Reizen wordt alleen aangeraden als het noodzakelijk is. Check nederlandwereldwijd.nl vlak voor vertrek, de situatie kan alweer zijn gewijzigd.",
           transport_to_next: "Einde van de expeditie — terugvlucht vanuit Doha (Hamad International Airport) naar Nederland",
@@ -1625,7 +1737,7 @@ function rbBuildNorthAmericaRoute() {
       season: 'Juni',
       budget: 900,
       countries: [{
-        code: 'CA', name: 'Canada', days: 8, budget: 1200,
+        code: 'CA', name: 'Canada', days: 8, budget: 1200, lat: 44.6488, lng: -63.5752,
         destinations: ['Halifax', "Peggy's Cove", 'Lunenburg', 'Cape Breton Island & Cabot Trail'],
         transport_to_next: "Vlucht Halifax-Quebec City (~2 uur) — geen praktische overlandroute gezien de afstand door onbewoond Oost-Canada",
         notes: 'Startblok: vlucht Nederland-Halifax. Kennismaking met Canada via ruige Atlantische kust, vissersdorpjes, vuurtorens en Keltisch/Acadische cultuur op Cape Breton. Prijs geverifieerd (2026-07), klopt. eTA (bij inreis per vlucht) kost slechts ~€4,70, 5 jaar geldig.',
@@ -1637,7 +1749,7 @@ function rbBuildNorthAmericaRoute() {
       season: 'Juni',
       budget: 1500,
       countries: [{
-        code: 'CA', name: 'Canada', days: 10, budget: 1675,
+        code: 'CA', name: 'Canada', days: 10, budget: 1675, lat: 46.8139, lng: -71.208,
         destinations: ['Quebec City (Vieux-Québec)', 'Montreal (Old Port & Mile End)', 'Ottawa (Parliament Hill & musea)', 'Toronto (skyline, met Niagara Falls als dagtrip)'],
         transport_to_next: "Trein (Via Rail) Quebec City-Montreal-Ottawa-Toronto, daarna vlucht Toronto-Calgary (~4 uur) om de huurauto voor de Rockies op te halen",
         notes: 'Geen lange autorit door Canada: de treinverbindingen tussen deze vier steden zijn snel en comfortabel. Franse cultuur en koloniale geschiedenis in Quebec City, eten en moderne stad in Montreal, politiek en musea in Ottawa, skyline en Niagara Falls vanuit Toronto.',
@@ -1649,7 +1761,7 @@ function rbBuildNorthAmericaRoute() {
       season: 'Juni-Juli',
       budget: 2600,
       countries: [{
-        code: 'CA', name: 'Canada', days: 17, budget: 3400,
+        code: 'CA', name: 'Canada', days: 17, budget: 3400, lat: 51.1784, lng: -115.5708,
         destinations: ['Banff National Park', 'Lake Louise & Moraine Lake', 'Yoho National Park (Emerald Lake)', 'Icefields Parkway', 'Jasper National Park', 'Mount Robson Provincial Park', 'Whistler'],
         transport_to_next: 'Auto Whistler-Vancouver (~2 uur), huurauto inleveren in Vancouver — dezelfde huurauto blijft binnen Canada, dus geen one-way- of grenskosten',
         notes: 'Het natuurhoogtepunt van de hele expeditie: gletsjermeren, een van de mooiste wegen ter wereld (Icefields Parkway) en goede kans op wildlife (elanden, beren, bighorn sheep). Huurauto 2 wordt hier opgehaald in Calgary. Prijs geverifieerd (2026-07), klopt (mits ruim vooraf geboekt in hoogseizoen). ⚠️ Moraine Lake Road is alleen bereikbaar met de verplichte Parks Canada-shuttle (geen privéauto toegestaan) — boeking opent doorgaans medio april, beperkt aantal plekken, ruim vooraf regelen.',
@@ -1661,7 +1773,7 @@ function rbBuildNorthAmericaRoute() {
       season: 'Juli',
       budget: 700,
       countries: [{
-        code: 'CA', name: 'Canada', days: 5, budget: 875,
+        code: 'CA', name: 'Canada', days: 5, budget: 875, lat: 49.2827, lng: -123.1207,
         destinations: ['Stanley Park', 'Granville Island', 'North Shore (Grouse Mountain / Capilano Suspension Bridge)', 'Gastown & Kitsilano Beach'],
         transport_to_next: "Trein (Amtrak Cascades) of bus Vancouver-Seattle (~4 uur) — eenvoudige grensovergang; in Seattle wordt huurauto 3 voor de VS-roadtrip opgehaald",
         notes: 'Laatste Canadese stop: stad tussen bergen en zee, goed te combineren met bergen (North Shore) en water (Stanley Park, Granville Island) zonder huurauto.',
@@ -1673,7 +1785,7 @@ function rbBuildNorthAmericaRoute() {
       season: 'Juli-Augustus',
       budget: 2200,
       countries: [{
-        code: 'US', name: 'United States', days: 15, budget: 3000,
+        code: 'US', name: 'United States', days: 15, budget: 3000, lat: 47.6062, lng: -122.3321,
         destinations: ['Seattle (Pike Place Market, Space Needle)', 'Olympic National Park (Hoh Rainforest & Hurricane Ridge)', 'Mount Rainier National Park', 'Oregon Coast (Cannon Beach, Astoria)', 'Redwood National & State Parks'],
         transport_to_next: 'Auto verder naar San Francisco (~5-6 uur vanaf de Redwoods), huurauto inleveren in San Francisco',
         notes: 'Amerikaanse natuur in het groot: regenwoud, vulkanen, ruige kustlijn en de hoogste bomen ter wereld. Huurauto 3 wordt hier opgehaald in Seattle. Prijs geverifieerd (2026-07), klopt. ESTA is per 30 sept. 2025 verhoogd naar $40,27 (was $21) — 2 jaar geldig.',
@@ -1685,7 +1797,7 @@ function rbBuildNorthAmericaRoute() {
       season: 'Augustus',
       budget: 2100,
       countries: [{
-        code: 'US', name: 'United States', days: 14, budget: 2675,
+        code: 'US', name: 'United States', days: 14, budget: 2675, lat: 37.7749, lng: -122.4194,
         destinations: ['San Francisco (Golden Gate Bridge, Alcatraz, Mission District)', 'Yosemite Valley', 'Sequoia & Kings Canyon National Parks'],
         transport_to_next: 'Einde van de expeditie — terugvlucht vanuit San Francisco (SFO) naar Nederland',
         notes: "Van de stad direct de bergen in: Yosemite's granieten wanden en watervallen, gevolgd door de gigantische sequoia's van Sequoia/Kings Canyon. Geen nieuwe huurauto nodig — dagtochten of een korte huurperiode volstaan vanuit San Francisco.",
@@ -1741,31 +1853,31 @@ function rbBuildOceaniaExpeditionRoute() {
       note: 'Vijf eilandengroepen in het droge seizoen, ruim vóór het cycloonseizoen (november-april) — de rustige, ontspannen opener van de expeditie.',
       countries: [
         {
-          code: 'FJ', name: 'Fiji', days: 14, budget: 1050,
+          code: 'FJ', name: 'Fiji', days: 14, budget: 1050, lat: -17.7765, lng: 177.4356,
           destinations: ['Nadi', 'Mamanuca-eilanden', 'Yasawa-eilanden', 'Taveuni'],
           notes: "Beste backpacker-infrastructuur van de Pacific — eilandhoppen per boot (Yasawa Flyer) tussen de Mamanucas en Yasawas, snorkelen en duiken op de koraalriffen. Prijscorrectie (2026-07): €62,50→€75/dag (Yasawa Flyer-bootpas + vlucht naar Taveuni waren niet gedekt).",
           transport_to_next: 'Vlucht Nadi-Port Vila (Fiji Airways, de belangrijkste Pacific-hub)',
         },
         {
-          code: 'VU', name: 'Vanuatu', days: 11, budget: 1045,
+          code: 'VU', name: 'Vanuatu', days: 11, budget: 1045, lat: -17.7333, lng: 168.3273,
           destinations: ['Port Vila', 'Mount Yasur (Tanna)', 'SS President Coolidge wrak (Espiritu Santo)', 'Blue Holes'],
           notes: "Een van de meest toegankelijke actieve vulkanen ter wereld — tot vlak bij de kraterrand van Mount Yasur. Wereldklasse wrakduik op de SS President Coolidge. Prijscorrectie (2026-07): €70→€95/dag (binnenlandse vluchten naar Tanna/Santo + Yasur-tour waren niet gedekt; Air Vanuatu ging in 2024 failliet, vluchten zijn schaarser/duurder geworden).",
           transport_to_next: "Vlucht Port Vila-Apia (meestal met overstap via Fiji of Auckland)",
         },
         {
-          code: 'WS', name: 'Samoa', days: 9, budget: 565,
+          code: 'WS', name: 'Samoa', days: 9, budget: 565, lat: -13.8506, lng: -171.7513,
           destinations: ['Apia', 'To Sua Ocean Trench', 'Lalomanu (beach fales)', 'Upolu'],
           notes: "Authentieke Polynesische cultuur, nog weinig aangetast door massatoerisme. Beach fales zijn traditionele, budgetvriendelijke strandhutjes — precies de rustige, lokale ervaring die bij deze reisstijl past. Prijs geverifieerd (2026-07), klopt — relatief goedkoop voor de Pacific.",
           transport_to_next: "Vlucht Apia-Nuku'alofa (meestal met overstap via Fiji)",
         },
         {
-          code: 'TO', name: 'Tonga', days: 8, budget: 800,
+          code: 'TO', name: 'Tonga', days: 8, budget: 800, lat: -21.1393, lng: -175.2046,
           destinations: ["Nuku'alofa", "Vava'u (zwemmen met bultrugwalvissen)", "Ha'apai"],
           notes: "Een van de weinige plekken ter wereld waar je legaal mag zwemmen met bultrugwalvissen — het beste seizoen daarvoor is juli-oktober, dus check de exacte timing bij het plannen van de startdatum. Prijscorrectie (2026-07): €67,50→€100/dag, de grootste correctie van de route — vlucht naar Vava'u + de whale-swim tour zelf (vaak €150-250/dag) waren niet gedekt.",
           transport_to_next: "Vlucht Nuku'alofa-Rarotonga (lage frequentie, ruim van tevoren boeken)",
         },
         {
-          code: 'CK', name: 'Cook Islands', days: 7, budget: 665,
+          code: 'CK', name: 'Cook Islands', days: 7, budget: 665, lat: -21.2367, lng: -159.7777,
           destinations: ['Rarotonga', 'Aitutaki-lagune'],
           notes: "De Aitutaki-lagune is minstens zo mooi als Bora Bora, voor een fractie van de prijs — het beste prijs-kwaliteitpunt van de hele Pacific voor lagune-schoonheid. Prijscorrectie (2026-07): €80→€95/dag (Air Rarotonga heeft een monopolie op de Aitutaki-vlucht, plus lagune-cruise).",
           transport_to_next: 'Vlucht Rarotonga-Perth (lange vlucht, meestal met overstap via Auckland of Sydney) — de grootste enkele vliegverbinding van de hele expeditie, nodig om van de Pacific naar het droge seizoen in West-Australië te komen',
@@ -1779,19 +1891,19 @@ function rbBuildOceaniaExpeditionRoute() {
       note: 'Droog seizoen: de Kimberley-wegen zijn begaanbaar, geen moesson, geen kwallenseizoen bij Cairns.',
       countries: [
         {
-          code: 'AU', name: 'Australia', days: 21, budget: 2520,
+          code: 'AU', name: 'Australia', days: 21, budget: 2520, lat: -31.9505, lng: 115.8605,
           destinations: ['Perth', 'Ningaloo Reef (walvishaaien)', 'Kimberley & Bungle Bungles', 'Gibb River Road', 'Broome'],
           notes: 'Ningaloo Reef en de Kimberley zijn spectaculair en kennen weinig massatoerisme — sterke match met natuur boven luxe. Wel de duurste/verste regio van de hele route qua afstanden; eerste kandidaat om in te korten als tijd/budget krap wordt. Prijscorrectie (2026-07): €87,62→€120/dag — de duurste regio bleek ook echt onderbegroot (walvishaai-tours, Bungle Bungles-vluchten, afgelegen roadhouse-prijzen).',
           transport_to_next: 'Auto over land via de Gibb River Road en Kununurra naar Darwin, of vlucht Broome-Darwin voor wie de Kimberley liever per vliegtuig oversteekt',
         },
         {
-          code: 'AU', name: 'Australia', days: 14, budget: 1470,
+          code: 'AU', name: 'Australia', days: 14, budget: 1470, lat: -12.4634, lng: 130.8456,
           destinations: ['Darwin', 'Kakadu National Park', 'Litchfield National Park', 'Uluru', 'Kata Tjuta', 'Kings Canyon'],
           notes: 'Top End en Red Centre samen — de meest iconische landschappen van Australië. Juni-augustus is ook de koelste periode voor Uluru (overdag nog prima te wandelen, niet de verzengende hitte van de zomer). Prijscorrectie (2026-07): €87,50→€105/dag — Yulara/Uluru is een monopolie-resortstadje, ook budgetopties zijn er prijzig.',
           transport_to_next: 'Vlucht Alice Springs-Cairns of Darwin-Cairns (over land zou via de outback-highways dagenlang duren)',
         },
         {
-          code: 'AU', name: 'Australia', days: 21, budget: 2310,
+          code: 'AU', name: 'Australia', days: 21, budget: 2310, lat: -16.9203, lng: 145.771,
           destinations: ['Cairns', 'Daintree Rainforest', 'Great Barrier Reef', 'Whitsundays & Whitehaven Beach', "Fraser Island / K'gari"],
           notes: 'Sterkste match met snorkelen/duiken/wildlife uit de wensenlijst. Droog seizoen betekent ook geen kwallenseizoen (dat loopt november-mei) bij Cairns. Prijscorrectie (2026-07): €87,62→€110/dag — een Whitsundays-zeiltocht of Fraser Island-tour kost al snel €250-400 op zich.',
           transport_to_next: 'Bus of camper over land langs de oostkust (Cairns-Brisbane-Byron Bay-Sydney), de klassieke backpacker-trail',
@@ -1805,25 +1917,25 @@ function rbBuildOceaniaExpeditionRoute() {
       note: 'Late winter/vroege lente — koeler dan de zomerpiek (december-februari), maar goed te doen; het bewuste compromis van deze route (zie de klimaatredenering van de hele expeditie).',
       countries: [
         {
-          code: 'AU', name: 'Australia', days: 12, budget: 1050,
+          code: 'AU', name: 'Australia', days: 12, budget: 1050, lat: -33.8688, lng: 151.2093,
           destinations: ['Byron Bay', 'Sydney', 'Blue Mountains'],
           notes: 'Klassieke backpacker-trail met goede infrastructuur; Sydney is te iconisch om over te slaan. Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: 'Auto over land via de kust of de Hume Highway naar Melbourne',
         },
         {
-          code: 'AU', name: 'Australia', days: 10, budget: 875,
+          code: 'AU', name: 'Australia', days: 10, budget: 875, lat: -37.8136, lng: 144.9631,
           destinations: ['Great Ocean Road', 'Melbourne', 'Grampians National Park'],
           notes: 'De beste roadtrip-ervaring van het hele land — sluit perfect aan bij "roadtrips waar dat logisch is". Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: 'Veerboot Spirit of Tasmania (Melbourne-Devonport) of korte vlucht naar Hobart/Launceston',
         },
         {
-          code: 'AU', name: 'Australia', days: 12, budget: 1260,
+          code: 'AU', name: 'Australia', days: 12, budget: 1260, lat: -42.8821, lng: 147.3272,
           destinations: ['Cradle Mountain', 'Wineglass Bay (Freycinet)', 'Overland Track', 'Hobart'],
           notes: 'Ruige natuur, weinig massatoerisme — sterke match met deze reisstijl. Augustus-september is nog fris (soms sneeuw in het hooggebergte), dus pak warme kleding in. Prijscorrectie (2026-07): €87,50→€105/dag — het Overland Track-vergunning alleen al kost ~€120-150 p.p.',
           transport_to_next: 'Vlucht Hobart-Adelaide (meestal met overstap in Melbourne)',
         },
         {
-          code: 'AU', name: 'Australia', days: 9, budget: 945,
+          code: 'AU', name: 'Australia', days: 9, budget: 945, lat: -34.9285, lng: 138.6007,
           destinations: ['Adelaide', 'Kangaroo Island', 'Barossa Valley', 'Flinders Ranges'],
           notes: "Kangaroo Island is uitstekend voor wildlife (zeeleeuwen, koala's) — de sterkste match met de wildlife-wens uit dit blok. Barossa Valley (wijn) is de eerste kandidaat om te laten vervallen als er ingekort moet worden. Prijscorrectie (2026-07): €87,78→€105/dag — de Kangaroo Island-veerboot plus schaarse/duurdere accommodatie daar.",
           transport_to_next: 'Vlucht Adelaide-Christchurch (meestal met overstap in Sydney of Melbourne)',
@@ -1837,13 +1949,13 @@ function rbBuildOceaniaExpeditionRoute() {
       note: 'Voorjaar — stabiel weer, rustiger dan de zomerdrukte (december-februari); door reisgidsen vaak aangeraden als shoulder season. Het emotionele hoogtepunt van de hele expeditie, bewust als afsluiter gekozen.',
       countries: [
         {
-          code: 'NZ', name: 'New Zealand', days: 21, budget: 2268,
+          code: 'NZ', name: 'New Zealand', days: 21, budget: 2268, lat: -45.0312, lng: 168.6626,
           destinations: ['Christchurch', 'Kaikoura', 'Abel Tasman', 'Franz Josef & Fox-gletsjers', 'Queenstown', 'Milford Sound & Fiordland', 'Dunedin & Catlins'],
           notes: 'Concentreert het merendeel van de iconische Nieuw-Zeelandse natuur. Overweeg minstens één Great Walk (Milford Track, Routeburn of Kepler) als meerdaagse hut-to-hut-trek — ruim van tevoren reserveren. Prijscorrectie (2026-07): €80→€108/dag — Milford Sound-cruise, gletsjeractiviteiten en Great Walk hut-fees waren niet gedekt; Queenstown is bovengemiddeld duur.',
           transport_to_next: 'Veerboot Picton-Wellington, over land verder het Noordereiland in',
         },
         {
-          code: 'NZ', name: 'New Zealand', days: 14, budget: 1120,
+          code: 'NZ', name: 'New Zealand', days: 14, budget: 1120, lat: -41.2865, lng: 174.7762,
           destinations: ['Wellington', 'Tongariro Alpine Crossing', 'Rotorua', 'Coromandel', 'Bay of Islands', 'Auckland'],
           notes: 'De Tongariro Alpine Crossing is de beste dagwandeling van het land. Rotorua voor geothermische verschijnselen en Māori-cultuur. Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Auckland naar Nederland',
@@ -1893,13 +2005,13 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
       note: 'Droog seizoen, ruim na het orkaanseizoen (dat loopt juni-november) — een veilige, aangename opener.',
       countries: [
         {
-          code: 'CU', name: 'Cuba', days: 18, budget: 1260,
+          code: 'CU', name: 'Cuba', days: 18, budget: 1260, lat: 23.1136, lng: -82.3666,
           destinations: ['Havana (Habana Vieja)', 'Trinidad', 'Cienfuegos', 'Viñales-vallei'],
           notes: "Havana en het UNESCO-koloniale Trinidad zijn de hoogtepunten; de rustige Viñales-vallei (tabak, karstlandschap) is de verborgen parel. Casas particulares (particuliere kamers) zijn de gangbare backpacker-accommodatie. Prijs geverifieerd (2026-07), klopt. ⚠️ Reisadvies oranje: dagelijkse stroomuitval, kaarten werken niet bij pinautomaten (contant meenemen), D'Viajeros-registratie + tourist card (~€20-30) verplicht vooraf.",
           transport_to_next: 'Vlucht Havana-Kingston (meestal met overstap via Panama City of Miami)',
         },
         {
-          code: 'JM', name: 'Jamaica', days: 12, budget: 1080,
+          code: 'JM', name: 'Jamaica', days: 12, budget: 1080, lat: 17.9714, lng: -76.7936,
           destinations: ['Kingston', 'Blue Mountains', "Dunn's River Falls", 'Port Antonio'],
           notes: 'Blue Mountains (koffie, wandelen) en Port Antonio (rafting, watervallen, nauwelijks toeristen vergeleken met Negril/Ocho Rios) zijn de sterkste match met natuur boven luxe. Prijscorrectie (2026-07): €75→€90/dag, Jamaica is duurder dan aangenomen (guesthouses + entreegelden).',
           transport_to_next: 'Vlucht Kingston-Curaçao (meestal met overstap via Panama City of Miami)',
@@ -1913,13 +2025,13 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
       note: 'Droog seizoen — helderder water voor snorkelen en duiken.',
       countries: [
         {
-          code: 'CW', name: 'Curaçao', days: 7, budget: 560,
+          code: 'CW', name: 'Curaçao', days: 7, budget: 560, lat: 12.1084, lng: -68.9335,
           destinations: ['Willemstad (UNESCO)', 'Shete Boka National Park', 'stranden'],
           notes: 'Willemstad met zijn Nederlandse koloniale architectuur is de stedelijke tegenhanger van rustig Bonaire. Shete Boka (ruige noordkust) is de verborgen parel, veel rustiger dan de stranden. Prijs geverifieerd (2026-07), klopt. Digital Immigration Card verplicht vooraf invullen (gratis).',
           transport_to_next: 'Korte vlucht Curaçao-Bonaire',
         },
         {
-          code: 'BQ', name: 'Bonaire', days: 6, budget: 660,
+          code: 'BQ', name: 'Bonaire', days: 6, budget: 660, lat: 12.25, lng: -68.4,
           destinations: ['Washington Slagbaai National Park', 'duiken/snorkelen (marine park)'],
           notes: 'Wereldklasse duiken/snorkelen direct vanaf de kust. Washington Slagbaai NP (flamingo\'s, ruige natuur) is de verborgen parel, nauwelijks bezocht. Prijscorrectie (2026-07): €87,50→€110/dag (weinig budget-accommodatie, duiktrips zijn duur). Verplichte inreisbelasting ~€70 p.p. is een aparte kostenpost, niet in het dagtarief.',
           transport_to_next: 'Vlucht Bonaire-Guadeloupe (meestal met overstap via Aruba, Panama City of San Juan)',
@@ -1933,25 +2045,25 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
       note: "Droog seizoen (carême) — beste moment om te wandelen in Dominica's regenwoud. De eilandvolgorde volgt de natuurlijke noord-zuid keten, en toevallig ook de veerbootlijn L'Express des Îles.",
       countries: [
         {
-          code: 'GP', name: 'Guadeloupe', days: 7, budget: 615,
+          code: 'GP', name: 'Guadeloupe', days: 7, budget: 615, lat: 16.0448, lng: -61.6654,
           destinations: ['La Soufrière (vulkaan)', 'Carbet-watervallen', 'Îles des Saintes'],
           notes: 'Franse Caraïbische cultuur gecombineerd met een actieve vulkaan. Îles des Saintes (kleine eilandjes voor de kust) is veel rustiger dan het hoofdeiland. Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: "Veerboot L'Express des Îles naar Dominica (via Martinique)",
         },
         {
-          code: 'DM', name: 'Dominica', days: 8, budget: 760,
+          code: 'DM', name: 'Dominica', days: 8, budget: 760, lat: 15.317, lng: -61.268,
           destinations: ['Boiling Lake-trektocht', 'Trafalgar Falls', 'Champagne Reef'],
           notes: '"Nature Island" — het minst ontwikkelde en meest ongerepte eiland van de vier. De Boiling Lake-trektocht is een zware hele dag op zich; reken op een rustdag ervoor of erna. Champagne Reef (vulkanische bubbels tijdens het snorkelen) is uniek. Prijscorrectie (2026-07): €72,50→€95/dag (nauwelijks hostels, guesthouses vanaf ~€60-70/nacht, verplichte gids voor Boiling Lake ~€55-70).',
           transport_to_next: "Veerboot L'Express des Îles naar St Lucia",
         },
         {
-          code: 'LC', name: 'Saint Lucia', days: 7, budget: 560,
+          code: 'LC', name: 'Saint Lucia', days: 7, budget: 560, lat: 13.83, lng: -61.0667,
           destinations: ['The Pitons', 'Sulphur Springs (drive-in vulkaan)', 'Tet Paul Nature Trail'],
           notes: 'De iconische Pitons, meer toeristisch ontwikkeld dan de andere drie. Tet Paul Nature Trail geeft hetzelfde uitzicht op de Pitons, veel rustiger dan de drukke wandelpaden. Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: 'Vlucht St Lucia-Grenada (niet op de veerbootlijn)',
         },
         {
-          code: 'GD', name: 'Grenada', days: 7, budget: 510,
+          code: 'GD', name: 'Grenada', days: 7, budget: 510, lat: 12.08, lng: -61.728,
           destinations: ['Onderwaterbeeldenpark', 'kruidenplantages (nootmuskaat)', 'Grand Etang National Park'],
           notes: 'Het minst toeristische van de vier eilanden. Grand Etang NP (regenwoud, kratermeer) is de verborgen parel. Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: 'Vlucht Grenada-Suriname (meestal met overstap via Trinidad)',
@@ -1965,13 +2077,13 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
       note: "Suriname's korte droge tijd valt hier precies goed voor jungle-/rivierentochten. Noord-Brazilië's duinenkust (Jericoacoara/Lençóis) is dan net buiten zijn absolute piekseizoen (juni-januari) — het enige geaccepteerde compromis van de hele route.",
       countries: [
         {
-          code: 'SR', name: 'Suriname', days: 11, budget: 605,
+          code: 'SR', name: 'Suriname', days: 11, budget: 605, lat: 5.852, lng: -55.2038,
           destinations: ['Paramaribo (UNESCO)', 'Marrondorpen aan de rivier', 'Brownsberg Nature Park'],
           notes: 'Nederlandse koloniale geschiedenis in Paramaribo, gecombineerd met een rivierreis naar Marrondorpen in het binnenland — reken op 3-5 dagen voor een fatsoenlijke jungletocht naast de stad. Brownsberg (uitzicht over het Brokopondostuwmeer) is de verborgen parel. Prijs geverifieerd (2026-07): waarschijnlijk net genoeg, Brownsberg/Marrondorpen-tours ($70-120/dag) drukken het gemiddelde op. Let op: "visumvrij" is niet helemaal juist — een verplicht online ICF-immigratieformulier + gelekoortsbewijs is nodig vooraf.',
           transport_to_next: 'Vlucht Paramaribo-Belém (schaarse rechtstreekse verbindingen; waarschijnlijk met overstap via Cayenne, Georgetown of een Braziliaanse hub — vooraf goed checken)',
         },
         {
-          code: 'BR', name: 'Brazil', days: 14, budget: 840,
+          code: 'BR', name: 'Brazil', days: 14, budget: 840, lat: -2.7458, lng: -42.8339,
           destinations: ['Belém', 'Ilha do Marajó', 'Lençóis Maranhenses', 'Jericoacoara', 'Fortaleza'],
           notes: 'De overgang van de Amazone-riviermonding (Belém, Marajó — buffels, ongerept rivierdelta-eiland) naar de compleet andere zandduinenkust (Lençóis Maranhenses, Jericoacoara) als adembenemende afsluiter. De afstanden langs de kust worden vaak onderschat. Prijs geverifieerd (2026-07), klopt — de generieke Rio/São Paulo-veiligheidswaarschuwingen zijn niet relevant voor dit noordoostelijke traject.',
           transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Fortaleza (of via São Paulo) naar Nederland',
@@ -2023,7 +2135,7 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
       note: 'Net na het regenseizoen (augustus-oktober) — het droge seizoen loopt tot juni. Rustige, aangename opener.',
       countries: [
         {
-          code: 'CV', name: 'Cape Verde', days: 13, budget: 780,
+          code: 'CV', name: 'Cape Verde', days: 13, budget: 780, lat: 16.8901, lng: -24.9825,
           destinations: ['Santo Antão (Ribeira Grande, Paúl-vallei)', 'São Vicente (Mindelo)', 'Fogo (Pico do Fogo-vulkaan, wijngaarden)'],
           notes: "Bewust andere eilanden dan een eerder bezoek (niet opnieuw Sal) — Santo Antão voor de dramatische wandelvalleien, São Vicente voor de muziekcultuur van Mindelo, Fogo voor de vulkaanbeklimming en wijnbouw op vulkanische grond. Onderling per veerboot (goedkoper, minder betrouwbaar schema) of Binter Cabo Verde-vlucht. Prijs geverifieerd (2026-07), klopt — Fogo-vlucht (~€70-100 enkele reis, veerboot onbetrouwbaar) is een aparte kostenpost. Verplichte online EASE-registratie ≥5 dagen vooraf.",
           transport_to_next: 'Vlucht Praia/Sal-Dakar, korte oversteek naar het vasteland.',
@@ -2037,13 +2149,13 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
       note: 'Begin van het West-Afrikaanse droge seizoen (november-april).',
       countries: [
         {
-          code: 'SN', name: 'Senegal', days: 13, budget: 618,
+          code: 'SN', name: 'Senegal', days: 13, budget: 618, lat: 14.7167, lng: -17.4677,
           destinations: ['Dakar', 'Île de Gorée', 'Saint-Louis (UNESCO)', 'Sine-Saloum-delta', 'Lompoul-woestijn'],
           notes: "Île de Gorée (slavernijgeschiedenis, korte boot vanaf Dakar) en Saint-Louis (koloniale hoofdstad) zijn de historische zwaartepunten; Sine-Saloum (mangroves, vogels) en de Lompoul-duinen geven een compleet ander natuurbeeld binnen één land. Prijs geverifieerd (2026-07), klopt. Oranje grensstrook bij Gambia/Guinee-Bissau/Mali/Mauritanië — niet relevant voor deze route.",
           transport_to_next: 'Bus/deeltaxi over land naar Gambia via de Senegambia-brug (geopend 2019, een stuk vlotter dan de vroegere veerpont).',
         },
         {
-          code: 'GM', name: 'Gambia', days: 6, budget: 240,
+          code: 'GM', name: 'Gambia', days: 6, budget: 240, lat: 13.4549, lng: -16.579,
           destinations: ['Banjul', 'Gambia-rivier (bootcruise)', 'Kunta Kinteh Island (UNESCO, slavernijgeschiedenis)', 'Makasutu Culture Forest'],
           notes: "Klein maar met een eigen, herkenbaar hoogtepunt: Kunta Kinteh Island (voorheen James Island) is een van de belangrijkste slavernij-erfgoedsites van West-Afrika. Prijs geverifieerd (2026-07), klopt. Presidentsverkiezing 5 december 2026 — mogelijk onrust, check actuele situatie vlak voor vertrek.",
           transport_to_next: 'Vlucht naar Abidjan — geen praktische landroute (Guinee-Bissau, Guinee, Sierra Leone en Liberia liggen ertussen, te veel omweg/visa voor deze reisstijl).',
@@ -2057,25 +2169,25 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
       note: 'Harmattan-seizoen — droog maar stoffig, de beste periode om hier te reizen.',
       countries: [
         {
-          code: 'CI', name: 'Ivory Coast', days: 7, budget: 333,
+          code: 'CI', name: 'Ivory Coast', days: 7, budget: 333, lat: 5.36, lng: -4.0083,
           destinations: ['Abidjan (Le Plateau)', 'Grand-Bassam (UNESCO koloniale stad)'],
           notes: "Taï National Park is bewust weggelaten — prachtig, maar de afgelegen ligging kost 3-4 dagen extra reistijd voor chimpansees die ook elders in West-/Centraal-Afrika te zien zijn. Abidjan en Grand-Bassam houden dit land compact en de moeite waard. Prijs geverifieerd (2026-07), klopt. Rood/oranje alleen bij de Mali/Burkina Faso- en Liberia-grens — niet relevant hier.",
           transport_to_next: 'Bus over land naar Ghana via de grensovergang Elubo — een gevestigde backpacker-route.',
         },
         {
-          code: 'GH', name: 'Ghana', days: 15, budget: 713,
+          code: 'GH', name: 'Ghana', days: 15, budget: 713, lat: 5.1053, lng: -1.2466,
           destinations: ['Accra', 'Cape Coast Castle', 'Elmina Castle', 'Kakum National Park (boomtoppenpad)', 'Volta-regio (Wli-watervallen, Mount Afadjato)'],
           notes: "Cape Coast en Elmina Castle zijn de zwaarste, belangrijkste slavernijgeschiedenis-sites van de hele expeditie. Ghana heeft verreweg het rijkste programma van de reis — vandaar de meeste tijd. Prijs geverifieerd (2026-07), klopt, inclusief entreegelden Cape Coast/Kakum.",
           transport_to_next: 'Bus over land naar Togo via de grensovergang Aflao.',
         },
         {
-          code: 'TG', name: 'Togo', days: 4, budget: 160,
+          code: 'TG', name: 'Togo', days: 4, budget: 160, lat: 6.1319, lng: 1.2228,
           destinations: ['Lomé', 'Togoville (Vodun-cultuur, Lac Togo)'],
           notes: "Bewust kort — Togo voegt met zijn Duitse koloniale geschiedenis (vóór de latere Franse overname) wel een andere invalshoek toe dan Ghana/Benin, maar heeft weinig hoogtepunten. Ligt toch al direct op de route, dus lage extra kosten om aan te doen. Prijs geverifieerd (2026-07), klopt. Visa-on-arrival is afgeschaft — alleen nog e-visa vooraf via het officiële evisa.gouv.tg (vermijd duurdere derde partijen).",
           transport_to_next: 'Bus over land naar Benin via de grensovergang Hillacondji.',
         },
         {
-          code: 'BJ', name: 'Benin', days: 9, budget: 428,
+          code: 'BJ', name: 'Benin', days: 9, budget: 428, lat: 6.3667, lng: 2.0833,
           destinations: ['Ouidah (Route des Esclaves, Door of No Return)', 'Ganvié (paalwoningdorp op het meer)', 'Abomey (koninklijke paleizen, UNESCO)'],
           notes: "Precies de combinatie die deze expeditie zoekt: oude koninkrijken (Abomey, het voormalige Dahomey), slavernijgeschiedenis (Ouidah) en levende Vodun-cultuur. Prijs geverifieerd (2026-07), klopt. Rood/oranje alleen in het noorden en de Nigeria-grensstrook — niet relevant hier.",
           transport_to_next: "Vlucht Cotonou-Douala (meestal met overstap) — overland door Nigeria is voor deze reis geen optie, de enige onvermijdelijke sprong van de hele route.",
@@ -2089,19 +2201,19 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
       note: "Kameroens minst natte periode (november-februari) en Gabons korte droge seizoen (december-februari) vallen hier samen; São Tomé is de uitzondering (regenseizoen, zie de klimaatredenering van de hele route).",
       countries: [
         {
-          code: 'CM', name: 'Cameroon', days: 8, budget: 380,
+          code: 'CM', name: 'Cameroon', days: 8, budget: 380, lat: 4.0511, lng: 9.7679,
           destinations: ['Douala', 'Kribi (Chutes de la Lobé, zwarte stranden)', 'Yaoundé'],
           notes: 'Aangepast t.o.v. het oorspronkelijke plan: Mount Cameroon en Limbe liggen in de Zuidwest-regio, waar sinds 2016 een gewapend conflict speelt (de "Anglophone Crisis") — reisadviezen hebben dit gebied in verschillende periodes afgeraden. In plaats daarvan Douala, Kribi (de Chutes de la Lobé stromen letterlijk de zee in — uniek) en Yaoundé, allemaal in de stabielere Franstalige Littoral/Centre-regio\'s. Check de actuele situatie in het Zuidwesten vlak vóór vertrek — mocht die verbeterd zijn, dan is Mount Cameroon alsnog het overwegen waard als toevoeging. Prijs geverifieerd (2026-07), klopt. Bevestigd: Anglophone Crisis nog steeds actief/rood in 2026 — de routekeuze blijft terecht. Verplicht e-visa vooraf (~€150-230), aparte kostenpost.',
           transport_to_next: 'Vlucht Douala-São Tomé (regionale verbinding).',
         },
         {
-          code: 'ST', name: 'São Tomé and Príncipe', days: 9, budget: 653,
+          code: 'ST', name: 'São Tomé and Príncipe', days: 9, budget: 653, lat: 0.3365, lng: 6.7273,
           destinations: ['São Tomé (roças/plantages, regenwoud)', 'Príncipe (afgelegen, minder bezocht)'],
           notes: "Uniek in de hele Travel Atlas: Portugese koloniale plantagegeschiedenis op een klein, rustig tropisch eiland. Valt in het regenseizoen (oktober-mei) bij deze route — vooral middagbuien, geen aanhoudende moesson. Prijs geverifieerd (2026-07), klopt. Presidentsverkiezing 19 juli 2026 — mogelijk protesten rond die periode, check lokaal nieuws vlak voor vertrek.",
           transport_to_next: 'Vlucht São Tomé-Libreville (regionale verbinding).',
         },
         {
-          code: 'GA', name: 'Gabon', days: 9, budget: 855,
+          code: 'GA', name: 'Gabon', days: 9, budget: 855, lat: -1.95, lng: 9.7,
           destinations: ['Loango National Park (surfende nijlpaarden, bosolifanten op het strand)', 'Libreville', 'regenwoud'],
           notes: "Bewuste, sterke afsluiter van de hele expeditie — Loango is een van de weinige plekken ter wereld waar je olifanten en nijlpaarden op het strand ziet. Valt toevallig in zijn korte droge seizoen (december-februari) bij deze route. ⚠️ Prijscheck (2026-07): het krapste/riskantste budget van de route — Loango-logistiek (gids/parkfees/eventuele chartervlucht) kan oplopen tot $100-300+/dag; €95/dag is alleen haalbaar met budgetvervoer (weg/piroque) en eenvoudige kampementen. Onvoldoende harde consensus voor een vaste correctie, maar reken op een reële kans dat dit hoger uitvalt.",
           transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Libreville naar Nederland (meestal met overstap).',
@@ -2169,31 +2281,31 @@ function rbBuildCentralEuropeRoadtripRoute() {
       note: 'Bergpassen en hooggelegen wandelpaden zijn pas vanaf half mei/juni volledig sneeuwvrij (Grossglockner Hochalpenstrasse opent meestal medio mei) — half juni-begin juli is het beste venster, net na de opening en nog vóór de julidrukte/-hitte in de dalen.',
       countries: [
         {
-          code: 'FR', name: 'France', days: 2, budget: 240,
+          code: 'FR', name: 'France', days: 2, budget: 240, lat: 48.5734, lng: 7.7521,
           destinations: ['Straatsburg', 'Colmar', 'Elzasser dorpen'],
           notes: 'Compacte, korte culturele opener — meer tijd voegt weinig toe gezien de rest van de reis nog moet komen. Reisadvies (2026-07): Frankrijk zit sinds maart 2024 op het hoogste dreigingsniveau (3) voor terrorisme — een landelijke basisstatus, niet Elzas-specifiek, gewoon te bezoeken met normale oplettendheid.',
           transport_to_next: 'Auto, ≈300 km naar Neuschwanstein/Garmisch — geen tol of vignet nodig op dit traject.',
         },
         {
-          code: 'DE', name: 'Germany', days: 4, budget: 480,
+          code: 'DE', name: 'Germany', days: 4, budget: 480, lat: 47.5576, lng: 10.7498,
           destinations: ['Neuschwanstein', 'Garmisch-Partenkirchen', 'Zugspitze'],
           notes: 'Neuschwanstein verdient een halve dag zelf al (wachtrijen, kasteel + omgeving); de Zugspitze-kabelbaan is weersafhankelijk, dus een buffer helpt.',
           transport_to_next: 'Auto, ≈250 km naar Luzern/Interlaken — Zwitsers jaarvignet verplicht, koop het bij de grens.',
         },
         {
-          code: 'CH', name: 'Switzerland', days: 5, budget: 1000,
+          code: 'CH', name: 'Switzerland', days: 5, budget: 1000, lat: 46.6863, lng: 7.8632,
           destinations: ['Luzern/Vierwoudstrekenmeer', 'Interlaken', 'Lauterbrunnen', 'Berner Oberland'],
           notes: 'Het Jungfrau-gebied (Lauterbrunnen/Berner Oberland) alleen al verdient meerdere wandeldagen — hoge kosten zijn een reden om het compact te houden, niet om het te haasten. Prijscheck (2026-07): Zwitserland is een van de duurste landen van Europa — het oorspronkelijke vlakke €120/dag klopte hier niet, gecorrigeerd naar €200/dag.',
           transport_to_next: 'Auto, ≈150 km naar Vaduz — geen grenscontrole (Schengen), geen aparte tol.',
         },
         {
-          code: 'LI', name: 'Liechtenstein', days: 1, budget: 165,
+          code: 'LI', name: 'Liechtenstein', days: 1, budget: 165, lat: 47.1410, lng: 9.5209,
           destinations: ['Vaduz'],
           notes: 'Klein land, één goede wandeling/stadswandeling volstaat ruimschoots. Prijscheck (2026-07): prijsniveau volgt Zwitserland, gecorrigeerd van €120 naar €165/dag.',
           transport_to_next: 'Auto, ≈120 km naar Innsbruck — Oostenrijks 10-dagenvignet nodig voor de snelwegen (€12,80, veel logischer voor een roadtrip dan het jaarvignet van €106,80).',
         },
         {
-          code: 'AT', name: 'Austria', days: 6, budget: 720,
+          code: 'AT', name: 'Austria', days: 6, budget: 720, lat: 47.2692, lng: 11.4041,
           destinations: ['Innsbruck/Tirol', 'Salzburg', 'Berchtesgaden/Königssee', 'Salzkammergut', 'Grossglockner Hochalpenstrasse'],
           notes: 'Vier duidelijk verschillende deelgebieden (Tirol, Salzburg-cluster, merengebied, hooggebergte-rit) — elk verdient minstens één volle dag. Berchtesgaden ligt formeel in Duitsland maar hoort qua route bij Salzburg (20 minuten rijden) — behandel ze als één gecombineerde stop.',
           transport_to_next: 'Auto, Grossglockner Hochalpenstrasse (aparte tolweg, ≈€38 per auto) tot Lienz, dan ≈90 km naar Cortina d\'Ampezzo — een van de mooiste rijverbindingen van de hele route.',
@@ -2207,43 +2319,43 @@ function rbBuildCentralEuropeRoadtripRoute() {
       note: 'De Dolomieten meteen na de Alpenlanden-opener; Milaan/Turijn/Cinque Terre/Toscane/San Marino vormen samen één aaneengesloten lus in plaats van twee losse zuidwaartse uitstapjes (zie route-notities).',
       countries: [
         {
-          code: 'IT', name: 'Italy', days: 6, budget: 720,
+          code: 'IT', name: 'Italy', days: 6, budget: 720, lat: 46.5369, lng: 12.1357,
           destinations: ['Tre Cime', 'Lago di Braies', 'Seceda', 'Val Gardena'],
           notes: 'Een van de grootste hoogtepunten van de hele reis — de bekende wandelingen (Tre Cime-rondje, Seceda) zijn elk een dag op zich.',
           transport_to_next: 'Auto, ≈380 km naar Milaan — de langste enkele rit van de hele lus, vroeg vertrekken of splitsen met een tussenstop bij Verona/Brescia. Italiaanse autostrada rekent tol per kilometer.',
         },
         {
-          code: 'IT', name: 'Italy', days: 2, budget: 240,
+          code: 'IT', name: 'Italy', days: 2, budget: 240, lat: 45.4642, lng: 9.1900,
           destinations: ['Duomo', 'Galleria', 'Navigli', 'Laatste Avondmaal'],
           notes: 'Eén volle dag voor de binnenstad, een tweede als je het Laatste Avondmaal (reservering vereist) wilt meepakken.',
           transport_to_next: 'Auto, ≈140 km naar Turijn via de A4/A55, tolweg.',
         },
         {
-          code: 'IT', name: 'Italy', days: 2, budget: 190,
+          code: 'IT', name: 'Italy', days: 2, budget: 190, lat: 45.0703, lng: 7.6869,
           destinations: ['Egyptisch Museum', 'Mole Antonelliana', 'historisch centrum'],
           notes: 'Compacte, onderschatte stad — het Egyptisch Museum (op één na grootste ter wereld) verdient zelf al een halve dag. Prijscheck (2026-07): Turijn is goedkoper dan het vlakke €120/dag-tarief, gecorrigeerd naar €95/dag.',
           transport_to_next: 'Auto tot een bewaakte parkeerplaats bij Monterosso/La Spezia (≈185 km) — de dorpjes zelf zijn grotendeels autovrij.',
         },
         {
-          code: 'IT', name: 'Italy', days: 3, budget: 435,
+          code: 'IT', name: 'Italy', days: 3, budget: 435, lat: 44.1461, lng: 9.6558,
           destinations: ['Monterosso', 'Vernazza', 'Corniglia', 'Manarola', 'Riomaggiore'],
           notes: 'De vijf dorpjes en de wandelpaden ertussen (Sentiero Azzurro) zijn het hele punt — drie dagen voor rustig wandelen plus een boottochtje. Prijscheck (2026-07): schaarse/dure accommodatie en toeristenopslag op eten duwen dit boven het vlakke €120/dag-tarief, gecorrigeerd naar €145/dag.',
           transport_to_next: 'Auto, ≈140 km naar Florence via La Spezia-Lucca-Firenze.',
         },
         {
-          code: 'IT', name: 'Italy', days: 3, budget: 360,
+          code: 'IT', name: 'Italy', days: 3, budget: 360, lat: 43.7696, lng: 11.2558,
           destinations: ['Florence', 'Siena', 'San Gimignano', 'Chianti'],
           notes: 'Compact gehouden ("een stukje Toscane") — Florence plus één dag Chianti/Siena/San Gimignano.',
           transport_to_next: 'Auto, ≈180 km naar San Marino — Florence en San Marino liggen dicht bij elkaar.',
         },
         {
-          code: 'SM', name: 'San Marino', days: 1, budget: 120,
+          code: 'SM', name: 'San Marino', days: 1, budget: 120, lat: 43.9424, lng: 12.4578,
           destinations: ['Historisch centrum'],
           notes: 'Klein genoeg voor één dag, dicht bij Florence — een bewuste stop, geen omweg meer om over te twijfelen.',
           transport_to_next: 'Auto, ≈300 km naar Venetië, met een overnachting daar — de stad zelf is autovrij, park bij Tronchetto of Mestre.',
         },
         {
-          code: 'IT', name: 'Italy', days: 2, budget: 320,
+          code: 'IT', name: 'Italy', days: 2, budget: 320, lat: 45.4408, lng: 12.3155,
           destinations: ['Piazza San Marco', 'Dorsoduro', 'Murano/Burano'],
           notes: 'Ligt vrijwel exact op de weg terug van San Marino naar Slovenië — nauwelijks extra kilometers, dus een efficiënte toevoeging. Prijscheck (2026-07): centraal Venetië is een bekende prijs-uitschieter (accommodatie 2-3x Mestre-niveau, dure vaporetto-dagpassen) — gecorrigeerd van €120 naar €160/dag.',
           transport_to_next: 'Auto, ≈280 km naar Bled — Sloveens vignet verplicht (goedkoop dagvignet beschikbaar).',
@@ -2257,25 +2369,25 @@ function rbBuildCentralEuropeRoadtripRoute() {
       note: 'Mei-juni en september zijn hier het prettigst en juli-augustus kan warm zijn, maar is goed te doen — de watervallen bij Plitvice hebben dan nog volop water.',
       countries: [
         {
-          code: 'SI', name: 'Slovenia', days: 5, budget: 600,
+          code: 'SI', name: 'Slovenia', days: 5, budget: 600, lat: 46.3683, lng: 14.1146,
           destinations: ['Bled', 'Bohinj', 'Soča-vallei', 'Triglav NP', 'grotten (Postojna/Škocjan)'],
           notes: 'Bled alleen al verdient meerdere dagen; de Soča-vallei en de grotten liggen er echt apart van.',
           transport_to_next: 'Auto, ≈140 km naar Plitvice/Zagreb.',
         },
         {
-          code: 'HR', name: 'Croatia', days: 3, budget: 255,
+          code: 'HR', name: 'Croatia', days: 3, budget: 255, lat: 44.8654, lng: 15.5820,
           destinations: ['Plitvice', 'Zagreb'],
           notes: 'Plitvice verdient een volle dag (grote wandelroutes), Zagreb een korte stadstop. Blijf op de gemarkeerde paden/wegen rond Plitvice — delen van het Kroatische binnenland hebben nog niet-geruimde landmijnen uit de jaren 90 (oranje zones). Prijscheck (2026-07): binnenland-Kroatië (niet de kust) is goedkoper dan het vlakke €120/dag-tarief, gecorrigeerd naar €85/dag (Plitvice-entree ~€35-40 apart, niet in het dagtarief).',
           transport_to_next: 'Auto, ≈380 km naar Belgrado — Novi Sad ligt toevallig al precies onderweg, prima in één dag te doen.',
         },
         {
-          code: 'RS', name: 'Serbia', days: 5, budget: 300,
+          code: 'RS', name: 'Serbia', days: 5, budget: 300, lat: 44.7866, lng: 20.4489,
           destinations: ['Belgrado', 'Novi Sad', 'Tara National Park'],
           notes: "Servië heeft verder weinig natuurhoogtepunten op deze route — Tara NP (Drina-rivier, bekende uitkijkpunten) is een bewuste omweg (+1 dag) die bij deze reisstijl past, in het zuidwesten van het land, een stuk uit de buurt van de directe route Zagreb-Belgrado-Boedapest. ⚠️ Reisadvies (2026-07): er zijn regelmatig demonstraties in Servië, vooral in Belgrado en Novi Sad (aanhoudende protestbeweging sinds eind 2024) — soms wegblokkades, incidenteel geweld. Vermijd drukte/demonstraties, check actuele situatie vlak voor vertrek. Prijscheck (2026-07): Servië is veruit het goedkoopst van de Balkanlanden op deze route — het vlakke €120/dag was meer dan het dubbele van reëel, gecorrigeerd naar €60/dag.",
           transport_to_next: 'Auto, ≈320 km naar Boedapest.',
         },
         {
-          code: 'HU', name: 'Hungary', days: 3, budget: 270,
+          code: 'HU', name: 'Hungary', days: 3, budget: 270, lat: 47.4979, lng: 19.0402,
           destinations: ['Boedapest', 'thermale baden'],
           notes: 'Boedapest verdient een rustige stadstop mét tijd voor een thermaal bad, niet alleen de hoogtepunten afvinken. Prijscheck (2026-07): gecorrigeerd van het vlakke €120/dag naar €90/dag (inclusief een thermaal bad-bezoek, ~€25-30 op zich).',
           transport_to_next: 'Auto, ≈200 km naar Bratislava.',
@@ -2289,31 +2401,31 @@ function rbBuildCentralEuropeRoadtripRoute() {
       note: 'Hoge Tatra blijft ruim binnen het wandelseizoen (juni-september); de terugweg door Tsjechië/Polen/Duitsland is jaarrond prettig en geeft in september mooie herfstkleuren.',
       countries: [
         {
-          code: 'SK', name: 'Slovakia', days: 5, budget: 400,
+          code: 'SK', name: 'Slovakia', days: 5, budget: 400, lat: 49.0552, lng: 20.2969,
           destinations: ['Bratislava', 'Hoge Tatra', 'Slovenský Raj', 'Spiš Castle'],
           notes: 'De Hoge Tatra vraagt echte wandeldagen; Bratislava is een korte aanvulling aan het begin. Prijscheck (2026-07): gecorrigeerd van het vlakke €120/dag naar €80/dag.',
           transport_to_next: 'Auto, Hoge Tatra-Brno ≈300 km.',
         },
         {
-          code: 'CZ', name: 'Czechia', days: 1, budget: 85,
+          code: 'CZ', name: 'Czechia', days: 1, budget: 85, lat: 49.1951, lng: 16.6068,
           destinations: ['Brno', 'Špilberk-burcht'],
           notes: 'Breekt de lange rit Hoge Tatra-Praag (was ≈450 km in één keer) in tweeën, en is zelf de moeite waard, niet alleen een technische pauze. Prijscheck (2026-07): gecorrigeerd van het vlakke €120/dag naar €85/dag — buiten Praag is Tsjechië duidelijk goedkoper.',
           transport_to_next: 'Auto, ≈200 km naar Praag.',
         },
         {
-          code: 'CZ', name: 'Czechia', days: 5, budget: 650,
+          code: 'CZ', name: 'Czechia', days: 5, budget: 650, lat: 50.0755, lng: 14.4378,
           destinations: ['Praag', 'Český Krumlov', 'Boheems Paradijs'],
           notes: 'Praag verdient alleen al 2-3 dagen; Český Krumlov en Boheems Paradijs zijn allebei losse dagtochten waard. Prijscheck (2026-07): Praag is de laatste jaren duidelijk duurder geworden (centrumprijzen benaderen West-Europese steden) — gecorrigeerd van €120 naar €130/dag, de enige leg in deze route die omhoog moest ondanks dat de rest van Tsjechië/Centraal-Europa juist omlaag ging.',
           transport_to_next: 'Auto, ≈270 km naar Wrocław.',
         },
         {
-          code: 'PL', name: 'Poland', days: 3, budget: 195,
+          code: 'PL', name: 'Poland', days: 3, budget: 195, lat: 51.1079, lng: 17.0385,
           destinations: ['Wrocław', 'Sudeten (optioneel)'],
           notes: 'Wrocław is compact te doen; het Sudeten-gebergte is een leuke, niet-verplichte toevoeging. Prijscheck (2026-07): Polen is een van de goedkoopste landen op deze route — het vlakke €120/dag was fors te hoog, gecorrigeerd naar €65/dag.',
           transport_to_next: 'Auto, ≈280 km naar Dresden — Polen heft voor personenauto\'s geen tol op de meeste snelwegen (alleen vrachtverkeer via e-TOLL).',
         },
         {
-          code: 'DE', name: 'Germany', days: 3, budget: 285,
+          code: 'DE', name: 'Germany', days: 3, budget: 285, lat: 51.0504, lng: 13.7373,
           destinations: ['Dresden', 'Saksisch Zwitserland'],
           notes: 'Saksisch Zwitserland (rotsformaties, wandelen) verdient een volle dag naast de stadstop in Dresden. Prijscheck (2026-07): Dresden is relatief goedkoop voor Duitsland — gecorrigeerd van €120 naar €95/dag.',
           transport_to_next: 'Einde van de roadtrip — terugrit naar Nederland, ≈700 km, in één lange dag of gesplitst met een laatste overnachting onderweg.',
@@ -2382,31 +2494,31 @@ function rbBuildBritishIslesExpeditionRoute() {
       note: 'De opening van de expeditie: van de kalkkliffen en historische steden van Zuid-Engeland via het ruige Cornwall naar de bergen van Wales, met Isle of Man als zijsprong vanuit Noord-Engeland vlak voordat de reis noordwaarts naar Schotland afbuigt.',
       countries: [
         {
-          code: 'GB', name: 'United Kingdom', days: 10, budget: 1155,
+          code: 'GB', name: 'United Kingdom', days: 10, budget: 1155, lat: 51.5074, lng: -0.1278,
           destinations: ['Dover (White Cliffs)', 'Canterbury', 'Londen', 'Cotswolds', 'Bath', 'Stonehenge', 'Jurassic Coast'],
           notes: "Brede opener met veel verschillende sferen: de krijtkliffen en kathedraal van Kent, een korte stedelijke kennismaking met Londen, de traditionele dorpjes van de Cotswolds, de Romeinse baden van Bath en de kustgeologie van de Jurassic Coast. Stonehenge is bewust als korte stop opgenomen (goed vanaf de weg te zien) — de eerste kandidaat om te laten vervallen als de reis ooit korter moet. Prijscorrectie (2026-07): €90→€116/dag gemiddeld (Londen zelf ligt hoger, ~€140/dag; de rest ~€105/dag). Nieuw: sinds 2 april 2025 is een UK ETA verplicht voor Nederlandse/EU-reizigers (~€23 p.p., sinds 8 april 2026 verhoogd van £16 naar £20 — ruim vooraf aanvragen). Cotswolds-dorpen (o.a. Bourton-on-the-Water) heffen inmiddels expliciet parkeergeld (~£1-14/dag). Dartford Crossing (indien de route hem gebruikt): eenmalig £3,50 (~€4), online betalen binnen 30 dagen. Reisadvies: groen voor het VK als geheel.",
           transport_to_next: 'Auto, ≈450 km naar Cornwall via de A30 — geen tol onderweg.',
         },
         {
-          code: 'GB', name: 'United Kingdom', days: 7, budget: 875,
+          code: 'GB', name: 'United Kingdom', days: 7, budget: 875, lat: 50.2144, lng: -5.4791,
           destinations: ['St Ives', "Land's End", "St Michael's Mount", 'Tintagel Castle', 'South West Coast Path'],
           notes: 'Ruige kust en smalle wegen die tijd kosten — de South West Coast Path verdient meerdere hele wandeldagen, niet alleen uitzichtpunten vanaf de weg. St Michael\'s Mount is getijdenafhankelijk (alleen bij eb over de causeway); Tintagel draagt de Arthur-legende. Prijscorrectie (2026-07): €90→€125/dag — Cornwall rekent een reëel prijsopslag t.o.v. Devon, met in juli-augustus nog eens 60-80% extra bovenop de piekprijzen (St Ives is een bekend duur resortplaatsje).',
           transport_to_next: 'Auto, ≈300 km naar Wales via Bristol/de Severn-oeververbinding.',
         },
         {
-          code: 'GB', name: 'United Kingdom', days: 8, budget: 800,
+          code: 'GB', name: 'United Kingdom', days: 8, budget: 800, lat: 53.2799, lng: -3.8278,
           destinations: ['Pembrokeshire Coast Path', 'Brecon Beacons/Bannau Brycheiniog', 'Snowdonia/Eryri', 'Conwy Castle'],
           notes: 'Snowdonia alleen al verdient 2-3 dagen voor echte wandelingen (Snowdon zelf, Cadair Idris); Brecon Beacons en de Pembrokeshire-kust zijn allebei een dag apart waard. Conwy Castle als compacte historische afsluiter. Prijs vrijwel bevestigd (2026-07): €90→€100/dag — het landelijke Wales ligt van alle Britse etappes het dichtst bij de oorspronkelijke vlakke €90/dag, met alleen een kleine correctie voor het zomerseizoen.',
           transport_to_next: 'Auto, ≈250 km naar het Lake District via Chester en de M6 — geen ferry, gewoon doorrijden naar Noord-Engeland.',
         },
         {
-          code: 'GB', name: 'United Kingdom', days: 9, budget: 965,
+          code: 'GB', name: 'United Kingdom', days: 9, budget: 965, lat: 54.6013, lng: -3.1352,
           destinations: ['Lake District (Windermere, Scafell Pike, Keswick)', 'Yorkshire Dales', 'York', 'Northumberland', 'Bamburgh Castle'],
           notes: 'Het Lake District (wandelen) vraagt 3-4 dagen alleen al; York is een volwaardige historische stad, geen tussenstop. Northumberland/Bamburgh als rustige, minder toeristische kustafsluiter voor deze etappe. Prijscorrectie (2026-07): €90→€107/dag — Windermere/Ambleside en York liggen boven het Lake District-gemiddelde; Yorkshire Dales/Northumberland/Bamburgh blijven landelijker en goedkoper.',
           transport_to_next: "Auto terug naar Heysham (bij het Lake District) om de auto daar veilig achter te laten, dan als voetganger de ferry Heysham-Douglas (Isle of Man Steam Packet, ≈3u45, ~2x/dag jaarrond) — voetgangertarief is een fractie van het autotarief.",
         },
         {
-          code: 'IM', name: 'Isle of Man', days: 4, budget: 480,
+          code: 'IM', name: 'Isle of Man', days: 4, budget: 480, lat: 54.1509, lng: -4.4815,
           destinations: ['Douglas', 'Peel', 'TT Mountain Road (Snaefell)', 'Manx Electric Railway', 'Snaefell Mountain Railway'],
           notes: "Klein eiland met een eigen identiteit, prima te doen in vier dagen. Eén dag lokaal een auto huren specifiek om de TT Mountain Road zelf te rijden (Youri's eigen keuze na afweging — goedkoper dan de eigen auto op de ferry meenemen, en het enige onderdeel van het eiland dat echt een auto vraagt); de rest van het eiland is uitstekend te doen met de bus en de historische Manx Electric Railway/Snaefell Mountain Railway. Prijscorrectie (2026-07): €90→€100/dag basis (logies/eten), plus de eendaagse lokale autohuur voor de TT Mountain Road apart begroot op ~€85 (~€480 totaal, was €360). De keuze om de auto in Engeland te laten staan i.p.v. hem mee te nemen op de veerboot blijkt nóg voordeliger dan gedacht: een retour-autoveerboot Heysham/Liverpool-Douglas kost nu ~€390-425, tegenover ~€85 voor de lokale huurauto. Reisadvies/ETA: valt onder dezelfde UK ETA als het vasteland (geen aparte aanvraag/kosten nodig sinds de ETA-regeling op 23 april 2026 is uitgebreid naar Isle of Man/Jersey/Guernsey binnen de Common Travel Area) — wel gewoon een paspoort meenemen, geen ID-kaart.",
           transport_to_next: 'Ferry terug Douglas-Heysham (voetganger), auto weer ophalen, dan noordwaarts doorrijden naar Edinburgh (≈300 km via de M6/A74).',
@@ -2420,13 +2532,13 @@ function rbBuildBritishIslesExpeditionRoute() {
       note: 'Het grootste enkelvoudige onderdeel van de hele expeditie — de Schotse Highlands en eilanden, gevolgd door de Noord-Ierse kust — en het venster waarin het start-in-juni-plan het meest telt: ruim vóór de muggenpiek van juli-augustus.',
       countries: [
         {
-          code: 'GB', name: 'United Kingdom', days: 22, budget: 2510,
+          code: 'GB', name: 'United Kingdom', days: 22, budget: 2510, lat: 57.4128, lng: -6.1943,
           destinations: ['Edinburgh', 'Cairngorms National Park', 'Glencoe', 'Glenfinnan Viaduct', 'Isle of Skye ⭐ (Old Man of Storr, Fairy Pools, Quiraing)', 'Loch Ness', 'Applecross Pass', 'North Coast 500 (gedeeltelijk)'],
           notes: "Het hoogtepunt van de hele expeditie. Isle of Skye krijgt bewust 4-5 dagen in plaats van een dagtrip — Old Man of Storr, Fairy Pools en de Quiraing zijn elk een halve tot hele wandeldag. Reis hier vroeg in de zomer (eind juni-begin juli): de Schotse muggen (midges) pieken pas in juli-augustus, dus een vroege doortocht scheelt aanzienlijk. ⚠️ Prijscorrectie (2026-07): €90→€114/dag gemiddeld — dit is de etappe met de grootste interne spreiding: landelijke Highlands (Cairngorms/Glencoe/Glenfinnan/Loch Ness/Applecross/NC500) blijven dicht bij €100/dag, Isle of Skye ligt structureel hoger (~€150/dag, beperkt aanbod drijft de prijs op, ook buiten het hoogseizoen) en Edinburgh normaal ~€130/dag. ⚠️ Timing-risico: het Edinburgh Fringe Festival loopt in 2026 van 7 t/m 31 augustus en verdrievoudigt de prijzen in de stad — bij een concrete startdatum, zorg dat de Edinburgh-nachten van deze etappe vóór 7 augustus vallen. Tip: Historic Environment Scotland Explorer Pass (~£44, 14 dagen, dekt o.a. Urquhart Castle bij Loch Ness) is goedkoper dan losse tickets voor deze etappe; let op dat National Trust for Scotland een andere organisatie is dan National Trust (Engeland/Wales) — een Engelse NT-pas dekt Glencoe/Glenfinnan niet.",
           transport_to_next: 'Ferry Cairnryan-Belfast (Stena Line, ≈2u15, ~6x/dag) — Cairnryan ligt goed bereikbaar vanaf de Highlands via Glasgow/Ayrshire.',
         },
         {
-          code: 'GB', name: 'United Kingdom', days: 5, budget: 510,
+          code: 'GB', name: 'United Kingdom', days: 5, budget: 510, lat: 54.5973, lng: -5.9301,
           destinations: ['Belfast', "Giant's Causeway", 'Causeway Coastal Route', 'Dark Hedges'],
           notes: 'Compact maar met meerdere unieke stops dicht bij elkaar: de basaltzuilen van de Giant\'s Causeway (uniek, geen vergelijkbare plek elders op de route), de kustweg ernaartoe, en de Dark Hedges als korte fotostop. Prijscorrectie (2026-07): €90→€102/dag — Belfast zelf ligt iets boven het gemiddelde, de kust blijft goedkoper als dagtrip. Logistieke tip: de Twaalfde Juli-optocht valt in 2026 op maandag 13 juli — verkeer rond centraal Belfast kan die dag vertraagd zijn (check de datum bij een concrete planning, verschuift jaarlijks); geen invloed op de Giant\'s Causeway/Causeway Coastal Route zelf. Reisadvies: Noord-Ierland scoort op het terrorismedreigingsniveau zelfs iets lager dan Groot-Brittannië (substantieel vs. zeer ernstig).',
           transport_to_next: 'Auto over de open landsgrens naar Donegal — geen ferry of grenscontrole nodig (Ierland/Noord-Ierland).',
@@ -2440,13 +2552,13 @@ function rbBuildBritishIslesExpeditionRoute() {
       note: 'Van Donegal in het noordwesten via de westkust naar Kerry, dan zuidoost naar Rosslare — bewust noord-naar-zuid gereden om na de zuidkust direct via Rosslare te kunnen uitstappen, zonder terug te hoeven naar Dublin.',
       countries: [
         {
-          code: 'IE', name: 'Ireland', days: 11, budget: 1265,
+          code: 'IE', name: 'Ireland', days: 11, budget: 1265, lat: 53.2707, lng: -9.0568,
           destinations: ['Donegal', 'Connemara', 'Galway', 'Cliffs of Moher', 'Wild Atlantic Way', 'Dingle Peninsula'],
           notes: 'De kern van de Ierland-ervaring. Augustus is qua neerslag iets natter dan de piek van mei-juli, maar nog ruim voor het echt natte venster (oktober-januari, tot 50% meer regen op de westkust dan Dublin) — prima werkbaar voor kustwandelingen. Prijscorrectie (2026-07): €90→€115/dag — Ierland is momenteel het op één na duurste EU-land (na Denemarken), vrijwel volledig door gestegen accommodatieprijzen (landelijk gemiddeld €202/nacht in augustus 2025, ondanks dalende bezoekersaantallen). Galway is de duurdere uitschieter van deze etappe. Reisadvies: groen.',
           transport_to_next: 'Auto zuidwaarts naar Kerry, ≈180 km.',
         },
         {
-          code: 'IE', name: 'Ireland', days: 11, budget: 1375,
+          code: 'IE', name: 'Ireland', days: 11, budget: 1375, lat: 52.0599, lng: -9.5044,
           destinations: ['Ring of Kerry', 'Killarney National Park', 'Cork', 'Kilkenny', 'Dublin (kort)'],
           notes: 'Ring of Kerry en Killarney National Park vragen tijd voor de vele uitzichtpunten; Cork en Kilkenny als historische steden, Dublin als korte afsluiter voordat de auto weer aan boord gaat. Prijscorrectie (2026-07): €90→€125/dag gemiddeld — Killarney is toeristisch fors opgeprijsd en Dublin (de korte afsluiter) ligt nog eens ruim daarboven (~€200/nacht i.p.v. het etappegemiddelde); Ring of Kerry/Cork/Kilkenny liggen dichter bij het Ierse basisniveau. Praktische tip: rijd de Ring of Kerry rechtsom (tegen de gangbare richting van tourbussen in) of vertrek vroeg (voor 9u) om de bussen te ontlopen. M50-tol rond Dublin: cameragebaseerd, ~€2,60-3,80 per passage plus evt. ~€1,23 verwerkingskosten bij een huurauto. Reisadvies: groen; Ierland heeft van juli t/m december 2026 het roulerend EU-voorzitterschap, met extra beveiliging/mogelijke afsluitingen rond Dublin.',
           transport_to_next: "Ferry Rosslare-Fishguard/Pembroke (Stena Line/Irish Ferries, ≈3u15-4u, dagelijks), dan doorrijden door Zuid-Wales/Zuid-Engeland (al bezocht — puur transit, geen nieuwe stops) naar Poole/Portsmouth voor de oversteek naar de Kanaaleilanden.",
@@ -2460,19 +2572,19 @@ function rbBuildBritishIslesExpeditionRoute() {
       note: 'Van de Britse Kroonbezittingen in het Kanaal (met hun eigen bezettingsgeschiedenis uit de Tweede Wereldoorlog) naar de Keltische cultuur en megalieten van Bretagne — het beste najaarsvenster voordat het Franse kustweer in november omslaat.',
       countries: [
         {
-          code: 'GG', name: 'Guernsey', days: 2, budget: 260,
+          code: 'GG', name: 'Guernsey', days: 2, budget: 260, lat: 49.4526, lng: -2.5348,
           destinations: ['St Peter Port', 'kustwandelingen', 'Duitse bezettingsbunkers (WOII)'],
           notes: 'Klein eiland met een eigen, minder bekende WOII-geschiedenis: de Kanaaleilanden waren de enige Britse grond die door Duitsland bezet werd — een interessant contrast met Normandië\'s bevrijdingsverhaal verderop in de route. Prijscorrectie (2026-07): €90→€130/dag. Het \'belastingparadijs\'-imago blijkt in de praktijk vooral hoge woonlasten voor lokale bewoners te betreffen, niet toeristenprijzen — Guernsey is voor eten/boodschappen zelfs iets goedkoper dan Jersey. Reisadvies: valt onder de VK-ETA-regeling (zie Isle of Man-notitie), verder groen/laag risico.',
           transport_to_next: 'Ferry naar Jersey (Condor Ferries, interinsulair, kort).',
         },
         {
-          code: 'JE', name: 'Jersey', days: 3, budget: 405,
+          code: 'JE', name: 'Jersey', days: 3, budget: 405, lat: 49.1805, lng: -2.1049,
           destinations: ['kust', 'kliffen', 'stranden', 'Jersey War Tunnels (WOII)'],
           notes: 'Grootste en meest toeristische van de twee eilanden — beste stranden van de Kanaaleilanden, plus dezelfde bezettingsgeschiedenis als Guernsey via de War Tunnels. Prijscorrectie (2026-07): €90→€135/dag — Jersey is de duurdere van de twee Kanaaleilanden, vooral op eten/restaurants (~14% boven VK-prijzen, ~6% boven Guernsey); accommodatie piekt in juli met een gemiddelde rond £226/nacht voor hotels (goedkopere guesthouses vanaf ~£60-90 blijven beschikbaar). Jersey War Tunnels-entree ~£21 (~€25) apart van het dagbudget. Overtocht Guernsey-Jersey (Condor Ferries/Manche Îles Express) is beperkt in frequentie — check de actuele vaardagen bij het plannen, dit kan de volgorde/een extra overnachting afdwingen.',
           transport_to_next: 'Ferry Jersey-Saint-Malo (Condor Ferries, ≈1u25 snelboot) — weersgevoelig, hou een bufferdag aan.',
         },
         {
-          code: 'FR', name: 'France', days: 10, budget: 1200,
+          code: 'FR', name: 'France', days: 10, budget: 1200, lat: 48.6493, lng: -2.0257,
           destinations: ['Saint-Malo', 'Dinan', 'Cap Fréhel', 'Côte de Granit Rose', 'Quimper', 'Pointe du Raz', 'Carnac (megalieten)', 'Quiberon'],
           notes: 'De langste, meest gevarieerde kustlijn van de hele expeditie — acht losstaande hoogtepunten in tien dagen is al krap, dus dit is de dichtst-gepakte etappe van de route. Carnac\'s megalieten (ouder dan Stonehenge) sluiten mooi aan op het geschiedenisthema. Prijscorrectie (2026-07): €90→€120/dag — de kustplaatsjes (Saint-Malo, Carnac, Quiberon) rekenen een reëel toeristisch opslag, met juni als duurste maand (~€175/nacht gemiddeld tegenover ~€100 in januari). Carnac vereist april-september een betaalde gegidste toegang (~€6 p.p., oktober-maart gratis). Reisadvies: geel (Frankrijk als geheel, verhoogd terrorismeniveau vooral in steden — de landelijke Bretonse kust zelf is laag risico); check bosbrandrisico in de zomer, kan lokaal wegen/campings sluiten.',
           transport_to_next: 'Auto, ≈100 km naar Mont Saint-Michel/Normandië.',
@@ -2486,19 +2598,19 @@ function rbBuildBritishIslesExpeditionRoute() {
       note: 'De laatste Franse etappes en België als rustige afsluiter, net binnen het laatste goede najaarsvenster voordat de kust in november nat en donker wordt.',
       countries: [
         {
-          code: 'FR', name: 'France', days: 7, budget: 770,
+          code: 'FR', name: 'France', days: 7, budget: 770, lat: 49.2764, lng: -0.7025,
           destinations: ['Mont Saint-Michel ⭐', 'Bayeux (tijdelijke exposities)', 'Omaha Beach', 'Pointe du Hoc', 'Honfleur', 'Étretat', 'Rouen'],
           notes: 'Mont Saint-Michel en de D-Day-stranden verdienen elk een volle dag. De D-Day-geschiedenis vormt een mooi tegenwicht met de bezettingsgeschiedenis van de Kanaaleilanden hiervoor: bezet versus bevrijding. Prijscorrectie (2026-07): €90→€110/dag — Honfleur en Étretat zijn toeristisch opgeprijsde plaatsjes, Rouen/Bayeux zelf liggen gematigder. ⚠️ Het Tapijt van Bayeux is sinds 1 september 2025 niet te bezichtigen (2 jaar gesloten voor renovatie, heropening rond oktober 2027) — het origineel is bovendien uitgeleend aan het British Museum (10 sep 2026-11 jul 2027). Twee tijdelijke exposities in Bayeux zelf (Baron Gérard-museum, Slag om Normandië-museum) blijven wel open als alternatief. Mont Saint-Michel: parkeren ~€9,80/dag + abdij-entree ~€16 p.p. (hoogseizoen), apart van het dagbudget. D-Day Omaha Museum ~€7,90 p.p.; Pointe du Hoc is gratis (ABMC-terrein, wel een lopend behoud/veiligheidsproject 2026-medio 2027, blijft toegankelijk). Reisadvies: geel (zelfde als Bretagne); draag een paspoort/ID, een rijbewijs alleen is niet genoeg bij eventuele grenscontroles.',
           transport_to_next: 'Auto langs de kust naar de Opaalkust, ≈350 km.',
         },
         {
-          code: 'FR', name: 'France', days: 3, budget: 285,
+          code: 'FR', name: 'France', days: 3, budget: 285, lat: 50.6292, lng: 3.0573,
           destinations: ['Cap Blanc-Nez', 'Cap Gris-Nez', 'Lille'],
           notes: 'Korte, mooie kustwandeling langs de krijtkliffen van de Opaalkust, gevolgd door een korte stedelijke stop in Lille voordat de reis naar België afbuigt. Prijs vrijwel bevestigd (2026-07): €90→€95/dag — de Capes zijn vrijwel gratis toegankelijk, wat Lille\'s iets hogere stadsprijzen compenseert. Lille-centrum parkeren ~€16-17/24u (garages) — apart van het dagbudget. Reisadvies: geel, standaard.',
           transport_to_next: 'Auto, ≈110 km naar Gent.',
         },
         {
-          code: 'BE', name: 'Belgium', days: 3, budget: 390,
+          code: 'BE', name: 'Belgium', days: 3, budget: 390, lat: 51.0543, lng: 3.7174,
           destinations: ['Gent', 'Brugge'],
           notes: 'Twee historische steden die elk minstens anderhalve dag verdienen — een rustige afsluiter voordat de laatste rit terug naar Nederland volgt. Prijscorrectie (2026-07): €90→€130/dag — Brugge is een bevestigd duur toeristenstadje (musea ~€14 p.p., rondvaart ~€12-14), Gent ligt zo\'n 20% goedkoper (studentenstad, meer budgetgelegenheden) — dit budget middelt beide. Brugge-centrum parkeren is prijzig: garages vanaf ~€5,50/24u (station, met gratis pendelbus) tot ~€15,80+ centraal — apart begroten. Reisadvies: groen; verhoogd terrorismeniveau (3/4) concentreert zich op Brussel/Antwerpen, niet Gent/Brugge.',
           transport_to_next: 'Einde van de expeditie — terugrit naar Nederland, ≈150 km.',
@@ -3298,6 +3410,70 @@ function rbMigratePriceVerificationRound3() {
 
   rbRoutes.splice(idx, 1, rbBuildBritishIslesExpeditionRoute());
   rbSave();
+}
+
+/**
+ * Route-line map view prototype (2026-07) — adds a lat/lng anchor point to every leg of Central
+ * European Grand Roadtrip so the new "Routelijn" map mode has something to draw. That route's
+ * price-verification migration (round 1) already fired for Youri before these coordinates existed
+ * in the source, so — same migration-gap trap as every other mid-series edit this project has hit —
+ * simply adding lat/lng to rbBuildCentralEuropeRoadtripRoute() would silently do nothing for his
+ * already-seeded browser without this. Only touches this one route; the other 12 don't have
+ * coordinates yet (see rbRenderRouteLine's empty-state message).
+ */
+function rbMigrateRouteLineCoords() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_07_ROUTE_LINE_COORDS)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_07_ROUTE_LINE_COORDS, '1');
+
+  const idx = rbRoutes.findIndex(r => r.name === 'Central European Grand Roadtrip 🚗');
+  if (idx === -1) return;
+
+  rbRoutes.splice(idx, 1, rbBuildCentralEuropeRoadtripRoute());
+  rbSave();
+}
+
+/**
+ * Route-line map view, round 2 (2026-07) — adds lat/lng anchor coordinates to every remaining leg
+ * across the other 12 expeditions (Central European Grand Roadtrip already got its own coordinates
+ * and its own migration above, as the initial prototype). Six of these routes are sourced from
+ * RB_EXPEDITION_CONTENT + rbContentFor() (Eurasia, Pan-American, Africa Grand Tour, Nordic Arctic,
+ * Patagonia & Antarctica, India & Himalaya) — rbContentFor() was updated to pass lat/lng through,
+ * same fix shape as when it was found to be silently dropping `notes`. The other six are
+ * hand-authored (Mediterranean, North America, Oceania, Caribbean & Amazon, West & Central Africa,
+ * British Isles). Every one of these routes already has at least one prior migration (its original
+ * build, a price-verification round, or both) that has almost certainly already fired for Youri, so
+ * — same migration-gap trap hit repeatedly this project — adding coordinates to the source alone
+ * would not reach his browser without this. One representative coordinate per leg (its main city or
+ * best-known named destination), not a full per-destination or turn-by-turn road route.
+ */
+function rbMigrateRouteLineCoordsRound2() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_07_ROUTE_LINE_COORDS_ROUND2)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_07_ROUTE_LINE_COORDS_ROUND2, '1');
+
+  const replacements = [
+    ['Mediterranean Civilizations Expedition 🏛️', rbBuildMediterraneanExpeditionRoute],
+    ['Eurasia Grand Tour 🌏', rbBuildEurasiaRoute],
+    ['Pan-American Grand Tour 🌎', rbBuildPanAmericanRoute],
+    ['Africa Grand Tour 🌍', rbBuildAfricaGrandTourRoute],
+    ['Nordic Arctic Expedition ❄️', rbBuildArcticCircleRoute],
+    ['Patagonia & Antarctica Expedition 🧊', rbBuildPatagoniaAntarcticaRoute],
+    ['India & Himalaya Expedition 🏔️', rbBuildHimalayaIndiaRoute],
+    ['North America Grand Traverse 🌎', rbBuildNorthAmericaRoute],
+    ['Oceania Grand Expedition 🌊', rbBuildOceaniaExpeditionRoute],
+    ['Caribbean & Amazon Expedition 🌴', rbBuildCaribbeanAmazonExpeditionRoute],
+    ['West & Central Africa Expedition 🌍', rbBuildWestCentralAfricaExpeditionRoute],
+    ['British Isles & Celtic Coast Expedition 🍀', rbBuildBritishIslesExpeditionRoute],
+  ];
+
+  let touched = false;
+  replacements.forEach(([name, buildFn]) => {
+    const idx = rbRoutes.findIndex(r => r.name === name);
+    if (idx === -1) return;
+    rbRoutes.splice(idx, 1, buildFn());
+    touched = true;
+  });
+
+  if (touched) rbSave();
 }
 
 function rbMigrateBahrainIntoMediterraneanExpedition() {

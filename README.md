@@ -45,6 +45,14 @@ trips that span months, not weeks. Lives at `route-builder.html`.
   month grids, colored by country.
 - **World map view**: highlights the route's countries on the same Leaflet world map
   `map.html` uses (shared lookup table in `js/utils/isoCountries.js`).
+- **Route-line map view (2026-07)**: a second map mode ("📍 Routelijn" next to "🌍 Landen")
+  that draws the route as an actual ordered path — a dashed line connecting one anchor
+  coordinate per leg (`block.lat`/`lng`, its main city or best-known destination), with a
+  numbered, color-coded marker per stop, starting and ending at a fixed Utrecht/Netherlands
+  home marker (every expedition's implicit departure/return point). All 13 expeditions now
+  have these anchor coordinates. This is a real path through one representative point per
+  leg, not turn-by-turn roads or a per-destination route — see `rbRenderRouteLine()` in
+  `js/pages/routeBuilder.js`.
 - **Block Library**: save a route as a reusable, named group of countries; insert it
   into any other route later (as an independent copy — editing one never affects the
   other), or merge 2+ saved blocks into a new combined block.
@@ -501,21 +509,13 @@ for the plan to move it into the Google Sheet.
 
 ## Future plans
 
-- **Route-line map view, not just per-country highlighting** — Youri wants a way to
-  see a route drawn as an actual path/line (start→finish, following the real
-  sequence of stops), rather than the current World map view which just highlights
-  whichever countries appear in the route with no sense of order or the specific
-  places within a country. This is a good fit for **Central European Grand Roadtrip**
-  in particular, since its whole point is a driving loop through specific cities
-  (Straatsburg → Neuschwanstein → Luzern → ... ), not a set of countries. Feasible:
-  Route Builder already uses Leaflet for its World map view
-  (`rbRenderMap()`/`rbGetWorldGeoJSON()` in `js/pages/routeBuilder.js`), and Leaflet
-  supports drawing a polyline between coordinates directly (`L.polyline([[lat,lng], ...])`)
-  plus markers for each stop. The main new work would be: (1) storing a lat/lng per
-  Destination (or per country block, as a fallback) instead of just a name, and (2) a
-  new map mode that draws the ordered path through those coordinates rather than
-  filling whole countries. Worth prototyping on this roadtrip route first since it
-  already has a clear point-to-point shape.
+- **Route-line view precision** — the current route-line map (see "Route-line map view"
+  above) uses one anchor coordinate per leg, not per destination, so multi-city legs
+  collapse to a single point (e.g. Austria's four Central European Roadtrip stops all
+  show as Innsbruck) and the line is straight segments, not actual roads. Natural next
+  steps if this is worth refining further: per-destination coordinates for more accurate
+  shapes, and/or a routing API so the line follows real roads instead of straight lines.
+  Not started — no date set.
 
 ## Architecture
 
