@@ -2,6 +2,8 @@
 
 Where this project is headed. For what already works, see `README.md`. For history, see `CHANGELOG.md`. For architecture/gotchas, see `CLAUDE.md`.
 
+**Timing note (2026-07):** the bigger items below (youridealtravel merge, backend migration, multi-user, flight scraping) aren't expected to happen on a near-term evenings/weekends cadence — Youri's plan is to build these during a future sabbatical's pause periods (see "Sabbatical trip + personal project tracker page" below). Don't read urgency into how big this list is.
+
 ## Next up
 
 - **Route Builder → Google Sheet sync** — routes currently only live in `localStorage`, so they don't follow Youri across devices/browsers. Full plan already written in `ROUTE_BUILDER_SYNC.md`. Next concrete step: add 4 new tabs (`GrandTrips`, `GrandTripRegions`, `GrandTripBlocks`, `GrandTripDestinations`) to the Google Sheet, publish each as CSV, then extend the Apps Script `doPost` for `GrandTrip*` payloads.
@@ -22,6 +24,12 @@ Agreed direction (2026-07 brainstorm), not yet designed or scheduled:
 - **Route-line map view precision** — currently one anchor coordinate per leg (straight segments, not real roads). Possible upgrades: per-destination coordinates for more accurate shapes, and/or a routing API for real-road paths. Not started.
 
 ## Long-term / someday
+
+- **"Sabbatical" — its own new page** (2026-07, idea + name decided, not designed) — for Youri himself: stop working for a long period, travel extensively (year-trip scale, lots of countries), with built-in pause/build periods where he works on his own projects (this roadmap's items, and possibly others beyond just these two apps) and his portfolio/career strategy. Deliberately kept separate from the other two travel concepts already in the app, not folded into either:
+  - **Trips** = realistic vacations, already taken or concretely planned
+  - **Route Builder (Expeditions)** = aspirational, months-long bucket-list routes — pure travel fantasy, no career/build strategy attached
+  - **Sabbatical** = the odd one out: travel is the format, but the actual subject is Youri's career/portfolio strategy — what to build, in what order, during which pause blocks. Don't let this page turn into a third flavor of "trip" — it needs its own building blocks (project/portfolio items, not just country legs), even where it borrows Route Builder's long-multi-stop-journey structure.
+  - Not designed yet — revisit when actually ready to plan the sabbatical for real, not before.
 
 - **Fold `youridealtravel` into YourAtlas as its ranking-engine mode** (decided direction, 2026-07 brainstorm — not yet designed or started):
   - **Goal is functional integration, not just a shared dataset** — the two apps should end up actually using each other's logic, not just reading the same Sheet.
