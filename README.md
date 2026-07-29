@@ -73,20 +73,7 @@ for the plan to move it into the Google Sheet.
 
 ## Open items
 
-- **Sheet sync still not started** — routes don't follow you across devices/browsers
-  yet (see `ROUTE_BUILDER_SYNC.md` for the full plan). **Next concrete step**: in the
-  Google Sheet, add 4 new tabs (`GrandTrips`, `GrandTripRegions`, `GrandTripBlocks`,
-  `GrandTripDestinations` — exact columns in `ROUTE_BUILDER_SYNC.md`) and publish each
-  to the web as CSV, then extend the Apps Script `doPost` for `GrandTrip*` payloads.
-- **Eurasia Grand Tour is a genuinely long expedition (~11-12 months)** even after the
-  time-realism audit. Worth considering splitting it into two separate expeditions
-  (West-Eurasia through Central Asia, and East Asia/Southeast Asia through Indonesia)
-  rather than one continuous year. Not started, no date set.
-- **Route-line view precision** — see `CLAUDE.md`'s gotcha note. Natural next steps if
-  worth refining further: per-destination coordinates for more accurate shapes, and/or
-  a routing API so the line follows real roads instead of straight lines. Not started.
-
-See `CLAUDE.md` for smaller cosmetic gaps (map highlighting, dropdown lag) that are accepted as-is rather than open work.
+See [`ROADMAP.md`](ROADMAP.md) for planned work and direction, and `CLAUDE.md` for smaller cosmetic gaps (map highlighting, dropdown lag) that are accepted as-is rather than open work.
 
 ## Architecture
 
