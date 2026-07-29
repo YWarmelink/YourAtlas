@@ -29,6 +29,7 @@ Agreed direction (2026-07 brainstorm), not yet designed or scheduled:
   - **Trips** = realistic vacations, already taken or concretely planned
   - **Route Builder (Expeditions)** = aspirational, months-long bucket-list routes — pure travel fantasy, no career/build strategy attached
   - **Sabbatical** = the odd one out: travel is the format, but the actual subject is Youri's career/portfolio strategy — what to build, in what order, during which pause blocks. Don't let this page turn into a third flavor of "trip" — it needs its own building blocks (project/portfolio items, not just country legs), even where it borrows Route Builder's long-multi-stop-journey structure.
+  - **Content already exists, just not wired in**: Youri already worked out the actual trip (places) and project plan (what to build where) in a separate Google Sheet. Not yet located/linked here — find that Sheet before designing this page's data model, don't re-invent the content from scratch.
   - Not designed yet — revisit when actually ready to plan the sabbatical for real, not before.
 
 - **Fold `youridealtravel` into YourAtlas as its ranking-engine mode** (decided direction, 2026-07 brainstorm — not yet designed or started):
