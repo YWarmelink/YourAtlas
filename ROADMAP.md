@@ -10,7 +10,7 @@ Where this project is headed. For what already works, see `README.md`. For histo
 
 ## Planned features
 
-Agreed direction (2026-07 brainstorm), not yet designed or scheduled:
+Agreed direction (2026-07 brainstorm), not yet designed or scheduled. **Criterion for this section: buildable with the current stack, no blocking dependency** — nothing here needs to wait on something bigger below.
 
 - **Visa/passport tracker** — visa info is already researched (by hand and via the `route-price-checker` agent) but currently just buried in free-text `notes` per country block. Turn it into a structured per-country field: visa type needed, obtained yes/no, expiry date — so it's an actionable checklist, not prose you have to re-read.
 - **Universal search across trips/expeditions/notes** — with 13 expeditions full of long `notes` fields, plus the Trips sheet, "where was that tip about X" is already a real problem. Client-side text search over data that's already loaded (no new data source needed).
@@ -24,6 +24,8 @@ Agreed direction (2026-07 brainstorm), not yet designed or scheduled:
 - **Route-line map view precision** — currently one anchor coordinate per leg (straight segments, not real roads). Possible upgrades: per-destination coordinates for more accurate shapes, and/or a routing API for real-road paths. Not started.
 
 ## Long-term / someday
+
+**Criterion for this section: either blocked on something else in this same section, or too large-scope to start without its own dedicated design discussion first.** Not "less important" — just not startable yet.
 
 - **"Sabbatical" — its own new page** (2026-07, idea + name decided, not designed) — for Youri himself: stop working for a long period, travel extensively (year-trip scale, lots of countries), with built-in pause/build periods where he works on his own projects (this roadmap's items, and possibly others beyond just these two apps) and his portfolio/career strategy. Deliberately kept separate from the other two travel concepts already in the app, not folded into either:
   - **Trips** = realistic vacations, already taken or concretely planned
