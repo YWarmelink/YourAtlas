@@ -12,6 +12,55 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Ten more expeditions split into standalone companions (2026-07)** — continuing the modularization
+  analysis in `ROUTE_BUILDER_MODULES.md`, now built for every remaining expedition except the two
+  self-driven-from-NL loops (Central European Grand Roadtrip, British Isles — decided to stay
+  unsplit, see `ROADMAP.md`). 24 new routes total: **Pan-American Grand Tour 🌎** → Mexico 🌵,
+  Midden-Amerika Loop 🌋, Andes Grand Traverse 🦙, Zuidelijke Kegel & Brazilië-finale 🧉;
+  **Africa Grand Tour 🌍** → Zuidelijk Afrika Safari-lus 🦁, Afrikaanse Eilanden 🏝️, Oost-Afrika
+  Safari Classic 🦒, Hoorn van Afrika & Egypte 🏺; **Mediterranean Civilizations Expedition 🏛️**
+  → Iberia & Marokko/Tunesië 🏰, Malta & Italië 🏛️, Corsica & Zuid-Frankrijk ⛵, Griekenland &
+  Cyprus 🏺, Anatolië 🕌, Egypte & Arabisch Schiereiland 🐪; **Nordic Arctic Expedition ❄️** → five
+  fully independent routes (Scandinavië Overland 🚂, Svalbard 🐻‍❄️, Faeröer 🐑, IJsland ❄️,
+  Groenland 🧊 — not grouped into a Major Trip, since the route's own notes already call the four
+  islands "stuk voor stuk losse vluchtsprongen"); **Patagonia & Antarctica Expedition 🧊** →
+  Patagonië Overland 🏔️, Antarctica-cruise 🐧; **India & Himalaya Expedition 🏔️** → Noord-India 🕌,
+  Nepal 🏔️, Bhutan 🐉; **North America Grand Traverse 🌎** → Oost-Canada 🍁, West-Canada: Rockies &
+  Vancouver 🏔️, VS Westkust Roadtrip 🌉; **Oceania Grand Expedition 🌊** → Pacific-eilanden 🌺,
+  Tropisch/Outback Australië 🐊, Gematigd/Zuidelijk Australië 🍇, Nieuw-Zeeland 🥝 (Australia split
+  by climate zone across two routes, the same "same country, different block" pattern already used
+  for Chile/Argentina); **Caribbean & Amazon Expedition 🌴** → Caraïbische Eilanden-hop 🏝️,
+  Suriname & Noord-Brazilië 🌴 (built despite that route's own notes arguing against a split — the
+  modularization analysis deliberately disagreed, see its own reasoning); **West & Central Africa
+  Expedition 🌍** → West-Afrika Overland 🥁, Centraal-Afrika & Eilanden 🦛.
+  Same method as the Eurasia split below: every new route is built via its own
+  `rbSeedXSplitExpeditions()` function (one new `localStorage` flag each) that pushes routes built
+  by dedicated `rbBuildXRoute()` functions, reusing countries/days/budgets/order/content verbatim
+  either via `rbContentFor()` (for the six routes with a shared `RB_EXPEDITION_CONTENT` entry) or
+  copied inline (for the five hand-authored routes where a country repeats across legs — Italy,
+  France, Canada, the US, Australia, New Zealand). All 13 original expeditions are completely
+  untouched and still exist in full. Verified with a Node smoke test simulating the full real
+  `DOMContentLoaded` boot sequence (all seed + migration functions in their real order, on a
+  fresh `localStorage`): 51 total routes, zero duplicate names, zero malformed blocks, and every
+  split's countries/days/budgets sum to exactly its original's totals in the same order.
+- **Eurasia Grand Tour 🌏 split into three standalone expeditions (2026-07)** — first concrete
+  build out of the modularization analysis in `ROUTE_BUILDER_MODULES.md`: **West-Eurazië Overland
+  🐫** (Balkans → Turkey → Caucasus → Central Asia, 146 days, €8,159), **Oost-Azië & Stille Oceaan
+  🗻** (China → Mongolia → Japan → Taiwan, 66 days, €5,725) and **Zuidoost-Azië Grand Loop 🛕**
+  (Mainland SEA → Maritime SEA → Indonesia & East Timor → Singapore, 124 days, €6,090), built via
+  `rbBuildWestEurasiaOverlandRoute()` / `rbBuildEastAsiaPacificRoute()` /
+  `rbBuildSoutheastAsiaGrandLoopRoute()`, seeded once by `rbSeedEurasiaSplitExpeditions()`. All
+  three reuse the exact same countries, days, budgets, order and per-country content as the
+  original — via `rbContentFor('Eurasia Grand Tour 🌏', ...)`, same as the original route's own
+  builder function — nothing was re-verified or re-priced, this is a pure regrouping. Together the
+  three sum to exactly the original's 27 countries / 336 days / €19,974, in the same order
+  (verified with a Node smoke test). **Eurasia Grand Tour 🌏 itself is untouched** and still exists
+  as its own full 11-12 month expedition alongside these three — this was itself the route's own
+  suggestion, quoted in its `notes`: *"Overweeg desondanks om deze route ooit te knippen in twee
+  losse expedities..."* (split into three here instead of two, since Oost-Azië and Zuidoost-Azië
+  turned out distinct enough — different climate window, no overland link between them — to stand
+  on their own too). The other 12 expeditions' proposed splits from the same analysis are not yet
+  built; see `ROADMAP.md`.
 - **Price/visa/travel-advisory verification, route 13 — the last one (2026-07)** — British Isles &
   Celtic Coast Expedition 🍀. All 15 legs checked; the route's flat €90/day rate (same
   simplification Central European Grand Roadtrip originally used) needed correcting on 13 of them,

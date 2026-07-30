@@ -71,6 +71,18 @@ Everything above lives in `localStorage` (`atlas_grand_trips`,
 `atlas_route_blocks_library`) — see [`ROUTE_BUILDER_SYNC.md`](ROUTE_BUILDER_SYNC.md)
 for the plan to move it into the Google Sheet.
 
+**Modularizing the 13 expeditions**: a full analysis of which expeditions can split into
+smaller, reusable "Major Trip" / "Travel Block" pieces (grounded in the actual route
+data, not invented) lives in [`ROUTE_BUILDER_MODULES.md`](ROUTE_BUILDER_MODULES.md). Built for
+11 of the 13 expeditions (2026-07): 27 new standalone companion routes exist alongside the
+originals, reusing the exact same countries/days/budgets/content — the originals themselves are
+completely untouched and still exist in full (see `CHANGELOG.md` for the full list of new
+routes). Only **Central European Grand Roadtrip 🚗** and **British Isles & Celtic Coast
+Expedition 🍀** were deliberately left unsplit (self-driven-from-NL loops, decided not to break
+up). Not yet built: the technical Module Library work described in that analysis (metadata
+fields, "possible standalone trips" UI, compatible/incompatible-blocks scoring) — for now the new
+routes are just added as plain routes, the same way the original 13 are.
+
 ## Open items
 
 See [`ROADMAP.md`](ROADMAP.md) for planned work and direction, and `CLAUDE.md` for smaller cosmetic gaps (map highlighting, dropdown lag) that are accepted as-is rather than open work.

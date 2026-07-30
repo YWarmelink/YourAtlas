@@ -19,6 +19,17 @@ const RB_SEED_FLAG_KEY_CARIBBEAN = 'atlas_grand_trips_seeded_caribbean_v1';
 const RB_SEED_FLAG_KEY_WCAFRICA = 'atlas_grand_trips_seeded_wcafrica_v1';
 const RB_SEED_FLAG_KEY_CEROADTRIP = 'atlas_grand_trips_seeded_ceroadtrip_v1';
 const RB_SEED_FLAG_KEY_BRITISHISLES = 'atlas_grand_trips_seeded_britishisles_v1';
+const RB_SEED_FLAG_KEY_EURASIA_SPLIT = 'atlas_grand_trips_seeded_eurasia_split_v1';
+const RB_SEED_FLAG_KEY_PANAM_SPLIT = 'atlas_grand_trips_seeded_panam_split_v1';
+const RB_SEED_FLAG_KEY_AFRICA_SPLIT = 'atlas_grand_trips_seeded_africa_split_v1';
+const RB_SEED_FLAG_KEY_MEDITERRANEAN_SPLIT = 'atlas_grand_trips_seeded_mediterranean_split_v1';
+const RB_SEED_FLAG_KEY_NORDIC_ARCTIC_SPLIT = 'atlas_grand_trips_seeded_nordic_arctic_split_v1';
+const RB_SEED_FLAG_KEY_PATAGONIA_SPLIT = 'atlas_grand_trips_seeded_patagonia_split_v1';
+const RB_SEED_FLAG_KEY_HIMALAYA_SPLIT = 'atlas_grand_trips_seeded_himalaya_split_v1';
+const RB_SEED_FLAG_KEY_NORTHAMERICA_SPLIT = 'atlas_grand_trips_seeded_northamerica_split_v1';
+const RB_SEED_FLAG_KEY_OCEANIA_SPLIT = 'atlas_grand_trips_seeded_oceania_split_v1';
+const RB_SEED_FLAG_KEY_CARIBBEAN_SPLIT = 'atlas_grand_trips_seeded_caribbean_split_v1';
+const RB_SEED_FLAG_KEY_WCAFRICA_SPLIT = 'atlas_grand_trips_seeded_wcafrica_split_v1';
 const RB_MIGRATE_FLAG_2026_07 = 'atlas_grand_trips_migrate_2026_07_v1';
 const RB_MIGRATE_FLAG_2026_07_EMOJI = 'atlas_grand_trips_migrate_2026_07_emoji_v1';
 const RB_MIGRATE_FLAG_2026_07_MEDITERRANEAN = 'atlas_grand_trips_migrate_2026_07_mediterranean_v1';
@@ -62,6 +73,17 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbSeedWestCentralAfricaExpedition();
   rbSeedCentralEuropeRoadtripExpedition();
   rbSeedBritishIslesExpedition();
+  rbSeedEurasiaSplitExpeditions();
+  rbSeedPanAmericanSplitExpeditions();
+  rbSeedAfricaSplitExpeditions();
+  rbSeedMediterraneanSplitExpeditions();
+  rbSeedNordicArcticSplitExpeditions();
+  rbSeedPatagoniaSplitExpeditions();
+  rbSeedHimalayaSplitExpeditions();
+  rbSeedNorthAmericaSplitExpeditions();
+  rbSeedOceaniaSplitExpeditions();
+  rbSeedCaribbeanSplitExpeditions();
+  rbSeedWestCentralAfricaSplitExpeditions();
   rbMigrateExpeditionRenames();
   rbMigrateExpeditionEmojiNames();
   rbMigrateAncientToMediterranean();
@@ -2662,6 +2684,1258 @@ function rbBuildBritishIslesExpeditionRoute() {
       "Autokosten (gedeeld per auto, NIET in de bedragen per land hierboven): brandstof/tol/parkeren over ≈9.000-10.000 km geschat op €2.800-3.200; vijf auto-ferry's (alle behalve Isle of Man, die als voetganger gaat) plus de lokale dagshuurauto op Isle of Man voor de TT Mountain Road samen ≈€1.400-1.600 — totaal ≈€4.200-4.800 per auto, ongeacht groepsgrootte. Let op (2026-07): Britse brandstofprijzen liggen momenteel duidelijk boven Nederlandse pompprijzen (~€1,73/L benzine, ~€1,89/L diesel) — bij lange ritten (vooral de Schotse Highlands/NC500) mag de bovenkant van deze bandbreedte realistischer zijn dan het midden.\n\n" +
       "Prijzen/visum/reisadvies-verificatie (2026-07, dertiende en laatste route van deze verificatieronde): alle 15 etappes gecheckt via web-onderzoek tegen actuele prijzen (tussen budget- en comfort-backpacker), grensregels en Nederlands reisadvies. De vlakke €90/dag bleek — net als bij Central European Grand Roadtrip destijds — voor bijna elke etappe aan de lage kant: alleen Wales en de Opaalkust/Lille lagen al dicht bij accuraat, de overige 13 etappes kregen een correctie, meestal tussen +11% en +39%. Grootste stijgers: Cornwall (€90→€125/dag, zomerpiek), Ierland (beide etappes, €90→€115-125/dag, Ierland is nu het op één na duurste EU-land), de Kanaaleilanden (Guernsey €90→€130, Jersey €90→€135) en de Schotse Highlands/Skye-etappe (€90→€114/dag gemiddeld, met Skye zelf rond €150/dag). Nieuw grondkostentotaal: €13.245 (was €10.350), 115 dagen ongewijzigd. ⚠️ Belangrijke nieuwe bevinding: sinds 2 april 2025 is een UK ETA verplicht voor Nederlandse/EU-reizigers (~€23 p.p. sinds de verhoging van 8 april 2026) — dit geldt voor het hele Verenigd Koninkrijk-bezoek in één keer; de latere overtochten naar Isle of Man/Jersey/Guernsey vallen sinds 23 april 2026 onder dezelfde ETA (geen aparte aanvraag/kosten). Ook gevonden: het Tapijt van Bayeux is tot naar schatting oktober 2027 gesloten voor renovatie (zie Bayeux-etappe voor het alternatief), en het Edinburgh Fringe Festival (7-31 augustus 2026) kan de Schotland-etappe fors duurder maken als de concrete planning de Edinburgh-nachten in die periode laat vallen. Details en overige bevindingen (Twaalfde Juli-optocht in Noord-Ierland, Ring of Kerry-rijrichting, div. parkeer-/entreekosten) in elke etappe's eigen notities.\n\n" +
       "Totaal: 86 dagen minimum / 115 dagen ideaal (~3,8 maanden), €13.245 grondkosten per persoon solo (na de 2026-07-verificatie, was €10.350) + ≈€4.200-4.800 autokosten per auto. Met 2-3 personen (gedeelde kamers) liggen de per-persoon bedragen proportioneel lager dan hierboven, zelfde verhouding als voorheen. Ferrytijden/prijzen en de UK ETA-kosten zijn nog niet allemaal tegen een concrete boekingsdatum getoetst — behandel dit als een grondig geverifieerd concept, nog geen boekbaar plan.",
+  });
+}
+
+// ---- Eurasia Grand Tour split (2026-07 modularization analysis, see ROUTE_BUILDER_MODULES.md) ----
+//
+// Eurasia Grand Tour 🌏 itself already flagged this exact split in its own notes: "Overweeg
+// desondanks om deze route ooit te knippen in twee losse expedities (West-Eurazië t/m
+// Centraal-Azië, en Oost-Eurazië/Azië) — 11-12 maanden aaneengesloten is fors." The three
+// routes below carve it into three standalone expeditions instead of two, since Oost-Azië and
+// Zuidoost-Azië turned out to be distinct enough (different climate window, no overland link)
+// to stand on their own too. Countries, days, budgets, region order and all per-country content
+// are reused as-is from RB_EXPEDITION_CONTENT['Eurasia Grand Tour 🌏'] via rbContentFor() — the
+// original Eurasia Grand Tour 🌏 expedition itself is untouched by this and keeps existing
+// exactly as it was, in full, alongside these three.
+
+function rbSeedEurasiaSplitExpeditions() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EURASIA_SPLIT)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EURASIA_SPLIT, '1');
+
+  rbRoutes.push(rbBuildWestEurasiaOverlandRoute(), rbBuildEastAsiaPacificRoute(), rbBuildSoutheastAsiaGrandLoopRoute());
+  rbSave();
+}
+
+function rbBuildWestEurasiaOverlandRoute() {
+  const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
+  return rbBuildSeedRoute('West-Eurazië Overland 🐫', [
+    { name: 'Balkans', season: 'April–juni', budget: 2784, note: 'Mild voorjaar, voor de zomerdrukte en -hitte — sluit aan op een vroege start van de hele expeditie.', countries: [eurasia('BA', 'Bosnia and Herzegovina'), eurasia('HR', 'Croatia'), eurasia('ME', 'Montenegro'), eurasia('AL', 'Albania'), eurasia('MK', 'North Macedonia')] },
+    { name: 'Turkey', season: 'Juni', budget: 1300, note: 'Aansluitend op de Balkan, nog vóór de zwaarste zomerhitte in Cappadocië en het binnenland.', countries: [eurasia('TR', 'Turkey')] },
+    { name: 'Caucasus', season: 'Juni–augustus', budget: 1475, note: 'Bergpassen en Svaneti zijn dan sneeuwvrij; sluit direct aan op het Centraal-Aziatische bergseizoen.', countries: [eurasia('GE', 'Georgia'), eurasia('AM', 'Armenia'), eurasia('AZ', 'Azerbaijan')] },
+    { name: 'Central Asia', season: 'Juni–september', budget: 2600, note: 'De Pamir Highway en hooggelegen passen zijn alleen in deze maanden begaanbaar — buiten dit venster ligt er sneeuw/ijs. Turkmenistan is bewust geschrapt (lastig te bezoeken/niet reëel voor deze reisstijl).', countries: [eurasia('KZ', 'Kazakhstan'), eurasia('KG', 'Kyrgyzstan'), eurasia('TJ', 'Tajikistan'), eurasia('UZ', 'Uzbekistan')] },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'Backpacker — overland waar mogelijk (bus, trein, marshrutka/deeltaxi), vlucht alleen waar geen praktische grondroute bestaat (Baku–Almaty). Lokale guesthouses en hostels boven internationale ketens.',
+    climate_summary: 'Een aprilstart legt de Balkan in een mild voorjaar, bereikt Turkije in juni vlak vóór de zwaarste zomerhitte, de Kaukasus in juni-augustus (bergpassen sneeuwvrij) en Centraal-Azië in juni-september — het enige venster waarin de Pamir Highway begaanbaar is. Zie de region-notities hieronder voor de onderbouwing per etappe.',
+    description: "Overland door het westelijke deel van Eurazië — van de Balkan via Turkije en de Kaukasus naar de Centraal-Aziatische 'Stans'.",
+    notes: 'Losgesplitst van Eurasia Grand Tour 🌏 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md) — de oorspronkelijke expeditie noemde deze exacte knip zelf al als optie. Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen uit Eurasia Grand Tour 🌏 (inclusief alle prijs-/visum-/reisadvies-verificaties per land); alleen de expeditiegrens is nieuw. Vervolg op deze route: Oost-Azië & Stille Oceaan 🗻. Eurasia Grand Tour 🌏 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildEastAsiaPacificRoute() {
+  const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
+  return rbBuildSeedRoute('Oost-Azië & Stille Oceaan 🗻', [
+    { name: 'China', season: 'September', budget: 1625, note: 'Na de zomerdrukte/-hitte, ruim vóór de Mongoolse winterkou die erna komt.', countries: [eurasia('CN', 'China')] },
+    { name: 'Mongolia', season: 'Eind augustus–september', budget: 650, note: 'Vóór de vrieskou vanaf oktober; de Gobi is dan nog droog en warm genoeg voor een meerdaagse 4x4-tocht.', countries: [eurasia('MN', 'Mongolia')] },
+    { name: 'Japan', season: 'Oktober–november', budget: 2700, note: 'Herfstkleuren, en rustiger dan de kersenbloesem-drukte in het voorjaar.', countries: [eurasia('JP', 'Japan')] },
+    { name: 'Taiwan', season: 'November', budget: 750, note: 'Droog en mild, vóór het koelere winterseizoen in het noorden van het eiland.', countries: [eurasia('TW', 'Taiwan')] },
+  ], {
+    best_starting_month: 'September',
+    travel_style: 'Backpacker — overland via de Trans-Mongolië-trein tussen China en Mongolië; vanaf Mongolië alleen per vliegtuig verder (geen landroute naar Japan of Taiwan mogelijk). Lokale guesthouses en hostels boven internationale ketens.',
+    climate_summary: 'China in september (na de zomerhitte, vóór de Mongoolse winterkou), Mongolië eind augustus-september (de Gobi is dan nog droog en warm genoeg voor de jeeptocht), Japan in oktober-november (herfstkleuren, rustiger dan de kersenbloesem-drukte) en Taiwan in november (droog en mild, vóór het koelere winterseizoen). Als losse expeditie prima op zichzelf te starten in september, zonder eerst West-Eurazië Overland te hoeven doen.',
+    description: 'Van de Zijderoute-steden van China via de Gobiwoestijn van Mongolië naar Japan en Taiwan.',
+    notes: 'Losgesplitst van Eurasia Grand Tour 🌏 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen uit Eurasia Grand Tour 🌏 (inclusief alle prijs-/visum-/reisadvies-verificaties per land); alleen de expeditiegrens is nieuw. Vervolg op West-Eurazië Overland 🐫; wordt zelf gevolgd door Zuidoost-Azië Grand Loop 🛕. Eurasia Grand Tour 🌏 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildSoutheastAsiaGrandLoopRoute() {
+  const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
+  return rbBuildSeedRoute('Zuidoost-Azië Grand Loop 🛕', [
+    { name: 'Mainland Southeast Asia', season: 'December–februari', budget: 2750, note: 'Het droge seizoen op het vasteland van Zuidoost-Azië — geen moesson, aangename temperaturen. Myanmar is bewust geschrapt (lastig te bezoeken/niet reëel voor deze reisstijl).', countries: [eurasia('VN', 'Vietnam'), eurasia('LA', 'Laos'), eurasia('KH', 'Cambodia'), eurasia('TH', 'Thailand')] },
+    { name: 'Maritime Southeast Asia', season: 'Februari–maart', budget: 1690, note: "Nog droog in de meeste regio's, vóór de moesson die later in het voorjaar begint.", countries: [eurasia('MY', 'Malaysia'), eurasia('BN', 'Brunei'), eurasia('PH', 'Philippines')] },
+    { name: 'Indonesia & Oost-Timor', season: 'Maart', budget: 1275, note: "Droog seizoen loopt in de meeste regio's door tot april/mei — Bali, Gili, Lombok en Komodo nog prima begaanbaar. Oost-Timor sluit hier logisch op aan, via de landgrens bij Kupang (West-Timor).", countries: [eurasia('ID', 'Indonesia'), eurasia('TL', 'East Timor')] },
+    { name: 'Singapore Finale', season: 'Maart', budget: 375, note: 'Bewuste, compacte afsluiting — een rustige stadsstop na Oost-Timor.', countries: [eurasia('SG', 'Singapore')] },
+  ], {
+    best_starting_month: 'December',
+    travel_style: 'Backpacker — overland op het vasteland (bus, trein), vluchten voor de eilandsprongen in maritiem Zuidoost-Azië en naar Singapore. Lokale guesthouses en hostels boven internationale ketens.',
+    climate_summary: 'Het vasteland van Zuidoost-Azië in december-februari (droog seizoen, geen moesson), maritiem Zuidoost-Azië in februari-maart, Indonesië & Oost-Timor in maart (droog seizoen loopt door tot april/mei) en Singapore als bewuste, compacte afsluiter. Als losse expeditie prima op zichzelf te starten in december.',
+    description: 'Een grote lus door Zuidoost-Azië: vasteland, eilanden en een compacte stadsafsluiter in Singapore.',
+    notes: "Losgesplitst van Eurasia Grand Tour 🌏 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen uit Eurasia Grand Tour 🌏 (inclusief alle prijs-/visum-/reisadvies-verificaties per land, zoals de huidige grenssluiting Cambodja-Thailand bij Poipet — zie Cambodja's eigen notitie); alleen de expeditiegrens is nieuw. Vervolg op Oost-Azië & Stille Oceaan 🗻. Eurasia Grand Tour 🌏 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.",
+  });
+}
+
+// ---- Pan-American Grand Tour split (2026-07 modularization analysis, see ROUTE_BUILDER_MODULES.md) ----
+//
+// Pan-American Grand Tour 🌎 already excludes Patagonia/Antarctica/Northern Brazil/Suriname/the
+// Caribbean as "separate future expeditions" in its own notes — proof it was designed with
+// modularity in mind from the start. The four routes below carve the remaining 15 countries into
+// standalone pieces along the same logic. Countries, days, budgets, region order and all
+// per-country content are reused as-is from RB_EXPEDITION_CONTENT['Pan-American Grand Tour 🌎']
+// via rbContentFor() — the original expedition itself is untouched and keeps existing exactly as
+// it was, in full, alongside these four.
+
+function rbSeedPanAmericanSplitExpeditions() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_PANAM_SPLIT)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_PANAM_SPLIT, '1');
+
+  rbRoutes.push(rbBuildMexicoRoute(), rbBuildCentralAmericaLoopRoute(), rbBuildAndesGrandTraverseRoute(), rbBuildSouthernConeAndBrazilFinaleRoute());
+  rbSave();
+}
+
+function rbBuildMexicoRoute() {
+  const panAm = (code, name) => rbContentFor('Pan-American Grand Tour 🌎', code, name);
+  return rbBuildSeedRoute('Mexico 🌵', [
+    { name: 'Mexico', season: 'November–december', budget: 1000, note: 'Droog seizoen, na de zomerse regens.', countries: [panAm('MX', 'Mexico')] },
+  ], {
+    best_starting_month: 'November',
+    travel_style: 'Backpacker — lokale bussen en colectivos.',
+    climate_summary: 'November-december is het droge seizoen, direct na de zomerse regens — het hele land is dan goed begaanbaar.',
+    description: 'Van Ciudad de México via Oaxaca naar de Maya-ruïnes van Palenque.',
+    notes: 'Losgesplitst van Pan-American Grand Tour 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen uit Pan-American Grand Tour 🌎 (inclusief alle prijs-/visum-/reisadvies-verificaties, zoals de waarschuwing over Route 199). Pan-American Grand Tour 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildCentralAmericaLoopRoute() {
+  const panAm = (code, name) => rbContentFor('Pan-American Grand Tour 🌎', code, name);
+  return rbBuildSeedRoute('Midden-Amerika Loop 🌋', [
+    { name: 'Northern Central America', season: 'December–januari', budget: 1770, note: 'Droog seizoen, orkaanseizoen voorbij.', countries: [panAm('GT', 'Guatemala'), panAm('BZ', 'Belize'), panAm('HN', 'Honduras'), panAm('SV', 'El Salvador')] },
+    { name: 'Southern Central America', season: 'Januari–februari', budget: 1975, note: 'Pacifische droge seizoen in Costa Rica/Panama — beste tijd voor de kust.', countries: [panAm('NI', 'Nicaragua'), panAm('CR', 'Costa Rica'), panAm('PA', 'Panama')] },
+  ], {
+    best_starting_month: 'December',
+    travel_style: 'Backpacker — lokale bussen (chicken bus tot luxere overlandbus), zeilboot door de San Blas-eilanden i.p.v. vliegen over de Darién Gap.',
+    climate_summary: 'Een decemberstart legt Noord-Midden-Amerika (Guatemala t/m El Salvador) in het droge seizoen, ruim na het orkaanseizoen, en bereikt Zuid-Midden-Amerika (Nicaragua t/m Panama) in januari-februari — de Pacifische droge tijd, de beste periode voor de kust.',
+    description: 'Van de Maya-hoogvlaktes van Guatemala via Belize, Honduras en El Salvador naar de Pacifische kust van Costa Rica en Panama.',
+    notes: "Losgesplitst van Pan-American Grand Tour 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen uit Pan-American Grand Tour 🌎; alleen de expeditiegrens is nieuw. Let op: dit blok bevat de volledige CA-4-visumzone (Guatemala/Honduras/El Salvador/Nicaragua delen één gezamenlijke 90-dagenlimiet, ook al vallen ze hier over de twee regio's hierboven) — deze route blijft ruim onder die limiet, maar hou er rekening mee als je de regio's ooit los van elkaar zou plannen. Pan-American Grand Tour 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.",
+  });
+}
+
+function rbBuildAndesGrandTraverseRoute() {
+  const panAm = (code, name) => rbContentFor('Pan-American Grand Tour 🌎', code, name);
+  return rbBuildSeedRoute('Andes Grand Traverse 🦙', [
+    { name: 'Colombia', season: 'Februari–maart', budget: 1260, note: 'Droog in zowel de Caribische regio als de koffiezone/Andes.', countries: [panAm('CO', 'Colombia')] },
+    { name: 'Ecuador', season: 'Maart–april', budget: 1650, note: 'Sierra droog genoeg voor wandelen; Galápagos is jaarrond goed maar rustiger in dit seizoen.', countries: [panAm('EC', 'Ecuador')] },
+    { name: 'Peru', season: 'April–mei', budget: 1050, note: "Het Andes-droogseizoen begint — ideaal voor Cusco/Vallei van de Inca's en Huaraz-trekking.", countries: [panAm('PE', 'Peru')] },
+    { name: 'Bolivia', season: 'Mei–juni', budget: 425, note: 'Droog seizoen, heldere Uyuni-zoutvlakte (let op: geen spiegel-effect zoals in het natte seizoen — een bewuste ruil).', countries: [panAm('BO', 'Bolivia')] },
+  ], {
+    best_starting_month: 'Februari',
+    travel_style: 'Backpacker — lokale bussen door de Andes, geen enkele vlucht nodig tussen deze vier landen (ononderbroken overland-corridor).',
+    climate_summary: 'Een februaristart legt Colombia in zijn droge seizoen (zowel Caribische kust als koffiezone/Andes), Ecuador in maart-april (Sierra droog genoeg om te wandelen), Peru in april-mei (Andes-droogseizoen, ideaal voor Cusco en Huaraz) en Bolivia in mei-juni (heldere, droge Uyuni-zoutvlakte).',
+    description: 'Ononderbroken overland door de Andes: van de Caribische kust van Colombia via Ecuador en Peru naar de Boliviaanse zoutvlaktes.',
+    notes: 'Losgesplitst van Pan-American Grand Tour 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen uit Pan-American Grand Tour 🌎 (inclusief de prijscorrectie op Ecuador voor Galápagos-kosten); alleen de expeditiegrens is nieuw. Pan-American Grand Tour 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildSouthernConeAndBrazilFinaleRoute() {
+  const panAm = (code, name) => rbContentFor('Pan-American Grand Tour 🌎', code, name);
+  return rbBuildSeedRoute('Zuidelijke Kegel & Brazilië-finale 🧉', [
+    { name: 'Northern Chile', season: 'Juni–juli', budget: 520, note: 'Northern Chile only (Atacama, Antofagasta) — Patagonia is a separate future expedition. De Atacama is jaarrond droog; koude nachten in de Chileense winter, overdag prima.', countries: [panAm('CL', 'Chile')] },
+    { name: 'Northern Argentina', season: 'Juli', budget: 350, note: 'Northern Argentina only (Salta, Jujuy) — Patagonia is a separate future expedition. Droog hoogseizoen in Salta/Jujuy, koude nachten in het hooggebergte.', countries: [panAm('AR', 'Argentina')] },
+    { name: 'Southern Brazil', season: 'Juli–augustus', budget: 1166, note: 'Southern Brazil only — Northern Brazil is a separate future expedition. Zuid-Braziliaanse winter: mild en droog voor sightseeing (Iguaçu, koloniale steden), maar geen strandweer; voor strandtijd de hele reis 1-2 maanden later starten.', countries: [panAm('BR', 'Brazil')] },
+  ], {
+    best_starting_month: 'Juni',
+    travel_style: 'Backpacker — lokale bussen, één binnenlandse vlucht van Salta naar Foz do Iguaçu/Zuid-Brazilië (de afstand rechtvaardigt dat).',
+    climate_summary: 'Een junistart legt Noord-Chili (Atacama) in de Chileense winter (jaarrond droog, koude nachten), Noord-Argentinië (Salta/Jujuy) in juli (droog hoogseizoen) en Zuid-Brazilië in juli-augustus (Zuid-Braziliaanse winter: mild en droog voor sightseeing, maar geen strandweer).',
+    description: 'Van de Atacama-woestijn via Noord-Argentinië naar de winterse zuidkust van Brazilië.',
+    notes: "Losgesplitst van Pan-American Grand Tour 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen uit Pan-American Grand Tour 🌎; alleen de expeditiegrens is nieuw. 'Northern Chile' en 'Northern Argentina' zijn hier letterlijk alleen het noordelijke deel van die landen — Patagonië (het zuidelijke deel) zit al in de aparte Patagonia & Antarctica Expedition 🧊, exact het 'zelfde land, ander block'-patroon uit de modularisatie-analyse. Pan-American Grand Tour 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.",
+  });
+}
+
+// ---- Africa Grand Tour split (2026-07 modularization analysis, see ROUTE_BUILDER_MODULES.md) ----
+//
+// The four routes below carve Africa Grand Tour's 18 countries along its own existing region
+// boundaries (already flight-gated seams, per the route's own travel_style note) into four
+// standalone expeditions. Countries, days, budgets, region order and all per-country content are
+// reused as-is from RB_EXPEDITION_CONTENT['Africa Grand Tour 🌍'] via rbContentFor() — the
+// original expedition itself is untouched and keeps existing exactly as it was, in full, alongside
+// these four.
+
+function rbSeedAfricaSplitExpeditions() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_AFRICA_SPLIT)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_AFRICA_SPLIT, '1');
+
+  rbRoutes.push(rbBuildSouthernAfricaSafariLoopRoute(), rbBuildAfricaIslandsRoute(), rbBuildEastAfricaSafariClassicRoute(), rbBuildHornOfAfricaAndEgyptRoute());
+  rbSave();
+}
+
+function rbBuildSouthernAfricaSafariLoopRoute() {
+  const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
+  return rbBuildSeedRoute('Zuidelijk Afrika Safari-lus 🦁', [
+    {
+      name: 'Zuid-Afrika, Lesotho & Eswatini', season: 'Juni–begin juli', budget: 2975,
+      note: 'De opener, met een echte internationale luchthaven als instappunt (Kaapstad/Johannesburg) — Kruger-wildlife spotten is hier op zijn best, ruim vóór het regenseizoen.',
+      countries: [mea('ZA', 'South Africa'), mea('LS', 'Lesotho'), mea('SZ', 'Eswatini')],
+    },
+    {
+      name: 'Zuidelijk Afrika', season: 'Juli–oktober', budget: 14035,
+      note: "Van Mozambique tot Malawi via Zimbabwe, Botswana, Namibië, Angola en Zambia — valt bij deze volgorde vrijwel volledig in het droge seizoen (mei-oktober), met de beste wildlife-observatie juist tegen het einde (augustus-oktober). De Angola-Zambia grensovergang in het zuidoosten van Angola is minder bereisd dan de rest van deze route — vooraf extra checken.",
+      countries: [mea('MZ', 'Mozambique'), mea('ZW', 'Zimbabwe'), mea('BW', 'Botswana'), mea('NA', 'Namibia'), mea('AO', 'Angola'), mea('ZM', 'Zambia'), mea('MW', 'Malawi')],
+    },
+  ], {
+    best_starting_month: 'Juni',
+    travel_style: 'Overland/safaritrucks tussen parken, mix van budgetlodges en kamperen in de nationale parken.',
+    climate_summary: "Een junistart legt Zuid-Afrika/Lesotho/Eswatini in het droge seizoen vlak vóór het regenseizoen (beste Kruger-wildlife), en laat de rest van zuidelijk Afrika (Mozambique t/m Malawi) in juli-oktober vallen — vrijwel volledig het gedeelde droge seizoen van de regio (mei-oktober), met de beste wildlife-observatie tegen het einde.",
+    description: 'Van Zuid-Afrika via Mozambique, Zimbabwe, Botswana, Namibië en Angola naar Zambia en Malawi — een aaneengesloten safari-lus door zuidelijk Afrika.',
+    notes: 'Losgesplitst van Africa Grand Tour 🌍 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen uit Africa Grand Tour 🌍 (inclusief de 2026-07 zuid-noord-herordening en alle prijs-/visum-/reisadvies-verificaties, zoals de Namibië-correctie); alleen de expeditiegrens is nieuw. Africa Grand Tour 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildAfricaIslandsRoute() {
+  const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
+  return rbBuildSeedRoute('Afrikaanse Eilanden 🏝️', [
+    {
+      name: 'Eilanden', season: 'Oktober–november', budget: 2650,
+      note: 'Madagaskar en Mauritius — Madagaskars beruchte trage wegen zijn hier de grootste tijdsvreter, niet de bezienswaardigheden zelf.',
+      countries: [mea('MG', 'Madagascar'), mea('MU', 'Mauritius')],
+    },
+  ], {
+    best_starting_month: 'Oktober',
+    travel_style: 'Losse vluchtsprong tussen de twee eilanden (geen landroute mogelijk over water).',
+    climate_summary: 'Oktober-november is een goed droog venster voor beide eilanden.',
+    description: 'Twee totaal verschillende eilandbestemmingen op één as: het avontuur/natuur van Madagaskar en het strand/luxe van Mauritius.',
+    notes: 'Losgesplitst van Africa Grand Tour 🌍 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen en budgetten zijn ongewijzigd overgenomen uit Africa Grand Tour 🌍. Madagaskar en Mauritius zijn allebei op zichzelf ook een sterke standalone bestemming (en een compleet ander reistype) — hier samen omdat dat vluchttechnisch handig is, niet omdat ze thematisch bij elkaar horen; voel je vrij om er ook maar één van te doen. Africa Grand Tour 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildEastAfricaSafariClassicRoute() {
+  const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
+  return rbBuildSeedRoute('Oost-Afrika Safari Classic 🦒', [
+    {
+      name: 'Oost-Afrika', season: 'November–januari', budget: 10320,
+      note: "Tanzania, Rwanda, Oeganda en Kenia — landt in de korte regentijd (oktober-december, lichte middagbuien, goed te doen) en de daaropvolgende korte droge periode (januari-februari), inclusief het kalfseizoen van de zuidelijke Serengeti. Niet de absolute piek (juni-oktober), maar een erkend sterk alternatief.",
+      countries: [mea('TZ', 'Tanzania'), mea('RW', 'Rwanda'), mea('UG', 'Uganda'), mea('KE', 'Kenya')],
+    },
+  ], {
+    best_starting_month: 'November',
+    travel_style: 'Overland/safaritrucks tussen de parken, verplichte lokale gidsen bij gorillatrekking in Oeganda en Rwanda.',
+    climate_summary: 'November-januari valt in de korte regentijd (lichte middagbuien, goed te doen) en de daaropvolgende korte droge periode, inclusief het kalfseizoen van de zuidelijke Serengeti — niet de absolute piek (juni-oktober) maar een erkend sterk alternatief.',
+    description: 'Klassieke Oost-Afrika safari: Serengeti, Maasai Mara en gorillatrekking in Oeganda en Rwanda.',
+    notes: 'Losgesplitst van Africa Grand Tour 🌍 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen uit Africa Grand Tour 🌍 (inclusief de reisadvies-notities over Rwanda\'s Lake Kivu-stop en Uganda\'s DRC-grens/Ebola-situatie — zie de landnotities). Africa Grand Tour 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildHornOfAfricaAndEgyptRoute() {
+  const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
+  return rbBuildSeedRoute('Hoorn van Afrika & Egypte 🏺', [
+    {
+      name: 'Hoorn van Afrika & Egypte', season: 'Februari–maart', budget: 3115,
+      note: "Ethiopië en Egypte als afsluiting. Ethiopië's hoofdregenseizoen (kiremt) valt juni-september, dus dit venster (oktober-maart, piek december-februari) is zijn eigen goede tijd. Egypte profiteert van het koelere naseizoen in plaats van de vroege zomerhitte.",
+      countries: [mea('ET', 'Ethiopia'), mea('EG', 'Egypt')],
+    },
+  ], {
+    best_starting_month: 'Februari',
+    travel_style: 'Vlucht tussen Ethiopië en Egypte (geen praktische landroute door Soedan).',
+    climate_summary: "Ethiopië landt in zijn eigen goede venster (oktober-maart, piek december-februari, buiten het kiremt-regenseizoen van juni-september) en Egypte profiteert van het koelere naseizoen.",
+    description: 'Historisch Ethiopië en het oude Egypte als tweeluik.',
+    notes: "Losgesplitst van Africa Grand Tour 🌍 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen en budgetten zijn ongewijzigd overgenomen uit Africa Grand Tour 🌍. Egypte komt hiermee in twéé losse Route Builder-expedities voor — ook in Mediterranean Civilizations Expedition 🏛️'s 'Egypte & Arabisch Schiereiland'-etappe — exact het 'block komt in meerdere expedities terug'-patroon uit de modularisatie-analyse. ⚠️ Ethiopië's Amhara-regio (Lalibela/Gondar/Simien) en de Danakil Depressie stonden per 2026-07 nog rood/oranje op het Nederlandse reisadvies — zie Ethiopië's eigen notitie, en check nederlandwereldwijd.nl vlak voor een echte reis. Africa Grand Tour 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.",
+  });
+}
+
+// ---- Mediterranean Civilizations Expedition split (2026-07 modularization analysis, see ROUTE_BUILDER_MODULES.md) ----
+//
+// This expedition was already the best candidate for a full split: every region transition is
+// already a flight or ferry (never overland), so the six routes below simply promote each of the
+// six existing regions to its own standalone expedition. Countries, days, budgets and all
+// per-country content (destinations/notes/transport_to_next) are copied verbatim from
+// rbBuildMediterraneanExpeditionRoute() below — this route has no shared RB_EXPEDITION_CONTENT
+// entry (Italy and France each appear more than once, so per CLAUDE.md its content lives inline
+// instead), so the country objects are duplicated here rather than looked up. The original
+// expedition itself is untouched and keeps existing exactly as it was, in full, alongside these six.
+
+function rbSeedMediterraneanSplitExpeditions() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_MEDITERRANEAN_SPLIT)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_MEDITERRANEAN_SPLIT, '1');
+
+  rbRoutes.push(
+    rbBuildIberiaMaghrebRoute(),
+    rbBuildMaltaItalyRoute(),
+    rbBuildCorsicaSouthFranceRoute(),
+    rbBuildGreeceCyprusRoute(),
+    rbBuildAnatoliaRoute(),
+    rbBuildEgyptArabianPeninsulaRoute(),
+  );
+  rbSave();
+}
+
+function rbBuildIberiaMaghrebRoute() {
+  return rbBuildSeedRoute('Iberia & Marokko/Tunesië 🏰', [
+    {
+      name: 'Iberia & Maghreb',
+      season: 'September',
+      budget: 1270,
+      note: 'Van Moors Spanje via Berbercultuur in Marokko naar Punisch/Romeins Tunesië — het westelijke Middellandse Zeegebied waar Feniciërs, Carthagers, Romeinen en de islamitische wereld elkaar opvolgden.',
+      countries: [
+        {
+          code: 'ES', name: 'Spain', days: 10, budget: 600, lat: 37.3891, lng: -5.9845,
+          destinations: ['Málaga', 'Granada (Alhambra)', 'Córdoba (Mezquita)', 'Sevilla'],
+          notes: 'Openingsetappe: Moorse en Romeinse geschiedenis in Andalusië, van de Alhambra in Granada tot de Mezquita in Córdoba. Historische binnensteden als rustige start. Verborgen parel: Ronda, met zijn kloofbrug, als tussenstop tussen Málaga en Sevilla.',
+          transport_to_next: 'Veerboot Tarifa/Algeciras-Tanger (35-90 minuten, meerdere afvaarten per dag) — kortste en goedkoopste oversteek naar Afrika, geen vlucht nodig',
+        },
+        {
+          code: 'MA', name: 'Morocco', days: 10, budget: 450, lat: 31.6295, lng: -7.9811,
+          destinations: ['Tanger', 'Chefchaouen', 'Fes', 'Volubilis', 'Marrakech'],
+          notes: "Berbercultuur, islamitische geschiedenis en Romeinse overblijfselen (Volubilis) naast elkaar. Medina's van Fes en Marrakech en de blauwe stad Chefchaouen als hoogtepunten; treinen tussen de grote steden zijn goed en goedkoop.",
+          transport_to_next: 'Vlucht Marrakech/Casablanca-Tunis — geen praktische land- of veerbootroute door de gesloten grens met Algerije',
+        },
+        {
+          code: 'TN', name: 'Tunisia', days: 6, budget: 220, lat: 36.8065, lng: 10.1815,
+          destinations: ['Tunis', 'Carthago', 'Dougga', 'El Jem', 'Sidi Bou Said'],
+          notes: "Carthaagse beschaving (Carthago) en Romeins Noord-Afrika (Dougga, het amfitheater van El Jem, groter dan dat van Rome zelf) dicht bij elkaar; Sidi Bou Said als rustig, schilderachtig dorpje tussen de geschiedenis door.",
+          transport_to_next: 'Einde van deze route — vlucht huiswaarts vanuit Tunis (of vlucht Tunis-Malta om verder te reizen naar Malta & Italië 🏛️)',
+        },
+      ],
+    },
+  ], {
+    travel_style: 'Backpacker — hostels met af en toe een hotel, veerboot Spanje-Marokko, vlucht Marokko-Tunesië (gesloten Algerijnse grens).',
+    best_starting_month: 'September',
+    description: 'Van Moors Spanje via Berbercultuur in Marokko naar Punisch/Romeins Tunesië.',
+    climate_summary: 'September laat dit deel nog in het najaarszonnetje vallen — mild en minder druk dan hoogzomer.',
+    notes: 'Losgesplitst van Mediterranean Civilizations Expedition 🏛️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen (inclusief de 2026-07 prijs-/visum-/reisadvies-verificatie). Vervolg op deze route: Malta & Italië 🏛️. Mediterranean Civilizations Expedition 🏛️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildMaltaItalyRoute() {
+  return rbBuildSeedRoute('Malta & Italië 🏛️', [
+    {
+      name: 'Malta & Italië',
+      season: 'Oktober',
+      budget: 2775,
+      note: 'Van tempels ouder dan de piramides (Malta) via Magna Graecia en Romeins Zuid-Italië naar het hart van het Romeinse Rijk, met de Nuraghe-beschaving van Sardinië als unieke afsluiter.',
+      countries: [
+        {
+          code: 'MT', name: 'Malta', days: 5, budget: 375, lat: 35.8989, lng: 14.5146,
+          destinations: ['Valletta', 'Mdina', 'Gozo', 'Ġgantija-tempels', 'Hypogeum'],
+          notes: 'De Ġgantija-tempels en het Hypogeum zijn ouder dan de piramides van Gizeh — een van de oudste vrijstaande bouwwerken ter wereld. Daarnaast de Ridders van Malta in Valletta en Mdina, met een rustiger Gozo als tegenhanger.',
+          transport_to_next: 'Veerboot Valletta-Pozzallo of Valletta-Catania (Virtu Ferries, 1,5-3 uur) naar Sicilië',
+        },
+        {
+          code: 'IT', name: 'Italy', days: 10, budget: 650, lat: 38.1157, lng: 13.3613,
+          destinations: ['Palermo', 'Cefalù', 'Taormina', 'Syracuse', 'Agrigento (Valle dei Templi)', 'Etna'],
+          notes: 'Magna Graecia (Agrigento, Syracuse), Romeinse, Normandische en Arabische invloeden door elkaar op één eiland, met de Etna als natuurlijke afwisseling. Verborgen parel: het vissersdorpje Marzamemi, veel rustiger dan Taormina.',
+          transport_to_next: 'Veerboot over de Straat van Messina (Messina-Villa San Giovanni, 20-30 minuten) naar het vasteland, dan verder naar Napels',
+        },
+        {
+          code: 'IT', name: 'Italy', days: 6, budget: 450, lat: 40.8518, lng: 14.2681,
+          destinations: ['Reggio Calabria', 'Napels', 'Pompeï', 'Herculaneum'],
+          notes: 'Romeinse geschiedenis in het echt bevroren: Pompeï en Herculaneum, beide verwoest en geconserveerd door de Vesuvius. Napels zelf als levendige, chaotische contramal.',
+          transport_to_next: 'Trein Napoli-Roma (hogesnelheidstrein, circa 1 uur 10 minuten)',
+        },
+        {
+          code: 'IT', name: 'Italy', days: 7, budget: 700, lat: 41.9028, lng: 12.4964,
+          destinations: ['Colosseum', 'Forum Romanum', 'Pantheon', 'Vaticaan'],
+          notes: 'Het hart van het Romeinse Rijk en de klassieke geschiedenis waar de hele expeditie steeds weer naar teruggrijpt — Romeinse invloeden duiken ook op in Spanje, Tunesië, Turkije, Egypte en Jordanië.',
+          transport_to_next: 'Vlucht Rome-Cagliari, of nachtveerboot Civitavecchia-Olbia/Cagliari (circa 7-8 uur) voor wie de boot verkiest boven vliegen',
+        },
+        {
+          code: 'IT', name: 'Italy', days: 6, budget: 600, lat: 39.2238, lng: 9.1217,
+          destinations: ['Cagliari', 'Su Nuraxi', 'Costa Smeralda'],
+          notes: 'De Nuraghe-beschaving (Su Nuraxi, UNESCO) is uniek voor Sardinië en ouder dan de Romeinse aanwezigheid op het eiland. Costa Smeralda voor de kust, de rustigere Costa Verde als minder toeristisch alternatief.',
+          transport_to_next: 'Einde van deze route — vlucht huiswaarts vanuit Cagliari/Olbia (of veerboot Santa Teresa Gallura-Bonifacio om verder te reizen naar Corsica & Zuid-Frankrijk ⛵)',
+        },
+      ],
+    },
+  ], {
+    travel_style: 'Backpacker — hostels met af en toe een hotel, veerboten tussen Malta/Sicilië/Sardinië, trein Napels-Rome, vlucht of nachtveerboot Rome-Sardinië.',
+    best_starting_month: 'Oktober',
+    description: 'Van tempels ouder dan de piramides op Malta via Magna Graecia en Romeins Zuid-Italië naar het hart van het Romeinse Rijk, met Sardinië als unieke afsluiter.',
+    climate_summary: 'Oktober is een aangenaam najaar in Zuid-Italië en op de eilanden — minder toeristen, nog warm genoeg voor de veerboten. Let op de Malta-Sicilië-veerboot (Virtu Ferries): vaart het hele jaar door maar met minder afvaarten in het najaar en kans op annulering bij slecht weer — de belangrijkste risicoverbinding op deze route.',
+    notes: 'Losgesplitst van Mediterranean Civilizations Expedition 🏛️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen. Vervolg op Iberia & Marokko/Tunesië 🏰; wordt zelf gevolgd door Corsica & Zuid-Frankrijk ⛵. Mediterranean Civilizations Expedition 🏛️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildCorsicaSouthFranceRoute() {
+  return rbBuildSeedRoute('Corsica & Zuid-Frankrijk ⛵', [
+    {
+      name: 'Corsica & Zuid-Frankrijk',
+      season: 'November',
+      budget: 1075,
+      note: "Twee Franse etappes die Bonifacio's kliffen en de Gallo-Romeinse monumenten van de Provence verbinden.",
+      countries: [
+        {
+          code: 'FR', name: 'France', days: 5, budget: 475, lat: 41.9192, lng: 8.7386,
+          destinations: ['Bonifacio', 'Ajaccio', 'Bavella'],
+          notes: 'Mediterrane natuur op zijn best: de kalksteenkliffen van Bonifacio, de granieten naalden van Bavella. Franse en Italiaanse invloeden lopen hier door elkaar. Verborgen parel: het Scandola natuurreservaat, alleen per boot te bezoeken.',
+          transport_to_next: 'Veerboot Ajaccio/Bastia-Marseille of Toulon (Corsica Ferries/La Méridionale, circa 6-10 uur, vaak als nachtboot)',
+        },
+        {
+          code: 'FR', name: 'France', days: 6, budget: 600, lat: 43.2965, lng: 5.3698,
+          destinations: ['Marseille', 'Arles', 'Nîmes', 'Pont du Gard'],
+          notes: "Gallo-Romeinse geschiedenis (het aquaduct van de Pont du Gard, de arena's van Arles en Nîmes) in Provençaalse sfeer. Verborgen parel: de Camargue bij Arles, met wilde paarden en flamingo's, als natuurpauze.",
+          transport_to_next: 'Einde van deze route — vlucht huiswaarts vanuit Marseille (of vlucht Marseille-Athene om verder te reizen naar Griekenland & Cyprus 🏺)',
+        },
+      ],
+    },
+  ], {
+    travel_style: 'Backpacker — nachtveerboot Corsica-vasteland.',
+    best_starting_month: 'November',
+    description: "Twee Franse etappes die Bonifacio's kliffen en de Gallo-Romeinse monumenten van de Provence verbinden.",
+    climate_summary: 'November, aan het einde van het Corsicaanse/Zuid-Franse seizoen maar nog goed begaanbaar.',
+    notes: 'Losgesplitst van Mediterranean Civilizations Expedition 🏛️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen en budgetten zijn ongewijzigd overgenomen. Dit is het kortste van de zes losgesplitste blocks (11 dagen) — precies vakantie-lengte, prima als losse Trip te boeken in plaats van als Route Builder-expeditie. Vervolg op Malta & Italië 🏛️. Mediterranean Civilizations Expedition 🏛️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildGreeceCyprusRoute() {
+  return rbBuildSeedRoute('Griekenland & Cyprus 🏺', [
+    {
+      name: 'Griekenland & Cyprus',
+      season: 'November-December',
+      budget: 1690,
+      note: 'Van de Griekse oudheid op het vasteland via de Minoïsche beschaving van Kreta naar de Grieks-Romeins-Byzantijnse laag van Cyprus, vlak voor de oversteek naar Anatolië.',
+      countries: [
+        {
+          code: 'GR', name: 'Greece', days: 12, budget: 840, lat: 37.9838, lng: 23.7275,
+          destinations: ['Athene', 'Delphi', 'Olympia', 'Meteora', 'Peloponnesos'],
+          notes: 'Griekse oudheid, filosofie, democratie en mythologie op de belangrijkste locaties zelf: de Akropolis, het orakel van Delphi, de oorspronkelijke Olympische Spelen in Olympia. Verborgen parel: Monemvasia en Nafplio op de Peloponnesos, veel rustiger dan Athene.',
+          transport_to_next: 'Nachtveerboot Piraeus-Heraklion (circa 7-9 uur) naar Kreta',
+        },
+        {
+          code: 'GR', name: 'Greece', days: 7, budget: 450, lat: 35.3387, lng: 25.1442,
+          destinations: ['Heraklion', 'Knossos', 'Chania', 'Samariakloof'],
+          notes: 'De Minoïsche beschaving (Knossos) als oudste laag van de Griekse geschiedenis, gevolgd door eilandcultuur in Chania en een stevige wandeling door de Samariakloof. Verborgen parel: het roze zandstrand van Elafonisi, in het uiterste westen van het eiland.',
+          transport_to_next: 'Vlucht Heraklion-Larnaca (meestal met overstap in Athene) — geen betrouwbare directe veerbootverbinding',
+        },
+        {
+          code: 'CY', name: 'Cyprus', days: 5, budget: 400, lat: 35.1856, lng: 33.3823,
+          destinations: ['Paphos', 'Limassol', 'Nicosia'],
+          notes: 'Griekse, Romeinse en Byzantijnse lagen op één eiland: de mozaïeken van Paphos (UNESCO), het Romeinse theater van Kourion bij Limassol als verborgen parel, en de gedeelde hoofdstad Nicosia.',
+          transport_to_next: 'Einde van deze route — vlucht huiswaarts vanuit Larnaca (of vlucht Larnaca-Istanbul om verder te reizen naar Anatolië 🕌)',
+        },
+      ],
+    },
+  ], {
+    travel_style: 'Backpacker — nachtveerboot Piraeus-Heraklion, vlucht Kreta-Cyprus (geen betrouwbare veerbootverbinding).',
+    best_starting_month: 'November',
+    description: 'Van de Griekse oudheid op het vasteland via de Minoïsche beschaving van Kreta naar de Grieks-Romeins-Byzantijnse laag van Cyprus.',
+    climate_summary: 'November-december: een aangenaam Grieks najaar, minder toeristen, nog warm genoeg voor de veerboot naar Kreta.',
+    notes: 'Losgesplitst van Mediterranean Civilizations Expedition 🏛️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen en budgetten zijn ongewijzigd overgenomen. Vervolg op Corsica & Zuid-Frankrijk ⛵; wordt zelf gevolgd door Anatolië 🕌. Mediterranean Civilizations Expedition 🏛️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildAnatoliaRoute() {
+  return rbBuildSeedRoute('Anatolië 🕌', [
+    {
+      name: 'Anatolië',
+      season: 'December',
+      budget: 850,
+      note: 'Eén grote etappe die Byzantium, het Ottomaanse Rijk en de Romeinse steden van de Egeïsche kust samenbrengt, met Cappadocië als brug naar de rest van Anatolië.',
+      countries: [
+        {
+          code: 'TR', name: 'Turkey', days: 20, budget: 850, lat: 41.0082, lng: 28.9784,
+          destinations: ['Istanbul', 'Troje', 'Pergamon', 'Efeze', 'Pamukkale', 'Cappadocië'],
+          notes: 'Byzantijnse en Ottomaanse geschiedenis in Istanbul, Romeinse steden (Efeze, Pergamon) en oude Anatolische beschavingen (Troje) op één lijn, met de rotsformaties van Cappadocië en de kalksteenterrassen van Pamukkale als natuurlijke hoogtepunten. Verborgen parel: Assos en Aphrodisias, veel rustiger dan Efeze maar minstens zo indrukwekkend.',
+          transport_to_next: 'Einde van deze route — vlucht huiswaarts vanuit Istanbul (of vlucht Istanbul-Caïro om verder te reizen naar Egypte & Arabisch Schiereiland 🐪)',
+        },
+      ],
+    },
+  ], {
+    travel_style: 'Backpacker — binnenlandse bussen/vluchten door Turkije.',
+    best_starting_month: 'December',
+    description: 'Byzantium, het Ottomaanse Rijk en de Romeinse steden van de Egeïsche kust, met Cappadocië als brug.',
+    climate_summary: 'December: mild genoeg voor Istanbul en de Egeïsche kust, en de drukte van de zomer is voorbij.',
+    notes: 'Losgesplitst van Mediterranean Civilizations Expedition 🏛️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen en budget zijn ongewijzigd overgenomen (20 dagen, na de 2026-07 tijdscontrole die dit van 14 naar 20 dagen ophoogde). Vervolg op Griekenland & Cyprus 🏺. Mediterranean Civilizations Expedition 🏛️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildEgyptArabianPeninsulaRoute() {
+  return rbBuildSeedRoute('Egypte & Arabisch Schiereiland 🐪', [
+    {
+      name: 'Egypte & het Arabisch Schiereiland',
+      season: 'December-Januari',
+      budget: 2669,
+      note: 'Van de oud-Egyptische beschaving via de Nabateese handelsroutes van Jordanië en de Arabische handelswereld van Oman en de Dilmun-beschaving van Bahrein naar het moderne Qatar als bewust hedendaags slotakkoord.',
+      countries: [
+        {
+          code: 'EG', name: 'Egypt', days: 14, budget: 784, lat: 30.0444, lng: 31.2357,
+          destinations: ['Caïro', 'Gizeh', 'Luxor', 'Karnak', 'Aswan', 'Abu Simbel'],
+          notes: 'De oud-Egyptische beschaving in haar geheel: piramides (Gizeh), tempels (Karnak, Abu Simbel) en de Nijl als verbindende rode draad. Verborgen parel: de Siwa-oase, ver van de gebruikelijke route maar wel een omweg waard. Reisadvies (2026-07): geel voor Caïro/Gizeh/Luxor/Aswan/Abu Simbel — gewoon te bezoeken; alleen (Noord-)Sinaï buiten deze route is oranje/rood.',
+          transport_to_next: 'Veerboot Nuweiba-Aqaba (alternatief: vlucht Caïro-Amman) — kortste route naar Jordanië zonder om te vliegen via de Golf',
+        },
+        {
+          code: 'JO', name: 'Jordan', days: 8, budget: 500, lat: 31.9454, lng: 35.9284,
+          destinations: ['Amman', 'Jerash', 'Petra', 'Wadi Rum', 'Dode Zee'],
+          notes: "Nabateese handelsroutes (Petra), Romeinse geschiedenis (Jerash) en de woestijn van Wadi Rum. December geeft aangename dagtemperaturen voor de wandeling naar de Schatkamer en voor kamperen in Wadi Rum. Praktische tip: de Jordan Pass (~50-60 JOD, ruim vooraf online kopen) bundelt toegang tot Petra/Jerash/Wadi Rum/40 andere sites en scheldt de losse 40 JOD-visumfee kwijt bij een verblijf van 3+ nachten. ⚠️ Reisadvies (juli 2026): oranje voor heel Jordanië (normaal alleen de grensstreek met Syrië/Irak) door het regionale Iran-Israël/VS-conflict — check nederlandwereldwijd.nl vlak voor vertrek, dit kan alweer zijn gewijzigd.",
+          transport_to_next: 'Vlucht Amman-Muscat — geen landroute, overland via Saoedi-Arabië is visumtechnisch onpraktisch',
+        },
+        {
+          code: 'OM', name: 'Oman', days: 7, budget: 770, lat: 23.588, lng: 58.3829,
+          destinations: ['Muscat', 'Nizwa', 'Jebel Shams', 'Wahiba Sands'],
+          notes: 'Arabische handelsroutes, forten (Nizwa) en zowel bergen (Jebel Shams, de "Grand Canyon van Arabië") als woestijn (Wahiba Sands) op korte afstand van elkaar. Verborgen parel: Bahla Fort en de eeuwenoude falaj-irrigatiekanalen bij Nizwa (beide UNESCO). Prijscheck (2026-07): Jebel Shams en Wahiba Sands zijn niet met openbaar vervoer te doen — een huurauto (4x4) of tour is hier verplicht. ⚠️ Reisadvies (juli 2026): oranje voor Musandam/Duqm/Salalah/Sohar, maar geel — dit hele traject — voor Muscat/Nizwa/Jebel Shams/Wahiba Sands. Check nederlandwereldwijd.nl vlak voor vertrek, de situatie is volatiel.',
+          transport_to_next: 'Vlucht Muscat-Manama — korte Golfvlucht',
+        },
+        {
+          code: 'BH', name: 'Bahrain', days: 3, budget: 300, lat: 26.2285, lng: 50.586,
+          destinations: ["Qal'at al-Bahrein (Bahrein Fort)", 'Bahrain National Museum', 'Al Fateh Grand Mosque', 'Tree of Life'],
+          notes: "Qal'at al-Bahrein (UNESCO) was de hoofdstad van de Dilmun-beschaving, een Bronstijd-handelsbeschaving die al rond 2000 v.Chr. tussen Mesopotamië en de Indusvallei handelde. De Tree of Life, een eeuwenoude boom die op onverklaarde wijze midden in de woestijn overleeft, als natuurlijke curiositeit. ⚠️ Reisadvies (juli 2026): ROOD — niet reizen. Iran voert aanvallen uit op militaire doelen in Bahrein, met waarschuwingen voor mogelijke aanslagen in centraal Manama; geen Nederlandse ambassade in Bahrein (dichtstbijzijnde: Koeweit). Op dit moment een harde no-go, geen budget-/planningskwestie — check nederlandwereldwijd.nl vlak voor vertrek.",
+          transport_to_next: 'Vlucht Manama-Doha — korte Golfvlucht',
+        },
+        {
+          code: 'QA', name: 'Qatar', days: 3, budget: 315, lat: 25.2854, lng: 51.531,
+          destinations: ['Doha'],
+          notes: '⚠️ Reisadvies (juli 2026): oranje — Qatar is geraakt door Iraanse raketten/drones gericht op Amerikaanse doelen. Reizen wordt alleen aangeraden als het noodzakelijk is. Check nederlandwereldwijd.nl vlak voor vertrek, de situatie kan alweer zijn gewijzigd. Bewust modern en hedendaags als afsluiting: islamitische architectuur (Museum of Islamic Art) als contrast met de duizenden jaren geschiedenis eerder in de reis.',
+          transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Doha (Hamad International Airport) naar Nederland',
+        },
+      ],
+    },
+  ], {
+    travel_style: 'Backpacker — veerboot Egypte-Jordanië, vluchten tussen Jordanië/Oman/Bahrein/Qatar (geen praktische landroute).',
+    best_starting_month: 'December',
+    description: 'Van het oude Egypte via de Nabateese handelsroutes van Jordanië naar de Arabische handelswereld van Oman, Bahrein en Qatar.',
+    climate_summary: 'December-januari is het beste seizoen voor de Egyptische/Jordaanse woestijn en de Golf — dagen rond 20-28°C in plaats van de 40+°C van de zomer.',
+    notes: "Losgesplitst van Mediterranean Civilizations Expedition 🏛️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen (inclusief alle 2026-07 reisadvies-vlaggen op Jordanië/Oman/Bahrein/Qatar — zie de landnotities). Egypte komt hiermee in twéé losse Route Builder-expedities voor — ook in Africa Grand Tour 🌍's 'Hoorn van Afrika & Egypte'-etappe — exact het 'block komt in meerdere expedities terug'-patroon uit de modularisatie-analyse. Qatar is qua thema de uitzondering op de rest van deze route (puur modern, geen oude geschiedenis) en de eerste kandidaat om te laten vervallen als de reis korter moet — zie de oorspronkelijke route-notities. Vervolg op Anatolië 🕌. Mediterranean Civilizations Expedition 🏛️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.",
+  });
+}
+
+// ---- Nordic Arctic Expedition split (2026-07 modularization analysis, see ROUTE_BUILDER_MODULES.md) ----
+//
+// This expedition's own notes already call its four North Atlantic islands "stuk voor stuk losse
+// vluchtsprongen, geen doorlopende route" — proof that proximity ("all Nordic") doesn't make a
+// good single block. Rather than group them into one Major Trip, all five pieces below are kept as
+// five equally-weighted standalone expeditions, per the analysis's own recommendation. Countries,
+// days, budgets and all per-country content are reused as-is from
+// RB_EXPEDITION_CONTENT['Nordic Arctic Expedition ❄️'] via rbContentFor() — the original
+// expedition itself is untouched and keeps existing exactly as it was, in full, alongside these five.
+
+function rbSeedNordicArcticSplitExpeditions() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_NORDIC_ARCTIC_SPLIT)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_NORDIC_ARCTIC_SPLIT, '1');
+
+  rbRoutes.push(
+    rbBuildScandinaviaOverlandRoute(),
+    rbBuildSvalbardRoute(),
+    rbBuildFaroeIslandsRoute(),
+    rbBuildIcelandRoute(),
+    rbBuildGreenlandRoute(),
+  );
+  rbSave();
+}
+
+function rbBuildScandinaviaOverlandRoute() {
+  const arctic = (code, name) => rbContentFor('Nordic Arctic Expedition ❄️', code, name);
+  return rbBuildSeedRoute('Scandinavië Overland 🚂', [
+    {
+      name: 'Scandinavia', season: 'Juni', budget: 4400,
+      note: 'Lapland en Noorse fjorden/eilanden per trein en bus — het enige écht overland-verbonden deel van de oorspronkelijke Nordic Arctic Expedition.',
+      countries: [arctic('FI', 'Finland'), arctic('SE', 'Sweden'), arctic('NO', 'Norway')],
+    },
+  ], {
+    best_starting_month: 'Juni',
+    travel_style: 'Trein/bus door Lapland en Noorse fjorden — geen vlucht nodig binnen deze route.',
+    climate_summary: 'Begin juni geeft middernachtzon in alle drie de landen en het beste weer voor de treinroute Rovaniemi-Kiruna-Narvik.',
+    description: 'Van Lapland via Zweeds Lapland naar de Noorse fjorden en Lofoten, volledig per trein en bus.',
+    notes: 'Losgesplitst van Nordic Arctic Expedition ❄️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen en budgetten zijn ongewijzigd overgenomen. Nordic Arctic Expedition ❄️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildSvalbardRoute() {
+  const arctic = (code, name) => rbContentFor('Nordic Arctic Expedition ❄️', code, name);
+  return rbBuildSeedRoute('Svalbard 🐻‍❄️', [
+    { name: 'Svalbard', season: 'Juli', budget: 3725, note: 'Zee-ijs en boottochten zijn dan toegankelijk; het duurste losse blok van de hele Travel Atlas.', countries: [arctic('SJ', 'Svalbard')] },
+  ], {
+    best_starting_month: 'Juli',
+    travel_style: 'Georganiseerde boottochten vanuit Longyearbyen; buiten de plaats is een gewapende gids (ijsberen) verplicht, al inbegrepen in de tours.',
+    climate_summary: 'Juli-augustus is het enige venster met toegankelijk zee-ijs, betrouwbare boottochten en middernachtzon.',
+    description: 'Gletsjers, wildlife en middernachtzon op Spitsbergen.',
+    notes: 'Losgesplitst van Nordic Arctic Expedition ❄️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen en budget zijn ongewijzigd overgenomen. Nordic Arctic Expedition ❄️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildFaroeIslandsRoute() {
+  const arctic = (code, name) => rbContentFor('Nordic Arctic Expedition ❄️', code, name);
+  return rbBuildSeedRoute('Faeröer 🐑', [
+    { name: 'Faroe Islands', season: 'Juli–augustus', budget: 1675, note: 'Betrouwbaardere veerdiensten en het beste wandelweer in deze maanden.', countries: [arctic('FO', 'Faroe Islands')] },
+  ], {
+    best_starting_month: 'Juli',
+    travel_style: 'Lokale bussen/veerboten tussen de eilanden.',
+    climate_summary: 'Juli-augustus geeft het meest stabiele weer voor de kliffen en wandelroutes.',
+    description: 'Dramatische kliffen, groene dorpjes en wandelroutes tussen Tórshavn en Gjógv.',
+    notes: 'Losgesplitst van Nordic Arctic Expedition ❄️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen en budget zijn ongewijzigd overgenomen. Nordic Arctic Expedition ❄️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildIcelandRoute() {
+  const arctic = (code, name) => rbContentFor('Nordic Arctic Expedition ❄️', code, name);
+  return rbBuildSeedRoute('IJsland ❄️', [
+    { name: 'Iceland', season: 'Juli–augustus', budget: 2800, note: 'Volledig open hooglandwegen; buiten dit venster zijn delen van het land niet bereikbaar.', countries: [arctic('IS', 'Iceland')] },
+  ], {
+    best_starting_month: 'Juli',
+    travel_style: 'Huurauto (vrijwel noodzakelijk voor de Ring Road en het hoogland).',
+    climate_summary: 'Juli-augustus houdt de hooglandwegen volledig open — daarbuiten zijn grote delen van het binnenland afgesloten.',
+    description: 'De Golden Circle, de zuidkust, Vatnajökull en Snæfellsnes met de huurauto.',
+    notes: "Losgesplitst van Nordic Arctic Expedition ❄️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen en budget zijn ongewijzigd overgenomen (incl. het gele reisadvies voor het Reykjanes-schiereiland door de aanhoudende vulkanische activiteit bij Grindavík). IJsland is een van de meest geboekte standalone trips ter wereld — dit blok staat volledig op zichzelf. Nordic Arctic Expedition ❄️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.",
+  });
+}
+
+function rbBuildGreenlandRoute() {
+  const arctic = (code, name) => rbContentFor('Nordic Arctic Expedition ❄️', code, name);
+  return rbBuildSeedRoute('Groenland 🧊', [
+    { name: 'Greenland', season: 'Juli–augustus', budget: 3725, note: 'Beste boottoegang tot de Diskobaai-ijsbergen bij Ilulissat.', countries: [arctic('GL', 'Greenland')] },
+  ], {
+    best_starting_month: 'Juli',
+    travel_style: 'Binnenlandse vluchten tussen plaatsen (Air Greenland, vrijwel monopolie) — een structurele kostenpost, geen incident.',
+    climate_summary: 'Juli-augustus geeft de beste boottoegang tot de ijsbergen van de Diskobaai en de meest betrouwbare binnenlandse vluchten.',
+    description: 'Inuitcultuur, de IJsfjord en de ijsbergen van de Diskobaai bij Ilulissat.',
+    notes: 'Losgesplitst van Nordic Arctic Expedition ❄️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen en budget zijn ongewijzigd overgenomen. Nordic Arctic Expedition ❄️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+// ---- Patagonia & Antarctica Expedition split (2026-07 modularization analysis, see ROUTE_BUILDER_MODULES.md) ----
+//
+// This expedition's own notes already say Chile/Argentina here are only the southern (Patagonia)
+// portions — the northern portions live in Pan-American Grand Tour — and that Antarctica is only
+// reachable via a totally separate cruise booking. The two routes below make that split concrete:
+// Antarctica in particular is the cleanest "plug-in" block in the whole analysis (no neighbouring
+// countries, its own budget logic). Countries, days, budgets and all content are reused as-is from
+// RB_EXPEDITION_CONTENT['Patagonia & Antarctica Expedition 🧊'] via rbContentFor() — the original
+// expedition itself is untouched and keeps existing exactly as it was, in full, alongside these two.
+
+function rbSeedPatagoniaSplitExpeditions() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_PATAGONIA_SPLIT)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_PATAGONIA_SPLIT, '1');
+
+  rbRoutes.push(rbBuildPatagoniaOverlandRoute(), rbBuildAntarcticaCruiseRoute());
+  rbSave();
+}
+
+function rbBuildPatagoniaOverlandRoute() {
+  const patagonia = (code, name) => rbContentFor('Patagonia & Antarctica Expedition 🧊', code, name);
+  return rbBuildFlatSeedRoute('Patagonië Overland 🏔️', [
+    patagonia('CL', 'Chile'), patagonia('AR', 'Argentina'),
+  ], {
+    best_starting_month: 'November',
+    travel_style: 'Backpacker/trekking — refugios en camping in de nationale parken, lokale bussen tussen de Patagonische steden.',
+    climate_summary: 'Begin november valt samen met het begin van het Patagonische trekkingseizoen (november-maart, refugios open, lange dagen) — vóór die tijd liggen Torres del Paine en de paden rond El Chaltén nog onder de sneeuw.',
+    description: 'Trekkingexpeditie door Chileens en Argentijns Patagonië: Torres del Paine, Fitz Roy en Ushuaia.',
+    notes: "Losgesplitst van Patagonia & Antarctica Expedition 🧊 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen en budgetten zijn ongewijzigd overgenomen. 'Patagonië' is wereldwijd al een gewild standalone reisthema — dit blok staat volledig op zichzelf. Chili en Argentinië hier zijn nadrukkelijk alleen het zuidelijke (Patagonische) deel van die landen; het noordelijke deel zit in Pan-American Grand Tour 🌎's Andes Grand Traverse 🦙 en Zuidelijke Kegel & Brazilië-finale 🧉 — exact het 'zelfde land, ander block'-patroon uit de modularisatie-analyse. Patagonia & Antarctica Expedition 🧊 zelf blijft ongewijzigd bestaan als losse, volledige expeditie (incl. de aansluitende Antarctica-cruise 🐧).",
+  });
+}
+
+function rbBuildAntarcticaCruiseRoute() {
+  const patagonia = (code, name) => rbContentFor('Patagonia & Antarctica Expedition 🧊', code, name);
+  return rbBuildFlatSeedRoute('Antarctica-cruise 🐧', [
+    patagonia('AQ', 'Antarctica'),
+  ], {
+    best_starting_month: 'December',
+    travel_style: 'Uitsluitend per georganiseerde expeditiecruise vanuit Ushuaia — geen andere manier om er te komen.',
+    climate_summary: 'Het vaarseizoen loopt november-maart, met de meeste walvis-/pinguïnactiviteit in januari-februari.',
+    description: 'Expeditiecruise vanuit Ushuaia naar het Antarctisch Schiereiland: gletsjers, pinguïnkolonies en walvissen.',
+    notes: 'Losgesplitst van Patagonia & Antarctica Expedition 🧊 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Dagen en budget (een reële cruiseprijs, geen backpacker-dagbudget) zijn ongewijzigd overgenomen. Dit is het schoonste "plug-in"-blok uit de hele modularisatie-analyse: geen buurlanden, eigen boekingscategorie, makkelijk los te boeken vanuit Ushuaia of aansluitend op Patagonië Overland 🏔️. Patagonia & Antarctica Expedition 🧊 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+// ---- India & Himalaya Expedition split (2026-07 modularization analysis, see ROUTE_BUILDER_MODULES.md) ----
+//
+// This expedition was seeded flat, with its own notes inviting exactly this: "group these 3
+// countries into your own blocks... whenever you're ready to plan it for real." The three routes
+// below do that as three standalone expeditions instead of sub-blocks of one, since all three are
+// strong enough to stand fully alone. Countries, days, budgets and all content are reused as-is
+// from RB_EXPEDITION_CONTENT['India & Himalaya Expedition 🏔️'] via rbContentFor() — the original
+// expedition itself is untouched and keeps existing exactly as it was, in full, alongside these three.
+
+function rbSeedHimalayaSplitExpeditions() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_HIMALAYA_SPLIT)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_HIMALAYA_SPLIT, '1');
+
+  rbRoutes.push(rbBuildNorthIndiaRoute(), rbBuildNepalRoute(), rbBuildBhutanRoute());
+  rbSave();
+}
+
+function rbBuildNorthIndiaRoute() {
+  const himalaya = (code, name) => rbContentFor('India & Himalaya Expedition 🏔️', code, name);
+  return rbBuildFlatSeedRoute('Noord-India 🕌', [
+    himalaya('IN', 'India'),
+  ], {
+    best_starting_month: 'Oktober',
+    travel_style: 'Trein en lokale bus, met een binnenlandse vlucht als de afstand dat rechtvaardigt.',
+    climate_summary: 'Begin oktober, net na de moesson, is Noord-India in zijn aangename koele seizoen — droog, heldere lucht, comfortabel tot in december.',
+    description: 'De Gouden Driehoek, Rajasthan en Varanasi.',
+    notes: 'Losgesplitst van India & Himalaya Expedition 🏔️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen en budget zijn ongewijzigd overgenomen. India & Himalaya Expedition 🏔️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildNepalRoute() {
+  const himalaya = (code, name) => rbContentFor('India & Himalaya Expedition 🏔️', code, name);
+  return rbBuildFlatSeedRoute('Nepal 🏔️', [
+    himalaya('NP', 'Nepal'),
+  ], {
+    best_starting_month: 'November',
+    travel_style: 'Georganiseerde trekking met lokale gids/porter (sinds 2023 verplicht, solo trekken mag niet meer).',
+    climate_summary: 'November is het beste trekkingvenster van het jaar: net na de moesson, helderste zicht op de bergen, nog vóór winterse sneeuwval op de hoge passen.',
+    description: 'Trekking in de Annapurna Region, plus Kathmandu, Pokhara en Chitwan National Park.',
+    notes: 'Losgesplitst van India & Himalaya Expedition 🏔️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen en budget zijn ongewijzigd overgenomen (incl. de 2026-07 prijscorrectie voor de verplichte gids/porter op Annapurna-trekdagen). India & Himalaya Expedition 🏔️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildBhutanRoute() {
+  const himalaya = (code, name) => rbContentFor('India & Himalaya Expedition 🏔️', code, name);
+  return rbBuildFlatSeedRoute('Bhutan 🐉', [
+    himalaya('BT', 'Bhutan'),
+  ], {
+    best_starting_month: 'December',
+    travel_style: 'Verplichte lokale gids en vaste dagprijs (Sustainable Development Fee inbegrepen).',
+    climate_summary: 'November-december valt nog binnen Bhutans goede seizoen.',
+    description: 'Het besloten koninkrijk Bhutan: Paro, Thimphu en Tiger\'s Nest Monastery.',
+    notes: 'Losgesplitst van India & Himalaya Expedition 🏔️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen en budget zijn ongewijzigd overgenomen. Bhutan is qua duur en logistiek vooral interessant als verlengstuk van Nepal/India (verplichte gids + $100/nacht sustainable fee), maar staat hier ook als volwaardige eigen expeditie klaar voor wie alleen Bhutan wil doen. India & Himalaya Expedition 🏔️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+// ---- North America Grand Traverse split (2026-07 modularization analysis, see ROUTE_BUILDER_MODULES.md) ----
+//
+// This expedition's own transport strategy already splits itself into 3 separate rental-car legs
+// plus 1 train leg specifically to dodge one-way fees and CA/US cross-border rental restrictions —
+// that structure is exactly the seam the three routes below use. Countries, days, budgets, region
+// order and all leg content are copied verbatim from rbBuildNorthAmericaRoute() below — this route
+// has no shared RB_EXPEDITION_CONTENT entry (Canada and the US each appear as multiple distinct
+// legs, so per CLAUDE.md its content lives inline instead). The original expedition itself is
+// untouched and keeps existing exactly as it was, in full, alongside these three.
+
+function rbSeedNorthAmericaSplitExpeditions() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_NORTHAMERICA_SPLIT)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_NORTHAMERICA_SPLIT, '1');
+
+  rbRoutes.push(rbBuildEasternCanadaRoute(), rbBuildWesternCanadaRockiesVancouverRoute(), rbBuildUSWestCoastRoadtripRoute());
+  rbSave();
+}
+
+function rbBuildEasternCanadaRoute() {
+  return rbBuildSeedRoute('Oost-Canada 🍁', [
+    {
+      name: 'Atlantic Canada – Nova Scotia',
+      season: 'Juni',
+      budget: 900,
+      countries: [{
+        code: 'CA', name: 'Canada', days: 8, budget: 1200, lat: 44.6488, lng: -63.5752,
+        destinations: ['Halifax', "Peggy's Cove", 'Lunenburg', 'Cape Breton Island & Cabot Trail'],
+        transport_to_next: 'Vlucht Halifax-Quebec City (~2 uur) — geen praktische overlandroute gezien de afstand door onbewoond Oost-Canada',
+        notes: 'Startblok: vlucht Nederland-Halifax. Kennismaking met Canada via ruige Atlantische kust, vissersdorpjes, vuurtorens en Keltisch/Acadische cultuur op Cape Breton. Prijs geverifieerd (2026-07), klopt. eTA (bij inreis per vlucht) kost slechts ~€4,70, 5 jaar geldig.',
+      }],
+      note: 'Startpunt — vlucht Nederland-Halifax. Ruige kust, vissersdorpen en vuurtorens; geen huurauto nodig, alles is met kleine afstanden te doen vanuit Halifax.',
+    },
+    {
+      name: 'Eastern Canada – Historic Cities',
+      season: 'Juni',
+      budget: 1500,
+      countries: [{
+        code: 'CA', name: 'Canada', days: 10, budget: 1675, lat: 46.8139, lng: -71.208,
+        destinations: ['Quebec City (Vieux-Québec)', 'Montreal (Old Port & Mile End)', 'Ottawa (Parliament Hill & musea)', 'Toronto (skyline, met Niagara Falls als dagtrip)'],
+        transport_to_next: 'Einde van deze route — terugvlucht vanuit Toronto (of vlucht Toronto-Calgary om verder te reizen naar West-Canada: Rockies & Vancouver 🏔️)',
+        notes: 'Geen lange autorit door Canada: de treinverbindingen tussen deze vier steden zijn snel en comfortabel. Franse cultuur en koloniale geschiedenis in Quebec City, eten en moderne stad in Montreal, politiek en musea in Ottawa, skyline en Niagara Falls vanuit Toronto.',
+      }],
+      note: 'Reizen per trein, geen huurauto in dit blok. Niagara Falls is een optionele dagtrip vanuit Toronto, geen apart blok.',
+    },
+  ], {
+    travel_style: 'Backpacker/budget-comfort hybride — hostels en eenvoudige hotels, trein (Via Rail) tussen de historische steden, geen huurauto nodig.',
+    best_starting_month: 'Juni',
+    description: 'Van de ruige Atlantische kust van Nova Scotia via de trein naar de Franse/koloniale steden Quebec City, Montreal, Ottawa en Toronto.',
+    climate_summary: 'Begin juni geeft lange dagen en blijft ruim vóór het Atlantische orkaanseizoen dat richting Nova Scotia in augustus-oktober oploopt.',
+    notes: 'Losgesplitst van North America Grand Traverse 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen. Vervolg op deze route: West-Canada: Rockies & Vancouver 🏔️. North America Grand Traverse 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildWesternCanadaRockiesVancouverRoute() {
+  return rbBuildSeedRoute('West-Canada: Rockies & Vancouver 🏔️', [
+    {
+      name: 'Canadian Rockies',
+      season: 'Juni-Juli',
+      budget: 2600,
+      countries: [{
+        code: 'CA', name: 'Canada', days: 17, budget: 3400, lat: 51.1784, lng: -115.5708,
+        destinations: ['Banff National Park', 'Lake Louise & Moraine Lake', 'Yoho National Park (Emerald Lake)', 'Icefields Parkway', 'Jasper National Park', 'Mount Robson Provincial Park', 'Whistler'],
+        transport_to_next: 'Auto Whistler-Vancouver (~2 uur), huurauto inleveren in Vancouver — dezelfde huurauto blijft binnen Canada, dus geen one-way- of grenskosten',
+        notes: 'Het natuurhoogtepunt van de hele expeditie: gletsjermeren, een van de mooiste wegen ter wereld (Icefields Parkway) en goede kans op wildlife (elanden, beren, bighorn sheep). Huurauto wordt hier opgehaald in Calgary. Prijs geverifieerd (2026-07), klopt (mits ruim vooraf geboekt in hoogseizoen). ⚠️ Moraine Lake Road is alleen bereikbaar met de verplichte Parks Canada-shuttle (geen privéauto toegestaan) — boeking opent doorgaans medio april, beperkt aantal plekken, ruim vooraf regelen.',
+      }],
+      note: 'Huurauto (Calgary-Vancouver). Reken op minstens 2-3 nachten per nationaal park om ook te kunnen wandelen, niet alleen doorrijden.',
+    },
+    {
+      name: 'Vancouver',
+      season: 'Juli',
+      budget: 700,
+      countries: [{
+        code: 'CA', name: 'Canada', days: 5, budget: 875, lat: 49.2827, lng: -123.1207,
+        destinations: ['Stanley Park', 'Granville Island', 'North Shore (Grouse Mountain / Capilano Suspension Bridge)', 'Gastown & Kitsilano Beach'],
+        transport_to_next: 'Einde van deze route — terugvlucht vanuit Vancouver (of trein/bus naar Seattle om verder te reizen naar VS Westkust Roadtrip 🌉)',
+        notes: 'Laatste Canadese stop: stad tussen bergen en zee, goed te combineren met bergen (North Shore) en water (Stanley Park, Granville Island) zonder huurauto.',
+      }],
+      note: 'Geen huurauto nodig in Vancouver zelf.',
+    },
+  ], {
+    travel_style: "Backpacker/budget-comfort hybride — huurauto voor de Rockies (Calgary-Vancouver, blijft binnen Canada, geen grenscomplicaties), geen auto nodig in Vancouver zelf.",
+    best_starting_month: 'Juni',
+    description: 'De Canadian Rockies (Banff, Lake Louise, Icefields Parkway, Jasper) gevolgd door Vancouver.',
+    climate_summary: 'Juni-juli vermijdt restsneeuw en gesloten passen/wegen in de Rockies (Icefields Parkway, hooggelegen hikes) van een vroegere start.',
+    notes: 'Losgesplitst van North America Grand Traverse 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen (incl. de waarschuwing over de verplichte Moraine Lake Road-shuttle). Dit is een van de meest klassieke standalone Canada-trips die er zijn. Vervolg op Oost-Canada 🍁. North America Grand Traverse 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildUSWestCoastRoadtripRoute() {
+  return rbBuildSeedRoute('VS Westkust Roadtrip 🌉', [
+    {
+      name: 'Pacific Northwest & Northern California Roadtrip',
+      season: 'Juli-Augustus',
+      budget: 2200,
+      countries: [{
+        code: 'US', name: 'United States', days: 15, budget: 3000, lat: 47.6062, lng: -122.3321,
+        destinations: ['Seattle (Pike Place Market, Space Needle)', 'Olympic National Park (Hoh Rainforest & Hurricane Ridge)', 'Mount Rainier National Park', 'Oregon Coast (Cannon Beach, Astoria)', 'Redwood National & State Parks'],
+        transport_to_next: 'Auto verder naar San Francisco (~5-6 uur vanaf de Redwoods), huurauto inleveren in San Francisco',
+        notes: 'Amerikaanse natuur in het groot: regenwoud, vulkanen, ruige kustlijn en de hoogste bomen ter wereld. Huurauto wordt hier opgehaald in Seattle. Prijs geverifieerd (2026-07), klopt. ESTA is per 30 sept. 2025 verhoogd naar $40,27 (was $21) — 2 jaar geldig.',
+      }],
+      note: 'Huurauto (Seattle-San Francisco). Rustig tempo: liever 2-3 nachten bij een park dan elke dag doorrijden — dit is een kustroute, geen race.',
+    },
+    {
+      name: 'California Finale',
+      season: 'Augustus',
+      budget: 2100,
+      countries: [{
+        code: 'US', name: 'United States', days: 14, budget: 2675, lat: 37.7749, lng: -122.4194,
+        destinations: ['San Francisco (Golden Gate Bridge, Alcatraz, Mission District)', 'Yosemite Valley', 'Sequoia & Kings Canyon National Parks'],
+        transport_to_next: 'Einde van de expeditie — terugvlucht vanuit San Francisco (SFO) naar Nederland',
+        notes: "Van de stad direct de bergen in: Yosemite's granieten wanden en watervallen, gevolgd door de gigantische sequoia's van Sequoia/Kings Canyon. Geen nieuwe huurauto nodig — dagtochten of een korte huurperiode volstaan vanuit San Francisco.",
+      }],
+      note: 'Boek Yosemite Valley-verblijf ruim van tevoren (vergunt beperkt aantal plekken in hoogseizoen). Let op bosbrandrisico/luchtkwaliteit in augustus — check actuele parkmeldingen vlak voor vertrek.',
+    },
+  ], {
+    travel_style: "Backpacker/budget-comfort hybride — huurauto Seattle-San Francisco, rustig tempo met langere stops op mooie plekken in plaats van dagelijks verplaatsen.",
+    best_starting_month: 'Juli',
+    description: 'Klassieke Amerikaanse westkust-roadtrip: Seattle, Olympic en Mount Rainier National Park, de Oregon-kust en de Redwoods, met San Francisco, Yosemite en Sequoia/Kings Canyon als finale.',
+    climate_summary: 'Juli-augustus blijft ruim vóór de piek van het Californische/Pacific Northwest bosbrandseizoen (vooral augustus-oktober).',
+    notes: "Losgesplitst van North America Grand Traverse 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen (incl. de ESTA-prijsverhoging en de waarschuwing over bosbrandrisico in augustus). Vervolg op West-Canada: Rockies & Vancouver 🏔️. North America Grand Traverse 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.",
+  });
+}
+
+// ---- Oceania Grand Expedition split (2026-07 modularization analysis, see ROUTE_BUILDER_MODULES.md) ----
+//
+// This expedition's own climate_summary already frames it as two seasonally distinct halves
+// (Pacific islands + tropical Australia want the May-October dry season; temperate Australia + NZ
+// want their own November-March summer) and even suggests a deliberate multi-month pause between
+// them. The four routes below go one step further and split each half into its own two pieces —
+// Australia itself gets split by climate zone, the same "same country, different block" pattern
+// already used for Chile/Argentina across Pan-American/Patagonia. Countries, days, budgets, region
+// order and all leg content are copied verbatim from rbBuildOceaniaExpeditionRoute() below — this
+// route has no shared RB_EXPEDITION_CONTENT entry (Australia and New Zealand each appear as
+// multiple distinct legs, so per CLAUDE.md its content lives inline instead). The original
+// expedition itself is untouched and keeps existing exactly as it was, in full, alongside these four.
+
+function rbSeedOceaniaSplitExpeditions() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_OCEANIA_SPLIT)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_OCEANIA_SPLIT, '1');
+
+  rbRoutes.push(rbBuildPacificIslandsRoute(), rbBuildTropicalOutbackAustraliaRoute(), rbBuildTemperateSouthernAustraliaRoute(), rbBuildNewZealandRoute());
+  rbSave();
+}
+
+function rbBuildPacificIslandsRoute() {
+  return rbBuildSeedRoute('Pacific-eilanden 🌺', [
+    {
+      name: 'Pacific Opener',
+      season: 'Mei-juni',
+      budget: 4125,
+      note: 'Vijf eilandengroepen in het droge seizoen, ruim vóór het cycloonseizoen (november-april).',
+      countries: [
+        {
+          code: 'FJ', name: 'Fiji', days: 14, budget: 1050, lat: -17.7765, lng: 177.4356,
+          destinations: ['Nadi', 'Mamanuca-eilanden', 'Yasawa-eilanden', 'Taveuni'],
+          notes: "Beste backpacker-infrastructuur van de Pacific — eilandhoppen per boot (Yasawa Flyer) tussen de Mamanucas en Yasawas, snorkelen en duiken op de koraalriffen. Prijscorrectie (2026-07): €62,50→€75/dag (Yasawa Flyer-bootpas + vlucht naar Taveuni waren niet gedekt).",
+          transport_to_next: 'Vlucht Nadi-Port Vila (Fiji Airways, de belangrijkste Pacific-hub)',
+        },
+        {
+          code: 'VU', name: 'Vanuatu', days: 11, budget: 1045, lat: -17.7333, lng: 168.3273,
+          destinations: ['Port Vila', 'Mount Yasur (Tanna)', 'SS President Coolidge wrak (Espiritu Santo)', 'Blue Holes'],
+          notes: "Een van de meest toegankelijke actieve vulkanen ter wereld — tot vlak bij de kraterrand van Mount Yasur. Wereldklasse wrakduik op de SS President Coolidge. Prijscorrectie (2026-07): €70→€95/dag (binnenlandse vluchten naar Tanna/Santo + Yasur-tour waren niet gedekt; Air Vanuatu ging in 2024 failliet, vluchten zijn schaarser/duurder geworden).",
+          transport_to_next: 'Vlucht Port Vila-Apia (meestal met overstap via Fiji of Auckland)',
+        },
+        {
+          code: 'WS', name: 'Samoa', days: 9, budget: 565, lat: -13.8506, lng: -171.7513,
+          destinations: ['Apia', 'To Sua Ocean Trench', 'Lalomanu (beach fales)', 'Upolu'],
+          notes: "Authentieke Polynesische cultuur, nog weinig aangetast door massatoerisme. Beach fales zijn traditionele, budgetvriendelijke strandhutjes. Prijs geverifieerd (2026-07), klopt — relatief goedkoop voor de Pacific.",
+          transport_to_next: "Vlucht Apia-Nuku'alofa (meestal met overstap via Fiji)",
+        },
+        {
+          code: 'TO', name: 'Tonga', days: 8, budget: 800, lat: -21.1393, lng: -175.2046,
+          destinations: ["Nuku'alofa", "Vava'u (zwemmen met bultrugwalvissen)", "Ha'apai"],
+          notes: "Een van de weinige plekken ter wereld waar je legaal mag zwemmen met bultrugwalvissen — het beste seizoen daarvoor is juli-oktober, dus check de exacte timing bij het plannen van de startdatum. Prijscorrectie (2026-07): €67,50→€100/dag, de grootste correctie van de route — vlucht naar Vava'u + de whale-swim tour zelf waren niet gedekt.",
+          transport_to_next: "Vlucht Nuku'alofa-Rarotonga (lage frequentie, ruim van tevoren boeken)",
+        },
+        {
+          code: 'CK', name: 'Cook Islands', days: 7, budget: 665, lat: -21.2367, lng: -159.7777,
+          destinations: ['Rarotonga', 'Aitutaki-lagune'],
+          notes: "De Aitutaki-lagune is minstens zo mooi als Bora Bora, voor een fractie van de prijs. Prijscorrectie (2026-07): €80→€95/dag (Air Rarotonga heeft een monopolie op de Aitutaki-vlucht, plus lagune-cruise).",
+          transport_to_next: 'Einde van deze route — terugvlucht vanuit Rarotonga (of vlucht Rarotonga-Perth om verder te reizen naar Tropisch/Outback Australië 🐊)',
+        },
+      ],
+    },
+  ], {
+    travel_style: 'Backpacker tussen budget en comfort in — vluchten tussen de eilanden (geen praktisch bootalternatief).',
+    best_starting_month: 'Mei',
+    description: 'De mooiste Pacific-eilanden op een rij: Fiji, Vanuatu, Samoa, Tonga en de Cook Islands.',
+    climate_summary: 'Mei-juni is het droge seizoen in de hele Pacific, ruim vóór het cycloonseizoen (november-april).',
+    notes: 'Losgesplitst van Oceania Grand Expedition 🌊 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen (incl. de 2026-07 prijscorrecties op bijna elk eiland). Vervolg op deze route: Tropisch/Outback Australië 🐊. Oceania Grand Expedition 🌊 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildTropicalOutbackAustraliaRoute() {
+  return rbBuildSeedRoute('Tropisch/Outback Australië 🐊', [
+    {
+      name: 'Tropisch Australië',
+      season: 'Juni-augustus',
+      budget: 6300,
+      note: 'Droog seizoen: de Kimberley-wegen zijn begaanbaar, geen moesson, geen kwallenseizoen bij Cairns.',
+      countries: [
+        {
+          code: 'AU', name: 'Australia', days: 21, budget: 2520, lat: -31.9505, lng: 115.8605,
+          destinations: ['Perth', 'Ningaloo Reef (walvishaaien)', 'Kimberley & Bungle Bungles', 'Gibb River Road', 'Broome'],
+          notes: 'Ningaloo Reef en de Kimberley zijn spectaculair en kennen weinig massatoerisme. Wel de duurste/verste regio van deze route qua afstanden. Prijscorrectie (2026-07): €87,62→€120/dag.',
+          transport_to_next: 'Auto over land via de Gibb River Road en Kununurra naar Darwin, of vlucht Broome-Darwin voor wie de Kimberley liever per vliegtuig oversteekt',
+        },
+        {
+          code: 'AU', name: 'Australia', days: 14, budget: 1470, lat: -12.4634, lng: 130.8456,
+          destinations: ['Darwin', 'Kakadu National Park', 'Litchfield National Park', 'Uluru', 'Kata Tjuta', 'Kings Canyon'],
+          notes: 'Top End en Red Centre samen — de meest iconische landschappen van Australië. Juni-augustus is ook de koelste periode voor Uluru. Prijscorrectie (2026-07): €87,50→€105/dag.',
+          transport_to_next: 'Vlucht Alice Springs-Cairns of Darwin-Cairns (over land zou via de outback-highways dagenlang duren)',
+        },
+        {
+          code: 'AU', name: 'Australia', days: 21, budget: 2310, lat: -16.9203, lng: 145.771,
+          destinations: ['Cairns', 'Daintree Rainforest', 'Great Barrier Reef', 'Whitsundays & Whitehaven Beach', "Fraser Island / K'gari"],
+          notes: 'Droog seizoen betekent ook geen kwallenseizoen (dat loopt november-mei) bij Cairns. Prijscorrectie (2026-07): €87,62→€110/dag.',
+          transport_to_next: 'Einde van deze route — terugvlucht vanuit Cairns (of overland naar Sydney om verder te reizen naar Gematigd/Zuidelijk Australië 🍇)',
+        },
+      ],
+    },
+  ], {
+    travel_style: 'Backpacker tussen budget en comfort in — camper/huurauto voor de Kimberley en Red Centre.',
+    best_starting_month: 'Juni',
+    description: '"Top end" Australië: Perth en de Kimberley, Uluru en de Red Centre, en Cairns met het Great Barrier Reef.',
+    climate_summary: 'Juni-augustus is het droge seizoen — begaanbare Kimberley-wegen, geen moesson, geen kwallenseizoen bij Cairns.',
+    notes: 'Losgesplitst van Oceania Grand Expedition 🌊 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen, budgetten en volgorde zijn ongewijzigd overgenomen. Australië wordt hiermee opgeknipt in twee losse Route Builder-expedities naar klimaatzone (dit tropische deel en Gematigd/Zuidelijk Australië 🍇) — hetzelfde "zelfde land, ander block"-patroon als Chili/Argentinië tussen Pan-American Grand Tour 🌎 en Patagonia & Antarctica Expedition 🧊. Vervolg op Pacific-eilanden 🌺. Oceania Grand Expedition 🌊 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildTemperateSouthernAustraliaRoute() {
+  return rbBuildSeedRoute('Gematigd/Zuidelijk Australië 🍇', [
+    {
+      name: 'Gematigd Australië',
+      season: 'Augustus-september',
+      budget: 4130,
+      note: 'Late winter/vroege lente — koeler dan de zomerpiek (december-februari), maar goed te doen.',
+      countries: [
+        {
+          code: 'AU', name: 'Australia', days: 12, budget: 1050, lat: -33.8688, lng: 151.2093,
+          destinations: ['Byron Bay', 'Sydney', 'Blue Mountains'],
+          notes: 'Klassieke backpacker-trail met goede infrastructuur; Sydney is te iconisch om over te slaan. Prijs geverifieerd (2026-07), klopt.',
+          transport_to_next: 'Auto over land via de kust of de Hume Highway naar Melbourne',
+        },
+        {
+          code: 'AU', name: 'Australia', days: 10, budget: 875, lat: -37.8136, lng: 144.9631,
+          destinations: ['Great Ocean Road', 'Melbourne', 'Grampians National Park'],
+          notes: 'De beste roadtrip-ervaring van het hele land. Prijs geverifieerd (2026-07), klopt.',
+          transport_to_next: 'Veerboot Spirit of Tasmania (Melbourne-Devonport) of korte vlucht naar Hobart/Launceston',
+        },
+        {
+          code: 'AU', name: 'Australia', days: 12, budget: 1260, lat: -42.8821, lng: 147.3272,
+          destinations: ['Cradle Mountain', 'Wineglass Bay (Freycinet)', 'Overland Track', 'Hobart'],
+          notes: 'Ruige natuur, weinig massatoerisme. Augustus-september is nog fris (soms sneeuw in het hooggebergte), dus pak warme kleding in. Prijscorrectie (2026-07): €87,50→€105/dag.',
+          transport_to_next: 'Vlucht Hobart-Adelaide (meestal met overstap in Melbourne)',
+        },
+        {
+          code: 'AU', name: 'Australia', days: 9, budget: 945, lat: -34.9285, lng: 138.6007,
+          destinations: ['Adelaide', 'Kangaroo Island', 'Barossa Valley', 'Flinders Ranges'],
+          notes: "Kangaroo Island is uitstekend voor wildlife (zeeleeuwen, koala's). Barossa Valley (wijn) is de eerste kandidaat om te laten vervallen als er ingekort moet worden. Prijscorrectie (2026-07): €87,78→€105/dag.",
+          transport_to_next: 'Einde van deze route — terugvlucht vanuit Adelaide (of vlucht Adelaide-Christchurch om verder te reizen naar Nieuw-Zeeland 🥝)',
+        },
+      ],
+    },
+  ], {
+    travel_style: 'Backpacker tussen budget en comfort in — huurauto voor de Great Ocean Road, veerboot naar Tasmanië.',
+    best_starting_month: 'Augustus',
+    description: 'De oostkust van Sydney tot Melbourne, de Great Ocean Road, Tasmanië en Adelaide/Kangaroo Island.',
+    climate_summary: 'Augustus-september is late winter/vroege lente — koeler dan de zomerpiek maar goed te doen, en de aansluiting op Nieuw-Zeelands eigen seizoen.',
+    notes: 'Losgesplitst van Oceania Grand Expedition 🌊 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen, budgetten en volgorde zijn ongewijzigd overgenomen. Australië wordt hiermee opgeknipt in twee losse Route Builder-expedities naar klimaatzone — zie Tropisch/Outback Australië 🐊 voor de andere helft. Vervolg op Tropisch/Outback Australië 🐊; wordt zelf gevolgd door Nieuw-Zeeland 🥝. Oceania Grand Expedition 🌊 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildNewZealandRoute() {
+  return rbBuildSeedRoute('Nieuw-Zeeland 🥝', [
+    {
+      name: 'Nieuw-Zeeland Finale',
+      season: 'September-november',
+      budget: 3388,
+      note: 'Voorjaar — stabiel weer, rustiger dan de zomerdrukte (december-februari); door reisgidsen vaak aangeraden als shoulder season.',
+      countries: [
+        {
+          code: 'NZ', name: 'New Zealand', days: 21, budget: 2268, lat: -45.0312, lng: 168.6626,
+          destinations: ['Christchurch', 'Kaikoura', 'Abel Tasman', 'Franz Josef & Fox-gletsjers', 'Queenstown', 'Milford Sound & Fiordland', 'Dunedin & Catlins'],
+          notes: 'Concentreert het merendeel van de iconische Nieuw-Zeelandse natuur. Overweeg minstens één Great Walk (Milford Track, Routeburn of Kepler) als meerdaagse hut-to-hut-trek — ruim van tevoren reserveren. Prijscorrectie (2026-07): €80→€108/dag.',
+          transport_to_next: 'Veerboot Picton-Wellington, over land verder het Noordereiland in',
+        },
+        {
+          code: 'NZ', name: 'New Zealand', days: 14, budget: 1120, lat: -41.2865, lng: 174.7762,
+          destinations: ['Wellington', 'Tongariro Alpine Crossing', 'Rotorua', 'Coromandel', 'Bay of Islands', 'Auckland'],
+          notes: 'De Tongariro Alpine Crossing is de beste dagwandeling van het land. Rotorua voor geothermische verschijnselen en Māori-cultuur. Prijs geverifieerd (2026-07), klopt.',
+          transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Auckland naar Nederland',
+        },
+      ],
+    },
+  ], {
+    travel_style: 'Backpacker tussen budget en comfort in — huurauto op beide eilanden, veerboot Picton-Wellington.',
+    best_starting_month: 'September',
+    description: 'Het Zuidereiland (Milford Sound, gletsjers, Queenstown) en het Noordereiland (Tongariro, Rotorua, Bay of Islands).',
+    climate_summary: 'September-november is het Nieuw-Zeelandse voorjaar — een door reisgidsen vaak aangeraden shoulder season met stabiel weer en minder drukte dan de zomerpiek.',
+    notes: 'Losgesplitst van Oceania Grand Expedition 🌊 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen en budgetten zijn ongewijzigd overgenomen. Nieuw-Zeeland is een van de meest geboekte standalone trips ter wereld — dit blok staat volledig op zichzelf. Vervolg op Gematigd/Zuidelijk Australië 🍇. Oceania Grand Expedition 🌊 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+// ---- Caribbean & Amazon Expedition split (2026-07 modularization analysis, see ROUTE_BUILDER_MODULES.md) ----
+//
+// This expedition's own notes argue against splitting it ("geen van de tien onderdelen is
+// geschrapt", Suriname/Brazil framed as "complementair") — but the modularization analysis
+// deliberately disagreed with that framing: the Grenada-Suriname flight is already flagged in the
+// route's own notes as "waarschijnlijk de lastigste/duurste losse verbinding", and the travel style
+// genuinely shifts there (island-hopping → mainland river/rainforest). The two routes below act on
+// that disagreement. Countries, days, budgets, region order and all leg content are copied verbatim
+// from rbBuildCaribbeanAmazonExpeditionRoute() below — this route has no shared
+// RB_EXPEDITION_CONTENT entry, so the country objects are duplicated here rather than looked up.
+// The original expedition itself is untouched and keeps existing exactly as it was, in full,
+// alongside these two.
+
+function rbSeedCaribbeanSplitExpeditions() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_CARIBBEAN_SPLIT)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_CARIBBEAN_SPLIT, '1');
+
+  rbRoutes.push(rbBuildCaribbeanIslandsHopRoute(), rbBuildSurinameNorthernBrazilRoute());
+  rbSave();
+}
+
+function rbBuildCaribbeanIslandsHopRoute() {
+  return rbBuildSeedRoute('Caraïbische Eilanden-hop 🏝️', [
+    {
+      name: 'Grote Antillen',
+      season: 'December',
+      budget: 2340,
+      note: 'Droog seizoen, ruim na het orkaanseizoen (dat loopt juni-november) — een veilige, aangename opener.',
+      countries: [
+        {
+          code: 'CU', name: 'Cuba', days: 18, budget: 1260, lat: 23.1136, lng: -82.3666,
+          destinations: ['Havana (Habana Vieja)', 'Trinidad', 'Cienfuegos', 'Viñales-vallei'],
+          notes: "Havana en het UNESCO-koloniale Trinidad zijn de hoogtepunten; de rustige Viñales-vallei (tabak, karstlandschap) is de verborgen parel. Casas particulares (particuliere kamers) zijn de gangbare backpacker-accommodatie. Prijs geverifieerd (2026-07), klopt. ⚠️ Reisadvies oranje: dagelijkse stroomuitval, kaarten werken niet bij pinautomaten (contant meenemen), D'Viajeros-registratie + tourist card (~€20-30) verplicht vooraf.",
+          transport_to_next: 'Vlucht Havana-Kingston (meestal met overstap via Panama City of Miami)',
+        },
+        {
+          code: 'JM', name: 'Jamaica', days: 12, budget: 1080, lat: 17.9714, lng: -76.7936,
+          destinations: ['Kingston', 'Blue Mountains', "Dunn's River Falls", 'Port Antonio'],
+          notes: 'Blue Mountains (koffie, wandelen) en Port Antonio (rafting, watervallen, nauwelijks toeristen vergeleken met Negril/Ocho Rios) zijn de sterkste match met natuur boven luxe. Prijscorrectie (2026-07): €75→€90/dag, Jamaica is duurder dan aangenomen (guesthouses + entreegelden).',
+          transport_to_next: 'Vlucht Kingston-Curaçao (meestal met overstap via Panama City of Miami)',
+        },
+      ],
+    },
+    {
+      name: 'Nederlandse Caraïben',
+      season: 'December-januari',
+      budget: 1220,
+      note: 'Droog seizoen — helderder water voor snorkelen en duiken.',
+      countries: [
+        {
+          code: 'CW', name: 'Curaçao', days: 7, budget: 560, lat: 12.1084, lng: -68.9335,
+          destinations: ['Willemstad (UNESCO)', 'Shete Boka National Park', 'stranden'],
+          notes: 'Willemstad met zijn Nederlandse koloniale architectuur is de stedelijke tegenhanger van rustig Bonaire. Shete Boka (ruige noordkust) is de verborgen parel, veel rustiger dan de stranden. Prijs geverifieerd (2026-07), klopt. Digital Immigration Card verplicht vooraf invullen (gratis).',
+          transport_to_next: 'Korte vlucht Curaçao-Bonaire',
+        },
+        {
+          code: 'BQ', name: 'Bonaire', days: 6, budget: 660, lat: 12.25, lng: -68.4,
+          destinations: ['Washington Slagbaai National Park', 'duiken/snorkelen (marine park)'],
+          notes: "Wereldklasse duiken/snorkelen direct vanaf de kust. Washington Slagbaai NP (flamingo's, ruige natuur) is de verborgen parel, nauwelijks bezocht. Prijscorrectie (2026-07): €87,50→€110/dag (weinig budget-accommodatie, duiktrips zijn duur). Verplichte inreisbelasting ~€70 p.p. is een aparte kostenpost, niet in het dagtarief.",
+          transport_to_next: 'Vlucht Bonaire-Guadeloupe (meestal met overstap via Aruba, Panama City of San Juan)',
+        },
+      ],
+    },
+    {
+      name: 'Kleine Antillen',
+      season: 'Januari-februari',
+      budget: 2445,
+      note: "Droog seizoen (carême) — beste moment om te wandelen in Dominica's regenwoud. De eilandvolgorde volgt de natuurlijke noord-zuid keten, en toevallig ook de veerbootlijn L'Express des Îles.",
+      countries: [
+        {
+          code: 'GP', name: 'Guadeloupe', days: 7, budget: 615, lat: 16.0448, lng: -61.6654,
+          destinations: ['La Soufrière (vulkaan)', 'Carbet-watervallen', 'Îles des Saintes'],
+          notes: 'Franse Caraïbische cultuur gecombineerd met een actieve vulkaan. Îles des Saintes (kleine eilandjes voor de kust) is veel rustiger dan het hoofdeiland. Prijs geverifieerd (2026-07), klopt.',
+          transport_to_next: "Veerboot L'Express des Îles naar Dominica (via Martinique)",
+        },
+        {
+          code: 'DM', name: 'Dominica', days: 8, budget: 760, lat: 15.317, lng: -61.268,
+          destinations: ['Boiling Lake-trektocht', 'Trafalgar Falls', 'Champagne Reef'],
+          notes: '"Nature Island" — het minst ontwikkelde en meest ongerepte eiland van de vier. De Boiling Lake-trektocht is een zware hele dag op zich; reken op een rustdag ervoor of erna. Champagne Reef (vulkanische bubbels tijdens het snorkelen) is uniek. Prijscorrectie (2026-07): €72,50→€95/dag (nauwelijks hostels, guesthouses vanaf ~€60-70/nacht, verplichte gids voor Boiling Lake ~€55-70).',
+          transport_to_next: "Veerboot L'Express des Îles naar St Lucia",
+        },
+        {
+          code: 'LC', name: 'Saint Lucia', days: 7, budget: 560, lat: 13.83, lng: -61.0667,
+          destinations: ['The Pitons', 'Sulphur Springs (drive-in vulkaan)', 'Tet Paul Nature Trail'],
+          notes: 'De iconische Pitons, meer toeristisch ontwikkeld dan de andere drie. Tet Paul Nature Trail geeft hetzelfde uitzicht op de Pitons, veel rustiger dan de drukke wandelpaden. Prijs geverifieerd (2026-07), klopt.',
+          transport_to_next: 'Vlucht St Lucia-Grenada (niet op de veerbootlijn)',
+        },
+        {
+          code: 'GD', name: 'Grenada', days: 7, budget: 510, lat: 12.08, lng: -61.728,
+          destinations: ['Onderwaterbeeldenpark', 'kruidenplantages (nootmuskaat)', 'Grand Etang National Park'],
+          notes: 'Het minst toeristische van de vier eilanden. Grand Etang NP (regenwoud, kratermeer) is de verborgen parel. Prijs geverifieerd (2026-07), klopt.',
+          transport_to_next: 'Einde van deze route — terugvlucht vanuit Grenada (of vlucht Grenada-Suriname om verder te reizen naar Suriname & Noord-Brazilië 🌴)',
+        },
+      ],
+    },
+  ], {
+    travel_style: "Backpacker tussen goedkoop en normaal in — hostels en casas particulares afgewisseld met af en toe een privékamer, de veerboot L'Express des Îles waar mogelijk (Guadeloupe-Dominica-St Lucia), vluchten voor de rest van de eilandsprongen.",
+    best_starting_month: 'December',
+    description: 'Caribische koloniale geschiedenis, vulkanische natuur en eilandculturen: Cuba en Jamaica, de Nederlandse ABC-eilanden, en de Kleine Antillen.',
+    climate_summary: 'Het orkaanseizoen in de Caribische Zee loopt 1 juni-30 november; een decemberstart houdt de hele reis ruim binnen het droge/veilige seizoen (december-mei).',
+    notes: "Losgesplitst van Caribbean & Amazon Expedition 🌴 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen (incl. de 2026-07 prijscorrecties op Jamaica/Bonaire/Dominica). Vervolg op deze route: Suriname & Noord-Brazilië 🌴. Caribbean & Amazon Expedition 🌴 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.",
+  });
+}
+
+function rbBuildSurinameNorthernBrazilRoute() {
+  return rbBuildSeedRoute('Suriname & Noord-Brazilië 🌴', [
+    {
+      name: 'Suriname & Amazone',
+      season: 'Februari-maart',
+      budget: 1445,
+      note: "Suriname's korte droge tijd valt hier precies goed voor jungle-/rivierentochten. Noord-Brazilië's duinenkust (Jericoacoara/Lençóis) is dan net buiten zijn absolute piekseizoen (juni-januari) — het enige geaccepteerde compromis van de hele oorspronkelijke route.",
+      countries: [
+        {
+          code: 'SR', name: 'Suriname', days: 11, budget: 605, lat: 5.852, lng: -55.2038,
+          destinations: ['Paramaribo (UNESCO)', 'Marrondorpen aan de rivier', 'Brownsberg Nature Park'],
+          notes: 'Nederlandse koloniale geschiedenis in Paramaribo, gecombineerd met een rivierreis naar Marrondorpen in het binnenland — reken op 3-5 dagen voor een fatsoenlijke jungletocht naast de stad. Brownsberg (uitzicht over het Brokopondostuwmeer) is de verborgen parel. Prijs geverifieerd (2026-07): waarschijnlijk net genoeg, Brownsberg/Marrondorpen-tours ($70-120/dag) drukken het gemiddelde op. Let op: "visumvrij" is niet helemaal juist — een verplicht online ICF-immigratieformulier + gelekoortsbewijs is nodig vooraf.',
+          transport_to_next: 'Vlucht Paramaribo-Belém (schaarse rechtstreekse verbindingen; waarschijnlijk met overstap via Cayenne, Georgetown of een Braziliaanse hub — vooraf goed checken)',
+        },
+        {
+          code: 'BR', name: 'Brazil', days: 14, budget: 840, lat: -2.7458, lng: -42.8339,
+          destinations: ['Belém', 'Ilha do Marajó', 'Lençóis Maranhenses', 'Jericoacoara', 'Fortaleza'],
+          notes: 'De overgang van de Amazone-riviermonding (Belém, Marajó — buffels, ongerept rivierdelta-eiland) naar de compleet andere zandduinenkust (Lençóis Maranhenses, Jericoacoara) als adembenemende afsluiter. De afstanden langs de kust worden vaak onderschat. Prijs geverifieerd (2026-07), klopt — de generieke Rio/São Paulo-veiligheidswaarschuwingen zijn niet relevant voor dit noordoostelijke traject.',
+          transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Fortaleza (of via São Paulo) naar Nederland',
+        },
+      ],
+    },
+  ], {
+    travel_style: 'Backpacker tussen goedkoop en normaal in — rivierboten in Suriname, kustbussen in Noord-Brazilië.',
+    best_starting_month: 'Februari',
+    description: 'Nederlandse koloniale geschiedenis en Marroncultuur in Suriname, gevolgd door de Amazone-riviermonding en de duinenkust van Noord-Brazilië.',
+    climate_summary: "Suriname's korte droge tijd (februari-maart) is ideaal voor jungle-/rivierentochten; Noord-Brazilië's duinenkust is dan net buiten zijn piekseizoen (juni-januari) — het enige compromis van dit blok.",
+    notes: "Losgesplitst van Caribbean & Amazon Expedition 🌴 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen en budgetten zijn ongewijzigd overgenomen. Dit blok is bewust losgetrokken ondanks dat de oorspronkelijke route-notities het tegenovergestelde beargumenteerden (\"geen van de tien onderdelen is geschrapt\", Suriname/Brazilië \"complementair\") — de vlucht Grenada-Suriname is in diezelfde notities al aangemerkt als \"waarschijnlijk de lastigste/duurste losse verbinding\", en de reisstijl verschuift hier volledig (eilandhoppen → rivier/regenwoud op het continent). Extra relevant voor een Nederlandse reiziger gezien Suriname's koloniale band. Vervolg op Caraïbische Eilanden-hop 🏝️. Caribbean & Amazon Expedition 🌴 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.",
+  });
+}
+
+// ---- West & Central Africa Expedition split (2026-07 modularization analysis, see ROUTE_BUILDER_MODULES.md) ----
+//
+// This expedition's own notes already flag Benin-Cameroon as "de enige onvermijdelijke sprong van
+// de hele route" (overland through Nigeria isn't an option) — that's the natural seam the two
+// routes below use. Countries, days, budgets, region order and all leg content are copied verbatim
+// from rbBuildWestCentralAfricaExpeditionRoute() below — this route has no shared
+// RB_EXPEDITION_CONTENT entry, so the country objects are duplicated here rather than looked up.
+// The original expedition itself is untouched and keeps existing exactly as it was, in full,
+// alongside these two.
+
+function rbSeedWestCentralAfricaSplitExpeditions() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_WCAFRICA_SPLIT)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_WCAFRICA_SPLIT, '1');
+
+  rbRoutes.push(rbBuildWestAfricaOverlandRoute(), rbBuildCentralAfricaIslandsRoute());
+  rbSave();
+}
+
+function rbBuildWestAfricaOverlandRoute() {
+  return rbBuildSeedRoute('West-Afrika Overland 🥁', [
+    {
+      name: 'Kaapverdische Eilanden',
+      season: 'November',
+      budget: 780,
+      note: 'Net na het regenseizoen (augustus-oktober) — het droge seizoen loopt tot juni. Rustige, aangename opener.',
+      countries: [
+        {
+          code: 'CV', name: 'Cape Verde', days: 13, budget: 780, lat: 16.8901, lng: -24.9825,
+          destinations: ['Santo Antão (Ribeira Grande, Paúl-vallei)', 'São Vicente (Mindelo)', 'Fogo (Pico do Fogo-vulkaan, wijngaarden)'],
+          notes: "Bewust andere eilanden dan een eerder bezoek (niet opnieuw Sal) — Santo Antão voor de dramatische wandelvalleien, São Vicente voor de muziekcultuur van Mindelo, Fogo voor de vulkaanbeklimming en wijnbouw op vulkanische grond. Onderling per veerboot (goedkoper, minder betrouwbaar schema) of Binter Cabo Verde-vlucht. Prijs geverifieerd (2026-07), klopt. Verplichte online EASE-registratie ≥5 dagen vooraf.",
+          transport_to_next: 'Vlucht Praia/Sal-Dakar, korte oversteek naar het vasteland.',
+        },
+      ],
+    },
+    {
+      name: 'Senegambia',
+      season: 'November-december',
+      budget: 858,
+      note: 'Begin van het West-Afrikaanse droge seizoen (november-april).',
+      countries: [
+        {
+          code: 'SN', name: 'Senegal', days: 13, budget: 618, lat: 14.7167, lng: -17.4677,
+          destinations: ['Dakar', 'Île de Gorée', 'Saint-Louis (UNESCO)', 'Sine-Saloum-delta', 'Lompoul-woestijn'],
+          notes: "Île de Gorée (slavernijgeschiedenis, korte boot vanaf Dakar) en Saint-Louis (koloniale hoofdstad) zijn de historische zwaartepunten; Sine-Saloum (mangroves, vogels) en de Lompoul-duinen geven een compleet ander natuurbeeld binnen één land. Prijs geverifieerd (2026-07), klopt.",
+          transport_to_next: 'Bus/deeltaxi over land naar Gambia via de Senegambia-brug (geopend 2019, een stuk vlotter dan de vroegere veerpont).',
+        },
+        {
+          code: 'GM', name: 'Gambia', days: 6, budget: 240, lat: 13.4549, lng: -16.579,
+          destinations: ['Banjul', 'Gambia-rivier (bootcruise)', 'Kunta Kinteh Island (UNESCO, slavernijgeschiedenis)', 'Makasutu Culture Forest'],
+          notes: "Klein maar met een eigen, herkenbaar hoogtepunt: Kunta Kinteh Island (voorheen James Island) is een van de belangrijkste slavernij-erfgoedsites van West-Afrika. Prijs geverifieerd (2026-07), klopt. Presidentsverkiezing 5 december 2026 — mogelijk onrust, check actuele situatie vlak voor vertrek.",
+          transport_to_next: 'Einde van deze route — terugvlucht vanuit Banjul (of vlucht naar Abidjan om verder te reizen naar Golf van Guinee, hieronder).',
+        },
+      ],
+    },
+    {
+      name: 'Golf van Guinee',
+      season: 'December-januari',
+      budget: 1634,
+      note: 'Harmattan-seizoen — droog maar stoffig, de beste periode om hier te reizen.',
+      countries: [
+        {
+          code: 'CI', name: 'Ivory Coast', days: 7, budget: 333, lat: 5.36, lng: -4.0083,
+          destinations: ['Abidjan (Le Plateau)', 'Grand-Bassam (UNESCO koloniale stad)'],
+          notes: "Taï National Park is bewust weggelaten — prachtig, maar de afgelegen ligging kost 3-4 dagen extra reistijd. Abidjan en Grand-Bassam houden dit land compact en de moeite waard. Prijs geverifieerd (2026-07), klopt.",
+          transport_to_next: 'Bus over land naar Ghana via de grensovergang Elubo — een gevestigde backpacker-route.',
+        },
+        {
+          code: 'GH', name: 'Ghana', days: 15, budget: 713, lat: 5.1053, lng: -1.2466,
+          destinations: ['Accra', 'Cape Coast Castle', 'Elmina Castle', 'Kakum National Park (boomtoppenpad)', 'Volta-regio (Wli-watervallen, Mount Afadjato)'],
+          notes: "Cape Coast en Elmina Castle zijn de zwaarste, belangrijkste slavernijgeschiedenis-sites van de hele expeditie. Ghana heeft verreweg het rijkste programma, vandaar de meeste tijd. Prijs geverifieerd (2026-07), klopt.",
+          transport_to_next: 'Bus over land naar Togo via de grensovergang Aflao.',
+        },
+        {
+          code: 'TG', name: 'Togo', days: 4, budget: 160, lat: 6.1319, lng: 1.2228,
+          destinations: ['Lomé', 'Togoville (Vodun-cultuur, Lac Togo)'],
+          notes: "Bewust kort — Togo voegt met zijn Duitse koloniale geschiedenis wel een andere invalshoek toe dan Ghana/Benin, maar heeft weinig hoogtepunten. Prijs geverifieerd (2026-07), klopt.",
+          transport_to_next: 'Bus over land naar Benin via de grensovergang Hillacondji.',
+        },
+        {
+          code: 'BJ', name: 'Benin', days: 9, budget: 428, lat: 6.3667, lng: 2.0833,
+          destinations: ['Ouidah (Route des Esclaves, Door of No Return)', 'Ganvié (paalwoningdorp op het meer)', 'Abomey (koninklijke paleizen, UNESCO)'],
+          notes: "Oude koninkrijken (Abomey, het voormalige Dahomey), slavernijgeschiedenis (Ouidah) en levende Vodun-cultuur. Prijs geverifieerd (2026-07), klopt.",
+          transport_to_next: "Einde van deze route — vlucht huiswaarts vanuit Cotonou (of vlucht Cotonou-Douala om verder te reizen naar Centraal-Afrika & Eilanden 🦛 — overland door Nigeria is geen optie).",
+        },
+      ],
+    },
+  ], {
+    travel_style: "Backpacker, geen harde tijdslimiet — hostels/eenvoudige guesthouses, bus/deeltaxi overland (Senegal t/m Benin), vluchten alleen voor Kaapverdië-Senegal en Gambia-Ivoorkust.",
+    best_starting_month: 'November',
+    description: 'Atlantische eilandcultuur, oude West-Afrikaanse koninkrijken en slavernijgeschiedenis: Kaapverdië, Senegal, Gambia, Ivoorkust, Ghana, Togo en Benin.',
+    climate_summary: 'Een novemberstart laat vrijwel de hele route in zijn beste seizoen vallen: Kaapverdië net na het regenseizoen, en Senegal t/m Benin in hun volledige droge seizoen (november-april, met de stoffige maar droge harmattan december-februari).',
+    notes: 'Losgesplitst van West & Central Africa Expedition 🌍 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen. Vervolg op deze route: Centraal-Afrika & Eilanden 🦛. West & Central Africa Expedition 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildCentralAfricaIslandsRoute() {
+  return rbBuildSeedRoute('Centraal-Afrika & Eilanden 🦛', [
+    {
+      name: 'Centraal-Afrika & Eilanden',
+      season: 'Januari-februari',
+      budget: 1888,
+      note: "Kameroens minst natte periode (november-februari) en Gabons korte droge seizoen (december-februari) vallen hier samen; São Tomé is de uitzondering (regenseizoen).",
+      countries: [
+        {
+          code: 'CM', name: 'Cameroon', days: 8, budget: 380, lat: 4.0511, lng: 9.7679,
+          destinations: ['Douala', 'Kribi (Chutes de la Lobé, zwarte stranden)', 'Yaoundé'],
+          notes: 'Mount Cameroon en Limbe (Zuidwest-regio) bewust vermeden vanwege de sinds 2016 actieve "Anglophone Crisis" — in plaats daarvan Douala, Kribi en Yaoundé in de stabielere Franstalige regio\'s. Bevestigd (2026-07): conflict nog steeds actief. Verplicht e-visa vooraf (~€150-230), aparte kostenpost.',
+          transport_to_next: 'Vlucht Douala-São Tomé (regionale verbinding).',
+        },
+        {
+          code: 'ST', name: 'São Tomé and Príncipe', days: 9, budget: 653, lat: 0.3365, lng: 6.7273,
+          destinations: ['São Tomé (roças/plantages, regenwoud)', 'Príncipe (afgelegen, minder bezocht)'],
+          notes: "Portugese koloniale plantagegeschiedenis op een klein, rustig tropisch eiland. Valt in het regenseizoen (oktober-mei) bij deze route — vooral middagbuien. Prijs geverifieerd (2026-07), klopt. Presidentsverkiezing 19 juli 2026 — check lokaal nieuws vlak voor vertrek.",
+          transport_to_next: 'Vlucht São Tomé-Libreville (regionale verbinding).',
+        },
+        {
+          code: 'GA', name: 'Gabon', days: 9, budget: 855, lat: -1.95, lng: 9.7,
+          destinations: ['Loango National Park (surfende nijlpaarden, bosolifanten op het strand)', 'Libreville', 'regenwoud'],
+          notes: "Een van de weinige plekken ter wereld waar je olifanten en nijlpaarden op het strand ziet. ⚠️ Prijscheck (2026-07): het krapste/riskantste budget van de route — Loango-logistiek kan oplopen tot $100-300+/dag.",
+          transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Libreville naar Nederland (meestal met overstap).',
+        },
+      ],
+    },
+  ], {
+    travel_style: 'Backpacker — vluchten tussen Kameroen, São Tomé en Gabon (geen overland-alternatief).',
+    best_starting_month: 'Januari',
+    description: 'Centraal-Afrikaans regenwoud en wildlife: Kameroen, het eilandenrijk São Tomé & Príncipe en Gabon.',
+    climate_summary: "Januari-februari laat Kameroens minst natte periode en Gabons korte droge seizoen samenvallen; São Tomé valt dan in zijn regenseizoen (vooral middagbuien, geen aanhoudende moesson).",
+    notes: 'Losgesplitst van West & Central Africa Expedition 🌍 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen en budgetten zijn ongewijzigd overgenomen (incl. de waarschuwing over Kameroens Zuidwest-regio en Gabons krappe Loango-budget). Klein maar uniek: dit alleen doen als er tijd/budget is voor Centraal-Afrikaans regenwoud specifiek, los van de West-Afrikaanse geschiedenis-route ervoor. Vervolg op West-Afrika Overland 🥁. West & Central Africa Expedition 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
   });
 }
 

@@ -17,10 +17,10 @@ Agreed direction (2026-07 brainstorm), not yet designed or scheduled. **Criterio
 - **Visited-countries progress/badges** — gamify the existing Countries/Map tracker: % of world visited, continent-completion badges. Presentation over data that already exists.
 - **Bucket-list counter across Route Builder expeditions** — a simple "X countries done, Y to go" tally across all 13 expeditions combined. Aggregation over existing data, no new fields.
 - **Yearly travel recap** — a "wrapped"-style end-of-year summary (countries visited, km traveled, money spent, top trip), pulling from Trips + Countries + Route Builder together. Natural home is here since it spans all three, rather than in youridealtravel.
+- **Route Builder Module Library** — the content side of the modularization analysis in [`ROUTE_BUILDER_MODULES.md`](ROUTE_BUILDER_MODULES.md) is done: 27 new standalone routes now exist alongside 11 of the 13 original expeditions (see `CHANGELOG.md`). What's left is the technical layer described in that doc's "Route Builder implementation" section — evolving the existing Block Library into a "Module Library" with metadata (`standalone_score`, `season`, `possible_next_blocks`, etc.), a per-expedition "possible standalone trips" UI, and a "build your own expedition" flow that merges saved modules while keeping their internal region structure. Naming, exact metadata fields and whether to build compatible/incompatible-blocks scoring are all intentionally still open — see the doc's own open questions. Not started.
 
 ## Under consideration
 
-- **Split Eurasia Grand Tour 🌏 into two expeditions** — it's ~11-12 months even after the time-realism audit. Candidate split: West-Eurasia through Central Asia, and East Asia/Southeast Asia through Indonesia. Not started, no date set.
 - **Route-line map view precision** — currently one anchor coordinate per leg (straight segments, not real roads). Possible upgrades: per-destination coordinates for more accurate shapes, and/or a routing API for real-road paths. Not started.
 
 ## Long-term / someday
