@@ -12,6 +12,39 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Eurasia Grand Tour 🌏 routelogica-herziening (2026-08)** — tot nu toe waren alleen prijzen/visa/
+  reisadvies per land geverifieerd, nooit of de etappes daadwerkelijk op elkaar aansluiten. Elke
+  transport_to_next gecontroleerd tegen de vorige/volgende bestemming en de volgorde binnen elk
+  land op geografische logica. Grootste vondst: de Vietnam→Laos→Cambodja→Thailand-volgorde liet
+  Vietnam eindigen in Ho Chi Minh City (uiterste zuiden) om vervolgens "terug" te bussen naar
+  Vientiane via Hanoi (uiterste noorden) — 1700 km onnodige backtrack. Landvolgorde omgedraaid naar
+  **Vietnam → Cambodja → Laos → Thailand**, via de klassieke Mekongdelta-oversteek (HCMC-Phnom Penh)
+  en de Huay Xai-Chiang Khong-grens — lost meteen ook Thailands eigen volgorde op (Chiang Mai nu
+  eerst i.p.v. Bangkok). Kazachstan eindigde bij Nur-Sultan/Astana terwijl de bus naar Kirgizië
+  vanuit Almaty vertrekt (1200 km uit de weg) — Astana op Youri's verzoek geschrapt, Kazachstan is
+  nu een aaneengesloten zuidelijke lus. Verder heringedeeld of met een expliciete terugreis-notitie
+  gecorrigeerd: Kroatië (nu alleen Dubrovnik, ook al bezocht elders), Albanië (Korçë toegevoegd,
+  directe grensovergang naar Noord-Macedonië i.p.v. terug via Tirana), Turkije (Efeze/Pamukkale/
+  Antalya voor Cappadocië/Ankara gegroepeerd), Georgië, Armenië (Dilijan nu laatste stop, dicht bij
+  de Georgische grens), Azerbeidzjan, Oezbekistan (Samarkand eerst i.p.v. Tasjkent), Taiwan
+  (Kaohsiung-Taipei terugreis benoemd), Maleisië (Langkawi eerst i.p.v. Kuala Lumpur).
+  Losstaand, op Youri's verzoek: Xinjiang (Ürümqi/Kasjgar) volledig uit China geschrapt
+  (sociaalpolitieke reden) en vervangen door Zhangjiajie en Guilin/Yangshuo, naast Xi'an en Chengdu
+  die al op de route stonden — binnenkomst in China nu via een rechtstreekse vlucht Tasjkent-Xi'an
+  i.p.v. Tasjkent-Ürümqi. Vietnam herzien: Ha Giang Loop toegevoegd, Hue/Hoi An/Da Nang geschrapt
+  (al bezocht), Da Lat en Phu Quoc als uitstapjes vanuit Ho Chi Minh City. Thailand-Maleisië nu per
+  boot (de internationale veerboot Koh Lipe-Langkawi, alleen half oktober-mei) i.p.v. over land.
+  Maleisië uitgebreid met een Borneo-etappe (Sarawak → Brunei → Sabah, de bekende "Borneo Overland
+  Trail") tussen het schiereiland en Brunei in — Maleisië komt hierdoor twee keer voor in de route,
+  hetzelfde patroon als Canada/Italië elders in de app. Filipijnen omgezet van vaste basis Manila
+  naar een rondreis met een meerdaagse bootexpeditie El Nido-Coron. Indonesië met Sumatra
+  (Bukit Lawang, Lake Toba, Bukittinggi) i.p.v. het al bezochte Java/Bali, Gili/Lombok/Komodo
+  ongewijzigd. Nieuw totaal: 27 landen, ~338 dagen, ~€19.850 (was 336 dagen/€19.974).
+  Toegepast via `rbMigrateEurasiaRouteOverhaul()` op zowel Eurasia Grand Tour zelf als de drie
+  2026-07 split-routes (West-Eurazië Overland 🐫, Oost-Azië & Stille Oceaan 🗻, Zuidoost-Azië Grand
+  Loop 🛕) — die delen dezelfde `RB_EXPEDITION_CONTENT`, maar hun blocks werden bij het seeden
+  bevroren in `localStorage`, dezelfde migratie-valkuil als hieronder bij "Ten more expeditions
+  split into standalone companions", nu structureel meegenomen in de migratie zelf.
 - **Ten more expeditions split into standalone companions (2026-07)** — continuing the modularization
   analysis in `ROUTE_BUILDER_MODULES.md`, now built for every remaining expedition except the two
   self-driven-from-NL loops (Central European Grand Roadtrip, British Isles — decided to stay

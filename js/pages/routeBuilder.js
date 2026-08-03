@@ -48,6 +48,7 @@ const RB_MIGRATE_FLAG_2026_07_PRICE_VERIFICATION_ROUND2 = 'atlas_grand_trips_mig
 const RB_MIGRATE_FLAG_2026_07_PRICE_VERIFICATION_ROUND3 = 'atlas_grand_trips_migrate_2026_07_price_verification_round3_v1';
 const RB_MIGRATE_FLAG_2026_07_ROUTE_LINE_COORDS = 'atlas_grand_trips_migrate_2026_07_route_line_coords_v1';
 const RB_MIGRATE_FLAG_2026_07_ROUTE_LINE_COORDS_ROUND2 = 'atlas_grand_trips_migrate_2026_07_route_line_coords_round2_v1';
+const RB_MIGRATE_FLAG_2026_08_EURASIA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_eurasia_overhaul_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -102,6 +103,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigratePriceVerificationRound3();
   rbMigrateRouteLineCoords();
   rbMigrateRouteLineCoordsRound2();
+  rbMigrateEurasiaRouteOverhaul();
   rbBindEvents();
 
   try {
@@ -611,7 +613,8 @@ let rbWorldGeoJSON = null;
 let rbMiniMap = null;
 let rbMiniMapLayer = null;
 let rbMiniMapLineLayer = null;
-let rbMapMode = 'countries'; // 'countries' | 'line'
+let rbMiniMapDetailedLayer = null;
+let rbMapMode = 'countries'; // 'countries' | 'line' | 'detailed'
 
 /**
  * A handful of countries (Fiji, Russia, ...) have ring geometry that crosses the ±180° antimeridian.
@@ -700,9 +703,15 @@ async function rbRenderMap(route) {
 
   if (rbMapMode === 'line') {
     rbMiniMapLayer = rbClearMapLayer(rbMiniMapLayer);
+    rbMiniMapDetailedLayer = rbClearMapLayer(rbMiniMapDetailedLayer);
     rbRenderRouteLine(route, geojson);
+  } else if (rbMapMode === 'detailed') {
+    rbMiniMapLayer = rbClearMapLayer(rbMiniMapLayer);
+    rbMiniMapLineLayer = rbClearMapLayer(rbMiniMapLineLayer);
+    rbRenderDetailedRouteLine(route, geojson);
   } else {
     rbMiniMapLineLayer = rbClearMapLayer(rbMiniMapLineLayer);
+    rbMiniMapDetailedLayer = rbClearMapLayer(rbMiniMapDetailedLayer);
     rbRenderCountriesLayer(route, geojson);
   }
 
@@ -794,6 +803,73 @@ function rbRenderRouteLine(route, geojson) {
 
   rbMiniMapLineLayer = layerGroup.addTo(rbMiniMap);
   rbMiniMap.setMaxZoom(9);
+  rbMiniMap.fitBounds(L.latLngBounds(latlngs), { padding: [30, 30] });
+}
+
+/**
+ * Detailed route-line view (2026-08): draws through every destination's own coordinate
+ * (block.destinations[].lat/lng) instead of just one anchor point per country — a much closer
+ * approximation of the actual in-country path, not just country-to-country. Small circle markers
+ * per destination (a numbered emoji marker per stop, like rbRenderRouteLine uses, would be
+ * unreadable at this density — 25+ legs can mean 150+ points). Only Eurasia Grand Tour and its
+ * three split routes have per-destination coordinates so far (2026-08); other routes show the
+ * empty-state message, same as rbRenderRouteLine did before route-line coordinates existed at all.
+ */
+function rbRenderDetailedRouteLine(route, geojson) {
+  const mapDiv = document.getElementById('rbMapDiv');
+  const points = [];
+  route.blocks.forEach((block, blockIndex) => {
+    (block.destinations || []).forEach(dest => {
+      if (typeof dest.lat === 'number' && typeof dest.lng === 'number') {
+        points.push({ block, blockIndex, dest });
+      }
+    });
+  });
+
+  rbMiniMapDetailedLayer = rbClearMapLayer(rbMiniMapDetailedLayer);
+
+  if (points.length < 2) {
+    mapDiv.querySelector('.rb-map-empty')?.remove();
+    const empty = document.createElement('div');
+    empty.className = 'rb-map-empty';
+    empty.textContent = 'Deze route heeft nog geen coördinaten per bestemming — nog niet elke expeditie heeft die.';
+    mapDiv.appendChild(empty);
+    return;
+  }
+  mapDiv.querySelector('.rb-map-empty')?.remove();
+
+  const layerGroup = L.layerGroup();
+
+  // Faint, unhighlighted country outlines as geographic context under the line.
+  L.geoJSON(geojson, {
+    style: { fillColor: '#e2e8f0', fillOpacity: 0.5, color: '#94a3b8', weight: 0.5 },
+  }).addTo(layerGroup);
+
+  const pointLatlngs = points.map(({ dest }) => [dest.lat, dest.lng]);
+  const latlngs = [RB_HOME_LATLNG, ...pointLatlngs, RB_HOME_LATLNG];
+  L.polyline(latlngs, { color: '#f97316', weight: 2, opacity: 0.85, dashArray: '4 6' }).addTo(layerGroup);
+
+  const homeIcon = L.divIcon({
+    className: 'rb-map-stop-icon rb-map-stop-icon--home',
+    html: `<span>🏠</span>`,
+    iconSize: [26, 26], iconAnchor: [13, 13],
+  });
+  L.marker(RB_HOME_LATLNG, { icon: homeIcon })
+    .bindTooltip('🇳🇱 Utrecht — vertrek & aankomst')
+    .addTo(layerGroup);
+
+  points.forEach(({ block, blockIndex, dest }) => {
+    const color = RB_BLOCK_COLORS[blockIndex % RB_BLOCK_COLORS.length];
+    const flag = rbFlagFor(block);
+    L.circleMarker([dest.lat, dest.lng], {
+      radius: 5, weight: 1, color: '#0a1628', fillColor: color, fillOpacity: 0.9,
+    })
+      .bindTooltip(`${flag} ${escapeHTML(dest.name || '')}`)
+      .addTo(layerGroup);
+  });
+
+  rbMiniMapDetailedLayer = layerGroup.addTo(rbMiniMap);
+  rbMiniMap.setMaxZoom(12);
   rbMiniMap.fitBounds(L.latLngBounds(latlngs), { padding: [30, 30] });
 }
 
@@ -1187,7 +1263,14 @@ function rbBuildBlock(countryCode, countryName, opts = {}) {
     budget: opts.budget ?? '',
     notes: opts.notes || '',
     transport_to_next: opts.transport_to_next || '',
-    destinations: (opts.destinations || []).map(d => ({ id: rbNewDestId(), name: d, notes: '' })),
+    // Each entry is either a plain string (most routes) or a { name, lat, lng } object (Eurasia
+    // Grand Tour, since 2026-08) — the latter powers the detailed per-destination route-line view
+    // (rbRenderDetailedRouteLine) instead of just the one block-level anchor (lat/lng below).
+    destinations: (opts.destinations || []).map(d => (
+      typeof d === 'string'
+        ? { id: rbNewDestId(), name: d, notes: '' }
+        : { id: rbNewDestId(), name: d.name, notes: d.notes || '', lat: d.lat ?? null, lng: d.lng ?? null }
+    )),
     // Optional single anchor point for this leg (e.g. its main city), used only by the route-line
     // map view to draw an ordered path — not every route has these yet (see rbRenderRouteLine).
     lat: opts.lat ?? null,
@@ -1257,33 +1340,33 @@ function rbBuildFlatSeedRoute(name, countries, extra = {}) {
 // when seeding a fresh route and when patching an already-seeded one (see rbPatchExpeditionContent).
 const RB_EXPEDITION_CONTENT = {
   "Eurasia Grand Tour 🌏": {
-    BA: { days: 7, budget: 350, lat: 43.8563, lng: 18.4131, destinations: ["Sarajevo", "Mostar", "Blagaj", "Trebinje"], transport_to_next: "Bus over land (Mostar/Sarajevo naar Dubrovnik of Split), rechtstreekse grensovergang, geen visum nodig" },
-    HR: { days: 14, budget: 1225, lat: 42.6507, lng: 18.0944, destinations: ["Dubrovnik", "Split", "Hvar", "Plitvicemeren", "Zagreb"], transport_to_next: "Bus langs de kust Dubrovnik-Kotor, korte grensovergang, drukte mogelijk in hoogseizoen" },
-    ME: { days: 7, budget: 450, lat: 42.4247, lng: 18.7712, destinations: ["Kotor", "Perast", "Budva", "Durmitor NP"], transport_to_next: "Bus Kotor/Podgorica naar Tirana of Shkodër, over land, eenvoudige grensovergang" },
-    AL: { days: 10, budget: 500, lat: 41.3275, lng: 19.8187, destinations: ["Shkodër", "Tirana", "Berat", "Gjirokastër", "Sarandë"], transport_to_next: "Bus Tirana-Ohrid of Tirana-Skopje, over land, meerdere uren" },
-    MK: { days: 7, budget: 259, lat: 41.1231, lng: 20.8016, destinations: ["Ohrid", "Bitola", "Skopje"], transport_to_next: "Vlucht Skopje-Istanbul (bus zou via Bulgarije/Griekenland >20 uur duren, vlucht is realistischer)" },
-    TR: { days: 24, budget: 1300, lat: 41.0082, lng: 28.9784, destinations: ["Istanbul", "Cappadocië", "Pamukkale", "Antalya", "Efeze", "Ankara", "Kars/Trabzon"], transport_to_next: "Bus of trein vanaf Kars/Trabzon naar Tbilisi, grensovergang bij Posof/Sarpi, geen visum nodig voor Georgië" },
-    GE: { days: 13, budget: 650, lat: 41.7151, lng: 44.8271, destinations: ["Tbilisi", "Kazbegi", "Sighnaghi", "Kutaisi", "Mestia (Svaneti)", "Batumi"], transport_to_next: "Marshrutka (deelbusje) Tbilisi-Yerevan, over land, eenvoudige grensovergang, geen visum nodig", notes: "Mestia/Svaneti ligt qua prijsniveau boven de rest van de route (guesthouse met halfpension plus een duurdere marshrutka van/naar Mestia, ~€17) — het dagbudget werkt alleen als trip-breed gemiddelde met de goedkopere dagen elders (Tbilisi/Kutaisi/Batumi/Sighnaghi, realistisch €35-45/dag)." },
-    AM: { days: 8, budget: 400, lat: 40.1792, lng: 44.4991, destinations: ["Yerevan", "Khor Virap", "Lake Sevan", "Dilijan", "Tatev"], transport_to_next: "Geen directe grens (gesloten wegens conflict) — terugreizen via Georgië (Tbilisi) naar Baku, over land plus korte vlucht of bus", notes: "Blijf uit de buurt van de grensstrook met Azerbeidzjan: wegen H53/H26 bij Ijevan, de M14 langs de noordoostoever van Lake Sevan, en de M2 Yeraskh-Zangakatun/Yeraskh-Noravank (landmijnen) zijn oranje/rood (2026-07). Tatev (via Goris/Kapan) ligt dicht bij de grensregio Syunik — de standaardroute wordt als open/veilig gerapporteerd, blijf op de gebruikelijke toeristische route." },
-    AZ: { days: 7, budget: 425, lat: 40.4093, lng: 49.8671, destinations: ["Baku", "Gobustan", "Sheki", "Qabala"], transport_to_next: "Vlucht Baku-Almaty (de veerboot over de Kaspische Zee Baku-Aktau heeft geen vast schema en is onbetrouwbaar)" },
-    KZ: { days: 12, budget: 750, lat: 43.2567, lng: 76.9286, destinations: ["Almaty", "Charyn Canyon", "Turkistan", "Shymkent", "Nur-Sultan"], transport_to_next: "Bus of deeltaxi Almaty-Bishkek, over land, drukke maar eenvoudige grensovergang" },
-    KG: { days: 12, budget: 600, lat: 42.8746, lng: 74.5698, destinations: ["Bishkek", "Issyk-Kul", "Karakol", "Song-Kul", "Osh"], transport_to_next: "Deeljeep over de Pamir Highway Osh-Khorog, over land, ruw traject, GBAO-permit/visum voor Tadzjikistan nodig" },
-    TJ: { days: 14, budget: 700, lat: 38.5598, lng: 68.787, destinations: ["Khorog", "Pamir Highway", "Murghab", "Iskanderkul", "Dushanbe"], transport_to_next: "Bus of deeltaxi Dushanbe-Samarkand, over land, grensovergang kan tijdrovend zijn", notes: "GBAO-vergunning voor de Pamir Highway kan direct worden toegevoegd aan de e-visa-aanvraag (vinkje aanzetten, +/-$20, totaal +/-$70). De Pamir-jeep/chauffeur (Khorog-Murghab e.o.) is een aparte, reële kostenpost bovenop het dagbudget: privé 4x4+chauffeur $150-400/dag (vaak gedeeld), gedeelde taxi vanaf ~$30-40 p.p. — regel dit via een lokale guesthouse/CBT/PECTA in Khorog. Khorog/GBAO kende in het verleden periodes van onrust (laatst 2022) — check de actuele situatie vlak voor vertrek." },
-    UZ: { days: 11, budget: 550, lat: 39.627, lng: 66.9749, destinations: ["Tashkent", "Samarkand", "Bukhara", "Khiva"], transport_to_next: "Vlucht Tasjkent-Ürümqi (rechtstreekse verbinding; door het schrappen van Turkmenistan als tussenstop is dit nu de praktische route naar China)" },
-    CN: { days: 28, budget: 1625, lat: 39.9042, lng: 116.4074, destinations: ["Kashgar", "Ürümqi", "Xi'an", "Chengdu", "Beijing", "Shanghai"], transport_to_next: "Trein Beijing-Ulaanbaatar (Trans-Mongolië-route), over land, visum voor Mongolië nodig", notes: "Xinjiang (Kasjgar/Ürümqi) kent een structureel strenger veiligheidsregime dan de rest van China: verwacht controles met foto's/persoonsgegevens/telefooncontrole bij checkpoints — geen nieuwe escalatie, maar wel een blijvend gegeven, hou hier extra tijd/geduld voor aan." },
-    MN: { days: 10, budget: 650, lat: 47.8864, lng: 106.9057, destinations: ["Ulaanbaatar", "Terelj NP", "Kharkhorin", "Gobiwoestijn"], transport_to_next: "Vlucht Ulaanbaatar-Tokyo (via Beijing/Seoul, geen directe vlucht en geen landroute mogelijk)", notes: "De Gobiwoestijn-etappe vraagt een georganiseerde jeeptour (gedeelde 4x4 + chauffeur + gids + gerkampen) — reken $80-120 per dag p.p. voor die specifieke dagen, een aparte kostenpost bovenop de rest van de reis. Binnen 100 km van de grens met Rusland/China mag niet vrij gereisd worden zonder toestemming — check dat de touroperator hier rekening mee houdt, vooral in de zuidelijke Gobi dicht bij de Chinese grens." },
-    JP: { days: 18, budget: 2700, lat: 35.6762, lng: 139.6503, destinations: ["Tokyo", "Hakone/Fuji", "Kyoto", "Nara", "Osaka", "Hiroshima"], transport_to_next: "Vlucht Osaka/Tokyo-Taipei, korte vlucht, geen visum nodig voor Taiwan" },
-    TW: { days: 10, budget: 750, lat: 25.033, lng: 121.5654, destinations: ["Taipei", "Taroko-kloof", "Sun Moon Lake", "Tainan", "Kenting"], transport_to_next: "Vlucht Taipei-Hanoi, geen directe ferry/landroute beschikbaar" },
-    VN: { days: 18, budget: 800, lat: 21.0285, lng: 105.8542, destinations: ["Hanoi", "Ha Long Bay", "Hue", "Hoi An", "Da Lat", "Ho Chi Minh City"], transport_to_next: "Nachtbus Hanoi-Vientiane, over land, grensovergang bij Cau Treo, lange rit (~24u)" },
-    LA: { days: 12, budget: 525, lat: 17.9757, lng: 102.6331, destinations: ["Luang Prabang", "Vang Vieng", "Vientiane", "Si Phan Don (4000 eilanden)"], transport_to_next: "Bus Si Phan Don/Pakse-Siem Reap, over land, grensovergang bij Nong Nokkhien/Trapeang Kriel" },
-    KH: { days: 12, budget: 525, lat: 13.3671, lng: 103.8448, destinations: ["Siem Reap", "Angkor Wat", "Battambang", "Phnom Penh", "Koh Rong"], transport_to_next: "⚠️ Grensovergang Poipet is momenteel gesloten (grensconflict Thailand-Cambodja, bestand sinds eind 2025 maar de landgrens zelf blijft dicht — check de status vlak voor vertrek op nederlandwereldwijd.nl). Zolang de grens dicht is: vlucht Siem Reap/Phnom Penh-Bangkok (1-1,5 uur, budgetmaatschappijen beschikbaar) in plaats van de bus.", notes: "Reisadvies (2026-07): geel voor de rest van het land, oranje voor de grensstrook met Thailand (5-20 km), rood binnen 5 km — niet relevant voor Siem Reap/Angkor Wat/Battambang/Phnom Penh/Koh Rong zelf, wel voor de grensovergang naar Thailand (zie transport-notitie). Angkor Wat-toegang (3-daags ticket ~$62) is een aparte kostenpost, niet alleen eten/verblijf/lokaal vervoer." },
-    TH: { days: 18, budget: 900, lat: 13.7563, lng: 100.5018, destinations: ["Bangkok", "Ayutthaya", "Sukhothai", "Chiang Mai", "Krabi/eilanden"], transport_to_next: "Trein of bus Bangkok-Kuala Lumpur, over land door Zuid-Thailand naar Maleisië, eenvoudige grensovergang bij Padang Besar", notes: "Reisadvies (2026-07): geel voor het hele reisgebied (Bangkok/Ayutthaya/Sukhothai/Chiang Mai/Krabi), met rood/oranje grensstroken bij Cambodja (zie Cambodja-notitie) en in het uiterste zuiden/Myanmar-grens — niet relevant voor deze route. Visumvrij verblijf wordt mogelijk verkort van 60 naar 30 dagen (kabinetsbesluit mei 2026, nog niet gepubliceerd) — check de actuele duur vlak voor vertrek." },
-    MY: { days: 10, budget: 500, lat: 3.139, lng: 101.6869, destinations: ["Kuala Lumpur", "Cameron Highlands", "Penang", "Malacca", "Langkawi"], transport_to_next: "Vlucht Kuala Lumpur-Bandar Seri Begawan (rechtstreekse verbinding, geen praktische landroute door Oost-Maleisië/Borneo)" },
-    SG: { days: 3, budget: 375, lat: 1.2838, lng: 103.8591, destinations: ["Marina Bay", "Chinatown", "Sentosa", "Gardens by the Bay"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Singapore (Changi) naar Nederland" },
-    BN: { days: 2, budget: 240, lat: 4.9031, lng: 114.9398, destinations: ["Bandar Seri Begawan", "Kampong Ayer", "Ulu Temburong NP"], transport_to_next: "Vlucht Bandar Seri Begawan-Manila, meestal met overstap in Kota Kinabalu of Kuala Lumpur", notes: "Ulu Temburong NP is alleen te bezoeken met een verplichte gids/tour (geen zelfstandig bezoek toegestaan) — reken ~BND 140-180 (~€115-150) voor die dag inclusief boot, gids, entree en lunch, een aparte kostenpost." },
-    PH: { days: 21, budget: 950, lat: 14.5995, lng: 120.9842, destinations: ["Manila", "Banaue", "Palawan (El Nido)", "Cebu", "Bohol", "Siargao"], transport_to_next: "Vlucht Manila/Cebu-Jakarta of Denpasar, doorgaans met overstap in Singapore of Kuala Lumpur" },
-    ID: { days: 21, budget: 875, lat: -8.5069, lng: 115.2625, destinations: ["Jakarta", "Yogyakarta", "Borobudur", "Ubud (Bali)", "Gili-eilanden", "Lombok", "Komodo"], transport_to_next: "Bus over land via de grensovergang Mota'ain/Batugade (vanaf Kupang, West-Timor) naar Dili, Oost-Timor — of een korte vlucht Kupang-Dili", notes: "Komodo (boottochten) is de duurdere uitschieter binnen deze route: georganiseerde tours $75-135/dag, budget gedeelde speedboot/multi-daagse boottochten vanaf ~$40-50/dag — reken hier apart budget voor bovenop de rest van de route. Mount Rinjani (Lombok) is een actieve vulkaan zonder actuele eruptie-waarschuwing (2026-07) — check vlak voor vertrek." },
-    TL: { days: 7, budget: 400, lat: 8.5586, lng: 125.5736, destinations: ["Dili", "Atauro-eiland", "Jaco-eiland (Nino Konis Santana NP)", "Baucau", "Maubisse"], transport_to_next: "Vlucht Dili-Singapore (meestal met overstap in Denpasar/Bali of Jakarta, geen directe verbinding) — laatste etappe naar het eindpunt Singapore", notes: "Beperkte zorginfrastructuur (ziekenhuizen kunnen vooraf contante betaling vragen, ernstige gevallen vereisen medische evacuatie naar Bali/Darwin, geen Nederlandse ambassade ter plaatse) — een goede reisverzekering is hier extra belangrijk. Vermijd 's nachts rijden buiten Dili. Jaco Island is alleen bereikbaar met een 4x4+chauffeur ($85-150/dag) — deel de kosten met anderen indien mogelijk, aparte kostenpost bovenop de rest van de route." },
+    BA: { days: 7, budget: 350, lat: 43.8563, lng: 18.4131, destinations: [{name:"Sarajevo",lat:43.8563,lng:18.4131}, {name:"Mostar",lat:43.3438,lng:17.8078}, {name:"Blagaj",lat:43.2489,lng:17.8942}, {name:"Trebinje",lat:42.7106,lng:18.3438}], transport_to_next: "Bus over land (Mostar/Sarajevo naar Dubrovnik of Split), rechtstreekse grensovergang, geen visum nodig" },
+    HR: { days: 4, budget: 350, lat: 42.6507, lng: 18.0944, destinations: [{name:"Dubrovnik",lat:42.6507,lng:18.0944}], transport_to_next: "Bus langs de kust Dubrovnik-Kotor, korte grensovergang, drukte mogelijk in hoogseizoen", notes: "Bewust beperkt tot Dubrovnik (2026-08) — Split, Hvar, Plitvicemeren en Zagreb al eerder bezocht. Lost meteen ook een routing-mismatch op: Zagreb lag ver uit de weg voor de aansluitende bus naar Kotor." },
+    ME: { days: 7, budget: 450, lat: 42.4247, lng: 18.7712, destinations: [{name:"Kotor",lat:42.4247,lng:18.7712}, {name:"Perast",lat:42.4875,lng:18.7089}, {name:"Budva",lat:42.2911,lng:18.8400}, {name:"Durmitor NP",lat:43.1461,lng:19.0413}], transport_to_next: "Bus Kotor/Podgorica naar Tirana of Shkodër, over land, eenvoudige grensovergang" },
+    AL: { days: 10, budget: 500, lat: 41.3275, lng: 19.8187, destinations: [{name:"Shkodër",lat:42.0683,lng:19.5126}, {name:"Tirana",lat:41.3275,lng:19.8187}, {name:"Berat",lat:40.7058,lng:19.9522}, {name:"Gjirokastër",lat:40.0758,lng:20.1389}, {name:"Sarandë",lat:39.8756,lng:20.0053}, {name:"Korçë",lat:40.6186,lng:20.7808}], transport_to_next: "Bus Korçë-Ohrid via de grensovergang bij Kapshticë/Qafë Thanë, over land, korte rit — een veel directere oversteek dan terug via Tirana" },
+    MK: { days: 7, budget: 259, lat: 41.1231, lng: 20.8016, destinations: [{name:"Ohrid",lat:41.1231,lng:20.8016}, {name:"Bitola",lat:41.0297,lng:21.3347}, {name:"Skopje",lat:41.9973,lng:21.4280}], transport_to_next: "Vlucht Skopje-Istanbul (bus zou via Bulgarije/Griekenland >20 uur duren, vlucht is realistischer)" },
+    TR: { days: 24, budget: 1300, lat: 41.0082, lng: 28.9784, destinations: [{name:"Istanbul",lat:41.0082,lng:28.9784}, {name:"Efeze",lat:37.9410,lng:27.3417}, {name:"Pamukkale",lat:37.9200,lng:29.1200}, {name:"Antalya",lat:36.8969,lng:30.7133}, {name:"Cappadocië",lat:38.6431,lng:34.8289}, {name:"Ankara",lat:39.9334,lng:32.8597}, {name:"Kars/Trabzon",lat:40.6013,lng:43.0975}], transport_to_next: "Bus of trein vanaf Kars/Trabzon naar Tbilisi, grensovergang bij Posof/Sarpi, geen visum nodig voor Georgië" },
+    GE: { days: 13, budget: 650, lat: 41.7151, lng: 44.8271, destinations: [{name:"Tbilisi",lat:41.7151,lng:44.8271}, {name:"Kazbegi",lat:42.6572,lng:44.6461}, {name:"Sighnaghi",lat:41.6206,lng:45.9184}, {name:"Kutaisi",lat:42.2679,lng:42.6946}, {name:"Mestia (Svaneti)",lat:43.0454,lng:42.7276}, {name:"Batumi",lat:41.6168,lng:41.6367}], transport_to_next: "Terug naar Tbilisi (trein of marshrutka vanaf Batumi, ~5-6u, drukke maar goede verbinding), dan marshrutka Tbilisi-Yerevan, over land, eenvoudige grensovergang, geen visum nodig", notes: "Mestia/Svaneti ligt qua prijsniveau boven de rest van de route (guesthouse met halfpension plus een duurdere marshrutka van/naar Mestia, ~€17) — het dagbudget werkt alleen als trip-breed gemiddelde met de goedkopere dagen elders (Tbilisi/Kutaisi/Batumi/Sighnaghi, realistisch €35-45/dag)." },
+    AM: { days: 8, budget: 400, lat: 40.1792, lng: 44.4991, destinations: [{name:"Yerevan",lat:40.1792,lng:44.4991}, {name:"Khor Virap",lat:39.8817,lng:44.4453}, {name:"Tatev",lat:39.3789,lng:46.2506}, {name:"Lake Sevan",lat:40.3667,lng:45.3333}, {name:"Dilijan",lat:40.7431,lng:44.8650}], transport_to_next: "Geen directe grens (gesloten wegens conflict) — terugreizen via Georgië (Tbilisi) naar Baku, over land plus korte vlucht of bus", notes: "Blijf uit de buurt van de grensstrook met Azerbeidzjan: wegen H53/H26 bij Ijevan, de M14 langs de noordoostoever van Lake Sevan, en de M2 Yeraskh-Zangakatun/Yeraskh-Noravank (landmijnen) zijn oranje/rood (2026-07). Tatev (via Goris/Kapan) ligt dicht bij de grensregio Syunik — de standaardroute wordt als open/veilig gerapporteerd, blijf op de gebruikelijke toeristische route." },
+    AZ: { days: 7, budget: 425, lat: 40.4093, lng: 49.8671, destinations: [{name:"Baku",lat:40.4093,lng:49.8671}, {name:"Gobustan",lat:40.1064,lng:49.3969}, {name:"Sheki",lat:41.1970,lng:47.1706}, {name:"Qabala",lat:40.9800,lng:47.8500}], transport_to_next: "Terug naar Baku (bus/deeltaxi vanaf Qabala/Sheki, ~3u), dan vlucht Baku-Almaty (de veerboot over de Kaspische Zee Baku-Aktau heeft geen vast schema en is onbetrouwbaar)" },
+    KZ: { days: 8, budget: 500, lat: 43.2567, lng: 76.9286, destinations: [{name:"Almaty",lat:43.2567,lng:76.9286}, {name:"Charyn Canyon",lat:43.3500,lng:79.0667}, {name:"Turkistan",lat:43.2975,lng:68.2517}, {name:"Shymkent",lat:42.3417,lng:69.5901}], transport_to_next: "Bus of deeltaxi Almaty-Bishkek, over land, drukke maar eenvoudige grensovergang", notes: "Nur-Sultan/Astana bewust geschrapt (2026-08) — lag als geïsoleerde 1200 km-uitstap te ver uit de route; de rest van Kazachstan vormt nu een aaneengesloten zuidelijke lus, geen backtrack meer nodig." },
+    KG: { days: 12, budget: 600, lat: 42.8746, lng: 74.5698, destinations: [{name:"Bishkek",lat:42.8746,lng:74.5698}, {name:"Issyk-Kul",lat:42.6500,lng:77.0833}, {name:"Karakol",lat:42.4907,lng:78.3936}, {name:"Song-Kul",lat:41.8333,lng:75.1333}, {name:"Osh",lat:40.5283,lng:72.7985}], transport_to_next: "Deeljeep over de Pamir Highway Osh-Khorog, over land, ruw traject, GBAO-permit/visum voor Tadzjikistan nodig" },
+    TJ: { days: 14, budget: 700, lat: 38.5598, lng: 68.787, destinations: [{name:"Khorog",lat:37.4913,lng:71.5551}, {name:"Pamir Highway",lat:37.8944,lng:73.0139}, {name:"Murghab",lat:38.1706,lng:74.0114}, {name:"Iskanderkul",lat:39.0736,lng:68.3667}, {name:"Dushanbe",lat:38.5598,lng:68.7870}], transport_to_next: "Bus of deeltaxi Dushanbe-Samarkand, over land, grensovergang kan tijdrovend zijn", notes: "GBAO-vergunning voor de Pamir Highway kan direct worden toegevoegd aan de e-visa-aanvraag (vinkje aanzetten, +/-$20, totaal +/-$70). De Pamir-jeep/chauffeur (Khorog-Murghab e.o.) is een aparte, reële kostenpost bovenop het dagbudget: privé 4x4+chauffeur $150-400/dag (vaak gedeeld), gedeelde taxi vanaf ~$30-40 p.p. — regel dit via een lokale guesthouse/CBT/PECTA in Khorog. Khorog/GBAO kende in het verleden periodes van onrust (laatst 2022) — check de actuele situatie vlak voor vertrek." },
+    UZ: { days: 11, budget: 550, lat: 39.627, lng: 66.9749, destinations: [{name:"Samarkand",lat:39.6270,lng:66.9749}, {name:"Bukhara",lat:39.7747,lng:64.4286}, {name:"Khiva",lat:41.3775,lng:60.3639}, {name:"Tashkent",lat:41.2995,lng:69.2401}], transport_to_next: "Vlucht Tasjkent-Xi'an, rechtstreekse verbinding (China Eastern/Loong Air, ~6x/week) — vervangt de oude Ürümqi-vlucht nu Xinjiang niet meer op de route staat", notes: "Binnenlandse vlucht Urgench (Khiva)-Tasjkent nodig om dit compact te doen (~1,5u) — de weg Khiva-Tasjkent is >30 uur en niet realistisch." },
+    CN: { days: 28, budget: 1625, lat: 34.3416, lng: 108.9398, destinations: [{name:"Xi'an",lat:34.3416,lng:108.9398}, {name:"Chengdu",lat:30.5728,lng:104.0668}, {name:"Zhangjiajie",lat:29.1170,lng:110.4794}, {name:"Guilin/Yangshuo (Li-rivier)",lat:25.2736,lng:110.2900}, {name:"Shanghai",lat:31.2304,lng:121.4737}, {name:"Beijing",lat:39.9042,lng:116.4074}], transport_to_next: "Trein Beijing-Ulaanbaatar (Trans-Mongolië-route), over land, visum voor Mongolië nodig", notes: "Xinjiang (Ürümqi/Kasjgar) bewust geschrapt (2026-08) vanwege de sociaalpolitieke situatie in de Oeigoerse regio. Daarvoor in de plaats: Zhangjiajie en Guilin/Yangshuo, twee van China's bekendste natuurlandschappen, náást de al geplande hoogtepunten Xi'an (Terracotta Leger) en Chengdu (panda's)." },
+    MN: { days: 10, budget: 650, lat: 47.8864, lng: 106.9057, destinations: [{name:"Ulaanbaatar",lat:47.8864,lng:106.9057}, {name:"Terelj NP",lat:47.9714,lng:107.4756}, {name:"Kharkhorin",lat:47.1975,lng:102.8317}, {name:"Gobiwoestijn",lat:43.5711,lng:104.4256}], transport_to_next: "Vlucht Ulaanbaatar-Tokyo (via Beijing/Seoul, geen directe vlucht en geen landroute mogelijk)", notes: "De Gobiwoestijn-etappe vraagt een georganiseerde jeeptour (gedeelde 4x4 + chauffeur + gids + gerkampen) — reken $80-120 per dag p.p. voor die specifieke dagen, een aparte kostenpost bovenop de rest van de reis. Binnen 100 km van de grens met Rusland/China mag niet vrij gereisd worden zonder toestemming — check dat de touroperator hier rekening mee houdt, vooral in de zuidelijke Gobi dicht bij de Chinese grens." },
+    JP: { days: 18, budget: 2700, lat: 35.6762, lng: 139.6503, destinations: [{name:"Tokyo",lat:35.6762,lng:139.6503}, {name:"Hakone/Fuji",lat:35.2323,lng:139.1069}, {name:"Kyoto",lat:35.0116,lng:135.7681}, {name:"Nara",lat:34.6851,lng:135.8048}, {name:"Osaka",lat:34.6937,lng:135.5023}, {name:"Hiroshima",lat:34.3853,lng:132.4553}], transport_to_next: "Vlucht Osaka/Tokyo-Taipei, korte vlucht, geen visum nodig voor Taiwan" },
+    TW: { days: 10, budget: 750, lat: 25.033, lng: 121.5654, destinations: [{name:"Taipei",lat:25.0330,lng:121.5654}, {name:"Taroko-kloof",lat:24.1588,lng:121.6222}, {name:"Sun Moon Lake",lat:23.8618,lng:120.9155}, {name:"Tainan",lat:22.9997,lng:120.2270}, {name:"Kenting",lat:21.9447,lng:120.7969}], transport_to_next: "HSR (hogesnelheidstrein) Kaohsiung-Taipei terug (~2u) vanaf Kenting, dan vlucht Taipei-Hanoi, geen directe ferry/landroute beschikbaar" },
+    VN: { days: 17, budget: 750, lat: 21.0285, lng: 105.8542, destinations: [{name:"Hanoi",lat:21.0285,lng:105.8542}, {name:"Ha Giang Loop",lat:22.8256,lng:104.9784}, {name:"Ha Long Bay",lat:20.9101,lng:107.1839}, {name:"Ho Chi Minh City",lat:10.8231,lng:106.6297}, {name:"Da Lat",lat:11.9404,lng:108.4583}, {name:"Phu Quoc",lat:10.2270,lng:103.9670}], transport_to_next: "Bus/boot over de Mekongdelta van Ho Chi Minh City naar Phnom Penh, grensovergang Bavet/Moc Bai, over land — een van de klassieke backpacker-grensovergangen van de regio", notes: "Herzien (2026-08): Hue, Hoi An en Da Nang bewust geschrapt (al bezocht); Ha Giang Loop toegevoegd als hoogtepunt vanuit Hanoi. Interne vlucht Hanoi-Ho Chi Minh City (~2u, veelvuldig en goedkoop) vervangt de kustroute. Da Lat en Phu Quoc zijn uitstapjes vanuit HCMC. Extra kostenposten (niet in dagbudget): gids+motor voor de Ha Giang Loop (~€35-45/dag, meestal 'easy rider'-stijl i.p.v. zelf rijden gezien de beruchte bergwegen), interne vlucht Hanoi-HCMC (~€40-60)." },
+    LA: { days: 12, budget: 525, lat: 13.9667, lng: 105.9333, destinations: [{name:"Si Phan Don (4000 eilanden)",lat:13.9667,lng:105.9333}, {name:"Pakse",lat:15.1202,lng:105.7989}, {name:"Vientiane",lat:17.9757,lng:102.6331}, {name:"Vang Vieng",lat:18.9241,lng:102.4432}, {name:"Luang Prabang",lat:19.8845,lng:102.1348}], transport_to_next: "Boot over de Mekong (2 dagen, overnachting in Pak Beng) of bus van Luang Prabang naar Huay Xai, dan de grensovergang oversteken naar Chiang Khong, Thailand" },
+    KH: { days: 12, budget: 525, lat: 11.5564, lng: 104.9282, destinations: [{name:"Phnom Penh",lat:11.5564,lng:104.9282}, {name:"Koh Rong",lat:10.7000,lng:103.2000}, {name:"Battambang",lat:13.0957,lng:103.2022}, {name:"Siem Reap",lat:13.3671,lng:103.8448}, {name:"Angkor Wat",lat:13.4125,lng:103.8670}, {name:"Stung Treng",lat:13.5259,lng:105.9683}], transport_to_next: "Bus van Stung Treng naar de grensovergang bij Dom Kralor/Voen Kham (nieuwe Chinese brug, geen boot meer nodig), dan door naar Si Phan Don, Laos", notes: "Herzien (2026-08): entree nu vanuit Ho Chi Minh City (Mekongdelta-route) i.p.v. vanuit Thailand, dus de oude Poipet-grenswaarschuwing vervalt hier. Reisadvies (bijgewerkt 2026-08): geel voor het hele land; de grensovergang naar Laos bij Stung Treng kent geen verhoogd risico. Angkor Wat-toegang (3-daags ticket ~$62) is een aparte kostenpost, niet alleen eten/verblijf/lokaal vervoer." },
+    TH: { days: 18, budget: 900, lat: 18.7883, lng: 98.9853, destinations: [{name:"Chiang Mai",lat:18.7883,lng:98.9853}, {name:"Sukhothai",lat:17.0067,lng:99.8264}, {name:"Ayutthaya",lat:14.3532,lng:100.5680}, {name:"Bangkok",lat:13.7563,lng:100.5018}, {name:"Krabi/eilanden",lat:8.0863,lng:98.9063}, {name:"Koh Lipe",lat:6.4794,lng:99.3006}], transport_to_next: "Speedboot Koh Lipe (Thailand) naar Langkawi (Maleisië), ~90 minuten, internationale grensovergang op zee (Bundhaya Speed Boat) — alleen half oktober t/m mei, buiten dat seizoen alleen indirect via Satun", notes: "Herzien (2026-08): binnenkomst nu vanuit Laos in het noorden (Chiang Khong), dus Chiang Mai is nu de eerste stop i.p.v. Bangkok. Reisadvies (2026-07): geel voor het hele reisgebied, met rood/oranje grensstroken bij Cambodja en in het uiterste zuiden/Myanmar-grens — niet relevant voor deze route. Visumvrij verblijf wordt mogelijk verkort van 60 naar 30 dagen (kabinetsbesluit mei 2026, nog niet gepubliceerd) — check de actuele duur vlak voor vertrek." },
+    MY: { days: 10, budget: 500, lat: 6.35, lng: 99.8, destinations: [{name:"Langkawi",lat:6.3500,lng:99.8000}, {name:"Penang",lat:5.4141,lng:100.3288}, {name:"Cameron Highlands",lat:4.4700,lng:101.3800}, {name:"Malacca",lat:2.1896,lng:102.2501}, {name:"Kuala Lumpur",lat:3.1390,lng:101.6869}], transport_to_next: "Vlucht Kuala Lumpur-Kuching (Sarawak) — het vervolg van Maleisië ligt op Borneo, zie het aparte Sarawak/Sabah-blok verderop in de route" },
+    SG: { days: 3, budget: 375, lat: 1.2838, lng: 103.8591, destinations: [{name:"Marina Bay",lat:1.2838,lng:103.8591}, {name:"Chinatown",lat:1.2820,lng:103.8440}, {name:"Sentosa",lat:1.2494,lng:103.8303}, {name:"Gardens by the Bay",lat:1.2816,lng:103.8636}], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Singapore (Changi) naar Nederland" },
+    BN: { days: 2, budget: 240, lat: 4.9031, lng: 114.9398, destinations: [{name:"Bandar Seri Begawan",lat:4.9031,lng:114.9398}, {name:"Kampong Ayer",lat:4.8875,lng:114.9425}, {name:"Ulu Temburong NP",lat:4.5333,lng:115.1667}], transport_to_next: "Bus (Sipitang Express, 1x/dag, ~8,5u, MYR 100) of veerboot via Labuan naar Kota Kinabalu, Sabah — nu ingebed in de Borneo Overland Trail tussen Sarawak en Sabah i.p.v. losse vlucht vanuit KL", notes: "Ulu Temburong NP is alleen te bezoeken met een verplichte gids/tour (geen zelfstandig bezoek toegestaan) — reken ~BND 140-180 (~€115-150) voor die dag inclusief boot, gids, entree en lunch, een aparte kostenpost." },
+    PH: { days: 21, budget: 950, lat: 14.5995, lng: 120.9842, destinations: [{name:"Manila",lat:14.5995,lng:120.9842}, {name:"Banaue",lat:16.9166,lng:121.0562}, {name:"El Nido",lat:11.1949,lng:119.4079}, {name:"Coron",lat:12.0083,lng:120.2036}, {name:"Siargao",lat:9.7897,lng:126.1578}, {name:"Bohol",lat:9.6474,lng:123.8536}, {name:"Cebu",lat:10.3157,lng:123.8854}], transport_to_next: "Vlucht Cebu-Medan (Sumatra), met overstap in Kuala Lumpur/Singapore/Jakarta — geen directe verbinding", notes: "Herzien (2026-08): rondreis i.p.v. vaste basis Manila. Meerdaagse bootexpeditie El Nido-Coron (bv. Tao Philippines-stijl) toegevoegd — extra kostenpost ~€160-220 all-in, bovenop het dagbudget. Cebu is het natuurlijke eindpunt: alle vluchten tussen Coron/Siargao/Bohol lopen sowieso via Cebu of Manila." },
+    ID: { days: 21, budget: 875, lat: 3.5952, lng: 98.6722, destinations: [{name:"Medan",lat:3.5952,lng:98.6722}, {name:"Bukit Lawang",lat:3.5556,lng:98.1258}, {name:"Berastagi",lat:3.1958,lng:98.5117}, {name:"Lake Toba",lat:2.6667,lng:98.9333}, {name:"Bukittinggi",lat:-0.3056,lng:100.3692}, {name:"Lombok",lat:-8.5833,lng:116.1167}, {name:"Gili-eilanden",lat:-8.3500,lng:116.0417}, {name:"Komodo",lat:-8.4900,lng:119.8800}], transport_to_next: "Bus over land via de grensovergang Mota'ain/Batugade (vanaf Kupang, West-Timor) naar Dili, Oost-Timor — of een korte vlucht Kupang-Dili", notes: "Herzien (2026-08): Java en Bali bewust geschrapt (al bezocht), Sumatra toegevoegd (Bukit Lawang-orang-oetans, Lake Toba, Minangkabau-cultuur in Bukittinggi). Vlucht Sumatra-Lombok gaat met een overstap (waarschijnlijk Jakarta), geen directe verbinding. Komodo (boottochten) blijft de duurdere uitschieter: georganiseerde tours $75-135/dag, budget gedeelde speedboot/multi-daagse boottochten vanaf ~$40-50/dag — apart budget bovenop de rest van de route. Mount Rinjani (Lombok) is een actieve vulkaan zonder actuele eruptie-waarschuwing (2026-07) — check vlak voor vertrek." },
+    TL: { days: 7, budget: 400, lat: -8.5586, lng: 125.5736, destinations: [{name:"Dili",lat:-8.5586,lng:125.5736}, {name:"Atauro-eiland",lat:-8.2500,lng:125.5833}, {name:"Jaco-eiland (Nino Konis Santana NP)",lat:-8.4333,lng:127.3333}, {name:"Baucau",lat:-8.4667,lng:126.4667}, {name:"Maubisse",lat:-8.9167,lng:125.6167}], transport_to_next: "Vlucht Dili-Singapore (meestal met overstap in Denpasar/Bali of Jakarta, geen directe verbinding) — laatste etappe naar het eindpunt Singapore", notes: "Beperkte zorginfrastructuur (ziekenhuizen kunnen vooraf contante betaling vragen, ernstige gevallen vereisen medische evacuatie naar Bali/Darwin, geen Nederlandse ambassade ter plaatse) — een goede reisverzekering is hier extra belangrijk. Vermijd 's nachts rijden buiten Dili. Jaco Island is alleen bereikbaar met een 4x4+chauffeur ($85-150/dag) — deel de kosten met anderen indien mogelijk, aparte kostenpost bovenop de rest van de route." },
   },
   "Pan-American Grand Tour 🌎": {
     MX: { days: 28, budget: 1000, lat: 19.4326, lng: -99.1332, destinations: ["Ciudad de México", "Oaxaca", "Palenque", "Mérida", "Tulum", "Bacalar", "San Cristóbal de las Casas"], transport_to_next: "Bus over land via de grensovergang La Mesilla/El Carmen naar Huehuetenango, Guatemala.", notes: "Prijs geverifieerd (2026-07), klopt. Route 199 tussen San Cristóbal en Palenque: wegbanditisme (niet politiek), niet 's nachts rijden." },
@@ -1360,17 +1443,33 @@ function rbSeedPredefinedExpeditions() {
 function rbBuildEurasiaRoute() {
   const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
   return rbBuildSeedRoute('Eurasia Grand Tour 🌏', [
-    { name: 'Balkans', season: 'April–juni', budget: 2784, note: 'Mild voorjaar, voor de zomerdrukte en -hitte — sluit aan op een vroege start van de hele expeditie.', countries: [eurasia('BA', 'Bosnia and Herzegovina'), eurasia('HR', 'Croatia'), eurasia('ME', 'Montenegro'), eurasia('AL', 'Albania'), eurasia('MK', 'North Macedonia')] },
+    { name: 'Balkans', season: 'April–juni', budget: 1909, note: 'Mild voorjaar, voor de zomerdrukte en -hitte — sluit aan op een vroege start van de hele expeditie.', countries: [eurasia('BA', 'Bosnia and Herzegovina'), eurasia('HR', 'Croatia'), eurasia('ME', 'Montenegro'), eurasia('AL', 'Albania'), eurasia('MK', 'North Macedonia')] },
     { name: 'Turkey', season: 'Juni', budget: 1300, note: 'Aansluitend op de Balkan, nog vóór de zwaarste zomerhitte in Cappadocië en het binnenland.', countries: [eurasia('TR', 'Turkey')] },
     { name: 'Caucasus', season: 'Juni–augustus', budget: 1475, note: 'Bergpassen en Svaneti zijn dan sneeuwvrij; sluit direct aan op het Centraal-Aziatische bergseizoen.', countries: [eurasia('GE', 'Georgia'), eurasia('AM', 'Armenia'), eurasia('AZ', 'Azerbaijan')] },
-    { name: 'Central Asia', season: 'Juni–september', budget: 2600, note: 'De Pamir Highway en hooggelegen passen zijn alleen in deze maanden begaanbaar — buiten dit venster ligt er sneeuw/ijs. Turkmenistan is bewust geschrapt (lastig te bezoeken/niet reëel voor deze reisstijl).', countries: [eurasia('KZ', 'Kazakhstan'), eurasia('KG', 'Kyrgyzstan'), eurasia('TJ', 'Tajikistan'), eurasia('UZ', 'Uzbekistan')] },
-    { name: 'China', season: 'September', budget: 1625, note: 'Na de zomerdrukte/-hitte, ruim vóór de Mongoolse winterkou die erna komt.', countries: [eurasia('CN', 'China')] },
+    { name: 'Central Asia', season: 'Juni–september', budget: 2350, note: 'De Pamir Highway en hooggelegen passen zijn alleen in deze maanden begaanbaar — buiten dit venster ligt er sneeuw/ijs. Turkmenistan is bewust geschrapt (lastig te bezoeken/niet reëel voor deze reisstijl), en Nur-Sultan/Astana is losgelaten (lag te ver uit de route).', countries: [eurasia('KZ', 'Kazakhstan'), eurasia('KG', 'Kyrgyzstan'), eurasia('TJ', 'Tajikistan'), eurasia('UZ', 'Uzbekistan')] },
+    { name: 'China', season: 'September', budget: 1625, note: 'Na de zomerdrukte/-hitte, ruim vóór de Mongoolse winterkou die erna komt. Xinjiang is bewust geschrapt (sociaalpolitieke redenen); Zhangjiajie en Guilin/Yangshuo vervangen het.', countries: [eurasia('CN', 'China')] },
     { name: 'Mongolia', season: 'Eind augustus–september', budget: 650, note: 'Vóór de vrieskou vanaf oktober; de Gobi is dan nog droog en warm genoeg voor een meerdaagse 4x4-tocht.', countries: [eurasia('MN', 'Mongolia')] },
     { name: 'Japan', season: 'Oktober–november', budget: 2700, note: 'Herfstkleuren, en rustiger dan de kersenbloesem-drukte in het voorjaar.', countries: [eurasia('JP', 'Japan')] },
     { name: 'Taiwan', season: 'November', budget: 750, note: 'Droog en mild, vóór het koelere winterseizoen in het noorden van het eiland.', countries: [eurasia('TW', 'Taiwan')] },
-    { name: 'Mainland Southeast Asia', season: 'December–februari', budget: 2750, note: 'Het droge seizoen op het vasteland van Zuidoost-Azië — geen moesson, aangename temperaturen. Myanmar is bewust geschrapt (lastig te bezoeken/niet reëel voor deze reisstijl).', countries: [eurasia('VN', 'Vietnam'), eurasia('LA', 'Laos'), eurasia('KH', 'Cambodia'), eurasia('TH', 'Thailand')] },
-    { name: 'Maritime Southeast Asia', season: 'Februari–maart', budget: 1690, note: 'Nog droog in de meeste regio\'s, vóór de moesson die later in het voorjaar begint.', countries: [eurasia('MY', 'Malaysia'), eurasia('BN', 'Brunei'), eurasia('PH', 'Philippines')] },
-    { name: 'Indonesia & Oost-Timor', season: 'Maart', budget: 1275, note: 'Droog seizoen loopt in de meeste regio\'s door tot april/mei — Bali, Gili, Lombok en Komodo nog prima begaanbaar. Oost-Timor sluit hier logisch op aan, via de landgrens bij Kupang (West-Timor).', countries: [eurasia('ID', 'Indonesia'), eurasia('TL', 'East Timor')] },
+    { name: 'Mainland Southeast Asia', season: 'December–februari', budget: 2700, note: 'Het droge seizoen op het vasteland van Zuidoost-Azië — geen moesson, aangename temperaturen. Myanmar is bewust geschrapt (lastig te bezoeken/niet reëel voor deze reisstijl). Volgorde omgedraaid (2026-08): Vietnam → Cambodja → Laos → Thailand, via de klassieke Mekongdelta- en Huay Xai-grensovergangen, i.p.v. de eerdere Vietnam-Laos-volgorde die een onnodige backtrack naar het noorden vereiste.', countries: [eurasia('VN', 'Vietnam'), eurasia('KH', 'Cambodia'), eurasia('LA', 'Laos'), eurasia('TH', 'Thailand')] },
+    { name: 'Maritime Southeast Asia', season: 'Februari–maart', budget: 2735, note: 'Nog droog in de meeste regio\'s, vóór de moesson die later in het voorjaar begint. Maleisië is uitgebreid (2026-08) met een Borneo-etappe (Sarawak → Brunei → Sabah, de bekende "Borneo Overland Trail") tussen het schiereiland en Brunei in — Maleisië komt hierdoor twee keer voor in deze route.', countries: [
+      eurasia('MY', 'Malaysia'),
+      {
+        code: 'MY', name: 'Malaysia', days: 6, budget: 330, lat: 1.5533, lng: 110.3592,
+        destinations: [{name:'Kuching',lat:1.5533,lng:110.3592}, {name:'Bako National Park',lat:1.7167,lng:110.4667}, {name:'Mulu Caves (Gunung Mulu NP)',lat:4.0428,lng:114.8144}],
+        transport_to_next: 'Bus naar Miri, dan over land de grens over naar Bandar Seri Begawan, Brunei',
+        notes: 'Sarawak-etappe van de Borneo Overland Trail (2026-08) — vervolg op het schiereiland-blok hierboven, met Brunei als tussenstop voor Sabah.',
+      },
+      eurasia('BN', 'Brunei'),
+      {
+        code: 'MY', name: 'Malaysia', days: 11, budget: 715, lat: 5.9788, lng: 116.0753,
+        destinations: [{name:'Kota Kinabalu',lat:5.9788,lng:116.0753}, {name:'Mount Kinabalu',lat:6.0754,lng:116.5580}, {name:'Sepilok Orang-oetan Centre',lat:5.8742,lng:117.9478}, {name:'Kinabatangan-rivier',lat:5.5000,lng:118.3667}, {name:'Semporna/Sipadan',lat:4.4816,lng:118.6120}],
+        transport_to_next: 'Vlucht Kota Kinabalu-Manila (AirAsia, ~4x/week, directe verbinding, ~2u)',
+        notes: 'Sabah-etappe van de Borneo Overland Trail. Extra kostenposten (niet in dagbudget): Mount Kinabalu-beklimming (verplichte gids+vergunning, ~€250-350 all-in), Sipadan-duiken (beperkte vergunningen, ~€150-250/dag).',
+      },
+      eurasia('PH', 'Philippines'),
+    ] },
+    { name: 'Indonesia & Oost-Timor', season: 'Maart', budget: 1275, note: 'Droog seizoen loopt in de meeste regio\'s door tot april/mei. Java en Bali zijn bewust geschrapt (al bezocht) — Sumatra vervangt ze. Oost-Timor sluit hier logisch op aan, via de landgrens bij Kupang (West-Timor).', countries: [eurasia('ID', 'Indonesia'), eurasia('TL', 'East Timor')] },
     { name: 'Singapore Finale', season: 'Maart', budget: 375, note: 'Bewuste, compacte afsluiting van de hele Eurasia-expeditie — een rustige stadsstop na Oost-Timor.', countries: [eurasia('SG', 'Singapore')] },
   ], {
     best_starting_month: 'April',
@@ -1383,7 +1482,8 @@ function rbBuildEurasiaRoute() {
       "Wijziging (2026-07): Turkmenistan en Myanmar verwijderd (lastig te bezoeken/niet reëel voor deze reisstijl), Oost-Timor toegevoegd direct na Indonesië, en Singapore verplaatst naar het allerlaatste blok van de hele expeditie als bewust eindpunt (was eerst onderdeel van Maritime Southeast Asia). Nieuw totaal: 27 landen (was 28), 336 dagen, €20.000.\n\n" +
       "Prijzen/visum/reisadvies-verificatie (2026-07, tweede route na de Mediterranean Civilizations-pilot): alle 27 landen gecheckt via web-onderzoek tegen actuele prijzen (tussen budget- en comfort-backpacker, Youri's reisstijl), visumregels en Nederlands reisadvies. Dagen ongewijzigd, alleen budgetten aangepast waar nodig. Prijscorrecties: Noord-Macedonië (€46,40→€37/dag — bleek de goedkoopste van de regio, was te hoog begroot), Mongolië (€57,50→€65/dag — de Gobi-jeeptour is een aparte kostenpost die het daggemiddelde optrekt), Brunei (€100→€120/dag — Ulu Temburong NP vereist een verplichte gids/tour), Singapore (€150→€125/dag — realistisch voor deze stijl, €150 bouwde meer marge in dan nodig). Bosnië, Kroatië, Montenegro, Albanië, Turkije, Georgië, Armenië, Azerbeidzjan, Kazachstan, Kirgizië, Tadzjikistan, Oezbekistan, China, Japan, Taiwan, Vietnam, Laos, Cambodja, Thailand, Maleisië, Filipijnen, Indonesië en Oost-Timor bleken al accuraat — geen aanpassing.\n\n" +
       "Losstaande, praktische aanvullingen (geen prijswijziging maar wel budget-relevant): Tadzjikistan (Pamir-jeep €150-300 p.p. apart, GBAO-vergunning combineerbaar met de e-visa), Mongolië (Gobi-jeeptour €75-110/dag apart), Brunei (Temburong-tour apart, zie budgetcorrectie), Indonesië (Komodo-boottochten $40-135/dag apart), Oost-Timor (Jaco Island 4x4 $85-150/dag apart, beperkte zorginfrastructuur — goede reisverzekering belangrijk). Visumcheck: Balkanlanden/Georgië/Kazachstan/Kirgizië/Oezbekistan/Turkije/Japan/Taiwan/Vietnam/Thailand/Maleisië/Brunei/Filipijnen/Singapore visumvrij (duur varieert per land); Azerbeidzjan/Tajikistan/Laos/Cambodja/Indonesië/Oost-Timor werken met een e-visa of visa-on-arrival; China is tot en met 31 december 2026 30 dagen visumvrij (unilaterale regeling) — geen apart Xinjiang-permit nodig voor Kasjgar/Ürümqi zelf.\n\n" +
-      "⚠️ Actuele situatie Cambodja-Thailand grens (juli 2026): de landgrensovergang bij Poipet is momenteel gesloten door het grensconflict tussen beide landen (bestand sinds eind 2025, grens zelf blijft dicht). Zolang dit zo is: vlucht Siem Reap/Phnom Penh-Bangkok i.p.v. de bus — zie de aangepaste transport-notitie bij Cambodja. Verder geen acuut gevaarlijke situaties gevonden op deze route; wel een paar grensstroken om te vermijden (Armenië-Azerbeidzjan grensstrook, Cambodja/Thailand-grensstrook 0-20km, Filipijnen se Mindanao/Sulu — geen van alle op deze route zelf) — zie de losse landnotities hierboven. Dit is een momentopname (2026-07); check nederlandwereldwijd.nl zelf vlak voor vertrek.",
+      "⚠️ Actuele situatie Cambodja-Thailand grens (juli 2026): de landgrensovergang bij Poipet is momenteel gesloten door het grensconflict tussen beide landen (bestand sinds eind 2025, grens zelf blijft dicht) — deze route gebruikt die grens niet meer (zie 2026-08-wijziging hieronder). Verder geen acuut gevaarlijke situaties gevonden op deze route; wel een paar grensstroken om te vermijden (Armenië-Azerbeidzjan grensstrook, Filipijnen se Mindanao/Sulu — geen van alle op deze route zelf) — zie de losse landnotities hierboven. Dit is een momentopname (2026-07); check nederlandwereldwijd.nl zelf vlak voor vertrek.\n\n" +
+      "Grote routelogica-herziening (2026-08): elke etappe gecontroleerd op instap/uitstap-consistentie (klopt de vlucht/bus daadwerkelijk met de vorige/volgende bestemming, en is de volgorde binnen elk land geografisch logisch) — zie de losse landnotities hierboven voor details per land. Belangrijkste wijzigingen: Kroatië teruggebracht tot alleen Dubrovnik (al bezocht elders); Albanië, Turkije, Georgië, Armenië, Azerbeidzjan en Oezbekistan heringedeeld voor betere aansluiting; Kazachstan zonder Nur-Sultan/Astana (te ver uit de route); Xinjiang volledig vervangen door Zhangjiajie en Guilin/Yangshuo in China (sociaalpolitieke reden); Vietnam herzien (Ha Giang Loop toegevoegd, Hue/Hoi An/Da Nang geschrapt, Da Lat en Phu Quoc als uitstapjes vanuit Ho Chi Minh City); landvolgorde Vietnam-Cambodja-Laos-Thailand omgedraaid (was Vietnam-Laos-Cambodja-Thailand); Thailand-Maleisië nu per boot (Koh Lipe-Langkawi) i.p.v. over land; Maleisië uitgebreid met een Borneo-etappe (Sarawak-Brunei-Sabah, de Borneo Overland Trail); Filipijnen omgezet naar een rondreis i.p.v. vaste basis Manila; Indonesië met Sumatra i.p.v. Java/Bali. Nieuw totaal: 27 landen, ~338 dagen, ~€19.850 (was 336 dagen/€20.000).",
   });
 }
 
@@ -2710,10 +2810,10 @@ function rbSeedEurasiaSplitExpeditions() {
 function rbBuildWestEurasiaOverlandRoute() {
   const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
   return rbBuildSeedRoute('West-Eurazië Overland 🐫', [
-    { name: 'Balkans', season: 'April–juni', budget: 2784, note: 'Mild voorjaar, voor de zomerdrukte en -hitte — sluit aan op een vroege start van de hele expeditie.', countries: [eurasia('BA', 'Bosnia and Herzegovina'), eurasia('HR', 'Croatia'), eurasia('ME', 'Montenegro'), eurasia('AL', 'Albania'), eurasia('MK', 'North Macedonia')] },
+    { name: 'Balkans', season: 'April–juni', budget: 1909, note: 'Mild voorjaar, voor de zomerdrukte en -hitte — sluit aan op een vroege start van de hele expeditie.', countries: [eurasia('BA', 'Bosnia and Herzegovina'), eurasia('HR', 'Croatia'), eurasia('ME', 'Montenegro'), eurasia('AL', 'Albania'), eurasia('MK', 'North Macedonia')] },
     { name: 'Turkey', season: 'Juni', budget: 1300, note: 'Aansluitend op de Balkan, nog vóór de zwaarste zomerhitte in Cappadocië en het binnenland.', countries: [eurasia('TR', 'Turkey')] },
     { name: 'Caucasus', season: 'Juni–augustus', budget: 1475, note: 'Bergpassen en Svaneti zijn dan sneeuwvrij; sluit direct aan op het Centraal-Aziatische bergseizoen.', countries: [eurasia('GE', 'Georgia'), eurasia('AM', 'Armenia'), eurasia('AZ', 'Azerbaijan')] },
-    { name: 'Central Asia', season: 'Juni–september', budget: 2600, note: 'De Pamir Highway en hooggelegen passen zijn alleen in deze maanden begaanbaar — buiten dit venster ligt er sneeuw/ijs. Turkmenistan is bewust geschrapt (lastig te bezoeken/niet reëel voor deze reisstijl).', countries: [eurasia('KZ', 'Kazakhstan'), eurasia('KG', 'Kyrgyzstan'), eurasia('TJ', 'Tajikistan'), eurasia('UZ', 'Uzbekistan')] },
+    { name: 'Central Asia', season: 'Juni–september', budget: 2350, note: 'De Pamir Highway en hooggelegen passen zijn alleen in deze maanden begaanbaar — buiten dit venster ligt er sneeuw/ijs. Turkmenistan is bewust geschrapt (lastig te bezoeken/niet reëel voor deze reisstijl), en Nur-Sultan/Astana is losgelaten (lag te ver uit de route).', countries: [eurasia('KZ', 'Kazakhstan'), eurasia('KG', 'Kyrgyzstan'), eurasia('TJ', 'Tajikistan'), eurasia('UZ', 'Uzbekistan')] },
   ], {
     best_starting_month: 'April',
     travel_style: 'Backpacker — overland waar mogelijk (bus, trein, marshrutka/deeltaxi), vlucht alleen waar geen praktische grondroute bestaat (Baku–Almaty). Lokale guesthouses en hostels boven internationale ketens.',
@@ -2742,8 +2842,24 @@ function rbBuildEastAsiaPacificRoute() {
 function rbBuildSoutheastAsiaGrandLoopRoute() {
   const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
   return rbBuildSeedRoute('Zuidoost-Azië Grand Loop 🛕', [
-    { name: 'Mainland Southeast Asia', season: 'December–februari', budget: 2750, note: 'Het droge seizoen op het vasteland van Zuidoost-Azië — geen moesson, aangename temperaturen. Myanmar is bewust geschrapt (lastig te bezoeken/niet reëel voor deze reisstijl).', countries: [eurasia('VN', 'Vietnam'), eurasia('LA', 'Laos'), eurasia('KH', 'Cambodia'), eurasia('TH', 'Thailand')] },
-    { name: 'Maritime Southeast Asia', season: 'Februari–maart', budget: 1690, note: "Nog droog in de meeste regio's, vóór de moesson die later in het voorjaar begint.", countries: [eurasia('MY', 'Malaysia'), eurasia('BN', 'Brunei'), eurasia('PH', 'Philippines')] },
+    { name: 'Mainland Southeast Asia', season: 'December–februari', budget: 2700, note: 'Het droge seizoen op het vasteland van Zuidoost-Azië — geen moesson, aangename temperaturen. Myanmar is bewust geschrapt (lastig te bezoeken/niet reëel voor deze reisstijl). Volgorde omgedraaid (2026-08): Vietnam → Cambodja → Laos → Thailand, via de klassieke Mekongdelta- en Huay Xai-grensovergangen.', countries: [eurasia('VN', 'Vietnam'), eurasia('KH', 'Cambodia'), eurasia('LA', 'Laos'), eurasia('TH', 'Thailand')] },
+    { name: 'Maritime Southeast Asia', season: 'Februari–maart', budget: 2735, note: "Nog droog in de meeste regio's, vóór de moesson die later in het voorjaar begint. Maleisië is uitgebreid (2026-08) met een Borneo-etappe (Sarawak → Brunei → Sabah, de 'Borneo Overland Trail') tussen het schiereiland en Brunei in.", countries: [
+      eurasia('MY', 'Malaysia'),
+      {
+        code: 'MY', name: 'Malaysia', days: 6, budget: 330, lat: 1.5533, lng: 110.3592,
+        destinations: [{name:'Kuching',lat:1.5533,lng:110.3592}, {name:'Bako National Park',lat:1.7167,lng:110.4667}, {name:'Mulu Caves (Gunung Mulu NP)',lat:4.0428,lng:114.8144}],
+        transport_to_next: 'Bus naar Miri, dan over land de grens over naar Bandar Seri Begawan, Brunei',
+        notes: 'Sarawak-etappe van de Borneo Overland Trail (2026-08) — vervolg op het schiereiland-blok hierboven, met Brunei als tussenstop voor Sabah.',
+      },
+      eurasia('BN', 'Brunei'),
+      {
+        code: 'MY', name: 'Malaysia', days: 11, budget: 715, lat: 5.9788, lng: 116.0753,
+        destinations: [{name:'Kota Kinabalu',lat:5.9788,lng:116.0753}, {name:'Mount Kinabalu',lat:6.0754,lng:116.5580}, {name:'Sepilok Orang-oetan Centre',lat:5.8742,lng:117.9478}, {name:'Kinabatangan-rivier',lat:5.5000,lng:118.3667}, {name:'Semporna/Sipadan',lat:4.4816,lng:118.6120}],
+        transport_to_next: 'Vlucht Kota Kinabalu-Manila (AirAsia, ~4x/week, directe verbinding, ~2u)',
+        notes: 'Sabah-etappe van de Borneo Overland Trail. Extra kostenposten (niet in dagbudget): Mount Kinabalu-beklimming (verplichte gids+vergunning, ~€250-350 all-in), Sipadan-duiken (beperkte vergunningen, ~€150-250/dag).',
+      },
+      eurasia('PH', 'Philippines'),
+    ] },
     { name: 'Indonesia & Oost-Timor', season: 'Maart', budget: 1275, note: "Droog seizoen loopt in de meeste regio's door tot april/mei — Bali, Gili, Lombok en Komodo nog prima begaanbaar. Oost-Timor sluit hier logisch op aan, via de landgrens bij Kupang (West-Timor).", countries: [eurasia('ID', 'Indonesia'), eurasia('TL', 'East Timor')] },
     { name: 'Singapore Finale', season: 'Maart', budget: 375, note: 'Bewuste, compacte afsluiting — een rustige stadsstop na Oost-Timor.', countries: [eurasia('SG', 'Singapore')] },
   ], {
@@ -4781,6 +4897,121 @@ function rbMigrateRouteLineCoordsRound2() {
     rbRoutes.splice(idx, 1, buildFn());
     touched = true;
   });
+
+  if (touched) rbSave();
+}
+
+/**
+ * Grote routelogica-herziening van de Eurasia Grand Tour (2026-08): elke etappe gecontroleerd op
+ * instap/uitstap-consistentie (klopt de transport_to_next daadwerkelijk met de vorige/volgende
+ * bestemming) en waar nodig heringedeeld. Patcht per land alleen de specifieke velden die dit
+ * ronde veranderd zijn (destinations/transport_to_next/days/budget/notes/lat/lng) i.p.v. het hele
+ * blok te overschrijven, zodat eventuele hand-edits in andere velden (status, eigen notities elders,
+ * region-indeling) intact blijven — dezelfde aanpak als rbMigrateEurasiaCountryChanges() hierboven.
+ * Cambodja/Laos worden bovendien van positie gewisseld (Vietnam-Cambodja-Laos-Thailand i.p.v.
+ * Vietnam-Laos-Cambodja-Thailand), en Maleisië krijgt twee nieuwe blokken (Sarawak, Sabah) rond het
+ * bestaande Brunei-blok — de "Borneo Overland Trail".
+ *
+ * Ook toegepast op de drie 2026-07 split-routes (West-Eurazië Overland 🐫, Oost-Azië & Stille
+ * Oceaan 🗻, Zuidoost-Azië Grand Loop 🛕): die delen dezelfde RB_EXPEDITION_CONTENT-content via
+ * rbContentFor(), maar hun blocks werden bij het (eerdere) seeden bevroren in localStorage — een
+ * latere contentwijziging bereikt ze dus niet vanzelf, zelfde valkuil als eerder bij deze route
+ * (zie README's "critical migration fix"-vermelding).
+ */
+function rbMigrateEurasiaRouteOverhaul() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_EURASIA_OVERHAUL)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_EURASIA_OVERHAUL, '1');
+
+  const routeNames = ['Eurasia Grand Tour 🌏', 'West-Eurazië Overland 🐫', 'Oost-Azië & Stille Oceaan 🗻', 'Zuidoost-Azië Grand Loop 🛕'];
+  routeNames.forEach(name => rbApplyEurasiaOverhaulToRoute(rbRoutes.find(r => r.name === name)));
+}
+
+function rbApplyEurasiaOverhaulToRoute(route) {
+  if (!route) return;
+
+  let touched = false;
+  const content = RB_EXPEDITION_CONTENT['Eurasia Grand Tour 🌏'];
+
+  // 1. Sync the corrected fields for every country touched this round (only the ones actually
+  // present in this route's blocks — .find() safely no-ops for the others). A deliberate content
+  // correction (not a user hand-edit), so a full field sync is appropriate here — same reasoning
+  // as the price-verification-round migrations use for budget/days corrections.
+  if (content) {
+    ['HR', 'AL', 'TR', 'GE', 'AM', 'AZ', 'KZ', 'UZ', 'CN', 'TW', 'VN', 'KH', 'LA', 'TH', 'MY', 'BN', 'PH', 'ID'].forEach(code => {
+      const block = route.blocks.find(b => b.country_code === code);
+      const c = content[code];
+      if (!block || !c) return;
+      if (block.transport_to_next !== c.transport_to_next) { block.transport_to_next = c.transport_to_next; touched = true; }
+      if (block.days !== c.days) { block.days = c.days; touched = true; }
+      if (block.budget !== c.budget) { block.budget = c.budget; touched = true; }
+      if (block.lat !== c.lat) { block.lat = c.lat; touched = true; }
+      if (block.lng !== c.lng) { block.lng = c.lng; touched = true; }
+      if (c.notes && block.notes !== c.notes) { block.notes = c.notes; touched = true; }
+      // Destination entries are either plain strings (legacy) or { name, lat, lng } objects
+      // (Eurasia content, since 2026-08) — normalize both sides to { name, lat, lng } before
+      // comparing, so this also correctly backfills per-destination coordinates that weren't
+      // there yet on an already-seeded browser.
+      const normalizeDest = d => (typeof d === 'string' ? { name: d, lat: null, lng: null } : { name: d.name, lat: d.lat ?? null, lng: d.lng ?? null });
+      const newDests = (c.destinations || []).map(normalizeDest);
+      const oldDests = (block.destinations || []).map(normalizeDest);
+      if (JSON.stringify(newDests) !== JSON.stringify(oldDests)) {
+        block.destinations = newDests.map(d => ({ id: rbNewDestId(), name: d.name, notes: '', lat: d.lat, lng: d.lng }));
+        touched = true;
+      }
+    });
+  }
+
+  // 2. Swap Cambodia and Laos: Vietnam -> Cambodja -> Laos -> Thailand (was Vietnam -> Laos -> Cambodja -> Thailand).
+  const laIndex = route.blocks.findIndex(b => b.country_code === 'LA');
+  const khIndex = route.blocks.findIndex(b => b.country_code === 'KH');
+  if (laIndex !== -1 && khIndex !== -1 && laIndex < khIndex) {
+    const [laBlock] = route.blocks.splice(laIndex, 1);
+    route.blocks.splice(khIndex, 0, laBlock);
+    touched = true;
+  }
+
+  // 3. Split Malaysia: insert a Sarawak block before Brunei and a Sabah block after it (the
+  // "Borneo Overland Trail"). The existing Malaysia block (already patched to peninsular-only
+  // content in step 1) stays where it is.
+  const bnIndex = route.blocks.findIndex(b => b.country_code === 'BN');
+  const hasSarawak = route.blocks.some(b => b.country_code === 'MY' && (b.destinations || []).some(d => d.name === 'Kuching'));
+  if (bnIndex !== -1 && !hasSarawak) {
+    const bnBlock = route.blocks[bnIndex];
+    const sarawakBlock = rbBuildBlock('MY', 'Malaysia', {
+      region_id: bnBlock.region_id, days: 6, budget: 330, lat: 1.5533, lng: 110.3592,
+      destinations: [{name:'Kuching',lat:1.5533,lng:110.3592}, {name:'Bako National Park',lat:1.7167,lng:110.4667}, {name:'Mulu Caves (Gunung Mulu NP)',lat:4.0428,lng:114.8144}],
+      transport_to_next: 'Bus naar Miri, dan over land de grens over naar Bandar Seri Begawan, Brunei',
+      notes: 'Sarawak-etappe van de Borneo Overland Trail (2026-08) — vervolg op het schiereiland-blok, met Brunei als tussenstop voor Sabah.',
+    });
+    const sabahBlock = rbBuildBlock('MY', 'Malaysia', {
+      region_id: bnBlock.region_id, days: 11, budget: 715, lat: 5.9788, lng: 116.0753,
+      destinations: [{name:'Kota Kinabalu',lat:5.9788,lng:116.0753}, {name:'Mount Kinabalu',lat:6.0754,lng:116.5580}, {name:'Sepilok Orang-oetan Centre',lat:5.8742,lng:117.9478}, {name:'Kinabatangan-rivier',lat:5.5000,lng:118.3667}, {name:'Semporna/Sipadan',lat:4.4816,lng:118.6120}],
+      transport_to_next: 'Vlucht Kota Kinabalu-Manila (AirAsia, ~4x/week, directe verbinding, ~2u)',
+      notes: 'Sabah-etappe van de Borneo Overland Trail. Extra kostenposten (niet in dagbudget): Mount Kinabalu-beklimming (verplichte gids+vergunning, ~€250-350 all-in), Sipadan-duiken (beperkte vergunningen, ~€150-250/dag).',
+    });
+    route.blocks.splice(bnIndex, 0, sarawakBlock);
+    route.blocks.splice(bnIndex + 2, 0, sabahBlock);
+    touched = true;
+  }
+
+  // 4. Update region budgets for regions whose totals changed this round.
+  (route.regions || []).forEach(region => {
+    if (region.name === 'Balkans' && region.budget !== 1909) { region.budget = 1909; touched = true; }
+    if (region.name === 'Central Asia' && region.budget !== 2350) { region.budget = 2350; touched = true; }
+    if (region.name === 'Mainland Southeast Asia' && region.budget !== 2700) { region.budget = 2700; touched = true; }
+    if (region.name === 'Maritime Southeast Asia' && region.budget !== 2735) { region.budget = 2735; touched = true; }
+  });
+
+  // 5. Note the change. Only the full expedition gets the country/day/budget totals sentence —
+  // the three split routes each cover a subset, so that specific total doesn't apply to them.
+  let note = 'Grote routelogica-herziening (2026-08): elke etappe gecontroleerd op instap/uitstap-consistentie (klopt de vlucht/bus daadwerkelijk met de vorige/volgende bestemming, en is de volgorde binnen elk land geografisch logisch) — zie de losse landnotities hierboven voor details per land. Belangrijkste wijzigingen: Kroatië teruggebracht tot alleen Dubrovnik (al bezocht elders); Albanië, Turkije, Georgië, Armenië, Azerbeidzjan en Oezbekistan heringedeeld voor betere aansluiting; Kazachstan zonder Nur-Sultan/Astana (te ver uit de route); Xinjiang volledig vervangen door Zhangjiajie en Guilin/Yangshuo in China (sociaalpolitieke reden); Vietnam herzien (Ha Giang Loop toegevoegd, Hue/Hoi An/Da Nang geschrapt, Da Lat en Phu Quoc als uitstapjes vanuit Ho Chi Minh City); landvolgorde Vietnam-Cambodja-Laos-Thailand omgedraaid (was Vietnam-Laos-Cambodja-Thailand); Thailand-Maleisië nu per boot (Koh Lipe-Langkawi) i.p.v. over land; Maleisië uitgebreid met een Borneo-etappe (Sarawak-Brunei-Sabah, de Borneo Overland Trail); Filipijnen omgezet naar een rondreis i.p.v. vaste basis Manila; Indonesië met Sumatra i.p.v. Java/Bali.';
+  if (route.name === 'Eurasia Grand Tour 🌏') {
+    note += ' Nieuw totaal: 27 landen, ~338 dagen, ~€19.850 (was 336 dagen/€20.000).';
+  }
+  if (route.notes && !route.notes.includes('Grote routelogica-herziening (2026-08)')) {
+    route.notes += '\n\n' + note;
+    touched = true;
+  }
 
   if (touched) rbSave();
 }
