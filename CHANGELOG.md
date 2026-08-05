@@ -12,6 +12,25 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Patagonia & Antarctica Expedition 🧊 routelogica-herziening (2026-08)** — tweede expeditie uit de
+  `ROUTE_LOGIC_REVIEW.md`-playbook. Grootste vondst: er is geen wegverbinding tussen het einde van de
+  Carretera Austral (Cochrane/Villa O'Higgins) en Puerto Natales — de vlucht die dit vroeger
+  overbrugde (Balmaceda-Punta Arenas) is sinds oktober 2025 gestaakt. Route van 3 naar 5 etappes
+  uitgebreid: Chili-Noord (Puerto Montt → Carretera Austral → Puerto Río Tranquilo) → Argentinië-
+  Calafate/El Chaltén → Chili-Zuid (Torres del Paine/Puerto Natales/Punta Arenas) → Argentinië-
+  Vuurland (Ushuaia) → Antarctica-cruise, zodat de landvolgorde de echte grensovergangen volgt
+  (overland via Chile Chico-Los Antiguos en de Cancha Carrera-grensovergang, i.p.v. de eerdere
+  impliciete "gat" in de route). Dit maakt ook de eerdere Punta Arenas-Puerto Natales-terugreis
+  overbodig: vanaf Punta Arenas gaat de reis nu direct verder naar Vuurland via de veerboot over de
+  Straat van Magellaan. Cerro Castillo en Puerto Río Tranquilo van volgorde gewisseld (stonden
+  geografisch omgekeerd t.o.v. de Carretera Austral); Chiloé Island en Puerto Montt idem (Puerto
+  Montt is het echte vertrekpunt, Chiloé een dagtrip vandaar). Nieuw gevonden: Argentinië vereist
+  sinds juli 2025 bewijs van reis-/zorgverzekering bij binnenkomst. Alle bestemmingen kregen
+  coördinaten voor de "Gedetailleerd"-kaartweergave. Landen/dagen/budget-totaal ongewijzigd: 53
+  dagen, €15.075 — alleen opgesplitst in 5 etappes. Toegepast via
+  `rbMigratePatagoniaRouteLogicOverhaul()` op zowel de hoofdexpeditie als de 2026-07 split-route
+  Patagonië Overland 🏔️ (deelt dezelfde `RB_EXPEDITION_CONTENT`); Antarctica-cruise 🐧 ongewijzigd
+  (bevat alleen het AQ-blok).
 - **Eurasia Grand Tour 🌏 routelogica-herziening (2026-08)** — tot nu toe waren alleen prijzen/visa/
   reisadvies per land geverifieerd, nooit of de etappes daadwerkelijk op elkaar aansluiten. Elke
   transport_to_next gecontroleerd tegen de vorige/volgende bestemming en de volgorde binnen elk

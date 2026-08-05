@@ -49,6 +49,7 @@ const RB_MIGRATE_FLAG_2026_07_PRICE_VERIFICATION_ROUND3 = 'atlas_grand_trips_mig
 const RB_MIGRATE_FLAG_2026_07_ROUTE_LINE_COORDS = 'atlas_grand_trips_migrate_2026_07_route_line_coords_v1';
 const RB_MIGRATE_FLAG_2026_07_ROUTE_LINE_COORDS_ROUND2 = 'atlas_grand_trips_migrate_2026_07_route_line_coords_round2_v1';
 const RB_MIGRATE_FLAG_2026_08_EURASIA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_eurasia_overhaul_v1';
+const RB_MIGRATE_FLAG_2026_08_PATAGONIA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_patagonia_overhaul_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -104,6 +105,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateRouteLineCoords();
   rbMigrateRouteLineCoordsRound2();
   rbMigrateEurasiaRouteOverhaul();
+  rbMigratePatagoniaRouteLogicOverhaul();
   rbBindEvents();
 
   try {
@@ -1415,9 +1417,35 @@ const RB_EXPEDITION_CONTENT = {
     GL: { days: 10, budget: 3725, lat: 69.2198, lng: -51.1, destinations: ["Nuuk", "Inuitcultuur", "Ilulissat", "IJsfjord", "Disko Bay", "Boottochten"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Nuuk (via Reykjavik of Kopenhagen)", notes: "Prijs geverifieerd (2026-07), krap maar houdbaar — binnenlandse vluchten tussen plaatsen (Air Greenland, vrijwel monopolie) zijn een structurele, geen incidentele kostenpost. Geen EU/Schengen (wel Rijk Denemarken) — paspoortcontrole bij aankomst/vertrek, EHIC niet geldig." },
   },
   "Patagonia & Antarctica Expedition 🧊": {
-    CL: { days: 24, budget: 3200, lat: -50.9423, lng: -73.4068, destinations: ["Chiloé Island", "Puerto Montt", "Carretera Austral (Pumalín & Queulat)", "Puerto Río Tranquilo & Marble Caves", "Cerro Castillo", "Puerto Natales", "Torres del Paine National Park", "Punta Arenas"], transport_to_next: "Overland per bus vanaf Puerto Natales naar El Calafate (grensovergang Chili-Argentinië, ca. 5-6 uur)", notes: "Prijs geverifieerd (2026-07), klopt. Torres del Paine-piek: refugio-overnachtingen incl. maaltijden lopen op tot $100-150/nacht — buiten het park blijft het dagtarief haalbaar." },
-    AR: { days: 18, budget: 2375, lat: -54.8019, lng: -68.303, destinations: ["El Calafate", "Perito Moreno Glacier", "El Chaltén", "Fitz Roy & Laguna de los Tres", "Cerro Torre", "Ushuaia", "Tierra del Fuego National Park", "Beagle Channel"], transport_to_next: "Inschepen in Ushuaia voor de expeditiecruise — oversteek van de Drake Passage (ca. 2 dagen varen)", notes: "Prijs geverifieerd (2026-07), klopt. Bosbrandseizoen december-maart in Patagonië (o.a. bij El Chaltén) — check actuele situatie vlak voor vertrek." },
-    AQ: { days: 11, budget: 9500, lat: -62.2, lng: -58.6333, destinations: ["Expedition Cruise from Ushuaia", "South Shetland Islands", "Antarctic Peninsula", "Glaciers & Icebergs", "Penguin colonies", "Whales", "Return to Ushuaia"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Ushuaia", notes: "Prijs geverifieerd (2026-07): €9.500 zit prima binnen de reële bandbreedte voor een instap/gedeelde-hut Antarctica-cruise (2026: ≈$8.000-12.000)." },
+    // Chile-Noord: Puerto Montt is het echte vertrekpunt (Chiloé is een dagtrip vandaar, niet
+    // andersom), en de etappe eindigt bij Puerto Río Tranquilo — verder zuiden op de Carretera
+    // Austral (Cochrane/Villa O'Higgins) heeft geen wegverbinding naar Puerto Natales (2026-08 fix).
+    CL: { days: 15, budget: 2000, lat: -41.4693, lng: -72.9424, destinations: [
+      { name: 'Puerto Montt', lat: -41.4693, lng: -72.9424 },
+      { name: 'Chiloé Island (dagtrip)', lat: -42.4827, lng: -73.7626 },
+      { name: 'Parque Pumalín', lat: -42.6083, lng: -72.4886 },
+      { name: 'Queulat National Park', lat: -44.4667, lng: -72.5667 },
+      { name: 'Villa Cerro Castillo', lat: -45.85, lng: -72.15 },
+      { name: 'Puerto Río Tranquilo & Marble Caves', lat: -46.6333, lng: -72.6667 },
+    ], transport_to_next: "Overland via de grensovergang Chile Chico-Los Antiguos (bereikbaar vanaf Puerto Río Tranquilo via de weg langs Lago General Carrera), dan Ruta 40 zuidwaarts naar El Calafate — nodig omdat de Carretera Austral bij Cochrane/Villa O'Higgins geen wegverbinding heeft naar Puerto Natales; de vroegere vlucht Balmaceda-Punta Arenas is sinds oktober 2025 gestaakt.", notes: "Prijs geverifieerd (2026-07), klopt. Naviera Austral vaart in het hoogseizoen (jan-mrt) rechtstreeks van Quellón (zuid-Chiloé) naar Chaitén — buiten dat venster ga je terug via Puerto Montt om de Carretera Austral te beginnen." },
+    // Argentinië-Calafate/El Chaltén: komt nu vóór Chili-Zuid, zodat de reis via de Cancha
+    // Carrera-grensovergang rechtstreeks naar Torres del Paine kan i.p.v. via Puerto Natales (2026-08).
+    AR: { days: 10, budget: 1320, lat: -50.3379, lng: -72.2648, destinations: [
+      { name: 'El Calafate', lat: -50.3379, lng: -72.2648 },
+      { name: 'Perito Moreno Glacier', lat: -50.4967, lng: -73.1387 },
+      { name: 'El Chaltén', lat: -49.3315, lng: -72.8862 },
+      { name: 'Fitz Roy & Laguna de los Tres', lat: -49.2667, lng: -72.9667 },
+      { name: 'Cerro Torre', lat: -49.2833, lng: -73.1167 },
+    ], transport_to_next: "Overland via de Cancha Carrera-grensovergang rechtstreeks naar Torres del Paine (~2,5-3 uur) — geen omweg via Puerto Natales nodig.", notes: "Prijs geverifieerd (2026-07), klopt. Bosbrandseizoen december-maart in Patagonië (o.a. bij El Chaltén) — check actuele situatie vlak voor vertrek. Nieuw (2026-08): Argentinië vereist sinds juli 2025 bewijs van reis-/zorgverzekering bij binnenkomst." },
+    AQ: { days: 11, budget: 9500, lat: -62.2, lng: -58.6333, destinations: [
+      { name: 'Expedition Cruise from Ushuaia', lat: -54.8019, lng: -68.303 },
+      { name: 'South Shetland Islands', lat: -62.15, lng: -58.45 },
+      { name: 'Antarctic Peninsula', lat: -64.86, lng: -62.86 },
+      { name: 'Glaciers & Icebergs', lat: -65.0, lng: -63.5 },
+      { name: 'Penguin colonies', lat: -64.77, lng: -62.9 },
+      { name: 'Whales', lat: -64.6, lng: -62.6 },
+      { name: 'Return to Ushuaia', lat: -54.8019, lng: -68.303 },
+    ], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Ushuaia", notes: "Prijs geverifieerd (2026-07): €9.500 zit prima binnen de reële bandbreedte voor een instap/gedeelde-hut Antarctica-cruise (2026: ≈$8.000-12.000). 11 dagen is realistisch voor een instapniveau-expeditiecruise (2026-08, search-bevestigd)." },
   },
   "India & Himalaya Expedition 🏔️": {
     IN: { days: 30, budget: 1275, lat: 28.6139, lng: 77.209, destinations: ["Delhi", "Agra & Jaipur (Golden Triangle)", "Pushkar, Jodhpur & Jaisalmer (West-Rajasthan)", "Udaipur", "Amritsar", "Dharamshala & Manali", "Rishikesh", "Varanasi"], transport_to_next: "Bus/trein naar Sunauli en te voet de grensovergang naar Belahiya (Nepal), dan bus door naar Lumbini/Pokhara — alternatief: korte vlucht Varanasi-Kathmandu", notes: "Prijs geverifieerd (2026-07), klopt. Staakt-het-vuren India-Pakistan (mei 2025) houdt vooralsnog stand maar blijft onvoorspelbaar — niet relevant voor deze route (geen Kasjmir), wel checken als je vanuit Amritsar de Wagah Border-ceremonie bezoekt." },
@@ -1836,7 +1864,29 @@ function rbSeedPatagoniaAntarcticaExpedition() {
 function rbBuildPatagoniaAntarcticaRoute() {
   const patagonia = (code, name) => rbContentFor('Patagonia & Antarctica Expedition 🧊', code, name);
   return rbBuildFlatSeedRoute('Patagonia & Antarctica Expedition 🧊', [
-    patagonia('CL', 'Chile'), patagonia('AR', 'Argentina'), patagonia('AQ', 'Antarctica'),
+    patagonia('CL', 'Chile'),
+    patagonia('AR', 'Argentina'),
+    {
+      code: 'CL', name: 'Chile', days: 9, budget: 1200, lat: -51.7236, lng: -72.4875,
+      destinations: [
+        { name: 'Puerto Natales', lat: -51.7236, lng: -72.4875 },
+        { name: 'Torres del Paine National Park', lat: -50.9423, lng: -73.0357 },
+        { name: 'Punta Arenas (dagtrip Isla Magdalena)', lat: -53.1638, lng: -70.9171 },
+      ],
+      transport_to_next: 'Vanaf Punta Arenas de veerboot over de Straat van Magellaan (Punta Delgada-Bahía Azul), dan de grensovergang bij San Sebastián en de weg naar Río Grande/Ushuaia — geen omweg via Puerto Natales meer nodig.',
+      notes: "Prijs geverifieerd (2026-07), klopt. Torres del Paine-piek: refugio-overnachtingen incl. maaltijden lopen op tot $100-150/nacht — buiten het park blijft het dagtarief haalbaar. Punta Arenas is een bewuste dagtrip voor Isla Magdalena's pinguïnkolonie (alleen vandaar bereikbaar, niet vanuit Puerto Natales) — de reis gaat daarna direct verder naar Vuurland, geen terugreis naar Puerto Natales nodig (2026-08).",
+    },
+    {
+      code: 'AR', name: 'Argentina', days: 8, budget: 1055, lat: -54.8019, lng: -68.303,
+      destinations: [
+        { name: 'Ushuaia', lat: -54.8019, lng: -68.303 },
+        { name: 'Tierra del Fuego National Park', lat: -54.85, lng: -68.5833 },
+        { name: 'Beagle Channel', lat: -54.87, lng: -67.9 },
+      ],
+      transport_to_next: 'Inschepen in Ushuaia voor de expeditiecruise — oversteek van de Drake Passage (ca. 2 dagen varen)',
+      notes: "Vuurland-etappe, losgekoppeld van El Calafate/El Chaltén (2026-08) zodat de landvolgorde de echte grensovergangen volgt. Argentinië vereist sinds juli 2025 bewijs van reis-/zorgverzekering bij binnenkomst.",
+    },
+    patagonia('AQ', 'Antarctica'),
   ], {
     best_starting_month: 'November',
     travel_style: 'Backpacker/trekking — refugios en camping in de nationale parken, lokale bussen tussen de Patagonische steden, het Antarctica-gedeelte via een georganiseerde expeditiecruise (geen andere manier om er te komen).',
@@ -1845,7 +1895,8 @@ function rbBuildPatagoniaAntarcticaRoute() {
     notes: 'Imported from a ChatGPT brainstorm — seeded with zero blocks: group these 3 countries into your own blocks via the region dropdown whenever you\'re ready to plan it for real. Chile and Argentina here are the southern (Patagonia) portions — the northern portions already appear in Pan-American Grand Tour. Antarctica may not yet appear in the Countries sheet dropdown — cosmetic only, the block still works. The Antarctica budget reflects a real expedition-cruise price, not a backpacker estimate.\n\n' +
       'Tijdscontrole (2026-07): Chili (15→24) en Argentinië (11→18) fors opgehoogd — beide onderschatten hoe weersafhankelijk Patagonische trekking is (wind/regen annuleren regelmatig wandeldagen bij Torres del Paine en Fitz Roy/Cerro Torre); Antarctica (11 dagen) volgt de lengte van een echte expeditiecruise en blijft ongewijzigd. Landen ongewijzigd; alleen duur, best_starting_month en klimaatredenering zijn toegevoegd.\n\n' +
       'Vervolg (2026-07): budgetten per land (Chili en Argentinië) meegeschaald met de opgehoogde dagen; Antarctica-budget ongewijzigd (cruise-prijs, niet dagen-afhankelijk).\n\n' +
-      'Prijzen/visum/reisadvies-verificatie (2026-07): alle drie geverifieerd, geen aanpassingen nodig (Antarctica-cruisprijs bevestigd accuraat) — zie de losse landnotities hierboven voor details en caveats.',
+      'Prijzen/visum/reisadvies-verificatie (2026-07): alle drie geverifieerd, geen aanpassingen nodig (Antarctica-cruisprijs bevestigd accuraat) — zie de losse landnotities hierboven voor details en caveats.\n\n' +
+      "Grote routelogica-herziening (2026-08): route van 3 naar 5 etappes uitgebreid — Chili en Argentinië komen nu elk twee keer voor (Chili-Noord/Carretera Austral, Argentinië-Calafate/El Chaltén, Chili-Zuid/Torres del Paine, Argentinië-Vuurland/Ushuaia), zodat de landvolgorde de echte grensovergangen volgt. Grootste vondst: er is geen wegverbinding tussen het einde van de Carretera Austral (Cochrane/Villa O'Higgins) en Puerto Natales — de vlucht die dit vroeger overbrugde (Balmaceda-Punta Arenas) is sinds oktober 2025 gestaakt. Oplossing: een overland-oversteek via Argentinië (Chile Chico-Los Antiguos-grens, Ruta 40 zuidwaarts naar El Calafate/El Chaltén), gevolgd door de Cancha Carrera-grensovergang rechtstreeks naar Torres del Paine — dit maakt tegelijk de eerdere Punta Arenas-Puerto Natales-terugreis overbodig (vanaf Punta Arenas gaat de reis nu direct verder naar Vuurland via de veerboot over de Straat van Magellaan). Chiloé Island en Puerto Montt van volgorde gewisseld (Puerto Montt is het echte vertrekpunt, Chiloé een dagtrip vandaar). Alle bestemmingen kregen coördinaten (destinations zijn nu {name, lat, lng} i.p.v. platte tekst) voor de 'Gedetailleerd'-kaartweergave. Nieuw gevonden: Argentinië vereist sinds juli 2025 bewijs van reis-/zorgverzekering bij binnenkomst. Landen/dagen/budget-totaal ongewijzigd: 53 dagen, €15.075 — alleen opgesplitst in 5 etappes en heringedeeld.",
   });
 }
 
@@ -3405,13 +3456,35 @@ function rbSeedPatagoniaSplitExpeditions() {
 function rbBuildPatagoniaOverlandRoute() {
   const patagonia = (code, name) => rbContentFor('Patagonia & Antarctica Expedition 🧊', code, name);
   return rbBuildFlatSeedRoute('Patagonië Overland 🏔️', [
-    patagonia('CL', 'Chile'), patagonia('AR', 'Argentina'),
+    patagonia('CL', 'Chile'),
+    patagonia('AR', 'Argentina'),
+    {
+      code: 'CL', name: 'Chile', days: 9, budget: 1200, lat: -51.7236, lng: -72.4875,
+      destinations: [
+        { name: 'Puerto Natales', lat: -51.7236, lng: -72.4875 },
+        { name: 'Torres del Paine National Park', lat: -50.9423, lng: -73.0357 },
+        { name: 'Punta Arenas (dagtrip Isla Magdalena)', lat: -53.1638, lng: -70.9171 },
+      ],
+      transport_to_next: 'Vanaf Punta Arenas de veerboot over de Straat van Magellaan (Punta Delgada-Bahía Azul), dan de grensovergang bij San Sebastián en de weg naar Río Grande/Ushuaia — geen omweg via Puerto Natales meer nodig.',
+      notes: "Prijs geverifieerd (2026-07), klopt. Torres del Paine-piek: refugio-overnachtingen incl. maaltijden lopen op tot $100-150/nacht — buiten het park blijft het dagtarief haalbaar. Punta Arenas is een bewuste dagtrip voor Isla Magdalena's pinguïnkolonie (alleen vandaar bereikbaar, niet vanuit Puerto Natales) — de reis gaat daarna direct verder naar Vuurland, geen terugreis naar Puerto Natales nodig (2026-08).",
+    },
+    {
+      code: 'AR', name: 'Argentina', days: 8, budget: 1055, lat: -54.8019, lng: -68.303,
+      destinations: [
+        { name: 'Ushuaia', lat: -54.8019, lng: -68.303 },
+        { name: 'Tierra del Fuego National Park', lat: -54.85, lng: -68.5833 },
+        { name: 'Beagle Channel', lat: -54.87, lng: -67.9 },
+      ],
+      transport_to_next: 'Aankomst in Ushuaia — eindpunt van deze standalone route (de Antarctica-cruise zit in het losse blok Antarctica-cruise 🐧, niet hier).',
+      notes: "Vuurland-etappe, losgekoppeld van El Calafate/El Chaltén (2026-08) zodat de landvolgorde de echte grensovergangen volgt. Argentinië vereist sinds juli 2025 bewijs van reis-/zorgverzekering bij binnenkomst.",
+    },
   ], {
     best_starting_month: 'November',
     travel_style: 'Backpacker/trekking — refugios en camping in de nationale parken, lokale bussen tussen de Patagonische steden.',
     climate_summary: 'Begin november valt samen met het begin van het Patagonische trekkingseizoen (november-maart, refugios open, lange dagen) — vóór die tijd liggen Torres del Paine en de paden rond El Chaltén nog onder de sneeuw.',
     description: 'Trekkingexpeditie door Chileens en Argentijns Patagonië: Torres del Paine, Fitz Roy en Ushuaia.',
-    notes: "Losgesplitst van Patagonia & Antarctica Expedition 🧊 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen en budgetten zijn ongewijzigd overgenomen. 'Patagonië' is wereldwijd al een gewild standalone reisthema — dit blok staat volledig op zichzelf. Chili en Argentinië hier zijn nadrukkelijk alleen het zuidelijke (Patagonische) deel van die landen; het noordelijke deel zit in Pan-American Grand Tour 🌎's Andes Grand Traverse 🦙 en Zuidelijke Kegel & Brazilië-finale 🧉 — exact het 'zelfde land, ander block'-patroon uit de modularisatie-analyse. Patagonia & Antarctica Expedition 🧊 zelf blijft ongewijzigd bestaan als losse, volledige expeditie (incl. de aansluitende Antarctica-cruise 🐧).",
+    notes: "Losgesplitst van Patagonia & Antarctica Expedition 🧊 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen en budgetten zijn ongewijzigd overgenomen. 'Patagonië' is wereldwijd al een gewild standalone reisthema — dit blok staat volledig op zichzelf. Chili en Argentinië hier zijn nadrukkelijk alleen het zuidelijke (Patagonische) deel van die landen; het noordelijke deel zit in Pan-American Grand Tour 🌎's Andes Grand Traverse 🦙 en Zuidelijke Kegel & Brazilië-finale 🧉 — exact het 'zelfde land, ander block'-patroon uit de modularisatie-analyse. Patagonia & Antarctica Expedition 🧊 zelf blijft ongewijzigd bestaan als losse, volledige expeditie (incl. de aansluitende Antarctica-cruise 🐧).\n\n" +
+      "Grote routelogica-herziening (2026-08): zelfde herziening als Patagonia & Antarctica Expedition 🧊 zelf — route van 2 naar 4 etappes (Chili-Noord, Argentinië-Calafate/El Chaltén, Chili-Zuid, Argentinië-Vuurland), zodat de landvolgorde de echte grensovergangen volgt (overland via Argentinië om de Carretera Austral-Puerto Natales-kloof te overbruggen, geen Punta Arenas-terugreis meer nodig). Zie Patagonia & Antarctica Expedition 🧊's eigen notities voor de volledige uitleg. Landen/dagen/budget-totaal ongewijzigd: 42 dagen, €5.575 — alleen opgesplitst in 4 etappes.",
   });
 }
 
@@ -5008,6 +5081,99 @@ function rbApplyEurasiaOverhaulToRoute(route) {
   if (route.name === 'Eurasia Grand Tour 🌏') {
     note += ' Nieuw totaal: 27 landen, ~338 dagen, ~€19.850 (was 336 dagen/€20.000).';
   }
+  if (route.notes && !route.notes.includes('Grote routelogica-herziening (2026-08)')) {
+    route.notes += '\n\n' + note;
+    touched = true;
+  }
+
+  if (touched) rbSave();
+}
+
+/**
+ * Route-logic review, second expedition in the ROUTE_LOGIC_REVIEW.md playbook (2026-08) — same
+ * pattern as rbMigrateEurasiaRouteOverhaul()/rbApplyEurasiaOverhaulToRoute() above: field-patch the
+ * corrected content into the existing CL/AR/AQ blocks, then splice in two brand-new blocks (Chile-Zuid,
+ * Argentinië-Vuurland) rather than a blind wholesale replace, so any hand-edits Youri made survive.
+ * Applies to both the main expedition and its 'Patagonië Overland 🏔️' split companion (which shares
+ * the same RB_EXPEDITION_CONTENT entries via rbContentFor() and needs the identical restructuring —
+ * exactly the split-companion check the playbook calls out).
+ */
+function rbMigratePatagoniaRouteLogicOverhaul() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_PATAGONIA_OVERHAUL)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_PATAGONIA_OVERHAUL, '1');
+
+  ['Patagonia & Antarctica Expedition 🧊', 'Patagonië Overland 🏔️'].forEach(name => (
+    rbApplyPatagoniaOverhaulToRoute(rbRoutes.find(r => r.name === name))
+  ));
+}
+
+function rbApplyPatagoniaOverhaulToRoute(route) {
+  if (!route) return;
+
+  let touched = false;
+  const content = RB_EXPEDITION_CONTENT['Patagonia & Antarctica Expedition 🧊'];
+
+  // 1. Sync corrected fields into the existing CL ("Chili-Noord"), AR ("Argentinië-Calafate/El
+  // Chaltén") and (main expedition only) AQ blocks — same field-by-field patch as Eurasia's, so any
+  // hand-edited fields Youri may have made elsewhere on these blocks aren't touched.
+  if (content) {
+    ['CL', 'AR', 'AQ'].forEach(code => {
+      const block = route.blocks.find(b => b.country_code === code);
+      const c = content[code];
+      if (!block || !c) return;
+      if (block.transport_to_next !== c.transport_to_next) { block.transport_to_next = c.transport_to_next; touched = true; }
+      if (block.days !== c.days) { block.days = c.days; touched = true; }
+      if (block.budget !== c.budget) { block.budget = c.budget; touched = true; }
+      if (block.lat !== c.lat) { block.lat = c.lat; touched = true; }
+      if (block.lng !== c.lng) { block.lng = c.lng; touched = true; }
+      if (c.notes && block.notes !== c.notes) { block.notes = c.notes; touched = true; }
+      const normalizeDest = d => (typeof d === 'string' ? { name: d, lat: null, lng: null } : { name: d.name, lat: d.lat ?? null, lng: d.lng ?? null });
+      const newDests = (c.destinations || []).map(normalizeDest);
+      const oldDests = (block.destinations || []).map(normalizeDest);
+      if (JSON.stringify(newDests) !== JSON.stringify(oldDests)) {
+        block.destinations = newDests.map(d => ({ id: rbNewDestId(), name: d.name, notes: '', lat: d.lat, lng: d.lng }));
+        touched = true;
+      }
+    });
+  }
+
+  // 2. Insert the two new legs (Chile-Zuid, Argentinië-Vuurland) right after the existing AR block —
+  // this alone turns [CL, AR, (AQ)] into [CL, AR, CL, AR, (AQ)] without needing to move anything.
+  const arIndex = route.blocks.findIndex(b => b.country_code === 'AR');
+  const hasSplit = route.blocks.filter(b => b.country_code === 'CL').length > 1;
+  if (arIndex !== -1 && !hasSplit) {
+    const clZuid = rbBuildBlock('CL', 'Chile', {
+      days: 9, budget: 1200, lat: -51.7236, lng: -72.4875,
+      destinations: [
+        { name: 'Puerto Natales', lat: -51.7236, lng: -72.4875 },
+        { name: 'Torres del Paine National Park', lat: -50.9423, lng: -73.0357 },
+        { name: 'Punta Arenas (dagtrip Isla Magdalena)', lat: -53.1638, lng: -70.9171 },
+      ],
+      transport_to_next: 'Vanaf Punta Arenas de veerboot over de Straat van Magellaan (Punta Delgada-Bahía Azul), dan de grensovergang bij San Sebastián en de weg naar Río Grande/Ushuaia — geen omweg via Puerto Natales meer nodig.',
+      notes: "Prijs geverifieerd (2026-07), klopt. Torres del Paine-piek: refugio-overnachtingen incl. maaltijden lopen op tot $100-150/nacht — buiten het park blijft het dagtarief haalbaar. Punta Arenas is een bewuste dagtrip voor Isla Magdalena's pinguïnkolonie (alleen vandaar bereikbaar, niet vanuit Puerto Natales) — de reis gaat daarna direct verder naar Vuurland, geen terugreis naar Puerto Natales nodig (2026-08).",
+    });
+    const arUshuaia = rbBuildBlock('AR', 'Argentina', {
+      days: 8, budget: 1055, lat: -54.8019, lng: -68.303,
+      destinations: [
+        { name: 'Ushuaia', lat: -54.8019, lng: -68.303 },
+        { name: 'Tierra del Fuego National Park', lat: -54.85, lng: -68.5833 },
+        { name: 'Beagle Channel', lat: -54.87, lng: -67.9 },
+      ],
+      transport_to_next: route.name === 'Patagonia & Antarctica Expedition 🧊'
+        ? 'Inschepen in Ushuaia voor de expeditiecruise — oversteek van de Drake Passage (ca. 2 dagen varen)'
+        : 'Aankomst in Ushuaia — eindpunt van deze standalone route (de Antarctica-cruise zit in het losse blok Antarctica-cruise 🐧, niet hier).',
+      notes: "Vuurland-etappe, losgekoppeld van El Calafate/El Chaltén (2026-08) zodat de landvolgorde de echte grensovergangen volgt. Argentinië vereist sinds juli 2025 bewijs van reis-/zorgverzekering bij binnenkomst.",
+    });
+    route.blocks.splice(arIndex + 1, 0, clZuid);
+    route.blocks.splice(arIndex + 2, 0, arUshuaia);
+    touched = true;
+  }
+
+  // 3. Note the change (only once, and worded per-route since the split companion excludes Antarctica).
+  const isMain = route.name === 'Patagonia & Antarctica Expedition 🧊';
+  const note = isMain
+    ? "Grote routelogica-herziening (2026-08): route van 3 naar 5 etappes uitgebreid — Chili en Argentinië komen nu elk twee keer voor (Chili-Noord/Carretera Austral, Argentinië-Calafate/El Chaltén, Chili-Zuid/Torres del Paine, Argentinië-Vuurland/Ushuaia), zodat de landvolgorde de echte grensovergangen volgt. Grootste vondst: er is geen wegverbinding tussen het einde van de Carretera Austral (Cochrane/Villa O'Higgins) en Puerto Natales — de vlucht die dit vroeger overbrugde (Balmaceda-Punta Arenas) is sinds oktober 2025 gestaakt. Oplossing: een overland-oversteek via Argentinië (Chile Chico-Los Antiguos-grens, Ruta 40 zuidwaarts naar El Calafate/El Chaltén), gevolgd door de Cancha Carrera-grensovergang rechtstreeks naar Torres del Paine — dit maakt tegelijk de eerdere Punta Arenas-Puerto Natales-terugreis overbodig. Chiloé Island en Puerto Montt van volgorde gewisseld. Alle bestemmingen kregen coördinaten voor de 'Gedetailleerd'-kaartweergave. Nieuw gevonden: Argentinië vereist sinds juli 2025 bewijs van reis-/zorgverzekering bij binnenkomst. Landen/dagen/budget-totaal ongewijzigd: 53 dagen, €15.075 — alleen opgesplitst in 5 etappes en heringedeeld."
+    : "Grote routelogica-herziening (2026-08): zelfde herziening als Patagonia & Antarctica Expedition 🧊 zelf — route van 2 naar 4 etappes, zodat de landvolgorde de echte grensovergangen volgt (overland via Argentinië om de Carretera Austral-Puerto Natales-kloof te overbruggen, geen Punta Arenas-terugreis meer nodig). Zie Patagonia & Antarctica Expedition 🧊's eigen notities voor de volledige uitleg. Landen/dagen/budget-totaal ongewijzigd: 42 dagen, €5.575 — alleen opgesplitst in 4 etappes.";
   if (route.notes && !route.notes.includes('Grote routelogica-herziening (2026-08)')) {
     route.notes += '\n\n' + note;
     touched = true;

@@ -21,7 +21,7 @@ Agreed direction (2026-07 brainstorm), not yet designed or scheduled. **Criterio
 
 ## Under consideration
 
-- **Route-line map view precision** — currently one anchor coordinate per leg (straight segments, not real roads). Eurasia Grand Tour 🌏 got the per-destination upgrade (2026-08): a full route-logic review (entry/exit consistency, geographic order within each country — see `ROUTE_LOGIC_REVIEW.md`) plus per-destination coordinates and a new "🔍 Gedetailleerd" map mode that draws through every stop, not just one anchor per country. The other 12 original expeditions haven't had this treatment yet — `ROUTE_LOGIC_REVIEW.md` is the step-by-step playbook to repeat it, whenever Youri wants the next one done. A routing API for real-road paths (instead of straight segments between points) is still a separate, not-started idea on top of this.
+- **Route-line map view precision** — currently one anchor coordinate per leg (straight segments, not real roads). Eurasia Grand Tour 🌏 and Patagonia & Antarctica Expedition 🧊 got the per-destination upgrade (2026-08): a full route-logic review (entry/exit consistency, geographic order within each country — see `ROUTE_LOGIC_REVIEW.md`) plus per-destination coordinates and a new "🔍 Gedetailleerd" map mode that draws through every stop, not just one anchor per country. The other 11 original expeditions haven't had this treatment yet — `ROUTE_LOGIC_REVIEW.md` is the step-by-step playbook to repeat it, whenever Youri wants the next one done. A routing API for real-road paths (instead of straight segments between points) is still a separate, not-started idea on top of this.
 
 ## Long-term / someday
 

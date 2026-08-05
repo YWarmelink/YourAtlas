@@ -1,6 +1,7 @@
 # Route Logic Review — Playbook
 
-Status: **Eurasia Grand Tour 🌏 klaar (2026-08)**, de andere 12 originele expedities nog niet.
+Status: **Eurasia Grand Tour 🌏 en Patagonia & Antarctica Expedition 🧊 klaar (2026-08)**, de andere 11
+originele expedities nog niet.
 Dit document legt vast wát we bij Eurasia deden en hóe je dat 1-op-1 herhaalt — pak deze aanpak op
 zodra Youri aangeeft dat hij een volgende expeditie wil laten doornemen, geen nieuwe analyse nodig.
 
@@ -78,12 +79,26 @@ grensoversteken, actueel reisadvies (nederlandwereldwijd.nl). Zelfde norm als de
 - `node --check` na elke ronde edits.
 - Korte entry in `CHANGELOG.md`'s "Recently fixed".
 
-## De overige 12 originele expedities
+## Patagonia & Antarctica: wat er gebeurde (2026-08), als tweede referentie naast Eurasia
+
+Zelfde stappenplan gevolgd, maar met een andere hoofdvondst dan Eurasia's landvolgorde-omdraaiing:
+hier bleek een stuk van de route helemaal geen wegverbinding te hebben (Carretera Austral eindigt
+bij Cochrane/Villa O'Higgins, ~250km roadless gap tot Puerto Natales — de vlucht die dit vroeger
+overbrugde is sinds oktober 2025 gestaakt). Oplossing: de landvolgorde zelf uitbreiden van 3 naar 5
+etappes (Chili-Noord → Argentinië-Calafate/El Chaltén → Chili-Zuid → Argentinië-Vuurland →
+Antarctica) zodat de bestaande grensovergangen (Chile Chico-Los Antiguos, Cancha Carrera) het gat
+overbruggen — hetzelfde onderliggende idee als Eurasia's landvolgorde-fix, alleen hier om een
+ontbrekende verbinding op te lossen in plaats van een onnodige backtrack. Zie `CHANGELOG.md`
+("Patagonia & Antarctica Expedition 🧊 routelogica-herziening") voor de volledige uitkomst, en
+`rbMigratePatagoniaRouteLogicOverhaul()` / `rbApplyPatagoniaOverhaulToRoute()` voor het code-patroon
+— vrijwel identiek aan Eurasia's `rbMigrateEurasiaRouteOverhaul()`/`rbApplyEurasiaOverhaulToRoute()`,
+alleen met blocks toevoegen via `route.blocks.splice()` in plaats van herordenen.
+
+## De overige 11 originele expedities
 
 In willekeurige volgorde van omvang (kleiner = sneller te doen, geen inhoudelijke prioriteit):
 
-- **Patagonia & Antarctica Expedition 🧊** — 3 landen, kleinste kandidaat.
-- **India & Himalaya Expedition 🏔️** — 3 landen.
+- **India & Himalaya Expedition 🏔️** — 3 landen, kleinste kandidaat.
 - **Nordic Arctic Expedition ❄️** — 7 landen, grotendeels vluchtsprongen (minder routing-risico).
 - **Central European Grand Roadtrip 🚗** — zelf-rijdende lus vanuit NL, ander soort logica
   (geen land-tot-land grensoversteken zoals bij backpacking-routes).
