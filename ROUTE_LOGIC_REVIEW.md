@@ -1,7 +1,7 @@
 # Route Logic Review — Playbook
 
-Status: **Eurasia Grand Tour 🌏 en Patagonia & Antarctica Expedition 🧊 klaar (2026-08)**, de andere 11
-originele expedities nog niet.
+Status: **Eurasia Grand Tour 🌏, Patagonia & Antarctica Expedition 🧊 en India & Himalaya Expedition
+🏔️ klaar (2026-08)**, de andere 10 originele expedities nog niet.
 Dit document legt vast wát we bij Eurasia deden en hóe je dat 1-op-1 herhaalt — pak deze aanpak op
 zodra Youri aangeeft dat hij een volgende expeditie wil laten doornemen, geen nieuwe analyse nodig.
 
@@ -94,11 +94,31 @@ ontbrekende verbinding op te lossen in plaats van een onnodige backtrack. Zie `C
 — vrijwel identiek aan Eurasia's `rbMigrateEurasiaRouteOverhaul()`/`rbApplyEurasiaOverhaulToRoute()`,
 alleen met blocks toevoegen via `route.blocks.splice()` in plaats van herordenen.
 
-## De overige 11 originele expedities
+## India & Himalaya: wat er gebeurde (2026-08), als derde referentie — soms is er geen bug
+
+Zelfde stappenplan gevolgd, maar dit keer met een ander uitkomsttype dan Eurasia/Patagonia: de
+route-logica check vond **geen** geografische fouten. Delhi's hub-met-twee-spaken-structuur
+(Rajasthan zuidwest, Punjab/Himachal noord — onvermijdelijk in tegengestelde richtingen vanaf
+Delhi) en Bhutans terugkeer naar Paro voor Tiger's Nest (enige internationale luchthaven, dus altijd
+een retourtje) bleken via onderzoek allebei al de standaard/optimale aanpak. De echte wijzigingen
+kwamen uit **stap 2** (persoonlijke-voorkeur-check): Youri had Delhi, Agra/Taj Mahal, Amritsar/
+Gouden Tempel en Dharamshala/McLeod Ganj al eerder bezocht, dus die zijn uit India's bestemmingen
+geschrapt (Delhi blijft als verplicht aankomstpunt). Verder alleen praktische updates uit stap 3
+(TIMS-handhaving, TAAN-groepsgrootte-eis, Bhutans nieuwe GST) en stap 4 (coördinaten). Zie
+`CHANGELOG.md` ("India & Himalaya Expedition 🏔️ routelogica-herziening") voor de volledige uitkomst,
+en `rbMigrateHimalayaRouteLogicOverhaul()` voor het code-patroon — een pure veldpatch zonder
+blocks toevoegen/verplaatsen, simpeler dan zowel Eurasia's als Patagonia's migratie omdat er geen
+landvolgorde-probleem was om op te lossen.
+
+**Les voor de resterende expedities**: ga niet ervan uit dat elke expeditie een grote landvolgorde-
+fix nodig heeft zoals Eurasia/Patagonia — check gewoon de stappen, en als er niets geografisch mis
+is, is dat een prima uitkomst op zich. De persoonlijke-voorkeur-check (stap 2) kan alsnog echte
+content-wijzigingen opleveren, zoals hier.
+
+## De overige 10 originele expedities
 
 In willekeurige volgorde van omvang (kleiner = sneller te doen, geen inhoudelijke prioriteit):
 
-- **India & Himalaya Expedition 🏔️** — 3 landen, kleinste kandidaat.
 - **Nordic Arctic Expedition ❄️** — 7 landen, grotendeels vluchtsprongen (minder routing-risico).
 - **Central European Grand Roadtrip 🚗** — zelf-rijdende lus vanuit NL, ander soort logica
   (geen land-tot-land grensoversteken zoals bij backpacking-routes).

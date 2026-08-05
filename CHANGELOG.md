@@ -12,6 +12,25 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **India & Himalaya Expedition 🏔️ routelogica-herziening (2026-08)** — derde expeditie uit de
+  `ROUTE_LOGIC_REVIEW.md`-playbook. Anders dan Eurasia/Patagonia: geen geografische fouten gevonden.
+  Delhi als hub met twee losse etappes (Rajasthan zuidwest, Punjab/Himachal noord) en Bhutans
+  terugkeer naar Paro voor Tiger's Nest bleken allebei al de standaard/optimale aanpak — bevestigd
+  via onderzoek, geen bug. Wel ingekort op Youri's verzoek (persoonlijke-voorkeur-check, stap 2 van
+  de playbook): Agra/Taj Mahal, Amritsar/Gouden Tempel en Dharamshala/McLeod Ganj geschrapt uit
+  India — allemaal al eerder bezocht. Delhi blijft als verplicht aankomstpunt maar zonder extra
+  bezienswaardigheden; Udaipur-Manali nu rechtstreeks (geen tussenstop in Amritsar/Dharamshala meer
+  nodig). India's dagen/budget meegeschaald (30→22 dagen, €1.275→€935); expeditietotaal 51 dagen,
+  €4.470 (was 59 dagen/€4.810). Bhutans Bumthang-uitstap nu genoteerd als vlucht Paro-Bumthang i.p.v.
+  de lange terugrit over de weg (Youri's voorkeur). Praktische updates uit onderzoek: Nepal's TIMS-
+  kaart wordt in de praktijk niet meer gecontroleerd op Annapurna-paden en TAAN heeft de eis van
+  minimaal 2 trekkers per groep geschrapt (22 maart 2026); Bhutan heft sinds 1 januari 2026 een
+  nieuwe 5% GST op toeristische diensten; een reisadvies-update voor de Punjab-grensregio
+  (explosieve incidenten bij Amritsar/Jalandhar, 5 mei 2026) is toegevoegd, ook al is Amritsar zelf
+  nu uit de route. Alle bestemmingen kregen coördinaten voor de "Gedetailleerd"-kaartweergave.
+  Toegepast via `rbMigrateHimalayaRouteLogicOverhaul()` op de hoofdexpeditie en alle drie de 2026-07
+  split-routes (Noord-India 🕌, Nepal 🏔️, Bhutan 🐉) — pure veldpatch, geen blocks toegevoegd/
+  verplaatst (in tegenstelling tot Patagonia's migratie).
 - **Patagonia & Antarctica Expedition 🧊 routelogica-herziening (2026-08)** — tweede expeditie uit de
   `ROUTE_LOGIC_REVIEW.md`-playbook. Grootste vondst: er is geen wegverbinding tussen het einde van de
   Carretera Austral (Cochrane/Villa O'Higgins) en Puerto Natales — de vlucht die dit vroeger
