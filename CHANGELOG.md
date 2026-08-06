@@ -12,6 +12,43 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Caribbean & Amazon Expedition 🌴 routelogica-herziening (2026-08)** — vijfde expeditie uit de
+  `ROUTE_LOGIC_REVIEW.md`-playbook. Twee kleine, losse geografische fixes (search-bevestigd),
+  vergelijkbaar met Nordic Arctic's meerdere-kleine-fixes-patroon: **Cuba** — Viñales-vallei stond
+  als laatste stop, wat een dubbele omweg gaf (voorbij Cienfuegos naar Trinidad rijden, terug naar
+  Cienfuegos, dan een 4,5u oversteek naar Viñales vlak bij Havana, waar je toch weer voor de vlucht
+  naartoe moet); nu Havana-Viñales-Cienfuegos-Trinidad, met de terugreis naar Havana expliciet
+  benoemd (Havana bevestigd als enige realistische internationale gateway — Santiago de Cuba zou de
+  omweg verergeren). **Jamaica** — Blue Mountains stond als losse heen-en-terugtrip vlak na Kingston
+  (de kustweg naar Ocho Rios loopt daar niet doorheen); nu Kingston-Ocho Rios-Port Antonio-Blue
+  Mountains, met de Hardwar Gap-bergroute als natuurlijke terugweg naar Kingston. Cuba's reisadvies/
+  visumtekst ook bijgewerkt: nog steeds oranje (bevestigd geldig, zesde landelijke stroomstoring op 2
+  augustus 2026), en de papieren tourist card is sinds 1 juli 2025 vervangen door een e-Visa (~$50).
+  Persoonlijke-voorkeur-check: Youri had nog geen van de 10 landen bezocht, geen cuts nodig. Alle
+  bestemmingen kregen coördinaten voor de "Gedetailleerd"-kaartweergave. Landen/dagen/budget-totaal
+  ongewijzigd: 97 dagen, €7.450. Toegepast via `rbMigrateCaribbeanAmazonRouteLogicOverhaul()` op de
+  hoofdexpeditie en beide 2026-07 split-routes (Caraïbische Eilanden-hop 🏝️, Suriname & Noord-Brazilië
+  🌴) — deze route heeft geen gedeelde `RB_EXPEDITION_CONTENT`-tabel (hand-authored), dus de migratie
+  patcht de velden direct in plaats van via een content-lookup.
+- **Nordic Arctic Expedition ❄️ routelogica-herziening (2026-08)** — vierde expeditie uit de
+  `ROUTE_LOGIC_REVIEW.md`-playbook. Vier geografische/praktische fixes, allemaal search-bevestigd:
+  (1) Finland-Zweden's `transport_to_next` verzweeg dat er van Inari/Lemmenjoki geen directe
+  bus/trein naar Zweden bestaat — je moet terug naar Rovaniemi, en zelfs Rovaniemi-Kiruna is met
+  OV zelf al een omweg via de kust (8-9,5u) — nu expliciet benoemd, met een huurauto-alternatief via
+  Kaaresuvanto/Karesuando (~6-7u); (2) Noorwegen eindigde op Noordkaap terwijl de Svalbard-vlucht
+  vanuit Tromsø vertrekt — nu een korte vlucht Honningsvåg-Tromsø (Widerøe) i.p.v. 540km terugrijden;
+  (3) IJslands Ring Road-volgorde had een zigzag (Snæfellsnes stond tussen Jökulsårlón en Akureyri in
+  i.p.v. als laatste stop vóór Reykjavik); (4) Groenlands instap/uitstap liep verkeerd — nu instap
+  Nuuk (jaarrond direct vanuit Reykjavik) en uitstap Ilulissat (seizoensgebonden directe vlucht
+  terug, geen omweg via Nuuk meer). Daarnaast twee wensen van Youri: **Denemarken (Kopenhagen)
+  toegevoegd** tussen Svalbard en de Faeröer (3 dagen/€450, nog niet bezocht) — praktisch omdat dit
+  toch al de vluchtovergang richting de Faeröer was; **Svalbard ingekort** van een meerdaagse gegidste
+  bootexpeditie naar alleen Longyearbyen zelf met 1-2 dagtours (8 dagen/€3.725 → 4 dagen/€900). Alle
+  bestemmingen kregen coördinaten voor de "Gedetailleerd"-kaartweergave. Nieuw totaal: 8 landen (was
+  7), 67 dagen (was 68), €13.950 (was €16.325). Toegepast via
+  `rbMigrateNordicArcticRouteLogicOverhaul()` op de hoofdexpeditie en alle vijf 2026-07 split-routes
+  (Scandinavië Overland 🚂, Svalbard 🐻‍❄️, Faeröer 🐑, IJsland ❄️, Groenland 🧊) — veldpatch plus één
+  nieuw blok (Denemarken, alleen in de hoofdexpeditie).
 - **India & Himalaya Expedition 🏔️ routelogica-herziening (2026-08)** — derde expeditie uit de
   `ROUTE_LOGIC_REVIEW.md`-playbook. Anders dan Eurasia/Patagonia: geen geografische fouten gevonden.
   Delhi als hub met twee losse etappes (Rajasthan zuidwest, Punjab/Himachal noord) en Bhutans

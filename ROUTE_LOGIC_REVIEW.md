@@ -1,7 +1,8 @@
 # Route Logic Review — Playbook
 
-Status: **Eurasia Grand Tour 🌏, Patagonia & Antarctica Expedition 🧊 en India & Himalaya Expedition
-🏔️ klaar (2026-08)**, de andere 10 originele expedities nog niet.
+Status: **Eurasia Grand Tour 🌏, Patagonia & Antarctica Expedition 🧊, India & Himalaya Expedition
+🏔️, Nordic Arctic Expedition ❄️ en Caribbean & Amazon Expedition 🌴 klaar (2026-08)**, de andere 8
+originele expedities nog niet.
 Dit document legt vast wát we bij Eurasia deden en hóe je dat 1-op-1 herhaalt — pak deze aanpak op
 zodra Youri aangeeft dat hij een volgende expeditie wil laten doornemen, geen nieuwe analyse nodig.
 
@@ -115,15 +116,52 @@ fix nodig heeft zoals Eurasia/Patagonia — check gewoon de stappen, en als er n
 is, is dat een prima uitkomst op zich. De persoonlijke-voorkeur-check (stap 2) kan alsnog echte
 content-wijzigingen opleveren, zoals hier.
 
-## De overige 10 originele expedities
+## Nordic Arctic Expedition ❄️: wat er gebeurde (2026-08), als vierde referentie — meerdere kleine fixes i.p.v. één grote
+
+Zelfde stappenplan, maar met vier kleinere geografische/praktische fixes tegelijk in plaats van één
+grote landvolgorde-omdraaiing: (1) Finland-Zweden's `transport_to_next` verzweeg de terugkeer naar
+Rovaniemi (geen directe OV-verbinding vanaf Inari/Lemmenjoki); (2) Noorwegen eindigde op Noordkaap
+terwijl de Svalbard-vlucht vanuit Tromsø vertrekt — opgelost met een korte vlucht Honningsvåg-Tromsø
+i.p.v. terugrijden; (3) IJslands Ring Road had een Snæfellsnes-zigzag; (4) Groenlands instap/uitstap
+liep via het verkeerde eiland (nu Nuuk in, Ilulissat uit). Stap 2 (persoonlijke voorkeur) leverde
+twee concrete wijzigingen op: Denemarken (Kopenhagen) toegevoegd — Youri had alleen Oslo en Stockholm
+al gezien, geen van deze 7 landen dus echt overgeslagen, maar hij wilde Kopenhagen er graag bij
+(praktisch: dit was toch al de vluchtovergang richting de Faeröer); Svalbard ingekort van een
+meerdaagse gegidste bootexpeditie naar alleen Longyearbyen zelf. Zie `CHANGELOG.md` ("Nordic Arctic
+Expedition ❄️ routelogica-herziening") voor de volledige uitkomst, en
+`rbMigrateNordicArcticRouteLogicOverhaul()` voor het code-patroon — een veldpatch zoals Himalaya's,
+plus één nieuw blok (Denemarken) net als Bahrein's toevoeging aan Mediterranean Civilizations eerder.
+
+**Les voor de resterende expedities**: een expeditie kan best meerdere kleine, losse routing-fixes
+tegelijk nodig hebben zonder dat er één grote landvolgorde-omdraaiing bij zit — behandel élke etappe
+apart op zijn eigen merites in plaats van te zoeken naar "de ene grote bug" zoals bij Eurasia/
+Patagonia.
+
+## Caribbean & Amazon Expedition 🌴: wat er gebeurde (2026-08), als vijfde referentie
+
+Zelfde stappenplan, en zoals Nordic Arctic weer meerdere kleine losse fixes in plaats van één grote
+landvolgorde-omdraaiing: Cuba's Viñales-vallei stond als laatste stop (een dubbele omweg — voorbij
+Cienfuegos naar Trinidad, terug naar Cienfuegos, dan een 4,5u oversteek naar Viñales vlak bij Havana,
+waar de vlucht toch weer vandaan gaat) — opgelost door Viñales meteen na Havana te plannen als
+retourtje. Jamaica's Blue Mountains stonden als losse heen-en-terugtrip vlak na Kingston (de kustweg
+naar Ocho Rios loopt daar niet doorheen) — opgelost door de Blue Mountains via de Hardwar Gap-
+bergroute als terugweg vanaf Port Antonio te gebruiken in plaats van een aparte uitstap. Stap 2
+(persoonlijke voorkeur) leverde deze keer niets op — Youri had nog geen van de 10 landen bezocht.
+Stap 3 (praktische verificatie) was voor dit hele blok al in juli 2026 gedaan (prijzen/visum/
+reisadvies) — alleen Cuba's reisadvies/tourist card-tekst is deze ronde bijgewerkt (e-Visa vervangt
+de tourist card sinds juli 2025, stroomuitval-situatie bevestigd nog actueel). Zie `CHANGELOG.md`
+("Caribbean & Amazon Expedition 🌴 routelogica-herziening") voor de volledige uitkomst, en
+`rbMigrateCaribbeanAmazonRouteLogicOverhaul()` voor het code-patroon — deze route heeft geen gedeelde
+`RB_EXPEDITION_CONTENT`-tabel (hand-authored, zie de route's eigen build-functie), dus de migratie
+patcht de velden direct in plaats van via `rbContentFor()`.
+
+## De overige 8 originele expedities
 
 In willekeurige volgorde van omvang (kleiner = sneller te doen, geen inhoudelijke prioriteit):
 
-- **Nordic Arctic Expedition ❄️** — 7 landen, grotendeels vluchtsprongen (minder routing-risico).
 - **Central European Grand Roadtrip 🚗** — zelf-rijdende lus vanuit NL, ander soort logica
   (geen land-tot-land grensoversteken zoals bij backpacking-routes).
 - **British Isles & Celtic Coast Expedition 🍀** — idem, zelf-rijdende lus.
-- **Caribbean & Amazon Expedition 🌴**
 - **West & Central Africa Expedition 🌍**
 - **North America Grand Traverse 🌎** — let op: Canada/VS komen meerdere keren voor (eigen
   bouwfunctie, geen gedeelde contenttabel) — zelfde patroon als het nieuwe Maleisië-blok bij Eurasia.

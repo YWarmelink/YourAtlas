@@ -51,7 +51,12 @@ trips that span months, not weeks. Lives at `route-builder.html`.
   that draws the route as an actual ordered path — a dashed line connecting one anchor
   coordinate per leg, with a numbered, color-coded marker per stop, starting and ending
   at a fixed Utrecht/Netherlands home marker. See `rbRenderRouteLine()` in
-  `js/pages/routeBuilder.js`.
+  `js/pages/routeBuilder.js`. A third mode ("🔍 Gedetailleerd") draws through every
+  per-destination coordinate instead of one anchor per leg — available for any route
+  once its destinations carry `lat`/`lng` (five expeditions have this so far: Eurasia
+  Grand Tour 🌏, Patagonia & Antarctica Expedition 🧊, India & Himalaya Expedition 🏔️,
+  Nordic Arctic Expedition ❄️ and Caribbean & Amazon Expedition 🌴 — see
+  `ROUTE_LOGIC_REVIEW.md` for the rollout plan to the rest).
 - **Block Library**: save a route as a reusable, named group of countries; insert it
   into any other route later (as an independent copy — editing one never affects the
   other), or merge 2+ saved blocks into a new combined block.

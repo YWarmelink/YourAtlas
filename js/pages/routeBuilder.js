@@ -51,6 +51,8 @@ const RB_MIGRATE_FLAG_2026_07_ROUTE_LINE_COORDS_ROUND2 = 'atlas_grand_trips_migr
 const RB_MIGRATE_FLAG_2026_08_EURASIA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_eurasia_overhaul_v1';
 const RB_MIGRATE_FLAG_2026_08_PATAGONIA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_patagonia_overhaul_v1';
 const RB_MIGRATE_FLAG_2026_08_HIMALAYA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_himalaya_overhaul_v1';
+const RB_MIGRATE_FLAG_2026_08_NORDIC_ARCTIC_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_nordic_arctic_overhaul_v1';
+const RB_MIGRATE_FLAG_2026_08_CARIBBEAN_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_caribbean_overhaul_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -108,6 +110,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateEurasiaRouteOverhaul();
   rbMigratePatagoniaRouteLogicOverhaul();
   rbMigrateHimalayaRouteLogicOverhaul();
+  rbMigrateNordicArcticRouteLogicOverhaul();
+  rbMigrateCaribbeanAmazonRouteLogicOverhaul();
   rbBindEvents();
 
   try {
@@ -1410,13 +1414,59 @@ const RB_EXPEDITION_CONTENT = {
     SZ: { days: 5, budget: 325, lat: -26.45, lng: 31.2, destinations: ["Mbabane", "Ezulwini Valley", "Mlilwane Wildlife Sanctuary", "Hlane Royal National Park"], transport_to_next: "Over land via grensovergang Lomahasha/Namaacha richting Mozambique.", notes: "Prijscorrectie (2026-07): €60→€65/dag. ⚠️ Politieke situatie ernstiger dan vaak aangenomen: de regering gebruikt actief de Public Order Act/Suppression of Terrorism Act tegen dissidenten, geen verantwoording voor de crackdown op protesten in 2021, een PUDEMO-leider werd in september 2024 in ballingschap vergiftigd. Demonstraties in Mbabane/Manzini kunnen onverwacht escaleren — check lokaal nieuws vlak voor vertrek en vermijd samenscholingen. Hlane's gegidste game drives zijn niet openbaar geprijsd door Big Game Parks — reken ~€25-35 per activiteit als richtprijs, bevestig rechtstreeks." },
   },
   "Nordic Arctic Expedition ❄️": {
-    FI: { days: 8, budget: 1200, lat: 66.5039, lng: 25.7294, destinations: ["Helsinki", "Rovaniemi", "Inari", "Lemmenjoki National Park"], transport_to_next: "Trein of bus van Rovaniemi naar Kiruna (over land, via Zweeds Lapland)", notes: "Prijs geverifieerd (2026-07), klopt." },
-    SE: { days: 6, budget: 950, lat: 67.8558, lng: 20.2253, destinations: ["Kiruna", "Sami-cultuur", "Abisko National Park"], transport_to_next: "Trein Kiruna–Narvik (Malmbanan/Ofotbanen, over land, spectaculaire bergroute)", notes: "Prijs geverifieerd (2026-07), klopt." },
-    NO: { days: 15, budget: 2250, lat: 69.6492, lng: 18.9553, destinations: ["Narvik", "Lofoten", "Senja", "Tromsø", "Noordkaap"], transport_to_next: "Vlucht vanaf Tromsø naar Longyearbyen (enige realistische verbinding naar Svalbard)", notes: "Prijs geverifieerd (2026-07), klopt." },
-    SJ: { days: 8, budget: 3725, lat: 78.2232, lng: 15.6469, destinations: ["Longyearbyen", "Bootexpedities", "Gletsjers", "Wildlife", "Middernachtzon"], transport_to_next: "Vlucht via Oslo naar Kopenhagen, aansluitend naar Vágar (Faeröer) — geen directe verbinding, dus omweg nodig", notes: "Prijs geverifieerd (2026-07), klopt. Buiten Longyearbyen is een gewapende gids (ijsberen) verplicht — al inbegrepen in georganiseerde tochten." },
-    FO: { days: 7, budget: 1675, lat: 62.0107, lng: -6.7741, destinations: ["Tórshavn", "Saksun", "Gjógv", "Kliffen", "Wandelroutes"], transport_to_next: "Korte vlucht Vágar–Reykjavik (of seizoensgebonden veerboot Smyril Line, alleen in zomer)", notes: "Prijs geverifieerd (2026-07), klopt. Faeröer zijn geen EU/Schengen (wel Noordse Paspoortunie) — gewoon paspoort/ID nodig bij aankomst." },
-    IS: { days: 14, budget: 2800, lat: 64.1466, lng: -21.9426, destinations: ["Reykjavik", "Golden Circle", "Zuidkust", "Vatnajökull", "Jökulsárlón", "Snæfellsnes", "Akureyri"], transport_to_next: "Vlucht Reykjavik–Ilulissat (via Nuuk), geen veerverbinding mogelijk", notes: "Prijs geverifieerd (2026-07), klopt (incl. huurauto, vrijwel noodzakelijk). Geel reisadvies voor het Reykjanes-schiereiland vanwege aanhoudende vulkanische activiteit bij Grindavík." },
-    GL: { days: 10, budget: 3725, lat: 69.2198, lng: -51.1, destinations: ["Nuuk", "Inuitcultuur", "Ilulissat", "IJsfjord", "Disko Bay", "Boottochten"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Nuuk (via Reykjavik of Kopenhagen)", notes: "Prijs geverifieerd (2026-07), krap maar houdbaar — binnenlandse vluchten tussen plaatsen (Air Greenland, vrijwel monopolie) zijn een structurele, geen incidentele kostenpost. Geen EU/Schengen (wel Rijk Denemarken) — paspoortcontrole bij aankomst/vertrek, EHIC niet geldig." },
+    FI: { days: 8, budget: 1200, lat: 66.5039, lng: 25.7294, destinations: [
+      { name: 'Helsinki', lat: 60.1699, lng: 24.9384 },
+      { name: 'Rovaniemi', lat: 66.5039, lng: 25.7294 },
+      { name: 'Inari', lat: 68.9056, lng: 27.0286 },
+      { name: 'Lemmenjoki National Park', lat: 68.7333, lng: 25.7833 },
+    ], transport_to_next: "Terug naar Rovaniemi (geen directe verbinding vanaf Inari/Lemmenjoki), dan trein of bus Rovaniemi–Kiruna via de Finse/Zweedse kust (Kemi-Haparanda-Boden), 8-9,5 uur. Met een eigen huurauto is Inari-Kaaresuvanto-Karesuando-Kiruna (~6-7u) sneller en vermijdt de terugkeer naar Rovaniemi.", notes: "Prijs geverifieerd (2026-07), klopt. Routelogica (2026-08, search-bevestigd): er is geen bus/trein-verbinding van Inari/Lemmenjoki rechtstreeks naar Zweden — de enige OV-optie gaat terug via Rovaniemi, en zelfs Rovaniemi-Kiruna is met bus/trein zelf al een omweg via de kust (8-9,5u) t.o.v. de auto (4u16m direct)." },
+    SE: { days: 6, budget: 950, lat: 67.8558, lng: 20.2253, destinations: [
+      { name: 'Kiruna', lat: 67.8558, lng: 20.2253 },
+      { name: 'Sami-cultuur (Jukkasjärvi)', lat: 67.8556, lng: 20.5928 },
+      { name: 'Abisko National Park', lat: 68.3558, lng: 18.7883 },
+    ], transport_to_next: "Trein Kiruna–Narvik (Malmbanan/Ofotbanen, over land, spectaculaire bergroute)", notes: "Prijs geverifieerd (2026-07), klopt." },
+    NO: { days: 15, budget: 2250, lat: 69.6492, lng: 18.9553, destinations: [
+      { name: 'Narvik', lat: 68.4384, lng: 17.4272 },
+      { name: 'Lofoten (Svolvær)', lat: 68.2341, lng: 14.5686 },
+      { name: 'Senja', lat: 69.3167, lng: 17.5333 },
+      { name: 'Tromsø', lat: 69.6492, lng: 18.9553 },
+      { name: 'Noordkaap (Nordkapp)', lat: 71.171, lng: 25.7858 },
+    ], transport_to_next: "Korte vlucht Honningsvåg (HVG, 31 km van Nordkapp) naar Tromsø (Widerøe, ~1u05) — vermijdt de ~540 km terugrit over de weg — aansluitend vlucht Tromsø-Longyearbyen (enige realistische verbinding naar Svalbard, Alta heeft geen LYR-vlucht).", notes: "Prijs geverifieerd (2026-07), klopt. Routelogica (2026-08, search-bevestigd): Longyearbyen heeft alleen vluchten vanuit Oslo en Tromsø — teruggevlogen Honningsvåg-Tromsø i.p.v. terugrijden bespaart ~6 uur." },
+    SJ: { days: 4, budget: 900, lat: 78.2232, lng: 15.6469, destinations: [
+      { name: 'Longyearbyen', lat: 78.2232, lng: 15.6469 },
+      { name: 'Svalbard Museum', lat: 78.2199, lng: 15.6259 },
+      { name: 'Pyramiden (dagtrip per boot)', lat: 78.657, lng: 16.3606 },
+    ], transport_to_next: "Vlucht Longyearbyen–Oslo–Kopenhagen (SAS/Norwegian, geen directe verbinding, ~4u10-4u15 totaal)", notes: "Ingekort (2026-08, op Youri's verzoek): van 8 dagen/€3.725 (meerdaagse gegidste bootexpeditie) naar 4 dagen/€900 — alleen Longyearbyen zelf met 1-2 dagtours (bv. de boottocht naar de verlaten mijnstad Pyramiden, of een sneeuwscooter-/hondensleetocht richting Barentsburg) i.p.v. een meerdaagse expeditieboot. Buiten Longyearbyen is een gewapende gids (ijsberen) verplicht — al inbegrepen in de dagtours." },
+    DK: { days: 3, budget: 450, lat: 55.6761, lng: 12.5683, destinations: [
+      { name: 'Nyhavn', lat: 55.6798, lng: 12.591 },
+      { name: 'Tivoli Gardens', lat: 55.6736, lng: 12.5681 },
+      { name: 'Christiania', lat: 55.6739, lng: 12.5975 },
+      { name: 'Torvehallerne', lat: 55.6838, lng: 12.5713 },
+    ], transport_to_next: "Vlucht Kopenhagen–Vágar (Faeröer) met Atlantic Airways, ~2u15, minstens 2x per dag jaarrond (tot 4x/dag in de zomer) — flexibeler dan de eerdere optie via Oslo (Atlantic Airways RC435, slechts 3x/week).", notes: "Toevoeging (2026-08, op Youri's verzoek — nog niet bezocht, wel al Oslo en Stockholm gezien). Kopenhagen is een van de duurdere Europese hoofdsteden; dagbudget incl. privékamer-accommodatie, gemengd restaurant/streetfood en 1 betaalde attractie per dag. Praktische keuze: dit was al de overstap richting de Faeröer (voorheen Longyearbyen-Oslo-Kopenhagen-Vágar als pure transit) — nu als volwaardige stop met eigen dagen." },
+    FO: { days: 7, budget: 1675, lat: 62.0107, lng: -6.7741, destinations: [
+      { name: 'Tórshavn', lat: 62.0107, lng: -6.7741 },
+      { name: 'Saksun', lat: 62.2667, lng: -7.2167 },
+      { name: 'Gjógv', lat: 62.3167, lng: -6.8 },
+      { name: 'Vestmanna Kliffen', lat: 62.1553, lng: -7.1668 },
+      'Wandelroutes',
+    ], transport_to_next: "Korte vlucht Vágar–Reykjavik (of seizoensgebonden veerboot Smyril Line, alleen in zomer)", notes: "Prijs geverifieerd (2026-07), klopt. Faeröer zijn geen EU/Schengen (wel Noordse Paspoortunie) — gewoon paspoort/ID nodig bij aankomst." },
+    IS: { days: 14, budget: 2800, lat: 64.1466, lng: -21.9426, destinations: [
+      { name: 'Reykjavik', lat: 64.1466, lng: -21.9426 },
+      { name: 'Golden Circle (Þingvellir)', lat: 64.2559, lng: -21.131 },
+      { name: 'Zuidkust (Vík í Mýrdal)', lat: 63.4186, lng: -19.006 },
+      { name: 'Vatnajökull', lat: 64.0165, lng: -16.9787 },
+      { name: 'Jökulsárlón', lat: 64.0784, lng: -16.23 },
+      { name: 'Akureyri', lat: 65.6835, lng: -18.1002 },
+      { name: 'Snæfellsnes', lat: 64.9257, lng: -23.3072 },
+    ], transport_to_next: "Terug naar Reykjavik (Ring Road, auto inleveren), dan directe vlucht Reykjavik (Keflavík)–Nuuk met Icelandair/Air Greenland (jaarrond) — geen veerverbinding mogelijk", notes: "Prijs geverifieerd (2026-07), klopt (incl. huurauto, vrijwel noodzakelijk). Geel reisadvies voor het Reykjanes-schiereiland vanwege aanhoudende vulkanische activiteit bij Grindavík. Routelogica (2026-08, search-bevestigd): volgorde omgedraaid — Snæfellsnes stond eerder tussen Jökulsárlón en Akureyri (een onlogische zigzag terug naar het westen); nu als laatste stop vóór de terugkeer naar Reykjavik, zoals elke standaard Ring Road-planning het doet." },
+    GL: { days: 10, budget: 3725, lat: 69.2198, lng: -51.1, destinations: [
+      { name: 'Nuuk', lat: 64.1836, lng: -51.7214 },
+      { name: 'Inuitcultuur (Nuuk)', lat: 64.1836, lng: -51.7214 },
+      { name: 'Ilulissat', lat: 69.2198, lng: -51.1 },
+      { name: 'IJsfjord (Ilulissat Icefjord)', lat: 69.1833, lng: -51.05 },
+      { name: 'Disko Bay', lat: 69.25, lng: -53.0 },
+      { name: 'Boottochten (bv. Eqi-gletsjer)', lat: 69.8167, lng: -50.3167 },
+    ], transport_to_next: "Einde van de expeditie — directe vlucht terug vanuit Ilulissat naar Reykjavik met Icelandair (seizoensgebonden, ca. juni-september; vanaf eind oktober 2026 ook jaarrond direct vanuit Kopenhagen met Air Greenland)", notes: "Prijs geverifieerd (2026-07), krap maar houdbaar — binnenlandse vluchten tussen plaatsen (Air Greenland, vrijwel monopolie) zijn een structurele, geen incidentele kostenpost, waaronder de vlucht Nuuk-Ilulissat zelf (geen wegverbinding tussen Groenlandse steden). Geen EU/Schengen (wel Rijk Denemarken) — paspoortcontrole bij aankomst/vertrek, EHIC niet geldig. Routelogica (2026-08, search-bevestigd): instap/uitstap gecorrigeerd — instap is Nuuk (jaarrond directe vlucht vanuit Reykjavik), uitstap is Ilulissat (seizoensgebonden directe vlucht terug, geen omweg via Nuuk meer)." },
   },
   "Patagonia & Antarctica Expedition 🧊": {
     // Chile-Noord: Puerto Montt is het echte vertrekpunt (Chiloé is een dagtrip vandaar, niet
@@ -1866,19 +1916,20 @@ function rbBuildArcticCircleRoute() {
       countries: [arctic('FI', 'Finland'), arctic('SE', 'Sweden'), arctic('NO', 'Norway')],
     },
     {
-      name: 'North Atlantic Islands', season: 'Juli–augustus', budget: 11925,
-      note: 'Svalbard, Faeröer, IJsland en Groenland — stuk voor stuk losse vluchtsprongen, geen doorlopende route; reken op weerbuffers.',
-      countries: [arctic('SJ', 'Svalbard'), arctic('FO', 'Faroe Islands'), arctic('IS', 'Iceland'), arctic('GL', 'Greenland')],
+      name: 'North Atlantic Islands', season: 'Juli–augustus', budget: 9550,
+      note: 'Svalbard, Denemarken, Faeröer, IJsland en Groenland — stuk voor stuk losse vluchtsprongen, geen doorlopende route; reken op weerbuffers.',
+      countries: [arctic('SJ', 'Svalbard'), arctic('DK', 'Denmark'), arctic('FO', 'Faroe Islands'), arctic('IS', 'Iceland'), arctic('GL', 'Greenland')],
     },
   ], {
     best_starting_month: 'Juni',
-    travel_style: 'Trein/bus in Scandinavië, vluchten voor de eilandsprongen (Svalbard, Faeröer, IJsland, Groenland) waar geen boot- of landroute bestaat, kleine guesthouses en de enkele hut/expeditieboot waar relevant.',
-    climate_summary: "Vergeleken scenario's: (1) een winterstart (december-februari) levert noorderlicht op in Finland/Zweden/Noorwegen, maar sluit Svalbard-boottochten (zee-ijs), IJslands hooglandwegen en de boottochten bij Faeröer/Groenland vrijwel volledig af, met te korte en te koude dagen voor de wandelroutes; (2) een start in mei loopt nog risico op resterend zee-ijs bij Svalbard en gesloten hooglandwegen in IJsland; (3) een start begin juni treft alle zeven bestemmingen in hun enige gedeelde goede seizoen: middernachtzon in Scandinavië, toegankelijk zee-ijs en boottochten bij Svalbard, betrouwbaardere veerdiensten en wandelweer bij de Faeröer, volledig open hooglandwegen in IJsland, en de beste boottoegang tot de Diskobaai-ijsbergen bij Ilulissat in Groenland. Beste keuze: start begin juni, zodat de expeditie (circa 2-2,5 maand) eind augustus eindigt, ruim vóór de eerste herfststormen in de Noord-Atlantische regio.",
-    description: 'Zomerexpeditie door het hoge noorden — van Lapland via Noorse fjorden en eilanden naar Spitsbergen, de Faeröer, IJsland en Groenland, met middernachtzon als rode draad.',
+    travel_style: 'Trein/bus in Scandinavië, vluchten voor de eilandsprongen (Svalbard, Denemarken, Faeröer, IJsland, Groenland) waar geen boot- of landroute bestaat, kleine guesthouses en de enkele hut/dagtour waar relevant.',
+    climate_summary: "Vergeleken scenario's: (1) een winterstart (december-februari) levert noorderlicht op in Finland/Zweden/Noorwegen, maar sluit Svalbard-boottochten (zee-ijs), IJslands hooglandwegen en de boottochten bij Faeröer/Groenland vrijwel volledig af, met te korte en te koude dagen voor de wandelroutes; (2) een start in mei loopt nog risico op resterend zee-ijs bij Svalbard en gesloten hooglandwegen in IJsland; (3) een start begin juni treft alle acht bestemmingen in hun enige gedeelde goede seizoen: middernachtzon in Scandinavië, toegankelijk zee-ijs bij Svalbard, Kopenhagen op zijn best zonder seizoensbeperking, betrouwbaardere veerdiensten en wandelweer bij de Faeröer, volledig open hooglandwegen in IJsland, en de beste boottoegang tot de Diskobaai-ijsbergen bij Ilulissat in Groenland. Beste keuze: start begin juni, zodat de expeditie (circa 2-2,5 maand) eind augustus eindigt, ruim vóór de eerste herfststormen in de Noord-Atlantische regio.",
+    description: 'Zomerexpeditie door het hoge noorden — van Lapland via Noorse fjorden en eilanden naar Spitsbergen, Kopenhagen, de Faeröer, IJsland en Groenland, met middernachtzon als rode draad.',
     notes: 'Imported from a ChatGPT brainstorm — originally seeded flat (no regions); Svalbard and the Faroe Islands may not yet appear in the Countries sheet dropdown — cosmetic only, the block still works. Several legs (Svalbard, Faroe, Iceland, Greenland) are flight-only hops rather than one continuous overland trip.\n\n' +
       'Tijdscontrole (2026-07): dagen per land licht opgehoogd (53→68 dagen totaal) — vooral Groenland (weersafhankelijke vluchten tussen plaatsen) en Noorwegen (Lofoten alleen al is fotografie/wandelen waard) waren krap. Landen ongewijzigd; alleen duur, best_starting_month en klimaatredenering zijn toegevoegd.\n\n' +
       'Vervolg (2026-07): budgetten per land meegeschaald met de opgehoogde dagen, en de 7 landen alsnog gegroepeerd in 2 regio\'s (Scandinavia, North Atlantic Islands) met eigen seizoen/budget. Landen, volgorde en dagen zijn ongewijzigd.\n\n' +
-      'Prijzen/visum/reisadvies-verificatie (2026-07): alle 7 bevestigd accuraat, geen budgetcorrecties nodig — dit is de duurste route van de hele Travel Atlas en dat bleek terecht. Zie de losse landnotities hierboven voor details (Groenlandse binnenlandse vluchten, Faeröer/Groenland paspoortcontrole ondanks Deens koninkrijk, Svalbard-gids, IJsland-vulkaanactiviteit).',
+      'Prijzen/visum/reisadvies-verificatie (2026-07): alle 7 bevestigd accuraat, geen budgetcorrecties nodig — dit is de duurste route van de hele Travel Atlas en dat bleek terecht. Zie de losse landnotities hierboven voor details (Groenlandse binnenlandse vluchten, Faeröer/Groenland paspoortcontrole ondanks Deens koninkrijk, Svalbard-gids, IJsland-vulkaanactiviteit).\n\n' +
+      "Routelogica-herziening (2026-08): drie geografische fixes (search-bevestigd) — Finland-Zweden's transport_to_next benoemt nu expliciet de terugkeer naar Rovaniemi en de omweg via de kust (was verzwegen); Noorwegen eindigt op Noordkaap en vliegt terug naar Tromsø (Honningsvåg-Tromsø, Widerøe) i.p.v. 540km terugrijden voor de Svalbard-vlucht; IJslands Ring Road-volgorde rechtgezet (Snæfellsnes stond als een zigzag tussen Jökulsárlón en Akureyri, nu als laatste stop vóór Reykjavik); Groenlands instap/uitstap gecorrigeerd (instap Nuuk, jaarrond direct vanuit Reykjavik; uitstap Ilulissat, seizoensgebonden direct terug, geen omweg via Nuuk meer). Daarnaast twee wensen van Youri: Denemarken (Kopenhagen, 3 dagen/€450) toegevoegd tussen Svalbard en de Faeröer — nog niet bezocht, wel al Oslo en Stockholm; Svalbard ingekort van een meerdaagse gegidste bootexpeditie (8 dagen/€3.725) naar alleen Longyearbyen zelf met 1-2 dagtours (4 dagen/€900). Alle bestemmingen kregen coördinaten voor de 'Gedetailleerd'-kaartweergave. Nieuw totaal: 8 landen (was 7), 67 dagen (was 68), €13.950 (was €16.325).",
   });
 }
 
@@ -2244,15 +2295,25 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
       countries: [
         {
           code: 'CU', name: 'Cuba', days: 18, budget: 1260, lat: 23.1136, lng: -82.3666,
-          destinations: ['Havana (Habana Vieja)', 'Trinidad', 'Cienfuegos', 'Viñales-vallei'],
-          notes: "Havana en het UNESCO-koloniale Trinidad zijn de hoogtepunten; de rustige Viñales-vallei (tabak, karstlandschap) is de verborgen parel. Casas particulares (particuliere kamers) zijn de gangbare backpacker-accommodatie. Prijs geverifieerd (2026-07), klopt. ⚠️ Reisadvies oranje: dagelijkse stroomuitval, kaarten werken niet bij pinautomaten (contant meenemen), D'Viajeros-registratie + tourist card (~€20-30) verplicht vooraf.",
-          transport_to_next: 'Vlucht Havana-Kingston (meestal met overstap via Panama City of Miami)',
+          destinations: [
+            { name: 'Havana (Habana Vieja)', lat: 23.1136, lng: -82.3666 },
+            { name: 'Viñales-vallei', lat: 22.6167, lng: -83.7097 },
+            { name: 'Cienfuegos', lat: 22.1496, lng: -80.4394 },
+            { name: 'Trinidad', lat: 21.8047, lng: -79.9825 },
+          ],
+          notes: "Havana en het UNESCO-koloniale Trinidad zijn de hoogtepunten; de rustige Viñales-vallei (tabak, karstlandschap) is de verborgen parel. Casas particulares (particuliere kamers) zijn de gangbare backpacker-accommodatie. Prijs geverifieerd (2026-07), klopt. ⚠️ Reisadvies oranje (bevestigd geldig, laatst bijgewerkt 23 juni 2026): grote tekorten aan stroom/brandstof/voedsel/medicijnen, toenemende veiligheidsrisico's — de zesde landelijke stroomstoring van 2026 viel op 2 augustus. Kaarten werken niet bij pinautomaten (contant meenemen). Sinds 1 juli 2025 is de papieren tourist card vervangen door een e-Visa (~$50), gekoppeld aan het verplichte gratis D'Viajeros-formulier (invullen binnen 72u vóór aankomst). Routelogica (2026-08, search-bevestigd): volgorde omgedraaid — Viñales stond eerder als laatste stop (een dubbele omweg: eerst voorbij Cienfuegos naar Trinidad, dan terug naar Cienfuegos, dan een 4,5u oversteek naar Viñales vlak bij Havana); nu als retourtje vanuit Havana meteen aan het begin, gevolgd door Cienfuegos-Trinidad zonder kruisende routes.",
+          transport_to_next: 'Terug naar Havana (~4u15 rijden vanaf Trinidad — de enige realistische internationale gateway, Santiago de Cuba zou de omweg verergeren), dan vlucht Havana-Kingston (meestal met overstap via Panama City of Miami)',
         },
         {
           code: 'JM', name: 'Jamaica', days: 12, budget: 1080, lat: 17.9714, lng: -76.7936,
-          destinations: ['Kingston', 'Blue Mountains', "Dunn's River Falls", 'Port Antonio'],
-          notes: 'Blue Mountains (koffie, wandelen) en Port Antonio (rafting, watervallen, nauwelijks toeristen vergeleken met Negril/Ocho Rios) zijn de sterkste match met natuur boven luxe. Prijscorrectie (2026-07): €75→€90/dag, Jamaica is duurder dan aangenomen (guesthouses + entreegelden).',
-          transport_to_next: 'Vlucht Kingston-Curaçao (meestal met overstap via Panama City of Miami)',
+          destinations: [
+            { name: 'Kingston', lat: 17.9714, lng: -76.7936 },
+            { name: "Dunn's River Falls (Ocho Rios)", lat: 18.4108, lng: -77.1296 },
+            { name: 'Port Antonio', lat: 18.1811, lng: -76.4513 },
+            { name: 'Blue Mountains (Hardwar Gap)', lat: 18.0747, lng: -76.6597 },
+          ],
+          notes: 'Blue Mountains (koffie, wandelen) en Port Antonio (rafting, watervallen, nauwelijks toeristen vergeleken met Negril/Ocho Rios) zijn de sterkste match met natuur boven luxe. Prijscorrectie (2026-07): €75→€90/dag, Jamaica is duurder dan aangenomen (guesthouses + entreegelden). Routelogica (2026-08, search-bevestigd): volgorde omgedraaid — Blue Mountains stond als losse heen-en-terugtrip vlak na Kingston (de kustweg naar Ocho Rios loopt daar niet doorheen); nu als bergroute-terugweg (Hardwar Gap, koffieplantages/Newcastle) vanaf Port Antonio naar Kingston, in plaats van een aparte uitstap aan het begin.',
+          transport_to_next: 'Kort eindstuk Blue Mountains-Kingston (Hardwar Gap-bergroute), dan vlucht Kingston-Curaçao (meestal met overstap via Panama City of Miami)',
         },
       ],
     },
@@ -2264,13 +2325,20 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
       countries: [
         {
           code: 'CW', name: 'Curaçao', days: 7, budget: 560, lat: 12.1084, lng: -68.9335,
-          destinations: ['Willemstad (UNESCO)', 'Shete Boka National Park', 'stranden'],
+          destinations: [
+            { name: 'Willemstad (UNESCO)', lat: 12.1091, lng: -68.9316 },
+            { name: 'Shete Boka National Park', lat: 12.3667, lng: -69.15 },
+            { name: 'stranden (Grote Knip)', lat: 12.2167, lng: -69.15 },
+          ],
           notes: 'Willemstad met zijn Nederlandse koloniale architectuur is de stedelijke tegenhanger van rustig Bonaire. Shete Boka (ruige noordkust) is de verborgen parel, veel rustiger dan de stranden. Prijs geverifieerd (2026-07), klopt. Digital Immigration Card verplicht vooraf invullen (gratis).',
           transport_to_next: 'Korte vlucht Curaçao-Bonaire',
         },
         {
           code: 'BQ', name: 'Bonaire', days: 6, budget: 660, lat: 12.25, lng: -68.4,
-          destinations: ['Washington Slagbaai National Park', 'duiken/snorkelen (marine park)'],
+          destinations: [
+            { name: 'Washington Slagbaai National Park', lat: 12.3167, lng: -68.4167 },
+            { name: 'duiken/snorkelen (marine park)', lat: 12.15, lng: -68.2833 },
+          ],
           notes: 'Wereldklasse duiken/snorkelen direct vanaf de kust. Washington Slagbaai NP (flamingo\'s, ruige natuur) is de verborgen parel, nauwelijks bezocht. Prijscorrectie (2026-07): €87,50→€110/dag (weinig budget-accommodatie, duiktrips zijn duur). Verplichte inreisbelasting ~€70 p.p. is een aparte kostenpost, niet in het dagtarief.',
           transport_to_next: 'Vlucht Bonaire-Guadeloupe (meestal met overstap via Aruba, Panama City of San Juan)',
         },
@@ -2284,25 +2352,41 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
       countries: [
         {
           code: 'GP', name: 'Guadeloupe', days: 7, budget: 615, lat: 16.0448, lng: -61.6654,
-          destinations: ['La Soufrière (vulkaan)', 'Carbet-watervallen', 'Îles des Saintes'],
+          destinations: [
+            { name: 'La Soufrière (vulkaan)', lat: 16.0456, lng: -61.6654 },
+            { name: 'Carbet-watervallen', lat: 16.0472, lng: -61.6167 },
+            { name: 'Îles des Saintes', lat: 15.8667, lng: -61.5833 },
+          ],
           notes: 'Franse Caraïbische cultuur gecombineerd met een actieve vulkaan. Îles des Saintes (kleine eilandjes voor de kust) is veel rustiger dan het hoofdeiland. Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: "Veerboot L'Express des Îles naar Dominica (via Martinique)",
         },
         {
           code: 'DM', name: 'Dominica', days: 8, budget: 760, lat: 15.317, lng: -61.268,
-          destinations: ['Boiling Lake-trektocht', 'Trafalgar Falls', 'Champagne Reef'],
+          destinations: [
+            { name: 'Boiling Lake-trektocht', lat: 15.3167, lng: -61.2667 },
+            { name: 'Trafalgar Falls', lat: 15.3181, lng: -61.3331 },
+            { name: 'Champagne Reef', lat: 15.2833, lng: -61.3833 },
+          ],
           notes: '"Nature Island" — het minst ontwikkelde en meest ongerepte eiland van de vier. De Boiling Lake-trektocht is een zware hele dag op zich; reken op een rustdag ervoor of erna. Champagne Reef (vulkanische bubbels tijdens het snorkelen) is uniek. Prijscorrectie (2026-07): €72,50→€95/dag (nauwelijks hostels, guesthouses vanaf ~€60-70/nacht, verplichte gids voor Boiling Lake ~€55-70).',
           transport_to_next: "Veerboot L'Express des Îles naar St Lucia",
         },
         {
           code: 'LC', name: 'Saint Lucia', days: 7, budget: 560, lat: 13.83, lng: -61.0667,
-          destinations: ['The Pitons', 'Sulphur Springs (drive-in vulkaan)', 'Tet Paul Nature Trail'],
+          destinations: [
+            { name: 'The Pitons', lat: 13.8167, lng: -61.0667 },
+            { name: 'Sulphur Springs (drive-in vulkaan)', lat: 13.8347, lng: -61.0552 },
+            { name: 'Tet Paul Nature Trail', lat: 13.8333, lng: -61.05 },
+          ],
           notes: 'De iconische Pitons, meer toeristisch ontwikkeld dan de andere drie. Tet Paul Nature Trail geeft hetzelfde uitzicht op de Pitons, veel rustiger dan de drukke wandelpaden. Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: 'Vlucht St Lucia-Grenada (niet op de veerbootlijn)',
         },
         {
           code: 'GD', name: 'Grenada', days: 7, budget: 510, lat: 12.08, lng: -61.728,
-          destinations: ['Onderwaterbeeldenpark', 'kruidenplantages (nootmuskaat)', 'Grand Etang National Park'],
+          destinations: [
+            { name: 'Onderwaterbeeldenpark', lat: 12.0742, lng: -61.7325 },
+            { name: 'kruidenplantages (nootmuskaat)', lat: 12.1667, lng: -61.7333 },
+            { name: 'Grand Etang National Park', lat: 12.0833, lng: -61.6833 },
+          ],
           notes: 'Het minst toeristische van de vier eilanden. Grand Etang NP (regenwoud, kratermeer) is de verborgen parel. Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: 'Vlucht Grenada-Suriname (meestal met overstap via Trinidad)',
         },
@@ -2316,13 +2400,23 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
       countries: [
         {
           code: 'SR', name: 'Suriname', days: 11, budget: 605, lat: 5.852, lng: -55.2038,
-          destinations: ['Paramaribo (UNESCO)', 'Marrondorpen aan de rivier', 'Brownsberg Nature Park'],
+          destinations: [
+            { name: 'Paramaribo (UNESCO)', lat: 5.852, lng: -55.2038 },
+            { name: 'Marrondorpen aan de rivier', lat: 4.4, lng: -55.0 },
+            { name: 'Brownsberg Nature Park', lat: 4.95, lng: -55.1667 },
+          ],
           notes: 'Nederlandse koloniale geschiedenis in Paramaribo, gecombineerd met een rivierreis naar Marrondorpen in het binnenland — reken op 3-5 dagen voor een fatsoenlijke jungletocht naast de stad. Brownsberg (uitzicht over het Brokopondostuwmeer) is de verborgen parel. Prijs geverifieerd (2026-07): waarschijnlijk net genoeg, Brownsberg/Marrondorpen-tours ($70-120/dag) drukken het gemiddelde op. Let op: "visumvrij" is niet helemaal juist — een verplicht online ICF-immigratieformulier + gelekoortsbewijs is nodig vooraf.',
           transport_to_next: 'Vlucht Paramaribo-Belém (schaarse rechtstreekse verbindingen; waarschijnlijk met overstap via Cayenne, Georgetown of een Braziliaanse hub — vooraf goed checken)',
         },
         {
           code: 'BR', name: 'Brazil', days: 14, budget: 840, lat: -2.7458, lng: -42.8339,
-          destinations: ['Belém', 'Ilha do Marajó', 'Lençóis Maranhenses', 'Jericoacoara', 'Fortaleza'],
+          destinations: [
+            { name: 'Belém', lat: -1.4558, lng: -48.5039 },
+            { name: 'Ilha do Marajó', lat: -0.7167, lng: -48.5167 },
+            { name: 'Lençóis Maranhenses', lat: -2.5, lng: -43.0 },
+            { name: 'Jericoacoara', lat: -2.7975, lng: -40.5137 },
+            { name: 'Fortaleza', lat: -3.7172, lng: -38.5433 },
+          ],
           notes: 'De overgang van de Amazone-riviermonding (Belém, Marajó — buffels, ongerept rivierdelta-eiland) naar de compleet andere zandduinenkust (Lençóis Maranhenses, Jericoacoara) als adembenemende afsluiter. De afstanden langs de kust worden vaak onderschat. Prijs geverifieerd (2026-07), klopt — de generieke Rio/São Paulo-veiligheidswaarschuwingen zijn niet relevant voor dit noordoostelijke traject.',
           transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Fortaleza (of via São Paulo) naar Nederland',
         },
@@ -2337,7 +2431,8 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
       "Eén routewijziging t.o.v. de oorspronkelijke brainstorm: de Nederlandse ABC-eilanden (Curaçao/Bonaire) zijn verplaatst naar direct na Jamaica in plaats van na de Kleine Antillen — geografisch liggen ze fors westelijker dan de Kleine Antillen en Suriname, dus in de oorspronkelijke volgorde zou je eerst ver oostwaarts reizen en daarna weer helemaal terug naar het westen. De eilandvolgorde binnen de Kleine Antillen zelf (Guadeloupe-Dominica-St Lucia-Grenada) was al correct — dat is zowel de natuurlijke noord-zuid keten als de route van de veerboot L'Express des Îles.\n\n" +
       "Overlap-controle: geen van de tien onderdelen is geschrapt — de vier Kleine Antillen lijken oppervlakkig op elkaar maar hebben elk een eigen signatuur (Guadeloupe: Franse cultuur + vulkaan; Dominica: meest ongerepte regenwoud; St Lucia: iconische Pitons, meer ontwikkeld; Grenada: kruiden + minst toeristisch), en Suriname/Noord-Brazilië zijn complementair (rivier-regenwoud met Marroncultuur versus riviermonding-delta plus een compleet andere duinenkust).\n\n" +
       "Totaal: 97 dagen (~3,2 maanden), €6.955 grondkosten + circa €3.000-3.500 aan vluchten (Caribische eilandhop-vluchten zijn berucht prijzig per afstand door weinig concurrentie; Suriname-Noord-Brazilië is waarschijnlijk de lastigste/duurste losse verbinding). Nog niet getoetst aan actuele prijzen, visumregels of reisadviezen — behandel dit als een eerste concept, geen boekbaar plan.\n\n" +
-      "Prijzen/visum/reisadvies-verificatie (2026-07): Jamaica (€75→€90/dag), Bonaire (€87,50→€110/dag) en Dominica (€72,50→€95/dag) gecorrigeerd. Rest bevestigd accuraat. Nieuw totaal: €7.450 grondkosten (was €6.955). Zie de losse landnotities hierboven voor reisadvies/visumdetails.",
+      "Prijzen/visum/reisadvies-verificatie (2026-07): Jamaica (€75→€90/dag), Bonaire (€87,50→€110/dag) en Dominica (€72,50→€95/dag) gecorrigeerd. Rest bevestigd accuraat. Nieuw totaal: €7.450 grondkosten (was €6.955). Zie de losse landnotities hierboven voor reisadvies/visumdetails.\n\n" +
+      "Routelogica-herziening (2026-08): twee kleine geografische fixes (search-bevestigd, geen grote landvolgorde-omdraaiing nodig zoals bij Eurasia/Patagonia). Cuba's volgorde omgedraaid — Viñales stond eerder als laatste stop, wat een dubbele omweg gaf (voorbij Cienfuegos naar Trinidad, terug naar Cienfuegos, dan een 4,5u oversteek naar Viñales vlak bij Havana, waar je toch weer voor de vlucht naartoe moet); nu Havana-Viñales-Cienfuegos-Trinidad, met een duidelijk benoemde terugreis naar Havana voor de vlucht. Jamaica's volgorde omgedraaid — Blue Mountains stond als losse heen-en-terugtrip vlak na Kingston (de kustweg naar Ocho Rios loopt daar niet doorheen); nu Kingston-Ocho Rios-Port Antonio-Blue Mountains, met de Hardwar Gap-bergroute als natuurlijke terugweg naar Kingston. Cuba's reisadvies/tourist card-tekst bijgewerkt (nog steeds oranje, e-Visa ~$50 vervangt de oude tourist card sinds juli 2025, zesde landelijke stroomstoring op 2 augustus 2026). Persoonlijke-voorkeur-check: Youri heeft nog geen van de 10 landen bezocht, geen cuts nodig. Alle bestemmingen kregen coördinaten voor de 'Gedetailleerd'-kaartweergave. Landen/dagen/budget-totaal ongewijzigd: 97 dagen, €7.450 — alleen volgorde binnen Cuba en Jamaica en de coördinaten zijn nieuw.",
   });
 }
 
@@ -3416,13 +3511,14 @@ function rbBuildScandinaviaOverlandRoute() {
 function rbBuildSvalbardRoute() {
   const arctic = (code, name) => rbContentFor('Nordic Arctic Expedition ❄️', code, name);
   return rbBuildSeedRoute('Svalbard 🐻‍❄️', [
-    { name: 'Svalbard', season: 'Juli', budget: 3725, note: 'Zee-ijs en boottochten zijn dan toegankelijk; het duurste losse blok van de hele Travel Atlas.', countries: [arctic('SJ', 'Svalbard')] },
+    { name: 'Svalbard', season: 'Juli', budget: 900, note: 'Longyearbyen zelf met 1-2 dagtours — geen meerdaagse expeditieboot meer (2026-08, op Youri\'s verzoek).', countries: [arctic('SJ', 'Svalbard')] },
   ], {
     best_starting_month: 'Juli',
-    travel_style: 'Georganiseerde boottochten vanuit Longyearbyen; buiten de plaats is een gewapende gids (ijsberen) verplicht, al inbegrepen in de tours.',
+    travel_style: 'Longyearbyen als basis, met 1-2 gegidste dagtours (bv. boottocht naar Pyramiden, sneeuwscooter-/hondensleetocht richting Barentsburg); buiten de plaats is een gewapende gids (ijsberen) verplicht, al inbegrepen in de tours.',
     climate_summary: 'Juli-augustus is het enige venster met toegankelijk zee-ijs, betrouwbare boottochten en middernachtzon.',
-    description: 'Gletsjers, wildlife en middernachtzon op Spitsbergen.',
-    notes: 'Losgesplitst van Nordic Arctic Expedition ❄️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen en budget zijn ongewijzigd overgenomen. Nordic Arctic Expedition ❄️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+    description: 'Gletsjers, wildlife en middernachtzon op Spitsbergen, ingekort tot Longyearbyen zelf.',
+    notes: 'Losgesplitst van Nordic Arctic Expedition ❄️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Nordic Arctic Expedition ❄️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\n' +
+      "Ingekort (2026-08, op Youri's verzoek): van 8 dagen/€3.725 (meerdaagse gegidste bootexpeditie) naar 4 dagen/€900 — alleen Longyearbyen zelf met 1-2 dagtours i.p.v. een meerdaagse expeditieboot. Coördinaten per bestemming toegevoegd.",
   });
 }
 
@@ -3925,15 +4021,25 @@ function rbBuildCaribbeanIslandsHopRoute() {
       countries: [
         {
           code: 'CU', name: 'Cuba', days: 18, budget: 1260, lat: 23.1136, lng: -82.3666,
-          destinations: ['Havana (Habana Vieja)', 'Trinidad', 'Cienfuegos', 'Viñales-vallei'],
-          notes: "Havana en het UNESCO-koloniale Trinidad zijn de hoogtepunten; de rustige Viñales-vallei (tabak, karstlandschap) is de verborgen parel. Casas particulares (particuliere kamers) zijn de gangbare backpacker-accommodatie. Prijs geverifieerd (2026-07), klopt. ⚠️ Reisadvies oranje: dagelijkse stroomuitval, kaarten werken niet bij pinautomaten (contant meenemen), D'Viajeros-registratie + tourist card (~€20-30) verplicht vooraf.",
-          transport_to_next: 'Vlucht Havana-Kingston (meestal met overstap via Panama City of Miami)',
+          destinations: [
+            { name: 'Havana (Habana Vieja)', lat: 23.1136, lng: -82.3666 },
+            { name: 'Viñales-vallei', lat: 22.6167, lng: -83.7097 },
+            { name: 'Cienfuegos', lat: 22.1496, lng: -80.4394 },
+            { name: 'Trinidad', lat: 21.8047, lng: -79.9825 },
+          ],
+          notes: "Havana en het UNESCO-koloniale Trinidad zijn de hoogtepunten; de rustige Viñales-vallei (tabak, karstlandschap) is de verborgen parel. Casas particulares (particuliere kamers) zijn de gangbare backpacker-accommodatie. Prijs geverifieerd (2026-07), klopt. ⚠️ Reisadvies oranje (bevestigd geldig, laatst bijgewerkt 23 juni 2026): grote tekorten aan stroom/brandstof/voedsel/medicijnen, toenemende veiligheidsrisico's — de zesde landelijke stroomstoring van 2026 viel op 2 augustus. Kaarten werken niet bij pinautomaten (contant meenemen). Sinds 1 juli 2025 is de papieren tourist card vervangen door een e-Visa (~$50), gekoppeld aan het verplichte gratis D'Viajeros-formulier (invullen binnen 72u vóór aankomst). Routelogica (2026-08, search-bevestigd): volgorde omgedraaid — Viñales stond eerder als laatste stop (een dubbele omweg: eerst voorbij Cienfuegos naar Trinidad, dan terug naar Cienfuegos, dan een 4,5u oversteek naar Viñales vlak bij Havana); nu als retourtje vanuit Havana meteen aan het begin, gevolgd door Cienfuegos-Trinidad zonder kruisende routes.",
+          transport_to_next: 'Terug naar Havana (~4u15 rijden vanaf Trinidad — de enige realistische internationale gateway, Santiago de Cuba zou de omweg verergeren), dan vlucht Havana-Kingston (meestal met overstap via Panama City of Miami)',
         },
         {
           code: 'JM', name: 'Jamaica', days: 12, budget: 1080, lat: 17.9714, lng: -76.7936,
-          destinations: ['Kingston', 'Blue Mountains', "Dunn's River Falls", 'Port Antonio'],
-          notes: 'Blue Mountains (koffie, wandelen) en Port Antonio (rafting, watervallen, nauwelijks toeristen vergeleken met Negril/Ocho Rios) zijn de sterkste match met natuur boven luxe. Prijscorrectie (2026-07): €75→€90/dag, Jamaica is duurder dan aangenomen (guesthouses + entreegelden).',
-          transport_to_next: 'Vlucht Kingston-Curaçao (meestal met overstap via Panama City of Miami)',
+          destinations: [
+            { name: 'Kingston', lat: 17.9714, lng: -76.7936 },
+            { name: "Dunn's River Falls (Ocho Rios)", lat: 18.4108, lng: -77.1296 },
+            { name: 'Port Antonio', lat: 18.1811, lng: -76.4513 },
+            { name: 'Blue Mountains (Hardwar Gap)', lat: 18.0747, lng: -76.6597 },
+          ],
+          notes: 'Blue Mountains (koffie, wandelen) en Port Antonio (rafting, watervallen, nauwelijks toeristen vergeleken met Negril/Ocho Rios) zijn de sterkste match met natuur boven luxe. Prijscorrectie (2026-07): €75→€90/dag, Jamaica is duurder dan aangenomen (guesthouses + entreegelden). Routelogica (2026-08, search-bevestigd): volgorde omgedraaid — Blue Mountains stond als losse heen-en-terugtrip vlak na Kingston (de kustweg naar Ocho Rios loopt daar niet doorheen); nu als bergroute-terugweg (Hardwar Gap, koffieplantages/Newcastle) vanaf Port Antonio naar Kingston, in plaats van een aparte uitstap aan het begin.',
+          transport_to_next: 'Kort eindstuk Blue Mountains-Kingston (Hardwar Gap-bergroute), dan vlucht Kingston-Curaçao (meestal met overstap via Panama City of Miami)',
         },
       ],
     },
@@ -3945,13 +4051,20 @@ function rbBuildCaribbeanIslandsHopRoute() {
       countries: [
         {
           code: 'CW', name: 'Curaçao', days: 7, budget: 560, lat: 12.1084, lng: -68.9335,
-          destinations: ['Willemstad (UNESCO)', 'Shete Boka National Park', 'stranden'],
+          destinations: [
+            { name: 'Willemstad (UNESCO)', lat: 12.1091, lng: -68.9316 },
+            { name: 'Shete Boka National Park', lat: 12.3667, lng: -69.15 },
+            { name: 'stranden (Grote Knip)', lat: 12.2167, lng: -69.15 },
+          ],
           notes: 'Willemstad met zijn Nederlandse koloniale architectuur is de stedelijke tegenhanger van rustig Bonaire. Shete Boka (ruige noordkust) is de verborgen parel, veel rustiger dan de stranden. Prijs geverifieerd (2026-07), klopt. Digital Immigration Card verplicht vooraf invullen (gratis).',
           transport_to_next: 'Korte vlucht Curaçao-Bonaire',
         },
         {
           code: 'BQ', name: 'Bonaire', days: 6, budget: 660, lat: 12.25, lng: -68.4,
-          destinations: ['Washington Slagbaai National Park', 'duiken/snorkelen (marine park)'],
+          destinations: [
+            { name: 'Washington Slagbaai National Park', lat: 12.3167, lng: -68.4167 },
+            { name: 'duiken/snorkelen (marine park)', lat: 12.15, lng: -68.2833 },
+          ],
           notes: "Wereldklasse duiken/snorkelen direct vanaf de kust. Washington Slagbaai NP (flamingo's, ruige natuur) is de verborgen parel, nauwelijks bezocht. Prijscorrectie (2026-07): €87,50→€110/dag (weinig budget-accommodatie, duiktrips zijn duur). Verplichte inreisbelasting ~€70 p.p. is een aparte kostenpost, niet in het dagtarief.",
           transport_to_next: 'Vlucht Bonaire-Guadeloupe (meestal met overstap via Aruba, Panama City of San Juan)',
         },
@@ -3965,25 +4078,41 @@ function rbBuildCaribbeanIslandsHopRoute() {
       countries: [
         {
           code: 'GP', name: 'Guadeloupe', days: 7, budget: 615, lat: 16.0448, lng: -61.6654,
-          destinations: ['La Soufrière (vulkaan)', 'Carbet-watervallen', 'Îles des Saintes'],
+          destinations: [
+            { name: 'La Soufrière (vulkaan)', lat: 16.0456, lng: -61.6654 },
+            { name: 'Carbet-watervallen', lat: 16.0472, lng: -61.6167 },
+            { name: 'Îles des Saintes', lat: 15.8667, lng: -61.5833 },
+          ],
           notes: 'Franse Caraïbische cultuur gecombineerd met een actieve vulkaan. Îles des Saintes (kleine eilandjes voor de kust) is veel rustiger dan het hoofdeiland. Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: "Veerboot L'Express des Îles naar Dominica (via Martinique)",
         },
         {
           code: 'DM', name: 'Dominica', days: 8, budget: 760, lat: 15.317, lng: -61.268,
-          destinations: ['Boiling Lake-trektocht', 'Trafalgar Falls', 'Champagne Reef'],
+          destinations: [
+            { name: 'Boiling Lake-trektocht', lat: 15.3167, lng: -61.2667 },
+            { name: 'Trafalgar Falls', lat: 15.3181, lng: -61.3331 },
+            { name: 'Champagne Reef', lat: 15.2833, lng: -61.3833 },
+          ],
           notes: '"Nature Island" — het minst ontwikkelde en meest ongerepte eiland van de vier. De Boiling Lake-trektocht is een zware hele dag op zich; reken op een rustdag ervoor of erna. Champagne Reef (vulkanische bubbels tijdens het snorkelen) is uniek. Prijscorrectie (2026-07): €72,50→€95/dag (nauwelijks hostels, guesthouses vanaf ~€60-70/nacht, verplichte gids voor Boiling Lake ~€55-70).',
           transport_to_next: "Veerboot L'Express des Îles naar St Lucia",
         },
         {
           code: 'LC', name: 'Saint Lucia', days: 7, budget: 560, lat: 13.83, lng: -61.0667,
-          destinations: ['The Pitons', 'Sulphur Springs (drive-in vulkaan)', 'Tet Paul Nature Trail'],
+          destinations: [
+            { name: 'The Pitons', lat: 13.8167, lng: -61.0667 },
+            { name: 'Sulphur Springs (drive-in vulkaan)', lat: 13.8347, lng: -61.0552 },
+            { name: 'Tet Paul Nature Trail', lat: 13.8333, lng: -61.05 },
+          ],
           notes: 'De iconische Pitons, meer toeristisch ontwikkeld dan de andere drie. Tet Paul Nature Trail geeft hetzelfde uitzicht op de Pitons, veel rustiger dan de drukke wandelpaden. Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: 'Vlucht St Lucia-Grenada (niet op de veerbootlijn)',
         },
         {
           code: 'GD', name: 'Grenada', days: 7, budget: 510, lat: 12.08, lng: -61.728,
-          destinations: ['Onderwaterbeeldenpark', 'kruidenplantages (nootmuskaat)', 'Grand Etang National Park'],
+          destinations: [
+            { name: 'Onderwaterbeeldenpark', lat: 12.0742, lng: -61.7325 },
+            { name: 'kruidenplantages (nootmuskaat)', lat: 12.1667, lng: -61.7333 },
+            { name: 'Grand Etang National Park', lat: 12.0833, lng: -61.6833 },
+          ],
           notes: 'Het minst toeristische van de vier eilanden. Grand Etang NP (regenwoud, kratermeer) is de verborgen parel. Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: 'Einde van deze route — terugvlucht vanuit Grenada (of vlucht Grenada-Suriname om verder te reizen naar Suriname & Noord-Brazilië 🌴)',
         },
@@ -3994,7 +4123,8 @@ function rbBuildCaribbeanIslandsHopRoute() {
     best_starting_month: 'December',
     description: 'Caribische koloniale geschiedenis, vulkanische natuur en eilandculturen: Cuba en Jamaica, de Nederlandse ABC-eilanden, en de Kleine Antillen.',
     climate_summary: 'Het orkaanseizoen in de Caribische Zee loopt 1 juni-30 november; een decemberstart houdt de hele reis ruim binnen het droge/veilige seizoen (december-mei).',
-    notes: "Losgesplitst van Caribbean & Amazon Expedition 🌴 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen (incl. de 2026-07 prijscorrecties op Jamaica/Bonaire/Dominica). Vervolg op deze route: Suriname & Noord-Brazilië 🌴. Caribbean & Amazon Expedition 🌴 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.",
+    notes: "Losgesplitst van Caribbean & Amazon Expedition 🌴 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen (incl. de 2026-07 prijscorrecties op Jamaica/Bonaire/Dominica). Vervolg op deze route: Suriname & Noord-Brazilië 🌴. Caribbean & Amazon Expedition 🌴 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\n" +
+      "Routelogica-herziening (2026-08): zelfde ronde als Caribbean & Amazon Expedition 🌴 zelf — Cuba's en Jamaica's volgorde omgedraaid (geen dubbele omweg meer via Viñales resp. de Blue Mountains), coördinaten per bestemming toegevoegd. Zie Caribbean & Amazon Expedition 🌴's eigen notities voor de volledige uitleg. Landen/dagen/budget-totaal ongewijzigd.",
   });
 }
 
@@ -4008,13 +4138,23 @@ function rbBuildSurinameNorthernBrazilRoute() {
       countries: [
         {
           code: 'SR', name: 'Suriname', days: 11, budget: 605, lat: 5.852, lng: -55.2038,
-          destinations: ['Paramaribo (UNESCO)', 'Marrondorpen aan de rivier', 'Brownsberg Nature Park'],
+          destinations: [
+            { name: 'Paramaribo (UNESCO)', lat: 5.852, lng: -55.2038 },
+            { name: 'Marrondorpen aan de rivier', lat: 4.4, lng: -55.0 },
+            { name: 'Brownsberg Nature Park', lat: 4.95, lng: -55.1667 },
+          ],
           notes: 'Nederlandse koloniale geschiedenis in Paramaribo, gecombineerd met een rivierreis naar Marrondorpen in het binnenland — reken op 3-5 dagen voor een fatsoenlijke jungletocht naast de stad. Brownsberg (uitzicht over het Brokopondostuwmeer) is de verborgen parel. Prijs geverifieerd (2026-07): waarschijnlijk net genoeg, Brownsberg/Marrondorpen-tours ($70-120/dag) drukken het gemiddelde op. Let op: "visumvrij" is niet helemaal juist — een verplicht online ICF-immigratieformulier + gelekoortsbewijs is nodig vooraf.',
           transport_to_next: 'Vlucht Paramaribo-Belém (schaarse rechtstreekse verbindingen; waarschijnlijk met overstap via Cayenne, Georgetown of een Braziliaanse hub — vooraf goed checken)',
         },
         {
           code: 'BR', name: 'Brazil', days: 14, budget: 840, lat: -2.7458, lng: -42.8339,
-          destinations: ['Belém', 'Ilha do Marajó', 'Lençóis Maranhenses', 'Jericoacoara', 'Fortaleza'],
+          destinations: [
+            { name: 'Belém', lat: -1.4558, lng: -48.5039 },
+            { name: 'Ilha do Marajó', lat: -0.7167, lng: -48.5167 },
+            { name: 'Lençóis Maranhenses', lat: -2.5, lng: -43.0 },
+            { name: 'Jericoacoara', lat: -2.7975, lng: -40.5137 },
+            { name: 'Fortaleza', lat: -3.7172, lng: -38.5433 },
+          ],
           notes: 'De overgang van de Amazone-riviermonding (Belém, Marajó — buffels, ongerept rivierdelta-eiland) naar de compleet andere zandduinenkust (Lençóis Maranhenses, Jericoacoara) als adembenemende afsluiter. De afstanden langs de kust worden vaak onderschat. Prijs geverifieerd (2026-07), klopt — de generieke Rio/São Paulo-veiligheidswaarschuwingen zijn niet relevant voor dit noordoostelijke traject.',
           transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Fortaleza (of via São Paulo) naar Nederland',
         },
@@ -4025,7 +4165,8 @@ function rbBuildSurinameNorthernBrazilRoute() {
     best_starting_month: 'Februari',
     description: 'Nederlandse koloniale geschiedenis en Marroncultuur in Suriname, gevolgd door de Amazone-riviermonding en de duinenkust van Noord-Brazilië.',
     climate_summary: "Suriname's korte droge tijd (februari-maart) is ideaal voor jungle-/rivierentochten; Noord-Brazilië's duinenkust is dan net buiten zijn piekseizoen (juni-januari) — het enige compromis van dit blok.",
-    notes: "Losgesplitst van Caribbean & Amazon Expedition 🌴 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen en budgetten zijn ongewijzigd overgenomen. Dit blok is bewust losgetrokken ondanks dat de oorspronkelijke route-notities het tegenovergestelde beargumenteerden (\"geen van de tien onderdelen is geschrapt\", Suriname/Brazilië \"complementair\") — de vlucht Grenada-Suriname is in diezelfde notities al aangemerkt als \"waarschijnlijk de lastigste/duurste losse verbinding\", en de reisstijl verschuift hier volledig (eilandhoppen → rivier/regenwoud op het continent). Extra relevant voor een Nederlandse reiziger gezien Suriname's koloniale band. Vervolg op Caraïbische Eilanden-hop 🏝️. Caribbean & Amazon Expedition 🌴 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.",
+    notes: "Losgesplitst van Caribbean & Amazon Expedition 🌴 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen en budgetten zijn ongewijzigd overgenomen. Dit blok is bewust losgetrokken ondanks dat de oorspronkelijke route-notities het tegenovergestelde beargumenteerden (\"geen van de tien onderdelen is geschrapt\", Suriname/Brazilië \"complementair\") — de vlucht Grenada-Suriname is in diezelfde notities al aangemerkt als \"waarschijnlijk de lastigste/duurste losse verbinding\", en de reisstijl verschuift hier volledig (eilandhoppen → rivier/regenwoud op het continent). Extra relevant voor een Nederlandse reiziger gezien Suriname's koloniale band. Vervolg op Caraïbische Eilanden-hop 🏝️. Caribbean & Amazon Expedition 🌴 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\n" +
+      "Routelogica-herziening (2026-08): geen geografische fouten in Suriname/Brazilië zelf — coördinaten per bestemming toegevoegd voor de 'Gedetailleerd'-kaartweergave. Zie Caribbean & Amazon Expedition 🌴's eigen notities voor de fixes in Cuba/Jamaica (niet in dit blok).",
   });
 }
 
@@ -5263,6 +5404,213 @@ function rbMigrateHimalayaRouteLogicOverhaul() {
       : name === 'Nepal 🏔️'
       ? "Routelogica-herziening (2026-08): coördinaten per bestemming toegevoegd; TIMS wordt in de praktijk niet meer gecontroleerd op Annapurna-paden en TAAN heeft de minimum-2-trekkers-eis geschrapt (22 maart 2026) — zie India & Himalaya Expedition 🏔️'s eigen Nepal-notities voor details."
       : "Routelogica-herziening (2026-08): coördinaten per bestemming toegevoegd; Bumthang-uitstap nu per vlucht Paro-Bumthang i.p.v. de lange terugrit over de weg (Youri's voorkeur); nieuwe 5% GST op toeristische diensten sinds 1 januari 2026 genoteerd — zie India & Himalaya Expedition 🏔️'s eigen Bhutan-notities voor details.";
+
+    if (route.notes && !route.notes.includes('Routelogica-herziening (2026-08)')) {
+      route.notes += '\n\n' + note;
+      touched = true;
+    }
+
+    if (touched) rbSave();
+  });
+}
+
+/**
+ * Route-logic review, fourth expedition in the ROUTE_LOGIC_REVIEW.md playbook (2026-08). Four real
+ * geographic/practical fixes found via search (Finland-Zweden's Rovaniemi-omweg was verzwegen,
+ * Noordkaap-Tromsø moet per vlucht i.p.v. 540km terugrijden, IJslands Ring Road had een Snæfellsnes-
+ * zigzag, Groenlands instap/uitstap liep via het verkeerde eiland), plus twee wensen van Youri:
+ * Denemarken (Kopenhagen) toegevoegd tussen Svalbard en de Faeröer, en Svalbard ingekort van een
+ * meerdaagse bootexpeditie naar alleen Longyearbyen zelf. Applies to the main expedition and all five
+ * split companions (Scandinavië Overland 🚂, Svalbard 🐻‍❄️, Faeröer 🐑, IJsland ❄️, Groenland 🧊)
+ * since they share the same RB_EXPEDITION_CONTENT entries via rbContentFor().
+ */
+function rbMigrateNordicArcticRouteLogicOverhaul() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_NORDIC_ARCTIC_OVERHAUL)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_NORDIC_ARCTIC_OVERHAUL, '1');
+
+  const content = RB_EXPEDITION_CONTENT['Nordic Arctic Expedition ❄️'];
+  if (!content) return;
+
+  const codesByRoute = {
+    'Nordic Arctic Expedition ❄️': ['FI', 'SE', 'NO', 'SJ', 'FO', 'IS', 'GL'],
+    'Scandinavië Overland 🚂': ['FI', 'SE', 'NO'],
+    'Svalbard 🐻‍❄️': ['SJ'],
+    'Faeröer 🐑': ['FO'],
+    'IJsland ❄️': ['IS'],
+    'Groenland 🧊': ['GL'],
+  };
+
+  Object.entries(codesByRoute).forEach(([routeName, codes]) => {
+    const route = rbRoutes.find(r => r.name === routeName);
+    if (!route) return;
+
+    let touched = false;
+    codes.forEach(code => {
+      const block = route.blocks.find(b => b.country_code === code);
+      const c = content[code];
+      if (!block || !c) return;
+      if (block.transport_to_next !== c.transport_to_next) { block.transport_to_next = c.transport_to_next; touched = true; }
+      if (block.days !== c.days) { block.days = c.days; touched = true; }
+      if (block.budget !== c.budget) { block.budget = c.budget; touched = true; }
+      if (block.lat !== c.lat) { block.lat = c.lat; touched = true; }
+      if (block.lng !== c.lng) { block.lng = c.lng; touched = true; }
+      if (c.notes && block.notes !== c.notes) { block.notes = c.notes; touched = true; }
+      const normalizeDest = d => (typeof d === 'string' ? { name: d, lat: null, lng: null } : { name: d.name, lat: d.lat ?? null, lng: d.lng ?? null });
+      const newDests = (c.destinations || []).map(normalizeDest);
+      const oldDests = (block.destinations || []).map(normalizeDest);
+      if (JSON.stringify(newDests) !== JSON.stringify(oldDests)) {
+        block.destinations = newDests.map(d => ({ id: rbNewDestId(), name: d.name, notes: '', lat: d.lat, lng: d.lng }));
+        touched = true;
+      }
+    });
+
+    // Insert Denmark right after Svalbard — only the main expedition carries the full 8-country set.
+    if (routeName === 'Nordic Arctic Expedition ❄️') {
+      const sjIndex = route.blocks.findIndex(b => b.country_code === 'SJ');
+      const hasDenmark = route.blocks.some(b => b.country_code === 'DK');
+      if (sjIndex !== -1 && !hasDenmark) {
+        const dk = content['DK'];
+        const dkBlock = rbBuildBlock('DK', 'Denmark', {
+          region_id: route.blocks[sjIndex].region_id,
+          days: dk.days, budget: dk.budget, lat: dk.lat, lng: dk.lng,
+          destinations: dk.destinations, transport_to_next: dk.transport_to_next, notes: dk.notes,
+        });
+        route.blocks.splice(sjIndex + 1, 0, dkBlock);
+        touched = true;
+      }
+
+      const region = (route.regions || []).find(r => r.name === 'North Atlantic Islands');
+      if (region && region.budget !== 9550) { region.budget = 9550; touched = true; }
+    }
+
+    if (routeName === 'Svalbard 🐻‍❄️') {
+      const region = (route.regions || [])[0];
+      if (region && region.budget !== 900) { region.budget = 900; touched = true; }
+    }
+
+    const note = routeName === 'Nordic Arctic Expedition ❄️'
+      ? "Routelogica-herziening (2026-08): drie geografische fixes (search-bevestigd) — Finland-Zweden's transport_to_next benoemt nu expliciet de terugkeer naar Rovaniemi en de omweg via de kust (was verzwegen); Noorwegens etappe eindigt op Noordkaap, teruggevlogen naar Tromsø (Honningsvåg-Tromsø, Widerøe) i.p.v. 540km terugrijden voor de Svalbard-vlucht; IJslands Ring Road-volgorde rechtgezet (Snæfellsnes stond als een zigzag tussen Jökulsárlón en Akureyri, nu als laatste stop vóór Reykjavik); Groenlands instap/uitstap gecorrigeerd (instap Nuuk, jaarrond direct vanuit Reykjavik; uitstap Ilulissat, seizoensgebonden direct terug, geen omweg via Nuuk meer). Daarnaast twee wensen van Youri: Denemarken (Kopenhagen, 3 dagen/€450) toegevoegd tussen Svalbard en de Faeröer — nog niet bezocht, wel al Oslo en Stockholm; Svalbard ingekort van een meerdaagse gegidste bootexpeditie (8 dagen/€3.725) naar alleen Longyearbyen zelf met 1-2 dagtours (4 dagen/€900). Alle bestemmingen kregen coördinaten voor de 'Gedetailleerd'-kaartweergave. Nieuw totaal: 8 landen (was 7), 67 dagen (was 68), €13.950 (was €16.325)."
+      : routeName === 'Scandinavië Overland 🚂'
+      ? "Routelogica-herziening (2026-08): Finland-Zweden's transport_to_next benoemt nu expliciet de terugkeer naar Rovaniemi en de omweg via de kust (was verzwegen); Noorwegens vlucht Honningsvåg-Tromsø toegevoegd i.p.v. terugrijden na Noordkaap. Coördinaten per bestemming toegevoegd. Zie Nordic Arctic Expedition ❄️'s eigen notities voor de volledige uitleg. Landen/dagen/budget-totaal ongewijzigd."
+      : routeName === 'Svalbard 🐻‍❄️'
+      ? "Ingekort (2026-08, op Youri's verzoek): van 8 dagen/€3.725 (meerdaagse gegidste bootexpeditie) naar 4 dagen/€900 — alleen Longyearbyen zelf met 1-2 dagtours. Coördinaten per bestemming toegevoegd."
+      : routeName === 'IJsland ❄️'
+      ? "Routelogica-herziening (2026-08): Ring Road-volgorde rechtgezet — Snæfellsnes stond als een zigzag tussen Jökulsárlón en Akureyri, nu als laatste stop vóór de terugkeer naar Reykjavik, zoals elke standaard Ring Road-planning het doet. Coördinaten per bestemming toegevoegd."
+      : routeName === 'Groenland 🧊'
+      ? "Routelogica-herziening (2026-08): instap/uitstap gecorrigeerd — instap Nuuk (jaarrond direct vanuit Reykjavik), uitstap Ilulissat (seizoensgebonden direct terug, geen omweg via Nuuk meer); Nuuk-Ilulissat onderling blijft een binnenlandse Air Greenland-vlucht. Coördinaten per bestemming toegevoegd."
+      : "Coördinaten per bestemming toegevoegd (2026-08).";
+
+    const marker = routeName === 'Svalbard 🐻‍❄️' ? "Ingekort (2026-08" : "(2026-08)";
+    if (route.notes && !route.notes.includes(marker)) {
+      route.notes += '\n\n' + note;
+      touched = true;
+    }
+
+    if (touched) rbSave();
+  });
+}
+
+/**
+ * Route-logic review, fifth expedition in the ROUTE_LOGIC_REVIEW.md playbook (2026-08). Two small
+ * geographic fixes (Cuba's Viñales-backtrack, Jamaica's Blue Mountains detour) plus per-destination
+ * coordinates added throughout. This route has no shared RB_EXPEDITION_CONTENT entry (see
+ * rbBuildCaribbeanAmazonExpeditionRoute()'s own comment), so the corrected field values are inlined
+ * here directly instead of looked up from a content table. Applies to the main expedition and both
+ * 2026-07 split companions (Caraïbische Eilanden-hop 🏝️, Suriname & Noord-Brazilië 🌴).
+ */
+function rbMigrateCaribbeanAmazonRouteLogicOverhaul() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_CARIBBEAN_OVERHAUL)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_CARIBBEAN_OVERHAUL, '1');
+
+  const fixes = {
+    CU: {
+      destinations: [
+        { name: 'Havana (Habana Vieja)', lat: 23.1136, lng: -82.3666 },
+        { name: 'Viñales-vallei', lat: 22.6167, lng: -83.7097 },
+        { name: 'Cienfuegos', lat: 22.1496, lng: -80.4394 },
+        { name: 'Trinidad', lat: 21.8047, lng: -79.9825 },
+      ],
+      notes: "Havana en het UNESCO-koloniale Trinidad zijn de hoogtepunten; de rustige Viñales-vallei (tabak, karstlandschap) is de verborgen parel. Casas particulares (particuliere kamers) zijn de gangbare backpacker-accommodatie. Prijs geverifieerd (2026-07), klopt. ⚠️ Reisadvies oranje (bevestigd geldig, laatst bijgewerkt 23 juni 2026): grote tekorten aan stroom/brandstof/voedsel/medicijnen, toenemende veiligheidsrisico's — de zesde landelijke stroomstoring van 2026 viel op 2 augustus. Kaarten werken niet bij pinautomaten (contant meenemen). Sinds 1 juli 2025 is de papieren tourist card vervangen door een e-Visa (~$50), gekoppeld aan het verplichte gratis D'Viajeros-formulier (invullen binnen 72u vóór aankomst). Routelogica (2026-08, search-bevestigd): volgorde omgedraaid — Viñales stond eerder als laatste stop (een dubbele omweg: eerst voorbij Cienfuegos naar Trinidad, dan terug naar Cienfuegos, dan een 4,5u oversteek naar Viñales vlak bij Havana); nu als retourtje vanuit Havana meteen aan het begin, gevolgd door Cienfuegos-Trinidad zonder kruisende routes.",
+      transport_to_next: 'Terug naar Havana (~4u15 rijden vanaf Trinidad — de enige realistische internationale gateway, Santiago de Cuba zou de omweg verergeren), dan vlucht Havana-Kingston (meestal met overstap via Panama City of Miami)',
+    },
+    JM: {
+      destinations: [
+        { name: 'Kingston', lat: 17.9714, lng: -76.7936 },
+        { name: "Dunn's River Falls (Ocho Rios)", lat: 18.4108, lng: -77.1296 },
+        { name: 'Port Antonio', lat: 18.1811, lng: -76.4513 },
+        { name: 'Blue Mountains (Hardwar Gap)', lat: 18.0747, lng: -76.6597 },
+      ],
+      notes: 'Blue Mountains (koffie, wandelen) en Port Antonio (rafting, watervallen, nauwelijks toeristen vergeleken met Negril/Ocho Rios) zijn de sterkste match met natuur boven luxe. Prijscorrectie (2026-07): €75→€90/dag, Jamaica is duurder dan aangenomen (guesthouses + entreegelden). Routelogica (2026-08, search-bevestigd): volgorde omgedraaid — Blue Mountains stond als losse heen-en-terugtrip vlak na Kingston (de kustweg naar Ocho Rios loopt daar niet doorheen); nu als bergroute-terugweg (Hardwar Gap, koffieplantages/Newcastle) vanaf Port Antonio naar Kingston, in plaats van een aparte uitstap aan het begin.',
+      transport_to_next: 'Kort eindstuk Blue Mountains-Kingston (Hardwar Gap-bergroute), dan vlucht Kingston-Curaçao (meestal met overstap via Panama City of Miami)',
+    },
+    CW: { destinations: [
+      { name: 'Willemstad (UNESCO)', lat: 12.1091, lng: -68.9316 },
+      { name: 'Shete Boka National Park', lat: 12.3667, lng: -69.15 },
+      { name: 'stranden (Grote Knip)', lat: 12.2167, lng: -69.15 },
+    ] },
+    BQ: { destinations: [
+      { name: 'Washington Slagbaai National Park', lat: 12.3167, lng: -68.4167 },
+      { name: 'duiken/snorkelen (marine park)', lat: 12.15, lng: -68.2833 },
+    ] },
+    GP: { destinations: [
+      { name: 'La Soufrière (vulkaan)', lat: 16.0456, lng: -61.6654 },
+      { name: 'Carbet-watervallen', lat: 16.0472, lng: -61.6167 },
+      { name: 'Îles des Saintes', lat: 15.8667, lng: -61.5833 },
+    ] },
+    DM: { destinations: [
+      { name: 'Boiling Lake-trektocht', lat: 15.3167, lng: -61.2667 },
+      { name: 'Trafalgar Falls', lat: 15.3181, lng: -61.3331 },
+      { name: 'Champagne Reef', lat: 15.2833, lng: -61.3833 },
+    ] },
+    LC: { destinations: [
+      { name: 'The Pitons', lat: 13.8167, lng: -61.0667 },
+      { name: 'Sulphur Springs (drive-in vulkaan)', lat: 13.8347, lng: -61.0552 },
+      { name: 'Tet Paul Nature Trail', lat: 13.8333, lng: -61.05 },
+    ] },
+    GD: { destinations: [
+      { name: 'Onderwaterbeeldenpark', lat: 12.0742, lng: -61.7325 },
+      { name: 'kruidenplantages (nootmuskaat)', lat: 12.1667, lng: -61.7333 },
+      { name: 'Grand Etang National Park', lat: 12.0833, lng: -61.6833 },
+    ] },
+    SR: { destinations: [
+      { name: 'Paramaribo (UNESCO)', lat: 5.852, lng: -55.2038 },
+      { name: 'Marrondorpen aan de rivier', lat: 4.4, lng: -55.0 },
+      { name: 'Brownsberg Nature Park', lat: 4.95, lng: -55.1667 },
+    ] },
+    BR: { destinations: [
+      { name: 'Belém', lat: -1.4558, lng: -48.5039 },
+      { name: 'Ilha do Marajó', lat: -0.7167, lng: -48.5167 },
+      { name: 'Lençóis Maranhenses', lat: -2.5, lng: -43.0 },
+      { name: 'Jericoacoara', lat: -2.7975, lng: -40.5137 },
+      { name: 'Fortaleza', lat: -3.7172, lng: -38.5433 },
+    ] },
+  };
+
+  const routeNames = ['Caribbean & Amazon Expedition 🌴', 'Caraïbische Eilanden-hop 🏝️', 'Suriname & Noord-Brazilië 🌴'];
+  routeNames.forEach(routeName => {
+    const route = rbRoutes.find(r => r.name === routeName);
+    if (!route) return;
+
+    let touched = false;
+    Object.entries(fixes).forEach(([code, fix]) => {
+      const block = route.blocks.find(b => b.country_code === code);
+      if (!block) return;
+      if (fix.transport_to_next && block.transport_to_next !== fix.transport_to_next) { block.transport_to_next = fix.transport_to_next; touched = true; }
+      if (fix.notes && block.notes !== fix.notes) { block.notes = fix.notes; touched = true; }
+      const normalizeDest = d => (typeof d === 'string' ? { name: d, lat: null, lng: null } : { name: d.name, lat: d.lat ?? null, lng: d.lng ?? null });
+      const newDests = (fix.destinations || []).map(normalizeDest);
+      const oldDests = (block.destinations || []).map(normalizeDest);
+      if (JSON.stringify(newDests) !== JSON.stringify(oldDests)) {
+        block.destinations = newDests.map(d => ({ id: rbNewDestId(), name: d.name, notes: '', lat: d.lat, lng: d.lng }));
+        touched = true;
+      }
+    });
+
+    const note = routeName === 'Caribbean & Amazon Expedition 🌴'
+      ? "Routelogica-herziening (2026-08): twee kleine geografische fixes (search-bevestigd) — Cuba's volgorde omgedraaid (Havana-Viñales-Cienfuegos-Trinidad i.p.v. Havana-Trinidad-Cienfuegos-Viñales, geen dubbele omweg meer) en Jamaica's volgorde omgedraaid (Kingston-Ocho Rios-Port Antonio-Blue Mountains i.p.v. Blue Mountains als losse uitstap na Kingston). Cuba's reisadvies/tourist card-tekst bijgewerkt (e-Visa vervangt tourist card sinds juli 2025). Youri had nog geen van de 10 landen bezocht, geen cuts nodig. Coördinaten per bestemming toegevoegd. Landen/dagen/budget-totaal ongewijzigd: 97 dagen, €7.450."
+      : routeName === 'Caraïbische Eilanden-hop 🏝️'
+      ? "Routelogica-herziening (2026-08): zelfde ronde als Caribbean & Amazon Expedition 🌴 zelf — Cuba's en Jamaica's volgorde omgedraaid, coördinaten per bestemming toegevoegd. Zie Caribbean & Amazon Expedition 🌴's eigen notities voor de volledige uitleg. Landen/dagen/budget-totaal ongewijzigd."
+      : "Routelogica-herziening (2026-08): geen geografische fouten in Suriname/Brazilië zelf — coördinaten per bestemming toegevoegd. Zie Caribbean & Amazon Expedition 🌴's eigen notities voor de fixes in Cuba/Jamaica (niet in dit blok).";
 
     if (route.notes && !route.notes.includes('Routelogica-herziening (2026-08)')) {
       route.notes += '\n\n' + note;
