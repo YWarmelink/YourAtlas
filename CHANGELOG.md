@@ -12,6 +12,27 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Central European Grand Roadtrip 🚗 routelogica-herziening (2026-08)** — zesde expeditie uit de
+  `ROUTE_LOGIC_REVIEW.md`-playbook, en de eerste zelf-rijdende lus. Geen landvolgorde-fouten
+  gevonden — de lus (Elzas→Alpenlanden→Dolomieten/Noord-Italië→Balkan→Midden-Europa→NL) is één
+  doorlopende rit zonder onnodige kruisingen. Wel vijf kleinere fixes (search-bevestigd, echte
+  rijafstanden opgezocht i.p.v. hemelsbreed geschat): (1) drie `transport_to_next`-afstanden waren te
+  laag ingeschat — Straatsburg-Garmisch ≈300→415 km, Vaduz-Innsbruck ≈120→150 km, Turijn-Cinque Terre
+  ≈185→260 km; (2) Hoge Tatra-Brno bijgesteld van ≈300 naar ≈335 km; (3) de rit van Boheems Paradijs
+  (Turnov, bij Praag) naar Wrocław loopt nu rechtstreeks door in plaats van eerst terug naar Praag —
+  scheelt ≈80 km, Turnov ligt al op de route; (4) **Servië's Tara National Park** stond als laatste
+  stop vóór Boedapest, maar Tara-Boedapest is in werkelijkheid ≈520 km (niet de genoteerde ≈320 km) —
+  zo'n 6-7 uur extra rijden vanuit een uithoek van het land. Opgelost door Tara NP als dagtrip/
+  retourtje vanuit Belgrado te doen, waarna de reis via Novi Sad gewoon naar Boedapest vervolgt; (5)
+  **Kroatië's landmijn-waarschuwing** bij Plitvice verwijderd — het land is sinds maart 2026 officieel
+  landmijnvrij verklaard. Persoonlijke-voorkeur-check: Youri had al veel van deze route eerder gezien
+  maar wilde voor déze trip niets inkorten ("moet langs de mooiste stukken gaan") — geen cuts. Alle 14
+  etappes kregen per-bestemming coördinaten voor de "Gedetailleerd"-kaartweergave. Landen/dagen/
+  grondkosten-totaal ongewijzigd: 45/70 dagen, €8.030 p.p. Toegepast via
+  `rbMigrateCentralEuropeRouteLogicOverhaul()` — deze route is hand-authored (Italië komt 6x voor,
+  Duitsland en Tsjechië elk 2x), dus geblokken zijn gematcht op land-code + eerste bestemmingsnaam
+  i.p.v. alleen land-code. Geen split-companions om ook bij te werken (auto-roadtrips blijven
+  ongesplitst, zie `ROUTE_BUILDER_MODULES.md`).
 - **Caribbean & Amazon Expedition 🌴 routelogica-herziening (2026-08)** — vijfde expeditie uit de
   `ROUTE_LOGIC_REVIEW.md`-playbook. Twee kleine, losse geografische fixes (search-bevestigd),
   vergelijkbaar met Nordic Arctic's meerdere-kleine-fixes-patroon: **Cuba** — Viñales-vallei stond

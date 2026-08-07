@@ -53,6 +53,7 @@ const RB_MIGRATE_FLAG_2026_08_PATAGONIA_OVERHAUL = 'atlas_grand_trips_migrate_20
 const RB_MIGRATE_FLAG_2026_08_HIMALAYA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_himalaya_overhaul_v1';
 const RB_MIGRATE_FLAG_2026_08_NORDIC_ARCTIC_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_nordic_arctic_overhaul_v1';
 const RB_MIGRATE_FLAG_2026_08_CARIBBEAN_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_caribbean_overhaul_v1';
+const RB_MIGRATE_FLAG_2026_08_CENTRAL_EUROPE_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_central_europe_overhaul_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -112,6 +113,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateHimalayaRouteLogicOverhaul();
   rbMigrateNordicArcticRouteLogicOverhaul();
   rbMigrateCaribbeanAmazonRouteLogicOverhaul();
+  rbMigrateCentralEuropeRouteLogicOverhaul();
   rbBindEvents();
 
   try {
@@ -2615,32 +2617,51 @@ function rbBuildCentralEuropeRoadtripRoute() {
       countries: [
         {
           code: 'FR', name: 'France', days: 2, budget: 240, lat: 48.5734, lng: 7.7521,
-          destinations: ['Straatsburg', 'Colmar', 'Elzasser dorpen'],
+          destinations: [
+            { name: 'Straatsburg', lat: 48.5734, lng: 7.7521 },
+            { name: 'Colmar', lat: 48.0794, lng: 7.3585 },
+            { name: 'Elzasser dorpen', lat: 48.0453, lng: 7.3079 },
+          ],
           notes: 'Compacte, korte culturele opener — meer tijd voegt weinig toe gezien de rest van de reis nog moet komen. Reisadvies (2026-07): Frankrijk zit sinds maart 2024 op het hoogste dreigingsniveau (3) voor terrorisme — een landelijke basisstatus, niet Elzas-specifiek, gewoon te bezoeken met normale oplettendheid.',
-          transport_to_next: 'Auto, ≈300 km naar Neuschwanstein/Garmisch — geen tol of vignet nodig op dit traject.',
+          transport_to_next: 'Auto, ≈415 km naar Neuschwanstein/Garmisch via Karlsruhe-Stuttgart-Ulm-München (routelogica-check 2026-08: was als ≈300 km genoteerd, klopte niet) — geen tol of vignet nodig op dit traject.',
         },
         {
           code: 'DE', name: 'Germany', days: 4, budget: 480, lat: 47.5576, lng: 10.7498,
-          destinations: ['Neuschwanstein', 'Garmisch-Partenkirchen', 'Zugspitze'],
+          destinations: [
+            { name: 'Neuschwanstein', lat: 47.5576, lng: 10.7498 },
+            { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0958 },
+            { name: 'Zugspitze', lat: 47.4211, lng: 10.9853 },
+          ],
           notes: 'Neuschwanstein verdient een halve dag zelf al (wachtrijen, kasteel + omgeving); de Zugspitze-kabelbaan is weersafhankelijk, dus een buffer helpt.',
-          transport_to_next: 'Auto, ≈250 km naar Luzern/Interlaken — Zwitsers jaarvignet verplicht, koop het bij de grens.',
+          transport_to_next: 'Auto, ≈250 km naar Luzern, verder door naar Interlaken/Lauterbrunnen (in totaal ≈400 km vanaf Garmisch — routelogica-check 2026-08: de oorspronkelijke ≈250 km klopte alleen voor Luzern zelf, niet voor de hele stopgroep) — Zwitsers jaarvignet verplicht, koop het bij de grens.',
         },
         {
           code: 'CH', name: 'Switzerland', days: 5, budget: 1000, lat: 46.6863, lng: 7.8632,
-          destinations: ['Luzern/Vierwoudstrekenmeer', 'Interlaken', 'Lauterbrunnen', 'Berner Oberland'],
+          destinations: [
+            { name: 'Luzern/Vierwoudstrekenmeer', lat: 47.0502, lng: 8.3093 },
+            { name: 'Interlaken', lat: 46.6863, lng: 7.8632 },
+            { name: 'Lauterbrunnen', lat: 46.5927, lng: 7.9098 },
+            { name: 'Berner Oberland', lat: 46.6244, lng: 8.0413 },
+          ],
           notes: 'Het Jungfrau-gebied (Lauterbrunnen/Berner Oberland) alleen al verdient meerdere wandeldagen — hoge kosten zijn een reden om het compact te houden, niet om het te haasten. Prijscheck (2026-07): Zwitserland is een van de duurste landen van Europa — het oorspronkelijke vlakke €120/dag klopte hier niet, gecorrigeerd naar €200/dag.',
           transport_to_next: 'Auto, ≈150 km naar Vaduz — geen grenscontrole (Schengen), geen aparte tol.',
         },
         {
           code: 'LI', name: 'Liechtenstein', days: 1, budget: 165, lat: 47.1410, lng: 9.5209,
-          destinations: ['Vaduz'],
+          destinations: [{ name: 'Vaduz', lat: 47.1410, lng: 9.5209 }],
           notes: 'Klein land, één goede wandeling/stadswandeling volstaat ruimschoots. Prijscheck (2026-07): prijsniveau volgt Zwitserland, gecorrigeerd van €120 naar €165/dag.',
-          transport_to_next: 'Auto, ≈120 km naar Innsbruck — Oostenrijks 10-dagenvignet nodig voor de snelwegen (€12,80, veel logischer voor een roadtrip dan het jaarvignet van €106,80).',
+          transport_to_next: 'Auto, ≈150 km naar Innsbruck via Feldkirch/Fernpass (routelogica-check 2026-08: was als ≈120 km genoteerd, klopte niet) — Oostenrijks 10-dagenvignet nodig voor de snelwegen (€12,80, veel logischer voor een roadtrip dan het jaarvignet van €106,80).',
         },
         {
           code: 'AT', name: 'Austria', days: 6, budget: 720, lat: 47.2692, lng: 11.4041,
-          destinations: ['Innsbruck/Tirol', 'Salzburg', 'Berchtesgaden/Königssee', 'Salzkammergut', 'Grossglockner Hochalpenstrasse'],
-          notes: 'Vier duidelijk verschillende deelgebieden (Tirol, Salzburg-cluster, merengebied, hooggebergte-rit) — elk verdient minstens één volle dag. Berchtesgaden ligt formeel in Duitsland maar hoort qua route bij Salzburg (20 minuten rijden) — behandel ze als één gecombineerde stop.',
+          destinations: [
+            { name: 'Innsbruck/Tirol', lat: 47.2692, lng: 11.4041 },
+            { name: 'Salzburg', lat: 47.8095, lng: 13.0550 },
+            { name: 'Berchtesgaden/Königssee', lat: 47.5892, lng: 13.0632 },
+            { name: 'Salzkammergut', lat: 47.5622, lng: 13.6493 },
+            { name: 'Grossglockner Hochalpenstrasse', lat: 47.0742, lng: 12.8306 },
+          ],
+          notes: 'Vier duidelijk verschillende deelgebieden (Tirol, Salzburg-cluster, merengebied, hooggebergte-rit) — elk verdient minstens één volle dag. Berchtesgaden ligt formeel in Duitsland maar hoort qua route bij Salzburg (20 minuten rijden, routelogica-check 2026-08 bevestigd) — behandel ze als één gecombineerde stop.',
           transport_to_next: 'Auto, Grossglockner Hochalpenstrasse (aparte tolweg, ≈€38 per auto) tot Lienz, dan ≈90 km naar Cortina d\'Ampezzo — een van de mooiste rijverbindingen van de hele route.',
         },
       ],
@@ -2653,43 +2674,72 @@ function rbBuildCentralEuropeRoadtripRoute() {
       countries: [
         {
           code: 'IT', name: 'Italy', days: 6, budget: 720, lat: 46.5369, lng: 12.1357,
-          destinations: ['Tre Cime', 'Lago di Braies', 'Seceda', 'Val Gardena'],
+          destinations: [
+            { name: 'Tre Cime', lat: 46.6198, lng: 12.3032 },
+            { name: 'Lago di Braies', lat: 46.6958, lng: 12.0858 },
+            { name: 'Seceda', lat: 46.5765, lng: 11.7099 },
+            { name: 'Val Gardena', lat: 46.5645, lng: 11.6750 },
+          ],
           notes: 'Een van de grootste hoogtepunten van de hele reis — de bekende wandelingen (Tre Cime-rondje, Seceda) zijn elk een dag op zich.',
-          transport_to_next: 'Auto, ≈380 km naar Milaan — de langste enkele rit van de hele lus, vroeg vertrekken of splitsen met een tussenstop bij Verona/Brescia. Italiaanse autostrada rekent tol per kilometer.',
+          transport_to_next: 'Auto, ≈410 km naar Milaan — samen met de Elzas-Beieren-rit aan het begin een van de langste ritten van de hele lus (routelogica-check 2026-08: geen unieke "langste rit" meer zodra de Elzas-Beieren-afstand gecorrigeerd is, zie dat land zijn eigen notitie) — vroeg vertrekken of splitsen met een tussenstop bij Verona/Brescia. Italiaanse autostrada rekent tol per kilometer.',
         },
         {
           code: 'IT', name: 'Italy', days: 2, budget: 240, lat: 45.4642, lng: 9.1900,
-          destinations: ['Duomo', 'Galleria', 'Navigli', 'Laatste Avondmaal'],
+          destinations: [
+            { name: 'Duomo', lat: 45.4642, lng: 9.1900 },
+            { name: 'Galleria', lat: 45.4656, lng: 9.1896 },
+            { name: 'Navigli', lat: 45.4514, lng: 9.1739 },
+            { name: 'Laatste Avondmaal', lat: 45.4661, lng: 9.1706 },
+          ],
           notes: 'Eén volle dag voor de binnenstad, een tweede als je het Laatste Avondmaal (reservering vereist) wilt meepakken.',
           transport_to_next: 'Auto, ≈140 km naar Turijn via de A4/A55, tolweg.',
         },
         {
           code: 'IT', name: 'Italy', days: 2, budget: 190, lat: 45.0703, lng: 7.6869,
-          destinations: ['Egyptisch Museum', 'Mole Antonelliana', 'historisch centrum'],
+          destinations: [
+            { name: 'Egyptisch Museum', lat: 45.0703, lng: 7.6869 },
+            { name: 'Mole Antonelliana', lat: 45.0691, lng: 7.6934 },
+            { name: 'historisch centrum', lat: 45.0703, lng: 7.6869 },
+          ],
           notes: 'Compacte, onderschatte stad — het Egyptisch Museum (op één na grootste ter wereld) verdient zelf al een halve dag. Prijscheck (2026-07): Turijn is goedkoper dan het vlakke €120/dag-tarief, gecorrigeerd naar €95/dag.',
-          transport_to_next: 'Auto tot een bewaakte parkeerplaats bij Monterosso/La Spezia (≈185 km) — de dorpjes zelf zijn grotendeels autovrij.',
+          transport_to_next: 'Auto tot een bewaakte parkeerplaats bij Monterosso/La Spezia (≈260 km via Alessandria/Genua — routelogica-check 2026-08: was als ≈185 km genoteerd, klopte niet) — de dorpjes zelf zijn grotendeels autovrij.',
         },
         {
           code: 'IT', name: 'Italy', days: 3, budget: 435, lat: 44.1461, lng: 9.6558,
-          destinations: ['Monterosso', 'Vernazza', 'Corniglia', 'Manarola', 'Riomaggiore'],
+          destinations: [
+            { name: 'Monterosso', lat: 44.1461, lng: 9.6558 },
+            { name: 'Vernazza', lat: 44.1355, lng: 9.6857 },
+            { name: 'Corniglia', lat: 44.1197, lng: 9.7042 },
+            { name: 'Manarola', lat: 44.1067, lng: 9.7275 },
+            { name: 'Riomaggiore', lat: 44.0993, lng: 9.7378 },
+          ],
           notes: 'De vijf dorpjes en de wandelpaden ertussen (Sentiero Azzurro) zijn het hele punt — drie dagen voor rustig wandelen plus een boottochtje. Prijscheck (2026-07): schaarse/dure accommodatie en toeristenopslag op eten duwen dit boven het vlakke €120/dag-tarief, gecorrigeerd naar €145/dag.',
           transport_to_next: 'Auto, ≈140 km naar Florence via La Spezia-Lucca-Firenze.',
         },
         {
           code: 'IT', name: 'Italy', days: 3, budget: 360, lat: 43.7696, lng: 11.2558,
-          destinations: ['Florence', 'Siena', 'San Gimignano', 'Chianti'],
+          destinations: [
+            { name: 'Florence', lat: 43.7696, lng: 11.2558 },
+            { name: 'Siena', lat: 43.3188, lng: 11.3308 },
+            { name: 'San Gimignano', lat: 43.4674, lng: 11.0431 },
+            { name: 'Chianti', lat: 43.4708, lng: 11.3350 },
+          ],
           notes: 'Compact gehouden ("een stukje Toscane") — Florence plus één dag Chianti/Siena/San Gimignano.',
           transport_to_next: 'Auto, ≈180 km naar San Marino — Florence en San Marino liggen dicht bij elkaar.',
         },
         {
           code: 'SM', name: 'San Marino', days: 1, budget: 120, lat: 43.9424, lng: 12.4578,
-          destinations: ['Historisch centrum'],
+          destinations: [{ name: 'Historisch centrum', lat: 43.9424, lng: 12.4578 }],
           notes: 'Klein genoeg voor één dag, dicht bij Florence — een bewuste stop, geen omweg meer om over te twijfelen.',
           transport_to_next: 'Auto, ≈300 km naar Venetië, met een overnachting daar — de stad zelf is autovrij, park bij Tronchetto of Mestre.',
         },
         {
           code: 'IT', name: 'Italy', days: 2, budget: 320, lat: 45.4408, lng: 12.3155,
-          destinations: ['Piazza San Marco', 'Dorsoduro', 'Murano/Burano'],
+          destinations: [
+            { name: 'Piazza San Marco', lat: 45.4408, lng: 12.3155 },
+            { name: 'Dorsoduro', lat: 45.4302, lng: 12.3245 },
+            { name: 'Murano/Burano', lat: 45.4585, lng: 12.3538 },
+          ],
           notes: 'Ligt vrijwel exact op de weg terug van San Marino naar Slovenië — nauwelijks extra kilometers, dus een efficiënte toevoeging. Prijscheck (2026-07): centraal Venetië is een bekende prijs-uitschieter (accommodatie 2-3x Mestre-niveau, dure vaporetto-dagpassen) — gecorrigeerd van €120 naar €160/dag.',
           transport_to_next: 'Auto, ≈280 km naar Bled — Sloveens vignet verplicht (goedkoop dagvignet beschikbaar).',
         },
@@ -2703,25 +2753,41 @@ function rbBuildCentralEuropeRoadtripRoute() {
       countries: [
         {
           code: 'SI', name: 'Slovenia', days: 5, budget: 600, lat: 46.3683, lng: 14.1146,
-          destinations: ['Bled', 'Bohinj', 'Soča-vallei', 'Triglav NP', 'grotten (Postojna/Škocjan)'],
+          destinations: [
+            { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+            { name: 'Bohinj', lat: 46.2833, lng: 13.8833 },
+            { name: 'Soča-vallei', lat: 46.3833, lng: 13.6167 },
+            { name: 'Triglav NP', lat: 46.3833, lng: 13.8378 },
+            { name: 'grotten (Postojna/Škocjan)', lat: 45.7830, lng: 14.2018 },
+          ],
           notes: 'Bled alleen al verdient meerdere dagen; de Soča-vallei en de grotten liggen er echt apart van.',
           transport_to_next: 'Auto, ≈140 km naar Plitvice/Zagreb.',
         },
         {
           code: 'HR', name: 'Croatia', days: 3, budget: 255, lat: 44.8654, lng: 15.5820,
-          destinations: ['Plitvice', 'Zagreb'],
-          notes: 'Plitvice verdient een volle dag (grote wandelroutes), Zagreb een korte stadstop. Blijf op de gemarkeerde paden/wegen rond Plitvice — delen van het Kroatische binnenland hebben nog niet-geruimde landmijnen uit de jaren 90 (oranje zones). Prijscheck (2026-07): binnenland-Kroatië (niet de kust) is goedkoper dan het vlakke €120/dag-tarief, gecorrigeerd naar €85/dag (Plitvice-entree ~€35-40 apart, niet in het dagtarief).',
+          destinations: [
+            { name: 'Plitvice', lat: 44.8654, lng: 15.5820 },
+            { name: 'Zagreb', lat: 45.8150, lng: 15.9819 },
+          ],
+          notes: 'Plitvice verdient een volle dag (grote wandelroutes), Zagreb een korte stadstop. Update (2026-08): Kroatië is sinds maart 2026 officieel landmijnvrij verklaard — de eerdere waarschuwing over niet-geruimde zones rond Plitvice is niet langer actueel. Prijscheck (2026-07): binnenland-Kroatië (niet de kust) is goedkoper dan het vlakke €120/dag-tarief, gecorrigeerd naar €85/dag (Plitvice-entree ~€35-40 apart, niet in het dagtarief).',
           transport_to_next: 'Auto, ≈380 km naar Belgrado — Novi Sad ligt toevallig al precies onderweg, prima in één dag te doen.',
         },
         {
           code: 'RS', name: 'Serbia', days: 5, budget: 300, lat: 44.7866, lng: 20.4489,
-          destinations: ['Belgrado', 'Novi Sad', 'Tara National Park'],
-          notes: "Servië heeft verder weinig natuurhoogtepunten op deze route — Tara NP (Drina-rivier, bekende uitkijkpunten) is een bewuste omweg (+1 dag) die bij deze reisstijl past, in het zuidwesten van het land, een stuk uit de buurt van de directe route Zagreb-Belgrado-Boedapest. ⚠️ Reisadvies (2026-07): er zijn regelmatig demonstraties in Servië, vooral in Belgrado en Novi Sad (aanhoudende protestbeweging sinds eind 2024) — soms wegblokkades, incidenteel geweld. Vermijd drukte/demonstraties, check actuele situatie vlak voor vertrek. Prijscheck (2026-07): Servië is veruit het goedkoopst van de Balkanlanden op deze route — het vlakke €120/dag was meer dan het dubbele van reëel, gecorrigeerd naar €60/dag.",
-          transport_to_next: 'Auto, ≈320 km naar Boedapest.',
+          destinations: [
+            { name: 'Belgrado', lat: 44.7866, lng: 20.4489 },
+            { name: 'Tara National Park (dagtrip vanuit Belgrado, retour)', lat: 43.8931, lng: 19.4206 },
+            { name: 'Novi Sad', lat: 45.2671, lng: 19.8335 },
+          ],
+          notes: "Servië heeft verder weinig natuurhoogtepunten op deze route — Tara NP (Drina-rivier, bekende uitkijkpunten) is een bewuste omweg die bij deze reisstijl past, in het zuidwesten van het land. Routelogica-fix (2026-08, search-bevestigd): stond eerder als laatste stop vóór het vertrek naar Boedapest — Tara NP-Boedapest is in werkelijkheid ≈520 km, niet de ≈320 km die genoteerd stond, en zou zo'n 6-7 uur extra rijden hebben gekost bovenop de al lange reis. Opgelost door Tara NP als dagtrip/retourtje vanuit Belgrado te doen (±360-400 km heen-en-terug) en daarna via het bestaande Belgrado-Novi Sad-Boedapest-traject verder te reizen — de detour-kosten van Tara NP blijven bestaan, maar de dure lange rit vanuit een uithoek van het land vervalt. ⚠️ Reisadvies (2026-07, nog actueel): er zijn regelmatig demonstraties in Servië, vooral in Belgrado en Novi Sad (aanhoudende protestbeweging sinds eind 2024) — soms wegblokkades, incidenteel geweld, hou rekening met mogelijke vertraging bij wegcontroles. Vermijd drukte/demonstraties, check actuele situatie vlak voor vertrek. Prijscheck (2026-07): Servië is veruit het goedkoopst van de Balkanlanden op deze route — het vlakke €120/dag was meer dan het dubbele van reëel, gecorrigeerd naar €60/dag.",
+          transport_to_next: 'Auto, ≈90 km Belgrado-Novi Sad, dan ≈298 km Novi Sad-Boedapest (≈388 km totaal) — Novi Sad ligt al op de directe route, dus dit stuk is ongewijzigd t.o.v. eerder.',
         },
         {
           code: 'HU', name: 'Hungary', days: 3, budget: 270, lat: 47.4979, lng: 19.0402,
-          destinations: ['Boedapest', 'thermale baden'],
+          destinations: [
+            { name: 'Boedapest', lat: 47.4979, lng: 19.0402 },
+            { name: 'thermale baden', lat: 47.5186, lng: 19.0819 },
+          ],
           notes: 'Boedapest verdient een rustige stadstop mét tijd voor een thermaal bad, niet alleen de hoogtepunten afvinken. Prijscheck (2026-07): gecorrigeerd van het vlakke €120/dag naar €90/dag (inclusief een thermaal bad-bezoek, ~€25-30 op zich).',
           transport_to_next: 'Auto, ≈200 km naar Bratislava.',
         },
@@ -2735,31 +2801,49 @@ function rbBuildCentralEuropeRoadtripRoute() {
       countries: [
         {
           code: 'SK', name: 'Slovakia', days: 5, budget: 400, lat: 49.0552, lng: 20.2969,
-          destinations: ['Bratislava', 'Hoge Tatra', 'Slovenský Raj', 'Spiš Castle'],
+          destinations: [
+            { name: 'Bratislava', lat: 48.1486, lng: 17.1077 },
+            { name: 'Hoge Tatra', lat: 49.1500, lng: 20.0500 },
+            { name: 'Slovenský Raj', lat: 48.9333, lng: 20.4167 },
+            { name: 'Spiš Castle', lat: 48.9958, lng: 20.7644 },
+          ],
           notes: 'De Hoge Tatra vraagt echte wandeldagen; Bratislava is een korte aanvulling aan het begin. Prijscheck (2026-07): gecorrigeerd van het vlakke €120/dag naar €80/dag.',
-          transport_to_next: 'Auto, Hoge Tatra-Brno ≈300 km.',
+          transport_to_next: 'Auto, Hoge Tatra-Brno ≈335 km (routelogica-check 2026-08: was als ≈300 km genoteerd, klopte niet).',
         },
         {
           code: 'CZ', name: 'Czechia', days: 1, budget: 85, lat: 49.1951, lng: 16.6068,
-          destinations: ['Brno', 'Špilberk-burcht'],
+          destinations: [
+            { name: 'Brno', lat: 49.1951, lng: 16.6068 },
+            { name: 'Špilberk-burcht', lat: 49.1943, lng: 16.6034 },
+          ],
           notes: 'Breekt de lange rit Hoge Tatra-Praag (was ≈450 km in één keer) in tweeën, en is zelf de moeite waard, niet alleen een technische pauze. Prijscheck (2026-07): gecorrigeerd van het vlakke €120/dag naar €85/dag — buiten Praag is Tsjechië duidelijk goedkoper.',
           transport_to_next: 'Auto, ≈200 km naar Praag.',
         },
         {
           code: 'CZ', name: 'Czechia', days: 5, budget: 650, lat: 50.0755, lng: 14.4378,
-          destinations: ['Praag', 'Český Krumlov', 'Boheems Paradijs'],
+          destinations: [
+            { name: 'Praag', lat: 50.0755, lng: 14.4378 },
+            { name: 'Český Krumlov', lat: 48.8127, lng: 14.3175 },
+            { name: 'Boheems Paradijs (Turnov)', lat: 50.5333, lng: 15.1667 },
+          ],
           notes: 'Praag verdient alleen al 2-3 dagen; Český Krumlov en Boheems Paradijs zijn allebei losse dagtochten waard. Prijscheck (2026-07): Praag is de laatste jaren duidelijk duurder geworden (centrumprijzen benaderen West-Europese steden) — gecorrigeerd van €120 naar €130/dag, de enige leg in deze route die omhoog moest ondanks dat de rest van Tsjechië/Centraal-Europa juist omlaag ging.',
-          transport_to_next: 'Auto, ≈270 km naar Wrocław.',
+          transport_to_next: 'Auto, rijd na Boheems Paradijs (Turnov) rechtstreeks door naar Wrocław (≈239 km) in plaats van eerst terug naar Praag (zou ≈323 km zijn) — routelogica-check 2026-08: scheelt ≈80 km, Turnov ligt al op de route.',
         },
         {
           code: 'PL', name: 'Poland', days: 3, budget: 195, lat: 51.1079, lng: 17.0385,
-          destinations: ['Wrocław', 'Sudeten (optioneel)'],
+          destinations: [
+            { name: 'Wrocław', lat: 51.1079, lng: 17.0385 },
+            { name: 'Sudeten (optioneel)', lat: 50.7500, lng: 15.7333 },
+          ],
           notes: 'Wrocław is compact te doen; het Sudeten-gebergte is een leuke, niet-verplichte toevoeging. Prijscheck (2026-07): Polen is een van de goedkoopste landen op deze route — het vlakke €120/dag was fors te hoog, gecorrigeerd naar €65/dag.',
           transport_to_next: 'Auto, ≈280 km naar Dresden — Polen heft voor personenauto\'s geen tol op de meeste snelwegen (alleen vrachtverkeer via e-TOLL).',
         },
         {
           code: 'DE', name: 'Germany', days: 3, budget: 285, lat: 51.0504, lng: 13.7373,
-          destinations: ['Dresden', 'Saksisch Zwitserland'],
+          destinations: [
+            { name: 'Dresden', lat: 51.0504, lng: 13.7373 },
+            { name: 'Saksisch Zwitserland', lat: 50.9167, lng: 14.2667 },
+          ],
           notes: 'Saksisch Zwitserland (rotsformaties, wandelen) verdient een volle dag naast de stadstop in Dresden. Prijscheck (2026-07): Dresden is relatief goedkoop voor Duitsland — gecorrigeerd van €120 naar €95/dag.',
           transport_to_next: 'Einde van de roadtrip — terugrit naar Nederland, ≈700 km, in één lange dag of gesplitst met een laatste overnachting onderweg.',
         },
@@ -2774,7 +2858,8 @@ function rbBuildCentralEuropeRoadtripRoute() {
       "Twee routewijzigingen tijdens het ontwerp, allebei om te voorkomen dat dezelfde lengtegraad twee keer gekruist wordt: (1) Zwitserland/Liechtenstein vóór Oostenrijk in plaats van erna — scheelt ≈370 km t.o.v. Youri's oorspronkelijke volgorde (Beieren→Oostenrijk→Liechtenstein→Zwitserland), en behoudt de Lienz-Cortina-verbinding (90 km) naar de Dolomieten. (2) Milaan/Turijn/Cinque Terre ná de Dolomieten geplakt, samengevoegd met de bestaande Toscane/San Marino-dip, in plaats van vóór Oostenrijk zoals Youri eerst voorstelde — die volgorde had de ≈12-13°O-strook twee keer gekruist (via Oostenrijks Grossglockner/Salzburg, en later opnieuw via Venetië/de Dolomieten) en twee losse zuidwaartse uitstapjes gekost in plaats van één gecombineerde Noord-Italië-lus.\n\n" +
       "Autokosten (gedeeld per auto, NIET in de bedragen per land hierboven): ≈9.050 km totale rijafstand, ≈€1.110 brandstof (7L/100km, €1,75/L), ≈€335 tol/vignetten (Zwitserland vraagt een jaarvignet — CHF 40/≈€43, geen kortere optie bestaat; Oostenrijk een 10-dagenvignet — €12,80, veel logischer voor deze reisduur dan het jaarvignet van €106,80; Italië rekent per kilometer op de autostrada; Polen heft geen tol voor personenauto's), ≈€505 parkeren (steden plus een bewaakte parkeerplaats bij Cinque Terre's autoluwe dorpen) — totaal ≈€1.950 per auto, ongeacht met hoeveel personen je reist.\n\n" +
       "Prijzen/visum/reisadvies-verificatie (2026-07): alle 14 landen gecheckt via web-onderzoek. Grote bevinding: het vlakke €120/dag-tarief hield voor de helft van de landen niet stand — Zwitserland en Liechtenstein waren fors te laag begroot (respectievelijk €120→€200 en €120→€165, Zwitserland is een van de duurste landen van Europa), terwijl Kroatië, Servië, Hongarije, Slowakije, Tsjechië-Brno, Polen en Duitsland-Dresden juist te hoog begroot waren (Servië het felst: €120→€60, minder dan de helft). Enige uitzondering die juist omhoog moest binnen Centraal-Europa: Tsjechië-Praag (€120→€130 — Praag is de laatste jaren duidelijk duurder geworden). Frankrijk (Elzas), Duitsland (Beieren), Oostenrijk, de Dolomieten/Milaan/Toscane/San Marino en Slovenië bleven binnen 15% van €120 — geen aanpassing. Visumcheck: alle 14 landen zijn visumvrij voor een Nederlands paspoort; Slovenië/Kroatië/Hongarije/Tsjechië/Polen/Duitsland/Frankrijk/Oostenrijk zijn Schengen (geen grenscontrole), Zwitserland/Liechtenstein zijn Schengen maar geen EU, San Marino heeft een open grens met Italië, Servië is geen EU/Schengen dus met een echte paspoortcontrole aan de grens (wel visumvrij). Reisadvies: overal geel/groen, geen acuut gevaarlijke situaties — wel drie specifieke aandachtspunten toegevoegd bij de losse landen hierboven (Servië: aanhoudende protestbeweging in Belgrado/Novi Sad sinds eind 2024; Kroatië: niet-geruimde landmijnzones bij Plitvice, blijf op de paden; Frankrijk: langlopend hoogste dreigingsniveau, landelijke basisstatus).\n\n" +
-      "Totaal: 45 dagen minimum / 70 dagen ideaal (~10 weken), €8.030 grondkosten per persoon solo (Realistisch tier, na de prijsverificatie hierboven — was €8.400) + €1.950 autokosten per auto. Per persoon bij 70 dagen (zelfde rekenmethode als voorheen: accommodatie-aandeel gedeeld door het aantal reizigers, eten/activiteiten blijven per persoon gelijk, autokosten gedeeld): Realistisch €9.980 solo / €6.660 met 2 / €5.555 met 3. Budget en Comfortabel zijn evenredig herschaald t.o.v. de vorige verhouding — Budget ≈€6.950 solo / ≈€4.700 met 2 / ≈€3.950 met 3, Comfortabel ≈€14.350 solo / ≈€9.600 met 2 / ≈€8.000 met 3, maar deze twee zijn niet los per land opnieuw geverifieerd zoals het Realistische tarief hierboven. Nog niet getoetst aan actuele boekingsprijzen — behandel dit als een verfijnd concept, geen boekbaar plan.",
+      "Totaal: 45 dagen minimum / 70 dagen ideaal (~10 weken), €8.030 grondkosten per persoon solo (Realistisch tier, na de prijsverificatie hierboven — was €8.400) + €1.950 autokosten per auto. Per persoon bij 70 dagen (zelfde rekenmethode als voorheen: accommodatie-aandeel gedeeld door het aantal reizigers, eten/activiteiten blijven per persoon gelijk, autokosten gedeeld): Realistisch €9.980 solo / €6.660 met 2 / €5.555 met 3. Budget en Comfortabel zijn evenredig herschaald t.o.v. de vorige verhouding — Budget ≈€6.950 solo / ≈€4.700 met 2 / ≈€3.950 met 3, Comfortabel ≈€14.350 solo / ≈€9.600 met 2 / ≈€8.000 met 3, maar deze twee zijn niet los per land opnieuw geverifieerd zoals het Realistische tarief hierboven. Nog niet getoetst aan actuele boekingsprijzen — behandel dit als een verfijnd concept, geen boekbaar plan.\n\n" +
+      "Routelogica-herziening (2026-08, search-bevestigd): geen landvolgorde-fouten gevonden — de lus (Elzas→Alpenlanden→Dolomieten/Noord-Italië→Balkan→Midden-Europa→NL) is één doorlopende rit zonder onnodige kruisingen. Wel vijf kleinere fixes: (1) drie afstanden in transport_to_next waren te laag ingeschat (Straatsburg-Garmisch ≈300→415 km, Vaduz-Innsbruck ≈120→150 km, Turijn-Cinque Terre ≈185→260 km) en gecorrigeerd; (2) Hoge Tatra-Brno bijgesteld van ≈300 naar ≈335 km; (3) de rit van Boheems Paradijs (Turnov) naar Wrocław loopt nu rechtstreeks door in plaats van eerst terug naar Praag — scheelt ≈80 km, Turnov ligt al op de route; (4) Servië's Tara National Park was als laatste stop vóór Boedapest genoteerd, maar Tara-Boedapest is in werkelijkheid ≈520 km (niet de genoteerde ≈320 km) — opgelost door Tara NP als dagtrip/retourtje vanuit Belgrado te doen, waarna de reis gewoon via Novi Sad naar Boedapest vervolgt; (5) Kroatië's landmijn-waarschuwing bij Plitvice is verwijderd — het land is sinds maart 2026 officieel landmijnvrij verklaard. Youri had al veel van deze route eerder gezien maar wilde niets inkorten voor déze trip ('moet langs de mooiste stukken gaan') — geen persoonlijke-voorkeur-cuts deze ronde. Per-bestemming coördinaten toegevoegd aan alle 14 etappes voor de 'Gedetailleerd'-kaartweergave. Landen/dagen/totale grondkosten ongewijzigd (45/70 dagen, €8.030 p.p.) — alleen volgorde-details, afstanden en notities aangepast.",
   });
 }
 
@@ -5619,6 +5704,203 @@ function rbMigrateCaribbeanAmazonRouteLogicOverhaul() {
 
     if (touched) rbSave();
   });
+}
+
+function rbMigrateCentralEuropeRouteLogicOverhaul() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_CENTRAL_EUROPE_OVERHAUL)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_CENTRAL_EUROPE_OVERHAUL, '1');
+
+  // Keyed by country_code, or `${code}::${firstDestinationName}` when the code repeats
+  // across legs (IT x6, DE x2, CZ x2) — firstDestinationName is the OLD (plain-string) name
+  // still present in already-seeded browser data, used purely to disambiguate which leg.
+  const fixes = {
+    FR: {
+      destinations: [
+        { name: 'Straatsburg', lat: 48.5734, lng: 7.7521 },
+        { name: 'Colmar', lat: 48.0794, lng: 7.3585 },
+        { name: 'Elzasser dorpen', lat: 48.0453, lng: 7.3079 },
+      ],
+      transport_to_next: 'Auto, ≈415 km naar Neuschwanstein/Garmisch via Karlsruhe-Stuttgart-Ulm-München (routelogica-check 2026-08: was als ≈300 km genoteerd, klopte niet) — geen tol of vignet nodig op dit traject.',
+    },
+    'DE::Neuschwanstein': {
+      destinations: [
+        { name: 'Neuschwanstein', lat: 47.5576, lng: 10.7498 },
+        { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0958 },
+        { name: 'Zugspitze', lat: 47.4211, lng: 10.9853 },
+      ],
+      transport_to_next: 'Auto, ≈250 km naar Luzern, verder door naar Interlaken/Lauterbrunnen (in totaal ≈400 km vanaf Garmisch — routelogica-check 2026-08: de oorspronkelijke ≈250 km klopte alleen voor Luzern zelf, niet voor de hele stopgroep) — Zwitsers jaarvignet verplicht, koop het bij de grens.',
+    },
+    CH: {
+      destinations: [
+        { name: 'Luzern/Vierwoudstrekenmeer', lat: 47.0502, lng: 8.3093 },
+        { name: 'Interlaken', lat: 46.6863, lng: 7.8632 },
+        { name: 'Lauterbrunnen', lat: 46.5927, lng: 7.9098 },
+        { name: 'Berner Oberland', lat: 46.6244, lng: 8.0413 },
+      ],
+    },
+    LI: {
+      destinations: [{ name: 'Vaduz', lat: 47.1410, lng: 9.5209 }],
+      transport_to_next: 'Auto, ≈150 km naar Innsbruck via Feldkirch/Fernpass (routelogica-check 2026-08: was als ≈120 km genoteerd, klopte niet) — Oostenrijks 10-dagenvignet nodig voor de snelwegen (€12,80, veel logischer voor een roadtrip dan het jaarvignet van €106,80).',
+    },
+    AT: {
+      destinations: [
+        { name: 'Innsbruck/Tirol', lat: 47.2692, lng: 11.4041 },
+        { name: 'Salzburg', lat: 47.8095, lng: 13.0550 },
+        { name: 'Berchtesgaden/Königssee', lat: 47.5892, lng: 13.0632 },
+        { name: 'Salzkammergut', lat: 47.5622, lng: 13.6493 },
+        { name: 'Grossglockner Hochalpenstrasse', lat: 47.0742, lng: 12.8306 },
+      ],
+    },
+    'IT::Tre Cime': {
+      destinations: [
+        { name: 'Tre Cime', lat: 46.6198, lng: 12.3032 },
+        { name: 'Lago di Braies', lat: 46.6958, lng: 12.0858 },
+        { name: 'Seceda', lat: 46.5765, lng: 11.7099 },
+        { name: 'Val Gardena', lat: 46.5645, lng: 11.6750 },
+      ],
+      transport_to_next: 'Auto, ≈410 km naar Milaan — samen met de Elzas-Beieren-rit aan het begin een van de langste ritten van de hele lus (routelogica-check 2026-08: geen unieke "langste rit" meer zodra de Elzas-Beieren-afstand gecorrigeerd is, zie dat land zijn eigen notitie) — vroeg vertrekken of splitsen met een tussenstop bij Verona/Brescia. Italiaanse autostrada rekent tol per kilometer.',
+    },
+    'IT::Duomo': {
+      destinations: [
+        { name: 'Duomo', lat: 45.4642, lng: 9.1900 },
+        { name: 'Galleria', lat: 45.4656, lng: 9.1896 },
+        { name: 'Navigli', lat: 45.4514, lng: 9.1739 },
+        { name: 'Laatste Avondmaal', lat: 45.4661, lng: 9.1706 },
+      ],
+    },
+    'IT::Egyptisch Museum': {
+      destinations: [
+        { name: 'Egyptisch Museum', lat: 45.0703, lng: 7.6869 },
+        { name: 'Mole Antonelliana', lat: 45.0691, lng: 7.6934 },
+        { name: 'historisch centrum', lat: 45.0703, lng: 7.6869 },
+      ],
+      transport_to_next: 'Auto tot een bewaakte parkeerplaats bij Monterosso/La Spezia (≈260 km via Alessandria/Genua — routelogica-check 2026-08: was als ≈185 km genoteerd, klopte niet) — de dorpjes zelf zijn grotendeels autovrij.',
+    },
+    'IT::Monterosso': {
+      destinations: [
+        { name: 'Monterosso', lat: 44.1461, lng: 9.6558 },
+        { name: 'Vernazza', lat: 44.1355, lng: 9.6857 },
+        { name: 'Corniglia', lat: 44.1197, lng: 9.7042 },
+        { name: 'Manarola', lat: 44.1067, lng: 9.7275 },
+        { name: 'Riomaggiore', lat: 44.0993, lng: 9.7378 },
+      ],
+    },
+    'IT::Florence': {
+      destinations: [
+        { name: 'Florence', lat: 43.7696, lng: 11.2558 },
+        { name: 'Siena', lat: 43.3188, lng: 11.3308 },
+        { name: 'San Gimignano', lat: 43.4674, lng: 11.0431 },
+        { name: 'Chianti', lat: 43.4708, lng: 11.3350 },
+      ],
+    },
+    SM: {
+      destinations: [{ name: 'Historisch centrum', lat: 43.9424, lng: 12.4578 }],
+    },
+    'IT::Piazza San Marco': {
+      destinations: [
+        { name: 'Piazza San Marco', lat: 45.4408, lng: 12.3155 },
+        { name: 'Dorsoduro', lat: 45.4302, lng: 12.3245 },
+        { name: 'Murano/Burano', lat: 45.4585, lng: 12.3538 },
+      ],
+    },
+    SI: {
+      destinations: [
+        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+        { name: 'Bohinj', lat: 46.2833, lng: 13.8833 },
+        { name: 'Soča-vallei', lat: 46.3833, lng: 13.6167 },
+        { name: 'Triglav NP', lat: 46.3833, lng: 13.8378 },
+        { name: 'grotten (Postojna/Škocjan)', lat: 45.7830, lng: 14.2018 },
+      ],
+    },
+    HR: {
+      destinations: [
+        { name: 'Plitvice', lat: 44.8654, lng: 15.5820 },
+        { name: 'Zagreb', lat: 45.8150, lng: 15.9819 },
+      ],
+      notes: 'Plitvice verdient een volle dag (grote wandelroutes), Zagreb een korte stadstop. Update (2026-08): Kroatië is sinds maart 2026 officieel landmijnvrij verklaard — de eerdere waarschuwing over niet-geruimde zones rond Plitvice is niet langer actueel. Prijscheck (2026-07): binnenland-Kroatië (niet de kust) is goedkoper dan het vlakke €120/dag-tarief, gecorrigeerd naar €85/dag (Plitvice-entree ~€35-40 apart, niet in het dagtarief).',
+    },
+    RS: {
+      destinations: [
+        { name: 'Belgrado', lat: 44.7866, lng: 20.4489 },
+        { name: 'Tara National Park (dagtrip vanuit Belgrado, retour)', lat: 43.8931, lng: 19.4206 },
+        { name: 'Novi Sad', lat: 45.2671, lng: 19.8335 },
+      ],
+      notes: "Servië heeft verder weinig natuurhoogtepunten op deze route — Tara NP (Drina-rivier, bekende uitkijkpunten) is een bewuste omweg die bij deze reisstijl past, in het zuidwesten van het land. Routelogica-fix (2026-08, search-bevestigd): stond eerder als laatste stop vóór het vertrek naar Boedapest — Tara NP-Boedapest is in werkelijkheid ≈520 km, niet de ≈320 km die genoteerd stond, en zou zo'n 6-7 uur extra rijden hebben gekost bovenop de al lange reis. Opgelost door Tara NP als dagtrip/retourtje vanuit Belgrado te doen (±360-400 km heen-en-terug) en daarna via het bestaande Belgrado-Novi Sad-Boedapest-traject verder te reizen — de detour-kosten van Tara NP blijven bestaan, maar de dure lange rit vanuit een uithoek van het land vervalt. ⚠️ Reisadvies (2026-07, nog actueel): er zijn regelmatig demonstraties in Servië, vooral in Belgrado en Novi Sad (aanhoudende protestbeweging sinds eind 2024) — soms wegblokkades, incidenteel geweld, hou rekening met mogelijke vertraging bij wegcontroles. Vermijd drukte/demonstraties, check actuele situatie vlak voor vertrek. Prijscheck (2026-07): Servië is veruit het goedkoopst van de Balkanlanden op deze route — het vlakke €120/dag was meer dan het dubbele van reëel, gecorrigeerd naar €60/dag.",
+      transport_to_next: 'Auto, ≈90 km Belgrado-Novi Sad, dan ≈298 km Novi Sad-Boedapest (≈388 km totaal) — Novi Sad ligt al op de directe route, dus dit stuk is ongewijzigd t.o.v. eerder.',
+    },
+    HU: {
+      destinations: [
+        { name: 'Boedapest', lat: 47.4979, lng: 19.0402 },
+        { name: 'thermale baden', lat: 47.5186, lng: 19.0819 },
+      ],
+    },
+    SK: {
+      destinations: [
+        { name: 'Bratislava', lat: 48.1486, lng: 17.1077 },
+        { name: 'Hoge Tatra', lat: 49.1500, lng: 20.0500 },
+        { name: 'Slovenský Raj', lat: 48.9333, lng: 20.4167 },
+        { name: 'Spiš Castle', lat: 48.9958, lng: 20.7644 },
+      ],
+      transport_to_next: 'Auto, Hoge Tatra-Brno ≈335 km (routelogica-check 2026-08: was als ≈300 km genoteerd, klopte niet).',
+    },
+    'CZ::Brno': {
+      destinations: [
+        { name: 'Brno', lat: 49.1951, lng: 16.6068 },
+        { name: 'Špilberk-burcht', lat: 49.1943, lng: 16.6034 },
+      ],
+    },
+    'CZ::Praag': {
+      destinations: [
+        { name: 'Praag', lat: 50.0755, lng: 14.4378 },
+        { name: 'Český Krumlov', lat: 48.8127, lng: 14.3175 },
+        { name: 'Boheems Paradijs (Turnov)', lat: 50.5333, lng: 15.1667 },
+      ],
+      transport_to_next: 'Auto, rijd na Boheems Paradijs (Turnov) rechtstreeks door naar Wrocław (≈239 km) in plaats van eerst terug naar Praag (zou ≈323 km zijn) — routelogica-check 2026-08: scheelt ≈80 km, Turnov ligt al op de route.',
+    },
+    PL: {
+      destinations: [
+        { name: 'Wrocław', lat: 51.1079, lng: 17.0385 },
+        { name: 'Sudeten (optioneel)', lat: 50.7500, lng: 15.7333 },
+      ],
+    },
+    'DE::Dresden': {
+      destinations: [
+        { name: 'Dresden', lat: 51.0504, lng: 13.7373 },
+        { name: 'Saksisch Zwitserland', lat: 50.9167, lng: 14.2667 },
+      ],
+    },
+  };
+
+  const route = rbRoutes.find(r => r.name === 'Central European Grand Roadtrip 🚗');
+  if (route) {
+    const repeatedCodes = new Set(['IT', 'DE', 'CZ']);
+    let touched = false;
+
+    route.blocks.forEach(block => {
+      const firstDestName = (block.destinations || [])[0] && (block.destinations || [])[0].name;
+      const key = repeatedCodes.has(block.country_code) ? `${block.country_code}::${firstDestName}` : block.country_code;
+      const fix = fixes[key];
+      if (!fix) return;
+
+      if (fix.transport_to_next && block.transport_to_next !== fix.transport_to_next) { block.transport_to_next = fix.transport_to_next; touched = true; }
+      if (fix.notes && block.notes !== fix.notes) { block.notes = fix.notes; touched = true; }
+      const normalizeDest = d => (typeof d === 'string' ? { name: d, lat: null, lng: null } : { name: d.name, lat: d.lat ?? null, lng: d.lng ?? null });
+      const newDests = (fix.destinations || []).map(normalizeDest);
+      const oldDests = (block.destinations || []).map(normalizeDest);
+      if (JSON.stringify(newDests) !== JSON.stringify(oldDests)) {
+        block.destinations = newDests.map(d => ({ id: rbNewDestId(), name: d.name, notes: '', lat: d.lat, lng: d.lng }));
+        touched = true;
+      }
+    });
+
+    if (route.notes && !route.notes.includes('Routelogica-herziening (2026-08)')) {
+      route.notes += '\n\n' +
+        "Routelogica-herziening (2026-08, search-bevestigd): geen landvolgorde-fouten gevonden — de lus (Elzas→Alpenlanden→Dolomieten/Noord-Italië→Balkan→Midden-Europa→NL) is één doorlopende rit zonder onnodige kruisingen. Wel vijf kleinere fixes: (1) drie afstanden in transport_to_next waren te laag ingeschat (Straatsburg-Garmisch ≈300→415 km, Vaduz-Innsbruck ≈120→150 km, Turijn-Cinque Terre ≈185→260 km) en gecorrigeerd; (2) Hoge Tatra-Brno bijgesteld van ≈300 naar ≈335 km; (3) de rit van Boheems Paradijs (Turnov) naar Wrocław loopt nu rechtstreeks door in plaats van eerst terug naar Praag — scheelt ≈80 km, Turnov ligt al op de route; (4) Servië's Tara National Park was als laatste stop vóór Boedapest genoteerd, maar Tara-Boedapest is in werkelijkheid ≈520 km (niet de genoteerde ≈320 km) — opgelost door Tara NP als dagtrip/retourtje vanuit Belgrado te doen, waarna de reis gewoon via Novi Sad naar Boedapest vervolgt; (5) Kroatië's landmijn-waarschuwing bij Plitvice is verwijderd — het land is sinds maart 2026 officieel landmijnvrij verklaard. Youri had al veel van deze route eerder gezien maar wilde niets inkorten voor déze trip ('moet langs de mooiste stukken gaan') — geen persoonlijke-voorkeur-cuts deze ronde. Per-bestemming coördinaten toegevoegd aan alle 14 etappes voor de 'Gedetailleerd'-kaartweergave. Landen/dagen/totale grondkosten ongewijzigd (45/70 dagen, €8.030 p.p.) — alleen volgorde-details, afstanden en notities aangepast.";
+      touched = true;
+    }
+
+    if (touched) rbSave();
+  }
 }
 
 function rbMigrateBahrainIntoMediterraneanExpedition() {

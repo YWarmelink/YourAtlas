@@ -1,8 +1,8 @@
 # Route Logic Review — Playbook
 
 Status: **Eurasia Grand Tour 🌏, Patagonia & Antarctica Expedition 🧊, India & Himalaya Expedition
-🏔️, Nordic Arctic Expedition ❄️ en Caribbean & Amazon Expedition 🌴 klaar (2026-08)**, de andere 8
-originele expedities nog niet.
+🏔️, Nordic Arctic Expedition ❄️, Caribbean & Amazon Expedition 🌴 en Central European Grand Roadtrip
+🚗 klaar (2026-08)**, de andere 7 originele expedities nog niet.
 Dit document legt vast wát we bij Eurasia deden en hóe je dat 1-op-1 herhaalt — pak deze aanpak op
 zodra Youri aangeeft dat hij een volgende expeditie wil laten doornemen, geen nieuwe analyse nodig.
 
@@ -155,13 +155,48 @@ de tourist card sinds juli 2025, stroomuitval-situatie bevestigd nog actueel). Z
 `RB_EXPEDITION_CONTENT`-tabel (hand-authored, zie de route's eigen build-functie), dus de migratie
 patcht de velden direct in plaats van via `rbContentFor()`.
 
-## De overige 8 originele expedities
+## Central European Grand Roadtrip: wat er gebeurde (2026-08), als zesde referentie — eerste zelf-rijdende lus, en waarom "backtrack" op de kaart soms geen echte backtrack is
+
+Zelfde stappenplan, eerste keer toegepast op een zelf-rijdende lus (geen land-tot-land grens-
+oversteken zoals bij de backpacking-routes hierboven — hier gaat het puur om rijafstanden en
+volgorde). Youri's persoonlijke-voorkeur-antwoord was expliciet: veel van deze route al eerder
+gezien, maar niet inkorten voor déze trip — "moet langs de mooiste stukken gaan" — dus stap 2
+leverde geen cuts op, in tegenstelling tot Himalaya/Nordic Arctic.
+
+De landvolgorde zelf bleek al goed (Elzas→Alpenlanden→Dolomieten/Noord-Italië→Balkan→Midden-Europa→
+NL, één doorlopende rit). Vijf kleinere fixes gevonden, search-bevestigd met echte rijafstanden
+i.p.v. hemelsbreed geschat: drie onderschatte transport_to_next-afstanden (Straatsburg-Garmisch,
+Vaduz-Innsbruck, Turijn-Cinque Terre), Hoge Tatra-Brno bijgesteld, en de Boheems Paradijs-Wrocław-rit
+loopt nu rechtstreeks door i.p.v. eerst terug naar Praag.
+
+**Belangrijke les, tegengesteld aan de eigen intuïtie tijdens deze review**: Praag(14,4°O)→
+Wrocław(17,0°O)→Dresden(13,7°O) *ziet* eruit als een backtrack (je "kruist" Praags lengtegraad twee
+keer). Onderzoek naar echte rijafstanden weerlegde dat: Wrocław ligt simpelweg als uitschieter naast
+de Poprad-Brno-Praag-Dresden-lijn, dus hem ergens anders inpassen (bijv. vóór Brno) kost een
+vergelijkbare of grotere omweg (getest: ~30 km méér, niet minder). Conclusie: check straight-line-
+"backtracks" altijd tegen echte rijafstanden voor je herordent — een geografisch logisch ogende fix
+kan op de weg zelf duurder uitpakken. De écht bruikbare fix hier was subtieler: niet de landvolgorde
+veranderen, maar het vertrekpunt (Turnov i.p.v. centraal Praag) voor de laatste sprong naar Wrocław.
+
+**Tweede vondst, zelfde categorie als Caribbean & Amazon's Tara-NP-achtige detour-check**: Servië's
+Tara National Park stond als laatste stop vóór Boedapest — de genoteerde "~320 km" bleek in
+werkelijkheid ~520 km, een uithoek-naar-hoofdroute-sprong die zwaar onderschat was. Fix: Tara NP als
+dagtrip/retourtje vanuit Belgrado, niet als doorreis-eindpunt. Les: bij elke "bewuste omweg +1 dag"-
+achtige noot in een route (vergelijkbaar met Tajikistans Pamir-jeep/Mongolias Gobi-tour elders) is het
+de moeite waard om de aansluitende rit ná de omweg ook te verifiëren, niet alleen de omweg zelf.
+
+Zie `CHANGELOG.md` ("Central European Grand Roadtrip 🚗 routelogica-herziening") voor de volledige
+uitkomst, en `rbMigrateCentralEuropeRouteLogicOverhaul()` voor het code-patroon — deze route is
+hand-authored (geen gedeelde `RB_EXPEDITION_CONTENT`-tabel, Italië komt 6x voor, Duitsland/Tsjechië
+elk 2x), dus de migratie matcht blokken op land-code + eerste bestemmingsnaam, zelfde aanpak als
+Mediterranean/North America's "leg fingerprint"-patroon uit de eerdere prijsverificatie-ronde.
+
+## De overige 7 originele expedities
 
 In willekeurige volgorde van omvang (kleiner = sneller te doen, geen inhoudelijke prioriteit):
 
-- **Central European Grand Roadtrip 🚗** — zelf-rijdende lus vanuit NL, ander soort logica
-  (geen land-tot-land grensoversteken zoals bij backpacking-routes).
-- **British Isles & Celtic Coast Expedition 🍀** — idem, zelf-rijdende lus.
+- **British Isles & Celtic Coast Expedition 🍀** — ook zelf-rijdende lus, zelfde soort logica als
+  Central European Grand Roadtrip hierboven.
 - **West & Central Africa Expedition 🌍**
 - **North America Grand Traverse 🌎** — let op: Canada/VS komen meerdere keren voor (eigen
   bouwfunctie, geen gedeelde contenttabel) — zelfde patroon als het nieuwe Maleisië-blok bij Eurasia.
