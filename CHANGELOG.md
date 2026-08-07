@@ -12,6 +12,26 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Mediterranean Civilizations Expedition 🏛️ routelogica-herziening (2026-08)** — twaalfde
+  expeditie uit de `ROUTE_LOGIC_REVIEW.md`-playbook, grootste route van de hele playbook (18
+  etappes/13 landen). Vijf fixes, drie herordeningen en twee onvermelde-terugrit-teksten.
+  **Sicilië**: Taormina→Syracuse→Agrigento→Etna kruiste het eiland twee keer (≈195 km vermijdbare
+  omweg) — nu Agrigento eerst, dan een doorlopende oostkust-lus Syracuse→Taormina→Etna→Messina.
+  **Griekenland-vasteland**: Athene→Delphi→Olympia→Meteora→Peloponnesos wisselde drie keer tussen
+  noord (Delphi/Meteora) en zuid (Olympia/Peloponnesos), terwijl de Piraeus-ferry vlak bij Athene
+  ligt — nu Athene→Peloponnesos/Olympia (zuid-lus)→Delphi→Meteora (noord-lus, eindigend met de
+  terugrit naar Piraeus). **Turkije**: de etappe eindigde in Cappadocië (≈730 km van Istanbul)
+  terwijl de vlucht naar Caïro vanuit Istanbul vertrekt — geen Cappadocië-luchthaven heeft een
+  directe Caïro-verbinding, dus een binnenlandse terugvlucht is nu expliciet toegevoegd.
+  **Egypte**: de ferry naar Jordanië vertrekt vanuit Nuweiba (Sinaï) — vanaf Abu Simbel (uiterste
+  zuiden) is dat een terugreis van de hele Nijl-corridor (≈850+450 km), nu expliciet benoemd.
+  **Oman**: Wahiba Sands naar de vlucht in Muscat (≈200 km/3u) was eerder verzwegen, nu expliciet
+  benoemd. Bevestigd zonder wijziging: Spanje/Marokko, de Sardinië-Corsica-overgang, en Jordanië's
+  Dode Zee-positie (ligt al vrijwel exact op de terugweg Wadi Rum-Amman). Toegepast via
+  `rbMigrateMediterraneanRouteLogicOverhaul()` — wholesale-replace, zelfde patroon als deze route's
+  eerdere migraties, uitgebreid naar alle zes split-companions (Iberia & Marokko/Tunesië 🏰, Malta
+  & Italië 🏛️, Corsica & Zuid-Frankrijk ⛵, Griekenland & Cyprus 🏺, Anatolië 🕌, Egypte & Arabisch
+  Schiereiland 🐪).
 - **Pan-American Grand Tour 🌎 routelogica-herziening (2026-08)** — elfde expeditie uit de
   `ROUTE_LOGIC_REVIEW.md`-playbook, grootste route in deze ronde (15 landen). Vier fixes.
   **Mexico**: San Cristóbal de las Casas stond na Bacalar — een ≈700 km/10u terugrit langs Palenque,

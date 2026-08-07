@@ -3,8 +3,8 @@
 Status: **Eurasia Grand Tour 🌏, Patagonia & Antarctica Expedition 🧊, India & Himalaya Expedition
 🏔️, Nordic Arctic Expedition ❄️, Caribbean & Amazon Expedition 🌴, Central European Grand Roadtrip
 🚗, British Isles & Celtic Coast Expedition 🍀, North America Grand Traverse 🌎, West & Central
-Africa Expedition 🌍, Oceania Grand Expedition 🌊 en Pan-American Grand Tour 🌎 klaar (2026-08)**,
-de andere 2 originele expedities nog niet.
+Africa Expedition 🌍, Oceania Grand Expedition 🌊, Pan-American Grand Tour 🌎 en Mediterranean
+Civilizations Expedition 🏛️ klaar (2026-08)**, alleen Africa Grand Tour 🌍 nog niet.
 Dit document legt vast wát we bij Eurasia deden en hóe je dat 1-op-1 herhaalt — pak deze aanpak op
 zodra Youri aangeeft dat hij een volgende expeditie wil laten doornemen, geen nieuwe analyse nodig.
 
@@ -349,10 +349,41 @@ code-patroon — field-patch + destination-sync via de gedeelde `RB_EXPEDITION_C
 patroon als Eurasia's migratie, toegepast op de hoofdroute en alle vier split-companions (Mexico 🌵,
 Midden-Amerika Loop 🌋, Andes Grand Traverse 🦙, Zuidelijke Kegel & Brazilië-finale 🧉).
 
-## De overige 2 originele expedities
+## Mediterranean Civilizations Expedition: wat er gebeurde (2026-08), als twaalfde referentie — grootste route van de hele playbook, vijf fixes verspreid over 18 etappes
 
-In willekeurige volgorde van omvang (kleiner = sneller te doen, geen inhoudelijke prioriteit):
-- **Mediterranean Civilizations Expedition 🏛️** — grootst (18 etappes), plus 6 split-companions.
+Zelfde stappenplan. Youri's antwoord op de persoonlijke-voorkeur-check: de bestaande "verdiepingsreis"-
+framing (8 van 13 landen al bezocht, bewust geen reden om te schrappen) blijft ongewijzigd van kracht.
+
+Vijf fixes, drie herordeningen en twee onvermelde-terugrit-teksten — dezelfde twee categorieën die
+in eerdere rondes al terugkwamen. **Sicilië**: Taormina→Syracuse→Agrigento→Etna kruiste het eiland
+twee keer (Agrigento ligt ver zuidwest, Etna weer terug noordoost) — ≈195 km vermijdbare omweg,
+nu Agrigento eerst, dan een doorlopende oostkust-lus. **Griekenland-vasteland**: dezelfde categorie
+als Central European's Senegal-achtige drievoudige omslag — Athene→Delphi→Olympia→Meteora→
+Peloponnesos wisselde drie keer tussen noord en zuid, terwijl de Piraeus-ferry vlak bij Athene ligt,
+niet bij de Peloponnesos — nu één zuid-lus (Peloponnesos/Olympia) gevolgd door één noord-lus
+(Delphi/Meteora), eindigend met de terugrit naar Piraeus. **Turkije/Egypte/Oman**: alle drie dezelfde
+categorie als North America's Sequoia-San Francisco en West & Central Africa's Abomey/Yaoundé —
+een etappe eindigt ver van het daadwerkelijke vertrekpunt zonder dat de terugrit ergens genoemd
+wordt. Turkije eindigde in Cappadocië (≈730 km van Istanbul, waar de vlucht naar Caïro vertrekt) —
+hier bleek de terugrit zelfs onvermijdelijk (geen Cappadocië-luchthaven vliegt direct naar Caïro),
+dus niet alleen een tekstfix maar een echt ontbrekende stap. Egypte eindigde bij Abu Simbel terwijl
+de Jordanië-ferry vanuit Nuweiba (Sinaï) vertrekt (≈850+450 km terug). Oman eindigde bij Wahiba Sands
+terwijl de vlucht vanuit Muscat vertrekt (≈200 km/3u terug).
+
+**Les, bevestigd voor de derde keer deze ronde**: bij een route van deze omvang zit het probleem
+zelden in de grote landvolgorde (die klopte hier ook al) maar in twee terugkerende categorieën —
+zigzags tussen sub-regio's binnen een land, en een etappe die eindigt op een andere plek dan waar
+het vervoer naar het volgende land vandaan vertrekt. Check beide systematisch, ongeacht hoe groot
+de route is.
+
+Zie `CHANGELOG.md` ("Mediterranean Civilizations Expedition 🏛️ routelogica-herziening") voor de
+volledige uitkomst, en `rbMigrateMediterraneanRouteLogicOverhaul()` voor het code-patroon —
+wholesale-replace, zelfde patroon als deze route's eerdere migraties, toegepast op de hoofdroute en
+alle zes split-companions (Iberia & Marokko/Tunesië 🏰, Malta & Italië 🏛️, Corsica & Zuid-Frankrijk
+⛵, Griekenland & Cyprus 🏺, Anatolië 🕌, Egypte & Arabisch Schiereiland 🐪).
+
+## De laatste originele expeditie
+
 - **Africa Grand Tour 🌍** — groot (18 landen), plus 4 split-companions.
 
 De 27 modulaire companion-routes uit `ROUTE_BUILDER_MODULES.md` hebben lagere prioriteit — die
