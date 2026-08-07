@@ -58,6 +58,7 @@ const RB_MIGRATE_FLAG_2026_08_BRITISH_ISLES_OVERHAUL = 'atlas_grand_trips_migrat
 const RB_MIGRATE_FLAG_2026_08_NORTH_AMERICA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_north_america_overhaul_v1';
 const RB_MIGRATE_FLAG_2026_08_WEST_CENTRAL_AFRICA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_west_central_africa_overhaul_v1';
 const RB_MIGRATE_FLAG_2026_08_OCEANIA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_oceania_overhaul_v1';
+const RB_MIGRATE_FLAG_2026_08_PANAMERICAN_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_panamerican_overhaul_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -122,6 +123,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateNorthAmericaRouteLogicOverhaul();
   rbMigrateWestCentralAfricaRouteLogicOverhaul();
   rbMigrateOceaniaRouteLogicOverhaul();
+  rbMigratePanAmericanRouteLogicOverhaul();
   rbBindEvents();
 
   try {
@@ -1387,21 +1389,128 @@ const RB_EXPEDITION_CONTENT = {
     TL: { days: 7, budget: 400, lat: -8.5586, lng: 125.5736, destinations: [{name:"Dili",lat:-8.5586,lng:125.5736}, {name:"Atauro-eiland",lat:-8.2500,lng:125.5833}, {name:"Jaco-eiland (Nino Konis Santana NP)",lat:-8.4333,lng:127.3333}, {name:"Baucau",lat:-8.4667,lng:126.4667}, {name:"Maubisse",lat:-8.9167,lng:125.6167}], transport_to_next: "Vlucht Dili-Singapore (meestal met overstap in Denpasar/Bali of Jakarta, geen directe verbinding) — laatste etappe naar het eindpunt Singapore", notes: "Beperkte zorginfrastructuur (ziekenhuizen kunnen vooraf contante betaling vragen, ernstige gevallen vereisen medische evacuatie naar Bali/Darwin, geen Nederlandse ambassade ter plaatse) — een goede reisverzekering is hier extra belangrijk. Vermijd 's nachts rijden buiten Dili. Jaco Island is alleen bereikbaar met een 4x4+chauffeur ($85-150/dag) — deel de kosten met anderen indien mogelijk, aparte kostenpost bovenop de rest van de route." },
   },
   "Pan-American Grand Tour 🌎": {
-    MX: { days: 28, budget: 1000, lat: 19.4326, lng: -99.1332, destinations: ["Ciudad de México", "Oaxaca", "Palenque", "Mérida", "Tulum", "Bacalar", "San Cristóbal de las Casas"], transport_to_next: "Bus over land via de grensovergang La Mesilla/El Carmen naar Huehuetenango, Guatemala.", notes: "Prijs geverifieerd (2026-07), klopt. Route 199 tussen San Cristóbal en Palenque: wegbanditisme (niet politiek), niet 's nachts rijden." },
-    GT: { days: 16, budget: 400, lat: 14.5586, lng: -90.7295, destinations: ["Quetzaltenango (Xela)", "Lake Atitlán", "Antigua", "Ciudad de Guatemala", "Semuc Champey", "Flores & Tikal"], transport_to_next: "Bus over land vanaf Flores naar de grensovergang bij Melchor de Menchos, door naar San Ignacio, Belize.", notes: "Prijs geverifieerd (2026-07), klopt — goedkoopste land van de route. Gebruik boten i.p.v. de weg Godínez-Panajachel bij Atitlán; Cerro de la Cruz in Antigua alleen begeleid/overdag." },
-    BZ: { days: 10, budget: 720, lat: 17.4995, lng: -88.1962, destinations: ["San Ignacio", "Belize City", "Caye Caulker", "Ambergris Caye (San Pedro)", "Hopkins/Dangriga", "Placencia"], transport_to_next: "Veerboot vanaf Placencia/Dangriga (via Livingston, Guatemala) naar Puerto Cortés, Honduras.", notes: "Prijscorrectie (2026-07): €57,50→€72/dag — de vele watertaxi's tussen eilanden ($15-45 p.p. enkele reis) waren niet meegenomen." },
-    HN: { days: 14, budget: 375, lat: 14.8833, lng: -88.0333, destinations: ["Puerto Cortés", "Copán Ruinas", "Lago de Yojoa", "Tegucigalpa", "La Ceiba", "Roatán"], transport_to_next: "Bus over land via de grensovergang El Amatillo naar El Salvador.", notes: "Prijs geverifieerd (2026-07), klopt. ⚠️ Tegucigalpa/La Ceiba/Puerto Cortés liggen in oranje provincies (bende-/drugsgerelateerde criminaliteit) — Roatán is de gele uitzondering." },
-    SV: { days: 10, budget: 275, lat: 13.6929, lng: -89.2182, destinations: ["San Salvador", "Santa Ana", "Cerro Verde & vulkanen", "Ruta de las Flores (Juayúa, Ataco)", "El Tunco", "Suchitoto"], transport_to_next: "Bus over land via Honduras (transit) naar de grensovergang El Espino/Guasaule, richting León, Nicaragua.", notes: "Prijs geverifieerd (2026-07), klopt. Veiligheidssituatie sterk verbeterd sinds de noodtoestand (2022) tegen bendes, nu geel — let wel: arrestatie zonder aanklacht blijft mogelijk, geen Nederlandse ambassade ter plaatse." },
-    NI: { days: 15, budget: 350, lat: 11.93, lng: -85.9567, destinations: ["León", "Managua", "Granada", "Isla de Ometepe", "Laguna de Apoyo", "San Juan del Sur"], transport_to_next: "Bus over land via de grensovergang Peñas Blancas naar Costa Rica.", notes: "Prijs geverifieerd (2026-07), klopt. Regelmatige demonstraties kunnen wegen naar hoofdstad/vliegveld blokkeren; geen Nederlandse ambassade ter plaatse. CA-4-landen (Guatemala/Honduras/El Salvador/Nicaragua) tellen visumtechnisch als één gebied, max. 90 dagen gecombineerd — deze route blijft daar ruim onder." },
-    CR: { days: 21, budget: 1000, lat: 10.4667, lng: -84.6431, destinations: ["Liberia", "La Fortuna/Arenal", "Monteverde", "Santa Teresa", "Manuel Antonio", "Puerto Viejo de Talamanca"], transport_to_next: "Bus over land via de grensovergang Sixaola/Guabito naar Bocas del Toro, Panama.", notes: "Prijs geverifieerd (2026-07), klopt maar krap — nationale parken/tours ($15-22 entree) zijn een aparte kostenpost bovenop dit dagtarief." },
-    PA: { days: 15, budget: 625, lat: 8.9824, lng: -79.5199, destinations: ["Bocas del Toro", "Boquete", "Ciudad van Panama", "Casco Viejo", "Panamakanaal", "San Blas-eilanden"], transport_to_next: "Zeilboot (4-5 dagen) via de San Blas-eilanden naar Cartagena, Colombia — geen wegverbinding door de Darién Gap.", notes: "Prijs geverifieerd (2026-07), klopt. Darién-regio (niet op route) is oranje. San Blas-boot: check zwemvesten/twee buitenboordmotoren bij de operator vooraf." },
-    CO: { days: 35, budget: 1260, lat: 4.711, lng: -74.0721, destinations: ["Cartagena", "Santa Marta", "Parque Tayrona", "Medellín", "Salento & Koffiezone", "Bogotá", "San Agustín"], transport_to_next: "Bus over land via Pasto naar de grensovergang Ipiales–Tulcán, door naar Quito, Ecuador.", notes: "Prijscorrectie (2026-07): €28,57→€36/dag, zo'n 18% te krap voor 35 dagen incl. duurdere steden (Cartagena, Bogotá). Route blijft buiten de rode/oranje grenszones. San Blas-Cartagena zeilboot: zelfde operator-check als bij Panama." },
-    EC: { days: 24, budget: 1650, lat: -0.1807, lng: -78.4678, destinations: ["Quito", "Otavalo", "Mindo", "Baños", "Cuenca", "Galápagos-eilanden"], transport_to_next: "Bus over land via de grensovergang Huaquillas/Tumbes naar Noord-Peru, richting Máncora.", notes: "⚠️ Prijscorrectie (2026-07): €1.025→€1.650 totaal, ~55-80% te laag. Galápagos alleen al kost sinds aug. 2024 $200 parkentree + $20 transitkaart p.p., plus $150-235/dag voor een budget boot-/landtour — voor 4-5 dagen al €800-950. Quito: pas op voor scopolamine-drogering in bars/taxi's en nep-taxi's." },
-    PE: { days: 35, budget: 1050, lat: -12.0464, lng: -77.0428, destinations: ["Máncora", "Huaraz", "Lima", "Ica & Huacachina", "Arequipa", "Cusco & Vallei van de Inca's", "Puno (Titicacameer)"], transport_to_next: "Bus/boot van Puno via de grensovergang Yunguyo of Desaguadero naar Copacabana en La Paz, Bolivia.", notes: "Prijs geverifieerd (2026-07), klopt (krap). Lima onder noodtoestand (crimineel geweld); regelmatige stakingen/wegblokkades landelijk. Machu Picchu (trein+entree, ~€150-250) is een aparte kostenpost." },
-    BO: { days: 21, budget: 425, lat: -16.5, lng: -68.1193, destinations: ["Copacabana", "La Paz", "Uyuni-zoutvlakte", "Sucre", "Potosí", "Santa Cruz"], transport_to_next: "Jeeptocht via de Uyuni-zoutvlaktetour (3 dagen) over land naar San Pedro de Atacama, Chili.", notes: "Prijs geverifieerd (2026-07), klopt. Noodtoestand actief sinds 20 juni 2026 (~90 dagen) tegen wegblokkades — check actuele situatie, vluchten/wegen kunnen onverwacht sluiten. Uyuni-tour (~€140-180 all-in) is een aparte kostenpost." },
-    CL: { days: 10, budget: 520, lat: -22.9098, lng: -68.1997, destinations: ["San Pedro de Atacama", "Valle de la Luna", "Valle del Arcoíris", "Antofagasta", "Iquique"], transport_to_next: "Bus over land via de grensovergang Paso de Jama naar Salta/Jujuy, Argentinië.", notes: "Prijscorrectie (2026-07): €40→€52/dag — San Pedro is een van de duurste plekken van Chili. Gewapende straatroof gemeld in San Pedro/Antofagasta/Iquique/Calama/Arica, plus nep-taxi's op vliegvelden." },
-    AR: { days: 10, budget: 350, lat: -24.7859, lng: -65.4117, destinations: ["Salta", "Cafayate", "Purmamarca", "Salinas Grandes", "Tilcara", "Humahuaca"], transport_to_next: "Vlucht van Salta (via Buenos Aires) naar Foz do Iguaçu of São Paulo, Brazilië — over land is dit een reis van meerdere dagen.", notes: "Prijs geverifieerd (2026-07), klopt." },
-    BR: { days: 22, budget: 1166, lat: -22.9068, lng: -43.1729, destinations: ["Foz do Iguaçu (Iguazu-watervallen)", "Curitiba", "Ilha do Mel", "Florianópolis", "São Paulo", "Paraty", "Rio de Janeiro"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Rio de Janeiro (Galeão) of São Paulo (Guarulhos).", notes: "Prijscorrectie (2026-07): €45,45→€53/dag, vooral door Rio/São Paulo. Rio: vermijd favela's en verlaten stranden/straten 's nachts, extra oplettendheid tijdens Carnaval." },
+    MX: { days: 28, budget: 1000, lat: 19.4326, lng: -99.1332, destinations: [
+      { name: 'Ciudad de México', lat: 19.4326, lng: -99.1332 },
+      { name: 'Oaxaca', lat: 17.0732, lng: -96.7266 },
+      { name: 'San Cristóbal de las Casas', lat: 16.7370, lng: -92.6376 },
+      { name: 'Palenque', lat: 17.4890, lng: -91.9792 },
+      { name: 'Mérida', lat: 20.9674, lng: -89.5926 },
+      { name: 'Tulum', lat: 20.2114, lng: -87.4654 },
+      { name: 'Bacalar', lat: 18.6767, lng: -88.3958 },
+    ], transport_to_next: "Bus over land via de grensovergang La Mesilla/El Carmen naar Huehuetenango, Guatemala.", notes: "Prijs geverifieerd (2026-07), klopt. Route 199 tussen San Cristóbal en Palenque: wegbanditisme (niet politiek), niet 's nachts rijden. Routelogica-fix (2026-08, search-bevestigd): San Cristóbal de las Casas stond eerder na Bacalar — Bacalar-San Cristóbal is ≈700 km/10u en rijdt terug langs Palenque, grond die de reis al had bezocht. Nu tussen Oaxaca en Palenque (de standaard 'Ruta Maya'-volgorde), zodat Bacalar het echte eindpunt blijft vlak vóór de grensovergang naar Guatemala." },
+    GT: { days: 16, budget: 400, lat: 14.5586, lng: -90.7295, destinations: [
+      { name: 'Quetzaltenango (Xela)', lat: 14.8347, lng: -91.5225 },
+      { name: 'Lake Atitlán', lat: 14.6862, lng: -91.1954 },
+      { name: 'Antigua', lat: 14.5586, lng: -90.7295 },
+      { name: 'Ciudad de Guatemala', lat: 14.6349, lng: -90.5069 },
+      { name: 'Semuc Champey', lat: 15.5333, lng: -89.9333 },
+      { name: 'Flores & Tikal', lat: 16.9268, lng: -89.8903 },
+    ], transport_to_next: "Bus over land vanaf Flores naar de grensovergang bij Melchor de Menchos, door naar San Ignacio, Belize.", notes: "Prijs geverifieerd (2026-07), klopt — goedkoopste land van de route. Gebruik boten i.p.v. de weg Godínez-Panajachel bij Atitlán; Cerro de la Cruz in Antigua alleen begeleid/overdag. Routelogica-check (2026-08, search-bevestigd): volgorde (Xela→Atitlán→Antigua→Ciudad de Guatemala→Semuc Champey→Flores) is een consistente zuidwest-noordoost lijn, geen zigzag — Flores ligt al vlak bij de Belize-grens." },
+    BZ: { days: 10, budget: 720, lat: 17.4995, lng: -88.1962, destinations: [
+      { name: 'San Ignacio', lat: 17.1594, lng: -89.0685 },
+      { name: 'Belize City', lat: 17.5046, lng: -88.1962 },
+      { name: 'Caye Caulker', lat: 17.7414, lng: -88.0275 },
+      { name: 'Ambergris Caye (San Pedro)', lat: 17.9086, lng: -87.9613 },
+      { name: 'Hopkins/Dangriga', lat: 16.9833, lng: -88.2333 },
+      { name: 'Placencia', lat: 16.5167, lng: -88.3667 },
+    ], transport_to_next: "Veerboot vanaf Placencia/Dangriga rechtstreeks naar Puerto Cortés, Honduras (D-Express/Pride of Belize/Hokey Pokey vanaf Placencia, of Nesymein Neydy vanaf Dangriga — routelogica-fix 2026-08, search-bevestigd: dit is een directe verbinding, geen tussenstop bij Livingston/Guatemala zoals eerder genoteerd; dat beschreef een andere, niet-verbonden bootroute).", notes: "Prijscorrectie (2026-07): €57,50→€72/dag — de vele watertaxi's tussen eilanden ($15-45 p.p. enkele reis) waren niet meegenomen." },
+    HN: { days: 14, budget: 375, lat: 14.8833, lng: -88.0333, destinations: [
+      { name: 'Puerto Cortés', lat: 15.8333, lng: -87.9500 },
+      { name: 'Copán Ruinas', lat: 14.8396, lng: -89.1428 },
+      { name: 'Lago de Yojoa', lat: 14.8833, lng: -88.0333 },
+      { name: 'La Ceiba', lat: 15.7597, lng: -86.7822 },
+      { name: 'Roatán', lat: 16.3250, lng: -86.5417 },
+      { name: 'Tegucigalpa', lat: 14.0723, lng: -87.1921 },
+    ], transport_to_next: "Bus over land via de grensovergang El Amatillo naar El Salvador.", notes: "Prijs geverifieerd (2026-07), klopt. ⚠️ Tegucigalpa/La Ceiba/Puerto Cortés liggen in oranje provincies (bende-/drugsgerelateerde criminaliteit) — Roatán is de gele uitzondering. Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid — Tegucigalpa stond vóór La Ceiba/Roatán (noordkust), terwijl de grensovergang naar El Salvador (El Amatillo) juist zuidelijk ligt, bereikbaar via Tegucigalpa — dat betekende een rit naar het noorden en weer terug naar het zuiden. Nu Puerto Cortés→Copán Ruinas→Lago de Yojoa→La Ceiba→Roatán (noordkust eerst) →Tegucigalpa (zuid, als laatste, rechtstreeks door naar El Salvador)." },
+    SV: { days: 10, budget: 275, lat: 13.6929, lng: -89.2182, destinations: [
+      { name: 'San Salvador', lat: 13.6929, lng: -89.2182 },
+      { name: 'Santa Ana', lat: 13.9942, lng: -89.5597 },
+      { name: 'Cerro Verde & vulkanen', lat: 13.8333, lng: -89.6333 },
+      { name: 'Ruta de las Flores (Juayúa, Ataco)', lat: 13.8333, lng: -89.7500 },
+      { name: 'El Tunco', lat: 13.4917, lng: -89.3833 },
+      { name: 'Suchitoto', lat: 13.9333, lng: -89.0333 },
+    ], transport_to_next: "Bus over land via Honduras (transit) naar de grensovergang El Espino/Guasaule, richting León, Nicaragua.", notes: "Prijs geverifieerd (2026-07), klopt. Veiligheidssituatie sterk verbeterd sinds de noodtoestand (2022) tegen bendes, nu geel — let wel: arrestatie zonder aanklacht blijft mogelijk, geen Nederlandse ambassade ter plaatse." },
+    NI: { days: 15, budget: 350, lat: 11.93, lng: -85.9567, destinations: [
+      { name: 'León', lat: 12.4340, lng: -86.8780 },
+      { name: 'Managua', lat: 12.1150, lng: -86.2362 },
+      { name: 'Granada', lat: 11.9344, lng: -85.9560 },
+      { name: 'Isla de Ometepe', lat: 11.5167, lng: -85.5833 },
+      { name: 'Laguna de Apoyo', lat: 11.9333, lng: -86.0333 },
+      { name: 'San Juan del Sur', lat: 11.2529, lng: -85.8703 },
+    ], transport_to_next: "Bus over land via de grensovergang Peñas Blancas naar Costa Rica.", notes: "Prijs geverifieerd (2026-07), klopt. Regelmatige demonstraties kunnen wegen naar hoofdstad/vliegveld blokkeren; geen Nederlandse ambassade ter plaatse. CA-4-landen (Guatemala/Honduras/El Salvador/Nicaragua) tellen visumtechnisch als één gebied, max. 90 dagen gecombineerd — deze route blijft daar ruim onder." },
+    CR: { days: 21, budget: 1000, lat: 10.4667, lng: -84.6431, destinations: [
+      { name: 'Liberia', lat: 10.6346, lng: -85.4370 },
+      { name: 'La Fortuna/Arenal', lat: 10.4667, lng: -84.6431 },
+      { name: 'Monteverde', lat: 10.3009, lng: -84.8246 },
+      { name: 'Santa Teresa', lat: 9.6461, lng: -85.1670 },
+      { name: 'Manuel Antonio', lat: 9.3925, lng: -84.1425 },
+      { name: 'Puerto Viejo de Talamanca', lat: 9.6558, lng: -82.7553 },
+    ], transport_to_next: "Bus over land via de grensovergang Sixaola/Guabito naar Bocas del Toro, Panama.", notes: "Prijs geverifieerd (2026-07), klopt maar krap — nationale parken/tours ($15-22 entree) zijn een aparte kostenpost bovenop dit dagtarief." },
+    PA: { days: 15, budget: 625, lat: 8.9824, lng: -79.5199, destinations: [
+      { name: 'Bocas del Toro', lat: 9.3400, lng: -82.2400 },
+      { name: 'Boquete', lat: 8.7833, lng: -82.4333 },
+      { name: 'Ciudad van Panama', lat: 8.9824, lng: -79.5199 },
+      { name: 'Casco Viejo', lat: 8.9515, lng: -79.5346 },
+      { name: 'Panamakanaal', lat: 9.0800, lng: -79.6800 },
+      { name: 'San Blas-eilanden', lat: 9.5667, lng: -78.9500 },
+    ], transport_to_next: "Zeilboot (4-5 dagen) via de San Blas-eilanden naar Cartagena, Colombia — geen wegverbinding door de Darién Gap.", notes: "Prijs geverifieerd (2026-07), klopt. Darién-regio (niet op route) is oranje. San Blas-boot: check zwemvesten/twee buitenboordmotoren bij de operator vooraf." },
+    CO: { days: 35, budget: 1260, lat: 4.711, lng: -74.0721, destinations: [
+      { name: 'Cartagena', lat: 10.3910, lng: -75.4794 },
+      { name: 'Santa Marta', lat: 11.2408, lng: -74.1990 },
+      { name: 'Parque Tayrona', lat: 11.3125, lng: -74.0361 },
+      { name: 'Medellín', lat: 6.2442, lng: -75.5812 },
+      { name: 'Salento & Koffiezone', lat: 4.6374, lng: -75.5701 },
+      { name: 'Bogotá', lat: 4.7110, lng: -74.0721 },
+      { name: 'San Agustín', lat: 1.8792, lng: -76.2661 },
+    ], transport_to_next: "Bus over land via Pasto naar de grensovergang Ipiales–Tulcán, door naar Quito, Ecuador.", notes: "Prijscorrectie (2026-07): €28,57→€36/dag, zo'n 18% te krap voor 35 dagen incl. duurdere steden (Cartagena, Bogotá). Route blijft buiten de rode/oranje grenszones. San Blas-Cartagena zeilboot: zelfde operator-check als bij Panama. Routelogica-check (2026-08, search-bevestigd): Medellín→Salento→Bogotá→San Agustín geverifigeerd tegen het alternatief (Medellín→Bogotá→Salento→San Agustín, ≈125 km meer) — de huidige volgorde minimaliseert Bogotá's onvermijdelijke omweg (het ligt niet op de hoofdroute Medellín-Armenia-Ibagué-Neiva-San Agustín), geen wijziging nodig." },
+    EC: { days: 24, budget: 1650, lat: -0.1807, lng: -78.4678, destinations: [
+      { name: 'Quito', lat: -0.1807, lng: -78.4678 },
+      { name: 'Otavalo', lat: 0.2345, lng: -78.2617 },
+      { name: 'Mindo', lat: 0.0500, lng: -78.7667 },
+      { name: 'Baños', lat: -1.3928, lng: -78.4247 },
+      { name: 'Cuenca', lat: -2.9006, lng: -79.0045 },
+      { name: 'Galápagos-eilanden', lat: -0.9538, lng: -90.9656 },
+    ], transport_to_next: "Bus over land via de grensovergang Huaquillas/Tumbes naar Noord-Peru, richting Máncora.", notes: "⚠️ Prijscorrectie (2026-07): €1.025→€1.650 totaal, ~55-80% te laag. Galápagos alleen al kost sinds aug. 2024 $200 parkentree + $20 transitkaart p.p., plus $150-235/dag voor een budget boot-/landtour — voor 4-5 dagen al €800-950. Quito: pas op voor scopolamine-drogering in bars/taxi's en nep-taxi's. Routelogica-check (2026-08, search-bevestigd): Otavalo (noord) en Mindo (west) zijn allebei doodlopende zijsprongen vanuit Quito zonder goede onderlinge verbinding — vrijwel al het verkeer keert sowieso terug via Quito tussen de twee. Dit is normale hub-en-spoke-reislogica, geen zigzag; geen wijziging nodig." },
+    PE: { days: 35, budget: 1050, lat: -12.0464, lng: -77.0428, destinations: [
+      { name: 'Máncora', lat: -4.1075, lng: -81.0500 },
+      { name: 'Huaraz', lat: -9.5278, lng: -77.5278 },
+      { name: 'Lima', lat: -12.0464, lng: -77.0428 },
+      { name: 'Ica & Huacachina', lat: -14.0678, lng: -75.7286 },
+      { name: 'Arequipa', lat: -16.4090, lng: -71.5375 },
+      { name: "Cusco & Vallei van de Inca's", lat: -13.5320, lng: -71.9675 },
+      { name: 'Puno (Titicacameer)', lat: -15.8402, lng: -70.0219 },
+    ], transport_to_next: "Bus/boot van Puno via de grensovergang Yunguyo of Desaguadero naar Copacabana en La Paz, Bolivia.", notes: "Prijs geverifieerd (2026-07), klopt (krap). Lima onder noodtoestand (crimineel geweld); regelmatige stakingen/wegblokkades landelijk. Machu Picchu (trein+entree, ~€150-250) is een aparte kostenpost." },
+    BO: { days: 17, budget: 344, lat: -16.5, lng: -68.1193, destinations: [
+      { name: 'Copacabana', lat: -16.1667, lng: -69.0833 },
+      { name: 'La Paz', lat: -16.5000, lng: -68.1193 },
+      { name: 'Uyuni-zoutvlakte', lat: -20.1338, lng: -67.4891 },
+      { name: 'Sucre', lat: -19.0333, lng: -65.2627 },
+      { name: 'Potosí', lat: -19.5836, lng: -65.7531 },
+    ], transport_to_next: "Jeeptocht via de Uyuni-zoutvlaktetour (3 dagen) over land naar San Pedro de Atacama, Chili.", notes: "Prijs geverifieerd (2026-07), klopt. Noodtoestand actief sinds 20 juni 2026 (~90 dagen) tegen wegblokkades — check actuele situatie, vluchten/wegen kunnen onverwacht sluiten. Uyuni-tour (~€140-180 all-in) is een aparte kostenpost. Routelogica-fix (2026-08, search-bevestigd, Youri's eigen keuze): Santa Cruz geschrapt — het ligt in het oostelijke laagland, ≈638 km van Potosí, en zou daarna weer ≈850 km terug richting Uyuni/Chili betekenen (een dead-end zonder vervolg richting San Pedro de Atacama). De bestaande transport_to_next hierboven ('via de Uyuni-zoutvlaktetour') ging feitelijk al uit van een vertrek vanuit Uyuni, niet Santa Cruz — dat was zelf al een verzwegen aanwijzing dat Santa Cruz niet op de route paste. Dagen/budget evenredig verlaagd (21→17 dagen, €425→€344, zelfde dagtarief)." },
+    CL: { days: 10, budget: 520, lat: -22.9098, lng: -68.1997, destinations: [
+      { name: 'San Pedro de Atacama', lat: -22.9098, lng: -68.1997 },
+      { name: 'Valle de la Luna', lat: -22.9167, lng: -68.3000 },
+      { name: 'Valle del Arcoíris', lat: -23.1667, lng: -68.2833 },
+      { name: 'Antofagasta', lat: -23.6509, lng: -70.3975 },
+      { name: 'Iquique', lat: -20.2141, lng: -70.1522 },
+    ], transport_to_next: "Bus over land via de grensovergang Paso de Jama naar Salta/Jujuy, Argentinië.", notes: "Prijscorrectie (2026-07): €40→€52/dag — San Pedro is een van de duurste plekken van Chili. Gewapende straatroof gemeld in San Pedro/Antofagasta/Iquique/Calama/Arica, plus nep-taxi's op vliegvelden." },
+    AR: { days: 10, budget: 350, lat: -24.7859, lng: -65.4117, destinations: [
+      { name: 'Salta', lat: -24.7859, lng: -65.4117 },
+      { name: 'Cafayate', lat: -26.0725, lng: -65.9761 },
+      { name: 'Purmamarca', lat: -23.7461, lng: -65.4972 },
+      { name: 'Salinas Grandes', lat: -23.5667, lng: -66.4500 },
+      { name: 'Tilcara', lat: -23.5833, lng: -65.3833 },
+      { name: 'Humahuaca', lat: -23.2058, lng: -65.3500 },
+    ], transport_to_next: "Vlucht van Salta (via Buenos Aires) naar Foz do Iguaçu of São Paulo, Brazilië — over land is dit een reis van meerdere dagen.", notes: "Prijs geverifieerd (2026-07), klopt." },
+    BR: { days: 22, budget: 1166, lat: -22.9068, lng: -43.1729, destinations: [
+      { name: 'Foz do Iguaçu (Iguazu-watervallen)', lat: -25.5478, lng: -54.5882 },
+      { name: 'Curitiba', lat: -25.4284, lng: -49.2733 },
+      { name: 'Ilha do Mel', lat: -25.5333, lng: -48.3167 },
+      { name: 'Florianópolis', lat: -27.5954, lng: -48.5480 },
+      { name: 'São Paulo', lat: -23.5505, lng: -46.6333 },
+      { name: 'Paraty', lat: -23.2178, lng: -44.7131 },
+      { name: 'Rio de Janeiro', lat: -22.9068, lng: -43.1729 },
+    ], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Rio de Janeiro (Galeão) of São Paulo (Guarulhos).", notes: "Prijscorrectie (2026-07): €45,45→€53/dag, vooral door Rio/São Paulo. Rio: vermijd favela's en verlaten stranden/straten 's nachts, extra oplettendheid tijdens Carnaval." },
   },
   "Africa Grand Tour 🌍": {
     EG: { days: 21, budget: 1365, lat: 30.0444, lng: 31.2357, destinations: ["Caïro", "Gizeh", "Dahab", "Luxor", "Nijlcruise/felucca", "Aswan", "Alexandrië"], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Caïro International Airport naar Nederland.", notes: "Prijscorrectie (2026-07): €62→€65/dag. Nijlcruise/felucca is een aparte kostenpost, niet in het dagbudget: een eenvoudige felucca (2-3 nachten) ~€115-160/nacht p.p., een standaard toeristenklasse cruiseboot (3-4 nachten Luxor-Aswan, all-in) ~€320-550 p.p. — dit laatste past het best bij Youri's stijl, reken dit apart voor die specifieke nachten (dubbeltel de dagbudget niet voor dezelfde dagen). Reisadvies: geel voor Caïro/Gizeh/Luxor/Aswan/Alexandrië/Nijlcruise en voor de Zuid-Sinaï-badplaatsen incl. Dahab zelf — voor die zone (Sharm/Dahab/Nuweiba) wordt wel aangeraden niet zelfstandig onbegeleid over land te reizen; georganiseerd vervoer erheen (kustroute of vlucht naar Sharm El Sheikh) blijft buiten het oranje/rode Centraal-/Noord-Sinaï. Visum: e-visa (visa2egypt.gov.eg), 30 dagen, prijs licht verhoogd in 2026 ($25-30 single-entry, bevestig bij aanvraag)." },
@@ -1613,7 +1722,7 @@ function rbBuildPanAmericanRoute() {
     { name: 'Colombia', season: 'Februari–maart', budget: 1260, note: 'Droog in zowel de Caribische regio als de koffiezone/Andes.', countries: [panAm('CO', 'Colombia')] },
     { name: 'Ecuador', season: 'Maart–april', budget: 1650, note: 'Sierra droog genoeg voor wandelen; Galápagos is jaarrond goed maar rustiger in dit seizoen.', countries: [panAm('EC', 'Ecuador')] },
     { name: 'Peru', season: 'April–mei', budget: 1050, note: 'Het Andes-droogseizoen begint — ideaal voor Cusco/Vallei van de Inca\'s en Huaraz-trekking.', countries: [panAm('PE', 'Peru')] },
-    { name: 'Bolivia', season: 'Mei–juni', budget: 425, note: 'Droog seizoen, heldere Uyuni-zoutvlakte (let op: geen spiegel-effect zoals in het natte seizoen — een bewuste ruil).', countries: [panAm('BO', 'Bolivia')] },
+    { name: 'Bolivia', season: 'Mei–juni', budget: 344, note: 'Droog seizoen, heldere Uyuni-zoutvlakte (let op: geen spiegel-effect zoals in het natte seizoen — een bewuste ruil).', countries: [panAm('BO', 'Bolivia')] },
     { name: 'Northern Chile', season: 'Juni–juli', budget: 520, note: 'Northern Chile only (Atacama, Antofagasta) — Patagonia is a separate future expedition. De Atacama is jaarrond droog; koude nachten in de Chileense winter, overdag prima.', countries: [panAm('CL', 'Chile')] },
     { name: 'Northern Argentina', season: 'Juli', budget: 350, note: 'Northern Argentina only (Salta, Jujuy) — Patagonia is a separate future expedition. Droog hoogseizoen in Salta/Jujuy, koude nachten in het hooggebergte.', countries: [panAm('AR', 'Argentina')] },
     { name: 'Southern Brazil', season: 'Juli–augustus', budget: 1166, note: 'Southern Brazil only — Northern Brazil is a separate future expedition. Zuid-Braziliaanse winter: mild en droog voor sightseeing (Iguaçu, koloniale steden), maar geen strandweer; voor strandtijd de hele reis 1-2 maanden later starten.', countries: [panAm('BR', 'Brazil')] },
@@ -1625,7 +1734,8 @@ function rbBuildPanAmericanRoute() {
     notes: 'Best started around November 1st (pick your target year and fill in the exact start date above). Patagonia, Antarctica, Northern Brazil, Suriname and the Caribbean are intentionally excluded — planned as separate future expeditions. Imported from a ChatGPT brainstorm — adjust country lists/regions as needed.\n\n' +
       "Tijdscontrole (2026-07): dit was al de best getempode expeditie (274→286 dagen, beperkt aangepast) — Guatemala t/m Ecuador en Bolivia kregen elk een paar dagen extra, terwijl Chili-noord en Argentinië-noord juist zijn ingekort (12→10 en 14→10) omdat één woestijnregio niet de volledige oorspronkelijke tijd nodig had; Mexico, Colombia en Peru waren al ideaal en zijn ongewijzigd. De region-niveau seizoenen hierboven volgen de novemberstart maand voor maand naar het zuiden toe; let op dat de Zuid-Brazilië-finale daardoor in de Zuid-Amerikaanse winter valt (mild, prima voor sightseeing, maar geen strandweer).\n\n" +
       "Vervolg (2026-07): budgetten per land meegeschaald met de aangepaste dagen — regio-budgetten hierboven zijn de nieuwe sommen.\n\n" +
-      "Prijzen/visum/reisadvies-verificatie (2026-07): Belize (€57,50→€72/dag, watertaxi's tussen eilanden), Colombia (€28,57→€36/dag), Ecuador (€1.025→€1.650 totaal, Galápagos-park/transitkosten + boot-/landtour waren niet gedekt), Chili-noord (€40→€52/dag, San Pedro is duur) en Brazilië-zuid (€45,45→€53/dag, Rio/São Paulo) gecorrigeerd. Mexico, Guatemala, Honduras, El Salvador, Nicaragua, Costa Rica, Panama, Peru, Bolivia en Argentinië-noord bevestigd accuraat. Zie de losse landnotities hierboven voor reisadvies/visumdetails (o.a. Honduras' oranje provincies, El Salvador's noodtoestand, CA-4 gecombineerde visumlimiet, Peru/Bolivia's actuele noodtoestanden).",
+      "Prijzen/visum/reisadvies-verificatie (2026-07): Belize (€57,50→€72/dag, watertaxi's tussen eilanden), Colombia (€28,57→€36/dag), Ecuador (€1.025→€1.650 totaal, Galápagos-park/transitkosten + boot-/landtour waren niet gedekt), Chili-noord (€40→€52/dag, San Pedro is duur) en Brazilië-zuid (€45,45→€53/dag, Rio/São Paulo) gecorrigeerd. Mexico, Guatemala, Honduras, El Salvador, Nicaragua, Costa Rica, Panama, Peru, Bolivia en Argentinië-noord bevestigd accuraat. Zie de losse landnotities hierboven voor reisadvies/visumdetails (o.a. Honduras' oranje provincies, El Salvador's noodtoestand, CA-4 gecombineerde visumlimiet, Peru/Bolivia's actuele noodtoestanden).\n\n" +
+      "Routelogica-herziening (2026-08, search-bevestigd, elfde expeditie uit ROUTE_LOGIC_REVIEW.md, grootste route in deze ronde — 15 landen): vier fixes. (1) **Mexico**: San Cristóbal de las Casas stond na Bacalar — een ≈700 km/10u terugrit langs Palenque, grond die de reis al had bezocht. Nu tussen Oaxaca en Palenque (de standaard 'Ruta Maya'-volgorde). (2) **Belize-Honduras-ferry**: de tekst 'via Livingston, Guatemala' bleek onjuist — de daadwerkelijke veerdiensten (Placencia/Dangriga-Puerto Cortés) varen rechtstreeks, geen Guatemala-tussenstop. Gecorrigeerd. (3) **Honduras**: Tegucigalpa stond vóór La Ceiba/Roatán (noordkust), terwijl de grensovergang naar El Salvador juist zuidelijk ligt via Tegucigalpa — dat betekende noordwaarts dan weer zuidwaarts. Nu noordkust eerst (La Ceiba/Roatán), Tegucigalpa als laatste. (4) **Bolivia**: Santa Cruz (oostelijk laagland) geschrapt — Youri's eigen keuze na een gerichte vraag — het lag ≈638 km van Potosí met daarna ≈850 km terug richting Uyuni/Chili nodig, een dead-end zonder vervolg. De bestaande transport-tekst ('via de Uyuni-zoutvlaktetour') ging zelf al uit van vertrek vanuit Uyuni, niet Santa Cruz — een verzwegen aanwijzing die er al was. Bolivia's dagen/budget evenredig verlaagd (21→17 dagen, €425→€344). Bevestigd zonder wijziging: Guatemala's interne volgorde, Colombia's Medellín-Salento-Bogotá-San Agustín (minimaliseert Bogotá's onvermijdelijke omweg al), en Ecuador's Otavalo/Mindo-structuur (normale hub-en-spoke vanuit Quito, geen zigzag). Coördinaten per bestemming toegevoegd aan alle 15 landen. Youri had alleen Yucatán (Mexico) en Lake Atitlán/Antigua/Acatenango (Guatemala) al eerder bezocht, verder niets — geen cuts daar. Zelfde fixes ook toegepast op de vier split-companions (Mexico 🌵, Midden-Amerika Loop 🌋, Andes Grand Traverse 🦙, Zuidelijke Kegel & Brazilië-finale 🧉) via de gedeelde RB_EXPEDITION_CONTENT-tabel.",
   });
 }
 
@@ -3434,7 +3544,7 @@ function rbBuildMexicoRoute() {
     travel_style: 'Backpacker — lokale bussen en colectivos.',
     climate_summary: 'November-december is het droge seizoen, direct na de zomerse regens — het hele land is dan goed begaanbaar.',
     description: 'Van Ciudad de México via Oaxaca naar de Maya-ruïnes van Palenque.',
-    notes: 'Losgesplitst van Pan-American Grand Tour 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen uit Pan-American Grand Tour 🌎 (inclusief alle prijs-/visum-/reisadvies-verificaties, zoals de waarschuwing over Route 199). Pan-American Grand Tour 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+    notes: "Losgesplitst van Pan-American Grand Tour 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen uit Pan-American Grand Tour 🌎 (inclusief alle prijs-/visum-/reisadvies-verificaties, zoals de waarschuwing over Route 199). Pan-American Grand Tour 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): San Cristóbal de las Casas verplaatst (nu tussen Oaxaca en Palenque i.p.v. na Bacalar) om een ≈700 km-terugrit te vermijden. Coördinaten per bestemming toegevoegd. Zie Pan-American Grand Tour 🌎's eigen notities voor de volledige onderbouwing.",
   });
 }
 
@@ -3448,7 +3558,7 @@ function rbBuildCentralAmericaLoopRoute() {
     travel_style: 'Backpacker — lokale bussen (chicken bus tot luxere overlandbus), zeilboot door de San Blas-eilanden i.p.v. vliegen over de Darién Gap.',
     climate_summary: 'Een decemberstart legt Noord-Midden-Amerika (Guatemala t/m El Salvador) in het droge seizoen, ruim na het orkaanseizoen, en bereikt Zuid-Midden-Amerika (Nicaragua t/m Panama) in januari-februari — de Pacifische droge tijd, de beste periode voor de kust.',
     description: 'Van de Maya-hoogvlaktes van Guatemala via Belize, Honduras en El Salvador naar de Pacifische kust van Costa Rica en Panama.',
-    notes: "Losgesplitst van Pan-American Grand Tour 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen uit Pan-American Grand Tour 🌎; alleen de expeditiegrens is nieuw. Let op: dit blok bevat de volledige CA-4-visumzone (Guatemala/Honduras/El Salvador/Nicaragua delen één gezamenlijke 90-dagenlimiet, ook al vallen ze hier over de twee regio's hierboven) — deze route blijft ruim onder die limiet, maar hou er rekening mee als je de regio's ooit los van elkaar zou plannen. Pan-American Grand Tour 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.",
+    notes: "Losgesplitst van Pan-American Grand Tour 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen uit Pan-American Grand Tour 🌎; alleen de expeditiegrens is nieuw. Let op: dit blok bevat de volledige CA-4-visumzone (Guatemala/Honduras/El Salvador/Nicaragua delen één gezamenlijke 90-dagenlimiet, ook al vallen ze hier over de twee regio's hierboven) — deze route blijft ruim onder die limiet, maar hou er rekening mee als je de regio's ooit los van elkaar zou plannen. Pan-American Grand Tour 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): Belize-Honduras-ferrytekst gecorrigeerd (rechtstreeks, geen Livingston-tussenstop) en Honduras' volgorde omgedraaid (noordkust vóór Tegucigalpa). Coördinaten per bestemming toegevoegd. Zie Pan-American Grand Tour 🌎's eigen notities voor de volledige onderbouwing.",
   });
 }
 
@@ -3458,13 +3568,13 @@ function rbBuildAndesGrandTraverseRoute() {
     { name: 'Colombia', season: 'Februari–maart', budget: 1260, note: 'Droog in zowel de Caribische regio als de koffiezone/Andes.', countries: [panAm('CO', 'Colombia')] },
     { name: 'Ecuador', season: 'Maart–april', budget: 1650, note: 'Sierra droog genoeg voor wandelen; Galápagos is jaarrond goed maar rustiger in dit seizoen.', countries: [panAm('EC', 'Ecuador')] },
     { name: 'Peru', season: 'April–mei', budget: 1050, note: "Het Andes-droogseizoen begint — ideaal voor Cusco/Vallei van de Inca's en Huaraz-trekking.", countries: [panAm('PE', 'Peru')] },
-    { name: 'Bolivia', season: 'Mei–juni', budget: 425, note: 'Droog seizoen, heldere Uyuni-zoutvlakte (let op: geen spiegel-effect zoals in het natte seizoen — een bewuste ruil).', countries: [panAm('BO', 'Bolivia')] },
+    { name: 'Bolivia', season: 'Mei–juni', budget: 344, note: 'Droog seizoen, heldere Uyuni-zoutvlakte (let op: geen spiegel-effect zoals in het natte seizoen — een bewuste ruil).', countries: [panAm('BO', 'Bolivia')] },
   ], {
     best_starting_month: 'Februari',
     travel_style: 'Backpacker — lokale bussen door de Andes, geen enkele vlucht nodig tussen deze vier landen (ononderbroken overland-corridor).',
     climate_summary: 'Een februaristart legt Colombia in zijn droge seizoen (zowel Caribische kust als koffiezone/Andes), Ecuador in maart-april (Sierra droog genoeg om te wandelen), Peru in april-mei (Andes-droogseizoen, ideaal voor Cusco en Huaraz) en Bolivia in mei-juni (heldere, droge Uyuni-zoutvlakte).',
     description: 'Ononderbroken overland door de Andes: van de Caribische kust van Colombia via Ecuador en Peru naar de Boliviaanse zoutvlaktes.',
-    notes: 'Losgesplitst van Pan-American Grand Tour 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen uit Pan-American Grand Tour 🌎 (inclusief de prijscorrectie op Ecuador voor Galápagos-kosten); alleen de expeditiegrens is nieuw. Pan-American Grand Tour 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+    notes: "Losgesplitst van Pan-American Grand Tour 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen uit Pan-American Grand Tour 🌎 (inclusief de prijscorrectie op Ecuador voor Galápagos-kosten); alleen de expeditiegrens is nieuw. Pan-American Grand Tour 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): Bolivia's Santa Cruz geschrapt (dead-end-omweg richting het laagland, ≈850 km terug nodig richting Chili) — dagen/budget verlaagd (21→17, €425→€344). Colombia en Ecuador geverifieerd, al optimaal. Coördinaten per bestemming toegevoegd. Zie Pan-American Grand Tour 🌎's eigen notities voor de volledige onderbouwing.",
   });
 }
 
@@ -3479,7 +3589,7 @@ function rbBuildSouthernConeAndBrazilFinaleRoute() {
     travel_style: 'Backpacker — lokale bussen, één binnenlandse vlucht van Salta naar Foz do Iguaçu/Zuid-Brazilië (de afstand rechtvaardigt dat).',
     climate_summary: 'Een junistart legt Noord-Chili (Atacama) in de Chileense winter (jaarrond droog, koude nachten), Noord-Argentinië (Salta/Jujuy) in juli (droog hoogseizoen) en Zuid-Brazilië in juli-augustus (Zuid-Braziliaanse winter: mild en droog voor sightseeing, maar geen strandweer).',
     description: 'Van de Atacama-woestijn via Noord-Argentinië naar de winterse zuidkust van Brazilië.',
-    notes: "Losgesplitst van Pan-American Grand Tour 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen uit Pan-American Grand Tour 🌎; alleen de expeditiegrens is nieuw. 'Northern Chile' en 'Northern Argentina' zijn hier letterlijk alleen het noordelijke deel van die landen — Patagonië (het zuidelijke deel) zit al in de aparte Patagonia & Antarctica Expedition 🧊, exact het 'zelfde land, ander block'-patroon uit de modularisatie-analyse. Pan-American Grand Tour 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.",
+    notes: "Losgesplitst van Pan-American Grand Tour 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen uit Pan-American Grand Tour 🌎; alleen de expeditiegrens is nieuw. 'Northern Chile' en 'Northern Argentina' zijn hier letterlijk alleen het noordelijke deel van die landen — Patagonië (het zuidelijke deel) zit al in de aparte Patagonia & Antarctica Expedition 🧊, exact het 'zelfde land, ander block'-patroon uit de modularisatie-analyse. Pan-American Grand Tour 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): geen fouten gevonden in Chili/Argentinië/Brazilië — geen wijziging nodig, alleen coördinaten per bestemming toegevoegd. Zie Pan-American Grand Tour 🌎's eigen notities.",
   });
 }
 
@@ -6441,6 +6551,81 @@ function rbMigrateOceaniaRouteLogicOverhaul() {
   });
 
   rbSave();
+}
+
+/**
+ * Pan-American Grand Tour — route-logic review (2026-08), eleventh expedition in the
+ * ROUTE_LOGIC_REVIEW.md playbook, biggest route in this round (15 countries). Same field-patch +
+ * splice pattern as rbMigrateEurasiaRouteOverhaul()/rbApplyEurasiaOverhaulToRoute() — this route
+ * shares RB_EXPEDITION_CONTENT via rbContentFor() with its four 2026-07 split companions (Mexico 🌵,
+ * Midden-Amerika Loop 🌋, Andes Grand Traverse 🦙, Zuidelijke Kegel & Brazilië-finale 🧉), so all five
+ * need the same field sync. Four fixes: Mexico's San Cristóbal de las Casas moved from after Bacalar
+ * to between Oaxaca and Palenque (avoided a ≈700km backtrack); the Belize-Honduras ferry's "via
+ * Livingston, Guatemala" text corrected (the real ferries run direct); Honduras reordered so the
+ * north coast (La Ceiba/Roatán) comes before Tegucigalpa, not after (avoided a north-then-south
+ * backtrack); Bolivia's Santa Cruz dropped (Youri's own call — a lowland dead-end costing ≈850km of
+ * backtrack towards Chile), with days/budget scaled down accordingly. See
+ * rbBuildPanAmericanRoute()'s own notes for the full writeup.
+ */
+function rbMigratePanAmericanRouteLogicOverhaul() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_PANAMERICAN_OVERHAUL)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_PANAMERICAN_OVERHAUL, '1');
+
+  const routeNames = ['Pan-American Grand Tour 🌎', 'Mexico 🌵', 'Midden-Amerika Loop 🌋', 'Andes Grand Traverse 🦙', 'Zuidelijke Kegel & Brazilië-finale 🧉'];
+  routeNames.forEach(name => rbApplyPanAmericanOverhaulToRoute(rbRoutes.find(r => r.name === name)));
+}
+
+function rbApplyPanAmericanOverhaulToRoute(route) {
+  if (!route) return;
+
+  let touched = false;
+  const content = RB_EXPEDITION_CONTENT['Pan-American Grand Tour 🌎'];
+
+  if (content) {
+    ['MX', 'BZ', 'HN', 'BO'].forEach(code => {
+      const block = route.blocks.find(b => b.country_code === code);
+      const c = content[code];
+      if (!block || !c) return;
+      if (block.transport_to_next !== c.transport_to_next) { block.transport_to_next = c.transport_to_next; touched = true; }
+      if (block.days !== c.days) { block.days = c.days; touched = true; }
+      if (block.budget !== c.budget) { block.budget = c.budget; touched = true; }
+      if (c.notes && block.notes !== c.notes) { block.notes = c.notes; touched = true; }
+      const normalizeDest = d => (typeof d === 'string' ? { name: d, lat: null, lng: null } : { name: d.name, lat: d.lat ?? null, lng: d.lng ?? null });
+      const newDests = (c.destinations || []).map(normalizeDest);
+      const oldDests = (block.destinations || []).map(normalizeDest);
+      if (JSON.stringify(newDests) !== JSON.stringify(oldDests)) {
+        block.destinations = newDests.map(d => ({ id: rbNewDestId(), name: d.name, notes: '', lat: d.lat, lng: d.lng }));
+        touched = true;
+      }
+    });
+
+    // Every other country (GT, SV, NI, CR, PA, CO, EC, PE, CL, AR, BR) only gained per-destination
+    // coordinates this round, no field changes — sync those too so the "Gedetailleerd" map view works.
+    ['GT', 'SV', 'NI', 'CR', 'PA', 'CO', 'EC', 'PE', 'CL', 'AR', 'BR'].forEach(code => {
+      const block = route.blocks.find(b => b.country_code === code);
+      const c = content[code];
+      if (!block || !c) return;
+      const normalizeDest = d => (typeof d === 'string' ? { name: d, lat: null, lng: null } : { name: d.name, lat: d.lat ?? null, lng: d.lng ?? null });
+      const newDests = (c.destinations || []).map(normalizeDest);
+      const oldDests = (block.destinations || []).map(normalizeDest);
+      if (JSON.stringify(newDests) !== JSON.stringify(oldDests)) {
+        block.destinations = newDests.map(d => ({ id: rbNewDestId(), name: d.name, notes: '', lat: d.lat, lng: d.lng }));
+        touched = true;
+      }
+    });
+  }
+
+  (route.regions || []).forEach(region => {
+    if (region.name === 'Bolivia' && region.budget !== 344) { region.budget = 344; touched = true; }
+  });
+
+  const note = "Routelogica-herziening (2026-08): San Cristóbal de las Casas verplaatst (Mexico), Belize-Honduras-ferrytekst gecorrigeerd, Honduras' volgorde omgedraaid, Bolivia's Santa Cruz geschrapt (dagen/budget 21/€425→17/€344). Coördinaten per bestemming toegevoegd aan alle landen. Zie Pan-American Grand Tour 🌎's eigen notities voor de volledige onderbouwing.";
+  if (route.notes && !route.notes.includes("Routelogica-herziening (2026-08)") && !route.notes.includes("routelogica-herziening (2026-08)")) {
+    route.notes += '\n\n' + note;
+    touched = true;
+  }
+
+  if (touched) rbSave();
 }
 
 function rbMigrateBahrainIntoMediterraneanExpedition() {

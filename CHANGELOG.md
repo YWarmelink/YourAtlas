@@ -12,6 +12,25 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Pan-American Grand Tour 🌎 routelogica-herziening (2026-08)** — elfde expeditie uit de
+  `ROUTE_LOGIC_REVIEW.md`-playbook, grootste route in deze ronde (15 landen). Vier fixes.
+  **Mexico**: San Cristóbal de las Casas stond na Bacalar — een ≈700 km/10u terugrit langs Palenque,
+  grond die de reis al had bezocht. Nu tussen Oaxaca en Palenque (de standaard "Ruta Maya"-volgorde).
+  **Belize-Honduras-ferry**: de tekst "via Livingston, Guatemala" bleek onjuist — de daadwerkelijke
+  veerdiensten (Placencia/Dangriga-Puerto Cortés) varen rechtstreeks. **Honduras**: Tegucigalpa stond
+  vóór La Ceiba/Roatán (noordkust), terwijl de grensovergang naar El Salvador juist zuidelijk ligt via
+  Tegucigalpa — nu noordkust eerst, Tegucigalpa als laatste. **Bolivia**: Santa Cruz (oostelijk
+  laagland) geschrapt — Youri's eigen keuze na een gerichte vraag — het lag ≈638 km van Potosí met
+  daarna ≈850 km terug richting Uyuni/Chili nodig, een dead-end. De bestaande transport-tekst ("via de
+  Uyuni-zoutvlaktetour") ging zelf al uit van vertrek vanuit Uyuni, niet Santa Cruz — een verzwegen
+  aanwijzing die er al was. Dagen/budget evenredig verlaagd (21→17 dagen, €425→€344). Bevestigd zonder
+  wijziging: Guatemala's interne volgorde, Colombia's Medellín-Salento-Bogotá-San Agustín, en Ecuador's
+  Otavalo/Mindo-structuur (normale hub-en-spoke, geen zigzag). Coördinaten per bestemming toegevoegd
+  aan alle 15 landen. Toegepast via `rbMigratePanAmericanRouteLogicOverhaul()`/
+  `rbApplyPanAmericanOverhaulToRoute()` — field-patch + destination-sync via de gedeelde
+  `RB_EXPEDITION_CONTENT`-tabel, zelfde patroon als Eurasia's migratie, toegepast op de hoofdroute en
+  alle vier split-companions (Mexico 🌵, Midden-Amerika Loop 🌋, Andes Grand Traverse 🦙, Zuidelijke
+  Kegel & Brazilië-finale 🧉).
 - **Oceania Grand Expedition 🌊 routelogica-herziening (2026-08)** — tiende expeditie uit de
   `ROUTE_LOGIC_REVIEW.md`-playbook. Drie fixes. **Pacific-eilanden**: de oude volgorde (Fiji→Vanuatu→
   Samoa→Tonga→Cook Islands) sprong van Fiji naar Vanuatu (west), dan terug oostwaarts voorbij Fiji

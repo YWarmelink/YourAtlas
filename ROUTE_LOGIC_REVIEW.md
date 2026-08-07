@@ -3,8 +3,8 @@
 Status: **Eurasia Grand Tour 🌏, Patagonia & Antarctica Expedition 🧊, India & Himalaya Expedition
 🏔️, Nordic Arctic Expedition ❄️, Caribbean & Amazon Expedition 🌴, Central European Grand Roadtrip
 🚗, British Isles & Celtic Coast Expedition 🍀, North America Grand Traverse 🌎, West & Central
-Africa Expedition 🌍 en Oceania Grand Expedition 🌊 klaar (2026-08)**, de andere 3 originele
-expedities nog niet.
+Africa Expedition 🌍, Oceania Grand Expedition 🌊 en Pan-American Grand Tour 🌎 klaar (2026-08)**,
+de andere 2 originele expedities nog niet.
 Dit document legt vast wát we bij Eurasia deden en hóe je dat 1-op-1 herhaalt — pak deze aanpak op
 zodra Youri aangeeft dat hij een volgende expeditie wil laten doornemen, geen nieuwe analyse nodig.
 
@@ -319,10 +319,39 @@ en `rbMigrateOceaniaRouteLogicOverhaul()` voor het code-patroon — wholesale-re
 de vier split-companions (Pacific-eilanden 🌺, Tropisch/Outback Australië 🐊, Gematigd/Zuidelijk
 Australië 🍇, Nieuw-Zeeland 🥝) die nog nooit een eigen migratie hadden gehad.
 
-## De overige 3 originele expedities
+## Pan-American Grand Tour: wat er gebeurde (2026-08), als elfde referentie — grootste route tot nu toe, vier losse fixes
+
+Zelfde stappenplan. Youri had alleen Yucatán (Mexico) en Lake Atitlán/Antigua/Acatenango (Guatemala)
+al eerder bezocht — verder niets, geen cuts nodig daarvoor.
+
+Vier fixes, verspreid over de hele 15-landenroute, geen enkele in de hoofdlandvolgorde zelf: **Mexico**
+had San Cristóbal de las Casas na Bacalar staan — een ≈700 km-terugrit langs Palenque, grond die de
+reis al had bezocht — nu tussen Oaxaca en Palenque (standaard "Ruta Maya"-volgorde). **De Belize-
+Honduras-ferry** beschreef een tussenstop bij Livingston (Guatemala) die niet bestaat — de echte
+veerdiensten varen rechtstreeks; tekstfix, geen routewijziging. **Honduras** had Tegucigalpa vóór
+La Ceiba/Roatán (noordkust) staan, terwijl de grensovergang naar El Salvador juist via Tegucigalpa
+zuidelijk ligt — noordkust nu eerst, Tegucigalpa als laatste. **Bolivia**: Santa Cruz (oostelijk
+laagland) geschrapt, Youri's eigen keuze — het kostte ≈850 km pure heen-en-terug-omweg voordat de
+reis weer richting Chili kon. Interessant: de bestaande transporttekst ("via de Uyuni-zoutvlaktetour")
+ging zelf al uit van vertrek vanuit Uyuni, niet Santa Cruz — exact hetzelfde soort verzwegen
+aanwijzing als Oceania's "meestal via Fiji"-notities. Bevestigd zonder wijziging: Guatemala's interne
+volgorde, Colombia's Medellín-Salento-Bogotá-San Agustín (al de kortste optie, geverifieerd tegen het
+alternatief), en Ecuador's Otavalo/Mindo-structuur (normale hub-en-spoke vanuit Quito).
+
+**Les**: bij een route van deze omvang (15 landen) zaten de bugs niet in de grote lijn (die klopte al)
+maar verspreid als losse, kleine fouten per land — zelfde patroon als West & Central Africa. Grote
+schaal is geen reden om minder grondig te controleren; het is juist waar meerdere kleine fouten zich
+kunnen verstoppen.
+
+Zie `CHANGELOG.md` ("Pan-American Grand Tour 🌎 routelogica-herziening") voor de volledige uitkomst,
+en `rbMigratePanAmericanRouteLogicOverhaul()`/`rbApplyPanAmericanOverhaulToRoute()` voor het
+code-patroon — field-patch + destination-sync via de gedeelde `RB_EXPEDITION_CONTENT`-tabel, zelfde
+patroon als Eurasia's migratie, toegepast op de hoofdroute en alle vier split-companions (Mexico 🌵,
+Midden-Amerika Loop 🌋, Andes Grand Traverse 🦙, Zuidelijke Kegel & Brazilië-finale 🧉).
+
+## De overige 2 originele expedities
 
 In willekeurige volgorde van omvang (kleiner = sneller te doen, geen inhoudelijke prioriteit):
-- **Pan-American Grand Tour 🌎** — groot (15 landen), plus 4 split-companions.
 - **Mediterranean Civilizations Expedition 🏛️** — grootst (18 etappes), plus 6 split-companions.
 - **Africa Grand Tour 🌍** — groot (18 landen), plus 4 split-companions.
 
