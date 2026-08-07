@@ -12,6 +12,29 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **British Isles & Celtic Coast Expedition 🍀 routelogica-herziening (2026-08)** — zevende expeditie
+  uit de `ROUTE_LOGIC_REVIEW.md`-playbook, tweede zelf-rijdende lus. Grootste vondst: het 2026-07-
+  ontwerp had Isle of Man al terecht "genest" in de Noord-Engeland-etappe, maar op het verkeerde punt
+  — ná Bamburgh (bij de Schotse grens) in plaats van bij het Lake District (vlak naast Heysham, de
+  enige jaarronde ferryhaven). Dat betekende een rit helemaal terug naar Heysham (≈250 km) en daarna
+  weer noordwaarts naar Edinburgh (≈264 km) — twee keer dezelfde noord-zuid-corridor gekruist.
+  Opgelost door de oude "Noord-Engeland"-etappe (9 dagen, €965) te splitsen in een Lake District-
+  etappe (met de Isle of Man-zijsprong) en een Yorkshire & Northumberland-etappe die rechtstreeks naar
+  Edinburgh doorrijdt (≈124 km via de A1) — United Kingdom komt hierdoor nu zeven keer voor i.p.v.
+  zes. Twee kleinere fixes erbij: **Schotlands Highlands-volgorde** had een oost-west-zigzag
+  (Skye→Loch Ness→Applecross→NC500) — nu Skye→Applecross→NC500 (bewust beperkt tot Ullapool, niet
+  doorgetrokken naar Durness/John o'Groats) →Loch Ness/Inverness, met een rechtstreekse ≈400 km-rit
+  naar Cairnryan. **Ierlands afsluitende "Dublin (kort)"-stop** is geschrapt (Youri's eigen keuze) —
+  Kilkenny-Dublin-Rosslare kostte ≈190 km meer dan rechtstreeks Kilkenny-Rosslare, voor een stop die
+  toch al kort bedoeld was. Bevestigd zonder wijziging: Wales' volgorde, de Bretagne-rondgang (leek
+  een zigzag, bleek een correcte rondgang om Finistère) en Normandië's volgorde. Kleinere correcties:
+  Quiberon-Mont Saint-Michel was ≈100 km genoteerd, is in werkelijkheid ≈240 km; Gent/Brugge
+  omgedraaid naar Brugge→Gent (bespaart ≈25-40 km, geen omweg van huis vandaan meer). Alle 16 etappes
+  kregen per-bestemming coördinaten. Landen/dagen ongewijzigd (86/115 dagen); grondkosten
+  €13.245→€13.195. Toegepast via `rbMigrateBritishIslesRouteLogicOverhaul()` — dezelfde
+  wholesale-replace-migratie die deze route al twee keer eerder gebruikte (prijsverificatie-ronde 3,
+  routelijn-coördinaten-ronde 2), niet een veldpatch. Geen split-companions (auto-roadtrips blijven
+  ongesplitst, zie `ROUTE_BUILDER_MODULES.md`).
 - **Central European Grand Roadtrip 🚗 routelogica-herziening (2026-08)** — zesde expeditie uit de
   `ROUTE_LOGIC_REVIEW.md`-playbook, en de eerste zelf-rijdende lus. Geen landvolgorde-fouten
   gevonden — de lus (Elzas→Alpenlanden→Dolomieten/Noord-Italië→Balkan→Midden-Europa→NL) is één

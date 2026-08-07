@@ -54,6 +54,7 @@ const RB_MIGRATE_FLAG_2026_08_HIMALAYA_OVERHAUL = 'atlas_grand_trips_migrate_202
 const RB_MIGRATE_FLAG_2026_08_NORDIC_ARCTIC_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_nordic_arctic_overhaul_v1';
 const RB_MIGRATE_FLAG_2026_08_CARIBBEAN_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_caribbean_overhaul_v1';
 const RB_MIGRATE_FLAG_2026_08_CENTRAL_EUROPE_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_central_europe_overhaul_v1';
+const RB_MIGRATE_FLAG_2026_08_BRITISH_ISLES_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_british_isles_overhaul_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -114,6 +115,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateNordicArcticRouteLogicOverhaul();
   rbMigrateCaribbeanAmazonRouteLogicOverhaul();
   rbMigrateCentralEuropeRouteLogicOverhaul();
+  rbMigrateBritishIslesRouteLogicOverhaul();
   rbBindEvents();
 
   try {
@@ -2876,10 +2878,11 @@ function rbSeedBritishIslesExpedition() {
  * a ChatGPT brainstorm Youri brought in. Self-driven (own car from the Netherlands), same style as
  * Central European Grand Roadtrip — car costs (fuel/tolls/parking/ferries) are shared per car and
  * tracked once in this note, NOT folded into each leg's per-person budget below. United Kingdom (GB)
- * appears six times (South England, Cornwall, Wales, North England, Scotland, Northern Ireland) and
- * Ireland (IE) twice (West, South & East) — repeated-country legs, same reason Mediterranean/North
- * America/Oceania/Central European Roadtrip are hand-authored here instead of using
- * RB_EXPEDITION_CONTENT.
+ * appears seven times (South England, Cornwall, Wales, Lake District, Yorkshire & Northumberland,
+ * Scotland, Northern Ireland) and Ireland (IE) twice (West, South & East) — repeated-country legs,
+ * same reason Mediterranean/North America/Oceania/Central European Roadtrip are hand-authored here
+ * instead of using RB_EXPEDITION_CONTENT. (The North England leg was originally one seven-leg block;
+ * the 2026-08 route-logic review split it in two around the Isle of Man detour, see below.)
  *
  * Two route-order corrections made during design, both from real ferry-geography research (Youri's
  * brief already had the right instinct, just needed the ports checked): (1) Isle of Man moved from
@@ -2898,6 +2901,20 @@ function rbSeedBritishIslesExpedition() {
  * highlight (the TT course) that genuinely needs a car, and Manx public transport/heritage railways
  * (Manx Electric Railway, Snaefell Mountain Railway) cover the rest.
  *
+ * Route-logic review (2026-08, search-confirmed): the 2026-07 design got the Isle of Man's *position*
+ * right (nested inside North England, not before it) but not the point *within* that leg where it
+ * happens — it was sequenced after the leg's last stop (Bamburgh, near the Scottish border), forcing a
+ * drive all the way back to Heysham (≈250km) and then back north to Edinburgh (≈264km), crossing the
+ * same north-south corridor twice. Fixed by splitting the old single "North England" leg into a Lake
+ * District leg (right next to Heysham, so Isle of Man happens there instead) and a Yorkshire &
+ * Northumberland leg that continues straight on to Edinburgh (≈124km via the A1, no backtrack). Same
+ * review also reordered Scotland's Highlands sub-loop (Skye→Loch Ness→Applecross was an east-west
+ * zigzag, now Skye→Applecross→NC500-partial→Loch Ness/Inverness crosses the Highlands only once
+ * before the direct run to Cairnryan) and dropped Ireland's brief closing "Dublin" stop (Kilkenny→
+ * Dublin→Rosslare cost ≈190km more than Kilkenny→Rosslare directly, for a stop already flagged as
+ * short — Youri's own call to cut it rather than keep the detour). See CHANGELOG.md and
+ * ROUTE_LOGIC_REVIEW.md for the full writeup.
+ *
  * Known cosmetic gap: Isle of Man (IM), Jersey (JE) and Guernsey (GG) aren't in the ISO_NUM lookup
  * used by the World map view's topojson data (js/utils/isoCountries.js) — same kind of gap as the
  * existing "country dropdown depends on the live Countries sheet" limitation. Their blocks work fine
@@ -2909,37 +2926,77 @@ function rbBuildBritishIslesExpeditionRoute() {
       name: 'Engeland & Wales',
       season: 'Juni',
       budget: 4275,
-      note: 'De opening van de expeditie: van de kalkkliffen en historische steden van Zuid-Engeland via het ruige Cornwall naar de bergen van Wales, met Isle of Man als zijsprong vanuit Noord-Engeland vlak voordat de reis noordwaarts naar Schotland afbuigt.',
+      note: 'De opening van de expeditie: van de kalkkliffen en historische steden van Zuid-Engeland via het ruige Cornwall naar de bergen van Wales, met Isle of Man als zijsprong vanuit het Lake District (routelogica-fix 2026-08, zie de etappes hieronder) voordat de reis via Yorkshire/Northumberland noordwaarts naar Schotland afbuigt.',
       countries: [
         {
           code: 'GB', name: 'United Kingdom', days: 10, budget: 1155, lat: 51.5074, lng: -0.1278,
-          destinations: ['Dover (White Cliffs)', 'Canterbury', 'Londen', 'Cotswolds', 'Bath', 'Stonehenge', 'Jurassic Coast'],
+          destinations: [
+            { name: 'Dover (White Cliffs)', lat: 51.1279, lng: 1.3134 },
+            { name: 'Canterbury', lat: 51.2802, lng: 1.0789 },
+            { name: 'Londen', lat: 51.5074, lng: -0.1278 },
+            { name: 'Cotswolds', lat: 51.8830, lng: -1.8433 },
+            { name: 'Bath', lat: 51.3811, lng: -2.3590 },
+            { name: 'Stonehenge', lat: 51.1789, lng: -1.8262 },
+            { name: 'Jurassic Coast', lat: 50.6167, lng: -2.4667 },
+          ],
           notes: "Brede opener met veel verschillende sferen: de krijtkliffen en kathedraal van Kent, een korte stedelijke kennismaking met Londen, de traditionele dorpjes van de Cotswolds, de Romeinse baden van Bath en de kustgeologie van de Jurassic Coast. Stonehenge is bewust als korte stop opgenomen (goed vanaf de weg te zien) — de eerste kandidaat om te laten vervallen als de reis ooit korter moet. Prijscorrectie (2026-07): €90→€116/dag gemiddeld (Londen zelf ligt hoger, ~€140/dag; de rest ~€105/dag). Nieuw: sinds 2 april 2025 is een UK ETA verplicht voor Nederlandse/EU-reizigers (~€23 p.p., sinds 8 april 2026 verhoogd van £16 naar £20 — ruim vooraf aanvragen). Cotswolds-dorpen (o.a. Bourton-on-the-Water) heffen inmiddels expliciet parkeergeld (~£1-14/dag). Dartford Crossing (indien de route hem gebruikt): eenmalig £3,50 (~€4), online betalen binnen 30 dagen. Reisadvies: groen voor het VK als geheel.",
           transport_to_next: 'Auto, ≈450 km naar Cornwall via de A30 — geen tol onderweg.',
         },
         {
           code: 'GB', name: 'United Kingdom', days: 7, budget: 875, lat: 50.2144, lng: -5.4791,
-          destinations: ['St Ives', "Land's End", "St Michael's Mount", 'Tintagel Castle', 'South West Coast Path'],
+          destinations: [
+            { name: 'St Ives', lat: 50.2110, lng: -5.4800 },
+            { name: "Land's End", lat: 50.0657, lng: -5.7139 },
+            { name: "St Michael's Mount", lat: 50.1180, lng: -5.4767 },
+            { name: 'Tintagel Castle', lat: 50.6680, lng: -4.7590 },
+            { name: 'South West Coast Path', lat: 50.0453, lng: -5.6497 },
+          ],
           notes: 'Ruige kust en smalle wegen die tijd kosten — de South West Coast Path verdient meerdere hele wandeldagen, niet alleen uitzichtpunten vanaf de weg. St Michael\'s Mount is getijdenafhankelijk (alleen bij eb over de causeway); Tintagel draagt de Arthur-legende. Prijscorrectie (2026-07): €90→€125/dag — Cornwall rekent een reëel prijsopslag t.o.v. Devon, met in juli-augustus nog eens 60-80% extra bovenop de piekprijzen (St Ives is een bekend duur resortplaatsje).',
           transport_to_next: 'Auto, ≈300 km naar Wales via Bristol/de Severn-oeververbinding.',
         },
         {
           code: 'GB', name: 'United Kingdom', days: 8, budget: 800, lat: 53.2799, lng: -3.8278,
-          destinations: ['Pembrokeshire Coast Path', 'Brecon Beacons/Bannau Brycheiniog', 'Snowdonia/Eryri', 'Conwy Castle'],
+          destinations: [
+            { name: 'Pembrokeshire Coast Path', lat: 51.6214, lng: -5.0246 },
+            { name: 'Brecon Beacons/Bannau Brycheiniog', lat: 51.8836, lng: -3.4360 },
+            { name: 'Snowdonia/Eryri', lat: 53.0685, lng: -4.0763 },
+            { name: 'Conwy Castle', lat: 53.2799, lng: -3.8278 },
+          ],
           notes: 'Snowdonia alleen al verdient 2-3 dagen voor echte wandelingen (Snowdon zelf, Cadair Idris); Brecon Beacons en de Pembrokeshire-kust zijn allebei een dag apart waard. Conwy Castle als compacte historische afsluiter. Prijs vrijwel bevestigd (2026-07): €90→€100/dag — het landelijke Wales ligt van alle Britse etappes het dichtst bij de oorspronkelijke vlakke €90/dag, met alleen een kleine correctie voor het zomerseizoen.',
           transport_to_next: 'Auto, ≈250 km naar het Lake District via Chester en de M6 — geen ferry, gewoon doorrijden naar Noord-Engeland.',
         },
         {
-          code: 'GB', name: 'United Kingdom', days: 9, budget: 965, lat: 54.6013, lng: -3.1352,
-          destinations: ['Lake District (Windermere, Scafell Pike, Keswick)', 'Yorkshire Dales', 'York', 'Northumberland', 'Bamburgh Castle'],
-          notes: 'Het Lake District (wandelen) vraagt 3-4 dagen alleen al; York is een volwaardige historische stad, geen tussenstop. Northumberland/Bamburgh als rustige, minder toeristische kustafsluiter voor deze etappe. Prijscorrectie (2026-07): €90→€107/dag — Windermere/Ambleside en York liggen boven het Lake District-gemiddelde; Yorkshire Dales/Northumberland/Bamburgh blijven landelijker en goedkoper.',
-          transport_to_next: "Auto terug naar Heysham (bij het Lake District) om de auto daar veilig achter te laten, dan als voetganger de ferry Heysham-Douglas (Isle of Man Steam Packet, ≈3u45, ~2x/dag jaarrond) — voetgangertarief is een fractie van het autotarief.",
+          code: 'GB', name: 'United Kingdom', days: 4, budget: 429, lat: 54.4609, lng: -3.0886,
+          destinations: [
+            { name: 'Windermere', lat: 54.3720, lng: -2.9080 },
+            { name: 'Scafell Pike', lat: 54.4544, lng: -3.2100 },
+            { name: 'Keswick', lat: 54.6013, lng: -3.1352 },
+          ],
+          notes: 'Het Lake District (wandelen) vraagt 3-4 dagen alleen al. Prijscorrectie (2026-07): €90→€107/dag, zelfde gecorrigeerde tarief als de vervolgetappe hierna (zie de notitie daar voor de routelogica-fix die deze splitsing veroorzaakte).',
+          transport_to_next: "Auto naar Heysham (≈55 km vanaf Keswick/Windermere, ligt er vlak naast), dan als voetganger de ferry Heysham-Douglas (Isle of Man Steam Packet, ≈3u45, ~2x/dag jaarrond) — voetgangertarief is een fractie van het autotarief. Routelogica-fix (2026-08, search-bevestigd): Isle of Man wordt nu meteen na het Lake District bezocht in plaats van pas na de hele Noord-Engeland-etappe — dat laatste betekende een rit helemaal terug naar de hoogte van Bamburgh (≈250 km) en daarna weer noordwaarts naar Edinburgh, twee keer dezelfde noord-zuid-corridor.",
         },
         {
           code: 'IM', name: 'Isle of Man', days: 4, budget: 480, lat: 54.1509, lng: -4.4815,
-          destinations: ['Douglas', 'Peel', 'TT Mountain Road (Snaefell)', 'Manx Electric Railway', 'Snaefell Mountain Railway'],
+          destinations: [
+            { name: 'Douglas', lat: 54.1509, lng: -4.4815 },
+            { name: 'Peel', lat: 54.2231, lng: -4.6959 },
+            { name: 'TT Mountain Road (Snaefell)', lat: 54.2585, lng: -4.3947 },
+            { name: 'Manx Electric Railway', lat: 54.1747, lng: -4.4629 },
+            { name: 'Snaefell Mountain Railway', lat: 54.2136, lng: -4.3970 },
+          ],
           notes: "Klein eiland met een eigen identiteit, prima te doen in vier dagen. Eén dag lokaal een auto huren specifiek om de TT Mountain Road zelf te rijden (Youri's eigen keuze na afweging — goedkoper dan de eigen auto op de ferry meenemen, en het enige onderdeel van het eiland dat echt een auto vraagt); de rest van het eiland is uitstekend te doen met de bus en de historische Manx Electric Railway/Snaefell Mountain Railway. Prijscorrectie (2026-07): €90→€100/dag basis (logies/eten), plus de eendaagse lokale autohuur voor de TT Mountain Road apart begroot op ~€85 (~€480 totaal, was €360). De keuze om de auto in Engeland te laten staan i.p.v. hem mee te nemen op de veerboot blijkt nóg voordeliger dan gedacht: een retour-autoveerboot Heysham/Liverpool-Douglas kost nu ~€390-425, tegenover ~€85 voor de lokale huurauto. Reisadvies/ETA: valt onder dezelfde UK ETA als het vasteland (geen aparte aanvraag/kosten nodig sinds de ETA-regeling op 23 april 2026 is uitgebreid naar Isle of Man/Jersey/Guernsey binnen de Common Travel Area) — wel gewoon een paspoort meenemen, geen ID-kaart.",
-          transport_to_next: 'Ferry terug Douglas-Heysham (voetganger), auto weer ophalen, dan noordwaarts doorrijden naar Edinburgh (≈300 km via de M6/A74).',
+          transport_to_next: 'Ferry terug Douglas-Heysham (voetganger), auto weer ophalen, dan ≈80 km naar de Yorkshire Dales.',
+        },
+        {
+          code: 'GB', name: 'United Kingdom', days: 5, budget: 536, lat: 54.9783, lng: -1.6178,
+          destinations: [
+            { name: 'Yorkshire Dales', lat: 54.2361, lng: -2.1500 },
+            { name: 'York', lat: 53.9600, lng: -1.0873 },
+            { name: 'Northumberland', lat: 55.2833, lng: -2.0167 },
+            { name: 'Bamburgh Castle', lat: 55.6088, lng: -1.7086 },
+          ],
+          notes: "York is een volwaardige historische stad, geen tussenstop; Northumberland/Bamburgh als rustige, minder toeristische kustafsluiter voor deze etappe. Prijscorrectie (2026-07): €90→€107/dag — York ligt boven het gemiddelde, Yorkshire Dales/Northumberland/Bamburgh blijven landelijker en goedkoper. Routelogica-fix (2026-08, search-bevestigd): dit was de tweede helft van de oorspronkelijke \"Noord-Engeland\"-etappe (9 dagen, €965) — gesplitst zodat Isle of Man vanuit het Lake District bezocht wordt i.p.v. na Bamburgh, wat een dubbele noord-zuid-rit via Heysham voorkwam (Bamburgh-Heysham-Edinburgh was ≈517 km, nu is het Lake District-Heysham-Yorkshire Dales plus Bamburgh-Edinburgh samen ≈260 km). Dagen/budget proportioneel verdeeld over de twee nieuwe etappes (4+5 dagen, €429+€536 = het oorspronkelijke €965) — zelfde rekenmethode als Patagonia & Antarctica's etappe-splitsing.",
+          transport_to_next: 'Auto, Bamburgh-Edinburgh ≈124 km via de A1 — rechtstreeks, geen omweg meer via Heysham (routelogica-fix 2026-08, zie de Lake District-etappe hierboven).',
         },
       ],
     },
@@ -2951,13 +3008,27 @@ function rbBuildBritishIslesExpeditionRoute() {
       countries: [
         {
           code: 'GB', name: 'United Kingdom', days: 22, budget: 2510, lat: 57.4128, lng: -6.1943,
-          destinations: ['Edinburgh', 'Cairngorms National Park', 'Glencoe', 'Glenfinnan Viaduct', 'Isle of Skye ⭐ (Old Man of Storr, Fairy Pools, Quiraing)', 'Loch Ness', 'Applecross Pass', 'North Coast 500 (gedeeltelijk)'],
-          notes: "Het hoogtepunt van de hele expeditie. Isle of Skye krijgt bewust 4-5 dagen in plaats van een dagtrip — Old Man of Storr, Fairy Pools en de Quiraing zijn elk een halve tot hele wandeldag. Reis hier vroeg in de zomer (eind juni-begin juli): de Schotse muggen (midges) pieken pas in juli-augustus, dus een vroege doortocht scheelt aanzienlijk. ⚠️ Prijscorrectie (2026-07): €90→€114/dag gemiddeld — dit is de etappe met de grootste interne spreiding: landelijke Highlands (Cairngorms/Glencoe/Glenfinnan/Loch Ness/Applecross/NC500) blijven dicht bij €100/dag, Isle of Skye ligt structureel hoger (~€150/dag, beperkt aanbod drijft de prijs op, ook buiten het hoogseizoen) en Edinburgh normaal ~€130/dag. ⚠️ Timing-risico: het Edinburgh Fringe Festival loopt in 2026 van 7 t/m 31 augustus en verdrievoudigt de prijzen in de stad — bij een concrete startdatum, zorg dat de Edinburgh-nachten van deze etappe vóór 7 augustus vallen. Tip: Historic Environment Scotland Explorer Pass (~£44, 14 dagen, dekt o.a. Urquhart Castle bij Loch Ness) is goedkoper dan losse tickets voor deze etappe; let op dat National Trust for Scotland een andere organisatie is dan National Trust (Engeland/Wales) — een Engelse NT-pas dekt Glencoe/Glenfinnan niet.",
-          transport_to_next: 'Ferry Cairnryan-Belfast (Stena Line, ≈2u15, ~6x/dag) — Cairnryan ligt goed bereikbaar vanaf de Highlands via Glasgow/Ayrshire.',
+          destinations: [
+            { name: 'Edinburgh', lat: 55.9533, lng: -3.1883 },
+            { name: 'Cairngorms National Park', lat: 57.0833, lng: -3.6667 },
+            { name: 'Glencoe', lat: 56.6836, lng: -5.1030 },
+            { name: 'Glenfinnan Viaduct', lat: 56.8764, lng: -5.4297 },
+            { name: 'Isle of Skye ⭐ (Old Man of Storr, Fairy Pools, Quiraing)', lat: 57.4128, lng: -6.1943 },
+            { name: 'Applecross Pass', lat: 57.4358, lng: -5.6414 },
+            { name: 'North Coast 500 (gedeeltelijk, tot Ullapool)', lat: 57.8951, lng: -5.1626 },
+            { name: 'Loch Ness/Inverness', lat: 57.4778, lng: -4.2247 },
+          ],
+          notes: "Het hoogtepunt van de hele expeditie. Isle of Skye krijgt bewust 4-5 dagen in plaats van een dagtrip — Old Man of Storr, Fairy Pools en de Quiraing zijn elk een halve tot hele wandeldag. Reis hier vroeg in de zomer (eind juni-begin juli): de Schotse muggen (midges) pieken pas in juli-augustus, dus een vroege doortocht scheelt aanzienlijk. ⚠️ Prijscorrectie (2026-07): €90→€114/dag gemiddeld — dit is de etappe met de grootste interne spreiding: landelijke Highlands (Cairngorms/Glencoe/Glenfinnan/Loch Ness/Applecross/NC500) blijven dicht bij €100/dag, Isle of Skye ligt structureel hoger (~€150/dag, beperkt aanbod drijft de prijs op, ook buiten het hoogseizoen) en Edinburgh normaal ~€130/dag. ⚠️ Timing-risico: het Edinburgh Fringe Festival loopt in 2026 van 7 t/m 31 augustus en verdrievoudigt de prijzen in de stad — bij een concrete startdatum, zorg dat de Edinburgh-nachten van deze etappe vóór 7 augustus vallen. Tip: Historic Environment Scotland Explorer Pass (~£44, 14 dagen, dekt o.a. Urquhart Castle bij Loch Ness) is goedkoper dan losse tickets voor deze etappe; let op dat National Trust for Scotland een andere organisatie is dan National Trust (Engeland/Wales) — een Engelse NT-pas dekt Glencoe/Glenfinnan niet. Routelogica-fix (2026-08, search-bevestigd): volgorde was Glenfinnan→Skye→Loch Ness→Applecross→NC500 — dat kruiste de Highlands twee keer oost-west (Skye/Applecross liggen beide westkust, Loch Ness/Inverness centraal-oost). Nu Skye→Applecross (beide westkust, ≈100 km) →NC500 gedeeltelijk richting Ullapool →Loch Ness/Inverness, zodat de rit maar één keer oost overgaat, vlak vóór de rechtstreekse rit naar Cairnryan. Het NC500-gedeelte is bewust beperkt tot Ullapool (niet Durness/John o'Groats) — verder doorrijden naar het noordpuntje kost 100-140 km extra richting Cairnryan, precies de verkeerde kant op.",
+          transport_to_next: 'Ferry Cairnryan-Belfast (Stena Line, ≈2u15, ~6x/dag, iets afwijkende vaartijden tussen 29 juni-30 aug 2026 — check bij een concrete boeking) — Cairnryan ligt vanaf Inverness ≈400 km naar het zuiden, een rechtstreekse rit (routelogica-fix 2026-08, geen zigzag meer via Loch Ness-Applecross-Loch Ness).',
         },
         {
           code: 'GB', name: 'United Kingdom', days: 5, budget: 510, lat: 54.5973, lng: -5.9301,
-          destinations: ['Belfast', "Giant's Causeway", 'Causeway Coastal Route', 'Dark Hedges'],
+          destinations: [
+            { name: 'Belfast', lat: 54.5973, lng: -5.9301 },
+            { name: "Giant's Causeway", lat: 55.2408, lng: -6.5116 },
+            { name: 'Causeway Coastal Route', lat: 55.2000, lng: -6.3000 },
+            { name: 'Dark Hedges', lat: 55.1725, lng: -6.3345 },
+          ],
           notes: 'Compact maar met meerdere unieke stops dicht bij elkaar: de basaltzuilen van de Giant\'s Causeway (uniek, geen vergelijkbare plek elders op de route), de kustweg ernaartoe, en de Dark Hedges als korte fotostop. Prijscorrectie (2026-07): €90→€102/dag — Belfast zelf ligt iets boven het gemiddelde, de kust blijft goedkoper als dagtrip. Logistieke tip: de Twaalfde Juli-optocht valt in 2026 op maandag 13 juli — verkeer rond centraal Belfast kan die dag vertraagd zijn (check de datum bij een concrete planning, verschuift jaarlijks); geen invloed op de Giant\'s Causeway/Causeway Coastal Route zelf. Reisadvies: Noord-Ierland scoort op het terrorismedreigingsniveau zelfs iets lager dan Groot-Brittannië (substantieel vs. zeer ernstig).',
           transport_to_next: 'Auto over de open landsgrens naar Donegal — geen ferry of grenscontrole nodig (Ierland/Noord-Ierland).',
         },
@@ -2966,20 +3037,32 @@ function rbBuildBritishIslesExpeditionRoute() {
     {
       name: 'Ierland',
       season: 'Augustus',
-      budget: 2640,
+      budget: 2590,
       note: 'Van Donegal in het noordwesten via de westkust naar Kerry, dan zuidoost naar Rosslare — bewust noord-naar-zuid gereden om na de zuidkust direct via Rosslare te kunnen uitstappen, zonder terug te hoeven naar Dublin.',
       countries: [
         {
           code: 'IE', name: 'Ireland', days: 11, budget: 1265, lat: 53.2707, lng: -9.0568,
-          destinations: ['Donegal', 'Connemara', 'Galway', 'Cliffs of Moher', 'Wild Atlantic Way', 'Dingle Peninsula'],
+          destinations: [
+            { name: 'Donegal', lat: 54.6538, lng: -8.1096 },
+            { name: 'Connemara', lat: 53.4900, lng: -9.7500 },
+            { name: 'Galway', lat: 53.2707, lng: -9.0568 },
+            { name: 'Cliffs of Moher', lat: 52.9715, lng: -9.4309 },
+            { name: 'Wild Atlantic Way', lat: 52.5000, lng: -9.9000 },
+            { name: 'Dingle Peninsula', lat: 52.1409, lng: -10.2700 },
+          ],
           notes: 'De kern van de Ierland-ervaring. Augustus is qua neerslag iets natter dan de piek van mei-juli, maar nog ruim voor het echt natte venster (oktober-januari, tot 50% meer regen op de westkust dan Dublin) — prima werkbaar voor kustwandelingen. Prijscorrectie (2026-07): €90→€115/dag — Ierland is momenteel het op één na duurste EU-land (na Denemarken), vrijwel volledig door gestegen accommodatieprijzen (landelijk gemiddeld €202/nacht in augustus 2025, ondanks dalende bezoekersaantallen). Galway is de duurdere uitschieter van deze etappe. Reisadvies: groen.',
           transport_to_next: 'Auto zuidwaarts naar Kerry, ≈180 km.',
         },
         {
-          code: 'IE', name: 'Ireland', days: 11, budget: 1375, lat: 52.0599, lng: -9.5044,
-          destinations: ['Ring of Kerry', 'Killarney National Park', 'Cork', 'Kilkenny', 'Dublin (kort)'],
-          notes: 'Ring of Kerry en Killarney National Park vragen tijd voor de vele uitzichtpunten; Cork en Kilkenny als historische steden, Dublin als korte afsluiter voordat de auto weer aan boord gaat. Prijscorrectie (2026-07): €90→€125/dag gemiddeld — Killarney is toeristisch fors opgeprijsd en Dublin (de korte afsluiter) ligt nog eens ruim daarboven (~€200/nacht i.p.v. het etappegemiddelde); Ring of Kerry/Cork/Kilkenny liggen dichter bij het Ierse basisniveau. Praktische tip: rijd de Ring of Kerry rechtsom (tegen de gangbare richting van tourbussen in) of vertrek vroeg (voor 9u) om de bussen te ontlopen. M50-tol rond Dublin: cameragebaseerd, ~€2,60-3,80 per passage plus evt. ~€1,23 verwerkingskosten bij een huurauto. Reisadvies: groen; Ierland heeft van juli t/m december 2026 het roulerend EU-voorzitterschap, met extra beveiliging/mogelijke afsluitingen rond Dublin.',
-          transport_to_next: "Ferry Rosslare-Fishguard/Pembroke (Stena Line/Irish Ferries, ≈3u15-4u, dagelijks), dan doorrijden door Zuid-Wales/Zuid-Engeland (al bezocht — puur transit, geen nieuwe stops) naar Poole/Portsmouth voor de oversteek naar de Kanaaleilanden.",
+          code: 'IE', name: 'Ireland', days: 11, budget: 1325, lat: 52.0599, lng: -9.5044,
+          destinations: [
+            { name: 'Ring of Kerry', lat: 51.8333, lng: -10.0000 },
+            { name: 'Killarney National Park', lat: 52.0599, lng: -9.5044 },
+            { name: 'Cork', lat: 51.8985, lng: -8.4756 },
+            { name: 'Kilkenny', lat: 52.6541, lng: -7.2448 },
+          ],
+          notes: "Ring of Kerry en Killarney National Park vragen tijd voor de vele uitzichtpunten; Cork en Kilkenny als historische steden voordat de auto weer aan boord gaat. Prijscorrectie (2026-07): €90→€125/dag gemiddeld — Killarney is toeristisch fors opgeprijsd; Ring of Kerry/Cork/Kilkenny liggen dichter bij het Ierse basisniveau. Praktische tip: rijd de Ring of Kerry rechtsom (tegen de gangbare richting van tourbussen in) of vertrek vroeg (voor 9u) om de bussen te ontlopen. Routelogica-fix (2026-08, search-bevestigd): Dublin (kort) is geschrapt — het stond als laatste stop vóór Rosslare, maar Kilkenny-Dublin-Rosslare (77+96 mijl) kost ≈190 km meer dan rechtstreeks Kilkenny-Rosslare (57 mijl), voor een bewust 'korte' stop die de omweg niet waard was. Youri's eigen keuze (2026-08): schrappen i.p.v. de omweg accepteren. Budget navenant iets omlaag (€1.375→€1.325, Dublin's hoge dagprijs viel weg; dagen ongewijzigd op 11, Kilkenny/Cork krijgen relatief iets meer tijd). Reisadvies: groen; Ierland heeft van juli t/m december 2026 het roulerend EU-voorzitterschap, met extra beveiliging/mogelijke afsluitingen rond Dublin (niet meer relevant voor deze route nu Dublin is geschrapt).",
+          transport_to_next: "Auto, Kilkenny-Rosslare ≈92 km (routelogica-fix 2026-08: rechtstreeks, geen Dublin-omweg meer), dan ferry Rosslare-Fishguard/Pembroke (Stena Line/Irish Ferries, ≈3u15-4u, dagelijks), dan doorrijden door Zuid-Wales/Zuid-Engeland (al bezocht — puur transit, geen nieuwe stops) naar Poole/Portsmouth voor de oversteek naar de Kanaaleilanden.",
         },
       ],
     },
@@ -2991,21 +3074,39 @@ function rbBuildBritishIslesExpeditionRoute() {
       countries: [
         {
           code: 'GG', name: 'Guernsey', days: 2, budget: 260, lat: 49.4526, lng: -2.5348,
-          destinations: ['St Peter Port', 'kustwandelingen', 'Duitse bezettingsbunkers (WOII)'],
+          destinations: [
+            { name: 'St Peter Port', lat: 49.4551, lng: -2.5359 },
+            { name: 'kustwandelingen', lat: 49.4700, lng: -2.5800 },
+            { name: 'Duitse bezettingsbunkers (WOII)', lat: 49.4326, lng: -2.5350 },
+          ],
           notes: 'Klein eiland met een eigen, minder bekende WOII-geschiedenis: de Kanaaleilanden waren de enige Britse grond die door Duitsland bezet werd — een interessant contrast met Normandië\'s bevrijdingsverhaal verderop in de route. Prijscorrectie (2026-07): €90→€130/dag. Het \'belastingparadijs\'-imago blijkt in de praktijk vooral hoge woonlasten voor lokale bewoners te betreffen, niet toeristenprijzen — Guernsey is voor eten/boodschappen zelfs iets goedkoper dan Jersey. Reisadvies: valt onder de VK-ETA-regeling (zie Isle of Man-notitie), verder groen/laag risico.',
           transport_to_next: 'Ferry naar Jersey (Condor Ferries, interinsulair, kort).',
         },
         {
           code: 'JE', name: 'Jersey', days: 3, budget: 405, lat: 49.1805, lng: -2.1049,
-          destinations: ['kust', 'kliffen', 'stranden', 'Jersey War Tunnels (WOII)'],
+          destinations: [
+            { name: 'kust', lat: 49.1900, lng: -2.1300 },
+            { name: 'kliffen', lat: 49.1667, lng: -2.0333 },
+            { name: 'stranden', lat: 49.1900, lng: -2.2200 },
+            { name: 'Jersey War Tunnels (WOII)', lat: 49.1958, lng: -2.1206 },
+          ],
           notes: 'Grootste en meest toeristische van de twee eilanden — beste stranden van de Kanaaleilanden, plus dezelfde bezettingsgeschiedenis als Guernsey via de War Tunnels. Prijscorrectie (2026-07): €90→€135/dag — Jersey is de duurdere van de twee Kanaaleilanden, vooral op eten/restaurants (~14% boven VK-prijzen, ~6% boven Guernsey); accommodatie piekt in juli met een gemiddelde rond £226/nacht voor hotels (goedkopere guesthouses vanaf ~£60-90 blijven beschikbaar). Jersey War Tunnels-entree ~£21 (~€25) apart van het dagbudget. Overtocht Guernsey-Jersey (Condor Ferries/Manche Îles Express) is beperkt in frequentie — check de actuele vaardagen bij het plannen, dit kan de volgorde/een extra overnachting afdwingen.',
           transport_to_next: 'Ferry Jersey-Saint-Malo (Condor Ferries, ≈1u25 snelboot) — weersgevoelig, hou een bufferdag aan.',
         },
         {
           code: 'FR', name: 'France', days: 10, budget: 1200, lat: 48.6493, lng: -2.0257,
-          destinations: ['Saint-Malo', 'Dinan', 'Cap Fréhel', 'Côte de Granit Rose', 'Quimper', 'Pointe du Raz', 'Carnac (megalieten)', 'Quiberon'],
-          notes: 'De langste, meest gevarieerde kustlijn van de hele expeditie — acht losstaande hoogtepunten in tien dagen is al krap, dus dit is de dichtst-gepakte etappe van de route. Carnac\'s megalieten (ouder dan Stonehenge) sluiten mooi aan op het geschiedenisthema. Prijscorrectie (2026-07): €90→€120/dag — de kustplaatsjes (Saint-Malo, Carnac, Quiberon) rekenen een reëel toeristisch opslag, met juni als duurste maand (~€175/nacht gemiddeld tegenover ~€100 in januari). Carnac vereist april-september een betaalde gegidste toegang (~€6 p.p., oktober-maart gratis). Reisadvies: geel (Frankrijk als geheel, verhoogd terrorismeniveau vooral in steden — de landelijke Bretonse kust zelf is laag risico); check bosbrandrisico in de zomer, kan lokaal wegen/campings sluiten.',
-          transport_to_next: 'Auto, ≈100 km naar Mont Saint-Michel/Normandië.',
+          destinations: [
+            { name: 'Saint-Malo', lat: 48.6493, lng: -2.0257 },
+            { name: 'Dinan', lat: 48.4535, lng: -2.0453 },
+            { name: 'Cap Fréhel', lat: 48.6836, lng: -2.3247 },
+            { name: 'Côte de Granit Rose', lat: 48.8339, lng: -3.5772 },
+            { name: 'Quimper', lat: 47.9960, lng: -4.0977 },
+            { name: 'Pointe du Raz', lat: 48.0397, lng: -4.7331 },
+            { name: 'Carnac (megalieten)', lat: 47.5834, lng: -3.0797 },
+            { name: 'Quiberon', lat: 47.4844, lng: -3.1204 },
+          ],
+          notes: 'De langste, meest gevarieerde kustlijn van de hele expeditie — acht losstaande hoogtepunten in tien dagen is al krap, dus dit is de dichtst-gepakte etappe van de route. Carnac\'s megalieten (ouder dan Stonehenge) sluiten mooi aan op het geschiedenisthema. Volgorde geverifieerd (2026-08): Saint-Malo→Dinan→Cap Fréhel→Côte de Granit Rose→Quimper→Pointe du Raz→Carnac→Quiberon is geen zigzag maar een correcte rondgang om het Finistère-schiereiland — geen wijziging nodig. Prijscorrectie (2026-07): €90→€120/dag — de kustplaatsjes (Saint-Malo, Carnac, Quiberon) rekenen een reëel toeristisch opslag, met juni als duurste maand (~€175/nacht gemiddeld tegenover ~€100 in januari). Carnac vereist april-september een betaalde gegidste toegang (~€6 p.p., oktober-maart gratis). Reisadvies: geel (Frankrijk als geheel, verhoogd terrorismeniveau vooral in steden — de landelijke Bretonse kust zelf is laag risico); check bosbrandrisico in de zomer, kan lokaal wegen/campings sluiten.',
+          transport_to_next: 'Auto, ≈240 km naar Mont Saint-Michel/Normandië (routelogica-check 2026-08: was als ≈100 km genoteerd, klopte niet — Quiberon ligt op de zuidkust, ver van Saint-Malo/Normandië, een onvermijdelijk gevolg van de volledige Bretagne-rondgang, geen losse dagrit).',
         },
       ],
     },
@@ -3017,20 +3118,35 @@ function rbBuildBritishIslesExpeditionRoute() {
       countries: [
         {
           code: 'FR', name: 'France', days: 7, budget: 770, lat: 49.2764, lng: -0.7025,
-          destinations: ['Mont Saint-Michel ⭐', 'Bayeux (tijdelijke exposities)', 'Omaha Beach', 'Pointe du Hoc', 'Honfleur', 'Étretat', 'Rouen'],
+          destinations: [
+            { name: 'Mont Saint-Michel ⭐', lat: 48.6361, lng: -1.5115 },
+            { name: 'Bayeux (tijdelijke exposities)', lat: 49.2764, lng: -0.7025 },
+            { name: 'Omaha Beach', lat: 49.3697, lng: -0.8560 },
+            { name: 'Pointe du Hoc', lat: 49.3958, lng: -0.9897 },
+            { name: 'Honfleur', lat: 49.4189, lng: 0.2333 },
+            { name: 'Étretat', lat: 49.7075, lng: 0.2036 },
+            { name: 'Rouen', lat: 49.4431, lng: 1.0993 },
+          ],
           notes: 'Mont Saint-Michel en de D-Day-stranden verdienen elk een volle dag. De D-Day-geschiedenis vormt een mooi tegenwicht met de bezettingsgeschiedenis van de Kanaaleilanden hiervoor: bezet versus bevrijding. Prijscorrectie (2026-07): €90→€110/dag — Honfleur en Étretat zijn toeristisch opgeprijsde plaatsjes, Rouen/Bayeux zelf liggen gematigder. ⚠️ Het Tapijt van Bayeux is sinds 1 september 2025 niet te bezichtigen (2 jaar gesloten voor renovatie, heropening rond oktober 2027) — het origineel is bovendien uitgeleend aan het British Museum (10 sep 2026-11 jul 2027). Twee tijdelijke exposities in Bayeux zelf (Baron Gérard-museum, Slag om Normandië-museum) blijven wel open als alternatief. Mont Saint-Michel: parkeren ~€9,80/dag + abdij-entree ~€16 p.p. (hoogseizoen), apart van het dagbudget. D-Day Omaha Museum ~€7,90 p.p.; Pointe du Hoc is gratis (ABMC-terrein, wel een lopend behoud/veiligheidsproject 2026-medio 2027, blijft toegankelijk). Reisadvies: geel (zelfde als Bretagne); draag een paspoort/ID, een rijbewijs alleen is niet genoeg bij eventuele grenscontroles.',
           transport_to_next: 'Auto langs de kust naar de Opaalkust, ≈350 km.',
         },
         {
           code: 'FR', name: 'France', days: 3, budget: 285, lat: 50.6292, lng: 3.0573,
-          destinations: ['Cap Blanc-Nez', 'Cap Gris-Nez', 'Lille'],
+          destinations: [
+            { name: 'Cap Blanc-Nez', lat: 50.9236, lng: 1.7100 },
+            { name: 'Cap Gris-Nez', lat: 50.8564, lng: 1.5872 },
+            { name: 'Lille', lat: 50.6292, lng: 3.0573 },
+          ],
           notes: 'Korte, mooie kustwandeling langs de krijtkliffen van de Opaalkust, gevolgd door een korte stedelijke stop in Lille voordat de reis naar België afbuigt. Prijs vrijwel bevestigd (2026-07): €90→€95/dag — de Capes zijn vrijwel gratis toegankelijk, wat Lille\'s iets hogere stadsprijzen compenseert. Lille-centrum parkeren ~€16-17/24u (garages) — apart van het dagbudget. Reisadvies: geel, standaard.',
           transport_to_next: 'Auto, ≈110 km naar Gent.',
         },
         {
           code: 'BE', name: 'Belgium', days: 3, budget: 390, lat: 51.0543, lng: 3.7174,
-          destinations: ['Gent', 'Brugge'],
-          notes: 'Twee historische steden die elk minstens anderhalve dag verdienen — een rustige afsluiter voordat de laatste rit terug naar Nederland volgt. Prijscorrectie (2026-07): €90→€130/dag — Brugge is een bevestigd duur toeristenstadje (musea ~€14 p.p., rondvaart ~€12-14), Gent ligt zo\'n 20% goedkoper (studentenstad, meer budgetgelegenheden) — dit budget middelt beide. Brugge-centrum parkeren is prijzig: garages vanaf ~€5,50/24u (station, met gratis pendelbus) tot ~€15,80+ centraal — apart begroten. Reisadvies: groen; verhoogd terrorismeniveau (3/4) concentreert zich op Brussel/Antwerpen, niet Gent/Brugge.',
+          destinations: [
+            { name: 'Brugge', lat: 51.2093, lng: 3.2247 },
+            { name: 'Gent', lat: 51.0543, lng: 3.7174 },
+          ],
+          notes: 'Twee historische steden die elk minstens anderhalve dag verdienen — een rustige afsluiter voordat de laatste rit terug naar Nederland volgt. Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid (was Gent→Brugge) — Brugge ligt westelijker dan Gent, dus Gent→Brugge→Nederland betekende eerst van huis vandaan rijden voordat je weer terugkeert; nu Brugge→Gent→Nederland, de hele laatste etappe richting Nederland (bespaart ≈25-40 km). Prijscorrectie (2026-07): €90→€130/dag — Brugge is een bevestigd duur toeristenstadje (musea ~€14 p.p., rondvaart ~€12-14), Gent ligt zo\'n 20% goedkoper (studentenstad, meer budgetgelegenheden) — dit budget middelt beide. Brugge-centrum parkeren is prijzig: garages vanaf ~€5,50/24u (station, met gratis pendelbus) tot ~€15,80+ centraal — apart begroten. Reisadvies: groen; verhoogd terrorismeniveau (3/4) concentreert zich op Brussel/Antwerpen, niet Gent/Brugge.',
           transport_to_next: 'Einde van de expeditie — terugrit naar Nederland, ≈150 km.',
         },
       ],
@@ -3038,13 +3154,14 @@ function rbBuildBritishIslesExpeditionRoute() {
   ], {
     travel_style: "Eigen auto vanuit Nederland, geen vliegtuig behalve waar geen ferry bestaat — rustig rijden, geen harde tijdslimiet, kwaliteit boven snelheid. Accommodatie/eten/activiteiten hieronder op het Realistische niveau (hostels/eenvoudige hotels, soms privékamer — hetzelfde niveau als de rest van de reizen). Brandstof, tol/parkeren en de zes auto-ferry's zijn per auto gedeeld (ongeacht groepsgrootte) en staan NIET in de bedragen per land hierboven — zie de route-notities voor die aparte optelling. Uitzondering: Isle of Man wordt als voetganger bezocht (zie die etappe), niet met de eigen auto.",
     best_starting_month: 'Juni',
-    description: "Grote lus met eigen auto vanuit Nederland naar de Britse eilanden en terug via de Franse en Belgische kust: spectaculaire kusten, bergen, eilanden, Keltische cultuur, kastelen en historische steden door Engeland, Wales, Isle of Man, Schotland, Noord-Ierland, Ierland, de Kanaaleilanden, Bretagne, Normandië en België. Vijftien etappes in vijf regio's volgen één grote lus terug naar het startpunt.",
+    description: "Grote lus met eigen auto vanuit Nederland naar de Britse eilanden en terug via de Franse en Belgische kust: spectaculaire kusten, bergen, eilanden, Keltische cultuur, kastelen en historische steden door Engeland, Wales, Isle of Man, Schotland, Noord-Ierland, Ierland, de Kanaaleilanden, Bretagne, Normandië en België. Zestien etappes in vijf regio's volgen één grote lus terug naar het startpunt.",
     climate_summary: "Aanbevolen start: begin juni. Een start in september zou de zwaarste weersafhankelijke etappes (Wild Atlantic Way, Kanaaleilanden, Bretagne/Normandië) doorschuiven naar november-januari — de natste, donkerste periode van het jaar op precies de stukken die van droog weer en goed licht afhangen (Normandië haalt in november-december gemiddeld nog maar 1,5-2 uur zon per dag). Bij een junistart doorkruist de reis Schotland vóór de muggenpiek van juli-augustus (mei/begin juni/september zijn merkbaar rustiger qua midges dan het hoogseizoen), valt Ierland in augustus (droger dan het najaar, al iets natter dan de piek van mei-juli), en bereiken de Kanaaleilanden/Bretagne/Normandië hun laatste goede najaarsvenster in september, vlak voordat het Franse kustweer omslaat. De reis eindigt daarmee eind september in België, ruim vóór het natte Noord-Franse najaar.",
     notes: "Ontworpen in een Q&A-sessie met Claude (2026-07), op basis van een uitgebreide ChatGPT-brainstorm die Youri aandroeg. Ferry- en klimaatonderzoek (via web search) bevestigde dat Youri's route grotendeels al klopte; de twee correcties en de Isle of Man-beslissing staan in de functie-documentatie hierboven. Dagen zijn de 'ideale' tempo-schatting — Youri's eigen instructie was 'mag lang zijn, als het maar niet te kort voelt op plekken', dus er is bewust niet richting het minimum afgerond. Per-land-budgetten zijn het Realistische dagtarief (€90/dag per persoon) keer het aantal dagen, bewust hetzelfde niveau als de rest van Youri's reizen.\n\n" +
       "Ferrytabel (auto, enkele reis, auto+2p; onderzocht 2026-07, nog niet getoetst aan actuele prijzen): Calais/Duinkerke-Dover (P&O/DFDS/Irish Ferries, 1,5-2u, €60-150) als aanbevolen start i.p.v. IJmuiden-Newcastle (komt uit in Noordoost-Engeland, mist heel Zuid-Engeland); Heysham-Douglas (Isle of Man Steam Packet, ≈3u45, €150-250, maar hier als voetganger dus veel goedkoper); Cairnryan-Belfast (Stena Line, ≈2u15, €150-250); Rosslare-Fishguard/Pembroke (Stena Line/Irish Ferries, ≈3u15-4u, €150-250); Poole/Portsmouth-Guernsey (Condor Ferries, 3-10u, €150-400, weersgevoelig — bufferdagen inplannen); Guernsey/Jersey-Saint-Malo (Condor Ferries, ≈1,5-2u, €100-200).\n\n" +
       "Autokosten (gedeeld per auto, NIET in de bedragen per land hierboven): brandstof/tol/parkeren over ≈9.000-10.000 km geschat op €2.800-3.200; vijf auto-ferry's (alle behalve Isle of Man, die als voetganger gaat) plus de lokale dagshuurauto op Isle of Man voor de TT Mountain Road samen ≈€1.400-1.600 — totaal ≈€4.200-4.800 per auto, ongeacht groepsgrootte. Let op (2026-07): Britse brandstofprijzen liggen momenteel duidelijk boven Nederlandse pompprijzen (~€1,73/L benzine, ~€1,89/L diesel) — bij lange ritten (vooral de Schotse Highlands/NC500) mag de bovenkant van deze bandbreedte realistischer zijn dan het midden.\n\n" +
       "Prijzen/visum/reisadvies-verificatie (2026-07, dertiende en laatste route van deze verificatieronde): alle 15 etappes gecheckt via web-onderzoek tegen actuele prijzen (tussen budget- en comfort-backpacker), grensregels en Nederlands reisadvies. De vlakke €90/dag bleek — net als bij Central European Grand Roadtrip destijds — voor bijna elke etappe aan de lage kant: alleen Wales en de Opaalkust/Lille lagen al dicht bij accuraat, de overige 13 etappes kregen een correctie, meestal tussen +11% en +39%. Grootste stijgers: Cornwall (€90→€125/dag, zomerpiek), Ierland (beide etappes, €90→€115-125/dag, Ierland is nu het op één na duurste EU-land), de Kanaaleilanden (Guernsey €90→€130, Jersey €90→€135) en de Schotse Highlands/Skye-etappe (€90→€114/dag gemiddeld, met Skye zelf rond €150/dag). Nieuw grondkostentotaal: €13.245 (was €10.350), 115 dagen ongewijzigd. ⚠️ Belangrijke nieuwe bevinding: sinds 2 april 2025 is een UK ETA verplicht voor Nederlandse/EU-reizigers (~€23 p.p. sinds de verhoging van 8 april 2026) — dit geldt voor het hele Verenigd Koninkrijk-bezoek in één keer; de latere overtochten naar Isle of Man/Jersey/Guernsey vallen sinds 23 april 2026 onder dezelfde ETA (geen aparte aanvraag/kosten). Ook gevonden: het Tapijt van Bayeux is tot naar schatting oktober 2027 gesloten voor renovatie (zie Bayeux-etappe voor het alternatief), en het Edinburgh Fringe Festival (7-31 augustus 2026) kan de Schotland-etappe fors duurder maken als de concrete planning de Edinburgh-nachten in die periode laat vallen. Details en overige bevindingen (Twaalfde Juli-optocht in Noord-Ierland, Ring of Kerry-rijrichting, div. parkeer-/entreekosten) in elke etappe's eigen notities.\n\n" +
-      "Totaal: 86 dagen minimum / 115 dagen ideaal (~3,8 maanden), €13.245 grondkosten per persoon solo (na de 2026-07-verificatie, was €10.350) + ≈€4.200-4.800 autokosten per auto. Met 2-3 personen (gedeelde kamers) liggen de per-persoon bedragen proportioneel lager dan hierboven, zelfde verhouding als voorheen. Ferrytijden/prijzen en de UK ETA-kosten zijn nog niet allemaal tegen een concrete boekingsdatum getoetst — behandel dit als een grondig geverifieerd concept, nog geen boekbaar plan.",
+      "Totaal: 86 dagen minimum / 115 dagen ideaal (~3,8 maanden), €13.195 grondkosten per persoon solo (na de 2026-07-verificatie en de 2026-08-routelogica-fix hieronder, was €13.245) + ≈€4.200-4.800 autokosten per auto. Met 2-3 personen (gedeelde kamers) liggen de per-persoon bedragen proportioneel lager dan hierboven, zelfde verhouding als voorheen. Ferrytijden/prijzen en de UK ETA-kosten zijn nog niet allemaal tegen een concrete boekingsdatum getoetst — behandel dit als een grondig geverifieerd concept, nog geen boekbaar plan.\n\n" +
+      "Routelogica-herziening (2026-08, search-bevestigd, zevende expeditie uit ROUTE_LOGIC_REVIEW.md, eerste met een echte grote fix in deze ronde): drie vondsten. (1) **Grootste fix**: Isle of Man stond weliswaar al terecht 'genest' in de Noord-Engeland-etappe (2026-07-ontwerp), maar op het verkeerde punt — ná Bamburgh (bij de Schotse grens) in plaats van bij het Lake District (vlak naast Heysham). Dat betekende een rit helemaal terug naar Heysham (≈250 km) en daarna weer noordwaarts naar Edinburgh (≈264 km) — twee keer dezelfde corridor. Opgelost door de etappe te splitsen: Lake District (met Isle of Man-zijsprong) → Yorkshire Dales/York/Northumberland/Bamburgh → rechtstreeks naar Edinburgh (≈124 km). United Kingdom komt hierdoor nu zeven keer voor i.p.v. zes. (2) Schotlands Highlands-volgorde had een oost-west-zigzag (Skye→Loch Ness→Applecross→NC500) — nu Skye→Applecross→NC500 (bewust beperkt tot Ullapool, niet doorgetrokken naar Durness/John o'Groats) →Loch Ness/Inverness, met een rechtstreekse ≈400 km-rit naar Cairnryan erna. (3) Ierlands afsluitende 'Dublin (kort)'-stop is geschrapt — Kilkenny-Dublin-Rosslare kostte ≈190 km meer dan rechtstreeks Kilkenny-Rosslare, voor een stop die toch al als kort bedoeld was; Youri's eigen keuze om te schrappen i.p.v. de omweg te accepteren. Verder bevestigd zonder wijziging: Wales' volgorde, de Bretagne-rondgang (leek een zigzag, bleek een correcte rondgang om Finistère), en Normandië's volgorde. Kleinere correcties: Quiberon-Mont Saint-Michel was ≈100 km genoteerd, is in werkelijkheid ≈240 km; Gent/Brugge omgedraaid naar Brugge→Gent (bespaart ≈25-40 km, geen omweg van huis vandaan meer op de laatste etappe). Landen/dagen ongewijzigd (86/115 dagen); grondkosten €13.245→€13.195 (Ierland's budget iets omlaag na het schrappen van Dublin's dure dagtarief).",
   });
 }
 
@@ -5901,6 +6018,27 @@ function rbMigrateCentralEuropeRouteLogicOverhaul() {
 
     if (touched) rbSave();
   }
+}
+
+/**
+ * British Isles & Celtic Coast Expedition — route-logic review (2026-08), seventh expedition in the
+ * ROUTE_LOGIC_REVIEW.md playbook. Uses the SAME wholesale-replace pattern this route's own prior
+ * migrations already established (rbMigratePriceVerificationRound3, rbMigrateRouteLineCoordsRound2)
+ * rather than a field-patch — this route has no field-patch migration precedent to preserve, and its
+ * two prior corrections both replaced it wholesale via its own build function. See
+ * rbBuildBritishIslesExpeditionRoute()'s own docstring for the full list of fixes (Isle of Man moved
+ * to the Lake District leg instead of after Bamburgh, Scotland's Highlands zigzag reordered, Ireland's
+ * Dublin detour dropped, plus minor distance corrections and per-destination coordinates).
+ */
+function rbMigrateBritishIslesRouteLogicOverhaul() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_BRITISH_ISLES_OVERHAUL)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_BRITISH_ISLES_OVERHAUL, '1');
+
+  const idx = rbRoutes.findIndex(r => r.name === 'British Isles & Celtic Coast Expedition 🍀');
+  if (idx === -1) return;
+
+  rbRoutes.splice(idx, 1, rbBuildBritishIslesExpeditionRoute());
+  rbSave();
 }
 
 function rbMigrateBahrainIntoMediterraneanExpedition() {

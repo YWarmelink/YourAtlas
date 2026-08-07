@@ -53,10 +53,11 @@ trips that span months, not weeks. Lives at `route-builder.html`.
   at a fixed Utrecht/Netherlands home marker. See `rbRenderRouteLine()` in
   `js/pages/routeBuilder.js`. A third mode ("🔍 Gedetailleerd") draws through every
   per-destination coordinate instead of one anchor per leg — available for any route
-  once its destinations carry `lat`/`lng` (six expeditions have this so far: Eurasia
+  once its destinations carry `lat`/`lng` (seven expeditions have this so far: Eurasia
   Grand Tour 🌏, Patagonia & Antarctica Expedition 🧊, India & Himalaya Expedition 🏔️,
-  Nordic Arctic Expedition ❄️, Caribbean & Amazon Expedition 🌴 and Central European
-  Grand Roadtrip 🚗 — see `ROUTE_LOGIC_REVIEW.md` for the rollout plan to the rest).
+  Nordic Arctic Expedition ❄️, Caribbean & Amazon Expedition 🌴, Central European
+  Grand Roadtrip 🚗 and British Isles & Celtic Coast Expedition 🍀 — see
+  `ROUTE_LOGIC_REVIEW.md` for the rollout plan to the rest).
 - **Block Library**: save a route as a reusable, named group of countries; insert it
   into any other route later (as an independent copy — editing one never affects the
   other), or merge 2+ saved blocks into a new combined block.

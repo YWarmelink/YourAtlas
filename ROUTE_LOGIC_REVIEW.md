@@ -1,8 +1,9 @@
 # Route Logic Review — Playbook
 
 Status: **Eurasia Grand Tour 🌏, Patagonia & Antarctica Expedition 🧊, India & Himalaya Expedition
-🏔️, Nordic Arctic Expedition ❄️, Caribbean & Amazon Expedition 🌴 en Central European Grand Roadtrip
-🚗 klaar (2026-08)**, de andere 7 originele expedities nog niet.
+🏔️, Nordic Arctic Expedition ❄️, Caribbean & Amazon Expedition 🌴, Central European Grand Roadtrip
+🚗 en British Isles & Celtic Coast Expedition 🍀 klaar (2026-08)**, de andere 6 originele expedities
+nog niet.
 Dit document legt vast wát we bij Eurasia deden en hóe je dat 1-op-1 herhaalt — pak deze aanpak op
 zodra Youri aangeeft dat hij een volgende expeditie wil laten doornemen, geen nieuwe analyse nodig.
 
@@ -191,12 +192,43 @@ hand-authored (geen gedeelde `RB_EXPEDITION_CONTENT`-tabel, Italië komt 6x voor
 elk 2x), dus de migratie matcht blokken op land-code + eerste bestemmingsnaam, zelfde aanpak als
 Mediterranean/North America's "leg fingerprint"-patroon uit de eerdere prijsverificatie-ronde.
 
-## De overige 7 originele expedities
+## British Isles & Celtic Coast Expedition: wat er gebeurde (2026-08), als zevende referentie — tweede zelf-rijdende lus, en de eerste met een écht grote fix in deze ronde
+
+Zelfde stappenplan als Central European Grand Roadtrip. Youri's persoonlijke-voorkeur-antwoord:
+niets van deze route eerder bezocht, geen specifieke wensen — standaard check.
+
+In tegenstelling tot Central European (vijf kleine fixes, geen landvolgorde-bug), had deze route wél
+één echt grote fix, vergelijkbaar in omvang met Eurasia's Vietnam-Cambodja-Laos-Thailand-omdraaiing:
+het 2026-07-ontwerp had Isle of Man al terecht "genest" in de Noord-Engeland-etappe (niet als losse
+stop ervoor, dat was destijds al goed opgelost), maar op het verkeerde púnt binnen die etappe — ná de
+laatste bestemming (Bamburgh, bij de Schotse grens) in plaats van bij het Lake District (dat vlak naast
+Heysham ligt, de enige jaarronde ferryhaven naar het eiland). Dat kostte een rit helemaal terug naar
+Heysham en daarna weer noordwaarts naar Edinburgh — dezelfde noord-zuid-corridor twee keer gekruist,
+~250-320 km pure backtrack. Fix: de oude etappe gesplitst in een Lake District-etappe (met de Isle of
+Man-zijsprong) en een Yorkshire & Northumberland-etappe die rechtstreeks doorrijdt naar Edinburgh.
+
+**Les**: een omweg kan "goed gepositioneerd" lijken (juiste regio, juiste algemene volgorde) maar toch
+fout zitten op het detailniveau van *waar precies binnen* die regio de zijsprong valt. Check niet
+alleen óf een zijsprong op de juiste plek in de landvolgorde zit, maar ook of hij aan het begin of
+einde van de etappe wordt gedaan — dat detail bepaalde hier het verschil tussen een vlotte lus en een
+520 km-omweg.
+
+Twee kleinere fixes erbij, zelfde categorie als Nordic Arctic/Caribbean & Amazon's meerdere-kleine-
+fixes-patroon: Schotlands Highlands-volgorde had een oost-west-zigzag (Skye→Loch Ness→Applecross→
+NC500), nu Skye→Applecross→NC500 (bewust beperkt tot Ullapool)→Loch Ness/Inverness; en Ierlands
+afsluitende "Dublin (kort)"-stop is geschrapt (Youri's eigen keuze, via een gerichte vraag vooraf,
+zelfde patroon als Patagonia's Punta Arenas-vraag) omdat de omweg (≈190 km) niet in verhouding stond
+tot een bewust korte stop.
+
+Zie `CHANGELOG.md` ("British Isles & Celtic Coast Expedition 🍀 routelogica-herziening") voor de
+volledige uitkomst, en `rbMigrateBritishIslesRouteLogicOverhaul()` voor het code-patroon — deze route
+gebruikt, net als zijn twee eerdere correcties, een wholesale-replace-migratie (niet een veldpatch),
+omdat die twee eerdere migraties (prijsverificatie-ronde 3, routelijn-coördinaten-ronde 2) al hetzelfde
+patroon vastlegden voor deze specifieke route.
+
+## De overige 6 originele expedities
 
 In willekeurige volgorde van omvang (kleiner = sneller te doen, geen inhoudelijke prioriteit):
-
-- **British Isles & Celtic Coast Expedition 🍀** — ook zelf-rijdende lus, zelfde soort logica als
-  Central European Grand Roadtrip hierboven.
 - **West & Central Africa Expedition 🌍**
 - **North America Grand Traverse 🌎** — let op: Canada/VS komen meerdere keren voor (eigen
   bouwfunctie, geen gedeelde contenttabel) — zelfde patroon als het nieuwe Maleisië-blok bij Eurasia.
