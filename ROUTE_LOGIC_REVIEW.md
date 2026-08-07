@@ -2,8 +2,9 @@
 
 Status: **Eurasia Grand Tour 🌏, Patagonia & Antarctica Expedition 🧊, India & Himalaya Expedition
 🏔️, Nordic Arctic Expedition ❄️, Caribbean & Amazon Expedition 🌴, Central European Grand Roadtrip
-🚗, British Isles & Celtic Coast Expedition 🍀, North America Grand Traverse 🌎 en West & Central
-Africa Expedition 🌍 klaar (2026-08)**, de andere 4 originele expedities nog niet.
+🚗, British Isles & Celtic Coast Expedition 🍀, North America Grand Traverse 🌎, West & Central
+Africa Expedition 🌍 en Oceania Grand Expedition 🌊 klaar (2026-08)**, de andere 3 originele
+expedities nog niet.
 Dit document legt vast wát we bij Eurasia deden en hóe je dat 1-op-1 herhaalt — pak deze aanpak op
 zodra Youri aangeeft dat hij een volgende expeditie wil laten doornemen, geen nieuwe analyse nodig.
 
@@ -286,10 +287,41 @@ replace, uitgebreid naar de twee split-companions (West-Afrika Overland 🥁, Ce
 Eilanden 🦛) die net als North America's drie companions hiervoor nog nooit een eigen migratie
 hadden gehad.
 
-## De overige 4 originele expedities
+## Oceania Grand Expedition: wat er gebeurde (2026-08), als tiende referentie — een backtrack die twee bestaande transportnotities zelf al verklapten
+
+Zelfde stappenplan. Youri: Nieuw-Zeeland en Sydney al eerder bezocht maar wil ze nog een keer doen —
+geen cuts. Drie fixes, verspreid over de hele route.
+
+**Pacific-eilanden**: Fiji→Vanuatu→Samoa→Tonga→Cook Islands sprong van Fiji naar Vanuatu (west), dan
+terug oostwaarts vóórbij Fiji naar Samoa, dan weer terug naar Tonga (dat dichter bij Fiji ligt dan
+Samoa) — een dubbele omweg via de Fiji-hub. Interessant detail: twee van de bestaande
+transport-notities zeiden zelf al "meestal met overstap via Fiji" voor de Vanuatu-Samoa- en
+Samoa-Tonga-vluchten — de tekst verklapte de omweg al, maar niemand trok de conclusie dat de volgorde
+zelf het probleem was. Nu Vanuatu→Fiji→Tonga→Samoa→Cook Islands: monotoon oostwaarts, Fiji maar één
+keer gepasseerd. **Les**: een transportnotitie die zelf al "via [plek die je net verliet]" zegt, is
+een gratis signaal dat de volgorde fout zit — niet alleen de afstand zelf checken, maar ook of de
+eigen tekst al een aanwijzing gaf.
+
+**Tasmanië-Adelaide**: hier bleek de aanname zelf fout, niet de volgorde — "meestal met overstap in
+Melbourne" klopte niet (Hobart-Adelaide is een dagelijkse directe vlucht), dus alleen de tekst is
+gecorrigeerd, net als Central European's Bohemian Paradise-Wrocław-geval waar de "backtrack" ook geen
+echte was.
+
+**Nieuw-Zeeland Zuidereiland**: zelfde categorie als North America's Sequoia-San Francisco-terugrit
+en West & Central Africa's Abomey/Yaoundé-gevallen — de oude volgorde eindigde bij Dunedin (ver
+zuiden) terwijl de Picton-ferry in het uiterste noorden ligt, een onvermelde ≈692 km-terugrit die het
+Christchurch-Kaikoura-traject een tweede keer zou berijden. Nu Christchurch→Franz Josef→Queenstown→
+Milford Sound→Dunedin (zuid-lus eerst), dan Kaikoura→Abel Tasman→Picton als één doorlopende
+noordwaartse rit.
+
+Zie `CHANGELOG.md` ("Oceania Grand Expedition 🌊 routelogica-herziening") voor de volledige uitkomst,
+en `rbMigrateOceaniaRouteLogicOverhaul()` voor het code-patroon — wholesale-replace, uitgebreid naar
+de vier split-companions (Pacific-eilanden 🌺, Tropisch/Outback Australië 🐊, Gematigd/Zuidelijk
+Australië 🍇, Nieuw-Zeeland 🥝) die nog nooit een eigen migratie hadden gehad.
+
+## De overige 3 originele expedities
 
 In willekeurige volgorde van omvang (kleiner = sneller te doen, geen inhoudelijke prioriteit):
-- **Oceania Grand Expedition 🌊** — let op: Australië komt tweemaal voor (klimaatzones).
 - **Pan-American Grand Tour 🌎** — groot (15 landen), plus 4 split-companions.
 - **Mediterranean Civilizations Expedition 🏛️** — grootst (18 etappes), plus 6 split-companions.
 - **Africa Grand Tour 🌍** — groot (18 landen), plus 4 split-companions.

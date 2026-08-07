@@ -12,6 +12,24 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Oceania Grand Expedition 🌊 routelogica-herziening (2026-08)** — tiende expeditie uit de
+  `ROUTE_LOGIC_REVIEW.md`-playbook. Drie fixes. **Pacific-eilanden**: de oude volgorde (Fiji→Vanuatu→
+  Samoa→Tonga→Cook Islands) sprong van Fiji naar Vanuatu (west), dan terug oostwaarts voorbij Fiji
+  naar Samoa, dan weer terug naar Tonga (dat dichter bij Fiji ligt dan Samoa) — een dubbele omweg via
+  de Fiji-hub, die twee bestaande transportnotities zelf al impliceerden ("meestal met overstap via
+  Fiji"). Nu Vanuatu→Fiji→Tonga→Samoa→Cook Islands: monotoon oostwaarts, Fiji maar één keer
+  gepasseerd. **Tasmanië-Adelaide**: de aanname "meestal met overstap in Melbourne" bleek onjuist —
+  Hobart-Adelaide is een dagelijkse directe vlucht; de volgorde zelf was al optimaal, alleen de tekst
+  is gecorrigeerd. **Nieuw-Zeeland Zuidereiland**: de oude volgorde eindigde bij Dunedin (ver zuiden)
+  terwijl de Picton-ferry in het uiterste noorden ligt — een onvermelde terugrit van ≈692 km die het
+  Christchurch-Kaikoura-traject een tweede keer zou berijden. Nu Christchurch→Franz Josef→Queenstown→
+  Milford Sound→Dunedin (zuid-lus eerst), dan Kaikoura→Abel Tasman→Picton als één doorlopende
+  noordwaartse rit. Youri had Nieuw-Zeeland/Sydney al eerder bezocht maar wil ze nog een keer doen —
+  geen cuts. Coördinaten per bestemming toegevoegd aan alle 14 etappes. Landen/dagen/budget
+  ongewijzigd. Toegepast via `rbMigrateOceaniaRouteLogicOverhaul()` — wholesale-replace, uitgebreid
+  naar de vier split-companions (Pacific-eilanden 🌺, Tropisch/Outback Australië 🐊, Gematigd/
+  Zuidelijk Australië 🍇, Nieuw-Zeeland 🥝) die dit keer voor het eerst een eigen migratie nodig
+  hadden, net als North America's en West & Central Africa's companions hiervoor.
 - **West & Central Africa Expedition 🌍 routelogica-herziening (2026-08)** — negende expeditie uit de
   `ROUTE_LOGIC_REVIEW.md`-playbook. Vier fixes, geen daarvan een landvolgorde-probleem — allemaal
   volgorde-fouten binnen een land, of een onvermelde verbinding. **Kaapverdië**: "Vlucht Praia/

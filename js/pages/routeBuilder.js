@@ -57,6 +57,7 @@ const RB_MIGRATE_FLAG_2026_08_CENTRAL_EUROPE_OVERHAUL = 'atlas_grand_trips_migra
 const RB_MIGRATE_FLAG_2026_08_BRITISH_ISLES_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_british_isles_overhaul_v1';
 const RB_MIGRATE_FLAG_2026_08_NORTH_AMERICA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_north_america_overhaul_v1';
 const RB_MIGRATE_FLAG_2026_08_WEST_CENTRAL_AFRICA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_west_central_africa_overhaul_v1';
+const RB_MIGRATE_FLAG_2026_08_OCEANIA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_oceania_overhaul_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -120,6 +121,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateBritishIslesRouteLogicOverhaul();
   rbMigrateNorthAmericaRouteLogicOverhaul();
   rbMigrateWestCentralAfricaRouteLogicOverhaul();
+  rbMigrateOceaniaRouteLogicOverhaul();
   rbBindEvents();
 
   try {
@@ -2184,32 +2186,54 @@ function rbBuildOceaniaExpeditionRoute() {
       note: 'Vijf eilandengroepen in het droge seizoen, ruim vóór het cycloonseizoen (november-april) — de rustige, ontspannen opener van de expeditie.',
       countries: [
         {
-          code: 'FJ', name: 'Fiji', days: 14, budget: 1050, lat: -17.7765, lng: 177.4356,
-          destinations: ['Nadi', 'Mamanuca-eilanden', 'Yasawa-eilanden', 'Taveuni'],
-          notes: "Beste backpacker-infrastructuur van de Pacific — eilandhoppen per boot (Yasawa Flyer) tussen de Mamanucas en Yasawas, snorkelen en duiken op de koraalriffen. Prijscorrectie (2026-07): €62,50→€75/dag (Yasawa Flyer-bootpas + vlucht naar Taveuni waren niet gedekt).",
-          transport_to_next: 'Vlucht Nadi-Port Vila (Fiji Airways, de belangrijkste Pacific-hub)',
-        },
-        {
           code: 'VU', name: 'Vanuatu', days: 11, budget: 1045, lat: -17.7333, lng: 168.3273,
-          destinations: ['Port Vila', 'Mount Yasur (Tanna)', 'SS President Coolidge wrak (Espiritu Santo)', 'Blue Holes'],
-          notes: "Een van de meest toegankelijke actieve vulkanen ter wereld — tot vlak bij de kraterrand van Mount Yasur. Wereldklasse wrakduik op de SS President Coolidge. Prijscorrectie (2026-07): €70→€95/dag (binnenlandse vluchten naar Tanna/Santo + Yasur-tour waren niet gedekt; Air Vanuatu ging in 2024 failliet, vluchten zijn schaarser/duurder geworden).",
-          transport_to_next: "Vlucht Port Vila-Apia (meestal met overstap via Fiji of Auckland)",
+          destinations: [
+            { name: 'Port Vila', lat: -17.7333, lng: 168.3273 },
+            { name: 'Mount Yasur (Tanna)', lat: -19.5236, lng: 169.4451 },
+            { name: 'SS President Coolidge wrak (Espiritu Santo)', lat: -15.5085, lng: 167.1739 },
+            { name: 'Blue Holes', lat: -15.5000, lng: 167.1500 },
+          ],
+          notes: "Een van de meest toegankelijke actieve vulkanen ter wereld — tot vlak bij de kraterrand van Mount Yasur. Wereldklasse wrakduik op de SS President Coolidge. Prijscorrectie (2026-07): €70→€95/dag (binnenlandse vluchten naar Tanna/Santo + Yasur-tour waren niet gedekt; Air Vanuatu ging in 2024 failliet, vluchten zijn schaarser/duurder geworden). Routelogica-fix (2026-08, search-bevestigd): als eerste land bezocht i.p.v. na Fiji — internationale aankomst loopt praktisch nog steeds via Fiji (Nadi, de belangrijkste internationale gateway van de regio) met een korte aansluitende vlucht naar Port Vila, maar het eigenlijke Fiji-bezoek verschuift naar ná Vanuatu, zodat de rest van de keten (Fiji→Tonga→Samoa→Cook Islands) daarna één ononderbroken oostwaartse lijn is.",
+          transport_to_next: 'Vlucht Port Vila-Nadi (Fiji Airways, direct, ±7x/week, 2u15).',
         },
         {
-          code: 'WS', name: 'Samoa', days: 9, budget: 565, lat: -13.8506, lng: -171.7513,
-          destinations: ['Apia', 'To Sua Ocean Trench', 'Lalomanu (beach fales)', 'Upolu'],
-          notes: "Authentieke Polynesische cultuur, nog weinig aangetast door massatoerisme. Beach fales zijn traditionele, budgetvriendelijke strandhutjes — precies de rustige, lokale ervaring die bij deze reisstijl past. Prijs geverifieerd (2026-07), klopt — relatief goedkoop voor de Pacific.",
-          transport_to_next: "Vlucht Apia-Nuku'alofa (meestal met overstap via Fiji)",
+          code: 'FJ', name: 'Fiji', days: 14, budget: 1050, lat: -17.7765, lng: 177.4356,
+          destinations: [
+            { name: 'Nadi', lat: -17.7765, lng: 177.4356 },
+            { name: 'Mamanuca-eilanden', lat: -17.6667, lng: 177.1000 },
+            { name: 'Yasawa-eilanden', lat: -16.8000, lng: 177.4500 },
+            { name: 'Taveuni', lat: -16.8500, lng: 179.9833 },
+          ],
+          notes: "Beste backpacker-infrastructuur van de Pacific — eilandhoppen per boot (Yasawa Flyer) tussen de Mamanucas en Yasawas, snorkelen en duiken op de koraalriffen. Prijscorrectie (2026-07): €62,50→€75/dag (Yasawa Flyer-bootpas + vlucht naar Taveuni waren niet gedekt). Routelogica-fix (2026-08, search-bevestigd): Nadi is de belangrijkste internationale/regionale luchtvaarthub van de Zuidelijke Stille Oceaan — door Fiji nu ná Vanuatu te bezoeken i.p.v. ervoor, wordt de hub maar één keer 'gepasseerd' voor de rest van de reis in plaats van er drie keer doorheen te moeten (was: Fiji→Vanuatu→terug via Fiji→Samoa→terug via Fiji→Tonga).",
+          transport_to_next: "Vlucht Nadi-Nuku'alofa (Fiji Airways, direct, 12x/week, ~2u).",
         },
         {
           code: 'TO', name: 'Tonga', days: 8, budget: 800, lat: -21.1393, lng: -175.2046,
-          destinations: ["Nuku'alofa", "Vava'u (zwemmen met bultrugwalvissen)", "Ha'apai"],
-          notes: "Een van de weinige plekken ter wereld waar je legaal mag zwemmen met bultrugwalvissen — het beste seizoen daarvoor is juli-oktober, dus check de exacte timing bij het plannen van de startdatum. Prijscorrectie (2026-07): €67,50→€100/dag, de grootste correctie van de route — vlucht naar Vava'u + de whale-swim tour zelf (vaak €150-250/dag) waren niet gedekt.",
-          transport_to_next: "Vlucht Nuku'alofa-Rarotonga (lage frequentie, ruim van tevoren boeken)",
+          destinations: [
+            { name: "Nuku'alofa", lat: -21.1393, lng: -175.2046 },
+            { name: "Vava'u (zwemmen met bultrugwalvissen)", lat: -18.6500, lng: -173.9833 },
+            { name: "Ha'apai", lat: -19.8333, lng: -174.3500 },
+          ],
+          notes: "Een van de weinige plekken ter wereld waar je legaal mag zwemmen met bultrugwalvissen — het beste seizoen daarvoor is juli-oktober, dus check de exacte timing bij het plannen van de startdatum. Prijscorrectie (2026-07): €67,50→€100/dag, de grootste correctie van de route — vlucht naar Vava'u + de whale-swim tour zelf (vaak €150-250/dag) waren niet gedekt. Routelogica-fix (2026-08, search-bevestigd): Tonga ligt qua lengtegraad dichter bij Fiji dan Samoa — nu vóór Samoa bezocht i.p.v. erna, zodat de reis monotoon oostwaarts blijft gaan in plaats van eerst voorbij Tonga naar Samoa te springen en dan terug te moeten voor Tonga.",
+          transport_to_next: "Vlucht Nuku'alofa-Apia (geen directe vlucht, via Auckland of Fiji, 5u+).",
+        },
+        {
+          code: 'WS', name: 'Samoa', days: 9, budget: 565, lat: -13.8506, lng: -171.7513,
+          destinations: [
+            { name: 'Apia', lat: -13.8506, lng: -171.7513 },
+            { name: 'To Sua Ocean Trench', lat: -13.9333, lng: -171.5333 },
+            { name: 'Lalomanu (beach fales)', lat: -14.0167, lng: -171.4333 },
+            { name: 'Upolu', lat: -13.9167, lng: -171.7667 },
+          ],
+          notes: "Authentieke Polynesische cultuur, nog weinig aangetast door massatoerisme. Beach fales zijn traditionele, budgetvriendelijke strandhutjes — precies de rustige, lokale ervaring die bij deze reisstijl past. Prijs geverifieerd (2026-07), klopt — relatief goedkoop voor de Pacific.",
+          transport_to_next: "Vlucht Apia-Rarotonga (geen directe vlucht, 12-16u via Auckland of Nadi+Auckland — routelogica-fix 2026-08: iets minder goed verbonden dan de oude Tonga-Cook Islands-verbinding, maar dat weegt niet op tegen het verwijderen van de dubbele Fiji-hub-omweg elders in deze regio, zie Vanuatu/Fiji/Tonga's eigen notities).",
         },
         {
           code: 'CK', name: 'Cook Islands', days: 7, budget: 665, lat: -21.2367, lng: -159.7777,
-          destinations: ['Rarotonga', 'Aitutaki-lagune'],
+          destinations: [
+            { name: 'Rarotonga', lat: -21.2367, lng: -159.7777 },
+            { name: 'Aitutaki-lagune', lat: -18.8333, lng: -159.7833 },
+          ],
           notes: "De Aitutaki-lagune is minstens zo mooi als Bora Bora, voor een fractie van de prijs — het beste prijs-kwaliteitpunt van de hele Pacific voor lagune-schoonheid. Prijscorrectie (2026-07): €80→€95/dag (Air Rarotonga heeft een monopolie op de Aitutaki-vlucht, plus lagune-cruise).",
           transport_to_next: 'Vlucht Rarotonga-Perth (lange vlucht, meestal met overstap via Auckland of Sydney) — de grootste enkele vliegverbinding van de hele expeditie, nodig om van de Pacific naar het droge seizoen in West-Australië te komen',
         },
@@ -2223,19 +2247,38 @@ function rbBuildOceaniaExpeditionRoute() {
       countries: [
         {
           code: 'AU', name: 'Australia', days: 21, budget: 2520, lat: -31.9505, lng: 115.8605,
-          destinations: ['Perth', 'Ningaloo Reef (walvishaaien)', 'Kimberley & Bungle Bungles', 'Gibb River Road', 'Broome'],
+          destinations: [
+            { name: 'Perth', lat: -31.9505, lng: 115.8605 },
+            { name: 'Ningaloo Reef (walvishaaien)', lat: -22.6833, lng: 113.6667 },
+            { name: 'Kimberley & Bungle Bungles', lat: -17.5333, lng: 128.4167 },
+            { name: 'Gibb River Road', lat: -16.5000, lng: 126.5000 },
+            { name: 'Broome', lat: -17.9614, lng: 122.2359 },
+          ],
           notes: 'Ningaloo Reef en de Kimberley zijn spectaculair en kennen weinig massatoerisme — sterke match met natuur boven luxe. Wel de duurste/verste regio van de hele route qua afstanden; eerste kandidaat om in te korten als tijd/budget krap wordt. Prijscorrectie (2026-07): €87,62→€120/dag — de duurste regio bleek ook echt onderbegroot (walvishaai-tours, Bungle Bungles-vluchten, afgelegen roadhouse-prijzen).',
           transport_to_next: 'Auto over land via de Gibb River Road en Kununurra naar Darwin, of vlucht Broome-Darwin voor wie de Kimberley liever per vliegtuig oversteekt',
         },
         {
           code: 'AU', name: 'Australia', days: 14, budget: 1470, lat: -12.4634, lng: 130.8456,
-          destinations: ['Darwin', 'Kakadu National Park', 'Litchfield National Park', 'Uluru', 'Kata Tjuta', 'Kings Canyon'],
+          destinations: [
+            { name: 'Darwin', lat: -12.4634, lng: 130.8456 },
+            { name: 'Kakadu National Park', lat: -12.8500, lng: 132.9667 },
+            { name: 'Litchfield National Park', lat: -13.1333, lng: 130.7833 },
+            { name: 'Uluru', lat: -25.3444, lng: 131.0369 },
+            { name: 'Kata Tjuta', lat: -25.3000, lng: 130.7333 },
+            { name: 'Kings Canyon', lat: -24.2500, lng: 131.5667 },
+          ],
           notes: 'Top End en Red Centre samen — de meest iconische landschappen van Australië. Juni-augustus is ook de koelste periode voor Uluru (overdag nog prima te wandelen, niet de verzengende hitte van de zomer). Prijscorrectie (2026-07): €87,50→€105/dag — Yulara/Uluru is een monopolie-resortstadje, ook budgetopties zijn er prijzig.',
           transport_to_next: 'Vlucht Alice Springs-Cairns of Darwin-Cairns (over land zou via de outback-highways dagenlang duren)',
         },
         {
           code: 'AU', name: 'Australia', days: 21, budget: 2310, lat: -16.9203, lng: 145.771,
-          destinations: ['Cairns', 'Daintree Rainforest', 'Great Barrier Reef', 'Whitsundays & Whitehaven Beach', "Fraser Island / K'gari"],
+          destinations: [
+            { name: 'Cairns', lat: -16.9203, lng: 145.7710 },
+            { name: 'Daintree Rainforest', lat: -16.1667, lng: 145.4167 },
+            { name: 'Great Barrier Reef', lat: -16.5000, lng: 145.9667 },
+            { name: 'Whitsundays & Whitehaven Beach', lat: -20.2833, lng: 149.0333 },
+            { name: "Fraser Island / K'gari", lat: -25.2333, lng: 153.1500 },
+          ],
           notes: 'Sterkste match met snorkelen/duiken/wildlife uit de wensenlijst. Droog seizoen betekent ook geen kwallenseizoen (dat loopt november-mei) bij Cairns. Prijscorrectie (2026-07): €87,62→€110/dag — een Whitsundays-zeiltocht of Fraser Island-tour kost al snel €250-400 op zich.',
           transport_to_next: 'Bus of camper over land langs de oostkust (Cairns-Brisbane-Byron Bay-Sydney), de klassieke backpacker-trail',
         },
@@ -2249,25 +2292,43 @@ function rbBuildOceaniaExpeditionRoute() {
       countries: [
         {
           code: 'AU', name: 'Australia', days: 12, budget: 1050, lat: -33.8688, lng: 151.2093,
-          destinations: ['Byron Bay', 'Sydney', 'Blue Mountains'],
+          destinations: [
+            { name: 'Byron Bay', lat: -28.6474, lng: 153.6020 },
+            { name: 'Sydney', lat: -33.8688, lng: 151.2093 },
+            { name: 'Blue Mountains', lat: -33.7000, lng: 150.3000 },
+          ],
           notes: 'Klassieke backpacker-trail met goede infrastructuur; Sydney is te iconisch om over te slaan. Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: 'Auto over land via de kust of de Hume Highway naar Melbourne',
         },
         {
           code: 'AU', name: 'Australia', days: 10, budget: 875, lat: -37.8136, lng: 144.9631,
-          destinations: ['Great Ocean Road', 'Melbourne', 'Grampians National Park'],
+          destinations: [
+            { name: 'Great Ocean Road', lat: -38.6667, lng: 143.6667 },
+            { name: 'Melbourne', lat: -37.8136, lng: 144.9631 },
+            { name: 'Grampians National Park', lat: -37.2333, lng: 142.5167 },
+          ],
           notes: 'De beste roadtrip-ervaring van het hele land — sluit perfect aan bij "roadtrips waar dat logisch is". Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: 'Veerboot Spirit of Tasmania (Melbourne-Devonport) of korte vlucht naar Hobart/Launceston',
         },
         {
           code: 'AU', name: 'Australia', days: 12, budget: 1260, lat: -42.8821, lng: 147.3272,
-          destinations: ['Cradle Mountain', 'Wineglass Bay (Freycinet)', 'Overland Track', 'Hobart'],
-          notes: 'Ruige natuur, weinig massatoerisme — sterke match met deze reisstijl. Augustus-september is nog fris (soms sneeuw in het hooggebergte), dus pak warme kleding in. Prijscorrectie (2026-07): €87,50→€105/dag — het Overland Track-vergunning alleen al kost ~€120-150 p.p.',
-          transport_to_next: 'Vlucht Hobart-Adelaide (meestal met overstap in Melbourne)',
+          destinations: [
+            { name: 'Cradle Mountain', lat: -41.6833, lng: 145.9333 },
+            { name: 'Wineglass Bay (Freycinet)', lat: -42.1500, lng: 148.3000 },
+            { name: 'Overland Track', lat: -41.8500, lng: 145.9500 },
+            { name: 'Hobart', lat: -42.8821, lng: 147.3272 },
+          ],
+          notes: 'Ruige natuur, weinig massatoerisme — sterke match met deze reisstijl. Augustus-september is nog fris (soms sneeuw in het hooggebergte), dus pak warme kleding in. Prijscorrectie (2026-07): €87,50→€105/dag — het Overland Track-vergunning alleen al kost ~€120-150 p.p. Routelogica-check (2026-08, search-bevestigd): Hobart-Adelaide is een dagelijkse directe vlucht (Jetstar/Virgin/Qantas, ~2u, ±1.175 km) — géén omweg via Melbourne nodig, de eerdere aanname klopte niet. Volgorde zelf (Melbourne→Tasmanië→Adelaide) is al optimaal.',
+          transport_to_next: 'Vlucht Hobart-Adelaide (rechtstreeks, Jetstar/Virgin/Qantas, ~2u — geen overstap in Melbourne nodig).',
         },
         {
           code: 'AU', name: 'Australia', days: 9, budget: 945, lat: -34.9285, lng: 138.6007,
-          destinations: ['Adelaide', 'Kangaroo Island', 'Barossa Valley', 'Flinders Ranges'],
+          destinations: [
+            { name: 'Adelaide', lat: -34.9285, lng: 138.6007 },
+            { name: 'Kangaroo Island', lat: -35.8333, lng: 137.2167 },
+            { name: 'Barossa Valley', lat: -34.5333, lng: 138.9500 },
+            { name: 'Flinders Ranges', lat: -31.5000, lng: 138.6000 },
+          ],
           notes: "Kangaroo Island is uitstekend voor wildlife (zeeleeuwen, koala's) — de sterkste match met de wildlife-wens uit dit blok. Barossa Valley (wijn) is de eerste kandidaat om te laten vervallen als er ingekort moet worden. Prijscorrectie (2026-07): €87,78→€105/dag — de Kangaroo Island-veerboot plus schaarse/duurdere accommodatie daar.",
           transport_to_next: 'Vlucht Adelaide-Christchurch (meestal met overstap in Sydney of Melbourne)',
         },
@@ -2281,13 +2342,28 @@ function rbBuildOceaniaExpeditionRoute() {
       countries: [
         {
           code: 'NZ', name: 'New Zealand', days: 21, budget: 2268, lat: -45.0312, lng: 168.6626,
-          destinations: ['Christchurch', 'Kaikoura', 'Abel Tasman', 'Franz Josef & Fox-gletsjers', 'Queenstown', 'Milford Sound & Fiordland', 'Dunedin & Catlins'],
-          notes: 'Concentreert het merendeel van de iconische Nieuw-Zeelandse natuur. Overweeg minstens één Great Walk (Milford Track, Routeburn of Kepler) als meerdaagse hut-to-hut-trek — ruim van tevoren reserveren. Prijscorrectie (2026-07): €80→€108/dag — Milford Sound-cruise, gletsjeractiviteiten en Great Walk hut-fees waren niet gedekt; Queenstown is bovengemiddeld duur.',
+          destinations: [
+            { name: 'Christchurch', lat: -43.5321, lng: 172.6362 },
+            { name: 'Franz Josef & Fox-gletsjers', lat: -43.4667, lng: 170.1667 },
+            { name: 'Queenstown', lat: -45.0312, lng: 168.6626 },
+            { name: 'Milford Sound & Fiordland', lat: -44.6714, lng: 167.9250 },
+            { name: 'Dunedin & Catlins', lat: -45.8788, lng: 170.5028 },
+            { name: 'Kaikoura', lat: -42.4000, lng: 173.6817 },
+            { name: 'Abel Tasman', lat: -40.9333, lng: 173.0000 },
+          ],
+          notes: 'Concentreert het merendeel van de iconische Nieuw-Zeelandse natuur. Overweeg minstens één Great Walk (Milford Track, Routeburn of Kepler) als meerdaagse hut-to-hut-trek — ruim van tevoren reserveren. Prijscorrectie (2026-07): €80→€108/dag — Milford Sound-cruise, gletsjeractiviteiten en Great Walk hut-fees waren niet gedekt; Queenstown is bovengemiddeld duur. Routelogica-fix (2026-08, search-bevestigd): oude volgorde (Christchurch→Kaikoura→Abel Tasman→Franz Josef→Queenstown→Milford Sound→Dunedin) eindigde bij Dunedin (ver zuiden) terwijl de Picton-ferry in het uiterste noorden ligt — een onvermelde terugrit van ≈692 km, die bovendien het Christchurch-Kaikoura-traject (≈180 km) een tweede keer zou berijden. Nu Christchurch→Franz Josef→Queenstown→Milford Sound→Dunedin (zuid-lus eerst), dan Kaikoura→Abel Tasman→Picton als één doorlopende noordwaartse rit naar de ferry — elk wegstuk maar één keer bereden.',
           transport_to_next: 'Veerboot Picton-Wellington, over land verder het Noordereiland in',
         },
         {
           code: 'NZ', name: 'New Zealand', days: 14, budget: 1120, lat: -41.2865, lng: 174.7762,
-          destinations: ['Wellington', 'Tongariro Alpine Crossing', 'Rotorua', 'Coromandel', 'Bay of Islands', 'Auckland'],
+          destinations: [
+            { name: 'Wellington', lat: -41.2865, lng: 174.7762 },
+            { name: 'Tongariro Alpine Crossing', lat: -39.1333, lng: 175.6333 },
+            { name: 'Rotorua', lat: -38.1368, lng: 176.2497 },
+            { name: 'Coromandel', lat: -36.7614, lng: 175.4972 },
+            { name: 'Bay of Islands', lat: -35.2667, lng: 174.1167 },
+            { name: 'Auckland', lat: -36.8485, lng: 174.7633 },
+          ],
           notes: 'De Tongariro Alpine Crossing is de beste dagwandeling van het land. Rotorua voor geothermische verschijnselen en Māori-cultuur. Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Auckland naar Nederland',
         },
@@ -2301,7 +2377,8 @@ function rbBuildOceaniaExpeditionRoute() {
     notes: "Ontworpen in een Q&A-sessie met Claude (2026-07), op basis van een conceptvragenlijst van Youri over route, landen, eilandengroepen, Australië/Nieuw-Zeeland-indeling, reistijd, budget, transport en seizoen. Dagen zijn de 'ideale' tempo-schatting (niet het krappe minimum, niet het meest rustige tempo); budgetten zijn het gemiddelde van Budget Backpacker en Comfort Backpacker (Youri's zelfgekozen reisstijl, tussen die twee in).\n\n" +
       "Bewust buiten deze route gelaten: Frans-Polynesië en Nieuw-Caledonië (mooi maar prijzig — alleen toevoegen als bewuste splurge, niet meegenomen in dit kernontwerp), en Palau, de Solomon-eilanden, Micronesië, Kiribati en Papoea-Nieuw-Guinea (geografisch een grote omweg, te duur, of logistiek te zwaar voor een soepele backpacker-flow — kandidaten voor een aparte, specialistische reis ooit).\n\n" +
       "Totaal: 183 dagen (~6 maanden), €14.780 grondkosten + circa €3.500-4.000 aan vluchten (Europa-Oceanië, Australië-interne vluchten, Australië-Nieuw-Zeeland, en losse tickets tussen elk Pacific-eiland). Nog niet getoetst aan actuele prijzen of reisadviezen — behandel dit als een eerste concept, geen boekbaar plan.\n\n" +
-      "Prijzen/visum/reisadvies-verificatie (2026-07): grote bevinding — 9 van de 14 etappes waren onderbegroot, meestal doordat dure, specialistische activiteiten (walvis zwemmen, vulkaanbezoek, duurdere eilandvluchten, nationale-parkvergunningen, Milford Sound-cruises) niet in het vlakke dagtarief pasten. Pacific: Fiji (€62,50→€75), Vanuatu (€70→€95), Tonga (€67,50→€100, grootste correctie), Cook Islands (€80→€95); Samoa bevestigd accuraat. Australië: Perth/Kimberley (€87,62→€120), Darwin/Uluru (€87,50→€105), Cairns/GBR (€87,62→€110), Tasmanië (€87,50→€105), Adelaide/Kangaroo Island (€87,78→€105); Sydney-etappe en Great Ocean Road bevestigd accuraat. Nieuw-Zeeland: Zuidereiland (€80→€108, Milford Sound/gletsjers/Great Walks); Noordereiland bevestigd accuraat. Nieuw totaal: €17.943 grondkosten (was €14.780). Visum: Australië eVisitor is gratis (12 mnd geldig, max 3 mnd per bezoek); Nieuw-Zeeland NZeTA + verplichte IVL-toeristenheffing samen ~€60-63, geldig voor de hele reis. Reisadvies overal groen/routine — vooral seizoensgebonden natuurrisico's (cyclonen, bosbranden, kwallenseizoen in Noord-Australië nov-mei, niet relevant voor deze mei-november-planning).",
+      "Prijzen/visum/reisadvies-verificatie (2026-07): grote bevinding — 9 van de 14 etappes waren onderbegroot, meestal doordat dure, specialistische activiteiten (walvis zwemmen, vulkaanbezoek, duurdere eilandvluchten, nationale-parkvergunningen, Milford Sound-cruises) niet in het vlakke dagtarief pasten. Pacific: Fiji (€62,50→€75), Vanuatu (€70→€95), Tonga (€67,50→€100, grootste correctie), Cook Islands (€80→€95); Samoa bevestigd accuraat. Australië: Perth/Kimberley (€87,62→€120), Darwin/Uluru (€87,50→€105), Cairns/GBR (€87,62→€110), Tasmanië (€87,50→€105), Adelaide/Kangaroo Island (€87,78→€105); Sydney-etappe en Great Ocean Road bevestigd accuraat. Nieuw-Zeeland: Zuidereiland (€80→€108, Milford Sound/gletsjers/Great Walks); Noordereiland bevestigd accuraat. Nieuw totaal: €17.943 grondkosten (was €14.780). Visum: Australië eVisitor is gratis (12 mnd geldig, max 3 mnd per bezoek); Nieuw-Zeeland NZeTA + verplichte IVL-toeristenheffing samen ~€60-63, geldig voor de hele reis. Reisadvies overal groen/routine — vooral seizoensgebonden natuurrisico's (cyclonen, bosbranden, kwallenseizoen in Noord-Australië nov-mei, niet relevant voor deze mei-november-planning).\n\n" +
+      "Routelogica-herziening (2026-08, search-bevestigd, tiende expeditie uit ROUTE_LOGIC_REVIEW.md): drie fixes. (1) **Pacific-eilanden**: de oude volgorde (Fiji→Vanuatu→Samoa→Tonga→Cook Islands) sprong van Fiji naar Vanuatu (west), dan terug oostwaarts voorbij Fiji naar Samoa, dan weer terug naar Tonga (dat dichter bij Fiji ligt dan Samoa) — een dubbele omweg via de Fiji-hub, die twee van de bestaande transportnotities zelf al impliceerden ('meestal met overstap via Fiji'). Nu Vanuatu→Fiji→Tonga→Samoa→Cook Islands: monotoon oostwaarts, Fiji maar één keer gepasseerd. Kleine prijs: de laatste sprong (Samoa-Cook Islands) heeft geen directe vlucht (12-16u via Auckland), iets minder goed verbonden dan de oude Tonga-Cook Islands-verbinding, maar weegt niet op tegen het vermijden van de dubbele hub-omweg. (2) **Tasmanië-Adelaide**: de aanname dat dit 'meestal met overstap in Melbourne' gaat bleek onjuist — Hobart-Adelaide is een dagelijkse directe vlucht (Jetstar/Virgin/Qantas, ~2u); de volgorde zelf (Melbourne→Tasmanië→Adelaide) was al optimaal, alleen de tekst is gecorrigeerd. (3) **Nieuw-Zeeland Zuidereiland**: de oude volgorde eindigde bij Dunedin (ver zuiden) terwijl de Picton-ferry in het uiterste noorden ligt — een onvermelde terugrit van ≈692 km die het Christchurch-Kaikoura-traject een tweede keer zou berijden. Nu Christchurch→Franz Josef→Queenstown→Milford Sound→Dunedin (zuid-lus eerst), dan Kaikoura→Abel Tasman→Picton als één doorlopende noordwaartse rit. Youri had Nieuw-Zeeland en Sydney al eerder bezocht maar wil ze nog een keer doen — geen cuts. Coördinaten per bestemming toegevoegd aan alle 14 etappes. Landen/dagen/budget ongewijzigd — alleen volgorde en transport-notities aangepast. Zelfde fixes ook toegepast op de drie betrokken split-companions (Pacific-eilanden 🌺, Gematigd/Zuidelijk Australië 🍇, Nieuw-Zeeland 🥝); Tropisch/Outback Australië 🐊 bleef ongewijzigd (regio al optimaal, alleen coördinaten toegevoegd).",
   });
 }
 
@@ -4156,32 +4233,54 @@ function rbBuildPacificIslandsRoute() {
       note: 'Vijf eilandengroepen in het droge seizoen, ruim vóór het cycloonseizoen (november-april).',
       countries: [
         {
-          code: 'FJ', name: 'Fiji', days: 14, budget: 1050, lat: -17.7765, lng: 177.4356,
-          destinations: ['Nadi', 'Mamanuca-eilanden', 'Yasawa-eilanden', 'Taveuni'],
-          notes: "Beste backpacker-infrastructuur van de Pacific — eilandhoppen per boot (Yasawa Flyer) tussen de Mamanucas en Yasawas, snorkelen en duiken op de koraalriffen. Prijscorrectie (2026-07): €62,50→€75/dag (Yasawa Flyer-bootpas + vlucht naar Taveuni waren niet gedekt).",
-          transport_to_next: 'Vlucht Nadi-Port Vila (Fiji Airways, de belangrijkste Pacific-hub)',
-        },
-        {
           code: 'VU', name: 'Vanuatu', days: 11, budget: 1045, lat: -17.7333, lng: 168.3273,
-          destinations: ['Port Vila', 'Mount Yasur (Tanna)', 'SS President Coolidge wrak (Espiritu Santo)', 'Blue Holes'],
-          notes: "Een van de meest toegankelijke actieve vulkanen ter wereld — tot vlak bij de kraterrand van Mount Yasur. Wereldklasse wrakduik op de SS President Coolidge. Prijscorrectie (2026-07): €70→€95/dag (binnenlandse vluchten naar Tanna/Santo + Yasur-tour waren niet gedekt; Air Vanuatu ging in 2024 failliet, vluchten zijn schaarser/duurder geworden).",
-          transport_to_next: 'Vlucht Port Vila-Apia (meestal met overstap via Fiji of Auckland)',
+          destinations: [
+            { name: 'Port Vila', lat: -17.7333, lng: 168.3273 },
+            { name: 'Mount Yasur (Tanna)', lat: -19.5236, lng: 169.4451 },
+            { name: 'SS President Coolidge wrak (Espiritu Santo)', lat: -15.5085, lng: 167.1739 },
+            { name: 'Blue Holes', lat: -15.5000, lng: 167.1500 },
+          ],
+          notes: "Een van de meest toegankelijke actieve vulkanen ter wereld — tot vlak bij de kraterrand van Mount Yasur. Wereldklasse wrakduik op de SS President Coolidge. Prijscorrectie (2026-07): €70→€95/dag (binnenlandse vluchten naar Tanna/Santo + Yasur-tour waren niet gedekt; Air Vanuatu ging in 2024 failliet, vluchten zijn schaarser/duurder geworden). Routelogica-fix (2026-08): als eerste land bezocht i.p.v. na Fiji — zie Oceania Grand Expedition 🌊's eigen notities voor de volledige onderbouwing.",
+          transport_to_next: 'Vlucht Port Vila-Nadi (Fiji Airways, direct, ±7x/week, 2u15).',
         },
         {
-          code: 'WS', name: 'Samoa', days: 9, budget: 565, lat: -13.8506, lng: -171.7513,
-          destinations: ['Apia', 'To Sua Ocean Trench', 'Lalomanu (beach fales)', 'Upolu'],
-          notes: "Authentieke Polynesische cultuur, nog weinig aangetast door massatoerisme. Beach fales zijn traditionele, budgetvriendelijke strandhutjes. Prijs geverifieerd (2026-07), klopt — relatief goedkoop voor de Pacific.",
-          transport_to_next: "Vlucht Apia-Nuku'alofa (meestal met overstap via Fiji)",
+          code: 'FJ', name: 'Fiji', days: 14, budget: 1050, lat: -17.7765, lng: 177.4356,
+          destinations: [
+            { name: 'Nadi', lat: -17.7765, lng: 177.4356 },
+            { name: 'Mamanuca-eilanden', lat: -17.6667, lng: 177.1000 },
+            { name: 'Yasawa-eilanden', lat: -16.8000, lng: 177.4500 },
+            { name: 'Taveuni', lat: -16.8500, lng: 179.9833 },
+          ],
+          notes: "Beste backpacker-infrastructuur van de Pacific — eilandhoppen per boot (Yasawa Flyer) tussen de Mamanucas en Yasawas, snorkelen en duiken op de koraalriffen. Prijscorrectie (2026-07): €62,50→€75/dag (Yasawa Flyer-bootpas + vlucht naar Taveuni waren niet gedekt). Routelogica-fix (2026-08): Fiji wordt nu ná Vanuatu bezocht, zodat de rest van de keten oostwaarts blijft doorlopen.",
+          transport_to_next: "Vlucht Nadi-Nuku'alofa (Fiji Airways, direct, 12x/week, ~2u).",
         },
         {
           code: 'TO', name: 'Tonga', days: 8, budget: 800, lat: -21.1393, lng: -175.2046,
-          destinations: ["Nuku'alofa", "Vava'u (zwemmen met bultrugwalvissen)", "Ha'apai"],
-          notes: "Een van de weinige plekken ter wereld waar je legaal mag zwemmen met bultrugwalvissen — het beste seizoen daarvoor is juli-oktober, dus check de exacte timing bij het plannen van de startdatum. Prijscorrectie (2026-07): €67,50→€100/dag, de grootste correctie van de route — vlucht naar Vava'u + de whale-swim tour zelf waren niet gedekt.",
-          transport_to_next: "Vlucht Nuku'alofa-Rarotonga (lage frequentie, ruim van tevoren boeken)",
+          destinations: [
+            { name: "Nuku'alofa", lat: -21.1393, lng: -175.2046 },
+            { name: "Vava'u (zwemmen met bultrugwalvissen)", lat: -18.6500, lng: -173.9833 },
+            { name: "Ha'apai", lat: -19.8333, lng: -174.3500 },
+          ],
+          notes: "Een van de weinige plekken ter wereld waar je legaal mag zwemmen met bultrugwalvissen — het beste seizoen daarvoor is juli-oktober, dus check de exacte timing bij het plannen van de startdatum. Prijscorrectie (2026-07): €67,50→€100/dag, de grootste correctie van de route — vlucht naar Vava'u + de whale-swim tour zelf waren niet gedekt. Routelogica-fix (2026-08): nu vóór Samoa bezocht (ligt dichter bij Fiji) i.p.v. erna.",
+          transport_to_next: "Vlucht Nuku'alofa-Apia (geen directe vlucht, via Auckland of Fiji, 5u+).",
+        },
+        {
+          code: 'WS', name: 'Samoa', days: 9, budget: 565, lat: -13.8506, lng: -171.7513,
+          destinations: [
+            { name: 'Apia', lat: -13.8506, lng: -171.7513 },
+            { name: 'To Sua Ocean Trench', lat: -13.9333, lng: -171.5333 },
+            { name: 'Lalomanu (beach fales)', lat: -14.0167, lng: -171.4333 },
+            { name: 'Upolu', lat: -13.9167, lng: -171.7667 },
+          ],
+          notes: "Authentieke Polynesische cultuur, nog weinig aangetast door massatoerisme. Beach fales zijn traditionele, budgetvriendelijke strandhutjes. Prijs geverifieerd (2026-07), klopt — relatief goedkoop voor de Pacific.",
+          transport_to_next: "Vlucht Apia-Rarotonga (geen directe vlucht, 12-16u via Auckland of Nadi+Auckland).",
         },
         {
           code: 'CK', name: 'Cook Islands', days: 7, budget: 665, lat: -21.2367, lng: -159.7777,
-          destinations: ['Rarotonga', 'Aitutaki-lagune'],
+          destinations: [
+            { name: 'Rarotonga', lat: -21.2367, lng: -159.7777 },
+            { name: 'Aitutaki-lagune', lat: -18.8333, lng: -159.7833 },
+          ],
           notes: "De Aitutaki-lagune is minstens zo mooi als Bora Bora, voor een fractie van de prijs. Prijscorrectie (2026-07): €80→€95/dag (Air Rarotonga heeft een monopolie op de Aitutaki-vlucht, plus lagune-cruise).",
           transport_to_next: 'Einde van deze route — terugvlucht vanuit Rarotonga (of vlucht Rarotonga-Perth om verder te reizen naar Tropisch/Outback Australië 🐊)',
         },
@@ -4190,9 +4289,9 @@ function rbBuildPacificIslandsRoute() {
   ], {
     travel_style: 'Backpacker tussen budget en comfort in — vluchten tussen de eilanden (geen praktisch bootalternatief).',
     best_starting_month: 'Mei',
-    description: 'De mooiste Pacific-eilanden op een rij: Fiji, Vanuatu, Samoa, Tonga en de Cook Islands.',
+    description: 'De mooiste Pacific-eilanden op een rij: Vanuatu, Fiji, Tonga, Samoa en de Cook Islands.',
     climate_summary: 'Mei-juni is het droge seizoen in de hele Pacific, ruim vóór het cycloonseizoen (november-april).',
-    notes: 'Losgesplitst van Oceania Grand Expedition 🌊 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen (incl. de 2026-07 prijscorrecties op bijna elk eiland). Vervolg op deze route: Tropisch/Outback Australië 🐊. Oceania Grand Expedition 🌊 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+    notes: "Losgesplitst van Oceania Grand Expedition 🌊 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen (incl. de 2026-07 prijscorrecties op bijna elk eiland). Vervolg op deze route: Tropisch/Outback Australië 🐊. Oceania Grand Expedition 🌊 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): eilandvolgorde omgedraaid naar Vanuatu→Fiji→Tonga→Samoa→Cook Islands (was Fiji→Vanuatu→Samoa→Tonga→Cook Islands) om een dubbele omweg via de Fiji-hub te vermijden. Zie Oceania Grand Expedition 🌊's eigen notities voor de volledige onderbouwing.",
   });
 }
 
@@ -4206,19 +4305,38 @@ function rbBuildTropicalOutbackAustraliaRoute() {
       countries: [
         {
           code: 'AU', name: 'Australia', days: 21, budget: 2520, lat: -31.9505, lng: 115.8605,
-          destinations: ['Perth', 'Ningaloo Reef (walvishaaien)', 'Kimberley & Bungle Bungles', 'Gibb River Road', 'Broome'],
+          destinations: [
+            { name: 'Perth', lat: -31.9505, lng: 115.8605 },
+            { name: 'Ningaloo Reef (walvishaaien)', lat: -22.6833, lng: 113.6667 },
+            { name: 'Kimberley & Bungle Bungles', lat: -17.5333, lng: 128.4167 },
+            { name: 'Gibb River Road', lat: -16.5000, lng: 126.5000 },
+            { name: 'Broome', lat: -17.9614, lng: 122.2359 },
+          ],
           notes: 'Ningaloo Reef en de Kimberley zijn spectaculair en kennen weinig massatoerisme. Wel de duurste/verste regio van deze route qua afstanden. Prijscorrectie (2026-07): €87,62→€120/dag.',
           transport_to_next: 'Auto over land via de Gibb River Road en Kununurra naar Darwin, of vlucht Broome-Darwin voor wie de Kimberley liever per vliegtuig oversteekt',
         },
         {
           code: 'AU', name: 'Australia', days: 14, budget: 1470, lat: -12.4634, lng: 130.8456,
-          destinations: ['Darwin', 'Kakadu National Park', 'Litchfield National Park', 'Uluru', 'Kata Tjuta', 'Kings Canyon'],
+          destinations: [
+            { name: 'Darwin', lat: -12.4634, lng: 130.8456 },
+            { name: 'Kakadu National Park', lat: -12.8500, lng: 132.9667 },
+            { name: 'Litchfield National Park', lat: -13.1333, lng: 130.7833 },
+            { name: 'Uluru', lat: -25.3444, lng: 131.0369 },
+            { name: 'Kata Tjuta', lat: -25.3000, lng: 130.7333 },
+            { name: 'Kings Canyon', lat: -24.2500, lng: 131.5667 },
+          ],
           notes: 'Top End en Red Centre samen — de meest iconische landschappen van Australië. Juni-augustus is ook de koelste periode voor Uluru. Prijscorrectie (2026-07): €87,50→€105/dag.',
           transport_to_next: 'Vlucht Alice Springs-Cairns of Darwin-Cairns (over land zou via de outback-highways dagenlang duren)',
         },
         {
           code: 'AU', name: 'Australia', days: 21, budget: 2310, lat: -16.9203, lng: 145.771,
-          destinations: ['Cairns', 'Daintree Rainforest', 'Great Barrier Reef', 'Whitsundays & Whitehaven Beach', "Fraser Island / K'gari"],
+          destinations: [
+            { name: 'Cairns', lat: -16.9203, lng: 145.7710 },
+            { name: 'Daintree Rainforest', lat: -16.1667, lng: 145.4167 },
+            { name: 'Great Barrier Reef', lat: -16.5000, lng: 145.9667 },
+            { name: 'Whitsundays & Whitehaven Beach', lat: -20.2833, lng: 149.0333 },
+            { name: "Fraser Island / K'gari", lat: -25.2333, lng: 153.1500 },
+          ],
           notes: 'Droog seizoen betekent ook geen kwallenseizoen (dat loopt november-mei) bij Cairns. Prijscorrectie (2026-07): €87,62→€110/dag.',
           transport_to_next: 'Einde van deze route — terugvlucht vanuit Cairns (of overland naar Sydney om verder te reizen naar Gematigd/Zuidelijk Australië 🍇)',
         },
@@ -4229,7 +4347,7 @@ function rbBuildTropicalOutbackAustraliaRoute() {
     best_starting_month: 'Juni',
     description: '"Top end" Australië: Perth en de Kimberley, Uluru en de Red Centre, en Cairns met het Great Barrier Reef.',
     climate_summary: 'Juni-augustus is het droge seizoen — begaanbare Kimberley-wegen, geen moesson, geen kwallenseizoen bij Cairns.',
-    notes: 'Losgesplitst van Oceania Grand Expedition 🌊 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen, budgetten en volgorde zijn ongewijzigd overgenomen. Australië wordt hiermee opgeknipt in twee losse Route Builder-expedities naar klimaatzone (dit tropische deel en Gematigd/Zuidelijk Australië 🍇) — hetzelfde "zelfde land, ander block"-patroon als Chili/Argentinië tussen Pan-American Grand Tour 🌎 en Patagonia & Antarctica Expedition 🧊. Vervolg op Pacific-eilanden 🌺. Oceania Grand Expedition 🌊 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+    notes: 'Losgesplitst van Oceania Grand Expedition 🌊 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen, budgetten en volgorde zijn ongewijzigd overgenomen. Australië wordt hiermee opgeknipt in twee losse Route Builder-expedities naar klimaatzone (dit tropische deel en Gematigd/Zuidelijk Australië 🍇) — hetzelfde "zelfde land, ander block"-patroon als Chili/Argentinië tussen Pan-American Grand Tour 🌎 en Patagonia & Antarctica Expedition 🧊. Vervolg op Pacific-eilanden 🌺. Oceania Grand Expedition 🌊 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): regio al optimaal bevonden, geen wijziging nodig — alleen coördinaten per bestemming toegevoegd. Zie Oceania Grand Expedition 🌊\'s eigen notities.',
   });
 }
 
@@ -4243,25 +4361,43 @@ function rbBuildTemperateSouthernAustraliaRoute() {
       countries: [
         {
           code: 'AU', name: 'Australia', days: 12, budget: 1050, lat: -33.8688, lng: 151.2093,
-          destinations: ['Byron Bay', 'Sydney', 'Blue Mountains'],
+          destinations: [
+            { name: 'Byron Bay', lat: -28.6474, lng: 153.6020 },
+            { name: 'Sydney', lat: -33.8688, lng: 151.2093 },
+            { name: 'Blue Mountains', lat: -33.7000, lng: 150.3000 },
+          ],
           notes: 'Klassieke backpacker-trail met goede infrastructuur; Sydney is te iconisch om over te slaan. Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: 'Auto over land via de kust of de Hume Highway naar Melbourne',
         },
         {
           code: 'AU', name: 'Australia', days: 10, budget: 875, lat: -37.8136, lng: 144.9631,
-          destinations: ['Great Ocean Road', 'Melbourne', 'Grampians National Park'],
+          destinations: [
+            { name: 'Great Ocean Road', lat: -38.6667, lng: 143.6667 },
+            { name: 'Melbourne', lat: -37.8136, lng: 144.9631 },
+            { name: 'Grampians National Park', lat: -37.2333, lng: 142.5167 },
+          ],
           notes: 'De beste roadtrip-ervaring van het hele land. Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: 'Veerboot Spirit of Tasmania (Melbourne-Devonport) of korte vlucht naar Hobart/Launceston',
         },
         {
           code: 'AU', name: 'Australia', days: 12, budget: 1260, lat: -42.8821, lng: 147.3272,
-          destinations: ['Cradle Mountain', 'Wineglass Bay (Freycinet)', 'Overland Track', 'Hobart'],
-          notes: 'Ruige natuur, weinig massatoerisme. Augustus-september is nog fris (soms sneeuw in het hooggebergte), dus pak warme kleding in. Prijscorrectie (2026-07): €87,50→€105/dag.',
-          transport_to_next: 'Vlucht Hobart-Adelaide (meestal met overstap in Melbourne)',
+          destinations: [
+            { name: 'Cradle Mountain', lat: -41.6833, lng: 145.9333 },
+            { name: 'Wineglass Bay (Freycinet)', lat: -42.1500, lng: 148.3000 },
+            { name: 'Overland Track', lat: -41.8500, lng: 145.9500 },
+            { name: 'Hobart', lat: -42.8821, lng: 147.3272 },
+          ],
+          notes: 'Ruige natuur, weinig massatoerisme. Augustus-september is nog fris (soms sneeuw in het hooggebergte), dus pak warme kleding in. Prijscorrectie (2026-07): €87,50→€105/dag. Routelogica-check (2026-08): Hobart-Adelaide is een dagelijkse directe vlucht — géén omweg via Melbourne nodig, zie Oceania Grand Expedition 🌊\'s eigen notities.',
+          transport_to_next: 'Vlucht Hobart-Adelaide (rechtstreeks, geen overstap in Melbourne nodig).',
         },
         {
           code: 'AU', name: 'Australia', days: 9, budget: 945, lat: -34.9285, lng: 138.6007,
-          destinations: ['Adelaide', 'Kangaroo Island', 'Barossa Valley', 'Flinders Ranges'],
+          destinations: [
+            { name: 'Adelaide', lat: -34.9285, lng: 138.6007 },
+            { name: 'Kangaroo Island', lat: -35.8333, lng: 137.2167 },
+            { name: 'Barossa Valley', lat: -34.5333, lng: 138.9500 },
+            { name: 'Flinders Ranges', lat: -31.5000, lng: 138.6000 },
+          ],
           notes: "Kangaroo Island is uitstekend voor wildlife (zeeleeuwen, koala's). Barossa Valley (wijn) is de eerste kandidaat om te laten vervallen als er ingekort moet worden. Prijscorrectie (2026-07): €87,78→€105/dag.",
           transport_to_next: 'Einde van deze route — terugvlucht vanuit Adelaide (of vlucht Adelaide-Christchurch om verder te reizen naar Nieuw-Zeeland 🥝)',
         },
@@ -4272,7 +4408,7 @@ function rbBuildTemperateSouthernAustraliaRoute() {
     best_starting_month: 'Augustus',
     description: 'De oostkust van Sydney tot Melbourne, de Great Ocean Road, Tasmanië en Adelaide/Kangaroo Island.',
     climate_summary: 'Augustus-september is late winter/vroege lente — koeler dan de zomerpiek maar goed te doen, en de aansluiting op Nieuw-Zeelands eigen seizoen.',
-    notes: 'Losgesplitst van Oceania Grand Expedition 🌊 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen, budgetten en volgorde zijn ongewijzigd overgenomen. Australië wordt hiermee opgeknipt in twee losse Route Builder-expedities naar klimaatzone — zie Tropisch/Outback Australië 🐊 voor de andere helft. Vervolg op Tropisch/Outback Australië 🐊; wordt zelf gevolgd door Nieuw-Zeeland 🥝. Oceania Grand Expedition 🌊 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+    notes: "Losgesplitst van Oceania Grand Expedition 🌊 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen, budgetten en volgorde zijn ongewijzigd overgenomen. Australië wordt hiermee opgeknipt in twee losse Route Builder-expedities naar klimaatzone — zie Tropisch/Outback Australië 🐊 voor de andere helft. Vervolg op Tropisch/Outback Australië 🐊; wordt zelf gevolgd door Nieuw-Zeeland 🥝. Oceania Grand Expedition 🌊 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): Hobart-Adelaide-vluchttekst gecorrigeerd (direct, geen omweg via Melbourne). Zie Oceania Grand Expedition 🌊's eigen notities voor de volledige onderbouwing.",
   });
 }
 
@@ -4286,13 +4422,28 @@ function rbBuildNewZealandRoute() {
       countries: [
         {
           code: 'NZ', name: 'New Zealand', days: 21, budget: 2268, lat: -45.0312, lng: 168.6626,
-          destinations: ['Christchurch', 'Kaikoura', 'Abel Tasman', 'Franz Josef & Fox-gletsjers', 'Queenstown', 'Milford Sound & Fiordland', 'Dunedin & Catlins'],
-          notes: 'Concentreert het merendeel van de iconische Nieuw-Zeelandse natuur. Overweeg minstens één Great Walk (Milford Track, Routeburn of Kepler) als meerdaagse hut-to-hut-trek — ruim van tevoren reserveren. Prijscorrectie (2026-07): €80→€108/dag.',
+          destinations: [
+            { name: 'Christchurch', lat: -43.5321, lng: 172.6362 },
+            { name: 'Franz Josef & Fox-gletsjers', lat: -43.4667, lng: 170.1667 },
+            { name: 'Queenstown', lat: -45.0312, lng: 168.6626 },
+            { name: 'Milford Sound & Fiordland', lat: -44.6714, lng: 167.9250 },
+            { name: 'Dunedin & Catlins', lat: -45.8788, lng: 170.5028 },
+            { name: 'Kaikoura', lat: -42.4000, lng: 173.6817 },
+            { name: 'Abel Tasman', lat: -40.9333, lng: 173.0000 },
+          ],
+          notes: "Concentreert het merendeel van de iconische Nieuw-Zeelandse natuur. Overweeg minstens één Great Walk (Milford Track, Routeburn of Kepler) als meerdaagse hut-to-hut-trek — ruim van tevoren reserveren. Prijscorrectie (2026-07): €80→€108/dag. Routelogica-fix (2026-08): volgorde omgedraaid zodat Kaikoura/Abel Tasman als laatste bezocht worden, vlak vóór de Picton-ferry, i.p.v. een onvermelde terugrit van ≈692 km vanaf Dunedin. Zie Oceania Grand Expedition 🌊's eigen notities voor de volledige onderbouwing.",
           transport_to_next: 'Veerboot Picton-Wellington, over land verder het Noordereiland in',
         },
         {
           code: 'NZ', name: 'New Zealand', days: 14, budget: 1120, lat: -41.2865, lng: 174.7762,
-          destinations: ['Wellington', 'Tongariro Alpine Crossing', 'Rotorua', 'Coromandel', 'Bay of Islands', 'Auckland'],
+          destinations: [
+            { name: 'Wellington', lat: -41.2865, lng: 174.7762 },
+            { name: 'Tongariro Alpine Crossing', lat: -39.1333, lng: 175.6333 },
+            { name: 'Rotorua', lat: -38.1368, lng: 176.2497 },
+            { name: 'Coromandel', lat: -36.7614, lng: 175.4972 },
+            { name: 'Bay of Islands', lat: -35.2667, lng: 174.1167 },
+            { name: 'Auckland', lat: -36.8485, lng: 174.7633 },
+          ],
           notes: 'De Tongariro Alpine Crossing is de beste dagwandeling van het land. Rotorua voor geothermische verschijnselen en Māori-cultuur. Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Auckland naar Nederland',
         },
@@ -4303,7 +4454,7 @@ function rbBuildNewZealandRoute() {
     best_starting_month: 'September',
     description: 'Het Zuidereiland (Milford Sound, gletsjers, Queenstown) en het Noordereiland (Tongariro, Rotorua, Bay of Islands).',
     climate_summary: 'September-november is het Nieuw-Zeelandse voorjaar — een door reisgidsen vaak aangeraden shoulder season met stabiel weer en minder drukte dan de zomerpiek.',
-    notes: 'Losgesplitst van Oceania Grand Expedition 🌊 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen en budgetten zijn ongewijzigd overgenomen. Nieuw-Zeeland is een van de meest geboekte standalone trips ter wereld — dit blok staat volledig op zichzelf. Vervolg op Gematigd/Zuidelijk Australië 🍇. Oceania Grand Expedition 🌊 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+    notes: "Losgesplitst van Oceania Grand Expedition 🌊 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen en budgetten zijn ongewijzigd overgenomen. Nieuw-Zeeland is een van de meest geboekte standalone trips ter wereld — dit blok staat volledig op zichzelf. Vervolg op Gematigd/Zuidelijk Australië 🍇. Oceania Grand Expedition 🌊 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): Zuidereiland-volgorde omgedraaid (Kaikoura/Abel Tasman nu laatst, vlak vóór de Picton-ferry) om een onvermelde ≈692 km-terugrit vanaf Dunedin te vermijden. Zie Oceania Grand Expedition 🌊's eigen notities voor de volledige onderbouwing.",
   });
 }
 
@@ -6248,6 +6399,39 @@ function rbMigrateWestCentralAfricaRouteLogicOverhaul() {
     ['West & Central Africa Expedition 🌍', rbBuildWestCentralAfricaExpeditionRoute],
     ['West-Afrika Overland 🥁', rbBuildWestAfricaOverlandRoute],
     ['Centraal-Afrika & Eilanden 🦛', rbBuildCentralAfricaIslandsRoute],
+  ];
+
+  replacements.forEach(([name, buildFn]) => {
+    const idx = rbRoutes.findIndex(r => r.name === name);
+    if (idx === -1) return;
+    rbRoutes.splice(idx, 1, buildFn());
+  });
+
+  rbSave();
+}
+
+/**
+ * Oceania Grand Expedition — route-logic review (2026-08), tenth expedition in the
+ * ROUTE_LOGIC_REVIEW.md playbook. Wholesale-replace pattern (this route already has two prior
+ * wholesale-replace migrations — rbMigratePriceVerificationRound1 and rbMigrateRouteLineCoordsRound2
+ * — for its main route). Also replaces its four 2026-07 split companions (Pacific-eilanden 🌺,
+ * Tropisch/Outback Australië 🐊, Gematigd/Zuidelijk Australië 🍇, Nieuw-Zeeland 🥝), which had never
+ * been touched by any migration since their initial seed — same first-time-split-companion-migration
+ * situation as North America Grand Traverse's and West & Central Africa's companions earlier in this
+ * review round. See rbBuildOceaniaExpeditionRoute()'s own notes for the full writeup (Pacific island
+ * order reversed to avoid a double Fiji-hub detour, Tasmania-Adelaide flight text corrected, New
+ * Zealand South Island reordered to avoid an unstated Dunedin-Picton backtrack).
+ */
+function rbMigrateOceaniaRouteLogicOverhaul() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_OCEANIA_OVERHAUL)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_OCEANIA_OVERHAUL, '1');
+
+  const replacements = [
+    ['Oceania Grand Expedition 🌊', rbBuildOceaniaExpeditionRoute],
+    ['Pacific-eilanden 🌺', rbBuildPacificIslandsRoute],
+    ['Tropisch/Outback Australië 🐊', rbBuildTropicalOutbackAustraliaRoute],
+    ['Gematigd/Zuidelijk Australië 🍇', rbBuildTemperateSouthernAustraliaRoute],
+    ['Nieuw-Zeeland 🥝', rbBuildNewZealandRoute],
   ];
 
   replacements.forEach(([name, buildFn]) => {
