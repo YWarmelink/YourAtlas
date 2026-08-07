@@ -56,6 +56,7 @@ const RB_MIGRATE_FLAG_2026_08_CARIBBEAN_OVERHAUL = 'atlas_grand_trips_migrate_20
 const RB_MIGRATE_FLAG_2026_08_CENTRAL_EUROPE_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_central_europe_overhaul_v1';
 const RB_MIGRATE_FLAG_2026_08_BRITISH_ISLES_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_british_isles_overhaul_v1';
 const RB_MIGRATE_FLAG_2026_08_NORTH_AMERICA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_north_america_overhaul_v1';
+const RB_MIGRATE_FLAG_2026_08_WEST_CENTRAL_AFRICA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_west_central_africa_overhaul_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -118,6 +119,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateCentralEuropeRouteLogicOverhaul();
   rbMigrateBritishIslesRouteLogicOverhaul();
   rbMigrateNorthAmericaRouteLogicOverhaul();
+  rbMigrateWestCentralAfricaRouteLogicOverhaul();
   rbBindEvents();
 
   try {
@@ -2509,9 +2511,13 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
       countries: [
         {
           code: 'CV', name: 'Cape Verde', days: 13, budget: 780, lat: 16.8901, lng: -24.9825,
-          destinations: ['Santo Antão (Ribeira Grande, Paúl-vallei)', 'São Vicente (Mindelo)', 'Fogo (Pico do Fogo-vulkaan, wijngaarden)'],
+          destinations: [
+            { name: 'Santo Antão (Ribeira Grande, Paúl-vallei)', lat: 17.1833, lng: -25.0667 },
+            { name: 'São Vicente (Mindelo)', lat: 16.8901, lng: -24.9825 },
+            { name: 'Fogo (Pico do Fogo-vulkaan, wijngaarden)', lat: 14.9481, lng: -24.3553 },
+          ],
           notes: "Bewust andere eilanden dan een eerder bezoek (niet opnieuw Sal) — Santo Antão voor de dramatische wandelvalleien, São Vicente voor de muziekcultuur van Mindelo, Fogo voor de vulkaanbeklimming en wijnbouw op vulkanische grond. Onderling per veerboot (goedkoper, minder betrouwbaar schema) of Binter Cabo Verde-vlucht. Prijs geverifieerd (2026-07), klopt — Fogo-vlucht (~€70-100 enkele reis, veerboot onbetrouwbaar) is een aparte kostenpost. Verplichte online EASE-registratie ≥5 dagen vooraf.",
-          transport_to_next: 'Vlucht Praia/Sal-Dakar, korte oversteek naar het vasteland.',
+          transport_to_next: 'Binnenlandse vlucht Fogo-Praia, dan internationale vlucht Praia-Dakar (routelogica-fix 2026-08, search-bevestigd: Fogo heeft geen brede internationale verbindingen, alle vluchten lopen via Praia — dit stond eerder verzwegen achter "Praia/Sal-Dakar" alsof het interwisselbare directe vertrekpunten waren).',
         },
       ],
     },
@@ -2523,13 +2529,24 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
       countries: [
         {
           code: 'SN', name: 'Senegal', days: 13, budget: 618, lat: 14.7167, lng: -17.4677,
-          destinations: ['Dakar', 'Île de Gorée', 'Saint-Louis (UNESCO)', 'Sine-Saloum-delta', 'Lompoul-woestijn'],
-          notes: "Île de Gorée (slavernijgeschiedenis, korte boot vanaf Dakar) en Saint-Louis (koloniale hoofdstad) zijn de historische zwaartepunten; Sine-Saloum (mangroves, vogels) en de Lompoul-duinen geven een compleet ander natuurbeeld binnen één land. Prijs geverifieerd (2026-07), klopt. Oranje grensstrook bij Gambia/Guinee-Bissau/Mali/Mauritanië — niet relevant voor deze route.",
-          transport_to_next: 'Bus/deeltaxi over land naar Gambia via de Senegambia-brug (geopend 2019, een stuk vlotter dan de vroegere veerpont).',
+          destinations: [
+            { name: 'Dakar', lat: 14.7167, lng: -17.4677 },
+            { name: 'Île de Gorée', lat: 14.6672, lng: -17.3984 },
+            { name: 'Lompoul-woestijn', lat: 15.3833, lng: -16.7500 },
+            { name: 'Saint-Louis (UNESCO)', lat: 16.0179, lng: -16.4896 },
+            { name: 'Sine-Saloum-delta', lat: 13.9333, lng: -16.5333 },
+          ],
+          notes: "Île de Gorée (slavernijgeschiedenis, korte boot vanaf Dakar) en Saint-Louis (koloniale hoofdstad) zijn de historische zwaartepunten; Sine-Saloum (mangroves, vogels) en de Lompoul-duinen geven een compleet ander natuurbeeld binnen één land. Prijs geverifieerd (2026-07), klopt. Oranje grensstrook bij Gambia/Guinee-Bissau/Mali/Mauritanië — niet relevant voor deze route. Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid — Dakar→Saint-Louis(noord)→Sine-Saloum(zuid)→Lompoul(noord) kruiste de Dakar-corridor drie keer (≈850+ km vermijdbare omweg). Nu Dakar→Gorée→Lompoul→Saint-Louis (beide noordelijke stops samen) →Sine-Saloum (zuid, al vlak bij de Gambiaanse grens) — nog maar één noord-zuid-omslag, onvermijdelijk omdat Dakar precies tussen de noordelijke woestijn/UNESCO-stops en de zuidelijke delta/Gambia in ligt.",
+          transport_to_next: 'Bus/deeltaxi over land naar Gambia via de Senegambia-brug (geopend 2019, een stuk vlotter dan de vroegere veerpont) — Sine-Saloum ligt al vlak bij de grens.',
         },
         {
           code: 'GM', name: 'Gambia', days: 6, budget: 240, lat: 13.4549, lng: -16.579,
-          destinations: ['Banjul', 'Gambia-rivier (bootcruise)', 'Kunta Kinteh Island (UNESCO, slavernijgeschiedenis)', 'Makasutu Culture Forest'],
+          destinations: [
+            { name: 'Banjul', lat: 13.4549, lng: -16.5790 },
+            { name: 'Gambia-rivier (bootcruise)', lat: 13.4500, lng: -15.5000 },
+            { name: 'Kunta Kinteh Island (UNESCO, slavernijgeschiedenis)', lat: 13.2833, lng: -16.0500 },
+            { name: 'Makasutu Culture Forest', lat: 13.3667, lng: -16.6333 },
+          ],
           notes: "Klein maar met een eigen, herkenbaar hoogtepunt: Kunta Kinteh Island (voorheen James Island) is een van de belangrijkste slavernij-erfgoedsites van West-Afrika. Prijs geverifieerd (2026-07), klopt. Presidentsverkiezing 5 december 2026 — mogelijk onrust, check actuele situatie vlak voor vertrek.",
           transport_to_next: 'Vlucht naar Abidjan — geen praktische landroute (Guinee-Bissau, Guinee, Sierra Leone en Liberia liggen ertussen, te veel omweg/visa voor deze reisstijl).',
         },
@@ -2543,26 +2560,42 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
       countries: [
         {
           code: 'CI', name: 'Ivory Coast', days: 7, budget: 333, lat: 5.36, lng: -4.0083,
-          destinations: ['Abidjan (Le Plateau)', 'Grand-Bassam (UNESCO koloniale stad)'],
+          destinations: [
+            { name: 'Abidjan (Le Plateau)', lat: 5.3600, lng: -4.0083 },
+            { name: 'Grand-Bassam (UNESCO koloniale stad)', lat: 5.2107, lng: -3.7380 },
+          ],
           notes: "Taï National Park is bewust weggelaten — prachtig, maar de afgelegen ligging kost 3-4 dagen extra reistijd voor chimpansees die ook elders in West-/Centraal-Afrika te zien zijn. Abidjan en Grand-Bassam houden dit land compact en de moeite waard. Prijs geverifieerd (2026-07), klopt. Rood/oranje alleen bij de Mali/Burkina Faso- en Liberia-grens — niet relevant hier.",
           transport_to_next: 'Bus over land naar Ghana via de grensovergang Elubo — een gevestigde backpacker-route.',
         },
         {
           code: 'GH', name: 'Ghana', days: 15, budget: 713, lat: 5.1053, lng: -1.2466,
-          destinations: ['Accra', 'Cape Coast Castle', 'Elmina Castle', 'Kakum National Park (boomtoppenpad)', 'Volta-regio (Wli-watervallen, Mount Afadjato)'],
-          notes: "Cape Coast en Elmina Castle zijn de zwaarste, belangrijkste slavernijgeschiedenis-sites van de hele expeditie. Ghana heeft verreweg het rijkste programma van de reis — vandaar de meeste tijd. Prijs geverifieerd (2026-07), klopt, inclusief entreegelden Cape Coast/Kakum.",
+          destinations: [
+            { name: 'Cape Coast Castle', lat: 5.1053, lng: -1.2466 },
+            { name: 'Elmina Castle', lat: 5.0844, lng: -1.3499 },
+            { name: 'Kakum National Park (boomtoppenpad)', lat: 5.3500, lng: -1.3833 },
+            { name: 'Accra', lat: 5.6037, lng: -0.1870 },
+            { name: 'Volta-regio (Wli-watervallen, Mount Afadjato)', lat: 6.8667, lng: 0.4667 },
+          ],
+          notes: "Cape Coast en Elmina Castle zijn de zwaarste, belangrijkste slavernijgeschiedenis-sites van de hele expeditie. Ghana heeft verreweg het rijkste programma van de reis — vandaar de meeste tijd. Prijs geverifieerd (2026-07), klopt, inclusief entreegelden Cape Coast/Kakum. Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid — de grensovergang vanuit Ivoorkust (Elubo) ligt vlak bij Cape Coast/Elmina (≈215 km/3u10), ver van Accra (≈361 km); de oude volgorde (Accra→Cape Coast/Elmina/Kakum→Volta) betekende eerst 360 km oostwaarts naar Accra, dan 165 km terug westwaarts naar Cape Coast, dan weer 165 km oostwaarts door Accra naar Volta — ≈330 km pure omweg. Nu Cape Coast/Elmina/Kakum (vlak bij Elubo) →Accra→Volta-regio (vlak bij de Aflao-grensovergang naar Togo) — één doorlopende oost-beweging die precies aansluit op in- en uitgang.",
           transport_to_next: 'Bus over land naar Togo via de grensovergang Aflao.',
         },
         {
           code: 'TG', name: 'Togo', days: 4, budget: 160, lat: 6.1319, lng: 1.2228,
-          destinations: ['Lomé', 'Togoville (Vodun-cultuur, Lac Togo)'],
+          destinations: [
+            { name: 'Lomé', lat: 6.1319, lng: 1.2228 },
+            { name: 'Togoville (Vodun-cultuur, Lac Togo)', lat: 6.2667, lng: 1.5333 },
+          ],
           notes: "Bewust kort — Togo voegt met zijn Duitse koloniale geschiedenis (vóór de latere Franse overname) wel een andere invalshoek toe dan Ghana/Benin, maar heeft weinig hoogtepunten. Ligt toch al direct op de route, dus lage extra kosten om aan te doen. Prijs geverifieerd (2026-07), klopt. Visa-on-arrival is afgeschaft — alleen nog e-visa vooraf via het officiële evisa.gouv.tg (vermijd duurdere derde partijen).",
           transport_to_next: 'Bus over land naar Benin via de grensovergang Hillacondji.',
         },
         {
           code: 'BJ', name: 'Benin', days: 9, budget: 428, lat: 6.3667, lng: 2.0833,
-          destinations: ['Ouidah (Route des Esclaves, Door of No Return)', 'Ganvié (paalwoningdorp op het meer)', 'Abomey (koninklijke paleizen, UNESCO)'],
-          notes: "Precies de combinatie die deze expeditie zoekt: oude koninkrijken (Abomey, het voormalige Dahomey), slavernijgeschiedenis (Ouidah) en levende Vodun-cultuur. Prijs geverifieerd (2026-07), klopt. Rood/oranje alleen in het noorden en de Nigeria-grensstrook — niet relevant hier.",
+          destinations: [
+            { name: 'Abomey (koninklijke paleizen, UNESCO)', lat: 7.1833, lng: 1.9833 },
+            { name: 'Ouidah (Route des Esclaves, Door of No Return)', lat: 6.3667, lng: 2.0833 },
+            { name: 'Ganvié (paalwoningdorp op het meer)', lat: 6.4667, lng: 2.4167 },
+          ],
+          notes: "Precies de combinatie die deze expeditie zoekt: oude koninkrijken (Abomey, het voormalige Dahomey), slavernijgeschiedenis (Ouidah) en levende Vodun-cultuur. Prijs geverifieerd (2026-07), klopt. Rood/oranje alleen in het noorden en de Nigeria-grensstrook — niet relevant hier. Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid — Abomey stond als laatste stop (≈135 km landinwaarts vanaf Cotonou) terwijl de vlucht vanuit Cotonou vertrekt, een onvermelde terugrit die dezelfde categorie fout is als eerder gevonden bij andere routes (een bestemming als laatste stop terwijl het vertrekpunt ergens anders ligt). Nu Abomey eerst, dan Ouidah (≈42 km van Cotonou) en Ganvié (≈18 km van Cotonou) — de reis eindigt vlak bij de luchthaven, geen backtrack meer nodig.",
           transport_to_next: "Vlucht Cotonou-Douala (meestal met overstap) — overland door Nigeria is voor deze reis geen optie, de enige onvermijdelijke sprong van de hele route.",
         },
       ],
@@ -2575,20 +2608,31 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
       countries: [
         {
           code: 'CM', name: 'Cameroon', days: 8, budget: 380, lat: 4.0511, lng: 9.7679,
-          destinations: ['Douala', 'Kribi (Chutes de la Lobé, zwarte stranden)', 'Yaoundé'],
-          notes: 'Aangepast t.o.v. het oorspronkelijke plan: Mount Cameroon en Limbe liggen in de Zuidwest-regio, waar sinds 2016 een gewapend conflict speelt (de "Anglophone Crisis") — reisadviezen hebben dit gebied in verschillende periodes afgeraden. In plaats daarvan Douala, Kribi (de Chutes de la Lobé stromen letterlijk de zee in — uniek) en Yaoundé, allemaal in de stabielere Franstalige Littoral/Centre-regio\'s. Check de actuele situatie in het Zuidwesten vlak vóór vertrek — mocht die verbeterd zijn, dan is Mount Cameroon alsnog het overwegen waard als toevoeging. Prijs geverifieerd (2026-07), klopt. Bevestigd: Anglophone Crisis nog steeds actief/rood in 2026 — de routekeuze blijft terecht. Verplicht e-visa vooraf (~€150-230), aparte kostenpost.',
-          transport_to_next: 'Vlucht Douala-São Tomé (regionale verbinding).',
+          destinations: [
+            { name: 'Douala', lat: 4.0511, lng: 9.7679 },
+            { name: 'Yaoundé', lat: 3.8480, lng: 11.5021 },
+            { name: 'Kribi (Chutes de la Lobé, zwarte stranden)', lat: 2.9333, lng: 9.9167 },
+          ],
+          notes: 'Aangepast t.o.v. het oorspronkelijke plan: Mount Cameroon en Limbe liggen in de Zuidwest-regio, waar sinds 2016 een gewapend conflict speelt (de "Anglophone Crisis") — reisadviezen hebben dit gebied in verschillende periodes afgeraden. In plaats daarvan Douala, Kribi (de Chutes de la Lobé stromen letterlijk de zee in — uniek) en Yaoundé, allemaal in de stabielere Franstalige Littoral/Centre-regio\'s. Check de actuele situatie in het Zuidwesten vlak vóór vertrek — mocht die verbeterd zijn, dan is Mount Cameroon alsnog het overwegen waard als toevoeging. Prijs geverifieerd (2026-07), klopt. Bevestigd: Anglophone Crisis nog steeds actief/rood in 2026 — de routekeuze blijft terecht. Verplicht e-visa vooraf (~€150-230), aparte kostenpost. Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid — Douala is het enige internationale gateway naar São Tomé (geen directe Yaoundé-vlucht bestaat), dus een terugrit naar Douala is sowieso onvermijdelijk vanuit zowel Kribi als Yaoundé (geen gedeelde route tussen die twee). De oude volgorde eindigde bij Yaoundé (≈240 km/3,5-4u terug naar Douala, onvermeld); nu eindigt de etappe bij Kribi (≈175 km/2,5-3u terug, de kortere van de twee) en is de terugrit expliciet benoemd i.p.v. verzwegen.',
+          transport_to_next: 'Terug naar Douala (≈175 km vanaf Kribi, ≈2,5-3 uur), dan vlucht Douala-São Tomé (regionale verbinding).',
         },
         {
           code: 'ST', name: 'São Tomé and Príncipe', days: 9, budget: 653, lat: 0.3365, lng: 6.7273,
-          destinations: ['São Tomé (roças/plantages, regenwoud)', 'Príncipe (afgelegen, minder bezocht)'],
+          destinations: [
+            { name: 'São Tomé (roças/plantages, regenwoud)', lat: 0.3365, lng: 6.7273 },
+            { name: 'Príncipe (afgelegen, minder bezocht)', lat: 1.6167, lng: 7.4167 },
+          ],
           notes: "Uniek in de hele Travel Atlas: Portugese koloniale plantagegeschiedenis op een klein, rustig tropisch eiland. Valt in het regenseizoen (oktober-mei) bij deze route — vooral middagbuien, geen aanhoudende moesson. Prijs geverifieerd (2026-07), klopt. Presidentsverkiezing 19 juli 2026 — mogelijk protesten rond die periode, check lokaal nieuws vlak voor vertrek.",
           transport_to_next: 'Vlucht São Tomé-Libreville (regionale verbinding).',
         },
         {
           code: 'GA', name: 'Gabon', days: 9, budget: 855, lat: -1.95, lng: 9.7,
-          destinations: ['Loango National Park (surfende nijlpaarden, bosolifanten op het strand)', 'Libreville', 'regenwoud'],
-          notes: "Bewuste, sterke afsluiter van de hele expeditie — Loango is een van de weinige plekken ter wereld waar je olifanten en nijlpaarden op het strand ziet. Valt toevallig in zijn korte droge seizoen (december-februari) bij deze route. ⚠️ Prijscheck (2026-07): het krapste/riskantste budget van de route — Loango-logistiek (gids/parkfees/eventuele chartervlucht) kan oplopen tot $100-300+/dag; €95/dag is alleen haalbaar met budgetvervoer (weg/piroque) en eenvoudige kampementen. Onvoldoende harde consensus voor een vaste correctie, maar reken op een reële kans dat dit hoger uitvalt.",
+          destinations: [
+            { name: 'Loango National Park (surfende nijlpaarden, bosolifanten op het strand)', lat: -2.3667, lng: 9.5667 },
+            { name: 'Libreville', lat: 0.4162, lng: 9.4673 },
+            { name: 'Pongara National Park (mangroves/regenwoud, ≈45 min boot vanaf Libreville)', lat: 0.3833, lng: 9.3500 },
+          ],
+          notes: "Bewuste, sterke afsluiter van de hele expeditie — Loango is een van de weinige plekken ter wereld waar je olifanten en nijlpaarden op het strand ziet. Valt toevallig in zijn korte droge seizoen (december-februari) bij deze route. ⚠️ Prijscheck (2026-07): het krapste/riskantste budget van de route — Loango-logistiek (gids/parkfees/eventuele chartervlucht) kan oplopen tot $100-300+/dag; €95/dag is alleen haalbaar met budgetvervoer (weg/piroque) en eenvoudige kampementen. Onvoldoende harde consensus voor een vaste correctie, maar reken op een reële kans dat dit hoger uitvalt. Routelogica-fix (2026-08, search-bevestigd): 'regenwoud' was een naamloze derde bestemming, niet te controleren op ligging — ingevuld als Pongara National Park (mangroves/regenwoud/stranden, korte boot vanaf Libreville, geen backtrack-risico omdat het al vlak bij het vertrekpunt ligt). Loango(zuid)→Libreville(noord, hoofdstad)→Pongara (vlak bij Libreville) is de juiste richting, eindigend bij het vertrekpunt voor de terugvlucht.",
           transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Libreville naar Nederland (meestal met overstap).',
         },
       ],
@@ -2602,7 +2646,8 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
       "Twee aanpassingen na Youri's review van het ontwerp: (1) Taï National Park in Ivoorkust laten vervallen — afgelegen, kost 3-4 dagen extra voor chimpansees die ook elders te zien zijn; Ivoorkust blijft beperkt tot Abidjan + Grand-Bassam. (2) Kameroen aangepast: Mount Cameroon en Limbe liggen in de Zuidwest-regio, waar sinds 2016 een gewapend conflict speelt (de Anglophone Crisis) — vervangen door Douala, Kribi (Chutes de la Lobé) en Yaoundé, allemaal in de stabielere Franstalige regio's. Check de actuele veiligheidssituatie in het Zuidwesten vlak vóór vertrek.\n\n" +
       "Angola is bewust uit deze expeditie gehaald en verplaatst naar Africa Grand Tour in plaats daarvan — geografisch grenst het direct aan Namibië (al onderdeel van die route), een veel logischer aansluiting dan de geïsoleerde flight-only eindstop die het hier zou zijn. Dit verwijdert ook de onzekerste/duurste vlucht van deze route (Gabon-Angola); Gabon is nu het nieuwe, sterke eindpunt (Loango's surfende nijlpaarden). Let op: deze verplaatsing lost het seizoensprobleem niet op — Angola valt ook in Africa Grand Tour's Southern Africa-regio in het regenseizoen, hetzelfde al geaccepteerde compromis van die route.\n\n" +
       "Totaal: 93 dagen (~3,1 maanden), €5.160 grondkosten + circa €2.400-2.800 aan vluchten (Kaapverdië-Senegal, Gambia-Ivoorkust, Benin-Kameroen en de Centraal-Afrikaanse eilandsprongen zijn stuk voor stuk vluchten met weinig concurrentie, dus prijzig per afstand). Nog niet getoetst aan actuele prijzen, visumregels of reisadviezen — behandel dit als een eerste concept, geen boekbaar plan. Check vooral de veiligheidssituatie in Kameroens Zuidwest-regio vlak vóór vertrek.\n\n" +
-      "Prijzen/visum/reisadvies-verificatie (2026-07): alle 10 landen bevestigd accuraat, geen budgetcorrecties (Gabon is wel het krapste/riskantste — zie de eigen notitie). Anglophone Crisis in Kameroen bevestigd nog actief. Zie de losse landnotities hierboven voor reisadvies/visumdetails.",
+      "Prijzen/visum/reisadvies-verificatie (2026-07): alle 10 landen bevestigd accuraat, geen budgetcorrecties (Gabon is wel het krapste/riskantste — zie de eigen notitie). Anglophone Crisis in Kameroen bevestigd nog actief. Zie de losse landnotities hierboven voor reisadvies/visumdetails.\n\n" +
+      "Routelogica-herziening (2026-08, search-bevestigd, negende expeditie uit ROUTE_LOGIC_REVIEW.md): vier fixes, geen daarvan een landvolgorde-probleem — allemaal volgorde-fouten binnen een land, of een onvermelde verbinding. (1) **Kaapverdië**: 'Vlucht Praia/Sal-Dakar' verzweeg dat Fogo (waar de etappe eindigt) geen brede internationale verbindingen heeft — alle vluchten gaan via Praia, nu expliciet benoemd als binnenlandse vlucht + internationale vlucht. (2) **Senegal**: Dakar→Saint-Louis(noord)→Sine-Saloum(zuid)→Lompoul(noord) kruiste de Dakar-corridor drie keer (≈850+ km vermijdbare omweg) — nu Dakar→Gorée→Lompoul→Saint-Louis(beide noordelijke stops samen)→Sine-Saloum(zuid, al vlak bij Gambia). (3) **Ghana**: de Elubo-grensovergang vanuit Ivoorkust ligt vlak bij Cape Coast/Elmina, niet bij Accra — de oude volgorde (Accra eerst) backtrackte ≈330 km; nu Cape Coast/Elmina/Kakum→Accra→Volta-regio (vlak bij de Aflao-grensovergang naar Togo), één doorlopende oostwaartse beweging. (4) **Benin**: Abomey stond als laatste stop (≈135 km landinwaarts) terwijl de vlucht vanuit Cotonou vertrekt — nu Abomey eerst, dan Ouidah/Ganvié (beide vlak bij Cotonou), geen backtrack meer. Twee kleinere fixes in Centraal-Afrika: **Kameroen** eindigde bij Yaoundé (≈240 km terug naar Douala, het enige gateway naar São Tomé, onvermeld) — nu Douala→Yaoundé→Kribi (≈175 km terug, de kortere route, nu expliciet benoemd). **Gabon**'s naamloze 'regenwoud'-bestemming ingevuld als Pongara National Park (vlak bij Libreville, geen backtrack-risico). Youri had nog geen van de 10 landen bezocht, geen cuts nodig. Zelfde vier hoofdfixes ook toegepast op de standalone companion-route West-Afrika Overland 🥁; de twee Centraal-Afrika-fixes ook op Centraal-Afrika & Eilanden 🦛. Landen/dagen/budget ongewijzigd — alleen volgorde en transport-notities aangepast.",
   });
 }
 
@@ -4470,9 +4515,13 @@ function rbBuildWestAfricaOverlandRoute() {
       countries: [
         {
           code: 'CV', name: 'Cape Verde', days: 13, budget: 780, lat: 16.8901, lng: -24.9825,
-          destinations: ['Santo Antão (Ribeira Grande, Paúl-vallei)', 'São Vicente (Mindelo)', 'Fogo (Pico do Fogo-vulkaan, wijngaarden)'],
+          destinations: [
+            { name: 'Santo Antão (Ribeira Grande, Paúl-vallei)', lat: 17.1833, lng: -25.0667 },
+            { name: 'São Vicente (Mindelo)', lat: 16.8901, lng: -24.9825 },
+            { name: 'Fogo (Pico do Fogo-vulkaan, wijngaarden)', lat: 14.9481, lng: -24.3553 },
+          ],
           notes: "Bewust andere eilanden dan een eerder bezoek (niet opnieuw Sal) — Santo Antão voor de dramatische wandelvalleien, São Vicente voor de muziekcultuur van Mindelo, Fogo voor de vulkaanbeklimming en wijnbouw op vulkanische grond. Onderling per veerboot (goedkoper, minder betrouwbaar schema) of Binter Cabo Verde-vlucht. Prijs geverifieerd (2026-07), klopt. Verplichte online EASE-registratie ≥5 dagen vooraf.",
-          transport_to_next: 'Vlucht Praia/Sal-Dakar, korte oversteek naar het vasteland.',
+          transport_to_next: 'Binnenlandse vlucht Fogo-Praia, dan internationale vlucht Praia-Dakar (routelogica-fix 2026-08: Fogo heeft geen brede internationale verbindingen, alle vluchten lopen via Praia).',
         },
       ],
     },
@@ -4484,13 +4533,24 @@ function rbBuildWestAfricaOverlandRoute() {
       countries: [
         {
           code: 'SN', name: 'Senegal', days: 13, budget: 618, lat: 14.7167, lng: -17.4677,
-          destinations: ['Dakar', 'Île de Gorée', 'Saint-Louis (UNESCO)', 'Sine-Saloum-delta', 'Lompoul-woestijn'],
-          notes: "Île de Gorée (slavernijgeschiedenis, korte boot vanaf Dakar) en Saint-Louis (koloniale hoofdstad) zijn de historische zwaartepunten; Sine-Saloum (mangroves, vogels) en de Lompoul-duinen geven een compleet ander natuurbeeld binnen één land. Prijs geverifieerd (2026-07), klopt.",
-          transport_to_next: 'Bus/deeltaxi over land naar Gambia via de Senegambia-brug (geopend 2019, een stuk vlotter dan de vroegere veerpont).',
+          destinations: [
+            { name: 'Dakar', lat: 14.7167, lng: -17.4677 },
+            { name: 'Île de Gorée', lat: 14.6672, lng: -17.3984 },
+            { name: 'Lompoul-woestijn', lat: 15.3833, lng: -16.7500 },
+            { name: 'Saint-Louis (UNESCO)', lat: 16.0179, lng: -16.4896 },
+            { name: 'Sine-Saloum-delta', lat: 13.9333, lng: -16.5333 },
+          ],
+          notes: "Île de Gorée (slavernijgeschiedenis, korte boot vanaf Dakar) en Saint-Louis (koloniale hoofdstad) zijn de historische zwaartepunten; Sine-Saloum (mangroves, vogels) en de Lompoul-duinen geven een compleet ander natuurbeeld binnen één land. Prijs geverifieerd (2026-07), klopt. Routelogica-fix (2026-08): volgorde omgedraaid (Dakar→Gorée→Lompoul→Saint-Louis→Sine-Saloum) om een drievoudige noord-zuid-omweg via Dakar te vermijden — zie West & Central Africa Expedition 🌍's eigen notities voor de volledige onderbouwing.",
+          transport_to_next: 'Bus/deeltaxi over land naar Gambia via de Senegambia-brug (geopend 2019, een stuk vlotter dan de vroegere veerpont) — Sine-Saloum ligt al vlak bij de grens.',
         },
         {
           code: 'GM', name: 'Gambia', days: 6, budget: 240, lat: 13.4549, lng: -16.579,
-          destinations: ['Banjul', 'Gambia-rivier (bootcruise)', 'Kunta Kinteh Island (UNESCO, slavernijgeschiedenis)', 'Makasutu Culture Forest'],
+          destinations: [
+            { name: 'Banjul', lat: 13.4549, lng: -16.5790 },
+            { name: 'Gambia-rivier (bootcruise)', lat: 13.4500, lng: -15.5000 },
+            { name: 'Kunta Kinteh Island (UNESCO, slavernijgeschiedenis)', lat: 13.2833, lng: -16.0500 },
+            { name: 'Makasutu Culture Forest', lat: 13.3667, lng: -16.6333 },
+          ],
           notes: "Klein maar met een eigen, herkenbaar hoogtepunt: Kunta Kinteh Island (voorheen James Island) is een van de belangrijkste slavernij-erfgoedsites van West-Afrika. Prijs geverifieerd (2026-07), klopt. Presidentsverkiezing 5 december 2026 — mogelijk onrust, check actuele situatie vlak voor vertrek.",
           transport_to_next: 'Einde van deze route — terugvlucht vanuit Banjul (of vlucht naar Abidjan om verder te reizen naar Golf van Guinee, hieronder).',
         },
@@ -4504,26 +4564,42 @@ function rbBuildWestAfricaOverlandRoute() {
       countries: [
         {
           code: 'CI', name: 'Ivory Coast', days: 7, budget: 333, lat: 5.36, lng: -4.0083,
-          destinations: ['Abidjan (Le Plateau)', 'Grand-Bassam (UNESCO koloniale stad)'],
+          destinations: [
+            { name: 'Abidjan (Le Plateau)', lat: 5.3600, lng: -4.0083 },
+            { name: 'Grand-Bassam (UNESCO koloniale stad)', lat: 5.2107, lng: -3.7380 },
+          ],
           notes: "Taï National Park is bewust weggelaten — prachtig, maar de afgelegen ligging kost 3-4 dagen extra reistijd. Abidjan en Grand-Bassam houden dit land compact en de moeite waard. Prijs geverifieerd (2026-07), klopt.",
           transport_to_next: 'Bus over land naar Ghana via de grensovergang Elubo — een gevestigde backpacker-route.',
         },
         {
           code: 'GH', name: 'Ghana', days: 15, budget: 713, lat: 5.1053, lng: -1.2466,
-          destinations: ['Accra', 'Cape Coast Castle', 'Elmina Castle', 'Kakum National Park (boomtoppenpad)', 'Volta-regio (Wli-watervallen, Mount Afadjato)'],
-          notes: "Cape Coast en Elmina Castle zijn de zwaarste, belangrijkste slavernijgeschiedenis-sites van de hele expeditie. Ghana heeft verreweg het rijkste programma, vandaar de meeste tijd. Prijs geverifieerd (2026-07), klopt.",
+          destinations: [
+            { name: 'Cape Coast Castle', lat: 5.1053, lng: -1.2466 },
+            { name: 'Elmina Castle', lat: 5.0844, lng: -1.3499 },
+            { name: 'Kakum National Park (boomtoppenpad)', lat: 5.3500, lng: -1.3833 },
+            { name: 'Accra', lat: 5.6037, lng: -0.1870 },
+            { name: 'Volta-regio (Wli-watervallen, Mount Afadjato)', lat: 6.8667, lng: 0.4667 },
+          ],
+          notes: "Cape Coast en Elmina Castle zijn de zwaarste, belangrijkste slavernijgeschiedenis-sites van de hele expeditie. Ghana heeft verreweg het rijkste programma, vandaar de meeste tijd. Prijs geverifieerd (2026-07), klopt. Routelogica-fix (2026-08): volgorde omgedraaid (Cape Coast/Elmina/Kakum eerst, dan Accra, dan Volta) — de Elubo-grensovergang ligt vlak bij Cape Coast, niet bij Accra, dus de oude volgorde backtrackte ≈330 km. Zie West & Central Africa Expedition 🌍's eigen notities voor de volledige onderbouwing.",
           transport_to_next: 'Bus over land naar Togo via de grensovergang Aflao.',
         },
         {
           code: 'TG', name: 'Togo', days: 4, budget: 160, lat: 6.1319, lng: 1.2228,
-          destinations: ['Lomé', 'Togoville (Vodun-cultuur, Lac Togo)'],
+          destinations: [
+            { name: 'Lomé', lat: 6.1319, lng: 1.2228 },
+            { name: 'Togoville (Vodun-cultuur, Lac Togo)', lat: 6.2667, lng: 1.5333 },
+          ],
           notes: "Bewust kort — Togo voegt met zijn Duitse koloniale geschiedenis wel een andere invalshoek toe dan Ghana/Benin, maar heeft weinig hoogtepunten. Prijs geverifieerd (2026-07), klopt.",
           transport_to_next: 'Bus over land naar Benin via de grensovergang Hillacondji.',
         },
         {
           code: 'BJ', name: 'Benin', days: 9, budget: 428, lat: 6.3667, lng: 2.0833,
-          destinations: ['Ouidah (Route des Esclaves, Door of No Return)', 'Ganvié (paalwoningdorp op het meer)', 'Abomey (koninklijke paleizen, UNESCO)'],
-          notes: "Oude koninkrijken (Abomey, het voormalige Dahomey), slavernijgeschiedenis (Ouidah) en levende Vodun-cultuur. Prijs geverifieerd (2026-07), klopt.",
+          destinations: [
+            { name: 'Abomey (koninklijke paleizen, UNESCO)', lat: 7.1833, lng: 1.9833 },
+            { name: 'Ouidah (Route des Esclaves, Door of No Return)', lat: 6.3667, lng: 2.0833 },
+            { name: 'Ganvié (paalwoningdorp op het meer)', lat: 6.4667, lng: 2.4167 },
+          ],
+          notes: "Oude koninkrijken (Abomey, het voormalige Dahomey), slavernijgeschiedenis (Ouidah) en levende Vodun-cultuur. Prijs geverifieerd (2026-07), klopt. Routelogica-fix (2026-08): volgorde omgedraaid (Abomey eerst, dan Ouidah/Ganvié) zodat de etappe vlak bij Cotonou eindigt in plaats van bij Abomey (≈135 km landinwaarts) — zie West & Central Africa Expedition 🌍's eigen notities voor de volledige onderbouwing.",
           transport_to_next: "Einde van deze route — vlucht huiswaarts vanuit Cotonou (of vlucht Cotonou-Douala om verder te reizen naar Centraal-Afrika & Eilanden 🦛 — overland door Nigeria is geen optie).",
         },
       ],
@@ -4533,7 +4609,7 @@ function rbBuildWestAfricaOverlandRoute() {
     best_starting_month: 'November',
     description: 'Atlantische eilandcultuur, oude West-Afrikaanse koninkrijken en slavernijgeschiedenis: Kaapverdië, Senegal, Gambia, Ivoorkust, Ghana, Togo en Benin.',
     climate_summary: 'Een novemberstart laat vrijwel de hele route in zijn beste seizoen vallen: Kaapverdië net na het regenseizoen, en Senegal t/m Benin in hun volledige droge seizoen (november-april, met de stoffige maar droge harmattan december-februari).',
-    notes: 'Losgesplitst van West & Central Africa Expedition 🌍 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen. Vervolg op deze route: Centraal-Afrika & Eilanden 🦛. West & Central Africa Expedition 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+    notes: "Losgesplitst van West & Central Africa Expedition 🌍 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen. Vervolg op deze route: Centraal-Afrika & Eilanden 🦛. West & Central Africa Expedition 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): vier fixes, zelfde als West & Central Africa Expedition 🌍 zelf — Kaapverdië's Fogo-Praia-Dakar vluchtroute expliciet benoemd, Senegal's volgorde omgedraaid, Ghana's volgorde omgedraaid, Benin's volgorde omgedraaid. Zie die route's eigen notities voor de volledige onderbouwing.",
   });
 }
 
@@ -4547,20 +4623,31 @@ function rbBuildCentralAfricaIslandsRoute() {
       countries: [
         {
           code: 'CM', name: 'Cameroon', days: 8, budget: 380, lat: 4.0511, lng: 9.7679,
-          destinations: ['Douala', 'Kribi (Chutes de la Lobé, zwarte stranden)', 'Yaoundé'],
-          notes: 'Mount Cameroon en Limbe (Zuidwest-regio) bewust vermeden vanwege de sinds 2016 actieve "Anglophone Crisis" — in plaats daarvan Douala, Kribi en Yaoundé in de stabielere Franstalige regio\'s. Bevestigd (2026-07): conflict nog steeds actief. Verplicht e-visa vooraf (~€150-230), aparte kostenpost.',
-          transport_to_next: 'Vlucht Douala-São Tomé (regionale verbinding).',
+          destinations: [
+            { name: 'Douala', lat: 4.0511, lng: 9.7679 },
+            { name: 'Yaoundé', lat: 3.8480, lng: 11.5021 },
+            { name: 'Kribi (Chutes de la Lobé, zwarte stranden)', lat: 2.9333, lng: 9.9167 },
+          ],
+          notes: 'Mount Cameroon en Limbe (Zuidwest-regio) bewust vermeden vanwege de sinds 2016 actieve "Anglophone Crisis" — in plaats daarvan Douala, Kribi en Yaoundé in de stabielere Franstalige regio\'s. Bevestigd (2026-07): conflict nog steeds actief. Verplicht e-visa vooraf (~€150-230), aparte kostenpost. Routelogica-fix (2026-08): volgorde omgedraaid (Douala→Yaoundé→Kribi) zodat de terugrit naar Douala vanaf Kribi (≈175 km) korter is dan vanaf Yaoundé (≈240 km) — nu ook expliciet benoemd i.p.v. verzwegen. Zie West & Central Africa Expedition 🌍\'s eigen notities voor de volledige onderbouwing.',
+          transport_to_next: 'Terug naar Douala (≈175 km vanaf Kribi, ≈2,5-3 uur), dan vlucht Douala-São Tomé (regionale verbinding).',
         },
         {
           code: 'ST', name: 'São Tomé and Príncipe', days: 9, budget: 653, lat: 0.3365, lng: 6.7273,
-          destinations: ['São Tomé (roças/plantages, regenwoud)', 'Príncipe (afgelegen, minder bezocht)'],
+          destinations: [
+            { name: 'São Tomé (roças/plantages, regenwoud)', lat: 0.3365, lng: 6.7273 },
+            { name: 'Príncipe (afgelegen, minder bezocht)', lat: 1.6167, lng: 7.4167 },
+          ],
           notes: "Portugese koloniale plantagegeschiedenis op een klein, rustig tropisch eiland. Valt in het regenseizoen (oktober-mei) bij deze route — vooral middagbuien. Prijs geverifieerd (2026-07), klopt. Presidentsverkiezing 19 juli 2026 — check lokaal nieuws vlak voor vertrek.",
           transport_to_next: 'Vlucht São Tomé-Libreville (regionale verbinding).',
         },
         {
           code: 'GA', name: 'Gabon', days: 9, budget: 855, lat: -1.95, lng: 9.7,
-          destinations: ['Loango National Park (surfende nijlpaarden, bosolifanten op het strand)', 'Libreville', 'regenwoud'],
-          notes: "Een van de weinige plekken ter wereld waar je olifanten en nijlpaarden op het strand ziet. ⚠️ Prijscheck (2026-07): het krapste/riskantste budget van de route — Loango-logistiek kan oplopen tot $100-300+/dag.",
+          destinations: [
+            { name: 'Loango National Park (surfende nijlpaarden, bosolifanten op het strand)', lat: -2.3667, lng: 9.5667 },
+            { name: 'Libreville', lat: 0.4162, lng: 9.4673 },
+            { name: 'Pongara National Park (mangroves/regenwoud, ≈45 min boot vanaf Libreville)', lat: 0.3833, lng: 9.3500 },
+          ],
+          notes: "Een van de weinige plekken ter wereld waar je olifanten en nijlpaarden op het strand ziet. ⚠️ Prijscheck (2026-07): het krapste/riskantste budget van de route — Loango-logistiek kan oplopen tot $100-300+/dag. Routelogica-fix (2026-08): 'regenwoud' was een naamloze bestemming — ingevuld als Pongara National Park (vlak bij Libreville, geen backtrack-risico). Zie West & Central Africa Expedition 🌍's eigen notities voor de volledige onderbouwing.",
           transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Libreville naar Nederland (meestal met overstap).',
         },
       ],
@@ -4570,7 +4657,7 @@ function rbBuildCentralAfricaIslandsRoute() {
     best_starting_month: 'Januari',
     description: 'Centraal-Afrikaans regenwoud en wildlife: Kameroen, het eilandenrijk São Tomé & Príncipe en Gabon.',
     climate_summary: "Januari-februari laat Kameroens minst natte periode en Gabons korte droge seizoen samenvallen; São Tomé valt dan in zijn regenseizoen (vooral middagbuien, geen aanhoudende moesson).",
-    notes: 'Losgesplitst van West & Central Africa Expedition 🌍 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen en budgetten zijn ongewijzigd overgenomen (incl. de waarschuwing over Kameroens Zuidwest-regio en Gabons krappe Loango-budget). Klein maar uniek: dit alleen doen als er tijd/budget is voor Centraal-Afrikaans regenwoud specifiek, los van de West-Afrikaanse geschiedenis-route ervoor. Vervolg op West-Afrika Overland 🥁. West & Central Africa Expedition 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+    notes: "Losgesplitst van West & Central Africa Expedition 🌍 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen en budgetten zijn ongewijzigd overgenomen (incl. de waarschuwing over Kameroens Zuidwest-regio en Gabons krappe Loango-budget). Klein maar uniek: dit alleen doen als er tijd/budget is voor Centraal-Afrikaans regenwoud specifiek, los van de West-Afrikaanse geschiedenis-route ervoor. Vervolg op West-Afrika Overland 🥁. West & Central Africa Expedition 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): Kameroen's volgorde omgedraaid (kortere terugrit naar Douala) en Gabons naamloze 'regenwoud'-bestemming ingevuld als Pongara National Park. Zie West & Central Africa Expedition 🌍's eigen notities voor de volledige onderbouwing.",
   });
 }
 
@@ -6131,6 +6218,36 @@ function rbMigrateNorthAmericaRouteLogicOverhaul() {
     ['Oost-Canada 🍁', rbBuildEasternCanadaRoute],
     ['West-Canada: Rockies & Vancouver 🏔️', rbBuildWesternCanadaRockiesVancouverRoute],
     ['VS Westkust Roadtrip 🌉', rbBuildUSWestCoastRoadtripRoute],
+  ];
+
+  replacements.forEach(([name, buildFn]) => {
+    const idx = rbRoutes.findIndex(r => r.name === name);
+    if (idx === -1) return;
+    rbRoutes.splice(idx, 1, buildFn());
+  });
+
+  rbSave();
+}
+
+/**
+ * West & Central Africa Expedition — route-logic review (2026-08), ninth expedition in the
+ * ROUTE_LOGIC_REVIEW.md playbook. Wholesale-replace pattern (this route already has two prior
+ * wholesale-replace migrations — rbMigratePriceVerificationRound1 and rbMigrateRouteLineCoordsRound2
+ * — for its main route). Also replaces its two 2026-07 split companions (West-Afrika Overland 🥁,
+ * Centraal-Afrika & Eilanden 🦛), which had never been touched by any migration since their initial
+ * seed — same first-time-split-companion-migration situation as North America Grand Traverse's three
+ * companions this same review round. See rbBuildWestCentralAfricaExpeditionRoute()'s own notes for
+ * the full writeup (Cape Verde flight routing, Senegal/Ghana/Benin reorders, Cameroon reorder, Gabon's
+ * unnamed 'regenwoud' destination resolved).
+ */
+function rbMigrateWestCentralAfricaRouteLogicOverhaul() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_WEST_CENTRAL_AFRICA_OVERHAUL)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_WEST_CENTRAL_AFRICA_OVERHAUL, '1');
+
+  const replacements = [
+    ['West & Central Africa Expedition 🌍', rbBuildWestCentralAfricaExpeditionRoute],
+    ['West-Afrika Overland 🥁', rbBuildWestAfricaOverlandRoute],
+    ['Centraal-Afrika & Eilanden 🦛', rbBuildCentralAfricaIslandsRoute],
   ];
 
   replacements.forEach(([name, buildFn]) => {

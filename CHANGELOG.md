@@ -12,6 +12,25 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **West & Central Africa Expedition 🌍 routelogica-herziening (2026-08)** — negende expeditie uit de
+  `ROUTE_LOGIC_REVIEW.md`-playbook. Vier fixes, geen daarvan een landvolgorde-probleem — allemaal
+  volgorde-fouten binnen een land, of een onvermelde verbinding. **Kaapverdië**: "Vlucht Praia/
+  Sal-Dakar" verzweeg dat Fogo (waar de etappe eindigt) geen brede internationale verbindingen heeft —
+  alle vluchten gaan via Praia, nu expliciet benoemd. **Senegal**: Dakar→Saint-Louis(noord)→
+  Sine-Saloum(zuid)→Lompoul(noord) kruiste de Dakar-corridor drie keer (≈850+ km vermijdbare omweg) —
+  nu Dakar→Gorée→Lompoul→Saint-Louis (beide noordelijke stops samen)→Sine-Saloum (zuid, al vlak bij
+  Gambia). **Ghana**: de Elubo-grensovergang vanuit Ivoorkust ligt vlak bij Cape Coast/Elmina, niet bij
+  Accra — de oude volgorde backtrackte ≈330 km; nu Cape Coast/Elmina/Kakum→Accra→Volta-regio (vlak bij
+  de Aflao-grensovergang naar Togo). **Benin**: Abomey stond als laatste stop (≈135 km landinwaarts)
+  terwijl de vlucht vanuit Cotonou vertrekt — nu Abomey eerst, dan Ouidah/Ganvié (beide vlak bij
+  Cotonou). Twee kleinere fixes in Centraal-Afrika: **Kameroen** eindigde bij Yaoundé (≈240 km terug
+  naar Douala, het enige gateway naar São Tomé) — nu Douala→Yaoundé→Kribi (≈175 km terug, korter, nu
+  expliciet benoemd). **Gabon**'s naamloze "regenwoud"-bestemming ingevuld als Pongara National Park
+  (vlak bij Libreville). Coördinaten per bestemming toegevoegd aan alle 10 landen. Landen/dagen/budget
+  ongewijzigd. Toegepast via `rbMigrateWestCentralAfricaRouteLogicOverhaul()` — wholesale-replace,
+  uitgebreid naar de twee split-companions (West-Afrika Overland 🥁, Centraal-Afrika & Eilanden 🦛) die
+  dit keer voor het eerst een eigen migratie nodig hadden, net als North America's drie companions
+  hiervoor.
 - **North America Grand Traverse 🌎 routelogica-herziening (2026-08)** — achtste expeditie uit de
   `ROUTE_LOGIC_REVIEW.md`-playbook. Twee etappes bleken bij verificatie al optimaal (Atlantic Canada's
   Halifax-hub-en-spoke-volgorde en de Canadian Rockies' Yoho-omweg/Mount Robson-Whistler-traject) —

@@ -2,8 +2,8 @@
 
 Status: **Eurasia Grand Tour 🌏, Patagonia & Antarctica Expedition 🧊, India & Himalaya Expedition
 🏔️, Nordic Arctic Expedition ❄️, Caribbean & Amazon Expedition 🌴, Central European Grand Roadtrip
-🚗, British Isles & Celtic Coast Expedition 🍀 en North America Grand Traverse 🌎 klaar (2026-08)**,
-de andere 5 originele expedities nog niet.
+🚗, British Isles & Celtic Coast Expedition 🍀, North America Grand Traverse 🌎 en West & Central
+Africa Expedition 🌍 klaar (2026-08)**, de andere 4 originele expedities nog niet.
 Dit document legt vast wát we bij Eurasia deden en hóe je dat 1-op-1 herhaalt — pak deze aanpak op
 zodra Youri aangeeft dat hij een volgende expeditie wil laten doornemen, geen nieuwe analyse nodig.
 
@@ -257,10 +257,38 @@ Zie `CHANGELOG.md` ("North America Grand Traverse 🌎 routelogica-herziening") 
 uitkomst, en `rbMigrateNorthAmericaRouteLogicOverhaul()` voor het code-patroon — wholesale-replace,
 zelfde patroon als deze route's eerdere migraties, nu uitgebreid met de drie split-companions.
 
-## De overige 5 originele expedities
+## West & Central Africa Expedition: wat er gebeurde (2026-08), als negende referentie — vier losse fouten, geen enkele in de landvolgorde zelf
+
+Zelfde stappenplan. Youri: niets van deze 10 landen eerder bezocht, geen specifieke wensen.
+
+Anders dan Central European/British Isles/North America (waar de fixes vooral tussen landen of
+regio's zaten), lag hier elke fout **binnen** één land — de landvolgorde zelf (Kaapverdië→Senegal/
+Gambia→Ivoorkust/Ghana/Togo/Benin→Kameroen/São Tomé/Gabon) klopte al. Vier fixes: **Senegal**'s
+bestemmingen kruisten de Dakar-corridor drie keer (noord-zuid-noord-zuid) — gegroepeerd tot één
+omslag. **Ghana**'s volgorde negeerde waar de grensovergang vanuit Ivoorkust (Elubo) ligt — vlak bij
+Cape Coast, niet bij Accra — en backtrackte daardoor ≈330 km. **Benin** eindigde bij een inland-stop
+(Abomey) terwijl de vlucht vanuit de kuststad Cotonou vertrekt. **Kameroen** had hetzelfde patroon
+richting Douala (het enige gateway naar São Tomé). Plus een kleinere fix: Kaapverdië's vluchttekst
+verzweeg een binnenlandse tussenstap (Fogo heeft geen brede internationale verbindingen, alles via
+Praia) — en Gabon had een letterlijk naamloze derde bestemming ("regenwoud") die is ingevuld met een
+concrete, geografisch passende plek (Pongara National Park, vlak bij Libreville) in plaats van
+open te laten staan.
+
+**Les**: "de landen staan in de juiste volgorde" is niet hetzelfde als "de route is geografisch
+logisch" — vier van de vijf fouten hier zaten in de bestemmingsvolgorde ÍN een land, of in een
+onvermelde retourrit naar het vertrekpunt, een categorie die het eerder al opdook bij North America's
+Sequoia-San Francisco-terugrit. Check dit net zo grondig als de landvolgorde zelf, ook wanneer die
+laatste al klopt.
+
+Zie `CHANGELOG.md` ("West & Central Africa Expedition 🌍 routelogica-herziening") voor de volledige
+uitkomst, en `rbMigrateWestCentralAfricaRouteLogicOverhaul()` voor het code-patroon — wholesale-
+replace, uitgebreid naar de twee split-companions (West-Afrika Overland 🥁, Centraal-Afrika &
+Eilanden 🦛) die net als North America's drie companions hiervoor nog nooit een eigen migratie
+hadden gehad.
+
+## De overige 4 originele expedities
 
 In willekeurige volgorde van omvang (kleiner = sneller te doen, geen inhoudelijke prioriteit):
-- **West & Central Africa Expedition 🌍**
 - **Oceania Grand Expedition 🌊** — let op: Australië komt tweemaal voor (klimaatzones).
 - **Pan-American Grand Tour 🌎** — groot (15 landen), plus 4 split-companions.
 - **Mediterranean Civilizations Expedition 🏛️** — grootst (18 etappes), plus 6 split-companions.
