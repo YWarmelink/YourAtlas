@@ -12,6 +12,31 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Africa Grand Tour 🌍 routelogica-herziening (2026-08)** — dertiende en laatste expeditie uit de
+  `ROUTE_LOGIC_REVIEW.md`-playbook. Negen landen met een echte herordening, meer dan bij elke andere
+  route in de reeks. **Zuid-Afrika**: Kruger stond vóór Johannesburg, terwijl de route Addo-Kruger
+  dwars door Johannesburg loopt — nu Addo→Johannesburg→Kruger, scheelt ≈465 km. **Lesotho**:
+  "Sani Pass/Thaba-Bosiu" stond als één bestemming samengevoegd terwijl ze ≈335 km uit elkaar liggen
+  — nu apart, Sani Pass als laatste stop. **Mozambique**: de etappe kwam binnen bij Maputo maar begon
+  met Ilha de Moçambique (≈2.000+ km verderop) — nu Maputo eerst, zuid-naar-noord naar Zimbabwe toe.
+  **Zimbabwe**: doorkruiste het land minstens twee keer diagonaal — nu één lus vanaf de instap.
+  **Namibië** (grootste vondst van de hele playbook): Fish River Canyon stond als laatste stop
+  (uiterste zuiden) terwijl de Angola-grens in het uiterste noorden ligt — de oude volgorde kostte
+  ≈2.490 km pure heen-en-terug-omweg; nu bespaart de nieuwe volgorde ≈1.355 km (≈35%). **Angola**:
+  Luanda stond eerst, ≈900-1.000 km van de rest van de bestemmingen — nu de zuidelijke cluster eerst.
+  **Zambia**: de zuidelijke lus komt nu vóór South Luangwa (oost, dicht bij de Malawi-grens).
+  **Madagaskar**: Isalo stond ná Morondava, verbonden door een ruig onverhard traject — nu bereikt
+  via de goede RN7 vanaf Tana. **Tanzania**: Kilimanjaro stond ná Zanzibar (onnodige terugvlucht) —
+  nu ervoor. **Oeganda**: kwam binnen vanuit Rwanda vlak bij Bwindi maar begon aan de andere kant van
+  het land — nu Bwindi meteen bij binnenkomst. **Kenia**: Mount Kenya stond vóór Mombasa — nu als
+  laatste, aansluitend op de Ethiopië-grens. **Ethiopië**: de terugvlucht Omo Valley-Addis Abeba stond
+  nergens vermeld — nu expliciet toegevoegd. Bevestigd zonder wijziging: Eswatini, Botswana.
+  Coördinaten per bestemming toegevoegd aan alle 18 landen. Toegepast via
+  `rbMigrateAfricaGrandTourRouteLogicOverhaul()`/`rbApplyAfricaGrandTourOverhaulToRoute()` —
+  field-patch + destination-sync via de gedeelde `RB_EXPEDITION_CONTENT`-tabel, toegepast op de
+  hoofdroute en alle vier split-companions (Zuidelijk Afrika Safari-lus 🦁, Afrikaanse Eilanden 🏝️,
+  Oost-Afrika Safari Classic 🦒, Hoorn van Afrika & Egypte 🏺). **Hiermee zijn alle 13 originele
+  expedities uit `ROUTE_LOGIC_REVIEW.md` klaar.**
 - **Mediterranean Civilizations Expedition 🏛️ routelogica-herziening (2026-08)** — twaalfde
   expeditie uit de `ROUTE_LOGIC_REVIEW.md`-playbook, grootste route van de hele playbook (18
   etappes/13 landen). Vijf fixes, drie herordeningen en twee onvermelde-terugrit-teksten.

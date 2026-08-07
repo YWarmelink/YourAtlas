@@ -1,12 +1,14 @@
 # Route Logic Review — Playbook
 
-Status: **Eurasia Grand Tour 🌏, Patagonia & Antarctica Expedition 🧊, India & Himalaya Expedition
-🏔️, Nordic Arctic Expedition ❄️, Caribbean & Amazon Expedition 🌴, Central European Grand Roadtrip
-🚗, British Isles & Celtic Coast Expedition 🍀, North America Grand Traverse 🌎, West & Central
-Africa Expedition 🌍, Oceania Grand Expedition 🌊, Pan-American Grand Tour 🌎 en Mediterranean
-Civilizations Expedition 🏛️ klaar (2026-08)**, alleen Africa Grand Tour 🌍 nog niet.
-Dit document legt vast wát we bij Eurasia deden en hóe je dat 1-op-1 herhaalt — pak deze aanpak op
-zodra Youri aangeeft dat hij een volgende expeditie wil laten doornemen, geen nieuwe analyse nodig.
+Status: **alle 13 originele expedities klaar (2026-08)** — Eurasia Grand Tour 🌏, Patagonia &
+Antarctica Expedition 🧊, India & Himalaya Expedition 🏔️, Nordic Arctic Expedition ❄️, Caribbean &
+Amazon Expedition 🌴, Central European Grand Roadtrip 🚗, British Isles & Celtic Coast Expedition 🍀,
+North America Grand Traverse 🌎, West & Central Africa Expedition 🌍, Oceania Grand Expedition 🌊,
+Pan-American Grand Tour 🌎, Mediterranean Civilizations Expedition 🏛️ en Africa Grand Tour 🌍 (de
+laatste, 2026-08). Dit document blijft staan als referentie voor hóe deze aanpak werkte, mocht een
+van de 27 modulaire companion-routes uit `ROUTE_BUILDER_MODULES.md` ooit alsnog een eigen check
+nodig hebben, of mocht Youri een route later opnieuw willen laten bekijken (bijvoorbeeld na een
+grote inhoudelijke wijziging).
 
 ## Wat er bij Eurasia gebeurde (de korte versie)
 
@@ -382,10 +384,52 @@ wholesale-replace, zelfde patroon als deze route's eerdere migraties, toegepast 
 alle zes split-companions (Iberia & Marokko/Tunesië 🏰, Malta & Italië 🏛️, Corsica & Zuid-Frankrijk
 ⛵, Griekenland & Cyprus 🏺, Anatolië 🕌, Egypte & Arabisch Schiereiland 🐪).
 
-## De laatste originele expeditie
+## Africa Grand Tour: wat er gebeurde (2026-08), als dertiende en laatste referentie — de meeste losse fixes van de hele playbook
 
-- **Africa Grand Tour 🌍** — groot (18 landen), plus 4 split-companions.
+Zelfde stappenplan. Youri had alleen Kaapstad al eerder bezocht, maar zei dat het mag blijven staan
+"als het beter past" — geen cuts, standaard check verder. Deze route (18 landen, grootste van de
+playbook naast Mediterranean Civilizations) leverde negen echte herordeningen op — meer dan bij elke
+andere expeditie in deze reeks, en een duidelijk patroon: bijna elk land had zijn eigen, op zichzelf
+staande zigzag of onvermelde terugrit, verspreid over de hele route.
 
-De 27 modulaire companion-routes uit `ROUTE_BUILDER_MODULES.md` hebben lagere prioriteit — die
-delen content met hun origineel, dus worden grotendeels gratis meegefixed zodra het origineel is
-gedaan (zie stap 5's split-companion-check hierboven).
+**Grootste vondst van de hele playbook: Namibië.** Fish River Canyon stond als laatste bestemming
+(uiterste zuiden), terwijl de grensovergang naar Angola in het uiterste noorden ligt, vlak bij Etosha
+(de voorlaatste stop). De oude volgorde reed van Etosha ≈1.150 km naar Fish River Canyon en dan
+≈1.340 km bijna dezelfde weg terug — ≈2.490 km pure heen-en-terug-omweg op een route van in totaal
+≈3.875 km. Simpelweg Fish River Canyon vooraan zetten in plaats van achteraan bespaart ≈1.355 km,
+zo'n 35% van de rijafstand in dit land — de grootste absolute besparing die deze hele reviewreeks
+heeft opgeleverd.
+
+**Hetzelfde patroon, kleinschaliger, in acht andere landen**: Zuid-Afrika (Kruger vóór Johannesburg
+i.p.v. erna, terwijl de standaardroute er dwars doorheen loopt), Lesotho (twee ver uit elkaar liggende
+plekken ten onrechte als één bestemming samengevoegd), Mozambique (de etappe begon aan de andere kant
+van het land dan waar hij binnenkwam), Zimbabwe (het land minstens twee keer diagonaal doorkruist),
+Angola (de hoofdstad eerst bezocht in plaats van de cluster bij de instap), Zambia (dezelfde
+oost-zuid-oost-fout als elders), Madagaskar (twee bestemmingen aan elkaar geknoopt die alleen via een
+ruig onverhard traject verbonden zijn) en Tanzania (een bestemming vlak bij het beginpunt pas na een
+verre uitstap bezocht, wat een aparte terugvlucht kostte). Oeganda en Kenia kregen dezelfde fix als
+Oeganda in een eerdere ronde van dit playbook (zie North America/West Africa): de etappe begint aan
+de kant die het verst van de daadwerkelijke instap/uitgang ligt.
+
+**Ethiopië** kreeg, net als Turkije/Egypte/Oman bij Mediterranean Civilizations, geen herordening maar
+een onvermelde-terugrit-fix: de vlucht Omo Valley-Addis Abeba (nodig omdat er geen directe
+internationale vlucht vanaf Omo Valley bestaat) stond nergens in de route vermeld.
+
+**Les, bevestigd voor de vierde keer in deze playbook**: hoe groter de route, hoe waarschijnlijker het
+is dat de fouten niet in één grote landvolgorde-bug zitten, maar verspreid als losse, op zichzelf
+staande problemen per land — elk met zijn eigen oorzaak (samengevoegde bestemmingen, een verkeerd
+geplaatste uitstap, een onvermelde terugrit). Systematisch elk land los controleren op instap/uitstap-
+consistentie en interne volgorde blijft de enige manier om dit soort routes goed te doen, ongeacht hoe
+vertrouwd de landvolgorde zelf al aanvoelt.
+
+Zie `CHANGELOG.md` ("Africa Grand Tour 🌍 routelogica-herziening") voor de volledige uitkomst, en
+`rbMigrateAfricaGrandTourRouteLogicOverhaul()`/`rbApplyAfricaGrandTourOverhaulToRoute()` voor het
+code-patroon — field-patch + destination-sync via de gedeelde `RB_EXPEDITION_CONTENT`-tabel, zelfde
+patroon als Eurasia's en Pan-American's migraties, toegepast op de hoofdroute en alle vier
+split-companions (Zuidelijk Afrika Safari-lus 🦁, Afrikaanse Eilanden 🏝️, Oost-Afrika Safari
+Classic 🦒, Hoorn van Afrika & Egypte 🏺).
+
+**Hiermee is de route-logic review compleet: alle 13 originele expedities zijn gecontroleerd.** De 27
+modulaire companion-routes uit `ROUTE_BUILDER_MODULES.md` deelden content met hun origineel en zijn
+daardoor grotendeels gratis meegefixed onderweg (zie elke expeditie-sectie hierboven voor welke
+companions per ronde zijn meegenomen).
