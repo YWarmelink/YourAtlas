@@ -12,6 +12,17 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Bugfix: Eurasia Grand Tour 🌏 miste per-bestemming coördinaten voor 9 van de 27 landen (2026-08)**
+  — gevonden doordat Youri opmerkte dat Bosnië & Herzegovina niet meekwam op de "Gedetailleerd"-
+  kaartweergave. Oorzaak: `rbApplyEurasiaOverhaulToRoute()` (de route-logic-review-migratie) syncte
+  alleen de 18 landcodes die in die ronde ook een inhoudelijke wijziging kregen — maar alle 27 landen
+  kregen in diezelfde ronde per-bestemming coördinaten. Bosnië, Montenegro, Noord-Macedonië,
+  Kirgizië, Tadzjikistan, Mongolië, Japan, Singapore en Oost-Timor stonden niet in die lijst, dus hun
+  coördinaten bereikten nooit een browser die de migratie al eerder had gedraaid — exact dezelfde
+  migration-gap-valkuil als eerder in dit project, dit keer verstopt **in** de migratie zelf in plaats
+  van een ontbrekende migratie. Fix: de sync-lijst uitgebreid naar alle 27 landcodes, migratievlag
+  opgehoogd (v1→v2). Gecontroleerd of dezelfde fout ook in Patagonia/Himalaya/Nordic Arctic's
+  vergelijkbare migraties zat — daar dekten de lijsten al alle landen van die routes, geen probleem.
 - **Africa Grand Tour 🌍 routelogica-herziening (2026-08)** — dertiende en laatste expeditie uit de
   `ROUTE_LOGIC_REVIEW.md`-playbook. Negen landen met een echte herordening, meer dan bij elke andere
   route in de reeks. **Zuid-Afrika**: Kruger stond vóór Johannesburg, terwijl de route Addo-Kruger

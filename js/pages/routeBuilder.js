@@ -48,7 +48,7 @@ const RB_MIGRATE_FLAG_2026_07_PRICE_VERIFICATION_ROUND2 = 'atlas_grand_trips_mig
 const RB_MIGRATE_FLAG_2026_07_PRICE_VERIFICATION_ROUND3 = 'atlas_grand_trips_migrate_2026_07_price_verification_round3_v1';
 const RB_MIGRATE_FLAG_2026_07_ROUTE_LINE_COORDS = 'atlas_grand_trips_migrate_2026_07_route_line_coords_v1';
 const RB_MIGRATE_FLAG_2026_07_ROUTE_LINE_COORDS_ROUND2 = 'atlas_grand_trips_migrate_2026_07_route_line_coords_round2_v1';
-const RB_MIGRATE_FLAG_2026_08_EURASIA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_eurasia_overhaul_v1';
+const RB_MIGRATE_FLAG_2026_08_EURASIA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_eurasia_overhaul_v2';
 const RB_MIGRATE_FLAG_2026_08_PATAGONIA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_patagonia_overhaul_v1';
 const RB_MIGRATE_FLAG_2026_08_HIMALAYA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_himalaya_overhaul_v1';
 const RB_MIGRATE_FLAG_2026_08_NORDIC_ARCTIC_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_nordic_arctic_overhaul_v1';
@@ -6119,12 +6119,15 @@ function rbApplyEurasiaOverhaulToRoute(route) {
   let touched = false;
   const content = RB_EXPEDITION_CONTENT['Eurasia Grand Tour 🌏'];
 
-  // 1. Sync the corrected fields for every country touched this round (only the ones actually
-  // present in this route's blocks — .find() safely no-ops for the others). A deliberate content
-  // correction (not a user hand-edit), so a full field sync is appropriate here — same reasoning
-  // as the price-verification-round migrations use for budget/days corrections.
+  // 1. Sync every country in this route (not just the ones with a content *change* this round —
+  // ALL 27 also gained per-destination coordinates in this same round, and an earlier version of
+  // this migration only synced the 18 codes with an actual content change, which silently stranded
+  // coordinates for BA/ME/MK/KG/TJ/MN/JP/SG/TL on any browser that had already run it — the exact
+  // migration-gap trap this project has hit before, this time hiding inside the migration itself
+  // rather than being missing entirely. .find() safely no-ops for codes not present in a given
+  // route's blocks (the three split companions each only have a subset).
   if (content) {
-    ['HR', 'AL', 'TR', 'GE', 'AM', 'AZ', 'KZ', 'UZ', 'CN', 'TW', 'VN', 'KH', 'LA', 'TH', 'MY', 'BN', 'PH', 'ID'].forEach(code => {
+    ['BA', 'HR', 'ME', 'AL', 'MK', 'TR', 'GE', 'AM', 'AZ', 'KZ', 'KG', 'TJ', 'UZ', 'CN', 'MN', 'JP', 'TW', 'VN', 'LA', 'KH', 'TH', 'MY', 'SG', 'BN', 'PH', 'ID', 'TL'].forEach(code => {
       const block = route.blocks.find(b => b.country_code === code);
       const c = content[code];
       if (!block || !c) return;
