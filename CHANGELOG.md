@@ -27,11 +27,12 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   zuiden) is dat een terugreis van de hele Nijl-corridor (≈850+450 km), nu expliciet benoemd.
   **Oman**: Wahiba Sands naar de vlucht in Muscat (≈200 km/3u) was eerder verzwegen, nu expliciet
   benoemd. Bevestigd zonder wijziging: Spanje/Marokko, de Sardinië-Corsica-overgang, en Jordanië's
-  Dode Zee-positie (ligt al vrijwel exact op de terugweg Wadi Rum-Amman). Toegepast via
-  `rbMigrateMediterraneanRouteLogicOverhaul()` — wholesale-replace, zelfde patroon als deze route's
-  eerdere migraties, uitgebreid naar alle zes split-companions (Iberia & Marokko/Tunesië 🏰, Malta
-  & Italië 🏛️, Corsica & Zuid-Frankrijk ⛵, Griekenland & Cyprus 🏺, Anatolië 🕌, Egypte & Arabisch
-  Schiereiland 🐪).
+  Dode Zee-positie (ligt al vrijwel exact op de terugweg Wadi Rum-Amman). Coördinaten per bestemming
+  toegevoegd aan alle 19 etappes (op Youri's verzoek, na de eerste versie van deze herziening) voor de
+  "Gedetailleerd"-kaartweergave. Toegepast via `rbMigrateMediterraneanRouteLogicOverhaul()` —
+  wholesale-replace, zelfde patroon als deze route's eerdere migraties, uitgebreid naar alle zes
+  split-companions (Iberia & Marokko/Tunesië 🏰, Malta & Italië 🏛️, Corsica & Zuid-Frankrijk ⛵,
+  Griekenland & Cyprus 🏺, Anatolië 🕌, Egypte & Arabisch Schiereiland 🐪).
 - **Pan-American Grand Tour 🌎 routelogica-herziening (2026-08)** — elfde expeditie uit de
   `ROUTE_LOGIC_REVIEW.md`-playbook, grootste route in deze ronde (15 landen). Vier fixes.
   **Mexico**: San Cristóbal de las Casas stond na Bacalar — een ≈700 km/10u terugrit langs Palenque,

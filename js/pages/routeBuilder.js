@@ -59,7 +59,7 @@ const RB_MIGRATE_FLAG_2026_08_NORTH_AMERICA_OVERHAUL = 'atlas_grand_trips_migrat
 const RB_MIGRATE_FLAG_2026_08_WEST_CENTRAL_AFRICA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_west_central_africa_overhaul_v1';
 const RB_MIGRATE_FLAG_2026_08_OCEANIA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_oceania_overhaul_v1';
 const RB_MIGRATE_FLAG_2026_08_PANAMERICAN_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_panamerican_overhaul_v1';
-const RB_MIGRATE_FLAG_2026_08_MEDITERRANEAN_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_mediterranean_overhaul_v1';
+const RB_MIGRATE_FLAG_2026_08_MEDITERRANEAN_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_mediterranean_overhaul_v2';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -1845,19 +1845,36 @@ function rbBuildMediterraneanExpeditionRoute() {
       countries: [
         {
           code: 'ES', name: 'Spain', days: 10, budget: 600, lat: 37.3891, lng: -5.9845,
-          destinations: ['Málaga', 'Granada (Alhambra)', 'Córdoba (Mezquita)', 'Sevilla'],
+          destinations: [
+            { name: 'Málaga', lat: 36.7213, lng: -4.4214 },
+            { name: 'Granada (Alhambra)', lat: 37.1760, lng: -3.5883 },
+            { name: 'Córdoba (Mezquita)', lat: 37.8789, lng: -4.7794 },
+            { name: 'Sevilla', lat: 37.3891, lng: -5.9845 },
+          ],
           notes: "Openingsetappe van de expeditie: Moorse en Romeinse geschiedenis in Andalusië, van de Alhambra in Granada tot de Mezquita in Córdoba. Historische binnensteden als rustige start voor de rest van de reis. Verborgen parel: Ronda, met zijn kloofbrug, als tussenstop tussen Málaga en Sevilla.",
           transport_to_next: "Veerboot Tarifa/Algeciras-Tanger (35-90 minuten, meerdere afvaarten per dag) — kortste en goedkoopste oversteek naar Afrika, geen vlucht nodig",
         },
         {
           code: 'MA', name: 'Morocco', days: 10, budget: 450, lat: 31.6295, lng: -7.9811,
-          destinations: ['Tanger', 'Chefchaouen', 'Fes', 'Volubilis', 'Marrakech'],
+          destinations: [
+            { name: 'Tanger', lat: 35.7595, lng: -5.8340 },
+            { name: 'Chefchaouen', lat: 35.1688, lng: -5.2636 },
+            { name: 'Fes', lat: 34.0181, lng: -5.0078 },
+            { name: 'Volubilis', lat: 34.0742, lng: -5.5548 },
+            { name: 'Marrakech', lat: 31.6295, lng: -7.9811 },
+          ],
           notes: "Berbercultuur, islamitische geschiedenis en Romeinse overblijfselen (Volubilis) naast elkaar. Medina's van Fes en Marrakech en de blauwe stad Chefchaouen als hoogtepunten; treinen tussen de grote steden zijn goed en goedkoop.",
           transport_to_next: "Vlucht Marrakech/Casablanca-Tunis — geen praktische land- of veerbootroute door de gesloten grens met Algerije",
         },
         {
           code: 'TN', name: 'Tunisia', days: 6, budget: 220, lat: 36.8065, lng: 10.1815,
-          destinations: ['Tunis', 'Carthago', 'Dougga', 'El Jem', 'Sidi Bou Said'],
+          destinations: [
+            { name: 'Tunis', lat: 36.8065, lng: 10.1815 },
+            { name: 'Carthago', lat: 36.8531, lng: 10.3236 },
+            { name: 'Dougga', lat: 36.4225, lng: 9.2189 },
+            { name: 'El Jem', lat: 35.2967, lng: 10.7050 },
+            { name: 'Sidi Bou Said', lat: 36.8703, lng: 10.3417 },
+          ],
           notes: "Carthaagse beschaving (Carthago) en Romeins Noord-Afrika (Dougga, het amfitheater van El Jem, groter dan dat van Rome zelf) dicht bij elkaar; Sidi Bou Said als rustig, schilderachtig dorpje tussen de geschiedenis door.",
           transport_to_next: "Vlucht Tunis-Malta — geen betrouwbare jaarronde veerbootverbinding, alleen incidentele zomerdiensten",
         },
@@ -1871,31 +1888,58 @@ function rbBuildMediterraneanExpeditionRoute() {
       countries: [
         {
           code: 'MT', name: 'Malta', days: 5, budget: 375, lat: 35.8989, lng: 14.5146,
-          destinations: ['Valletta', 'Mdina', 'Gozo', 'Ġgantija-tempels', 'Hypogeum'],
+          destinations: [
+            { name: 'Valletta', lat: 35.8989, lng: 14.5146 },
+            { name: 'Mdina', lat: 35.8869, lng: 14.4031 },
+            { name: 'Gozo', lat: 36.0443, lng: 14.2440 },
+            { name: 'Ġgantija-tempels', lat: 36.0453, lng: 14.2686 },
+            { name: 'Hypogeum', lat: 35.8703, lng: 14.5027 },
+          ],
           notes: "De Ġgantija-tempels en het Hypogeum zijn ouder dan de piramides van Gizeh — een van de oudste vrijstaande bouwwerken ter wereld. Daarnaast de Ridders van Malta in Valletta en Mdina, met een rustiger Gozo als tegenhanger.",
           transport_to_next: "Veerboot Valletta-Pozzallo of Valletta-Catania (Virtu Ferries, 1,5-3 uur) naar Sicilië",
         },
         {
           code: 'IT', name: 'Italy', days: 10, budget: 650, lat: 38.1157, lng: 13.3613,
-          destinations: ['Palermo', 'Cefalù', 'Agrigento (Valle dei Templi)', 'Syracuse', 'Taormina', 'Etna'],
+          destinations: [
+            { name: 'Palermo', lat: 38.1157, lng: 13.3613 },
+            { name: 'Cefalù', lat: 38.0387, lng: 14.0231 },
+            { name: 'Agrigento (Valle dei Templi)', lat: 37.2903, lng: 13.5928 },
+            { name: 'Syracuse', lat: 37.0755, lng: 15.2866 },
+            { name: 'Taormina', lat: 37.8516, lng: 15.2853 },
+            { name: 'Etna', lat: 37.7510, lng: 14.9934 },
+          ],
           notes: "Magna Graecia (Agrigento, Syracuse), Romeinse, Normandische en Arabische invloeden door elkaar op één eiland, met de Etna als natuurlijke afwisseling. Verborgen parel: het vissersdorpje Marzamemi, veel rustiger dan Taormina. Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid — Taormina→Syracuse→Agrigento→Etna kruiste het eiland twee keer (Agrigento ligt ver in het zuidwesten, Etna weer terug in het noordoosten, ≈204 km terug na een omweg van ≈214 km) — nu Agrigento eerst (op de heenweg vanaf Cefalù), dan een doorlopende lus Syracuse→Taormina→Etna→Messina. Scheelt ≈195 km.",
           transport_to_next: "Veerboot over de Straat van Messina (Messina-Villa San Giovanni, 20-30 minuten) naar het vasteland, dan verder naar Napels",
         },
         {
           code: 'IT', name: 'Italy', days: 6, budget: 450, lat: 40.8518, lng: 14.2681,
-          destinations: ['Reggio Calabria', 'Napels', 'Pompeï', 'Herculaneum'],
+          destinations: [
+            { name: 'Reggio Calabria', lat: 38.1113, lng: 15.6619 },
+            { name: 'Napels', lat: 40.8518, lng: 14.2681 },
+            { name: 'Pompeï', lat: 40.7461, lng: 14.4989 },
+            { name: 'Herculaneum', lat: 40.8058, lng: 14.3486 },
+          ],
           notes: "Romeinse geschiedenis in het echt bevroren: Pompeï en Herculaneum, beide verwoest en geconserveerd door de Vesuvius. Napels zelf als levendige, chaotische contramal.",
           transport_to_next: "Trein Napoli-Roma (hogesnelheidstrein, circa 1 uur 10 minuten)",
         },
         {
           code: 'IT', name: 'Italy', days: 7, budget: 700, lat: 41.9028, lng: 12.4964,
-          destinations: ['Colosseum', 'Forum Romanum', 'Pantheon', 'Vaticaan'],
+          destinations: [
+            { name: 'Colosseum', lat: 41.8902, lng: 12.4922 },
+            { name: 'Forum Romanum', lat: 41.8925, lng: 12.4853 },
+            { name: 'Pantheon', lat: 41.8986, lng: 12.4769 },
+            { name: 'Vaticaan', lat: 41.9029, lng: 12.4534 },
+          ],
           notes: "Het hart van het Romeinse Rijk en de klassieke geschiedenis waar de hele expeditie steeds weer naar teruggrijpt — Romeinse invloeden duiken ook op in Spanje, Tunesië, Turkije, Egypte en Jordanië.",
           transport_to_next: "Vlucht Rome-Cagliari, of nachtveerboot Civitavecchia-Olbia/Cagliari (circa 7-8 uur) voor wie de boot verkiest boven vliegen",
         },
         {
           code: 'IT', name: 'Italy', days: 6, budget: 600, lat: 39.2238, lng: 9.1217,
-          destinations: ['Cagliari', 'Su Nuraxi', 'Costa Smeralda'],
+          destinations: [
+            { name: 'Cagliari', lat: 39.2238, lng: 9.1217 },
+            { name: 'Su Nuraxi', lat: 39.7167, lng: 8.9833 },
+            { name: 'Costa Smeralda', lat: 41.1333, lng: 9.5167 },
+          ],
           notes: "De Nuraghe-beschaving (Su Nuraxi, UNESCO) is uniek voor Sardinië en ouder dan de Romeinse aanwezigheid op het eiland. Costa Smeralda voor de kust, de rustigere Costa Verde als minder toeristisch alternatief.",
           transport_to_next: "Veerboot Santa Teresa Gallura-Bonifacio (circa 1 uur) — de kortste oversteek van de hele route",
         },
@@ -1909,13 +1953,22 @@ function rbBuildMediterraneanExpeditionRoute() {
       countries: [
         {
           code: 'FR', name: 'France', days: 5, budget: 475, lat: 41.9192, lng: 8.7386,
-          destinations: ['Bonifacio', 'Ajaccio', 'Bavella'],
+          destinations: [
+            { name: 'Bonifacio', lat: 41.3869, lng: 9.1595 },
+            { name: 'Ajaccio', lat: 41.9192, lng: 8.7386 },
+            { name: 'Bavella', lat: 41.7833, lng: 9.2167 },
+          ],
           notes: "Mediterrane natuur op zijn best: de kalksteenkliffen van Bonifacio, de granieten naalden van Bavella. Franse en Italiaanse invloeden lopen hier door elkaar. Verborgen parel: het Scandola natuurreservaat, alleen per boot te bezoeken.",
           transport_to_next: "Veerboot Ajaccio/Bastia-Marseille of Toulon (Corsica Ferries/La Méridionale, circa 6-10 uur, vaak als nachtboot)",
         },
         {
           code: 'FR', name: 'France', days: 6, budget: 600, lat: 43.2965, lng: 5.3698,
-          destinations: ['Marseille', 'Arles', 'Nîmes', 'Pont du Gard'],
+          destinations: [
+            { name: 'Marseille', lat: 43.2965, lng: 5.3698 },
+            { name: 'Arles', lat: 43.6767, lng: 4.6278 },
+            { name: 'Nîmes', lat: 43.8367, lng: 4.3601 },
+            { name: 'Pont du Gard', lat: 43.9474, lng: 4.5350 },
+          ],
           notes: "Gallo-Romeinse geschiedenis (het aquaduct van de Pont du Gard, de arena's van Arles en Nîmes) in Provençaalse sfeer. Verborgen parel: de Camargue bij Arles, met wilde paarden en flamingo's, als natuurpauze.",
           transport_to_next: "Vlucht Marseille-Athene — geen praktische land- of veerbootroute gezien de afstand",
         },
@@ -1929,19 +1982,34 @@ function rbBuildMediterraneanExpeditionRoute() {
       countries: [
         {
           code: 'GR', name: 'Greece', days: 12, budget: 840, lat: 37.9838, lng: 23.7275,
-          destinations: ['Athene', 'Peloponnesos', 'Olympia', 'Delphi', 'Meteora'],
+          destinations: [
+            { name: 'Athene', lat: 37.9838, lng: 23.7275 },
+            { name: 'Peloponnesos', lat: 37.5685, lng: 22.8072 },
+            { name: 'Olympia', lat: 37.6384, lng: 21.6300 },
+            { name: 'Delphi', lat: 38.4824, lng: 22.5010 },
+            { name: 'Meteora', lat: 39.7217, lng: 21.6306 },
+          ],
           notes: "Griekse oudheid, filosofie, democratie en mythologie op de belangrijkste locaties zelf: de Akropolis, het orakel van Delphi, de oorspronkelijke Olympische Spelen in Olympia. Verborgen parel: Monemvasia en Nafplio op de Peloponnesos, veel rustiger dan Athene.",
           transport_to_next: "Nachtveerboot Piraeus-Heraklion (circa 7-9 uur) naar Kreta",
         },
         {
           code: 'GR', name: 'Greece', days: 7, budget: 450, lat: 35.3387, lng: 25.1442,
-          destinations: ['Heraklion', 'Knossos', 'Chania', 'Samariakloof'],
+          destinations: [
+            { name: 'Heraklion', lat: 35.3387, lng: 25.1442 },
+            { name: 'Knossos', lat: 35.2977, lng: 25.1628 },
+            { name: 'Chania', lat: 35.5138, lng: 24.0180 },
+            { name: 'Samariakloof', lat: 35.3167, lng: 23.9500 },
+          ],
           notes: "De Minoïsche beschaving (Knossos) als oudste laag van de Griekse geschiedenis, gevolgd door eilandcultuur in Chania en een stevige wandeling door de Samariakloof. Verborgen parel: het roze zandstrand van Elafonisi, in het uiterste westen van het eiland.",
           transport_to_next: "Vlucht Heraklion-Larnaca (meestal met overstap in Athene) — geen betrouwbare directe veerbootverbinding",
         },
         {
           code: 'CY', name: 'Cyprus', days: 5, budget: 400, lat: 35.1856, lng: 33.3823,
-          destinations: ['Paphos', 'Limassol', 'Nicosia'],
+          destinations: [
+            { name: 'Paphos', lat: 34.7720, lng: 32.4297 },
+            { name: 'Limassol', lat: 34.7071, lng: 33.0226 },
+            { name: 'Nicosia', lat: 35.1856, lng: 33.3823 },
+          ],
           notes: "Griekse, Romeinse en Byzantijnse lagen op één eiland: de mozaïeken van Paphos (UNESCO), het Romeinse theater van Kourion bij Limassol als verborgen parel, en de gedeelde hoofdstad Nicosia.",
           transport_to_next: "Vlucht Larnaca-Istanbul — rechtstreeks en kort, geen praktisch alternatief over water",
         },
@@ -1955,7 +2023,14 @@ function rbBuildMediterraneanExpeditionRoute() {
       countries: [
         {
           code: 'TR', name: 'Turkey', days: 20, budget: 850, lat: 41.0082, lng: 28.9784,
-          destinations: ['Istanbul', 'Troje', 'Pergamon', 'Efeze', 'Pamukkale', 'Cappadocië'],
+          destinations: [
+            { name: 'Istanbul', lat: 41.0082, lng: 28.9784 },
+            { name: 'Troje', lat: 39.9575, lng: 26.2389 },
+            { name: 'Pergamon', lat: 39.1319, lng: 27.1836 },
+            { name: 'Efeze', lat: 37.9412, lng: 27.3641 },
+            { name: 'Pamukkale', lat: 37.9142, lng: 29.1187 },
+            { name: 'Cappadocië', lat: 38.6431, lng: 34.8283 },
+          ],
           notes: "Byzantijnse en Ottomaanse geschiedenis in Istanbul, Romeinse steden (Efeze, Pergamon) en oude Anatolische beschavingen (Troje) op één lijn, met de rotsformaties van Cappadocië en de kalksteenterrassen van Pamukkale als natuurlijke hoogtepunten. Verborgen parel: Assos en Aphrodisias, veel rustiger dan Efeze maar minstens zo indrukwekkend. Routelogica-fix (2026-08, search-bevestigd): de etappe eindigt in Cappadocië (≈730 km van Istanbul), maar de vlucht naar Caïro vertrekt vanuit Istanbul — dit stond eerder onvermeld. Geen Cappadocië-luchthaven (Kayseri/Nevşehir) heeft een directe vlucht naar Caïro, dus de terugvlucht naar Istanbul is onvermijdelijk, niet alleen een tekstfix.",
           transport_to_next: "Binnenlandse vlucht Kayseri/Nevşehir-Istanbul (geen directe Cappadocië-Caïro-verbinding bestaat), dan vlucht Istanbul-Caïro — geen praktische land- of zeeroute via Syrië/Libanon",
         },
@@ -1969,31 +2044,54 @@ function rbBuildMediterraneanExpeditionRoute() {
       countries: [
         {
           code: 'EG', name: 'Egypt', days: 14, budget: 784, lat: 30.0444, lng: 31.2357,
-          destinations: ['Caïro', 'Gizeh', 'Luxor', 'Karnak', 'Aswan', 'Abu Simbel'],
+          destinations: [
+            { name: 'Caïro', lat: 30.0444, lng: 31.2357 },
+            { name: 'Gizeh', lat: 29.9765, lng: 31.1313 },
+            { name: 'Luxor', lat: 25.6872, lng: 32.6396 },
+            { name: 'Karnak', lat: 25.7188, lng: 32.6573 },
+            { name: 'Aswan', lat: 24.0889, lng: 32.8998 },
+            { name: 'Abu Simbel', lat: 22.3372, lng: 31.6258 },
+          ],
           notes: "De oud-Egyptische beschaving in haar geheel: piramides (Gizeh), tempels (Karnak, Abu Simbel) en de Nijl als verbindende rode draad. Verborgen parel: de Siwa-oase, ver van de gebruikelijke route maar wel een omweg waard. Reisadvies (2026-07): geel voor Caïro/Gizeh/Luxor/Aswan/Abu Simbel — gewoon te bezoeken; alleen (Noord-)Sinaï buiten deze route is oranje/rood. Routelogica-fix (2026-08, search-bevestigd): de Nijl-volgorde zelf (Caïro-Gizeh-Luxor-Karnak-Aswan-Abu Simbel) is correct, maar de ferry naar Jordanië vertrekt vanuit Nuweiba (Sinaï, noordoost) — vanaf Abu Simbel (uiterste zuiden) is dat geen buurtrit maar een terugreis van de hele Nijl-corridor, eerder onvermeld in transport_to_next.",
           transport_to_next: "Terug naar Caïro (Aswan/Abu Simbel-Caïro, ≈850 km, vlucht ≈1u of nachttrein — routelogica-fix 2026-08, search-bevestigd: dit stond eerder onvermeld, Nuweiba ligt niet op de route zuidwaarts langs de Nijl), dan bus/auto Caïro-Nuweiba (≈450 km, ≈7u), dan veerboot Nuweiba-Aqaba (alternatief: rechtstreekse vlucht Caïro-Amman) — kortste route naar Jordanië zonder om te vliegen via de Golf",
         },
         {
           code: 'JO', name: 'Jordan', days: 8, budget: 500, lat: 31.9454, lng: 35.9284,
-          destinations: ['Amman', 'Jerash', 'Petra', 'Wadi Rum', 'Dode Zee'],
+          destinations: [
+            { name: 'Amman', lat: 31.9454, lng: 35.9284 },
+            { name: 'Jerash', lat: 32.2811, lng: 35.8994 },
+            { name: 'Petra', lat: 30.3285, lng: 35.4444 },
+            { name: 'Wadi Rum', lat: 29.5766, lng: 35.4206 },
+            { name: 'Dode Zee', lat: 31.5590, lng: 35.4732 },
+          ],
           notes: "Nabateese handelsroutes (Petra), Romeinse geschiedenis (Jerash) en de woestijn van Wadi Rum. December geeft aangename dagtemperaturen voor de wandeling naar de Schatkamer en voor kamperen in Wadi Rum. Praktische tip: de Jordan Pass (~50-60 JOD, ruim vooraf online kopen) bundelt toegang tot Petra/Jerash/Wadi Rum/40 andere sites en scheldt de losse 40 JOD-visumfee kwijt bij een verblijf van 3+ nachten — voordeliger dan losse tickets. ⚠️ Reisadvies (juli 2026): oranje voor heel Jordanië (normaal alleen de grensstreek met Syrië/Irak) door het regionale Iran-Israël/VS-conflict — check nederlandwereldwijd.nl vlak voor vertrek, dit kan alweer zijn gewijzigd.",
           transport_to_next: "Vlucht Amman-Muscat — geen landroute, overland via Saoedi-Arabië is visumtechnisch onpraktisch",
         },
         {
           code: 'OM', name: 'Oman', days: 7, budget: 770, lat: 23.588, lng: 58.3829,
-          destinations: ['Muscat', 'Nizwa', 'Jebel Shams', 'Wahiba Sands'],
+          destinations: [
+            { name: 'Muscat', lat: 23.5880, lng: 58.3829 },
+            { name: 'Nizwa', lat: 22.9333, lng: 57.5333 },
+            { name: 'Jebel Shams', lat: 23.2394, lng: 57.2661 },
+            { name: 'Wahiba Sands', lat: 22.0667, lng: 58.5000 },
+          ],
           notes: "Arabische handelsroutes, forten (Nizwa) en zowel bergen (Jebel Shams, de \"Grand Canyon van Arabië\") als woestijn (Wahiba Sands) op korte afstand van elkaar. Verborgen parel: Bahla Fort en de eeuwenoude falaj-irrigatiekanalen bij Nizwa (beide UNESCO). Prijscheck (2026-07): Jebel Shams en Wahiba Sands zijn niet met openbaar vervoer te doen — een huurauto (4x4) of tour is hier verplicht, wat het dagbudget flink optrekt t.o.v. Muscat zelf. ⚠️ Reisadvies (juli 2026): oranje voor Musandam/Duqm/Salalah/Sohar (geraakt door Iraanse aanvallen), maar geel — dit hele traject — voor Muscat/Nizwa/Jebel Shams/Wahiba Sands. Check nederlandwereldwijd.nl vlak voor vertrek, de situatie is volatiel. Routelogica-fix (2026-08, search-bevestigd): de terugrit Wahiba Sands-Muscat (≈200 km/≈3u, eerder onvermeld) is nu expliciet benoemd.",
           transport_to_next: "Terug naar Muscat (≈200 km/≈3u vanaf Wahiba Sands), dan vlucht Muscat-Manama — korte Golfvlucht",
         },
         {
           code: 'BH', name: 'Bahrain', days: 3, budget: 300, lat: 26.2285, lng: 50.586,
-          destinations: ["Qal'at al-Bahrein (Bahrein Fort)", 'Bahrain National Museum', 'Al Fateh Grand Mosque', 'Tree of Life'],
+          destinations: [
+            { name: "Qal'at al-Bahrein (Bahrein Fort)", lat: 26.2333, lng: 50.5217 },
+            { name: 'Bahrain National Museum', lat: 26.2367, lng: 50.5936 },
+            { name: 'Al Fateh Grand Mosque', lat: 26.2361, lng: 50.5464 },
+            { name: 'Tree of Life', lat: 25.9167, lng: 50.5833 },
+          ],
           notes: "Qal'at al-Bahrein (UNESCO) was de hoofdstad van de Dilmun-beschaving, een Bronstijd-handelsbeschaving die al rond 2000 v.Chr. tussen Mesopotamië en de Indusvallei handelde — een nog oudere laag geschiedenis dan de Nabateese en Arabische handelsroutes eerder in deze etappe. De Tree of Life, een eeuwenoude boom die op onverklaarde wijze midden in de woestijn overleeft, als natuurlijke curiositeit tussen de geschiedenis door. ⚠️ Reisadvies (juli 2026): ROOD — niet reizen. Iran voert aanvallen uit op militaire doelen in Bahrein, met waarschuwingen voor mogelijke aanslagen in centraal Manama; geen Nederlandse ambassade in Bahrein (dichtstbijzijnde: Koeweit). Op dit moment een harde no-go, geen budget-/planningskwestie — check nederlandwereldwijd.nl vlak voor vertrek, dit kan (hopelijk) weer zijn veranderd.",
           transport_to_next: "Vlucht Manama-Doha — korte Golfvlucht",
         },
         {
           code: 'QA', name: 'Qatar', days: 3, budget: 315, lat: 25.2854, lng: 51.531,
-          destinations: ['Doha'],
+          destinations: [{ name: 'Doha', lat: 25.2854, lng: 51.5310 }],
           notes: "Bewust modern en hedendaags als afsluiting: islamitische architectuur (Museum of Islamic Art) en musea als contrast met de duizenden jaren geschiedenis eerder in de reis. ⚠️ Reisadvies (juli 2026): oranje — Qatar is geraakt door Iraanse raketten/drones gericht op Amerikaanse doelen. Reizen wordt alleen aangeraden als het noodzakelijk is. Check nederlandwereldwijd.nl vlak voor vertrek, de situatie kan alweer zijn gewijzigd.",
           transport_to_next: "Einde van de expeditie — terugvlucht vanuit Doha (Hamad International Airport) naar Nederland",
         },
@@ -2018,7 +2116,7 @@ function rbBuildMediterraneanExpeditionRoute() {
       "Prijzen/visum/reisadvies-verificatie (2026-07, pilot voor deze aanpak over alle 13 expedities): alle 13 landen gecheckt via web-onderzoek tegen actuele prijzen (bijgesteld naar Youri's reisstijl — tussen budget- en comfort-backpacker in, niet de kale bodemprijs), visumregels en Nederlands reisadvies. Dagen zijn overal ongewijzigd, alleen budgetten aangepast waar nodig. Prijscorrecties: Malta (€100→€75/dag — was te hoog), Sardinië (€83→€100/dag — eilandpremie onderschat, ligt qua prijsniveau dichter bij Rome dan bij de rest van Zuid-Italië), Corsica (€90→€95/dag — weinig hostels op het eiland, vaker aangewezen op een budgethotel), Griekenland-vasteland (€58→€70/dag — Delphi/Meteora/Peloponnesos hebben weinig hostels en de KTEL-intercitybussen zijn sinds maart 2026 zo'n 10% duurder), Egypte (€46→€56/dag — om de losse entreekosten van de grote sites, samen gemiddeld €8-12/dag, mee te nemen), Oman (€85,70→€110/dag — Jebel Shams en Wahiba Sands zijn niet met openbaar vervoer te doen, een huurauto/tour is verplicht), Bahrein (€116,70→€100/dag) en Qatar (€133,30→€105/dag — beide waren te hoog begroot voor wat er in de praktijk aan hostels/lokaal vervoer beschikbaar is). Spanje, Marokko, Tunesië, Sicilië, Napels, Rome, Provence, Kreta, Cyprus, Turkije en Jordanië bleken al accuraat — geen aanpassing.\n\n" +
       "Visumcheck: Spanje t/m Cyprus zijn EU/Schengen dus visumvrij (Cyprus is EU maar geen Schengen, dus met paspoortcontrole aan de grens); Turkije is visumvrij tot 90 dagen; Egypte vraagt een e-visa (~$30, vooraf online via visa2egypt.gov.eg, paspoort moet nog 6+ maanden geldig zijn); Jordanië werkt met visa-on-arrival, te omzeilen met de Jordan Pass (zie de losse notitie bij Jordanië hierboven); Oman is visumvrij tot 14 dagen (dekt de 7 geplande dagen ruim); Qatar is visumvrij tot 90 dagen; Bahrein werkt met een e-visa (~€22) of visa-on-arrival (~€61) — momenteel sowieso niet van toepassing gezien het reisadvies hieronder.\n\n" +
       "⚠️ Actuele reisadvies-situatie Golf-regio (juli 2026): een regionaal Iran-VS/Israël-conflict heeft geleid tot raket-/droneaanvallen op Jordanië, Oman, Qatar en Bahrein. Bahrein staat op dit moment op ROOD (niet reizen); Jordanië en Qatar op oranje voor het hele land; Oman op oranje voor Musandam/Duqm/Salalah/Sohar maar geel (dit traject) voor Muscat/Nizwa/Jebel Shams/Wahiba Sands. Er zou een pauze in de aanvallen zijn gemeld medio/eind juli 2026, dus dit kan alweer zijn veranderd — dit is uitdrukkelijk geen vaststaand feit maar een momentopname; check nederlandwereldwijd.nl zelf vlak voordat je hier ooit daadwerkelijk naartoe zou reizen. Zie ook de losse waarschuwingen bij Jordanië/Oman/Bahrein/Qatar hierboven.\n\n" +
-      "Routelogica-herziening (2026-08, search-bevestigd, twaalfde expeditie uit ROUTE_LOGIC_REVIEW.md, grootste route van de hele playbook — 18 etappes/13 landen): vijf fixes, drie herordeningen en twee onvermelde-terugrit-teksten. (1) **Sicilië**: Taormina→Syracuse→Agrigento→Etna kruiste het eiland twee keer (≈195 km vermijdbare omweg) — nu Agrigento eerst, dan een doorlopende oostkust-lus Syracuse→Taormina→Etna→Messina. (2) **Griekenland-vasteland**: Athene→Delphi→Olympia→Meteora→Peloponnesos wisselde drie keer tussen noord (Delphi/Meteora) en zuid (Olympia/Peloponnesos), terwijl de Piraeus-ferry vlak bij Athene ligt, niet bij de Peloponnesos — nu Athene→Peloponnesos/Olympia (zuid-lus)→Delphi→Meteora (noord-lus, eindigend met de terugrit naar Piraeus). (3) **Turkije**: de etappe eindigde in Cappadocië (≈730 km van Istanbul) terwijl de vlucht naar Caïro vanuit Istanbul vertrekt — geen Cappadocië-luchthaven heeft een directe Caïro-verbinding, dus een binnenlandse terugvlucht is nu expliciet toegevoegd (onvermijdelijk, niet alleen een tekstfix). (4) **Egypte**: de Nijl-volgorde zelf klopte, maar de ferry naar Jordanië vertrekt vanuit Nuweiba (Sinaï) — vanaf Abu Simbel (uiterste zuiden) is dat een terugreis van de hele Nijl-corridor (≈850 km + ≈450 km), eerder onvermeld, nu expliciet benoemd. (5) **Oman**: dezelfde categorie — Wahiba Sands naar de vlucht in Muscat is ≈200 km/3u, nu expliciet benoemd i.p.v. verzwegen. Bevestigd zonder wijziging: Spanje/Marokko (geen zigzag), Sardinië-Corsica-overgang (schone zuid-noord-lijn), en Jordanië's Dode Zee-positie (ligt al vrijwel exact op de terugweg Wadi Rum-Amman, geen omweg). Zelfde fixes ook toegepast op de zes split-companions (Iberia & Marokko/Tunesië 🏰, Malta & Italië 🏛️, Corsica & Zuid-Frankrijk ⛵, Griekenland & Cyprus 🏺, Anatolië 🕌, Egypte & Arabisch Schiereiland 🐪) waar relevant. Youri's antwoord op de persoonlijke-voorkeur-check: de bestaande 'verdiepingsreis'-framing (8 van 13 landen al bezocht, bewust geen reden om te schrappen) blijft ongewijzigd van kracht. Landen/dagen/budget ongewijzigd — alleen volgorde en transport-notities aangepast.",
+      "Routelogica-herziening (2026-08, search-bevestigd, twaalfde expeditie uit ROUTE_LOGIC_REVIEW.md, grootste route van de hele playbook — 18 etappes/13 landen): vijf fixes, drie herordeningen en twee onvermelde-terugrit-teksten. (1) **Sicilië**: Taormina→Syracuse→Agrigento→Etna kruiste het eiland twee keer (≈195 km vermijdbare omweg) — nu Agrigento eerst, dan een doorlopende oostkust-lus Syracuse→Taormina→Etna→Messina. (2) **Griekenland-vasteland**: Athene→Delphi→Olympia→Meteora→Peloponnesos wisselde drie keer tussen noord (Delphi/Meteora) en zuid (Olympia/Peloponnesos), terwijl de Piraeus-ferry vlak bij Athene ligt, niet bij de Peloponnesos — nu Athene→Peloponnesos/Olympia (zuid-lus)→Delphi→Meteora (noord-lus, eindigend met de terugrit naar Piraeus). (3) **Turkije**: de etappe eindigde in Cappadocië (≈730 km van Istanbul) terwijl de vlucht naar Caïro vanuit Istanbul vertrekt — geen Cappadocië-luchthaven heeft een directe Caïro-verbinding, dus een binnenlandse terugvlucht is nu expliciet toegevoegd (onvermijdelijk, niet alleen een tekstfix). (4) **Egypte**: de Nijl-volgorde zelf klopte, maar de ferry naar Jordanië vertrekt vanuit Nuweiba (Sinaï) — vanaf Abu Simbel (uiterste zuiden) is dat een terugreis van de hele Nijl-corridor (≈850 km + ≈450 km), eerder onvermeld, nu expliciet benoemd. (5) **Oman**: dezelfde categorie — Wahiba Sands naar de vlucht in Muscat is ≈200 km/3u, nu expliciet benoemd i.p.v. verzwegen. Bevestigd zonder wijziging: Spanje/Marokko (geen zigzag), Sardinië-Corsica-overgang (schone zuid-noord-lijn), en Jordanië's Dode Zee-positie (ligt al vrijwel exact op de terugweg Wadi Rum-Amman, geen omweg). Zelfde fixes ook toegepast op de zes split-companions (Iberia & Marokko/Tunesië 🏰, Malta & Italië 🏛️, Corsica & Zuid-Frankrijk ⛵, Griekenland & Cyprus 🏺, Anatolië 🕌, Egypte & Arabisch Schiereiland 🐪) waar relevant. Youri's antwoord op de persoonlijke-voorkeur-check: de bestaande 'verdiepingsreis'-framing (8 van 13 landen al bezocht, bewust geen reden om te schrappen) blijft ongewijzigd van kracht. Coördinaten per bestemming alsnog toegevoegd aan alle 19 etappes (2026-08, op Youri's verzoek na de eerste versie van deze herziening — 'dat is juist belangrijk') voor de 'Gedetailleerd'-kaartweergave. Landen/dagen/budget ongewijzigd — alleen volgorde en transport-notities aangepast.",
   });
 }
 
@@ -3722,19 +3820,36 @@ function rbBuildIberiaMaghrebRoute() {
       countries: [
         {
           code: 'ES', name: 'Spain', days: 10, budget: 600, lat: 37.3891, lng: -5.9845,
-          destinations: ['Málaga', 'Granada (Alhambra)', 'Córdoba (Mezquita)', 'Sevilla'],
+          destinations: [
+            { name: 'Málaga', lat: 36.7213, lng: -4.4214 },
+            { name: 'Granada (Alhambra)', lat: 37.1760, lng: -3.5883 },
+            { name: 'Córdoba (Mezquita)', lat: 37.8789, lng: -4.7794 },
+            { name: 'Sevilla', lat: 37.3891, lng: -5.9845 },
+          ],
           notes: 'Openingsetappe: Moorse en Romeinse geschiedenis in Andalusië, van de Alhambra in Granada tot de Mezquita in Córdoba. Historische binnensteden als rustige start. Verborgen parel: Ronda, met zijn kloofbrug, als tussenstop tussen Málaga en Sevilla.',
           transport_to_next: 'Veerboot Tarifa/Algeciras-Tanger (35-90 minuten, meerdere afvaarten per dag) — kortste en goedkoopste oversteek naar Afrika, geen vlucht nodig',
         },
         {
           code: 'MA', name: 'Morocco', days: 10, budget: 450, lat: 31.6295, lng: -7.9811,
-          destinations: ['Tanger', 'Chefchaouen', 'Fes', 'Volubilis', 'Marrakech'],
+          destinations: [
+            { name: 'Tanger', lat: 35.7595, lng: -5.8340 },
+            { name: 'Chefchaouen', lat: 35.1688, lng: -5.2636 },
+            { name: 'Fes', lat: 34.0181, lng: -5.0078 },
+            { name: 'Volubilis', lat: 34.0742, lng: -5.5548 },
+            { name: 'Marrakech', lat: 31.6295, lng: -7.9811 },
+          ],
           notes: "Berbercultuur, islamitische geschiedenis en Romeinse overblijfselen (Volubilis) naast elkaar. Medina's van Fes en Marrakech en de blauwe stad Chefchaouen als hoogtepunten; treinen tussen de grote steden zijn goed en goedkoop.",
           transport_to_next: 'Vlucht Marrakech/Casablanca-Tunis — geen praktische land- of veerbootroute door de gesloten grens met Algerije',
         },
         {
           code: 'TN', name: 'Tunisia', days: 6, budget: 220, lat: 36.8065, lng: 10.1815,
-          destinations: ['Tunis', 'Carthago', 'Dougga', 'El Jem', 'Sidi Bou Said'],
+          destinations: [
+            { name: 'Tunis', lat: 36.8065, lng: 10.1815 },
+            { name: 'Carthago', lat: 36.8531, lng: 10.3236 },
+            { name: 'Dougga', lat: 36.4225, lng: 9.2189 },
+            { name: 'El Jem', lat: 35.2967, lng: 10.7050 },
+            { name: 'Sidi Bou Said', lat: 36.8703, lng: 10.3417 },
+          ],
           notes: "Carthaagse beschaving (Carthago) en Romeins Noord-Afrika (Dougga, het amfitheater van El Jem, groter dan dat van Rome zelf) dicht bij elkaar; Sidi Bou Said als rustig, schilderachtig dorpje tussen de geschiedenis door.",
           transport_to_next: 'Einde van deze route — vlucht huiswaarts vanuit Tunis (of vlucht Tunis-Malta om verder te reizen naar Malta & Italië 🏛️)',
         },
@@ -3745,7 +3860,7 @@ function rbBuildIberiaMaghrebRoute() {
     best_starting_month: 'September',
     description: 'Van Moors Spanje via Berbercultuur in Marokko naar Punisch/Romeins Tunesië.',
     climate_summary: 'September laat dit deel nog in het najaarszonnetje vallen — mild en minder druk dan hoogzomer.',
-    notes: "Losgesplitst van Mediterranean Civilizations Expedition 🏛️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen (inclusief de 2026-07 prijs-/visum-/reisadvies-verificatie). Vervolg op deze route: Malta & Italië 🏛️. Mediterranean Civilizations Expedition 🏛️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): Spanje en Marokko geverifieerd, al optimaal — geen wijziging nodig. Zie Mediterranean Civilizations Expedition 🏛️'s eigen notities.",
+    notes: "Losgesplitst van Mediterranean Civilizations Expedition 🏛️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen (inclusief de 2026-07 prijs-/visum-/reisadvies-verificatie). Vervolg op deze route: Malta & Italië 🏛️. Mediterranean Civilizations Expedition 🏛️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): Spanje en Marokko geverifieerd, al optimaal — geen wijziging nodig. Coördinaten per bestemming toegevoegd. Zie Mediterranean Civilizations Expedition 🏛️'s eigen notities.",
   });
 }
 
@@ -3759,31 +3874,58 @@ function rbBuildMaltaItalyRoute() {
       countries: [
         {
           code: 'MT', name: 'Malta', days: 5, budget: 375, lat: 35.8989, lng: 14.5146,
-          destinations: ['Valletta', 'Mdina', 'Gozo', 'Ġgantija-tempels', 'Hypogeum'],
+          destinations: [
+            { name: 'Valletta', lat: 35.8989, lng: 14.5146 },
+            { name: 'Mdina', lat: 35.8869, lng: 14.4031 },
+            { name: 'Gozo', lat: 36.0443, lng: 14.2440 },
+            { name: 'Ġgantija-tempels', lat: 36.0453, lng: 14.2686 },
+            { name: 'Hypogeum', lat: 35.8703, lng: 14.5027 },
+          ],
           notes: 'De Ġgantija-tempels en het Hypogeum zijn ouder dan de piramides van Gizeh — een van de oudste vrijstaande bouwwerken ter wereld. Daarnaast de Ridders van Malta in Valletta en Mdina, met een rustiger Gozo als tegenhanger.',
           transport_to_next: 'Veerboot Valletta-Pozzallo of Valletta-Catania (Virtu Ferries, 1,5-3 uur) naar Sicilië',
         },
         {
           code: 'IT', name: 'Italy', days: 10, budget: 650, lat: 38.1157, lng: 13.3613,
-          destinations: ['Palermo', 'Cefalù', 'Agrigento (Valle dei Templi)', 'Syracuse', 'Taormina', 'Etna'],
+          destinations: [
+            { name: 'Palermo', lat: 38.1157, lng: 13.3613 },
+            { name: 'Cefalù', lat: 38.0387, lng: 14.0231 },
+            { name: 'Agrigento (Valle dei Templi)', lat: 37.2903, lng: 13.5928 },
+            { name: 'Syracuse', lat: 37.0755, lng: 15.2866 },
+            { name: 'Taormina', lat: 37.8516, lng: 15.2853 },
+            { name: 'Etna', lat: 37.7510, lng: 14.9934 },
+          ],
           notes: 'Magna Graecia (Agrigento, Syracuse), Romeinse, Normandische en Arabische invloeden door elkaar op één eiland, met de Etna als natuurlijke afwisseling. Verborgen parel: het vissersdorpje Marzamemi, veel rustiger dan Taormina.',
           transport_to_next: 'Veerboot over de Straat van Messina (Messina-Villa San Giovanni, 20-30 minuten) naar het vasteland, dan verder naar Napels',
         },
         {
           code: 'IT', name: 'Italy', days: 6, budget: 450, lat: 40.8518, lng: 14.2681,
-          destinations: ['Reggio Calabria', 'Napels', 'Pompeï', 'Herculaneum'],
+          destinations: [
+            { name: 'Reggio Calabria', lat: 38.1113, lng: 15.6619 },
+            { name: 'Napels', lat: 40.8518, lng: 14.2681 },
+            { name: 'Pompeï', lat: 40.7461, lng: 14.4989 },
+            { name: 'Herculaneum', lat: 40.8058, lng: 14.3486 },
+          ],
           notes: 'Romeinse geschiedenis in het echt bevroren: Pompeï en Herculaneum, beide verwoest en geconserveerd door de Vesuvius. Napels zelf als levendige, chaotische contramal.',
           transport_to_next: 'Trein Napoli-Roma (hogesnelheidstrein, circa 1 uur 10 minuten)',
         },
         {
           code: 'IT', name: 'Italy', days: 7, budget: 700, lat: 41.9028, lng: 12.4964,
-          destinations: ['Colosseum', 'Forum Romanum', 'Pantheon', 'Vaticaan'],
+          destinations: [
+            { name: 'Colosseum', lat: 41.8902, lng: 12.4922 },
+            { name: 'Forum Romanum', lat: 41.8925, lng: 12.4853 },
+            { name: 'Pantheon', lat: 41.8986, lng: 12.4769 },
+            { name: 'Vaticaan', lat: 41.9029, lng: 12.4534 },
+          ],
           notes: 'Het hart van het Romeinse Rijk en de klassieke geschiedenis waar de hele expeditie steeds weer naar teruggrijpt — Romeinse invloeden duiken ook op in Spanje, Tunesië, Turkije, Egypte en Jordanië.',
           transport_to_next: 'Vlucht Rome-Cagliari, of nachtveerboot Civitavecchia-Olbia/Cagliari (circa 7-8 uur) voor wie de boot verkiest boven vliegen',
         },
         {
           code: 'IT', name: 'Italy', days: 6, budget: 600, lat: 39.2238, lng: 9.1217,
-          destinations: ['Cagliari', 'Su Nuraxi', 'Costa Smeralda'],
+          destinations: [
+            { name: 'Cagliari', lat: 39.2238, lng: 9.1217 },
+            { name: 'Su Nuraxi', lat: 39.7167, lng: 8.9833 },
+            { name: 'Costa Smeralda', lat: 41.1333, lng: 9.5167 },
+          ],
           notes: 'De Nuraghe-beschaving (Su Nuraxi, UNESCO) is uniek voor Sardinië en ouder dan de Romeinse aanwezigheid op het eiland. Costa Smeralda voor de kust, de rustigere Costa Verde als minder toeristisch alternatief.',
           transport_to_next: 'Einde van deze route — vlucht huiswaarts vanuit Cagliari/Olbia (of veerboot Santa Teresa Gallura-Bonifacio om verder te reizen naar Corsica & Zuid-Frankrijk ⛵)',
         },
@@ -3794,7 +3936,7 @@ function rbBuildMaltaItalyRoute() {
     best_starting_month: 'Oktober',
     description: 'Van tempels ouder dan de piramides op Malta via Magna Graecia en Romeins Zuid-Italië naar het hart van het Romeinse Rijk, met Sardinië als unieke afsluiter.',
     climate_summary: 'Oktober is een aangenaam najaar in Zuid-Italië en op de eilanden — minder toeristen, nog warm genoeg voor de veerboten. Let op de Malta-Sicilië-veerboot (Virtu Ferries): vaart het hele jaar door maar met minder afvaarten in het najaar en kans op annulering bij slecht weer — de belangrijkste risicoverbinding op deze route.',
-    notes: "Losgesplitst van Mediterranean Civilizations Expedition 🏛️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen. Vervolg op Iberia & Marokko/Tunesië 🏰; wordt zelf gevolgd door Corsica & Zuid-Frankrijk ⛵. Mediterranean Civilizations Expedition 🏛️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): Sicilië's volgorde omgedraaid (Agrigento vóór Syracuse/Taormina i.p.v. erna) om een ≈195 km-omweg te vermijden; Sardinië-Corsica-overgang geverifieerd, al optimaal. Zie Mediterranean Civilizations Expedition 🏛️'s eigen notities voor de volledige onderbouwing.",
+    notes: "Losgesplitst van Mediterranean Civilizations Expedition 🏛️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen. Vervolg op Iberia & Marokko/Tunesië 🏰; wordt zelf gevolgd door Corsica & Zuid-Frankrijk ⛵. Mediterranean Civilizations Expedition 🏛️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): Sicilië's volgorde omgedraaid (Agrigento vóór Syracuse/Taormina i.p.v. erna) om een ≈195 km-omweg te vermijden; Sardinië-Corsica-overgang geverifieerd, al optimaal. Coördinaten per bestemming toegevoegd. Zie Mediterranean Civilizations Expedition 🏛️'s eigen notities voor de volledige onderbouwing.",
   });
 }
 
@@ -3808,13 +3950,22 @@ function rbBuildCorsicaSouthFranceRoute() {
       countries: [
         {
           code: 'FR', name: 'France', days: 5, budget: 475, lat: 41.9192, lng: 8.7386,
-          destinations: ['Bonifacio', 'Ajaccio', 'Bavella'],
+          destinations: [
+            { name: 'Bonifacio', lat: 41.3869, lng: 9.1595 },
+            { name: 'Ajaccio', lat: 41.9192, lng: 8.7386 },
+            { name: 'Bavella', lat: 41.7833, lng: 9.2167 },
+          ],
           notes: 'Mediterrane natuur op zijn best: de kalksteenkliffen van Bonifacio, de granieten naalden van Bavella. Franse en Italiaanse invloeden lopen hier door elkaar. Verborgen parel: het Scandola natuurreservaat, alleen per boot te bezoeken.',
           transport_to_next: 'Veerboot Ajaccio/Bastia-Marseille of Toulon (Corsica Ferries/La Méridionale, circa 6-10 uur, vaak als nachtboot)',
         },
         {
           code: 'FR', name: 'France', days: 6, budget: 600, lat: 43.2965, lng: 5.3698,
-          destinations: ['Marseille', 'Arles', 'Nîmes', 'Pont du Gard'],
+          destinations: [
+            { name: 'Marseille', lat: 43.2965, lng: 5.3698 },
+            { name: 'Arles', lat: 43.6767, lng: 4.6278 },
+            { name: 'Nîmes', lat: 43.8367, lng: 4.3601 },
+            { name: 'Pont du Gard', lat: 43.9474, lng: 4.5350 },
+          ],
           notes: "Gallo-Romeinse geschiedenis (het aquaduct van de Pont du Gard, de arena's van Arles en Nîmes) in Provençaalse sfeer. Verborgen parel: de Camargue bij Arles, met wilde paarden en flamingo's, als natuurpauze.",
           transport_to_next: 'Einde van deze route — vlucht huiswaarts vanuit Marseille (of vlucht Marseille-Athene om verder te reizen naar Griekenland & Cyprus 🏺)',
         },
@@ -3825,7 +3976,7 @@ function rbBuildCorsicaSouthFranceRoute() {
     best_starting_month: 'November',
     description: "Twee Franse etappes die Bonifacio's kliffen en de Gallo-Romeinse monumenten van de Provence verbinden.",
     climate_summary: 'November, aan het einde van het Corsicaanse/Zuid-Franse seizoen maar nog goed begaanbaar.',
-    notes: "Losgesplitst van Mediterranean Civilizations Expedition 🏛️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen en budgetten zijn ongewijzigd overgenomen. Dit is het kortste van de zes losgesplitste blocks (11 dagen) — precies vakantie-lengte, prima als losse Trip te boeken in plaats van als Route Builder-expeditie. Vervolg op Malta & Italië 🏛️. Mediterranean Civilizations Expedition 🏛️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): geen fouten gevonden, geen wijziging nodig. Zie Mediterranean Civilizations Expedition 🏛️'s eigen notities.",
+    notes: "Losgesplitst van Mediterranean Civilizations Expedition 🏛️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen en budgetten zijn ongewijzigd overgenomen. Dit is het kortste van de zes losgesplitste blocks (11 dagen) — precies vakantie-lengte, prima als losse Trip te boeken in plaats van als Route Builder-expeditie. Vervolg op Malta & Italië 🏛️. Mediterranean Civilizations Expedition 🏛️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): geen fouten gevonden, geen wijziging nodig. Coördinaten per bestemming toegevoegd. Zie Mediterranean Civilizations Expedition 🏛️'s eigen notities.",
   });
 }
 
@@ -3839,19 +3990,34 @@ function rbBuildGreeceCyprusRoute() {
       countries: [
         {
           code: 'GR', name: 'Greece', days: 12, budget: 840, lat: 37.9838, lng: 23.7275,
-          destinations: ['Athene', 'Peloponnesos', 'Olympia', 'Delphi', 'Meteora'],
+          destinations: [
+            { name: 'Athene', lat: 37.9838, lng: 23.7275 },
+            { name: 'Peloponnesos', lat: 37.5685, lng: 22.8072 },
+            { name: 'Olympia', lat: 37.6384, lng: 21.6300 },
+            { name: 'Delphi', lat: 38.4824, lng: 22.5010 },
+            { name: 'Meteora', lat: 39.7217, lng: 21.6306 },
+          ],
           notes: 'Griekse oudheid, filosofie, democratie en mythologie op de belangrijkste locaties zelf: de Akropolis, het orakel van Delphi, de oorspronkelijke Olympische Spelen in Olympia. Verborgen parel: Monemvasia en Nafplio op de Peloponnesos, veel rustiger dan Athene. Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid — Athene→Delphi→Olympia→Meteora→Peloponnesos kruiste tussen noord (Delphi/Meteora) en zuid (Olympia/Peloponnesos) heen en weer, terwijl Piraeus (de ferryhaven naar Kreta) vlak bij Athene ligt, niet bij de Peloponnesos. Nu Athene→Peloponnesos/Olympia (zuid, één lus)→Delphi→Meteora (noord, één lus, eindigend met de terugrit naar Piraeus/Athene voor de ferry) — nog maar één retour in plaats van twee.',
           transport_to_next: 'Auto/bus terug naar Piraeus/Athene vanaf Meteora (≈350 km), dan nachtveerboot Piraeus-Heraklion (circa 7-9 uur) naar Kreta',
         },
         {
           code: 'GR', name: 'Greece', days: 7, budget: 450, lat: 35.3387, lng: 25.1442,
-          destinations: ['Heraklion', 'Knossos', 'Chania', 'Samariakloof'],
+          destinations: [
+            { name: 'Heraklion', lat: 35.3387, lng: 25.1442 },
+            { name: 'Knossos', lat: 35.2977, lng: 25.1628 },
+            { name: 'Chania', lat: 35.5138, lng: 24.0180 },
+            { name: 'Samariakloof', lat: 35.3167, lng: 23.9500 },
+          ],
           notes: 'De Minoïsche beschaving (Knossos) als oudste laag van de Griekse geschiedenis, gevolgd door eilandcultuur in Chania en een stevige wandeling door de Samariakloof. Verborgen parel: het roze zandstrand van Elafonisi, in het uiterste westen van het eiland.',
           transport_to_next: 'Vlucht Heraklion-Larnaca (meestal met overstap in Athene) — geen betrouwbare directe veerbootverbinding',
         },
         {
           code: 'CY', name: 'Cyprus', days: 5, budget: 400, lat: 35.1856, lng: 33.3823,
-          destinations: ['Paphos', 'Limassol', 'Nicosia'],
+          destinations: [
+            { name: 'Paphos', lat: 34.7720, lng: 32.4297 },
+            { name: 'Limassol', lat: 34.7071, lng: 33.0226 },
+            { name: 'Nicosia', lat: 35.1856, lng: 33.3823 },
+          ],
           notes: 'Griekse, Romeinse en Byzantijnse lagen op één eiland: de mozaïeken van Paphos (UNESCO), het Romeinse theater van Kourion bij Limassol als verborgen parel, en de gedeelde hoofdstad Nicosia.',
           transport_to_next: 'Einde van deze route — vlucht huiswaarts vanuit Larnaca (of vlucht Larnaca-Istanbul om verder te reizen naar Anatolië 🕌)',
         },
@@ -3862,7 +4028,7 @@ function rbBuildGreeceCyprusRoute() {
     best_starting_month: 'November',
     description: 'Van de Griekse oudheid op het vasteland via de Minoïsche beschaving van Kreta naar de Grieks-Romeins-Byzantijnse laag van Cyprus.',
     climate_summary: 'November-december: een aangenaam Grieks najaar, minder toeristen, nog warm genoeg voor de veerboot naar Kreta.',
-    notes: "Losgesplitst van Mediterranean Civilizations Expedition 🏛️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen en budgetten zijn ongewijzigd overgenomen. Vervolg op Corsica & Zuid-Frankrijk ⛵; wordt zelf gevolgd door Anatolië 🕌. Mediterranean Civilizations Expedition 🏛️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): Griekenland-vasteland omgedraaid (Peloponnesos/Olympia vóór Delphi/Meteora) om een drievoudige noord-zuid-omweg te vermijden — de Piraeus-ferry ligt vlak bij Athene, niet bij de Peloponnesos. Zie Mediterranean Civilizations Expedition 🏛️'s eigen notities voor de volledige onderbouwing.",
+    notes: "Losgesplitst van Mediterranean Civilizations Expedition 🏛️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen en budgetten zijn ongewijzigd overgenomen. Vervolg op Corsica & Zuid-Frankrijk ⛵; wordt zelf gevolgd door Anatolië 🕌. Mediterranean Civilizations Expedition 🏛️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): Griekenland-vasteland omgedraaid (Peloponnesos/Olympia vóór Delphi/Meteora) om een drievoudige noord-zuid-omweg te vermijden — de Piraeus-ferry ligt vlak bij Athene, niet bij de Peloponnesos. Coördinaten per bestemming toegevoegd. Zie Mediterranean Civilizations Expedition 🏛️'s eigen notities voor de volledige onderbouwing.",
   });
 }
 
@@ -3876,7 +4042,14 @@ function rbBuildAnatoliaRoute() {
       countries: [
         {
           code: 'TR', name: 'Turkey', days: 20, budget: 850, lat: 41.0082, lng: 28.9784,
-          destinations: ['Istanbul', 'Troje', 'Pergamon', 'Efeze', 'Pamukkale', 'Cappadocië'],
+          destinations: [
+            { name: 'Istanbul', lat: 41.0082, lng: 28.9784 },
+            { name: 'Troje', lat: 39.9575, lng: 26.2389 },
+            { name: 'Pergamon', lat: 39.1319, lng: 27.1836 },
+            { name: 'Efeze', lat: 37.9412, lng: 27.3641 },
+            { name: 'Pamukkale', lat: 37.9142, lng: 29.1187 },
+            { name: 'Cappadocië', lat: 38.6431, lng: 34.8283 },
+          ],
           notes: "Byzantijnse en Ottomaanse geschiedenis in Istanbul, Romeinse steden (Efeze, Pergamon) en oude Anatolische beschavingen (Troje) op één lijn, met de rotsformaties van Cappadocië en de kalksteenterrassen van Pamukkale als natuurlijke hoogtepunten. Verborgen parel: Assos en Aphrodisias, veel rustiger dan Efeze maar minstens zo indrukwekkend. Routelogica-fix (2026-08): de etappe eindigt in Cappadocië (≈730 km van Istanbul) — een binnenlandse terugvlucht naar Istanbul is nodig vóór het vertrek (geen directe Cappadocië-Caïro-verbinding bestaat). Zie Mediterranean Civilizations Expedition 🏛️'s eigen notities voor de volledige onderbouwing.",
           transport_to_next: 'Einde van deze route — binnenlandse vlucht Kayseri/Nevşehir-Istanbul, dan vlucht huiswaarts vanuit Istanbul (of vlucht Istanbul-Caïro om verder te reizen naar Egypte & Arabisch Schiereiland 🐪)',
         },
@@ -3887,7 +4060,7 @@ function rbBuildAnatoliaRoute() {
     best_starting_month: 'December',
     description: 'Byzantium, het Ottomaanse Rijk en de Romeinse steden van de Egeïsche kust, met Cappadocië als brug.',
     climate_summary: 'December: mild genoeg voor Istanbul en de Egeïsche kust, en de drukte van de zomer is voorbij.',
-    notes: "Losgesplitst van Mediterranean Civilizations Expedition 🏛️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen en budget zijn ongewijzigd overgenomen (20 dagen, na de 2026-07 tijdscontrole die dit van 14 naar 20 dagen ophoogde). Vervolg op Griekenland & Cyprus 🏺. Mediterranean Civilizations Expedition 🏛️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): binnenlandse terugvlucht Kayseri/Nevşehir-Istanbul toegevoegd vóór de vlucht naar Caïro (stond eerder onvermeld). Zie Mediterranean Civilizations Expedition 🏛️'s eigen notities voor de volledige onderbouwing.",
+    notes: "Losgesplitst van Mediterranean Civilizations Expedition 🏛️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen en budget zijn ongewijzigd overgenomen (20 dagen, na de 2026-07 tijdscontrole die dit van 14 naar 20 dagen ophoogde). Vervolg op Griekenland & Cyprus 🏺. Mediterranean Civilizations Expedition 🏛️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): binnenlandse terugvlucht Kayseri/Nevşehir-Istanbul toegevoegd vóór de vlucht naar Caïro (stond eerder onvermeld). Coördinaten per bestemming toegevoegd. Zie Mediterranean Civilizations Expedition 🏛️'s eigen notities voor de volledige onderbouwing.",
   });
 }
 
@@ -3901,31 +4074,54 @@ function rbBuildEgyptArabianPeninsulaRoute() {
       countries: [
         {
           code: 'EG', name: 'Egypt', days: 14, budget: 784, lat: 30.0444, lng: 31.2357,
-          destinations: ['Caïro', 'Gizeh', 'Luxor', 'Karnak', 'Aswan', 'Abu Simbel'],
+          destinations: [
+            { name: 'Caïro', lat: 30.0444, lng: 31.2357 },
+            { name: 'Gizeh', lat: 29.9765, lng: 31.1313 },
+            { name: 'Luxor', lat: 25.6872, lng: 32.6396 },
+            { name: 'Karnak', lat: 25.7188, lng: 32.6573 },
+            { name: 'Aswan', lat: 24.0889, lng: 32.8998 },
+            { name: 'Abu Simbel', lat: 22.3372, lng: 31.6258 },
+          ],
           notes: "De oud-Egyptische beschaving in haar geheel: piramides (Gizeh), tempels (Karnak, Abu Simbel) en de Nijl als verbindende rode draad. Verborgen parel: de Siwa-oase, ver van de gebruikelijke route maar wel een omweg waard. Reisadvies (2026-07): geel voor Caïro/Gizeh/Luxor/Aswan/Abu Simbel — gewoon te bezoeken; alleen (Noord-)Sinaï buiten deze route is oranje/rood. Routelogica-fix (2026-08): de terugrit Abu Simbel-Caïro-Nuweiba (eerder onvermeld) is nu expliciet benoemd. Zie Mediterranean Civilizations Expedition 🏛️'s eigen notities voor de volledige onderbouwing.",
           transport_to_next: 'Terug naar Caïro (Aswan/Abu Simbel-Caïro, ≈850 km), dan bus/auto Caïro-Nuweiba (≈450 km, ≈7u), dan veerboot Nuweiba-Aqaba (alternatief: rechtstreekse vlucht Caïro-Amman) — kortste route naar Jordanië zonder om te vliegen via de Golf',
         },
         {
           code: 'JO', name: 'Jordan', days: 8, budget: 500, lat: 31.9454, lng: 35.9284,
-          destinations: ['Amman', 'Jerash', 'Petra', 'Wadi Rum', 'Dode Zee'],
+          destinations: [
+            { name: 'Amman', lat: 31.9454, lng: 35.9284 },
+            { name: 'Jerash', lat: 32.2811, lng: 35.8994 },
+            { name: 'Petra', lat: 30.3285, lng: 35.4444 },
+            { name: 'Wadi Rum', lat: 29.5766, lng: 35.4206 },
+            { name: 'Dode Zee', lat: 31.5590, lng: 35.4732 },
+          ],
           notes: "Nabateese handelsroutes (Petra), Romeinse geschiedenis (Jerash) en de woestijn van Wadi Rum. December geeft aangename dagtemperaturen voor de wandeling naar de Schatkamer en voor kamperen in Wadi Rum. Praktische tip: de Jordan Pass (~50-60 JOD, ruim vooraf online kopen) bundelt toegang tot Petra/Jerash/Wadi Rum/40 andere sites en scheldt de losse 40 JOD-visumfee kwijt bij een verblijf van 3+ nachten. ⚠️ Reisadvies (juli 2026): oranje voor heel Jordanië (normaal alleen de grensstreek met Syrië/Irak) door het regionale Iran-Israël/VS-conflict — check nederlandwereldwijd.nl vlak voor vertrek, dit kan alweer zijn gewijzigd.",
           transport_to_next: 'Vlucht Amman-Muscat — geen landroute, overland via Saoedi-Arabië is visumtechnisch onpraktisch',
         },
         {
           code: 'OM', name: 'Oman', days: 7, budget: 770, lat: 23.588, lng: 58.3829,
-          destinations: ['Muscat', 'Nizwa', 'Jebel Shams', 'Wahiba Sands'],
+          destinations: [
+            { name: 'Muscat', lat: 23.5880, lng: 58.3829 },
+            { name: 'Nizwa', lat: 22.9333, lng: 57.5333 },
+            { name: 'Jebel Shams', lat: 23.2394, lng: 57.2661 },
+            { name: 'Wahiba Sands', lat: 22.0667, lng: 58.5000 },
+          ],
           notes: 'Arabische handelsroutes, forten (Nizwa) en zowel bergen (Jebel Shams, de "Grand Canyon van Arabië") als woestijn (Wahiba Sands) op korte afstand van elkaar. Verborgen parel: Bahla Fort en de eeuwenoude falaj-irrigatiekanalen bij Nizwa (beide UNESCO). Prijscheck (2026-07): Jebel Shams en Wahiba Sands zijn niet met openbaar vervoer te doen — een huurauto (4x4) of tour is hier verplicht. ⚠️ Reisadvies (juli 2026): oranje voor Musandam/Duqm/Salalah/Sohar, maar geel — dit hele traject — voor Muscat/Nizwa/Jebel Shams/Wahiba Sands. Check nederlandwereldwijd.nl vlak voor vertrek, de situatie is volatiel.',
           transport_to_next: 'Terug naar Muscat (≈200 km/≈3u vanaf Wahiba Sands — routelogica-fix 2026-08, search-bevestigd: dit stond eerder onvermeld), dan vlucht Muscat-Manama — korte Golfvlucht',
         },
         {
           code: 'BH', name: 'Bahrain', days: 3, budget: 300, lat: 26.2285, lng: 50.586,
-          destinations: ["Qal'at al-Bahrein (Bahrein Fort)", 'Bahrain National Museum', 'Al Fateh Grand Mosque', 'Tree of Life'],
+          destinations: [
+            { name: "Qal'at al-Bahrein (Bahrein Fort)", lat: 26.2333, lng: 50.5217 },
+            { name: 'Bahrain National Museum', lat: 26.2367, lng: 50.5936 },
+            { name: 'Al Fateh Grand Mosque', lat: 26.2361, lng: 50.5464 },
+            { name: 'Tree of Life', lat: 25.9167, lng: 50.5833 },
+          ],
           notes: "Qal'at al-Bahrein (UNESCO) was de hoofdstad van de Dilmun-beschaving, een Bronstijd-handelsbeschaving die al rond 2000 v.Chr. tussen Mesopotamië en de Indusvallei handelde. De Tree of Life, een eeuwenoude boom die op onverklaarde wijze midden in de woestijn overleeft, als natuurlijke curiositeit. ⚠️ Reisadvies (juli 2026): ROOD — niet reizen. Iran voert aanvallen uit op militaire doelen in Bahrein, met waarschuwingen voor mogelijke aanslagen in centraal Manama; geen Nederlandse ambassade in Bahrein (dichtstbijzijnde: Koeweit). Op dit moment een harde no-go, geen budget-/planningskwestie — check nederlandwereldwijd.nl vlak voor vertrek.",
           transport_to_next: 'Vlucht Manama-Doha — korte Golfvlucht',
         },
         {
           code: 'QA', name: 'Qatar', days: 3, budget: 315, lat: 25.2854, lng: 51.531,
-          destinations: ['Doha'],
+          destinations: [{ name: 'Doha', lat: 25.2854, lng: 51.5310 }],
           notes: '⚠️ Reisadvies (juli 2026): oranje — Qatar is geraakt door Iraanse raketten/drones gericht op Amerikaanse doelen. Reizen wordt alleen aangeraden als het noodzakelijk is. Check nederlandwereldwijd.nl vlak voor vertrek, de situatie kan alweer zijn gewijzigd. Bewust modern en hedendaags als afsluiting: islamitische architectuur (Museum of Islamic Art) als contrast met de duizenden jaren geschiedenis eerder in de reis.',
           transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Doha (Hamad International Airport) naar Nederland',
         },
@@ -3936,7 +4132,7 @@ function rbBuildEgyptArabianPeninsulaRoute() {
     best_starting_month: 'December',
     description: 'Van het oude Egypte via de Nabateese handelsroutes van Jordanië naar de Arabische handelswereld van Oman, Bahrein en Qatar.',
     climate_summary: 'December-januari is het beste seizoen voor de Egyptische/Jordaanse woestijn en de Golf — dagen rond 20-28°C in plaats van de 40+°C van de zomer.',
-    notes: "Losgesplitst van Mediterranean Civilizations Expedition 🏛️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen (inclusief alle 2026-07 reisadvies-vlaggen op Jordanië/Oman/Bahrein/Qatar — zie de landnotities). Egypte komt hiermee in twéé losse Route Builder-expedities voor — ook in Africa Grand Tour 🌍's 'Hoorn van Afrika & Egypte'-etappe — exact het 'block komt in meerdere expedities terug'-patroon uit de modularisatie-analyse. Qatar is qua thema de uitzondering op de rest van deze route (puur modern, geen oude geschiedenis) en de eerste kandidaat om te laten vervallen als de reis korter moet — zie de oorspronkelijke route-notities. Vervolg op Anatolië 🕌. Mediterranean Civilizations Expedition 🏛️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): twee onvermelde terugritten nu expliciet benoemd — Abu Simbel-Caïro-Nuweiba (Egypte→Jordanië-ferry) en Wahiba Sands-Muscat (Oman→Bahrein-vlucht). Jordanië's Dode Zee-positie geverifieerd, al optimaal. Zie Mediterranean Civilizations Expedition 🏛️'s eigen notities voor de volledige onderbouwing.",
+    notes: "Losgesplitst van Mediterranean Civilizations Expedition 🏛️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen (inclusief alle 2026-07 reisadvies-vlaggen op Jordanië/Oman/Bahrein/Qatar — zie de landnotities). Egypte komt hiermee in twéé losse Route Builder-expedities voor — ook in Africa Grand Tour 🌍's 'Hoorn van Afrika & Egypte'-etappe — exact het 'block komt in meerdere expedities terug'-patroon uit de modularisatie-analyse. Qatar is qua thema de uitzondering op de rest van deze route (puur modern, geen oude geschiedenis) en de eerste kandidaat om te laten vervallen als de reis korter moet — zie de oorspronkelijke route-notities. Vervolg op Anatolië 🕌. Mediterranean Civilizations Expedition 🏛️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): twee onvermelde terugritten nu expliciet benoemd — Abu Simbel-Caïro-Nuweiba (Egypte→Jordanië-ferry) en Wahiba Sands-Muscat (Oman→Bahrein-vlucht). Jordanië's Dode Zee-positie geverifieerd, al optimaal. Coördinaten per bestemming toegevoegd. Zie Mediterranean Civilizations Expedition 🏛️'s eigen notities voor de volledige onderbouwing.",
   });
 }
 
