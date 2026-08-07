@@ -12,6 +12,23 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **North America Grand Traverse 🌎 routelogica-herziening (2026-08)** — achtste expeditie uit de
+  `ROUTE_LOGIC_REVIEW.md`-playbook. Twee etappes bleken bij verificatie al optimaal (Atlantic Canada's
+  Halifax-hub-en-spoke-volgorde en de Canadian Rockies' Yoho-omweg/Mount Robson-Whistler-traject) —
+  expliciet gecheckt in plaats van aangenomen. Twee echte fixes gevonden: **Pacific Northwest** had
+  een oost-west-zigzag (Seattle→Olympic NP→Mount Rainier→Oregon Coast, drie keer de regio gekruist
+  omdat er geen brug over Puget Sound loopt) — nu Seattle→Mount Rainier→Olympic NP (Hurricane Ridge
+  dan Hoh Rainforest)→zuidwaarts via de US-101, wat de duurste verbinding (Hoh-Rainier, ≈238 mijl)
+  vervangt door de kortere Rainier-Port Angeles (≈174 mijl), scheelt ≈60+ mijl/1,5 uur. **California
+  Finale**: de terugrit van Sequoia & Kings Canyon naar San Francisco (≈270 mijl/≈5 uur) stond nergens
+  vermeld, alleen "einde van de expeditie" — nu expliciet benoemd als eigen reisdag; Fresno (FAT) ligt
+  dichterbij maar heeft geen directe vlucht naar Amsterdam, dus SFO blijft de juiste keuze. Zelfde twee
+  fixes ook toegepast op de standalone companion-route VS Westkust Roadtrip 🌉. Coördinaten per
+  bestemming toegevoegd aan alle 6 hoofdetappes en de 3 split-companions (Oost-Canada 🍁, West-Canada:
+  Rockies & Vancouver 🏔️, VS Westkust Roadtrip 🌉). Landen/dagen/budget ongewijzigd. Toegepast via
+  `rbMigrateNorthAmericaRouteLogicOverhaul()` — wholesale-replace, zelfde patroon als deze route's
+  eerdere migraties (prijsverificatie-ronde 1, routelijn-coördinaten-ronde 2), nu ook uitgebreid naar
+  de drie split-companions die dit keer voor het eerst een eigen migratie nodig hadden.
 - **British Isles & Celtic Coast Expedition 🍀 routelogica-herziening (2026-08)** — zevende expeditie
   uit de `ROUTE_LOGIC_REVIEW.md`-playbook, tweede zelf-rijdende lus. Grootste vondst: het 2026-07-
   ontwerp had Isle of Man al terecht "genest" in de Noord-Engeland-etappe, maar op het verkeerde punt

@@ -2,8 +2,8 @@
 
 Status: **Eurasia Grand Tour 🌏, Patagonia & Antarctica Expedition 🧊, India & Himalaya Expedition
 🏔️, Nordic Arctic Expedition ❄️, Caribbean & Amazon Expedition 🌴, Central European Grand Roadtrip
-🚗 en British Isles & Celtic Coast Expedition 🍀 klaar (2026-08)**, de andere 6 originele expedities
-nog niet.
+🚗, British Isles & Celtic Coast Expedition 🍀 en North America Grand Traverse 🌎 klaar (2026-08)**,
+de andere 5 originele expedities nog niet.
 Dit document legt vast wát we bij Eurasia deden en hóe je dat 1-op-1 herhaalt — pak deze aanpak op
 zodra Youri aangeeft dat hij een volgende expeditie wil laten doornemen, geen nieuwe analyse nodig.
 
@@ -226,12 +226,41 @@ gebruikt, net als zijn twee eerdere correcties, een wholesale-replace-migratie (
 omdat die twee eerdere migraties (prijsverificatie-ronde 3, routelijn-coördinaten-ronde 2) al hetzelfde
 patroon vastlegden voor deze specifieke route.
 
-## De overige 6 originele expedities
+## North America Grand Traverse: wat er gebeurde (2026-08), als achtste referentie — eerste keer dat een uitgebreide check "al optimaal" opleverde voor meerdere etappes tegelijk
+
+Zelfde stappenplan. Youri: niets van deze route eerder bezocht, geen specifieke wensen.
+
+Twee van de vier gecheckte punten bleken bij onderzoek al optimaal — expliciet geverifieerd, niet
+aangenomen (zelfde discipline als Central European's Wrocław-vraagstuk): Atlantic Canada's
+Halifax-hub-en-spoke-volgorde (Peggy's Cove/Lunenburg vs. Cape Breton) maakt geen verschil in totale
+afstand, welke spoke ook eerst gaat; en de Canadian Rockies' vermeende Yoho-omweg en Mount
+Robson-Whistler-"omweg" bleken beide onvermijdelijk/al op de kortste weg te liggen.
+
+Twee echte fixes wel gevonden, in de VS-etappes: **Pacific Northwest** had een oost-west-zigzag
+(Seattle→Olympic NP→Mount Rainier→Oregon Coast) — er loopt geen brug over Puget Sound, dus de oude
+volgorde kruiste de regio drie keer. Nu Seattle→Mount Rainier→Olympic NP→zuidwaarts via de US-101.
+**California Finale**: de terugrit Sequoia-San Francisco (≈270 mijl) stond nergens vermeld, alleen
+"einde van de expeditie" — nu expliciet benoemd i.p.v. verzwegen.
+
+**Les**: "check, neem niet aan" geldt ook averechts — een grondig onderzoek kan net zo goed uitwijzen
+dat een vermoede omweg (Yoho, Mount Robson) helemaal geen omweg is, als dat het een echte bug
+blootlegt. Beide uitkomsten zijn evenveel waard; het punt is dat je het nagerekend hebt in plaats van
+op het oog geoordeeld.
+
+**Eerste keer dit een migratie nodig had voor de split-companions zelf**: North America Grand
+Traverse heeft drie 2026-07 split-companions (Oost-Canada 🍁, West-Canada: Rockies & Vancouver 🏔️,
+VS Westkust Roadtrip 🌉) die nog nooit een eigen correctie hadden gehad sinds hun seed — dus dit was
+de eerste keer dat ze zelf ook een migratie nodig hadden (niet alleen de hoofdexpeditie), voor zowel
+de coördinaten als (bij VS Westkust Roadtrip 🌉) de Pacific Northwest/California-fix.
+
+Zie `CHANGELOG.md` ("North America Grand Traverse 🌎 routelogica-herziening") voor de volledige
+uitkomst, en `rbMigrateNorthAmericaRouteLogicOverhaul()` voor het code-patroon — wholesale-replace,
+zelfde patroon als deze route's eerdere migraties, nu uitgebreid met de drie split-companions.
+
+## De overige 5 originele expedities
 
 In willekeurige volgorde van omvang (kleiner = sneller te doen, geen inhoudelijke prioriteit):
 - **West & Central Africa Expedition 🌍**
-- **North America Grand Traverse 🌎** — let op: Canada/VS komen meerdere keren voor (eigen
-  bouwfunctie, geen gedeelde contenttabel) — zelfde patroon als het nieuwe Maleisië-blok bij Eurasia.
 - **Oceania Grand Expedition 🌊** — let op: Australië komt tweemaal voor (klimaatzones).
 - **Pan-American Grand Tour 🌎** — groot (15 landen), plus 4 split-companions.
 - **Mediterranean Civilizations Expedition 🏛️** — grootst (18 etappes), plus 6 split-companions.

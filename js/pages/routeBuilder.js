@@ -55,6 +55,7 @@ const RB_MIGRATE_FLAG_2026_08_NORDIC_ARCTIC_OVERHAUL = 'atlas_grand_trips_migrat
 const RB_MIGRATE_FLAG_2026_08_CARIBBEAN_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_caribbean_overhaul_v1';
 const RB_MIGRATE_FLAG_2026_08_CENTRAL_EUROPE_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_central_europe_overhaul_v1';
 const RB_MIGRATE_FLAG_2026_08_BRITISH_ISLES_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_british_isles_overhaul_v1';
+const RB_MIGRATE_FLAG_2026_08_NORTH_AMERICA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_north_america_overhaul_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -116,6 +117,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateCaribbeanAmazonRouteLogicOverhaul();
   rbMigrateCentralEuropeRouteLogicOverhaul();
   rbMigrateBritishIslesRouteLogicOverhaul();
+  rbMigrateNorthAmericaRouteLogicOverhaul();
   rbBindEvents();
 
   try {
@@ -2031,7 +2033,12 @@ function rbBuildNorthAmericaRoute() {
       budget: 900,
       countries: [{
         code: 'CA', name: 'Canada', days: 8, budget: 1200, lat: 44.6488, lng: -63.5752,
-        destinations: ['Halifax', "Peggy's Cove", 'Lunenburg', 'Cape Breton Island & Cabot Trail'],
+        destinations: [
+          { name: 'Halifax', lat: 44.6488, lng: -63.5752 },
+          { name: "Peggy's Cove", lat: 44.4918, lng: -63.9148 },
+          { name: 'Lunenburg', lat: 44.3767, lng: -64.3097 },
+          { name: 'Cape Breton Island & Cabot Trail', lat: 46.2036, lng: -60.6136 },
+        ],
         transport_to_next: "Vlucht Halifax-Quebec City (~2 uur) — geen praktische overlandroute gezien de afstand door onbewoond Oost-Canada",
         notes: 'Startblok: vlucht Nederland-Halifax. Kennismaking met Canada via ruige Atlantische kust, vissersdorpjes, vuurtorens en Keltisch/Acadische cultuur op Cape Breton. Prijs geverifieerd (2026-07), klopt. eTA (bij inreis per vlucht) kost slechts ~€4,70, 5 jaar geldig.',
       }],
@@ -2043,7 +2050,12 @@ function rbBuildNorthAmericaRoute() {
       budget: 1500,
       countries: [{
         code: 'CA', name: 'Canada', days: 10, budget: 1675, lat: 46.8139, lng: -71.208,
-        destinations: ['Quebec City (Vieux-Québec)', 'Montreal (Old Port & Mile End)', 'Ottawa (Parliament Hill & musea)', 'Toronto (skyline, met Niagara Falls als dagtrip)'],
+        destinations: [
+          { name: 'Quebec City (Vieux-Québec)', lat: 46.8139, lng: -71.2080 },
+          { name: 'Montreal (Old Port & Mile End)', lat: 45.5019, lng: -73.5674 },
+          { name: 'Ottawa (Parliament Hill & musea)', lat: 45.4215, lng: -75.6972 },
+          { name: 'Toronto (skyline, met Niagara Falls als dagtrip)', lat: 43.6532, lng: -79.3832 },
+        ],
         transport_to_next: "Trein (Via Rail) Quebec City-Montreal-Ottawa-Toronto, daarna vlucht Toronto-Calgary (~4 uur) om de huurauto voor de Rockies op te halen",
         notes: 'Geen lange autorit door Canada: de treinverbindingen tussen deze vier steden zijn snel en comfortabel. Franse cultuur en koloniale geschiedenis in Quebec City, eten en moderne stad in Montreal, politiek en musea in Ottawa, skyline en Niagara Falls vanuit Toronto.',
       }],
@@ -2055,7 +2067,15 @@ function rbBuildNorthAmericaRoute() {
       budget: 2600,
       countries: [{
         code: 'CA', name: 'Canada', days: 17, budget: 3400, lat: 51.1784, lng: -115.5708,
-        destinations: ['Banff National Park', 'Lake Louise & Moraine Lake', 'Yoho National Park (Emerald Lake)', 'Icefields Parkway', 'Jasper National Park', 'Mount Robson Provincial Park', 'Whistler'],
+        destinations: [
+          { name: 'Banff National Park', lat: 51.4968, lng: -115.9281 },
+          { name: 'Lake Louise & Moraine Lake', lat: 51.4254, lng: -116.1773 },
+          { name: 'Yoho National Park (Emerald Lake)', lat: 51.4370, lng: -116.5326 },
+          { name: 'Icefields Parkway', lat: 52.2000, lng: -117.2000 },
+          { name: 'Jasper National Park', lat: 52.8737, lng: -118.0814 },
+          { name: 'Mount Robson Provincial Park', lat: 53.1216, lng: -119.1465 },
+          { name: 'Whistler', lat: 50.1163, lng: -122.9574 },
+        ],
         transport_to_next: 'Auto Whistler-Vancouver (~2 uur), huurauto inleveren in Vancouver — dezelfde huurauto blijft binnen Canada, dus geen one-way- of grenskosten',
         notes: 'Het natuurhoogtepunt van de hele expeditie: gletsjermeren, een van de mooiste wegen ter wereld (Icefields Parkway) en goede kans op wildlife (elanden, beren, bighorn sheep). Huurauto 2 wordt hier opgehaald in Calgary. Prijs geverifieerd (2026-07), klopt (mits ruim vooraf geboekt in hoogseizoen). ⚠️ Moraine Lake Road is alleen bereikbaar met de verplichte Parks Canada-shuttle (geen privéauto toegestaan) — boeking opent doorgaans medio april, beperkt aantal plekken, ruim vooraf regelen.',
       }],
@@ -2067,7 +2087,12 @@ function rbBuildNorthAmericaRoute() {
       budget: 700,
       countries: [{
         code: 'CA', name: 'Canada', days: 5, budget: 875, lat: 49.2827, lng: -123.1207,
-        destinations: ['Stanley Park', 'Granville Island', 'North Shore (Grouse Mountain / Capilano Suspension Bridge)', 'Gastown & Kitsilano Beach'],
+        destinations: [
+          { name: 'Stanley Park', lat: 49.3017, lng: -123.1444 },
+          { name: 'Granville Island', lat: 49.2714, lng: -123.1348 },
+          { name: 'North Shore (Grouse Mountain / Capilano Suspension Bridge)', lat: 49.3796, lng: -123.0902 },
+          { name: 'Gastown & Kitsilano Beach', lat: 49.2837, lng: -123.1064 },
+        ],
         transport_to_next: "Trein (Amtrak Cascades) of bus Vancouver-Seattle (~4 uur) — eenvoudige grensovergang; in Seattle wordt huurauto 3 voor de VS-roadtrip opgehaald",
         notes: 'Laatste Canadese stop: stad tussen bergen en zee, goed te combineren met bergen (North Shore) en water (Stanley Park, Granville Island) zonder huurauto.',
       }],
@@ -2079,9 +2104,15 @@ function rbBuildNorthAmericaRoute() {
       budget: 2200,
       countries: [{
         code: 'US', name: 'United States', days: 15, budget: 3000, lat: 47.6062, lng: -122.3321,
-        destinations: ['Seattle (Pike Place Market, Space Needle)', 'Olympic National Park (Hoh Rainforest & Hurricane Ridge)', 'Mount Rainier National Park', 'Oregon Coast (Cannon Beach, Astoria)', 'Redwood National & State Parks'],
+        destinations: [
+          { name: 'Seattle (Pike Place Market, Space Needle)', lat: 47.6062, lng: -122.3321 },
+          { name: 'Mount Rainier National Park', lat: 46.8523, lng: -121.7603 },
+          { name: 'Olympic National Park (Hurricane Ridge & Hoh Rainforest)', lat: 47.9709, lng: -123.4995 },
+          { name: 'Oregon Coast (Cannon Beach, Astoria)', lat: 45.8918, lng: -123.9615 },
+          { name: 'Redwood National & State Parks', lat: 41.2132, lng: -124.0046 },
+        ],
         transport_to_next: 'Auto verder naar San Francisco (~5-6 uur vanaf de Redwoods), huurauto inleveren in San Francisco',
-        notes: 'Amerikaanse natuur in het groot: regenwoud, vulkanen, ruige kustlijn en de hoogste bomen ter wereld. Huurauto 3 wordt hier opgehaald in Seattle. Prijs geverifieerd (2026-07), klopt. ESTA is per 30 sept. 2025 verhoogd naar $40,27 (was $21) — 2 jaar geldig.',
+        notes: "Amerikaanse natuur in het groot: regenwoud, vulkanen, ruige kustlijn en de hoogste bomen ter wereld. Huurauto 3 wordt hier opgehaald in Seattle. Prijs geverifieerd (2026-07), klopt. ESTA is per 30 sept. 2025 verhoogd naar $40,27 (was $21) — 2 jaar geldig. Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid (was Seattle→Olympic NP→Mount Rainier→Oregon Coast) — dat kruiste de regio drie keer oost-west (Olympic NP ligt het schiereiland op, ver ten westen van Seattle; Mount Rainier juist ten zuidoosten; er loopt geen brug over Puget Sound, dus je moet sowieso via Olympia/Tacoma). Nu Seattle→Mount Rainier→Olympic NP (Hurricane Ridge dan Hoh Rainforest)→zuidwaarts via de US-101 langs de Washington-kust naar Oregon — dat vervangt de duurste verbinding (Hoh-Rainier, ≈238 mijl) door de kortere Rainier-Port Angeles (≈174 mijl), en de westkant van het schiereiland sluit al direct aan op de US-101 zuidwaarts, dus geen tweede omweg landinwaarts. Scheelt ≈60+ mijl/1,5 uur en maakt er één doorlopende lus van i.p.v. een zigzag.",
       }],
       note: 'Huurauto 3 (Seattle-San Francisco). Rustig tempo: liever 2-3 nachten bij een park dan elke dag doorrijden — dit is een kustroute, geen race.',
     },
@@ -2091,7 +2122,11 @@ function rbBuildNorthAmericaRoute() {
       budget: 2100,
       countries: [{
         code: 'US', name: 'United States', days: 14, budget: 2675, lat: 37.7749, lng: -122.4194,
-        destinations: ['San Francisco (Golden Gate Bridge, Alcatraz, Mission District)', 'Yosemite Valley', 'Sequoia & Kings Canyon National Parks'],
+        destinations: [
+          { name: 'San Francisco (Golden Gate Bridge, Alcatraz, Mission District)', lat: 37.7749, lng: -122.4194 },
+          { name: 'Yosemite Valley', lat: 37.7459, lng: -119.5936 },
+          { name: 'Sequoia & Kings Canyon National Parks', lat: 36.4864, lng: -118.5658 },
+        ],
         transport_to_next: 'Einde van de expeditie — terugvlucht vanuit San Francisco (SFO) naar Nederland',
         notes: "Van de stad direct de bergen in: Yosemite's granieten wanden en watervallen, gevolgd door de gigantische sequoia's van Sequoia/Kings Canyon. Geen nieuwe huurauto nodig — dagtochten of een korte huurperiode volstaan vanuit San Francisco.",
       }],
@@ -2110,7 +2145,8 @@ function rbBuildNorthAmericaRoute() {
       'Plaats binnen de wereldreisplanning: vult Noord-Amerika in naast Eurasia Grand Tour, Pan-American Grand Tour, Africa Grand Tour en de Pacific/overige routes — samen dekken deze de grote continentale blokken van de wereldreis. Dagen/budget/bestemmingen/transport hierboven zijn een eerste research-opzet (net als bij de andere expedities), nog niet getoetst aan actuele prijzen, grensregels of persoonlijke voorkeuren — behandel dit als een eerste concept om te verfijnen, geen boekbaar plan.\n\n' +
       'Tijdscontrole (2026-07): kleine ophogingen bij vrijwel elke etappe (54→69 dagen totaal), vooral de Canadian Rockies (13→17, de eigen notitie "2-3 nachten per park" telt bij 6 parkgebieden sneller op dan gedacht) en de twee westkust-roadtrip-etappes (11→15 en 11→14, Yosemite en San Francisco verdienen allebei meer dan een paar dagen). Etappes en volgorde ongewijzigd; de juni-startmaand en klimaatredenering hierboven blijven kloppen met de extra dagen.\n\n' +
       'Vervolg (2026-07): budgetten per etappe meegeschaald met de aangepaste dagen.\n\n' +
-      "Prijzen/visum/reisadvies-verificatie (2026-07): alle 6 etappes bevestigd accuraat, geen budgetcorrecties nodig. eTA Canada ~€4,70 (5 jaar); ESTA VS onlangs verhoogd naar $40,27 (2 jaar). Moraine Lake Road: verplichte Parks Canada-shuttle, ruim vooraf boeken. Zie de losse etappe-notities hierboven voor details.",
+      "Prijzen/visum/reisadvies-verificatie (2026-07): alle 6 etappes bevestigd accuraat, geen budgetcorrecties nodig. eTA Canada ~€4,70 (5 jaar); ESTA VS onlangs verhoogd naar $40,27 (2 jaar). Moraine Lake Road: verplichte Parks Canada-shuttle, ruim vooraf boeken. Zie de losse etappe-notities hierboven voor details.\n\n" +
+      "Routelogica-herziening (2026-08, search-bevestigd, achtste expeditie uit ROUTE_LOGIC_REVIEW.md): Atlantic Canada (Halifax-hub, korte en lange spoke) en de Canadian Rockies-etappe (Yoho-omweg, Mount Robson-Whistler) bleken al optimaal — geen wijziging nodig, expliciet geverifieerd i.p.v. aangenomen. Wel twee echte fixes: (1) **Pacific Northwest** had een oost-west-zigzag (Seattle→Olympic NP→Mount Rainier→Oregon Coast) — Olympic NP ligt ver ten westen van Seattle op het schiereiland, Mount Rainier juist ten zuidoosten, en er loopt geen brug over Puget Sound, dus de oude volgorde kruiste de regio drie keer. Nu Seattle→Mount Rainier→Olympic NP (Hurricane Ridge dan Hoh Rainforest)→zuidwaarts via de US-101, wat de duurste verbinding (Hoh-Rainier, ≈238 mijl) vervangt door de kortere Rainier-Port Angeles (≈174 mijl) — scheelt ≈60+ mijl/1,5 uur. (2) **California Finale**: de terugrit van Sequoia & Kings Canyon naar San Francisco (≈270 mijl/≈5 uur) stond nergens vermeld, alleen \"einde van de expeditie\" — nu expliciet benoemd als eigen reisdag vóór de terugvlucht. Fresno (FAT) ligt dichterbij maar heeft geen directe vlucht naar Amsterdam, dus SFO blijft de juiste keuze ondanks de rit. Zelfde twee fixes ook toegepast op de standalone companion-route VS Westkust Roadtrip 🌉 (deelt deze twee etappes, niet via een gedeelde contenttabel maar hand-authored). Landen/dagen/budget ongewijzigd — alleen volgorde en transport-notities aangepast.",
   });
 }
 
@@ -3914,7 +3950,12 @@ function rbBuildEasternCanadaRoute() {
       budget: 900,
       countries: [{
         code: 'CA', name: 'Canada', days: 8, budget: 1200, lat: 44.6488, lng: -63.5752,
-        destinations: ['Halifax', "Peggy's Cove", 'Lunenburg', 'Cape Breton Island & Cabot Trail'],
+        destinations: [
+          { name: 'Halifax', lat: 44.6488, lng: -63.5752 },
+          { name: "Peggy's Cove", lat: 44.4918, lng: -63.9148 },
+          { name: 'Lunenburg', lat: 44.3767, lng: -64.3097 },
+          { name: 'Cape Breton Island & Cabot Trail', lat: 46.2036, lng: -60.6136 },
+        ],
         transport_to_next: 'Vlucht Halifax-Quebec City (~2 uur) — geen praktische overlandroute gezien de afstand door onbewoond Oost-Canada',
         notes: 'Startblok: vlucht Nederland-Halifax. Kennismaking met Canada via ruige Atlantische kust, vissersdorpjes, vuurtorens en Keltisch/Acadische cultuur op Cape Breton. Prijs geverifieerd (2026-07), klopt. eTA (bij inreis per vlucht) kost slechts ~€4,70, 5 jaar geldig.',
       }],
@@ -3926,7 +3967,12 @@ function rbBuildEasternCanadaRoute() {
       budget: 1500,
       countries: [{
         code: 'CA', name: 'Canada', days: 10, budget: 1675, lat: 46.8139, lng: -71.208,
-        destinations: ['Quebec City (Vieux-Québec)', 'Montreal (Old Port & Mile End)', 'Ottawa (Parliament Hill & musea)', 'Toronto (skyline, met Niagara Falls als dagtrip)'],
+        destinations: [
+          { name: 'Quebec City (Vieux-Québec)', lat: 46.8139, lng: -71.2080 },
+          { name: 'Montreal (Old Port & Mile End)', lat: 45.5019, lng: -73.5674 },
+          { name: 'Ottawa (Parliament Hill & musea)', lat: 45.4215, lng: -75.6972 },
+          { name: 'Toronto (skyline, met Niagara Falls als dagtrip)', lat: 43.6532, lng: -79.3832 },
+        ],
         transport_to_next: 'Einde van deze route — terugvlucht vanuit Toronto (of vlucht Toronto-Calgary om verder te reizen naar West-Canada: Rockies & Vancouver 🏔️)',
         notes: 'Geen lange autorit door Canada: de treinverbindingen tussen deze vier steden zijn snel en comfortabel. Franse cultuur en koloniale geschiedenis in Quebec City, eten en moderne stad in Montreal, politiek en musea in Ottawa, skyline en Niagara Falls vanuit Toronto.',
       }],
@@ -3937,7 +3983,8 @@ function rbBuildEasternCanadaRoute() {
     best_starting_month: 'Juni',
     description: 'Van de ruige Atlantische kust van Nova Scotia via de trein naar de Franse/koloniale steden Quebec City, Montreal, Ottawa en Toronto.',
     climate_summary: 'Begin juni geeft lange dagen en blijft ruim vóór het Atlantische orkaanseizoen dat richting Nova Scotia in augustus-oktober oploopt.',
-    notes: 'Losgesplitst van North America Grand Traverse 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen. Vervolg op deze route: West-Canada: Rockies & Vancouver 🏔️. North America Grand Traverse 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+    notes: 'Losgesplitst van North America Grand Traverse 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen. Vervolg op deze route: West-Canada: Rockies & Vancouver 🏔️. North America Grand Traverse 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\n' +
+      'Routelogica-herziening (2026-08): Halifax-hub-en-spoke-volgorde geverifieerd, al optimaal — geen wijziging nodig. Coördinaten per bestemming toegevoegd. Zie North America Grand Traverse 🌎\'s eigen notities voor de volledige onderbouwing.',
   });
 }
 
@@ -3949,7 +3996,15 @@ function rbBuildWesternCanadaRockiesVancouverRoute() {
       budget: 2600,
       countries: [{
         code: 'CA', name: 'Canada', days: 17, budget: 3400, lat: 51.1784, lng: -115.5708,
-        destinations: ['Banff National Park', 'Lake Louise & Moraine Lake', 'Yoho National Park (Emerald Lake)', 'Icefields Parkway', 'Jasper National Park', 'Mount Robson Provincial Park', 'Whistler'],
+        destinations: [
+          { name: 'Banff National Park', lat: 51.4968, lng: -115.9281 },
+          { name: 'Lake Louise & Moraine Lake', lat: 51.4254, lng: -116.1773 },
+          { name: 'Yoho National Park (Emerald Lake)', lat: 51.4370, lng: -116.5326 },
+          { name: 'Icefields Parkway', lat: 52.2000, lng: -117.2000 },
+          { name: 'Jasper National Park', lat: 52.8737, lng: -118.0814 },
+          { name: 'Mount Robson Provincial Park', lat: 53.1216, lng: -119.1465 },
+          { name: 'Whistler', lat: 50.1163, lng: -122.9574 },
+        ],
         transport_to_next: 'Auto Whistler-Vancouver (~2 uur), huurauto inleveren in Vancouver — dezelfde huurauto blijft binnen Canada, dus geen one-way- of grenskosten',
         notes: 'Het natuurhoogtepunt van de hele expeditie: gletsjermeren, een van de mooiste wegen ter wereld (Icefields Parkway) en goede kans op wildlife (elanden, beren, bighorn sheep). Huurauto wordt hier opgehaald in Calgary. Prijs geverifieerd (2026-07), klopt (mits ruim vooraf geboekt in hoogseizoen). ⚠️ Moraine Lake Road is alleen bereikbaar met de verplichte Parks Canada-shuttle (geen privéauto toegestaan) — boeking opent doorgaans medio april, beperkt aantal plekken, ruim vooraf regelen.',
       }],
@@ -3961,7 +4016,12 @@ function rbBuildWesternCanadaRockiesVancouverRoute() {
       budget: 700,
       countries: [{
         code: 'CA', name: 'Canada', days: 5, budget: 875, lat: 49.2827, lng: -123.1207,
-        destinations: ['Stanley Park', 'Granville Island', 'North Shore (Grouse Mountain / Capilano Suspension Bridge)', 'Gastown & Kitsilano Beach'],
+        destinations: [
+          { name: 'Stanley Park', lat: 49.3017, lng: -123.1444 },
+          { name: 'Granville Island', lat: 49.2714, lng: -123.1348 },
+          { name: 'North Shore (Grouse Mountain / Capilano Suspension Bridge)', lat: 49.3796, lng: -123.0902 },
+          { name: 'Gastown & Kitsilano Beach', lat: 49.2837, lng: -123.1064 },
+        ],
         transport_to_next: 'Einde van deze route — terugvlucht vanuit Vancouver (of trein/bus naar Seattle om verder te reizen naar VS Westkust Roadtrip 🌉)',
         notes: 'Laatste Canadese stop: stad tussen bergen en zee, goed te combineren met bergen (North Shore) en water (Stanley Park, Granville Island) zonder huurauto.',
       }],
@@ -3972,7 +4032,7 @@ function rbBuildWesternCanadaRockiesVancouverRoute() {
     best_starting_month: 'Juni',
     description: 'De Canadian Rockies (Banff, Lake Louise, Icefields Parkway, Jasper) gevolgd door Vancouver.',
     climate_summary: 'Juni-juli vermijdt restsneeuw en gesloten passen/wegen in de Rockies (Icefields Parkway, hooggelegen hikes) van een vroegere start.',
-    notes: 'Losgesplitst van North America Grand Traverse 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen (incl. de waarschuwing over de verplichte Moraine Lake Road-shuttle). Dit is een van de meest klassieke standalone Canada-trips die er zijn. Vervolg op Oost-Canada 🍁. North America Grand Traverse 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+    notes: "Losgesplitst van North America Grand Traverse 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen (incl. de waarschuwing over de verplichte Moraine Lake Road-shuttle). Dit is een van de meest klassieke standalone Canada-trips die er zijn. Vervolg op Oost-Canada 🍁. North America Grand Traverse 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): Rockies-volgorde (Yoho-omweg, Mount Robson-Whistler) geverifieerd, al optimaal — geen wijziging nodig. Coördinaten per bestemming toegevoegd. Zie North America Grand Traverse 🌎's eigen notities voor de volledige onderbouwing.",
   });
 }
 
@@ -3984,9 +4044,15 @@ function rbBuildUSWestCoastRoadtripRoute() {
       budget: 2200,
       countries: [{
         code: 'US', name: 'United States', days: 15, budget: 3000, lat: 47.6062, lng: -122.3321,
-        destinations: ['Seattle (Pike Place Market, Space Needle)', 'Olympic National Park (Hoh Rainforest & Hurricane Ridge)', 'Mount Rainier National Park', 'Oregon Coast (Cannon Beach, Astoria)', 'Redwood National & State Parks'],
+        destinations: [
+          { name: 'Seattle (Pike Place Market, Space Needle)', lat: 47.6062, lng: -122.3321 },
+          { name: 'Mount Rainier National Park', lat: 46.8523, lng: -121.7603 },
+          { name: 'Olympic National Park (Hurricane Ridge & Hoh Rainforest)', lat: 47.9709, lng: -123.4995 },
+          { name: 'Oregon Coast (Cannon Beach, Astoria)', lat: 45.8918, lng: -123.9615 },
+          { name: 'Redwood National & State Parks', lat: 41.2132, lng: -124.0046 },
+        ],
         transport_to_next: 'Auto verder naar San Francisco (~5-6 uur vanaf de Redwoods), huurauto inleveren in San Francisco',
-        notes: 'Amerikaanse natuur in het groot: regenwoud, vulkanen, ruige kustlijn en de hoogste bomen ter wereld. Huurauto wordt hier opgehaald in Seattle. Prijs geverifieerd (2026-07), klopt. ESTA is per 30 sept. 2025 verhoogd naar $40,27 (was $21) — 2 jaar geldig.',
+        notes: "Amerikaanse natuur in het groot: regenwoud, vulkanen, ruige kustlijn en de hoogste bomen ter wereld. Huurauto wordt hier opgehaald in Seattle. Prijs geverifieerd (2026-07), klopt. ESTA is per 30 sept. 2025 verhoogd naar $40,27 (was $21) — 2 jaar geldig. Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid (was Seattle→Olympic NP→Mount Rainier→Oregon Coast) — dat kruiste de regio drie keer oost-west. Nu Seattle→Mount Rainier→Olympic NP (Hurricane Ridge dan Hoh Rainforest)→zuidwaarts via de US-101 langs de Washington-kust naar Oregon. Zie North America Grand Traverse 🌎's eigen notities voor de volledige onderbouwing.",
       }],
       note: 'Huurauto (Seattle-San Francisco). Rustig tempo: liever 2-3 nachten bij een park dan elke dag doorrijden — dit is een kustroute, geen race.',
     },
@@ -3996,8 +4062,12 @@ function rbBuildUSWestCoastRoadtripRoute() {
       budget: 2100,
       countries: [{
         code: 'US', name: 'United States', days: 14, budget: 2675, lat: 37.7749, lng: -122.4194,
-        destinations: ['San Francisco (Golden Gate Bridge, Alcatraz, Mission District)', 'Yosemite Valley', 'Sequoia & Kings Canyon National Parks'],
-        transport_to_next: 'Einde van de expeditie — terugvlucht vanuit San Francisco (SFO) naar Nederland',
+        destinations: [
+          { name: 'San Francisco (Golden Gate Bridge, Alcatraz, Mission District)', lat: 37.7749, lng: -122.4194 },
+          { name: 'Yosemite Valley', lat: 37.7459, lng: -119.5936 },
+          { name: 'Sequoia & Kings Canyon National Parks', lat: 36.4864, lng: -118.5658 },
+        ],
+        transport_to_next: 'Auto terug naar San Francisco (≈270 mijl/≈5 uur vanaf Sequoia & Kings Canyon — routelogica-fix 2026-08: reken deze rit als eigen reisdag) vóór de terugvlucht vanaf SFO. Fresno (FAT) ligt dichterbij maar heeft geen directe vlucht naar Amsterdam — SFO blijft de betere keuze.',
         notes: "Van de stad direct de bergen in: Yosemite's granieten wanden en watervallen, gevolgd door de gigantische sequoia's van Sequoia/Kings Canyon. Geen nieuwe huurauto nodig — dagtochten of een korte huurperiode volstaan vanuit San Francisco.",
       }],
       note: 'Boek Yosemite Valley-verblijf ruim van tevoren (vergunt beperkt aantal plekken in hoogseizoen). Let op bosbrandrisico/luchtkwaliteit in augustus — check actuele parkmeldingen vlak voor vertrek.',
@@ -4007,7 +4077,7 @@ function rbBuildUSWestCoastRoadtripRoute() {
     best_starting_month: 'Juli',
     description: 'Klassieke Amerikaanse westkust-roadtrip: Seattle, Olympic en Mount Rainier National Park, de Oregon-kust en de Redwoods, met San Francisco, Yosemite en Sequoia/Kings Canyon als finale.',
     climate_summary: 'Juli-augustus blijft ruim vóór de piek van het Californische/Pacific Northwest bosbrandseizoen (vooral augustus-oktober).',
-    notes: "Losgesplitst van North America Grand Traverse 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen (incl. de ESTA-prijsverhoging en de waarschuwing over bosbrandrisico in augustus). Vervolg op West-Canada: Rockies & Vancouver 🏔️. North America Grand Traverse 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.",
+    notes: "Losgesplitst van North America Grand Traverse 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen (incl. de ESTA-prijsverhoging en de waarschuwing over bosbrandrisico in augustus). Vervolg op West-Canada: Rockies & Vancouver 🏔️. North America Grand Traverse 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie. Routelogica-herziening (2026-08): zelfde twee fixes als North America Grand Traverse 🌎 zelf — Pacific Northwest-volgorde omgedraaid, Sequoia-San Francisco terugrit expliciet benoemd. Zie die route's eigen notities voor de volledige onderbouwing.",
   });
 }
 
@@ -6038,6 +6108,37 @@ function rbMigrateBritishIslesRouteLogicOverhaul() {
   if (idx === -1) return;
 
   rbRoutes.splice(idx, 1, rbBuildBritishIslesExpeditionRoute());
+  rbSave();
+}
+
+/**
+ * North America Grand Traverse — route-logic review (2026-08), eighth expedition in the
+ * ROUTE_LOGIC_REVIEW.md playbook. Wholesale-replace pattern (this route already has two prior
+ * wholesale-replace migrations — rbMigratePriceVerificationRound1 and rbMigrateRouteLineCoordsRound2
+ * — for the same reason: it's hand-authored with repeated country codes, no field-patch precedent).
+ * Also replaces its three 2026-07 split companions (Oost-Canada 🍁, West-Canada: Rockies & Vancouver
+ * 🏔️, VS Westkust Roadtrip 🌉), which share leg content verbatim but via their own hand-authored
+ * build functions, not a shared content table — each needed the same coordinate additions, and the
+ * two touching the Pacific Northwest/California legs (VS Westkust Roadtrip 🌉) also needed the same
+ * reorder fix as the main route. See rbBuildNorthAmericaRoute()'s own notes for the full writeup.
+ */
+function rbMigrateNorthAmericaRouteLogicOverhaul() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_NORTH_AMERICA_OVERHAUL)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_NORTH_AMERICA_OVERHAUL, '1');
+
+  const replacements = [
+    ['North America Grand Traverse 🌎', rbBuildNorthAmericaRoute],
+    ['Oost-Canada 🍁', rbBuildEasternCanadaRoute],
+    ['West-Canada: Rockies & Vancouver 🏔️', rbBuildWesternCanadaRockiesVancouverRoute],
+    ['VS Westkust Roadtrip 🌉', rbBuildUSWestCoastRoadtripRoute],
+  ];
+
+  replacements.forEach(([name, buildFn]) => {
+    const idx = rbRoutes.findIndex(r => r.name === name);
+    if (idx === -1) return;
+    rbRoutes.splice(idx, 1, buildFn());
+  });
+
   rbSave();
 }
 
