@@ -62,6 +62,7 @@ const RB_MIGRATE_FLAG_2026_08_PANAMERICAN_OVERHAUL = 'atlas_grand_trips_migrate_
 const RB_MIGRATE_FLAG_2026_08_MEDITERRANEAN_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_mediterranean_overhaul_v2';
 const RB_MIGRATE_FLAG_2026_08_AFRICA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_africa_overhaul_v1';
 const RB_MIGRATE_FLAG_2026_08_SPLIT_ENTRY_NOTES = 'atlas_grand_trips_migrate_2026_08_split_entry_notes_v1';
+const RB_SEED_FLAG_KEY_STANDALONE_COUNTRIES = 'atlas_grand_trips_seeded_standalone_countries_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -98,6 +99,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbSeedOceaniaSplitExpeditions();
   rbSeedCaribbeanSplitExpeditions();
   rbSeedWestCentralAfricaSplitExpeditions();
+  rbSeedStandaloneCountryRoutes();
   rbMigrateExpeditionRenames();
   rbMigrateExpeditionEmojiNames();
   rbMigrateAncientToMediterranean();
@@ -7183,4 +7185,192 @@ function rbMigrateSplitRouteEntryNotes() {
   fixEnding('Groenland 🧊', 'GL', 'Einde van deze route — vlucht Ilulissat-Reykjavik (seizoensgebonden direct, juni-september) of Ilulissat-Kopenhagen (jaarrond direct vanaf eind oktober 2026, Air Greenland), dan aansluitend vlucht huiswaarts naar Nederland (Reykjavik-Amsterdam met Icelandair/Transavia, of Kopenhagen-Amsterdam met KLM/Transavia) — totaal ±8-10u incl. overstap, vanaf ±€600-950 retour voor dit laatste traject. Prijsindicatie webonderzoek 2026-08, momentopname.');
 
   if (touched) rbSave();
+}
+
+// ---- Standalone single-country routes (2026-08, on Youri's request) ----
+//
+// The modularization analysis (ROUTE_BUILDER_MODULES.md) flagged ~30 individual countries across
+// the 11 split expeditions as strong enough to stand fully alone ("Sterk"), but only ever built the
+// coarser multi-country groupings — never these individual countries as their own route. This is
+// the first batch of 8, picked as the clearest "most obvious" candidates. Country content (days,
+// budget, destinations, notes) is reused as-is from the parent expedition's data, same "copies, not
+// live-linked" principle as every other split route — see rbBuildXRoute() functions above for the
+// pattern. Each gets its own "Instap: vlucht Amsterdam-..." opener and a real flight-home ending
+// (not the original mid-tour transport_to_next, which pointed at whatever country came next in the
+// bigger route). The remaining ~27 candidates from the analysis are listed in README.md for later.
+
+function rbSeedStandaloneCountryRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_STANDALONE_COUNTRIES)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_STANDALONE_COUNTRIES, '1');
+
+  rbRoutes.push(
+    rbBuildCostaRicaRoute(),
+    rbBuildColombiaRoute(),
+    rbBuildPeruRoute(),
+    rbBuildEgyptRoute(),
+    rbBuildCubaRoute(),
+    rbBuildNamibiaRoute(),
+    rbBuildCuracaoBonaireRoute(),
+    rbBuildSurinameRoute(),
+  );
+  rbSave();
+}
+
+function rbBuildCostaRicaRoute() {
+  const panAm = (code, name) => rbContentFor('Pan-American Grand Tour 🌎', code, name);
+  return rbBuildFlatSeedRoute('Costa Rica 🦥', [
+    {
+      ...panAm('CR', 'Costa Rica'),
+      notes: 'Instap: rechtstreekse KLM-vlucht Amsterdam-San José (de enige maatschappij met een directe verbinding; ±11-12 uur; vanaf ±€730-850 retour; beste periode januari). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (panAm('CR', 'Costa Rica').notes || ''),
+      transport_to_next: 'Einde van deze route — rechtstreekse KLM-terugvlucht vanuit San José naar Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'Januari',
+    travel_style: 'Backpacker/budget-comfort hybride — lokale bussen, huurauto optioneel voor de meer afgelegen natuurparken.',
+    climate_summary: 'Januari-februari is Costa Rica\'s droge seizoen (Pacifische kust) — aangename temperaturen, minder regen in de nationale parken.',
+    description: 'Vulkanen, regenwoud en twee kustlijnen: Arenal, Monteverde en de Pacifische/Caribische stranden.',
+    notes: "Losgesplitst van Pan-American Grand Tour 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md) — daar al genoemd als 'waarschijnlijk je meest klassieke losse vakantie-kandidaat' uit die hele expeditie. Land, dagen en budget zijn ongewijzigd overgenomen. Pan-American Grand Tour 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.",
+  });
+}
+
+function rbBuildColombiaRoute() {
+  const panAm = (code, name) => rbContentFor('Pan-American Grand Tour 🌎', code, name);
+  return rbBuildFlatSeedRoute('Colombia ☕', [
+    {
+      ...panAm('CO', 'Colombia'),
+      notes: 'Instap: vlucht Amsterdam-Cartagena (±14-16 uur, 1 tussenstop, bv. via Madrid/Bogotá/Panama-Stad — geen rechtstreekse verbinding; vanaf ±€650-900 retour; beste periode februari). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (panAm('CO', 'Colombia').notes || ''),
+      transport_to_next: 'Einde van deze route — terug naar Bogotá (dichtstbijzijnde internationale luchthaven vanaf San Agustín), dan retourvlucht naar Amsterdam (1 tussenstop, geen rechtstreekse verbinding).',
+    },
+  ], {
+    best_starting_month: 'Februari',
+    travel_style: 'Backpacker/budget-comfort hybride — lokale bussen tussen de steden, binnenlandse vlucht voor de langere afstanden.',
+    climate_summary: 'Februari-maart is droog in zowel de Caribische kust (Cartagena) als de koffiezone/Andes (Medellín, Salento, Bogotá).',
+    description: 'Van de Caribische kust van Cartagena via de koffiezone en Medellín naar Bogotá en San Agustín.',
+    notes: "Losgesplitst van Pan-American Grand Tour 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md) — al genoemd als Sterk, 'al hip als standalone'. Land, dagen en budget zijn ongewijzigd overgenomen (incl. de 2026-07 prijscorrectie). Pan-American Grand Tour 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.",
+  });
+}
+
+function rbBuildPeruRoute() {
+  const panAm = (code, name) => rbContentFor('Pan-American Grand Tour 🌎', code, name);
+  return rbBuildFlatSeedRoute('Peru 🦙', [
+    {
+      ...panAm('PE', 'Peru'),
+      notes: 'Instap: rechtstreekse KLM-vlucht Amsterdam-Lima (±12-13 uur; vanaf ±€800-950 retour; beste periode april). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (panAm('PE', 'Peru').notes || ''),
+      transport_to_next: 'Einde van deze route — binnenlandse vlucht Juliaca (Puno)-Lima, dan rechtstreekse KLM-terugvlucht Lima-Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'Backpacker/budget-comfort hybride — lokale bussen langs de kust en door de Andes, trein voor Machu Picchu.',
+    climate_summary: 'April-mei is het begin van het Andes-droogseizoen — ideaal voor Cusco, de Vallei van de Inca\'s en Huaraz-trekking, vóór de drukste maanden juni-augustus.',
+    description: 'Van de noordkust bij Máncora via Huaraz en Lima naar Cusco, de Vallei van de Inca\'s en het Titicacameer.',
+    notes: "Losgesplitst van Pan-American Grand Tour 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md) — al genoemd als Sterk, 'Machu Picchu draagt het alleen al'. Land, dagen en budget zijn ongewijzigd overgenomen. Pan-American Grand Tour 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.",
+  });
+}
+
+function rbBuildEgyptRoute() {
+  const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
+  return rbBuildFlatSeedRoute('Egypte 🏺', [
+    {
+      ...mea('EG', 'Egypt'),
+      notes: 'Instap: rechtstreekse KLM-vlucht Amsterdam-Caïro (±4u30, vanaf ±€200-320 retour, beste periode februari). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (mea('EG', 'Egypt').notes || ''),
+      // transport_to_next was already a correct standalone ending in the source data (Egypt is
+      // the last leg of Hoorn van Afrika & Egypte 🏺) — reused verbatim, no change needed.
+    },
+  ], {
+    best_starting_month: 'Februari',
+    travel_style: 'Trein/bus tussen de grote steden, Nijlcruise/felucca als apart geboekt onderdeel.',
+    climate_summary: 'Februari-maart geeft het koelere naseizoen, vóór de vroege zomerhitte in Luxor/Aswan.',
+    description: 'Piramides, tempels en een Nijlcruise: van Caïro via Luxor en Aswan tot Alexandrië.',
+    notes: 'Losgesplitst van Africa Grand Tour 🌍 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md) — al genoemd als Sterk, "een van de meest bezochte standalone bestemmingen ter wereld... hoort eigenlijk niet onder iets anders". Land, dagen en budget zijn ongewijzigd overgenomen uit Africa Grand Tour 🌍\'s Egypte-blok (deze versie, niet de kortere versie uit Mediterranean Civilizations Expedition 🏛️\'s "Egypte & Arabisch Schiereiland 🐪" — beide bestaan naast elkaar, zelfde "block komt in meerdere routes terug"-patroon als Egypte zelf al had). Africa Grand Tour 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildCubaRoute() {
+  return rbBuildFlatSeedRoute('Cuba 🎷', [
+    {
+      code: 'CU', name: 'Cuba', days: 18, budget: 1260, lat: 23.1136, lng: -82.3666,
+      destinations: [
+        { name: 'Havana (Habana Vieja)', lat: 23.1136, lng: -82.3666 },
+        { name: 'Viñales-vallei', lat: 22.6167, lng: -83.7097 },
+        { name: 'Cienfuegos', lat: 22.1496, lng: -80.4394 },
+        { name: 'Trinidad', lat: 21.8047, lng: -79.9825 },
+      ],
+      notes: "Instap: vlucht Amsterdam-Havana, met overstap (±15u30, vanaf ±€600-1.100 retour, december valt net na de goedkoopste maand november). Prijsindicatie webonderzoek 2026-08, momentopname. Havana en het UNESCO-koloniale Trinidad zijn de hoogtepunten; de rustige Viñales-vallei (tabak, karstlandschap) is de verborgen parel. Casas particulares (particuliere kamers) zijn de gangbare backpacker-accommodatie. Prijs geverifieerd (2026-07), klopt. ⚠️ Reisadvies oranje (bevestigd geldig, laatst bijgewerkt 23 juni 2026): grote tekorten aan stroom/brandstof/voedsel/medicijnen, toenemende veiligheidsrisico's — de zesde landelijke stroomstoring van 2026 viel op 2 augustus. Kaarten werken niet bij pinautomaten (contant meenemen). Sinds 1 juli 2025 is de papieren tourist card vervangen door een e-Visa (~$50), gekoppeld aan het verplichte gratis D'Viajeros-formulier (invullen binnen 72u vóór aankomst).",
+      transport_to_next: 'Einde van deze route — terug naar Havana (~4u15 rijden vanaf Trinidad), dan retourvlucht Havana-Amsterdam (meestal met overstap via Panama City of Miami).',
+    },
+  ], {
+    best_starting_month: 'December',
+    travel_style: 'Backpacker tussen goedkoop en normaal in — casas particulares, lokale bussen/collectivo\'s.',
+    climate_summary: 'December is droog seizoen, ruim na het orkaanseizoen (dat loopt juni-november).',
+    description: 'Havana, koloniaal Trinidad en de karstvallei van Viñales.',
+    notes: 'Losgesplitst van Caraïbische Eilanden-hop 🏝️ (zelf al losgesplitst van Caribbean & Amazon Expedition 🌴 — zie ROUTE_BUILDER_MODULES.md) als onderdeel van deze eerste batch losse landen (2026-08) — daar al genoemd als Sterk, "wereldberoemd standalone". Land, dagen en budget zijn ongewijzigd overgenomen. Caraïbische Eilanden-hop 🏝️ en Caribbean & Amazon Expedition 🌴 zelf blijven ongewijzigd bestaan.',
+  });
+}
+
+function rbBuildNamibiaRoute() {
+  const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
+  return rbBuildFlatSeedRoute('Namibië 🏜️', [
+    {
+      ...mea('NA', 'Namibia'),
+      notes: 'Instap: vlucht Amsterdam-Windhoek, met overstap (geen directe verbinding, bv. via Frankfurt/Zürich of Johannesburg/Addis Abeba, ±15-18 uur incl. overstap; vanaf ±€700-1.200 retour — november is doorgaans de goedkoopste vluchtmaand, maar valt buiten het droge seizoen van deze route; beste reisperiode juli). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (mea('NA', 'Namibia').notes || ''),
+      transport_to_next: 'Einde van deze route — terug naar Windhoek (vanaf Etosha, ±5-6 uur rijden), dan vlucht naar Amsterdam (geen directe verbinding, 1+ tussenstop).',
+    },
+  ], {
+    best_starting_month: 'Juli',
+    travel_style: 'Zelfrijden met 4x4-huurauto — vrijwel noodzakelijk voor Sossusvlei, Damaraland, Etosha en Fish River Canyon.',
+    climate_summary: 'Juli-oktober is het Namibische droge seizoen (winter/vroege lente) — beste wildlife-observatie en begaanbare wegen.',
+    description: 'Een populaire zelfrij-vakantie: Fish River Canyon, de duinen van Sossusvlei, Damaraland en Etosha National Park.',
+    notes: 'Losgesplitst van Africa Grand Tour 🌍 als onderdeel van deze eerste batch losse landen (2026-08, zie ROUTE_BUILDER_MODULES.md voor de bredere modularisatie-analyse) — al genoemd als "populaire zelfstandige zelfrij-trip". Land, dagen en budget zijn ongewijzigd overgenomen (incl. de 2026-07 prijscorrectie en de 2026-08 routelogica-herziening — Fish River Canyon nu eerst, Etosha laatst, bespaart ≈1.355 km). Africa Grand Tour 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildCuracaoBonaireRoute() {
+  return rbBuildFlatSeedRoute('Curaçao & Bonaire 🤿', [
+    {
+      code: 'CW', name: 'Curaçao', days: 7, budget: 560, lat: 12.1084, lng: -68.9335,
+      destinations: [
+        { name: 'Willemstad (UNESCO)', lat: 12.1091, lng: -68.9316 },
+        { name: 'Shete Boka National Park', lat: 12.3667, lng: -69.15 },
+        { name: 'stranden (Grote Knip)', lat: 12.2167, lng: -69.15 },
+      ],
+      notes: 'Instap: rechtstreekse KLM-vlucht Amsterdam-Curaçao (±9u45; vanaf ±€650-750 retour, sinds april 2026 zo\'n €100 duurder dan voorheen door hogere brandstofkosten; beste periode december-januari). Prijsindicatie webonderzoek 2026-08, momentopname. Willemstad met zijn Nederlandse koloniale architectuur is de stedelijke tegenhanger van rustig Bonaire. Shete Boka (ruige noordkust) is de verborgen parel, veel rustiger dan de stranden. Prijs geverifieerd (2026-07), klopt. Digital Immigration Card verplicht vooraf invullen (gratis).',
+      transport_to_next: 'Korte vlucht Curaçao-Bonaire',
+    },
+    {
+      code: 'BQ', name: 'Bonaire', days: 6, budget: 660, lat: 12.25, lng: -68.4,
+      destinations: [
+        { name: 'Washington Slagbaai National Park', lat: 12.3167, lng: -68.4167 },
+        { name: 'duiken/snorkelen (marine park)', lat: 12.15, lng: -68.2833 },
+      ],
+      notes: "Wereldklasse duiken/snorkelen direct vanaf de kust. Washington Slagbaai NP (flamingo's, ruige natuur) is de verborgen parel, nauwelijks bezocht. Prijscorrectie (2026-07): €87,50→€110/dag (weinig budget-accommodatie, duiktrips zijn duur). Verplichte inreisbelasting ~€70 p.p. is een aparte kostenpost, niet in het dagtarief.",
+      transport_to_next: 'Einde van deze route — vlucht Bonaire-Curaçao (korte regionale verbinding), dan rechtstreekse KLM-terugvlucht Curaçao-Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'December',
+    travel_style: 'Rechtstreekse KLM-vlucht naar Curaçao, korte regionale vlucht door naar Bonaire.',
+    climate_summary: 'December-januari is droog seizoen — helderder water voor snorkelen en duiken op beide eilanden.',
+    description: 'De Nederlandse Caraïben: koloniaal Willemstad en het duik-/snorkelparadijs van Bonaire.',
+    notes: 'Losgesplitst van Caraïbische Eilanden-hop 🏝️ (zelf al losgesplitst van Caribbean & Amazon Expedition 🌴 — zie ROUTE_BUILDER_MODULES.md) als onderdeel van deze eerste batch losse landen (2026-08) — al genoemd als "extra relevant met directe KLM-vluchten". Landen, dagen en budgetten zijn ongewijzigd overgenomen. Caraïbische Eilanden-hop 🏝️ en Caribbean & Amazon Expedition 🌴 zelf blijven ongewijzigd bestaan.',
+  });
+}
+
+function rbBuildSurinameRoute() {
+  return rbBuildFlatSeedRoute('Suriname 🛶', [
+    {
+      code: 'SR', name: 'Suriname', days: 11, budget: 605, lat: 5.852, lng: -55.2038,
+      destinations: [
+        { name: 'Paramaribo (UNESCO)', lat: 5.852, lng: -55.2038 },
+        { name: 'Marrondorpen aan de rivier', lat: 4.4, lng: -55.0 },
+        { name: 'Brownsberg Nature Park', lat: 4.95, lng: -55.1667 },
+      ],
+      notes: 'Instap: rechtstreekse KLM-vlucht Amsterdam-Paramaribo (±9u20, vanaf ±€1.100-1.800 retour) — let op: februari is qua vluchtprijs een van de duurdere maanden op deze route, ondanks dat het klimatologisch de beste periode is. Prijsindicatie webonderzoek 2026-08, momentopname. Nederlandse koloniale geschiedenis in Paramaribo, gecombineerd met een rivierreis naar Marrondorpen in het binnenland — reken op 3-5 dagen voor een fatsoenlijke jungletocht naast de stad. Brownsberg (uitzicht over het Brokopondostuwmeer) is de verborgen parel. Prijs geverifieerd (2026-07): waarschijnlijk net genoeg, Brownsberg/Marrondorpen-tours ($70-120/dag) drukken het gemiddelde op. Let op: "visumvrij" is niet helemaal juist — een verplicht online ICF-immigratieformulier + gelekoortsbewijs is nodig vooraf.',
+      transport_to_next: 'Einde van deze route — rechtstreekse KLM-terugvlucht Paramaribo-Amsterdam (±9u20).',
+    },
+  ], {
+    best_starting_month: 'Februari',
+    travel_style: 'Rechtstreekse KLM-vlucht, rivierboten voor de Marrondorpen in het binnenland.',
+    climate_summary: 'Suriname\'s korte droge tijd (februari-maart) is ideaal voor jungle-/rivierentochten.',
+    description: 'Nederlandse koloniale geschiedenis in Paramaribo en een rivierreis naar de Marrondorpen.',
+    notes: 'Losgesplitst van Suriname & Noord-Brazilië 🌴 (zelf al losgesplitst van Caribbean & Amazon Expedition 🌴 — zie ROUTE_BUILDER_MODULES.md) als onderdeel van deze eerste batch losse landen (2026-08) — al genoemd als "extra relevant gezien de Nederlandse band". Land, dagen en budget zijn ongewijzigd overgenomen. Suriname & Noord-Brazilië 🌴 en Caribbean & Amazon Expedition 🌴 zelf blijven ongewijzigd bestaan.',
+  });
 }

@@ -84,7 +84,7 @@ for the plan to move it into the Google Sheet.
 **Modularizing the 13 expeditions**: a full analysis of which expeditions can split into
 smaller, reusable "Major Trip" / "Travel Block" pieces (grounded in the actual route
 data, not invented) lives in [`ROUTE_BUILDER_MODULES.md`](ROUTE_BUILDER_MODULES.md). Built for
-11 of the 13 expeditions (2026-07): 27 new standalone companion routes exist alongside the
+11 of the 13 expeditions (2026-07): 38 new standalone companion routes exist alongside the
 originals, reusing the exact same countries/days/budgets/content — the originals themselves are
 completely untouched and still exist in full (see `CHANGELOG.md` for the full list of new
 routes). Only **Central European Grand Roadtrip 🚗** and **British Isles & Celtic Coast
@@ -92,6 +92,29 @@ Expedition 🍀** were deliberately left unsplit (self-driven-from-NL loops, dec
 up). Not yet built: the technical Module Library work described in that analysis (metadata
 fields, "possible standalone trips" UI, compatible/incompatible-blocks scoring) — for now the new
 routes are just added as plain routes, the same way the original 13 are.
+
+All 38 companion routes' first legs also got a real "flight from the Netherlands" opener + a
+correct flight-home ending (2026-08 fix — before this, every one of them except Oost-Canada 🍁
+still carried mid-tour waypoint text left over from being a middle leg of the bigger expedition).
+See `CHANGELOG.md`'s "alle 38 losse split-routes" entry.
+
+**Standalone single-country routes (in progress, 2026-08)**: `ROUTE_BUILDER_MODULES.md` also
+flagged ~35 *individual* countries within those combined routes as strong enough to stand fully
+alone ("Sterk") — never built as their own route, only the multi-country groupings were. First
+batch of 8 built: **Costa Rica 🦥**, **Colombia ☕**, **Peru 🦙**, **Egypte 🏺**, **Cuba 🎷**,
+**Namibië 🏜️**, **Curaçao & Bonaire 🤿**, **Suriname 🛶** — same reused content + country-of-origin
+notes as every other split route, each with its own NL-departure opener and flight-home ending.
+
+**Remaining candidates for a next batch** (days, Sterk/Medium per the analysis, parent expedition):
+- **Pan-American Grand Tour 🌎**: Ecuador alleen (24d, Medium/Sterk) · Bolivia alleen (21d, Medium) · Panama alleen (15d) · Nicaragua alleen (15d) · Guatemala alleen (16d)
+- **Africa Grand Tour 🌍**: Zuid-Afrika alleen (24d) · Zimbabwe alleen (14d) · Botswana alleen (16d) · Mozambique alleen (20d) · Zambia & Malawi (30d) · Mauritius alleen (7d) · Madagaskar alleen (24d) · Ethiopië alleen (20d) · Rwanda gorilla-trekking alleen (10d) · Kenia alleen (18d) · Tanzania alleen (24d)
+- **Mediterranean Civilizations Expedition 🏛️**: Spanje alleen (10d) · Marokko alleen (10d) · Sicilië alleen (10d) · Rome & omgeving (13d) · Sardinië alleen (6d) · Griekenland vasteland & Kreta (19d) · Cyprus alleen (5d) · Jordanië alleen (8d) · Golfstaten-trio Oman/Bahrein/Qatar (13d)
+- **Eurasia Grand Tour 🌏**: Kaukasus GE/AM/AZ (28d, Sterk als blok) · Centraal-Azië "de Stans" (49d, Sterk als blok) · Japan & Taiwan (28d, Sterk als blok) · Oezbekistan alleen (11d) · Kirgizië alleen (12d) · Kirgizië & Kazachstan (24d) · Mongolië alleen (10d) · Vietnam alleen (18d) · Thailand alleen (18d) · Vietnam & Cambodja (30d) · Filipijnen alleen (21d) · Maleisië alleen (10d)
+- **Patagonia & Antarctica Expedition 🧊**: Argentijns Patagonië alleen (18d) · Chileens Patagonië alleen (24d)
+- **Oceania Grand Expedition 🌊**: Fiji alleen (14d) · Fiji & Vanuatu (25d) · Cairns & Great Barrier Reef (21d) · Sydney/Byron & Great Ocean Road (22d) · Tasmanië alleen (12d) · Nieuw-Zeeland Zuidereiland alleen (21d) · Nieuw-Zeeland Noordereiland alleen (14d)
+- **Caribbean & Amazon Expedition 🌴**: Jamaica alleen (12d) · Guadeloupe & Dominica (15d) · Saint Lucia & Grenada (14d)
+- **West & Central Africa Expedition 🌍**: Kaapverdië alleen (13d) · Senegambia (19d) · Ghana alleen (15d) · Gabon alleen (9d) · São Tomé & Príncipe alleen (9d)
+- **North America Grand Traverse 🌎**: Pacific Northwest alleen (15d) · Californië alleen (14d)
 
 ## Search
 

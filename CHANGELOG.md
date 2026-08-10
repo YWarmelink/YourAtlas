@@ -12,6 +12,23 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Eerste batch standalone single-country routes (2026-08)** — `ROUTE_BUILDER_MODULES.md`
+  noemde ~35 individuele landen binnen de gecombineerde split-routes als sterk genoeg om alleen
+  te staan ("Sterk"), maar alleen de gecombineerde versies waren ooit echt gebouwd. Op Youri's
+  verzoek de 8 duidelijkste kandidaten nu gebouwd als eigen route: **Costa Rica 🦥** (21d, uit
+  Pan-American Grand Tour 🌎), **Colombia ☕** (35d, uit Pan-American), **Peru 🦙** (35d, uit
+  Pan-American), **Egypte 🏺** (21d, uit Africa Grand Tour 🌍's versie — een andere, langere versie
+  dan Mediterranean Civilizations Expedition 🏛️'s "Egypte & Arabisch Schiereiland 🐪", beide
+  bestaan naast elkaar), **Cuba 🎷** (18d, uit Caraïbische Eilanden-hop 🏝️), **Namibië 🏜️** (20d,
+  uit Africa Grand Tour), **Curaçao & Bonaire 🤿** (13d samen, uit Caraïbische Eilanden-hop) en
+  **Suriname 🛶** (11d, uit Suriname & Noord-Brazilië 🌴). Elke route hergebruikt de bestaande
+  landcontent (dagen/budget/bestemmingen/notities) ongewijzigd en kreeg een eigen "Instap: vlucht
+  Amsterdam-…"-opener + een echte thuisreis-eindnotitie (zelfde onderzoek/patroon als de
+  instap-fix hieronder) — behalve Egypte, waar de bestaande eindnotitie al correct was (Egypte is
+  al de laatste etappe van zijn bronroute). Toegepast via `rbSeedStandaloneCountryRoutes()` — geen
+  migratie nodig, dit zijn nieuwe routes, geen wijzigingen aan bestaande. De overige ~27
+  kandidaten staan genoteerd in `README.md` voor een volgende batch.
+
 - **Bugfix: alle 38 losse split-routes misten een "vlucht vanuit Nederland"-instap (2026-08)** —
   Youri vroeg een analyse van de 38 standalone companion-routes die eerder uit de 11 gesplitste
   grote expedities zijn gebouwd (zie `ROUTE_BUILDER_MODULES.md`), omdat sommige er "een week"
