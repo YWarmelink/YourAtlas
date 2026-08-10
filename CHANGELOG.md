@@ -12,6 +12,25 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Derde batch standalone single-country routes (2026-08, Youri's tweede top-10)** — vervolg op
+  batch 1 en 2 hierboven: **Thailand 🛕** (18d, uit Zuidoost-Azië Grand Loop 🛕), **Tanzania 🦁**
+  (24d, uit Africa Grand Tour 🌍), **Botswana 🐘** (16d, uit Africa Grand Tour), **Ecuador 🐢**
+  (24d, uit Pan-American Grand Tour 🌎), **Centraal-Azië 🐎** (Kazachstan/Kirgizië/Tadzjikistan/
+  Oezbekistan samen, ~45d, uit West-Eurazië Overland 🐫), **Cairns & Great Barrier Reef 🐠** (23d
+  incl. langeafstandsvlucht-buffer, uit Tropisch/Outback Australië 🐊), **Californië 🌲** (14d, uit
+  VS Westkust Roadtrip 🌉), **Jamaica 🎵** (12d, uit Caraïbische Eilanden-hop 🏝️), **Fiji 🌊** (16d
+  incl. buffer, uit Pacific-eilanden 🌺) en **Filipijnen 🏖️** (21d, uit Zuidoost-Azië Grand Loop).
+  Zelfde patroon als de vorige twee batches: land(en)/dagen/budget/bestemmingen hergebruikt, eigen
+  "Instap: vlucht Amsterdam-…"-opener + correcte thuisreis-eindnotitie (2026-08 vluchtprijs-
+  research). Twee routes kregen meteen de langeafstandsvlucht-buffer uit `CLAUDE.md` toegepast
+  (Cairns & Great Barrier Reef, Fiji — beide 24-30 uur reistijd met meerdere overstappen, ook al
+  is de reis zelf niet kort). Toegepast via `rbSeedStandaloneCountryRoutesBatch3()`. Genoteerd in
+  `README.md`: Centraal-Azië is met ~45 dagen/4 landen de grootste van alle 28 standalone-routes
+  tot nu toe — een kandidaat om later verder op te splitsen, net als eerder met de grote
+  expedities is gedaan. Getest met een Node-smoketest incl. isolatie-checks (parent-expedities,
+  `RB_EXPEDITION_CONTENT` en bestaande split-routes met dezelfde landen — Oost-Afrika Safari
+  Classic, Tropisch/Outback Australië, Pacific-eilanden — allemaal onaangetast bevestigd).
+
 - **Langeafstandsvlucht-buffer voor 2 van de 18 standalone landen-routes (2026-08)** — Youri
   vroeg zich af of de dagaantallen van de nieuwe losse landen-routes (hierboven en hieronder) nog
   wel kloppen nu je er speciaal een vlucht vanuit Nederland voor pakt, in plaats van dat het land

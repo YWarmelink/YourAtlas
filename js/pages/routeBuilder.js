@@ -65,6 +65,7 @@ const RB_MIGRATE_FLAG_2026_08_SPLIT_ENTRY_NOTES = 'atlas_grand_trips_migrate_202
 const RB_SEED_FLAG_KEY_STANDALONE_COUNTRIES = 'atlas_grand_trips_seeded_standalone_countries_v1';
 const RB_SEED_FLAG_KEY_STANDALONE_COUNTRIES_BATCH2 = 'atlas_grand_trips_seeded_standalone_countries_batch2_v1';
 const RB_MIGRATE_FLAG_2026_08_LONGHAUL_BUFFER = 'atlas_grand_trips_migrate_2026_08_longhaul_buffer_v1';
+const RB_SEED_FLAG_KEY_STANDALONE_COUNTRIES_BATCH3 = 'atlas_grand_trips_seeded_standalone_countries_batch3_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -103,6 +104,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbSeedWestCentralAfricaSplitExpeditions();
   rbSeedStandaloneCountryRoutes();
   rbSeedStandaloneCountryRoutesBatch2();
+  rbSeedStandaloneCountryRoutesBatch3();
   rbMigrateLonghaulBuffer();
   rbMigrateExpeditionRenames();
   rbMigrateExpeditionEmojiNames();
@@ -7646,4 +7648,220 @@ function rbMigrateLonghaulBuffer() {
   bump('Nieuw-Zeeland Zuidereiland 🏔️', 'NZ', 23);
 
   if (touched) rbSave();
+}
+
+// ---- Standalone single-country routes, batch 3 (2026-08, Youri's second top-10) ----
+
+function rbSeedStandaloneCountryRoutesBatch3() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_STANDALONE_COUNTRIES_BATCH3)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_STANDALONE_COUNTRIES_BATCH3, '1');
+
+  rbRoutes.push(
+    rbBuildThailandRoute(),
+    rbBuildTanzaniaRoute(),
+    rbBuildBotswanaRoute(),
+    rbBuildEcuadorRoute(),
+    rbBuildCentralAsiaRoute(),
+    rbBuildCairnsGreatBarrierReefRoute(),
+    rbBuildCaliforniaRoute(),
+    rbBuildJamaicaRoute(),
+    rbBuildFijiRoute(),
+    rbBuildPhilippinesRoute(),
+  );
+  rbSave();
+}
+
+function rbBuildThailandRoute() {
+  const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
+  return rbBuildFlatSeedRoute('Thailand 🛕', [
+    {
+      ...eurasia('TH', 'Thailand'),
+      notes: 'Instap: rechtstreekse KLM-vlucht Amsterdam-Bangkok (±11u15; vanaf ±€650-900 retour; beste periode december), met binnenlandse aansluiting naar Chiang Mai. Prijsindicatie webonderzoek 2026-08, momentopname. ' + (eurasia('TH', 'Thailand').notes || ''),
+      transport_to_next: 'Einde van deze route — terugvlucht vanuit Krabi/Phuket naar Bangkok, dan rechtstreekse KLM-terugvlucht Bangkok-Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'December',
+    travel_style: 'Backpacker — lokale bussen/treinen, binnenlandse vlucht Chiang Mai-Bangkok.',
+    climate_summary: 'December-februari is het droge seizoen op het Thaise vasteland — geen moesson, aangename temperaturen.',
+    description: 'Van Chiang Mai en Sukhothai via Bangkok naar de eilanden en stranden bij Krabi.',
+    notes: 'Losgesplitst van Eurasia Grand Tour 🌏 (via Zuidoost-Azië Grand Loop 🛕) als onderdeel van deze derde batch losse landen (2026-08, Youri\'s eigen tweede top-10-keuze) — een van de meest bezochte landen wereldwijd. Land, dagen en budget zijn ongewijzigd overgenomen. Eurasia Grand Tour 🌏 en Zuidoost-Azië Grand Loop 🛕 zelf blijven ongewijzigd bestaan.',
+  });
+}
+
+function rbBuildTanzaniaRoute() {
+  const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
+  return rbBuildFlatSeedRoute('Tanzania 🦁', [
+    {
+      ...mea('TZ', 'Tanzania'),
+      notes: 'Instap: rechtstreekse KLM-vlucht Amsterdam-Kilimanjaro (±8u45; vanaf ±€1.050-1.500 retour; beste periode november). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (mea('TZ', 'Tanzania').notes || ''),
+      transport_to_next: 'Einde van deze route — terugvlucht vanuit Kilimanjaro (of Dar es Salaam/Zanzibar) naar Amsterdam, rechtstreeks vanaf Kilimanjaro met KLM.',
+    },
+  ], {
+    best_starting_month: 'November',
+    travel_style: 'Overland/safaritrucks tussen de parken, vlucht/veerboot naar Zanzibar.',
+    climate_summary: 'November-januari valt in de korte regentijd (lichte middagbuien) en de daaropvolgende korte droge periode — niet de absolute piek (juni-oktober) maar een erkend sterk alternatief.',
+    description: 'Serengeti, Ngorongoro Crater en Lake Manyara, gevolgd door Kilimanjaro-regio en het strand van Zanzibar.',
+    notes: 'Losgesplitst van Africa Grand Tour 🌍 als onderdeel van deze derde batch losse landen (2026-08, Youri\'s eigen tweede top-10-keuze) — de klassieke safari+strand-combinatie. Land, dagen en budget zijn ongewijzigd overgenomen (incl. de 2026-08 routelogica-fix voor de Kilimanjaro/Zanzibar-volgorde). Africa Grand Tour 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildBotswanaRoute() {
+  const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
+  return rbBuildFlatSeedRoute('Botswana 🐘', [
+    {
+      ...mea('BW', 'Botswana'),
+      notes: 'Instap: vlucht Amsterdam-Kasane, met overstap via Johannesburg (geen directe verbinding, ±14-16 uur incl. overstap; vanaf ±€900-1.300 retour; beste periode juli). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (mea('BW', 'Botswana').notes || ''),
+      transport_to_next: 'Einde van deze route — terug naar Kasane (vanaf Central Kalahari), dan vlucht naar Amsterdam via Johannesburg.',
+    },
+  ], {
+    best_starting_month: 'Juli',
+    travel_style: 'Eigen 4x4 of gegidste mobiele safari — geen goedkoop-onafhankelijk alternatief voor Central Kalahari/Okavango.',
+    climate_summary: 'Juli-oktober is het droge seizoen — beste wildlife-observatie rond de Okavango Delta en Chobe.',
+    description: 'Chobe National Park, de Okavango Delta, de Makgadikgadi Pans en Central Kalahari.',
+    notes: 'Losgesplitst van Africa Grand Tour 🌍 als onderdeel van deze derde batch losse landen (2026-08, Youri\'s eigen tweede top-10-keuze) — een van Afrika\'s premier safari-bestemmingen. Land, dagen en budget zijn ongewijzigd overgenomen. Africa Grand Tour 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildEcuadorRoute() {
+  const panAm = (code, name) => rbContentFor('Pan-American Grand Tour 🌎', code, name);
+  return rbBuildFlatSeedRoute('Ecuador 🐢', [
+    {
+      ...panAm('EC', 'Ecuador'),
+      notes: 'Instap: vlucht Amsterdam-Quito (Iberia, ±11u40, meestal 1 tussenstop via Madrid; vanaf ±€800-1.000 retour; beste periode maart). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (panAm('EC', 'Ecuador').notes || ''),
+      transport_to_next: 'Einde van deze route — terug naar Quito (vlucht vanaf de Galápagos-eilanden), dan terugvlucht naar Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'Maart',
+    travel_style: 'Backpacker/budget-comfort hybride — lokale bussen, georganiseerde boot-/landtour voor de Galápagos.',
+    climate_summary: 'Maart-april is de Sierra droog genoeg om te wandelen; Galápagos is jaarrond goed maar rustiger in dit seizoen.',
+    description: 'Quito, Otavalo en Baños, met de Galápagos-eilanden als hoogtepunt.',
+    notes: 'Losgesplitst van Pan-American Grand Tour 🌎 als onderdeel van deze derde batch losse landen (2026-08, Youri\'s eigen tweede top-10-keuze) — "Galápagos draagt het alleen al". Land, dagen en budget zijn ongewijzigd overgenomen (incl. de 2026-07 prijscorrectie voor de sterk gestegen Galápagos-kosten). Pan-American Grand Tour 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildCentralAsiaRoute() {
+  const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
+  return rbBuildFlatSeedRoute('Centraal-Azië 🐎', [
+    {
+      ...eurasia('KZ', 'Kazakhstan'),
+      notes: 'Instap: vlucht Amsterdam-Almaty, met overstap (bv. via Istanboel, ±10-15 uur incl. overstap; vanaf ±€250-650 retour — januari is doorgaans de goedkoopste vluchtmaand, maar valt buiten het bergseizoen van deze route; beste reisperiode juni). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (eurasia('KZ', 'Kazakhstan').notes || ''),
+    },
+    eurasia('KG', 'Kyrgyzstan'),
+    eurasia('TJ', 'Tajikistan'),
+    {
+      ...eurasia('UZ', 'Uzbekistan'),
+      transport_to_next: 'Einde van deze route — terugvlucht vanuit Tasjkent naar Amsterdam (1 tussenstop, bv. via Istanboel).',
+    },
+  ], {
+    best_starting_month: 'Juni',
+    travel_style: 'Backpacker — overland (bus, deeltaxi, Pamir Highway-jeep) tussen de vier landen.',
+    climate_summary: 'Juni-september is het enige venster waarin de Pamir Highway en hooggelegen passen begaanbaar zijn.',
+    description: 'De vier "Stans"-landen: Almaty, de Pamir Highway, en de Zijderoute-steden Samarkand, Bukhara en Khiva.',
+    notes: 'Losgesplitst van Eurasia Grand Tour 🌏 (via West-Eurazië Overland 🐫, waar dit al als eigen "Sterk"-blok stond in ROUTE_BUILDER_MODULES.md — "visum/seizoen-gebonden aan de Pamir Highway, precies het soort eigen-identiteit-block") als onderdeel van deze derde batch losse landen (2026-08, Youri\'s eigen tweede top-10-keuze). Landen, dagen en budgetten zijn ongewijzigd overgenomen. Eurasia Grand Tour 🌏 en West-Eurazië Overland 🐫 zelf blijven ongewijzigd bestaan.\n\nDit is met 4 landen en ~45 dagen de langste/breedste van alle standalone-landenroutes tot nu toe — zie README.md voor de aantekening dat dit later mogelijk verder opgesplitst kan worden (bv. Kazachstan+Kirgizië apart van Tadzjikistan+Oezbekistan), net zoals eerder al met de grote expedities is gedaan.',
+  });
+}
+
+function rbBuildCairnsGreatBarrierReefRoute() {
+  return rbBuildFlatSeedRoute('Cairns & Great Barrier Reef 🐠', [
+    {
+      code: 'AU', name: 'Australia', days: 23, budget: 2310, lat: -16.9203, lng: 145.771,
+      destinations: [
+        { name: 'Cairns', lat: -16.9203, lng: 145.7710 },
+        { name: 'Daintree Rainforest', lat: -16.1667, lng: 145.4167 },
+        { name: 'Great Barrier Reef', lat: -16.5000, lng: 145.9667 },
+        { name: 'Whitsundays & Whitehaven Beach', lat: -20.2833, lng: 149.0333 },
+        { name: "Fraser Island / K'gari", lat: -25.2333, lng: 153.1500 },
+      ],
+      notes: 'Instap: vlucht Amsterdam-Cairns, met meerdere overstappen (geen directe verbinding, bv. via Doha/Dubai/Singapore, ±24-28 uur incl. overstappen; vanaf ±€1.600-2.500 retour — januari is doorgaans de goedkoopste vluchtmaand, maar valt buiten het droge seizoen van deze route; beste reisperiode juni-augustus). Prijsindicatie webonderzoek 2026-08, momentopname. Langeafstandsvlucht-buffer (2026-08, zie CLAUDE.md): +2 dagen t.o.v. het oorspronkelijke aantal (21→23) — 24-28 uur reistijd met meerdere overstappen rechtvaardigt een aankomstdag zonder programma. Droog seizoen betekent ook geen kwallenseizoen (dat loopt november-mei) bij Cairns. Prijscorrectie (2026-07): €87,62→€110/dag.',
+      transport_to_next: 'Einde van deze route — terugvlucht vanuit Cairns naar Amsterdam (meerdere overstappen, geen directe verbinding).',
+    },
+  ], {
+    best_starting_month: 'Juni',
+    travel_style: 'Backpacker tussen budget en comfort in — boottochten voor het Great Barrier Reef, camper/huurauto voor de kust.',
+    climate_summary: 'Juni-augustus is droog seizoen bij Cairns — geen kwallenseizoen (november-mei).',
+    description: 'Cairns, het regenwoud van Daintree, het Great Barrier Reef, de Whitsundays en Fraser Island.',
+    notes: 'Losgesplitst van Tropisch/Outback Australië 🐊 (zelf al losgesplitst van Oceania Grand Expedition 🌊 — zie ROUTE_BUILDER_MODULES.md) als onderdeel van deze derde batch losse landen (2026-08, Youri\'s eigen tweede top-10-keuze). Land en budget(dagtarief) zijn ongewijzigd overgenomen; dagen verhoogd van 21 naar 23 als langeafstandsvlucht-buffer (zie CLAUDE.md). Tropisch/Outback Australië 🐊 en Oceania Grand Expedition 🌊 zelf blijven ongewijzigd bestaan.',
+  });
+}
+
+function rbBuildCaliforniaRoute() {
+  return rbBuildFlatSeedRoute('Californië 🌲', [
+    {
+      code: 'US', name: 'United States', days: 14, budget: 2675, lat: 37.7749, lng: -122.4194,
+      destinations: [
+        { name: 'San Francisco (Golden Gate Bridge, Alcatraz, Mission District)', lat: 37.7749, lng: -122.4194 },
+        { name: 'Yosemite Valley', lat: 37.7459, lng: -119.5936 },
+        { name: 'Sequoia & Kings Canyon National Parks', lat: 36.4864, lng: -118.5658 },
+      ],
+      notes: "Instap: rechtstreekse KLM-vlucht Amsterdam-San Francisco (±11 uur; vanaf ±€850-1.150 retour; beste periode juli). Prijsindicatie webonderzoek 2026-08, momentopname. Van de stad direct de bergen in: Yosemite's granieten wanden en watervallen, gevolgd door de gigantische sequoia's van Sequoia/Kings Canyon. Geen nieuwe huurauto nodig — dagtochten of een korte huurperiode volstaan vanuit San Francisco.",
+      transport_to_next: "Einde van deze route — auto terug naar San Francisco (≈270 mijl/≈5 uur vanaf Sequoia & Kings Canyon, reken deze rit als eigen reisdag), dan rechtstreekse KLM-terugvlucht vanaf SFO. Fresno (FAT) ligt dichterbij maar heeft geen directe vlucht naar Amsterdam — SFO blijft de betere keuze.",
+    },
+  ], {
+    best_starting_month: 'Juli',
+    travel_style: 'Stad + dagtochten/korte huurauto — geen doorlopende roadtrip nodig voor dit deel.',
+    climate_summary: 'Juli-augustus blijft ruim vóór de piek van het Californische bosbrandseizoen (vooral augustus-oktober).',
+    description: 'San Francisco, gevolgd door Yosemite Valley en de sequoia\'s van Sequoia/Kings Canyon.',
+    notes: 'Losgesplitst van VS Westkust Roadtrip 🌉 (zelf al losgesplitst van North America Grand Traverse 🌎 — zie ROUTE_BUILDER_MODULES.md) als onderdeel van deze derde batch losse landen (2026-08, Youri\'s eigen tweede top-10-keuze) — de klassieke Amerikaanse westkust-combinatie. Land, dagen en budget zijn ongewijzigd overgenomen. VS Westkust Roadtrip 🌉 en North America Grand Traverse 🌎 zelf blijven ongewijzigd bestaan.',
+  });
+}
+
+function rbBuildJamaicaRoute() {
+  return rbBuildFlatSeedRoute('Jamaica 🎵', [
+    {
+      code: 'JM', name: 'Jamaica', days: 12, budget: 1080, lat: 17.9714, lng: -76.7936,
+      destinations: [
+        { name: 'Kingston', lat: 17.9714, lng: -76.7936 },
+        { name: "Dunn's River Falls (Ocho Rios)", lat: 18.4108, lng: -77.1296 },
+        { name: 'Port Antonio', lat: 18.1811, lng: -76.4513 },
+        { name: 'Blue Mountains (Hardwar Gap)', lat: 18.0747, lng: -76.6597 },
+      ],
+      notes: 'Instap: vlucht Amsterdam-Kingston, met overstap (geen directe verbinding, ±13-16 uur incl. overstap; vanaf ±€750-900 retour; beste periode december — mei is doorgaans goedkoper qua vluchtprijs maar valt buiten het droge seizoen). Prijsindicatie webonderzoek 2026-08, momentopname. Blue Mountains (koffie, wandelen) en Port Antonio (rafting, watervallen, nauwelijks toeristen vergeleken met Negril/Ocho Rios) zijn de sterkste match met natuur boven luxe. Prijscorrectie (2026-07): €75→€90/dag, Jamaica is duurder dan aangenomen (guesthouses + entreegelden).',
+      transport_to_next: 'Einde van deze route — kort eindstuk Blue Mountains-Kingston (Hardwar Gap-bergroute), dan terugvlucht Kingston-Amsterdam (meestal met overstap via Panama City of Miami).',
+    },
+  ], {
+    best_starting_month: 'December',
+    travel_style: 'Backpacker tussen goedkoop en normaal in — lokale bussen/taxi\'s.',
+    climate_summary: 'December is droog seizoen, ruim na het orkaanseizoen (dat loopt juni-november).',
+    description: 'Kingston, Dunn\'s River Falls, Port Antonio en de koffie-/wandelregio van de Blue Mountains.',
+    notes: 'Losgesplitst van Caraïbische Eilanden-hop 🏝️ (zelf al losgesplitst van Caribbean & Amazon Expedition 🌴 — zie ROUTE_BUILDER_MODULES.md) als onderdeel van deze derde batch losse landen (2026-08, Youri\'s eigen tweede top-10-keuze). Land, dagen en budget zijn ongewijzigd overgenomen (incl. de 2026-08 routelogica-fix voor de Blue Mountains-volgorde). Caraïbische Eilanden-hop 🏝️ en Caribbean & Amazon Expedition 🌴 zelf blijven ongewijzigd bestaan.',
+  });
+}
+
+function rbBuildFijiRoute() {
+  return rbBuildFlatSeedRoute('Fiji 🌊', [
+    {
+      code: 'FJ', name: 'Fiji', days: 16, budget: 1050, lat: -17.7765, lng: 177.4356,
+      destinations: [
+        { name: 'Nadi', lat: -17.7765, lng: 177.4356 },
+        { name: 'Mamanuca-eilanden', lat: -17.6667, lng: 177.1000 },
+        { name: 'Yasawa-eilanden', lat: -16.8000, lng: 177.4500 },
+        { name: 'Taveuni', lat: -16.8500, lng: 179.9833 },
+      ],
+      notes: 'Instap: vlucht Amsterdam-Nadi, met meerdere overstappen (geen directe verbinding, ±24-30 uur incl. overstappen; vanaf ±€1.150-1.500 retour — september is doorgaans de goedkoopste vluchtmaand, maar valt buiten het beste seizoen van deze route; beste reisperiode mei-juni). Prijsindicatie webonderzoek 2026-08, momentopname. Langeafstandsvlucht-buffer (2026-08, zie CLAUDE.md): +2 dagen t.o.v. het oorspronkelijke aantal (14→16) — 24-30 uur reistijd met meerdere overstappen rechtvaardigt een aankomstdag zonder programma. Beste backpacker-infrastructuur van de Pacific — eilandhoppen per boot (Yasawa Flyer) tussen de Mamanucas en Yasawas, snorkelen en duiken op de koraalriffen. Prijscorrectie (2026-07): €62,50→€75/dag (Yasawa Flyer-bootpas + vlucht naar Taveuni waren niet gedekt).',
+      transport_to_next: 'Einde van deze route — terugvlucht vanuit Nadi naar Amsterdam (meerdere overstappen, geen directe verbinding).',
+    },
+  ], {
+    best_starting_month: 'Mei',
+    travel_style: 'Backpacker tussen budget en comfort in — bootpas (Yasawa Flyer) tussen de eilandgroepen.',
+    climate_summary: 'Mei-juni is het droge seizoen in de hele Pacific, ruim vóór het cycloonseizoen (november-april).',
+    description: 'Nadi, de Mamanuca- en Yasawa-eilanden en Taveuni — klassiek Pacific eiland-hoppen.',
+    notes: 'Losgesplitst van Pacific-eilanden 🌺 (zelf al losgesplitst van Oceania Grand Expedition 🌊 — zie ROUTE_BUILDER_MODULES.md) als onderdeel van deze derde batch losse landen (2026-08, Youri\'s eigen tweede top-10-keuze). Land en budget(dagtarief) zijn ongewijzigd overgenomen; dagen verhoogd van 14 naar 16 als langeafstandsvlucht-buffer (zie CLAUDE.md). Pacific-eilanden 🌺 en Oceania Grand Expedition 🌊 zelf blijven ongewijzigd bestaan.',
+  });
+}
+
+function rbBuildPhilippinesRoute() {
+  const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
+  return rbBuildFlatSeedRoute('Filipijnen 🏖️', [
+    {
+      ...eurasia('PH', 'Philippines'),
+      notes: 'Instap: rechtstreekse KLM-vlucht Amsterdam-Manila (±15 uur; vanaf ±€700-900 retour; beste periode februari — september is qua vluchtprijs goedkoper maar valt buiten het beste seizoen van deze route). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (eurasia('PH', 'Philippines').notes || ''),
+      transport_to_next: 'Einde van deze route — terug naar Manila (binnenlandse vlucht vanaf Cebu), dan rechtstreekse KLM-terugvlucht Manila-Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'Februari',
+    travel_style: 'Backpacker — binnenlandse vluchten tussen de eilandgroepen, boottochten voor El Nido/Coron.',
+    climate_summary: 'Februari-maart is droog seizoen in de meeste regio\'s, vóór de moesson die later in het voorjaar begint.',
+    description: 'Manila, Banaue, de eilanden El Nido en Coron, Siargao, Bohol en Cebu.',
+    notes: 'Losgesplitst van Eurasia Grand Tour 🌏 (via Zuidoost-Azië Grand Loop 🛕) als onderdeel van deze derde batch losse landen (2026-08, Youri\'s eigen tweede top-10-keuze) — eiland-hoppen op zijn eigen manier, anders dan Vietnam/Thailand. Land, dagen en budget zijn ongewijzigd overgenomen. Eurasia Grand Tour 🌏 en Zuidoost-Azië Grand Loop 🛕 zelf blijven ongewijzigd bestaan.',
+  });
 }

@@ -100,7 +100,7 @@ See `CHANGELOG.md`'s "alle 38 losse split-routes" entry.
 
 **Standalone single-country routes (in progress, 2026-08)**: `ROUTE_BUILDER_MODULES.md` also
 flagged ~35 *individual* countries within those combined routes as strong enough to stand fully
-alone ("Sterk") — never built as their own route, only the multi-country groupings were. 18 built
+alone ("Sterk") — never built as their own route, only the multi-country groupings were. 28 built
 so far, same reused content + country-of-origin notes as every other split route, each with its
 own NL-departure opener and flight-home ending:
 - **Batch 1** ("most obvious", 2026-08): **Costa Rica 🦥**, **Colombia ☕**, **Peru 🦙**,
@@ -108,25 +108,31 @@ own NL-departure opener and flight-home ending:
 - **Batch 2** (Youri's own top-10, 2026-08): **Japan & Taiwan 🗻**, **Zuid-Afrika 🦓**,
   **Kenia 🦒**, **Vietnam 🛵**, **Nieuw-Zeeland Zuidereiland 🏔️**, **Kaukasus 🍷**,
   **Marokko 🕌**, **Madagaskar 🦎**, **Sicilië 🌋**, **Jordanië 🏺**.
+- **Batch 3** (Youri's second top-10, 2026-08): **Thailand 🛕**, **Tanzania 🦁**,
+  **Botswana 🐘**, **Ecuador 🐢**, **Centraal-Azië 🐎** (Kazachstan/Kirgizië/Tadzjikistan/
+  Oezbekistan samen, ~45d), **Cairns & Great Barrier Reef 🐠**, **Californië 🌲**,
+  **Jamaica 🎵**, **Fiji 🌊**, **Filipijnen 🏖️**.
 
-**Resolved (2026-08)**: the day-counts on all of these were originally calibrated for a leg
-*inside* a bigger multi-country expedition, not a flight-in-from-NL-and-back standalone trip —
-see `CLAUDE.md`'s "long-haul flight buffer policy" for the actual rule and reasoning. Two got a
-+2 day buffer: **Jordanië 🏺** (8→10d, short trip + a connecting flight) and **Nieuw-Zeeland
-Zuidereiland 🏔️** (21→23d, 27-38h with multiple stops). The other 16 were checked against the
-same rule and left as-is — either the flight is short/direct (Marokko, Sicilië) or the trip is
-already long enough to absorb the flight time (everything else).
+**Long-haul flight buffer (2026-08, see `CLAUDE.md`'s "long-haul flight buffer policy")**: 4 of
+the 28 got a +2 day buffer for exposure to their round-trip flight time — **Jordanië 🏺** (8→10d),
+**Nieuw-Zeeland Zuidereiland 🏔️** (21→23d), **Cairns & Great Barrier Reef 🐠** (21→23d) and
+**Fiji 🌊** (14→16d). The rest were checked against the same rule and left as-is.
+
+**Note on Centraal-Azië 🐎**: at ~45 days across 4 countries, this is the largest of all 28
+standalone routes — a genuine candidate to split further later (e.g. Kazachstan+Kirgizië apart
+from Tadzjikistan+Oezbekistan), the same way the original 13 grand expeditions were split. Not
+done now — flagged for whenever there's appetite to revisit it.
 
 **Remaining candidates for a next batch** (days, Sterk/Medium per the analysis, parent expedition):
-- **Pan-American Grand Tour 🌎**: Ecuador alleen (24d, Medium/Sterk) · Bolivia alleen (21d, Medium) · Panama alleen (15d) · Nicaragua alleen (15d) · Guatemala alleen (16d)
-- **Africa Grand Tour 🌍**: Zimbabwe alleen (14d) · Botswana alleen (16d) · Mozambique alleen (20d) · Zambia & Malawi (30d) · Mauritius alleen (7d) · Ethiopië alleen (20d) · Rwanda gorilla-trekking alleen (10d) · Tanzania alleen (24d)
+- **Pan-American Grand Tour 🌎**: Bolivia alleen (21d, Medium) · Panama alleen (15d) · Nicaragua alleen (15d) · Guatemala alleen (16d)
+- **Africa Grand Tour 🌍**: Zimbabwe alleen (14d) · Mozambique alleen (20d) · Zambia & Malawi (30d) · Mauritius alleen (7d) · Ethiopië alleen (20d) · Rwanda gorilla-trekking alleen (10d)
 - **Mediterranean Civilizations Expedition 🏛️**: Spanje alleen (10d) · Rome & omgeving (13d) · Sardinië alleen (6d) · Griekenland vasteland & Kreta (19d) · Cyprus alleen (5d) · Golfstaten-trio Oman/Bahrein/Qatar (13d)
-- **Eurasia Grand Tour 🌏**: Centraal-Azië "de Stans" (49d, Sterk als blok) · Oezbekistan alleen (11d) · Kirgizië alleen (12d) · Kirgizië & Kazachstan (24d) · Mongolië alleen (10d) · Thailand alleen (18d) · Vietnam & Cambodja (30d) · Filipijnen alleen (21d) · Maleisië alleen (10d)
+- **Eurasia Grand Tour 🌏**: Oezbekistan alleen (11d) · Kirgizië alleen (12d) · Mongolië alleen (10d) · Vietnam & Cambodja (30d) · Maleisië alleen (10d)
 - **Patagonia & Antarctica Expedition 🧊**: Argentijns Patagonië alleen (18d) · Chileens Patagonië alleen (24d)
-- **Oceania Grand Expedition 🌊**: Fiji alleen (14d) · Fiji & Vanuatu (25d) · Cairns & Great Barrier Reef (21d) · Sydney/Byron & Great Ocean Road (22d) · Tasmanië alleen (12d) · Nieuw-Zeeland Noordereiland alleen (14d)
-- **Caribbean & Amazon Expedition 🌴**: Jamaica alleen (12d) · Guadeloupe & Dominica (15d) · Saint Lucia & Grenada (14d)
+- **Oceania Grand Expedition 🌊**: Fiji & Vanuatu (25d) · Sydney/Byron & Great Ocean Road (22d) · Tasmanië alleen (12d) · Nieuw-Zeeland Noordereiland alleen (14d)
+- **Caribbean & Amazon Expedition 🌴**: Guadeloupe & Dominica (15d) · Saint Lucia & Grenada (14d)
 - **West & Central Africa Expedition 🌍**: Kaapverdië alleen (13d) · Senegambia (19d) · Ghana alleen (15d) · Gabon alleen (9d) · São Tomé & Príncipe alleen (9d)
-- **North America Grand Traverse 🌎**: Pacific Northwest alleen (15d) · Californië alleen (14d)
+- **North America Grand Traverse 🌎**: Pacific Northwest alleen (15d)
 
 ## Search
 
