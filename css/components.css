@@ -666,6 +666,59 @@
   color: var(--atlas-blue);
 }
 
+/* === ROUTE MAP (shared — js/utils/routeMap.js; first used by Trips, see TRIP_ROUTE_MAP.md) === */
+.atlas-map-div {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  border: 1px solid var(--atlas-border);
+  background: #b9d9e8;
+}
+
+.atlas-map-div.leaflet-container {
+  background: #b9d9e8;
+  font-family: var(--font-sans);
+  outline: none;
+}
+
+.atlas-map-empty {
+  position: absolute;
+  inset: 0;
+  z-index: 1000; /* above Leaflet's internal panes (tilePane/overlayPane/markerPane etc., z-index 200-700) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--sp-8);
+  font-size: var(--fs-sm);
+  color: var(--atlas-text-muted);
+  background: var(--atlas-bg-alt);
+}
+
+.atlas-map-stop-icon span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--r-full);
+  border: 2px solid var(--atlas-white);
+  box-shadow: var(--shadow-sm);
+  color: var(--atlas-white);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+}
+
+.atlas-map-stop-icon--home span {
+  width: 26px;
+  height: 26px;
+  background: var(--atlas-navy);
+  font-size: var(--fs-sm);
+  border-width: 2px;
+}
+
 /* === TABS === */
 .tabs {
   display: flex;

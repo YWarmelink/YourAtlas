@@ -15,6 +15,7 @@ function renderFooter() {
           <a href="route-builder.html">Route Builder</a>
           <a href="countries.html">Countries</a>
           <a href="map.html">Map</a>
+          <a href="search.html">Search</a>
         </div>
         <div class="footer-meta">
           <p>Part of the YourIntineryPlan ecosystem</p>

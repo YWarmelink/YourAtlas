@@ -142,6 +142,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   document.getElementById('rbLoading').hidden = true;
   rbShowList();
+
+  const openId = getURLParam('open');
+  if (openId && rbRoutes.some(r => r.id === openId)) {
+    rbCurrentId = openId;
+    rbShowEditor();
+  }
 });
 
 /** Flag emoji from an ISO alpha-2 code — works for any country, not just a curated list. */

@@ -123,6 +123,21 @@ class DataService {
   }
 
   /**
+   * Returns trip destinations (route-map stops), optionally filtered by tripId.
+   * Each entry: { trip_id, order, country, country_code, name, lat, lng, notes }.
+   * See TRIP_ROUTE_MAP.md — same shape as a Route Builder destination, so a
+   * future "graduate a Route Builder expedition into a Trip" flow can copy
+   * straight across. Sorted by `order` ascending.
+   */
+  async getTripDestinations(tripId = null) {
+    const dests = await this._load('trip_destinations');
+    const filtered = tripId === null ? dests : dests.filter(d => String(d.trip_id) === String(tripId));
+    return filtered
+      .map(d => ({ ...d, lat: parseFloat(d.lat), lng: parseFloat(d.lng), order: parseInt(d.order, 10) || 0 }))
+      .sort((a, b) => a.order - b.order);
+  }
+
+  /**
    * Returns countries list from the Countries sheet.
    * Each entry: { country_code, country_name, continent, status }
    * Deduplicates by country_code, keeping the highest-priority status

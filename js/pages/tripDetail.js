@@ -5,16 +5,18 @@ document.addEventListener('DOMContentLoaded', async () => {
   renderSkeleton();
 
   try {
-    const [trip, items, notes] = await Promise.all([
+    const [trip, items, notes, destinations] = await Promise.all([
       dataService.getTripById(id),
       dataService.getTripItems(id),
       dataService.getTripNotes(id),
+      dataService.getTripDestinations(id),
     ]);
 
     if (!trip) { renderNotFound(); return; }
 
     renderHeader(trip);
     renderOverview(trip);
+    renderMap(trip, destinations);
     renderItinerary(items);
     renderNotes(notes);
     renderSidebar(trip, items, notes);
@@ -114,6 +116,45 @@ function renderOverview(trip) {
       ${overviewHTML}
     </div>
     ${notesHTML}`);
+}
+
+/**
+ * Route map — draws a line through this trip's destinations (see TRIP_ROUTE_MAP.md).
+ * Only renders the section at all once there are ≥2 destinations with coordinates; most
+ * trips don't have any yet, and an empty map on every trip page would be more noise than
+ * signal. Uses js/utils/routeMap.js, shared with a future Route Builder migration.
+ */
+async function renderMap(trip, destinations) {
+  const main = document.getElementById('tripMain');
+  if (!main) return;
+
+  const validCount = (destinations || []).filter(d =>
+    typeof d.lat === 'number' && typeof d.lng === 'number' && !isNaN(d.lat) && !isNaN(d.lng)).length;
+  if (validCount < 2) return;
+
+  main.insertAdjacentHTML('beforeend', `
+    <div class="content-block">
+      <div class="content-block-title">Route Map</div>
+      <div class="atlas-map-div" id="tripMapDiv"></div>
+    </div>`);
+
+  const mapDiv = document.getElementById('tripMapDiv');
+  if (typeof L === 'undefined' || typeof topojson === 'undefined') {
+    mapDiv.innerHTML = errorMsg('Map library not loaded.');
+    return;
+  }
+
+  try {
+    const geojson = await atlasGetWorldGeoJSON();
+    const map = atlasEnsureMiniMap(mapDiv);
+    const stops = destinations.map(d => ({ lat: d.lat, lng: d.lng, label: `${d.name || ''}${d.country ? ` (${d.country})` : ''}` }));
+    atlasRenderRouteLine(map, mapDiv, geojson, stops, {
+      emptyText: 'Not enough coordinates yet to draw this trip’s route.',
+    });
+    setTimeout(() => map.invalidateSize(), 30);
+  } catch (_) {
+    mapDiv.innerHTML = errorMsg('Could not load map data.');
+  }
 }
 
 function renderItinerary(items) {

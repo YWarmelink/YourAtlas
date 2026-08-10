@@ -3,26 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trip Detail | Youri's Travel Atlas</title>
+  <title>Search | Youri's Travel Atlas</title>
+  <meta name="description" content="Search across all trips, expeditions and notes.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/pages/trip-detail.css">
-  <link rel="stylesheet" href="css/pages/itinerary.css">
-  <link rel="stylesheet" href="css/pages/notes.css">
+  <link rel="stylesheet" href="css/pages/search.css">
 </head>
 <body>
 
   <main>
-    <div id="tripApp">
-      <div class="loading-spinner" style="padding:5rem 1rem">
-        <div class="spinner"></div><p>Loading trip…</p>
+    <div class="page-header">
+      <div class="page-header-inner">
+        <div class="page-header-label">Universal Search</div>
+        <h1 class="page-header-title">Search</h1>
+        <p class="page-header-subtitle">One box, every trip, expedition and note</p>
+      </div>
+    </div>
+
+    <div class="search-section">
+      <div class="search-inner">
+
+        <div class="filter-bar">
+          <input type="search" id="searchInput" class="search-input" placeholder="🔍  Search trips, expeditions, notes…" autofocus>
+        </div>
+
+        <div id="searchResultsCount" class="search-results-count"></div>
+        <div id="searchResults"></div>
+
       </div>
     </div>
   </main>
@@ -33,11 +46,6 @@
   <script src="js/utils/helpers.js"></script>
   <script src="js/components/navbar.js"></script>
   <script src="js/components/footer.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
-  <script src="js/utils/routeMap.js"></script>
-
-  <script src="js/pages/tripDetail.js"></script>
+  <script src="js/pages/search.js"></script>
 </body>
 </html>

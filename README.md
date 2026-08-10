@@ -15,6 +15,7 @@ A personal travel dashboard built with vanilla HTML, CSS and JavaScript. Part of
 | Route Builder | [/route-builder.html](https://ywarmelink.github.io/YourAtlas/route-builder.html) |
 | Countries | [/countries.html](https://ywarmelink.github.io/YourAtlas/countries.html) |
 | Map | [/map.html](https://ywarmelink.github.io/YourAtlas/map.html) |
+| Search | [/search.html](https://ywarmelink.github.io/YourAtlas/search.html) |
 
 ## Data
 
@@ -91,6 +92,30 @@ Expedition 🍀** were deliberately left unsplit (self-driven-from-NL loops, dec
 up). Not yet built: the technical Module Library work described in that analysis (metadata
 fields, "possible standalone trips" UI, compatible/incompatible-blocks scoring) — for now the new
 routes are just added as plain routes, the same way the original 13 are.
+
+## Search
+
+`search.html` — one search box across Trips, Route Builder expeditions (incl. country blocks,
+destinations and the Block Library) and trip Notes, client-side over data that's already
+loaded. Groups results by source, each result links straight to the right page (Route Builder
+results deep-link via `route-builder.html?open=<id>`, opening that expedition's editor
+directly). See `js/pages/search.js`.
+
+## Trips route map (in progress)
+
+Trips can now show a "🔍 Gedetailleerd"-style route line too, same idea as Route Builder's —
+see [`TRIP_ROUTE_MAP.md`](TRIP_ROUTE_MAP.md) for the full plan. The map code
+(`js/utils/routeMap.js`, wired into `trip.html`/`js/pages/tripDetail.js`) is done and only
+shows up on a trip once it has ≥2 destinations with coordinates. **Nothing has coordinates
+yet** — that needs a new Sheet tab, which is the next action:
+
+**Youri — next time you're in the Google Sheet:**
+1. Add a tab named `TripDestinations` with columns: `trip_id | order | country | country_code | name | lat | lng | notes`.
+2. `File → Share → Publish to web` → CSV, same as the other tabs.
+3. Fill in rows for whichever trip(s) should get a map first (coordinates: right-click a spot
+   in Google Maps → the lat/lng shows at the top of the context menu, click to copy).
+4. Send Claude the published CSV URL — it swaps into `js/config/users.js`'s `trip_destinations`
+   source (currently pointed at an empty local JSON fallback as a placeholder).
 
 ## Open items
 
