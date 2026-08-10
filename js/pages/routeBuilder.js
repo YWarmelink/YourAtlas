@@ -61,6 +61,7 @@ const RB_MIGRATE_FLAG_2026_08_OCEANIA_OVERHAUL = 'atlas_grand_trips_migrate_2026
 const RB_MIGRATE_FLAG_2026_08_PANAMERICAN_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_panamerican_overhaul_v1';
 const RB_MIGRATE_FLAG_2026_08_MEDITERRANEAN_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_mediterranean_overhaul_v2';
 const RB_MIGRATE_FLAG_2026_08_AFRICA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_africa_overhaul_v1';
+const RB_MIGRATE_FLAG_2026_08_SPLIT_ENTRY_NOTES = 'atlas_grand_trips_migrate_2026_08_split_entry_notes_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -128,6 +129,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigratePanAmericanRouteLogicOverhaul();
   rbMigrateMediterraneanRouteLogicOverhaul();
   rbMigrateAfricaGrandTourRouteLogicOverhaul();
+  rbMigrateSplitRouteEntryNotes();
   rbBindEvents();
 
   try {
@@ -3684,7 +3686,7 @@ function rbSeedEurasiaSplitExpeditions() {
 function rbBuildWestEurasiaOverlandRoute() {
   const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
   return rbBuildSeedRoute('West-Eurazië Overland 🐫', [
-    { name: 'Balkans', season: 'April–juni', budget: 1909, note: 'Mild voorjaar, voor de zomerdrukte en -hitte — sluit aan op een vroege start van de hele expeditie.', countries: [eurasia('BA', 'Bosnia and Herzegovina'), eurasia('HR', 'Croatia'), eurasia('ME', 'Montenegro'), eurasia('AL', 'Albania'), eurasia('MK', 'North Macedonia')] },
+    { name: 'Balkans', season: 'April–juni', budget: 1909, note: 'Mild voorjaar, voor de zomerdrukte en -hitte — sluit aan op een vroege start van de hele expeditie.', countries: [{ ...eurasia('BA', 'Bosnia and Herzegovina'), notes: 'Instap: vlucht Amsterdam-Sarajevo (±5-6 uur, doorgaans 1 tussenstop via Wenen/München; vanaf ±€200-350 retour; beste periode april). Prijsindicatie webonderzoek 2026-08, momentopname.' }, eurasia('HR', 'Croatia'), eurasia('ME', 'Montenegro'), eurasia('AL', 'Albania'), eurasia('MK', 'North Macedonia')] },
     { name: 'Turkey', season: 'Juni', budget: 1300, note: 'Aansluitend op de Balkan, nog vóór de zwaarste zomerhitte in Cappadocië en het binnenland.', countries: [eurasia('TR', 'Turkey')] },
     { name: 'Caucasus', season: 'Juni–augustus', budget: 1475, note: 'Bergpassen en Svaneti zijn dan sneeuwvrij; sluit direct aan op het Centraal-Aziatische bergseizoen.', countries: [eurasia('GE', 'Georgia'), eurasia('AM', 'Armenia'), eurasia('AZ', 'Azerbaijan')] },
     { name: 'Central Asia', season: 'Juni–september', budget: 2350, note: 'De Pamir Highway en hooggelegen passen zijn alleen in deze maanden begaanbaar — buiten dit venster ligt er sneeuw/ijs. Turkmenistan is bewust geschrapt (lastig te bezoeken/niet reëel voor deze reisstijl), en Nur-Sultan/Astana is losgelaten (lag te ver uit de route).', countries: [eurasia('KZ', 'Kazakhstan'), eurasia('KG', 'Kyrgyzstan'), eurasia('TJ', 'Tajikistan'), eurasia('UZ', 'Uzbekistan')] },
@@ -3700,7 +3702,7 @@ function rbBuildWestEurasiaOverlandRoute() {
 function rbBuildEastAsiaPacificRoute() {
   const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
   return rbBuildSeedRoute('Oost-Azië & Stille Oceaan 🗻', [
-    { name: 'China', season: 'September', budget: 1625, note: 'Na de zomerdrukte/-hitte, ruim vóór de Mongoolse winterkou die erna komt.', countries: [eurasia('CN', 'China')] },
+    { name: 'China', season: 'September', budget: 1625, note: 'Na de zomerdrukte/-hitte, ruim vóór de Mongoolse winterkou die erna komt.', countries: [{ ...eurasia('CN', 'China'), notes: "Instap: vlucht Amsterdam-Xi'an (±14-16 uur, 1 tussenstop, meestal via Peking/Sjanghai/Xiamen; vanaf ±€580-800 retour; beste periode september). Prijsindicatie webonderzoek 2026-08, momentopname. " + eurasia('CN', 'China').notes }] },
     { name: 'Mongolia', season: 'Eind augustus–september', budget: 650, note: 'Vóór de vrieskou vanaf oktober; de Gobi is dan nog droog en warm genoeg voor een meerdaagse 4x4-tocht.', countries: [eurasia('MN', 'Mongolia')] },
     { name: 'Japan', season: 'Oktober–november', budget: 2700, note: 'Herfstkleuren, en rustiger dan de kersenbloesem-drukte in het voorjaar.', countries: [eurasia('JP', 'Japan')] },
     { name: 'Taiwan', season: 'November', budget: 750, note: 'Droog en mild, vóór het koelere winterseizoen in het noorden van het eiland.', countries: [eurasia('TW', 'Taiwan')] },
@@ -3716,7 +3718,7 @@ function rbBuildEastAsiaPacificRoute() {
 function rbBuildSoutheastAsiaGrandLoopRoute() {
   const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
   return rbBuildSeedRoute('Zuidoost-Azië Grand Loop 🛕', [
-    { name: 'Mainland Southeast Asia', season: 'December–februari', budget: 2700, note: 'Het droge seizoen op het vasteland van Zuidoost-Azië — geen moesson, aangename temperaturen. Myanmar is bewust geschrapt (lastig te bezoeken/niet reëel voor deze reisstijl). Volgorde omgedraaid (2026-08): Vietnam → Cambodja → Laos → Thailand, via de klassieke Mekongdelta- en Huay Xai-grensovergangen.', countries: [eurasia('VN', 'Vietnam'), eurasia('KH', 'Cambodia'), eurasia('LA', 'Laos'), eurasia('TH', 'Thailand')] },
+    { name: 'Mainland Southeast Asia', season: 'December–februari', budget: 2700, note: 'Het droge seizoen op het vasteland van Zuidoost-Azië — geen moesson, aangename temperaturen. Myanmar is bewust geschrapt (lastig te bezoeken/niet reëel voor deze reisstijl). Volgorde omgedraaid (2026-08): Vietnam → Cambodja → Laos → Thailand, via de klassieke Mekongdelta- en Huay Xai-grensovergangen.', countries: [{ ...eurasia('VN', 'Vietnam'), notes: "Instap: vlucht Amsterdam-Hanoi (±15-17 uur, doorgaans 1 tussenstop; vanaf ±€630-720 retour; beste periode december). Prijsindicatie webonderzoek 2026-08, momentopname. " + eurasia('VN', 'Vietnam').notes }, eurasia('KH', 'Cambodia'), eurasia('LA', 'Laos'), eurasia('TH', 'Thailand')] },
     { name: 'Maritime Southeast Asia', season: 'Februari–maart', budget: 2735, note: "Nog droog in de meeste regio's, vóór de moesson die later in het voorjaar begint. Maleisië is uitgebreid (2026-08) met een Borneo-etappe (Sarawak → Brunei → Sabah, de 'Borneo Overland Trail') tussen het schiereiland en Brunei in.", countries: [
       eurasia('MY', 'Malaysia'),
       {
@@ -3766,7 +3768,7 @@ function rbSeedPanAmericanSplitExpeditions() {
 function rbBuildMexicoRoute() {
   const panAm = (code, name) => rbContentFor('Pan-American Grand Tour 🌎', code, name);
   return rbBuildSeedRoute('Mexico 🌵', [
-    { name: 'Mexico', season: 'November–december', budget: 1000, note: 'Droog seizoen, na de zomerse regens.', countries: [panAm('MX', 'Mexico')] },
+    { name: 'Mexico', season: 'November–december', budget: 1000, note: 'Droog seizoen, na de zomerse regens.', countries: [{ ...panAm('MX', 'Mexico'), notes: "Instap: rechtstreekse KLM-vlucht Amsterdam-Mexico-Stad (±11 uur; vanaf ±€800-950 retour; beste periode november). Prijsindicatie webonderzoek 2026-08, momentopname. " + panAm('MX', 'Mexico').notes }] },
   ], {
     best_starting_month: 'November',
     travel_style: 'Backpacker — lokale bussen en colectivos.',
@@ -3779,7 +3781,7 @@ function rbBuildMexicoRoute() {
 function rbBuildCentralAmericaLoopRoute() {
   const panAm = (code, name) => rbContentFor('Pan-American Grand Tour 🌎', code, name);
   return rbBuildSeedRoute('Midden-Amerika Loop 🌋', [
-    { name: 'Northern Central America', season: 'December–januari', budget: 1770, note: 'Droog seizoen, orkaanseizoen voorbij.', countries: [panAm('GT', 'Guatemala'), panAm('BZ', 'Belize'), panAm('HN', 'Honduras'), panAm('SV', 'El Salvador')] },
+    { name: 'Northern Central America', season: 'December–januari', budget: 1770, note: 'Droog seizoen, orkaanseizoen voorbij.', countries: [{ ...panAm('GT', 'Guatemala'), notes: "Instap: vlucht Amsterdam-Guatemala-Stad (±14-17 uur, 1-2 tussenstops, bv. via Madrid/Houston/Miami; vanaf ±€600-900 retour; beste periode december). Prijsindicatie webonderzoek 2026-08, momentopname. " + panAm('GT', 'Guatemala').notes }, panAm('BZ', 'Belize'), panAm('HN', 'Honduras'), panAm('SV', 'El Salvador')] },
     { name: 'Southern Central America', season: 'Januari–februari', budget: 1975, note: 'Pacifische droge seizoen in Costa Rica/Panama — beste tijd voor de kust.', countries: [panAm('NI', 'Nicaragua'), panAm('CR', 'Costa Rica'), panAm('PA', 'Panama')] },
   ], {
     best_starting_month: 'December',
@@ -3793,7 +3795,7 @@ function rbBuildCentralAmericaLoopRoute() {
 function rbBuildAndesGrandTraverseRoute() {
   const panAm = (code, name) => rbContentFor('Pan-American Grand Tour 🌎', code, name);
   return rbBuildSeedRoute('Andes Grand Traverse 🦙', [
-    { name: 'Colombia', season: 'Februari–maart', budget: 1260, note: 'Droog in zowel de Caribische regio als de koffiezone/Andes.', countries: [panAm('CO', 'Colombia')] },
+    { name: 'Colombia', season: 'Februari–maart', budget: 1260, note: 'Droog in zowel de Caribische regio als de koffiezone/Andes.', countries: [{ ...panAm('CO', 'Colombia'), notes: "Instap: vlucht Amsterdam-Cartagena (±14-16 uur, 1 tussenstop, bv. via Madrid/Bogotá/Panama-Stad — geen rechtstreekse verbinding; vanaf ±€650-900 retour; beste periode februari). Prijsindicatie webonderzoek 2026-08, momentopname. " + panAm('CO', 'Colombia').notes }] },
     { name: 'Ecuador', season: 'Maart–april', budget: 1650, note: 'Sierra droog genoeg voor wandelen; Galápagos is jaarrond goed maar rustiger in dit seizoen.', countries: [panAm('EC', 'Ecuador')] },
     { name: 'Peru', season: 'April–mei', budget: 1050, note: "Het Andes-droogseizoen begint — ideaal voor Cusco/Vallei van de Inca's en Huaraz-trekking.", countries: [panAm('PE', 'Peru')] },
     { name: 'Bolivia', season: 'Mei–juni', budget: 344, note: 'Droog seizoen, heldere Uyuni-zoutvlakte (let op: geen spiegel-effect zoals in het natte seizoen — een bewuste ruil).', countries: [panAm('BO', 'Bolivia')] },
@@ -3809,7 +3811,7 @@ function rbBuildAndesGrandTraverseRoute() {
 function rbBuildSouthernConeAndBrazilFinaleRoute() {
   const panAm = (code, name) => rbContentFor('Pan-American Grand Tour 🌎', code, name);
   return rbBuildSeedRoute('Zuidelijke Kegel & Brazilië-finale 🧉', [
-    { name: 'Northern Chile', season: 'Juni–juli', budget: 520, note: 'Northern Chile only (Atacama, Antofagasta) — Patagonia is a separate future expedition. De Atacama is jaarrond droog; koude nachten in de Chileense winter, overdag prima.', countries: [panAm('CL', 'Chile')] },
+    { name: 'Northern Chile', season: 'Juni–juli', budget: 520, note: 'Northern Chile only (Atacama, Antofagasta) — Patagonia is a separate future expedition. De Atacama is jaarrond droog; koude nachten in de Chileense winter, overdag prima.', countries: [{ ...panAm('CL', 'Chile'), notes: "Instap: KLM-vlucht Amsterdam-Santiago de Chile (rechtstreeks, ±13-14 uur) plus binnenlandse aansluiting naar Calama (±2 uur) voor San Pedro de Atacama; vanaf ±€800-900 retour totaal; beste periode juni. Prijsindicatie webonderzoek 2026-08, momentopname. " + panAm('CL', 'Chile').notes }] },
     { name: 'Northern Argentina', season: 'Juli', budget: 350, note: 'Northern Argentina only (Salta, Jujuy) — Patagonia is a separate future expedition. Droog hoogseizoen in Salta/Jujuy, koude nachten in het hooggebergte.', countries: [panAm('AR', 'Argentina')] },
     { name: 'Southern Brazil', season: 'Juli–augustus', budget: 1166, note: 'Southern Brazil only — Northern Brazil is a separate future expedition. Zuid-Braziliaanse winter: mild en droog voor sightseeing (Iguaçu, koloniale steden), maar geen strandweer; voor strandtijd de hele reis 1-2 maanden later starten.', countries: [panAm('BR', 'Brazil')] },
   ], {
@@ -3844,7 +3846,7 @@ function rbBuildSouthernAfricaSafariLoopRoute() {
     {
       name: 'Zuid-Afrika, Lesotho & Eswatini', season: 'Juni–begin juli', budget: 2975,
       note: 'De opener, met een echte internationale luchthaven als instappunt (Kaapstad/Johannesburg) — Kruger-wildlife spotten is hier op zijn best, ruim vóór het regenseizoen.',
-      countries: [mea('ZA', 'South Africa'), mea('LS', 'Lesotho'), mea('SZ', 'Eswatini')],
+      countries: [{ ...mea('ZA', 'South Africa'), notes: "Instap: rechtstreekse KLM-vlucht Amsterdam-Kaapstad (±11,5 uur; vanaf ±€1.000-1.200 retour rond juni — november is doorgaans goedkoper maar valt buiten het beste seizoen van deze route). Prijsindicatie webonderzoek 2026-08, momentopname. " + (mea('ZA', 'South Africa').notes || '') }, mea('LS', 'Lesotho'), mea('SZ', 'Eswatini')],
     },
     {
       name: 'Zuidelijk Afrika', season: 'Juli–oktober', budget: 14035,
@@ -3866,7 +3868,7 @@ function rbBuildAfricaIslandsRoute() {
     {
       name: 'Eilanden', season: 'Oktober–november', budget: 2650,
       note: 'Madagaskar en Mauritius — Madagaskars beruchte trage wegen zijn hier de grootste tijdsvreter, niet de bezienswaardigheden zelf.',
-      countries: [mea('MG', 'Madagascar'), mea('MU', 'Mauritius')],
+      countries: [{ ...mea('MG', 'Madagascar'), notes: "Instap: vlucht Amsterdam-Antananarivo (±13-16 uur, 1 tussenstop, bv. via Nairobi of Parijs met Kenya Airways/Air France; vanaf ±€650-1.100 retour; beste periode oktober — let op, de goedkoopste maand is doorgaans maart, reken dus eerder aan de hoge kant van deze bandbreedte). Prijsindicatie webonderzoek 2026-08, momentopname. " + (mea('MG', 'Madagascar').notes || '') }, mea('MU', 'Mauritius')],
     },
   ], {
     best_starting_month: 'Oktober',
@@ -3883,7 +3885,7 @@ function rbBuildEastAfricaSafariClassicRoute() {
     {
       name: 'Oost-Afrika', season: 'November–januari', budget: 10320,
       note: "Tanzania, Rwanda, Oeganda en Kenia — landt in de korte regentijd (oktober-december, lichte middagbuien, goed te doen) en de daaropvolgende korte droge periode (januari-februari), inclusief het kalfseizoen van de zuidelijke Serengeti. Niet de absolute piek (juni-oktober), maar een erkend sterk alternatief.",
-      countries: [mea('TZ', 'Tanzania'), mea('RW', 'Rwanda'), mea('UG', 'Uganda'), mea('KE', 'Kenya')],
+      countries: [{ ...mea('TZ', 'Tanzania'), notes: "Instap: rechtstreekse KLM-vlucht Amsterdam-Kilimanjaro (±8u45; vanaf ±€1.050-1.500 retour; beste periode november). Prijsindicatie webonderzoek 2026-08, momentopname. " + (mea('TZ', 'Tanzania').notes || '') }, mea('RW', 'Rwanda'), mea('UG', 'Uganda'), mea('KE', 'Kenya')],
     },
   ], {
     best_starting_month: 'November',
@@ -3900,7 +3902,7 @@ function rbBuildHornOfAfricaAndEgyptRoute() {
     {
       name: 'Hoorn van Afrika & Egypte', season: 'Februari–maart', budget: 3115,
       note: "Ethiopië en Egypte als afsluiting. Ethiopië's hoofdregenseizoen (kiremt) valt juni-september, dus dit venster (oktober-maart, piek december-februari) is zijn eigen goede tijd. Egypte profiteert van het koelere naseizoen in plaats van de vroege zomerhitte.",
-      countries: [mea('ET', 'Ethiopia'), mea('EG', 'Egypt')],
+      countries: [{ ...mea('ET', 'Ethiopia'), notes: "Instap: rechtstreekse Ethiopian Airlines-vlucht Amsterdam-Addis Abeba (±7,5-8 uur; vanaf ±€500-700 retour; beste periode februari). Prijsindicatie webonderzoek 2026-08, momentopname. " + (mea('ET', 'Ethiopia').notes || '') }, mea('EG', 'Egypt')],
     },
   ], {
     best_starting_month: 'Februari',
@@ -3953,7 +3955,7 @@ function rbBuildIberiaMaghrebRoute() {
             { name: 'Córdoba (Mezquita)', lat: 37.8789, lng: -4.7794 },
             { name: 'Sevilla', lat: 37.3891, lng: -5.9845 },
           ],
-          notes: 'Openingsetappe: Moorse en Romeinse geschiedenis in Andalusië, van de Alhambra in Granada tot de Mezquita in Córdoba. Historische binnensteden als rustige start. Verborgen parel: Ronda, met zijn kloofbrug, als tussenstop tussen Málaga en Sevilla.',
+          notes: 'Instap: vlucht Amsterdam-Málaga (±2u50, vanaf ±€90-180 retour, beste periode september). Prijsindicatie webonderzoek 2026-08, momentopname. Openingsetappe: Moorse en Romeinse geschiedenis in Andalusië, van de Alhambra in Granada tot de Mezquita in Córdoba. Historische binnensteden als rustige start. Verborgen parel: Ronda, met zijn kloofbrug, als tussenstop tussen Málaga en Sevilla.',
           transport_to_next: 'Veerboot Tarifa/Algeciras-Tanger (35-90 minuten, meerdere afvaarten per dag) — kortste en goedkoopste oversteek naar Afrika, geen vlucht nodig',
         },
         {
@@ -4008,7 +4010,7 @@ function rbBuildMaltaItalyRoute() {
             { name: 'Ġgantija-tempels', lat: 36.0453, lng: 14.2686 },
             { name: 'Hypogeum', lat: 35.8703, lng: 14.5027 },
           ],
-          notes: 'De Ġgantija-tempels en het Hypogeum zijn ouder dan de piramides van Gizeh — een van de oudste vrijstaande bouwwerken ter wereld. Daarnaast de Ridders van Malta in Valletta en Mdina, met een rustiger Gozo als tegenhanger.',
+          notes: 'Instap: vlucht Amsterdam-Malta/Luqa (±3u20, vanaf ±€120-250 retour, beste periode oktober). Prijsindicatie webonderzoek 2026-08, momentopname. De Ġgantija-tempels en het Hypogeum zijn ouder dan de piramides van Gizeh — een van de oudste vrijstaande bouwwerken ter wereld. Daarnaast de Ridders van Malta in Valletta en Mdina, met een rustiger Gozo als tegenhanger.',
           transport_to_next: 'Veerboot Valletta-Pozzallo of Valletta-Catania (Virtu Ferries, 1,5-3 uur) naar Sicilië',
         },
         {
@@ -4082,7 +4084,7 @@ function rbBuildCorsicaSouthFranceRoute() {
             { name: 'Ajaccio', lat: 41.9192, lng: 8.7386 },
             { name: 'Bavella', lat: 41.7833, lng: 9.2167 },
           ],
-          notes: 'Mediterrane natuur op zijn best: de kalksteenkliffen van Bonifacio, de granieten naalden van Bavella. Franse en Italiaanse invloeden lopen hier door elkaar. Verborgen parel: het Scandola natuurreservaat, alleen per boot te bezoeken.',
+          notes: "Instap: vlucht Amsterdam-Figari/Ajaccio (±4-5u incl. overstap, geen directe vlucht, vanaf ±€150-280 retour, beste periode november). Prijsindicatie webonderzoek 2026-08, momentopname. Mediterrane natuur op zijn best: de kalksteenkliffen van Bonifacio, de granieten naalden van Bavella. Franse en Italiaanse invloeden lopen hier door elkaar. Verborgen parel: het Scandola natuurreservaat, alleen per boot te bezoeken.",
           transport_to_next: 'Veerboot Ajaccio/Bastia-Marseille of Toulon (Corsica Ferries/La Méridionale, circa 6-10 uur, vaak als nachtboot)',
         },
         {
@@ -4124,7 +4126,7 @@ function rbBuildGreeceCyprusRoute() {
             { name: 'Delphi', lat: 38.4824, lng: 22.5010 },
             { name: 'Meteora', lat: 39.7217, lng: 21.6306 },
           ],
-          notes: 'Griekse oudheid, filosofie, democratie en mythologie op de belangrijkste locaties zelf: de Akropolis, het orakel van Delphi, de oorspronkelijke Olympische Spelen in Olympia. Verborgen parel: Monemvasia en Nafplio op de Peloponnesos, veel rustiger dan Athene. Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid — Athene→Delphi→Olympia→Meteora→Peloponnesos kruiste tussen noord (Delphi/Meteora) en zuid (Olympia/Peloponnesos) heen en weer, terwijl Piraeus (de ferryhaven naar Kreta) vlak bij Athene ligt, niet bij de Peloponnesos. Nu Athene→Peloponnesos/Olympia (zuid, één lus)→Delphi→Meteora (noord, één lus, eindigend met de terugrit naar Piraeus/Athene voor de ferry) — nog maar één retour in plaats van twee.',
+          notes: 'Instap: vlucht Amsterdam-Athene (±3u20, vanaf ±€90-160 retour, beste periode november). Prijsindicatie webonderzoek 2026-08, momentopname. Griekse oudheid, filosofie, democratie en mythologie op de belangrijkste locaties zelf: de Akropolis, het orakel van Delphi, de oorspronkelijke Olympische Spelen in Olympia. Verborgen parel: Monemvasia en Nafplio op de Peloponnesos, veel rustiger dan Athene. Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid — Athene→Delphi→Olympia→Meteora→Peloponnesos kruiste tussen noord (Delphi/Meteora) en zuid (Olympia/Peloponnesos) heen en weer, terwijl Piraeus (de ferryhaven naar Kreta) vlak bij Athene ligt, niet bij de Peloponnesos. Nu Athene→Peloponnesos/Olympia (zuid, één lus)→Delphi→Meteora (noord, één lus, eindigend met de terugrit naar Piraeus/Athene voor de ferry) — nog maar één retour in plaats van twee.',
           transport_to_next: 'Auto/bus terug naar Piraeus/Athene vanaf Meteora (≈350 km), dan nachtveerboot Piraeus-Heraklion (circa 7-9 uur) naar Kreta',
         },
         {
@@ -4177,7 +4179,7 @@ function rbBuildAnatoliaRoute() {
             { name: 'Pamukkale', lat: 37.9142, lng: 29.1187 },
             { name: 'Cappadocië', lat: 38.6431, lng: 34.8283 },
           ],
-          notes: "Byzantijnse en Ottomaanse geschiedenis in Istanbul, Romeinse steden (Efeze, Pergamon) en oude Anatolische beschavingen (Troje) op één lijn, met de rotsformaties van Cappadocië en de kalksteenterrassen van Pamukkale als natuurlijke hoogtepunten. Verborgen parel: Assos en Aphrodisias, veel rustiger dan Efeze maar minstens zo indrukwekkend. Routelogica-fix (2026-08): de etappe eindigt in Cappadocië (≈730 km van Istanbul) — een binnenlandse terugvlucht naar Istanbul is nodig vóór het vertrek (geen directe Cappadocië-Caïro-verbinding bestaat). Zie Mediterranean Civilizations Expedition 🏛️'s eigen notities voor de volledige onderbouwing.",
+          notes: "Instap: vlucht Amsterdam-Istanboel (±3u30, vanaf ±€130-250 retour, beste periode december). Prijsindicatie webonderzoek 2026-08, momentopname. Byzantijnse en Ottomaanse geschiedenis in Istanbul, Romeinse steden (Efeze, Pergamon) en oude Anatolische beschavingen (Troje) op één lijn, met de rotsformaties van Cappadocië en de kalksteenterrassen van Pamukkale als natuurlijke hoogtepunten. Verborgen parel: Assos en Aphrodisias, veel rustiger dan Efeze maar minstens zo indrukwekkend. Routelogica-fix (2026-08): de etappe eindigt in Cappadocië (≈730 km van Istanbul) — een binnenlandse terugvlucht naar Istanbul is nodig vóór het vertrek (geen directe Cappadocië-Caïro-verbinding bestaat). Zie Mediterranean Civilizations Expedition 🏛️'s eigen notities voor de volledige onderbouwing.",
           transport_to_next: 'Einde van deze route — binnenlandse vlucht Kayseri/Nevşehir-Istanbul, dan vlucht huiswaarts vanuit Istanbul (of vlucht Istanbul-Caïro om verder te reizen naar Egypte & Arabisch Schiereiland 🐪)',
         },
       ],
@@ -4209,7 +4211,7 @@ function rbBuildEgyptArabianPeninsulaRoute() {
             { name: 'Aswan', lat: 24.0889, lng: 32.8998 },
             { name: 'Abu Simbel', lat: 22.3372, lng: 31.6258 },
           ],
-          notes: "De oud-Egyptische beschaving in haar geheel: piramides (Gizeh), tempels (Karnak, Abu Simbel) en de Nijl als verbindende rode draad. Verborgen parel: de Siwa-oase, ver van de gebruikelijke route maar wel een omweg waard. Reisadvies (2026-07): geel voor Caïro/Gizeh/Luxor/Aswan/Abu Simbel — gewoon te bezoeken; alleen (Noord-)Sinaï buiten deze route is oranje/rood. Routelogica-fix (2026-08): de terugrit Abu Simbel-Caïro-Nuweiba (eerder onvermeld) is nu expliciet benoemd. Zie Mediterranean Civilizations Expedition 🏛️'s eigen notities voor de volledige onderbouwing.",
+          notes: "Instap: rechtstreekse KLM-vlucht Amsterdam-Caïro (±4u30, vanaf ±€200-320 retour, beste periode december). Prijsindicatie webonderzoek 2026-08, momentopname. De oud-Egyptische beschaving in haar geheel: piramides (Gizeh), tempels (Karnak, Abu Simbel) en de Nijl als verbindende rode draad. Verborgen parel: de Siwa-oase, ver van de gebruikelijke route maar wel een omweg waard. Reisadvies (2026-07): geel voor Caïro/Gizeh/Luxor/Aswan/Abu Simbel — gewoon te bezoeken; alleen (Noord-)Sinaï buiten deze route is oranje/rood. Routelogica-fix (2026-08): de terugrit Abu Simbel-Caïro-Nuweiba (eerder onvermeld) is nu expliciet benoemd. Zie Mediterranean Civilizations Expedition 🏛️'s eigen notities voor de volledige onderbouwing.",
           transport_to_next: 'Terug naar Caïro (Aswan/Abu Simbel-Caïro, ≈850 km), dan bus/auto Caïro-Nuweiba (≈450 km, ≈7u), dan veerboot Nuweiba-Aqaba (alternatief: rechtstreekse vlucht Caïro-Amman) — kortste route naar Jordanië zonder om te vliegen via de Golf',
         },
         {
@@ -4293,7 +4295,7 @@ function rbBuildScandinaviaOverlandRoute() {
     {
       name: 'Scandinavia', season: 'Juni', budget: 4400,
       note: 'Lapland en Noorse fjorden/eilanden per trein en bus — het enige écht overland-verbonden deel van de oorspronkelijke Nordic Arctic Expedition.',
-      countries: [arctic('FI', 'Finland'), arctic('SE', 'Sweden'), arctic('NO', 'Norway')],
+      countries: [{ ...arctic('FI', 'Finland'), notes: "Instap: vlucht Amsterdam-Helsinki (±2u50, vanaf ±€150-280 retour, beste periode juni), vandaar verder naar Rovaniemi. Prijsindicatie webonderzoek 2026-08, momentopname. " + (arctic('FI', 'Finland').notes || '') }, arctic('SE', 'Sweden'), arctic('NO', 'Norway')],
     },
   ], {
     best_starting_month: 'Juni',
@@ -4307,7 +4309,7 @@ function rbBuildScandinaviaOverlandRoute() {
 function rbBuildSvalbardRoute() {
   const arctic = (code, name) => rbContentFor('Nordic Arctic Expedition ❄️', code, name);
   return rbBuildSeedRoute('Svalbard 🐻‍❄️', [
-    { name: 'Svalbard', season: 'Juli', budget: 900, note: 'Longyearbyen zelf met 1-2 dagtours — geen meerdaagse expeditieboot meer (2026-08, op Youri\'s verzoek).', countries: [arctic('SJ', 'Svalbard')] },
+    { name: 'Svalbard', season: 'Juli', budget: 900, note: 'Longyearbyen zelf met 1-2 dagtours — geen meerdaagse expeditieboot meer (2026-08, op Youri\'s verzoek).', countries: [{ ...arctic('SJ', 'Svalbard'), notes: "Instap: vlucht Amsterdam-Oslo-Longyearbyen (±5-6u incl. overstap, geen directe vlucht, vanaf ±€400-600 retour, beste periode juli). Prijsindicatie webonderzoek 2026-08, momentopname. " + (arctic('SJ', 'Svalbard').notes || '') }] },
   ], {
     best_starting_month: 'Juli',
     travel_style: 'Longyearbyen als basis, met 1-2 gegidste dagtours (bv. boottocht naar Pyramiden, sneeuwscooter-/hondensleetocht richting Barentsburg); buiten de plaats is een gewapende gids (ijsberen) verplicht, al inbegrepen in de tours.',
@@ -4321,7 +4323,7 @@ function rbBuildSvalbardRoute() {
 function rbBuildFaroeIslandsRoute() {
   const arctic = (code, name) => rbContentFor('Nordic Arctic Expedition ❄️', code, name);
   return rbBuildSeedRoute('Faeröer 🐑', [
-    { name: 'Faroe Islands', season: 'Juli–augustus', budget: 1675, note: 'Betrouwbaardere veerdiensten en het beste wandelweer in deze maanden.', countries: [arctic('FO', 'Faroe Islands')] },
+    { name: 'Faroe Islands', season: 'Juli–augustus', budget: 1675, note: 'Betrouwbaardere veerdiensten en het beste wandelweer in deze maanden.', countries: [{ ...arctic('FO', 'Faroe Islands'), notes: "Instap: vlucht Amsterdam-Kopenhagen-Vágar (±4-4,5u incl. overstap, geen directe vlucht, vanaf ±€350-550 retour, beste periode juli-augustus). Prijsindicatie webonderzoek 2026-08, momentopname. " + (arctic('FO', 'Faroe Islands').notes || '') }] },
   ], {
     best_starting_month: 'Juli',
     travel_style: 'Lokale bussen/veerboten tussen de eilanden.',
@@ -4334,7 +4336,7 @@ function rbBuildFaroeIslandsRoute() {
 function rbBuildIcelandRoute() {
   const arctic = (code, name) => rbContentFor('Nordic Arctic Expedition ❄️', code, name);
   return rbBuildSeedRoute('IJsland ❄️', [
-    { name: 'Iceland', season: 'Juli–augustus', budget: 2800, note: 'Volledig open hooglandwegen; buiten dit venster zijn delen van het land niet bereikbaar.', countries: [arctic('IS', 'Iceland')] },
+    { name: 'Iceland', season: 'Juli–augustus', budget: 2800, note: 'Volledig open hooglandwegen; buiten dit venster zijn delen van het land niet bereikbaar.', countries: [{ ...arctic('IS', 'Iceland'), notes: "Instap: vlucht Amsterdam-Reykjavik/Keflavík (±4u, vanaf ±€300-450 retour, beste periode juli-augustus). Prijsindicatie webonderzoek 2026-08, momentopname. " + (arctic('IS', 'Iceland').notes || '') }] },
   ], {
     best_starting_month: 'Juli',
     travel_style: 'Huurauto (vrijwel noodzakelijk voor de Ring Road en het hoogland).',
@@ -4347,7 +4349,11 @@ function rbBuildIcelandRoute() {
 function rbBuildGreenlandRoute() {
   const arctic = (code, name) => rbContentFor('Nordic Arctic Expedition ❄️', code, name);
   return rbBuildSeedRoute('Groenland 🧊', [
-    { name: 'Greenland', season: 'Juli–augustus', budget: 3725, note: 'Beste boottoegang tot de Diskobaai-ijsbergen bij Ilulissat.', countries: [arctic('GL', 'Greenland')] },
+    { name: 'Greenland', season: 'Juli–augustus', budget: 3725, note: 'Beste boottoegang tot de Diskobaai-ijsbergen bij Ilulissat.', countries: [{
+      ...arctic('GL', 'Greenland'),
+      notes: "Instap: vlucht Amsterdam-Reykjavik-Nuuk (±7-8u incl. overstap, geen directe vlucht, vanaf ±€900-1.400 retour, beste periode juli-augustus). Prijsindicatie webonderzoek 2026-08, momentopname. " + (arctic('GL', 'Greenland').notes || ''),
+      transport_to_next: "Einde van deze route — vlucht Ilulissat-Reykjavik (seizoensgebonden direct, juni-september) of Ilulissat-Kopenhagen (jaarrond direct vanaf eind oktober 2026, Air Greenland), dan aansluitend vlucht huiswaarts naar Nederland (Reykjavik-Amsterdam met Icelandair/Transavia, of Kopenhagen-Amsterdam met KLM/Transavia) — totaal ±8-10u incl. overstap, vanaf ±€600-950 retour voor dit laatste traject. Prijsindicatie webonderzoek 2026-08, momentopname.",
+    }] },
   ], {
     best_starting_month: 'Juli',
     travel_style: 'Binnenlandse vluchten tussen plaatsen (Air Greenland, vrijwel monopolie) — een structurele kostenpost, geen incident.',
@@ -4378,7 +4384,7 @@ function rbSeedPatagoniaSplitExpeditions() {
 function rbBuildPatagoniaOverlandRoute() {
   const patagonia = (code, name) => rbContentFor('Patagonia & Antarctica Expedition 🧊', code, name);
   return rbBuildFlatSeedRoute('Patagonië Overland 🏔️', [
-    patagonia('CL', 'Chile'),
+    { ...patagonia('CL', 'Chile'), notes: "Instap: vlucht Amsterdam-Santiago de Chile, met binnenlandse aansluiting naar Puerto Montt (±14-16 uur totaal, vanaf ±€700-1.050 retour, beste periode begin november). Prijsindicatie webonderzoek 2026-08, momentopname. " + (patagonia('CL', 'Chile').notes || '') },
     patagonia('AR', 'Argentina'),
     {
       code: 'CL', name: 'Chile', days: 9, budget: 1200, lat: -51.7236, lng: -72.4875,
@@ -4413,7 +4419,7 @@ function rbBuildPatagoniaOverlandRoute() {
 function rbBuildAntarcticaCruiseRoute() {
   const patagonia = (code, name) => rbContentFor('Patagonia & Antarctica Expedition 🧊', code, name);
   return rbBuildFlatSeedRoute('Antarctica-cruise 🐧', [
-    patagonia('AQ', 'Antarctica'),
+    { ...patagonia('AQ', 'Antarctica'), notes: "Instap: vlucht Amsterdam-Buenos Aires, met binnenlandse aansluiting naar Ushuaia (±17-19 uur totaal, vanaf ±€1.200-1.700 retour, december valt in het Zuid-Amerikaanse hoogseizoen zodat dit aan de duurdere kant ligt). Prijsindicatie webonderzoek 2026-08, momentopname. " + (patagonia('AQ', 'Antarctica').notes || '') },
   ], {
     best_starting_month: 'December',
     travel_style: 'Uitsluitend per georganiseerde expeditiecruise vanuit Ushuaia — geen andere manier om er te komen.',
@@ -4443,7 +4449,11 @@ function rbSeedHimalayaSplitExpeditions() {
 function rbBuildNorthIndiaRoute() {
   const himalaya = (code, name) => rbContentFor('India & Himalaya Expedition 🏔️', code, name);
   return rbBuildFlatSeedRoute('Noord-India 🕌', [
-    himalaya('IN', 'India'),
+    {
+      ...himalaya('IN', 'India'),
+      notes: "Instap: vlucht Amsterdam-Delhi (KLM, rechtstreeks, ±8u15, vanaf ±€600-950 retour, beste periode begin oktober). Prijsindicatie webonderzoek 2026-08, momentopname. " + (himalaya('IN', 'India').notes || ''),
+      transport_to_next: "Einde van de expeditie — binnenlandse vlucht Varanasi-Delhi (±1u20), dan terugvlucht Delhi-Amsterdam (KLM, rechtstreeks, ±8u15, vanaf ±€350-550 retour, geen rechtstreekse internationale verbinding vanuit Varanasi zelf). Prijsindicatie webonderzoek 2026-08, momentopname.",
+    },
   ], {
     best_starting_month: 'Oktober',
     travel_style: 'Trein en lokale bus, met een binnenlandse vlucht als de afstand dat rechtvaardigt.',
@@ -4457,7 +4467,11 @@ function rbBuildNorthIndiaRoute() {
 function rbBuildNepalRoute() {
   const himalaya = (code, name) => rbContentFor('India & Himalaya Expedition 🏔️', code, name);
   return rbBuildFlatSeedRoute('Nepal 🏔️', [
-    himalaya('NP', 'Nepal'),
+    {
+      ...himalaya('NP', 'Nepal'),
+      notes: "Instap: vlucht Amsterdam-Kathmandu, met overstap (±13-16 uur, vanaf ±€550-950 retour, november is het topseizoen voor trekking dus prijzen zitten aan de hogere kant). Prijsindicatie webonderzoek 2026-08, momentopname. " + (himalaya('NP', 'Nepal').notes || ''),
+      transport_to_next: "Einde van de expeditie — terugvlucht Kathmandu-Amsterdam, met overstap (bv. via Doha of Istanbul, ±13-16 uur, vanaf ±€350-550 retour, geen rechtstreekse verbinding vanuit Kathmandu). Prijsindicatie webonderzoek 2026-08, momentopname.",
+    },
   ], {
     best_starting_month: 'November',
     travel_style: 'Georganiseerde trekking met lokale gids/porter (sinds 2023 verplicht, solo trekken mag niet meer).',
@@ -4471,7 +4485,7 @@ function rbBuildNepalRoute() {
 function rbBuildBhutanRoute() {
   const himalaya = (code, name) => rbContentFor('India & Himalaya Expedition 🏔️', code, name);
   return rbBuildFlatSeedRoute('Bhutan 🐉', [
-    himalaya('BT', 'Bhutan'),
+    { ...himalaya('BT', 'Bhutan'), notes: "Instap: vlucht Amsterdam-Paro, via Delhi of Bangkok met aansluitende Drukair/Bhutan Airlines-vlucht (±15-20 uur totaal, vanaf ±€1.300-1.900 retour, december valt nog in het goede seizoen). Prijsindicatie webonderzoek 2026-08, momentopname. " + (himalaya('BT', 'Bhutan').notes || '') },
   ], {
     best_starting_month: 'December',
     travel_style: 'Verplichte lokale gids en vaste dagprijs (Sustainable Development Fee inbegrepen).',
@@ -4564,7 +4578,7 @@ function rbBuildWesternCanadaRockiesVancouverRoute() {
           { name: 'Whistler', lat: 50.1163, lng: -122.9574 },
         ],
         transport_to_next: 'Auto Whistler-Vancouver (~2 uur), huurauto inleveren in Vancouver — dezelfde huurauto blijft binnen Canada, dus geen one-way- of grenskosten',
-        notes: 'Het natuurhoogtepunt van de hele expeditie: gletsjermeren, een van de mooiste wegen ter wereld (Icefields Parkway) en goede kans op wildlife (elanden, beren, bighorn sheep). Huurauto wordt hier opgehaald in Calgary. Prijs geverifieerd (2026-07), klopt (mits ruim vooraf geboekt in hoogseizoen). ⚠️ Moraine Lake Road is alleen bereikbaar met de verplichte Parks Canada-shuttle (geen privéauto toegestaan) — boeking opent doorgaans medio april, beperkt aantal plekken, ruim vooraf regelen.',
+        notes: 'Instap: vlucht Amsterdam-Calgary, met overstap (±12-14 uur, vanaf ±€650-950 retour, beste periode juni-juli). Prijsindicatie webonderzoek 2026-08, momentopname. Het natuurhoogtepunt van de hele expeditie: gletsjermeren, een van de mooiste wegen ter wereld (Icefields Parkway) en goede kans op wildlife (elanden, beren, bighorn sheep). Huurauto wordt hier opgehaald in Calgary. Prijs geverifieerd (2026-07), klopt (mits ruim vooraf geboekt in hoogseizoen). ⚠️ Moraine Lake Road is alleen bereikbaar met de verplichte Parks Canada-shuttle (geen privéauto toegestaan) — boeking opent doorgaans medio april, beperkt aantal plekken, ruim vooraf regelen.',
       }],
       note: 'Huurauto (Calgary-Vancouver). Reken op minstens 2-3 nachten per nationaal park om ook te kunnen wandelen, niet alleen doorrijden.',
     },
@@ -4610,7 +4624,7 @@ function rbBuildUSWestCoastRoadtripRoute() {
           { name: 'Redwood National & State Parks', lat: 41.2132, lng: -124.0046 },
         ],
         transport_to_next: 'Auto verder naar San Francisco (~5-6 uur vanaf de Redwoods), huurauto inleveren in San Francisco',
-        notes: "Amerikaanse natuur in het groot: regenwoud, vulkanen, ruige kustlijn en de hoogste bomen ter wereld. Huurauto wordt hier opgehaald in Seattle. Prijs geverifieerd (2026-07), klopt. ESTA is per 30 sept. 2025 verhoogd naar $40,27 (was $21) — 2 jaar geldig. Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid (was Seattle→Olympic NP→Mount Rainier→Oregon Coast) — dat kruiste de regio drie keer oost-west. Nu Seattle→Mount Rainier→Olympic NP (Hurricane Ridge dan Hoh Rainforest)→zuidwaarts via de US-101 langs de Washington-kust naar Oregon. Zie North America Grand Traverse 🌎's eigen notities voor de volledige onderbouwing.",
+        notes: "Instap: vlucht Amsterdam-Seattle (KLM, rechtstreeks, ±10 uur, vanaf ±€650-1.100 retour, juli-augustus is hoogseizoen dus prijzen zitten aan de hogere kant). Prijsindicatie webonderzoek 2026-08, momentopname. Amerikaanse natuur in het groot: regenwoud, vulkanen, ruige kustlijn en de hoogste bomen ter wereld. Huurauto wordt hier opgehaald in Seattle. Prijs geverifieerd (2026-07), klopt. ESTA is per 30 sept. 2025 verhoogd naar $40,27 (was $21) — 2 jaar geldig. Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid (was Seattle→Olympic NP→Mount Rainier→Oregon Coast) — dat kruiste de regio drie keer oost-west. Nu Seattle→Mount Rainier→Olympic NP (Hurricane Ridge dan Hoh Rainforest)→zuidwaarts via de US-101 langs de Washington-kust naar Oregon. Zie North America Grand Traverse 🌎's eigen notities voor de volledige onderbouwing.",
       }],
       note: 'Huurauto (Seattle-San Francisco). Rustig tempo: liever 2-3 nachten bij een park dan elke dag doorrijden — dit is een kustroute, geen race.',
     },
@@ -4676,7 +4690,7 @@ function rbBuildPacificIslandsRoute() {
             { name: 'SS President Coolidge wrak (Espiritu Santo)', lat: -15.5085, lng: 167.1739 },
             { name: 'Blue Holes', lat: -15.5000, lng: 167.1500 },
           ],
-          notes: "Een van de meest toegankelijke actieve vulkanen ter wereld — tot vlak bij de kraterrand van Mount Yasur. Wereldklasse wrakduik op de SS President Coolidge. Prijscorrectie (2026-07): €70→€95/dag (binnenlandse vluchten naar Tanna/Santo + Yasur-tour waren niet gedekt; Air Vanuatu ging in 2024 failliet, vluchten zijn schaarser/duurder geworden). Routelogica-fix (2026-08): als eerste land bezocht i.p.v. na Fiji — zie Oceania Grand Expedition 🌊's eigen notities voor de volledige onderbouwing.",
+          notes: "Instap: vlucht Amsterdam-Port Vila, met meerdere overstappen (bv. via Los Angeles/Auckland of Fiji-Nadi, ±28-30 uur totaal, vanaf ±€1.800-3.000 retour, beste periode mei-juni) — een van de duurste en langste losse verbindingen van de hele wereldreisplanning. Prijsindicatie webonderzoek 2026-08, momentopname. Een van de meest toegankelijke actieve vulkanen ter wereld — tot vlak bij de kraterrand van Mount Yasur. Wereldklasse wrakduik op de SS President Coolidge. Prijscorrectie (2026-07): €70→€95/dag (binnenlandse vluchten naar Tanna/Santo + Yasur-tour waren niet gedekt; Air Vanuatu ging in 2024 failliet, vluchten zijn schaarser/duurder geworden). Routelogica-fix (2026-08): als eerste land bezocht i.p.v. na Fiji — zie Oceania Grand Expedition 🌊's eigen notities voor de volledige onderbouwing.",
           transport_to_next: 'Vlucht Port Vila-Nadi (Fiji Airways, direct, ±7x/week, 2u15).',
         },
         {
@@ -4748,7 +4762,7 @@ function rbBuildTropicalOutbackAustraliaRoute() {
             { name: 'Gibb River Road', lat: -16.5000, lng: 126.5000 },
             { name: 'Broome', lat: -17.9614, lng: 122.2359 },
           ],
-          notes: 'Ningaloo Reef en de Kimberley zijn spectaculair en kennen weinig massatoerisme. Wel de duurste/verste regio van deze route qua afstanden. Prijscorrectie (2026-07): €87,62→€120/dag.',
+          notes: 'Instap: vlucht Amsterdam-Perth, met overstap (±19-22 uur, vanaf ±€910-1.500 retour, beste periode juni). Prijsindicatie webonderzoek 2026-08, momentopname. Ningaloo Reef en de Kimberley zijn spectaculair en kennen weinig massatoerisme. Wel de duurste/verste regio van deze route qua afstanden. Prijscorrectie (2026-07): €87,62→€120/dag.',
           transport_to_next: 'Auto over land via de Gibb River Road en Kununurra naar Darwin, of vlucht Broome-Darwin voor wie de Kimberley liever per vliegtuig oversteekt',
         },
         {
@@ -4802,7 +4816,7 @@ function rbBuildTemperateSouthernAustraliaRoute() {
             { name: 'Sydney', lat: -33.8688, lng: 151.2093 },
             { name: 'Blue Mountains', lat: -33.7000, lng: 150.3000 },
           ],
-          notes: 'Klassieke backpacker-trail met goede infrastructuur; Sydney is te iconisch om over te slaan. Prijs geverifieerd (2026-07), klopt.',
+          notes: 'Instap: vlucht Amsterdam-Sydney, met overstap (±22-24 uur, vanaf ±€900-1.450 retour, beste periode augustus) — Byron Bay is vandaar per binnenlandse vlucht (Ballina/Gold Coast) of bus te bereiken, niet rechtstreeks. Prijsindicatie webonderzoek 2026-08, momentopname. Klassieke backpacker-trail met goede infrastructuur; Sydney is te iconisch om over te slaan. Prijs geverifieerd (2026-07), klopt.',
           transport_to_next: 'Auto over land via de kust of de Hume Highway naar Melbourne',
         },
         {
@@ -4867,7 +4881,7 @@ function rbBuildNewZealandRoute() {
             { name: 'Kaikoura', lat: -42.4000, lng: 173.6817 },
             { name: 'Abel Tasman', lat: -40.9333, lng: 173.0000 },
           ],
-          notes: "Concentreert het merendeel van de iconische Nieuw-Zeelandse natuur. Overweeg minstens één Great Walk (Milford Track, Routeburn of Kepler) als meerdaagse hut-to-hut-trek — ruim van tevoren reserveren. Prijscorrectie (2026-07): €80→€108/dag. Routelogica-fix (2026-08): volgorde omgedraaid zodat Kaikoura/Abel Tasman als laatste bezocht worden, vlak vóór de Picton-ferry, i.p.v. een onvermelde terugrit van ≈692 km vanaf Dunedin. Zie Oceania Grand Expedition 🌊's eigen notities voor de volledige onderbouwing.",
+          notes: "Instap: vlucht Amsterdam-Christchurch, met meerdere overstappen (geen directe verbinding, ±27-38 uur totaal, vanaf ±€1.300-2.000 retour, beste periode september-november). Prijsindicatie webonderzoek 2026-08, momentopname. Concentreert het merendeel van de iconische Nieuw-Zeelandse natuur. Overweeg minstens één Great Walk (Milford Track, Routeburn of Kepler) als meerdaagse hut-to-hut-trek — ruim van tevoren reserveren. Prijscorrectie (2026-07): €80→€108/dag. Routelogica-fix (2026-08): volgorde omgedraaid zodat Kaikoura/Abel Tasman als laatste bezocht worden, vlak vóór de Picton-ferry, i.p.v. een onvermelde terugrit van ≈692 km vanaf Dunedin. Zie Oceania Grand Expedition 🌊's eigen notities voor de volledige onderbouwing.",
           transport_to_next: 'Veerboot Picton-Wellington, over land verder het Noordereiland in',
         },
         {
@@ -4931,7 +4945,7 @@ function rbBuildCaribbeanIslandsHopRoute() {
             { name: 'Cienfuegos', lat: 22.1496, lng: -80.4394 },
             { name: 'Trinidad', lat: 21.8047, lng: -79.9825 },
           ],
-          notes: "Havana en het UNESCO-koloniale Trinidad zijn de hoogtepunten; de rustige Viñales-vallei (tabak, karstlandschap) is de verborgen parel. Casas particulares (particuliere kamers) zijn de gangbare backpacker-accommodatie. Prijs geverifieerd (2026-07), klopt. ⚠️ Reisadvies oranje (bevestigd geldig, laatst bijgewerkt 23 juni 2026): grote tekorten aan stroom/brandstof/voedsel/medicijnen, toenemende veiligheidsrisico's — de zesde landelijke stroomstoring van 2026 viel op 2 augustus. Kaarten werken niet bij pinautomaten (contant meenemen). Sinds 1 juli 2025 is de papieren tourist card vervangen door een e-Visa (~$50), gekoppeld aan het verplichte gratis D'Viajeros-formulier (invullen binnen 72u vóór aankomst). Routelogica (2026-08, search-bevestigd): volgorde omgedraaid — Viñales stond eerder als laatste stop (een dubbele omweg: eerst voorbij Cienfuegos naar Trinidad, dan terug naar Cienfuegos, dan een 4,5u oversteek naar Viñales vlak bij Havana); nu als retourtje vanuit Havana meteen aan het begin, gevolgd door Cienfuegos-Trinidad zonder kruisende routes.",
+          notes: "Instap: vlucht Amsterdam-Havana, met overstap (±15u30, vanaf ±€600-1.100 retour, december valt net na de goedkoopste maand november). Prijsindicatie webonderzoek 2026-08, momentopname. Havana en het UNESCO-koloniale Trinidad zijn de hoogtepunten; de rustige Viñales-vallei (tabak, karstlandschap) is de verborgen parel. Casas particulares (particuliere kamers) zijn de gangbare backpacker-accommodatie. Prijs geverifieerd (2026-07), klopt. ⚠️ Reisadvies oranje (bevestigd geldig, laatst bijgewerkt 23 juni 2026): grote tekorten aan stroom/brandstof/voedsel/medicijnen, toenemende veiligheidsrisico's — de zesde landelijke stroomstoring van 2026 viel op 2 augustus. Kaarten werken niet bij pinautomaten (contant meenemen). Sinds 1 juli 2025 is de papieren tourist card vervangen door een e-Visa (~$50), gekoppeld aan het verplichte gratis D'Viajeros-formulier (invullen binnen 72u vóór aankomst). Routelogica (2026-08, search-bevestigd): volgorde omgedraaid — Viñales stond eerder als laatste stop (een dubbele omweg: eerst voorbij Cienfuegos naar Trinidad, dan terug naar Cienfuegos, dan een 4,5u oversteek naar Viñales vlak bij Havana); nu als retourtje vanuit Havana meteen aan het begin, gevolgd door Cienfuegos-Trinidad zonder kruisende routes.",
           transport_to_next: 'Terug naar Havana (~4u15 rijden vanaf Trinidad — de enige realistische internationale gateway, Santiago de Cuba zou de omweg verergeren), dan vlucht Havana-Kingston (meestal met overstap via Panama City of Miami)',
         },
         {
@@ -5047,7 +5061,7 @@ function rbBuildSurinameNorthernBrazilRoute() {
             { name: 'Marrondorpen aan de rivier', lat: 4.4, lng: -55.0 },
             { name: 'Brownsberg Nature Park', lat: 4.95, lng: -55.1667 },
           ],
-          notes: 'Nederlandse koloniale geschiedenis in Paramaribo, gecombineerd met een rivierreis naar Marrondorpen in het binnenland — reken op 3-5 dagen voor een fatsoenlijke jungletocht naast de stad. Brownsberg (uitzicht over het Brokopondostuwmeer) is de verborgen parel. Prijs geverifieerd (2026-07): waarschijnlijk net genoeg, Brownsberg/Marrondorpen-tours ($70-120/dag) drukken het gemiddelde op. Let op: "visumvrij" is niet helemaal juist — een verplicht online ICF-immigratieformulier + gelekoortsbewijs is nodig vooraf.',
+          notes: 'Instap: rechtstreekse KLM-vlucht Amsterdam-Paramaribo (±9u20, vanaf ±€1.100-1.800 retour) — let op: februari is qua vluchtprijs een van de duurdere maanden op deze route, ondanks dat het klimatologisch de beste periode is. Prijsindicatie webonderzoek 2026-08, momentopname. Nederlandse koloniale geschiedenis in Paramaribo, gecombineerd met een rivierreis naar Marrondorpen in het binnenland — reken op 3-5 dagen voor een fatsoenlijke jungletocht naast de stad. Brownsberg (uitzicht over het Brokopondostuwmeer) is de verborgen parel. Prijs geverifieerd (2026-07): waarschijnlijk net genoeg, Brownsberg/Marrondorpen-tours ($70-120/dag) drukken het gemiddelde op. Let op: "visumvrij" is niet helemaal juist — een verplicht online ICF-immigratieformulier + gelekoortsbewijs is nodig vooraf.',
           transport_to_next: 'Vlucht Paramaribo-Belém (schaarse rechtstreekse verbindingen; waarschijnlijk met overstap via Cayenne, Georgetown of een Braziliaanse hub — vooraf goed checken)',
         },
         {
@@ -5107,7 +5121,7 @@ function rbBuildWestAfricaOverlandRoute() {
             { name: 'São Vicente (Mindelo)', lat: 16.8901, lng: -24.9825 },
             { name: 'Fogo (Pico do Fogo-vulkaan, wijngaarden)', lat: 14.9481, lng: -24.3553 },
           ],
-          notes: "Bewust andere eilanden dan een eerder bezoek (niet opnieuw Sal) — Santo Antão voor de dramatische wandelvalleien, São Vicente voor de muziekcultuur van Mindelo, Fogo voor de vulkaanbeklimming en wijnbouw op vulkanische grond. Onderling per veerboot (goedkoper, minder betrouwbaar schema) of Binter Cabo Verde-vlucht. Prijs geverifieerd (2026-07), klopt. Verplichte online EASE-registratie ≥5 dagen vooraf.",
+          notes: "Instap: vlucht Amsterdam-Sal (TUI fly, rechtstreeks, ±6u40), met binnenlandse aansluiting naar São Vicente/Santo Antão (±7-8 uur totaal, vanaf ±€350-600 retour, beste periode november). Prijsindicatie webonderzoek 2026-08, momentopname. Bewust andere eilanden dan een eerder bezoek (niet opnieuw Sal) — Santo Antão voor de dramatische wandelvalleien, São Vicente voor de muziekcultuur van Mindelo, Fogo voor de vulkaanbeklimming en wijnbouw op vulkanische grond. Onderling per veerboot (goedkoper, minder betrouwbaar schema) of Binter Cabo Verde-vlucht. Prijs geverifieerd (2026-07), klopt. Verplichte online EASE-registratie ≥5 dagen vooraf.",
           transport_to_next: 'Binnenlandse vlucht Fogo-Praia, dan internationale vlucht Praia-Dakar (routelogica-fix 2026-08: Fogo heeft geen brede internationale verbindingen, alle vluchten lopen via Praia).',
         },
       ],
@@ -5215,7 +5229,7 @@ function rbBuildCentralAfricaIslandsRoute() {
             { name: 'Yaoundé', lat: 3.8480, lng: 11.5021 },
             { name: 'Kribi (Chutes de la Lobé, zwarte stranden)', lat: 2.9333, lng: 9.9167 },
           ],
-          notes: 'Mount Cameroon en Limbe (Zuidwest-regio) bewust vermeden vanwege de sinds 2016 actieve "Anglophone Crisis" — in plaats daarvan Douala, Kribi en Yaoundé in de stabielere Franstalige regio\'s. Bevestigd (2026-07): conflict nog steeds actief. Verplicht e-visa vooraf (~€150-230), aparte kostenpost. Routelogica-fix (2026-08): volgorde omgedraaid (Douala→Yaoundé→Kribi) zodat de terugrit naar Douala vanaf Kribi (≈175 km) korter is dan vanaf Yaoundé (≈240 km) — nu ook expliciet benoemd i.p.v. verzwegen. Zie West & Central Africa Expedition 🌍\'s eigen notities voor de volledige onderbouwing.',
+          notes: 'Instap: vlucht Amsterdam-Douala, via Parijs of Brussel (geen rechtstreekse verbinding vanuit Nederland, ±9-11 uur totaal, vanaf ±€700-1.150 retour, beste periode januari-februari). Prijsindicatie webonderzoek 2026-08, momentopname. Mount Cameroon en Limbe (Zuidwest-regio) bewust vermeden vanwege de sinds 2016 actieve "Anglophone Crisis" — in plaats daarvan Douala, Kribi en Yaoundé in de stabielere Franstalige regio\'s. Bevestigd (2026-07): conflict nog steeds actief. Verplicht e-visa vooraf (~€150-230), aparte kostenpost. Routelogica-fix (2026-08): volgorde omgedraaid (Douala→Yaoundé→Kribi) zodat de terugrit naar Douala vanaf Kribi (≈175 km) korter is dan vanaf Yaoundé (≈240 km) — nu ook expliciet benoemd i.p.v. verzwegen. Zie West & Central Africa Expedition 🌍\'s eigen notities voor de volledige onderbouwing.',
           transport_to_next: 'Terug naar Douala (≈175 km vanaf Kribi, ≈2,5-3 uur), dan vlucht Douala-São Tomé (regionale verbinding).',
         },
         {
@@ -7078,4 +7092,95 @@ function rbMigrateBahrainIntoMediterraneanExpedition() {
   }
 
   rbSave();
+}
+
+/**
+ * Companion/split routes were carved out of the middle of a grand expedition, so their first leg's
+ * notes/transport_to_next were written for a mid-tour waypoint (arriving from the previous country
+ * in that grand tour) — none of them said how to actually get there from the Netherlands as a
+ * standalone trip. This migration adds that "Instap: vlucht Amsterdam-..." sentence to each split
+ * route's first leg (2026-08 flight-cost research), plus fixes three routes whose first/last leg
+ * text was outright wrong for a standalone trip: Noord-India and Nepal both had a dangling
+ * transport_to_next pointing at a country not included in that route (India→Nepal, Nepal→Bhutan),
+ * and Greenland's ending flew to Reykjavik under an "end of expedition" label instead of home to NL.
+ * See TRIP_ROUTE_MAP.md-style research notes in this session's chat history for the source figures.
+ */
+function rbMigrateSplitRouteEntryNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_SPLIT_ENTRY_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_SPLIT_ENTRY_NOTES, '1');
+
+  let touched = false;
+
+  function prependInstap(routeName, code, instapText) {
+    const route = rbRoutes.find(r => r.name === routeName);
+    if (!route) return;
+    const block = route.blocks.find(b => b.country_code === code);
+    if (!block) return;
+    if (block.notes && block.notes.startsWith('Instap:')) return; // already patched
+    block.notes = instapText + (block.notes ? ' ' + block.notes : '');
+    touched = true;
+  }
+
+  // Generic case: prepend an "Instap: vlucht Amsterdam-..." sentence to the first leg's notes.
+  // Oost-Canada 🍁 is deliberately not in this list — it already has a correct entry note
+  // ("Startblok: vlucht Nederland-Halifax"), since it happens to also be the parent North America
+  // Grand Traverse's real first leg.
+  [
+    ['West-Eurazië Overland 🐫', 'BA', 'Instap: vlucht Amsterdam-Sarajevo (±5-6 uur, doorgaans 1 tussenstop via Wenen/München; vanaf ±€200-350 retour; beste periode april). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Oost-Azië & Stille Oceaan 🗻', 'CN', "Instap: vlucht Amsterdam-Xi'an (±14-16 uur, 1 tussenstop, meestal via Peking/Sjanghai/Xiamen; vanaf ±€580-800 retour; beste periode september). Prijsindicatie webonderzoek 2026-08, momentopname."],
+    ['Zuidoost-Azië Grand Loop 🛕', 'VN', 'Instap: vlucht Amsterdam-Hanoi (±15-17 uur, doorgaans 1 tussenstop; vanaf ±€630-720 retour; beste periode december). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Mexico 🌵', 'MX', 'Instap: rechtstreekse KLM-vlucht Amsterdam-Mexico-Stad (±11 uur; vanaf ±€800-950 retour; beste periode november). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Midden-Amerika Loop 🌋', 'GT', 'Instap: vlucht Amsterdam-Guatemala-Stad (±14-17 uur, 1-2 tussenstops, bv. via Madrid/Houston/Miami; vanaf ±€600-900 retour; beste periode december). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Andes Grand Traverse 🦙', 'CO', 'Instap: vlucht Amsterdam-Cartagena (±14-16 uur, 1 tussenstop, bv. via Madrid/Bogotá/Panama-Stad — geen rechtstreekse verbinding; vanaf ±€650-900 retour; beste periode februari). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Zuidelijke Kegel & Brazilië-finale 🧉', 'CL', 'Instap: KLM-vlucht Amsterdam-Santiago de Chile (rechtstreeks, ±13-14 uur) plus binnenlandse aansluiting naar Calama (±2 uur) voor San Pedro de Atacama; vanaf ±€800-900 retour totaal; beste periode juni. Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Zuidelijk Afrika Safari-lus 🦁', 'ZA', 'Instap: rechtstreekse KLM-vlucht Amsterdam-Kaapstad (±11,5 uur; vanaf ±€1.000-1.200 retour rond juni — november is doorgaans goedkoper maar valt buiten het beste seizoen van deze route). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Afrikaanse Eilanden 🏝️', 'MG', 'Instap: vlucht Amsterdam-Antananarivo (±13-16 uur, 1 tussenstop, bv. via Nairobi of Parijs met Kenya Airways/Air France; vanaf ±€650-1.100 retour; beste periode oktober — let op, de goedkoopste maand is doorgaans maart, reken dus eerder aan de hoge kant van deze bandbreedte). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Oost-Afrika Safari Classic 🦒', 'TZ', 'Instap: rechtstreekse KLM-vlucht Amsterdam-Kilimanjaro (±8u45; vanaf ±€1.050-1.500 retour; beste periode november). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Hoorn van Afrika & Egypte 🏺', 'ET', 'Instap: rechtstreekse Ethiopian Airlines-vlucht Amsterdam-Addis Abeba (±7,5-8 uur; vanaf ±€500-700 retour; beste periode februari). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Iberia & Marokko/Tunesië 🏰', 'ES', 'Instap: vlucht Amsterdam-Málaga (±2u50, vanaf ±€90-180 retour, beste periode september). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Malta & Italië 🏛️', 'MT', 'Instap: vlucht Amsterdam-Malta/Luqa (±3u20, vanaf ±€120-250 retour, beste periode oktober). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Corsica & Zuid-Frankrijk ⛵', 'FR', 'Instap: vlucht Amsterdam-Figari/Ajaccio (±4-5u incl. overstap, geen directe vlucht, vanaf ±€150-280 retour, beste periode november). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Griekenland & Cyprus 🏺', 'GR', 'Instap: vlucht Amsterdam-Athene (±3u20, vanaf ±€90-160 retour, beste periode november). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Anatolië 🕌', 'TR', 'Instap: vlucht Amsterdam-Istanboel (±3u30, vanaf ±€130-250 retour, beste periode december). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Egypte & Arabisch Schiereiland 🐪', 'EG', 'Instap: rechtstreekse KLM-vlucht Amsterdam-Caïro (±4u30, vanaf ±€200-320 retour, beste periode december). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Scandinavië Overland 🚂', 'FI', 'Instap: vlucht Amsterdam-Helsinki (±2u50, vanaf ±€150-280 retour, beste periode juni), vandaar verder naar Rovaniemi. Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Svalbard 🐻‍❄️', 'SJ', 'Instap: vlucht Amsterdam-Oslo-Longyearbyen (±5-6u incl. overstap, geen directe vlucht, vanaf ±€400-600 retour, beste periode juli). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Faeröer 🐑', 'FO', 'Instap: vlucht Amsterdam-Kopenhagen-Vágar (±4-4,5u incl. overstap, geen directe vlucht, vanaf ±€350-550 retour, beste periode juli-augustus). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['IJsland ❄️', 'IS', 'Instap: vlucht Amsterdam-Reykjavik/Keflavík (±4u, vanaf ±€300-450 retour, beste periode juli-augustus). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Patagonië Overland 🏔️', 'CL', 'Instap: vlucht Amsterdam-Santiago de Chile, met binnenlandse aansluiting naar Puerto Montt (±14-16 uur totaal, vanaf ±€700-1.050 retour, beste periode begin november). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Antarctica-cruise 🐧', 'AQ', 'Instap: vlucht Amsterdam-Buenos Aires, met binnenlandse aansluiting naar Ushuaia (±17-19 uur totaal, vanaf ±€1.200-1.700 retour, december valt in het Zuid-Amerikaanse hoogseizoen zodat dit aan de duurdere kant ligt). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Bhutan 🐉', 'BT', 'Instap: vlucht Amsterdam-Paro, via Delhi of Bangkok met aansluitende Drukair/Bhutan Airlines-vlucht (±15-20 uur totaal, vanaf ±€1.300-1.900 retour, december valt nog in het goede seizoen). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['West-Canada: Rockies & Vancouver 🏔️', 'CA', 'Instap: vlucht Amsterdam-Calgary, met overstap (±12-14 uur, vanaf ±€650-950 retour, beste periode juni-juli). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['VS Westkust Roadtrip 🌉', 'US', 'Instap: vlucht Amsterdam-Seattle (KLM, rechtstreeks, ±10 uur, vanaf ±€650-1.100 retour, juli-augustus is hoogseizoen dus prijzen zitten aan de hogere kant). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Pacific-eilanden 🌺', 'VU', 'Instap: vlucht Amsterdam-Port Vila, met meerdere overstappen (bv. via Los Angeles/Auckland of Fiji-Nadi, ±28-30 uur totaal, vanaf ±€1.800-3.000 retour, beste periode mei-juni) — een van de duurste en langste losse verbindingen van de hele wereldreisplanning. Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Tropisch/Outback Australië 🐊', 'AU', 'Instap: vlucht Amsterdam-Perth, met overstap (±19-22 uur, vanaf ±€910-1.500 retour, beste periode juni). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Gematigd/Zuidelijk Australië 🍇', 'AU', 'Instap: vlucht Amsterdam-Sydney, met overstap (±22-24 uur, vanaf ±€900-1.450 retour, beste periode augustus) — Byron Bay is vandaar per binnenlandse vlucht (Ballina/Gold Coast) of bus te bereiken, niet rechtstreeks. Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Nieuw-Zeeland 🥝', 'NZ', 'Instap: vlucht Amsterdam-Christchurch, met meerdere overstappen (geen directe verbinding, ±27-38 uur totaal, vanaf ±€1.300-2.000 retour, beste periode september-november). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Caraïbische Eilanden-hop 🏝️', 'CU', 'Instap: vlucht Amsterdam-Havana, met overstap (±15u30, vanaf ±€600-1.100 retour, december valt net na de goedkoopste maand november). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Suriname & Noord-Brazilië 🌴', 'SR', 'Instap: rechtstreekse KLM-vlucht Amsterdam-Paramaribo (±9u20, vanaf ±€1.100-1.800 retour) — let op: februari is qua vluchtprijs een van de duurdere maanden op deze route, ondanks dat het klimatologisch de beste periode is. Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['West-Afrika Overland 🥁', 'CV', 'Instap: vlucht Amsterdam-Sal (TUI fly, rechtstreeks, ±6u40), met binnenlandse aansluiting naar São Vicente/Santo Antão (±7-8 uur totaal, vanaf ±€350-600 retour, beste periode november). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+    ['Centraal-Afrika & Eilanden 🦛', 'CM', 'Instap: vlucht Amsterdam-Douala, via Parijs of Brussel (geen rechtstreekse verbinding vanuit Nederland, ±9-11 uur totaal, vanaf ±€700-1.150 retour, beste periode januari-februari). Prijsindicatie webonderzoek 2026-08, momentopname.'],
+  ].forEach(([routeName, code, instapText]) => prependInstap(routeName, code, instapText));
+
+  // Noord-India and Nepal also get the instap note, but their transport_to_next needs a full
+  // replacement (was a dangling reference to a country not in that standalone route).
+  prependInstap('Noord-India 🕌', 'IN', 'Instap: vlucht Amsterdam-Delhi (KLM, rechtstreeks, ±8u15, vanaf ±€600-950 retour, beste periode begin oktober). Prijsindicatie webonderzoek 2026-08, momentopname.');
+  prependInstap('Nepal 🏔️', 'NP', 'Instap: vlucht Amsterdam-Kathmandu, met overstap (±13-16 uur, vanaf ±€550-950 retour, november is het topseizoen voor trekking dus prijzen zitten aan de hogere kant). Prijsindicatie webonderzoek 2026-08, momentopname.');
+
+  const fixEnding = (routeName, code, transportToNext) => {
+    const route = rbRoutes.find(r => r.name === routeName);
+    if (!route) return;
+    const block = route.blocks.find(b => b.country_code === code);
+    if (!block) return;
+    if (block.transport_to_next !== transportToNext) { block.transport_to_next = transportToNext; touched = true; }
+  };
+  fixEnding('Noord-India 🕌', 'IN', 'Einde van de expeditie — binnenlandse vlucht Varanasi-Delhi (±1u20), dan terugvlucht Delhi-Amsterdam (KLM, rechtstreeks, ±8u15, vanaf ±€350-550 retour, geen rechtstreekse internationale verbinding vanuit Varanasi zelf). Prijsindicatie webonderzoek 2026-08, momentopname.');
+  fixEnding('Nepal 🏔️', 'NP', 'Einde van de expeditie — terugvlucht Kathmandu-Amsterdam, met overstap (bv. via Doha of Istanbul, ±13-16 uur, vanaf ±€350-550 retour, geen rechtstreekse verbinding vanuit Kathmandu). Prijsindicatie webonderzoek 2026-08, momentopname.');
+
+  // Greenland: both the instap note AND the ending were wrong (flew to Reykjavik under an
+  // "end of expedition" label instead of home to NL) — full override for both fields.
+  prependInstap('Groenland 🧊', 'GL', 'Instap: vlucht Amsterdam-Reykjavik-Nuuk (±7-8u incl. overstap, geen directe vlucht, vanaf ±€900-1.400 retour, beste periode juli-augustus). Prijsindicatie webonderzoek 2026-08, momentopname.');
+  fixEnding('Groenland 🧊', 'GL', 'Einde van deze route — vlucht Ilulissat-Reykjavik (seizoensgebonden direct, juni-september) of Ilulissat-Kopenhagen (jaarrond direct vanaf eind oktober 2026, Air Greenland), dan aansluitend vlucht huiswaarts naar Nederland (Reykjavik-Amsterdam met Icelandair/Transavia, of Kopenhagen-Amsterdam met KLM/Transavia) — totaal ±8-10u incl. overstap, vanaf ±€600-950 retour voor dit laatste traject. Prijsindicatie webonderzoek 2026-08, momentopname.');
+
+  if (touched) rbSave();
 }

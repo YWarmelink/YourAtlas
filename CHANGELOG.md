@@ -12,6 +12,27 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Bugfix: alle 38 losse split-routes misten een "vlucht vanuit Nederland"-instap (2026-08)** —
+  Youri vroeg een analyse van de 38 standalone companion-routes die eerder uit de 11 gesplitste
+  grote expedities zijn gebouwd (zie `ROUTE_BUILDER_MODULES.md`), omdat sommige er "een week"
+  aanvoelden en de instaplogica niet klopte. Bevinding: op één na (Oost-Canada 🍁, die toevallig
+  ook het echte startblok van de ouder-expeditie is) had **geen van de 38** een vermelding hoe je
+  er vanuit Nederland komt — elke eerste etappe droeg nog de mid-tour-tekst van toen dat land een
+  tussenstop was in de grote expeditie, nooit een instappunt. Voor elke route is nu een
+  "Instap: vlucht Amsterdam-…"-zin toegevoegd aan de eerste etappe, met een realistische
+  vluchtprijsindicatie getimed op de al vastgelegde beste periode van die route (webonderzoek
+  2026-08, momentopname — geen live prijzen). Daarnaast twee losse content-bugs gefixt: **Noord-India 🕌**
+  en **Nepal 🏔️** hadden een `transport_to_next` die nog naar een land verwees dat niet in die
+  standalone route zit (India→Nepal, Nepal→Bhutan) — nu een echte terugvlucht naar Nederland.
+  **Groenland 🧊** eindigde met "einde van de expeditie — vlucht terug naar Reykjavik", zinloos als
+  losse reis — nu een correcte thuisreis (Ilulissat→Reykjavik/Kopenhagen→Amsterdam).
+  Toegepast via `rbMigrateSplitRouteEntryNotes()`. Bewust **niet** aangepast: Svalbard 🐻‍❄️ (4 dagen)
+  en Faeröer 🐑 (7 dagen) blijven bewust kort, op Youri's verzoek — net als Corsica & Zuid-Frankrijk
+  ⛵ (11 dagen, die dit al zelf meldde) en Antarctica-cruise 🐧/Bhutan 🐉 (cruise- resp.
+  vergunning-gebonden). Ook bewust niet aangepakt: of elk individueel "Sterk"-land uit de
+  modularisatie-analyse (Colombia, Peru, Egypte alleen, Madagaskar, Cuba, …) een eigen route
+  verdient — dat blijft voor nu een open vraag, geen bug.
+
 - **Bugfix: Eurasia Grand Tour 🌏 miste per-bestemming coördinaten voor 9 van de 27 landen (2026-08)**
   — gevonden doordat Youri opmerkte dat Bosnië & Herzegovina niet meekwam op de "Gedetailleerd"-
   kaartweergave. Oorzaak: `rbApplyEurasiaOverhaulToRoute()` (de route-logic-review-migratie) syncte
