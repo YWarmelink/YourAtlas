@@ -109,11 +109,17 @@ see [`TRIP_ROUTE_MAP.md`](TRIP_ROUTE_MAP.md) for the full plan. The map code
 shows up on a trip once it has ≥2 destinations with coordinates. **Nothing has coordinates
 yet** — that needs a new Sheet tab, which is the next action:
 
+**Pilot trip: South Korea** (planned & booked) — first one to get `TripDestinations` rows.
+
+**Reminder for when you start on it:** the South Korea trip itself also needs some small
+adjustments beyond just adding destinations/coordinates — exact details still TBD, sort those
+out first when you sit down with it, then do the destinations below.
+
 **Youri — next time you're in the Google Sheet:**
 1. Add a tab named `TripDestinations` with columns: `trip_id | order | country | country_code | name | lat | lng | notes`.
 2. `File → Share → Publish to web` → CSV, same as the other tabs.
-3. Fill in rows for whichever trip(s) should get a map first (coordinates: right-click a spot
-   in Google Maps → the lat/lng shows at the top of the context menu, click to copy).
+3. Fill in rows for the South Korea trip first (coordinates: right-click a spot in Google Maps
+   → the lat/lng shows at the top of the context menu, click to copy).
 4. Send Claude the published CSV URL — it swaps into `js/config/users.js`'s `trip_destinations`
    source (currently pointed at an empty local JSON fallback as a placeholder).
 

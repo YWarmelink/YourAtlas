@@ -42,15 +42,12 @@ instead of nested in a `blocks` array.
 - `name`, `lat`, `lng`, `notes` — same fields as a Route Builder `destination` object
   (`js/pages/routeBuilder.js`'s `rbBuildBlock`), same meaning.
 
-## What's already done (code side, no Sheet needed)
+## What's done (code side, no Sheet needed)
 
 - `dataService.getTripDestinations(tripId)` added to `js/data/dataService.js`.
 - `trip_destinations` data source added to `js/config/users.js` — currently `type: 'json'`
   pointing straight at `data/youri/trip_destinations.json` (an empty `[]` for now), since there's
   no published Sheet CSV yet.
-
-## What's done (code side)
-
 - `js/utils/routeMap.js` — a fresh, shared Leaflet route-line drawer (dashed line through an
   ordered list of `{lat, lng}` stops, Utrecht home marker, numbered stop markers). Deliberately
   a **new, standalone file, not extracted from Route Builder's existing
@@ -74,9 +71,11 @@ instead of nested in a `blocks` array.
 
 ## What's next
 
-1. **The Sheet part (Youri, whenever there's time)** — see `README.md`'s "Trips route map"
-   section for the exact checklist (tab + columns, publish as CSV, fill in coordinates, send
-   Claude the CSV URL to wire into `js/config/users.js`).
+1. **The Sheet part (Youri, whenever there's time)** — **South Korea** (planned & booked) is the
+   pilot trip. It also needs some small adjustments of its own beyond just destinations/
+   coordinates — details TBD, sort those out first when starting on it. See `README.md`'s
+   "Trips route map" section for the exact Sheet checklist (tab + columns, publish as CSV, fill
+   in coordinates, send Claude the CSV URL to wire into `js/config/users.js`).
 2. **Route Builder → shared util migration** (later, separate step, not blocking) — once there's
    a browser available to verify, move Route Builder's own map drawing onto
    `js/utils/routeMap.js` too, retiring its private copy of the same logic. Verify Route
