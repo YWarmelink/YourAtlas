@@ -63,6 +63,7 @@ const RB_MIGRATE_FLAG_2026_08_MEDITERRANEAN_OVERHAUL = 'atlas_grand_trips_migrat
 const RB_MIGRATE_FLAG_2026_08_AFRICA_OVERHAUL = 'atlas_grand_trips_migrate_2026_08_africa_overhaul_v1';
 const RB_MIGRATE_FLAG_2026_08_SPLIT_ENTRY_NOTES = 'atlas_grand_trips_migrate_2026_08_split_entry_notes_v1';
 const RB_SEED_FLAG_KEY_STANDALONE_COUNTRIES = 'atlas_grand_trips_seeded_standalone_countries_v1';
+const RB_SEED_FLAG_KEY_STANDALONE_COUNTRIES_BATCH2 = 'atlas_grand_trips_seeded_standalone_countries_batch2_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -100,6 +101,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbSeedCaribbeanSplitExpeditions();
   rbSeedWestCentralAfricaSplitExpeditions();
   rbSeedStandaloneCountryRoutes();
+  rbSeedStandaloneCountryRoutesBatch2();
   rbMigrateExpeditionRenames();
   rbMigrateExpeditionEmojiNames();
   rbMigrateAncientToMediterranean();
@@ -7372,5 +7374,249 @@ function rbBuildSurinameRoute() {
     climate_summary: 'Suriname\'s korte droge tijd (februari-maart) is ideaal voor jungle-/rivierentochten.',
     description: 'Nederlandse koloniale geschiedenis in Paramaribo en een rivierreis naar de Marrondorpen.',
     notes: 'Losgesplitst van Suriname & Noord-Brazilië 🌴 (zelf al losgesplitst van Caribbean & Amazon Expedition 🌴 — zie ROUTE_BUILDER_MODULES.md) als onderdeel van deze eerste batch losse landen (2026-08) — al genoemd als "extra relevant gezien de Nederlandse band". Land, dagen en budget zijn ongewijzigd overgenomen. Suriname & Noord-Brazilië 🌴 en Caribbean & Amazon Expedition 🌴 zelf blijven ongewijzigd bestaan.',
+  });
+}
+
+// ---- Standalone single-country routes, batch 2 (2026-08, Youri's own top-10 picks) ----
+//
+// Second batch from the same ~35-candidate list in ROUTE_BUILDER_MODULES.md as the first 8 above
+// — this time Youri's own picks rather than "most obvious". Same principle throughout: country
+// content (days/budget/destinations/notes) reused as-is from the parent expedition, own
+// "Instap: vlucht Amsterdam-..." opener + a real flight-home ending replacing the original
+// mid-tour transport_to_next.
+
+function rbSeedStandaloneCountryRoutesBatch2() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_STANDALONE_COUNTRIES_BATCH2)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_STANDALONE_COUNTRIES_BATCH2, '1');
+
+  rbRoutes.push(
+    rbBuildJapanTaiwanRoute(),
+    rbBuildSouthAfricaRoute(),
+    rbBuildKenyaRoute(),
+    rbBuildVietnamRoute(),
+    rbBuildNewZealandSouthIslandRoute(),
+    rbBuildCaucasusRoute(),
+    rbBuildMoroccoRoute(),
+    rbBuildMadagascarRoute(),
+    rbBuildSicilyRoute(),
+    rbBuildJordanRoute(),
+  );
+  rbSave();
+}
+
+function rbBuildJapanTaiwanRoute() {
+  const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
+  return rbBuildFlatSeedRoute('Japan & Taiwan 🗻', [
+    {
+      ...eurasia('JP', 'Japan'),
+      notes: 'Instap: rechtstreekse vlucht Amsterdam-Tokio (KLM/Air France/SAS, ±13u15; vanaf ±€900-1.300 retour; beste periode oktober-november). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (eurasia('JP', 'Japan').notes || ''),
+      // transport_to_next (Osaka/Tokio-Taipei) is correctly internal to this 2-country route — kept as-is.
+    },
+    {
+      ...eurasia('TW', 'Taiwan'),
+      transport_to_next: 'Einde van deze route — HSR terug naar Taipei (~2u vanaf Kenting), dan terugvlucht Taipei-Amsterdam (1 tussenstop, geen directe verbinding).',
+    },
+  ], {
+    best_starting_month: 'Oktober',
+    travel_style: 'Backpacker/budget-comfort hybride — trein/metro in Japan, HSR in Taiwan, korte vlucht ertussen.',
+    climate_summary: 'Oktober-november geeft herfstkleuren in Japan (rustiger dan de kersenbloesem-drukte) en droog, mild weer in Taiwan vóór het koelere winterseizoen in het noorden.',
+    description: 'Van Tokyo via Kyoto/Osaka naar Taiwan: Taipei, de Taroko-kloof en het zuidelijke Kenting.',
+    notes: 'Losgesplitst van Eurasia Grand Tour 🌏 (via Oost-Azië & Stille Oceaan 🗻, waar dit al als eigen "Sterk"-blok stond in ROUTE_BUILDER_MODULES.md — "klassieke Oost-Azië combinatie, visumvrij, geen haken") als onderdeel van deze tweede batch losse landen (2026-08, Youri\'s eigen top-10-keuze). Landen, dagen en budgetten zijn ongewijzigd overgenomen. Eurasia Grand Tour 🌏 en Oost-Azië & Stille Oceaan 🗻 zelf blijven ongewijzigd bestaan.',
+  });
+}
+
+function rbBuildSouthAfricaRoute() {
+  const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
+  return rbBuildFlatSeedRoute('Zuid-Afrika 🦓', [
+    {
+      ...mea('ZA', 'South Africa'),
+      notes: 'Instap: rechtstreekse KLM-vlucht Amsterdam-Kaapstad (±11,5 uur; vanaf ±€1.000-1.200 retour rond juni — november is doorgaans goedkoper maar valt buiten het beste seizoen van deze route). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (mea('ZA', 'South Africa').notes || ''),
+      transport_to_next: 'Einde van deze route — terug naar Kaapstad of Johannesburg, dan rechtstreekse KLM-terugvlucht naar Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'Juni',
+    travel_style: 'Huurauto — Kaapstad/Winelands/Garden Route/Addo als één lus, Johannesburg/Kruger/Drakensberg als tweede lus.',
+    climate_summary: 'Juni valt vlak vóór het regenseizoen — beste Kruger-wildlife, mild in Kaapstad.',
+    description: 'Kaapstad, de Winelands en de Garden Route, gevolgd door Johannesburg, Kruger National Park en de Drakensberg.',
+    notes: 'Losgesplitst van Africa Grand Tour 🌍 als onderdeel van deze tweede batch losse landen (2026-08, Youri\'s eigen top-10-keuze, zie ROUTE_BUILDER_MODULES.md voor de bredere analyse). Land, dagen en budget zijn ongewijzigd overgenomen (incl. de 2026-08 routelogica-fix: Addo→Johannesburg→Kruger→Drakensberg, scheelt ≈465 km t.o.v. de oude volgorde). Africa Grand Tour 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildKenyaRoute() {
+  const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
+  return rbBuildFlatSeedRoute('Kenia 🦒', [
+    {
+      ...mea('KE', 'Kenya'),
+      notes: 'Instap: rechtstreekse KLM-vlucht Amsterdam-Nairobi (±8-9 uur; vanaf ±€700-1.100 retour; beste periode november). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (mea('KE', 'Kenya').notes || ''),
+      transport_to_next: 'Einde van deze route — terug naar Nairobi (vanaf Mount Kenya/Nanyuki, ±3-4 uur), dan rechtstreekse KLM-terugvlucht Nairobi-Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'November',
+    travel_style: 'Overland/safaritrucks tussen de parken vanuit Nairobi.',
+    climate_summary: 'November-januari valt in de korte regentijd (lichte middagbuien) en de daaropvolgende korte droge periode — niet de absolute piek (juni-oktober) maar een erkend sterk alternatief.',
+    description: 'Maasai Mara, Lake Nakuru en Amboseli, met Diani Beach/Mombasa en Mount Kenya als afronding.',
+    notes: 'Losgesplitst van Africa Grand Tour 🌍 als onderdeel van deze tweede batch losse landen (2026-08, Youri\'s eigen top-10-keuze) — een klassieke safari-bucket-list-bestemming op zich. Land, dagen en budget zijn ongewijzigd overgenomen (incl. de 2026-08 routelogica-fix voor Mount Kenya/Mombasa-volgorde). Africa Grand Tour 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+  });
+}
+
+function rbBuildVietnamRoute() {
+  const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
+  return rbBuildFlatSeedRoute('Vietnam 🛵', [
+    {
+      ...eurasia('VN', 'Vietnam'),
+      notes: 'Instap: vlucht Amsterdam-Hanoi (±15-17 uur, doorgaans 1 tussenstop; vanaf ±€630-720 retour; beste periode december). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (eurasia('VN', 'Vietnam').notes || ''),
+      transport_to_next: 'Einde van deze route — terugvlucht vanuit Ho Chi Minh City naar Amsterdam (1 tussenstop, geen directe verbinding).',
+    },
+  ], {
+    best_starting_month: 'December',
+    travel_style: 'Backpacker — lokale bussen, de Ha Giang Loop met gids/motor, interne vlucht Hanoi-HCMC.',
+    climate_summary: 'December-februari is het droge seizoen op het vasteland van Zuidoost-Azië — geen moesson, aangename temperaturen.',
+    description: 'Van Hanoi en de Ha Giang Loop via Ha Long Bay naar Ho Chi Minh City, Da Lat en Phu Quoc.',
+    notes: 'Losgesplitst van Eurasia Grand Tour 🌏 (via Zuidoost-Azië Grand Loop 🛕) als onderdeel van deze tweede batch losse landen (2026-08, Youri\'s eigen top-10-keuze) — een van de meest geboekte backpacker-bestemmingen wereldwijd. Land, dagen en budget zijn ongewijzigd overgenomen. Eurasia Grand Tour 🌏 en Zuidoost-Azië Grand Loop 🛕 zelf blijven ongewijzigd bestaan.',
+  });
+}
+
+function rbBuildNewZealandSouthIslandRoute() {
+  return rbBuildFlatSeedRoute('Nieuw-Zeeland Zuidereiland 🏔️', [
+    {
+      code: 'NZ', name: 'New Zealand', days: 21, budget: 2268, lat: -45.0312, lng: 168.6626,
+      destinations: [
+        { name: 'Christchurch', lat: -43.5321, lng: 172.6362 },
+        { name: 'Franz Josef & Fox-gletsjers', lat: -43.4667, lng: 170.1667 },
+        { name: 'Queenstown', lat: -45.0312, lng: 168.6626 },
+        { name: 'Milford Sound & Fiordland', lat: -44.6714, lng: 167.9250 },
+        { name: 'Dunedin & Catlins', lat: -45.8788, lng: 170.5028 },
+        { name: 'Kaikoura', lat: -42.4000, lng: 173.6817 },
+        { name: 'Abel Tasman', lat: -40.9333, lng: 173.0000 },
+      ],
+      notes: "Instap: vlucht Amsterdam-Christchurch, met meerdere overstappen (geen directe verbinding, ±27-38 uur totaal, vanaf ±€1.300-2.000 retour, beste periode september-november). Prijsindicatie webonderzoek 2026-08, momentopname. Concentreert het merendeel van de iconische Nieuw-Zeelandse natuur. Overweeg minstens één Great Walk (Milford Track, Routeburn of Kepler) als meerdaagse hut-to-hut-trek — ruim van tevoren reserveren. Prijscorrectie (2026-07): €80→€108/dag.",
+      transport_to_next: 'Einde van deze route — terug naar Christchurch (of vlucht vanaf Picton/Blenheim), dan terugvlucht naar Amsterdam (meerdere overstappen, geen directe verbinding).',
+    },
+  ], {
+    best_starting_month: 'September',
+    travel_style: 'Backpacker tussen budget en comfort in — huurauto, minstens één Great Walk.',
+    climate_summary: 'September-november is het Nieuw-Zeelandse voorjaar — stabiel weer, minder drukte dan de zomerpiek (december-februari).',
+    description: 'Milford Sound, gletsjers, Queenstown en de Catlins — het Zuidereiland op zichzelf.',
+    notes: 'Losgesplitst van Nieuw-Zeeland 🥝 (zelf al losgesplitst van Oceania Grand Expedition 🌊 — zie ROUTE_BUILDER_MODULES.md) als onderdeel van deze tweede batch losse landen (2026-08, Youri\'s eigen top-10-keuze) — "een van de meest geboekte standalone trips wereldwijd". Land, dagen en budget zijn ongewijzigd overgenomen (incl. de 2026-08 routelogica-fix voor de Kaikoura/Abel Tasman-volgorde). Nieuw-Zeeland 🥝 en Oceania Grand Expedition 🌊 zelf blijven ongewijzigd bestaan.',
+  });
+}
+
+function rbBuildCaucasusRoute() {
+  const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
+  return rbBuildFlatSeedRoute('Kaukasus 🍷', [
+    {
+      ...eurasia('GE', 'Georgia'),
+      notes: 'Instap: vlucht Amsterdam-Tbilisi, met overstap (geen directe verbinding, bv. via Frankfurt/Zürich of Istanbul, ±7-10 uur incl. overstap; vanaf ±€250-400 retour — januari is doorgaans de goedkoopste vluchtmaand, maar valt buiten het bergseizoen van deze route; beste reisperiode juni). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (eurasia('GE', 'Georgia').notes || ''),
+    },
+    eurasia('AM', 'Armenia'),
+    {
+      ...eurasia('AZ', 'Azerbaijan'),
+      transport_to_next: 'Einde van deze route — terug naar Baku (bus/deeltaxi vanaf Qabala/Sheki, ~3u), dan terugvlucht Baku-Amsterdam (1 tussenstop, geen directe verbinding).',
+    },
+  ], {
+    best_starting_month: 'Juni',
+    travel_style: 'Backpacker — overland (bus, marshrutka/deeltaxi) tussen de drie landen.',
+    climate_summary: 'Juni-augustus houdt de bergpassen en Svaneti sneeuwvrij.',
+    description: 'Georgië, Armenië en Azerbeidzjan: Tbilisi, Svaneti, Yerevan en Baku.',
+    notes: 'Losgesplitst van Eurasia Grand Tour 🌏 (via West-Eurazië Overland 🐫, waar dit al als eigen "Sterk"-blok stond in ROUTE_BUILDER_MODULES.md — "Georgië/Armenië/Azerbeidzjan is al een bekende standalone trip") als onderdeel van deze tweede batch losse landen (2026-08, Youri\'s eigen top-10-keuze). Landen, dagen en budgetten zijn ongewijzigd overgenomen. Eurasia Grand Tour 🌏 en West-Eurazië Overland 🐫 zelf blijven ongewijzigd bestaan.',
+  });
+}
+
+function rbBuildMoroccoRoute() {
+  const med = () => ({
+    code: 'MA', name: 'Morocco', days: 10, budget: 450, lat: 31.6295, lng: -7.9811,
+    destinations: [
+      { name: 'Tanger', lat: 35.7595, lng: -5.8340 },
+      { name: 'Chefchaouen', lat: 35.1688, lng: -5.2636 },
+      { name: 'Fes', lat: 34.0181, lng: -5.0078 },
+      { name: 'Volubilis', lat: 34.0742, lng: -5.5548 },
+      { name: 'Marrakech', lat: 31.6295, lng: -7.9811 },
+    ],
+    notes: "Berbercultuur, islamitische geschiedenis en Romeinse overblijfselen (Volubilis) naast elkaar. Medina's van Fes en Marrakech en de blauwe stad Chefchaouen als hoogtepunten; treinen tussen de grote steden zijn goed en goedkoop.",
+  });
+  return rbBuildFlatSeedRoute('Marokko 🕌', [
+    {
+      ...med(),
+      notes: 'Instap: directe vlucht Amsterdam-Marrakech (Transavia/easyJet, ±3u50; vanaf ±€100-280 retour; beste periode september). Prijsindicatie webonderzoek 2026-08, momentopname. ' + med().notes,
+      transport_to_next: 'Einde van deze route — terugvlucht vanuit Marrakech naar Amsterdam (Transavia/easyJet, rechtstreeks).',
+    },
+  ], {
+    best_starting_month: 'September',
+    travel_style: 'Trein tussen de grote steden, bus voor Chefchaouen.',
+    climate_summary: 'September laat dit deel nog in het najaarszonnetje vallen — mild en minder druk dan hoogzomer.',
+    description: 'Van Tanger via de blauwe stad Chefchaouen en Fes naar Marrakech.',
+    notes: 'Losgesplitst van Iberia & Marokko/Tunesië 🏰 (zelf al losgesplitst van Mediterranean Civilizations Expedition 🏛️ — zie ROUTE_BUILDER_MODULES.md) als onderdeel van deze tweede batch losse landen (2026-08, Youri\'s eigen top-10-keuze). Land, dagen en budget zijn ongewijzigd overgenomen. Iberia & Marokko/Tunesië 🏰 en Mediterranean Civilizations Expedition 🏛️ zelf blijven ongewijzigd bestaan.',
+  });
+}
+
+function rbBuildMadagascarRoute() {
+  const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
+  return rbBuildFlatSeedRoute('Madagaskar 🦎', [
+    {
+      ...mea('MG', 'Madagascar'),
+      notes: 'Instap: vlucht Amsterdam-Antananarivo (±13-16 uur, 1 tussenstop, bv. via Nairobi of Parijs met Kenya Airways/Air France; vanaf ±€650-1.100 retour; beste periode oktober — let op, de goedkoopste maand is doorgaans maart, reken dus eerder aan de hoge kant van deze bandbreedte). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (mea('MG', 'Madagascar').notes || ''),
+      transport_to_next: 'Einde van deze route — terugvlucht vanuit Antananarivo naar Amsterdam (1 tussenstop, bv. via Nairobi of Parijs).',
+    },
+  ], {
+    best_starting_month: 'Oktober',
+    travel_style: 'Privé-4x4+chauffeur tussen de etappes, losse vluchtuitstapjes naar Nosy Be en Morondava vanaf Tana.',
+    climate_summary: 'Oktober-november is een goed droog venster.',
+    description: 'Andasibe-Mantadia, Isalo, de Avenue of the Baobabs bij Morondava en het eiland Nosy Be.',
+    notes: 'Losgesplitst van Africa Grand Tour 🌍 (via Afrikaanse Eilanden 🏝️, waar dit tot nu toe samen met Mauritius stond — al genoemd in ROUTE_BUILDER_MODULES.md als "twee losse Sterke blocks... die toevallig vaak gecombineerd worden, niet als één samengesteld block") als onderdeel van deze tweede batch losse landen (2026-08, Youri\'s eigen top-10-keuze). Land, dagen en budget zijn ongewijzigd overgenomen. Africa Grand Tour 🌍 en Afrikaanse Eilanden 🏝️ zelf blijven ongewijzigd bestaan (Mauritius staat daar nog steeds naast Madagaskar in).',
+  });
+}
+
+function rbBuildSicilyRoute() {
+  const med = () => ({
+    code: 'IT', name: 'Italy', days: 10, budget: 650, lat: 38.1157, lng: 13.3613,
+    destinations: [
+      { name: 'Palermo', lat: 38.1157, lng: 13.3613 },
+      { name: 'Cefalù', lat: 38.0387, lng: 14.0231 },
+      { name: 'Agrigento (Valle dei Templi)', lat: 37.2903, lng: 13.5928 },
+      { name: 'Syracuse', lat: 37.0755, lng: 15.2866 },
+      { name: 'Taormina', lat: 37.8516, lng: 15.2853 },
+      { name: 'Etna', lat: 37.7510, lng: 14.9934 },
+    ],
+    notes: 'Magna Graecia (Agrigento, Syracuse), Romeinse, Normandische en Arabische invloeden door elkaar op één eiland, met de Etna als natuurlijke afwisseling. Verborgen parel: het vissersdorpje Marzamemi, veel rustiger dan Taormina.',
+  });
+  return rbBuildFlatSeedRoute('Sicilië 🌋', [
+    {
+      ...med(),
+      notes: 'Instap: directe vlucht Amsterdam-Palermo (Transavia/easyJet, ±3 uur; vanaf ±€90-280 retour; beste periode oktober). Prijsindicatie webonderzoek 2026-08, momentopname. ' + med().notes,
+      transport_to_next: 'Einde van deze route — terugvlucht vanuit Palermo of Catania naar Amsterdam (Transavia/easyJet, rechtstreeks).',
+    },
+  ], {
+    best_starting_month: 'Oktober',
+    travel_style: 'Huurauto — het eiland rondrijden van Palermo via de zuidkust naar de oostkust.',
+    climate_summary: 'Oktober is een goede maand voor Sicilië — nog warm, minder druk dan hoogzomer.',
+    description: 'Palermo, Agrigento, Syracuse, Taormina en de Etna.',
+    notes: 'Losgesplitst van Malta & Italië 🏛️ (zelf al losgesplitst van Mediterranean Civilizations Expedition 🏛️ — zie ROUTE_BUILDER_MODULES.md) als onderdeel van deze tweede batch losse landen (2026-08, Youri\'s eigen top-10-keuze). Land, dagen en budget zijn ongewijzigd overgenomen. Malta & Italië 🏛️ en Mediterranean Civilizations Expedition 🏛️ zelf blijven ongewijzigd bestaan.',
+  });
+}
+
+function rbBuildJordanRoute() {
+  const med = () => ({
+    code: 'JO', name: 'Jordan', days: 8, budget: 500, lat: 31.9454, lng: 35.9284,
+    destinations: [
+      { name: 'Amman', lat: 31.9454, lng: 35.9284 },
+      { name: 'Jerash', lat: 32.2811, lng: 35.8994 },
+      { name: 'Petra', lat: 30.3285, lng: 35.4444 },
+      { name: 'Wadi Rum', lat: 29.5766, lng: 35.4206 },
+      { name: 'Dode Zee', lat: 31.5590, lng: 35.4732 },
+    ],
+    notes: "Nabateese handelsroutes (Petra), Romeinse geschiedenis (Jerash) en de woestijn van Wadi Rum. December geeft aangename dagtemperaturen voor de wandeling naar de Schatkamer en voor kamperen in Wadi Rum. Praktische tip: de Jordan Pass (~50-60 JOD, ruim vooraf online kopen) bundelt toegang tot Petra/Jerash/Wadi Rum/40 andere sites en scheldt de losse 40 JOD-visumfee kwijt bij een verblijf van 3+ nachten. ⚠️ Reisadvies (juli 2026): oranje voor heel Jordanië (normaal alleen de grensstreek met Syrië/Irak) door het regionale Iran-Israël/VS-conflict — check nederlandwereldwijd.nl vlak voor vertrek, dit kan alweer zijn gewijzigd.",
+  });
+  return rbBuildFlatSeedRoute('Jordanië 🏺', [
+    {
+      ...med(),
+      notes: 'Instap: vlucht Amsterdam-Amman, meestal met 1 tussenstop (bv. via Wenen met Austrian Airlines, ±5-8 uur incl. overstap; vanaf ±€300-700 retour; beste periode december). Prijsindicatie webonderzoek 2026-08, momentopname. ' + med().notes,
+      transport_to_next: 'Einde van deze route — terugvlucht vanuit Amman naar Amsterdam (meestal 1 tussenstop, bv. via Wenen).',
+    },
+  ], {
+    best_starting_month: 'December',
+    travel_style: 'Huurauto of georganiseerde tour — Amman, Jerash, Petra, Wadi Rum en de Dode Zee.',
+    climate_summary: 'December geeft aangename dagtemperaturen, ook voor de wandeling naar Petra\'s Schatkamer en voor kamperen in Wadi Rum.',
+    description: 'Petra, Wadi Rum en de Dode Zee — kort en krachtig, Petra draagt de reis alleen al.',
+    notes: 'Losgesplitst van Egypte & Arabisch Schiereiland 🐪 (zelf al losgesplitst van Mediterranean Civilizations Expedition 🏛️ — zie ROUTE_BUILDER_MODULES.md) als onderdeel van deze tweede batch losse landen (2026-08, Youri\'s eigen top-10-keuze) — "Petra draagt het alleen al". Land, dagen en budget zijn ongewijzigd overgenomen. ⚠️ Let op de reisadvies-kanttekening in de landnotitie: dit is met 8 dagen ook de kortste van deze tweede batch, dus een lange vlucht heen-en-terug neemt relatief een groter deel van de reis in beslag dan bij de langere routes — reken op zo\'n 6 volle dagen ter plaatse na de vluchttijd. Egypte & Arabisch Schiereiland 🐪 en Mediterranean Civilizations Expedition 🏛️ zelf blijven ongewijzigd bestaan.',
   });
 }

@@ -12,6 +12,26 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Tweede batch standalone single-country routes (2026-08, Youri's eigen top-10)** — vervolg op
+  de eerste batch hieronder, nu Youri's eigen keuze uit de resterende ~27 kandidaten uit
+  `ROUTE_BUILDER_MODULES.md`: **Japan & Taiwan 🗻** (28d samen, uit Oost-Azië & Stille Oceaan 🗻),
+  **Zuid-Afrika 🦓** (24d, uit Africa Grand Tour 🌍), **Kenia 🦒** (18d, uit Africa Grand Tour),
+  **Vietnam 🛵** (17d, uit Zuidoost-Azië Grand Loop 🛕), **Nieuw-Zeeland Zuidereiland 🏔️** (21d,
+  uit Nieuw-Zeeland 🥝), **Kaukasus 🍷** (Georgië/Armenië/Azerbeidzjan samen, 28d, uit West-Eurazië
+  Overland 🐫), **Marokko 🕌** (10d, uit Iberia & Marokko/Tunesië 🏰), **Madagaskar 🦎** (24d, uit
+  Afrikaanse Eilanden 🏝️ — Mauritius blijft daar nog wel naast staan), **Sicilië 🌋** (10d, uit
+  Malta & Italië 🏛️) en **Jordanië 🏺** (8d, uit Egypte & Arabisch Schiereiland 🐪). Zelfde patroon:
+  land/dagen/budget/bestemmingen ongewijzigd hergebruikt, eigen "Instap: vlucht Amsterdam-…"-
+  opener + correcte thuisreis-eindnotitie (2026-08 vluchtprijs-research). Toegepast via
+  `rbSeedStandaloneCountryRoutesBatch2()`. Getest met een Node-smoketest incl. isolatie-checks
+  (parent-expedities en `RB_EXPEDITION_CONTENT` niet aangetast, bestaande split-routes die
+  dezelfde landen gebruiken — Zuidelijk Afrika Safari-lus, Oost-Afrika Safari Classic — ook niet).
+  **Openstaande vraag, nog niet opgelost:** de dagaantallen waren oorspronkelijk bedacht voor een
+  etappe *binnen* een grotere meerlanden-expeditie, niet voor een losse vlucht-heen-en-terug-trip
+  — of dat nog steeds klopt zodra je niet verder reist, staat als open vraag in `README.md`,
+  expliciet gevlagd bij **Jordanië 🏺** (8 dagen — een lange vlucht neemt relatief meer van een
+  weekje weg dan van een langere reis).
+
 - **Eerste batch standalone single-country routes (2026-08)** — `ROUTE_BUILDER_MODULES.md`
   noemde ~35 individuele landen binnen de gecombineerde split-routes als sterk genoeg om alleen
   te staan ("Sterk"), maar alleen de gecombineerde versies waren ooit echt gebouwd. Op Youri's
