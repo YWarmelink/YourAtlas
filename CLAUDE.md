@@ -34,6 +34,30 @@ Every route seeds into `localStorage` once, gated by its own flag, on first load
 
 **The critical rule**: editing `RB_EXPEDITION_CONTENT` or a `rbBuildXRoute()` function only reaches browsers that haven't seeded that route yet. Any correction to an *already-seeded* route needs a one-time `rbMigrateX()` function too, that patches only the changed fields (never a blind overwrite, unless the change is a deliberate wholesale content replacement — see `CHANGELOG.md`'s Mediterranean Civilizations Expedition entry for that exception). This bit Youri once already — see the "critical migration fix" entry in `CHANGELOG.md` — 9 routes' corrections landed in source but not in his already-seeded browser data until a migration was added. The full procedure lives in the `route-builder-content` skill.
 
+## Standalone single-country routes — long-haul flight buffer policy
+
+Since 2026-08, some of Route Builder's expeditions have standalone single-country companion
+routes split off them (see `ROUTE_BUILDER_MODULES.md` for the candidate list, `CHANGELOG.md` for
+what's been built so far). Their `days`/`budget` are reused unchanged from the parent expedition
+— but that count was calibrated for a leg *inside* a bigger multi-country tour (arriving overland
+from a neighbour, continuing on afterwards), not for a standalone flight-in-from-NL-and-back trip.
+
+**The policy**: leave `days` unchanged by default (that's the whole point of reusing verified
+data) — only add a **+2 day buffer** when a route's round-trip flight time is large relative to
+its own trip length, specifically when either:
+- the trip itself is short (roughly ≤10 days) **and** the flight has a connection (not direct), or
+- the flight itself is unusually long/multi-stop (roughly 24+ hours total), regardless of trip length.
+
+A direct or short flight (e.g. Marokko/Sicilië, ~3-4h direct) doesn't need this even at 10 days —
+there's no meaningful dead time to buffer against. Applied so far: **Jordanië 🏺** (8→10 days —
+short trip + a connecting flight) and **Nieuw-Zeeland Zuidereiland 🏔️** (21→23 days — 27-38h with
+multiple stops, even though the trip itself is already reasonably long). Considered and left
+unchanged: Suriname 🛶 (11d, but a direct 9h20 flight, no connection dead-time), Vietnam 🛵/Cuba 🎷
+(17-18d with one connection each — long enough to absorb it), Namibië 🏜️ (20d despite no direct
+flight — already generous). Budget is a **daily rate**, not a trip total, so bumping `days` alone
+is correct — no budget math needed. Apply the same 2-day-buffer check to any future single-country
+route before shipping it, rather than always defaulting to leaving it as-is.
+
 ## Known gotchas / design decisions
 
 - **`[hidden]` needs `!important` in `css/base.css`** — some panels (`.loading-spinner`, `.rb-calendar-panel`, `.rb-map-panel`) have explicit `display: flex`/`grid` rules that beat the browser's default `[hidden] { display: none }` when JS sets `el.hidden = true`. Fixed with a global `[hidden] { display: none !important; }` rule — don't remove it or re-introduce a plain `display:` override on a togglable panel without checking this.

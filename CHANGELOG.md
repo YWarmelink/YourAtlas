@@ -12,6 +12,20 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Langeafstandsvlucht-buffer voor 2 van de 18 standalone landen-routes (2026-08)** — Youri
+  vroeg zich af of de dagaantallen van de nieuwe losse landen-routes (hierboven en hieronder) nog
+  wel kloppen nu je er speciaal een vlucht vanuit Nederland voor pakt, in plaats van dat het land
+  een tussenstop was in een grotere reis. Antwoord: grotendeels wel (routes die al als "Sterk"
+  waren aangemerkt waren vaak al royaal bemeten), maar niet overal. Beleid vastgelegd in
+  `CLAUDE.md` ("long-haul flight buffer policy"): +2 dagen alleen bij een korte reis (~≤10 dagen)
+  mét overstapvlucht, of een uitzonderlijk lange/meerdere-overstappen-vlucht (24+ uur), nooit
+  zomaar overal. Toegepast op **Jordanië 🏺** (8→10 dagen) en **Nieuw-Zeeland Zuidereiland 🏔️**
+  (21→23 dagen). Budget is een dagtarief, geen reistotaal, dus alleen `days` aangepast, geen
+  budgetwijziging nodig. De overige 16 routes bewust ongewijzigd gelaten (Marokko/Sicilië: korte
+  directe vlucht, geen bufferprobleem; de rest: reis al lang genoeg om de vluchttijd op te vangen).
+  Toegepast via `rbMigrateLonghaulBuffer()`. Getest met een Node-smoketest (verse seed én migratie
+  op gesimuleerde oude data).
+
 - **Tweede batch standalone single-country routes (2026-08, Youri's eigen top-10)** — vervolg op
   de eerste batch hieronder, nu Youri's eigen keuze uit de resterende ~27 kandidaten uit
   `ROUTE_BUILDER_MODULES.md`: **Japan & Taiwan 🗻** (28d samen, uit Oost-Azië & Stille Oceaan 🗻),

@@ -109,13 +109,13 @@ own NL-departure opener and flight-home ending:
   **Kenia 🦒**, **Vietnam 🛵**, **Nieuw-Zeeland Zuidereiland 🏔️**, **Kaukasus 🍷**,
   **Marokko 🕌**, **Madagaskar 🦎**, **Sicilië 🌋**, **Jordanië 🏺**.
 
-**Open question, not yet resolved**: the day-counts on all of these were originally calibrated
-for a leg *inside* a bigger multi-country expedition (arriving overland from a neighbour,
-continuing on afterwards) — not for a flight-in-from-NL-and-back standalone trip. Whether that
-still adds up to the right length once you're not continuing elsewhere is a real open question,
-flagged explicitly on **Jordanië 🏺** (8 days — a long-haul round trip eats proportionally more
-into a week-long trip than into a 3+ week one) but worth a second look across all 18 before
-actually booking any of them, not just that one.
+**Resolved (2026-08)**: the day-counts on all of these were originally calibrated for a leg
+*inside* a bigger multi-country expedition, not a flight-in-from-NL-and-back standalone trip —
+see `CLAUDE.md`'s "long-haul flight buffer policy" for the actual rule and reasoning. Two got a
++2 day buffer: **Jordanië 🏺** (8→10d, short trip + a connecting flight) and **Nieuw-Zeeland
+Zuidereiland 🏔️** (21→23d, 27-38h with multiple stops). The other 16 were checked against the
+same rule and left as-is — either the flight is short/direct (Marokko, Sicilië) or the trip is
+already long enough to absorb the flight time (everything else).
 
 **Remaining candidates for a next batch** (days, Sterk/Medium per the analysis, parent expedition):
 - **Pan-American Grand Tour 🌎**: Ecuador alleen (24d, Medium/Sterk) · Bolivia alleen (21d, Medium) · Panama alleen (15d) · Nicaragua alleen (15d) · Guatemala alleen (16d)

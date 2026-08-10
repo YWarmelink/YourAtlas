@@ -64,6 +64,7 @@ const RB_MIGRATE_FLAG_2026_08_AFRICA_OVERHAUL = 'atlas_grand_trips_migrate_2026_
 const RB_MIGRATE_FLAG_2026_08_SPLIT_ENTRY_NOTES = 'atlas_grand_trips_migrate_2026_08_split_entry_notes_v1';
 const RB_SEED_FLAG_KEY_STANDALONE_COUNTRIES = 'atlas_grand_trips_seeded_standalone_countries_v1';
 const RB_SEED_FLAG_KEY_STANDALONE_COUNTRIES_BATCH2 = 'atlas_grand_trips_seeded_standalone_countries_batch2_v1';
+const RB_MIGRATE_FLAG_2026_08_LONGHAUL_BUFFER = 'atlas_grand_trips_migrate_2026_08_longhaul_buffer_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -102,6 +103,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbSeedWestCentralAfricaSplitExpeditions();
   rbSeedStandaloneCountryRoutes();
   rbSeedStandaloneCountryRoutesBatch2();
+  rbMigrateLonghaulBuffer();
   rbMigrateExpeditionRenames();
   rbMigrateExpeditionEmojiNames();
   rbMigrateAncientToMediterranean();
@@ -7479,7 +7481,7 @@ function rbBuildVietnamRoute() {
 function rbBuildNewZealandSouthIslandRoute() {
   return rbBuildFlatSeedRoute('Nieuw-Zeeland Zuidereiland 🏔️', [
     {
-      code: 'NZ', name: 'New Zealand', days: 21, budget: 2268, lat: -45.0312, lng: 168.6626,
+      code: 'NZ', name: 'New Zealand', days: 23, budget: 2268, lat: -45.0312, lng: 168.6626,
       destinations: [
         { name: 'Christchurch', lat: -43.5321, lng: 172.6362 },
         { name: 'Franz Josef & Fox-gletsjers', lat: -43.4667, lng: 170.1667 },
@@ -7489,7 +7491,7 @@ function rbBuildNewZealandSouthIslandRoute() {
         { name: 'Kaikoura', lat: -42.4000, lng: 173.6817 },
         { name: 'Abel Tasman', lat: -40.9333, lng: 173.0000 },
       ],
-      notes: "Instap: vlucht Amsterdam-Christchurch, met meerdere overstappen (geen directe verbinding, ±27-38 uur totaal, vanaf ±€1.300-2.000 retour, beste periode september-november). Prijsindicatie webonderzoek 2026-08, momentopname. Concentreert het merendeel van de iconische Nieuw-Zeelandse natuur. Overweeg minstens één Great Walk (Milford Track, Routeburn of Kepler) als meerdaagse hut-to-hut-trek — ruim van tevoren reserveren. Prijscorrectie (2026-07): €80→€108/dag.",
+      notes: "Instap: vlucht Amsterdam-Christchurch, met meerdere overstappen (geen directe verbinding, ±27-38 uur totaal, vanaf ±€1.300-2.000 retour, beste periode september-november). Prijsindicatie webonderzoek 2026-08, momentopname. Langeafstandsvlucht-buffer (2026-08, zie CLAUDE.md): +2 dagen t.o.v. het oorspronkelijke aantal (21→23) — 27-38 uur reistijd met meerdere overstappen is zoveel dat een aankomstdag zonder programma en een marge vóór de terugvlucht hier verstandiger zijn dan er meteen doorheen plannen. Concentreert het merendeel van de iconische Nieuw-Zeelandse natuur. Overweeg minstens één Great Walk (Milford Track, Routeburn of Kepler) als meerdaagse hut-to-hut-trek — ruim van tevoren reserveren. Prijscorrectie (2026-07): €80→€108/dag.",
       transport_to_next: 'Einde van deze route — terug naar Christchurch (of vlucht vanaf Picton/Blenheim), dan terugvlucht naar Amsterdam (meerdere overstappen, geen directe verbinding).',
     },
   ], {
@@ -7497,7 +7499,7 @@ function rbBuildNewZealandSouthIslandRoute() {
     travel_style: 'Backpacker tussen budget en comfort in — huurauto, minstens één Great Walk.',
     climate_summary: 'September-november is het Nieuw-Zeelandse voorjaar — stabiel weer, minder drukte dan de zomerpiek (december-februari).',
     description: 'Milford Sound, gletsjers, Queenstown en de Catlins — het Zuidereiland op zichzelf.',
-    notes: 'Losgesplitst van Nieuw-Zeeland 🥝 (zelf al losgesplitst van Oceania Grand Expedition 🌊 — zie ROUTE_BUILDER_MODULES.md) als onderdeel van deze tweede batch losse landen (2026-08, Youri\'s eigen top-10-keuze) — "een van de meest geboekte standalone trips wereldwijd". Land, dagen en budget zijn ongewijzigd overgenomen (incl. de 2026-08 routelogica-fix voor de Kaikoura/Abel Tasman-volgorde). Nieuw-Zeeland 🥝 en Oceania Grand Expedition 🌊 zelf blijven ongewijzigd bestaan.',
+    notes: 'Losgesplitst van Nieuw-Zeeland 🥝 (zelf al losgesplitst van Oceania Grand Expedition 🌊 — zie ROUTE_BUILDER_MODULES.md) als onderdeel van deze tweede batch losse landen (2026-08, Youri\'s eigen top-10-keuze) — "een van de meest geboekte standalone trips wereldwijd". Land en budget(dagtarief) zijn ongewijzigd overgenomen (incl. de 2026-08 routelogica-fix voor de Kaikoura/Abel Tasman-volgorde); dagen verhoogd van 21 naar 23 als langeafstandsvlucht-buffer (zie CLAUDE.md). Nieuw-Zeeland 🥝 en Oceania Grand Expedition 🌊 zelf blijven ongewijzigd bestaan.',
   });
 }
 
@@ -7596,7 +7598,7 @@ function rbBuildSicilyRoute() {
 
 function rbBuildJordanRoute() {
   const med = () => ({
-    code: 'JO', name: 'Jordan', days: 8, budget: 500, lat: 31.9454, lng: 35.9284,
+    code: 'JO', name: 'Jordan', days: 10, budget: 500, lat: 31.9454, lng: 35.9284,
     destinations: [
       { name: 'Amman', lat: 31.9454, lng: 35.9284 },
       { name: 'Jerash', lat: 32.2811, lng: 35.8994 },
@@ -7609,7 +7611,7 @@ function rbBuildJordanRoute() {
   return rbBuildFlatSeedRoute('Jordanië 🏺', [
     {
       ...med(),
-      notes: 'Instap: vlucht Amsterdam-Amman, meestal met 1 tussenstop (bv. via Wenen met Austrian Airlines, ±5-8 uur incl. overstap; vanaf ±€300-700 retour; beste periode december). Prijsindicatie webonderzoek 2026-08, momentopname. ' + med().notes,
+      notes: 'Instap: vlucht Amsterdam-Amman, meestal met 1 tussenstop (bv. via Wenen met Austrian Airlines, ±5-8 uur incl. overstap; vanaf ±€300-700 retour; beste periode december). Prijsindicatie webonderzoek 2026-08, momentopname. Langeafstandsvlucht-buffer (2026-08, zie CLAUDE.md): +2 dagen t.o.v. het oorspronkelijke aantal (8→10) — bij een reis van maar een week eet een vlucht met overstap relatief het meeste van de reis op van deze hele batch. ' + med().notes,
       transport_to_next: 'Einde van deze route — terugvlucht vanuit Amman naar Amsterdam (meestal 1 tussenstop, bv. via Wenen).',
     },
   ], {
@@ -7617,6 +7619,31 @@ function rbBuildJordanRoute() {
     travel_style: 'Huurauto of georganiseerde tour — Amman, Jerash, Petra, Wadi Rum en de Dode Zee.',
     climate_summary: 'December geeft aangename dagtemperaturen, ook voor de wandeling naar Petra\'s Schatkamer en voor kamperen in Wadi Rum.',
     description: 'Petra, Wadi Rum en de Dode Zee — kort en krachtig, Petra draagt de reis alleen al.',
-    notes: 'Losgesplitst van Egypte & Arabisch Schiereiland 🐪 (zelf al losgesplitst van Mediterranean Civilizations Expedition 🏛️ — zie ROUTE_BUILDER_MODULES.md) als onderdeel van deze tweede batch losse landen (2026-08, Youri\'s eigen top-10-keuze) — "Petra draagt het alleen al". Land, dagen en budget zijn ongewijzigd overgenomen. ⚠️ Let op de reisadvies-kanttekening in de landnotitie: dit is met 8 dagen ook de kortste van deze tweede batch, dus een lange vlucht heen-en-terug neemt relatief een groter deel van de reis in beslag dan bij de langere routes — reken op zo\'n 6 volle dagen ter plaatse na de vluchttijd. Egypte & Arabisch Schiereiland 🐪 en Mediterranean Civilizations Expedition 🏛️ zelf blijven ongewijzigd bestaan.',
+    notes: 'Losgesplitst van Egypte & Arabisch Schiereiland 🐪 (zelf al losgesplitst van Mediterranean Civilizations Expedition 🏛️ — zie ROUTE_BUILDER_MODULES.md) als onderdeel van deze tweede batch losse landen (2026-08, Youri\'s eigen top-10-keuze) — "Petra draagt het alleen al". Land en budget(dagtarief) zijn ongewijzigd overgenomen; dagen verhoogd van 8 naar 10 als langeafstandsvlucht-buffer (zie CLAUDE.md) — dit was met 8 dagen ook de kortste van deze tweede batch, dus een vlucht met overstap nam relatief het grootste deel van de reis in beslag. Egypte & Arabisch Schiereiland 🐪 en Mediterranean Civilizations Expedition 🏛️ zelf blijven ongewijzigd bestaan.',
   });
+}
+
+/**
+ * Two of batch 2's standalone routes were flagged as too exposed to their long-haul flight time
+ * relative to trip length — Jordanië (8d, connecting flight) and Nieuw-Zeeland Zuidereiland (21d,
+ * but 27-38h with multiple stops). Adds +2 days to each as a recovery/margin buffer, matching the
+ * source edit above. Unlikely anything has seeded this data yet (batch 2 only just shipped), but
+ * per this project's own migration rule, write the migration regardless of whether it's needed yet.
+ */
+function rbMigrateLonghaulBuffer() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_LONGHAUL_BUFFER)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_LONGHAUL_BUFFER, '1');
+
+  let touched = false;
+  const bump = (routeName, code, newDays) => {
+    const route = rbRoutes.find(r => r.name === routeName);
+    if (!route) return;
+    const block = route.blocks.find(b => b.country_code === code);
+    if (!block) return;
+    if (block.days !== newDays) { block.days = newDays; touched = true; }
+  };
+  bump('Jordanië 🏺', 'JO', 10);
+  bump('Nieuw-Zeeland Zuidereiland 🏔️', 'NZ', 23);
+
+  if (touched) rbSave();
 }
