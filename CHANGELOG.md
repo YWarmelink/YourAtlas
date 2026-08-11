@@ -12,6 +12,127 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **"Kazachstan & Tadzjikistan" vervangen door "Oezbekistan & Tadzjikistan" (2026-08)** — Youri's
+  eigen correctie: Kazachstan en Tadzjikistan grenzen niet aan elkaar (die route moest vliegen
+  Almaty-Dushanbe, over Kirgizië/Oezbekistan heen), terwijl Oezbekistan en Tadzjikistan wél een
+  grens delen (Samarkand/Panjakent, grensovergang Jartepa/Sarazm) — een logischere, volledig
+  overland te doen combinatie, en dat was eigenlijk de bedoeling van deze verder-opsplitsing.
+  Nieuwe route: **Oezbekistan & Tadzjikistan 🌄** (25d: UZ 11d + TJ 14d). Omdat de oude route deze
+  sessie al in de browser was geseed, was een source-rename niet genoeg — een eenmalige migratie
+  (`rbMigrateReplaceKazakhstanTajikistanCombo()`) verwijdert de oude route en zet de nieuwe erin,
+  precies één keer, ook voor browsers die de oude versie al hadden geladen. Getest in twee
+  scenario's: een verse browser (krijgt direct de juiste route) en een browser die de oude route
+  al had (migratie verwijdert 'm en zet de nieuwe erin, geen duplicaten).
+
+- **Combi-batch 7 (2026-08, Claude's keuze uit de resterende Sterk/Medium-combinaties in
+  ROUTE_BUILDER_MODULES.md)** — tien nieuwe routes, waarvan vier voor het eerst in deze app een
+  car-loop-expeditie herkaderen als "vlieg + huur lokaal een auto"-trip (de analyse noemde dit
+  expliciet haalbaar voor British Isles, in tegenstelling tot Central European Grand Roadtrip 🚗
+  dat de analyse afraadde te splitsen): **Engeland, Wales & Isle of Man 🎩** (38d), **Schotland &
+  Noord-Ierland 🥃** (27d), **Ierland ☘️** (22d) en **Kanaaleilanden, Bretagne & Normandië/
+  Opaalkust & België 🥖** (28d) — alle vier uit British Isles & Celtic Coast Expedition 🍀, met
+  dezelfde etappe-inhoud/ferries, alleen instap/uitstap aangepast (de laatste route eindigt met
+  een one-way huurauto-drop-off in Amsterdam i.p.v. zelf terugrijden). Daarnaast: **Balkan 🐺**
+  (35d, uit Eurasia Grand Tour 🌏's West-Eurazië Overland 🐫 — dagental bijgewerkt naar de actuele
+  35d, niet de 45d uit de oudere 2026-07-analyse), **Malta ⚔️** (5d) en **Tunesië 🧿** (8d incl.
+  buffer) uit Mediterranean Civilizations Expedition 🏛️, **Zuid-Afrika & Bergkoninkrijkjes 👑**
+  (35d, ZA+LS+SZ) en **Victoria Falls & Kalahari-lus 🦏** (50d, MZ+ZW+BW) uit Africa Grand Tour 🌍
+  (naast, niet in plaats van, de al bestaande losse Zuid-Afrika/Mozambique/Zimbabwe/Botswana-
+  routes), en **Noord-Brazilië 🪁** (14d) uit Caribbean & Amazon Expedition 🌴. Getest met een Node-
+  smoketest: British Isles & Celtic Coast Expedition 🍀, Eurasia Grand Tour 🌏, West-Eurazië
+  Overland 🐫, Mediterranean Civilizations Expedition 🏛️, Malta & Italië 🏛️, Iberia & Marokko/
+  Tunesië 🏰, Africa Grand Tour 🌍, Zuidelijk Afrika Safari-lus 🦁 en de vier al bestaande losse
+  Afrika-/Suriname-routes allemaal onaangetast bevestigd.
+
+- **Centraal-Azië 🐎 verder opgesplitst (2026-08)** — actie op de eigen aantekening bij die route
+  ("een genuine kandidaat om verder te splitsen, net als de 13 grote expedities"): **Kazachstan &
+  Kirgizië ⛺** (20d, overland Almaty-Bishkek) en **Kazachstan & Tadzjikistan 🌄** (22d, gevlogen
+  Almaty-Dushanbe — de twee landen grenzen niet aan elkaar, Kirgizië/Oezbekistan liggen ertussen).
+  Kirgizië 🐴 en Oezbekistan 🐪 hadden al een eigen route (batch 4), dus deze twee combi's dekken de
+  twee resterende landcodes (KZ, TJ). Vlucht-/visumresearch 2026-08: Kirgizië-visumtekst
+  gecorrigeerd naar "30 dagen visumvrij binnen elke periode van 60 dagen" (niet plat "60 dagen"
+  zoals eerder losjes genoteerd); Tadzjikistan-route flagt expliciet dat de Almaty-Dushanbe-vlucht
+  los geboekt is (geen doorcheck) en dat het e-visa/GBAO-permit ruim vooraf (5-10 werkdagen)
+  geregeld moet worden. Getest met een Node-smoketest: Eurasia Grand Tour 🌏, West-Eurazië
+  Overland 🐫, Centraal-Azië 🐎 (de 4-landen-combinatie blijft gewoon bestaan), Kirgizië 🐴 en
+  Oezbekistan 🐪 allemaal onaangetast bevestigd.
+
+- **Zesde batch standalone single-country routes (2026-08, de resterende 15 kandidaten — alles wat
+  over was uit de ~63-kandidatenlijst)** — vervolg op batch 1-5 hierboven, en daarmee de laatste
+  batch van deze modularisatie-reeks: **Bolivia 🧂** (17d, uit Andes Grand Traverse 🦙),
+  **Nicaragua 🌅** (15d, uit Midden-Amerika Loop 🌋), **Mozambique 🐋** (20d, uit Zuidelijk Afrika
+  Safari-lus 🦁), **Zambia & Malawi 💦** (30d, uit Zuidelijk Afrika Safari-lus 🦁), **Ethiopië ⛪**
+  (20d, uit Hoorn van Afrika & Egypte 🏺), **Sardinië 🗿** (6d, uit Malta & Italië 🏛️), **Cyprus 🕊️**
+  (5d, uit Griekenland & Cyprus 🏺), **Golfstaten-trio 🛢️** (13d, uit Egypte & Arabisch
+  Schiereiland 🐪), **Maleisië 🦋** (10d, uit Zuidoost-Azië Grand Loop 🛕, bewust alleen het
+  schiereiland zonder Borneo), **Saint Lucia & Grenada 🌰** (14d, uit Caraïbische Eilanden-hop 🏝️),
+  **Kaapverdië 🎶** (13d, uit West-Afrika Overland 🥁), **Senegambia 🦩** (19d, uit West-Afrika
+  Overland 🥁), **Gabon 🏕️** (11d incl. buffer, uit Centraal-Afrika & Eilanden 🦛), **São Tomé &
+  Príncipe 🍫** (11d incl. buffer, uit Centraal-Afrika & Eilanden 🦛) en **Pacific Northwest 🦫**
+  (15d, uit VS Westkust Roadtrip 🌉). Zelfde patroon als de vorige vijf batches: land(en)/dagen/
+  budget/bestemmingen hergebruikt, eigen "Instap: vlucht Amsterdam-…"-opener + correcte
+  thuisreis-eindnotitie (2026-08 vlucht-/visum-/reisadvies-research per land). Twee routes kregen
+  de langeafstandsvlucht-buffer uit `CLAUDE.md` toegepast (Gabon, São Tomé & Príncipe, beide 9→11d,
+  korte reis + overstapvlucht). Bolivia's dagental is het gecorrigeerde 17d (niet het oudere 21d
+  uit de eerste modularisatie-analyse) — Santa Cruz kwam al eerder (2026-08-fix) te vervallen.
+  ⚠️ **Twee routes met een zware reisadvies-kanttekening, letterlijk overgenomen uit hun
+  parent-expeditie, niet nieuw verzonnen**: Ethiopië (Amhara/Afar op ROOD — Lalibela, Simien
+  Mountains, Gondar, Danakil Depressie, live herbevestigd 2026-08, geen verbetering) en
+  Golfstaten-trio (Bahrein op ROOD, geen Nederlandse ambassade, Qatar oranje — regionaal
+  Iran-Israël/VS-conflict, live herbevestigd 2026-08). Beide blijven staan, met een prominente
+  waarschuwing i.p.v. weglaten — zelfde afweging als de parent-expedities al hadden gemaakt
+  (Route Builder is de aspirational/someday-laag). Getest met een Node-smoketest incl.
+  isolatie-checks (7 parent-expedities plus 12 bestaande split-routes met overlappende landen/
+  regio's — allemaal onaangetast bevestigd, exacte dagentotalen ongewijzigd). Met deze batch zijn
+  alle kandidaten uit `ROUTE_BUILDER_MODULES.md` gebouwd — 63 standalone routes in totaal over zes
+  batches.
+
+- **Vijfde batch standalone single-country routes (2026-08, Youri's top-10 uit de resterende
+  ~25-kandidatenlijst na batch 4)** — vervolg op batch 1-4 hierboven: **Mongolië 🦅** (12d incl.
+  buffer, uit Oost-Azië & Stille Oceaan 🗻), **Vietnam & Cambodja 🛺** (29d, uit Zuidoost-Azië
+  Grand Loop 🛕), **Rome & omgeving 🍕** (13d, uit Malta & Italië 🏛️), **Guatemala 🦜** (16d, uit
+  Midden-Amerika Loop 🌋), **Panama 🚢** (15d, uit Midden-Amerika Loop 🌋), **Ghana 🥥** (15d, uit
+  West-Afrika Overland 🥁), **Tasmanië 🐾** (14d incl. buffer, uit Gematigd/Zuidelijk Australië 🍇),
+  **Nieuw-Zeeland Noordereiland 🌿** (16d incl. buffer, uit Nieuw-Zeeland 🥝), **Fiji & Vanuatu 🐚**
+  (27d incl. buffer op de Vanuatu-etappe, uit Pacific-eilanden 🌺) en **Guadeloupe & Dominica 🍃**
+  (15d, uit Caraïbische Eilanden-hop 🏝️). Zelfde patroon als de vorige vier batches:
+  land(en)/dagen/budget/bestemmingen hergebruikt, eigen "Instap: vlucht Amsterdam-…"-opener +
+  correcte thuisreis-eindnotitie (2026-08 vlucht-/visum-/reisadvies-research per land). Vier
+  routes kregen de langeafstandsvlucht-buffer uit `CLAUDE.md` toegepast — Mongolië (korte reis +
+  overstapvlucht) en drie Oceanië/Pacific-routes (Tasmanië, Nieuw-Zeeland Noordereiland,
+  Fiji & Vanuatu) die alle drie over de 24-uursdrempel kwamen ongeacht triplengte. Vietnam &
+  Cambodja en Fiji & Vanuatu splitsen verder bestaande combinatieroutes (Zuidoost-Azië Grand
+  Loop 🛕 resp. Pacific-eilanden 🌺) op in kleinere tweelanden-tweeluiken, zonder de rest van die
+  routes aan te raken. Getest met een Node-smoketest incl. isolatie-checks (7 parent-expedities
+  plus 11 bestaande split-routes met overlappende landen/regio's — allemaal onaangetast bevestigd,
+  exacte dagentotalen ongewijzigd).
+
+- **Vierde batch standalone single-country routes (2026-08, Claude's aanbevolen top-10 uit de
+  resterende ~28-kandidatenlijst)** — vervolg op batch 1-3 hierboven: **Spanje 💃** (10d, uit
+  Iberia & Marokko/Tunesië 🏰), **Rwanda 🦍** (10d, uit Oost-Afrika Safari Classic 🦒),
+  **Mauritius 🦤** (9d incl. buffer, uit Afrikaanse Eilanden 🏝️), **Argentijns Patagonië 🥩**
+  (18d, uit Patagonië Overland 🏔️), **Chileens Patagonië 🥾** (24d, uit Patagonië Overland 🏔️),
+  **Griekenland & Kreta 🫒** (19d, uit Griekenland & Cyprus 🏺), **Oezbekistan 🐪** (11d, uit
+  West-Eurazië Overland 🐫), **Kirgizië 🐴** (12d, uit West-Eurazië Overland 🐫), **Zimbabwe 🐆**
+  (14d, uit Zuidelijk Afrika Safari-lus 🦁) en **Sydney/Byron & Great Ocean Road 🦘** (24d incl.
+  buffer, uit Gematigd/Zuidelijk Australië 🍇). Zelfde patroon als de vorige drie batches:
+  land(en)/dagen/budget/bestemmingen hergebruikt, eigen "Instap: vlucht Amsterdam-…"-opener +
+  correcte thuisreis-eindnotitie (2026-08 vlucht-/visum-/reisadvies-research per land). Twee
+  routes kregen de langeafstandsvlucht-buffer uit `CLAUDE.md` toegepast: Mauritius (7→9d, korte
+  reis + verplichte overstap) en Sydney/Byron & Great Ocean Road (12→14d op de eerste etappe,
+  24-25 uur reistijd met overstap, ook al is de reis zelf al lang — de tweede triggervoorwaarde
+  van het beleid). Argentijns/Chileens Patagonië splitsen "Patagonië Overland 🏔️" (zelf al een
+  combinatieroute uit de 2026-07 modularisatie) verder op in de twee losse landen waaruit die
+  route bestaat — dezelfde soort verdere-opsplitsing als Centraal-Azië 🐎 in batch 3, maar dan
+  wel doorgevoerd. Bewust buiten deze batch gelaten: het Golfstaten-trio en Ethiopië
+  (reisadvies-gevoelig op het moment van bouwen), Cyprus/Sardinië (5-6d, te kort om als losse
+  Major Trip te verkopen) en Bolivia/Panama/Nicaragua/Guatemala (dunner volgens
+  `ROUTE_BUILDER_MODULES.md`). Getest met een Node-smoketest incl. isolatie-checks (alle 5
+  parent-expedities plus 8 bestaande split-routes met overlappende landen — Patagonië
+  Overland/Antarctica-cruise, Griekenland & Cyprus, Gematigd/Zuidelijk Australië, Oost-Afrika
+  Safari Classic, Afrikaanse Eilanden, Zuidelijk Afrika Safari-lus, West-Eurazië Overland, Iberia
+  & Marokko/Tunesië — allemaal onaangetast bevestigd, exacte dagentotalen ongewijzigd).
+
 - **Derde batch standalone single-country routes (2026-08, Youri's tweede top-10)** — vervolg op
   batch 1 en 2 hierboven: **Thailand 🛕** (18d, uit Zuidoost-Azië Grand Loop 🛕), **Tanzania 🦁**
   (24d, uit Africa Grand Tour 🌍), **Botswana 🐘** (16d, uit Africa Grand Tour), **Ecuador 🐢**

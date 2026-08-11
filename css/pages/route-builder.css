@@ -49,6 +49,49 @@
   flex-wrap: wrap;
 }
 
+.rb-list-groups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-10);
+}
+
+.rb-group-header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-5);
+  padding-bottom: var(--sp-3);
+  border-bottom: 2px solid var(--atlas-border);
+}
+
+.rb-group-title {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--atlas-text);
+}
+
+.rb-group-count {
+  font-size: var(--fs-sm);
+  color: var(--atlas-text-muted);
+  font-weight: var(--fw-normal);
+}
+
+.rb-group-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--r-full);
+  flex-shrink: 0;
+}
+
+.rb-group-dot-grand         { background: #eab308; }
+.rb-group-dot-africa        { background: #f59e0b; }
+.rb-group-dot-asia          { background: #ef4444; }
+.rb-group-dot-europe        { background: #3b82f6; }
+.rb-group-dot-north-america { background: #10b981; }
+.rb-group-dot-caribbean     { background: #06b6d4; }
+.rb-group-dot-south-america { background: #84cc16; }
+.rb-group-dot-oceania       { background: #8b5cf6; }
+
 .rb-list-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));

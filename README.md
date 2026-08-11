@@ -100,9 +100,11 @@ See `CHANGELOG.md`'s "alle 38 losse split-routes" entry.
 
 **Standalone single-country routes (in progress, 2026-08)**: `ROUTE_BUILDER_MODULES.md` also
 flagged ~35 *individual* countries within those combined routes as strong enough to stand fully
-alone ("Sterk") — never built as their own route, only the multi-country groupings were. 28 built
-so far, same reused content + country-of-origin notes as every other split route, each with its
-own NL-departure opener and flight-home ending:
+alone ("Sterk") — never built as their own route, only the multi-country groupings were. 75
+standalone routes built across six batches plus the Centraal-Azië further-split and combo batch 7
+(2026-08) — the full candidate list from that analysis is now done, same reused content +
+country-of-origin notes as every other split route, each with its own NL-departure opener and
+flight-home ending:
 - **Batch 1** ("most obvious", 2026-08): **Costa Rica 🦥**, **Colombia ☕**, **Peru 🦙**,
   **Egypte 🏺**, **Cuba 🎷**, **Namibië 🏜️**, **Curaçao & Bonaire 🤿**, **Suriname 🛶**.
 - **Batch 2** (Youri's own top-10, 2026-08): **Japan & Taiwan 🗻**, **Zuid-Afrika 🦓**,
@@ -112,27 +114,74 @@ own NL-departure opener and flight-home ending:
   **Botswana 🐘**, **Ecuador 🐢**, **Centraal-Azië 🐎** (Kazachstan/Kirgizië/Tadzjikistan/
   Oezbekistan samen, ~45d), **Cairns & Great Barrier Reef 🐠**, **Californië 🌲**,
   **Jamaica 🎵**, **Fiji 🌊**, **Filipijnen 🏖️**.
+- **Batch 4** (Claude's aanbevolen top-10 uit de resterende kandidatenlijst, 2026-08): **Spanje 💃**,
+  **Rwanda 🦍**, **Mauritius 🦤**, **Argentijns Patagonië 🥩**, **Chileens Patagonië 🥾**,
+  **Griekenland & Kreta 🫒**, **Oezbekistan 🐪**, **Kirgizië 🐴**, **Zimbabwe 🐆**,
+  **Sydney/Byron & Great Ocean Road 🦘**. Bewust nog niet meegenomen: het Golfstaten-trio en
+  Ethiopië (reisadvies-gevoelig), Cyprus/Sardinië (te kort, 5-6d) en Bolivia/Panama/Nicaragua/
+  Guatemala (dunner als losse Major Trip volgens de analyse) — zie de resterende kandidatenlijst
+  hieronder.
+- **Batch 5** (Youri's top-10 uit de resterende ~25-kandidatenlijst, 2026-08): **Mongolië 🦅**,
+  **Vietnam & Cambodja 🛺**, **Rome & omgeving 🍕**, **Guatemala 🦜**, **Panama 🚢**, **Ghana 🥥**,
+  **Tasmanië 🐾**, **Nieuw-Zeeland Noordereiland 🌿**, **Fiji & Vanuatu 🐚** en
+  **Guadeloupe & Dominica 🍃**. Voor later bewaard: Bolivia, Nicaragua, Mozambique, Zambia &
+  Malawi, Ethiopië, Sardinië, Cyprus, Golfstaten-trio, Maleisië, Saint Lucia & Grenada, Kaapverdië,
+  Senegambia, Gabon, São Tomé & Príncipe en Pacific Northwest (15 stuks).
+- **Batch 6** (de resterende 15 kandidaten — alles wat over was, 2026-08): **Bolivia 🧂**,
+  **Nicaragua 🌅**, **Mozambique 🐋**, **Zambia & Malawi 💦**, **Ethiopië ⛪**, **Sardinië 🗿**,
+  **Cyprus 🕊️**, **Golfstaten-trio 🛢️**, **Maleisië 🦋**, **Saint Lucia & Grenada 🌰**,
+  **Kaapverdië 🎶**, **Senegambia 🦩**, **Gabon 🏕️**, **São Tomé & Príncipe 🍫** en
+  **Pacific Northwest 🦫**. ⚠️ Twee routes hebben een zware reisadvies-kanttekening die letterlijk
+  is overgenomen uit hun parent-expeditie: **Ethiopië ⛪** (Amhara/Afar-regio's op ROOD — Lalibela,
+  Simien Mountains, Gondar, Danakil Depressie, "reis niet naar gebieden met kleurcode rood",
+  óók bij een georganiseerde tour) en **Golfstaten-trio 🛢️** (Bahrein op ROOD, geen Nederlandse
+  ambassade, wegens het regionale Iran-Israël/VS-conflict; Qatar oranje). Beide routes blijven
+  staan (Route Builder is de aspirational/someday-laag), maar check nederlandwereldwijd.nl grondig
+  vlak vóór een eventuele echte reis.
 
-**Long-haul flight buffer (2026-08, see `CLAUDE.md`'s "long-haul flight buffer policy")**: 4 of
-the 28 got a +2 day buffer for exposure to their round-trip flight time — **Jordanië 🏺** (8→10d),
-**Nieuw-Zeeland Zuidereiland 🏔️** (21→23d), **Cairns & Great Barrier Reef 🐠** (21→23d) and
-**Fiji 🌊** (14→16d). The rest were checked against the same rule and left as-is.
+**Long-haul flight buffer (2026-08, see `CLAUDE.md`'s "long-haul flight buffer policy")**: 13 of
+the 75 got a +2 day buffer for exposure to their round-trip flight time — **Tunesië 🧿** (6→8d,
+short trip + connecting flight) is the latest addition, alongside — **Jordanië 🏺** (8→10d),
+**Nieuw-Zeeland Zuidereiland 🏔️** (21→23d), **Cairns & Great Barrier Reef 🐠** (21→23d),
+**Fiji 🌊** (14→16d), **Mauritius 🦤** (7→9d), **Sydney/Byron & Great Ocean Road 🦘** (12→14d on
+its first leg), **Mongolië 🦅** (10→12d), **Tasmanië 🐾** (12→14d),
+**Nieuw-Zeeland Noordereiland 🌿** (14→16d), **Fiji & Vanuatu 🐚** (11→13d on its Vanuatu etappe),
+**Gabon 🏕️** (9→11d) and **São Tomé & Príncipe 🍫** (9→11d). The rest were checked against the
+same rule and left as-is.
 
-**Note on Centraal-Azië 🐎**: at ~45 days across 4 countries, this is the largest of all 28
-standalone routes — a genuine candidate to split further later (e.g. Kazachstan+Kirgizië apart
-from Tadzjikistan+Oezbekistan), the same way the original 13 grand expeditions were split. Not
-done now — flagged for whenever there's appetite to revisit it.
+**Centraal-Azië 🐎 further split (2026-08)**: acted on its own note above — **Kazachstan &
+Kirgizië ⛺** (20d, overland Almaty-Bishkek) and **Oezbekistan & Tadzjikistan 🌄** (25d, overland
+Samarkand/Panjakent — Youri's own correction of an earlier "Kazachstan & Tadzjikistan" attempt,
+which had to fly Almaty-Dushanbe since those two don't share a border; Uzbekistan and Tajikistan
+do, making this the genuinely logical overland combo) now exist as their own routes alongside the
+original 4-country Centraal-Azië 🐎, which is untouched. Kirgizië 🐴 and Oezbekistan 🐪 already had
+single-country routes from batch 4.
 
-**Remaining candidates for a next batch** (days, Sterk/Medium per the analysis, parent expedition):
-- **Pan-American Grand Tour 🌎**: Bolivia alleen (21d, Medium) · Panama alleen (15d) · Nicaragua alleen (15d) · Guatemala alleen (16d)
-- **Africa Grand Tour 🌍**: Zimbabwe alleen (14d) · Mozambique alleen (20d) · Zambia & Malawi (30d) · Mauritius alleen (7d) · Ethiopië alleen (20d) · Rwanda gorilla-trekking alleen (10d)
-- **Mediterranean Civilizations Expedition 🏛️**: Spanje alleen (10d) · Rome & omgeving (13d) · Sardinië alleen (6d) · Griekenland vasteland & Kreta (19d) · Cyprus alleen (5d) · Golfstaten-trio Oman/Bahrein/Qatar (13d)
-- **Eurasia Grand Tour 🌏**: Oezbekistan alleen (11d) · Kirgizië alleen (12d) · Mongolië alleen (10d) · Vietnam & Cambodja (30d) · Maleisië alleen (10d)
-- **Patagonia & Antarctica Expedition 🧊**: Argentijns Patagonië alleen (18d) · Chileens Patagonië alleen (24d)
-- **Oceania Grand Expedition 🌊**: Fiji & Vanuatu (25d) · Sydney/Byron & Great Ocean Road (22d) · Tasmanië alleen (12d) · Nieuw-Zeeland Noordereiland alleen (14d)
-- **Caribbean & Amazon Expedition 🌴**: Guadeloupe & Dominica (15d) · Saint Lucia & Grenada (14d)
-- **West & Central Africa Expedition 🌍**: Kaapverdië alleen (13d) · Senegambia (19d) · Ghana alleen (15d) · Gabon alleen (9d) · São Tomé & Príncipe alleen (9d)
-- **North America Grand Traverse 🌎**: Pacific Northwest alleen (15d)
+**Combo batch 7 (2026-08, Claude's picks from the remaining Sterk/Medium combos in
+`ROUTE_BUILDER_MODULES.md`)**: ten more built, four of them a first for this app — reframing
+pieces of the two self-driven car-loop expeditions as "fly in + rent a car" trips, something the
+analysis flagged as viable for British Isles specifically (unlike Central European Grand
+Roadtrip 🚗, which it advised against splitting):
+- **Engeland, Wales & Isle of Man 🎩** (38d) · **Schotland & Noord-Ierland 🥃** (27d) ·
+  **Ierland ☘️** (22d) · **Kanaaleilanden, Bretagne & Normandië/Opaalkust & België 🥖** (28d) — all
+  four losgesplitst van British Isles & Celtic Coast Expedition 🍀, same leg content/ferries, only
+  entry/exit swapped from "own car from NL" to "fly in, rent a car, fly home" (Channel Islands
+  route ends with a one-way rental drop-off in Amsterdam instead of driving back).
+- **Balkan 🐺** (35d, from Eurasia Grand Tour 🌏's West-Eurazië Overland 🐫)
+- **Malta ⚔️** (5d) and **Tunesië 🧿** (8d incl. buffer) — both from Mediterranean Civilizations
+  Expedition 🏛️
+- **Zuid-Afrika & Bergkoninkrijkjes 👑** (35d, ZA+LS+SZ) and **Victoria Falls & Kalahari-lus 🦏**
+  (50d, MZ+ZW+BW) — both from Africa Grand Tour 🌍's Zuidelijk Afrika Safari-lus 🦁, existing
+  alongside the already-built single-country Zuid-Afrika 🦓/Mozambique 🐋/Zimbabwe 🐆/Botswana 🐘
+- **Noord-Brazilië 🪁** (14d, from Caribbean & Amazon Expedition 🌴's Suriname & Noord-Brazilië 🌴,
+  alongside the existing standalone Suriname 🛶)
+
+**Candidate list status**: all candidates from `ROUTE_BUILDER_MODULES.md`'s analysis have now
+been built as standalone routes, plus the Centraal-Azië 🐎 further-split and combo batch 7 above.
+Remaining un-split items are all ones the analysis itself rated weaker: Central European Grand
+Roadtrip 🚗's two fly-in candidates (Dolomieten & Noord-Italië, Balkan-as-flyto) and a handful of
+Sub-tier country/island pieces (Singapore, Brunei, individual Pacific islands like Tonga/Samoa/Cook
+Islands). Further splitting would need a fresh look at that document.
 
 ## Search
 
