@@ -21,36 +21,58 @@ uitgewerkt wordt.
 
 - [x] **3 dagen — Ardennen** (was 2-3d, gekozen voor de bovenkant zodat er ook tijd is voor de
   grotten-dagtrip, niet alleen wandelen). Basis in La Roche-en-Ardenne (kasteelruïne, kanoën op de
-  Ourthe) — dagtrip naar Han-sur-Lesse (grotten, jaarrond open) — Coo (watervallen, kabelbaan) —
-  optioneel Durbuy ("kleinste stad ter wereld") als tussenstop. Eigen auto vanuit NL (~2,5-3u).
-  Budget: ~€70-80/dag (B&B/hotel + eten + activiteiten). Seizoen: april-oktober voor kanoën/
-  wandelen; de grotten zelf zijn jaarrond te doen.
-- [x] **4 dagen — Luxemburg** (was 3-4d). Luxemburg-Stad (Bock Casemates, Chemin de la Corniche) —
+  Ourthe) — dagtrip naar Han-sur-Lesse (grotten) — Coo (watervallen, kabelbaan) — optioneel Durbuy
+  ("kleinste stad ter wereld") als tussenstop. Eigen auto vanuit NL (~2,5-3u). Budget: ~€80-95/dag
+  (B&B/hotel + eten + activiteiten) — bijgesteld na webcheck, €70-80 was iets te laag zodra je een
+  Han-sur-Lesse-dag meerekent. Seizoen: april-oktober voor kanoën/wandelen. ⚠️ Webcheck (2026-08):
+  Han-sur-Lesse grotten+wildpark-combiticket is €41,50 p.p. — een losse kostenpost, niet in het
+  dagbudget verwerkt; het park sluit vanaf 12 november en heeft buiten het hoogseizoen kortere
+  openingstijden (soms maar 10:00-15:00). De Coo-kabelbaan zit binnen Plopsaland Ardennes, dat
+  **niet elke dag** open is buiten de schoolvakanties (2026: dagelijks open 4-19 april, 25 april-10
+  mei, 28 mei-31 augustus, 17 oktober-8 november) — check de kalender, ga niet uit van "april-
+  oktober = altijd open".
+- [x] **4 dagen — Luxemburg** (was 3-4d). Luxemburg-Stad (Bock Casemates, jaarrond open, €11) —
   Müllerthal/"Luxemburgs Zwitserland" (Berdorf/Echternach, de bekende rotsformatie-wandelpaden) —
-  Vianden (kasteel + kabelbaan). Eigen auto (~4u vanuit NL). Budget: ~€90-100/dag — Luxemburg is
-  duidelijk duurder dan België. Seizoen: april-oktober voor het wandelen in Müllerthal.
+  Vianden (kasteel €11-13 + kabelbaan). Eigen auto (~4u vanuit NL). Budget: ~€100-120/dag —
+  bijgesteld na webcheck, €90-100 was te laag: Luxemburg-Stad is een van de duurdere steden van de
+  EU voor eten/verblijf. Seizoen: april-oktober voor het wandelen in Müllerthal. ⚠️ Webcheck
+  (2026-08): de Vianden-kabelbaan draait wél nog, maar met seizoensgaten (2025 bv. 4 apr-27 jun en
+  1 sep-12 okt, niet de hele zomer door) — check de actuele 2026-data voor je erop rekent.
 - [x] **4 dagen — Luxemburg + Ardennen** (was 3-4d). Bewust een andere Ardennen-stop dan de losse
   Ardennen-trip hierboven, zodat de twee elkaar niet overlappen: Bastogne (WOII-geschiedenis,
-  Bastogne War Museum) — Vianden (kasteel) — Luxemburg-Stad — Müllerthal (dagtrip vanuit de stad).
-  Eigen auto, korte afstanden (grensregio). Budget: ~€80-90/dag gemiddeld. Seizoen: april-oktober.
+  Bastogne War Museum, €22 p.p. + €7,50 parkeren) — Vianden (kasteel, zelfde kabelbaan-kanttekening
+  als hierboven) — Luxemburg-Stad — Müllerthal (dagtrip vanuit de stad). Eigen auto, korte
+  afstanden (grensregio). Budget: ~€80-90/dag gemiddeld — bevestigd via webcheck (blend van
+  goedkoper Belgisch deel + duurder Luxemburgs deel houdt stand). Seizoen: april-oktober.
 - [x] **4 dagen — Belgische kust + Brugge + Gent** (was 3-4d). Brugge (grachten, Belfort) — Gent
   (Gravensteen, Graslei) — Belgische kust (De Haan/Oostende, dijk en strand). Auto of trein — alle
-  drie goed met de trein te doen. Budget: ~€90-100/dag. Seizoen: jaarrond voor de steden, mei-
-  september fijner voor de kust.
+  drie goed met de trein te doen. Budget: ~€90-100/dag — bevestigd via webcheck, geen bijzonderheden
+  gevonden. Seizoen: jaarrond voor de steden, mei-september fijner voor de kust.
 - [x] **5 dagen — België: Brugge + Gent + Antwerpen + Ardennen** (was 4-5d). Brugge — Gent —
-  Antwerpen (Kathedraal, MAS, modewijk) — Dinant of La Roche-en-Ardenne (1-2 dagen natuur als
-  tegenhanger van de drie steden). Trein voor de steden, auto nodig voor het Ardennen-deel. Budget:
-  ~€90-100/dag in de steden, lager in de Ardennen. Seizoen: jaarrond mogelijk, april-oktober beter
-  voor het Ardennen-deel.
+  Antwerpen (Kathedraal — schip/interieur open, maar de toren is sinds 2019 in langdurige
+  restauratie en de status van steigervrije uitzichten in 2026 is onbevestigd; MAS-gebouw/dakterras
+  gratis, exposities apart ~€12) — Dinant of La Roche-en-Ardenne (1-2 dagen natuur als tegenhanger).
+  Trein voor de steden, auto nodig voor het Ardennen-deel. Budget: ~€90-100/dag in de steden, lager
+  in de Ardennen — bevestigd via webcheck. Seizoen: jaarrond mogelijk, april-oktober beter voor het
+  Ardennen-deel.
 - [x] **5 dagen — Zuid-Nederland + Belgische Ardennen + Luxemburg** (was 4-5d, de grootste combi
   van de zes — en de enige met een Nederlandse stop). Maastricht (Vrijthof, Sint-Pietersberg-
-  grotten) — Valkenburg (Fluweelengrot) — Bastogne (Ardennen) — Vianden/Luxemburg-Stad. Eigen auto
-  — alles binnen een paar uur rijden van elkaar, de kortste "internationale" trip van de hele lijst.
-  Budget: ~€80-90/dag gemiddeld. Seizoen: april-oktober.
+  grotten, alleen met gids, ~€9,95) — Valkenburg (Fluweelengrot, alleen met gids, 7 dagen/week open
+  + zomeravondtours 18 juli-22 augustus) — Bastogne (Ardennen, zie kanttekening hierboven) —
+  Vianden/Luxemburg-Stad (kabelbaan-kanttekening idem). Eigen auto — alles binnen een paar uur
+  rijden van elkaar, de kortste "internationale" trip van de hele lijst. Budget: ~€80-90/dag
+  gemiddeld — bevestigd via webcheck. Seizoen: april-oktober.
 
-**Nog niet geverifieerd**: dit is op eigen kennis geschreven (Benelux is dichtbij en goed bekend
-terrein), niet WebSearch-backed zoals Route Builder's routes. Behandel als een eerste concept —
-check openingstijden/actuele prijzen zelf voor je iets boekt.
+**Algemeen (webcheck 2026-08)**: geen algemene wegentol in NL/BE/LU voor personenauto's — alleen
+uitzonderingen zijn NL's Westerscheldetunnel (€5) en Kiltunnel (€2), en de Liefkenshoektunnel bij
+Antwerpen. Let op voor een volgend jaar (niet relevant voor 2026): België voert vanaf mei 2027 een
+verplicht vignet voor personenauto's in.
+
+**Geverifieerd (2026-08)**: bovenstaande zes trips zijn nu WebSearch-backed gecontroleerd op
+budget-realisme, openingstijden/status van de genoemde attracties en seizoensgebondenheid — twee
+budgetten bijgesteld (Ardennen, Luxemburg), drie bevestigd ongewijzigd. Nog steeds geen
+prijsonderzoek op het niveau van Route Builder (geen los-geboekte-vlucht/visum-check nodig hier,
+alles eigen auto binnen Schengen) — behandel als een eerste concept, geen boekbaar plan.
 
 ## 🇩🇪 Duitsland
 
