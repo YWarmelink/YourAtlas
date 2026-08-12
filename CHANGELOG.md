@@ -12,6 +12,18 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Achtste batch: Dolomieten & Noord-Italië 🚡 (2026-08)** — de sterkste van de twee fly-in-
+  reframes die in `ROUTE_BUILDER_MODULES.md` bij Central European Grand Roadtrip 🚗 stonden (de
+  andere, Balkan-as-flyto, is Medium-beoordeeld en nog niet gebouwd). Zelfde 7-etappe lus als het
+  bronblok (Dolomieten → Milaan → Turijn → Cinque Terre → Toscane → San Marino → Venetië),
+  ongewijzigd qua land/dagen/budget (19 dagen, €2.385) — alleen instap/uitstap aangepast van
+  "eigen auto vanuit Nederland" naar "vlucht Amsterdam-Venetië, huurauto, dezelfde lus, terug naar
+  Venetië voor de thuisvlucht" (de bestaande San Marino-Venetië-rit uit de brontekst wordt nu het
+  sluitstuk van de lus i.p.v. een tussenstop op weg naar de Balkan). Visum/reisadvies hergebruikt
+  uit de al geverifieerde brontekst (Italië/San Marino visumvrij, Schengen, reisadvies groen).
+  Central European Grand Roadtrip 🚗 zelf blijft ongewijzigd bestaan. Getest met een Node-
+  smoketest (19 dagen/€2.385 bevestigd, syntax-check van het volledige bestand geslaagd).
+
 - **"Kazachstan & Tadzjikistan" vervangen door "Oezbekistan & Tadzjikistan" (2026-08)** — Youri's
   eigen correctie: Kazachstan en Tadzjikistan grenzen niet aan elkaar (die route moest vliegen
   Almaty-Dushanbe, over Kirgizië/Oezbekistan heen), terwijl Oezbekistan en Tadzjikistan wél een

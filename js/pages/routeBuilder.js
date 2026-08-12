@@ -72,6 +72,7 @@ const RB_SEED_FLAG_KEY_STANDALONE_COUNTRIES_BATCH5 = 'atlas_grand_trips_seeded_s
 const RB_SEED_FLAG_KEY_STANDALONE_COUNTRIES_BATCH6 = 'atlas_grand_trips_seeded_standalone_countries_batch6_v1';
 const RB_SEED_FLAG_KEY_CENTRAL_ASIA_FURTHER_SPLIT = 'atlas_grand_trips_seeded_central_asia_further_split_v1';
 const RB_SEED_FLAG_KEY_COMBO_BATCH7 = 'atlas_grand_trips_seeded_combo_batch7_v1';
+const RB_SEED_FLAG_KEY_DOLOMITES_NORTH_ITALY = 'atlas_grand_trips_seeded_dolomites_north_italy_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -116,6 +117,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbSeedStandaloneCountryRoutesBatch6();
   rbSeedCentralAsiaFurtherSplitRoutes();
   rbSeedComboBatch7();
+  rbSeedDolomitesNorthItalyRoute();
   rbMigrateLonghaulBuffer();
   rbMigrateExpeditionRenames();
   rbMigrateExpeditionEmojiNames();
@@ -9363,5 +9365,103 @@ function rbBuildNorthernBrazilRoute() {
     climate_summary: 'April-juni (of september-oktober) geeft droog, winderig weer voor de duinen en lagunes bij Jericoacoara, buiten het drukke/duurdere Braziliaanse zomerseizoen.',
     description: 'De Amazone-riviermonding bij Belém en Ilha do Marajó, gevolgd door de zandduinenkust van Lençóis Maranhenses en Jericoacoara tot Fortaleza.',
     notes: 'Losgesplitst van Caribbean & Amazon Expedition 🌴 (via Suriname & Noord-Brazilië 🌴) als onderdeel van de zevende combi-batch (2026-08) — het Noord-Braziliaanse deel van dat block als eigen, kortere reis, zonder Suriname (dat al als eigen standalone Suriname 🛶-route bestaat). Land, dagen en budget zijn ongewijzigd overgenomen. Caribbean & Amazon Expedition 🌴 en Suriname & Noord-Brazilië 🌴 zelf blijven ongewijzigd bestaan.',
+  });
+}
+
+// ---- Batch 8 (2026-08) — Dolomieten & Noord-Italië, the strongest of Central European Grand
+// Roadtrip's two fly-in reframes flagged in ROUTE_BUILDER_MODULES.md (the other, Balkan-as-flyto,
+// is only Medium-rated). Same 7-leg loop as the parent route's own "Dolomieten & Noord-Italië"
+// region, reused verbatim — only entry/exit changed from "own car from home" to "fly to Venice,
+// rent a car, same loop, drive back to Venice for the flight home" (San Marino-Venice was already
+// the loop's last leg in the source, so this just repurposes it as the return leg instead of a
+// stepping stone toward the Balkans).
+
+function rbSeedDolomitesNorthItalyRoute() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_DOLOMITES_NORTH_ITALY)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_DOLOMITES_NORTH_ITALY, '1');
+
+  rbRoutes.push(rbBuildDolomitesNorthItalyRoute());
+  rbSave();
+}
+
+function rbBuildDolomitesNorthItalyRoute() {
+  return rbBuildFlatSeedRoute('Dolomieten & Noord-Italië 🚡', [
+    {
+      code: 'IT', name: 'Italy', days: 6, budget: 720, lat: 46.5369, lng: 12.1357,
+      destinations: [
+        { name: 'Tre Cime', lat: 46.6198, lng: 12.3032 },
+        { name: 'Lago di Braies', lat: 46.6958, lng: 12.0858 },
+        { name: 'Seceda', lat: 46.5765, lng: 11.7099 },
+        { name: 'Val Gardena', lat: 46.5645, lng: 11.6750 },
+      ],
+      notes: 'Instap: rechtstreekse vlucht Amsterdam-Venetië (VCE), huurauto, ≈150 km naar de Dolomieten (Cortina d\'Ampezzo-richting; vanaf ±€80-200 retour, ±1u40; beste periode juli-augustus). Prijsindicatie webonderzoek 2026-08, momentopname. Een van de grootste hoogtepunten van de hele reis — de bekende wandelingen (Tre Cime-rondje, Seceda) zijn elk een dag op zich.',
+      transport_to_next: 'Auto, ≈410 km naar Milaan — vroeg vertrekken of splitsen met een tussenstop bij Verona/Brescia. Italiaanse autostrada rekent tol per kilometer.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 240, lat: 45.4642, lng: 9.1900,
+      destinations: [
+        { name: 'Duomo', lat: 45.4642, lng: 9.1900 },
+        { name: 'Galleria', lat: 45.4656, lng: 9.1896 },
+        { name: 'Navigli', lat: 45.4514, lng: 9.1739 },
+        { name: 'Laatste Avondmaal', lat: 45.4661, lng: 9.1706 },
+      ],
+      notes: 'Eén volle dag voor de binnenstad, een tweede als je het Laatste Avondmaal (reservering vereist) wilt meepakken.',
+      transport_to_next: 'Auto, ≈140 km naar Turijn via de A4/A55, tolweg.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 190, lat: 45.0703, lng: 7.6869,
+      destinations: [
+        { name: 'Egyptisch Museum', lat: 45.0703, lng: 7.6869 },
+        { name: 'Mole Antonelliana', lat: 45.0691, lng: 7.6934 },
+        { name: 'historisch centrum', lat: 45.0703, lng: 7.6869 },
+      ],
+      notes: 'Compacte, onderschatte stad — het Egyptisch Museum (op één na grootste ter wereld) verdient zelf al een halve dag. Prijscheck (2026-07): Turijn is goedkoper dan het vlakke €120/dag-tarief, gecorrigeerd naar €95/dag.',
+      transport_to_next: 'Auto tot een bewaakte parkeerplaats bij Monterosso/La Spezia (≈260 km via Alessandria/Genua) — de dorpjes zelf zijn grotendeels autovrij.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 3, budget: 435, lat: 44.1461, lng: 9.6558,
+      destinations: [
+        { name: 'Monterosso', lat: 44.1461, lng: 9.6558 },
+        { name: 'Vernazza', lat: 44.1355, lng: 9.6857 },
+        { name: 'Corniglia', lat: 44.1197, lng: 9.7042 },
+        { name: 'Manarola', lat: 44.1067, lng: 9.7275 },
+        { name: 'Riomaggiore', lat: 44.0993, lng: 9.7378 },
+      ],
+      notes: 'De vijf dorpjes en de wandelpaden ertussen (Sentiero Azzurro) zijn het hele punt — drie dagen voor rustig wandelen plus een boottochtje. Prijscheck (2026-07): schaarse/dure accommodatie en toeristenopslag op eten duwen dit boven het vlakke €120/dag-tarief, gecorrigeerd naar €145/dag.',
+      transport_to_next: 'Auto, ≈140 km naar Florence via La Spezia-Lucca-Firenze.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 3, budget: 360, lat: 43.7696, lng: 11.2558,
+      destinations: [
+        { name: 'Florence', lat: 43.7696, lng: 11.2558 },
+        { name: 'Siena', lat: 43.3188, lng: 11.3308 },
+        { name: 'San Gimignano', lat: 43.4674, lng: 11.0431 },
+        { name: 'Chianti', lat: 43.4708, lng: 11.3350 },
+      ],
+      notes: 'Compact gehouden ("een stukje Toscane") — Florence plus één dag Chianti/Siena/San Gimignano.',
+      transport_to_next: 'Auto, ≈180 km naar San Marino — Florence en San Marino liggen dicht bij elkaar.',
+    },
+    {
+      code: 'SM', name: 'San Marino', days: 1, budget: 120, lat: 43.9424, lng: 12.4578,
+      destinations: [{ name: 'Historisch centrum', lat: 43.9424, lng: 12.4578 }],
+      notes: 'Klein genoeg voor één dag, dicht bij Florence — een bewuste stop, geen omweg meer om over te twijfelen.',
+      transport_to_next: 'Auto, ≈300 km naar Venetië, met een overnachting daar — de stad zelf is autovrij, park bij Tronchetto of Mestre.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 320, lat: 45.4408, lng: 12.3155,
+      destinations: [
+        { name: 'Piazza San Marco', lat: 45.4408, lng: 12.3155 },
+        { name: 'Dorsoduro', lat: 45.4302, lng: 12.3245 },
+        { name: 'Murano/Burano', lat: 45.4585, lng: 12.3538 },
+      ],
+      notes: 'Ligt vlak bij VCE — een efficiënte laatste stop voor de terugvlucht. Prijscheck (2026-07): centraal Venetië is een bekende prijs-uitschieter (accommodatie 2-3x Mestre-niveau, dure vaporetto-dagpassen) — gecorrigeerd van €120 naar €160/dag.',
+      transport_to_next: 'Einde van deze route — auto terug naar Venetië (VCE), rechtstreekse terugvlucht naar Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'Juli',
+    travel_style: 'Huurauto vanaf Venetië — dezelfde lus als in Central European Grand Roadtrip 🚗, nu vanaf/naar het vliegveld in plaats van vanuit Nederland.',
+    climate_summary: 'Juli-augustus is het gangbare wandelseizoen in de Dolomieten (Tre Cime, Seceda); mei-juni/september zijn rustiger en nog steeds goed begaanbaar, maar de hoogste paden kunnen dan nog restsneeuw hebben.',
+    description: 'De Dolomieten, Milaan, Turijn, de Cinque Terre, een stukje Toscane, San Marino en Venetië — één lus met huurauto vanaf Venetië.',
+    notes: 'Losgesplitst van Central European Grand Roadtrip 🚗 (het "Dolomieten & Noord-Italië"-blok) als eigen vlieg+huurauto-trip — in ROUTE_BUILDER_MODULES.md aangemerkt als de sterkste van de twee fly-in-reframes uit die expeditie (de andere, Balkan-as-flyto, is Medium-beoordeeld, nog niet gebouwd). Landen, dagen en budgetten per etappe zijn ongewijzigd overgenomen (19 dagen, €2.385) — alleen instap/uitstap zijn aangepast van "eigen auto vanuit Nederland" naar "vlucht naar Venetië, huurauto, dezelfde lus, terug naar Venetië voor de thuisvlucht" (dezelfde ≈300km San Marino-Venetië-rit die al in de brontekst stond, nu het sluitstuk van de lus i.p.v. een tussenstop op weg naar de Balkan). Visum/reisadvies (uit de brontekst, 2026-07 geverifieerd): Italië en San Marino zijn beide visumvrij voor een Nederlands paspoort, Italië is Schengen, San Marino heeft een open grens met Italië — reisadvies overal groen. Central European Grand Roadtrip 🚗 zelf blijft ongewijzigd bestaan.',
   });
 }

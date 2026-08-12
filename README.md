@@ -216,10 +216,13 @@ out first when you sit down with it, then do the destinations below.
 ## Open items
 
 **Route Builder — remaining split candidates** (all rated weaker in `ROUTE_BUILDER_MODULES.md`,
-none built yet — everything Sterk/Medium is done as of the combo batch above):
-- **Central European Grand Roadtrip 🚗**'s two fly-in reframes: Dolomieten & Noord-Italië (19d),
-  Balkan-as-flyto (16d) — the analysis itself is lukewarm on these (car-loop logic translates less
-  cleanly than it did for British Isles), so treat as optional.
+none built yet — everything Sterk/Medium is done as of the combo batch above, except the one item
+below marked done):
+- ~~**Central European Grand Roadtrip 🚗**'s Dolomieten & Noord-Italië fly-in reframe (19d)~~ —
+  **done (2026-08)**, built as **Dolomieten & Noord-Italië 🚡**.
+- **Central European Grand Roadtrip 🚗**'s other fly-in reframe: Balkan-as-flyto (16d) — the
+  analysis is Medium (not Sterk) on this one (car-loop logic translates less cleanly than it did
+  for British Isles), so treat as optional.
 - **Sub-tier pieces**: Singapore alleen (Eurasia's Zuidoost-Azië Grand Loop 🛕, 3d — too short to
   sell alone), Brunei alleen (2d, same reason), individual Pacific islands (Tonga, Samoa, Cook
   Islands — each 7-9d, part of Pacific-eilanden 🌺, never flagged as strong standalone candidates
