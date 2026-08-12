@@ -1,7 +1,7 @@
 # Europa — Trip Ideas
 
-Status: **batch 1 (Benelux) en batch 2 (Duitsland) uitgewerkt, rest nog ruw.** Youri's eigen lijst
-(2026-08) van realistische
+Status: **batch 1 (Benelux), batch 2 (Duitsland) en batch 3 (Oostenrijk + Zwitserland) uitgewerkt,
+rest nog ruw.** Youri's eigen lijst (2026-08) van realistische
 Europese trips — van lang weekend tot ~3 weken, allemaal "reëel en slim te maken" omdat ze binnen
 Europa blijven. Dit is bewust alleen duur + bestemming/route, geen route/budget/seizoen-detail —
 dat werken we samen per batch uit, zoals Route Builder's expedities dat ook kregen (zie de
@@ -183,23 +183,113 @@ plakken; Beieren+Alpen's Berchtesgaden bewust als lus-sluitstuk, niet als korte 
 de 12 originele ideeën bleek fundamenteel mis, wel meerdere budgetten/seizoenen/praktische details
 bijgesteld of aangevuld.
 
-## 🇦🇹 Oostenrijk
+## 🇦🇹 Oostenrijk — batch 3, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-- [ ] 3–4 dagen — Salzburg + omgeving
-- [ ] 4–5 dagen — Salzburg + Berchtesgaden + Hallstatt
-- [ ] 5–7 dagen — Oostenrijkse Alpen
-- [ ] 5–7 dagen — Tirol
-- [ ] 5–7 dagen — Salzburg + Grossglockner + Tirol
-- [ ] 7–10 dagen — Oostenrijk Alpine Roadtrip
-- [ ] 7–10 dagen — Oostenrijk + Slovenië
+- [x] **4 dagen — Salzburg + omgeving** (was 3-4d). Salzburg oude stad (min. 2 nachten:
+  Getreidegasse, Hohensalzburg-vesting, Mozart-plekken) plus één dagtrip — gerangschikt: (a)
+  **Werfen** (Hohenwerfen-kasteel + Eisriesenwelt ijsgrotten, 45 min, veel minder druk dan
+  Hallstatt, alleen mei-okt open), (b) Wolfgangsee/St. Wolfgang (meer + Schafberg-tandradbaan, 45
+  min), (c) Untersberg-kabelbaan (20 min, half dagje). Hallstatt bewust hier overgeslagen — zit al
+  in de volgende trip. NL-Salzburg ~965km/9u15. Budget: ~€90-120/dag pp. Seizoen: mei-september
+  (de ijsgrotten hebben de zomer nodig).
+- [x] **5 dagen — Salzburg + Berchtesgaden + Hallstatt** (was 4-5d). Route geverifieerd: Salzburg
+  → Berchtesgaden (24km/~30 min) → Hallstatt (76km/~1u vanaf Berchtesgaden) — geen perfecte rechte
+  lijn maar de omweg is klein (~20km extra t.o.v. rechtstreeks Salzburg-Hallstatt), volgorde is
+  prima. Budget: ~€100-130/dag pp. Seizoen: mei-september. ⚠️ Königssee-boottocht ~€20-25pp;
+  Hallstatt's Skywalk/zoutmijn-kabelbaan €29 — heropening 1 sept 2026, check de data als je eerder
+  gaat.
+- [x] **6 dagen — Oostenrijkse Alpen** (was 5-7d, regio gekozen: **Zell am See-Kaprun/Pinzgau**).
+  Om overlap met Salzkammergut (vorige trip), Tirol (volgende) en Grossglockner+Tirol (erna) te
+  vermijden: Pinzgau is het meest onderscheidend — een meren-en-gletsjerregio ten zuiden van
+  Salzburg, rond de Zeller See (zwemmen/SUP/12km meerloop) en de Kitzsteinhorn-gletsjer (3.203m,
+  jaarrond wandelen/skiën, "Gipfelwelt 3000"). Budget: ~€95-130/dag pp — Kitzsteinhorn-kabelbaan
+  retour ~€50-55pp is de grote kostenpost. Seizoen: juni-september.
+- [x] **6 dagen — Tirol** (was 5-7d). Innsbruck (2 nachten) — Seefeld (20-25 min, hooggelegen
+  wandelhub) — Achensee (turquoise meer, ~1u) — Zillertal/Mayrhofen (Olperer-hangbrug, ~40 min) —
+  lus terug naar Innsbruck. NL-Innsbruck direct ~940-950km/9-10u. Budget: ~€90-125/dag pp.
+  Seizoen: juni-september. ⚠️ Zillertal-kabelbanen/hangbruggen en Achensee-boottochten zijn losse
+  kostenposten (€15-30 elk).
+- [x] **6 dagen — Salzburg + Grossglockner + Tirol** (was 5-7d). Salzburg → Bruck an der
+  Glocknerstraße (~1,5u) → de Grossglockner Hochalpenstraße zelf (~1,5-2u rijden, reken een halve
+  dag met stops) → Lienz → Innsbruck (~6u meer). Salzburg-Innsbruck via de Grossglockner is
+  totaal 7-8u rijden — één doorlopende route zonder backtracken, maar lang: beter als meerdaagse
+  rit met een overnachting bij Lienz/Zell am See dan als één lange dag. Budget: ~€100-140/dag pp.
+  Seizoen: de weg is open begin mei-begin november 2026. ⚠️ Apart van het vignet: een eigen tol op
+  de Grossglockner-weg, €46,50/auto (dagticket, zomer 2026) — online vooraf kopen bij Heiligenblut
+  scheelt een paar euro (€42,50).
+- [x] **9 dagen — Oostenrijk Alpine Roadtrip** (was 7-10d). Breder/richtinggevend dan de trips
+  hierboven: Vorarlberg/Bregenzerwald (2-3d: Damüls, Schwarzenberg, kaasdorpjes) — Tirol/Innsbruck
+  (2d) — Grossglockner Hochalpenstraße (1-2d) — Salzkammergut-meren (Hallstatt/Wolfgangsee, 2d) —
+  Salzburg als afsluiter. Verschilt van de kortere trips door het verre-westen Vorarlberg toe te
+  voegen en alles in één doorlopende corridor te rijgen i.p.v. één regio diep te verkennen. Budget:
+  ~€95-130/dag pp gemiddeld (Vorarlberg iets duurder). Seizoen: juni-september.
+- [x] **9 dagen — Oostenrijk + Slovenië** (was 7-10d). Beste koppeling: Carinthia
+  (Klagenfurt/Wörthersee) → Sloveense Julische Alpen (Bled/Bohinj) — maar 79km/~50 min vanaf
+  Klagenfurt, écht geen omweg. Voorstel: 5 dagen Oostenrijk (Salzburg of het Grossglockner-gebied,
+  dan zuidwaarts naar Klagenfurt/Wörthersee) + 4 dagen Slovenië (Bled, Bohinj, evt. Ljubljana als
+  goedkope, rustige afsluiter). Budget: Oostenrijk-deel ~€95-130/dag pp; Slovenië is over het
+  algemeen goedkoper, al is Bled zelf een prijsuitschieter — 10-20 min buiten Bled overnachten
+  bespaart 30-40%. Seizoen: juni-september. ⚠️ Slovenië gebruikt niet het Oostenrijkse vignet —
+  eigen e-vinjeta (tolsticker) nodig zodra je Sloveense snelwegen rijdt.
 
-## 🇨🇭 Zwitserland
+**Algemeen (webcheck 2026-08)**: Oostenrijks vignet, 10-dagenversie €12,80/auto — geldt voor alle
+zeven trips hierboven. 2026 is het laatste jaar met de fysieke sticker naast digitaal (vanaf 2027
+alleen nog digitaal).
 
-- [ ] 4–5 dagen — Zürich + Luzern + omgeving
-- [ ] 5–7 dagen — Interlaken + Lauterbrunnen + Grindelwald
-- [ ] 5–7 dagen — Zwitserse Alpen
-- [ ] 7–10 dagen — Zwitserland Alpine Roadtrip
-- [ ] 7–10 dagen — Zwitserland + Noord-Italië
+## 🇨🇭 Zwitserland — batch 3, uitgewerkt + WebSearch-geverifieerd (2026-08)
+
+- [x] **5 dagen — Zürich + Luzern + omgeving** (was 4-5d). Zürich (2 nachten: oude stad, meer,
+  Uetliberg-wandeling) — trein 45 min — Luzern (3 nachten: Kapelbrug, meer, oude stad) — dagtrip
+  Pilatus (Golden Round Trip: kabelbaan op, tandradbaan af) of Rigi. **Trein wint duidelijk van de
+  auto hier** — geen vignet nodig, stadsparkeren is lastig/duur, treinen elke 30 min (~1u). Budget:
+  ~€115-150/dag pp. Seizoen: mei-september. ⚠️ Pilatus Golden Round Trip CHF119,80pp (~€125); Rigi
+  is het rustigere/goedkopere alternatief — kies één van de twee, niet allebei.
+- [x] **6 dagen — Interlaken + Lauterbrunnen + Grindelwald** (was 5-7d). Interlaken (1 nacht) —
+  Lauterbrunnen (2 nachten: watervallen, Trümmelbach, kabelbaan naar het autovrije
+  Mürren/Gimmelwald) — Grindelwald (2 nachten: First Cliff Walk, Bachalpsee-wandeling, of de
+  Männlichen-Kleine Scheidegg-bergkam). Auto tot Interlaken/Lauterbrunnen, dan trein/kabelbaan
+  verder — Wengen is volledig autovrij. Budget: ~€120-160/dag pp (een van Zwitserlands duurste
+  valleien). Seizoen: juni-september voor volledige wandelpad-toegang. ⚠️ Jungfraujoch
+  (Interlaken-Jungfraujoch retour CHF261,20, mei-okt, plus verplichte CHF10 zitplaatsreservering)
+  is een legitieme maar overslaanbare splurge — Männlichen-Kleine Scheidegg of Bachalpsee geven
+  vergelijkbare Eiger/Jungfrau-uitzichten gratis via wandelen.
+- [x] **6 dagen — Zwitserse Alpen** (was 5-7d, regio gekozen: **Zermatt/Matterhorn**).
+  Onderscheidend van de vorige trip: ander kanton (Wallis, niet Bern), andere vallei (Mattertal),
+  andere iconische piek (Matterhorn i.p.v. Jungfrau) — geen overlap. Route: auto naar Täsch —
+  parkeren (CHF13,50-16,50/dag) — 12 min shuttle-trein naar het autovrije Zermatt (3 nachten) —
+  rustige wandelingen (5-Lakes-trail, Gornergrat), optioneel dagtrip naar het naburige autovrije
+  Saas-Fee (1 nacht). Budget: ~€130-170/dag pp (nog duurder dan Jungfrau). Seizoen:
+  juli-september. ⚠️ Gornergrat-trein retour ~CHF80-96pp; Matterhorn Glacier Paradise-kabelbaan
+  ~CHF120pp — kies één, sla de ander over.
+- [x] **9 dagen — Zwitserland Alpine Roadtrip** (was 7-10d). Niet-backtrackende lus: Zürich (1n) —
+  Luzern (1n) — Andermatt via de Sustenpas (seizoensgebonden, 2026 open vanaf 12 juni) (1n) —
+  Furkapas (heropend 29 mei 2026) — Grimselpas (heropend 14 mei 2026) — Wallis/Zermatt (2n,
+  parkeren bij Täsch) — Simplonpas (jaarrond open, geen seizoenssluiting) naar Ticino —
+  Lugano/Ticino (2n) — San Bernardino-pas (seizoensgebonden) of de Gotthard-tunnel (jaarrond
+  alternatief) — Graubünden/Chur (1n) — thuis. Budget: ~€120-160/dag pp gemiddeld. Plus eenmalige
+  kosten: vignet CHF40 (~€43, alleen een jaarsticker bestaat, geen kortere optie), parkeren
+  CHF10-20/dag per stad, brandstof voor ~900-1100km alpenrijden.
+- [x] **9 dagen — Zwitserland + Noord-Italië** (was 7-10d). Beste koppeling: Graubünden/St.
+  Moritz — Bernina Express/pas — Tirano (Italië) — Valtellina/Comomeer — lus terug via
+  Ticino/Lugano. Route: Chur/St. Moritz-gebied (3n, incl. een Bernina Express-dag) — grens bij
+  Tirano — Valtellina/Comomeer (2n) — Lugano/Ticino (2n) — Gotthard noordwaarts — thuis. Budget:
+  Zwitserse etappes ~€120-160/dag pp; Italiaanse etappes merkbaar goedkoper, ~€70-100/dag pp.
+  Seizoen: juni-september. ⚠️ Paspoort/ID nodig aan de grens (Schengen, geen stempel maar
+  controles gebeuren); Italië gebruikt tolwegen (autostrade), geen vignet — reken ~€20-40 extra tol
+  voor het Italiaanse stuk; check of de huurautoverzekering Italië dekt als het niet de eigen auto
+  is.
+
+**Algemeen (webcheck 2026-08)**: Zwitsers vignet CHF40/jaar (~€43), sticker of e-vignet, geldig 1
+dec 2025-31 jan 2027 — geen kortere optie bestaat, dus een vaste kostenpost voor elke roadtrip
+hierboven waar je zelf rijdt. Een Half Fare Card (CHF150) betaalt zich snel terug bij 2+
+bergexcursies.
+
+**Geverifieerd (2026-08)**: alle 12 items (7 Oostenrijk + 5 Zwitserland) WebSearch-backed
+gecontroleerd via twee parallelle research-agents — routevolgorde, actuele openingstijden/status/
+tolkosten, en budgetten. Grootste inhoudelijke keuze: bij de vage items "Oostenrijkse Alpen" en
+"Zwitserse Alpen" moest een concrete regio gekozen worden om overlap met de andere Alpen-trips in
+hun eigen land te vermijden (Pinzgau/Zell am See-Kaprun resp. Zermatt/Matterhorn) — bij elke keuze
+is de onderbouwing waarom die regio niet overlapt expliciet meegenomen.
 
 ## 🇫🇷 Frankrijk
 
@@ -490,7 +580,7 @@ volgorde:
 
 1. **Benelux** (6) — dichtst bij huis, kleinste lijst, goede eerste batch om het proces te ijken. **Gedaan (2026-08).**
 2. **Duitsland** (12) — buurland, grootste losse-land-lijst, veel variatie weekend→10 dagen. **Gedaan (2026-08), WebSearch-geverifieerd.**
-3. **Alpenlanden: Oostenrijk + Zwitserland** (12) — horen inhoudelijk samen (Alpen-thema), sluiten aan op Duitslands Beieren-items.
+3. **Alpenlanden: Oostenrijk + Zwitserland** (12) — horen inhoudelijk samen (Alpen-thema), sluiten aan op Duitslands Beieren-items. **Gedaan (2026-08), WebSearch-geverifieerd.**
 4. **Frankrijk** (11).
 5. **Italië** (13).
 6. **Iberië: Spanje + Portugal** (18) — samen, want de Iberië-combinatiesectie hieronder heeft ze allebei nodig.
