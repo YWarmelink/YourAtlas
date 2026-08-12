@@ -547,6 +547,16 @@ routes — behandel als een grove, beargumenteerde aanname, niet als afgeronde r
 deze landen ooit toch relevant wordt (bv. een regio wordt substantieel veiliger), gewoon opnieuw
 bekijken, niet blind op deze lijst vertrouwen.
 
-**Nog niet opgepakt, wacht op Youri's keuze:** welke van de "echte gaten" hierboven een eigen
-nieuwe route wordt, volgens het gebruikelijke traject (eerst een discussie-artifact met opties,
-daarna pas bouwen — zie de `route-builder-content` skill).
+**Opgepakt (2026-08):** VS Oostkust, VS Zuidwesten, Hawaii en Alaska zijn onderzocht (4 parallelle
+WebSearch-backed research-agents) en gebouwd — zie `CHANGELOG.md`'s "negende batch"-entry. Youri's
+expliciete keuze: geen samenvoeging tot één grote North America Grand Traverse 🌎-uitbreiding, maar
+losse standalone trips (**US Oostkust 🗽**, **US Zuidwesten 🏜️**, **Hawaii 🐢**), behalve Alaska —
+die is toegevoegd aan de bestaande **West-Canada: Rockies & Vancouver 🏔️** in plaats van een eigen
+route, omdat de vlucht Vancouver-Anchorage al de natuurlijke verbinding is. Youri voegde daar zelf
+**Florida 🐊** aan toe (niet in de oorspronkelijke lijst hierboven) — ook als losse standalone trip,
+met Orlando/pretparken en Noord-Florida bewust weggelaten.
+
+**Nog niet opgepakt:** Portugal, Baltische staten, Zuid-Korea, Sri Lanka & Maldiven, Saoedi-Arabië
+en Sulawesi/Raja Ampat (Indonesië) uit de "echte gaten"-lijst hierboven. Wacht op Youri's keuze
+welke, volgens het gebruikelijke traject (eerst een discussie-artifact met opties, daarna pas
+bouwen — zie de `route-builder-content` skill).

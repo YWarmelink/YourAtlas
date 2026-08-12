@@ -179,9 +179,27 @@ Roadtrip 🚗, which it advised against splitting):
 **Candidate list status**: all candidates from `ROUTE_BUILDER_MODULES.md`'s analysis have now
 been built as standalone routes, plus the Centraal-Azië 🐎 further-split and combo batch 7 above.
 Remaining un-split items are all ones the analysis itself rated weaker: Central European Grand
-Roadtrip 🚗's two fly-in candidates (Dolomieten & Noord-Italië, Balkan-as-flyto) and a handful of
-Sub-tier country/island pieces (Singapore, Brunei, individual Pacific islands like Tonga/Samoa/Cook
-Islands). Further splitting would need a fresh look at that document.
+Roadtrip 🚗's Balkan-as-flyto candidate (Medium-rated) and a handful of Sub-tier country/island
+pieces (Singapore, Brunei, individual Pacific islands like Tonga/Samoa/Cook Islands). Further
+splitting would need a fresh look at that document.
+
+**Batch 8 (2026-08)**: **Dolomieten & Noord-Italië 🚡** (19d, Central European Grand Roadtrip 🚗's
+strongest fly-in candidate — Milan/Turin/Cinque Terre/Tuscany/San Marino/Venice loop, entry/exit
+changed to fly into Venice/rent a car instead of driving from home).
+
+**World coverage audit (2026-08, see `ROUTE_BUILDER_MODULES.md`'s "Wereldwijde dekking-check")**:
+found four entire regions missing from Route Builder that weren't in the modularization analysis
+above since they're gaps, not un-split candidates — US Northeast, US Southwest desert, Alaska,
+Hawaii — plus Florida, which Youri added himself on top of that list. Youri's explicit call: build
+these as **loose standalone trips**, not merged into one bigger North America Grand Traverse 🌎
+(which stays unchanged, since it already connects well as one overland arc). **Batch 9**: **US
+Oostkust 🗽** (DC-Philadelphia-New York-Boston via train, 12d/€1.365), **US Zuidwesten 🏜️**
+(Vegas-Zion-Bryce-Antelope Canyon-Monument Valley-Grand Canyon-Sedona-Phoenix, one-way rental,
+12d/€1.500), **Hawaii 🐢** (Oahu-Maui-Kauai, 14d/€2.240, Big Island left out) and **Florida 🐊**
+(Miami-Everglades-Keys-Key West, 10d/€1.360, Orlando and North Florida deliberately left out).
+**Alaska** instead got added onto the existing **West-Canada: Rockies & Vancouver 🏔️** (Youri's
+choice — Vancouver-Anchorage is already the natural flight link), new total 32d/€5.875 (was
+22d/€4.275).
 
 ## Search
 

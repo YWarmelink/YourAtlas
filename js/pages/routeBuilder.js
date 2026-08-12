@@ -73,6 +73,8 @@ const RB_SEED_FLAG_KEY_STANDALONE_COUNTRIES_BATCH6 = 'atlas_grand_trips_seeded_s
 const RB_SEED_FLAG_KEY_CENTRAL_ASIA_FURTHER_SPLIT = 'atlas_grand_trips_seeded_central_asia_further_split_v1';
 const RB_SEED_FLAG_KEY_COMBO_BATCH7 = 'atlas_grand_trips_seeded_combo_batch7_v1';
 const RB_SEED_FLAG_KEY_DOLOMITES_NORTH_ITALY = 'atlas_grand_trips_seeded_dolomites_north_italy_v1';
+const RB_SEED_FLAG_KEY_US_LOOSE_TRIPS = 'atlas_grand_trips_seeded_us_loose_trips_v1';
+const RB_MIGRATE_FLAG_2026_08_ALASKA_ADDITION = 'atlas_grand_trips_migrate_2026_08_alaska_addition_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -118,7 +120,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbSeedCentralAsiaFurtherSplitRoutes();
   rbSeedComboBatch7();
   rbSeedDolomitesNorthItalyRoute();
+  rbSeedUSLooseTrips();
   rbMigrateLonghaulBuffer();
+  rbMigrateAlaskaAddition();
   rbMigrateExpeditionRenames();
   rbMigrateExpeditionEmojiNames();
   rbMigrateAncientToMediterranean();
@@ -9464,4 +9468,305 @@ function rbBuildDolomitesNorthItalyRoute() {
     description: 'De Dolomieten, Milaan, Turijn, de Cinque Terre, een stukje Toscane, San Marino en Venetië — één lus met huurauto vanaf Venetië.',
     notes: 'Losgesplitst van Central European Grand Roadtrip 🚗 (het "Dolomieten & Noord-Italië"-blok) als eigen vlieg+huurauto-trip — in ROUTE_BUILDER_MODULES.md aangemerkt als de sterkste van de twee fly-in-reframes uit die expeditie (de andere, Balkan-as-flyto, is Medium-beoordeeld, nog niet gebouwd). Landen, dagen en budgetten per etappe zijn ongewijzigd overgenomen (19 dagen, €2.385) — alleen instap/uitstap zijn aangepast van "eigen auto vanuit Nederland" naar "vlucht naar Venetië, huurauto, dezelfde lus, terug naar Venetië voor de thuisvlucht" (dezelfde ≈300km San Marino-Venetië-rit die al in de brontekst stond, nu het sluitstuk van de lus i.p.v. een tussenstop op weg naar de Balkan). Visum/reisadvies (uit de brontekst, 2026-07 geverifieerd): Italië en San Marino zijn beide visumvrij voor een Nederlands paspoort, Italië is Schengen, San Marino heeft een open grens met Italië — reisadvies overal groen. Central European Grand Roadtrip 🚗 zelf blijft ongewijzigd bestaan.',
   });
+}
+
+// ---- Batch 9 (2026-08) — vier losse VS/Hawaii-tripjes, gebouwd na een audit die vier hele
+// regio's (Noordoost, Zuidwesten, Alaska, Hawaii) miste in Route Builder. Youri's expliciete keuze:
+// GEEN grote samengevoegde uitbreiding van North America Grand Traverse 🌎 (dat blijft ongewijzigd
+// staan als losse, volledige expeditie, precies omdat die zelf al goed aansluit) — in plaats daarvan
+// losse, op zichzelf staande trips, want de vier nieuwe stukken liggen sowieso ver uit elkaar. Elk
+// van de vier is onderzocht door een eigen research-agent (route, dagen, budget, seizoen, transport,
+// veiligheid) voordat er iets gebouwd is — zie ROUTE_BUILDER_MODULES.md voor geen vermelding (dit
+// was een verse audit, geen kandidaat uit die analyse). Florida is een vijfde, apart geïntroduceerd
+// door Youri zelf ("een beetje apart als omgeving") — niet in het oorspronkelijke voorstel.
+
+function rbSeedUSLooseTrips() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_US_LOOSE_TRIPS)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_US_LOOSE_TRIPS, '1');
+
+  rbRoutes.push(
+    rbBuildUSNortheastRoute(),
+    rbBuildUSSouthwestRoute(),
+    rbBuildHawaiiRoute(),
+    rbBuildFloridaRoute(),
+  );
+  rbSave();
+}
+
+function rbBuildUSNortheastRoute() {
+  return rbBuildFlatSeedRoute('US Oostkust 🗽', [
+    {
+      code: 'US', name: 'United States', days: 3, budget: 270, lat: 38.9072, lng: -77.0369,
+      destinations: [
+        { name: 'National Mall & Smithsonians', lat: 38.8899, lng: -77.0091 },
+        { name: 'Lincoln Memorial', lat: 38.8893, lng: -77.0502 },
+        { name: 'Capitol Hill', lat: 38.8899, lng: -77.0091 },
+        { name: 'Georgetown', lat: 38.9097, lng: -77.0654 },
+      ],
+      notes: 'Instap: rechtstreekse vlucht Amsterdam-Washington DC (KLM, ±8-9 uur; beste periode half september-eind oktober). Prijsindicatie webonderzoek 2026-08, momentopname. ESTA verplicht ($40, ruim vooraf aanvragen, paspoort nog 6+ maanden geldig). De Smithsonian-musea en de meeste monumenten zijn gratis — bewust een goedkopere stop dan de andere drie steden.',
+      transport_to_next: 'Trein (Amtrak Northeast Regional), ≈2 uur naar Philadelphia — boek 2-4 weken vooruit en reis dinsdag-donderdag voor de beste "Saver"-tarieven.',
+    },
+    {
+      code: 'US', name: 'United States', days: 2, budget: 190, lat: 39.9526, lng: -75.1652,
+      destinations: [
+        { name: 'Independence Hall & Liberty Bell', lat: 39.9496, lng: -75.1503 },
+        { name: 'Old City & Society Hill', lat: 39.9476, lng: -75.1449 },
+        { name: 'Reading Terminal Market', lat: 39.9532, lng: -75.1590 },
+      ],
+      notes: 'Duidelijk goedkoper dan New York/Boston — blijf \'s avonds rond Center City/Old City/Society Hill, niet in onbekende buitenwijken.',
+      transport_to_next: 'Trein, ≈1,5 uur naar New York.',
+    },
+    {
+      code: 'US', name: 'United States', days: 4, budget: 560, lat: 40.7128, lng: -74.0060,
+      destinations: [
+        { name: 'Manhattan (Times Square, Central Park)', lat: 40.7580, lng: -73.9855 },
+        { name: 'MoMA / The Met', lat: 40.7794, lng: -73.9632 },
+        { name: 'Brooklyn (Williamsburg, DUMBO)', lat: 40.7081, lng: -73.9571 },
+      ],
+      notes: 'De duurste stop van de route — een privékamer/klein Airbnb, geen dorm, past nog binnen de tussen-budget-en-comfort-stijl.',
+      transport_to_next: 'Trein, ≈4 uur naar Boston (of het directe DC-Boston-traject, ≈7,5-8 uur, als je Philadelphia/New York had overgeslagen).',
+    },
+    {
+      code: 'US', name: 'United States', days: 3, budget: 345, lat: 42.3601, lng: -71.0589,
+      destinations: [
+        { name: 'Freedom Trail', lat: 42.3601, lng: -71.0589 },
+        { name: 'Harvard & Cambridge', lat: 42.3770, lng: -71.1167 },
+        { name: 'Fenway', lat: 42.3467, lng: -71.0972 },
+      ],
+      notes: 'Reisadvies (2026-08): VS staat groen — normale voorzichtigheid, geen bijzondere restricties. Alle vier steden zitten in een reële veiligheidsverbetering (misdaadcijfers dalen in NYC/DC/Philadelphia).',
+      transport_to_next: 'Einde van deze route — rechtstreekse terugvlucht vanuit Boston naar Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'September',
+    travel_style: 'Trein (Northeast Corridor) tussen alle vier steden — geen huurauto nodig, 15-20+ treinen per dag per traject.',
+    climate_summary: 'Half september-eind oktober: mild, herfstkleuren richting New England, ruim voorbij de zomerhitte/vochtigheid van juli-augustus. Vermijd november-maart (bitter koud) en juli-augustus (drukkend heet/vochtig in DC/New York).',
+    description: 'Washington DC, Philadelphia, New York en Boston via de Northeast Corridor-trein — vier klassieke Amerikaanse steden op één rechte lijn.',
+    notes: 'Gebouwd (2026-08) na een audit die de hele Amerikaanse oostkust volledig miste in Route Builder — geen bewuste keuze, gewoon nooit gebouwd. Op Youri\'s verzoek een losse, op zichzelf staande trip, niet samengevoegd met North America Grand Traverse 🌎 (die blijft ongewijzigd bestaan). Onderzocht via een WebSearch-backed research-agent: route/dagen/budget/seizoen/transport/veiligheid. Bewust géén verlenging naar het zuiden (Charleston/Savannah/Miami/New Orleans) — ten zuiden van DC rijdt er nog maar ~1 trein per dag, orkaanseizoen overlapt met het beste NEC-seizoen, en Miami/het zuiden verdienen een eigen aanpak (zie Florida 🐊, apart gebouwd). 12 dagen, €1.365 grondkosten. Nog niet getoetst aan actuele prijzen — behandel als een eerste concept, geen boekbaar plan.',
+  });
+}
+
+function rbBuildUSSouthwestRoute() {
+  return rbBuildFlatSeedRoute('US Zuidwesten 🏜️', [
+    {
+      code: 'US', name: 'United States', days: 3, budget: 375, lat: 37.2982, lng: -113.0263,
+      destinations: [
+        { name: 'Angels Landing', lat: 37.2690, lng: -112.9496 },
+        { name: 'The Narrows', lat: 37.2999, lng: -112.9484 },
+        { name: 'Emerald Pools', lat: 37.2586, lng: -112.9723 },
+      ],
+      notes: 'Instap: vlucht Amsterdam-Las Vegas (met overstap, meestal via een Amerikaanse hub, ±13-15 uur; beste periode half september-half oktober). Prijsindicatie webonderzoek 2026-08, momentopname. Huurauto ophalen in Vegas — een overnachting daar is optioneel, niet nodig voor de route zelf.',
+      transport_to_next: 'Auto, ≈1u50 naar Bryce Canyon.',
+    },
+    {
+      code: 'US', name: 'United States', days: 2, budget: 250, lat: 37.5930, lng: -112.1871,
+      destinations: [
+        { name: 'Bryce Amphitheater', lat: 37.5930, lng: -112.1871 },
+        { name: "Navajo Loop / Queen's Garden Trail", lat: 37.6283, lng: -112.1660 },
+      ],
+      transport_to_next: 'Auto, ≈3 uur naar Page.',
+    },
+    {
+      code: 'US', name: 'United States', days: 2, budget: 250, lat: 36.9147, lng: -111.4558,
+      destinations: [
+        { name: 'Antelope Canyon', lat: 36.8619, lng: -111.4103 },
+        { name: 'Horseshoe Bend', lat: 36.8791, lng: -111.5104 },
+      ],
+      notes: 'Antelope Canyon is alleen te bezoeken met een verplichte Navajo-gids (sinds een overstroming in 1997) — reken ~$80 p.p. all-in bij een erkende operator (Ken\'s Tours/Dixie Ellis\'), een aparte kostenpost bovenop het dagbudget.',
+      transport_to_next: 'Auto, ≈2-2,5 uur naar Monument Valley.',
+    },
+    {
+      code: 'US', name: 'United States', days: 1, budget: 125, lat: 36.9989, lng: -110.1007,
+      destinations: [{ name: '17-mile scenic loop', lat: 36.9989, lng: -110.1007 }],
+      notes: 'Navajo Nation-entree ($15 p.p. + $20/auto, contant) — niet gedekt door de America the Beautiful-jaarpas (die geldt alleen voor NPS-parken: Zion/Bryce/Grand Canyon).',
+      transport_to_next: 'Auto (via Cameron), ≈2,5-3 uur naar Grand Canyon South Rim.',
+    },
+    {
+      code: 'US', name: 'United States', days: 2, budget: 250, lat: 36.0544, lng: -112.1401,
+      destinations: [
+        { name: 'Rim Trail', lat: 36.0544, lng: -112.1401 },
+        { name: 'Bright Angel Trailhead', lat: 36.0572, lng: -112.1445 },
+      ],
+      notes: 'Een America the Beautiful-jaarpas (~€75) is de moeite waard zodra je Zion, Bryce én hier komt.',
+      transport_to_next: 'Auto, ≈3,5-4 uur naar Sedona.',
+    },
+    {
+      code: 'US', name: 'United States', days: 2, budget: 250, lat: 34.8697, lng: -111.7610,
+      destinations: [
+        { name: 'Cathedral Rock', lat: 34.8214, lng: -111.7897 },
+        { name: 'Red Rock State Park', lat: 34.8236, lng: -111.8302 },
+      ],
+      notes: 'Reisadvies (2026-08): VS staat groen. Zomer is hier levensgevaarlijk heet (Page/Monument Valley/de canyonbodem regelmatig 38°C+) — vandaar het najaarsseizoen, niet mei-juni.',
+      transport_to_next: 'Einde van deze route — auto naar Phoenix (≈2 uur), huurauto inleveren (one-way, drop-off-vergoeding), terugvlucht naar Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'September',
+    travel_style: 'Huurauto, one-way Las Vegas-Phoenix — een rechte oostwaartse sweep zonder terugrijden.',
+    climate_summary: 'Half september-half oktober: stabiel, droog, ver van de dodelijke zomerhitte. Voor- en naseizoen (april-mei) is ook begaanbaar maar drukker/duurder; november-februari brengt sneeuw op de hogere delen (Bryce ligt op 2.400m).',
+    description: 'Zion, Bryce Canyon, Antelope Canyon, Monument Valley, Grand Canyon en Sedona — een woestijn-roadtrip met huurauto van Las Vegas naar Phoenix.',
+    notes: 'Gebouwd (2026-08) na een audit die de hele Amerikaanse zuidwestelijke woestijn volledig miste in Route Builder. Op Youri\'s verzoek een losse, op zichzelf staande trip, niet samengevoegd met North America Grand Traverse 🌎. Onderzocht via een WebSearch-backed research-agent. Bewuste keuze voor one-way Phoenix in plaats van een lus terug naar Vegas: kost een inleververgoeding voor de huurauto, maar behoudt Sedona en Phoenix is een logischer knooppunt (Southwest Airlines-hub, direct aan de I-10 richting Texas) dan de doodlopende richting die Vegas is. 12 dagen, €1.500 grondkosten. Nog niet getoetst aan actuele prijzen — behandel als een eerste concept, geen boekbaar plan.',
+  });
+}
+
+function rbBuildHawaiiRoute() {
+  return rbBuildFlatSeedRoute('Hawaii 🐢', [
+    {
+      code: 'US', name: 'United States', days: 4, budget: 640, lat: 21.3069, lng: -157.8583,
+      destinations: [
+        { name: 'Diamond Head', lat: 21.2620, lng: -157.8053 },
+        { name: 'Waikiki', lat: 21.2793, lng: -157.8293 },
+        { name: 'Koko Crater Trail', lat: 21.2810, lng: -157.6987 },
+        { name: 'Chinatown Honolulu', lat: 21.3097, lng: -157.8626 },
+      ],
+      notes: 'Instap: vlucht Amsterdam-Honolulu (met overstap, meestal via een Amerikaanse westkust-hub; ±18-20 uur totaal; beste periode april-mei of september-oktober). Prijsindicatie webonderzoek 2026-08, momentopname. Enige eiland met een echt OV-alternatief (TheBus) — een huurauto is hier optioneel, in tegenstelling tot Maui/Kauai.',
+      transport_to_next: 'Vlucht Honolulu-Kahului (Maui), Hawaiian Airlines/Southwest, veelvuldig, ±35-45 minuten.',
+    },
+    {
+      code: 'US', name: 'United States', days: 5, budget: 800, lat: 20.7984, lng: -156.3319,
+      destinations: [
+        { name: 'Road to Hana', lat: 20.7581, lng: -156.0356 },
+        { name: 'Haleakalā National Park', lat: 20.7204, lng: -156.1552 },
+        { name: 'Lahaina', lat: 20.8783, lng: -156.6825 },
+      ],
+      notes: 'Huurauto hier wél nodig (Road to Hana). Let op: 2026 kent een reële autoverhuur-krapte op Maui (vlootrecalls, weektarieven soms +180% t.o.v. vorig jaar) — ruim vooraf boeken is hier geen overdreven voorzorg.',
+      transport_to_next: 'Vlucht Kahului-Lihue (Kauai), ±30-40 minuten.',
+    },
+    {
+      code: 'US', name: 'United States', days: 5, budget: 800, lat: 22.0964, lng: -159.5261,
+      destinations: [
+        { name: 'Waimea Canyon', lat: 22.0808, lng: -159.6653 },
+        { name: 'Nā Pali Coast', lat: 22.1883, lng: -159.5896 },
+        { name: "Hanakāpī'ai Falls (dagtocht)", lat: 22.2166, lng: -159.5921 },
+        { name: "Kōke'e State Park", lat: 22.1319, lng: -159.6394 },
+      ],
+      notes: 'De sterkste natuur van de drie eilanden, maar ook hier vlootkrapte (weektarieven +65% t.o.v. vorig jaar). ⚠️ De volledige Kalalau Trail (11 mijl) is écht gevaarlijk (18+ dodelijke slachtoffers, exclusief verdrinkingen) — deze route doet alleen de dagtocht tot Hanakāpī\'ai Falls (3,2km, geen permit nodig), niet de volledige trail. Respectvol toerisme: reële spanning rond overtoerisme op Hawaï (druk op water/land, heilige plekken) — blijf op aangewezen paden, respecteer reserveringslimieten, geen ongevraagde omwegen naar heilige plekken.',
+      transport_to_next: 'Einde van deze route — terugvlucht vanuit Lihue via Honolulu naar Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'Inter-eilandvluchten (Hawaiian Airlines/Southwest, elke 30-60 min op de drukke routes) plus huurauto per eiland.',
+    climate_summary: 'April-mei (of september-oktober) vermijdt orkaanseizoen (juni-september) en de natste wintermaanden, met minder drukte/lagere prijzen dan de winterpiek — ondanks dat de winter ook walvisseizoen is, wegen minder toegankelijkheid en hogere kosten daar niet tegenop.',
+    description: 'Oahu, Maui en Kauai — drie eilanden, van stad en cultuur (Oahu) naar de Road to Hana (Maui) tot de sterkste natuur van de drie (Kauai).',
+    notes: 'Gebouwd (2026-08) na een audit die Hawaii volledig miste in Route Builder. Op Youri\'s verzoek een losse, op zichzelf staande trip, niet samengevoegd met North America Grand Traverse 🌎. Onderzocht via een WebSearch-backed research-agent. Big Island (vulkanen) bewust niet meegenomen — waardevol, maar +€150-250 aan vluchten/huurauto en 4-5 extra dagen, alleen te rechtvaardigen als vulkanen een harde wens zijn; bewaar als mogelijke vierde-eiland-uitbreiding later (dan ook Kīlauea\'s status checken via HVO/USGS, sinds eind 2024 actief). 14 dagen, €2.240 grondkosten. Nog niet getoetst aan actuele prijzen — behandel als een eerste concept, geen boekbaar plan.',
+  });
+}
+
+function rbBuildFloridaRoute() {
+  return rbBuildFlatSeedRoute('Florida 🐊', [
+    {
+      code: 'US', name: 'United States', days: 3, budget: 450, lat: 25.7617, lng: -80.1918,
+      destinations: [
+        { name: 'South Beach (Art Deco District)', lat: 25.7826, lng: -80.1341 },
+        { name: 'Little Havana', lat: 25.7658, lng: -80.2192 },
+        { name: 'Wynwood Walls', lat: 25.8010, lng: -80.1994 },
+        { name: 'Coral Gables & Coconut Grove', lat: 25.7215, lng: -80.2684 },
+      ],
+      notes: 'Instap: rechtstreekse vlucht Amsterdam-Miami (KLM, ±9-10 uur; beste periode december-april, droog seizoen). Prijsindicatie webonderzoek 2026-08, momentopname. Blijf rond South Beach (5th-25th St)/Brickell/Coral Gables/Coconut Grove/Wynwood (overdag); wees voorzichtig in Overtown/Liberty City/Little Haiti en in Little Havana voorbij 8th St/22nd Ave, vooral \'s avonds. Bewust géén Orlando/pretparken — $150-200+/dag alleen al aan tickets, en sluit niet aan bij een reisstijl die natuur/cultuur boven generieke toeristenattracties zet.',
+      transport_to_next: 'Auto, ≈45-90 minuten naar de Everglades (Homestead/Flamingo-kant).',
+    },
+    {
+      code: 'US', name: 'United States', days: 2, budget: 200, lat: 25.3928, lng: -80.6371,
+      destinations: [
+        { name: 'Anhinga Trail', lat: 25.3861, lng: -80.6114 },
+        { name: 'Airboat-tocht (gegidst)', lat: 25.7617, lng: -80.6081 },
+        { name: 'Flamingo', lat: 25.1398, lng: -80.9231 },
+      ],
+      notes: 'Alligator-veiligheid: minimaal 15 meter afstand, nooit voeren, niet zwemmen bij schemer/ochtend — 2026 zag een reële piek in incidenten (droogte duwt alligators richting bewoonde gebieden). Kies een gegidste airboat-/wandeltocht (Anhinga Trail) boven zelfstandig door ondiep water waden.',
+      transport_to_next: 'Auto, ≈1-1,5 uur naar Key Largo.',
+    },
+    {
+      code: 'US', name: 'United States', days: 2, budget: 260, lat: 25.0865, lng: -80.4473,
+      destinations: [
+        { name: 'John Pennekamp Coral Reef State Park', lat: 25.1276, lng: -80.4062 },
+        { name: 'Islamorada', lat: 24.9391, lng: -80.6276 },
+      ],
+      notes: 'Snorkelen/duiken op het rif — reef-safe zonnebrand, schuifel je voeten door het zand (roggen), raak het rif niet aan (vuurkoraal, zee-egels).',
+      transport_to_next: 'Auto via de Overseas Highway (US-1), ≈2-2,5 uur naar Key West (optionele tussenstop in Marathon bij de Seven Mile Bridge).',
+    },
+    {
+      code: 'US', name: 'United States', days: 3, budget: 450, lat: 24.5551, lng: -81.7800,
+      destinations: [
+        { name: 'Old Town Key West', lat: 24.5551, lng: -81.7800 },
+        { name: 'Mallory Square (zonsondergang)', lat: 24.5610, lng: -81.8080 },
+        { name: 'Hemingway House', lat: 24.5545, lng: -81.8017 },
+      ],
+      notes: 'De Overseas Highway kruist 42 bruggen (incl. de Seven Mile Bridge) — een All-American Road, geen tol op US-1 zelf. Reisverzekering vóór vertrek boeken, niet vlak ervoor: zodra een orkaan een naam krijgt, sluiten verzekeraars die storm uit van polissen die daarna zijn afgesloten. Old Town zelf is goed te voet/fiets te doen, geen auto nodig.',
+      transport_to_next: 'Einde van deze route — terugrijden naar Miami (≈3-4 uur) voor een rechtstreekse terugvlucht naar Amsterdam (Key West\'s eigen vliegveld is klein, bijna altijd met overstap in Miami).',
+    },
+  ], {
+    best_starting_month: 'Januari',
+    travel_style: 'Huurauto verplicht (Miami\'s OV bereikt de Everglades/Keys niet) — alleen Key West Old Town is zelf goed te voet/fiets te doen.',
+    climate_summary: 'December-april (droog seizoen) is de enige verstandige keuze — vermijd orkaanseizoen (juni-november, piek augustus-oktober) en de drukkende zomervochtigheid.',
+    description: 'Miami, de Everglades en de Florida Keys tot en met Key West — zuid-Florida via de Overseas Highway.',
+    notes: 'Gebouwd (2026-08) op Youri\'s eigen verzoek — hij noemde Florida expliciet als "een beetje apart als omgeving", los van de Noordoost- en Zuidwesten-tripjes. Onderzocht via een WebSearch-backed research-agent: route/dagen/budget/seizoen/transport/veiligheid. Bewust een gefocuste zuid-Florida-route: Orlando/pretparken weggelaten (zie hierboven), en St. Augustine/de Gulf Coast (Naples/Sarasota)/de Panhandle ook — die verdunnen de focus of liggen simpelweg te ver (St. Augustine is al ~5-5,5 uur enkele reis vanaf Miami). 10 dagen, €1.360 grondkosten. Nog niet getoetst aan actuele prijzen — behandel als een eerste concept, geen boekbaar plan.',
+  });
+}
+
+/**
+ * Alaska toegevoegd aan West-Canada: Rockies & Vancouver 🏔️ (2026-08) — Youri's expliciete keuze
+ * uit een AskUserQuestion ("samen met Vancouver, recommended") toen bleek dat Alaska zowel los als
+ * gecombineerd kon, in plaats van een nieuwe, deels overlappende standalone route met een derde
+ * Vancouver-vermelding te bouwen. Field-patch + region/block-insert, geen wholesale replace — deze
+ * route heeft geen eerder precedent voor wholesale-replace (in tegenstelling tot North America
+ * Grand Traverse 🌎 zelf), dus de veilige standaardkeuze (patchen, niet blind overschrijven) geldt
+ * hier onverkort. Geplaatst ná rbMigrateNorthAmericaRouteLogicOverhaul() in de init-volgorde (zie
+ * DOMContentLoaded) zodat een verse browser niet per ongeluk de wholesale-replace van die eerdere
+ * migratie over deze toevoeging heen laat lopen.
+ */
+function rbMigrateAlaskaAddition() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_ALASKA_ADDITION)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_ALASKA_ADDITION, '1');
+
+  const route = rbRoutes.find(r => r.name === 'West-Canada: Rockies & Vancouver 🏔️');
+  if (!route) return;
+  if (route.blocks.some(b => b.country_code === 'US')) return; // already has Alaska somehow
+
+  const vancouverBlock = route.blocks.find(b => (b.destinations || []).some(d => d.name === 'Stanley Park'));
+  if (vancouverBlock) {
+    vancouverBlock.transport_to_next = 'Vlucht Vancouver-Anchorage (~3,5-4 uur) om verder te reizen naar Alaska — of, als je hier wilt stoppen, terugvlucht vanuit Vancouver naar Amsterdam (deze route werkt prima als kortere versie zonder Alaska).';
+  }
+
+  const alaskaRegion = {
+    id: rbNewRegionId(), name: 'Alaska', season: 'Juni-Augustus', budget: 1600, collapsed: false,
+    notes: 'Vlucht Vancouver-Anchorage, dan overland/per trein verder. Optioneel — de route werkt ook prima als je bij Vancouver stopt.',
+  };
+  route.regions.push(alaskaRegion);
+
+  route.blocks.push(
+    rbBuildBlock('US', 'United States', {
+      region_id: alaskaRegion.id, days: 2, budget: 320, lat: 61.2181, lng: -149.9003,
+      destinations: [
+        { name: 'Downtown Anchorage', lat: 61.2181, lng: -149.9003 },
+        { name: 'Earthquake Park', lat: 61.1953, lng: -149.9727 },
+      ],
+      notes: 'Aankomst/logistiek — huurauto ophalen of aansluiten op de Alaska Railroad.',
+      transport_to_next: 'Alaska Railroad Denali Star (~8 uur, alleen half mei-half september) of auto via de Parks Highway naar Denali National Park.',
+    }),
+    rbBuildBlock('US', 'United States', {
+      region_id: alaskaRegion.id, days: 4, budget: 640, lat: 63.1148, lng: -151.1926,
+      destinations: [
+        { name: 'Denali-bezoekerscentrum', lat: 63.1717, lng: -150.9317 },
+        { name: 'Savage River', lat: 63.4478, lng: -149.7856 },
+        { name: 'Kantishna / Wonder Lake (shuttlebus)', lat: 63.4872, lng: -150.9067 },
+      ],
+      notes: 'Privéauto\'s mogen niet verder dan mijl 15 — een shuttle-/tourbus is verplicht voor het park-interieur, ruim vooraf boeken (alleen half mei-half september beschikbaar). Beren onderweg: spray binnen handbereik, in groepen wandelen, eten goed opbergen.',
+      transport_to_next: 'Auto of trein terug naar Anchorage (~4,5 uur), dan verder naar Seward (~2,5 uur) — of de seizoensgebonden Coastal Classic-trein rechtstreeks (~4 uur totaal).',
+    }),
+    rbBuildBlock('US', 'United States', {
+      region_id: alaskaRegion.id, days: 4, budget: 640, lat: 60.1042, lng: -149.4422,
+      destinations: [
+        { name: 'Kenai Fjords National Park (gletsjer- en wildlife-boottocht)', lat: 59.9229, lng: -149.6503 },
+        { name: 'Exit Glacier', lat: 60.1875, lng: -149.6294 },
+      ],
+      notes: 'Gletsjerterrein alleen begeleid (reële scheurrisico\'s). Reisverzekering met expliciete evacuatiedekking is hier geen overdreven voorzorg — reddingen kunnen tienduizenden dollars kosten en vallen vaak buiten een standaardpolis.',
+      transport_to_next: 'Einde van deze route — auto/trein terug naar Anchorage (~2,5 uur), dan terugvlucht naar Amsterdam (via Seattle/Vancouver, geen directe verbinding vanuit Anchorage).',
+    }),
+  );
+
+  route.description += ' Optioneel vervolg: Alaska (Anchorage, Denali National Park, Seward/Kenai Fjords).';
+  const note = 'Alaska toegevoegd (2026-08) na een audit die de hele regio miste in Route Builder — Youri\'s keuze om dit te combineren met Vancouver in plaats van een losse standalone route, omdat de vlucht Vancouver-Anchorage al de natuurlijke verbinding is. Onderzocht via een WebSearch-backed research-agent. Hard seizoensgebonden (half juni-half augustus) — de Denali-shuttlebussen, de Alaska Railroad en de Kenai Fjords-boottochten draaien allemaal alleen half mei-half september, wat toevallig al binnen deze route\'s bestaande juni-startvenster valt. Inside Passage/Juneau/Glacier Bay bewust niet meegenomen — geen enkele wegverbinding vanuit Anchorage (de Alaska Marine Highway-veerboot bedient Anchorage niet eens), alleen per vlucht of een aparte meerdaagse veerboot vanaf de Lower 48 — een eigen mini-expeditie, niet in te passen hier. Fairbanks (+2-3 dagen) bewust niet meegenomen — treinverbinding is er al, maar de belangrijkste trekker (aurora) is onzichtbaar door de witte nachten in de zomer. Nieuw totaal: 32 dagen (was 22), €5.875 grondkosten (was €4.275).';
+  if (route.notes && !route.notes.includes('Alaska toegevoegd (2026-08)')) {
+    route.notes += '\n\n' + note;
+  }
+
+  rbSave();
 }

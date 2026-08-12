@@ -12,6 +12,24 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Negende batch: vier losse VS/Hawaii-tripjes + Alaska bij Vancouver (2026-08)** — na een audit
+  die vier hele regio's (Noordoost, Zuidwesten, Alaska, Hawaii) miste in Route Builder, wilde Youri
+  expliciet géén grote samengevoegde uitbreiding van North America Grand Traverse 🌎 (die blijft
+  ongewijzigd bestaan) — in plaats daarvan losse, op zichzelf staande trips, want de stukken liggen
+  sowieso ver uit elkaar. Elk apart onderzocht via een WebSearch-backed research-agent (route/dagen/
+  budget/seizoen/transport/veiligheid) vóór het bouwen: **US Oostkust 🗽** (DC-Philadelphia-New York-
+  Boston via de Northeast Corridor-trein, 12d/€1.365), **US Zuidwesten 🏜️** (Las Vegas-Zion-Bryce-
+  Antelope Canyon-Monument Valley-Grand Canyon-Sedona-Phoenix, one-way huurauto, 12d/€1.500),
+  **Hawaii 🐢** (Oahu-Maui-Kauai, 14d/€2.240, Big Island bewust niet meegenomen) en **Florida 🐊**
+  (Miami-Everglades-Key Largo-Key West, 10d/€1.360, Orlando/pretparken en het noorden van Florida
+  bewust weggelaten — Youri's eigen toevoeging, "een beetje apart als omgeving").
+  **Alaska** kreeg geen eigen standalone route, maar is toegevoegd áán de bestaande
+  **West-Canada: Rockies & Vancouver 🏔️** (Youri's expliciete keuze: Vancouver-Anchorage is al de
+  natuurlijke vluchtverbinding) — Anchorage/Denali NP/Seward-Kenai Fjords als nieuwe derde regio,
+  10d/€1.600 erbij (route-totaal 22→32 dagen, €4.275→€5.875 grondkosten). Alle vier de losse trips en
+  de Alaska-toevoeging getest met een Node-smoketest (dagen/budget-totalen bevestigd, migratie
+  idempotent bevestigd — twee keer draaien voegt Alaska niet dubbel toe).
+
 - **Achtste batch: Dolomieten & Noord-Italië 🚡 (2026-08)** — de sterkste van de twee fly-in-
   reframes die in `ROUTE_BUILDER_MODULES.md` bij Central European Grand Roadtrip 🚗 stonden (de
   andere, Balkan-as-flyto, is Medium-beoordeeld en nog niet gebouwd). Zelfde 7-etappe lus als het
