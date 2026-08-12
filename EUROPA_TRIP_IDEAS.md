@@ -1,6 +1,7 @@
 # Europa — Trip Ideas
 
-Status: **batch 1 (Benelux) uitgewerkt, rest nog ruw.** Youri's eigen lijst (2026-08) van realistische
+Status: **batch 1 (Benelux) en batch 2 (Duitsland) uitgewerkt, rest nog ruw.** Youri's eigen lijst
+(2026-08) van realistische
 Europese trips — van lang weekend tot ~3 weken, allemaal "reëel en slim te maken" omdat ze binnen
 Europa blijven. Dit is bewust alleen duur + bestemming/route, geen route/budget/seizoen-detail —
 dat werken we samen per batch uit, zoals Route Builder's expedities dat ook kregen (zie de
@@ -74,20 +75,110 @@ budgetten bijgesteld (Ardennen, Luxemburg), drie bevestigd ongewijzigd. Nog stee
 prijsonderzoek op het niveau van Route Builder (geen los-geboekte-vlucht/visum-check nodig hier,
 alles eigen auto binnen Schengen) — behandel als een eerste concept, geen boekbaar plan.
 
-## 🇩🇪 Duitsland
+## 🇩🇪 Duitsland — batch 2, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-- [ ] 3–4 dagen — Keulen + Bonn + Rijn
-- [ ] 3–4 dagen — Moezel
-- [ ] 3–4 dagen — Hamburg
-- [ ] 3–4 dagen — Berlijn
-- [ ] 3–4 dagen — Dresden + Saksisch Zwitserland
-- [ ] 4–5 dagen — Beieren: München + Alpen
-- [ ] 4–5 dagen — Rijn + Moezel
-- [ ] 5–7 dagen — Beieren + Alpen
-- [ ] 5–7 dagen — Romantische Straße
-- [ ] 5–7 dagen — Zwarte Woud
-- [ ] 7–10 dagen — Duitsland: Berlijn + Dresden + Beieren
-- [ ] 7–10 dagen — Duitse Alpenroadtrip
+- [x] **4 dagen — Keulen + Bonn + Rijn** (was 3-4d). Köln (2d, Dom, Altstadt) — Bonn (stopover
+  onderweg naar het zuiden, niet een retourtje vanuit Köln — ligt er toch al tussenin;
+  Beethoven-Haus, t/m april 2027 ook een "Beethoven by Warhol"-expo) — Mittelrhein-vallei
+  (Rüdesheim/Bacharach/Loreley, 1-2d), met een korte 1-2u panoramavaart (bv. Bacharach↔St. Goar
+  langs de Loreley, KD-lijn 25 apr-4 okt 2026) i.p.v. een hele dagcruise. Eigen auto, Utrecht-Köln
+  ~2u12/222km, geen tol. Budget: ~€90-115/dag pp. Seizoen: mei-juni of sept-okt (wijnoogst/
+  kleuren, minder drukte dan juli-augustus). ⚠️ Kölner Dom vraagt vanaf 1 juli 2026 een betaald
+  ticket voor het interieur (nieuw). Parkeren in de oude binnensteden is schaars/duur — Park+Ride
+  gebruiken.
+- [x] **4 dagen — Moezel** (was 3-4d). Trier (Porta Nigra, oudste stad van Duitsland) —
+  Bernkastel-Kues (~30 min) — Cochem (~45 min verder) — Burg Eltz. Eigen auto, Maastricht-Trier
+  ~2u/175km (dichtstbijzijnde Moezel-toegang vanuit NL). Budget: ~€75-100/dag pp. Seizoen: sept-okt
+  voor de Winzerfeste (wijnoogstfeesten) — dan wel drukker op de smalle valleiwegen. ⚠️ Burg Eltz
+  open 29 mrt-1 nov 2026, 09:30-17:00; geen auto tot bij het kasteel — parkeren bij Antoniusweg
+  (€4/auto, contant) + shuttle (€2pp, contant) of 30-40 min lopen; interieur alleen met gids
+  (inbegrepen, doorlopende tours vanaf 09:30, Engels beschikbaar) — **contant geld meenemen**.
+- [x] **5 dagen — Rijn + Moezel** (was 4-5d, combo van de twee hierboven). Betere volgorde dan het
+  simpelweg aan elkaar plakken: Köln/Bonn — Mittelrhein (Rüdesheim/Bacharach/Loreley) — **Koblenz**
+  (de natuurlijke schakel, waar de Moezel de Rijn ontmoet) — Cochem — Bernkastel-Kues — Trier
+  (eindpunt, dichtst bij NL voor de thuisreis — dus geen omweg/detour, maar de logische uitgang).
+  Budget: ~€85-110/dag pp. Seizoen: mei-juni of sept-okt.
+- [x] **4 dagen — Hamburg** (was 3-4d). Speicherstadt/HafenCity, Elbphilharmonie (Plaza gratis maar
+  met tijdslot — gratis same-day of €3 online tot 18 weken vooraf), Reeperbahn/St. Pauli, Miniatur
+  Wunderland (nieuwe Azië-sectie in 2026, vooraf timed-entry boeken — weekend/vakantie zonder
+  boeking = tot 2u wachten), plus de Fischmarkt (zondagochtend) of een halve dag Lübeck (45 min per
+  trein, echte Hanze-cultuur). Geen directe trein vanuit NL (overstap Osnabrück, ~5-5u16, vanaf
+  €38-40) of eigen auto (~460km/4,5u, tolvrij). Budget: ~€85-110/dag pp. Seizoen: mei-september,
+  mei/september beste prijs-drukte-balans.
+- [x] **4 dagen — Berlijn** (was 3-4d). Brandenburger Tor/Reichstag (koepel gratis, vooraf online
+  registreren) — Museumsinsel (dagpas €24) — East Side Gallery (volledig open) — Kreuzberg
+  (Turkse markt di/vr) + Mauerpark (zondag vlooienmarkt/karaoke) voor de minder-toeristische kant.
+  Directe ICE 6x/dag, ~5u42, vanaf €38 — duidelijk beter dan vliegen (deur-tot-deur maar marginaal
+  sneller, duurder) of de auto (~6u, geen voordeel). Budget: ~€80-105/dag pp — Berlijn blijft
+  opvallend goedkoop voor een hoofdstad. Seizoen: mei-september voor het weer, maar ook
+  kerstmarkten/winter werkt goed (minder weersgevoelig, lagere hotelprijzen). ⚠️ Pergamon Museum
+  dicht voor renovatie tot juli 2027 (deels gecompenseerd door de "Das Panorama"-expo, €14).
+- [x] **4 dagen — Dresden + Saksisch Zwitserland** (was 3-4d). Dresden (1,5-2d: Altstadt,
+  Frauenkirche, Zwinger) — Saksisch Zwitserland NP (2d: Bastei-brug, wandelen). Ver vanuit NL — ICE
+  via Berlijn ~8-10u (overweeg een nachtstop in Berlijn) of eigen auto ~734km/6u30 (ook nodig om
+  wandelstartpunten te bereiken). Budget: ~€75-95/dag pp in Dresden, iets lager bij het park.
+  Seizoen: voorjaar of september (minder drukte/insecten); vermijd winter (ijs op de
+  zandsteentrappen). ⚠️ Frauenkirche volledig gerestaureerd (2005), koepelbeklimming €12 (alleen
+  ter plekke te koop, niet online). De Bastei-brug zelf is open, maar de aangrenzende Felsenburg
+  Neurathen-ruïne is dicht sinds sept 2023 (rotsstabiliteit, geen bevestigde 2026-heropening) — ga
+  via het wandelpad vanaf Rathen i.p.v. de bus/parkeerkant, en vroeg op de dag (1,5 miljoen
+  bezoekers/jaar); check vooraf de "gesloten paden"-pagina van het Nationalpark.
+- [x] **5 dagen — Beieren: München + Alpen** (was 4-5d). München (2d: Marienplatz, Englischer
+  Garten, Deutsches Museum) — Garmisch-Partenkirchen (~90km/1-1,5u) — Füssen/Hohenschwangau (~50
+  min verder) — een rechte zuidwaartse lijn, geen omweg. Budget: ~€90-130/dag pp. Seizoen:
+  mei-september. ⚠️ Zugspitze-kabelbaan ~€62pp retour (volledige route) of €47 (alleen
+  Eibsee-kabelbaan) — vooraf online boeken bij mooi weer/weekend. Neuschwanstein alleen met
+  verplichte getimede rondleiding (~€17,50-21pp), reserveren max. 8 weken vooraf en in de praktijk
+  noodzakelijk (kaartjes voor 10-14u snel uitverkocht in de zomer) — het slot blijft open tijdens
+  de meerjarige restauratie (tot ~2029). Deutsches Museum: ongeveer de helft (mijnbouwhal,
+  planetarium) dicht tot ~2028, het open deel (luchtvaart/ruimtevaart/robotica) is nog ruim een
+  dagdeel waard.
+- [x] **6 dagen — Beieren + Alpen** (was 5-7d, langere versie van de vorige met Berchtesgaden
+  erbij). Zelfde route als hierboven, plus Berchtesgaden/Königssee als laatste stop — via de ring
+  om München/A8 richting Salzburg (2u12-2u20/~200km vanaf Garmisch/Füssen — geografisch de andere
+  kant, dus bewust als lus-sluitstuk ingepland, geen korte uitstap). Budget: ~€95-110/dag pp incl.
+  verblijf in Berchtesgaden. ⚠️ Königssee-boottocht naar St. Bartholomä ~€16,90pp retour (halve
+  route) of €29,80 (volledige route naar Salet).
+- [x] **6 dagen — Romantische Straße** (was 5-7d). Officiële gesigneerde route bevestigd: Würzburg
+  — Rothenburg ob der Tauber — Nördlingen — Augsburg — Füssen (via Landsberg am Lech), 413km
+  totaal, geen backtracking. NL-Würzburg ~5u/550km. Budget: ~€75-95/dag pp in de kleinere
+  Frankische steden, oplopend naar €110+ op de laatste dag bij Neuschwanstein. Seizoen: laat
+  voorjaar/vroege herfst (minder drukte in Rothenburg) — eind november-december voor Rothenburgs
+  Reiterlesmarkt (kerstmarkt) als heel ander maar bekend alternatief.
+- [x] **6 dagen — Zwarte Woud** (was 5-7d). Freiburg als basis — Titisee (~50km/45-60min) —
+  Triberg (watervallen, koekoeksklokken) — Baden-Baden (~65km/1u) — terug richting NL (noordwaarts,
+  geen omweg). NL-Freiburg 5-7u afhankelijk van startpunt. Budget: ~€85-100/dag pp. Seizoen: mei of
+  sept-okt voor prijs/drukte, zomer voor Titisee-zwemmen/hiken, herfst voor kleuren. ⚠️ Baden-Baden
+  heeft twee heel verschillende spa's — Caracalla Spa (badkleding, ~€21/2u-€35 dagkaart, casual/
+  familievriendelijk) vs. Friedrichsbad (traditioneel Romeins-Iers bad, **naakt en gemengd**, ~€36
+  zonder massage) — belangrijk om vooraf te weten welke je boekt.
+- [x] **9 dagen — Duitsland: Berlijn + Dresden + Beieren** (was 7-10d, combo van drie routes
+  hierboven). Berlijn (3-4d) — Dresden + Saksisch Zwitserland (2-3d) — trein/vlucht naar München —
+  Beieren/Alpen (3d, verkorte versie van "München + Alpen" hierboven). Berlijn-Dresden is kort
+  (trein ~2u), Dresden-München de langere sprong (trein ~4-4,5u of een korte vlucht) — beide reëel
+  binnen één dag te reizen. Budget: ~€85-105/dag pp gemiddeld. Seizoen: mei-september (het
+  Alpen-deel bepaalt dit).
+- [x] **9 dagen — Duitse Alpenroadtrip** (was 7-10d). Beter geframed als de officiële **"Deutsche
+  Alpenstraße"** (Duitse Alpenweg) — een aangewezen scenic route van Lindau tot Königssee, i.p.v.
+  simpelweg "Beieren nog een keer": Lindau (Bodensee) — Füssen (~101km/1u19) — Garmisch-
+  Partenkirchen (~51 min) — Chiemsee/Prien (~135km/1u41) — Berchtesgaden (~76km/1u01) — west-oost,
+  geverifieerd zonder backtracking. Budget: ~€80-105/dag pp, met twee piekdagen (Neuschwanstein+
+  Zugspitze, en Königssee) rond €120-140. Seizoen: juni-september voor volledige toegang tot
+  bergwegen/kabelbanen/hooggelegen paden. ⚠️ Zugspitze-kabelbaan volledig dicht 9-13, 16-20 en
+  23-26 november 2026 voor onderhoud (irrelevant voor een zomertrip).
+
+**Algemeen (webcheck 2026-08)**: Duitsland heft geen algemene tol voor personenauto's op de
+Autobahn — de Pkw-Maut is in 2019 door het EU-Hof illegaal verklaard en nooit terugkeerd, alleen
+vrachtwagens/bussen >3,5t betalen Lkw-Maut. Parkeren bij Hohenschwangau/Neuschwanstein (~€8/dag) en
+Königssee (~€5-8/dag) is een reële extra kostenpost, niet in een vlak dagbudget verwerkt.
+
+**Geverifieerd (2026-08, standaard vanaf nu)**: alle 12 items WebSearch-backed gecontroleerd via
+drie parallelle research-agents (West: Rijn/Moezel; Noord/Oost: Hamburg/Berlijn/Dresden; Zuid:
+Beieren/Alpen/Zwarte Woud) — routevolgorde, actuele openingstijden/status, en budgetten. Twee
+route-verbeteringen kwamen uit de check zelf (Rijn+Moezel via Koblenz i.p.v. los aan elkaar
+plakken; Beieren+Alpen's Berchtesgaden bewust als lus-sluitstuk, niet als korte uitstap) — geen van
+de 12 originele ideeën bleek fundamenteel mis, wel meerdere budgetten/seizoenen/praktische details
+bijgesteld of aangevuld.
 
 ## 🇦🇹 Oostenrijk
 
@@ -395,7 +486,7 @@ Zie `README.md` voor de actuele status. Voorstel (redenen bij elk cluster), uit 
 volgorde:
 
 1. **Benelux** (6) — dichtst bij huis, kleinste lijst, goede eerste batch om het proces te ijken. **Gedaan (2026-08).**
-2. **Duitsland** (12) — buurland, grootste losse-land-lijst, veel variatie weekend→10 dagen.
+2. **Duitsland** (12) — buurland, grootste losse-land-lijst, veel variatie weekend→10 dagen. **Gedaan (2026-08), WebSearch-geverifieerd.**
 3. **Alpenlanden: Oostenrijk + Zwitserland** (12) — horen inhoudelijk samen (Alpen-thema), sluiten aan op Duitslands Beieren-items.
 4. **Frankrijk** (11).
 5. **Italië** (13).
