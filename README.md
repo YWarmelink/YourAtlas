@@ -201,6 +201,24 @@ Oostkust 🗽** (DC-Philadelphia-New York-Boston via train, 12d/€1.365), **US 
 choice — Vancouver-Anchorage is already the natural flight link), new total 32d/€5.875 (was
 22d/€4.275).
 
+## Europa Trip Ideas (nieuw, 2026-08 — niets uitgewerkt)
+
+See [`EUROPA_TRIP_IDEAS.md`](EUROPA_TRIP_IDEAS.md) — Youri's own big raw list (~230 items) of
+realistic European trips, from long weekend to ~3 weeks, organized by country/region. Different
+scale than Route Builder's grand expeditions — this is the "reëel en slim te maken" realistic-trip
+tier, not aspirational epics. Not yet decided where finished items will live (Trips sheet, a new
+category, or something else) — that's picked up once the first batch is actually worked out.
+
+**Status: nothing worked out yet.** Proposed batch order (see the bottom of that file for the
+full reasoning per cluster): (1) Benelux, (2) Duitsland, (3) Oostenrijk + Zwitserland, (4)
+Frankrijk, (5) Italië, (6) Spanje + Portugal, (7) Balkan-cluster (Kroatië/Slovenië/Bosnië/
+Montenegro/Albanië/Servië/Noord-Macedonië), (8) Centraal/Oost-Europa (Roemenië/Bulgarije/Hongarije/
+Tsjechië/Slowakije/Polen), (9) Griekenland, (10) Noord-Europa (Noorwegen/Zweden/Denemarken/
+Finland/IJsland), (11) Ierland + Schotland, (12) Baltische staten, (13) de combinatiesecties
+onderin het bestand (bewust laatst, want die hergebruiken de losse-landen-batches).
+
+**Next up: batch 1, Benelux** (6 items) — waiting on Youri to confirm before starting.
+
 ## Search
 
 `search.html` — one search box across Trips, Route Builder expeditions (incl. country blocks,
