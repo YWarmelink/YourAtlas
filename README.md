@@ -201,7 +201,7 @@ Oostkust 🗽** (DC-Philadelphia-New York-Boston via train, 12d/€1.365), **US 
 choice — Vancouver-Anchorage is already the natural flight link), new total 32d/€5.875 (was
 22d/€4.275).
 
-## Europa Trip Ideas (nieuw, 2026-08 — batches 1-3 klaar)
+## Europa Trip Ideas (nieuw, 2026-08 — batches 1-4 klaar)
 
 See [`EUROPA_TRIP_IDEAS.md`](EUROPA_TRIP_IDEAS.md) — Youri's own big raw list (~230 items) of
 realistic European trips, from long weekend to ~3 weeks, organized by country/region. Different
@@ -213,24 +213,26 @@ continent group in Route Builder's list view automatically. Not yet done: actual
 worked-out item into `routeBuilder.js` as a real `rbBuildXRoute()` — that's a separate step, likely
 done in one pass once several batches are ready rather than per item.
 
-**Status: batches 1-3 done** — Benelux (6), Duitsland (12), Oostenrijk + Zwitserland (12).
-Route/dagen/budget/seizoen/vervoer per trip. Benelux was written from general knowledge then
-WebSearch-verified afterward; **standard practice from batch 2 onward**: 2-3 parallel
-WebSearch-backed research agents (grouped by sub-region) before writing anything, not after — this
-caught real route improvements each time (Duitsland: Rijn+Moezel via Koblenz, Berchtesgaden as a
-loop-closer; Oostenrijk/Zwitserland: picking non-overlapping concrete regions for the two vaguely-
-named "[Land] Alpen" items — Pinzgau/Zell am See-Kaprun and Zermatt/Matterhorn respectively).
-Proposed batch order (see the bottom of that file for the full reasoning per cluster): (1)
-~~Benelux~~ **done**, (2) ~~Duitsland~~ **done**, (3) ~~Oostenrijk + Zwitserland~~ **done**, (4)
-Frankrijk, (5) Italië, (6) Spanje + Portugal, (7) Balkan-cluster (Kroatië/Slovenië/Bosnië/
-Montenegro/Albanië/Servië/Noord-Macedonië), (8) Centraal/Oost-Europa (Roemenië/Bulgarije/Hongarije/
-Tsjechië/Slowakije/Polen), (9) Griekenland, (10) Noord-Europa (Noorwegen/Zweden/Denemarken/
-Finland/IJsland), (11) Ierland + Schotland, (12) Baltische staten, (13) de combinatiesecties
-onderin het bestand (bewust laatst, want die hergebruiken de losse-landen-batches).
+**Status: batches 1-4 done** — Benelux (6), Duitsland (12), Oostenrijk + Zwitserland (12),
+Frankrijk (11). Route/dagen/budget/seizoen/vervoer per trip. Benelux was written from general
+knowledge then WebSearch-verified afterward; **standard practice from batch 2 onward**: 2-3
+parallel WebSearch-backed research agents (grouped by sub-region) before writing anything, not
+after — this caught real route improvements each time (Duitsland: Rijn+Moezel via Koblenz,
+Berchtesgaden as a loop-closer; Oostenrijk/Zwitserland: non-overlapping concrete regions for the
+vague "[Land] Alpen" items; Frankrijk: Bretagne limited to the north for time reasons, French Alps
+became Écrins instead of Chamonix to avoid overlap with Switzerland, the north-south roadtrip
+follows the Burgundy-Rhône spine instead of Loire-Dordogne to avoid a real backtrack — plus a
+time-sensitive finding, the Bayeux Tapestry isn't viewable in Bayeux at all in 2026, on loan to the
+British Museum from Sept 2026). Proposed batch order (see the bottom of that file for the full
+reasoning per cluster): (1) ~~Benelux~~ **done**, (2) ~~Duitsland~~ **done**, (3) ~~Oostenrijk +
+Zwitserland~~ **done**, (4) ~~Frankrijk~~ **done**, (5) Italië, (6) Spanje + Portugal, (7)
+Balkan-cluster (Kroatië/Slovenië/Bosnië/Montenegro/Albanië/Servië/Noord-Macedonië), (8) Centraal/
+Oost-Europa (Roemenië/Bulgarije/Hongarije/Tsjechië/Slowakije/Polen), (9) Griekenland, (10)
+Noord-Europa (Noorwegen/Zweden/Denemarken/Finland/IJsland), (11) Ierland + Schotland, (12)
+Baltische staten, (13) de combinatiesecties onderin het bestand (bewust laatst, want die
+hergebruiken de losse-landen-batches).
 
-**Next up: batch 4, Frankrijk** (11 items) — waiting on Youri to confirm before starting.
-
-**Next up: batch 2, Duitsland** (12 items) — waiting on Youri to confirm before starting.
+**Next up: batch 5, Italië** (13 items) — waiting on Youri to confirm before starting.
 
 ## Search
 

@@ -1,7 +1,7 @@
 # Europa — Trip Ideas
 
-Status: **batch 1 (Benelux), batch 2 (Duitsland) en batch 3 (Oostenrijk + Zwitserland) uitgewerkt,
-rest nog ruw.** Youri's eigen lijst (2026-08) van realistische
+Status: **batch 1 (Benelux), batch 2 (Duitsland), batch 3 (Oostenrijk + Zwitserland) en batch 4
+(Frankrijk) uitgewerkt, rest nog ruw.** Youri's eigen lijst (2026-08) van realistische
 Europese trips — van lang weekend tot ~3 weken, allemaal "reëel en slim te maken" omdat ze binnen
 Europa blijven. Dit is bewust alleen duur + bestemming/route, geen route/budget/seizoen-detail —
 dat werken we samen per batch uit, zoals Route Builder's expedities dat ook kregen (zie de
@@ -291,19 +291,127 @@ tolkosten, en budgetten. Grootste inhoudelijke keuze: bij de vage items "Oostenr
 hun eigen land te vermijden (Pinzgau/Zell am See-Kaprun resp. Zermatt/Matterhorn) — bij elke keuze
 is de onderbouwing waarom die regio niet overlapt expliciet meegenomen.
 
-## 🇫🇷 Frankrijk
+## 🇫🇷 Frankrijk — batch 4, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-- [ ] 3–4 dagen — Elzas
-- [ ] 3–4 dagen — Parijs
-- [ ] 4–5 dagen — Normandië
-- [ ] 4–5 dagen — Bretagne
-- [ ] 5–7 dagen — Loire + kastelen
-- [ ] 5–7 dagen — Provence
-- [ ] 5–7 dagen — Franse Alpen
-- [ ] 7–10 dagen — Zuid-Frankrijk
-- [ ] 7–10 dagen — Franse Alpen + Provence
-- [ ] 10–14 dagen — Frankrijk roadtrip noord → zuid
-- [ ] 10–14 dagen — Atlantische kust Frankrijk
+- [x] **4 dagen — Elzas** (was 3-4d). Strasbourg (Petite France, kathedraal+astronomische klok,
+  Kammerzell, Rohan-paleis) — Colmar als basis (oude stad, Klein Venetië, Unterlinden) — Riquewihr/
+  Hunawihr/Ribeauvillé/Kaysersberg (rustiger, onderschat) + een omweg naar Haut-Koenigsbourg-kasteel
+  — Eguisheim vroeg (voor de bussen) + Turckheim. Eigen auto — Amsterdam-Strasbourg ~600km/5,5-6u,
+  **volledig tolvrij** (via Duitse Autobahn, A35 Strasbourg tolvrij) — trein bestaat maar is 8u+ met
+  overstappen en nutteloos ter plekke (de dorpjes liggen niet aan het spoor). Budget: ~€100-150/dag
+  voor 2 personen aan hotel + €45-60/dag eten + €15-35 proeverijen/activiteiten. Seizoen: half
+  september-half oktober (wijnoogst) of mei-juni. ⚠️ Klokkenspel €3, toren €8, Haut-Koenigsbourg
+  ~€10; parkeren in de dorpjes is beperkt/betaald — buiten Riquewihr's muren parkeren.
+- [x] **4 dagen — Parijs** (was 3-4d). Île de la Cité + Le Marais (rustiger, "echte cultuur"-wijk)
+  — Louvre + Tuileries — Eiffeltoren/Trocadéro + **Musée Rodin** (7e, rustig, prachtige tuin, minder
+  toeristisch dan de klassiekers) — Montmartre. Thalys/Eurostar AMS-Paris Nord ~3u, vanaf €35
+  (vaak €55-135) — **trein wint duidelijk**, autorijden/parkeren is onpraktisch voor
+  museum-hoppen (auto ~500km/5u+, tol ~€15-20 heen). Budget: ~€90-130/dag hotel + €45-60 eten +
+  €25-40 activiteiten/OV. Seizoen: eind april-juni of sept-okt. ⚠️ Louvre €22-32, in 2026
+  waarschijnlijk grotendeels met tijdslot-reservering; Eiffeltoren €14,80-36,70 (trap vanaf 29 sept
+  2026 ook met verplichte reservering); Notre-Dame gratis entree (klokkentorens €16 extra); Museum
+  Pass (€105/4d) alleen lonend bij 4+ betaalde sites.
+- [x] **5 dagen — Normandië** (was 4-5d). NL→Honfleur (~7u) — Honfleur→Bayeux (1u15) — volledige
+  D-Day-stranden-dag (Omaha, Pointe du Hoc, begraafplaats) — Bayeux→Mont Saint-Michel (2,5u) —
+  abdij-ochtend, terugrit. Étretat bewust weggelaten — vraagt een aparte 2-3u omweg, Honfleur past
+  beter in de route. Amsterdam-Bayeux ~697km/6,5-7u, tol ~€35-55 heen. Budget: ~€100-150pp/dag
+  (verblijf €45-65, eten €40-55, activiteiten €15-30). Seizoen: mei-juni of september; vermijd 6
+  juni (D-Day-herdenking, druk/duur). ⚠️ **Bayeux-tapijt-museum**: dicht sinds sept 2025 voor
+  renovatie, heropent okt 2027; het tapijt zelf is te zien in het **British Museum, Londen, 10 sept
+  2026-11 juli 2027** — dus in 2026 nergens in Bayeux zelf te zien, pas in Londen vanaf september.
+  Gegidste D-Day-tour €93 (halve dag)/€168 (hele dag) pp; Mont St-Michel-parkeren €6,80-9,80/dag +
+  gratis shuttle; abdij-entree €13-16.
+- [x] **5 dagen — Bretagne** (was 4-5d, regio gekozen: **Saint-Malo-Dinan-Côte de Granit Rose**,
+  noord-Bretagne). Onderbouwing: Saint-Malo-Dinan is 33km/35min en Saint-Malo-Côte de Granit Rose
+  163km/~2u — alles blijft dicht bij elkaar. Carnac/Quiberon (zuid) toevoegen kost 2,5-2,8u
+  **per rit**, dus zowat 2 van de 5 dagen alleen aan rijden — niet de moeite waard. Route: Saint-Malo
+  (ramparts, gratis) — Saint-Malo volledige dag (Île du Grand Bé bij laag water, check getijtafels)
+  — Dinan (middeleeuwse oude stad) — Côte de Granit Rose/Ploumanac'h kustpad — Île de Bréhat of Cap
+  Fréhel, terugrit. Amsterdam-Saint-Malo 838km/7u48, tol ~€25-35 — geen nuttige NL-veerboot
+  (Brittany Ferries vaart alleen vanuit VK-havens), dus rijden. Budget: ~€70-100pp/dag verblijf +
+  €35-45 eten (zeevruchtenplateau €30-45) + €15-25 activiteiten/parkeren. Seizoen: mei-juni of
+  september (makkelijkere getijden, minder drukte). ⚠️ Bréhat/Sept-Îles-boottochten €15-25pp, apart
+  budgetteren.
+- [x] **6 dagen — Loire + kastelen** (was 5-7d). Basis Amboise (3 nachten) + Blois (2 nachten):
+  Amboise (Château d'Amboise + Clos Lucé, Da Vinci) — Chenonceau (dagtrip, ~30 min) — Chambord
+  (~45 min) + Cheverny dichtbij — Blois (Château Royal) — Villandry (tuinen) + Azay-le-Rideau
+  onderweg. Budget: ~€90-120/dag (verblijf €70-90 2-star/B&B, eten €30-40, één kasteel €15-20pp).
+  Seizoen: april-juni of september (vermijd juli/aug-drukte/hitte). NL-Amboise/Tours ~590-650km/
+  6,5-7,5u, tol ~€45-60 heen. ⚠️ Kasteel-entrees tellen snel op (3-4 kastelen = €50-70pp alleen aan
+  tickets) — combi-pas (Blois+Chambord+Chenonceau, bespaart ~11%) is de moeite waard bij 3+
+  kastelen.
+- [x] **6 dagen — Provence** (was 5-7d). Basis Avignon of een Luberon-dorp (3 nachten), dan
+  Arles-gebied (3 nachten): Avignon (Palais des Papes, Pont du Gard dichtbij) — Luberon-lus (Gordes
+  → Roussillon → Ménerbes) — Les Baux-de-Provence + Carrières des Lumières — Arles (Romeinse
+  sites) — Camargue-dagtrip (flamingo's, zoutvlakten, stranden). Budget: ~€85-110/dag (gîte/B&B
+  €65-85, eten €30-40, activiteiten €10-20). Seizoen: mei-juni of september — **lavendel** bloeit
+  pas eind juni-eerste week juli (Valensole/lager Luberon), wat de trip dan naar een heter/drukker
+  moment duwt — een bewuste trade-off, niet automatisch de beste keuze. NL-Avignon ~1.090km/
+  11,5-12u, tol ~€70-90 heen. ⚠️ Bergdorp-parkeren (Gordes €4/dag, Les Baux €5 eerste uur + meter),
+  Carrières des Lumières ~€16-17, Camargue-boot/paardentochten +€25-40.
+- [x] **6 dagen — Franse Alpen** (was 5-7d, regio gekozen: **Écrins Nationaal Park**
+  (Vallouise/Bérarde-gebied) i.p.v. Chamonix). Chamonix is uitstekend maar ligt vlak tegen de
+  Zwitserse grens/Genève — hoog overlap-risico met de al bestaande Zwitserland-Alpen-trips, en is
+  ook de meest toeristische/ontwikkelde vallei van de Franse Alpen (skifaciliteiten overal, geen
+  nationaal park). Écrins is écht wilder (30x het oppervlak van de Chamonix-vallei, 1.000+ km
+  paden, echte gletsjers), goedkoper, en duidelijk onderscheidend van een Zwitserland-trip. Budget:
+  ~€75-95/dag (gîte/B&B €55-70, eten €25-35, weinig betaalde activiteiten — geen entreegeld, in
+  tegenstelling tot Chamonix's Aiguille du Midi ~€120-150+/dag). Seizoen: juli-augustus (enige
+  betrouwbare venster voor hooggelegen paden). NL-Grenoble/Écrins-toegang ~950-970km/10,5-11u,
+  tol ~€80-100 heen. ⚠️ Zwakke OV-toegang tot trailheads (eigen auto is hier een reëel voordeel),
+  berghut/gîte-boekingen vullen snel in de zomer.
+- [x] **9 dagen — Zuid-Frankrijk** (was 7-10d, breder dan Provence alleen). Avignon-gebied (2-3
+  nachten, dagtrip Luberon/Gordes) — Arles/Camargue (Saintes-Maries-de-la-Mer, ~80km/1u20 vanaf
+  Avignon, 1-2 nachten) — oostwaarts via de A8 naar de Côte d'Azur, basis in **Antibes** of
+  **Villefranche-sur-Mer** (authentieker/minder feestresort dan Cannes) met Nice als stadsanker
+  (~260km/2,5u vanaf de Avignon-regio, 2-3 nachten) — geen backtracking. Budget: ~€90-120/dag
+  landinwaarts, ~€120-150/dag aan de Côte d'Azur. Seizoen: mei-juni of september (juli-aug druk/
+  heet aan de kust, Mistral-wind in het tussenseizoen landinwaarts). NL-Avignon ~1.150km/~11u. ⚠️
+  Tol: Avignon-Nice ~€25-30 tolportie op de A8; NL-Avignon nog eens ~€90-110 — reken **totaal
+  ~€250-300 aan tol** retour. Parkeren in Nice-centrum €24-35/dag garage.
+- [x] **9 dagen — Franse Alpen + Provence** (was 7-10d, combo). **Écrins past beter bij Provence
+  dan Annecy** — Annecy ligt bij de Zwitserse grens, hoort natuurlijk bij Chamonix/Genève, en trekt
+  je ver naar het noorden (Annecy-Avignon nog steeds 338km/~3u09, maar erheen vanuit NL is een
+  bijna-Nice-lange omweg met weinig toegevoegde waarde). Écrins (Briançon/Gap/Embrun-gebied) ligt
+  direct aan de **Route Napoléon (N85, Gap-Sisteron)**, een schilderachtige, grotendeels tolvrije
+  bergweg die rechtstreeks in Provence uitkomt — geografisch "onderweg", geen omweg. NL-Écrins-
+  gebied (Gap/Embrun) ~950-1.000km/9,5-10u; Écrins-Avignon ~230km/3u via de N85. Budget: ~€85-110/
+  dag in de Alpen, ~€90-120/dag in Provence. Seizoen: juni-begin september (bergpassen/paden open,
+  Provence nog niet verschroeiend). ⚠️ Tol lager dan een pure autoroute-trip (de Alpen-etappe
+  gebruikt grotendeels tolvrije nationale wegen) — schat **totaal ~€180-220**.
+- [x] **12 dagen — Frankrijk roadtrip noord → zuid** (was 10-14d). **Aanbevolen spine: Parijs →
+  Bourgogne (Beaune) → Rhônevallei (Lyon) → Provence/Côte d'Azur** — niet Loire→Dordogne→Provence.
+  Reden: Sarlat (Dordogne)→Avignon is in het beste geval 5u17 via de tolroute (Toulouse-Narbonne-
+  Montpellier) of 8u+ via de gratis Massif Central-route — de Loire/Dordogne-etappe trekt de trip
+  eerst **westwaarts**, waarna je weer oostwaarts moet, een echte backtrack. De Bourgogne-Rhône-
+  spine is een rechte, zuidwaarts stromende lijn: Parijs→Beaune (~3u) → Lyon (~1u30) → Avignon
+  (~2,5u) → Nice (~2,5u), geen richtingsomkering. Budget: ~€80-100/dag (Bourgogne/Rhône), ~€100-140/
+  dag (Provence/Côte d'Azur). Seizoen: eind mei-juni of september. ⚠️ Parijs-Nice via deze spine is
+  een zwaar tolwegen-traject (A6/A7/A8) — reken ~€150-180 enkele reis, dus **totaal ~€250-300**
+  inclusief het NL-Parijs-stuk.
+- [x] **12 dagen — Atlantische kust Frankrijk** (was 10-14d). NL → **La Rochelle** (2-3 nachten) →
+  **Bordeaux** (~180km/2u, 2 nachten) → **Arcachon/Dune du Pilat** (korte omweg vanaf Bordeaux,
+  ~65km/1u, 1-2 nachten) → **Biarritz/Saint-Jean-de-Luz** (Baskische kust, ~180km/2u zuidwaarts, 3
+  nachten) — vloeit gestaag zuidwaarts met maar één kleine westelijke uitstap (Arcachon), geen
+  echte backtrack. Duidelijk onderscheidend van de andere Frankrijk-trips (Atlantisch/Baskisch,
+  niet mediterraan/binnenlands/alpine). NL-La Rochelle ~970km/~9,5u. Budget: ~€85-110/dag (La
+  Rochelle/Bordeaux), ~€110-150/dag (Arcachon/Biarritz in hoogseizoen). Seizoen: juni of september
+  (juli-aug erg druk/duur in Biarritz/Arcachon). ⚠️ A10/A63-tolcorridor — reken **totaal ~€250-300**
+  retour. Bordeaux-centrumparkeren ~€20-30/dag garage (of €2,50-3,40/u op straat); Arcachon/
+  Biarritz-strandparkeren piekt in de zomer.
+
+**Algemeen (webcheck 2026-08)**: Frankrijk heeft, in tegenstelling tot Duitsland/Benelux, wél
+significante autoroute-tol (~€0,10/km) — elke trip hierboven met een reële rijafstand heeft een
+eigen tolschatting gekregen, niet een vlakke aanname.
+
+**Geverifieerd (2026-08)**: alle 11 items WebSearch-backed gecontroleerd via drie parallelle
+research-agents (Noord/West: Elzas/Parijs/Normandië/Bretagne; Centraal/Zuid: Loire/Provence/Franse
+Alpen; grote combinaties). Belangrijkste inhoudelijke keuzes: Bretagne beperkt tot het noorden
+(Carnac/Quiberon kost te veel reistijd voor 5 dagen); Franse Alpen wordt Écrins i.p.v. Chamonix
+(vermijdt overlap met Zwitserland); de noord-zuid-roadtrip volgt de Bourgogne-Rhône-spine i.p.v.
+Loire-Dordogne (vermijdt een echte backtrack). Eén tijdgevoelige bevinding: het Bayeux-tapijt is
+heel 2026 niet in Bayeux zelf te zien (renovatie tot okt 2027, het tapijt zelf pas vanaf 10 sept
+2026 in Londen).
 
 ## 🇮🇹 Italië
 
@@ -581,7 +689,7 @@ volgorde:
 1. **Benelux** (6) — dichtst bij huis, kleinste lijst, goede eerste batch om het proces te ijken. **Gedaan (2026-08).**
 2. **Duitsland** (12) — buurland, grootste losse-land-lijst, veel variatie weekend→10 dagen. **Gedaan (2026-08), WebSearch-geverifieerd.**
 3. **Alpenlanden: Oostenrijk + Zwitserland** (12) — horen inhoudelijk samen (Alpen-thema), sluiten aan op Duitslands Beieren-items. **Gedaan (2026-08), WebSearch-geverifieerd.**
-4. **Frankrijk** (11).
+4. **Frankrijk** (11). **Gedaan (2026-08), WebSearch-geverifieerd.**
 5. **Italië** (13).
 6. **Iberië: Spanje + Portugal** (18) — samen, want de Iberië-combinatiesectie hieronder heeft ze allebei nodig.
 7. **Balkan-cluster: Kroatië + Slovenië + Bosnië + Montenegro + Albanië + Servië + Noord-Macedonië** (37) — geografisch één aaneengesloten blok, en de losse Balkan-combinatiesectie hergebruikt precies deze zeven landen.
