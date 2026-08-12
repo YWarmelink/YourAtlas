@@ -8,10 +8,13 @@ dat werken we samen per batch uit, zoals Route Builder's expedities dat ook kreg
 `route-builder-content` skill voor dat traject als referentie, al is de schaal hier veel kleiner
 per item).
 
-**Nog niet besloten:** waar uitgewerkte trips uit deze lijst uiteindelijk landen — als Trips-sheet-
-rijen (zodra er een echt boekingsvoornemen is, per de bestaande Trips-filosofie), als een nieuwe,
-lichtere categorie, of iets anders. Geen blocker voor nu — pakken we op zodra de eerste batch
-uitgewerkt wordt.
+**Besloten (2026-08):** deze trips worden Route Builder-routes, niet Trips-sheet-rijen. Volgt uit
+`ROADMAP.md`'s al eerder genomen "commitment, niet schaal"-besluit voor de Trips↔Route Builder-
+splitsing — zonder concreet boekingsvoornemen hoort iets in Route Builder. Ze landen automatisch
+onder de bestaande "Europa"-continentgroep in Route Builder's lijstweergave (`RB_CONTINENT_BY_CODE`
+in `js/pages/routeBuilder.js`). **Nog niet gedaan**: elk uitgewerkt item hierbeneden daadwerkelijk
+als `rbBuildXRoute()` in de code zetten — dat gebeurt als eigen stap, waarschijnlijk in één ronde
+zodra er meerdere batches klaarstaan, niet per losse trip.
 
 **Werkwijze:** één batch per keer, af laten vinken (☑) zodra een item is uitgewerkt. Zie
 `README.md` voor de huidige batch-status en welke batch nu aan de beurt is.
