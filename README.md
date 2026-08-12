@@ -203,7 +203,9 @@ choice — Vancouver-Anchorage is already the natural flight link), new total 32
 
 ## Europa Trip Ideas (nieuw, 2026-08 — batches 1-4 klaar)
 
-See [`EUROPA_TRIP_IDEAS.md`](EUROPA_TRIP_IDEAS.md) — Youri's own big raw list (~230 items) of
+See [`EUROPA_TRIP_IDEAS.md`](EUROPA_TRIP_IDEAS.md) — Youri's own big raw list (~230 items, extended
+2026-08 with a second batch of additions — micro-states, Cyprus/Malta/Moldavië/Kosovo/Corsica/
+Turkey's European part, plus a whole "🏝️ Europese eilanden" category — to ~300 items total) of
 realistic European trips, from long weekend to ~3 weeks, organized by country/region. Different
 scale than Route Builder's grand expeditions — this is the "reëel en slim te maken" realistic-trip
 tier, not aspirational epics. **Decided (2026-08): these become Route Builder routes, not Trips
@@ -224,13 +226,16 @@ became Écrins instead of Chamonix to avoid overlap with Switzerland, the north-
 follows the Burgundy-Rhône spine instead of Loire-Dordogne to avoid a real backtrack — plus a
 time-sensitive finding, the Bayeux Tapestry isn't viewable in Bayeux at all in 2026, on loan to the
 British Museum from Sept 2026). Proposed batch order (see the bottom of that file for the full
-reasoning per cluster): (1) ~~Benelux~~ **done**, (2) ~~Duitsland~~ **done**, (3) ~~Oostenrijk +
-Zwitserland~~ **done**, (4) ~~Frankrijk~~ **done**, (5) Italië, (6) Spanje + Portugal, (7)
-Balkan-cluster (Kroatië/Slovenië/Bosnië/Montenegro/Albanië/Servië/Noord-Macedonië), (8) Centraal/
-Oost-Europa (Roemenië/Bulgarije/Hongarije/Tsjechië/Slowakije/Polen), (9) Griekenland, (10)
-Noord-Europa (Noorwegen/Zweden/Denemarken/Finland/IJsland), (11) Ierland + Schotland, (12)
-Baltische staten, (13) de combinatiesecties onderin het bestand (bewust laatst, want die
-hergebruiken de losse-landen-batches).
+reasoning per cluster, updated after the 2026-08 extension): (1) ~~Benelux~~ **done**, (2)
+~~Duitsland~~ **done**, (3) ~~Oostenrijk + Zwitserland~~ **done**, (4) ~~Frankrijk~~ **done**, (5)
+Italië, (6) Micro-staten & kleine eilanden (Liechtenstein/San Marino/Vaticaanstad/Monaco/Corsica/
+Malta), (7) Iberië: Spanje + Portugal + Andorra, (8) Balkan-cluster (Kroatië/Slovenië/Bosnië/
+Montenegro/Albanië/Servië/Noord-Macedonië/Kosovo), (9) Centraal/Oost-Europa (Roemenië/Bulgarije/
+Hongarije/Tsjechië/Slowakije/Polen/Moldavië), (10) Oost-Mediterraan (Griekenland/Cyprus/Turkije-
+Europees), (11) Noord-Europa (Noorwegen/Zweden/Denemarken/Finland/IJsland), (12) Ierland +
+Schotland, (13) Baltische staten, (14) 🏝️ Europese eilanden (Madeira/Azoren/Canarische Eilanden/
+Balearen/gedetailleerdere Italiaanse+Griekse eilanden), (15) de combinatiesecties onderin het
+bestand (bewust laatst, want die hergebruiken de losse-landen-batches).
 
 **Next up: batch 5, Italië** (13 items) — waiting on Youri to confirm before starting.
 

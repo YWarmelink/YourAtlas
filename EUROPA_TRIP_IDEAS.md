@@ -19,6 +19,16 @@ zodra er meerdere batches klaarstaan, niet per losse trip.
 **Werkwijze:** één batch per keer, af laten vinken (☑) zodra een item is uitgewerkt. Zie
 `README.md` voor de huidige batch-status en welke batch nu aan de beurt is.
 
+**Aanvulling (2026-08):** Youri leverde een tweede, grotere aanvullingslijst aan — micro-staten
+(Andorra, Liechtenstein, San Marino, Vaticaanstad, Monaco), landen die in de oorspronkelijke lijst
+ontbraken (Cyprus, Malta, Moldavië, Kosovo, Corsica, en het Europese/Istanbul-deel van Turkije), en
+een hele "🏝️ Europese eilanden"-categorie (Madeira, Azoren, Canarische Eilanden, Balearen, meer
+gedetailleerde Italiaanse/Griekse eilanden) plus extra grensoverschrijdende combinaties. Verwerkt
+in de secties hieronder, op de juiste plek tussen de bestaande landen — (bijna-)letterlijke
+duplicaten uit Youri's eigen aanvullingslijst (die zelf ook wat overlap/herhaling bevatte) zijn
+samengevoegd, niet twee keer opgenomen. Niets hiervan is nog uitgewerkt — de batch-indeling
+hieronder is bijgewerkt om deze nieuwe stukken een logische plek te geven.
+
 ---
 
 ## 🇳🇱🇧🇪🇱🇺 Benelux — batch 1, uitgewerkt (2026-08)
@@ -291,6 +301,11 @@ tolkosten, en budgetten. Grootste inhoudelijke keuze: bij de vage items "Oostenr
 hun eigen land te vermijden (Pinzgau/Zell am See-Kaprun resp. Zermatt/Matterhorn) — bij elke keuze
 is de onderbouwing waarom die regio niet overlapt expliciet meegenomen.
 
+## 🇱🇮 Liechtenstein
+
+- [ ] 2–3 dagen — Liechtenstein + Zwitserse Alpen
+- [ ] 4–5 dagen — Liechtenstein + Oostenrijk + Zwitserland
+
 ## 🇫🇷 Frankrijk — batch 4, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
 - [x] **4 dagen — Elzas** (was 3-4d). Strasbourg (Petite France, kathedraal+astronomische klok,
@@ -413,6 +428,26 @@ Loire-Dordogne (vermijdt een echte backtrack). Eén tijdgevoelige bevinding: het
 heel 2026 niet in Bayeux zelf te zien (renovatie tot okt 2027, het tapijt zelf pas vanaf 10 sept
 2026 in Londen).
 
+## 🇲🇨 Monaco
+
+- [ ] 3–4 dagen — Monaco + Côte d'Azur
+- [ ] 4–5 dagen — Monaco + Nice + Provence
+
+## 🇫🇷 Corsica
+
+Los van het vasteland-Frankrijk-blok hierboven gehouden — Corsica is qua reisstijl/logistiek een
+eigen ding (eiland, veerboot/vlucht, geen doorlopende auto-route vanuit NL).
+
+- [ ] 5–7 dagen — Corsica
+- [ ] 7–10 dagen — Corsica roadtrip
+- [ ] 7–10 dagen — Corsica + Zuid-Frankrijk
+- [ ] 4–5 dagen — Corsica + Sardinië
+- [ ] 10–14 dagen — Corsica + Sardinië (langere variant)
+
+## 🇻🇦 Vaticaanstad
+
+- [ ] 3–4 dagen — Rome + Vaticaanstad
+
 ## 🇮🇹 Italië
 
 - [ ] 3–4 dagen — Rome
@@ -429,6 +464,11 @@ heel 2026 niet in Bayeux zelf te zien (renovatie tot okt 2027, het tapijt zelf p
 - [ ] 10–14 dagen — Italië roadtrip
 - [ ] 10–14 dagen — Sicilië + Zuid-Italië
 
+## 🇸🇲 San Marino
+
+- [ ] 3–4 dagen — San Marino + Emilia-Romagna
+- [ ] 4–5 dagen — San Marino + Toscane
+
 ## 🇪🇸 Spanje
 
 - [ ] 3–4 dagen — Barcelona
@@ -443,6 +483,12 @@ heel 2026 niet in Bayeux zelf te zien (renovatie tot okt 2027, het tapijt zelf p
 - [ ] 10–14 dagen — Noord-Spanje roadtrip
 - [ ] 10–14 dagen — Spanje noord → centraal
 - [ ] 10–14 dagen — Spanje oost → zuid
+
+## 🇦🇩 Andorra
+
+- [ ] 3–4 dagen — Andorra
+- [ ] 5–7 dagen — Andorra + Pyreneeën
+- [ ] 7–10 dagen — Andorra + Spaanse Pyreneeën
 
 ## 🇵🇹 Portugal
 
@@ -464,6 +510,30 @@ heel 2026 niet in Bayeux zelf te zien (renovatie tot okt 2027, het tapijt zelf p
 - [ ] 7–10 dagen — Griekse eilanden
 - [ ] 10–14 dagen — Griekenland roadtrip
 - [ ] 10–14 dagen — Athene + Peloponnesos
+
+## 🇨🇾 Cyprus
+
+- [ ] 5–7 dagen — Cyprus
+- [ ] 7–10 dagen — Cyprus roadtrip
+- [ ] 7–10 dagen — Cyprus + Griekenland
+
+## 🇲🇹 Malta
+
+- [ ] 3–4 dagen — Malta
+- [ ] 5–7 dagen — Malta + Gozo
+- [ ] 7–10 dagen — Sicilië + Malta
+- [ ] 7–10 dagen — Malta + Gozo + Sicilië
+
+## 🇹🇷 Turkije — Europees/Istanbul
+
+Bewust alleen het Europese/Istanbul-deel — Turkije is grotendeels Aziatisch, maar Istanbul en
+Europees Turkije (Thracië) passen prima in een Europa-lijst.
+
+- [ ] 3–4 dagen — Istanbul
+- [ ] 5–7 dagen — Istanbul + Thracië
+- [ ] 7–10 dagen — Istanbul + Noordwest-Turkije
+- [ ] 7–10 dagen — Istanbul + Griekse eilanden
+- [ ] 10–14 dagen — Turkije + Griekenland
 
 ## 🇭🇷 Kroatië
 
@@ -525,6 +595,16 @@ heel 2026 niet in Bayeux zelf te zien (renovatie tot okt 2027, het tapijt zelf p
 - [ ] 7–10 dagen — Bulgarije roadtrip
 - [ ] 7–10 dagen — Bulgarije + Roemenië
 - [ ] 10–14 dagen — Bulgarije + Griekenland
+
+## 🇲🇩 Moldavië
+
+Youri's eigen aantekening: "Deze zou ik zeker toevoegen als aparte Atlas-optie."
+
+- [ ] 4–5 dagen — Moldavië
+- [ ] 5–7 dagen — Moldavië + Transnistrië ⚠️ *behandel Transnistrië als aparte veiligheidscheck/
+  optionele uitbreiding, niet als vanzelfsprekend onderdeel — apart te verifiëren bij het uitwerken.*
+- [ ] 7–10 dagen — Moldavië + Roemenië
+- [ ] 10–14 dagen — Roemenië + Moldavië (langere variant)
 
 ## 🇭🇺 Hongarije
 
@@ -645,6 +725,18 @@ heel 2026 niet in Bayeux zelf te zien (renovatie tot okt 2027, het tapijt zelf p
 - [ ] 7–10 dagen — Noord-Macedonië + Albanië
 - [ ] 7–10 dagen — Noord-Macedonië + Griekenland
 
+## 🇽🇰 Kosovo
+
+Youri's eigen aantekening: "Die ontbrak ook."
+
+- [ ] 4–5 dagen — Kosovo
+- [ ] 5–7 dagen — Kosovo + Noord-Macedonië
+- [ ] 7–10 dagen — Kosovo + Albanië
+- [ ] 7–10 dagen — Kosovo + Montenegro
+- [ ] 7–10 dagen — Kosovo + Montenegro + Albanië
+- [ ] 7–10 dagen — Kosovo + Noord-Macedonië + Albanië
+- [ ] 10–14 dagen — Kosovo + Albanië + Noord-Macedonië
+
 ## 🇸🇮🇭🇷🇧🇦🇲🇪 Balkan (combinaties)
 
 - [ ] 7–10 dagen — Slovenië + Kroatië
@@ -656,12 +748,62 @@ heel 2026 niet in Bayeux zelf te zien (renovatie tot okt 2027, het tapijt zelf p
 - [ ] 14 dagen — Grote Balkan Roadtrip
 - [ ] 14 dagen — Adriatische Roadtrip
 
+## 🏝️ Europese eilanden
+
+Geen eigen landen (Madeira/Azoren zijn Portugal, Canarische Eilanden/Balearen zijn Spanje, deze
+Italiaanse/Griekse eilanden zijn Italië/Griekenland) maar volgens Youri wel eigen trip-objecten —
+bewust los van de landensecties hierboven gehouden. Items die al (bijna) letterlijk in een
+landensectie hierboven staan (Mallorca bij Spanje, Sicilië/Sardinië bij Italië, Kreta bij
+Griekenland) zijn hier niet herhaald — alleen de granulairdere/nieuwe varianten staan hieronder.
+
+**Madeira**
+- [ ] 5–7 dagen — Madeira
+- [ ] 7–10 dagen — Madeira uitgebreid
+
+**Azoren**
+- [ ] 5–7 dagen — São Miguel
+- [ ] 7–10 dagen — Azoren
+- [ ] 10–14 dagen — Azoren island hopping
+
+**Canarische Eilanden**
+- [ ] 5–7 dagen — Tenerife
+- [ ] 5–7 dagen — Gran Canaria
+- [ ] 5–7 dagen — Lanzarote + Fuerteventura
+- [ ] 7–10 dagen — Tenerife + La Gomera
+- [ ] 7–10 dagen — Gran Canaria + Tenerife
+- [ ] 10–14 dagen — Canarische Eilanden
+
+**Balearen**
+- [ ] 4–5 dagen — Menorca
+- [ ] 4–5 dagen — Ibiza
+- [ ] 7–10 dagen — Mallorca + Menorca
+- [ ] 7–10 dagen — Balearen
+
+**Italiaanse eilanden** (naast Sicilië/Sardinië, al bij Italië)
+- [ ] 4–5 dagen — Sicilië oost
+- [ ] 4–5 dagen — Sicilië west
+- [ ] 4–5 dagen — Sardinië noord
+- [ ] 4–5 dagen — Sardinië zuid
+- [ ] 3–4 dagen — Sicilië + Eolische eilanden
+- [ ] 7–10 dagen — Sardinië roadtrip
+- [ ] 7–10 dagen — Sicilië roadtrip
+
+**Griekse eilanden** (naast Kreta en de algemene "Griekse eilanden"-optie, al bij Griekenland)
+- [ ] 5–7 dagen — Corfu
+- [ ] 5–7 dagen — Rhodos
+- [ ] 5–7 dagen — Cycladen
+- [ ] 5–7 dagen — Ionische eilanden
+- [ ] 7–10 dagen — Kreta roadtrip
+- [ ] 7–10 dagen — Cycladen island hopping
+
 ## 🇪🇺 Grote Europese combinaties
 
 - [ ] 7–10 dagen — Oostenrijk + Slovenië
 - [ ] 7–10 dagen — Oostenrijk + Tsjechië
 - [ ] 7–10 dagen — Polen + Tsjechië
 - [ ] 7–10 dagen — Hongarije + Oostenrijk + Slovenië
+- [ ] 7–10 dagen — Andorra + Spaanse Pyreneeën
+- [ ] 7–10 dagen — Franse + Spaanse Pyreneeën
 - [ ] 10–14 dagen — Polen + Slowakije + Hongarije
 - [ ] 10–14 dagen — Tsjechië + Oostenrijk + Hongarije
 - [ ] 10–14 dagen — Duitsland + Oostenrijk + Italië
@@ -689,13 +831,31 @@ volgorde:
 1. **Benelux** (6) — dichtst bij huis, kleinste lijst, goede eerste batch om het proces te ijken. **Gedaan (2026-08).**
 2. **Duitsland** (12) — buurland, grootste losse-land-lijst, veel variatie weekend→10 dagen. **Gedaan (2026-08), WebSearch-geverifieerd.**
 3. **Alpenlanden: Oostenrijk + Zwitserland** (12) — horen inhoudelijk samen (Alpen-thema), sluiten aan op Duitslands Beieren-items. **Gedaan (2026-08), WebSearch-geverifieerd.**
-4. **Frankrijk** (11). **Gedaan (2026-08), WebSearch-geverifieerd.**
+4. **Frankrijk** (11). **Gedaan (2026-08), WebSearch-geverifieerd.** *(Corsica en Monaco zaten niet
+   in de oorspronkelijke Frankrijk-lijst — die zitten nu in batch 5a hieronder, niet hier
+   teruggevoegd om deze al-afgeronde batch niet opnieuw open te trekken.)*
 5. **Italië** (13).
-6. **Iberië: Spanje + Portugal** (18) — samen, want de Iberië-combinatiesectie hieronder heeft ze allebei nodig.
-7. **Balkan-cluster: Kroatië + Slovenië + Bosnië + Montenegro + Albanië + Servië + Noord-Macedonië** (37) — geografisch één aaneengesloten blok, en de losse Balkan-combinatiesectie hergebruikt precies deze zeven landen.
-8. **Centraal/Oost-Europa: Roemenië + Bulgarije + Hongarije + Tsjechië + Slowakije + Polen** (30).
-9. **Griekenland** (8) — los, want geografisch een eigen ding (eilanden) t.o.v. de Balkan-landroute-cluster.
-10. **Noord-Europa: Noorwegen + Zweden + Denemarken + Finland + IJsland** (26).
-11. **Britse eilanden: Ierland + Schotland** (10).
-12. **Baltische staten** (6).
-13. **Combinatiesecties (Iberië-combo, Balkan-combo, Grote Europese combinaties)** (31) — bewust laatst: deze hergebruiken bijna allemaal content uit de losse-landen-batches hierboven, dus pas efficiënt te doen zodra die klaar zijn.
+6. **Micro-staten & kleine eilanden: Liechtenstein + San Marino + Vaticaanstad + Monaco + Corsica
+   + Malta** (16) — nieuw t.o.v. de oorspronkelijke lijst, allemaal klein en verspreid maar qua
+   omvang/aanpak vergelijkbaar — één compacte batch in plaats van los achter elk groter land aan
+   te plakken.
+7. **Iberië: Spanje + Portugal + Andorra** (21) — Andorra toegevoegd (Pyreneeën-aansluiting), want
+   de Iberië-combinatiesectie hieronder heeft dit cluster nodig.
+8. **Balkan-cluster: Kroatië + Slovenië + Bosnië + Montenegro + Albanië + Servië + Noord-Macedonië
+   + Kosovo** (44) — geografisch één aaneengesloten blok (Kosovo toegevoegd), en de losse
+   Balkan-combinatiesectie hergebruikt precies dit cluster.
+9. **Centraal/Oost-Europa: Roemenië + Bulgarije + Hongarije + Tsjechië + Slowakije + Polen +
+   Moldavië** (34) — Moldavië toegevoegd (grenst aan Roemenië).
+10. **Oost-Mediterraan: Griekenland + Cyprus + Turkije (Istanbul/Europees)** (16) — samen, want de
+    combinaties tussen deze drie landen (Cyprus+Griekenland, Istanbul+Griekse eilanden, Turkije+
+    Griekenland) elkaar nodig hebben.
+11. **Noord-Europa: Noorwegen + Zweden + Denemarken + Finland + IJsland** (26).
+12. **Britse eilanden: Ierland + Schotland** (10).
+13. **Baltische staten** (6).
+14. **🏝️ Europese eilanden** (28) — Madeira, Azoren, Canarische Eilanden, Balearen, en de
+    gedetailleerdere Italiaanse/Griekse eilanden-varianten. Na de bijbehorende landenbatches
+    (Italië/Griekenland al klaar, Portugal/Spanje in batch 7), zodat er al context/stijl bestaat
+    om op aan te sluiten.
+15. **Combinatiesecties (Iberië-combo, Balkan-combo, Grote Europese combinaties)** (33) — bewust
+    laatst: deze hergebruiken bijna allemaal content uit de losse-landen-batches hierboven, dus pas
+    efficiënt te doen zodra die klaar zijn.
