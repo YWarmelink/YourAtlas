@@ -201,23 +201,25 @@ Oostkust 🗽** (DC-Philadelphia-New York-Boston via train, 12d/€1.365), **US 
 choice — Vancouver-Anchorage is already the natural flight link), new total 32d/€5.875 (was
 22d/€4.275).
 
-## Europa Trip Ideas (nieuw, 2026-08 — niets uitgewerkt)
+## Europa Trip Ideas (nieuw, 2026-08 — batch 1 klaar)
 
 See [`EUROPA_TRIP_IDEAS.md`](EUROPA_TRIP_IDEAS.md) — Youri's own big raw list (~230 items) of
 realistic European trips, from long weekend to ~3 weeks, organized by country/region. Different
 scale than Route Builder's grand expeditions — this is the "reëel en slim te maken" realistic-trip
 tier, not aspirational epics. Not yet decided where finished items will live (Trips sheet, a new
-category, or something else) — that's picked up once the first batch is actually worked out.
+category, or something else) — that's picked up once more batches exist to judge by.
 
-**Status: nothing worked out yet.** Proposed batch order (see the bottom of that file for the
-full reasoning per cluster): (1) Benelux, (2) Duitsland, (3) Oostenrijk + Zwitserland, (4)
-Frankrijk, (5) Italië, (6) Spanje + Portugal, (7) Balkan-cluster (Kroatië/Slovenië/Bosnië/
-Montenegro/Albanië/Servië/Noord-Macedonië), (8) Centraal/Oost-Europa (Roemenië/Bulgarije/Hongarije/
-Tsjechië/Slowakije/Polen), (9) Griekenland, (10) Noord-Europa (Noorwegen/Zweden/Denemarken/
-Finland/IJsland), (11) Ierland + Schotland, (12) Baltische staten, (13) de combinatiesecties
-onderin het bestand (bewust laatst, want die hergebruiken de losse-landen-batches).
+**Status: batch 1 (Benelux, 6 items) done.** Route/dagen/budget/seizoen/vervoer per trip, written
+from general knowledge (not WebSearch-backed like Route Builder) since Benelux is nearby, familiar
+territory. Proposed batch order (see the bottom of that file for the full reasoning per cluster):
+(1) ~~Benelux~~ **done**, (2) Duitsland, (3) Oostenrijk + Zwitserland, (4) Frankrijk, (5) Italië,
+(6) Spanje + Portugal, (7) Balkan-cluster (Kroatië/Slovenië/Bosnië/Montenegro/Albanië/Servië/
+Noord-Macedonië), (8) Centraal/Oost-Europa (Roemenië/Bulgarije/Hongarije/Tsjechië/Slowakije/Polen),
+(9) Griekenland, (10) Noord-Europa (Noorwegen/Zweden/Denemarken/Finland/IJsland), (11) Ierland +
+Schotland, (12) Baltische staten, (13) de combinatiesecties onderin het bestand (bewust laatst,
+want die hergebruiken de losse-landen-batches).
 
-**Next up: batch 1, Benelux** (6 items) — waiting on Youri to confirm before starting.
+**Next up: batch 2, Duitsland** (12 items) — waiting on Youri to confirm before starting.
 
 ## Search
 
@@ -278,6 +280,10 @@ then extend the Apps Script `doPost` for `GrandTrip*` payloads.
 **Trips route map — South Korea pilot**: needs Youri's manual Google Sheet work (new
 `TripDestinations` tab + coordinates) before the already-built map code will show anything — see
 the "Trips route map" section above for the exact steps.
+
+**Trip detail page — look and feel (2026-08 idea, not designed):** Youri wants to revisit how a
+trip actually looks when opened (`trip.html`) at some point — no direction decided yet, see
+`ROADMAP.md`'s "Planned features" for the placeholder note.
 
 **Everything else**: see [`ROADMAP.md`](ROADMAP.md) for the rest of the planned work and direction
 (visa/passport tracker, visited-countries badges, yearly travel recap, the Trips↔Route Builder

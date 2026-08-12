@@ -1,6 +1,6 @@
 # Europa — Trip Ideas
 
-Status: **ruwe ideeënlijst, niets uitgewerkt.** Youri's eigen lijst (2026-08) van realistische
+Status: **batch 1 (Benelux) uitgewerkt, rest nog ruw.** Youri's eigen lijst (2026-08) van realistische
 Europese trips — van lang weekend tot ~3 weken, allemaal "reëel en slim te maken" omdat ze binnen
 Europa blijven. Dit is bewust alleen duur + bestemming/route, geen route/budget/seizoen-detail —
 dat werken we samen per batch uit, zoals Route Builder's expedities dat ook kregen (zie de
@@ -17,14 +17,40 @@ uitgewerkt wordt.
 
 ---
 
-## 🇳🇱🇧🇪🇱🇺 Benelux
+## 🇳🇱🇧🇪🇱🇺 Benelux — batch 1, uitgewerkt (2026-08)
 
-- [ ] 2–3 dagen — Ardennen
-- [ ] 3–4 dagen — Luxemburg
-- [ ] 3–4 dagen — Luxemburg + Ardennen
-- [ ] 3–4 dagen — Belgische kust + Brugge + Gent
-- [ ] 4–5 dagen — België: Brugge + Gent + Antwerpen + Ardennen
-- [ ] 4–5 dagen — Zuid-Nederland + Belgische Ardennen + Luxemburg
+- [x] **3 dagen — Ardennen** (was 2-3d, gekozen voor de bovenkant zodat er ook tijd is voor de
+  grotten-dagtrip, niet alleen wandelen). Basis in La Roche-en-Ardenne (kasteelruïne, kanoën op de
+  Ourthe) — dagtrip naar Han-sur-Lesse (grotten, jaarrond open) — Coo (watervallen, kabelbaan) —
+  optioneel Durbuy ("kleinste stad ter wereld") als tussenstop. Eigen auto vanuit NL (~2,5-3u).
+  Budget: ~€70-80/dag (B&B/hotel + eten + activiteiten). Seizoen: april-oktober voor kanoën/
+  wandelen; de grotten zelf zijn jaarrond te doen.
+- [x] **4 dagen — Luxemburg** (was 3-4d). Luxemburg-Stad (Bock Casemates, Chemin de la Corniche) —
+  Müllerthal/"Luxemburgs Zwitserland" (Berdorf/Echternach, de bekende rotsformatie-wandelpaden) —
+  Vianden (kasteel + kabelbaan). Eigen auto (~4u vanuit NL). Budget: ~€90-100/dag — Luxemburg is
+  duidelijk duurder dan België. Seizoen: april-oktober voor het wandelen in Müllerthal.
+- [x] **4 dagen — Luxemburg + Ardennen** (was 3-4d). Bewust een andere Ardennen-stop dan de losse
+  Ardennen-trip hierboven, zodat de twee elkaar niet overlappen: Bastogne (WOII-geschiedenis,
+  Bastogne War Museum) — Vianden (kasteel) — Luxemburg-Stad — Müllerthal (dagtrip vanuit de stad).
+  Eigen auto, korte afstanden (grensregio). Budget: ~€80-90/dag gemiddeld. Seizoen: april-oktober.
+- [x] **4 dagen — Belgische kust + Brugge + Gent** (was 3-4d). Brugge (grachten, Belfort) — Gent
+  (Gravensteen, Graslei) — Belgische kust (De Haan/Oostende, dijk en strand). Auto of trein — alle
+  drie goed met de trein te doen. Budget: ~€90-100/dag. Seizoen: jaarrond voor de steden, mei-
+  september fijner voor de kust.
+- [x] **5 dagen — België: Brugge + Gent + Antwerpen + Ardennen** (was 4-5d). Brugge — Gent —
+  Antwerpen (Kathedraal, MAS, modewijk) — Dinant of La Roche-en-Ardenne (1-2 dagen natuur als
+  tegenhanger van de drie steden). Trein voor de steden, auto nodig voor het Ardennen-deel. Budget:
+  ~€90-100/dag in de steden, lager in de Ardennen. Seizoen: jaarrond mogelijk, april-oktober beter
+  voor het Ardennen-deel.
+- [x] **5 dagen — Zuid-Nederland + Belgische Ardennen + Luxemburg** (was 4-5d, de grootste combi
+  van de zes — en de enige met een Nederlandse stop). Maastricht (Vrijthof, Sint-Pietersberg-
+  grotten) — Valkenburg (Fluweelengrot) — Bastogne (Ardennen) — Vianden/Luxemburg-Stad. Eigen auto
+  — alles binnen een paar uur rijden van elkaar, de kortste "internationale" trip van de hele lijst.
+  Budget: ~€80-90/dag gemiddeld. Seizoen: april-oktober.
+
+**Nog niet geverifieerd**: dit is op eigen kennis geschreven (Benelux is dichtbij en goed bekend
+terrein), niet WebSearch-backed zoals Route Builder's routes. Behandel als een eerste concept —
+check openingstijden/actuele prijzen zelf voor je iets boekt.
 
 ## 🇩🇪 Duitsland
 
@@ -346,7 +372,7 @@ uitgewerkt wordt.
 Zie `README.md` voor de actuele status. Voorstel (redenen bij elk cluster), uit te werken in deze
 volgorde:
 
-1. **Benelux** (6) — dichtst bij huis, kleinste lijst, goede eerste batch om het proces te ijken.
+1. **Benelux** (6) — dichtst bij huis, kleinste lijst, goede eerste batch om het proces te ijken. **Gedaan (2026-08).**
 2. **Duitsland** (12) — buurland, grootste losse-land-lijst, veel variatie weekend→10 dagen.
 3. **Alpenlanden: Oostenrijk + Zwitserland** (12) — horen inhoudelijk samen (Alpen-thema), sluiten aan op Duitslands Beieren-items.
 4. **Frankrijk** (11).
