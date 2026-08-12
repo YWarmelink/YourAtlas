@@ -237,6 +237,15 @@ Schotland, (13) Baltische staten, (14) 🏝️ Europese eilanden (Madeira/Azoren
 Balearen/gedetailleerdere Italiaanse+Griekse eilanden), (15) de combinatiesecties onderin het
 bestand (bewust laatst, want die hergebruiken de losse-landen-batches).
 
+**Derde aanvulling (2026-08)**: Youri leverde daarna nog een brede regio-checklist
+(West-/Noord-/Centraal-/Zuid-Europa, Balkan, microstaten, Turkije, bijzondere eilanden). Bijna
+alles daarop bestond al in de lijst — alleen de écht nieuwe regio's (Engeland/Wales/Noord-Ierland,
+Zweeds Lapland, Moravië, Campanië/Puglia/Galicië/Asturië/Cantabrië/Centraal-Portugal, Svalbard/
+Åland/Isle of Man/Jersey & Guernsey/Shetland/Orkney/Isle of Skye/Hebriden/Gibraltar) zijn
+toegevoegd, als losse naam-checklist onderaan `EUROPA_TRIP_IDEAS.md` — nog niet omgezet naar het
+"X dagen — route"-format van de rest, dus nog niet batch-klaar. Oekraïne/Belarus/Europees Rusland
+op Youri's eigen instructie bewust niet toegevoegd.
+
 **Next up: batch 5, Italië** (13 items) — waiting on Youri to confirm before starting.
 
 ## Search

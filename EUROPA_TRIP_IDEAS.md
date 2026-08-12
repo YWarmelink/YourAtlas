@@ -823,6 +823,44 @@ Griekenland) zijn hier niet herhaald — alleen de granulairdere/nieuwe variante
 
 ---
 
+## Extra regio's (2026-08) — nog geen trip-ideeën, alleen namen
+
+Youri leverde een derde aanvulling: een brede regio-checklist (West-/Noord-/Centraal-/Zuid-Europa,
+Balkan, Oost-Europa, microstaten, Turkije, bijzondere eilanden). Afgezet tegen alles hierboven —
+verreweg de meeste namen op die lijst bestaan al (Schotland, Ierland, Normandië, Bretagne, Elzas,
+Pyreneeën, Baskenland, Beieren, Zwarte Woud, Rijn/Moezel, Oostenrijkse Alpen, Tirol, Zwitserse
+Alpen, Dolomieten, Noord-Italië, Bohemen, Hoge Tatra, Zuid-Polen, Karpaten, Toscane, Rome, Sicilië,
+Sardinië, Istrië, Slovenië, Peloponnesos, Kreta, Cycladen, Ionische eilanden, Noord-Griekenland,
+Cyprus, Malta/Gozo, Catalonië, Valencia, Andalusië, Mallorca/Menorca, Canarische Eilanden, Madeira,
+Azoren, Noord-Portugal, Algarve, alle Balkan-landen incl. Kosovo/Moldavië/Transsylvanië, alle vijf
+microstaten, Istanbul/Thracië/Noordwest-Turkije) — die zijn hieronder dus niet herhaald.
+
+**Echt nieuw, per macro-regio:**
+- *West-Europa*: Engeland, Wales, Noord-Ierland
+- *Noord-Europa*: Zweeds Lapland, Faeröer *(let op: Faeröer bestaat al als aspirational
+  Route Builder-splitroute binnen Nordic Arctic Expedition ❄️ — dit zou de realistische, kortere
+  "Trip Ideas"-versie worden, geen duplicaat maar een ander soort trip op dezelfde bestemming)*
+- *Centraal-Europa*: Moravië
+- *Zuid-Europa*: Campanië, Puglia, Galicië, Asturië, Cantabrië, Centraal-Portugal
+- *Turkije*: Egeïsche kustregio ⚠️ *twijfelgeval — dit ligt duidelijk verder in Aziatisch Turkije
+  dan Istanbul/Thracië/Noordwest-Turkije, precies het gebied dat eerder al bewust buiten "het
+  Europese deel" is gehouden. Toevoegen kan, maar dan wijkt dit item af van de eigen afspraak in de
+  Turkije-sectie hierboven — jouw keuze of dat oké is.*
+- *Bijzondere eilanden/regio's*: Svalbard *(zelfde dubbele-laag-situatie als Faeröer — bestaat al
+  in Route Builder's Nordic Arctic Expedition ❄️)*, Åland, Isle of Man, Jersey & Guernsey, Shetland,
+  Orkney, Isle of Skye, Hebriden, Gibraltar
+
+**Bewust niet toegevoegd, op Youri's eigen instructie**: Oekraïne, Belarus, Europees Rusland —
+dezelfde categorie reden als de al bestaande "bewust niet opgenomen"-lijst in
+`ROUTE_BUILDER_MODULES.md` (oorlog/geopolitieke situatie), nu voor deze lijst expliciet door Youri
+zelf bevestigd in plaats van door Claude aangenomen.
+
+**Nog te doen voordat dit in een batch kan**: elk van de "echt nieuw"-regio's hierboven heeft nog
+geen duur of concrete route — moet eerst omgezet worden naar het "X dagen — bestemming/route"-
+format zoals de rest van deze lijst, voordat het meegenomen kan worden in een batch/onderzoeksronde.
+
+---
+
 ## Voorgestelde batch-indeling
 
 Zie `README.md` voor de actuele status. Voorstel (redenen bij elk cluster), uit te werken in deze
