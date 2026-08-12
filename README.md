@@ -215,7 +215,36 @@ out first when you sit down with it, then do the destinations below.
 
 ## Open items
 
-See [`ROADMAP.md`](ROADMAP.md) for planned work and direction, and `CLAUDE.md` for smaller cosmetic gaps (map highlighting, dropdown lag) that are accepted as-is rather than open work.
+**Route Builder — remaining split candidates** (all rated weaker in `ROUTE_BUILDER_MODULES.md`,
+none built yet — everything Sterk/Medium is done as of the combo batch above):
+- **Central European Grand Roadtrip 🚗**'s two fly-in reframes: Dolomieten & Noord-Italië (19d),
+  Balkan-as-flyto (16d) — the analysis itself is lukewarm on these (car-loop logic translates less
+  cleanly than it did for British Isles), so treat as optional.
+- **Sub-tier pieces**: Singapore alleen (Eurasia's Zuidoost-Azië Grand Loop 🛕, 3d — too short to
+  sell alone), Brunei alleen (2d, same reason), individual Pacific islands (Tonga, Samoa, Cook
+  Islands — each 7-9d, part of Pacific-eilanden 🌺, never flagged as strong standalone candidates
+  in the analysis the way Fiji/Vanuatu were).
+- **Route Builder Module Library** (technical layer, not content): the content side of the
+  modularization is now fully done (75+ standalone/combo routes), but the technical layer described
+  in `ROUTE_BUILDER_MODULES.md`'s "Route Builder implementation" section still isn't built —
+  `standalone_score`/`season`/`possible_next_blocks` metadata on Block Library items, a "mogelijke
+  standalone trips" section per Grand Expedition, and evolving Block Library into an actual Module
+  Library. For now every new route above is just a plain route, same as the original 13.
+
+**Route Builder → Google Sheet sync**: still 100% `localStorage`, doesn't follow Youri across
+devices/browsers. Next concrete step per `ROUTE_BUILDER_SYNC.md`: add 4 new Sheet tabs
+(`GrandTrips`, `GrandTripRegions`, `GrandTripBlocks`, `GrandTripDestinations`), publish each as CSV,
+then extend the Apps Script `doPost` for `GrandTrip*` payloads.
+
+**Trips route map — South Korea pilot**: needs Youri's manual Google Sheet work (new
+`TripDestinations` tab + coordinates) before the already-built map code will show anything — see
+the "Trips route map" section above for the exact steps.
+
+**Everything else**: see [`ROADMAP.md`](ROADMAP.md) for the rest of the planned work and direction
+(visa/passport tracker, visited-countries badges, yearly travel recap, the Trips↔Route Builder
+rethink, a Sabbatical page, folding in `youridealtravel`, live flight-price scraping, a real
+backend) and `CLAUDE.md` for smaller cosmetic gaps (map highlighting, dropdown lag) that are
+accepted as-is rather than open work.
 
 ## Architecture
 
