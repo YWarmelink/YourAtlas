@@ -497,3 +497,56 @@ Status (2026-07-30): alle openstaande vragen zijn voor nu beantwoord.
 - **Drempel vakantie-schaal:** ~28 dagen is prima, gehandhaafd.
 - **Trips-lijst overlap:** de vakantie-schaal opties hierboven blijven voorlopig een **ideeën-lijstje**, geen concrete rijen in de Trips-sheet — dat gebeurt pas als er echt een reis in zicht komt.
 - **Verder brainstormen:** voor nu voldoende materiaal om zelf mee verder te denken. Dit document is dus niet "af" in de zin van afgerond, maar een levend ideeën-naslagwerk: pak het weer op wanneer je hier verder aan wilt werken (nieuwe Route Builder-expeditie plannen, een losse vakantie uit een van de "al vakantie-lengte"-opties boeken, of de technische implementatie uit [Route Builder implementation](#route-builder-implementation) daadwerkelijk oppakken).
+
+---
+
+## Wereldwijde dekking-check (2026-08) — landen die nergens in Route Builder voorkomen
+
+Youri vroeg een audit: welke landen ontbreken helemaal, en welke al-opgenomen grote landen hebben
+een tweede, duidelijk ander gebied dat nog geen eigen plek heeft (zelfde patroon als Chili/
+Argentinië Noord/Zuid of Australië Tropisch/Gematigd)? Uitgevoerd met een subagent die de volledige
+landencodelijst uit `routeBuilder.js` extraheerde, plus eigen verificatie in de code voor de
+belangrijkste bevindingen (niet blind op de agent-output vertrouwd).
+
+**Echte gaten (niet ergens al bewust uitgesloten):**
+- **Portugal** — komt alleen voor als vluchtoverstap (Lissabon), nooit als bestemming. Mist naast
+  Spanje/Marokko in Mediterranean Civilizations Expedition 🏛️.
+- **Baltische staten** (Estland/Letland/Litouwen) — nergens, sluiten geografisch logisch aan bij
+  Polen (Central European Grand Roadtrip 🚗) of Scandinavië (Nordic Arctic Expedition ❄️).
+- **Zuid-Korea** — ontbreekt in Eurasia Grand Tour 🌏's Oost-Azië-blok (nu alleen China/Mongolië/
+  Japan/Taiwan) — geografisch een rare tussenruimte tussen Japan en China.
+- **Sri Lanka & Maldiven** — nergens, zouden goed passen bij India & Himalaya Expedition 🏔️.
+- **Saoedi-Arabië** — komt alleen voor als "overland hier is onpraktisch"-notitie bij Jordanië-Oman
+  in Mediterranean Civilizations Expedition 🏛️, nooit als eigen bestemming (inmiddels toegankelijk
+  voor toeristen).
+- **Sulawesi & Raja Ampat/West-Papua (Indonesië)** — Eurasia Grand Tour 🌏's Indonesië-blok bevat al
+  Sumatra + Lombok/Gili/Komodo (Java/Bali zijn bewust geschrapt, al bezocht) — Sulawesi/Raja Ampat
+  zijn een ander, nog nergens gebruikt deel van hetzelfde land, geen vervanging van iets bestaands.
+
+**Grote al-opgenomen landen met een duidelijk tweede gebied:**
+- **VS** — North America Grand Traverse 🌎 doet alleen de westkust (Washington/Oregon/Californië).
+  Oostkust, zuidwesten (Grand Canyon/Las Vegas/Utah), Hawaii en Alaska zijn volledig afwezig — de
+  grootste kandidaat van deze hele check.
+- Kazachstan (alleen het zuiden) en China (Xi'an/Chengdu/Zhangjiajie/Guilin/Shanghai/Beijing is al
+  behoorlijk breed) zijn zwakkere kandidaten, geen sterke aanbeveling.
+
+**Landen die bewust niet zijn opgenomen (veiligheid/praktisch) — vastgelegd zodat een volgende
+dekking-check ze niet opnieuw als "gat" aanmerkt:**
+- **Pakistan, Afghanistan** — reisadvies grotendeels oranje/rood, met name grensgebieden.
+- **Iran, Irak, Syrië, Jemen** — reisadvies rood/oranje, sancties (Iran) of aanhoudend conflict.
+- **Rusland, Wit-Rusland, Ukraine** — geopolitieke situatie/oorlog, complexe visa/sancties voor een
+  Nederlands paspoort.
+- **Nigeria, Mali, Niger, Burkina Faso, Tsjaad (Sahel)** — reisadvies rood, jihadistisch geweld/
+  staatsgrepen, past niet bij deze backpacker-reisstijl.
+- **DR Congo, Zuid-Sudan, Sudan, Libië, Somalië** — reisadvies rood, burgeroorlog/instabiliteit.
+- **Noord-Korea** — praktisch niet zelfstandig/backpacker-stijl te bezoeken.
+
+Dit zijn Claude's eigen inschatting op basis van algemene reisadvies-kennis (2026-08), geen
+individueel geverifieerde Nederlandse-reisadvies-check per land zoals bij de daadwerkelijk gebouwde
+routes — behandel als een grove, beargumenteerde aanname, niet als afgeronde research. Als een van
+deze landen ooit toch relevant wordt (bv. een regio wordt substantieel veiliger), gewoon opnieuw
+bekijken, niet blind op deze lijst vertrouwen.
+
+**Nog niet opgepakt, wacht op Youri's keuze:** welke van de "echte gaten" hierboven een eigen
+nieuwe route wordt, volgens het gebruikelijke traject (eerst een discussie-artifact met opties,
+daarna pas bouwen — zie de `route-builder-content` skill).
