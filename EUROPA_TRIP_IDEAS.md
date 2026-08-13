@@ -1,7 +1,7 @@
 # Europa — Trip Ideas
 
-Status: **batch 1 (Benelux), batch 2 (Duitsland), batch 3 (Oostenrijk + Zwitserland) en batch 4
-(Frankrijk) uitgewerkt, rest nog ruw.** Youri's eigen lijst (2026-08) van realistische
+Status: **batch 1 (Benelux), batch 2 (Duitsland), batch 3 (Oostenrijk + Zwitserland), batch 4
+(Frankrijk) en batch 5 (Italië) uitgewerkt, rest nog ruw.** Youri's eigen lijst (2026-08) van realistische
 Europese trips — van lang weekend tot ~3 weken, allemaal "reëel en slim te maken" omdat ze binnen
 Europa blijven. Dit is bewust alleen duur + bestemming/route, geen route/budget/seizoen-detail —
 dat werken we samen per batch uit, zoals Route Builder's expedities dat ook kregen (zie de
@@ -448,24 +448,194 @@ eigen ding (eiland, veerboot/vlucht, geen doorlopende auto-route vanuit NL).
 
 - [ ] 3–4 dagen — Rome + Vaticaanstad
 
-## 🇮🇹 Italië
+## 🇮🇹 Italië — batch 5, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-- [ ] 3–4 dagen — Rome
-- [ ] 3–4 dagen — Florence + Toscane
-- [ ] 4–5 dagen — Venetië + Dolomieten
-- [ ] 5–7 dagen — Toscane
-- [ ] 5–7 dagen — Dolomieten
-- [ ] 5–7 dagen — Noord-Italië
-- [ ] 7–10 dagen — Noord-Italië roadtrip
-- [ ] 7–10 dagen — Rome + Toscane
-- [ ] 7–10 dagen — Sicilië
-- [ ] 7–10 dagen — Sardinië
-- [ ] 10–14 dagen — Italië: noord → centraal
-- [ ] 10–14 dagen — Italië roadtrip
-- [ ] 10–14 dagen — Sicilië + Zuid-Italië
-- [ ] 5–7 dagen — Campanië (Napels + Amalfikust) *(nieuw, 2026-08 derde aanvulling)*
-- [ ] 5–7 dagen — Puglia *(nieuw, 2026-08 derde aanvulling)*
-- [ ] 7–10 dagen — Campanië + Puglia *(nieuw, 2026-08 derde aanvulling)*
+- [x] **3–4 dagen — Rome**. Puur stadstrip, geen dagtrips nodig voor deze lengte. Dag 1: Colosseum/
+  Forum/Palatijn — dag 2: Vaticaanse Musea + Sint-Pieter (bewust een andere dag dan Colosseum, samen
+  is te veel) — dag 3: Pantheon, Trevi-fontein, Piazza Navona, Spaanse Trappen — dag 4 (optioneel):
+  Borghese-galerij/tuinen of Trastevere + Ostia Antica-dagtrip. Direct AMS-FCO (KLM/Transavia/ITA,
+  ~2u10, 47 vluchten/week) — geen zinnige zelf-rijden-optie op deze afstand. Budget: ~€130/dag
+  (3-star 2p €130-190/nacht ≈€65-95pp, eten €40-55, OV/Roma Pass €15-20). Seizoen: april-juni of
+  september-oktober; vermijd augustus (32-38°C, veel lokale zaken dicht voor Ferragosto). ⚠️
+  Colosseum-tickets komen pas ~30 dagen vooraf vrij — reken vanaf die releasedatum terug, niet vanaf
+  je vertrekdatum; een combiticket (Colosseum+Forum+Palatijn+Vaticaan+Sixtijnse Kapel+Sint-Pieter,
+  3 dagen geldig) is tot 20% goedkoper dan losse tickets.
+- [x] **3–4 dagen — Florence + Toscane**. Florence als vaste basis, geen overnachting-wissel. Dag
+  1-2: stad (Uffizi, Duomo-koepel, Ponte Vecchio, Palazzo Vecchio) — dag 3(-4): één volle
+  Toscane-dagtrip Siena → Chianti (wijnproeverij) → San Gimignano → Pisa, zelf rijden (1 dag
+  huurauto, flexibeler/goedkoper voor 2+ personen) of een gegidste dagtour. Direct AMS-FLR (alleen
+  KLM, ~2u, 4x/dag). Budget: ~€120/dag + eenmalig €20-30 huurauto/dagtour. Seizoen: april-mei of
+  september-oktober; juli-augustus heet (30-35°C) en druk. ⚠️ Uffizi en Accademia weken vooraf
+  boeken; de Duomo-koepelbeklimming heeft een eigen tijdslot los van de gratis kathedraal-entree en
+  raakt sneller vol dan de rest — boek die als eerste.
+- [x] **4–5 dagen — Venetië + Dolomieten**. 1-2 nachten Venetië (San Marco, Rialto, halve dag
+  Murano/Burano) — huurauto — 150km/2u15 naar Cortina d'Ampezzo of Val Gardena (2-3 nachten:
+  Tre Cime-gebied, Lago di Braies, Cinque Torri) — terug naar Venetië voor de vlucht. Direct AMS-VCE
+  (KLM/easyJet, ~2u, 110 vluchten/week) — Marco Polo heeft geen directe trein, bus/taxi naar Mestre
+  dan trein, of de Alilaguna-boot rechtstreeks de stad in. Budget: ~€140/dag in Venetië, ~€105/dag
+  in de Dolomieten. Seizoen: begin juni of september — compromis tussen open kabelbanen (die pas
+  laat mei/juni opengaan) en minder Venetië-drukte. ⚠️ Venetië's dagtoeristenheffing is terug voor
+  2026: €5pp bij ≥4 dagen vooraf betaald, €10 bij laat/ter plekke, op ~60 dagen tussen 3 april-26
+  juli 2026 (vrij-zo, 8:30-16:00) — vervalt bij een overnachting binnen de gemeente Venetië (incl.
+  Mestre/Lido), dus voor deze trip normaal niet van toepassing, wel checken bij het boeken.
+  Dolomieten-kabelbanen zijn seizoensgebonden (eind mei-begin oktober, per lift verschillend) —
+  check de specifieke lift. Parkeren bij Tre Cime/Lago di Braies vooraf boeken in het seizoen.
+- [x] **5–7 dagen — Toscane**. Florence (1-2n, hub) — Siena (1n, 1u15) — Val d'Orcia-lus: Montalcino,
+  Pienza, Montepulciano (2n, basis Pienza/Montalcino, wijnstreek) — San Gimignano + Volterra
+  (1-2n) — terug naar Florence. Bewust geen Cinque Terre erbij — andere regio (Ligurië), kost een
+  hele dag rijden heen en terug, niet de moeite waard. Direct AMS-FLR (~2u), huurauto in Florence
+  voor de hele week (zelf rijden vanuit NL, ~12u/1384km, is te veel voor deze lengte). Budget:
+  ~€125/dag (agriturismo/B&B 2p €90-130/nacht ≈€45-65pp + huurauto €35-45/dag/2p + eten €40-50).
+  Seizoen: april-mei of september-oktober; vermijd juli-augustus (hitte); september = wijnoogst,
+  mooi maar drukker/duurder rond Chianti/Montalcino. ⚠️ Parkeren buiten de muren bij San
+  Gimignano/Volterra (voetgangersgebied binnen).
+- [x] **5–7 dagen — Dolomieten**. Twee bases: Ortisei/Val Gardena (3n: Alpe di Siusi, Seceda, Passo
+  Gardena, Vallunga) — via Passo Valparola/Falzarego naar Cortina d'Ampezzo (3-4n: Tre Cime di
+  Lavaredo, Cadini di Misurina, Lago di Braies, Cinque Torri, Passo Giau). Bewust géén stad/Venetië
+  erbij — dieper de valleien in (Alta Badia, Pusteria) dan de korte combo-trip hierboven kan. Geen
+  directe vlucht naar de Dolomieten zelf; beste gateways: Innsbruck (Transavia direct vanaf AMS,
+  ~1u35, maar seizoensgebonden do/zo — check actuele dienstregeling) voor Pusteria/noordkant, of
+  Verona/Venetië voor Cortina/zuidkant. Zelf rijden vanuit NL (~12-13u via Duitsland-Oostenrijk-
+  Brennerpas) alleen zinvol als onderweg-stop, anders vliegen + lokaal huren. Budget: ~€110/dag
+  (Cortina duurder/chiquer dan Val Gardena) + huurauto €35-45/dag + lift-passes €10-25/dag. Seizoen:
+  juni-september — harde grens, geen zachte voorkeur: buiten dit venster zijn de meeste
+  liften/paden sneeuw-dicht. Exacte 2026-openingsdata verschillen per vallei en jaar (bv. Val
+  Gardena 6 juni-11 okt 2026, Cortina's liften gespreid vanaf eind mei) — dicht bij vertrek
+  checken. ⚠️ Parkeren Tre Cime/Lago di Braies vooraf boeken in het seizoen (dagelijkse
+  voertuiglimiet); middagonweer is normaal ook in de zomer — wandel 's ochtends.
+- [x] **5–7 dagen — Noord-Italië**. Milaan (1-2n) — Comomeer (2-3n, veerboot-hoppen
+  Bellagio/Varenna/Menaggio) — Gardameer (2n, Sirmione/Desenzano) — Verona (1n, Arena/Julia's
+  balkon) — terug naar Milaan. Bewust een vlakke meren-en-steden-lus, geen Dolomieten/Venetië erbij
+  — dat is de langere roadtrip-versie hieronder. Direct AMS-Milaan (Malpensa/Linate, KLM/Transavia,
+  frequent); zelf rijden vanuit NL kan (~1073km/11u) maar vliegen + lokaal huren is efficiënter
+  voor 5-7 dagen. Budget: ~€125/dag (huurauto €35-45/dag erbij — de meren zijn duurder dan
+  gemiddeld Italië). Seizoen: mei of september; vermijd juli-augustus (hitte/drukte, vooral
+  Ferragosto-piek 10-20 augustus: bijna volledige bezetting aan beide meren). ⚠️ Geen entree-/
+  reserveringsgedoe zoals Venetië/Rome, wel veerboten en eventuele Arena-operavoorstellingen vooraf
+  boeken; bij zelf rijden via Duitsland/Oostenrijk een Oostenrijks vignet nodig (10-dagenversie
+  ~€12,80) — Zwitserland verkoopt alleen een jaarvignet (~€43), dus minder de moeite voor een
+  eenmalige trip.
+- [x] **7–10 dagen — Noord-Italië roadtrip**. Grote zus van de trip hierboven — nu wél door naar de
+  Dolomieten en Venetië: Milaan (1-2d) — Comomeer/Bellagio (1d) — Gardameer/Sirmione (1-2d) —
+  Verona (1d) — bij de 10-daagse versie: Dolomieten via Bolzano/Lago di Braies (2d) — Venetië
+  (2-3d). West→oost, geen zigzag. Open-jaw AMS-Milaan in, AMS-Venetië out (beide direct, frequent)
+  — geen retourvlucht-omweg. Huurauto voor meren+Dolomieten, trein Verona-Venetië. Budget: ~€130/
+  dag. Seizoen: mei-juni of september; Dolomietenpassen pas volledig open/warm juni-september,
+  vermijd augustus. ⚠️ Milaan's Area C-milieuzone als je met de auto het centrum in wil; Dogenpaleis/
+  Basilica San Marco vooraf tijdslot boeken in de zomer; bergwegen kunnen buiten juni-september
+  winterbanden nodig hebben — check dit bij tussenseizoen-reizen.
+- [x] **7–10 dagen — Rome + Toscane**. Rome (3d, geen auto nodig) — Orvieto — Val d'Orcia (Pienza,
+  Montepulciano, Montalcino, San Quirico, 2d) — Siena (1d) — San Gimignano/Volterra (1d) — Florence
+  (2-3d). Een volle, verbonden versie van beide regio's samen, niet Rome-los en Toscane-los
+  simpelweg achter elkaar plakken. Direct AMS-Rome Fiumicino (~2u15, 314 vluchten/week); geen
+  directe NL-vlucht naar Pisa/Florence gevonden, dus reken op een terugvlucht via Rome (trein
+  Florence-Rome ~1,5u) i.p.v. een open-jaw uit Florence — checken bij het boeken. Huurauto pas na
+  Rome (Rome's ZTL maakt een auto daar nutteloos), inleveren in Florence. Budget: ~€140/dag.
+  Seizoen: april-juni of september-oktober; vermijd augustus-hitte in zowel Rome als Toscane. ⚠️
+  Colosseum/Forum en Vaticaanse Musea vereisen vooraf geboekt tijdslot — in het hoogseizoen weken
+  vooraf uitverkocht; Florence/Siena/San Gimignano's binnensteden zijn ZTL, parkeer buiten de
+  muren.
+- [x] **7–10 dagen — Sicilië**. Palermo (2d) — Cefalù (1d) — Agrigento/Valle dei Templi (1-2d) —
+  Val di Noto (Ragusa/Modica/Noto, 1-2d) — Siracusa (1-2d) — Etna/Taormina (2d). West→zuid→oost,
+  geen backtrack; bij 7 dagen Val di Noto/Agrigento inkorten. Direct AMS-Catania
+  (Transavia/Ryanair/KLM, ~2u50-3u20, goed bediend) of AMS-Palermo (alleen Transavia, ~3x/week,
+  vroeg boeken) — aanrader: open-jaw Palermo in/Catania out. Huurauto essentieel (Agrigento, Val di
+  Noto en het binnenland zijn slecht met OV bereikbaar). Budget: ~€110/dag (huurauto+brandstof
+  erbij). Seizoen: mei-juni of september-begin oktober; juli-augustus erg heet, vooral in de
+  binnenlandse stenen steden (Agrigento, Val di Noto). ⚠️ Eenmalige inleverkosten voor de
+  huurauto Palermo→Catania; de Etna-top boven een bepaalde hoogte is alleen met gids toegankelijk
+  en afhankelijk van actuele vulkanische activiteit — check dit dicht bij je reisdatum, dit verandert.
+- [x] **7–10 dagen — Sardinië**. Olbia in/uit (simpelst gezien de beperkte seizoensroutes) — lus:
+  Olbia — Costa Smeralda/Porto Cervo (2d) — Cala Gonone/Golfo di Orosei (2d) — Barumini (Su Nuraxi,
+  UNESCO) + Cagliari (2-3d) — westkust via Oristano — Alghero (2d) — terug naar Olbia. Direct
+  AMS-Olbia (easyJet/Transavia, 12x/week, maar seizoensgebonden april-september); Cagliari alleen
+  KLM, seizoensgebonden juli-oktober, 4x/week; Alghero ook seizoensgebonden — check de actuele
+  dienstregeling. Zelf rijden+veerboot vanuit NL (Civitavecchia/Genua/Livorno→Olbia, 5-11u
+  overtocht) is onpraktisch voor een korte trip — vliegen is de realistische keuze. Huurauto
+  essentieel. Budget: ~€120/dag (Costa Smeralda in augustus duidelijk boven dit gemiddelde).
+  Seizoen: juni of september; juli-augustus erg duur/druk, vooral Costa Smeralda. ⚠️ Bij zelf
+  rijden+veerboot: auto-veerboot 3-4+ maanden vooraf boeken voor augustus (autodekplekken raken
+  vol, piekdagen kunnen boven €300 enkele reis uitkomen); vluchtroutes zijn seizoensgebonden —
+  actuele dienstregeling checken vóór boeken.
+- [x] **10–14 dagen — Italië: noord → centraal**. Milaan/Comomeer/Gardameer (3-4d) — Verona —
+  Bologna (1d) — Florence (2-3d) — Siena/Val d'Orcia (2d) — Rome (3d). Lineair, geen backtrack — de
+  klassieke grote-namen-sweep, grotendeels langs de Milaan-Bologna-Florence-Rome hogesnelheidslijn
+  (trein is hier een reëel alternatief voor de auto, behalve het meren/Dolomieten-stuk). Open-jaw
+  AMS-Milaan in, AMS-Rome out (beide direct, frequent). Budget: ~€130/dag. Seizoen: mei-juni of
+  september; vermijd augustus.
+- [x] **10–14 dagen — Italië roadtrip**. Bewust een andere invalshoek dan de trip hierboven — auto-
+  only, landelijk/eten-gericht, slaat Toscane's grote namen over: Milaan/Turijn (2d) —
+  Emilia-Romagna eten-route: Parma, Modena, Bologna (2d) — Umbrië: Perugia, Assisi, Orvieto (2-3d)
+  — Rome (2-3d) — Napels/Pompeii (2d) — Amalfikust/Sorrento (2-3d). Open-jaw AMS-Milaan in,
+  AMS-Napels out (beide direct). Huurauto de hele reis. Budget: ~€140/dag (Amalfi-stuk + huurauto/
+  tol trekken het gemiddelde omhoog) — tolkosten Milaan-Rome ≈€44,50, Rome-Napels ≈€13,50
+  (2026-tarieven; de autostrade-tarieven gingen per januari 2026 ~1,5% omhoog). Seizoen: mei-juni
+  of september-begin oktober. ⚠️ Het Amalfikust-stuk heeft dezelfde oneven/even-kenteken- en
+  ZTL-beperkingen als de trips hieronder — check het exacte 2026-kalender vooraf, vooral bij
+  aankomst op een zomerweekend.
+- [x] **10–14 dagen — Sicilië + Zuid-Italië**. Alleen echt onderscheidend van Sicilië-alleen door
+  het Calabrië+Matera-vasteland erbij te houden, niet gewoon "meer Sicilië-dagen": Napels/Salerno
+  (1d) — Matera (2d) — Tropea/Calabrische kust (2d) — veerboot Villa San Giovanni↔Messina (~20 min,
+  2-3x/uur, 24/7, geen reservering nodig, betalen/boeken bij aankomst) — Taormina/Etna (2d) —
+  Siracusa/Val di Noto (2d) — Agrigento (1-2d) — Palermo/Cefalù (2d). Open-jaw AMS-Napels in,
+  AMS-Palermo of Catania out (beide direct). Huurauto de hele reis. Budget: ~€130/dag. Seizoen:
+  mei-juni of september (Calabrië+Sicilië beide erg heet juli-augustus; Matera ook heet overdag,
+  grotten blijven koeler). ⚠️ Bouw aan de Straat van Messina-brug start in 2026 (weg/spoorwerk vanaf
+  mei 2026, tunnels/knooppunten vanaf september 2026) — zou de veerpont zelf niet moeten raken, maar
+  verwacht mogelijk bouwverkeer/omleidingen rond Villa San Giovanni en Messina — check de actuele
+  wegwerkzaamheden vóór je die route in 2026 rijdt.
+- [x] **5–7 dagen — Campanië (Napels + Amalfikust)** *(nieuw, 2026-08 derde aanvulling)*. Napels (2d
+  incl. Pompeii-dagtrip) — basis Sorrento (2-3d) — Amalfikust (Positano/Amalfi/Ravello) per
+  bus/boot, niet zelf rijden (2d) — Capri-dagtrip (1d). Direct AMS-Napels (easyJet/Transavia/ITA,
+  ~2-2,5u). Geen huurauto aan te raden — gebruik de Circumvesuviana-trein (Napels-Pompeii-Sorrento),
+  SITA-bussen en seizoensveerboten (Sorrento-Positano-Amalfi-Capri) i.p.v. zelf de smalle/drukke
+  SS163 te rijden, ook gezien de beperkingen hieronder. Budget: ~€125/dag (Capri/Amalfi duur, Napels
+  zelf goedkoper). Seizoen: eind mei-juni of september; juli-augustus erg druk/heet en de
+  verkeersbeperkingen hieronder gelden dan dagelijks; veerboten zijn seizoensgebonden (~mei-
+  september) — actuele dienstregeling checken. ⚠️ (jaarlijks checken): Pompeii 2026 verplicht
+  tijdslot, ticket gekoppeld aan naam/ID, max 20.000/dag, ≥1 week vooraf boeken (ochtendslots in
+  het hoogseizoen weken vooraf vol); Amalfikust's oneven/even-kentekenregel geldt 10:00-18:00
+  dagelijks eind juni-begin september + Pasen/25 april, weekends juni-juli & oktober (scooters
+  uitgezonderd, gasten met hotelreservering mogen op hun in-/uitcheckdag ongeacht kenteken);
+  Positano sluit het centrum voor privévoertuigen 6:30-24:00 in de hoogzomer.
+- [x] **5–7 dagen — Puglia** *(nieuw, 2026-08 derde aanvulling)*. Bari (1d) — Polignano a
+  Mare/Monopoli (1d) — Valle d'Itria: Alberobello/Locorotondo/Ostuni (2d, één basis) — Lecce (2d,
+  tweede basis) — Otranto/Salento-kust (1d) — terug naar Bari. Direct AMS-Bari (alleen Transavia,
+  ~9x/week, ~2,5u) — in en uit dezelfde luchthaven, geen open-jaw nodig. Huurauto nodig (trulli-
+  platteland en kleine kustplaatsen zijn slecht met OV bereikbaar). Budget: ~€110/dag (Puglia
+  merkbaar goedkoper dan Amalfi/Toscane/het noorden). Seizoen: mei-juni of september; juli-augustus
+  heet en erg druk met Italiaans binnenlands toerisme, vooral rond Ferragosto (15 augustus) — ruim
+  vooraf boeken als je dan gaat. ⚠️ Weinig gedoe met reserveringssystemen zoals Rome/Pompeii;
+  Alberobello's trulli-centrum wordt rond het middaguur toeristisch — ga vroeg of laat.
+- [x] **7–10 dagen — Campanië + Puglia** *(nieuw, 2026-08 derde aanvulling)*. Napels/Pompeii (2d) —
+  Sorrento/Amalfikust (2-3d, boot/bus, zelfde voorzichtigheid als Campanië-alleen) — Matera (1-2d,
+  natuurlijke tussenstop, ~2u vanaf de Salerno/Amalfi-kant) — Valle d'Itria (Alberobello/Ostuni,
+  2d) — Lecce/Salento (1-2d). Open-jaw AMS-Napels in, AMS-Bari out (beide direct) — sluit mooi aan
+  bij de west→oost-sweep. Huurauto na het Amalfi-stuk (of laat 'm staan en gebruik boot/bus alleen
+  voor Positano/Amalfi, zie Campanië-alleen). Budget: ~€125/dag. Seizoen: eind mei-juni of september
+  (vermijdt zowel Amalfi's piekseizoen-kentekenregels als Puglia's Ferragosto-drukte). ⚠️ Dezelfde
+  Pompeii- en Amalfi-kenteken/ZTL-regels als bij Campanië-alleen gelden voor de eerste helft;
+  Matera's grotkerken (Casa Grotta, Cripta del Peccato Originale) hebben eigen kleinere tijdslot-/
+  gids-regels — check de actuele 2026-eisen dicht bij je reisdatum, deze veranderen vaker dan de
+  regels bij de grote sites. **Overlap-kanttekening**: dit overlapt flink met Campanië-alleen +
+  Puglia-alleen samen — Matera is de enige echt unieke toevoeging. Behandel dit als de
+  "highlights, minder tijd per plek"-versie, niet als iets om ná de losse trips ook nog te doen.
+
+**Algemeen (webcheck 2026-08)**: Italiaanse autostrade rekenen tol per afstand, gemiddeld ~€9/100km
+(bv. Milaan-Rome ≈€44,50 enkele reis) — betaalpoortje bij binnenkomst, betalen bij uitrit, geen
+vignet nodig binnen Italië zelf. Sicilië/Sardinië vragen bij zelf rijden een auto-veerboot (of
+vliegen + lokaal huren, meestal de betere keuze voor deze tripduur).
+
+**Geverifieerd (2026-08)**: alle 16 items WebSearch-backed gecontroleerd via twee parallelle
+research-agents (Rome/Florence/Venetië/Dolomieten/Noord-Italië; roadtrips/Sicilië/Sardinië/
+Campanië/Puglia) — routevolgorde, actuele openingstijden/reserverings-/toegangsregels, en budgetten.
+Grootste terugkerende bevinding: verschillende items overlapten inhoudelijk sterk (Rome+Toscane vs.
+Rome-alleen/Toscane-alleen, Italië roadtrip vs. Italië noord→centraal, Sicilië+Zuid-Italië vs.
+Sicilië-alleen, Campanië+Puglia vs. de twee losse trips) — bij elk is expliciet een eigen
+invalshoek/route gekozen (bv. Italië roadtrip wordt auto-only/landelijk/eten-gericht i.p.v. nog een
+trein-vriendelijke grote-steden-sweep) zodat ze elkaar aanvullen in plaats van te herhalen, met één
+uitzondering (Campanië+Puglia) waar de overlap bewust geaccepteerd is als "combineer de twee losse
+trips" met Matera als enige unieke toevoeging.
 
 ## 🇸🇲 San Marino
 
@@ -928,7 +1098,8 @@ volgorde:
 4. **Frankrijk** (11). **Gedaan (2026-08), WebSearch-geverifieerd.** *(Corsica en Monaco zaten niet
    in de oorspronkelijke Frankrijk-lijst — die zitten nu in batch 5a hieronder, niet hier
    teruggevoegd om deze al-afgeronde batch niet opnieuw open te trekken.)*
-5. **Italië** (16, was 13 — +Campanië/Puglia/combo uit de derde aanvulling, 2026-08).
+5. **Italië** (16, was 13 — +Campanië/Puglia/combo uit de derde aanvulling, 2026-08). **Gedaan
+   (2026-08), WebSearch-geverifieerd.**
 6. **Micro-staten & kleine eilanden: Liechtenstein + San Marino + Vaticaanstad + Monaco + Corsica
    + Malta** (16) — nieuw t.o.v. de oorspronkelijke lijst, allemaal klein en verspreid maar qua
    omvang/aanpak vergelijkbaar — één compacte batch in plaats van los achter elk groter land aan
