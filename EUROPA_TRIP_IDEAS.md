@@ -1,8 +1,8 @@
 # Europa — Trip Ideas
 
 Status: **batch 1 (Benelux), batch 2 (Duitsland), batch 3 (Oostenrijk + Zwitserland), batch 4
-(Frankrijk), batch 5 (Italië) en batch 6 (micro-staten & kleine eilanden) uitgewerkt, rest nog
-ruw.** Youri's eigen lijst (2026-08) van realistische
+(Frankrijk), batch 5 (Italië), batch 6 (micro-staten & kleine eilanden) en batch 7 (Iberië)
+uitgewerkt, rest nog ruw.** Youri's eigen lijst (2026-08) van realistische
 Europese trips — van lang weekend tot ~3 weken, allemaal "reëel en slim te maken" omdat ze binnen
 Europa blijven. Dit is bewust alleen duur + bestemming/route, geen route/budget/seizoen-detail —
 dat werken we samen per batch uit, zoals Route Builder's expedities dat ook kregen (zie de
@@ -807,41 +807,281 @@ trips" met Matera als enige unieke toevoeging.
 in de praktijk. De twee combo-trips hierboven zijn geverifieerd als de realistische invulling;
 de losse dag is expliciet gemarkeerd als beter passend als add-on dan als eigen fly-in-fly-out-trip.
 
-## 🇪🇸 Spanje
+## 🇪🇸 Spanje — batch 7, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-- [ ] 3–4 dagen — Barcelona
-- [ ] 3–4 dagen — Madrid
-- [ ] 4–5 dagen — Andalusië
-- [ ] 5–7 dagen — Baskenland
-- [ ] 5–7 dagen — Mallorca
-- [ ] 5–7 dagen — Valencia + omgeving
-- [ ] 7–10 dagen — Andalusië roadtrip
-- [ ] 7–10 dagen — Noord-Spanje
-- [ ] 7–10 dagen — Catalonië + Pyreneeën
-- [ ] 10–14 dagen — Noord-Spanje roadtrip
-- [ ] 10–14 dagen — Spanje noord → centraal
-- [ ] 10–14 dagen — Spanje oost → zuid
-- [ ] 5–7 dagen — Galicië (Santiago de Compostela + kust) *(nieuw, 2026-08 derde aanvulling)*
-- [ ] 5–7 dagen — Asturië + Cantabrië *(nieuw, 2026-08 derde aanvulling)*
-- [ ] 3–4 dagen — Gibraltar + Andalusië (Costa del Sol) *(nieuw, 2026-08 derde aanvulling)*
+- [x] **3–4 dagen — Barcelona**. Gotisch Kwartier/Barri Gòtic, Sagrada Família, Park Güell,
+  Barceloneta-strand, Montjuïc — geen dagtrips nodig. Direct AMS-BCN (KLM/Vueling/Transavia, ~2u10,
+  tot 370 vluchten/week in het hoogseizoen). Budget: ~€115/dag. Seizoen: april-juni of september-
+  oktober; vermijd augustus. ⚠️ 2026 is Gaudí-herdenkingsjaar (100 jaar overlijden, juni 1926) — de
+  centrale toren van de Sagrada Família zou daarrond afgerond worden, dus extra drukte/prijzen vooral
+  rond juni; normaal 2-3 weken vooraf boeken, in 2026 beter 1-2 maanden vooraf; Park Güell 1-2 maanden
+  vooraf. Barcelona's toeristenbelasting verdubbelde per 1 april 2026 (regionaal €0,80-4,50 +
+  gemeentelijke toeslag €5/nacht, tot ~€12/nacht bij 5-star) — check het actuele tarief.
+- [x] **3–4 dagen — Madrid**. Stad (Prado/Retiro/Puerta del Sol/Gran Vía) 2-3 dagen + dagtrip Toledo
+  of Segovia (AVE-trein, 30-90 min, zelfstandig goed te doen). Direct AMS-MAD (KLM/Iberia/Air Europa,
+  ~2u30-45, 70+ vluchten/week). Budget: ~€100/dag. Seizoen: april-juni of september-november; ook
+  Madrid kan zomers erg heet zijn (binnenland, geen zeewind) — vermijd juli-augustus indien mogelijk.
+  ⚠️ Segovia-AVE vanaf Chamartín ~30 min, €12-14; Paseo del Arte-combiticket (~€32, Prado/Reina
+  Sofía/Thyssen-Bornemisza, 20% korting) — minder boekingsdruk dan Barcelona/Granada, wel een paar
+  dagen vooraf Toledo/Segovia-treinkaartjes reserveren in het hoogseizoen.
+- [x] **4–5 dagen — Andalusië**. Alleen Sevilla + Granada (2 hoofdsteden) — vlieg naar Málaga of
+  Sevilla (geen directe NL-vlucht naar Sevilla/Granada zelf gevonden, check seizoensroutes) of via
+  Madrid/Barcelona; trein Sevilla-Granada ~3u. Budget: ~€85/dag. Seizoen: maart-mei of oktober-
+  november — vermijd juli-augustus (binnenland Andalusië regelmatig 40°C+, Córdoba/Sevilla/Granada/
+  Jaén onder de heetste steden van Europa, 2026 al oranje hittealarmen gehad). ⚠️ Alhambra-tickets
+  2-3 maanden vooraf boeken — raakt ook buiten het seizoen weken tot maanden vooraf uitverkocht
+  (groepen/schoolreisjes), geen betrouwbare kassaverkoop.
+- [x] **5–7 dagen — Baskenland**. San Sebastián + Bilbao (Guggenheim) + korte kustplaatsjes
+  (Hondarribia, Getaria/Zarautz) — bewust kust/Baskenland-only, geen La Rioja/Pamplona (dat is de
+  langere Noord-Spanje-versie hieronder). Direct AMS-Bilbao (KLM/Vueling, ~2u15, 21 KLM-vluchten/
+  week); San Sebastián heeft geen dagelijkse directe AMS-vlucht — vlieg Bilbao, rijd/bus ~1u. Budget:
+  ~€105/dag (pintxo's/Michelin-dichtheid duwen eten omhoog). Seizoen: juni-september werkt hier
+  écht goed (koeler Atlantisch klimaat) — solide zomeralternatief voor het hete zuiden. ⚠️ San
+  Sebastián boekt snel vol in juli-augustus (Semana Grande, half augustus).
+- [x] **5–7 dagen — Mallorca**. Palma (basis) → Serra de Tramuntana-lus: Valldemossa → Deià → Sóller
+  (minstens één kant met de antieke houten trein Palma-Sóller) → Cap de Formentor in het noorden →
+  optioneel een oostkust-strand-dag. Direct AMS-PMI (Transavia, ~2u25, ~30 vluchten/week); huurauto
+  aan te raden voor de bergwegen. Budget: ~€105/dag (huurauto +€25-35/dag). Seizoen: mei-juni of
+  september; juli-augustus erg druk/duur. ⚠️ Balearen-ecotax (ITS): hoogseizoen (1 mei-31 okt)
+  €1,10-4,40 pp/nacht afhankelijk van accommodatiecategorie, laagseizoen €0,28-1,10 — apart
+  afgerekend bij in-/uitchecken, vaak niet in de boekingsprijs verwerkt.
+- [x] **5–7 dagen — Valencia + omgeving**. Valencia stad (2-3d: Ciutat Vella, Ciudad de las Artes y
+  las Ciencias, Albufera) → zuidwaarts langs de Costa Blanca: Alicante (Castillo Santa Bárbara) →
+  optioneel Peñíscola (kasteel, ten noorden — beter op de heenweg als je van boven komt) of Calpe/
+  Dénia. Direct AMS-VLC (KLM/Vueling/Transavia/easyJet, ~2u28, ~175 vluchten/week). Budget: ~€90/dag.
+  Seizoen: maart is spectaculair maar chaotisch (Las Fallas, half maart, UNESCO-festival, enorme
+  drukte/vuurwerk elke avond) — anders april-juni/september-oktober ideaal, juli-augustus heet/druk
+  aan de kust. ⚠️ Bij Las Fallas ruim maanden vooraf boeken.
+- [x] **7–10 dagen — Andalusië roadtrip**. Málaga (invliegen) → Ronda → Cádiz/Jerez de la Frontera →
+  Sevilla → Córdoba → Granada → terug naar Málaga. Cirkelroute, ~1.040km, geen backtrack. Direct
+  AMS-Málaga (Transavia/easyJet/Vueling/KLM/Ryanair, ~3u, ~97 vluchten/week — goedkoopst en best
+  verbonden Andalusische luchthaven), huurauto in Málaga voor de hele lus. Budget: ~€95/dag +
+  €30-40/dag huurauto. Seizoen: april-juni of september-november essentieel — zelfde hitte-
+  waarschuwing als hierboven, versterkt doordat een roadtrip meer overdag buiten/rijden betekent
+  (Córdoba/Sevilla regelmatig 40°C+, 2026-voorspellingen tot 47°C bij hittegolven). ⚠️ Zelfde
+  Alhambra-boekingsregel als hierboven; deze lus is grotendeels tolvrij (AP-7 Costa del Sol-stuk is
+  gratis).
+- [x] **7–10 dagen — Noord-Spanje**. Herschikt op **Baskenland-binnenland/wijn**, geen overlap meer
+  met de kust (Baskenland hierboven) of Cantabrië/Asturië/Galicië (zie de twee nieuwe items
+  hieronder): San Sebastián → Vitoria-Gasteiz → Rioja Alavesa-wijnstreek (Elciego/Haro) → Pamplona →
+  terug naar Bilbao. Direct AMS-Bilbao, huurauto voor de binnenland-lus. Budget: ~€100/dag. Seizoen:
+  mei-september (wijnoogst in Rioja is september, een mooie bonus).
+- [x] **7–10 dagen — Catalonië + Pyreneeën**. Barcelona (1-2d) → Girona (middeleeuwse oude stad) →
+  Costa Brava-kust (kort) → de Pyreneeën in: Vall de Núria (met de Cremallera-tandradbaan vanaf
+  Ribes de Freser) → Cerdanya/Puigcerdà → optioneel Aigüestortes i Estany de Sant Maurici NP → terug
+  via La Garrotxa-vulkaanpark. Bewust binnenland/bergen-gericht — laat dit geen volledige Costa
+  Brava-strandvakantie worden (dat zou overlappen met de kust-trip hieronder). Direct AMS-Barcelona,
+  huurauto voor de bergetappes. Budget: ~€95/dag. Seizoen: juni-september voor wandeltoegang (paden
+  sneeuwvrij).
+- [x] **10–14 dagen — Noord-Spanje roadtrip**. Herschikt als de **connector-trip**: San Sebastián →
+  Bilbao → Santander → Santillana del Mar/Comillas → Picos de Europa (Potes, Fuente Dé-kabelbaan) →
+  Oviedo/Gijón (Asturië) → Santiago de Compostela → optioneel Rías Baixas/Cíes-eilanden. Rijgt bewust
+  de drie kortere standalone-trips (Baskenland, Asturië+Cantabrië, Galicië) achter elkaar voor wie 2
+  weken heeft, i.p.v. één ervan te herhalen. Open-jaw AMS-Bilbao in, AMS-Santiago de Compostela out
+  — KLM vliegt sinds 30 mei 2026 seizoensgebonden direct AMS-Santiago (6x/week), Vueling sinds 16
+  juni 2026 ook — check of deze nieuwe 2026-route nog in de dienstregeling staat voor je eigen data.
+  Budget: ~€90/dag. Seizoen: juni-september (sluit toevallig aan bij het seizoensvenster van de
+  Santiago-vlucht). ⚠️ Eenrichtings-huurauto Bilbao→Santiago heeft inleverkosten.
+- [x] **10–14 dagen — Spanje noord → centraal**. San Sebastián/Bilbao → Vitoria-Gasteiz → Burgos
+  (kathedraal) → Madrid (3-4d, incl. Toledo/Segovia-dagtrips zoals hierboven) → optioneel Ávila of
+  Salamanca vóór de thuisvlucht. Bewust **lineair** (noord→binnenland→Madrid), geen terugkeer naar
+  de kust — dat zou overlappen met de vorige trip's kust-lus. Open-jaw AMS-Bilbao in, AMS-Madrid out
+  (of omgekeerd), beide sterk direct verbonden. Budget: ~€95/dag. Seizoen: mei-juni of september; de
+  Meseta (Burgos/binnenland) is koud in de winter en heet (droger dan Andalusië, minder extreem) in
+  de hoogzomer.
+- [x] **10–14 dagen — Spanje oost → zuid**. Barcelona (1-2d) → Tarragona → Valencia (2d) → Alicante
+  (Costa Blanca) → Murcia-regio → Almería-kust → Málaga/Costa del Sol, optioneel afsluiten met een
+  Granada-uitstap landinwaarts. Bewust aan de kust/laagland blijven — zodra dit landinwaarts de
+  Pyreneeën of diep Andalusië opzoekt overlapt het met de Catalonië+Pyreneeën-trip en de Andalusië-
+  roadtrip. Open-jaw AMS-Barcelona in, AMS-Málaga out, huurauto voor de kustetappes (AP-7 is bijna
+  helemaal tolvrij, Barcelona-Alicante ~525km/5u volledig gratis; alleen een kort tolstuk zuid van
+  Cartagena richting Almería, ~€6). Budget: ~€90/dag. Seizoen: mei-juni of september-oktober; de
+  zuidelijke helft (Almería/Costa del Sol) wordt erg heet/druk in juli-augustus.
+- [x] **5–7 dagen — Galicië (Santiago de Compostela + kust)** *(nieuw, 2026-08 derde aanvulling)*.
+  Santiago de Compostela (1-2d: Praza do Obradoiro, kathedraal) → Rías Baixas-dagtrip (Pontevedra,
+  Combarro, O Grove) → Vigo → Cíes-eilanden-veerboot (vooraf boeken in het seizoen, bezoekerslimiet)
+  → optioneel A Coruña/Costa da Morte bij 7 dagen. Nieuw voor 2026: directe seizoensgebonden
+  vluchten AMS-Santiago — KLM vanaf 30 mei 2026 (6x/week), Vueling vanaf 16 juni 2026; Iberia
+  jaarrond met een overstap via Madrid. Budget: ~€80/dag (Galicië is een van de goedkopere Spaanse
+  regio's, uitstekende zeevruchten voor een redelijke prijs). Seizoen: juni-september — Galicië is
+  Atlantisch/regenachtig buiten de zomer, en de nieuwe directe vluchten zijn toch al seizoensgebonden
+  zomer. ⚠️ Check of de nieuwe KLM/Vueling-Santiago-route nog in de dienstregeling staat voor je
+  eigen data (gloednieuw voor 2026); Cíes-eilanden-veerboot heeft een dagelijkse bezoekerslimiet in
+  het hoogseizoen — boek vooraf in juli-augustus.
+- [x] **5–7 dagen — Asturië + Cantabrië** *(nieuw, 2026-08 derde aanvulling)*. Santander (1-2d:
+  Magdalena-schiereiland, oude stad) → Santillana del Mar (middeleeuws dorp, Altamira-grottenmuseum
+  dichtbij) → Comillas (Gaudí's El Capricho) → Picos de Europa (basis Potes, Fuente Dé-kabelbaan) →
+  Oviedo/Gijón (Asturië) als afsluiter. Geen directe AMS-Santander-vlucht (overstap via Barcelona/
+  Madrid); beste optie: direct AMS-Bilbao (veel frequenter) en oostwaarts rijden, of direct
+  AMS-Asturias/Oviedo (alleen KLM, ~2u15, ~6 vluchten/week) en westwaarts. Budget: ~€80/dag. Seizoen:
+  juni-september — dit is "Groen Spanje", koeler en regenachtiger dan het zuiden het hele jaar, juist
+  prettig in de zomer als de rest van Spanje verschroeit. ⚠️ Huurauto essentieel (dun OV bij Picos de
+  Europa/kustdorpjes); Fuente Dé-kabelbaan heeft capaciteitslimieten en lange wachttijden in
+  augustus — ga vroeg in de ochtend.
+- [x] **3–4 dagen — Gibraltar + Andalusië (Costa del Sol)** *(nieuw, 2026-08 derde aanvulling)*.
+  Bewust alleen de Costa del Sol/Gibraltar-hoek, niet Sevilla/Granada: Málaga (invliegen, 1d) →
+  Marbella/Puerto Banús (1d) → Estepona → La Línea de la Concepción → Gibraltar (dagtrip of 1 nacht)
+  → terug naar Málaga; bij 4 dagen Ronda erbij (~1u45 vanaf Marbella) als berguitstap. Direct
+  AMS-Málaga, rijd Málaga→grens (~132km, ~1u30-1u45 via tolweg of ~2u+ gratis route); parkeer aan de
+  Spaanse kant in La Línea en loop de grens over i.p.v. met de auto Gibraltar in (verkeersopstoppin-
+  gen). Budget: ~€100/dag (Gibraltar gebruikt GBP en is duidelijk duurder dan Spanje voor eten/
+  drinken; Marbella/Puerto Banús is ook een van Andalusië's duurdere plekken). Seizoen: jaarrond
+  haalbaar (kust, milder dan binnenland) maar april-juni/september-oktober het beste; vermijd
+  juli-augustus voor waarde. ⚠️ **Check vooraf**: Gibraltar is sinds 15 juli 2026 bij Schengen
+  aangesloten — de landgrens vanaf Spanje heeft nu geen paspoort/douanecontrole meer voor de meeste
+  reizigers (wel kunnen verkeersopstoppingen bij de oude grenspost nog voorkomen, check
+  frontierqueue.gi vooraf); vluchten naar Gibraltar Airport doen de Schengen-check nu in de terminal.
+  Nederlanders kunnen normaal met alleen een ID-kaart, paspoort meenemen is de veiligere standaard.
 
-## 🇦🇩 Andorra
+**Algemeen (webcheck 2026-08)**: de grootste inhoudelijke klus bij Spanje was overlap tussen de
+bredere combinatie-trips oplossen — "Noord-Spanje" en "Noord-Spanje roadtrip" dreigden zowel elkaar
+als de nieuwe standalone Galicië/Asturië+Cantabrië-items te herhalen, "Spanje noord→centraal" en
+"Spanje oost→zuid" dreigden inhoudelijk samen te vallen met de Catalonië/Andalusië-trips. Elk kreeg
+een expliciete eigen invalshoek (Baskenland-binnenland/wijn vs. kust-connector vs. lineaire
+noord-Madrid-transect vs. Middellandse Zee-kustsweep) zodat ze elkaar aanvullen i.p.v. herhalen —
+zelfde patroon als bij Italië in batch 5.
 
-- [ ] 3–4 dagen — Andorra
-- [ ] 5–7 dagen — Andorra + Pyreneeën
-- [ ] 7–10 dagen — Andorra + Spaanse Pyreneeën
+**Geverifieerd (2026-08)**: alle 15 items WebSearch-backed gecontroleerd via één research-agent —
+routevolgorde, actuele ticket-/reserveringsregels, en budgetten. Twee tijdgevoelige 2026-bevindingen:
+Barcelona's toeristenbelasting verdubbelde per 1 april 2026, en Gibraltar sloot zich per 15 juli
+2026 aan bij Schengen (landgrens nu grotendeels zonder controle).
 
-## 🇵🇹 Portugal
+## 🇦🇩 Andorra — batch 7, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-- [ ] 3–4 dagen — Porto
-- [ ] 4–5 dagen — Lissabon + Sintra
-- [ ] 5–7 dagen — Noord-Portugal
-- [ ] 5–7 dagen — Algarve
-- [ ] 7–10 dagen — Portugal noord → zuid
-- [ ] 7–10 dagen — Porto + Douro + Lissabon
-- [ ] 10–14 dagen — Portugal roadtrip
-- [ ] 5–7 dagen — Centraal-Portugal (Coimbra + Serra da Estrela) *(nieuw, 2026-08 derde
-  aanvulling)*
+- [x] **3–4 dagen — Andorra**. Andorra la Vella (Casa de la Vall, Caldea-spa, winkelstraat) →
+  Ordino (Museu Casa d'Areny-Plandolit) → Canillo (Roc del Quer-uitkijkpunt, Sant Joan de Caselles)
+  → optioneel Encamp. Andorra heeft geen eigen luchthaven — vlieg AMS-Barcelona (dagelijks
+  KLM/Transavia/Vueling, betrouwbaarst), dan bus (Alsa/Novatel, ~3u) of huurauto (~2u15, ~200km);
+  Girona ligt dichterbij (~1,5u) maar heeft maar ~2 directe Transavia-vluchten/week vanuit AMS —
+  minder praktisch. Zelf de hele weg vanuit NL rijden (~1.360km/13u40) is te ver voor een lang
+  weekend. Budget: €110-130/dag (Andorra is duurder dan Portugal, weinig hostels). Seizoen: mei-juni
+  of september voor wandelweer zonder volle ski-prijzen; hoge paden (Vall del Madriu) kunnen tot
+  juni sneeuw houden. ⚠️ Algemene BTW (IGI) is maar 4,5% — geldt sowieso al voor iedereen bij elke
+  winkel, geen apart taxfree-formulier nodig, echte besparing op elektronica/parfum/alcohol/
+  skispullen (10-25%). Paspoort meenemen — steekproefcontroles aan de Frans/Spaanse grens komen voor.
+- [x] **5–7 dagen — Andorra + Pyreneeën**. Herschikt als de **Franse/Ariège-kant**: Andorra la
+  Vella + Ordino (2-3d) → Pas de la Casa → Ax-les-Thermes (thermaalbad, ~45 min) → Foix
+  (middeleeuws kasteel) → Tarascon-sur-Ariège (Grotte de Niaux, prehistorische grot). Terug naar
+  Andorra of eindig richting Toulouse. KLM vliegt direct AMS-Toulouse — goede optie om daar in te
+  vliegen, een auto te huren en de hele lus te rijden zonder Spanje aan te doen; of vlieg BCN/GRO
+  zoals hierboven en rijd noordwaarts. Auto is in beide gevallen essentieel. Budget: ~€100-110/dag
+  gemiddeld (Frans platteland goedkoper dan Andorra-stad: pension €70-90, eten €30-35, Ax-spa
+  €25-40; een paar Andorra-dagen trekken het gemiddelde omhoog). Seizoen: juni-september — de hoge
+  Port d'Envalira-pas is realistisch open juni-okt, daarbuiten de jaarrond-open Envalira-tunnel als
+  alternatief. ⚠️ Check vooraf: 2026-berichten over incidentele afsluitingen op de Franse N20 bij de
+  grens (rotsval) — check de actuele status dicht bij je reisdatum.
+- [x] **7–10 dagen — Andorra + Spaanse Pyreneeën**. Herschikt als de **Spaanse/Catalaanse kant**,
+  gebruikt de extra lengte voor een groter gebied: Andorra la Vella/Ordino/Vall del Madriu-wandeling
+  (3d) → La Seu d'Urgell (kathedraalstadje, ~10km van de grens) → Puigcerdà/Cerdanya-vallei →
+  Vielha/Val d'Aran (via de Port de la Bonaigua) → Aigüestortes i Estany de Sant Maurici NP (vanaf
+  Boí of Espot) → terug via Ripoll richting Barcelona/Girona. Vlieg AMS-BCN (frequentst) of AMS-GRO,
+  huurauto voor de hele lus — OV is dun in deze valleien. Budget: ~€100-105/dag gemiddeld (rurale
+  Catalaanse Pyreneeën-pension €65-80, eten €25-30, park-shuttle/activiteiten €15-25, opgetrokken
+  door de duurdere Andorra-dagen). Seizoen: juni-september, in de praktijk een zomer-only route. ⚠️
+  Aigüestortes NP verbiedt privévoertuigen binnen het park — verplichte taxi/4x4-shuttle vanaf Boí
+  of Espot, vooraf boeken in juli/aug; de Port de la Bonaigua sluit met sneeuw ruwweg nov-april —
+  check de actuele 2026-openingsdata bij tussenseizoen-reizen.
+
+**Geverifieerd (2026-08)**: de twee combo-trips waren identiek qua regio (alleen langer/korter) —
+opgesplitst in een Franse/Ariège-kant en een Spaanse/Catalaanse kant, twee echt verschillende
+gebieden met eigen sfeer (thermaalbaden/grotten vs. hooggebergte/nationaal park) in plaats van
+dezelfde route trager gereden.
+
+## 🇵🇹 Portugal — batch 7, uitgewerkt + WebSearch-geverifieerd (2026-08)
+
+- [x] **3–4 dagen — Porto**. Ribeira/Dom Luís I-brug/Sé-kathedraal/Livraria Lello (dag 1) — Vila
+  Nova de Gaia portwijnkelders + riviercruise (dag 2) — dagtrip: Douro per trein naar Pinhão/Régua
+  of Guimarães/Braga (dag 3) — Foz do Douro/Matosinhos zeevruchten + Serralves (dag 4). Direct
+  AMS-Porto (KLM/Transavia, ~2u45, ~20-23 vluchten/week); metrolijn E vanaf het vliegveld naar het
+  centrum (~35-45 min). Budget: ~€80-90/dag. Seizoen: april-juni/september-oktober; juli-augustus
+  heet/druk, winter mild maar natter dan het zuiden. ⚠️ Porto's toeristenbelasting €3pp/nacht (max 7
+  nachten); Livraria Lello vereist een vooraf gekocht tijdslot-ticket — walk-in vaak uitverkocht;
+  historisch-centrum Airbnb-aanbod is gereguleerd, vroeg boeken.
+- [x] **4–5 dagen — Lissabon + Sintra**. Baixa/Alfama/Castelo de São Jorge (dag 1) — Belém (dag 2)
+  — volle dag Sintra: Paleis van Pena + Quinta da Regaleira (dag 3) — Cascais/Estoril of
+  Monserrate + Cabo da Roca (dag 4) — buffer/fado-avond (dag 5). Direct AMS-Lissabon (TAP/KLM/
+  Transavia/easyJet, ~2u55); rode metrolijn naar het centrum (~20-25 min). Budget: ~€90-105/dag.
+  Seizoen: april-juni/september-oktober ideaal; juli-augustus erg heet, Sintra dan overvol. ⚠️
+  Lissabon's toeristenbelasting €4pp/nacht (max 7 nachten); nieuwe "containment zones" (dec 2025)
+  beperken volledige-appartement-Airbnbs in Alfama/Bairro Alto/Príncipe Real/Avenida da Liberdade/
+  Santos/historisch centrum — check actuele impact, vroeg boeken. Paleis van Pena vereist een
+  vooraf geboekt tijdslot van 30 min zonder respijt — mis je het, geen toegang tot het interieur
+  (tuinen blijven wel open); reken ~30 min extra bus/verkeer vanaf Sintra-station.
+- [x] **5–7 dagen — Noord-Portugal**. Herschikt op erfgoed/kust (Minho), bewust geen Douro-uitstap
+  (zie de wijnstreek-trip hieronder): Porto (2d) — Guimarães (geboorteplaats van Portugal, ~45 min)
+  — Braga (Bom Jesus do Monte, ~50 min) — Viana do Castelo (kust, Santa Luzia-uitkijkpunt) —
+  optioneel Ponte de Lima (oudste stad van Portugal) — terug naar Porto. Direct AMS-Porto; trein
+  voor Porto-Braga-Guimarães, auto voor Viana do Castelo/Ponte de Lima/rurale Minho. Budget:
+  ~€70-85/dag (goedkoopste regio van Portugal). Seizoen: april-oktober; Minho is Portugal's
+  groenste én natste regio — check herfst/winter-regen.
+- [x] **5–7 dagen — Algarve**. Faro (Ria Formosa) — Lagos (Ponta da Piedade, Praia Dona Ana) —
+  Sagres/Cabo de São Vicente — Portimão/Carvoeiro/Benagil (boottocht) — Silves — Tavira — terug
+  naar Faro. Faro ligt ongeveer centraal, dus west-dan-oost vanaf daar is logisch, geen zigzag.
+  Direct AMS-Faro (Transavia ~13/week + easyJet seizoensgebonden ~7/week zomer) of direct
+  Eindhoven-Faro (Transavia/Ryanair, ~14/week — minder bekend maar goed alternatief); huurauto
+  sterk aan te raden. Budget: ~€85-100/dag. Seizoen: mei-juni of september voor de beste prijs-
+  drukte-balans (hotelprijzen ~30-40% onder juli-augustus-piek, zee al warm). ⚠️ Algarve's
+  toeristenbelasting is klein/wisselend, €1-2/nacht per gemeente; Benagil-grot is nu vrijwel alleen
+  per boot/kajaktour te bezoeken (onbegeleid zwemmen beperkt) — boek een officiële tour vooraf in
+  het hoogseizoen.
+- [x] **7–10 dagen — Portugal noord → zuid**. Herschikt als de **snelle sweep**, Coimbra bewust
+  maar een korte tussenstop (voor meer, zie Centraal-Portugal hieronder): Porto (2d) — Coimbra (1d,
+  kort) — Nazaré/Óbidos (1d) — Lissabon + Sintra (2-3d) — Algarve/Lagos (2d). Open-jaw Porto in/
+  Faro out (of omgekeerd), reken op inleverkosten bij een eenrichtings-huurauto; direct rijden
+  Porto-Faro is ~5u/560km via de A1/A2 zonder stops. Budget: ~€85-95/dag gemiddeld. Seizoen:
+  april-juni of september-oktober — balanceert het koelere noorden en het warme-maar-niet-
+  verschroeiende zuiden. ⚠️ A1 Lissabon-Porto tol ~€22-25 enkele reis (klasse 1); de voorheen
+  elektronisch-only SCUT-tolwegen (A22 Algarve, A23, A24, en sinds januari 2026 ook A25) zijn nu
+  gratis — verlicht het zuidelijke stuk.
+- [x] **7–10 dagen — Porto + Douro + Lissabon**. Herschikt op de **wijnstreek-invalshoek**: Porto
+  (2-3d, portwijnkelders Vila Nova de Gaia) — Douro-vallei, 2-3 nachten écht in Pinhão (quinta-
+  bezoeken, riviercruise, uitkijkpunt São Leonardo da Galafura) — Lissabon (2-3d, optioneel
+  Bucelas/Colares-wijnstreken bij Sintra erbij). **Regel om onderscheidend te blijven**: minstens 2
+  nachten echt in de Douro zelf overnachten, geen dagtrip vanuit Porto — anders overlapt dit met
+  Noord-Portugal en Portugal noord→zuid hierboven, die de regio alleen aandoen/dagtrippen. Open-jaw
+  Porto in/Lissabon out; Douro per scenic trein (budget) of auto (voor meerdere afgelegen quinta's)
+  vanaf Porto; Porto-Lissabon per Alfa Pendular-sneltrein (~3u) als alternatief voor rijden/tol/
+  parkeren. Budget: ~€95-110/dag (quinta-bezoeken/proeverijen €30-60 per ervaring trekken dit boven
+  Noord-Portugal's budget). Seizoen: mei-juni (groen, rustig) of september-oktober (oogst, sfeervol
+  maar boek quinta's vroeg); vermijd de hoogzomer — het Douro-binnenland wordt merkbaar heter dan de
+  kust (tot in de hoge 30°C).
+- [x] **10–14 dagen — Portugal roadtrip**. Herschikt als de **volledige-landlus**, neemt bewust
+  Centraal-Portugal + Alentejo mee: Porto (2d) — Douro-vallei (1-2d, lichter dan de wijnstreek-trip
+  hierboven) — Coimbra (1-2d) — Serra da Estrela (1-2d: Torre, Sabugueiro, Zêzere-vallei,
+  historische dorpjes) — Óbidos/Nazaré (1d) — Lissabon + Sintra (2-3d) — Évora/Alentejo (1-2d:
+  Romeinse ruïnes, Beenderenkapel) — Algarve (2-3d). Open-jaw Porto in/Faro out (of omgekeerd),
+  huurauto voor de hele lus — essentieel buiten de Porto-Lissabon-Algarve-treinspoor (Serra da
+  Estrela, Alentejo). Zelfde tol-notities als Portugal noord→zuid. Budget: ~€85-95/dag gemiddeld
+  (meer dagen middelen de duurdere Lissabon/Algarve/Douro-dagen uit tegen het goedkopere binnenland/
+  Alentejo). Seizoen: april-juni of september-begin oktober — Serra da Estrela kan tot mei sneeuw/
+  kou op hoogte houden en wordt vanaf november weer koud; het Alentejo-binnenland overschrijdt in
+  juli-augustus regelmatig 35°C. ⚠️ **Tempo-waarschuwing**: 10-14 dagen over 7 regio's is
+  ambitieus — kies 5-6 stops in plaats van letterlijk alles, anders wordt het een gehaaste
+  één-nacht-overal-trip. Dit item wijkt van Portugal noord→zuid specifiek af bij Coimbra: dat item
+  doet het kort aan, dit item geeft Coimbra + Serra da Estrela + Alentejo echt eigen tijd.
+- [x] **5–7 dagen — Centraal-Portugal (Coimbra + Serra da Estrela)** *(nieuw, 2026-08 derde
+  aanvulling)*. Positioneer als de **verbindende middenetappe** tussen het Porto/noorden-cluster en
+  het Algarve/zuiden-cluster (zie Portugal noord→zuid en Portugal roadtrip hierboven, die hier
+  expliciet naar doorverwijzen): Coimbra (2d: universiteit/Biblioteca Joanina, oude stad, Fado de
+  Coimbra) — Serra da Estrela Nationaal Park, basis Manteigas of Seia (3-4d): Torre (hoogste punt
+  van vasteland-Portugal), Sabugueiro (hoogste dorp, ~1u30 vanaf Coimbra), Zêzere-gletsjervallei,
+  Poço do Inferno-waterval, 1-2 historische "Aldeias Históricas" (bv. Linhares da Beira, Piódão).
+  Geen luchthaven met directe NL-vlucht dichtbij — vlieg naar Porto of Lissabon (beide ~2u rijden
+  naar Coimbra) en huur een auto; het bergdeel heeft een auto nodig (zeer beperkt/seizoensgebonden
+  OV het park in). Coimbra zelf is met de trein te bereiken vanaf Porto/Lissabon (~1-1,5u). Budget:
+  ~€65-80/dag (goedkoopste Portugal-item — rurale pension/agroturismo €45-60, eten €20-25). Seizoen:
+  eind mei-juni of september (helder wandelweer, geen sneeuw op de bergwegen); winter brengt echte
+  sneeuw naar de Torre (Portugal's enige skigebied) — een andere, koudere trip, anders vermijden.
+  ⚠️ Biblioteca Joanina heeft een dagelijkse bezoekerslimiet/tijdslot — vooraf boeken in het
+  hoogseizoen.
+
+**Algemeen/Geverifieerd (2026-08)**: alle 11 Portugal+Andorra-items WebSearch-backed
+gecontroleerd via één research-agent. Zelfde terugkerende patroon als bij Spanje: de bredere
+combinatie-trips (Portugal noord→zuid vs. Portugal roadtrip, Porto+Douro+Lissabon vs. Noord-
+Portugal) dreigden zonder aanpassing dezelfde regio's te herhalen — elk kreeg een expliciete eigen
+invalshoek (snelle sweep vs. volledige lus met Alentejo; wijnstreek-verblijf vs. erfgoed/kust) en
+Centraal-Portugal is nu expliciet de verbindende middenetappe waar de twee grotere routes naar
+doorverwijzen in plaats van het gewoon te negeren.
 
 ## 🇬🇷 Griekenland
 
@@ -1305,9 +1545,10 @@ volgorde:
    oorspronkelijke lijst, allemaal klein en verspreid maar qua omvang/aanpak vergelijkbaar — één
    compacte batch in plaats van los achter elk groter land aan te plakken. **Gedaan (2026-08),
    WebSearch-geverifieerd.**
-7. **Iberië: Spanje + Portugal + Andorra** (25, was 21 — +Galicië/Asturië+Cantabrië/Gibraltar bij
+7. **Iberië: Spanje + Portugal + Andorra** (26, was 21 — +Galicië/Asturië+Cantabrië/Gibraltar bij
    Spanje en Centraal-Portugal bij Portugal, derde aanvulling 2026-08) — Andorra toegevoegd
    (Pyreneeën-aansluiting), want de Iberië-combinatiesectie hieronder heeft dit cluster nodig.
+   **Gedaan (2026-08), WebSearch-geverifieerd.**
 8. **Balkan-cluster: Kroatië + Slovenië + Bosnië + Montenegro + Albanië + Servië + Noord-Macedonië
    + Kosovo** (44) — geografisch één aaneengesloten blok (Kosovo toegevoegd), en de losse
    Balkan-combinatiesectie hergebruikt precies dit cluster.
