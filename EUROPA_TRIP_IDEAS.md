@@ -1,7 +1,8 @@
 # Europa — Trip Ideas
 
 Status: **batch 1 (Benelux), batch 2 (Duitsland), batch 3 (Oostenrijk + Zwitserland), batch 4
-(Frankrijk) en batch 5 (Italië) uitgewerkt, rest nog ruw.** Youri's eigen lijst (2026-08) van realistische
+(Frankrijk), batch 5 (Italië) en batch 6 (micro-staten & kleine eilanden) uitgewerkt, rest nog
+ruw.** Youri's eigen lijst (2026-08) van realistische
 Europese trips — van lang weekend tot ~3 weken, allemaal "reëel en slim te maken" omdat ze binnen
 Europa blijven. Dit is bewust alleen duur + bestemming/route, geen route/budget/seizoen-detail —
 dat werken we samen per batch uit, zoals Route Builder's expedities dat ook kregen (zie de
@@ -301,10 +302,40 @@ tolkosten, en budgetten. Grootste inhoudelijke keuze: bij de vage items "Oostenr
 hun eigen land te vermijden (Pinzgau/Zell am See-Kaprun resp. Zermatt/Matterhorn) — bij elke keuze
 is de onderbouwing waarom die regio niet overlapt expliciet meegenomen.
 
-## 🇱🇮 Liechtenstein
+## 🇱🇮 Liechtenstein — batch 6, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-- [ ] 2–3 dagen — Liechtenstein + Zwitserse Alpen
-- [ ] 4–5 dagen — Liechtenstein + Oostenrijk + Zwitserland
+- [x] **2–3 dagen — Liechtenstein + Zwitserse Alpen**. Vlucht naar Zürich — huurauto — Zürich-Vaduz
+  (~1u30) — 1 dag Vaduz/Liechtenstein — 1-2 dagen Zwitserse Alpen-lus (Walensee/Sargans, Appenzell,
+  of de Berggasthaus Aescher via kabelbaan vanaf Wasserauen). Liechtenstein's eigen Alpen
+  (Malbun/Steg/Triesenberg) kunnen het "Alpen"-onderdeel ook zelf al invullen bij 2 dagen totaal.
+  Direct AMS-Zürich (KLM/Swiss, ~1u30-2u); zelf rijden vanuit NL (~8-9u) alleen zinvol bij een
+  groter Zwitserland-programma. Budget: ~CHF 180-220/dag (guesthouse/3-star ~CHF120, eten ~CHF50,
+  lokaal vervoer/activiteiten ~CHF30-50). Seizoen: juni-september voor wandelen/scenic drives,
+  december-maart voor skiën in Malbun. ⚠️ Zwitsers vignet CHF40 (geldig dec 2025-jan 2027) nodig bij
+  zelf rijden in Zwitserland; Liechtenstein en Duitsland heffen geen wegentol.
+- [x] **4–5 dagen — Liechtenstein + Oostenrijk + Zwitserland**. Vlucht naar Zürich of Innsbruck —
+  lus: Vaduz (1d) — Malbun/Triesenberg (bergdag) — Oostenrijk (Feldkirch/Bregenz, Bodensee) —
+  optioneel Innsbruck — terug naar Zürich of vertrek vanaf Innsbruck. Het CH/AT/LI-grensdriehoek
+  ligt binnen ~30 min van Vaduz, dus geografisch makkelijk te combineren. Open-jaw AMS-Zürich in,
+  Innsbruck out (of omgekeerd) om backtracken te vermijden; zelf rijden vanuit NL ~9u voor de hele
+  lus. Budget: ~€160-200/dag (mix van duur CH en goedkoper AT). Seizoen: mei-september; winter alleen
+  zinvol met focus op Malbun/Oostenrijkse skigebieden (hoger budget voor liftpassen). ⚠️ Ook een
+  Oostenrijks vignet nodig (10-dagenversie ~€10,90 in 2026) naast het Zwitserse — geen grenscontroles
+  in de praktijk tussen CH/AT/LI, wel ID/paspoort bij je houden.
+- [x] **1–2 dagen — Liechtenstein (Vaduz)** *(nieuw, op Youri's verzoek naast de bestaande
+  buurland-combo's — losse/standalone versie)*. Liechtenstein heeft geen eigen luchthaven of
+  treinstation. Realistische toegang: vlieg naar **Zürich** (standaard AMS-vlucht, geen omweg nodig)
+  — dan trein Zürich-Sargans (~45 min) + LIEmobil-bus naar Vaduz Post (~35 min, ~CHF7), of huurauto
+  (~1u30). St. Gallen-Altenrhein ligt geografisch dichterbij maar heeft vanuit NL geen realistische
+  lijndienst; Innsbruck is alleen zinvol als je toch al richting Oostenrijk gaat. Dag 1: Vaduz'
+  oude centrum (Städtle-voetgangersgebied, kasteel-uitzicht van buiten, Kunstmuseum, Landesmuseum,
+  Liechtenstein Center voor info + paspoortstempel). Dag 2 (nodig om het geen opvulling te laten
+  voelen): dagtrip naar Malbun (LIEmobil-lijn 21 vanaf Vaduz Post, ~28-40 min, elk uur) om te
+  wandelen (zomer) of te skiën (winter, 23km piste) — zonder Malbun is 1 dag voor Vaduz zelf
+  voldoende. Budget: ~CHF150-180/dag (accommodatie is relatief beperkt/duur voor zo'n klein land;
+  Malbun-dagtrip erbij +CHF45-55 skipas indien van toepassing). Seizoen: zomer voor wandelen, winter
+  voor Malbun-skiën. ⚠️ Paspoortstempel-souvenir CHF3/€3,30 bij het Liechtenstein Center en Malbun
+  Center; musea vaak dicht op zondag/maandag — plan daar niet op.
 
 ## 🇫🇷 Frankrijk — batch 4, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
@@ -428,25 +459,124 @@ Loire-Dordogne (vermijdt een echte backtrack). Eén tijdgevoelige bevinding: het
 heel 2026 niet in Bayeux zelf te zien (renovatie tot okt 2027, het tapijt zelf pas vanaf 10 sept
 2026 in Londen).
 
-## 🇲🇨 Monaco
+## 🇲🇨 Monaco — batch 6, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-- [ ] 3–4 dagen — Monaco + Côte d'Azur
-- [ ] 4–5 dagen — Monaco + Nice + Provence
+- [x] **3–4 dagen — Monaco + Côte d'Azur**. Vlucht naar Nice — basis in Nice of Menton — dagtrips:
+  Monaco/Monte Carlo (trein 25 min, ~€4-8 enkele reis), Eze, Villefranche-sur-Mer, Menton, optioneel
+  Cannes. Auto niet nodig — het treinnetwerk langs de kust is uitstekend en parkeren in Monaco is
+  duur/schaars. Direct AMS-Nice (KLM/easyJet/Transavia, ~2u, zeer frequent). Budget: ~€130-160/dag
+  (3-star hotel Nice-regio €100-160/nacht is de grootste kostenpost). Seizoen: mei-juni of
+  september; vermijd juli-augustus (hitte/drukte/prijzen) én de week van de Formule 1 Grand Prix
+  van Monaco (eind mei, enorme prijspiek) — check de exacte 2026-data vooraf. ⚠️ Casino de
+  Monte-Carlo: €20 entree, 18+ (vanaf de dag na je verjaardag), paspoort/ID vereist voor de
+  speelzalen (geen kopie/digitale ID, geen rijbewijs); Oceanografisch Museum ~€10 (check actuele
+  2026-prijs); combiticket Paleis+Museum bespaart.
+- [x] **4–5 dagen — Monaco + Nice + Provence**. Dag 1-2 kust (Nice/Monaco, zie hierboven) — dag 3-5
+  landinwaarts naar de Provence: Aix-en-Provence, Avignon, optioneel Les Baux-de-Provence/
+  Rhône-wijnstreek. Avignon is een goede centrale Provence-basis (Aix ~1u rijden of 2u trein vanaf
+  Avignon). Zelfde vlucht als hierboven, huurauto vanaf Nice voor het Provence-deel. Budget:
+  ~€110-130/dag gemiddeld (kustdagen €130-160, Provence-dagen €90-120) + huurauto €40-60/dag.
+  Seizoen: mei-juni of september; lavendel bloeit pas eind juni-juli — een bewuste trade-off tegen
+  de hitte/drukte aan de kust in die periode. ⚠️ Zelfde Monaco-kanttekeningen als hierboven; Franse
+  tolwegen (péage, betalen per gebruik, geen vignet) — reken ~€15-25 extra tol voor de
+  Nice-Provence-Nice-lus.
+- [x] **1–2 dagen — Monaco (Monte Carlo)** *(nieuw, op Youri's verzoek naast de bestaande
+  buurland-combo's — losse/standalone versie)*. Monaco is prima te doen als losse 1-dagstrip —
+  Casino-plein, Prinselijk Paleis + wisseling van de wacht (11:55u), oude stad Monaco-Ville,
+  Oceanografisch Museum, Port Hercule, Larvotto-strand — meerdere reisgidsen structureren Monaco
+  bewust als één-dags-programma. **Eerlijke kanttekening**: een tweede dag heeft vooral zin bij een
+  casino-avond, strand-relax, of een half-dags uitstapje naar Eze/Villefranche — op dat punt begint
+  het eigenlijk al op de Côte d'Azur-combo hierboven te lijken. Direct AMS-Nice (~2u), dan trein
+  Nice-Monaco (~37 min vanaf Saint-Laurent-du-Var, tot ~1u vanaf het vliegveld met overstap) — 1
+  nacht in Nice (goedkoper) of Monaco zelf is het praktische minimum, fly-in-fly-out op één dag is
+  te gehaast qua vluchttijden. Budget: ~€60-90/dag excl. overnachting (Monaco-hotels €250-350/
+  nacht, dus overnachten in Nice à €100-160/nacht en intreinen is de verstandige keuze). Seizoen:
+  jaarrond, geen sterke seizoensafhankelijkheid voor deze invulling. ⚠️ Zelfde casino-regels als
+  hierboven; het Prinselijk Paleis is alleen seizoensgebonden (doorgaans april-oktober) van binnen
+  te bezoeken — check de exacte 2026-data als dat belangrijk is, anders is het exterieur +
+  wachtwisseling jaarrond te zien.
 
-## 🇫🇷 Corsica
+## 🇫🇷 Corsica — batch 6, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
 Los van het vasteland-Frankrijk-blok hierboven gehouden — Corsica is qua reisstijl/logistiek een
-eigen ding (eiland, veerboot/vlucht, geen doorlopende auto-route vanuit NL).
+eigen ding (eiland, veerboot/vlucht, geen doorlopende auto-route vanuit NL). Geen directe vlucht
+vanuit NL naar Corsica zelf (Bastia/Figari/Ajaccio) — altijd een overstap of eerst naar Nice
+vliegen en dan de veerboot. Huurauto is in de praktijk verplicht (zeer beperkt OV buiten de kust).
 
-- [ ] 5–7 dagen — Corsica
-- [ ] 7–10 dagen — Corsica roadtrip
-- [ ] 7–10 dagen — Corsica + Zuid-Frankrijk
-- [ ] 4–5 dagen — Corsica + Sardinië
-- [ ] 10–14 dagen — Corsica + Sardinië (langere variant)
+- [x] **5–7 dagen — Corsica**. Bewust één regio, geen volledige eilandrondje (te weinig tijd
+  gezien de rijafstanden) — beste compacte lus: Ajaccio → Golfe de Valinco → Bonifacio →
+  Porto-Vecchio/Col de Bavella → terug naar Ajaccio (zuid-Corsica). Overstapvlucht naar Figari
+  (dichtst bij Bonifacio/zuiden) of Ajaccio. Budget: ~€140/dag (incl. gedeelde huurauto). Seizoen:
+  mei-juni of september; vermijd augustus (drukte/prijzen). ⚠️ Bonifacio: parkeer op de officiële
+  parkeerterreinen (P3/P5/Valli + shuttle) buiten de citadel, niet erin rijden; parkeertarieven
+  gelden van de voorjaarsvakantie t/m Allerheiligen (~1 nov) — exacte 2026-data checken.
+  Scandola-natuurreservaat (boot-only) kent aanscherpende regels (250m-afstand tot broedzones,
+  deels verboden ankeren) — check de actuele toegangsregels vóór het boeken van een boottocht.
+- [x] **7–10 dagen — Corsica roadtrip**. Expliciet het **volledige eilandrondje**, niet gewoon de
+  trip hierboven verlengd: Calvi → Cap Corse/Saint-Florent/Désert des Agriates → Bastia → Corte
+  (binnenland, bergen) → oostkust → Porto-Vecchio/Bavella → Bonifacio → Ajaccio/Golfe → Piana-
+  calanques/Scandola → terug naar Calvi/Bastia. Dekt noord (Cap Corse), binnenland (Corte) en zuid
+  (Bonifacio) — regio's die de korte trip overslaat. Open-jaw Bastia in/Ajaccio out (of omgekeerd)
+  om backtracken te vermijden. Budget: ~€140-150/dag (iets hoger door meer rijden/brandstof).
+  Seizoen: zelfde als hierboven, tussenseizoen des te belangrijker gezien de langere duur en meer
+  tijd op drukke kustwegen in augustus.
+- [x] **7–10 dagen — Corsica + Zuid-Frankrijk**. Echte route: vlieg naar **Nice** (direct vanuit
+  AMS/Eindhoven) → dagen aan de Côte d'Azur/Provence (Nice, Antibes, Cannes, evt. Marseille) →
+  veerboot vanaf **Nice, Toulon of Marseille** naar Corsica (Corsica Ferries vanaf Nice/Toulon;
+  Corsica Linea/La Méridionale vanaf Marseille) → Corsica rondtoeren → rechtstreeks huiswaarts
+  vanaf een Corsicaans vliegveld (Bastia/Figari/Ajaccio, met overstap), geen retourveerboot+rit
+  nodig. Nice is de snelste vasteland-veerboothaven (~8-10u, vaak 's nachts) en combineert het best
+  met Côte d'Azur-tijd; Marseille duurt langer (~11-14u). Budget: ~€150-160/dag voor het
+  Frankrijk-deel, ~€140/dag voor Corsica. Seizoen: mei-juni of september. ⚠️ Veerbootfrequentie
+  daalt sterk buiten april-oktober, sommige Nice-Corsica-afvaarten zijn puur seizoensgebonden
+  (zomer) — 3+ maanden vooraf boeken voor de zomer.
+- [x] **4–5 dagen — Corsica + Sardinië**. Bewust **alleen de zuidpunt van Corsica + noord-Sardinië**
+  — te kort voor meer: overstapvlucht naar Figari/Bonifacio (2d zuid-Corsica) → veerboot
+  Bonifacio-Santa Teresa Gallura (~50 min, zeer frequent in het seizoen) → 2-3d noord-Sardinië
+  (Santa Teresa Gallura, Palau, La Maddalena-archipel) → huiswaarts vanaf Olbia. Budget: ~€140/dag
+  Corsica, ~€100-110/dag Sardinië. Seizoen: door de veerboot- en vluchtbeperkingen hieronder in de
+  praktijk alleen **mei-oktober**, en voor een makkelijke thuisvlucht specifiek **augustus-
+  oktober**. ⚠️ Bonifacio-Santa Teresa-veerboot (Ichnusa/Moby Lines) vaart in 2026 alleen **16
+  januari-31 oktober** (geen winterdienst); directe AMS/Eindhoven-Olbia-vluchten zijn in 2026
+  seizoensgebonden (**alleen augustus-oktober**) — buiten dat venster moet je omvliegen via Rome/
+  Milaan of teruggaan via Nice.
+- [x] **10–14 dagen — Corsica + Sardinië (langere variant)**. Geen tragere versie van dezelfde lus
+  — dekt bewust **meer van beide eilanden**: volledige Corsica-lus (zoals de roadtrip hierboven)
+  eerst, dan via dezelfde Bonifacio-Santa Teresa-veerboot een vollere Sardinië-lus (noordkust,
+  Costa Smeralda, plus centraal/west-Sardinië — Alghero, Bosa, evt. Cagliari in het zuiden). Vlieg
+  in via Bastia of Calvi (noord-Corsica), rijd zuidwaarts naar Bonifacio, veerboot naar Sardinië,
+  rondtoeren, huiswaarts vanaf **Cagliari** (KLM direct vanaf AMS, jaarrond, 7x/week) i.p.v. het
+  seizoensgebonden Olbia — dit haalt ook de seizoensbeperking van de kortere variant weg. Budget:
+  ~€120-130/dag gemiddeld over beide eilanden. Seizoen: mei-juni of september; de Bonifacio-Santa
+  Teresa-veerboot's venster (16 jan-31 okt 2026) blijft wel gelden.
 
-## 🇻🇦 Vaticaanstad
+**Algemeen (webcheck 2026-08)**: Corsica-budget realistisch tussen €83/dag (budget) en €199/dag
+(mid-range) — bij Youri's tussen-budget-en-comfort-profiel is €140-150/dag de juiste keuze voor
+elk van de items hierboven. Huurauto is vrijwel overal verplicht (~€40-60/dag).
 
-- [ ] 3–4 dagen — Rome + Vaticaanstad
+## 🇻🇦 Vaticaanstad — batch 6, uitgewerkt + WebSearch-geverifieerd (2026-08)
+
+- [x] **3–4 dagen — Rome + Vaticaanstad**. Het echte onderscheid met een generieke Rome-trip (zie
+  batch 5 — Sint-Pieter/Sixtijnse Kapel horen daar al standaard bij): boek de **Vaticaan-specifieke
+  extra's die een gehaaste eerste-keer-Rome-trip meestal overslaat**. Dag 1-2: algemeen Rome
+  (Colosseum/Forum, Trastevere, Pantheon, eten). Dag 3: eigen Vaticaan-dag — ochtend
+  **Necropolis/Scavi-tour** (opgegraven vroeg-christelijke begraafplaats onder Sint-Pieter, apart
+  van de standaard Vaticaanse Musea-tickets, alleen gegidst, kinderen <10 niet toegelaten, boek
+  months vooraf) → Vaticaanse Musea/Sixtijnse Kapel (tijdslot) → **koepelbeklimming** Sint-Pieter →
+  eventueel **Vaticaanse Tuinen**-tour (alleen gegidst, geen losse toegang, €32-40, boekt 1-3 weken
+  vooraf vol in het seizoen april-oktober). Dag 4: optionele buffer/terugreis. Direct AMS-Rome
+  Fiumicino (KLM, ~2u13, zeer frequent). Budget: ~€130-150/dag algemeen + **extra ~€60-90 op de
+  Vaticaan-dag** voor de drie extra's samen. Seizoen: april-juni of september-oktober; vermijd
+  augustus-hitte. ⚠️ Sixtijnse Kapel-restauratiewerk start 1 februari 2026 voor ~3 maanden — blijft
+  open/bezoekbaar, maar reken op deels steigers/aangepaste kijkroutes — check de actuele status als
+  je in feb-apr 2026 gaat. Vaticaanse Musea-basisticket ~€17 + boekingskosten, vooraf een tijdslot
+  boeken scheelt 1-2u wachten in het hoogseizoen.
+- [x] **1 dag — Vaticaanstad (los bezoek)** *(nieuw, op Youri's verzoek naast de bestaande combo)*.
+  **Bevestigd, niet weersproken**: Vaticaanstad heeft geen eigen hotels of luchthaven (een ~44
+  hectare enclave binnen Rome) — elk Vaticaan-bezoek is logistiek altijd een dagtrip binnen een
+  Rome-verblijf, hoe je het ook labelt. Blijft daarom een dagbezoek-onderdeel van een Rome-trip,
+  geen losstaande bestemmingskaart. Zie de Rome+Vaticaanstad-trip hierboven voor de concrete
+  invulling van die dag.
 
 ## 🇮🇹 Italië — batch 5, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
@@ -637,10 +767,45 @@ trein-vriendelijke grote-steden-sweep) zodat ze elkaar aanvullen in plaats van t
 uitzondering (Campanië+Puglia) waar de overlap bewust geaccepteerd is als "combineer de twee losse
 trips" met Matera als enige unieke toevoeging.
 
-## 🇸🇲 San Marino
+## 🇸🇲 San Marino — batch 6, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-- [ ] 3–4 dagen — San Marino + Emilia-Romagna
-- [ ] 4–5 dagen — San Marino + Toscane
+- [x] **3–4 dagen — San Marino + Emilia-Romagna**. Vlucht naar Bologna — zelf-rijden-lus: Bologna
+  (1d, eten) → Ravenna (Byzantijnse mozaïeken, halve-1 dag) → Rimini (kust, halve dag) → San
+  Marino (halve-1 dag, ~30 min vanaf Rimini) → terug naar Bologna. Direct AMS-Bologna (KLM,
+  dagelijks, ~1u45) — de best-verbonden optie van dit hele Emilia-Romagna/San Marino-cluster
+  (Rimini heeft geen directe vlucht vanuit AMS, altijd een overstap). Budget: ~€90-110/dag (San
+  Marino-dag erbij: parkeren + torens/museum ~€10-15). Seizoen: april-juni of september-oktober;
+  vermijd augustus-hitte en Ferragosto-drukte aan de Adriatische kust. ⚠️ San Marino-parkeren:
+  €1,50/1u, €3/2u, €4,50/3-5u, €8/hele dag over 13 parkeerterreinen (P1-P13; P6/P7 het handigst
+  voor het centrum); euro als munt, geen grenscontrole met Italië in de praktijk (wel ID bij je
+  houden). Huurauto nodig voor de Ravenna-Rimini-San Marino-etappe.
+- [x] **4–5 dagen — San Marino + Toscane**. **Realiteitscheck**: San Marino-Florence is ~240-253km/
+  2u20-2u40 rijden — geen casual toevoeging, wel te doen als eenrichtings-boog: vlieg Bologna in →
+  San Marino/Emilia-Romagna eerst (1-1,5d) → rijd zuidwaarts de Toscane in (San Gimignano, Siena,
+  of Florence, resterende 3d) → vlieg uit Florence of Pisa. Open-jaw AMS-Bologna in, AMS-Florence/
+  Pisa out aanbevolen om de rit niet twee keer te maken — check bij het boeken of de directe
+  Florence/Pisa-route nog bestaat (niet bevestigd in dit onderzoek, wel eerder gezien). Budget:
+  ~€100-130/dag gemiddeld + eventuele eenrichtings-inleverkosten huurauto (€50-150, checken vooraf).
+  Seizoen: eind april-juni of september; vermijd juli-augustus, vooral het Toscaanse binnenland.
+  ⚠️ Zelfde San Marino-parkeernotities als hierboven; Toscaanse heuveldorpen (Siena, San Gimignano)
+  hebben vaak ZTL-beperkingen in de oude kern — parkeer buiten en loop in.
+- [x] **1 dag — San Marino (los bezoek)** *(nieuw, op Youri's verzoek naast de bestaande
+  buurland-combo's)*. Een halve dag (4-6u) is genoeg voor de hoogtepunten (oude stad, stadsmuren,
+  1-2 van de drie torens — Rocca Guaita is de hoofdtoren, Torre Cesta de tweede, Montale is niet
+  toegankelijk); een volle dag is niet opgevuld maar geeft ruimte voor musea (Museum van Oude
+  Wapens, Basilica) en zonsondergang vanaf de wallen met minder drukte. **Eerlijke kanttekening**:
+  puur voor San Marino vanuit NL vliegen is veel reisoverhead voor een halve dag — dit werkt het
+  best als **add-on-dag vanuit een verblijf aan de Adriatische kust (Rimini/Riccione) of tijdens de
+  Emilia-Romagna-trip hierboven**, niet als losstaande fly-in-fly-out-trip. Toegang: Rimini (RMI)
+  is het dichtstbijzijnde vliegveld, geen directe vlucht vanuit NL (altijd ≥1 overstap); vanaf
+  Rimini-station rijdt de Bonelli Bus rechtstreeks naar San Marino (~1u, ~€7 enkele reis). Budget:
+  ~€40-60 voor de dag zelf (bus €7 heen-terug of auto+parkeren ~€8/dag, torenticket ~€10-15, lunch
+  €20-25) — goedkoop zodra je er bent, de vlucht/overstap domineert de kosten bij een echte
+  eenmalige trip.
+
+**Algemeen (webcheck 2026-08)**: San Marino gebruikt de euro en kent geen grenscontrole met Italië
+in de praktijk. De twee combo-trips hierboven zijn geverifieerd als de realistische invulling;
+de losse dag is expliciet gemarkeerd als beter passend als add-on dan als eigen fly-in-fly-out-trip.
 
 ## 🇪🇸 Spanje
 
@@ -695,12 +860,46 @@ trips" met Matera als enige unieke toevoeging.
 - [ ] 7–10 dagen — Cyprus roadtrip
 - [ ] 7–10 dagen — Cyprus + Griekenland
 
-## 🇲🇹 Malta
+## 🇲🇹 Malta — batch 6, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-- [ ] 3–4 dagen — Malta
-- [ ] 5–7 dagen — Malta + Gozo
-- [ ] 7–10 dagen — Sicilië + Malta
-- [ ] 7–10 dagen — Malta + Gozo + Sicilië
+Directe vluchten vanuit NL: Eindhoven-Malta (Ryanair/Wizz Air/Transavia/KM Malta Airlines, ~2u50)
+en Amsterdam-Malta (KM Malta Airlines/easyJet, ~3u10) — goed bediende route, geen overstap nodig.
+
+- [x] **3–4 dagen — Malta**. Valletta + Three Cities (Vittoriosa/Senglea/Cospicua) → Mdina/Rabat →
+  Marsaxlokk (vissersdorp) → Hagar Qim/Mnajdra-tempels (zuiden) → Blue Grotto. Gozo bewust
+  overgeslagen — te weinig tijd om het recht te doen naast het vasteland in <4 dagen. Budget:
+  ~€100-110/dag. Seizoen: elk tussenseizoen werkt goed voor deze stad/geschiedenis-gerichte trip,
+  zelfs winter is prima (weinig boot-afhankelijke activiteiten). ⚠️ Hal Saflieni Hypogeum
+  (prehistorische must-see) heeft geen walk-in — tickets 2-3 maanden vooraf boeken, vooral
+  mei-september; boek dit tegelijk met de vlucht als het op het lijstje staat.
+- [x] **5–7 dagen — Malta + Gozo**. 3 dagen vasteland Malta (Valletta, Mdina, zuidkust-tempels,
+  Marsaxlokk) + 2-3 dagen Gozo (Cittadella in Victoria/Rabat, Ramla Bay, Dwejra/voormalige Azure
+  Window-plek, Xlendi) via de Cirkewwa-Mgarr-veerboot (24/7, jaarrond, geen reservering nodig).
+  Budget: ~€100-110/dag (Gozo iets goedkoper/rustiger dan het vasteland). Seizoen: april-juni of
+  september-oktober het beste; bij zwem-/strandfocus (Ramla Bay, Blue Lagoon onderweg) winter
+  vermijden. ⚠️ Blue Lagoon/Comino: sinds mei 2025 (nog actief in 2026) verplicht gratis tijdslot
+  via blcomino.com voor wie aan land gaat (3 slots/dag, max 4.000 bezoekers) — wie met een eigen
+  boot komt en op het water blijft heeft dit niet nodig, landgangers wel — vooraf boeken.
+- [x] **7–10 dagen — Sicilië + Malta**. **Sicilië-zwaar, bewust géén Gozo** (zie het volgende item
+  voor het onderscheid): Catania → Etna → Taormina → Siracusa/Ortigia → Val di Noto (Modica,
+  Ragusa) → Agrigento (Valle dei Templi) → optioneel Palermo → oversteek naar Malta (2-3d:
+  Valletta, Three Cities, zuidkust-tempels, Marsaxlokk). Oversteek: **Ryanair vliegt direct
+  Malta-Catania** (~50 min, vanaf ~€18-35, tot 18x/week) — veel simpeler dan de veerboot (Virtu
+  Ferries Pozzallo-Valletta, ~1u45, jaarrond, tot 3x/dag, €37-111, als alternatief). Huurauto nodig
+  in Sicilië tussen de kleinere plaatsen. Budget: ~€120-130/dag gemiddeld (Sicilië €120-180/dag +
+  huurauto €40-50/dag, Malta €100-110/dag). Seizoen: april-juni of september-begin november voor
+  Sicilië (juli-augustus heet/druk/duur); overlapt prima met Malta's eigen goede seizoen.
+- [x] **7–10 dagen — Malta + Gozo + Sicilië**. **Bevestigd: het enige echte verschil met de trip
+  hierboven is Gozo.** Zelfde Sicilië-kern maar ingekort (Catania → Etna → Taormina → Siracusa,
+  Agrigento/Palermo geschrapt om tijd te maken) → oversteek via de Ryanair-vlucht of Virtu
+  Ferries-veerboot → Malta-vasteland (2d) → Gozo (1-2d via de Cirkewwa-Mgarr-veerboot). Behandel
+  dit expliciet als "Sicilië ingekort om ruimte te maken voor Gozo" tegenover de vorige trip's
+  "Sicilië voluit, Gozo overgeslagen" — anders lezen ze als bijna-duplicaten. Budget: ~€115-125/dag
+  gemiddeld. Seizoen: zelfde als hierboven.
+
+**Algemeen (webcheck 2026-08)**: Malta-budget mid-range gemiddeld ~€138/dag (bron: prijsonderzoek
+2026), bij Youri's tussen-budget-en-comfort-profiel is €100-110/dag de juiste keuze voor de losse
+Malta-trips; de Sicilië-combo's liggen hoger door Sicilië's eigen prijsniveau + huurauto.
 
 ## 🇹🇷 Turkije — Europees/Istanbul + Egeïsche kust
 
@@ -1101,9 +1300,11 @@ volgorde:
 5. **Italië** (16, was 13 — +Campanië/Puglia/combo uit de derde aanvulling, 2026-08). **Gedaan
    (2026-08), WebSearch-geverifieerd.**
 6. **Micro-staten & kleine eilanden: Liechtenstein + San Marino + Vaticaanstad + Monaco + Corsica
-   + Malta** (16) — nieuw t.o.v. de oorspronkelijke lijst, allemaal klein en verspreid maar qua
-   omvang/aanpak vergelijkbaar — één compacte batch in plaats van los achter elk groter land aan
-   te plakken.
+   + Malta** (20, was 16 — +4 standalone/losse versies voor Liechtenstein/Monaco/San Marino/
+   Vaticaanstad, die tot nu toe alleen als buurland-combo bestonden) — nieuw t.o.v. de
+   oorspronkelijke lijst, allemaal klein en verspreid maar qua omvang/aanpak vergelijkbaar — één
+   compacte batch in plaats van los achter elk groter land aan te plakken. **Gedaan (2026-08),
+   WebSearch-geverifieerd.**
 7. **Iberië: Spanje + Portugal + Andorra** (25, was 21 — +Galicië/Asturië+Cantabrië/Gibraltar bij
    Spanje en Centraal-Portugal bij Portugal, derde aanvulling 2026-08) — Andorra toegevoegd
    (Pyreneeën-aansluiting), want de Iberië-combinatiesectie hieronder heeft dit cluster nodig.
