@@ -463,6 +463,9 @@ eigen ding (eiland, veerboot/vlucht, geen doorlopende auto-route vanuit NL).
 - [ ] 10–14 dagen — Italië: noord → centraal
 - [ ] 10–14 dagen — Italië roadtrip
 - [ ] 10–14 dagen — Sicilië + Zuid-Italië
+- [ ] 5–7 dagen — Campanië (Napels + Amalfikust) *(nieuw, 2026-08 derde aanvulling)*
+- [ ] 5–7 dagen — Puglia *(nieuw, 2026-08 derde aanvulling)*
+- [ ] 7–10 dagen — Campanië + Puglia *(nieuw, 2026-08 derde aanvulling)*
 
 ## 🇸🇲 San Marino
 
@@ -483,6 +486,9 @@ eigen ding (eiland, veerboot/vlucht, geen doorlopende auto-route vanuit NL).
 - [ ] 10–14 dagen — Noord-Spanje roadtrip
 - [ ] 10–14 dagen — Spanje noord → centraal
 - [ ] 10–14 dagen — Spanje oost → zuid
+- [ ] 5–7 dagen — Galicië (Santiago de Compostela + kust) *(nieuw, 2026-08 derde aanvulling)*
+- [ ] 5–7 dagen — Asturië + Cantabrië *(nieuw, 2026-08 derde aanvulling)*
+- [ ] 3–4 dagen — Gibraltar + Andalusië (Costa del Sol) *(nieuw, 2026-08 derde aanvulling)*
 
 ## 🇦🇩 Andorra
 
@@ -499,6 +505,8 @@ eigen ding (eiland, veerboot/vlucht, geen doorlopende auto-route vanuit NL).
 - [ ] 7–10 dagen — Portugal noord → zuid
 - [ ] 7–10 dagen — Porto + Douro + Lissabon
 - [ ] 10–14 dagen — Portugal roadtrip
+- [ ] 5–7 dagen — Centraal-Portugal (Coimbra + Serra da Estrela) *(nieuw, 2026-08 derde
+  aanvulling)*
 
 ## 🇬🇷 Griekenland
 
@@ -524,16 +532,23 @@ eigen ding (eiland, veerboot/vlucht, geen doorlopende auto-route vanuit NL).
 - [ ] 7–10 dagen — Sicilië + Malta
 - [ ] 7–10 dagen — Malta + Gozo + Sicilië
 
-## 🇹🇷 Turkije — Europees/Istanbul
+## 🇹🇷 Turkije — Europees/Istanbul + Egeïsche kust
 
-Bewust alleen het Europese/Istanbul-deel — Turkije is grotendeels Aziatisch, maar Istanbul en
-Europees Turkije (Thracië) passen prima in een Europa-lijst.
+Oorspronkelijk bewust alleen het Europese/Istanbul-deel (Turkije is grotendeels Aziatisch, maar
+Istanbul en Europees Turkije/Thracië passen prima in een Europa-lijst). **Bijgesteld (2026-08,
+derde aanvulling):** Youri's eigen herformulering van de lijst-regel is niet "Europa, strikt
+geografisch" maar "dichtbij, geschikt voor een city trip of ~1 week vakantie, geen dure/lange
+vlucht voor zo'n korte periode" — de Egeïsche kust (Izmir/Bodrum/Çeşme) voldoet daaraan net zo
+goed als Istanbul (directe, korte, goedkope vluchten vanuit NL), dus toegevoegd ondanks dat het
+geografisch Aziatisch Turkije is.
 
 - [ ] 3–4 dagen — Istanbul
 - [ ] 5–7 dagen — Istanbul + Thracië
 - [ ] 7–10 dagen — Istanbul + Noordwest-Turkije
 - [ ] 7–10 dagen — Istanbul + Griekse eilanden
 - [ ] 10–14 dagen — Turkije + Griekenland
+- [ ] 4–5 dagen — Izmir + Egeïsche kust (Efeze, Çeşme) *(nieuw, 2026-08 derde aanvulling)*
+- [ ] 5–7 dagen — Bodrum + Egeïsche kust *(nieuw, 2026-08 derde aanvulling)*
 
 ## 🇭🇷 Kroatië
 
@@ -620,6 +635,7 @@ Youri's eigen aantekening: "Deze zou ik zeker toevoegen als aparte Atlas-optie."
 - [ ] 5–7 dagen — Tsjechië roadtrip
 - [ ] 7–10 dagen — Tsjechië + Oostenrijk
 - [ ] 7–10 dagen — Praag + Polen
+- [ ] 4–5 dagen — Moravië (Brno + wijnstreek) *(nieuw, 2026-08 derde aanvulling)*
 
 ## 🇸🇰 Slowakije
 
@@ -653,6 +669,9 @@ Youri's eigen aantekening: "Deze zou ik zeker toevoegen als aparte Atlas-optie."
 - [ ] 10–14 dagen — Noorwegen roadtrip
 - [ ] 10–14 dagen — Bergen → Ålesund
 - [ ] 14 dagen — Zuid- en Midden-Noorwegen
+- [ ] 5–7 dagen — Svalbard (Longyearbyen, korte "Trip Ideas"-versie) *(nieuw, 2026-08 derde
+  aanvulling — zelfde dubbele-laag-situatie als Faeröer, bestaat al in Route Builder's Nordic
+  Arctic Expedition ❄️)*
 
 ## 🇸🇪 Zweden
 
@@ -661,6 +680,8 @@ Youri's eigen aantekening: "Deze zou ik zeker toevoegen als aparte Atlas-optie."
 - [ ] 7–10 dagen — Zuid-Zweden
 - [ ] 7–10 dagen — Zweden roadtrip
 - [ ] 10–14 dagen — Zweden + Noorwegen
+- [ ] 5–7 dagen — Zweeds Lapland (Kiruna + Abisko) *(nieuw, 2026-08 derde aanvulling)*
+- [ ] 7–10 dagen — Zweeds Lapland + noorderlicht (langere/donkerdere versie) *(nieuw, 2026-08 derde aanvulling)*
 
 ## 🇩🇰 Denemarken
 
@@ -676,6 +697,16 @@ Youri's eigen aantekening: "Deze zou ik zeker toevoegen als aparte Atlas-optie."
 - [ ] 7–10 dagen — Zuid-Finland
 - [ ] 7–10 dagen — Lapland
 - [ ] 10–14 dagen — Finland roadtrip
+- [ ] 4–5 dagen — Åland *(nieuw, 2026-08 derde aanvulling)*
+
+## 🇫🇴 Faeröer
+
+*(nieuw, 2026-08 derde aanvulling)* — de realistische, kortere "Trip Ideas"-versie; bestaat
+al als aspirational Route Builder-splitroute binnen Nordic Arctic Expedition ❄️, dit is geen
+duplicaat maar een ander soort trip (korte vakantie i.p.v. epic) op dezelfde bestemming.
+
+- [ ] 5–7 dagen — Faeröer
+- [ ] 7–10 dagen — Faeröer + IJsland
 
 ## 🇮🇸 IJsland
 
@@ -700,6 +731,18 @@ Youri's eigen aantekening: "Deze zou ik zeker toevoegen als aparte Atlas-optie."
 - [ ] 7–10 dagen — Highlands + Isle of Skye
 - [ ] 7–10 dagen — Schotland roadtrip
 - [ ] 10–14 dagen — Schotland uitgebreid
+- [ ] 5–7 dagen — Orkney + Shetland *(nieuw, 2026-08 derde aanvulling)*
+- [ ] 5–7 dagen — Buiten-Hebriden (Lewis + Harris, via Skye) *(nieuw, 2026-08 derde aanvulling)*
+
+## 🇬🇧 Engeland + Wales + Noord-Ierland
+
+*(nieuw, 2026-08 derde aanvulling)*
+
+- [ ] 3–4 dagen — Londen
+- [ ] 5–7 dagen — Cotswolds + Bath + Zuidwest-Engeland
+- [ ] 5–7 dagen — Wales (Snowdonia + kust)
+- [ ] 5–7 dagen — Noord-Ierland (Belfast + Giant's Causeway)
+- [ ] 10–14 dagen — Engeland + Wales + Noord-Ierland roadtrip
 
 ## 🇪🇪🇱🇻🇱🇹 Baltische staten
 
@@ -796,6 +839,12 @@ Griekenland) zijn hier niet herhaald — alleen de granulairdere/nieuwe variante
 - [ ] 7–10 dagen — Kreta roadtrip
 - [ ] 7–10 dagen — Cycladen island hopping
 
+**Kanaaleilanden & Isle of Man** *(nieuw, 2026-08 derde aanvulling — Britse Kroonbezittingen,
+bewust hier los van de Engeland/Wales/Noord-Ierland-sectie, zelfde logica als de rest van dit
+hoofdstuk)*
+- [ ] 4–5 dagen — Jersey + Guernsey (Kanaaleilanden)
+- [ ] 3–4 dagen — Isle of Man
+
 ## 🇪🇺 Grote Europese combinaties
 
 - [ ] 7–10 dagen — Oostenrijk + Slovenië
@@ -823,41 +872,48 @@ Griekenland) zijn hier niet herhaald — alleen de granulairdere/nieuwe variante
 
 ---
 
-## Extra regio's (2026-08) — nog geen trip-ideeën, alleen namen
+## Extra regio's (2026-08 derde aanvulling) — verwerkt
 
 Youri leverde een derde aanvulling: een brede regio-checklist (West-/Noord-/Centraal-/Zuid-Europa,
 Balkan, Oost-Europa, microstaten, Turkije, bijzondere eilanden). Afgezet tegen alles hierboven —
-verreweg de meeste namen op die lijst bestaan al (Schotland, Ierland, Normandië, Bretagne, Elzas,
+verreweg de meeste namen op die lijst bestonden al (Schotland, Ierland, Normandië, Bretagne, Elzas,
 Pyreneeën, Baskenland, Beieren, Zwarte Woud, Rijn/Moezel, Oostenrijkse Alpen, Tirol, Zwitserse
 Alpen, Dolomieten, Noord-Italië, Bohemen, Hoge Tatra, Zuid-Polen, Karpaten, Toscane, Rome, Sicilië,
 Sardinië, Istrië, Slovenië, Peloponnesos, Kreta, Cycladen, Ionische eilanden, Noord-Griekenland,
 Cyprus, Malta/Gozo, Catalonië, Valencia, Andalusië, Mallorca/Menorca, Canarische Eilanden, Madeira,
 Azoren, Noord-Portugal, Algarve, alle Balkan-landen incl. Kosovo/Moldavië/Transsylvanië, alle vijf
-microstaten, Istanbul/Thracië/Noordwest-Turkije) — die zijn hieronder dus niet herhaald.
+microstaten, Istanbul/Thracië/Noordwest-Turkije).
 
-**Echt nieuw, per macro-regio:**
-- *West-Europa*: Engeland, Wales, Noord-Ierland
-- *Noord-Europa*: Zweeds Lapland, Faeröer *(let op: Faeröer bestaat al als aspirational
-  Route Builder-splitroute binnen Nordic Arctic Expedition ❄️ — dit zou de realistische, kortere
-  "Trip Ideas"-versie worden, geen duplicaat maar een ander soort trip op dezelfde bestemming)*
-- *Centraal-Europa*: Moravië
-- *Zuid-Europa*: Campanië, Puglia, Galicië, Asturië, Cantabrië, Centraal-Portugal
-- *Turkije*: Egeïsche kustregio ⚠️ *twijfelgeval — dit ligt duidelijk verder in Aziatisch Turkije
-  dan Istanbul/Thracië/Noordwest-Turkije, precies het gebied dat eerder al bewust buiten "het
-  Europese deel" is gehouden. Toevoegen kan, maar dan wijkt dit item af van de eigen afspraak in de
-  Turkije-sectie hierboven — jouw keuze of dat oké is.*
-- *Bijzondere eilanden/regio's*: Svalbard *(zelfde dubbele-laag-situatie als Faeröer — bestaat al
-  in Route Builder's Nordic Arctic Expedition ❄️)*, Åland, Isle of Man, Jersey & Guernsey, Shetland,
-  Orkney, Isle of Skye, Hebriden, Gibraltar
+**De écht nieuwe regio's zijn nu omgezet naar "X dagen — bestemming/route" en ingedeeld bij hun
+bestaande land/sectie hierboven** (elk gemarkeerd *"nieuw, 2026-08 derde aanvulling"*), zodat ze
+gewoon meelopen in de batch-volgorde onderaan:
+- Engeland/Wales/Noord-Ierland → eigen nieuwe sectie **🇬🇧 Engeland + Wales + Noord-Ierland**
+  (batch 12)
+- Zweeds Lapland → bij **🇸🇪 Zweden** (batch 11)
+- Faeröer → eigen nieuwe sectie **🇫🇴 Faeröer** (batch 11) — de realistische, kortere
+  "Trip Ideas"-versie, geen duplicaat van de aspirational Route Builder Nordic Arctic-splitroute
+- Moravië → bij **🇨🇿 Tsjechië** (batch 9)
+- Campanië/Puglia → bij **🇮🇹 Italië** (batch 5)
+- Galicië/Asturië+Cantabrië/Gibraltar → bij **🇪🇸 Spanje** (batch 7)
+- Centraal-Portugal → bij **🇵🇹 Portugal** (batch 7)
+- Egeïsche kust (Turkije) → bij **🇹🇷 Turkije** (batch 10) — inclusief een bijgestelde lijst-regel,
+  zie die sectie
+- Svalbard → bij **🇳🇴 Noorwegen** (batch 11), zelfde dubbele-laag-situatie als Faeröer
+- Åland → bij **🇫🇮 Finland** (batch 11)
+- Shetland/Orkney/Buiten-Hebriden → bij **🏴 Schotland** (batch 12)
+- Isle of Man/Jersey & Guernsey → eigen nieuwe subsectie **Kanaaleilanden & Isle of Man** onder
+  🏝️ Europese eilanden (batch 14)
 
 **Bewust niet toegevoegd, op Youri's eigen instructie**: Oekraïne, Belarus, Europees Rusland —
 dezelfde categorie reden als de al bestaande "bewust niet opgenomen"-lijst in
 `ROUTE_BUILDER_MODULES.md` (oorlog/geopolitieke situatie), nu voor deze lijst expliciet door Youri
 zelf bevestigd in plaats van door Claude aangenomen.
 
-**Nog te doen voordat dit in een batch kan**: elk van de "echt nieuw"-regio's hierboven heeft nog
-geen duur of concrete route — moet eerst omgezet worden naar het "X dagen — bestemming/route"-
-format zoals de rest van deze lijst, voordat het meegenomen kan worden in een batch/onderzoeksronde.
+**Lijst-regel bijgesteld (2026-08)**: bij het Egeïsche-kust-twijfelgeval hierboven maakte Youri
+expliciet dat de eigenlijke regel voor deze hele lijst niet strikt "Europa, geografisch" is, maar
+"dichtbij, geschikt voor een city trip of ~1 week vakantie, geen dure/lange vlucht voor zo'n korte
+periode" — dat is de regel om op terug te vallen bij toekomstige twijfelgevallen, niet de
+geografische Europa-grens.
 
 ---
 
@@ -872,25 +928,32 @@ volgorde:
 4. **Frankrijk** (11). **Gedaan (2026-08), WebSearch-geverifieerd.** *(Corsica en Monaco zaten niet
    in de oorspronkelijke Frankrijk-lijst — die zitten nu in batch 5a hieronder, niet hier
    teruggevoegd om deze al-afgeronde batch niet opnieuw open te trekken.)*
-5. **Italië** (13).
+5. **Italië** (16, was 13 — +Campanië/Puglia/combo uit de derde aanvulling, 2026-08).
 6. **Micro-staten & kleine eilanden: Liechtenstein + San Marino + Vaticaanstad + Monaco + Corsica
    + Malta** (16) — nieuw t.o.v. de oorspronkelijke lijst, allemaal klein en verspreid maar qua
    omvang/aanpak vergelijkbaar — één compacte batch in plaats van los achter elk groter land aan
    te plakken.
-7. **Iberië: Spanje + Portugal + Andorra** (21) — Andorra toegevoegd (Pyreneeën-aansluiting), want
-   de Iberië-combinatiesectie hieronder heeft dit cluster nodig.
+7. **Iberië: Spanje + Portugal + Andorra** (25, was 21 — +Galicië/Asturië+Cantabrië/Gibraltar bij
+   Spanje en Centraal-Portugal bij Portugal, derde aanvulling 2026-08) — Andorra toegevoegd
+   (Pyreneeën-aansluiting), want de Iberië-combinatiesectie hieronder heeft dit cluster nodig.
 8. **Balkan-cluster: Kroatië + Slovenië + Bosnië + Montenegro + Albanië + Servië + Noord-Macedonië
    + Kosovo** (44) — geografisch één aaneengesloten blok (Kosovo toegevoegd), en de losse
    Balkan-combinatiesectie hergebruikt precies dit cluster.
 9. **Centraal/Oost-Europa: Roemenië + Bulgarije + Hongarije + Tsjechië + Slowakije + Polen +
-   Moldavië** (34) — Moldavië toegevoegd (grenst aan Roemenië).
-10. **Oost-Mediterraan: Griekenland + Cyprus + Turkije (Istanbul/Europees)** (16) — samen, want de
-    combinaties tussen deze drie landen (Cyprus+Griekenland, Istanbul+Griekse eilanden, Turkije+
-    Griekenland) elkaar nodig hebben.
-11. **Noord-Europa: Noorwegen + Zweden + Denemarken + Finland + IJsland** (26).
-12. **Britse eilanden: Ierland + Schotland** (10).
+   Moldavië** (35, was 34 — +Moravië bij Tsjechië, derde aanvulling 2026-08).
+10. **Oost-Mediterraan: Griekenland + Cyprus + Turkije (Istanbul/Europees + Egeïsche kust)** (18,
+    was 16 — +Izmir/Bodrum-Egeïsche kust, derde aanvulling 2026-08, zie Turkije-sectie voor de
+    bijgestelde regel) — samen, want de combinaties tussen deze drie landen (Cyprus+Griekenland,
+    Istanbul+Griekse eilanden, Turkije+Griekenland) elkaar nodig hebben.
+11. **Noord-Europa: Noorwegen + Zweden + Denemarken + Finland + IJsland + Faeröer** (32, was 26 —
+    +Zweeds Lapland/Svalbard/Åland/Faeröer, derde aanvulling 2026-08; Faeröer is hier een nieuw
+    landje in het cluster, geen bestaand land dat groeide).
+12. **Britse eilanden: Engeland + Wales + Noord-Ierland + Ierland + Schotland** (17, was 10 —
+    +Engeland/Wales/Noord-Ierland als nieuwe sectie en +Orkney/Shetland/Buiten-Hebriden bij
+    Schotland, derde aanvulling 2026-08; batch hernoemd omdat Engeland/Wales/NI er nu inzit).
 13. **Baltische staten** (6).
-14. **🏝️ Europese eilanden** (28) — Madeira, Azoren, Canarische Eilanden, Balearen, en de
+14. **🏝️ Europese eilanden** (30, was 28 — +Kanaaleilanden & Isle of Man, derde aanvulling
+    2026-08) — Madeira, Azoren, Canarische Eilanden, Balearen, Kanaaleilanden/Isle of Man, en de
     gedetailleerdere Italiaanse/Griekse eilanden-varianten. Na de bijbehorende landenbatches
     (Italië/Griekenland al klaar, Portugal/Spanje in batch 7), zodat er al context/stijl bestaat
     om op aan te sluiten.

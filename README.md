@@ -205,8 +205,9 @@ choice — Vancouver-Anchorage is already the natural flight link), new total 32
 
 See [`EUROPA_TRIP_IDEAS.md`](EUROPA_TRIP_IDEAS.md) — Youri's own big raw list (~230 items, extended
 2026-08 with a second batch of additions — micro-states, Cyprus/Malta/Moldavië/Kosovo/Corsica/
-Turkey's European part, plus a whole "🏝️ Europese eilanden" category — to ~300 items total) of
-realistic European trips, from long weekend to ~3 weeks, organized by country/region. Different
+Turkey's European part, plus a whole "🏝️ Europese eilanden" category — to ~300 items, then a third
+addition of newly-added regions to ~320 items total) of realistic European trips, from long
+weekend to ~3 weeks, organized by country/region. Different
 scale than Route Builder's grand expeditions — this is the "reëel en slim te maken" realistic-trip
 tier, not aspirational epics. **Decided (2026-08): these become Route Builder routes, not Trips
 entries** — per `ROADMAP.md`'s already-decided "commitment, not scale" rule for the Trips↔Route
@@ -237,16 +238,24 @@ Schotland, (13) Baltische staten, (14) 🏝️ Europese eilanden (Madeira/Azoren
 Balearen/gedetailleerdere Italiaanse+Griekse eilanden), (15) de combinatiesecties onderin het
 bestand (bewust laatst, want die hergebruiken de losse-landen-batches).
 
-**Derde aanvulling (2026-08)**: Youri leverde daarna nog een brede regio-checklist
+**Derde aanvulling (2026-08) — verwerkt**: Youri leverde daarna nog een brede regio-checklist
 (West-/Noord-/Centraal-/Zuid-Europa, Balkan, microstaten, Turkije, bijzondere eilanden). Bijna
-alles daarop bestond al in de lijst — alleen de écht nieuwe regio's (Engeland/Wales/Noord-Ierland,
-Zweeds Lapland, Moravië, Campanië/Puglia/Galicië/Asturië/Cantabrië/Centraal-Portugal, Svalbard/
-Åland/Isle of Man/Jersey & Guernsey/Shetland/Orkney/Isle of Skye/Hebriden/Gibraltar) zijn
-toegevoegd, als losse naam-checklist onderaan `EUROPA_TRIP_IDEAS.md` — nog niet omgezet naar het
-"X dagen — route"-format van de rest, dus nog niet batch-klaar. Oekraïne/Belarus/Europees Rusland
-op Youri's eigen instructie bewust niet toegevoegd.
+alles daarop bestond al; de écht nieuwe regio's zijn inmiddels omgezet naar het "X dagen —
+route"-format en ingedeeld bij hun bestaande land/sectie (zie `EUROPA_TRIP_IDEAS.md`'s "Extra
+regio's"-sectie voor de volledige toewijzing per item): Engeland/Wales/Noord-Ierland (nieuwe
+sectie, batch 12), Zweeds Lapland (Zweden, batch 11), Faeröer (nieuwe sectie, batch 11 — de
+realistische korte versie, naast de bestaande aspirational Route Builder-splitroute), Moravië
+(Tsjechië, batch 9), Campanië/Puglia (Italië, batch 5), Galicië/Asturië+Cantabrië/Gibraltar
+(Spanje, batch 7), Centraal-Portugal (Portugal, batch 7), Egeïsche kust (Turkije, batch 10),
+Svalbard (Noorwegen, batch 11), Åland (Finland, batch 11), Shetland/Orkney/Buiten-Hebriden
+(Schotland, batch 12), Isle of Man/Jersey & Guernsey (nieuwe subsectie onder 🏝️ Europese eilanden,
+batch 14). Oekraïne/Belarus/Europees Rusland op Youri's eigen instructie bewust niet toegevoegd.
+Bij de Egeïsche-kust-uitzondering werd ook de lijst-regel zelf scherper gemaakt: niet strikt
+"Europa, geografisch" maar "dichtbij, geschikt voor city trip/~1 week, geen dure/lange vlucht voor
+zo'n korte periode" — dat is de regel voor toekomstige twijfelgevallen.
 
-**Next up: batch 5, Italië** (13 items) — waiting on Youri to confirm before starting.
+**Next up: batch 5, Italië** (16 items, was 13 — Campanië/Puglia erbij) — waiting on Youri to
+confirm before starting.
 
 ## Search
 
