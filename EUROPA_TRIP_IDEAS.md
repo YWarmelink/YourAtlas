@@ -2,8 +2,8 @@
 
 Status: **batch 1 (Benelux), batch 2 (Duitsland), batch 3 (Oostenrijk + Zwitserland), batch 4
 (Frankrijk), batch 5 (Italië), batch 6 (micro-staten & kleine eilanden), batch 7 (Iberië), batch 8
-(Balkan-cluster), batch 9 (Centraal/Oost-Europa), batch 10 (Oost-Mediterraan) en batch 13
-(Baltische staten) uitgewerkt, rest nog ruw.** Youri's eigen lijst (2026-08) van realistische
+(Balkan-cluster), batch 9 (Centraal/Oost-Europa), batch 10 (Oost-Mediterraan), batch 12 (Britse
+eilanden) en batch 13 (Baltische staten) uitgewerkt, rest nog ruw.** Youri's eigen lijst (2026-08) van realistische
 Europese trips — van lang weekend tot ~3 weken, allemaal "reëel en slim te maken" omdat ze binnen
 Europa blijven. Dit is bewust alleen duur + bestemming/route, geen route/budget/seizoen-detail —
 dat werken we samen per batch uit, zoals Route Builder's expedities dat ook kregen (zie de
@@ -1772,33 +1772,127 @@ duplicaat maar een ander soort trip (korte vakantie i.p.v. epic) op dezelfde bes
 - [ ] 10–14 dagen — Ring Road
 - [ ] 14 dagen — IJsland uitgebreid
 
-## 🇮🇪 Ierland
+## 🇮🇪 Ierland — batch 12, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-- [ ] 3–4 dagen — Dublin
-- [ ] 5–7 dagen — West-Ierland
-- [ ] 7–10 dagen — Ierland roadtrip
-- [ ] 7–10 dagen — Wild Atlantic Way
-- [ ] 10–14 dagen — Ierland volledig
+- [x] **3-4 dagen — Dublin**. Trinity College/Book of Kells (2d) — Guinness Storehouse — Temple
+  Bar — dagtrip Wicklow Mountains/Glendalough. Budget: ~€80-95/dag. Seizoen: jaarrond, mei-september
+  beste weer; let op drukte in Dublin in de tweede helft van 2026 (Iers EU-voorzitterschap
+  juli-december 2026). ⚠️ Webcheck (2026-08): Book of Kells timed-entry vooraf boeken (€21,50-25
+  p.p.), de Long Room is deels leeg door restauratie (open tot 2027); Guinness Storehouse vooraf
+  boeken (~€30-45).
+- [x] **5-7 dagen — West-Ierland** *(differentiator: alleen Galway/Connemara/Cliffs of Moher,
+  compact — geen Ring of Kerry/oostkust zoals de bredere roadtrip-items hieronder)*. Galway (2d)
+  — Connemara NP/Kylemore Abbey als dagtrip — Cliffs of Moher/Doolin (2-3d), evt. Aran Islands.
+  Budget: ~€70-85/dag (huurauto). Seizoen: mei-juni/september optimaal. ⚠️ Webcheck (2026-08):
+  Cliffs of Moher ~€10-12 p.p. incl. parkeren, gratis wandelroute vanaf Doolin/Liscannor buiten het
+  visitor centre.
+- [x] **7-10 dagen — Ierland roadtrip** *(differentiator: bredere lus die ook oost/zuid meeneemt —
+  niet de pure westkust-focus van Wild Atlantic Way hieronder)*. Dublin — Kilkenny — Cork/Kinsale
+  — Ring of Kerry — Galway. Budget: ~€75-90/dag incl. huurauto. Seizoen: mei-september. ⚠️ Webcheck
+  (2026-08): linksrijden, CDW-verzekering regelen; op de Ring of Kerry (N71) vroeg vertrekken tegen
+  de drukte.
+- [x] **7-10 dagen — Wild Atlantic Way** *(differentiator: de volledige kustroute end-to-end,
+  puur de westkust, geen oost-/zuidkant)*. Donegal — Sligo — Mayo/Achill — Connemara — Galway —
+  Clare — Kerry (Dingle/Ring of Kerry) — Cork/Kinsale. Budget: ~€75-90/dag. Seizoen: mei/juni/
+  september beste, juli-augustus drukst/duurst, winter deels gesloten attracties. ⚠️ Webcheck
+  (2026-08): lange afstanden, smalle wegen, tijdig tanken (weinig pompen onderweg).
+- [x] **10-14 dagen — Ierland volledig** *(differentiator: langste/meest complete versie —
+  oost+west+zuid+noordwest in één trip, evt. met een uitstap naar Belfast/Giant's Causeway)*.
+  Dublin — Wicklow — Kilkenny — Cork/Kinsale — Kerry — Cliffs of Moher/Connemara — Sligo/Donegal —
+  terug. Budget: ~€75-95/dag. ⚠️ Webcheck (2026-08): bij een uitstap naar Noord-Ierland is toch de
+  UK ETA nodig (zie algemene noot hieronder).
 
-## 🏴 Schotland
+## 🏴 Schotland — batch 12, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-- [ ] 3–4 dagen — Edinburgh
-- [ ] 5–7 dagen — Highlands
-- [ ] 7–10 dagen — Highlands + Isle of Skye
-- [ ] 7–10 dagen — Schotland roadtrip
-- [ ] 10–14 dagen — Schotland uitgebreid
-- [ ] 5–7 dagen — Orkney + Shetland *(nieuw, 2026-08 derde aanvulling)*
-- [ ] 5–7 dagen — Buiten-Hebriden (Lewis + Harris, via Skye) *(nieuw, 2026-08 derde aanvulling)*
+- [x] **3-4 dagen — Edinburgh**. Old Town/Royal Mile, Edinburgh Castle, Arthur's Seat-wandeling,
+  dagtrip Stirling Castle of Loch Lomond. Budget: ~€80-100/dag. Seizoen: mei-september beste weer;
+  augustus is Fringe Festival — dorm-prijzen dan €35-55/nacht, ver van tevoren boeken. ⚠️ Webcheck
+  (2026-08): Edinburgh Castle online ticket £19,50 (~€22), goedkoper dan aan de kassa; in de zomer
+  vaak uitverkocht, online boeken sterk aan te raden.
+- [x] **5-7 dagen — Highlands** *(differentiator: alleen het vasteland, geen Skye)*. Inverness —
+  Loch Ness/Urquhart Castle — Glencoe — Fort William/Ben Nevis — Cairngorms terug. Budget:
+  ~€80-95/dag (huurauto gedeeld, B&B/hostel-mix). Seizoen: mei/september ideaal, mugjes (midges)
+  juni-augustus aan de westkust. ⚠️ Webcheck (2026-08): Urquhart Castle vereist een verplicht
+  tijdslot + parkeerplek online (Historic Environment Scotland); er is geen los "Loch Ness
+  Centre"-ticket, dat is een apart privémuseum.
+- [x] **7-10 dagen — Highlands + Isle of Skye** *(differentiator: voegt Skye toe aan de vaste
+  Highlands-route hierboven)*. Als hierboven + oversteek via de **Skye Bridge** (gratis sinds
+  december 2004, geen veerboot nodig) naar Portree, Old Man of Storr, Quiraing, Fairy Pools.
+  Budget: ~€85-105/dag (Skye iets duurder, minder aanbod). Seizoen: mei/september, juli-augustus
+  is Portree overvol. ⚠️ Webcheck (2026-08): geen ferry/permit nodig voor Skye zelf (brug); wel
+  drukte/parkeerdruk bij de hotspots, vroeg vertrekken aanbevolen.
+- [x] **7-10 dagen — Schotland roadtrip** *(differentiator: bredere lus die ook de lowlands
+  meeneemt — geen Skye, wel Highlands+lowlands gecombineerd)*. Edinburgh — Stirling — Glencoe —
+  Fort William — Inverness — Cairngorms/Perthshire terug naar Edinburgh. Budget: ~€80-100/dag.
+  Seizoen: mei-september. ⚠️ Webcheck (2026-08): huurauto in Edinburgh ophalen is goedkoper dan in
+  de Highlands; check een eventuele one-way drop-off fee.
+- [x] **10-14 dagen — Schotland uitgebreid** *(differentiator: langste/volledigste versie —
+  combineert alles inclusief de volledige NC500)*. Edinburgh + de volledige **NC500** (Inverness-lus,
+  516 mijl) + Skye + Glencoe. Budget: ~€75-95/dag (langere trip = lager gemiddelde door campervan/
+  self-catering-dagen). Seizoen: mei/september sterk aangeraden — juli/augustus overvolle
+  accommodatie + midges, houd voor de NC500 minimaal 7 dagen aan. ⚠️ Webcheck (2026-08):
+  NC500-accommodatie in het hoogseizoen maanden vooraf boeken; de rijrichting (met/tegen de klok)
+  bepaalt of de Bealach na Bà meteen aan het begin van de route komt.
+- [x] **5-7 dagen — Orkney + Shetland** *(nieuw, 2026-08 derde aanvulling)*. Aberdeen (of Scrabster/
+  Gills Bay) — Kirkwall (Orkney: Skara Brae, Ring of Brodgar) — doorvaart naar Lerwick (Shetland:
+  Jarlshof, papegaaiduikers). Budget: ~€90-110/dag (ferry + eiland-prijzen hoger). Seizoen:
+  mei-augustus (vogels/daglicht), Shetland's "simmer dim" in juni. ⚠️ Webcheck (2026-08): NorthLink
+  vaart Aberdeen-Kirkwall/Lerwick, cabine aan te raden bij een nachtoverstap; alternatief Pentland
+  Ferries Gills Bay-St Margaret's Hope (~1u15, losstaand van de Shetland-route, vaak goedkoper/
+  sneller voor Orkney-only). Piektarieven zijn per 24 maart 2026 afgeschaft voor eilandbewoners,
+  niet voor toeristen.
+- [x] **5-7 dagen — Buiten-Hebriden (Lewis + Harris, via Skye)** *(nieuw, 2026-08 derde
+  aanvulling)*. Highlands → Skye (Uig) → CalMac-ferry Uig-Tarbert (Harris, ~1u40) — Luskentyre
+  strand — Callanish Standing Stones (Lewis) — terug via Stornoway-Ullapool of dezelfde ferry.
+  Budget: ~€85-100/dag. Seizoen: mei-september, weer wisselvallig. ⚠️ Webcheck (2026-08): CalMac-
+  tickets zijn sailing-specifiek (vaste datum+tijd, ook voor voetgangers) — vroeg boeken in de
+  zomer, voertuigplekken zijn schaars; check calmac.co.uk voor actuele tarieven.
 
-## 🇬🇧 Engeland + Wales + Noord-Ierland
+**Algemeen Schotland/VK (webcheck 2026-08)**: reisadvies groen (nederlandwereldwijd.nl, laatst
+gewijzigd 28-05-2026) — dreigingsniveau terrorisme "severe" (4/5), geen reisbelemmering maar wel
+een aandachtspunt in drukke steden. UK ETA verplicht sinds 2 april 2025 voor Nederlandse
+paspoorthouders, fee verhoogd van £16 naar £20 (~€23-24) sinds 8 april 2026, geldig 2 jaar of tot
+het paspoort verloopt, multiple entry. Geldt voor het hele VK inclusief de Schotse eilanden
+(Orkney, Shetland, Hebriden zijn gewoon VK — geen apart permit nodig).
+
+## 🇬🇧 Engeland + Wales + Noord-Ierland — batch 12, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
 *(nieuw, 2026-08 derde aanvulling)*
 
-- [ ] 3–4 dagen — Londen
-- [ ] 5–7 dagen — Cotswolds + Bath + Zuidwest-Engeland
-- [ ] 5–7 dagen — Wales (Snowdonia + kust)
-- [ ] 5–7 dagen — Noord-Ierland (Belfast + Giant's Causeway)
-- [ ] 10–14 dagen — Engeland + Wales + Noord-Ierland roadtrip
+- [x] **3-4 dagen — Londen**. British Museum, Tower of London, Camden, Westminster, Greenwich.
+  Budget: ~£75-90/dag (~€88-105). Seizoen: jaarrond, mei-september mooist. ⚠️ Webcheck (2026-08):
+  UK ETA verplicht vooraf (~€23, zie algemene noot); veel gratis musea; Oyster/contactless voor het
+  OV.
+- [x] **5-7 dagen — Cotswolds + Bath + Zuidwest-Engeland**. Bath (Roman Baths), Cotswolds-dorpjes
+  (Bourton-on-the-Water, Bibury), Stonehenge, evt. Bristol/Cornwall-kust. Budget: ~£65-85/dag
+  (~€76-100), huurauto aan te raden (beperkt OV). Seizoen: mei-september, de Cotswolds zijn mooi in
+  lente/herfst. ⚠️ Webcheck (2026-08): Roman Baths timed-entry ~£28; Stonehenge (English Heritage)
+  vooraf boeken.
+- [x] **5-7 dagen — Wales (Snowdonia + kust)**. Snowdonia NP (Yr Wyddfa-trein), Conwy/Caernarfon
+  kastelen, Pembrokeshire coast. Budget: ~£60-80/dag (~€70-94). Seizoen: de Snowdon Mountain Railway
+  (diesel) rijdt eind maart-25 oktober 2026, in de winter dicht (ijs); mei-september beste periode.
+  ⚠️ Webcheck (2026-08): treinretour ~£45-62, in de zomer vooraf boeken; ferry Holyhead-Dublin
+  (~€27, 3-3,5u, tot 8x/dag) als doorreisoptie.
+- [x] **5-7 dagen — Noord-Ierland (Belfast + Giant's Causeway)**. Belfast (Titanic Belfast, murals),
+  Giant's Causeway, Carrick-a-Rede, Antrim Coast. Budget: ~£60-80/dag (~€70-94). Seizoen:
+  mei-september, mooie herfstkleuren aan de kust. ⚠️ Webcheck (2026-08): Giant's Causeway £9
+  (National Trust, incl. parkeren), tijdelijke btw-verlaging tot 1 september 2026; het pad zelf is
+  gratis. Let op: UK ETA nodig, ook al kom je via Ierland de grens over.
+- [x] **10-14 dagen — Engeland + Wales + Noord-Ierland roadtrip**. Londen — Cotswolds/Bath — Wales
+  (Snowdonia/kust) — ferry Holyhead-Dublin — Giant's Causeway/Antrim Coast — Belfast terug. Budget:
+  ~£65-85/dag gemiddeld. ⚠️ Webcheck (2026-08): één UK ETA (~€23, 2 jaar geldig) dekt de hele trip
+  incl. Noord-Ierland; linksrijden gedurende de hele reis; de Holyhead-Dublin-ferry is de schakel
+  Wales↔Ierland/Noord-Ierland.
+
+**Algemeen (webcheck 2026-08)**: reisadvies Ierland groen (extra veiligheidsmaatregelen vanwege het
+Iers EU-voorzitterschap juli-december 2026, vooral Dublin; stormrisico westkust) — geen ETA, EU
+vrij verkeer, ID-kaart volstaat, geen 90-dagenlimiet voor EU-burgers. Reisadvies VK groen
+(28-05-2026), dreigingsniveau terrorisme "severe" (4/5); Noord-Ierland heeft een eigen niveau 3,
+niet acuut relevant voor deze routes. Wisselkoers gebruikt: 1 GBP ≈ 1,17 EUR (augustus 2026).
+Relevante ferry/vlucht-links: Hoek van Holland-Harwich (Stena Line, direct NL-VK, ~€66, 6,5-9,5u,
+2x/dag); Dublin-Holyhead (Stena/Irish Ferries, ~€27, 3-3,5u, tot 8x/dag — de schakel Wales↔Ierland);
+Rosslare-Duinkerken (DFDS, ~23u, alternatief NL/BE→Ierland zonder het VK-grondgebied te betreden,
+dus zonder UK ETA nodig); Amsterdam-Dublin (Ryanair/KLM, retour vanaf ~€35-40, KLM vliegt direct).
 
 ## 🇪🇪🇱🇻🇱🇹 Baltische staten — batch 13, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
@@ -2128,6 +2222,7 @@ volgorde:
 12. **Britse eilanden: Engeland + Wales + Noord-Ierland + Ierland + Schotland** (17, was 10 —
     +Engeland/Wales/Noord-Ierland als nieuwe sectie en +Orkney/Shetland/Buiten-Hebriden bij
     Schotland, derde aanvulling 2026-08; batch hernoemd omdat Engeland/Wales/NI er nu inzit).
+    **Gedaan (2026-08), WebSearch-geverifieerd.**
 13. **Baltische staten** (6). **Gedaan (2026-08), WebSearch-geverifieerd.**
 14. **🏝️ Europese eilanden** (30, was 28 — +Kanaaleilanden & Isle of Man, derde aanvulling
     2026-08) — Madeira, Azoren, Canarische Eilanden, Balearen, Kanaaleilanden/Isle of Man, en de
