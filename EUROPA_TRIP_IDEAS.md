@@ -1,8 +1,8 @@
 # Europa — Trip Ideas
 
 Status: **batch 1 (Benelux), batch 2 (Duitsland), batch 3 (Oostenrijk + Zwitserland), batch 4
-(Frankrijk), batch 5 (Italië), batch 6 (micro-staten & kleine eilanden), batch 7 (Iberië) en batch 8
-(Balkan-cluster) uitgewerkt, rest nog ruw.** Youri's eigen lijst (2026-08) van realistische
+(Frankrijk), batch 5 (Italië), batch 6 (micro-staten & kleine eilanden), batch 7 (Iberië), batch 8
+(Balkan-cluster) en batch 9 (Centraal/Oost-Europa) uitgewerkt, rest nog ruw.** Youri's eigen lijst (2026-08) van realistische
 Europese trips — van lang weekend tot ~3 weken, allemaal "reëel en slim te maken" omdat ze binnen
 Europa blijven. Dit is bewust alleen duur + bestemming/route, geen route/budget/seizoen-detail —
 dat werken we samen per batch uit, zoals Route Builder's expedities dat ook kregen (zie de
@@ -1337,64 +1337,253 @@ drukke plekken.
 **Algemeen (webcheck 2026-08)**: reisadvies groen (07-08-2026) — zakkenrollerij, wees terughoudend
 met LGBTQ+-uitingen buiten Tirana.
 
-## 🇷🇴 Roemenië
+## 🇷🇴 Roemenië — batch 9, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-- [ ] 4–5 dagen — Boekarest + Transsylvanië
-- [ ] 5–7 dagen — Transsylvanië
-- [ ] 7–10 dagen — Transsylvanië + Karpaten
-- [ ] 7–10 dagen — Roemenië roadtrip
-- [ ] 10–14 dagen — Roemenië uitgebreid
-- [ ] 10–14 dagen — Roemenië + Bulgarije
+- [x] **4-5 dagen — Boekarest + Transsylvanië**. Boekarest (2d, Oude Stad/Paleis van Ceaușescu) —
+  Brașov (2d, dagtrip Bran-kasteel + Peleș-kasteel) — evt. terug via Sinaia. Budget: ~€75-85/dag
+  (Boekarest iets duurder dan het platteland). Seizoen: mei-september, september het beste
+  (minder toeristen, nog warm). ⚠️ Webcheck (2026-08): Bran-kasteel open ma 12-18u, di-zo 9-18u,
+  ticket ~€28-35; Peleș wo 10-17u, do-zo 9:15-17u, gesloten ma/di, ~€10 volwassene — check de
+  actuele 2026-uren vlak voor vertrek, seizoensafhankelijk.
+- [x] **5-7 dagen — Transsylvanië**. Brașov (2d) — Bran/Peleș (dagtrip) — Sighișoara (2d) — Sibiu
+  (2d). Budget: ~€65-75/dag (kleinere steden goedkoper dan Boekarest). Seizoen: juni-september;
+  24-26 juli 2026 is het Sighișoara Medieval Festival (31e editie) — leuk maar drukker/duurder,
+  boek accommodatie vroeg als je die datum raakt. ⚠️ Webcheck (2026-08): zelfde kastelen als
+  hierboven; Sibiu's Grote Plein is gratis toegankelijk.
+- [x] **7-10 dagen — Transsylvanië + Karpaten**. Brașov (2d) — Bran/Peleș — Sighișoara (1d) —
+  Sibiu (1d) — wandelen/hutten Bucegi of Piatra Craiului (2-3d) — evt. Transfăgărășan als dagtrip.
+  Budget: ~€60-70/dag (hutten/pensions goedkoper dan hotels). Seizoen: juli-half september voor
+  bergwandelen (sneeuwvrij); de Transfăgărășan-pas is open van ~juli tot eind oktober. ⚠️ Webcheck
+  (2026-08): bevestig hutopeningstijden en berghut-reserveringen vooraf; beren zijn actief in dit
+  gebied, voedsel goed opbergen.
+- [x] **7-10 dagen — Roemenië roadtrip**. Boekarest — Transfăgărășan (noord-zuid) — Sibiu —
+  Brașov/Bran/Peleș — Sighișoara — terug via Brașov. Budget: ~€80-95/dag incl. huurauto (~€25-35/
+  dag) en brandstof. Seizoen: juli-september (Transfăgărășan open ca. 1 juli-eind oktober,
+  weersafhankelijk, kan met korte kennisgeving sluiten). ⚠️ Webcheck (2026-08): check de
+  CNAIR-website vlak voor vertrek voor de actuele wegstatus; rijd 's nachts niet buiten steden
+  (onverlicht, vee op de weg).
+- [x] **10-14 dagen — Roemenië uitgebreid**. Boekarest (2d) — Brașov/Bran/Peleș (3d) — Sighișoara
+  (2d) — Sibiu (2d) — Maramureș houten kerken (2d) — evt. Donaudelta (2d, vogels, buiten
+  hoofdseizoen mug-gevoelig). Budget: ~€70-80/dag. Seizoen: mei-september; Donaudelta het beste
+  april-juni/september (minder muggen, meer vogels). ⚠️ Webcheck (2026-08): vervoer in Maramureș
+  is beperkt, huurauto aanbevolen; Donaudelta-boottochten vooraf boeken in het hoogseizoen.
+- [x] **10-14 dagen — Roemenië + Bulgarije** *(Transsylvanië-zwaar, start in Roemenië — bewust
+  andere invalshoek dan de Bulgarije+Roemenië-versie hieronder)*. Boekarest (2d) — Brașov/Bran/
+  Peleș/Sighișoara (5d) — grens over bij Ruse/Giurgiu — Veliko Tarnovo (2d) — Sofia (2d) — evt.
+  Rila-klooster als dagtrip. Budget: ~€70-75/dag gemiddeld (Roemenië iets duurder dan Bulgarije).
+  Seizoen: juni-september. ⚠️ Webcheck (2026-08): grensoversteek Giurgiu-Ruse (Vriendschapsbrug)
+  is zonder controle sinds 2025; meld een grensoverschrijding vooraf bij de huurautoverhuurder,
+  groene kaart nodig (~€60 extra + evt. €6/dag toeslag).
 
-## 🇧🇬 Bulgarije
+**Algemeen (webcheck 2026-08)**: reisadvies groen (laatst bijgewerkt 12-03-2026) — uitzondering:
+geel voor de grensstrook Galați-Zwarte Zee (Oekraïne-conflict, drone-restanten), rest van het land
+groen. Sinds 1 januari 2025 is Roemenië **volledig** Schengenlid, ook voor landgrenzen (lucht/zee
+al sinds maart 2024) — geen standaardcontroles meer op de grenzen met Bulgarije/Hongarije,
+steekproefcontroles kunnen incidenteel nog voorkomen.
 
-- [ ] 4–5 dagen — Sofia + Rila
-- [ ] 5–7 dagen — Bulgarije
-- [ ] 7–10 dagen — Bulgarije roadtrip
-- [ ] 7–10 dagen — Bulgarije + Roemenië
-- [ ] 10–14 dagen — Bulgarije + Griekenland
+## 🇧🇬 Bulgarije — batch 9, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-## 🇲🇩 Moldavië
+- [x] **4-5 dagen — Sofia + Rila**. Sofia (3d, Alexander Nevski, Vitosha-berg) — Rila-klooster
+  (dagtrip, 2u rijden). Budget: ~€55-65/dag. Seizoen: mei-september, het klooster is het hele jaar
+  toegankelijk maar de bergweg kan in de winter glad zijn. ⚠️ Webcheck (2026-08): kloostercomplex/
+  kerk gratis, musea apart betalen (~€12 combiticket), terrein open ca. 7-20u (check actueel);
+  kleding met bedekte schouders/knieën verplicht.
+- [x] **5-7 dagen — Bulgarije**. Sofia (2d) — Plovdiv (2d, oude stad/Romeins theater) —
+  Rila-klooster als dagtrip vanuit Sofia. Budget: ~€55-65/dag. Seizoen: mei-juni of september,
+  mild en minder druk; Plovdiv is 's zomers heet. ⚠️ Webcheck (2026-08): trein Sofia-Plovdiv ~2,5u,
+  prima alternatief voor een huurauto.
+- [x] **7-10 dagen — Bulgarije roadtrip**. Sofia (2d) — Plovdiv (2d) — Rila/Melnik-wijnstreek (2d)
+  — Rodopen-bergen (2d) — terug via Sofia. Budget: ~€70-80/dag incl. huurauto. Seizoen:
+  mei-september, de Rodopen zijn mooi in de vroege herfst. ⚠️ Webcheck (2026-08): bergwegen in de
+  Rodopen zijn soms onverhard, check de lokale wegstatus vooraf; mobiel bereik kan wegvallen op
+  afgelegen bergwegen.
+- [x] **7-10 dagen — Bulgarije + Roemenië** *(Zwarte Zee/Sofia-zwaar, start in Bulgarije — bewust
+  andere invalshoek dan de Roemenië+Bulgarije-versie hierboven)*. Sofia (2d) — Plovdiv (1d) —
+  Varna/Zwarte Zeekust (2-3d, Golden Sands/Sunny Beach) — grens over bij Ruse — Boekarest (2d) als
+  afsluiter. Budget: ~€65-75/dag (kustplaatsen in het hoogseizoen duurder). Seizoen: de kust is
+  het beste in juni of september, juli-augustus warmst maar drukst en duurst. ⚠️ Webcheck
+  (2026-08): kustresorts pieken in prijs juli-augustus, boek vooraf.
+- [x] **10-14 dagen — Bulgarije + Griekenland**. Sofia (2d) — Rila-klooster als dagtrip — Plovdiv
+  (2d) — grens Kulata over — Thessaloniki (2d) — Meteora (2d, dagtrip of overnachting Kalabaka) —
+  evt. terug via Thessaloniki. Budget: ~€65-75/dag (Griekenland gemiddeld duurder dan Bulgarije).
+  Seizoen: mei-juni of september; Meteora is in juli-augustus erg heet en druk met tourbussen. ⚠️
+  Webcheck (2026-08): Kulata-grens open, geen Schengen-gerelateerde vertraging; de Meteora-kloosters
+  hebben elk hun eigen sluitingsdag (wisselt per klooster) en een kledingvoorschrift — check per
+  klooster welke dag dicht is.
+
+**Algemeen (webcheck 2026-08)**: reisadvies groen (laatst bijgewerkt 29-04-2026), geen
+uitzonderingen. Sinds 1 januari 2026 heeft Bulgarije de euro ingevoerd (vaste koers 1 EUR =
+1,95583 BGN), sinds 1 februari 2026 is euro de enige wettige munt; dubbele prijzen (BGN/EUR) zijn
+nog verplicht tot 8 augustus 2026 — handig om oude BGN-prijzen op websites als verouderd te
+herkennen.
+
+## 🇲🇩 Moldavië — batch 9, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
 Youri's eigen aantekening: "Deze zou ik zeker toevoegen als aparte Atlas-optie."
 
-- [ ] 4–5 dagen — Moldavië
-- [ ] 5–7 dagen — Moldavië + Transnistrië ⚠️ *behandel Transnistrië als aparte veiligheidscheck/
-  optionele uitbreiding, niet als vanzelfsprekend onderdeel — apart te verifiëren bij het uitwerken.*
-- [ ] 7–10 dagen — Moldavië + Roemenië
-- [ ] 10–14 dagen — Roemenië + Moldavië (langere variant)
+- [x] **4-5 dagen — Moldavië**. Chisinau (2d) — Cricova of Milestii Mici wijnkelder (dagtrip) —
+  Orheiul Vechi (1d) — evt. Gagaoezië/Comrat als 5e dag. Budget: ~€35-45/dag. Seizoen: mei-juni of
+  september-oktober (wijnoogst). ⚠️ Webcheck (2026-08): Cricova+Milestii Mici combitour vanaf
+  $230 (prijzig, overweeg een losse Cricova-tour ~$95-110); Orheiul Vechi entree 20 MDL, geen
+  vaste openingstijden.
+- [x] **5-7 dagen — Moldavië + Transnistrië**. Chisinau (2d) — Cricova/Milestii Mici (dagtrip) —
+  Orheiul Vechi (1d) — Tiraspol + Bender/Bendery als **dagtrip vanuit Chisinau, geen
+  overnachting** — buffer/terug (1d). Budget: Moldavië-deel ~€35-45/dag; Transnistrië zelf is zeer
+  goedkoop (eigen PMR-roebel, beperkt wisselbaar) — reken ~€15-20 voor de dagtrip zelf. Seizoen:
+  mei-juni/september, gelijk aan de Moldavië-only versie. ⚠️ **Veiligheid — kernpunt, geen
+  automatisch "kan wel"**: nederlandwereldwijd.nl geeft Transnistrië een apart en veel strenger
+  reisadvies dan de rest van Moldavië — **rood** (bijgewerkt 21-05-2026, geldig 13-08-2026): "reis
+  onder geen beding hierheen, te gevaarlijk", de ambassade kan er niet helpen. Reden: eenzijdig
+  uitgeroepen onafhankelijkheid (Moldavische autoriteiten hebben er geen gezag), Russische troepen
+  nog altijd gestationeerd, en toegenomen spanningen door de oorlog Rusland-Oekraïne (Transnistrië
+  grenst aan Oekraïne). Bij een rood advies passen veel Nederlandse reisverzekeraars de dekking
+  aan of sluiten risico's uit — vooraf navragen, anders feitelijk onverzekerd. Praktisch: geen
+  visum nodig, wel een migratiekaart bij de grens (geen paspoortstempel, geldig tot 45 dagen); een
+  officiële registratieplicht bij OVIR bij verblijf >24u bestaat, maar bronnen zijn inconsistent of
+  dit nog gehandhaafd wordt sinds een versoepeling in 2018 — ter plekke navragen, niet op
+  vertrouwen. De grens is nu (augustus 2026) open voor dagtoeristen, maar kan door de
+  oorlogscontext zonder aankondiging veranderen. **Concreet advies**: beperk tot een korte,
+  georganiseerde dagtrip vanuit Chisinau zonder zelfstandige overnachting in Tiraspol, check de
+  reisverzekering vooraf, of overweeg dit item te vervangen door de Moldavië-only variant hierboven
+  als het risiconiveau niet past bij het reisdoel.
+- [x] **7-10 dagen — Moldavië + Roemenië**. Chisinau (2d) — Orheiul Vechi (dagtrip) — grens naar
+  Iași (~1,5u) (1-2d) — Sighișoara/Transsylvanië (2-3d) — evt. Brașov. Budget: ~€40-55/dag. Seizoen:
+  mei-juni of september (herfstkleuren Transsylvanië). ⚠️ Webcheck (2026-08): de grens Moldavië-
+  Roemenië is een volledige EU-buitengrens (paspoortcontrole, geen Schengen-soepelheid), reken
+  wachttijd; daarna vrij Schengen-verkeer. EES (EU Entry/Exit System, sinds 10-04-2026 volledig
+  operationeel) geldt alleen voor niet-EU-onderdanen — als Nederlander/EU-burger val je er dus niet
+  onder bij terugkeer.
+- [x] **10-14 dagen — Roemenië + Moldavië (langere variant)**. Boekarest (2d) — Brașov/Sighișoara/
+  Sibiu (4-5d) — Iași (1-2d) — Chisinau (2d) incl. wijnkelder — Orheiul Vechi (1d). Budget:
+  ~€40-50/dag. Seizoen: mei-juni/september. ⚠️ Webcheck (2026-08): zelfde grensopmerking als
+  hierboven; berenwaarschuwing in de Karpaten bij kamperen/wandelen.
 
-## 🇭🇺 Hongarije
+**Algemeen (webcheck 2026-08)**: reisadvies Moldavië geel (bijgewerkt 21-05-2026), normale
+voorzichtigheid — zie de aparte, veel strengere (rode) behandeling van Transnistrië hierboven.
 
-- [ ] 3–4 dagen — Boedapest
-- [ ] 4–5 dagen — Boedapest + omgeving
-- [ ] 5–7 dagen — Hongarije roadtrip
-- [ ] 7–10 dagen — Hongarije + Slovenië + Kroatië
+## 🇭🇺 Hongarije — batch 9, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-## 🇨🇿 Tsjechië
+- [x] **3-4 dagen — Boedapest**. Vár/Buda (1d) — Pest/Parlement (1d) — Széchenyi thermaalbad +
+  ruïnebar (1d). Budget: ~€60-70/dag. Seizoen: april-juni/september-oktober beste, of december
+  voor de kerstmarkt (koud). ⚠️ Webcheck (2026-08): **Gellért-bad is gesloten sinds 1-10-2025 tot
+  verwacht 2028** — gebruik Széchenyi in plaats daarvan; badentree €13-35.
+- [x] **4-5 dagen — Boedapest + omgeving**. Boedapest (3d) — Szentendre (dagtrip) — Eger (1-2d,
+  wijnstreek). Budget: ~€55-65/dag. Seizoen: april-juni/september-oktober. ⚠️ Webcheck (2026-08):
+  trein Boedapest-Eger ~2u, goedkope lokale wijnproeverijen ter plekke.
+- [x] **5-7 dagen — Hongarije roadtrip**. Boedapest (2d) — Eger (1d) — Tokaj (1d) — Lake Balaton/
+  Tihany (1-2d). Budget: ~€55-65/dag (huurauto apart begroten). Seizoen: mei-september (Balaton
+  is 's zomers druk).
+- [x] **7-10 dagen — Hongarije + Slovenië + Kroatië**. Boedapest (2d) — Balaton (1d) — Ljubljana +
+  Bled (2-3d) — Plitvice (1d) — Zagreb/Rovinj (2d). Budget: ~€55-70/dag (kust duurder in
+  hoogseizoen, juli-augustus mijden). ⚠️ Webcheck (2026-08): Plitvice-tickets vooraf online boeken;
+  one-way autoverhuur tussen landen is duur, lever de auto in hetzelfde land in als je hem huurt.
 
-- [ ] 3–4 dagen — Praag
-- [ ] 4–5 dagen — Praag + Bohemen
-- [ ] 5–7 dagen — Tsjechië roadtrip
-- [ ] 7–10 dagen — Tsjechië + Oostenrijk
-- [ ] 7–10 dagen — Praag + Polen
-- [ ] 4–5 dagen — Moravië (Brno + wijnstreek) *(nieuw, 2026-08 derde aanvulling)*
+**Algemeen (webcheck 2026-08)**: reisadvies groen — let op escalerende demonstraties in het
+centrum van Boedapest; sinds maart 2025 zijn lhbtiq+-bijeenkomsten/-optochten verboden, check
+events vooraf als dat relevant is. Hongarije is volledig Schengen, geen grensfrictie met Slowakije/
+Oostenrijk/Kroatië/Slovenië/Roemenië.
 
-## 🇸🇰 Slowakije
+## 🇨🇿 Tsjechië — batch 9, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-- [ ] 4–5 dagen — Bratislava + Hoge Tatra
-- [ ] 5–7 dagen — Slowakije
-- [ ] 7–10 dagen — Slowakije + Polen
-- [ ] 7–10 dagen — Slowakije + Hongarije
+- [x] **3-4 dagen — Praag**. Praag zelf (Staré Město, Malá Strana, Praagse Burcht, Vyšehrad als
+  rustige uitwijk). Budget: ~€80-100/dag (3*-hotel, restaurants, tram/metro). Seizoen: mei-juni of
+  september-oktober beste; zomer heet/overvol, december sfeervolle kerstmarkt maar koud. ⚠️
+  Webcheck (2026-08): Burcht basisticket 450 CZK (~€18), toren kathedraal +200 CZK; check de
+  "archive of closures" op hrad.cz — sommige tuinen/galerij sluiten op wisselende dagen wegens
+  evenementen.
+- [x] **4-5 dagen — Praag + Bohemen**. Praag (3d) — Český Krumlov (1-2d, overnachten i.p.v.
+  dagtrip) — evt. Karlovy Vary als tussenstop. Budget: ~€75-90/dag (Praag duurder, Krumlov/Karlovy
+  Vary 10-15% goedkoper). Seizoen: mei-juni/september; het centrum van Krumlov is pas na 17u rustig
+  (dagjesmensen weg). ⚠️ Webcheck (2026-08): RegioJet-trein/bus Praag-Krumlov (~3u) is een prima
+  alternatief voor een huurauto.
+- [x] **5-7 dagen — Tsjechië roadtrip**. Praag (2d) — Karlovy Vary (1d) — Český Krumlov (2d) —
+  Brno/Moravië-proeverij (1-2d). Budget: ~€70-85/dag incl. huurauto (~€35-45/dag). Seizoen:
+  mei-juni of september beste weer/minst druk. ⚠️ Webcheck (2026-08): een dálniční známka
+  (snelwegvignet) is verplicht, check of de verhuurder dit meelevert; parkeren in historische
+  centra is beperkt.
+- [x] **7-10 dagen — Tsjechië + Oostenrijk**. Praag (2-3d) — Č. Krumlov (1-2d) — Linz/
+  Salzkammergut (1d) — Wenen (3d). Budget: Tsjechië ~€75-90/dag, Oostenrijk ~€100-130/dag. Seizoen:
+  mei-juni/september. ⚠️ Webcheck (2026-08): een aparte Oostenrijkse vignette is nodig naast het
+  Tsjechische; Wenen-musea werken vaak met een online tijdslot-ticket. Oostenrijk heeft
+  grenscontroles met Tsjechië verlengd (t/m minstens 15-6-2026, mogelijk verder) — steekproefsgewijze
+  ID-controles, geen visumplicht, wel paspoort/ID bij je houden.
+- [x] **7-10 dagen — Praag + Polen**. Praag (3d) — Wrocław (2d) — Krakau (3-4d). Budget: Tsjechië
+  ~€80/dag, Polen ~€60-70/dag. Seizoen: mei-juni/september. ⚠️ Webcheck (2026-08): trein
+  Praag-Wrocław-Krakau is een prima alternatief voor de auto; de route loopt direct via de
+  Tsjechië-Polen-grens, geen omweg via Duitsland nodig.
+- [x] **4-5 dagen — Moravië (Brno + wijnstreek)**. Brno (2d, hoofdstad Moravië) — Mikulov/Znojmo
+  wijnstreek (2-3d, fietsen langs wijngaarden). Budget: ~€65-80/dag (goedkoper dan Praag). Seizoen:
+  het beste eind augustus-september (druivenoogst, Burčák jonge wijn, "zarážení hory"-feesten);
+  Znojmo Wine Festival 2e week september, Mikulov Vintage Festival 1e week september. Alternatief:
+  mei-juni voor een rustiger bezoek. ⚠️ Webcheck (2026-08): fietsverhuur/wijnroutes zijn vaak alleen
+  in het seizoen bemand; boek wijnproeverijen vooraf in de oogstweekenden (drukte + volgeboekt).
 
-## 🇵🇱 Polen
+**Algemeen (webcheck 2026-08)**: reisadvies groen (laatst bijgewerkt 16-03-2026) — let op
+zakkenrollers bij de Karelsbrug/het Oude Stadsplein. Duitsland heeft landgrenscontroles met
+Tsjechië verlengd t/m 15-9-2026 — steekproef-ID-checks, relevant als een route via Duitsland loopt.
 
-- [ ] 3–4 dagen — Krakau
-- [ ] 4–5 dagen — Krakau + Auschwitz
-- [ ] 5–7 dagen — Krakau + Tatra
-- [ ] 7–10 dagen — Zuid-Polen
-- [ ] 7–10 dagen — Polen roadtrip
-- [ ] 10–14 dagen — Polen noord → zuid
+## 🇸🇰 Slowakije — batch 9, uitgewerkt + WebSearch-geverifieerd (2026-08)
+
+- [x] **4-5 dagen — Bratislava + Hoge Tatra**. Bratislava (2d) — trein naar Poprad/Tatranská
+  Lomnica (2-3d) — wandelen Štrbské Pleso/Hrebienok. Budget: ~€50-60/dag (chaletmaaltijd ~€7, bier
+  ~€2,50; kabelbaan Lomnický Štít optioneel ~€89, prijzig). Seizoen: juni-september voor wandelen,
+  december-maart voor wintersport (lawinegevaar, blijf op de paden). ⚠️ Webcheck (2026-08):
+  kabelbaan vooraf boeken via de Gopass.travel-app, raakt snel uitverkocht.
+- [x] **5-7 dagen — Slowakije**. Bratislava (2d) — Banská Štiavnica (1d) — Hoge Tatra (2d) —
+  Košice (1-2d). Budget: ~€50-55/dag. Seizoen: juni-september.
+- [x] **7-10 dagen — Slowakije + Polen**. Bratislava (2d) — Hoge Tatra (2d) — Zakopane (2d) —
+  Krakau (2-3d). Budget: ~€50-60/dag. Seizoen: juni-september (Morskie Oko dan mooi maar druk). ⚠️
+  Webcheck (2026-08): bus Krakau-Zakopane ~€4,50, geen grenscontrole.
+- [x] **7-10 dagen — Slowakije + Hongarije**. Bratislava (2d) — Győr (dagtrip) — Boedapest (3d) —
+  Eger (1-2d). Budget: ~€55-65/dag. Seizoen: mei-september. ⚠️ Webcheck (2026-08): trein
+  Bratislava-Boedapest elke 2u, reistijd 2u25.
+
+**Algemeen (webcheck 2026-08)**: reisadvies groen (bijgewerkt 09-03-2026). Volledig Schengen, geen
+grensfrictie met Hongarije/Polen/Oostenrijk/Tsjechië; Oostenrijk heeft wel eigen grenscontroles met
+Slowakije verlengd t/m minstens 15-6-2026 (steekproef-ID-checks).
+
+## 🇵🇱 Polen — batch 9, uitgewerkt + WebSearch-geverifieerd (2026-08)
+
+- [x] **3-4 dagen — Krakau**. Oude Stad + Wawel + Kazimierz (Joodse wijk), evt. een avond in
+  Kazimierz-bars. Budget: ~€60-70/dag. Seizoen: mei-juni/september beste; juli-augustus heet en
+  druk. ⚠️ Webcheck (2026-08): Wawel-onderdelen (kathedraal, staatsvertrekken) los te boeken met
+  tijdslot, raakt uitverkocht in het hoogseizoen.
+- [x] **4-5 dagen — Krakau + Auschwitz** *(differentiator: geschiedenis/gedenken, compact, geen
+  wandel-uitstapjes)*. Krakau (3d) — Auschwitz-Birkenau (1 dagtrip, half dag). Budget: ~€60-75/dag.
+  Seizoen: hele jaar te doen; winter minder druk maar guur (het is een emotioneel zwaar bezoek,
+  geen "mooi weer"-bestemming). ⚠️ Webcheck (2026-08): sinds maart 2026 kan uitsluitend online
+  gereserveerd worden (visit.auschwitz.org), geen kaartverkoop meer ter plekke, ook niet voor een
+  gratis individueel bezoek; slots openen 3 maanden vooraf; Engelstalige gegidste tour ~150 PLN
+  (~€35), 3,5 uur. Boek minimaal 2-4 weken vooraf.
+- [x] **5-7 dagen — Krakau + Tatra** *(differentiator: natuur/actief, bergen boven geschiedenis)*.
+  Krakau (2-3d) — Zakopane (3-4d) — dagtocht Morskie Oko/Tatra Nationaal Park. Budget: ~€65-80/dag
+  (bergchalets iets duurder in het weekend). Seizoen: piek juni-september; mei-juni/september-
+  oktober rustiger en nog goed begaanbaar. ⚠️ Webcheck (2026-08): Tatra NP-entree ~9-10 PLN/dag;
+  het Morskie Oko-pad (8 km, geasfalteerd) is enkel te voet/paardenkoets/fiets, geen auto's —
+  parkeren bij Palenica Białczańska vult snel in weekenden.
+- [x] **7-10 dagen — Zuid-Polen** *(differentiator: brede cultuurronde, geen zwaartepunt op één
+  thema)*. Krakau (3d) — Wieliczka zoutmijn (dagtrip) — Auschwitz (dagtrip) — Zakopane/Tatra (2-3d)
+  — evt. Wrocław als afsluiter (2d). Budget: ~€65-75/dag. Seizoen: mei-juni/september. ⚠️ Webcheck
+  (2026-08): Wieliczka Tourist Route ~134-156 PLN (~€31-36) afhankelijk van taal, boek via
+  bilety.kopalnia.pl — slots 3-5 dagen vooraf al vol in het hoogseizoen; boek de Auschwitz-
+  reservering apart, geen combi-ticket.
+- [x] **7-10 dagen — Polen roadtrip**. Kraków — Wieliczka — Auschwitz — Zakopane — Wrocław —
+  Warschau (kortere versie: laat Gdańsk weg). Budget: ~€60-75/dag incl. huurauto. Seizoen:
+  mei-juni/september. ⚠️ Webcheck (2026-08): een auto is buiten de binnensteden praktisch (parkeren
+  in Kraków/Wrocław-centrum is lastig); geen vignet nodig in Polen, tolwegen los betalen via de
+  e-TOLL-app op enkele trajecten.
+- [x] **10-14 dagen — Polen noord → zuid**. Gdańsk/Hel-schiereiland (3d) — Malbork Kasteel
+  (dagtrip) — Warschau (2-3d) — Wrocław (2d) — Kraków (3-4d), ca. 1300 km totaal. Budget: ~€60-75/
+  dag. Seizoen: mei-juni of september beste (rustiger, mild weer); het Hel-schiereiland/de kust is
+  vooral leuk juni-augustus. ⚠️ Webcheck (2026-08): boek Auschwitz/Wieliczka ruim vooraf (minstens
+  1 maand) — beide vaak uitverkocht in het hoogseizoen; trein tussen de steden is een goed
+  alternatief voor de lange ritten.
+
+**Algemeen (webcheck 2026-08)**: reisadvies groen — reizen naar de grens met Oekraïne wordt
+afgeraden (niet relevant voor deze routes), niet alle grensovergangen met Wit-Rusland/Oekraïne/
+Rusland zijn open, geen foto's bij grens-/militaire objecten. Volledig Schengen, geen eigen
+grenscontroles gemeld met Tsjechië/Slowakije. Duitsland heeft landgrenscontroles met Polen verlengd
+t/m 15-9-2026 (steekproef-ID-checks, relevant bij een route via Duitsland).
 
 ## 🇵🇹🇪🇸 Iberië (combinaties)
 
@@ -1756,7 +1945,8 @@ volgorde:
    Balkan-combinatiesectie hergebruikt precies dit cluster. **Gedaan (2026-08), WebSearch-
    geverifieerd.**
 9. **Centraal/Oost-Europa: Roemenië + Bulgarije + Hongarije + Tsjechië + Slowakije + Polen +
-   Moldavië** (35, was 34 — +Moravië bij Tsjechië, derde aanvulling 2026-08).
+   Moldavië** (35, was 34 — +Moravië bij Tsjechië, derde aanvulling 2026-08). **Gedaan (2026-08),
+   WebSearch-geverifieerd.**
 10. **Oost-Mediterraan: Griekenland + Cyprus + Turkije (Istanbul/Europees + Egeïsche kust)** (18,
     was 16 — +Izmir/Bodrum-Egeïsche kust, derde aanvulling 2026-08, zie Turkije-sectie voor de
     bijgestelde regel) — samen, want de combinaties tussen deze drie landen (Cyprus+Griekenland,
