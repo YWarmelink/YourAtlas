@@ -2,8 +2,8 @@
 
 Status: **batch 1 (Benelux), batch 2 (Duitsland), batch 3 (Oostenrijk + Zwitserland), batch 4
 (Frankrijk), batch 5 (Italië), batch 6 (micro-staten & kleine eilanden), batch 7 (Iberië), batch 8
-(Balkan-cluster), batch 9 (Centraal/Oost-Europa) en batch 10 (Oost-Mediterraan) uitgewerkt, rest
-nog ruw.** Youri's eigen lijst (2026-08) van realistische
+(Balkan-cluster), batch 9 (Centraal/Oost-Europa), batch 10 (Oost-Mediterraan) en batch 13
+(Baltische staten) uitgewerkt, rest nog ruw.** Youri's eigen lijst (2026-08) van realistische
 Europese trips — van lang weekend tot ~3 weken, allemaal "reëel en slim te maken" omdat ze binnen
 Europa blijven. Dit is bewust alleen duur + bestemming/route, geen route/budget/seizoen-detail —
 dat werken we samen per batch uit, zoals Route Builder's expedities dat ook kregen (zie de
@@ -1800,14 +1800,60 @@ duplicaat maar een ander soort trip (korte vakantie i.p.v. epic) op dezelfde bes
 - [ ] 5–7 dagen — Noord-Ierland (Belfast + Giant's Causeway)
 - [ ] 10–14 dagen — Engeland + Wales + Noord-Ierland roadtrip
 
-## 🇪🇪🇱🇻🇱🇹 Baltische staten
+## 🇪🇪🇱🇻🇱🇹 Baltische staten — batch 13, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-- [ ] 5–7 dagen — Estland
-- [ ] 5–7 dagen — Letland
-- [ ] 5–7 dagen — Litouwen
-- [ ] 7–10 dagen — Tallinn + Riga + Vilnius
-- [ ] 10–14 dagen — Baltic States roadtrip
-- [ ] 10–14 dagen — Baltics + Polen
+- [x] **5-7 dagen — Estland**. Tallinn (2-3d, Oude Stad) + Lahemaa NP (1d) of Saaremaa (2d,
+  Kuressaare kasteel, via veerpont Virtsu-Muhu-brug). Budget: ~€70-90/dag. Seizoen: mei-september
+  beste; Saaremaa/Muhu sterk seizoensgebonden — buiten de zomer veel dicht (restaurants, beperktere
+  ferrydienstregeling). Nieuw 2026: Finnair start een Helsinki-Kuressaare route. ⚠️ Webcheck
+  (2026-08): veerbootplekken (auto) Tallinn-Saaremaa in juli/augustus ruim vooraf boeken. De
+  grensovergang Narva naar Rusland is gesloten voor voertuigen sinds februari 2024, verlengd t/m
+  minstens 31 augustus 2026 — niet relevant tenzij je Narva als daguitstap wilt doen (de stad zelf
+  is veilig, binnen Schengen).
+- [x] **5-7 dagen — Letland**. Riga (2-3d) + Sigulda/Turaida-kasteel/Gauja NP ("Letse Zwitserland",
+  2d) + Rundāle-paleis (dagtrip). Budget: ~€70-90/dag. Seizoen: mei-september; Rundāle open wo-zo,
+  zomer 10-17u (tuin weekend tot 20u), winter 10-16u, ma/di dicht. ⚠️ Webcheck (2026-08): Rundāle
+  €12 paleis/€6 tuin/€17 combi (2026-tarief, check rundale.net); Sigulda-kabelbaan/zomerbobslee —
+  de laatst bevestigde prijzen (~€9-14) dateren van 2021, check ter plekke, waarschijnlijk hoger.
+- [x] **5-7 dagen — Litouwen**. Vilnius (2-3d) + Trakai-kasteel (dagtrip) + Kaunas (1d) + Koerse
+  Schoorwal/Nida (2d, via veerpont Klaipėda-Smiltynė). Budget: ~€70-90/dag. Seizoen: mei-september,
+  de duinen bij Nida zijn het mooist in de zomer. ⚠️ Webcheck (2026-08): Trakai-ticket €12 (mei-sep)
+  /€10 (okt-apr); Klaipėda-Smiltynė autoveer €23,20 retour (2026); extra eco-tol voor auto's in
+  Neringa/Nida: €50 (20 juni-20 augustus) of €10 (rest van het jaar), elektrische auto's gratis
+  buiten het hoogseizoen.
+- [x] **7-10 dagen — Tallinn + Riga + Vilnius** *(differentiator: pure hoofdstad-hop per bus, geen
+  omwegen naar platteland/eilanden)*. Tallinn (3d) → bus Lux Express (3u40) → Riga (3d) → bus
+  (5u10) → Vilnius (3d). Budget: ~€80-100/dag (steden iets duurder). Seizoen: mei-september. ⚠️
+  Webcheck (2026-08): de Rail Baltica hogesnelheidslijn is nog niet operationeel (streefdatum 2030,
+  het Letse deel mogelijk pas 2035) — reis blijft per bus (Lux Express/Ecolines), niet per trein;
+  bus vooraf boeken in het hoogseizoen, prijzen $11-60 per traject.
+- [x] **10-14 dagen — Baltic States roadtrip** *(differentiator: echte zelfrijlus met kleinere
+  regio's — Sigulda, Curonian Spit, Saaremaa — in plaats van een verlengde hoofdsteden-trip)*.
+  Tallinn (2d) → Lahemaa (1d) → Saaremaa (2d) → Riga (2d) → Sigulda/Gauja NP (2d) + Rundāle
+  (dagtrip) → Vilnius (2d) → Trakai (dagtrip) → Curonian Spit/Nida (2d). Budget: ~€70-90/dag
+  (huurauto vroeg boeken in de zomer). Seizoen: mei-september. ⚠️ Webcheck (2026-08): alle drie
+  EU/Schengen, geen grenscontroles onderling; Curonian Spit auto-ecotol zoals hierboven;
+  Saaremaa-veer vooraf boeken.
+- [x] **10-14 dagen — Baltics + Polen** *(differentiator: verlengt zuidwaarts via de
+  Suwałki-corridor naar Polen — Warschau/Mazurenmeren/Gdańsk)*. Tallinn → Riga → Vilnius (~7-8d,
+  als het hoofdsteden-item) → via de Suwałki-corridor (Litouwen-Polen-grens) → Warschau of
+  Mazurenmeren/Gdańsk (3-5d). Budget: ~€80-100/dag. Seizoen: mei-september. ⚠️ Webcheck (2026-08):
+  geen Rail Baltica-trein beschikbaar; in de Suwałki Gap versterken NAVO en Litouwen in 2026 actief
+  infrastructuur en militaire aanwezigheid (nieuw trainingsterrein Kapčiamiestis, wegupgrade
+  Vilnius-Augustów) — geen gevaar voor toeristen maar wel zichtbare militaire activiteit, volg
+  lokale instructies. De grensovergang zelf is Schengen, geen paspoortcontrole.
+
+**Algemeen (webcheck 2026-08)**: reisadvies Estland/Letland/Litouwen/Polen alle groen (Polen: groen
+sinds 05-03-2026). Nuances die geen van de bovenstaande routes daadwerkelijk raken: Letse
+grensstrook met Wit-Rusland (oranje, alleen-indien-noodzakelijk), Litouwse noodtoestand-regio's
+grenzend aan Wit-Rusland/Kaliningrad (verhoogde grenscontrole), Polen's "niet alle grensovergangen
+met Wit-Rusland/Oekraïne/Kaliningrad open". Estland: let op zakkenrollerij Tallinn, geen Russische
+kentekens toegestaan, LGBTIQ+-discriminatierisico buiten Tallinn/Tartu — hetzelfde risico geldt
+buiten de hoofdsteden in Litouwen. Alle drie Baltische staten + Polen zijn EU/Schengen — geen
+grensfricties onderling of bij de Helsinki-Tallinn-ferry (Finland ook Schengen, ~2-3,5u, vanaf
+€10-15 p.p., tot ~€123 gemiddeld in het hoogseizoen). De enige reële frictiepunten zijn de
+niet-Schengen buitengrenzen (Rusland/Wit-Rusland/Kaliningrad), die geen van de voorgestelde routes
+daadwerkelijk kruist.
 
 ## 🇷🇸 Servië — batch 8, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
@@ -2082,7 +2128,7 @@ volgorde:
 12. **Britse eilanden: Engeland + Wales + Noord-Ierland + Ierland + Schotland** (17, was 10 —
     +Engeland/Wales/Noord-Ierland als nieuwe sectie en +Orkney/Shetland/Buiten-Hebriden bij
     Schotland, derde aanvulling 2026-08; batch hernoemd omdat Engeland/Wales/NI er nu inzit).
-13. **Baltische staten** (6).
+13. **Baltische staten** (6). **Gedaan (2026-08), WebSearch-geverifieerd.**
 14. **🏝️ Europese eilanden** (30, was 28 — +Kanaaleilanden & Isle of Man, derde aanvulling
     2026-08) — Madeira, Azoren, Canarische Eilanden, Balearen, Kanaaleilanden/Isle of Man, en de
     gedetailleerdere Italiaanse/Griekse eilanden-varianten. Na de bijbehorende landenbatches
