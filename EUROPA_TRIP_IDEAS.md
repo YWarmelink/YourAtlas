@@ -2,7 +2,8 @@
 
 Status: **batch 1 (Benelux), batch 2 (Duitsland), batch 3 (Oostenrijk + Zwitserland), batch 4
 (Frankrijk), batch 5 (Italië), batch 6 (micro-staten & kleine eilanden), batch 7 (Iberië), batch 8
-(Balkan-cluster) en batch 9 (Centraal/Oost-Europa) uitgewerkt, rest nog ruw.** Youri's eigen lijst (2026-08) van realistische
+(Balkan-cluster), batch 9 (Centraal/Oost-Europa) en batch 10 (Oost-Mediterraan) uitgewerkt, rest
+nog ruw.** Youri's eigen lijst (2026-08) van realistische
 Europese trips — van lang weekend tot ~3 weken, allemaal "reëel en slim te maken" omdat ze binnen
 Europa blijven. Dit is bewust alleen duur + bestemming/route, geen route/budget/seizoen-detail —
 dat werken we samen per batch uit, zoals Route Builder's expedities dat ook kregen (zie de
@@ -1083,22 +1084,88 @@ invalshoek (snelle sweep vs. volledige lus met Alentejo; wijnstreek-verblijf vs.
 Centraal-Portugal is nu expliciet de verbindende middenetappe waar de twee grotere routes naar
 doorverwijzen in plaats van het gewoon te negeren.
 
-## 🇬🇷 Griekenland
+## 🇬🇷 Griekenland — batch 10, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-- [ ] 3–4 dagen — Athene
-- [ ] 5–7 dagen — Kreta
-- [ ] 5–7 dagen — Athene + omgeving
-- [ ] 7–10 dagen — Peloponnesos
-- [ ] 7–10 dagen — Noord-Griekenland
-- [ ] 7–10 dagen — Griekse eilanden
-- [ ] 10–14 dagen — Griekenland roadtrip
-- [ ] 10–14 dagen — Athene + Peloponnesos
+- [x] **3-4 dagen — Athene**. Akropolis/Plaka/Monastiraki (2d) + Akropolismuseum + dagtrip Kaap
+  Sounion (1d). Budget: ~€70-90/dag (private hostelroom/budgethotel ~€45-55, eten €20-30, extra
+  €10-15). Seizoen: april-juni/september-oktober beste (minder hitte/drukte), zomer tot 40°C. ⚠️
+  Webcheck (2026-08): Akropolis vereist verplicht timed-entry ticket vooraf (hhticket.gr), €30
+  zomer (apr-okt)/€15 winter, cap 20.000 bezoekers/dag, in juni-augustus al 5-7 dagen vooraf
+  uitverkocht (ochtend/late middag het eerst); laatste toegang 19:00, sluit 19:30. Gratis <25 EU.
+- [x] **5-7 dagen — Athene + omgeving** *(differentiator: blijft Athene-based, alleen dagtrips,
+  geen verplaatsing van standplaats — tegenover de langere lus in "Athene + Peloponnesos"
+  hieronder)*. Athene (3d) + dagtrips Kaap Sounion, Delphi (lang, 3,5-4u enkele reis, evt. 1
+  overnachting Delphi/Arachova), Nafplio/Mycene/Epidaurus als dagtrip. Budget: ~€75-95/dag. Seizoen:
+  idem Athene. ⚠️ Webcheck (2026-08): Delphi combi-ticket site+museum ~€12 zomer/€6 winter; Mycene/
+  Epidaurus combi ~€20 zomer/€10 winter, gratis <25 EU, 50% korting 65+ EU (okt-mei).
+- [x] **7-10 dagen — Peloponnesos** *(differentiator: echte lus, geen Athene-basis)*. Athene
+  (1-2d aankomst) — Nafplio (2d) — Mycene/Epidaurus (dagtrip) — Mystras/Sparta (2d) — evt.
+  Monemvasia (1-2d) — terug via Korinthe. Budget: ~€70-90/dag + huurauto/benzine ~€25-35/dag erbij.
+  Seizoen: april-juni/september-oktober; let op het Epidaurus-zomerfestival (20 juni-29 augustus
+  2026) kan drukte/hogere prijzen in de regio geven. ⚠️ Webcheck (2026-08): Mystras-tickets €12-20
+  (check hhticket.gr vooraf), festival-tickets los €10-55, smalle bergwegen bij Mystras.
+- [x] **7-10 dagen — Noord-Griekenland**. Thessaloniki (2-3d) — Meteora/Kalabaka (2d) —
+  Halkidiki-strand (2-3d), optie Vergina/Edessa/Olympus. Budget: ~€65-85/dag (goedkoper dan Athene/
+  eilanden), auto aanbevolen. Seizoen: mei-juni/september beste; Halkidiki juli-augustus drukker/
+  duurder. ⚠️ Webcheck (2026-08): Meteora-kloosters hebben elk een eigen roterende sluitingsdag,
+  check per klooster vooraf; kledingvoorschrift (knieën/schouders bedekt); entree per klooster ~€3,
+  soms cash-only.
+- [x] **7-10 dagen — Griekse eilanden**. Athene (1d) → veerboot Paros (3n) → Naxos (3n) →
+  Santorini (2n) → vlucht/veerboot terug naar Athene. Budget: ~€100-150/dag incl. ferries (€20-70/
+  traject). Seizoen: juni-half september (juli-augustus druk/duur; mei/september rustiger en
+  goedkoper). ⚠️ Webcheck (2026-08): Naxos-Paros 25-50 min (tot 10x/dag); Paros-Santorini 1u30-5u40;
+  Naxos-Santorini 1-3u — definitieve 2026-vaarschema's pas in het voorjaar bevestigd, check
+  ferryhopper.com vlak voor vertrek; meltemi-wind kan zomerferries laten uitvallen, boek flexibel/
+  vroeg in het hoogseizoen.
+- [x] **10-14 dagen — Griekenland roadtrip**. Athene (2d) — Meteora (2d) — Delphi (1d) —
+  Peloponnesos: Nafplio/Mycene/Olympia (3-4d) — terug naar Athene, met huurauto. Budget: ~€90-140/
+  dag incl. huurauto. Seizoen: april-juni of september-oktober (zomer erg heet in het binnenland).
+  ⚠️ Webcheck (2026-08): Meteora-kloosters hebben elk een eigen wisselende sluitingsdag; huurauto-
+  verzekering/tolwegen nakijken; parkeren in het centrum van Athene is lastig.
+- [x] **10-14 dagen — Athene + Peloponnesos** *(differentiator: langere, uitgebreidere lus met meer
+  stops dan de losse Peloponnesos-trip hierboven — Monemvasia, Mani, Olympia, in plaats van
+  Athene-dagtrips zoals de "Athene + omgeving"-versie)*. Athene (3d) — Nafplio (2d) — Mycene/
+  Epidaurus (dagtrip) — Mystras/Sparta (2d) — Monemvasia (2d) — Kalamata/Mani (2d) — Olympia (1-2d)
+  — terug via Patras/Korinthe. Budget: ~€75-95/dag. Seizoen: idem. ⚠️ Webcheck (2026-08): Olympia
+  combi site+museum ~€20 zomer/€10 winter; Mani-wegen smal en tijdrovend, plan extra reistijd.
 
-## 🇨🇾 Cyprus
+**Algemeen (webcheck 2026-08)**: reisadvies **geel** sinds 04-08-2026 — reden: bosbranden, kan
+wegafsluitingen/slechte luchtkwaliteit geven, situatie kan snel omslaan bij hitte/wind (augustus
+2026 pieksituatie, 70+ branden tegelijk, o.a. Kreta en de regio Athene). Geen algeheel negatief
+advies, wel vlak voor/tijdens de reis opnieuw checken, vooral april-oktober. Volledig Schengen,
+geen grensfrictie met andere Schengen-landen.
 
-- [ ] 5–7 dagen — Cyprus
-- [ ] 7–10 dagen — Cyprus roadtrip
-- [ ] 7–10 dagen — Cyprus + Griekenland
+## 🇨🇾 Cyprus — batch 10, uitgewerkt + WebSearch-geverifieerd (2026-08)
+
+- [x] **5-7 dagen — Cyprus**. Larnaca (1d) — Nicosia incl. Ledra Street-grensovergang (1d) —
+  Troodos-gebergte (1d) — Paphos incl. Aphrodite's Rock (2d) — Limassol (1d). Budget: ~€110-140/
+  dag. Seizoen: april-juni/september-oktober (juli-augustus 35°C+). ⚠️ Webcheck (2026-08): geen
+  Schengen — ID-check bij binnenkomst, geen visum nodig voor NL/EU; huurauto nodig, OV buiten de
+  steden beperkt.
+- [x] **7-10 dagen — Cyprus roadtrip**. Larnaca (1d) — Nicosia + oversteek Groene Lijn naar
+  Noord-Nicosia (1d) — Troodos wijndorpen (1-2d) — Paphos incl. Akamas/Avakas-kloof en Blue Lagoon
+  (2d) — Limassol + Kourion + Aphrodite's Rock (2d) — Ayia Napa/Protaras terug naar Larnaca (1-2d).
+  Budget: ~€110-140/dag incl. huurauto. Seizoen: april-juni/september-oktober. ⚠️ **Noord-
+  Cyprus-nuance**: oversteken bij officiële checkpoints is normaal en toegestaan voor toeristen
+  (Ledra Street in Nicosia = alleen voetgangers; auto's alleen via het Metehan-checkpoint). De
+  meeste Republiek-Cyprus-verhuurders verbieden hun auto het Noorden in — vooraf navragen bij de
+  verhuurder. Mag het wel: verplichte Turkse grensverzekering nodig (~€20, dekt 3 dagen
+  aansprakelijkheid richting derden, geen dekking voor schade aan de eigen huurauto). Nederland
+  erkent Noord-Cyprus niet als staat; binnenkomst via het Noorden (bv. Ercan-vliegveld) geldt
+  volgens de Republiek-Cyprus-autoriteiten als illegale binnenkomst, consulaire bijstand daar is
+  beperkt. Blijf weg uit militaire zones/de bufferzone buiten officiële checkpoints (boete/
+  celstraf mogelijk).
+- [x] **7-10 dagen — Cyprus + Griekenland**. Geen aangrenzende landen, dus praktisch een
+  vlucht-combi: bv. 4-5 dagen Cyprus (Larnaca/Paphos) + directe vlucht Larnaca-Athene (Aegean/
+  Cyprus Airways/Sky Express/Wizz Air, ~1u40, vanaf ~€120 retour, dagelijks meerdere vluchten) +
+  3-5 dagen Athene/eiland (bv. Athene + Aegina-dagtrip, of doorreis naar Santorini). Budget: Cyprus
+  ~€110-140/dag, Griekenland ~€100-150/dag. Seizoen: april-juni/september-oktober voor beide. ⚠️
+  Webcheck (2026-08): boek de vlucht los van een eventuele hoofdvlucht vanuit NL, bagageregels
+  checken tussen maatschappijen (kan verschillen).
+
+**Algemeen (webcheck 2026-08)**: reisadvies groen (laatst bijgewerkt 21-05-2026, geldig per
+12-08-2026). Cyprus is EU-lid maar geen Schengen (paspoort/ID-check bij binnenkomst, geen visum
+nodig voor Dutch/EU-burgers).
 
 ## 🇲🇹 Malta — batch 6, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
@@ -1141,7 +1208,8 @@ en Amsterdam-Malta (KM Malta Airlines/easyJet, ~3u10) — goed bediende route, g
 2026), bij Youri's tussen-budget-en-comfort-profiel is €100-110/dag de juiste keuze voor de losse
 Malta-trips; de Sicilië-combo's liggen hoger door Sicilië's eigen prijsniveau + huurauto.
 
-## 🇹🇷 Turkije — Europees/Istanbul + Egeïsche kust
+## 🇹🇷 Turkije — Europees/Istanbul + Egeïsche kust — batch 10, uitgewerkt + WebSearch-geverifieerd
+(2026-08)
 
 Oorspronkelijk bewust alleen het Europese/Istanbul-deel (Turkije is grotendeels Aziatisch, maar
 Istanbul en Europees Turkije/Thracië passen prima in een Europa-lijst). **Bijgesteld (2026-08,
@@ -1151,13 +1219,69 @@ vlucht voor zo'n korte periode" — de Egeïsche kust (Izmir/Bodrum/Çeşme) vol
 goed als Istanbul (directe, korte, goedkope vluchten vanuit NL), dus toegevoegd ondanks dat het
 geografisch Aziatisch Turkije is.
 
-- [ ] 3–4 dagen — Istanbul
-- [ ] 5–7 dagen — Istanbul + Thracië
-- [ ] 7–10 dagen — Istanbul + Noordwest-Turkije
-- [ ] 7–10 dagen — Istanbul + Griekse eilanden
-- [ ] 10–14 dagen — Turkije + Griekenland
-- [ ] 4–5 dagen — Izmir + Egeïsche kust (Efeze, Çeşme) *(nieuw, 2026-08 derde aanvulling)*
-- [ ] 5–7 dagen — Bodrum + Egeïsche kust *(nieuw, 2026-08 derde aanvulling)*
+- [x] **3-4 dagen — Istanbul**. Sultanahmet (Hagia Sophia, Blauwe Moskee, Topkapi) + Grand Bazaar/
+  Galata + Bosphorus-cruise dagtrip. Budget: ~€70-80/dag (boutique 3*, taxi's beperkt, goede
+  maaltijden). Seizoen: april-mei of september-oktober (mild, minder druk); winter goedkoopst maar
+  nat/koud; juli-augustus heet en overvol. ⚠️ Webcheck (2026-08): Hagia Sophia is een functionerende
+  moskee — toeristen alleen bij de bovengalerij, €25 entree (Museum Pass Istanbul geldt hier
+  NIET), sluit 5x/dag ~30-45 min per gebedstijd, vrijdagmiddag extra lang dicht (~12:00-14:30) —
+  plan eromheen. Blauwe Moskee gratis, ook gebedspauzes, dresscode (schouders/knieën bedekt,
+  hoofddoek dames — gratis te leen). Topkapi €55 (paleis+Harem+Hagia Irene combi); Museum Pass
+  geldt wel voor het hoofdpaleis, niet voor Harem/Hagia Irene. Visum: Nederlands paspoort
+  visumvrij, max 90 dagen/180 dagen, paspoort ≥6 maanden geldig na terugreis.
+- [x] **5-7 dagen — Istanbul + Thracië**. Istanbul (4d) + dagtrip Edirne (Selimiye Moskee,
+  Ottomaans) + evt. Gelibolu-schiereiland (Gallipoli ligt zelf al in Europees Turkije/Thracië).
+  Budget: ~€65-75/dag (buiten Istanbul goedkoper). Seizoen: lente/najaar; Edirne is rustig het hele
+  jaar door, weinig toeristen. ⚠️ Webcheck (2026-08): Edirne per bus vanaf Istanbul Otogar ~2,5-3u,
+  enkele reis ~€10-15, Selimiye Moskee gratis. Let op: het Gallipoli-schiereiland is technisch al
+  Europees Turkije, Troje ligt aan de Aziatische kant — voor puur Thracië hoeft Troje niet mee.
+- [x] **7-10 dagen — Istanbul + Noordwest-Turkije**. Istanbul (4-5d) + 2-daagse tour Gelibolu
+  (Anzac Cove/Lone Pine) + Troje via Çanakkale (overnachting daar), evt. Bursa erbij. Budget:
+  ~€75-85/dag incl. tour. Seizoen: lente/najaar prettigst voor wandelen op de slagvelden (minder
+  hitte). ⚠️ Webcheck (2026-08): 2-daagse tours Istanbul-Gelibolu-Troje ~€150-250 p.p. all-in
+  (bus+hotel Çanakkale+gidsen) — een dagtrip kan wel maar is een lange rit, 2-daags aanbevolen.
+  Troje-entree apart ~€15-20.
+- [x] **7-10 dagen — Istanbul + Griekse eilanden** *(differentiator: Istanbul-based, één enkele
+  eilandhop — tegenover de langere Egeïsche-kust-naar-eilanden-combo hieronder)*. Istanbul (5d) +
+  bus/vlucht naar Ayvalık + korte ferry naar Lesbos/Mytilini (2-3d), terug via Istanbul. Budget:
+  ~€70-85/dag (iets hoger op het Griekse eiland). Seizoen: de ferry vaart juni-september dagelijks,
+  buiten seizoen fors minder afvaarten — plan de hop in de zomer. ⚠️ Webcheck (2026-08):
+  Ayvalık-Lesbos ferry ~€20-35 enkele reis, ~40 min-1u overtocht, hoofdzakelijk zomerdienst
+  (juni-september dagelijks). Het Griekse eiland is Schengen, dus paspoortcontrole bij de overstap
+  (geen los visum nodig voor Nederlanders, wel een grenscheck).
+- [x] **10-14 dagen — Turkije + Griekenland** *(differentiator: langere Egeïsche-kust-naar-
+  eilanden-combo, geen Istanbul)*. Izmir/Kuşadası (Efeze) → Bodrum → ferry naar Rhodos of Kos →
+  eilandhoppen Dodecanesos (2-3 eilanden) → terug via Bodrum/Izmir. Budget: ~€75-90/dag gemiddeld
+  (Turkse kust goedkoper, Griekse eilanden duurder). Seizoen: strikt juni-september — buiten
+  seizoen vallen bijna alle ferryroutes weg (laagseizoen soms maar 3x/week i.p.v. dagelijks). ⚠️
+  Webcheck (2026-08): Bodrum-Kos ~20-30 min (catamaran), €20-35 enkele reis, 3-6x/dag in de zomer.
+  Marmaris-Rhodos ~1u, €45-62 (duurder), dagelijks in de zomer. Boek in juli-augustus ruim vooraf
+  i.v.m. drukte.
+- [x] **4-5 dagen — Izmir + Egeïsche kust (Efeze, Çeşme)** *(nieuw, 2026-08 derde aanvulling —
+  differentiator: geschiedenis-zwaar, tegenover Bodrum's strand/nachtleven-focus hieronder)*. Izmir
+  (2d, stad+Smyrna) + Efeze dagtrip vanuit Selçuk/Kuşadası + Çeşme (2d, rustige badplaats, evt.
+  ferry-uitstapje naar Chios). Budget: ~€65-75/dag (Izmir is de goedkoopste optie van de
+  kustplekken). Seizoen: april-juni of september-oktober (zomer erg heet in Efeze, weinig schaduw
+  bij de ruïnes, ga vroeg). ⚠️ Webcheck (2026-08): Efeze-entree 2026 €40 (incl. verplicht nieuw
+  "Ephesus Experience"-museum), Terrassenhuizen apart €15. Zomer (3 juni-1 oktober) avondopenstelling
+  wo-za tot 23:00, na 18:45 alleen ondertoegang, Terrassenhuizen dan al dicht. Çeşme-Chios ferry
+  ~€25-30 enkele reis, 20-30 min, het hele jaar maar meer frequentie in de zomer.
+- [x] **5-7 dagen — Bodrum + Egeïsche kust** *(nieuw, 2026-08 derde aanvulling — differentiator:
+  strand/nachtleven-zwaar)*. Bodrum (3-4d, kasteel/marina/beachclubs Bar Street-Gümbet,
+  Halikarnas open-air club) + Yalıkavak-marina + ferry-dagtrip naar Kos. Budget: ~€90-105/dag
+  (Bodrum duurder dan Izmir, nightlife/beachclubs stuwen de prijs op, vooral juli-augustus).
+  Seizoen: juni-september voor strand/nachtleven (de bevolking zwelt van 35k naar 300k+ in juli);
+  mei/september rustiger en goedkoper alternatief. ⚠️ Webcheck (2026-08): Bodrum-Kos ferry
+  €20-35 enkele reis (retour €35-60), 20-30 min catamaran, 3-6x/dag juni-september, buiten
+  seizoen fors minder — boek vooraf in het hoogseizoen.
+
+**Algemeen (webcheck 2026-08)**: reisadvies geel (rood alleen de grensstreek met Syrië/Irak) —
+verhoogd terrorisme-risico, zakkenrollerij op de Grand Bazaar. Aardbevingsrisico: Istanbul ligt
+bij de Noord-Anatolische breuklijn, geologen waarschuwen voor een verwachte zware beving (M7-7,6)
+in de Marmararegio — een standaard aandachtspunt, geen reisbeletsel. Visum: Nederlands paspoort
+visumvrij voor Turkije, max 90 dagen binnen 180 dagen, paspoort ≥6 maanden geldig. De Turkse lira
+heeft aanhoudende sterke depreciatie gehad — reken in euro's, niet in oude TRY-prijzen die online
+nog rondzwerven.
 
 ## 🇭🇷 Kroatië — batch 8, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
@@ -1950,7 +2074,8 @@ volgorde:
 10. **Oost-Mediterraan: Griekenland + Cyprus + Turkije (Istanbul/Europees + Egeïsche kust)** (18,
     was 16 — +Izmir/Bodrum-Egeïsche kust, derde aanvulling 2026-08, zie Turkije-sectie voor de
     bijgestelde regel) — samen, want de combinaties tussen deze drie landen (Cyprus+Griekenland,
-    Istanbul+Griekse eilanden, Turkije+Griekenland) elkaar nodig hebben.
+    Istanbul+Griekse eilanden, Turkije+Griekenland) elkaar nodig hebben. **Gedaan (2026-08),
+    WebSearch-geverifieerd.**
 11. **Noord-Europa: Noorwegen + Zweden + Denemarken + Finland + IJsland + Faeröer** (32, was 26 —
     +Zweeds Lapland/Svalbard/Åland/Faeröer, derde aanvulling 2026-08; Faeröer is hier een nieuw
     landje in het cluster, geen bestaand land dat groeide).

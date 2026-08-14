@@ -201,7 +201,7 @@ Oostkust 🗽** (DC-Philadelphia-New York-Boston via train, 12d/€1.365), **US 
 choice — Vancouver-Anchorage is already the natural flight link), new total 32d/€5.875 (was
 22d/€4.275).
 
-## Europa Trip Ideas (nieuw, 2026-08 — batches 1-9 klaar)
+## Europa Trip Ideas (nieuw, 2026-08 — batches 1-10 klaar)
 
 See [`EUROPA_TRIP_IDEAS.md`](EUROPA_TRIP_IDEAS.md) — Youri's own big raw list (~230 items, extended
 2026-08 with a second batch of additions — micro-states, Cyprus/Malta/Moldavië/Kosovo/Corsica/
@@ -216,12 +216,12 @@ continent group in Route Builder's list view automatically. Not yet done: actual
 worked-out item into `routeBuilder.js` as a real `rbBuildXRoute()` — that's a separate step, likely
 done in one pass once several batches are ready rather than per item.
 
-**Status: batches 1-9 done** — Benelux (6), Duitsland (12), Oostenrijk + Zwitserland (12),
+**Status: batches 1-10 done** — Benelux (6), Duitsland (12), Oostenrijk + Zwitserland (12),
 Frankrijk (11), Italië (16), micro-staten & kleine eilanden (20), Iberië (26), Balkan-cluster (44:
 Kroatië/Slovenië/Bosnië/Montenegro/Albanië/Servië/Noord-Macedonië/Kosovo), Centraal/Oost-Europa
-(35: Roemenië/Bulgarije/Moldavië/Hongarije/Tsjechië/Slowakije/Polen). Route/dagen/budget/
-seizoen/vervoer per trip. Benelux was written from general knowledge then WebSearch-verified
-afterward;
+(35: Roemenië/Bulgarije/Moldavië/Hongarije/Tsjechië/Slowakije/Polen), Oost-Mediterraan (18:
+Griekenland/Cyprus/Turkije). Route/dagen/budget/seizoen/vervoer per trip. Benelux was written from
+general knowledge then WebSearch-verified afterward;
 **standard practice from batch 2 onward**: 2-3 parallel WebSearch-backed research agents (grouped
 by sub-region) before writing anything, not after — this caught real route improvements each time
 (Duitsland: Rijn+Moezel via Koblenz, Berchtesgaden as a loop-closer; Oostenrijk/Zwitserland:
@@ -258,15 +258,22 @@ separate from and stricter than Moldova proper — treated as a real judgment ca
 mitigation (day-trip only, no overnight, check insurance) rather than a rubber-stamped inclusion;
 Gellért thermal bath in Budapest is closed for renovation since 1 Oct 2025 until ~2028, so the
 Budapest items route through Széchenyi instead; Auschwitz-Birkenau requires online-only booking
-since March 2026, no more on-site ticket sales). Proposed batch order (see the bottom of that file for the full
+since March 2026, no more on-site ticket sales; Oost-Mediterraan: Greece carries a yellow Dutch
+advisory since Aug 2026 for active wildfires (70+ simultaneous, incl. Crete and the Athens region)
+— not a reason to avoid it, just a standing seasonal caveat; Cyprus is EU but not Schengen, and its
+own roadtrip item required a real judgment call on crossing into Northern Cyprus (Green Line
+checkpoints are normal for tourists, but rental cars from the Republic side usually can't cross
+without separate Turkish border insurance, and NL doesn't recognize the north as a state); Hagia
+Sophia's upper gallery closes ~30-45min five times a day for prayer as a functioning mosque again).
+Proposed batch order (see the bottom of that file for the full
 reasoning per cluster, updated after the 2026-08 extension): (1) ~~Benelux~~ **done**, (2)
 ~~Duitsland~~ **done**, (3) ~~Oostenrijk + Zwitserland~~ **done**, (4) ~~Frankrijk~~ **done**, (5)
 ~~Italië~~ **done**, (6) ~~Micro-staten & kleine eilanden~~ **done** (Liechtenstein/San Marino/
 Vaticaanstad/Monaco/Corsica/Malta), (7) ~~Iberië: Spanje + Portugal + Andorra~~ **done**, (8)
 ~~Balkan-cluster (Kroatië/Slovenië/Bosnië/Montenegro/Albanië/Servië/Noord-Macedonië/Kosovo)~~
 **done**, (9) ~~Centraal/Oost-Europa (Roemenië/Bulgarije/
-Hongarije/Tsjechië/Slowakije/Polen/Moldavië)~~ **done**, (10) Oost-Mediterraan (Griekenland/Cyprus/Turkije-
-Europees + Egeïsche kust), (11) Noord-Europa (Noorwegen/Zweden/Denemarken/Finland/IJsland/Faeröer),
+Hongarije/Tsjechië/Slowakije/Polen/Moldavië)~~ **done**, (10) ~~Oost-Mediterraan (Griekenland/
+Cyprus/Turkije-Europees + Egeïsche kust)~~ **done**, (11) Noord-Europa (Noorwegen/Zweden/Denemarken/Finland/IJsland/Faeröer),
 (12) Britse eilanden (Engeland/Wales/Noord-Ierland/Ierland/Schotland), (13) Baltische staten, (14)
 🏝️ Europese eilanden (Madeira/Azoren/Canarische Eilanden/Balearen/Kanaaleilanden/Isle of Man/
 gedetailleerdere Italiaanse+Griekse eilanden), (15) de combinatiesecties onderin het bestand
@@ -288,7 +295,7 @@ Bij de Egeïsche-kust-uitzondering werd ook de lijst-regel zelf scherper gemaakt
 "Europa, geografisch" maar "dichtbij, geschikt voor city trip/~1 week, geen dure/lange vlucht voor
 zo'n korte periode" — dat is de regel voor toekomstige twijfelgevallen.
 
-**Next up: batch 10, Oost-Mediterraan** (Griekenland/Cyprus/Turkije-Europees + Egeïsche kust, 18
+**Next up: batch 11, Noord-Europa** (Noorwegen/Zweden/Denemarken/Finland/IJsland/Faeröer, 32
 items).
 
 ## Search
