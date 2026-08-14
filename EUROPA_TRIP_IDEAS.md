@@ -1,8 +1,8 @@
 # Europa — Trip Ideas
 
 Status: **batch 1 (Benelux), batch 2 (Duitsland), batch 3 (Oostenrijk + Zwitserland), batch 4
-(Frankrijk), batch 5 (Italië), batch 6 (micro-staten & kleine eilanden) en batch 7 (Iberië)
-uitgewerkt, rest nog ruw.** Youri's eigen lijst (2026-08) van realistische
+(Frankrijk), batch 5 (Italië), batch 6 (micro-staten & kleine eilanden), batch 7 (Iberië) en batch 8
+(Balkan-cluster) uitgewerkt, rest nog ruw.** Youri's eigen lijst (2026-08) van realistische
 Europese trips — van lang weekend tot ~3 weken, allemaal "reëel en slim te maken" omdat ze binnen
 Europa blijven. Dit is bewust alleen duur + bestemming/route, geen route/budget/seizoen-detail —
 dat werken we samen per batch uit, zoals Route Builder's expedities dat ook kregen (zie de
@@ -1159,49 +1159,183 @@ geografisch Aziatisch Turkije is.
 - [ ] 4–5 dagen — Izmir + Egeïsche kust (Efeze, Çeşme) *(nieuw, 2026-08 derde aanvulling)*
 - [ ] 5–7 dagen — Bodrum + Egeïsche kust *(nieuw, 2026-08 derde aanvulling)*
 
-## 🇭🇷 Kroatië
+## 🇭🇷 Kroatië — batch 8, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-- [ ] 4–5 dagen — Dubrovnik + omgeving
-- [ ] 5–7 dagen — Istrië
-- [ ] 5–7 dagen — Split + eilanden
-- [ ] 5–7 dagen — Plitvice + Zagreb
-- [ ] 7–10 dagen — Kroatië noord → zuid
-- [ ] 7–10 dagen — Kroatië kustroadtrip
-- [ ] 10–14 dagen — Kroatië volledig
+- [x] **4-5 dagen — Dubrovnik + omgeving**. Dubrovnik oude stad (2d) — Lokrum/Elaphiti-eilanden
+  bootje (1d) — Cavtat of Trsteno arboretum als dagtrip (1d) — evt. Kotor/Montenegro als dagtrip
+  (1d). Budget: ~€150-200/dag — Dubrovnik is duidelijk duurder dan de rest van Kroatië. Seizoen:
+  mei-juni/september beste balans weer-drukte, juli-augustus erg druk en heet. ⚠️ Webcheck
+  (2026-08): cruiseschip-drukte in de oude stad piekt rond het middaguur; stadsmuren-ticket vooraf
+  online boeken.
+- [x] **5-7 dagen — Istrië**. Pula (1-2d, amfitheater) — Rovinj (2d) — Poreč (1d) — Motovun/
+  Grožnjan binnenland (1-2d). Budget: ~€90-150/dag (Rovinj bovenkant, Pula iets goedkoper).
+  Seizoen: mei-juni of september, juli-augustus vol en warm. ⚠️ Webcheck (2026-08): Rovinj-Pula
+  bus/auto ~1u, ±€5; Brijuni-eilanden alleen per rondleiding toegankelijk.
+- [x] **5-7 dagen — Split + eilanden**. Split oude stad/Diocletianus-paleis (2d) — Hvar (2d) —
+  Brač/Zlatni Rat (1d) — evt. Vis (1-2d, verder weg, rustiger). Budget: ~€120-150/dag. Seizoen:
+  juni of september ideaal, juli-augustus topdruk op Hvar. ⚠️ Webcheck (2026-08): Split-Hvar
+  catamaran ~1u, €6-25 afhankelijk van maatschappij/seizoen; een directe Split-Bol(Brač)-transfer
+  kost ±€48 retour, een losse veerboot is goedkoper.
+- [x] **5-7 dagen — Plitvice + Zagreb**. Zagreb (2-3d) — Plitvice Meren (2d, overnachten bij het
+  park) — evt. Rastoke-dorpje onderweg. Budget: Zagreb ~€80-120/dag, Plitvice-dagen hoger door de
+  entree. Seizoen: april-mei/september-oktober voor de mooiste kleuren en minder drukte. ⚠️
+  Webcheck (2026-08): entree Plitvice piekseizoen (1 juni-30 sep) €40, schouderseizoen (apr/mei/
+  okt) €23,50, winter ±€10 (kassa sluit 16:00). 2026 heeft een strikte uurcapaciteit (max. 300
+  pers/ingang) — vroege zomerslots zijn online al weken van tevoren uitverkocht, dus verplicht
+  vooraf boeken.
+- [x] **7-10 dagen — Kroatië noord → zuid**. Zagreb (2d) — Plitvice (1-2d) — Zadar (1-2d) — Split
+  (2d) — Dubrovnik (2-3d). Budget: gemiddeld ~€110-160/dag (Zagreb/Zadar goedkoper, Dubrovnik
+  duurder). Seizoen: mei-juni of september. ⚠️ Webcheck (2026-08): de route Split-Dubrovnik loopt
+  nu grotendeels via de Pelješac-brug (open sinds juli 2022) — de dubbele Bosnische grenspassage
+  bij Neum is op de hoofdroute (A1/D8) hierdoor niet meer nodig.
+- [x] **7-10 dagen — Kroatië kustroadtrip**. Zadar (1-2d) — Krka NP/Šibenik (1d) — Split (2d) —
+  Hvar (1-2d) — Dubrovnik (2-3d), over de kustweg D8. Budget: ~€110-160/dag. Seizoen: mei-juni/
+  september voor een rustige kustweg zonder file. ⚠️ Webcheck (2026-08): kies je toch de oude
+  kustweg door Neum (Bosnisch grondgebied) i.p.v. de Pelješac-brug: wachttijd 10-30 min, in
+  juli-augustus weekend tot 60 min, paspoort verplicht (ID-kaart is niet genoeg voor Bosnië),
+  huurauto-verzekering vaak +€10-15/dag toeslag voor Bosnië-dekking.
+- [x] **10-14 dagen — Kroatië volledig**. Zagreb (2d) — Plitvice (2d) — Zadar (1-2d) — Split +
+  eilanden (3d) — Hvar (2d) — Dubrovnik (3d). Budget: gemiddeld ~€110-150/dag over de hele trip.
+  Seizoen: eind mei-juni of september voor de volle route zonder hitte-/drukte-piek. ⚠️ Webcheck
+  (2026-08): Plitvice-ticket ruim vooraf boeken (uurslots) en de Pelješac-brug nemen voor de snelle
+  doorsteek naar het zuiden.
 
-## 🇸🇮 Slovenië
+**Algemeen (webcheck 2026-08)**: reisadvies Kroatië = groen (laatst gewijzigd 11-03-2026, geldig
+13-08-2026) — aandacht voor zakkenrollerij in drukte, bosbranden in de zomer, lichte aardbevingen,
+snel omslaand bergweer. Sinds 10 april 2026 is het EU Entry/Exit System (EES) volledig
+operationeel: bij elke eerste passage van een Schengen-buitengrens (dus Kroatië in/uit vanaf
+Bosnië/Montenegro/Servië) word je biometrisch geregistreerd (vingerafdruk + gezichtsscan, 3-6
+min/persoon) — reken op extra wachttijd bij de gecombineerde routes hieronder.
 
-- [ ] 4–5 dagen — Ljubljana + Lake Bled
-- [ ] 5–7 dagen — Slovenië Alpine Loop
-- [ ] 5–7 dagen — Julian Alps + Soča Valley
-- [ ] 7–10 dagen — Slovenië roadtrip
-- [ ] 7–10 dagen — Slovenië + Noord-Kroatië
-- [ ] 7–10 dagen — Slovenië + Italië
+## 🇸🇮 Slovenië — batch 8, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-## 🇧🇦 Bosnië & Herzegovina
+- [x] **4-5 dagen — Ljubljana + Lake Bled**. Ljubljana (2d) — Bled (2d) — evt. Bohinj als dagtrip
+  (1d). Budget: Ljubljana ~€100/dag, Bled ~€120-140/dag (duurder door de attracties). Seizoen:
+  mei-juni/september, zomer erg druk bij het meer. ⚠️ Webcheck (2026-08): Pletna-boot naar het
+  eiland €20 retour (alleen cash), Bled kasteel €19, Vintgar-kloof €15 (tijdslot, vooral juli-
+  augustus vooraf online boeken).
+- [x] **5-7 dagen — Slovenië Alpine Loop**. Ljubljana (1d) — Bled (2d) — Bohinj (1d) — Vršič-pas —
+  Bovec/Soča-vallei (2d) — terug via Kranjska Gora. Budget: €100-140/dag, plus activiteiten
+  (rafting/canyoning €50-80 p.p. extra). Seizoen: alleen juni-september goed berijdbaar (de pas
+  zit in de winter dicht door sneeuw/lawinegevaar). ⚠️ Webcheck (2026-08): nieuw verkeersregime op
+  de Vršič-pas — geen parkeren meer bij de top t/m 31 augustus, gratis pendelbus Kranjska
+  Gora-Bovec (26 juni-31 augustus, 20 ritten/dag); zelf over de pas rijden blijft mogelijk, maar
+  parkeer lager.
+- [x] **5-7 dagen — Julian Alps + Soča Valley**. Kranjska Gora (1-2d) — Vršič-pas — Bovec (2d,
+  rafting/canyoning) — Kobarid (1d, WOI-geschiedenis) — Tolmin-kloof (1d). Budget: €100-140/dag
+  basis, adventure-activiteiten €50-80 p.p. per activiteit extra. Seizoen: juni-september, pas en
+  hooggebergte zijn daarbuiten vaak dicht/besneeuwd. ⚠️ Webcheck (2026-08): Triglav NP zelf is
+  gratis toegankelijk zonder vergunning, wel betaalde parkeerplaatsen en specifieke attracties
+  (bv. kabelbaan Vogel €20-25 retour); zie ook het Vršič-verkeersregime hierboven.
+- [x] **7-10 dagen — Slovenië roadtrip**. Ljubljana (2d) — Bled/Bohinj (2d) — Vršič/Soča-vallei
+  (2-3d) — Piran/kust (1-2d) — terug naar Ljubljana. Budget: ~€100-140/dag gemiddeld. Seizoen:
+  juni-september vanwege de bergpas, mei/oktober werkt voor het niet-Alpiene deel. ⚠️ Webcheck
+  (2026-08): check het Vršič-verkeersregime 2026 vooraf; het kustdeel (Piran) is compact, geen
+  grensoponthoud binnen Slovenië zelf.
+- [x] **7-10 dagen — Slovenië + Noord-Kroatië**. Ljubljana (2d) — Bled (2d) — Zagreb (2d) —
+  Plitvice (2d). Budget: Slovenië-deel ~€100-130/dag, Kroatië-deel ~€80-120/dag. Seizoen:
+  mei-juni/september ideaal voor beide landsdelen. ⚠️ Webcheck (2026-08): sinds Kroatië op
+  1-1-2023 tot het Schengengebied toetrad is de grens Slovenië-Kroatië een binnengrens zonder
+  controles/wachttijd — een eventuele oudere aanname van grensvertraging hier is verouderd.
+- [x] **7-10 dagen — Slovenië + Italië**. Ljubljana (2d) — Bled (1-2d) — Piran/Sloveense kust
+  (1-2d) — Triëst (1d) — Venetië of Friuli (2d). Budget: Slovenië ~€100-130/dag, Italië (Triëst/
+  Venetië) ~€130-180/dag (Venetië duurder). Seizoen: mei-juni/september, vermijd augustus-drukte
+  in Venetië. ⚠️ Webcheck (2026-08): Slovenië-Italië is Schengen-Schengen, geen grenscontrole of
+  tijdverlies; Venetië heeft sinds 2024 een dagtoeristenheffing (contributo di accesso) op
+  bepaalde piekdagen — check de actuele 2026-kalender vooraf als een Venetië-dagtrip wordt
+  toegevoegd.
 
-- [ ] 4–5 dagen — Sarajevo + Mostar
-- [ ] 5–7 dagen — Bosnië roadtrip
-- [ ] 7–10 dagen — Bosnië + Kroatië
-- [ ] 7–10 dagen — Bosnië + Montenegro
-- [ ] 10–14 dagen — Bosnië + Kroatië + Montenegro
+**Algemeen (webcheck 2026-08)**: reisadvies Slovenië = groen (laatst gewijzigd 15-07-2026, geldig
+10-08-2026) — geen acute terreurdreiging, incidenteel zakkenrollerij, overstromingen/
+aardverschuivingen na hevige regen, lawinegevaar in wintersportgebieden, breuklijn (aardbevingsrisico).
 
-## 🇲🇪 Montenegro
+## 🇧🇦 Bosnië & Herzegovina — batch 8, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-- [ ] 4–5 dagen — Kotor + Bay of Kotor
-- [ ] 5–7 dagen — Montenegro
-- [ ] 7–10 dagen — Montenegro roadtrip
-- [ ] 7–10 dagen — Montenegro + Bosnië
-- [ ] 7–10 dagen — Montenegro + Kroatië
-- [ ] 10–14 dagen — Kroatië + Montenegro + Bosnië
+- [x] **4-5 dagen — Sarajevo + Mostar**. Sarajevo (2-3d: Baščaršija, Tunnel of Hope, Trebević
+  kabelbaan) — Mostar (2d: Stari Most, dagtrip Kravice-watervallen + Blagaj Tekija). Budget:
+  ~€45-55/dag. Seizoen: mei-juni/september (juli-augustus heet, maar Kravice-water dan
+  19-20°C — goed zwembaar). ⚠️ Webcheck (2026-08): Tunnel of Hope 20 BAM/~€10,50, alleen cash
+  (KM); Kravice €10 (incl. Koćuša + Humac-klooster), open 7-22u juni-september; bus Sarajevo-Mostar
+  ~€10/2,5-3u.
+- [x] **5-7 dagen — Bosnië roadtrip**. Sarajevo (2d) — Mostar (2d, Kravice/Blagaj) — Konjic
+  (Tito-bunker) — Jajce (watervallen). Budget: ~€40-50/dag incl. huurauto (~€25-35/dag). Seizoen:
+  mei-juni/september. ⚠️ Webcheck (2026-08): geen groene kaart nodig binnen Bosnië zelf;
+  overstromingen kunnen wegen blokkeren in voor-/najaar.
+- [x] **7-10 dagen — Bosnië + Kroatië**. Dubrovnik (2d) — Mostar (2d) — Sarajevo (3d) — Trebinje
+  (1d) — terug. Budget: ~€50-65/dag. Seizoen: mei-juni/september (vermijd augustus-drukte
+  Dubrovnik). ⚠️ Webcheck (2026-08): EES-registratie bij de grens (zie Kroatië-sectie), reken
+  extra tijd.
+- [x] **7-10 dagen — Bosnië + Montenegro**. Sarajevo (2-3d) — Mostar (2d) — Trebinje (1d) — Kotor
+  + Perast (3d). Budget: ~€50-60/dag. Seizoen: mei-juni/september. ⚠️ Webcheck (2026-08): grens
+  rustig, geen groene kaart nodig aan Bosnische kant, wel checken bij de huurauto of Montenegro
+  gedekt is.
+- [x] **10-14 dagen — Bosnië + Kroatië + Montenegro**. Split/Dubrovnik (3d) — Mostar (2d) —
+  Sarajevo (3d) — Trebinje (1d) — Kotor + Bay of Kotor (3d). Budget: ~€50-65/dag. Seizoen:
+  mei-juni/september i.v.m. grensdrukte. ⚠️ Webcheck (2026-08): grensovergang Karasovići
+  (Kroatië-Montenegro) juli-augustus 2-5u wachttijd door het EES — plan een ochtendgrens.
 
-## 🇦🇱 Albanië
+**Algemeen (webcheck 2026-08)**: reisadvies groen (22-04-2026) — geen foto's van militaire/
+politie-objecten.
 
-- [ ] 5–7 dagen — Albanië
-- [ ] 7–10 dagen — Albanië roadtrip
-- [ ] 7–10 dagen — Albanese Riviera
-- [ ] 10–14 dagen — Albanië + Montenegro
-- [ ] 10–14 dagen — Albanië + Noord-Macedonië
+## 🇲🇪 Montenegro — batch 8, uitgewerkt + WebSearch-geverifieerd (2026-08)
+
+- [x] **4-5 dagen — Kotor + Bay of Kotor**. Kotor oude stad (2d, stadsmuren) — Perast (dagtrip,
+  boot naar Our Lady of the Rocks) — Herceg Novi/Tivat (1-2d). Budget: ~€45-55/dag. Seizoen:
+  april-juni/september-oktober (juli-augustus overvol door cruiseschepen). ⚠️ Webcheck (2026-08):
+  stadsmuren-ticket €8-15 (prijzen wisselen per bron, check vooraf), open 8-17u — ga vóór 9u of na
+  17u om de drukte te vermijden.
+- [x] **5-7 dagen — Montenegro**. Kotor (2d) — Budva (1-2d) — Lovćen NP + Njeguši (dagtrip) —
+  Žabljak/Durmitor (2d) — Ostrog-klooster terug. Budget: ~€45-55/dag. Seizoen: juni/september
+  voor de kust, juli-september voor Durmitor. ⚠️ Webcheck (2026-08): nationale-parken-entree €5/
+  dag p.p. of jaarpas €13,50 (alle 5 parken), koop 'm in Žabljak zelf, niet bij de ingang;
+  kinderen <15 gratis.
+- [x] **7-10 dagen — Montenegro roadtrip**. Podgorica — Ostrog (dagtrip) — Žabljak/Durmitor (2d,
+  Black Lake) — Kolašin (1d) — Kotor + Perast (3d) — Budva. Budget: ~€50-60/dag incl. auto.
+  Seizoen: juni-september (bergpassen buiten seizoen soms besneeuwd). ⚠️ Webcheck (2026-08): soms
+  gewelddadige demonstraties, vermijd samenscholingen.
+- [x] **7-10 dagen — Montenegro + Bosnië**. Kotor (3d) — Trebinje (1d) — Mostar (2d) — Sarajevo
+  (3d). Budget: ~€50-60/dag. Seizoen: mei-juni/september. ⚠️ Webcheck (2026-08): grens rustig;
+  Montenegro rekent in euro, Bosnië in KM (contant meenemen, pin niet overal geaccepteerd).
+- [x] **7-10 dagen — Montenegro + Kroatië**. Dubrovnik (2-3d) — Kotor + Perast (3d) — Budva (2d) —
+  Herceg Novi (1d). Budget: ~€55-65/dag. Seizoen: mei-juni/september. ⚠️ Webcheck (2026-08):
+  Karasovići juli-augustus 2-5u wachttijd (EES).
+- [x] **10-14 dagen — Kroatië + Montenegro + Bosnië**. Split (2-3d) — Dubrovnik (2d) — Kotor + Bay
+  (3d) — Budva (1d) — Trebinje (1d) — Mostar (2d) — Sarajevo (2-3d). Budget: ~€55-65/dag. Seizoen:
+  mei-juni/september. ⚠️ Webcheck (2026-08): meerdere EES-registraties onderweg, buffer inplannen;
+  Pelješac-brug voor de Neum-omzeiling.
+
+**Algemeen (webcheck 2026-08)**: reisadvies groen (14-07-2026) — aandacht voor zakkenrollerij op
+drukke plekken.
+
+## 🇦🇱 Albanië — batch 8, uitgewerkt + WebSearch-geverifieerd (2026-08)
+
+- [x] **5-7 dagen — Albanië**. Tirana (2d) — Berat (1-2d, UNESCO) — Dhermi/Himarë (2-3d). Budget:
+  ~€35-45/dag (goedkoopste Balkanland). Seizoen: mei-juni of begin september. ⚠️ Webcheck
+  (2026-08): veel Riviera-infrastructuur (Dhermi) gesloten buiten juni-september; lokale munt is
+  de Lek, euro-koers vaak ongunstig.
+- [x] **7-10 dagen — Albanië roadtrip**. Tirana (2d) — Shkodër (1d) — Theth (2d) — hike naar
+  Valbona (1d) — terug/door naar Berat. Budget: ~€35-45/dag incl. auto. Seizoen: de Theth-Valbona
+  hike is alleen medio juni-eind september goed begaanbaar (de weg naar Theth gaat pas eind mei
+  open, minibussen rijden alleen in het hoogseizoen). ⚠️ Webcheck (2026-08): het laatste stuk weg
+  naar Theth is deels onverhard, check de huurautoverzekering hierop.
+- [x] **7-10 dagen — Albanese Riviera**. Vlorë (1d) — Dhermi (2-3d) — Himarë (2d) — Porto Palermo
+  (dagtrip) — Saranda (2d) — Ksamil + Butrint (1-2d). Budget: ~€35-50/dag (hoger in augustus).
+  Seizoen: begin juni of eerste twee weken september ideaal, half juli-half augustus overvol/duur.
+  ⚠️ Webcheck (2026-08): Dhermi-infrastructuur draait vooral op de zomer; Saranda heeft 300+
+  zonnedagen per jaar.
+- [x] **10-14 dagen — Albanië + Montenegro**. Tirana (2d) — Berat (1d) — Riviera (4d) — grens
+  Sukobin/Muriqan — Kotor + Bay (3d) — Budva (1-2d). Budget: ~€40-55/dag. Seizoen: mei-juni/
+  september. ⚠️ Webcheck (2026-08): grensovergang Sukobin-Muriqan meestal 10-45 min, weekend-piek
+  juli-augustus tot 1,5-2u; de huurauto heeft een groene kaart nodig voor zowel Albanië als
+  Montenegro (vooraf regelen, ~€30-50 extra).
+- [x] **10-14 dagen — Albanië + Noord-Macedonië**. Tirana (2d) — Berat (1d) — Korçë (1d) — grens
+  Qafë Thanë — Ohrid (3-4d) — Skopje (2d) — evt. Mavrovo NP (1d). Budget: ~€35-45/dag. Seizoen:
+  mei-juni/september (Ohrid zwemmen is het lekkerst in juli-augustus, maar dan ook drukker). ⚠️
+  Webcheck (2026-08): grens doorgaans vlot, geen EES hier (geen Schengen-buitengrens);
+  Noord-Macedonië: geen foto's van militaire objecten (boete/celstraf tot 3 jaar).
+
+**Algemeen (webcheck 2026-08)**: reisadvies groen (07-08-2026) — zakkenrollerij, wees terughoudend
+met LGBTQ+-uitingen buiten Tirana.
 
 ## 🇷🇴 Roemenië
 
@@ -1362,32 +1496,100 @@ duplicaat maar een ander soort trip (korte vakantie i.p.v. epic) op dezelfde bes
 - [ ] 10–14 dagen — Baltic States roadtrip
 - [ ] 10–14 dagen — Baltics + Polen
 
-## 🇷🇸 Servië
+## 🇷🇸 Servië — batch 8, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-- [ ] 4–5 dagen — Belgrado + omgeving
-- [ ] 5–7 dagen — Servië
-- [ ] 7–10 dagen — Servië roadtrip
-- [ ] 7–10 dagen — Servië + Bosnië
-- [ ] 10–14 dagen — Servië + Montenegro + Bosnië
+- [x] **4-5 dagen — Belgrado + omgeving**. Belgrado (2-3d, Kalemegdan/Skadarlija) — Novi Sad +
+  Petrovaradin (1d) — Fruška Gora kloosters (dagtrip). Budget: ~€35-45/dag. Seizoen: mei-juni/
+  september (zomer heet, stad blijft goed doenbaar). ⚠️ Webcheck (2026-08): OV in Belgrado is
+  sinds 1-1-2025 gratis; check actuele protestlocaties/routes vooraf (zie algemene noot hieronder).
+- [x] **5-7 dagen — Servië**. Belgrado (2d) — Novi Sad (1d) — Zlatibor (2d, Šarganska osmica
+  treintje, Drvengrad) — terug naar Belgrado. Budget: ~€35-45/dag. Seizoen: mei-juni/september;
+  winter is ook leuk voor Zlatibor-sneeuw. ⚠️ Webcheck (2026-08): paspoort/ID minimaal 3 maanden
+  geldig bij uitreis.
+- [x] **7-10 dagen — Servië roadtrip**. Belgrado (2d) — Novi Sad — Subotica (1d) — Zlatibor (2d) —
+  Mokra Gora/Tara NP (2d) — terug naar Belgrado. Budget: ~€35-45/dag (huurauto extra). Seizoen:
+  eind april-juni, september-begin oktober voor de beste wegcondities/licht. ⚠️ Webcheck
+  (2026-08): bosbranden in de zomer kunnen wegen blokkeren.
+- [x] **7-10 dagen — Servië + Bosnië**. Belgrado (2d) — Zlatibor (1-2d) — Tara-canyon/rafting op
+  de Drina (1-2d, ~€60/dag) — Sarajevo (2-3d) — Mostar/Blagaj (1-2d). Budget: ~€35-45/dag Servië,
+  ~€30-40/dag Bosnië. Seizoen: mei-juni/september, raftingseizoen loopt april-oktober. ⚠️ Webcheck
+  (2026-08): Tara-raftingcentra bieden pickup vanuit Sarajevo/Mostar aan.
+- [x] **10-14 dagen — Servië + Montenegro + Bosnië**. Belgrado (2d) — Zlatibor (1d) — Tara/Drina
+  rafting + Sarajevo (2-3d) — Mostar (1-2d) — Kotor (2d) — Durmitor/Žabljak (2d). Budget:
+  ~€35-45/dag Servië/Bosnië, ~€45-60/dag Montenegro (kust duurder in juli/augustus). Seizoen:
+  mei-juni of september — vermijd de Montenegrijnse kust in juli/augustus (drukte cruiseschepen
+  Kotor, prijzen 25-40% hoger).
 
-## 🇲🇰 Noord-Macedonië
+**Algemeen (webcheck 2026-08)**: reisadvies groen (14-07-2026) — er is een aanhoudende
+studentenprotestbeweging (Belgrado/Novi Sad centrum, sinds eind 2024, mei 2026 nog traangas
+gemeld) — check actuele protestlocaties voor vertrek; geen foto's van overheids-/militaire
+gebouwen (verboden, boete/celstraf); softdrugs tot 12 jaar cel.
 
-- [ ] 4–5 dagen — Skopje + Ohrid
-- [ ] 5–7 dagen — Noord-Macedonië
-- [ ] 7–10 dagen — Noord-Macedonië + Albanië
-- [ ] 7–10 dagen — Noord-Macedonië + Griekenland
+## 🇲🇰 Noord-Macedonië — batch 8, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-## 🇽🇰 Kosovo
+- [x] **4-5 dagen — Skopje + Ohrid**. Skopje (2d) — Ohrid (2-3d, Sveti Naum, oude stad, meer).
+  Budget: ~€35-45/dag (hostel €15-25, entree Ohrid NP €3-5). Seizoen: mei-juni/september beste
+  prijs-weer-rust; juli-augustus warm water maar duur/druk, winter goedkoopst.
+- [x] **5-7 dagen — Noord-Macedonië**. Skopje (2d) — Ohrid (3d) — Bitola/Pelister (1-2d). Budget:
+  ~€35-45/dag. Seizoen: mei-juni/september.
+- [x] **7-10 dagen — Noord-Macedonië + Albanië**. Skopje (2d) — Ohrid (2-3d) — bus over de grens
+  (~€9,50, 131km) — Tirana (2d) — Berat (1-2d, UNESCO) — evt. Gjirokastër. Budget: ~€35-45/dag
+  Noord-Macedonië, ~€25-35/dag Albanië (goedkoper). Seizoen: mei-juni/september.
+- [x] **7-10 dagen — Noord-Macedonië + Griekenland**. Skopje (2d) — Ohrid (2-3d) — grensovergang
+  Bogorodica/Evzoni (E75, 2,5-3u rijden) — Thessaloniki (3-4d). Budget: ~€35-45/dag
+  Noord-Macedonië, ~€50-65/dag Griekenland (Thessaloniki). Seizoen: mei-juni/september, vertrek
+  vanuit Skopje vóór 08:00 voor een soepele grenspassage. ⚠️ Webcheck (2026-08): tolwegen tussen
+  de grens en Thessaloniki ~€5-8.
+
+**Algemeen (webcheck 2026-08)**: reisadvies groen (29-05-2026) — zakkenrollerij op drukke
+plekken, geen foto's van militaire objecten, kleine aardbevingen komen voor.
+
+## 🇽🇰 Kosovo — batch 8, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
 Youri's eigen aantekening: "Die ontbrak ook."
 
-- [ ] 4–5 dagen — Kosovo
-- [ ] 5–7 dagen — Kosovo + Noord-Macedonië
-- [ ] 7–10 dagen — Kosovo + Albanië
-- [ ] 7–10 dagen — Kosovo + Montenegro
-- [ ] 7–10 dagen — Kosovo + Montenegro + Albanië
-- [ ] 7–10 dagen — Kosovo + Noord-Macedonië + Albanië
-- [ ] 10–14 dagen — Kosovo + Albanië + Noord-Macedonië
+⚠️ **Kritieke grensvolgorde-waarschuwing, geldt voor elk item hieronder dat Servië én Kosovo
+combineert** (er is geen zo'n item in deze batch, maar wel relevant zodra dat ooit wordt
+toegevoegd — bv. in de latere combinatiesectie): Servië erkent Kosovaarse grensovergangen niet als
+officiële internationale grensposten. Praktijkregel 2026: reis **eerst Servië in** (stempel/
+registratie via Belgrado/Niš-vliegveld of een erkende landgrens), **dan pas Kosovo** — vanuit
+Kosovo terug Servië inreizen zonder eerdere Servische inreisstempel kan tot weigering leiden. Kom
+je van een derde land (Noord-Macedonië, Albanië, Montenegro) rechtstreeks Kosovo in, ga dan **niet**
+door naar Servië — verlaat Kosovo weer via een derde land. Alle 7 items hieronder combineren
+Kosovo bewust alleen met Noord-Macedonië/Albanië/Montenegro, nooit met Servië, om dit probleem te
+vermijden.
+
+- [x] **4-5 dagen — Kosovo**. Pristina (1-2d) — Prizren (2d, Liga-huis, Sinan Pasha) — Peja/Rugova
+  (1-2d, kloof + Via Ferrata). Budget: ~€25-35/dag (goedkoopste Balkanland, hostel €7-15). Seizoen:
+  mei-juni/september; Rugova-activiteiten (Via Ferrata, kabelbaan) het best april-oktober. ⚠️
+  Webcheck (2026-08): sinds 15-3-2026 geldt een registratieplicht bij privéverblijf (binnen 3
+  dagen bij de politie melden — hotels regelen dit automatisch); Visoki Dečani/Peć-patriarchaat:
+  paspoort inleveren bij de KFOR-post, gepaste kleding, soms escorte.
+- [x] **5-7 dagen — Kosovo + Noord-Macedonië**. Pristina (2d) — Prizren (2d) — grens naar Skopje
+  (2d) — Ohrid (1-2d). Budget: ~€25-35/dag Kosovo, ~€35-45/dag Noord-Macedonië. Seizoen:
+  mei-juni/september.
+- [x] **7-10 dagen — Kosovo + Albanië**. Peja/Rugova (2d) — Prizren (2d) — grens Kukës — Shkodër/
+  Accursed Mountains (2d) — Tirana (2-3d). Budget: ~€25-35/dag beide landen. Seizoen: mei-juni/
+  september.
+- [x] **7-10 dagen — Kosovo + Montenegro**. Peja (2d) — Rugova (1-2d) — grens naar Plav/Gusinje —
+  Durmitor/Žabljak (2-3d) — Kotor (2d). Budget: ~€25-35/dag Kosovo, ~€45-60/dag Montenegro (meer
+  in juli/augustus aan de kust). Seizoen: mei-juni/september, vermijd de kust in hoogzomer.
+- [x] **7-10 dagen — Kosovo + Montenegro + Albanië**. Prizren (2d) — Peja/Rugova (2d) — grens
+  Plav/Gusinje — Durmitor (2d) — Shkodër (1-2d) — Tirana (1-2d). Budget: ~€25-35/dag Kosovo/
+  Albanië, ~€45-60/dag Montenegro. Seizoen: mei-juni/september.
+- [x] **7-10 dagen — Kosovo + Noord-Macedonië + Albanië**. Pristina (1-2d) — Prizren (2d) — Skopje
+  (1-2d) — Ohrid (2d) — bus naar Tirana (1-2d). Budget: ~€25-35/dag Kosovo/Albanië, ~€35-45/dag
+  Noord-Macedonië. Seizoen: mei-juni/september.
+- [x] **10-14 dagen — Kosovo + Albanië + Noord-Macedonië**. Pristina (1-2d) — Peja/Rugova (2d) —
+  Prizren (2d) — Kukës/Shkodër (2d) — Tirana/Berat (2-3d) — Ohrid (2d) — Skopje (1-2d). Budget:
+  ~€25-35/dag Kosovo/Albanië, ~€35-45/dag Noord-Macedonië. Seizoen: mei-juni/september — dit is
+  een volle route, dus vroeg vertrekken per etappe.
+
+**Algemeen (webcheck 2026-08)**: reisadvies rest van het land groen (25-06-2026), maar
+**Noord-Kosovo (Mitrovica-Noord, Zvečan, Zubin Potok, Leposavić) is oranje** — alleen
+noodzakelijke reizen, niet voor vakantie; spanningen rond de brug in Mitrovica zijn actueel
+(augustus 2026, KFOR-transitie) — geen van de items hierboven raakt dit gebied. Landmijnen in
+afgelegen grensgebieden Kosovo-Albanië en op de Dulje-pas.
 
 ## 🇸🇮🇭🇷🇧🇦🇲🇪 Balkan (combinaties)
 
@@ -1551,7 +1753,8 @@ volgorde:
    **Gedaan (2026-08), WebSearch-geverifieerd.**
 8. **Balkan-cluster: Kroatië + Slovenië + Bosnië + Montenegro + Albanië + Servië + Noord-Macedonië
    + Kosovo** (44) — geografisch één aaneengesloten blok (Kosovo toegevoegd), en de losse
-   Balkan-combinatiesectie hergebruikt precies dit cluster.
+   Balkan-combinatiesectie hergebruikt precies dit cluster. **Gedaan (2026-08), WebSearch-
+   geverifieerd.**
 9. **Centraal/Oost-Europa: Roemenië + Bulgarije + Hongarije + Tsjechië + Slowakije + Polen +
    Moldavië** (35, was 34 — +Moravië bij Tsjechië, derde aanvulling 2026-08).
 10. **Oost-Mediterraan: Griekenland + Cyprus + Turkije (Istanbul/Europees + Egeïsche kust)** (18,
