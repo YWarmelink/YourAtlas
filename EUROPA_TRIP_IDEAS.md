@@ -1,10 +1,9 @@
 # Europa — Trip Ideas
 
-Status: **batch 1 (Benelux), batch 2 (Duitsland), batch 3 (Oostenrijk + Zwitserland), batch 4
-(Frankrijk), batch 5 (Italië), batch 6 (micro-staten & kleine eilanden), batch 7 (Iberië), batch 8
-(Balkan-cluster), batch 9 (Centraal/Oost-Europa), batch 10 (Oost-Mediterraan), batch 11
-(Noord-Europa), batch 12 (Britse eilanden) en batch 13 (Baltische staten) uitgewerkt, rest nog
-ruw.** Youri's eigen lijst (2026-08) van realistische
+Status: **batch 1 t/m 14 uitgewerkt** (Benelux, Duitsland, Oostenrijk+Zwitserland, Frankrijk,
+Italië, micro-staten & kleine eilanden, Iberië, Balkan-cluster, Centraal/Oost-Europa,
+Oost-Mediterraan, Noord-Europa, Britse eilanden, Baltische staten, 🏝️ Europese eilanden). Alleen
+batch 15 (combinatiesecties) staat nog open.** Youri's eigen lijst (2026-08) van realistische
 Europese trips — van lang weekend tot ~3 weken, allemaal "reëel en slim te maken" omdat ze binnen
 Europa blijven. Dit is bewust alleen duur + bestemming/route, geen route/budget/seizoen-detail —
 dat werken we samen per batch uit, zoals Route Builder's expedities dat ook kregen (zie de
@@ -2264,59 +2263,250 @@ afgelegen grensgebieden Kosovo-Albanië en op de Dulje-pas.
 - [ ] 14 dagen — Grote Balkan Roadtrip
 - [ ] 14 dagen — Adriatische Roadtrip
 
-## 🏝️ Europese eilanden
+## 🏝️ Europese eilanden — batch 14, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
 Geen eigen landen (Madeira/Azoren zijn Portugal, Canarische Eilanden/Balearen zijn Spanje, deze
 Italiaanse/Griekse eilanden zijn Italië/Griekenland) maar volgens Youri wel eigen trip-objecten —
 bewust los van de landensecties hierboven gehouden. Items die al (bijna) letterlijk in een
-landensectie hierboven staan (Mallorca bij Spanje, Sicilië/Sardinië bij Italië, Kreta bij
-Griekenland) zijn hier niet herhaald — alleen de granulairdere/nieuwe varianten staan hieronder.
+landensectie hierboven staan (Mallorca bij Spanje, Sicilië/Sardinië bij Italië) zijn hier niet
+herhaald — alleen de granulairdere/nieuwe varianten staan hieronder. **Correctie bij uitwerking
+(2026-08)**: Kreta bleek, anders dan deze intro-noot altijd aannam, nooit een eigen item in de
+Griekenland-sectie (batch 10) te hebben gekregen — "Kreta roadtrip" hieronder is dus geen
+duplicaat maar vult een echt gat.
 
-**Madeira**
-- [ ] 5–7 dagen — Madeira
-- [ ] 7–10 dagen — Madeira uitgebreid
+**Madeira** (Portugal, EU/Schengen)
+- [x] **5-7 dagen — Madeira**. Funchal (2-3d, Monte kabelbaan/toboggan, Mercado dos Lavradores,
+  oude stad) + huurauto noordkust (Porto Moniz natuurlijke zwembaden, Seixal, São Vicente) +
+  levada-wandeling (25 Fontes of Caldeirão Verde). Budget: ~€70-85/dag. Seizoen: jaarrond mild
+  (18-25°C), beste periode april-juni of september-oktober; vermijd augustus vanwege bosbrandrisico
+  (historisch, o.a. 2016). ⚠️ Webcheck (2026-08): Monte kabelbaan ~€12,50 enkel/€19 retour (check
+  actuele prijs); levada's kunnen na regen tijdelijk afgesloten zijn — check lokale wandelapps
+  vooraf. Huurauto: NL rijbewijs volstaat (EU/Schengen). easyJet en Transavia vliegen jaarrond
+  direct Amsterdam-Funchal; TUI fly seizoensgebonden.
+- [x] **7-10 dagen — Madeira uitgebreid** *(differentiator: voegt Porto Santo toe, multi-eiland
+  i.p.v. Madeira-only)*. Als hierboven + Porto Santo (2-3d, gouden zandstrand, rustiger) via
+  veerboot Lobo Marinho vanaf Funchal (~2u15, meestal seizoensgebonden zomer) of een korte vlucht
+  (~15-20 min, jaarrond, regionale carrier). Budget: ~€70-90/dag (Porto Santo iets duurder door
+  import, minder concurrentie horeca). ⚠️ Webcheck (2026-08): het veerbootschema wisselt per jaar
+  (vaak alleen mei-oktober) — de vlucht is het zekere alternatief in het laagseizoen.
 
-**Azoren**
-- [ ] 5–7 dagen — São Miguel
-- [ ] 7–10 dagen — Azoren
-- [ ] 10–14 dagen — Azoren island hopping
+**Azoren** (Portugal, EU/Schengen)
+- [x] **5-7 dagen — São Miguel** *(differentiator: single-island focus, tegenover de bredere
+  Azoren-items hieronder)*. Ponta Delgada (2d, stad+haven) + Sete Cidades (kratermeren, 1-2d) +
+  Furnas (thermale bronnen, cozido-eten uit de grond, 2d) + evt. Lagoa do Fogo. Budget: ~€75-90/dag
+  (Azoren iets duurder dan mainland Portugal door de afgelegen ligging, huurauto vaak nodig).
+  Seizoen: mei-september beste weer, maar de Azoren blijven jaarrond wisselvallig — regenkleding
+  altijd meenemen; juni-september voor walvis-/dolfijntochten. ⚠️ Webcheck (2026-08): huurauto ruim
+  vooraf boeken (beperkt aanbod, snel volgeboekt in de zomer); reserveer de Furnas cozido-lunch.
+  Transavia vliegt seizoensgebonden direct Amsterdam-Ponta Delgada; buiten seizoen overstap via
+  Lissabon (TAP).
+- [x] **7-10 dagen — Azoren** *(differentiator: 2 eilanden i.p.v. 1, maar geen westelijke
+  eilandengroep)*. São Miguel (4-5d, zie boven) + Terceira (3-4d, Angra do Heroísmo UNESCO, Algar
+  do Carvão vulkaangrot) via een Azores Airlines binnenlandse vlucht (~45 min). Budget: ~€75-90/dag,
+  plus een binnenlandse vlucht (~€60-100 enkele reis, sterk seizoensafhankelijk). Seizoen:
+  mei-september; Terceira's Sanjoaninas-festival eind juni kan prijzen/drukte opstuwen. ⚠️ Webcheck
+  (2026-08): Azores Airlines binnenlandse vluchten tijdig boeken, de schema's zijn beperkt en
+  gevoelig voor weersannuleringen (mist).
+- [x] **10-14 dagen — Azoren island hopping** *(differentiator: voegt Faial/Pico toe, de westelijke
+  eilandengroep)*. São Miguel (4d) + Terceira (3d) + Faial/Pico (3-4d, walvisvaart-erfgoed Horta,
+  optioneel Pico-vulkaan beklimmen, korte veerboot Faial-Pico ~30 min i.p.v. vlucht). Budget:
+  ~€80-95/dag, plus 2-3 binnenlandse vluchten (reken €150-250 extra totaal). Seizoen: juni-september
+  optimaal voor weer én walvisvaart-seizoen. ⚠️ Webcheck (2026-08): multi-island tickets vooraf
+  boeken i.v.m. beperkte capaciteit; een Pico-beklimming vereist vooraf online reservering + gids/
+  toestemming via Parque Natural do Pico.
 
-**Canarische Eilanden**
-- [ ] 5–7 dagen — Tenerife
-- [ ] 5–7 dagen — Gran Canaria
-- [ ] 5–7 dagen — Lanzarote + Fuerteventura
-- [ ] 7–10 dagen — Tenerife + La Gomera
-- [ ] 7–10 dagen — Gran Canaria + Tenerife
-- [ ] 10–14 dagen — Canarische Eilanden
+**Canarische Eilanden** (Spanje, EU/Schengen, maar buiten de EU-btw-zone — eigen IGIC-stelsel,
+algemeen tarief ~7% i.p.v. Spaanse IVA 21%, merkbaar goedkoper op elektronica/drank/tabak/parfum,
+eilandbreed niet alleen op de luchthaven)
+- [x] **5-7 dagen — Tenerife**. Santa Cruz/La Laguna (1-2d) + Teide NP (1d) + Anaga wandelen (1-2d)
+  + Costa Adeje/Los Cristianos (2d). Budget: ~€55-75/dag. Seizoen: jaarrond, oktober-mei fijnst
+  voor wandelen. ⚠️ Webcheck (2026-08): teleférico ~€40 retour, vooraf boeken, weersafhankelijk.
+  Een gratis vergunning is verplicht voor de laatste 200m naar de top (max ~200 bezoekers/dag,
+  aanvragen via reservasparquesnacionales.es, ruim vooraf) — zonder vergunning stop je bij het
+  bovenstation (3555m), nog steeds indrukwekkend. Huurauto aan te raden voor Anaga.
+- [x] **5-7 dagen — Gran Canaria**. Las Palmas (2d) + Maspalomas-duinen (2d) + Roque Nublo/Tejeda
+  (1-2d). Budget: ~€50-70/dag. Seizoen: jaarrond, bergen oktober-april prettigst. ⚠️ Webcheck
+  (2026-08): geen vergunningen nodig; Roque Nublo-parkeerplaats vroeg vol in het weekend; de duinen
+  zijn beschermd natuurgebied, blijf op de paden.
+- [x] **5-7 dagen — Lanzarote + Fuerteventura**. Timanfaya NP (1d) + Arrecife/Costa Teguise (1-2d)
+  + ferry Playa Blanca-Corralejo (~25 min) + Corralejo/Cotillo (2-3d). Budget: ~€50-65/dag. Seizoen:
+  jaarrond, oktober-april beste wind voor surf/kite op Fuerteventura. ⚠️ Webcheck (2026-08):
+  Timanfaya alleen per verplichte bustour over de "Ruta de los Volcanes", vrij rondlopen mag niet;
+  de twee wandelpaden alleen met gids en reservering vooraf. Kameelritten apart boekbaar,
+  dierenwelzijn is omstreden.
+- [x] **7-10 dagen — Tenerife + La Gomera**. Tenerife verkort (4-5d) + ferry Los Cristianos-San
+  Sebastián de la Gomera (~50 min, meerdere x/dag) + Garajonay NP (2d) + Valle Gran Rey/Agulo
+  (1-2d). Budget: ~€50-70/dag. Seizoen: jaarrond, het laurisilva-woud is jaarrond mistig-groen, ook
+  fijn als het beneden heet is. ⚠️ Webcheck (2026-08): Garajonay is UNESCO-werelderfgoed sinds 1986
+  (40km², 18 bewegwijzerde paden, geen vergunning nodig maar check brandrisico-sluitingen in de
+  zomer). Silbo Gomero (de gefloten taal) is UNESCO immaterieel erfgoed sinds 2009 — demonstraties
+  voor toeristen in restaurants zijn niet dagelijks gegarandeerd, vooraf navragen bij de VVV.
+  Zelfde Teide-vergunning-caveat als hierboven.
+- [x] **7-10 dagen — Gran Canaria + Tenerife**. Gran Canaria (4-5d) + ferry (Las Palmas-Santa Cruz,
+  ~2-2,5u) of vlucht (Binter Canarias, ~35 min) + Tenerife (4-5d). Budget: ~€55-75/dag. ⚠️ Webcheck
+  (2026-08): zelfde Teide-vergunning-caveat als hierboven; de vlucht is vaak vergelijkbaar qua prijs
+  en veel sneller dan de ferry.
+- [x] **10-14 dagen — Canarische Eilanden** *(differentiator: combineert 4 eilanden)*. Tenerife
+  (4d) → Gran Canaria (3d) → Lanzarote (3d) → ferry → Fuerteventura (3d). Verbindingen: Binter
+  Canarias vliegt tussen alle eilanden (~30-45 min), Fred Olsen Express en Naviera Armas varen de
+  meeste routes. Budget: ~€55-75/dag gemiddeld + interneilandvervoer. Seizoen: oktober-mei voor
+  wandelen, juni-september heter maar prima voor strand. ⚠️ Webcheck (2026-08): bouw minimaal 1
+  dag buffer tussen overtochten in (weersvertraging teleférico/ferries); boek de Teide-vergunning en
+  Timanfaya-tour ruim vooraf, in het hoogseizoen weken van tevoren uitverkocht.
 
-**Balearen**
-- [ ] 4–5 dagen — Menorca
-- [ ] 4–5 dagen — Ibiza
-- [ ] 7–10 dagen — Mallorca + Menorca
-- [ ] 7–10 dagen — Balearen
+**Algemeen Canarische Eilanden (webcheck 2026-08)**: reisadvies Spanje groen (05-08-2026), geen
+aparte kleurcode voor de Canarische Eilanden, wel een algemene monitoring-aanbeveling voor actieve
+vulkanen. Sinds april 2024 lopende (vreedzame) overtourism-protesten ("Canarias tiene un límite")
+tegen woningnood/hotelbouw/verdringing, voortgezet in 2025 — geen directe veiligheidsdreiging voor
+toeristen, wel groeiend lokaal sentiment; respectvol gedrag aan te raden. easyJet/Transavia vliegen
+direct AMS/RTM-Tenerife/Gran Canaria/Lanzarote/Fuerteventura; TUI fly rijdt winterzon-charters.
 
-**Italiaanse eilanden** (naast Sicilië/Sardinië, al bij Italië)
-- [ ] 4–5 dagen — Sicilië oost
-- [ ] 4–5 dagen — Sicilië west
-- [ ] 4–5 dagen — Sardinië noord
-- [ ] 4–5 dagen — Sardinië zuid
-- [ ] 3–4 dagen — Sicilië + Eolische eilanden
-- [ ] 7–10 dagen — Sardinië roadtrip
-- [ ] 7–10 dagen — Sicilië roadtrip
+**Balearen** (Spanje, EU/Schengen)
+- [x] **4-5 dagen — Menorca**. Mahón (2d, Camí de Cavalls-stukje) + Ciutadella (2d) + strand
+  Cala Macarelleta/Cala Turqueta. Budget: ~€70-90/dag (rustiger dan Ibiza/Mallorca, huurauto aan te
+  raden). Seizoen: mei-juni/september beste combi rust+weer; juli-augustus duur en drukker rond de
+  haven van Ciutadella. ⚠️ Webcheck (2026-08): ecotasa geldt (zie algemene noot); directe vluchten
+  NL-Mahón (MAH) zijn beperkt/seizoensgebonden, vaak overstap via Palma/Barcelona.
+- [x] **4-5 dagen — Ibiza**. Ibiza-stad/Dalt Vila (2d) + rustige noordkust Sant Joan/Portinatx
+  (2-3d) — nightlife optioneel mijden voor budget. Budget: ~€90-120/dag (clubs/beach clubs drijven
+  de prijs op; het noorden is goedkoper). Seizoen: juni/september (mei nog fris), juli-augustus erg
+  druk en duur. ⚠️ Webcheck (2026-08): ecotasa geldt; drukte/protestsfeer 2025-2026 rond
+  overtourism, verwacht volle bars/wachttijden in het hoogseizoen.
+- [x] **7-10 dagen — Mallorca + Menorca**. Palma/Tramuntana (3-4d) + veerboot naar Menorca:
+  Ciutadella/Mahón (3-4d). Budget: ~€80-100/dag gemiddeld. Seizoen: mei-juni of september,
+  Tramuntana-wandelingen buiten de hitte. ⚠️ Webcheck (2026-08): ecotasa dubbel (beide eilanden
+  apart), check de veerbootfrequentie Mallorca-Menorca buiten het hoogseizoen (minder vaak). Palma
+  is het centrum van de 2026-protesten, verwacht incidentele demonstraties/verkeersdrukte.
+- [x] **7-10 dagen — Balearen** *(differentiator: breedste multi-eiland versie, incl. Formentera)*.
+  Mallorca (3d) + Menorca (2-3d) + Ibiza (2d) + evt. Formentera-dagtrip vanaf Ibiza. Budget:
+  ~€85-110/dag. Seizoen: mei-juni/september. ⚠️ Webcheck (2026-08): ecotasa per eiland, meerdere
+  interne veerboten/vluchten plannen en boeken; check de actuele bezoekerscap-discussie voor
+  updates.
 
-**Griekse eilanden** (naast Kreta en de algemene "Griekse eilanden"-optie, al bij Griekenland)
-- [ ] 5–7 dagen — Corfu
-- [ ] 5–7 dagen — Rhodos
-- [ ] 5–7 dagen — Cycladen
-- [ ] 5–7 dagen — Ionische eilanden
-- [ ] 7–10 dagen — Kreta roadtrip
-- [ ] 7–10 dagen — Cycladen island hopping
+**Algemeen Balearen (webcheck 2026-08)**: reisadvies Spanje groen (05-08-2026), geen Balearen-
+specifieke waarschuwing. Ecotasa (toeristenbelasting) 2026: €0,25-€4 p.p./nacht afhankelijk van
+accommodatiecategorie en seizoen, +10% btw, 75% korting november-april, 50% korting vanaf de 9e
+nacht, kinderen <16 gratis. Grootschalige overtourism-protesten Mallorca/Ibiza in zomer 2025 én
+juli 2026 (~30.000 demonstranten in Palma), record 19 miljoen bezoekers Balearen in 2025; oppositie
+bepleit bezoekerscaps, nog geen harde wettelijke limiet — wel groeiende lokale spanning en
+verwachte drukte/irritatie in hotspots juli-augustus.
+
+**Italiaanse eilanden** (naast Sicilië/Sardinië, al bij Italië; deze items zijn bewust
+granulairder/nieuwer dan de algemene Italië-content) — batch 14, uitgewerkt + WebSearch-
+geverifieerd (2026-08)
+- [x] **4-5 dagen — Sicilië oost**. Catania (2d) + Taormina/Etna (2d, kabelbaan+gids boven 2900m
+  verplicht) + Syracuse/Ortigia (2d). Budget: ~€55-70/dag. Seizoen: april-juni, september-oktober;
+  hoogzomer erg heet. ⚠️ Webcheck (2026-08): Etna-toegang boven een bepaalde hoogte alleen met
+  gids, activiteit kan routes sluiten; Catania-luchthaven kan bij een eruptie tijdelijk dicht.
+- [x] **4-5 dagen — Sicilië west**. Palermo (2d) + Monreale + Trapani/Erice (2d) + Segesta
+  (dagtrip). Budget: ~€50-65/dag (goedkoper dan oost/kust). Seizoen: april-juni/september-oktober.
+  ⚠️ Webcheck (2026-08): geen bijzondere permits; controleer Segesta/Erice-openingstijden buiten
+  het seizoen (korter).
+- [x] **4-5 dagen — Sardinië noord**. Olbia (1d) + Costa Smeralda (2d) + La Maddalena-archipel
+  (boottocht, 1-2d). Budget: ~€70-90/dag (Costa Smeralda duurder dan de rest van Sardinië).
+  Seizoen: juni/september, juli-augustus extreem duur en druk. ⚠️ Webcheck (2026-08): La
+  Maddalena-boottickets vooraf boeken in het hoogseizoen; sommige stranden zijn vergunningsplichtig
+  (Spiaggia Rosa Budelli verboden te betreden).
+- [x] **4-5 dagen — Sardinië zuid**. Cagliari (2d) + Poetto-strand + Nora-ruïnes (dagtrip) + evt.
+  Chia-stranden. Budget: ~€55-70/dag (goedkoopste Sardinië-optie). Seizoen: mei-juni/september. ⚠️
+  Webcheck (2026-08): Nora-openingstijden zijn seizoensafhankelijk, check vooraf.
+- [x] **3-4 dagen — Sicilië + Eolische eilanden**. Milazzo (veerhaven) + Lipari (1d) + Vulcano
+  modderbaden (1d) + Stromboli avondtrek met gids (1d). Budget: ~€65-85/dag (ferrykosten+gidstour
+  verhogen het budget). Seizoen: mei-september; veel kleinere eilandveren (Alicudi/Filicudi/
+  Panarea) hebben beperkte of geen dienst november-maart. ⚠️ Webcheck (2026-08): Stromboli's
+  kratertocht is verplicht met een erkende gids (bv. Magmatrek), alarmniveau geel (2/4), de
+  exclusiezone wijzigt met de activiteit — dagelijks checken via Protezione Civile. Geen auto/
+  scooter meenemen op de veerboot naar de eilanden mei-oktober (niet-ingezetenen verboden). Geen
+  Cinque-Terre-achtig permit-/capsysteem op de veerboten zelf.
+- [x] **7-10 dagen — Sardinië roadtrip**. Cagliari (2d) → zuidkust/Chia (1d) → binnenland Barbagia
+  (1-2d) → Costa Smeralda/Olbia (2d) → La Maddalena (1d). Budget: ~€65-80/dag, huurauto vrijwel
+  verplicht. Seizoen: mei-juni/september, vermijd de augustus-drukte op de kustwegen. ⚠️ Webcheck
+  (2026-08): bergwegen in het binnenland zijn smal/traag, plan extra tijd; kustparkeren is in het
+  hoogseizoen schaars/duur.
+- [x] **7-10 dagen — Sicilië roadtrip**. Palermo (2d) → Trapani/Erice/Segesta (2d) → Agrigento
+  Valle dei Templi (1d) → Etna/Taormina (2d) → Syracuse/Ortigia (2d). Budget: ~€55-75/dag. Seizoen:
+  april-juni/september-oktober, hoogzomer zwaar heet voor rondrijden. ⚠️ Webcheck (2026-08): Valle
+  dei Templi-tickets online vooraf i.v.m. drukte; Etna-toegang heeft een gidsplicht boven een
+  bepaalde hoogte.
+
+**Algemeen Italiaanse eilanden (webcheck 2026-08)**: reisadvies Italië groen (30-07-2026); het
+vulkanisch risico van Etna/Stromboli wordt expliciet genoemd in het reisadvies — check Protezione
+Civile vooraf, Etna-activiteit kan Catania-luchthaven tijdelijk sluiten.
+
+**Griekse eilanden** (naast de algemene "Griekse eilanden"-optie al bij Griekenland; Kreta bleek
+bij uitwerking geen eigen item te hebben in batch 10, zie de correctienoot bovenaan deze sectie —
+"Kreta roadtrip" hieronder vult dat gat) — batch 14, uitgewerkt + WebSearch-geverifieerd (2026-08)
+- [x] **5-7 dagen — Corfu** *(differentiator: single-island, tegenover de bredere Ionische
+  eilanden hieronder)*. Corfu Town (2d, Venetiaanse oude stad) + Paleokastritsa (1-2d) + Sidari/
+  noordkust (2d). Budget: ~€55-70/dag. Seizoen: mei-oktober, piek juli-augustus drukst/duurst. ⚠️
+  Webcheck (2026-08): bevestigde bosbrandevacuatie (~2400 mensen) medio augustus 2026, brand
+  "onder controle" gemeld (7 augustus 2026) — vlak voor vertrek herchecken. TUI fly vliegt direct
+  AMS-Corfu, seizoensgebonden (~april-oktober).
+- [x] **5-7 dagen — Rhodos**. Rhodes Old Town (2d) + Lindos (2d) + Prasonisi (windsurfpunt, 1-2d).
+  Budget: ~€55-70/dag. Seizoen: mei-oktober. ⚠️ Webcheck (2026-08): Palace of the Grand Master —
+  zomerrooster (1 april-31 oktober) dagelijks 08:00-20:00, winterrooster (1 november-31 maart)
+  wo-ma 08:30-15:30, dinsdag gesloten; ticketprijs herzien sinds april 2025, nu €20. Geen actieve
+  bosbrand/evacuatie op Rhodos gemeld (stand 7 augustus 2026), relatief rustig t.o.v. Kreta/Corfu
+  dit seizoen. easyJet, Transavia en TUI vliegen alle drie direct AMS-Rhodos in de zomer,
+  grotendeels seizoensgebonden.
+- [x] **5-7 dagen — Cycladen**. Santorini (2-3d) + Naxos (2d) + Paros (2d) via veerboot. Budget:
+  ~€60-75/dag (Santorini duurder dan Naxos/Paros). Seizoen: mei-september, piek juli-augustus;
+  juni/september beter qua hitte en drukte. ⚠️ Webcheck (2026-08): Santorini cruise-cap 8.000
+  passagiers/dag sinds 2025, in 2026 strenger toegepast (berekening nu op 100% scheepsbezetting
+  i.p.v. 80%), plus een €20 piekseizoen-heffing per persoon (april-oktober) voor ontschepende
+  cruisepassagiers. Paros had eind juli 2026 een bosbrand (~250ha, evacuaties) — kort incident,
+  medio augustus onder controle maar Meltemi-wind verhoogt het brandrisico Cycladen-breed.
+- [x] **5-7 dagen — Ionische eilanden** *(differentiator: Kefalonia+Zakynthos in plaats van Corfu
+  — er is momenteel geen directe veerboot Corfu-Zakynthos, en de volledige eilandketen
+  Corfu-Paxos-Lefkada-Meganisi-Ithaca-Kefalonia-Zakynthos kost 12-13u vaartijd, niet realistisch
+  binnen 5-7 dagen)*. Kefalonia (3d, Melissani-grot, Myrtos-strand) + Zakynthos (3d, Navagio/
+  Shipwreck Beach, Blauwe Grotten), beide bereikbaar via mainland-ferry vanaf Kyllini (Peloponnesos)
+  — geen Corfu-koppeling nodig. Budget: ~€55-70/dag. Seizoen: mei-oktober. ⚠️ Webcheck (2026-08):
+  Kefalonia/Zakynthos niet genoemd in de geraadpleegde wildfire-bronnen (stand augustus 2026),
+  minder acuut dan Corfu/Kreta/Paros dit seizoen.
+- [x] **7-10 dagen — Kreta roadtrip**. Chania (2d) + Rethymno (1d) + Heraklion/Knossos (2d) +
+  zuidkust Libische Zee (Matala/Plakias, 2d), optioneel de Samaria-kloof. Budget: ~€60-75/dag incl.
+  huurauto. Seizoen: april-oktober; de Samaria-kloof is doorgaans open medio mei-oktober,
+  weersafhankelijk. ⚠️ Webcheck (2026-08): Kreta had bevestigde evacuaties op 30 juli 2026, grote
+  branden verwoestten landbouwgrond/olijfgaarden — een van de zwaarst getroffen gebieden dit
+  seizoen naast Corfu. Wegafsluitingen mogelijk, vlak voor vertrek herchecken.
+- [x] **7-10 dagen — Cycladen island hopping** *(differentiator: voegt afgelegener/rustiger
+  eilanden toe — Ios, Milos of Folegandros)*. Santorini (2d) + Ios (1-2d) + Naxos (2d) + Paros
+  (1-2d) + Milos of Folegandros (2d). Budget: ~€55-70/dag (Milos/Folegandros goedkoper dan
+  Santorini). Seizoen: mei-september, piek juli-augustus. ⚠️ Webcheck (2026-08): zelfde
+  Santorini-cruise-cap-info als hierboven; het Paros-brandincident (zie boven); veerbootverbindingen
+  naar Milos/Folegandros zijn minder frequent dan de hoofdroute Santorini-Naxos-Paros — vooraf
+  schema checken.
+
+**Algemeen Griekse eilanden (webcheck 2026-08)**: reisadvies geel sinds 4 augustus 2026
+(bosbranden, heel Griekenland — zie ook de algemene noot bij de Griekenland-sectie in batch 10),
+geen van deze eilanden met naam genoemd op nederlandwereldwijd.nl zelf, maar Corfu/Kreta/Paros
+hadden dit seizoen concrete incidenten — check vlak voor vertrek opnieuw.
 
 **Kanaaleilanden & Isle of Man** *(nieuw, 2026-08 derde aanvulling — Britse Kroonbezittingen,
 bewust hier los van de Engeland/Wales/Noord-Ierland-sectie, zelfde logica als de rest van dit
-hoofdstuk)*
-- [ ] 4–5 dagen — Jersey + Guernsey (Kanaaleilanden)
-- [ ] 3–4 dagen — Isle of Man
+hoofdstuk; NIET EU/Schengen)* — batch 14, uitgewerkt + WebSearch-geverifieerd (2026-08)
+- [x] **4-5 dagen — Jersey + Guernsey (Kanaaleilanden)**. Jersey (2-3d, St. Helier, Mont Orgueil
+  Castle) + Guernsey (2d, St. Peter Port) via een Aurigny inter-island vlucht (~20 min) of veerboot.
+  Budget: ~€100-130/dag (de Kanaaleilanden zijn duur, vergelijkbaar met Zuid-Engeland-prijsniveau,
+  eigen valuta maar 1:1 met GBP). Seizoen: mei-september, mild klimaat maar geen garantie op zon. ⚠️
+  Webcheck (2026-08): Condor Ferries is als merk gestopt per 28 maart 2025 — de Jersey-route loopt
+  nu via DFDS Seaways, de Guernsey-route via Brittany Ferries; oudere reisgidsen die nog "Condor"
+  noemen zijn verouderd. KLM vliegt seizoensgebonden direct Amsterdam-Jersey; Guernsey heeft geen
+  directe NL-vlucht, via Southampton/Gatwick (Aurigny-hub) of via Jersey.
+- [x] **3-4 dagen — Isle of Man**. Douglas (2d, hoofdstad, TT-museum) + Castletown/Peel (1-2d,
+  kastelen, westkust) + Snaefell Mountain Railway. Budget: ~€90-115/dag (UK-niveau, beperkt
+  budget-aanbod). Seizoen: mei-september; let op de TT Races (eind mei/begin juni) — dan enorme
+  drukte en hoge prijzen, boek ver vooraf of vermijd juist die weken. ⚠️ Webcheck (2026-08): geen
+  directe NL-verbinding — via het VK: vlucht Liverpool/Manchester/Gatwick of Steam
+  Packet-veerboot Douglas-Heysham (jaarrond)/Douglas-Liverpool (seizoensgebonden maart-november).
+
+**Algemeen Kanaaleilanden & Isle of Man (webcheck 2026-08)**: reisadvies VK groen (28-05-2026,
+noemt Jersey/Guernsey expliciet i.v.m. de ETA-plicht), Portugal (Madeira/Azoren) groen
+(30-07-2026, aandachtspunt natuurbranden). **Belangrijke UK ETA-update**: één ETA (£20, geldig 2
+jaar of tot het paspoort verloopt) geeft toegang tot het VK + Jersey + Guernsey + Isle of Man samen
+— sinds 23 april 2026 uitgebreid naar alle Kroonbezittingen, geen aparte aanvraag per eiland nodig.
+Een combi-trip VK+Kanaaleilanden+Isle of Man kan dus met 1 ETA.
 
 ## 🇪🇺 Grote Europese combinaties
 
@@ -2438,7 +2628,7 @@ volgorde:
     2026-08) — Madeira, Azoren, Canarische Eilanden, Balearen, Kanaaleilanden/Isle of Man, en de
     gedetailleerdere Italiaanse/Griekse eilanden-varianten. Na de bijbehorende landenbatches
     (Italië/Griekenland al klaar, Portugal/Spanje in batch 7), zodat er al context/stijl bestaat
-    om op aan te sluiten.
+    om op aan te sluiten. **Gedaan (2026-08), WebSearch-geverifieerd.**
 15. **Combinatiesecties (Iberië-combo, Balkan-combo, Grote Europese combinaties)** (33) — bewust
     laatst: deze hergebruiken bijna allemaal content uit de losse-landen-batches hierboven, dus pas
     efficiënt te doen zodra die klaar zijn.

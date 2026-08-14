@@ -201,7 +201,7 @@ Oostkust 🗽** (DC-Philadelphia-New York-Boston via train, 12d/€1.365), **US 
 choice — Vancouver-Anchorage is already the natural flight link), new total 32d/€5.875 (was
 22d/€4.275).
 
-## Europa Trip Ideas (nieuw, 2026-08 — batches 1-13 klaar)
+## Europa Trip Ideas (nieuw, 2026-08 — batches 1-14 klaar)
 
 See [`EUROPA_TRIP_IDEAS.md`](EUROPA_TRIP_IDEAS.md) — Youri's own big raw list (~230 items, extended
 2026-08 with a second batch of additions — micro-states, Cyprus/Malta/Moldavië/Kosovo/Corsica/
@@ -216,16 +216,17 @@ continent group in Route Builder's list view automatically. Not yet done: actual
 worked-out item into `routeBuilder.js` as a real `rbBuildXRoute()` — that's a separate step, likely
 done in one pass once several batches are ready rather than per item.
 
-**Status: batches 1-13 done** (batches 12 and 13 done out of order before batch 11 — Youri picked
-them directly rather than following strict numbering) — Benelux (6), Duitsland (12), Oostenrijk +
-Zwitserland (12), Frankrijk (11), Italië (16), micro-staten & kleine eilanden (20), Iberië (26),
-Balkan-cluster (44: Kroatië/Slovenië/Bosnië/Montenegro/Albanië/Servië/Noord-Macedonië/Kosovo),
-Centraal/Oost-Europa (35: Roemenië/Bulgarije/Moldavië/Hongarije/Tsjechië/Slowakije/Polen),
+**Status: batches 1-14 done** (batches 12, 13 and 14 done out of order before/around batch 11 —
+Youri picked them directly rather than following strict numbering) — Benelux (6), Duitsland (12),
+Oostenrijk + Zwitserland (12), Frankrijk (11), Italië (16), micro-staten & kleine eilanden (20),
+Iberië (26), Balkan-cluster (44: Kroatië/Slovenië/Bosnië/Montenegro/Albanië/Servië/Noord-Macedonië/
+Kosovo), Centraal/Oost-Europa (35: Roemenië/Bulgarije/Moldavië/Hongarije/Tsjechië/Slowakije/Polen),
 Oost-Mediterraan (18: Griekenland/Cyprus/Turkije), Noord-Europa (32: Noorwegen/Zweden/Denemarken/
 Finland/Faeröer/IJsland), Britse eilanden (17: Ierland/Schotland/Engeland/Wales/Noord-Ierland),
-Baltische staten (6: Estland/Letland/Litouwen). Route/dagen/budget/seizoen/vervoer per trip. Only
-batches 14 (🏝️ Europese eilanden) and 15 (combinatiesecties) remain. Benelux was written from
-general knowledge then WebSearch-verified afterward;
+Baltische staten (6: Estland/Letland/Litouwen), 🏝️ Europese eilanden (30: Madeira/Azoren/
+Canarische Eilanden/Balearen/Italiaanse eilanden/Griekse eilanden/Kanaaleilanden+Isle of Man).
+Route/dagen/budget/seizoen/vervoer per trip. Only batch 15 (combinatiesecties, deliberately last)
+remains. Benelux was written from general knowledge then WebSearch-verified afterward;
 **standard practice from batch 2 onward**: 2-3 parallel WebSearch-backed research agents (grouped
 by sub-region) before writing anything, not after — this caught real route improvements each time
 (Duitsland: Rijn+Moezel via Koblenz, Berchtesgaden as a loop-closer; Oostenrijk/Zwitserland:
@@ -280,7 +281,16 @@ still legally in force); Ireland itself needs no ETA at all (EU free movement, C
 is separate from Schengen); Skye is bridge-connected (free since Dec 2004, no ferry needed) while
 Orkney/Shetland/Outer Hebrides genuinely need one (NorthLink, Pentland Ferries, or CalMac
 respectively) — several near-duplicate Ireland and Scotland items again each got an explicit
-differentiating angle rather than the same trip padded to different lengths). Proposed batch order (see the bottom of that file for the full
+differentiating angle rather than the same trip padded to different lengths;
+🏝️ Europese eilanden (batch 14): the Canary Islands and Åland-style "outside the EU tax zone"
+pattern showed up again here too — the Canaries sit outside the EU VAT area (own IGIC tax); real
+recent regulatory finds folded in include the UK ETA extending to cover Jersey/Guernsey/Isle of
+Man as of 23 April 2026 (one ETA now covers the whole Common Travel Area's Crown Dependencies),
+Condor Ferries rebranding (Jersey route now DFDS, Guernsey route now Brittany Ferries, as of March
+2025), and Santorini's 2025-2026 cruise-passenger cap tightening; a stale intro note claiming
+"Kreta already covered under Griekenland (batch 10)" turned out to be wrong on inspection — Crete
+never actually got its own item there, so the batch 14 "Kreta roadtrip" item fills a real gap
+rather than duplicating one). Proposed batch order (see the bottom of that file for the full
 reasoning per cluster, updated after the 2026-08 extension): (1) ~~Benelux~~ **done**, (2)
 ~~Duitsland~~ **done**, (3) ~~Oostenrijk + Zwitserland~~ **done**, (4) ~~Frankrijk~~ **done**, (5)
 ~~Italië~~ **done**, (6) ~~Micro-staten & kleine eilanden~~ **done** (Liechtenstein/San Marino/
@@ -291,11 +301,11 @@ Hongarije/Tsjechië/Slowakije/Polen/Moldavië)~~ **done**, (10) ~~Oost-Mediterra
 Cyprus/Turkije-Europees + Egeïsche kust)~~ **done**, (11) ~~Noord-Europa (Noorwegen/Zweden/
 Denemarken/Finland/IJsland/Faeröer)~~ **done**,
 (12) ~~Britse eilanden (Engeland/Wales/Noord-Ierland/Ierland/Schotland)~~ **done**, (13)
-~~Baltische staten~~ **done**, (14)
-🏝️ Europese eilanden (Madeira/Azoren/Canarische Eilanden/Balearen/Kanaaleilanden/Isle of Man/
-gedetailleerdere Italiaanse+Griekse eilanden), (15) de combinatiesecties onderin het bestand
-(bewust laatst, want die hergebruiken de losse-landen-batches). **Batch 12 (Britse eilanden) en
-batch 13 (Baltische staten) zijn beide buiten de volgorde om al gedaan** — Youri koos ze zelf.
+~~Baltische staten~~ **done**, (14) ~~🏝️ Europese eilanden (Madeira/Azoren/Canarische Eilanden/
+Balearen/Kanaaleilanden/Isle of Man/gedetailleerdere Italiaanse+Griekse eilanden)~~ **done**, (15)
+de combinatiesecties onderin het bestand (bewust laatst, want die hergebruiken de
+losse-landen-batches). **Batches 12, 13 en 14 zijn buiten de volgorde om al gedaan** — Youri koos
+ze zelf; alleen batch 15 staat nog open.
 
 **Derde aanvulling (2026-08) — verwerkt**: Youri leverde daarna nog een brede regio-checklist
 (West-/Noord-/Centraal-/Zuid-Europa, Balkan, microstaten, Turkije, bijzondere eilanden). Bijna
@@ -313,8 +323,7 @@ Bij de Egeïsche-kust-uitzondering werd ook de lijst-regel zelf scherper gemaakt
 "Europa, geografisch" maar "dichtbij, geschikt voor city trip/~1 week, geen dure/lange vlucht voor
 zo'n korte periode" — dat is de regel voor toekomstige twijfelgevallen.
 
-**Next up: batch 14 (🏝️ Europese eilanden, 30 items) of batch 15 (combinatiesecties, 33 items,
-bewust laatst).**
+**Next up: batch 15 (combinatiesecties, 33 items) — the last remaining batch.**
 
 ## Search
 
