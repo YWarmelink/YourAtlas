@@ -2,8 +2,9 @@
 
 Status: **batch 1 (Benelux), batch 2 (Duitsland), batch 3 (Oostenrijk + Zwitserland), batch 4
 (Frankrijk), batch 5 (Italië), batch 6 (micro-staten & kleine eilanden), batch 7 (Iberië), batch 8
-(Balkan-cluster), batch 9 (Centraal/Oost-Europa), batch 10 (Oost-Mediterraan), batch 12 (Britse
-eilanden) en batch 13 (Baltische staten) uitgewerkt, rest nog ruw.** Youri's eigen lijst (2026-08) van realistische
+(Balkan-cluster), batch 9 (Centraal/Oost-Europa), batch 10 (Oost-Mediterraan), batch 11
+(Noord-Europa), batch 12 (Britse eilanden) en batch 13 (Baltische staten) uitgewerkt, rest nog
+ruw.** Youri's eigen lijst (2026-08) van realistische
 Europese trips — van lang weekend tot ~3 weken, allemaal "reëel en slim te maken" omdat ze binnen
 Europa blijven. Dit is bewust alleen duur + bestemming/route, geen route/budget/seizoen-detail —
 dat werken we samen per batch uit, zoals Route Builder's expedities dat ook kregen (zie de
@@ -1716,61 +1717,269 @@ t/m 15-9-2026 (steekproef-ID-checks, relevant bij een route via Duitsland).
 - [ ] 10–14 dagen — Portugal + Andalusië
 - [ ] 14 dagen — Portugal + Spanje roadtrip
 
-## 🇳🇴 Noorwegen
+## 🇳🇴 Noorwegen — batch 11, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-- [ ] 4–5 dagen — Oslo
-- [ ] 5–7 dagen — Bergen + fjorden
-- [ ] 7–10 dagen — Zuid-Noorwegen
-- [ ] 7–10 dagen — Fjord Norway
-- [ ] 10–14 dagen — Noorwegen roadtrip
-- [ ] 10–14 dagen — Bergen → Ålesund
-- [ ] 14 dagen — Zuid- en Midden-Noorwegen
-- [ ] 5–7 dagen — Svalbard (Longyearbyen, korte "Trip Ideas"-versie) *(nieuw, 2026-08 derde
+- [x] **4-5 dagen — Oslo**. Vigelandpark, Vikingschipmuseum/Fram-museum op Bygdøy, Munchmuseet,
+  dagtocht naar de Oslofjord-eilanden (Hovedøya) of Fredrikstad. Budget: ~€110-140/dag (stad, geen
+  huurauto nodig, OV-dagkaart ~120 NOK). Seizoen: mei-september beste weer/lange dagen, musea het
+  hele jaar open. ⚠️ Webcheck (2026-08): fjordveerboten/eilandponten draaien 's winters een beperkte
+  dienstregeling — check actuele tijden vooraf.
+- [x] **5-7 dagen — Bergen + fjorden**. Bergen (Bryggen, Fløyen/Ulriken, 2-3d) + "Norway in a
+  Nutshell"-dagtrip (Flåmsbana + Nærøyfjord-cruise + Voss), evt. verlenging naar de Hardangerfjord.
+  Budget: ~€130-160/dag (Flåmsbana + fjordcruise zijn duur). Seizoen: juni-september voor het
+  droogste weer en de volledige diensten. ⚠️ Webcheck (2026-08): Flåmsbana enkele reis nu ~570 NOK,
+  retour ~850 NOK (2026-prijzen, Eurail/Interrail 30% korting) — fors duurder dan enkele jaren
+  terug, vooraf online boeken aan te raden i.v.m. drukte.
+- [x] **7-10 dagen — Zuid-Noorwegen** *(differentiator: géén fjorden, cultuur/kust-invalshoek)*.
+  Oslo (2-3d) → Telemark (Rjukan, Telemarkkanaal-boottocht) → Sørlandet-kust (Kristiansand,
+  Mandal) → terug. Budget: ~€120-150/dag incl. gedeelde huurauto. Seizoen: juni-augustus,
+  kustplaatsen dan het levendigst; de Telemarkkanaal-boot vaart vooral in de zomer. ⚠️ Webcheck
+  (2026-08): de Telemarkkanaal-boot heeft een beperkt zomerschema, vooraf boeken.
+- [x] **7-10 dagen — Fjord Norway** *(differentiator: puur fjorden, de Bergen-Geiranger-corridor)*.
+  Bergen → Sognefjord/Nærøyfjord → Nordfjord → Geirangerfjord, optioneel Trolltunga of Preikestolen
+  als dagtocht. Budget: ~€140-170/dag (huurauto + fjordcruises + tolwegen/veerponten). Seizoen: half
+  juni-half september; bergpassen (bv. Gaularfjellet) meestal mei-oktober open, sneeuwafhankelijk.
+  ⚠️ Webcheck (2026-08): Geirangerfjord + Nærøyfjord vallen sinds 1 januari 2026 onder een
+  nul-uitstoot-regel voor passagiersschepen <10.000 GT (grotere cruiseschepen krijgen tot 2032
+  uitstel) — kleine fjordcruises/veerboten zijn doorgaans al elektrisch/hybride en blijven gewoon
+  varen, maar check per operator. Preikestolen: parkeren P1 ~250 NOK/dag, shuttlebus vanaf
+  Stavanger verplicht online vooraf boeken (niet aan boord te koop), spitsdrukte 8-16u
+  juni-augustus. Trolltunga: geen permit, wel parkeren P1 330/550/770 NOK (1/2/3 dagen), in
+  juli-augustus soms 1-2 uur wachtrij bij de rots zelf — eind juni/begin september rustiger met nog
+  goede omstandigheden.
+- [x] **10-14 dagen — Noorwegen roadtrip** *(differentiator: bredere zelf-rij-lus)*. Oslo → Bergen
+  → Sognefjord → Geiranger → Ålesund → Trondheim → Rondane/Femundsmarka → terug naar Oslo. Budget:
+  ~€140-160/dag (huurauto, tol, veerponten, brandstof gedeeld). Seizoen: half juni-half september
+  voor volledige bergpas-openstelling. ⚠️ Webcheck (2026-08): bergpassen als Trollstigen/Sognefjellet
+  doorgaans half mei-half oktober open, jaarlijks weersafhankelijk — vlak voor vertrek actuele
+  openingsdata checken via vegvesen.no.
+- [x] **10-14 dagen — Bergen → Ålesund** *(differentiator: specifieke one-way kustroute)*. Bergen →
+  Sognefjord (Nærøyfjord/Flåm) → Nordfjord/Stryn → Geirangerfjord → Atlanterhavsveien (Atlantic
+  Ocean Road) → Ålesund, terugvlucht vanaf Ålesund of Molde (one-way huurauto-inlevering, let op
+  inlevertoeslag). Budget: ~€150-170/dag (one-way huurauto duurder + fjordveren). Seizoen:
+  juni-september; de Trollstigen/Geiranger-Ålesund-route is sneeuwafhankelijk open mei-oktober. ⚠️
+  Webcheck (2026-08): one-way autoverhuur Bergen→Ålesund kent vaak een flinke drop-off fee, vooraf
+  vergelijken; zelfde Geiranger nul-uitstoot-nuance als hierboven.
+- [x] **14 dagen — Zuid- en Midden-Noorwegen** *(differentiator: langste, meest complete
+  combinatie)*. Oslo + Telemark + Sørlandet-kust → Bergen → Sognefjord/Geiranger-fjorden →
+  Ålesund → evt. Trondheim, terugvlucht vanaf Trondheim of Oslo. Budget: ~€140-160/dag gemiddeld
+  over de hele reis. Seizoen: juni-half september — enige reis die tot Trondheim reikt, dus iets
+  ruimer venster nodig voor de bergpassen. ⚠️ Webcheck (2026-08): zelfde Geiranger-regel +
+  Preikestolen/Trolltunga-drukte als hierboven; overweeg de trein Trondheim-Oslo (Dovrebanen) als
+  terugoptie in plaats van vliegen.
+- [x] **5-7 dagen — Svalbard (Longyearbyen, korte "Trip Ideas"-versie)** *(nieuw, 2026-08 derde
   aanvulling — zelfde dubbele-laag-situatie als Faeröer, bestaat al in Route Builder's Nordic
-  Arctic Expedition ❄️)*
+  Arctic Expedition ❄️; dit is bewust de kórte, realistische versie, geen duplicaat)*. Alleen
+  Longyearbyen + omgeving, GEEN multi-day expeditieboot: de stad zelf (Svalbard Museum, Nordpolet)
+  + 1-2 dagtochten zoals een boottocht Isfjorden/Pyramiden (zomer) of sneeuwscooter-/
+  hondensledetocht (winter/lente). Budget: ~€160-220/dag — de vlucht Oslo-Longyearbyen is zelf al
+  duur, tours 1500-3000 NOK/dag (⚠️ deze tourprijzen konden niet vers geherverifieerd worden,
+  indicatief 2024-2025-niveau, vlak voor boeken herchecken). Seizoen: maart-mei beste combinatie
+  daglicht+sneeuw voor sneeuwscooter/hondenslee en nog kans op noorderlicht in maart; juni-augustus
+  voor boottochten/middernachtzon; oktober-februari is poolnacht (donker, minder geschikt voor een
+  korte trip). ⚠️ Webcheck (2026-08): **Svalbard valt NIET onder Schengen**, ook al is het Noors
+  grondgebied — geen visum nodig om Svalbard zélf binnen te komen (Svalbardverdrag = visumvrij voor
+  alle nationaliteiten), maar de vlucht gaat altijd via het Noorse vasteland (Schengen), dus voor
+  die tussenstop gelden gewoon normale Schengen-inreisregels. Het verlaten van Longyearbyens
+  bebouwde kom zonder gewapende, ervaren gids is verboden i.v.m. ijsbeergevaar — elke
+  georganiseerde tour heeft dit al geregeld. Alleen SAS en Norwegian vliegen op Longyearbyen (LYR),
+  vanaf Oslo (~2u50) en Tromsø (~1u40), in het piekseizoen (maart-augustus) meer frequentie.
 
-## 🇸🇪 Zweden
+**Algemeen (webcheck 2026-08)**: reisadvies groen (laatst bijgewerkt 2 juli 2026) — aandacht voor
+zakkenrollerij rond Oslo Gardermoen/station en lawinegevaar in de winter. Schengen, geen visum,
+alleen een geldig paspoort/ID nodig (behalve voor Svalbard, zie boven).
 
-- [ ] 3–4 dagen — Stockholm
-- [ ] 5–7 dagen — Stockholm + omgeving
-- [ ] 7–10 dagen — Zuid-Zweden
-- [ ] 7–10 dagen — Zweden roadtrip
-- [ ] 10–14 dagen — Zweden + Noorwegen
-- [ ] 5–7 dagen — Zweeds Lapland (Kiruna + Abisko) *(nieuw, 2026-08 derde aanvulling)*
-- [ ] 7–10 dagen — Zweeds Lapland + noorderlicht (langere/donkerdere versie) *(nieuw, 2026-08 derde aanvulling)*
+## 🇸🇪 Zweden — batch 11, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-## 🇩🇰 Denemarken
+- [x] **3-4 dagen — Stockholm**. Gamla Stan, Södermalm, Vasamuseet, Skansen, Djurgården. Budget:
+  ~€100-130/dag. Seizoen: mei-september (juni-augustus drukst/duurst). ⚠️ Webcheck (2026-08):
+  Stockholm Pass-rendabiliteit vooraf checken tegen actuele 2026-museumprijzen.
+- [x] **5-7 dagen — Stockholm + omgeving** *(differentiator: alleen dagtrips vanuit Stockholm, geen
+  zuiden)*. Stockholm (3d) + dagtrips Uppsala (dom, Gamla Uppsala), Sigtuna, Stockholmse archipel
+  (Vaxholm, boot). Budget: ~€100-130/dag (+€30-50 op archipelboot-dagen). Seizoen: mei-september.
+  ⚠️ Webcheck (2026-08): de archipelbootdienst is seizoensgebonden (volledig schema vooral
+  april/mei-oktober), check het vaarschema 2026.
+- [x] **7-10 dagen — Zuid-Zweden (Skåne)** *(differentiator: alleen de Skåne-regio)*. Malmö (2d) —
+  Lund (dagtrip) — Ystad — Kivik/Österlen (Ales Stenar, Stenshuvud NP). Budget: ~€80-110/dag +
+  huurauto ~€35-50/dag. Seizoen: mei-september; Kivik-appelbloesem mei, -oogst september-oktober.
+  ⚠️ Webcheck (2026-08): Ystad Filmstudios-openingstijden zijn seizoensgebonden.
+- [x] **7-10 dagen — Zweden roadtrip** *(differentiator: bredere lus centraal+zuid)*. Stockholm —
+  Göta Kanal/Vadstena — Göteborg — Skåne — Småland (Glasriket) terug. Budget: ~€90-120/dag incl.
+  huurauto. Seizoen: mei-september. ⚠️ Webcheck (2026-08): Göta Kanal-boten varen mei-september;
+  Stockholm/Göteborg hebben een city-toll (camera, factuur achteraf), de rest van Zweden is
+  tolvrij.
+- [x] **10-14 dagen — Zweden + Noorwegen**. Stockholm — Kiruna/Abisko — grens Riksgränsen — Narvik
+  (Noorwegen) — Lofoten. Budget: ~€110-150/dag (Noorwegen duurder). Seizoen: juni-augustus
+  (middernachtzon, 15-20°C); oktober-april vermijden voor een roadtrip (ijs/poolnacht). ⚠️ Webcheck
+  (2026-08): Noorse tol via AutoPASS, Lofoten-veerdiensten seizoensafhankelijk, grensoverschrijdend
+  huren vooraf navragen bij de verhuurder. Noorwegen is Schengen maar geen EU — normaliter geen
+  grenscontrole, wel steekproef-douane (drank/tabak-limieten).
+- [x] **5-7 dagen — Zweeds Lapland (Kiruna + Abisko)** *(nieuw, 2026-08 derde aanvulling —
+  differentiator: korte aurora-trip)*. Kiruna (2-3d, 1 nacht Icehotel) — Abisko (2-3d, Aurora Sky
+  Station, Kungsleden-dagwandeling). Budget: ~€130-160/dag (incl. 1x Icehotel-upgrade €400-500,
+  rest regulier €90-120). Seizoen: december-februari kernwinter, of september/maart. ⚠️ Webcheck
+  (2026-08): de Aurora Sky Station-kabelbaan is seizoensgebonden, check openingsdagen vooraf. De
+  Kiruna-stadsverplaatsing loopt door (de houten Kiruna-kerk uit 1912, 672 ton, verhuisde op
+  20 augustus 2025 naar een nieuwe locatie; het nieuwe stadscentrum is sinds september 2022 in
+  gebruik, het project loopt door tot ~2035) — check de actuele plattegrond bij de VVV Kiruna, oude
+  centrumdelen zijn deels gesloopt/ontoegankelijk.
+- [x] **7-10 dagen — Zweeds Lapland + noorderlicht (langere/donkerdere versie)** *(nieuw, 2026-08
+  derde aanvulling — differentiator: langer, met meerdere aurora-avonden)*. Kiruna (3d, Icehotel +
+  hondenslee/sneeuwscooter) — Abisko (3-4d, meerdere aurora-avonden) — evt. dagtrip Nikkaluokta/
+  Kebnekaise. Budget: ~€140-180/dag (excursies €150-250/stuk). Seizoen: december-januari voor echte
+  poolnacht (-15 tot -25°C), alternatief november/februari milder. ⚠️ Webcheck (2026-08):
+  sneeuwscooter-rijbewijsvereisten vooraf navragen; extra dagen geven een grotere kans op een
+  heldere avond.
 
-- [ ] 3–4 dagen — Kopenhagen
-- [ ] 4–5 dagen — Kopenhagen + Zeeland
-- [ ] 5–7 dagen — Denemarken
-- [ ] 7–10 dagen — Denemarken + Zuid-Zweden
+**Algemeen (webcheck 2026-08)**: reisadvies groen, dreigingsniveau 3/5 (verhoogd risico
+aanslagen), zakkenrollerij in drukte, bendegeweld vooral in Stockholm/Malmö/Göteborg (niet op
+toeristen gericht). Schengen — geen grensfrictie met Noorwegen/Denemarken/Duitsland, al voert
+Zweden al sinds 2015 periodiek tijdelijke ID-controles in op de Öresundverbinding (trein/brug
+Kopenhagen-Malmö), telkens per periode verlengd — check vlak voor vertrek of dit nog actief is via
+politie.se of oresundsbron.com. Abisko's "blue hole"-microklimaat geeft structureel helderdere
+luchten dan de omgeving voor noorderlicht.
 
-## 🇫🇮 Finland
+## 🇩🇰 Denemarken — batch 11, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
-- [ ] 3–4 dagen — Helsinki
-- [ ] 5–7 dagen — Helsinki + merengebied
-- [ ] 7–10 dagen — Zuid-Finland
-- [ ] 7–10 dagen — Lapland
-- [ ] 10–14 dagen — Finland roadtrip
-- [ ] 4–5 dagen — Åland *(nieuw, 2026-08 derde aanvulling)*
+- [x] **3-4 dagen — Kopenhagen**. Nyhavn, Tivoli, Strøget, Christiania, Rosenborg. Budget:
+  ~€110-140/dag. Seizoen: mei-september; Tivoli sluit in het tussenseizoen (± begin januari-eind
+  maart) — check de 2026-kalender. ⚠️ Webcheck (2026-08): Copenhagen Card-rendabiliteit vooraf
+  doorrekenen.
+- [x] **4-5 dagen — Kopenhagen + Zeeland**. Kopenhagen (2-3d) + Roskilde (Vikingschipmuseum, trein)
+  + Louisiana Museum (Humlebæk) + Møns Klint (auto nodig, ~2u rijden). Budget: ~€100-130/dag
+  (+€40-60 op een huurautodag). ⚠️ Webcheck (2026-08): Møns Klint is amper met OV bereikbaar;
+  bezoekerscentrum/trappen kunnen seizoensonderhoud hebben.
+- [x] **5-7 dagen — Denemarken** *(differentiator: het hele land, inclusief Jutland)*. Kopenhagen
+  (2-3d) — Odense (H.C. Andersen) — LEGO House Billund — evt. Aarhus (ARoS). Budget: ~€100-130/dag.
+  ⚠️ Webcheck (2026-08): geen directe trein Kopenhagen-Billund (Flixbus of trein+bus); LEGO House
+  werkt met tijdslot-tickets, vooraf boeken.
+- [x] **7-10 dagen — Denemarken + Zuid-Zweden**. Kopenhagen (2-3d) — Zeeland-dagtrips (2d) —
+  Öresundbrug/trein naar Malmö (35 min) — Skåne (Lund, Ystad, Kivik, 3-4d). Budget: ~€100-130/dag.
+  ⚠️ Webcheck (2026-08): check vlak voor vertrek of Zweden een tijdelijke ID-controle op de
+  Öresundverbinding actief heeft (historisch regelmatig verlengd sinds 2015, zie ook de algemene
+  noot bij Zweden hierboven).
 
-## 🇫🇴 Faeröer
+**Algemeen (webcheck 2026-08)**: reisadvies groen (laatste update 08-05-2026), geen acute
+dreiging.
+
+## 🇫🇮 Finland — batch 11, uitgewerkt + WebSearch-geverifieerd (2026-08)
+
+- [x] **3-4 dagen — Helsinki**. Stad zelf, Suomenlinna, design district. Budget: ~€70-85/dag.
+  Seizoen: mei-september (licht/terrassen) of december (kerstmarkt); winter donker maar sfeervol.
+  ⚠️ Webcheck (2026-08): Helsinki Card-prijs is gestegen van 2025 naar 2026, check actuele
+  tarieven; de Suomenlinna-veerboot is inbegrepen in het HSL-ticket.
+- [x] **5-7 dagen — Helsinki + merengebied** *(differentiator: voegt Lahti/Savonlinna en het
+  Saimaa-meer toe)*. Helsinki + Lahti/Savonlinna, Saimaa-meer, sauna+kajak. Budget: ~€80-95/dag
+  (huurauto/trein + meer-activiteiten duurder). Seizoen: juni-augustus beste (zwemmen, witte
+  nachten); het Olavinlinna-kasteel in Savonlinna heeft een operafestival in juli, dan hogere
+  prijzen. ⚠️ Webcheck (2026-08): VR-treinverbindingen zijn beperkter naar kleinere meerplaatsen,
+  huurauto vaak nodig.
+- [x] **7-10 dagen — Zuid-Finland** *(differentiator: bredere geografische scope — Helsinki+Turku+
+  Porvoo+evt. Tampere, 3-4 steden i.p.v. 1)*. Budget: ~€80-90/dag. Seizoen: mei-september. ⚠️
+  Webcheck (2026-08): Porvoo's oude stad is gratis te bezoeken, Turku Castle/Turku Cathedral entree
+  ~€10-14.
+- [x] **7-10 dagen — Lapland**. Rovaniemi/Santa Claus Village + Levi of Ylläs voor aurora/ski.
+  Budget: ~€100-140/dag (huskytochten, sneeuwscooter, aurora-tours duur, €80-150 per activiteit).
+  Seizoen: december-maart voor noorderlicht/sneeuw, of juni-juli voor midnight sun; de kerstperiode
+  (half december) heeft piekprijzen bij Santa Claus Village. ⚠️ Webcheck (2026-08): Levi/Ylläs
+  liftpassen en accommodatie in de wintervakanties (februari) zijn fors duurder, ruim vooraf
+  boeken.
+- [x] **10-14 dagen — Finland roadtrip**. Helsinki→Zuid-Finland→Lapland-lus of Helsinki-Turku-
+  Tampere-Rovaniemi. Budget: ~€85-100/dag gemiddeld (auto/benzine + mix stad/natuur). Seizoen:
+  juni-augustus voor de volledige route zonder sneeuwproblemen op de wegen in het noorden. ⚠️
+  Webcheck (2026-08): lange afstanden (Helsinki-Rovaniemi ~830km), overweeg de nachttrein met
+  autotransport (VR) in plaats van zelf rijden.
+- [x] **4-5 dagen — Åland** *(nieuw, 2026-08 derde aanvulling)*. Mariehamn + fietsen tussen de
+  eilanden. Budget: ~€75-90/dag. Seizoen: juni-augustus (fietsweer, veerdiensten frequenter). ⚠️
+  Webcheck (2026-08): Åland is Fins/EU-douanegebied maar uitgesloten van de EU-btw/accijnzone
+  ("derde gebied" voor indirecte belasting, Ålandprotocol) — tax-free verkoop aan boord blijft
+  daardoor mogelijk, dit blijft in 2026 ongewijzigd EU-recht; Zweeds is de voertaal, euro is de
+  munt (Fins gebied, geen Zweedse kronen). Viking Line en Tallink Silja varen dagelijks Stockholm-
+  Mariehamn (~5,5u directe route) en de langere Helsinki/Turku-Mariehamn-Stockholm-lijn.
+
+**Algemeen (webcheck 2026-08)**: reisadvies groen ("u kunt erheen reizen", laatst gewijzigd
+10-02-2026). Schengen, geen visum nodig.
+
+## 🇫🇴 Faeröer — batch 11, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
 *(nieuw, 2026-08 derde aanvulling)* — de realistische, kortere "Trip Ideas"-versie; bestaat
 al als aspirational Route Builder-splitroute binnen Nordic Arctic Expedition ❄️, dit is geen
 duplicaat maar een ander soort trip (korte vakantie i.p.v. epic) op dezelfde bestemming.
 
-- [ ] 5–7 dagen — Faeröer
-- [ ] 7–10 dagen — Faeröer + IJsland
+- [x] **5-7 dagen — Faeröer**. Tórshavn (2d) + Múlafossur/Gásadalur + Saksun + Vestmanna
+  vogelklif-boottocht. Budget: ~€100-120/dag (Faeröer is duur: eten/accommodatie Scandinavisch
+  prijsniveau, huurauto vrijwel noodzakelijk). Seizoen: mei-september, de Vestmanna-boottochten
+  varen doorgaans alleen in dit seizoen. ⚠️ Webcheck (2026-08): Atlantic Airways vliegt vanuit
+  Kopenhagen minimaal 2x/dag, in de zomer (juni-augustus) tot 4x/dag, juli 2026 zelfs uitgebreid
+  (111 vs. 100 vluchten juli 2025) — toch is Vágar-vliegveld berucht om mist/wind, vertragingen/
+  annuleringen zijn reëel, buffer inplannen. Smyril Line-ferry Hirtshals-Tórshavn 2x/week, ~30-38u,
+  vanaf ~€150 (alternatief bij vluchtproblemen of met eigen auto). Trælanípa-wandeling: windgevaar
+  bij >15m/s op de onbeveiligde klifrand, mist ontneemt het uitzicht — check lokaal weather.fo
+  vooraf. Faeröer zit in de Nordic Passport Union maar NIET in de EU/Schengen; een Nederlander
+  reist visumvrij op paspoort (geen ID-kaart, want buiten Schengen — incidentele paspoortcontrole
+  mogelijk ondanks het "Deense binnenland"-gevoel van de vlucht).
+- [x] **7-10 dagen — Faeröer + IJsland**. Budget: ~€110-130/dag (IJsland duurder dan Faeröer).
+  Praktische verbinding: de Smyril Line MS Norröna combineert beide in één overtocht
+  (Faeröer-IJsland doorvaart, wekelijks) — minimumverblijf vereist: 1 week IJsland + 3 dagen-1 week
+  Faeröer, vanaf ~€810 (25% aanbetaling); als alternatief apart vliegen (geen directe Atlantic
+  Airways FAE-Reykjavik-lijn gevonden, waarschijnlijk via Kopenhagen). Seizoen: juni-augustus voor
+  het gunstigste Norröna-schema. ⚠️ Webcheck (2026-08): dit is bewust de korte-vakantie-versie los
+  van de aspirational "Nordic Arctic Expedition"-epic in de Route Builder, geen duplicaat maar een
+  kortere praktische combi.
 
-## 🇮🇸 IJsland
+**Algemeen (webcheck 2026-08)**: Denemarken (waaronder Faeröer valt) reisadvies groen
+(08-05-2026), geen aparte notitie voor Faeröer zelf op nederlandwereldwijd.nl.
 
-- [ ] 4–5 dagen — Reykjavík + Golden Circle
-- [ ] 5–7 dagen — Zuid-IJsland
-- [ ] 7–10 dagen — IJsland South Coast
-- [ ] 10–14 dagen — Ring Road
-- [ ] 14 dagen — IJsland uitgebreid
+## 🇮🇸 IJsland — batch 11, uitgewerkt + WebSearch-geverifieerd (2026-08)
+
+- [x] **4-5 dagen — Reykjavík + Golden Circle**. Reykjavík (2d, stad/haven) + Golden Circle-dagtour
+  (Þingvellir, Geysir, Gullfoss, 1d) + Blue Lagoon (via Keflavík, 1d) + buffer. Budget:
+  ~€130-160/dag (accommodatie budget-comfort + huurauto/dagtour + maaltijden, IJsland is duur).
+  Seizoen: hele jaar; zomer (juni-augustus) voor lange dagen, winter (oktober-maart) voor
+  noorderlicht maar kortere daglichturen en gladde wegen. ⚠️ Webcheck (2026-08): Blue Lagoon
+  verplicht vooraf boeken, geen walk-in, prijs indicatief vanaf ~€65-75 (Comfort) — exacte
+  2026-prijs niet met zekerheid bevestigd, dus vlak voor boeken zelf checken. De rit naar de Blue
+  Lagoon loopt door het Reykjanes-schiereiland (zie de algemene veiligheidsnoot hieronder); de
+  Golden Circle zelf (Þingvellir/Geysir/Gullfoss) ligt daarbuiten, geen impact.
+- [x] **5-7 dagen — Zuid-IJsland** *(differentiator: eindpunt Vík, niet verder)*. Reykjavík (1-2d)
+  + Golden Circle (1d) + zuidkust t/m Vík (Seljalandsfoss, Skógafoss, Reynisfjara zwart strand,
+  Vík, 2-3d), retour Reykjavík. Budget: ~€120-150/dag. Seizoen: mei-september beste
+  wegomstandigheden. ⚠️ Webcheck (2026-08): Route 1 tot Vík volledig verhard/2WD, geen F-wegen
+  nodig, geen vulkaanimpact op dit traject. Reynisfjara: pas op voor "sneaker waves" (gevaarlijke
+  golven), hele jaar geldig advies.
+- [x] **7-10 dagen — IJsland South Coast** *(differentiator: doorgetrokken voorbij Vík naar
+  Jökulsárlón/Höfn i.p.v. daar te stoppen)*. Als Zuid-IJsland, maar door naar Jökulsárlón-
+  gletsjerlagune + Diamond Beach + Höfn (2-3 dagen extra), evt. ijsgrotten-tour in de winter
+  (november-maart, alleen met gids). Budget: ~€120-145/dag. Seizoen: juni-september voor
+  rijcomfort; winter (november-maart) specifiek voor de ijsgrotten bij Vatnajökull (alleen
+  begeleide tours, weersafhankelijk). ⚠️ Webcheck (2026-08): Route 1 tot Höfn volledig verhard,
+  geen 4x4 nodig; ijsgrottours altijd met lokale gids boeken.
+- [x] **10-14 dagen — Ring Road** *(differentiator: de complete cirkel, niet alleen de zuidkust)*.
+  Volledige Route 1 rondrit (1332 km): Reykjavík → zuidkust/Jökulsárlón → oost-fjorden (Egilsstaðir/
+  Seyðisfjörður) → Noord-IJsland (Mývatn, Akureyri, Húsavík walvissen) → terug via het westen.
+  Budget: ~€115-140/dag (huurauto essentieel, meeste dagen zelfvoorzienend/guesthouse). Seizoen:
+  juni-half september optimaal (alle wegen open, minste risico op sneeuwval). ⚠️ Webcheck
+  (2026-08): Route 1 zelf blijft 2WD/verhard, geen F-wegen nodig voor de ringweg; wel enkele
+  onverharde zijwegen naar attracties (bv. delen van Snæfellsnes indien toegevoegd); check
+  umferdin.is voor actuele wegomstandigheden vlak voor vertrek, vooral buiten de hoogzomer.
+- [x] **14 dagen — IJsland uitgebreid** *(differentiator: Ring Road + verdieping — Westfjorden of
+  een hooglandtour — i.p.v. alleen langer op dezelfde route)*. Volledige Ring Road (zie hierboven)
+  + extra afsplitsing: óf de Westfjorden (afgelegen, dramatische fjorden, Dynjandi-waterval) óf een
+  hooglandtour (bv. Landmannalaugar/Þórsmörk via F-weg met 4x4). Budget: ~€130-160/dag
+  (hooglandtour vereist 4x4-huur, duurder dan 2WD; Westfjorden = meer benzine/afstand, weinig
+  voorzieningen). Seizoen: de hooglandoptie is alléén haalbaar medio juni-begin september (F-wegen
+  dan pas open, jaarlijks variabel, check vegagerdin.is/umferdin.is); Westfjorden de hele zomer,
+  sommige bergpassen hebben een wintersluiting. ⚠️ Webcheck (2026-08): de hooglandroute vereist
+  verplicht 4x4 + rivierdoorwaadplaatsen, niet verzekerd bij een standaard 2WD-huurauto, check
+  openingsdata net voor vertrek; de Westfjorden-optie blijft op verharde/2WD-geschikte hoofdwegen.
+
+**Algemeen (webcheck 2026-08)**: reisadvies (laatst gewijzigd 21-04-2026, geldig t/m 14-08-2026) —
+**geel voor het Reykjanes-schiereiland** (lopende vulkanische activiteit bij Grindavík, kans op een
+nieuwe uitbarsting blijft aanwezig), groen voor de rest van IJsland. Sinds september 2025 geen
+actieve uitbarsting; Grindavík zelf is weer open, maar blijft kwetsbaar (verse lava, gasrisico,
+sirenes mogelijk) — check safetravel.is/eruption-in-reykjanes/ vlak voor vertrek. Keflavík-
+vliegveld en de weg Reykjavík-Keflavík functioneren normaal. Schengen, Nederlands paspoort is
+visumvrij, geen ETA nodig (standaard Schengen-inreis).
 
 ## 🇮🇪 Ierland — batch 12, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
@@ -2218,7 +2427,8 @@ volgorde:
     WebSearch-geverifieerd.**
 11. **Noord-Europa: Noorwegen + Zweden + Denemarken + Finland + IJsland + Faeröer** (32, was 26 —
     +Zweeds Lapland/Svalbard/Åland/Faeröer, derde aanvulling 2026-08; Faeröer is hier een nieuw
-    landje in het cluster, geen bestaand land dat groeide).
+    landje in het cluster, geen bestaand land dat groeide). **Gedaan (2026-08), WebSearch-
+    geverifieerd.**
 12. **Britse eilanden: Engeland + Wales + Noord-Ierland + Ierland + Schotland** (17, was 10 —
     +Engeland/Wales/Noord-Ierland als nieuwe sectie en +Orkney/Shetland/Buiten-Hebriden bij
     Schotland, derde aanvulling 2026-08; batch hernoemd omdat Engeland/Wales/NI er nu inzit).

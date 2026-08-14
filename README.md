@@ -201,7 +201,7 @@ Oostkust 🗽** (DC-Philadelphia-New York-Boston via train, 12d/€1.365), **US 
 choice — Vancouver-Anchorage is already the natural flight link), new total 32d/€5.875 (was
 22d/€4.275).
 
-## Europa Trip Ideas (nieuw, 2026-08 — batches 1-10 + 12 + 13 klaar)
+## Europa Trip Ideas (nieuw, 2026-08 — batches 1-13 klaar)
 
 See [`EUROPA_TRIP_IDEAS.md`](EUROPA_TRIP_IDEAS.md) — Youri's own big raw list (~230 items, extended
 2026-08 with a second batch of additions — micro-states, Cyprus/Malta/Moldavië/Kosovo/Corsica/
@@ -216,15 +216,16 @@ continent group in Route Builder's list view automatically. Not yet done: actual
 worked-out item into `routeBuilder.js` as a real `rbBuildXRoute()` — that's a separate step, likely
 done in one pass once several batches are ready rather than per item.
 
-**Status: batches 1-10 + 12 + 13 done** (batches 12 and 13 done out of order — Youri picked them
-directly rather than following strict numbering) — Benelux (6), Duitsland (12), Oostenrijk +
+**Status: batches 1-13 done** (batches 12 and 13 done out of order before batch 11 — Youri picked
+them directly rather than following strict numbering) — Benelux (6), Duitsland (12), Oostenrijk +
 Zwitserland (12), Frankrijk (11), Italië (16), micro-staten & kleine eilanden (20), Iberië (26),
 Balkan-cluster (44: Kroatië/Slovenië/Bosnië/Montenegro/Albanië/Servië/Noord-Macedonië/Kosovo),
 Centraal/Oost-Europa (35: Roemenië/Bulgarije/Moldavië/Hongarije/Tsjechië/Slowakije/Polen),
-Oost-Mediterraan (18: Griekenland/Cyprus/Turkije), Britse eilanden (17: Ierland/Schotland/
-Engeland/Wales/Noord-Ierland), Baltische staten (6: Estland/Letland/Litouwen). Route/dagen/budget/
-seizoen/vervoer per trip. Benelux was written from general knowledge then WebSearch-verified
-afterward;
+Oost-Mediterraan (18: Griekenland/Cyprus/Turkije), Noord-Europa (32: Noorwegen/Zweden/Denemarken/
+Finland/Faeröer/IJsland), Britse eilanden (17: Ierland/Schotland/Engeland/Wales/Noord-Ierland),
+Baltische staten (6: Estland/Letland/Litouwen). Route/dagen/budget/seizoen/vervoer per trip. Only
+batches 14 (🏝️ Europese eilanden) and 15 (combinatiesecties) remain. Benelux was written from
+general knowledge then WebSearch-verified afterward;
 **standard practice from batch 2 onward**: 2-3 parallel WebSearch-backed research agents (grouped
 by sub-region) before writing anything, not after — this caught real route improvements each time
 (Duitsland: Rijn+Moezel via Koblenz, Berchtesgaden as a loop-closer; Oostenrijk/Zwitserland:
@@ -287,9 +288,10 @@ Vaticaanstad/Monaco/Corsica/Malta), (7) ~~Iberië: Spanje + Portugal + Andorra~~
 ~~Balkan-cluster (Kroatië/Slovenië/Bosnië/Montenegro/Albanië/Servië/Noord-Macedonië/Kosovo)~~
 **done**, (9) ~~Centraal/Oost-Europa (Roemenië/Bulgarije/
 Hongarije/Tsjechië/Slowakije/Polen/Moldavië)~~ **done**, (10) ~~Oost-Mediterraan (Griekenland/
-Cyprus/Turkije-Europees + Egeïsche kust)~~ **done**, (11) Noord-Europa (Noorwegen/Zweden/Denemarken/Finland/IJsland/Faeröer),
-(12) ~~Britse eilanden (Engeland/Wales/Noord-Ierland/Ierland/Schotland)~~ **done**, (13) Baltische
-staten, (14)
+Cyprus/Turkije-Europees + Egeïsche kust)~~ **done**, (11) ~~Noord-Europa (Noorwegen/Zweden/
+Denemarken/Finland/IJsland/Faeröer)~~ **done**,
+(12) ~~Britse eilanden (Engeland/Wales/Noord-Ierland/Ierland/Schotland)~~ **done**, (13)
+~~Baltische staten~~ **done**, (14)
 🏝️ Europese eilanden (Madeira/Azoren/Canarische Eilanden/Balearen/Kanaaleilanden/Isle of Man/
 gedetailleerdere Italiaanse+Griekse eilanden), (15) de combinatiesecties onderin het bestand
 (bewust laatst, want die hergebruiken de losse-landen-batches). **Batch 12 (Britse eilanden) en
@@ -311,8 +313,8 @@ Bij de Egeïsche-kust-uitzondering werd ook de lijst-regel zelf scherper gemaakt
 "Europa, geografisch" maar "dichtbij, geschikt voor city trip/~1 week, geen dure/lange vlucht voor
 zo'n korte periode" — dat is de regel voor toekomstige twijfelgevallen.
 
-**Next up: batch 11, Noord-Europa** (Noorwegen/Zweden/Denemarken/Finland/IJsland/Faeröer, 32
-items).
+**Next up: batch 14 (🏝️ Europese eilanden, 30 items) of batch 15 (combinatiesecties, 33 items,
+bewust laatst).**
 
 ## Search
 
