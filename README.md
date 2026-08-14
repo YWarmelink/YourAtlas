@@ -201,7 +201,7 @@ Oostkust 🗽** (DC-Philadelphia-New York-Boston via train, 12d/€1.365), **US 
 choice — Vancouver-Anchorage is already the natural flight link), new total 32d/€5.875 (was
 22d/€4.275).
 
-## Europa Trip Ideas (nieuw, 2026-08 — batches 1-14 klaar)
+## Europa Trip Ideas (nieuw, 2026-08 — alle 15 batches klaar, het hele document is af)
 
 See [`EUROPA_TRIP_IDEAS.md`](EUROPA_TRIP_IDEAS.md) — Youri's own big raw list (~230 items, extended
 2026-08 with a second batch of additions — micro-states, Cyprus/Malta/Moldavië/Kosovo/Corsica/
@@ -216,17 +216,18 @@ continent group in Route Builder's list view automatically. Not yet done: actual
 worked-out item into `routeBuilder.js` as a real `rbBuildXRoute()` — that's a separate step, likely
 done in one pass once several batches are ready rather than per item.
 
-**Status: batches 1-14 done** (batches 12, 13 and 14 done out of order before/around batch 11 —
-Youri picked them directly rather than following strict numbering) — Benelux (6), Duitsland (12),
-Oostenrijk + Zwitserland (12), Frankrijk (11), Italië (16), micro-staten & kleine eilanden (20),
-Iberië (26), Balkan-cluster (44: Kroatië/Slovenië/Bosnië/Montenegro/Albanië/Servië/Noord-Macedonië/
-Kosovo), Centraal/Oost-Europa (35: Roemenië/Bulgarije/Moldavië/Hongarije/Tsjechië/Slowakije/Polen),
-Oost-Mediterraan (18: Griekenland/Cyprus/Turkije), Noord-Europa (32: Noorwegen/Zweden/Denemarken/
-Finland/Faeröer/IJsland), Britse eilanden (17: Ierland/Schotland/Engeland/Wales/Noord-Ierland),
-Baltische staten (6: Estland/Letland/Litouwen), 🏝️ Europese eilanden (30: Madeira/Azoren/
-Canarische Eilanden/Balearen/Italiaanse eilanden/Griekse eilanden/Kanaaleilanden+Isle of Man).
-Route/dagen/budget/seizoen/vervoer per trip. Only batch 15 (combinatiesecties, deliberately last)
-remains. Benelux was written from general knowledge then WebSearch-verified afterward;
+**Status: all 15 batches done — the entire document is finished** (batches 11-15 done in a
+non-sequential order picked directly by Youri each time: 13, 12, 11, 14, then 15 to close it out)
+— Benelux (6), Duitsland (12), Oostenrijk + Zwitserland (12), Frankrijk (11), Italië (16),
+micro-staten & kleine eilanden (20), Iberië (26), Balkan-cluster (44: Kroatië/Slovenië/Bosnië/
+Montenegro/Albanië/Servië/Noord-Macedonië/Kosovo), Centraal/Oost-Europa (35: Roemenië/Bulgarije/
+Moldavië/Hongarije/Tsjechië/Slowakije/Polen), Oost-Mediterraan (18: Griekenland/Cyprus/Turkije),
+Noord-Europa (32: Noorwegen/Zweden/Denemarken/Finland/Faeröer/IJsland), Britse eilanden (17:
+Ierland/Schotland/Engeland/Wales/Noord-Ierland), Baltische staten (6: Estland/Letland/Litouwen),
+🏝️ Europese eilanden (30: Madeira/Azoren/Canarische Eilanden/Balearen/Italiaanse eilanden/Griekse
+eilanden/Kanaaleilanden+Isle of Man), combinatiesecties (33: Iberië-combo/Balkan-combo/Grote
+Europese combinaties). Route/dagen/budget/seizoen/vervoer per trip. Benelux was written from
+general knowledge then WebSearch-verified afterward;
 **standard practice from batch 2 onward**: 2-3 parallel WebSearch-backed research agents (grouped
 by sub-region) before writing anything, not after — this caught real route improvements each time
 (Duitsland: Rijn+Moezel via Koblenz, Berchtesgaden as a loop-closer; Oostenrijk/Zwitserland:
@@ -303,9 +304,9 @@ Denemarken/Finland/IJsland/Faeröer)~~ **done**,
 (12) ~~Britse eilanden (Engeland/Wales/Noord-Ierland/Ierland/Schotland)~~ **done**, (13)
 ~~Baltische staten~~ **done**, (14) ~~🏝️ Europese eilanden (Madeira/Azoren/Canarische Eilanden/
 Balearen/Kanaaleilanden/Isle of Man/gedetailleerdere Italiaanse+Griekse eilanden)~~ **done**, (15)
-de combinatiesecties onderin het bestand (bewust laatst, want die hergebruiken de
-losse-landen-batches). **Batches 12, 13 en 14 zijn buiten de volgorde om al gedaan** — Youri koos
-ze zelf; alleen batch 15 staat nog open.
+~~de combinatiesecties onderin het bestand~~ **done** (bewust laatst gedaan, want die hergebruiken
+de losse-landen-batches). **Alle 15 batches zijn nu klaar** — batches 12, 13, 14 en 15 zijn buiten
+de oorspronkelijke volgorde om gedaan, telkens Youri's eigen keuze.
 
 **Derde aanvulling (2026-08) — verwerkt**: Youri leverde daarna nog een brede regio-checklist
 (West-/Noord-/Centraal-/Zuid-Europa, Balkan, microstaten, Turkije, bijzondere eilanden). Bijna
@@ -323,7 +324,10 @@ Bij de Egeïsche-kust-uitzondering werd ook de lijst-regel zelf scherper gemaakt
 "Europa, geografisch" maar "dichtbij, geschikt voor city trip/~1 week, geen dure/lange vlucht voor
 zo'n korte periode" — dat is de regel voor toekomstige twijfelgevallen.
 
-**Next up: batch 15 (combinatiesecties, 33 items) — the last remaining batch.**
+**All batches done — nothing left in this checklist.** The next step for Route Builder specifically
+is the still-not-started conversion of each worked-out item into a real `rbBuildXRoute()` in
+`routeBuilder.js` (see the intro above) — likely done in one focused pass whenever Youri wants to
+pick that up, not per item.
 
 ## Search
 

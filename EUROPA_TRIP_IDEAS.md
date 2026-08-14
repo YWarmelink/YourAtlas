@@ -1,9 +1,11 @@
 # Europa — Trip Ideas
 
-Status: **batch 1 t/m 14 uitgewerkt** (Benelux, Duitsland, Oostenrijk+Zwitserland, Frankrijk,
-Italië, micro-staten & kleine eilanden, Iberië, Balkan-cluster, Centraal/Oost-Europa,
-Oost-Mediterraan, Noord-Europa, Britse eilanden, Baltische staten, 🏝️ Europese eilanden). Alleen
-batch 15 (combinatiesecties) staat nog open.** Youri's eigen lijst (2026-08) van realistische
+Status: **alle 15 batches uitgewerkt (2026-08) — heel dit document is af.** Benelux, Duitsland,
+Oostenrijk+Zwitserland, Frankrijk, Italië, micro-staten & kleine eilanden, Iberië, Balkan-cluster,
+Centraal/Oost-Europa, Oost-Mediterraan, Noord-Europa, Britse eilanden, Baltische staten,
+🏝️ Europese eilanden, en de combinatiesecties (Iberië-combo/Balkan-combo/Grote Europese
+combinaties). Nog niet gedaan: de stap om elk uitgewerkt item als `rbBuildXRoute()` in
+`routeBuilder.js` te zetten (zie de intro hierboven) — dat gebeurt als eigen, aparte vervolgstap. Youri's eigen lijst (2026-08) van realistische
 Europese trips — van lang weekend tot ~3 weken, allemaal "reëel en slim te maken" omdat ze binnen
 Europa blijven. Dit is bewust alleen duur + bestemming/route, geen route/budget/seizoen-detail —
 dat werken we samen per batch uit, zoals Route Builder's expedities dat ook kregen (zie de
@@ -1709,12 +1711,30 @@ Rusland zijn open, geen foto's bij grens-/militaire objecten. Volledig Schengen,
 grenscontroles gemeld met Tsjechië/Slowakije. Duitsland heeft landgrenscontroles met Polen verlengd
 t/m 15-9-2026 (steekproef-ID-checks, relevant bij een route via Duitsland).
 
-## 🇵🇹🇪🇸 Iberië (combinaties)
+## 🇵🇹🇪🇸 Iberië (combinaties) — batch 15, uitgewerkt (2026-08, hergebruikt geverifieerde
+landendata uit batch 7)
 
-- [ ] 7–10 dagen — Noord-Portugal + Galicië
-- [ ] 10–14 dagen — Porto + Noord-Spanje
-- [ ] 10–14 dagen — Portugal + Andalusië
-- [ ] 14 dagen — Portugal + Spanje roadtrip
+- [x] **7-10 dagen — Noord-Portugal + Galicië**. Porto (2-3d, Ribeira/Vila Nova de Gaia/Douro-
+  dagtrip) → Guimarães/Braga (dagtrips) → Viana do Castelo → grens Valença-Tui (geen controle) →
+  Santiago de Compostela (2d) → Rías Baixas-dagtrip → evt. Cíes-eilanden. Budget: ~€75-85/dag
+  (beide goedkope regio's). Seizoen: juni-september. ⚠️ Webcheck (2026-08): open-jaw Porto in/
+  Santiago out is mogelijk (check actuele vluchtdienstregeling). Schengen-intern, geen EES.
+- [x] **10-14 dagen — Porto + Noord-Spanje** *(differentiator: verlengt item 1 oostwaarts)*.
+  Santiago → Oviedo/Gijón (Asturië) → Picos de Europa → Santander/Santillana del Mar → Bilbao/
+  San Sebastián. Budget: ~€80-90/dag. Seizoen: juni-september. ⚠️ Webcheck (2026-08): open-jaw
+  Porto in/Bilbao out — eenrichtings-huurauto geeft inleverkosten.
+- [x] **10-14 dagen — Portugal + Andalusië** *(differentiator: zuid-gericht i.p.v. noord)*. Lissabon
+  +Sintra (3-4d) → Algarve (3d) → grens Ayamonte-Huelva (brug, geen controle) → Sevilla (2d) →
+  Córdoba (1-2d) → Granada (2d). Budget: ~€85-95/dag. Seizoen: april-juni/september-oktober,
+  vermijd juli-augustus (binnenland 40°C+). ⚠️ Webcheck (2026-08): Alhambra 2-3 maanden vooraf
+  boeken.
+- [x] **14 dagen — Portugal + Spanje roadtrip** *(differentiator: breedste versie, combineert
+  noord én zuid)*. Porto → Douro → Coimbra → Lissabon+Sintra → Algarve → Sevilla → Córdoba →
+  Granada. Budget: ~€85-95/dag. Seizoen: april-juni/september-oktober. ⚠️ Webcheck (2026-08): 14
+  dagen voor 6+ regio's is ambitieus, net als de solo-Portugal-roadtrip al waarschuwde.
+
+**Algemeen (webcheck 2026-08)**: Portugal en Spanje beide groen, volledig Schengen-intern, geen
+grenscontrole/EES op deze routes.
 
 ## 🇳🇴 Noorwegen — batch 11, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
@@ -2252,16 +2272,46 @@ noodzakelijke reizen, niet voor vakantie; spanningen rond de brug in Mitrovica z
 (augustus 2026, KFOR-transitie) — geen van de items hierboven raakt dit gebied. Landmijnen in
 afgelegen grensgebieden Kosovo-Albanië en op de Dulje-pas.
 
-## 🇸🇮🇭🇷🇧🇦🇲🇪 Balkan (combinaties)
+## 🇸🇮🇭🇷🇧🇦🇲🇪 Balkan (combinaties) — batch 15, uitgewerkt (2026-08, hergebruikt geverifieerde
+landendata uit batch 8)
 
-- [ ] 7–10 dagen — Slovenië + Kroatië
-- [ ] 7–10 dagen — Kroatië + Bosnië
-- [ ] 7–10 dagen — Bosnië + Montenegro
-- [ ] 10–14 dagen — Slovenië + Kroatië + Bosnië
-- [ ] 10–14 dagen — Kroatië + Bosnië + Montenegro
-- [ ] 10–14 dagen — Slovenië + Kroatië + Montenegro
-- [ ] 14 dagen — Grote Balkan Roadtrip
-- [ ] 14 dagen — Adriatische Roadtrip
+- [x] **7-10 dagen — Slovenië + Kroatië** *(differentiator: kustversie, i.p.v. de bestaande inland
+  Zagreb/Plitvice-variant elders in dit document)*. Ljubljana+Bled (3d) → Istrië: Rovinj+Pula
+  (3-4d). Budget: ~€95-130/dag. Seizoen: mei-juni/september. ⚠️ Webcheck (2026-08): Schengen-intern
+  sinds 1-1-2023, geen EES.
+- [x] **7-10 dagen — Kroatië + Bosnië** *(differentiator: Split-anchored, i.p.v. de bestaande
+  Dubrovnik-versie)*. Split (2-3d) → Mostar (Kravice/Blagaj) → Sarajevo (2-3d) → terug via de
+  Pelješac-brug. Budget: ~€70-95/dag. ⚠️ Webcheck (2026-08): EES-buitengrens, 3-6 min/persoon
+  biometrie; paspoort verplicht; huurauto vaak +€10-15/dag Bosnië-toeslag.
+- [x] **7-10 dagen — Bosnië + Montenegro** *(differentiator: omgekeerde richting + Budva erbij)*.
+  Sarajevo → Mostar → Trebinje → Kotor+Perast → Budva. Budget: ~€48-58/dag. ⚠️ Webcheck (2026-08):
+  grens niet-Schengen↔niet-Schengen, geen EES hier, doorgaans rustig. Bosnië rekent in KM,
+  Montenegro in euro (unilateraal, niet-EU) — contant meenemen.
+- [x] **10-14 dagen — Slovenië + Kroatië + Bosnië**. Ljubljana+Bled → Zagreb+Plitvice → Split →
+  Mostar → Sarajevo → terug via de Pelješac-brug. Budget: ~€80-110/dag. ⚠️ Webcheck (2026-08):
+  Slovenië-Kroatië intern, Kroatië-Bosnië is een EES-grens.
+- [x] **10-14 dagen — Kroatië + Bosnië + Montenegro**. Split/Dubrovnik → Mostar → Sarajevo →
+  Trebinje → Kotor. Budget: ~€55-65/dag. ⚠️ Webcheck (2026-08): 2 EES-overgangen, Karasovići
+  juli-augustus 2-5u wachttijd — plan een ochtendgrens.
+- [x] **10-14 dagen — Slovenië + Kroatië + Montenegro** *(differentiator: kust-only trio, bewust
+  zonder Bosnië-binnenland)*. Ljubljana+Bled → Istrië/Split → Dubrovnik → Kotor+Budva. Budget:
+  ~€95-125/dag (geen goedkope Bosnië-etappe). ⚠️ Webcheck (2026-08): enige niet-Schengen-overgang is
+  Karasovići (Kroatië-Montenegro), zelfde 2-5u-piek in juli/augustus.
+- [x] **14 dagen — Grote Balkan Roadtrip** *(differentiator: breedste lus, wél Sarajevo/binnenland
+  — zie ook "Balkan Roadtrip" onder "Grote Europese combinaties" hieronder, die bewust een andere,
+  verder zuidoostelijke landenset heeft — Servië/Noord-Macedonië/Albanië/Kosovo, geen overlap)*.
+  Ljubljana+Bled → Zagreb+Plitvice → Zadar/Split → Mostar+Sarajevo → Trebinje → Kotor+Budva → evt.
+  Dubrovnik terug. Budget: ~€75-105/dag (grote spreiding). ⚠️ Webcheck (2026-08): kies 5-6
+  hoofdstops, 2-3 EES-overgangen onderweg.
+- [x] **14 dagen — Adriatische Roadtrip** *(differentiator: kust-only tegenhanger van hierboven,
+  expliciet zonder Sarajevo)*. Ljubljana → Piran → Rovinj/Pula → Zadar/Split/Hvar → Dubrovnik (via
+  Pelješac, geen Neum) → Kotor+Perast+Budva → optioneel Albanese Riviera. Budget: ~€100-140/dag
+  (geen goedkope binnenland-etappe). ⚠️ Webcheck (2026-08): de Pelješac-brug omzeilt Bosnië volledig
+  op het Kroatië-stuk; nog 1 EES-overgang bij Kroatië→Montenegro (2-5u juli-augustus); een
+  optionele Albanië-extensie voegt Sukobin-Muriqan toe (10-45 min, weekend tot 1,5-2u).
+
+**Algemeen (webcheck 2026-08)**: Slovenië/Kroatië Schengen, Bosnië/Montenegro niet-Schengen (EES
+sinds 10-04-2026 volledig operationeel). Alle betrokken landen groen op nederlandwereldwijd.nl.
 
 ## 🏝️ Europese eilanden — batch 14, uitgewerkt + WebSearch-geverifieerd (2026-08)
 
@@ -2508,30 +2558,159 @@ jaar of tot het paspoort verloopt) geeft toegang tot het VK + Jersey + Guernsey 
 — sinds 23 april 2026 uitgebreid naar alle Kroonbezittingen, geen aparte aanvraag per eiland nodig.
 Een combi-trip VK+Kanaaleilanden+Isle of Man kan dus met 1 ETA.
 
-## 🇪🇺 Grote Europese combinaties
+## 🇪🇺 Grote Europese combinaties — batch 15, uitgewerkt (2026-08, hergebruikt geverifieerde
+landendata uit de eerdere batches; dit is de allerlaatste sectie van heel EUROPA_TRIP_IDEAS.md)
 
-- [ ] 7–10 dagen — Oostenrijk + Slovenië
-- [ ] 7–10 dagen — Oostenrijk + Tsjechië
-- [ ] 7–10 dagen — Polen + Tsjechië
-- [ ] 7–10 dagen — Hongarije + Oostenrijk + Slovenië
-- [ ] 7–10 dagen — Andorra + Spaanse Pyreneeën
-- [ ] 7–10 dagen — Franse + Spaanse Pyreneeën
-- [ ] 10–14 dagen — Polen + Slowakije + Hongarije
-- [ ] 10–14 dagen — Tsjechië + Oostenrijk + Hongarije
-- [ ] 10–14 dagen — Duitsland + Oostenrijk + Italië
-- [ ] 10–14 dagen — Duitsland + Oostenrijk + Slovenië
-- [ ] 10–14 dagen — Oostenrijk + Slovenië + Kroatië
-- [ ] 10–14 dagen — Italië + Slovenië + Kroatië
-- [ ] 10–14 dagen — Frankrijk + Zwitserland + Italië
-- [ ] 10–14 dagen — Spanje + Portugal
-- [ ] 10–14 dagen — Noorwegen + Zweden
-- [ ] 10–14 dagen — Denemarken + Zweden + Noorwegen
-- [ ] 14 dagen — Noord-Europa Roadtrip
-- [ ] 14 dagen — Centraal-Europa Roadtrip
-- [ ] 14 dagen — Balkan Roadtrip
-- [ ] 14 dagen — Alpen Roadtrip
-- [ ] 14 dagen — Zuid-Europa Roadtrip
-- [ ] 14–21 dagen — Grote Europese Roadtrip
+- [x] **7-10 dagen — Oostenrijk + Slovenië**. Salzburg/Grossglockner-gebied (5d) → zuidwaarts
+  Klagenfurt/Wörthersee → Bled/Bohinj (+evt. Ljubljana, 4d). Budget: ~€95-130/dag (Oostenrijk),
+  ~€90-110/dag (Slovenië, Bled duurder). Seizoen: juni-september. ⚠️ Webcheck (2026-08): Schengen-
+  Schengen, zero friction; wel apart Oostenrijks vignet + Sloveense e-vinjeta nodig (andere
+  tolsystemen).
+- [x] **7-10 dagen — Oostenrijk + Tsjechië**. Praag (2-3d) → Český Krumlov (1-2d) → Linz/
+  Salzkammergut (1d) → Wenen (3d). Budget: ~€75-90/dag (Tsjechië), ~€100-130/dag (Oostenrijk).
+  Seizoen: mei-juni/september. ⚠️ Webcheck (2026-08): Schengen-Schengen, maar Oostenrijk heeft
+  verlengde grenscontroles met Tsjechië (t/m minstens 15-6-2026) — steekproef-ID, geen visum.
+- [x] **7-10 dagen — Polen + Tsjechië**. Praag (3d) → Wrocław (2d) → Krakau (3-4d). Budget:
+  ~€80/dag (Tsjechië), ~€60-70/dag (Polen). Seizoen: mei-juni/september. ⚠️ Webcheck (2026-08):
+  trein loopt direct via de Polen-Tsjechië-grens (geen omweg via Duitsland), Schengen-Schengen zero
+  friction.
+- [x] **7-10 dagen — Hongarije + Oostenrijk + Slovenië**. Boedapest (2-3d) → Wenen (~250km/2,5u,
+  2-3d) → Ljubljana/Bled (~380km/4u via Graz-Maribor of Klagenfurt, 3-4d). Budget: ~€55-65/dag
+  (Hongarije), ~€95-130/dag (Oostenrijk), ~€90-110/dag (Slovenië). Seizoen: mei-juni/september. ⚠️
+  Webcheck (2026-08): Oostenrijk breidde grenscontroles mogelijk ook uit richting Hongarije/
+  Slovenië (net als bij Tsjechië/Slowakije) — steekproef, check dicht bij vertrek.
+- [x] **7-10 dagen — Andorra + Spaanse Pyreneeën**. Andorra la Vella/Ordino/Vall del Madriu (3d) →
+  La Seu d'Urgell → Cerdanya/Puigcerdà → Vielha/Val d'Aran (via Port de la Bonaigua) → Aigüestortes
+  NP (Boí/Espot) → via Ripoll naar Barcelona/Girona. Budget: ~€100-105/dag gemiddeld. Seizoen:
+  juni-september (Port de la Bonaigua-pas dicht ~november-april). ⚠️ Webcheck (2026-08): Andorra is
+  geen EU/Schengen-lid maar heeft een de facto open grens, geen vaste controleposten — wel
+  steekproefsgewijze paspoortcontrole; EU-ID/paspoort volstaat. Aigüestortes verbiedt privéauto's
+  (verplichte shuttle).
+- [x] **7-10 dagen — Franse + Spaanse Pyreneeën**. Lourdes (aankomst) → Cauterets (2d, Pont
+  d'Espagne) → Gavarnie (2d, Cirque + Brèche de Roland) → Port de Boucharo/Puerto de
+  Bujaruelo-pas (2.270m, de enige directe weg/wandelverbinding tussen het Franse en Spaanse deel
+  van hetzelfde UNESCO-massief, smal, alleen open ca. juli-september) → Torla/Ordesa y Monte
+  Perdido NP (3d) → evt. Aínsa. Budget: ~€90-110/dag (Frankrijk), ~€75-95/dag (Spanje). Seizoen:
+  strikt juli-september (buiten seizoen alleen de lange omweg via Jaca/Pau, +3u). ⚠️ Webcheck
+  (2026-08): Schengen-Schengen zero friction; check bij de huurauto of grindpas/bergwegen gedekt
+  zijn.
+- [x] **10-14 dagen — Polen + Slowakije + Hongarije**. Krakau (2-3d) → Zakopane/Tatra (2d) →
+  Slowaakse Hoge Tatra/Poprad (1-2d, korte grensoversteek) → Bratislava (2d) → Boedapest (3d) →
+  evt. Eger (1-2d). Budget: ~€60-75/dag (Polen), ~€50-60/dag (Slowakije), ~€55-65/dag (Hongarije).
+  Seizoen: juni-september (Tatra-wandelseizoen). ⚠️ Webcheck (2026-08): volledig Schengen-Schengen,
+  geen friction; one-way huurauto tussen landen is duur, lever de auto in hetzelfde land in.
+- [x] **10-14 dagen — Tsjechië + Oostenrijk + Hongarije**. Praag (3d) → Český Krumlov (1-2d) →
+  Wenen (3d) → Boedapest (~2,5u trein, 3-4d) → evt. Eger (1-2d). Budget: ~€75-90/dag (Tsjechië),
+  ~€100-130/dag (Oostenrijk), ~€55-65/dag (Hongarije). Seizoen: mei-juni/september. ⚠️ Webcheck
+  (2026-08): Oostenrijk-Tsjechië-grenscontroles verlengd (steekproef); Oostenrijk-Hongarije
+  mogelijk ook — check vooraf.
+- [x] **10-14 dagen — Duitsland + Oostenrijk + Italië**. München (2-3d) → Garmisch/Füssen (1-2d) →
+  Innsbruck (2d) → Brennerpas (jaarrond open, tunnel+snelweg, geen seizoenssluiting in tegenstelling
+  tot kleinere alpenpassen) → Bolzano/Dolomieten (Val Gardena/Cortina, 3-4d) → evt. Verona/
+  Gardameer of Venetië (2d). Budget: ~€90-130/dag (Duitsland), ~€90-125/dag (Oostenrijk),
+  ~€105-140/dag (Italië, Venetië duurder). Seizoen: juni-september (Dolomieten-liften). ⚠️ Webcheck
+  (2026-08): Schengen-Schengen, geen friction; Oostenrijks vignet + Italiaanse autostrade-tol apart
+  nodig.
+- [x] **10-14 dagen — Duitsland + Oostenrijk + Slovenië**. München (2-3d) → Salzburg (2d) →
+  Klagenfurt/Wörthersee (2d) → Ljubljana/Bled/Bohinj (3-4d) → evt. Soča-vallei/Piran (2d, alleen
+  bij 14 dagen). Budget: ~€90-115/dag (Duitsland), ~€95-130/dag (Oostenrijk), ~€90-130/dag
+  (Slovenië). Seizoen: juni-september (bergpassen/Julische Alpen). ⚠️ Webcheck (2026-08): Schengen-
+  Schengen zero friction; Duitsland geen tol, Oostenrijks vignet + Sloveense e-vinjeta apart.
+- [x] **10-14 dagen — Oostenrijk + Slovenië + Kroatië**. Klagenfurt/Wörthersee (2-3d) → Ljubljana/
+  Bled (3d) via de Karawankentunnel/Loibl-pas (tunnel, jaarrond open, geen seizoenssluiting) →
+  Zagreb (1-2d) → Plitvice (2d) → evt. kust (Zadar/Istrië, 2-3d bij 14 dagen). Budget: ~€95-130/dag
+  (Oostenrijk), ~€90-130/dag (Slovenië), ~€80-150/dag (Kroatië, kust duurder). Seizoen: mei-juni/
+  september (juni-september met kust/Alpen). ⚠️ Webcheck (2026-08): volledig Schengen (Kroatië
+  sinds 1-1-2023), Slovenië-Kroatië zero friction bevestigd.
+- [x] **10-14 dagen — Italië + Slovenië + Kroatië**. Venetië (2d) → Triëst → Ljubljana (2d) → Bled
+  (2d) → Istrië/Rovinj-Pula (3d) → Plitvice (2d) → Zagreb (1d, vertrek). Budget: ~€100-120/dag
+  geblend. Seizoen: mei-juni/september. ⚠️ Webcheck (2026-08): alle drie Schengen + euro (Kroatië
+  sinds 2023 beide), geen grenscontroles, naadloze overgang. Kroatië's mijnenwaarschuwing bij
+  Plitvice is per maart 2026 vervallen (land officieel mijnvrij verklaard).
+- [x] **10-14 dagen — Frankrijk + Zwitserland + Italië**. Chamonix (3d, Mont Blanc) → Genève (1d)
+  → Zermatt (3d, Matterhorn) → Comomeer (Italië, 3d) → Milaan (1-2d, vertrek). Budget: ~€120-150/dag
+  (Zwitserland trekt fors omhoog). Seizoen: juni-september (bergpassen/kabelbanen buiten dit
+  venster beperkt open). ⚠️ Webcheck (2026-08): alle Schengen, geen grenscontrole; Zwitserland zit
+  niet in de EU-douane-unie (incidentele steekproeven) én heeft een andere munt (CHF) — de enige
+  echte wisselgeld-frictie in dit trio.
+- [x] **10-14 dagen — Spanje + Portugal**. Porto (2-3d) → Lissabon (3d) → Algarve (2-3d) → Sevilla
+  (2-3d) → Madrid (2d, vertrek), lineair, geen backtracking. Budget: ~€90-100/dag. Seizoen:
+  april-juni/september-oktober (juli-augustus te heet in Sevilla/Algarve). ⚠️ Webcheck (2026-08):
+  beide Schengen/EU/euro, volledig naadloze grens.
+- [x] **10-14 dagen — Noorwegen + Zweden** *(differentiator: fjorden+hoofdsteden-variant, i.p.v.
+  een Lapland-focus die eigen budget/tempo vraagt, zie het losse Zweeds-Lapland-item elders)*.
+  Oslo (3d) → Bergen/Sognefjord+Flåm (4d) → terug naar Oslo (trein) → Göteborg (transit) →
+  Stockholm (3-4d). Budget: ~€110-130/dag (Noorwegen domineert). Seizoen: juni-augustus
+  (fjordtochten). ⚠️ Webcheck (2026-08): Nordic Passport Union — al vóór Schengen geen
+  grenscontrole Noorwegen-Zweden; twee niet-eurolanden (NOK/SEK), kaart werkt overal.
+- [x] **10-14 dagen — Denemarken + Zweden + Noorwegen** *(differentiator: landroute via
+  Zuid-Zweden i.p.v. de westkust-fjorden hierboven)*. Kopenhagen (3d) → Öresundbrug/trein naar
+  Malmö (Zweden, 2d) → Göteborg (2d) → E6/trein naar Oslo (Noorwegen, 3d) → evt. Flåm-dagtrip bij
+  14 dagen. Budget: ~€105-125/dag. Seizoen: juni-augustus. ⚠️ Webcheck (2026-08): Öresundbrug is
+  Schengen-intern, maar Zweden voert sinds 2015 periodiek ID-checks uit op dit traject, telkens
+  verlengd — verifieer actuele status voor vertrek (zelfde caveat als bij batch 11's Zweden-sectie);
+  Göteborg-Oslo is grensvrij (Nordic Passport Union). Drie verschillende munten (DKK/SEK/NOK).
+- [x] **14 dagen — Noord-Europa Roadtrip** *(differentiator: geen Noorwegen — wel Finland + alle
+  drie Baltische staten via de iconische Oostzee-veerboten, i.p.v. de fjorden-items hierboven)*.
+  Kopenhagen (2-3d) → Stockholm (3d) → nachtveerboot naar Helsinki (Finland, 2-3d) → veerboot naar
+  Tallinn (Estland, 2d) → Riga (Letland, 2d) → Vilnius (Litouwen, 2d, vertrek). Budget: ~€85-100/dag
+  (goedkoper dan de twee Scandinavische items hierboven). Seizoen: juni-augustus (veerdiensten
+  frequenter, lange dagen). ⚠️ Webcheck (2026-08): Stockholm-Helsinki (Viking/Silja, ~15-17u, hut
+  nodig) en Helsinki-Tallinn (~2u, een van de drukste ferryroutes ter wereld) zijn gevestigde
+  routes; Baltische staten onderling Schengen/EU/euro, naadloos. Standaard voorzichtigheid nabij
+  Rusland/Wit-Rusland-grensstreken (Narva e.o.) is al vastgesteld in batch 13, niet relevant voor
+  deze hoofdroute.
+- [x] **14 dagen — Centraal-Europa Roadtrip** *(kern Duitsland/Oostenrijk/Tsjechië/Polen/Slowakije/
+  Hongarije)*. Berlijn (2d) → Praag (3d) → Krakau (2-3d, incl. Auschwitz-dagtrip) → Bratislava
+  (1-2d) → Wenen (2-3d) → Boedapest (3d, vertrek). Budget: ~€70-85/dag. Seizoen: mei-juni/
+  september. ⚠️ Webcheck (2026-08): alle zes Schengen/EU, geen grenscontrole; wél drie
+  niet-eurolanden (CZK/PLN/HUF) naast drie eurolanden.
+- [x] **14 dagen — Balkan Roadtrip** *(differentiator: bewust een andere, verder zuidoostelijke
+  landenset dan de "Grote Balkan Roadtrip" in de Balkan-combinatiesectie hierboven — Servië/
+  Noord-Macedonië/Albanië/Kosovo, geen Slovenië/Kroatië/Bosnië/Montenegro, dus geen overlap)*.
+  Belgrado (Servië, 2-3d) → Skopje (Noord-Macedonië, 2d) → Ohrid (2-3d) → Tirana/Berat (Albanië,
+  3d) → Prizren (Kosovo, 1-2d) → terug naar Belgrado. Budget: ~€30-40/dag (goedkoopste
+  regio-roadtrip in dit hele document). Seizoen: mei-juni/september (augustus te heet/druk aan de
+  Albaanse kust). ⚠️ Webcheck (2026-08): geen van de vier is Schengen/EU — echte paspoortcontroles
+  bij elke grens; de Servië-Kosovo-grensovergang kan administratieve frictie geven (zie ook batch
+  8's Kosovo-Servië-grensvolgorde-waarschuwing). Overwegend groen; Noord-Kosovo (Mitrovica e.o.)
+  oranje sinds de KFOR-spanningen van augustus 2026 (al vastgesteld in batch 8) — de hoofdroute
+  (Pristina/Prizren) raakt dit niet.
+- [x] **14 dagen — Alpen Roadtrip** *(differentiator: puur bergfocus, andere scope dan de
+  Frankrijk+Zwitserland+Italië-combo hierboven — geen Milaan/meren)*. Chamonix (Frankrijk, 2-3d)
+  → Zermatt/Interlaken (Zwitserland, 3d) → Innsbruck (Oostenrijk, via de Arlbergpas, 2d) →
+  Dolomieten/Cortina (Italië, 3d) → Julische Alpen/Bled (Slovenië, 2-3d). Budget: ~€110-130/dag.
+  Seizoen: strikt eind juni-september (hooggelegen passen/kabelbanen/wandelpaden buiten dit
+  venster dicht of ontoegankelijk). ⚠️ Webcheck (2026-08): alle vijf Schengen, geen grenscontrole;
+  alleen Zwitserland niet-euro (CHF).
+- [x] **14 dagen — Zuid-Europa Roadtrip** *(expliciet geen echte roadtrip, eerder een
+  gecomprimeerde "hoogtepunten"-sampler: Italië-Griekenland heeft geen landgrens, alleen vlucht of
+  een 15-20u veerboot Ancona/Bari-Patras)*. Lissabon (3d) → Sevilla/Andalusië (3d, weg/trein) →
+  vlucht naar Rome (3d) → vlucht/veerboot naar Athene (3d, evt. Santorini bij 14 dagen). Budget:
+  ~€100-120/dag geblend. Seizoen: mei-juni/september. ⚠️ Webcheck (2026-08): Spanje-Portugal
+  naadloos Schengen; Italië-Griekenland alleen per vlucht/lange veerboot — dit is de kern van
+  waarom 14 dagen hier niet volstaat voor diepgang, eerder 21+. Griekenland heeft seizoensgebonden
+  bosbrandrisico (al vastgesteld in batch 10/14).
+- [x] **14-21 dagen — Grote Europese Roadtrip** *(nadrukkelijk aspirationeel/bucket-list, geen
+  boekbaar plan — de breedste en laatste, best afsluitende trip van dit hele document)*.
+  Duitsland (Rijn/Beieren, 2-3d) → Oostenrijk (Salzburg/Innsbruck, 2d) → Zwitserland (Interlaken,
+  2d) → Italië (Dolomieten/Venetië, 3d) → Slovenië (Bled, 1-2d) → Kroatië (Istrië/Plitvice/kust,
+  3d) → optioneel Montenegro (Kotor, 1-2d) → Hongarije (Boedapest, 2d) → Tsjechië (Praag, 2d).
+  Budget: ~€100-115/dag geblend (grote spreiding €55-170 per land). Seizoen: mei-juni/september als
+  beste compromis — geen enkele maand is voor alle 8-9 landen tegelijk optimaal. ⚠️ Webcheck
+  (2026-08): bijna volledig Schengen (Kroatië sinds 2023 ook), behalve Montenegro (niet-Schengen/
+  EU, echte grenscontrole als toegevoegd). ~2 dagen gemiddeld per land bij 21 dagen — dit is een
+  "geproefd hebben"-tour, geen verdiepende reis; past qua tempo niet bij Youri's eigen
+  "tussen budget en comfort backpacker"-stijl elders in dit document tenzij fors verlengd (5-6+
+  weken realistischer).
+
+**Algemeen (webcheck 2026-08)**: alle genoemde landen groen op nederlandwereldwijd.nl, tenzij
+anders vermeld per item. Waar deze sectie niet vers via WebSearch kon her-verifiëren (het
+WebSearch-budget raakte binnen deze sessie op bij 2 van de 3 research-agents), is teruggevallen op
+al eerder in dit document geverifieerde landendata (2026-08-cyclus) in plaats van gegokte cijfers
+— dateert uit dezelfde maand, acceptabel actueel, maar geen verse check per se.
+
+**Batch 15 (combinatiesecties) is hiermee klaar — daarmee is heel EUROPA_TRIP_IDEAS.md af.**
 
 ---
 
@@ -2631,4 +2810,4 @@ volgorde:
     om op aan te sluiten. **Gedaan (2026-08), WebSearch-geverifieerd.**
 15. **Combinatiesecties (Iberië-combo, Balkan-combo, Grote Europese combinaties)** (33) — bewust
     laatst: deze hergebruiken bijna allemaal content uit de losse-landen-batches hierboven, dus pas
-    efficiënt te doen zodra die klaar zijn.
+    efficiënt te doen zodra die klaar zijn. **Gedaan (2026-08).**
