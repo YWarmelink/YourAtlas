@@ -340,11 +340,12 @@ advisory notes — even though the source Dutch route notes get translated), mul
 semicolon-separated within a quoted cell, "—" for not-applicable.
 
 **Status: Fase 2 Groep 1 (13 Grand Trips) + Groep 2 (118 splitroutes — 38 regional companions + 80
-standalone routes) are 100% done (2026-08-17). 131 rows in `TRIP_DATABASE.csv`, pushed to origin.**
-Cost so far: 2,059,921 tokens total across 21 batches (~15,725/item average) — tagging was done in
-small batches across several sessions specifically to avoid burning through a whole session's token
-budget in one pass (~13-19k tokens/item for splitroutes/Grand Trips, since each needs real
-`routeBuilder.js`/`CHANGELOG.md` lookups for country/day/budget/advisory facts).
+standalone routes) are 100% done (2026-08-17). Groep 3 (EUROPA_TRIP_IDEAS.md's ~320 items) started
+with a pilot batch (Benelux, done). 137 rows in `TRIP_DATABASE.csv` so far, pushed to origin.**
+Cost so far: 2,125,138 tokens total across 22 batches (Groep 1+2: 2,059,921 for 131 items at
+~15,725/item; Groep 3 pilot: 65,217 for 6 items at ~10,870/item) — tagging is done in small batches
+across several sessions specifically to avoid burning through a whole session's token budget in one
+pass.
 
 **Groep 3 (not started) — plan for tagging `EUROPA_TRIP_IDEAS.md`'s ~320 items:**
 
@@ -354,7 +355,7 @@ tagging batch gets too big — **21 tagging sub-batches total, ~15 items/batch a
 
 | # | Batch (from EUROPA_TRIP_IDEAS.md) | Items | Split into |
 |---|---|---|---|
-| 1 | Benelux | 6 | 1 batch (**recommended pilot — smallest, run first to get a real per-item cost**) |
+| 1 | ~~Benelux~~ | 6 | **done** (pilot, 65,217 tokens = ~10,870/item — confirms cheaper than Groep 2 but not dramatically so) |
 | 2 | Duitsland | 12 | 1 batch |
 | 3 | Oostenrijk + Zwitserland | 12 | 1 batch |
 | 4 | Frankrijk | 11 | 1 batch |
@@ -378,13 +379,31 @@ made Groep 2's splitroutes expensive). Two fields also become near-mechanical fo
 yet, that's the separate not-started conversion step noted above), and **"Parent Expedition" = "—"**
 for essentially all 320 (`EUROPA_TRIP_IDEAS.md` is a deliberately separate content layer from Route
 Builder's Grand Trips — established project rule: overlap between the two is fine/expected, not a
-parent-child relationship). Still recommend running the Benelux pilot first to confirm this hypothesis
-with a real number, same as was done before committing to Groep 2A's batch sizes.
+parent-child relationship). **Confirmed by the Benelux pilot**: 10,870/item, directionally cheaper as
+predicted but not dramatically so (close to Groep 2's own cheapest batch rather than far below it) —
+the bigger win was speed/simplicity (4 tool calls, ~2 minutes, vs. 15-25 calls and 7-15+ minutes for a
+typical Route Builder batch), not raw token cost. Extrapolating 10,870/item × ~314 remaining items ≈
+**3.4M tokens for the rest of Groep 3**. One formatting slip from the pilot to avoid in future batch
+prompts: don't let the tagging agent prefix "Budget €/day (indicative)" values with a "€" sign (e.g.
+"€80-95") — every other row in the CSV uses the bare number ("80-95"), the column header already
+implies currency.
 
 **Workflow per batch** (same as Groep 1/2): delegate to a subagent that reads `TRIP_TAXONOMY.md` for
 the schema + the relevant `EUROPA_TRIP_IDEAS.md` batch section, outputs raw CSV lines only (no
-header, no commentary, English throughout, `&` not `&amp;`), append to `TRIP_DATABASE.csv`, commit
-locally, report the token cost, then ask before starting the next sub-batch.
+header, no commentary, English throughout, `&` not `&amp;`, no "€" prefix on the Budget €/day column),
+append to `TRIP_DATABASE.csv`, commit locally, report the token cost, then ask before starting the
+next sub-batch.
+
+**Separate, not-yet-started step: making this data actually visible/usable in the app itself.**
+Right now `TRIP_TAXONOMY.md` and `TRIP_DATABASE.csv` are just files sitting in the repo — visible on
+GitHub if you open them, but **no code anywhere in `js/` or any `.html` page reads or references
+either file** (confirmed by grepping the whole codebase, 2026-08-17). There is no filter UI built on
+these 29 fields, no page that displays a trip's tags, and no wiring between this CSV and the existing
+`dataService.js`/Google-Sheet data layer that powers the rest of the app. Collecting the taxonomy
+data (Fase 1+2, in progress) and making it live/usable in the UI (an entirely separate future
+implementation step — likely a new page or filter component that reads `TRIP_DATABASE.csv` the way
+`dataService.js` reads the Sheet) are two distinct pieces of work; only the first has started. No
+plan/estimate exists yet for the second — not started, wait for Youri to raise it.
 
 ## Search
 
