@@ -329,6 +329,63 @@ is the still-not-started conversion of each worked-out item into a real `rbBuild
 `routeBuilder.js` (see the intro above) — likely done in one focused pass whenever Youri wants to
 pick that up, not per item.
 
+## Trip Taxonomy (nieuw, 2026-08 — 29-veld classificatiesysteem, Fase 2 Groep 1+2 klaar)
+
+See [`TRIP_TAXONOMY.md`](TRIP_TAXONOMY.md) for the full field/vocabulary spec (Fase 1 design, approved
+by Youri as-is — all 29 fields kept, nothing cut) and [`TRIP_DATABASE.csv`](TRIP_DATABASE.csv) for the
+tagged data (Fase 2). Goal: one consistent 29-field row per trip across the whole app (Route Builder's
+13 Grand Trips + their splitroutes, and eventually `EUROPA_TRIP_IDEAS.md`'s items), usable for
+filtering/comparing/a future route optimizer. English throughout in the CSV (country names, months,
+advisory notes — even though the source Dutch route notes get translated), multi-value fields
+semicolon-separated within a quoted cell, "—" for not-applicable.
+
+**Status: Fase 2 Groep 1 (13 Grand Trips) + Groep 2 (118 splitroutes — 38 regional companions + 80
+standalone routes) are 100% done (2026-08-17). 131 rows in `TRIP_DATABASE.csv`, pushed to origin.**
+Cost so far: 2,059,921 tokens total across 21 batches (~15,725/item average) — tagging was done in
+small batches across several sessions specifically to avoid burning through a whole session's token
+budget in one pass (~13-19k tokens/item for splitroutes/Grand Trips, since each needs real
+`routeBuilder.js`/`CHANGELOG.md` lookups for country/day/budget/advisory facts).
+
+**Groep 3 (not started) — plan for tagging `EUROPA_TRIP_IDEAS.md`'s ~320 items:**
+
+Reuses that document's own existing 15 batches (see the "Europa Trip Ideas" section above for what's
+in each) as the base unit, splitting the 6 largest (26+ items) into two halves each so no single
+tagging batch gets too big — **21 tagging sub-batches total, ~15 items/batch average**:
+
+| # | Batch (from EUROPA_TRIP_IDEAS.md) | Items | Split into |
+|---|---|---|---|
+| 1 | Benelux | 6 | 1 batch (**recommended pilot — smallest, run first to get a real per-item cost**) |
+| 2 | Duitsland | 12 | 1 batch |
+| 3 | Oostenrijk + Zwitserland | 12 | 1 batch |
+| 4 | Frankrijk | 11 | 1 batch |
+| 5 | Italië | 16 | 1 batch |
+| 6 | Micro-staten & kleine eilanden | 20 | 1 batch |
+| 7 | Iberië | 26 | 2 batches (13+13) |
+| 8 | Balkan-cluster | 44 | 2 batches (22+22) |
+| 9 | Centraal/Oost-Europa | 35 | 2 batches (18+17) |
+| 10 | Oost-Mediterraan | 18 | 1 batch |
+| 11 | Noord-Europa | 32 | 2 batches (16+16) |
+| 12 | Britse eilanden | 17 | 1 batch |
+| 13 | Baltische staten | 6 | 1 batch |
+| 14 | 🏝️ Europese eilanden | 30 | 2 batches (15+15) |
+| 15 | Combinatiesecties | 33 | 2 batches (17+16) |
+
+**Why this should be cheaper per item than Groep 2's ~15,725/item average**: these 320 items are
+plain markdown text with route/budget/season/webcheck detail *already written out* in
+`EUROPA_TRIP_IDEAS.md` itself — no `routeBuilder.js` code-diving needed (that 9000+ line file is what
+made Groep 2's splitroutes expensive). Two fields also become near-mechanical for virtually every row:
+**"In Route Builder?" = No** for essentially all 320 (confirmed — none of these are built into the app
+yet, that's the separate not-started conversion step noted above), and **"Parent Expedition" = "—"**
+for essentially all 320 (`EUROPA_TRIP_IDEAS.md` is a deliberately separate content layer from Route
+Builder's Grand Trips — established project rule: overlap between the two is fine/expected, not a
+parent-child relationship). Still recommend running the Benelux pilot first to confirm this hypothesis
+with a real number, same as was done before committing to Groep 2A's batch sizes.
+
+**Workflow per batch** (same as Groep 1/2): delegate to a subagent that reads `TRIP_TAXONOMY.md` for
+the schema + the relevant `EUROPA_TRIP_IDEAS.md` batch section, outputs raw CSV lines only (no
+header, no commentary, English throughout, `&` not `&amp;`), append to `TRIP_DATABASE.csv`, commit
+locally, report the token cost, then ask before starting the next sub-batch.
+
 ## Search
 
 `search.html` — one search box across Trips, Route Builder expeditions (incl. country blocks,
