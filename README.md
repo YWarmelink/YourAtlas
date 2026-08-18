@@ -443,18 +443,26 @@ the source alone does nothing for an already-loaded browser — every batch need
 `rbMigrateXEnglish()` function behind a fresh flag, following whichever pattern (wholesale-replace vs.
 field-patch) that route's own prior migrations already used.
 
-**Status — 2 of 13 batches done.** Pilot batch (Central European Grand Roadtrip, chosen specifically
+**Status — 3 of 13 batches done.** Pilot batch (Central European Grand Roadtrip, chosen specifically
 because it has zero splitroutes — cleanest possible first test) cost **138,985 tokens** for one
 14-leg, no-splitroute route. That's well above the original 400-600K blind estimate for the whole
 job — recalibrated total based on this real data point: **~2.5-3.5M tokens for all 13 batches**,
 since several remaining families (Mediterranean, Africa Grand Tour, Pan-American) carry many more
 standalone routes than this pilot did. Batch 2 (Eurasia, the first dict-based family — 27 countries
-+ 3 splitroutes) cost **229,111 tokens**, in line with that recalibrated range.
++ 3 splitroutes) cost **229,111 tokens**; batch 3 (Patagonia & Antarctica, 3 countries + 2
+splitroutes) cost **203,954 tokens** — both in line with the recalibrated range.
+
+**Recurring lesson across batches 2 and 3**: several *older* migrations pattern-match on Dutch
+substrings (e.g. `'Instap:'`, `'Time check (2026-07)'`, `'Follow-up (2026-07)'`, a route's own
+overhaul-note marker) to detect "have I already applied this note?" — once that text is translated
+to English, those older guards need widening too, or they'll double-append stale Dutch text onto a
+freshly-translated route. Check for this explicitly in every remaining batch, not just when it
+happens to surface.
 
 | # | Family | Type | Splitroutes | Status | Tokens |
 |---|---|---|---|---|---|
 | 1 | Eurasia Grand Tour | dict-based | 3 | **done** | **229,111** |
-| 2 | Patagonia & Antarctica | dict-based | 2 | not started | — |
+| 2 | Patagonia & Antarctica | dict-based | 2 | **done** | **203,954** |
 | 3 | India & Himalaya | dict-based | 3 | not started | — |
 | 4 | Nordic Arctic | dict-based | 5 | not started | — |
 | 5 | Pan-American Grand Tour + reused standalones | dict-based | 4 + ~15 | not started | — |
