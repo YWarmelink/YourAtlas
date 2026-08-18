@@ -443,16 +443,17 @@ the source alone does nothing for an already-loaded browser — every batch need
 `rbMigrateXEnglish()` function behind a fresh flag, following whichever pattern (wholesale-replace vs.
 field-patch) that route's own prior migrations already used.
 
-**Status — 1 of 13 batches done.** Pilot batch (Central European Grand Roadtrip, chosen specifically
+**Status — 2 of 13 batches done.** Pilot batch (Central European Grand Roadtrip, chosen specifically
 because it has zero splitroutes — cleanest possible first test) cost **138,985 tokens** for one
 14-leg, no-splitroute route. That's well above the original 400-600K blind estimate for the whole
 job — recalibrated total based on this real data point: **~2.5-3.5M tokens for all 13 batches**,
 since several remaining families (Mediterranean, Africa Grand Tour, Pan-American) carry many more
-standalone routes than this pilot did.
+standalone routes than this pilot did. Batch 2 (Eurasia, the first dict-based family — 27 countries
++ 3 splitroutes) cost **229,111 tokens**, in line with that recalibrated range.
 
 | # | Family | Type | Splitroutes | Status | Tokens |
 |---|---|---|---|---|---|
-| 1 | Eurasia Grand Tour | dict-based | 3 | not started | — |
+| 1 | Eurasia Grand Tour | dict-based | 3 | **done** | **229,111** |
 | 2 | Patagonia & Antarctica | dict-based | 2 | not started | — |
 | 3 | India & Himalaya | dict-based | 3 | not started | — |
 | 4 | Nordic Arctic | dict-based | 5 | not started | — |
