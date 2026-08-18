@@ -443,29 +443,34 @@ the source alone does nothing for an already-loaded browser — every batch need
 `rbMigrateXEnglish()` function behind a fresh flag, following whichever pattern (wholesale-replace vs.
 field-patch) that route's own prior migrations already used.
 
-**Status — 4 of 13 batches done.** Pilot batch (Central European Grand Roadtrip, chosen specifically
-because it has zero splitroutes — cleanest possible first test) cost **138,985 tokens** for one
-14-leg, no-splitroute route. That's well above the original 400-600K blind estimate for the whole
-job — recalibrated total based on this real data point: **~2.5-3.5M tokens for all 13 batches**,
-since several remaining families (Mediterranean, Africa Grand Tour, Pan-American) carry many more
-standalone routes than this pilot did. Batch 2 (Eurasia, the first dict-based family — 27 countries
-+ 3 splitroutes) cost **229,111 tokens**; batch 3 (Patagonia & Antarctica, 3 countries + 2
-splitroutes) cost **203,954 tokens**; batch 4 (India & Himalaya, 3 countries + 3 splitroutes) cost
-**194,573 tokens** — all in line with the recalibrated range.
+**Status — 5 of 13 batches done. All dict-based families are now done.** Pilot batch (Central
+European Grand Roadtrip, chosen specifically because it has zero splitroutes — cleanest possible
+first test) cost **138,985 tokens** for one 14-leg, no-splitroute route. That's well above the
+original 400-600K blind estimate for the whole job — recalibrated total based on this real data
+point: **~2.5-3.5M tokens for all 13 batches**, since several remaining families (Mediterranean,
+Africa Grand Tour, Pan-American) carry many more standalone routes than this pilot did. Batch 2
+(Eurasia, 27 countries + 3 splitroutes) cost **229,111 tokens**; batch 3 (Patagonia & Antarctica, 3
+countries + 2 splitroutes) cost **203,954 tokens**; batch 4 (India & Himalaya, 3 countries + 3
+splitroutes) cost **194,573 tokens**; batch 5 (Nordic Arctic, 8 countries + 5 splitroutes) cost
+**200,428 tokens** — all 4 dict-based families landed in a tight 195K-230K band regardless of
+country/splitroute count, suggesting the remaining hand-authored families (which don't get the
+dict-cascade discount) are the real driver of the wide 2.5-3.5M range, not these.
 
-**Recurring lesson across batches 2, 3 and 4 — now confirmed every dict-based batch so far**: several
-*older* migrations pattern-match on Dutch substrings (e.g. `'Instap:'`, `'Time check (2026-07)'`,
-`'Follow-up (2026-07)'`, each route's own overhaul-note marker) to detect "have I already applied
-this note?" — once that text is translated to English, those older guards need widening too, or
-they'll double-append stale Dutch text onto a freshly-translated route. Check for this explicitly in
-every remaining batch — it has hit 100% of batches with a prior route-logic-overhaul migration so far.
+**Recurring lesson across every dict-based batch so far (4 of 4, 100% hit rate)**: older migrations
+(especially each route's own route-logic-overhaul migration) pattern-match on Dutch substrings (e.g.
+`'Instap:'`, `'Time check (2026-07)'`, `'Follow-up (2026-07)'`, an overhaul-note marker) to detect
+"have I already applied this note?" — once translated to English, those older guards need widening
+too, or they'll double-append stale text. **New nuance found in batch 5**: this even applies when a
+splitroute's NAME is identical in Dutch and English (Nordic Arctic's Svalbard 🐻‍❄️) — an older
+migration can still find the route by name but then fail its Dutch-substring content check, so don't
+assume "the name never changed" means "no collision risk" — check every route's guards regardless.
 
 | # | Family | Type | Splitroutes | Status | Tokens |
 |---|---|---|---|---|---|
 | 1 | Eurasia Grand Tour | dict-based | 3 | **done** | **229,111** |
 | 2 | Patagonia & Antarctica | dict-based | 2 | **done** | **203,954** |
 | 3 | India & Himalaya | dict-based | 3 | **done** | **194,573** |
-| 4 | Nordic Arctic | dict-based | 5 | not started | — |
+| 4 | Nordic Arctic | dict-based | 5 | **done** | **200,428** |
 | 5 | Pan-American Grand Tour + reused standalones | dict-based | 4 + ~15 | not started | — |
 | 6 | Africa Grand Tour + reused standalones | dict-based | 4 + ~20 | not started | — |
 | 7 | Mediterranean Civilizations + standalones | hand-authored | 6 + ~14 | not started | — |
