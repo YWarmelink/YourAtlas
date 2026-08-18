@@ -329,70 +329,75 @@ is the still-not-started conversion of each worked-out item into a real `rbBuild
 `routeBuilder.js` (see the intro above) — likely done in one focused pass whenever Youri wants to
 pick that up, not per item.
 
-## Trip Taxonomy (nieuw, 2026-08 — 29-veld classificatiesysteem, Fase 2 Groep 1+2 klaar)
+## Trip Taxonomy (nieuw, 2026-08 — 29-veld classificatiesysteem, Fase 2 + Groep 3 100% klaar)
 
 See [`TRIP_TAXONOMY.md`](TRIP_TAXONOMY.md) for the full field/vocabulary spec (Fase 1 design, approved
 by Youri as-is — all 29 fields kept, nothing cut) and [`TRIP_DATABASE.csv`](TRIP_DATABASE.csv) for the
 tagged data (Fase 2). Goal: one consistent 29-field row per trip across the whole app (Route Builder's
-13 Grand Trips + their splitroutes, and eventually `EUROPA_TRIP_IDEAS.md`'s items), usable for
+13 Grand Trips + their splitroutes, and `EUROPA_TRIP_IDEAS.md`'s items), usable for
 filtering/comparing/a future route optimizer. English throughout in the CSV (country names, months,
 advisory notes — even though the source Dutch route notes get translated), multi-value fields
 semicolon-separated within a quoted cell, "—" for not-applicable.
 
-**Status: Fase 2 Groep 1 (13 Grand Trips) + Groep 2 (118 splitroutes — 38 regional companions + 80
-standalone routes) are 100% done (2026-08-17). Groep 3 (EUROPA_TRIP_IDEAS.md's ~320 items) started
-with a pilot batch (Benelux, done). 137 rows in `TRIP_DATABASE.csv` so far, pushed to origin.**
-Cost so far: 2,125,138 tokens total across 22 batches (Groep 1+2: 2,059,921 for 131 items at
-~15,725/item; Groep 3 pilot: 65,217 for 6 items at ~10,870/item) — tagging is done in small batches
-across several sessions specifically to avoid burning through a whole session's token budget in one
-pass.
+**Status: ALL of Fase 2 is now 100% done and pushed to origin (2026-08-18).** Groep 1 (13 Grand
+Trips) + Groep 2 (118 splitroutes) + Groep 3 (319 `EUROPA_TRIP_IDEAS.md` items, all 21 planned
+sub-batches complete) — **450 rows total in `TRIP_DATABASE.csv`**. Every trip in the app/planning
+docs now has a consistent 29-field tag row.
+Total cost: 4,270,377 tokens across 43 tagging batches run over several sessions specifically to
+avoid burning a whole session's budget in one pass (Groep 1+2: 2,059,921 for 131 items at
+~15,725/item; Groep 3: 2,210,456 for 319 items at **~6,930/item — less than half Groep 2's rate**,
+confirming the hypothesis that plain-markdown source content tags cheaper than diving into
+`routeBuilder.js`'s 9000+ line source).
 
-**Groep 3 (not started) — plan for tagging `EUROPA_TRIP_IDEAS.md`'s ~320 items:**
+**Groep 3 — done, `EUROPA_TRIP_IDEAS.md`'s 319 items (not ~320 as originally estimated) across 21
+sub-batches, reusing that document's own 15 named batches** (see the "Europa Trip Ideas" section
+above), splitting the 6 largest (26+ items) into two halves each so no single tagging batch got too
+big:
 
-Reuses that document's own existing 15 batches (see the "Europa Trip Ideas" section above for what's
-in each) as the base unit, splitting the 6 largest (26+ items) into two halves each so no single
-tagging batch gets too big — **21 tagging sub-batches total, ~15 items/batch average**:
-
-| # | Batch (from EUROPA_TRIP_IDEAS.md) | Items | Split into |
+| # | Batch (from EUROPA_TRIP_IDEAS.md) | Real item count | Tokens |
 |---|---|---|---|
-| 1 | ~~Benelux~~ | 6 | **done** (pilot, 65,217 tokens = ~10,870/item — confirms cheaper than Groep 2 but not dramatically so) |
-| 2 | Duitsland | 12 | 1 batch |
-| 3 | Oostenrijk + Zwitserland | 12 | 1 batch |
-| 4 | Frankrijk | 11 | 1 batch |
-| 5 | Italië | 16 | 1 batch |
-| 6 | Micro-staten & kleine eilanden | 20 | 1 batch |
-| 7 | Iberië | 26 | 2 batches (13+13) |
-| 8 | Balkan-cluster | 44 | 2 batches (22+22) |
-| 9 | Centraal/Oost-Europa | 35 | 2 batches (18+17) |
-| 10 | Oost-Mediterraan | 18 | 1 batch |
-| 11 | Noord-Europa | 32 | 2 batches (16+16) |
-| 12 | Britse eilanden | 17 | 1 batch |
-| 13 | Baltische staten | 6 | 1 batch |
-| 14 | 🏝️ Europese eilanden | 30 | 2 batches (15+15) |
-| 15 | Combinatiesecties | 33 | 2 batches (17+16) |
+| 1 | Benelux (pilot) | 6 | 65,217 |
+| 2 | Duitsland | 12 | 86,991 |
+| 3 | Oostenrijk + Zwitserland | 12 | 88,367 |
+| 4 | Frankrijk | 11 | 100,209 |
+| 5 | Italië | 16 | 117,839 |
+| 6 | Micro-staten & kleine eilanden | 20 | 134,667 |
+| 7a+7b | Iberië (Spanje+Andorra+Portugal) | 26 | 109,952 + 115,127 |
+| 8a+8b | Balkan-cluster | **45** (planned 44) | 110,735 + 118,753 |
+| 9a+9b | Centraal/Oost-Europa | 35 | 109,964 + 88,819 |
+| 10 | Oost-Mediterraan | **17** (planned ~18) | 115,908 |
+| 11a+11b | Noord-Europa | 32 | 125,576 + 108,285 |
+| 12 | Britse eilanden | 17 | 95,294 |
+| 13 | Baltische staten | 6 | 74,538 |
+| 14a+14b | 🏝️ Europese eilanden | 30 | 102,701 + 108,253 |
+| 15a+15b | Combinatiesecties | **34** (planned 33) | 117,054 + 116,207 |
 
-**Why this should be cheaper per item than Groep 2's ~15,725/item average**: these 320 items are
-plain markdown text with route/budget/season/webcheck detail *already written out* in
-`EUROPA_TRIP_IDEAS.md` itself — no `routeBuilder.js` code-diving needed (that 9000+ line file is what
-made Groep 2's splitroutes expensive). Two fields also become near-mechanical for virtually every row:
-**"In Route Builder?" = No** for essentially all 320 (confirmed — none of these are built into the app
-yet, that's the separate not-started conversion step noted above), and **"Parent Expedition" = "—"**
-for essentially all 320 (`EUROPA_TRIP_IDEAS.md` is a deliberately separate content layer from Route
-Builder's Grand Trips — established project rule: overlap between the two is fine/expected, not a
-parent-child relationship). **Confirmed by the Benelux pilot**: 10,870/item, directionally cheaper as
-predicted but not dramatically so (close to Groep 2's own cheapest batch rather than far below it) —
-the bigger win was speed/simplicity (4 tool calls, ~2 minutes, vs. 15-25 calls and 7-15+ minutes for a
-typical Route Builder batch), not raw token cost. Extrapolating 10,870/item × ~314 remaining items ≈
-**3.4M tokens for the rest of Groep 3**. One formatting slip from the pilot to avoid in future batch
-prompts: don't let the tagging agent prefix "Budget €/day (indicative)" values with a "€" sign (e.g.
-"€80-95") — every other row in the CSV uses the bare number ("80-95"), the column header already
-implies currency.
+**Lesson reinforced repeatedly: never trust a pre-stated item count.** The doc's own "batch-indeling"
+summary was wrong three separate times (Balkan-cluster 44→45, Oost-Mediterraan 18→17,
+Combinatiesecties 33→34) — every sub-batch prompt now explicitly tells the tagging agent to
+grep/count the actual bullets itself rather than trust the plan's number, and to tag every real item
+found even if that means one sub-batch runs slightly over its "half" split.
 
-**Workflow per batch** (same as Groep 1/2): delegate to a subagent that reads `TRIP_TAXONOMY.md` for
-the schema + the relevant `EUROPA_TRIP_IDEAS.md` batch section, outputs raw CSV lines only (no
-header, no commentary, English throughout, `&` not `&amp;`, no "€" prefix on the Budget €/day column),
-append to `TRIP_DATABASE.csv`, commit locally, report the token cost, then ask before starting the
-next sub-batch.
+**Real findings surfaced during tagging** (not just mechanical tagging — a few genuine
+safety/regulatory checks came out of reading the source closely): Moldova + Transnistria item tagged
+Advisory Level = Red / Border Complexity = Complex (Russian troops, war-adjacent tension) — the one
+genuinely active-conflict-adjacent item in all of Groep 3. Cyprus confirmed EU-but-not-Schengen;
+Northern Cyprus crossings tagged Complex. Kosovo's items never combine with Serbia in the source
+(deliberate design), tagged Simple non-Schengen throughout, no invented complication. UK/Ireland
+items tagged non-Schengen with the post-Brexit ETA requirement. Switzerland/Norway/Iceland items
+got Budget Level €€€€ overrides where their real per-day ranges warranted it, rather than force-fit
+to the blanket ≤105→€€/≥110→€€€ heuristic used for the rest of Europe. The "Grote Europese
+combinaties" subsection (last ~17 items) got `Verification Status = Draft` rather than `Verified`,
+since its own footer admits the WebSearch budget ran out and it reused prior verified country data
+instead. Several Combinatiesecties items are deliberate near-duplicates of already-tagged combos
+(e.g. "Bosnia + Croatia + Montenegro" tagged a third time) — flagged during tagging, not treated as
+errors, since `EUROPA_TRIP_IDEAS.md` itself repeats these combos across sections.
+
+**Workflow per batch** (same as Groep 1/2, held for all 21 sub-batches): delegate to a subagent that
+reads `TRIP_TAXONOMY.md` for the schema + the relevant `EUROPA_TRIP_IDEAS.md` batch section, outputs
+raw CSV lines only (no header, no commentary, English throughout, `&` not `&amp;`, no "€" prefix on
+the Budget €/day column), append to `TRIP_DATABASE.csv`, commit locally, report the token cost, then
+ask before starting the next sub-batch.
 
 **Separate, not-yet-started step: making this data actually visible/usable in the app itself.**
 Right now `TRIP_TAXONOMY.md` and `TRIP_DATABASE.csv` are just files sitting in the repo — visible on
