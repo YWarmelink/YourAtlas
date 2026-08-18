@@ -484,9 +484,19 @@ assume "the name never changed" means "no collision risk" — check every route'
 **Workflow per batch**: delegate to a `general-purpose` subagent — read `CLAUDE.md`'s migration rule
 first, find the family's build function(s), translate every Dutch text field (never touch
 days/budget/lat/lng/country codes), grep the whole file for any other reference to the old name,
-write the new migration + flag + wire it into the init call sequence, run `node --check
-js/pages/routeBuilder.js` to catch syntax errors before committing, commit locally (ask before
-pushing), report the real token cost, then ask before starting the next batch.
+**explicitly check every migration touching this route/its splitroutes for the Dutch-substring
+guard-collision issue described above — 100% hit rate across all 5 batches so far, treat it as
+mandatory, not optional**, write the new migration + flag + wire it into the init call sequence, run
+`node --check js/pages/routeBuilder.js` to catch syntax errors before committing, commit locally (ask
+before pushing), report the real token cost, then ask before starting the next batch.
+
+**Resume point (updated after every batch — read this first when picking Phase 1 back up)**: 5 of 13
+done, all 4 pure dict-based families complete. Batches have been picked out of table order each time
+(pilot was #8, then #1→#2→#3→#4) — don't assume sequential order, just ask which family next. Next
+natural picks: the 2 bigger dict-based families with many reused standalones (Pan-American #5, Africa
+Grand Tour #6 — likely pricier than the 195-230K band above given their standalone counts), or start
+on the 7 hand-authored families (#7, #9-13 — no dict-cascade discount, but individually smaller scope
+each). No blocker either way.
 
 ### Phase 2 — convert `EUROPA_TRIP_IDEAS.md`'s 319 tagged items into real `rbBuildXRoute()` code
 
