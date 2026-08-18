@@ -79,6 +79,7 @@ const RB_MIGRATE_FLAG_2026_08_CENTRAL_EUROPEAN_ENGLISH = 'atlas_grand_trips_migr
 const RB_MIGRATE_FLAG_2026_08_EURASIA_ENGLISH = 'atlas_grand_trips_migrate_2026_08_eurasia_english_v1';
 const RB_MIGRATE_FLAG_2026_08_PATAGONIA_ANTARCTICA_ENGLISH = 'atlas_grand_trips_migrate_2026_08_patagonia_antarctica_english_v1';
 const RB_MIGRATE_FLAG_2026_08_INDIA_HIMALAYA_ENGLISH = 'atlas_grand_trips_migrate_2026_08_india_himalaya_english_v1';
+const RB_MIGRATE_FLAG_2026_08_NORDIC_ARCTIC_ENGLISH = 'atlas_grand_trips_migrate_2026_08_nordic_arctic_english_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -155,6 +156,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateEurasiaFamilyEnglish();
   rbMigratePatagoniaAntarcticaEnglish();
   rbMigrateIndiaHimalayaEnglish();
+  rbMigrateNordicArcticEnglish();
   rbMigrateBritishIslesRouteLogicOverhaul();
   rbMigrateNorthAmericaRouteLogicOverhaul();
   rbMigrateWestCentralAfricaRouteLogicOverhaul();
@@ -1814,54 +1816,54 @@ const RB_EXPEDITION_CONTENT = {
       { name: 'Rovaniemi', lat: 66.5039, lng: 25.7294 },
       { name: 'Inari', lat: 68.9056, lng: 27.0286 },
       { name: 'Lemmenjoki National Park', lat: 68.7333, lng: 25.7833 },
-    ], transport_to_next: "Terug naar Rovaniemi (geen directe verbinding vanaf Inari/Lemmenjoki), dan trein of bus Rovaniemi–Kiruna via de Finse/Zweedse kust (Kemi-Haparanda-Boden), 8-9,5 uur. Met een eigen huurauto is Inari-Kaaresuvanto-Karesuando-Kiruna (~6-7u) sneller en vermijdt de terugkeer naar Rovaniemi.", notes: "Prijs geverifieerd (2026-07), klopt. Routelogica (2026-08, search-bevestigd): er is geen bus/trein-verbinding van Inari/Lemmenjoki rechtstreeks naar Zweden — de enige OV-optie gaat terug via Rovaniemi, en zelfs Rovaniemi-Kiruna is met bus/trein zelf al een omweg via de kust (8-9,5u) t.o.v. de auto (4u16m direct)." },
+    ], transport_to_next: "Back to Rovaniemi (no direct connection from Inari/Lemmenjoki), then train or bus Rovaniemi–Kiruna via the Finnish/Swedish coast (Kemi-Haparanda-Boden), 8-9.5 hours. With your own rental car, Inari-Kaaresuvanto-Karesuando-Kiruna (~6-7h) is faster and avoids the return to Rovaniemi.", notes: "Price verified (2026-07), correct. Route logic (2026-08, search-confirmed): there is no bus/train connection from Inari/Lemmenjoki directly to Sweden — the only public-transport option goes back via Rovaniemi, and even Rovaniemi-Kiruna by bus/train is itself already a detour via the coast (8-9.5h) compared to the car (4h16m direct)." },
     SE: { days: 6, budget: 950, lat: 67.8558, lng: 20.2253, destinations: [
       { name: 'Kiruna', lat: 67.8558, lng: 20.2253 },
-      { name: 'Sami-cultuur (Jukkasjärvi)', lat: 67.8556, lng: 20.5928 },
+      { name: 'Sami culture (Jukkasjärvi)', lat: 67.8556, lng: 20.5928 },
       { name: 'Abisko National Park', lat: 68.3558, lng: 18.7883 },
-    ], transport_to_next: "Trein Kiruna–Narvik (Malmbanan/Ofotbanen, over land, spectaculaire bergroute)", notes: "Prijs geverifieerd (2026-07), klopt." },
+    ], transport_to_next: "Train Kiruna–Narvik (Malmbanan/Ofotbanen, overland, spectacular mountain route)", notes: "Price verified (2026-07), correct." },
     NO: { days: 15, budget: 2250, lat: 69.6492, lng: 18.9553, destinations: [
       { name: 'Narvik', lat: 68.4384, lng: 17.4272 },
       { name: 'Lofoten (Svolvær)', lat: 68.2341, lng: 14.5686 },
       { name: 'Senja', lat: 69.3167, lng: 17.5333 },
       { name: 'Tromsø', lat: 69.6492, lng: 18.9553 },
-      { name: 'Noordkaap (Nordkapp)', lat: 71.171, lng: 25.7858 },
-    ], transport_to_next: "Korte vlucht Honningsvåg (HVG, 31 km van Nordkapp) naar Tromsø (Widerøe, ~1u05) — vermijdt de ~540 km terugrit over de weg — aansluitend vlucht Tromsø-Longyearbyen (enige realistische verbinding naar Svalbard, Alta heeft geen LYR-vlucht).", notes: "Prijs geverifieerd (2026-07), klopt. Routelogica (2026-08, search-bevestigd): Longyearbyen heeft alleen vluchten vanuit Oslo en Tromsø — teruggevlogen Honningsvåg-Tromsø i.p.v. terugrijden bespaart ~6 uur." },
+      { name: 'North Cape (Nordkapp)', lat: 71.171, lng: 25.7858 },
+    ], transport_to_next: "Short flight Honningsvåg (HVG, 31 km from Nordkapp) to Tromsø (Widerøe, ~1h05) — avoids the ~540 km drive back — followed by a connecting flight Tromsø-Longyearbyen (the only realistic connection to Svalbard, Alta has no LYR flight).", notes: "Price verified (2026-07), correct. Route logic (2026-08, search-confirmed): Longyearbyen only has flights from Oslo and Tromsø — flying back Honningsvåg-Tromsø instead of driving back saves ~6 hours." },
     SJ: { days: 4, budget: 900, lat: 78.2232, lng: 15.6469, destinations: [
       { name: 'Longyearbyen', lat: 78.2232, lng: 15.6469 },
       { name: 'Svalbard Museum', lat: 78.2199, lng: 15.6259 },
-      { name: 'Pyramiden (dagtrip per boot)', lat: 78.657, lng: 16.3606 },
-    ], transport_to_next: "Vlucht Longyearbyen–Oslo–Kopenhagen (SAS/Norwegian, geen directe verbinding, ~4u10-4u15 totaal)", notes: "Ingekort (2026-08, op Youri's verzoek): van 8 dagen/€3.725 (meerdaagse gegidste bootexpeditie) naar 4 dagen/€900 — alleen Longyearbyen zelf met 1-2 dagtours (bv. de boottocht naar de verlaten mijnstad Pyramiden, of een sneeuwscooter-/hondensleetocht richting Barentsburg) i.p.v. een meerdaagse expeditieboot. Buiten Longyearbyen is een gewapende gids (ijsberen) verplicht — al inbegrepen in de dagtours." },
+      { name: 'Pyramiden (day trip by boat)', lat: 78.657, lng: 16.3606 },
+    ], transport_to_next: "Flight Longyearbyen–Oslo–Copenhagen (SAS/Norwegian, no direct connection, ~4h10-4h15 total)", notes: "Shortened (2026-08, at Youri's request): from 8 days/€3,725 (multi-day guided boat expedition) to 4 days/€900 — just Longyearbyen itself with 1-2 day tours (e.g. the boat trip to the abandoned mining town of Pyramiden, or a snowmobile/dog-sledding trip towards Barentsburg) instead of a multi-day expedition boat. Outside Longyearbyen an armed guide (polar bears) is mandatory — already included in the day tours." },
     DK: { days: 3, budget: 450, lat: 55.6761, lng: 12.5683, destinations: [
       { name: 'Nyhavn', lat: 55.6798, lng: 12.591 },
       { name: 'Tivoli Gardens', lat: 55.6736, lng: 12.5681 },
       { name: 'Christiania', lat: 55.6739, lng: 12.5975 },
       { name: 'Torvehallerne', lat: 55.6838, lng: 12.5713 },
-    ], transport_to_next: "Vlucht Kopenhagen–Vágar (Faeröer) met Atlantic Airways, ~2u15, minstens 2x per dag jaarrond (tot 4x/dag in de zomer) — flexibeler dan de eerdere optie via Oslo (Atlantic Airways RC435, slechts 3x/week).", notes: "Toevoeging (2026-08, op Youri's verzoek — nog niet bezocht, wel al Oslo en Stockholm gezien). Kopenhagen is een van de duurdere Europese hoofdsteden; dagbudget incl. privékamer-accommodatie, gemengd restaurant/streetfood en 1 betaalde attractie per dag. Praktische keuze: dit was al de overstap richting de Faeröer (voorheen Longyearbyen-Oslo-Kopenhagen-Vágar als pure transit) — nu als volwaardige stop met eigen dagen." },
+    ], transport_to_next: "Flight Copenhagen–Vágar (Faroe Islands) with Atlantic Airways, ~2h15, at least 2x per day year-round (up to 4x/day in summer) — more flexible than the earlier option via Oslo (Atlantic Airways RC435, only 3x/week).", notes: "Addition (2026-08, at Youri's request — not yet visited, although Oslo and Stockholm have already been seen). Copenhagen is one of the pricier European capitals; the daily budget includes private-room accommodation, mixed restaurant/street food, and 1 paid attraction per day. Practical choice: this was already the connection point towards the Faroe Islands (previously Longyearbyen-Oslo-Copenhagen-Vágar as pure transit) — now as a fully-fledged stop with its own days." },
     FO: { days: 7, budget: 1675, lat: 62.0107, lng: -6.7741, destinations: [
       { name: 'Tórshavn', lat: 62.0107, lng: -6.7741 },
       { name: 'Saksun', lat: 62.2667, lng: -7.2167 },
       { name: 'Gjógv', lat: 62.3167, lng: -6.8 },
-      { name: 'Vestmanna Kliffen', lat: 62.1553, lng: -7.1668 },
-      'Wandelroutes',
-    ], transport_to_next: "Korte vlucht Vágar–Reykjavik (of seizoensgebonden veerboot Smyril Line, alleen in zomer)", notes: "Prijs geverifieerd (2026-07), klopt. Faeröer zijn geen EU/Schengen (wel Noordse Paspoortunie) — gewoon paspoort/ID nodig bij aankomst." },
+      { name: 'Vestmanna Cliffs', lat: 62.1553, lng: -7.1668 },
+      'Hiking routes',
+    ], transport_to_next: "Short flight Vágar–Reykjavik (or seasonal Smyril Line ferry, summer only)", notes: "Price verified (2026-07), correct. The Faroe Islands are not EU/Schengen (though part of the Nordic Passport Union) — a regular passport/ID is needed on arrival." },
     IS: { days: 14, budget: 2800, lat: 64.1466, lng: -21.9426, destinations: [
       { name: 'Reykjavik', lat: 64.1466, lng: -21.9426 },
       { name: 'Golden Circle (Þingvellir)', lat: 64.2559, lng: -21.131 },
-      { name: 'Zuidkust (Vík í Mýrdal)', lat: 63.4186, lng: -19.006 },
+      { name: 'South Coast (Vík í Mýrdal)', lat: 63.4186, lng: -19.006 },
       { name: 'Vatnajökull', lat: 64.0165, lng: -16.9787 },
       { name: 'Jökulsárlón', lat: 64.0784, lng: -16.23 },
       { name: 'Akureyri', lat: 65.6835, lng: -18.1002 },
       { name: 'Snæfellsnes', lat: 64.9257, lng: -23.3072 },
-    ], transport_to_next: "Terug naar Reykjavik (Ring Road, auto inleveren), dan directe vlucht Reykjavik (Keflavík)–Nuuk met Icelandair/Air Greenland (jaarrond) — geen veerverbinding mogelijk", notes: "Prijs geverifieerd (2026-07), klopt (incl. huurauto, vrijwel noodzakelijk). Geel reisadvies voor het Reykjanes-schiereiland vanwege aanhoudende vulkanische activiteit bij Grindavík. Routelogica (2026-08, search-bevestigd): volgorde omgedraaid — Snæfellsnes stond eerder tussen Jökulsárlón en Akureyri (een onlogische zigzag terug naar het westen); nu als laatste stop vóór de terugkeer naar Reykjavik, zoals elke standaard Ring Road-planning het doet." },
+    ], transport_to_next: "Back to Reykjavik (Ring Road, return the rental car), then a direct flight Reykjavik (Keflavík)–Nuuk with Icelandair/Air Greenland (year-round) — no ferry connection possible", notes: "Price verified (2026-07), correct (incl. rental car, virtually essential). Yellow travel advisory for the Reykjanes peninsula due to ongoing volcanic activity near Grindavík. Route logic (2026-08, search-confirmed): order reversed — Snæfellsnes used to sit between Jökulsárlón and Akureyri (an illogical zigzag back to the west); now the last stop before returning to Reykjavik, as any standard Ring Road plan does." },
     GL: { days: 10, budget: 3725, lat: 69.2198, lng: -51.1, destinations: [
       { name: 'Nuuk', lat: 64.1836, lng: -51.7214 },
-      { name: 'Inuitcultuur (Nuuk)', lat: 64.1836, lng: -51.7214 },
+      { name: 'Inuit culture (Nuuk)', lat: 64.1836, lng: -51.7214 },
       { name: 'Ilulissat', lat: 69.2198, lng: -51.1 },
-      { name: 'IJsfjord (Ilulissat Icefjord)', lat: 69.1833, lng: -51.05 },
+      { name: 'Icefjord (Ilulissat Icefjord)', lat: 69.1833, lng: -51.05 },
       { name: 'Disko Bay', lat: 69.25, lng: -53.0 },
-      { name: 'Boottochten (bv. Eqi-gletsjer)', lat: 69.8167, lng: -50.3167 },
-    ], transport_to_next: "Einde van de expeditie — directe vlucht terug vanuit Ilulissat naar Reykjavik met Icelandair (seizoensgebonden, ca. juni-september; vanaf eind oktober 2026 ook jaarrond direct vanuit Kopenhagen met Air Greenland)", notes: "Prijs geverifieerd (2026-07), krap maar houdbaar — binnenlandse vluchten tussen plaatsen (Air Greenland, vrijwel monopolie) zijn een structurele, geen incidentele kostenpost, waaronder de vlucht Nuuk-Ilulissat zelf (geen wegverbinding tussen Groenlandse steden). Geen EU/Schengen (wel Rijk Denemarken) — paspoortcontrole bij aankomst/vertrek, EHIC niet geldig. Routelogica (2026-08, search-bevestigd): instap/uitstap gecorrigeerd — instap is Nuuk (jaarrond directe vlucht vanuit Reykjavik), uitstap is Ilulissat (seizoensgebonden directe vlucht terug, geen omweg via Nuuk meer)." },
+      { name: 'Boat trips (e.g. Eqi Glacier)', lat: 69.8167, lng: -50.3167 },
+    ], transport_to_next: "End of the expedition — direct flight back from Ilulissat to Reykjavik with Icelandair (seasonal, roughly June-September; from late October 2026 also year-round direct from Copenhagen with Air Greenland)", notes: "Price verified (2026-07), tight but workable — domestic flights between towns (Air Greenland, near-monopoly) are a structural cost, not an incidental one, including the Nuuk-Ilulissat flight itself (no road connection between Greenlandic towns). Not EU/Schengen (though part of the Kingdom of Denmark) — passport check on arrival/departure, EHIC not valid. Route logic (2026-08, search-confirmed): entry/exit corrected — entry is Nuuk (year-round direct flight from Reykjavik), exit is Ilulissat (seasonal direct flight back, no more detour via Nuuk)." },
   },
   "Patagonia & Antarctica Expedition 🧊": {
     // Chile-North: Puerto Montt is the real starting point (Chiloé is a day trip from there, not
@@ -2407,25 +2409,25 @@ function rbBuildArcticCircleRoute() {
   const arctic = (code, name) => rbContentFor('Nordic Arctic Expedition ❄️', code, name);
   return rbBuildSeedRoute('Nordic Arctic Expedition ❄️', [
     {
-      name: 'Scandinavia', season: 'Juni', budget: 4400,
-      note: 'Lapland en Noorse fjorden/eilanden per trein en bus — de enige etappe van deze expeditie die nog over land te doen is.',
+      name: 'Scandinavia', season: 'June', budget: 4400,
+      note: 'Lapland and Norwegian fjords/islands by train and bus — the only leg of this expedition still doable overland.',
       countries: [arctic('FI', 'Finland'), arctic('SE', 'Sweden'), arctic('NO', 'Norway')],
     },
     {
-      name: 'North Atlantic Islands', season: 'Juli–augustus', budget: 9550,
-      note: 'Svalbard, Denemarken, Faeröer, IJsland en Groenland — stuk voor stuk losse vluchtsprongen, geen doorlopende route; reken op weerbuffers.',
+      name: 'North Atlantic Islands', season: 'July–August', budget: 9550,
+      note: 'Svalbard, Denmark, the Faroe Islands, Iceland and Greenland — each one a separate flight hop, not a continuous route; budget in weather buffers.',
       countries: [arctic('SJ', 'Svalbard'), arctic('DK', 'Denmark'), arctic('FO', 'Faroe Islands'), arctic('IS', 'Iceland'), arctic('GL', 'Greenland')],
     },
   ], {
-    best_starting_month: 'Juni',
-    travel_style: 'Trein/bus in Scandinavië, vluchten voor de eilandsprongen (Svalbard, Denemarken, Faeröer, IJsland, Groenland) waar geen boot- of landroute bestaat, kleine guesthouses en de enkele hut/dagtour waar relevant.',
-    climate_summary: "Vergeleken scenario's: (1) een winterstart (december-februari) levert noorderlicht op in Finland/Zweden/Noorwegen, maar sluit Svalbard-boottochten (zee-ijs), IJslands hooglandwegen en de boottochten bij Faeröer/Groenland vrijwel volledig af, met te korte en te koude dagen voor de wandelroutes; (2) een start in mei loopt nog risico op resterend zee-ijs bij Svalbard en gesloten hooglandwegen in IJsland; (3) een start begin juni treft alle acht bestemmingen in hun enige gedeelde goede seizoen: middernachtzon in Scandinavië, toegankelijk zee-ijs bij Svalbard, Kopenhagen op zijn best zonder seizoensbeperking, betrouwbaardere veerdiensten en wandelweer bij de Faeröer, volledig open hooglandwegen in IJsland, en de beste boottoegang tot de Diskobaai-ijsbergen bij Ilulissat in Groenland. Beste keuze: start begin juni, zodat de expeditie (circa 2-2,5 maand) eind augustus eindigt, ruim vóór de eerste herfststormen in de Noord-Atlantische regio.",
-    description: 'Zomerexpeditie door het hoge noorden — van Lapland via Noorse fjorden en eilanden naar Spitsbergen, Kopenhagen, de Faeröer, IJsland en Groenland, met middernachtzon als rode draad.',
+    best_starting_month: 'June',
+    travel_style: 'Train/bus in Scandinavia, flights for the island hops (Svalbard, Denmark, the Faroe Islands, Iceland, Greenland) where no boat or overland route exists, small guesthouses and the occasional cabin/day tour where relevant.',
+    climate_summary: "Compared scenarios: (1) a winter start (December-February) delivers the northern lights in Finland/Sweden/Norway, but shuts off Svalbard boat trips (sea ice), Iceland's highland roads and the boat trips near the Faroe Islands/Greenland almost entirely, with days too short and cold for the hiking routes; (2) a start in May still risks residual sea ice near Svalbard and closed highland roads in Iceland; (3) a start in early June catches all eight destinations in their one shared good season: midnight sun in Scandinavia, accessible sea ice at Svalbard, Copenhagen at its best with no seasonal restriction, more reliable ferry services and hiking weather at the Faroe Islands, fully open highland roads in Iceland, and the best boat access to the Disko Bay icebergs near Ilulissat in Greenland. Best choice: start in early June, so the expedition (roughly 2-2.5 months) ends in late August, well ahead of the first autumn storms in the North Atlantic region.",
+    description: 'Summer expedition through the high north — from Lapland via Norwegian fjords and islands to Spitsbergen, Copenhagen, the Faroe Islands, Iceland and Greenland, with the midnight sun as a common thread.',
     notes: 'Imported from a ChatGPT brainstorm — originally seeded flat (no regions); Svalbard and the Faroe Islands may not yet appear in the Countries sheet dropdown — cosmetic only, the block still works. Several legs (Svalbard, Faroe, Iceland, Greenland) are flight-only hops rather than one continuous overland trip.\n\n' +
-      'Tijdscontrole (2026-07): dagen per land licht opgehoogd (53→68 dagen totaal) — vooral Groenland (weersafhankelijke vluchten tussen plaatsen) en Noorwegen (Lofoten alleen al is fotografie/wandelen waard) waren krap. Landen ongewijzigd; alleen duur, best_starting_month en klimaatredenering zijn toegevoegd.\n\n' +
-      'Vervolg (2026-07): budgetten per land meegeschaald met de opgehoogde dagen, en de 7 landen alsnog gegroepeerd in 2 regio\'s (Scandinavia, North Atlantic Islands) met eigen seizoen/budget. Landen, volgorde en dagen zijn ongewijzigd.\n\n' +
-      'Prijzen/visum/reisadvies-verificatie (2026-07): alle 7 bevestigd accuraat, geen budgetcorrecties nodig — dit is de duurste route van de hele Travel Atlas en dat bleek terecht. Zie de losse landnotities hierboven voor details (Groenlandse binnenlandse vluchten, Faeröer/Groenland paspoortcontrole ondanks Deens koninkrijk, Svalbard-gids, IJsland-vulkaanactiviteit).\n\n' +
-      "Routelogica-herziening (2026-08): drie geografische fixes (search-bevestigd) — Finland-Zweden's transport_to_next benoemt nu expliciet de terugkeer naar Rovaniemi en de omweg via de kust (was verzwegen); Noorwegen eindigt op Noordkaap en vliegt terug naar Tromsø (Honningsvåg-Tromsø, Widerøe) i.p.v. 540km terugrijden voor de Svalbard-vlucht; IJslands Ring Road-volgorde rechtgezet (Snæfellsnes stond als een zigzag tussen Jökulsárlón en Akureyri, nu als laatste stop vóór Reykjavik); Groenlands instap/uitstap gecorrigeerd (instap Nuuk, jaarrond direct vanuit Reykjavik; uitstap Ilulissat, seizoensgebonden direct terug, geen omweg via Nuuk meer). Daarnaast twee wensen van Youri: Denemarken (Kopenhagen, 3 dagen/€450) toegevoegd tussen Svalbard en de Faeröer — nog niet bezocht, wel al Oslo en Stockholm; Svalbard ingekort van een meerdaagse gegidste bootexpeditie (8 dagen/€3.725) naar alleen Longyearbyen zelf met 1-2 dagtours (4 dagen/€900). Alle bestemmingen kregen coördinaten voor de 'Gedetailleerd'-kaartweergave. Nieuw totaal: 8 landen (was 7), 67 dagen (was 68), €13.950 (was €16.325).",
+      'Time check (2026-07): days per country slightly increased (53→68 days total) — especially Greenland (weather-dependent flights between towns) and Norway (Lofoten alone is worth photography/hiking time) were tight. Countries unchanged; only duration, best_starting_month and the climate reasoning were added.\n\n' +
+      'Follow-up (2026-07): budgets per country scaled along with the increased days, and the 7 countries grouped into 2 regions (Scandinavia, North Atlantic Islands) with their own season/budget. Countries, order and days unchanged.\n\n' +
+      'Prices/visa/travel-advisory verification (2026-07): all 7 confirmed accurate, no budget corrections needed — this is the most expensive route in the entire Travel Atlas and that turned out to be justified. See the individual country notes above for details (Greenlandic domestic flights, Faroe Islands/Greenland passport check despite the Danish Kingdom, Svalbard guide, Iceland volcanic activity).\n\n' +
+      "Route-logic review (2026-08): three geographic fixes (search-confirmed) — Finland-Sweden's transport_to_next now explicitly names the return to Rovaniemi and the detour via the coast (previously unstated); Norway ends at North Cape and flies back to Tromsø (Honningsvåg-Tromsø, Widerøe) instead of a 540km drive back for the Svalbard flight; Iceland's Ring Road order corrected (Snæfellsnes used to sit as a zigzag between Jökulsárlón and Akureyri, now the last stop before Reykjavik); Greenland's entry/exit corrected (entry Nuuk, year-round direct from Reykjavik; exit Ilulissat, seasonal direct flight back, no more detour via Nuuk). Also two requests from Youri: Denmark (Copenhagen, 3 days/€450) added between Svalbard and the Faroe Islands — not yet visited, although Oslo and Stockholm have already been seen; Svalbard shortened from a multi-day guided boat expedition (8 days/€3,725) to just Longyearbyen itself with 1-2 day tours (4 days/€900). All destinations got coordinates for the 'Detailed' map view. New total: 8 countries (was 7), 67 days (was 68), €13,950 (was €16,325).",
   });
 }
 
@@ -4437,75 +4439,75 @@ function rbSeedNordicArcticSplitExpeditions() {
 
 function rbBuildScandinaviaOverlandRoute() {
   const arctic = (code, name) => rbContentFor('Nordic Arctic Expedition ❄️', code, name);
-  return rbBuildSeedRoute('Scandinavië Overland 🚂', [
+  return rbBuildSeedRoute('Scandinavia Overland 🚂', [
     {
-      name: 'Scandinavia', season: 'Juni', budget: 4400,
-      note: 'Lapland en Noorse fjorden/eilanden per trein en bus — het enige écht overland-verbonden deel van de oorspronkelijke Nordic Arctic Expedition.',
-      countries: [{ ...arctic('FI', 'Finland'), notes: "Instap: vlucht Amsterdam-Helsinki (±2u50, vanaf ±€150-280 retour, beste periode juni), vandaar verder naar Rovaniemi. Prijsindicatie webonderzoek 2026-08, momentopname. " + (arctic('FI', 'Finland').notes || '') }, arctic('SE', 'Sweden'), arctic('NO', 'Norway')],
+      name: 'Scandinavia', season: 'June', budget: 4400,
+      note: 'Lapland and Norwegian fjords/islands by train and bus — the only genuinely overland-connected part of the original Nordic Arctic Expedition.',
+      countries: [{ ...arctic('FI', 'Finland'), notes: "Entry: flight Amsterdam-Helsinki (±2h50, from ±€150-280 return, best period June), from there onward to Rovaniemi. Price indication from 2026-08 web research, a snapshot. " + (arctic('FI', 'Finland').notes || '') }, arctic('SE', 'Sweden'), arctic('NO', 'Norway')],
     },
   ], {
-    best_starting_month: 'Juni',
-    travel_style: 'Trein/bus door Lapland en Noorse fjorden — geen vlucht nodig binnen deze route.',
-    climate_summary: 'Begin juni geeft middernachtzon in alle drie de landen en het beste weer voor de treinroute Rovaniemi-Kiruna-Narvik.',
-    description: 'Van Lapland via Zweeds Lapland naar de Noorse fjorden en Lofoten, volledig per trein en bus.',
-    notes: 'Losgesplitst van Nordic Arctic Expedition ❄️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen en budgetten zijn ongewijzigd overgenomen. Nordic Arctic Expedition ❄️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+    best_starting_month: 'June',
+    travel_style: 'Train/bus through Lapland and the Norwegian fjords — no flight needed within this route.',
+    climate_summary: 'Early June gives midnight sun in all three countries and the best weather for the Rovaniemi-Kiruna-Narvik train route.',
+    description: 'From Lapland via Swedish Lapland to the Norwegian fjords and Lofoten, entirely by train and bus.',
+    notes: 'Split off from Nordic Arctic Expedition ❄️ as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days and budgets are carried over unchanged. Nordic Arctic Expedition ❄️ itself remains unchanged as a separate, full expedition.',
   });
 }
 
 function rbBuildSvalbardRoute() {
   const arctic = (code, name) => rbContentFor('Nordic Arctic Expedition ❄️', code, name);
   return rbBuildSeedRoute('Svalbard 🐻‍❄️', [
-    { name: 'Svalbard', season: 'Juli', budget: 900, note: 'Longyearbyen zelf met 1-2 dagtours — geen meerdaagse expeditieboot meer (2026-08, op Youri\'s verzoek).', countries: [{ ...arctic('SJ', 'Svalbard'), notes: "Instap: vlucht Amsterdam-Oslo-Longyearbyen (±5-6u incl. overstap, geen directe vlucht, vanaf ±€400-600 retour, beste periode juli). Prijsindicatie webonderzoek 2026-08, momentopname. " + (arctic('SJ', 'Svalbard').notes || '') }] },
+    { name: 'Svalbard', season: 'July', budget: 900, note: 'Longyearbyen itself with 1-2 day tours — no more multi-day expedition boat (2026-08, at Youri\'s request).', countries: [{ ...arctic('SJ', 'Svalbard'), notes: "Entry: flight Amsterdam-Oslo-Longyearbyen (±5-6h incl. connection, no direct flight, from ±€400-600 return, best period July). Price indication from 2026-08 web research, a snapshot. " + (arctic('SJ', 'Svalbard').notes || '') }] },
   ], {
-    best_starting_month: 'Juli',
-    travel_style: 'Longyearbyen als basis, met 1-2 gegidste dagtours (bv. boottocht naar Pyramiden, sneeuwscooter-/hondensleetocht richting Barentsburg); buiten de plaats is een gewapende gids (ijsberen) verplicht, al inbegrepen in de tours.',
-    climate_summary: 'Juli-augustus is het enige venster met toegankelijk zee-ijs, betrouwbare boottochten en middernachtzon.',
-    description: 'Gletsjers, wildlife en middernachtzon op Spitsbergen, ingekort tot Longyearbyen zelf.',
-    notes: 'Losgesplitst van Nordic Arctic Expedition ❄️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Nordic Arctic Expedition ❄️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\n' +
-      "Ingekort (2026-08, op Youri's verzoek): van 8 dagen/€3.725 (meerdaagse gegidste bootexpeditie) naar 4 dagen/€900 — alleen Longyearbyen zelf met 1-2 dagtours i.p.v. een meerdaagse expeditieboot. Coördinaten per bestemming toegevoegd.",
+    best_starting_month: 'July',
+    travel_style: 'Longyearbyen as a base, with 1-2 guided day tours (e.g. boat trip to Pyramiden, snowmobile/dog-sledding trip towards Barentsburg); outside town an armed guide (polar bears) is mandatory, already included in the tours.',
+    climate_summary: 'July-August is the only window with accessible sea ice, reliable boat trips and midnight sun.',
+    description: 'Glaciers, wildlife and midnight sun on Spitsbergen, shortened down to Longyearbyen itself.',
+    notes: 'Split off from Nordic Arctic Expedition ❄️ as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Nordic Arctic Expedition ❄️ itself remains unchanged as a separate, full expedition.\n\n' +
+      "Shortened (2026-08, at Youri's request): from 8 days/€3,725 (multi-day guided boat expedition) to 4 days/€900 — just Longyearbyen itself with 1-2 day tours instead of a multi-day expedition boat. Coordinates per destination added.",
   });
 }
 
 function rbBuildFaroeIslandsRoute() {
   const arctic = (code, name) => rbContentFor('Nordic Arctic Expedition ❄️', code, name);
-  return rbBuildSeedRoute('Faeröer 🐑', [
-    { name: 'Faroe Islands', season: 'Juli–augustus', budget: 1675, note: 'Betrouwbaardere veerdiensten en het beste wandelweer in deze maanden.', countries: [{ ...arctic('FO', 'Faroe Islands'), notes: "Instap: vlucht Amsterdam-Kopenhagen-Vágar (±4-4,5u incl. overstap, geen directe vlucht, vanaf ±€350-550 retour, beste periode juli-augustus). Prijsindicatie webonderzoek 2026-08, momentopname. " + (arctic('FO', 'Faroe Islands').notes || '') }] },
+  return rbBuildSeedRoute('Faroe Islands 🐑', [
+    { name: 'Faroe Islands', season: 'July–August', budget: 1675, note: 'More reliable ferry services and the best hiking weather in these months.', countries: [{ ...arctic('FO', 'Faroe Islands'), notes: "Entry: flight Amsterdam-Copenhagen-Vágar (±4-4.5h incl. connection, no direct flight, from ±€350-550 return, best period July-August). Price indication from 2026-08 web research, a snapshot. " + (arctic('FO', 'Faroe Islands').notes || '') }] },
   ], {
-    best_starting_month: 'Juli',
-    travel_style: 'Lokale bussen/veerboten tussen de eilanden.',
-    climate_summary: 'Juli-augustus geeft het meest stabiele weer voor de kliffen en wandelroutes.',
-    description: 'Dramatische kliffen, groene dorpjes en wandelroutes tussen Tórshavn en Gjógv.',
-    notes: 'Losgesplitst van Nordic Arctic Expedition ❄️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen en budget zijn ongewijzigd overgenomen. Nordic Arctic Expedition ❄️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+    best_starting_month: 'July',
+    travel_style: 'Local buses/ferries between the islands.',
+    climate_summary: 'July-August gives the most stable weather for the cliffs and hiking routes.',
+    description: 'Dramatic cliffs, green villages and hiking routes between Tórshavn and Gjógv.',
+    notes: 'Split off from Nordic Arctic Expedition ❄️ as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Country, days and budget are carried over unchanged. Nordic Arctic Expedition ❄️ itself remains unchanged as a separate, full expedition.',
   });
 }
 
 function rbBuildIcelandRoute() {
   const arctic = (code, name) => rbContentFor('Nordic Arctic Expedition ❄️', code, name);
-  return rbBuildSeedRoute('IJsland ❄️', [
-    { name: 'Iceland', season: 'Juli–augustus', budget: 2800, note: 'Volledig open hooglandwegen; buiten dit venster zijn delen van het land niet bereikbaar.', countries: [{ ...arctic('IS', 'Iceland'), notes: "Instap: vlucht Amsterdam-Reykjavik/Keflavík (±4u, vanaf ±€300-450 retour, beste periode juli-augustus). Prijsindicatie webonderzoek 2026-08, momentopname. " + (arctic('IS', 'Iceland').notes || '') }] },
+  return rbBuildSeedRoute('Iceland ❄️', [
+    { name: 'Iceland', season: 'July–August', budget: 2800, note: 'Highland roads fully open; outside this window parts of the country are inaccessible.', countries: [{ ...arctic('IS', 'Iceland'), notes: "Entry: flight Amsterdam-Reykjavik/Keflavík (±4h, from ±€300-450 return, best period July-August). Price indication from 2026-08 web research, a snapshot. " + (arctic('IS', 'Iceland').notes || '') }] },
   ], {
-    best_starting_month: 'Juli',
-    travel_style: 'Huurauto (vrijwel noodzakelijk voor de Ring Road en het hoogland).',
-    climate_summary: 'Juli-augustus houdt de hooglandwegen volledig open — daarbuiten zijn grote delen van het binnenland afgesloten.',
-    description: 'De Golden Circle, de zuidkust, Vatnajökull en Snæfellsnes met de huurauto.',
-    notes: "Losgesplitst van Nordic Arctic Expedition ❄️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen en budget zijn ongewijzigd overgenomen (incl. het gele reisadvies voor het Reykjanes-schiereiland door de aanhoudende vulkanische activiteit bij Grindavík). IJsland is een van de meest geboekte standalone trips ter wereld — dit blok staat volledig op zichzelf. Nordic Arctic Expedition ❄️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.",
+    best_starting_month: 'July',
+    travel_style: 'Rental car (virtually essential for the Ring Road and the highlands).',
+    climate_summary: 'July-August keeps the highland roads fully open — outside this window large parts of the interior are closed.',
+    description: 'The Golden Circle, the south coast, Vatnajökull and Snæfellsnes by rental car.',
+    notes: "Split off from Nordic Arctic Expedition ❄️ as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Country, days and budget are carried over unchanged (incl. the yellow travel advisory for the Reykjanes peninsula due to ongoing volcanic activity near Grindavík). Iceland is one of the most-booked standalone trips in the world — this block stands entirely on its own. Nordic Arctic Expedition ❄️ itself remains unchanged as a separate, full expedition.",
   });
 }
 
 function rbBuildGreenlandRoute() {
   const arctic = (code, name) => rbContentFor('Nordic Arctic Expedition ❄️', code, name);
-  return rbBuildSeedRoute('Groenland 🧊', [
-    { name: 'Greenland', season: 'Juli–augustus', budget: 3725, note: 'Beste boottoegang tot de Diskobaai-ijsbergen bij Ilulissat.', countries: [{
+  return rbBuildSeedRoute('Greenland 🧊', [
+    { name: 'Greenland', season: 'July–August', budget: 3725, note: 'Best boat access to the Disko Bay icebergs near Ilulissat.', countries: [{
       ...arctic('GL', 'Greenland'),
-      notes: "Instap: vlucht Amsterdam-Reykjavik-Nuuk (±7-8u incl. overstap, geen directe vlucht, vanaf ±€900-1.400 retour, beste periode juli-augustus). Prijsindicatie webonderzoek 2026-08, momentopname. " + (arctic('GL', 'Greenland').notes || ''),
-      transport_to_next: "Einde van deze route — vlucht Ilulissat-Reykjavik (seizoensgebonden direct, juni-september) of Ilulissat-Kopenhagen (jaarrond direct vanaf eind oktober 2026, Air Greenland), dan aansluitend vlucht huiswaarts naar Nederland (Reykjavik-Amsterdam met Icelandair/Transavia, of Kopenhagen-Amsterdam met KLM/Transavia) — totaal ±8-10u incl. overstap, vanaf ±€600-950 retour voor dit laatste traject. Prijsindicatie webonderzoek 2026-08, momentopname.",
+      notes: "Entry: flight Amsterdam-Reykjavik-Nuuk (±7-8h incl. connection, no direct flight, from ±€900-1,400 return, best period July-August). Price indication from 2026-08 web research, a snapshot. " + (arctic('GL', 'Greenland').notes || ''),
+      transport_to_next: "End of this route — flight Ilulissat-Reykjavik (seasonal direct, June-September) or Ilulissat-Copenhagen (year-round direct from late October 2026, Air Greenland), then a connecting flight home to the Netherlands (Reykjavik-Amsterdam with Icelandair/Transavia, or Copenhagen-Amsterdam with KLM/Transavia) — ±8-10h total incl. connection, from ±€600-950 return for this last leg. Price indication from 2026-08 web research, a snapshot.",
     }] },
   ], {
-    best_starting_month: 'Juli',
-    travel_style: 'Binnenlandse vluchten tussen plaatsen (Air Greenland, vrijwel monopolie) — een structurele kostenpost, geen incident.',
-    climate_summary: 'Juli-augustus geeft de beste boottoegang tot de ijsbergen van de Diskobaai en de meest betrouwbare binnenlandse vluchten.',
-    description: 'Inuitcultuur, de IJsfjord en de ijsbergen van de Diskobaai bij Ilulissat.',
-    notes: 'Losgesplitst van Nordic Arctic Expedition ❄️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen en budget zijn ongewijzigd overgenomen. Nordic Arctic Expedition ❄️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+    best_starting_month: 'July',
+    travel_style: 'Domestic flights between towns (Air Greenland, near-monopoly) — a structural cost, not an incident.',
+    climate_summary: 'July-August gives the best boat access to the Disko Bay icebergs and the most reliable domestic flights.',
+    description: 'Inuit culture, the Icefjord and the icebergs of Disko Bay near Ilulissat.',
+    notes: 'Split off from Nordic Arctic Expedition ❄️ as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Country, days and budget are carried over unchanged. Nordic Arctic Expedition ❄️ itself remains unchanged as a separate, full expedition.',
   });
 }
 
@@ -6543,8 +6545,19 @@ function rbMigrateHimalayaRouteLogicOverhaul() {
  * zigzag, Groenlands instap/uitstap liep via het verkeerde eiland), plus twee wensen van Youri:
  * Denemarken (Kopenhagen) toegevoegd tussen Svalbard en de Faeröer, en Svalbard ingekort van een
  * meerdaagse bootexpeditie naar alleen Longyearbyen zelf. Applies to the main expedition and all five
- * split companions (Scandinavië Overland 🚂, Svalbard 🐻‍❄️, Faeröer 🐑, IJsland ❄️, Groenland 🧊)
- * since they share the same RB_EXPEDITION_CONTENT entries via rbContentFor().
+ * split companions (Scandinavië Overland 🚂/Scandinavia Overland 🚂, Svalbard 🐻‍❄️, Faeröer 🐑/Faroe
+ * Islands 🐑, IJsland ❄️/Iceland ❄️, Groenland 🧊/Greenland 🧊) since they share the same
+ * RB_EXPEDITION_CONTENT entries via rbContentFor(). The `codesByRoute`/note-selection keys below still
+ * use only the old Dutch names for the four renamed splits — deliberately left as-is (2026-08
+ * translation batch): a freshly-seeded/already-translated route now carries the new English name, so
+ * this migration simply no-ops for those four (harmless — their build functions already bake in the
+ * correct, already-translated content directly, nothing left to patch). Svalbard 🐻‍❄️ is the one
+ * exception, since its name is identical in both languages: its note-append guard below was widened to
+ * recognize both the Dutch 'Ingekort (2026-08' and the English 'Shortened (2026-08' marker, otherwise a
+ * freshly-seeded/already-translated Svalbard route would fail the Dutch-only marker check and get this
+ * migration's stale Dutch note appended a second time on top (same collision class as
+ * rbMigrateHimalayaRouteLogicOverhaul()'s widened guard) — see rbMigrateNordicArcticEnglish() below for
+ * the actual Dutch-to-English content translation.
  */
 function rbMigrateNordicArcticRouteLogicOverhaul() {
   if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_NORDIC_ARCTIC_OVERHAUL)) return;
@@ -6622,8 +6635,13 @@ function rbMigrateNordicArcticRouteLogicOverhaul() {
       ? "Routelogica-herziening (2026-08): instap/uitstap gecorrigeerd — instap Nuuk (jaarrond direct vanuit Reykjavik), uitstap Ilulissat (seizoensgebonden direct terug, geen omweg via Nuuk meer); Nuuk-Ilulissat onderling blijft een binnenlandse Air Greenland-vlucht. Coördinaten per bestemming toegevoegd."
       : "Coördinaten per bestemming toegevoegd (2026-08).";
 
-    const marker = routeName === 'Svalbard 🐻‍❄️' ? "Ingekort (2026-08" : "(2026-08)";
-    if (route.notes && !route.notes.includes(marker)) {
+    // Widened guard (2026-08 translation batch): Svalbard 🐻‍❄️'s name is unchanged by the rename
+    // (identical in Dutch and English), so this migration still finds it even on an
+    // already-translated route — the marker must therefore recognize both the Dutch 'Ingekort
+    // (2026-08' and its English translation 'Shortened (2026-08', or it would double-append this
+    // stale Dutch note on top (see rbMigrateNordicArcticEnglish() below).
+    const markers = routeName === 'Svalbard 🐻‍❄️' ? ["Ingekort (2026-08", "Shortened (2026-08"] : ["(2026-08)"];
+    if (route.notes && !markers.some(m => route.notes.includes(m))) {
       route.notes += '\n\n' + note;
       touched = true;
     }
@@ -7226,6 +7244,102 @@ function rbApplyIndiaHimalayaEnglishToRoute(route, ref, newName) {
     const block = route.blocks.find(b => b.country_code === code);
     const refBlock = (ref.blocks || []).find(b => b.country_code === code);
     if (!block || !refBlock) return;
+    if (block.notes !== refBlock.notes) { block.notes = refBlock.notes; touched = true; }
+    if (block.transport_to_next !== refBlock.transport_to_next) { block.transport_to_next = refBlock.transport_to_next; touched = true; }
+    if (block.destinations && refBlock.destinations && block.destinations.length === refBlock.destinations.length) {
+      block.destinations.forEach((d, j) => {
+        const rd = refBlock.destinations[j];
+        if (rd && d.name !== rd.name) { d.name = rd.name; touched = true; }
+      });
+    }
+  });
+
+  // Route-level text fields.
+  ['best_starting_month', 'travel_style', 'climate_summary', 'description', 'notes'].forEach(field => {
+    if (route[field] !== ref[field]) { route[field] = ref[field]; touched = true; }
+  });
+
+  if (touched) rbSave();
+}
+
+/**
+ * Nordic Arctic Expedition family — Dutch-to-English content translation (2026-08), batch 5/13 of
+ * the project-wide Route Builder translation workstream. Dict-based family (RB_EXPEDITION_CONTENT):
+ * translating the shared FI/SE/NO/SJ/DK/FO/IS/GL content in the dict itself cascades to the Grand
+ * Trip AND all five splitroutes via rbContentFor() — but each already-seeded route's blocks were
+ * frozen into localStorage at seed time, so this migration still has to field-patch every one of
+ * them, same field-patch + region-sync pattern as rbApplyEurasiaEnglishToRoute() above (never a
+ * blind wholesale replace, so any hand-edits Youri made elsewhere on a block survive). Every country
+ * in this family appears at most once per route, so blocks are matched by country_code alone — no
+ * repeated-country special-casing needed (unlike Eurasia's Malaysia or Patagonia's Chile/Argentina).
+ * Regions are matched by position, same as Eurasia (translation doesn't add/remove/reorder regions
+ * or countries within them).
+ *
+ * Also translates: four of the five splitroutes' own names (Scandinavië Overland 🚂 → Scandinavia
+ * Overland 🚂, Faeröer 🐑 → Faroe Islands 🐑, IJsland ❄️ → Iceland ❄️, Groenland 🧊 → Greenland 🧊 —
+ * each looked up by old-or-new name so this is idempotent whether it runs against already-seeded
+ * Dutch-named data or an already-English freshly-seeded route; Svalbard 🐻‍❄️ needed no rename, same
+ * word in both languages); each splitroute's own flight-in "Instap:"→"Entry:" wrapper note
+ * (rbMigrateSplitRouteEntryNotes()'s own guard already recognizes both prefixes generically, from
+ * the Eurasia batch); and all six routes' own best_starting_month/travel_style/climate_summary/
+ * description/notes fields, plus each route's region season/notes text. Reference values are read
+ * straight off the (already-translated) rbBuildXRoute() functions rather than duplicated a third
+ * time here, so there's a single source of truth for the English text.
+ *
+ * Migration-collision check for this batch (same category of bug fixed for Patagonia/Eurasia/India &
+ * Himalaya): this route has its own route-logic-overhaul migration,
+ * rbMigrateNordicArcticRouteLogicOverhaul(), which pattern-matches on the Dutch substring '(2026-08)'
+ * (and, uniquely for Svalbard 🐻‍❄️, 'Ingekort (2026-08') inside this route's own `notes` field to
+ * decide whether it already appended its one-time note. The generic '(2026-08)' marker survives
+ * translation unchanged (it's just a date stamp), so only Svalbard 🐻‍❄️'s Dutch-only 'Ingekort
+ * (2026-08' marker needed widening to also recognize 'Shortened (2026-08' — done directly on that
+ * migration above (it's the only one of the five splits whose name is unchanged by this rename, so
+ * it's the only one that migration can still find on an already-translated route). The other four
+ * splitroutes' Dutch-named lookups in that same migration's `codesByRoute`/note-selection tables
+ * were deliberately left untouched: once renamed, they simply stop matching there (a safe no-op —
+ * their build functions already bake in the fully-corrected, already-translated content directly, so
+ * there's nothing left for that older migration to patch).
+ */
+function rbMigrateNordicArcticEnglish() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_NORDIC_ARCTIC_ENGLISH)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_NORDIC_ARCTIC_ENGLISH, '1');
+
+  const targets = [
+    { oldName: 'Nordic Arctic Expedition ❄️', newName: 'Nordic Arctic Expedition ❄️', buildFn: rbBuildArcticCircleRoute },
+    { oldName: 'Scandinavië Overland 🚂', newName: 'Scandinavia Overland 🚂', buildFn: rbBuildScandinaviaOverlandRoute },
+    { oldName: 'Svalbard 🐻‍❄️', newName: 'Svalbard 🐻‍❄️', buildFn: rbBuildSvalbardRoute },
+    { oldName: 'Faeröer 🐑', newName: 'Faroe Islands 🐑', buildFn: rbBuildFaroeIslandsRoute },
+    { oldName: 'IJsland ❄️', newName: 'Iceland ❄️', buildFn: rbBuildIcelandRoute },
+    { oldName: 'Groenland 🧊', newName: 'Greenland 🧊', buildFn: rbBuildGreenlandRoute },
+  ];
+
+  targets.forEach(({ oldName, newName, buildFn }) => {
+    const route = rbRoutes.find(r => r.name === oldName || r.name === newName);
+    if (!route) return;
+    rbApplyNordicArcticEnglishToRoute(route, buildFn(), newName);
+  });
+}
+
+function rbApplyNordicArcticEnglishToRoute(route, ref, newName) {
+  let touched = false;
+
+  if (route.name !== newName) { route.name = newName; touched = true; }
+
+  // Regions: matched by position (translation doesn't add/remove/reorder regions) — only
+  // name/season/notes text can differ.
+  (route.regions || []).forEach((region, i) => {
+    const refRegion = (ref.regions || [])[i];
+    if (!refRegion) return;
+    if (region.name !== refRegion.name) { region.name = refRegion.name; touched = true; }
+    if (region.season !== refRegion.season) { region.season = refRegion.season; touched = true; }
+    if (region.notes !== refRegion.notes) { region.notes = refRegion.notes; touched = true; }
+  });
+
+  // Blocks: matched by country_code alone — every country in this family appears at most once per
+  // route, no repeated-country blocks to disambiguate.
+  (ref.blocks || []).forEach(refBlock => {
+    const block = route.blocks.find(b => b.country_code === refBlock.country_code);
+    if (!block) return;
     if (block.notes !== refBlock.notes) { block.notes = refBlock.notes; touched = true; }
     if (block.transport_to_next !== refBlock.transport_to_next) { block.transport_to_next = refBlock.transport_to_next; touched = true; }
     if (block.destinations && refBlock.destinations && block.destinations.length === refBlock.destinations.length) {
