@@ -410,6 +410,104 @@ implementation step — likely a new page or filter component that reads `TRIP_D
 `dataService.js` reads the Sheet) are two distinct pieces of work; only the first has started. No
 plan/estimate exists yet for the second — not started, wait for Youri to raise it.
 
+## Route Builder: English content + EUROPA_TRIP_IDEAS conversion + Taxonomy UI (2026-08, 3-phase plan)
+
+Three dependent workstreams, in this order. Started 2026-08-18. Resume here after a break — this
+section is written to be picked back up cleanly without re-deriving the plan.
+
+**Why this order**: Phase 2 writes 319 new routes in English from day one — doing that before Phase 1
+finishes would leave Route Builder mixed-language during the transition. Phase 3 (a filter UI over
+`TRIP_DATABASE.csv`) is far more useful once ~450 routes actually exist in the app than it is over
+today's 131, so it comes last.
+
+### Phase 1 — translate all 131 existing routes (13 Grand Trips + 118 splitroutes) from Dutch to English
+
+The rest of the app (page chrome, buttons, the Trips-sheet data) is already English — only Route
+Builder's route content (names, `notes`, `travel_style`, `climate_summary`, `description`,
+`transport_to_next`, destination names) is Dutch, left over from when Route Builder was originally
+built. Facts/figures/reasoning stay exactly the same — text translation only, never a content change.
+
+**Two structurally different route types, per `CLAUDE.md`'s architecture note**:
+- **Dict-based families** (Eurasia, Pan-American, Patagonia & Antarctica, India & Himalaya, Nordic
+  Arctic, Africa Grand Tour) — splitroutes pull shared content via `rbContentFor()` from one
+  `RB_EXPEDITION_CONTENT` dict. Translating the dict once cascades to every splitroute automatically;
+  only each splitroute's own short wrapper text (flight-in note, "split off from X" note) needs
+  separate translation.
+- **Hand-authored families** (Mediterranean Civilizations, Central European Grand Roadtrip, British
+  Isles, Caribbean & Amazon, West & Central Africa, Oceania, North America) — every splitroute
+  duplicates its own full content (see `rbBuildMaltaRoute()` vs. `rbBuildCostaRicaRoute()` for the
+  contrast). Each one needs individual translation — no free cascade.
+
+**Critical rule for every batch** (see `CLAUDE.md`): these are all already-seeded routes. Translating
+the source alone does nothing for an already-loaded browser — every batch needs its own new
+`rbMigrateXEnglish()` function behind a fresh flag, following whichever pattern (wholesale-replace vs.
+field-patch) that route's own prior migrations already used.
+
+**Status — 1 of 13 batches done.** Pilot batch (Central European Grand Roadtrip, chosen specifically
+because it has zero splitroutes — cleanest possible first test) cost **138,985 tokens** for one
+14-leg, no-splitroute route. That's well above the original 400-600K blind estimate for the whole
+job — recalibrated total based on this real data point: **~2.5-3.5M tokens for all 13 batches**,
+since several remaining families (Mediterranean, Africa Grand Tour, Pan-American) carry many more
+standalone routes than this pilot did.
+
+| # | Family | Type | Splitroutes | Status | Tokens |
+|---|---|---|---|---|---|
+| 1 | Eurasia Grand Tour | dict-based | 3 | not started | — |
+| 2 | Patagonia & Antarctica | dict-based | 2 | not started | — |
+| 3 | India & Himalaya | dict-based | 3 | not started | — |
+| 4 | Nordic Arctic | dict-based | 5 | not started | — |
+| 5 | Pan-American Grand Tour + reused standalones | dict-based | 4 + ~15 | not started | — |
+| 6 | Africa Grand Tour + reused standalones | dict-based | 4 + ~20 | not started | — |
+| 7 | Mediterranean Civilizations + standalones | hand-authored | 6 + ~14 | not started | — |
+| 8 | **Central European Grand Roadtrip** | hand-authored | 0 | **done (pilot)** | **138,985** |
+| 9 | British Isles & Celtic Coast | hand-authored | 4 | not started | — |
+| 10 | Caribbean & Amazon | hand-authored | 2 | not started | — |
+| 11 | West & Central Africa | hand-authored | 2 | not started | — |
+| 12 | Oceania + standalones | hand-authored | 4 + 7 | not started | — |
+| 13 | North America + standalones | hand-authored | 3 + 6 | not started | — |
+
+**Workflow per batch**: delegate to a `general-purpose` subagent — read `CLAUDE.md`'s migration rule
+first, find the family's build function(s), translate every Dutch text field (never touch
+days/budget/lat/lng/country codes), grep the whole file for any other reference to the old name,
+write the new migration + flag + wire it into the init call sequence, run `node --check
+js/pages/routeBuilder.js` to catch syntax errors before committing, commit locally (ask before
+pushing), report the real token cost, then ask before starting the next batch.
+
+### Phase 2 — convert `EUROPA_TRIP_IDEAS.md`'s 319 tagged items into real `rbBuildXRoute()` code
+
+Not started — waits on Phase 1 finishing so every new route is written in English against an
+already-all-English Route Builder, no translation step needed for these (author directly in
+English from `EUROPA_TRIP_IDEAS.md`'s Dutch source content, don't machine-translate the doc text).
+
+Chosen approach (2026-08-18 decision): **full hand-authored, same depth as the 131 existing
+routes** — real per-destination coordinates (so the "🔍 Gedetailleerd" map view works on every new
+route, not just a subset) and full narrative notes per leg, not a thinner data-driven auto-generated
+version. Reuses the exact 21 sub-batch structure already proven for Trip Taxonomy's Groep 3 tagging
+(same 15 named clusters from `EUROPA_TRIP_IDEAS.md`, same 6 split into two halves) — see the "Trip
+Taxonomy" section above for that batch table; same batches apply here, now for code instead of tags.
+
+**Estimated cost**: ~9,000-16,000 tokens/item × 319 items ≈ **3-5M tokens total** — based on the
+`rbBuildJordanRoute()` example (fresh single-country build with real coordinates, no shared content
+to reuse, since these are new destinations never coded before). Not yet piloted for this specific
+task — run a small first batch (Baltische staten or Benelux, 6 items) to get a real number before
+trusting this estimate, same discipline as every other batch-cost estimate in this project.
+
+**Per item**: read `EUROPA_TRIP_IDEAS.md`'s Dutch source (already has route/budget/season/webcheck
+detail, no fresh research needed), write an `rbBuildXRoute()` with real per-destination coordinates
+and English notes, seed it (no migration needed — brand new, never previously seeded), flip
+`TRIP_DATABASE.csv`'s "In Route Builder?" from No to Yes for that row so the taxonomy stays in sync,
+`node --check` before commit.
+
+### Phase 3 — make the Trip Taxonomy filters visible in the app UI
+
+Not started, not designed. `TRIP_TAXONOMY.md`'s 29 fields and `TRIP_DATABASE.csv`'s tagged rows
+(450, soon 450+ once Phase 2 lands) currently aren't read by any code in `js/` or any `.html` page —
+no filter UI, no page that displays a trip's tags. Comes after Phase 2 specifically because a filter
+UI is far more valuable once most of Route Builder's content is actually searchable/filterable by
+these fields, rather than just today's 131 hand-built routes. Revisit design (new page vs. filter
+component bolted onto the existing Route Builder list, how it reads the CSV the way `dataService.js`
+reads the Sheet) once Phase 2 is substantially done.
+
 ## Search
 
 `search.html` — one search box across Trips, Route Builder expeditions (incl. country blocks,
