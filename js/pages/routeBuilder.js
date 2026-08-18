@@ -78,6 +78,7 @@ const RB_MIGRATE_FLAG_2026_08_ALASKA_ADDITION = 'atlas_grand_trips_migrate_2026_
 const RB_MIGRATE_FLAG_2026_08_CENTRAL_EUROPEAN_ENGLISH = 'atlas_grand_trips_migrate_2026_08_central_european_english_v1';
 const RB_MIGRATE_FLAG_2026_08_EURASIA_ENGLISH = 'atlas_grand_trips_migrate_2026_08_eurasia_english_v1';
 const RB_MIGRATE_FLAG_2026_08_PATAGONIA_ANTARCTICA_ENGLISH = 'atlas_grand_trips_migrate_2026_08_patagonia_antarctica_english_v1';
+const RB_MIGRATE_FLAG_2026_08_INDIA_HIMALAYA_ENGLISH = 'atlas_grand_trips_migrate_2026_08_india_himalaya_english_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -153,6 +154,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateCentralEuropeanRoadtripEnglish();
   rbMigrateEurasiaFamilyEnglish();
   rbMigratePatagoniaAntarcticaEnglish();
+  rbMigrateIndiaHimalayaEnglish();
   rbMigrateBritishIslesRouteLogicOverhaul();
   rbMigrateNorthAmericaRouteLogicOverhaul();
   rbMigrateWestCentralAfricaRouteLogicOverhaul();
@@ -1893,10 +1895,10 @@ const RB_EXPEDITION_CONTENT = {
     ], transport_to_next: "End of the expedition — flight back from Ushuaia", notes: "Price verified (2026-07): €9,500 fits comfortably within the realistic range for an entry-level/shared-cabin Antarctica cruise (2026: ≈$8,000-12,000). 11 days is realistic for an entry-level expedition cruise (2026-08, search-confirmed)." },
   },
   "India & Himalaya Expedition 🏔️": {
-    // India ingekort (2026-08): Agra/Taj Mahal, Amritsar/Gouden Tempel en Dharamshala/McLeod Ganj
-    // geschrapt op Youri's verzoek — al eerder bezocht. Delhi blijft als verplicht aankomstpunt.
+    // India trimmed (2026-08): Agra/Taj Mahal, Amritsar/Golden Temple and Dharamshala/McLeod Ganj
+    // cut at Youri's request — already visited before. Delhi stays as the mandatory arrival point.
     IN: { days: 22, budget: 935, lat: 28.6139, lng: 77.209, destinations: [
-      { name: 'Delhi (aankomst, geen extra bezienswaardigheden — al bezocht)', lat: 28.6139, lng: 77.209 },
+      { name: 'Delhi (arrival, no extra sightseeing — already visited)', lat: 28.6139, lng: 77.209 },
       { name: 'Jaipur', lat: 26.9124, lng: 75.7873 },
       { name: 'Pushkar', lat: 26.4899, lng: 74.5511 },
       { name: 'Jodhpur', lat: 26.2389, lng: 73.0243 },
@@ -1905,7 +1907,7 @@ const RB_EXPEDITION_CONTENT = {
       { name: 'Manali', lat: 32.2432, lng: 77.1892 },
       { name: 'Rishikesh', lat: 30.0869, lng: 78.2676 },
       { name: 'Varanasi', lat: 25.3176, lng: 82.9739 },
-    ], transport_to_next: "Bus/trein naar Sunauli en te voet de grensovergang naar Belahiya (Nepal), dan bus door naar Lumbini/Pokhara — alternatief: korte vlucht Varanasi-Kathmandu", notes: "Ingekort (2026-08, op Youri's verzoek — al bezocht): Agra/Taj Mahal, Amritsar/Gouden Tempel en Dharamshala/McLeod Ganj geschrapt. Delhi blijft als verplicht aankomstpunt maar zonder extra bezienswaardigheden (Rode Fort etc. al gezien). Udaipur-Manali nu rechtstreeks (trein/vlucht via Delhi) — geen tussenstop in Amritsar/Dharamshala meer nodig. Dagen/budget meegeschaald (30→22 dagen, €1.275→€935). Reisadvies Punjab-grensregio (2026-08, search-bevestigd): explosieve incidenten bij Amritsar/Jalandhar op 5 mei 2026 — verder niet relevant nu Amritsar uit de route is, maar wel een signaal om die regio sowieso te vermijden." },
+    ], transport_to_next: "Bus/train to Sunauli and on foot across the border crossing to Belahiya (Nepal), then bus onward to Lumbini/Pokhara — alternative: short flight Varanasi-Kathmandu", notes: "Trimmed (2026-08, at Youri's request — already visited): Agra/Taj Mahal, Amritsar/Golden Temple and Dharamshala/McLeod Ganj cut. Delhi stays as the mandatory arrival point but without extra sightseeing (Red Fort etc. already seen). Udaipur-Manali is now direct (train/flight via Delhi) — no more stopover in Amritsar/Dharamshala needed. Days/budget scaled along (30→22 days, €1,275→€935). Travel advisory, Punjab border region (2026-08, search-confirmed): explosive incidents near Amritsar/Jalandhar on 5 May 2026 — no longer directly relevant now that Amritsar is off the route, but still a signal to avoid that region regardless." },
     NP: { days: 21, budget: 1260, lat: 27.7172, lng: 85.324, destinations: [
       { name: 'Lumbini', lat: 27.4833, lng: 83.2767 },
       { name: 'Chitwan National Park', lat: 27.5291, lng: 84.3542 },
@@ -1914,15 +1916,15 @@ const RB_EXPEDITION_CONTENT = {
       { name: 'Kathmandu', lat: 27.7172, lng: 85.324 },
       { name: 'Patan', lat: 27.6588, lng: 85.3247 },
       { name: 'Bhaktapur', lat: 27.671, lng: 85.4298 },
-    ], transport_to_next: "Vlucht Kathmandu-Paro (spectaculaire Himalaya-vlucht, alleen door Drukair of Bhutan Airlines uitgevoerd, Bhutan-visum/permit vooraf regelen)", notes: "Prijscorrectie (2026-07): €47,60→€60/dag. Annapurna-trekdagen zijn duurder dan het gemiddelde: verplichte gids (sinds 2023, geen individueel trekken meer) + porter samen al snel $50-60/dag, plus TIMS/ACAP-vergunningen (~$50 eenmalig). Update (2026-08, search-bevestigd): TIMS-kaart is officieel nog verplicht maar wordt in de praktijk niet meer gecontroleerd op Annapurna-paden (ACAP-vergunning is de enige die echt gecheckt wordt); TAAN heeft op 22 maart 2026 de eis van minimaal 2 trekkers per groep geschrapt — solo trekken met gids mag nu ook." },
+    ], transport_to_next: "Flight Kathmandu-Paro (a spectacular Himalaya flight, operated only by Drukair or Bhutan Airlines, arrange the Bhutan visa/permit in advance)", notes: "Price correction (2026-07): €47.60→€60/day. Annapurna trekking days cost more than the average: a mandatory guide (since 2023, no more solo trekking) plus porter together already run $50-60/day, plus TIMS/ACAP permits (~$50 one-off). Update (2026-08, search-confirmed): the TIMS card is still officially required but in practice is no longer checked on Annapurna trails (the ACAP permit is the only one actually checked); on 22 March 2026 TAAN dropped the requirement of a minimum of 2 trekkers per group — solo trekking with a guide is now allowed too." },
     BT: { days: 8, budget: 2275, lat: 27.4728, lng: 89.639, destinations: [
       { name: 'Paro', lat: 27.4305, lng: 89.4133 },
       { name: 'Thimphu', lat: 27.4728, lng: 89.639 },
       { name: 'Dochula Pass', lat: 27.3025, lng: 89.6529 },
       { name: 'Punakha', lat: 27.5921, lng: 89.8797 },
-      { name: 'Bumthang (optioneel, per vlucht Paro-Bumthang)', lat: 27.5405, lng: 90.7438 },
+      { name: 'Bumthang (optional, by flight Paro-Bumthang)', lat: 27.5405, lng: 90.7438 },
       { name: "Tiger's Nest Monastery", lat: 27.4919, lng: 89.3628 },
-    ], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Paro International Airport", notes: "Prijs geverifieerd (2026-07), klopt ruim — de verplichte Sustainable Development Fee ($100/nacht, ongewijzigd sinds 2023, gegarandeerd tot 31 augustus 2027) zit al comfortabel in dit dagtarief verwerkt. Vlucht Paro-Kathmandu (~$400-500 enkele reis) is een aparte kostenpost, niet in dit dagtarief. Nieuw (2026-08): Bhutan heft sinds 1 januari 2026 5% GST op toeristische diensten (hotels, gidsen, vervoer) — raakt niet de SDF/visumkosten zelf, maar verhoogt de effectieve daguitgaven iets. Bumthang-uitstap: op Youri's verzoek de binnenlandse vlucht Paro-Bumthang genoteerd als standaardoptie i.p.v. de lange terugrit over de weg." },
+    ], transport_to_next: "End of the expedition — flight back from Paro International Airport", notes: "Price verified (2026-07), comfortably correct — the mandatory Sustainable Development Fee ($100/night, unchanged since 2023, guaranteed through 31 August 2027) is already comfortably absorbed into this daily rate. Flight Paro-Kathmandu (~$400-500 one-way) is a separate cost, not included in this daily rate. New (2026-08): Bhutan has levied a 5% GST on tourist services (hotels, guides, transport) since 1 January 2026 — doesn't affect the SDF/visa costs themselves, but slightly raises the effective daily spend. Bumthang side trip: at Youri's request, the domestic flight Paro-Bumthang is noted as the standard option instead of the long overland return drive." },
   },
 };
 
@@ -2487,15 +2489,15 @@ function rbBuildHimalayaIndiaRoute() {
   return rbBuildFlatSeedRoute('India & Himalaya Expedition 🏔️', [
     himalaya('IN', 'India'), himalaya('NP', 'Nepal'), himalaya('BT', 'Bhutan'),
   ], {
-    best_starting_month: 'Oktober',
-    travel_style: 'Trein en lokale bus in India (met een binnenlandse vlucht als de afstand dat rechtvaardigt), georganiseerde trekking in Nepal met lokale gids/porter, verplichte gids en vaste dagprijs in Bhutan.',
-    climate_summary: "Vergeleken scenario's: (1) een start in de Indiase zomer (april-juni) is bloedheet in Rajasthan/Delhi (regelmatig 40°C+) en valt daarna middenin de moesson (juli-september) voor zowel Noord-India als Nepal; (2) een start in de Nepalese lente (maart-april) geeft mooie rododendrons maar valt in India's heetste periode als je daar eerst doorheen reist; (3) een start begin oktober laat Noord-India net na de moesson in het aangename koele seizoen vallen (droog, heldere lucht, tot december comfortabel), en brengt je in november bij Nepal — het beste trekkingvenster van het jaar (net na de moesson, helderste zicht op de bergen, vóór winterse sneeuwval op de hoge passen) — gevolgd door Bhutan in november-december, ook nog binnen hun goede seizoen. Beste keuze: start begin oktober in Noord-India, zodat de expeditie (circa 2 maanden) medio december in Bhutan eindigt, met alle drie de landen in hun beste periode.",
-    description: 'Rajasthan, Manali en Varanasi via Nepalese bergen naar het besloten koninkrijk Bhutan (Delhi, Agra, Amritsar en Dharamshala zijn al eerder bezocht, dus niet meer als bezienswaardigheid in deze route).',
+    best_starting_month: 'October',
+    travel_style: 'Train and local bus in India (with a domestic flight where the distance justifies it), organized trekking in Nepal with a local guide/porter, mandatory guide and fixed daily rate in Bhutan.',
+    climate_summary: "Compared scenarios: (1) a start in the Indian summer (April-June) is scorching in Rajasthan/Delhi (regularly 40°C+) and then falls right in the middle of the monsoon (July-September) for both North India and Nepal; (2) a start in the Nepalese spring (March-April) gives beautiful rhododendrons but falls in India's hottest period if you travel through there first; (3) a start in early October puts North India in its pleasant cool season right after the monsoon (dry, clear skies, comfortable until December), and brings you to Nepal in November — the best trekking window of the year (right after the monsoon, clearest mountain views, before winter snowfall on the high passes) — followed by Bhutan in November-December, still within their good season. Best choice: start in early October in North India, so the expedition (roughly 2 months) ends in mid-December in Bhutan, with all three countries in their best period.",
+    description: 'Rajasthan, Manali and Varanasi via the Nepalese mountains to the secluded kingdom of Bhutan (Delhi, Agra, Amritsar and Dharamshala were already visited before, so no longer sightseeing stops on this route).',
     notes: 'Imported from a ChatGPT brainstorm — seeded with zero blocks: group these 3 countries into your own blocks via the region dropdown whenever you\'re ready to plan it for real.\n\n' +
-      'Tijdscontrole (2026-07): dagen per land opgehoogd (50→59 dagen totaal) — vooral Nepal (17→21, "Annapurna Region" was vaag: als daar een basiskamptrek bij hoort is meer tijd nodig) en India-Noord (26→30, Indiase treinen/wegen lopen vaker uit dan gepland). Landen ongewijzigd; alleen duur, best_starting_month en klimaatredenering zijn toegevoegd.\n\n' +
-      'Vervolg (2026-07): budgetten per land meegeschaald met de opgehoogde dagen.\n\n' +
-      'Prijzen/visum/reisadvies-verificatie (2026-07): Nepal gecorrigeerd (€47,60→€60/dag, verplichte gids/porter + vergunningen op Annapurna-trekdagen niet gedekt); India en Bhutan bevestigd accuraat. Nieuw totaal: €1.260 Nepal (was €1.000). Zie de losse landnotities hierboven voor details.\n\n' +
-      "Routelogica-herziening (2026-08): geen geografische fouten gevonden — Delhi als hub met twee losse etappes (Rajasthan zuidwest, Punjab/Himachal noord) en Bhutans terugkeer naar Paro voor Tiger's Nest zijn allebei al de standaard/optimale aanpak, geen bug. Wel ingekort op Youri's verzoek: Agra/Taj Mahal, Amritsar/Gouden Tempel en Dharamshala/McLeod Ganj geschrapt (al bezocht) — zie India's eigen notities voor details. Bumthang-uitstap in Bhutan nu per vlucht Paro-Bumthang i.p.v. de lange terugrit over de weg (Youri's voorkeur). Nepal-notities bijgewerkt (TIMS niet meer gecontroleerd op Annapurna-paden, TAAN-groepsgrootte-eis vervallen); Bhutan-notities bijgewerkt (nieuwe 5% GST sinds 2026). Alle bestemmingen kregen coördinaten voor de 'Gedetailleerd'-kaartweergave. Nieuw totaal: 51 dagen, €4.470 (was 59 dagen/€4.810) — het verschil komt volledig door India's inkorting.",
+      'Time check (2026-07): days per country increased (50→59 days total) — especially Nepal (17→21, "Annapurna Region" was vague: if that includes a base camp trek, more time is needed) and North India (26→30, Indian trains/roads run late more often than planned). Countries unchanged; only duration, best_starting_month and the climate reasoning were added.\n\n' +
+      'Follow-up (2026-07): budgets per country scaled along with the increased days.\n\n' +
+      'Prices/visa/travel-advisory verification (2026-07): Nepal corrected (€47.60→€60/day, mandatory guide/porter + permits on Annapurna trekking days not covered); India and Bhutan confirmed accurate. New total: €1,260 Nepal (was €1,000). See the individual country notes above for details.\n\n' +
+      "Route-logic review (2026-08): no geographic errors found — Delhi as a hub with two separate legs (Rajasthan southwest, Punjab/Himachal north) and Bhutan's return to Paro for Tiger's Nest are both already the standard/optimal approach, no bug. Trimmed at Youri's request though: Agra/Taj Mahal, Amritsar/Golden Temple and Dharamshala/McLeod Ganj cut (already visited) — see India's own notes for details. Bumthang side trip in Bhutan now by flight Paro-Bumthang instead of the long overland return drive (Youri's preference). Nepal notes updated (TIMS no longer checked on Annapurna trails, TAAN group-size requirement dropped); Bhutan notes updated (new 5% GST since 2026). All destinations got coordinates for the 'Detailed' map view. New total: 51 days, €4,470 (was 59 days/€4,810) — the difference comes entirely from India's trim.",
   });
 }
 
@@ -4592,19 +4594,19 @@ function rbSeedHimalayaSplitExpeditions() {
 
 function rbBuildNorthIndiaRoute() {
   const himalaya = (code, name) => rbContentFor('India & Himalaya Expedition 🏔️', code, name);
-  return rbBuildFlatSeedRoute('Noord-India 🕌', [
+  return rbBuildFlatSeedRoute('North India 🕌', [
     {
       ...himalaya('IN', 'India'),
-      notes: "Instap: vlucht Amsterdam-Delhi (KLM, rechtstreeks, ±8u15, vanaf ±€600-950 retour, beste periode begin oktober). Prijsindicatie webonderzoek 2026-08, momentopname. " + (himalaya('IN', 'India').notes || ''),
-      transport_to_next: "Einde van de expeditie — binnenlandse vlucht Varanasi-Delhi (±1u20), dan terugvlucht Delhi-Amsterdam (KLM, rechtstreeks, ±8u15, vanaf ±€350-550 retour, geen rechtstreekse internationale verbinding vanuit Varanasi zelf). Prijsindicatie webonderzoek 2026-08, momentopname.",
+      notes: "Entry: flight Amsterdam-Delhi (KLM, direct, ±8h15, from ±€600-950 return, best period early October). Price indication from 2026-08 web research, a snapshot. " + (himalaya('IN', 'India').notes || ''),
+      transport_to_next: "End of the expedition — domestic flight Varanasi-Delhi (±1h20), then return flight Delhi-Amsterdam (KLM, direct, ±8h15, from ±€350-550 return, no direct international connection from Varanasi itself). Price indication from 2026-08 web research, a snapshot.",
     },
   ], {
-    best_starting_month: 'Oktober',
-    travel_style: 'Trein en lokale bus, met een binnenlandse vlucht als de afstand dat rechtvaardigt.',
-    climate_summary: 'Begin oktober, net na de moesson, is Noord-India in zijn aangename koele seizoen — droog, heldere lucht, comfortabel tot in december.',
-    description: 'Rajasthan, Manali en Varanasi (Delhi, Agra en Amritsar/Dharamshala zijn al eerder bezocht, dus niet meer als bezienswaardigheid in deze route).',
-    notes: 'Losgesplitst van India & Himalaya Expedition 🏔️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen en budget zijn ongewijzigd overgenomen. India & Himalaya Expedition 🏔️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\n' +
-      "Routelogica-herziening (2026-08): zelfde ronde als de hoofdexpeditie — Agra/Taj Mahal, Amritsar/Gouden Tempel en Dharamshala/McLeod Ganj geschrapt (al bezocht door Youri), Udaipur-Manali nu rechtstreeks, coördinaten toegevoegd. Zie India & Himalaya Expedition 🏔️'s eigen notities voor de volledige uitleg. Nieuw totaal: 22 dagen, €935 (was 30 dagen/€1.275).",
+    best_starting_month: 'October',
+    travel_style: 'Train and local bus, with a domestic flight where the distance justifies it.',
+    climate_summary: 'In early October, right after the monsoon, North India is in its pleasant cool season — dry, clear skies, comfortable until December.',
+    description: 'Rajasthan, Manali and Varanasi (Delhi, Agra and Amritsar/Dharamshala were already visited before, so no longer sightseeing stops on this route).',
+    notes: 'Split off from India & Himalaya Expedition 🏔️ as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Country, days and budget are carried over unchanged. India & Himalaya Expedition 🏔️ itself remains unchanged as a separate, full expedition.\n\n' +
+      "Route-logic review (2026-08): same round as the main expedition — Agra/Taj Mahal, Amritsar/Golden Temple and Dharamshala/McLeod Ganj cut (already visited by Youri), Udaipur-Manali now direct, coordinates added. See India & Himalaya Expedition 🏔️'s own notes for the full explanation. New total: 22 days, €935 (was 30 days/€1,275).",
   });
 }
 
@@ -4613,30 +4615,30 @@ function rbBuildNepalRoute() {
   return rbBuildFlatSeedRoute('Nepal 🏔️', [
     {
       ...himalaya('NP', 'Nepal'),
-      notes: "Instap: vlucht Amsterdam-Kathmandu, met overstap (±13-16 uur, vanaf ±€550-950 retour, november is het topseizoen voor trekking dus prijzen zitten aan de hogere kant). Prijsindicatie webonderzoek 2026-08, momentopname. " + (himalaya('NP', 'Nepal').notes || ''),
-      transport_to_next: "Einde van de expeditie — terugvlucht Kathmandu-Amsterdam, met overstap (bv. via Doha of Istanbul, ±13-16 uur, vanaf ±€350-550 retour, geen rechtstreekse verbinding vanuit Kathmandu). Prijsindicatie webonderzoek 2026-08, momentopname.",
+      notes: "Entry: flight Amsterdam-Kathmandu, with a connection (±13-16 hours, from ±€550-950 return, November is the peak trekking season so prices are on the higher side). Price indication from 2026-08 web research, a snapshot. " + (himalaya('NP', 'Nepal').notes || ''),
+      transport_to_next: "End of the expedition — return flight Kathmandu-Amsterdam, with a connection (e.g. via Doha or Istanbul, ±13-16 hours, from ±€350-550 return, no direct connection from Kathmandu). Price indication from 2026-08 web research, a snapshot.",
     },
   ], {
     best_starting_month: 'November',
-    travel_style: 'Georganiseerde trekking met lokale gids/porter (sinds 2023 verplicht, solo trekken mag niet meer).',
-    climate_summary: 'November is het beste trekkingvenster van het jaar: net na de moesson, helderste zicht op de bergen, nog vóór winterse sneeuwval op de hoge passen.',
-    description: 'Trekking in de Annapurna Region, plus Kathmandu, Pokhara en Chitwan National Park.',
-    notes: 'Losgesplitst van India & Himalaya Expedition 🏔️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen en budget zijn ongewijzigd overgenomen (incl. de 2026-07 prijscorrectie voor de verplichte gids/porter op Annapurna-trekdagen). India & Himalaya Expedition 🏔️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\n' +
-      'Routelogica-herziening (2026-08): coördinaten per bestemming toegevoegd; TIMS wordt in de praktijk niet meer gecontroleerd op Annapurna-paden en TAAN heeft de minimum-2-trekkers-eis geschrapt (22 maart 2026) — zie India & Himalaya Expedition 🏔️\'s eigen Nepal-notities voor details.',
+    travel_style: 'Organized trekking with a local guide/porter (mandatory since 2023, solo trekking no longer allowed).',
+    climate_summary: 'November is the best trekking window of the year: right after the monsoon, clearest mountain views, still before winter snowfall on the high passes.',
+    description: 'Trekking in the Annapurna Region, plus Kathmandu, Pokhara and Chitwan National Park.',
+    notes: 'Split off from India & Himalaya Expedition 🏔️ as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Country, days and budget are carried over unchanged (incl. the 2026-07 price correction for the mandatory guide/porter on Annapurna trekking days). India & Himalaya Expedition 🏔️ itself remains unchanged as a separate, full expedition.\n\n' +
+      'Route-logic review (2026-08): coordinates per destination added; TIMS is in practice no longer checked on Annapurna trails and TAAN dropped the minimum-2-trekkers requirement (22 March 2026) — see India & Himalaya Expedition 🏔️\'s own Nepal notes for details.',
   });
 }
 
 function rbBuildBhutanRoute() {
   const himalaya = (code, name) => rbContentFor('India & Himalaya Expedition 🏔️', code, name);
   return rbBuildFlatSeedRoute('Bhutan 🐉', [
-    { ...himalaya('BT', 'Bhutan'), notes: "Instap: vlucht Amsterdam-Paro, via Delhi of Bangkok met aansluitende Drukair/Bhutan Airlines-vlucht (±15-20 uur totaal, vanaf ±€1.300-1.900 retour, december valt nog in het goede seizoen). Prijsindicatie webonderzoek 2026-08, momentopname. " + (himalaya('BT', 'Bhutan').notes || '') },
+    { ...himalaya('BT', 'Bhutan'), notes: "Entry: flight Amsterdam-Paro, via Delhi or Bangkok with a connecting Drukair/Bhutan Airlines flight (±15-20 hours total, from ±€1,300-1,900 return, December still falls within the good season). Price indication from 2026-08 web research, a snapshot. " + (himalaya('BT', 'Bhutan').notes || '') },
   ], {
     best_starting_month: 'December',
-    travel_style: 'Verplichte lokale gids en vaste dagprijs (Sustainable Development Fee inbegrepen).',
-    climate_summary: 'November-december valt nog binnen Bhutans goede seizoen.',
-    description: 'Het besloten koninkrijk Bhutan: Paro, Thimphu en Tiger\'s Nest Monastery.',
-    notes: 'Losgesplitst van India & Himalaya Expedition 🏔️ als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Land, dagen en budget zijn ongewijzigd overgenomen. Bhutan is qua duur en logistiek vooral interessant als verlengstuk van Nepal/India (verplichte gids + $100/nacht sustainable fee), maar staat hier ook als volwaardige eigen expeditie klaar voor wie alleen Bhutan wil doen. India & Himalaya Expedition 🏔️ zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\n' +
-      "Routelogica-herziening (2026-08): coördinaten per bestemming toegevoegd; Bumthang-uitstap nu per vlucht Paro-Bumthang i.p.v. de lange terugrit over de weg (Youri's voorkeur); nieuwe 5% GST op toeristische diensten sinds 1 januari 2026 genoteerd — zie India & Himalaya Expedition 🏔️'s eigen Bhutan-notities voor details.",
+    travel_style: 'Mandatory local guide and fixed daily rate (Sustainable Development Fee included).',
+    climate_summary: 'November-December still falls within Bhutan\'s good season.',
+    description: 'The secluded kingdom of Bhutan: Paro, Thimphu and Tiger\'s Nest Monastery.',
+    notes: 'Split off from India & Himalaya Expedition 🏔️ as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Country, days and budget are carried over unchanged. In terms of duration and logistics Bhutan is mainly interesting as an extension of Nepal/India (mandatory guide + $100/night sustainable fee), but it also stands here as a fully independent expedition for anyone who just wants to do Bhutan. India & Himalaya Expedition 🏔️ itself remains unchanged as a separate, full expedition.\n\n' +
+      "Route-logic review (2026-08): coordinates per destination added; Bumthang side trip now by flight Paro-Bumthang instead of the long overland return drive (Youri's preference); new 5% GST on tourist services since 1 January 2026 noted — see India & Himalaya Expedition 🏔️'s own Bhutan notes for details.",
   });
 }
 
@@ -6472,7 +6474,10 @@ function rbApplyPatagoniaOverhaulToRoute(route) {
  * a pure field-patch: India trimmed (Agra/Amritsar/Dharamshala cut, all already visited by Youri),
  * Nepal/Bhutan notes updated with 2026-08 regulatory changes, and per-destination coordinates added
  * to all three countries. Applies to the main expedition and all three split companions (Noord-India
- * 🕌, Nepal 🏔️, Bhutan 🐉) since they share the same RB_EXPEDITION_CONTENT entries via rbContentFor().
+ * 🕌/North India 🕌, Nepal 🏔️, Bhutan 🐉) since they share the same RB_EXPEDITION_CONTENT entries via
+ * rbContentFor(). Looked up by both the old Dutch and new English (2026-08 translation batch) name
+ * for North India, and its own note-append guard widened, so this stays idempotent whichever
+ * language the route was seeded/migrated in — see rbMigrateIndiaHimalayaEnglish() below.
  */
 function rbMigrateHimalayaRouteLogicOverhaul() {
   if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_HIMALAYA_OVERHAUL)) return;
@@ -6481,7 +6486,10 @@ function rbMigrateHimalayaRouteLogicOverhaul() {
   const content = RB_EXPEDITION_CONTENT['India & Himalaya Expedition 🏔️'];
   if (!content) return;
 
-  const routeNames = ['India & Himalaya Expedition 🏔️', 'Noord-India 🕌', 'Nepal 🏔️', 'Bhutan 🐉'];
+  // Noord-India 🕌 was renamed to North India 🕌 by the 2026-08 translation batch
+  // (rbMigrateIndiaHimalayaEnglish) — looked up by both names so this still finds the route
+  // whichever language it was seeded/migrated in.
+  const routeNames = ['India & Himalaya Expedition 🏔️', 'Noord-India 🕌', 'North India 🕌', 'Nepal 🏔️', 'Bhutan 🐉'];
   routeNames.forEach(name => {
     const route = rbRoutes.find(r => r.name === name);
     if (!route) return;
@@ -6508,13 +6516,18 @@ function rbMigrateHimalayaRouteLogicOverhaul() {
 
     const note = name === 'India & Himalaya Expedition 🏔️'
       ? "Routelogica-herziening (2026-08): geen geografische fouten gevonden — Delhi als hub met twee losse etappes (Rajasthan zuidwest, Punjab/Himachal noord) en Bhutans terugkeer naar Paro voor Tiger's Nest zijn allebei al de standaard/optimale aanpak, geen bug. Wel ingekort op Youri's verzoek: Agra/Taj Mahal, Amritsar/Gouden Tempel en Dharamshala/McLeod Ganj geschrapt (al bezocht) — zie India's eigen notities voor details. Bumthang-uitstap in Bhutan nu per vlucht Paro-Bumthang i.p.v. de lange terugrit over de weg (Youri's voorkeur). Nepal-notities bijgewerkt (TIMS niet meer gecontroleerd op Annapurna-paden, TAAN-groepsgrootte-eis vervallen); Bhutan-notities bijgewerkt (nieuwe 5% GST sinds 2026). Alle bestemmingen kregen coördinaten voor de 'Gedetailleerd'-kaartweergave. Nieuw totaal: 51 dagen, €4.470 (was 59 dagen/€4.810) — het verschil komt volledig door India's inkorting."
-      : name === 'Noord-India 🕌'
+      : (name === 'Noord-India 🕌' || name === 'North India 🕌')
       ? "Routelogica-herziening (2026-08): zelfde ronde als de hoofdexpeditie — Agra/Taj Mahal, Amritsar/Gouden Tempel en Dharamshala/McLeod Ganj geschrapt (al bezocht door Youri), Udaipur-Manali nu rechtstreeks, coördinaten toegevoegd. Zie India & Himalaya Expedition 🏔️'s eigen notities voor de volledige uitleg. Nieuw totaal: 22 dagen, €935 (was 30 dagen/€1.275)."
       : name === 'Nepal 🏔️'
       ? "Routelogica-herziening (2026-08): coördinaten per bestemming toegevoegd; TIMS wordt in de praktijk niet meer gecontroleerd op Annapurna-paden en TAAN heeft de minimum-2-trekkers-eis geschrapt (22 maart 2026) — zie India & Himalaya Expedition 🏔️'s eigen Nepal-notities voor details."
       : "Routelogica-herziening (2026-08): coördinaten per bestemming toegevoegd; Bumthang-uitstap nu per vlucht Paro-Bumthang i.p.v. de lange terugrit over de weg (Youri's voorkeur); nieuwe 5% GST op toeristische diensten sinds 1 januari 2026 genoteerd — zie India & Himalaya Expedition 🏔️'s eigen Bhutan-notities voor details.";
 
-    if (route.notes && !route.notes.includes('Routelogica-herziening (2026-08)')) {
+    // Widened guard (2026-08 translation batch): once rbMigrateIndiaHimalayaEnglish() replaces this
+    // Dutch marker phrase with its English translation ("Route-logic review (2026-08)") in a
+    // freshly-seeded/already-translated route, this guard must still recognize the note as
+    // already-applied — otherwise it would double-append this stale Dutch text on top (same
+    // collision class already fixed for rbApplyPatagoniaOverhaulToRoute() in the 2026-08 batch 3).
+    if (route.notes && !route.notes.includes('Routelogica-herziening (2026-08)') && !route.notes.includes('Route-logic review (2026-08)')) {
       route.notes += '\n\n' + note;
       touched = true;
     }
@@ -7129,6 +7142,90 @@ function rbApplyPatagoniaAntarcticaEnglishToRoute(route, ref, newName) {
       (b.destinations || [])[0] && firstDest && b.destinations[0].name === firstDest.name
     );
     if (!refBlock) return;
+    if (block.notes !== refBlock.notes) { block.notes = refBlock.notes; touched = true; }
+    if (block.transport_to_next !== refBlock.transport_to_next) { block.transport_to_next = refBlock.transport_to_next; touched = true; }
+    if (block.destinations && refBlock.destinations && block.destinations.length === refBlock.destinations.length) {
+      block.destinations.forEach((d, j) => {
+        const rd = refBlock.destinations[j];
+        if (rd && d.name !== rd.name) { d.name = rd.name; touched = true; }
+      });
+    }
+  });
+
+  // Route-level text fields.
+  ['best_starting_month', 'travel_style', 'climate_summary', 'description', 'notes'].forEach(field => {
+    if (route[field] !== ref[field]) { route[field] = ref[field]; touched = true; }
+  });
+
+  if (touched) rbSave();
+}
+
+/**
+ * India & Himalaya Expedition family — Dutch-to-English content translation (2026-08), batch 4/13 of
+ * the project-wide Route Builder translation workstream. Dict-based family (RB_EXPEDITION_CONTENT):
+ * translating the shared IN/NP/BT content in the dict itself cascades to the Grand Trip AND all three
+ * splitroutes via rbContentFor() — but each already-seeded route's blocks were frozen into
+ * localStorage at seed time, so this migration still has to field-patch every one of them, same
+ * field-patch pattern as rbMigrateEurasiaFamilyEnglish()/rbMigratePatagoniaAntarcticaEnglish() above
+ * (never a blind wholesale replace, so any hand-edits Youri made elsewhere on a block survive). India,
+ * Nepal and Bhutan each appear at most once per route, so blocks are matched by country_code alone —
+ * no repeated-country special-casing needed here (unlike Eurasia's Malaysia or Patagonia's Chile/
+ * Argentina).
+ *
+ * Also translates: the North India splitroute's own name (Noord-India 🕌 → North India 🕌 — looked up
+ * by old-or-new name so this is idempotent whether it runs against already-seeded Dutch-named data or
+ * an already-English freshly-seeded route; Nepal 🏔️ and Bhutan 🐉 needed no rename, both already the
+ * same word in English); each splitroute's own flight-in "Instap:"→"Entry:" wrapper note
+ * (rbMigrateSplitRouteEntryNotes()'s own guard already recognizes both prefixes generically, from the
+ * Eurasia batch); and all four routes' own best_starting_month/travel_style/climate_summary/
+ * description/notes fields. Reference values are read straight off the (already-translated)
+ * rbBuildXRoute() functions rather than duplicated a third time here, so there's a single source of
+ * truth for the English text.
+ *
+ * Migration-collision check for this batch (same category of bug fixed for Patagonia/Eurasia): this
+ * route has its own route-logic-overhaul migration, rbMigrateHimalayaRouteLogicOverhaul(), which
+ * pattern-matches on the Dutch substring 'Routelogica-herziening (2026-08)' inside this route's own
+ * `notes` field (main expedition and all three splitroutes) to decide whether it already appended its
+ * one-time note. Once this batch's English text ("Route-logic review (2026-08)") replaces that Dutch
+ * phrase in a freshly-seeded/already-translated route, that guard would no longer recognize the note
+ * as already-applied and would double-append its still-Dutch text on top — so that guard (and its
+ * route-name lookup array, for the Noord-India 🕌 → North India 🕌 rename) was widened above to also
+ * recognize the English phrase/name. rbMigrateTimeAuditCorrections's ROUTE_LEVEL_META notesAppend
+ * check and rbMigrateBudgetAndRegionCorrections's appendVervolg() already guard generically on both
+ * 'Tijdscontrole (2026-07)'/'Time check (2026-07)' and 'Vervolg (2026-07)'/'Follow-up (2026-07)' (not
+ * per-route), so no further widening was needed there; and since both only fill in blank route-level
+ * fields (best_starting_month/travel_style/climate_summary/description), they're no-ops once this
+ * batch's build functions populate those fields directly.
+ */
+function rbMigrateIndiaHimalayaEnglish() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_INDIA_HIMALAYA_ENGLISH)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_INDIA_HIMALAYA_ENGLISH, '1');
+
+  const targets = [
+    { oldName: 'India & Himalaya Expedition 🏔️', newName: 'India & Himalaya Expedition 🏔️', buildFn: rbBuildHimalayaIndiaRoute },
+    { oldName: 'Noord-India 🕌', newName: 'North India 🕌', buildFn: rbBuildNorthIndiaRoute },
+    { oldName: 'Nepal 🏔️', newName: 'Nepal 🏔️', buildFn: rbBuildNepalRoute },
+    { oldName: 'Bhutan 🐉', newName: 'Bhutan 🐉', buildFn: rbBuildBhutanRoute },
+  ];
+
+  targets.forEach(({ oldName, newName, buildFn }) => {
+    const route = rbRoutes.find(r => r.name === oldName || r.name === newName);
+    if (!route) return;
+    rbApplyIndiaHimalayaEnglishToRoute(route, buildFn(), newName);
+  });
+}
+
+function rbApplyIndiaHimalayaEnglishToRoute(route, ref, newName) {
+  let touched = false;
+
+  if (route.name !== newName) { route.name = newName; touched = true; }
+
+  // Blocks: matched by country_code alone — India, Nepal and Bhutan each appear at most once per
+  // route in this family, no repeated-country blocks to disambiguate.
+  ['IN', 'NP', 'BT'].forEach(code => {
+    const block = route.blocks.find(b => b.country_code === code);
+    const refBlock = (ref.blocks || []).find(b => b.country_code === code);
+    if (!block || !refBlock) return;
     if (block.notes !== refBlock.notes) { block.notes = refBlock.notes; touched = true; }
     if (block.transport_to_next !== refBlock.transport_to_next) { block.transport_to_next = refBlock.transport_to_next; touched = true; }
     if (block.destinations && refBlock.destinations && block.destinations.length === refBlock.destinations.length) {
