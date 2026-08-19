@@ -1468,21 +1468,21 @@ function rbSeedCaribbeanExpedition() {
 function rbBuildCaribbeanAmazonExpeditionRoute() {
   return rbBuildSeedRoute('Caribbean & Amazon Expedition 🌴', [
     {
-      name: 'Grote Antillen',
+      name: 'Greater Antilles',
       season: 'December',
       budget: 2340,
-      note: 'Droog seizoen, ruim na het orkaanseizoen (dat loopt juni-november) — een veilige, aangename opener.',
+      note: 'Dry season, well after hurricane season (which runs June-November) — a safe, pleasant opener.',
       countries: [
         {
           code: 'CU', name: 'Cuba', days: 18, budget: 1260, lat: 23.1136, lng: -82.3666,
           destinations: [
             { name: 'Havana (Habana Vieja)', lat: 23.1136, lng: -82.3666 },
-            { name: 'Viñales-vallei', lat: 22.6167, lng: -83.7097 },
+            { name: 'Viñales Valley', lat: 22.6167, lng: -83.7097 },
             { name: 'Cienfuegos', lat: 22.1496, lng: -80.4394 },
             { name: 'Trinidad', lat: 21.8047, lng: -79.9825 },
           ],
-          notes: "Havana en het UNESCO-koloniale Trinidad zijn de hoogtepunten; de rustige Viñales-vallei (tabak, karstlandschap) is de verborgen parel. Casas particulares (particuliere kamers) zijn de gangbare backpacker-accommodatie. Prijs geverifieerd (2026-07), klopt. ⚠️ Reisadvies oranje (bevestigd geldig, laatst bijgewerkt 23 juni 2026): grote tekorten aan stroom/brandstof/voedsel/medicijnen, toenemende veiligheidsrisico's — de zesde landelijke stroomstoring van 2026 viel op 2 augustus. Kaarten werken niet bij pinautomaten (contant meenemen). Sinds 1 juli 2025 is de papieren tourist card vervangen door een e-Visa (~$50), gekoppeld aan het verplichte gratis D'Viajeros-formulier (invullen binnen 72u vóór aankomst). Routelogica (2026-08, search-bevestigd): volgorde omgedraaid — Viñales stond eerder als laatste stop (een dubbele omweg: eerst voorbij Cienfuegos naar Trinidad, dan terug naar Cienfuegos, dan een 4,5u oversteek naar Viñales vlak bij Havana); nu als retourtje vanuit Havana meteen aan het begin, gevolgd door Cienfuegos-Trinidad zonder kruisende routes.",
-          transport_to_next: 'Terug naar Havana (~4u15 rijden vanaf Trinidad — de enige realistische internationale gateway, Santiago de Cuba zou de omweg verergeren), dan vlucht Havana-Kingston (meestal met overstap via Panama City of Miami)',
+          notes: "Havana and UNESCO-listed colonial Trinidad are the highlights; the quiet Viñales Valley (tobacco, karst landscape) is the hidden gem. Casas particulares (private rooms) are the standard backpacker accommodation. Price verified (2026-07), holds up. ⚠️ Travel advisory orange (confirmed valid, last updated June 23, 2026): major shortages of power/fuel/food/medicine, rising safety risks — the sixth nationwide power outage of 2026 hit on August 2. Cards don't work at ATMs (bring cash). Since July 1, 2025 the paper tourist card has been replaced by an e-Visa (~$50), tied to the mandatory free D'Viajeros form (to be filled in within 72h before arrival). Route logic (2026-08, search-confirmed): order reversed — Viñales used to be the last stop (a double detour: past Cienfuegos to Trinidad first, then back to Cienfuegos, then a 4.5h crossing to Viñales right next to Havana); now a return trip from Havana right at the start, followed by Cienfuegos-Trinidad without crossing routes.",
+          transport_to_next: 'Back to Havana (~4h15 driving from Trinidad — the only realistic international gateway, Santiago de Cuba would make the detour worse), then a flight Havana-Kingston (usually with a stopover via Panama City or Miami)',
         },
         {
           code: 'JM', name: 'Jamaica', days: 12, budget: 1080, lat: 17.9714, lng: -76.7936,
@@ -1492,101 +1492,101 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
             { name: 'Port Antonio', lat: 18.1811, lng: -76.4513 },
             { name: 'Blue Mountains (Hardwar Gap)', lat: 18.0747, lng: -76.6597 },
           ],
-          notes: 'Blue Mountains (koffie, wandelen) en Port Antonio (rafting, watervallen, nauwelijks toeristen vergeleken met Negril/Ocho Rios) zijn de sterkste match met natuur boven luxe. Prijscorrectie (2026-07): €75→€90/dag, Jamaica is duurder dan aangenomen (guesthouses + entreegelden). Routelogica (2026-08, search-bevestigd): volgorde omgedraaid — Blue Mountains stond als losse heen-en-terugtrip vlak na Kingston (de kustweg naar Ocho Rios loopt daar niet doorheen); nu als bergroute-terugweg (Hardwar Gap, koffieplantages/Newcastle) vanaf Port Antonio naar Kingston, in plaats van een aparte uitstap aan het begin.',
-          transport_to_next: 'Kort eindstuk Blue Mountains-Kingston (Hardwar Gap-bergroute), dan vlucht Kingston-Curaçao (meestal met overstap via Panama City of Miami)',
+          notes: 'Blue Mountains (coffee, hiking) and Port Antonio (rafting, waterfalls, hardly any tourists compared to Negril/Ocho Rios) are the strongest match for nature over luxury. Price correction (2026-07): €75→€90/day, Jamaica is pricier than assumed (guesthouses + entrance fees). Route logic (2026-08, search-confirmed): order reversed — Blue Mountains used to be a separate out-and-back trip right after Kingston (the coastal road to Ocho Rios doesn\'t run through it); now a mountain-route return leg (Hardwar Gap, coffee plantations/Newcastle) from Port Antonio to Kingston, instead of a separate side trip at the start.',
+          transport_to_next: 'Short final stretch Blue Mountains-Kingston (Hardwar Gap mountain route), then a flight Kingston-Curaçao (usually with a stopover via Panama City or Miami)',
         },
       ],
     },
     {
-      name: 'Nederlandse Caraïben',
-      season: 'December-januari',
+      name: 'Dutch Caribbean',
+      season: 'December-January',
       budget: 1220,
-      note: 'Droog seizoen — helderder water voor snorkelen en duiken.',
+      note: 'Dry season — clearer water for snorkeling and diving.',
       countries: [
         {
           code: 'CW', name: 'Curaçao', days: 7, budget: 560, lat: 12.1084, lng: -68.9335,
           destinations: [
             { name: 'Willemstad (UNESCO)', lat: 12.1091, lng: -68.9316 },
             { name: 'Shete Boka National Park', lat: 12.3667, lng: -69.15 },
-            { name: 'stranden (Grote Knip)', lat: 12.2167, lng: -69.15 },
+            { name: 'beaches (Grote Knip)', lat: 12.2167, lng: -69.15 },
           ],
-          notes: 'Willemstad met zijn Nederlandse koloniale architectuur is de stedelijke tegenhanger van rustig Bonaire. Shete Boka (ruige noordkust) is de verborgen parel, veel rustiger dan de stranden. Prijs geverifieerd (2026-07), klopt. Digital Immigration Card verplicht vooraf invullen (gratis).',
-          transport_to_next: 'Korte vlucht Curaçao-Bonaire',
+          notes: 'Willemstad with its Dutch colonial architecture is the urban counterpart to laid-back Bonaire. Shete Boka (rugged north coast) is the hidden gem, much quieter than the beaches. Price verified (2026-07), holds up. Digital Immigration Card mandatory to fill in in advance (free).',
+          transport_to_next: 'Short flight Curaçao-Bonaire',
         },
         {
           code: 'BQ', name: 'Bonaire', days: 6, budget: 660, lat: 12.25, lng: -68.4,
           destinations: [
             { name: 'Washington Slagbaai National Park', lat: 12.3167, lng: -68.4167 },
-            { name: 'duiken/snorkelen (marine park)', lat: 12.15, lng: -68.2833 },
+            { name: 'diving/snorkeling (marine park)', lat: 12.15, lng: -68.2833 },
           ],
-          notes: 'Wereldklasse duiken/snorkelen direct vanaf de kust. Washington Slagbaai NP (flamingo\'s, ruige natuur) is de verborgen parel, nauwelijks bezocht. Prijscorrectie (2026-07): €87,50→€110/dag (weinig budget-accommodatie, duiktrips zijn duur). Verplichte inreisbelasting ~€70 p.p. is een aparte kostenpost, niet in het dagtarief.',
-          transport_to_next: 'Vlucht Bonaire-Guadeloupe (meestal met overstap via Aruba, Panama City of San Juan)',
+          notes: 'World-class diving/snorkeling right off the coast. Washington Slagbaai NP (flamingos, rugged nature) is the hidden gem, barely visited. Price correction (2026-07): €87.50→€110/day (little budget accommodation, dive trips are expensive). The mandatory entry tax of ~€70 p.p. is a separate cost item, not included in the daily rate.',
+          transport_to_next: 'Flight Bonaire-Guadeloupe (usually with a stopover via Aruba, Panama City or San Juan)',
         },
       ],
     },
     {
-      name: 'Kleine Antillen',
-      season: 'Januari-februari',
+      name: 'Lesser Antilles',
+      season: 'January-February',
       budget: 2445,
-      note: "Droog seizoen (carême) — beste moment om te wandelen in Dominica's regenwoud. De eilandvolgorde volgt de natuurlijke noord-zuid keten, en toevallig ook de veerbootlijn L'Express des Îles.",
+      note: "Dry season (carême) — the best time to hike Dominica's rainforest. The island order follows the natural north-south chain, and coincidentally also the L'Express des Îles ferry line.",
       countries: [
         {
           code: 'GP', name: 'Guadeloupe', days: 7, budget: 615, lat: 16.0448, lng: -61.6654,
           destinations: [
-            { name: 'La Soufrière (vulkaan)', lat: 16.0456, lng: -61.6654 },
-            { name: 'Carbet-watervallen', lat: 16.0472, lng: -61.6167 },
+            { name: 'La Soufrière (volcano)', lat: 16.0456, lng: -61.6654 },
+            { name: 'Carbet Falls', lat: 16.0472, lng: -61.6167 },
             { name: 'Îles des Saintes', lat: 15.8667, lng: -61.5833 },
           ],
-          notes: 'Franse Caraïbische cultuur gecombineerd met een actieve vulkaan. Îles des Saintes (kleine eilandjes voor de kust) is veel rustiger dan het hoofdeiland. Prijs geverifieerd (2026-07), klopt.',
-          transport_to_next: "Veerboot L'Express des Îles naar Dominica (via Martinique)",
+          notes: 'French Caribbean culture combined with an active volcano. Îles des Saintes (small islets off the coast) is much quieter than the main island. Price verified (2026-07), holds up.',
+          transport_to_next: "L'Express des Îles ferry to Dominica (via Martinique)",
         },
         {
           code: 'DM', name: 'Dominica', days: 8, budget: 760, lat: 15.317, lng: -61.268,
           destinations: [
-            { name: 'Boiling Lake-trektocht', lat: 15.3167, lng: -61.2667 },
+            { name: 'Boiling Lake Trek', lat: 15.3167, lng: -61.2667 },
             { name: 'Trafalgar Falls', lat: 15.3181, lng: -61.3331 },
             { name: 'Champagne Reef', lat: 15.2833, lng: -61.3833 },
           ],
-          notes: '"Nature Island" — het minst ontwikkelde en meest ongerepte eiland van de vier. De Boiling Lake-trektocht is een zware hele dag op zich; reken op een rustdag ervoor of erna. Champagne Reef (vulkanische bubbels tijdens het snorkelen) is uniek. Prijscorrectie (2026-07): €72,50→€95/dag (nauwelijks hostels, guesthouses vanaf ~€60-70/nacht, verplichte gids voor Boiling Lake ~€55-70).',
-          transport_to_next: "Veerboot L'Express des Îles naar St Lucia",
+          notes: '"Nature Island" — the least developed and most unspoiled of the four islands. The Boiling Lake trek is a tough full day on its own; plan a rest day before or after it. Champagne Reef (volcanic bubbles while snorkeling) is unique. Price correction (2026-07): €72.50→€95/day (hardly any hostels, guesthouses from ~€60-70/night, mandatory guide for Boiling Lake ~€55-70).',
+          transport_to_next: "L'Express des Îles ferry to St Lucia",
         },
         {
           code: 'LC', name: 'Saint Lucia', days: 7, budget: 560, lat: 13.83, lng: -61.0667,
           destinations: [
             { name: 'The Pitons', lat: 13.8167, lng: -61.0667 },
-            { name: 'Sulphur Springs (drive-in vulkaan)', lat: 13.8347, lng: -61.0552 },
+            { name: 'Sulphur Springs (drive-in volcano)', lat: 13.8347, lng: -61.0552 },
             { name: 'Tet Paul Nature Trail', lat: 13.8333, lng: -61.05 },
           ],
-          notes: 'De iconische Pitons, meer toeristisch ontwikkeld dan de andere drie. Tet Paul Nature Trail geeft hetzelfde uitzicht op de Pitons, veel rustiger dan de drukke wandelpaden. Prijs geverifieerd (2026-07), klopt.',
-          transport_to_next: 'Vlucht St Lucia-Grenada (niet op de veerbootlijn)',
+          notes: 'The iconic Pitons, more tourist-developed than the other three. Tet Paul Nature Trail gives the same view of the Pitons, much quieter than the busy hiking trails. Price verified (2026-07), holds up.',
+          transport_to_next: 'Flight St Lucia-Grenada (not on the ferry line)',
         },
         {
           code: 'GD', name: 'Grenada', days: 7, budget: 510, lat: 12.08, lng: -61.728,
           destinations: [
-            { name: 'Onderwaterbeeldenpark', lat: 12.0742, lng: -61.7325 },
-            { name: 'kruidenplantages (nootmuskaat)', lat: 12.1667, lng: -61.7333 },
+            { name: 'Underwater Sculpture Park', lat: 12.0742, lng: -61.7325 },
+            { name: 'spice plantations (nutmeg)', lat: 12.1667, lng: -61.7333 },
             { name: 'Grand Etang National Park', lat: 12.0833, lng: -61.6833 },
           ],
-          notes: 'Het minst toeristische van de vier eilanden. Grand Etang NP (regenwoud, kratermeer) is de verborgen parel. Prijs geverifieerd (2026-07), klopt.',
-          transport_to_next: 'Vlucht Grenada-Suriname (meestal met overstap via Trinidad)',
+          notes: 'The least touristy of the four islands. Grand Etang NP (rainforest, crater lake) is the hidden gem. Price verified (2026-07), holds up.',
+          transport_to_next: 'Flight Grenada-Suriname (usually with a stopover via Trinidad)',
         },
       ],
     },
     {
-      name: 'Suriname & Amazone',
-      season: 'Februari-maart',
+      name: 'Suriname & Amazon',
+      season: 'February-March',
       budget: 1445,
-      note: "Suriname's korte droge tijd valt hier precies goed voor jungle-/rivierentochten. Noord-Brazilië's duinenkust (Jericoacoara/Lençóis) is dan net buiten zijn absolute piekseizoen (juni-januari) — het enige geaccepteerde compromis van de hele route.",
+      note: "Suriname's short dry spell lines up perfectly here for jungle/river trips. Northern Brazil's dune coast (Jericoacoara/Lençóis) is then just outside its absolute peak season (June-January) — the only accepted compromise of the whole route.",
       countries: [
         {
           code: 'SR', name: 'Suriname', days: 11, budget: 605, lat: 5.852, lng: -55.2038,
           destinations: [
             { name: 'Paramaribo (UNESCO)', lat: 5.852, lng: -55.2038 },
-            { name: 'Marrondorpen aan de rivier', lat: 4.4, lng: -55.0 },
+            { name: 'Maroon villages along the river', lat: 4.4, lng: -55.0 },
             { name: 'Brownsberg Nature Park', lat: 4.95, lng: -55.1667 },
           ],
-          notes: 'Nederlandse koloniale geschiedenis in Paramaribo, gecombineerd met een rivierreis naar Marrondorpen in het binnenland — reken op 3-5 dagen voor een fatsoenlijke jungletocht naast de stad. Brownsberg (uitzicht over het Brokopondostuwmeer) is de verborgen parel. Prijs geverifieerd (2026-07): waarschijnlijk net genoeg, Brownsberg/Marrondorpen-tours ($70-120/dag) drukken het gemiddelde op. Let op: "visumvrij" is niet helemaal juist — een verplicht online ICF-immigratieformulier + gelekoortsbewijs is nodig vooraf.',
-          transport_to_next: 'Vlucht Paramaribo-Belém (schaarse rechtstreekse verbindingen; waarschijnlijk met overstap via Cayenne, Georgetown of een Braziliaanse hub — vooraf goed checken)',
+          notes: 'Dutch colonial history in Paramaribo, combined with a river trip to Maroon villages in the interior — plan on 3-5 days for a decent jungle trip alongside the city. Brownsberg (view over the Brokopondo reservoir) is the hidden gem. Price verified (2026-07): probably just enough, Brownsberg/Maroon-village tours ($70-120/day) push the average up. Note: "visa-free" isn\'t entirely accurate — a mandatory online ICF immigration form + yellow fever certificate is needed in advance.',
+          transport_to_next: 'Flight Paramaribo-Belém (scarce direct connections; likely with a stopover via Cayenne, Georgetown or a Brazilian hub — check carefully in advance)',
         },
         {
           code: 'BR', name: 'Brazil', days: 14, budget: 840, lat: -2.7458, lng: -42.8339,
@@ -1597,22 +1597,22 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
             { name: 'Jericoacoara', lat: -2.7975, lng: -40.5137 },
             { name: 'Fortaleza', lat: -3.7172, lng: -38.5433 },
           ],
-          notes: 'De overgang van de Amazone-riviermonding (Belém, Marajó — buffels, ongerept rivierdelta-eiland) naar de compleet andere zandduinenkust (Lençóis Maranhenses, Jericoacoara) als adembenemende afsluiter. De afstanden langs de kust worden vaak onderschat. Prijs geverifieerd (2026-07), klopt — de generieke Rio/São Paulo-veiligheidswaarschuwingen zijn niet relevant voor dit noordoostelijke traject.',
-          transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Fortaleza (of via São Paulo) naar Nederland',
+          notes: "The transition from the Amazon river mouth (Belém, Marajó — water buffalo, an unspoiled river-delta island) to the completely different sand-dune coast (Lençóis Maranhenses, Jericoacoara) as a breathtaking finale. The distances along the coast are often underestimated. Price verified (2026-07), holds up — the generic Rio/São Paulo safety warnings aren't relevant to this northeastern stretch.",
+          transport_to_next: 'End of the expedition — return flight from Fortaleza (or via São Paulo) to the Netherlands',
         },
       ],
     },
   ], {
-    travel_style: "Backpacker tussen goedkoop en normaal in — hostels en casas particulares afgewisseld met af en toe een privékamer, de veerboot L'Express des Îles waar mogelijk (Guadeloupe-Dominica-St Lucia), vluchten voor de rest van de eilandsprongen (geen praktisch bootalternatief).",
+    travel_style: "Backpacker between cheap and normal — hostels and casas particulares alternated with an occasional private room, the L'Express des Îles ferry where possible (Guadeloupe-Dominica-St Lucia), flights for the rest of the island hops (no practical boat alternative).",
     best_starting_month: 'December',
-    description: 'Reis door de Caribische wereld en de overgang naar Zuid-Amerika: koloniale geschiedenis, vulkanische natuur en eilandculturen, gevolgd door Suriname en de Amazone-riviermonding in Noord-Brazilië als afsluiter. Geoptimaliseerd voor de meest unieke plekken, niet voor het aantal eilanden.',
-    climate_summary: "Vergeleken met Oceania is dit een relatief eenvoudige seizoenspuzzel: het orkaanseizoen in de Caribische Zee loopt 1 juni-30 november (piek half augustus-oktober), terwijl Suriname en Noord-Brazilië buiten de orkaangordel liggen (te dicht bij de evenaar). Bij een start op 1 december en een ideale duur van circa 97 dagen (~3,2 maanden) eindigt de expeditie begin maart — ruim binnen het droge/veilige seizoen (december-mei) voor het hele Caribische deel, zonder ooit dichtbij het orkaanseizoen te komen. Suriname's korte droge tijd (februari-maart) valt er ook nog net in. Enige compromis: Noord-Brazilië's duinenkust (Jericoacoara/Lençóis) is op zijn mooist juni-januari (droog, sterke wind voor de lagunes) — bij een decemberstart val je daar net buiten. Alternatief (3-4 maanden later starten) zou wél het beste Caribische droge seizoen missen en dichter bij het orkaanseizoen uitkomen — per saldo is 1 december de betere afweging.",
-    notes: "Ontworpen in een Q&A-sessie met Claude (2026-07), op basis van een ChatGPT-brainstorm die Youri aandroeg (route, landen, tijdsindeling, budget, logistiek). Naam \"Caribbean & Amazon Expedition\" gekozen boven ChatGPT's \"Caribbean & Guianas Expedition\" — herkenbaarder en dekt zowel Suriname's binnenland als Noord-Brazilië's regenwoud/kust beter dan de vaktechnische term \"Guianas\". Dagen zijn de 'ideale' tempo-schatting; budgetten zijn het gemiddelde van het Goedkope en Normale backpackbudget uit de ontwerpdiscussie (Youri's zelfgekozen reisstijl, tussen die twee in).\n\n" +
-      "Eén routewijziging t.o.v. de oorspronkelijke brainstorm: de Nederlandse ABC-eilanden (Curaçao/Bonaire) zijn verplaatst naar direct na Jamaica in plaats van na de Kleine Antillen — geografisch liggen ze fors westelijker dan de Kleine Antillen en Suriname, dus in de oorspronkelijke volgorde zou je eerst ver oostwaarts reizen en daarna weer helemaal terug naar het westen. De eilandvolgorde binnen de Kleine Antillen zelf (Guadeloupe-Dominica-St Lucia-Grenada) was al correct — dat is zowel de natuurlijke noord-zuid keten als de route van de veerboot L'Express des Îles.\n\n" +
-      "Overlap-controle: geen van de tien onderdelen is geschrapt — de vier Kleine Antillen lijken oppervlakkig op elkaar maar hebben elk een eigen signatuur (Guadeloupe: Franse cultuur + vulkaan; Dominica: meest ongerepte regenwoud; St Lucia: iconische Pitons, meer ontwikkeld; Grenada: kruiden + minst toeristisch), en Suriname/Noord-Brazilië zijn complementair (rivier-regenwoud met Marroncultuur versus riviermonding-delta plus een compleet andere duinenkust).\n\n" +
-      "Totaal: 97 dagen (~3,2 maanden), €6.955 grondkosten + circa €3.000-3.500 aan vluchten (Caribische eilandhop-vluchten zijn berucht prijzig per afstand door weinig concurrentie; Suriname-Noord-Brazilië is waarschijnlijk de lastigste/duurste losse verbinding). Nog niet getoetst aan actuele prijzen, visumregels of reisadviezen — behandel dit als een eerste concept, geen boekbaar plan.\n\n" +
-      "Prijzen/visum/reisadvies-verificatie (2026-07): Jamaica (€75→€90/dag), Bonaire (€87,50→€110/dag) en Dominica (€72,50→€95/dag) gecorrigeerd. Rest bevestigd accuraat. Nieuw totaal: €7.450 grondkosten (was €6.955). Zie de losse landnotities hierboven voor reisadvies/visumdetails.\n\n" +
-      "Routelogica-herziening (2026-08): twee kleine geografische fixes (search-bevestigd, geen grote landvolgorde-omdraaiing nodig zoals bij Eurasia/Patagonia). Cuba's volgorde omgedraaid — Viñales stond eerder als laatste stop, wat een dubbele omweg gaf (voorbij Cienfuegos naar Trinidad, terug naar Cienfuegos, dan een 4,5u oversteek naar Viñales vlak bij Havana, waar je toch weer voor de vlucht naartoe moet); nu Havana-Viñales-Cienfuegos-Trinidad, met een duidelijk benoemde terugreis naar Havana voor de vlucht. Jamaica's volgorde omgedraaid — Blue Mountains stond als losse heen-en-terugtrip vlak na Kingston (de kustweg naar Ocho Rios loopt daar niet doorheen); nu Kingston-Ocho Rios-Port Antonio-Blue Mountains, met de Hardwar Gap-bergroute als natuurlijke terugweg naar Kingston. Cuba's reisadvies/tourist card-tekst bijgewerkt (nog steeds oranje, e-Visa ~$50 vervangt de oude tourist card sinds juli 2025, zesde landelijke stroomstoring op 2 augustus 2026). Persoonlijke-voorkeur-check: Youri heeft nog geen van de 10 landen bezocht, geen cuts nodig. Alle bestemmingen kregen coördinaten voor de 'Gedetailleerd'-kaartweergave. Landen/dagen/budget-totaal ongewijzigd: 97 dagen, €7.450 — alleen volgorde binnen Cuba en Jamaica en de coördinaten zijn nieuw.",
+    description: 'A journey through the Caribbean world and the transition to South America: colonial history, volcanic nature and island cultures, followed by Suriname and the Amazon river mouth in Northern Brazil as a finale. Optimized for the most unique places, not for the number of islands.',
+    climate_summary: "Compared to Oceania, this is a relatively simple seasonal puzzle: hurricane season in the Caribbean Sea runs June 1-November 30 (peak mid-August-October), while Suriname and Northern Brazil sit outside the hurricane belt (too close to the equator). Starting on December 1 with an ideal duration of about 97 days (~3.2 months), the expedition ends in early March — comfortably within the dry/safe season (December-May) for the whole Caribbean leg, without ever coming close to hurricane season. Suriname's short dry spell (February-March) also just fits within it. Only compromise: Northern Brazil's dune coast (Jericoacoara/Lençóis) is at its best June-January (dry, strong wind for the lagoons) — starting in December falls just outside that. The alternative (starting 3-4 months later) would miss the best Caribbean dry season and land closer to hurricane season — on balance, December 1 is the better trade-off.",
+    notes: "Designed in a Q&A session with Claude (2026-07), based on a ChatGPT brainstorm Youri brought in (route, countries, timing, budget, logistics). Name \"Caribbean & Amazon Expedition\" chosen over ChatGPT's \"Caribbean & Guianas Expedition\" — more recognizable and covers both Suriname's interior and Northern Brazil's rainforest/coast better than the technical term \"Guianas\". Days are the 'ideal' pace estimate; budgets are the average of the Cheap and Normal backpacker budget from the design discussion (Youri's own chosen travel style, between the two).\n\n" +
+      "One route change relative to the original brainstorm: the Dutch ABC islands (Curaçao/Bonaire) have been moved to right after Jamaica instead of after the Lesser Antilles — geographically they sit much further west than the Lesser Antilles and Suriname, so in the original order you'd first travel far east and then all the way back west again. The island order within the Lesser Antilles itself (Guadeloupe-Dominica-St Lucia-Grenada) was already correct — that's both the natural north-south chain and the route of the L'Express des Îles ferry.\n\n" +
+      "Overlap check: none of the ten components was cut — the four Lesser Antilles superficially resemble each other but each has its own signature (Guadeloupe: French culture + volcano; Dominica: most unspoiled rainforest; St Lucia: iconic Pitons, more developed; Grenada: spices + least touristy), and Suriname/Northern Brazil are complementary (river rainforest with Maroon culture versus a river-mouth delta plus a completely different dune coast).\n\n" +
+      "Total: 97 days (~3.2 months), €6,955 ground costs + roughly €3,000-3,500 in flights (Caribbean island-hop flights are notoriously pricey per distance due to little competition; Suriname-Northern Brazil is probably the hardest/most expensive single connection). Not yet checked against current prices, visa rules or travel advisories — treat this as a first concept, not a bookable plan.\n\n" +
+      "Prices/visa/travel-advisory verification (2026-07): Jamaica (€75→€90/day), Bonaire (€87.50→€110/day) and Dominica (€72.50→€95/day) corrected. The rest confirmed accurate. New total: €7,450 ground costs (was €6,955). See the individual country notes above for travel-advisory/visa details.\n\n" +
+      "Route-logic revision (2026-08): two small geographic fixes (search-confirmed, no major country-order reversal needed like Eurasia/Patagonia). Cuba's order reversed — Viñales used to be the last stop, which caused a double detour (past Cienfuegos to Trinidad, back to Cienfuegos, then a 4.5h crossing to Viñales right next to Havana, where you'd have to head back to anyway for the flight); now Havana-Viñales-Cienfuegos-Trinidad, with a clearly stated return trip to Havana for the flight. Jamaica's order reversed — Blue Mountains used to be a separate out-and-back trip right after Kingston (the coastal road to Ocho Rios doesn't run through it); now Kingston-Ocho Rios-Port Antonio-Blue Mountains, with the Hardwar Gap mountain route as a natural way back to Kingston. Cuba's travel-advisory/tourist-card text updated (still orange, e-Visa ~$50 replaces the old tourist card since July 2025, sixth nationwide power outage on August 2, 2026). Personal-preference check: Youri hasn't visited any of the 10 countries yet, no cuts needed. All destinations got coordinates for the 'Detailed' map view. Countries/days/budget total unchanged: 97 days, €7,450 — only the order within Cuba and Jamaica and the coordinates are new.",
   });
 }
 
@@ -3631,10 +3631,10 @@ function rbBuildNewZealandRoute() {
 
 // ---- Caribbean & Amazon Expedition split (2026-07 modularization analysis, see ROUTE_BUILDER_MODULES.md) ----
 //
-// This expedition's own notes argue against splitting it ("geen van de tien onderdelen is
-// geschrapt", Suriname/Brazil framed as "complementair") — but the modularization analysis
+// This expedition's own notes argue against splitting it ("none of the ten components was
+// cut", Suriname/Brazil framed as "complementary") — but the modularization analysis
 // deliberately disagreed with that framing: the Grenada-Suriname flight is already flagged in the
-// route's own notes as "waarschijnlijk de lastigste/duurste losse verbinding", and the travel style
+// route's own notes as "probably the hardest/most expensive single connection", and the travel style
 // genuinely shifts there (island-hopping → mainland river/rainforest). The two routes below act on
 // that disagreement. Countries, days, budgets, region order and all leg content are copied verbatim
 // from rbBuildCaribbeanAmazonExpeditionRoute() below — this route has no shared
@@ -3651,23 +3651,23 @@ function rbSeedCaribbeanSplitExpeditions() {
 }
 
 function rbBuildCaribbeanIslandsHopRoute() {
-  return rbBuildSeedRoute('Caraïbische Eilanden-hop 🏝️', [
+  return rbBuildSeedRoute('Caribbean Islands Hop 🏝️', [
     {
-      name: 'Grote Antillen',
+      name: 'Greater Antilles',
       season: 'December',
       budget: 2340,
-      note: 'Droog seizoen, ruim na het orkaanseizoen (dat loopt juni-november) — een veilige, aangename opener.',
+      note: 'Dry season, well after hurricane season (which runs June-November) — a safe, pleasant opener.',
       countries: [
         {
           code: 'CU', name: 'Cuba', days: 18, budget: 1260, lat: 23.1136, lng: -82.3666,
           destinations: [
             { name: 'Havana (Habana Vieja)', lat: 23.1136, lng: -82.3666 },
-            { name: 'Viñales-vallei', lat: 22.6167, lng: -83.7097 },
+            { name: 'Viñales Valley', lat: 22.6167, lng: -83.7097 },
             { name: 'Cienfuegos', lat: 22.1496, lng: -80.4394 },
             { name: 'Trinidad', lat: 21.8047, lng: -79.9825 },
           ],
-          notes: "Instap: vlucht Amsterdam-Havana, met overstap (±15u30, vanaf ±€600-1.100 retour, december valt net na de goedkoopste maand november). Prijsindicatie webonderzoek 2026-08, momentopname. Havana en het UNESCO-koloniale Trinidad zijn de hoogtepunten; de rustige Viñales-vallei (tabak, karstlandschap) is de verborgen parel. Casas particulares (particuliere kamers) zijn de gangbare backpacker-accommodatie. Prijs geverifieerd (2026-07), klopt. ⚠️ Reisadvies oranje (bevestigd geldig, laatst bijgewerkt 23 juni 2026): grote tekorten aan stroom/brandstof/voedsel/medicijnen, toenemende veiligheidsrisico's — de zesde landelijke stroomstoring van 2026 viel op 2 augustus. Kaarten werken niet bij pinautomaten (contant meenemen). Sinds 1 juli 2025 is de papieren tourist card vervangen door een e-Visa (~$50), gekoppeld aan het verplichte gratis D'Viajeros-formulier (invullen binnen 72u vóór aankomst). Routelogica (2026-08, search-bevestigd): volgorde omgedraaid — Viñales stond eerder als laatste stop (een dubbele omweg: eerst voorbij Cienfuegos naar Trinidad, dan terug naar Cienfuegos, dan een 4,5u oversteek naar Viñales vlak bij Havana); nu als retourtje vanuit Havana meteen aan het begin, gevolgd door Cienfuegos-Trinidad zonder kruisende routes.",
-          transport_to_next: 'Terug naar Havana (~4u15 rijden vanaf Trinidad — de enige realistische internationale gateway, Santiago de Cuba zou de omweg verergeren), dan vlucht Havana-Kingston (meestal met overstap via Panama City of Miami)',
+          notes: "Entry: flight Amsterdam-Havana, with a stopover (±15h30, from ±€600-1,100 return, December falls right after the cheapest month November). Price indication from 2026-08 web research, a snapshot. Havana and UNESCO-listed colonial Trinidad are the highlights; the quiet Viñales Valley (tobacco, karst landscape) is the hidden gem. Casas particulares (private rooms) are the standard backpacker accommodation. Price verified (2026-07), holds up. ⚠️ Travel advisory orange (confirmed valid, last updated June 23, 2026): major shortages of power/fuel/food/medicine, rising safety risks — the sixth nationwide power outage of 2026 hit on August 2. Cards don't work at ATMs (bring cash). Since July 1, 2025 the paper tourist card has been replaced by an e-Visa (~$50), tied to the mandatory free D'Viajeros form (to be filled in within 72h before arrival). Route logic (2026-08, search-confirmed): order reversed — Viñales used to be the last stop (a double detour: past Cienfuegos to Trinidad first, then back to Cienfuegos, then a 4.5h crossing to Viñales right next to Havana); now a return trip from Havana right at the start, followed by Cienfuegos-Trinidad without crossing routes.",
+          transport_to_next: 'Back to Havana (~4h15 driving from Trinidad — the only realistic international gateway, Santiago de Cuba would make the detour worse), then a flight Havana-Kingston (usually with a stopover via Panama City or Miami)',
         },
         {
           code: 'JM', name: 'Jamaica', days: 12, budget: 1080, lat: 17.9714, lng: -76.7936,
@@ -3677,113 +3677,113 @@ function rbBuildCaribbeanIslandsHopRoute() {
             { name: 'Port Antonio', lat: 18.1811, lng: -76.4513 },
             { name: 'Blue Mountains (Hardwar Gap)', lat: 18.0747, lng: -76.6597 },
           ],
-          notes: 'Blue Mountains (koffie, wandelen) en Port Antonio (rafting, watervallen, nauwelijks toeristen vergeleken met Negril/Ocho Rios) zijn de sterkste match met natuur boven luxe. Prijscorrectie (2026-07): €75→€90/dag, Jamaica is duurder dan aangenomen (guesthouses + entreegelden). Routelogica (2026-08, search-bevestigd): volgorde omgedraaid — Blue Mountains stond als losse heen-en-terugtrip vlak na Kingston (de kustweg naar Ocho Rios loopt daar niet doorheen); nu als bergroute-terugweg (Hardwar Gap, koffieplantages/Newcastle) vanaf Port Antonio naar Kingston, in plaats van een aparte uitstap aan het begin.',
-          transport_to_next: 'Kort eindstuk Blue Mountains-Kingston (Hardwar Gap-bergroute), dan vlucht Kingston-Curaçao (meestal met overstap via Panama City of Miami)',
+          notes: 'Blue Mountains (coffee, hiking) and Port Antonio (rafting, waterfalls, hardly any tourists compared to Negril/Ocho Rios) are the strongest match for nature over luxury. Price correction (2026-07): €75→€90/day, Jamaica is pricier than assumed (guesthouses + entrance fees). Route logic (2026-08, search-confirmed): order reversed — Blue Mountains used to be a separate out-and-back trip right after Kingston (the coastal road to Ocho Rios doesn\'t run through it); now a mountain-route return leg (Hardwar Gap, coffee plantations/Newcastle) from Port Antonio to Kingston, instead of a separate side trip at the start.',
+          transport_to_next: 'Short final stretch Blue Mountains-Kingston (Hardwar Gap mountain route), then a flight Kingston-Curaçao (usually with a stopover via Panama City or Miami)',
         },
       ],
     },
     {
-      name: 'Nederlandse Caraïben',
-      season: 'December-januari',
+      name: 'Dutch Caribbean',
+      season: 'December-January',
       budget: 1220,
-      note: 'Droog seizoen — helderder water voor snorkelen en duiken.',
+      note: 'Dry season — clearer water for snorkeling and diving.',
       countries: [
         {
           code: 'CW', name: 'Curaçao', days: 7, budget: 560, lat: 12.1084, lng: -68.9335,
           destinations: [
             { name: 'Willemstad (UNESCO)', lat: 12.1091, lng: -68.9316 },
             { name: 'Shete Boka National Park', lat: 12.3667, lng: -69.15 },
-            { name: 'stranden (Grote Knip)', lat: 12.2167, lng: -69.15 },
+            { name: 'beaches (Grote Knip)', lat: 12.2167, lng: -69.15 },
           ],
-          notes: 'Willemstad met zijn Nederlandse koloniale architectuur is de stedelijke tegenhanger van rustig Bonaire. Shete Boka (ruige noordkust) is de verborgen parel, veel rustiger dan de stranden. Prijs geverifieerd (2026-07), klopt. Digital Immigration Card verplicht vooraf invullen (gratis).',
-          transport_to_next: 'Korte vlucht Curaçao-Bonaire',
+          notes: 'Willemstad with its Dutch colonial architecture is the urban counterpart to laid-back Bonaire. Shete Boka (rugged north coast) is the hidden gem, much quieter than the beaches. Price verified (2026-07), holds up. Digital Immigration Card mandatory to fill in in advance (free).',
+          transport_to_next: 'Short flight Curaçao-Bonaire',
         },
         {
           code: 'BQ', name: 'Bonaire', days: 6, budget: 660, lat: 12.25, lng: -68.4,
           destinations: [
             { name: 'Washington Slagbaai National Park', lat: 12.3167, lng: -68.4167 },
-            { name: 'duiken/snorkelen (marine park)', lat: 12.15, lng: -68.2833 },
+            { name: 'diving/snorkeling (marine park)', lat: 12.15, lng: -68.2833 },
           ],
-          notes: "Wereldklasse duiken/snorkelen direct vanaf de kust. Washington Slagbaai NP (flamingo's, ruige natuur) is de verborgen parel, nauwelijks bezocht. Prijscorrectie (2026-07): €87,50→€110/dag (weinig budget-accommodatie, duiktrips zijn duur). Verplichte inreisbelasting ~€70 p.p. is een aparte kostenpost, niet in het dagtarief.",
-          transport_to_next: 'Vlucht Bonaire-Guadeloupe (meestal met overstap via Aruba, Panama City of San Juan)',
+          notes: "World-class diving/snorkeling right off the coast. Washington Slagbaai NP (flamingos, rugged nature) is the hidden gem, barely visited. Price correction (2026-07): €87.50→€110/day (little budget accommodation, dive trips are expensive). The mandatory entry tax of ~€70 p.p. is a separate cost item, not included in the daily rate.",
+          transport_to_next: 'Flight Bonaire-Guadeloupe (usually with a stopover via Aruba, Panama City or San Juan)',
         },
       ],
     },
     {
-      name: 'Kleine Antillen',
-      season: 'Januari-februari',
+      name: 'Lesser Antilles',
+      season: 'January-February',
       budget: 2445,
-      note: "Droog seizoen (carême) — beste moment om te wandelen in Dominica's regenwoud. De eilandvolgorde volgt de natuurlijke noord-zuid keten, en toevallig ook de veerbootlijn L'Express des Îles.",
+      note: "Dry season (carême) — the best time to hike Dominica's rainforest. The island order follows the natural north-south chain, and coincidentally also the L'Express des Îles ferry line.",
       countries: [
         {
           code: 'GP', name: 'Guadeloupe', days: 7, budget: 615, lat: 16.0448, lng: -61.6654,
           destinations: [
-            { name: 'La Soufrière (vulkaan)', lat: 16.0456, lng: -61.6654 },
-            { name: 'Carbet-watervallen', lat: 16.0472, lng: -61.6167 },
+            { name: 'La Soufrière (volcano)', lat: 16.0456, lng: -61.6654 },
+            { name: 'Carbet Falls', lat: 16.0472, lng: -61.6167 },
             { name: 'Îles des Saintes', lat: 15.8667, lng: -61.5833 },
           ],
-          notes: 'Franse Caraïbische cultuur gecombineerd met een actieve vulkaan. Îles des Saintes (kleine eilandjes voor de kust) is veel rustiger dan het hoofdeiland. Prijs geverifieerd (2026-07), klopt.',
-          transport_to_next: "Veerboot L'Express des Îles naar Dominica (via Martinique)",
+          notes: 'French Caribbean culture combined with an active volcano. Îles des Saintes (small islets off the coast) is much quieter than the main island. Price verified (2026-07), holds up.',
+          transport_to_next: "L'Express des Îles ferry to Dominica (via Martinique)",
         },
         {
           code: 'DM', name: 'Dominica', days: 8, budget: 760, lat: 15.317, lng: -61.268,
           destinations: [
-            { name: 'Boiling Lake-trektocht', lat: 15.3167, lng: -61.2667 },
+            { name: 'Boiling Lake Trek', lat: 15.3167, lng: -61.2667 },
             { name: 'Trafalgar Falls', lat: 15.3181, lng: -61.3331 },
             { name: 'Champagne Reef', lat: 15.2833, lng: -61.3833 },
           ],
-          notes: '"Nature Island" — het minst ontwikkelde en meest ongerepte eiland van de vier. De Boiling Lake-trektocht is een zware hele dag op zich; reken op een rustdag ervoor of erna. Champagne Reef (vulkanische bubbels tijdens het snorkelen) is uniek. Prijscorrectie (2026-07): €72,50→€95/dag (nauwelijks hostels, guesthouses vanaf ~€60-70/nacht, verplichte gids voor Boiling Lake ~€55-70).',
-          transport_to_next: "Veerboot L'Express des Îles naar St Lucia",
+          notes: '"Nature Island" — the least developed and most unspoiled of the four islands. The Boiling Lake trek is a tough full day on its own; plan a rest day before or after it. Champagne Reef (volcanic bubbles while snorkeling) is unique. Price correction (2026-07): €72.50→€95/day (hardly any hostels, guesthouses from ~€60-70/night, mandatory guide for Boiling Lake ~€55-70).',
+          transport_to_next: "L'Express des Îles ferry to St Lucia",
         },
         {
           code: 'LC', name: 'Saint Lucia', days: 7, budget: 560, lat: 13.83, lng: -61.0667,
           destinations: [
             { name: 'The Pitons', lat: 13.8167, lng: -61.0667 },
-            { name: 'Sulphur Springs (drive-in vulkaan)', lat: 13.8347, lng: -61.0552 },
+            { name: 'Sulphur Springs (drive-in volcano)', lat: 13.8347, lng: -61.0552 },
             { name: 'Tet Paul Nature Trail', lat: 13.8333, lng: -61.05 },
           ],
-          notes: 'De iconische Pitons, meer toeristisch ontwikkeld dan de andere drie. Tet Paul Nature Trail geeft hetzelfde uitzicht op de Pitons, veel rustiger dan de drukke wandelpaden. Prijs geverifieerd (2026-07), klopt.',
-          transport_to_next: 'Vlucht St Lucia-Grenada (niet op de veerbootlijn)',
+          notes: 'The iconic Pitons, more tourist-developed than the other three. Tet Paul Nature Trail gives the same view of the Pitons, much quieter than the busy hiking trails. Price verified (2026-07), holds up.',
+          transport_to_next: 'Flight St Lucia-Grenada (not on the ferry line)',
         },
         {
           code: 'GD', name: 'Grenada', days: 7, budget: 510, lat: 12.08, lng: -61.728,
           destinations: [
-            { name: 'Onderwaterbeeldenpark', lat: 12.0742, lng: -61.7325 },
-            { name: 'kruidenplantages (nootmuskaat)', lat: 12.1667, lng: -61.7333 },
+            { name: 'Underwater Sculpture Park', lat: 12.0742, lng: -61.7325 },
+            { name: 'spice plantations (nutmeg)', lat: 12.1667, lng: -61.7333 },
             { name: 'Grand Etang National Park', lat: 12.0833, lng: -61.6833 },
           ],
-          notes: 'Het minst toeristische van de vier eilanden. Grand Etang NP (regenwoud, kratermeer) is de verborgen parel. Prijs geverifieerd (2026-07), klopt.',
-          transport_to_next: 'Einde van deze route — terugvlucht vanuit Grenada (of vlucht Grenada-Suriname om verder te reizen naar Suriname & Noord-Brazilië 🌴)',
+          notes: 'The least touristy of the four islands. Grand Etang NP (rainforest, crater lake) is the hidden gem. Price verified (2026-07), holds up.',
+          transport_to_next: 'End of this route — return flight from Grenada (or a flight Grenada-Suriname to continue on to Suriname & Northern Brazil 🌴)',
         },
       ],
     },
   ], {
-    travel_style: "Backpacker tussen goedkoop en normaal in — hostels en casas particulares afgewisseld met af en toe een privékamer, de veerboot L'Express des Îles waar mogelijk (Guadeloupe-Dominica-St Lucia), vluchten voor de rest van de eilandsprongen.",
+    travel_style: "Backpacker between cheap and normal — hostels and casas particulares alternated with an occasional private room, the L'Express des Îles ferry where possible (Guadeloupe-Dominica-St Lucia), flights for the rest of the island hops.",
     best_starting_month: 'December',
-    description: 'Caribische koloniale geschiedenis, vulkanische natuur en eilandculturen: Cuba en Jamaica, de Nederlandse ABC-eilanden, en de Kleine Antillen.',
-    climate_summary: 'Het orkaanseizoen in de Caribische Zee loopt 1 juni-30 november; een decemberstart houdt de hele reis ruim binnen het droge/veilige seizoen (december-mei).',
-    notes: "Losgesplitst van Caribbean & Amazon Expedition 🌴 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen (incl. de 2026-07 prijscorrecties op Jamaica/Bonaire/Dominica). Vervolg op deze route: Suriname & Noord-Brazilië 🌴. Caribbean & Amazon Expedition 🌴 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\n" +
-      "Routelogica-herziening (2026-08): zelfde ronde als Caribbean & Amazon Expedition 🌴 zelf — Cuba's en Jamaica's volgorde omgedraaid (geen dubbele omweg meer via Viñales resp. de Blue Mountains), coördinaten per bestemming toegevoegd. Zie Caribbean & Amazon Expedition 🌴's eigen notities voor de volledige uitleg. Landen/dagen/budget-totaal ongewijzigd.",
+    description: 'Caribbean colonial history, volcanic nature and island cultures: Cuba and Jamaica, the Dutch ABC islands, and the Lesser Antilles.',
+    climate_summary: 'Hurricane season in the Caribbean Sea runs June 1-November 30; a December start keeps the whole trip comfortably within the dry/safe season (December-May).',
+    notes: "Split off from Caribbean & Amazon Expedition 🌴 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days, budgets and order are carried over unchanged (incl. the 2026-07 price corrections on Jamaica/Bonaire/Dominica). Continues into: Suriname & Northern Brazil 🌴. Caribbean & Amazon Expedition 🌴 itself remains unchanged as a separate, complete expedition.\n\n" +
+      "Route-logic revision (2026-08): same round as Caribbean & Amazon Expedition 🌴 itself — Cuba's and Jamaica's order reversed (no more double detour via Viñales resp. the Blue Mountains), coordinates added per destination. See Caribbean & Amazon Expedition 🌴's own notes for the full explanation. Countries/days/budget total unchanged.",
   });
 }
 
 function rbBuildSurinameNorthernBrazilRoute() {
-  return rbBuildSeedRoute('Suriname & Noord-Brazilië 🌴', [
+  return rbBuildSeedRoute('Suriname & Northern Brazil 🌴', [
     {
-      name: 'Suriname & Amazone',
-      season: 'Februari-maart',
+      name: 'Suriname & Amazon',
+      season: 'February-March',
       budget: 1445,
-      note: "Suriname's korte droge tijd valt hier precies goed voor jungle-/rivierentochten. Noord-Brazilië's duinenkust (Jericoacoara/Lençóis) is dan net buiten zijn absolute piekseizoen (juni-januari) — het enige geaccepteerde compromis van de hele oorspronkelijke route.",
+      note: "Suriname's short dry spell lines up perfectly here for jungle/river trips. Northern Brazil's dune coast (Jericoacoara/Lençóis) is then just outside its absolute peak season (June-January) — the only accepted compromise of the whole original route.",
       countries: [
         {
           code: 'SR', name: 'Suriname', days: 11, budget: 605, lat: 5.852, lng: -55.2038,
           destinations: [
             { name: 'Paramaribo (UNESCO)', lat: 5.852, lng: -55.2038 },
-            { name: 'Marrondorpen aan de rivier', lat: 4.4, lng: -55.0 },
+            { name: 'Maroon villages along the river', lat: 4.4, lng: -55.0 },
             { name: 'Brownsberg Nature Park', lat: 4.95, lng: -55.1667 },
           ],
-          notes: 'Instap: rechtstreekse KLM-vlucht Amsterdam-Paramaribo (±9u20, vanaf ±€1.100-1.800 retour) — let op: februari is qua vluchtprijs een van de duurdere maanden op deze route, ondanks dat het klimatologisch de beste periode is. Prijsindicatie webonderzoek 2026-08, momentopname. Nederlandse koloniale geschiedenis in Paramaribo, gecombineerd met een rivierreis naar Marrondorpen in het binnenland — reken op 3-5 dagen voor een fatsoenlijke jungletocht naast de stad. Brownsberg (uitzicht over het Brokopondostuwmeer) is de verborgen parel. Prijs geverifieerd (2026-07): waarschijnlijk net genoeg, Brownsberg/Marrondorpen-tours ($70-120/dag) drukken het gemiddelde op. Let op: "visumvrij" is niet helemaal juist — een verplicht online ICF-immigratieformulier + gelekoortsbewijs is nodig vooraf.',
-          transport_to_next: 'Vlucht Paramaribo-Belém (schaarse rechtstreekse verbindingen; waarschijnlijk met overstap via Cayenne, Georgetown of een Braziliaanse hub — vooraf goed checken)',
+          notes: 'Entry: direct KLM flight Amsterdam-Paramaribo (±9h20, from ±€1,100-1,800 return) — note: February is one of the pricier flight months on this route, despite being the climatologically best period. Price indication from 2026-08 web research, a snapshot. Dutch colonial history in Paramaribo, combined with a river trip to Maroon villages in the interior — plan on 3-5 days for a decent jungle trip alongside the city. Brownsberg (view over the Brokopondo reservoir) is the hidden gem. Price verified (2026-07): probably just enough, Brownsberg/Maroon-village tours ($70-120/day) push the average up. Note: "visa-free" isn\'t entirely accurate — a mandatory online ICF immigration form + yellow fever certificate is needed in advance.',
+          transport_to_next: 'Flight Paramaribo-Belém (scarce direct connections; likely with a stopover via Cayenne, Georgetown or a Brazilian hub — check carefully in advance)',
         },
         {
           code: 'BR', name: 'Brazil', days: 14, budget: 840, lat: -2.7458, lng: -42.8339,
@@ -3794,18 +3794,18 @@ function rbBuildSurinameNorthernBrazilRoute() {
             { name: 'Jericoacoara', lat: -2.7975, lng: -40.5137 },
             { name: 'Fortaleza', lat: -3.7172, lng: -38.5433 },
           ],
-          notes: 'De overgang van de Amazone-riviermonding (Belém, Marajó — buffels, ongerept rivierdelta-eiland) naar de compleet andere zandduinenkust (Lençóis Maranhenses, Jericoacoara) als adembenemende afsluiter. De afstanden langs de kust worden vaak onderschat. Prijs geverifieerd (2026-07), klopt — de generieke Rio/São Paulo-veiligheidswaarschuwingen zijn niet relevant voor dit noordoostelijke traject.',
-          transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Fortaleza (of via São Paulo) naar Nederland',
+          notes: "The transition from the Amazon river mouth (Belém, Marajó — water buffalo, an unspoiled river-delta island) to the completely different sand-dune coast (Lençóis Maranhenses, Jericoacoara) as a breathtaking finale. The distances along the coast are often underestimated. Price verified (2026-07), holds up — the generic Rio/São Paulo safety warnings aren't relevant to this northeastern stretch.",
+          transport_to_next: 'End of the expedition — return flight from Fortaleza (or via São Paulo) to the Netherlands',
         },
       ],
     },
   ], {
-    travel_style: 'Backpacker tussen goedkoop en normaal in — rivierboten in Suriname, kustbussen in Noord-Brazilië.',
-    best_starting_month: 'Februari',
-    description: 'Nederlandse koloniale geschiedenis en Marroncultuur in Suriname, gevolgd door de Amazone-riviermonding en de duinenkust van Noord-Brazilië.',
-    climate_summary: "Suriname's korte droge tijd (februari-maart) is ideaal voor jungle-/rivierentochten; Noord-Brazilië's duinenkust is dan net buiten zijn piekseizoen (juni-januari) — het enige compromis van dit blok.",
-    notes: "Losgesplitst van Caribbean & Amazon Expedition 🌴 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen en budgetten zijn ongewijzigd overgenomen. Dit blok is bewust losgetrokken ondanks dat de oorspronkelijke route-notities het tegenovergestelde beargumenteerden (\"geen van de tien onderdelen is geschrapt\", Suriname/Brazilië \"complementair\") — de vlucht Grenada-Suriname is in diezelfde notities al aangemerkt als \"waarschijnlijk de lastigste/duurste losse verbinding\", en de reisstijl verschuift hier volledig (eilandhoppen → rivier/regenwoud op het continent). Extra relevant voor een Nederlandse reiziger gezien Suriname's koloniale band. Vervolg op Caraïbische Eilanden-hop 🏝️. Caribbean & Amazon Expedition 🌴 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\n" +
-      "Routelogica-herziening (2026-08): geen geografische fouten in Suriname/Brazilië zelf — coördinaten per bestemming toegevoegd voor de 'Gedetailleerd'-kaartweergave. Zie Caribbean & Amazon Expedition 🌴's eigen notities voor de fixes in Cuba/Jamaica (niet in dit blok).",
+    travel_style: 'Backpacker between cheap and normal — river boats in Suriname, coastal buses in Northern Brazil.',
+    best_starting_month: 'February',
+    description: 'Dutch colonial history and Maroon culture in Suriname, followed by the Amazon river mouth and the dune coast of Northern Brazil.',
+    climate_summary: "Suriname's short dry spell (February-March) is ideal for jungle/river trips; Northern Brazil's dune coast is then just outside its peak season (June-January) — the only compromise of this block.",
+    notes: "Split off from Caribbean & Amazon Expedition 🌴 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days and budgets are carried over unchanged. This block was deliberately split off despite the original route notes arguing the opposite (\"none of the ten components was cut\", Suriname/Brazil framed as \"complementary\") — the Grenada-Suriname flight is already flagged in those same notes as \"probably the hardest/most expensive single connection\", and the travel style shifts entirely here (island-hopping → river/rainforest on the mainland). Extra relevant for a Dutch traveler given Suriname's colonial ties. Continues on from Caribbean Islands Hop 🏝️. Caribbean & Amazon Expedition 🌴 itself remains unchanged as a separate, complete expedition.\n\n" +
+      "Route-logic revision (2026-08): no geographic errors in Suriname/Brazil itself — coordinates added per destination for the 'Detailed' map view. See Caribbean & Amazon Expedition 🌴's own notes for the fixes in Cuba/Jamaica (not part of this block).",
   });
 }
 
@@ -5229,7 +5229,22 @@ function rbMigrateNordicArcticRouteLogicOverhaul() {
  * coordinates added throughout. This route has no shared RB_EXPEDITION_CONTENT entry (see
  * rbBuildCaribbeanAmazonExpeditionRoute()'s own comment), so the corrected field values are inlined
  * here directly instead of looked up from a content table. Applies to the main expedition and both
- * 2026-07 split companions (Caraïbische Eilanden-hop 🏝️, Suriname & Noord-Brazilië 🌴).
+ * 2026-07 split companions (Caribbean Islands Hop 🏝️ ← Caraïbische Eilanden-hop, Suriname & Northern
+ * Brazil 🌴 ← Suriname & Noord-Brazilië).
+ *
+ * Migration-collision fix (2026-08 English translation batch, same category of bug fixed for every
+ * previous translation batch this project has run): unlike Mediterranean's own route-logic-overhaul
+ * migration (a pure name-lookup wholesale-replace via buildFn(), immune to going stale), this
+ * migration hardcodes a literal Dutch `fixes` dict per country code — so on a brand-new browser,
+ * where the seed functions now produce the already-translated English routes directly, this used to
+ * be a real risk: the main route's name doesn't change, so it would still be found here, and the
+ * field-patch loop would silently force its fresh English CU/JM notes/destinations back to the old
+ * Dutch text. Fixed two ways: (1) the two split companions are now looked up by [oldName, newName]
+ * pairs, same idiom as every prior batch's collision fix; (2) an early guard skips the entire
+ * per-country fixes loop (not just the note-append, which is what earlier batches needed) whenever
+ * the route's own notes already contain either language's "already fixed" marker — this is what
+ * actually prevents the Dutch-fixes dict from clobbering fresh English content, since a freshly
+ * seeded/translated route already carries this exact fix baked into its build function's notes.
  */
 function rbMigrateCaribbeanAmazonRouteLogicOverhaul() {
   if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_CARIBBEAN_OVERHAUL)) return;
@@ -5299,10 +5314,20 @@ function rbMigrateCaribbeanAmazonRouteLogicOverhaul() {
     ] },
   };
 
-  const routeNames = ['Caribbean & Amazon Expedition 🌴', 'Caraïbische Eilanden-hop 🏝️', 'Suriname & Noord-Brazilië 🌴'];
-  routeNames.forEach(routeName => {
-    const route = rbRoutes.find(r => r.name === routeName);
+  const routeNamePairs = [
+    ['Caribbean & Amazon Expedition 🌴', 'Caribbean & Amazon Expedition 🌴'],
+    ['Caraïbische Eilanden-hop 🏝️', 'Caribbean Islands Hop 🏝️'],
+    ['Suriname & Noord-Brazilië 🌴', 'Suriname & Northern Brazil 🌴'],
+  ];
+  routeNamePairs.forEach(([oldName, newName]) => {
+    const route = rbRoutes.find(r => r.name === oldName || r.name === newName);
     if (!route) return;
+
+    // Already reflects this fix (in either language) — a fresh browser's already-translated route
+    // carries it baked in via the build function, so skip the whole per-country loop rather than
+    // let the literal Dutch `fixes` values below clobber already-correct English content.
+    const alreadyFixed = route.notes && (route.notes.includes('Routelogica-herziening (2026-08)') || route.notes.includes('Route-logic revision (2026-08)'));
+    if (alreadyFixed) return;
 
     let touched = false;
     Object.entries(fixes).forEach(([code, fix]) => {
@@ -5319,13 +5344,15 @@ function rbMigrateCaribbeanAmazonRouteLogicOverhaul() {
       }
     });
 
-    const note = routeName === 'Caribbean & Amazon Expedition 🌴'
+    const note = oldName === 'Caribbean & Amazon Expedition 🌴'
       ? "Routelogica-herziening (2026-08): twee kleine geografische fixes (search-bevestigd) — Cuba's volgorde omgedraaid (Havana-Viñales-Cienfuegos-Trinidad i.p.v. Havana-Trinidad-Cienfuegos-Viñales, geen dubbele omweg meer) en Jamaica's volgorde omgedraaid (Kingston-Ocho Rios-Port Antonio-Blue Mountains i.p.v. Blue Mountains als losse uitstap na Kingston). Cuba's reisadvies/tourist card-tekst bijgewerkt (e-Visa vervangt tourist card sinds juli 2025). Youri had nog geen van de 10 landen bezocht, geen cuts nodig. Coördinaten per bestemming toegevoegd. Landen/dagen/budget-totaal ongewijzigd: 97 dagen, €7.450."
-      : routeName === 'Caraïbische Eilanden-hop 🏝️'
+      : oldName === 'Caraïbische Eilanden-hop 🏝️'
       ? "Routelogica-herziening (2026-08): zelfde ronde als Caribbean & Amazon Expedition 🌴 zelf — Cuba's en Jamaica's volgorde omgedraaid, coördinaten per bestemming toegevoegd. Zie Caribbean & Amazon Expedition 🌴's eigen notities voor de volledige uitleg. Landen/dagen/budget-totaal ongewijzigd."
       : "Routelogica-herziening (2026-08): geen geografische fouten in Suriname/Brazilië zelf — coördinaten per bestemming toegevoegd. Zie Caribbean & Amazon Expedition 🌴's eigen notities voor de fixes in Cuba/Jamaica (niet in dit blok).";
 
-    if (route.notes && !route.notes.includes('Routelogica-herziening (2026-08)')) {
+    // alreadyFixed is guaranteed false here (early-returned above otherwise), so a plain notes
+    // check is enough — no need to re-test the English marker.
+    if (route.notes) {
       route.notes += '\n\n' + note;
       touched = true;
     }
@@ -6693,6 +6720,66 @@ function rbMigrateMediterraneanFamilyEnglish() {
   if (touched) rbSave();
 }
 
+/**
+ * Caribbean & Amazon Expedition family — Dutch-to-English translation (2026-08 batch 9/13, the
+ * second hand-authored family after Mediterranean Civilizations — Cuba/Jamaica/Curaçao/Bonaire/
+ * Guadeloupe/Dominica/Saint Lucia/Grenada/Suriname/Brazil each appear in only one leg of the parent
+ * route, but the two 2026-07 split companions duplicate the whole country-object literals rather
+ * than sharing a RB_EXPEDITION_CONTENT entry (see rbBuildCaribbeanAmazonExpeditionRoute()'s own
+ * comment), so there's no dict to diff against here either. Same wholesale-replace-via-rebuilt-
+ * buildFn() idiom as rbMigrateMediterraneanFamilyEnglish — 10 routes total: the Grand Trip itself
+ * (name unchanged), its two 2026-07 split companions (Caraïbische Eilanden-hop 🏝️ → Caribbean
+ * Islands Hop 🏝️, Suriname & Noord-Brazilië 🌴 → Suriname & Northern Brazil 🌴), and seven standalone
+ * single-/dual-country consumers split off in later batches — none of which were English already
+ * (Cuba 🎷, Curaçao & Bonaire 🤿, Suriname 🛶, Jamaica 🎵, Guadeloupe & Dominica 🍃, Saint Lucia &
+ * Grenada 🌰, Noord-Brazilië 🪁 → Northern Brazil 🪁 — the only one of the seven needing a rename,
+ * since the other six already used their English country names as the route name itself). Looked up
+ * by old-or-new name so this is idempotent whichever language a given route was seeded/migrated in.
+ * No other migration references any of the seven standalones by name, so none of those needed a
+ * collision check.
+ *
+ * Migration-collision fix for this batch: see the widened routeNamePairs and the new "already fixed
+ * in either language" early-return guard on rbMigrateCaribbeanAmazonRouteLogicOverhaul() above — that
+ * migration runs before this one in rbInit() and hardcodes a literal Dutch `fixes` dict (unlike
+ * Mediterranean's own route-logic-overhaul migration, which is itself a harmless name-lookup
+ * wholesale-replace), so without that fix it would have silently forced the main route's freshly
+ * seeded/translated English CU/JM content back to Dutch on any brand-new browser. rbMigrateCaribbean-
+ * AmazonBuild only ever targets the main route by its unchanged English name and no-ops once the
+ * route has blocks (true for every realistic browser), so the rename doesn't affect it — verified by
+ * reading it rather than assumed. rbMigrateSplitRouteEntryNotes's prependInstap() guard already
+ * recognizes both the Dutch 'Instap:' and English 'Entry:' prefixes generically (a fix made during an
+ * earlier batch), and this family's own "Instap:"/"Entry:" openers are now baked directly into the
+ * translated build functions rather than injected by that migration, so it always no-ops here
+ * regardless of language.
+ */
+function rbMigrateCaribbeanAmazonFamilyEnglish() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_CARIBBEAN_AMAZON_ENGLISH)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_CARIBBEAN_AMAZON_ENGLISH, '1');
+
+  const targets = [
+    { oldName: 'Caribbean & Amazon Expedition 🌴', newName: 'Caribbean & Amazon Expedition 🌴', buildFn: rbBuildCaribbeanAmazonExpeditionRoute },
+    { oldName: 'Caraïbische Eilanden-hop 🏝️', newName: 'Caribbean Islands Hop 🏝️', buildFn: rbBuildCaribbeanIslandsHopRoute },
+    { oldName: 'Suriname & Noord-Brazilië 🌴', newName: 'Suriname & Northern Brazil 🌴', buildFn: rbBuildSurinameNorthernBrazilRoute },
+    { oldName: 'Cuba 🎷', newName: 'Cuba 🎷', buildFn: rbBuildCubaRoute },
+    { oldName: 'Curaçao & Bonaire 🤿', newName: 'Curaçao & Bonaire 🤿', buildFn: rbBuildCuracaoBonaireRoute },
+    { oldName: 'Suriname 🛶', newName: 'Suriname 🛶', buildFn: rbBuildSurinameRoute },
+    { oldName: 'Jamaica 🎵', newName: 'Jamaica 🎵', buildFn: rbBuildJamaicaRoute },
+    { oldName: 'Guadeloupe & Dominica 🍃', newName: 'Guadeloupe & Dominica 🍃', buildFn: rbBuildGuadeloupeDominicaRoute },
+    { oldName: 'Saint Lucia & Grenada 🌰', newName: 'Saint Lucia & Grenada 🌰', buildFn: rbBuildSaintLuciaGrenadaRoute },
+    { oldName: 'Noord-Brazilië 🪁', newName: 'Northern Brazil 🪁', buildFn: rbBuildNorthernBrazilRoute },
+  ];
+
+  let touched = false;
+  targets.forEach(({ oldName, newName, buildFn }) => {
+    const idx = rbRoutes.findIndex(r => r.name === oldName || r.name === newName);
+    if (idx === -1) return;
+    rbRoutes.splice(idx, 1, buildFn());
+    touched = true;
+  });
+
+  if (touched) rbSave();
+}
+
 // ---- Standalone single-country routes (2026-08, on Youri's request) ----
 //
 // The modularization analysis (ROUTE_BUILDER_MODULES.md) flagged ~30 individual countries across
@@ -6797,19 +6884,19 @@ function rbBuildCubaRoute() {
       code: 'CU', name: 'Cuba', days: 18, budget: 1260, lat: 23.1136, lng: -82.3666,
       destinations: [
         { name: 'Havana (Habana Vieja)', lat: 23.1136, lng: -82.3666 },
-        { name: 'Viñales-vallei', lat: 22.6167, lng: -83.7097 },
+        { name: 'Viñales Valley', lat: 22.6167, lng: -83.7097 },
         { name: 'Cienfuegos', lat: 22.1496, lng: -80.4394 },
         { name: 'Trinidad', lat: 21.8047, lng: -79.9825 },
       ],
-      notes: "Instap: vlucht Amsterdam-Havana, met overstap (±15u30, vanaf ±€600-1.100 retour, december valt net na de goedkoopste maand november). Prijsindicatie webonderzoek 2026-08, momentopname. Havana en het UNESCO-koloniale Trinidad zijn de hoogtepunten; de rustige Viñales-vallei (tabak, karstlandschap) is de verborgen parel. Casas particulares (particuliere kamers) zijn de gangbare backpacker-accommodatie. Prijs geverifieerd (2026-07), klopt. ⚠️ Reisadvies oranje (bevestigd geldig, laatst bijgewerkt 23 juni 2026): grote tekorten aan stroom/brandstof/voedsel/medicijnen, toenemende veiligheidsrisico's — de zesde landelijke stroomstoring van 2026 viel op 2 augustus. Kaarten werken niet bij pinautomaten (contant meenemen). Sinds 1 juli 2025 is de papieren tourist card vervangen door een e-Visa (~$50), gekoppeld aan het verplichte gratis D'Viajeros-formulier (invullen binnen 72u vóór aankomst).",
-      transport_to_next: 'Einde van deze route — terug naar Havana (~4u15 rijden vanaf Trinidad), dan retourvlucht Havana-Amsterdam (meestal met overstap via Panama City of Miami).',
+      notes: "Entry: flight Amsterdam-Havana, with a stopover (±15h30, from ±€600-1,100 return, December falls right after the cheapest month November). Price indication from 2026-08 web research, a snapshot. Havana and UNESCO-listed colonial Trinidad are the highlights; the quiet Viñales Valley (tobacco, karst landscape) is the hidden gem. Casas particulares (private rooms) are the standard backpacker accommodation. Price verified (2026-07), holds up. ⚠️ Travel advisory orange (confirmed valid, last updated June 23, 2026): major shortages of power/fuel/food/medicine, rising safety risks — the sixth nationwide power outage of 2026 hit on August 2. Cards don't work at ATMs (bring cash). Since July 1, 2025 the paper tourist card has been replaced by an e-Visa (~$50), tied to the mandatory free D'Viajeros form (to be filled in within 72h before arrival).",
+      transport_to_next: 'End of this route — back to Havana (~4h15 driving from Trinidad), then a return flight Havana-Amsterdam (usually with a stopover via Panama City or Miami).',
     },
   ], {
     best_starting_month: 'December',
-    travel_style: 'Backpacker tussen goedkoop en normaal in — casas particulares, lokale bussen/collectivo\'s.',
-    climate_summary: 'December is droog seizoen, ruim na het orkaanseizoen (dat loopt juni-november).',
-    description: 'Havana, koloniaal Trinidad en de karstvallei van Viñales.',
-    notes: 'Losgesplitst van Caraïbische Eilanden-hop 🏝️ (zelf al losgesplitst van Caribbean & Amazon Expedition 🌴 — zie ROUTE_BUILDER_MODULES.md) als onderdeel van deze eerste batch losse landen (2026-08) — daar al genoemd als Sterk, "wereldberoemd standalone". Land, dagen en budget zijn ongewijzigd overgenomen. Caraïbische Eilanden-hop 🏝️ en Caribbean & Amazon Expedition 🌴 zelf blijven ongewijzigd bestaan.',
+    travel_style: "Backpacker between cheap and normal — casas particulares, local buses/collectivos.",
+    climate_summary: 'December is dry season, well after hurricane season (which runs June-November).',
+    description: 'Havana, colonial Trinidad and the karst valley of Viñales.',
+    notes: 'Split off from Caribbean Islands Hop 🏝️ (itself already split off from Caribbean & Amazon Expedition 🌴 — see ROUTE_BUILDER_MODULES.md) as part of this first batch of standalone countries (2026-08) — already flagged there as Strong, "world-famous standalone". Country, days and budget are carried over unchanged. Caribbean Islands Hop 🏝️ and Caribbean & Amazon Expedition 🌴 themselves remain unchanged.',
   });
 }
 
@@ -6837,26 +6924,26 @@ function rbBuildCuracaoBonaireRoute() {
       destinations: [
         { name: 'Willemstad (UNESCO)', lat: 12.1091, lng: -68.9316 },
         { name: 'Shete Boka National Park', lat: 12.3667, lng: -69.15 },
-        { name: 'stranden (Grote Knip)', lat: 12.2167, lng: -69.15 },
+        { name: 'beaches (Grote Knip)', lat: 12.2167, lng: -69.15 },
       ],
-      notes: 'Instap: rechtstreekse KLM-vlucht Amsterdam-Curaçao (±9u45; vanaf ±€650-750 retour, sinds april 2026 zo\'n €100 duurder dan voorheen door hogere brandstofkosten; beste periode december-januari). Prijsindicatie webonderzoek 2026-08, momentopname. Willemstad met zijn Nederlandse koloniale architectuur is de stedelijke tegenhanger van rustig Bonaire. Shete Boka (ruige noordkust) is de verborgen parel, veel rustiger dan de stranden. Prijs geverifieerd (2026-07), klopt. Digital Immigration Card verplicht vooraf invullen (gratis).',
-      transport_to_next: 'Korte vlucht Curaçao-Bonaire',
+      notes: "Entry: direct KLM flight Amsterdam-Curaçao (±9h45; from ±€650-750 return, about €100 pricier since April 2026 than before due to higher fuel costs; best period December-January). Price indication from 2026-08 web research, a snapshot. Willemstad with its Dutch colonial architecture is the urban counterpart to laid-back Bonaire. Shete Boka (rugged north coast) is the hidden gem, much quieter than the beaches. Price verified (2026-07), holds up. Digital Immigration Card mandatory to fill in in advance (free).",
+      transport_to_next: 'Short flight Curaçao-Bonaire',
     },
     {
       code: 'BQ', name: 'Bonaire', days: 6, budget: 660, lat: 12.25, lng: -68.4,
       destinations: [
         { name: 'Washington Slagbaai National Park', lat: 12.3167, lng: -68.4167 },
-        { name: 'duiken/snorkelen (marine park)', lat: 12.15, lng: -68.2833 },
+        { name: 'diving/snorkeling (marine park)', lat: 12.15, lng: -68.2833 },
       ],
-      notes: "Wereldklasse duiken/snorkelen direct vanaf de kust. Washington Slagbaai NP (flamingo's, ruige natuur) is de verborgen parel, nauwelijks bezocht. Prijscorrectie (2026-07): €87,50→€110/dag (weinig budget-accommodatie, duiktrips zijn duur). Verplichte inreisbelasting ~€70 p.p. is een aparte kostenpost, niet in het dagtarief.",
-      transport_to_next: 'Einde van deze route — vlucht Bonaire-Curaçao (korte regionale verbinding), dan rechtstreekse KLM-terugvlucht Curaçao-Amsterdam.',
+      notes: "World-class diving/snorkeling right off the coast. Washington Slagbaai NP (flamingos, rugged nature) is the hidden gem, barely visited. Price correction (2026-07): €87.50→€110/day (little budget accommodation, dive trips are expensive). The mandatory entry tax of ~€70 p.p. is a separate cost item, not included in the daily rate.",
+      transport_to_next: 'End of this route — flight Bonaire-Curaçao (short regional connection), then a direct KLM return flight Curaçao-Amsterdam.',
     },
   ], {
     best_starting_month: 'December',
-    travel_style: 'Rechtstreekse KLM-vlucht naar Curaçao, korte regionale vlucht door naar Bonaire.',
-    climate_summary: 'December-januari is droog seizoen — helderder water voor snorkelen en duiken op beide eilanden.',
-    description: 'De Nederlandse Caraïben: koloniaal Willemstad en het duik-/snorkelparadijs van Bonaire.',
-    notes: 'Losgesplitst van Caraïbische Eilanden-hop 🏝️ (zelf al losgesplitst van Caribbean & Amazon Expedition 🌴 — zie ROUTE_BUILDER_MODULES.md) als onderdeel van deze eerste batch losse landen (2026-08) — al genoemd als "extra relevant met directe KLM-vluchten". Landen, dagen en budgetten zijn ongewijzigd overgenomen. Caraïbische Eilanden-hop 🏝️ en Caribbean & Amazon Expedition 🌴 zelf blijven ongewijzigd bestaan.',
+    travel_style: 'Direct KLM flight to Curaçao, short regional flight onward to Bonaire.',
+    climate_summary: 'December-January is dry season — clearer water for snorkeling and diving on both islands.',
+    description: 'The Dutch Caribbean: colonial Willemstad and the diving/snorkeling paradise of Bonaire.',
+    notes: 'Split off from Caribbean Islands Hop 🏝️ (itself already split off from Caribbean & Amazon Expedition 🌴 — see ROUTE_BUILDER_MODULES.md) as part of this first batch of standalone countries (2026-08) — already flagged as "extra relevant with direct KLM flights". Countries, days and budgets are carried over unchanged. Caribbean Islands Hop 🏝️ and Caribbean & Amazon Expedition 🌴 themselves remain unchanged.',
   });
 }
 
@@ -6866,18 +6953,18 @@ function rbBuildSurinameRoute() {
       code: 'SR', name: 'Suriname', days: 11, budget: 605, lat: 5.852, lng: -55.2038,
       destinations: [
         { name: 'Paramaribo (UNESCO)', lat: 5.852, lng: -55.2038 },
-        { name: 'Marrondorpen aan de rivier', lat: 4.4, lng: -55.0 },
+        { name: 'Maroon villages along the river', lat: 4.4, lng: -55.0 },
         { name: 'Brownsberg Nature Park', lat: 4.95, lng: -55.1667 },
       ],
-      notes: 'Instap: rechtstreekse KLM-vlucht Amsterdam-Paramaribo (±9u20, vanaf ±€1.100-1.800 retour) — let op: februari is qua vluchtprijs een van de duurdere maanden op deze route, ondanks dat het klimatologisch de beste periode is. Prijsindicatie webonderzoek 2026-08, momentopname. Nederlandse koloniale geschiedenis in Paramaribo, gecombineerd met een rivierreis naar Marrondorpen in het binnenland — reken op 3-5 dagen voor een fatsoenlijke jungletocht naast de stad. Brownsberg (uitzicht over het Brokopondostuwmeer) is de verborgen parel. Prijs geverifieerd (2026-07): waarschijnlijk net genoeg, Brownsberg/Marrondorpen-tours ($70-120/dag) drukken het gemiddelde op. Let op: "visumvrij" is niet helemaal juist — een verplicht online ICF-immigratieformulier + gelekoortsbewijs is nodig vooraf.',
-      transport_to_next: 'Einde van deze route — rechtstreekse KLM-terugvlucht Paramaribo-Amsterdam (±9u20).',
+      notes: 'Entry: direct KLM flight Amsterdam-Paramaribo (±9h20, from ±€1,100-1,800 return) — note: February is one of the pricier flight months on this route, despite being the climatologically best period. Price indication from 2026-08 web research, a snapshot. Dutch colonial history in Paramaribo, combined with a river trip to Maroon villages in the interior — plan on 3-5 days for a decent jungle trip alongside the city. Brownsberg (view over the Brokopondo reservoir) is the hidden gem. Price verified (2026-07): probably just enough, Brownsberg/Maroon-village tours ($70-120/day) push the average up. Note: "visa-free" isn\'t entirely accurate — a mandatory online ICF immigration form + yellow fever certificate is needed in advance.',
+      transport_to_next: 'End of this route — direct KLM return flight Paramaribo-Amsterdam (±9h20).',
     },
   ], {
-    best_starting_month: 'Februari',
-    travel_style: 'Rechtstreekse KLM-vlucht, rivierboten voor de Marrondorpen in het binnenland.',
-    climate_summary: 'Suriname\'s korte droge tijd (februari-maart) is ideaal voor jungle-/rivierentochten.',
-    description: 'Nederlandse koloniale geschiedenis in Paramaribo en een rivierreis naar de Marrondorpen.',
-    notes: 'Losgesplitst van Suriname & Noord-Brazilië 🌴 (zelf al losgesplitst van Caribbean & Amazon Expedition 🌴 — zie ROUTE_BUILDER_MODULES.md) als onderdeel van deze eerste batch losse landen (2026-08) — al genoemd als "extra relevant gezien de Nederlandse band". Land, dagen en budget zijn ongewijzigd overgenomen. Suriname & Noord-Brazilië 🌴 en Caribbean & Amazon Expedition 🌴 zelf blijven ongewijzigd bestaan.',
+    best_starting_month: 'February',
+    travel_style: 'Direct KLM flight, river boats for the Maroon villages in the interior.',
+    climate_summary: "Suriname's short dry spell (February-March) is ideal for jungle/river trips.",
+    description: 'Dutch colonial history in Paramaribo and a river trip to the Maroon villages.',
+    notes: 'Split off from Suriname & Northern Brazil 🌴 (itself already split off from Caribbean & Amazon Expedition 🌴 — see ROUTE_BUILDER_MODULES.md) as part of this first batch of standalone countries (2026-08) — already flagged as "extra relevant given the Dutch ties". Country, days and budget are carried over unchanged. Suriname & Northern Brazil 🌴 and Caribbean & Amazon Expedition 🌴 themselves remain unchanged.',
   });
 }
 
@@ -7315,15 +7402,15 @@ function rbBuildJamaicaRoute() {
         { name: 'Port Antonio', lat: 18.1811, lng: -76.4513 },
         { name: 'Blue Mountains (Hardwar Gap)', lat: 18.0747, lng: -76.6597 },
       ],
-      notes: 'Instap: vlucht Amsterdam-Kingston, met overstap (geen directe verbinding, ±13-16 uur incl. overstap; vanaf ±€750-900 retour; beste periode december — mei is doorgaans goedkoper qua vluchtprijs maar valt buiten het droge seizoen). Prijsindicatie webonderzoek 2026-08, momentopname. Blue Mountains (koffie, wandelen) en Port Antonio (rafting, watervallen, nauwelijks toeristen vergeleken met Negril/Ocho Rios) zijn de sterkste match met natuur boven luxe. Prijscorrectie (2026-07): €75→€90/dag, Jamaica is duurder dan aangenomen (guesthouses + entreegelden).',
-      transport_to_next: 'Einde van deze route — kort eindstuk Blue Mountains-Kingston (Hardwar Gap-bergroute), dan terugvlucht Kingston-Amsterdam (meestal met overstap via Panama City of Miami).',
+      notes: 'Entry: flight Amsterdam-Kingston, with a stopover (no direct connection, ±13-16 hours incl. stopover; from ±€750-900 return; best period December — May is usually cheaper on flight price but falls outside the dry season). Price indication from 2026-08 web research, a snapshot. Blue Mountains (coffee, hiking) and Port Antonio (rafting, waterfalls, hardly any tourists compared to Negril/Ocho Rios) are the strongest match for nature over luxury. Price correction (2026-07): €75→€90/day, Jamaica is pricier than assumed (guesthouses + entrance fees).',
+      transport_to_next: 'End of this route — short final stretch Blue Mountains-Kingston (Hardwar Gap mountain route), then a return flight Kingston-Amsterdam (usually with a stopover via Panama City or Miami).',
     },
   ], {
     best_starting_month: 'December',
-    travel_style: 'Backpacker tussen goedkoop en normaal in — lokale bussen/taxi\'s.',
-    climate_summary: 'December is droog seizoen, ruim na het orkaanseizoen (dat loopt juni-november).',
-    description: 'Kingston, Dunn\'s River Falls, Port Antonio en de koffie-/wandelregio van de Blue Mountains.',
-    notes: 'Losgesplitst van Caraïbische Eilanden-hop 🏝️ (zelf al losgesplitst van Caribbean & Amazon Expedition 🌴 — zie ROUTE_BUILDER_MODULES.md) als onderdeel van deze derde batch losse landen (2026-08, Youri\'s eigen tweede top-10-keuze). Land, dagen en budget zijn ongewijzigd overgenomen (incl. de 2026-08 routelogica-fix voor de Blue Mountains-volgorde). Caraïbische Eilanden-hop 🏝️ en Caribbean & Amazon Expedition 🌴 zelf blijven ongewijzigd bestaan.',
+    travel_style: 'Backpacker between cheap and normal — local buses/taxis.',
+    climate_summary: 'December is dry season, well after hurricane season (which runs June-November).',
+    description: "Kingston, Dunn's River Falls, Port Antonio and the coffee-/hiking region of the Blue Mountains.",
+    notes: 'Split off from Caribbean Islands Hop 🏝️ (itself already split off from Caribbean & Amazon Expedition 🌴 — see ROUTE_BUILDER_MODULES.md) as part of this third batch of standalone countries (2026-08, Youri\'s own second top-10 pick). Country, days and budget are carried over unchanged (incl. the 2026-08 route-logic fix for the Blue Mountains order). Caribbean Islands Hop 🏝️ and Caribbean & Amazon Expedition 🌴 themselves remain unchanged.',
   });
 }
 
@@ -7866,29 +7953,29 @@ function rbBuildGuadeloupeDominicaRoute() {
     {
       code: 'GP', name: 'Guadeloupe', days: 7, budget: 615, lat: 16.0448, lng: -61.6654,
       destinations: [
-        { name: 'La Soufrière (vulkaan)', lat: 16.0456, lng: -61.6654 },
-        { name: 'Carbet-watervallen', lat: 16.0472, lng: -61.6167 },
+        { name: 'La Soufrière (volcano)', lat: 16.0456, lng: -61.6654 },
+        { name: 'Carbet Falls', lat: 16.0472, lng: -61.6167 },
         { name: 'Îles des Saintes', lat: 15.8667, lng: -61.5833 },
       ],
-      notes: "Instap: vlucht Amsterdam-Pointe-à-Pitre, met overstap via Parijs (Air France/KLM, ±10u45; vanaf ±€650-1.700 retour; beste periode februari). Prijsindicatie webonderzoek 2026-08, momentopname. Franse Caraïbische cultuur gecombineerd met een actieve vulkaan. Îles des Saintes (kleine eilandjes voor de kust) is veel rustiger dan het hoofdeiland. Prijs geverifieerd (2026-07), klopt. Guadeloupe is Frans/EU (geen Schengen) — geen visum nodig, gewoon paspoort/ID.",
-      transport_to_next: "Veerboot L'Express des Îles naar Dominica.",
+      notes: "Entry: flight Amsterdam-Pointe-à-Pitre, with a stopover via Paris (Air France/KLM, ±10h45; from ±€650-1,700 return; best period February). Price indication from 2026-08 web research, a snapshot. French Caribbean culture combined with an active volcano. Îles des Saintes (small islets off the coast) is much quieter than the main island. Price verified (2026-07), holds up. Guadeloupe is French/EU (not Schengen) — no visa needed, just a passport/ID.",
+      transport_to_next: "L'Express des Îles ferry to Dominica.",
     },
     {
       code: 'DM', name: 'Dominica', days: 8, budget: 760, lat: 15.317, lng: -61.268,
       destinations: [
-        { name: 'Boiling Lake-trektocht', lat: 15.3167, lng: -61.2667 },
+        { name: 'Boiling Lake Trek', lat: 15.3167, lng: -61.2667 },
         { name: 'Trafalgar Falls', lat: 15.3181, lng: -61.3331 },
         { name: 'Champagne Reef', lat: 15.2833, lng: -61.3833 },
       ],
-      notes: '"Nature Island" — het minst ontwikkelde en meest ongerepte eiland van de vier uit de oorspronkelijke expeditie. De Boiling Lake-trektocht is een zware hele dag op zich; reken op een rustdag ervoor of erna. Champagne Reef (vulkanische bubbels tijdens het snorkelen) is uniek. Prijscorrectie (2026-07): €72,50→€95/dag. Visumvrij, tot 90 dagen.',
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Dominica naar Amsterdam (1-2 overstappen, geen directe verbinding).',
+      notes: '"Nature Island" — the least developed and most unspoiled of the four islands from the original expedition. The Boiling Lake trek is a tough full day on its own; plan a rest day before or after it. Champagne Reef (volcanic bubbles while snorkeling) is unique. Price correction (2026-07): €72.50→€95/day. Visa-free, up to 90 days.',
+      transport_to_next: 'End of this route — return flight from Dominica to Amsterdam (1-2 stopovers, no direct connection).',
     },
   ], {
-    best_starting_month: 'Februari',
-    travel_style: "Veerboot L'Express des Îles tussen de twee eilanden.",
-    climate_summary: "Februari valt in de \"carême\" (droge tijd) — het beste moment om te wandelen in Dominica's regenwoud, ruim buiten het orkaanseizoen (juni-november).",
-    description: 'De vulkaan La Soufrière en de Carbet-watervallen op Guadeloupe, gevolgd door de Boiling Lake-trektocht en Trafalgar Falls op Dominica.',
-    notes: 'Losgesplitst van Caraïbische Eilanden-hop 🏝️ (zelf al losgesplitst van Caribbean & Amazon Expedition 🌴) als onderdeel van de vijfde batch losse landen (2026-08) — het Guadeloupe/Dominica-tweeluik van dat block, zonder Cuba/Jamaica/Curaçao&Bonaire/Saint Lucia/Grenada. Landen, dagen en budgetten zijn ongewijzigd overgenomen. Caraïbische Eilanden-hop 🏝️ en Caribbean & Amazon Expedition 🌴 zelf blijven ongewijzigd bestaan.',
+    best_starting_month: 'February',
+    travel_style: "L'Express des Îles ferry between the two islands.",
+    climate_summary: "February falls within the \"carême\" (dry spell) — the best time to hike Dominica's rainforest, well outside hurricane season (June-November).",
+    description: 'The La Soufrière volcano and Carbet Falls on Guadeloupe, followed by the Boiling Lake Trek and Trafalgar Falls on Dominica.',
+    notes: 'Split off from Caribbean Islands Hop 🏝️ (itself already split off from Caribbean & Amazon Expedition 🌴) as part of the fifth batch of standalone countries (2026-08) — the Guadeloupe/Dominica duo from that block, without Cuba/Jamaica/Curaçao&Bonaire/Saint Lucia/Grenada. Countries, days and budgets are carried over unchanged. Caribbean Islands Hop 🏝️ and Caribbean & Amazon Expedition 🌴 themselves remain unchanged.',
   });
 }
 
@@ -8119,28 +8206,28 @@ function rbBuildSaintLuciaGrenadaRoute() {
       code: 'LC', name: 'Saint Lucia', days: 7, budget: 560, lat: 13.83, lng: -61.0667,
       destinations: [
         { name: 'The Pitons', lat: 13.8167, lng: -61.0667 },
-        { name: 'Sulphur Springs (drive-in vulkaan)', lat: 13.8347, lng: -61.0552 },
+        { name: 'Sulphur Springs (drive-in volcano)', lat: 13.8347, lng: -61.0552 },
         { name: 'Tet Paul Nature Trail', lat: 13.8333, lng: -61.05 },
       ],
-      notes: 'Instap: vlucht Amsterdam-Saint Lucia, met overstap (bv. via de VS, ±19 uur totaal; vanaf ±€700-1.000 retour; beste periode augustus-september — let op, dat valt middenin het orkaanseizoen juni-november; overweeg december-april voor meer zekerheid tegen een hogere prijs). Prijsindicatie webonderzoek 2026-08, momentopname. De iconische Pitons, meer toeristisch ontwikkeld dan Grenada. Tet Paul Nature Trail geeft hetzelfde uitzicht op de Pitons, veel rustiger dan de drukke wandelpaden. Prijs geverifieerd (2026-07), klopt.',
-      transport_to_next: 'Vlucht St Lucia-Grenada (regionale verbinding, ±1 uur).',
+      notes: 'Entry: flight Amsterdam-Saint Lucia, with a stopover (e.g. via the US, ±19 hours total; from ±€700-1,000 return; best period August-September — note, that falls right in the middle of hurricane season June-November; consider December-April for more certainty at a higher price). Price indication from 2026-08 web research, a snapshot. The iconic Pitons, more tourist-developed than Grenada. Tet Paul Nature Trail gives the same view of the Pitons, much quieter than the busy hiking trails. Price verified (2026-07), holds up.',
+      transport_to_next: 'Flight St Lucia-Grenada (regional connection, ±1 hour).',
     },
     {
       code: 'GD', name: 'Grenada', days: 7, budget: 510, lat: 12.08, lng: -61.728,
       destinations: [
-        { name: 'Onderwaterbeeldenpark', lat: 12.0742, lng: -61.7325 },
-        { name: 'kruidenplantages (nootmuskaat)', lat: 12.1667, lng: -61.7333 },
+        { name: 'Underwater Sculpture Park', lat: 12.0742, lng: -61.7325 },
+        { name: 'spice plantations (nutmeg)', lat: 12.1667, lng: -61.7333 },
         { name: 'Grand Etang National Park', lat: 12.0833, lng: -61.6833 },
       ],
-      notes: 'Het minst toeristische van de twee eilanden. Grand Etang NP (regenwoud, kratermeer) is de verborgen parel. Prijs geverifieerd (2026-07), klopt.',
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Grenada naar Amsterdam (1 overstap, open-jaw).',
+      notes: 'The least touristy of the two islands. Grand Etang NP (rainforest, crater lake) is the hidden gem. Price verified (2026-07), holds up.',
+      transport_to_next: 'End of this route — return flight from Grenada to Amsterdam (1 stopover, open-jaw).',
     },
   ], {
     best_starting_month: 'December',
-    travel_style: 'Korte regionale vlucht tussen de twee eilanden.',
-    climate_summary: 'December-april is het Caribische droge seizoen, ruim buiten het orkaanseizoen (juni-november) — de veiligere keuze boven de goedkopere maar riskantere augustus-september.',
-    description: 'De Pitons en Sulphur Springs op Saint Lucia, gevolgd door het onderwaterbeeldenpark en Grand Etang NP op Grenada.',
-    notes: 'Losgesplitst van Caraïbische Eilanden-hop 🏝️ (zelf al losgesplitst van Caribbean & Amazon Expedition 🌴) als onderdeel van de zesde batch losse landen (2026-08) — het Saint Lucia/Grenada-tweeluik van dat block, zonder Cuba/Jamaica/Curaçao&Bonaire/Guadeloupe/Dominica. Landen en dagbudgetten zijn ongewijzigd overgenomen. Geen Nederlandse ambassade op beide eilanden. Caraïbische Eilanden-hop 🏝️ en Caribbean & Amazon Expedition 🌴 zelf blijven ongewijzigd bestaan.',
+    travel_style: 'Short regional flight between the two islands.',
+    climate_summary: 'December-April is the Caribbean dry season, well outside hurricane season (June-November) — the safer choice over the cheaper but riskier August-September.',
+    description: 'The Pitons and Sulphur Springs on Saint Lucia, followed by the Underwater Sculpture Park and Grand Etang NP on Grenada.',
+    notes: 'Split off from Caribbean Islands Hop 🏝️ (itself already split off from Caribbean & Amazon Expedition 🌴) as part of the sixth batch of standalone countries (2026-08) — the Saint Lucia/Grenada duo from that block, without Cuba/Jamaica/Curaçao&Bonaire/Guadeloupe/Dominica. Countries and daily budgets are carried over unchanged. No Dutch embassy on either island. Caribbean Islands Hop 🏝️ and Caribbean & Amazon Expedition 🌴 themselves remain unchanged.',
   });
 }
 
@@ -8704,20 +8791,20 @@ function rbBuildNorthernBrazilRoute() {
       { name: 'Jericoacoara', lat: -2.7975, lng: -40.5137 },
       { name: 'Fortaleza', lat: -3.7172, lng: -38.5433 },
     ],
-    transport_to_next: 'Einde van deze route — terugvlucht vanuit Fortaleza (via Parijs met Air France, of via Lissabon met TAP) naar Amsterdam.',
-    notes: 'De overgang van de Amazone-riviermonding (Belém, Marajó — buffels, ongerept rivierdelta-eiland) naar de compleet andere zandduinenkust (Lençóis Maranhenses, Jericoacoara) als adembenemende afsluiter. De afstanden langs de kust worden vaak onderschat. Prijs geverifieerd (2026-07), klopt.',
+    transport_to_next: 'End of this route — return flight from Fortaleza (via Paris with Air France, or via Lisbon with TAP) to Amsterdam.',
+    notes: "The transition from the Amazon river mouth (Belém, Marajó — water buffalo, an unspoiled river-delta island) to the completely different sand-dune coast (Lençóis Maranhenses, Jericoacoara) as a breathtaking finale. The distances along the coast are often underestimated. Price verified (2026-07), holds up.",
   });
-  return rbBuildFlatSeedRoute('Noord-Brazilië 🪁', [
+  return rbBuildFlatSeedRoute('Northern Brazil 🪁', [
     {
       ...carib('BR', 'Brazil'),
-      notes: 'Instap: vlucht Amsterdam-Belém via Lissabon (TAP, ±12-13 uur totaal; vanaf ±€650-950 retour; beste periode april-juni/september-oktober, buiten de Braziliaanse zomervakantie december-februari en Carnaval). Prijsindicatie webonderzoek 2026-08, momentopname. ' + carib('BR', 'Brazil').notes,
+      notes: 'Entry: flight Amsterdam-Belém via Lisbon (TAP, ±12-13 hours total; from ±€650-950 return; best period April-June/September-October, outside the Brazilian summer holidays December-February and Carnival). Price indication from 2026-08 web research, a snapshot. ' + carib('BR', 'Brazil').notes,
     },
   ], {
     best_starting_month: 'April',
-    travel_style: 'Binnenlandse vluchten/bus langs de kust — de afstanden tussen de hoogtepunten zijn groter dan ze op de kaart lijken.',
-    climate_summary: 'April-juni (of september-oktober) geeft droog, winderig weer voor de duinen en lagunes bij Jericoacoara, buiten het drukke/duurdere Braziliaanse zomerseizoen.',
-    description: 'De Amazone-riviermonding bij Belém en Ilha do Marajó, gevolgd door de zandduinenkust van Lençóis Maranhenses en Jericoacoara tot Fortaleza.',
-    notes: 'Losgesplitst van Caribbean & Amazon Expedition 🌴 (via Suriname & Noord-Brazilië 🌴) als onderdeel van de zevende combi-batch (2026-08) — het Noord-Braziliaanse deel van dat block als eigen, kortere reis, zonder Suriname (dat al als eigen standalone Suriname 🛶-route bestaat). Land, dagen en budget zijn ongewijzigd overgenomen. Caribbean & Amazon Expedition 🌴 en Suriname & Noord-Brazilië 🌴 zelf blijven ongewijzigd bestaan.',
+    travel_style: 'Domestic flights/bus along the coast — the distances between the highlights are bigger than they look on the map.',
+    climate_summary: 'April-June (or September-October) gives dry, windy weather for the dunes and lagoons at Jericoacoara, outside the busy/pricier Brazilian summer season.',
+    description: 'The Amazon river mouth at Belém and Ilha do Marajó, followed by the sand-dune coast of Lençóis Maranhenses and Jericoacoara to Fortaleza.',
+    notes: 'Split off from Caribbean & Amazon Expedition 🌴 (via Suriname & Northern Brazil 🌴) as part of the seventh combo batch (2026-08) — the Northern Brazilian part of that block as its own, shorter trip, without Suriname (which already exists as its own standalone Suriname 🛶 route). Country, days and budget are carried over unchanged. Caribbean & Amazon Expedition 🌴 and Suriname & Northern Brazil 🌴 themselves remain unchanged.',
   });
 }
 

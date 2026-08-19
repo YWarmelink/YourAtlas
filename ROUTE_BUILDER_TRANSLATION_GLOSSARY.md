@@ -113,6 +113,13 @@ exactly as-is; only translate the label itself.
 
 Month-range notation keeps the en-dash: e.g. "April–juni" → "April–June", "Februari–maart" → "February–March".
 
+## 6. Batch 9 additions (Caribbean & Amazon)
+
+| Dutch | English | Notes |
+|---|---|---|
+| Marrondorp(en) | Maroon village(s) | Suriname-specific — descendants of escaped enslaved people living in river communities; "Maroon" is the established English term, not a literal translation of "bruin/marron". |
+| carême | carême | Kept as-is (French/Antillean Creole loanword for the Caribbean dry season) — used identically in both languages, same treatment as "harmattan" or "moesson" staying recognizable loanwords. |
+
 ---
 
-*Extracted from batches 1–7 (2026-08-18/19). Update this file as later batches surface new recurring terms — do not let it go stale.*
+*Extracted from batches 1–7 (2026-08-18/19), plus batch 9 (2026-08-19, Caribbean & Amazon). Update this file as later batches surface new recurring terms — do not let it go stale.*

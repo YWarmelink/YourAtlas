@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateSplitRouteEntryNotes();
   rbMigrateReplaceKazakhstanTajikistanCombo();
   rbMigrateMediterraneanFamilyEnglish();
+  rbMigrateCaribbeanAmazonFamilyEnglish();
   rbBindEvents();
 
   try {
