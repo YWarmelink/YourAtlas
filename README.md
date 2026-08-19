@@ -482,8 +482,8 @@ Egypt 🏺 ← Hoorn van Afrika & Egypte). The Grand Trip's own name was already
 Batch 8 (Mediterranean Civilizations Expedition, 13 countries + 6 splitroutes + **11 standalone
 consumers**, the biggest route count of any translation batch so far and this family's own last
 open item from the ROUTE_LOGIC_REVIEW.md/route-builder-translation playbooks — 18 routes total) cost
-**~267,000 tokens** (session token-budget counter dropped from roughly 14,970,000 to roughly
-14,700,000 across this batch, a directly measured figure though the counter isn't a pure task-cost
+**~315,000 tokens** (session token-budget counter dropped from roughly 15,000,000 to roughly
+14,685,000 across this batch, a directly measured figure though the counter isn't a pure task-cost
 meter). This is the first *hand-authored* family translated (per `CLAUDE.md`'s architecture note,
 Italy/France/Greece each repeat across legs so this route's content lives inline in
 `rbBuildXRoute()` functions rather than a shared `RB_EXPEDITION_CONTENT` dict) — no dict cascade, so
@@ -558,7 +558,7 @@ and route-name lookup array needed widening (for the two renamed splitroutes, Mi
 | 4 | Nordic Arctic | dict-based | 5 | **done** | **200,428** |
 | 5 | Pan-American Grand Tour + reused standalones | dict-based | 4 + 8 | **done** | **~280,000** |
 | 6 | Africa Grand Tour + reused standalones | dict-based | 4 + 15 | **done** | **~330,000** |
-| 7 | Mediterranean Civilizations + standalones | hand-authored | 6 + 11 | **done** | **~267,000** |
+| 7 | Mediterranean Civilizations + standalones | hand-authored | 6 + 11 | **done** | **~315,000** |
 | 8 | **Central European Grand Roadtrip** | hand-authored | 0 | **done (pilot)** | **138,985** |
 | 9 | British Isles & Celtic Coast | hand-authored | 4 | not started | — |
 | 10 | Caribbean & Amazon | hand-authored | 2 | not started | — |
