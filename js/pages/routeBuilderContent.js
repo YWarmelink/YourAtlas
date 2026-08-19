@@ -1094,7 +1094,7 @@ function rbBuildNorthAmericaRoute() {
   return rbBuildSeedRoute('North America Grand Traverse 🌎', [
     {
       name: 'Atlantic Canada – Nova Scotia',
-      season: 'Juni',
+      season: 'June',
       budget: 900,
       countries: [{
         code: 'CA', name: 'Canada', days: 8, budget: 1200, lat: 44.6488, lng: -63.5752,
@@ -1104,31 +1104,31 @@ function rbBuildNorthAmericaRoute() {
           { name: 'Lunenburg', lat: 44.3767, lng: -64.3097 },
           { name: 'Cape Breton Island & Cabot Trail', lat: 46.2036, lng: -60.6136 },
         ],
-        transport_to_next: "Vlucht Halifax-Quebec City (~2 uur) — geen praktische overlandroute gezien de afstand door onbewoond Oost-Canada",
-        notes: 'Startblok: vlucht Nederland-Halifax. Kennismaking met Canada via ruige Atlantische kust, vissersdorpjes, vuurtorens en Keltisch/Acadische cultuur op Cape Breton. Prijs geverifieerd (2026-07), klopt. eTA (bij inreis per vlucht) kost slechts ~€4,70, 5 jaar geldig.',
+        transport_to_next: "Flight Halifax-Quebec City (~2 hours) — no practical overland route given the distance through uninhabited Eastern Canada",
+        notes: 'Starting block: flight Netherlands-Halifax. Introduction to Canada via the rugged Atlantic coast, fishing villages, lighthouses and Celtic/Acadian culture on Cape Breton. Price verified (2026-07), holds up. eTA (when entering by flight) costs only ~€4.70, valid 5 years.',
       }],
-      note: 'Startpunt van de expeditie — vlucht Nederland-Halifax. Ruige kust, vissersdorpen en vuurtorens; geen huurauto nodig, alles is met kleine afstanden te doen vanuit Halifax.',
+      note: 'Starting point of the expedition — flight Netherlands-Halifax. Rugged coast, fishing villages and lighthouses; no rental car needed, everything is doable via short distances from Halifax.',
     },
     {
       name: 'Eastern Canada – Historic Cities',
-      season: 'Juni',
+      season: 'June',
       budget: 1500,
       countries: [{
         code: 'CA', name: 'Canada', days: 10, budget: 1675, lat: 46.8139, lng: -71.208,
         destinations: [
           { name: 'Quebec City (Vieux-Québec)', lat: 46.8139, lng: -71.2080 },
           { name: 'Montreal (Old Port & Mile End)', lat: 45.5019, lng: -73.5674 },
-          { name: 'Ottawa (Parliament Hill & musea)', lat: 45.4215, lng: -75.6972 },
-          { name: 'Toronto (skyline, met Niagara Falls als dagtrip)', lat: 43.6532, lng: -79.3832 },
+          { name: 'Ottawa (Parliament Hill & museums)', lat: 45.4215, lng: -75.6972 },
+          { name: 'Toronto (skyline, with Niagara Falls as a day trip)', lat: 43.6532, lng: -79.3832 },
         ],
-        transport_to_next: "Trein (Via Rail) Quebec City-Montreal-Ottawa-Toronto, daarna vlucht Toronto-Calgary (~4 uur) om de huurauto voor de Rockies op te halen",
-        notes: 'Geen lange autorit door Canada: de treinverbindingen tussen deze vier steden zijn snel en comfortabel. Franse cultuur en koloniale geschiedenis in Quebec City, eten en moderne stad in Montreal, politiek en musea in Ottawa, skyline en Niagara Falls vanuit Toronto.',
+        transport_to_next: "Train (Via Rail) Quebec City-Montreal-Ottawa-Toronto, then flight Toronto-Calgary (~4 hours) to pick up the rental car for the Rockies",
+        notes: 'No long car ride through Canada: the train connections between these four cities are fast and comfortable. French culture and colonial history in Quebec City, food and a modern city in Montreal, politics and museums in Ottawa, skyline and Niagara Falls from Toronto.',
       }],
-      note: 'Reizen per trein, geen huurauto in dit blok. Niagara Falls is een optionele dagtrip vanuit Toronto, geen apart blok.',
+      note: 'Traveling by train, no rental car in this block. Niagara Falls is an optional day trip from Toronto, not a separate block.',
     },
     {
       name: 'Canadian Rockies',
-      season: 'Juni-Juli',
+      season: 'June-July',
       budget: 2600,
       countries: [{
         code: 'CA', name: 'Canada', days: 17, budget: 3400, lat: 51.1784, lng: -115.5708,
@@ -1141,14 +1141,14 @@ function rbBuildNorthAmericaRoute() {
           { name: 'Mount Robson Provincial Park', lat: 53.1216, lng: -119.1465 },
           { name: 'Whistler', lat: 50.1163, lng: -122.9574 },
         ],
-        transport_to_next: 'Auto Whistler-Vancouver (~2 uur), huurauto inleveren in Vancouver — dezelfde huurauto blijft binnen Canada, dus geen one-way- of grenskosten',
-        notes: 'Het natuurhoogtepunt van de hele expeditie: gletsjermeren, een van de mooiste wegen ter wereld (Icefields Parkway) en goede kans op wildlife (elanden, beren, bighorn sheep). Huurauto 2 wordt hier opgehaald in Calgary. Prijs geverifieerd (2026-07), klopt (mits ruim vooraf geboekt in hoogseizoen). ⚠️ Moraine Lake Road is alleen bereikbaar met de verplichte Parks Canada-shuttle (geen privéauto toegestaan) — boeking opent doorgaans medio april, beperkt aantal plekken, ruim vooraf regelen.',
+        transport_to_next: 'Car Whistler-Vancouver (~2 hours), return the rental car in Vancouver — the same rental car stays within Canada, so no one-way or border fees',
+        notes: 'The nature highlight of the entire expedition: glacier lakes, one of the most beautiful roads in the world (Icefields Parkway) and a good chance of wildlife (moose, bears, bighorn sheep). Rental car 2 is picked up here in Calgary. Price verified (2026-07), holds up (provided it is booked well in advance during high season). ⚠️ Moraine Lake Road is only accessible via the mandatory Parks Canada shuttle (no private cars allowed) — booking usually opens mid-April, limited spots, arrange well in advance.',
       }],
-      note: 'Huurauto 2 (Calgary-Vancouver). Reken op minstens 2-3 nachten per nationaal park om ook te kunnen wandelen, niet alleen doorrijden.',
+      note: 'Rental car 2 (Calgary-Vancouver). Plan for at least 2-3 nights per national park so you can also hike, not just drive through.',
     },
     {
       name: 'Vancouver',
-      season: 'Juli',
+      season: 'July',
       budget: 700,
       countries: [{
         code: 'CA', name: 'Canada', days: 5, budget: 875, lat: 49.2827, lng: -123.1207,
@@ -1158,14 +1158,14 @@ function rbBuildNorthAmericaRoute() {
           { name: 'North Shore (Grouse Mountain / Capilano Suspension Bridge)', lat: 49.3796, lng: -123.0902 },
           { name: 'Gastown & Kitsilano Beach', lat: 49.2837, lng: -123.1064 },
         ],
-        transport_to_next: "Trein (Amtrak Cascades) of bus Vancouver-Seattle (~4 uur) — eenvoudige grensovergang; in Seattle wordt huurauto 3 voor de VS-roadtrip opgehaald",
-        notes: 'Laatste Canadese stop: stad tussen bergen en zee, goed te combineren met bergen (North Shore) en water (Stanley Park, Granville Island) zonder huurauto.',
+        transport_to_next: "Train (Amtrak Cascades) or bus Vancouver-Seattle (~4 hours) — simple border crossing; rental car 3 for the US roadtrip is picked up in Seattle",
+        notes: 'Last Canadian stop: a city between mountains and sea, easy to combine mountains (North Shore) and water (Stanley Park, Granville Island) without a rental car.',
       }],
-      note: 'Geen huurauto nodig in Vancouver zelf. Onderzoek trein vs. bus vs. korte vlucht naar Seattle — trein is het meest schilderachtig en simpelst qua grens.',
+      note: 'No rental car needed in Vancouver itself. Research train vs. bus vs. short flight to Seattle — train is the most scenic and simplest regarding the border.',
     },
     {
       name: 'Pacific Northwest & Northern California Roadtrip',
-      season: 'Juli-Augustus',
+      season: 'July-August',
       budget: 2200,
       countries: [{
         code: 'US', name: 'United States', days: 15, budget: 3000, lat: 47.6062, lng: -122.3321,
@@ -1176,14 +1176,14 @@ function rbBuildNorthAmericaRoute() {
           { name: 'Oregon Coast (Cannon Beach, Astoria)', lat: 45.8918, lng: -123.9615 },
           { name: 'Redwood National & State Parks', lat: 41.2132, lng: -124.0046 },
         ],
-        transport_to_next: 'Auto verder naar San Francisco (~5-6 uur vanaf de Redwoods), huurauto inleveren in San Francisco',
-        notes: "Amerikaanse natuur in het groot: regenwoud, vulkanen, ruige kustlijn en de hoogste bomen ter wereld. Huurauto 3 wordt hier opgehaald in Seattle. Prijs geverifieerd (2026-07), klopt. ESTA is per 30 sept. 2025 verhoogd naar $40,27 (was $21) — 2 jaar geldig. Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid (was Seattle→Olympic NP→Mount Rainier→Oregon Coast) — dat kruiste de regio drie keer oost-west (Olympic NP ligt het schiereiland op, ver ten westen van Seattle; Mount Rainier juist ten zuidoosten; er loopt geen brug over Puget Sound, dus je moet sowieso via Olympia/Tacoma). Nu Seattle→Mount Rainier→Olympic NP (Hurricane Ridge dan Hoh Rainforest)→zuidwaarts via de US-101 langs de Washington-kust naar Oregon — dat vervangt de duurste verbinding (Hoh-Rainier, ≈238 mijl) door de kortere Rainier-Port Angeles (≈174 mijl), en de westkant van het schiereiland sluit al direct aan op de US-101 zuidwaarts, dus geen tweede omweg landinwaarts. Scheelt ≈60+ mijl/1,5 uur en maakt er één doorlopende lus van i.p.v. een zigzag.",
+        transport_to_next: 'Continue by car to San Francisco (~5-6 hours from the Redwoods), return the rental car in San Francisco',
+        notes: "American nature on a grand scale: rainforest, volcanoes, rugged coastline and the tallest trees in the world. Rental car 3 is picked up here in Seattle. Price verified (2026-07), holds up. ESTA was raised to $40.27 (from $21) as of Sept 30, 2025 — valid 2 years. Route-logic fix (2026-08, search-confirmed): order reversed (was Seattle→Olympic NP→Mount Rainier→Oregon Coast) — that crossed the region east-west three times (Olympic NP sits on the peninsula, far west of Seattle; Mount Rainier is southeast instead; there's no bridge across Puget Sound, so you have to go via Olympia/Tacoma regardless). Now Seattle→Mount Rainier→Olympic NP (Hurricane Ridge then Hoh Rainforest)→south via the US-101 along the Washington coast to Oregon — that replaces the most expensive connection (Hoh-Rainier, ≈238 miles) with the shorter Rainier-Port Angeles (≈174 miles), and the west side of the peninsula already connects directly to the US-101 southbound, so no second inland detour. Saves ≈60+ miles/1.5 hours and turns it into one continuous loop instead of a zigzag.",
       }],
-      note: 'Huurauto 3 (Seattle-San Francisco). Rustig tempo: liever 2-3 nachten bij een park dan elke dag doorrijden — dit is een kustroute, geen race.',
+      note: 'Rental car 3 (Seattle-San Francisco). Relaxed pace: better to spend 2-3 nights at a park than drive every day — this is a coastal route, not a race.',
     },
     {
       name: 'California Finale',
-      season: 'Augustus',
+      season: 'August',
       budget: 2100,
       countries: [{
         code: 'US', name: 'United States', days: 14, budget: 2675, lat: 37.7749, lng: -122.4194,
@@ -1192,26 +1192,26 @@ function rbBuildNorthAmericaRoute() {
           { name: 'Yosemite Valley', lat: 37.7459, lng: -119.5936 },
           { name: 'Sequoia & Kings Canyon National Parks', lat: 36.4864, lng: -118.5658 },
         ],
-        transport_to_next: 'Einde van de expeditie — terugvlucht vanuit San Francisco (SFO) naar Nederland',
-        notes: "Van de stad direct de bergen in: Yosemite's granieten wanden en watervallen, gevolgd door de gigantische sequoia's van Sequoia/Kings Canyon. Geen nieuwe huurauto nodig — dagtochten of een korte huurperiode volstaan vanuit San Francisco.",
+        transport_to_next: 'End of the expedition — return flight from San Francisco (SFO) to the Netherlands',
+        notes: "Straight from the city into the mountains: Yosemite's granite walls and waterfalls, followed by the giant sequoias of Sequoia/Kings Canyon. No new rental car needed — day trips or a short rental period suffice from San Francisco.",
       }],
-      note: 'Boek Yosemite Valley-verblijf ruim van tevoren (vergunt beperkt aantal plekken in hoogseizoen). Let op bosbrandrisico/luchtkwaliteit in augustus — check actuele parkmeldingen vlak voor vertrek.',
+      note: 'Book Yosemite Valley accommodation well in advance (limited spots permitted during high season). Watch for wildfire risk/air quality in August — check current park alerts shortly before departure.',
     },
   ], {
-    travel_style: "Backpacker/budget-comfort hybride — hostels, eenvoudige hotels en cabins, huurauto's alleen waar ze echt waarde toevoegen (Rockies, Pacific Northwest, Californië), rustig tempo met langere stops op mooie plekken in plaats van dagelijks verplaatsen.",
+    travel_style: "Backpacker/budget-comfort hybrid — hostels, simple hotels and cabins, rental cars only where they really add value (Rockies, Pacific Northwest, California), relaxed pace with longer stops at beautiful places instead of moving every day.",
     best_starting_month: 'June',
-    description: "Grote Noord-Amerika-expeditie die Atlantic Canada, de historische Oost-Canadese steden, de Canadian Rockies, Vancouver en een West-Amerikaanse kust-roadtrip tot en met Californië combineert — natuur, nationale parken, wildlife, historische steden, kustgebieden en roadtripgevoel in één doorlopende route van oost naar west.",
-    climate_summary: 'Vergeleken scenario\'s: (1) mei-juni loopt risico op restsneeuw en gesloten passen/wegen in de Rockies (Icefields Parkway, hooggelegen hikes) en een nog fris/mistig Nova Scotia; (2) juni-juli vermijdt beide en blijft ruim vóór de piek van het Californische/Pacific Northwest bosbrandseizoen (vooral augustus-oktober) en vóór het Atlantische orkaanseizoen dat richting Nova Scotia in augustus-oktober oploopt; (3) september geeft mooie herfstkleuren (Rockies-lariksen, Oost-Canada) maar verhoogt het risico op vroege sneeuw/wegsluitingen in de Rockies en valt samen met een groter deel van het orkaan- en bosbrandseizoen. Beste keuze: start begin juni in Nova Scotia, zodat de expeditie (6-8 weken) eindigt in Californië rond eind juli/begin augustus — nog vóór het zwaarste bosbrand- en orkaanseizoen, met open bergpassen en lange dagen voor de roadtrip-etappes.',
-    notes: 'Ingevuld vanuit een ChatGPT-brainstorm, uitgewerkt en gestructureerd door Claude in dezelfde stijl als de andere grote reizen.\n\n' +
-      'Transportstrategie (bewust 3 losse huurauto\'s + 1 treinetappe i.p.v. één grote huurauto): Huurauto 1 blijft binnen Nova Scotia (rondrit terug naar Halifax, geen one-way-kosten). Oost-Canadese steden per trein (Via Rail), geen auto nodig. Huurauto 2 van Calgary naar Vancouver (blijft in Canada, geen grenscomplicaties). Huurauto 3 van Seattle naar San Francisco (blijft in de VS). Zo worden dure one-way-fees, een grensoverschrijdende huurauto (CA/VS grensregels voor huurauto\'s zijn vaak beperkt of duur) en onnodige kilometers vermeden.\n\n' +
-      'Budgetindicatie (6-8 weken): solo ca. €9.000-10.000, met 3 personen ca. €6.500-7.500 per persoon. Richting verdeling: vluchten €900-1.500 (internationale vluchten + Halifax-Quebec + Toronto-Calgary), auto\'s + benzine solo €2.500-3.500 (gedeeld €900-1.300 p.p.), accommodatie €2.000-2.800, eten €1.800-2.500, activiteiten/parkfees €500-1.000. De 6 blok-budgetten hierboven (900+1.500+2.600+700+2.200+2.100 = €10.000) volgen deze verdeling voor de solo-variant.\n\n' +
-      'Voordelen: unieke combinatie van Atlantische kust, Franse/koloniale steden, wereldberoemde bergnatuur, Pacific-kustlijn en Californische parken in één samenhangende expeditie; backpacker-tempo met ruimte om langer te blijven op hoogtepunten; auto alleen ingezet waar die echt waarde toevoegt.\n' +
-      'Nadelen: drie aparte huurauto-etappes vragen meer planning dan één doorlopende huurauto; hoog totaalbudget vergeleken met andere blokken (Noord-Amerika is duurder dan bv. Zuidoost-Azië of de Balkan); juli-augustus is hoogseizoen in de Rockies en Californische parken (drukte, hogere prijzen, Yosemite-vergunningen tijdig regelen).\n\n' +
-      'Plaats binnen de wereldreisplanning: vult Noord-Amerika in naast Eurasia Grand Tour, Pan-American Grand Tour, Africa Grand Tour en de Pacific/overige routes — samen dekken deze de grote continentale blokken van de wereldreis. Dagen/budget/bestemmingen/transport hierboven zijn een eerste research-opzet (net als bij de andere expedities), nog niet getoetst aan actuele prijzen, grensregels of persoonlijke voorkeuren — behandel dit als een eerste concept om te verfijnen, geen boekbaar plan.\n\n' +
-      'Tijdscontrole (2026-07): kleine ophogingen bij vrijwel elke etappe (54→69 dagen totaal), vooral de Canadian Rockies (13→17, de eigen notitie "2-3 nachten per park" telt bij 6 parkgebieden sneller op dan gedacht) en de twee westkust-roadtrip-etappes (11→15 en 11→14, Yosemite en San Francisco verdienen allebei meer dan een paar dagen). Etappes en volgorde ongewijzigd; de juni-startmaand en klimaatredenering hierboven blijven kloppen met de extra dagen.\n\n' +
-      'Vervolg (2026-07): budgetten per etappe meegeschaald met de aangepaste dagen.\n\n' +
-      "Prijzen/visum/reisadvies-verificatie (2026-07): alle 6 etappes bevestigd accuraat, geen budgetcorrecties nodig. eTA Canada ~€4,70 (5 jaar); ESTA VS onlangs verhoogd naar $40,27 (2 jaar). Moraine Lake Road: verplichte Parks Canada-shuttle, ruim vooraf boeken. Zie de losse etappe-notities hierboven voor details.\n\n" +
-      "Routelogica-herziening (2026-08, search-bevestigd, achtste expeditie uit ROUTE_LOGIC_REVIEW.md): Atlantic Canada (Halifax-hub, korte en lange spoke) en de Canadian Rockies-etappe (Yoho-omweg, Mount Robson-Whistler) bleken al optimaal — geen wijziging nodig, expliciet geverifieerd i.p.v. aangenomen. Wel twee echte fixes: (1) **Pacific Northwest** had een oost-west-zigzag (Seattle→Olympic NP→Mount Rainier→Oregon Coast) — Olympic NP ligt ver ten westen van Seattle op het schiereiland, Mount Rainier juist ten zuidoosten, en er loopt geen brug over Puget Sound, dus de oude volgorde kruiste de regio drie keer. Nu Seattle→Mount Rainier→Olympic NP (Hurricane Ridge dan Hoh Rainforest)→zuidwaarts via de US-101, wat de duurste verbinding (Hoh-Rainier, ≈238 mijl) vervangt door de kortere Rainier-Port Angeles (≈174 mijl) — scheelt ≈60+ mijl/1,5 uur. (2) **California Finale**: de terugrit van Sequoia & Kings Canyon naar San Francisco (≈270 mijl/≈5 uur) stond nergens vermeld, alleen \"einde van de expeditie\" — nu expliciet benoemd als eigen reisdag vóór de terugvlucht. Fresno (FAT) ligt dichterbij maar heeft geen directe vlucht naar Amsterdam, dus SFO blijft de juiste keuze ondanks de rit. Zelfde twee fixes ook toegepast op de standalone companion-route VS Westkust Roadtrip 🌉 (deelt deze twee etappes, niet via een gedeelde contenttabel maar hand-authored). Landen/dagen/budget ongewijzigd — alleen volgorde en transport-notities aangepast.",
+    description: "Grand North America expedition combining Atlantic Canada, the historic Eastern Canadian cities, the Canadian Rockies, Vancouver and a West American coastal roadtrip all the way to California — nature, national parks, wildlife, historic cities, coastal areas and roadtrip feel in one continuous route from east to west.",
+    climate_summary: 'Compared scenarios: (1) May-June risks residual snow and closed passes/roads in the Rockies (Icefields Parkway, high-elevation hikes) and a still-cool/foggy Nova Scotia; (2) June-July avoids both and stays well ahead of the peak of the Californian/Pacific Northwest wildfire season (mainly August-October) and ahead of the Atlantic hurricane season that builds toward Nova Scotia in August-October; (3) September gives beautiful autumn colors (Rockies larches, Eastern Canada) but raises the risk of early snow/road closures in the Rockies and coincides with a larger part of the hurricane and wildfire seasons. Best choice: start early June in Nova Scotia, so the expedition (6-8 weeks) ends in California around late July/early August — still before the worst wildfire and hurricane season, with open mountain passes and long days for the roadtrip legs.',
+    notes: 'Filled in from a ChatGPT brainstorm, worked out and structured by Claude in the same style as the other big trips.\n\n' +
+      'Transport strategy (deliberately 3 separate rental cars + 1 train leg instead of one big rental car): Rental car 1 stays within Nova Scotia (loop back to Halifax, no one-way fees). Eastern Canadian cities by train (Via Rail), no car needed. Rental car 2 from Calgary to Vancouver (stays in Canada, no border complications). Rental car 3 from Seattle to San Francisco (stays in the US). This avoids expensive one-way fees, a cross-border rental car (CA/US border rules for rental cars are often restricted or expensive) and unnecessary kilometers.\n\n' +
+      'Budget indication (6-8 weeks): solo approx. €9,000-10,000, with 3 people approx. €6,500-7,500 per person. Rough breakdown: flights €900-1,500 (international flights + Halifax-Quebec + Toronto-Calgary), cars + fuel solo €2,500-3,500 (shared €900-1,300 p.p.), accommodation €2,000-2,800, food €1,800-2,500, activities/park fees €500-1,000. The 6 block budgets above (900+1,500+2,600+700+2,200+2,100 = €10,000) follow this breakdown for the solo variant.\n\n' +
+      'Advantages: unique combination of Atlantic coast, French/colonial cities, world-famous mountain scenery, Pacific coastline and Californian parks in one coherent expedition; backpacker pace with room to stay longer at highlights; car only used where it really adds value.\n' +
+      'Disadvantages: three separate rental car legs require more planning than one continuous rental car; high total budget compared to other blocks (North America is more expensive than e.g. Southeast Asia or the Balkans); July-August is high season in the Rockies and Californian parks (crowds, higher prices, arrange Yosemite permits in time).\n\n' +
+      'Place within the world trip planning: fills in North America alongside Eurasia Grand Tour, Pan-American Grand Tour, Africa Grand Tour and the Pacific/other routes — together these cover the major continental blocks of the world trip. The days/budget/destinations/transport above are an initial research setup (just like the other expeditions), not yet checked against current prices, border rules or personal preferences — treat this as an initial concept to refine, not a bookable plan.\n\n' +
+      'Time check (2026-07): small increases in almost every leg (54→69 days total), especially the Canadian Rockies (13→17, the note "2-3 nights per park" adds up faster than expected across 6 park areas) and the two west-coast roadtrip legs (11→15 and 11→14, Yosemite and San Francisco both deserve more than a few days). Legs and order unchanged; the June starting month and climate reasoning above still hold with the extra days.\n\n' +
+      'Follow-up (2026-07): budgets per leg scaled along with the adjusted days.\n\n' +
+      "Prices/visa/travel-advisory verification (2026-07): all 6 legs confirmed accurate, no budget corrections needed. eTA Canada ~€4.70 (5 years); US ESTA recently raised to $40.27 (2 years). Moraine Lake Road: mandatory Parks Canada shuttle, book well in advance. See the individual leg notes above for details.\n\n" +
+      "Route-logic revision (2026-08, search-confirmed, eighth expedition from ROUTE_LOGIC_REVIEW.md): Atlantic Canada (Halifax hub, short and long spoke) and the Canadian Rockies leg (Yoho detour, Mount Robson-Whistler) turned out to already be optimal — no change needed, explicitly verified rather than assumed. However, two real fixes: (1) **Pacific Northwest** had an east-west zigzag (Seattle→Olympic NP→Mount Rainier→Oregon Coast) — Olympic NP sits far west of Seattle on the peninsula, Mount Rainier is southeast instead, and there's no bridge across Puget Sound, so the old order crossed the region three times. Now Seattle→Mount Rainier→Olympic NP (Hurricane Ridge then Hoh Rainforest)→south via the US-101, which replaces the most expensive connection (Hoh-Rainier, ≈238 miles) with the shorter Rainier-Port Angeles (≈174 miles) — saves ≈60+ miles/1.5 hours. (2) **California Finale**: the return trip from Sequoia & Kings Canyon to San Francisco (≈270 miles/≈5 hours) wasn't mentioned anywhere, only \"end of the expedition\" — now explicitly called out as its own travel day before the return flight. Fresno (FAT) is closer but has no direct flight to Amsterdam, so SFO remains the right choice despite the drive. Same two fixes also applied to the standalone companion route US West Coast Roadtrip 🌉 (shares these two legs, not via a shared content table but hand-authored). Countries/days/budget unchanged — only order and transport notes adjusted.",
   });
 }
 
