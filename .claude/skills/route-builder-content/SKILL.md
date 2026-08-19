@@ -3,6 +3,14 @@ name: route-builder-content
 description: Use when building a new Expedition route, or updating/correcting an existing one's countries, budgets, seasons, or notes, in YourAtlas's Route Builder (route-builder.html / js/pages/routeBuilder.js).
 ---
 
+## Before you start
+
+Route Builder's content lives in `routeBuilderContent.js` (800KB+/9,000+ lines — never `Read` it
+whole; grep for the target route's name or `rbBuild*Route`/`rbMigrate*` function, then read only
+that range). It's one of 4 files (`routeBuilderCore.js`, `routeBuilderContent.js`,
+`routeBuilderUI.js`, `routeBuilder.js`) — content work only ever needs `routeBuilderContent.js`;
+the orchestration/migration-call-order lives in the small `routeBuilder.js`.
+
 ## Overview
 
 Route Builder's expeditions live as either:
