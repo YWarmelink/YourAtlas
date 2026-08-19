@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbSeedDolomitesNorthItalyRoute();
   rbSeedUSLooseTrips();
   rbMigrateLonghaulBuffer();
-  rbMigrateAlaskaAddition();
   rbMigrateExpeditionRenames();
   rbMigrateExpeditionEmojiNames();
   rbMigrateAncientToMediterranean();
@@ -74,6 +73,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateNordicArcticEnglish();
   rbMigrateBritishIslesRouteLogicOverhaul();
   rbMigrateNorthAmericaRouteLogicOverhaul();
+  rbMigrateAlaskaAddition();
   rbMigrateWestCentralAfricaRouteLogicOverhaul();
   rbMigrateOceaniaRouteLogicOverhaul();
   rbMigratePanAmericanRouteLogicOverhaul();
