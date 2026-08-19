@@ -6888,6 +6888,56 @@ function rbMigrateWestCentralAfricaFamilyEnglish() {
   if (touched) rbSave();
 }
 
+/**
+ * North America Grand Traverse family — English translation (2026-08), twelfth of thirteen
+ * batches in the Route Builder Dutch-to-English translation project. Covers the main expedition
+ * (name already English) plus its three splitroutes (renamed) and, separately below, its two
+ * standalone companions (California 🌲, Pacific Northwest 🦫 — names already English). Same
+ * dual-name {oldName, newName, buildFn} wholesale-replace pattern as
+ * rbMigrateWestCentralAfricaFamilyEnglish(), matching on either name so this is safe whether it
+ * runs before or after this route's own prior wholesale-replace migrations
+ * (rbMigratePriceVerificationRound1, rbMigrateRouteLineCoordsRound2,
+ * rbMigrateNorthAmericaRouteLogicOverhaul) — those all key off the pre-translation Dutch names for
+ * the three splitroutes, so once this migration (or a fresh seed) renames them to English, those
+ * earlier migrations simply stop finding a match and no-op, exactly like every prior translation
+ * batch's precedent (a fresh browser's seed functions already produce the final English content,
+ * so there's nothing left for them to fix).
+ *
+ * Western Canada: Rockies & Vancouver 🏔️ needs one extra step: it can carry an Alaska extension
+ * (a region + 3 US-coded blocks) added on top of the seeded object by the separate
+ * rbMigrateAlaskaAddition() migration, not by this route's own build function. A blind
+ * wholesale-replace via rbBuildWesternCanadaRockiesVancouverRoute() would silently drop that
+ * extension for anyone who already has it. So: detect an existing 'US' block on the route *before*
+ * replacing it, and if present, re-apply a freshly English-translated version via the shared
+ * rbApplyAlaskaExtension() helper afterwards (see that function's own docstring).
+ */
+function rbMigrateNorthAmericaFamilyEnglish() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_NORTH_AMERICA_ENGLISH)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_NORTH_AMERICA_ENGLISH, '1');
+
+  const targets = [
+    { oldName: 'North America Grand Traverse 🌎', newName: 'North America Grand Traverse 🌎', buildFn: rbBuildNorthAmericaRoute },
+    { oldName: 'Oost-Canada 🍁', newName: 'Eastern Canada 🍁', buildFn: rbBuildEasternCanadaRoute },
+    { oldName: 'West-Canada: Rockies & Vancouver 🏔️', newName: 'Western Canada: Rockies & Vancouver 🏔️', buildFn: rbBuildWesternCanadaRockiesVancouverRoute },
+    { oldName: 'VS Westkust Roadtrip 🌉', newName: 'US West Coast Roadtrip 🌉', buildFn: rbBuildUSWestCoastRoadtripRoute },
+    { oldName: 'Californië 🌲', newName: 'California 🌲', buildFn: rbBuildCaliforniaRoute },
+    { oldName: 'Pacific Northwest 🦫', newName: 'Pacific Northwest 🦫', buildFn: rbBuildPacificNorthwestRoute },
+  ];
+
+  let touched = false;
+  targets.forEach(({ oldName, newName, buildFn }) => {
+    const idx = rbRoutes.findIndex(r => r.name === oldName || r.name === newName);
+    if (idx === -1) return;
+    const hadAlaska = newName === 'Western Canada: Rockies & Vancouver 🏔️' && rbRoutes[idx].blocks.some(b => b.country_code === 'US');
+    const newRoute = buildFn();
+    if (hadAlaska) rbApplyAlaskaExtension(newRoute);
+    rbRoutes.splice(idx, 1, newRoute);
+    touched = true;
+  });
+
+  if (touched) rbSave();
+}
+
 // ---- Standalone single-country routes (2026-08, on Youri's request) ----
 //
 // The modularization analysis (ROUTE_BUILDER_MODULES.md) flagged ~30 individual countries across
