@@ -8304,30 +8304,30 @@ function rbBuildSenegambiaRoute() {
       destinations: [
         { name: 'Dakar', lat: 14.7167, lng: -17.4677 },
         { name: 'Île de Gorée', lat: 14.6672, lng: -17.3984 },
-        { name: 'Lompoul-woestijn', lat: 15.3833, lng: -16.7500 },
+        { name: 'Lompoul Desert', lat: 15.3833, lng: -16.7500 },
         { name: 'Saint-Louis (UNESCO)', lat: 16.0179, lng: -16.4896 },
-        { name: 'Sine-Saloum-delta', lat: 13.9333, lng: -16.5333 },
+        { name: 'Sine-Saloum Delta', lat: 13.9333, lng: -16.5333 },
       ],
-      notes: 'Instap: vlucht Amsterdam-Dakar — TUI fly vliegt in de winter (oktober-half april) 2x/week rechtstreeks; daarbuiten 1 overstap (bv. via Brussel/Casablanca/Lissabon, ±10 uur totaal); vanaf ±€500-900 retour; beste periode december (droog seizoen). Prijsindicatie webonderzoek 2026-08, momentopname. Île de Gorée (slavernijgeschiedenis, korte boot vanaf Dakar) en Saint-Louis (koloniale hoofdstad) zijn de historische zwaartepunten; Sine-Saloum (mangroves, vogels) en de Lompoul-duinen geven een compleet ander natuurbeeld binnen één land. Prijs geverifieerd (2026-07), klopt. Oranje grensstrook bij Gambia/Guinee-Bissau/Mali/Mauritanië, incl. de Senegal-Gambia-grenszone zelf — relevant voor de oversteek hieronder.',
-      transport_to_next: 'Bus/deeltaxi over land naar Gambia via de Senegambia-brug (geopend 2019) — de grensstreek zelf staat oranje, blijf op de gangbare route.',
+      notes: "Entry: flight Amsterdam-Dakar — TUI fly flies direct 2x/week in winter (October-mid-April); outside that 1 layover (e.g. via Brussels/Casablanca/Lisbon, ±10 hours total); from ±€500-900 return; best period December (dry season). Price indication from 2026-08 web research, a snapshot. Île de Gorée (slavery history, short boat ride from Dakar) and Saint-Louis (colonial capital) are the historical highlights; Sine-Saloum (mangroves, birds) and the Lompoul dunes give a completely different natural scenery within one country. Price verified (2026-07), holds up. Orange border strip along Gambia/Guinea-Bissau/Mali/Mauritania, incl. the Senegal-Gambia border zone itself — relevant for the crossing below.",
+      transport_to_next: 'Bus/shared taxi overland to Gambia via the Senegambia Bridge (opened 2019) — the border area itself is orange, stay on the usual route.',
     },
     {
       code: 'GM', name: 'Gambia', days: 6, budget: 240, lat: 13.4549, lng: -16.579,
       destinations: [
         { name: 'Banjul', lat: 13.4549, lng: -16.5790 },
-        { name: 'Gambia-rivier (bootcruise)', lat: 13.4500, lng: -15.5000 },
-        { name: 'Kunta Kinteh Island (UNESCO, slavernijgeschiedenis)', lat: 13.2833, lng: -16.0500 },
+        { name: 'Gambia River (boat cruise)', lat: 13.4500, lng: -15.5000 },
+        { name: 'Kunta Kinteh Island (UNESCO, slavery history)', lat: 13.2833, lng: -16.0500 },
         { name: 'Makasutu Culture Forest', lat: 13.3667, lng: -16.6333 },
       ],
-      notes: 'Klein maar met een eigen, herkenbaar hoogtepunt: Kunta Kinteh Island (voorheen James Island) is een van de belangrijkste slavernij-erfgoedsites van West-Afrika. Prijs geverifieerd (2026-07), klopt. Presidentsverkiezing 5 december 2026 — mogelijk onrust, check actuele situatie vlak voor vertrek. Verplichte contante luchthavenveiligheidsheffing (~$20/1.000 GMD p.p.) bij in-/uitreis via Banjul.',
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Banjul naar Amsterdam (winterseizoen: TUI fly/Corendon vrijwel rechtstreeks; daarbuiten 1 overstap, bv. via Brussel/Casablanca/Lissabon).',
+      notes: 'Small but with its own recognizable highlight: Kunta Kinteh Island (formerly James Island) is one of the most important slavery heritage sites in West Africa. Price verified (2026-07), holds up. Presidential election December 5, 2026 — possible unrest, check the current situation shortly before departure. Mandatory cash airport security fee (~$20/1,000 GMD p.p.) on entry/exit via Banjul.',
+      transport_to_next: 'End of this route — return flight from Banjul to Amsterdam (winter season: TUI fly/Corendon nearly direct; outside that 1 layover, e.g. via Brussels/Casablanca/Lisbon).',
     },
   ], {
     best_starting_month: 'December',
-    travel_style: 'Bus/deeltaxi over land tussen Senegal en Gambia.',
-    climate_summary: 'December valt in het West-Afrikaanse droge seizoen (november-april) — geen regen, aangename temperaturen.',
-    description: 'Dakar, Île de Gorée, de Lompoul-woestijn en Saint-Louis in Senegal, gevolgd door de Gambia-rivier en Kunta Kinteh Island in Gambia.',
-    notes: 'Losgesplitst van West & Central Africa Expedition 🌍 (via West-Afrika Overland 🥁) als onderdeel van de zesde batch losse landen (2026-08) — het Senegal/Gambia-tweeluik van dat block, zonder Ivoorkust/Ghana/Togo/Benin. Landen en dagbudgetten zijn ongewijzigd overgenomen. West & Central Africa Expedition 🌍 en West-Afrika Overland 🥁 zelf blijven ongewijzigd bestaan.',
+    travel_style: 'Bus/shared taxi overland between Senegal and Gambia.',
+    climate_summary: 'December falls within the West African dry season (November-April) — no rain, pleasant temperatures.',
+    description: 'Dakar, Île de Gorée, the Lompoul Desert and Saint-Louis in Senegal, followed by the Gambia River and Kunta Kinteh Island in Gambia.',
+    notes: 'Split off from West & Central Africa Expedition 🌍 (via West Africa Overland 🥁) as part of the sixth batch of standalone countries (2026-08) — the Senegal/Gambia pairing from that block, without Ivory Coast/Ghana/Togo/Benin. Countries and daily budgets are carried over unchanged. West & Central Africa Expedition 🌍 and West Africa Overland 🥁 themselves remain unchanged.',
   });
 }
 
@@ -8336,19 +8336,19 @@ function rbBuildGabonRoute() {
     {
       code: 'GA', name: 'Gabon', days: 11, budget: 855, lat: -1.95, lng: 9.7,
       destinations: [
-        { name: 'Loango National Park (surfende nijlpaarden, bosolifanten op het strand)', lat: -2.3667, lng: 9.5667 },
+        { name: 'Loango National Park (surfing hippos, forest elephants on the beach)', lat: -2.3667, lng: 9.5667 },
         { name: 'Libreville', lat: 0.4162, lng: 9.4673 },
-        { name: 'Pongara National Park (mangroves/regenwoud, ≈45 min boot vanaf Libreville)', lat: 0.3833, lng: 9.3500 },
+        { name: 'Pongara National Park (mangroves/rainforest, ≈45 min boat from Libreville)', lat: 0.3833, lng: 9.3500 },
       ],
-      notes: 'Instap: vlucht Amsterdam-Libreville, met overstap via Parijs of Addis Abeba (±11-16 uur totaal; vanaf ±€1.180 retour; beste periode juni-september). Prijsindicatie webonderzoek 2026-08, momentopname. Langeafstandsvlucht-buffer (2026-08, zie CLAUDE.md): +2 dagen t.o.v. het oorspronkelijke aantal (9→11) — korte reis (≤10 dagen) met een overstapvlucht rechtvaardigt een aankomstdag zonder programma. Bewuste, sterke bestemming — Loango is een van de weinige plekken ter wereld waar je olifanten en nijlpaarden op het strand ziet. ⚠️ Prijscheck (2026-07): het krapste/riskantste budget van de route — Loango-logistiek (gids/parkfees/eventuele chartervlucht) kan oplopen tot $100-300+/dag; €95/dag is alleen haalbaar met budgetvervoer en eenvoudige kampementen. Visum: e-visa verplicht (evisa.dgdi.ga).',
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Libreville naar Amsterdam (1 overstap).',
+      notes: "Entry: flight Amsterdam-Libreville, with a layover via Paris or Addis Ababa (±11-16 hours total; from ±€1,180 return; best period June-September). Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days relative to the original count (9→11) — a short trip (≤10 days) with a connecting flight justifies an arrival day with no program. A deliberate, strong destination — Loango is one of the few places in the world where you see elephants and hippos on the beach. ⚠️ Price check (2026-07): the tightest/riskiest budget of the route — Loango logistics (guide/park fees/possible charter flight) can run up to $100-300+/day; €95/day is only achievable with budget transport and simple campsites. Visa: e-visa mandatory (evisa.dgdi.ga).",
+      transport_to_next: 'End of this route — return flight from Libreville to Amsterdam (1 layover).',
     },
   ], {
-    best_starting_month: 'Juni',
-    travel_style: 'Boot/piroque en lokaal vervoer, gids verplicht voor Loango.',
-    climate_summary: 'Juni-september is Gabons langere droge seizoen — beste toegankelijkheid voor Loango en Pongara.',
-    description: 'De surfende nijlpaarden en strandolifanten van Loango National Park, Libreville en Pongara National Park.',
-    notes: 'Losgesplitst van West & Central Africa Expedition 🌍 (via Centraal-Afrika & Eilanden 🦛, waar dit al het sterke slot van de hele expeditie was) als onderdeel van de zesde batch losse landen (2026-08). Land en dagbudget zijn ongewijzigd overgenomen; dagen verhoogd van 9 naar 11 als langeafstandsvlucht-buffer (zie CLAUDE.md). West & Central Africa Expedition 🌍 en Centraal-Afrika & Eilanden 🦛 zelf blijven ongewijzigd bestaan.',
+    best_starting_month: 'June',
+    travel_style: 'Boat/pirogue and local transport, guide mandatory for Loango.',
+    climate_summary: "June-September is Gabon's longer dry season — best accessibility for Loango and Pongara.",
+    description: 'The surfing hippos and beach elephants of Loango National Park, Libreville and Pongara National Park.',
+    notes: 'Split off from West & Central Africa Expedition 🌍 (via Central Africa & Islands 🦛, where this was already the strong finale of the entire expedition) as part of the sixth batch of standalone countries (2026-08). Country and daily budget are carried over unchanged; days increased from 9 to 11 as a long-haul flight buffer (see CLAUDE.md). West & Central Africa Expedition 🌍 and Central Africa & Islands 🦛 themselves remain unchanged.',
   });
 }
 
@@ -8357,18 +8357,18 @@ function rbBuildSaoTomeRoute() {
     {
       code: 'ST', name: 'São Tomé and Príncipe', days: 11, budget: 653, lat: 0.3365, lng: 6.7273,
       destinations: [
-        { name: 'São Tomé (roças/plantages, regenwoud)', lat: 0.3365, lng: 6.7273 },
-        { name: 'Príncipe (afgelegen, minder bezocht)', lat: 1.6167, lng: 7.4167 },
+        { name: 'São Tomé (roças/plantations, rainforest)', lat: 0.3365, lng: 6.7273 },
+        { name: 'Príncipe (remote, less visited)', lat: 1.6167, lng: 7.4167 },
       ],
-      notes: 'Instap: vlucht Amsterdam-São Tomé via Lissabon (TAP Portugal, ±13 uur totaal; vanaf ±€700-2.500 retour, prijs schommelt sterk; beste periode juni-september, het droge "gravana"-seizoen). Prijsindicatie webonderzoek 2026-08, momentopname. Langeafstandsvlucht-buffer (2026-08, zie CLAUDE.md): +2 dagen t.o.v. het oorspronkelijke aantal (9→11) — korte reis (≤10 dagen) met een overstapvlucht rechtvaardigt een aankomstdag zonder programma. Uniek in de hele Travel Atlas: Portugese koloniale plantagegeschiedenis op een klein, rustig tropisch eiland. Prijs geverifieerd (2026-07), klopt. Visum: niet nodig tot 15 dagen — bij deze 11-daagse route dus geen visum vereist. Verkiezingen 19 juli en 27 september 2026 — vermijd samenscholingen rond die data. Beperkte medische zorg, evacuatie kan nodig zijn — goede reisverzekering belangrijk.',
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit São Tomé naar Amsterdam via Lissabon.',
+      notes: 'Entry: flight Amsterdam-São Tomé via Lisbon (TAP Portugal, ±13 hours total; from ±€700-2,500 return, price fluctuates strongly; best period June-September, the dry "gravana" season). Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days relative to the original count (9→11) — a short trip (≤10 days) with a connecting flight justifies an arrival day with no program. Unique in the whole Travel Atlas: Portuguese colonial plantation history on a small, calm tropical island. Price verified (2026-07), holds up. Visa: not needed up to 15 days — so this 11-day route requires no visa. Elections July 19 and September 27, 2026 — avoid gatherings around those dates. Limited medical care, evacuation may be necessary — good travel insurance important.',
+      transport_to_next: 'End of this route — return flight from São Tomé to Amsterdam via Lisbon.',
     },
   ], {
-    best_starting_month: 'Juni',
-    travel_style: 'Lokaal vervoer/boot tussen São Tomé en Príncipe.',
-    climate_summary: 'Juni-september is het droge "gravana"-seizoen — minder regen dan de rest van het jaar.',
-    description: 'Portugese koloniale plantages en regenwoud op São Tomé, gevolgd door het afgelegen Príncipe.',
-    notes: 'Losgesplitst van West & Central Africa Expedition 🌍 (via Centraal-Afrika & Eilanden 🦛) als onderdeel van de zesde batch losse landen (2026-08). Land en dagbudget zijn ongewijzigd overgenomen; dagen verhoogd van 9 naar 11 als langeafstandsvlucht-buffer (zie CLAUDE.md). West & Central Africa Expedition 🌍 en Centraal-Afrika & Eilanden 🦛 zelf blijven ongewijzigd bestaan.',
+    best_starting_month: 'June',
+    travel_style: 'Local transport/boat between São Tomé and Príncipe.',
+    climate_summary: 'June-September is the dry "gravana" season — less rain than the rest of the year.',
+    description: 'Portuguese colonial plantations and rainforest on São Tomé, followed by remote Príncipe.',
+    notes: 'Split off from West & Central Africa Expedition 🌍 (via Central Africa & Islands 🦛) as part of the sixth batch of standalone countries (2026-08). Country and daily budget are carried over unchanged; days increased from 9 to 11 as a long-haul flight buffer (see CLAUDE.md). West & Central Africa Expedition 🌍 and Central Africa & Islands 🦛 themselves remain unchanged.',
   });
 }
 
