@@ -201,214 +201,44 @@ Oostkust 🗽** (DC-Philadelphia-New York-Boston via train, 12d/€1.365), **US 
 choice — Vancouver-Anchorage is already the natural flight link), new total 32d/€5.875 (was
 22d/€4.275).
 
-## Europa Trip Ideas (nieuw, 2026-08 — alle 15 batches klaar, het hele document is af)
+## Europa Trip Ideas (done — all 15 batches complete)
 
-See [`EUROPA_TRIP_IDEAS.md`](EUROPA_TRIP_IDEAS.md) — Youri's own big raw list (~230 items, extended
-2026-08 with a second batch of additions — micro-states, Cyprus/Malta/Moldavië/Kosovo/Corsica/
-Turkey's European part, plus a whole "🏝️ Europese eilanden" category — to ~300 items, then a third
-addition of newly-added regions to ~320 items total) of realistic European trips, from long
-weekend to ~3 weeks, organized by country/region. Different
-scale than Route Builder's grand expeditions — this is the "reëel en slim te maken" realistic-trip
-tier, not aspirational epics. **Decided (2026-08): these become Route Builder routes, not Trips
-entries** — per `ROADMAP.md`'s already-decided "commitment, not scale" rule for the Trips↔Route
-Builder split (no booking commitment yet = Route Builder). They'll land under the existing Europe
-continent group in Route Builder's list view automatically. Not yet done: actually writing each
-worked-out item into `routeBuilder.js` as a real `rbBuildXRoute()` — that's a separate step, likely
-done in one pass once several batches are ready rather than per item.
+See [`EUROPA_TRIP_IDEAS.md`](EUROPA_TRIP_IDEAS.md) — ~319 realistic European trip ideas (long
+weekend to ~3 weeks), organized by country/region, WebSearch-verified from batch 2 onward.
+Different scale than Route Builder's grand expeditions — this is the "reëel en slim te maken"
+realistic-trip tier, not aspirational epics.
 
-**Status: all 15 batches done — the entire document is finished** (batches 11-15 done in a
-non-sequential order picked directly by Youri each time: 13, 12, 11, 14, then 15 to close it out)
-— Benelux (6), Duitsland (12), Oostenrijk + Zwitserland (12), Frankrijk (11), Italië (16),
-micro-staten & kleine eilanden (20), Iberië (26), Balkan-cluster (44: Kroatië/Slovenië/Bosnië/
-Montenegro/Albanië/Servië/Noord-Macedonië/Kosovo), Centraal/Oost-Europa (35: Roemenië/Bulgarije/
-Moldavië/Hongarije/Tsjechië/Slowakije/Polen), Oost-Mediterraan (18: Griekenland/Cyprus/Turkije),
-Noord-Europa (32: Noorwegen/Zweden/Denemarken/Finland/Faeröer/IJsland), Britse eilanden (17:
-Ierland/Schotland/Engeland/Wales/Noord-Ierland), Baltische staten (6: Estland/Letland/Litouwen),
-🏝️ Europese eilanden (30: Madeira/Azoren/Canarische Eilanden/Balearen/Italiaanse eilanden/Griekse
-eilanden/Kanaaleilanden+Isle of Man), combinatiesecties (33: Iberië-combo/Balkan-combo/Grote
-Europese combinaties). Route/dagen/budget/seizoen/vervoer per trip. Benelux was written from
-general knowledge then WebSearch-verified afterward;
-**standard practice from batch 2 onward**: 2-3 parallel WebSearch-backed research agents (grouped
-by sub-region) before writing anything, not after — this caught real route improvements each time
-(Duitsland: Rijn+Moezel via Koblenz, Berchtesgaden as a loop-closer; Oostenrijk/Zwitserland:
-non-overlapping concrete regions for the vague "[Land] Alpen" items; Frankrijk: Bretagne limited to
-the north for time reasons, French Alps became Écrins instead of Chamonix to avoid overlap with
-Switzerland, the north-south roadtrip follows the Burgundy-Rhône spine instead of Loire-Dordogne to
-avoid a real backtrack — plus a time-sensitive finding, the Bayeux Tapestry isn't viewable in
-Bayeux at all in 2026, on loan to the British Museum from Sept 2026; Italië: several items
-overlapped heavily with each other — each got an explicit differentiating angle (e.g. "Italië
-roadtrip" became car-only/rural/food-focused vs. "Italië: noord → centraal" staying the classic
-train-friendly big-city sweep) instead of just being near-duplicates; micro-staten: four of the six
-micro-states only existed as neighbor-combo items, so a standalone-only version was added for each
-(Liechtenstein/Monaco/San Marino/Vaticaanstad) at Youri's request — honestly flagged where that
-standalone framing is marginal, e.g. Vaticaanstad has no hotels/airport of its own so it stays a
-Rome day-visit rather than a true standalone destination, and San Marino's own day trip works
-best as an add-on from a Rimini/Emilia-Romagna stay rather than a fly-in-fly-out trip; Iberië: the
-broader combo items risked re-treading the same regions as each other and as the new standalone
-Galicië/Asturië+Cantabrië/Centraal-Portugal items — each combo got a distinct angle instead, e.g.
-"Noord-Spanje" became the Basque-inland/wine-country extension while "Noord-Spanje roadtrip" became
-the explicit "connector" stringing Baskenland+Asturië+Cantabrië+Galicië together for a 2-week trip;
-Andorra's two combo items were split into a French/Ariège side vs. a Spanish/Catalan side instead
-of the same region at two lengths; Balkan-cluster: Croatia-Bosnia's Neum coastal corridor is
-bypassed on the main route by the Pelješac bridge (open since July 2022) — the old "double border
-crossing" assumption is outdated; the EU's Entry/Exit System (EES, fully live since 10 April 2026)
-adds real biometric-registration wait times at every Schengen/non-Schengen border in this cluster,
-worst at Croatia-Montenegro (Karasovići, 2-5h in July/Aug); Kosovo items were deliberately combined
-only with North Macedonia/Albania/Montenegro, never Serbia, since Serbia doesn't recognize Kosovo
-border crossings — entering Kosovo without first entering Serbia and then trying to cross into
-Serbia can mean refused entry; Centraal/Oost-Europa: Romania and Bulgaria became **fully** Schengen
-(land borders included) on 1 January 2025, so the old "border check between them" assumption is
-outdated; Bulgaria adopted the euro on 1 January 2026 (BGN prices phased out by 8 August 2026);
-Transnistria (the Moldova+Transnistrië item) got its own explicit red Dutch travel advisory,
-separate from and stricter than Moldova proper — treated as a real judgment call with a concrete
-mitigation (day-trip only, no overnight, check insurance) rather than a rubber-stamped inclusion;
-Gellért thermal bath in Budapest is closed for renovation since 1 Oct 2025 until ~2028, so the
-Budapest items route through Széchenyi instead; Auschwitz-Birkenau requires online-only booking
-since March 2026, no more on-site ticket sales; Oost-Mediterraan: Greece carries a yellow Dutch
-advisory since Aug 2026 for active wildfires (70+ simultaneous, incl. Crete and the Athens region)
-— not a reason to avoid it, just a standing seasonal caveat; Cyprus is EU but not Schengen, and its
-own roadtrip item required a real judgment call on crossing into Northern Cyprus (Green Line
-checkpoints are normal for tourists, but rental cars from the Republic side usually can't cross
-without separate Turkish border insurance, and NL doesn't recognize the north as a state); Hagia
-Sophia's upper gallery closes ~30-45min five times a day for prayer as a functioning mosque again;
-Baltische staten (batch 13, done out of turn since it's the smallest remaining batch): none of the
-suggested routes actually cross a non-Schengen border — the region's real geopolitical friction
-points (Narva/Russia, the Latvia-Belarus border strip, Lithuania's Belarus/Kaliningrad-adjacent
-zones, the Suwałki Gap's visible NATO buildup) all sit outside every proposed itinerary, so they're
-noted as context rather than route changes; Britse eilanden (batch 12, also done out of turn):
-the UK ETA fee rose from £16 to £20 (~€23-24) on 8 April 2026 and applies to Northern Ireland even
-when crossing overland from the Republic of Ireland (no border checkpoint, but the requirement is
-still legally in force); Ireland itself needs no ETA at all (EU free movement, Common Travel Area
-is separate from Schengen); Skye is bridge-connected (free since Dec 2004, no ferry needed) while
-Orkney/Shetland/Outer Hebrides genuinely need one (NorthLink, Pentland Ferries, or CalMac
-respectively) — several near-duplicate Ireland and Scotland items again each got an explicit
-differentiating angle rather than the same trip padded to different lengths;
-🏝️ Europese eilanden (batch 14): the Canary Islands and Åland-style "outside the EU tax zone"
-pattern showed up again here too — the Canaries sit outside the EU VAT area (own IGIC tax); real
-recent regulatory finds folded in include the UK ETA extending to cover Jersey/Guernsey/Isle of
-Man as of 23 April 2026 (one ETA now covers the whole Common Travel Area's Crown Dependencies),
-Condor Ferries rebranding (Jersey route now DFDS, Guernsey route now Brittany Ferries, as of March
-2025), and Santorini's 2025-2026 cruise-passenger cap tightening; a stale intro note claiming
-"Kreta already covered under Griekenland (batch 10)" turned out to be wrong on inspection — Crete
-never actually got its own item there, so the batch 14 "Kreta roadtrip" item fills a real gap
-rather than duplicating one). Proposed batch order (see the bottom of that file for the full
-reasoning per cluster, updated after the 2026-08 extension): (1) ~~Benelux~~ **done**, (2)
-~~Duitsland~~ **done**, (3) ~~Oostenrijk + Zwitserland~~ **done**, (4) ~~Frankrijk~~ **done**, (5)
-~~Italië~~ **done**, (6) ~~Micro-staten & kleine eilanden~~ **done** (Liechtenstein/San Marino/
-Vaticaanstad/Monaco/Corsica/Malta), (7) ~~Iberië: Spanje + Portugal + Andorra~~ **done**, (8)
-~~Balkan-cluster (Kroatië/Slovenië/Bosnië/Montenegro/Albanië/Servië/Noord-Macedonië/Kosovo)~~
-**done**, (9) ~~Centraal/Oost-Europa (Roemenië/Bulgarije/
-Hongarije/Tsjechië/Slowakije/Polen/Moldavië)~~ **done**, (10) ~~Oost-Mediterraan (Griekenland/
-Cyprus/Turkije-Europees + Egeïsche kust)~~ **done**, (11) ~~Noord-Europa (Noorwegen/Zweden/
-Denemarken/Finland/IJsland/Faeröer)~~ **done**,
-(12) ~~Britse eilanden (Engeland/Wales/Noord-Ierland/Ierland/Schotland)~~ **done**, (13)
-~~Baltische staten~~ **done**, (14) ~~🏝️ Europese eilanden (Madeira/Azoren/Canarische Eilanden/
-Balearen/Kanaaleilanden/Isle of Man/gedetailleerdere Italiaanse+Griekse eilanden)~~ **done**, (15)
-~~de combinatiesecties onderin het bestand~~ **done** (bewust laatst gedaan, want die hergebruiken
-de losse-landen-batches). **Alle 15 batches zijn nu klaar** — batches 12, 13, 14 en 15 zijn buiten
-de oorspronkelijke volgorde om gedaan, telkens Youri's eigen keuze.
+**Decided (2026-08): these become Route Builder routes, not Trips entries** — per `ROADMAP.md`'s
+already-decided "commitment, not scale" rule for the Trips↔Route Builder split (no booking
+commitment yet = Route Builder). They'll land under the existing Europe continent group in Route
+Builder's list view automatically.
 
-**Derde aanvulling (2026-08) — verwerkt**: Youri leverde daarna nog een brede regio-checklist
-(West-/Noord-/Centraal-/Zuid-Europa, Balkan, microstaten, Turkije, bijzondere eilanden). Bijna
-alles daarop bestond al; de écht nieuwe regio's zijn inmiddels omgezet naar het "X dagen —
-route"-format en ingedeeld bij hun bestaande land/sectie (zie `EUROPA_TRIP_IDEAS.md`'s "Extra
-regio's"-sectie voor de volledige toewijzing per item): Engeland/Wales/Noord-Ierland (nieuwe
-sectie, batch 12), Zweeds Lapland (Zweden, batch 11), Faeröer (nieuwe sectie, batch 11 — de
-realistische korte versie, naast de bestaande aspirational Route Builder-splitroute), Moravië
-(Tsjechië, batch 9), Campanië/Puglia (Italië, batch 5), Galicië/Asturië+Cantabrië/Gibraltar
-(Spanje, batch 7), Centraal-Portugal (Portugal, batch 7), Egeïsche kust (Turkije, batch 10),
-Svalbard (Noorwegen, batch 11), Åland (Finland, batch 11), Shetland/Orkney/Buiten-Hebriden
-(Schotland, batch 12), Isle of Man/Jersey & Guernsey (nieuwe subsectie onder 🏝️ Europese eilanden,
-batch 14). Oekraïne/Belarus/Europees Rusland op Youri's eigen instructie bewust niet toegevoegd.
-Bij de Egeïsche-kust-uitzondering werd ook de lijst-regel zelf scherper gemaakt: niet strikt
-"Europa, geografisch" maar "dichtbij, geschikt voor city trip/~1 week, geen dure/lange vlucht voor
-zo'n korte periode" — dat is de regel voor toekomstige twijfelgevallen.
+**Status: all 15 batches done, the entire document is finished.** Full batch-by-batch history
+(regions covered, WebSearch findings, specific safety/regulatory notes) is in
+[`CHANGELOG.md`](CHANGELOG.md)'s "Recently fixed" section.
 
-**All batches done — nothing left in this checklist.** The next step for Route Builder specifically
-is the still-not-started conversion of each worked-out item into a real `rbBuildXRoute()` in
-`routeBuilder.js` (see the intro above) — likely done in one focused pass whenever Youri wants to
-pick that up, not per item.
+Not yet done: converting each worked-out item into a real `rbBuildXRoute()` in `routeBuilder.js` —
+tracked as Phase 2 of the Route Builder workstream below.
 
-## Trip Taxonomy (nieuw, 2026-08 — 29-veld classificatiesysteem, Fase 2 + Groep 3 100% klaar)
+## Trip Taxonomy (Fase 2 done, Phase 3 UI not started)
 
-See [`TRIP_TAXONOMY.md`](TRIP_TAXONOMY.md) for the full field/vocabulary spec (Fase 1 design, approved
-by Youri as-is — all 29 fields kept, nothing cut) and [`TRIP_DATABASE.csv`](TRIP_DATABASE.csv) for the
-tagged data (Fase 2). Goal: one consistent 29-field row per trip across the whole app (Route Builder's
-13 Grand Trips + their splitroutes, and `EUROPA_TRIP_IDEAS.md`'s items), usable for
-filtering/comparing/a future route optimizer. English throughout in the CSV (country names, months,
-advisory notes — even though the source Dutch route notes get translated), multi-value fields
-semicolon-separated within a quoted cell, "—" for not-applicable.
+See [`TRIP_TAXONOMY.md`](TRIP_TAXONOMY.md) for the 29-field schema (Fase 1, approved by Youri
+as-is) and [`TRIP_DATABASE.csv`](TRIP_DATABASE.csv) for the tagged data. Goal: one consistent
+29-field row per trip across Route Builder's 13 Grand Trips + splitroutes and
+`EUROPA_TRIP_IDEAS.md`'s items, usable for filtering/comparing/a future route optimizer. English
+throughout, multi-value fields semicolon-separated within a quoted cell, "—" for not-applicable.
 
-**Status: ALL of Fase 2 is now 100% done and pushed to origin (2026-08-18).** Groep 1 (13 Grand
-Trips) + Groep 2 (118 splitroutes) + Groep 3 (319 `EUROPA_TRIP_IDEAS.md` items, all 21 planned
-sub-batches complete) — **450 rows total in `TRIP_DATABASE.csv`**. Every trip in the app/planning
-docs now has a consistent 29-field tag row.
-Total cost: 4,270,377 tokens across 43 tagging batches run over several sessions specifically to
-avoid burning a whole session's budget in one pass (Groep 1+2: 2,059,921 for 131 items at
-~15,725/item; Groep 3: 2,210,456 for 319 items at **~6,930/item — less than half Groep 2's rate**,
-confirming the hypothesis that plain-markdown source content tags cheaper than diving into
-`routeBuilder.js`'s 9000+ line source).
+**Status: all of Fase 2 done and pushed to origin (2026-08-18) — 450 rows total** in
+`TRIP_DATABASE.csv` (Groep 1: 13 Grand Trips, Groep 2: 118 splitroutes, Groep 3: 319
+`EUROPA_TRIP_IDEAS.md` items across 21 sub-batches). Total cost 4,270,377 tokens across 43 tagging
+batches. Full per-batch cost table and specific findings (Moldova/Transnistria, Cyprus,
+Kosovo-Serbia, Switzerland/Norway/Iceland budget overrides, etc.) are in
+[`CHANGELOG.md`](CHANGELOG.md)'s "Recently fixed" section.
 
-**Groep 3 — done, `EUROPA_TRIP_IDEAS.md`'s 319 items (not ~320 as originally estimated) across 21
-sub-batches, reusing that document's own 15 named batches** (see the "Europa Trip Ideas" section
-above), splitting the 6 largest (26+ items) into two halves each so no single tagging batch got too
-big:
-
-| # | Batch (from EUROPA_TRIP_IDEAS.md) | Real item count | Tokens |
-|---|---|---|---|
-| 1 | Benelux (pilot) | 6 | 65,217 |
-| 2 | Duitsland | 12 | 86,991 |
-| 3 | Oostenrijk + Zwitserland | 12 | 88,367 |
-| 4 | Frankrijk | 11 | 100,209 |
-| 5 | Italië | 16 | 117,839 |
-| 6 | Micro-staten & kleine eilanden | 20 | 134,667 |
-| 7a+7b | Iberië (Spanje+Andorra+Portugal) | 26 | 109,952 + 115,127 |
-| 8a+8b | Balkan-cluster | **45** (planned 44) | 110,735 + 118,753 |
-| 9a+9b | Centraal/Oost-Europa | 35 | 109,964 + 88,819 |
-| 10 | Oost-Mediterraan | **17** (planned ~18) | 115,908 |
-| 11a+11b | Noord-Europa | 32 | 125,576 + 108,285 |
-| 12 | Britse eilanden | 17 | 95,294 |
-| 13 | Baltische staten | 6 | 74,538 |
-| 14a+14b | 🏝️ Europese eilanden | 30 | 102,701 + 108,253 |
-| 15a+15b | Combinatiesecties | **34** (planned 33) | 117,054 + 116,207 |
-
-**Lesson reinforced repeatedly: never trust a pre-stated item count.** The doc's own "batch-indeling"
-summary was wrong three separate times (Balkan-cluster 44→45, Oost-Mediterraan 18→17,
-Combinatiesecties 33→34) — every sub-batch prompt now explicitly tells the tagging agent to
-grep/count the actual bullets itself rather than trust the plan's number, and to tag every real item
-found even if that means one sub-batch runs slightly over its "half" split.
-
-**Real findings surfaced during tagging** (not just mechanical tagging — a few genuine
-safety/regulatory checks came out of reading the source closely): Moldova + Transnistria item tagged
-Advisory Level = Red / Border Complexity = Complex (Russian troops, war-adjacent tension) — the one
-genuinely active-conflict-adjacent item in all of Groep 3. Cyprus confirmed EU-but-not-Schengen;
-Northern Cyprus crossings tagged Complex. Kosovo's items never combine with Serbia in the source
-(deliberate design), tagged Simple non-Schengen throughout, no invented complication. UK/Ireland
-items tagged non-Schengen with the post-Brexit ETA requirement. Switzerland/Norway/Iceland items
-got Budget Level €€€€ overrides where their real per-day ranges warranted it, rather than force-fit
-to the blanket ≤105→€€/≥110→€€€ heuristic used for the rest of Europe. The "Grote Europese
-combinaties" subsection (last ~17 items) got `Verification Status = Draft` rather than `Verified`,
-since its own footer admits the WebSearch budget ran out and it reused prior verified country data
-instead. Several Combinatiesecties items are deliberate near-duplicates of already-tagged combos
-(e.g. "Bosnia + Croatia + Montenegro" tagged a third time) — flagged during tagging, not treated as
-errors, since `EUROPA_TRIP_IDEAS.md` itself repeats these combos across sections.
-
-**Workflow per batch** (same as Groep 1/2, held for all 21 sub-batches): delegate to a subagent that
-reads `TRIP_TAXONOMY.md` for the schema + the relevant `EUROPA_TRIP_IDEAS.md` batch section, outputs
-raw CSV lines only (no header, no commentary, English throughout, `&` not `&amp;`, no "€" prefix on
-the Budget €/day column), append to `TRIP_DATABASE.csv`, commit locally, report the token cost, then
-ask before starting the next sub-batch.
-
-**Separate, not-yet-started step: making this data actually visible/usable in the app itself.**
-Right now `TRIP_TAXONOMY.md` and `TRIP_DATABASE.csv` are just files sitting in the repo — visible on
-GitHub if you open them, but **no code anywhere in `js/` or any `.html` page reads or references
-either file** (confirmed by grepping the whole codebase, 2026-08-17). There is no filter UI built on
-these 29 fields, no page that displays a trip's tags, and no wiring between this CSV and the existing
-`dataService.js`/Google-Sheet data layer that powers the rest of the app. Collecting the taxonomy
-data (Fase 1+2, in progress) and making it live/usable in the UI (an entirely separate future
-implementation step — likely a new page or filter component that reads `TRIP_DATABASE.csv` the way
-`dataService.js` reads the Sheet) are two distinct pieces of work; only the first has started. No
-plan/estimate exists yet for the second — not started, wait for Youri to raise it.
+**Not yet started: Phase 3, making this data visible/usable in the app UI.** No code in `js/` or
+any `.html` page currently reads either file (confirmed by grepping the whole codebase, 2026-08-17)
+— no filter UI, no page that displays a trip's tags. See Phase 3 under the Route Builder workstream
+below.
 
 ## Route Builder: English content + EUROPA_TRIP_IDEAS conversion + Taxonomy UI (2026-08, 3-phase plan)
 
@@ -443,112 +273,19 @@ the source alone does nothing for an already-loaded browser — every batch need
 `rbMigrateXEnglish()` function behind a fresh flag, following whichever pattern (wholesale-replace vs.
 field-patch) that route's own prior migrations already used.
 
-**Status — 8 of 13 batches done. All 5 dict-based families are done, plus the first hand-authored
-family (Mediterranean Civilizations).** Pilot batch (Central European Grand Roadtrip, chosen
-specifically because it has zero splitroutes — cleanest possible first test) cost **138,985 tokens**
-for one 14-leg, no-splitroute route. That's well above the original 400-600K blind estimate for the
-whole job — recalibrated total based on this real data point: **~2.5-3.5M tokens for all 13
-batches**, since several remaining families (Mediterranean, Africa Grand Tour) carry many more
-standalone routes than this pilot did. Batch 2 (Eurasia, 27 countries + 3 splitroutes) cost
-**229,111 tokens**; batch 3 (Patagonia & Antarctica, 3 countries + 2 splitroutes) cost **203,954
-tokens**; batch 4 (India & Himalaya, 3 countries + 3 splitroutes) cost **194,573 tokens**; batch 5
-(Nordic Arctic, 8 countries + 5 splitroutes) cost **200,428 tokens** — all 4 pure dict-based families
-landed in a tight 195K-230K band regardless of country/splitroute count. Batch 6 (Pan-American Grand
-Tour, 15 countries + 4 splitroutes + **8 reused standalones**, the biggest route count of any batch
-so far — 13 routes total) cost **~280,000 tokens** — noticeably above the pure dict-based band, as
-expected: the 8 standalone consumers each needed their own wrapper-level translation (entry note,
-travel_style, climate_summary, description, notes) even though none of them needed a rename (all 8
-already had English names — Costa Rica 🦥, Colombia ☕, Peru 🦙, Ecuador 🐢, Guatemala 🦜, Panama 🚢,
-Bolivia 🧂, Nicaragua 🌅). Also notably fewer standalones than the ~15 originally estimated for this
-family — the real count (found by grepping every `rbContentFor('Pan-American Grand Tour 🌎', ...)`
-call site) was 8, not ~15.
-
-Batch 7 (Africa Grand Tour, 18 countries + 4 splitroutes + **15 standalone consumers**, the biggest
-route count of any translation batch so far — 20 routes total) cost **~330,000 tokens** (this
-session's own start-to-finish token-budget counter dropped from 15,000,000 to roughly 14,670,000
-over the course of the task, including this README update — a directly measured figure rather than a
-guess, though the counter isn't a pure task-cost meter so treat the last digit or two as noise).
-Above the Pan-American batch as expected given nearly double the standalone count. Of the 15
-standalones, 8 needed a rename (Egypt
-🏺 ← Egypte, Namibia 🏜️ ← Namibië, South Africa 🦓 ← Zuid-Afrika, Kenya 🦒 ← Kenia, Madagascar 🦎 ←
-Madagaskar, Ethiopia ⛪ ← Ethiopië, South Africa & Mountain Kingdoms 👑 ← Zuid-Afrika &
-Bergkoninkrijkjes, Victoria Falls & Kalahari Loop 🦏 ← Victoria Falls & Kalahari-lus) and 7 already had
-English names (Tanzania 🦁, Botswana 🐘, Rwanda 🦍, Mauritius 🦤, Zimbabwe 🐆, Mozambique 🐋, Zambia &
-Malawi 💦) — all still needed their own wrapper-level translation regardless. All 4 splitroutes needed
-renaming (Southern Africa Safari Loop 🦁 ← Zuidelijk Afrika Safari-lus, African Islands 🏝️ ←
-Afrikaanse Eilanden, East Africa Safari Classic 🦒 ← Oost-Afrika Safari Classic, Horn of Africa &
-Egypt 🏺 ← Hoorn van Afrika & Egypte). The Grand Trip's own name was already English.
-
-Batch 8 (Mediterranean Civilizations Expedition, 13 countries + 6 splitroutes + **11 standalone
-consumers**, the biggest route count of any translation batch so far and this family's own last
-open item from the ROUTE_LOGIC_REVIEW.md/route-builder-translation playbooks — 18 routes total) cost
-**~315,000 tokens** (session token-budget counter dropped from roughly 15,000,000 to roughly
-14,685,000 across this batch, a directly measured figure though the counter isn't a pure task-cost
-meter). This is the first *hand-authored* family translated (per `CLAUDE.md`'s architecture note,
-Italy/France/Greece each repeat across legs so this route's content lives inline in
-`rbBuildXRoute()` functions rather than a shared `RB_EXPEDITION_CONTENT` dict) — no dict cascade, so
-every one of the 18 routes needed independent translation, though content was kept consistent across
-the duplicated Italy/Greece/Egypt/Oman/Bahrein text shared between the Grand Trip and its splitroutes.
-Of the 11 standalones, 8 needed a rename (Morocco 🕌 ← Marokko, Sicily 🌋 ← Sicilië, Jordan 🏺 ←
-Jordanië, Spain 💃 ← Spanje, Greece & Crete 🫒 ← Griekenland & Kreta, Rome & Surroundings 🍕 ← Rome &
-omgeving, Sardinia 🗿 ← Sardinië, Gulf States Trio 🛢️ ← Golfstaten-trio) and 3 were already
-English/near-English country names needing only wrapper-text translation (Cyprus 🕊️, Malta ⚔️,
-Tunisia 🧿 ← Tunesië — only Tunesië actually needed the rename). All 6 splitroutes needed renaming
-(Iberia & Morocco/Tunisia 🏰 ← Iberia & Marokko/Tunesië, Malta & Italy 🏛️ ← Malta & Italië, Corsica &
-Southern France ⛵ ← Corsica & Zuid-Frankrijk, Greece & Cyprus 🏺 ← Griekenland & Cyprus, Anatolia 🕌 ←
-Anatolië, Egypt & Arabian Peninsula 🐪 ← Egypte & Arabisch Schiereiland). The Grand Trip's own name
-was already English.
-
-**Batch 8 broke the collision-fix streak — the first batch where no existing migration needed
-widening, because this family's migrations use a structurally different mechanism.** Every prior
-batch's collision fix widened a Dutch-substring *text* guard (an already-applied-note marker) inside
-a field-patch migration. This family's migrations — `rbMigratePriceVerificationRound1`,
-`rbMigrateRouteLineCoordsRound2`, `rbMigrateMediterraneanRouteLogicOverhaul`,
-`rbMigrateBahrainIntoMediterraneanExpedition`, `rbMigrateSplitRouteEntryNotes` — are pure *name-based
-wholesale-replace* lookups instead (`rbRoutes.findIndex(r => r.name === name)`, no.-op if not found),
-and all of them run *before* this translation migration in `rbInit()`'s call order. On an
-already-seeded browser they still find the (at that point still-Dutch) names correctly, since this
-translation migration is the one doing the renaming and it runs last; on a brand-new browser the seed
-functions already produce final English names directly, so those earlier name lookups simply find
-nothing and no-op harmlessly instead of silently stranding a fix. `rbMigrateSplitRouteEntryNotes`'s
-`prependInstap()` guard already recognized both `'Instap:'`/`'Entry:'` prefixes generically from an
-earlier batch, and every entry note in this family is baked directly into the translated source now,
-so it's a clean no-op regardless of language. The one asterisk: `rbMigrateLonghaulBuffer`'s `'Jordanië
-🏺'` lookup (bumping Jordan's days 8→10) wasn't widened to the new name, but harmlessly — the correct
-day count is already baked into the translated source, so a fresh browser needs no bump and the
-lookup finding nothing is a true no-op, not a silent gap. Given this family's own translation
-migration is itself a wholesale-replace (`rbMigrateMediterraneanFamilyEnglish()`, following this
-route's own established pattern rather than the field-patch shape every dict-based batch used, since
-Italy/France/Greece repeating across legs makes country_code-based block matching impossible here),
-there was also no field-by-field diffing logic to write — just an 18-entry `[oldName, newName,
-buildFn]` lookup table, same idiom as `rbMigrateAfricaGrandTourFamilyEnglish`.
-
-**Batch 7 confirmed the same collision fix shape one more time, on the biggest scale yet**:
-`rbMigrateAfricaGrandTourRouteLogicOverhaul()`'s `routeNames` array was widened to `[oldName,
-newName]` pairs for the four split companions, and its note-append guard was widened to also
-recognize the English phrase `'Route-logic revision (2026-08)'` alongside the Dutch
-`'Routelogica-herziening (2026-08)'`. The 15 standalone consumers again needed no migration widening
-of their own (no route-logic-overhaul or price-verification migration exists for any of them — same
-clean no-op pattern batch 6 found), and `rbMigrateSplitRouteEntryNotes()` needed no change either
-since its generic `'Instap:'`/`'Entry:'` guard (from the Eurasia batch) already covers both languages
-and the four split companions' entry notes are baked directly into their build functions rather than
-added by that migration. This closes out all 5 dict-based families — every single one hit the exact
-same collision category, 5 for 5.
-
-**Recurring lesson across every dict-based batch (5 of 5, 100% hit rate)**: older migrations
-(especially each route's own route-logic-overhaul migration) pattern-match on Dutch substrings (e.g.
-`'Instap:'`, `'Time check (2026-07)'`, `'Follow-up (2026-07)'`, an overhaul-note marker) to detect
-"have I already applied this note?" — once translated to English, those older guards need widening
-too, or they'll double-append stale text. **New nuance found in batch 5**: this even applies when a
-splitroute's NAME is identical in Dutch and English (Nordic Arctic's Svalbard 🐻‍❄️) — an older
-migration can still find the route by name but then fail its Dutch-substring content check, so don't
-assume "the name never changed" means "no collision risk" — check every route's guards regardless.
-**Batch 6 confirmed the reused-standalones case is a clean no-op, not a new collision class**: the 8
-standalone consumers have no route-logic-overhaul or price-verification migration of their own (only
-the Grand Trip and its 4 splitroutes do), so only `rbMigratePanAmericanRouteLogicOverhaul()`'s guard
-and route-name lookup array needed widening (for the two renamed splitroutes, Midden-Amerika Loop 🌋
-→ Central America Loop 🌋 and Zuidelijke Kegel & Brazilië-finale 🧉 → Southern Cone & Brazil Finale
-🧉) — the same fix shape as every prior batch, just applied to more routes.
+**Status — 8 of 13 batches done.** All 5 dict-based families (#1-6, translated via the shared
+`RB_EXPEDITION_CONTENT` dict cascade) are done, plus the first hand-authored family (#7,
+Mediterranean Civilizations) and the pilot batch (#8, Central European Grand Roadtrip — chosen for
+having zero splitroutes, the cleanest possible first test). Token costs are in the table below: the
+four pure dict-based families landed in a tight 195K-230K token band regardless of
+country/splitroute count; batches with reused standalone consumers cost noticeably more (batch 6:
+~280K for 8 standalones, batch 7: ~330K for 15) since each standalone needs its own wrapper-level
+translation even without a rename; hand-authored families cost similarly (batch 8: ~315K for 18
+routes) since there's no dict-cascade discount — every route needs independent translation.
+Recalibrated estimate for all 13 batches: **~2.5-3.5M tokens total** (well above the original
+400-600K blind guess). Full per-batch detail — specific renames, and the migration-collision fixes
+found in every dict-based batch (5 of 5, 100% hit rate) — is in [`CHANGELOG.md`](CHANGELOG.md)'s
+"Recently fixed" section.
 
 | # | Family | Type | Splitroutes | Status | Tokens |
 |---|---|---|---|---|---|
@@ -570,8 +307,9 @@ and route-name lookup array needed widening (for the two renamed splitroutes, Mi
 first, find the family's build function(s), translate every Dutch text field (never touch
 days/budget/lat/lng/country codes), grep the whole file for any other reference to the old name,
 **explicitly check every migration touching this route/its splitroutes for the Dutch-substring
-guard-collision issue described above — 100% hit rate across all 7 batches so far, treat it as
-mandatory, not optional**, write the new migration + flag + wire it into the init call sequence, run
+guard-collision issue (100% hit rate across every dict-based batch so far — see `CHANGELOG.md` for
+the history), treat it as mandatory, not optional**, write the new migration + flag + wire it into
+the init call sequence, run
 `node --check js/pages/routeBuilder.js` to catch syntax errors before committing, commit locally (ask
 before pushing), report the real token cost, then ask before starting the next batch.
 
@@ -593,8 +331,9 @@ Chosen approach (2026-08-18 decision): **full hand-authored, same depth as the 1
 routes** — real per-destination coordinates (so the "🔍 Gedetailleerd" map view works on every new
 route, not just a subset) and full narrative notes per leg, not a thinner data-driven auto-generated
 version. Reuses the exact 21 sub-batch structure already proven for Trip Taxonomy's Groep 3 tagging
-(same 15 named clusters from `EUROPA_TRIP_IDEAS.md`, same 6 split into two halves) — see the "Trip
-Taxonomy" section above for that batch table; same batches apply here, now for code instead of tags.
+(same 15 named clusters from `EUROPA_TRIP_IDEAS.md`, same 6 split into two halves) — see
+`CHANGELOG.md`'s "Recently fixed" section for that batch table; same batches apply here, now for
+code instead of tags.
 
 **Estimated cost**: ~9,000-16,000 tokens/item × 319 items ≈ **3-5M tokens total** — based on the
 `rbBuildJordanRoute()` example (fresh single-country build with real coordinates, no shared content
