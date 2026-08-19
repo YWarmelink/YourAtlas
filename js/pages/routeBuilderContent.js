@@ -7480,7 +7480,7 @@ function rbBuildCairnsGreatBarrierReefRoute() {
 }
 
 function rbBuildCaliforniaRoute() {
-  return rbBuildFlatSeedRoute('Californië 🌲', [
+  return rbBuildFlatSeedRoute('California 🌲', [
     {
       code: 'US', name: 'United States', days: 14, budget: 2675, lat: 37.7749, lng: -122.4194,
       destinations: [
@@ -7488,15 +7488,15 @@ function rbBuildCaliforniaRoute() {
         { name: 'Yosemite Valley', lat: 37.7459, lng: -119.5936 },
         { name: 'Sequoia & Kings Canyon National Parks', lat: 36.4864, lng: -118.5658 },
       ],
-      notes: "Instap: rechtstreekse KLM-vlucht Amsterdam-San Francisco (±11 uur; vanaf ±€850-1.150 retour; beste periode juli). Prijsindicatie webonderzoek 2026-08, momentopname. Van de stad direct de bergen in: Yosemite's granieten wanden en watervallen, gevolgd door de gigantische sequoia's van Sequoia/Kings Canyon. Geen nieuwe huurauto nodig — dagtochten of een korte huurperiode volstaan vanuit San Francisco.",
-      transport_to_next: "Einde van deze route — auto terug naar San Francisco (≈270 mijl/≈5 uur vanaf Sequoia & Kings Canyon, reken deze rit als eigen reisdag), dan rechtstreekse KLM-terugvlucht vanaf SFO. Fresno (FAT) ligt dichterbij maar heeft geen directe vlucht naar Amsterdam — SFO blijft de betere keuze.",
+      notes: "Entry: direct KLM flight Amsterdam-San Francisco (±11 hours; from ±€850-1,150 return; best period July). Price indication from 2026-08 web research, a snapshot. Straight from the city into the mountains: Yosemite's granite walls and waterfalls, followed by the giant sequoias of Sequoia/Kings Canyon. No new rental car needed — day trips or a short rental period suffice from San Francisco.",
+      transport_to_next: "End of this route — car back to San Francisco (≈270 miles/≈5 hours from Sequoia & Kings Canyon, count this drive as its own travel day), then direct KLM return flight from SFO. Fresno (FAT) is closer but has no direct flight to Amsterdam — SFO remains the better choice.",
     },
   ], {
-    best_starting_month: 'Juli',
-    travel_style: 'Stad + dagtochten/korte huurauto — geen doorlopende roadtrip nodig voor dit deel.',
-    climate_summary: 'Juli-augustus blijft ruim vóór de piek van het Californische bosbrandseizoen (vooral augustus-oktober).',
-    description: 'San Francisco, gevolgd door Yosemite Valley en de sequoia\'s van Sequoia/Kings Canyon.',
-    notes: 'Losgesplitst van VS Westkust Roadtrip 🌉 (zelf al losgesplitst van North America Grand Traverse 🌎 — zie ROUTE_BUILDER_MODULES.md) als onderdeel van deze derde batch losse landen (2026-08, Youri\'s eigen tweede top-10-keuze) — de klassieke Amerikaanse westkust-combinatie. Land, dagen en budget zijn ongewijzigd overgenomen. VS Westkust Roadtrip 🌉 en North America Grand Traverse 🌎 zelf blijven ongewijzigd bestaan.',
+    best_starting_month: 'July',
+    travel_style: 'City + day trips/short rental car — no continuous roadtrip needed for this part.',
+    climate_summary: 'July-August stays well ahead of the peak of the Californian wildfire season (mainly August-October).',
+    description: 'San Francisco, followed by Yosemite Valley and the sequoias of Sequoia/Kings Canyon.',
+    notes: 'Split off from US West Coast Roadtrip 🌉 (itself already split off from North America Grand Traverse 🌎 — see ROUTE_BUILDER_MODULES.md) as part of this third batch of standalone countries (2026-08, Youri\'s own second top-10 pick) — the classic American West Coast combination. Country, days and budget are carried over unchanged. US West Coast Roadtrip 🌉 and North America Grand Traverse 🌎 themselves remain unchanged.',
   });
 }
 
@@ -8446,15 +8446,15 @@ function rbBuildPacificNorthwestRoute() {
         { name: 'Oregon Coast (Cannon Beach, Astoria)', lat: 45.8918, lng: -123.9615 },
         { name: 'Redwood National & State Parks', lat: 41.2132, lng: -124.0046 },
       ],
-      notes: 'Instap: rechtstreekse KLM-vlucht Amsterdam-Seattle (±9-10 uur; vanaf ±€880-1.090 retour, januari is goedkoper maar valt buiten het beste wandelseizoen; beste periode juli-augustus). Prijsindicatie webonderzoek 2026-08, momentopname. Amerikaanse natuur in het groot: regenwoud, vulkanen, ruige kustlijn en de hoogste bomen ter wereld. ESTA is per 30 sept. 2025 verhoogd naar $40,27 (was $21) — 2 jaar geldig.',
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit San Francisco of Portland naar Amsterdam (huurauto inleveren aan het einde van de kustroute).',
+      notes: 'Entry: direct KLM flight Amsterdam-Seattle (±9-10 hours; from ±€880-1,090 return, January is cheaper but falls outside the best hiking season; best period July-August). Price indication from 2026-08 web research, a snapshot. American nature on a grand scale: rainforest, volcanoes, rugged coastline and the tallest trees in the world. ESTA was raised to $40.27 (from $21) as of Sept 30, 2025 — valid 2 years.',
+      transport_to_next: 'End of this route — return flight from San Francisco or Portland to Amsterdam (return the rental car at the end of the coastal route).',
     },
   ], {
-    best_starting_month: 'Juli',
-    travel_style: 'Huurauto — kustroute langs de US-101, rustig tempo met meerdaagse stops bij de parken.',
-    climate_summary: 'Juli-augustus blijft ruim vóór de piek van het regionale bosbrandseizoen (vooral augustus-oktober) en geeft de droogste, meest begaanbare omstandigheden in de nationale parken.',
-    description: 'Seattle, Mount Rainier, Olympic National Park, de Oregon-kust en de Redwoods.',
-    notes: 'Losgesplitst van North America Grand Traverse 🌎 (via VS Westkust Roadtrip 🌉) als onderdeel van de zesde batch losse landen (2026-08). Land, dagen en dagbudget zijn ongewijzigd overgenomen. North America Grand Traverse 🌎 en VS Westkust Roadtrip 🌉 zelf blijven ongewijzigd bestaan.',
+    best_starting_month: 'July',
+    travel_style: 'Rental car — coastal route along the US-101, relaxed pace with multi-day stops at the parks.',
+    climate_summary: 'July-August stays well ahead of the peak of the regional wildfire season (mainly August-October) and gives the driest, most accessible conditions in the national parks.',
+    description: 'Seattle, Mount Rainier, Olympic National Park, the Oregon coast and the Redwoods.',
+    notes: 'Split off from North America Grand Traverse 🌎 (via US West Coast Roadtrip 🌉) as part of the sixth batch of standalone countries (2026-08). Country, days and daily budget are carried over unchanged. North America Grand Traverse 🌎 and US West Coast Roadtrip 🌉 themselves remain unchanged.',
   });
 }
 
