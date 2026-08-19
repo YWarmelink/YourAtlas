@@ -223,7 +223,9 @@ Not yet done: converting each worked-out item into a real `rbBuildXRoute()` in
 ## Trip Taxonomy (Fase 2 done, Phase 3 UI not started)
 
 See [`TRIP_TAXONOMY.md`](TRIP_TAXONOMY.md) for the 29-field schema (Fase 1, approved by Youri
-as-is) and [`TRIP_DATABASE.csv`](TRIP_DATABASE.csv) for the tagged data. Goal: one consistent
+as-is) and [`TRIP_DATABASE.csv`](TRIP_DATABASE.csv) for the tagged data — or
+[`TRIP_OVERVIEW.md`](TRIP_OVERVIEW.md) for a lightweight, auto-generated name-only index of all
+450 trips grouped by family/country, if the full CSV is more detail than you need. Goal: one consistent
 29-field row per trip across Route Builder's 13 Grand Trips + splitroutes and
 `EUROPA_TRIP_IDEAS.md`'s items, usable for filtering/comparing/a future route optimizer. English
 throughout, multi-value fields semicolon-separated within a quoted cell, "—" for not-applicable.
