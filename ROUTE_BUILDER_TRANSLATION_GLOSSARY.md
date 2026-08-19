@@ -120,6 +120,14 @@ Month-range notation keeps the en-dash: e.g. "April–juni" → "April–June", 
 | Marrondorp(en) | Maroon village(s) | Suriname-specific — descendants of escaped enslaved people living in river communities; "Maroon" is the established English term, not a literal translation of "bruin/marron". |
 | carême | carême | Kept as-is (French/Antillean Creole loanword for the Caribbean dry season) — used identically in both languages, same treatment as "harmattan" or "moesson" staying recognizable loanwords. |
 
+## 7. Batch 11 additions (West & Central Africa)
+
+| Dutch | English | Notes |
+|---|---|---|
+| Presidentsverkiezing (+ date) | Presidential election (+ date) | Recurs across multiple countries within a family (e.g. Gambia, São Tomé & Príncipe) as a safety-note marker, usually followed by "mogelijk onrust/protesten" ("possible unrest/protests"). |
+| gravana | gravana | Kept as-is — São Tomé & Príncipe's own name for its dry season (June-September), same loanword treatment as harmattan/moesson/carême (see batch 9 additions above). |
+| harmattan | harmattan | Kept as-is — the dry, dusty West African trade wind/season (roughly December-February). Not previously given its own row, but already treated as a recognizable loanword per the batch 9 "carême" note; added explicitly here since this batch uses it repeatedly. |
+
 ---
 
-*Extracted from batches 1–7 (2026-08-18/19), plus batch 9 (2026-08-19, Caribbean & Amazon). Update this file as later batches surface new recurring terms — do not let it go stale.*
+*Extracted from batches 1–7 (2026-08-18/19), plus batch 9 (2026-08-19, Caribbean & Amazon) and batch 11 (2026-08-19, West & Central Africa). Update this file as later batches surface new recurring terms — do not let it go stale.*
