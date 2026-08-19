@@ -6825,6 +6825,69 @@ function rbMigrateBritishIslesFamilyEnglish() {
   if (touched) rbSave();
 }
 
+/**
+ * West & Central Africa Expedition family — Dutch-to-English translation (2026-08 batch 11/13).
+ * Hand-authored, no RB_EXPEDITION_CONTENT dict to lean on (same reason as Mediterranean/Caribbean &
+ * Amazon/British Isles — CLAUDE.md's Route Builder architecture note) — same wholesale-replace-via-
+ * rebuilt-buildFn() idiom as those three. 8 routes total: the Grand Trip itself (name already
+ * English, unchanged), its two 2026-07 split companions (West-Afrika Overland 🥁 → West Africa
+ * Overland 🥁, Centraal-Afrika & Eilanden 🦛 → Central Africa & Islands 🦛), and five standalone
+ * single-/dual-country consumers split off in later batches (Ghana 🥥, Senegambia 🦩, Gabon 🏕️, São
+ * Tomé & Príncipe 🍫 already used English country/route names and only needed their wrapper-level
+ * text translated; Kaapverdië 🎶 → Cape Verde 🎶 needed a rename). Looked up by old-or-new name (same
+ * idiom as every prior translation batch) so this is idempotent whichever language a given route was
+ * seeded/migrated in.
+ *
+ * Migration-collision check for this batch (same category of bug checked for every previous
+ * translation batch this project has run): this migration is appended at the very end of rbInit(),
+ * after every other West-Central-Africa-touching migration — rbMigrateWestCentralAfricaBuild
+ * (name-lookup on the main route's already-English name, and a no-op once the route has blocks —
+ * true for every realistic browser — so unaffected by the two splitroutes' rename), and
+ * rbMigrateWestCentralAfricaRouteLogicOverhaul (a pure name-lookup wholesale-replace on the two
+ * splitroutes' OLD Dutch names, the exact same shape as rbMigrateMediterraneanRouteLogicOverhaul,
+ * which was already confirmed harmless without widening in the Mediterranean translation batch).
+ * Verified the same conclusion holds here by reading it: on an already-seeded-but-not-yet-overhauled
+ * browser it fires before this migration renames anything, so it still finds the (still-Dutch-at-
+ * that-point) splitroute names correctly, and its wholesale-replace via the now-translated buildFn()
+ * produces the final English name+content as a side effect; on a brand-new browser the seed functions
+ * already produce the final English names directly (since this batch edited the build functions
+ * themselves), so that migration's old-Dutch-name lookups simply find nothing and no-op harmlessly —
+ * no widening needed, matching Mediterranean's precedent exactly rather than Africa Grand Tour's
+ * (whose route-logic-overhaul is a field-patch + text-marker note-append-guard, a different shape
+ * that did need widening there). rbMigrateSplitRouteEntryNotes's prependInstap() guard already
+ * recognizes both the Dutch 'Instap:' and English 'Entry:' prefixes generically (a fix made during an
+ * earlier batch), it looks up both splitroutes by their OLD Dutch names, and this family's own
+ * "Instap:"/"Entry:" openers are now baked directly into the translated build functions rather than
+ * injected by that migration, so it always no-ops for this family regardless of language. None of the
+ * five standalones have any follow-up migration of their own (no other function references any of
+ * their route names), so no further collisions to fix.
+ */
+function rbMigrateWestCentralAfricaFamilyEnglish() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_WEST_CENTRAL_AFRICA_ENGLISH)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_WEST_CENTRAL_AFRICA_ENGLISH, '1');
+
+  const targets = [
+    { oldName: 'West & Central Africa Expedition 🌍', newName: 'West & Central Africa Expedition 🌍', buildFn: rbBuildWestCentralAfricaExpeditionRoute },
+    { oldName: 'West-Afrika Overland 🥁', newName: 'West Africa Overland 🥁', buildFn: rbBuildWestAfricaOverlandRoute },
+    { oldName: 'Centraal-Afrika & Eilanden 🦛', newName: 'Central Africa & Islands 🦛', buildFn: rbBuildCentralAfricaIslandsRoute },
+    { oldName: 'Ghana 🥥', newName: 'Ghana 🥥', buildFn: rbBuildGhanaRoute },
+    { oldName: 'Kaapverdië 🎶', newName: 'Cape Verde 🎶', buildFn: rbBuildCapeVerdeRoute },
+    { oldName: 'Senegambia 🦩', newName: 'Senegambia 🦩', buildFn: rbBuildSenegambiaRoute },
+    { oldName: 'Gabon 🏕️', newName: 'Gabon 🏕️', buildFn: rbBuildGabonRoute },
+    { oldName: 'São Tomé & Príncipe 🍫', newName: 'São Tomé & Príncipe 🍫', buildFn: rbBuildSaoTomeRoute },
+  ];
+
+  let touched = false;
+  targets.forEach(({ oldName, newName, buildFn }) => {
+    const idx = rbRoutes.findIndex(r => r.name === oldName || r.name === newName);
+    if (idx === -1) return;
+    rbRoutes.splice(idx, 1, buildFn());
+    touched = true;
+  });
+
+  if (touched) rbSave();
+}
+
 // ---- Standalone single-country routes (2026-08, on Youri's request) ----
 //
 // The modularization analysis (ROUTE_BUILDER_MODULES.md) flagged ~30 individual countries across
