@@ -7898,19 +7898,19 @@ function rbBuildGhanaRoute() {
       destinations: [
         { name: 'Cape Coast Castle', lat: 5.1053, lng: -1.2466 },
         { name: 'Elmina Castle', lat: 5.0844, lng: -1.3499 },
-        { name: 'Kakum National Park (boomtoppenpad)', lat: 5.3500, lng: -1.3833 },
+        { name: 'Kakum National Park (canopy walkway)', lat: 5.3500, lng: -1.3833 },
         { name: 'Accra', lat: 5.6037, lng: -0.1870 },
-        { name: 'Volta-regio (Wli-watervallen, Mount Afadjato)', lat: 6.8667, lng: 0.4667 },
+        { name: 'Volta Region (Wli Falls, Mount Afadjato)', lat: 6.8667, lng: 0.4667 },
       ],
-      notes: "Instap: rechtstreekse KLM-vlucht Amsterdam-Accra (±6u45; vanaf ±€700-1.100 retour; beste periode maart/oktober). Prijsindicatie webonderzoek 2026-08, momentopname. Cape Coast en Elmina Castle zijn de zwaarste, belangrijkste slavernijgeschiedenis-sites van de hele expeditie. Ghana heeft verreweg het rijkste programma van de reis — vandaar de meeste tijd. Prijs geverifieerd (2026-07), klopt, inclusief entreegelden Cape Coast/Kakum. Visum: e-visa verplicht (evisa.nia.gov.gh, ~$60-150 afhankelijk van verwerkingssnelheid, plus gele-koortsbewijs) — vooraf regelen. Reisadvies: geel; oranje alleen aan de noordelijke grens met Burkina Faso, niet op deze route.",
-      transport_to_next: 'Einde van deze route — rechtstreekse KLM-terugvlucht Accra-Amsterdam.',
+      notes: "Entry: direct KLM flight Amsterdam-Accra (±6h45; from ±€700-1,100 return; best period March/October). Price indication from 2026-08 web research, a snapshot. Cape Coast and Elmina Castle are the heaviest, most important slavery history sites of the entire expedition. Ghana has by far the richest program of the trip — hence the most time. Price verified (2026-07), holds up, including Cape Coast/Kakum entrance fees. Visa: e-visa mandatory (evisa.nia.gov.gh, ~$60-150 depending on processing speed, plus yellow fever certificate) — arrange in advance. Travel advisory: yellow; orange only along the northern border with Burkina Faso, not on this route.",
+      transport_to_next: 'End of this route — direct KLM return flight Accra-Amsterdam.',
     },
   ], {
-    best_starting_month: 'Maart',
-    travel_style: 'Bus/gedeelde taxi tussen de steden.',
-    climate_summary: 'Maart en oktober zijn de kortere droge tussenperiodes tussen de twee regenseizoenen — een goed compromis qua weer, drukte en vluchtprijs.',
-    description: 'Cape Coast Castle, Elmina Castle, Kakum National Park, Accra en de Volta-regio.',
-    notes: 'Losgesplitst van West & Central Africa Expedition 🌍 (via West-Afrika Overland 🥁) als onderdeel van de vijfde batch losse landen (2026-08). Land, dagen en budget zijn ongewijzigd overgenomen. West & Central Africa Expedition 🌍 en West-Afrika Overland 🥁 zelf blijven ongewijzigd bestaan.',
+    best_starting_month: 'March',
+    travel_style: 'Bus/shared taxi between the cities.',
+    climate_summary: 'March and October are the shorter dry interludes between the two rainy seasons — a good compromise in terms of weather, crowds and flight price.',
+    description: 'Cape Coast Castle, Elmina Castle, Kakum National Park, Accra and the Volta Region.',
+    notes: 'Split off from West & Central Africa Expedition 🌍 (via West Africa Overland 🥁) as part of the fifth batch of standalone countries (2026-08). Country, days and budget are carried over unchanged. West & Central Africa Expedition 🌍 and West Africa Overland 🥁 themselves remain unchanged.',
   });
 }
 
@@ -8277,23 +8277,23 @@ function rbBuildSaintLuciaGrenadaRoute() {
 }
 
 function rbBuildCapeVerdeRoute() {
-  return rbBuildFlatSeedRoute('Kaapverdië 🎶', [
+  return rbBuildFlatSeedRoute('Cape Verde 🎶', [
     {
       code: 'CV', name: 'Cape Verde', days: 13, budget: 780, lat: 16.8901, lng: -24.9825,
       destinations: [
-        { name: 'Santo Antão (Ribeira Grande, Paúl-vallei)', lat: 17.1833, lng: -25.0667 },
+        { name: 'Santo Antão (Ribeira Grande, Paúl Valley)', lat: 17.1833, lng: -25.0667 },
         { name: 'São Vicente (Mindelo)', lat: 16.8901, lng: -24.9825 },
-        { name: 'Fogo (Pico do Fogo-vulkaan, wijngaarden)', lat: 14.9481, lng: -24.3553 },
+        { name: 'Fogo (Pico do Fogo volcano, vineyards)', lat: 14.9481, lng: -24.3553 },
       ],
-      notes: 'Instap: rechtstreekse TUI fly-vlucht Amsterdam-São Vicente/Mindelo (±7u10, maandag/donderdag, zomers ook zondag; vanaf ±€280-360 retour; beste periode augustus-oktober qua prijs, december-mei qua weer). Prijsindicatie webonderzoek 2026-08, momentopname. Bewust andere eilanden dan een eerder bezoek (niet opnieuw Sal) — Santo Antão voor de dramatische wandelvalleien, São Vicente voor de muziekcultuur van Mindelo, Fogo voor de vulkaanbeklimming en wijnbouw op vulkanische grond. Onderling per veerboot of Binter Cabo Verde-vlucht via Praia. Prijs geverifieerd (2026-07), klopt. Verplichte online EASE-registratie ≥5 dagen vooraf plus ~€30 luchthavenveiligheidsheffing.',
-      transport_to_next: 'Einde van deze route — binnenlandse vlucht Fogo-Praia, dan terugvlucht naar Amsterdam.',
+      notes: "Entry: direct TUI fly flight Amsterdam-São Vicente/Mindelo (±7h10, Monday/Thursday, also Sunday in summer; from ±€280-360 return; best period August-October price-wise, December-May weather-wise). Price indication from 2026-08 web research, a snapshot. Deliberately different islands from an earlier visit (not Sal again) — Santo Antão for the dramatic hiking valleys, São Vicente for Mindelo's music culture, Fogo for the volcano climb and vineyards on volcanic soil. Between islands by ferry or Binter Cabo Verde flight via Praia. Price verified (2026-07), holds up. Mandatory online EASE registration ≥5 days in advance plus ~€30 airport security fee.",
+      transport_to_next: 'End of this route — domestic flight Fogo-Praia, then return flight to Amsterdam.',
     },
   ], {
     best_starting_month: 'December',
-    travel_style: 'Veerboot/Binter Cabo Verde-vlucht tussen de eilanden, wandelen op Santo Antão en Fogo.',
-    climate_summary: 'December-mei is het Kaapverdische droge seizoen — beste weer voor de wandelvalleien van Santo Antão en de vulkaanbeklimming op Fogo.',
-    description: 'De wandelvalleien van Santo Antão, de muziekcultuur van Mindelo en de vulkaan van Fogo.',
-    notes: 'Losgesplitst van West & Central Africa Expedition 🌍 (via West-Afrika Overland 🥁, waar dit al als eigen "Medium/Sub"-kandidaat genoemd stond) als onderdeel van de zesde batch losse landen (2026-08). Land, dagen en budget zijn ongewijzigd overgenomen. West & Central Africa Expedition 🌍 en West-Afrika Overland 🥁 zelf blijven ongewijzigd bestaan.',
+    travel_style: 'Ferry/Binter Cabo Verde flight between the islands, hiking on Santo Antão and Fogo.',
+    climate_summary: "December-May is the Cape Verdean dry season — best weather for Santo Antão's hiking valleys and the Fogo volcano climb.",
+    description: 'The hiking valleys of Santo Antão, the music culture of Mindelo and the volcano of Fogo.',
+    notes: 'Split off from West & Central Africa Expedition 🌍 (via West Africa Overland 🥁, where this was already named as its own "Medium/Sub" candidate) as part of the sixth batch of standalone countries (2026-08). Country, days and budget are carried over unchanged. West & Central Africa Expedition 🌍 and West Africa Overland 🥁 themselves remain unchanged.',
   });
 }
 
