@@ -3936,50 +3936,50 @@ function rbBuildWestAfricaOverlandRoute() {
 }
 
 function rbBuildCentralAfricaIslandsRoute() {
-  return rbBuildSeedRoute('Centraal-Afrika & Eilanden 🦛', [
+  return rbBuildSeedRoute('Central Africa & Islands 🦛', [
     {
-      name: 'Centraal-Afrika & Eilanden',
-      season: 'Januari-februari',
+      name: 'Central Africa & Islands',
+      season: 'January-February',
       budget: 1888,
-      note: "Kameroens minst natte periode (november-februari) en Gabons korte droge seizoen (december-februari) vallen hier samen; São Tomé is de uitzondering (regenseizoen).",
+      note: "Cameroon's least wet period (November-February) and Gabon's short dry season (December-February) coincide here; São Tomé is the exception (rainy season).",
       countries: [
         {
           code: 'CM', name: 'Cameroon', days: 8, budget: 380, lat: 4.0511, lng: 9.7679,
           destinations: [
             { name: 'Douala', lat: 4.0511, lng: 9.7679 },
             { name: 'Yaoundé', lat: 3.8480, lng: 11.5021 },
-            { name: 'Kribi (Chutes de la Lobé, zwarte stranden)', lat: 2.9333, lng: 9.9167 },
+            { name: 'Kribi (Chutes de la Lobé, black beaches)', lat: 2.9333, lng: 9.9167 },
           ],
-          notes: 'Instap: vlucht Amsterdam-Douala, via Parijs of Brussel (geen rechtstreekse verbinding vanuit Nederland, ±9-11 uur totaal, vanaf ±€700-1.150 retour, beste periode januari-februari). Prijsindicatie webonderzoek 2026-08, momentopname. Mount Cameroon en Limbe (Zuidwest-regio) bewust vermeden vanwege de sinds 2016 actieve "Anglophone Crisis" — in plaats daarvan Douala, Kribi en Yaoundé in de stabielere Franstalige regio\'s. Bevestigd (2026-07): conflict nog steeds actief. Verplicht e-visa vooraf (~€150-230), aparte kostenpost. Routelogica-fix (2026-08): volgorde omgedraaid (Douala→Yaoundé→Kribi) zodat de terugrit naar Douala vanaf Kribi (≈175 km) korter is dan vanaf Yaoundé (≈240 km) — nu ook expliciet benoemd i.p.v. verzwegen. Zie West & Central Africa Expedition 🌍\'s eigen notities voor de volledige onderbouwing.',
-          transport_to_next: 'Terug naar Douala (≈175 km vanaf Kribi, ≈2,5-3 uur), dan vlucht Douala-São Tomé (regionale verbinding).',
+          notes: 'Entry: flight Amsterdam-Douala, via Paris or Brussels (no direct connection from the Netherlands, ±9-11 hours total, from ±€700-1,150 return, best period January-February). Price indication from 2026-08 web research, a snapshot. Mount Cameroon and Limbe (Southwest Region) deliberately avoided due to the "Anglophone Crisis" active since 2016 — instead Douala, Kribi and Yaoundé in the more stable Francophone regions. Confirmed (2026-07): conflict still active. Mandatory e-visa in advance (~€150-230), a separate cost item. Route-logic fix (2026-08): order reversed (Douala→Yaoundé→Kribi) so the return trip to Douala from Kribi (≈175 km) is shorter than from Yaoundé (≈240 km) — now also explicitly named instead of hidden. See West & Central Africa Expedition 🌍\'s own notes for the full reasoning.',
+          transport_to_next: 'Back to Douala (≈175 km from Kribi, ≈2.5-3 hours), then flight Douala-São Tomé (regional connection).',
         },
         {
           code: 'ST', name: 'São Tomé and Príncipe', days: 9, budget: 653, lat: 0.3365, lng: 6.7273,
           destinations: [
-            { name: 'São Tomé (roças/plantages, regenwoud)', lat: 0.3365, lng: 6.7273 },
-            { name: 'Príncipe (afgelegen, minder bezocht)', lat: 1.6167, lng: 7.4167 },
+            { name: 'São Tomé (roças/plantations, rainforest)', lat: 0.3365, lng: 6.7273 },
+            { name: 'Príncipe (remote, less visited)', lat: 1.6167, lng: 7.4167 },
           ],
-          notes: "Portugese koloniale plantagegeschiedenis op een klein, rustig tropisch eiland. Valt in het regenseizoen (oktober-mei) bij deze route — vooral middagbuien. Prijs geverifieerd (2026-07), klopt. Presidentsverkiezing 19 juli 2026 — check lokaal nieuws vlak voor vertrek.",
-          transport_to_next: 'Vlucht São Tomé-Libreville (regionale verbinding).',
+          notes: "Portuguese colonial plantation history on a small, calm tropical island. Falls within the rainy season (October-May) on this route — mainly afternoon showers. Price verified (2026-07), holds up. Presidential election July 19, 2026 — check local news shortly before departure.",
+          transport_to_next: 'Flight São Tomé-Libreville (regional connection).',
         },
         {
           code: 'GA', name: 'Gabon', days: 9, budget: 855, lat: -1.95, lng: 9.7,
           destinations: [
-            { name: 'Loango National Park (surfende nijlpaarden, bosolifanten op het strand)', lat: -2.3667, lng: 9.5667 },
+            { name: 'Loango National Park (surfing hippos, forest elephants on the beach)', lat: -2.3667, lng: 9.5667 },
             { name: 'Libreville', lat: 0.4162, lng: 9.4673 },
-            { name: 'Pongara National Park (mangroves/regenwoud, ≈45 min boot vanaf Libreville)', lat: 0.3833, lng: 9.3500 },
+            { name: 'Pongara National Park (mangroves/rainforest, ≈45 min boat from Libreville)', lat: 0.3833, lng: 9.3500 },
           ],
-          notes: "Een van de weinige plekken ter wereld waar je olifanten en nijlpaarden op het strand ziet. ⚠️ Prijscheck (2026-07): het krapste/riskantste budget van de route — Loango-logistiek kan oplopen tot $100-300+/dag. Routelogica-fix (2026-08): 'regenwoud' was een naamloze bestemming — ingevuld als Pongara National Park (vlak bij Libreville, geen backtrack-risico). Zie West & Central Africa Expedition 🌍's eigen notities voor de volledige onderbouwing.",
-          transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Libreville naar Nederland (meestal met overstap).',
+          notes: "One of the few places in the world where you see elephants and hippos on the beach. ⚠️ Price check (2026-07): the tightest/riskiest budget of the route — Loango logistics can run up to $100-300+/day. Route-logic fix (2026-08): 'rainforest' was an unnamed destination — filled in as Pongara National Park (close to Libreville, no backtrack risk). See West & Central Africa Expedition 🌍's own notes for the full reasoning.",
+          transport_to_next: 'End of the expedition — return flight from Libreville to the Netherlands (usually with a layover).',
         },
       ],
     },
   ], {
-    travel_style: 'Backpacker — vluchten tussen Kameroen, São Tomé en Gabon (geen overland-alternatief).',
-    best_starting_month: 'Januari',
-    description: 'Centraal-Afrikaans regenwoud en wildlife: Kameroen, het eilandenrijk São Tomé & Príncipe en Gabon.',
-    climate_summary: "Januari-februari laat Kameroens minst natte periode en Gabons korte droge seizoen samenvallen; São Tomé valt dan in zijn regenseizoen (vooral middagbuien, geen aanhoudende moesson).",
-    notes: "Losgesplitst van West & Central Africa Expedition 🌍 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen en budgetten zijn ongewijzigd overgenomen (incl. de waarschuwing over Kameroens Zuidwest-regio en Gabons krappe Loango-budget). Klein maar uniek: dit alleen doen als er tijd/budget is voor Centraal-Afrikaans regenwoud specifiek, los van de West-Afrikaanse geschiedenis-route ervoor. Vervolg op West-Afrika Overland 🥁. West & Central Africa Expedition 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): Kameroen's volgorde omgedraaid (kortere terugrit naar Douala) en Gabons naamloze 'regenwoud'-bestemming ingevuld als Pongara National Park. Zie West & Central Africa Expedition 🌍's eigen notities voor de volledige onderbouwing.",
+    travel_style: 'Backpacker — flights between Cameroon, São Tomé and Gabon (no overland alternative).',
+    best_starting_month: 'January',
+    description: 'Central African rainforest and wildlife: Cameroon, the island nation São Tomé & Príncipe and Gabon.',
+    climate_summary: "January-February makes Cameroon's least wet period and Gabon's short dry season coincide; São Tomé then falls within its rainy season (mainly afternoon showers, no sustained monsoon).",
+    notes: "Split off from West & Central Africa Expedition 🌍 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days and budgets are carried over unchanged (incl. the warning about Cameroon's Southwest Region and Gabon's tight Loango budget). Small but unique: only do this if there's time/budget for Central African rainforest specifically, separate from the West African history route before it. Continuation of West Africa Overland 🥁. West & Central Africa Expedition 🌍 itself remains unchanged as a separate, full expedition.\n\nRoute-logic revision (2026-08): Cameroon's order reversed (shorter return trip to Douala) and Gabon's unnamed 'rainforest' destination filled in as Pongara National Park. See West & Central Africa Expedition 🌍's own notes for the full reasoning.",
   });
 }
 
