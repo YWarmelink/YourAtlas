@@ -275,18 +275,22 @@ the source alone does nothing for an already-loaded browser — every batch need
 `rbMigrateXEnglish()` function behind a fresh flag, following whichever pattern (wholesale-replace vs.
 field-patch) that route's own prior migrations already used.
 
-**Status — 9 of 13 batches done.** All 5 dict-based families (#1-6, translated via the shared
-`RB_EXPEDITION_CONTENT` dict cascade) are done, plus two hand-authored families (#7, Mediterranean
-Civilizations; #10, Caribbean & Amazon) and the pilot batch (#8, Central European Grand Roadtrip —
-chosen for having zero splitroutes, the cleanest possible first test). Token costs are in the table
-below: the four pure dict-based families landed in a tight 195K-230K token band regardless of
-country/splitroute count; batches with reused standalone consumers cost noticeably more (batch 6:
-~280K for 8 standalones, batch 7: ~330K for 15) since each standalone needs its own wrapper-level
-translation even without a rename; hand-authored families cost similarly (batch 8: ~315K for 18
-routes) since there's no dict-cascade discount — every route needs independent translation. Batch 10
-(Caribbean & Amazon) came out smaller (~200K for 10 routes) than Mediterranean's 18-route batch 7,
-consistent with most of its standalones being short 1-2-country routes rather than Mediterranean's
-larger multi-destination legs.
+**Status — 10 of 13 batches done.** All 5 dict-based families (#1-6, translated via the shared
+`RB_EXPEDITION_CONTENT` dict cascade) are done, plus three hand-authored families (#7, Mediterranean
+Civilizations; #9, British Isles & Celtic Coast; #10, Caribbean & Amazon) and the pilot batch (#8,
+Central European Grand Roadtrip — chosen for having zero splitroutes, the cleanest possible first
+test). Token costs are in the table below: the four pure dict-based families landed in a tight
+195K-230K token band regardless of country/splitroute count; batches with reused standalone
+consumers cost noticeably more (batch 6: ~280K for 8 standalones, batch 7: ~330K for 15) since each
+standalone needs its own wrapper-level translation even without a rename; hand-authored families
+without standalones cost similarly per-route (batch 8: ~315K for 18 routes) since there's no
+dict-cascade discount — every route needs independent translation. Batch 10 (Caribbean & Amazon)
+came out smaller (~200K for 10 routes) than Mediterranean's 18-route batch 7, consistent with most
+of its standalones being short 1-2-country routes rather than Mediterranean's larger
+multi-destination legs. Batch 9 (British Isles & Celtic Coast) came out smaller still (~170K for
+just 5 routes) — the smallest hand-authored batch so far, and the first hand-authored family this
+project where the table's original splitroute count ("4") turned out to be exactly right, with zero
+reused standalones to discover.
 Recalibrated estimate for all 13 batches: **~2.5-3.5M tokens total** (well above the original
 400-600K blind guess). Full per-batch detail — specific renames, and the migration-collision fixes
 found in every dict-based batch (5 of 5, 100% hit rate) — is in [`CHANGELOG.md`](CHANGELOG.md)'s
@@ -302,7 +306,7 @@ found in every dict-based batch (5 of 5, 100% hit rate) — is in [`CHANGELOG.md
 | 6 | Africa Grand Tour + reused standalones | dict-based | 4 + 15 | **done** | **~330,000** |
 | 7 | Mediterranean Civilizations + standalones | hand-authored | 6 + 11 | **done** | **~315,000** |
 | 8 | **Central European Grand Roadtrip** | hand-authored | 0 | **done (pilot)** | **138,985** |
-| 9 | British Isles & Celtic Coast | hand-authored | 4 | not started | — |
+| 9 | British Isles & Celtic Coast | hand-authored | 4 | **done** | **~170,000** |
 | 10 | Caribbean & Amazon + standalones | hand-authored | 2 + 7 | **done** | **~200,000** |
 | 11 | West & Central Africa | hand-authored | 2 | not started | — |
 | 12 | Oceania + standalones | hand-authored | 4 + 7 | not started | — |
@@ -328,15 +332,17 @@ the init call sequence (in `routeBuilder.js`), run
 catch syntax errors before committing, commit locally (ask before pushing), report the real token
 cost, then ask before starting the next batch.
 
-**Resume point (updated after every batch — read this first when picking Phase 1 back up)**: 9 of 13
-done — **all 5 dict-based families complete, plus two hand-authored families (Mediterranean
-Civilizations, #7; Caribbean & Amazon, #10)**. Batches have been picked out of table order each time
-(pilot was #8, then #1→#2→#3→#4→#5→#6→#7→#10) — don't assume sequential order, just ask which family
-next. Only 4 hand-authored families are left (#9, #11-13 — no dict-cascade discount, but individually
-smaller scope each). Caribbean & Amazon (#10) turned out to carry the reused-standalones wrinkle too
-(7 standalones, not documented in the table's original "2 splitroutes" estimate — see the note under
-the table) — don't assume the remaining families (#9, #11-13) are free of it either without actually
-checking for standalone consumers split off from them. No blocker either way.
+**Resume point (updated after every batch — read this first when picking Phase 1 back up)**: 10 of 13
+done — **all 5 dict-based families complete, plus three hand-authored families (Mediterranean
+Civilizations, #7; British Isles & Celtic Coast, #9; Caribbean & Amazon, #10)**. Batches have been
+picked out of table order each time (pilot was #8, then #1→#2→#3→#4→#5→#6→#7→#10→#9) — don't assume
+sequential order, just ask which family next. Only 3 hand-authored families are left (#11-13 — no
+dict-cascade discount, but individually smaller scope each). Caribbean & Amazon (#10) turned out to
+carry the reused-standalones wrinkle (7 standalones, not documented in the table's original "2
+splitroutes" estimate — see the note under the table), but British Isles (#9) turned out to be the
+first hand-authored family with none of that wrinkle — its table estimate of "4" splitroutes was
+exactly right, confirmed via recon before translating. Don't assume the remaining families (#11-13)
+are free of the standalones wrinkle either without actually checking. No blocker either way.
 
 ### Phase 2 — convert `EUROPA_TRIP_IDEAS.md`'s 319 tagged items into real `rbBuildXRoute()` code
 
