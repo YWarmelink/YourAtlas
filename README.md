@@ -275,25 +275,29 @@ the source alone does nothing for an already-loaded browser — every batch need
 `rbMigrateXEnglish()` function behind a fresh flag, following whichever pattern (wholesale-replace vs.
 field-patch) that route's own prior migrations already used.
 
-**Status — 11 of 13 batches done.** All 5 dict-based families (#1-6, translated via the shared
-`RB_EXPEDITION_CONTENT` dict cascade) are done, plus four hand-authored families (#7, Mediterranean
+**Status — 12 of 13 batches done.** All 5 dict-based families (#1-6, translated via the shared
+`RB_EXPEDITION_CONTENT` dict cascade) are done, plus five hand-authored families (#7, Mediterranean
 Civilizations; #9, British Isles & Celtic Coast; #10, Caribbean & Amazon; #11, West & Central
-Africa) and the pilot batch (#8, Central European Grand Roadtrip — chosen for having zero
-splitroutes, the cleanest possible first test). Token costs are in the table below: the four pure
-dict-based families landed in a tight 195K-230K token band regardless of country/splitroute count;
-batches with reused standalone consumers cost noticeably more (batch 6: ~280K for 8 standalones,
-batch 7: ~330K for 15) since each standalone needs its own wrapper-level translation even without a
-rename; hand-authored families without standalones cost similarly per-route (batch 8: ~315K for 18
-routes) since there's no dict-cascade discount — every route needs independent translation. Batch 10
-(Caribbean & Amazon) came out smaller (~200K for 10 routes) than Mediterranean's 18-route batch 7,
-consistent with most of its standalones being short 1-2-country routes rather than Mediterranean's
-larger multi-destination legs. Batch 9 (British Isles & Celtic Coast) came out smaller still (~170K
-for just 5 routes) — the smallest hand-authored batch so far, and the first hand-authored family
-this project where the table's original splitroute count ("4") turned out to be exactly right, with
-zero reused standalones to discover. Batch 11 (West & Central Africa) landed at ~200K for 8 routes
-(main + 2 renamed splitroutes + 5 reused standalones) — in the same band as Caribbean & Amazon's
-batch 10, consistent with a similar route count and a mix of short 1-2-country standalone legs.
-Recalibrated estimate for all 13 batches: **~2.5-3.5M tokens total** (well above the original
+Africa; #13, North America Grand Traverse) and the pilot batch (#8, Central European Grand
+Roadtrip — chosen for having zero splitroutes, the cleanest possible first test). Token costs are
+in the table below: the four pure dict-based families landed in a tight 195K-230K token band
+regardless of country/splitroute count; batches with reused standalone consumers cost noticeably
+more (batch 6: ~280K for 8 standalones, batch 7: ~330K for 15) since each standalone needs its own
+wrapper-level translation even without a rename; hand-authored families without standalones cost
+similarly per-route (batch 8: ~315K for 18 routes) since there's no dict-cascade discount — every
+route needs independent translation. Batch 10 (Caribbean & Amazon) came out smaller (~200K for 10
+routes) than Mediterranean's 18-route batch 7, consistent with most of its standalones being short
+1-2-country routes rather than Mediterranean's larger multi-destination legs. Batch 9 (British
+Isles & Celtic Coast) came out smaller still (~170K for just 5 routes) — the smallest hand-authored
+batch so far, and the first hand-authored family this project where the table's original
+splitroute count ("4") turned out to be exactly right, with zero reused standalones to discover.
+Batch 11 (West & Central Africa) landed at ~200K for 8 routes (main + 2 renamed splitroutes + 5
+reused standalones) — in the same band as Caribbean & Amazon's batch 10, consistent with a similar
+route count and a mix of short 1-2-country standalone legs. Batch 12 (North America Grand
+Traverse) came out at ~190K for only 6 routes (main + 3 renamed splitroutes + 2 standalones) — the
+smallest route count of any hand-authored batch, but comparable per-route cost to batch 9 once the
+extra migration-collision investigation for the Alaska extension (see below the table) is factored
+in. Recalibrated estimate for all 13 batches: **~2.5-3.5M tokens total** (well above the original
 400-600K blind guess). Full per-batch detail — specific renames, and the migration-collision fixes
 found in every dict-based batch (5 of 5, 100% hit rate) — is in [`CHANGELOG.md`](CHANGELOG.md)'s
 "Recently fixed" section.
@@ -312,7 +316,7 @@ found in every dict-based batch (5 of 5, 100% hit rate) — is in [`CHANGELOG.md
 | 10 | Caribbean & Amazon + standalones | hand-authored | 2 + 7 | **done** | **~200,000** |
 | 11 | West & Central Africa + standalones | hand-authored | 2 + 5 | **done** | **~200,000** |
 | 12 | Oceania + standalones | hand-authored | 4 + 7 | not started | — |
-| 13 | North America + standalones | hand-authored | 3 + 6 | not started | — |
+| 13 | North America + standalones | hand-authored | 3 + 2 | **done** | **~190,000** |
 
 Batch 10's "2 + 7" splitroute count corrects the row's original estimate of just "2 splitroutes" —
 same as Pan-American's and Africa's row turning out to have more reused standalone consumers than
@@ -337,6 +341,34 @@ splitroutes' old Dutch names, the same shape already confirmed harmless without 
 Mediterranean's equivalent migration (as opposed to Africa Grand Tour's field-patch + note-append-
 guard version, which did need widening) — verified by reading it rather than assumed.
 
+Batch 13's (North America Grand Traverse) "3 + 2" standalone count **corrects** the row's original
+estimate of "+6" — a real correction, not just filling in an unknown. The pre-batch recon confirmed
+only 2 standalones split off from US West Coast Roadtrip 🌉 (California 🌲, Pacific Northwest 🦫);
+the other four countries one might expect (US Northeast, US Southwest, Hawaii, Florida) are
+explicitly **independent** routes, deliberately never merged into or split from North America Grand
+Traverse 🌎 (Youri's own explicit call, documented in a code comment near `rbSeedUSLooseTrips()` in
+`routeBuilderContent.js` — "GEEN grote samengevoegde uitbreiding van North America Grand Traverse").
+Renames: Oost-Canada 🍁 → **Eastern Canada 🍁**, West-Canada: Rockies & Vancouver 🏔️ → **Western
+Canada: Rockies & Vancouver 🏔️**, VS Westkust Roadtrip 🌉 → **US West Coast Roadtrip 🌉**, Californië
+🌲 → **California 🌲** (both standalones' names were already English otherwise). Migration-collision
+check for this batch found a genuinely new kind of collision, distinct from every prior batch's
+"old-Dutch-name-lookup simply stops matching after rename, which is harmless" pattern: Western
+Canada: Rockies & Vancouver 🏔️ carries an optional Alaska extension (a region + 3 US-coded blocks)
+added on top of the seeded route object by a *separate* migration, `rbMigrateAlaskaAddition()` —
+not part of this route's own build function at all. That migration (a) targeted the route by its
+old Dutch name only, which would have silently stopped matching (and stopped adding Alaska for any
+new browser) once the route started seeding with its English name, and (b) had its own Dutch
+content that needed translating regardless. Fixed by widening its name lookup to match both names
+and translating its content, and by factoring the Alaska region/blocks into a shared
+`rbApplyAlaskaExtension(route)` helper that the new family-English migration also calls — after its
+wholesale-replace of Western Canada: Rockies & Vancouver 🏔️ — to re-apply a freshly-translated
+Alaska extension for anyone who already had one, instead of silently dropping it. Separately, this
+batch's own `rbMigrateAlaskaAddition()` vs. `rbMigrateNorthAmericaRouteLogicOverhaul()` call-order
+was found to contradict its own docstring (the docstring says Alaska-addition is placed *after* the
+route-logic overhaul so a fresh browser's wholesale-replace can't run over the Alaska addition, but
+the actual `routeBuilder.js` call order has it *before*) — a pre-existing latent bug, not introduced
+by this batch and out of scope for a translation pass, left as-is and flagged here for a future fix.
+
 **Workflow per batch**: delegate to a `general-purpose` subagent — read `CLAUDE.md`'s migration rule
 first, find the family's build function(s), translate every Dutch text field (never touch
 days/budget/lat/lng/country codes), grep the whole file for any other reference to the old name,
@@ -348,17 +380,15 @@ the init call sequence (in `routeBuilder.js`), run
 catch syntax errors before committing, commit locally (ask before pushing), report the real token
 cost, then ask before starting the next batch.
 
-**Resume point (updated after every batch — read this first when picking Phase 1 back up)**: 10 of 13
-done — **all 5 dict-based families complete, plus three hand-authored families (Mediterranean
-Civilizations, #7; British Isles & Celtic Coast, #9; Caribbean & Amazon, #10)**. Batches have been
-picked out of table order each time (pilot was #8, then #1→#2→#3→#4→#5→#6→#7→#10→#9) — don't assume
-sequential order, just ask which family next. Only 3 hand-authored families are left (#11-13 — no
-dict-cascade discount, but individually smaller scope each). Caribbean & Amazon (#10) turned out to
-carry the reused-standalones wrinkle (7 standalones, not documented in the table's original "2
-splitroutes" estimate — see the note under the table), but British Isles (#9) turned out to be the
-first hand-authored family with none of that wrinkle — its table estimate of "4" splitroutes was
-exactly right, confirmed via recon before translating. Don't assume the remaining families (#11-13)
-are free of the standalones wrinkle either without actually checking. No blocker either way.
+**Resume point (updated after every batch — read this first when picking Phase 1 back up)**: 12 of 13
+done — **all 5 dict-based families complete, plus five hand-authored families (Mediterranean
+Civilizations, #7; British Isles & Celtic Coast, #9; Caribbean & Amazon, #10; West & Central
+Africa, #11; North America Grand Traverse, #13)**. Batches have been picked out of table order each
+time (pilot was #8, then #1→#2→#3→#4→#5→#6→#7→#10→#9→#11→#13) — don't assume sequential order, just
+ask which family next. Only **1 hand-authored family is left (#12, Oceania Grand Expedition)** — no
+dict-cascade discount, but the table's stated "4 + 7" splitroute/standalone count for it hasn't been
+recon-verified yet, so check it (the same way #10's "+7" and #13's "+6→+2" both turned out to differ
+from the table's original guess) before assuming it's accurate. No blocker either way.
 
 ### Phase 2 — convert `EUROPA_TRIP_IDEAS.md`'s 319 tagged items into real `rbBuildXRoute()` code
 
