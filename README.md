@@ -52,7 +52,7 @@ trips that span months, not weeks. Lives at `route-builder.html`.
   that draws the route as an actual ordered path — a dashed line connecting one anchor
   coordinate per leg, with a numbered, color-coded marker per stop, starting and ending
   at a fixed Utrecht/Netherlands home marker. See `rbRenderRouteLine()` in
-  `js/pages/routeBuilder.js`. A third mode ("🔍 Gedetailleerd") draws through every
+  `js/pages/routeBuilderUI.js`. A third mode ("🔍 Gedetailleerd") draws through every
   per-destination coordinate instead of one anchor per leg — available for any route
   once its destinations carry `lat`/`lng`. All 13 predefined expeditions now have this:
   Eurasia Grand Tour 🌏, Patagonia & Antarctica Expedition 🧊, India & Himalaya
@@ -217,8 +217,8 @@ Builder's list view automatically.
 (regions covered, WebSearch findings, specific safety/regulatory notes) is in
 [`CHANGELOG.md`](CHANGELOG.md)'s "Recently fixed" section.
 
-Not yet done: converting each worked-out item into a real `rbBuildXRoute()` in `routeBuilder.js` —
-tracked as Phase 2 of the Route Builder workstream below.
+Not yet done: converting each worked-out item into a real `rbBuildXRoute()` in
+`routeBuilderContent.js` — tracked as Phase 2 of the Route Builder workstream below.
 
 ## Trip Taxonomy (Fase 2 done, Phase 3 UI not started)
 
@@ -309,9 +309,10 @@ days/budget/lat/lng/country codes), grep the whole file for any other reference 
 **explicitly check every migration touching this route/its splitroutes for the Dutch-substring
 guard-collision issue (100% hit rate across every dict-based batch so far — see `CHANGELOG.md` for
 the history), treat it as mandatory, not optional**, write the new migration + flag + wire it into
-the init call sequence, run
-`node --check js/pages/routeBuilder.js` to catch syntax errors before committing, commit locally (ask
-before pushing), report the real token cost, then ask before starting the next batch.
+the init call sequence (in `routeBuilder.js`), run
+`node --check` on `routeBuilderContent.js` (and `routeBuilder.js` if the call sequence changed) to
+catch syntax errors before committing, commit locally (ask before pushing), report the real token
+cost, then ask before starting the next batch.
 
 **Resume point (updated after every batch — read this first when picking Phase 1 back up)**: 8 of 13
 done — **all 5 dict-based families complete, plus the first hand-authored family (Mediterranean

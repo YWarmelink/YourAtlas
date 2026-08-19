@@ -31,7 +31,7 @@ grote inhoudelijke wijziging).
    hand-edits te overschrijven.
 
 Zie `CHANGELOG.md` ("Eurasia Grand Tour 🌏 routelogica-herziening (2026-08)") voor de volledige
-inhoudelijke uitkomst, en `js/pages/routeBuilder.js`'s `rbMigrateEurasiaRouteOverhaul()` /
+inhoudelijke uitkomst, en `js/pages/routeBuilderContent.js`'s `rbMigrateEurasiaRouteOverhaul()` /
 `rbApplyEurasiaOverhaulToRoute()` voor het code-patroon.
 
 ## De technische basis staat al klaar, projectbreed — geen nieuwe code nodig

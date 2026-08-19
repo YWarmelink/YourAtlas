@@ -8,6 +8,12 @@ Pick this back up by pasting this file's content into a Claude Code conversation
 this repo, or just say "let's finish the Route Builder sheet sync" and point Claude
 at this file.
 
+**Note (2026-08): `js/pages/routeBuilder.js` is now 4 files** (`routeBuilderCore.js`,
+`routeBuilderContent.js`, `routeBuilderUI.js`, `routeBuilder.js` — see `CLAUDE.md`'s
+"Route Builder architecture"). This plan predates that split — file references below
+may need mapping to the right one of the 4 (e.g. `rbLoad`/state merging → Core, the
+on-load merge sequence → `routeBuilder.js`'s orchestration block).
+
 ## Why localStorage isn't enough
 
 `localStorage` is tied to one browser + one device (and even to `file://` vs the live

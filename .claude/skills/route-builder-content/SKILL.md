@@ -1,6 +1,6 @@
 ---
 name: route-builder-content
-description: Use when building a new Expedition route, or updating/correcting an existing one's countries, budgets, seasons, or notes, in YourAtlas's Route Builder (route-builder.html / js/pages/routeBuilder.js).
+description: Use when building a new Expedition route, or updating/correcting an existing one's countries, budgets, seasons, or notes, in YourAtlas's Route Builder (route-builder.html / js/pages/routeBuilderContent.js).
 ---
 
 ## Before you start
@@ -14,7 +14,7 @@ the orchestration/migration-call-order lives in the small `routeBuilder.js`.
 ## Overview
 
 Route Builder's expeditions live as either:
-- `RB_EXPEDITION_CONTENT` (in `js/pages/routeBuilder.js`) — flat content object, used when no country repeats across legs
+- `RB_EXPEDITION_CONTENT` (in `js/pages/routeBuilderContent.js`) — flat content object, used when no country repeats across legs
 - a dedicated `rbBuildXRoute()` function — used once a country appears more than once across separate legs (e.g. Canada/US six times), a shape `RB_EXPEDITION_CONTENT` can't hold
 
 ## The one rule that matters: migrations
@@ -23,7 +23,7 @@ Every route seeds into `localStorage` once, gated by its own flag, on first load
 
 **Any change to an existing route — new/removed country, corrected day count, corrected budget, reordered legs, renamed route — needs both:**
 1. The source-of-truth edit (the content object or build function)
-2. A one-time `rbMigrateX()` function (see the existing ones in `routeBuilder.js` for the pattern) that applies the same change to already-seeded data
+2. A one-time `rbMigrateX()` function (see the existing ones in `routeBuilderContent.js` for the pattern), wired into the init call sequence in `routeBuilder.js`, that applies the same change to already-seeded data
 
 Write the migration even if you're not sure the route has seeded anywhere yet — assume it has. A migration that finds nothing to fix is a no-op; skipping one that was needed silently strands the fix in source only (this exact bug happened once — see the README's "critical migration fix" entry).
 

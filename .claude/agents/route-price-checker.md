@@ -20,7 +20,7 @@ Between Budget Backpacker and Comfort Backpacker — not the bare-minimum floor,
 
 ## Before reporting
 
-If existing route data already covers this country (check `js/pages/routeBuilder.js` and the README's per-route notes), compare against it — say clearly whether your findings **confirm** the existing number or **correct** it, and by how much.
+If existing route data already covers this country (check `js/pages/routeBuilderContent.js` and the README's per-route notes), compare against it — say clearly whether your findings **confirm** the existing number or **correct** it, and by how much.
 
 ## Report format
 

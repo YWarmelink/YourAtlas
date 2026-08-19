@@ -40,7 +40,7 @@ instead of nested in a `blocks` array.
   block's country would get copied onto each of its destination rows during a future
   graduation copy, there's no separate "block" row here).
 - `name`, `lat`, `lng`, `notes` — same fields as a Route Builder `destination` object
-  (`js/pages/routeBuilder.js`'s `rbBuildBlock`), same meaning.
+  (`js/pages/routeBuilderContent.js`'s `rbBuildBlock`), same meaning.
 
 ## What's done (code side, no Sheet needed)
 

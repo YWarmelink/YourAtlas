@@ -5,7 +5,7 @@ Oostenrijk+Zwitserland, Frankrijk, Italië, micro-staten & kleine eilanden, Iber
 Centraal/Oost-Europa, Oost-Mediterraan, Noord-Europa, Britse eilanden, Baltische staten,
 🏝️ Europese eilanden, en de combinatiesecties (Iberië-combo/Balkan-combo/Grote Europese
 combinaties). Nog niet gedaan: de stap om elk uitgewerkt item als `rbBuildXRoute()` in
-`routeBuilder.js` te zetten (zie de intro hierboven) — dat gebeurt als eigen, aparte vervolgstap. Youri's eigen lijst (2026-08) van realistische
+`routeBuilderContent.js` te zetten (zie de intro hierboven) — dat gebeurt als eigen, aparte vervolgstap. Youri's eigen lijst (2026-08) van realistische
 Europese trips — van lang weekend tot ~3 weken, allemaal "reëel en slim te maken" omdat ze binnen
 Europa blijven. Dit is bewust alleen duur + bestemming/route, geen route/budget/seizoen-detail —
 dat werken we samen per batch uit, zoals Route Builder's expedities dat ook kregen (zie de
@@ -16,8 +16,8 @@ per item).
 `ROADMAP.md`'s al eerder genomen "commitment, niet schaal"-besluit voor de Trips↔Route Builder-
 splitsing — zonder concreet boekingsvoornemen hoort iets in Route Builder. Ze landen automatisch
 onder de bestaande "Europa"-continentgroep in Route Builder's lijstweergave (`RB_CONTINENT_BY_CODE`
-in `js/pages/routeBuilder.js`). **Nog niet gedaan**: elk uitgewerkt item hierbeneden daadwerkelijk
-als `rbBuildXRoute()` in de code zetten — dat gebeurt als eigen stap, waarschijnlijk in één ronde
+in `js/pages/routeBuilderUI.js`). **Nog niet gedaan**: elk uitgewerkt item hierbeneden daadwerkelijk
+als `rbBuildXRoute()` in de code zetten (in `js/pages/routeBuilderContent.js`) — dat gebeurt als eigen stap, waarschijnlijk in één ronde
 zodra er meerdere batches klaarstaan, niet per losse trip.
 
 **Werkwijze:** één batch per keer, af laten vinken (☑) zodra een item is uitgewerkt. Zie
