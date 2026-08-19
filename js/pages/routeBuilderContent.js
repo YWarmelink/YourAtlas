@@ -9256,22 +9256,23 @@ function rbBuildFloridaRoute() {
  * DOMContentLoaded) zodat een verse browser niet per ongeluk de wholesale-replace van die eerdere
  * migratie over deze toevoeging heen laat lopen.
  */
-function rbMigrateAlaskaAddition() {
-  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_ALASKA_ADDITION)) return;
-  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_ALASKA_ADDITION, '1');
-
-  const route = rbRoutes.find(r => r.name === 'West-Canada: Rockies & Vancouver 🏔️');
-  if (!route) return;
-  if (route.blocks.some(b => b.country_code === 'US')) return; // already has Alaska somehow
-
+/**
+ * Shared Alaska-extension builder, factored out so both rbMigrateAlaskaAddition() (first-time
+ * addition) and rbMigrateNorthAmericaFamilyEnglish() (re-applied after that migration's
+ * wholesale-replace of Western Canada: Rockies & Vancouver 🏔️, so an already-added Alaska
+ * extension isn't silently lost — see that migration's own docstring) can produce the same,
+ * English-translated content. Idempotency guard (checking for an existing 'US' block) lives in
+ * each caller, not here.
+ */
+function rbApplyAlaskaExtension(route) {
   const vancouverBlock = route.blocks.find(b => (b.destinations || []).some(d => d.name === 'Stanley Park'));
   if (vancouverBlock) {
-    vancouverBlock.transport_to_next = 'Vlucht Vancouver-Anchorage (~3,5-4 uur) om verder te reizen naar Alaska — of, als je hier wilt stoppen, terugvlucht vanuit Vancouver naar Amsterdam (deze route werkt prima als kortere versie zonder Alaska).';
+    vancouverBlock.transport_to_next = 'Flight Vancouver-Anchorage (~3.5-4 hours) to continue on to Alaska — or, if you want to stop here, a return flight from Vancouver to Amsterdam (this route works fine as a shorter version without Alaska).';
   }
 
   const alaskaRegion = {
-    id: rbNewRegionId(), name: 'Alaska', season: 'Juni-Augustus', budget: 1600, collapsed: false,
-    notes: 'Vlucht Vancouver-Anchorage, dan overland/per trein verder. Optioneel — de route werkt ook prima als je bij Vancouver stopt.',
+    id: rbNewRegionId(), name: 'Alaska', season: 'June-August', budget: 1600, collapsed: false,
+    notes: 'Flight Vancouver-Anchorage, then continue overland/by train. Optional — the route also works fine if you stop at Vancouver.',
   };
   route.regions.push(alaskaRegion);
 
@@ -9282,36 +9283,46 @@ function rbMigrateAlaskaAddition() {
         { name: 'Downtown Anchorage', lat: 61.2181, lng: -149.9003 },
         { name: 'Earthquake Park', lat: 61.1953, lng: -149.9727 },
       ],
-      notes: 'Aankomst/logistiek — huurauto ophalen of aansluiten op de Alaska Railroad.',
-      transport_to_next: 'Alaska Railroad Denali Star (~8 uur, alleen half mei-half september) of auto via de Parks Highway naar Denali National Park.',
+      notes: 'Arrival/logistics — pick up rental car or connect to the Alaska Railroad.',
+      transport_to_next: 'Alaska Railroad Denali Star (~8 hours, only mid-May-mid-September) or car via the Parks Highway to Denali National Park.',
     }),
     rbBuildBlock('US', 'United States', {
       region_id: alaskaRegion.id, days: 4, budget: 640, lat: 63.1148, lng: -151.1926,
       destinations: [
-        { name: 'Denali-bezoekerscentrum', lat: 63.1717, lng: -150.9317 },
+        { name: 'Denali Visitor Center', lat: 63.1717, lng: -150.9317 },
         { name: 'Savage River', lat: 63.4478, lng: -149.7856 },
-        { name: 'Kantishna / Wonder Lake (shuttlebus)', lat: 63.4872, lng: -150.9067 },
+        { name: 'Kantishna / Wonder Lake (shuttle bus)', lat: 63.4872, lng: -150.9067 },
       ],
-      notes: 'Privéauto\'s mogen niet verder dan mijl 15 — een shuttle-/tourbus is verplicht voor het park-interieur, ruim vooraf boeken (alleen half mei-half september beschikbaar). Beren onderweg: spray binnen handbereik, in groepen wandelen, eten goed opbergen.',
-      transport_to_next: 'Auto of trein terug naar Anchorage (~4,5 uur), dan verder naar Seward (~2,5 uur) — of de seizoensgebonden Coastal Classic-trein rechtstreeks (~4 uur totaal).',
+      notes: "Private cars aren't allowed past mile 15 — a shuttle/tour bus is mandatory for the park interior, book well in advance (only available mid-May-mid-September). Bears along the way: bear spray within reach, hike in groups, store food properly.",
+      transport_to_next: 'Car or train back to Anchorage (~4.5 hours), then onward to Seward (~2.5 hours) — or the seasonal Coastal Classic train direct (~4 hours total).',
     }),
     rbBuildBlock('US', 'United States', {
       region_id: alaskaRegion.id, days: 4, budget: 640, lat: 60.1042, lng: -149.4422,
       destinations: [
-        { name: 'Kenai Fjords National Park (gletsjer- en wildlife-boottocht)', lat: 59.9229, lng: -149.6503 },
+        { name: 'Kenai Fjords National Park (glacier and wildlife boat tour)', lat: 59.9229, lng: -149.6503 },
         { name: 'Exit Glacier', lat: 60.1875, lng: -149.6294 },
       ],
-      notes: 'Gletsjerterrein alleen begeleid (reële scheurrisico\'s). Reisverzekering met expliciete evacuatiedekking is hier geen overdreven voorzorg — reddingen kunnen tienduizenden dollars kosten en vallen vaak buiten een standaardpolis.',
-      transport_to_next: 'Einde van deze route — auto/trein terug naar Anchorage (~2,5 uur), dan terugvlucht naar Amsterdam (via Seattle/Vancouver, geen directe verbinding vanuit Anchorage).',
+      notes: 'Glacier terrain only guided (real crevasse risks). Travel insurance with explicit evacuation coverage is not overkill here — rescues can cost tens of thousands of dollars and often fall outside a standard policy.',
+      transport_to_next: 'End of this route — car/train back to Anchorage (~2.5 hours), then return flight to Amsterdam (via Seattle/Vancouver, no direct connection from Anchorage).',
     }),
   );
 
-  route.description += ' Optioneel vervolg: Alaska (Anchorage, Denali National Park, Seward/Kenai Fjords).';
-  const note = 'Alaska toegevoegd (2026-08) na een audit die de hele regio miste in Route Builder — Youri\'s keuze om dit te combineren met Vancouver in plaats van een losse standalone route, omdat de vlucht Vancouver-Anchorage al de natuurlijke verbinding is. Onderzocht via een WebSearch-backed research-agent. Hard seizoensgebonden (half juni-half augustus) — de Denali-shuttlebussen, de Alaska Railroad en de Kenai Fjords-boottochten draaien allemaal alleen half mei-half september, wat toevallig al binnen deze route\'s bestaande juni-startvenster valt. Inside Passage/Juneau/Glacier Bay bewust niet meegenomen — geen enkele wegverbinding vanuit Anchorage (de Alaska Marine Highway-veerboot bedient Anchorage niet eens), alleen per vlucht of een aparte meerdaagse veerboot vanaf de Lower 48 — een eigen mini-expeditie, niet in te passen hier. Fairbanks (+2-3 dagen) bewust niet meegenomen — treinverbinding is er al, maar de belangrijkste trekker (aurora) is onzichtbaar door de witte nachten in de zomer. Nieuw totaal: 32 dagen (was 22), €5.875 grondkosten (was €4.275).';
-  if (route.notes && !route.notes.includes('Alaska toegevoegd (2026-08)')) {
+  route.description += ' Optional continuation: Alaska (Anchorage, Denali National Park, Seward/Kenai Fjords).';
+  const note = 'Alaska added (2026-08) after an audit that found the whole region missing from Route Builder — Youri\'s choice to combine this with Vancouver instead of building a new, partly overlapping standalone route with a third Vancouver entry, since the Vancouver-Anchorage flight is already the natural connection. Researched via a WebSearch-backed research agent. Strictly seasonal (mid-June-mid-August) — the Denali shuttle buses, the Alaska Railroad and the Kenai Fjords boat tours all only run mid-May-mid-September, which happens to already fall within this route\'s existing June starting window. Inside Passage/Juneau/Glacier Bay deliberately not included — no road connection at all from Anchorage (the Alaska Marine Highway ferry doesn\'t even serve Anchorage), only by flight or a separate multi-day ferry from the Lower 48 — its own mini-expedition, not something that fits in here. Fairbanks (+2-3 days) deliberately not included — a train connection already exists, but the main draw (aurora) is invisible due to the midnight sun in summer. New total: 32 days (was 22), €5,875 ground costs (was €4,275).';
+  if (route.notes && !route.notes.includes('Alaska added (2026-08)') && !route.notes.includes('Alaska toegevoegd (2026-08)')) {
     route.notes += '\n\n' + note;
   }
+}
 
+function rbMigrateAlaskaAddition() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_ALASKA_ADDITION)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_ALASKA_ADDITION, '1');
+
+  const route = rbRoutes.find(r => r.name === 'West-Canada: Rockies & Vancouver 🏔️' || r.name === 'Western Canada: Rockies & Vancouver 🏔️');
+  if (!route) return;
+  if (route.blocks.some(b => b.country_code === 'US')) return; // already has Alaska somehow
+
+  rbApplyAlaskaExtension(route);
   rbSave();
 }
 
