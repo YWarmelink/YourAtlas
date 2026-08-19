@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateReplaceKazakhstanTajikistanCombo();
   rbMigrateMediterraneanFamilyEnglish();
   rbMigrateCaribbeanAmazonFamilyEnglish();
+  rbMigrateBritishIslesFamilyEnglish();
   rbBindEvents();
 
   try {
