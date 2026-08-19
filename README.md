@@ -4,7 +4,7 @@
 
 A personal travel dashboard built with vanilla HTML, CSS and JavaScript. Part of the YourIntineryPlan ecosystem.
 
-> See [`CLAUDE.md`](CLAUDE.md) for architecture, file roles and known gotchas. See [`CHANGELOG.md`](CHANGELOG.md) for the full history of fixes, corrections and content builds.
+> See [`CLAUDE.md`](CLAUDE.md) for architecture, file roles, known gotchas, and the persistent development/model-selection rules Claude Code follows in this repo. See [`CHANGELOG.md`](CHANGELOG.md) for the full history of fixes, corrections and content builds.
 
 ## Pages
 
@@ -443,8 +443,8 @@ the source alone does nothing for an already-loaded browser — every batch need
 `rbMigrateXEnglish()` function behind a fresh flag, following whichever pattern (wholesale-replace vs.
 field-patch) that route's own prior migrations already used.
 
-**Status — 7 of 13 batches done. All 5 dict-based families are now done — this was the last and
-biggest one.** Pilot batch (Central European Grand Roadtrip, chosen
+**Status — 8 of 13 batches done. All 5 dict-based families are done, plus the first hand-authored
+family (Mediterranean Civilizations).** Pilot batch (Central European Grand Roadtrip, chosen
 specifically because it has zero splitroutes — cleanest possible first test) cost **138,985 tokens**
 for one 14-leg, no-splitroute route. That's well above the original 400-600K blind estimate for the
 whole job — recalibrated total based on this real data point: **~2.5-3.5M tokens for all 13
@@ -478,6 +478,50 @@ Malawi 💦) — all still needed their own wrapper-level translation regardless
 renaming (Southern Africa Safari Loop 🦁 ← Zuidelijk Afrika Safari-lus, African Islands 🏝️ ←
 Afrikaanse Eilanden, East Africa Safari Classic 🦒 ← Oost-Afrika Safari Classic, Horn of Africa &
 Egypt 🏺 ← Hoorn van Afrika & Egypte). The Grand Trip's own name was already English.
+
+Batch 8 (Mediterranean Civilizations Expedition, 13 countries + 6 splitroutes + **11 standalone
+consumers**, the biggest route count of any translation batch so far and this family's own last
+open item from the ROUTE_LOGIC_REVIEW.md/route-builder-translation playbooks — 18 routes total) cost
+**~267,000 tokens** (session token-budget counter dropped from roughly 14,970,000 to roughly
+14,700,000 across this batch, a directly measured figure though the counter isn't a pure task-cost
+meter). This is the first *hand-authored* family translated (per `CLAUDE.md`'s architecture note,
+Italy/France/Greece each repeat across legs so this route's content lives inline in
+`rbBuildXRoute()` functions rather than a shared `RB_EXPEDITION_CONTENT` dict) — no dict cascade, so
+every one of the 18 routes needed independent translation, though content was kept consistent across
+the duplicated Italy/Greece/Egypt/Oman/Bahrein text shared between the Grand Trip and its splitroutes.
+Of the 11 standalones, 8 needed a rename (Morocco 🕌 ← Marokko, Sicily 🌋 ← Sicilië, Jordan 🏺 ←
+Jordanië, Spain 💃 ← Spanje, Greece & Crete 🫒 ← Griekenland & Kreta, Rome & Surroundings 🍕 ← Rome &
+omgeving, Sardinia 🗿 ← Sardinië, Gulf States Trio 🛢️ ← Golfstaten-trio) and 3 were already
+English/near-English country names needing only wrapper-text translation (Cyprus 🕊️, Malta ⚔️,
+Tunisia 🧿 ← Tunesië — only Tunesië actually needed the rename). All 6 splitroutes needed renaming
+(Iberia & Morocco/Tunisia 🏰 ← Iberia & Marokko/Tunesië, Malta & Italy 🏛️ ← Malta & Italië, Corsica &
+Southern France ⛵ ← Corsica & Zuid-Frankrijk, Greece & Cyprus 🏺 ← Griekenland & Cyprus, Anatolia 🕌 ←
+Anatolië, Egypt & Arabian Peninsula 🐪 ← Egypte & Arabisch Schiereiland). The Grand Trip's own name
+was already English.
+
+**Batch 8 broke the collision-fix streak — the first batch where no existing migration needed
+widening, because this family's migrations use a structurally different mechanism.** Every prior
+batch's collision fix widened a Dutch-substring *text* guard (an already-applied-note marker) inside
+a field-patch migration. This family's migrations — `rbMigratePriceVerificationRound1`,
+`rbMigrateRouteLineCoordsRound2`, `rbMigrateMediterraneanRouteLogicOverhaul`,
+`rbMigrateBahrainIntoMediterraneanExpedition`, `rbMigrateSplitRouteEntryNotes` — are pure *name-based
+wholesale-replace* lookups instead (`rbRoutes.findIndex(r => r.name === name)`, no.-op if not found),
+and all of them run *before* this translation migration in `rbInit()`'s call order. On an
+already-seeded browser they still find the (at that point still-Dutch) names correctly, since this
+translation migration is the one doing the renaming and it runs last; on a brand-new browser the seed
+functions already produce final English names directly, so those earlier name lookups simply find
+nothing and no-op harmlessly instead of silently stranding a fix. `rbMigrateSplitRouteEntryNotes`'s
+`prependInstap()` guard already recognized both `'Instap:'`/`'Entry:'` prefixes generically from an
+earlier batch, and every entry note in this family is baked directly into the translated source now,
+so it's a clean no-op regardless of language. The one asterisk: `rbMigrateLonghaulBuffer`'s `'Jordanië
+🏺'` lookup (bumping Jordan's days 8→10) wasn't widened to the new name, but harmlessly — the correct
+day count is already baked into the translated source, so a fresh browser needs no bump and the
+lookup finding nothing is a true no-op, not a silent gap. Given this family's own translation
+migration is itself a wholesale-replace (`rbMigrateMediterraneanFamilyEnglish()`, following this
+route's own established pattern rather than the field-patch shape every dict-based batch used, since
+Italy/France/Greece repeating across legs makes country_code-based block matching impossible here),
+there was also no field-by-field diffing logic to write — just an 18-entry `[oldName, newName,
+buildFn]` lookup table, same idiom as `rbMigrateAfricaGrandTourFamilyEnglish`.
 
 **Batch 7 confirmed the same collision fix shape one more time, on the biggest scale yet**:
 `rbMigrateAfricaGrandTourRouteLogicOverhaul()`'s `routeNames` array was widened to `[oldName,
@@ -514,7 +558,7 @@ and route-name lookup array needed widening (for the two renamed splitroutes, Mi
 | 4 | Nordic Arctic | dict-based | 5 | **done** | **200,428** |
 | 5 | Pan-American Grand Tour + reused standalones | dict-based | 4 + 8 | **done** | **~280,000** |
 | 6 | Africa Grand Tour + reused standalones | dict-based | 4 + 15 | **done** | **~330,000** |
-| 7 | Mediterranean Civilizations + standalones | hand-authored | 6 + ~14 | not started | — |
+| 7 | Mediterranean Civilizations + standalones | hand-authored | 6 + 11 | **done** | **~267,000** |
 | 8 | **Central European Grand Roadtrip** | hand-authored | 0 | **done (pilot)** | **138,985** |
 | 9 | British Isles & Celtic Coast | hand-authored | 4 | not started | — |
 | 10 | Caribbean & Amazon | hand-authored | 2 | not started | — |
@@ -531,13 +575,13 @@ mandatory, not optional**, write the new migration + flag + wire it into the ini
 `node --check js/pages/routeBuilder.js` to catch syntax errors before committing, commit locally (ask
 before pushing), report the real token cost, then ask before starting the next batch.
 
-**Resume point (updated after every batch — read this first when picking Phase 1 back up)**: 7 of 13
-done — **all 5 dict-based families now complete** (the 4 pure ones plus Pan-American and Africa Grand
-Tour, both dict-based + standalones). Batches have been picked out of table order each time (pilot
-was #8, then #1→#2→#3→#4→#5→#6) — don't assume sequential order, just ask which family next. Only the
-7 hand-authored families are left (#7, #9-13 — no dict-cascade discount, but individually smaller
-scope each, and none of them carry the reused-standalones wrinkle since every splitroute in a
-hand-authored family duplicates its own full content already). No blocker either way.
+**Resume point (updated after every batch — read this first when picking Phase 1 back up)**: 8 of 13
+done — **all 5 dict-based families complete, plus the first hand-authored family (Mediterranean
+Civilizations, #7)**. Batches have been picked out of table order each time (pilot was #8, then
+#1→#2→#3→#4→#5→#6→#7) — don't assume sequential order, just ask which family next. Only 5
+hand-authored families are left (#9-13 — no dict-cascade discount, but individually smaller scope
+each, and none of them carry the reused-standalones wrinkle the way Mediterranean did since none of
+the remaining families have standalone consumers split off from them yet). No blocker either way.
 
 ### Phase 2 — convert `EUROPA_TRIP_IDEAS.md`'s 319 tagged items into real `rbBuildXRoute()` code
 
