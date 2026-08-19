@@ -3236,10 +3236,10 @@ function rbSeedNorthAmericaSplitExpeditions() {
 }
 
 function rbBuildEasternCanadaRoute() {
-  return rbBuildSeedRoute('Oost-Canada 🍁', [
+  return rbBuildSeedRoute('Eastern Canada 🍁', [
     {
       name: 'Atlantic Canada – Nova Scotia',
-      season: 'Juni',
+      season: 'June',
       budget: 900,
       countries: [{
         code: 'CA', name: 'Canada', days: 8, budget: 1200, lat: 44.6488, lng: -63.5752,
@@ -3249,35 +3249,35 @@ function rbBuildEasternCanadaRoute() {
           { name: 'Lunenburg', lat: 44.3767, lng: -64.3097 },
           { name: 'Cape Breton Island & Cabot Trail', lat: 46.2036, lng: -60.6136 },
         ],
-        transport_to_next: 'Vlucht Halifax-Quebec City (~2 uur) — geen praktische overlandroute gezien de afstand door onbewoond Oost-Canada',
-        notes: 'Startblok: vlucht Nederland-Halifax. Kennismaking met Canada via ruige Atlantische kust, vissersdorpjes, vuurtorens en Keltisch/Acadische cultuur op Cape Breton. Prijs geverifieerd (2026-07), klopt. eTA (bij inreis per vlucht) kost slechts ~€4,70, 5 jaar geldig.',
+        transport_to_next: 'Flight Halifax-Quebec City (~2 hours) — no practical overland route given the distance through uninhabited Eastern Canada',
+        notes: 'Starting block: flight Netherlands-Halifax. Introduction to Canada via the rugged Atlantic coast, fishing villages, lighthouses and Celtic/Acadian culture on Cape Breton. Price verified (2026-07), holds up. eTA (when entering by flight) costs only ~€4.70, valid 5 years.',
       }],
-      note: 'Startpunt — vlucht Nederland-Halifax. Ruige kust, vissersdorpen en vuurtorens; geen huurauto nodig, alles is met kleine afstanden te doen vanuit Halifax.',
+      note: 'Starting point — flight Netherlands-Halifax. Rugged coast, fishing villages and lighthouses; no rental car needed, everything is doable via short distances from Halifax.',
     },
     {
       name: 'Eastern Canada – Historic Cities',
-      season: 'Juni',
+      season: 'June',
       budget: 1500,
       countries: [{
         code: 'CA', name: 'Canada', days: 10, budget: 1675, lat: 46.8139, lng: -71.208,
         destinations: [
           { name: 'Quebec City (Vieux-Québec)', lat: 46.8139, lng: -71.2080 },
           { name: 'Montreal (Old Port & Mile End)', lat: 45.5019, lng: -73.5674 },
-          { name: 'Ottawa (Parliament Hill & musea)', lat: 45.4215, lng: -75.6972 },
-          { name: 'Toronto (skyline, met Niagara Falls als dagtrip)', lat: 43.6532, lng: -79.3832 },
+          { name: 'Ottawa (Parliament Hill & museums)', lat: 45.4215, lng: -75.6972 },
+          { name: 'Toronto (skyline, with Niagara Falls as a day trip)', lat: 43.6532, lng: -79.3832 },
         ],
-        transport_to_next: 'Einde van deze route — terugvlucht vanuit Toronto (of vlucht Toronto-Calgary om verder te reizen naar West-Canada: Rockies & Vancouver 🏔️)',
-        notes: 'Geen lange autorit door Canada: de treinverbindingen tussen deze vier steden zijn snel en comfortabel. Franse cultuur en koloniale geschiedenis in Quebec City, eten en moderne stad in Montreal, politiek en musea in Ottawa, skyline en Niagara Falls vanuit Toronto.',
+        transport_to_next: 'End of this route — return flight from Toronto (or flight Toronto-Calgary to continue on to Western Canada: Rockies & Vancouver 🏔️)',
+        notes: 'No long car ride through Canada: the train connections between these four cities are fast and comfortable. French culture and colonial history in Quebec City, food and a modern city in Montreal, politics and museums in Ottawa, skyline and Niagara Falls from Toronto.',
       }],
-      note: 'Reizen per trein, geen huurauto in dit blok. Niagara Falls is een optionele dagtrip vanuit Toronto, geen apart blok.',
+      note: 'Traveling by train, no rental car in this block. Niagara Falls is an optional day trip from Toronto, not a separate block.',
     },
   ], {
-    travel_style: 'Backpacker/budget-comfort hybride — hostels en eenvoudige hotels, trein (Via Rail) tussen de historische steden, geen huurauto nodig.',
-    best_starting_month: 'Juni',
-    description: 'Van de ruige Atlantische kust van Nova Scotia via de trein naar de Franse/koloniale steden Quebec City, Montreal, Ottawa en Toronto.',
-    climate_summary: 'Begin juni geeft lange dagen en blijft ruim vóór het Atlantische orkaanseizoen dat richting Nova Scotia in augustus-oktober oploopt.',
-    notes: 'Losgesplitst van North America Grand Traverse 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen. Vervolg op deze route: West-Canada: Rockies & Vancouver 🏔️. North America Grand Traverse 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\n' +
-      'Routelogica-herziening (2026-08): Halifax-hub-en-spoke-volgorde geverifieerd, al optimaal — geen wijziging nodig. Coördinaten per bestemming toegevoegd. Zie North America Grand Traverse 🌎\'s eigen notities voor de volledige onderbouwing.',
+    travel_style: 'Backpacker/budget-comfort hybrid — hostels and simple hotels, train (Via Rail) between the historic cities, no rental car needed.',
+    best_starting_month: 'June',
+    description: 'From the rugged Atlantic coast of Nova Scotia by train to the French/colonial cities of Quebec City, Montreal, Ottawa and Toronto.',
+    climate_summary: 'Early June gives long days and stays well ahead of the Atlantic hurricane season that builds toward Nova Scotia in August-October.',
+    notes: 'Split off from North America Grand Traverse 🌎 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days, budgets and order are carried over unchanged. Follow-up to this route: Western Canada: Rockies & Vancouver 🏔️. North America Grand Traverse 🌎 itself remains unchanged as a separate, complete expedition.\n\n' +
+      'Route-logic revision (2026-08): Halifax hub-and-spoke order verified, already optimal — no change needed. Coordinates per destination added. See North America Grand Traverse 🌎\'s own notes for the full writeup.',
   });
 }
 
