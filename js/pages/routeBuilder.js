@@ -81,6 +81,7 @@ const RB_MIGRATE_FLAG_2026_08_PATAGONIA_ANTARCTICA_ENGLISH = 'atlas_grand_trips_
 const RB_MIGRATE_FLAG_2026_08_INDIA_HIMALAYA_ENGLISH = 'atlas_grand_trips_migrate_2026_08_india_himalaya_english_v1';
 const RB_MIGRATE_FLAG_2026_08_NORDIC_ARCTIC_ENGLISH = 'atlas_grand_trips_migrate_2026_08_nordic_arctic_english_v1';
 const RB_MIGRATE_FLAG_2026_08_PANAMERICAN_ENGLISH = 'atlas_grand_trips_migrate_2026_08_panamerican_english_v1';
+const RB_MIGRATE_FLAG_2026_08_AFRICA_GRAND_TOUR_ENGLISH = 'atlas_grand_trips_migrate_2026_08_africa_grand_tour_english_v1';
 const RB_BLOCK_COLORS = ['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -166,6 +167,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigratePanAmericanFamilyEnglish();
   rbMigrateMediterraneanRouteLogicOverhaul();
   rbMigrateAfricaGrandTourRouteLogicOverhaul();
+  rbMigrateAfricaGrandTourFamilyEnglish();
   rbMigrateSplitRouteEntryNotes();
   rbMigrateReplaceKazakhstanTajikistanCombo();
   rbBindEvents();
@@ -1676,22 +1678,22 @@ const RB_EXPEDITION_CONTENT = {
   },
   "Africa Grand Tour 🌍": {
     EG: { days: 21, budget: 1365, lat: 30.0444, lng: 31.2357, destinations: [
-      { name: 'Caïro', lat: 30.0444, lng: 31.2357 },
-      { name: 'Gizeh', lat: 29.9765, lng: 31.1313 },
+      { name: 'Cairo', lat: 30.0444, lng: 31.2357 },
+      { name: 'Giza', lat: 29.9765, lng: 31.1313 },
       { name: 'Dahab', lat: 28.5091, lng: 34.5136 },
       { name: 'Luxor', lat: 25.6872, lng: 32.6396 },
-      { name: 'Nijlcruise/felucca', lat: 25.5000, lng: 32.6000 },
+      { name: 'Nile cruise/felucca', lat: 25.5000, lng: 32.6000 },
       { name: 'Aswan', lat: 24.0889, lng: 32.8998 },
-      { name: 'Alexandrië', lat: 31.2001, lng: 29.9187 },
-    ], transport_to_next: "Einde van de expeditie — vlucht terug vanuit Caïro International Airport naar Nederland.", notes: "Prijscorrectie (2026-07): €62→€65/dag. Nijlcruise/felucca is een aparte kostenpost, niet in het dagbudget: een eenvoudige felucca (2-3 nachten) ~€115-160/nacht p.p., een standaard toeristenklasse cruiseboot (3-4 nachten Luxor-Aswan, all-in) ~€320-550 p.p. — dit laatste past het best bij Youri's stijl, reken dit apart voor die specifieke nachten (dubbeltel de dagbudget niet voor dezelfde dagen). Reisadvies: geel voor Caïro/Gizeh/Luxor/Aswan/Alexandrië/Nijlcruise en voor de Zuid-Sinaï-badplaatsen incl. Dahab zelf — voor die zone (Sharm/Dahab/Nuweiba) wordt wel aangeraden niet zelfstandig onbegeleid over land te reizen; georganiseerd vervoer erheen (kustroute of vlucht naar Sharm El Sheikh) blijft buiten het oranje/rode Centraal-/Noord-Sinaï. Visum: e-visa (visa2egypt.gov.eg), 30 dagen, prijs licht verhoogd in 2026 ($25-30 single-entry, bevestig bij aanvraag)." },
+      { name: 'Alexandria', lat: 31.2001, lng: 29.9187 },
+    ], transport_to_next: "End of the expedition — flight back from Cairo International Airport to the Netherlands.", notes: "Price correction (2026-07): €62→€65/day. The Nile cruise/felucca is a separate cost, not in the daily budget: a simple felucca (2-3 nights) ~€115-160/night p.p., a standard tourist-class cruise boat (3-4 nights Luxor-Aswan, all-in) ~€320-550 p.p. — the latter suits Youri's style best, budget it separately for those specific nights (don't double-count the daily budget for the same days). Travel advisory: yellow for Cairo/Giza/Luxor/Aswan/Alexandria/the Nile cruise and for the South Sinai beach resorts incl. Dahab itself — for that zone (Sharm/Dahab/Nuweiba) independent unescorted overland travel is advised against; organized transport there (coastal route or flight to Sharm El Sheikh) stays outside the orange/red Central/North Sinai. Visa: e-visa (visa2egypt.gov.eg), 30 days, price slightly increased in 2026 ($25-30 single-entry, confirm when applying)." },
     ET: { days: 20, budget: 1750, lat: 9.025, lng: 38.7469, destinations: [
-      { name: 'Addis Abeba', lat: 9.0250, lng: 38.7469 },
+      { name: 'Addis Ababa', lat: 9.0250, lng: 38.7469 },
       { name: 'Lalibela', lat: 12.0316, lng: 39.0473 },
       { name: 'Simien Mountains', lat: 13.2000, lng: 38.0500 },
       { name: 'Gondar', lat: 12.6000, lng: 37.4667 },
-      { name: 'Danakil Depressie', lat: 14.2417, lng: 40.3000 },
+      { name: 'Danakil Depression', lat: 14.2417, lng: 40.3000 },
       { name: 'Omo Valley', lat: 5.6667, lng: 36.5000 },
-    ], transport_to_next: "Binnenlandse vlucht Jinka/Arba Minch-Addis Abeba (~1u, Ethiopian Airlines — geen directe internationale vlucht vanaf Omo Valley zelf, routelogica-fix 2026-08, search-bevestigd: dit stond eerder onvermeld), dan vlucht Addis Abeba-Caïro, geen directe landroute mogelijk (via Jordanië/Oman verloopt nu via de aparte Mediterranean Civilizations Expedition).", notes: "⚠️ Prijscorrectie (2026-07): €72,50→€87,50/dag, plus drie losse kostenposten buiten het dagbudget: een 3-daagse begeleide Danakil-tour (~€430 p.p., escorte/vergunningen inbegrepen), binnenlandse vluchten Addis Abeba-Lalibela-Gondar (~€400 totaal, zie de veiligheidsnotitie hieronder) en Simien Mountains-trekkosten (park/scout/gids/muildier, ~€175 voor 3-4 dagen). ⚠️⚠️ BELANGRIJKE REISADVIES-BEVINDING (2026-07): Lalibela, Gondar en de Simien Mountains liggen alle drie in de Amhara-regio, die het Nederlandse reisadvies momenteel volledig ROOD kleurt ('niet reizen') door het escalerende Fano-milities-tegen-regering-conflict (maart-mei 2026; wegen naar Bahir Dar omstreden; ontvoeringen van hulpverleners in Noord-Gondar). De Danakil Depressie ligt in de Afar-regio, ook ROOD, wegens instabiliteit bij de grens met Eritrea. Alleen Addis Abeba (geel) en de Omo Valley (impliciet geel) vallen buiten deze rode zones. Reisverslagen van 2026 melden dat georganiseerde fly-in-tours naar Lalibela/Gondar/Simien in de praktijk gewoon doorgaan zonder incidenten — maar dat is de inschatting van reisorganisaties, niet het officiële reisadvies, en een rode zone kan een Nederlandse reisverzekering ongeldig maken zelfs als het risico op de grond overzichtelijk aanvoelt. Youri heeft er bewust voor gekozen deze etappe te laten staan zoals gepland (Route Builder is de aspirational/someday-laag) — dit is een momentopname (juli 2026), check nederlandwereldwijd.nl zelf vlak vóór een eventuele echte reis en weeg ook de verzekeringsconsequentie mee, niet alleen het praktische risico. Visum: e-visa (evisa.gov.et), 30 dagen, prijs schommelt dit jaar ($50-82 per bron) — live bevestigen bij aanvraag." },
+    ], transport_to_next: "Domestic flight Jinka/Arba Minch-Addis Ababa (~1h, Ethiopian Airlines — no direct international flight from the Omo Valley itself, route-logic fix 2026-08, search-confirmed: this was previously unstated), then a flight Addis Ababa-Cairo, no direct overland route possible (via Jordan/Oman now runs through the separate Mediterranean Civilizations Expedition).", notes: "⚠️ Price correction (2026-07): €72.50→€87.50/day, plus three separate costs outside the daily budget: a 3-day guided Danakil tour (~€430 p.p., escort/permits included), domestic flights Addis Ababa-Lalibela-Gondar (~€400 total, see the safety note below) and Simien Mountains trekking costs (park/scout/guide/mule, ~€175 for 3-4 days). ⚠️⚠️ IMPORTANT TRAVEL ADVISORY FINDING (2026-07): Lalibela, Gondar and the Simien Mountains all three lie in the Amhara region, which the Dutch travel advisory currently colors entirely RED ('do not travel') due to the escalating Fano militia-versus-government conflict (March-May 2026; roads to Bahir Dar contested; aid workers abducted in North Gondar). The Danakil Depression lies in the Afar region, also RED, due to instability near the Eritrea border. Only Addis Ababa (yellow) and the Omo Valley (implicitly yellow) fall outside these red zones. 2026 trip reports say organized fly-in tours to Lalibela/Gondar/Simien in practice just continue without incident — but that's the assessment of tour operators, not the official travel advisory, and a red zone can invalidate Dutch travel insurance even if the risk on the ground feels manageable. Youri has deliberately chosen to leave this leg as planned (Route Builder is the aspirational/someday layer) — this is a snapshot (July 2026), check nederlandwereldwijd.nl yourself shortly before any actual trip and weigh the insurance consequence too, not just the practical risk. Visa: e-visa (evisa.gov.et), 30 days, price fluctuates this year ($50-82 depending on source) — confirm live when applying." },
     KE: { days: 18, budget: 2350, lat: -1.2921, lng: 36.8219, destinations: [
       { name: 'Nairobi', lat: -1.2921, lng: 36.8219 },
       { name: 'Maasai Mara', lat: -1.5000, lng: 35.0000 },
@@ -1699,30 +1701,30 @@ const RB_EXPEDITION_CONTENT = {
       { name: 'Amboseli', lat: -2.6500, lng: 37.2500 },
       { name: 'Diani Beach/Mombasa', lat: -4.0500, lng: 39.6667 },
       { name: 'Mount Kenya', lat: -0.1521, lng: 37.3084 },
-    ], transport_to_next: "Over land via grensovergang Moyale (ruig, meerdaagse busrit), of vlucht Nairobi-Addis Abeba bij twijfel over veiligheid/wegconditie — Mount Kenya/Nanyuki ligt al op de weg naar Moyale (zelfde route als Nairobi-Nanyuki).", notes: "Prijscorrectie (2026-07): €122→€131/dag (buffer tegen gestegen Maasai Mara conservancy-/entreekosten). Visum: geen vrijstelling, eTA verplicht vooraf (prijs varieert per bron, $51 single-entry/$101 multiple-entry recentst — live checken op etakenya.go.ke, dit tarief is al eerder gewijzigd). Extra inreisscreening wegens de regionale Ebola-uitbraak (alleen screening, geen belemmering). Reisadvies: geel voor de hele route; rood alleen ver in het oosten (Somalië/Ethiopië-grens, niet op deze route), oranje voor Marsabit/Moyale/Tana-delta en 'bepaalde wijken' van Nairobi/Mombasa (niet de toeristische gebieden hier). Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid — Mount Kenya stond vóór Mombasa, wat een extra rit via Nairobi kostte om daarna weer terug naar het noorden te rijden voor Moyale. Nairobi→Maasai Mara→Lake Nakuru→Amboseli→Mombasa/Diani (allemaal als zijsprongen vanuit Nairobi) →Mount Kenya/Nanyuki als laatste, rechtstreeks aansluitend op de Moyale-route noordwaarts." },
+    ], transport_to_next: "Overland via the Moyale border crossing (rough, multi-day bus ride), or a flight Nairobi-Addis Ababa if in doubt about safety/road conditions — Mount Kenya/Nanyuki already sits on the way to Moyale (same route as Nairobi-Nanyuki).", notes: "Price correction (2026-07): €122→€131/day (buffer against increased Maasai Mara conservancy/entrance fees). Visa: no exemption, eTA mandatory in advance (price varies by source, most recently $51 single-entry/$101 multiple-entry — check live at etakenya.go.ke, this rate has already changed before). Extra entry screening due to the regional Ebola outbreak (screening only, no obstruction). Travel advisory: yellow for the whole route; red only far in the east (Somalia/Ethiopia border, not on this route), orange for Marsabit/Moyale/the Tana Delta and 'certain neighborhoods' of Nairobi/Mombasa (not the tourist areas here). Route-logic fix (2026-08, search-confirmed): order reversed — Mount Kenya used to come before Mombasa, which cost an extra trip via Nairobi to then drive back north again for Moyale. Nairobi→Maasai Mara→Lake Nakuru→Amboseli→Mombasa/Diani (all as side trips from Nairobi) →Mount Kenya/Nanyuki last, connecting directly to the Moyale route northward." },
     UG: { days: 18, budget: 2400, lat: 0.3476, lng: 32.5825, destinations: [
-      { name: "Bwindi Impenetrable Forest (gorilla's)", lat: -1.0333, lng: 29.6667 },
+      { name: "Bwindi Impenetrable Forest (gorillas)", lat: -1.0333, lng: 29.6667 },
       { name: 'Queen Elizabeth NP', lat: -0.2000, lng: 29.9000 },
       { name: 'Kibale Forest', lat: 0.5000, lng: 30.3833 },
       { name: 'Murchison Falls', lat: 2.2833, lng: 31.6833 },
       { name: 'Kampala', lat: 0.3476, lng: 32.5825 },
       { name: 'Jinja', lat: 0.4478, lng: 33.2026 },
-    ], transport_to_next: "Bus over land Kampala-Nairobi via grensovergang Busia of Malaba, goed begaanbare route — Jinja ligt al op deze route.", notes: "Prijs blijft nagenoeg gelijk (2026-07): €129→€133/dag, kleine buffer voor de nieuwe niet-restitueerbare boekingsregel hieronder — het gorillapermit ($800 hoogseizoen/$600 laagseizoen apr/mei/nov) en het chimpansee-trekkingpermit in Kibale ($250 p.p.) zaten al goed verwerkt in het bestaande budget. ⚠️ Sinds 1 maart 2026 is UWA's oude 7-dagen-optie-reservering afgeschaft — volledige, niet-restitueerbare betaling is nu verplicht bij het boeken, dus pas boeken zodra de reisdatum vaststaat. ⚠️ Veiligheid Queen Elizabeth NP/Bwindi-corridor: de DRC-grens is sinds 27 mei 2026 gesloten wegens een Ebola-uitbraak (laatste patiënt ontslagen 16 juli 2026, 42-dagen-klok loopt); daarnaast pleegden op 1 november 2025 ADF-gelieerde groepen gecoördineerde aanvallen op veiligheidsposten in Kasese, Bundibugyo en Fort Portal — dezelfde westelijke Rwenzori-corridor waar QENP en Bwindi liggen (het reisadvies noemt QENP ook al apart vanwege de dodelijke aanslag op toeristen daar in 2023). Tour-operators melden dat de trekking-sectoren (Buhoma/Ruhija/Rushaga/Nkuringo) gewoon open en veilig zijn, maar dat is branche-inschatting, geen officieel advies — blijf op de gangbare toeristische routes en vermijd de Ishasha-DRC-grensstrook. Visum: geen visum-bij-aankomst meer, alleen e-visa vooraf ($50), gele-koorts-bewijs verplicht. Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid — de etappe kwam binnen vanuit Rwanda, vlak bij Bwindi (grensovergang Cyanika/Kisoro ligt ≈45 km/1-1,5u van Bwindi's Nkuringo/Rushaga-sectoren), maar begon met Kampala/Jinja aan de andere kant van het land, om daarna weer helemaal terug te rijden naar Bwindi/QENP. Nu Bwindi/QENP/Kibale meteen bij binnenkomst, dan Murchison Falls (noord), dan Kampala/Jinja (oost, aansluitend op de Kenia-grensovergang Busia/Malaba)." },
+    ], transport_to_next: "Overland bus Kampala-Nairobi via the Busia or Malaba border crossing, well-maintained route — Jinja already sits on this route.", notes: "Price stays almost the same (2026-07): €129→€133/day, a small buffer for the new non-refundable booking rule below — the gorilla permit ($800 high season/$600 low season Apr/May/Nov) and the chimpanzee trekking permit in Kibale ($250 p.p.) were already well accounted for in the existing budget. ⚠️ Since 1 March 2026, UWA's old 7-day provisional-booking option has been scrapped — full, non-refundable payment is now required at the time of booking, so only book once the travel date is fixed. ⚠️ Safety, Queen Elizabeth NP/Bwindi corridor: the DRC border has been closed since 27 May 2026 due to an Ebola outbreak (last patient discharged 16 July 2026, the 42-day clock is running); in addition, on 1 November 2025 ADF-affiliated groups carried out coordinated attacks on security posts in Kasese, Bundibugyo and Fort Portal — the same western Rwenzori corridor where QENP and Bwindi lie (the travel advisory already flags QENP separately too, because of the fatal attack on tourists there in 2023). Tour operators report that the trekking sectors (Buhoma/Ruhija/Rushaga/Nkuringo) are simply open and safe, but that's the industry's assessment, not official advice — stick to the usual tourist routes and avoid the Ishasha-DRC border strip. Visa: no more visa-on-arrival, only e-visa in advance ($50), yellow fever certificate mandatory. Route-logic fix (2026-08, search-confirmed): order reversed — the leg entered from Rwanda, close to Bwindi (the Cyanika/Kisoro border crossing sits ≈45 km/1-1.5h from Bwindi's Nkuringo/Rushaga sectors), but started with Kampala/Jinja on the other side of the country, only to then drive all the way back to Bwindi/QENP. Now Bwindi/QENP/Kibale right upon entry, then Murchison Falls (north), then Kampala/Jinja (east, connecting to the Kenya border crossing Busia/Malaba)." },
     RW: { days: 10, budget: 2470, lat: -1.9403, lng: 29.8739, destinations: [
       { name: 'Kigali', lat: -1.9403, lng: 29.8739 },
-      { name: 'Volcanoes NP (gorillatrekking)', lat: -1.4833, lng: 29.5000 },
+      { name: 'Volcanoes NP (gorilla trekking)', lat: -1.4833, lng: 29.5000 },
       { name: 'Lake Kivu (Kibuye/Karongi)', lat: -2.0667, lng: 29.3500 },
       { name: 'Nyungwe Forest', lat: -2.5000, lng: 29.2000 },
-    ], transport_to_next: "Bus over land Kigali-Kampala via grensovergang Gatuna/Katuna, vlotte verbinding.", notes: "Prijscorrectie (2026-07): €225→€247/dag — het gorillapermit zelf ($1.500 p.p., ongewijzigd sinds 2017) blijft de dominante kostenpost, de correctie zit in de overige 9 dagen die eerder aan de krappe kant van de bandbreedte zaten. **Lake Kivu-verduidelijking (nieuw, nog niet eerder vastgelegd):** deze route bedoelt Kibuye/Karongi, NIET Rubavu/Gisenyi — Rubavu ligt direct tegenover Goma, dat momenteel in handen is van M23-rebellen, en valt onder het oranje ('alleen noodzakelijke reizen') reisadvies voor de DRC-grensstrook. Kibuye/Karongi ligt verderop langs het meer en blijft geel. Ook de Rwanda-Burundi-grens binnen het Nyungwe-regenwoud is sinds januari 2024 gesloten (los van het M23-conflict, niet relevant voor de geplande route zelf). Visum: geen vrijstelling voor Nederlanders — visum-bij-aankomst Kigali (~$50) of e-visa via Irembo vooraf." },
+    ], transport_to_next: "Overland bus Kigali-Kampala via the Gatuna/Katuna border crossing, smooth connection.", notes: "Price correction (2026-07): €225→€247/day — the gorilla permit itself ($1,500 p.p., unchanged since 2017) remains the dominant cost, the correction is in the remaining 9 days that were previously on the tight side of the range. **Lake Kivu clarification (new, not previously recorded):** this route means Kibuye/Karongi, NOT Rubavu/Gisenyi — Rubavu sits directly across from Goma, which is currently held by M23 rebels, and falls under the orange ('essential travel only') advisory for the DRC border strip. Kibuye/Karongi lies further along the lake and stays yellow. The Rwanda-Burundi border within the Nyungwe rainforest has also been closed since January 2024 (unrelated to the M23 conflict, not relevant to the planned route itself). Visa: no exemption for Dutch nationals — visa-on-arrival in Kigali (~$50) or e-visa via Irembo in advance." },
     TZ: { days: 24, budget: 3100, lat: -3.3869, lng: 36.683, destinations: [
       { name: 'Arusha', lat: -3.3869, lng: 36.6830 },
       { name: 'Ngorongoro Crater', lat: -3.1667, lng: 35.5833 },
       { name: 'Serengeti', lat: -2.3333, lng: 34.8333 },
       { name: 'Lake Manyara', lat: -3.3667, lng: 35.8167 },
-      { name: 'Kilimanjaro (regio)', lat: -3.0674, lng: 37.3556 },
+      { name: 'Kilimanjaro (region)', lat: -3.0674, lng: 37.3556 },
       { name: 'Zanzibar', lat: -6.1659, lng: 39.2026 },
       { name: 'Dar es Salaam', lat: -6.7924, lng: 39.2083 },
-    ], transport_to_next: "Over land via grensovergang Rusumo en bootverbinding over het Victoriameer naar Kigali, of vlucht Dar es Salaam/Kilimanjaro-Kigali.", notes: "Prijscorrectie (2026-07): €117→€129/dag (buffer tegen recent verhoogde parkentrees Ngorongoro/Serengeti, nu $70-83/dag/park). Visum: los e-visa nodig, $50 (Tanzania valt niet onder de East Africa Tourist Visa). Reisadvies: geel voor de hele route; alleen het Mtwara-grensgebied met Mozambique (ver in het zuiden, niet op deze route) is oranje. Routelogica-fix (2026-08, search-bevestigd): Kilimanjaro (vlak bij Arusha, ≈50 km) stond ná Zanzibar, wat een terugvlucht van ≈460-600 km naar het noorden betekende voordat de reis weer naar Dar es Salaam (bij Zanzibar) ging. Nu Kilimanjaro meteen na het noordelijke circuit (Arusha/Ngorongoro/Serengeti/Manyara), dan in één keer door naar Zanzibar en Dar es Salaam — een directe vlucht Kilimanjaro-Zanzibar bestaat (JRO-ZNZ, ~1u, meerdere per dag)." },
+    ], transport_to_next: "Overland via the Rusumo border crossing and a boat connection across Lake Victoria to Kigali, or a flight Dar es Salaam/Kilimanjaro-Kigali.", notes: "Price correction (2026-07): €117→€129/day (buffer against recently increased Ngorongoro/Serengeti park fees, now $70-83/day/park). Visa: a separate e-visa is needed, $50 (Tanzania does not fall under the East Africa Tourist Visa). Travel advisory: yellow for the whole route; only the Mtwara border area with Mozambique (far in the south, not on this route) is orange. Route-logic fix (2026-08, search-confirmed): Kilimanjaro (close to Arusha, ≈50 km) used to come after Zanzibar, which meant a return flight of ≈460-600 km back north before heading to Dar es Salaam (near Zanzibar) again. Now Kilimanjaro comes right after the northern circuit (Arusha/Ngorongoro/Serengeti/Manyara), then straight on to Zanzibar and Dar es Salaam — a direct flight Kilimanjaro-Zanzibar exists (JRO-ZNZ, ~1h, several per day)." },
     MG: { days: 24, budget: 1650, lat: -18.8792, lng: 47.5079, destinations: [
       { name: 'Antananarivo', lat: -18.8792, lng: 47.5079 },
       { name: 'Andasibe-Mantadia', lat: -18.9333, lng: 48.4167 },
@@ -1730,49 +1732,49 @@ const RB_EXPEDITION_CONTENT = {
       { name: 'Avenue of the Baobabs', lat: -20.2500, lng: 44.4167 },
       { name: 'Morondava', lat: -20.2833, lng: 44.3167 },
       { name: 'Nosy Be', lat: -13.3167, lng: 48.2500 },
-    ], transport_to_next: "Vlucht Antananarivo-Port Louis, geen andere optie beschikbaar.", notes: "Prijscorrectie (2026-07): €78→€69/dag (basiskosten logies/eten/lokaal vervoer bleken bij navraag lager dan aangenomen) — reken daarbovenop apart: Nosy Be is een eiland en vereist een binnenlandse vlucht (enkele reis ~€100-130, retour ~€210-250); de overige etappes (Tana-Andasibe, Tana-Isalo) het best met een privé-4x4+chauffeur (~€50-70/dag) gezien de beruchte wegconditie — samen ~€400-500 extra. Visum: 30-dagen e-visa nodig voor deze 24-daagse trip (~€34, evisamada.gov.mg) — niet de goedkopere 15-dagen-tier. Reisadvies: geel, hele land — verhoogd risico rond Tsingy de Bemaraha (grenst aan de Morondava-regio, niet zelf bezocht) en de zuidoostelijke Anosy-regio (niet op deze route). Routelogica-fix (2026-08, search-bevestigd): Isalo stond ná Morondava, maar die twee zijn alleen via een ruig ≈600 km onverhard traject verbonden — alle vluchten binnen Madagaskar lopen sowieso via Tana (Nosy Be en Morondava zijn los bereikbare vlucht-uitstapjes vanaf Tana, geen doorlopende route). Nu Isalo bereikt via de goede, verharde RN7 vanaf Tana (zuidwaarts), niet meer aansluitend op Morondava — Morondava/Baobabs en Nosy Be blijven losse vlucht-uitstapjes vanaf Tana, zoals ze feitelijk al waren." },
+    ], transport_to_next: "Flight Antananarivo-Port Louis, no other option available.", notes: "Price correction (2026-07): €78→€69/day (base accommodation/food/local transport costs turned out lower than assumed on inquiry) — budget separately on top of that: Nosy Be is an island and requires a domestic flight (one-way ~€100-130, return ~€210-250); the other legs (Tana-Andasibe, Tana-Isalo) are best done with a private 4x4+driver (~€50-70/day) given the notorious road conditions — together ~€400-500 extra. Visa: a 30-day e-visa is needed for this 24-day trip (~€34, evisamada.gov.mg) — not the cheaper 15-day tier. Travel advisory: yellow, whole country — elevated risk around Tsingy de Bemaraha (borders the Morondava region, not visited itself) and the southeastern Anosy region (not on this route). Route-logic fix (2026-08, search-confirmed): Isalo used to come after Morondava, but the two are only connected via a rough ≈600 km unpaved track — all flights within Madagascar run via Tana anyway (Nosy Be and Morondava are separately reachable flight side trips from Tana, not a continuous route). Now Isalo is reached via the good, paved RN7 from Tana (southward), no longer connecting to Morondava — Morondava/Baobabs and Nosy Be remain separate flight side trips from Tana, as they effectively already were." },
     MU: { days: 7, budget: 1000, lat: -20.1609, lng: 57.5012, destinations: [
       { name: 'Port Louis', lat: -20.1609, lng: 57.5012 },
       { name: 'Grand Baie', lat: -20.0167, lng: 57.5833 },
       { name: 'Black River Gorges NP', lat: -20.4167, lng: 57.4500 },
       { name: 'Chamarel', lat: -20.4333, lng: 57.3833 },
       { name: 'Île aux Cerfs', lat: -20.2667, lng: 57.7833 },
-    ], transport_to_next: "Vlucht Port Louis-Dar es Salaam/Zanzibar (Tanzania), meestal met overstap in Johannesburg of Nairobi.", notes: "Prijs geverifieerd (2026-07), klopt (€143/dag). Île aux Cerfs wordt vaak onderbudgetteerd: een kale veerpont kost ~€20-25 maar de gangbare georganiseerde dagtour (boot+lunch) ~€50-70 p.p. — reken dit apart voor die ene dag. Reisadvies: geel — zakkenrollerij expliciet genoemd in Port Louis en Grand Baie (beide op de route); piraterijrisico voor boten offshore (relevant voor de boottocht). Visum: visumvrij, 90 dagen." },
+    ], transport_to_next: "Flight Port Louis-Dar es Salaam/Zanzibar (Tanzania), usually with a connection in Johannesburg or Nairobi.", notes: "Price verified (2026-07), correct (€143/day). Île aux Cerfs is often underbudgeted: a bare ferry crossing costs ~€20-25 but the usual organized day tour (boat+lunch) ~€50-70 p.p. — budget this separately for that one day. Travel advisory: yellow — pickpocketing explicitly mentioned in Port Louis and Grand Baie (both on the route); piracy risk for boats offshore (relevant for the boat trip). Visa: visa-free, 90 days." },
     MW: { days: 14, budget: 875, lat: -13.9626, lng: 33.7741, destinations: [
       { name: 'Lilongwe', lat: -13.9626, lng: 33.7741 },
       { name: 'Lake Malawi (Cape Maclear)', lat: -14.0000, lng: 34.8333 },
       { name: 'Liwonde NP', lat: -14.8000, lng: 35.3167 },
       { name: 'Zomba Plateau', lat: -15.3833, lng: 35.3167 },
       { name: 'Mount Mulanje', lat: -15.9500, lng: 35.6167 },
-    ], transport_to_next: "Vlucht (meestal via Johannesburg of Nairobi) naar Antananarivo, Madagaskar — geen directe verbinding vanuit Malawi.", notes: "Prijscorrectie (2026-07): €59→€62,50/dag (Liwonde NP-entree ~€25/dag tijdens die etappes). ⚠️ Visum aangescherpt: sinds 2 januari 2026 is een visum weer verplicht (was voor veel nationaliteiten vrijgesteld) — Nederlanders kunnen nog visum-bij-aankomst krijgen, maar Malawi stuurt nu aan op een e-visa vooraf (evisa.gov.mw, ~€45). Nieuwe regel: accommodatie moet in harde valuta (USD/GBP/EUR/ZAR) betaald worden, niet in Kwacha — zorg voor voldoende contant geld, kaarten zijn niet overal betrouwbaar. Mount Mulanje vereist een betaalde lokale gids (~€15-25/dag). Reisadvies: geel, hele land." },
+    ], transport_to_next: "Flight (usually via Johannesburg or Nairobi) to Antananarivo, Madagascar — no direct connection from Malawi.", notes: "Price correction (2026-07): €59→€62.50/day (Liwonde NP entrance ~€25/day during those legs). ⚠️ Visa requirements tightened: since 2 January 2026 a visa is required again (had been exempt for many nationalities) — Dutch nationals can still get a visa-on-arrival, but Malawi is now steering toward an e-visa in advance (evisa.gov.mw, ~€45). New rule: accommodation must be paid in hard currency (USD/GBP/EUR/ZAR), not Kwacha — carry enough cash, cards aren't reliable everywhere. Mount Mulanje requires a paid local guide (~€15-25/day). Travel advisory: yellow, whole country." },
     MZ: { days: 20, budget: 1560, lat: -23.865, lng: 35.3833, destinations: [
       { name: 'Maputo', lat: -25.9692, lng: 32.5732 },
-      { name: 'Bazaruto Archipel', lat: -21.6500, lng: 35.4667 },
+      { name: 'Bazaruto Archipelago', lat: -21.6500, lng: 35.4667 },
       { name: 'Inhambane', lat: -23.8650, lng: 35.3833 },
       { name: 'Tofo', lat: -23.8500, lng: 35.5500 },
       { name: 'Nampula', lat: -15.1165, lng: 39.2666 },
       { name: 'Ilha de Moçambique', lat: -15.0342, lng: 40.7358 },
-    ], transport_to_next: "Over land via grensovergang Nyamapanda of Machipanda richting Zimbabwe — vanaf Nampula/Ilha de Moçambique aanzienlijk korter (≈1.020-1.290 km) dan vanaf Maputo (≈1.644 km).", notes: "Prijscorrectie (2026-07): €71→€78/dag. Visum gewijzigd (11 feb 2026): nieuw ETA-systeem (evisa.gov.mz), ~€10, minimaal 48u vooraf aanvragen — vertrouw niet meer op visum-bij-aankomst, luchtvaartmaatschappijen controleren dit nu vooraf. Reisadvies: geel voor de hele route (Ilha de Moçambique, Nampula, Tofo, Inhambane, Bazaruto, Maputo); oranje is sinds 4 december 2025 uitgebreid naar de Nampula-provincie (Erati/Memba-districten, buurdistricten van deze etappe) door het aanhoudende Cabo Delgado-conflict — check dit vlak voor vertrek, het kan verder opschuiven. Deze etappe springt geografisch groot (Nampula-Tofo-Maputo, 1.500-2.500km) — reken 2 binnenlandse vluchten (~€300-400 totaal, LAM) en de Bazaruto-boot (~€80-140) als aparte kostenposten bovenop het dagbudget. Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid — de etappe kwam binnen bij Maputo (grens met Eswatini) maar begon met Ilha de Moçambique/Nampula, ≈2.000+ km verderop, en eindigde daarna weer bij Maputo vlak voor een rit van ≈1.644 km naar de Zimbabwe-grens. Nu Maputo eerst (bij de instap), dan zuid-naar-noord door naar Nampula/Ilha de Moçambique — de al bestaande '2 binnenlandse vluchten' blijven nodig, maar de etappe eindigt nu aan de kant die dichter bij Zimbabwe ligt in plaats van terug bij het beginpunt." },
+    ], transport_to_next: "Overland via the Nyamapanda or Machipanda border crossing toward Zimbabwe — from Nampula/Ilha de Moçambique considerably shorter (≈1,020-1,290 km) than from Maputo (≈1,644 km).", notes: "Price correction (2026-07): €71→€78/day. Visa changed (11 Feb 2026): new ETA system (evisa.gov.mz), ~€10, apply at least 48h in advance — no longer rely on visa-on-arrival, airlines now check this beforehand. Travel advisory: yellow for the whole route (Ilha de Moçambique, Nampula, Tofo, Inhambane, Bazaruto, Maputo); orange has been extended since 4 December 2025 to Nampula province (Erati/Memba districts, neighboring districts of this leg) due to the ongoing Cabo Delgado conflict — check this shortly before departure, it can shift further. This leg jumps a long way geographically (Nampula-Tofo-Maputo, 1,500-2,500km) — budget 2 domestic flights (~€300-400 total, LAM) and the Bazaruto boat (~€80-140) as separate costs on top of the daily budget. Route-logic fix (2026-08, search-confirmed): order reversed — the leg entered at Maputo (border with Eswatini) but started with Ilha de Moçambique/Nampula, ≈2,000+ km further away, and then ended back at Maputo just before a ≈1,644 km drive to the Zimbabwe border. Now Maputo first (at entry), then south-to-north on to Nampula/Ilha de Moçambique — the already-existing '2 domestic flights' remain necessary, but the leg now ends on the side closer to Zimbabwe instead of back at the starting point." },
     ZM: { days: 16, budget: 1825, lat: -15.3875, lng: 28.3228, destinations: [
       { name: 'Lusaka', lat: -15.3875, lng: 28.3228 },
       { name: 'Lower Zambezi NP', lat: -15.6167, lng: 29.1500 },
       { name: 'Livingstone/Victoria Falls', lat: -17.9243, lng: 25.8572 },
       { name: 'South Luangwa NP', lat: -13.0833, lng: 31.7500 },
-    ], transport_to_next: "Over land via grensovergang Mchinji/Chanida richting Malawi — South Luangwa ligt al aan de oostkant, dicht bij deze grensovergang.", notes: "Prijs geverifieerd (2026-07), klopt (€114/dag) — mits je bij South Luangwa/Lower Zambezi voor de zelfrijd-/kampeerstijl kiest (~€65-95/dag incl. parkentree) in plaats van de all-inclusive safari-lodges (€325-465/dag, een compleet andere prijscategorie). Grensovergang Angola-Zambia bevestigd: Jimbe (Angola)/Chavuma (Zambia), een reële maar pittige route — met de hand bijgehouden immigratieregisters, niet altijd bemand, alleen kleine 4x4 (geen vrachtwagens), volledige zelfvoorziening nodig (extra banden, bergingsmateriaal, meerdaagse brandstof/eten/water); praktisch venster juni-oktober, juli-september het beste. Een lokale gids uit Zambezi-stad (~€20-40/dag) wordt aangeraden. Visum: KAZA UniVisa (~€45) dekt Zambia+Zimbabwe plus een dagtrip naar Botswana, 30 dagen, bij aankomst verkrijgbaar in Lusaka/Livingstone of aan de grens. Reisadvies: geel voor de hele route. Routelogica-fix (2026-08, search-bevestigd): South Luangwa (oost) stond vóór Livingstone (zuid), terwijl de uitgang naar Malawi (Mchinji, oost, dicht bij Lusaka/South Luangwa) juist aan dezelfde kant ligt als South Luangwa — de oude volgorde deed oost→zuid→weer terug oost. Nu de zuidelijke lus (Lower Zambezi/Livingstone) eerst, South Luangwa als laatste, direct aansluitend op de Malawi-grens." },
+    ], transport_to_next: "Overland via the Mchinji/Chanida border crossing toward Malawi — South Luangwa already sits on the east side, close to this border crossing.", notes: "Price verified (2026-07), correct (€114/day) — provided you choose the self-drive/camping style at South Luangwa/Lower Zambezi (~€65-95/day incl. park fee) rather than the all-inclusive safari lodges (€325-465/day, a completely different price bracket). Angola-Zambia border crossing confirmed: Jimbe (Angola)/Chavuma (Zambia), a real but tough route — hand-kept immigration registers, not always staffed, small 4x4 only (no trucks), full self-sufficiency needed (spare tires, recovery gear, multi-day fuel/food/water); practical window June-October, July-September best. A local guide from Zambezi town (~€20-40/day) is recommended. Visa: KAZA UniVisa (~€45) covers Zambia+Zimbabwe plus a day trip to Botswana, 30 days, available on arrival in Lusaka/Livingstone or at the border. Travel advisory: yellow for the whole route. Route-logic fix (2026-08, search-confirmed): South Luangwa (east) used to come before Livingstone (south), while the exit toward Malawi (Mchinji, east, close to Lusaka/South Luangwa) sits on the same side as South Luangwa — the old order went east→south→back east again. Now the southern loop (Lower Zambezi/Livingstone) first, South Luangwa last, connecting directly to the Malawi border." },
     ZW: { days: 14, budget: 1275, lat: -17.9243, lng: 25.8572, destinations: [
       { name: 'Mana Pools', lat: -15.7667, lng: 29.4000 },
       { name: 'Great Zimbabwe', lat: -20.2667, lng: 30.9333 },
       { name: 'Bulawayo', lat: -20.1500, lng: 28.5833 },
       { name: 'Hwange NP', lat: -18.6333, lng: 26.9833 },
       { name: 'Victoria Falls', lat: -17.9243, lng: 25.8572 },
-    ], transport_to_next: "Over land via grensovergang Kazungula (vlak bij Victoria Falls) of Plumtree richting Botswana.", notes: "Prijs geverifieerd (2026-07), klopt (€91/dag) voor Victoria Falls/Bulawayo/Great Zimbabwe. ⚠️ Mana Pools is een aparte, aanzienlijke kostenpost: een verplicht gegidste meerdaagse wandel-/kanosafari (3-4 dagen) kost €1.300-1.650 p.p. all-in (een afgeslankte halve-dag-optie kan al vanaf ~€100) — niet gedekt door het dagbudget. Victoria Falls-toegang (Zimbabwe-zijde) ~€46; Hwange NP-entree ~€22/dag + gegidste wandelingen extra. Visum: e-visa/visum-bij-aankomst $30. Reisadvies: geel, hele land. Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid — Victoria Falls (NW) stond eerst, dan Hwange (NW), dan Mana Pools (NE, ≈800-900 km verderop), dan Great Zimbabwe (zuid), dan Bulawayo (terug bij Hwange, ≈320-340 km) — het land werd zo minstens twee keer diagonaal doorkruist. Nu Mana Pools eerst (dicht bij de instap vanuit Mozambique/Harare), dan Great Zimbabwe (zuid), Bulawayo (zuidwest), Hwange en Victoria Falls (noordwest, aansluitend op de Botswana-grens) — één doorlopende lus." },
+    ], transport_to_next: "Overland via the Kazungula border crossing (close to Victoria Falls) or Plumtree toward Botswana.", notes: "Price verified (2026-07), correct (€91/day) for Victoria Falls/Bulawayo/Great Zimbabwe. ⚠️ Mana Pools is a separate, significant cost: a mandatory guided multi-day walking/canoe safari (3-4 days) costs €1,300-1,650 p.p. all-in (a scaled-down half-day option starts at ~€100) — not covered by the daily budget. Victoria Falls entry (Zimbabwe side) ~€46; Hwange NP entrance ~€22/day + guided walks extra. Visa: e-visa/visa-on-arrival $30. Travel advisory: yellow, whole country. Route-logic fix (2026-08, search-confirmed): order reversed — Victoria Falls (NW) used to come first, then Hwange (NW), then Mana Pools (NE, ≈800-900 km further), then Great Zimbabwe (south), then Bulawayo (back near Hwange, ≈320-340 km) — the country was crossed diagonally at least twice this way. Now Mana Pools first (close to the entry point from Mozambique/Harare), then Great Zimbabwe (south), Bulawayo (southwest), Hwange and Victoria Falls (northwest, connecting to the Botswana border) — one continuous loop." },
     BW: { days: 16, budget: 2800, lat: -19.9953, lng: 23.4239, destinations: [
       { name: 'Kasane', lat: -17.8167, lng: 25.1500 },
       { name: 'Chobe NP', lat: -18.6167, lng: 24.7167 },
       { name: 'Okavango Delta (Maun)', lat: -19.9833, lng: 23.4167 },
       { name: 'Makgadikgadi Pans', lat: -20.6000, lng: 25.2500 },
       { name: 'Central Kalahari', lat: -21.8833, lng: 23.9333 },
-    ], transport_to_next: "Over land via grensovergang Mamuno/Buitepos richting Namibië.", notes: "Prijscorrectie (2026-07): €158→€175/dag. Botswana heeft vrijwel geen goedkoop-onafhankelijk alternatief: Central Kalahari vereist een eigen 4x4-huurauto of gegidste mobiele safari (geen openbaar vervoer/goedkoop alternatief); Okavango Delta-tarieven lopen sterk uiteen (~€140 community-trust dagtrip tot €370+ voor scenic flying camps — dit budget gaat uit van de goedkopere stijl). Chobe-entreeprijs verhoogd naar BWP 270/dag (~€19) per 1 april 2026. Visum: visumvrij, 90 dagen, ongewijzigd. Reisadvies: geel, hele land. Routelogica-check (2026-08, search-bevestigd): Kasane-Maun-Makgadikgadi-Central Kalahari is een coherente zuidwestwaartse lijn, eindigend dicht bij de Namibië-grensovergang (Mamuno/Buitepos) — geen wijziging nodig." },
+    ], transport_to_next: "Overland via the Mamuno/Buitepos border crossing toward Namibia.", notes: "Price correction (2026-07): €158→€175/day. Botswana has virtually no cheap independent alternative: Central Kalahari requires your own 4x4 rental or a guided mobile safari (no public transport/cheap alternative); Okavango Delta rates vary widely (~€140 community-trust day trip up to €370+ for scenic flying camps — this budget assumes the cheaper style). Chobe entrance fee raised to BWP 270/day (~€19) as of 1 April 2026. Visa: visa-free, 90 days, unchanged. Travel advisory: yellow, whole country. Route-logic check (2026-08, search-confirmed): Kasane-Maun-Makgadikgadi-Central Kalahari is a coherent southwestward line, ending close to the Namibia border crossing (Mamuno/Buitepos) — no change needed." },
     NA: { days: 20, budget: 4000, lat: -22.5609, lng: 17.0658, destinations: [
       { name: 'Windhoek', lat: -22.5609, lng: 17.0658 },
       { name: 'Fish River Canyon', lat: -27.5500, lng: 17.6167 },
@@ -1780,23 +1782,23 @@ const RB_EXPEDITION_CONTENT = {
       { name: 'Swakopmund', lat: -22.6833, lng: 14.5333 },
       { name: 'Damaraland', lat: -20.5833, lng: 14.5000 },
       { name: 'Etosha NP', lat: -18.7500, lng: 16.3333 },
-    ], transport_to_next: "Over land via de grensovergang Oshikango/Santa Clara richting Angola — vanaf Etosha nog maar ≈305 km.", notes: "⚠️ Prijscorrectie (2026-07): €100→€200/dag — de grootste correctie van deze verificatieronde. Twee oorzaken: (1) Namibië is sinds 1 april 2025 niet meer visumvrij voor Nederlanders (reciprociteitskwestie) — e-visa/visum-bij-aankomst nu verplicht, ~N$1.600 (~€80), eenmalig; (2) een 4x4-huurauto is voor vrijwel de hele route noodzakelijk (Sossusvlei, Damaraland, Etosha en Fish River Canyon zijn zonder eigen (huur)voertuig niet praktisch te doen) — huur ~€70-90/dag. Parkentrees ook verhoogd: Etosha NAD 280 p.p. + NAD 60 voertuig (per 1 april 2026), Sossusvlei/Namib-Naukluft NAD 150 + NAD 50, Fish River Canyon NAD 160 + NAD 50 + eenmalige wandelvergunning N$540. Reisadvies: geel, hele land — waarschuwing tegen 's nachts rijden (wild op de weg). Routelogica-fix (2026-08, search-bevestigd, grootste vondst van deze route): volgorde omgedraaid — Fish River Canyon stond als laatste stop (uiterste zuiden), terwijl de Angola-grens (Oshikango) in het uiterste noorden ligt, vlak bij Etosha. De oude volgorde reed van Etosha ≈1.150 km naar Fish River Canyon en dan ≈1.340 km bijna dezelfde weg terug naar Oshikango (≈2.490 km pure heen-en-terug-omweg, ≈3.875 km totaal). Nu Windhoek→Fish River Canyon (zuid, eerst) →Sossusvlei→Swakopmund→Damaraland→Etosha (noord, eindigend vlak bij Angola) — één doorlopende zuid-naar-noord-lijn (≈2.520 km totaal, scheelt ≈1.355 km ofwel ≈35%)." },
+    ], transport_to_next: "Overland via the Oshikango/Santa Clara border crossing toward Angola — only ≈305 km from Etosha.", notes: "⚠️ Price correction (2026-07): €100→€200/day — the biggest correction of this verification round. Two causes: (1) Namibia has no longer been visa-free for Dutch nationals since 1 April 2025 (a reciprocity issue) — e-visa/visa-on-arrival now mandatory, ~N$1,600 (~€80), one-time; (2) a 4x4 rental car is necessary for virtually the entire route (Sossusvlei, Damaraland, Etosha and Fish River Canyon aren't practical without your own (rental) vehicle) — rental ~€70-90/day. Park fees also increased: Etosha NAD 280 p.p. + NAD 60 vehicle (as of 1 April 2026), Sossusvlei/Namib-Naukluft NAD 150 + NAD 50, Fish River Canyon NAD 160 + NAD 50 + one-time hiking permit N$540. Travel advisory: yellow, whole country — warning against driving at night (wildlife on the road). Route-logic fix (2026-08, search-confirmed, the biggest find on this route): order reversed — Fish River Canyon used to be the last stop (far south), while the Angola border (Oshikango) is in the far north, close to Etosha. The old order drove from Etosha ≈1,150 km to Fish River Canyon and then ≈1,340 km almost the same way back to Oshikango (≈2,490 km of pure there-and-back detour, ≈3,875 km total). Now Windhoek→Fish River Canyon (south, first) →Sossusvlei→Swakopmund→Damaraland→Etosha (north, ending close to Angola) — one continuous south-to-north line (≈2,520 km total, saving ≈1,355 km or ≈35%)." },
     AO: { days: 11, budget: 1700, lat: -14.9077, lng: 13.4925, destinations: [
       { name: 'Lubango', lat: -14.9167, lng: 13.4925 },
       { name: 'Serra da Leba', lat: -14.9833, lng: 13.2667 },
-      { name: 'Tundavala-kloof', lat: -14.8167, lng: 13.4000 },
-      { name: 'Namibe-woestijn', lat: -15.1961, lng: 12.1522 },
+      { name: 'Tundavala Gorge', lat: -14.8167, lng: 13.4000 },
+      { name: 'Namibe Desert', lat: -15.1961, lng: 12.1522 },
       { name: 'Luanda', lat: -8.8390, lng: 13.2894 },
-    ], transport_to_next: "Over land via een grensovergang in het zuidoosten van Angola (bijvoorbeeld bij Jimbe) richting Zambia — vereist na Luanda sowieso een vlucht terug naar het zuiden (Lubango-gebied), zelfde vliegkosten als in de oude volgorde.", notes: "Prijscorrectie (2026-07): €136→€155/dag. Visum: goed nieuws — sinds Presidentieel Decreet 189/23 (begin 2024) is Angola visumvrij voor EU/Nederlandse toeristen, 30 dagen per bezoek (max 90/jaar), met een gele-koorts-vaccinatiebewijs — deze 11-daagse etappe blijft daar ruim onder. Oudere bronnen die een e-visa/$120-fee noemen zijn verouderd (of komen van visumbureaus die daar garen bij spinnen) — dubbelcheck bij Angola's officiële immigratieportaal voordat je erop vertrouwt. Angola is een van Afrika's duurdere reislanden (importgoederen, dun backpacker-netwerk buiten Luanda) — dit budget gaat uit van een huurauto/chauffeur voor het Lubango/Namibe/Tundavala-gebied, waar zelfstandig reizen amper infrastructuur heeft. Reisadvies: geel voor de hele route (Cabinda en de DRC-grensstrook in Lunda-Norte zijn oranje, niet op deze route). Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid — Luanda stond eerst, ≈900-1.000 km van de Namibië-grens (het instappunt) en van de rest van de bestemmingen, die allemaal in het zuiden geclusterd liggen. Nu wordt eerst de zuidelijke cluster gedaan (dicht bij de instap), met Luanda als losse vlucht-uitstap aan het einde — Luanda is sowieso alleen praktisch per vlucht te bereiken (slechte wegen), dus de vliegkosten blijven gelijk, maar de reis begint nu logisch bij de grens in plaats van er meteen 900+ km vandaan te vliegen." },
+    ], transport_to_next: "Overland via a border crossing in southeastern Angola (for example near Jimbe) toward Zambia — after Luanda a flight back south (the Lubango area) is needed regardless, the same flight cost as in the old order.", notes: "Price correction (2026-07): €136→€155/day. Visa: good news — since Presidential Decree 189/23 (early 2024), Angola has been visa-free for EU/Dutch tourists, 30 days per visit (max 90/year), with a yellow fever vaccination certificate — this 11-day leg stays well within that. Older sources mentioning an e-visa/$120 fee are outdated (or come from visa agencies that profit from it) — double-check against Angola's official immigration portal before relying on it. Angola is one of Africa's pricier travel countries (imported goods, a thin backpacker network outside Luanda) — this budget assumes a rental car/driver for the Lubango/Namibe/Tundavala area, where independent travel has barely any infrastructure. Travel advisory: yellow for the whole route (Cabinda and the DRC border strip in Lunda-Norte are orange, not on this route). Route-logic fix (2026-08, search-confirmed): order reversed — Luanda used to come first, ≈900-1,000 km from the Namibia border (the entry point) and from the rest of the destinations, which are all clustered in the south. Now the southern cluster is done first (close to entry), with Luanda as a separate flight side trip at the end — Luanda is only practically reachable by flight anyway (poor roads), so the flight cost stays the same, but the trip now logically starts at the border instead of flying 900+ km away from it immediately." },
     ZA: { days: 24, budget: 2300, lat: -26.2041, lng: 28.0473, destinations: [
-      { name: 'Kaapstad', lat: -33.9249, lng: 18.4241 },
+      { name: 'Cape Town', lat: -33.9249, lng: 18.4241 },
       { name: 'Winelands (Stellenbosch)', lat: -33.9321, lng: 18.8602 },
       { name: 'Garden Route', lat: -34.0333, lng: 23.0500 },
       { name: 'Addo Elephant Park', lat: -33.4833, lng: 25.7500 },
       { name: 'Johannesburg', lat: -26.2041, lng: 28.0473 },
       { name: 'Kruger NP', lat: -24.0089, lng: 31.4850 },
       { name: 'Drakensberg', lat: -29.0000, lng: 29.4167 },
-    ], transport_to_next: "Over land de enclave Lesotho in via grensovergang Maseru Bridge (of avontuurlijker via Sani Pass).", notes: "Prijscorrectie (2026-07): €83→€96/dag — inclusief Kruger NP-natuurbehoudsheffing (~R602/dag ≈ €29, SANParks) en Addo Elephant Park (~R492/dag ≈ €26) tijdens die etappes. ⚠️ Sinds 1 juli 2026 is een online 'Traveller Declaration' verplicht vóór in-/uitreis — nieuw, check dit vooraf. Reisadvies: geel, hele land — gewapende overvallen/carjacking blijven een reëel risico (vermijd nachtelijk rijden, minibus-taxi's, solo wandelen op Table Mountain/Lion's Head), hijacking-hotspot Gauteng (Johannesburg zit op deze route). Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid — Kruger stond vóór Johannesburg, terwijl de standaardroute Addo-Kruger juist dwars door Johannesburg loopt (Addo-JHB ≈1.179 km, JHB-Kruger ≈392 km) — de oude volgorde reed er ongemerkt langs en dan weer terug (≈2.433 km totaal). Nu Addo→Johannesburg→Kruger→Drakensberg (≈1.967 km), scheelt ≈465 km." },
+    ], transport_to_next: "Overland into the Lesotho enclave via the Maseru Bridge border crossing (or more adventurously via Sani Pass).", notes: "Price correction (2026-07): €83→€96/day — including Kruger NP conservation levy (~R602/day ≈ €29, SANParks) and Addo Elephant Park (~R492/day ≈ €26) during those legs. ⚠️ Since 1 July 2026 an online 'Traveller Declaration' is mandatory before entry/exit — new, check this in advance. Travel advisory: yellow, whole country — armed robbery/carjacking remain a real risk (avoid driving at night, minibus taxis, solo hiking on Table Mountain/Lion's Head), Gauteng is a hijacking hotspot (Johannesburg sits on this route). Route-logic fix (2026-08, search-confirmed): order reversed — Kruger used to come before Johannesburg, while the standard Addo-Kruger route actually runs straight through Johannesburg (Addo-JHB ≈1,179 km, JHB-Kruger ≈392 km) — the old order drove past it unnoticed and then back again (≈2,433 km total). Now Addo→Johannesburg→Kruger→Drakensberg (≈1,967 km), saving ≈465 km." },
     LS: { days: 6, budget: 350, lat: -29.3151, lng: 27.4869, destinations: [
       { name: 'Maseru', lat: -29.3151, lng: 27.4869 },
       { name: 'Thaba-Bosiu', lat: -29.2833, lng: 27.6000 },
@@ -1804,13 +1806,13 @@ const RB_EXPEDITION_CONTENT = {
       { name: 'Roma', lat: -29.4500, lng: 27.7333 },
       { name: 'Semonkong', lat: -29.8333, lng: 28.0333 },
       { name: 'Sani Pass', lat: -29.5833, lng: 29.2833 },
-    ], transport_to_next: "Sani Pass mondt direct uit in KwaZulu-Natal, dezelfde provincie als de Golela/Lavumisa-grensovergang naar Eswatini — geen extra Vrijstaat-naar-KZN-doorsteek meer nodig. Over land via Golela/Lavumisa richting Eswatini.", notes: "Prijs geverifieerd (2026-07), klopt (€58/dag). Sani Pass is alleen met 4x4 te nemen — een gegidste dagtour vanuit Durban kost ~R3.845 (~€185), een aparte kostenpost. Visum: visumvrij maar slechts 14 dagen (korter dan Zuid-Afrika's 90 en Eswatini's 30) — let op bij het plannen. Bergpassen (Sani Pass, Semonkong) kunnen in de Lesotho-winter (juni-september) door sneeuw dicht gaan — bouw speelruimte in. Routelogica-fix (2026-08, search-bevestigd): 'Sani Pass/Thaba-Bosiu' stond als één bestemming samengevoegd, terwijl ze ≈335 km uit elkaar liggen (Thaba-Bosiu ligt vlak bij Maseru, Sani Pass in de tegenoverliggende oosthoek) — nu apart gezet: Thaba-Bosiu vroeg in de route (vlak bij Maseru), Sani Pass als laatste stop, aansluitend op de KZN-grensovergang." },
+    ], transport_to_next: "Sani Pass comes out directly in KwaZulu-Natal, the same province as the Golela/Lavumisa border crossing to Eswatini — no extra Free State-to-KZN detour needed anymore. Overland via Golela/Lavumisa toward Eswatini.", notes: "Price verified (2026-07), correct (€58/day). Sani Pass can only be taken with a 4x4 — a guided day tour from Durban costs ~R3,845 (~€185), a separate cost. Visa: visa-free but only 14 days (shorter than South Africa's 90 and Eswatini's 30) — watch this when planning. Mountain passes (Sani Pass, Semonkong) can close due to snow during the Lesotho winter (June-September) — build in slack. Route-logic fix (2026-08, search-confirmed): 'Sani Pass/Thaba-Bosiu' used to be merged into one destination, while they lie ≈335 km apart (Thaba-Bosiu is close to Maseru, Sani Pass in the opposite eastern corner) — now split apart: Thaba-Bosiu early in the route (close to Maseru), Sani Pass as the last stop, connecting to the KZN border crossing." },
     SZ: { days: 5, budget: 325, lat: -26.45, lng: 31.2, destinations: [
       { name: 'Mbabane', lat: -26.3167, lng: 31.1333 },
       { name: 'Ezulwini Valley', lat: -26.4500, lng: 31.2000 },
       { name: 'Mlilwane Wildlife Sanctuary', lat: -26.4667, lng: 31.1833 },
       { name: 'Hlane Royal National Park', lat: -26.1500, lng: 31.8667 },
-    ], transport_to_next: "Over land via grensovergang Lomahasha/Namaacha richting Mozambique.", notes: "Prijscorrectie (2026-07): €60→€65/dag. ⚠️ Politieke situatie ernstiger dan vaak aangenomen: de regering gebruikt actief de Public Order Act/Suppression of Terrorism Act tegen dissidenten, geen verantwoording voor de crackdown op protesten in 2021, een PUDEMO-leider werd in september 2024 in ballingschap vergiftigd. Demonstraties in Mbabane/Manzini kunnen onverwacht escaleren — check lokaal nieuws vlak voor vertrek en vermijd samenscholingen. Hlane's gegidste game drives zijn niet openbaar geprijsd door Big Game Parks — reken ~€25-35 per activiteit als richtprijs, bevestig rechtstreeks." },
+    ], transport_to_next: "Overland via the Lomahasha/Namaacha border crossing toward Mozambique.", notes: "Price correction (2026-07): €60→€65/day. ⚠️ Political situation more serious than often assumed: the government actively uses the Public Order Act/Suppression of Terrorism Act against dissidents, no accountability for the 2021 crackdown on protests, a PUDEMO leader was poisoned in exile in September 2024. Demonstrations in Mbabane/Manzini can unexpectedly escalate — check local news shortly before departure and avoid gatherings. Hlane's guided game drives aren't publicly priced by Big Game Parks — budget ~€25-35 per activity as a rough guide, confirm directly." },
   },
   "Nordic Arctic Expedition ❄️": {
     FI: { days: 8, budget: 1200, lat: 66.5039, lng: 25.7294, destinations: [
@@ -2045,7 +2047,7 @@ function rbSeedMEAExpedition() {
  * secondary season — its wet season genuinely degrades game viewing) and ending with East Africa's
  * secondary dry pocket (January-February, still a recognized good window — southern Serengeti calving
  * season) rather than forcing Southern Africa into that trade-off instead. Ethiopia and Egypt move to
- * the very end as a "Hoorn van Afrika & Egypte" finale, landing in Ethiopia's actual good season and,
+ * the very end as a "Horn of Africa & Egypt" finale, landing in Ethiopia's actual good season and,
  * as a bonus, moving Egypt out of early-summer heat into its comfortable cool season. No countries
  * added or removed, no days/budget changed per country — same 18 countries, same total (288 days,
  * €29.225), just resequenced. Every new adjacency uses a real border crossing or a realistic flight
@@ -2056,43 +2058,43 @@ function rbBuildAfricaGrandTourRoute() {
   const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
   return rbBuildSeedRoute('Africa Grand Tour 🌍', [
     {
-      name: 'Zuid-Afrika, Lesotho & Eswatini', season: 'Juni–begin juli', budget: 2975,
-      note: 'De opener van de expeditie, met een echte internationale luchthaven als instappunt (Kaapstad/Johannesburg) — Kruger-wildlife spotten is hier op zijn best, ruim vóór het regenseizoen.',
+      name: 'South Africa, Lesotho & Eswatini', season: 'June–early July', budget: 2975,
+      note: 'The opener of the expedition, with a real international airport as the entry point (Cape Town/Johannesburg) — Kruger wildlife spotting is at its best here, well before the rainy season.',
       countries: [mea('ZA', 'South Africa'), mea('LS', 'Lesotho'), mea('SZ', 'Eswatini')],
     },
     {
-      name: 'Zuidelijk Afrika', season: 'Juli–oktober', budget: 14035,
-      note: "Van Mozambique tot Malawi via Zimbabwe, Botswana, Namibië, Angola en Zambia — valt bij deze volgorde vrijwel volledig in het droge seizoen (mei-oktober), met de beste wildlife-observatie juist tegen het einde (augustus-oktober). De Angola-Zambia grensovergang in het zuidoosten van Angola is minder bereisd dan de rest van deze route — vooraf extra checken.",
+      name: 'Southern Africa', season: 'July–October', budget: 14035,
+      note: "From Mozambique to Malawi via Zimbabwe, Botswana, Namibia, Angola and Zambia — with this order it falls almost entirely within the dry season (May-October), with the best wildlife viewing right toward the end (August-October). The Angola-Zambia border crossing in southeastern Angola is less traveled than the rest of this route — check extra carefully beforehand.",
       countries: [mea('MZ', 'Mozambique'), mea('ZW', 'Zimbabwe'), mea('BW', 'Botswana'), mea('NA', 'Namibia'), mea('AO', 'Angola'), mea('ZM', 'Zambia'), mea('MW', 'Malawi')],
     },
     {
-      name: 'Eilanden', season: 'Oktober–november', budget: 2650,
-      note: 'Madagaskar en Mauritius — Madagaskars beruchte trage wegen zijn hier de grootste tijdsvreter, niet de bezienswaardigheden zelf.',
+      name: 'Islands', season: 'October–November', budget: 2650,
+      note: "Madagascar and Mauritius — Madagascar's notoriously slow roads are the biggest time sink here, not the sights themselves.",
       countries: [mea('MG', 'Madagascar'), mea('MU', 'Mauritius')],
     },
     {
-      name: 'Oost-Afrika', season: 'November–januari', budget: 10320,
-      note: 'Tanzania, Rwanda, Oeganda en Kenia — landt in de korte regentijd (oktober-december, lichte middagbuien, goed te doen) en de daaropvolgende korte droge periode (januari-februari), inclusief het kalfseizoen van de zuidelijke Serengeti. Niet de absolute piek (juni-oktober, die valt hier samen met Zuidelijk Afrika\'s enige goede seizoen), maar een erkend sterk alternatief.',
+      name: 'East Africa', season: 'November–January', budget: 10320,
+      note: "Tanzania, Rwanda, Uganda and Kenya — lands in the short rains (October-December, light afternoon showers, manageable) and the following short dry spell (January-February), including the southern Serengeti's calving season. Not the absolute peak (June-October, which here coincides with Southern Africa's only good season), but a recognized strong alternative.",
       countries: [mea('TZ', 'Tanzania'), mea('RW', 'Rwanda'), mea('UG', 'Uganda'), mea('KE', 'Kenya')],
     },
     {
-      name: 'Hoorn van Afrika & Egypte', season: 'Februari–maart', budget: 3115,
-      note: "Ethiopië en Egypte als afsluiting. Ethiopië's hoofdregenseizoen (kiremt) valt juni-september — de oude volgorde zette Ethiopië daar per ongeluk middenin; hier landt het in zijn eigen goede venster (oktober-maart, piek december-februari). Egypte profiteert als bijkomend voordeel van het koelere naseizoen in plaats van de vroege zomerhitte.",
+      name: 'Horn of Africa & Egypt', season: 'February–March', budget: 3115,
+      note: "Ethiopia and Egypt as the finale. Ethiopia's main rainy season (kiremt) falls June-September — the old order accidentally dropped Ethiopia right in the middle of it; here it lands in its own good window (October-March, peak December-February). As an added bonus, Egypt benefits from the cooler late season instead of the early summer heat.",
       countries: [mea('ET', 'Ethiopia'), mea('EG', 'Egypt')],
     },
   ], {
-    best_starting_month: 'Juni',
-    travel_style: 'Overland/safaritrucks tussen parken, verplichte lokale gidsen bij gorillatrekking (Oeganda/Rwanda), mix van budgetlodges en kamperen in de nationale parken, vluchten alleen tussen Malawi/Madagaskar/Mauritius/Tanzania (geen landroute mogelijk over water) en tussen Ethiopië en Egypte (geen praktische landroute door Soedan).',
-    climate_summary: "Vergeleken scenario's, na verificatie via onderzoek (2026-07) dat de \"tegengestelde droge/natte cycli\"-aanname uit de oude volgorde onjuist was: Oost-Afrika's droge seizoen (juni-oktober) en Zuidelijk Afrika's droge seizoen (mei-oktober) overlappen juist grotendeels. Het echte probleem was de vólgorde: bij een juni-start en de oude landvolgorde (Oost-Afrika eerst, Zuidelijk Afrika pas na de eilanden) arriveerde Zuidelijk Afrika pas in november — al voorbij het gedeelde venster en middenin het regenseizoen. Bij de huidige, omgedraaide volgorde (zuid naar noord) krijgt Zuidelijk Afrika — dat geen vergelijkbaar sterk alternatief seizoen heeft — het gedeelde juni-oktober-venster, en schuift Oost-Afrika door naar november-januari: niet de absolute piek, maar wél een erkend sterk seizoen (korte regentijd plus het kalfseizoen van de zuidelijke Serengeti in januari-februari). Een bijkomende fix: Ethiopië's hoofdregenseizoen (kiremt, juni-september) werd in de oude volgorde per ongeluk gebundeld met de rest van Oost-Afrika's droge seizoen — hier landt Ethiopië op zijn eigen goede venster (oktober-maart, piek december-februari) aan het einde van de reis, samen met Egypte dat zo ook uit de vroege-zomerhitte van de oude volgorde is gehaald. Beste keuze: start begin juni in Zuid-Afrika.",
-    description: 'Overland-route van zuidelijk Afrika via Oost-Afrika en de eilanden naar de Hoorn van Afrika en Egypte als finale. Beoogde duur ~9,5 maand.',
-    notes: 'Oorspronkelijk geïmporteerd uit een ChatGPT-brainstorm, met Egypte als startpunt/noordelijke poort. Jordanië en Oman hoorden ooit bij deze route maar zijn verplaatst naar wat nu Mediterranean Civilizations Expedition 🏛️ is, zodat dit zuiver Afrikaans blijft + Egypte als historische/geografische aansluiting; Egypte zelf komt in beide routes voor omdat het bij beide thema\'s past. Zuid-Afrika staat al als "visited" in je Countries-sheet — de moeite waard om te checken voordat je het als nieuw behandelt.\n\n' +
-      'Tijdscontrole (2026-07): dagen per land opgehoogd na een realismecontrole (247→277 dagen totaal) — vooral Oeganda (gorillatrekking-logistiek), Madagaskar (berucht trage wegen) en Mozambique (het land strekt zich noord-zuid enorm uit) waren onderschat.\n\n' +
-      'Vervolg (2026-07): budgetten per land meegeschaald met de opgehoogde dagen, en de 18 landen gegroepeerd in regio\'s met eigen seizoen/budget, zoals Eurasia en Pan-American die al hadden.\n\n' +
-      "Toevoeging (2026-07): Angola toegevoegd tussen Namibië en Zambia (grensovergang Oshikango/Santa Clara vanaf Namibië, verder naar Zambia via een minder bereisde grensovergang in het zuidoosten van Angola). Afkomstig uit de West & Central Africa-ontwerpsessie — daar paste Angola geografisch slechter (alleen per vlucht bereikbaar, geen buurlanden op die route). Nieuw totaal na deze toevoeging: 18 landen (was 17), 288 dagen (was 277), €29.225 (was €27.725).\n\n" +
-      "Omgedraaid naar een zuid-noord-volgorde (2026-07), op Youri's verzoek om het Oost-/Zuidelijk-Afrika-seizoenscompromis te verbeteren — zie de climate_summary hierboven voor de volledige redenering. Alle 18 landen, dagen en budgetten per land zijn ongewijzigd; alleen de volgorde, de regio-indeling/-namen, en de transport_to_next-routes (nu in omgekeerde richting, met een paar nieuwe grensovergangen waar de volgorde dat vereiste) zijn aangepast. Dit is een bewuste, volledige vervanging van de route (net als bij Mediterranean Civilizations Expedition destijds), niet een veld-patch — eventuele eigen aanpassingen die je zelf al had gemaakt aan losse velden gaan hierbij verloren.\n\n" +
-      "Prijzen/visum/reisadvies-verificatie (2026-07, twaalfde route van deze verificatieronde, samen met British Isles de laatste twee): alle 18 landen gecheckt via web-onderzoek tegen actuele prijzen (tussen budget- en comfort-backpacker), visumregels en Nederlands reisadvies. Dagen ongewijzigd overal; alleen budgetten aangepast. Grootste correctie: Namibië (€100→€200/dag) — sinds april 2025 niet meer visumvrij voor Nederlanders, plus een 4x4-huurauto vrijwel overal op de route noodzakelijk. Ook fors omhoog: Zuid-Afrika, Mozambique, Botswana, Angola, Malawi, Tanzania, Rwanda, Kenia en Uganda (zie elk land z'n eigen notitie voor de reden — vaak een visumwijziging, gestegen parkentrees, of een kostenpost die eerder niet was meegenomen). Eén duidelijke daling: Madagaskar (€78→€69/dag — basiskosten bleken bij navraag lager, terwijl de eiland-vlucht naar Nosy Be en de privé-4x4-transfers nu apart zijn benoemd in plaats van in het dagbudget verstopt). Lesotho, Zimbabwe (basisbudget) en Mauritius bevestigd accuraat, geen wijziging. Zambia bevestigd accuraat mits de zelfrijd-/kampeerstijl bij South Luangwa/Lower Zambezi wordt aangehouden in plaats van all-inclusive safari-lodges. Nieuw totaal: €33.095 (was €29.225), 288 dagen ongewijzigd.\n\n" +
-      "⚠️ Belangrijkste losstaande bevinding: Lalibela, Gondar en de Simien Mountains (Amhara-regio) en de Danakil Depressie (Afar-regio) staan momenteel volledig ROOD ('niet reizen') op het Nederlandse reisadvies door het Fano-milities-conflict resp. grensinstabiliteit met Eritrea — zie Ethiopië's eigen notitie voor de volledige uitleg. Youri heeft er bewust voor gekozen deze etappe ongewijzigd te laten (Route Builder is de aspirational/someday-laag), maar dit is een momentopname (juli 2026): check nederlandwereldwijd.nl zelf vlak vóór een eventuele echte reis. Twee andere routestukken verdienen extra aandacht bij het echt boeken: Rwanda's 'Lake Kivu'-stop is verduidelijkt naar Kibuye/Karongi (niet Rubavu/Gisenyi, dat tegenover het door M23 gehouden Goma ligt en oranje is), en Uganda's Queen Elizabeth NP/Bwindi-corridor heeft een tijdelijke DRC-grensafsluiting (Ebola-uitbraak) en een ADF-gerelateerde aanslag op nabijgelegen steden (nov 2025) — beide besproken in hun eigen landnotitie.\n\n" +
-      "Routelogica-herziening (2026-08, search-bevestigd, dertiende en laatste expeditie uit ROUTE_LOGIC_REVIEW.md, meeste losse fixes van de hele playbook): negen landen met een echte herordening, plus Ethiopië's onvermelde terugvlucht. **Zuid-Afrika**: Kruger stond vóór Johannesburg, terwijl de route Addo-Kruger dwars door Johannesburg loopt — nu Addo→Johannesburg→Kruger, scheelt ≈465 km. **Lesotho**: 'Sani Pass/Thaba-Bosiu' stond als één bestemming samengevoegd terwijl ze ≈335 km uit elkaar liggen — nu apart, Sani Pass als laatste stop (mondt direct uit in KZN, dicht bij de Eswatini-grensovergang). **Mozambique**: de etappe kwam binnen bij Maputo maar begon met Ilha de Moçambique (≈2.000+ km verderop) en eindigde weer bij Maputo vlak vóór een rit van ≈1.644 km naar Zimbabwe — nu Maputo eerst, dan zuid-naar-noord door naar Nampula/Ilha, dichter bij de Zimbabwe-grens. **Zimbabwe**: Victoria Falls-Hwange-Mana Pools-Great Zimbabwe-Bulawayo doorkruiste het land minstens twee keer diagonaal — nu Mana Pools (bij de instap) →Great Zimbabwe→Bulawayo→Hwange→Victoria Falls, één lus. **Namibië** (grootste vondst): Fish River Canyon stond als laatste stop (uiterste zuiden) terwijl de Angola-grens in het uiterste noorden ligt — de oude volgorde kostte ≈2.490 km pure heen-en-terug-omweg; nu Fish River Canyon vroeg in de route, eindigend bij Etosha (noord) — scheelt ≈1.355 km (≈35%). **Angola**: Luanda stond eerst, ≈900-1.000 km van de instap en de rest van de bestemmingen (die zuidelijk clusteren) — nu de zuidelijke cluster eerst, Luanda als losse vlucht-uitstap aan het eind. **Zambia**: South Luangwa (oost) stond vóór Livingstone (zuid) terwijl de Malawi-grens juist oost ligt — nu de zuidelijke lus eerst, South Luangwa als laatste. **Madagaskar**: Isalo stond ná Morondava, verbonden door een ruig onverhard traject van ≈600 km — nu bereikt via de goede verharde RN7 vanaf Tana, niet meer aansluitend op Morondava. **Tanzania**: Kilimanjaro (vlak bij Arusha) stond ná Zanzibar, wat een terugvlucht van ≈460-600 km kostte — nu meteen na het noordelijke circuit, vóór Zanzibar. **Oeganda**: de etappe kwam binnen vanuit Rwanda vlak bij Bwindi, maar begon met Kampala/Jinja aan de andere kant van het land — nu Bwindi/QENP/Kibale meteen bij binnenkomst, Kampala/Jinja als laatste (aansluitend op de Kenia-grens). **Kenia**: Mount Kenya stond vóór Mombasa, wat een extra rit via Nairobi kostte — nu Mount Kenya als laatste, rechtstreeks aansluitend op de Moyale-route naar Ethiopië. **Ethiopië**: de terugvlucht Omo Valley-Addis Abeba (geen directe internationale vlucht vanaf Omo Valley) stond nergens vermeld — nu expliciet toegevoegd. Bevestigd zonder wijziging: Eswatini, Botswana. Coördinaten per bestemming toegevoegd aan alle 18 landen. Youri had alleen Kaapstad al eerder bezocht (mag blijven staan) — geen cuts. Zelfde fixes ook toegepast op de vier split-companions (Zuidelijk Afrika Safari-lus 🦁, Afrikaanse Eilanden 🏝️, Oost-Afrika Safari Classic 🦒, Hoorn van Afrika & Egypte 🏺) via de gedeelde RB_EXPEDITION_CONTENT-tabel. Landen/dagen/budget ongewijzigd — alleen volgorde, transport-notities en coördinaten aangepast. **Hiermee zijn alle 13 originele expedities uit ROUTE_LOGIC_REVIEW.md klaar.**",
+    best_starting_month: 'June',
+    travel_style: 'Overland/safari trucks between parks, mandatory local guides for gorilla trekking (Uganda/Rwanda), a mix of budget lodges and camping in the national parks, flights only between Malawi/Madagascar/Mauritius/Tanzania (no overland route possible across water) and between Ethiopia and Egypt (no practical overland route through Sudan).',
+    climate_summary: "Compared scenarios, after research (2026-07) confirmed that the \"opposite dry/wet cycles\" assumption from the old order was incorrect: East Africa's dry season (June-October) and Southern Africa's dry season (May-October) actually overlap for the most part. The real problem was the order: with a June start and the old country order (East Africa first, Southern Africa only after the islands), Southern Africa didn't arrive until November — already past the shared window and in the middle of the rainy season. With the current, reversed order (south to north), Southern Africa — which has no comparably strong alternative season — gets the shared June-October window, and East Africa shifts to November-January: not the absolute peak, but a recognized strong season nonetheless (short rains plus the southern Serengeti's calving season in January-February). An additional fix: Ethiopia's main rainy season (kiremt, June-September) was accidentally bundled with the rest of East Africa's dry season in the old order — here Ethiopia lands in its own good window (October-March, peak December-February) at the end of the trip, together with Egypt, which is likewise taken out of the old order's early-summer heat. Best choice: start in early June in South Africa.",
+    description: 'Overland route from southern Africa via East Africa and the islands to the Horn of Africa and Egypt as the finale. Intended duration ~9.5 months.',
+    notes: 'Originally imported from a ChatGPT brainstorm, with Egypt as the starting point/northern gateway. Jordan and Oman used to belong to this route but were moved to what is now Mediterranean Civilizations Expedition 🏛️, so this stays purely African + Egypt as a historical/geographical connector; Egypt itself appears in both routes because it fits both themes. South Africa is already marked as "visited" in your Countries sheet — worth checking before treating it as new.\n\n' +
+      'Time check (2026-07): days per country increased after a realism check (247→277 days total) — especially Uganda (gorilla trekking logistics), Madagascar (notoriously slow roads) and Mozambique (the country stretches enormously north-south) had been underestimated.\n\n' +
+      'Follow-up (2026-07): budgets per country scaled along with the increased days, and the 18 countries grouped into regions with their own season/budget, as Eurasia and Pan-American already had.\n\n' +
+      "Addition (2026-07): Angola added between Namibia and Zambia (Oshikango/Santa Clara border crossing from Namibia, onward to Zambia via a less-traveled border crossing in southeastern Angola). Sourced from the West & Central Africa design session — there Angola fit geographically worse (only reachable by flight, no neighboring countries on that route). New total after this addition: 18 countries (was 17), 288 days (was 277), €29,225 (was €27,725).\n\n" +
+      "Reversed to a south-north order (2026-07), at Youri's request to improve the East/Southern Africa seasonal compromise — see the climate_summary above for the full reasoning. All 18 countries, days and budgets per country are unchanged; only the order, the region grouping/names, and the transport_to_next routes (now in the reverse direction, with a few new border crossings where the order required it) were adjusted. This is a deliberate, wholesale replacement of the route (as with Mediterranean Civilizations Expedition previously), not a field patch — any of your own adjustments already made to individual fields will be lost here.\n\n" +
+      "Price/visa/travel advisory verification (2026-07, the twelfth route in this verification round, along with British Isles the last two): all 18 countries checked via web research against current prices (between budget and comfort backpacker), visa rules and Dutch travel advisory. Days unchanged everywhere; only budgets adjusted. Biggest correction: Namibia (€100→€200/day) — no longer visa-free for Dutch nationals since April 2025, plus a 4x4 rental car necessary almost everywhere on the route. Also up substantially: South Africa, Mozambique, Botswana, Angola, Malawi, Tanzania, Rwanda, Kenya and Uganda (see each country's own note for the reason — often a visa change, increased park fees, or a cost that wasn't previously accounted for). One clear decrease: Madagascar (€78→€69/day — base costs turned out lower on inquiry, while the island flight to Nosy Be and the private 4x4 transfers are now called out separately instead of hidden in the daily budget). Lesotho, Zimbabwe (base budget) and Mauritius confirmed accurate, no change. Zambia confirmed accurate provided the self-drive/camping style is maintained at South Luangwa/Lower Zambezi instead of all-inclusive safari lodges. New total: €33,095 (was €29,225), 288 days unchanged.\n\n" +
+      "⚠️ Most important standalone finding: Lalibela, Gondar and the Simien Mountains (Amhara region) and the Danakil Depression (Afar region) currently sit entirely RED ('do not travel') on the Dutch travel advisory due to the Fano militia conflict and border instability with Eritrea respectively — see Ethiopia's own note for the full explanation. Youri has deliberately chosen to leave this leg unchanged (Route Builder is the aspirational/someday layer), but this is a snapshot (July 2026): check nederlandwereldwijd.nl yourself shortly before any actual trip. Two other route pieces deserve extra attention when actually booking: Rwanda's 'Lake Kivu' stop has been clarified to Kibuye/Karongi (not Rubavu/Gisenyi, which sits across from M23-held Goma and is orange), and Uganda's Queen Elizabeth NP/Bwindi corridor has a temporary DRC border closure (Ebola outbreak) and an ADF-related attack on nearby towns (Nov 2025) — both discussed in their own country notes.\n\n" +
+      "Route-logic revision (2026-08, search-confirmed, thirteenth and final expedition from ROUTE_LOGIC_REVIEW.md, the most individual fixes of the whole playbook): nine countries with a genuine reordering, plus Ethiopia's unstated return flight. **South Africa**: Kruger used to come before Johannesburg, while the Addo-Kruger route runs straight through Johannesburg — now Addo→Johannesburg→Kruger, saving ≈465 km. **Lesotho**: 'Sani Pass/Thaba-Bosiu' used to be merged into one destination while they lie ≈335 km apart — now separate, Sani Pass as the last stop (comes out directly in KZN, close to the Eswatini border crossing). **Mozambique**: the leg entered at Maputo but started with Ilha de Moçambique (≈2,000+ km further away) and ended back at Maputo just before a ≈1,644 km drive to Zimbabwe — now Maputo first, then south-to-north on to Nampula/Ilha, closer to the Zimbabwe border. **Zimbabwe**: Victoria Falls-Hwange-Mana Pools-Great Zimbabwe-Bulawayo crossed the country diagonally at least twice — now Mana Pools (at entry) →Great Zimbabwe→Bulawayo→Hwange→Victoria Falls, one loop. **Namibia** (biggest find): Fish River Canyon used to be the last stop (far south) while the Angola border is in the far north — the old order cost ≈2,490 km of pure there-and-back detour; now Fish River Canyon early in the route, ending at Etosha (north) — saving ≈1,355 km (≈35%). **Angola**: Luanda used to come first, ≈900-1,000 km from entry and from the rest of the destinations (which cluster in the south) — now the southern cluster first, Luanda as a separate flight side trip at the end. **Zambia**: South Luangwa (east) used to come before Livingstone (south) while the Malawi border is actually on the east side — now the southern loop first, South Luangwa last. **Madagascar**: Isalo used to come after Morondava, connected by a rough ≈600 km unpaved track — now reached via the good paved RN7 from Tana, no longer connecting to Morondava. **Tanzania**: Kilimanjaro (close to Arusha) used to come after Zanzibar, which cost a return flight of ≈460-600 km — now right after the northern circuit, before Zanzibar. **Uganda**: the leg entered from Rwanda close to Bwindi, but started with Kampala/Jinja on the other side of the country — now Bwindi/QENP/Kibale right upon entry, Kampala/Jinja last (connecting to the Kenya border). **Kenya**: Mount Kenya used to come before Mombasa, which cost an extra trip via Nairobi — now Mount Kenya last, connecting directly to the Moyale route toward Ethiopia. **Ethiopia**: the return flight Omo Valley-Addis Ababa (no direct international flight from the Omo Valley) was nowhere stated — now explicitly added. Confirmed with no change: Eswatini, Botswana. Coordinates per destination added to all 18 countries. Youri had only visited Cape Town before (can stay) — no cuts. The same fixes were also applied to the four split companions (Southern Africa Safari Loop 🦁, African Islands 🏝️, East Africa Safari Classic 🦒, Horn of Africa & Egypt 🏺) via the shared RB_EXPEDITION_CONTENT table. Countries/days/budget unchanged — only order, transport notes and coordinates adjusted. **This completes all 13 original expeditions from ROUTE_LOGIC_REVIEW.md.**",
   });
 }
 
@@ -3992,74 +3994,74 @@ function rbSeedAfricaSplitExpeditions() {
 
 function rbBuildSouthernAfricaSafariLoopRoute() {
   const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
-  return rbBuildSeedRoute('Zuidelijk Afrika Safari-lus 🦁', [
+  return rbBuildSeedRoute('Southern Africa Safari Loop 🦁', [
     {
-      name: 'Zuid-Afrika, Lesotho & Eswatini', season: 'Juni–begin juli', budget: 2975,
-      note: 'De opener, met een echte internationale luchthaven als instappunt (Kaapstad/Johannesburg) — Kruger-wildlife spotten is hier op zijn best, ruim vóór het regenseizoen.',
-      countries: [{ ...mea('ZA', 'South Africa'), notes: "Instap: rechtstreekse KLM-vlucht Amsterdam-Kaapstad (±11,5 uur; vanaf ±€1.000-1.200 retour rond juni — november is doorgaans goedkoper maar valt buiten het beste seizoen van deze route). Prijsindicatie webonderzoek 2026-08, momentopname. " + (mea('ZA', 'South Africa').notes || '') }, mea('LS', 'Lesotho'), mea('SZ', 'Eswatini')],
+      name: 'South Africa, Lesotho & Eswatini', season: 'June–early July', budget: 2975,
+      note: 'The opener, with a real international airport as the entry point (Cape Town/Johannesburg) — Kruger wildlife spotting is at its best here, well before the rainy season.',
+      countries: [{ ...mea('ZA', 'South Africa'), notes: "Entry: direct KLM flight Amsterdam-Cape Town (±11.5 hours; from ±€1,000-1,200 return around June — November is usually cheaper but falls outside this route's best season). Price indication from 2026-08 web research, a snapshot. " + (mea('ZA', 'South Africa').notes || '') }, mea('LS', 'Lesotho'), mea('SZ', 'Eswatini')],
     },
     {
-      name: 'Zuidelijk Afrika', season: 'Juli–oktober', budget: 14035,
-      note: "Van Mozambique tot Malawi via Zimbabwe, Botswana, Namibië, Angola en Zambia — valt bij deze volgorde vrijwel volledig in het droge seizoen (mei-oktober), met de beste wildlife-observatie juist tegen het einde (augustus-oktober). De Angola-Zambia grensovergang in het zuidoosten van Angola is minder bereisd dan de rest van deze route — vooraf extra checken.",
+      name: 'Southern Africa', season: 'July–October', budget: 14035,
+      note: "From Mozambique to Malawi via Zimbabwe, Botswana, Namibia, Angola and Zambia — with this order it falls almost entirely within the dry season (May-October), with the best wildlife viewing right toward the end (August-October). The Angola-Zambia border crossing in southeastern Angola is less traveled than the rest of this route — check extra carefully beforehand.",
       countries: [mea('MZ', 'Mozambique'), mea('ZW', 'Zimbabwe'), mea('BW', 'Botswana'), mea('NA', 'Namibia'), mea('AO', 'Angola'), mea('ZM', 'Zambia'), mea('MW', 'Malawi')],
     },
   ], {
-    best_starting_month: 'Juni',
-    travel_style: 'Overland/safaritrucks tussen parken, mix van budgetlodges en kamperen in de nationale parken.',
-    climate_summary: "Een junistart legt Zuid-Afrika/Lesotho/Eswatini in het droge seizoen vlak vóór het regenseizoen (beste Kruger-wildlife), en laat de rest van zuidelijk Afrika (Mozambique t/m Malawi) in juli-oktober vallen — vrijwel volledig het gedeelde droge seizoen van de regio (mei-oktober), met de beste wildlife-observatie tegen het einde.",
-    description: 'Van Zuid-Afrika via Mozambique, Zimbabwe, Botswana, Namibië en Angola naar Zambia en Malawi — een aaneengesloten safari-lus door zuidelijk Afrika.',
-    notes: 'Losgesplitst van Africa Grand Tour 🌍 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen uit Africa Grand Tour 🌍 (inclusief de 2026-07 zuid-noord-herordening en alle prijs-/visum-/reisadvies-verificaties, zoals de Namibië-correctie); alleen de expeditiegrens is nieuw. Africa Grand Tour 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+    best_starting_month: 'June',
+    travel_style: 'Overland/safari trucks between parks, a mix of budget lodges and camping in the national parks.',
+    climate_summary: "A June start places South Africa/Lesotho/Eswatini in the dry season just before the rainy season (best Kruger wildlife), and lands the rest of southern Africa (Mozambique through Malawi) in July-October — almost entirely the region's shared dry season (May-October), with the best wildlife viewing toward the end.",
+    description: 'From South Africa via Mozambique, Zimbabwe, Botswana, Namibia and Angola to Zambia and Malawi — a continuous safari loop through southern Africa.',
+    notes: 'Split off from Africa Grand Tour 🌍 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days, budgets and order are carried over unchanged from Africa Grand Tour 🌍 (including the 2026-07 south-north reordering and all price/visa/travel advisory verifications, such as the Namibia correction); only the expedition boundary is new. Africa Grand Tour 🌍 itself continues to exist unchanged as a separate, full expedition.',
   });
 }
 
 function rbBuildAfricaIslandsRoute() {
   const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
-  return rbBuildSeedRoute('Afrikaanse Eilanden 🏝️', [
+  return rbBuildSeedRoute('African Islands 🏝️', [
     {
-      name: 'Eilanden', season: 'Oktober–november', budget: 2650,
-      note: 'Madagaskar en Mauritius — Madagaskars beruchte trage wegen zijn hier de grootste tijdsvreter, niet de bezienswaardigheden zelf.',
-      countries: [{ ...mea('MG', 'Madagascar'), notes: "Instap: vlucht Amsterdam-Antananarivo (±13-16 uur, 1 tussenstop, bv. via Nairobi of Parijs met Kenya Airways/Air France; vanaf ±€650-1.100 retour; beste periode oktober — let op, de goedkoopste maand is doorgaans maart, reken dus eerder aan de hoge kant van deze bandbreedte). Prijsindicatie webonderzoek 2026-08, momentopname. " + (mea('MG', 'Madagascar').notes || '') }, mea('MU', 'Mauritius')],
+      name: 'Islands', season: 'October–November', budget: 2650,
+      note: "Madagascar and Mauritius — Madagascar's notoriously slow roads are the biggest time sink here, not the sights themselves.",
+      countries: [{ ...mea('MG', 'Madagascar'), notes: "Entry: flight Amsterdam-Antananarivo (±13-16 hours, 1 stopover, e.g. via Nairobi or Paris with Kenya Airways/Air France; from ±€650-1,100 return; best period October — note, the cheapest month is usually March, so budget toward the higher end of this range). Price indication from 2026-08 web research, a snapshot. " + (mea('MG', 'Madagascar').notes || '') }, mea('MU', 'Mauritius')],
     },
   ], {
-    best_starting_month: 'Oktober',
-    travel_style: 'Losse vluchtsprong tussen de twee eilanden (geen landroute mogelijk over water).',
-    climate_summary: 'Oktober-november is een goed droog venster voor beide eilanden.',
-    description: 'Twee totaal verschillende eilandbestemmingen op één as: het avontuur/natuur van Madagaskar en het strand/luxe van Mauritius.',
-    notes: 'Losgesplitst van Africa Grand Tour 🌍 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen en budgetten zijn ongewijzigd overgenomen uit Africa Grand Tour 🌍. Madagaskar en Mauritius zijn allebei op zichzelf ook een sterke standalone bestemming (en een compleet ander reistype) — hier samen omdat dat vluchttechnisch handig is, niet omdat ze thematisch bij elkaar horen; voel je vrij om er ook maar één van te doen. Africa Grand Tour 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+    best_starting_month: 'October',
+    travel_style: 'A separate flight hop between the two islands (no overland route possible across water).',
+    climate_summary: 'October-November is a good dry window for both islands.',
+    description: 'Two completely different island destinations on one axis: the adventure/nature of Madagascar and the beach/luxury of Mauritius.',
+    notes: "Split off from Africa Grand Tour 🌍 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries and days/budgets are carried over unchanged from Africa Grand Tour 🌍. Madagascar and Mauritius are each also a strong standalone destination in their own right (and a completely different type of trip) — grouped together here because it's convenient flight-wise, not because they belong together thematically; feel free to just do one of them. Africa Grand Tour 🌍 itself continues to exist unchanged as a separate, full expedition.",
   });
 }
 
 function rbBuildEastAfricaSafariClassicRoute() {
   const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
-  return rbBuildSeedRoute('Oost-Afrika Safari Classic 🦒', [
+  return rbBuildSeedRoute('East Africa Safari Classic 🦒', [
     {
-      name: 'Oost-Afrika', season: 'November–januari', budget: 10320,
-      note: "Tanzania, Rwanda, Oeganda en Kenia — landt in de korte regentijd (oktober-december, lichte middagbuien, goed te doen) en de daaropvolgende korte droge periode (januari-februari), inclusief het kalfseizoen van de zuidelijke Serengeti. Niet de absolute piek (juni-oktober), maar een erkend sterk alternatief.",
-      countries: [{ ...mea('TZ', 'Tanzania'), notes: "Instap: rechtstreekse KLM-vlucht Amsterdam-Kilimanjaro (±8u45; vanaf ±€1.050-1.500 retour; beste periode november). Prijsindicatie webonderzoek 2026-08, momentopname. " + (mea('TZ', 'Tanzania').notes || '') }, mea('RW', 'Rwanda'), mea('UG', 'Uganda'), mea('KE', 'Kenya')],
+      name: 'East Africa', season: 'November–January', budget: 10320,
+      note: "Tanzania, Rwanda, Uganda and Kenya — lands in the short rains (October-December, light afternoon showers, manageable) and the following short dry spell (January-February), including the southern Serengeti's calving season. Not the absolute peak (June-October), but a recognized strong alternative.",
+      countries: [{ ...mea('TZ', 'Tanzania'), notes: "Entry: direct KLM flight Amsterdam-Kilimanjaro (±8h45; from ±€1,050-1,500 return; best period November). Price indication from 2026-08 web research, a snapshot. " + (mea('TZ', 'Tanzania').notes || '') }, mea('RW', 'Rwanda'), mea('UG', 'Uganda'), mea('KE', 'Kenya')],
     },
   ], {
     best_starting_month: 'November',
-    travel_style: 'Overland/safaritrucks tussen de parken, verplichte lokale gidsen bij gorillatrekking in Oeganda en Rwanda.',
-    climate_summary: 'November-januari valt in de korte regentijd (lichte middagbuien, goed te doen) en de daaropvolgende korte droge periode, inclusief het kalfseizoen van de zuidelijke Serengeti — niet de absolute piek (juni-oktober) maar een erkend sterk alternatief.',
-    description: 'Klassieke Oost-Afrika safari: Serengeti, Maasai Mara en gorillatrekking in Oeganda en Rwanda.',
-    notes: 'Losgesplitst van Africa Grand Tour 🌍 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen uit Africa Grand Tour 🌍 (inclusief de reisadvies-notities over Rwanda\'s Lake Kivu-stop en Uganda\'s DRC-grens/Ebola-situatie — zie de landnotities). Africa Grand Tour 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+    travel_style: 'Overland/safari trucks between the parks, mandatory local guides for gorilla trekking in Uganda and Rwanda.',
+    climate_summary: "November-January falls in the short rains (light afternoon showers, manageable) and the following short dry spell, including the southern Serengeti's calving season — not the absolute peak (June-October) but a recognized strong alternative.",
+    description: 'Classic East Africa safari: Serengeti, Maasai Mara and gorilla trekking in Uganda and Rwanda.',
+    notes: "Split off from Africa Grand Tour 🌍 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days, budgets and order are carried over unchanged from Africa Grand Tour 🌍 (including the travel advisory notes on Rwanda's Lake Kivu stop and Uganda's DRC border/Ebola situation — see the country notes). Africa Grand Tour 🌍 itself continues to exist unchanged as a separate, full expedition.",
   });
 }
 
 function rbBuildHornOfAfricaAndEgyptRoute() {
   const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
-  return rbBuildSeedRoute('Hoorn van Afrika & Egypte 🏺', [
+  return rbBuildSeedRoute('Horn of Africa & Egypt 🏺', [
     {
-      name: 'Hoorn van Afrika & Egypte', season: 'Februari–maart', budget: 3115,
-      note: "Ethiopië en Egypte als afsluiting. Ethiopië's hoofdregenseizoen (kiremt) valt juni-september, dus dit venster (oktober-maart, piek december-februari) is zijn eigen goede tijd. Egypte profiteert van het koelere naseizoen in plaats van de vroege zomerhitte.",
-      countries: [{ ...mea('ET', 'Ethiopia'), notes: "Instap: rechtstreekse Ethiopian Airlines-vlucht Amsterdam-Addis Abeba (±7,5-8 uur; vanaf ±€500-700 retour; beste periode februari). Prijsindicatie webonderzoek 2026-08, momentopname. " + (mea('ET', 'Ethiopia').notes || '') }, mea('EG', 'Egypt')],
+      name: 'Horn of Africa & Egypt', season: 'February–March', budget: 3115,
+      note: "Ethiopia and Egypt as the finale. Ethiopia's main rainy season (kiremt) falls June-September, so this window (October-March, peak December-February) is its own good time. Egypt benefits from the cooler late season instead of the early summer heat.",
+      countries: [{ ...mea('ET', 'Ethiopia'), notes: "Entry: direct Ethiopian Airlines flight Amsterdam-Addis Ababa (±7.5-8 hours; from ±€500-700 return; best period February). Price indication from 2026-08 web research, a snapshot. " + (mea('ET', 'Ethiopia').notes || '') }, mea('EG', 'Egypt')],
     },
   ], {
-    best_starting_month: 'Februari',
-    travel_style: 'Vlucht tussen Ethiopië en Egypte (geen praktische landroute door Soedan).',
-    climate_summary: "Ethiopië landt in zijn eigen goede venster (oktober-maart, piek december-februari, buiten het kiremt-regenseizoen van juni-september) en Egypte profiteert van het koelere naseizoen.",
-    description: 'Historisch Ethiopië en het oude Egypte als tweeluik.',
-    notes: "Losgesplitst van Africa Grand Tour 🌍 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen en budgetten zijn ongewijzigd overgenomen uit Africa Grand Tour 🌍. Egypte komt hiermee in twéé losse Route Builder-expedities voor — ook in Mediterranean Civilizations Expedition 🏛️'s 'Egypte & Arabisch Schiereiland'-etappe — exact het 'block komt in meerdere expedities terug'-patroon uit de modularisatie-analyse. ⚠️ Ethiopië's Amhara-regio (Lalibela/Gondar/Simien) en de Danakil Depressie stonden per 2026-07 nog rood/oranje op het Nederlandse reisadvies — zie Ethiopië's eigen notitie, en check nederlandwereldwijd.nl vlak voor een echte reis. Africa Grand Tour 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.",
+    best_starting_month: 'February',
+    travel_style: 'Flight between Ethiopia and Egypt (no practical overland route through Sudan).',
+    climate_summary: "Ethiopia lands in its own good window (October-March, peak December-February, outside the kiremt rainy season of June-September) and Egypt benefits from the cooler late season.",
+    description: 'Historic Ethiopia and ancient Egypt as a two-country pairing.',
+    notes: "Split off from Africa Grand Tour 🌍 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries and days/budgets are carried over unchanged from Africa Grand Tour 🌍. This means Egypt appears in two separate Route Builder expeditions — also in Mediterranean Civilizations Expedition 🏛️'s 'Egypt & Arabian Peninsula' leg — exactly the 'block reappears in multiple expeditions' pattern from the modularization analysis. ⚠️ Ethiopia's Amhara region (Lalibela/Gondar/Simien) and the Danakil Depression were still red/orange on the Dutch travel advisory as of 2026-07 — see Ethiopia's own note, and check nederlandwereldwijd.nl shortly before an actual trip. Africa Grand Tour 🌍 itself continues to exist unchanged as a separate, full expedition.",
   });
 }
 
@@ -7717,22 +7719,146 @@ function rbMigrateMediterraneanRouteLogicOverhaul() {
 }
 
 /**
+ * Africa Grand Tour family — Dutch-to-English translation (2026-08 batch 7/13, the biggest batch and
+ * the one that completes all 5 dict-based expedition families). Same field-patch pattern as
+ * rbApplyPanAmericanEnglishToRoute(): 20 routes total, the most of any translation batch so far — the
+ * Grand Trip itself, its four 2026-07 split companions (Southern Africa Safari Loop 🦁 ← Zuidelijk
+ * Afrika Safari-lus, African Islands 🏝️ ← Afrikaanse Eilanden, East Africa Safari Classic 🦒 ←
+ * Oost-Afrika Safari Classic, Horn of Africa & Egypt 🏺 ← Hoorn van Afrika & Egypte — each renamed and
+ * looked up by old-or-new name so this is idempotent whichever language the route was seeded/migrated
+ * in), and fifteen standalone single-/dual-country consumers split off in later batches. Six of the
+ * fifteen standalones (Egypt 🏺, Namibia 🏜️, South Africa 🦓, Kenya 🦒, Madagascar 🦎, Ethiopia ⛪) also
+ * needed a name rename; the other nine (Tanzania 🦁, Botswana 🐘, Rwanda 🦍, Mauritius 🦤, Zimbabwe 🐆,
+ * Mozambique 🐋, Zambia & Malawi 💦, South Africa & Mountain Kingdoms 👑, Victoria Falls & Kalahari
+ * Loop 🦏 — the last two also renamed, from Zuid-Afrika & Bergkoninkrijkjes and Victoria Falls &
+ * Kalahari-lus) were already English country/region names, so only their own wrapper-level text needed
+ * translating. Reference values are read straight off the (already-translated) rbBuildXRoute()
+ * functions rather than duplicated a third time here, so there's a single source of truth for the
+ * English text.
+ *
+ * Migration-collision fix for this batch (same category of bug fixed for Patagonia/Eurasia/India &
+ * Himalaya/Nordic Arctic/Pan-American): see the widened routeNamePairs/note-guard on
+ * rbMigrateAfricaGrandTourRouteLogicOverhaul()/rbApplyAfricaGrandTourOverhaulToRoute() above this
+ * function — that migration runs immediately before this one in rbInit(), so on a brand-new browser it
+ * would otherwise fail to find the four renamed split companions by their old Dutch names, and would
+ * fail to recognize its own already-applied Dutch note marker inside this batch's freshly-translated
+ * English `notes` field and double-append its still-Dutch text on top. rbMigrateSplitRouteEntryNotes's
+ * prependInstap() already guards generically on both 'Instap:'/'Entry:' prefixes (from the Eurasia
+ * batch) and the four split companions' own "Entry:" text is baked directly into their build functions
+ * rather than added by that migration, so no separate fix needed there. rbMigrateTimeAuditCorrections
+ * and rbMigrateBudgetAndRegionCorrections only ever patch this family's *old*, pre-2026-07-reorder
+ * region layout (flag-gated, not name- or Dutch-text-pattern-matched against current data), so they're
+ * unaffected either way. rbMigrateAngolaIntoAfricaGrandTour, rbMigrateAfricaGrandTourReorder and the
+ * price-verification migrations are likewise pure flag-gated wholesale-replacements with no text-marker
+ * guard, so the rename doesn't affect them.
+ */
+function rbMigrateAfricaGrandTourFamilyEnglish() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_AFRICA_GRAND_TOUR_ENGLISH)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_AFRICA_GRAND_TOUR_ENGLISH, '1');
+
+  const targets = [
+    { oldName: 'Africa Grand Tour 🌍', newName: 'Africa Grand Tour 🌍', buildFn: rbBuildAfricaGrandTourRoute },
+    { oldName: 'Zuidelijk Afrika Safari-lus 🦁', newName: 'Southern Africa Safari Loop 🦁', buildFn: rbBuildSouthernAfricaSafariLoopRoute },
+    { oldName: 'Afrikaanse Eilanden 🏝️', newName: 'African Islands 🏝️', buildFn: rbBuildAfricaIslandsRoute },
+    { oldName: 'Oost-Afrika Safari Classic 🦒', newName: 'East Africa Safari Classic 🦒', buildFn: rbBuildEastAfricaSafariClassicRoute },
+    { oldName: 'Hoorn van Afrika & Egypte 🏺', newName: 'Horn of Africa & Egypt 🏺', buildFn: rbBuildHornOfAfricaAndEgyptRoute },
+    { oldName: 'Egypte 🏺', newName: 'Egypt 🏺', buildFn: rbBuildEgyptRoute },
+    { oldName: 'Namibië 🏜️', newName: 'Namibia 🏜️', buildFn: rbBuildNamibiaRoute },
+    { oldName: 'Zuid-Afrika 🦓', newName: 'South Africa 🦓', buildFn: rbBuildSouthAfricaRoute },
+    { oldName: 'Kenia 🦒', newName: 'Kenya 🦒', buildFn: rbBuildKenyaRoute },
+    { oldName: 'Madagaskar 🦎', newName: 'Madagascar 🦎', buildFn: rbBuildMadagascarRoute },
+    { oldName: 'Tanzania 🦁', newName: 'Tanzania 🦁', buildFn: rbBuildTanzaniaRoute },
+    { oldName: 'Botswana 🐘', newName: 'Botswana 🐘', buildFn: rbBuildBotswanaRoute },
+    { oldName: 'Rwanda 🦍', newName: 'Rwanda 🦍', buildFn: rbBuildRwandaRoute },
+    { oldName: 'Mauritius 🦤', newName: 'Mauritius 🦤', buildFn: rbBuildMauritiusRoute },
+    { oldName: 'Zimbabwe 🐆', newName: 'Zimbabwe 🐆', buildFn: rbBuildZimbabweRoute },
+    { oldName: 'Mozambique 🐋', newName: 'Mozambique 🐋', buildFn: rbBuildMozambiqueRoute },
+    { oldName: 'Zambia & Malawi 💦', newName: 'Zambia & Malawi 💦', buildFn: rbBuildZambiaMalawiRoute },
+    { oldName: 'Ethiopië ⛪', newName: 'Ethiopia ⛪', buildFn: rbBuildEthiopiaRoute },
+    { oldName: 'Zuid-Afrika & Bergkoninkrijkjes 👑', newName: 'South Africa & Mountain Kingdoms 👑', buildFn: rbBuildSouthAfricaMountainKingdomsRoute },
+    { oldName: 'Victoria Falls & Kalahari-lus 🦏', newName: 'Victoria Falls & Kalahari Loop 🦏', buildFn: rbBuildVictoriaFallsKalahariRoute },
+  ];
+
+  targets.forEach(({ oldName, newName, buildFn }) => {
+    const route = rbRoutes.find(r => r.name === oldName || r.name === newName);
+    if (!route) return;
+    rbApplyAfricaGrandTourEnglishToRoute(route, buildFn(), newName);
+  });
+}
+
+function rbApplyAfricaGrandTourEnglishToRoute(route, ref, newName) {
+  let touched = false;
+
+  if (route.name !== newName) { route.name = newName; touched = true; }
+
+  // Regions: matched by position (translation doesn't add/remove/reorder regions) — only name/
+  // season/notes text can differ. The fifteen standalone routes have no regions
+  // (rbBuildFlatSeedRoute), so this is a no-op for those.
+  (route.regions || []).forEach((region, i) => {
+    const refRegion = (ref.regions || [])[i];
+    if (!refRegion) return;
+    if (region.name !== refRegion.name) { region.name = refRegion.name; touched = true; }
+    if (region.season !== refRegion.season) { region.season = refRegion.season; touched = true; }
+    if (region.notes !== refRegion.notes) { region.notes = refRegion.notes; touched = true; }
+  });
+
+  // Blocks: matched by country_code alone — every country in this family appears at most once per
+  // route, no repeated-country blocks to disambiguate.
+  (ref.blocks || []).forEach(refBlock => {
+    const block = route.blocks.find(b => b.country_code === refBlock.country_code);
+    if (!block) return;
+    if (block.notes !== refBlock.notes) { block.notes = refBlock.notes; touched = true; }
+    if (block.transport_to_next !== refBlock.transport_to_next) { block.transport_to_next = refBlock.transport_to_next; touched = true; }
+    if (block.destinations && refBlock.destinations && block.destinations.length === refBlock.destinations.length) {
+      block.destinations.forEach((d, j) => {
+        const rd = refBlock.destinations[j];
+        if (rd && d.name !== rd.name) { d.name = rd.name; touched = true; }
+      });
+    }
+  });
+
+  // Route-level text fields.
+  ['best_starting_month', 'travel_style', 'climate_summary', 'description', 'notes'].forEach(field => {
+    if (route[field] !== ref[field]) { route[field] = ref[field]; touched = true; }
+  });
+
+  if (touched) rbSave();
+}
+
+/**
  * Africa Grand Tour — route-logic review (2026-08), thirteenth and final expedition in the
  * ROUTE_LOGIC_REVIEW.md playbook. Same field-patch + destination-sync pattern as
  * rbApplyPanAmericanOverhaulToRoute() — this route shares RB_EXPEDITION_CONTENT via rbContentFor()
- * with its four 2026-07 split companions (Zuidelijk Afrika Safari-lus 🦁, Afrikaanse Eilanden 🏝️,
- * Oost-Afrika Safari Classic 🦒, Hoorn van Afrika & Egypte 🏺), so all five need the same field sync.
+ * with its four 2026-07 split companions (Southern Africa Safari Loop 🦁, African Islands 🏝️,
+ * East Africa Safari Classic 🦒, Horn of Africa & Egypt 🏺), so all five need the same field sync.
  * Nine countries reordered (South Africa, Lesotho, Mozambique, Zimbabwe, Namibia — the biggest single
  * find of the whole playbook, ~1,355km saved — Angola, Zambia, Madagascar, Tanzania, Uganda, Kenya)
  * plus Ethiopia's unstated Omo Valley-Addis Ababa return flight made explicit. See
  * rbBuildAfricaGrandTourRoute()'s own notes for the full writeup.
+ *
+ * Migration-collision fix (2026-08 English translation batch, same category of bug fixed for
+ * Patagonia/Eurasia/India & Himalaya/Nordic Arctic/Pan-American): on a brand-new browser, this
+ * migration and the English-translation migration both run in the same load against freshly-seeded
+ * (already-English) routes. The four split companions used to be looked up here by their old Dutch
+ * names only, so once they're renamed to English they'd silently stop being found (harmless — just a
+ * skipped no-op sync) — routeNames below now carries [oldName, newName] pairs and matches either. The
+ * bigger issue was the note-append guard, which only recognized the Dutch phrase
+ * 'Routelogica-herziening (2026-08)' inside this route's own already-English `notes` field — that
+ * would never match, so it would double-append its still-Dutch note text on top of the fully
+ * translated notes. Widened to also recognize the English phrase 'Route-logic revision (2026-08)'.
  */
 function rbMigrateAfricaGrandTourRouteLogicOverhaul() {
   if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_AFRICA_OVERHAUL)) return;
   localStorage.setItem(RB_MIGRATE_FLAG_2026_08_AFRICA_OVERHAUL, '1');
 
-  const routeNames = ['Africa Grand Tour 🌍', 'Zuidelijk Afrika Safari-lus 🦁', 'Afrikaanse Eilanden 🏝️', 'Oost-Afrika Safari Classic 🦒', 'Hoorn van Afrika & Egypte 🏺'];
-  routeNames.forEach(name => rbApplyAfricaGrandTourOverhaulToRoute(rbRoutes.find(r => r.name === name)));
+  const routeNamePairs = [
+    ['Africa Grand Tour 🌍', 'Africa Grand Tour 🌍'],
+    ['Zuidelijk Afrika Safari-lus 🦁', 'Southern Africa Safari Loop 🦁'],
+    ['Afrikaanse Eilanden 🏝️', 'African Islands 🏝️'],
+    ['Oost-Afrika Safari Classic 🦒', 'East Africa Safari Classic 🦒'],
+    ['Hoorn van Afrika & Egypte 🏺', 'Horn of Africa & Egypt 🏺'],
+  ];
+  routeNamePairs.forEach(([oldName, newName]) => rbApplyAfricaGrandTourOverhaulToRoute(rbRoutes.find(r => r.name === oldName || r.name === newName)));
 }
 
 function rbApplyAfricaGrandTourOverhaulToRoute(route) {
@@ -7759,7 +7885,7 @@ function rbApplyAfricaGrandTourOverhaulToRoute(route) {
   }
 
   const note = "Routelogica-herziening (2026-08): negen landen heringedeeld (Zuid-Afrika, Lesotho, Mozambique, Zimbabwe, Namibië — grootste vondst, ≈1.355 km bespaard — Angola, Zambia, Madagaskar, Tanzania, Oeganda, Kenia) plus Ethiopië's onvermelde Omo Valley-Addis Abeba-terugvlucht expliciet gemaakt. Coördinaten per bestemming toegevoegd aan alle 18 landen. Zie Africa Grand Tour 🌍's eigen notities voor de volledige onderbouwing.";
-  if (route.notes && !route.notes.includes("Routelogica-herziening (2026-08)") && !route.notes.includes("routelogica-herziening (2026-08)")) {
+  if (route.notes && !route.notes.includes("Routelogica-herziening (2026-08)") && !route.notes.includes("routelogica-herziening (2026-08)") && !route.notes.includes("Route-logic revision (2026-08)")) {
     route.notes += '\n\n' + note;
     touched = true;
   }
@@ -7995,19 +8121,19 @@ function rbBuildPeruRoute() {
 
 function rbBuildEgyptRoute() {
   const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
-  return rbBuildFlatSeedRoute('Egypte 🏺', [
+  return rbBuildFlatSeedRoute('Egypt 🏺', [
     {
       ...mea('EG', 'Egypt'),
-      notes: 'Instap: rechtstreekse KLM-vlucht Amsterdam-Caïro (±4u30, vanaf ±€200-320 retour, beste periode februari). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (mea('EG', 'Egypt').notes || ''),
+      notes: 'Entry: direct KLM flight Amsterdam-Cairo (±4h30, from ±€200-320 return, best period February). Price indication from 2026-08 web research, a snapshot. ' + (mea('EG', 'Egypt').notes || ''),
       // transport_to_next was already a correct standalone ending in the source data (Egypt is
-      // the last leg of Hoorn van Afrika & Egypte 🏺) — reused verbatim, no change needed.
+      // the last leg of Horn of Africa & Egypt 🏺) — reused verbatim, no change needed.
     },
   ], {
-    best_starting_month: 'Februari',
-    travel_style: 'Trein/bus tussen de grote steden, Nijlcruise/felucca als apart geboekt onderdeel.',
-    climate_summary: 'Februari-maart geeft het koelere naseizoen, vóór de vroege zomerhitte in Luxor/Aswan.',
-    description: 'Piramides, tempels en een Nijlcruise: van Caïro via Luxor en Aswan tot Alexandrië.',
-    notes: 'Losgesplitst van Africa Grand Tour 🌍 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md) — al genoemd als Sterk, "een van de meest bezochte standalone bestemmingen ter wereld... hoort eigenlijk niet onder iets anders". Land, dagen en budget zijn ongewijzigd overgenomen uit Africa Grand Tour 🌍\'s Egypte-blok (deze versie, niet de kortere versie uit Mediterranean Civilizations Expedition 🏛️\'s "Egypte & Arabisch Schiereiland 🐪" — beide bestaan naast elkaar, zelfde "block komt in meerdere routes terug"-patroon als Egypte zelf al had). Africa Grand Tour 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+    best_starting_month: 'February',
+    travel_style: 'Train/bus between the major cities, Nile cruise/felucca booked as a separate component.',
+    climate_summary: 'February-March offers the cooler late season, before the early summer heat in Luxor/Aswan.',
+    description: 'Pyramids, temples and a Nile cruise: from Cairo via Luxor and Aswan to Alexandria.',
+    notes: 'Split off from Africa Grand Tour 🌍 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md) — already flagged as Strong, "one of the most-visited standalone destinations in the world... doesn\'t really belong under anything else". Country, days and budget are carried over unchanged from Africa Grand Tour 🌍\'s Egypt block (this version, not the shorter version from Mediterranean Civilizations Expedition 🏛️\'s "Egypte & Arabisch Schiereiland 🐪" — both exist side by side, the same "block reappears in multiple routes" pattern Egypt itself already had). Africa Grand Tour 🌍 itself continues to exist unchanged as a separate, full expedition.',
   });
 }
 
@@ -8035,18 +8161,18 @@ function rbBuildCubaRoute() {
 
 function rbBuildNamibiaRoute() {
   const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
-  return rbBuildFlatSeedRoute('Namibië 🏜️', [
+  return rbBuildFlatSeedRoute('Namibia 🏜️', [
     {
       ...mea('NA', 'Namibia'),
-      notes: 'Instap: vlucht Amsterdam-Windhoek, met overstap (geen directe verbinding, bv. via Frankfurt/Zürich of Johannesburg/Addis Abeba, ±15-18 uur incl. overstap; vanaf ±€700-1.200 retour — november is doorgaans de goedkoopste vluchtmaand, maar valt buiten het droge seizoen van deze route; beste reisperiode juli). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (mea('NA', 'Namibia').notes || ''),
-      transport_to_next: 'Einde van deze route — terug naar Windhoek (vanaf Etosha, ±5-6 uur rijden), dan vlucht naar Amsterdam (geen directe verbinding, 1+ tussenstop).',
+      notes: "Entry: flight Amsterdam-Windhoek, with a connection (no direct connection, e.g. via Frankfurt/Zürich or Johannesburg/Addis Ababa, ±15-18 hours incl. connection; from ±€700-1,200 return — November is usually the cheapest flight month, but falls outside this route's dry season; best travel period July). Price indication from 2026-08 web research, a snapshot. " + (mea('NA', 'Namibia').notes || ''),
+      transport_to_next: 'End of this route — back to Windhoek (from Etosha, ±5-6 hours drive), then a flight to Amsterdam (no direct connection, 1+ stopover).',
     },
   ], {
-    best_starting_month: 'Juli',
-    travel_style: 'Zelfrijden met 4x4-huurauto — vrijwel noodzakelijk voor Sossusvlei, Damaraland, Etosha en Fish River Canyon.',
-    climate_summary: 'Juli-oktober is het Namibische droge seizoen (winter/vroege lente) — beste wildlife-observatie en begaanbare wegen.',
-    description: 'Een populaire zelfrij-vakantie: Fish River Canyon, de duinen van Sossusvlei, Damaraland en Etosha National Park.',
-    notes: 'Losgesplitst van Africa Grand Tour 🌍 als onderdeel van deze eerste batch losse landen (2026-08, zie ROUTE_BUILDER_MODULES.md voor de bredere modularisatie-analyse) — al genoemd als "populaire zelfstandige zelfrij-trip". Land, dagen en budget zijn ongewijzigd overgenomen (incl. de 2026-07 prijscorrectie en de 2026-08 routelogica-herziening — Fish River Canyon nu eerst, Etosha laatst, bespaart ≈1.355 km). Africa Grand Tour 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+    best_starting_month: 'July',
+    travel_style: 'Self-drive with a 4x4 rental car — virtually necessary for Sossusvlei, Damaraland, Etosha and Fish River Canyon.',
+    climate_summary: 'July-October is the Namibian dry season (winter/early spring) — best wildlife viewing and passable roads.',
+    description: 'A popular self-drive vacation: Fish River Canyon, the dunes of Sossusvlei, Damaraland and Etosha National Park.',
+    notes: 'Split off from Africa Grand Tour 🌍 as part of this first batch of standalone countries (2026-08, see ROUTE_BUILDER_MODULES.md for the broader modularization analysis) — already flagged as a "popular standalone self-drive trip". Country, days and budget are carried over unchanged (incl. the 2026-07 price correction and the 2026-08 route-logic revision — Fish River Canyon now first, Etosha last, saving ≈1,355 km). Africa Grand Tour 🌍 itself continues to exist unchanged as a separate, full expedition.',
   });
 }
 
@@ -8151,35 +8277,35 @@ function rbBuildJapanTaiwanRoute() {
 
 function rbBuildSouthAfricaRoute() {
   const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
-  return rbBuildFlatSeedRoute('Zuid-Afrika 🦓', [
+  return rbBuildFlatSeedRoute('South Africa 🦓', [
     {
       ...mea('ZA', 'South Africa'),
-      notes: 'Instap: rechtstreekse KLM-vlucht Amsterdam-Kaapstad (±11,5 uur; vanaf ±€1.000-1.200 retour rond juni — november is doorgaans goedkoper maar valt buiten het beste seizoen van deze route). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (mea('ZA', 'South Africa').notes || ''),
-      transport_to_next: 'Einde van deze route — terug naar Kaapstad of Johannesburg, dan rechtstreekse KLM-terugvlucht naar Amsterdam.',
+      notes: "Entry: direct KLM flight Amsterdam-Cape Town (±11.5 hours; from ±€1,000-1,200 return around June — November is usually cheaper but falls outside this route's best season). Price indication from 2026-08 web research, a snapshot. " + (mea('ZA', 'South Africa').notes || ''),
+      transport_to_next: 'End of this route — back to Cape Town or Johannesburg, then a direct KLM return flight to Amsterdam.',
     },
   ], {
-    best_starting_month: 'Juni',
-    travel_style: 'Huurauto — Kaapstad/Winelands/Garden Route/Addo als één lus, Johannesburg/Kruger/Drakensberg als tweede lus.',
-    climate_summary: 'Juni valt vlak vóór het regenseizoen — beste Kruger-wildlife, mild in Kaapstad.',
-    description: 'Kaapstad, de Winelands en de Garden Route, gevolgd door Johannesburg, Kruger National Park en de Drakensberg.',
-    notes: 'Losgesplitst van Africa Grand Tour 🌍 als onderdeel van deze tweede batch losse landen (2026-08, Youri\'s eigen top-10-keuze, zie ROUTE_BUILDER_MODULES.md voor de bredere analyse). Land, dagen en budget zijn ongewijzigd overgenomen (incl. de 2026-08 routelogica-fix: Addo→Johannesburg→Kruger→Drakensberg, scheelt ≈465 km t.o.v. de oude volgorde). Africa Grand Tour 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+    best_starting_month: 'June',
+    travel_style: 'Rental car — Cape Town/Winelands/Garden Route/Addo as one loop, Johannesburg/Kruger/Drakensberg as a second loop.',
+    climate_summary: 'June falls just before the rainy season — best Kruger wildlife, mild in Cape Town.',
+    description: 'Cape Town, the Winelands and the Garden Route, followed by Johannesburg, Kruger National Park and the Drakensberg.',
+    notes: "Split off from Africa Grand Tour 🌍 as part of this second batch of standalone countries (2026-08, Youri's own top-10 pick, see ROUTE_BUILDER_MODULES.md for the broader analysis). Country, days and budget are carried over unchanged (incl. the 2026-08 route-logic fix: Addo→Johannesburg→Kruger→Drakensberg, saving ≈465 km compared to the old order). Africa Grand Tour 🌍 itself continues to exist unchanged as a separate, full expedition.",
   });
 }
 
 function rbBuildKenyaRoute() {
   const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
-  return rbBuildFlatSeedRoute('Kenia 🦒', [
+  return rbBuildFlatSeedRoute('Kenya 🦒', [
     {
       ...mea('KE', 'Kenya'),
-      notes: 'Instap: rechtstreekse KLM-vlucht Amsterdam-Nairobi (±8-9 uur; vanaf ±€700-1.100 retour; beste periode november). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (mea('KE', 'Kenya').notes || ''),
-      transport_to_next: 'Einde van deze route — terug naar Nairobi (vanaf Mount Kenya/Nanyuki, ±3-4 uur), dan rechtstreekse KLM-terugvlucht Nairobi-Amsterdam.',
+      notes: 'Entry: direct KLM flight Amsterdam-Nairobi (±8-9 hours; from ±€700-1,100 return; best period November). Price indication from 2026-08 web research, a snapshot. ' + (mea('KE', 'Kenya').notes || ''),
+      transport_to_next: 'End of this route — back to Nairobi (from Mount Kenya/Nanyuki, ±3-4 hours), then a direct KLM return flight Nairobi-Amsterdam.',
     },
   ], {
     best_starting_month: 'November',
-    travel_style: 'Overland/safaritrucks tussen de parken vanuit Nairobi.',
-    climate_summary: 'November-januari valt in de korte regentijd (lichte middagbuien) en de daaropvolgende korte droge periode — niet de absolute piek (juni-oktober) maar een erkend sterk alternatief.',
-    description: 'Maasai Mara, Lake Nakuru en Amboseli, met Diani Beach/Mombasa en Mount Kenya als afronding.',
-    notes: 'Losgesplitst van Africa Grand Tour 🌍 als onderdeel van deze tweede batch losse landen (2026-08, Youri\'s eigen top-10-keuze) — een klassieke safari-bucket-list-bestemming op zich. Land, dagen en budget zijn ongewijzigd overgenomen (incl. de 2026-08 routelogica-fix voor Mount Kenya/Mombasa-volgorde). Africa Grand Tour 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+    travel_style: 'Overland/safari trucks between the parks from Nairobi.',
+    climate_summary: 'November-January falls in the short rains (light afternoon showers) and the following short dry spell — not the absolute peak (June-October) but a recognized strong alternative.',
+    description: 'Maasai Mara, Lake Nakuru and Amboseli, with Diani Beach/Mombasa and Mount Kenya to finish.',
+    notes: "Split off from Africa Grand Tour 🌍 as part of this second batch of standalone countries (2026-08, Youri's own top-10 pick) — a classic safari bucket-list destination in its own right. Country, days and budget are carried over unchanged (incl. the 2026-08 route-logic fix for the Mount Kenya/Mombasa order). Africa Grand Tour 🌍 itself continues to exist unchanged as a separate, full expedition.",
   });
 }
 
@@ -8275,18 +8401,18 @@ function rbBuildMoroccoRoute() {
 
 function rbBuildMadagascarRoute() {
   const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
-  return rbBuildFlatSeedRoute('Madagaskar 🦎', [
+  return rbBuildFlatSeedRoute('Madagascar 🦎', [
     {
       ...mea('MG', 'Madagascar'),
-      notes: 'Instap: vlucht Amsterdam-Antananarivo (±13-16 uur, 1 tussenstop, bv. via Nairobi of Parijs met Kenya Airways/Air France; vanaf ±€650-1.100 retour; beste periode oktober — let op, de goedkoopste maand is doorgaans maart, reken dus eerder aan de hoge kant van deze bandbreedte). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (mea('MG', 'Madagascar').notes || ''),
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Antananarivo naar Amsterdam (1 tussenstop, bv. via Nairobi of Parijs).',
+      notes: "Entry: flight Amsterdam-Antananarivo (±13-16 hours, 1 stopover, e.g. via Nairobi or Paris with Kenya Airways/Air France; from ±€650-1,100 return; best period October — note, the cheapest month is usually March, so budget toward the higher end of this range). Price indication from 2026-08 web research, a snapshot. " + (mea('MG', 'Madagascar').notes || ''),
+      transport_to_next: 'End of this route — return flight from Antananarivo to Amsterdam (1 stopover, e.g. via Nairobi or Paris).',
     },
   ], {
-    best_starting_month: 'Oktober',
-    travel_style: 'Privé-4x4+chauffeur tussen de etappes, losse vluchtuitstapjes naar Nosy Be en Morondava vanaf Tana.',
-    climate_summary: 'Oktober-november is een goed droog venster.',
-    description: 'Andasibe-Mantadia, Isalo, de Avenue of the Baobabs bij Morondava en het eiland Nosy Be.',
-    notes: 'Losgesplitst van Africa Grand Tour 🌍 (via Afrikaanse Eilanden 🏝️, waar dit tot nu toe samen met Mauritius stond — al genoemd in ROUTE_BUILDER_MODULES.md als "twee losse Sterke blocks... die toevallig vaak gecombineerd worden, niet als één samengesteld block") als onderdeel van deze tweede batch losse landen (2026-08, Youri\'s eigen top-10-keuze). Land, dagen en budget zijn ongewijzigd overgenomen. Africa Grand Tour 🌍 en Afrikaanse Eilanden 🏝️ zelf blijven ongewijzigd bestaan (Mauritius staat daar nog steeds naast Madagaskar in).',
+    best_starting_month: 'October',
+    travel_style: 'Private 4x4+driver between the legs, separate flight side trips to Nosy Be and Morondava from Tana.',
+    climate_summary: 'October-November is a good dry window.',
+    description: 'Andasibe-Mantadia, Isalo, the Avenue of the Baobabs near Morondava and the island of Nosy Be.',
+    notes: 'Split off from Africa Grand Tour 🌍 (via African Islands 🏝️, where this used to sit together with Mauritius — already flagged in ROUTE_BUILDER_MODULES.md as "two separate Strong blocks... that happen to often be combined, not as one composite block") as part of this second batch of standalone countries (2026-08, Youri\'s own top-10 pick). Country, days and budget are carried over unchanged. Africa Grand Tour 🌍 and African Islands 🏝️ themselves continue to exist unchanged (Mauritius still sits there alongside Madagascar).',
   });
 }
 
@@ -8413,15 +8539,15 @@ function rbBuildTanzaniaRoute() {
   return rbBuildFlatSeedRoute('Tanzania 🦁', [
     {
       ...mea('TZ', 'Tanzania'),
-      notes: 'Instap: rechtstreekse KLM-vlucht Amsterdam-Kilimanjaro (±8u45; vanaf ±€1.050-1.500 retour; beste periode november). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (mea('TZ', 'Tanzania').notes || ''),
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Kilimanjaro (of Dar es Salaam/Zanzibar) naar Amsterdam, rechtstreeks vanaf Kilimanjaro met KLM.',
+      notes: 'Entry: direct KLM flight Amsterdam-Kilimanjaro (±8h45; from ±€1,050-1,500 return; best period November). Price indication from 2026-08 web research, a snapshot. ' + (mea('TZ', 'Tanzania').notes || ''),
+      transport_to_next: 'End of this route — return flight from Kilimanjaro (or Dar es Salaam/Zanzibar) to Amsterdam, direct from Kilimanjaro with KLM.',
     },
   ], {
     best_starting_month: 'November',
-    travel_style: 'Overland/safaritrucks tussen de parken, vlucht/veerboot naar Zanzibar.',
-    climate_summary: 'November-januari valt in de korte regentijd (lichte middagbuien) en de daaropvolgende korte droge periode — niet de absolute piek (juni-oktober) maar een erkend sterk alternatief.',
-    description: 'Serengeti, Ngorongoro Crater en Lake Manyara, gevolgd door Kilimanjaro-regio en het strand van Zanzibar.',
-    notes: 'Losgesplitst van Africa Grand Tour 🌍 als onderdeel van deze derde batch losse landen (2026-08, Youri\'s eigen tweede top-10-keuze) — de klassieke safari+strand-combinatie. Land, dagen en budget zijn ongewijzigd overgenomen (incl. de 2026-08 routelogica-fix voor de Kilimanjaro/Zanzibar-volgorde). Africa Grand Tour 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+    travel_style: 'Overland/safari trucks between the parks, flight/ferry to Zanzibar.',
+    climate_summary: 'November-January falls in the short rains (light afternoon showers) and the following short dry spell — not the absolute peak (June-October) but a recognized strong alternative.',
+    description: 'Serengeti, Ngorongoro Crater and Lake Manyara, followed by the Kilimanjaro region and the beach of Zanzibar.',
+    notes: "Split off from Africa Grand Tour 🌍 as part of this third batch of standalone countries (2026-08, Youri's own second top-10 pick) — the classic safari+beach combination. Country, days and budget are carried over unchanged (incl. the 2026-08 route-logic fix for the Kilimanjaro/Zanzibar order). Africa Grand Tour 🌍 itself continues to exist unchanged as a separate, full expedition.",
   });
 }
 
@@ -8430,15 +8556,15 @@ function rbBuildBotswanaRoute() {
   return rbBuildFlatSeedRoute('Botswana 🐘', [
     {
       ...mea('BW', 'Botswana'),
-      notes: 'Instap: vlucht Amsterdam-Kasane, met overstap via Johannesburg (geen directe verbinding, ±14-16 uur incl. overstap; vanaf ±€900-1.300 retour; beste periode juli). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (mea('BW', 'Botswana').notes || ''),
-      transport_to_next: 'Einde van deze route — terug naar Kasane (vanaf Central Kalahari), dan vlucht naar Amsterdam via Johannesburg.',
+      notes: 'Entry: flight Amsterdam-Kasane, with a connection via Johannesburg (no direct connection, ±14-16 hours incl. connection; from ±€900-1,300 return; best period July). Price indication from 2026-08 web research, a snapshot. ' + (mea('BW', 'Botswana').notes || ''),
+      transport_to_next: 'End of this route — back to Kasane (from Central Kalahari), then a flight to Amsterdam via Johannesburg.',
     },
   ], {
-    best_starting_month: 'Juli',
-    travel_style: 'Eigen 4x4 of gegidste mobiele safari — geen goedkoop-onafhankelijk alternatief voor Central Kalahari/Okavango.',
-    climate_summary: 'Juli-oktober is het droge seizoen — beste wildlife-observatie rond de Okavango Delta en Chobe.',
-    description: 'Chobe National Park, de Okavango Delta, de Makgadikgadi Pans en Central Kalahari.',
-    notes: 'Losgesplitst van Africa Grand Tour 🌍 als onderdeel van deze derde batch losse landen (2026-08, Youri\'s eigen tweede top-10-keuze) — een van Afrika\'s premier safari-bestemmingen. Land, dagen en budget zijn ongewijzigd overgenomen. Africa Grand Tour 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.',
+    best_starting_month: 'July',
+    travel_style: 'Own 4x4 or a guided mobile safari — no cheap independent alternative for Central Kalahari/Okavango.',
+    climate_summary: 'July-October is the dry season — best wildlife viewing around the Okavango Delta and Chobe.',
+    description: 'Chobe National Park, the Okavango Delta, the Makgadikgadi Pans and Central Kalahari.',
+    notes: "Split off from Africa Grand Tour 🌍 as part of this third batch of standalone countries (2026-08, Youri's own second top-10 pick) — one of Africa's premier safari destinations. Country, days and budget are carried over unchanged. Africa Grand Tour 🌍 itself continues to exist unchanged as a separate, full expedition.",
   });
 }
 
@@ -8644,15 +8770,15 @@ function rbBuildRwandaRoute() {
   return rbBuildFlatSeedRoute('Rwanda 🦍', [
     {
       ...mea('RW', 'Rwanda'),
-      notes: 'Instap: rechtstreekse KLM-vlucht Amsterdam-Kigali (met een technische tussenstop onderweg naar Entebbe, maar voor Kigali-passagiers een feitelijk rechtstreekse vlucht zonder vliegtuigwissel, ±8u40; vanaf ±€800-1.000 retour; beste periode november). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (mea('RW', 'Rwanda').notes || ''),
-      transport_to_next: 'Einde van deze route — rechtstreekse KLM-terugvlucht Kigali-Amsterdam.',
+      notes: 'Entry: direct KLM flight Amsterdam-Kigali (with a technical stopover en route to Entebbe, but for Kigali passengers effectively a direct flight with no plane change, ±8h40; from ±€800-1,000 return; best period November). Price indication from 2026-08 web research, a snapshot. ' + (mea('RW', 'Rwanda').notes || ''),
+      transport_to_next: 'End of this route — direct KLM return flight Kigali-Amsterdam.',
     },
   ], {
     best_starting_month: 'November',
-    travel_style: 'Bus/moto-taxi tussen Kigali, Volcanoes NP en Lake Kivu — het gorillapermit is de dominante, verplicht vooraf geboekte kostenpost.',
-    climate_summary: 'November valt buiten het drukste gorillatrekking-seizoen (juli-september) — rustiger en met kortere wachttijden voor permits, weer blijft geschikt voor trekking.',
-    description: 'Gorillatrekking in Volcanoes NP, Lake Kivu en het regenwoud van Nyungwe.',
-    notes: 'Losgesplitst van Africa Grand Tour 🌍 (via Oost-Afrika Safari Classic 🦒, waar dit al genoemd stond als "een heel realistische bucket-list vakantie op zich" in ROUTE_BUILDER_MODULES.md) als onderdeel van de vierde batch losse landen (2026-08). Land, dagen en budget zijn ongewijzigd overgenomen. Africa Grand Tour 🌍 en Oost-Afrika Safari Classic 🦒 zelf blijven ongewijzigd bestaan.',
+    travel_style: 'Bus/moto-taxi between Kigali, Volcanoes NP and Lake Kivu — the gorilla permit is the dominant cost, mandatory to book in advance.',
+    climate_summary: 'November falls outside the busiest gorilla trekking season (July-September) — quieter and with shorter waiting times for permits, weather remains suitable for trekking.',
+    description: 'Gorilla trekking in Volcanoes NP, Lake Kivu and the Nyungwe rainforest.',
+    notes: 'Split off from Africa Grand Tour 🌍 (via East Africa Safari Classic 🦒, where this was already flagged as "a fully realistic bucket-list vacation in its own right" in ROUTE_BUILDER_MODULES.md) as part of the fourth batch of standalone countries (2026-08). Country, days and budget are carried over unchanged. Africa Grand Tour 🌍 and East Africa Safari Classic 🦒 themselves continue to exist unchanged.',
   });
 }
 
@@ -8663,15 +8789,15 @@ function rbBuildMauritiusRoute() {
     {
       ...base,
       days: base.days + 2,
-      notes: 'Instap: vlucht Amsterdam-Mauritius, met overstap (geen directe verbinding, bv. via Parijs/Dubai/Istanboel, ±13,5-17 uur incl. overstap; vanaf ±€600-1.500 retour, juli is de duurste maand; beste periode september). Prijsindicatie webonderzoek 2026-08, momentopname. Langeafstandsvlucht-buffer (2026-08, zie CLAUDE.md): +2 dagen t.o.v. het oorspronkelijke aantal (7→9) — korte reis (≤10 dagen) met een overstapvlucht rechtvaardigt een aankomstdag zonder programma. ' + (base.notes || ''),
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Mauritius naar Amsterdam (1 overstap, geen directe verbinding).',
+      notes: 'Entry: flight Amsterdam-Mauritius, with a connection (no direct connection, e.g. via Paris/Dubai/Istanbul, ±13.5-17 hours incl. connection; from ±€600-1,500 return, July is the most expensive month; best period September). Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days compared to the original count (7→9) — a short trip (≤10 days) with a connecting flight justifies an arrival day with no plans. ' + (base.notes || ''),
+      transport_to_next: 'End of this route — return flight from Mauritius to Amsterdam (1 connection, no direct connection).',
     },
   ], {
     best_starting_month: 'September',
-    travel_style: 'Huurauto of georganiseerde dagtochten — het eiland is compact genoeg voor dagtrips vanuit één of twee bases.',
-    climate_summary: 'September valt in het Mauritiaanse droge seizoen (mei-november) — buiten het cycloonseizoen (november-april) en de julidrukte/-piekprijzen.',
-    description: 'Strand en luxe op Mauritius: Port Louis, Grand Baie, Black River Gorges en Île aux Cerfs.',
-    notes: 'Losgesplitst van Africa Grand Tour 🌍 (via Afrikaanse Eilanden 🏝️, waar dit al als los te boeken helft van dat block stond) als onderdeel van de vierde batch losse landen (2026-08) — Sterk, "eigen reistype" volgens ROUTE_BUILDER_MODULES.md. Land en dagbudget zijn ongewijzigd overgenomen; dagen verhoogd van 7 naar 9 als langeafstandsvlucht-buffer (zie CLAUDE.md). Africa Grand Tour 🌍 en Afrikaanse Eilanden 🏝️ zelf blijven ongewijzigd bestaan.',
+    travel_style: 'Rental car or organized day tours — the island is compact enough for day trips from one or two bases.',
+    climate_summary: "September falls within the Mauritian dry season (May-November) — outside the cyclone season (November-April) and July's crowds/peak prices.",
+    description: 'Beach and luxury on Mauritius: Port Louis, Grand Baie, Black River Gorges and Île aux Cerfs.',
+    notes: 'Split off from Africa Grand Tour 🌍 (via African Islands 🏝️, where this already stood as a separately bookable half of that block) as part of the fourth batch of standalone countries (2026-08) — Strong, "its own type of trip" per ROUTE_BUILDER_MODULES.md. Country and daily budget are carried over unchanged; days increased from 7 to 9 as a long-haul flight buffer (see CLAUDE.md). Africa Grand Tour 🌍 and African Islands 🏝️ themselves continue to exist unchanged.',
   });
 }
 
@@ -8800,15 +8926,15 @@ function rbBuildZimbabweRoute() {
   return rbBuildFlatSeedRoute('Zimbabwe 🐆', [
     {
       ...mea('ZW', 'Zimbabwe'),
-      notes: 'Instap: vlucht Amsterdam-Harare, met overstap via Addis Abeba (Ethiopian Airlines, ±15-19 uur totaal); uitstap via Victoria Falls (open-jaw, geen terugreis naar Harare nodig) — vanaf ±€700-1.000 retour; beste periode juli. Prijsindicatie webonderzoek 2026-08, momentopname. ' + (mea('ZW', 'Zimbabwe').notes || ''),
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Victoria Falls naar Amsterdam (1 overstap via Addis Abeba).',
+      notes: 'Entry: flight Amsterdam-Harare, with a connection via Addis Ababa (Ethiopian Airlines, ±15-19 hours total); exit via Victoria Falls (open-jaw, no return trip to Harare needed) — from ±€700-1,000 return; best period July. Price indication from 2026-08 web research, a snapshot. ' + (mea('ZW', 'Zimbabwe').notes || ''),
+      transport_to_next: 'End of this route — return flight from Victoria Falls to Amsterdam (1 connection via Addis Ababa).',
     },
   ], {
-    best_starting_month: 'Juli',
-    travel_style: 'Overland/huurauto tussen de nationale parken, safaritrucks voor Mana Pools.',
-    climate_summary: 'Juli-oktober is het Zimbabwaanse droge seizoen — beste wildlife-observatie, al is de waterval bij Victoria Falls op zijn indrukwekkendst mei-augustus (hoog watervolume).',
-    description: 'Mana Pools, Great Zimbabwe, Bulawayo, Hwange NP en Victoria Falls.',
-    notes: 'Losgesplitst van Africa Grand Tour 🌍 (via Zuidelijk Afrika Safari-lus 🦁, waar dit al genoemd stond als "Victoria Falls draagt het alleen al") als onderdeel van de vierde batch losse landen (2026-08). Land, dagen en budget zijn ongewijzigd overgenomen. Africa Grand Tour 🌍 en Zuidelijk Afrika Safari-lus 🦁 zelf blijven ongewijzigd bestaan.',
+    best_starting_month: 'July',
+    travel_style: 'Overland/rental car between the national parks, safari trucks for Mana Pools.',
+    climate_summary: 'July-October is the Zimbabwean dry season — best wildlife viewing, though the waterfall at Victoria Falls is most impressive May-August (high water volume).',
+    description: 'Mana Pools, Great Zimbabwe, Bulawayo, Hwange NP and Victoria Falls.',
+    notes: 'Split off from Africa Grand Tour 🌍 (via Southern Africa Safari Loop 🦁, where this was already flagged as "Victoria Falls carries it on its own") as part of the fourth batch of standalone countries (2026-08). Country, days and budget are carried over unchanged. Africa Grand Tour 🌍 and Southern Africa Safari Loop 🦁 themselves continue to exist unchanged.',
   });
 }
 
@@ -9187,15 +9313,15 @@ function rbBuildMozambiqueRoute() {
   return rbBuildFlatSeedRoute('Mozambique 🐋', [
     {
       ...mea('MZ', 'Mozambique'),
-      notes: "Instap: vlucht Amsterdam-Maputo via Doha (KLM/Qatar Airways, ±16-18 uur totaal; vanaf ±€610-900 retour; beste periode mei). Prijsindicatie webonderzoek 2026-08, momentopname. " + (mea('MZ', 'Mozambique').notes || ''),
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Nampula of Maputo naar Amsterdam via Doha.',
+      notes: "Entry: flight Amsterdam-Maputo via Doha (KLM/Qatar Airways, ±16-18 hours total; from ±€610-900 return; best period May). Price indication from 2026-08 web research, a snapshot. " + (mea('MZ', 'Mozambique').notes || ''),
+      transport_to_next: 'End of this route — return flight from Nampula or Maputo to Amsterdam via Doha.',
     },
   ], {
-    best_starting_month: 'Mei',
-    travel_style: "Binnenlandse vluchten tussen de ver uit elkaar liggende regio's, boot voor het Bazaruto Archipel.",
-    climate_summary: 'Mei valt in het Mozambikaanse droge/koelere seizoen — prettige temperaturen voor zowel de kust als Ilha de Moçambique.',
-    description: 'Maputo, het Bazaruto Archipel, Inhambane/Tofo en Ilha de Moçambique.',
-    notes: 'Losgesplitst van Africa Grand Tour 🌍 (via Zuidelijk Afrika Safari-lus 🦁) als onderdeel van de zesde batch losse landen (2026-08). Land, dagen en budget zijn ongewijzigd overgenomen. Blijf uit de Erati/Memba-districten in Nampula-provincie (oranje, Cabo Delgado-spillover) — Nampula-stad en Ilha de Moçambique zelf blijven geel. Africa Grand Tour 🌍 en Zuidelijk Afrika Safari-lus 🦁 zelf blijven ongewijzigd bestaan.',
+    best_starting_month: 'May',
+    travel_style: "Domestic flights between the far-flung regions, boat for the Bazaruto Archipelago.",
+    climate_summary: 'May falls within the Mozambican dry/cooler season — pleasant temperatures for both the coast and Ilha de Moçambique.',
+    description: 'Maputo, the Bazaruto Archipelago, Inhambane/Tofo and Ilha de Moçambique.',
+    notes: 'Split off from Africa Grand Tour 🌍 (via Southern Africa Safari Loop 🦁) as part of the sixth batch of standalone countries (2026-08). Country, days and budget are carried over unchanged. Stay out of the Erati/Memba districts in Nampula province (orange, Cabo Delgado spillover) — Nampula city and Ilha de Moçambique itself remain yellow. Africa Grand Tour 🌍 and Southern Africa Safari Loop 🦁 themselves continue to exist unchanged.',
   });
 }
 
@@ -9204,35 +9330,35 @@ function rbBuildZambiaMalawiRoute() {
   return rbBuildFlatSeedRoute('Zambia & Malawi 💦', [
     {
       ...mea('ZM', 'Zambia'),
-      notes: 'Instap: vlucht Amsterdam-Lusaka, met overstap (bv. via Nairobi/Doha/Addis Abeba, ±12-17 uur totaal; vanaf ±€600-1.250 retour; beste periode mei-juni/september). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (mea('ZM', 'Zambia').notes || ''),
+      notes: 'Entry: flight Amsterdam-Lusaka, with a connection (e.g. via Nairobi/Doha/Addis Ababa, ±12-17 hours total; from ±€600-1,250 return; best period May-June/September). Price indication from 2026-08 web research, a snapshot. ' + (mea('ZM', 'Zambia').notes || ''),
     },
     {
       ...mea('MW', 'Malawi'),
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Lilongwe naar Amsterdam (1 overstap, open-jaw t.o.v. de Lusaka-heenvlucht).',
+      transport_to_next: 'End of this route — return flight from Lilongwe to Amsterdam (1 connection, open-jaw relative to the Lusaka outbound flight).',
     },
   ], {
     best_starting_month: 'September',
-    travel_style: 'Overland/zelfrijden tussen de nationale parken.',
-    climate_summary: 'September valt binnen het gedeelde droge seizoen — goede wildlife-observatie, minder duur dan de juli-augustuspiek.',
-    description: 'Lusaka, Lower Zambezi, Victoria Falls en South Luangwa in Zambia, gevolgd door Lake Malawi, Liwonde NP en Zomba Plateau/Mount Mulanje in Malawi.',
-    notes: 'Losgesplitst van Africa Grand Tour 🌍 (via Zuidelijk Afrika Safari-lus 🦁) als onderdeel van de zesde batch losse landen (2026-08). Landen, dagen en budgetten zijn ongewijzigd overgenomen. Visum: Zambia visumvrij; Malawi vraagt sinds 3 januari 2026 een e-visa vooraf (niet meer altijd visum-bij-aankomst) — vooraf regelen. Africa Grand Tour 🌍 en Zuidelijk Afrika Safari-lus 🦁 zelf blijven ongewijzigd bestaan.',
+    travel_style: 'Overland/self-drive between the national parks.',
+    climate_summary: 'September falls within the shared dry season — good wildlife viewing, less expensive than the July-August peak.',
+    description: 'Lusaka, Lower Zambezi, Victoria Falls and South Luangwa in Zambia, followed by Lake Malawi, Liwonde NP and Zomba Plateau/Mount Mulanje in Malawi.',
+    notes: 'Split off from Africa Grand Tour 🌍 (via Southern Africa Safari Loop 🦁) as part of the sixth batch of standalone countries (2026-08). Countries, days and budgets are carried over unchanged. Visa: Zambia visa-free; Malawi has required an e-visa in advance since 3 January 2026 (no longer always visa-on-arrival) — arrange this beforehand. Africa Grand Tour 🌍 and Southern Africa Safari Loop 🦁 themselves continue to exist unchanged.',
   });
 }
 
 function rbBuildEthiopiaRoute() {
   const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
-  return rbBuildFlatSeedRoute('Ethiopië ⛪', [
+  return rbBuildFlatSeedRoute('Ethiopia ⛪', [
     {
       ...mea('ET', 'Ethiopia'),
-      notes: 'Instap: vlucht Amsterdam-Addis Abeba, met overstap (bv. via Brussel/Rome/Frankfurt/Caïro, ±12-17 uur totaal; vanaf ±€700-900 retour; beste periode september-oktober). Prijsindicatie webonderzoek 2026-08, momentopname. ⚠️⚠️ Reisadvies-check herbevestigd (2026-08, live gecheckt): Amhara (Lalibela, Gondar, Simien Mountains) en Afar (Danakil Depressie) staan nog steeds op ROOD — "reis niet naar gebieden met kleurcode rood", expliciet óók bij een georganiseerde tour, geen verbetering t.o.v. de eerdere check. Ruim de helft van deze route (Lalibela/Gondar/Simien/Danakil) valt binnen deze rode zones; alleen Addis Abeba en de Omo Valley liggen erbuiten. ' + (mea('ET', 'Ethiopia').notes || ''),
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Addis Abeba naar Amsterdam (1 overstap).',
+      notes: "Entry: flight Amsterdam-Addis Ababa, with a connection (e.g. via Brussels/Rome/Frankfurt/Cairo, ±12-17 hours total; from ±€700-900 return; best period September-October). Price indication from 2026-08 web research, a snapshot. ⚠️⚠️ Travel advisory check reconfirmed (2026-08, checked live): Amhara (Lalibela, Gondar, Simien Mountains) and Afar (Danakil Depression) still sit at RED — 'do not travel to areas with the red color code', explicitly even for an organized tour, no improvement compared to the earlier check. Well over half of this route (Lalibela/Gondar/Simien/Danakil) falls within these red zones; only Addis Ababa and the Omo Valley lie outside them. " + (mea('ET', 'Ethiopia').notes || ''),
+      transport_to_next: 'End of this route — return flight from Addis Ababa to Amsterdam (1 connection).',
     },
   ], {
     best_starting_month: 'September',
-    travel_style: "Binnenlandse vluchten tussen de regio's (Ethiopian Airlines), begeleide tours voor Danakil/Simien.",
-    climate_summary: 'September-oktober volgt vlak na het regenseizoen — groen landschap, aangename temperaturen.',
-    description: 'Addis Abeba, Lalibela, de Simien Mountains, Gondar, de Danakil Depressie en de Omo Valley.',
-    notes: 'Losgesplitst van Africa Grand Tour 🌍 (via Hoorn van Afrika & Egypte 🏺) als onderdeel van de zesde batch losse landen (2026-08). Land, dagen en budget zijn ongewijzigd overgenomen. Zelfde afweging als bij de parent-expeditie: Route Builder is de aspirational/someday-laag, dus deze etappe blijft staan zoals gepland — maar dit is geen lichte reisadvies-kanttekening, het is de hoogste risicocategorie voor ruim de helft van de route. Check nederlandwereldwijd.nl zelf grondig vlak vóór een eventuele echte reis, en wees bereid Lalibela/Gondar/Simien/Danakil te schrappen of te vervangen als de situatie niet verbeterd is. Africa Grand Tour 🌍 en Hoorn van Afrika & Egypte 🏺 zelf blijven ongewijzigd bestaan.',
+    travel_style: "Domestic flights between the regions (Ethiopian Airlines), guided tours for Danakil/Simien.",
+    climate_summary: 'September-October follows right after the rainy season — green landscape, pleasant temperatures.',
+    description: 'Addis Ababa, Lalibela, the Simien Mountains, Gondar, the Danakil Depression and the Omo Valley.',
+    notes: "Split off from Africa Grand Tour 🌍 (via Horn of Africa & Egypt 🏺) as part of the sixth batch of standalone countries (2026-08). Country, days and budget are carried over unchanged. Same trade-off as for the parent expedition: Route Builder is the aspirational/someday layer, so this leg stays as planned — but this isn't a minor travel advisory footnote, it's the highest risk category for well over half the route. Check nederlandwereldwijd.nl yourself thoroughly shortly before any actual trip, and be prepared to cut or replace Lalibela/Gondar/Simien/Danakil if the situation hasn't improved. Africa Grand Tour 🌍 and Horn of Africa & Egypt 🏺 themselves continue to exist unchanged.",
   });
 }
 
@@ -9873,43 +9999,43 @@ function rbBuildTunisiaRoute() {
 
 function rbBuildSouthAfricaMountainKingdomsRoute() {
   const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
-  return rbBuildFlatSeedRoute('Zuid-Afrika & Bergkoninkrijkjes 👑', [
+  return rbBuildFlatSeedRoute('South Africa & Mountain Kingdoms 👑', [
     {
       ...mea('ZA', 'South Africa'),
-      notes: 'Instap: rechtstreekse KLM-vlucht Amsterdam-Kaapstad (±11,5 uur; vanaf ±€700-1.100 retour; beste periode april-mei/september-oktober). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (mea('ZA', 'South Africa').notes || ''),
+      notes: 'Entry: direct KLM flight Amsterdam-Cape Town (±11.5 hours; from ±€700-1,100 return; best period April-May/September-October). Price indication from 2026-08 web research, a snapshot. ' + (mea('ZA', 'South Africa').notes || ''),
     },
     mea('LS', 'Lesotho'),
     {
       ...mea('SZ', 'Eswatini'),
-      transport_to_next: 'Einde van deze route — korte vlucht Eswatini-Johannesburg (Airlink, ±1u), dan rechtstreekse KLM-terugvlucht Johannesburg-Amsterdam (±11-11,5 uur; Eswatini heeft zelf geen internationale verbinding).',
+      transport_to_next: 'End of this route — short flight Eswatini-Johannesburg (Airlink, ±1h), then a direct KLM return flight Johannesburg-Amsterdam (±11-11.5 hours; Eswatini itself has no international connection).',
     },
   ], {
     best_starting_month: 'April',
-    travel_style: 'Huurauto — over land tussen de drie landen, eenvoudige grensovergangen.',
-    climate_summary: 'April-mei valt in het Zuid-Afrikaanse droge seizoen — beste wildlife-observatie in Kruger, mild in de Bergkoninkrijkjes.',
-    description: 'Kaapstad, de Winelands, de Garden Route en Kruger NP in Zuid-Afrika, gevolgd door de bergpassen van Lesotho en Eswatini.',
-    notes: 'Losgesplitst van Africa Grand Tour 🌍 (via Zuidelijk Afrika Safari-lus 🦁, waar dit al het "Zuid-Afrika & Bergkoninkrijkjes"-sub-blok was, "Sterk" volgens ROUTE_BUILDER_MODULES.md) als onderdeel van de zevende combi-batch (2026-08) — naast, niet in plaats van, de al bestaande standalone Zuid-Afrika 🦓 (die alleen ZA bevat, zonder Lesotho/Eswatini). Landen, dagen en budgetten zijn ongewijzigd overgenomen. Africa Grand Tour 🌍 en Zuidelijk Afrika Safari-lus 🦁 zelf blijven ongewijzigd bestaan.',
+    travel_style: 'Rental car — overland between the three countries, straightforward border crossings.',
+    climate_summary: 'April-May falls within the South African dry season — best wildlife viewing in Kruger, mild in the Mountain Kingdoms.',
+    description: 'Cape Town, the Winelands, the Garden Route and Kruger NP in South Africa, followed by the mountain passes of Lesotho and Eswatini.',
+    notes: 'Split off from Africa Grand Tour 🌍 (via Southern Africa Safari Loop 🦁, where this was already the "South Africa & Mountain Kingdoms" sub-block, "Strong" per ROUTE_BUILDER_MODULES.md) as part of the seventh combo batch (2026-08) — alongside, not instead of, the already-existing standalone South Africa 🦓 (which contains only ZA, without Lesotho/Eswatini). Countries, days and budgets are carried over unchanged. Africa Grand Tour 🌍 and Southern Africa Safari Loop 🦁 themselves continue to exist unchanged.',
   });
 }
 
 function rbBuildVictoriaFallsKalahariRoute() {
   const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
-  return rbBuildFlatSeedRoute('Victoria Falls & Kalahari-lus 🦏', [
+  return rbBuildFlatSeedRoute('Victoria Falls & Kalahari Loop 🦏', [
     {
       ...mea('MZ', 'Mozambique'),
-      notes: 'Instap: vlucht Amsterdam-Maputo via Lissabon (TAP, ±13-15 uur totaal; vanaf ±€750-1.200 retour; beste periode april-mei/november). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (mea('MZ', 'Mozambique').notes || ''),
+      notes: 'Entry: flight Amsterdam-Maputo via Lisbon (TAP, ±13-15 hours total; from ±€750-1,200 return; best period April-May/November). Price indication from 2026-08 web research, a snapshot. ' + (mea('MZ', 'Mozambique').notes || ''),
     },
     mea('ZW', 'Zimbabwe'),
     {
       ...mea('BW', 'Botswana'),
-      transport_to_next: 'Einde van deze route — korte vlucht Maun/Kasane-Johannesburg (Air Botswana/Airlink, ±1,5-2 uur), dan rechtstreekse KLM-terugvlucht Johannesburg-Amsterdam (Botswana heeft zelf geen intercontinentale verbinding).',
+      transport_to_next: 'End of this route — short flight Maun/Kasane-Johannesburg (Air Botswana/Airlink, ±1.5-2 hours), then a direct KLM return flight Johannesburg-Amsterdam (Botswana itself has no intercontinental connection).',
     },
   ], {
     best_starting_month: 'April',
-    travel_style: 'Overland/huurauto tussen de nationale parken, safaritrucks voor de meer afgelegen delen.',
-    climate_summary: 'April-mei valt aan het begin van het droge seizoen — goede wildlife-observatie, minder duur dan de juli-oktoberpiek.',
-    description: 'Maputo en het Bazaruto Archipel in Mozambique, Victoria Falls en Hwange NP in Zimbabwe, en de Okavango Delta en Central Kalahari in Botswana.',
-    notes: 'Losgesplitst van Africa Grand Tour 🌍 (via Zuidelijk Afrika Safari-lus 🦁, waar dit al het "Victoria Falls & Kalahari-lus"-sub-blok was, "Sterk/Medium" volgens ROUTE_BUILDER_MODULES.md) als onderdeel van de zevende combi-batch (2026-08) — naast, niet in plaats van, de al bestaande standalone Mozambique 🐋, Zimbabwe 🐆 en Botswana 🐘. Landen, dagen en budgetten zijn ongewijzigd overgenomen. Visum-let op: Mozambique werkt met een online ETA (~€10, vooraf regelen), niet volledig visumvrij. Africa Grand Tour 🌍 en Zuidelijk Afrika Safari-lus 🦁 zelf blijven ongewijzigd bestaan.',
+    travel_style: 'Overland/rental car between the national parks, safari trucks for the more remote parts.',
+    climate_summary: 'April-May falls at the start of the dry season — good wildlife viewing, less expensive than the July-October peak.',
+    description: 'Maputo and the Bazaruto Archipelago in Mozambique, Victoria Falls and Hwange NP in Zimbabwe, and the Okavango Delta and Central Kalahari in Botswana.',
+    notes: 'Split off from Africa Grand Tour 🌍 (via Southern Africa Safari Loop 🦁, where this was already the "Victoria Falls & Kalahari Loop" sub-block, "Strong/Medium" per ROUTE_BUILDER_MODULES.md) as part of the seventh combo batch (2026-08) — alongside, not instead of, the already-existing standalone Mozambique 🐋, Zimbabwe 🐆 and Botswana 🐘. Countries, days and budgets are carried over unchanged. Visa note: Mozambique uses an online ETA (~€10, arrange in advance), not fully visa-free. Africa Grand Tour 🌍 and Southern Africa Safari Loop 🦁 themselves continue to exist unchanged.',
   });
 }
 
