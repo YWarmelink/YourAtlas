@@ -3282,10 +3282,10 @@ function rbBuildEasternCanadaRoute() {
 }
 
 function rbBuildWesternCanadaRockiesVancouverRoute() {
-  return rbBuildSeedRoute('West-Canada: Rockies & Vancouver 🏔️', [
+  return rbBuildSeedRoute('Western Canada: Rockies & Vancouver 🏔️', [
     {
       name: 'Canadian Rockies',
-      season: 'Juni-Juli',
+      season: 'June-July',
       budget: 2600,
       countries: [{
         code: 'CA', name: 'Canada', days: 17, budget: 3400, lat: 51.1784, lng: -115.5708,
@@ -3298,14 +3298,14 @@ function rbBuildWesternCanadaRockiesVancouverRoute() {
           { name: 'Mount Robson Provincial Park', lat: 53.1216, lng: -119.1465 },
           { name: 'Whistler', lat: 50.1163, lng: -122.9574 },
         ],
-        transport_to_next: 'Auto Whistler-Vancouver (~2 uur), huurauto inleveren in Vancouver — dezelfde huurauto blijft binnen Canada, dus geen one-way- of grenskosten',
-        notes: 'Instap: vlucht Amsterdam-Calgary, met overstap (±12-14 uur, vanaf ±€650-950 retour, beste periode juni-juli). Prijsindicatie webonderzoek 2026-08, momentopname. Het natuurhoogtepunt van de hele expeditie: gletsjermeren, een van de mooiste wegen ter wereld (Icefields Parkway) en goede kans op wildlife (elanden, beren, bighorn sheep). Huurauto wordt hier opgehaald in Calgary. Prijs geverifieerd (2026-07), klopt (mits ruim vooraf geboekt in hoogseizoen). ⚠️ Moraine Lake Road is alleen bereikbaar met de verplichte Parks Canada-shuttle (geen privéauto toegestaan) — boeking opent doorgaans medio april, beperkt aantal plekken, ruim vooraf regelen.',
+        transport_to_next: 'Car Whistler-Vancouver (~2 hours), return the rental car in Vancouver — the same rental car stays within Canada, so no one-way or border fees',
+        notes: 'Entry: flight Amsterdam-Calgary, with a stopover (±12-14 hours, from ±€650-950 return, best period June-July). Price indication from 2026-08 web research, a snapshot. The nature highlight of the entire expedition: glacier lakes, one of the most beautiful roads in the world (Icefields Parkway) and a good chance of wildlife (moose, bears, bighorn sheep). Rental car is picked up here in Calgary. Price verified (2026-07), holds up (provided it is booked well in advance during high season). ⚠️ Moraine Lake Road is only accessible via the mandatory Parks Canada shuttle (no private cars allowed) — booking usually opens mid-April, limited spots, arrange well in advance.',
       }],
-      note: 'Huurauto (Calgary-Vancouver). Reken op minstens 2-3 nachten per nationaal park om ook te kunnen wandelen, niet alleen doorrijden.',
+      note: 'Rental car (Calgary-Vancouver). Plan for at least 2-3 nights per national park so you can also hike, not just drive through.',
     },
     {
       name: 'Vancouver',
-      season: 'Juli',
+      season: 'July',
       budget: 700,
       countries: [{
         code: 'CA', name: 'Canada', days: 5, budget: 875, lat: 49.2827, lng: -123.1207,
@@ -3315,17 +3315,17 @@ function rbBuildWesternCanadaRockiesVancouverRoute() {
           { name: 'North Shore (Grouse Mountain / Capilano Suspension Bridge)', lat: 49.3796, lng: -123.0902 },
           { name: 'Gastown & Kitsilano Beach', lat: 49.2837, lng: -123.1064 },
         ],
-        transport_to_next: 'Einde van deze route — terugvlucht vanuit Vancouver (of trein/bus naar Seattle om verder te reizen naar VS Westkust Roadtrip 🌉)',
-        notes: 'Laatste Canadese stop: stad tussen bergen en zee, goed te combineren met bergen (North Shore) en water (Stanley Park, Granville Island) zonder huurauto.',
+        transport_to_next: 'End of this route — return flight from Vancouver (or train/bus to Seattle to continue on to US West Coast Roadtrip 🌉)',
+        notes: 'Last Canadian stop: a city between mountains and sea, easy to combine mountains (North Shore) and water (Stanley Park, Granville Island) without a rental car.',
       }],
-      note: 'Geen huurauto nodig in Vancouver zelf.',
+      note: 'No rental car needed in Vancouver itself.',
     },
   ], {
-    travel_style: "Backpacker/budget-comfort hybride — huurauto voor de Rockies (Calgary-Vancouver, blijft binnen Canada, geen grenscomplicaties), geen auto nodig in Vancouver zelf.",
-    best_starting_month: 'Juni',
-    description: 'De Canadian Rockies (Banff, Lake Louise, Icefields Parkway, Jasper) gevolgd door Vancouver.',
-    climate_summary: 'Juni-juli vermijdt restsneeuw en gesloten passen/wegen in de Rockies (Icefields Parkway, hooggelegen hikes) van een vroegere start.',
-    notes: "Losgesplitst van North America Grand Traverse 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen (incl. de waarschuwing over de verplichte Moraine Lake Road-shuttle). Dit is een van de meest klassieke standalone Canada-trips die er zijn. Vervolg op Oost-Canada 🍁. North America Grand Traverse 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): Rockies-volgorde (Yoho-omweg, Mount Robson-Whistler) geverifieerd, al optimaal — geen wijziging nodig. Coördinaten per bestemming toegevoegd. Zie North America Grand Traverse 🌎's eigen notities voor de volledige onderbouwing.",
+    travel_style: "Backpacker/budget-comfort hybrid — rental car for the Rockies (Calgary-Vancouver, stays within Canada, no border complications), no car needed in Vancouver itself.",
+    best_starting_month: 'June',
+    description: 'The Canadian Rockies (Banff, Lake Louise, Icefields Parkway, Jasper) followed by Vancouver.',
+    climate_summary: 'June-July avoids residual snow and closed passes/roads in the Rockies (Icefields Parkway, high-elevation hikes) from an earlier start.',
+    notes: "Split off from North America Grand Traverse 🌎 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days, budgets and order are carried over unchanged (incl. the warning about the mandatory Moraine Lake Road shuttle). This is one of the most classic standalone Canada trips there is. Follow-up to Eastern Canada 🍁. North America Grand Traverse 🌎 itself remains unchanged as a separate, complete expedition.\n\nRoute-logic revision (2026-08): Rockies order (Yoho detour, Mount Robson-Whistler) verified, already optimal — no change needed. Coordinates per destination added. See North America Grand Traverse 🌎's own notes for the full writeup.",
   });
 }
 
