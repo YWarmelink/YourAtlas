@@ -443,8 +443,8 @@ the source alone does nothing for an already-loaded browser — every batch need
 `rbMigrateXEnglish()` function behind a fresh flag, following whichever pattern (wholesale-replace vs.
 field-patch) that route's own prior migrations already used.
 
-**Status — 6 of 13 batches done. All 4 pure dict-based families plus the first "dict-based +
-standalones" family are now done.** Pilot batch (Central European Grand Roadtrip, chosen
+**Status — 7 of 13 batches done. All 5 dict-based families are now done — this was the last and
+biggest one.** Pilot batch (Central European Grand Roadtrip, chosen
 specifically because it has zero splitroutes — cleanest possible first test) cost **138,985 tokens**
 for one 14-leg, no-splitroute route. That's well above the original 400-600K blind estimate for the
 whole job — recalibrated total based on this real data point: **~2.5-3.5M tokens for all 13
@@ -463,7 +463,35 @@ Bolivia 🧂, Nicaragua 🌅). Also notably fewer standalones than the ~15 origi
 family — the real count (found by grepping every `rbContentFor('Pan-American Grand Tour 🌎', ...)`
 call site) was 8, not ~15.
 
-**Recurring lesson across every dict-based batch so far (5 of 5, 100% hit rate)**: older migrations
+Batch 7 (Africa Grand Tour, 18 countries + 4 splitroutes + **15 standalone consumers**, the biggest
+route count of any translation batch so far — 20 routes total) cost **~330,000 tokens** (this
+session's own start-to-finish token-budget counter dropped from 15,000,000 to roughly 14,670,000
+over the course of the task, including this README update — a directly measured figure rather than a
+guess, though the counter isn't a pure task-cost meter so treat the last digit or two as noise).
+Above the Pan-American batch as expected given nearly double the standalone count. Of the 15
+standalones, 8 needed a rename (Egypt
+🏺 ← Egypte, Namibia 🏜️ ← Namibië, South Africa 🦓 ← Zuid-Afrika, Kenya 🦒 ← Kenia, Madagascar 🦎 ←
+Madagaskar, Ethiopia ⛪ ← Ethiopië, South Africa & Mountain Kingdoms 👑 ← Zuid-Afrika &
+Bergkoninkrijkjes, Victoria Falls & Kalahari Loop 🦏 ← Victoria Falls & Kalahari-lus) and 7 already had
+English names (Tanzania 🦁, Botswana 🐘, Rwanda 🦍, Mauritius 🦤, Zimbabwe 🐆, Mozambique 🐋, Zambia &
+Malawi 💦) — all still needed their own wrapper-level translation regardless. All 4 splitroutes needed
+renaming (Southern Africa Safari Loop 🦁 ← Zuidelijk Afrika Safari-lus, African Islands 🏝️ ←
+Afrikaanse Eilanden, East Africa Safari Classic 🦒 ← Oost-Afrika Safari Classic, Horn of Africa &
+Egypt 🏺 ← Hoorn van Afrika & Egypte). The Grand Trip's own name was already English.
+
+**Batch 7 confirmed the same collision fix shape one more time, on the biggest scale yet**:
+`rbMigrateAfricaGrandTourRouteLogicOverhaul()`'s `routeNames` array was widened to `[oldName,
+newName]` pairs for the four split companions, and its note-append guard was widened to also
+recognize the English phrase `'Route-logic revision (2026-08)'` alongside the Dutch
+`'Routelogica-herziening (2026-08)'`. The 15 standalone consumers again needed no migration widening
+of their own (no route-logic-overhaul or price-verification migration exists for any of them — same
+clean no-op pattern batch 6 found), and `rbMigrateSplitRouteEntryNotes()` needed no change either
+since its generic `'Instap:'`/`'Entry:'` guard (from the Eurasia batch) already covers both languages
+and the four split companions' entry notes are baked directly into their build functions rather than
+added by that migration. This closes out all 5 dict-based families — every single one hit the exact
+same collision category, 5 for 5.
+
+**Recurring lesson across every dict-based batch (5 of 5, 100% hit rate)**: older migrations
 (especially each route's own route-logic-overhaul migration) pattern-match on Dutch substrings (e.g.
 `'Instap:'`, `'Time check (2026-07)'`, `'Follow-up (2026-07)'`, an overhaul-note marker) to detect
 "have I already applied this note?" — once translated to English, those older guards need widening
@@ -485,7 +513,7 @@ and route-name lookup array needed widening (for the two renamed splitroutes, Mi
 | 3 | India & Himalaya | dict-based | 3 | **done** | **194,573** |
 | 4 | Nordic Arctic | dict-based | 5 | **done** | **200,428** |
 | 5 | Pan-American Grand Tour + reused standalones | dict-based | 4 + 8 | **done** | **~280,000** |
-| 6 | Africa Grand Tour + reused standalones | dict-based | 4 + ~20 | not started | — |
+| 6 | Africa Grand Tour + reused standalones | dict-based | 4 + 15 | **done** | **~330,000** |
 | 7 | Mediterranean Civilizations + standalones | hand-authored | 6 + ~14 | not started | — |
 | 8 | **Central European Grand Roadtrip** | hand-authored | 0 | **done (pilot)** | **138,985** |
 | 9 | British Isles & Celtic Coast | hand-authored | 4 | not started | — |
@@ -498,20 +526,18 @@ and route-name lookup array needed widening (for the two renamed splitroutes, Mi
 first, find the family's build function(s), translate every Dutch text field (never touch
 days/budget/lat/lng/country codes), grep the whole file for any other reference to the old name,
 **explicitly check every migration touching this route/its splitroutes for the Dutch-substring
-guard-collision issue described above — 100% hit rate across all 6 batches so far, treat it as
+guard-collision issue described above — 100% hit rate across all 7 batches so far, treat it as
 mandatory, not optional**, write the new migration + flag + wire it into the init call sequence, run
 `node --check js/pages/routeBuilder.js` to catch syntax errors before committing, commit locally (ask
 before pushing), report the real token cost, then ask before starting the next batch.
 
-**Resume point (updated after every batch — read this first when picking Phase 1 back up)**: 6 of 13
-done — all 4 pure dict-based families plus Pan-American (dict-based + standalones) complete. Batches
-have been picked out of table order each time (pilot was #8, then #1→#2→#3→#4→#5) — don't assume
-sequential order, just ask which family next. Next natural picks: the remaining dict-based family
-with reused standalones (Africa Grand Tour #6 — likely pricier than Pan-American's ~280K given its
-~20 estimated standalone count, though batch 6's "~15 estimated, 8 actual" lesson suggests verifying
-the real count via grep before trusting that estimate), or start on the 7 hand-authored families (#7,
-#9-13 — no dict-cascade discount, but individually smaller scope
-each). No blocker either way.
+**Resume point (updated after every batch — read this first when picking Phase 1 back up)**: 7 of 13
+done — **all 5 dict-based families now complete** (the 4 pure ones plus Pan-American and Africa Grand
+Tour, both dict-based + standalones). Batches have been picked out of table order each time (pilot
+was #8, then #1→#2→#3→#4→#5→#6) — don't assume sequential order, just ask which family next. Only the
+7 hand-authored families are left (#7, #9-13 — no dict-cascade discount, but individually smaller
+scope each, and none of them carry the reused-standalones wrinkle since every splitroute in a
+hand-authored family duplicates its own full content already). No blocker either way.
 
 ### Phase 2 — convert `EUROPA_TRIP_IDEAS.md`'s 319 tagged items into real `rbBuildXRoute()` code
 
