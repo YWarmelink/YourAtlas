@@ -3828,110 +3828,110 @@ function rbSeedWestCentralAfricaSplitExpeditions() {
 }
 
 function rbBuildWestAfricaOverlandRoute() {
-  return rbBuildSeedRoute('West-Afrika Overland 🥁', [
+  return rbBuildSeedRoute('West Africa Overland 🥁', [
     {
-      name: 'Kaapverdische Eilanden',
+      name: 'Cape Verde Islands',
       season: 'November',
       budget: 780,
-      note: 'Net na het regenseizoen (augustus-oktober) — het droge seizoen loopt tot juni. Rustige, aangename opener.',
+      note: 'Just after the rainy season (August-October) — the dry season lasts until June. A calm, pleasant opener.',
       countries: [
         {
           code: 'CV', name: 'Cape Verde', days: 13, budget: 780, lat: 16.8901, lng: -24.9825,
           destinations: [
-            { name: 'Santo Antão (Ribeira Grande, Paúl-vallei)', lat: 17.1833, lng: -25.0667 },
+            { name: 'Santo Antão (Ribeira Grande, Paúl Valley)', lat: 17.1833, lng: -25.0667 },
             { name: 'São Vicente (Mindelo)', lat: 16.8901, lng: -24.9825 },
-            { name: 'Fogo (Pico do Fogo-vulkaan, wijngaarden)', lat: 14.9481, lng: -24.3553 },
+            { name: 'Fogo (Pico do Fogo volcano, vineyards)', lat: 14.9481, lng: -24.3553 },
           ],
-          notes: "Instap: vlucht Amsterdam-Sal (TUI fly, rechtstreeks, ±6u40), met binnenlandse aansluiting naar São Vicente/Santo Antão (±7-8 uur totaal, vanaf ±€350-600 retour, beste periode november). Prijsindicatie webonderzoek 2026-08, momentopname. Bewust andere eilanden dan een eerder bezoek (niet opnieuw Sal) — Santo Antão voor de dramatische wandelvalleien, São Vicente voor de muziekcultuur van Mindelo, Fogo voor de vulkaanbeklimming en wijnbouw op vulkanische grond. Onderling per veerboot (goedkoper, minder betrouwbaar schema) of Binter Cabo Verde-vlucht. Prijs geverifieerd (2026-07), klopt. Verplichte online EASE-registratie ≥5 dagen vooraf.",
-          transport_to_next: 'Binnenlandse vlucht Fogo-Praia, dan internationale vlucht Praia-Dakar (routelogica-fix 2026-08: Fogo heeft geen brede internationale verbindingen, alle vluchten lopen via Praia).',
+          notes: "Entry: flight Amsterdam-Sal (TUI fly, direct, ±6h40), with a domestic connection to São Vicente/Santo Antão (±7-8 hours total, from ±€350-600 return, best period November). Price indication from 2026-08 web research, a snapshot. Deliberately different islands from an earlier visit (not Sal again) — Santo Antão for the dramatic hiking valleys, São Vicente for Mindelo's music culture, Fogo for the volcano climb and vineyards on volcanic soil. Between islands by ferry (cheaper, less reliable schedule) or Binter Cabo Verde flight. Price verified (2026-07), holds up. Mandatory online EASE registration ≥5 days in advance.",
+          transport_to_next: 'Domestic flight Fogo-Praia, then international flight Praia-Dakar (route-logic fix 2026-08: Fogo has no broad international connections, all flights go via Praia).',
         },
       ],
     },
     {
       name: 'Senegambia',
-      season: 'November-december',
+      season: 'November-December',
       budget: 858,
-      note: 'Begin van het West-Afrikaanse droge seizoen (november-april).',
+      note: 'Start of the West African dry season (November-April).',
       countries: [
         {
           code: 'SN', name: 'Senegal', days: 13, budget: 618, lat: 14.7167, lng: -17.4677,
           destinations: [
             { name: 'Dakar', lat: 14.7167, lng: -17.4677 },
             { name: 'Île de Gorée', lat: 14.6672, lng: -17.3984 },
-            { name: 'Lompoul-woestijn', lat: 15.3833, lng: -16.7500 },
+            { name: 'Lompoul Desert', lat: 15.3833, lng: -16.7500 },
             { name: 'Saint-Louis (UNESCO)', lat: 16.0179, lng: -16.4896 },
-            { name: 'Sine-Saloum-delta', lat: 13.9333, lng: -16.5333 },
+            { name: 'Sine-Saloum Delta', lat: 13.9333, lng: -16.5333 },
           ],
-          notes: "Île de Gorée (slavernijgeschiedenis, korte boot vanaf Dakar) en Saint-Louis (koloniale hoofdstad) zijn de historische zwaartepunten; Sine-Saloum (mangroves, vogels) en de Lompoul-duinen geven een compleet ander natuurbeeld binnen één land. Prijs geverifieerd (2026-07), klopt. Routelogica-fix (2026-08): volgorde omgedraaid (Dakar→Gorée→Lompoul→Saint-Louis→Sine-Saloum) om een drievoudige noord-zuid-omweg via Dakar te vermijden — zie West & Central Africa Expedition 🌍's eigen notities voor de volledige onderbouwing.",
-          transport_to_next: 'Bus/deeltaxi over land naar Gambia via de Senegambia-brug (geopend 2019, een stuk vlotter dan de vroegere veerpont) — Sine-Saloum ligt al vlak bij de grens.',
+          notes: "Île de Gorée (slavery history, short boat ride from Dakar) and Saint-Louis (colonial capital) are the historical highlights; Sine-Saloum (mangroves, birds) and the Lompoul dunes give a completely different natural scenery within one country. Price verified (2026-07), holds up. Route-logic fix (2026-08): order reversed (Dakar→Gorée→Lompoul→Saint-Louis→Sine-Saloum) to avoid a triple north-south detour via Dakar — see West & Central Africa Expedition 🌍's own notes for the full reasoning.",
+          transport_to_next: 'Bus/shared taxi overland to Gambia via the Senegambia Bridge (opened 2019, considerably smoother than the former ferry) — Sine-Saloum is already close to the border.',
         },
         {
           code: 'GM', name: 'Gambia', days: 6, budget: 240, lat: 13.4549, lng: -16.579,
           destinations: [
             { name: 'Banjul', lat: 13.4549, lng: -16.5790 },
-            { name: 'Gambia-rivier (bootcruise)', lat: 13.4500, lng: -15.5000 },
-            { name: 'Kunta Kinteh Island (UNESCO, slavernijgeschiedenis)', lat: 13.2833, lng: -16.0500 },
+            { name: 'Gambia River (boat cruise)', lat: 13.4500, lng: -15.5000 },
+            { name: 'Kunta Kinteh Island (UNESCO, slavery history)', lat: 13.2833, lng: -16.0500 },
             { name: 'Makasutu Culture Forest', lat: 13.3667, lng: -16.6333 },
           ],
-          notes: "Klein maar met een eigen, herkenbaar hoogtepunt: Kunta Kinteh Island (voorheen James Island) is een van de belangrijkste slavernij-erfgoedsites van West-Afrika. Prijs geverifieerd (2026-07), klopt. Presidentsverkiezing 5 december 2026 — mogelijk onrust, check actuele situatie vlak voor vertrek.",
-          transport_to_next: 'Einde van deze route — terugvlucht vanuit Banjul (of vlucht naar Abidjan om verder te reizen naar Golf van Guinee, hieronder).',
+          notes: "Small but with its own recognizable highlight: Kunta Kinteh Island (formerly James Island) is one of the most important slavery heritage sites in West Africa. Price verified (2026-07), holds up. Presidential election December 5, 2026 — possible unrest, check the current situation shortly before departure.",
+          transport_to_next: 'End of this route — return flight from Banjul (or flight to Abidjan to continue to Gulf of Guinea, below).',
         },
       ],
     },
     {
-      name: 'Golf van Guinee',
-      season: 'December-januari',
+      name: 'Gulf of Guinea',
+      season: 'December-January',
       budget: 1634,
-      note: 'Harmattan-seizoen — droog maar stoffig, de beste periode om hier te reizen.',
+      note: 'Harmattan season — dry but dusty, the best period to travel here.',
       countries: [
         {
           code: 'CI', name: 'Ivory Coast', days: 7, budget: 333, lat: 5.36, lng: -4.0083,
           destinations: [
             { name: 'Abidjan (Le Plateau)', lat: 5.3600, lng: -4.0083 },
-            { name: 'Grand-Bassam (UNESCO koloniale stad)', lat: 5.2107, lng: -3.7380 },
+            { name: 'Grand-Bassam (UNESCO colonial town)', lat: 5.2107, lng: -3.7380 },
           ],
-          notes: "Taï National Park is bewust weggelaten — prachtig, maar de afgelegen ligging kost 3-4 dagen extra reistijd. Abidjan en Grand-Bassam houden dit land compact en de moeite waard. Prijs geverifieerd (2026-07), klopt.",
-          transport_to_next: 'Bus over land naar Ghana via de grensovergang Elubo — een gevestigde backpacker-route.',
+          notes: "Taï National Park is deliberately left out — beautiful, but its remote location costs 3-4 extra days of travel time. Abidjan and Grand-Bassam keep this country compact and worthwhile. Price verified (2026-07), holds up.",
+          transport_to_next: 'Bus overland to Ghana via the Elubo border crossing — an established backpacker route.',
         },
         {
           code: 'GH', name: 'Ghana', days: 15, budget: 713, lat: 5.1053, lng: -1.2466,
           destinations: [
             { name: 'Cape Coast Castle', lat: 5.1053, lng: -1.2466 },
             { name: 'Elmina Castle', lat: 5.0844, lng: -1.3499 },
-            { name: 'Kakum National Park (boomtoppenpad)', lat: 5.3500, lng: -1.3833 },
+            { name: 'Kakum National Park (canopy walkway)', lat: 5.3500, lng: -1.3833 },
             { name: 'Accra', lat: 5.6037, lng: -0.1870 },
-            { name: 'Volta-regio (Wli-watervallen, Mount Afadjato)', lat: 6.8667, lng: 0.4667 },
+            { name: 'Volta Region (Wli Falls, Mount Afadjato)', lat: 6.8667, lng: 0.4667 },
           ],
-          notes: "Cape Coast en Elmina Castle zijn de zwaarste, belangrijkste slavernijgeschiedenis-sites van de hele expeditie. Ghana heeft verreweg het rijkste programma, vandaar de meeste tijd. Prijs geverifieerd (2026-07), klopt. Routelogica-fix (2026-08): volgorde omgedraaid (Cape Coast/Elmina/Kakum eerst, dan Accra, dan Volta) — de Elubo-grensovergang ligt vlak bij Cape Coast, niet bij Accra, dus de oude volgorde backtrackte ≈330 km. Zie West & Central Africa Expedition 🌍's eigen notities voor de volledige onderbouwing.",
-          transport_to_next: 'Bus over land naar Togo via de grensovergang Aflao.',
+          notes: "Cape Coast and Elmina Castle are the heaviest, most important slavery history sites of the entire expedition. Ghana has by far the richest program, hence the most time. Price verified (2026-07), holds up. Route-logic fix (2026-08): order reversed (Cape Coast/Elmina/Kakum first, then Accra, then Volta) — the Elubo border crossing sits right next to Cape Coast, not Accra, so the old order backtracked ≈330 km. See West & Central Africa Expedition 🌍's own notes for the full reasoning.",
+          transport_to_next: 'Bus overland to Togo via the Aflao border crossing.',
         },
         {
           code: 'TG', name: 'Togo', days: 4, budget: 160, lat: 6.1319, lng: 1.2228,
           destinations: [
             { name: 'Lomé', lat: 6.1319, lng: 1.2228 },
-            { name: 'Togoville (Vodun-cultuur, Lac Togo)', lat: 6.2667, lng: 1.5333 },
+            { name: 'Togoville (Vodun culture, Lac Togo)', lat: 6.2667, lng: 1.5333 },
           ],
-          notes: "Bewust kort — Togo voegt met zijn Duitse koloniale geschiedenis wel een andere invalshoek toe dan Ghana/Benin, maar heeft weinig hoogtepunten. Prijs geverifieerd (2026-07), klopt.",
-          transport_to_next: 'Bus over land naar Benin via de grensovergang Hillacondji.',
+          notes: "Deliberately short — with its German colonial history, Togo does add a different angle than Ghana/Benin, but has few highlights. Price verified (2026-07), holds up.",
+          transport_to_next: 'Bus overland to Benin via the Hillacondji border crossing.',
         },
         {
           code: 'BJ', name: 'Benin', days: 9, budget: 428, lat: 6.3667, lng: 2.0833,
           destinations: [
-            { name: 'Abomey (koninklijke paleizen, UNESCO)', lat: 7.1833, lng: 1.9833 },
+            { name: 'Abomey (royal palaces, UNESCO)', lat: 7.1833, lng: 1.9833 },
             { name: 'Ouidah (Route des Esclaves, Door of No Return)', lat: 6.3667, lng: 2.0833 },
-            { name: 'Ganvié (paalwoningdorp op het meer)', lat: 6.4667, lng: 2.4167 },
+            { name: 'Ganvié (stilt village on the lake)', lat: 6.4667, lng: 2.4167 },
           ],
-          notes: "Oude koninkrijken (Abomey, het voormalige Dahomey), slavernijgeschiedenis (Ouidah) en levende Vodun-cultuur. Prijs geverifieerd (2026-07), klopt. Routelogica-fix (2026-08): volgorde omgedraaid (Abomey eerst, dan Ouidah/Ganvié) zodat de etappe vlak bij Cotonou eindigt in plaats van bij Abomey (≈135 km landinwaarts) — zie West & Central Africa Expedition 🌍's eigen notities voor de volledige onderbouwing.",
-          transport_to_next: "Einde van deze route — vlucht huiswaarts vanuit Cotonou (of vlucht Cotonou-Douala om verder te reizen naar Centraal-Afrika & Eilanden 🦛 — overland door Nigeria is geen optie).",
+          notes: "Old kingdoms (Abomey, the former Dahomey), slavery history (Ouidah) and living Vodun culture. Price verified (2026-07), holds up. Route-logic fix (2026-08): order reversed (Abomey first, then Ouidah/Ganvié) so the leg ends right near Cotonou instead of at Abomey (≈135 km inland) — see West & Central Africa Expedition 🌍's own notes for the full reasoning.",
+          transport_to_next: "End of this route — flight home from Cotonou (or flight Cotonou-Douala to continue to Central Africa & Islands 🦛 — overland through Nigeria is not an option).",
         },
       ],
     },
   ], {
-    travel_style: "Backpacker, geen harde tijdslimiet — hostels/eenvoudige guesthouses, bus/deeltaxi overland (Senegal t/m Benin), vluchten alleen voor Kaapverdië-Senegal en Gambia-Ivoorkust.",
+    travel_style: "Backpacker, no hard time limit — hostels/simple guesthouses, bus/shared taxi overland (Senegal through Benin), flights only for Cape Verde-Senegal and Gambia-Ivory Coast.",
     best_starting_month: 'November',
-    description: 'Atlantische eilandcultuur, oude West-Afrikaanse koninkrijken en slavernijgeschiedenis: Kaapverdië, Senegal, Gambia, Ivoorkust, Ghana, Togo en Benin.',
-    climate_summary: 'Een novemberstart laat vrijwel de hele route in zijn beste seizoen vallen: Kaapverdië net na het regenseizoen, en Senegal t/m Benin in hun volledige droge seizoen (november-april, met de stoffige maar droge harmattan december-februari).',
-    notes: "Losgesplitst van West & Central Africa Expedition 🌍 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen. Vervolg op deze route: Centraal-Afrika & Eilanden 🦛. West & Central Africa Expedition 🌍 zelf blijft ongewijzigd bestaan als losse, volledige expeditie.\n\nRoutelogica-herziening (2026-08): vier fixes, zelfde als West & Central Africa Expedition 🌍 zelf — Kaapverdië's Fogo-Praia-Dakar vluchtroute expliciet benoemd, Senegal's volgorde omgedraaid, Ghana's volgorde omgedraaid, Benin's volgorde omgedraaid. Zie die route's eigen notities voor de volledige onderbouwing.",
+    description: 'Atlantic island culture, old West African kingdoms and slavery history: Cape Verde, Senegal, Gambia, Ivory Coast, Ghana, Togo and Benin.',
+    climate_summary: 'A November start puts almost the entire route in its best season: Cape Verde just after the rainy season, and Senegal through Benin in their full dry season (November-April, with the dusty but dry harmattan December-February).',
+    notes: "Split off from West & Central Africa Expedition 🌍 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days, budgets and order are carried over unchanged. Continuation of this route: Central Africa & Islands 🦛. West & Central Africa Expedition 🌍 itself remains unchanged as a separate, full expedition.\n\nRoute-logic revision (2026-08): four fixes, same as West & Central Africa Expedition 🌍 itself — Cape Verde's Fogo-Praia-Dakar flight route explicitly named, Senegal's order reversed, Ghana's order reversed, Benin's order reversed. See that route's own notes for the full reasoning.",
   });
 }
 
