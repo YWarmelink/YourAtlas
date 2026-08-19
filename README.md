@@ -366,8 +366,11 @@ Alaska extension for anyone who already had one, instead of silently dropping it
 batch's own `rbMigrateAlaskaAddition()` vs. `rbMigrateNorthAmericaRouteLogicOverhaul()` call-order
 was found to contradict its own docstring (the docstring says Alaska-addition is placed *after* the
 route-logic overhaul so a fresh browser's wholesale-replace can't run over the Alaska addition, but
-the actual `routeBuilder.js` call order has it *before*) — a pre-existing latent bug, not introduced
-by this batch and out of scope for a translation pass, left as-is and flagged here for a future fix.
+the actual `routeBuilder.js` call order had it *before*) — a pre-existing latent bug, not introduced
+by this batch. **Fixed same-day (commit `3645d66`)**: moved `rbMigrateAlaskaAddition()` to right
+after `rbMigrateNorthAmericaRouteLogicOverhaul()` in the init sequence, matching the documented
+intent — the English-migration's own Alaska re-application already papered over the practical
+impact, this removes the underlying order inconsistency rather than just masking it.
 
 **Workflow per batch**: delegate to a `general-purpose` subagent — read `CLAUDE.md`'s migration rule
 first, find the family's build function(s), translate every Dutch text field (never touch
