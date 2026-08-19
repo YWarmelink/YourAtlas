@@ -1642,150 +1642,150 @@ function rbSeedWestCentralAfricaExpedition() {
 function rbBuildWestCentralAfricaExpeditionRoute() {
   return rbBuildSeedRoute('West & Central Africa Expedition 🌍', [
     {
-      name: 'Kaapverdische Eilanden',
+      name: 'Cape Verde Islands',
       season: 'November',
       budget: 780,
-      note: 'Net na het regenseizoen (augustus-oktober) — het droge seizoen loopt tot juni. Rustige, aangename opener.',
+      note: 'Just after the rainy season (August-October) — the dry season lasts until June. A calm, pleasant opener.',
       countries: [
         {
           code: 'CV', name: 'Cape Verde', days: 13, budget: 780, lat: 16.8901, lng: -24.9825,
           destinations: [
-            { name: 'Santo Antão (Ribeira Grande, Paúl-vallei)', lat: 17.1833, lng: -25.0667 },
+            { name: 'Santo Antão (Ribeira Grande, Paúl Valley)', lat: 17.1833, lng: -25.0667 },
             { name: 'São Vicente (Mindelo)', lat: 16.8901, lng: -24.9825 },
-            { name: 'Fogo (Pico do Fogo-vulkaan, wijngaarden)', lat: 14.9481, lng: -24.3553 },
+            { name: 'Fogo (Pico do Fogo volcano, vineyards)', lat: 14.9481, lng: -24.3553 },
           ],
-          notes: "Bewust andere eilanden dan een eerder bezoek (niet opnieuw Sal) — Santo Antão voor de dramatische wandelvalleien, São Vicente voor de muziekcultuur van Mindelo, Fogo voor de vulkaanbeklimming en wijnbouw op vulkanische grond. Onderling per veerboot (goedkoper, minder betrouwbaar schema) of Binter Cabo Verde-vlucht. Prijs geverifieerd (2026-07), klopt — Fogo-vlucht (~€70-100 enkele reis, veerboot onbetrouwbaar) is een aparte kostenpost. Verplichte online EASE-registratie ≥5 dagen vooraf.",
-          transport_to_next: 'Binnenlandse vlucht Fogo-Praia, dan internationale vlucht Praia-Dakar (routelogica-fix 2026-08, search-bevestigd: Fogo heeft geen brede internationale verbindingen, alle vluchten lopen via Praia — dit stond eerder verzwegen achter "Praia/Sal-Dakar" alsof het interwisselbare directe vertrekpunten waren).',
+          notes: "Deliberately different islands from an earlier visit (not Sal again) — Santo Antão for the dramatic hiking valleys, São Vicente for Mindelo's music culture, Fogo for the volcano climb and vineyards on volcanic soil. Between islands by ferry (cheaper, less reliable schedule) or Binter Cabo Verde flight. Price verified (2026-07), holds up — the Fogo flight (~€70-100 one-way, ferry unreliable) is a separate cost item. Mandatory online EASE registration ≥5 days in advance.",
+          transport_to_next: 'Domestic flight Fogo-Praia, then international flight Praia-Dakar (route-logic fix 2026-08, search-confirmed: Fogo has no broad international connections, all flights go via Praia — this was previously hidden behind "Praia/Sal-Dakar" as if they were interchangeable direct departure points).',
         },
       ],
     },
     {
       name: 'Senegambia',
-      season: 'November-december',
+      season: 'November-December',
       budget: 858,
-      note: 'Begin van het West-Afrikaanse droge seizoen (november-april).',
+      note: 'Start of the West African dry season (November-April).',
       countries: [
         {
           code: 'SN', name: 'Senegal', days: 13, budget: 618, lat: 14.7167, lng: -17.4677,
           destinations: [
             { name: 'Dakar', lat: 14.7167, lng: -17.4677 },
             { name: 'Île de Gorée', lat: 14.6672, lng: -17.3984 },
-            { name: 'Lompoul-woestijn', lat: 15.3833, lng: -16.7500 },
+            { name: 'Lompoul Desert', lat: 15.3833, lng: -16.7500 },
             { name: 'Saint-Louis (UNESCO)', lat: 16.0179, lng: -16.4896 },
-            { name: 'Sine-Saloum-delta', lat: 13.9333, lng: -16.5333 },
+            { name: 'Sine-Saloum Delta', lat: 13.9333, lng: -16.5333 },
           ],
-          notes: "Île de Gorée (slavernijgeschiedenis, korte boot vanaf Dakar) en Saint-Louis (koloniale hoofdstad) zijn de historische zwaartepunten; Sine-Saloum (mangroves, vogels) en de Lompoul-duinen geven een compleet ander natuurbeeld binnen één land. Prijs geverifieerd (2026-07), klopt. Oranje grensstrook bij Gambia/Guinee-Bissau/Mali/Mauritanië — niet relevant voor deze route. Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid — Dakar→Saint-Louis(noord)→Sine-Saloum(zuid)→Lompoul(noord) kruiste de Dakar-corridor drie keer (≈850+ km vermijdbare omweg). Nu Dakar→Gorée→Lompoul→Saint-Louis (beide noordelijke stops samen) →Sine-Saloum (zuid, al vlak bij de Gambiaanse grens) — nog maar één noord-zuid-omslag, onvermijdelijk omdat Dakar precies tussen de noordelijke woestijn/UNESCO-stops en de zuidelijke delta/Gambia in ligt.",
-          transport_to_next: 'Bus/deeltaxi over land naar Gambia via de Senegambia-brug (geopend 2019, een stuk vlotter dan de vroegere veerpont) — Sine-Saloum ligt al vlak bij de grens.',
+          notes: "Île de Gorée (slavery history, short boat ride from Dakar) and Saint-Louis (colonial capital) are the historical highlights; Sine-Saloum (mangroves, birds) and the Lompoul dunes give a completely different natural scenery within one country. Price verified (2026-07), holds up. Orange border strip along Gambia/Guinea-Bissau/Mali/Mauritania — not relevant for this route. Route-logic fix (2026-08, search-confirmed): order reversed — Dakar→Saint-Louis(north)→Sine-Saloum(south)→Lompoul(north) crossed the Dakar corridor three times (≈850+ km avoidable detour). Now Dakar→Gorée→Lompoul→Saint-Louis (both northern stops together) →Sine-Saloum (south, already close to the Gambian border) — only one north-south switch left, unavoidable because Dakar sits precisely between the northern desert/UNESCO stops and the southern delta/Gambia.",
+          transport_to_next: 'Bus/shared taxi overland to Gambia via the Senegambia Bridge (opened 2019, considerably smoother than the former ferry) — Sine-Saloum is already close to the border.',
         },
         {
           code: 'GM', name: 'Gambia', days: 6, budget: 240, lat: 13.4549, lng: -16.579,
           destinations: [
             { name: 'Banjul', lat: 13.4549, lng: -16.5790 },
-            { name: 'Gambia-rivier (bootcruise)', lat: 13.4500, lng: -15.5000 },
-            { name: 'Kunta Kinteh Island (UNESCO, slavernijgeschiedenis)', lat: 13.2833, lng: -16.0500 },
+            { name: 'Gambia River (boat cruise)', lat: 13.4500, lng: -15.5000 },
+            { name: 'Kunta Kinteh Island (UNESCO, slavery history)', lat: 13.2833, lng: -16.0500 },
             { name: 'Makasutu Culture Forest', lat: 13.3667, lng: -16.6333 },
           ],
-          notes: "Klein maar met een eigen, herkenbaar hoogtepunt: Kunta Kinteh Island (voorheen James Island) is een van de belangrijkste slavernij-erfgoedsites van West-Afrika. Prijs geverifieerd (2026-07), klopt. Presidentsverkiezing 5 december 2026 — mogelijk onrust, check actuele situatie vlak voor vertrek.",
-          transport_to_next: 'Vlucht naar Abidjan — geen praktische landroute (Guinee-Bissau, Guinee, Sierra Leone en Liberia liggen ertussen, te veel omweg/visa voor deze reisstijl).',
+          notes: "Small but with its own recognizable highlight: Kunta Kinteh Island (formerly James Island) is one of the most important slavery heritage sites in West Africa. Price verified (2026-07), holds up. Presidential election December 5, 2026 — possible unrest, check the current situation shortly before departure.",
+          transport_to_next: 'Flight to Abidjan — no practical overland route (Guinea-Bissau, Guinea, Sierra Leone and Liberia lie in between, too much of a detour/visa hassle for this travel style).',
         },
       ],
     },
     {
-      name: 'Golf van Guinee',
-      season: 'December-januari',
+      name: 'Gulf of Guinea',
+      season: 'December-January',
       budget: 1634,
-      note: 'Harmattan-seizoen — droog maar stoffig, de beste periode om hier te reizen.',
+      note: 'Harmattan season — dry but dusty, the best period to travel here.',
       countries: [
         {
           code: 'CI', name: 'Ivory Coast', days: 7, budget: 333, lat: 5.36, lng: -4.0083,
           destinations: [
             { name: 'Abidjan (Le Plateau)', lat: 5.3600, lng: -4.0083 },
-            { name: 'Grand-Bassam (UNESCO koloniale stad)', lat: 5.2107, lng: -3.7380 },
+            { name: 'Grand-Bassam (UNESCO colonial town)', lat: 5.2107, lng: -3.7380 },
           ],
-          notes: "Taï National Park is bewust weggelaten — prachtig, maar de afgelegen ligging kost 3-4 dagen extra reistijd voor chimpansees die ook elders in West-/Centraal-Afrika te zien zijn. Abidjan en Grand-Bassam houden dit land compact en de moeite waard. Prijs geverifieerd (2026-07), klopt. Rood/oranje alleen bij de Mali/Burkina Faso- en Liberia-grens — niet relevant hier.",
-          transport_to_next: 'Bus over land naar Ghana via de grensovergang Elubo — een gevestigde backpacker-route.',
+          notes: "Taï National Park is deliberately left out — beautiful, but its remote location costs 3-4 extra days of travel time for chimpanzees that can also be seen elsewhere in West/Central Africa. Abidjan and Grand-Bassam keep this country compact and worthwhile. Price verified (2026-07), holds up. Red/orange only along the Mali/Burkina Faso and Liberia border — not relevant here.",
+          transport_to_next: 'Bus overland to Ghana via the Elubo border crossing — an established backpacker route.',
         },
         {
           code: 'GH', name: 'Ghana', days: 15, budget: 713, lat: 5.1053, lng: -1.2466,
           destinations: [
             { name: 'Cape Coast Castle', lat: 5.1053, lng: -1.2466 },
             { name: 'Elmina Castle', lat: 5.0844, lng: -1.3499 },
-            { name: 'Kakum National Park (boomtoppenpad)', lat: 5.3500, lng: -1.3833 },
+            { name: 'Kakum National Park (canopy walkway)', lat: 5.3500, lng: -1.3833 },
             { name: 'Accra', lat: 5.6037, lng: -0.1870 },
-            { name: 'Volta-regio (Wli-watervallen, Mount Afadjato)', lat: 6.8667, lng: 0.4667 },
+            { name: 'Volta Region (Wli Falls, Mount Afadjato)', lat: 6.8667, lng: 0.4667 },
           ],
-          notes: "Cape Coast en Elmina Castle zijn de zwaarste, belangrijkste slavernijgeschiedenis-sites van de hele expeditie. Ghana heeft verreweg het rijkste programma van de reis — vandaar de meeste tijd. Prijs geverifieerd (2026-07), klopt, inclusief entreegelden Cape Coast/Kakum. Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid — de grensovergang vanuit Ivoorkust (Elubo) ligt vlak bij Cape Coast/Elmina (≈215 km/3u10), ver van Accra (≈361 km); de oude volgorde (Accra→Cape Coast/Elmina/Kakum→Volta) betekende eerst 360 km oostwaarts naar Accra, dan 165 km terug westwaarts naar Cape Coast, dan weer 165 km oostwaarts door Accra naar Volta — ≈330 km pure omweg. Nu Cape Coast/Elmina/Kakum (vlak bij Elubo) →Accra→Volta-regio (vlak bij de Aflao-grensovergang naar Togo) — één doorlopende oost-beweging die precies aansluit op in- en uitgang.",
-          transport_to_next: 'Bus over land naar Togo via de grensovergang Aflao.',
+          notes: "Cape Coast and Elmina Castle are the heaviest, most important slavery history sites of the entire expedition. Ghana has by far the richest program of the trip — hence the most time. Price verified (2026-07), holds up, including Cape Coast/Kakum entrance fees. Route-logic fix (2026-08, search-confirmed): order reversed — the border crossing from Ivory Coast (Elubo) sits right next to Cape Coast/Elmina (≈215 km/3h10), far from Accra (≈361 km); the old order (Accra→Cape Coast/Elmina/Kakum→Volta) meant first 360 km eastward to Accra, then 165 km back westward to Cape Coast, then another 165 km eastward through Accra to Volta — ≈330 km of pure detour. Now Cape Coast/Elmina/Kakum (right next to Elubo) →Accra→Volta Region (right next to the Aflao border crossing to Togo) — one continuous eastward movement that lines up exactly with entry and exit.",
+          transport_to_next: 'Bus overland to Togo via the Aflao border crossing.',
         },
         {
           code: 'TG', name: 'Togo', days: 4, budget: 160, lat: 6.1319, lng: 1.2228,
           destinations: [
             { name: 'Lomé', lat: 6.1319, lng: 1.2228 },
-            { name: 'Togoville (Vodun-cultuur, Lac Togo)', lat: 6.2667, lng: 1.5333 },
+            { name: 'Togoville (Vodun culture, Lac Togo)', lat: 6.2667, lng: 1.5333 },
           ],
-          notes: "Bewust kort — Togo voegt met zijn Duitse koloniale geschiedenis (vóór de latere Franse overname) wel een andere invalshoek toe dan Ghana/Benin, maar heeft weinig hoogtepunten. Ligt toch al direct op de route, dus lage extra kosten om aan te doen. Prijs geverifieerd (2026-07), klopt. Visa-on-arrival is afgeschaft — alleen nog e-visa vooraf via het officiële evisa.gouv.tg (vermijd duurdere derde partijen).",
-          transport_to_next: 'Bus over land naar Benin via de grensovergang Hillacondji.',
+          notes: "Deliberately short — with its German colonial history (before the later French takeover), Togo does add a different angle than Ghana/Benin, but has few highlights. It already sits directly on the route, so the extra cost of including it is low. Price verified (2026-07), holds up. Visa-on-arrival has been abolished — only an e-visa in advance via the official evisa.gouv.tg (avoid pricier third parties).",
+          transport_to_next: 'Bus overland to Benin via the Hillacondji border crossing.',
         },
         {
           code: 'BJ', name: 'Benin', days: 9, budget: 428, lat: 6.3667, lng: 2.0833,
           destinations: [
-            { name: 'Abomey (koninklijke paleizen, UNESCO)', lat: 7.1833, lng: 1.9833 },
+            { name: 'Abomey (royal palaces, UNESCO)', lat: 7.1833, lng: 1.9833 },
             { name: 'Ouidah (Route des Esclaves, Door of No Return)', lat: 6.3667, lng: 2.0833 },
-            { name: 'Ganvié (paalwoningdorp op het meer)', lat: 6.4667, lng: 2.4167 },
+            { name: 'Ganvié (stilt village on the lake)', lat: 6.4667, lng: 2.4167 },
           ],
-          notes: "Precies de combinatie die deze expeditie zoekt: oude koninkrijken (Abomey, het voormalige Dahomey), slavernijgeschiedenis (Ouidah) en levende Vodun-cultuur. Prijs geverifieerd (2026-07), klopt. Rood/oranje alleen in het noorden en de Nigeria-grensstrook — niet relevant hier. Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid — Abomey stond als laatste stop (≈135 km landinwaarts vanaf Cotonou) terwijl de vlucht vanuit Cotonou vertrekt, een onvermelde terugrit die dezelfde categorie fout is als eerder gevonden bij andere routes (een bestemming als laatste stop terwijl het vertrekpunt ergens anders ligt). Nu Abomey eerst, dan Ouidah (≈42 km van Cotonou) en Ganvié (≈18 km van Cotonou) — de reis eindigt vlak bij de luchthaven, geen backtrack meer nodig.",
-          transport_to_next: "Vlucht Cotonou-Douala (meestal met overstap) — overland door Nigeria is voor deze reis geen optie, de enige onvermijdelijke sprong van de hele route.",
+          notes: "Exactly the combination this expedition is looking for: old kingdoms (Abomey, the former Dahomey), slavery history (Ouidah) and living Vodun culture. Price verified (2026-07), holds up. Red/orange only in the north and the Nigeria border strip — not relevant here. Route-logic fix (2026-08, search-confirmed): order reversed — Abomey used to be the last stop (≈135 km inland from Cotonou) while the flight departs from Cotonou, an unmentioned return trip that's the same category of mistake found earlier in other routes (a destination as the last stop while the departure point is somewhere else). Now Abomey first, then Ouidah (≈42 km from Cotonou) and Ganvié (≈18 km from Cotonou) — the trip ends right near the airport, no more backtrack needed.",
+          transport_to_next: "Flight Cotonou-Douala (usually with a layover) — overland through Nigeria is not an option for this trip, the only unavoidable jump of the entire route.",
         },
       ],
     },
     {
-      name: 'Centraal-Afrika & Eilanden',
-      season: 'Januari-februari',
+      name: 'Central Africa & Islands',
+      season: 'January-February',
       budget: 1888,
-      note: "Kameroens minst natte periode (november-februari) en Gabons korte droge seizoen (december-februari) vallen hier samen; São Tomé is de uitzondering (regenseizoen, zie de klimaatredenering van de hele route).",
+      note: "Cameroon's least wet period (November-February) and Gabon's short dry season (December-February) coincide here; São Tomé is the exception (rainy season, see the climate reasoning for the whole route).",
       countries: [
         {
           code: 'CM', name: 'Cameroon', days: 8, budget: 380, lat: 4.0511, lng: 9.7679,
           destinations: [
             { name: 'Douala', lat: 4.0511, lng: 9.7679 },
             { name: 'Yaoundé', lat: 3.8480, lng: 11.5021 },
-            { name: 'Kribi (Chutes de la Lobé, zwarte stranden)', lat: 2.9333, lng: 9.9167 },
+            { name: 'Kribi (Chutes de la Lobé, black beaches)', lat: 2.9333, lng: 9.9167 },
           ],
-          notes: 'Aangepast t.o.v. het oorspronkelijke plan: Mount Cameroon en Limbe liggen in de Zuidwest-regio, waar sinds 2016 een gewapend conflict speelt (de "Anglophone Crisis") — reisadviezen hebben dit gebied in verschillende periodes afgeraden. In plaats daarvan Douala, Kribi (de Chutes de la Lobé stromen letterlijk de zee in — uniek) en Yaoundé, allemaal in de stabielere Franstalige Littoral/Centre-regio\'s. Check de actuele situatie in het Zuidwesten vlak vóór vertrek — mocht die verbeterd zijn, dan is Mount Cameroon alsnog het overwegen waard als toevoeging. Prijs geverifieerd (2026-07), klopt. Bevestigd: Anglophone Crisis nog steeds actief/rood in 2026 — de routekeuze blijft terecht. Verplicht e-visa vooraf (~€150-230), aparte kostenpost. Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid — Douala is het enige internationale gateway naar São Tomé (geen directe Yaoundé-vlucht bestaat), dus een terugrit naar Douala is sowieso onvermijdelijk vanuit zowel Kribi als Yaoundé (geen gedeelde route tussen die twee). De oude volgorde eindigde bij Yaoundé (≈240 km/3,5-4u terug naar Douala, onvermeld); nu eindigt de etappe bij Kribi (≈175 km/2,5-3u terug, de kortere van de twee) en is de terugrit expliciet benoemd i.p.v. verzwegen.',
-          transport_to_next: 'Terug naar Douala (≈175 km vanaf Kribi, ≈2,5-3 uur), dan vlucht Douala-São Tomé (regionale verbinding).',
+          notes: 'Adjusted relative to the original plan: Mount Cameroon and Limbe lie in the Southwest Region, where an armed conflict (the "Anglophone Crisis") has been active since 2016 — travel advisories have discouraged this area at various points. Instead Douala, Kribi (the Chutes de la Lobé literally flow into the sea — unique) and Yaoundé, all in the more stable Francophone Littoral/Centre regions. Check the current situation in the Southwest shortly before departure — should it have improved, Mount Cameroon would still be worth considering as an addition. Price verified (2026-07), holds up. Confirmed: Anglophone Crisis still active/red in 2026 — the route choice remains justified. Mandatory e-visa in advance (~€150-230), a separate cost item. Route-logic fix (2026-08, search-confirmed): order reversed — Douala is the only international gateway to São Tomé (no direct Yaoundé flight exists), so a return trip to Douala is unavoidable either way from both Kribi and Yaoundé (no shared route between the two). The old order ended at Yaoundé (≈240 km/3.5-4h back to Douala, unmentioned); now the leg ends at Kribi (≈175 km/2.5-3h back, the shorter of the two) and the return trip is explicitly named instead of hidden.',
+          transport_to_next: 'Back to Douala (≈175 km from Kribi, ≈2.5-3 hours), then flight Douala-São Tomé (regional connection).',
         },
         {
           code: 'ST', name: 'São Tomé and Príncipe', days: 9, budget: 653, lat: 0.3365, lng: 6.7273,
           destinations: [
-            { name: 'São Tomé (roças/plantages, regenwoud)', lat: 0.3365, lng: 6.7273 },
-            { name: 'Príncipe (afgelegen, minder bezocht)', lat: 1.6167, lng: 7.4167 },
+            { name: 'São Tomé (roças/plantations, rainforest)', lat: 0.3365, lng: 6.7273 },
+            { name: 'Príncipe (remote, less visited)', lat: 1.6167, lng: 7.4167 },
           ],
-          notes: "Uniek in de hele Travel Atlas: Portugese koloniale plantagegeschiedenis op een klein, rustig tropisch eiland. Valt in het regenseizoen (oktober-mei) bij deze route — vooral middagbuien, geen aanhoudende moesson. Prijs geverifieerd (2026-07), klopt. Presidentsverkiezing 19 juli 2026 — mogelijk protesten rond die periode, check lokaal nieuws vlak voor vertrek.",
-          transport_to_next: 'Vlucht São Tomé-Libreville (regionale verbinding).',
+          notes: "Unique in the whole Travel Atlas: Portuguese colonial plantation history on a small, calm tropical island. Falls within the rainy season (October-May) on this route — mainly afternoon showers, no sustained monsoon. Price verified (2026-07), holds up. Presidential election July 19, 2026 — possible protests around that period, check local news shortly before departure.",
+          transport_to_next: 'Flight São Tomé-Libreville (regional connection).',
         },
         {
           code: 'GA', name: 'Gabon', days: 9, budget: 855, lat: -1.95, lng: 9.7,
           destinations: [
-            { name: 'Loango National Park (surfende nijlpaarden, bosolifanten op het strand)', lat: -2.3667, lng: 9.5667 },
+            { name: 'Loango National Park (surfing hippos, forest elephants on the beach)', lat: -2.3667, lng: 9.5667 },
             { name: 'Libreville', lat: 0.4162, lng: 9.4673 },
-            { name: 'Pongara National Park (mangroves/regenwoud, ≈45 min boot vanaf Libreville)', lat: 0.3833, lng: 9.3500 },
+            { name: 'Pongara National Park (mangroves/rainforest, ≈45 min boat from Libreville)', lat: 0.3833, lng: 9.3500 },
           ],
-          notes: "Bewuste, sterke afsluiter van de hele expeditie — Loango is een van de weinige plekken ter wereld waar je olifanten en nijlpaarden op het strand ziet. Valt toevallig in zijn korte droge seizoen (december-februari) bij deze route. ⚠️ Prijscheck (2026-07): het krapste/riskantste budget van de route — Loango-logistiek (gids/parkfees/eventuele chartervlucht) kan oplopen tot $100-300+/dag; €95/dag is alleen haalbaar met budgetvervoer (weg/piroque) en eenvoudige kampementen. Onvoldoende harde consensus voor een vaste correctie, maar reken op een reële kans dat dit hoger uitvalt. Routelogica-fix (2026-08, search-bevestigd): 'regenwoud' was een naamloze derde bestemming, niet te controleren op ligging — ingevuld als Pongara National Park (mangroves/regenwoud/stranden, korte boot vanaf Libreville, geen backtrack-risico omdat het al vlak bij het vertrekpunt ligt). Loango(zuid)→Libreville(noord, hoofdstad)→Pongara (vlak bij Libreville) is de juiste richting, eindigend bij het vertrekpunt voor de terugvlucht.",
-          transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Libreville naar Nederland (meestal met overstap).',
+          notes: "A deliberate, strong finale for the entire expedition — Loango is one of the few places in the world where you see elephants and hippos on the beach. Happens to fall within its short dry season (December-February) on this route. ⚠️ Price check (2026-07): the tightest/riskiest budget of the route — Loango logistics (guide/park fees/possible charter flight) can run up to $100-300+/day; €95/day is only achievable with budget transport (road/pirogue) and simple campsites. Insufficient hard consensus for a fixed correction, but expect a real chance this turns out higher. Route-logic fix (2026-08, search-confirmed): 'rainforest' was an unnamed third destination, impossible to verify by location — filled in as Pongara National Park (mangroves/rainforest/beaches, short boat from Libreville, no backtrack risk since it's already close to the departure point). Loango(south)→Libreville(north, capital)→Pongara (close to Libreville) is the correct direction, ending at the departure point for the return flight.",
+          transport_to_next: 'End of the expedition — return flight from Libreville to the Netherlands (usually with a layover).',
         },
       ],
     },
   ], {
-    travel_style: "Backpacker, geen harde tijdslimiet — hostels/eenvoudige guesthouses met af en toe een privékamer, bus/deeltaxi overland waar mogelijk (Senegal t/m Benin), vluchten voor de onvermijdelijke sprongen (Kaapverdië-Senegal, Gambia-Ivoorkust, Benin-Kameroen, en tussen Kameroen/São Tomé/Gabon).",
+    travel_style: "Backpacker, no hard time limit — hostels/simple guesthouses with an occasional private room, bus/shared taxi overland where possible (Senegal through Benin), flights for the unavoidable jumps (Cape Verde-Senegal, Gambia-Ivory Coast, Benin-Cameroon, and between Cameroon/São Tomé/Gabon).",
     best_starting_month: 'November',
-    description: 'Backpack-expeditie door West- en Centraal-Afrika: Atlantische eilandcultuur, oude West-Afrikaanse koninkrijken, slavernijgeschiedenis en Centraal-Afrikaans regenwoud/wildlife. Geoptimaliseerd voor de mooiste en meest unieke ervaring, niet voor het aantal landen.',
-    climate_summary: "Vergeleken scenario's: (1) een zomerstart (juni-augustus) zou Kaapverdië/Senegal t/m Benin middenin hun regenseizoen zetten (mei-oktober) — enige voordeel is dat het samenvalt met Gabons lange droge periode (juni-augustus), maar dat weegt niet op tegen de rest; (2) een start begin november laat vrijwel de hele route in zijn beste seizoen vallen: Kaapverdië net na het regenseizoen, Senegal t/m Benin in hun volledige droge seizoen (november-april, met de stoffige maar droge harmattan december-februari), Kameroen in zijn minst natte periode (november-februari), en Gabon toevallig in zijn korte droge periode (december-februari). Enige compromis: São Tomé & Príncipe's eigen droge seizoen (\"gravana\") loopt juni-september — bij een novemberstart val je daar in het regenseizoen, voornamelijk middagbuien in plaats van aanhoudende regen. Beste keuze: start begin november in Kaapverdië.",
-    notes: "Ontworpen in een Q&A-sessie met Claude (2026-07), op basis van een ChatGPT-brainstorm die Youri aandroeg (route, landen, tijdschema, budget, transport, veiligheid, omvang-check). Dagen zijn de 'ideale' tempo-schatting; budgetten zijn het gemiddelde van het Goedkope backpackbudget en het Realistische budget uit de ontwerpdiscussie.\n\n" +
-      "Twee aanpassingen na Youri's review van het ontwerp: (1) Taï National Park in Ivoorkust laten vervallen — afgelegen, kost 3-4 dagen extra voor chimpansees die ook elders te zien zijn; Ivoorkust blijft beperkt tot Abidjan + Grand-Bassam. (2) Kameroen aangepast: Mount Cameroon en Limbe liggen in de Zuidwest-regio, waar sinds 2016 een gewapend conflict speelt (de Anglophone Crisis) — vervangen door Douala, Kribi (Chutes de la Lobé) en Yaoundé, allemaal in de stabielere Franstalige regio's. Check de actuele veiligheidssituatie in het Zuidwesten vlak vóór vertrek.\n\n" +
-      "Angola is bewust uit deze expeditie gehaald en verplaatst naar Africa Grand Tour in plaats daarvan — geografisch grenst het direct aan Namibië (al onderdeel van die route), een veel logischer aansluiting dan de geïsoleerde flight-only eindstop die het hier zou zijn. Dit verwijdert ook de onzekerste/duurste vlucht van deze route (Gabon-Angola); Gabon is nu het nieuwe, sterke eindpunt (Loango's surfende nijlpaarden). Let op: deze verplaatsing lost het seizoensprobleem niet op — Angola valt ook in Africa Grand Tour's Southern Africa-regio in het regenseizoen, hetzelfde al geaccepteerde compromis van die route.\n\n" +
-      "Totaal: 93 dagen (~3,1 maanden), €5.160 grondkosten + circa €2.400-2.800 aan vluchten (Kaapverdië-Senegal, Gambia-Ivoorkust, Benin-Kameroen en de Centraal-Afrikaanse eilandsprongen zijn stuk voor stuk vluchten met weinig concurrentie, dus prijzig per afstand). Nog niet getoetst aan actuele prijzen, visumregels of reisadviezen — behandel dit als een eerste concept, geen boekbaar plan. Check vooral de veiligheidssituatie in Kameroens Zuidwest-regio vlak vóór vertrek.\n\n" +
-      "Prijzen/visum/reisadvies-verificatie (2026-07): alle 10 landen bevestigd accuraat, geen budgetcorrecties (Gabon is wel het krapste/riskantste — zie de eigen notitie). Anglophone Crisis in Kameroen bevestigd nog actief. Zie de losse landnotities hierboven voor reisadvies/visumdetails.\n\n" +
-      "Routelogica-herziening (2026-08, search-bevestigd, negende expeditie uit ROUTE_LOGIC_REVIEW.md): vier fixes, geen daarvan een landvolgorde-probleem — allemaal volgorde-fouten binnen een land, of een onvermelde verbinding. (1) **Kaapverdië**: 'Vlucht Praia/Sal-Dakar' verzweeg dat Fogo (waar de etappe eindigt) geen brede internationale verbindingen heeft — alle vluchten gaan via Praia, nu expliciet benoemd als binnenlandse vlucht + internationale vlucht. (2) **Senegal**: Dakar→Saint-Louis(noord)→Sine-Saloum(zuid)→Lompoul(noord) kruiste de Dakar-corridor drie keer (≈850+ km vermijdbare omweg) — nu Dakar→Gorée→Lompoul→Saint-Louis(beide noordelijke stops samen)→Sine-Saloum(zuid, al vlak bij Gambia). (3) **Ghana**: de Elubo-grensovergang vanuit Ivoorkust ligt vlak bij Cape Coast/Elmina, niet bij Accra — de oude volgorde (Accra eerst) backtrackte ≈330 km; nu Cape Coast/Elmina/Kakum→Accra→Volta-regio (vlak bij de Aflao-grensovergang naar Togo), één doorlopende oostwaartse beweging. (4) **Benin**: Abomey stond als laatste stop (≈135 km landinwaarts) terwijl de vlucht vanuit Cotonou vertrekt — nu Abomey eerst, dan Ouidah/Ganvié (beide vlak bij Cotonou), geen backtrack meer. Twee kleinere fixes in Centraal-Afrika: **Kameroen** eindigde bij Yaoundé (≈240 km terug naar Douala, het enige gateway naar São Tomé, onvermeld) — nu Douala→Yaoundé→Kribi (≈175 km terug, de kortere route, nu expliciet benoemd). **Gabon**'s naamloze 'regenwoud'-bestemming ingevuld als Pongara National Park (vlak bij Libreville, geen backtrack-risico). Youri had nog geen van de 10 landen bezocht, geen cuts nodig. Zelfde vier hoofdfixes ook toegepast op de standalone companion-route West-Afrika Overland 🥁; de twee Centraal-Afrika-fixes ook op Centraal-Afrika & Eilanden 🦛. Landen/dagen/budget ongewijzigd — alleen volgorde en transport-notities aangepast.",
+    description: 'A backpacking expedition through West and Central Africa: Atlantic island culture, old West African kingdoms, slavery history and Central African rainforest/wildlife. Optimized for the most beautiful and unique experience, not for the number of countries.',
+    climate_summary: "Compared scenarios: (1) a summer start (June-August) would put Cape Verde/Senegal through Benin right in the middle of their rainy season (May-October) — the only advantage is that it coincides with Gabon's long dry period (June-August), but that doesn't outweigh the rest; (2) a start in early November puts almost the entire route in its best season: Cape Verde just after the rainy season, Senegal through Benin in their full dry season (November-April, with the dusty but dry harmattan December-February), Cameroon in its least wet period (November-February), and Gabon happens to fall in its short dry period (December-February). Only compromise: São Tomé & Príncipe's own dry season (\"gravana\") runs June-September — with a November start you land there in the rainy season, mainly afternoon showers instead of sustained rain. Best choice: start in early November in Cape Verde.",
+    notes: "Designed in a Q&A session with Claude (2026-07), based on a ChatGPT brainstorm Youri brought in (route, countries, schedule, budget, transport, safety, scope check). Days are the 'ideal' pace estimate; budgets are the average of the Cheap backpacker budget and the Realistic budget from the design discussion.\n\n" +
+      "Two adjustments after Youri's review of the design: (1) Drop Taï National Park in Ivory Coast — remote, costs 3-4 extra days for chimpanzees that can also be seen elsewhere; Ivory Coast stays limited to Abidjan + Grand-Bassam. (2) Cameroon adjusted: Mount Cameroon and Limbe lie in the Southwest Region, where an armed conflict (the Anglophone Crisis) has been active since 2016 — replaced by Douala, Kribi (Chutes de la Lobé) and Yaoundé, all in the more stable Francophone regions. Check the current safety situation in the Southwest shortly before departure.\n\n" +
+      "Angola has been deliberately removed from this expedition and moved to Africa Grand Tour instead — geographically it directly borders Namibia (already part of that route), a much more logical connection than the isolated flight-only end stop it would be here. This also removes the most uncertain/expensive flight of this route (Gabon-Angola); Gabon is now the new, strong endpoint (Loango's surfing hippos). Note: this move doesn't solve the seasonal problem — Angola also falls within Africa Grand Tour's Southern Africa region during the rainy season, the same already-accepted compromise of that route.\n\n" +
+      "Total: 93 days (~3.1 months), €5,160 ground costs + roughly €2,400-2,800 in flights (Cape Verde-Senegal, Gambia-Ivory Coast, Benin-Cameroon and the Central African island hops are each flights with little competition, hence pricey per distance). Not yet checked against current prices, visa rules or travel advisories — treat this as a first concept, not a bookable plan. Check especially the safety situation in Cameroon's Southwest Region shortly before departure.\n\n" +
+      "Prices/visa/travel-advisory verification (2026-07): all 10 countries confirmed accurate, no budget corrections (Gabon is however the tightest/riskiest — see its own note). Anglophone Crisis in Cameroon confirmed still active. See the individual country notes above for travel-advisory/visa details.\n\n" +
+      "Route-logic revision (2026-08, search-confirmed, ninth expedition from ROUTE_LOGIC_REVIEW.md): four fixes, none of them a country-order problem — all order mistakes within a country, or an unmentioned connection. (1) **Cape Verde**: 'Flight Praia/Sal-Dakar' hid that Fogo (where the leg ends) has no broad international connections — all flights go via Praia, now explicitly named as a domestic flight + international flight. (2) **Senegal**: Dakar→Saint-Louis(north)→Sine-Saloum(south)→Lompoul(north) crossed the Dakar corridor three times (≈850+ km avoidable detour) — now Dakar→Gorée→Lompoul→Saint-Louis(both northern stops together)→Sine-Saloum(south, already close to Gambia). (3) **Ghana**: the Elubo border crossing from Ivory Coast sits right next to Cape Coast/Elmina, not Accra — the old order (Accra first) backtracked ≈330 km; now Cape Coast/Elmina/Kakum→Accra→Volta Region (right next to the Aflao border crossing to Togo), one continuous eastward movement. (4) **Benin**: Abomey used to be the last stop (≈135 km inland) while the flight departs from Cotonou — now Abomey first, then Ouidah/Ganvié (both right next to Cotonou), no more backtrack. Two smaller fixes in Central Africa: **Cameroon** used to end at Yaoundé (≈240 km back to Douala, the only gateway to São Tomé, unmentioned) — now Douala→Yaoundé→Kribi (≈175 km back, the shorter route, now explicitly named). **Gabon**'s unnamed 'rainforest' destination filled in as Pongara National Park (right next to Libreville, no backtrack risk). Youri hadn't visited any of the 10 countries yet, no cuts needed. The same four main fixes were also applied to the standalone companion route West Africa Overland 🥁; the two Central Africa fixes also to Central Africa & Islands 🦛. Countries/days/budget unchanged — only order and transport notes adjusted.",
   });
 }
 
