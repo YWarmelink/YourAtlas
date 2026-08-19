@@ -3330,10 +3330,10 @@ function rbBuildWesternCanadaRockiesVancouverRoute() {
 }
 
 function rbBuildUSWestCoastRoadtripRoute() {
-  return rbBuildSeedRoute('VS Westkust Roadtrip 🌉', [
+  return rbBuildSeedRoute('US West Coast Roadtrip 🌉', [
     {
       name: 'Pacific Northwest & Northern California Roadtrip',
-      season: 'Juli-Augustus',
+      season: 'July-August',
       budget: 2200,
       countries: [{
         code: 'US', name: 'United States', days: 15, budget: 3000, lat: 47.6062, lng: -122.3321,
@@ -3344,14 +3344,14 @@ function rbBuildUSWestCoastRoadtripRoute() {
           { name: 'Oregon Coast (Cannon Beach, Astoria)', lat: 45.8918, lng: -123.9615 },
           { name: 'Redwood National & State Parks', lat: 41.2132, lng: -124.0046 },
         ],
-        transport_to_next: 'Auto verder naar San Francisco (~5-6 uur vanaf de Redwoods), huurauto inleveren in San Francisco',
-        notes: "Instap: vlucht Amsterdam-Seattle (KLM, rechtstreeks, ±10 uur, vanaf ±€650-1.100 retour, juli-augustus is hoogseizoen dus prijzen zitten aan de hogere kant). Prijsindicatie webonderzoek 2026-08, momentopname. Amerikaanse natuur in het groot: regenwoud, vulkanen, ruige kustlijn en de hoogste bomen ter wereld. Huurauto wordt hier opgehaald in Seattle. Prijs geverifieerd (2026-07), klopt. ESTA is per 30 sept. 2025 verhoogd naar $40,27 (was $21) — 2 jaar geldig. Routelogica-fix (2026-08, search-bevestigd): volgorde omgedraaid (was Seattle→Olympic NP→Mount Rainier→Oregon Coast) — dat kruiste de regio drie keer oost-west. Nu Seattle→Mount Rainier→Olympic NP (Hurricane Ridge dan Hoh Rainforest)→zuidwaarts via de US-101 langs de Washington-kust naar Oregon. Zie North America Grand Traverse 🌎's eigen notities voor de volledige onderbouwing.",
+        transport_to_next: 'Continue by car to San Francisco (~5-6 hours from the Redwoods), return the rental car in San Francisco',
+        notes: "Entry: flight Amsterdam-Seattle (KLM, direct, ±10 hours, from ±€650-1,100 return, July-August is high season so prices are on the higher side). Price indication from 2026-08 web research, a snapshot. American nature on a grand scale: rainforest, volcanoes, rugged coastline and the tallest trees in the world. Rental car is picked up here in Seattle. Price verified (2026-07), holds up. ESTA was raised to $40.27 (from $21) as of Sept 30, 2025 — valid 2 years. Route-logic fix (2026-08, search-confirmed): order reversed (was Seattle→Olympic NP→Mount Rainier→Oregon Coast) — that crossed the region east-west three times. Now Seattle→Mount Rainier→Olympic NP (Hurricane Ridge then Hoh Rainforest)→south via the US-101 along the Washington coast to Oregon. See North America Grand Traverse 🌎's own notes for the full writeup.",
       }],
-      note: 'Huurauto (Seattle-San Francisco). Rustig tempo: liever 2-3 nachten bij een park dan elke dag doorrijden — dit is een kustroute, geen race.',
+      note: 'Rental car (Seattle-San Francisco). Relaxed pace: better to spend 2-3 nights at a park than drive every day — this is a coastal route, not a race.',
     },
     {
       name: 'California Finale',
-      season: 'Augustus',
+      season: 'August',
       budget: 2100,
       countries: [{
         code: 'US', name: 'United States', days: 14, budget: 2675, lat: 37.7749, lng: -122.4194,
@@ -3360,17 +3360,17 @@ function rbBuildUSWestCoastRoadtripRoute() {
           { name: 'Yosemite Valley', lat: 37.7459, lng: -119.5936 },
           { name: 'Sequoia & Kings Canyon National Parks', lat: 36.4864, lng: -118.5658 },
         ],
-        transport_to_next: 'Auto terug naar San Francisco (≈270 mijl/≈5 uur vanaf Sequoia & Kings Canyon — routelogica-fix 2026-08: reken deze rit als eigen reisdag) vóór de terugvlucht vanaf SFO. Fresno (FAT) ligt dichterbij maar heeft geen directe vlucht naar Amsterdam — SFO blijft de betere keuze.',
-        notes: "Van de stad direct de bergen in: Yosemite's granieten wanden en watervallen, gevolgd door de gigantische sequoia's van Sequoia/Kings Canyon. Geen nieuwe huurauto nodig — dagtochten of een korte huurperiode volstaan vanuit San Francisco.",
+        transport_to_next: 'Car back to San Francisco (≈270 miles/≈5 hours from Sequoia & Kings Canyon — route-logic fix 2026-08: count this drive as its own travel day) before the return flight from SFO. Fresno (FAT) is closer but has no direct flight to Amsterdam — SFO remains the better choice.',
+        notes: "Straight from the city into the mountains: Yosemite's granite walls and waterfalls, followed by the giant sequoias of Sequoia/Kings Canyon. No new rental car needed — day trips or a short rental period suffice from San Francisco.",
       }],
-      note: 'Boek Yosemite Valley-verblijf ruim van tevoren (vergunt beperkt aantal plekken in hoogseizoen). Let op bosbrandrisico/luchtkwaliteit in augustus — check actuele parkmeldingen vlak voor vertrek.',
+      note: 'Book Yosemite Valley accommodation well in advance (limited spots permitted during high season). Watch for wildfire risk/air quality in August — check current park alerts shortly before departure.',
     },
   ], {
-    travel_style: "Backpacker/budget-comfort hybride — huurauto Seattle-San Francisco, rustig tempo met langere stops op mooie plekken in plaats van dagelijks verplaatsen.",
-    best_starting_month: 'Juli',
-    description: 'Klassieke Amerikaanse westkust-roadtrip: Seattle, Olympic en Mount Rainier National Park, de Oregon-kust en de Redwoods, met San Francisco, Yosemite en Sequoia/Kings Canyon als finale.',
-    climate_summary: 'Juli-augustus blijft ruim vóór de piek van het Californische/Pacific Northwest bosbrandseizoen (vooral augustus-oktober).',
-    notes: "Losgesplitst van North America Grand Traverse 🌎 als onderdeel van de 2026-07 modularisatie-analyse (zie ROUTE_BUILDER_MODULES.md). Landen, dagen, budgetten en volgorde zijn ongewijzigd overgenomen (incl. de ESTA-prijsverhoging en de waarschuwing over bosbrandrisico in augustus). Vervolg op West-Canada: Rockies & Vancouver 🏔️. North America Grand Traverse 🌎 zelf blijft ongewijzigd bestaan als losse, volledige expeditie. Routelogica-herziening (2026-08): zelfde twee fixes als North America Grand Traverse 🌎 zelf — Pacific Northwest-volgorde omgedraaid, Sequoia-San Francisco terugrit expliciet benoemd. Zie die route's eigen notities voor de volledige onderbouwing.",
+    travel_style: "Backpacker/budget-comfort hybrid — rental car Seattle-San Francisco, relaxed pace with longer stops at beautiful places instead of moving every day.",
+    best_starting_month: 'July',
+    description: 'Classic American West Coast roadtrip: Seattle, Olympic and Mount Rainier National Park, the Oregon coast and the Redwoods, with San Francisco, Yosemite and Sequoia/Kings Canyon as the finale.',
+    climate_summary: 'July-August stays well ahead of the peak of the Californian/Pacific Northwest wildfire season (mainly August-October).',
+    notes: "Split off from North America Grand Traverse 🌎 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days, budgets and order are carried over unchanged (incl. the ESTA price increase and the warning about wildfire risk in August). Follow-up to Western Canada: Rockies & Vancouver 🏔️. North America Grand Traverse 🌎 itself remains unchanged as a separate, complete expedition. Route-logic revision (2026-08): same two fixes as North America Grand Traverse 🌎 itself — Pacific Northwest order reversed, Sequoia-San Francisco return drive explicitly called out. See that route's own notes for the full writeup.",
   });
 }
 
