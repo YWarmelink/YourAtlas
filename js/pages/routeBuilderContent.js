@@ -10386,3 +10386,378 @@ function rbSeedEuropaAustriaSwitzerlandRoutes() {
   rbSave();
 }
 
+// ---- Phase 2 batch 4 (France) — EUROPA_TRIP_IDEAS.md's "🇫🇷 Frankrijk" section ----
+// Unlike Germany/Benelux/Austria/Switzerland, France has real toll-road costs on several of these
+// trips (~€0.10/km on the autoroute network) — each route below carries its own toll estimate
+// straight from the source rather than a flat no-toll assumption.
+
+function rbBuildAlsaceRoute() {
+  return rbBuildFlatSeedRoute('Alsace (4 days) 🥐', [
+    {
+      code: 'FR', name: 'France', days: 4, budget: 500, lat: 48.0794, lng: 7.3585,
+      destinations: [
+        { name: 'Strasbourg (Petite France, cathedral + astronomical clock)', lat: 48.5734, lng: 7.7521 },
+        { name: 'Colmar (base — old town, Little Venice, Unterlinden)', lat: 48.0794, lng: 7.3585 },
+        { name: 'Riquewihr', lat: 48.1667, lng: 7.2971 },
+        { name: 'Ribeauvillé', lat: 48.1961, lng: 7.3282 },
+        { name: 'Kaysersberg', lat: 48.1391, lng: 7.2664 },
+        { name: 'Haut-Koenigsbourg Castle (detour)', lat: 48.2495, lng: 7.3444 },
+        { name: 'Eguisheim (early, before the tour buses)', lat: 48.0448, lng: 7.3081 },
+        { name: 'Turckheim', lat: 48.0847, lng: 7.2778 },
+      ],
+      notes: "Strasbourg (Petite France, cathedral + astronomical clock, Maison Kammerzell, Palais Rohan) — Colmar as a base (old town, Little Venice, Unterlinden) — the quieter, underrated wine villages Riquewihr/Hunawihr/Ribeauvillé/Kaysersberg, plus a detour to Haut-Koenigsbourg Castle — Eguisheim early (to beat the tour buses) and Turckheim. Own car, Amsterdam-Strasbourg ~600km/5.5-6h, fully toll-free (via the German Autobahn, and the A35 into Strasbourg is also toll-free) — the train exists but is 8h+ with transfers and impractical locally since the villages aren't on the rail line. Budget ~€100-150/day for 2 people for lodging + €45-60/day food + €15-35 tastings/activities. Season: half September-half October (wine harvest) or May-June. Astronomical clock €3, cathedral tower €8, Haut-Koenigsbourg ~€10; parking in the villages is limited/paid — park outside Riquewihr's walls rather than trying to drive in.",
+      transport_to_next: 'End of this route — drive back to the Netherlands, fully toll-free via the German Autobahn.',
+    },
+  ], {
+    best_starting_month: 'September',
+    travel_style: 'Own car from the Netherlands throughout — fully toll-free both ways (German Autobahn, then the toll-free A35 into Strasbourg).',
+    climate_summary: 'Half September-half October for the wine harvest, or May-June as a quieter alternative.',
+    description: "Strasbourg, Colmar as a base for the Alsace wine villages (Riquewihr, Ribeauvillé, Kaysersberg), a detour to Haut-Koenigsbourg Castle, and Eguisheim and Turckheim.",
+    notes: "Built (2026-08) as part of Phase 2 batch 4 (France), converting EUROPA_TRIP_IDEAS.md's 319 markdown trip ideas into Route Builder content — following the same pattern as batches 1-3 (Benelux, Germany, Austria+Switzerland). Source explicitly flags this as France's one toll-free route in the batch (via the German Autobahn), unlike most of the others below. Not yet checked against Route Builder-level price research beyond the ticket/toll checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildParisRoute() {
+  return rbBuildFlatSeedRoute('Paris (4 days) 🗼', [
+    {
+      code: 'FR', name: 'France', days: 4, budget: 440, lat: 48.8566, lng: 2.3522,
+      destinations: [
+        { name: 'Île de la Cité', lat: 48.8554, lng: 2.3469 },
+        { name: 'Le Marais (quieter, "real culture" district)', lat: 48.8575, lng: 2.3600 },
+        { name: 'Louvre', lat: 48.8606, lng: 2.3376 },
+        { name: 'Tuileries', lat: 48.8634, lng: 2.3275 },
+        { name: 'Eiffel Tower / Trocadéro', lat: 48.8584, lng: 2.2945 },
+        { name: 'Musée Rodin (7th arr., quiet garden, less touristy than the classics)', lat: 48.8555, lng: 2.3153 },
+        { name: 'Montmartre', lat: 48.8867, lng: 2.3431 },
+      ],
+      notes: "Île de la Cité + Le Marais (quieter, a 'real culture' district) — Louvre + Tuileries — Eiffel Tower/Trocadéro + Musée Rodin (7th arrondissement, a quiet garden, less touristy than the classic sights) — Montmartre. Thalys/Eurostar Amsterdam-Paris Nord ~3h, from €35 (often €55-135) — the train clearly wins here, driving/parking is impractical for museum-hopping (car ~500km/5h+, tolls ~€15-20 one way). Budget ~€90-130/day hotel + €45-60 food + €25-40 activities/public transport. Season: end of April-June or Sept-Oct. Louvre €22-32, in 2026 likely mostly time-slot reservation only; Eiffel Tower €14.80-36.70 (the stairs also require mandatory reservation from 29 Sept 2026); Notre-Dame free entry (bell towers +€16); Museum Pass (€105/4d) only pays off with 4+ paid sites.",
+      transport_to_next: 'End of this route — Thalys/Eurostar back to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Thalys/Eurostar Amsterdam-Paris Nord (~3h) — driving is impractical here, no car needed once in Paris.',
+    climate_summary: 'End of April-June or September-October.',
+    description: "Île de la Cité and Le Marais, the Louvre and Tuileries, the Eiffel Tower/Trocadéro and Musée Rodin, and Montmartre.",
+    notes: "Built (2026-08) as part of Phase 2 batch 4 (France) — see the Alsace (4 days) 🥐 route's notes for batch context. Not yet checked against Route Builder-level price research beyond the ticket/train checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildNormandyRoute() {
+  return rbBuildFlatSeedRoute('Normandy (5 days) 🪖', [
+    {
+      code: 'FR', name: 'France', days: 5, budget: 625, lat: 49.2764, lng: -0.7025,
+      destinations: [
+        { name: 'Honfleur', lat: 49.4189, lng: 0.2333 },
+        { name: 'Bayeux', lat: 49.2764, lng: -0.7025 },
+        { name: 'Omaha Beach', lat: 49.3697, lng: -0.8560 },
+        { name: 'Pointe du Hoc', lat: 49.3958, lng: -0.9897 },
+        { name: 'Normandy American Cemetery, Colleville-sur-Mer', lat: 49.3597, lng: -0.8494 },
+        { name: 'Mont Saint-Michel', lat: 48.6361, lng: -1.5115 },
+      ],
+      notes: "NL→Honfleur (~7h) — Honfleur→Bayeux (1h15) — a full D-Day beaches day (Omaha, Pointe du Hoc, the American cemetery) — Bayeux→Mont Saint-Michel (2.5h) — abbey morning, then the drive home. Étretat deliberately left out — it needs a separate 2-3h detour, Honfleur fits the route better. Amsterdam-Bayeux ~697km/6.5-7h, tolls ~€35-55 one way. Budget ~€100-150pp/day (lodging €45-65, food €40-55, activities €15-30). Season: May-June or September; avoid 6 June (D-Day commemoration, busy and expensive). ⚠️ Bayeux Tapestry museum: closed since September 2025 for renovation, reopening October 2027; the tapestry itself will be on display at the British Museum, London, 10 Sept 2026-11 July 2027 — so in 2026 it isn't visible anywhere in Bayeux itself, only in London from September onward. Guided D-Day tour €93 (half-day)/€168 (full day) pp; Mont St-Michel parking €6.80-9.80/day + free shuttle; abbey entry €13-16.",
+      transport_to_next: 'End of this route — drive back to the Netherlands.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Own car from the Netherlands throughout — Amsterdam-Bayeux ~697km/6.5-7h, tolls ~€35-55 one way.',
+    climate_summary: 'May-June or September; avoid 6 June (D-Day commemoration).',
+    description: "Honfleur, Bayeux as a base for a full D-Day beaches day (Omaha, Pointe du Hoc, the American cemetery), and Mont Saint-Michel.",
+    notes: "Built (2026-08) as part of Phase 2 batch 4 (France) — see the Alsace (4 days) 🥐 route's notes for batch context. Deliberately narrower and more focused than the existing Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖 route's 7-day Normandy leg (which also covers Étretat and Rouen) — this standalone route is a tighter 5-day D-Day-beaches-and-Mont-Saint-Michel trip. Time-sensitive finding carried over from the source (2026-08 websearch): the Bayeux Tapestry itself is not viewable in Bayeux at all during 2026 (renovation until Oct 2027, on loan to the British Museum from 10 Sept 2026). Not yet checked against Route Builder-level price research beyond the ticket/toll checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildBrittanyRoute() {
+  return rbBuildFlatSeedRoute('Brittany: Saint-Malo, Dinan & Pink Granite Coast (5 days) 🦞', [
+    {
+      code: 'FR', name: 'France', days: 5, budget: 425, lat: 48.6493, lng: -2.0257,
+      destinations: [
+        { name: 'Saint-Malo (ramparts)', lat: 48.6493, lng: -2.0257 },
+        { name: 'Dinan (medieval old town)', lat: 48.4535, lng: -2.0453 },
+        { name: "Côte de Granit Rose / Ploumanac'h coastal path", lat: 48.8236, lng: -3.4739 },
+        { name: 'Île de Bréhat', lat: 48.8404, lng: -2.9877 },
+        { name: 'Cap Fréhel', lat: 48.6836, lng: -2.3247 },
+      ],
+      notes: "Deliberately north Brittany only: Saint-Malo-Dinan is 33km/35min and Saint-Malo-Côte de Granit Rose 163km/~2h — everything stays close together. Adding Carnac/Quiberon (south) costs 2.5-2.8h per drive, which would eat roughly 2 of the 5 days on driving alone — not worth it for this length of trip. Route: Saint-Malo (ramparts, free) — a full day in Saint-Malo (Île du Grand Bé at low tide, check the tide tables) — Dinan (medieval old town) — Côte de Granit Rose/Ploumanac'h coastal path — Île de Bréhat or Cap Fréhel, then the drive home. Amsterdam-Saint-Malo 838km/7h48, tolls ~€25-35 — there's no useful NL ferry (Brittany Ferries only sails from UK ports), so it's a drive. Budget ~€70-100pp/day lodging + €35-45 food (seafood platter €30-45) + €15-25 activities/parking. Season: May-June or September (easier tides, fewer crowds). ⚠️ Bréhat/Sept-Îles boat trips €15-25pp, budget separately.",
+      transport_to_next: 'End of this route — drive back to the Netherlands.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Own car from the Netherlands throughout — no useful NL ferry exists (Brittany Ferries only sails from UK ports).',
+    climate_summary: 'May-June or September (easier tides, fewer crowds).',
+    description: "Saint-Malo's ramparts, medieval Dinan, the Côte de Granit Rose/Ploumanac'h coastal path, and Île de Bréhat or Cap Fréhel.",
+    notes: "Built (2026-08) as part of Phase 2 batch 4 (France) — see the Alsace (4 days) 🥐 route's notes for batch context. Deliberately limited to north Brittany (Carnac/Quiberon excluded — too much drive time for a 5-day trip); the existing Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖 route's 10-day Brittany leg does cover Carnac/Quiberon/Pointe du Raz further south as part of a much longer coastal sweep, so the two routes are deliberately different in scope rather than duplicates. Not yet checked against Route Builder-level price research beyond the toll/activity checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildLoireValleyCastlesRoute() {
+  return rbBuildFlatSeedRoute('Loire Valley Castles (6 days) 🗝️', [
+    {
+      code: 'FR', name: 'France', days: 4, budget: 420, lat: 47.4136, lng: 0.9829,
+      destinations: [
+        { name: "Amboise (base) — Château d'Amboise + Clos Lucé", lat: 47.4136, lng: 0.9829 },
+        { name: 'Chenonceau (day trip, ~30 min)', lat: 47.3241, lng: 1.0708 },
+        { name: 'Villandry (gardens)', lat: 47.3403, lng: 0.5153 },
+        { name: 'Azay-le-Rideau', lat: 47.2611, lng: 0.4667 },
+      ],
+      notes: "Base Amboise (3 nights): Château d'Amboise + Clos Lucé (Da Vinci) — Chenonceau as a day trip (~30 min) — Villandry (gardens) + Azay-le-Rideau on the way. Budget ~€90-120/day (lodging €70-90 2-star/B&B, food €30-40, one castle €15-20pp). Season: April-June or September (avoid July/August crowds and heat). NL-Amboise/Tours ~590-650km/6.5-7.5h, tolls ~€45-60 one way. ⚠️ Castle entries add up fast (3-4 castles = €50-70pp on tickets alone) — a combi-pass (Blois+Chambord+Chenonceau, saves ~11%) is worth it at 3+ castles.",
+      transport_to_next: 'Drive to Blois (~45 min).',
+    },
+    {
+      code: 'FR', name: 'France', days: 2, budget: 210, lat: 47.5861, lng: 1.3359,
+      destinations: [
+        { name: 'Chambord (~45 min from Amboise)', lat: 47.6161, lng: 1.5170 },
+        { name: 'Cheverny (nearby)', lat: 47.5006, lng: 1.4592 },
+        { name: 'Blois (base, Château Royal)', lat: 47.5861, lng: 1.3359 },
+      ],
+      notes: "Base Blois (2 nights): Chambord + nearby Cheverny — Blois (Château Royal). Same budget/combi-pass logic as the Amboise leg above.",
+      transport_to_next: 'End of this route — drive back to the Netherlands.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Own car from the Netherlands throughout — base Amboise (3 nights) then Blois (2 nights).',
+    climate_summary: 'April-June or September (avoid July/August crowds and heat).',
+    description: "Amboise (Château d'Amboise + Clos Lucé), Chenonceau, Chambord and Cheverny, Blois, and Villandry and Azay-le-Rideau.",
+    notes: "Built (2026-08) as part of Phase 2 batch 4 (France) — see the Alsace (4 days) 🥐 route's notes for batch context. Not yet checked against Route Builder-level price research beyond the ticket/toll checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildProvenceRoute() {
+  return rbBuildFlatSeedRoute('Provence (6 days) 🌻', [
+    {
+      code: 'FR', name: 'France', days: 3, budget: 300, lat: 43.9493, lng: 4.8055,
+      destinations: [
+        { name: 'Avignon (base) — Palais des Papes', lat: 43.9493, lng: 4.8055 },
+        { name: 'Pont du Gard (nearby)', lat: 43.9474, lng: 4.5350 },
+        { name: 'Gordes (Luberon loop)', lat: 43.9114, lng: 5.2003 },
+        { name: 'Roussillon (Luberon loop)', lat: 43.9019, lng: 5.2944 },
+        { name: 'Ménerbes (Luberon loop)', lat: 43.8283, lng: 5.1836 },
+      ],
+      notes: "Base Avignon or a Luberon village (3 nights): Avignon (Palais des Papes, Pont du Gard nearby) — Luberon loop (Gordes → Roussillon → Ménerbes). Budget ~€85-110/day (gîte/B&B €65-85, food €30-40, activities €10-20). Season: May-June or September — lavender only blooms end of June-first week of July (Valensole/lower Luberon), which pushes the trip into a hotter/busier window — a deliberate trade-off, not automatically the best choice. NL-Avignon ~1,090km/11.5-12h, tolls ~€70-90 one way. ⚠️ Hill-village parking (Gordes €4/day, Les Baux €5 first hour + meter).",
+      transport_to_next: 'Drive to the Arles area (~45 min).',
+    },
+    {
+      code: 'FR', name: 'France', days: 3, budget: 300, lat: 43.6767, lng: 4.6278,
+      destinations: [
+        { name: 'Les Baux-de-Provence + Carrières des Lumières', lat: 43.7444, lng: 4.7947 },
+        { name: 'Arles (base, Roman sites)', lat: 43.6767, lng: 4.6278 },
+        { name: 'Camargue day trip (Saintes-Maries-de-la-Mer)', lat: 43.4522, lng: 4.4283 },
+      ],
+      notes: "Base the Arles area (3 nights): Les Baux-de-Provence + Carrières des Lumières — Arles (Roman sites) — a Camargue day trip (flamingos, salt flats, beaches). Carrières des Lumières ~€16-17, Camargue boat/horseback trips +€25-40. Same seasonal lavender trade-off as the Avignon leg above.",
+      transport_to_next: 'End of this route — drive back to the Netherlands.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Own car from the Netherlands throughout — base Avignon/a Luberon village (3 nights) then the Arles area (3 nights).',
+    climate_summary: 'May-June or September; lavender itself only blooms end of June-early July, a deliberate trade-off against the calmer/cooler main window.',
+    description: "Avignon and the Luberon loop (Gordes, Roussillon, Ménerbes), Les Baux-de-Provence and the Carrières des Lumières, Arles, and a Camargue day trip.",
+    notes: "Built (2026-08) as part of Phase 2 batch 4 (France) — see the Alsace (4 days) 🥐 route's notes for batch context. Shares Avignon/Luberon/Arles/Camargue ground with the longer South of France: Provence to Côte d'Azur (9 days) 🕶️ route below, which extends this same base eastward to the Côte d'Azur — per this project's overlap-is-fine convention, built independently rather than merged. Not yet checked against Route Builder-level price research beyond the ticket/toll checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildFrenchAlpsEcrinsRoute() {
+  return rbBuildFlatSeedRoute('French Alps: Écrins National Park (6 days) 🐐', [
+    {
+      code: 'FR', name: 'France', days: 6, budget: 510, lat: 44.9, lng: 6.35,
+      destinations: [
+        { name: 'Briançon (gateway)', lat: 44.8992, lng: 6.6367 },
+        { name: 'Vallouise', lat: 44.8383, lng: 6.4794 },
+        { name: 'La Bérarde', lat: 44.9386, lng: 6.2967 },
+      ],
+      notes: "Deliberately Écrins National Park (Vallouise/La Bérarde area) rather than Chamonix. Chamonix is excellent but sits right against the Swiss border/Geneva — high overlap risk with the Switzerland-Alps routes already in this project, and it's also the most touristy/developed valley in the French Alps (ski infrastructure everywhere, no national park). Écrins is genuinely wilder (30x the area of the Chamonix valley, 1,000+ km of trails, real glaciers), cheaper, and clearly distinct from a Switzerland trip. Budget ~€75-95/day (gîte/B&B €55-70, food €25-35, few paid activities — no entrance fee, unlike Chamonix's Aiguille du Midi at ~€120-150+/day). Season: July-August (the only reliable window for high-altitude trails). NL-Grenoble/Écrins access ~950-970km/10.5-11h, tolls ~€80-100 one way. ⚠️ Weak public transport to the trailheads (own car is a real advantage here), mountain hut/gîte bookings fill up fast in summer.",
+      transport_to_next: 'End of this route — drive back to the Netherlands.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Own car from the Netherlands throughout — weak public transport to the trailheads.',
+    climate_summary: 'July-August — the only reliable window for high-altitude trails.',
+    description: "Écrins National Park's Vallouise/La Bérarde area — real glaciers, 1,000+ km of trails, and none of Chamonix's crowds or ski infrastructure.",
+    notes: "Built (2026-08) as part of Phase 2 batch 4 (France) — see the Alsace (4 days) 🥐 route's notes for batch context. Deliberately Écrins over Chamonix per the source's reasoning above (overlap avoidance with the existing Swiss Alps routes, plus Écrins being wilder/cheaper/more distinct). Also revisited at a larger scale by French Alps + Provence (9 days) 🛤️ below, which extends this same Écrins base (via Briançon/Gap/Embrun) south into Provence along the Route Napoléon — per this project's overlap-is-fine convention, built independently. Not yet checked against Route Builder-level price research beyond the toll checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSouthOfFranceProvenceCoteAzurRoute() {
+  return rbBuildFlatSeedRoute('South of France: Provence to Côte d\'Azur (9 days) 🕶️', [
+    {
+      code: 'FR', name: 'France', days: 3, budget: 315, lat: 43.9493, lng: 4.8055,
+      destinations: [
+        { name: 'Avignon area (base)', lat: 43.9493, lng: 4.8055 },
+        { name: 'Luberon/Gordes day trip', lat: 43.9114, lng: 5.2003 },
+      ],
+      notes: "Avignon area (2-3 nights), with a Luberon/Gordes day trip. Budget ~€90-120/day inland. NL-Avignon ~1,150km/~11h.",
+      transport_to_next: 'Drive to the Arles/Camargue area (~1h20, ~80km).',
+    },
+    {
+      code: 'FR', name: 'France', days: 2, budget: 210, lat: 43.4522, lng: 4.4283,
+      destinations: [
+        { name: 'Arles', lat: 43.6767, lng: 4.6278 },
+        { name: 'Camargue / Saintes-Maries-de-la-Mer', lat: 43.4522, lng: 4.4283 },
+      ],
+      notes: "Arles/Camargue (Saintes-Maries-de-la-Mer, ~80km/1h20 from Avignon, 1-2 nights). Same ~€90-120/day inland rate as the Avignon leg.",
+      transport_to_next: 'Drive east via the A8 to the Côte d\'Azur (~260km/2.5h from the Avignon area) — no backtracking.',
+    },
+    {
+      code: 'FR', name: 'France', days: 4, budget: 540, lat: 43.5804, lng: 7.1251,
+      destinations: [
+        { name: 'Antibes or Villefranche-sur-Mer (base — more authentic/less party-resort than Cannes)', lat: 43.7042, lng: 7.3097 },
+        { name: 'Nice (city anchor)', lat: 43.7102, lng: 7.2620 },
+      ],
+      notes: "East via the A8 to the Côte d'Azur, base in Antibes or Villefranche-sur-Mer (more authentic/less of a party resort than Cannes) with Nice as the city anchor (2-3 nights). Budget ~€120-150/day at the coast. ⚠️ Tolls: Avignon-Nice ~€25-30 on the A8; NL-Avignon another ~€90-110 — budget a **total of ~€250-300 in tolls** round trip. Nice city-centre parking €24-35/day garage.",
+      transport_to_next: 'End of this route — drive back to the Netherlands.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Own car from the Netherlands throughout — a steady eastward push via the A8, no backtracking.',
+    climate_summary: 'May-June or September (July-August is busy/hot at the coast, and the Mistral wind hits the inland stretch in the shoulder season).',
+    description: "Avignon and a Luberon/Gordes day trip, Arles/Camargue, and east along the A8 to the Côte d'Azur (Antibes or Villefranche-sur-Mer, with Nice as the city anchor).",
+    notes: "Built (2026-08) as part of Phase 2 batch 4 (France) — see the Alsace (4 days) 🥐 route's notes for batch context. Broader than the standalone Provence (6 days) 🌻 route above (which stops at Arles/Camargue) — this one continues east to the Côte d'Azur. Not yet checked against Route Builder-level price research beyond the toll/parking checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildFrenchAlpsProvenceRoute() {
+  return rbBuildFlatSeedRoute('French Alps + Provence (9 days) 🛤️', [
+    {
+      code: 'FR', name: 'France', days: 5, budget: 485, lat: 44.5594, lng: 6.0783,
+      destinations: [
+        { name: 'Briançon', lat: 44.8992, lng: 6.6367 },
+        { name: 'Gap', lat: 44.5594, lng: 6.0783 },
+        { name: 'Embrun', lat: 44.5644, lng: 6.4956 },
+        { name: 'Écrins (Vallouise/La Bérarde)', lat: 44.9, lng: 6.35 },
+      ],
+      notes: "Écrins deliberately fits better with Provence than Annecy would — Annecy sits near the Swiss border, naturally belongs with Chamonix/Geneva, and pulls the trip far north (Annecy-Avignon is still 338km/~3h09, but getting there from the Netherlands is a near-Nice-length detour with little added value). Écrins (Briançon/Gap/Embrun area) sits directly on the Route Napoléon (N85, Gap-Sisteron), a scenic, largely toll-free mountain road that runs straight into Provence — geographically 'on the way', not a detour. NL-Écrins area (Gap/Embrun) ~950-1,000km/9.5-10h. Budget ~€85-110/day in the Alps.",
+      transport_to_next: 'Drive south via the scenic, largely toll-free Route Napoléon (N85, Gap-Sisteron) into Provence, ~230km/3h to Avignon.',
+    },
+    {
+      code: 'FR', name: 'France', days: 4, budget: 420, lat: 43.9493, lng: 4.8055,
+      destinations: [
+        { name: 'Sisteron (Route Napoléon waypoint)', lat: 44.1936, lng: 5.9472 },
+        { name: 'Avignon', lat: 43.9493, lng: 4.8055 },
+        { name: 'Luberon', lat: 43.9114, lng: 5.2003 },
+      ],
+      notes: "Provence via the Route Napoléon: Sisteron, then Avignon and the Luberon. Budget ~€90-120/day in Provence. Season: June-early September (mountain passes/trails open, Provence not yet scorching). ⚠️ Toll lower than a pure autoroute trip (the Alps leg mostly uses toll-free national roads) — budget a **total of ~€180-220**.",
+      transport_to_next: 'End of this route — drive back to the Netherlands.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: "Own car from the Netherlands throughout — the Écrins-to-Provence leg follows the scenic Route Napoléon (N85), largely toll-free.",
+    climate_summary: 'June-early September (mountain passes/trails open, Provence not yet scorching).',
+    description: "Écrins National Park (Briançon/Gap/Embrun) via the Route Napoléon into Provence (Sisteron, Avignon, the Luberon).",
+    notes: "Built (2026-08) as part of Phase 2 batch 4 (France) — see the Alsace (4 days) 🥐 route's notes for batch context. Extends the standalone French Alps: Écrins National Park (6 days) 🐐 route above south into Provence, and shares Avignon/Luberon ground with Provence (6 days) 🌻 and South of France: Provence to Côte d'Azur (9 days) 🕶️ — per this project's overlap-is-fine convention, built independently rather than merged; see each route's own notes for the specific relationship. Not yet checked against Route Builder-level price research beyond the toll checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildFranceRoadtripParisCoteAzurRoute() {
+  return rbBuildFlatSeedRoute('France Roadtrip: Paris to the Côte d\'Azur (12 days) 🚗', [
+    {
+      code: 'FR', name: 'France', days: 3, budget: 270, lat: 48.8566, lng: 2.3522,
+      destinations: [
+        { name: 'Paris', lat: 48.8566, lng: 2.3522 },
+      ],
+      notes: "Paris, compressed to 3 days here — same highlights as the standalone Paris (4 days) 🗼 route above (Île de la Cité/Le Marais, Louvre, Eiffel Tower/Trocadéro, Montmartre). Budget ~€80-100/day.",
+      transport_to_next: 'Drive to Beaune, Burgundy (~3h).',
+    },
+    {
+      code: 'FR', name: 'France', days: 2, budget: 180, lat: 47.0244, lng: 4.8397,
+      destinations: [
+        { name: 'Beaune (Burgundy) — Hospices de Beaune, wine tasting', lat: 47.0244, lng: 4.8397 },
+      ],
+      notes: "Beaune, the wine capital of Burgundy — Hospices de Beaune and cellar tastings. Budget ~€80-100/day.",
+      transport_to_next: 'Drive to Lyon (~1h30).',
+    },
+    {
+      code: 'FR', name: 'France', days: 2, budget: 180, lat: 45.764, lng: 4.8357,
+      destinations: [
+        { name: 'Lyon (Vieux Lyon, Presqu\'île, traboules)', lat: 45.7640, lng: 4.8357 },
+      ],
+      notes: "Lyon — Vieux Lyon, the Presqu'île, and the traboules (hidden passageways). Budget ~€80-100/day.",
+      transport_to_next: 'Drive to Avignon (~2.5h).',
+    },
+    {
+      code: 'FR', name: 'France', days: 2, budget: 240, lat: 43.9493, lng: 4.8055,
+      destinations: [
+        { name: 'Avignon (Palais des Papes)', lat: 43.9493, lng: 4.8055 },
+      ],
+      notes: "Avignon — the Palais des Papes. Budget ~€100-140/day at this point in the route.",
+      transport_to_next: 'Drive to Nice (~2.5h).',
+    },
+    {
+      code: 'FR', name: 'France', days: 3, budget: 420, lat: 43.7102, lng: 7.262,
+      destinations: [
+        { name: 'Nice (Promenade des Anglais)', lat: 43.7102, lng: 7.2620 },
+      ],
+      notes: "Nice and the Côte d'Azur to close the trip. Budget ~€100-140/day. ⚠️ This Paris-Nice spine is a heavy toll-road stretch (A6/A7/A8) — budget ~€150-180 one way, so a **total of ~€250-300** including the NL-Paris leg. Recommended: drop the rental car off in Nice and fly back to Amsterdam rather than driving the same stretch in reverse.",
+      transport_to_next: 'End of this route — drop the rental car off in Nice and fly back to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Own car from the Netherlands to Paris, then a straight southward drive on the Burgundy-Rhône spine to the Côte d\'Azur; drop the rental off in Nice and fly back.',
+    climate_summary: 'End of May-June or September.',
+    description: "The recommended spine: Paris → Burgundy (Beaune) → the Rhône Valley (Lyon) → Provence/Côte d'Azur (Avignon, Nice).",
+    notes: "Built (2026-08) as part of Phase 2 batch 4 (France) — see the Alsace (4 days) 🥐 route's notes for batch context. Deliberately uses the Burgundy-Rhône spine rather than a Loire→Dordogne→Provence routing: Sarlat (Dordogne)→Avignon is at best 5h17 via the toll route (Toulouse-Narbonne-Montpellier) or 8h+ via the free Massif Central route — a Loire/Dordogne leg would first pull the trip westward, forcing a real backtrack eastward afterwards. The Burgundy-Rhône spine instead flows straight south (Paris→Beaune→Lyon→Avignon→Nice) with no reversal of direction. Shares Paris content with the standalone Paris (4 days) 🗼 route and Provence/Côte d'Azur content with Provence (6 days) 🌻 and South of France: Provence to Côte d'Azur (9 days) 🕶️ above — per this project's overlap-is-fine convention, built independently. Not yet checked against Route Builder-level price research beyond the toll checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildFrenchAtlanticCoastRoute() {
+  return rbBuildFlatSeedRoute('French Atlantic Coast: La Rochelle to Biarritz (12 days) 🏄', [
+    {
+      code: 'FR', name: 'France', days: 3, budget: 291, lat: 46.1603, lng: -1.1511,
+      destinations: [
+        { name: 'La Rochelle', lat: 46.1603, lng: -1.1511 },
+      ],
+      notes: "NL → La Rochelle (~970km/~9.5h). Budget ~€85-110/day.",
+      transport_to_next: 'Drive to Bordeaux (~180km/2h).',
+    },
+    {
+      code: 'FR', name: 'France', days: 3, budget: 291, lat: 44.8378, lng: -0.5792,
+      destinations: [
+        { name: 'Bordeaux', lat: 44.8378, lng: -0.5792 },
+      ],
+      notes: "Bordeaux. Budget ~€85-110/day. Bordeaux city-centre parking ~€20-30/day garage (or €2.50-3.40/h on-street).",
+      transport_to_next: 'Short detour to Arcachon/Dune du Pilat (~65km/1h).',
+    },
+    {
+      code: 'FR', name: 'France', days: 2, budget: 260, lat: 44.6605, lng: -1.1682,
+      destinations: [
+        { name: 'Arcachon', lat: 44.6605, lng: -1.1682 },
+        { name: 'Dune du Pilat', lat: 44.5896, lng: -1.2153 },
+      ],
+      notes: "A short detour from Bordeaux to Arcachon and the Dune du Pilat. Budget ~€110-150/day in high season. Beach parking peaks in summer.",
+      transport_to_next: 'Drive south to the Basque Coast (~180km/2h).',
+    },
+    {
+      code: 'FR', name: 'France', days: 4, budget: 520, lat: 43.4832, lng: -1.5586,
+      destinations: [
+        { name: 'Biarritz', lat: 43.4832, lng: -1.5586 },
+        { name: 'Saint-Jean-de-Luz (Basque Coast)', lat: 43.3888, lng: -1.6631 },
+      ],
+      notes: "Biarritz/Saint-Jean-de-Luz on the Basque Coast — flowing steadily south with only one small westward detour (Arcachon), no real backtrack. Budget ~€110-150/day in high season. ⚠️ A10/A63 toll corridor — budget a **total of ~€250-300** round trip. Beach parking in Arcachon/Biarritz peaks in summer.",
+      transport_to_next: 'End of this route — drive back to the Netherlands.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Own car from the Netherlands throughout — a steady southward run down the A10/A63 with one small detour to Arcachon.',
+    climate_summary: 'June or September (July-August is very busy/expensive in Biarritz/Arcachon).',
+    description: "La Rochelle, Bordeaux, a detour to Arcachon and the Dune du Pilat, and the Basque Coast (Biarritz/Saint-Jean-de-Luz).",
+    notes: "Built (2026-08) as part of Phase 2 batch 4 (France) — see the Alsace (4 days) 🥐 route's notes for batch context. Clearly distinct from the other France routes in this batch — Atlantic/Basque rather than Mediterranean/inland/alpine. Not yet checked against Route Builder-level price research beyond the toll/parking checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaFranceRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_FRANCE)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_FRANCE, '1');
+
+  rbRoutes.push(
+    rbBuildAlsaceRoute(),
+    rbBuildParisRoute(),
+    rbBuildNormandyRoute(),
+    rbBuildBrittanyRoute(),
+    rbBuildLoireValleyCastlesRoute(),
+    rbBuildProvenceRoute(),
+    rbBuildFrenchAlpsEcrinsRoute(),
+    rbBuildSouthOfFranceProvenceCoteAzurRoute(),
+    rbBuildFrenchAlpsProvenceRoute(),
+    rbBuildFranceRoadtripParisCoteAzurRoute(),
+    rbBuildFrenchAtlanticCoastRoute(),
+  );
+  rbSave();
+}
+
