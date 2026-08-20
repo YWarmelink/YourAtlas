@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateWestCentralAfricaFamilyEnglish();
   rbMigrateNorthAmericaFamilyEnglish();
   rbMigrateOceaniaFamilyEnglish();
+  rbMigrateFaroeHikingDestination();
   rbBindEvents();
 
   try {

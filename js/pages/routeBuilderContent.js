@@ -418,7 +418,7 @@ const RB_EXPEDITION_CONTENT = {
       { name: 'Saksun', lat: 62.2667, lng: -7.2167 },
       { name: 'Gjógv', lat: 62.3167, lng: -6.8 },
       { name: 'Vestmanna Cliffs', lat: 62.1553, lng: -7.1668 },
-      'Hiking routes',
+      { name: 'Trælanípa & Lake Sørvágsvatn hike', lat: 62.0977, lng: -7.2967 },
     ], transport_to_next: "Short flight Vágar–Reykjavik (or seasonal Smyril Line ferry, summer only)", notes: "Price verified (2026-07), correct. The Faroe Islands are not EU/Schengen (though part of the Nordic Passport Union) — a regular passport/ID is needed on arrival." },
     IS: { days: 14, budget: 2800, lat: 64.1466, lng: -21.9426, destinations: [
       { name: 'Reykjavik', lat: 64.1466, lng: -21.9426 },
@@ -6485,6 +6485,33 @@ function rbApplyAfricaGrandTourOverhaulToRoute(route) {
     route.notes += '\n\n' + note;
     touched = true;
   }
+
+  if (touched) rbSave();
+}
+
+/**
+ * Fixes a data bug in the Faroe Islands leg's destinations (Nordic Arctic Expedition's shared
+ * dict, cascades to the Faroe Islands split route too): the 4th destination was a bare string
+ * ('Hiking routes') instead of a {name, lat, lng} object, so it silently failed to render on the
+ * "🔍 Gedetailleerd" per-destination map view. Replaced with the actual best-known Faroese hike —
+ * the Trælanípa/Lake Sørvágsvatn trail on Vágar, the most iconic hike in the islands (the "lake
+ * above the ocean" optical illusion) — with real coordinates.
+ */
+function rbMigrateFaroeHikingDestination() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_FAROE_HIKING_DEST)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_FAROE_HIKING_DEST, '1');
+
+  let touched = false;
+  ['Nordic Arctic Expedition ❄️', 'Faroe Islands 🐑', 'Faeröer 🐑'].forEach(name => {
+    const route = rbRoutes.find(r => r.name === name);
+    if (!route) return;
+    const block = route.blocks.find(b => b.country_code === 'FO');
+    if (!block || !Array.isArray(block.destinations)) return;
+    const idx = block.destinations.findIndex(d => typeof d === 'string');
+    if (idx === -1) return;
+    block.destinations.splice(idx, 1, { name: 'Trælanípa & Lake Sørvágsvatn hike', lat: 62.0977, lng: -7.2967 });
+    touched = true;
+  });
 
   if (touched) rbSave();
 }
