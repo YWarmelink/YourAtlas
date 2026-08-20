@@ -6938,6 +6938,69 @@ function rbMigrateNorthAmericaFamilyEnglish() {
   if (touched) rbSave();
 }
 
+/**
+ * Oceania Grand Expedition family — Dutch-to-English translation (2026-08 batch 12/13, the final
+ * translation batch). Hand-authored, no shared RB_EXPEDITION_CONTENT entry (Australia and New
+ * Zealand each appear as multiple distinct legs across this family, so per CLAUDE.md their content
+ * lives inline in dedicated rbBuildXRoute() functions instead) — same wholesale-replace-via-
+ * rebuilt-buildFn() idiom as rbMigrateMediterraneanFamilyEnglish()/rbMigrateNorthAmericaFamilyEnglish().
+ * 12 routes total: the Grand Expedition itself (name unchanged), its four 2026-07 split companions
+ * (Pacific-eilanden 🌺 → Pacific Islands 🌺, Tropisch/Outback Australië 🐊 → Tropical/Outback
+ * Australia 🐊, Gematigd/Zuidelijk Australië 🍇 → Temperate/Southern Australia 🍇, Nieuw-Zeeland 🥝 →
+ * New Zealand 🥝), and seven standalone single-country routes split off in later batches — three of
+ * which already used English names (Cairns & Great Barrier Reef 🐠, Fiji 🌊, Sydney/Byron & Great
+ * Ocean Road 🦘) and four of which needed a rename (Nieuw-Zeeland Zuidereiland 🏔️ → New Zealand South
+ * Island 🏔️, Tasmanië 🐾 → Tasmania 🐾, Nieuw-Zeeland Noordereiland 🌿 → New Zealand North Island 🌿,
+ * and Fiji & Vanuatu 🐚 which was already English). Looked up by old-or-new name so this is idempotent
+ * whichever language a given route was seeded/migrated in.
+ *
+ * Migration-collision check for this batch: three prior migrations touch this family, all confirmed
+ * harmless once the renames land. (1) rbMigrateOceaniaExpeditionBuild() targets only 'Oceania Grand
+ * Expedition 🌊' by its unchanged name — unaffected. (2) rbMigrateOceaniaRouteLogicOverhaul() is a
+ * pure name-lookup wholesale-replace (findIndex + splice, silent no-op if not found) for all 5
+ * main-family routes — once the 4 splitroutes are renamed, its lookups for those become harmless
+ * no-ops on any fresh seed, same precedent as every prior family-English batch. (3)
+ * rbMigrateSplitRouteEntryNotes()'s prependInstap() helper hardcodes Dutch "Instap:" openers keyed
+ * by old route name for the 4 splitroutes — its guard already skips if notes start with either
+ * 'Instap:' or 'Entry:' (widened during an earlier batch for this exact reuse case), and since each
+ * splitroute's own build function now bakes its "Entry:" sentence directly into the first leg's
+ * notes, this migration is already a no-op here regardless of language or whether the name lookup
+ * succeeds. Also checked rbMigrateLonghaulBuffer() (bumps 'Jordanië 🏺' and 'Nieuw-Zeeland
+ * Zuidereiland 🏔️' days by old name): the day bump is already baked into the translated
+ * rbBuildNewZealandSouthIslandRoute() (23 days), so once renamed this lookup simply stops finding a
+ * match and no-ops — identical to how 'Jordanië 🏺' → 'Jordan 🏺' was already handled in an earlier
+ * batch. No fix needed for any of the four.
+ */
+function rbMigrateOceaniaFamilyEnglish() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_OCEANIA_ENGLISH)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_OCEANIA_ENGLISH, '1');
+
+  const targets = [
+    { oldName: 'Oceania Grand Expedition 🌊', newName: 'Oceania Grand Expedition 🌊', buildFn: rbBuildOceaniaExpeditionRoute },
+    { oldName: 'Pacific-eilanden 🌺', newName: 'Pacific Islands 🌺', buildFn: rbBuildPacificIslandsRoute },
+    { oldName: 'Tropisch/Outback Australië 🐊', newName: 'Tropical/Outback Australia 🐊', buildFn: rbBuildTropicalOutbackAustraliaRoute },
+    { oldName: 'Gematigd/Zuidelijk Australië 🍇', newName: 'Temperate/Southern Australia 🍇', buildFn: rbBuildTemperateSouthernAustraliaRoute },
+    { oldName: 'Nieuw-Zeeland 🥝', newName: 'New Zealand 🥝', buildFn: rbBuildNewZealandRoute },
+    { oldName: 'Nieuw-Zeeland Zuidereiland 🏔️', newName: 'New Zealand South Island 🏔️', buildFn: rbBuildNewZealandSouthIslandRoute },
+    { oldName: 'Cairns & Great Barrier Reef 🐠', newName: 'Cairns & Great Barrier Reef 🐠', buildFn: rbBuildCairnsGreatBarrierReefRoute },
+    { oldName: 'Fiji 🌊', newName: 'Fiji 🌊', buildFn: rbBuildFijiRoute },
+    { oldName: 'Sydney/Byron & Great Ocean Road 🦘', newName: 'Sydney/Byron & Great Ocean Road 🦘', buildFn: rbBuildSydneyGreatOceanRoadRoute },
+    { oldName: 'Tasmanië 🐾', newName: 'Tasmania 🐾', buildFn: rbBuildTasmaniaRoute },
+    { oldName: 'Nieuw-Zeeland Noordereiland 🌿', newName: 'New Zealand North Island 🌿', buildFn: rbBuildNorthIslandRoute },
+    { oldName: 'Fiji & Vanuatu 🐚', newName: 'Fiji & Vanuatu 🐚', buildFn: rbBuildFijiVanuatuRoute },
+  ];
+
+  let touched = false;
+  targets.forEach(({ oldName, newName, buildFn }) => {
+    const idx = rbRoutes.findIndex(r => r.name === oldName || r.name === newName);
+    if (idx === -1) return;
+    rbRoutes.splice(idx, 1, buildFn());
+    touched = true;
+  });
+
+  if (touched) rbSave();
+}
+
 // ---- Standalone single-country routes (2026-08, on Youri's request) ----
 //
 // The modularization analysis (ROUTE_BUILDER_MODULES.md) flagged ~30 individual countries across
