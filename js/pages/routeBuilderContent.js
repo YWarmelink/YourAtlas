@@ -10761,3 +10761,823 @@ function rbSeedEuropaFranceRoutes() {
   rbSave();
 }
 
+// ---- Europe/Italy (2026-08, Phase 2 batch 5) — converting EUROPA_TRIP_IDEAS.md's Italy section
+// (16 items) into Route Builder content, following the same pattern as batches 1-4 (Benelux,
+// Germany, Austria+Switzerland, France). Several items deliberately overlap each other (the source
+// itself explains each one's distinguishing angle — carried into each route's own notes below) and
+// some legitimately overlap pre-existing standalone routes (Dolomieten & Noord-Italië 🚡, Sicily 🌋,
+// Sardinia 🗿, Rome & Surroundings 🍕) — per this project's overlap-is-fine convention, all 16 are
+// built as their own independent routes, with the relationship to any pre-existing route noted where
+// relevant.
+
+function rbBuildRomeCityBreakRoute() {
+  return rbBuildFlatSeedRoute('Rome (4 days) 🏛️', [
+    {
+      code: 'IT', name: 'Italy', days: 4, budget: 520, lat: 41.9028, lng: 12.4964,
+      destinations: [
+        { name: 'Colosseum', lat: 41.8902, lng: 12.4922 },
+        { name: 'Roman Forum', lat: 41.8925, lng: 12.4853 },
+        { name: 'Palatine Hill', lat: 41.8888, lng: 12.4870 },
+        { name: "Vatican Museums", lat: 41.9065, lng: 12.4536 },
+        { name: "St. Peter's Basilica", lat: 41.9022, lng: 12.4533 },
+        { name: 'Pantheon', lat: 41.8986, lng: 12.4769 },
+        { name: 'Trevi Fountain', lat: 41.9009, lng: 12.4833 },
+        { name: 'Piazza Navona', lat: 41.8992, lng: 12.4731 },
+        { name: 'Spanish Steps', lat: 41.9058, lng: 12.4823 },
+        { name: 'Borghese Gallery & Gardens (optional day 4)', lat: 41.9142, lng: 12.4922 },
+        { name: 'Trastevere / Ostia Antica day trip (optional day 4 alternative)', lat: 41.8898, lng: 12.4692 },
+      ],
+      notes: "A pure city trip, no day trips needed at this length. Day 1: Colosseum/Forum/Palatine Hill. Day 2: Vatican Museums + St. Peter's — deliberately a separate day from the Colosseum, doing both together is too much in one day. Day 3: Pantheon, Trevi Fountain, Piazza Navona, Spanish Steps. Day 4 (optional): Borghese Gallery & Gardens, or Trastevere plus an Ostia Antica day trip. Direct AMS-FCO (KLM/Transavia/ITA, ~2h10, 47 flights/week) — no sensible self-drive option at this distance. Budget ~€130/day (3-star for 2, €130-190/night ≈€65-95pp, food €40-55, public transport/Roma Pass €15-20). Season: April-June or September-October; avoid August (32-38°C, many local businesses closed for Ferragosto). ⚠️ Colosseum tickets only release ~30 days ahead — count back from that release date, not your departure date; a combined ticket (Colosseum+Forum+Palatine+Vatican+Sistine Chapel+St. Peter's, valid 3 days) is up to 20% cheaper than separate tickets.",
+      transport_to_next: 'End of this route — direct return flight Rome (Fiumicino) to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Direct flight Amsterdam-Rome (Fiumicino) — on foot/public transport within the city, no car needed or useful.',
+    climate_summary: 'April-June or September-October; avoid August (very hot, many local businesses closed for Ferragosto).',
+    description: 'Colosseum, Roman Forum and Palatine Hill; the Vatican Museums and St. Peter\'s Basilica; the Pantheon, Trevi Fountain, Piazza Navona and Spanish Steps; and an optional fourth day at the Borghese Gallery or Trastevere/Ostia Antica.',
+    notes: "Built (2026-08) as part of Phase 2 batch 5 (Italy), converting EUROPA_TRIP_IDEAS.md's 319 markdown trip ideas into Route Builder content — following the same pattern as batches 1-4 (Benelux, Germany, Austria+Switzerland, France). Overlaps the pre-existing Rome & Surroundings 🍕 route (which pairs Rome with a 6-day Naples/Pompeii/Herculaneum leg over 13 days total) — this standalone route is deliberately a pure, shorter Rome-only city break with no Naples leg, matching this batch's Rome + Tuscany (9 days) 🍝 route below rather than that Naples combo. Also revisited at greater length by Rome + Tuscany (9 days) 🍝 below, which extends the same Rome days into a connected Tuscany continuation — per this project's overlap-is-fine convention, built independently. Not yet checked against Route Builder-level price research beyond the ticket checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildFlorenceTuscanyRoute() {
+  return rbBuildFlatSeedRoute('Florence + Tuscany (4 days) 🎨', [
+    {
+      code: 'IT', name: 'Italy', days: 4, budget: 480, lat: 43.7696, lng: 11.2558,
+      destinations: [
+        { name: 'Florence — Uffizi Gallery', lat: 43.7687, lng: 11.2560 },
+        { name: 'Florence — Duomo (dome climb)', lat: 43.7731, lng: 11.2560 },
+        { name: 'Florence — Ponte Vecchio', lat: 43.7680, lng: 11.2531 },
+        { name: 'Florence — Palazzo Vecchio', lat: 43.7696, lng: 11.2558 },
+        { name: 'Siena (day trip)', lat: 43.3188, lng: 11.3308 },
+        { name: 'Chianti wine tasting (day trip)', lat: 43.5000, lng: 11.3000 },
+        { name: 'San Gimignano (day trip)', lat: 43.4674, lng: 11.0431 },
+        { name: 'Pisa (day trip)', lat: 43.7228, lng: 10.3966 },
+      ],
+      notes: "Florence as a fixed base, no overnight changes. Days 1-2: the city (Uffizi, Duomo dome climb, Ponte Vecchio, Palazzo Vecchio). Day 3(-4): one full Tuscany day trip, Siena → Chianti (wine tasting) → San Gimignano → Pisa, either self-driven (one day's rental car — more flexible/cheaper for 2+ people) or a guided day tour. Direct AMS-FLR (KLM only, ~2h, 4x/day). Budget ~€120/day plus a one-off €20-30 for the rental car/day tour. Season: April-May or September-October; July-August is hot (30-35°C) and busy. ⚠️ Book the Uffizi and Accademia weeks ahead; the Duomo dome climb has its own time slot separate from the free cathedral entry and fills up faster than the rest of the sights — book that first.",
+      transport_to_next: 'End of this route — direct return flight Florence to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Direct flight Amsterdam-Florence — Florence as a fixed base with one day-trip day (self-drive rental or guided tour).',
+    climate_summary: 'April-May or September-October; avoid July-August (hot and busy).',
+    description: 'Florence (Uffizi, Duomo, Ponte Vecchio, Palazzo Vecchio) plus one full Tuscany day trip: Siena, Chianti, San Gimignano and Pisa.',
+    notes: "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. Deliberately a short, single-base city trip with one day-trip day — the standalone Tuscany (6 days) 🍇 route below covers much the same towns (Siena, San Gimignano) at a far more relaxed pace with overnight stays in each, rather than a single rushed day trip; that route also adds Val d'Orcia and Volterra which this shorter trip skips entirely. Not yet checked against Route Builder-level price research beyond the ticket checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildVeniceDolomitesRoute() {
+  return rbBuildFlatSeedRoute('Venice + Dolomites (5 days) 🎭', [
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 280, lat: 45.4342, lng: 12.3388,
+      destinations: [
+        { name: 'Piazza San Marco', lat: 45.4342, lng: 12.3388 },
+        { name: 'Rialto Bridge', lat: 45.4380, lng: 12.3358 },
+        { name: 'Murano (half day)', lat: 45.4587, lng: 12.3538 },
+        { name: 'Burano (half day)', lat: 45.4854, lng: 12.4166 },
+      ],
+      notes: "1-2 nights in Venice: San Marco, the Rialto, a half day on Murano/Burano. Direct AMS-VCE (KLM/easyJet, ~2h, 110 flights/week) — Marco Polo airport has no direct train, take a bus/taxi to Mestre then the train, or the Alilaguna boat straight into the city. Budget ~€140/day in Venice. Season: early June or September — a compromise between open cable cars (which only open late May/June) and fewer Venice crowds. ⚠️ Venice's day-tripper tax is back for 2026: €5pp if paid ≥4 days ahead, €10 if paid late/on the spot, on ~60 days between 3 April-26 July 2026 (Fri-Sun, 8:30-16:00) — waived by an overnight stay within the Venice municipality (including Mestre/Lido), so normally not applicable on this trip, but check when booking.",
+      transport_to_next: "Rental car, ~150km/2h15 to Cortina d'Ampezzo or Val Gardena.",
+    },
+    {
+      code: 'IT', name: 'Italy', days: 3, budget: 315, lat: 46.5369, lng: 12.1357,
+      destinations: [
+        { name: "Cortina d'Ampezzo or Val Gardena (base)", lat: 46.5369, lng: 12.1357 },
+        { name: 'Tre Cime di Lavaredo area', lat: 46.6198, lng: 12.3032 },
+        { name: 'Lago di Braies', lat: 46.6958, lng: 12.0858 },
+        { name: 'Cinque Torri', lat: 46.5333, lng: 12.0333 },
+      ],
+      notes: "2-3 nights in the Dolomites (Cortina d'Ampezzo or Val Gardena): the Tre Cime area, Lago di Braies, Cinque Torri — then back to Venice for the flight home. Budget ~€105/day in the Dolomites. Dolomites cable cars are seasonal (late May-early October, varies per lift) — check the specific lift. Book Tre Cime/Lago di Braies parking ahead in season. ⚠️ Dolomites-Venice cable cars aside, this leg's own cable cars won't be open before late May.",
+      transport_to_next: 'End of this route — drive back to Venice (VCE) for the direct return flight to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Direct flight Amsterdam-Venice, rental car for the Dolomites leg, then back to Venice for the flight home.',
+    climate_summary: 'Early June or September — a compromise between cable cars opening (late May/June) and lower Venice crowds.',
+    description: "Venice (San Marco, Rialto, Murano/Burano) and Cortina d'Ampezzo or Val Gardena (Tre Cime, Lago di Braies, Cinque Torri).",
+    notes: "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. The pre-existing Dolomieten & Noord-Italië 🚡 route also combines Venice with the Dolomites (Tre Cime, Lago di Braies, Seceda, Val Gardena), but only as the entry/exit legs of a much broader 19-day fly-into-Venice loop that continues on to Milan, Turin, the Cinque Terre, Tuscany and San Marino — this standalone route is a tight 5-day Venice+Dolomites-only trip with none of that extra ground. Deliberately shallower than the standalone Dolomites (6 days) ⛰️ route below, which the source explicitly frames as going deeper into the valleys (Alta Badia, Pusteria) than this shorter combo trip can. Not yet checked against Route Builder-level price research beyond the tax/ticket checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildTuscanyRoute() {
+  return rbBuildFlatSeedRoute('Tuscany (6 days) 🍇', [
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 250, lat: 43.7696, lng: 11.2558,
+      destinations: [
+        { name: 'Florence (hub)', lat: 43.7696, lng: 11.2558 },
+      ],
+      notes: "Florence as a hub (1-2 nights). Direct AMS-FLR (~2h), rental car in Florence for the whole week — self-driving from the Netherlands (~12h/1384km) is too much for this trip length. Budget ~€125/day (agriturismo/B&B for 2, €90-130/night ≈€45-65pp, plus rental car €35-45/day/2 people, plus food €40-50).",
+      transport_to_next: 'Drive to Siena (~1h15).',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 125, lat: 43.3188, lng: 11.3308,
+      destinations: [
+        { name: 'Siena', lat: 43.3188, lng: 11.3308 },
+      ],
+      notes: 'Siena (1 night). Same budget/rental-car logic as the Florence leg above.',
+      transport_to_next: "Drive into the Val d'Orcia loop.",
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 250, lat: 43.0778, lng: 11.6789,
+      destinations: [
+        { name: 'Montalcino (base, wine country)', lat: 43.0567, lng: 11.4900 },
+        { name: 'Pienza', lat: 43.0778, lng: 11.6789 },
+        { name: 'Montepulciano', lat: 43.0938, lng: 11.7864 },
+      ],
+      notes: "Val d'Orcia loop (2 nights, base Pienza/Montalcino, wine country): Montalcino, Pienza, Montepulciano. Season: April-May or September-October; avoid July-August (heat); September is wine-harvest season — beautiful but busier/pricier around Chianti/Montalcino.",
+      transport_to_next: 'Drive to San Gimignano/Volterra.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 125, lat: 43.4674, lng: 11.0431,
+      destinations: [
+        { name: 'San Gimignano', lat: 43.4674, lng: 11.0431 },
+        { name: 'Volterra', lat: 43.4013, lng: 10.8608 },
+      ],
+      notes: 'San Gimignano and Volterra (1-2 nights), then back to Florence. Deliberately no Cinque Terre on this route — different region (Liguria), a full day of driving there and back, not worth it. ⚠️ Park outside the walls at San Gimignano/Volterra — both are pedestrian zones inside.',
+      transport_to_next: 'End of this route — drive back to Florence and fly home, or continue self-driving back to the Netherlands.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Direct flight Amsterdam-Florence, rental car for the whole week — Florence hub, then Siena, the Val d\'Orcia loop, and San Gimignano/Volterra.',
+    climate_summary: 'April-May or September-October; avoid July-August (heat); September is wine-harvest season (busier/pricier around Chianti/Montalcino).',
+    description: "Florence, Siena, the Val d'Orcia loop (Montalcino, Pienza, Montepulciano), and San Gimignano and Volterra.",
+    notes: "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. A slower, deeper version of the Tuscany day trip inside Florence + Tuscany (4 days) 🎨 above — this route gives Siena, the Val d'Orcia and San Gimignano/Volterra their own overnight stays instead of a single rushed day, and adds Val d'Orcia and Volterra which the shorter trip skips. Also revisited at greater length by Rome + Tuscany (9 days) 🍝 below, which connects much of this same Tuscany ground to a Rome leg. Not yet checked against Route Builder-level price research beyond the parking checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildDolomitesDeepRoute() {
+  return rbBuildFlatSeedRoute('Dolomites (6 days) ⛰️', [
+    {
+      code: 'IT', name: 'Italy', days: 3, budget: 330, lat: 46.5765, lng: 11.6750,
+      destinations: [
+        { name: 'Ortisei / Val Gardena (base)', lat: 46.5765, lng: 11.6750 },
+        { name: 'Alpe di Siusi', lat: 46.5480, lng: 11.6167 },
+        { name: 'Seceda', lat: 46.5936, lng: 11.6683 },
+        { name: 'Passo Gardena', lat: 46.5478, lng: 11.7756 },
+        { name: 'Vallunga', lat: 46.5975, lng: 11.7211 },
+      ],
+      notes: "Two bases. Base one: Ortisei/Val Gardena (3 nights) — Alpe di Siusi, Seceda, Passo Gardena, Vallunga. Deliberately no city/Venice on this route — this goes deeper into the valleys (Alta Badia, Pusteria) than the shorter Venice + Dolomites (5 days) 🎭 combo above can. No direct flight to the Dolomites themselves; best gateways are Innsbruck (Transavia direct from AMS, ~1h35, but seasonal Thu/Sun — check the current schedule) for Pusteria/the north side, or Verona/Venice for Cortina/the south side. Self-driving from the Netherlands (~12-13h via Germany-Austria-Brenner Pass) is only worthwhile as a stopover trip, otherwise fly + rent locally. Budget ~€110/day (Cortina pricier/chicer than Val Gardena) plus rental car €35-45/day plus lift passes €10-25/day.",
+      transport_to_next: "Drive via Passo Valparola/Falzarego to Cortina d'Ampezzo.",
+    },
+    {
+      code: 'IT', name: 'Italy', days: 3, budget: 330, lat: 46.5369, lng: 12.1357,
+      destinations: [
+        { name: 'Passo Valparola', lat: 46.5928, lng: 11.9331 },
+        { name: 'Passo Falzarego', lat: 46.5486, lng: 12.0250 },
+        { name: "Cortina d'Ampezzo (base)", lat: 46.5369, lng: 12.1357 },
+        { name: 'Tre Cime di Lavaredo', lat: 46.6198, lng: 12.3032 },
+        { name: 'Cadini di Misurina', lat: 46.6167, lng: 12.2667 },
+        { name: 'Lago di Braies', lat: 46.6958, lng: 12.0858 },
+        { name: 'Cinque Torri', lat: 46.5333, lng: 12.0333 },
+        { name: 'Passo Giau', lat: 46.4864, lng: 12.0472 },
+      ],
+      notes: "Base two: Cortina d'Ampezzo (3-4 nights) — Tre Cime di Lavaredo, Cadini di Misurina, Lago di Braies, Cinque Torri, Passo Giau. Season: June-September — a hard boundary, not a soft preference: outside this window most lifts/trails are snowed in. Exact 2026 opening dates differ per valley and year (e.g. Val Gardena 6 June-11 October 2026, Cortina's lifts staggered from late May) — check close to departure. ⚠️ Book Tre Cime/Lago di Braies parking ahead in season (daily vehicle limit); afternoon thunderstorms are normal even in summer — hike in the mornings.",
+      transport_to_next: 'End of this route — drive back to Innsbruck or Verona/Venice for the flight home.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Fly into Innsbruck (Pusteria/north side) or Verona/Venice (Cortina/south side), rental car for the whole trip — two dedicated bases, no city or Venice leg.',
+    climate_summary: 'June-September — a hard boundary; outside this window most high-altitude lifts/trails are snowed in.',
+    description: 'Ortisei/Val Gardena (Alpe di Siusi, Seceda, Passo Gardena, Vallunga) and, via Passo Valparola/Falzarego, Cortina d\'Ampezzo (Tre Cime, Cadini di Misurina, Lago di Braies, Cinque Torri, Passo Giau).',
+    notes: "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. The pre-existing Dolomieten & Noord-Italië 🚡 route also passes through the Dolomites (Tre Cime, Lago di Braies, Seceda, Val Gardena) but only as one 6-day leg inside a much broader 19-day fly-into-Venice loop that continues to Milan, Turin, the Cinque Terre, Tuscany, San Marino and Venice — this standalone route instead spends the full 6 days across two dedicated Dolomites bases and reaches valleys (Alta Badia, Pusteria) that pre-existing route's single Cortina-area leg doesn't cover. Deliberately deeper/narrower than Venice + Dolomites (5 days) 🎭 above per the source's own framing (no city/Venice, goes further into the valleys). Not yet checked against Route Builder-level price research beyond the lift/parking checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildNorthernItalyLakesRoute() {
+  return rbBuildFlatSeedRoute('Northern Italy (6 days) 🚤', [
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 125, lat: 45.4642, lng: 9.1900,
+      destinations: [
+        { name: 'Milan (Duomo, Galleria)', lat: 45.4642, lng: 9.1900 },
+      ],
+      notes: "Milan (1-2 nights). Direct AMS-Milan (Malpensa/Linate, KLM/Transavia, frequent); self-driving from the Netherlands is possible (~1073km/11h) but flying + renting locally is more efficient for 5-7 days. Budget ~€125/day (rental car €35-45/day on top — the lakes are pricier than average Italy).",
+      transport_to_next: 'Drive to Lake Como.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 250, lat: 45.9860, lng: 9.2578,
+      destinations: [
+        { name: 'Bellagio', lat: 45.9860, lng: 9.2578 },
+        { name: 'Varenna', lat: 46.0139, lng: 9.2856 },
+        { name: 'Menaggio', lat: 46.0167, lng: 9.2333 },
+      ],
+      notes: 'Lake Como (2-3 nights), ferry-hopping Bellagio/Varenna/Menaggio. Season: May or September; avoid July-August (heat/crowds, especially the Ferragosto peak 10-20 August: near-full occupancy on both lakes).',
+      transport_to_next: 'Drive to Lake Garda.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 250, lat: 45.4933, lng: 10.6089,
+      destinations: [
+        { name: 'Sirmione', lat: 45.4933, lng: 10.6089 },
+        { name: 'Desenzano', lat: 45.4667, lng: 10.5333 },
+      ],
+      notes: 'Lake Garda (2 nights, Sirmione/Desenzano).',
+      transport_to_next: 'Drive to Verona (short hop).',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 125, lat: 45.4384, lng: 10.9916,
+      destinations: [
+        { name: "Verona (Arena, Juliet's balcony)", lat: 45.4384, lng: 10.9916 },
+      ],
+      notes: "Verona (1 night, Arena/Juliet's balcony), then back to Milan. Deliberately a flat lakes-and-cities loop, no Dolomites/Venice on this route — that's the longer roadtrip version below. ⚠️ No entry/reservation hassle like Venice/Rome, but do book ferries and any Arena opera performances ahead; if self-driving via Germany/Austria, an Austrian vignette is needed (10-day version ~€12.80) — Switzerland only sells an annual vignette (~€43), less worthwhile for a one-off trip.",
+      transport_to_next: 'End of this route — drive back to Milan and fly home.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Direct flight Amsterdam-Milan, rental car for the whole loop — Milan, Lake Como, Lake Garda, Verona, back to Milan.',
+    climate_summary: 'May or September; avoid July-August (heat/crowds, especially the Ferragosto peak 10-20 August).',
+    description: 'Milan, Lake Como (Bellagio, Varenna, Menaggio), Lake Garda (Sirmione, Desenzano), and Verona.',
+    notes: "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. Deliberately the flat, shorter sibling of Northern Italy Roadtrip (9 days) 🚙 below, which the source explicitly frames as the same lakes-and-cities loop extended on to the Dolomites and Venice. Not yet checked against Route Builder-level price research beyond the vignette checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildNorthernItalyRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Northern Italy Roadtrip (9 days) 🚙', [
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 260, lat: 45.4642, lng: 9.1900,
+      destinations: [
+        { name: 'Milan', lat: 45.4642, lng: 9.1900 },
+      ],
+      notes: 'The big sibling of Northern Italy (6 days) 🚤 above — now continuing on to the Dolomites and Venice. Milan (1-2 days). Open-jaw AMS-Milan in, AMS-Venice out (both direct, frequent) — no return-flight detour.',
+      transport_to_next: 'Drive to Lake Como/Bellagio.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 130, lat: 45.9860, lng: 9.2578,
+      destinations: [
+        { name: 'Lake Como / Bellagio', lat: 45.9860, lng: 9.2578 },
+      ],
+      notes: 'Lake Como/Bellagio (1 day). Budget ~€130/day for this route overall.',
+      transport_to_next: 'Drive to Lake Garda/Sirmione.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 260, lat: 45.4933, lng: 10.6089,
+      destinations: [
+        { name: 'Lake Garda / Sirmione', lat: 45.4933, lng: 10.6089 },
+      ],
+      notes: 'Lake Garda/Sirmione (1-2 days).',
+      transport_to_next: 'Drive to Verona.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 130, lat: 45.4384, lng: 10.9916,
+      destinations: [
+        { name: 'Verona', lat: 45.4384, lng: 10.9916 },
+      ],
+      notes: 'Verona (1 day). ⚠️ Milan\'s Area C environmental zone applies if driving into the centre.',
+      transport_to_next: 'Drive to the Dolomites via Bolzano.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 260, lat: 46.4983, lng: 11.3548,
+      destinations: [
+        { name: 'Bolzano', lat: 46.4983, lng: 11.3548 },
+        { name: 'Lago di Braies', lat: 46.6958, lng: 12.0858 },
+      ],
+      notes: '(10-day version) Dolomites via Bolzano/Lago di Braies (2 days). West→east, no zigzag. Season: May-June or September; Dolomites passes are only fully open/warm June-September, avoid August. ⚠️ Mountain roads outside June-September can need winter tyres — check this for shoulder-season travel.',
+      transport_to_next: 'Train (Verona-Venice, direct) or drive on to Venice.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 3, budget: 390, lat: 45.4408, lng: 12.3155,
+      destinations: [
+        { name: 'Venice — Piazza San Marco', lat: 45.4340, lng: 12.3390 },
+        { name: 'Venice — Doge\'s Palace / Basilica San Marco', lat: 45.4340, lng: 12.3390 },
+      ],
+      notes: "Venice (2-3 days) to close the trip. ⚠️ Book a time slot ahead in summer for the Doge's Palace/Basilica San Marco.",
+      transport_to_next: 'End of this route — direct return flight Venice to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Open-jaw AMS-Milan in, AMS-Venice out — rental car for the lakes and Dolomites, train Verona-Venice.',
+    climate_summary: 'May-June or September; Dolomites passes are only fully open/warm June-September, avoid August.',
+    description: 'Milan, Lake Como, Lake Garda, Verona, the Dolomites via Bolzano/Lago di Braies, and Venice — west to east, no zigzag.',
+    notes: "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. The 'big sibling' of the standalone Northern Italy (6 days) 🚤 route above per the source's own framing — same lakes-and-cities loop, extended east to the Dolomites and Venice via an open-jaw flight rather than a round trip through Milan. Shares Dolomites ground with Dolomites (6 days) ⛰️ and Venice ground with Venice + Dolomites (5 days) 🎭 above, and lakes/Milan/Venice ground with the pre-existing Dolomieten & Noord-Italië 🚡 route (which is Cinque Terre/Turin/San Marino-focused rather than lakes-focused) — per this project's overlap-is-fine convention, built independently. Not yet checked against Route Builder-level price research beyond the vignette/toll checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildRomeTuscanyRoute() {
+  return rbBuildFlatSeedRoute('Rome + Tuscany (9 days) 🍝', [
+    {
+      code: 'IT', name: 'Italy', days: 3, budget: 420, lat: 41.9028, lng: 12.4964,
+      destinations: [
+        { name: 'Colosseum & Roman Forum', lat: 41.8902, lng: 12.4922 },
+        { name: 'Vatican Museums', lat: 41.9065, lng: 12.4536 },
+        { name: 'Pantheon & Trevi Fountain', lat: 41.8986, lng: 12.4769 },
+      ],
+      notes: "A genuinely connected version of both regions together, not Rome-alone and Tuscany-alone simply glued end to end. Rome (3 days, no car needed). Direct AMS-Rome Fiumicino (~2h15, 314 flights/week); no direct NL flight to Pisa/Florence found, so plan on a return flight via Rome (train Florence-Rome ~1.5h) rather than an open-jaw out of Florence — check this when booking. Budget ~€140/day. ⚠️ Colosseum/Forum and the Vatican Museums require a pre-booked time slot — sold out weeks ahead in high season.",
+      transport_to_next: 'Drive north via Orvieto into the Val d\'Orcia — rental car picked up only after Rome (Rome\'s ZTL makes a car useless there).',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 280, lat: 43.0778, lng: 11.6789,
+      destinations: [
+        { name: 'Orvieto (waypoint)', lat: 42.7186, lng: 12.1128 },
+        { name: 'Pienza', lat: 43.0778, lng: 11.6789 },
+        { name: 'Montepulciano', lat: 43.0938, lng: 11.7864 },
+        { name: 'Montalcino', lat: 43.0567, lng: 11.4900 },
+        { name: 'San Quirico d\'Orcia', lat: 43.0578, lng: 11.6083 },
+      ],
+      notes: 'Orvieto on the way up, then the Val d\'Orcia (Pienza, Montepulciano, Montalcino, San Quirico d\'Orcia, 2 days).',
+      transport_to_next: 'Drive to Siena.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 140, lat: 43.3188, lng: 11.3308,
+      destinations: [
+        { name: 'Siena', lat: 43.3188, lng: 11.3308 },
+      ],
+      notes: 'Siena (1 day).',
+      transport_to_next: 'Drive to San Gimignano/Volterra.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 140, lat: 43.4674, lng: 11.0431,
+      destinations: [
+        { name: 'San Gimignano', lat: 43.4674, lng: 11.0431 },
+        { name: 'Volterra', lat: 43.4013, lng: 10.8608 },
+      ],
+      notes: 'San Gimignano and Volterra (1 day).',
+      transport_to_next: 'Drive to Florence.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 280, lat: 43.7696, lng: 11.2558,
+      destinations: [
+        { name: 'Florence', lat: 43.7696, lng: 11.2558 },
+      ],
+      notes: 'Florence (2-3 days) to close the trip. Season: April-June or September-October; avoid August heat in both Rome and Tuscany. ⚠️ Florence/Siena/San Gimignano\'s old towns are ZTL — park outside the walls.',
+      transport_to_next: 'End of this route — return flight to Amsterdam via Rome (rental car dropped off in Florence).',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Direct flight to Rome, no car in Rome itself (ZTL); rental car from Orvieto onward, dropped off in Florence; return flight routed via Rome.',
+    climate_summary: 'April-June or September-October; avoid August heat in both Rome and Tuscany.',
+    description: "Rome, Orvieto, the Val d'Orcia (Pienza, Montepulciano, Montalcino, San Quirico d'Orcia), Siena, San Gimignano/Volterra, and Florence.",
+    notes: "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. Deliberately built as a genuinely connected combo per the source's own framing, not Rome (4 days) 🏛️ and Tuscany (6 days) 🍇 simply stitched together — this route also overlaps the pre-existing Rome & Surroundings 🍕 route (which instead pairs Rome with a Naples/Pompeii/Herculaneum leg, not Tuscany). Per this project's overlap-is-fine convention, built independently — see each route's own notes. Not yet checked against Route Builder-level price research beyond the ticket/ZTL checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSicilyNineDaysRoute() {
+  return rbBuildFlatSeedRoute('Sicily (9 days) 🍋', [
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 220, lat: 38.1157, lng: 13.3613,
+      destinations: [
+        { name: 'Palermo', lat: 38.1157, lng: 13.3613 },
+      ],
+      notes: "West→south→east, no backtrack; shorten Val di Noto/Agrigento if doing this at 7 days. Palermo (2 days). Open-jaw AMS-Palermo in/AMS-Catania out recommended — direct AMS-Catania (Transavia/Ryanair/KLM, ~2h50-3h20, well served) or direct AMS-Palermo (Transavia only, ~3x/week, book early). Rental car essential (Agrigento, Val di Noto and the interior are poorly served by public transport). Budget ~€110/day (rental car + fuel included).",
+      transport_to_next: 'Drive to Cefalù.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 110, lat: 38.0387, lng: 14.0231,
+      destinations: [
+        { name: 'Cefalù', lat: 38.0387, lng: 14.0231 },
+      ],
+      notes: 'Cefalù (1 day).',
+      transport_to_next: 'Drive to Agrigento.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 110, lat: 37.3111, lng: 13.5765,
+      destinations: [
+        { name: 'Agrigento — Valle dei Templi', lat: 37.2903, lng: 13.5928 },
+      ],
+      notes: 'Agrigento/Valle dei Templi (1-2 days). Season: May-June or September-early October; July-August is very hot, especially in the inland stone towns (Agrigento, Val di Noto).',
+      transport_to_next: 'Drive to the Val di Noto.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 220, lat: 36.8917, lng: 15.0703,
+      destinations: [
+        { name: 'Ragusa', lat: 36.9269, lng: 14.7255 },
+        { name: 'Modica', lat: 36.8467, lng: 14.7692 },
+        { name: 'Noto', lat: 36.8917, lng: 15.0703 },
+      ],
+      notes: 'Val di Noto — Ragusa/Modica/Noto (1-2 days).',
+      transport_to_next: 'Drive to Syracuse.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 110, lat: 37.0755, lng: 15.2866,
+      destinations: [
+        { name: 'Syracuse', lat: 37.0755, lng: 15.2866 },
+      ],
+      notes: 'Syracuse (1-2 days).',
+      transport_to_next: 'Drive to Etna/Taormina.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 220, lat: 37.8516, lng: 15.2853,
+      destinations: [
+        { name: 'Mount Etna', lat: 37.7510, lng: 14.9934 },
+        { name: 'Taormina', lat: 37.8516, lng: 15.2853 },
+      ],
+      notes: "Etna/Taormina (2 days), closing the loop at Catania. ⚠️ A one-off rental-car drop-off fee applies for Palermo→Catania; Etna's summit above a certain altitude is only accessible with a guide and depends on current volcanic activity — check this close to your travel date, it changes.",
+      transport_to_next: 'End of this route — direct return flight Catania to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'September',
+    travel_style: 'Open-jaw AMS-Palermo in, AMS-Catania out — rental car essential for the whole loop.',
+    climate_summary: 'May-June or September-early October; July-August is very hot, especially inland (Agrigento, Val di Noto).',
+    description: 'Palermo, Cefalù, Agrigento (Valle dei Templi), the Val di Noto (Ragusa, Modica, Noto), Syracuse, and Etna/Taormina — west to south to east, no backtrack.',
+    notes: "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. The pre-existing Sicily 🌋 route covers a near-identical Palermo→Cefalù→Agrigento→Syracuse→Taormina/Etna loop over 10 days with a single Palermo entry/exit — this 9-day version additionally covers the Val di Noto (Ragusa/Modica/Noto), which the pre-existing route skips, and assumes an open-jaw Palermo-in/Catania-out flight instead of a round trip through one airport. Also distinguished from Sicily + Southern Italy (12 days) 🍊 below per the source's own framing — that route is a genuinely different, mainland-inclusive itinerary (Calabria + Matera), not just 'more Sicily days'. Not yet checked against Route Builder-level price research beyond the drop-off-fee check folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSardiniaNineDaysRoute() {
+  return rbBuildFlatSeedRoute('Sardinia (9 days) ⛵', [
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 240, lat: 41.1333, lng: 9.5333,
+      destinations: [
+        { name: 'Olbia (in/out)', lat: 40.9236, lng: 9.4980 },
+        { name: 'Costa Smeralda / Porto Cervo', lat: 41.1333, lng: 9.5333 },
+      ],
+      notes: "Olbia in/out (the simplest option given the limited seasonal flight routes) — a loop: Olbia → Costa Smeralda/Porto Cervo (2 days). Direct AMS-Olbia (easyJet/Transavia, 12x/week, but seasonal April-September); Cagliari only via KLM, seasonal July-October, 4x/week; Alghero also seasonal — check the current schedule. Self-driving + ferry from the Netherlands (Civitavecchia/Genoa/Livorno→Olbia, 5-11h crossing) is impractical for a short trip — flying is the realistic choice. Rental car essential. Budget ~€120/day (Costa Smeralda in August is clearly above this average).",
+      transport_to_next: 'Drive down the east coast to Cala Gonone.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 240, lat: 40.2833, lng: 9.6333,
+      destinations: [
+        { name: 'Cala Gonone', lat: 40.2833, lng: 9.6333 },
+        { name: 'Golfo di Orosei', lat: 40.2500, lng: 9.6500 },
+      ],
+      notes: 'Cala Gonone/Golfo di Orosei (2 days).',
+      transport_to_next: 'Drive inland to Barumini, then on to Cagliari.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 3, budget: 360, lat: 39.2238, lng: 9.1217,
+      destinations: [
+        { name: 'Barumini — Su Nuraxi (UNESCO)', lat: 39.7167, lng: 8.9833 },
+        { name: 'Cagliari', lat: 39.2238, lng: 9.1217 },
+      ],
+      notes: 'Barumini (Su Nuraxi, UNESCO) plus Cagliari (2-3 days). Season: June or September; July-August very expensive/busy, especially on the Costa Smeralda.',
+      transport_to_next: 'Drive up the west coast via Oristano to Alghero.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 240, lat: 40.5589, lng: 8.3181,
+      destinations: [
+        { name: 'Oristano (waypoint)', lat: 39.9036, lng: 8.5919 },
+        { name: 'Alghero', lat: 40.5589, lng: 8.3181 },
+      ],
+      notes: 'West coast via Oristano to Alghero (2 days), then back to Olbia. ⚠️ If self-driving with a car ferry, book the vehicle deck 3-4+ months ahead for August (spaces fill up, peak-day one-way fares can exceed €300); flight routes are seasonal — check the current schedule before booking.',
+      transport_to_next: 'End of this route — drive back to Olbia for the direct return flight to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Direct flight Amsterdam-Olbia, rental car essential for the whole loop.',
+    climate_summary: 'June or September; July-August is very expensive/busy, especially on the Costa Smeralda.',
+    description: 'A loop from Olbia: Costa Smeralda/Porto Cervo, Cala Gonone/Golfo di Orosei, Barumini (Su Nuraxi) and Cagliari, Oristano, and Alghero.',
+    notes: "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. The pre-existing Sardinia 🗿 route covers a single 6-day Cagliari-area stay (Cagliari, Su Nuraxi, Costa Smeralda) — this 9-day version instead runs a full Olbia in/out island loop, adding Cala Gonone/Golfo di Orosei, Oristano and Alghero, which the pre-existing route doesn't reach. Not yet checked against Route Builder-level price research beyond the ferry/flight checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildItalyNorthToCentralRoute() {
+  return rbBuildFlatSeedRoute('Italy: North to Central (12 days) 🚄', [
+    {
+      code: 'IT', name: 'Italy', days: 4, budget: 520, lat: 45.4642, lng: 9.1900,
+      destinations: [
+        { name: 'Milan', lat: 45.4642, lng: 9.1900 },
+        { name: 'Lake Como / Bellagio', lat: 45.9860, lng: 9.2578 },
+        { name: 'Lake Garda / Sirmione', lat: 45.4933, lng: 10.6089 },
+        { name: 'Verona (waypoint)', lat: 45.4384, lng: 10.9916 },
+      ],
+      notes: "The classic big-names sweep, linear, no backtrack — mostly along the Milan-Bologna-Florence-Rome high-speed rail line (a real alternative to the car here, except for the lakes/Dolomites stretch). Milan/Lake Como/Lake Garda (3-4 days), then on via Verona. Open-jaw AMS-Milan in, AMS-Rome out (both direct, frequent). Budget ~€130/day. Italian autostrade charge distance-based tolls, roughly €9/100km — Milan-Rome alone is about €44.50 one way if driving the full spine rather than switching to the train.",
+      transport_to_next: 'Drive or take the high-speed train via Verona to Bologna (~1h).',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 130, lat: 44.4949, lng: 11.3426,
+      destinations: [
+        { name: 'Bologna', lat: 44.4949, lng: 11.3426 },
+      ],
+      notes: 'Bologna (1 day).',
+      transport_to_next: 'High-speed train to Florence (~35 min).',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 260, lat: 43.7696, lng: 11.2558,
+      destinations: [
+        { name: 'Florence', lat: 43.7696, lng: 11.2558 },
+      ],
+      notes: 'Florence (2-3 days).',
+      transport_to_next: 'Drive or train to Siena/Val d\'Orcia.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 260, lat: 43.3188, lng: 11.3308,
+      destinations: [
+        { name: 'Siena', lat: 43.3188, lng: 11.3308 },
+        { name: 'Val d\'Orcia (Pienza)', lat: 43.0778, lng: 11.6789 },
+      ],
+      notes: "Siena/Val d'Orcia (2 days). Season: May-June or September; avoid August.",
+      transport_to_next: 'High-speed train to Rome (~1h30).',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 3, budget: 390, lat: 41.9028, lng: 12.4964,
+      destinations: [
+        { name: 'Rome', lat: 41.9028, lng: 12.4964 },
+      ],
+      notes: 'Rome (3 days) to close the trip.',
+      transport_to_next: 'End of this route — direct return flight Rome (Fiumicino) to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Open-jaw AMS-Milan in, AMS-Rome out — rental car for the lakes leg, high-speed train (Milan-Bologna-Florence-Rome line) for the rest.',
+    climate_summary: 'May-June or September; avoid August.',
+    description: "Milan/Lake Como/Lake Garda, Verona, Bologna, Florence, Siena/Val d'Orcia, and Rome — a linear sweep with no backtrack.",
+    notes: "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. Deliberately a different angle from Italy Roadtrip (12 days) 🧀 below per the source's own framing — this route is the train-friendly, big-names/high-speed-rail sweep, while that one is car-only and rural/food-focused, skipping Tuscany's big names entirely. Shares lakes ground with Northern Italy Roadtrip (9 days) 🚙 above (which continues east to the Dolomites/Venice instead of south to Rome) and Tuscany/Rome ground with several other routes in this batch — per this project's overlap-is-fine convention, built independently. Not yet checked against Route Builder-level price research beyond the toll estimate folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildItalyRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Italy Roadtrip (12 days) 🧀', [
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 280, lat: 45.4642, lng: 9.1900,
+      destinations: [
+        { name: 'Milan', lat: 45.4642, lng: 9.1900 },
+        { name: 'Turin', lat: 45.0703, lng: 7.6869 },
+      ],
+      notes: "Deliberately a different angle from Italy: North to Central (12 days) 🚄 above — car-only, rural/food-focused, skips Tuscany's big names entirely: Milan/Turin (2 days). Open-jaw AMS-Milan in, AMS-Naples out (both direct). Rental car for the whole trip. Budget ~€140/day (the Amalfi stretch plus rental car/tolls pull the average up) — toll costs Milan-Rome ≈€44.50, Rome-Naples ≈€13.50 (2026 rates; autostrada tariffs rose ~1.5% in January 2026).",
+      transport_to_next: 'Drive to Emilia-Romagna (Parma).',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 280, lat: 44.6471, lng: 10.9252,
+      destinations: [
+        { name: 'Parma', lat: 44.8015, lng: 10.3279 },
+        { name: 'Modena', lat: 44.6471, lng: 10.9252 },
+        { name: 'Bologna', lat: 44.4949, lng: 11.3426 },
+      ],
+      notes: 'Emilia-Romagna food route: Parma, Modena, Bologna (2 days).',
+      transport_to_next: 'Drive south to Umbria (Perugia).',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 280, lat: 43.1122, lng: 12.3888,
+      destinations: [
+        { name: 'Perugia', lat: 43.1122, lng: 12.3888 },
+        { name: 'Assisi', lat: 43.0707, lng: 12.6196 },
+        { name: 'Orvieto', lat: 42.7186, lng: 12.1128 },
+      ],
+      notes: 'Umbria: Perugia, Assisi, Orvieto (2-3 days).',
+      transport_to_next: 'Drive to Rome via the A1 autostrada.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 280, lat: 41.9028, lng: 12.4964,
+      destinations: [
+        { name: 'Rome', lat: 41.9028, lng: 12.4964 },
+      ],
+      notes: 'Rome (2-3 days).',
+      transport_to_next: 'Drive to Naples/Pompeii.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 280, lat: 40.8518, lng: 14.2681,
+      destinations: [
+        { name: 'Naples', lat: 40.8518, lng: 14.2681 },
+        { name: 'Pompeii', lat: 40.7461, lng: 14.4989 },
+      ],
+      notes: 'Naples/Pompeii (2 days).',
+      transport_to_next: 'Drive to the Amalfi Coast/Sorrento.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 280, lat: 40.6263, lng: 14.3757,
+      destinations: [
+        { name: 'Amalfi Coast', lat: 40.6340, lng: 14.6027 },
+        { name: 'Sorrento', lat: 40.6263, lng: 14.3757 },
+      ],
+      notes: "Amalfi Coast/Sorrento (2-3 days) to close the trip. Season: May-June or September-early October. ⚠️ The Amalfi Coast stretch has the same odd/even-license-plate and ZTL restrictions as the Campania routes below — check the exact 2026 calendar ahead, especially on a summer-weekend arrival.",
+      transport_to_next: 'End of this route — direct return flight Naples to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Open-jaw AMS-Milan in, AMS-Naples out — rental car for the entire trip.',
+    climate_summary: 'May-June or September-early October.',
+    description: 'Milan/Turin, the Emilia-Romagna food route (Parma, Modena, Bologna), Umbria (Perugia, Assisi, Orvieto), Rome, Naples/Pompeii, and the Amalfi Coast/Sorrento.',
+    notes: "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. Deliberately a different angle from Italy: North to Central (12 days) 🚄 above per the source's own framing — car-only, rural/food-focused, skipping Tuscany's big names entirely rather than another train-friendly big-cities sweep. Shares Amalfi Coast/Naples ground with Campania: Naples + Amalfi Coast (6 days) 🌊 and Campania + Puglia (9 days) 🧭 below — per this project's overlap-is-fine convention, built independently. Not yet checked against Route Builder-level price research beyond the toll figures folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSicilySouthernItalyRoute() {
+  return rbBuildFlatSeedRoute('Sicily + Southern Italy (12 days) 🍊', [
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 130, lat: 40.6824, lng: 14.7681,
+      destinations: [
+        { name: 'Naples/Salerno', lat: 40.6824, lng: 14.7681 },
+      ],
+      notes: "Only genuinely distinct from Sicily-alone by keeping Calabria+Matera on the mainland, not just 'more Sicily days'. Naples/Salerno (1 day). Open-jaw AMS-Naples in, AMS-Palermo or Catania out (both direct). Rental car for the whole trip. Budget ~€130/day.",
+      transport_to_next: 'Drive to Matera.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 260, lat: 40.6664, lng: 16.6043,
+      destinations: [
+        { name: 'Matera', lat: 40.6664, lng: 16.6043 },
+      ],
+      notes: 'Matera (2 days).',
+      transport_to_next: 'Drive to Tropea/the Calabrian coast.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 260, lat: 38.6759, lng: 15.8988,
+      destinations: [
+        { name: 'Tropea', lat: 38.6759, lng: 15.8988 },
+      ],
+      notes: 'Tropea/Calabrian coast (2 days). Season: May-June or September (Calabria and Sicily both very hot July-August; Matera is also hot in the daytime, though its cave dwellings stay cooler).',
+      transport_to_next: 'Ferry Villa San Giovanni↔Messina (~20 min, 2-3x/hour, 24/7, no reservation needed, pay/book on arrival).',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 260, lat: 37.8516, lng: 15.2853,
+      destinations: [
+        { name: 'Villa San Giovanni (ferry crossing)', lat: 38.2167, lng: 15.6333 },
+        { name: 'Messina (ferry crossing)', lat: 38.1938, lng: 15.5540 },
+        { name: 'Taormina', lat: 37.8516, lng: 15.2853 },
+        { name: 'Etna', lat: 37.7510, lng: 14.9934 },
+      ],
+      notes: "Taormina/Etna (2 days). ⚠️ Construction on the Strait of Messina bridge starts in 2026 (road/rail work from May 2026, tunnels/interchanges from September 2026) — shouldn't affect the ferry crossing itself, but expect possible construction traffic/diversions around Villa San Giovanni and Messina — check current roadworks before driving this route in 2026.",
+      transport_to_next: 'Drive to Syracuse/the Val di Noto.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 260, lat: 37.0755, lng: 15.2866,
+      destinations: [
+        { name: 'Syracuse', lat: 37.0755, lng: 15.2866 },
+        { name: 'Noto (Val di Noto)', lat: 36.8917, lng: 15.0703 },
+      ],
+      notes: 'Syracuse/Val di Noto (2 days).',
+      transport_to_next: 'Drive to Agrigento.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 130, lat: 37.3111, lng: 13.5765,
+      destinations: [
+        { name: 'Agrigento', lat: 37.2903, lng: 13.5928 },
+      ],
+      notes: 'Agrigento (1-2 days).',
+      transport_to_next: 'Drive to Palermo/Cefalù.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 260, lat: 38.1157, lng: 13.3613,
+      destinations: [
+        { name: 'Palermo', lat: 38.1157, lng: 13.3613 },
+        { name: 'Cefalù', lat: 38.0387, lng: 14.0231 },
+      ],
+      notes: 'Palermo/Cefalù (2 days) to close the trip.',
+      transport_to_next: 'End of this route — direct return flight from Palermo or Catania to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Open-jaw AMS-Naples in, AMS-Palermo or Catania out — rental car for the whole trip, including the Villa San Giovanni-Messina car ferry.',
+    climate_summary: 'May-June or September (Calabria and Sicily both very hot July-August).',
+    description: 'Naples/Salerno, Matera, Tropea/the Calabrian coast, a ferry to Sicily, Taormina/Etna, Syracuse/Val di Noto, Agrigento, and Palermo/Cefalù.',
+    notes: "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. The pre-existing Sicily 🌋 route and this batch's own Sicily (9 days) 🍋 route above both cover the same Sicilian loop (Palermo→Cefalù→Agrigento→Syracuse→Taormina/Etna) — this route's distinguishing angle, stated explicitly in the source, is keeping Calabria and Matera on the mainland rather than adding more Sicily time, via the Villa San Giovanni-Messina car ferry. Not yet checked against Route Builder-level price research beyond the bridge-construction/ferry checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCampaniaNaplesAmalfiRoute() {
+  return rbBuildFlatSeedRoute('Campania: Naples + Amalfi Coast (6 days) 🌊', [
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 250, lat: 40.8518, lng: 14.2681,
+      destinations: [
+        { name: 'Naples', lat: 40.8518, lng: 14.2681 },
+        { name: 'Pompeii (day trip)', lat: 40.7461, lng: 14.4989 },
+      ],
+      notes: "Naples (2 days, including a Pompeii day trip). Direct AMS-Naples (easyJet/Transavia/ITA, ~2-2.5h). No rental car recommended — use the Circumvesuviana train (Naples-Pompeii-Sorrento), SITA buses and seasonal ferries (Sorrento-Positano-Amalfi-Capri) instead of self-driving the narrow, busy SS163, especially given the restrictions below. Budget ~€125/day (Capri/Amalfi are pricey, Naples itself is cheaper). ⚠️ (check yearly) Pompeii 2026 requires a mandatory timed-entry ticket, linked to name/ID, max 20,000/day, book ≥1 week ahead (morning slots sell out weeks ahead in high season).",
+      transport_to_next: 'Circumvesuviana train to Sorrento.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 3, budget: 375, lat: 40.6263, lng: 14.3757,
+      destinations: [
+        { name: 'Sorrento (base)', lat: 40.6263, lng: 14.3757 },
+        { name: 'Positano', lat: 40.6280, lng: 14.4849 },
+        { name: 'Amalfi', lat: 40.6340, lng: 14.6027 },
+        { name: 'Ravello', lat: 40.6492, lng: 14.6114 },
+      ],
+      notes: "Sorrento as a base (2-3 days), with the Amalfi Coast (Positano/Amalfi/Ravello) by bus/boat, not self-driving (2 days). Season: late May-June or September; July-August is very busy/hot and the restrictions below apply daily then; ferries are seasonal (~May-September) — check the current schedule. ⚠️ The Amalfi Coast's odd/even-license-plate rule applies 10:00-18:00 daily late June-early September plus Easter/25 April, weekends June-July & October (scooters exempt, guests with a hotel reservation may drive on their check-in/check-out day regardless of plate); Positano closes the centre to private vehicles 6:30-24:00 in high summer.",
+      transport_to_next: 'Ferry to Capri (day trip).',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 125, lat: 40.5532, lng: 14.2229,
+      destinations: [
+        { name: 'Capri (day trip)', lat: 40.5532, lng: 14.2229 },
+      ],
+      notes: 'Capri day trip (1 day) to close the trip.',
+      transport_to_next: 'End of this route — direct return flight Naples to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Direct flight Amsterdam-Naples — Circumvesuviana train, SITA buses and seasonal ferries throughout, no rental car recommended.',
+    climate_summary: 'Late May-June or September; July-August is very busy/hot and the odd/even-plate restrictions apply daily then.',
+    description: 'Naples (with a Pompeii day trip), Sorrento as a base for the Amalfi Coast (Positano, Amalfi, Ravello) by bus/boat, and a Capri day trip.',
+    notes: "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. Shares Naples/Amalfi ground with Italy Roadtrip (12 days) 🧀 above and Campania + Puglia (9 days) 🧭 below — the latter explicitly frames itself as combining this route with Puglia (6 days) 🏘️, with Matera as the only genuinely unique addition; see that route's own notes for the source's explicit overlap callout. Not yet checked against Route Builder-level price research beyond the ticket/plate-rule checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildPugliaRoute() {
+  return rbBuildFlatSeedRoute('Puglia (6 days) 🏘️', [
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 110, lat: 41.1171, lng: 16.8719,
+      destinations: [
+        { name: 'Bari', lat: 41.1171, lng: 16.8719 },
+      ],
+      notes: 'Bari (1 day). Direct AMS-Bari (Transavia only, ~9x/week, ~2.5h) — in and out of the same airport, no open-jaw needed. Rental car needed (the trulli countryside and small coastal towns are poorly served by public transport). Budget ~€110/day (Puglia is noticeably cheaper than Amalfi/Tuscany/the north).',
+      transport_to_next: 'Drive to Polignano a Mare/Monopoli.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 110, lat: 40.9959, lng: 17.2199,
+      destinations: [
+        { name: 'Polignano a Mare', lat: 40.9959, lng: 17.2199 },
+        { name: 'Monopoli', lat: 40.9515, lng: 17.3013 },
+      ],
+      notes: 'Polignano a Mare/Monopoli (1 day).',
+      transport_to_next: "Drive into the Valle d'Itria.",
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 220, lat: 40.7844, lng: 17.2378,
+      destinations: [
+        { name: 'Alberobello (trulli)', lat: 40.7844, lng: 17.2378 },
+        { name: 'Locorotondo', lat: 40.7594, lng: 17.3306 },
+        { name: 'Ostuni', lat: 40.7285, lng: 17.5786 },
+      ],
+      notes: "Valle d'Itria: Alberobello/Locorotondo/Ostuni (2 days, one base). Season: May-June or September; July-August is hot and very busy with Italian domestic tourism, especially around Ferragosto (15 August) — book well ahead if travelling then. ⚠️ Alberobello's trulli centre gets touristy around midday — go early or late.",
+      transport_to_next: 'Drive to Lecce.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 110, lat: 40.3515, lng: 18.1750,
+      destinations: [
+        { name: 'Lecce (second base)', lat: 40.3515, lng: 18.1750 },
+      ],
+      notes: "Lecce (1 night at this trip length — a second, 7-day version adds a second Lecce night). Same €110/day budget throughout.",
+      transport_to_next: 'Drive to Otranto/the Salento coast.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 110, lat: 40.1455, lng: 18.4901,
+      destinations: [
+        { name: 'Otranto / Salento coast', lat: 40.1455, lng: 18.4901 },
+      ],
+      notes: 'Otranto/Salento coast (1 day), then back to Bari. Little hassle with reservation systems, unlike Rome/Pompeii.',
+      transport_to_next: 'End of this route — drive back to Bari for the direct return flight to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Direct flight Amsterdam-Bari, rental car for the whole loop — in and out of the same airport.',
+    climate_summary: 'May-June or September; July-August is hot and very busy with Italian domestic tourism, especially around Ferragosto.',
+    description: "Bari, Polignano a Mare/Monopoli, the Valle d'Itria (Alberobello, Locorotondo, Ostuni), Lecce, and Otranto/the Salento coast.",
+    notes: "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. The source's itinerary sums to 7 days at full length (a second Lecce night); this 6-day version compresses Lecce to a single night to match the CSV's recommended day count, matching the source's own pattern of noting where to shorten at the lower end of its day range (as with Sicily above). Explicitly the smaller half of Campania + Puglia (9 days) 🧭 below, which the source frames as combining this route with Campania: Naples + Amalfi Coast (6 days) 🌊, adding only Matera as new ground — see that route's own notes. Not yet checked against Route Builder-level price research beyond the notes folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCampaniaPugliaRoute() {
+  return rbBuildFlatSeedRoute('Campania + Puglia (9 days) 🧭', [
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 250, lat: 40.8518, lng: 14.2681,
+      destinations: [
+        { name: 'Naples', lat: 40.8518, lng: 14.2681 },
+        { name: 'Pompeii', lat: 40.7461, lng: 14.4989 },
+      ],
+      notes: "Naples/Pompeii (2 days). Open-jaw AMS-Naples in, AMS-Bari out (both direct) — fits nicely with the west→east sweep. Budget ~€125/day.",
+      transport_to_next: 'Circumvesuviana/rental car to Sorrento and the Amalfi Coast.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 3, budget: 375, lat: 40.6263, lng: 14.3757,
+      destinations: [
+        { name: 'Sorrento', lat: 40.6263, lng: 14.3757 },
+        { name: 'Amalfi Coast (Positano)', lat: 40.6280, lng: 14.4849 },
+      ],
+      notes: 'Sorrento/Amalfi Coast (2-3 days, boat/bus — the same caution as the standalone Campania route above). Rental car picked up after the Amalfi stretch (or leave it altogether and use boat/bus just for Positano/Amalfi, as in the standalone Campania route).',
+      transport_to_next: 'Drive to Matera (~2h from the Salerno/Amalfi side).',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 125, lat: 40.6664, lng: 16.6043,
+      destinations: [
+        { name: 'Matera', lat: 40.6664, lng: 16.6043 },
+      ],
+      notes: 'Matera (1-2 days, a natural stopover, ~2h from the Salerno/Amalfi side) — the one genuinely unique addition per the source.',
+      transport_to_next: "Drive to the Valle d'Itria.",
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 250, lat: 40.7844, lng: 17.2378,
+      destinations: [
+        { name: 'Alberobello', lat: 40.7844, lng: 17.2378 },
+        { name: 'Ostuni', lat: 40.7285, lng: 17.5786 },
+      ],
+      notes: "Valle d'Itria (Alberobello/Ostuni, 2 days). Season: late May-June or September (avoids both Amalfi's peak-season plate rules and Puglia's Ferragosto crowds).",
+      transport_to_next: 'Drive to Lecce/Salento.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 125, lat: 40.3515, lng: 18.1750,
+      destinations: [
+        { name: 'Lecce / Salento', lat: 40.3515, lng: 18.1750 },
+      ],
+      notes: "Lecce/Salento (1-2 days) to close the trip. ⚠️ Same Pompeii and Amalfi plate/ZTL rules as the standalone Campania route apply to the first half; Matera's cave churches (Casa Grotta, Cripta del Peccato Originale) have their own smaller time-slot/guide rules — check the current 2026 requirements close to your travel date, these change more often than the rules at the major sites. Overlap note: this route heavily overlaps Campania: Naples + Amalfi Coast (6 days) 🌊 plus Puglia (6 days) 🏘️ combined — Matera is the only genuinely unique addition. Treat this as the 'highlights, less time per place' version, not something to do again after the two standalone trips.",
+      transport_to_next: 'End of this route — direct return flight Bari to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: "Open-jaw AMS-Naples in, AMS-Bari out — boat/bus for the Amalfi stretch, rental car afterward, matching the west→east sweep.",
+    climate_summary: "Late May-June or September (avoids both Amalfi's peak-season plate rules and Puglia's Ferragosto crowds).",
+    description: "Naples/Pompeii, Sorrento/the Amalfi Coast, Matera, the Valle d'Itria (Alberobello, Ostuni), and Lecce/Salento.",
+    notes: "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. The source explicitly flags this as heavily overlapping Campania: Naples + Amalfi Coast (6 days) 🌊 and Puglia (6 days) 🏘️ combined, with Matera as the only genuinely unique addition — carried into this route's own notes above exactly as the source frames it, matching its own explicit overlap callout (the one exception in this batch where the overlap is deliberately accepted as 'combine the two standalone trips' rather than a distinct angle). Not yet checked against Route Builder-level price research beyond the plate-rule/time-slot checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaItalyRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_ITALY)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_ITALY, '1');
+
+  rbRoutes.push(
+    rbBuildRomeCityBreakRoute(),
+    rbBuildFlorenceTuscanyRoute(),
+    rbBuildVeniceDolomitesRoute(),
+    rbBuildTuscanyRoute(),
+    rbBuildDolomitesDeepRoute(),
+    rbBuildNorthernItalyLakesRoute(),
+    rbBuildNorthernItalyRoadtripRoute(),
+    rbBuildRomeTuscanyRoute(),
+    rbBuildSicilyNineDaysRoute(),
+    rbBuildSardiniaNineDaysRoute(),
+    rbBuildItalyNorthToCentralRoute(),
+    rbBuildItalyRoadtripRoute(),
+    rbBuildSicilySouthernItalyRoute(),
+    rbBuildCampaniaNaplesAmalfiRoute(),
+    rbBuildPugliaRoute(),
+    rbBuildCampaniaPugliaRoute(),
+  );
+  rbSave();
+}
+
