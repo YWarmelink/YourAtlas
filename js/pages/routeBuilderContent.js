@@ -1242,41 +1242,41 @@ function rbBuildOceaniaExpeditionRoute() {
   return rbBuildSeedRoute('Oceania Grand Expedition 🌊', [
     {
       name: 'Pacific Opener',
-      season: 'Mei-juni',
+      season: 'May-June',
       budget: 4125,
-      note: 'Vijf eilandengroepen in het droge seizoen, ruim vóór het cycloonseizoen (november-april) — de rustige, ontspannen opener van de expeditie.',
+      note: 'Five island groups in the dry season, well before cyclone season (November-April) — the calm, relaxed opener of the expedition.',
       countries: [
         {
           code: 'VU', name: 'Vanuatu', days: 11, budget: 1045, lat: -17.7333, lng: 168.3273,
           destinations: [
             { name: 'Port Vila', lat: -17.7333, lng: 168.3273 },
             { name: 'Mount Yasur (Tanna)', lat: -19.5236, lng: 169.4451 },
-            { name: 'SS President Coolidge wrak (Espiritu Santo)', lat: -15.5085, lng: 167.1739 },
+            { name: 'SS President Coolidge wreck (Espiritu Santo)', lat: -15.5085, lng: 167.1739 },
             { name: 'Blue Holes', lat: -15.5000, lng: 167.1500 },
           ],
-          notes: "Een van de meest toegankelijke actieve vulkanen ter wereld — tot vlak bij de kraterrand van Mount Yasur. Wereldklasse wrakduik op de SS President Coolidge. Prijscorrectie (2026-07): €70→€95/dag (binnenlandse vluchten naar Tanna/Santo + Yasur-tour waren niet gedekt; Air Vanuatu ging in 2024 failliet, vluchten zijn schaarser/duurder geworden). Routelogica-fix (2026-08, search-bevestigd): als eerste land bezocht i.p.v. na Fiji — internationale aankomst loopt praktisch nog steeds via Fiji (Nadi, de belangrijkste internationale gateway van de regio) met een korte aansluitende vlucht naar Port Vila, maar het eigenlijke Fiji-bezoek verschuift naar ná Vanuatu, zodat de rest van de keten (Fiji→Tonga→Samoa→Cook Islands) daarna één ononderbroken oostwaartse lijn is.",
-          transport_to_next: 'Vlucht Port Vila-Nadi (Fiji Airways, direct, ±7x/week, 2u15).',
+          notes: "One of the most accessible active volcanoes in the world — right up to the crater rim of Mount Yasur. World-class wreck diving on the SS President Coolidge. Price correction (2026-07): €70→€95/day (domestic flights to Tanna/Santo + the Yasur tour weren't covered; Air Vanuatu went bankrupt in 2024, flights have become scarcer/more expensive). Route-logic fix (2026-08, search-confirmed): visited as the first country instead of after Fiji — international arrival still practically routes via Fiji (Nadi, the region's main international gateway) with a short connecting flight to Port Vila, but the actual Fiji visit shifts to after Vanuatu, so the rest of the chain (Fiji→Tonga→Samoa→Cook Islands) is then one uninterrupted eastward line.",
+          transport_to_next: 'Flight Port Vila-Nadi (Fiji Airways, direct, ±7x/week, 2h15).',
         },
         {
           code: 'FJ', name: 'Fiji', days: 14, budget: 1050, lat: -17.7765, lng: 177.4356,
           destinations: [
             { name: 'Nadi', lat: -17.7765, lng: 177.4356 },
-            { name: 'Mamanuca-eilanden', lat: -17.6667, lng: 177.1000 },
-            { name: 'Yasawa-eilanden', lat: -16.8000, lng: 177.4500 },
+            { name: 'Mamanuca Islands', lat: -17.6667, lng: 177.1000 },
+            { name: 'Yasawa Islands', lat: -16.8000, lng: 177.4500 },
             { name: 'Taveuni', lat: -16.8500, lng: 179.9833 },
           ],
-          notes: "Beste backpacker-infrastructuur van de Pacific — eilandhoppen per boot (Yasawa Flyer) tussen de Mamanucas en Yasawas, snorkelen en duiken op de koraalriffen. Prijscorrectie (2026-07): €62,50→€75/dag (Yasawa Flyer-bootpas + vlucht naar Taveuni waren niet gedekt). Routelogica-fix (2026-08, search-bevestigd): Nadi is de belangrijkste internationale/regionale luchtvaarthub van de Zuidelijke Stille Oceaan — door Fiji nu ná Vanuatu te bezoeken i.p.v. ervoor, wordt de hub maar één keer 'gepasseerd' voor de rest van de reis in plaats van er drie keer doorheen te moeten (was: Fiji→Vanuatu→terug via Fiji→Samoa→terug via Fiji→Tonga).",
-          transport_to_next: "Vlucht Nadi-Nuku'alofa (Fiji Airways, direct, 12x/week, ~2u).",
+          notes: "Best backpacker infrastructure in the Pacific — island-hopping by boat (Yasawa Flyer) between the Mamanucas and Yasawas, snorkeling and diving on the coral reefs. Price correction (2026-07): €62.50→€75/day (Yasawa Flyer boat pass + flight to Taveuni weren't covered). Route-logic fix (2026-08, search-confirmed): Nadi is the main international/regional aviation hub of the South Pacific — by now visiting Fiji after Vanuatu instead of before, the hub is only 'passed through' once for the rest of the trip instead of three times (was: Fiji→Vanuatu→back via Fiji→Samoa→back via Fiji→Tonga).",
+          transport_to_next: "Flight Nadi-Nuku'alofa (Fiji Airways, direct, 12x/week, ~2h).",
         },
         {
           code: 'TO', name: 'Tonga', days: 8, budget: 800, lat: -21.1393, lng: -175.2046,
           destinations: [
             { name: "Nuku'alofa", lat: -21.1393, lng: -175.2046 },
-            { name: "Vava'u (zwemmen met bultrugwalvissen)", lat: -18.6500, lng: -173.9833 },
+            { name: "Vava'u (swimming with humpback whales)", lat: -18.6500, lng: -173.9833 },
             { name: "Ha'apai", lat: -19.8333, lng: -174.3500 },
           ],
-          notes: "Een van de weinige plekken ter wereld waar je legaal mag zwemmen met bultrugwalvissen — het beste seizoen daarvoor is juli-oktober, dus check de exacte timing bij het plannen van de startdatum. Prijscorrectie (2026-07): €67,50→€100/dag, de grootste correctie van de route — vlucht naar Vava'u + de whale-swim tour zelf (vaak €150-250/dag) waren niet gedekt. Routelogica-fix (2026-08, search-bevestigd): Tonga ligt qua lengtegraad dichter bij Fiji dan Samoa — nu vóór Samoa bezocht i.p.v. erna, zodat de reis monotoon oostwaarts blijft gaan in plaats van eerst voorbij Tonga naar Samoa te springen en dan terug te moeten voor Tonga.",
-          transport_to_next: "Vlucht Nuku'alofa-Apia (geen directe vlucht, via Auckland of Fiji, 5u+).",
+          notes: "One of the few places in the world where you can legally swim with humpback whales — the best season for that is July-October, so check the exact timing when planning the start date. Price correction (2026-07): €67.50→€100/day, the biggest correction on the route — flight to Vava'u + the whale-swim tour itself (often €150-250/day) weren't covered. Route-logic fix (2026-08, search-confirmed): Tonga sits closer to Fiji in longitude than Samoa does — now visited before Samoa instead of after, so the trip keeps moving monotonically eastward instead of first jumping past Tonga to Samoa and then having to backtrack for Tonga.",
+          transport_to_next: "Flight Nuku'alofa-Apia (no direct flight, via Auckland or Fiji, 5h+).",
         },
         {
           code: 'WS', name: 'Samoa', days: 9, budget: 565, lat: -13.8506, lng: -171.7513,
@@ -1286,37 +1286,37 @@ function rbBuildOceaniaExpeditionRoute() {
             { name: 'Lalomanu (beach fales)', lat: -14.0167, lng: -171.4333 },
             { name: 'Upolu', lat: -13.9167, lng: -171.7667 },
           ],
-          notes: "Authentieke Polynesische cultuur, nog weinig aangetast door massatoerisme. Beach fales zijn traditionele, budgetvriendelijke strandhutjes — precies de rustige, lokale ervaring die bij deze reisstijl past. Prijs geverifieerd (2026-07), klopt — relatief goedkoop voor de Pacific.",
-          transport_to_next: "Vlucht Apia-Rarotonga (geen directe vlucht, 12-16u via Auckland of Nadi+Auckland — routelogica-fix 2026-08: iets minder goed verbonden dan de oude Tonga-Cook Islands-verbinding, maar dat weegt niet op tegen het verwijderen van de dubbele Fiji-hub-omweg elders in deze regio, zie Vanuatu/Fiji/Tonga's eigen notities).",
+          notes: "Authentic Polynesian culture, still little affected by mass tourism. Beach fales are traditional, budget-friendly beach huts — exactly the calm, local experience that fits this travel style. Price verified (2026-07), holds up — relatively cheap for the Pacific.",
+          transport_to_next: "Flight Apia-Rarotonga (no direct flight, 12-16h via Auckland or Nadi+Auckland — route-logic fix 2026-08: a slightly less well-connected route than the old Tonga-Cook Islands connection, but that doesn't outweigh removing the double Fiji-hub detour elsewhere in this region, see Vanuatu/Fiji/Tonga's own notes).",
         },
         {
           code: 'CK', name: 'Cook Islands', days: 7, budget: 665, lat: -21.2367, lng: -159.7777,
           destinations: [
             { name: 'Rarotonga', lat: -21.2367, lng: -159.7777 },
-            { name: 'Aitutaki-lagune', lat: -18.8333, lng: -159.7833 },
+            { name: 'Aitutaki Lagoon', lat: -18.8333, lng: -159.7833 },
           ],
-          notes: "De Aitutaki-lagune is minstens zo mooi als Bora Bora, voor een fractie van de prijs — het beste prijs-kwaliteitpunt van de hele Pacific voor lagune-schoonheid. Prijscorrectie (2026-07): €80→€95/dag (Air Rarotonga heeft een monopolie op de Aitutaki-vlucht, plus lagune-cruise).",
-          transport_to_next: 'Vlucht Rarotonga-Perth (lange vlucht, meestal met overstap via Auckland of Sydney) — de grootste enkele vliegverbinding van de hele expeditie, nodig om van de Pacific naar het droge seizoen in West-Australië te komen',
+          notes: "The Aitutaki Lagoon is at least as beautiful as Bora Bora, for a fraction of the price — the best value-for-money spot in the whole Pacific for lagoon beauty. Price correction (2026-07): €80→€95/day (Air Rarotonga has a monopoly on the Aitutaki flight, plus lagoon cruise).",
+          transport_to_next: 'Flight Rarotonga-Perth (long flight, usually with a stopover via Auckland or Sydney) — the single longest flight connection of the whole expedition, needed to get from the Pacific to the dry season in Western Australia',
         },
       ],
     },
     {
-      name: 'Tropisch Australië',
-      season: 'Juni-augustus',
+      name: 'Tropical Australia',
+      season: 'June-August',
       budget: 6300,
-      note: 'Droog seizoen: de Kimberley-wegen zijn begaanbaar, geen moesson, geen kwallenseizoen bij Cairns.',
+      note: 'Dry season: the Kimberley roads are passable, no monsoon, no jellyfish season near Cairns.',
       countries: [
         {
           code: 'AU', name: 'Australia', days: 21, budget: 2520, lat: -31.9505, lng: 115.8605,
           destinations: [
             { name: 'Perth', lat: -31.9505, lng: 115.8605 },
-            { name: 'Ningaloo Reef (walvishaaien)', lat: -22.6833, lng: 113.6667 },
+            { name: 'Ningaloo Reef (whale sharks)', lat: -22.6833, lng: 113.6667 },
             { name: 'Kimberley & Bungle Bungles', lat: -17.5333, lng: 128.4167 },
             { name: 'Gibb River Road', lat: -16.5000, lng: 126.5000 },
             { name: 'Broome', lat: -17.9614, lng: 122.2359 },
           ],
-          notes: 'Ningaloo Reef en de Kimberley zijn spectaculair en kennen weinig massatoerisme — sterke match met natuur boven luxe. Wel de duurste/verste regio van de hele route qua afstanden; eerste kandidaat om in te korten als tijd/budget krap wordt. Prijscorrectie (2026-07): €87,62→€120/dag — de duurste regio bleek ook echt onderbegroot (walvishaai-tours, Bungle Bungles-vluchten, afgelegen roadhouse-prijzen).',
-          transport_to_next: 'Auto over land via de Gibb River Road en Kununurra naar Darwin, of vlucht Broome-Darwin voor wie de Kimberley liever per vliegtuig oversteekt',
+          notes: 'Ningaloo Reef and the Kimberley are spectacular and see little mass tourism — a strong match for nature over luxury. Also the most expensive/remote region of the whole route in terms of distances; first candidate to shorten if time/budget gets tight. Price correction (2026-07): €87.62→€120/day — the most expensive region turned out to also be genuinely underbudgeted (whale shark tours, Bungle Bungles flights, remote roadhouse prices).',
+          transport_to_next: "Car overland via the Gibb River Road and Kununurra to Darwin, or flight Broome-Darwin for those who'd rather cross the Kimberley by plane",
         },
         {
           code: 'AU', name: 'Australia', days: 14, budget: 1470, lat: -12.4634, lng: 130.8456,
@@ -1328,8 +1328,8 @@ function rbBuildOceaniaExpeditionRoute() {
             { name: 'Kata Tjuta', lat: -25.3000, lng: 130.7333 },
             { name: 'Kings Canyon', lat: -24.2500, lng: 131.5667 },
           ],
-          notes: 'Top End en Red Centre samen — de meest iconische landschappen van Australië. Juni-augustus is ook de koelste periode voor Uluru (overdag nog prima te wandelen, niet de verzengende hitte van de zomer). Prijscorrectie (2026-07): €87,50→€105/dag — Yulara/Uluru is een monopolie-resortstadje, ook budgetopties zijn er prijzig.',
-          transport_to_next: 'Vlucht Alice Springs-Cairns of Darwin-Cairns (over land zou via de outback-highways dagenlang duren)',
+          notes: 'Top End and Red Centre together — the most iconic landscapes of Australia. June-August is also the coolest period for Uluru (still fine to walk during the day, not the scorching heat of summer). Price correction (2026-07): €87.50→€105/day — Yulara/Uluru is a monopoly resort town, even budget options there are pricey.',
+          transport_to_next: 'Flight Alice Springs-Cairns or Darwin-Cairns (overland would take days via the outback highways)',
         },
         {
           code: 'AU', name: 'Australia', days: 21, budget: 2310, lat: -16.9203, lng: 145.771,
@@ -1340,16 +1340,16 @@ function rbBuildOceaniaExpeditionRoute() {
             { name: 'Whitsundays & Whitehaven Beach', lat: -20.2833, lng: 149.0333 },
             { name: "Fraser Island / K'gari", lat: -25.2333, lng: 153.1500 },
           ],
-          notes: 'Sterkste match met snorkelen/duiken/wildlife uit de wensenlijst. Droog seizoen betekent ook geen kwallenseizoen (dat loopt november-mei) bij Cairns. Prijscorrectie (2026-07): €87,62→€110/dag — een Whitsundays-zeiltocht of Fraser Island-tour kost al snel €250-400 op zich.',
-          transport_to_next: 'Bus of camper over land langs de oostkust (Cairns-Brisbane-Byron Bay-Sydney), de klassieke backpacker-trail',
+          notes: 'The strongest match for snorkeling/diving/wildlife from the wishlist. Dry season also means no jellyfish season (that runs November-May) near Cairns. Price correction (2026-07): €87.62→€110/day — a Whitsundays sailing trip or Fraser Island tour alone can easily cost €250-400.',
+          transport_to_next: 'Bus or camper overland along the east coast (Cairns-Brisbane-Byron Bay-Sydney), the classic backpacker trail',
         },
       ],
     },
     {
-      name: 'Gematigd Australië',
-      season: 'Augustus-september',
+      name: 'Temperate Australia',
+      season: 'August-September',
       budget: 4130,
-      note: 'Late winter/vroege lente — koeler dan de zomerpiek (december-februari), maar goed te doen; het bewuste compromis van deze route (zie de klimaatredenering van de hele expeditie).',
+      note: "Late winter/early spring — cooler than the summer peak (December-February), but manageable; the deliberate compromise of this route (see the whole expedition's climate reasoning).",
       countries: [
         {
           code: 'AU', name: 'Australia', days: 12, budget: 1050, lat: -33.8688, lng: 151.2093,
@@ -1358,8 +1358,8 @@ function rbBuildOceaniaExpeditionRoute() {
             { name: 'Sydney', lat: -33.8688, lng: 151.2093 },
             { name: 'Blue Mountains', lat: -33.7000, lng: 150.3000 },
           ],
-          notes: 'Klassieke backpacker-trail met goede infrastructuur; Sydney is te iconisch om over te slaan. Prijs geverifieerd (2026-07), klopt.',
-          transport_to_next: 'Auto over land via de kust of de Hume Highway naar Melbourne',
+          notes: 'Classic backpacker trail with good infrastructure; Sydney is too iconic to skip. Price verified (2026-07), holds up.',
+          transport_to_next: 'Car overland via the coast or the Hume Highway to Melbourne',
         },
         {
           code: 'AU', name: 'Australia', days: 10, budget: 875, lat: -37.8136, lng: 144.9631,
@@ -1368,8 +1368,8 @@ function rbBuildOceaniaExpeditionRoute() {
             { name: 'Melbourne', lat: -37.8136, lng: 144.9631 },
             { name: 'Grampians National Park', lat: -37.2333, lng: 142.5167 },
           ],
-          notes: 'De beste roadtrip-ervaring van het hele land — sluit perfect aan bij "roadtrips waar dat logisch is". Prijs geverifieerd (2026-07), klopt.',
-          transport_to_next: 'Veerboot Spirit of Tasmania (Melbourne-Devonport) of korte vlucht naar Hobart/Launceston',
+          notes: 'The best roadtrip experience in the whole country — fits perfectly with "roadtrips where that makes sense". Price verified (2026-07), holds up.',
+          transport_to_next: 'Spirit of Tasmania ferry (Melbourne-Devonport) or short flight to Hobart/Launceston',
         },
         {
           code: 'AU', name: 'Australia', days: 12, budget: 1260, lat: -42.8821, lng: 147.3272,
@@ -1379,8 +1379,8 @@ function rbBuildOceaniaExpeditionRoute() {
             { name: 'Overland Track', lat: -41.8500, lng: 145.9500 },
             { name: 'Hobart', lat: -42.8821, lng: 147.3272 },
           ],
-          notes: 'Ruige natuur, weinig massatoerisme — sterke match met deze reisstijl. Augustus-september is nog fris (soms sneeuw in het hooggebergte), dus pak warme kleding in. Prijscorrectie (2026-07): €87,50→€105/dag — het Overland Track-vergunning alleen al kost ~€120-150 p.p. Routelogica-check (2026-08, search-bevestigd): Hobart-Adelaide is een dagelijkse directe vlucht (Jetstar/Virgin/Qantas, ~2u, ±1.175 km) — géén omweg via Melbourne nodig, de eerdere aanname klopte niet. Volgorde zelf (Melbourne→Tasmanië→Adelaide) is al optimaal.',
-          transport_to_next: 'Vlucht Hobart-Adelaide (rechtstreeks, Jetstar/Virgin/Qantas, ~2u — geen overstap in Melbourne nodig).',
+          notes: 'Rugged nature, little mass tourism — a strong match for this travel style. August-September is still crisp (sometimes snow in the highlands), so pack warm clothing. Price correction (2026-07): €87.50→€105/day — the Overland Track permit alone costs ~€120-150 per person. Route-logic check (2026-08, search-confirmed): Hobart-Adelaide is a daily direct flight (Jetstar/Virgin/Qantas, ~2h, ±1,175 km) — no detour via Melbourne needed, the earlier assumption was wrong. The order itself (Melbourne→Tasmania→Adelaide) is already optimal.',
+          transport_to_next: 'Flight Hobart-Adelaide (direct, Jetstar/Virgin/Qantas, ~2h — no connection in Melbourne needed).',
         },
         {
           code: 'AU', name: 'Australia', days: 9, budget: 945, lat: -34.9285, lng: 138.6007,
@@ -1390,30 +1390,30 @@ function rbBuildOceaniaExpeditionRoute() {
             { name: 'Barossa Valley', lat: -34.5333, lng: 138.9500 },
             { name: 'Flinders Ranges', lat: -31.5000, lng: 138.6000 },
           ],
-          notes: "Kangaroo Island is uitstekend voor wildlife (zeeleeuwen, koala's) — de sterkste match met de wildlife-wens uit dit blok. Barossa Valley (wijn) is de eerste kandidaat om te laten vervallen als er ingekort moet worden. Prijscorrectie (2026-07): €87,78→€105/dag — de Kangaroo Island-veerboot plus schaarse/duurdere accommodatie daar.",
-          transport_to_next: 'Vlucht Adelaide-Christchurch (meestal met overstap in Sydney of Melbourne)',
+          notes: "Kangaroo Island is excellent for wildlife (sea lions, koalas) — the strongest match for the wildlife wish in this block. Barossa Valley (wine) is the first candidate to drop if shortening is needed. Price correction (2026-07): €87.78→€105/day — the Kangaroo Island ferry plus scarcer/pricier accommodation there.",
+          transport_to_next: 'Flight Adelaide-Christchurch (usually with a stopover in Sydney or Melbourne)',
         },
       ],
     },
     {
-      name: 'Nieuw-Zeeland Finale',
-      season: 'September-november',
+      name: 'New Zealand Finale',
+      season: 'September-November',
       budget: 3388,
-      note: 'Voorjaar — stabiel weer, rustiger dan de zomerdrukte (december-februari); door reisgidsen vaak aangeraden als shoulder season. Het emotionele hoogtepunt van de hele expeditie, bewust als afsluiter gekozen.',
+      note: 'Spring — stable weather, quieter than the summer rush (December-February); often recommended by travel guides as a shoulder season. The emotional highlight of the whole expedition, deliberately chosen as the closer.',
       countries: [
         {
           code: 'NZ', name: 'New Zealand', days: 21, budget: 2268, lat: -45.0312, lng: 168.6626,
           destinations: [
             { name: 'Christchurch', lat: -43.5321, lng: 172.6362 },
-            { name: 'Franz Josef & Fox-gletsjers', lat: -43.4667, lng: 170.1667 },
+            { name: 'Franz Josef & Fox Glaciers', lat: -43.4667, lng: 170.1667 },
             { name: 'Queenstown', lat: -45.0312, lng: 168.6626 },
             { name: 'Milford Sound & Fiordland', lat: -44.6714, lng: 167.9250 },
             { name: 'Dunedin & Catlins', lat: -45.8788, lng: 170.5028 },
             { name: 'Kaikoura', lat: -42.4000, lng: 173.6817 },
             { name: 'Abel Tasman', lat: -40.9333, lng: 173.0000 },
           ],
-          notes: 'Concentreert het merendeel van de iconische Nieuw-Zeelandse natuur. Overweeg minstens één Great Walk (Milford Track, Routeburn of Kepler) als meerdaagse hut-to-hut-trek — ruim van tevoren reserveren. Prijscorrectie (2026-07): €80→€108/dag — Milford Sound-cruise, gletsjeractiviteiten en Great Walk hut-fees waren niet gedekt; Queenstown is bovengemiddeld duur. Routelogica-fix (2026-08, search-bevestigd): oude volgorde (Christchurch→Kaikoura→Abel Tasman→Franz Josef→Queenstown→Milford Sound→Dunedin) eindigde bij Dunedin (ver zuiden) terwijl de Picton-ferry in het uiterste noorden ligt — een onvermelde terugrit van ≈692 km, die bovendien het Christchurch-Kaikoura-traject (≈180 km) een tweede keer zou berijden. Nu Christchurch→Franz Josef→Queenstown→Milford Sound→Dunedin (zuid-lus eerst), dan Kaikoura→Abel Tasman→Picton als één doorlopende noordwaartse rit naar de ferry — elk wegstuk maar één keer bereden.',
-          transport_to_next: 'Veerboot Picton-Wellington, over land verder het Noordereiland in',
+          notes: "Concentrates most of the iconic New Zealand scenery. Consider at least one Great Walk (Milford Track, Routeburn or Kepler) as a multi-day hut-to-hut trek — book well in advance. Price correction (2026-07): €80→€108/day — Milford Sound cruise, glacier activities and Great Walk hut fees weren't covered; Queenstown is above-average expensive. Route-logic fix (2026-08, search-confirmed): the old order (Christchurch→Kaikoura→Abel Tasman→Franz Josef→Queenstown→Milford Sound→Dunedin) ended at Dunedin (far south) while the Picton ferry is in the far north — an unmentioned backtrack of ≈692 km, which would also mean driving the Christchurch-Kaikoura stretch (≈180 km) a second time. Now Christchurch→Franz Josef→Queenstown→Milford Sound→Dunedin (southern loop first), then Kaikoura→Abel Tasman→Picton as one continuous northward drive to the ferry — every stretch of road driven only once.",
+          transport_to_next: 'Ferry Picton-Wellington, continuing overland into the North Island',
         },
         {
           code: 'NZ', name: 'New Zealand', days: 14, budget: 1120, lat: -41.2865, lng: 174.7762,
@@ -1425,21 +1425,21 @@ function rbBuildOceaniaExpeditionRoute() {
             { name: 'Bay of Islands', lat: -35.2667, lng: 174.1167 },
             { name: 'Auckland', lat: -36.8485, lng: 174.7633 },
           ],
-          notes: 'De Tongariro Alpine Crossing is de beste dagwandeling van het land. Rotorua voor geothermische verschijnselen en Māori-cultuur. Prijs geverifieerd (2026-07), klopt.',
-          transport_to_next: 'Einde van de expeditie — terugvlucht vanuit Auckland naar Nederland',
+          notes: 'The Tongariro Alpine Crossing is the best day hike in the country. Rotorua for geothermal phenomena and Māori culture. Price verified (2026-07), holds up.',
+          transport_to_next: 'End of the expedition — flight home from Auckland to the Netherlands',
         },
       ],
     },
   ], {
-    travel_style: "Backpacker tussen budget en comfort in — hostels afgewisseld met privékamers, camper/huurauto voor de roadtrip-stukken (Australië, Nieuw-Zeeland), vluchten tussen de Pacific-eilanden (geen praktisch bootalternatief), ferry's waar dat kan (Spirit of Tasmania, Picton-Wellington).",
-    best_starting_month: 'Mei',
-    description: 'Complete reis door Oceanië: de mooiste Pacific-eilanden als rustige opener, gevolgd door tropisch en gematigd Australië, met Nieuw-Zeeland als emotionele afsluiter. Geoptimaliseerd voor de mooiste totaalervaring, niet voor het aantal landen.',
-    climate_summary: "Vergeleken scenario's: (1) de Pacific-eilanden en tropisch Australië (Kimberley, Top End, Cairns) willen allebei het droge seizoen (mei-oktober) — buiten dat venster is er cycloonrisico, moesson en afgesloten onverharde wegen; (2) Nieuw-Zeeland en gematigd Australië (Tasmanië, Victoria) willen juist hun eigen zomer (november-maart) — deze twee vensters overlappen niet en dekken samen het hele jaar. Door te beginnen bij de Pacific-eilanden (mei-juni) en tropisch Australië (juni-augustus), en te eindigen met gematigd Australië (augustus-september) en Nieuw-Zeeland (september-november), land je in het Nieuw-Zeelandse voorjaar — een door reisgidsen vaak aangeraden shoulder season met stabiel weer en minder drukte, ook al is het niet de absolute zomerpiek. Beste keuze: start begin mei bij Fiji, zodat de expeditie (circa 6 maanden) eind oktober/begin november in Nieuw-Zeeland eindigt. Alternatief: wie Nieuw-Zeeland/Tasmanië liever in hun volle zomer (december-februari) doet, kan een bewuste pauze van een paar maanden inbouwen tussen het tropische blok en Nieuw-Zeeland — dat maakt de expeditie 9-10 maanden in plaats van 6.",
-    notes: "Ontworpen in een Q&A-sessie met Claude (2026-07), op basis van een conceptvragenlijst van Youri over route, landen, eilandengroepen, Australië/Nieuw-Zeeland-indeling, reistijd, budget, transport en seizoen. Dagen zijn de 'ideale' tempo-schatting (niet het krappe minimum, niet het meest rustige tempo); budgetten zijn het gemiddelde van Budget Backpacker en Comfort Backpacker (Youri's zelfgekozen reisstijl, tussen die twee in).\n\n" +
-      "Bewust buiten deze route gelaten: Frans-Polynesië en Nieuw-Caledonië (mooi maar prijzig — alleen toevoegen als bewuste splurge, niet meegenomen in dit kernontwerp), en Palau, de Solomon-eilanden, Micronesië, Kiribati en Papoea-Nieuw-Guinea (geografisch een grote omweg, te duur, of logistiek te zwaar voor een soepele backpacker-flow — kandidaten voor een aparte, specialistische reis ooit).\n\n" +
-      "Totaal: 183 dagen (~6 maanden), €14.780 grondkosten + circa €3.500-4.000 aan vluchten (Europa-Oceanië, Australië-interne vluchten, Australië-Nieuw-Zeeland, en losse tickets tussen elk Pacific-eiland). Nog niet getoetst aan actuele prijzen of reisadviezen — behandel dit als een eerste concept, geen boekbaar plan.\n\n" +
-      "Prijzen/visum/reisadvies-verificatie (2026-07): grote bevinding — 9 van de 14 etappes waren onderbegroot, meestal doordat dure, specialistische activiteiten (walvis zwemmen, vulkaanbezoek, duurdere eilandvluchten, nationale-parkvergunningen, Milford Sound-cruises) niet in het vlakke dagtarief pasten. Pacific: Fiji (€62,50→€75), Vanuatu (€70→€95), Tonga (€67,50→€100, grootste correctie), Cook Islands (€80→€95); Samoa bevestigd accuraat. Australië: Perth/Kimberley (€87,62→€120), Darwin/Uluru (€87,50→€105), Cairns/GBR (€87,62→€110), Tasmanië (€87,50→€105), Adelaide/Kangaroo Island (€87,78→€105); Sydney-etappe en Great Ocean Road bevestigd accuraat. Nieuw-Zeeland: Zuidereiland (€80→€108, Milford Sound/gletsjers/Great Walks); Noordereiland bevestigd accuraat. Nieuw totaal: €17.943 grondkosten (was €14.780). Visum: Australië eVisitor is gratis (12 mnd geldig, max 3 mnd per bezoek); Nieuw-Zeeland NZeTA + verplichte IVL-toeristenheffing samen ~€60-63, geldig voor de hele reis. Reisadvies overal groen/routine — vooral seizoensgebonden natuurrisico's (cyclonen, bosbranden, kwallenseizoen in Noord-Australië nov-mei, niet relevant voor deze mei-november-planning).\n\n" +
-      "Routelogica-herziening (2026-08, search-bevestigd, tiende expeditie uit ROUTE_LOGIC_REVIEW.md): drie fixes. (1) **Pacific-eilanden**: de oude volgorde (Fiji→Vanuatu→Samoa→Tonga→Cook Islands) sprong van Fiji naar Vanuatu (west), dan terug oostwaarts voorbij Fiji naar Samoa, dan weer terug naar Tonga (dat dichter bij Fiji ligt dan Samoa) — een dubbele omweg via de Fiji-hub, die twee van de bestaande transportnotities zelf al impliceerden ('meestal met overstap via Fiji'). Nu Vanuatu→Fiji→Tonga→Samoa→Cook Islands: monotoon oostwaarts, Fiji maar één keer gepasseerd. Kleine prijs: de laatste sprong (Samoa-Cook Islands) heeft geen directe vlucht (12-16u via Auckland), iets minder goed verbonden dan de oude Tonga-Cook Islands-verbinding, maar weegt niet op tegen het vermijden van de dubbele hub-omweg. (2) **Tasmanië-Adelaide**: de aanname dat dit 'meestal met overstap in Melbourne' gaat bleek onjuist — Hobart-Adelaide is een dagelijkse directe vlucht (Jetstar/Virgin/Qantas, ~2u); de volgorde zelf (Melbourne→Tasmanië→Adelaide) was al optimaal, alleen de tekst is gecorrigeerd. (3) **Nieuw-Zeeland Zuidereiland**: de oude volgorde eindigde bij Dunedin (ver zuiden) terwijl de Picton-ferry in het uiterste noorden ligt — een onvermelde terugrit van ≈692 km die het Christchurch-Kaikoura-traject een tweede keer zou berijden. Nu Christchurch→Franz Josef→Queenstown→Milford Sound→Dunedin (zuid-lus eerst), dan Kaikoura→Abel Tasman→Picton als één doorlopende noordwaartse rit. Youri had Nieuw-Zeeland en Sydney al eerder bezocht maar wil ze nog een keer doen — geen cuts. Coördinaten per bestemming toegevoegd aan alle 14 etappes. Landen/dagen/budget ongewijzigd — alleen volgorde en transport-notities aangepast. Zelfde fixes ook toegepast op de drie betrokken split-companions (Pacific-eilanden 🌺, Gematigd/Zuidelijk Australië 🍇, Nieuw-Zeeland 🥝); Tropisch/Outback Australië 🐊 bleef ongewijzigd (regio al optimaal, alleen coördinaten toegevoegd).",
+    travel_style: "Backpacking between budget and comfort — hostels alternated with private rooms, camper/rental car for the roadtrip sections (Australia, New Zealand), flights between the Pacific islands (no practical boat alternative), ferries where possible (Spirit of Tasmania, Picton-Wellington).",
+    best_starting_month: 'May',
+    description: 'Complete trip through Oceania: the most beautiful Pacific islands as a calm opener, followed by tropical and temperate Australia, with New Zealand as the emotional finale. Optimized for the best overall experience, not for the number of countries.',
+    climate_summary: "Compared scenarios: (1) the Pacific islands and tropical Australia (Kimberley, Top End, Cairns) both want the dry season (May-October) — outside that window there's cyclone risk, monsoon and closed unpaved roads; (2) New Zealand and temperate Australia (Tasmania, Victoria) want their own summer instead (November-March) — these two windows don't overlap and together cover the whole year. By starting with the Pacific islands (May-June) and tropical Australia (June-August), and ending with temperate Australia (August-September) and New Zealand (September-November), you land in the New Zealand spring — a shoulder season often recommended by travel guides, with stable weather and fewer crowds, even though it's not the absolute summer peak. Best choice: start early May in Fiji, so the expedition (roughly 6 months) ends in New Zealand in late October/early November. Alternative: those who'd rather do New Zealand/Tasmania in their full summer (December-February) can build in a deliberate break of a few months between the tropical block and New Zealand — that makes the expedition 9-10 months instead of 6.",
+    notes: "Designed in a Q&A session with Claude (2026-07), based on a draft questionnaire from Youri about route, countries, island groups, Australia/New Zealand split, travel time, budget, transport and season. Days are the 'ideal' pace estimate (not the tightest minimum, not the most relaxed pace); budgets are the average of Budget Backpacker and Comfort Backpacker (Youri's own chosen travel style, between the two).\n\n" +
+      "Deliberately left out of this route: French Polynesia and New Caledonia (beautiful but pricey — only add as a deliberate splurge, not included in this core design), and Palau, the Solomon Islands, Micronesia, Kiribati and Papua New Guinea (geographically a big detour, too expensive, or logistically too heavy for a smooth backpacker flow — candidates for a separate, specialist trip someday).\n\n" +
+      "Total: 183 days (~6 months), €14,780 ground costs + roughly €3,500-4,000 in flights (Europe-Oceania, Australia internal flights, Australia-New Zealand, and separate tickets between each Pacific island). Not yet checked against current prices or travel advisories — treat this as an initial concept, not a bookable plan.\n\n" +
+      "Prices/visa/travel-advisory verification (2026-07): major finding — 9 of the 14 legs were underbudgeted, mostly because expensive, specialized activities (whale swimming, volcano visits, pricier inter-island flights, national park permits, Milford Sound cruises) didn't fit the flat daily rate. Pacific: Fiji (€62.50→€75), Vanuatu (€70→€95), Tonga (€67.50→€100, biggest correction), Cook Islands (€80→€95); Samoa confirmed accurate. Australia: Perth/Kimberley (€87.62→€120), Darwin/Uluru (€87.50→€105), Cairns/GBR (€87.62→€110), Tasmania (€87.50→€105), Adelaide/Kangaroo Island (€87.78→€105); Sydney leg and Great Ocean Road confirmed accurate. New Zealand: South Island (€80→€108, Milford Sound/glaciers/Great Walks); North Island confirmed accurate. New total: €17,943 ground costs (was €14,780). Visa: Australia eVisitor is free (valid 12 months, max 3 months per visit); New Zealand NZeTA + mandatory IVL tourist levy together ~€60-63, valid for the whole trip. Travel advisory everywhere green/routine — mainly seasonal natural risks (cyclones, wildfires, jellyfish season in northern Australia Nov-May, not relevant for this May-November planning).\n\n" +
+      "Route-logic revision (2026-08, search-confirmed, tenth expedition from ROUTE_LOGIC_REVIEW.md): three fixes. (1) **Pacific islands**: the old order (Fiji→Vanuatu→Samoa→Tonga→Cook Islands) jumped from Fiji to Vanuatu (west), then back eastward past Fiji to Samoa, then back again to Tonga (which sits closer to Fiji than Samoa) — a double detour via the Fiji hub, which two of the existing transport notes already implied themselves ('usually with a stopover via Fiji'). Now Vanuatu→Fiji→Tonga→Samoa→Cook Islands: monotonically eastward, Fiji passed through only once. Small cost: the last jump (Samoa-Cook Islands) has no direct flight (12-16h via Auckland), a slightly less well-connected route than the old Tonga-Cook Islands connection, but it doesn't outweigh avoiding the double hub detour. (2) **Tasmania-Adelaide**: the assumption that this 'usually goes via a stopover in Melbourne' turned out to be wrong — Hobart-Adelaide is a daily direct flight (Jetstar/Virgin/Qantas, ~2h); the order itself (Melbourne→Tasmania→Adelaide) was already optimal, only the text was corrected. (3) **New Zealand South Island**: the old order ended at Dunedin (far south) while the Picton ferry is in the far north — an unmentioned backtrack of ≈692 km that would drive the Christchurch-Kaikoura stretch a second time. Now Christchurch→Franz Josef→Queenstown→Milford Sound→Dunedin (southern loop first), then Kaikoura→Abel Tasman→Picton as one continuous northward drive. Youri had already visited New Zealand and Sydney before but wants to do them again — no cuts. Coordinates added per destination for all 14 legs. Countries/days/budget unchanged — only order and transport notes adjusted. Same fixes also applied to the three affected split companions (Pacific Islands 🌺, Temperate/Southern Australia 🍇, New Zealand 🥝); Tropical/Outback Australia 🐊 remained unchanged (region already optimal, only coordinates added).",
   });
 }
 
