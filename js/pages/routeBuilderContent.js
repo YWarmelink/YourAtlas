@@ -9631,3 +9631,321 @@ function rbSeedEuropaBeneluxRoutes() {
   rbSave();
 }
 
+function rbBuildCologneBonnRhineRoute() {
+  return rbBuildFlatSeedRoute('Cologne + Bonn + Rhine (4 days) 🛳️', [
+    {
+      code: 'DE', name: 'Germany', days: 4, budget: 400, lat: 50.9375, lng: 6.9603,
+      destinations: [
+        { name: 'Cologne (Dom, Altstadt)', lat: 50.9375, lng: 6.9603 },
+        { name: 'Bonn (Beethoven-Haus)', lat: 50.7374, lng: 7.0982 },
+        { name: 'Rüdesheim am Rhein', lat: 49.9786, lng: 7.9256 },
+        { name: 'Bacharach', lat: 50.0552, lng: 7.7669 },
+        { name: 'Loreley', lat: 50.1386, lng: 7.7297 },
+      ],
+      notes: "Entry: own car from the Netherlands (Utrecht-Cologne ~2h12/222km, no toll). Cologne (2d: Dom, Altstadt) — Bonn as a stopover on the way south, not a there-and-back trip from Cologne, it already sits on the route (Beethoven-Haus, through April 2027 also a 'Beethoven by Warhol' exhibition) — Middle Rhine Valley (Rüdesheim/Bacharach/Loreley, 1-2d) with a short 1-2h panoramic cruise (e.g. Bacharach-St. Goar past the Loreley, KD line 25 April-4 October 2026) instead of a full-day cruise. Budget ~€90-115/day p.p. Season: May-June or September-October (grape harvest/autumn colours, less crowded than July-August). Cologne Cathedral requires a paid ticket for the interior from 1 July 2026 (new). Parking in the old town centres is scarce/expensive — use Park+Ride. No general toll for passenger cars on German Autobahns (the Pkw-Maut was ruled illegal by the EU Court in 2019 and never reintroduced; only trucks/buses >3.5t pay Lkw-Maut) — applies to every car-based route in this batch.",
+      transport_to_next: 'End of this route — drive back to the Netherlands (~2h12).',
+    },
+  ], {
+    best_starting_month: 'September',
+    travel_style: 'Own car from the Netherlands throughout.',
+    climate_summary: 'May-June or September-October — grape harvest/autumn colours, less crowded than July-August.',
+    description: "Cologne's Dom and Altstadt, a Bonn stopover for the Beethoven-Haus, and the Middle Rhine Valley's Rüdesheim, Bacharach and Loreley with a short panoramic Rhine cruise.",
+    notes: "Built (2026-08) as part of Germany batch 2 of Phase 2 converting EUROPA_TRIP_IDEAS.md into Route Builder content — the first of three routes covering the Rhine/Moselle region, alongside Moselle Valley (4 days) 🍇 and the combined Rhine + Moselle (5 days) 🚤 (which reuses this same Cologne/Bonn/Middle Rhine cluster in a different, better-ordered itinerary — see that route's notes). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildMoselleValleyRoute() {
+  return rbBuildFlatSeedRoute('Moselle Valley (4 days) 🍇', [
+    {
+      code: 'DE', name: 'Germany', days: 4, budget: 340, lat: 49.7596, lng: 6.6441,
+      destinations: [
+        { name: 'Trier (Porta Nigra)', lat: 49.7596, lng: 6.6441 },
+        { name: 'Bernkastel-Kues', lat: 49.9169, lng: 7.0692 },
+        { name: 'Cochem', lat: 50.1479, lng: 7.1653 },
+        { name: 'Burg Eltz', lat: 50.1017, lng: 7.3372 },
+      ],
+      notes: "Entry: own car from the Netherlands (Maastricht-Trier ~2h/175km, the closest Moselle access from NL). Trier (Porta Nigra, Germany's oldest city) — Bernkastel-Kues (~30 min) — Cochem (~45 min further) — Burg Eltz. Budget ~€75-100/day p.p. Season: September-October for the Winzerfeste (wine harvest festivals) — busier on the narrow valley roads then. Burg Eltz is open 29 March-1 November 2026, 09:30-17:00; no car access to the castle itself — park at Antoniusweg (€4/car, cash) plus shuttle (€2 p.p., cash) or a 30-40 min walk; interior only by guided tour (included, continuous tours from 09:30, English available) — bring cash. No general Autobahn toll for cars (see Cologne + Bonn + Rhine (4 days) 🛳️'s notes).",
+      transport_to_next: 'End of this route — drive back to the Netherlands (~2h).',
+    },
+  ], {
+    best_starting_month: 'September',
+    travel_style: 'Own car from the Netherlands throughout.',
+    climate_summary: 'September-October for the Winzerfeste, busier on the valley roads during that window.',
+    description: "Trier's Porta Nigra, Bernkastel-Kues, Cochem and the fairy-tale Burg Eltz along the Moselle.",
+    notes: "Built (2026-08) as part of Germany batch 2 — the second of three Rhine/Moselle routes, alongside Cologne + Bonn + Rhine (4 days) 🛳️ and the combined Rhine + Moselle (5 days) 🚤, which reuses this same Trier/Bernkastel-Kues/Cochem cluster in a different, better-ordered itinerary — see that route's notes. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildRhineMoselleRoute() {
+  return rbBuildFlatSeedRoute('Rhine + Moselle (5 days) 🚤', [
+    {
+      code: 'DE', name: 'Germany', days: 3, budget: 285, lat: 50.9375, lng: 6.9603,
+      destinations: [
+        { name: 'Cologne', lat: 50.9375, lng: 6.9603 },
+        { name: 'Bonn', lat: 50.7374, lng: 7.0982 },
+        { name: 'Rüdesheim am Rhein', lat: 49.9786, lng: 7.9256 },
+        { name: 'Bacharach', lat: 50.0552, lng: 7.7669 },
+        { name: 'Loreley', lat: 50.1386, lng: 7.7297 },
+        { name: 'Koblenz', lat: 50.3569, lng: 7.5890 },
+      ],
+      notes: "Better ordering than simply gluing the two standalone routes together: Cologne/Bonn — Middle Rhine (Rüdesheim/Bacharach/Loreley) — Koblenz, the natural hinge point where the Moselle meets the Rhine. Own car from the Netherlands. Budget ~€85-110/day p.p. Season: May-June or September-October.",
+      transport_to_next: 'Drive from Koblenz up the Moselle valley to Cochem (~45 min) — overland, no border crossing.',
+    },
+    {
+      code: 'DE', name: 'Germany', days: 2, budget: 190, lat: 50.1479, lng: 7.1653,
+      destinations: [
+        { name: 'Cochem', lat: 50.1479, lng: 7.1653 },
+        { name: 'Bernkastel-Kues', lat: 49.9169, lng: 7.0692 },
+        { name: 'Trier', lat: 49.7596, lng: 6.6441 },
+      ],
+      notes: "Cochem — Bernkastel-Kues — Trier as the endpoint: closest to the Netherlands for the drive home, so not a detour but the logical exit. Same Burg Eltz cash/shuttle caveat as the standalone Moselle Valley (4 days) 🍇 route if that detour is added. No general Autobahn toll for cars (see Cologne + Bonn + Rhine (4 days) 🛳️'s notes).",
+      transport_to_next: 'End of this route — drive back to the Netherlands (~2h from Trier).',
+    },
+  ], {
+    best_starting_month: 'September',
+    travel_style: 'Own car from the Netherlands throughout.',
+    climate_summary: 'May-June or September-October.',
+    description: "A better-ordered combination of the Rhine and Moselle: Cologne/Bonn, the Middle Rhine, Koblenz where the rivers meet, then down the Moselle via Cochem and Bernkastel-Kues to Trier.",
+    notes: "Built (2026-08) as part of Germany batch 2 — a combo route reusing Cologne + Bonn + Rhine (4 days) 🛳️'s Rhine cluster and Moselle Valley (4 days) 🍇's Trier/Bernkastel-Kues/Cochem cluster, re-sequenced with Koblenz added as the connecting hinge (not part of either standalone route). Days/budget split across two legs (3+2=5) rather than one flat block, since the source material frames this as two distinct halves joined at Koblenz. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildHamburgRoute() {
+  return rbBuildFlatSeedRoute('Hamburg (4 days) ⚓', [
+    {
+      code: 'DE', name: 'Germany', days: 4, budget: 380, lat: 53.5511, lng: 9.9937,
+      destinations: [
+        { name: 'Hamburg (Speicherstadt/HafenCity)', lat: 53.5511, lng: 9.9937 },
+        { name: 'Lübeck (optional day trip)', lat: 53.8655, lng: 10.6866 },
+      ],
+      notes: "Speicherstadt/HafenCity, Elbphilharmonie (Plaza free but timed-entry — free same-day tickets or €3 online up to 18 weeks ahead), Reeperbahn/St. Pauli, Miniatur Wunderland (new Asia section in 2026, book timed entry ahead — on weekends/holidays without a booking, waits can run up to 2h), plus the Fischmarkt (Sunday morning) or a half-day in Lübeck (45 min by train, genuine Hanseatic-league atmosphere). No direct train from the Netherlands (change at Osnabrück, ~5-5h16, from €38-40) or own car (~460km/4.5h, toll-free). Budget ~€85-110/day p.p. Season: May-September, May/September best balance of price and crowds.",
+      transport_to_next: 'End of this route — train back via Osnabrück or drive back to the Netherlands.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Train (change at Osnabrück) or own car (~460km/4.5h, toll-free) from the Netherlands.',
+    climate_summary: 'May-September, May/September best balance of price and crowds.',
+    description: "Hamburg's Speicherstadt/HafenCity, Elbphilharmonie, Reeperbahn/St. Pauli and Miniatur Wunderland, with an optional half-day trip to Lübeck.",
+    notes: "Built (2026-08) as part of Germany batch 2 of Phase 2 converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildBerlinRoute() {
+  return rbBuildFlatSeedRoute('Berlin (4 days) 🐻', [
+    {
+      code: 'DE', name: 'Germany', days: 4, budget: 360, lat: 52.5200, lng: 13.4050,
+      destinations: [
+        { name: 'Berlin', lat: 52.5200, lng: 13.4050 },
+      ],
+      notes: "Brandenburg Gate/Reichstag (dome free, register online in advance) — Museum Island (day pass €24) — East Side Gallery (fully open) — Kreuzberg (Turkish market Tue/Fri) plus Mauerpark (Sunday flea market/karaoke) for the less-touristy side of the city. Direct ICE 6x/day, ~5h42, from €38 — clearly better than flying (door-to-door only marginally faster, and pricier) or driving (~6h, no real advantage). Budget ~€80-105/day p.p. — Berlin remains notably cheap for a capital. Season: May-September for the weather, but Christmas markets/winter also work well (less weather-dependent, lower hotel prices). Pergamon Museum closed for renovation until July 2027 (partly offset by the 'Das Panorama' exhibition, €14).",
+      transport_to_next: 'End of this route — direct ICE back to the Netherlands.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Direct ICE train from the Netherlands (~5h42, 6x/day).',
+    climate_summary: 'May-September for the weather; Christmas markets/winter also work well.',
+    description: "Brandenburg Gate and the Reichstag dome, Museum Island, the East Side Gallery, and the less-touristy Kreuzberg and Mauerpark.",
+    notes: "Built (2026-08) as part of Germany batch 2 of Phase 2 converting EUROPA_TRIP_IDEAS.md into Route Builder content — also forms the first leg of Germany: Berlin + Dresden + Bavaria (9 days) 🚂 below (same Berlin content, reused there as a 4-day opening leg). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildDresdenSaxonSwitzerlandRoute() {
+  return rbBuildFlatSeedRoute('Dresden + Saxon Switzerland (4 days) 🧗', [
+    {
+      code: 'DE', name: 'Germany', days: 4, budget: 320, lat: 51.0504, lng: 13.7373,
+      destinations: [
+        { name: 'Dresden (Altstadt, Frauenkirche, Zwinger)', lat: 51.0504, lng: 13.7373 },
+        { name: 'Bastei Bridge / Rathen (Saxon Switzerland NP)', lat: 50.9683, lng: 14.0453 },
+      ],
+      notes: "Dresden (1.5-2d: Altstadt, Frauenkirche, Zwinger) — Saxon Switzerland National Park (2d: Bastei Bridge, hiking). Far from the Netherlands — ICE via Berlin ~8-10h (consider an overnight stop in Berlin) or own car ~734km/6h30 (also needed to reach the hiking trailheads). Budget ~€75-95/day p.p. in Dresden, slightly lower near the park. Season: spring or September (fewer crowds/insects); avoid winter (ice on the sandstone steps). Frauenkirche fully restored (2005), dome climb €12 (only sold on-site, not online). The Bastei Bridge itself is open, but the adjacent Felsenburg Neurathen ruin has been closed since September 2023 (rock stability, no confirmed 2026 reopening) — approach via the hiking path from Rathen rather than the bus/car-park side, and go early in the day (1.5 million visitors/year); check the National Park's 'closed paths' page beforehand.",
+      transport_to_next: 'End of this route — ICE via Berlin or drive back to the Netherlands.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'ICE via Berlin (~8-10h, consider an overnight stop) or own car (~734km/6h30, also needed for the hiking trailheads).',
+    climate_summary: 'Spring or September for fewer crowds/insects; avoid winter (ice on the sandstone steps).',
+    description: "Dresden's Altstadt, Frauenkirche and Zwinger, paired with hiking and the Bastei Bridge in Saxon Switzerland National Park.",
+    notes: "Built (2026-08) as part of Germany batch 2 of Phase 2 converting EUROPA_TRIP_IDEAS.md into Route Builder content — also forms the second leg of Germany: Berlin + Dresden + Bavaria (9 days) 🚂 below (same Dresden/Saxon Switzerland content, reused there as a shorter 2-day leg). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildBavariaMunichAlpsRoute() {
+  return rbBuildFlatSeedRoute('Bavaria: Munich + Alps (5 days) 🥨', [
+    {
+      code: 'DE', name: 'Germany', days: 5, budget: 525, lat: 48.1351, lng: 11.5820,
+      destinations: [
+        { name: 'Munich (Marienplatz, Englischer Garten, Deutsches Museum)', lat: 48.1351, lng: 11.5820 },
+        { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0956 },
+        { name: 'Füssen', lat: 47.5722, lng: 10.7017 },
+        { name: 'Hohenschwangau (Neuschwanstein)', lat: 47.5575, lng: 10.7397 },
+      ],
+      notes: "Munich (2d: Marienplatz, Englischer Garten, Deutsches Museum) — Garmisch-Partenkirchen (~90km/1-1.5h) — Füssen/Hohenschwangau (~50 min further) — a straight southward line, no detour. Budget ~€90-130/day p.p. Season: May-September. Zugspitze cable car ~€62 p.p. return (full route) or €47 (Eibsee cable car only) — book online ahead on good-weather days/weekends. Neuschwanstein only with a mandatory timed guided tour (~€17.50-21 p.p.), book up to 8 weeks ahead and in practice necessary — 10:00-14:00 slots sell out fast in summer — the castle stays open during the multi-year restoration (until ~2029). Deutsches Museum: roughly half (mining hall, planetarium) closed until ~2028, but the open part (aviation/space/robotics) is still worth half a day. Parking near Hohenschwangau/Neuschwanstein ~€8/day, a real extra cost not folded into the daily budget.",
+      transport_to_next: 'End of this route — drive back or fly out of Munich.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Own car, a straight southward line from Munich with no detour.',
+    climate_summary: 'May-September.',
+    description: "Munich's Marienplatz and Deutsches Museum, then a straight line south via Garmisch-Partenkirchen to Füssen and Neuschwanstein Castle at Hohenschwangau.",
+    notes: "Built (2026-08) as part of Germany batch 2 of Phase 2 converting EUROPA_TRIP_IDEAS.md into Route Builder content. Also the base cluster reused (extended with Berchtesgaden) by Bavaria + Alps + Berchtesgaden (6 days) ⛰️ below, and in a shortened 3-day form by Germany: Berlin + Dresden + Bavaria (9 days) 🚂. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildBavariaAlpsBerchtesgadenRoute() {
+  return rbBuildFlatSeedRoute('Bavaria + Alps + Berchtesgaden (6 days) ⛰️', [
+    {
+      code: 'DE', name: 'Germany', days: 4, budget: 400, lat: 48.1351, lng: 11.5820,
+      destinations: [
+        { name: 'Munich', lat: 48.1351, lng: 11.5820 },
+        { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0956 },
+        { name: 'Füssen', lat: 47.5722, lng: 10.7017 },
+        { name: 'Hohenschwangau (Neuschwanstein)', lat: 47.5575, lng: 10.7397 },
+      ],
+      notes: "Same route as the standalone Bavaria: Munich + Alps (5 days) 🥨, compressed to 4 days here to make room for the Berchtesgaden loop below — same Zugspitze cable car and Neuschwanstein timed-tour caveats apply (see that route's notes). Budget ~€95-110/day p.p. incl. the Berchtesgaden stay.",
+      transport_to_next: 'Drive via the ring road around Munich/A8 toward Salzburg to Berchtesgaden (2h12-2h20/~200km from Garmisch/Füssen) — geographically the opposite direction, deliberately planned as the loop\'s closing leg, not a short detour.',
+    },
+    {
+      code: 'DE', name: 'Germany', days: 2, budget: 200, lat: 47.6303, lng: 13.0006,
+      destinations: [
+        { name: 'Berchtesgaden', lat: 47.6303, lng: 13.0006 },
+        { name: 'Königssee', lat: 47.5586, lng: 12.9847 },
+      ],
+      notes: "Berchtesgaden/Königssee as the loop's final stop. Königssee boat trip to St. Bartholomä ~€16.90 p.p. return (half route) or €29.80 (full route to Salet). Parking near Königssee ~€5-8/day, a real extra cost not folded into the daily budget.",
+      transport_to_next: 'End of this route — drive back to the Netherlands via Munich/A8.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Own car; a deliberate loop via the Munich/A8 ring toward Salzburg to close with Berchtesgaden, not a short detour.',
+    climate_summary: 'May-September.',
+    description: "The Munich + Alps route (Garmisch-Partenkirchen, Füssen, Neuschwanstein) extended with Berchtesgaden and a Königssee boat trip as the loop's closing leg.",
+    notes: "Built (2026-08) as part of Germany batch 2 — a longer version of Bavaria: Munich + Alps (5 days) 🥨 (see that route's notes for the shared Munich/Garmisch/Füssen/Hohenschwangau content), with Berchtesgaden/Königssee added as a second leg reached via a deliberate loop, not a backtrack. Days/budget split 4+2=6 across the two legs to reflect that loop structure. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildRomanticRoadRoute() {
+  return rbBuildFlatSeedRoute('Romantic Road (6 days) 🏰', [
+    {
+      code: 'DE', name: 'Germany', days: 6, budget: 510, lat: 49.7913, lng: 9.9534,
+      destinations: [
+        { name: 'Würzburg', lat: 49.7913, lng: 9.9534 },
+        { name: 'Rothenburg ob der Tauber', lat: 49.3757, lng: 10.1786 },
+        { name: 'Nördlingen', lat: 48.8506, lng: 10.4886 },
+        { name: 'Augsburg', lat: 48.3705, lng: 10.8978 },
+        { name: 'Füssen', lat: 47.5722, lng: 10.7017 },
+      ],
+      notes: "The official signed 'Romantische Straße' route, confirmed: Würzburg — Rothenburg ob der Tauber — Nördlingen — Augsburg — Füssen (via Landsberg am Lech), 413km total, no backtracking. NL-Würzburg ~5h/550km. Budget ~€75-95/day p.p. in the smaller Franconian towns, rising to €110+ on the last day near Neuschwanstein (same timed-tour caveat as Bavaria: Munich + Alps (5 days) 🥨 if that detour is added). Season: late spring/early autumn (fewer crowds in Rothenburg) — late November-December for Rothenburg's Reiterlesmarkt (Christmas market) as a well-known alternative in a completely different season.",
+      transport_to_next: 'End of this route — drive back to the Netherlands from Füssen, or continue into the Bavarian Alps.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Own car along the officially signed Romantische Straße, confirmed no backtracking.',
+    climate_summary: 'Late spring or early autumn for fewer crowds in Rothenburg; late Nov-Dec for the Reiterlesmarkt as a winter alternative.',
+    description: "The official Romantic Road from Würzburg through Rothenburg ob der Tauber, Nördlingen and Augsburg to Füssen.",
+    notes: "Built (2026-08) as part of Germany batch 2 of Phase 2 converting EUROPA_TRIP_IDEAS.md into Route Builder content. Ends at Füssen, the same town where Bavaria: Munich + Alps (5 days) 🥨 and the Berchtesgaden/Alpine Road routes below also pass through — deliberately not deduplicated (see CLAUDE.md's Route Builder vs. overlap policy). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildBlackForestRoute() {
+  return rbBuildFlatSeedRoute('Black Forest (6 days) 🕰️', [
+    {
+      code: 'DE', name: 'Germany', days: 6, budget: 540, lat: 47.9990, lng: 7.8421,
+      destinations: [
+        { name: 'Freiburg im Breisgau (base)', lat: 47.9990, lng: 7.8421 },
+        { name: 'Titisee', lat: 47.9018, lng: 8.1517 },
+        { name: 'Triberg', lat: 48.1264, lng: 8.2311 },
+        { name: 'Baden-Baden', lat: 48.7606, lng: 8.2400 },
+      ],
+      notes: "Freiburg as a base — Titisee (~50km/45-60min) — Triberg (waterfalls, cuckoo clocks) — Baden-Baden (~65km/1h) — back toward the Netherlands (northward, no detour). NL-Freiburg 5-7h depending on starting point. Budget ~€85-100/day p.p. Season: May or September-October for price/crowds, summer for swimming/hiking at Titisee, autumn for the colours. Baden-Baden has two very different spas — Caracalla Spa (swimwear required, ~€21/2h-€35 day pass, casual/family-friendly) vs. Friedrichsbad (traditional Roman-Irish bath, nude and mixed, ~€36 without massage) — worth knowing which one you're booking before you go. No general Autobahn toll for cars (see Cologne + Bonn + Rhine (4 days) 🛳️'s notes).",
+      transport_to_next: 'End of this route — drive back to the Netherlands (northward).',
+    },
+  ], {
+    best_starting_month: 'September',
+    travel_style: 'Own car, based in Freiburg with day trips, looping back north toward the Netherlands.',
+    climate_summary: 'May or September-October for price/crowds; summer for Titisee swimming; autumn for the colours.',
+    description: "Freiburg as a base for Titisee, Triberg's waterfalls and cuckoo clocks, and Baden-Baden's historic spas.",
+    notes: "Built (2026-08) as part of Germany batch 2 of Phase 2 converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildBerlinDresdenBavariaRoute() {
+  return rbBuildFlatSeedRoute('Germany: Berlin + Dresden + Bavaria (9 days) 🚂', [
+    {
+      code: 'DE', name: 'Germany', days: 4, budget: 360, lat: 52.5200, lng: 13.4050,
+      destinations: [
+        { name: 'Berlin', lat: 52.5200, lng: 13.4050 },
+      ],
+      notes: "Same Berlin content as the standalone Berlin (4 days) 🐻 route (Brandenburg Gate/Reichstag, Museum Island, East Side Gallery, Kreuzberg/Mauerpark) — see that route's notes for ticket details. Direct ICE from the Netherlands.",
+      transport_to_next: 'Train Berlin-Dresden, ~2h, short and easy — a same-day connection.',
+    },
+    {
+      code: 'DE', name: 'Germany', days: 2, budget: 160, lat: 51.0504, lng: 13.7373,
+      destinations: [
+        { name: 'Dresden', lat: 51.0504, lng: 13.7373 },
+        { name: 'Bastei Bridge / Saxon Switzerland NP', lat: 50.9683, lng: 14.0453 },
+      ],
+      notes: "Shortened to 2 days here from the standalone Dresden + Saxon Switzerland (4 days) 🧗 route — same Frauenkirche dome-climb and Bastei/Felsenburg Neurathen caveats apply (see that route's notes).",
+      transport_to_next: 'Train (~4-4.5h) or a short flight Dresden-Munich — both realistically doable within a single day.',
+    },
+    {
+      code: 'DE', name: 'Germany', days: 3, budget: 315, lat: 48.1351, lng: 11.5820,
+      destinations: [
+        { name: 'Munich', lat: 48.1351, lng: 11.5820 },
+        { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0956 },
+        { name: 'Füssen / Hohenschwangau (Neuschwanstein)', lat: 47.5722, lng: 10.7017 },
+      ],
+      notes: "Shortened 3-day version of Bavaria: Munich + Alps (5 days) 🥨 — same Zugspitze cable car and Neuschwanstein timed-tour caveats apply (see that route's notes); with only 3 days, prioritise Neuschwanstein/Füssen over a full Zugspitze day if time is tight.",
+      transport_to_next: 'End of this route — fly or take the train back to the Netherlands from Munich.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Train (Berlin-Dresden) then train or a short flight (Dresden-Munich); train/flight from Munich back to the Netherlands.',
+    climate_summary: 'May-September — the Bavaria leg determines this.',
+    description: "A three-city combination of Berlin, Dresden with Saxon Switzerland, and a shortened Bavaria/Alps leg around Munich.",
+    notes: "Built (2026-08) as part of Germany batch 2 — a combo route reusing content from Berlin (4 days) 🐻, Dresden + Saxon Switzerland (4 days) 🧗 and Bavaria: Munich + Alps (5 days) 🥨, each shortened/compressed for this longer multi-city itinerary (4+2+3=9 days). Per this project's overlap-is-fine convention, built as its own independent route rather than skipped or merged. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildGermanAlpineRoadRoute() {
+  return rbBuildFlatSeedRoute('German Alpine Road / Deutsche Alpenstraße (9 days) 🏞️', [
+    {
+      code: 'DE', name: 'Germany', days: 9, budget: 890, lat: 47.5460, lng: 9.6832,
+      destinations: [
+        { name: 'Lindau (Lake Constance)', lat: 47.5460, lng: 9.6832 },
+        { name: 'Füssen', lat: 47.5722, lng: 10.7017 },
+        { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0956 },
+        { name: 'Chiemsee / Prien am Chiemsee', lat: 47.8514, lng: 12.3450 },
+        { name: 'Berchtesgaden', lat: 47.6303, lng: 13.0006 },
+      ],
+      notes: "Better framed as the official 'Deutsche Alpenstraße' (German Alpine Road) — a designated scenic route from Lindau to Königssee — rather than simply 'Bavaria again': Lindau (Lake Constance) — Füssen (~101km/1h19) — Garmisch-Partenkirchen (~51 min) — Chiemsee/Prien (~135km/1h41) — Berchtesgaden (~76km/1h01) — west to east, confirmed no backtracking. Budget ~€80-105/day p.p. on average (roughly 7 normal days at ~€90 plus two peak-cost days around €120-140), with two peak days: Neuschwanstein+Zugspitze (same caveats as Bavaria: Munich + Alps (5 days) 🥨), and Königssee (same boat-trip caveat as Bavaria + Alps + Berchtesgaden (6 days) ⛰️). Season: June-September for full access to mountain roads/cable cars/high-altitude trails. Zugspitze cable car fully closed 9-13, 16-20 and 23-26 November 2026 for maintenance (irrelevant for a summer trip). Parking near Hohenschwangau/Neuschwanstein (~€8/day) and Königssee (~€5-8/day) are real extra costs, not folded into the flat daily budget.",
+      transport_to_next: 'End of this route — drive back to the Netherlands from Berchtesgaden.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Own car along the officially designated Deutsche Alpenstraße, west to east, confirmed no backtracking.',
+    climate_summary: 'June-September for full access to mountain roads, cable cars and high-altitude trails.',
+    description: "The official Deutsche Alpenstraße scenic route from Lindau on Lake Constance to Berchtesgaden, via Füssen, Garmisch-Partenkirchen and the Chiemsee.",
+    notes: "Built (2026-08) as part of Germany batch 2 of Phase 2 converting EUROPA_TRIP_IDEAS.md into Route Builder content. Shares Füssen, Garmisch-Partenkirchen and Berchtesgaden with several other routes in this batch (Bavaria: Munich + Alps (5 days) 🥨, Bavaria + Alps + Berchtesgaden (6 days) ⛰️, Germany: Berlin + Dresden + Bavaria (9 days) 🚂) — deliberately not deduplicated, per this project's overlap-is-fine convention; this route's own throughline is Lindau-to-Berchtesgaden as the official signed Alpine Road, not a repeat of the others. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaGermanyRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_GERMANY)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_GERMANY, '1');
+
+  rbRoutes.push(
+    rbBuildCologneBonnRhineRoute(),
+    rbBuildMoselleValleyRoute(),
+    rbBuildRhineMoselleRoute(),
+    rbBuildHamburgRoute(),
+    rbBuildBerlinRoute(),
+    rbBuildDresdenSaxonSwitzerlandRoute(),
+    rbBuildBavariaMunichAlpsRoute(),
+    rbBuildBavariaAlpsBerchtesgadenRoute(),
+    rbBuildRomanticRoadRoute(),
+    rbBuildBlackForestRoute(),
+    rbBuildBerlinDresdenBavariaRoute(),
+    rbBuildGermanAlpineRoadRoute(),
+  );
+  rbSave();
+}
+
