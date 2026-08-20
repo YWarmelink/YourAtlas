@@ -128,6 +128,17 @@ Month-range notation keeps the en-dash: e.g. "April–juni" → "April–June", 
 | gravana | gravana | Kept as-is — São Tomé & Príncipe's own name for its dry season (June-September), same loanword treatment as harmattan/moesson/carême (see batch 9 additions above). |
 | harmattan | harmattan | Kept as-is — the dry, dusty West African trade wind/season (roughly December-February). Not previously given its own row, but already treated as a recognizable loanword per the batch 9 "carême" note; added explicitly here since this batch uses it repeatedly. |
 
+## 8. Batch 12 additions (Oceania — final translation batch)
+
+| Dutch | English | Notes |
+|---|---|---|
+| overstap(pen) | connection(s) / stopover(s) | Recurs in nearly every "Entry:" flight-cost sentence across all batches (e.g. "met overstap", "met meerdere overstappen") but hadn't been given its own row yet. |
+| Langeafstandsvlucht-buffer (20XX-XX, zie CLAUDE.md) | Long-haul flight buffer (20XX-XX, see CLAUDE.md) | The structural marker used in every standalone single-country route's notes when CLAUDE.md's +2-day buffer policy applies (see CLAUDE.md's "long-haul flight buffer policy" section). |
+| de 24-uursdrempel | the 24-hour threshold | Shorthand used alongside the long-haul flight buffer marker for the ~24h round-trip-flight-time cutoff. |
+| kwallenseizoen | jellyfish season | Northern Australia, Nov-May. |
+| walvishaaien | whale sharks | Ningaloo Reef, Western Australia. |
+| bultrugwalvissen | humpback whales | Tonga (Vava'u), the seasonal whale-swim destination. |
+
 ---
 
-*Extracted from batches 1–7 (2026-08-18/19), plus batch 9 (2026-08-19, Caribbean & Amazon) and batch 11 (2026-08-19, West & Central Africa). Update this file as later batches surface new recurring terms — do not let it go stale.*
+*Extracted from batches 1–7 (2026-08-18/19), plus batch 9 (2026-08-19, Caribbean & Amazon), batch 11 (2026-08-19, West & Central Africa) and batch 12 (2026-08-20, Oceania — the 13th and final Route Builder Dutch-to-English translation batch; Phase 1 of the project is now complete, so this glossary's translation-batch role ends here, though it may still be a useful reference later.)*

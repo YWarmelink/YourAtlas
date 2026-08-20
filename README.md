@@ -315,7 +315,7 @@ found in every dict-based batch (5 of 5, 100% hit rate) — is in [`CHANGELOG.md
 | 9 | British Isles & Celtic Coast | hand-authored | 4 | **done** | **~170,000** |
 | 10 | Caribbean & Amazon + standalones | hand-authored | 2 + 7 | **done** | **~200,000** |
 | 11 | West & Central Africa + standalones | hand-authored | 2 + 5 | **done** | **~200,000** |
-| 12 | Oceania + standalones | hand-authored | 4 + 7 | not started | — |
+| 12 | Oceania + standalones | hand-authored | 4 + 7 | **done** | **~185,000** |
 | 13 | North America + standalones | hand-authored | 3 + 2 | **done** | **~190,000** |
 
 Batch 10's "2 + 7" splitroute count corrects the row's original estimate of just "2 splitroutes" —
@@ -383,15 +383,33 @@ the init call sequence (in `routeBuilder.js`), run
 catch syntax errors before committing, commit locally (ask before pushing), report the real token
 cost, then ask before starting the next batch.
 
-**Resume point (updated after every batch — read this first when picking Phase 1 back up)**: 12 of 13
-done — **all 5 dict-based families complete, plus five hand-authored families (Mediterranean
-Civilizations, #7; British Isles & Celtic Coast, #9; Caribbean & Amazon, #10; West & Central
-Africa, #11; North America Grand Traverse, #13)**. Batches have been picked out of table order each
-time (pilot was #8, then #1→#2→#3→#4→#5→#6→#7→#10→#9→#11→#13) — don't assume sequential order, just
-ask which family next. Only **1 hand-authored family is left (#12, Oceania Grand Expedition)** — no
-dict-cascade discount, but the table's stated "4 + 7" splitroute/standalone count for it hasn't been
-recon-verified yet, so check it (the same way #10's "+7" and #13's "+6→+2" both turned out to differ
-from the table's original guess) before assuming it's accurate. No blocker either way.
+Batch 12's (Oceania Grand Expedition) "4 + 7" splitroute/standalone count turned out to be exactly
+right — unlike batches 10, 11 and 13, no correction was needed here once actually recon-checked.
+Renames: Pacific-eilanden 🌺 → **Pacific Islands 🌺**, Tropisch/Outback Australië 🐊 →
+**Tropical/Outback Australia 🐊**, Gematigd/Zuidelijk Australië 🍇 → **Temperate/Southern Australia
+🍇**, Nieuw-Zeeland 🥝 → **New Zealand 🥝** (all 4 splitroutes), plus 3 of the 7 standalones
+(Nieuw-Zeeland Zuidereiland 🏔️ → **New Zealand South Island 🏔️**, Tasmanië 🐾 → **Tasmania 🐾**,
+Nieuw-Zeeland Noordereiland 🌿 → **New Zealand North Island 🌿**); the other 4 standalones (Cairns &
+Great Barrier Reef 🐠, Fiji 🌊, Sydney/Byron & Great Ocean Road 🦘, Fiji & Vanuatu 🐚) already used
+English names and only needed their content translated. The main expedition's name itself ("Oceania
+Grand Expedition 🌊") was already English and unchanged. Migration-collision check found **no**
+widening needed for any of the three pre-existing migrations touching this family
+(`rbMigrateOceaniaExpeditionBuild`, `rbMigrateOceaniaRouteLogicOverhaul`,
+`rbMigrateSplitRouteEntryNotes`) — all three are pure name-lookup wholesale-replaces or already
+carry the widened `'Instap:'`/`'Entry:'` guard from an earlier batch, so they simply stop matching
+(harmlessly) once the renames land — see `rbMigrateOceaniaFamilyEnglish()`'s own docstring in
+`routeBuilderContent.js` for the full verification writeup, including the same-shaped check on
+`rbMigrateLonghaulBuffer()`.
+
+**Resume point**: **Phase 1 is complete — all 13 of 13 batches done.** All 5 dict-based families
+plus all 8 hand-authored families (Mediterranean Civilizations #7, Central European Grand Roadtrip
+#8, British Isles & Celtic Coast #9, Caribbean & Amazon #10, West & Central Africa #11, Oceania
+Grand Expedition #12, North America Grand Traverse #13) are fully translated to English, migrations
+written and wired in, `node --check` clean on every batch's final commit. Batches were picked out of
+table order throughout (pilot was #8, then #1→#2→#3→#4→#5→#6→#7→#10→#9→#11→#13→#12) — this is now
+moot since nothing is left in Phase 1. **Next workstream: Phase 2** (below) — converting
+`EUROPA_TRIP_IDEAS.md`'s ~319 tagged items into real `rbBuildXRoute()` code, authored directly in
+English against an already-all-English Route Builder.
 
 ### Phase 2 — convert `EUROPA_TRIP_IDEAS.md`'s 319 tagged items into real `rbBuildXRoute()` code
 
