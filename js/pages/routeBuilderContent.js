@@ -9439,3 +9439,195 @@ function rbMigrateAlaskaAddition() {
   rbSave();
 }
 
+// ---- Europa Trip Ideas conversion, Phase 2 pilot batch: Benelux (2026-08) ----
+// First batch of the project converting EUROPA_TRIP_IDEAS.md's 319 markdown trip ideas into real
+// Route Builder content (full hand-authored depth: real per-destination coordinates, full
+// narrative notes — same standard as the 131 pre-existing routes, not a thinner auto-generated
+// version). Chosen deliberately as the smallest cluster to calibrate real token cost before
+// planning the remaining ~20 batches. Source: EUROPA_TRIP_IDEAS.md's "Benelux — batch 1" section
+// (lines 38-93, 2026-08). Names/countries/budgets pre-established in TRIP_DATABASE.csv rows
+// 133-138 during an earlier, separate taxonomy-tagging workstream.
+//
+// Three of these six routes deliberately use different Ardennes stops so they don't overlap:
+// Ardennes (3 days) 🦌 uses La Roche-en-Ardenne/Han-sur-Lesse/Coo/Durbuy; Luxembourg + Ardennes
+// (4 days) 🎖️ and South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️ both use Bastogne
+// instead — see each route's own notes.
+
+function rbBuildArdennesRoute() {
+  return rbBuildFlatSeedRoute('Ardennes (3 days) 🦌', [
+    {
+      code: 'BE', name: 'Belgium', days: 3, budget: 264, lat: 50.1833, lng: 5.5833,
+      destinations: [
+        { name: 'La Roche-en-Ardenne', lat: 50.1833, lng: 5.5833 },
+        { name: 'Han-sur-Lesse', lat: 50.1167, lng: 5.2000 },
+        { name: 'Coo', lat: 50.3833, lng: 5.9167 },
+        { name: 'Durbuy', lat: 50.3522, lng: 5.4536 },
+      ],
+      notes: "Entry: own car from the Netherlands (~2.5-3h drive). Base in La Roche-en-Ardenne (castle ruin, canoeing on the Ourthe), with a day trip to Han-sur-Lesse (caves + wildlife park), then Coo (waterfalls, cable car) and an optional stop in Durbuy ('the world's smallest city'). Season: April-October for canoeing/hiking. Budget ~€80-95/day (B&B/hotel + food + activities) — revised after a web check, €70-80 was slightly too low once a Han-sur-Lesse day is factored in. Web check (2026-08): the Han-sur-Lesse caves + wildlife park combo ticket is €41.50 p.p. — a separate cost, not included in the daily budget; the park closes from 12 November and has shorter opening hours outside peak season (sometimes only 10:00-15:00). The Coo cable car sits within Plopsaland Ardennes, which is NOT open every day outside school holidays (2026: daily open 4-19 April, 25 April-10 May, 28 May-31 August, 17 October-8 November) — check the calendar, don't assume 'April-October = always open'.",
+      transport_to_next: 'End of this route — drive back to the Netherlands (~2.5-3h).',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Own car from the Netherlands throughout.',
+    climate_summary: 'April-October for canoeing and hiking; check the Coo cable car/Plopsaland Ardennes calendar separately, it does not follow that same window.',
+    description: "La Roche-en-Ardenne's castle ruin and canoeing, Han-sur-Lesse's caves and wildlife park, Coo's waterfalls and cable car, and an optional stop in Durbuy.",
+    notes: "Built (2026-08) as the pilot batch of Phase 2 converting EUROPA_TRIP_IDEAS.md's 319 markdown trip ideas into real Route Builder content — chosen as the smallest cluster (this Benelux batch of six) to calibrate real token cost before planning the remaining ~20 batches. Uses La Roche-en-Ardenne/Han-sur-Lesse/Coo as its Ardennes stop, deliberately different from Bastogne, used instead in the Luxembourg + Ardennes (4 days) 🎖️ and South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️ routes below, so none of these three overlap. Not yet checked against Route Builder-level price research (no flight/visa check needed here, everything is by own car within Schengen) — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildLuxembourgRoute() {
+  return rbBuildFlatSeedRoute('Luxembourg (4 days) 🪨', [
+    {
+      code: 'LU', name: 'Luxembourg', days: 4, budget: 440, lat: 49.6116, lng: 6.1319,
+      destinations: [
+        { name: 'Luxembourg City (Bock Casemates)', lat: 49.6116, lng: 6.1319 },
+        { name: 'Berdorf', lat: 49.8167, lng: 6.3500 },
+        { name: 'Echternach', lat: 49.8114, lng: 6.4211 },
+        { name: 'Vianden', lat: 49.9350, lng: 6.2081 },
+      ],
+      notes: "Entry: own car from the Netherlands (~4h drive). Luxembourg City (Bock Casemates, open year-round, €11) — Müllerthal/'Luxembourg's Switzerland' (Berdorf/Echternach, the well-known rock-formation hiking trails) — Vianden (castle €11-13 + cable car). Season: April-October for hiking in Müllerthal. Budget ~€100-120/day — revised after a web check, €90-100 was too low: Luxembourg City is one of the pricier cities in the EU for food and accommodation. Web check (2026-08): the Vianden cable car is still running, but with seasonal gaps (e.g. 2025: 4 Apr-27 Jun and 1 Sep-12 Oct, not the whole summer) — check the current 2026 dates before relying on it.",
+      transport_to_next: 'End of this route — drive back to the Netherlands (~4h).',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Own car from the Netherlands throughout.',
+    climate_summary: 'April-October for hiking in Müllerthal.',
+    description: "Luxembourg City's Bock Casemates, Müllerthal's rock-formation hikes, and Vianden's castle and cable car.",
+    notes: "Built (2026-08) as part of the Benelux pilot batch of Phase 2 converting EUROPA_TRIP_IDEAS.md into Route Builder content (see the Ardennes (3 days) 🦌 route's notes for batch context). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildLuxembourgArdennesRoute() {
+  return rbBuildFlatSeedRoute('Luxembourg + Ardennes (4 days) 🎖️', [
+    {
+      code: 'BE', name: 'Belgium', days: 1, budget: 70, lat: 50.0036, lng: 5.7167,
+      destinations: [
+        { name: 'Bastogne', lat: 50.0036, lng: 5.7167 },
+      ],
+      notes: "Deliberately a different Ardennes stop than the standalone Ardennes (3 days) 🦌 route, so the two don't overlap: Bastogne (WWII history, Bastogne War Museum, €22 p.p. + €7.50 parking). Own car, short distances (border region).",
+      transport_to_next: 'Drive to Vianden, Luxembourg — short, overland, no border formalities (Schengen).',
+    },
+    {
+      code: 'LU', name: 'Luxembourg', days: 3, budget: 270, lat: 49.6116, lng: 6.1319,
+      destinations: [
+        { name: 'Vianden', lat: 49.9350, lng: 6.2081 },
+        { name: 'Luxembourg City', lat: 49.6116, lng: 6.1319 },
+        { name: 'Berdorf (Müllerthal day trip)', lat: 49.8167, lng: 6.3500 },
+        { name: 'Echternach (Müllerthal day trip)', lat: 49.8114, lng: 6.4211 },
+      ],
+      notes: "Vianden (castle, same cable car caveat as the standalone Luxembourg (4 days) 🪨 route — seasonal gaps, check current dates) — Luxembourg City — Müllerthal day trip from the city (Berdorf/Echternach). Season: April-October.",
+      transport_to_next: 'End of this route — drive back to the Netherlands via Belgium.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Own car throughout, short distances within this border region.',
+    climate_summary: 'April-October.',
+    description: "Bastogne's WWII history, Vianden's castle and cable car, Luxembourg City, and a Müllerthal day trip.",
+    notes: "Built (2026-08) as part of the Benelux pilot batch of Phase 2 converting EUROPA_TRIP_IDEAS.md into Route Builder content (see the Ardennes (3 days) 🦌 route's notes for batch context). Uses Bastogne as its Ardennes stop, deliberately different from the standalone Ardennes (3 days) 🦌 route's La Roche-en-Ardenne/Han-sur-Lesse/Coo cluster, so the two don't overlap. Budget ~€80-90/day average confirmed via web check (the blend of the cheaper Belgian leg and pricier Luxembourg leg holds up). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildBelgianCoastBrugesGhentRoute() {
+  return rbBuildFlatSeedRoute('Belgian Coast + Bruges + Ghent (4 days) 🚲', [
+    {
+      code: 'BE', name: 'Belgium', days: 4, budget: 380, lat: 51.2093, lng: 3.2247,
+      destinations: [
+        { name: 'Bruges', lat: 51.2093, lng: 3.2247 },
+        { name: 'Ghent', lat: 51.0543, lng: 3.7174 },
+        { name: 'De Haan', lat: 51.2704, lng: 3.0361 },
+        { name: 'Ostend', lat: 51.2154, lng: 2.9286 },
+      ],
+      notes: 'Bruges (canals, Belfry) — Ghent (Gravensteen castle, Graslei) — Belgian coast (De Haan/Ostend, seafront and beach). Car or train — all three are well reachable by train. Budget ~€90-100/day, confirmed via web check, nothing noteworthy found. Season: year-round for the cities, May-September nicer for the coast.',
+      transport_to_next: 'End of this route.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Car or train — all three destinations are well connected by train.',
+    climate_summary: 'Year-round for the cities, May-September nicer for the coast.',
+    description: "Bruges' canals and Belfry, Ghent's Gravensteen castle and Graslei, and the Belgian coast at De Haan/Ostend.",
+    notes: "Built (2026-08) as part of the Benelux pilot batch of Phase 2 converting EUROPA_TRIP_IDEAS.md into Route Builder content (see the Ardennes (3 days) 🦌 route's notes for batch context). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildBelgiumBrugesGhentAntwerpArdennesRoute() {
+  return rbBuildFlatSeedRoute('Belgium: Bruges + Ghent + Antwerp + Ardennes (5 days) 🍺', [
+    {
+      code: 'BE', name: 'Belgium', days: 3, budget: 285, lat: 51.2093, lng: 3.2247,
+      destinations: [
+        { name: 'Bruges', lat: 51.2093, lng: 3.2247 },
+        { name: 'Ghent', lat: 51.0543, lng: 3.7174 },
+        { name: 'Antwerp', lat: 51.2194, lng: 4.4025 },
+      ],
+      notes: 'Bruges — Ghent — Antwerp (Cathedral: nave/interior open, but the tower has been under long-term restoration since 2019 and the status of a scaffolding-free view in 2026 is unconfirmed; MAS building/rooftop free, exhibitions ~€12 separately). Train for the cities. Budget ~€90-100/day in the cities, confirmed via web check.',
+      transport_to_next: 'A car is needed from here — drive to Dinant or La Roche-en-Ardenne for the Ardennes leg.',
+    },
+    {
+      code: 'BE', name: 'Belgium', days: 2, budget: 150, lat: 50.2603, lng: 4.9106,
+      destinations: [
+        { name: 'Dinant', lat: 50.2603, lng: 4.9106 },
+        { name: 'La Roche-en-Ardenne', lat: 50.1833, lng: 5.5833 },
+      ],
+      notes: "Dinant OR La Roche-en-Ardenne (an either/or choice, not both combined) for 1-2 days of nature as a counterpart to the cities. Budget lower than the city leg. Season: possible year-round overall, April-October better for this Ardennes part.",
+      transport_to_next: 'End of this route — drive back to the Netherlands.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Train for the cities, car needed for the Ardennes leg.',
+    climate_summary: 'Possible year-round overall, April-October better for the Ardennes leg.',
+    description: "Bruges, Ghent and Antwerp's historic centers, paired with Dinant or La Roche-en-Ardenne as a nature counterpart.",
+    notes: "Built (2026-08) as part of the Benelux pilot batch of Phase 2 converting EUROPA_TRIP_IDEAS.md into Route Builder content (see the Ardennes (3 days) 🦌 route's notes for batch context). 'Dinant or La Roche-en-Ardenne' is an either/or choice for the 1-2 day nature leg in the source material, not both combined — both are listed as destination options here. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSouthNetherlandsBelgianArdennesLuxembourgRoute() {
+  return rbBuildFlatSeedRoute('South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️', [
+    {
+      code: 'NL', name: 'Netherlands', days: 2, budget: 160, lat: 50.8514, lng: 5.6910,
+      destinations: [
+        { name: 'Maastricht (Vrijthof, Sint-Pietersberg caves)', lat: 50.8514, lng: 5.6910 },
+        { name: 'Valkenburg (Fluweelengrot cave)', lat: 50.8642, lng: 5.8306 },
+      ],
+      notes: 'Maastricht (Vrijthof, Sint-Pietersberg caves, guided tours only, ~€9.95) — Valkenburg (Fluweelengrot cave, guided only, open 7 days a week + summer evening tours 18 July-22 August).',
+      transport_to_next: 'Drive to Bastogne, Belgium — short, overland, no border formalities (Schengen).',
+    },
+    {
+      code: 'BE', name: 'Belgium', days: 1, budget: 75, lat: 50.0036, lng: 5.7167,
+      destinations: [
+        { name: 'Bastogne', lat: 50.0036, lng: 5.7167 },
+      ],
+      notes: 'Bastogne (Ardennes, WWII history, Bastogne War Museum) — the same Ardennes stop as the Luxembourg + Ardennes (4 days) 🎖️ route above, deliberately different from the standalone Ardennes (3 days) 🦌 route.',
+      transport_to_next: 'Drive to Vianden/Luxembourg City — short, overland, no border formalities (Schengen).',
+    },
+    {
+      code: 'LU', name: 'Luxembourg', days: 2, budget: 190, lat: 49.6116, lng: 6.1319,
+      destinations: [
+        { name: 'Vianden', lat: 49.9350, lng: 6.2081 },
+        { name: 'Luxembourg City', lat: 49.6116, lng: 6.1319 },
+      ],
+      notes: 'Vianden/Luxembourg City — same cable car caveat as the standalone Luxembourg (4 days) 🪨 route above (seasonal gaps, check current dates before relying on it).',
+      transport_to_next: 'End of this route — drive back to the Netherlands. Own car throughout — everything within a few hours of each other, the shortest "international" trip of this whole batch.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Own car throughout — everything within a few hours of each other.',
+    climate_summary: 'April-October.',
+    description: "Maastricht and Valkenburg's guided cave tours, Bastogne's WWII history, and Vianden/Luxembourg City.",
+    notes: "Built (2026-08) as part of the Benelux pilot batch of Phase 2 converting EUROPA_TRIP_IDEAS.md into Route Builder content (see the Ardennes (3 days) 🦌 route's notes for batch context) — the biggest combo of the six, and the only one with a Dutch stop. Budget ~€80-90/day average confirmed via web check. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaBeneluxRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_BENELUX)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_BENELUX, '1');
+
+  rbRoutes.push(
+    rbBuildArdennesRoute(),
+    rbBuildLuxembourgRoute(),
+    rbBuildLuxembourgArdennesRoute(),
+    rbBuildBelgianCoastBrugesGhentRoute(),
+    rbBuildBelgiumBrugesGhentAntwerpArdennesRoute(),
+    rbBuildSouthNetherlandsBelgianArdennesLuxembourgRoute(),
+  );
+  rbSave();
+}
+
