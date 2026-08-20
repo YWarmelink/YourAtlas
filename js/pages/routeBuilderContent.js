@@ -7226,27 +7226,27 @@ function rbBuildVietnamRoute() {
 }
 
 function rbBuildNewZealandSouthIslandRoute() {
-  return rbBuildFlatSeedRoute('Nieuw-Zeeland Zuidereiland 🏔️', [
+  return rbBuildFlatSeedRoute('New Zealand South Island 🏔️', [
     {
       code: 'NZ', name: 'New Zealand', days: 23, budget: 2268, lat: -45.0312, lng: 168.6626,
       destinations: [
         { name: 'Christchurch', lat: -43.5321, lng: 172.6362 },
-        { name: 'Franz Josef & Fox-gletsjers', lat: -43.4667, lng: 170.1667 },
+        { name: 'Franz Josef & Fox Glaciers', lat: -43.4667, lng: 170.1667 },
         { name: 'Queenstown', lat: -45.0312, lng: 168.6626 },
         { name: 'Milford Sound & Fiordland', lat: -44.6714, lng: 167.9250 },
         { name: 'Dunedin & Catlins', lat: -45.8788, lng: 170.5028 },
         { name: 'Kaikoura', lat: -42.4000, lng: 173.6817 },
         { name: 'Abel Tasman', lat: -40.9333, lng: 173.0000 },
       ],
-      notes: "Instap: vlucht Amsterdam-Christchurch, met meerdere overstappen (geen directe verbinding, ±27-38 uur totaal, vanaf ±€1.300-2.000 retour, beste periode september-november). Prijsindicatie webonderzoek 2026-08, momentopname. Langeafstandsvlucht-buffer (2026-08, zie CLAUDE.md): +2 dagen t.o.v. het oorspronkelijke aantal (21→23) — 27-38 uur reistijd met meerdere overstappen is zoveel dat een aankomstdag zonder programma en een marge vóór de terugvlucht hier verstandiger zijn dan er meteen doorheen plannen. Concentreert het merendeel van de iconische Nieuw-Zeelandse natuur. Overweeg minstens één Great Walk (Milford Track, Routeburn of Kepler) als meerdaagse hut-to-hut-trek — ruim van tevoren reserveren. Prijscorrectie (2026-07): €80→€108/dag.",
-      transport_to_next: 'Einde van deze route — terug naar Christchurch (of vlucht vanaf Picton/Blenheim), dan terugvlucht naar Amsterdam (meerdere overstappen, geen directe verbinding).',
+      notes: "Entry: flight Amsterdam-Christchurch, with multiple connections (no direct connection, ±27-38 hours total, from ±€1,300-2,000 return, best period September-November). Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days versus the original count (21→23) — 27-38 hours of travel time with multiple connections is enough that an arrival day with no plans and a margin before the return flight are wiser here than planning straight through it. Concentrates most of the iconic New Zealand scenery. Consider at least one Great Walk (Milford Track, Routeburn or Kepler) as a multi-day hut-to-hut trek — book well in advance. Price correction (2026-07): €80→€108/day.",
+      transport_to_next: 'End of this route — back to Christchurch (or flight from Picton/Blenheim), then flight home to Amsterdam (multiple connections, no direct connection).',
     },
   ], {
     best_starting_month: 'September',
-    travel_style: 'Backpacker tussen budget en comfort in — huurauto, minstens één Great Walk.',
-    climate_summary: 'September-november is het Nieuw-Zeelandse voorjaar — stabiel weer, minder drukte dan de zomerpiek (december-februari).',
-    description: 'Milford Sound, gletsjers, Queenstown en de Catlins — het Zuidereiland op zichzelf.',
-    notes: 'Losgesplitst van Nieuw-Zeeland 🥝 (zelf al losgesplitst van Oceania Grand Expedition 🌊 — zie ROUTE_BUILDER_MODULES.md) als onderdeel van deze tweede batch losse landen (2026-08, Youri\'s eigen top-10-keuze) — "een van de meest geboekte standalone trips wereldwijd". Land en budget(dagtarief) zijn ongewijzigd overgenomen (incl. de 2026-08 routelogica-fix voor de Kaikoura/Abel Tasman-volgorde); dagen verhoogd van 21 naar 23 als langeafstandsvlucht-buffer (zie CLAUDE.md). Nieuw-Zeeland 🥝 en Oceania Grand Expedition 🌊 zelf blijven ongewijzigd bestaan.',
+    travel_style: 'Backpacking between budget and comfort — rental car, at least one Great Walk.',
+    climate_summary: 'September-November is the New Zealand spring — stable weather, fewer crowds than the summer peak (December-February).',
+    description: 'Milford Sound, glaciers, Queenstown and the Catlins — the South Island on its own.',
+    notes: "Split off from New Zealand 🥝 (itself already split off from Oceania Grand Expedition 🌊 — see ROUTE_BUILDER_MODULES.md) as part of this second batch of standalone countries (2026-08, Youri's own top-10 pick) — \"one of the most booked standalone trips worldwide\". Country and budget (daily rate) are carried over unchanged (incl. the 2026-08 route-logic fix for the Kaikoura/Abel Tasman order); days increased from 21 to 23 as a long-haul flight buffer (see CLAUDE.md). New Zealand 🥝 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
   });
 }
 
@@ -7517,15 +7517,15 @@ function rbBuildCairnsGreatBarrierReefRoute() {
         { name: 'Whitsundays & Whitehaven Beach', lat: -20.2833, lng: 149.0333 },
         { name: "Fraser Island / K'gari", lat: -25.2333, lng: 153.1500 },
       ],
-      notes: 'Instap: vlucht Amsterdam-Cairns, met meerdere overstappen (geen directe verbinding, bv. via Doha/Dubai/Singapore, ±24-28 uur incl. overstappen; vanaf ±€1.600-2.500 retour — januari is doorgaans de goedkoopste vluchtmaand, maar valt buiten het droge seizoen van deze route; beste reisperiode juni-augustus). Prijsindicatie webonderzoek 2026-08, momentopname. Langeafstandsvlucht-buffer (2026-08, zie CLAUDE.md): +2 dagen t.o.v. het oorspronkelijke aantal (21→23) — 24-28 uur reistijd met meerdere overstappen rechtvaardigt een aankomstdag zonder programma. Droog seizoen betekent ook geen kwallenseizoen (dat loopt november-mei) bij Cairns. Prijscorrectie (2026-07): €87,62→€110/dag.',
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Cairns naar Amsterdam (meerdere overstappen, geen directe verbinding).',
+      notes: 'Entry: flight Amsterdam-Cairns, with multiple connections (no direct connection, e.g. via Doha/Dubai/Singapore, ±24-28 hours incl. connections; from ±€1,600-2,500 return — January is usually the cheapest flight month, but falls outside this route\'s dry season; best travel period June-August). Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days versus the original count (21→23) — 24-28 hours of travel time with multiple connections justifies an arrival day with no plans. Dry season also means no jellyfish season (that runs November-May) near Cairns. Price correction (2026-07): €87.62→€110/day.',
+      transport_to_next: 'End of this route — flight home from Cairns to Amsterdam (multiple connections, no direct connection).',
     },
   ], {
-    best_starting_month: 'Juni',
-    travel_style: 'Backpacker tussen budget en comfort in — boottochten voor het Great Barrier Reef, camper/huurauto voor de kust.',
-    climate_summary: 'Juni-augustus is droog seizoen bij Cairns — geen kwallenseizoen (november-mei).',
-    description: 'Cairns, het regenwoud van Daintree, het Great Barrier Reef, de Whitsundays en Fraser Island.',
-    notes: 'Losgesplitst van Tropisch/Outback Australië 🐊 (zelf al losgesplitst van Oceania Grand Expedition 🌊 — zie ROUTE_BUILDER_MODULES.md) als onderdeel van deze derde batch losse landen (2026-08, Youri\'s eigen tweede top-10-keuze). Land en budget(dagtarief) zijn ongewijzigd overgenomen; dagen verhoogd van 21 naar 23 als langeafstandsvlucht-buffer (zie CLAUDE.md). Tropisch/Outback Australië 🐊 en Oceania Grand Expedition 🌊 zelf blijven ongewijzigd bestaan.',
+    best_starting_month: 'June',
+    travel_style: 'Backpacking between budget and comfort — boat trips for the Great Barrier Reef, camper/rental car for the coast.',
+    climate_summary: 'June-August is dry season near Cairns — no jellyfish season (November-May).',
+    description: 'Cairns, the Daintree Rainforest, the Great Barrier Reef, the Whitsundays and Fraser Island.',
+    notes: "Split off from Tropical/Outback Australia 🐊 (itself already split off from Oceania Grand Expedition 🌊 — see ROUTE_BUILDER_MODULES.md) as part of this third batch of standalone countries (2026-08, Youri's own second top-10 pick). Country and budget (daily rate) are carried over unchanged; days increased from 21 to 23 as a long-haul flight buffer (see CLAUDE.md). Tropical/Outback Australia 🐊 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
   });
 }
 
@@ -7578,19 +7578,19 @@ function rbBuildFijiRoute() {
       code: 'FJ', name: 'Fiji', days: 16, budget: 1050, lat: -17.7765, lng: 177.4356,
       destinations: [
         { name: 'Nadi', lat: -17.7765, lng: 177.4356 },
-        { name: 'Mamanuca-eilanden', lat: -17.6667, lng: 177.1000 },
-        { name: 'Yasawa-eilanden', lat: -16.8000, lng: 177.4500 },
+        { name: 'Mamanuca Islands', lat: -17.6667, lng: 177.1000 },
+        { name: 'Yasawa Islands', lat: -16.8000, lng: 177.4500 },
         { name: 'Taveuni', lat: -16.8500, lng: 179.9833 },
       ],
-      notes: 'Instap: vlucht Amsterdam-Nadi, met meerdere overstappen (geen directe verbinding, ±24-30 uur incl. overstappen; vanaf ±€1.150-1.500 retour — september is doorgaans de goedkoopste vluchtmaand, maar valt buiten het beste seizoen van deze route; beste reisperiode mei-juni). Prijsindicatie webonderzoek 2026-08, momentopname. Langeafstandsvlucht-buffer (2026-08, zie CLAUDE.md): +2 dagen t.o.v. het oorspronkelijke aantal (14→16) — 24-30 uur reistijd met meerdere overstappen rechtvaardigt een aankomstdag zonder programma. Beste backpacker-infrastructuur van de Pacific — eilandhoppen per boot (Yasawa Flyer) tussen de Mamanucas en Yasawas, snorkelen en duiken op de koraalriffen. Prijscorrectie (2026-07): €62,50→€75/dag (Yasawa Flyer-bootpas + vlucht naar Taveuni waren niet gedekt).',
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Nadi naar Amsterdam (meerdere overstappen, geen directe verbinding).',
+      notes: "Entry: flight Amsterdam-Nadi, with multiple connections (no direct connection, ±24-30 hours incl. connections; from ±€1,150-1,500 return — September is usually the cheapest flight month, but falls outside this route's best season; best travel period May-June). Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days versus the original count (14→16) — 24-30 hours of travel time with multiple connections justifies an arrival day with no plans. Best backpacker infrastructure in the Pacific — island-hopping by boat (Yasawa Flyer) between the Mamanucas and Yasawas, snorkeling and diving on the coral reefs. Price correction (2026-07): €62.50→€75/day (Yasawa Flyer boat pass + flight to Taveuni weren't covered).",
+      transport_to_next: 'End of this route — flight home from Nadi to Amsterdam (multiple connections, no direct connection).',
     },
   ], {
-    best_starting_month: 'Mei',
-    travel_style: 'Backpacker tussen budget en comfort in — bootpas (Yasawa Flyer) tussen de eilandgroepen.',
-    climate_summary: 'Mei-juni is het droge seizoen in de hele Pacific, ruim vóór het cycloonseizoen (november-april).',
-    description: 'Nadi, de Mamanuca- en Yasawa-eilanden en Taveuni — klassiek Pacific eiland-hoppen.',
-    notes: 'Losgesplitst van Pacific-eilanden 🌺 (zelf al losgesplitst van Oceania Grand Expedition 🌊 — zie ROUTE_BUILDER_MODULES.md) als onderdeel van deze derde batch losse landen (2026-08, Youri\'s eigen tweede top-10-keuze). Land en budget(dagtarief) zijn ongewijzigd overgenomen; dagen verhoogd van 14 naar 16 als langeafstandsvlucht-buffer (zie CLAUDE.md). Pacific-eilanden 🌺 en Oceania Grand Expedition 🌊 zelf blijven ongewijzigd bestaan.',
+    best_starting_month: 'May',
+    travel_style: 'Backpacking between budget and comfort — boat pass (Yasawa Flyer) between the island groups.',
+    climate_summary: 'May-June is the dry season across the whole Pacific, well before cyclone season (November-April).',
+    description: 'Nadi, the Mamanuca and Yasawa Islands and Taveuni — classic Pacific island-hopping.',
+    notes: "Split off from Pacific Islands 🌺 (itself already split off from Oceania Grand Expedition 🌊 — see ROUTE_BUILDER_MODULES.md) as part of this third batch of standalone countries (2026-08, Youri's own second top-10 pick). Country and budget (daily rate) are carried over unchanged; days increased from 14 to 16 as a long-haul flight buffer (see CLAUDE.md). Pacific Islands 🌺 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
   });
 }
 
@@ -7846,8 +7846,8 @@ function rbBuildSydneyGreatOceanRoadRoute() {
         { name: 'Sydney', lat: -33.8688, lng: 151.2093 },
         { name: 'Blue Mountains', lat: -33.7000, lng: 150.3000 },
       ],
-      notes: 'Instap: vlucht Amsterdam-Sydney, met overstap (bv. via Singapore/Dubai/Doha, ±24-25 uur totaal; vanaf ±€1.100-1.900 retour; beste periode augustus-september). Prijsindicatie webonderzoek 2026-08, momentopname. Langeafstandsvlucht-buffer (2026-08, zie CLAUDE.md): +2 dagen t.o.v. het oorspronkelijke aantal (12→14) — 24-25 uur reistijd met een verplichte overstap rechtvaardigt een aankomstdag zonder programma, ook al is de reis zelf al lang. Klassieke backpacker-trail met goede infrastructuur; Sydney is te iconisch om over te slaan. Prijs geverifieerd (2026-07), klopt.',
-      transport_to_next: 'Auto over land via de kust of de Hume Highway naar Melbourne.',
+      notes: "Entry: flight Amsterdam-Sydney, with a connection (e.g. via Singapore/Dubai/Doha, ±24-25 hours total; from ±€1,100-1,900 return; best period August-September). Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days versus the original count (12→14) — 24-25 hours of travel time with a mandatory connection justifies an arrival day with no plans, even though the trip itself is already long. Classic backpacker trail with good infrastructure; Sydney is too iconic to skip. Price verified (2026-07), holds up.",
+      transport_to_next: 'Car overland via the coast or the Hume Highway to Melbourne.',
     },
     {
       code: 'AU', name: 'Australia', days: 10, budget: 875, lat: -37.8136, lng: 144.9631,
@@ -7856,15 +7856,15 @@ function rbBuildSydneyGreatOceanRoadRoute() {
         { name: 'Melbourne', lat: -37.8136, lng: 144.9631 },
         { name: 'Grampians National Park', lat: -37.2333, lng: 142.5167 },
       ],
-      notes: 'De beste roadtrip-ervaring van het hele land. Prijs geverifieerd (2026-07), klopt.',
-      transport_to_next: 'Einde van deze route — vlucht vanuit Melbourne naar Amsterdam (1 overstap, open-jaw t.o.v. de Sydney-heenvlucht, vergelijkbaar geprijsd).',
+      notes: 'The best roadtrip experience in the whole country. Price verified (2026-07), holds up.',
+      transport_to_next: 'End of this route — flight from Melbourne to Amsterdam (1 connection, open-jaw versus the outbound Sydney flight, similarly priced).',
     },
   ], {
-    best_starting_month: 'Augustus',
-    travel_style: 'Backpacker tussen budget en comfort in — huurauto voor de Great Ocean Road.',
-    climate_summary: 'Augustus-september is late winter/vroege lente in Zuidoost-Australië — koeler dan de zomerpiek maar goed te doen, en buiten zowel het noordelijke cycloon- als bosbrandseizoen (beide november-april).',
-    description: 'De oostkust van Sydney tot Melbourne en de Great Ocean Road.',
-    notes: 'Losgesplitst van Gematigd/Zuidelijk Australië 🍇 (zelf al losgesplitst van Oceania Grand Expedition 🌊 — zie ROUTE_BUILDER_MODULES.md) als onderdeel van de vierde batch losse landen (2026-08) — het Sydney/Byron- en Great Ocean Road-deel van dat block als eigen, kortere reis, zonder Tasmanië/Adelaide. Land en dagbudgetten zijn ongewijzigd overgenomen; dagen van de eerste etappe verhoogd van 12 naar 14 als langeafstandsvlucht-buffer (zie CLAUDE.md). Gematigd/Zuidelijk Australië 🍇 en Oceania Grand Expedition 🌊 zelf blijven ongewijzigd bestaan.',
+    best_starting_month: 'August',
+    travel_style: 'Backpacking between budget and comfort — rental car for the Great Ocean Road.',
+    climate_summary: 'August-September is late winter/early spring in Southeast Australia — cooler than the summer peak but manageable, and outside both the northern cyclone and wildfire seasons (both November-April).',
+    description: 'The east coast from Sydney to Melbourne and the Great Ocean Road.',
+    notes: "Split off from Temperate/Southern Australia 🍇 (itself already split off from Oceania Grand Expedition 🌊 — see ROUTE_BUILDER_MODULES.md) as part of the fourth batch of standalone countries (2026-08) — the Sydney/Byron and Great Ocean Road part of that block as its own, shorter trip, without Tasmania/Adelaide. Country and daily budgets are carried over unchanged; days of the first leg increased from 12 to 14 as a long-haul flight buffer (see CLAUDE.md). Temperate/Southern Australia 🍇 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
   });
 }
 
@@ -8028,7 +8028,7 @@ function rbBuildGhanaRoute() {
 }
 
 function rbBuildTasmaniaRoute() {
-  return rbBuildFlatSeedRoute('Tasmanië 🐾', [
+  return rbBuildFlatSeedRoute('Tasmania 🐾', [
     {
       code: 'AU', name: 'Australia', days: 14, budget: 1260, lat: -42.8821, lng: 147.3272,
       destinations: [
@@ -8037,20 +8037,20 @@ function rbBuildTasmaniaRoute() {
         { name: 'Overland Track', lat: -41.8500, lng: 145.9500 },
         { name: 'Hobart', lat: -42.8821, lng: 147.3272 },
       ],
-      notes: 'Instap: vlucht Amsterdam-Hobart, met 2 overstappen (bv. via Dubai/Doha/Singapore, dan Melbourne/Sydney, ±25-29,5 uur totaal; vanaf ±€1.300-1.800 retour; beste periode november/maart, binnen het Overland Track-vergunningseizoen oktober-mei). Prijsindicatie webonderzoek 2026-08, momentopname. Langeafstandsvlucht-buffer (2026-08, zie CLAUDE.md): +2 dagen t.o.v. het oorspronkelijke aantal (12→14) — 25-29,5 uur reistijd met 2 overstappen overschrijdt de 24-uursdrempel, ongeacht de triplengte. Ruige natuur, weinig massatoerisme. Pak warme kleding in, ook buiten de winter. Prijscorrectie (2026-07): €87,50→€105/dag — het Overland Track-vergunning alleen al kost ~€120-150 p.p.',
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Hobart naar Amsterdam (2 overstappen).',
+      notes: "Entry: flight Amsterdam-Hobart, with 2 connections (e.g. via Dubai/Doha/Singapore, then Melbourne/Sydney, ±25-29.5 hours total; from ±€1,300-1,800 return; best period November/March, within the Overland Track permit season October-May). Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days versus the original count (12→14) — 25-29.5 hours of travel time with 2 connections exceeds the 24-hour threshold, regardless of trip length. Rugged nature, little mass tourism. Pack warm clothing, even outside winter. Price correction (2026-07): €87.50→€105/day — the Overland Track permit alone costs ~€120-150 per person.",
+      transport_to_next: 'End of this route — flight home from Hobart to Amsterdam (2 connections).',
     },
   ], {
     best_starting_month: 'November',
-    travel_style: 'Huurauto tussen de nationale parken, meerdaagse trekking op de Overland Track (vergunning vooraf verplicht).',
-    climate_summary: 'November (of maart) valt binnen het Overland Track-seizoen (oktober-mei) met redelijk stabiel weer en minder drukte dan de januari-piek.',
-    description: 'Cradle Mountain, Wineglass Bay, de Overland Track en Hobart.',
-    notes: 'Losgesplitst van Gematigd/Zuidelijk Australië 🍇 (zelf al losgesplitst van Oceania Grand Expedition 🌊) als onderdeel van de vijfde batch losse landen (2026-08) — het Tasmaanse deel van dat block als eigen, kortere reis, zonder Sydney/Byron/Great Ocean Road/Adelaide. Land en dagbudget zijn ongewijzigd overgenomen; dagen verhoogd van 12 naar 14 als langeafstandsvlucht-buffer (zie CLAUDE.md). Gematigd/Zuidelijk Australië 🍇 en Oceania Grand Expedition 🌊 zelf blijven ongewijzigd bestaan.',
+    travel_style: 'Rental car between the national parks, multi-day trekking on the Overland Track (permit required in advance).',
+    climate_summary: 'November (or March) falls within the Overland Track season (October-May) with reasonably stable weather and fewer crowds than the January peak.',
+    description: 'Cradle Mountain, Wineglass Bay, the Overland Track and Hobart.',
+    notes: "Split off from Temperate/Southern Australia 🍇 (itself already split off from Oceania Grand Expedition 🌊) as part of the fifth batch of standalone countries (2026-08) — the Tasmanian part of that block as its own, shorter trip, without Sydney/Byron/Great Ocean Road/Adelaide. Country and daily budget are carried over unchanged; days increased from 12 to 14 as a long-haul flight buffer (see CLAUDE.md). Temperate/Southern Australia 🍇 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
   });
 }
 
 function rbBuildNorthIslandRoute() {
-  return rbBuildFlatSeedRoute('Nieuw-Zeeland Noordereiland 🌿', [
+  return rbBuildFlatSeedRoute('New Zealand North Island 🌿', [
     {
       code: 'NZ', name: 'New Zealand', days: 16, budget: 1120, lat: -41.2865, lng: 174.7762,
       destinations: [
@@ -8061,15 +8061,15 @@ function rbBuildNorthIslandRoute() {
         { name: 'Bay of Islands', lat: -35.2667, lng: 174.1167 },
         { name: 'Auckland', lat: -36.8485, lng: 174.7633 },
       ],
-      notes: 'Instap: vlucht Amsterdam-Wellington, met 2-3 overstappen (bv. via Singapore of een Golfstaat-hub, ±26-30+ uur totaal); uitstap vanuit Auckland (open-jaw, vergelijkbaar geprijsd) — vanaf ±€1.400-1.800 retour; beste periode maart/november. Prijsindicatie webonderzoek 2026-08, momentopname. Langeafstandsvlucht-buffer (2026-08, zie CLAUDE.md): +2 dagen t.o.v. het oorspronkelijke aantal (14→16) — 26-30+ uur reistijd met meerdere overstappen overschrijdt de 24-uursdrempel, ongeacht de triplengte. De Tongariro Alpine Crossing is de beste dagwandeling van het land. Rotorua voor geothermische verschijnselen en Māori-cultuur. Prijs geverifieerd (2026-07), klopt.',
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Auckland naar Amsterdam (2-3 overstappen).',
+      notes: "Entry: flight Amsterdam-Wellington, with 2-3 connections (e.g. via Singapore or a Gulf-state hub, ±26-30+ hours total); exit from Auckland (open-jaw, similarly priced) — from ±€1,400-1,800 return; best period March/November. Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days versus the original count (14→16) — 26-30+ hours of travel time with multiple connections exceeds the 24-hour threshold, regardless of trip length. The Tongariro Alpine Crossing is the best day hike in the country. Rotorua for geothermal phenomena and Māori culture. Price verified (2026-07), holds up.",
+      transport_to_next: 'End of this route — flight home from Auckland to Amsterdam (2-3 connections).',
     },
   ], {
     best_starting_month: 'November',
-    travel_style: 'Huurauto op het Noordereiland.',
-    climate_summary: 'November valt in het Nieuw-Zeelandse voorjaar/vroege zomer — stabiel weer voor de Tongariro Alpine Crossing, minder druk dan de januari-piek.',
-    description: 'Wellington, de Tongariro Alpine Crossing, Rotorua, Coromandel, Bay of Islands en Auckland.',
-    notes: 'Losgesplitst van Nieuw-Zeeland 🥝 (zelf al losgesplitst van Oceania Grand Expedition 🌊) als onderdeel van de vijfde batch losse landen (2026-08) — het Noordereiland-deel van die route als eigen, kortere reis, zonder het Zuidereiland (dat al als eigen "Nieuw-Zeeland Zuidereiland 🏔️"-route bestaat, batch 2). Land en dagbudget zijn ongewijzigd overgenomen; dagen verhoogd van 14 naar 16 als langeafstandsvlucht-buffer (zie CLAUDE.md). Nieuw-Zeeland 🥝 en Oceania Grand Expedition 🌊 zelf blijven ongewijzigd bestaan.',
+    travel_style: 'Rental car on the North Island.',
+    climate_summary: 'November falls in the New Zealand spring/early summer — stable weather for the Tongariro Alpine Crossing, fewer crowds than the January peak.',
+    description: 'Wellington, the Tongariro Alpine Crossing, Rotorua, Coromandel, Bay of Islands and Auckland.',
+    notes: 'Split off from New Zealand 🥝 (itself already split off from Oceania Grand Expedition 🌊) as part of the fifth batch of standalone countries (2026-08) — the North Island part of that route as its own, shorter trip, without the South Island (which already exists as its own "New Zealand South Island 🏔️" route, batch 2). Country and daily budget are carried over unchanged; days increased from 14 to 16 as a long-haul flight buffer (see CLAUDE.md). New Zealand 🥝 and Oceania Grand Expedition 🌊 themselves remain unchanged.',
   });
 }
 
@@ -8080,29 +8080,29 @@ function rbBuildFijiVanuatuRoute() {
       destinations: [
         { name: 'Port Vila', lat: -17.7333, lng: 168.3273 },
         { name: 'Mount Yasur (Tanna)', lat: -19.5236, lng: 169.4451 },
-        { name: 'SS President Coolidge wrak (Espiritu Santo)', lat: -15.5085, lng: 167.1739 },
+        { name: 'SS President Coolidge wreck (Espiritu Santo)', lat: -15.5085, lng: 167.1739 },
         { name: 'Blue Holes', lat: -15.5000, lng: 167.1500 },
       ],
-      notes: 'Instap: vlucht Amsterdam-Port Vila via Nadi (Fiji), met 2-3 overstappen (bv. via Doha/Dubai/Hongkong/Singapore, ±25-30+ uur totaal); vanaf ±€1.200-2.300 retour (multi-city, eindigend in Fiji); beste periode mei/oktober, buiten het cycloonseizoen (november-april) en de julidrukte. Prijsindicatie webonderzoek 2026-08, momentopname. Langeafstandsvlucht-buffer (2026-08, zie CLAUDE.md): +2 dagen t.o.v. het oorspronkelijke aantal (11→13) — 25-30+ uur reistijd met meerdere overstappen overschrijdt de 24-uursdrempel, ongeacht de triplengte, dezelfde redenering als bij de al bestaande standalone Fiji 🌊-route. Een van de meest toegankelijke actieve vulkanen ter wereld — tot vlak bij de kraterrand van Mount Yasur. Wereldklasse wrakduik op de SS President Coolidge. Prijscorrectie (2026-07): €70→€95/dag.',
-      transport_to_next: 'Vlucht Port Vila-Nadi (Fiji Airways, direct, ±7x/week, 2u15).',
+      notes: "Entry: flight Amsterdam-Port Vila via Nadi (Fiji), with 2-3 connections (e.g. via Doha/Dubai/Hong Kong/Singapore, ±25-30+ hours total); from ±€1,200-2,300 return (multi-city, ending in Fiji); best period May/October, outside cyclone season (November-April) and the July rush. Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days versus the original count (11→13) — 25-30+ hours of travel time with multiple connections exceeds the 24-hour threshold, regardless of trip length, the same reasoning as for the already-existing standalone Fiji 🌊 route. One of the most accessible active volcanoes in the world — right up to the crater rim of Mount Yasur. World-class wreck diving on the SS President Coolidge. Price correction (2026-07): €70→€95/day.",
+      transport_to_next: 'Flight Port Vila-Nadi (Fiji Airways, direct, ±7x/week, 2h15).',
     },
     {
       code: 'FJ', name: 'Fiji', days: 14, budget: 1050, lat: -17.7765, lng: 177.4356,
       destinations: [
         { name: 'Nadi', lat: -17.7765, lng: 177.4356 },
-        { name: 'Mamanuca-eilanden', lat: -17.6667, lng: 177.1000 },
-        { name: 'Yasawa-eilanden', lat: -16.8000, lng: 177.4500 },
+        { name: 'Mamanuca Islands', lat: -17.6667, lng: 177.1000 },
+        { name: 'Yasawa Islands', lat: -16.8000, lng: 177.4500 },
         { name: 'Taveuni', lat: -16.8500, lng: 179.9833 },
       ],
-      notes: 'Beste backpacker-infrastructuur van de Pacific — eilandhoppen per boot (Yasawa Flyer) tussen de Mamanucas en Yasawas, snorkelen en duiken op de koraalriffen. Prijscorrectie (2026-07): €62,50→€75/dag.',
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Nadi naar Amsterdam (meerdere overstappen).',
+      notes: 'Best backpacker infrastructure in the Pacific — island-hopping by boat (Yasawa Flyer) between the Mamanucas and Yasawas, snorkeling and diving on the coral reefs. Price correction (2026-07): €62.50→€75/day.',
+      transport_to_next: 'End of this route — flight home from Nadi to Amsterdam (multiple connections).',
     },
   ], {
-    best_starting_month: 'Mei',
-    travel_style: 'Vlucht Port Vila-Nadi tussen de twee landen, bootpas (Yasawa Flyer) binnen Fiji.',
-    climate_summary: 'Mei-juni (of oktober) is droog seizoen in de hele Pacific, ruim vóór het cycloonseizoen (november-april) en de julidrukte.',
-    description: 'Port Vila en Mount Yasur in Vanuatu, gevolgd door de Mamanuca- en Yasawa-eilanden en Taveuni in Fiji.',
-    notes: 'Losgesplitst van Pacific-eilanden 🌺 (zelf al losgesplitst van Oceania Grand Expedition 🌊) als onderdeel van de vijfde batch losse landen (2026-08) — het Vanuatu/Fiji-tweeluik van dat block, zonder Samoa/Tonga/Cook Islands. Landen en dagbudgetten zijn ongewijzigd overgenomen; dagen van de Vanuatu-etappe verhoogd van 11 naar 13 als langeafstandsvlucht-buffer (zie CLAUDE.md). Pacific-eilanden 🌺 en Oceania Grand Expedition 🌊 zelf blijven ongewijzigd bestaan.',
+    best_starting_month: 'May',
+    travel_style: 'Flight Port Vila-Nadi between the two countries, boat pass (Yasawa Flyer) within Fiji.',
+    climate_summary: 'May-June (or October) is dry season across the whole Pacific, well before cyclone season (November-April) and the July rush.',
+    description: 'Port Vila and Mount Yasur in Vanuatu, followed by the Mamanuca and Yasawa Islands and Taveuni in Fiji.',
+    notes: "Split off from Pacific Islands 🌺 (itself already split off from Oceania Grand Expedition 🌊) as part of the fifth batch of standalone countries (2026-08) — the Vanuatu/Fiji double bill from that block, without Samoa/Tonga/Cook Islands. Countries and daily budgets are carried over unchanged; days of the Vanuatu leg increased from 11 to 13 as a long-haul flight buffer (see CLAUDE.md). Pacific Islands 🌺 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
   });
 }
 
