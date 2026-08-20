@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbSeedUSLooseTrips();
   rbSeedEuropaBeneluxRoutes();
   rbSeedEuropaGermanyRoutes();
+  rbSeedEuropaAustriaSwitzerlandRoutes();
   rbMigrateLonghaulBuffer();
   rbMigrateExpeditionRenames();
   rbMigrateExpeditionEmojiNames();

@@ -9976,3 +9976,413 @@ function rbSeedEuropaGermanyRoutes() {
   rbSave();
 }
 
+function rbBuildSalzburgSurroundingsRoute() {
+  return rbBuildFlatSeedRoute('Salzburg + Surroundings (4 days) 🎻', [
+    {
+      code: 'AT', name: 'Austria', days: 4, budget: 420, lat: 47.8095, lng: 13.0550,
+      destinations: [
+        { name: 'Salzburg (Getreidegasse, Hohensalzburg Fortress, Mozart sites)', lat: 47.8095, lng: 13.0550 },
+        { name: 'Werfen (Hohenwerfen Castle & Eisriesenwelt ice caves)', lat: 47.4761, lng: 13.1889 },
+        { name: 'Wolfgangsee / St. Wolfgang', lat: 47.7377, lng: 13.4512 },
+        { name: 'Untersberg cable car', lat: 47.7307, lng: 13.0121 },
+      ],
+      notes: "At least 2 nights in Salzburg's old town (Getreidegasse, Hohensalzburg Fortress, Mozart's birthplace and residence) plus one day trip — ranked: (a) Werfen (Hohenwerfen Castle + Eisriesenwelt ice caves, 45 min, far less crowded than Hallstatt, but only open May-October), (b) Wolfgangsee/St. Wolfgang (lake + Schafberg cogwheel railway, 45 min), (c) Untersberg cable car (20 min, a half-day option). Hallstatt is deliberately skipped here — it already has its own trip below. NL-Salzburg ~965km/9h15. Budget ~€90-120/day p.p. Season: May-September (the ice caves need the summer season to be open).",
+      transport_to_next: 'End of this route — drive back to the Netherlands (~9h15).',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Own car from the Netherlands throughout.',
+    climate_summary: 'May-September — the Eisriesenwelt ice caves are only open in that window.',
+    description: "Salzburg's old town (Getreidegasse, Hohensalzburg Fortress, Mozart's birthplace) plus a choice of one day trip: Werfen's castle and ice caves, Wolfgangsee, or the Untersberg cable car.",
+    notes: "Built (2026-08) as part of Phase 2 batch 3 converting EUROPA_TRIP_IDEAS.md into Route Builder content (Austria + Switzerland batch, following the Benelux and Germany batches). Hallstatt is deliberately excluded from this route's day-trip options — it has its own dedicated Salzburg + Berchtesgaden + Hallstatt (5 days) 🛥️ route below, so the two don't overlap. The Werfen/Wolfgangsee/Untersberg day trip is an either/or choice in the source material, not all three combined — all three are listed here as destination options. WebSearch-verified (2026-08): a 10-day Austrian vignette (€12.80/car in 2026) is required on Austrian motorways — 2026 is the last year the physical sticker exists alongside the digital one. Not yet checked against Route Builder-level price research beyond that vignette check — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSalzburgBerchtesgadenHallstattRoute() {
+  return rbBuildFlatSeedRoute('Salzburg + Berchtesgaden + Hallstatt (5 days) 🛥️', [
+    {
+      code: 'AT', name: 'Austria', days: 2, budget: 230, lat: 47.8095, lng: 13.0550,
+      destinations: [
+        { name: 'Salzburg', lat: 47.8095, lng: 13.0550 },
+      ],
+      notes: "Salzburg's old town as the opener — same Getreidegasse/Hohensalzburg Fortress/Mozart sites as the standalone Salzburg + Surroundings (4 days) 🎻 route above (see that route's notes for details).",
+      transport_to_next: 'Drive to Berchtesgaden, Germany — ~24km/30 min, short and overland (Schengen).',
+    },
+    {
+      code: 'DE', name: 'Germany', days: 1, budget: 115, lat: 47.6303, lng: 13.0006,
+      destinations: [
+        { name: 'Berchtesgaden', lat: 47.6303, lng: 13.0006 },
+        { name: 'Königssee', lat: 47.5586, lng: 12.9847 },
+      ],
+      notes: 'Berchtesgaden/Königssee — same boat-trip caveat as Bavaria + Alps + Berchtesgaden (6 days) ⛰️ above (Königssee boat to St. Bartholomä ~€16.90 p.p. return, or €29.80 to Salet).',
+      transport_to_next: 'Drive to Hallstatt, Austria — ~76km/1h from Berchtesgaden. Not a perfectly straight line versus driving Salzburg-Hallstatt direct, but the detour is small (~20km extra) and the stop order holds up.',
+    },
+    {
+      code: 'AT', name: 'Austria', days: 2, budget: 230, lat: 47.5622, lng: 13.6493,
+      destinations: [
+        { name: 'Hallstatt', lat: 47.5622, lng: 13.6493 },
+      ],
+      notes: "Hallstatt as the closing stop. Skywalk/salt mine cable car ~€29 p.p. — reopening 1 September 2026 after works, so check the dates if travelling earlier in the season.",
+      transport_to_next: 'End of this route — drive back to the Netherlands via Salzburg.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Own car throughout — route order verified (Salzburg-Berchtesgaden-Hallstatt), the detour versus a direct Salzburg-Hallstatt line is small.',
+    climate_summary: 'May-September.',
+    description: "Salzburg's old town, Berchtesgaden's Königssee boat trip, and Hallstatt's lakeside village and Skywalk/salt mine cable car.",
+    notes: "Built (2026-08) as part of Phase 2 batch 3 (Austria + Switzerland). Deliberately places Hallstatt here rather than in the standalone Salzburg + Surroundings (4 days) 🎻 route above, so the two don't overlap. Budget ~€100-130/day p.p. WebSearch-verified (2026-08): Austrian 10-day vignette (€12.80/car) required for the Austrian legs — same as all other Austria routes in this batch, see the general vignette note on Austria Alpine Roadtrip (9 days) 🗺️ below. Not yet checked against Route Builder-level price research beyond the vignette/ticket checks already folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildZellAmSeeKaprunPinzgauRoute() {
+  return rbBuildFlatSeedRoute('Austrian Alps: Zell am See-Kaprun / Pinzgau (6 days) 🚠', [
+    {
+      code: 'AT', name: 'Austria', days: 6, budget: 672, lat: 47.3239, lng: 12.7957,
+      destinations: [
+        { name: 'Zell am See (lake — swimming, SUP, 12km lake loop)', lat: 47.3239, lng: 12.7957 },
+        { name: 'Kaprun', lat: 47.2708, lng: 12.7563 },
+        { name: 'Kitzsteinhorn glacier (Gipfelwelt 3000, 3,203m)', lat: 47.2461, lng: 12.6889 },
+      ],
+      notes: "The concrete region chosen for this originally vague 'Austrian Alps' item: Pinzgau, specifically Zell am See-Kaprun — a lakes-and-glacier region south of Salzburg, deliberately distinct from Salzkammergut (the previous route above), Tyrol (the next route below) and Grossglockner+Tyrol (below that), to avoid overlap between all four Austria trips. Base at Zell am See (lake swimming/SUP, 12km lake loop) with day trips into Kaprun and up the Kitzsteinhorn glacier (year-round hiking/skiing, the 'Gipfelwelt 3000' summit platform). Budget ~€95-130/day p.p. — the Kitzsteinhorn cable car return (~€50-55 p.p.) is the single biggest cost item. Season: June-September.",
+      transport_to_next: 'End of this route — drive back to the Netherlands via Salzburg.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Own car, based at Zell am See with day trips into Kaprun and up the Kitzsteinhorn.',
+    climate_summary: 'June-September.',
+    description: "The Pinzgau lakes-and-glacier region: Zell am See's lake, Kaprun, and the Kitzsteinhorn glacier's 'Gipfelwelt 3000'.",
+    notes: "Built (2026-08) as part of Phase 2 batch 3 (Austria + Switzerland). WebSearch-verified (2026-08): the source material's vague 'Austrian Alps (5-7 days)' item needed a concrete region chosen to avoid overlapping the other three Austria mountain routes in this same batch — Pinzgau/Zell am See-Kaprun was picked specifically because it's a lakes-and-glacier region in a different valley from Tyrol/Zillertal and doesn't retrace Salzkammergut or the Grossglockner road. Austrian 10-day vignette (€12.80/car) required — see the general note on Austria Alpine Roadtrip (9 days) 🗺️ below. Not yet checked against Route Builder-level price research beyond that — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildTyrolRoute() {
+  return rbBuildFlatSeedRoute('Tyrol (6 days) 🌉', [
+    {
+      code: 'AT', name: 'Austria', days: 6, budget: 642, lat: 47.2692, lng: 11.4041,
+      destinations: [
+        { name: 'Innsbruck', lat: 47.2692, lng: 11.4041 },
+        { name: 'Seefeld', lat: 47.3227, lng: 11.1910 },
+        { name: 'Achensee', lat: 47.4667, lng: 11.7167 },
+        { name: 'Zillertal / Mayrhofen (Olperer suspension bridge)', lat: 47.1667, lng: 11.8667 },
+      ],
+      notes: "Innsbruck (2 nights) — Seefeld (20-25 min, a high-altitude hiking hub) — Achensee (turquoise lake, ~1h) — Zillertal/Mayrhofen (Olperer suspension bridge, ~40 min) — loop back to Innsbruck. NL-Innsbruck direct ~940-950km/9-10h. Budget ~€90-125/day p.p. Season: June-September. Zillertal cable cars/suspension bridges and Achensee boat trips are separate cost items (€15-30 each), not folded into the daily budget.",
+      transport_to_next: 'End of this route — drive back to the Netherlands from Innsbruck.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Own car, a loop out of and back to Innsbruck.',
+    climate_summary: 'June-September.',
+    description: "Innsbruck as a base for Seefeld's high-altitude hiking, the turquoise Achensee, and Zillertal/Mayrhofen's Olperer suspension bridge.",
+    notes: "Built (2026-08) as part of Phase 2 batch 3 (Austria + Switzerland). Deliberately a different valley/region than Zell am See-Kaprun/Pinzgau above and Salzburg + Grossglockner + Tyrol below, though the latter also touches Innsbruck — see that route's notes for how the two avoid duplicating content. Austrian 10-day vignette (€12.80/car) required — see the general note on Austria Alpine Roadtrip (9 days) 🗺️ below. Not yet checked against Route Builder-level price research beyond the ticket checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSalzburgGrossglocknerTyrolRoute() {
+  return rbBuildFlatSeedRoute('Salzburg + Grossglockner + Tyrol (6 days) 🏔️', [
+    {
+      code: 'AT', name: 'Austria', days: 3, budget: 360, lat: 47.8095, lng: 13.0550,
+      destinations: [
+        { name: 'Salzburg', lat: 47.8095, lng: 13.0550 },
+        { name: 'Bruck an der Glocknerstraße', lat: 47.2833, lng: 12.8333 },
+        { name: 'Grossglockner High Alpine Road', lat: 47.1219, lng: 12.8264 },
+      ],
+      notes: "Salzburg — Bruck an der Glocknerstraße (~1.5h) — the Grossglockner Hochalpenstraße itself (~1.5-2h driving, plan half a day with stops). Budget ~€100-140/day p.p. Season: the road is open early May-early November 2026. Apart from the vignette: a separate toll on the Grossglockner road, €46.50/car (day ticket, summer 2026) — buying online in advance at Heiligenblut saves a few euros (€42.50).",
+      transport_to_next: 'Drive on to Lienz (continuing over the pass), then Innsbruck — the full Salzburg-Innsbruck run via the Grossglockner is 7-8h total, better split across an overnight near Lienz/Zell am See than driven in one long day.',
+    },
+    {
+      code: 'AT', name: 'Austria', days: 3, budget: 360, lat: 47.2692, lng: 11.4041,
+      destinations: [
+        { name: 'Lienz', lat: 46.8291, lng: 12.7684 },
+        { name: 'Innsbruck / Tyrol', lat: 47.2692, lng: 11.4041 },
+      ],
+      notes: "Lienz as the overnight break, then on to Innsbruck/Tyrol — same Innsbruck content as the standalone Tyrol (6 days) 🌉 route above (see that route's notes), compressed here to make room for the Grossglockner leg.",
+      transport_to_next: 'End of this route — drive back to the Netherlands from Innsbruck.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Own car, one continuous route without backtracking — Salzburg to Innsbruck via the Grossglockner and Lienz, split with an overnight rather than driven in one long day.',
+    climate_summary: 'The Grossglockner High Alpine Road is open early May-early November 2026; June-September is the more comfortable window.',
+    description: "Salzburg, the Grossglockner High Alpine Road, an overnight near Lienz, and Innsbruck/Tyrol.",
+    notes: "Built (2026-08) as part of Phase 2 batch 3 (Austria + Switzerland). Shares Salzburg with Salzburg + Surroundings (4 days) 🎻/Salzburg + Berchtesgaden + Hallstatt (5 days) 🛥️ and Innsbruck/Tyrol with Tyrol (6 days) 🌉 above — deliberately not deduplicated, per this project's overlap-is-fine convention; this route's own throughline is the Grossglockner High Alpine Road connecting the two. Also revisited at a broader scale by Austria Alpine Roadtrip (9 days) 🗺️ below, which folds this same Grossglockner corridor into a longer west-to-east itinerary. WebSearch-verified (2026-08): Grossglockner road toll (€46.50/car day ticket, or €42.50 pre-booked online) is separate from and additional to the Austrian vignette. Not yet checked against Route Builder-level price research beyond the ticket/toll checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildAustriaAlpineRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Austria Alpine Roadtrip (9 days) 🗺️', [
+    {
+      code: 'AT', name: 'Austria', days: 3, budget: 360, lat: 47.2667, lng: 9.8667,
+      destinations: [
+        { name: 'Vorarlberg / Bregenzerwald', lat: 47.2667, lng: 9.8667 },
+        { name: 'Damüls', lat: 47.2647, lng: 9.8869 },
+        { name: 'Schwarzenberg', lat: 47.3833, lng: 9.9000 },
+      ],
+      notes: 'The far-western opener that distinguishes this route from the shorter Austria trips above: Vorarlberg/Bregenzerwald (Damüls, Schwarzenberg, cheese villages). Budget slightly higher here than the rest of the trip.',
+      transport_to_next: 'Drive east into Tyrol toward Innsbruck.',
+    },
+    {
+      code: 'AT', name: 'Austria', days: 2, budget: 210, lat: 47.2692, lng: 11.4041,
+      destinations: [
+        { name: 'Innsbruck / Tyrol', lat: 47.2692, lng: 11.4041 },
+      ],
+      notes: 'Innsbruck/Tyrol as a shorter waypoint here than the standalone Tyrol (6 days) 🌉 route above — same city, compressed to fit this longer, single-corridor itinerary.',
+      transport_to_next: 'Drive south to the Grossglockner High Alpine Road.',
+    },
+    {
+      code: 'AT', name: 'Austria', days: 2, budget: 230, lat: 47.1219, lng: 12.8264,
+      destinations: [
+        { name: 'Grossglockner High Alpine Road', lat: 47.1219, lng: 12.8264 },
+      ],
+      notes: 'Same Grossglockner toll caveat as Salzburg + Grossglockner + Tyrol (6 days) 🏔️ above (€46.50/car day ticket, or €42.50 pre-booked online).',
+      transport_to_next: 'Drive north to the Salzkammergut lake district.',
+    },
+    {
+      code: 'AT', name: 'Austria', days: 2, budget: 220, lat: 47.7136, lng: 13.6234,
+      destinations: [
+        { name: 'Salzkammergut lakes (Hallstatt / Wolfgangsee)', lat: 47.7136, lng: 13.6234 },
+        { name: 'Salzburg (closing stop)', lat: 47.8095, lng: 13.0550 },
+      ],
+      notes: 'Salzkammergut lakes (Hallstatt/Wolfgangsee) with Salzburg as the closing stop — the trip differs from the shorter routes above by adding far-western Vorarlberg and stringing everything into one continuous corridor instead of exploring a single region in depth.',
+      transport_to_next: 'End of this route — drive back to the Netherlands from Salzburg.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Own car, one continuous west-to-east corridor: Vorarlberg — Tyrol/Innsbruck — Grossglockner High Alpine Road — Salzkammergut — Salzburg.',
+    climate_summary: 'June-September.',
+    description: "A single continuous corridor across Austria's alpine regions: Vorarlberg/Bregenzerwald, Tyrol/Innsbruck, the Grossglockner High Alpine Road, the Salzkammergut lakes, and Salzburg.",
+    notes: "Built (2026-08) as part of Phase 2 batch 3 (Austria + Switzerland) — a grand-tour combo that deliberately revisits Tyrol/Innsbruck territory (Tyrol (6 days) 🌉), the Grossglockner High Alpine Road (Salzburg + Grossglockner + Tyrol (6 days) 🏔️) and Salzburg/Salzkammergut (Salzburg + Surroundings (4 days) 🎻, Salzburg + Berchtesgaden + Hallstatt (5 days) 🛥️) covered by the shorter routes above, plus the far-western Vorarlberg/Bregenzerwald region none of them reach. Per this project's overlap-is-fine convention, built as its own independent route rather than skipped or merged. General Austria note (webcheck 2026-08): a 10-day vignette (€12.80/car in 2026) is required on Austrian motorways for all seven Austria routes in this batch — 2026 is the last year the physical sticker exists alongside the digital one. Not yet checked against Route Builder-level price research beyond the ticket/toll checks already folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildAustriaSloveniaRoute() {
+  return rbBuildFlatSeedRoute('Austria + Slovenia (9 days) 🏝️', [
+    {
+      code: 'AT', name: 'Austria', days: 5, budget: 560, lat: 46.6249, lng: 14.3050,
+      destinations: [
+        { name: 'Salzburg or Grossglockner area', lat: 47.8095, lng: 13.0550 },
+        { name: 'Klagenfurt', lat: 46.6249, lng: 14.3050 },
+        { name: 'Wörthersee', lat: 46.6167, lng: 14.1667 },
+      ],
+      notes: "5 days in Austria: Salzburg or the Grossglockner area, then south to Klagenfurt/Wörthersee (Carinthia). Budget ~€95-130/day p.p.",
+      transport_to_next: 'Drive to the Julian Alps, Slovenia — Bled is only ~79km/50 min from Klagenfurt, genuinely no detour.',
+    },
+    {
+      code: 'SI', name: 'Slovenia', days: 4, budget: 360, lat: 46.3683, lng: 14.1146,
+      destinations: [
+        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+        { name: 'Bohinj', lat: 46.2833, lng: 13.9333 },
+        { name: 'Ljubljana (optional)', lat: 46.0569, lng: 14.5058 },
+      ],
+      notes: "4 days in Slovenia's Julian Alps: Bled, Bohinj, with Ljubljana as an optional cheap, relaxed closer. Slovenia is generally cheaper than Austria overall, though Bled itself is a price outlier — staying 10-20 min outside Bled saves 30-40%. Season: June-September. Slovenia does not use the Austrian vignette — a separate e-vinjeta (toll sticker) is needed once driving Slovenian motorways.",
+      transport_to_next: 'End of this route — drive back to the Netherlands via Austria.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Own car throughout — Klagenfurt to Bled is a short, direct hop, no detour.',
+    climate_summary: 'June-September.',
+    description: "Austria's Carinthia (Salzburg or Grossglockner, then Klagenfurt/Wörthersee) paired with Slovenia's Julian Alps (Bled, Bohinj, optional Ljubljana).",
+    notes: "Built (2026-08) as part of Phase 2 batch 3 (Austria + Switzerland) — the only multi-country route in the Austria half of this batch. Best pairing confirmed via web check: Carinthia (Klagenfurt/Wörthersee) to the Julian Alps (Bled/Bohinj) is a genuinely short hop, not a stretch. Reuses the Salzburg/Grossglockner content covered in more depth by the routes above it in this batch. Austrian 10-day vignette (€12.80/car) required for the Austria leg; Slovenia needs its own separate e-vinjeta. Not yet checked against Route Builder-level price research beyond the vignette checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildZurichLucerneRoute() {
+  return rbBuildFlatSeedRoute('Zurich + Lucerne + Surroundings (5 days) ⛴️', [
+    {
+      code: 'CH', name: 'Switzerland', days: 5, budget: 650, lat: 47.3769, lng: 8.5417,
+      destinations: [
+        { name: 'Zurich (old town, lake, Uetliberg hike)', lat: 47.3769, lng: 8.5417 },
+        { name: 'Lucerne (Chapel Bridge, lake, old town)', lat: 47.0502, lng: 8.3093 },
+        { name: 'Pilatus (Golden Round Trip)', lat: 46.9789, lng: 8.2547 },
+        { name: 'Rigi (alternative)', lat: 47.0567, lng: 8.4875 },
+      ],
+      notes: "Zurich (2 nights: old town, lake, Uetliberg hike) — 45 min train — Lucerne (3 nights: Chapel Bridge, lake, old town) — a day trip to either Pilatus (Golden Round Trip: cable car up, cogwheel railway down) or Rigi. The train clearly beats the car here — no vignette needed, city parking is scarce/expensive, trains run every 30 min (~1h). Budget ~€115-150/day p.p. Season: May-September. Pilatus Golden Round Trip is CHF119.80 p.p. (~€125); Rigi is the quieter/cheaper alternative — pick one, not both.",
+      transport_to_next: 'End of this route — train back to the Netherlands or fly out of Zurich.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Train throughout — no car/vignette needed, trains run every 30 minutes between Zurich and Lucerne.',
+    climate_summary: 'May-September.',
+    description: "Zurich's old town and lake, Lucerne's Chapel Bridge, and a day trip up Pilatus or Rigi.",
+    notes: "Built (2026-08) as part of Phase 2 batch 3 (Austria + Switzerland). 'Pilatus or Rigi' is an either/or day-trip choice in the source material, not both combined — both are listed here as destination options. General Switzerland note (webcheck 2026-08): the Swiss vignette (CHF40/year, ~€43, valid 1 Dec 2025-31 Jan 2027, no shorter option exists) only applies to car travel — irrelevant for this train-based route, but see the driving-based Switzerland routes below for where it does apply. Not yet checked against Route Builder-level price research beyond the ticket checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildInterlakenLauterbrunnenGrindelwaldRoute() {
+  return rbBuildFlatSeedRoute('Interlaken + Lauterbrunnen + Grindelwald (6 days) 🪂', [
+    {
+      code: 'CH', name: 'Switzerland', days: 1, budget: 140, lat: 46.6863, lng: 7.8632,
+      destinations: [
+        { name: 'Interlaken', lat: 46.6863, lng: 7.8632 },
+      ],
+      notes: 'Interlaken as a one-night gateway stop between the two valley bases below.',
+      transport_to_next: 'Drive to Lauterbrunnen — short, within the same valley system.',
+    },
+    {
+      code: 'CH', name: 'Switzerland', days: 2, budget: 280, lat: 46.5934, lng: 7.9086,
+      destinations: [
+        { name: 'Lauterbrunnen (Trümmelbach Falls)', lat: 46.5934, lng: 7.9086 },
+        { name: 'Mürren / Gimmelwald (car-free)', lat: 46.5602, lng: 7.8926 },
+      ],
+      notes: 'Lauterbrunnen (2 nights: waterfalls, Trümmelbach Falls) — cable car up to car-free Mürren/Gimmelwald. Own car as far as Lauterbrunnen, then train/cable car onward — Wengen, in the same valley, is entirely car-free.',
+      transport_to_next: 'Drive/train to Grindelwald — a short hop within the same region.',
+    },
+    {
+      code: 'CH', name: 'Switzerland', days: 3, budget: 420, lat: 46.6244, lng: 8.0345,
+      destinations: [
+        { name: 'Grindelwald', lat: 46.6244, lng: 8.0345 },
+        { name: 'First Cliff Walk', lat: 46.6597, lng: 8.0725 },
+        { name: 'Bachalpsee', lat: 46.6539, lng: 8.0453 },
+      ],
+      notes: "Grindelwald (2 nights: First Cliff Walk, Bachalpsee hike, or the Männlichen-Kleine Scheidegg ridge). Budget ~€120-160/day p.p. — one of Switzerland's priciest valleys. Season: June-September for full trail access. The Jungfraujoch excursion (Interlaken-Jungfraujoch return CHF261.20, May-Oct, plus a mandatory CHF10 seat reservation) is a legitimate but skippable splurge — Männlichen-Kleine Scheidegg or Bachalpsee give comparable free Eiger/Jungfrau views on foot.",
+      transport_to_next: 'End of this route — drive/train back to the Netherlands via Interlaken.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Own car as far as Interlaken/Lauterbrunnen, then train/cable car onward — Wengen is entirely car-free.',
+    climate_summary: 'June-September for full hiking-trail access.',
+    description: "Lauterbrunnen's waterfalls and car-free Mürren/Gimmelwald, and Grindelwald's First Cliff Walk and Bachalpsee hike.",
+    notes: "Built (2026-08) as part of Phase 2 batch 3 (Austria + Switzerland). One of the priciest valleys in this batch — see the Jungfraujoch cost caveat above for the biggest optional splurge. General Switzerland vignette note applies only to the car portion as far as Interlaken/Lauterbrunnen — see Zurich + Lucerne + Surroundings (5 days) ⛴️ above for the full vignette detail. Not yet checked against Route Builder-level price research beyond the ticket checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildZermattMatterhornRoute() {
+  return rbBuildFlatSeedRoute('Swiss Alps: Zermatt / Matterhorn (6 days) 🗻', [
+    {
+      code: 'CH', name: 'Switzerland', days: 6, budget: 900, lat: 46.0207, lng: 7.7491,
+      destinations: [
+        { name: 'Täsch (parking)', lat: 46.0489, lng: 7.7710 },
+        { name: 'Zermatt (car-free)', lat: 46.0207, lng: 7.7491 },
+        { name: 'Matterhorn / Mattertal', lat: 45.9763, lng: 7.6586 },
+        { name: 'Saas-Fee (optional day trip)', lat: 46.1089, lng: 7.9273 },
+      ],
+      notes: "The concrete region chosen for this originally vague 'Swiss Alps' item: Zermatt/Matterhorn — a different canton (Valais, not Bern), a different valley (Mattertal), and a different iconic peak (Matterhorn rather than Jungfrau) than the Interlaken/Grindelwald route above, so there's no overlap. Route: drive to Täsch — park (CHF13.50-16.50/day) — 12 min shuttle train to car-free Zermatt (3 nights) — easy hikes (5-Lakes Trail, Gornergrat), optional day trip to the neighbouring car-free Saas-Fee (1 night). Budget ~€130-170/day p.p. — even pricier than the Jungfrau region. Season: July-September. Gornergrat cogwheel railway return is ~CHF80-96 p.p.; the Matterhorn Glacier Paradise cable car is ~CHF120 p.p. — pick one, skip the other.",
+      transport_to_next: 'End of this route — drive back to the Netherlands from Täsch.',
+    },
+  ], {
+    best_starting_month: 'August',
+    travel_style: 'Own car to Täsch, then a 12-minute shuttle train into car-free Zermatt.',
+    climate_summary: 'July-September.',
+    description: "Car-free Zermatt as a base for Matterhorn/Mattertal hikes (5-Lakes Trail, Gornergrat), with an optional day trip to Saas-Fee.",
+    notes: "Built (2026-08) as part of Phase 2 batch 3 (Austria + Switzerland). WebSearch-verified (2026-08): the source material's vague 'Swiss Alps (5-7 days)' item needed a concrete region chosen to avoid overlapping Interlaken + Lauterbrunnen + Grindelwald (6 days) 🪂 above — Zermatt/Matterhorn was picked specifically for its different canton, valley and iconic peak. Also revisited at a broader scale by Switzerland Alpine Roadtrip (9 days) 🛣️ below, which folds this same Zermatt/Mattertal stop into a longer multi-pass itinerary. Not yet checked against Route Builder-level price research beyond the ticket checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSwitzerlandAlpineRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Switzerland Alpine Roadtrip (9 days) 🛣️', [
+    {
+      code: 'CH', name: 'Switzerland', days: 1, budget: 130, lat: 47.3769, lng: 8.5417,
+      destinations: [
+        { name: 'Zurich', lat: 47.3769, lng: 8.5417 },
+      ],
+      notes: 'Zurich as the opening night — same content as Zurich + Lucerne + Surroundings (5 days) ⛴️ above, compressed to one night here.',
+      transport_to_next: 'Drive to Lucerne.',
+    },
+    {
+      code: 'CH', name: 'Switzerland', days: 1, budget: 130, lat: 47.0502, lng: 8.3093,
+      destinations: [
+        { name: 'Lucerne', lat: 47.0502, lng: 8.3093 },
+      ],
+      notes: 'Lucerne, one night — same content as Zurich + Lucerne + Surroundings (5 days) ⛴️ above.',
+      transport_to_next: 'Drive to Andermatt via the Sustenpass (seasonal, open from 12 June 2026).',
+    },
+    {
+      code: 'CH', name: 'Switzerland', days: 2, budget: 280, lat: 46.6336, lng: 8.5942,
+      destinations: [
+        { name: 'Andermatt', lat: 46.6336, lng: 8.5942 },
+        { name: 'Sustenpass', lat: 46.7314, lng: 8.4436 },
+        { name: 'Furka Pass', lat: 46.5747, lng: 8.4108 },
+        { name: 'Grimsel Pass', lat: 46.5717, lng: 8.3550 },
+      ],
+      notes: 'Andermatt as the base for three legendary mountain passes: the Sustenpass (seasonal, 2026 open from 12 June), the Furka Pass (reopened 29 May 2026) and the Grimsel Pass (reopened 14 May 2026) — all seasonal, check current-year opening dates before relying on this route outside summer.',
+      transport_to_next: 'Drive over the Simplon Pass (open year-round, no seasonal closure) into Ticino.',
+    },
+    {
+      code: 'CH', name: 'Switzerland', days: 2, budget: 300, lat: 46.0207, lng: 7.7491,
+      destinations: [
+        { name: 'Wallis / Zermatt (parking at Täsch)', lat: 46.0207, lng: 7.7491 },
+      ],
+      notes: 'Wallis/Zermatt — same car-free-Zermatt/Täsch-parking setup as the standalone Swiss Alps: Zermatt / Matterhorn (6 days) 🗻 route above, compressed here to fit this longer multi-pass itinerary.',
+      transport_to_next: 'Drive over the Simplon Pass toward Ticino/Lugano.',
+    },
+    {
+      code: 'CH', name: 'Switzerland', days: 2, budget: 280, lat: 46.0037, lng: 8.9511,
+      destinations: [
+        { name: 'Lugano / Ticino', lat: 46.0037, lng: 8.9511 },
+      ],
+      notes: 'Lugano/Ticino, reached via the year-round Simplon Pass — a distinctly Italian-flavoured Swiss region. Onward route uses either the seasonal San Bernardino Pass or the year-round Gotthard tunnel, depending on season.',
+      transport_to_next: 'Drive over the San Bernardino Pass (seasonal) or through the Gotthard tunnel (year-round alternative) to Graubünden/Chur.',
+    },
+    {
+      code: 'CH', name: 'Switzerland', days: 1, budget: 140, lat: 46.8499, lng: 9.5320,
+      destinations: [
+        { name: 'Graubünden / Chur', lat: 46.8499, lng: 9.5320 },
+      ],
+      notes: 'Graubünden/Chur as the closing night before heading home.',
+      transport_to_next: 'End of this route — drive back to the Netherlands from Chur.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Own car, a non-backtracking loop over six named alpine passes/regions — several legs are seasonal, check current-year opening dates before travelling.',
+    climate_summary: 'June-September — several of the mountain passes on this route only reopen in late May/June each year.',
+    description: "A non-backtracking loop through Switzerland's alpine heartland: Zurich, Lucerne, Andermatt and the Sustenpass, the Furka and Grimsel passes, Wallis/Zermatt, the Simplon Pass, Ticino/Lugano, and Graubünden/Chur.",
+    notes: "Built (2026-08) as part of Phase 2 batch 3 (Austria + Switzerland) — a grand-tour combo that deliberately revisits Zurich/Lucerne territory (Zurich + Lucerne + Surroundings (5 days) ⛴️) and Zermatt/Mattertal (Swiss Alps: Zermatt / Matterhorn (6 days) 🗻) covered by the shorter routes above, plus several high mountain passes (Sustenpass, Furka, Grimsel, Simplon, San Bernardino/Gotthard) none of them reach. Per this project's overlap-is-fine convention, built as its own independent route rather than skipped or merged. General Switzerland note (webcheck 2026-08): the Swiss vignette (CHF40/year, ~€43, valid 1 Dec 2025-31 Jan 2027, only a yearly sticker exists — no shorter option) is a fixed cost for this and any other Switzerland route driven by car; a Half Fare Card (CHF150) pays for itself quickly with 2+ mountain excursions. Not yet checked against Route Builder-level price research beyond the pass/vignette checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSwitzerlandNorthernItalyRoute() {
+  return rbBuildFlatSeedRoute('Switzerland + Northern Italy (9 days) 🚞', [
+    {
+      code: 'CH', name: 'Switzerland', days: 3, budget: 420, lat: 46.4908, lng: 9.8355,
+      destinations: [
+        { name: 'Chur / Graubünden', lat: 46.8499, lng: 9.5320 },
+        { name: 'St. Moritz (Bernina Express)', lat: 46.4908, lng: 9.8355 },
+      ],
+      notes: 'Chur/St. Moritz area, including a Bernina Express day — the Bernina Express/pass is the best-verified link into Italy from here.',
+      transport_to_next: 'Ride the Bernina Express/pass across the border to Tirano, Italy — Schengen, no stamp, but border checks do still happen occasionally, carry a passport/ID.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 3, budget: 255, lat: 46.2167, lng: 10.1667,
+      destinations: [
+        { name: 'Tirano', lat: 46.2167, lng: 10.1667 },
+        { name: 'Valtellina / Lake Como', lat: 45.8081, lng: 9.0852 },
+      ],
+      notes: 'Tirano — Valtellina/Lake Como. Noticeably cheaper than the Swiss legs, ~€70-100/day p.p. Italy uses toll motorways (autostrade), not a vignette — budget an extra ~€20-40 in tolls for this stretch; check that a rental car\'s insurance covers Italy if it is not your own vehicle.',
+      transport_to_next: 'Drive back north over the Gotthard toward Ticino/Lugano, Switzerland.',
+    },
+    {
+      code: 'CH', name: 'Switzerland', days: 3, budget: 420, lat: 46.0037, lng: 8.9511,
+      destinations: [
+        { name: 'Lugano / Ticino', lat: 46.0037, lng: 8.9511 },
+      ],
+      notes: 'Lugano/Ticino to close the loop, back north via the Gotthard. Season: June-September. Same Swiss vignette caveat as the other Switzerland routes in this batch applies to this leg (CHF40/year, ~€43).',
+      transport_to_next: 'End of this route — drive back to the Netherlands from Ticino via the Gotthard.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Train (Bernina Express) to cross into Italy, own car for the rest of the loop.',
+    climate_summary: 'June-September.',
+    description: "Graubünden/St. Moritz and the Bernina Express into Italy's Valtellina/Lake Como region, looping back via Ticino/Lugano.",
+    notes: "Built (2026-08) as part of Phase 2 batch 3 (Austria + Switzerland) — the only multi-country route in the Switzerland half of this batch. Best pairing confirmed via web check: Graubünden/St. Moritz to Tirano via the Bernina Express/pass is the strongest, most scenic link into Italy. Days rebalanced to 3+3+3=9 here versus the source's 3+2+2 split, to fit the full 9-day total while keeping all three stops properly represented — an adjustment, not a content change. Passport/ID needed at the border (Schengen, no stamp, but checks do happen); Italy uses toll autostrade rather than a vignette. Not yet checked against Route Builder-level price research beyond the toll/insurance checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaAustriaSwitzerlandRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_AUSTRIA_SWITZERLAND)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_AUSTRIA_SWITZERLAND, '1');
+
+  rbRoutes.push(
+    rbBuildSalzburgSurroundingsRoute(),
+    rbBuildSalzburgBerchtesgadenHallstattRoute(),
+    rbBuildZellAmSeeKaprunPinzgauRoute(),
+    rbBuildTyrolRoute(),
+    rbBuildSalzburgGrossglocknerTyrolRoute(),
+    rbBuildAustriaAlpineRoadtripRoute(),
+    rbBuildAustriaSloveniaRoute(),
+    rbBuildZurichLucerneRoute(),
+    rbBuildInterlakenLauterbrunnenGrindelwaldRoute(),
+    rbBuildZermattMatterhornRoute(),
+    rbBuildSwitzerlandAlpineRoadtripRoute(),
+    rbBuildSwitzerlandNorthernItalyRoute(),
+  );
+  rbSave();
+}
+
