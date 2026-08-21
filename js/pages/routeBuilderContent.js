@@ -17293,3 +17293,318 @@ function rbSeedEuropaMadeiraAzoresRoutes() {
   );
   rbSave();
 }
+
+function rbBuildTenerifeRoute() {
+  return rbBuildFlatSeedRoute('Tenerife (5-7 days) 🏝️', [
+    {
+      code: 'ES', name: 'Spain', days: 6, budget: 390, lat: 28.2916, lng: -16.6291,
+      destinations: [
+        { name: 'Santa Cruz de Tenerife', lat: 28.4636, lng: -16.2518 },
+        { name: 'La Laguna (UNESCO old town)', lat: 28.4874, lng: -16.3159 },
+        { name: 'Teide National Park', lat: 28.2723, lng: -16.6417 },
+        { name: 'Anaga Rural Park (Cruz del Carmen)', lat: 28.5477, lng: -16.2135 },
+        { name: 'Costa Adeje', lat: 28.0994, lng: -16.7357 },
+        { name: 'Los Cristianos', lat: 28.0525, lng: -16.7192 },
+      ],
+      notes: "Entry: easyJet and Transavia fly direct from Amsterdam/Rotterdam to Tenerife South, plus winter-sun charters on TUI fly. 1-2 days in Santa Cruz and the UNESCO-listed university town of La Laguna next door, 1 day up at Teide National Park, 1-2 days walking in the Anaga mountains in the northeast, then 2 days winding down on the south coast around Costa Adeje/Los Cristianos. A rental car is worth it for Anaga's winding roads. Budget ~€55-75/day. Season: good year-round; October-May is nicest for hiking. Web check (2026-08): the Teide cable car is roughly €40 return, weather-dependent and worth booking ahead; a free permit is mandatory for the final 200m to the summit (capped at ~200 visitors/day, apply well ahead via reservasparquesnacionales.es) — without it you still reach the upper cable-car station at 3,555m, which is impressive on its own. The Canaries are EU/Schengen but sit outside the EU VAT zone, running their own IGIC system (general rate ~7% vs mainland Spain's 21% IVA) — noticeably cheaper on electronics, alcohol, tobacco and perfume, island-wide, not just at the airport. Since April 2024 there have been ongoing peaceful overtourism protests (\"Canarias tiene un límite\") against housing shortage/hotel construction, continuing into 2025 — no direct safety concern for visitors, but respectful behavior is advised given growing local sentiment.",
+      transport_to_next: 'End of this route — fly home from Tenerife South or Tenerife North.',
+    },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'Santa Cruz/La Laguna city time, a Teide day, Anaga hiking, and a south-coast beach base.',
+    climate_summary: 'Good year-round; October-May nicest for hiking, warmer south coast for beach time in winter.',
+    description: "Santa Cruz and La Laguna, Teide National Park, Anaga's laurel-forest trails, and the Costa Adeje/Los Cristianos beach coast.",
+    notes: "Built (2026-08) as part of Phase 2 batch 14b/21 (Islands: Canary Islands + Balearics) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Single-block route — the differentiator vs. the multi-island Tenerife combos below. No pre-existing Route Builder expedition covers Tenerife, so no collision beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildGranCanariaRoute() {
+  return rbBuildFlatSeedRoute('Gran Canaria (5-7 days) 🏝️', [
+    {
+      code: 'ES', name: 'Spain', days: 6, budget: 360, lat: 28.0083, lng: -15.5817,
+      destinations: [
+        { name: 'Las Palmas de Gran Canaria', lat: 28.1235, lng: -15.4366 },
+        { name: 'Maspalomas dunes', lat: 27.7606, lng: -15.5875 },
+        { name: 'Roque Nublo', lat: 27.9600, lng: -15.5719 },
+        { name: 'Tejeda', lat: 27.9908, lng: -15.6144 },
+      ],
+      notes: "Entry: easyJet and Transavia fly direct from Amsterdam/Rotterdam to Gran Canaria; TUI fly runs winter-sun charters. 2 days in Las Palmas, 2 days on the Maspalomas dunes in the south, then 1-2 days up in the mountainous interior around Roque Nublo and Tejeda. Budget ~€50-70/day. Season: good year-round; the mountains are most pleasant October-April. Web check (2026-08): no permits needed anywhere on this route; the Roque Nublo parking area fills up early on weekends, so start early; the Maspalomas dunes are a protected nature reserve — stay on the marked paths. Same IGIC-vs-mainland-IVA price advantage on electronics/alcohol/tobacco/perfume as elsewhere in the Canaries (~7% vs 21%). Ongoing peaceful overtourism protests (\"Canarias tiene un límite\") since April 2024, continuing into 2025 — no direct safety concern, respectful behavior advised.",
+      transport_to_next: 'End of this route — fly home from Gran Canaria.',
+    },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'Las Palmas city time, the Maspalomas dunes, and the mountainous interior around Roque Nublo/Tejeda.',
+    climate_summary: 'Good year-round; the mountainous interior is most pleasant October-April.',
+    description: "Las Palmas, the Maspalomas dunes, and the interior highlands around Roque Nublo and Tejeda.",
+    notes: "Built (2026-08) as part of Phase 2 batch 14b/21 (Islands: Canary Islands + Balearics) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Single-block route — the differentiator vs. the multi-island Gran Canaria combos below. No pre-existing Route Builder expedition covers Gran Canaria, so no collision beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildLanzaroteFuerteventuraRoute() {
+  return rbBuildFlatSeedRoute('Lanzarote + Fuerteventura (5-7 days) 🏝️', [
+    {
+      code: 'ES', name: 'Spain', days: 3, budget: 165, lat: 28.9985, lng: -13.6000,
+      destinations: [
+        { name: 'Timanfaya National Park (Islote de Hilario)', lat: 28.9967, lng: -13.7167 },
+        { name: 'Arrecife', lat: 28.9630, lng: -13.5477 },
+        { name: 'Costa Teguise', lat: 28.9930, lng: -13.4881 },
+      ],
+      notes: "Entry: easyJet and Transavia fly direct from Amsterdam/Rotterdam to Lanzarote; TUI fly runs winter-sun charters. 1 day at Timanfaya, then 1-2 days around Arrecife and Costa Teguise. Budget ~€50-65/day. Web check (2026-08): Timanfaya can only be seen via the mandatory \"Ruta de los Volcanes\" bus tour — free wandering isn't allowed — and its two hiking trails require a guide plus an advance reservation. Camel rides are bookable separately near the park entrance; animal-welfare concerns around them are a live debate, worth knowing about before booking. Same Canaries-wide IGIC price advantage on electronics/alcohol/tobacco/perfume as elsewhere in this archipelago.",
+      transport_to_next: "Ferry Playa Blanca-Corralejo (~25 min, frequent). Web check (2026-08): confirm the current timetable before relying on it.",
+    },
+    {
+      code: 'ES', name: 'Spain', days: 3, budget: 165, lat: 28.6919, lng: -13.8737,
+      destinations: [
+        { name: 'Corralejo', lat: 28.7343, lng: -13.8672 },
+        { name: 'El Cotillo', lat: 28.6841, lng: -14.0086 },
+      ],
+      notes: "2-3 days on Fuerteventura around Corralejo and El Cotillo. Budget ~€50-65/day. Season: good year-round; October-April brings the best consistent wind for surfing/kitesurfing. Web check (2026-08): ongoing peaceful overtourism protests (\"Canarias tiene un límite\") across the Canaries since April 2024, continuing into 2025 — no direct safety concern, respectful behavior advised.",
+      transport_to_next: 'End of this route — fly home from Fuerteventura, or back via Lanzarote.',
+    },
+  ], {
+    best_starting_month: 'October',
+    travel_style: "Lanzarote's volcanic Timanfaya plus the east coast, a short ferry, then Fuerteventura's Corralejo/El Cotillo coast.",
+    climate_summary: 'Good year-round; October-April brings the best wind for surf/kitesurf on Fuerteventura.',
+    description: "Timanfaya National Park, Arrecife/Costa Teguise, a short inter-island ferry, and Corralejo/El Cotillo on Fuerteventura.",
+    notes: "Built (2026-08) as part of Phase 2 batch 14b/21 (Islands: Canary Islands + Balearics) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Modeled as two Spain blocks (Lanzarote, then Fuerteventura) linked by the short Playa Blanca-Corralejo ferry. No pre-existing Route Builder expedition covers Lanzarote or Fuerteventura, so no collision beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildTenerifeLaGomeraRoute() {
+  return rbBuildFlatSeedRoute('Tenerife + La Gomera (7-10 days) 🏝️', [
+    {
+      code: 'ES', name: 'Spain', days: 5, budget: 300, lat: 28.2916, lng: -16.6291,
+      destinations: [
+        { name: 'Santa Cruz de Tenerife', lat: 28.4636, lng: -16.2518 },
+        { name: 'Teide National Park', lat: 28.2723, lng: -16.6417 },
+        { name: 'Los Cristianos', lat: 28.0525, lng: -16.7192 },
+      ],
+      notes: "Entry: easyJet and Transavia fly direct from Amsterdam/Rotterdam to Tenerife South. 4-5 days on Tenerife in short form: Santa Cruz, Teide National Park, and the south-coast base at Los Cristianos (departure point for La Gomera). Budget ~€50-70/day. Web check (2026-08): the Teide cable car is ~€40 return, weather-dependent, book ahead; a free permit is mandatory for the last 200m to the summit (max ~200/day, apply via reservasparquesnacionales.es well ahead) — without it you still reach the 3,555m upper station.",
+      transport_to_next: "Ferry Los Cristianos-San Sebastián de la Gomera (~50 min, several times a day, Fred Olsen Express/Naviera Armas).",
+    },
+    {
+      code: 'ES', name: 'Spain', days: 4, budget: 240, lat: 28.1167, lng: -17.2333,
+      destinations: [
+        { name: 'San Sebastián de la Gomera', lat: 28.0916, lng: -17.1133 },
+        { name: 'Garajonay National Park', lat: 28.1247, lng: -17.2379 },
+        { name: 'Valle Gran Rey', lat: 28.0989, lng: -17.3106 },
+        { name: 'Agulo', lat: 28.1858, lng: -17.2004 },
+      ],
+      notes: "2 days in Garajonay National Park and 1-2 days around Valle Gran Rey/Agulo. Budget ~€50-70/day. Season: good year-round — the laurisilva (laurel) forest stays foggy-green all year, a welcome contrast when it's hot down on the coast. Web check (2026-08): Garajonay has been a UNESCO World Heritage site since 1986 (40km², 18 marked trails), no permit needed, but check for summer fire-risk closures. Silbo Gomero, the whistled language, has been UNESCO intangible heritage since 2009 — restaurant demonstrations for tourists aren't guaranteed daily, so check with the tourist office ahead. Same Teide-permit caveat as the Tenerife leg above.",
+      transport_to_next: 'End of this route — ferry back to Los Cristianos and fly home from Tenerife South.',
+    },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'A shortened Tenerife base plus a ferry to La Gomera for Garajonay and the west-coast valleys.',
+    climate_summary: "Good year-round; La Gomera's laurel forest stays foggy-green all year, a cool contrast to the coast.",
+    description: "Tenerife's Santa Cruz/Teide/Los Cristianos, then a ferry to La Gomera for Garajonay National Park and Valle Gran Rey/Agulo.",
+    notes: "Built (2026-08) as part of Phase 2 batch 14b/21 (Islands: Canary Islands + Balearics) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Modeled as two Spain blocks (Tenerife, then La Gomera) linked by the Los Cristianos-San Sebastián ferry. Tenerife coordinates reused unchanged from the standalone Tenerife route above for consistency. No pre-existing Route Builder expedition covers this combination, so no collision beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildGranCanariaTenerifeRoute() {
+  return rbBuildFlatSeedRoute('Gran Canaria + Tenerife (7-10 days) 🏝️', [
+    {
+      code: 'ES', name: 'Spain', days: 4, budget: 260, lat: 28.0083, lng: -15.5817,
+      destinations: [
+        { name: 'Las Palmas de Gran Canaria', lat: 28.1235, lng: -15.4366 },
+        { name: 'Maspalomas dunes', lat: 27.7606, lng: -15.5875 },
+      ],
+      notes: "Entry: easyJet and Transavia fly direct from Amsterdam/Rotterdam to Gran Canaria. 4-5 days: Las Palmas plus the Maspalomas dunes. Budget ~€55-75/day.",
+      transport_to_next: "Ferry Las Palmas-Santa Cruz de Tenerife (~2-2.5h, Fred Olsen Express/Naviera Armas) or a Binter Canarias flight (~35 min) — the flight is often similarly priced and much faster. Web check (2026-08): compare both before booking.",
+    },
+    {
+      code: 'ES', name: 'Spain', days: 4, budget: 260, lat: 28.2916, lng: -16.6291,
+      destinations: [
+        { name: 'Santa Cruz de Tenerife', lat: 28.4636, lng: -16.2518 },
+        { name: 'Teide National Park', lat: 28.2723, lng: -16.6417 },
+      ],
+      notes: "4-5 days on Tenerife: Santa Cruz and Teide National Park. Budget ~€55-75/day. Web check (2026-08): same Teide cable-car/summit-permit caveat as the standalone Tenerife route (~€40 return cable car, weather-dependent; free summit permit via reservasparquesnacionales.es, apply well ahead).",
+      transport_to_next: 'End of this route — fly home from Tenerife South or Tenerife North.',
+    },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'Gran Canaria (Las Palmas, Maspalomas) then Tenerife (Santa Cruz, Teide) via inter-island ferry or short flight.',
+    climate_summary: 'Good year-round on both islands; October-April nicest for hiking/mountain time.',
+    description: "Las Palmas and the Maspalomas dunes on Gran Canaria, then Santa Cruz and Teide National Park on Tenerife.",
+    notes: "Built (2026-08) as part of Phase 2 batch 14b/21 (Islands: Canary Islands + Balearics) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Modeled as two Spain blocks. Gran Canaria and Tenerife coordinates reused unchanged from the standalone routes above for consistency. No pre-existing Route Builder expedition covers this combination, so no collision beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCanaryIslandsRoute() {
+  return rbBuildFlatSeedRoute('Canary Islands (10-14 days) 🏝️', [
+    {
+      code: 'ES', name: 'Spain', days: 4, budget: 260, lat: 28.2916, lng: -16.6291,
+      destinations: [
+        { name: 'Santa Cruz de Tenerife', lat: 28.4636, lng: -16.2518 },
+        { name: 'Teide National Park', lat: 28.2723, lng: -16.6417 },
+      ],
+      notes: "Entry: easyJet and Transavia fly direct from Amsterdam/Rotterdam to Tenerife South; TUI fly runs winter-sun charters. 4 days: Santa Cruz and Teide National Park. Budget ~€55-75/day average across this route, plus inter-island transport (see below). Web check (2026-08): Teide cable car ~€40 return, weather-dependent, book ahead; free summit permit mandatory for the last 200m (max ~200/day via reservasparquesnacionales.es) — book weeks ahead in high season, it sells out.",
+      transport_to_next: "Binter Canarias flies between all the Canary Islands (~30-45 min each hop). Web check (2026-08): book ahead in high season.",
+    },
+    {
+      code: 'ES', name: 'Spain', days: 3, budget: 195, lat: 28.0083, lng: -15.5817,
+      destinations: [
+        { name: 'Las Palmas de Gran Canaria', lat: 28.1235, lng: -15.4366 },
+        { name: 'Roque Nublo', lat: 27.9600, lng: -15.5719 },
+      ],
+      notes: "3 days: Las Palmas and the Roque Nublo/Tejeda highlands. Budget ~€55-75/day.",
+      transport_to_next: "Binter Canarias flight on to Lanzarote (~40 min).",
+    },
+    {
+      code: 'ES', name: 'Spain', days: 3, budget: 195, lat: 28.9985, lng: -13.6000,
+      destinations: [
+        { name: 'Timanfaya National Park (Islote de Hilario)', lat: 28.9967, lng: -13.7167 },
+        { name: 'Arrecife', lat: 28.9630, lng: -13.5477 },
+      ],
+      notes: "3 days: Timanfaya National Park and Arrecife. Budget ~€55-75/day. Web check (2026-08): Timanfaya only via the mandatory \"Ruta de los Volcanes\" bus tour, no free wandering; book the tour ahead in high season, it sells out weeks in advance.",
+      transport_to_next: "Fred Olsen Express or Naviera Armas ferry Playa Blanca-Corralejo (~25 min, frequent).",
+    },
+    {
+      code: 'ES', name: 'Spain', days: 3, budget: 195, lat: 28.6919, lng: -13.8737,
+      destinations: [
+        { name: 'Corralejo', lat: 28.7343, lng: -13.8672 },
+      ],
+      notes: "3 days around Corralejo on Fuerteventura. Budget ~€55-75/day. Season: October-May for hiking, June-September fine for beach time. Web check (2026-08): build in at least 1 buffer day somewhere across the crossings for weather delays (cable car/ferries); book the Teide permit and Timanfaya tour well ahead, both sell out weeks in advance in high season. Same Canaries-wide IGIC price advantage on electronics/alcohol/tobacco/perfume throughout this route. Ongoing peaceful overtourism protests (\"Canarias tiene un límite\") since April 2024, continuing into 2025 — no direct safety concern, respectful behavior advised.",
+      transport_to_next: 'End of this route — fly home from Fuerteventura, or back via Gran Canaria/Tenerife.',
+    },
+  ], {
+    best_starting_month: 'October',
+    travel_style: 'A four-island hop — Tenerife, Gran Canaria, Lanzarote, Fuerteventura — by short inter-island flight and one ferry.',
+    climate_summary: 'October-May best for hiking/volcano touring; June-September hotter but fine for beach time.',
+    description: "Tenerife (Teide), Gran Canaria (Roque Nublo), Lanzarote (Timanfaya) and Fuerteventura (Corralejo), linked by Binter Canarias flights and a short ferry.",
+    notes: "Built (2026-08) as part of Phase 2 batch 14b/21 (Islands: Canary Islands + Balearics) converting EUROPA_TRIP_IDEAS.md into Route Builder content. The differentiator vs. the two-island combos above — combines all four main Canary Islands, mirroring the Dutch source's 4d→3d→3d→3d split. Modeled as four Spain blocks; Tenerife/Gran Canaria/Lanzarote/Fuerteventura coordinates reused unchanged from the standalone/two-island routes above for consistency. No pre-existing Route Builder expedition covers this combination, so no collision beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildMenorcaRoute() {
+  return rbBuildFlatSeedRoute('Menorca (4-5 days) 🏝️', [
+    {
+      code: 'ES', name: 'Spain', days: 5, budget: 400, lat: 39.9496, lng: 4.0523,
+      destinations: [
+        { name: 'Mahón (Camí de Cavalls coastal path)', lat: 39.8885, lng: 4.2658 },
+        { name: 'Ciutadella', lat: 40.0000, lng: 3.8388 },
+        { name: 'Cala Macarelleta', lat: 39.9394, lng: 3.8763 },
+        { name: 'Cala Turqueta', lat: 39.9330, lng: 3.8397 },
+      ],
+      notes: "Entry: direct flights from the Netherlands to Mahón (MAH) are limited/seasonal, so a connection via Palma or Barcelona is often needed — check both options. 2 days in Mahón including a stretch of the Camí de Cavalls coastal path, 2 days in Ciutadella, plus a beach day at Cala Macarelleta/Cala Turqueta. A rental car is worth it — Menorca is quieter and less built-up than Ibiza/Mallorca, and the beaches are spread out. Budget ~€70-90/day. Season: May-June or September combine calm and good weather best; July-August is expensive and Ciutadella's harbour area gets crowded. Web check (2026-08): the Balearic eco-tax applies (see general note below).",
+      transport_to_next: 'End of this route — fly home, likely via Palma or Barcelona.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: "Mahón and a Camí de Cavalls stretch, Ciutadella, and the southwest's turquoise coves.",
+    climate_summary: 'Best May-June or September; July-August pricier and busier around Ciutadella harbour.',
+    description: "Mahón (with a Camí de Cavalls walk), Ciutadella, and the coves of Cala Macarelleta/Cala Turqueta.",
+    notes: "Built (2026-08) as part of Phase 2 batch 14b/21 (Islands: Canary Islands + Balearics) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Single-block route — the differentiator vs. the Mallorca+Menorca and Balearic Islands combos below. No pre-existing Route Builder expedition covers Menorca, so no collision beyond confirming the route name is unused. Balearic eco-tax (ITS) 2026: €0.25-€4 pp/night depending on accommodation category and season, +10% VAT, 75% discount November-April, 50% discount from the 9th night, under-16s free. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildIbizaRoute() {
+  return rbBuildFlatSeedRoute('Ibiza (4-5 days) 🏝️', [
+    {
+      code: 'ES', name: 'Spain', days: 5, budget: 500, lat: 38.9800, lng: 1.4800,
+      destinations: [
+        { name: 'Ibiza Town / Dalt Vila (UNESCO old town)', lat: 38.9067, lng: 1.4327 },
+        { name: 'Sant Joan de Labritja', lat: 39.0765, lng: 1.5150 },
+        { name: 'Portinatx', lat: 39.1102, lng: 1.5347 },
+      ],
+      notes: "Entry: direct flights from the Netherlands (Transavia, easyJet) run seasonally, mainly summer. 2 days in Ibiza Town and the UNESCO-listed Dalt Vila old town, then 2-3 days on the quieter north coast around Sant Joan de Labritja/Portinatx — skipping the nightlife scene keeps the budget down. Budget ~€90-120/day; clubs and beach clubs drive the price up, the north is noticeably cheaper. Season: June or September (May is still a bit cool); July-August is very busy and expensive. Web check (2026-08): the Balearic eco-tax applies (see general note below); 2025-2026 overtourism protest sentiment is live here, expect full bars and waits at peak times in high season.",
+      transport_to_next: 'End of this route — fly home from Ibiza.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: "Ibiza Town/Dalt Vila plus a quieter north-coast base, nightlife optional.",
+    climate_summary: 'Best June or September; July-August very busy and expensive.',
+    description: "Ibiza Town's Dalt Vila old town and the quieter north coast around Sant Joan de Labritja/Portinatx.",
+    notes: "Built (2026-08) as part of Phase 2 batch 14b/21 (Islands: Canary Islands + Balearics) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Single-block route — the differentiator vs. the Balearic Islands combo below. No pre-existing Route Builder expedition covers Ibiza, so no collision beyond confirming the route name is unused. Balearic eco-tax (ITS) 2026: €0.25-€4 pp/night depending on accommodation category and season, +10% VAT, 75% discount November-April, 50% discount from the 9th night, under-16s free. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildMallorcaMenorcaRoute() {
+  return rbBuildFlatSeedRoute('Mallorca + Menorca (7-10 days) 🏝️', [
+    {
+      code: 'ES', name: 'Spain', days: 4, budget: 360, lat: 39.5696, lng: 2.6502,
+      destinations: [
+        { name: 'Palma (base)', lat: 39.5696, lng: 2.6502 },
+        { name: 'Valldemossa', lat: 39.7098, lng: 2.6228 },
+        { name: 'Deià', lat: 39.7481, lng: 2.6478 },
+        { name: 'Sóller', lat: 39.7662, lng: 2.7147 },
+      ],
+      notes: "Entry: direct AMS-PMI (Transavia, ~2h25, frequent). 3-4 days based in Palma for a Serra de Tramuntana loop — Valldemossa, Deià, Sóller (worth doing a leg on the antique wooden train). A rental car helps on the mountain roads. Budget ~€80-100/day average across this route.",
+      transport_to_next: "Ferry Palma-Ciutadella or Palma-Mahón (several hours, varies by operator/route). Web check (2026-08): check the current Mallorca-Menorca ferry frequency outside high season — it runs noticeably less often.",
+    },
+    {
+      code: 'ES', name: 'Spain', days: 4, budget: 360, lat: 39.9496, lng: 4.0523,
+      destinations: [
+        { name: 'Ciutadella', lat: 40.0000, lng: 3.8388 },
+        { name: 'Mahón', lat: 39.8885, lng: 4.2658 },
+      ],
+      notes: "3-4 days between Ciutadella and Mahón on Menorca. Budget ~€80-100/day average. Season: May-June or September, doing the Tramuntana walking outside the summer heat. Web check (2026-08): the Balearic eco-tax applies separately on each island (see general note below); Palma is the epicenter of the 2026 overtourism protests specifically, expect occasional demonstrations/traffic disruption there.",
+      transport_to_next: 'End of this route — fly home, likely via Palma.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'A Palma-based Serra de Tramuntana loop, then a ferry to Menorca for Ciutadella and Mahón.',
+    climate_summary: 'Best May-June or September; do the Tramuntana walking outside the summer heat.',
+    description: "Palma and the Serra de Tramuntana (Valldemossa, Deià, Sóller), then a ferry to Menorca's Ciutadella and Mahón.",
+    notes: "Built (2026-08) as part of Phase 2 batch 14b/21 (Islands: Canary Islands + Balearics) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Modeled as two Spain blocks. Palma/Serra de Tramuntana coordinates reused unchanged from batch 7a's standalone 'Mallorca: Serra de Tramuntana Loop' route (a different, mainland-Iberia-batch route, not a duplicate of this one) for consistency; Menorca coordinates reused from the standalone Menorca route above. No pre-existing Route Builder expedition covers this Mallorca+Menorca combination, so no collision beyond confirming the route name is unused. Eco-tax applies separately per island (doubled vs. a single-island trip), called out in the Menorca leg's notes. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildBalearicIslandsRoute() {
+  return rbBuildFlatSeedRoute('Balearic Islands (7-10 days) 🏝️', [
+    {
+      code: 'ES', name: 'Spain', days: 3, budget: 285, lat: 39.5696, lng: 2.6502,
+      destinations: [
+        { name: 'Palma (base)', lat: 39.5696, lng: 2.6502 },
+        { name: 'Valldemossa', lat: 39.7098, lng: 2.6228 },
+        { name: 'Deià', lat: 39.7481, lng: 2.6478 },
+        { name: 'Sóller', lat: 39.7662, lng: 2.7147 },
+      ],
+      notes: "Entry: direct AMS-PMI (Transavia, ~2h25, frequent). 3 days based in Palma for a shortened Serra de Tramuntana taste (Valldemossa, Deià, Sóller). Budget ~€85-110/day average across this route, plus inter-island ferries/flights (booked and planned separately, not folded into the per-day figure).",
+      transport_to_next: "Ferry Palma-Ciutadella or Palma-Mahón. Web check (2026-08): check the current Mallorca-Menorca ferry frequency outside high season.",
+    },
+    {
+      code: 'ES', name: 'Spain', days: 3, budget: 285, lat: 39.9496, lng: 4.0523,
+      destinations: [
+        { name: 'Ciutadella', lat: 40.0000, lng: 3.8388 },
+        { name: 'Mahón', lat: 39.8885, lng: 4.2658 },
+      ],
+      notes: "2-3 days between Ciutadella and Mahón on Menorca. Budget ~€85-110/day average.",
+      transport_to_next: "Ferry or short flight on to Ibiza (multiple operators, varies by route).",
+    },
+    {
+      code: 'ES', name: 'Spain', days: 2, budget: 190, lat: 38.9800, lng: 1.4800,
+      destinations: [
+        { name: 'Ibiza Town / Dalt Vila (UNESCO old town)', lat: 38.9067, lng: 1.4327 },
+      ],
+      notes: "2 days in Ibiza Town/Dalt Vila, with an optional Formentera day trip by ferry from Ibiza (~30 min, frequent, roughly €40-60 return) if there's a spare day. Budget ~€85-110/day average. Season: May-June or September. Web check (2026-08): eco-tax applies per island — plan and book the multiple inter-island ferries/flights ahead; check the current visitor-cap discussion for updates, no hard legal limit yet as of 2026 but growing political pressure. Large-scale overtourism protests hit Mallorca/Ibiza in summer 2025 and again in July 2026 (~30,000 demonstrators in Palma specifically), against a record 19 million Balearic visitors in 2025 — expect crowding/irritation in hotspots July-August and occasional demonstrations/traffic disruption, especially around Palma.",
+      transport_to_next: 'End of this route — fly home from Ibiza, or back via Palma.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: "The broadest multi-island version — Mallorca, Menorca and Ibiza, with an optional Formentera day trip.",
+    climate_summary: 'Best May-June or September; July-August very busy, expensive and politically tense in hotspots.',
+    description: "Mallorca's Serra de Tramuntana, Menorca's Ciutadella/Mahón, and Ibiza Town/Dalt Vila, with an optional Formentera day trip.",
+    notes: "Built (2026-08) as part of Phase 2 batch 14b/21 (Islands: Canary Islands + Balearics) converting EUROPA_TRIP_IDEAS.md into Route Builder content. The differentiator vs. the combos above — widest multi-island version, incl. optional Formentera (modeled as a day-trip note on the Ibiza leg rather than its own block, since the Dutch source treats it as an optional add-on, not a dedicated multi-day leg). Modeled as three Spain blocks (Mallorca, Menorca, Ibiza); Mallorca coordinates reused from batch 7a's standalone Serra de Tramuntana route, Menorca/Ibiza coordinates reused from the standalone routes above, all for consistency. No pre-existing Route Builder expedition covers this combination, so no collision beyond confirming the route name is unused. Eco-tax applies separately per island. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaCanaryBalearicRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_CANARY_BALEARIC)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_CANARY_BALEARIC, '1');
+
+  rbRoutes.push(
+    rbBuildTenerifeRoute(),
+    rbBuildGranCanariaRoute(),
+    rbBuildLanzaroteFuerteventuraRoute(),
+    rbBuildTenerifeLaGomeraRoute(),
+    rbBuildGranCanariaTenerifeRoute(),
+    rbBuildCanaryIslandsRoute(),
+    rbBuildMenorcaRoute(),
+    rbBuildIbizaRoute(),
+    rbBuildMallorcaMenorcaRoute(),
+    rbBuildBalearicIslandsRoute(),
+  );
+  rbSave();
+}
