@@ -425,7 +425,7 @@ version. Reuses the exact 21 sub-batch structure already proven for Trip Taxonom
 `CHANGELOG.md`'s "Recently fixed" section for that batch table; same batches apply here, now for
 code instead of tags.
 
-**Status — 14 of 21 sub-batches done (183 items), all local commits not yet pushed as of
+**Status — 15 of 21 sub-batches done (200 items), all local commits not yet pushed as of
 2026-08-21**: #1 Benelux (6 routes), #2 Duitsland/Germany (12), #3 Oostenrijk + Zwitserland/Austria
 + Switzerland (12), #4 Frankrijk/France (11), #5 Italië/Italy (16), #6 Micro-staten & kleine
 eilanden/micro-states & small islands (20, **147,117 tokens real**, ~7,356/item), #7a Spanje/Spain
@@ -436,24 +436,30 @@ eilanden/micro-states & small islands (20, **147,117 tokens real**, ~7,356/item)
 Macedonia + Kosovo (16, **114,723 tokens real**, ~7,170/item), #9a Roemenië + Bulgarije +
 Moldavië/Romania + Bulgaria + Moldova (15, **98,036 tokens real**, ~6,536/item), #9b
 Hongarije + Tsjechië/Hungary + Czechia (10, **94,799 tokens real**, ~9,480/item), #9c
-Slowakije + Polen/Slovakia + Poland (10, **91,616 tokens real**, ~9,162/item) — batches 8 (45
-items) and 9 (35 items) were both split into three geography-based sub-batches rather than the
-originally planned two halves each, totalling 342,587 and 284,451 tokens respectively. All real
-data points so far land comfortably under the original 9,000-16,000/item estimate. Each batch also
-flips its rows' "In Route Builder?" No→Yes in `TRIP_DATABASE.csv` in a separate commit to keep the
-taxonomy in sync. Collision avoidances so far: batch 6's new "Malta (4 days)" vs. the pre-existing
-Mediterranean-split "Malta ⚔️", and new "Corsica + South of France (9 days)" vs. the pre-existing
-"Corsica & Southern France ⛵" — both existing routes untouched, new ones use distinct function
-names. No migrations needed for any Phase 2 batch (brand-new routes, nothing pre-existing to
-collide with). Cross-batch coordinate consistency is being maintained deliberately throughout —
-e.g. batch 8c reused batch 8b's exact Sarajevo/Kotor/Tirana/Berat coordinates, and batch 9c reused
-batch 9b's exact Budapest/Eger/Krakow/Wrocław coordinates, rather than re-deriving them. Kosovo's
-routes (batch 8c) carry an explicit note on the practical Serbia-then-Kosovo border-entry order
-rule (Serbia doesn't recognize Kosovo border crossings as official — why no item combines the
-two); Moldova + Transnistria (batch 9a) carries the full red-vs-yellow travel-advisory safety
-nuance from the source, not softened. Per-batch token costs for batches 1-5 weren't captured
-before that session ended. Next up: **#10 Oost-Mediterraan (Griekenland/Greece + Cyprus +
-Turkije/Turkey, ~18 items) — likely a single batch or split in two given the size**.
+Slowakije + Polen/Slovakia + Poland (10, **91,616 tokens real**, ~9,162/item), #10 Griekenland +
+Cyprus + Turkije/Greece + Cyprus + Turkey (17, **129,664 tokens real**, ~7,627/item, done as one
+single batch rather than split — batches 8 and 9 were split into three geography-based sub-batches
+each rather than the originally planned two halves, totalling 342,587 and 284,451 tokens
+respectively). All real data points so far land comfortably under the original 9,000-16,000/item
+estimate. Each batch also flips its rows' "In Route Builder?" No→Yes in `TRIP_DATABASE.csv` in a
+separate commit to keep the taxonomy in sync. Collision avoidances so far: batch 6's new
+"Malta (4 days)" vs. the pre-existing Mediterranean-split "Malta ⚔️", new "Corsica + South of
+France (9 days)" vs. the pre-existing "Corsica & Southern France ⛵", and batch 10's new
+"Cyprus (6 days)" (function `rbBuildCyprusClassicRoute`, since `rbBuildCyprusRoute` was already
+taken by the existing Mediterranean-split "Cyprus 🕊️") — all pre-existing routes untouched, new
+ones use distinct function names. No migrations needed for any Phase 2 batch (brand-new routes,
+nothing pre-existing to collide with). Cross-batch coordinate consistency is being maintained
+deliberately throughout — e.g. batch 8c reused batch 8b's exact Sarajevo/Kotor/Tirana/Berat
+coordinates, batch 9c reused batch 9b's exact Budapest/Eger/Krakow/Wrocław coordinates — rather
+than re-deriving them. Kosovo's routes (batch 8c) carry an explicit note on the practical
+Serbia-then-Kosovo border-entry order rule (Serbia doesn't recognize Kosovo border crossings as
+official — why no item combines the two); Moldova + Transnistria (batch 9a) carries the full
+red-vs-yellow travel-advisory safety nuance from the source, not softened; batch 10's Northern
+Cyprus crossing item carries the full car-rental/insurance/non-recognition nuance intact too. Per-
+batch token costs for batches 1-5 weren't captured before that session ended. Next up: **#11a/#11b
+Noord-Europa (Noorwegen/Norway + Zweden/Sweden + Denemarken/Denmark + Finland + Faeröer/Faroe
+Islands + IJsland/Iceland, ~32 items, planned as two halves — likely splitting further by country
+given batches 8/9's experience)**.
 
 **Estimated cost**: ~9,000-16,000 tokens/item × 319 items ≈ **3-5M tokens total** — based on the
 `rbBuildJordanRoute()` example (fresh single-country build with real coordinates, no shared content
