@@ -14622,3 +14622,272 @@ function rbSeedEuropaRomaniaBulgariaMoldovaRoutes() {
   );
   rbSave();
 }
+
+function rbBuildBudapestRoute() {
+  return rbBuildFlatSeedRoute('Budapest (4 days) 🛁', [
+    {
+      code: 'HU', name: 'Hungary', days: 4, budget: 260, lat: 47.4960, lng: 19.0396,
+      destinations: [
+        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396 },
+        { name: 'Hungarian Parliament Building / Pest riverside', lat: 47.5076, lng: 19.0458 },
+        { name: 'Széchenyi Thermal Baths', lat: 47.5186, lng: 19.0821 },
+        { name: 'Ruin bar district (Kazinczy utca)', lat: 47.4973, lng: 19.0662 },
+      ],
+      notes: "Buda Castle district (1 day) — Pest and the Parliament (1 day) — Széchenyi Thermal Baths plus the ruin-bar district (1 day). Budget ~€65/day. Season: April-June or September-October are best, or December for the Christmas market (cold). Web check (2026-08): Gellért Baths has been closed since 1 October 2025 and isn't expected to reopen until around 2028 — use Széchenyi instead (admission roughly €13-35). Also keep an eye on escalating demonstrations in central Budapest, and note that LGBTQ+ gatherings/marches have been banned since March 2025 — check planned events in advance if that's relevant to your dates.",
+      transport_to_next: 'End of this route — fly home from Budapest.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into/home from Budapest, everything walkable or a short tram/metro ride.',
+    climate_summary: 'April-June or September-October best; December for the Christmas market despite the cold.',
+    description: "A compact Budapest city break: the Buda Castle district, Pest's Parliament, and Széchenyi's thermal waters plus the ruin-bar scene.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9b (Central/Eastern Europe: Hungary + Czechia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildBudapestEgerRoute() {
+  return rbBuildFlatSeedRoute('Budapest + Eger (5 days) 🍷', [
+    {
+      code: 'HU', name: 'Hungary', days: 5, budget: 300, lat: 47.4960, lng: 19.0396,
+      destinations: [
+        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396 },
+        { name: 'Hungarian Parliament Building', lat: 47.5076, lng: 19.0458 },
+        { name: 'Széchenyi Thermal Baths', lat: 47.5186, lng: 19.0821 },
+        { name: 'Szentendre (day trip)', lat: 47.6698, lng: 19.0714 },
+        { name: "Eger / Valley of the Beautiful Women wine cellars", lat: 47.9025, lng: 20.3772 },
+      ],
+      notes: "Budapest (3 days: the Castle district, Parliament, a thermal bath) — Szentendre as a day trip — Eger (1-2 days) for its wine region. Budget ~€60/day. Season: April-June or September-October. Web check (2026-08): the Budapest-Eger train takes about 2 hours, and cheap, casual wine tastings are easy to arrange on the spot along Eger's Valley of the Beautiful Women cellar row. As throughout Hungary, keep an eye on demonstrations in central Budapest and check for any LGBTQ+ event restrictions in advance (banned since March 2025) if relevant to your dates.",
+      transport_to_next: 'End of this route — fly home from Budapest.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into/home from Budapest, train out to Eger and back, Szentendre as a day trip.',
+    climate_summary: 'April-June or September-October.',
+    description: "Budapest's highlights plus a side trip to the riverside artists' town of Szentendre and the wine cellars of Eger.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9b (Central/Eastern Europe: Hungary + Czechia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildHungaryRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Hungary Roadtrip (6 days) 🚗', [
+    {
+      code: 'HU', name: 'Hungary', days: 6, budget: 360, lat: 47.4960, lng: 19.0396,
+      destinations: [
+        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396 },
+        { name: 'Eger', lat: 47.9025, lng: 20.3772 },
+        { name: 'Tokaj wine region', lat: 48.1214, lng: 21.4094 },
+        { name: 'Lake Balaton / Tihany', lat: 46.9122, lng: 17.8908 },
+      ],
+      notes: "Budapest (2 days) — Eger (1 day) — Tokaj (1 day) — Lake Balaton/Tihany (1-2 days). Budget ~€60/day (rental car budgeted separately). Season: May-September, though Balaton gets busy with Hungarian holidaymakers in summer. As throughout Hungary, keep an eye on demonstrations in central Budapest and any LGBTQ+ event restrictions (banned since March 2025).",
+      transport_to_next: 'End of this route — fly home from Budapest.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Fly into/home from Budapest, rental car for the whole loop.',
+    climate_summary: 'May-September; Lake Balaton is busiest with domestic holidaymakers in summer.',
+    description: "A self-drive loop through Hungary's wine country — Eger and Tokaj — finishing at Lake Balaton and the village of Tihany.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9b (Central/Eastern Europe: Hungary + Czechia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildHungarySloveniaCroatiaRoute() {
+  return rbBuildFlatSeedRoute('Hungary + Slovenia + Croatia (9 days) 🧭', [
+    {
+      code: 'HU', name: 'Hungary', days: 3, budget: 180, lat: 47.4960, lng: 19.0396,
+      destinations: [
+        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396 },
+        { name: 'Lake Balaton / Tihany', lat: 46.9122, lng: 17.8908 },
+      ],
+      notes: "Budapest (2 days) — Lake Balaton (1 day) on the way south. Budget ~€60/day. Hungary is fully Schengen with zero border friction toward Slovakia, Austria, Croatia, Slovenia or Romania.",
+      transport_to_next: 'Cross into Slovenia — a fully Schengen border, no checks.',
+    },
+    {
+      code: 'SI', name: 'Slovenia', days: 3, budget: 300, lat: 46.0569, lng: 14.5058,
+      destinations: [
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+      ],
+      notes: "Ljubljana (1 day) — Lake Bled (2 days: the pletna boat to the island, Bled Castle). Budget ~€100/day — pricier than the Hungary leg because of Bled's lakeside attractions.",
+      transport_to_next: 'Cross into Croatia — a fully Schengen border, no checks; book Plitvice Lakes tickets online ahead of time, and note the hourly capacity cap.',
+    },
+    {
+      code: 'HR', name: 'Croatia', days: 3, budget: 270, lat: 44.8654, lng: 15.5820,
+      destinations: [
+        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820 },
+        { name: 'Zagreb', lat: 45.8150, lng: 15.9819 },
+        { name: 'Rovinj (optional coastal extension)', lat: 45.0811, lng: 13.6387 },
+      ],
+      notes: "Plitvice Lakes (1 day) — Zagreb (2 days), with Rovinj on the Istrian coast as an optional extension if time allows — best avoided in the July-August peak, when the coast gets noticeably pricier and busier. Budget ~€90/day for the Zagreb/Plitvice core. Web check (2026-08): book Plitvice entry online ahead of time; one-way rental-car returns between countries are expensive, so plan to hand the car back in the same country you picked it up.",
+      transport_to_next: 'End of this route — fly home from Zagreb.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Budapest, rental car the whole way, fly home from Zagreb (or reversed).',
+    climate_summary: 'May-June or September; avoid July-August, especially if extending to the coast.',
+    description: "Budapest and Lake Balaton, then west into Slovenia for Ljubljana and Lake Bled, and south into Croatia for Plitvice and Zagreb, with an optional Istrian coast extension to Rovinj.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9b (Central/Eastern Europe: Hungary + Czechia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Slovenia/Croatia coordinates reused from the Ljubljana + Lake Bled and Plitvice + Zagreb standalone routes (batch 8a) rather than re-derived. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildPragueRoute() {
+  return rbBuildFlatSeedRoute('Prague (4 days) 🏰', [
+    {
+      code: 'CZ', name: 'Czechia', days: 4, budget: 360, lat: 50.0875, lng: 14.4213,
+      destinations: [
+        { name: 'Staré Město (Old Town Square)', lat: 50.0875, lng: 14.4213 },
+        { name: 'Malá Strana', lat: 50.0865, lng: 14.4051 },
+        { name: 'Prague Castle', lat: 50.0909, lng: 14.4016 },
+        { name: 'Vyšehrad', lat: 50.0653, lng: 14.4206 },
+      ],
+      notes: "Staré Město and the Old Town Square (1 day) — Malá Strana (1 day) — Prague Castle (1 day) — Vyšehrad as a quieter alternative away from the crowds (1 day). Budget ~€90/day (3-star hotel, restaurants, tram/metro). Season: May-June or September-October are best; summer is hot and overcrowded, December has an atmospheric but cold Christmas market. Web check (2026-08): the Castle's basic ticket is 450 CZK (~€18), with the tower and cathedral together adding +200 CZK; check hrad.cz's 'archive of closures' page, since some gardens/galleries close on rotating days for events. Dutch travel advisory for Czechia is green (last updated 16 March 2026) — watch for pickpockets around Charles Bridge and the Old Town Square.",
+      transport_to_next: 'End of this route — fly home from Prague.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into/home from Prague, everything walkable or a short tram/metro ride.',
+    climate_summary: 'May-June or September-October best; summer hot and overcrowded, December cold but festive.',
+    description: "Prague's core sights — Staré Město, Malá Strana, Prague Castle — with quiet Vyšehrad as an escape from the crowds.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9b (Central/Eastern Europe: Hungary + Czechia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildPragueBohemiaRoute() {
+  return rbBuildFlatSeedRoute('Prague + Bohemia (5 days) 🏘️', [
+    {
+      code: 'CZ', name: 'Czechia', days: 5, budget: 410, lat: 50.0875, lng: 14.4213,
+      destinations: [
+        { name: 'Staré Město / Prague Castle', lat: 50.0875, lng: 14.4213 },
+        { name: 'Karlovy Vary (optional stopover)', lat: 50.2306, lng: 12.8722 },
+        { name: 'Český Krumlov', lat: 48.8127, lng: 14.3175 },
+      ],
+      notes: "Prague (3 days) — Český Krumlov (1-2 days, staying overnight rather than rushing a day trip) — optionally Karlovy Vary as a stopover. Budget ~€82/day on average (Prague runs pricier, Krumlov/Karlovy Vary about 10-15% cheaper). Season: May-June or September; Krumlov's historic center is only quiet after 17:00 once the day-trippers have left. Web check (2026-08): the RegioJet train/bus between Prague and Krumlov (~3 hours) is a solid alternative to renting a car. Dutch travel advisory for Czechia is green (last updated 16 March 2026) — watch for pickpockets around Charles Bridge/the Old Town Square in Prague.",
+      transport_to_next: 'End of this route — fly home from Prague.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into/home from Prague; train/bus or rental car out to Bohemia.',
+    climate_summary: 'May-June or September.',
+    description: "Prague plus an overnight stay in fairy-tale Český Krumlov, with Karlovy Vary as an optional spa-town stopover.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9b (Central/Eastern Europe: Hungary + Czechia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCzechiaRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Czechia Roadtrip (6 days) 🛣️', [
+    {
+      code: 'CZ', name: 'Czechia', days: 6, budget: 468, lat: 50.0875, lng: 14.4213,
+      destinations: [
+        { name: 'Prague', lat: 50.0875, lng: 14.4213 },
+        { name: 'Karlovy Vary', lat: 50.2306, lng: 12.8722 },
+        { name: 'Český Krumlov', lat: 48.8127, lng: 14.3175 },
+        { name: 'Brno / Moravia wine region', lat: 49.1951, lng: 16.6068 },
+      ],
+      notes: "Prague (2 days) — Karlovy Vary (1 day) — Český Krumlov (2 days) — Brno and a Moravian wine tasting (1-2 days). Budget ~€78/day including a rental car (~€35-45/day on its own). Season: May-June or September for the best weather and fewest crowds. Web check (2026-08): a dálniční známka (highway toll sticker) is mandatory — check whether the rental company includes it; parking in historic town centers is limited.",
+      transport_to_next: 'End of this route — fly home from Prague or Brno.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Prague, rental car for the whole loop, fly home from Prague or Brno.',
+    climate_summary: 'May-June or September for the best weather and fewest crowds.',
+    description: "A self-drive loop: Prague, the spa town of Karlovy Vary, Český Krumlov, and a Moravian wine stop in Brno.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9b (Central/Eastern Europe: Hungary + Czechia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCzechiaAustriaRoute() {
+  return rbBuildFlatSeedRoute('Czechia + Austria (9 days) 🏔️', [
+    {
+      code: 'CZ', name: 'Czechia', days: 5, budget: 410, lat: 50.0875, lng: 14.4213,
+      destinations: [
+        { name: 'Prague', lat: 50.0875, lng: 14.4213 },
+        { name: 'Český Krumlov', lat: 48.8127, lng: 14.3175 },
+      ],
+      notes: "Prague (2-3 days) — Český Krumlov (1-2 days). Budget ~€82/day.",
+      transport_to_next: "Cross into Austria — a Schengen border, but Austria has extended its border controls with Czechia through at least 15 June 2026 (possibly further): expect spot ID checks, no visa needed, but keep your passport/ID on you. A separate Austrian highway vignette is required in addition to the Czech dálniční známka.",
+    },
+    {
+      code: 'AT', name: 'Austria', days: 4, budget: 460, lat: 48.2082, lng: 16.3738,
+      destinations: [
+        { name: 'Linz', lat: 48.3069, lng: 14.2858 },
+        { name: 'Salzkammergut (Hallstatt)', lat: 47.5622, lng: 13.6493 },
+        { name: 'Vienna', lat: 48.2082, lng: 16.3738 },
+      ],
+      notes: "Linz and the Salzkammergut lake district (1 day) — Vienna (3 days). Budget: Czechia ran ~€82/day, Austria runs noticeably higher at ~€100-130/day (used €115/day here). Season: May-June or September. Web check (2026-08): Vienna's museums often require an online timed-entry ticket booked ahead.",
+      transport_to_next: 'End of this route — fly home from Vienna.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Prague, rental car throughout, fly home from Vienna.',
+    climate_summary: 'May-June or September.',
+    description: "Prague and Český Krumlov, then across the border into Austria for the Salzkammergut lakes and Vienna.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9b (Central/Eastern Europe: Hungary + Czechia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildPraguePolandRoute() {
+  return rbBuildFlatSeedRoute('Prague + Poland (9 days) 🚂', [
+    {
+      code: 'CZ', name: 'Czechia', days: 3, budget: 240, lat: 50.0875, lng: 14.4213,
+      destinations: [
+        { name: 'Prague', lat: 50.0875, lng: 14.4213 },
+      ],
+      notes: "Prague (3 days). Budget ~€80/day.",
+      transport_to_next: "Cross directly at the Czechia-Poland border — no detour via Germany needed. The Prague-Wrocław-Krakow train run is a solid alternative to driving. (If you instead routed via Germany, note Germany has separately extended its own land border controls with Czechia through 15 September 2026 — spot ID checks, no visa requirement.)",
+    },
+    {
+      code: 'PL', name: 'Poland', days: 6, budget: 390, lat: 51.1079, lng: 17.0385,
+      destinations: [
+        { name: 'Wrocław', lat: 51.1079, lng: 17.0385 },
+        { name: 'Krakow (Main Square / Old Town)', lat: 50.0614, lng: 19.9366 },
+      ],
+      notes: "Wrocław (2 days) — Krakow (3-4 days). Budget ~€60-70/day (used €65/day here). Season: May-June or September.",
+      transport_to_next: 'End of this route — fly home from Krakow.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Prague, train onward through Poland, fly home from Krakow.',
+    climate_summary: 'May-June or September.',
+    description: "Prague, then east into Poland for Wrocław and Krakow, easily done by train and crossing the Czechia-Poland border directly.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9b (Central/Eastern Europe: Hungary + Czechia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Poland coordinates here are accurate but standalone Poland routes (batch 9c) are a separate, later piece of work — not built yet. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildMoraviaBrnoWineRegionRoute() {
+  return rbBuildFlatSeedRoute('Moravia: Brno + Wine Region (5 days) 🍇', [
+    {
+      code: 'CZ', name: 'Czechia', days: 5, budget: 360, lat: 49.1951, lng: 16.6068,
+      destinations: [
+        { name: 'Brno', lat: 49.1951, lng: 16.6068 },
+        { name: 'Mikulov wine region', lat: 48.8064, lng: 16.6367 },
+        { name: 'Znojmo wine region', lat: 48.8555, lng: 16.0488 },
+      ],
+      notes: "Brno, the capital of Moravia (2 days) — the Mikulov/Znojmo wine region (2-3 days, cycling among the vineyards). Budget ~€72/day (cheaper than Prague). Season: best in late August-September for the grape harvest, young Burčák wine, and the 'zarážení hory' harvest festivals — the Znojmo Wine Festival falls in the 2nd week of September, the Mikulov Vintage Festival in the 1st week of September. May-June works as a quieter alternative outside harvest season. Web check (2026-08): bike rental and wine-route infrastructure are often only staffed in season; book wine tastings ahead during harvest weekends, since they get busy and fill up.",
+      transport_to_next: 'End of this route — fly home from Brno or Vienna.',
+    },
+  ], {
+    best_starting_month: 'August',
+    travel_style: 'Fly into Prague or Vienna, rental car (or bike once in Moravia) for the wine region.',
+    climate_summary: 'Late August-September for harvest season; May-June for a quieter, cooler visit.',
+    description: "Brno's Moravian capital paired with the vineyard-covered Mikulov and Znojmo wine region, best timed for the late-summer grape harvest.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9b (Central/Eastern Europe: Hungary + Czechia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaHungaryCzechiaRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_HUNGARY_CZECHIA)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_HUNGARY_CZECHIA, '1');
+
+  rbRoutes.push(
+    rbBuildBudapestRoute(),
+    rbBuildBudapestEgerRoute(),
+    rbBuildHungaryRoadtripRoute(),
+    rbBuildHungarySloveniaCroatiaRoute(),
+    rbBuildPragueRoute(),
+    rbBuildPragueBohemiaRoute(),
+    rbBuildCzechiaRoadtripRoute(),
+    rbBuildCzechiaAustriaRoute(),
+    rbBuildPraguePolandRoute(),
+    rbBuildMoraviaBrnoWineRegionRoute(),
+  );
+  rbSave();
+}
