@@ -425,14 +425,20 @@ version. Reuses the exact 21 sub-batch structure already proven for Trip Taxonom
 `CHANGELOG.md`'s "Recently fixed" section for that batch table; same batches apply here, now for
 code instead of tags.
 
-**Status — 5 of 21 sub-batches done (57 items), all local commits not yet pushed as of
-2026-08-20**: #1 Benelux (6 routes), #2 Duitsland/Germany (12), #3 Oostenrijk + Zwitserland/Austria
-+ Switzerland (12), #4 Frankrijk/France (11), #5 Italië/Italy (16). Each batch also flips its rows'
+**Status — 6 of 21 sub-batches done (77 items), all local commits not yet pushed as of
+2026-08-21**: #1 Benelux (6 routes), #2 Duitsland/Germany (12), #3 Oostenrijk + Zwitserland/Austria
++ Switzerland (12), #4 Frankrijk/France (11), #5 Italië/Italy (16), #6 Micro-staten & kleine
+eilanden/micro-states & small islands (20 — Liechtenstein, Monaco, Corsica, Vatican City, San
+Marino, Malta — **147,117 tokens real**, first real per-batch number captured for this phase, at
+the lower end of the 9,000-16,000/item estimate at ~7,356/item). Each batch also flips its rows'
 "In Route Builder?" No→Yes in `TRIP_DATABASE.csv` in a separate commit to keep the taxonomy in
-sync. Per-batch token costs from this run weren't captured before the session ended — treat the
-original 9,000-16,000/item estimate below as still unpiloted for a real number. No migrations
-needed for any Phase 2 batch (brand-new routes, nothing pre-existing to collide with). Next up:
-**#6 Micro-staten & kleine eilanden (~20 items)**.
+sync. Batch 6 needed two deliberate function-name-collision avoidances (new "Malta (4 days)" vs.
+the pre-existing Mediterranean-split "Malta ⚔️"; new "Corsica + South of France (9 days)" vs. the
+pre-existing "Corsica & Southern France ⛵") — both existing routes are untouched, the new ones use
+distinct function names. No migrations needed for any Phase 2 batch (brand-new routes, nothing
+pre-existing to collide with). Per-batch token costs for batches 1-5 weren't captured before that
+session ended. Next up: **#7a/#7b Iberië/Iberia (Spain + Andorra + Portugal, ~26 items, planned as
+two halves per the original Groep 3 split)**.
 
 **Estimated cost**: ~9,000-16,000 tokens/item × 319 items ≈ **3-5M tokens total** — based on the
 `rbBuildJordanRoute()` example (fresh single-country build with real coordinates, no shared content
