@@ -17131,3 +17131,165 @@ function rbSeedEuropaBalticStatesRoutes() {
   );
   rbSave();
 }
+
+function rbBuildMadeiraRoute() {
+  return rbBuildFlatSeedRoute('Madeira (5-7 days) 🏝️', [
+    {
+      code: 'PT', name: 'Portugal', days: 6, budget: 465, lat: 32.6669, lng: -16.9241,
+      destinations: [
+        { name: 'Funchal (old town, Mercado dos Lavradores)', lat: 32.6474, lng: -16.9068 },
+        { name: 'Monte (cable car, Monte Palace Gardens)', lat: 32.6801, lng: -16.9054 },
+        { name: 'Porto Moniz (natural lava pools)', lat: 32.8607, lng: -17.1706 },
+        { name: 'Seixal', lat: 32.8283, lng: -17.0500 },
+        { name: 'São Vicente', lat: 32.7986, lng: -17.0486 },
+        { name: '25 Fontes / Caldeirão Verde levada walk', lat: 32.7681, lng: -17.1364 },
+      ],
+      notes: "Entry: easyJet and Transavia fly direct year-round from Amsterdam to Funchal; TUI fly seasonally. 2-3 days based in Funchal (the Monte cable car and toboggan run, Mercado dos Lavradores, the old town), then a rental-car loop of the north coast (Porto Moniz's natural lava pools, Seixal, São Vicente) plus one levada walk (25 Fontes or Caldeirão Verde). A Dutch driving license is valid (EU/Schengen). Season: mild year-round (18-25°C); best April-June or September-October; avoid August for wildfire risk (historically elevated, including the 2016 fires). Budget ~€70-85/day. Web check (2026-08): the Monte cable car is roughly €12.50 one-way/€19 return (verify the current price); levada walks can be temporarily closed after rain — check a local hiking app before setting out.",
+      transport_to_next: 'End of this route — fly home from Funchal.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Funchal city time plus a rental-car loop of the north coast and one levada hike.',
+    climate_summary: 'Mild year-round (18-25°C); best April-June or September-October; avoid August (wildfire risk).',
+    description: "Funchal (Monte cable car, market, old town), a north-coast rental-car loop (Porto Moniz, Seixal, São Vicente), and a levada walk.",
+    notes: "Built (2026-08) as part of Phase 2 batch 14a/21 (Islands: Madeira + Azores) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Single-block route — Madeira is one Portuguese archipelago, no repeating-country structure needed. No pre-existing Route Builder expedition covers Madeira, so no collision beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildMadeiraPortoSantoRoute() {
+  return rbBuildFlatSeedRoute('Madeira + Porto Santo (7-10 days) 🏝️', [
+    {
+      code: 'PT', name: 'Portugal', days: 6, budget: 450, lat: 32.6669, lng: -16.9241,
+      destinations: [
+        { name: 'Funchal (old town, Mercado dos Lavradores)', lat: 32.6474, lng: -16.9068 },
+        { name: 'Monte (cable car, Monte Palace Gardens)', lat: 32.6801, lng: -16.9054 },
+        { name: 'Porto Moniz (natural lava pools)', lat: 32.8607, lng: -17.1706 },
+        { name: 'Seixal', lat: 32.8283, lng: -17.0500 },
+        { name: 'São Vicente', lat: 32.7986, lng: -17.0486 },
+        { name: '25 Fontes / Caldeirão Verde levada walk', lat: 32.7681, lng: -17.1364 },
+      ],
+      notes: "Entry: easyJet and Transavia fly direct year-round from Amsterdam to Funchal; TUI fly seasonally. Same Madeira core as the standalone Madeira route: Funchal (Monte cable car/toboggan, Mercado dos Lavradores, old town) plus a rental-car loop of the north coast (Porto Moniz, Seixal, São Vicente) and a levada walk. A Dutch driving license is valid (EU/Schengen). Season: mild year-round (18-25°C); best April-June or September-October; avoid August (wildfire risk). Budget ~€70-85/day. Web check (2026-08): the Monte cable car is roughly €12.50 one-way/€19 return (verify the current price); levadas can close temporarily after rain.",
+      transport_to_next: "Ferry Lobo Marinho from Funchal to Porto Santo (~2h15) — usually only runs May-October; a short regional-carrier flight (~15-20 min) is the reliable year-round/off-season alternative. Web check (2026-08): confirm the current ferry schedule before relying on it.",
+    },
+    {
+      code: 'PT', name: 'Portugal', days: 3, budget: 255, lat: 33.0642, lng: -16.3439,
+      destinations: [
+        { name: 'Vila Baleira / Porto Santo golden beach', lat: 33.0642, lng: -16.3439 },
+      ],
+      notes: "2-3 days on Porto Santo for its golden sand beach and a quieter pace than Madeira. Budget ~€70-90/day, slightly higher than Madeira due to import costs and less restaurant competition.",
+      transport_to_next: 'End of this route — return to Funchal (ferry or short flight) and fly home.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Madeira core (Funchal + north coast + levada) extended with a Porto Santo beach add-on.',
+    climate_summary: 'Mild year-round (18-25°C); best April-June or September-October; avoid August (wildfire risk).',
+    description: "Madeira's Funchal/north-coast/levada core, plus Porto Santo's golden beach via ferry (seasonal) or short flight.",
+    notes: "Built (2026-08) as part of Phase 2 batch 14a/21 (Islands: Madeira + Azores) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Modeled as two Portugal blocks (Madeira, then Porto Santo) since Porto Santo is a genuinely separate leg reached by ferry/flight, mirroring how other expeditions split a repeating country into multiple blocks (e.g. the Central European Grand Roadtrip's Germany/Italy/Czechia legs). Funchal/north-coast coordinates reused unchanged from the standalone Madeira route (batch 14a) for consistency. No pre-existing Route Builder expedition covers Madeira/Porto Santo, so no collision beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSaoMiguelRoute() {
+  return rbBuildFlatSeedRoute('São Miguel (Azores) (5-7 days) 🏝️', [
+    {
+      code: 'PT', name: 'Portugal', days: 6, budget: 480, lat: 37.7412, lng: -25.6756,
+      destinations: [
+        { name: 'Ponta Delgada (town, harbour)', lat: 37.7412, lng: -25.6756 },
+        { name: 'Sete Cidades (crater lakes)', lat: 37.8656, lng: -25.7847 },
+        { name: 'Furnas (thermal springs, cozido)', lat: 37.7847, lng: -25.3208 },
+        { name: 'Lagoa do Fogo', lat: 37.7683, lng: -25.4667 },
+      ],
+      notes: "Entry: Transavia flies direct seasonally from Amsterdam to Ponta Delgada; off-season needs a Lisbon connection on TAP. 2 days in Ponta Delgada town and harbour, 1-2 days at the Sete Cidades crater lakes, 2 days at Furnas for the thermal springs and cozido (a stew traditionally cooked underground in volcanic heat) — optionally add Lagoa do Fogo. A rental car is usually needed. Budget ~€75-90/day, a bit higher than mainland Portugal given the remote location. Season: May-September for the best weather, though the Azores stay changeable year-round — always pack rain gear; June-September for whale/dolphin watching. Web check (2026-08): book a rental car well ahead (limited supply, fills up fast in summer); reserve the Furnas cozido lunch ahead.",
+      transport_to_next: 'End of this route — fly home from Ponta Delgada.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Single-island Azores trip based around Ponta Delgada, the Sete Cidades crater lakes and Furnas.',
+    climate_summary: 'Best May-September; changeable year-round, pack rain gear regardless of month.',
+    description: "Ponta Delgada, the Sete Cidades crater lakes, Furnas thermal springs/cozido, and optionally Lagoa do Fogo.",
+    notes: "Built (2026-08) as part of Phase 2 batch 14a/21 (Islands: Madeira + Azores) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Single-block route — single-island focus, the differentiator vs. the broader multi-island Azores routes below. No pre-existing Route Builder expedition covers the Azores, so no collision beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildAzoresSaoMiguelTerceiraRoute() {
+  return rbBuildFlatSeedRoute('Azores: São Miguel + Terceira (7-10 days) 🏝️', [
+    {
+      code: 'PT', name: 'Portugal', days: 5, budget: 400, lat: 37.7412, lng: -25.6756,
+      destinations: [
+        { name: 'Ponta Delgada (town, harbour)', lat: 37.7412, lng: -25.6756 },
+        { name: 'Sete Cidades (crater lakes)', lat: 37.8656, lng: -25.7847 },
+        { name: 'Furnas (thermal springs, cozido)', lat: 37.7847, lng: -25.3208 },
+      ],
+      notes: "Entry: Transavia flies direct seasonally from Amsterdam to Ponta Delgada; off-season needs a Lisbon connection on TAP. 4-5 days: Ponta Delgada, the Sete Cidades crater lakes and Furnas (thermal springs, cozido). Budget ~€75-90/day. Season: May-September for the best weather; the Azores stay changeable year-round, so pack rain gear. Web check (2026-08): book a rental car well ahead (limited supply, fills up fast in summer); reserve the Furnas cozido lunch ahead.",
+      transport_to_next: "Azores Airlines domestic flight Ponta Delgada-Terceira (~45 min). Web check (2026-08): book early — schedules are limited and sensitive to weather (fog) cancellations.",
+    },
+    {
+      code: 'PT', name: 'Portugal', days: 4, budget: 320, lat: 38.6559, lng: -27.2158,
+      destinations: [
+        { name: 'Angra do Heroísmo (UNESCO old town)', lat: 38.6559, lng: -27.2158 },
+        { name: 'Algar do Carvão (lava cave)', lat: 38.7328, lng: -27.2166 },
+      ],
+      notes: "3-4 days on Terceira: Angra do Heroísmo's UNESCO-listed old town and the Algar do Carvão volcanic lava cave. Budget ~€75-90/day, plus the domestic flight (~€60-100 one-way, strongly seasonal). Season: May-September; Terceira's Sanjoaninas festival (late June) can push up prices and crowds.",
+      transport_to_next: 'End of this route — fly home via Ponta Delgada or Lisbon.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'São Miguel core plus a domestic flight extension to Terceira.',
+    climate_summary: 'Best May-September; changeable year-round, pack rain gear regardless of month.',
+    description: "São Miguel (Ponta Delgada, Sete Cidades, Furnas) plus Terceira (Angra do Heroísmo, Algar do Carvão) via a domestic flight.",
+    notes: "Built (2026-08) as part of Phase 2 batch 14a/21 (Islands: Madeira + Azores) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Modeled as two Portugal blocks (São Miguel, then Terceira) since Terceira is a genuinely separate leg reached by domestic flight. São Miguel coordinates reused unchanged from the standalone São Miguel route (batch 14a) for consistency. No pre-existing Route Builder expedition covers this Azores combination, so no collision beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildAzoresIslandHoppingRoute() {
+  return rbBuildFlatSeedRoute('Azores Island Hopping (10-14 days) 🏝️', [
+    {
+      code: 'PT', name: 'Portugal', days: 5, budget: 425, lat: 37.7412, lng: -25.6756,
+      destinations: [
+        { name: 'Ponta Delgada (town, harbour)', lat: 37.7412, lng: -25.6756 },
+        { name: 'Sete Cidades (crater lakes)', lat: 37.8656, lng: -25.7847 },
+        { name: 'Furnas (thermal springs, cozido)', lat: 37.7847, lng: -25.3208 },
+      ],
+      notes: "Entry: Transavia flies direct seasonally from Amsterdam to Ponta Delgada; off-season needs a Lisbon connection on TAP. 4-5 days: Ponta Delgada, the Sete Cidades crater lakes and Furnas. Budget ~€80-95/day, plus 2-3 domestic flights/ferries across this route (reckon on €150-250 extra total, not folded into this per-day figure). Season: June-September is optimal for both weather and the whale-watching season.",
+      transport_to_next: "Azores Airlines domestic flight Ponta Delgada-Terceira (~45 min). Web check (2026-08): book early — schedules are limited and sensitive to weather (fog) cancellations; multi-island tickets need advance booking given limited capacity.",
+    },
+    {
+      code: 'PT', name: 'Portugal', days: 3, budget: 255, lat: 38.6559, lng: -27.2158,
+      destinations: [
+        { name: 'Angra do Heroísmo (UNESCO old town)', lat: 38.6559, lng: -27.2158 },
+        { name: 'Algar do Carvão (lava cave)', lat: 38.7328, lng: -27.2166 },
+      ],
+      notes: "3 days on Terceira: Angra do Heroísmo's UNESCO old town and the Algar do Carvão lava cave. Budget ~€80-95/day.",
+      transport_to_next: "Domestic flight or short ferry on to Faial. Web check (2026-08): book multi-island tickets ahead due to limited capacity.",
+    },
+    {
+      code: 'PT', name: 'Portugal', days: 4, budget: 360, lat: 38.5347, lng: -28.6328,
+      destinations: [
+        { name: 'Horta (Faial, whaling heritage)', lat: 38.5347, lng: -28.6328 },
+        { name: 'Madalena (Pico ferry port)', lat: 38.5372, lng: -28.5297 },
+        { name: 'Pico volcano climb (optional)', lat: 38.4667, lng: -28.3978 },
+      ],
+      notes: "3-4 days across Faial and Pico, the westernmost group in this route: Horta's whaling heritage in Faial, a short ~30-minute ferry to Pico instead of flying, and an optional climb of the Pico volcano. Budget ~€80-95/day. Web check (2026-08): climbing Pico needs an advance online reservation plus a guide/permit through Parque Natural do Pico.",
+      transport_to_next: 'End of this route — fly home via Ponta Delgada or Lisbon.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Three-island Azores hop: São Miguel, Terceira, then Faial/Pico by domestic flight and short ferry.',
+    climate_summary: 'June-September optimal for weather and whale-watching.',
+    description: "São Miguel, Terceira, and Faial/Pico (Horta's whaling heritage, an optional Pico climb, a short Faial-Pico ferry).",
+    notes: "Built (2026-08) as part of Phase 2 batch 14a/21 (Islands: Madeira + Azores) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Modeled as three Portugal blocks (São Miguel, Terceira, Faial/Pico). São Miguel and Terceira coordinates reused unchanged from the other Azores routes in this batch for consistency; Faial/Pico coordinates are new to this repo. Domestic flight/ferry costs across the islands (~€150-250 total) are called out in the São Miguel leg's notes rather than folded into the per-day budget, mirroring how the Central European Grand Roadtrip keeps car costs out of its per-country budget. No pre-existing Route Builder expedition covers the Azores, so no collision beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaMadeiraAzoresRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_MADEIRA_AZORES)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_MADEIRA_AZORES, '1');
+
+  rbRoutes.push(
+    rbBuildMadeiraRoute(),
+    rbBuildMadeiraPortoSantoRoute(),
+    rbBuildSaoMiguelRoute(),
+    rbBuildAzoresSaoMiguelTerceiraRoute(),
+    rbBuildAzoresIslandHoppingRoute(),
+  );
+  rbSave();
+}
