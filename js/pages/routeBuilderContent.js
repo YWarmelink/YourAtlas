@@ -18186,3 +18186,75 @@ function rbSeedEuropaGreekIslandsRoutes() {
   );
   rbSave();
 }
+
+function rbBuildChannelIslandsRoute() {
+  return rbBuildFlatSeedRoute('Jersey + Guernsey (Channel Islands) (4-5 days) 🏝️', [
+    {
+      code: 'GG', name: 'Guernsey', days: 2, budget: 230, lat: 49.4526, lng: -2.5348,
+      destinations: [
+        { name: 'St Peter Port', lat: 49.4551, lng: -2.5359 },
+      ],
+      notes: "Entry: no direct flight from the Netherlands — routed via Southampton/Gatwick (Aurigny hub) or via Jersey. Guernsey has its own currency, pegged 1:1 to the British pound. Budget ~€100-130/day (the Channel Islands are expensive, comparable to South England price levels — used here at ~€115/day). Season: May-September, mild climate but no guarantee of sun. Web check (2026-08): Condor Ferries stopped operating under that brand name on 28 March 2025 — the Guernsey ferry route now runs via Brittany Ferries; older guidebooks still mentioning \"Condor\" are outdated. UK ETA mandatory (£20, valid 2 years or until passport expiry) — since 23 April 2026 this single ETA also covers Jersey and Isle of Man, so a combined UK+Channel Islands+Isle of Man trip needs only one ETA. UK travel advisory: green (28-05-2026), explicitly naming Jersey/Guernsey re: the ETA requirement. ⚠️⚠️ Note: Route Builder already has Guernsey+Jersey content bundled inside 'Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖' (British Isles & Celtic Coast Expedition) — built anyway per the source list since this is a standalone islands-only trip, not a bigger Brittany/Normandy/Belgium combo; flagged for review, not merged. See this route's overall notes below for the full detail on the overlap.",
+      transport_to_next: 'Aurigny inter-island flight (~20 min) or ferry to Jersey.',
+    },
+    {
+      code: 'JE', name: 'Jersey', days: 3, budget: 345, lat: 49.1805, lng: -2.1049,
+      destinations: [
+        { name: 'St. Helier', lat: 49.1858, lng: -2.1041 },
+        { name: 'Mont Orgueil Castle', lat: 49.1857, lng: -2.0173 },
+        { name: 'Jersey War Tunnels (WWII)', lat: 49.1958, lng: -2.1206 },
+      ],
+      notes: "St. Helier and Mont Orgueil Castle, plus the Jersey War Tunnels (WWII). Budget ~€100-130/day, used here at ~€115/day. Web check (2026-08): the Jersey ferry route now runs via DFDS Seaways (Condor Ferries, the old brand, stopped operating 28 March 2025). KLM flies a seasonal direct Amsterdam-Jersey route — Guernsey itself has no direct NL flight.",
+      transport_to_next: 'End of this route — seasonal direct KLM flight Jersey-Amsterdam, or via the UK.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Island-hopping between the two main Channel Islands by Aurigny inter-island flight or ferry — no rental car strictly needed, most sights reachable on foot/bus/bike.',
+    climate_summary: 'May-September; mild maritime climate but no guaranteed sun even in summer.',
+    description: 'A standalone Channel Islands-only trip: Guernsey (St Peter Port) and Jersey (St. Helier, Mont Orgueil Castle, Jersey War Tunnels).',
+    notes: "Built (2026-08) as part of Phase 2 batch 14e/21 (Islands: Channel Islands + Isle of Man) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 14/21 (30/30 items). ⚠️ Real overlap, explicitly flagged: Route Builder already has Guernsey+Jersey content bundled inside 'Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖' (British Isles & Celtic Coast Expedition split, 28 days total) — its first two legs already cover Guernsey (2 days, St Peter Port) and Jersey (3 days, incl. Jersey War Tunnels) almost exactly as this route does, before continuing on to Brittany/Normandy/Opal Coast/Belgium. Built anyway per the source list since this is a standalone islands-only trip, not a bigger Brittany/Normandy/Belgium combo — flagged for review, not merged. Deliberately given a distinct function name (rbBuildChannelIslandsRoute) rather than reusing rbBuildChannelIslandsBrittanyRoute, per this project's established collision-resolution pattern (see Crete Roadtrip (7-10 days) 🏝️ vs. the pre-existing Greece & Crete 🫒 for the precedent). The pre-existing Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖 route itself is untouched, not renamed, not modified, and still references the old Condor Ferries branding in its own notes (pre-2025 sourcing) — this new route uses the corrected 2026 DFDS Seaways/Brittany Ferries information instead, since it's being written fresh. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildIsleOfManRoute() {
+  return rbBuildFlatSeedRoute('Isle of Man (3-4 days) 🏝️', [
+    {
+      code: 'IM', name: 'Isle of Man', days: 2, budget: 200, lat: 54.1509, lng: -4.4815,
+      destinations: [
+        { name: 'Douglas', lat: 54.1509, lng: -4.4815 },
+        { name: 'TT Grandstand & Museum', lat: 54.1523, lng: -4.4749 },
+        { name: 'TT Mountain Road (Snaefell)', lat: 54.2585, lng: -4.3947 },
+        { name: 'Snaefell Mountain Railway', lat: 54.2136, lng: -4.3970 },
+        { name: 'Manx Electric Railway', lat: 54.1747, lng: -4.4629 },
+      ],
+      notes: "Entry: no direct connection from the Netherlands — via the UK: fly Liverpool/Manchester/Gatwick, or the Steam Packet ferry Douglas-Heysham (year-round)/Douglas-Liverpool (seasonal, March-November). Douglas as the capital (2 days), including the TT museum, plus the TT Mountain Road up Snaefell and the historic Manx Electric/Snaefell Mountain Railways. Budget ~€90-115/day (UK-level prices, limited budget options — used here at ~€100/day). Season: May-September. ⚠️ Watch out for the TT Races (late May/early June): huge crowds and high prices — book well ahead or avoid those specific weeks. UK ETA mandatory (£20, valid 2 years or until passport expiry) — since 23 April 2026 covers the UK + Jersey + Guernsey + Isle of Man together, no separate application per island needed. ⚠️⚠️ Note: Route Builder already has an Isle of Man leg inside 'England, Wales & Isle of Man 🎩' (British Isles & Celtic Coast Expedition split) — built anyway per the source list since this is a fuller standalone Isle of Man trip; flagged for review, not merged. See this route's overall notes below for the full detail on the overlap.",
+      transport_to_next: 'Short drive south to Castletown, then on to Peel on the west coast.',
+    },
+    {
+      code: 'IM', name: 'Isle of Man', days: 2, budget: 200, lat: 54.0743, lng: -4.6555,
+      destinations: [
+        { name: 'Castletown (Castle Rushen)', lat: 54.0743, lng: -4.6555 },
+        { name: 'Peel Castle', lat: 54.2231, lng: -4.6959 },
+      ],
+      notes: 'Castletown\'s Castle Rushen and Peel on the west coast (1-2 days) — the island\'s other historic castles, away from Douglas. Budget ~€90-115/day, used here at ~€100/day.',
+      transport_to_next: 'End of this route — Steam Packet ferry back to Heysham/Liverpool, or flight from Douglas via the UK to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'A small island covered by local car hire for a day (TT Mountain Road) plus bus and the historic railways for the rest — Douglas, Castletown, Peel, Snaefell.',
+    climate_summary: 'May-September; avoid the TT Races fortnight (late May/early June) unless that is specifically the point of the trip.',
+    description: 'A fuller standalone Isle of Man trip: Douglas (incl. TT museum), Castletown, Peel, and the Snaefell Mountain Railway.',
+    notes: "Built (2026-08) as part of Phase 2 batch 14e/21 (Islands: Channel Islands + Isle of Man) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 14/21 (30/30 items). ⚠️ Real overlap, explicitly flagged: Route Builder already has an Isle of Man leg inside 'England, Wales & Isle of Man 🎩' (British Isles & Celtic Coast Expedition split, per batch 12b's findings — its Lake District+Isle of Man leg). That existing leg (rbBuildEnglandWalesIoMRoute, 4 days) is actually fairly substantial already — Douglas, Peel, the TT Mountain Road/Snaefell, and both the Manx Electric Railway and Snaefell Mountain Railway — not a brief stopover, but it omits Castletown/Castle Rushen entirely, and it remains just one leg inside a much bigger 38-day England/Wales/Isle of Man tour rather than a standalone island-only trip. Built anyway per the source list since this is a fuller standalone Isle of Man trip (Douglas, Castletown, Peel, Snaefell) — flagged for review, not merged. Deliberately given a distinct function name (rbBuildIsleOfManRoute) rather than reusing rbBuildEnglandWalesIoMRoute, per this project's established collision-resolution pattern. The pre-existing England, Wales & Isle of Man 🎩 route itself is untouched, not renamed, not modified. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaChannelIslandsIoMRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_CHANNEL_ISLANDS_IOM)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_CHANNEL_ISLANDS_IOM, '1');
+
+  rbRoutes.push(
+    rbBuildChannelIslandsRoute(),
+    rbBuildIsleOfManRoute(),
+  );
+  rbSave();
+}
