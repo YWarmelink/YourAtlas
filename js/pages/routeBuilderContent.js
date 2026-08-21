@@ -13716,3 +13716,492 @@ function rbSeedEuropaBosniaMontenegroAlbaniaRoutes() {
   );
   rbSave();
 }
+
+function rbBuildBelgradeSurroundingsRoute() {
+  return rbBuildFlatSeedRoute('Belgrade + Surroundings (5 days) 🏛️', [
+    {
+      code: 'RS', name: 'Serbia', days: 5, budget: 200, lat: 44.8225, lng: 20.4506,
+      destinations: [
+        { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 },
+        { name: 'Belgrade (Skadarlija)', lat: 44.8186, lng: 20.4658 },
+        { name: 'Novi Sad + Petrovaradin Fortress', lat: 45.2519, lng: 19.8600 },
+        { name: 'Fruška Gora monasteries (Krušedol)', lat: 45.1614, lng: 19.8331 },
+      ],
+      notes: "Belgrade (2-3 days, the Kalemegdan fortress and the bohemian Skadarlija quarter) — Novi Sad and Petrovaradin Fortress (1 day) — the Fruška Gora monasteries as a day trip. Budget ~€35-45/day. Season: May-June/September — summer gets hot, but the city itself stays easily doable. Web check (2026-08): Belgrade's public transport has been free since 1 January 2025; there's an ongoing student protest movement centered on Belgrade and Novi Sad's city centers (running since late 2024, with tear gas reported as recently as May 2026) — check current protest locations before setting out. Photographing government or military buildings is illegal here.",
+      transport_to_next: 'End of this route — fly home from Belgrade.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Belgrade, day trips by car/bus to Novi Sad and Fruška Gora.',
+    climate_summary: 'May-June or September — summer gets hot but the city itself remains manageable.',
+    description: "Belgrade's Kalemegdan fortress and Skadarlija quarter, a day in Novi Sad and Petrovaradin Fortress, and the Fruška Gora monasteries.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8c (Balkan-cluster: Serbia + North Macedonia + Kosovo) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 8/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSerbiaRoute() {
+  return rbBuildFlatSeedRoute('Serbia (6 days) 🚂', [
+    {
+      code: 'RS', name: 'Serbia', days: 6, budget: 240, lat: 44.7866, lng: 20.4489,
+      destinations: [
+        { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 },
+        { name: 'Novi Sad', lat: 45.2671, lng: 19.8335 },
+        { name: 'Zlatibor', lat: 43.7286, lng: 19.7089 },
+        { name: 'Šarganska Osmica (Mokra Gora)', lat: 43.7397, lng: 19.5289 },
+        { name: 'Drvengrad (Mećavnik)', lat: 43.7150, lng: 19.5169 },
+      ],
+      notes: "Belgrade (2 days) — Novi Sad (1 day) — Zlatibor (2 days, including a ride on the narrow-gauge Šarganska Osmica heritage train and a stop at Emir Kusturica's Drvengrad/Mećavnik village) — back to Belgrade. Budget ~€35-45/day. Season: May-June/September; winter has its own charm for the snow around Zlatibor. Web check (2026-08): make sure your passport/ID is valid for at least 3 months beyond your exit date.",
+      transport_to_next: 'End of this route — fly home from Belgrade.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Belgrade, rental car/bus onward to Novi Sad and Zlatibor.',
+    climate_summary: 'May-June or September; winter also works for Zlatibor snow.',
+    description: "Belgrade and Novi Sad, then Zlatibor for the Šarganska Osmica heritage train and the Drvengrad film village.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8c (Balkan-cluster: Serbia + North Macedonia + Kosovo) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 8/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSerbiaRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Serbia Roadtrip (9 days) 🚙', [
+    {
+      code: 'RS', name: 'Serbia', days: 9, budget: 360, lat: 44.5000, lng: 20.0000,
+      destinations: [
+        { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 },
+        { name: 'Novi Sad', lat: 45.2671, lng: 19.8335 },
+        { name: 'Subotica', lat: 46.1008, lng: 19.6650 },
+        { name: 'Zlatibor', lat: 43.7286, lng: 19.7089 },
+        { name: 'Mokra Gora / Tara National Park', lat: 43.8833, lng: 19.3667 },
+      ],
+      notes: "Belgrade (2 days) — Novi Sad — Subotica (1 day, Austro-Hungarian architecture near the Hungarian border) — Zlatibor (2 days) — Mokra Gora/Tara National Park (2 days) — back to Belgrade. Budget ~€35-45/day (rental car extra). Season: late April-June or September-early October for the best road conditions and light. Web check (2026-08): summer wildfires can occasionally close roads in this region — check conditions before setting out in July-August.",
+      transport_to_next: 'End of this route — fly home from Belgrade.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Belgrade, rental car for the full loop north to Subotica and south to Zlatibor/Tara.',
+    climate_summary: 'Late April-June or September-early October for the best road conditions and light.',
+    description: "A Serbia road trip: Belgrade, Novi Sad, Subotica in the north, then Zlatibor and Mokra Gora/Tara National Park in the southwest.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8c (Balkan-cluster: Serbia + North Macedonia + Kosovo) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 8/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSerbiaBosniaRoute() {
+  return rbBuildFlatSeedRoute('Serbia + Bosnia (9 days) 🛶', [
+    {
+      code: 'RS', name: 'Serbia', days: 5, budget: 200, lat: 44.5000, lng: 19.9000,
+      destinations: [
+        { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 },
+        { name: 'Zlatibor', lat: 43.7286, lng: 19.7089 },
+        { name: 'Tara Canyon / Drina rafting (Perućac)', lat: 43.9711, lng: 19.4142 },
+      ],
+      notes: "Belgrade (2 days) — Zlatibor (1 day) — the Tara Canyon/Drina river rafting put-in near Perućac (2 days; the rafting itself runs ~€60/day on top of the base budget). Budget ~€35-45/day. Season: May-June/September; the rafting season itself runs April-October. Web check (2026-08): Tara rafting centers offer pickup from both Sarajevo and Mostar, which makes the onward hop into Bosnia straightforward to arrange.",
+      transport_to_next: "Overland into Bosnia and Herzegovina towards Sarajevo, often via the rafting operator's own transfer or a rental car — a well-worn route with no particular border complications.",
+    },
+    {
+      code: 'BA', name: 'Bosnia and Herzegovina', days: 4, budget: 140, lat: 43.8563, lng: 18.4131,
+      destinations: [
+        { name: 'Sarajevo (Baščaršija)', lat: 43.8563, lng: 18.4131 },
+        { name: 'Mostar', lat: 43.3438, lng: 17.8078 },
+        { name: 'Blagaj (Tekija)', lat: 43.2489, lng: 17.8942 },
+      ],
+      notes: "Sarajevo (2 days) — Mostar and the Blagaj Tekija (2 days). Budget ~€30-40/day.",
+      transport_to_next: 'End of this route — fly home from Sarajevo.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Belgrade, fly home from Sarajevo (or reversed); rental car/rafting-operator transfer for the middle stretch.',
+    climate_summary: 'May-June or September; the Drina rafting season itself runs April-October.',
+    description: "Belgrade and Zlatibor in Serbia, a Tara Canyon/Drina river rafting stop, then Sarajevo, Mostar and Blagaj in Bosnia and Herzegovina.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8c (Balkan-cluster: Serbia + North Macedonia + Kosovo) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 8/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSerbiaMontenegroBosniaRoute() {
+  return rbBuildFlatSeedRoute('Serbia + Montenegro + Bosnia (12 days) 🏔️', [
+    {
+      code: 'RS', name: 'Serbia', days: 3, budget: 120, lat: 44.5000, lng: 19.9000,
+      destinations: [
+        { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 },
+        { name: 'Zlatibor', lat: 43.7286, lng: 19.7089 },
+      ],
+      notes: "Belgrade (2 days) — Zlatibor (1 day). Budget ~€35-45/day.",
+      transport_to_next: "Overland (rental car or a rafting-operator transfer) towards the Tara Canyon/Drina rafting put-in near Perućac, then on into Bosnia and Herzegovina.",
+    },
+    {
+      code: 'BA', name: 'Bosnia and Herzegovina', days: 5, budget: 200, lat: 43.9000, lng: 18.7000,
+      destinations: [
+        { name: 'Tara Canyon / Drina rafting (Perućac)', lat: 43.9711, lng: 19.4142 },
+        { name: 'Sarajevo (Baščaršija)', lat: 43.8563, lng: 18.4131 },
+        { name: 'Mostar', lat: 43.3438, lng: 17.8078 },
+      ],
+      notes: "The Tara Canyon/Drina rafting stop (2 days; rafting itself ~€60/day on top of the base budget) — Sarajevo (2 days) — Mostar (1 day). Budget ~€35-45/day. Rafting season runs April-October.",
+      transport_to_next: "Overland via the border near Trebinje/Nikšić into Montenegro towards Kotor. Web check (2026-08): usually a straightforward crossing, but budget extra queueing time on summer weekends.",
+    },
+    {
+      code: 'ME', name: 'Montenegro', days: 4, budget: 220, lat: 42.8000, lng: 18.9000,
+      destinations: [
+        { name: 'Kotor Old Town + Bay of Kotor', lat: 42.4247, lng: 18.7712 },
+        { name: 'Žabljak / Durmitor National Park', lat: 43.1547, lng: 19.1225 },
+      ],
+      notes: "Kotor + the Bay of Kotor (2 days) — Žabljak/Durmitor National Park (2 days). Budget ~€45-60/day — avoid the Montenegrin coast in July-August, when cruise-ship crowds in Kotor and prices both spike by 25-40%.",
+      transport_to_next: 'End of this route — fly home from Podgorica or Tivat.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Belgrade, fly home from Podgorica/Tivat (or reversed), rental car/rafting transfers throughout.',
+    climate_summary: 'May-June or September — avoid the Montenegrin coast in July-August.',
+    description: "Belgrade and Zlatibor in Serbia, Tara Canyon/Drina rafting and Sarajevo/Mostar in Bosnia and Herzegovina, then Kotor + the Bay of Kotor and Durmitor National Park in Montenegro.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8c (Balkan-cluster: Serbia + North Macedonia + Kosovo) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 8/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSkopjeOhridRoute() {
+  return rbBuildFlatSeedRoute('Skopje + Ohrid (5 days) 🌅', [
+    {
+      code: 'MK', name: 'North Macedonia', days: 5, budget: 200, lat: 41.5000, lng: 21.1000,
+      destinations: [
+        { name: 'Skopje', lat: 41.9973, lng: 21.4280 },
+        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 },
+        { name: 'Sveti Naum', lat: 40.9086, lng: 20.7222 },
+      ],
+      notes: "Skopje (2 days) — Ohrid (2-3 days), including the Sveti Naum monastery and a swim in Lake Ohrid. Budget ~€35-45/day (hostels €15-25, Ohrid National Park entry €3-5). Season: May-June/September for the best price-weather-quiet balance; July-August has the warmest lake water but is busiest and priciest, winter is cheapest. Web check (2026-08): as elsewhere in the country, avoid photographing military objects — fines or prison sentences of up to 3 years are on the books for this.",
+      transport_to_next: 'End of this route — fly home from Skopje (or Ohrid, seasonal routes permitting).',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Skopje, bus/rental car onward to Ohrid.',
+    climate_summary: 'May-June or September for the best balance; July-August is warmest for swimming but busiest and priciest.',
+    description: "Skopje's old town and bazaar, then Ohrid's lake, old town and Sveti Naum monastery.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8c (Balkan-cluster: Serbia + North Macedonia + Kosovo) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 8/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildNorthMacedoniaRoute() {
+  return rbBuildFlatSeedRoute('North Macedonia (6 days) ⛰️', [
+    {
+      code: 'MK', name: 'North Macedonia', days: 6, budget: 240, lat: 41.4000, lng: 21.1000,
+      destinations: [
+        { name: 'Skopje', lat: 41.9973, lng: 21.4280 },
+        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 },
+        { name: 'Bitola', lat: 41.0297, lng: 21.3347 },
+        { name: 'Pelister National Park', lat: 41.0500, lng: 21.2167 },
+      ],
+      notes: "Skopje (2 days) — Ohrid (3 days) — Bitola and Pelister National Park (1-2 days). Budget ~€35-45/day. Season: May-June/September. Web check (2026-08): photographing military objects is illegal here (fine or up to 3 years in prison), and pickpocketing happens on busy tourist streets — the usual care applies.",
+      transport_to_next: 'End of this route — fly home from Skopje.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Skopje, rental car/bus for Ohrid and Bitola.',
+    climate_summary: 'May-June or September.',
+    description: "Skopje, Ohrid's lake and old town, and Bitola with Pelister National Park.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8c (Balkan-cluster: Serbia + North Macedonia + Kosovo) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 8/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildNorthMacedoniaAlbaniaRoute() {
+  return rbBuildFlatSeedRoute('North Macedonia + Albania (9 days) 🚌', [
+    {
+      code: 'MK', name: 'North Macedonia', days: 5, budget: 200, lat: 41.5000, lng: 20.9500,
+      destinations: [
+        { name: 'Skopje', lat: 41.9973, lng: 21.4280 },
+        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 },
+      ],
+      notes: "Skopje (2 days) — Ohrid (2-3 days). Budget ~€35-45/day. Web check (2026-08): as elsewhere in the country, avoid photographing military objects — fines or prison sentences of up to 3 years apply.",
+      transport_to_next: "Cross-border bus over to Tirana (~€9.50, 131 km). Web check (2026-08): a straightforward non-Schengen crossing.",
+    },
+    {
+      code: 'AL', name: 'Albania', days: 4, budget: 120, lat: 41.0000, lng: 19.9000,
+      destinations: [
+        { name: 'Tirana', lat: 41.3275, lng: 19.8187 },
+        { name: 'Berat', lat: 40.7058, lng: 19.9522 },
+      ],
+      notes: "Tirana (2 days) — Berat (1-2 days, UNESCO-listed) — optionally continue on to Gjirokastër. Budget ~€25-35/day — Albania runs noticeably cheaper than North Macedonia.",
+      transport_to_next: 'End of this route — fly home from Tirana.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Skopje, fly home from Tirana (or reversed), cross-border bus for the middle hop.',
+    climate_summary: 'May-June or September.',
+    description: "Skopje and Ohrid in North Macedonia, continuing by cross-border bus into Albania for Tirana and Berat's UNESCO old town.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8c (Balkan-cluster: Serbia + North Macedonia + Kosovo) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 8/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildNorthMacedoniaGreeceRoute() {
+  return rbBuildFlatSeedRoute('North Macedonia + Greece (9 days) 🏛️', [
+    {
+      code: 'MK', name: 'North Macedonia', days: 5, budget: 200, lat: 41.5000, lng: 20.9500,
+      destinations: [
+        { name: 'Skopje', lat: 41.9973, lng: 21.4280 },
+        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 },
+      ],
+      notes: "Skopje (2 days) — Ohrid (2-3 days). Budget ~€35-45/day.",
+      transport_to_next: "Rental car over the Bogorodica/Evzoni border crossing on the E75 (2.5-3 hours' drive). Web check (2026-08): leave Skopje before 08:00 for a smooth border crossing, and budget ~€5-8 in tolls between the border and Thessaloniki.",
+    },
+    {
+      code: 'GR', name: 'Greece', days: 4, budget: 220, lat: 40.6401, lng: 22.9444,
+      destinations: [
+        { name: 'Thessaloniki', lat: 40.6401, lng: 22.9444 },
+      ],
+      notes: "Thessaloniki (3-4 days). Budget ~€50-65/day — noticeably pricier than North Macedonia.",
+      transport_to_next: 'End of this route — fly home from Thessaloniki.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Skopje, fly home from Thessaloniki (or reversed), rental car throughout.',
+    climate_summary: 'May-June or September.',
+    description: "Skopje and Ohrid in North Macedonia, then over the border by rental car into Greece for Thessaloniki.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8c (Balkan-cluster: Serbia + North Macedonia + Kosovo) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 8/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildKosovoRoute() {
+  return rbBuildFlatSeedRoute('Kosovo (5 days) 🕍', [
+    {
+      code: 'XK', name: 'Kosovo', days: 5, budget: 150, lat: 42.5500, lng: 20.6000,
+      destinations: [
+        { name: 'Pristina', lat: 42.6629, lng: 21.1655 },
+        { name: 'Prizren (Sinan Pasha Mosque, Liga House)', lat: 42.2139, lng: 20.7397 },
+        { name: 'Peja / Rugova Gorge', lat: 42.6591, lng: 20.2883 },
+        { name: 'Visoki Dečani / Peć Patriarchate', lat: 42.5486, lng: 20.1364 },
+      ],
+      notes: "Pristina (1-2 days) — Prizren (2 days, the Liga House and Sinan Pasha Mosque) — Peja and the Rugova Gorge (1-2 days, canyon hiking and a Via Ferrata). Budget ~€25-35/day — the cheapest Balkan country to travel in (hostels €7-15). Season: May-June/September; the Rugova Gorge activities (Via Ferrata, cable car) run best April-October. Web check (2026-08): since 15 March 2026, private-stay accommodation must be registered with the police within 3 days (hotels handle this automatically); visiting Visoki Dečani or the Peć Patriarchate requires surrendering your passport at the KFOR checkpoint, dressing modestly, and sometimes an escort. Northern Kosovo (North Mitrovica, Zvečan, Zubin Potok, Leposavić) carries an orange 'essential travel only' advisory over tensions around the Mitrovica bridge and an August 2026 KFOR transition — this route doesn't go there. Landmines remain in remote areas along the Kosovo-Albania border and on the Dulje Pass — stick to marked trails. Border-order note: Serbia does not recognize Kosovo's border crossings as official international border posts — if this trip is ever combined with Serbia, enter Serbia first (via Belgrade/Niš airport or a recognized land border) before crossing into Kosovo, since returning to Serbia from Kosovo without a prior Serbian entry stamp can lead to refusal. That's exactly why this route and its Kosovo-based siblings in this batch pair Kosovo only with North Macedonia, Albania or Montenegro, never with Serbia.",
+      transport_to_next: 'End of this route — fly home from Pristina.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Pristina, bus/rental car for Prizren and Peja/Rugova.',
+    climate_summary: 'May-June or September; Rugova Gorge activities run best April-October.',
+    description: "Pristina, Prizren's old town and Sinan Pasha Mosque, and the Rugova Gorge above Peja.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8c (Balkan-cluster: Serbia + North Macedonia + Kosovo) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 8/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildKosovoNorthMacedoniaRoute() {
+  return rbBuildFlatSeedRoute('Kosovo + North Macedonia (6 days) 🚏', [
+    {
+      code: 'XK', name: 'Kosovo', days: 3, budget: 90, lat: 42.4500, lng: 20.9500,
+      destinations: [
+        { name: 'Pristina', lat: 42.6629, lng: 21.1655 },
+        { name: 'Prizren', lat: 42.2139, lng: 20.7397 },
+      ],
+      notes: "Pristina (1 day) — Prizren (2 days). Budget ~€25-35/day. This route deliberately leaves Kosovo via North Macedonia, never towards Serbia — see the standalone Kosovo route's notes for the border-order reasoning.",
+      transport_to_next: "Overland to Skopje — a straightforward non-Schengen border crossing.",
+    },
+    {
+      code: 'MK', name: 'North Macedonia', days: 3, budget: 120, lat: 41.6000, lng: 21.1000,
+      destinations: [
+        { name: 'Skopje', lat: 41.9973, lng: 21.4280 },
+        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 },
+      ],
+      notes: "Skopje (1 day) — Ohrid (2 days). Budget ~€35-45/day.",
+      transport_to_next: 'End of this route — fly home from Skopje (or Ohrid).',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Pristina, fly home from Skopje (or reversed), bus overland for the border hop.',
+    climate_summary: 'May-June or September.',
+    description: "Pristina and Prizren in Kosovo, continuing overland into North Macedonia for Skopje and Ohrid.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8c (Balkan-cluster: Serbia + North Macedonia + Kosovo) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 8/21. The day split compresses the source's looser ranges to fit the stated 6-day total. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildKosovoAlbaniaRoute() {
+  return rbBuildFlatSeedRoute('Kosovo + Albania (9 days) 🏔️', [
+    {
+      code: 'XK', name: 'Kosovo', days: 4, budget: 120, lat: 42.4500, lng: 20.4500,
+      destinations: [
+        { name: 'Peja / Rugova Gorge', lat: 42.6591, lng: 20.2883 },
+        { name: 'Prizren', lat: 42.2139, lng: 20.7397 },
+      ],
+      notes: "Peja and the Rugova Gorge (2 days) — Prizren (2 days). Budget ~€25-35/day. This route leaves Kosovo via Albania, never via Serbia — see the standalone Kosovo route's notes for why.",
+      transport_to_next: "Overland via the Kukës border crossing.",
+    },
+    {
+      code: 'AL', name: 'Albania', days: 5, budget: 150, lat: 41.6000, lng: 19.9000,
+      destinations: [
+        { name: 'Kukës', lat: 42.0778, lng: 20.4219 },
+        { name: 'Shkodër', lat: 42.0683, lng: 19.5126 },
+        { name: 'Theth (Accursed Mountains)', lat: 42.3961, lng: 19.7692 },
+        { name: 'Tirana', lat: 41.3275, lng: 19.8187 },
+      ],
+      notes: "Shkodër and the Accursed Mountains around Theth (2 days) — Tirana (3 days). Budget ~€25-35/day — similar cost level to Kosovo.",
+      transport_to_next: 'End of this route — fly home from Tirana.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Pristina, fly home from Tirana (or reversed), bus/rental car overland throughout.',
+    climate_summary: 'May-June or September.',
+    description: "Peja/Rugova Gorge and Prizren in Kosovo, continuing overland via Kukës into Albania for Shkodër, the Accursed Mountains and Tirana.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8c (Balkan-cluster: Serbia + North Macedonia + Kosovo) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 8/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildKosovoMontenegroRoute() {
+  return rbBuildFlatSeedRoute('Kosovo + Montenegro (9 days) 🏞️', [
+    {
+      code: 'XK', name: 'Kosovo', days: 4, budget: 120, lat: 42.6500, lng: 20.2500,
+      destinations: [
+        { name: 'Peja', lat: 42.6591, lng: 20.2883 },
+        { name: 'Rugova Gorge', lat: 42.6167, lng: 20.1667 },
+      ],
+      notes: "Peja (2 days) — the Rugova Gorge (2 days). Budget ~€25-35/day. Leaves Kosovo towards Montenegro, never towards Serbia — see the standalone Kosovo route's notes for why.",
+      transport_to_next: "Overland via the Plav/Gusinje border crossing into Montenegro.",
+    },
+    {
+      code: 'ME', name: 'Montenegro', days: 5, budget: 250, lat: 42.8000, lng: 18.9500,
+      destinations: [
+        { name: 'Žabljak / Durmitor National Park', lat: 43.1547, lng: 19.1225 },
+        { name: 'Kotor Old Town + Bay of Kotor', lat: 42.4247, lng: 18.7712 },
+      ],
+      notes: "Žabljak/Durmitor National Park (3 days) — Kotor + the Bay of Kotor (2 days). Budget ~€45-60/day, more in July-August on the coast. Season: avoid the Montenegrin coast at the height of summer.",
+      transport_to_next: 'End of this route — fly home from Podgorica or Tivat.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Pristina, fly home from Podgorica/Tivat (or reversed), bus/rental car overland throughout.',
+    climate_summary: 'May-June or September; avoid the Montenegrin coast in July-August.',
+    description: "Peja and the Rugova Gorge in Kosovo, then overland into Montenegro for Durmitor National Park and Kotor + the Bay of Kotor.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8c (Balkan-cluster: Serbia + North Macedonia + Kosovo) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 8/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildKosovoMontenegroAlbaniaRoute() {
+  return rbBuildFlatSeedRoute('Kosovo + Montenegro + Albania (9 days) 🗻', [
+    {
+      code: 'XK', name: 'Kosovo', days: 4, budget: 120, lat: 42.4500, lng: 20.4500,
+      destinations: [
+        { name: 'Prizren', lat: 42.2139, lng: 20.7397 },
+        { name: 'Peja / Rugova Gorge', lat: 42.6591, lng: 20.2883 },
+      ],
+      notes: "Prizren (2 days) — Peja and the Rugova Gorge (2 days). Budget ~€25-35/day. Leaves Kosovo towards Montenegro, never towards Serbia — see the standalone Kosovo route's notes for why.",
+      transport_to_next: "Overland via the Plav/Gusinje border crossing into Montenegro.",
+    },
+    {
+      code: 'ME', name: 'Montenegro', days: 2, budget: 100, lat: 43.1547, lng: 19.1225,
+      destinations: [
+        { name: 'Žabljak / Durmitor National Park', lat: 43.1547, lng: 19.1225 },
+      ],
+      notes: "Durmitor National Park (2 days). Budget ~€45-60/day, pricier in July-August.",
+      transport_to_next: "Overland towards the Albanian border and Shkodër.",
+    },
+    {
+      code: 'AL', name: 'Albania', days: 3, budget: 90, lat: 41.7000, lng: 19.6500,
+      destinations: [
+        { name: 'Shkodër', lat: 42.0683, lng: 19.5126 },
+        { name: 'Tirana', lat: 41.3275, lng: 19.8187 },
+      ],
+      notes: "Shkodër (1-2 days) — Tirana (1-2 days). Budget ~€25-35/day.",
+      transport_to_next: 'End of this route — fly home from Tirana.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Pristina, fly home from Tirana (or reversed), bus/rental car overland throughout.',
+    climate_summary: 'May-June or September.',
+    description: "Prizren and Peja/Rugova Gorge in Kosovo, Durmitor National Park in Montenegro, then Shkodër and Tirana in Albania.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8c (Balkan-cluster: Serbia + North Macedonia + Kosovo) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 8/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildKosovoNorthMacedoniaAlbaniaRoute() {
+  return rbBuildFlatSeedRoute('Kosovo + North Macedonia + Albania (9 days) 🎒', [
+    {
+      code: 'XK', name: 'Kosovo', days: 4, budget: 120, lat: 42.4500, lng: 20.9500,
+      destinations: [
+        { name: 'Pristina', lat: 42.6629, lng: 21.1655 },
+        { name: 'Prizren', lat: 42.2139, lng: 20.7397 },
+      ],
+      notes: "Pristina (1-2 days) — Prizren (2 days). Budget ~€25-35/day. This route leaves Kosovo via North Macedonia, never towards Serbia — see the standalone Kosovo route's notes for why.",
+      transport_to_next: "Overland to Skopje.",
+    },
+    {
+      code: 'MK', name: 'North Macedonia', days: 3, budget: 120, lat: 41.6000, lng: 21.1000,
+      destinations: [
+        { name: 'Skopje', lat: 41.9973, lng: 21.4280 },
+        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 },
+      ],
+      notes: "Skopje (1-2 days) — Ohrid (2 days). Budget ~€35-45/day.",
+      transport_to_next: "Cross-border bus onward to Tirana.",
+    },
+    {
+      code: 'AL', name: 'Albania', days: 2, budget: 60, lat: 41.3275, lng: 19.8187,
+      destinations: [
+        { name: 'Tirana', lat: 41.3275, lng: 19.8187 },
+      ],
+      notes: "Tirana (1-2 days). Budget ~€25-35/day.",
+      transport_to_next: 'End of this route — fly home from Tirana.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Pristina, fly home from Tirana (or reversed), bus overland throughout.',
+    climate_summary: 'May-June or September.',
+    description: "Pristina and Prizren in Kosovo, Skopje and Ohrid in North Macedonia, finishing in Tirana, Albania.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8c (Balkan-cluster: Serbia + North Macedonia + Kosovo) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 8/21. Deliberately distinct from the 'Kosovo + Albania + North Macedonia (12 days)' route below — same three countries, but a shorter, differently-ordered itinerary. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildKosovoAlbaniaNorthMacedoniaRoute() {
+  return rbBuildFlatSeedRoute('Kosovo + Albania + North Macedonia (12 days) 🧭', [
+    {
+      code: 'XK', name: 'Kosovo', days: 5, budget: 150, lat: 42.5000, lng: 20.7000,
+      destinations: [
+        { name: 'Pristina', lat: 42.6629, lng: 21.1655 },
+        { name: 'Peja / Rugova Gorge', lat: 42.6591, lng: 20.2883 },
+        { name: 'Prizren', lat: 42.2139, lng: 20.7397 },
+      ],
+      notes: "Pristina (1 day) — Peja and the Rugova Gorge (2 days) — Prizren (2 days). Budget ~€25-35/day. A fuller, slower-paced version of the 'Kosovo + North Macedonia + Albania (9 days)' route above, run in a different order and over 12 rather than 9 days. Leaves Kosovo via Albania, never towards Serbia — see the standalone Kosovo route's notes for why.",
+      transport_to_next: "Overland via the Kukës border crossing.",
+    },
+    {
+      code: 'AL', name: 'Albania', days: 4, budget: 120, lat: 41.6000, lng: 19.9000,
+      destinations: [
+        { name: 'Kukës', lat: 42.0778, lng: 20.4219 },
+        { name: 'Shkodër', lat: 42.0683, lng: 19.5126 },
+        { name: 'Tirana', lat: 41.3275, lng: 19.8187 },
+        { name: 'Berat', lat: 40.7058, lng: 19.9522 },
+      ],
+      notes: "Kukës and Shkodër (2 days) — Tirana and Berat (2 days). Budget ~€25-35/day.",
+      transport_to_next: "Overland/bus back east towards the North Macedonian border and Ohrid.",
+    },
+    {
+      code: 'MK', name: 'North Macedonia', days: 3, budget: 120, lat: 41.6000, lng: 21.1000,
+      destinations: [
+        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 },
+        { name: 'Skopje', lat: 41.9973, lng: 21.4280 },
+      ],
+      notes: "Ohrid (2 days) — Skopje (1-2 days). Budget ~€35-45/day. Season: this is a full itinerary, so plan early departures each day to stay on schedule.",
+      transport_to_next: 'End of this route — fly home from Skopje.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Pristina, fly home from Skopje (or reversed), bus/rental car overland throughout.',
+    climate_summary: 'May-June or September.',
+    description: "A slower, 12-day loop through Kosovo (Pristina, Peja/Rugova Gorge, Prizren), Albania (Kukës, Shkodër, Tirana, Berat) and North Macedonia (Ohrid, Skopje) — the same three countries as the 'Kosovo + North Macedonia + Albania (9 days)' route, reordered and re-paced for a longer trip.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8c (Balkan-cluster: Serbia + North Macedonia + Kosovo) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 8/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaSerbiaNorthMacedoniaKosovoRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_SERBIA_NMACEDONIA_KOSOVO)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_SERBIA_NMACEDONIA_KOSOVO, '1');
+
+  rbRoutes.push(
+    rbBuildBelgradeSurroundingsRoute(),
+    rbBuildSerbiaRoute(),
+    rbBuildSerbiaRoadtripRoute(),
+    rbBuildSerbiaBosniaRoute(),
+    rbBuildSerbiaMontenegroBosniaRoute(),
+    rbBuildSkopjeOhridRoute(),
+    rbBuildNorthMacedoniaRoute(),
+    rbBuildNorthMacedoniaAlbaniaRoute(),
+    rbBuildNorthMacedoniaGreeceRoute(),
+    rbBuildKosovoRoute(),
+    rbBuildKosovoNorthMacedoniaRoute(),
+    rbBuildKosovoAlbaniaRoute(),
+    rbBuildKosovoMontenegroRoute(),
+    rbBuildKosovoMontenegroAlbaniaRoute(),
+    rbBuildKosovoNorthMacedoniaAlbaniaRoute(),
+    rbBuildKosovoAlbaniaNorthMacedoniaRoute(),
+  );
+  rbSave();
+}
