@@ -15144,3 +15144,446 @@ function rbSeedEuropaSlovakiaPolandRoutes() {
   );
   rbSave();
 }
+
+// ---- Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) — 17 hand-authored
+// routes converting EUROPA_TRIP_IDEAS.md into Route Builder content (2026-08). ----
+
+function rbBuildAthensRoute() {
+  return rbBuildFlatSeedRoute('Athens (4 days) 🏛️', [
+    {
+      code: 'GR', name: 'Greece', days: 4, budget: 320, lat: 37.9838, lng: 23.7275,
+      destinations: [
+        { name: 'Acropolis & Plaka/Monastiraki', lat: 37.9715, lng: 23.7267 },
+        { name: 'Acropolis Museum', lat: 37.9686, lng: 23.7285 },
+        { name: 'Cape Sounion (Temple of Poseidon)', lat: 37.6505, lng: 24.0247 },
+      ],
+      notes: "Acropolis, Plaka and Monastiraki (2 days) plus the Acropolis Museum, then a day trip to Cape Sounion and the Temple of Poseidon (1 day). Budget ~€70-90/day (private hostel room or budget hotel ~€45-55, food €20-30, extras €10-15). Season: April-June or September-October are best (less heat and fewer crowds), summer can hit 40°C. Web check (2026-08): the Acropolis now requires a mandatory timed-entry ticket booked in advance via hhticket.gr — €30 in summer (Apr-Oct) / €15 in winter, capped at 20,000 visitors/day, already selling out 5-7 days ahead in June-August (morning and late-afternoon slots go first); last entry 19:00, closes 19:30, free for EU citizens under 25. Travel advisory: yellow since 4 August 2026 for wildfires (70+ burning simultaneously at the August 2026 peak, including the Athens region) — can cause road closures or poor air quality and the situation can shift quickly in heat/wind; re-check just before travel, no overall negative advisory otherwise.",
+      transport_to_next: 'End of this route — fly home from Athens.',
+    },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'City trip based in Athens, metro/on foot plus one day-trip bus or tour to Sounion.',
+    climate_summary: 'April-June or September-October are best; summer heat can reach 40°C.',
+    description: 'Acropolis, Plaka, Monastiraki and a day trip to Cape Sounion.',
+    notes: "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildAthensDayTripsRoute() {
+  return rbBuildFlatSeedRoute('Athens + Day Trips (6 days) 🏺', [
+    {
+      code: 'GR', name: 'Greece', days: 6, budget: 510, lat: 37.9838, lng: 23.7275,
+      destinations: [
+        { name: 'Acropolis & Plaka/Monastiraki', lat: 37.9715, lng: 23.7267 },
+        { name: 'Cape Sounion (Temple of Poseidon)', lat: 37.6505, lng: 24.0247 },
+        { name: 'Delphi', lat: 38.4824, lng: 22.5010 },
+        { name: 'Arachova', lat: 38.4794, lng: 22.5883 },
+        { name: 'Nafplio / Mycenae / Epidaurus', lat: 37.5673, lng: 22.8078 },
+      ],
+      notes: "Athens (3 days, Acropolis/Plaka/Monastiraki) plus day trips: Cape Sounion, Delphi (a long one — 3.5-4 hours each way, consider one overnight in Delphi or nearby Arachova instead of a rushed there-and-back), and Nafplio/Mycenae/Epidaurus as a single day trip. Stays Athens-based throughout, unlike the looping Peloponnese trip below — no change of base. Budget ~€75-95/day. Season: same as the standalone Athens trip. Web check (2026-08): the Delphi site+museum combo ticket runs ~€12 in summer / €6 in winter; the Mycenae/Epidaurus combo is ~€20 summer / €10 winter, free for EU visitors under 25 and 50% off for EU seniors 65+ (Oct-May). Acropolis still needs its mandatory hhticket.gr timed-entry booking — see the standalone Athens trip for the full details. Travel advisory: yellow since 4 August 2026 for wildfires — re-check shortly before travel, especially April-October.",
+      transport_to_next: 'End of this route — fly home from Athens.',
+    },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'City trip based in Athens, day-trip buses/tours/rental car for Sounion, Delphi and the Argolid.',
+    climate_summary: 'April-June or September-October are best; summer heat can reach 40°C.',
+    description: 'Athens plus day trips to Cape Sounion, Delphi, and Nafplio/Mycenae/Epidaurus.',
+    notes: "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildPeloponneseLoopRoute() {
+  return rbBuildFlatSeedRoute('Peloponnese Loop (9 days) 🏟️', [
+    {
+      code: 'GR', name: 'Greece', days: 9, budget: 990, lat: 37.5673, lng: 22.8078,
+      destinations: [
+        { name: 'Athens (arrival)', lat: 37.9838, lng: 23.7275 },
+        { name: 'Nafplio', lat: 37.5673, lng: 22.8078 },
+        { name: 'Mycenae', lat: 37.7304, lng: 22.7558 },
+        { name: 'Epidaurus', lat: 37.5960, lng: 23.0778 },
+        { name: 'Mystras', lat: 37.0708, lng: 22.3663 },
+        { name: 'Sparta', lat: 37.0733, lng: 22.4297 },
+        { name: 'Monemvasia', lat: 36.6874, lng: 23.0533 },
+        { name: 'Corinth', lat: 37.9407, lng: 22.9337 },
+      ],
+      notes: "A genuine loop, not an Athens base: Athens (1-2 days on arrival) — Nafplio (2 days) — Mycenae/Epidaurus (day trip) — Mystras/Sparta (2 days) — optionally Monemvasia (1-2 days) — back via Corinth. Budget ~€70-90/day plus a rental car/fuel at ~€25-35/day on top. Season: April-June or September-October; note the Epidaurus summer festival (20 June-29 August 2026) can bring crowds and higher prices to the region. Web check (2026-08): Mystras tickets run €12-20 (check hhticket.gr in advance), festival tickets separately €10-55, and the mountain roads near Mystras are narrow. Travel advisory: yellow since 4 August 2026 for wildfires — re-check shortly before travel, especially April-October.",
+      transport_to_next: 'End of this route — back to Athens to fly home.',
+    },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'Rental car for the whole loop, starting and ending in Athens.',
+    climate_summary: 'April-June or September-October are best; summer is hot, especially inland.',
+    description: 'A real driving loop through the Peloponnese: Nafplio, Mycenae, Epidaurus, Mystras and Monemvasia.',
+    notes: "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildNorthernGreeceRoute() {
+  return rbBuildFlatSeedRoute('Northern Greece (9 days) ⛰️', [
+    {
+      code: 'GR', name: 'Greece', days: 9, budget: 675, lat: 40.6401, lng: 22.9444,
+      destinations: [
+        { name: 'Thessaloniki', lat: 40.6401, lng: 22.9444 },
+        { name: 'Meteora', lat: 39.7217, lng: 21.6306 },
+        { name: 'Kalabaka', lat: 39.7025, lng: 21.6280 },
+        { name: 'Halkidiki', lat: 40.0000, lng: 23.6000 },
+        { name: 'Vergina', lat: 40.4667, lng: 22.3167 },
+        { name: 'Edessa', lat: 40.7994, lng: 22.0475 },
+        { name: 'Mount Olympus / Litochoro', lat: 40.0925, lng: 22.4989 },
+      ],
+      notes: "Thessaloniki (2-3 days) — Meteora/Kalabaka (2 days) — Halkidiki beaches (2-3 days), with Vergina, Edessa and Mount Olympus as options. Budget ~€65-85/day (cheaper than Athens or the islands), a car is recommended. Season: May-June or September are best; Halkidiki gets busier and pricier in July-August. Web check (2026-08): each Meteora monastery has its own rotating closing day — check per monastery in advance — plus a dress code (shoulders and knees covered), entry ~€3 per monastery, sometimes cash-only. Travel advisory: yellow since 4 August 2026 for wildfires, situation can shift fast in heat/wind — re-check shortly before travel.",
+      transport_to_next: 'End of this route — fly home from Thessaloniki.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Rental car recommended, fly into and home from Thessaloniki.',
+    climate_summary: 'May-June or September are best; Halkidiki gets busier/pricier in July-August.',
+    description: 'Thessaloniki, the monasteries of Meteora, and the Halkidiki beaches.',
+    notes: "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildGreekIslandsParosNaxosSantoriniRoute() {
+  return rbBuildFlatSeedRoute('Greek Islands: Paros, Naxos & Santorini (9 days) 🏖️', [
+    {
+      code: 'GR', name: 'Greece', days: 9, budget: 1125, lat: 37.0844, lng: 25.1489,
+      destinations: [
+        { name: 'Athens', lat: 37.9838, lng: 23.7275 },
+        { name: 'Paros (Parikia)', lat: 37.0844, lng: 25.1489 },
+        { name: 'Naxos (Chora)', lat: 37.1055, lng: 25.3764 },
+        { name: 'Santorini (Fira)', lat: 36.4167, lng: 25.4325 },
+      ],
+      notes: "Athens (1 day) then ferry to Paros (3 nights) — Naxos (3 nights) — Santorini (2 nights) — flight or ferry back to Athens. Budget ~€100-150/day including ferries (€20-70 per leg). Season: June to mid-September (July-August busy and expensive; May/September quieter and cheaper). Web check (2026-08): Naxos-Paros is 25-50 minutes (up to 10x/day); Paros-Santorini 1h30-5h40; Naxos-Santorini 1-3h — the final 2026 sailing schedules are only confirmed in spring, so check ferryhopper.com shortly before departure; the meltemi wind can cancel summer ferries, so book flexibly or early in high season. Travel advisory: yellow since 4 August 2026 for wildfires (including Crete, though not on this itinerary) — re-check shortly before travel.",
+      transport_to_next: 'End of this route — flight or ferry back to Athens to fly home.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Fly into Athens, island-hop by ferry, fly or ferry home via Athens.',
+    climate_summary: 'June to mid-September; July-August busiest/priciest, May/September quieter and cheaper.',
+    description: 'Island-hopping through the Cyclades: Paros, Naxos and Santorini.',
+    notes: "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildGreeceRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Greece Roadtrip (12 days) 🚗', [
+    {
+      code: 'GR', name: 'Greece', days: 12, budget: 1380, lat: 37.9838, lng: 23.7275,
+      destinations: [
+        { name: 'Athens', lat: 37.9838, lng: 23.7275 },
+        { name: 'Meteora', lat: 39.7217, lng: 21.6306 },
+        { name: 'Delphi', lat: 38.4824, lng: 22.5010 },
+        { name: 'Nafplio', lat: 37.5673, lng: 22.8078 },
+        { name: 'Mycenae', lat: 37.7304, lng: 22.7558 },
+        { name: 'Olympia', lat: 37.6383, lng: 21.6300 },
+      ],
+      notes: "Athens (2 days) — Meteora (2 days) — Delphi (1 day) — the Peloponnese: Nafplio/Mycenae/Olympia (3-4 days) — back to Athens, by rental car throughout. Budget ~€90-140/day including the rental car. Season: April-June or September-October (the interior gets very hot in summer). Web check (2026-08): each Meteora monastery has its own rotating closing day; check rental car insurance and toll roads in advance; parking in central Athens is difficult. Acropolis needs its mandatory hhticket.gr timed-entry booking — see the standalone Athens trip for the full details. Travel advisory: yellow since 4 August 2026 for wildfires — re-check shortly before travel, especially April-October.",
+      transport_to_next: 'End of this route — fly home from Athens.',
+    },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'Rental car for the whole loop, starting and ending in Athens.',
+    climate_summary: 'April-June or September-October; the interior is very hot in summer.',
+    description: 'A rental-car loop through Athens, Meteora, Delphi and the Peloponnese.',
+    notes: "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildAthensPeloponneseExtendedRoute() {
+  return rbBuildFlatSeedRoute('Athens + Peloponnese: Extended (12 days) 👑', [
+    {
+      code: 'GR', name: 'Greece', days: 12, budget: 1020, lat: 37.9838, lng: 23.7275,
+      destinations: [
+        { name: 'Athens', lat: 37.9838, lng: 23.7275 },
+        { name: 'Nafplio', lat: 37.5673, lng: 22.8078 },
+        { name: 'Mycenae', lat: 37.7304, lng: 22.7558 },
+        { name: 'Epidaurus', lat: 37.5960, lng: 23.0778 },
+        { name: 'Mystras', lat: 37.0708, lng: 22.3663 },
+        { name: 'Sparta', lat: 37.0733, lng: 22.4297 },
+        { name: 'Monemvasia', lat: 36.6874, lng: 23.0533 },
+        { name: 'Kalamata / Mani (Areopoli)', lat: 37.0389, lng: 22.1142 },
+        { name: 'Olympia', lat: 37.6383, lng: 21.6300 },
+        { name: 'Patras', lat: 38.2466, lng: 21.7346 },
+      ],
+      notes: "A longer, more elaborate loop with more stops than the standalone Peloponnese Loop above — Monemvasia, the Mani and Olympia, instead of the Athens day trips of the 'Athens + Day Trips' version. Athens (3 days) — Nafplio (2 days) — Mycenae/Epidaurus (day trip) — Mystras/Sparta (2 days) — Monemvasia (2 days) — Kalamata/Mani (2 days) — Olympia (1-2 days) — back via Patras/Corinth. Budget ~€75-95/day. Season: same as the other Greece routes. Web check (2026-08): the Olympia site+museum combo runs ~€20 in summer / €10 in winter; the Mani roads are narrow and slow, plan extra travel time. Acropolis needs its mandatory hhticket.gr timed-entry booking — see the standalone Athens trip. Travel advisory: yellow since 4 August 2026 for wildfires — re-check shortly before travel.",
+      transport_to_next: 'End of this route — fly home from Athens.',
+    },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'Rental car for the whole loop, starting and ending in Athens.',
+    climate_summary: 'April-June or September-October are best; summer heat can reach 40°C.',
+    description: 'An extended Peloponnese loop from Athens, adding Monemvasia, the Mani and Olympia.',
+    notes: "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCyprusClassicRoute() {
+  return rbBuildFlatSeedRoute('Cyprus (6 days) 🏝️', [
+    {
+      code: 'CY', name: 'Cyprus', days: 6, budget: 750, lat: 34.9167, lng: 33.6333,
+      destinations: [
+        { name: 'Larnaca', lat: 34.9167, lng: 33.6333 },
+        { name: 'Nicosia / Ledra Street', lat: 35.1706, lng: 33.3656 },
+        { name: 'Troodos Mountains', lat: 34.9186, lng: 32.8595 },
+        { name: "Paphos & Aphrodite's Rock", lat: 34.7720, lng: 32.4297 },
+        { name: 'Limassol', lat: 34.7071, lng: 33.0226 },
+      ],
+      notes: "Larnaca (1 day) — Nicosia including the Ledra Street crossing point (1 day) — the Troodos Mountains (1 day) — Paphos including Aphrodite's Rock (2 days) — Limassol (1 day). Budget ~€110-140/day. Season: April-June or September-October (July-August runs 35°C+). Web check (2026-08): Cyprus is EU but not Schengen — a passport/ID check on entry, no visa needed for Dutch/EU citizens; a rental car is needed, public transport outside the cities is limited.",
+      transport_to_next: 'End of this route — fly home from Larnaca.',
+    },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'Rental car from Larnaca.',
+    climate_summary: 'April-June or September-October; July-August runs 35°C+.',
+    description: 'Larnaca, Nicosia, the Troodos Mountains, Paphos and Limassol.',
+    notes: "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a distinct, longer itinerary from the existing standalone 'Cyprus 🕊️' route (which covers Paphos/Limassol/Nicosia only, split off from Mediterranean Civilizations Expedition 🏛️); named/renamed to avoid confusion between the two. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCyprusNorthernRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Cyprus Roadtrip including Northern Cyprus (9 days) 🚙', [
+    {
+      code: 'CY', name: 'Cyprus', days: 9, budget: 1125, lat: 34.9167, lng: 33.6333,
+      destinations: [
+        { name: 'Larnaca', lat: 34.9167, lng: 33.6333 },
+        { name: 'Nicosia / Ledra Street', lat: 35.1706, lng: 33.3656 },
+        { name: 'North Nicosia (Lefkoşa)', lat: 35.1875, lng: 33.3853 },
+        { name: 'Troodos wine villages', lat: 34.9186, lng: 32.8595 },
+        { name: 'Paphos, Akamas/Avakas Gorge & Blue Lagoon', lat: 34.7720, lng: 32.4297 },
+        { name: "Limassol, Kourion & Aphrodite's Rock", lat: 34.7071, lng: 33.0226 },
+        { name: 'Ayia Napa / Protaras', lat: 34.9885, lng: 34.0086 },
+      ],
+      notes: "Larnaca (1 day) — Nicosia plus a crossing of the Green Line into North Nicosia (1 day) — Troodos wine villages (1-2 days) — Paphos including the Akamas Peninsula/Avakas Gorge and the Blue Lagoon (2 days) — Limassol plus Kourion and Aphrodite's Rock (2 days) — Ayia Napa/Protaras back to Larnaca (1-2 days). Budget ~€110-140/day including the rental car. Season: April-June or September-October. Web check (2026-08) — Northern Cyprus nuance: crossing at official checkpoints is normal and permitted for tourists (Ledra Street in Nicosia is pedestrian-only; cars can only cross at the Metehan checkpoint). Most Republic-of-Cyprus car rental companies forbid taking their car into the North — check with the rental company first. If it is permitted, mandatory Turkish border insurance is needed (~€20, covers 3 days of third-party liability, does not cover damage to your own rental car). The Netherlands does not recognize Northern Cyprus as a state; entering via the North (e.g. Ercan Airport) is considered illegal entry by the Republic of Cyprus authorities, and consular assistance there is limited. Stay out of military zones and the buffer zone outside official checkpoints — fines or imprisonment are possible. Cyprus itself is EU but not Schengen — passport/ID check on entry, no visa needed for Dutch/EU citizens.",
+      transport_to_next: 'End of this route — back to Larnaca to fly home.',
+    },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'Rental car for the whole loop, starting and ending in Larnaca; the Green Line crossing on foot at Ledra Street.',
+    climate_summary: 'April-June or September-October; July-August runs 35°C+.',
+    description: 'A full Cyprus roadtrip including a crossing into Northern Cyprus at Nicosia.',
+    notes: "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCyprusGreeceRoute() {
+  return rbBuildFlatSeedRoute('Cyprus + Greece (9 days) ✈️', [
+    {
+      code: 'CY', name: 'Cyprus', days: 5, budget: 625, lat: 34.9167, lng: 33.6333,
+      destinations: [
+        { name: 'Larnaca', lat: 34.9167, lng: 33.6333 },
+        { name: 'Paphos', lat: 34.7720, lng: 32.4297 },
+      ],
+      notes: "No shared border, so this is really a flight combo: roughly 4-5 days in Cyprus (Larnaca/Paphos) plus a direct flight Larnaca-Athens (Aegean/Cyprus Airways/Sky Express/Wizz Air, ~1h40, from ~€120 return, several flights daily) plus 3-5 days in Athens or on an island (e.g. Athens plus a day trip to Aegina, or continuing on to Santorini). Budget: Cyprus ~€110-140/day. Season: April-June or September-October for both. Web check (2026-08): book this flight separately from any main flight from the Netherlands, and check baggage rules between the two airlines (they can differ). Cyprus is EU but not Schengen — passport/ID check on entry, no visa needed for Dutch/EU citizens.",
+      transport_to_next: 'Direct flight Larnaca-Athens (~1h40, several airlines/daily departures).',
+    },
+    {
+      code: 'GR', name: 'Greece', days: 4, budget: 500, lat: 37.9838, lng: 23.7275,
+      destinations: [
+        { name: 'Athens', lat: 37.9838, lng: 23.7275 },
+        { name: 'Aegina (day trip)', lat: 37.7460, lng: 23.4283 },
+        { name: 'Santorini (optional continuation)', lat: 36.4167, lng: 25.4325 },
+      ],
+      notes: "Athens (3-4 days, Acropolis/Plaka/Monastiraki) plus a day trip to Aegina, or continuing on to Santorini instead. Budget: Greece ~€100-150/day. Acropolis needs its mandatory hhticket.gr timed-entry booking — see the standalone Athens trip for the full details. Travel advisory: yellow since 4 August 2026 for wildfires — re-check shortly before travel.",
+      transport_to_next: 'End of this route — fly home from Athens.',
+    },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'Flight combo — Cyprus first, then a separate direct flight onward to Athens (or an island).',
+    climate_summary: 'April-June or September-October for both legs.',
+    description: 'Cyprus (Larnaca/Paphos) combined with Athens or a Greek island via a direct Larnaca-Athens flight.',
+    notes: "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildIstanbulRoute() {
+  return rbBuildFlatSeedRoute('Istanbul (4 days) 🕌', [
+    {
+      code: 'TR', name: 'Turkey', days: 4, budget: 300, lat: 41.0082, lng: 28.9784,
+      destinations: [
+        { name: 'Sultanahmet & Hagia Sophia', lat: 41.0086, lng: 28.9802 },
+        { name: 'Blue Mosque', lat: 41.0054, lng: 28.9768 },
+        { name: 'Topkapi Palace', lat: 41.0115, lng: 28.9834 },
+        { name: 'Grand Bazaar', lat: 41.0106, lng: 28.9681 },
+        { name: 'Galata Tower', lat: 41.0256, lng: 28.9744 },
+      ],
+      notes: "Sultanahmet (Hagia Sophia, the Blue Mosque, Topkapi Palace) plus the Grand Bazaar/Galata and a Bosphorus cruise day trip. Budget ~€70-80/day (boutique 3-star, limited taxis, good meals). Season: April-May or September-October (mild, less crowded); winter is cheapest but wet/cold, July-August is hot and packed. Web check (2026-08): Hagia Sophia is a functioning mosque — tourists only get access to the upper gallery, €25 entry (the Istanbul Museum Pass does NOT cover this), it closes 5x/day for ~30-45 minutes at prayer times, with an extra-long Friday afternoon closure (~12:00-14:30) — plan around it. The Blue Mosque is free, also has prayer-time closures, and a dress code (shoulders/knees covered, headscarf for women — free loan available). Topkapi Palace is €55 for the palace+Harem+Hagia Irene combo; the Museum Pass covers only the main palace, not the Harem or Hagia Irene. Visa: Dutch passport holders are visa-exempt for Turkey, max 90 days within 180 days, passport valid at least 6 months beyond the return date. Travel advisory: yellow (elevated terrorism risk, pickpocketing at the Grand Bazaar). Earthquake risk: Istanbul sits near the North Anatolian Fault, geologists warn of an expected major earthquake (M7-7.6) in the Marmara region — a standard awareness point, not a travel deterrent. The Turkish lira has depreciated significantly — think in euros, not outdated TRY prices still floating online.",
+      transport_to_next: 'End of this route — fly home from Istanbul.',
+    },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'City trip based in Sultanahmet, on foot/metro plus one Bosphorus cruise day trip.',
+    climate_summary: 'April-May or September-October are best; winter is cheapest but wet/cold, July-August hot and packed.',
+    description: 'Sultanahmet, the Grand Bazaar/Galata, and a Bosphorus cruise.',
+    notes: "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildIstanbulThraceRoute() {
+  return rbBuildFlatSeedRoute('Istanbul + Thrace (6 days) 🌉', [
+    {
+      code: 'TR', name: 'Turkey', days: 6, budget: 420, lat: 41.0082, lng: 28.9784,
+      destinations: [
+        { name: 'Istanbul (Sultanahmet)', lat: 41.0086, lng: 28.9802 },
+        { name: 'Edirne (Selimiye Mosque)', lat: 41.6771, lng: 26.5557 },
+        { name: 'Gallipoli Peninsula', lat: 40.1867, lng: 26.3536 },
+      ],
+      notes: "Istanbul (4 days) plus a day trip to Edirne (the Selimiye Mosque, Ottoman-era) and optionally the Gallipoli Peninsula (Gallipoli itself already sits in European Turkey/Thrace). Budget ~€65-75/day (cheaper outside Istanbul). Season: spring/autumn; Edirne is quiet year-round with few tourists. Web check (2026-08): Edirne is about 2.5-3 hours from Istanbul's Otogar bus terminal, one-way ~€10-15, the Selimiye Mosque is free. Note: the Gallipoli Peninsula is technically already European Turkey, but Troy sits on the Asian side — for a purely Thrace-focused trip Troy doesn't need to be included. Visa (visa-exempt, max 90/180 days), travel advisory (yellow) and earthquake/lira notes: see the standalone Istanbul trip.",
+      transport_to_next: 'End of this route — fly home from Istanbul.',
+    },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'Based in Istanbul, bus day trip to Edirne, optional side trip to the Gallipoli Peninsula.',
+    climate_summary: 'Spring or autumn; Edirne is quiet year-round.',
+    description: 'Istanbul plus European Turkey/Thrace: Edirne and the Gallipoli Peninsula.',
+    notes: "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildIstanbulGallipoliTroyRoute() {
+  return rbBuildFlatSeedRoute('Istanbul + Gallipoli & Troy (9 days) ⚔️', [
+    {
+      code: 'TR', name: 'Turkey', days: 9, budget: 720, lat: 41.0082, lng: 28.9784,
+      destinations: [
+        { name: 'Istanbul (Sultanahmet)', lat: 41.0086, lng: 28.9802 },
+        { name: 'Gallipoli: Anzac Cove & Lone Pine', lat: 40.2508, lng: 26.2822 },
+        { name: 'Çanakkale', lat: 40.1553, lng: 26.4142 },
+        { name: 'Troy', lat: 39.9575, lng: 26.2389 },
+        { name: 'Bursa (optional)', lat: 40.1826, lng: 29.0665 },
+      ],
+      notes: "Istanbul (4-5 days) plus a 2-day tour of Gallipoli (Anzac Cove, Lone Pine) and Troy via Çanakkale (overnight there), with Bursa as an optional add-on. Budget ~€75-85/day including the tour. Season: spring/autumn are most pleasant for walking the battlefields (less heat). Web check (2026-08): 2-day Istanbul-Gallipoli-Troy tours run ~€150-250 per person all-in (bus, Çanakkale hotel, guides) — a single-day trip is possible but is a very long ride, 2 days is recommended. Troy entry is separately ~€15-20. Visa (visa-exempt, max 90/180 days), travel advisory (yellow) and earthquake/lira notes: see the standalone Istanbul trip.",
+      transport_to_next: 'End of this route — fly home from Istanbul.',
+    },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'Based in Istanbul, a 2-day organized tour (bus+hotel+guides) to Gallipoli and Troy via Çanakkale.',
+    climate_summary: 'Spring or autumn are most pleasant for the battlefield walks.',
+    description: 'Istanbul plus the Gallipoli battlefields and Troy via Çanakkale.',
+    notes: "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildIstanbulLesbosRoute() {
+  return rbBuildFlatSeedRoute('Istanbul + Lesbos (Greek Islands) (9 days) 🛳️', [
+    {
+      code: 'TR', name: 'Turkey', days: 6, budget: 450, lat: 41.0082, lng: 28.9784,
+      destinations: [
+        { name: 'Istanbul (Sultanahmet)', lat: 41.0086, lng: 28.9802 },
+        { name: 'Ayvalık', lat: 39.3186, lng: 26.6947 },
+      ],
+      notes: "Istanbul (5 days) then a bus or flight to Ayvalık (1 day) for a short ferry crossing to Lesbos/Mytilini. Istanbul-based, a single island hop — unlike the longer Aegean-coast-to-islands combo below. Budget ~€70-85/day. Season: the ferry runs June-September daily, far fewer sailings off-season — plan the island hop for summer. Web check (2026-08): the Ayvalık-Lesbos ferry costs ~€20-35 one-way, a 40-minute to 1-hour crossing, mainly a summer service (June-September daily). Visa (visa-exempt, max 90/180 days), travel advisory (yellow) and earthquake/lira notes: see the standalone Istanbul trip.",
+      transport_to_next: 'Ferry Ayvalık-Lesbos/Mytilini (~40 min-1h, mainly June-September).',
+    },
+    {
+      code: 'GR', name: 'Greece', days: 3, budget: 255, lat: 39.1061, lng: 26.5544,
+      destinations: [
+        { name: 'Lesbos / Mytilini', lat: 39.1061, lng: 26.5544 },
+      ],
+      notes: "Lesbos/Mytilini (2-3 days), then back via Istanbul. Budget slightly higher than on the Turkish mainland. Web check (2026-08): the Greek island leg is Schengen, so there's a passport check at the crossing (no separate visa needed for Dutch travelers).",
+      transport_to_next: 'End of this route — back via Istanbul to fly home.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Based in Istanbul, a single summer-only ferry hop to Lesbos and back.',
+    climate_summary: 'June-September, when the Ayvalık-Lesbos ferry runs daily.',
+    description: 'Istanbul plus a ferry hop to the Greek island of Lesbos via Ayvalık.',
+    notes: "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a two-country route (Turkey + Greece). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildTurkeyGreeceAegeanDodecaneseRoute() {
+  return rbBuildFlatSeedRoute('Turkey + Greece: Aegean Coast & Dodecanese (12 days) 🌊', [
+    {
+      code: 'TR', name: 'Turkey', days: 6, budget: 450, lat: 38.4237, lng: 27.1428,
+      destinations: [
+        { name: 'Izmir', lat: 38.4237, lng: 27.1428 },
+        { name: 'Kuşadası & Ephesus', lat: 37.9410, lng: 27.3417 },
+        { name: 'Bodrum', lat: 37.0344, lng: 27.4305 },
+      ],
+      notes: "Izmir/Kuşadası (Ephesus), then on to Bodrum — no Istanbul on this route, unlike the routes above. Budget ~€75-90/day on average (the Turkish coast is cheaper, the Greek islands pricier). Season: strictly June-September — outside that window almost all the ferry routes disappear (off-season sometimes only 3x/week instead of daily). Web check (2026-08): Bodrum-Kos is ~20-30 minutes by catamaran, €20-35 one-way, 3-6x/day in summer; Marmaris-Rhodes is ~1 hour, €45-62 (pricier), daily in summer — book well ahead in July-August given the crowds. 2026 Ephesus entry is €40 (including the now-mandatory new 'Ephesus Experience' museum), Terrace Houses an extra €15. Visa (visa-exempt, max 90/180 days), travel advisory (yellow) and earthquake/lira notes: see the standalone Istanbul trip.",
+      transport_to_next: 'Ferry Bodrum-Kos or Marmaris-Rhodes (mainly June-September, book ahead in July-August).',
+    },
+    {
+      code: 'GR', name: 'Greece', days: 6, budget: 540, lat: 36.4341, lng: 28.2176,
+      destinations: [
+        { name: 'Rhodes', lat: 36.4341, lng: 28.2176 },
+        { name: 'Kos', lat: 36.8933, lng: 27.2881 },
+      ],
+      notes: "Ferry-hop the Dodecanese (2-3 islands, e.g. Kos and Rhodes) before heading back via Bodrum/Izmir. Budget noticeably higher than the Turkish coast. Season: same strict June-September window as the Turkish leg — outside it, ferry frequency drops sharply.",
+      transport_to_next: 'End of this route — fly home from Rhodes or Kos.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Turkish Aegean coast by rental car/bus, then island-hopping the Dodecanese by ferry.',
+    climate_summary: 'Strictly June-September — almost all the ferry connections disappear outside this window.',
+    description: "Izmir, Kuşadası/Ephesus and Bodrum on the Turkish coast, then a ferry-hop through the Dodecanese.",
+    notes: "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a two-country route (Turkey + Greece), no Istanbul (see the Istanbul + Lesbos route above for that shorter island-hop variant). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildIzmirAegeanCoastRoute() {
+  return rbBuildFlatSeedRoute('Izmir + Aegean Coast: Ephesus & Çeşme (5 days) 📜', [
+    {
+      code: 'TR', name: 'Turkey', days: 5, budget: 350, lat: 38.4237, lng: 27.1428,
+      destinations: [
+        { name: 'Izmir', lat: 38.4237, lng: 27.1428 },
+        { name: 'Selçuk', lat: 37.9500, lng: 27.3667 },
+        { name: 'Ephesus', lat: 37.9410, lng: 27.3417 },
+        { name: 'Çeşme', lat: 38.3225, lng: 26.3033 },
+      ],
+      notes: "History-heavy, unlike Bodrum's beach/nightlife focus below. Izmir (2 days, the city and ancient Smyrna) plus a day trip to Ephesus from Selçuk/Kuşadası, then Çeşme (2 days, a quiet seaside town, optionally a ferry trip to Chios). Budget ~€65-75/day (Izmir is the cheapest of the coastal options). Season: April-June or September-October (Ephesus gets very hot in summer with little shade among the ruins — go early). Web check (2026-08): 2026 Ephesus entry is €40 (including the now-mandatory new 'Ephesus Experience' museum), the Terrace Houses cost an extra €15; in summer (3 June-1 October) there's an evening opening Wed-Sat until 23:00, but after 18:45 only the lower level is accessible and the Terrace Houses are already closed by then. The Çeşme-Chios ferry runs ~€25-30 one-way, 20-30 minutes, year-round but with more frequency in summer. Visa (visa-exempt, max 90/180 days), travel advisory (yellow) and earthquake/lira notes: see the standalone Istanbul trip.",
+      transport_to_next: 'End of this route — fly home from Izmir.',
+    },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'Based in Izmir, day trip to Ephesus, a few days in Çeşme.',
+    climate_summary: 'April-June or September-October; Ephesus gets very hot with little shade in summer.',
+    description: 'Izmir, ancient Ephesus, and the seaside town of Çeşme.',
+    notes: "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a history-focused counterpart to the beach/nightlife-focused Bodrum + Aegean Coast route. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildBodrumAegeanCoastRoute() {
+  return rbBuildFlatSeedRoute('Bodrum + Aegean Coast (6 days) 🏰', [
+    {
+      code: 'TR', name: 'Turkey', days: 6, budget: 570, lat: 37.0344, lng: 27.4305,
+      destinations: [
+        { name: 'Bodrum (castle & marina)', lat: 37.0344, lng: 27.4305 },
+        { name: 'Yalıkavak', lat: 37.1053, lng: 27.2733 },
+      ],
+      notes: "Beach and nightlife focus, unlike Izmir's history focus above. Bodrum (3-4 days: the castle, the marina, the Bar Street/Gümbet beach clubs, the Halikarnas open-air club) plus the Yalıkavak marina and a ferry day trip to Kos. Budget ~€90-105/day (Bodrum runs pricier than Izmir, nightlife and beach clubs push the price up, especially July-August). Season: June-September for beach/nightlife (the town's population swells from 35k to 300k+ in July); May/September are a quieter, cheaper alternative. Web check (2026-08): the Bodrum-Kos ferry costs ~€20-35 one-way (€35-60 return), a 20-30 minute catamaran crossing, 3-6x/day June-September, far fewer sailings off-season — book ahead in high season. Visa (visa-exempt, max 90/180 days), travel advisory (yellow) and earthquake/lira notes: see the standalone Istanbul trip.",
+      transport_to_next: 'End of this route — fly home from Bodrum.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Based in Bodrum, plus a ferry day trip to Kos.',
+    climate_summary: 'June-September for beach/nightlife; May/September quieter and cheaper.',
+    description: "Bodrum's castle, marina and beach clubs, the Yalıkavak marina, and a ferry day trip to Kos.",
+    notes: "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a beach/nightlife-focused counterpart to the history-focused Izmir + Aegean Coast route. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaGreeceCyprusTurkeyRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_GREECE_CYPRUS_TURKEY)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_GREECE_CYPRUS_TURKEY, '1');
+
+  rbRoutes.push(
+    rbBuildAthensRoute(),
+    rbBuildAthensDayTripsRoute(),
+    rbBuildPeloponneseLoopRoute(),
+    rbBuildNorthernGreeceRoute(),
+    rbBuildGreekIslandsParosNaxosSantoriniRoute(),
+    rbBuildGreeceRoadtripRoute(),
+    rbBuildAthensPeloponneseExtendedRoute(),
+    rbBuildCyprusClassicRoute(),
+    rbBuildCyprusNorthernRoadtripRoute(),
+    rbBuildCyprusGreeceRoute(),
+    rbBuildIstanbulRoute(),
+    rbBuildIstanbulThraceRoute(),
+    rbBuildIstanbulGallipoliTroyRoute(),
+    rbBuildIstanbulLesbosRoute(),
+    rbBuildTurkeyGreeceAegeanDodecaneseRoute(),
+    rbBuildIzmirAegeanCoastRoute(),
+    rbBuildBodrumAegeanCoastRoute(),
+  );
+  rbSave();
+}

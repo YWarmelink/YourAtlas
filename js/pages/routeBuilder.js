@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbSeedEuropaRomaniaBulgariaMoldovaRoutes();
   rbSeedEuropaHungaryCzechiaRoutes();
   rbSeedEuropaSlovakiaPolandRoutes();
+  rbSeedEuropaGreeceCyprusTurkeyRoutes();
   rbMigrateLonghaulBuffer();
   rbMigrateExpeditionRenames();
   rbMigrateExpeditionEmojiNames();
