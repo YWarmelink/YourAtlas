@@ -12591,3 +12591,325 @@ function rbSeedEuropaSpainRoutes() {
   );
   rbSave();
 }
+
+function rbBuildAndorraRoute() {
+  return rbBuildFlatSeedRoute('Andorra (4 days) 🏔️', [
+    {
+      code: 'AD', name: 'Andorra', days: 4, budget: 480, lat: 42.5063, lng: 1.5218,
+      destinations: [
+        { name: 'Andorra la Vella (Casa de la Vall)', lat: 42.5063, lng: 1.5218 },
+        { name: 'Escaldes-Engordany (Caldea spa)', lat: 42.5106, lng: 1.5394 },
+        { name: "Ordino (Museu Casa d'Areny-Plandolit)", lat: 42.5551, lng: 1.5332 },
+        { name: 'Canillo (Roc del Quer viewpoint)', lat: 42.5691, lng: 1.5975 },
+        { name: 'Sant Joan de Caselles', lat: 42.5735, lng: 1.6027 },
+        { name: 'Encamp (optional)', lat: 42.5359, lng: 1.5809 },
+      ],
+      notes: "Andorra la Vella (Casa de la Vall, the Caldea spa, the main shopping street) — Ordino (Museu Casa d'Areny-Plandolit) — Canillo (the Roc del Quer viewpoint, Sant Joan de Caselles) — optionally Encamp. Andorra has no airport of its own — fly AMS-Barcelona (daily KLM/Transavia/Vueling, the most reliable option), then bus (Alsa/Novatel, ~3h) or rental car (~2h15, ~200km); Girona is closer (~1.5h) but has only ~2 direct Transavia flights/week from AMS, making it less practical. Driving the whole way from the Netherlands (~1,360km/13h40) is too far for a long weekend. Budget ~€110-130/day (Andorra is pricier than Portugal, with few hostels). Season: May-June or September for hiking weather without full ski-season prices; the high trails (Vall del Madriu) can hold snow into June. Web check (2026-08): Andorra's general VAT (IGI) is only 4.5% — it applies automatically to everyone at every shop, no separate tax-free form needed — a real saving on electronics/perfume/alcohol/ski gear (10-25%). Bring your passport — spot checks at the French/Spanish border do happen.",
+      transport_to_next: 'End of this route — bus or rental car back to Barcelona or Girona for the flight home.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Fly into Barcelona (or Girona), then bus or rental car into Andorra — no airport of its own.',
+    climate_summary: 'May-June or September for hiking weather without full ski prices; high trails can hold snow into June.',
+    description: "Andorra la Vella's Casa de la Vall and Caldea spa, Ordino's Casa d'Areny-Plandolit museum, and Canillo's Roc del Quer viewpoint and Sant Joan de Caselles.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7b (Iberia: Andorra + Portugal) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildAndorraFrenchPyreneesAriegeRoute() {
+  return rbBuildFlatSeedRoute('Andorra + French Pyrenees: Ariège (6 days) ♨️', [
+    {
+      code: 'AD', name: 'Andorra', days: 3, budget: 375, lat: 42.5063, lng: 1.5218,
+      destinations: [
+        { name: 'Andorra la Vella (Casa de la Vall)', lat: 42.5063, lng: 1.5218 },
+        { name: 'Ordino', lat: 42.5551, lng: 1.5332 },
+        { name: 'Pas de la Casa', lat: 42.5427, lng: 1.7339 },
+      ],
+      notes: "Andorra la Vella and Ordino, then east via Pas de la Casa toward the French border. Entry options: fly AMS-Barcelona or AMS-Girona and drive in (see the standalone Andorra (4 days) route for the details), or fly KLM's direct AMS-Toulouse route, rent a car there and drive the whole loop without touching Spain at all. A rental car is essential either way. Budget ~€120-125/day for these Andorra-town days (no hostel scene here).",
+      transport_to_next: "Drive to Ax-les-Thermes, France via Pas de la Casa and the Port d'Envalira pass (or the year-round Envalira tunnel) — a short overland hop, no border formalities within Schengen.",
+    },
+    {
+      code: 'FR', name: 'France', days: 3, budget: 255, lat: 42.8461, lng: 1.6008,
+      destinations: [
+        { name: 'Ax-les-Thermes (thermal baths)', lat: 42.7211, lng: 1.8367 },
+        { name: 'Foix (medieval castle)', lat: 42.9639, lng: 1.6053 },
+        { name: 'Tarascon-sur-Ariège', lat: 42.8461, lng: 1.6008 },
+        { name: 'Grotte de Niaux (prehistoric cave)', lat: 42.7947, lng: 1.6067 },
+      ],
+      notes: "Restructured as the French/Ariège side of the old combined Andorra+Pyrenees idea: Ax-les-Thermes (thermal baths, ~45 min from the border) — Foix (medieval castle) — Tarascon-sur-Ariège (the Grotte de Niaux prehistoric cave). Ends back toward Andorra, or continue on to Toulouse for the flight home. Budget ~€85-90/day (rural French pension €70-90, food €30-35, the Ax spa €25-40 — cheaper than staying in Andorra town, though the spa visit keeps it from dropping further). Season: June-September — the high Port d'Envalira pass realistically runs open June-October, with the year-round Envalira tunnel as a fallback outside that window. Web check (2026-08): watch for 2026 reports of occasional closures on the French N20 near the border (rockfall) — check the current status close to your travel date.",
+      transport_to_next: 'End of this route — drive back toward Andorra, or on to Toulouse for the flight home.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Rental car throughout — either fly into Toulouse and drive the whole loop, or fly into Barcelona/Girona as with the standalone Andorra trip.',
+    climate_summary: "June-September; the high Port d'Envalira pass runs open roughly June-October, the Envalira tunnel is a year-round fallback.",
+    description: "Andorra la Vella and Ordino, then the French Ariège side: Ax-les-Thermes' thermal baths, Foix's medieval castle and the Grotte de Niaux prehistoric cave.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7b (Iberia: Andorra + Portugal) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Split into a French/Ariège side and a Spanish/Catalan side (see Andorra + Spanish Pyrenees (9 days) 🥾 below) rather than the same region driven more slowly — two genuinely different areas (thermal baths/caves vs. high mountains/national park). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildAndorraSpanishPyreneesRoute() {
+  return rbBuildFlatSeedRoute('Andorra + Spanish Pyrenees (9 days) 🥾', [
+    {
+      code: 'AD', name: 'Andorra', days: 3, budget: 375, lat: 42.5063, lng: 1.5218,
+      destinations: [
+        { name: 'Andorra la Vella (Casa de la Vall)', lat: 42.5063, lng: 1.5218 },
+        { name: 'Ordino', lat: 42.5551, lng: 1.5332 },
+        { name: 'Vall del Madriu-Perafita-Claror (hike)', lat: 42.4926, lng: 1.5665 },
+      ],
+      notes: "Andorra la Vella, Ordino, and a hike into the Vall del Madriu-Perafita-Claror (Andorra's only UNESCO World Heritage site) — the mountain-focused start of this longer route. Entry: fly AMS-Barcelona (most frequent) or AMS-Girona, rental car for the whole loop — public transport is thin in these valleys. Budget ~€120-125/day for these Andorra-town days.",
+      transport_to_next: "Drive to La Seu d'Urgell, Spain — a short overland hop across the border, no formalities within Schengen.",
+    },
+    {
+      code: 'ES', name: 'Spain', days: 6, budget: 540, lat: 42.6000, lng: 0.9000,
+      destinations: [
+        { name: "La Seu d'Urgell (cathedral)", lat: 42.3585, lng: 1.4614 },
+        { name: 'Puigcerdà / Cerdanya valley', lat: 42.4331, lng: 1.9284 },
+        { name: "Vielha (Val d'Aran)", lat: 42.7027, lng: 0.7966 },
+        { name: 'Port de la Bonaigua (pass)', lat: 42.7228, lng: 0.9860 },
+        { name: 'Boí (Aigüestortes NP shuttle)', lat: 42.5200, lng: 0.8375 },
+        { name: 'Estany de Sant Maurici', lat: 42.5735, lng: 0.9535 },
+        { name: 'Espot (Aigüestortes NP shuttle)', lat: 42.5766, lng: 0.9591 },
+        { name: 'Ripoll', lat: 42.1997, lng: 2.1904 },
+      ],
+      notes: "Restructured as the Spanish/Catalan side of the old combined Andorra+Pyrenees idea, using the extra length for a wider area: La Seu d'Urgell (cathedral town, ~10km from the border) — the Puigcerdà/Cerdanya valley — Vielha/Val d'Aran (via the Port de la Bonaigua pass) — Aigüestortes i Estany de Sant Maurici National Park (from Boí or Espot) — back via Ripoll toward Barcelona/Girona. Rental car for the whole loop — public transport is thin in these valleys. Budget ~€90/day (rural Catalan Pyrenees pension €65-80, food €25-30, park shuttle/activities €15-25 — pulled up by the pricier Andorra days into a ~€100-105/day average for the whole route). Season: June-September, in practice a summer-only route. Web check (2026-08): Aigüestortes NP bans private vehicles inside the park — a mandatory taxi/4x4 shuttle from Boí or Espot, book ahead in July-August; the Port de la Bonaigua closes with snow roughly November-April — check the current 2026 opening dates for shoulder-season travel.",
+      transport_to_next: 'End of this route — drive to Barcelona or Girona for the flight home.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Fly into Barcelona or Girona, rental car for the whole loop — public transport is thin in these valleys.',
+    climate_summary: 'June-September — in practice a summer-only route given mountain-pass and park-shuttle access.',
+    description: "Andorra's Vall del Madriu, then the Spanish/Catalan Pyrenees: La Seu d'Urgell, the Cerdanya valley, Vielha/Val d'Aran and Aigüestortes i Estany de Sant Maurici National Park.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7b (Iberia: Andorra + Portugal) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Split into a French/Ariège side (see Andorra + French Pyrenees: Ariège (6 days) ♨️ above) and this Spanish/Catalan side — two genuinely different areas (thermal baths/caves vs. high mountains/national park) rather than the same region driven more slowly. Also deliberately distinct from Catalonia + Pyrenees (9 days) ⛰️ (Phase 2 batch 7a): that route stays Barcelona/Girona/Vall de Núria/Cerdanya without Andorra or Val d'Aran/Aigüestortes (it does share the same Cerdanya/Puigcerdà waypoint, a legitimate shared crossroads, not a duplicate route); this one is Andorra-anchored and reaches further west into Val d'Aran and the national park. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildPortoRoute() {
+  return rbBuildFlatSeedRoute('Porto (4 days) 🌉', [
+    {
+      code: 'PT', name: 'Portugal', days: 4, budget: 340, lat: 41.1579, lng: -8.6291,
+      destinations: [
+        { name: 'Porto (Ribeira)', lat: 41.1405, lng: -8.6118 },
+        { name: 'Dom Luís I Bridge', lat: 41.1394, lng: -8.6089 },
+        { name: 'Sé do Porto (cathedral)', lat: 41.1436, lng: -8.6109 },
+        { name: 'Livraria Lello', lat: 41.1467, lng: -8.6146 },
+        { name: 'Vila Nova de Gaia (port wine cellars)', lat: 41.1333, lng: -8.6111 },
+        { name: 'Pinhão (Douro day trip)', lat: 41.1897, lng: -7.5461 },
+        { name: 'Foz do Douro', lat: 41.1494, lng: -8.6789 },
+        { name: 'Matosinhos', lat: 41.1815, lng: -8.6893 },
+        { name: 'Serralves', lat: 41.1596, lng: -8.6644 },
+      ],
+      notes: "Ribeira, the Dom Luís I Bridge and Sé Cathedral, plus Livraria Lello (day 1) — Vila Nova de Gaia's port wine cellars and a river cruise (day 2) — a Douro day trip by train to Pinhão or Régua, or to Guimarães/Braga instead (day 3) — Foz do Douro/Matosinhos for seafood plus Serralves (day 4). Entry: direct AMS-Porto (KLM/Transavia, ~2h45, ~20-23 flights/week); metro line E from the airport into the centre (~35-45 min). Budget ~€80-90/day. Season: April-June or September-October; July-August is hot and busy, winter is mild but wetter than the south. Web check (2026-08): Porto's tourist tax is €3 pp/night (max 7 nights); Livraria Lello requires a pre-purchased timed-slot ticket — walk-ins are often sold out; historic-centre Airbnb supply is regulated, book early.",
+      transport_to_next: 'End of this route — fly back AMS-Porto direct.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Direct flight, city-based throughout with one Douro/heritage day trip by train.',
+    climate_summary: 'April-June or September-October; July-August hot and busy, winter mild but wetter than the south.',
+    description: "Porto's Ribeira, Dom Luís I Bridge and Livraria Lello, Vila Nova de Gaia's port wine cellars, a Douro day trip, and Foz do Douro/Matosinhos seafood.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7b (Iberia: Andorra + Portugal) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildLisbonSintraRoute() {
+  return rbBuildFlatSeedRoute('Lisbon + Sintra (5 days) 🏰', [
+    {
+      code: 'PT', name: 'Portugal', days: 5, budget: 490, lat: 38.7223, lng: -9.1393,
+      destinations: [
+        { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366 },
+        { name: 'Alfama', lat: 38.7139, lng: -9.1301 },
+        { name: 'Castelo de São Jorge', lat: 38.7139, lng: -9.1335 },
+        { name: 'Belém Tower', lat: 38.6916, lng: -9.2160 },
+        { name: 'Jerónimos Monastery', lat: 38.6979, lng: -9.2068 },
+        { name: 'Sintra (Palace of Pena)', lat: 38.7876, lng: -9.3905 },
+        { name: 'Quinta da Regaleira', lat: 38.7969, lng: -9.3969 },
+        { name: 'Cascais', lat: 38.6979, lng: -9.4215 },
+        { name: 'Cabo da Roca', lat: 38.7811, lng: -9.4986 },
+        { name: 'Monserrate (optional)', lat: 38.7908, lng: -9.4193 },
+      ],
+      notes: "Baixa/Alfama/Castelo de São Jorge (day 1) — Belém (day 2) — a full day in Sintra: the Palace of Pena plus Quinta da Regaleira (day 3) — Cascais/Estoril or Monserrate + Cabo da Roca (day 4) — a buffer day/fado evening (day 5). Entry: direct AMS-Lisbon (TAP/KLM/Transavia/easyJet, ~2h55); the red metro line into the centre (~20-25 min). Budget ~€90-105/day. Season: April-June/September-October ideal; July-August very hot, Sintra gets overcrowded. Web check (2026-08): Lisbon's tourist tax is €4 pp/night (max 7 nights); new 'containment zones' (December 2025) restrict whole-apartment Airbnbs in Alfama, Bairro Alto, Príncipe Real, Avenida da Liberdade, Santos and the historic centre — check the current impact and book early. The Palace of Pena requires a pre-booked 30-minute timed slot with no grace period — miss it and there is no access to the interior (the gardens stay open); budget ~30 extra minutes for the bus/traffic from Sintra station.",
+      transport_to_next: 'End of this route — fly back AMS-Lisbon direct.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Direct flight, city-based with day trips to Sintra and Cascais/Cabo da Roca.',
+    climate_summary: 'April-June or September-October ideal; July-August very hot with Sintra overcrowded.',
+    description: "Lisbon's Baixa, Alfama and Belém, and a full day in Sintra: the Palace of Pena, Quinta da Regaleira, Cascais and Cabo da Roca.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7b (Iberia: Andorra + Portugal) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildNorthernPortugalMinhoRoute() {
+  return rbBuildFlatSeedRoute('Northern Portugal: Minho (6 days) 🌿', [
+    {
+      code: 'PT', name: 'Portugal', days: 6, budget: 450, lat: 41.4419, lng: -8.2918,
+      destinations: [
+        { name: 'Porto', lat: 41.1405, lng: -8.6118 },
+        { name: 'Guimarães (Paço dos Duques)', lat: 41.4419, lng: -8.2918 },
+        { name: 'Braga (Bom Jesus do Monte)', lat: 41.5519, lng: -8.3789 },
+        { name: 'Viana do Castelo (Santa Luzia viewpoint)', lat: 41.6932, lng: -8.8327 },
+        { name: 'Ponte de Lima (optional)', lat: 41.7700, lng: -8.5833 },
+      ],
+      notes: "Restructured around heritage and coast (Minho), deliberately without a Douro side trip (see Porto + Douro + Lisbon below for that): Porto (2 days) — Guimarães (the birthplace of Portugal, ~45 min) — Braga (Bom Jesus do Monte, ~50 min) — Viana do Castelo (coast, the Santa Luzia viewpoint) — optionally Ponte de Lima (Portugal's oldest town) — back to Porto. Entry: direct AMS-Porto; train for Porto-Braga-Guimarães, a rental car for Viana do Castelo/Ponte de Lima/rural Minho. Budget ~€70-85/day (Portugal's cheapest region). Season: April-October; Minho is Portugal's greenest and wettest region — check autumn/winter rainfall.",
+      transport_to_next: 'End of this route — fly back AMS-Porto direct.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Direct flight into Porto; train for the city legs, rental car for rural Minho.',
+    climate_summary: "April-October; Minho is Portugal's greenest and wettest region.",
+    description: "Guimarães, the birthplace of Portugal, Braga's Bom Jesus do Monte, Viana do Castelo's coast and Ponte de Lima, based from Porto.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7b (Iberia: Andorra + Portugal) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately skips the Douro so it doesn't overlap with Porto + Douro + Lisbon (9 days) 🍷 below. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildAlgarveRoute() {
+  return rbBuildFlatSeedRoute('Algarve (6 days) 🏖️', [
+    {
+      code: 'PT', name: 'Portugal', days: 6, budget: 550, lat: 37.0891, lng: -8.2493,
+      destinations: [
+        { name: 'Faro (Ria Formosa)', lat: 37.0194, lng: -7.9304 },
+        { name: 'Lagos (Ponta da Piedade)', lat: 37.0836, lng: -8.6698 },
+        { name: 'Praia Dona Ana', lat: 37.0906, lng: -8.6689 },
+        { name: 'Sagres / Cabo de São Vicente', lat: 37.0206, lng: -8.9773 },
+        { name: 'Portimão', lat: 37.1393, lng: -8.5378 },
+        { name: 'Carvoeiro', lat: 37.0968, lng: -8.4747 },
+        { name: 'Benagil (sea cave)', lat: 37.0889, lng: -8.4271 },
+        { name: 'Silves (castle)', lat: 37.1889, lng: -8.4386 },
+        { name: 'Tavira', lat: 37.1258, lng: -7.6486 },
+      ],
+      notes: "Faro (Ria Formosa) — Lagos (Ponta da Piedade, Praia Dona Ana) — Sagres/Cabo de São Vicente — Portimão/Carvoeiro/Benagil (boat trip) — Silves — Tavira — back to Faro. Faro sits roughly central, so a west-then-east loop from there makes sense with no zigzagging. Entry: direct AMS-Faro (Transavia ~13/week plus seasonal easyJet ~7/week in summer) or direct Eindhoven-Faro (Transavia/Ryanair, ~14/week — less well-known but a good alternative); a rental car is strongly recommended. Budget ~€85-100/day. Season: May-June or September for the best price/crowd balance (hotel prices ~30-40% below the July-August peak, the sea already warm). Web check (2026-08): the Algarve's tourist tax is small and varies by municipality, roughly €1-2/night; the Benagil cave is now visited almost exclusively by boat/kayak tour (unguided swimming access is limited) — book an official tour ahead in high season.",
+      transport_to_next: 'End of this route — fly back AMS-Faro (or Eindhoven-Faro) direct.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Direct flight into Faro (or Eindhoven-Faro), rental car strongly recommended.',
+    climate_summary: 'May-June or September for the best price/crowd balance; the sea is already warm.',
+    description: "A loop around the Algarve from Faro: Lagos' Ponta da Piedade, Sagres, Portimão/Carvoeiro/Benagil, Silves and Tavira.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7b (Iberia: Andorra + Portugal) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildPortugalNorthToSouthRoute() {
+  return rbBuildFlatSeedRoute('Portugal: North to South (9 days) 🧭', [
+    {
+      code: 'PT', name: 'Portugal', days: 9, budget: 810, lat: 39.9000, lng: -8.7000,
+      destinations: [
+        { name: 'Porto', lat: 41.1405, lng: -8.6118 },
+        { name: 'Coimbra (brief stop)', lat: 40.2076, lng: -8.4257 },
+        { name: 'Nazaré', lat: 39.6014, lng: -9.0714 },
+        { name: 'Óbidos', lat: 39.3604, lng: -9.1571 },
+        { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366 },
+        { name: 'Sintra (Palace of Pena)', lat: 38.7876, lng: -9.3905 },
+        { name: 'Algarve / Lagos', lat: 37.1021, lng: -8.6743 },
+      ],
+      notes: "Restructured as the fast sweep, deliberately treating Coimbra as a brief stop only (see Central Portugal below for the fuller version): Porto (2 days) — Coimbra (1 day, brief) — Nazaré/Óbidos (1 day) — Lisbon + Sintra (2-3 days) — the Algarve/Lagos (2 days). Open-jaw Porto in/Faro out (or reversed) — expect a one-way rental-car drop fee; driving straight Porto-Faro takes ~5h/560km via the A1/A2 with no stops. Budget ~€85-95/day. Season: April-June or September-October — balances the cooler north against the warm-but-not-scorching south. Web check (2026-08): the A1 Lisbon-Porto toll is ~€22-25 one-way (class 1); the previously electronic-toll-only SCUT motorways (A22 Algarve, A23, A24, and since January 2026 also A25) are now free — a real relief for the southern leg.",
+      transport_to_next: 'End of this route — fly home from the Algarve (or Porto if reversed).',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Open-jaw flight (Porto in, Algarve out, or reversed), rental car throughout.',
+    climate_summary: 'April-June or September-October; balances the cooler north against the warm south.',
+    description: "A fast north-to-south sweep: Porto, a brief Coimbra stop, Nazaré/Óbidos, Lisbon + Sintra, and the Algarve.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7b (Iberia: Andorra + Portugal) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately treats Coimbra as brief so it complements rather than repeats Central Portugal: Coimbra + Serra da Estrela (6 days) 📚 below, and stays a leaner sweep than Portugal Roadtrip (12 days) 🗺️ and Porto + Douro + Lisbon (9 days) 🍷 also below. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildPortoDouroLisbonRoute() {
+  return rbBuildFlatSeedRoute('Porto + Douro + Lisbon (9 days) 🍷', [
+    {
+      code: 'PT', name: 'Portugal', days: 9, budget: 920, lat: 41.1579, lng: -8.6291,
+      destinations: [
+        { name: 'Porto (Vila Nova de Gaia)', lat: 41.1333, lng: -8.6111 },
+        { name: 'Pinhão (Douro Valley, 2-3 nights)', lat: 41.1897, lng: -7.5461 },
+        { name: 'São Leonardo da Galafura viewpoint', lat: 41.1584, lng: -7.6229 },
+        { name: 'Peso da Régua', lat: 41.1621, lng: -7.7871 },
+        { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366 },
+        { name: 'Bucelas (optional wine detour)', lat: 38.9167, lng: -9.1167 },
+        { name: 'Colares (optional wine detour, near Sintra)', lat: 38.8000, lng: -9.4453 },
+      ],
+      notes: "Restructured around the wine-region angle: Porto (2-3 days, Vila Nova de Gaia's port wine cellars) — the Douro Valley, 2-3 nights actually staying in Pinhão (quinta visits, a river cruise, the São Leonardo da Galafura viewpoint) — Lisbon (2-3 days, optionally adding the Bucelas/Colares wine regions near Sintra). Rule to stay distinctive: at least 2 nights genuinely sleeping in the Douro itself, not a Porto day trip — otherwise this overlaps with Northern Portugal: Minho above and Portugal: North to South above, which only pass through/day-trip the region. Open-jaw Porto in/Lisbon out; the Douro by scenic train (budget option) or car (for several out-of-the-way quintas) from Porto; the Porto-Lisbon Alfa Pendular fast train (~3h) as an alternative to driving/tolls/parking. Budget ~€95-110/day (quinta visits/tastings at €30-60 per experience push this above Northern Portugal's budget). Season: May-June (green, quiet) or September-October (harvest, atmospheric, but book quintas early); avoid high summer — the Douro interior gets noticeably hotter than the coast (up to the high 30s°C).",
+      transport_to_next: 'End of this route — fly home from Lisbon (or Porto if reversed).',
+    },
+  ], {
+    best_starting_month: 'September',
+    travel_style: 'Open-jaw flight (Porto in, Lisbon out, or reversed), scenic train or rental car for the Douro leg.',
+    climate_summary: 'May-June (green, quiet) or September-October (harvest); avoid high summer in the Douro interior.',
+    description: "Porto's port wine cellars, 2-3 nights in the Douro Valley at Pinhão, and Lisbon, with optional Bucelas/Colares wine detours near Sintra.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7b (Iberia: Andorra + Portugal) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Requires at least 2 nights genuinely sleeping in the Douro itself so it doesn't overlap with Northern Portugal: Minho (6 days) 🌿 or Portugal: North to South (9 days) 🧭 above, which only day-trip the region. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildPortugalRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Portugal Roadtrip (12 days) 🗺️', [
+    {
+      code: 'PT', name: 'Portugal', days: 12, budget: 1080, lat: 39.5000, lng: -8.2000,
+      destinations: [
+        { name: 'Porto', lat: 41.1405, lng: -8.6118 },
+        { name: 'Pinhão (Douro Valley, lighter stop)', lat: 41.1897, lng: -7.5461 },
+        { name: 'Coimbra', lat: 40.2076, lng: -8.4257 },
+        { name: 'Serra da Estrela (Torre)', lat: 40.3320, lng: -7.6108 },
+        { name: 'Sabugueiro', lat: 40.3625, lng: -7.6069 },
+        { name: 'Óbidos', lat: 39.3604, lng: -9.1571 },
+        { name: 'Nazaré', lat: 39.6014, lng: -9.0714 },
+        { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366 },
+        { name: 'Sintra (Palace of Pena)', lat: 38.7876, lng: -9.3905 },
+        { name: 'Évora (Roman Temple + Chapel of Bones)', lat: 38.5714, lng: -7.9086 },
+        { name: 'Algarve / Lagos', lat: 37.1021, lng: -8.6743 },
+      ],
+      notes: "Restructured as the full country loop, deliberately including Central Portugal and the Alentejo: Porto (2 days) — the Douro Valley (1-2 days, lighter than the dedicated wine-region trip above) — Coimbra (1-2 days) — the Serra da Estrela (1-2 days: Torre, Sabugueiro, the Zêzere glacial valley, historic villages) — Óbidos/Nazaré (1 day) — Lisbon + Sintra (2-3 days) — Évora/Alentejo (1-2 days: Roman ruins, the Chapel of Bones) — the Algarve (2-3 days). Open-jaw Porto in/Faro out (or reversed), a rental car for the whole loop — essential outside the Porto-Lisbon-Algarve rail corridor (Serra da Estrela, Alentejo). Same toll notes as Portugal: North to South above. Budget ~€85-95/day on average (more days average out the pricier Lisbon/Algarve/Douro days against the cheaper interior/Alentejo). Season: April-June or September-early October — the Serra da Estrela can hold snow/cold at altitude into May and turns cold again from November; the Alentejo interior regularly tops 35°C in July-August. ⚠️ Pace warning: 12-14 days across 7 regions is ambitious — pick 5-6 stops rather than literally everything, or this turns into a rushed one-night-everywhere trip. This item differs from Portugal: North to South specifically at Coimbra: that item treats it as a brief stop, this one gives Coimbra + the Serra da Estrela + the Alentejo real time of their own.",
+      transport_to_next: 'End of this route — fly home from the Algarve (or Porto if reversed).',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Open-jaw flight (Porto in, Algarve out, or reversed), rental car for the whole loop.',
+    climate_summary: 'April-June or September-early October; the Serra da Estrela holds cold/snow at altitude outside that window, the Alentejo gets very hot in summer.',
+    description: "A full Portugal loop: Porto, the Douro Valley, Coimbra, the Serra da Estrela, Óbidos/Nazaré, Lisbon + Sintra, Évora/Alentejo and the Algarve.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7b (Iberia: Andorra + Portugal) converting EUROPA_TRIP_IDEAS.md into Route Builder content. The fuller, slower counterpart to Portugal: North to South (9 days) 🧭 above — differs specifically at Coimbra, giving it and the Serra da Estrela/Alentejo real time of their own instead of a brief stop. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCentralPortugalCoimbraSerraDaEstrelaRoute() {
+  return rbBuildFlatSeedRoute('Central Portugal: Coimbra + Serra da Estrela (6 days) 📚', [
+    {
+      code: 'PT', name: 'Portugal', days: 6, budget: 430, lat: 40.3000, lng: -7.6000,
+      destinations: [
+        { name: 'Coimbra (University + Biblioteca Joanina)', lat: 40.2076, lng: -8.4257 },
+        { name: 'Manteigas (base)', lat: 40.3958, lng: -7.5406 },
+        { name: 'Seia (alternative base)', lat: 40.4189, lng: -7.7028 },
+        { name: 'Torre (highest point of mainland Portugal)', lat: 40.3320, lng: -7.6108 },
+        { name: 'Sabugueiro (highest village)', lat: 40.3625, lng: -7.6069 },
+        { name: 'Poço do Inferno waterfall', lat: 40.3477, lng: -7.5765 },
+        { name: 'Linhares da Beira', lat: 40.4014, lng: -7.5033 },
+        { name: 'Piódão', lat: 40.2039, lng: -7.7228 },
+      ],
+      notes: "Positioned as the connecting middle leg between the Porto/north cluster and the Algarve/south cluster (see Portugal: North to South and Portugal Roadtrip above, which both explicitly point here): Coimbra (2 days: the University/Biblioteca Joanina, the old town, Fado de Coimbra) — the Serra da Estrela National Park, based in Manteigas or Seia (3-4 days): Torre (mainland Portugal's highest point), Sabugueiro (the highest village, ~1h30 from Coimbra), the Zêzere glacial valley, the Poço do Inferno waterfall, and 1-2 historic 'Aldeias Históricas' (e.g. Linhares da Beira, Piódão). No airport with a direct NL flight nearby — fly into Porto or Lisbon (both ~2h drive to Coimbra) and rent a car; the mountain section needs a car (very limited/seasonal public transport into the park). Coimbra itself is reachable by train from Porto/Lisbon (~1-1.5h). Budget ~€65-80/day (the cheapest Portugal item here — rural pension/agroturismo €45-60, food €20-25). Season: late May-June or September (clear hiking weather, no snow on the mountain roads); winter brings real snow to the Torre (Portugal's only ski area) — a different, colder trip, otherwise best avoided. Web check (2026-08): the Biblioteca Joanina has a daily visitor cap/timed slot — book ahead in high season.",
+      transport_to_next: 'End of this route — drive back to Porto or Lisbon for the flight home.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: "Fly into Porto or Lisbon, then a rental car — essential for the Serra da Estrela's mountain roads.",
+    climate_summary: 'Late May-June or September for clear hiking weather with no snow; winter brings real snow to the Torre.',
+    description: "Coimbra's university and Biblioteca Joanina, and the Serra da Estrela: the Torre, Sabugueiro, the Zêzere valley and historic villages.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7b (Iberia: Andorra + Portugal) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Positioned as the explicit connecting middle leg for Portugal: North to South (9 days) 🧭 and Portugal Roadtrip (12 days) 🗺️ above, which both point here rather than giving Coimbra/Serra da Estrela real time themselves. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaAndorraPortugalRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_ANDORRA_PORTUGAL)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_ANDORRA_PORTUGAL, '1');
+
+  rbRoutes.push(
+    rbBuildAndorraRoute(),
+    rbBuildAndorraFrenchPyreneesAriegeRoute(),
+    rbBuildAndorraSpanishPyreneesRoute(),
+    rbBuildPortoRoute(),
+    rbBuildLisbonSintraRoute(),
+    rbBuildNorthernPortugalMinhoRoute(),
+    rbBuildAlgarveRoute(),
+    rbBuildPortugalNorthToSouthRoute(),
+    rbBuildPortoDouroLisbonRoute(),
+    rbBuildPortugalRoadtripRoute(),
+    rbBuildCentralPortugalCoimbraSerraDaEstrelaRoute(),
+  );
+  rbSave();
+}
