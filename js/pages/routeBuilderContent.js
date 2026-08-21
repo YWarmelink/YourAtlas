@@ -16428,3 +16428,331 @@ function rbSeedEuropaFaroeIcelandRoutes() {
   );
   rbSave();
 }
+
+/**
+ * Phase 2 batch 12a (Ireland + Scotland) — converts EUROPA_TRIP_IDEAS.md's "🇮🇪 Ierland" and
+ * "🏴 Schotland" sections (lines 2003-2077) into Route Builder content. Batch 12b (England, Wales,
+ * Northern Ireland) is a separate, later delegation.
+ *
+ * Collision check (done before writing any of this, per the batch brief): this codebase already
+ * has a standalone 'Ireland ☘️' route (rbBuildIrelandRoute, 22 days: Donegal/Connemara/Galway/
+ * Cliffs of Moher/Wild Atlantic Way/Dingle, then Ring of Kerry/Killarney/Cork/Kilkenny) and a
+ * standalone 'Scotland & Northern Ireland 🥃' route (rbBuildScotlandNorthernIrelandRoute, 27 days:
+ * Edinburgh/Cairngorms/Glencoe/Glenfinnan/Skye/Applecross/NC500-to-Ullapool/Loch Ness, then Belfast/
+ * Giant's Causeway) — both split off British Isles & Celtic Coast Expedition 🍀 in Phase 1's combo
+ * batch. Neither is touched here. The two new routes below that most closely resemble those full
+ * loops ('Ireland Complete' and 'Scotland Extended') carry an explicit cross-reference in their
+ * notes explaining they are the shorter, realistic Trip Ideas version, not a duplicate — matching
+ * the pattern already used for Svalbard (batch 11a) and the Faroe Islands/Iceland Ring Road (11c).
+ * The other 10 routes here are shorter/narrower slices that don't rise to the same collision risk,
+ * and are differentiated against their own siblings in this batch instead (per EUROPA_TRIP_IDEAS.md's
+ * own "differentiator" notes).
+ */
+function rbBuildDublinRoute() {
+  return rbBuildFlatSeedRoute('Dublin (3-4 days) 🍺', [
+    {
+      code: 'IE', name: 'Ireland', days: 4, budget: 352, lat: 53.3498, lng: -6.2603,
+      destinations: [
+        { name: 'Trinity College / Book of Kells', lat: 53.3438, lng: -6.2546 },
+        { name: 'Guinness Storehouse', lat: 53.3419, lng: -6.2867 },
+        { name: 'Temple Bar', lat: 53.3453, lng: -6.2635 },
+        { name: 'Wicklow Mountains / Glendalough (day trip)', lat: 53.0092, lng: -6.3283 },
+      ],
+      notes: "Trinity College and the Book of Kells (2 days), the Guinness Storehouse, Temple Bar, and a day trip to the Wicklow Mountains/Glendalough. Budget ~€80-95/day. Season: year-round, May-September for the best weather; expect extra crowds and security in Dublin in the second half of 2026 due to Ireland's EU Council presidency (July-December 2026). Web check (2026-08): the Book of Kells needs a pre-booked timed-entry ticket (€21.50-25 pp) — the Long Room is currently partly empty due to restoration work, open until 2027. The Guinness Storehouse should also be pre-booked (~€30-45).",
+      transport_to_next: 'End of this route — fly home from Dublin.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'City trip on foot/tram, one day-trip tour to the Wicklow Mountains.',
+    climate_summary: 'Year-round; May-September gives the best weather, though the second half of 2026 sees extra Dublin crowds/security from the EU Council presidency.',
+    description: 'Trinity College and the Book of Kells, the Guinness Storehouse, Temple Bar, and a day trip to the Wicklow Mountains/Glendalough.',
+    notes: "Built (2026-08) as part of Phase 2 batch 12a (Ireland + Scotland) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildWestIrelandRoute() {
+  return rbBuildFlatSeedRoute('West Ireland (5-7 days) 🌊', [
+    {
+      code: 'IE', name: 'Ireland', days: 6, budget: 468, lat: 53.2707, lng: -9.0568,
+      destinations: [
+        { name: 'Galway', lat: 53.2707, lng: -9.0568 },
+        { name: 'Connemara National Park / Kylemore Abbey (day trip)', lat: 53.5478, lng: -9.8180 },
+        { name: 'Cliffs of Moher / Doolin', lat: 52.9715, lng: -9.4309 },
+        { name: 'Aran Islands (optional)', lat: 53.1224, lng: -9.6717 },
+      ],
+      notes: "Galway (2 days), a day trip to Connemara National Park/Kylemore Abbey, then the Cliffs of Moher/Doolin (2-3 days) with an optional Aran Islands add-on — deliberately compact, just Galway/Connemara/the Cliffs, unlike the broader roadtrip items below that also cover the east coast/Ring of Kerry. Budget ~€70-85/day including a rental car. Season: May-June/September optimal. Web check (2026-08): the Cliffs of Moher visitor centre runs ~€10-12 pp including parking, but there's a free walking route from Doolin/Liscannor that stays outside the paid centre.",
+      transport_to_next: 'End of this route — fly home from Shannon or drive back to Dublin.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Rental car around Galway, Connemara and the Clare coast.',
+    climate_summary: 'May-June and September for the calmest, driest weather on this stretch of coast.',
+    description: 'Galway, Connemara National Park/Kylemore Abbey, the Cliffs of Moher/Doolin, and an optional trip to the Aran Islands.',
+    notes: "Built (2026-08) as part of Phase 2 batch 12a (Ireland + Scotland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — deliberately compact (Galway/Connemara/Cliffs of Moher only), unlike the broader Ireland Roadtrip/Ireland Complete routes below which also cover the east and south. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildIrelandRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Ireland Roadtrip (7-10 days) 🚗', [
+    {
+      code: 'IE', name: 'Ireland', days: 9, budget: 747, lat: 53.3498, lng: -6.2603,
+      destinations: [
+        { name: 'Dublin', lat: 53.3498, lng: -6.2603 },
+        { name: 'Kilkenny', lat: 52.6541, lng: -7.2448 },
+        { name: 'Cork / Kinsale', lat: 51.8985, lng: -8.4756 },
+        { name: 'Ring of Kerry', lat: 51.8333, lng: -10.0000 },
+        { name: 'Galway', lat: 53.2707, lng: -9.0568 },
+      ],
+      notes: "Dublin, Kilkenny, Cork/Kinsale, the Ring of Kerry, and Galway — a broader loop that also takes in the east and south, unlike the pure west-coast focus of the Wild Atlantic Way below. Budget ~€75-90/day including a rental car. Season: May-September. Web check (2026-08): Ireland drives on the left — arrange CDW insurance for the rental car; on the Ring of Kerry (N71) leave early in the day to stay ahead of the tour-bus crowds.",
+      transport_to_next: 'End of this route — fly home from Shannon or Dublin.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Rental car loop, east/south/west combined.',
+    climate_summary: 'May-September for the driest, calmest driving weather.',
+    description: 'Dublin, Kilkenny, Cork/Kinsale, the Ring of Kerry, and Galway.',
+    notes: "Built (2026-08) as part of Phase 2 batch 12a (Ireland + Scotland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a broader east+south+west loop, differentiated against the pure west-coast Wild Atlantic Way route below. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildWildAtlanticWayRoute() {
+  return rbBuildFlatSeedRoute('Wild Atlantic Way (7-10 days) 🌅', [
+    {
+      code: 'IE', name: 'Ireland', days: 9, budget: 747, lat: 54.0000, lng: -9.0000,
+      destinations: [
+        { name: 'Donegal', lat: 54.6538, lng: -8.1096 },
+        { name: 'Sligo', lat: 54.2697, lng: -8.4694 },
+        { name: 'Mayo / Achill Island', lat: 53.9575, lng: -10.0530 },
+        { name: 'Connemara', lat: 53.5478, lng: -9.8180 },
+        { name: 'Galway', lat: 53.2707, lng: -9.0568 },
+        { name: 'Cliffs of Moher (Clare)', lat: 52.9715, lng: -9.4309 },
+        { name: 'Dingle Peninsula / Ring of Kerry', lat: 52.1409, lng: -10.2700 },
+        { name: 'Cork / Kinsale', lat: 51.8985, lng: -8.4756 },
+      ],
+      notes: "The full coastal route end-to-end, purely the west coast, no east or south-east detour: Donegal, Sligo, Mayo/Achill, Connemara, Galway, Clare, Kerry (Dingle/Ring of Kerry), and Cork/Kinsale. Budget ~€75-90/day. Season: May/June/September are best, July-August the busiest and most expensive, winter closes some attractions. Web check (2026-08): long distances and narrow roads throughout, with sparse fuel stations along the way — fill up in good time.",
+      transport_to_next: 'End of this route — fly home from Cork or Shannon.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Rental car, the full west-coast Wild Atlantic Way route.',
+    climate_summary: 'May/June/September best; July-August busiest/most expensive; winter has some closed attractions.',
+    description: 'The full Wild Atlantic Way: Donegal, Sligo, Mayo/Achill, Connemara, Galway, Clare, Kerry, and Cork/Kinsale.',
+    notes: "Built (2026-08) as part of Phase 2 batch 12a (Ireland + Scotland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — the pure west-coast counterpart to the broader Ireland Roadtrip route above, no east/south-east leg. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildIrelandCompleteRoute() {
+  return rbBuildFlatSeedRoute('Ireland Complete (10-14 days) 🌈', [
+    {
+      code: 'IE', name: 'Ireland', days: 12, budget: 1020, lat: 53.3498, lng: -6.2603,
+      destinations: [
+        { name: 'Dublin', lat: 53.3498, lng: -6.2603 },
+        { name: 'Wicklow', lat: 53.0092, lng: -6.3283 },
+        { name: 'Kilkenny', lat: 52.6541, lng: -7.2448 },
+        { name: 'Cork / Kinsale', lat: 51.8985, lng: -8.4756 },
+        { name: 'Kerry', lat: 51.8333, lng: -10.0000 },
+        { name: 'Cliffs of Moher / Connemara', lat: 52.9715, lng: -9.4309 },
+        { name: 'Sligo / Donegal', lat: 54.2697, lng: -8.4694 },
+        { name: "Belfast / Giant's Causeway (optional side trip)", lat: 54.5973, lng: -5.9301 },
+      ],
+      notes: "The longest, most complete version — east, west, south and north-west in one trip: Dublin, Wicklow, Kilkenny, Cork/Kinsale, Kerry, the Cliffs of Moher/Connemara, and Sligo/Donegal, with an optional side trip to Belfast/the Giant's Causeway. Budget ~€75-95/day. Web check (2026-08): a side trip into Northern Ireland still needs the UK ETA (mandatory since 2 April 2025 for Dutch passport holders, fee ~€23-24 since 8 April 2026, valid 2 years or until the passport expires, multiple entry) even though there's no border checkpoint on the road.\n\nDistinct from the existing 'Ireland ☘️' route (split off from British Isles & Celtic Coast Expedition 🍀), which is a 22-day version built the same way (Donegal/Connemara/Galway/Cliffs of Moher/Wild Atlantic Way/Dingle, then Ring of Kerry/Killarney/Cork/Kilkenny) but without Dublin, Wicklow, Sligo or the Belfast side trip. This is the shorter, realistic Trip Ideas version of a full-Ireland loop, not a duplicate — 'Ireland ☘️' itself is untouched.",
+      transport_to_next: 'End of this route — fly home from Dublin or Cork.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Rental car, the full-country loop with an optional Northern Ireland side trip.',
+    climate_summary: 'May-September for the driest, calmest driving weather.',
+    description: 'Dublin, Wicklow, Kilkenny, Cork/Kinsale, Kerry, the Cliffs of Moher/Connemara, Sligo/Donegal, and an optional Belfast/Giant\'s Causeway side trip.',
+    notes: "Built (2026-08) as part of Phase 2 batch 12a (Ireland + Scotland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a deliberately shorter, realistic 'Trip Ideas' full-Ireland loop distinct from the existing standalone 'Ireland ☘️' route (split off from British Isles & Celtic Coast Expedition 🍀); named/emoji'd differently (🌈 vs ☘️) to avoid confusion, and 'Ireland ☘️' itself is left untouched. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildEdinburghRoute() {
+  return rbBuildFlatSeedRoute('Edinburgh (3-4 days) 🏰', [
+    {
+      code: 'GB', name: 'United Kingdom', days: 4, budget: 360, lat: 55.9533, lng: -3.1883,
+      destinations: [
+        { name: 'Old Town / Royal Mile', lat: 55.9500, lng: -3.1900 },
+        { name: 'Edinburgh Castle', lat: 55.9486, lng: -3.1999 },
+        { name: "Arthur's Seat", lat: 55.9445, lng: -3.1615 },
+        { name: 'Stirling Castle (day trip)', lat: 56.1233, lng: -3.9475 },
+      ],
+      notes: "Old Town/the Royal Mile, Edinburgh Castle, a walk up Arthur's Seat, and a day trip to Stirling Castle or Loch Lomond. Budget ~€80-100/day. Season: May-September for the best weather; August is the Edinburgh Fringe Festival — dorm prices then run €35-55/night, book well ahead. Web check (2026-08): the Edinburgh Castle online ticket is £19.50 (~€22), cheaper than at the gate, and often sells out in summer — booking online is strongly recommended.",
+      transport_to_next: 'End of this route — fly home from Edinburgh.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'City trip on foot, one day-trip tour to Stirling Castle or Loch Lomond.',
+    climate_summary: 'May-September best; avoid August unless deliberately going for the Fringe Festival, since prices spike.',
+    description: "Old Town/the Royal Mile, Edinburgh Castle, Arthur's Seat, and a day trip to Stirling Castle or Loch Lomond.",
+    notes: "Built (2026-08) as part of Phase 2 batch 12a (Ireland + Scotland) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildScottishHighlandsRoute() {
+  return rbBuildFlatSeedRoute('Scottish Highlands (5-7 days) 🦌', [
+    {
+      code: 'GB', name: 'United Kingdom', days: 6, budget: 528, lat: 57.4778, lng: -4.2247,
+      destinations: [
+        { name: 'Inverness', lat: 57.4778, lng: -4.2247 },
+        { name: 'Loch Ness / Urquhart Castle', lat: 57.3241, lng: -4.4407 },
+        { name: 'Glencoe', lat: 56.6836, lng: -5.1030 },
+        { name: 'Fort William / Ben Nevis', lat: 56.8198, lng: -5.1052 },
+        { name: 'Cairngorms National Park', lat: 57.0833, lng: -3.6667 },
+      ],
+      notes: "The mainland only, no Isle of Skye (unlike the route below): Inverness, Loch Ness/Urquhart Castle, Glencoe, Fort William/Ben Nevis, and back via the Cairngorms. Budget ~€80-95/day (shared rental car, a B&B/hostel mix). Season: May/September ideal; midges are a real nuisance on the west coast June-August. Web check (2026-08): Urquhart Castle requires a mandatory pre-booked timed slot plus a parking spot online (Historic Environment Scotland) — the separate 'Loch Ness Centre' is an unrelated private museum, not the castle ticket.",
+      transport_to_next: 'End of this route — fly home from Inverness or Edinburgh.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Rental car loop around the Highlands mainland, no islands.',
+    climate_summary: 'May and September ideal; June-August brings midges to the west coast.',
+    description: 'Inverness, Loch Ness/Urquhart Castle, Glencoe, Fort William/Ben Nevis, and the Cairngorms.',
+    notes: "Built (2026-08) as part of Phase 2 batch 12a (Ireland + Scotland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — mainland only, differentiated against the Highlands + Isle of Skye route below which adds the island. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildHighlandsSkyeRoute() {
+  return rbBuildFlatSeedRoute('Highlands + Isle of Skye (7-10 days) 🏔️', [
+    {
+      code: 'GB', name: 'United Kingdom', days: 9, budget: 855, lat: 57.4778, lng: -4.2247,
+      destinations: [
+        { name: 'Inverness', lat: 57.4778, lng: -4.2247 },
+        { name: 'Loch Ness', lat: 57.3241, lng: -4.4407 },
+        { name: 'Glencoe', lat: 56.6836, lng: -5.1030 },
+        { name: 'Fort William', lat: 56.8198, lng: -5.1052 },
+        { name: 'Skye Bridge', lat: 57.2667, lng: -5.7333 },
+        { name: 'Portree', lat: 57.4128, lng: -6.1943 },
+        { name: 'Old Man of Storr', lat: 57.5074, lng: -6.1826 },
+        { name: 'Quiraing', lat: 57.6444, lng: -6.2725 },
+        { name: 'Fairy Pools', lat: 57.2456, lng: -6.2597 },
+      ],
+      notes: "As the Highlands route above, plus crossing the Skye Bridge (free since December 2004, no ferry needed) to Portree, Old Man of Storr, Quiraing, and the Fairy Pools. Budget ~€85-105/day — Skye itself runs a little pricier, with less accommodation on offer. Season: May/September; July-August makes Portree overcrowded. Web check (2026-08): no ferry or permit is needed for Skye itself thanks to the bridge, but expect crowding and parking pressure at the hotspots — arriving early in the day helps.",
+      transport_to_next: 'End of this route — fly home from Inverness.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Rental car loop, mainland Highlands plus a Skye Bridge crossing to the island.',
+    climate_summary: 'May and September best; July-August brings crowding to Skye\'s hotspots.',
+    description: 'Inverness, Loch Ness, Glencoe, Fort William, and Skye (Portree, Old Man of Storr, Quiraing, Fairy Pools) via the Skye Bridge.',
+    notes: "Built (2026-08) as part of Phase 2 batch 12a (Ireland + Scotland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — adds Skye onto the mainland Scottish Highlands route above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildScotlandRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Scotland Roadtrip (7-10 days) 🚙', [
+    {
+      code: 'GB', name: 'United Kingdom', days: 9, budget: 810, lat: 55.9533, lng: -3.1883,
+      destinations: [
+        { name: 'Edinburgh', lat: 55.9533, lng: -3.1883 },
+        { name: 'Stirling', lat: 56.1233, lng: -3.9475 },
+        { name: 'Glencoe', lat: 56.6836, lng: -5.1030 },
+        { name: 'Fort William', lat: 56.8198, lng: -5.1052 },
+        { name: 'Inverness', lat: 57.4778, lng: -4.2247 },
+        { name: 'Cairngorms National Park / Perthshire', lat: 56.7833, lng: -3.9333 },
+      ],
+      notes: "A broader loop that also takes in the lowlands — no Skye, but Highlands and lowlands combined: Edinburgh, Stirling, Glencoe, Fort William, Inverness, and back via the Cairngorms/Perthshire. Budget ~€80-100/day. Season: May-September. Web check (2026-08): picking up the rental car in Edinburgh is cheaper than in the Highlands — check for a one-way drop-off fee if planning to end the loop elsewhere.",
+      transport_to_next: 'End of this route — fly home from Edinburgh.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Rental car loop, lowlands and Highlands combined, no islands.',
+    climate_summary: 'May-September for the best driving weather across both lowlands and Highlands.',
+    description: 'Edinburgh, Stirling, Glencoe, Fort William, Inverness, and the Cairngorms/Perthshire.',
+    notes: "Built (2026-08) as part of Phase 2 batch 12a (Ireland + Scotland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a lowlands+Highlands loop without Skye, differentiated against the Highlands + Isle of Skye route above and the fuller Scotland Extended route below. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildScotlandExtendedRoute() {
+  return rbBuildFlatSeedRoute('Scotland Extended (10-14 days) 🏴', [
+    {
+      code: 'GB', name: 'United Kingdom', days: 12, budget: 1020, lat: 57.0000, lng: -4.5000,
+      destinations: [
+        { name: 'Edinburgh', lat: 55.9533, lng: -3.1883 },
+        { name: 'Inverness (NC500 start/end)', lat: 57.4778, lng: -4.2247 },
+        { name: "John o' Groats", lat: 58.6373, lng: -3.0699 },
+        { name: 'Durness', lat: 58.5661, lng: -4.7500 },
+        { name: 'Applecross Pass / Bealach na Bà', lat: 57.4358, lng: -5.6414 },
+        { name: 'Ullapool', lat: 57.8951, lng: -5.1626 },
+        { name: 'Isle of Skye (Portree)', lat: 57.4128, lng: -6.1943 },
+        { name: 'Glencoe', lat: 56.6836, lng: -5.1030 },
+      ],
+      notes: "The longest, most complete version, combining everything including the full North Coast 500: Edinburgh plus the full NC500 (the Inverness loop, 516 miles), Skye, and Glencoe. Budget ~€75-95/day — a longer trip pulls the average down thanks to campervan/self-catering days. Season: May/September strongly recommended — July/August bring overcrowded accommodation plus midges; keep at least 7 days for the NC500 itself. Web check (2026-08): book NC500 accommodation months ahead in high season; the driving direction (clockwise vs. counterclockwise) determines whether the Bealach na Bà comes right at the start of the route or near the end.\n\nDistinct from the existing 'Scotland & Northern Ireland 🥃' route (split off from British Isles & Celtic Coast Expedition 🍀), which is a 27-day version (22 days in Scotland: Edinburgh/Cairngorms/Glencoe/Glenfinnan/Skye/Applecross/NC500-partial-to-Ullapool/Loch Ness, plus 5 days in Belfast/the Giant's Causeway). This route is the shorter, realistic Trip Ideas version — Scotland only, no Northern Ireland leg, and the full NC500 loop rather than a partial one — not a duplicate; 'Scotland & Northern Ireland 🥃' itself is untouched.",
+      transport_to_next: 'End of this route — fly home from Inverness or Edinburgh.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Rental car/campervan, Edinburgh plus the full NC500 loop, Skye and Glencoe.',
+    climate_summary: 'May and September strongly recommended; July-August bring overcrowded accommodation and midges.',
+    description: 'Edinburgh, the full North Coast 500 (Inverness loop), the Isle of Skye, and Glencoe.',
+    notes: "Built (2026-08) as part of Phase 2 batch 12a (Ireland + Scotland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a deliberately shorter, realistic 'Trip Ideas' Scotland-only loop distinct from the existing standalone 'Scotland & Northern Ireland 🥃' route (split off from British Isles & Celtic Coast Expedition 🍀, which also includes a Northern Ireland leg and only a partial NC500); named/emoji'd differently (🏴 vs 🥃) to avoid confusion, and 'Scotland & Northern Ireland 🥃' itself is left untouched. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildOrkneyShetlandRoute() {
+  return rbBuildFlatSeedRoute('Orkney + Shetland (5-7 days) ⚓', [
+    {
+      code: 'GB', name: 'United Kingdom', days: 6, budget: 600, lat: 59.4000, lng: -2.5000,
+      destinations: [
+        { name: 'Aberdeen (or Scrabster / Gills Bay)', lat: 57.1497, lng: -2.0943 },
+        { name: 'Kirkwall', lat: 58.9808, lng: -2.9600 },
+        { name: 'Skara Brae', lat: 59.0489, lng: -3.3397 },
+        { name: 'Ring of Brodgar', lat: 59.0006, lng: -3.2286 },
+        { name: 'Lerwick', lat: 60.1547, lng: -1.1494 },
+        { name: 'Jarlshof', lat: 59.8794, lng: -1.2986 },
+      ],
+      notes: "Aberdeen (or Scrabster/Gills Bay) to Kirkwall on Orkney (Skara Brae, the Ring of Brodgar), then on by ferry to Lerwick on Shetland (Jarlshof, puffins). Budget ~€90-110/day — ferry crossings and island prices run higher than the mainland. Season: May-August for birds/daylight, with Shetland's 'simmer dim' (near-endless summer twilight) in June. Web check (2026-08): NorthLink ferries sail Aberdeen-Kirkwall/Lerwick, a cabin is recommended for the overnight crossing; Pentland Ferries' Gills Bay-St Margaret's Hope crossing (~1h15) is a separate, often cheaper/faster Orkney-only alternative. Peak island ferry fares were abolished for residents from 24 March 2026 — not for tourists.",
+      transport_to_next: 'End of this route — fly home from Kirkwall or Lerwick, or ferry back to Aberdeen.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Ferry-based island-hopping (NorthLink or Pentland Ferries) plus a rental car on each island.',
+    climate_summary: 'May-August for birdlife and long daylight, including Shetland\'s June "simmer dim".',
+    description: 'Kirkwall on Orkney (Skara Brae, Ring of Brodgar) and Lerwick on Shetland (Jarlshof, puffins).',
+    notes: "Built (2026-08) as part of Phase 2 batch 12a (Ireland + Scotland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — new addition to the Trip Ideas document as of its third 2026-08 supplement. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildOuterHebridesRoute() {
+  return rbBuildFlatSeedRoute('Outer Hebrides (Lewis + Harris) (5-7 days) 🏖️', [
+    {
+      code: 'GB', name: 'United Kingdom', days: 6, budget: 558, lat: 58.0500, lng: -6.7000,
+      destinations: [
+        { name: 'Highlands to Skye (Uig)', lat: 57.5926, lng: -6.3719 },
+        { name: 'Tarbert (Harris, CalMac ferry from Uig)', lat: 57.8965, lng: -6.7967 },
+        { name: 'Luskentyre beach', lat: 57.9167, lng: -7.0833 },
+        { name: 'Callanish Standing Stones (Lewis)', lat: 58.1972, lng: -6.7450 },
+        { name: 'Stornoway (return via Ullapool)', lat: 58.2090, lng: -6.3874 },
+      ],
+      notes: "From the Highlands via Skye (Uig), a CalMac ferry crossing Uig-Tarbert (Harris, ~1h40), then Luskentyre beach and the Callanish Standing Stones (Lewis), returning either via Stornoway-Ullapool or the same ferry. Budget ~€85-100/day. Season: May-September, with changeable weather throughout. Web check (2026-08): CalMac ferry tickets are sailing-specific (a fixed date and time, even for foot passengers) — book early in summer, since vehicle spots are scarce; check calmac.co.uk for current fares.",
+      transport_to_next: 'End of this route — fly home from Stornoway or Inverness.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Rental car via Skye plus a CalMac ferry crossing to the Outer Hebrides.',
+    climate_summary: 'May-September, though weather on the islands stays changeable year-round.',
+    description: 'Skye (Uig) to Harris by ferry, Luskentyre beach, the Callanish Standing Stones on Lewis, and a return via Stornoway or Ullapool.',
+    notes: "Built (2026-08) as part of Phase 2 batch 12a (Ireland + Scotland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — new addition to the Trip Ideas document as of its third 2026-08 supplement. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaIrelandScotlandRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_IRELAND_SCOTLAND)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_IRELAND_SCOTLAND, '1');
+
+  rbRoutes.push(
+    rbBuildDublinRoute(),
+    rbBuildWestIrelandRoute(),
+    rbBuildIrelandRoadtripRoute(),
+    rbBuildWildAtlanticWayRoute(),
+    rbBuildIrelandCompleteRoute(),
+    rbBuildEdinburghRoute(),
+    rbBuildScottishHighlandsRoute(),
+    rbBuildHighlandsSkyeRoute(),
+    rbBuildScotlandRoadtripRoute(),
+    rbBuildScotlandExtendedRoute(),
+    rbBuildOrkneyShetlandRoute(),
+    rbBuildOuterHebridesRoute(),
+  );
+  rbSave();
+}
