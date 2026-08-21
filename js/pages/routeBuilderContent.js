@@ -17920,3 +17920,269 @@ function rbSeedEuropaSicilySardiniaRoutes() {
   );
   rbSave();
 }
+
+function rbBuildCorfuRoute() {
+  return rbBuildFlatSeedRoute('Corfu (5-7 days) 🏝️', [
+    {
+      code: 'GR', name: 'Greece', days: 2, budget: 130, lat: 39.6243, lng: 19.9217,
+      destinations: [
+        { name: 'Corfu Town (Venetian old town)', lat: 39.6243, lng: 19.9217 },
+      ],
+      notes: "Entry: direct flight Amsterdam-Corfu (TUI fly, seasonal, roughly April-October). Corfu Town's Venetian old town (2 days). Budget ~€55-70/day average across the route (used here at ~€60-65/day). Season: May-October, peak July-August busiest and priciest. ⚠️⚠️ Web check (2026-08): confirmed wildfire evacuation (~2,400 people) in mid-August 2026, fire reported \"under control\" as of 7 August 2026 — re-check the situation right before departure, this is an active-incident note, not a resolved one. Travel advisory: yellow since 4 August 2026 for wildfires (nationwide), though Corfu itself isn't individually named on the Dutch government's travel-advisory site.",
+      transport_to_next: 'Short drive north along the coast to Paleokastritsa.',
+    },
+    {
+      code: 'GR', name: 'Greece', days: 2, budget: 130, lat: 39.6698, lng: 19.7847,
+      destinations: [
+        { name: 'Paleokastritsa', lat: 39.6698, lng: 19.7847 },
+      ],
+      notes: 'Paleokastritsa (1-2 days) — the monastery on the headland, coves, and boat trips to the sea caves.',
+      transport_to_next: 'Drive further north to Sidari.',
+    },
+    {
+      code: 'GR', name: 'Greece', days: 2, budget: 120, lat: 39.7897, lng: 19.9106,
+      destinations: [
+        { name: 'Sidari (north coast)', lat: 39.7897, lng: 19.9106 },
+      ],
+      notes: 'Sidari and the north coast (2 days), including the Canal d\'Amour rock formations, to close the trip.',
+      transport_to_next: 'End of this route — return flight from Corfu to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Single-island stay, rental car useful but not essential — Corfu Town, Paleokastritsa, Sidari/the north coast.',
+    climate_summary: 'May-October; peak July-August busiest and priciest.',
+    description: "Corfu Town's Venetian old town, Paleokastritsa, and Sidari/the north coast.",
+    notes: "Built (2026-08) as part of Phase 2 batch 14d/21 (Islands: Greek islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. No pre-existing Route Builder route covers Corfu as a standalone single-island trip — the existing Greece-related routes (Greece & Crete 🫒, Greek Islands: Paros, Naxos & Santorini (9 days) 🏖️, Greece Roadtrip, the Northern Greece/North Macedonia/Bulgaria combos, and the Turkey + Greece Aegean/Dodecanese route) don't reach Corfu at all. Genuinely new ground for Route Builder, not a granular slice of an existing route. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildRhodesRoute() {
+  return rbBuildFlatSeedRoute('Rhodes (5-7 days) 🏝️', [
+    {
+      code: 'GR', name: 'Greece', days: 2, budget: 130, lat: 36.4341, lng: 28.2176,
+      destinations: [
+        { name: 'Rhodes Old Town', lat: 36.4341, lng: 28.2176 },
+        { name: 'Palace of the Grand Master', lat: 36.4436, lng: 28.2258 },
+      ],
+      notes: "Entry: direct flight Amsterdam-Rhodes (easyJet, Transavia and TUI all fly direct in summer, mostly seasonal). Rhodes Old Town (2 days), including the Palace of the Grand Master. Budget ~€55-70/day average across the route (used here at ~€60-65/day). Season: May-October. ⚠️ Web check (2026-08): the Palace of the Grand Master runs a summer schedule (1 April-31 October) daily 08:00-20:00 and a winter schedule (1 November-31 March) Wed-Mon 08:30-15:30, closed Tuesday; ticket price revised since April 2025 to €20. No active wildfire/evacuation reported on Rhodes as of 7 August 2026 — relatively calm compared to Crete/Corfu this season, though the general yellow Greece-wide wildfire advisory (since 4 August 2026) still applies.",
+      transport_to_next: 'Short drive south down the coast to Lindos.',
+    },
+    {
+      code: 'GR', name: 'Greece', days: 2, budget: 130, lat: 36.0917, lng: 28.0864,
+      destinations: [
+        { name: 'Lindos', lat: 36.0917, lng: 28.0864 },
+        { name: 'Acropolis of Lindos', lat: 36.0906, lng: 28.0906 },
+      ],
+      notes: "Lindos and its hilltop Acropolis of Lindos (2 days), overlooking the town's bay.",
+      transport_to_next: "Drive on to the island's southern tip, Prasonisi.",
+    },
+    {
+      code: 'GR', name: 'Greece', days: 2, budget: 120, lat: 35.8833, lng: 27.7333,
+      destinations: [
+        { name: 'Prasonisi (windsurfing point)', lat: 35.8833, lng: 27.7333 },
+      ],
+      notes: "Prasonisi (1-2 days) — a windsurfing/kitesurfing point at the island's southern tip, where the Aegean and Mediterranean meet, to close the trip.",
+      transport_to_next: 'End of this route — return flight from Rhodes to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Single-island stay, rental car useful for Lindos/Prasonisi — Rhodes Old Town, Lindos, Prasonisi.',
+    climate_summary: 'May-October.',
+    description: 'Rhodes Old Town and the Palace of the Grand Master, Lindos and its Acropolis, and Prasonisi.',
+    notes: "Built (2026-08) as part of Phase 2 batch 14d/21 (Islands: Greek islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. No pre-existing Route Builder route covers Rhodes as a standalone single-island trip — Rhodes only otherwise appears bundled into the Turkey + Greece Aegean/Dodecanese route (a ferry-hop combo with the Turkish coast, Kos and Rhodes together), a different scope entirely. Genuinely new ground for Route Builder as a standalone destination, not a granular slice of an existing route. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCycladesRoute() {
+  return rbBuildFlatSeedRoute('Cyclades (5-7 days) 🏝️', [
+    {
+      code: 'GR', name: 'Greece', days: 2, budget: 150, lat: 36.4167, lng: 25.4325,
+      destinations: [
+        { name: 'Santorini (Fira)', lat: 36.4167, lng: 25.4325 },
+        { name: 'Oia', lat: 36.4614, lng: 25.3753 },
+      ],
+      notes: "Entry: direct flight Amsterdam-Santorini (seasonal) or via a connection through Athens. Santorini (2-3 days) — Fira and Oia's caldera views. Budget ~€60-75/day average across the route, Santorini pricier than Naxos/Paros (used here at ~€70-75/day). Season: May-September, peak July-August; June/September better for heat and crowds. ⚠️ Web check (2026-08): Santorini's cruise-passenger cap of 8,000/day (since 2025) is enforced more strictly in 2026 — now calculated on 100% ship capacity instead of 80% — plus a €20 peak-season (April-October) per-person fee for disembarking cruise passengers. Travel advisory: yellow since 4 August 2026 for wildfires (nationwide); Santorini itself isn't individually named.",
+      transport_to_next: 'Ferry to Naxos.',
+    },
+    {
+      code: 'GR', name: 'Greece', days: 2, budget: 130, lat: 37.1055, lng: 25.3764,
+      destinations: [
+        { name: 'Naxos (Chora)', lat: 37.1055, lng: 25.3764 },
+        { name: 'Portara', lat: 37.1122, lng: 25.3742 },
+      ],
+      notes: "Naxos (2 days) — Chora and the Portara, plus the island's beaches, noticeably calmer and cheaper than Santorini.",
+      transport_to_next: 'Ferry to Paros.',
+    },
+    {
+      code: 'GR', name: 'Greece', days: 2, budget: 130, lat: 37.0844, lng: 25.1489,
+      destinations: [
+        { name: 'Paros (Parikia)', lat: 37.0844, lng: 25.1489 },
+        { name: 'Naoussa', lat: 37.1256, lng: 25.2367 },
+      ],
+      notes: "Paros (2 days) — Parikia and Naoussa. ⚠️⚠️ Web check (2026-08): Paros had a wildfire in late July 2026 (~250 hectares, evacuations) — a short incident, reported under control by mid-August 2026, but the Meltemi wind raises fire risk across the Cyclades generally, so re-check the situation right before departure.",
+      transport_to_next: 'End of this route — ferry back to Santorini/Athens (Piraeus), then flight to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Ferry-hopping through the Cyclades — Santorini, Naxos, Paros.',
+    climate_summary: 'May-September, peak July-August; June/September better for heat and crowds.',
+    description: 'Island-hopping through the Cyclades: Santorini, Naxos and Paros.',
+    notes: "Built (2026-08) as part of Phase 2 batch 14d/21 (Islands: Greek islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️ Real overlap: Route Builder already has 'Greek Islands: Paros, Naxos & Santorini (9 days) 🏖️' (built in batch 10/21, Athens + the same three islands, 9 days at ~€125/day). Built anyway per the source list since EUROPA_TRIP_IDEAS.md carries this as its own separate 5-7 day item — flagged here for review, not merged. The difference is this route drops the Athens leg and runs shorter (5-7 vs. 9 days) at a lower daily budget, but the three islands themselves are identical. Deliberately given a distinct function name rather than reusing rbBuildGreekIslandsParosNaxosSantoriniRoute, per this project's established collision-resolution pattern (see Svalbard (Longyearbyen) (6 days) 🌌 vs. the pre-existing Svalbard 🐻‍❄️ for the precedent). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildIonianIslandsRoute() {
+  return rbBuildFlatSeedRoute('Ionian Islands (5-7 days) 🏝️', [
+    {
+      code: 'GR', name: 'Greece', days: 3, budget: 195, lat: 38.1756, lng: 20.4881,
+      destinations: [
+        { name: 'Argostoli (Kefalonia)', lat: 38.1756, lng: 20.4881 },
+        { name: 'Melissani Cave', lat: 38.2531, lng: 20.6167 },
+        { name: 'Myrtos Beach', lat: 38.3167, lng: 20.4333 },
+      ],
+      notes: "Entry: flight to Kefalonia (seasonal charter/low-cost carriers from Amsterdam in summer) or a mainland ferry from Kyllini (Peloponnese) — deliberately no Corfu link on this route, see below. Kefalonia (3 days): the Melissani Cave and Myrtos Beach. Budget ~€55-70/day average across the route (used here at ~€65/day). Season: May-October. Route note: this deliberately excludes Corfu — there's currently no direct Corfu-Zakynthos ferry, and the full island chain Corfu-Paxos-Lefkada-Meganisi-Ithaca-Kefalonia-Zakynthos takes 12-13 hours of sailing time, not realistic within a 5-7 day trip; both islands here are reachable via the mainland ferry from Kyllini instead, no Corfu connection needed. ⚠️ Web check (2026-08): Kefalonia was not named in the wildfire sources consulted as of August 2026 — less acute than Corfu/Crete/Paros this season, though the general yellow Greece-wide wildfire advisory (since 4 August 2026) still applies.",
+      transport_to_next: 'Ferry from Kefalonia (or via the mainland at Kyllini, Peloponnese) to Zakynthos.',
+    },
+    {
+      code: 'GR', name: 'Greece', days: 3, budget: 195, lat: 37.7870, lng: 20.8995,
+      destinations: [
+        { name: 'Zakynthos Town', lat: 37.7870, lng: 20.8995 },
+        { name: 'Navagio (Shipwreck Beach)', lat: 37.8595, lng: 20.6247 },
+        { name: 'Blue Caves', lat: 37.9128, lng: 20.7261 },
+      ],
+      notes: "Zakynthos (3 days): Navagio/Shipwreck Beach and the Blue Caves. Same wildfire-advisory note as Kefalonia above — neither island was named in the sources consulted as of August 2026.",
+      transport_to_next: 'End of this route — mainland ferry back via Kyllini, or a flight from Zakynthos to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Mainland ferry from Kyllini (Peloponnese) links the two islands — no Corfu connection, no rental car strictly required but useful on each island.',
+    climate_summary: 'May-October.',
+    description: 'Kefalonia (Melissani Cave, Myrtos Beach) and Zakynthos (Navagio/Shipwreck Beach, Blue Caves), linked via the mainland rather than through Corfu.',
+    notes: "Built (2026-08) as part of Phase 2 batch 14d/21 (Islands: Greek islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. No pre-existing Route Builder route covers Kefalonia or Zakynthos at all, standalone or otherwise. Genuinely new ground for Route Builder. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCreteRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Crete Roadtrip (7-10 days) 🏝️', [
+    {
+      code: 'GR', name: 'Greece', days: 2, budget: 140, lat: 35.5138, lng: 24.0180,
+      destinations: [
+        { name: 'Chania Old Town', lat: 35.5138, lng: 24.0180 },
+        { name: 'Chania Venetian Harbour', lat: 35.5158, lng: 24.0203 },
+      ],
+      notes: "Entry: direct flight Amsterdam-Chania or Amsterdam-Heraklion (seasonal, various carriers). Rental car essential for the whole loop. Chania's old town and Venetian harbour (2 days). Budget ~€60-75/day including the rental car (used here at ~€65-70/day). Season: April-October. ⚠️⚠️ Note: Route Builder already has Crete content bundled inside 'Greece & Crete 🫒' (Mediterranean Civilizations) — built anyway per the source list since this is a standalone Crete-only trip, not a Greece+Crete combo; flagged for review, not merged. See this route's overall notes below for the full detail on the overlap.",
+      transport_to_next: 'Short drive east along the coast to Rethymno.',
+    },
+    {
+      code: 'GR', name: 'Greece', days: 1, budget: 70, lat: 35.3667, lng: 24.4833,
+      destinations: [
+        { name: 'Rethymno Old Town', lat: 35.3667, lng: 24.4833 },
+      ],
+      notes: 'Rethymno\'s old town (1 day) — a quieter stop on the drive between Chania and Heraklion.',
+      transport_to_next: 'Drive on east to Heraklion and Knossos.',
+    },
+    {
+      code: 'GR', name: 'Greece', days: 2, budget: 140, lat: 35.3387, lng: 25.1442,
+      destinations: [
+        { name: 'Heraklion', lat: 35.3387, lng: 25.1442 },
+        { name: 'Knossos', lat: 35.2977, lng: 25.1628 },
+      ],
+      notes: 'Heraklion and the Minoan palace of Knossos (2 days) — the same sites the mainland-plus-Crete route above also covers, but as part of a standalone Crete-only loop here.',
+      transport_to_next: 'Drive south to the Libyan Sea coast (Matala/Plakias).',
+    },
+    {
+      code: 'GR', name: 'Greece', days: 2, budget: 140, lat: 34.9967, lng: 24.7500,
+      destinations: [
+        { name: 'Matala', lat: 34.9967, lng: 24.7500 },
+        { name: 'Plakias', lat: 35.1900, lng: 24.4067 },
+      ],
+      notes: "The south coast on the Libyan Sea — Matala (former hippie caves) and Plakias (2 days). ⚠️⚠️ Web check (2026-08): Crete had confirmed evacuations on 30 July 2026, with large fires destroying farmland and olive groves — one of the season's hardest-hit areas alongside Corfu. Possible road closures; re-check the situation right before departure, this is an active-incident note, not a resolved one.",
+      transport_to_next: 'Optional inland detour to the Samaria Gorge before closing the loop.',
+    },
+    {
+      code: 'GR', name: 'Greece', days: 2, budget: 140, lat: 35.3167, lng: 23.9500,
+      destinations: [
+        { name: 'Samaria Gorge', lat: 35.3167, lng: 23.9500 },
+      ],
+      notes: 'Optional extension: a hike through the Samaria Gorge (2 days, allowing for an early start and the return transfer). Typically open mid-May-October, weather-dependent.',
+      transport_to_next: 'End of this route — return flight from Chania or Heraklion to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Rental car essential for the full Crete loop — Chania, Rethymno, Heraklion/Knossos, the south coast (Matala/Plakias), optionally the Samaria Gorge.',
+    climate_summary: 'April-October; the Samaria Gorge is typically open mid-May-October, weather-dependent.',
+    description: 'A full Crete roadtrip: Chania, Rethymno, Heraklion/Knossos, the south coast (Matala/Plakias), and optionally the Samaria Gorge.',
+    notes: "Built (2026-08) as part of Phase 2 batch 14d/21 (Islands: Greek islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️ Real overlap, explicitly flagged: Route Builder already has Crete content bundled inside 'Greece & Crete 🫒' (Mediterranean Civilizations Expedition split, 19 days total — 12 days mainland Greece plus 7 days Crete covering Heraklion, Knossos, Chania and the Samaria Gorge). Even though EUROPA_TRIP_IDEAS.md's own intro note for this section claims Crete 'never got its own item' in its own batch 10 section, that claim doesn't account for this pre-existing route, which does already cover Crete substantially — just bundled with 12 days of mainland Greece, not as a standalone Crete-only trip. Built anyway per the source list since this is a standalone Crete-only trip (Chania, Rethymno, Heraklion/Knossos, Matala/Plakias, optional Samaria Gorge), not a Greece+Crete combo — flagged for review, not merged. Deliberately given a distinct function name (rbBuildCreteRoadtripRoute) rather than reusing rbBuildGreeceCreteRoute, per this project's established collision-resolution pattern (see Svalbard (Longyearbyen) (6 days) 🌌 vs. the pre-existing Svalbard 🐻‍❄️, or Sardinia Roadtrip (7-10 days) 🏝️ vs. Sardinia (9 days) ⛵, for the precedent). The pre-existing Greece & Crete 🫒 route itself is untouched, not renamed, not modified. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCycladesIslandHoppingRoute() {
+  return rbBuildFlatSeedRoute('Cyclades Island Hopping (7-10 days) 🏝️', [
+    {
+      code: 'GR', name: 'Greece', days: 2, budget: 150, lat: 36.4167, lng: 25.4325,
+      destinations: [
+        { name: 'Santorini (Fira)', lat: 36.4167, lng: 25.4325 },
+        { name: 'Oia', lat: 36.4614, lng: 25.3753 },
+      ],
+      notes: "Entry: direct flight Amsterdam-Santorini (seasonal) or via a connection through Athens. Santorini (2 days) to start — same cruise-cap and pricing notes as the shorter Cyclades route apply here too. Budget ~€55-70/day average across the route, Milos/Folegandros noticeably cheaper than Santorini (used here at ~€70-75/day on Santorini, tapering down later in the route). Season: May-September, peak July-August. ⚠️ Web check (2026-08): Santorini's cruise-passenger cap of 8,000/day (since 2025) is enforced more strictly in 2026 (now calculated on 100% ship capacity instead of 80%), plus a €20 peak-season (April-October) per-person fee for disembarking cruise passengers.",
+      transport_to_next: 'Ferry to Ios.',
+    },
+    {
+      code: 'GR', name: 'Greece', days: 2, budget: 130, lat: 36.7167, lng: 25.2833,
+      destinations: [
+        { name: 'Ios (Chora)', lat: 36.7167, lng: 25.2833 },
+        { name: 'Mylopotas Beach', lat: 36.7000, lng: 25.2833 },
+      ],
+      notes: 'Ios (1-2 days) — quieter and more laid-back than Santorini.',
+      transport_to_next: 'Ferry to Naxos.',
+    },
+    {
+      code: 'GR', name: 'Greece', days: 2, budget: 130, lat: 37.1055, lng: 25.3764,
+      destinations: [
+        { name: 'Naxos (Chora)', lat: 37.1055, lng: 25.3764 },
+        { name: 'Portara', lat: 37.1122, lng: 25.3742 },
+      ],
+      notes: 'Naxos (2 days) — the same stop as on the shorter Cyclades route above.',
+      transport_to_next: 'Ferry to Paros.',
+    },
+    {
+      code: 'GR', name: 'Greece', days: 1, budget: 65, lat: 37.0844, lng: 25.1489,
+      destinations: [
+        { name: 'Paros (Parikia)', lat: 37.0844, lng: 25.1489 },
+        { name: 'Naoussa', lat: 37.1256, lng: 25.2367 },
+      ],
+      notes: "Paros (1-2 days). ⚠️⚠️ Web check (2026-08): the same Paros wildfire incident noted on the shorter Cyclades route applies here too — a late-July 2026 fire (~250 hectares, evacuations), reported under control by mid-August 2026, with the Meltemi wind keeping fire risk elevated across the Cyclades generally; re-check right before departure.",
+      transport_to_next: 'Ferry on to Milos (or Folegandros as an alternative).',
+    },
+    {
+      code: 'GR', name: 'Greece', days: 2, budget: 110, lat: 36.7275, lng: 24.4306,
+      destinations: [
+        { name: 'Adamas (Milos)', lat: 36.7275, lng: 24.4306 },
+        { name: 'Sarakiniko Beach', lat: 36.7128, lng: 24.4650 },
+      ],
+      notes: "Milos (2 days) — or Folegandros (Chora, 36.6167/24.9167) as an alternative — both more remote and quieter than the main Santorini-Naxos-Paros route, and cheaper than Santorini. ⚠️ Web check (2026-08): ferry connections to Milos/Folegandros are less frequent than the main Cyclades route — check the schedule ahead of time.",
+      transport_to_next: 'End of this route — ferry back via Santorini/Piraeus, then flight from Athens to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: "Ferry-hopping through the Cyclades, adding the more remote/quieter islands — Santorini, Ios, Naxos, Paros, and Milos or Folegandros.",
+    climate_summary: 'May-September, peak July-August.',
+    description: "Island-hopping through the Cyclades with a quieter twist: Santorini, Ios, Naxos, Paros, and Milos or Folegandros.",
+    notes: "Built (2026-08) as part of Phase 2 batch 14d/21 (Islands: Greek islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️ Partial overlap, explicitly flagged: Route Builder already has 'Greek Islands: Paros, Naxos & Santorini (9 days) 🏖️' (batch 10/21) and, from this same batch, Cyclades (5-7 days) 🏝️ above — both share the Santorini/Naxos/Paros core. This route differs by adding Ios and Milos/Folegandros (deliberately more remote/off-the-beaten-path islands, per EUROPA_TRIP_IDEAS.md's own differentiator note) and dropping Athens — a genuinely different itinerary shape, not a silent duplicate, hence flagged rather than merged. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaGreekIslandsRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_GREEK_ISLANDS)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_GREEK_ISLANDS, '1');
+
+  rbRoutes.push(
+    rbBuildCorfuRoute(),
+    rbBuildRhodesRoute(),
+    rbBuildCycladesRoute(),
+    rbBuildIonianIslandsRoute(),
+    rbBuildCreteRoadtripRoute(),
+    rbBuildCycladesIslandHoppingRoute(),
+  );
+  rbSave();
+}
