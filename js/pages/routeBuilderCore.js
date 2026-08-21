@@ -107,6 +107,7 @@ const RB_SEED_FLAG_KEY_EUROPA_NORWAY_SWEDEN = 'atlas_grand_trips_seeded_europa_n
 const RB_SEED_FLAG_KEY_EUROPA_DENMARK_FINLAND = 'atlas_grand_trips_seeded_europa_denmark_finland_v1';
 const RB_SEED_FLAG_KEY_EUROPA_FAROE_ICELAND = 'atlas_grand_trips_seeded_europa_faroe_iceland_v1';
 const RB_SEED_FLAG_KEY_EUROPA_IRELAND_SCOTLAND = 'atlas_grand_trips_seeded_europa_ireland_scotland_v1';
+const RB_SEED_FLAG_KEY_EUROPA_ENGLAND_WALES_NIRELAND = 'atlas_grand_trips_seeded_europa_england_wales_nireland_v1';
 const RB_BLOCK_COLORS =['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';

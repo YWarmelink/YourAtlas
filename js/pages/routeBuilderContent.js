@@ -16756,3 +16756,171 @@ function rbSeedEuropaIrelandScotlandRoutes() {
   );
   rbSave();
 }
+
+/**
+ * Phase 2 batch 12b (England + Wales + Northern Ireland) — converts EUROPA_TRIP_IDEAS.md's
+ * "🇬🇧 Engeland + Wales + Noord-Ierland" section (lines 2086-2113) into Route Builder content.
+ * This closes out batch 12/21 (batch 12a, Ireland + Scotland, landed separately just before this).
+ *
+ * Collision check (done before writing any of this, per the batch brief): this codebase already
+ * has a standalone 'England, Wales & Isle of Man 🎩' route (rbBuildEnglandWalesIoMRoute, 38 days:
+ * Kent/London/Cotswolds/Bath/Jurassic Coast, then Cornwall, then Pembrokeshire/Brecon Beacons/
+ * Snowdonia/Conwy, then the Lake District with an Isle of Man side trip, then Yorkshire/
+ * Northumberland) and a standalone 'Scotland & Northern Ireland 🥃' route
+ * (rbBuildScotlandNorthernIrelandRoute) whose second leg already covers Belfast/Giant's Causeway/
+ * Causeway Coastal Route/Dark Hedges (5 days) — both split off British Isles & Celtic Coast
+ * Expedition 🍀 in Phase 1's combo batch. Neither is touched here. The two new routes below that
+ * most closely resemble those existing routes ('Northern Ireland' vs. the NI leg of 'Scotland &
+ * Northern Ireland 🥃', and the closing 'England + Wales + Northern Ireland Roadtrip' vs. the full
+ * 'England, Wales & Isle of Man 🎩' loop) carry an explicit cross-reference in their notes
+ * explaining they are the shorter, realistic Trip Ideas version, not a duplicate — matching the
+ * pattern already used for Ireland Complete/Scotland Extended in batch 12a. The three narrower
+ * routes (London, Cotswolds+Bath+Southwest England, Wales) don't rise to the same collision risk
+ * and are differentiated against their own sibling (the roadtrip) instead.
+ *
+ * Row 381 (the roadtrip) is modeled as two GB blocks, not three: the source itinerary's
+ * Holyhead-Dublin ferry only lands in Dublin (Republic of Ireland) as a same-day transit en route
+ * to the Northern Ireland border by road — there is no actual stop in the Republic, so no IE block
+ * is added. Both destination blocks (England+Wales, then Northern Ireland) are GB territory.
+ */
+function rbBuildLondonRoute() {
+  return rbBuildFlatSeedRoute('London (3-4 days) 🎡', [
+    {
+      code: 'GB', name: 'United Kingdom', days: 4, budget: 380, lat: 51.5074, lng: -0.1278,
+      destinations: [
+        { name: 'British Museum', lat: 51.5194, lng: -0.1270 },
+        { name: 'Tower of London', lat: 51.5081, lng: -0.0759 },
+        { name: 'Camden Market', lat: 51.5390, lng: -0.1426 },
+        { name: 'Westminster (Big Ben / Houses of Parliament)', lat: 51.4995, lng: -0.1248 },
+        { name: 'Greenwich (Royal Observatory / Cutty Sark)', lat: 51.4769, lng: -0.0005 },
+      ],
+      notes: "Entry: direct flight Amsterdam-London (KLM/easyJet/British Airways, ±1h15-1h30). A compact city break: the British Museum, the Tower of London, a look at Camden, the Westminster landmarks, and a day out to Greenwich. Budget ~£75-90/day (~€88-105). Season: year-round, May-September is prettiest. Web check (2026-08): the UK ETA is mandatory in advance (~€23, valid 2 years, also covers Northern Ireland/Isle of Man/Jersey/Guernsey); many of London's major museums (including the British Museum) are free to enter; Oyster or a contactless card covers the Underground/buses/DLR. Travel advisory: green, though the UK carries a 'severe' (4/5) terrorism threat level — routine city-break precautions, nothing route-specific. Exchange rate used: 1 GBP ≈ 1.17 EUR (August 2026).",
+      transport_to_next: 'End of this route — fly home from London.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'City trip entirely on foot and public transport (Oyster/contactless) — no rental car needed.',
+    climate_summary: 'Year-round; May-September gives the mildest, driest weather.',
+    description: 'British Museum, Tower of London, Camden, Westminster and Greenwich.',
+    notes: "Built (2026-08) as part of Phase 2 batch 12b (British Isles: England + Wales + Northern Ireland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 12/21. A compact London-only city break, deliberately narrower than the England + Wales + Northern Ireland Roadtrip below, which also opens in London but continues on. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCotswoldsBathSouthwestEnglandRoute() {
+  return rbBuildFlatSeedRoute('Cotswolds + Bath + Southwest England (5-7 days) 🛁', [
+    {
+      code: 'GB', name: 'United Kingdom', days: 6, budget: 540, lat: 51.3811, lng: -2.3590,
+      destinations: [
+        { name: 'Bath (Roman Baths)', lat: 51.3811, lng: -2.3590 },
+        { name: 'Bourton-on-the-Water', lat: 51.8767, lng: -1.7546 },
+        { name: 'Bibury', lat: 51.8115, lng: -1.8371 },
+        { name: 'Stonehenge', lat: 51.1789, lng: -1.8262 },
+        { name: 'Bristol (optional add-on)', lat: 51.4545, lng: -2.5879 },
+        { name: 'Cornwall coast (optional extension)', lat: 50.2110, lng: -5.4800 },
+      ],
+      notes: "Entry: fly into London or Bristol, then a rental car (public transport is limited around the Cotswolds villages). Bath's Roman Baths, the Cotswolds villages of Bourton-on-the-Water and Bibury, Stonehenge, with Bristol or a Cornwall coast add-on left optional. Budget ~£65-85/day (~€76-100). Season: May-September overall, though the Cotswolds themselves are also lovely in spring/autumn. Web check (2026-08): the Roman Baths run timed-entry, ~£28; Stonehenge (English Heritage) should be booked ahead of arrival. Exchange rate used: 1 GBP ≈ 1.17 EUR (August 2026).",
+      transport_to_next: 'End of this route — fly home from Bristol or London.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Rental car around Bath, the Cotswolds and Stonehenge, with Bristol/Cornwall left as an optional add-on.',
+    climate_summary: 'May-September overall; the Cotswolds are also attractive in spring and autumn, outside the summer peak.',
+    description: "Bath's Roman Baths, the Cotswolds villages (Bourton-on-the-Water, Bibury), Stonehenge, and an optional Bristol or Cornwall coast extension.",
+    notes: "Built (2026-08) as part of Phase 2 batch 12b (British Isles: England + Wales + Northern Ireland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 12/21. A compact Bath/Cotswolds-focused trip, deliberately narrower than the England + Wales + Northern Ireland Roadtrip below, which also passes through Bath/the Cotswolds but continues on into Wales and Northern Ireland. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildWalesRoute() {
+  return rbBuildFlatSeedRoute('Wales (Snowdonia + Coast) (5-7 days) 🐉', [
+    {
+      code: 'GB', name: 'United Kingdom', days: 6, budget: 510, lat: 53.0685, lng: -4.0763,
+      destinations: [
+        { name: 'Snowdon / Yr Wyddfa summit', lat: 53.0685, lng: -4.0763 },
+        { name: 'Llanberis (Snowdon Mountain Railway)', lat: 53.1198, lng: -4.1258 },
+        { name: 'Conwy Castle', lat: 53.2799, lng: -3.8278 },
+        { name: 'Caernarfon Castle', lat: 53.1390, lng: -4.2758 },
+        { name: 'Pembrokeshire Coast Path', lat: 51.6214, lng: -5.0246 },
+      ],
+      notes: "Entry: fly Amsterdam-Manchester (KLM/easyJet, ±1h15), then a rental car (public transport is limited around Snowdonia). Snowdonia/Yr Wyddfa, ideally including the Snowdon Mountain Railway from Llanberis, the castles at Conwy and Caernarfon, and the Pembrokeshire coast further south. Budget ~£60-80/day (~€70-94). Season: the Snowdon Mountain Railway (diesel) runs late March-25 October 2026 and is closed in winter (ice) — May-September is the best window. Web check (2026-08): return train tickets run ~£45-62, book ahead in summer; the Holyhead-Dublin ferry (~€27, 3-3.5h, up to 8x/day) exists as a transit option onward, e.g. into the roadtrip version below. Exchange rate used: 1 GBP ≈ 1.17 EUR (August 2026).",
+      transport_to_next: 'End of this route — fly home from Manchester or Liverpool.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Rental car around Snowdonia and the coast, with the Snowdon Mountain Railway as a highlight.',
+    climate_summary: 'May-September is the best window — the Snowdon Mountain Railway is closed in winter due to ice, and only runs late March-25 October 2026.',
+    description: 'Snowdonia/Yr Wyddfa (Snowdon Mountain Railway), Conwy and Caernarfon castles, and the Pembrokeshire coast.',
+    notes: "Built (2026-08) as part of Phase 2 batch 12b (British Isles: England + Wales + Northern Ireland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 12/21. A Wales-only trip, deliberately narrower than the England + Wales + Northern Ireland Roadtrip below, which also covers Snowdonia/the Welsh coast but continues on to Northern Ireland via the Holyhead-Dublin ferry. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildNorthernIrelandRoute() {
+  return rbBuildFlatSeedRoute('Northern Ireland (5-7 days) 🌉', [
+    {
+      code: 'GB', name: 'United Kingdom', days: 6, budget: 510, lat: 54.5973, lng: -5.9301,
+      destinations: [
+        { name: 'Belfast (Titanic Belfast)', lat: 54.6079, lng: -5.9099 },
+        { name: 'Belfast murals (Falls Road / Shankill Road)', lat: 54.5964, lng: -5.9450 },
+        { name: "Giant's Causeway", lat: 55.2408, lng: -6.5116 },
+        { name: 'Carrick-a-Rede Rope Bridge', lat: 55.2396, lng: -6.3419 },
+        { name: 'Antrim Coast / Causeway Coastal Route', lat: 55.2000, lng: -6.3000 },
+      ],
+      notes: "Entry: direct flight Amsterdam-Belfast (easyJet into Belfast International, KLM into Belfast City; ±1h28-1h40), then a rental car. Belfast (Titanic Belfast, the political murals), the Giant's Causeway, Carrick-a-Rede, and the Antrim Coast. Budget ~£60-80/day (~€70-94). Season: May-September, with nice autumn colours along the coast too. Web check (2026-08): Giant's Causeway entry is £9 (National Trust, includes parking) with a temporary VAT reduction in place until 1 September 2026 — the coastal path itself is free either way; a UK ETA is still required even when crossing into Northern Ireland via the Republic of Ireland border, since there's no checkpoint on the road itself. Exchange rate used: 1 GBP ≈ 1.17 EUR (August 2026).\n\nDistinct from the existing 'Scotland & Northern Ireland 🥃' route (split off from British Isles & Celtic Coast Expedition 🍀), whose second leg already covers Belfast and the Giant's Causeway as a compact 5-day tail end of a 27-day Scotland+NI route. This route is the shorter, standalone Trip Ideas version — Northern Ireland only, with more time and more stops (Carrick-a-Rede, the Belfast murals, the full Antrim Coast) than that leg alone gets — not a duplicate; 'Scotland & Northern Ireland 🥃' itself is untouched.",
+      transport_to_next: "End of this route — return the car in Belfast, then fly home (easyJet from Belfast International, KLM from Belfast City).",
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Rental car around Belfast and the Antrim Coast.',
+    climate_summary: 'May-September for the best weather, with attractive autumn colour along the coast as a secondary option.',
+    description: "Belfast (Titanic Belfast, murals), the Giant's Causeway, Carrick-a-Rede, and the Antrim Coast.",
+    notes: "Built (2026-08) as part of Phase 2 batch 12b (British Isles: England + Wales + Northern Ireland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 12/21. Deliberately distinguished from the existing 'Scotland & Northern Ireland 🥃' route's Belfast/Giant's Causeway leg (see the collision note in this route's own notes above) with a distinct name and no shared function; that route is left untouched. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildEnglandWalesNorthernIrelandRoadtripRoute() {
+  return rbBuildFlatSeedRoute('England + Wales + Northern Ireland Roadtrip (10-14 days) 🛣️', [
+    {
+      code: 'GB', name: 'United Kingdom', days: 8, budget: 720, lat: 51.5074, lng: -0.1278,
+      destinations: [
+        { name: 'London (British Museum)', lat: 51.5194, lng: -0.1270 },
+        { name: 'Bath (Roman Baths)', lat: 51.3811, lng: -2.3590 },
+        { name: 'Bourton-on-the-Water (Cotswolds)', lat: 51.8767, lng: -1.7546 },
+        { name: 'Snowdon / Yr Wyddfa (Snowdonia)', lat: 53.0685, lng: -4.0763 },
+        { name: 'Conwy Castle', lat: 53.2799, lng: -3.8278 },
+        { name: 'Holyhead (ferry port)', lat: 53.3094, lng: -4.6367 },
+      ],
+      notes: "Entry: bring the own car from the Netherlands via the Hook of Holland-Harwich ferry (Stena Line, ~€66, 6.5-9.5h, 2x/day), landing directly in England. London, then the Cotswolds and Bath, then west into Wales (Snowdonia and the coast), finishing at Holyhead for the ferry on. Budget ~£65-85/day average (~€76-100). Web check (2026-08): one UK ETA (~€23, valid 2 years) covers the whole trip including Northern Ireland; driving is on the left throughout. Exchange rate used: 1 GBP ≈ 1.17 EUR (August 2026).\n\nDistinct from the existing 'England, Wales & Isle of Man 🎩' route (split off from British Isles & Celtic Coast Expedition 🍀), a 38-day version covering Kent/London/Cotswolds/Bath/the Jurassic Coast, then Cornwall, then Pembrokeshire/the Brecon Beacons/Snowdonia/Conwy, then the Lake District with an Isle of Man side trip, then Yorkshire/Northumberland — ending with a flight home from Newcastle, no Northern Ireland leg at all. This route is the shorter, realistic Trip Ideas version restricted to England + Wales + Northern Ireland (no Cornwall, Lake District, Isle of Man or Yorkshire/Northumberland), continuing on into Northern Ireland instead of finishing in the north of England. 'England, Wales & Isle of Man 🎩' itself is untouched.",
+      transport_to_next: "Car to Holyhead, then the Holyhead-Dublin ferry (Stena Line/Irish Ferries, ~€27, 3-3.5h, up to 8x/day) landing in Dublin — a same-day transit only, with no stop in the Republic of Ireland, driving straight on to the Northern Ireland border and the Antrim Coast beyond it. (Dublin itself carries extra security in the second half of 2026 from Ireland's EU Council presidency, July-December 2026 — not relevant to a same-day drive-through.)",
+    },
+    {
+      code: 'GB', name: 'United Kingdom', days: 4, budget: 340, lat: 54.5973, lng: -5.9301,
+      destinations: [
+        { name: "Giant's Causeway", lat: 55.2408, lng: -6.5116 },
+        { name: 'Carrick-a-Rede Rope Bridge', lat: 55.2396, lng: -6.3419 },
+        { name: 'Antrim Coast / Causeway Coastal Route', lat: 55.2000, lng: -6.3000 },
+        { name: 'Belfast (Titanic Belfast)', lat: 54.6079, lng: -5.9099 },
+      ],
+      notes: "The Giant's Causeway, Carrick-a-Rede and the Antrim Coast, finishing back in Belfast. Budget ~£65-85/day average (~€76-100), in line with the rest of the trip. Web check (2026-08): Giant's Causeway entry is £9 (National Trust, includes parking) with a temporary VAT reduction in place until 1 September 2026; the same single UK ETA already covers this leg, no separate entry formality is needed crossing from the Republic of Ireland. This leg overlaps in content with the standalone 'Northern Ireland 🌉' route above and the Belfast/Giant's Causeway leg of 'Scotland & Northern Ireland 🥃' — both are left untouched; this is simply the tail end of one continuous England+Wales+Northern Ireland loop rather than a separate destination trip.",
+      transport_to_next: 'End of this route — return the car in Belfast, then either fly home from Belfast or ferry back toward the Netherlands.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Self-drive with the own car from the Netherlands (Hook of Holland-Harwich ferry) — a genuine England + Wales + Northern Ireland loop, using the Holyhead-Dublin ferry purely as a transit link with no stop in the Republic of Ireland.',
+    climate_summary: 'May-September for driving weather generally, and specifically for the Snowdon Mountain Railway season (late March-25 October 2026, closed in winter due to ice).',
+    description: "London, the Cotswolds and Bath, Wales (Snowdonia and the coast), then via the Holyhead-Dublin ferry (transit only) to the Antrim Coast, the Giant's Causeway and Belfast.",
+    notes: "Built (2026-08) as part of Phase 2 batch 12b (British Isles: England + Wales + Northern Ireland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 12/21. Modeled as two GB blocks (England+Wales, then Northern Ireland) rather than three, since the Holyhead-Dublin ferry only transits through Dublin (Republic of Ireland) en route to the Northern Ireland border by road, with no actual stop there — no IE block is added. See the collision notes on the first block (vs. 'England, Wales & Isle of Man 🎩') and the second block (vs. 'Northern Ireland 🌉' and 'Scotland & Northern Ireland 🥃') above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaEnglandWalesNorthernIrelandRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_ENGLAND_WALES_NIRELAND)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_ENGLAND_WALES_NIRELAND, '1');
+
+  rbRoutes.push(
+    rbBuildLondonRoute(),
+    rbBuildCotswoldsBathSouthwestEnglandRoute(),
+    rbBuildWalesRoute(),
+    rbBuildNorthernIrelandRoute(),
+    rbBuildEnglandWalesNorthernIrelandRoadtripRoute(),
+  );
+  rbSave();
+}
