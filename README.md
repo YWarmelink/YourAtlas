@@ -275,7 +275,7 @@ the source alone does nothing for an already-loaded browser — every batch need
 `rbMigrateXEnglish()` function behind a fresh flag, following whichever pattern (wholesale-replace vs.
 field-patch) that route's own prior migrations already used.
 
-**Status — 12 of 13 batches done.** All 5 dict-based families (#1-6, translated via the shared
+**Status — 13 of 13 batches done, Phase 1 complete.** All 5 dict-based families (#1-6, translated via the shared
 `RB_EXPEDITION_CONTENT` dict cascade) are done, plus five hand-authored families (#7, Mediterranean
 Civilizations; #9, British Isles & Celtic Coast; #10, Caribbean & Amazon; #11, West & Central
 Africa; #13, North America Grand Traverse) and the pilot batch (#8, Central European Grand
@@ -413,9 +413,9 @@ English against an already-all-English Route Builder.
 
 ### Phase 2 — convert `EUROPA_TRIP_IDEAS.md`'s 319 tagged items into real `rbBuildXRoute()` code
 
-Not started — waits on Phase 1 finishing so every new route is written in English against an
-already-all-English Route Builder, no translation step needed for these (author directly in
-English from `EUROPA_TRIP_IDEAS.md`'s Dutch source content, don't machine-translate the doc text).
+Started 2026-08-20, in progress — every new route is written directly in English from
+`EUROPA_TRIP_IDEAS.md`'s Dutch source content (no machine-translation step), against an
+already-all-English Route Builder (Phase 1 is done).
 
 Chosen approach (2026-08-18 decision): **full hand-authored, same depth as the 131 existing
 routes** — real per-destination coordinates (so the "🔍 Gedetailleerd" map view works on every new
@@ -425,11 +425,18 @@ version. Reuses the exact 21 sub-batch structure already proven for Trip Taxonom
 `CHANGELOG.md`'s "Recently fixed" section for that batch table; same batches apply here, now for
 code instead of tags.
 
+**Status — 5 of 21 sub-batches done (57 items), all local commits not yet pushed as of
+2026-08-20**: #1 Benelux (6 routes), #2 Duitsland/Germany (12), #3 Oostenrijk + Zwitserland/Austria
++ Switzerland (12), #4 Frankrijk/France (11), #5 Italië/Italy (16). Each batch also flips its rows'
+"In Route Builder?" No→Yes in `TRIP_DATABASE.csv` in a separate commit to keep the taxonomy in
+sync. Per-batch token costs from this run weren't captured before the session ended — treat the
+original 9,000-16,000/item estimate below as still unpiloted for a real number. No migrations
+needed for any Phase 2 batch (brand-new routes, nothing pre-existing to collide with). Next up:
+**#6 Micro-staten & kleine eilanden (~20 items)**.
+
 **Estimated cost**: ~9,000-16,000 tokens/item × 319 items ≈ **3-5M tokens total** — based on the
 `rbBuildJordanRoute()` example (fresh single-country build with real coordinates, no shared content
-to reuse, since these are new destinations never coded before). Not yet piloted for this specific
-task — run a small first batch (Baltische staten or Benelux, 6 items) to get a real number before
-trusting this estimate, same discipline as every other batch-cost estimate in this project.
+to reuse, since these are new destinations never coded before).
 
 **Per item**: read `EUROPA_TRIP_IDEAS.md`'s Dutch source (already has route/budget/season/webcheck
 detail, no fresh research needed), write an `rbBuildXRoute()` with real per-destination coordinates
