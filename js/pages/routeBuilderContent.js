@@ -15975,3 +15975,250 @@ function rbSeedEuropaNorwaySwedenRoutes() {
   );
   rbSave();
 }
+
+function rbBuildCopenhagenRoute() {
+  return rbBuildFlatSeedRoute('Copenhagen (4 days) 🧜‍♀️', [
+    {
+      code: 'DK', name: 'Denmark', days: 4, budget: 500, lat: 55.6761, lng: 12.5683,
+      destinations: [
+        { name: 'Nyhavn', lat: 55.6790, lng: 12.5910 },
+        { name: 'Tivoli Gardens', lat: 55.6736, lng: 12.5681 },
+        { name: 'Strøget', lat: 55.6787, lng: 12.5751 },
+        { name: 'Christiania', lat: 55.6736, lng: 12.5992 },
+        { name: 'Rosenborg Castle', lat: 55.6857, lng: 12.5775 },
+      ],
+      notes: "The colorful Nyhavn harbor, Tivoli Gardens, the Strøget shopping street, the freetown of Christiania, and Rosenborg Castle. Budget ~€110-140/day. Season: May-September; Tivoli Gardens closes during the shoulder season (roughly early January to late March) — check the 2026 calendar for its exact reopening date before planning a winter or early-spring trip. Web check (2026-08): work out whether a Copenhagen Card actually pays for itself against current 2026 museum/attraction prices before buying one — it depends heavily on how many paid sights you'll realistically fit into 4 days.",
+      transport_to_next: 'End of this route — fly home from Copenhagen.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'City trip on foot/metro/bike.',
+    climate_summary: 'May-September; Tivoli Gardens closed roughly early January-late March.',
+    description: 'Nyhavn, Tivoli Gardens, Strøget, Christiania, and Rosenborg Castle.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11b (Northern Europe: Denmark + Finland) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCopenhagenZealandRoute() {
+  return rbBuildFlatSeedRoute('Copenhagen + Zealand (5 days) 🖼️', [
+    {
+      code: 'DK', name: 'Denmark', days: 5, budget: 575, lat: 55.6761, lng: 12.5683,
+      destinations: [
+        { name: 'Copenhagen (Nyhavn)', lat: 55.6790, lng: 12.5910 },
+        { name: 'Roskilde (Viking Ship Museum)', lat: 55.6415, lng: 12.0803 },
+        { name: 'Louisiana Museum (Humlebæk)', lat: 55.9625, lng: 12.5385 },
+        { name: 'Møns Klint', lat: 54.9506, lng: 12.5382 },
+      ],
+      notes: "Copenhagen itself (2-3 days), then day trips: Roskilde's Viking Ship Museum by train, the Louisiana Museum of Modern Art in Humlebæk, and Møns Klint's chalk cliffs (needs a rental car, ~2h drive each way). Budget ~€100-130/day, plus €40-60 on the rental-car day. Web check (2026-08): Møns Klint is barely reachable by public transport, so the rental car for that day isn't optional; its visitor center and the stairs down to the beach can have seasonal maintenance closures — check before relying on the full route being open.",
+      transport_to_next: 'End of this route — fly home from Copenhagen.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Copenhagen on foot/metro, day trips by train (Roskilde, Louisiana) and rental car (Møns Klint).',
+    climate_summary: 'May-September.',
+    description: "Copenhagen plus day trips to Roskilde's Viking Ship Museum, the Louisiana Museum, and the chalk cliffs of Møns Klint.",
+    notes: "Built (2026-08) as part of Phase 2 batch 11b (Northern Europe: Denmark + Finland) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildDenmarkRoute() {
+  return rbBuildFlatSeedRoute('Denmark (6 days) 🧱', [
+    {
+      code: 'DK', name: 'Denmark', days: 6, budget: 690, lat: 55.6761, lng: 12.5683,
+      destinations: [
+        { name: 'Copenhagen (Nyhavn)', lat: 55.6790, lng: 12.5910 },
+        { name: 'Odense (H.C. Andersen House)', lat: 55.3959, lng: 10.3883 },
+        { name: 'LEGO House (Billund)', lat: 55.7308, lng: 9.1256 },
+        { name: 'Aarhus (ARoS Art Museum)', lat: 56.1496, lng: 10.2134 },
+      ],
+      notes: "The differentiator versus the shorter Copenhagen routes above: the whole country, including Jutland. Copenhagen (2-3 days), then Odense (H.C. Andersen's birthplace), the LEGO House in Billund, and optionally Aarhus (the ARoS art museum). Budget ~€100-130/day. Web check (2026-08): there's no direct train from Copenhagen to Billund — plan a Flixbus or a train+bus combination instead; the LEGO House uses timed-slot tickets, so book ahead rather than assuming walk-up entry.",
+      transport_to_next: 'End of this route — fly home from Copenhagen, or from Billund Airport if the schedule works out better from there.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Train/bus between Copenhagen, Odense and Jutland; Flixbus or train+bus for Copenhagen-Billund.',
+    climate_summary: 'May-September.',
+    description: 'Copenhagen, Odense, the LEGO House in Billund, and optionally Aarhus — the whole country including Jutland.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11b (Northern Europe: Denmark + Finland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — the whole-country differentiator versus the shorter Copenhagen-only routes above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildDenmarkSouthSwedenRoute() {
+  return rbBuildFlatSeedRoute('Denmark + South Sweden (9 days) 🌉', [
+    {
+      code: 'DK', name: 'Denmark', days: 5, budget: 575, lat: 55.6761, lng: 12.5683,
+      destinations: [
+        { name: 'Copenhagen (Nyhavn)', lat: 55.6790, lng: 12.5910 },
+        { name: 'Roskilde (Viking Ship Museum)', lat: 55.6415, lng: 12.0803 },
+        { name: 'Louisiana Museum (Humlebæk)', lat: 55.9625, lng: 12.5385 },
+      ],
+      notes: "Copenhagen (2-3 days) plus Zealand day trips (Roskilde's Viking Ship Museum, the Louisiana Museum). Budget ~€100-130/day.",
+      transport_to_next: 'The Öresund Bridge/train to Malmö (about 35 minutes), on into the Skåne region.',
+    },
+    {
+      code: 'SE', name: 'Sweden', days: 4, budget: 460, lat: 55.6050, lng: 13.0038,
+      destinations: [
+        { name: 'Malmö', lat: 55.6050, lng: 13.0038 },
+        { name: 'Lund', lat: 55.7047, lng: 13.1910 },
+        { name: 'Ystad', lat: 55.4295, lng: 13.8204 },
+        { name: 'Kivik', lat: 55.6817, lng: 14.2434 },
+      ],
+      notes: "Skåne (Lund, Ystad, Kivik/Österlen, 3-4 days) — same Malmö/Lund/Ystad/Kivik coordinates as the standalone South Sweden (Skåne) (9 days) 🪨 route above, since this covers the same region. Budget ~€100-130/day. Web check (2026-08): check just before departure whether Sweden's temporary ID checks on the Öresund crossing are currently active — these have been extended repeatedly since 2015, same caveat as noted on the Stockholm/Skåne routes above.",
+      transport_to_next: 'End of this route — fly home from Malmö or Copenhagen.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Copenhagen on foot/train, Öresund Bridge crossing, rental car around Skåne.',
+    climate_summary: 'May-September.',
+    description: 'Copenhagen and Zealand day trips, the Öresund Bridge to Malmö, and the Skåne region (Lund, Ystad, Kivik/Österlen).',
+    notes: "Built (2026-08) as part of Phase 2 batch 11b (Northern Europe: Denmark + Finland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a two-country route (Denmark + Sweden) reusing the exact Skåne coordinates from batch 11a's standalone South Sweden (Skåne) (9 days) 🪨 route. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildHelsinkiRoute() {
+  return rbBuildFlatSeedRoute('Helsinki (4 days) 🏛️', [
+    {
+      code: 'FI', name: 'Finland', days: 4, budget: 310, lat: 60.1699, lng: 24.9384,
+      destinations: [
+        { name: 'Helsinki (Senate Square)', lat: 60.1699, lng: 24.9384 },
+        { name: 'Suomenlinna', lat: 60.1454, lng: 24.9880 },
+        { name: 'Design District', lat: 60.1636, lng: 24.9402 },
+      ],
+      notes: "The city itself, the Suomenlinna sea fortress island, and the Design District. Budget ~€70-85/day. Season: May-September for light and terraces, or December for the Christmas market — winter is dark but atmospheric. Web check (2026-08): the Helsinki Card's price rose from 2025 to 2026, so check current rates before assuming it pays off; the Suomenlinna ferry is included in the HSL transit ticket, so no separate boat fare is needed.",
+      transport_to_next: 'End of this route — fly home from Helsinki.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'City trip on foot/tram, plus the HSL-included ferry to Suomenlinna.',
+    climate_summary: 'May-September for light and terraces; December for the Christmas market.',
+    description: 'Helsinki itself, the Suomenlinna sea fortress, and the Design District.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11b (Northern Europe: Denmark + Finland) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildHelsinkiLakeDistrictRoute() {
+  return rbBuildFlatSeedRoute('Helsinki + Lake District (6 days) 🛶', [
+    {
+      code: 'FI', name: 'Finland', days: 6, budget: 525, lat: 60.1699, lng: 24.9384,
+      destinations: [
+        { name: 'Helsinki (Senate Square)', lat: 60.1699, lng: 24.9384 },
+        { name: 'Lahti', lat: 60.9827, lng: 25.6612 },
+        { name: 'Savonlinna (Olavinlinna Castle)', lat: 61.8681, lng: 28.8783 },
+        { name: 'Lake Saimaa', lat: 61.6167, lng: 28.3833 },
+      ],
+      notes: "The differentiator versus Helsinki alone: adds Lahti/Savonlinna and Lake Saimaa. Helsinki, then Lahti/Savonlinna, Lake Saimaa, sauna and kayaking. Budget ~€80-95/day — the rental car or train plus lake activities push this above a plain city trip. Season: June-August is best for swimming and the white nights; Savonlinna's Olavinlinna Castle hosts an opera festival in July, when prices run higher. Web check (2026-08): VR train connections to the smaller lake-district towns are limited, so a rental car is often needed to actually reach Lake Saimaa's more remote spots.",
+      transport_to_next: 'End of this route — fly home from Helsinki.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Helsinki on foot/tram, then train or rental car out to the lake district.',
+    climate_summary: 'June-August best for swimming and white nights; July has higher opera-festival prices in Savonlinna.',
+    description: 'Helsinki plus Lahti/Savonlinna and Lake Saimaa, with sauna and kayaking.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11b (Northern Europe: Denmark + Finland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — the lake-district differentiator versus the plain Helsinki route above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSouthFinlandRoute() {
+  return rbBuildFlatSeedRoute('South Finland (9 days) 🧭', [
+    {
+      code: 'FI', name: 'Finland', days: 9, budget: 765, lat: 60.1699, lng: 24.9384,
+      destinations: [
+        { name: 'Helsinki (Senate Square)', lat: 60.1699, lng: 24.9384 },
+        { name: 'Turku Castle', lat: 60.4472, lng: 22.2333 },
+        { name: 'Turku Cathedral', lat: 60.4512, lng: 22.2745 },
+        { name: 'Porvoo', lat: 60.3932, lng: 25.6645 },
+        { name: 'Tampere', lat: 61.4978, lng: 23.7610 },
+      ],
+      notes: "The differentiator versus the shorter Helsinki routes above: a wider geographic scope — Helsinki, Turku, Porvoo and optionally Tampere, 3-4 cities instead of just one. Budget ~€80-90/day. Season: May-September. Web check (2026-08): Porvoo's old town is free to visit; Turku Castle and Turku Cathedral entry runs roughly €10-14 each.",
+      transport_to_next: 'End of this route — fly home from Helsinki.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Train between Helsinki, Turku, Porvoo and Tampere.',
+    climate_summary: 'May-September.',
+    description: 'Helsinki, Turku (castle and cathedral), Porvoo, and optionally Tampere.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11b (Northern Europe: Denmark + Finland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — the broader-geographic-scope differentiator versus the Helsinki-only routes above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildFinnishLaplandRoute() {
+  return rbBuildFlatSeedRoute('Finnish Lapland (9 days) 🎅', [
+    {
+      code: 'FI', name: 'Finland', days: 9, budget: 1080, lat: 66.5433, lng: 25.8464,
+      destinations: [
+        { name: 'Rovaniemi (Santa Claus Village)', lat: 66.5636, lng: 25.8471 },
+        { name: 'Levi (Kittilä)', lat: 67.8049, lng: 24.8090 },
+        { name: 'Ylläs (Äkäslompolo)', lat: 67.5667, lng: 24.2333 },
+      ],
+      notes: "Rovaniemi and the Santa Claus Village, plus Levi or Ylläs for aurora hunting or skiing. Budget ~€100-140/day — husky tours, snowmobiling and aurora tours are pricey add-ons, €80-150 per activity. Season: December-March for northern lights and snow, or June-July for the midnight sun; the mid-December Christmas period brings peak prices at Santa Claus Village. Web check (2026-08): Levi/Ylläs lift passes and accommodation during the February winter school holidays are much pricier — book well ahead of that window.",
+      transport_to_next: 'End of this route — fly home from Rovaniemi (or from Kittilä if flying out from the Levi/Ylläs side).',
+    },
+  ], {
+    best_starting_month: 'December',
+    travel_style: 'Based in Rovaniemi, then Levi or Ylläs — rental car or transfer between them.',
+    climate_summary: 'December-March for northern lights and snow; June-July for the midnight sun.',
+    description: 'Rovaniemi and the Santa Claus Village, plus Levi or Ylläs for aurora hunting, husky tours or skiing.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11b (Northern Europe: Denmark + Finland) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildFinlandRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Finland Roadtrip (12 days) 🛣️', [
+    {
+      code: 'FI', name: 'Finland', days: 12, budget: 1110, lat: 60.1699, lng: 24.9384,
+      destinations: [
+        { name: 'Helsinki (Senate Square)', lat: 60.1699, lng: 24.9384 },
+        { name: 'Turku', lat: 60.4518, lng: 22.2666 },
+        { name: 'Tampere', lat: 61.4978, lng: 23.7610 },
+        { name: 'Rovaniemi (Santa Claus Village)', lat: 66.5636, lng: 25.8471 },
+      ],
+      notes: "Helsinki, through South Finland, up into a Lapland loop — Helsinki-Turku-Tampere-Rovaniemi. Budget ~€85-100/day on average (car/fuel plus a mix of city and nature). Season: June-August, to cover the whole route without snow problems on the roads up north. Web check (2026-08): the distances are long (Helsinki-Rovaniemi is roughly 830km) — consider the VR night train with car transport instead of driving the whole way yourself.",
+      transport_to_next: 'End of this route — fly home from Rovaniemi, or take the VR night train (with the car) back to Helsinki before flying home.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Self-drive roadtrip, or the VR night train with car transport for the long Helsinki-Rovaniemi stretch.',
+    climate_summary: 'June-August, to avoid snow on the northern roads.',
+    description: 'Helsinki, Turku, Tampere and a loop up to Rovaniemi and Lapland.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11b (Northern Europe: Denmark + Finland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — the full South Finland-to-Lapland roadtrip version, distinct from the shorter South Finland and Finnish Lapland routes above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildAlandRoute() {
+  return rbBuildFlatSeedRoute('Åland (5 days) 🚲', [
+    {
+      code: 'FI', name: 'Finland', days: 5, budget: 410, lat: 60.0973, lng: 19.9348,
+      destinations: [
+        { name: 'Mariehamn', lat: 60.0973, lng: 19.9348 },
+        { name: 'Sund (Kastelholm Castle)', lat: 60.1922, lng: 20.0244 },
+      ],
+      notes: "Mariehamn plus cycling between the islands. Budget ~€75-90/day. Season: June-August, for cycling weather and more frequent ferry services. Web check (2026-08): Åland is Finnish/EU customs territory but excluded from the EU VAT/excise zone (a 'third territory' for indirect tax under the Åland Protocol) — duty-free sales onboard the ferries remain possible as a result, and this stays unchanged EU law in 2026. Swedish is the everyday language, but the currency is the euro, not Swedish kronor, since this is Finnish territory. Viking Line and Tallink Silja both run daily Stockholm-Mariehamn sailings (~5.5h on the direct route), plus a longer Helsinki/Turku-Mariehamn-Stockholm line.",
+      transport_to_next: 'End of this route — ferry onward to Stockholm, or back to Helsinki/Turku, depending on which way you started.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Ferry in, cycling between the islands.',
+    climate_summary: 'June-August for cycling weather and frequent ferries.',
+    description: 'Mariehamn and cycling around the Åland archipelago.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11b (Northern Europe: Denmark + Finland) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaDenmarkFinlandRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_DENMARK_FINLAND)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_DENMARK_FINLAND, '1');
+
+  rbRoutes.push(
+    rbBuildCopenhagenRoute(),
+    rbBuildCopenhagenZealandRoute(),
+    rbBuildDenmarkRoute(),
+    rbBuildDenmarkSouthSwedenRoute(),
+    rbBuildHelsinkiRoute(),
+    rbBuildHelsinkiLakeDistrictRoute(),
+    rbBuildSouthFinlandRoute(),
+    rbBuildFinnishLaplandRoute(),
+    rbBuildFinlandRoadtripRoute(),
+    rbBuildAlandRoute(),
+  );
+  rbSave();
+}
