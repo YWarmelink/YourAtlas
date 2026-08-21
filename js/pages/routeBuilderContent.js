@@ -12913,3 +12913,335 @@ function rbSeedEuropaAndorraPortugalRoutes() {
   );
   rbSave();
 }
+
+function rbBuildDubrovnikSurroundingsRoute() {
+  return rbBuildFlatSeedRoute('Dubrovnik + Surroundings (5 days) 🏛️', [
+    {
+      code: 'HR', name: 'Croatia', days: 5, budget: 875, lat: 42.6507, lng: 18.0944,
+      destinations: [
+        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
+        { name: 'Lokrum Island', lat: 42.6339, lng: 18.1181 },
+        { name: 'Elafiti Islands (Lopud)', lat: 42.6772, lng: 18.0044 },
+        { name: 'Cavtat', lat: 42.5806, lng: 18.2189 },
+        { name: 'Trsteno Arboretum', lat: 42.7069, lng: 17.9954 },
+      ],
+      notes: "Dubrovnik's old town (2 days) — a boat day to Lokrum and the Elafiti Islands (1 day) — Cavtat or the Trsteno Arboretum as a day trip (1 day) — optionally a day trip across the border to Kotor, Montenegro (1 day). Budget ~€150-200/day — Dubrovnik is clearly pricier than the rest of Croatia. Season: May-June/September for the best weather-crowd balance, July-August very busy and hot. Web check (2026-08): cruise-ship crowds in the old town peak around midday — book the city-walls ticket online ahead. Note: the optional Kotor day trip leaves Schengen entirely — since 10 April 2026 the EU's Entry/Exit System (EES) is fully operational, so that crossing now includes biometric registration (fingerprint + facial scan, 3-6 min/person) each way.",
+      transport_to_next: 'End of this route — fly home from Dubrovnik, or via Split/Zagreb with a connection.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Dubrovnik, city-based with boat and car day trips.',
+    climate_summary: 'May-June or September for the best weather-crowd balance; July-August is hot and very busy.',
+    description: "Dubrovnik's old town, a boat day to Lokrum and the Elafiti Islands, and day trips to Cavtat or the Trsteno Arboretum (with an optional Kotor, Montenegro add-on).",
+    notes: "Built (2026-08) as part of Phase 2 batch 8a (Balkan-cluster: Croatia + Slovenia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildIstriaRoute() {
+  return rbBuildFlatSeedRoute('Istria (6 days) 🍇', [
+    {
+      code: 'HR', name: 'Croatia', days: 6, budget: 690, lat: 44.8737, lng: 13.8467,
+      destinations: [
+        { name: 'Pula (Arena)', lat: 44.8737, lng: 13.8467 },
+        { name: 'Rovinj', lat: 45.0811, lng: 13.6387 },
+        { name: 'Poreč', lat: 45.2269, lng: 13.5950 },
+        { name: 'Motovun', lat: 45.3325, lng: 13.8347 },
+        { name: 'Grožnjan', lat: 45.3833, lng: 13.7250 },
+      ],
+      notes: "Pula (1-2 days, the Roman amphitheater) — Rovinj (2 days) — Poreč (1 day) — the inland hill towns of Motovun/Grožnjan (1-2 days). Budget ~€90-150/day (Rovinj at the top end, Pula somewhat cheaper). Season: May-June or September, July-August is full and warm. Web check (2026-08): the Rovinj-Pula bus/drive is ~1h, roughly €5; the Brijuni Islands are only accessible on a guided tour, not independently.",
+      transport_to_next: 'End of this route — fly home from Pula, or via Zagreb with a connection.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Fly into Pula, rental car for the coastal towns and the inland hill towns.',
+    climate_summary: 'May-June or September; July-August is full and warm.',
+    description: "Pula's Roman amphitheater, Rovinj and Poreč on the coast, and the inland hill towns of Motovun and Grožnjan.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8a (Balkan-cluster: Croatia + Slovenia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSplitIslandsRoute() {
+  return rbBuildFlatSeedRoute('Split + Islands (6 days) ⛵', [
+    {
+      code: 'HR', name: 'Croatia', days: 6, budget: 810, lat: 43.5081, lng: 16.4402,
+      destinations: [
+        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402 },
+        { name: 'Hvar Town', lat: 43.1729, lng: 16.4413 },
+        { name: 'Brač / Zlatni Rat', lat: 43.2564, lng: 16.6386 },
+        { name: 'Vis (optional)', lat: 43.0611, lng: 16.1811 },
+      ],
+      notes: "Split's old town/Diocletian's Palace (2 days) — Hvar (2 days) — Brač/Zlatni Rat beach (1 day) — optionally Vis (1-2 days, further out and quieter). Budget ~€120-150/day. Season: June or September is ideal, July-August is peak crowding on Hvar. Web check (2026-08): the Split-Hvar catamaran is ~1h, €6-25 depending on operator/season; a direct Split-Bol (Brač) transfer costs roughly €48 return, while a standalone ferry crossing is cheaper.",
+      transport_to_next: 'End of this route — fly home from Split.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Fly into Split, ferries/catamarans for the island-hopping.',
+    climate_summary: 'June or September ideal; July-August is peak crowding, especially on Hvar.',
+    description: "Split's Diocletian's Palace, Hvar, Brač's Zlatni Rat beach, and an optional quieter extension to Vis.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8a (Balkan-cluster: Croatia + Slovenia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildPlitviceZagrebRoute() {
+  return rbBuildFlatSeedRoute('Plitvice + Zagreb (6 days) 🏞️', [
+    {
+      code: 'HR', name: 'Croatia', days: 6, budget: 600, lat: 45.8150, lng: 15.9819,
+      destinations: [
+        { name: 'Zagreb', lat: 45.8150, lng: 15.9819 },
+        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820 },
+        { name: 'Rastoke (optional)', lat: 45.1097, lng: 15.5822 },
+      ],
+      notes: "Zagreb (2-3 days) — Plitvice Lakes (2 days, staying overnight near the park) — optionally the village of Rastoke on the way. Budget: Zagreb ~€80-120/day, Plitvice days run higher because of the park entry fee. Season: April-May/September-October for the best colors and fewer crowds. Web check (2026-08): peak-season entry (1 June-30 September) is €40, shoulder season (Apr/May/Oct) €23.50, winter roughly €10 (ticket office closes 16:00). 2026 enforces a strict hourly capacity cap (max 300 people per entrance) — early-summer slots are already selling out online weeks ahead, so booking ahead is now mandatory, not optional.",
+      transport_to_next: 'End of this route — fly home from Zagreb.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Zagreb, rental car for the Plitvice leg.',
+    climate_summary: 'April-May or September-October for the best colors and fewer crowds.',
+    description: "Zagreb's city center and Plitvice Lakes National Park's waterfalls, with an optional stop at the village of Rastoke.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8a (Balkan-cluster: Croatia + Slovenia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCroatiaNorthToSouthRoute() {
+  return rbBuildFlatSeedRoute('Croatia North to South (9 days) 🧭', [
+    {
+      code: 'HR', name: 'Croatia', days: 9, budget: 1215, lat: 44.5000, lng: 16.5000,
+      destinations: [
+        { name: 'Zagreb', lat: 45.8150, lng: 15.9819 },
+        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820 },
+        { name: 'Zadar', lat: 44.1194, lng: 15.2314 },
+        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402 },
+        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
+      ],
+      notes: "Zagreb (2 days) — Plitvice (1-2 days) — Zadar (1-2 days) — Split (2 days) — Dubrovnik (2-3 days). Budget averages ~€110-160/day (Zagreb/Zadar cheaper, Dubrovnik pricier). Season: May-June or September. Web check (2026-08): the Split-Dubrovnik leg now mostly runs via the Pelješac bridge (open since July 2022), so the old double Bosnian border crossing at Neum on the main A1/D8 route is no longer needed on this route.",
+      transport_to_next: 'End of this route — fly home from Dubrovnik (or reversed, from Zagreb).',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Open-jaw flight (Zagreb in, Dubrovnik out, or reversed), rental car throughout.',
+    climate_summary: 'May-June or September.',
+    description: "A north-to-south sweep of Croatia: Zagreb, Plitvice Lakes, Zadar, Split and Dubrovnik.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8a (Balkan-cluster: Croatia + Slovenia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCroatiaCoastalRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Croatia Coastal Roadtrip (9 days) 🛣️', [
+    {
+      code: 'HR', name: 'Croatia', days: 9, budget: 1215, lat: 44.0000, lng: 16.0000,
+      destinations: [
+        { name: 'Zadar', lat: 44.1194, lng: 15.2314 },
+        { name: 'Krka National Park / Šibenik', lat: 43.8097, lng: 15.9633 },
+        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402 },
+        { name: 'Hvar Town', lat: 43.1729, lng: 16.4413 },
+        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
+      ],
+      notes: "Zadar (1-2 days) — Krka National Park/Šibenik (1 day) — Split (2 days) — Hvar (1-2 days) — Dubrovnik (2-3 days), all along the coastal D8. Budget ~€110-160/day. Season: May-June/September for a quiet coast road without traffic. Web check (2026-08): if you take the old coastal road through Neum (Bosnian territory) instead of the Pelješac bridge — wait times 10-30 min, up to 60 min on July-August weekends, a passport is required (an ID card is not enough for Bosnia), and rental-car insurance often adds a €10-15/day surcharge for Bosnia coverage.",
+      transport_to_next: 'End of this route — fly home from Dubrovnik (or reversed, from Zadar).',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Open-jaw flight (Zadar in, Dubrovnik out, or reversed), rental car along the coastal D8.',
+    climate_summary: 'May-June or September for a quiet coast road without traffic.',
+    description: "A coastal roadtrip along the D8: Zadar, Krka National Park/Šibenik, Split, Hvar and Dubrovnik.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8a (Balkan-cluster: Croatia + Slovenia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately distinct from Croatia North to South (9 days) 🧭 above — this one skips Zagreb/Plitvice and stays coastal via the D8, adding Krka/Šibenik and Hvar instead. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCompleteCroatiaRoute() {
+  return rbBuildFlatSeedRoute('Complete Croatia (12 days) 🇭🇷', [
+    {
+      code: 'HR', name: 'Croatia', days: 12, budget: 1560, lat: 44.5000, lng: 16.5000,
+      destinations: [
+        { name: 'Zagreb', lat: 45.8150, lng: 15.9819 },
+        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820 },
+        { name: 'Zadar', lat: 44.1194, lng: 15.2314 },
+        { name: "Split (Diocletian's Palace) + islands", lat: 43.5081, lng: 16.4402 },
+        { name: 'Hvar Town', lat: 43.1729, lng: 16.4413 },
+        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
+      ],
+      notes: "Zagreb (2 days) — Plitvice (2 days) — Zadar (1-2 days) — Split + islands (3 days) — Hvar (2 days) — Dubrovnik (3 days). Budget averages ~€110-150/day across the whole trip. Season: late May-June or September for the full route without a heat/crowd peak. Web check (2026-08): book Plitvice tickets well ahead (hourly slots) and take the Pelješac bridge for the fast run south.",
+      transport_to_next: 'End of this route — fly home from Dubrovnik (or reversed, from Zagreb).',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Open-jaw flight (Zagreb in, Dubrovnik out, or reversed), rental car throughout.',
+    climate_summary: 'Late May-June or September for the full route without a heat/crowd peak.',
+    description: "The full Croatia loop: Zagreb, Plitvice Lakes, Zadar, Split + islands, Hvar and Dubrovnik.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8a (Balkan-cluster: Croatia + Slovenia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. The fuller, slower counterpart to Croatia North to South (9 days) 🧭 and Croatia Coastal Roadtrip (9 days) 🛣️ above — combines both regions (Plitvice/Zagreb and the coast/islands) into one longer loop. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildLjubljanaLakeBledRoute() {
+  return rbBuildFlatSeedRoute('Ljubljana + Lake Bled (5 days) 🏰', [
+    {
+      code: 'SI', name: 'Slovenia', days: 5, budget: 575, lat: 46.0569, lng: 14.5058,
+      destinations: [
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+        { name: 'Vintgar Gorge', lat: 46.3764, lng: 14.0964 },
+        { name: 'Bohinj (optional day trip)', lat: 46.2833, lng: 13.9333 },
+      ],
+      notes: "Ljubljana (2 days) — Bled (2 days) — optionally Bohinj as a day trip (1 day). Budget: Ljubljana ~€100/day, Bled ~€120-140/day (pricier because of the attractions). Season: May-June/September, summer is very busy at the lake. Web check (2026-08): the pletna boat to the island costs €20 return (cash only), Bled Castle €19, Vintgar Gorge €15 (timed slot — book ahead, especially in July-August).",
+      transport_to_next: 'End of this route — fly home from Ljubljana.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Ljubljana, rental car or bus for the short hop to Bled.',
+    climate_summary: 'May-June or September; summer is very busy at the lake.',
+    description: "Ljubljana's old town and Lake Bled — the pletna boat to the island, Bled Castle, Vintgar Gorge and an optional Bohinj day trip.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8a (Balkan-cluster: Croatia + Slovenia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSloveniaAlpineLoopRoute() {
+  return rbBuildFlatSeedRoute('Slovenia Alpine Loop (6 days) 🏔️', [
+    {
+      code: 'SI', name: 'Slovenia', days: 6, budget: 720, lat: 46.3683, lng: 14.1146,
+      destinations: [
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+        { name: 'Bohinj', lat: 46.2833, lng: 13.9333 },
+        { name: 'Vršič Pass', lat: 46.4331, lng: 13.7478 },
+        { name: 'Bovec / Soča Valley', lat: 46.3297, lng: 13.5522 },
+        { name: 'Kranjska Gora', lat: 46.4858, lng: 13.7861 },
+      ],
+      notes: "Ljubljana (1 day) — Bled (2 days) — Bohinj (1 day) — over the Vršič Pass to Bovec/the Soča Valley (2 days) — back via Kranjska Gora. Budget €100-140/day, plus activities (rafting/canyoning €50-80 pp extra). Season: only June-September is reliably driveable — the pass closes in winter for snow/avalanche risk. Web check (2026-08): a new 2026 traffic regime on the Vršič Pass — no parking at the top through 31 August, with a free shuttle bus running Kranjska Gora-Bovec (26 June-31 August, 20 trips/day); driving the pass yourself remains possible, just park lower down.",
+      transport_to_next: 'End of this route — fly home from Ljubljana.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Fly into Ljubljana, rental car for the full alpine loop.',
+    climate_summary: 'June-September only — the Vršič Pass is closed in winter for snow/avalanche risk.',
+    description: "A Slovenian alpine loop: Ljubljana, Bled, Bohinj, the Vršič Pass and the Soča Valley around Bovec, back via Kranjska Gora.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8a (Balkan-cluster: Croatia + Slovenia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildJulianAlpsSocaValleyRoute() {
+  return rbBuildFlatSeedRoute('Julian Alps + Soča Valley (6 days) 🚣', [
+    {
+      code: 'SI', name: 'Slovenia', days: 6, budget: 720, lat: 46.4858, lng: 13.7861,
+      destinations: [
+        { name: 'Kranjska Gora', lat: 46.4858, lng: 13.7861 },
+        { name: 'Vršič Pass', lat: 46.4331, lng: 13.7478 },
+        { name: 'Bovec', lat: 46.3297, lng: 13.5522 },
+        { name: 'Kobarid', lat: 46.2467, lng: 13.5789 },
+        { name: 'Tolmin Gorge', lat: 46.2030, lng: 13.7595 },
+      ],
+      notes: "Kranjska Gora (1-2 days) — over the Vršič Pass to Bovec (2 days, rafting/canyoning) — Kobarid (1 day, WWI history) — Tolmin Gorge (1 day). Budget €100-140/day as a base, with adventure activities adding €50-80 pp per activity. Season: June-September — the pass and high mountains are often closed/snowed in outside that window. Web check (2026-08): Triglav NP itself is free to enter without a permit, though paid parking and specific attractions apply (e.g. the Vogel cable car, €20-25 return); see the Vršič Pass traffic regime above for the 2026 details.",
+      transport_to_next: 'End of this route — fly home from Ljubljana.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Fly into Ljubljana, rental car for the Julian Alps and Soča Valley.',
+    climate_summary: 'June-September — the pass and high mountains are often closed/snowed in outside that window.',
+    description: "Kranjska Gora, the Vršič Pass, Bovec's rafting and canyoning, Kobarid's WWI history and the Tolmin Gorge.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8a (Balkan-cluster: Croatia + Slovenia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately distinct from Slovenia Alpine Loop (6 days) 🏔️ above: this one skips Ljubljana/Bled entirely and stays focused on the Julian Alps/Soča Valley itself, adding Kobarid and the Tolmin Gorge that the loop route doesn't reach. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSloveniaRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Slovenia Roadtrip (9 days) 🗺️', [
+    {
+      code: 'SI', name: 'Slovenia', days: 9, budget: 1080, lat: 46.1000, lng: 14.2000,
+      destinations: [
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
+        { name: 'Bled / Bohinj', lat: 46.3683, lng: 14.1146 },
+        { name: 'Vršič Pass / Soča Valley', lat: 46.3297, lng: 13.5522 },
+        { name: 'Piran', lat: 45.5285, lng: 13.5686 },
+      ],
+      notes: "Ljubljana (2 days) — Bled/Bohinj (2 days) — Vršič/Soča Valley (2-3 days) — Piran/the coast (1-2 days) — back to Ljubljana. Budget ~€100-140/day on average. Season: June-September because of the mountain pass, May/October works for the non-Alpine part. Web check (2026-08): check the 2026 Vršič Pass traffic regime beforehand (see Slovenia Alpine Loop above); the coastal stretch around Piran is compact, with no border delay inside Slovenia itself.",
+      transport_to_next: 'End of this route — fly home from Ljubljana.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Fly into Ljubljana, rental car for the full country loop.',
+    climate_summary: 'June-September because of the mountain pass; May/October works for the non-Alpine part.',
+    description: "A full Slovenia loop: Ljubljana, Bled/Bohinj, the Vršič Pass/Soča Valley, and the coast at Piran.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8a (Balkan-cluster: Croatia + Slovenia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSloveniaNorthernCroatiaRoute() {
+  return rbBuildFlatSeedRoute('Slovenia + Northern Croatia (9 days) 🌲', [
+    {
+      code: 'SI', name: 'Slovenia', days: 5, budget: 575, lat: 46.0569, lng: 14.5058,
+      destinations: [
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+      ],
+      notes: "Ljubljana (2 days) — Bled (2 days), plus a travel day. Budget ~€100-130/day. Season: May-June/September ideal for both halves of this trip.",
+      transport_to_next: 'Car, short overland hop to Zagreb, Croatia — a Schengen-internal border with zero checks or delay since Croatia joined Schengen on 1 January 2023 (an older assumption of border delay here is outdated).',
+    },
+    {
+      code: 'HR', name: 'Croatia', days: 4, budget: 400, lat: 45.8150, lng: 15.9819,
+      destinations: [
+        { name: 'Zagreb', lat: 45.8150, lng: 15.9819 },
+        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820 },
+      ],
+      notes: "Zagreb (2 days) — Plitvice Lakes (2 days). Budget ~€80-120/day. Web check (2026-08): 2026 enforces a strict hourly capacity cap at Plitvice (max 300 people per entrance) — book ahead, see Plitvice + Zagreb (6 days) 🏞️ above for the current entry fees.",
+      transport_to_next: 'End of this route — fly home from Zagreb.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Ljubljana, fly home from Zagreb (or reversed), rental car throughout.',
+    climate_summary: 'May-June or September ideal for both Slovenia and northern Croatia.',
+    description: "Slovenia's Ljubljana and Lake Bled, continuing overland into northern Croatia for Zagreb and Plitvice Lakes.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8a (Balkan-cluster: Croatia + Slovenia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSloveniaItalyRoute() {
+  return rbBuildFlatSeedRoute('Slovenia + Italy (9 days) 🍝', [
+    {
+      code: 'SI', name: 'Slovenia', days: 5, budget: 575, lat: 46.0569, lng: 14.5058,
+      destinations: [
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+        { name: 'Piran / Slovenian coast', lat: 45.5285, lng: 13.5686 },
+      ],
+      notes: "Ljubljana (2 days) — Bled (1-2 days) — Piran/the Slovenian coast (1-2 days). Budget ~€100-130/day. Season: May-June/September, avoid the August crowds in Venice further along this route.",
+      transport_to_next: 'Car, short overland hop from Piran to Trieste, Italy — Schengen-Schengen, no border control or lost time.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 4, budget: 640, lat: 45.6495, lng: 13.7768,
+      destinations: [
+        { name: 'Trieste', lat: 45.6495, lng: 13.7768 },
+        { name: 'Venice (Piazza San Marco)', lat: 45.4408, lng: 12.3155 },
+        { name: 'Friuli (Udine, alternative)', lat: 46.0693, lng: 13.2346 },
+      ],
+      notes: "Trieste (1 day) — Venice or Friuli (2 days). Budget ~€130-180/day (Venice pricier). Web check (2026-08): Slovenia-Italy is Schengen-Schengen, so no border control or lost time; Venice has had a day-tripper entry fee (contributo di accesso) since 2024 on certain peak days — check the current 2026 calendar in advance if adding a Venice day trip.",
+      transport_to_next: 'End of this route — fly home from Venice (or Trieste).',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Ljubljana, fly home from Venice/Trieste (or reversed), rental car throughout.',
+    climate_summary: 'May-June or September; avoid the August crowds in Venice.',
+    description: "Slovenia's Ljubljana, Lake Bled and the Piran coast, continuing overland into Italy for Trieste and Venice or Friuli.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8a (Balkan-cluster: Croatia + Slovenia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaCroatiaSloveniaRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_CROATIA_SLOVENIA)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_CROATIA_SLOVENIA, '1');
+
+  rbRoutes.push(
+    rbBuildDubrovnikSurroundingsRoute(),
+    rbBuildIstriaRoute(),
+    rbBuildSplitIslandsRoute(),
+    rbBuildPlitviceZagrebRoute(),
+    rbBuildCroatiaNorthToSouthRoute(),
+    rbBuildCroatiaCoastalRoadtripRoute(),
+    rbBuildCompleteCroatiaRoute(),
+    rbBuildLjubljanaLakeBledRoute(),
+    rbBuildSloveniaAlpineLoopRoute(),
+    rbBuildJulianAlpsSocaValleyRoute(),
+    rbBuildSloveniaRoadtripRoute(),
+    rbBuildSloveniaNorthernCroatiaRoute(),
+    rbBuildSloveniaItalyRoute(),
+  );
+  rbSave();
+}
