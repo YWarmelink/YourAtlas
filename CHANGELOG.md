@@ -14,6 +14,65 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 - **Europa Trip Ideas: all 15 batches of `EUROPA_TRIP_IDEAS.md` complete (2026-08)** — Youri's raw list of realistic European trips (long weekend to ~3 weeks) grew from ~230 items to ~300 (micro-states, Cyprus/Malta/Moldova/Kosovo/Corsica/Turkey's European part, a new "Europese eilanden" category) to a final 319 across three extension rounds. Batches 1-8 (Benelux, Duitsland, Oostenrijk+Zwitserland, Frankrijk, Italië, micro-states & small islands, Iberië, Balkan-cluster) each got 2-3 parallel WebSearch research agents before writing (standard practice from batch 2 on), surfacing real corrections: the Bayeux Tapestry is on loan to the British Museum from Sept 2026, unviewable in Bayeux itself; the Croatia-Bosnia Neum coastal corridor now bypasses the old double-border-crossing via the Pelješac bridge (open since July 2022); the EU's Entry/Exit System (EES, fully live since 10 April 2026) adds real biometric-registration wait times at Balkan borders, worst at Croatia-Montenegro (Karasovići, 2-5h in July/Aug); Kosovo items are deliberately combined only with North Macedonia/Albania/Montenegro, never Serbia, since Serbia doesn't recognize Kosovo border crossings. Batches 9-11 (Centraal/Oost-Europa, Oost-Mediterraan, Noord-Europa): Romania and Bulgaria became fully Schengen (land borders included) on 1 January 2025; Bulgaria adopted the euro on 1 January 2026; the Moldova+Transnistria item carries its own red Dutch travel advisory (stricter than Moldova proper), handled with an explicit mitigation (day-trip only, no overnight, check insurance) rather than a rubber-stamped inclusion; Gellért thermal bath in Budapest is closed for renovation (Oct 2025-~2028, items route through Széchenyi instead); Auschwitz-Birkenau requires online-only booking since March 2026; Greece carries a yellow Dutch advisory since Aug 2026 for active wildfires (70+ simultaneous, incl. Crete and the Athens region); Cyprus is EU-but-not-Schengen and rental cars from the Republic side usually can't cross into Northern Cyprus without separate Turkish border insurance; Hagia Sophia's upper gallery closes 5x/day for prayer as a working mosque again. Batches 12-15 (Britse eilanden, Baltische staten, 🏝️ Europese eilanden, combinatiesecties): the UK ETA fee rose £16→£20 (~€23-24) on 8 April 2026 and applies to Northern Ireland even when crossing overland from the Republic (Ireland itself needs no ETA at all — Common Travel Area is separate from Schengen); Skye is bridge-connected (free since Dec 2004) while Orkney/Shetland/Outer Hebrides genuinely need a ferry; the UK ETA was extended to cover Jersey/Guernsey/Isle of Man from 23 April 2026; Condor Ferries rebranded (Jersey route → DFDS, Guernsey route → Brittany Ferries, March 2025); Santorini tightened its 2025-2026 cruise-passenger cap; a stale intro note claiming Crete was already covered under the Griekenland batch turned out wrong on inspection, so the batch-14 "Kreta roadtrip" item fills a real gap rather than duplicating one. **Decided: these become Route Builder routes, not Trips entries** (per `ROADMAP.md`'s "commitment, not scale" rule for the Trips↔Route Builder split) — conversion into real `rbBuildXRoute()` code is tracked separately under the Route Builder English-content workstream (see README, Phase 2).
 
+- **Route Builder English content: Phase 2 batches 1-13 done, 255/319 EUROPA_TRIP_IDEAS.md items
+  converted to real `rbBuildXRoute()` code (2026-08)** — see README's "Phase 2" section for current
+  status/next-batch pointer; this entry is the detailed batch-by-batch history moved out of the
+  README to keep it a short resumable pointer, same pattern as Phase 1's history below.
+  **Batches and real token costs**: #1 Benelux 6 routes, #2 Germany 12, #3 Austria+Switzerland 12,
+  #4 France 11, #5 Italy 16 (costs not captured, session ended before README was updated); #6
+  micro-states & small islands 20 routes/147,117 tokens; #7a Spain 15/108,931, #7b Andorra+Portugal
+  11/118,767; #8a Croatia+Slovenia 13/121,168, #8b Bosnia+Montenegro+Albania 16/106,696, #8c
+  Serbia+N.Macedonia+Kosovo 16/114,723 (batch 8's 45-item "Balkan-cluster" split into 3
+  geography-based sub-batches instead of the originally planned 2 halves, once the real item count
+  came in higher than expected); #9a Romania+Bulgaria+Moldova 15/98,036, #9b Hungary+Czechia
+  10/94,799, #9c Slovakia+Poland 10/91,616 (batch 9's 35-item "Centraal/Oost-Europa" also 3-way
+  split); #10 Greece+Cyprus+Turkey 17/129,664 (done as one single batch); #11a Norway+Sweden
+  15/129,909, #11b Denmark+Finland 10/102,262, #11c Faroe Islands+Iceland 7/99,848 (batch 11's
+  32-item "Noord-Europa" also 3-way split); #12a Ireland+Scotland 12/132,091, #12b England+Wales+
+  Northern Ireland 5/98,723 (batch 12's 17-item "Britse eilanden" split in 2); #13 Baltic States 6
+  routes/76,446. All real per-item costs land at or under the original 9,000-16,000/item estimate
+  except batch 12b, whose ~19,745/item cost came specifically from resolving 3 simultaneous
+  collisions, not wasted exploration.
+  **Real name-collision pattern, recurring across batches 6/10/11/12**: several EUROPA_TRIP_IDEAS.md
+  items cover the same destination as an existing Route Builder expedition-family splitroute, but as
+  a deliberately shorter/more realistic "Trip Ideas" version rather than a duplicate. Every time this
+  happened, the fix was the same: a distinct function name (never reusing the existing route's own
+  function name), and an explicit note in the new route's own text cross-referencing the existing
+  route as "the epic/longer version, this is the shorter realistic version, not a duplicate" — the
+  pre-existing route itself is never touched. Confirmed instances: batch 6's "Malta (4 days)" vs. the
+  Mediterranean Civilizations family's "Malta ⚔️"; "Corsica + South of France (9 days)" vs. "Corsica &
+  Southern France ⛵"; batch 10's "Cyprus (6 days)" (`rbBuildCyprusClassicRoute`) vs. "Cyprus 🕊️"
+  (`rbBuildCyprusRoute`); batch 11's cluster against the **Nordic Arctic Expedition ❄️** family, which
+  already had standalone splitroutes for Svalbard, Faroe Islands AND Iceland — new
+  "Svalbard (Longyearbyen) (6 days)" (`rbBuildSvalbardShortRoute`), "Faroe Islands (6 days)"
+  (`rbBuildFaroeIslandsShortRoute`), and "Iceland Ring Road (12 days)" (`rbBuildIcelandRingRoadRoute`)
+  all needed this treatment; batch 12's cluster against the **British Isles & Celtic Coast** family,
+  where all three of its splitroutes collided at once — `rbBuildIrelandRoute` ("Ireland ☘️"),
+  `rbBuildScotlandNorthernIrelandRoute` ("Scotland & Northern Ireland 🥃"), and
+  `rbBuildEnglandWalesIoMRoute` ("England, Wales & Isle of Man 🎩") — against new items "Ireland
+  Complete (10-14 days)", "Scotland Extended (10-14 days)", "Northern Ireland (Belfast + Giant's
+  Causeway) (5-7 days)", and the England+Wales+NI roadtrip item. No Phase 2 batch has ever needed an
+  `rbMigrateX()` migration — every route is brand new, so there's nothing pre-existing to patch.
+  **Cross-batch coordinate consistency** was maintained deliberately by having each new batch grep
+  for destinations a prior batch already coordinate-established and reuse those exact lat/lng values
+  rather than re-deriving them — e.g. batch 8c reused batch 8b's Sarajevo/Kotor/Tirana/Berat
+  coordinates, batch 9c reused batch 9b's Budapest/Eger/Krakow/Wrocław coordinates, batch 11b reused
+  batch 11a's South Sweden (Skåne) coordinates, batch 12b reused batch 12a's/the existing family's
+  Belfast and Giant's Causeway coordinates, batch 13 reused batch 9c's Warsaw/Gdańsk coordinates.
+  **Real safety/political nuances preserved intact, not softened, across several batches**: Kosovo's
+  routes (batch 8c) carry the practical Serbia-then-Kosovo border-entry order rule (Serbia doesn't
+  recognize Kosovo border crossings as official, which is why no item ever combines the two);
+  Moldova + Transnistria (batch 9a) carries the full red-vs-yellow Dutch travel-advisory distinction
+  with its concrete day-trip-only mitigation advice; batch 10's Northern Cyprus crossing item carries
+  the full car-rental/insurance/non-recognition nuance; batch 11c's Iceland routes carry the real,
+  currently-active Reykjanes Peninsula volcanic-activity yellow-advisory note.
+  **Verification ritual for every (sub-)batch**: `node --check` on all three touched Route Builder
+  files, a `grep -o "^function [A-Za-z0-9_]*"` dedup pass to catch any accidental duplicate function
+  name (a silent last-wins bug plain syntax checking can't catch), and a CSV diff line-count check
+  (should be exactly 2× the row count, confirming only the intended rows/column changed) — done by
+  the orchestrating session itself after each subagent's report, before trusting it and updating the
+  README.
+
 - **Europa Trip Ideas: third content addition processed, checklist closed out (2026-08)** — Youri supplied a broad region checklist (West-/Noord-/Centraal-/Zuid-Europa, Balkan, microstaten, Turkije, bijzondere eilanden); almost everything on it already existed, and the genuinely new regions were converted to the "X dagen — route" format and filed under their existing country/section: Engeland/Wales/Noord-Ierland (new section, batch 12), Zweeds Lapland (Zweden, batch 11), Faeröer (new section, batch 11, alongside the existing aspirational Route Builder splitroute), Moravië (Tsjechië, batch 9), Campanië/Puglia (Italië, batch 5), Galicië/Asturië+Cantabrië/Gibraltar (Spanje, batch 7), Centraal-Portugal (Portugal, batch 7), Egeïsche kust (Turkije, batch 10), Svalbard (Noorwegen, batch 11), Åland (Finland, batch 11), Shetland/Orkney/Buiten-Hebriden (Schotland, batch 12), Isle of Man/Jersey & Guernsey (new subsection under 🏝️ Europese eilanden, batch 14). Oekraïne/Belarus/Europees Rusland deliberately not added, on Youri's own instruction. De Egeïsche-kust exception sharpened the list's own inclusion rule for future edge cases: not strictly "Europa, geografisch" but "dichtbij, geschikt voor city trip/~1 week, geen dure/lange vlucht voor zo'n korte periode."
 
 - **Trip Taxonomy: Groep 3 tagging complete, 450 rows total in `TRIP_DATABASE.csv` (2026-08-18)** — all 21 planned sub-batches of `EUROPA_TRIP_IDEAS.md`'s 319 items tagged, closing out Fase 2 (Groep 1: 13 Grand Trips, Groep 2: 118 splitroutes, Groep 3: 319 items, reusing `EUROPA_TRIP_IDEAS.md`'s own 15 named batches with the 6 largest split into two halves each). Total cost 4,270,377 tokens across 43 tagging batches run over several sessions specifically to avoid burning a whole session's budget in one pass (Groep 1+2: 2,059,921 tokens for 131 items, ~15,725/item; Groep 3: 2,210,456 tokens for 319 items, ~6,930/item — less than half Groep 2's rate, confirming plain-markdown source content tags cheaper than diving into `routeBuilder.js`'s 9000+ line source). Per-batch cost table:
