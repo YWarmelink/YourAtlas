@@ -14205,3 +14205,420 @@ function rbSeedEuropaSerbiaNorthMacedoniaKosovoRoutes() {
   );
   rbSave();
 }
+
+// --- Phase 2 batch 9a: Romania + Bulgaria + Moldova ---------------------------------------
+
+function rbBuildBucharestTransylvaniaRoute() {
+  return rbBuildFlatSeedRoute('Bucharest + Transylvania (5 days) 🏰', [
+    {
+      code: 'RO', name: 'Romania', days: 5, budget: 400, lat: 44.4268, lng: 26.1025,
+      destinations: [
+        { name: 'Bucharest (Old Town / Palace of the Parliament, "Ceaușescu\'s Palace")', lat: 44.4268, lng: 26.1025 },
+        { name: 'Brașov', lat: 45.6427, lng: 25.5887 },
+        { name: 'Bran Castle', lat: 45.5149, lng: 25.3673 },
+        { name: 'Peleș Castle (Sinaia)', lat: 45.3597, lng: 25.5406 },
+      ],
+      notes: "Bucharest (2 days, Old Town and the Palace of the Parliament, still popularly called Ceaușescu's Palace) — Brașov (2 days) with a day trip to Bran Castle and Peleș Castle — optionally back via Sinaia. Budget ~€75-85/day (Bucharest costs a bit more than the countryside). Season: May-September, September is best (fewer tourists, still warm). Web check (2026-08): Bran Castle open Mon 12:00-18:00, Tue-Sun 9:00-18:00, tickets ~€28-35; Peleș Castle Wed 10:00-17:00, Thu-Sun 9:15-17:00, closed Mon/Tue, ~€10 for adults — check the actual 2026 hours right before departure, they're seasonal.",
+      transport_to_next: 'End of this route — fly home from Bucharest.',
+    },
+  ], {
+    best_starting_month: 'September',
+    travel_style: 'Fly into (and home from) Bucharest, train/bus or rental car to Brașov and back.',
+    climate_summary: 'May-September, September ideal (fewer tourists, still warm).',
+    description: "A short first taste of Romania: Bucharest's Old Town and Palace of the Parliament, then Brașov as a base for Bran and Peleș castles.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9a (Central/Eastern Europe: Romania + Bulgaria + Moldova) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildTransylvaniaRoute() {
+  return rbBuildFlatSeedRoute('Transylvania (6 days) 🦇', [
+    {
+      code: 'RO', name: 'Romania', days: 6, budget: 420, lat: 45.6427, lng: 25.5887,
+      destinations: [
+        { name: 'Brașov', lat: 45.6427, lng: 25.5887 },
+        { name: 'Bran Castle', lat: 45.5149, lng: 25.3673 },
+        { name: 'Peleș Castle (Sinaia)', lat: 45.3597, lng: 25.5406 },
+        { name: 'Sighișoara', lat: 46.2197, lng: 24.7944 },
+        { name: 'Sibiu', lat: 45.7983, lng: 24.1256 },
+      ],
+      notes: "Brașov (2 days) — Bran/Peleș as a day trip — Sighișoara (2 days) — Sibiu (2 days). Budget ~€65-75/day (smaller towns are cheaper than Bucharest). Season: June-September; 24-26 July 2026 is the Sighișoara Medieval Festival (31st edition) — fun, but noticeably busier and pricier, book accommodation early if that date overlaps your trip. Web check (2026-08): same castles as above; Sibiu's Grand Square (Piața Mare) is free to walk around.",
+      transport_to_next: 'End of this route — fly home from Bucharest or Sibiu (whichever has a convenient connection).',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Train/bus loop through Brașov, Sighișoara and Sibiu; no rental car strictly required.',
+    climate_summary: 'June-September, watch for the Sighișoara festival dates (24-26 July 2026).',
+    description: "A classic Transylvania loop — Brașov, the Bran and Peleș castles, medieval Sighișoara, and Sibiu's old town.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9a (Central/Eastern Europe: Romania + Bulgaria + Moldova) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildTransylvaniaCarpathianMountainsRoute() {
+  return rbBuildFlatSeedRoute('Transylvania + Carpathian Mountains (9 days) 🏔️', [
+    {
+      code: 'RO', name: 'Romania', days: 9, budget: 585, lat: 45.6427, lng: 25.5887,
+      destinations: [
+        { name: 'Brașov', lat: 45.6427, lng: 25.5887 },
+        { name: 'Bran Castle', lat: 45.5149, lng: 25.3673 },
+        { name: 'Peleș Castle (Sinaia)', lat: 45.3597, lng: 25.5406 },
+        { name: 'Sighișoara', lat: 46.2197, lng: 24.7944 },
+        { name: 'Sibiu', lat: 45.7983, lng: 24.1256 },
+        { name: 'Bucegi Mountains', lat: 45.4167, lng: 25.4667 },
+        { name: 'Piatra Craiului National Park', lat: 45.5000, lng: 25.2167 },
+        { name: 'Transfăgărășan Highway (Bâlea Lake)', lat: 45.6050, lng: 24.6167 },
+      ],
+      notes: "Brașov (2 days) — Bran/Peleș — Sighișoara (1 day) — Sibiu (1 day) — hiking and mountain huts in the Bucegi or Piatra Craiului mountains (2-3 days) — optionally the Transfăgărășan Highway as a day trip. Budget ~€60-70/day (huts/pensions are cheaper than hotels). Season: July-mid September for hiking (snow-free); the Transfăgărășan pass is open roughly July to end of October. Web check (2026-08): confirm hut opening dates and mountain-hut reservations in advance; bears are active in this area, store food properly.",
+      transport_to_next: 'End of this route — fly home from Bucharest.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Base yourself in Brașov/Sibiu, day trips and multi-day hikes into the Carpathians; rental car useful for Transfăgărășan.',
+    climate_summary: 'July-mid September for snow-free hiking; Transfăgărășan open roughly July-October.',
+    description: "Transylvania's classic towns and castles combined with multi-day hiking in the Bucegi or Piatra Craiului mountains, plus an optional drive over the Transfăgărășan Highway.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9a (Central/Eastern Europe: Romania + Bulgaria + Moldova) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildRomaniaRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Romania Roadtrip (9 days) 🚗', [
+    {
+      code: 'RO', name: 'Romania', days: 9, budget: 765, lat: 44.4268, lng: 26.1025,
+      destinations: [
+        { name: 'Bucharest', lat: 44.4268, lng: 26.1025 },
+        { name: 'Transfăgărășan Highway (Bâlea Lake)', lat: 45.6050, lng: 24.6167 },
+        { name: 'Sibiu', lat: 45.7983, lng: 24.1256 },
+        { name: 'Brașov', lat: 45.6427, lng: 25.5887 },
+        { name: 'Bran Castle', lat: 45.5149, lng: 25.3673 },
+        { name: 'Peleș Castle (Sinaia)', lat: 45.3597, lng: 25.5406 },
+        { name: 'Sighișoara', lat: 46.2197, lng: 24.7944 },
+      ],
+      notes: "Bucharest — the Transfăgărășan Highway north-south — Sibiu — Brașov/Bran/Peleș — Sighișoara — back via Brașov. Budget ~€80-95/day including a rental car (~€25-35/day) and fuel. Season: July-September (the Transfăgărășan is open roughly 1 July-end of October, weather-dependent, and can close on short notice). Web check (2026-08): check CNAIR's website right before departure for the current road status; don't drive outside towns at night (unlit roads, livestock crossing).",
+      transport_to_next: 'End of this route — fly home from Bucharest.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Rental car loop out of Bucharest, timed around the Transfăgărășan\'s open season.',
+    climate_summary: 'July-September, Transfăgărășan weather-dependent and can close without notice.',
+    description: "A self-drive loop through Romania's highlights, headlined by the Transfăgărășan Highway between Sibiu and the south, plus Transylvania's castles and towns.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9a (Central/Eastern Europe: Romania + Bulgaria + Moldova) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildRomaniaExtendedRoute() {
+  return rbBuildFlatSeedRoute('Romania: Extended (12 days) 🏰', [
+    {
+      code: 'RO', name: 'Romania', days: 12, budget: 900, lat: 44.4268, lng: 26.1025,
+      destinations: [
+        { name: 'Bucharest', lat: 44.4268, lng: 26.1025 },
+        { name: 'Brașov', lat: 45.6427, lng: 25.5887 },
+        { name: 'Bran Castle', lat: 45.5149, lng: 25.3673 },
+        { name: 'Peleș Castle (Sinaia)', lat: 45.3597, lng: 25.5406 },
+        { name: 'Sighișoara', lat: 46.2197, lng: 24.7944 },
+        { name: 'Sibiu', lat: 45.7983, lng: 24.1256 },
+        { name: 'Maramureș wooden churches (Bârsana area)', lat: 47.7333, lng: 24.1000 },
+        { name: 'Danube Delta (Tulcea)', lat: 45.1667, lng: 28.8000 },
+      ],
+      notes: "Bucharest (2 days) — Brașov/Bran/Peleș (3 days) — Sighișoara (2 days) — Sibiu (2 days) — Maramureș wooden churches (2 days) — optionally the Danube Delta (2 days, birdwatching, can be mosquito-heavy outside the main season). Budget ~€70-80/day. Season: May-September; the Danube Delta is best April-June/September (fewer mosquitoes, more birds). Web check (2026-08): transport around Maramureș is limited, a rental car is recommended; book Danube Delta boat tours in advance during high season. Dutch travel advisory for Romania is green (last updated 12 March 2026) — with one exception: the Galați-Black Sea border strip is rated yellow due to the Russia-Ukraine conflict (drone debris); the rest of the country, including the Delta itself, is green.",
+      transport_to_next: 'End of this route — fly home from Bucharest.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Rental car recommended, especially for Maramureș; Bucharest as fly-in/fly-out anchor.',
+    climate_summary: 'May-September; Danube Delta best April-June or September.',
+    description: "A fuller Romania trip adding Maramureș's wooden churches and an optional Danube Delta extension to the Transylvania classics.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9a (Central/Eastern Europe: Romania + Bulgaria + Moldova) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildRomaniaBulgariaTransylvaniaFocusRoute() {
+  return rbBuildFlatSeedRoute('Romania + Bulgaria: Transylvania Focus (12 days) 🏰', [
+    {
+      code: 'RO', name: 'Romania', days: 7, budget: 525, lat: 44.4268, lng: 26.1025,
+      destinations: [
+        { name: 'Bucharest', lat: 44.4268, lng: 26.1025 },
+        { name: 'Brașov', lat: 45.6427, lng: 25.5887 },
+        { name: 'Bran Castle', lat: 45.5149, lng: 25.3673 },
+        { name: 'Peleș Castle (Sinaia)', lat: 45.3597, lng: 25.5406 },
+        { name: 'Sighișoara', lat: 46.2197, lng: 24.7944 },
+      ],
+      notes: "Bucharest (2 days) — Brașov/Bran/Peleș/Sighișoara (5 days). Budget ~€75/day. Deliberately Transylvania-heavy, starting in Romania — a different angle on the same two countries as the 'Bulgaria + Romania: Black Sea Coast' route (which starts in Bulgaria and leans Black Sea/Sofia). Season: June-September.",
+      transport_to_next: "Cross the border at Giurgiu-Ruse (the Friendship Bridge) — no standard checks since Romania became fully Schengen (including land borders) on 1 January 2025. Notify your rental car company in advance of crossing the border; a green card is required (~€60 extra plus possibly a €6/day surcharge).",
+    },
+    {
+      code: 'BG', name: 'Bulgaria', days: 5, budget: 340, lat: 42.6977, lng: 23.3219,
+      destinations: [
+        { name: 'Veliko Tarnovo', lat: 43.0757, lng: 25.6172 },
+        { name: 'Sofia', lat: 42.6977, lng: 23.3219 },
+        { name: 'Rila Monastery', lat: 42.1333, lng: 23.3400 },
+      ],
+      notes: "Veliko Tarnovo (2 days) — Sofia (2 days) — optionally the Rila Monastery as a day trip. Budget ~€68/day (Bulgaria runs a bit cheaper than Romania). Season: June-September.",
+      transport_to_next: 'End of this route — fly home from Sofia.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Fly into Bucharest, overland via Giurgiu-Ruse, fly home from Sofia.',
+    climate_summary: 'June-September.',
+    description: "A Transylvania-heavy Romania-to-Bulgaria trip: Bucharest and the Transylvania castle circuit, then Veliko Tarnovo and Sofia with an optional Rila Monastery day trip.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9a (Central/Eastern Europe: Romania + Bulgaria + Moldova) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSofiaRilaMonasteryRoute() {
+  return rbBuildFlatSeedRoute('Sofia + Rila Monastery (5 days) ⛪', [
+    {
+      code: 'BG', name: 'Bulgaria', days: 5, budget: 300, lat: 42.6977, lng: 23.3219,
+      destinations: [
+        { name: 'Sofia (Alexander Nevski Cathedral)', lat: 42.6977, lng: 23.3219 },
+        { name: 'Vitosha Mountain', lat: 42.5667, lng: 23.2833 },
+        { name: 'Rila Monastery', lat: 42.1333, lng: 23.3400 },
+      ],
+      notes: "Sofia (3 days, Alexander Nevski Cathedral, Vitosha Mountain) — Rila Monastery as a day trip (2h drive). Budget ~€55-65/day. Season: May-September; the monastery is accessible year-round but the mountain road can be icy in winter. Web check (2026-08): the monastery complex and church are free, museums charge separately (~€12 combo ticket), grounds open roughly 7:00-20:00 (check current hours); clothing covering shoulders and knees is required. Dutch travel advisory for Bulgaria is green (last updated 29 April 2026), no exceptions. Bulgaria adopted the euro on 1 January 2026 (fixed rate 1 EUR = 1.95583 BGN) and it became the sole legal currency on 1 February 2026 — dual BGN/EUR pricing is still required until 8 August 2026, useful for spotting outdated BGN-only prices online.",
+      transport_to_next: 'End of this route — fly home from Sofia.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into/home from Sofia, day trip to Rila by rental car or organized tour.',
+    climate_summary: 'May-September.',
+    description: "A short Sofia city break with Alexander Nevski Cathedral, Vitosha Mountain, and a day trip out to the Rila Monastery.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9a (Central/Eastern Europe: Romania + Bulgaria + Moldova) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSofiaPlovdivRoute() {
+  return rbBuildFlatSeedRoute('Sofia + Plovdiv (6 days) 🏛️', [
+    {
+      code: 'BG', name: 'Bulgaria', days: 6, budget: 360, lat: 42.6977, lng: 23.3219,
+      destinations: [
+        { name: 'Sofia', lat: 42.6977, lng: 23.3219 },
+        { name: 'Plovdiv (Old Town / Roman Theatre)', lat: 42.1354, lng: 24.7453 },
+        { name: 'Rila Monastery', lat: 42.1333, lng: 23.3400 },
+      ],
+      notes: "Sofia (2 days) — Plovdiv (2 days, old town and the Roman theatre) — Rila Monastery as a day trip from Sofia. Budget ~€55-65/day. Season: May-June or September, mild and less crowded; Plovdiv gets hot in summer. Web check (2026-08): the Sofia-Plovdiv train takes about 2.5 hours, a fine alternative to a rental car.",
+      transport_to_next: 'End of this route — fly home from Sofia.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into/home from Sofia, train to Plovdiv and back, Rila Monastery day trip.',
+    climate_summary: 'May-June or September; Plovdiv is hot in summer.',
+    description: "Sofia and Plovdiv's old towns paired with an optional Rila Monastery day trip, easily doable by train.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9a (Central/Eastern Europe: Romania + Bulgaria + Moldova) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildBulgariaRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Bulgaria Roadtrip (9 days) 🚗', [
+    {
+      code: 'BG', name: 'Bulgaria', days: 9, budget: 675, lat: 42.6977, lng: 23.3219,
+      destinations: [
+        { name: 'Sofia', lat: 42.6977, lng: 23.3219 },
+        { name: 'Plovdiv', lat: 42.1354, lng: 24.7453 },
+        { name: 'Rila Monastery', lat: 42.1333, lng: 23.3400 },
+        { name: 'Melnik', lat: 41.5333, lng: 23.3833 },
+        { name: 'Rhodope Mountains', lat: 41.6500, lng: 24.7500 },
+      ],
+      notes: "Sofia (2 days) — Plovdiv (2 days) — the Rila/Melnik wine region (2 days) — the Rhodope Mountains (2 days) — back via Sofia. Budget ~€70-80/day including a rental car. Season: May-September, the Rhodopes are beautiful in early autumn. Web check (2026-08): Rhodope mountain roads are sometimes unpaved, check the local road status in advance; mobile signal can drop out on remote mountain roads.",
+      transport_to_next: 'End of this route — fly home from Sofia.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Rental car loop out of Sofia through Plovdiv, the Melnik wine region and the Rhodope Mountains.',
+    climate_summary: 'May-September, Rhodopes especially nice in early autumn.',
+    description: "A self-drive loop covering Sofia, Plovdiv, the Melnik wine region and the Rhodope Mountains.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9a (Central/Eastern Europe: Romania + Bulgaria + Moldova) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildBulgariaRomaniaBlackSeaCoastRoute() {
+  return rbBuildFlatSeedRoute('Bulgaria + Romania: Black Sea Coast (9 days) 🌊', [
+    {
+      code: 'BG', name: 'Bulgaria', days: 7, budget: 476, lat: 42.6977, lng: 23.3219,
+      destinations: [
+        { name: 'Sofia', lat: 42.6977, lng: 23.3219 },
+        { name: 'Plovdiv', lat: 42.1354, lng: 24.7453 },
+        { name: 'Varna', lat: 43.2141, lng: 27.9147 },
+        { name: 'Golden Sands', lat: 43.2833, lng: 28.0333 },
+        { name: 'Sunny Beach', lat: 42.6833, lng: 27.7167 },
+      ],
+      notes: "Sofia (2 days) — Plovdiv (1 day) — Varna and the Black Sea coast (2-3 days, Golden Sands/Sunny Beach). Budget ~€68/day (coastal towns are pricier in high season). Season: the coast is best in June or September, July-August is warmest but busiest and most expensive. Deliberately Black Sea/Sofia-heavy, starting in Bulgaria — a different angle on the same two countries as the 'Romania + Bulgaria: Transylvania Focus' route (which starts in Romania and leans Transylvania). Web check (2026-08): coastal resorts peak in price July-August, book ahead.",
+      transport_to_next: "Cross the border at Ruse — no standard checks since Romania became fully Schengen (including land borders) on 1 January 2025.",
+    },
+    {
+      code: 'RO', name: 'Romania', days: 2, budget: 154, lat: 44.4268, lng: 26.1025,
+      destinations: [
+        { name: 'Bucharest', lat: 44.4268, lng: 26.1025 },
+      ],
+      notes: "Bucharest (2 days) as a closing stop. Budget ~€77/day.",
+      transport_to_next: 'End of this route — fly home from Bucharest.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Fly into Sofia, overland to the Black Sea coast, cross into Romania at Ruse, fly home from Bucharest.',
+    climate_summary: 'June or September for the coast; July-August warmest but busiest.',
+    description: "Bulgaria's Black Sea coast (Varna, Golden Sands, Sunny Beach) bookended by Sofia/Plovdiv and a closing stop in Bucharest.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9a (Central/Eastern Europe: Romania + Bulgaria + Moldova) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildBulgariaGreeceSofiaMeteoraRoute() {
+  return rbBuildFlatSeedRoute('Bulgaria + Greece: Sofia to Meteora (12 days) ⛰️', [
+    {
+      code: 'BG', name: 'Bulgaria', days: 6, budget: 390, lat: 42.6977, lng: 23.3219,
+      destinations: [
+        { name: 'Sofia', lat: 42.6977, lng: 23.3219 },
+        { name: 'Rila Monastery', lat: 42.1333, lng: 23.3400 },
+        { name: 'Plovdiv', lat: 42.1354, lng: 24.7453 },
+      ],
+      notes: "Sofia (2 days) — the Rila Monastery as a day trip — Plovdiv (2 days) — travel day toward the border. Budget ~€65/day. Season: May-June or September.",
+      transport_to_next: "Cross the border at Kulata — open, no Schengen-related delay.",
+    },
+    {
+      code: 'GR', name: 'Greece', days: 6, budget: 450, lat: 40.6401, lng: 22.9444,
+      destinations: [
+        { name: 'Thessaloniki', lat: 40.6401, lng: 22.9444 },
+        { name: 'Meteora', lat: 39.7217, lng: 21.6306 },
+        { name: 'Kalabaka', lat: 39.7025, lng: 21.6280 },
+      ],
+      notes: "Thessaloniki (2 days) — Meteora (2 days, day trip or overnight in Kalabaka) — optionally back via Thessaloniki. Budget ~€75/day (Greece runs pricier on average than Bulgaria). Season: May-June or September; Meteora is very hot and crowded with tour buses in July-August. Web check (2026-08): each Meteora monastery has its own rotating closing day and a dress code — check per monastery which day it's closed.",
+      transport_to_next: 'End of this route — fly home from Thessaloniki.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Sofia, overland via Kulata, fly home from Thessaloniki.',
+    climate_summary: 'May-June or September; Meteora is very hot/crowded in July-August.',
+    description: "Sofia and Plovdiv, then a border crossing into Greece for Thessaloniki and the monasteries of Meteora.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9a (Central/Eastern Europe: Romania + Bulgaria + Moldova) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildMoldovaRoute() {
+  return rbBuildFlatSeedRoute('Moldova (5 days) 🍷', [
+    {
+      code: 'MD', name: 'Moldova', days: 5, budget: 200, lat: 47.0105, lng: 28.8638,
+      destinations: [
+        { name: 'Chișinău', lat: 47.0105, lng: 28.8638 },
+        { name: 'Cricova wine cellar', lat: 47.2333, lng: 28.8500 },
+        { name: 'Mileștii Mici wine cellar', lat: 46.9333, lng: 28.8333 },
+        { name: 'Orheiul Vechi', lat: 47.3833, lng: 28.9333 },
+        { name: 'Comrat (Gagauzia)', lat: 46.3000, lng: 28.6500 },
+      ],
+      notes: "Chișinău (2 days) — a day trip to the Cricova or Mileștii Mici wine cellars — Orheiul Vechi (1 day) — optionally Gagauzia/Comrat as a 5th day. Budget ~€35-45/day. Season: May-June or September-October (wine harvest). Web check (2026-08): the combined Cricova+Mileștii Mici tour starts around $230 (pricey — consider a standalone Cricova tour instead, ~$95-110); Orheiul Vechi entry is 20 MDL, no fixed opening hours. Dutch travel advisory for Moldova is yellow (last updated 21 May 2026), ordinary caution advised.",
+      transport_to_next: 'End of this route — fly home from Chișinău.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into/home from Chișinău, day trips by car or organized tour.',
+    climate_summary: 'May-June or September-October (wine harvest).',
+    description: "Chișinău, its famous underground wine cellars, and the cliffside monastery complex of Orheiul Vechi.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9a (Central/Eastern Europe: Romania + Bulgaria + Moldova) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Youri's own note on this country: 'I'd definitely add this as a separate Atlas option.' Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildMoldovaTransnistriaRoute() {
+  return rbBuildFlatSeedRoute('Moldova + Transnistria (6 days) 🍇', [
+    {
+      code: 'MD', name: 'Moldova', days: 6, budget: 220, lat: 47.0105, lng: 28.8638,
+      destinations: [
+        { name: 'Chișinău', lat: 47.0105, lng: 28.8638 },
+        { name: 'Cricova / Mileștii Mici wine cellars', lat: 47.2333, lng: 28.8500 },
+        { name: 'Orheiul Vechi', lat: 47.3833, lng: 28.9333 },
+        { name: 'Tiraspol (Transnistria, day trip only)', lat: 46.8403, lng: 29.6433 },
+        { name: 'Bender / Bendery (Transnistria, day trip only)', lat: 46.8333, lng: 29.4667 },
+      ],
+      notes: "Chișinău (2 days) — a day trip to Cricova/Mileștii Mici — Orheiul Vechi (1 day) — Tiraspol and Bender/Bendery as a DAY TRIP FROM CHIȘINĂU, with NO overnight stay — buffer/return (1 day). Budget: the Moldova portion runs ~€35-45/day; Transnistria itself is very cheap (its own PMR ruble, limited exchangeability) — budget roughly €15-20 for the day trip itself. Season: May-June/September, same as the Moldova-only version. ⚠️ SAFETY — a core point, not a routine 'this is fine': the Dutch Ministry of Foreign Affairs (nederlandwereldwijd.nl) gives Transnistria its own, much stricter travel advisory than the rest of Moldova — RED (updated 21 May 2026, valid as of 13 August 2026): 'do not travel here under any circumstances, too dangerous' — the embassy cannot assist there. Reason: Transnistria's unilaterally declared independence (Moldovan authorities have no actual authority there), continued Russian troop presence, and heightened tension from the Russia-Ukraine war (Transnistria borders Ukraine). Under a red advisory, many Dutch travel insurers adjust coverage or exclude risks — check in advance, or you may effectively be uninsured. Practically: no visa is needed, but a migration card is required at the border (no passport stamp, valid up to 45 days); a formal OVIR registration requirement supposedly applies for stays over 24 hours, but sources are inconsistent on whether it's still enforced since a 2018 relaxation — verify locally, don't assume it either way. The border is currently (August 2026) open to day-trippers, but this can change without notice given the war context. CONCRETE ADVICE: keep this to a short, organized day trip from Chișinău with no independent overnight stay in Tiraspol, check your travel insurance in advance, or consider substituting the Moldova-only route above instead if this risk level doesn't fit your goals for the trip.",
+      transport_to_next: 'End of this route — fly home from Chișinău.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into/home from Chișinău; Transnistria visited only as an organized day trip, never an overnight stay.',
+    climate_summary: 'May-June or September, same as the Moldova-only version.',
+    description: "The Moldova-only itinerary (Chișinău, wine cellars, Orheiul Vechi) plus a single closely managed day trip into Transnistria (Tiraspol, Bender/Bendery) — see the notes for a real, unsoftened safety finding on Transnistria's red Dutch travel advisory before adding this leg.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9a (Central/Eastern Europe: Romania + Bulgaria + Moldova) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan. The Transnistria safety nuance in this block's notes was deliberately kept in full detail, per this project's standing practice of never flattening a real safety/advisory finding into something blander.",
+  });
+}
+
+function rbBuildMoldovaRomaniaRoute() {
+  return rbBuildFlatSeedRoute('Moldova + Romania (9 days) 🍷', [
+    {
+      code: 'MD', name: 'Moldova', days: 4, budget: 180, lat: 47.0105, lng: 28.8638,
+      destinations: [
+        { name: 'Chișinău', lat: 47.0105, lng: 28.8638 },
+        { name: 'Orheiul Vechi', lat: 47.3833, lng: 28.9333 },
+      ],
+      notes: "Chișinău (2 days) — Orheiul Vechi as a day trip — buffer/travel day. Budget ~€45/day. Season: May-June or September.",
+      transport_to_next: "Cross the border to Iași (~1.5h drive) — this is a full EU external border (passport control, no Schengen ease), expect wait time. The EU's Entry/Exit System (EES, fully operational since 10 April 2026) applies only to non-EU nationals — as a Dutch/EU citizen you aren't subject to it on the way back.",
+    },
+    {
+      code: 'RO', name: 'Romania', days: 5, budget: 250, lat: 47.1585, lng: 27.6014,
+      destinations: [
+        { name: 'Iași', lat: 47.1585, lng: 27.6014 },
+        { name: 'Sighișoara', lat: 46.2197, lng: 24.7944 },
+        { name: 'Brașov', lat: 45.6427, lng: 25.5887 },
+      ],
+      notes: "Iași (1-2 days) — Sighișoara/Transylvania (2-3 days) — optionally Brașov. Budget ~€50/day. Season: May-June or September (autumn colours in Transylvania).",
+      transport_to_next: 'End of this route — fly home from Bucharest or Sibiu.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Chișinău, overland via the Iași border crossing, fly home from Romania.',
+    climate_summary: 'May-June or September (autumn colours in Transylvania).',
+    description: "Moldova's capital and wine country, then across the EU external border into Romania for Iași and a taste of Transylvania.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9a (Central/Eastern Europe: Romania + Bulgaria + Moldova) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildRomaniaMoldovaExtendedRoute() {
+  return rbBuildFlatSeedRoute('Romania + Moldova: Extended (12 days) 🍷', [
+    {
+      code: 'RO', name: 'Romania', days: 9, budget: 405, lat: 44.4268, lng: 26.1025,
+      destinations: [
+        { name: 'Bucharest', lat: 44.4268, lng: 26.1025 },
+        { name: 'Brașov', lat: 45.6427, lng: 25.5887 },
+        { name: 'Sighișoara', lat: 46.2197, lng: 24.7944 },
+        { name: 'Sibiu', lat: 45.7983, lng: 24.1256 },
+        { name: 'Iași', lat: 47.1585, lng: 27.6014 },
+      ],
+      notes: "Bucharest (2 days) — Brașov/Sighișoara/Sibiu (4-5 days) — Iași (1-2 days). Budget ~€45/day. Season: May-June/September. Web check (2026-08): bears are active in the Carpathians when camping/hiking around Brașov/Sibiu.",
+      transport_to_next: "Cross the border toward Chișinău — this is a full EU external border (passport control, no Schengen ease), expect wait time. The EES (EU Entry/Exit System, fully operational since 10 April 2026) applies only to non-EU nationals — as a Dutch/EU citizen you aren't subject to it on the way back.",
+    },
+    {
+      code: 'MD', name: 'Moldova', days: 3, budget: 135, lat: 47.0105, lng: 28.8638,
+      destinations: [
+        { name: 'Chișinău', lat: 47.0105, lng: 28.8638 },
+        { name: 'Cricova / Mileștii Mici wine cellars', lat: 47.2333, lng: 28.8500 },
+        { name: 'Orheiul Vechi', lat: 47.3833, lng: 28.9333 },
+      ],
+      notes: "Chișinău (2 days) including a wine cellar visit — Orheiul Vechi (1 day). Budget ~€45/day.",
+      transport_to_next: 'End of this route — fly home from Chișinău.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Bucharest, overland loop through Transylvania and Iași, cross into Moldova, fly home from Chișinău.',
+    climate_summary: 'May-June or September.',
+    description: "The longer sibling of 'Moldova + Romania': more time in Transylvania (Brașov, Sighișoara, Sibiu) before crossing into Moldova for Chișinău and Orheiul Vechi.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9a (Central/Eastern Europe: Romania + Bulgaria + Moldova) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaRomaniaBulgariaMoldovaRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_ROMANIA_BULGARIA_MOLDOVA)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_ROMANIA_BULGARIA_MOLDOVA, '1');
+
+  rbRoutes.push(
+    rbBuildBucharestTransylvaniaRoute(),
+    rbBuildTransylvaniaRoute(),
+    rbBuildTransylvaniaCarpathianMountainsRoute(),
+    rbBuildRomaniaRoadtripRoute(),
+    rbBuildRomaniaExtendedRoute(),
+    rbBuildRomaniaBulgariaTransylvaniaFocusRoute(),
+    rbBuildSofiaRilaMonasteryRoute(),
+    rbBuildSofiaPlovdivRoute(),
+    rbBuildBulgariaRoadtripRoute(),
+    rbBuildBulgariaRomaniaBlackSeaCoastRoute(),
+    rbBuildBulgariaGreeceSofiaMeteoraRoute(),
+    rbBuildMoldovaRoute(),
+    rbBuildMoldovaTransnistriaRoute(),
+    rbBuildMoldovaRomaniaRoute(),
+    rbBuildRomaniaMoldovaExtendedRoute(),
+  );
+  rbSave();
+}

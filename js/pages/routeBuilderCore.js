@@ -99,6 +99,7 @@ const RB_SEED_FLAG_KEY_EUROPA_ANDORRA_PORTUGAL = 'atlas_grand_trips_seeded_europ
 const RB_SEED_FLAG_KEY_EUROPA_CROATIA_SLOVENIA = 'atlas_grand_trips_seeded_europa_croatia_slovenia_v1';
 const RB_SEED_FLAG_KEY_EUROPA_BOSNIA_MONTENEGRO_ALBANIA = 'atlas_grand_trips_seeded_europa_bosnia_montenegro_albania_v1';
 const RB_SEED_FLAG_KEY_EUROPA_SERBIA_NMACEDONIA_KOSOVO = 'atlas_grand_trips_seeded_europa_serbia_nmacedonia_kosovo_v1';
+const RB_SEED_FLAG_KEY_EUROPA_ROMANIA_BULGARIA_MOLDOVA = 'atlas_grand_trips_seeded_europa_romania_bulgaria_moldova_v1';
 const RB_BLOCK_COLORS =['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
