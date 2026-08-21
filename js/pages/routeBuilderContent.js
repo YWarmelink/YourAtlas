@@ -11581,3 +11581,614 @@ function rbSeedEuropaItalyRoutes() {
   rbSave();
 }
 
+
+function rbBuildLiechtensteinSwissAlpsRoute() {
+  return rbBuildFlatSeedRoute('Liechtenstein + Swiss Alps (3 days) 🏔️', [
+    {
+      code: 'LI', name: 'Liechtenstein', days: 1, budget: 200, lat: 47.1410, lng: 9.5209,
+      destinations: [
+        { name: 'Vaduz', lat: 47.1410, lng: 9.5209 },
+      ],
+      notes: "Entry: direct flight Amsterdam-Zürich (KLM/Swiss, ~1h30-2h), then rental car to Vaduz (~1h30) — self-driving from the Netherlands (~8-9h) only makes sense as part of a bigger Switzerland trip. One day in Vaduz/Liechtenstein is enough on its own; Liechtenstein's own Alps (Malbun/Steg/Triesenberg) can also cover the 'Alps' half of this trip at 2 days total, without crossing into Switzerland at all. Budget ~CHF180-220/day (guesthouse/3-star ~CHF120, food ~CHF50, local transport/activities ~CHF30-50).",
+      transport_to_next: 'Short drive into the Swiss Alps loop (Walensee/Sargans area is ~30-45 min from Vaduz).',
+    },
+    {
+      code: 'CH', name: 'Switzerland', days: 2, budget: 400, lat: 47.0333, lng: 9.4333,
+      destinations: [
+        { name: 'Walensee / Sargans', lat: 47.0333, lng: 9.4333 },
+        { name: 'Appenzell', lat: 47.3313, lng: 9.4092 },
+        { name: 'Berggasthaus Aescher (via cable car from Wasserauen)', lat: 47.2749, lng: 9.4139 },
+      ],
+      notes: "A 1-2 day Swiss Alps loop: Walensee/Sargans, Appenzell, or the cliffside Berggasthaus Aescher reached by cable car from Wasserauen. Season: June-September for hiking/scenic drives, December-March for skiing in Malbun (back on the Liechtenstein side). Budget ~CHF180-220/day, same range as the Liechtenstein leg. ⚠️ Swiss vignette CHF40 (valid Dec 2025-Jan 2027) needed for self-driving in Switzerland; Liechtenstein and (for this route) no other border charges road tolls.",
+      transport_to_next: 'End of this route — drive or fly back to Amsterdam via Zürich.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Direct flight Amsterdam-Zürich, rental car for the whole loop.',
+    climate_summary: 'June-September for hiking and scenic drives; December-March instead if the trip is built around skiing in Malbun.',
+    description: "A day in Vaduz followed by a short Swiss Alps loop — Walensee/Sargans, Appenzell, or the Berggasthaus Aescher cable-car hike — with Liechtenstein's own Alpine villages (Malbun/Steg/Triesenberg) as a same-country alternative if 2 days total is all there's time for.",
+    notes: "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately distinct from Liechtenstein: Vaduz (2 days) 🏰 below (that one stays entirely inside Liechtenstein, using Malbun as its own mountain day, rather than crossing into Switzerland) and from Liechtenstein + Austria + Switzerland (5 days) 🚞 below (a longer border-triangle loop that adds Austria). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildLiechtensteinAustriaSwitzerlandRoute() {
+  return rbBuildFlatSeedRoute('Liechtenstein + Austria + Switzerland (5 days) 🚞', [
+    {
+      code: 'LI', name: 'Liechtenstein', days: 2, budget: 380, lat: 47.1410, lng: 9.5209,
+      destinations: [
+        { name: 'Vaduz', lat: 47.1410, lng: 9.5209 },
+        { name: 'Malbun', lat: 47.0658, lng: 9.6086 },
+        { name: 'Triesenberg', lat: 47.1067, lng: 9.5289 },
+      ],
+      notes: "Entry: direct flight to Zürich or Innsbruck. A day in Vaduz, then a mountain day in Malbun/Triesenberg. The CH/AT/LI border triangle sits within about 30 minutes of Vaduz, so this loop is geographically easy to combine. Budget ~€160-200/day (a mix of expensive Switzerland-adjacent pricing and cheaper Austria). Self-driving the whole loop from the Netherlands takes ~9h.",
+      transport_to_next: 'Short drive to Feldkirch/Bregenz (~30 min) — no real border controls in practice between CH/AT/LI, but carry ID/passport.',
+    },
+    {
+      code: 'AT', name: 'Austria', days: 3, budget: 540, lat: 47.2411, lng: 9.5981,
+      destinations: [
+        { name: 'Feldkirch', lat: 47.2411, lng: 9.5981 },
+        { name: 'Bregenz / Lake Constance (Bodensee)', lat: 47.5031, lng: 9.7471 },
+        { name: 'Innsbruck (optional)', lat: 47.2692, lng: 11.4041 },
+      ],
+      notes: "Feldkirch/Bregenz and Lake Constance, with an optional detour to Innsbruck. Open-jaw AMS-Zürich in, AMS-Innsbruck out (or the reverse) avoids backtracking. Budget ~€160-200/day, same range as the Liechtenstein leg. Season: May-September; winter only makes sense with a dedicated focus on Malbun/Austrian ski areas (budget accordingly for lift passes). ⚠️ A separate Austrian vignette is also needed (10-day version ~€10.90 in 2026) on top of the Swiss one if driving through both.",
+      transport_to_next: 'End of this route — open-jaw flight home from Innsbruck (or drive back to Zürich and fly from there), avoiding backtracking.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Direct flight to Zürich or Innsbruck, rental car for the whole border-triangle loop.',
+    climate_summary: 'May-September; winter only with a dedicated ski focus (Malbun or an Austrian resort), which needs a higher budget for lift passes.',
+    description: "A loop around the Switzerland/Austria/Liechtenstein border triangle: Vaduz and a Malbun/Triesenberg mountain day, then Feldkirch/Bregenz and Lake Constance, with an optional Innsbruck detour.",
+    notes: "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. The longer, three-country sibling of Liechtenstein + Swiss Alps (3 days) 🏔️ above — this one adds Austria and drops the separate Swiss Alps leg in favour of the Feldkirch/Bregenz/Bodensee area, reached without leaving Austria. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildLiechtensteinVaduzRoute() {
+  return rbBuildFlatSeedRoute('Liechtenstein: Vaduz (2 days) 🏰', [
+    {
+      code: 'LI', name: 'Liechtenstein', days: 2, budget: 340, lat: 47.1410, lng: 9.5209,
+      destinations: [
+        { name: 'Vaduz old town (Städtle pedestrian area)', lat: 47.1416, lng: 9.5209 },
+        { name: 'Vaduz Castle viewpoint', lat: 47.1339, lng: 9.5228 },
+        { name: 'Kunstmuseum Liechtenstein', lat: 47.1411, lng: 9.5206 },
+        { name: 'Liechtenstein Center', lat: 47.1410, lng: 9.5217 },
+        { name: 'Malbun (day trip)', lat: 47.0658, lng: 9.6086 },
+      ],
+      notes: "Liechtenstein has no airport or train station of its own. Realistic access: fly to Zürich (a standard flight from the Netherlands, no detour needed), then train Zürich-Sargans (~45 min) plus a LIEmobil bus to Vaduz Post (~35 min, ~CHF7), or a rental car (~1h30). St. Gallen-Altenrhein is geographically closer but has no realistic scheduled service from the Netherlands; Innsbruck only makes sense if already heading toward Austria anyway. Day 1: Vaduz's old town (Städtle pedestrian area, the castle viewpoint from outside, the Kunstmuseum, the Landesmuseum, the Liechtenstein Center for information plus a passport stamp). Day 2 (needed so it doesn't feel like padding): a day trip to Malbun (LIEmobil line 21 from Vaduz Post, ~28-40 min, hourly) for hiking (summer) or skiing (winter, 23km of slopes) — without Malbun, 1 day is enough for Vaduz itself. Budget ~CHF150-180/day (accommodation is relatively limited/expensive for such a small country; add CHF45-55 for a Malbun ski pass if applicable). Season: summer for hiking, winter for skiing in Malbun. ⚠️ A passport-stamp souvenir costs CHF3/€3.30 at the Liechtenstein Center and the Malbun Center; museums are often closed on Sunday/Monday — don't plan around that.",
+      transport_to_next: 'End of this route — train Sargans-Zürich (or drive) and fly home from Zürich.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Direct flight to Zürich, then train + bus (or rental car) into Liechtenstein — no car needed for Vaduz itself.',
+    climate_summary: 'Summer for hiking around Vaduz and Malbun; winter instead if the second day is built around skiing in Malbun.',
+    description: "Vaduz's old town, castle viewpoint, Kunstmuseum, Landesmuseum and Liechtenstein Center, with an optional second day trip to Malbun for hiking or skiing.",
+    notes: "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a standalone Liechtenstein-only version added alongside the existing Switzerland/Austria combos above, at Youri's request. Honest caveat carried over from the source: flying from the Netherlands purely for Liechtenstein is a lot of travel overhead for what is, at heart, a 1-2 day visit — it works best either standalone as here, or folded into a bigger Switzerland/Austria trip (see the two routes above). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildMonacoCoteDAzurRoute() {
+  return rbBuildFlatSeedRoute("Monaco + Côte d'Azur (4 days) 🎰", [
+    {
+      code: 'FR', name: 'France', days: 3, budget: 435, lat: 43.7102, lng: 7.2620,
+      destinations: [
+        { name: 'Nice (base)', lat: 43.7102, lng: 7.2620 },
+        { name: 'Èze', lat: 43.7278, lng: 7.3617 },
+        { name: 'Villefranche-sur-Mer', lat: 43.7044, lng: 7.3097 },
+        { name: 'Menton', lat: 43.7748, lng: 7.5039 },
+        { name: 'Cannes (optional)', lat: 43.5528, lng: 7.0174 },
+      ],
+      notes: "Entry: direct flight Amsterdam-Nice (KLM/easyJet/Transavia, ~2h, very frequent). Base in Nice (or Menton), with day trips to Èze, Villefranche-sur-Mer, Menton and optionally Cannes. No car needed — the coastal rail network is excellent and parking in Monaco is expensive/scarce. Budget ~€130-160/day (a 3-star hotel in the Nice area, €100-160/night, is the biggest cost). Season: May-June or September; avoid July-August (heat/crowds/prices) and the week of the Monaco Grand Prix (late May, a huge price spike) — check the exact 2026 dates before booking.",
+      transport_to_next: 'Train Nice-Monaco (~25 min, ~€4-8 one-way).',
+    },
+    {
+      code: 'MC', name: 'Monaco', days: 1, budget: 145, lat: 43.7396, lng: 7.4275,
+      destinations: [
+        { name: 'Monte Carlo Casino Square', lat: 43.7396, lng: 7.4275 },
+        { name: "Prince's Palace", lat: 43.7314, lng: 7.4197 },
+        { name: 'Port Hercule', lat: 43.7325, lng: 7.4276 },
+      ],
+      notes: "⚠️ Casino de Monte-Carlo: €20 entry, 18+ (from the day after your birthday), passport/ID required for the gaming rooms (no copy/digital ID, no driving licence); the Oceanographic Museum is ~€10 (check the current 2026 price); a combined Palace+Museum ticket saves money.",
+      transport_to_next: 'End of this route — train back to Nice, direct flight home.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Direct flight Amsterdam-Nice, then entirely by train along the coast — no car needed.',
+    climate_summary: 'May-June or September; avoid July-August and the Monaco Grand Prix week (late May).',
+    description: "A Nice/Menton base with day trips along the Côte d'Azur: Monaco/Monte Carlo, Èze, Villefranche-sur-Mer, Menton and optionally Cannes.",
+    notes: "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Shares its coastal towns with Monaco + Nice + Provence (5 days) 🍇 below by design (same coast, same day trips) — that route simply continues inland into Provence afterwards, this one stays on the coast throughout. Not yet checked against Route Builder-level price research beyond the ticket notes folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildMonacoNiceProvenceRoute() {
+  return rbBuildFlatSeedRoute('Monaco + Nice + Provence (5 days) 🍇', [
+    {
+      code: 'FR', name: 'France', days: 1, budget: 130, lat: 43.7102, lng: 7.2620,
+      destinations: [
+        { name: 'Nice (base)', lat: 43.7102, lng: 7.2620 },
+      ],
+      notes: 'Entry: direct flight Amsterdam-Nice (~2h). Day 1: Nice itself, base for the Monaco day trip that follows.',
+      transport_to_next: 'Train Nice-Monaco (~25 min).',
+    },
+    {
+      code: 'MC', name: 'Monaco', days: 1, budget: 145, lat: 43.7396, lng: 7.4275,
+      destinations: [
+        { name: 'Monte Carlo / Monaco-Ville', lat: 43.7396, lng: 7.4275 },
+      ],
+      notes: 'Day 2: Monaco/Monte Carlo as a day trip from Nice — same casino/palace notes as Monaco + Côte d\'Azur (4 days) 🎰 above.',
+      transport_to_next: 'Rental car pickup in Nice, then drive inland into Provence (~1-1.5h to the Aix-en-Provence area).',
+    },
+    {
+      code: 'FR', name: 'France', days: 3, budget: 330, lat: 43.9493, lng: 4.8055,
+      destinations: [
+        { name: 'Avignon (base)', lat: 43.9493, lng: 4.8055 },
+        { name: 'Aix-en-Provence', lat: 43.5297, lng: 5.4474 },
+        { name: 'Les Baux-de-Provence (optional)', lat: 43.7443, lng: 4.7952 },
+        { name: 'Rhône wine region (optional)', lat: 44.0558, lng: 4.8306 },
+      ],
+      notes: "Days 3-5: inland into Provence — Aix-en-Provence, Avignon, optionally Les Baux-de-Provence or the Rhône wine region. Avignon makes a good central Provence base (Aix is ~1h drive or 2h by train from Avignon). Budget ~€90-120/day for these Provence days (lower than the coastal days) plus a €40-60/day rental car. Season: May-June or September; lavender only blooms late June-July — a deliberate trade-off against the heat/crowds on the coast in that period. ⚠️ French toll roads (péage, pay-per-use, no vignette) — budget ~€15-25 extra toll for the Nice-Provence-Nice loop.",
+      transport_to_next: 'End of this route — drive back toward Nice (or fly out from Marseille if more convenient) for the flight home.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Direct flight Amsterdam-Nice; train for the coastal days, rental car for the Provence leg.',
+    climate_summary: 'May-June or September; lavender itself only blooms late June-July, a deliberate trade-off against coastal heat/crowds in that period.',
+    description: "Two coastal days (Nice, with a Monaco day trip) followed by three days inland in Provence — Aix-en-Provence, Avignon, and optionally Les Baux-de-Provence or the Rhône wine region.",
+    notes: "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Extends Monaco + Côte d'Azur (4 days) 🎰 above's coastal days with a Provence continuation, rather than duplicating them from scratch — per this project's overlap-is-fine convention. Not yet checked against Route Builder-level price research beyond the toll-road/lavender-timing notes folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildMonacoMonteCarloRoute() {
+  return rbBuildFlatSeedRoute('Monaco: Monte Carlo (2 days) 🎲', [
+    {
+      code: 'FR', name: 'France', days: 1, budget: 130, lat: 43.7102, lng: 7.2620,
+      destinations: [
+        { name: 'Nice (overnight base)', lat: 43.7102, lng: 7.2620 },
+      ],
+      notes: "Monaco works well as a standalone 1-day trip, but flying in and out from the Netherlands on the same day is too rushed given flight times — one night is the practical minimum. Overnighting in Nice (€100-160/night) and taking the train in is the sensible choice, since Monaco hotels run €250-350/night. Direct flight Amsterdam-Nice (~2h), then train Nice-Monaco (~37 min from Saint-Laurent-du-Var, up to ~1h from the airport with a change).",
+      transport_to_next: 'Train Nice-Monaco.',
+    },
+    {
+      code: 'MC', name: 'Monaco', days: 1, budget: 75, lat: 43.7396, lng: 7.4275,
+      destinations: [
+        { name: 'Casino Square', lat: 43.7396, lng: 7.4275 },
+        { name: "Prince's Palace (changing of the guard, 11:55)", lat: 43.7314, lng: 7.4197 },
+        { name: 'Monaco-Ville old town', lat: 43.7306, lng: 7.4222 },
+        { name: 'Oceanographic Museum', lat: 43.7317, lng: 7.4249 },
+        { name: 'Port Hercule', lat: 43.7325, lng: 7.4276 },
+        { name: 'Larvotto beach', lat: 43.7455, lng: 7.4342 },
+      ],
+      notes: "Casino Square, the Prince's Palace plus the changing of the guard (11:55), the Monaco-Ville old town, the Oceanographic Museum, Port Hercule and Larvotto beach — several guidebooks deliberately structure Monaco as a one-day itinerary. Honest caveat: a second day mainly makes sense for a casino evening, beach relaxation, or a half-day trip to Èze/Villefranche — at which point it starts to look like the Côte d'Azur combo above. Budget ~€60-90/day excluding accommodation. Season: year-round, no strong seasonal dependency for this itinerary. ⚠️ Same casino rules as elsewhere (€20 entry, 18+, passport/ID required); the Prince's Palace interior is only open seasonally (typically April-October) — check the exact 2026 dates if that matters, otherwise the exterior plus the changing of the guard is visible year-round.",
+      transport_to_next: 'End of this route — train back to Nice, direct flight home.',
+    },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'Direct flight Amsterdam-Nice, one overnight in Nice, train in and out of Monaco — no car needed.',
+    climate_summary: 'Year-round, no strong seasonal dependency for this itinerary.',
+    description: "A standalone Monte Carlo day: Casino Square, the Prince's Palace and changing of the guard, Monaco-Ville old town, the Oceanographic Museum, Port Hercule and Larvotto beach, with an overnight in Nice either side.",
+    notes: "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a standalone Monaco-only version added alongside the existing Côte d'Azur/Provence combos above, at Youri's request. Not yet checked against Route Builder-level price research beyond the ticket/hotel notes folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCorsicaSouthLoopRoute() {
+  return rbBuildFlatSeedRoute('Corsica: South Loop (6 days) 🏖️', [
+    {
+      code: 'FR', name: 'France', days: 6, budget: 840, lat: 41.9192, lng: 8.7386,
+      destinations: [
+        { name: 'Ajaccio', lat: 41.9192, lng: 8.7386 },
+        { name: 'Golfe de Valinco / Propriano', lat: 41.6769, lng: 8.9058 },
+        { name: 'Bonifacio', lat: 41.3870, lng: 9.1595 },
+        { name: 'Porto-Vecchio', lat: 41.5910, lng: 9.2795 },
+        { name: 'Col de Bavella', lat: 41.7906, lng: 9.2183 },
+      ],
+      notes: "Deliberately a single region, not a full island loop — there's too little time for that given the driving distances. Best compact loop: Ajaccio → Golfe de Valinco → Bonifacio → Porto-Vecchio/Col de Bavella → back to Ajaccio (southern Corsica). Connecting flight to Figari (closest to Bonifacio/the south) or Ajaccio — no direct flight from the Netherlands to Corsica itself. Rental car is required in practice (very limited public transport outside the coast). Budget ~€140/day (including a shared rental car). Season: May-June or September; avoid August (crowds/prices). ⚠️ Bonifacio: park in the official car parks (P3/P5/Valli plus shuttle) outside the citadel, don't drive in; parking charges apply from the spring school holidays through All Saints' Day (~1 Nov) — check exact 2026 dates. The Scandola Nature Reserve (boat-only access) has tightening rules (250m distance from nesting zones, partly restricted anchoring) — check current access rules before booking a boat trip.",
+      transport_to_next: 'End of this route — connecting flight home via Figari or Ajaccio.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Connecting flight to Figari or Ajaccio, rental car for the whole loop.',
+    climate_summary: 'May-June or September; avoid August (crowds and prices).',
+    description: 'A compact southern Corsica loop: Ajaccio, the Golfe de Valinco, Bonifacio, and Porto-Vecchio/Col de Bavella.',
+    notes: "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. General Corsica budget note (webcheck 2026-08): realistically between €83/day (budget) and €199/day (mid-range) — €140-150/day is the right choice across this and the other Corsica routes below for Youri's between-budget-and-comfort profile. Deliberately shorter and more compact than Corsica Roadtrip: Full Island Loop (9 days) 🚙 below, which covers the north and interior this one skips. Not yet checked against Route Builder-level price research beyond the parking/Scandola notes folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCorsicaFullIslandLoopRoute() {
+  return rbBuildFlatSeedRoute('Corsica Roadtrip: Full Island Loop (9 days) 🚙', [
+    {
+      code: 'FR', name: 'France', days: 9, budget: 1305, lat: 42.5677, lng: 8.7573,
+      destinations: [
+        { name: 'Calvi', lat: 42.5677, lng: 8.7573 },
+        { name: 'Cap Corse / Nonza', lat: 42.7889, lng: 9.3417 },
+        { name: 'Saint-Florent / Désert des Agriates', lat: 42.6789, lng: 9.2989 },
+        { name: 'Bastia', lat: 42.6979, lng: 9.4508 },
+        { name: 'Corte', lat: 42.3062, lng: 9.1499 },
+        { name: 'East coast (Aléria)', lat: 42.1058, lng: 9.5108 },
+        { name: 'Porto-Vecchio / Col de Bavella', lat: 41.5910, lng: 9.2795 },
+        { name: 'Bonifacio', lat: 41.3870, lng: 9.1595 },
+        { name: 'Ajaccio / Golfe de Valinco', lat: 41.9192, lng: 8.7386 },
+        { name: 'Piana calanques / Scandola', lat: 42.2405, lng: 8.6339 },
+      ],
+      notes: "Explicitly the full island loop, not just the shorter southern trip extended: Calvi → Cap Corse/Saint-Florent/Désert des Agriates → Bastia → Corte (interior, mountains) → east coast → Porto-Vecchio/Bavella → Bonifacio → Ajaccio/the Golfe → Piana calanques/Scandola → back to Calvi/Bastia. Covers the north (Cap Corse), the interior (Corte) and the south (Bonifacio) — regions the shorter trip skips. Open-jaw Bastia in/Ajaccio out (or the reverse) avoids backtracking. Rental car required throughout. Budget ~€140-150/day (slightly higher from more driving/fuel). Season: same as the shorter trip, the shoulder season matters even more here given the longer duration and more time on busy coastal roads in August.",
+      transport_to_next: 'End of this route — open-jaw flight home from Bastia or Calvi (arriving into the other), no direct flight from the Netherlands.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Connecting flight into Bastia or Calvi, rental car for the full island loop, flying out from the other airport.',
+    climate_summary: 'May-June or September; avoid August, especially on the busier coastal roads.',
+    description: "The full Corsica island loop: Calvi, Cap Corse, Saint-Florent and the Désert des Agriates, Bastia, Corte, the east coast, Porto-Vecchio/Col de Bavella, Bonifacio, Ajaccio/the Golfe de Valinco, and the Piana calanques/Scandola.",
+    notes: "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately the fuller counterpart to Corsica: South Loop (6 days) 🏖️ above, and the France mainland+Corsica leg reused (with the same overlap-is-fine convention) by Corsica + South of France (9 days) 🛳️ and both Corsica + Sardinia routes below. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCorsicaSouthOfFranceNineDaysRoute() {
+  return rbBuildFlatSeedRoute('Corsica + South of France (9 days) 🛳️', [
+    {
+      code: 'FR', name: 'France', days: 3, budget: 465, lat: 43.7102, lng: 7.2620,
+      destinations: [
+        { name: 'Nice', lat: 43.7102, lng: 7.2620 },
+        { name: 'Antibes', lat: 43.5808, lng: 7.1239 },
+        { name: 'Cannes', lat: 43.5528, lng: 7.0174 },
+        { name: 'Marseille (optional)', lat: 43.2965, lng: 5.3698 },
+      ],
+      notes: "Entry: direct flight to Nice (from Amsterdam/Eindhoven). Days on the Côte d'Azur/Provence coast (Nice, Antibes, Cannes, optionally Marseille) before the ferry to Corsica. Budget ~€150-160/day for this mainland leg.",
+      transport_to_next: 'Overnight ferry from Nice (Corsica Ferries) or Toulon/Marseille (Corsica Linea/La Méridionale) to Corsica — Nice is the fastest mainland ferry port (~8-10h, often overnight) and pairs best with Côte d\'Azur time; Marseille takes longer (~11-14h).',
+    },
+    {
+      code: 'FR', name: 'France', days: 6, budget: 840, lat: 42.6979, lng: 9.4508,
+      destinations: [
+        { name: 'Bastia', lat: 42.6979, lng: 9.4508 },
+        { name: 'Calvi', lat: 42.5677, lng: 8.7573 },
+        { name: 'Corte', lat: 42.3062, lng: 9.1499 },
+        { name: 'Porto-Vecchio / Col de Bavella', lat: 41.5910, lng: 9.2795 },
+        { name: 'Bonifacio', lat: 41.3870, lng: 9.1595 },
+        { name: 'Ajaccio', lat: 41.9192, lng: 8.7386 },
+      ],
+      notes: "A real routed trip, not a bolt-on: touring Corsica by rental car after the ferry, then flying straight home from a Corsican airport (Bastia/Figari/Ajaccio, with a connection) — no return ferry-plus-drive needed. Budget ~€140/day for Corsica. Season: May-June or September. ⚠️ Ferry frequency drops sharply outside April-October, and some Nice-Corsica sailings are purely seasonal (summer only) — book 3+ months ahead for summer.",
+      transport_to_next: 'End of this route — direct flight home from a Corsican airport, no return ferry needed.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Direct flight to Nice, ferry to Corsica, rental car in Corsica, fly home from a Corsican airport.',
+    climate_summary: 'May-June or September; ferry sailings are far less frequent (some routes seasonal-only) outside April-October.',
+    description: "Côte d'Azur/Provence time (Nice, Antibes, Cannes, optionally Marseille), a ferry crossing to Corsica, then a Corsica tour with a direct flight home from a Corsican airport.",
+    notes: "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately distinct from the pre-existing Corsica & Southern France ⛵ route (a Mediterranean Civilizations Expedition 🏛️ split-off pairing Bonifacio/Ajaccio/Bavella with Marseille/Arles/Nîmes/Pont du Gard as a one-way, no-return-flight itinerary) — this is a newer, shorter round-trip version built directly from the source material with a different day split and an explicit ferry-not-flight Corsica crossing. Per this project's overlap-is-fine convention, both continue to exist unchanged. Not yet checked against Route Builder-level price research beyond the ferry-schedule note folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCorsicaSardiniaSouthNorthRoute() {
+  return rbBuildFlatSeedRoute('Corsica + Sardinia: South Corsica & North Sardinia (5 days) 🏝️', [
+    {
+      code: 'FR', name: 'France', days: 2, budget: 280, lat: 41.3870, lng: 9.1595,
+      destinations: [
+        { name: 'Figari / Bonifacio', lat: 41.3870, lng: 9.1595 },
+      ],
+      notes: "Deliberately just the southern tip of Corsica plus northern Sardinia — too short for more: connecting flight to Figari/Bonifacio for 2 days of southern Corsica. Budget ~€140/day.",
+      transport_to_next: 'Ferry Bonifacio-Santa Teresa Gallura (~50 min, very frequent in season).',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 3, budget: 315, lat: 41.2372, lng: 9.1908,
+      destinations: [
+        { name: 'Santa Teresa Gallura', lat: 41.2372, lng: 9.1908 },
+        { name: 'Palau', lat: 41.1772, lng: 9.3833 },
+        { name: 'La Maddalena archipelago', lat: 41.2167, lng: 9.4000 },
+      ],
+      notes: "2-3 days of northern Sardinia: Santa Teresa Gallura, Palau, the La Maddalena archipelago. Fly home from Olbia. Budget ~€100-110/day. Season: in practice only May-October given the ferry/flight restrictions below, and specifically August-October for an easy direct flight home. ⚠️ The Bonifacio-Santa Teresa ferry (Ichnusa/Moby Lines) only runs 16 January-31 October 2026 (no winter service); direct Amsterdam/Eindhoven-Olbia flights are seasonal in 2026 (August-October only) — outside that window, fly via Rome/Milan instead, or return via Nice.",
+      transport_to_next: 'End of this route — fly home from Olbia (seasonal, August-October) or via Rome/Milan outside that window.',
+    },
+  ], {
+    best_starting_month: 'September',
+    travel_style: 'Connecting flight to Figari, rental car plus a short ferry crossing to Sardinia, fly home from Olbia.',
+    climate_summary: 'May-October given ferry/flight scheduling; specifically August-October for an easy direct flight home from Olbia.',
+    description: 'Southern Corsica (Figari/Bonifacio) linked by a short ferry crossing to northern Sardinia (Santa Teresa Gallura, Palau, the La Maddalena archipelago).',
+    notes: "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. The shorter, seasonally-constrained counterpart to Corsica + Sardinia: Full Island Loop (12 days) 🌊 below, which resolves the Olbia seasonality issue by flying home from Cagliari instead. ⚠️ Flag for a human: the Olbia flight and Bonifacio-Santa Teresa ferry seasonal windows above are exactly the kind of detail that can shift year to year — re-check before booking. Not yet checked against Route Builder-level price research beyond those schedule notes — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCorsicaSardiniaFullLoopRoute() {
+  return rbBuildFlatSeedRoute('Corsica + Sardinia: Full Island Loop (12 days) 🌊', [
+    {
+      code: 'FR', name: 'France', days: 6, budget: 750, lat: 42.6979, lng: 9.4508,
+      destinations: [
+        { name: 'Bastia or Calvi (entry)', lat: 42.6979, lng: 9.4508 },
+        { name: 'Corte', lat: 42.3062, lng: 9.1499 },
+        { name: 'Porto-Vecchio / Col de Bavella', lat: 41.5910, lng: 9.2795 },
+        { name: 'Bonifacio', lat: 41.3870, lng: 9.1595 },
+      ],
+      notes: "Not a slower version of the same loop — deliberately covers more of both islands. A full Corsica loop first (as in Corsica Roadtrip: Full Island Loop (9 days) 🚙 above), flying in via Bastia or Calvi (northern Corsica) and driving south to Bonifacio. Budget ~€120-130/day averaged across both islands.",
+      transport_to_next: "Ferry Bonifacio-Santa Teresa Gallura (~50 min) — the same crossing's seasonal window (16 Jan-31 Oct 2026) still applies.",
+    },
+    {
+      code: 'IT', name: 'Italy', days: 6, budget: 750, lat: 41.2372, lng: 9.1908,
+      destinations: [
+        { name: 'Santa Teresa Gallura', lat: 41.2372, lng: 9.1908 },
+        { name: 'Costa Smeralda / Palau', lat: 41.1772, lng: 9.3833 },
+        { name: 'Alghero', lat: 40.5586, lng: 8.3197 },
+        { name: 'Bosa', lat: 40.2986, lng: 8.5000 },
+        { name: 'Cagliari (optional, exit)', lat: 39.2238, lng: 9.1217 },
+      ],
+      notes: "A fuller Sardinia loop via the same Bonifacio-Santa Teresa ferry: the north coast and Costa Smeralda, plus central/west Sardinia (Alghero, Bosa, optionally Cagliari in the south). Fly home from Cagliari (KLM direct from Amsterdam, year-round, 7x/week) instead of the seasonal Olbia route — this also removes the shorter variant's seasonal restriction. Budget ~€120-130/day, same range as the Corsica leg. Season: May-June or September; the Bonifacio-Santa Teresa ferry's window (16 Jan-31 Oct 2026) still applies.",
+      transport_to_next: 'End of this route — direct flight home from Cagliari (KLM, year-round, 7x/week).',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Connecting flight into Bastia or Calvi, rental car throughout, a ferry crossing to Sardinia, direct flight home from Cagliari.',
+    climate_summary: 'May-June or September; the Bonifacio-Santa Teresa ferry only runs 16 January-31 October.',
+    description: 'A full Corsica island loop followed by a fuller Sardinia loop (north coast, Costa Smeralda, and central/west Sardinia including Alghero and Bosa), flying home from Cagliari.',
+    notes: "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately covers more of both islands than Corsica + Sardinia: South Corsica & North Sardinia (5 days) 🏝️ above, and resolves that shorter route's Olbia seasonality issue by exiting via Cagliari instead. Not yet checked against Route Builder-level price research beyond the ferry-schedule/flight notes folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildRomeVaticanInDepthRoute() {
+  return rbBuildFlatSeedRoute('Rome + Vatican City In-Depth (4 days) ⛪', [
+    {
+      code: 'IT', name: 'Italy', days: 4, budget: 635, lat: 41.9028, lng: 12.4964,
+      destinations: [
+        { name: 'Colosseum', lat: 41.8902, lng: 12.4922 },
+        { name: 'Roman Forum', lat: 41.8925, lng: 12.4853 },
+        { name: 'Trastevere', lat: 41.8896, lng: 12.4692 },
+        { name: 'Pantheon', lat: 41.8986, lng: 12.4769 },
+        { name: 'Vatican Necropolis / Scavi excavation tour', lat: 41.9022, lng: 12.4533 },
+        { name: 'Vatican Museums & Sistine Chapel', lat: 41.9065, lng: 12.4536 },
+        { name: "St. Peter's Basilica dome climb", lat: 41.9022, lng: 12.4533 },
+        { name: 'Vatican Gardens tour (optional)', lat: 41.9029, lng: 12.4494 },
+      ],
+      notes: "The real distinction from a generic Rome trip (see the Italy batch's Rome (4 days) 🏛️ above — St. Peter's/the Sistine Chapel are already standard there): this books the Vatican-specific extras a rushed first-time Rome trip usually skips. Days 1-2: general Rome (Colosseum/Forum, Trastevere, Pantheon, food). Day 3: a dedicated Vatican day — morning Necropolis/Scavi tour (an excavated early-Christian burial ground under St. Peter's, separate from standard Vatican Museums tickets, guided-only, children under 10 not admitted, book months ahead) → Vatican Museums/Sistine Chapel (timed slot) → the dome climb at St. Peter's → optionally a Vatican Gardens tour (guided-only, no walk-up access, €32-40, books out 1-3 weeks ahead in the April-October season). Day 4: optional buffer/return day. Direct flight Amsterdam-Rome Fiumicino (KLM, ~2h13, very frequent). Budget ~€130-150/day generally, plus an extra ~€60-90 on the Vatican day for the three extras together. Season: April-June or September-October; avoid August heat. ⚠️ Sistine Chapel restoration work starts 1 February 2026 for ~3 months — it stays open/visitable, but expect partial scaffolding/adjusted viewing routes — check current status if travelling Feb-Apr 2026. Vatican Museums base ticket ~€17 plus booking fee; booking a timed slot ahead saves 1-2 hours of queueing in high season.",
+      transport_to_next: 'End of this route — direct return flight Rome (Fiumicino) to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Direct flight Amsterdam-Rome (Fiumicino) — on foot/public transport within the city, no car needed.',
+    climate_summary: 'April-June or September-October; avoid August (very hot, many local businesses closed for Ferragosto).',
+    description: "General Rome sightseeing (Colosseum, Forum, Trastevere, Pantheon) plus a dedicated in-depth Vatican day: the Necropolis/Scavi excavation tour, the Vatican Museums and Sistine Chapel, the dome climb at St. Peter's, and an optional Vatican Gardens tour.",
+    notes: "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Judgment call: coded IT rather than VA — Vatican City has no hotels or airport of its own (a ~44-hectare enclave inside Rome), so it is always logistically a day within a Rome stay, matching TRIP_DATABASE.csv's own 'Countries: Italy' framing for this item and the next. Deliberately distinct from the pre-existing Italy-batch Rome (4 days) 🏛️ (which already includes standard Vatican Museums/St. Peter's visits) by adding the specific ticketed extras — Scavi tour, dome climb, Vatican Gardens — a first-time Rome visit usually skips. Also distinct from Vatican City Day Visit within a Rome Stay (1 day) 🕊️ below, which covers only the single Vatican day without the wider Rome sightseeing. Not yet checked against Route Builder-level price research beyond the ticket/restoration notes folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildVaticanDayVisitRoute() {
+  return rbBuildFlatSeedRoute('Vatican City Day Visit within a Rome Stay (1 day) 🕊️', [
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 140, lat: 41.9022, lng: 12.4533,
+      destinations: [
+        { name: "St. Peter's Basilica", lat: 41.9022, lng: 12.4533 },
+        { name: 'Vatican Museums', lat: 41.9065, lng: 12.4536 },
+        { name: 'Sistine Chapel', lat: 41.9065, lng: 12.4536 },
+      ],
+      notes: "Confirmed, not disputed: Vatican City has no hotels or airport of its own (a ~44-hectare enclave inside Rome) — every Vatican visit is logistically always a day trip within a Rome stay, however it's labelled. So this stays a day-visit component of a Rome trip rather than a standalone destination card — see Rome + Vatican City In-Depth (4 days) ⛪ above for the concrete way to fill that day. Budget ~€130-150/day, the same general Rome rate; a Vatican-focused day without the extra Scavi/dome-climb/Gardens add-ons doesn't carry the extra ~€60-90 that route calls out.",
+      transport_to_next: "End of this day — back into the wider Rome stay it's part of.",
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'On foot/public transport within Rome — no car needed.',
+    climate_summary: 'April-June or September-October; avoid August (very hot, many local businesses closed for Ferragosto).',
+    description: "A single Vatican-focused day (St. Peter's Basilica, the Vatican Museums and the Sistine Chapel) as a component of a wider Rome stay, not a standalone trip.",
+    notes: "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Judgment call: coded IT rather than VA, for the same reason as Rome + Vatican City In-Depth (4 days) ⛪ above — Vatican City itself has no lodging/airport, so this always nests inside an Italy-coded Rome stay. Kept as its own route (rather than folded into an existing Rome route) because TRIP_DATABASE.csv tracks it as a distinct trip idea (a single standalone Vatican day, without the Necropolis/dome-climb/Gardens extras the in-depth version above adds) — per this project's overlap-is-fine convention. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSanMarinoEmiliaRomagnaRoute() {
+  return rbBuildFlatSeedRoute('San Marino + Emilia-Romagna (4 days) 🍝', [
+    {
+      code: 'IT', name: 'Italy', days: 3, budget: 300, lat: 44.4949, lng: 11.3426,
+      destinations: [
+        { name: 'Bologna', lat: 44.4949, lng: 11.3426 },
+        { name: 'Ravenna (Byzantine mosaics)', lat: 44.4184, lng: 12.2035 },
+        { name: 'Rimini', lat: 44.0678, lng: 12.5695 },
+      ],
+      notes: "Entry: direct flight to Bologna, then a self-drive loop: Bologna (1 day, food) → Ravenna (Byzantine mosaics, half-to-1 day) → Rimini (coast, half day) → San Marino (half-to-1 day, ~30 min from Rimini) → back to Bologna. Direct Amsterdam-Bologna flight (KLM, daily, ~1h45) — the best-connected option of this whole Emilia-Romagna/San Marino cluster (Rimini has no direct flight from Amsterdam, always a connection). Budget ~€90-110/day. Season: April-June or September-October; avoid August heat and Ferragosto crowds on the Adriatic coast. Rental car needed for the Ravenna-Rimini-San Marino leg.",
+      transport_to_next: 'Short drive Rimini-San Marino (~30 min).',
+    },
+    {
+      code: 'SM', name: 'San Marino', days: 1, budget: 100, lat: 43.9364, lng: 12.4477,
+      destinations: [
+        { name: 'City of San Marino (old town)', lat: 43.9364, lng: 12.4477 },
+        { name: 'Rocca Guaita', lat: 43.9377, lng: 12.4536 },
+      ],
+      notes: "Half-to-1 day for San Marino: the towers/museum add-on (~€10-15) plus parking. ⚠️ San Marino parking: €1.50/1h, €3/2h, €4.50/3-5h, €8/full day across 13 car parks (P1-P13; P6/P7 are the most convenient for the centre); euro currency, no real border control with Italy in practice (carry ID anyway).",
+      transport_to_next: 'End of this route — drive back to Bologna (~1h45) for the flight home.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Direct flight Amsterdam-Bologna, self-drive loop for the rest.',
+    climate_summary: 'April-June or September-October; avoid August heat and Ferragosto crowds on the Adriatic coast.',
+    description: 'A self-drive loop through Emilia-Romagna — Bologna, the Byzantine mosaics of Ravenna, and Rimini — with a half-to-1 day add-on in San Marino.',
+    notes: "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. San Marino gets its own ISO code (SM) block here since it's a genuine second country crossed on this loop, distinct from San Marino: Day Visit (1 day) 🛡️ below which explicitly frames the same towers/old-town visit as an add-on day rather than part of a multi-day itinerary. Not yet checked against Route Builder-level price research beyond the parking notes folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSanMarinoTuscanyRoute() {
+  return rbBuildFlatSeedRoute('San Marino + Tuscany (5 days) 🍷', [
+    {
+      code: 'SM', name: 'San Marino', days: 1, budget: 100, lat: 43.9364, lng: 12.4477,
+      destinations: [
+        { name: 'City of San Marino (old town)', lat: 43.9364, lng: 12.4477 },
+        { name: 'Rocca Guaita', lat: 43.9377, lng: 12.4536 },
+      ],
+      notes: "Reality check: San Marino-Florence is ~240-253km/2h20-2h40 driving — not a casual add-on, but workable as a one-way arc. Fly into Bologna, do San Marino/Emilia-Romagna first (1-1.5 days), same content as San Marino + Emilia-Romagna (4 days) 🍝 above.",
+      transport_to_next: 'Drive south into Tuscany (~2h20-2h40 to the Florence area) — a deliberate one-way arc, not a round trip back through San Marino.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 4, budget: 460, lat: 43.3188, lng: 11.3308,
+      destinations: [
+        { name: 'Siena', lat: 43.3188, lng: 11.3308 },
+        { name: 'San Gimignano', lat: 43.4674, lng: 11.0431 },
+        { name: 'Florence', lat: 43.7696, lng: 11.2558 },
+      ],
+      notes: "The remaining 3-4 days into Tuscany: San Gimignano, Siena, or Florence. Open-jaw Amsterdam-Bologna in, Amsterdam-Florence/Pisa out is recommended to avoid driving the route twice — check at booking whether the direct Florence/Pisa route still exists (not confirmed in this research, but seen before). Budget ~€100-130/day averaged, plus a possible one-way rental car drop-off fee (€50-150, check ahead). Season: late April-June or September; avoid July-August, especially inland Tuscany. ⚠️ Same San Marino parking notes as above; Tuscan hill towns (Siena, San Gimignano) often have ZTL restrictions in their old centres — park outside and walk in.",
+      transport_to_next: 'End of this route — fly home from Florence or Pisa (check at booking if the direct route still exists), or open-jaw back through Bologna to avoid driving the route twice.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Direct flight Amsterdam-Bologna, self-drive one-way arc into Tuscany, fly home from Florence/Pisa (open-jaw).',
+    climate_summary: 'Late April-June or September; avoid July-August, especially inland Tuscany.',
+    description: 'A one-way arc from San Marino/Emilia-Romagna south into Tuscany — San Gimignano, Siena, or Florence.',
+    notes: "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately a one-way continuation of San Marino + Emilia-Romagna (4 days) 🍝 above rather than a there-and-back trip, given the real ~2.5h driving distance the source flags. Not yet checked against Route Builder-level price research beyond the one-way rental car/ZTL notes folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSanMarinoDayVisitRoute() {
+  return rbBuildFlatSeedRoute('San Marino: Day Visit (1 day) 🛡️', [
+    {
+      code: 'SM', name: 'San Marino', days: 1, budget: 50, lat: 43.9364, lng: 12.4477,
+      destinations: [
+        { name: 'San Marino old town', lat: 43.9364, lng: 12.4477 },
+        { name: 'City walls', lat: 43.9370, lng: 12.4500 },
+        { name: 'Rocca Guaita (main tower)', lat: 43.9377, lng: 12.4536 },
+        { name: 'Torre Cesta (second tower)', lat: 43.9394, lng: 12.4552 },
+      ],
+      notes: "Half a day (4-6h) covers the highlights (old town, city walls, 1-2 of the three towers — Rocca Guaita is the main tower, Torre Cesta the second, Montale isn't accessible); a full day isn't a stretch either, leaving room for museums (the Museum of Ancient Weapons, the Basilica) and a quieter sunset from the walls. Honest caveat: flying from the Netherlands purely for San Marino is a lot of travel overhead for half a day — this works best as an add-on day from an Adriatic coast stay (Rimini/Riccione) or the Emilia-Romagna trip above, not as a standalone fly-in-fly-out trip. Access: Rimini (RMI) is the closest airport, no direct flight from the Netherlands (always 1+ connection); from Rimini station the Bonelli Bus runs straight to San Marino (~1h, ~€7 one-way). Budget ~€40-60 for the day itself (bus €7 round trip or a car plus parking ~€8/day, a tower ticket ~€10-15, lunch €20-25) — cheap once you're there, the flight/connection dominates the cost on a genuine one-off trip.",
+      transport_to_next: "End of this day — best treated as an add-on from an Adriatic coast stay or the Emilia-Romagna route above, not as its own fly-in-fly-out trip.",
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Bus (Bonelli Bus from Rimini) or rental car — best paired with a Rimini/Riccione coastal stay rather than flown to on its own.',
+    climate_summary: 'April-June or September-October; avoid August heat and Ferragosto crowds on the nearby Adriatic coast.',
+    description: 'A half-to-full day in San Marino: the old town, the city walls, and 1-2 of the three towers, best added onto a stay elsewhere on the Adriatic coast.',
+    notes: "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a standalone San Marino-only version added alongside the existing Emilia-Romagna/Tuscany combos above, at Youri's request, carrying over the source's own explicit caveat that it fits best as an add-on rather than a fly-in-fly-out trip. San Marino uses the euro and has no real border control with Italy in practice. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildMaltaFourDaysRoute() {
+  return rbBuildFlatSeedRoute('Malta (4 days) 🌅', [
+    {
+      code: 'MT', name: 'Malta', days: 4, budget: 420, lat: 35.8989, lng: 14.5146,
+      destinations: [
+        { name: 'Valletta & the Three Cities (Vittoriosa/Senglea/Cospicua)', lat: 35.8989, lng: 14.5146 },
+        { name: 'Mdina / Rabat', lat: 35.8869, lng: 14.4033 },
+        { name: 'Marsaxlokk', lat: 35.8419, lng: 14.5453 },
+        { name: 'Hagar Qim / Mnajdra temples', lat: 35.8256, lng: 14.4408 },
+        { name: 'Blue Grotto', lat: 35.8236, lng: 14.4536 },
+      ],
+      notes: "Valletta plus the Three Cities (Vittoriosa/Senglea/Cospicua) → Mdina/Rabat → Marsaxlokk (fishing village) → the Hagar Qim/Mnajdra temples (south) → the Blue Grotto. Gozo deliberately skipped — not enough time to do it justice alongside the mainland in under 4 days. Direct flights from the Netherlands: Eindhoven-Malta (Ryanair/Wizz Air/Transavia/KM Malta Airlines, ~2h50) and Amsterdam-Malta (KM Malta Airlines/easyJet, ~3h10) — a well-served route, no connection needed. Budget ~€100-110/day. Season: any shoulder season works well for this city/history-focused trip, even winter is fine (few boat-dependent activities). ⚠️ The Hal Saflieni Hypogeum (a prehistoric must-see) has no walk-in access — book tickets 2-3 months ahead, especially May-September; book this at the same time as the flight if it's on the list.",
+      transport_to_next: 'End of this route — direct flight home from Malta.',
+    },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'Direct flight from the Netherlands, rental car or bus — Gozo deliberately not included at this length.',
+    climate_summary: 'Any shoulder season works well; even winter is fine given how few of this trip\'s activities are boat-dependent.',
+    description: 'Valletta and the Three Cities, Mdina/Rabat, Marsaxlokk, the Hagar Qim/Mnajdra temples and the Blue Grotto — a mainland-only, city/history-focused Malta trip.',
+    notes: "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Distinct from the pre-existing Malta ⚔️ route (a Mediterranean Civilizations Expedition 🏛️ split-off at 5 days/€375, pairing Valletta/Mdina with Gozo and the Hypogeum) — this newer version deliberately keeps to the mainland only and skips Gozo at this length, matching Malta + Gozo (6 days) ⛵ below for the version that adds it. Per this project's overlap-is-fine convention, both continue to exist unchanged. Not yet checked against Route Builder-level price research beyond the Hypogeum booking note folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildMaltaGozoRoute() {
+  return rbBuildFlatSeedRoute('Malta + Gozo (6 days) ⛵', [
+    {
+      code: 'MT', name: 'Malta', days: 6, budget: 630, lat: 35.8989, lng: 14.5146,
+      destinations: [
+        { name: 'Valletta', lat: 35.8989, lng: 14.5146 },
+        { name: 'Mdina', lat: 35.8869, lng: 14.4033 },
+        { name: 'Southern coast temples (Hagar Qim)', lat: 35.8256, lng: 14.4408 },
+        { name: 'Marsaxlokk', lat: 35.8419, lng: 14.5453 },
+        { name: 'Cittadella, Victoria (Gozo)', lat: 36.0448, lng: 14.2400 },
+        { name: 'Ramla Bay (Gozo)', lat: 36.0672, lng: 14.2789 },
+        { name: 'Dwejra / former Azure Window site (Gozo)', lat: 36.0578, lng: 14.1917 },
+        { name: 'Xlendi (Gozo)', lat: 36.0272, lng: 14.2069 },
+      ],
+      notes: "3 days on mainland Malta (Valletta, Mdina, the southern coast temples, Marsaxlokk) plus 2-3 days on Gozo (the Cittadella in Victoria/Rabat, Ramla Bay, Dwejra/the former Azure Window site, Xlendi) via the Cirkewwa-Mgarr ferry (24/7, year-round, no booking needed). Budget ~€100-110/day (Gozo a little cheaper/quieter than the mainland). Season: April-June or September-October is best; avoid winter for the swim/beach focus (Ramla Bay, the Blue Lagoon en route). ⚠️ Blue Lagoon/Comino: since May 2025 (still in force for 2026), a free timed slot via blcomino.com is required for anyone landing (3 slots/day, max 4,000 visitors) — anyone arriving by private boat and staying on the water doesn't need this, but anyone landing does — book ahead.",
+      transport_to_next: 'End of this route — direct flight home from Malta.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Direct flight from the Netherlands, rental car on the mainland, the Cirkewwa-Mgarr ferry to/from Gozo.',
+    climate_summary: 'April-June or September-October is best; avoid winter if the trip is built around swimming/beaches.',
+    description: 'Mainland Malta (Valletta, Mdina, the southern temples, Marsaxlokk) plus Gozo (the Cittadella, Ramla Bay, Dwejra, Xlendi) via the Cirkewwa-Mgarr ferry.',
+    notes: "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. The Gozo-inclusive counterpart to Malta (4 days) 🌅 above, which skips Gozo deliberately for time. Kept as a single Malta-coded block (rather than splitting mainland/Gozo into two blocks) since both are the same country and the ferry crossing is short/frequent, unlike this batch's genuine multi-country routes. ⚠️ Flag for a human: the Blue Lagoon/Comino timed-slot booking system noted above is a relatively new (2025) rule worth re-verifying closer to any actual booking. Not yet checked against Route Builder-level price research beyond that note — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSicilyMaltaRoute() {
+  return rbBuildFlatSeedRoute('Sicily + Malta (9 days) 🌋', [
+    {
+      code: 'IT', name: 'Italy', days: 7, budget: 1050, lat: 37.5079, lng: 15.0830,
+      destinations: [
+        { name: 'Catania', lat: 37.5079, lng: 15.0830 },
+        { name: 'Mount Etna', lat: 37.7510, lng: 14.9934 },
+        { name: 'Taormina', lat: 37.8527, lng: 15.2853 },
+        { name: 'Syracuse / Ortigia', lat: 37.0587, lng: 15.2874 },
+        { name: 'Modica', lat: 36.8477, lng: 14.7546 },
+        { name: 'Ragusa', lat: 36.9256, lng: 14.7297 },
+        { name: 'Agrigento (Valle dei Templi)', lat: 37.2903, lng: 13.5865 },
+        { name: 'Palermo (optional)', lat: 38.1157, lng: 13.3613 },
+      ],
+      notes: "Sicily-heavy, deliberately no Gozo (see Malta + Gozo + Sicily (9 days) 🐚 below for that distinction): Catania → Etna → Taormina → Syracuse/Ortigia → Val di Noto (Modica, Ragusa) → Agrigento (Valle dei Templi) → optionally Palermo → crossing to Malta. Rental car needed to get between Sicily's smaller towns. Budget ~€150/day (rental car and fuel included). Season: April-June or September-early November for Sicily (July-August hot/busy/expensive); overlaps well with Malta's own good season.",
+      transport_to_next: 'Direct Ryanair flight Malta-Catania (~50 min, from ~€18-35, up to 18x/week) — much simpler than the ferry (Virtu Ferries Pozzallo-Valletta, ~1h45, year-round, up to 3x/day, €37-111, as an alternative).',
+    },
+    {
+      code: 'MT', name: 'Malta', days: 2, budget: 210, lat: 35.8989, lng: 14.5146,
+      destinations: [
+        { name: 'Valletta', lat: 35.8989, lng: 14.5146 },
+        { name: 'Three Cities', lat: 35.8886, lng: 14.5228 },
+        { name: 'Marsaxlokk', lat: 35.8419, lng: 14.5453 },
+      ],
+      notes: '2-3 days on Malta: Valletta, the Three Cities, the southern coast temples, Marsaxlokk. Budget ~€100-110/day.',
+      transport_to_next: 'End of this route — direct flight home from Malta.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Rental car in Sicily throughout; a direct Ryanair flight (or the Virtu Ferries ferry) across to Malta.',
+    climate_summary: 'April-June or September-early November for Sicily (avoid July-August); overlaps well with Malta\'s own good season.',
+    description: "A Sicily-heavy loop (Catania, Etna, Taormina, Syracuse, Val di Noto, Agrigento, optionally Palermo) crossing to a shorter Malta stay (Valletta, the Three Cities, the southern temples, Marsaxlokk).",
+    notes: "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Confirmed distinction from Malta + Gozo + Sicily (9 days) 🐚 below: this one keeps Sicily's full itinerary (including Agrigento/Palermo) and skips Gozo entirely; the other shortens Sicily to make room for Gozo instead — both are kept deliberately different rather than reading as near-duplicates. Not yet checked against Route Builder-level price research beyond the Ryanair/ferry crossing notes folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildMaltaGozoSicilyRoute() {
+  return rbBuildFlatSeedRoute('Malta + Gozo + Sicily (9 days) 🐚', [
+    {
+      code: 'IT', name: 'Italy', days: 5, budget: 750, lat: 37.5079, lng: 15.0830,
+      destinations: [
+        { name: 'Catania', lat: 37.5079, lng: 15.0830 },
+        { name: 'Mount Etna', lat: 37.7510, lng: 14.9934 },
+        { name: 'Taormina', lat: 37.8527, lng: 15.2853 },
+        { name: 'Syracuse / Ortigia', lat: 37.0587, lng: 15.2874 },
+      ],
+      notes: "Confirmed: the only real difference from Sicily + Malta (9 days) 🌋 above is Gozo. The same Sicily core, but shortened (Catania → Etna → Taormina → Syracuse, with Agrigento/Palermo dropped to make time) to make room for Gozo afterwards. Budget ~€150/day (rental car and fuel included).",
+      transport_to_next: 'Direct Ryanair flight Malta-Catania (~50 min) or the Virtu Ferries Pozzallo-Valletta ferry (~1h45) — either crossing works.',
+    },
+    {
+      code: 'MT', name: 'Malta', days: 4, budget: 420, lat: 35.8989, lng: 14.5146,
+      destinations: [
+        { name: 'Valletta', lat: 35.8989, lng: 14.5146 },
+        { name: 'Three Cities', lat: 35.8886, lng: 14.5228 },
+        { name: 'Cittadella, Victoria (Gozo)', lat: 36.0448, lng: 14.2400 },
+        { name: 'Ramla Bay (Gozo)', lat: 36.0672, lng: 14.2789 },
+      ],
+      notes: "Malta mainland (2 days: Valletta plus surroundings) then Gozo (1-2 days) via the Cirkewwa-Mgarr ferry. Treat this explicitly as 'Sicily shortened to make room for Gozo' against the previous route's 'Sicily in full, Gozo skipped' — otherwise the two read as near-duplicates. Budget ~€115-125/day averaged across this leg. Season: same as Sicily + Malta (9 days) 🌋 above.",
+      transport_to_next: 'End of this route — the Cirkewwa-Mgarr ferry to/from Gozo is folded into the Malta days above; direct flight home from Malta.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Rental car in Sicily; a direct Ryanair flight or the Virtu Ferries ferry across to Malta; the Cirkewwa-Mgarr ferry to Gozo.',
+    climate_summary: 'April-June or September-early November for the Sicily leg; overlaps well with Malta and Gozo\'s own good season.',
+    description: 'A shortened Sicily loop (Catania, Etna, Taormina, Syracuse) making room for Malta mainland plus Gozo via the Cirkewwa-Mgarr ferry.',
+    notes: "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately kept distinct from Sicily + Malta (9 days) 🌋 above per the source's own explicit framing — same Sicily core, shortened to add Gozo, rather than a near-duplicate. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaMicrostatesRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_MICROSTATES)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_MICROSTATES, '1');
+
+  rbRoutes.push(
+    rbBuildLiechtensteinSwissAlpsRoute(),
+    rbBuildLiechtensteinAustriaSwitzerlandRoute(),
+    rbBuildLiechtensteinVaduzRoute(),
+    rbBuildMonacoCoteDAzurRoute(),
+    rbBuildMonacoNiceProvenceRoute(),
+    rbBuildMonacoMonteCarloRoute(),
+    rbBuildCorsicaSouthLoopRoute(),
+    rbBuildCorsicaFullIslandLoopRoute(),
+    rbBuildCorsicaSouthOfFranceNineDaysRoute(),
+    rbBuildCorsicaSardiniaSouthNorthRoute(),
+    rbBuildCorsicaSardiniaFullLoopRoute(),
+    rbBuildRomeVaticanInDepthRoute(),
+    rbBuildVaticanDayVisitRoute(),
+    rbBuildSanMarinoEmiliaRomagnaRoute(),
+    rbBuildSanMarinoTuscanyRoute(),
+    rbBuildSanMarinoDayVisitRoute(),
+    rbBuildMaltaFourDaysRoute(),
+    rbBuildMaltaGozoRoute(),
+    rbBuildSicilyMaltaRoute(),
+    rbBuildMaltaGozoSicilyRoute(),
+  );
+  rbSave();
+}
