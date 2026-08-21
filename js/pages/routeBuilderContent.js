@@ -14891,3 +14891,256 @@ function rbSeedEuropaHungaryCzechiaRoutes() {
   );
   rbSave();
 }
+
+function rbBuildBratislavaHighTatrasRoute() {
+  return rbBuildFlatSeedRoute('Bratislava + High Tatras (5 days) 🏔️', [
+    {
+      code: 'SK', name: 'Slovakia', days: 5, budget: 275, lat: 48.1486, lng: 17.1077,
+      destinations: [
+        { name: 'Bratislava', lat: 48.1486, lng: 17.1077 },
+        { name: 'Poprad / Tatranská Lomnica', lat: 49.1660, lng: 20.2870 },
+        { name: 'Štrbské Pleso / Hrebienok', lat: 49.1225, lng: 20.0631 },
+        { name: 'Lomnický Štít cable car (optional)', lat: 49.1958, lng: 20.2131 },
+      ],
+      notes: "Bratislava (2 days) — train out to Poprad/Tatranská Lomnica (2-3 days) — walking between Štrbské Pleso and Hrebienok. Budget ~€50-60/day (a chalet meal runs about €7, a beer about €2.50; the Lomnický Štít cable car is an optional add-on at ~€89, on the pricey side). Season: June-September for hiking, December-March for winter sports (avalanche risk — stay on the marked trails). Slovakia is fully Schengen with zero border friction toward Hungary/Poland/Austria/Czechia. Web check (2026-08): pre-book the Lomnický Štít cable car through the Gopass.travel app — it sells out fast.",
+      transport_to_next: 'End of this route — fly home from Bratislava, or via Vienna (about an hour away by bus).',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Fly into/home from Bratislava, train out to the High Tatras and back.',
+    climate_summary: 'June-September for hiking; December-March for winter sports.',
+    description: "Bratislava's old town paired with a proper hiking base in the High Tatras — Poprad, Tatranská Lomnica, and the trails between Štrbské Pleso and Hrebienok.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9c (Central/Eastern Europe: Slovakia + Poland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 9/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSlovakiaRoute() {
+  return rbBuildFlatSeedRoute('Slovakia (6 days) 🏰', [
+    {
+      code: 'SK', name: 'Slovakia', days: 6, budget: 312, lat: 48.1486, lng: 17.1077,
+      destinations: [
+        { name: 'Bratislava', lat: 48.1486, lng: 17.1077 },
+        { name: 'Banská Štiavnica', lat: 48.4587, lng: 18.8973 },
+        { name: 'High Tatras (Štrbské Pleso)', lat: 49.1225, lng: 20.0631 },
+        { name: 'Košice', lat: 48.7164, lng: 21.2611 },
+      ],
+      notes: "Bratislava (2 days) — the historic silver-mining town of Banská Štiavnica (1 day) — the High Tatras (2 days) — Košice (1-2 days). Budget ~€50-55/day (used €52/day here). Season: June-September. Slovakia is fully Schengen with zero border friction toward Hungary/Poland/Austria/Czechia.",
+      transport_to_next: 'End of this route — fly home from Košice, or loop back to Bratislava.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Fly into Bratislava, train/rental car across the country, fly home from Košice or back via Bratislava.',
+    climate_summary: 'June-September.',
+    description: "A cross-country loop through Slovakia — Bratislava, the silver-mining town of Banská Štiavnica, the High Tatras, and Košice in the east.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9c (Central/Eastern Europe: Slovakia + Poland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 9/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSlovakiaPolandRoute() {
+  return rbBuildFlatSeedRoute('Slovakia + Poland (9 days) 🥾', [
+    {
+      code: 'SK', name: 'Slovakia', days: 4, budget: 220, lat: 48.1486, lng: 17.1077,
+      destinations: [
+        { name: 'Bratislava', lat: 48.1486, lng: 17.1077 },
+        { name: 'High Tatras (Štrbské Pleso)', lat: 49.1225, lng: 20.0631 },
+      ],
+      notes: "Bratislava (2 days) — the High Tatras (2 days). Budget ~€55/day. Slovakia is fully Schengen with zero border friction toward Poland.",
+      transport_to_next: 'Cross into Poland at the Slovakia-Poland mountain border — fully Schengen, no border checks.',
+    },
+    {
+      code: 'PL', name: 'Poland', days: 5, budget: 300, lat: 49.2992, lng: 19.9496,
+      destinations: [
+        { name: 'Zakopane', lat: 49.2992, lng: 19.9496 },
+        { name: 'Krakow (Main Square / Old Town)', lat: 50.0614, lng: 19.9366 },
+      ],
+      notes: "Zakopane (2 days) — Krakow (2-3 days). Budget ~€60/day. Season: June-September (Morskie Oko and the surrounding trails look their best then, but are also at their busiest). Web check (2026-08): the Krakow-Zakopane bus costs about €4.50 one-way, with no border control anywhere on the route.",
+      transport_to_next: 'End of this route — fly home from Krakow.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Fly into Bratislava, overland (train/bus/rental car) through the High Tatras into Poland, fly home from Krakow.',
+    climate_summary: 'June-September; busiest in July-August.',
+    description: "Bratislava, over the mountains through the High Tatras, and across into Poland for Zakopane and Krakow.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9c (Central/Eastern Europe: Slovakia + Poland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 9/21. Krakow coordinates reused from the Prague + Poland route (batch 9b) for consistency. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSlovakiaHungaryRoute() {
+  return rbBuildFlatSeedRoute('Slovakia + Hungary (9 days) 🚆', [
+    {
+      code: 'SK', name: 'Slovakia', days: 3, budget: 180, lat: 48.1486, lng: 17.1077,
+      destinations: [
+        { name: 'Bratislava', lat: 48.1486, lng: 17.1077 },
+        { name: 'Győr (day trip)', lat: 47.6875, lng: 17.6504 },
+      ],
+      notes: "Bratislava (2 days), with Győr across the border in Hungary as a day trip. Budget ~€55-65/day (used €60/day here). Slovakia is fully Schengen with zero border friction toward Hungary.",
+      transport_to_next: 'Train onward to Budapest — a Schengen border with no checks; the Bratislava-Budapest train runs every 2 hours and takes about 2h25 (web check 2026-08).',
+    },
+    {
+      code: 'HU', name: 'Hungary', days: 6, budget: 360, lat: 47.4960, lng: 19.0396,
+      destinations: [
+        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396 },
+        { name: 'Eger', lat: 47.9025, lng: 20.3772 },
+      ],
+      notes: "Budapest (3 days) — Eger and its wine cellars (1-2 days). Budget ~€55-65/day (used €60/day here). Season: May-September. As throughout Hungary, keep an eye on demonstrations in central Budapest.",
+      transport_to_next: 'End of this route — fly home from Budapest.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Bratislava, train throughout (Győr as a day trip, then on to Budapest and Eger), fly home from Budapest.',
+    climate_summary: 'May-September.',
+    description: "Bratislava with a Győr day trip, then east by train into Hungary for Budapest and the Eger wine region.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9c (Central/Eastern Europe: Slovakia + Poland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 9/21. Budapest/Eger coordinates reused from the Budapest + Eger route (batch 9b) for consistency. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildKrakowRoute() {
+  return rbBuildFlatSeedRoute('Krakow (4 days) 🏛️', [
+    {
+      code: 'PL', name: 'Poland', days: 4, budget: 260, lat: 50.0614, lng: 19.9366,
+      destinations: [
+        { name: 'Old Town / Main Square', lat: 50.0614, lng: 19.9366 },
+        { name: 'Wawel Castle', lat: 50.0544, lng: 19.9354 },
+        { name: 'Kazimierz (Jewish Quarter)', lat: 50.0492, lng: 19.9450 },
+      ],
+      notes: "Old Town and the Main Square, Wawel Castle, and Kazimierz (the Jewish Quarter, worth an evening among its bars). Budget ~€60-70/day. Season: May-June or September are best; July-August is hot and crowded. Web check (2026-08): individual parts of Wawel (the cathedral, the state rooms) each need a separate timed-entry ticket and sell out in high season.",
+      transport_to_next: 'End of this route — fly home from Krakow.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into/home from Krakow, everything walkable within the city.',
+    climate_summary: 'May-June or September best; July-August hot and crowded.',
+    description: "Krakow's core sights — the Old Town, Wawel Castle, and the Kazimierz Jewish quarter.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9c (Central/Eastern Europe: Slovakia + Poland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 9/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildKrakowAuschwitzRoute() {
+  return rbBuildFlatSeedRoute('Krakow + Auschwitz (5 days) 🕯️', [
+    {
+      code: 'PL', name: 'Poland', days: 5, budget: 325, lat: 50.0614, lng: 19.9366,
+      destinations: [
+        { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 },
+        { name: 'Auschwitz-Birkenau', lat: 50.0359, lng: 19.1783 },
+      ],
+      notes: "Krakow (3 days) — Auschwitz-Birkenau as a half-day trip (1 day), deliberately compact with no hiking excursions added on. Budget ~€60-75/day (used €65/day here). Season: open year-round; winter is quieter but bleak — this is an emotionally heavy visit, not a 'nice weather' destination. Web check (2026-08): since March 2026, Auschwitz-Birkenau can only be booked online (visit.auschwitz.org) — there is no on-site ticket sales anymore, not even for a free individual visit. Slots open 3 months ahead; an English-language guided tour runs about 150 PLN (~€35) for 3.5 hours. Book at least 2-4 weeks ahead.",
+      transport_to_next: 'End of this route — fly home from Krakow.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into/home from Krakow, a day-trip bus or tour out to Auschwitz-Birkenau.',
+    climate_summary: 'Year-round; winter quieter but bleak.',
+    description: "A compact, history-focused trip: Krakow's Old Town plus a half-day visit to Auschwitz-Birkenau, with no hiking side trips to dilute it.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9c (Central/Eastern Europe: Slovakia + Poland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 9/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildKrakowTatraRoute() {
+  return rbBuildFlatSeedRoute('Krakow + Tatra (6 days) ⛰️', [
+    {
+      code: 'PL', name: 'Poland', days: 6, budget: 420, lat: 50.0614, lng: 19.9366,
+      destinations: [
+        { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 },
+        { name: 'Zakopane', lat: 49.2992, lng: 19.9496 },
+        { name: 'Morskie Oko / Tatra National Park', lat: 49.1997, lng: 20.0669 },
+      ],
+      notes: "Krakow (2-3 days) — Zakopane (3-4 days) — a day trip to Morskie Oko/Tatra National Park, mountains taking priority over history on this one. Budget ~€65-80/day (mountain chalets run a bit pricier on weekends). Season: peak June-September; May-June and September-October are quieter and still good walking weather. Web check (2026-08): Tatra National Park entry runs about 9-10 PLN/day; the Morskie Oko trail (8km, paved) is walk/horse-carriage/bike only — no cars — and the Palenica Białczańska parking lot fills fast on weekends.",
+      transport_to_next: 'End of this route — fly home from Krakow.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Fly into/home from Krakow, bus/train out to Zakopane and back.',
+    climate_summary: 'Peak June-September; May-June/September-October quieter.',
+    description: "Krakow paired with a proper mountain base in Zakopane and a day trip to the postcard lake of Morskie Oko — nature and hiking ahead of history on this one.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9c (Central/Eastern Europe: Slovakia + Poland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 9/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSouthPolandRoute() {
+  return rbBuildFlatSeedRoute('South Poland (9 days) 🧭', [
+    {
+      code: 'PL', name: 'Poland', days: 9, budget: 630, lat: 50.0614, lng: 19.9366,
+      destinations: [
+        { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 },
+        { name: 'Wieliczka Salt Mine', lat: 49.9830, lng: 20.0533 },
+        { name: 'Auschwitz-Birkenau', lat: 50.0359, lng: 19.1783 },
+        { name: 'Zakopane / Tatra National Park', lat: 49.2992, lng: 19.9496 },
+        { name: 'Wrocław (optional finale)', lat: 51.1079, lng: 17.0385 },
+      ],
+      notes: "Krakow (3 days) — the Wieliczka salt mine (day trip) — Auschwitz (day trip) — Zakopane/Tatra (2-3 days) — optionally Wrocław to finish (2 days), a broad cultural round rather than one single focus. Budget ~€65-75/day. Season: May-June or September. Web check (2026-08): the Wieliczka Tourist Route runs about 134-156 PLN (~€31-36) depending on language, booked via bilety.kopalnia.pl — slots fill up 3-5 days ahead in high season. Book the Auschwitz reservation separately; there is no combo ticket with Wieliczka.",
+      transport_to_next: 'End of this route — fly home from Wrocław, or from Krakow if skipping the Wrocław extension.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Krakow, train/bus for the day trips and on to Wrocław, fly home from Wrocław (or Krakow).',
+    climate_summary: 'May-June or September.',
+    description: "A broad round of southern Poland: Krakow, the Wieliczka salt mine, Auschwitz, the Zakopane/Tatra mountains, and an optional finish in Wrocław.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9c (Central/Eastern Europe: Slovakia + Poland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 9/21. Wrocław coordinates reused from the Prague + Poland route (batch 9b) for consistency. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildPolandRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Poland Roadtrip (9 days) 🚗', [
+    {
+      code: 'PL', name: 'Poland', days: 9, budget: 585, lat: 50.0614, lng: 19.9366,
+      destinations: [
+        { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 },
+        { name: 'Wieliczka Salt Mine', lat: 49.9830, lng: 20.0533 },
+        { name: 'Auschwitz-Birkenau', lat: 50.0359, lng: 19.1783 },
+        { name: 'Zakopane', lat: 49.2992, lng: 19.9496 },
+        { name: 'Wrocław', lat: 51.1079, lng: 17.0385 },
+        { name: 'Warsaw', lat: 52.2297, lng: 21.0122 },
+      ],
+      notes: "Krakow — Wieliczka — Auschwitz — Zakopane — Wrocław — Warsaw (drop Gdańsk for a shorter version of this loop). Budget ~€60-75/day including the rental car (used €65/day here). Season: May-June or September. Web check (2026-08): a car is practical outside the city centers, though parking in central Krakow/Wrocław is difficult; Poland requires no highway vignette, but some stretches use pay-per-use tolls via the e-TOLL app. If routing via Germany instead, note Germany has extended its own land border controls with Poland through 15 September 2026 (spot ID checks).",
+      transport_to_next: 'End of this route — fly home from Warsaw.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Krakow, rental car for the whole loop, fly home from Warsaw.',
+    climate_summary: 'May-June or September.',
+    description: "A self-drive loop across southern and central Poland: Krakow, Wieliczka, Auschwitz, Zakopane, Wrocław, and Warsaw.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9c (Central/Eastern Europe: Slovakia + Poland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 9/21. Wrocław coordinates reused from the Prague + Poland route (batch 9b) for consistency. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildPolandNorthToSouthRoute() {
+  return rbBuildFlatSeedRoute('Poland: North to South (12 days) ⚓', [
+    {
+      code: 'PL', name: 'Poland', days: 12, budget: 780, lat: 54.3520, lng: 18.6466,
+      destinations: [
+        { name: 'Gdańsk / Hel Peninsula', lat: 54.6084, lng: 18.8006 },
+        { name: 'Malbork Castle', lat: 54.0400, lng: 19.0274 },
+        { name: 'Warsaw', lat: 52.2297, lng: 21.0122 },
+        { name: 'Wrocław', lat: 51.1079, lng: 17.0385 },
+        { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 },
+      ],
+      notes: "Gdańsk and the Hel Peninsula (3 days) — Malbork Castle (day trip) — Warsaw (2-3 days) — Wrocław (2 days) — Krakow (3-4 days), roughly 1300 km total. Budget ~€60-75/day. Season: May-June or September are best (quieter, mild weather); the Hel Peninsula and the coast are especially nice June-August. Web check (2026-08): book Auschwitz/Wieliczka well ahead (at least a month) if adding either as a Krakow-leg day trip — both often sell out in high season; the train between cities is a good alternative to the long drives.",
+      transport_to_next: 'End of this route — fly home from Krakow.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Gdańsk, overland (train or rental car) the length of the country, fly home from Krakow.',
+    climate_summary: 'May-June or September best; the coast is nicest June-August.',
+    description: "The full length of Poland: the Baltic coast at Gdańsk and the Hel Peninsula, Malbork Castle, Warsaw, Wrocław, and finishing in Krakow.",
+    notes: "Built (2026-08) as part of Phase 2 batch 9c (Central/Eastern Europe: Slovakia + Poland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 9/21. Warsaw/Wrocław/Krakow coordinates kept consistent with this batch's own other Poland routes and with the Prague + Poland route (batch 9b). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaSlovakiaPolandRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_SLOVAKIA_POLAND)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_SLOVAKIA_POLAND, '1');
+
+  rbRoutes.push(
+    rbBuildBratislavaHighTatrasRoute(),
+    rbBuildSlovakiaRoute(),
+    rbBuildSlovakiaPolandRoute(),
+    rbBuildSlovakiaHungaryRoute(),
+    rbBuildKrakowRoute(),
+    rbBuildKrakowAuschwitzRoute(),
+    rbBuildKrakowTatraRoute(),
+    rbBuildSouthPolandRoute(),
+    rbBuildPolandRoadtripRoute(),
+    rbBuildPolandNorthToSouthRoute(),
+  );
+  rbSave();
+}
