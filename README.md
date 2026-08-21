@@ -425,22 +425,28 @@ version. Reuses the exact 21 sub-batch structure already proven for Trip Taxonom
 `CHANGELOG.md`'s "Recently fixed" section for that batch table; same batches apply here, now for
 code instead of tags.
 
-**Status — batches 1-13 done, 255 of 319 items done, all local commits not yet pushed as of
+**Status — batches 1-14 done, 285 of 319 items done, all local commits not yet pushed as of
 2026-08-21.** Full batch-by-batch history (per-batch real token costs, every name-collision found
 and how it was resolved, cross-batch coordinate reuse, preserved safety/political nuances) has
-been moved to `CHANGELOG.md`'s "Route Builder English content: Phase 2 batches 1-13 done" entry —
-read that before starting a new batch, it has the lessons that keep recurring (especially: check
-every batch for a name collision against a pre-existing expedition-family splitroute before
-writing any code, the same way batches 6/10/11/12 all needed to). Real per-item cost has settled
-around 7,000-11,000 tokens, at or under the original 9,000-16,000/item estimate except when a
-batch needs real collision-resolution work. Big batches (>20 items) get split into 2-3
-geography-based sub-batches matching `EUROPA_TRIP_IDEAS.md`'s own section boundaries, rather than
-forcing one oversized delegation. Each batch also flips its rows' "In Route Builder?" No→Yes in
-`TRIP_DATABASE.csv` in a separate commit to keep the taxonomy in sync; no Phase 2 batch has ever
-needed an `rbMigrateX()` migration (brand-new routes, nothing pre-existing to patch). Next up:
-**batch 14, 🏝️ Europese eilanden (Madeira/Azores/Canary Islands/Balearics/Isle of Man/Jersey &
-Guernsey, ~30 items per the original taxonomy split, likely more once counted — plan to split into
-several geography-based sub-batches from the start given its size)**.
+been moved to `CHANGELOG.md`'s "Route Builder English content" entries — read those before
+starting a new batch, they have the lessons that keep recurring (especially: check every batch for
+a name collision against a pre-existing expedition-family splitroute, or even against an
+*earlier Phase 2 batch itself*, before writing any code — batch 14's Sicily/Sardinia/Cyclades
+sub-batches found same-workstream near-duplicates, not just Phase-1-family ones). **Per Youri's
+instruction (2026-08-21): every "this looks like an existing route" case gets logged in
+[`ROUTE_SIMILARITY_REVIEW.md`](ROUTE_SIMILARITY_REVIEW.md) rather than resolved by
+merging/deleting — new routes get a distinct function name + a cross-reference note and nothing
+pre-existing is touched, so Youri can decide what (if anything) to consolidate once all 319 items
+are built.** Real per-item cost has settled around 7,000-11,000 tokens, at or under the original
+9,000-16,000/item estimate except when a batch needs real collision-resolution work. Big batches
+(>20 items) get split into geography-based sub-batches matching `EUROPA_TRIP_IDEAS.md`'s own
+section boundaries (batch 14's 30 items became 5 sub-batches: 14a Madeira+Azores, 14b Canary+
+Balearics, 14c Sicily+Sardinia, 14d Greek islands, 14e Channel Islands+Isle of Man). Each batch
+also flips its rows' "In Route Builder?" No→Yes in `TRIP_DATABASE.csv` in a separate commit to
+keep the taxonomy in sync; no Phase 2 batch has ever needed an `rbMigrateX()` migration (brand-new
+routes, nothing pre-existing to patch). Next up: **batch 15, Grote Europese combinaties (big
+cross-country combo routes) — expect a HIGH collision-check burden here specifically, since combo
+routes by nature re-touch content from many earlier batches**.
 
 **Estimated cost**: ~9,000-16,000 tokens/item × 319 items ≈ **3-5M tokens total** — based on the
 `rbBuildJordanRoute()` example (fresh single-country build with real coordinates, no shared content

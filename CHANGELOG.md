@@ -73,6 +73,29 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   the orchestrating session itself after each subagent's report, before trusting it and updating the
   README.
 
+- **Route Builder English content: Phase 2 batch 14 done, 🏝️ Europese eilanden, 30 items
+  (2026-08-21)** — split into 5 geography-based sub-batches: #14a Madeira+Azores (5 routes,
+  86,544 tokens, no collisions), #14b Canary Islands+Balearics (10 routes, 86,625 tokens, no
+  collisions, reused batch 7a's Mallorca coordinates), #14c Sicily+Sardinia (7 routes, 107,406
+  tokens), #14d Greek islands (6 routes, 108,731 tokens), #14e Channel Islands+Isle of Man (2
+  routes, 84,445 tokens) — 473,751 tokens total for 30 items (~15,792/item, the priciest batch
+  yet, driven by real collision-resolution work across three of the five sub-batches).
+  **This batch surfaced the first same-Phase-2-workstream duplicates, not just Phase-1-family
+  ones**: batch 14c's "Sardinia Roadtrip"/"Sicily Roadtrip" nearly duplicate the 9-day Sicily/
+  Sardinia loops Phase 2's own earlier Italy batch (#5) already built; batch 14d's two Cyclades
+  routes nearly duplicate an earlier Phase 2 Greek-islands combo route. Also found real Phase-1
+  collisions: batch 14d's "Crete Roadtrip" vs. the Mediterranean Civilizations family's
+  "Greece & Crete 🫒" (which already covers Crete, just bundled with mainland Greece); batch 14e's
+  Jersey+Guernsey vs. the British Isles & Celtic Coast family's "Channel Islands, Brittany &
+  Normandy/Opal Coast & Belgium 🥖" (whose first two legs ARE Guernsey→Jersey); batch 14e's Isle
+  of Man vs. that same family's "England, Wales & Isle of Man 🎩" (whose Isle of Man leg turned out
+  to be substantial — 4 days covering Douglas/Peel/Snaefell — not the "brief stop" first assumed).
+  **Per Youri's explicit instruction (2026-08-21), none of these were merged or deleted** — every
+  one got the same treatment as prior batches (distinct function name + an explicit
+  cross-reference note, pre-existing route untouched) and is logged in
+  [`ROUTE_SIMILARITY_REVIEW.md`](ROUTE_SIMILARITY_REVIEW.md) for Youri to review once all 319
+  items are built, rather than deciding case-by-case mid-build.
+
 - **Europa Trip Ideas: third content addition processed, checklist closed out (2026-08)** — Youri supplied a broad region checklist (West-/Noord-/Centraal-/Zuid-Europa, Balkan, microstaten, Turkije, bijzondere eilanden); almost everything on it already existed, and the genuinely new regions were converted to the "X dagen — route" format and filed under their existing country/section: Engeland/Wales/Noord-Ierland (new section, batch 12), Zweeds Lapland (Zweden, batch 11), Faeröer (new section, batch 11, alongside the existing aspirational Route Builder splitroute), Moravië (Tsjechië, batch 9), Campanië/Puglia (Italië, batch 5), Galicië/Asturië+Cantabrië/Gibraltar (Spanje, batch 7), Centraal-Portugal (Portugal, batch 7), Egeïsche kust (Turkije, batch 10), Svalbard (Noorwegen, batch 11), Åland (Finland, batch 11), Shetland/Orkney/Buiten-Hebriden (Schotland, batch 12), Isle of Man/Jersey & Guernsey (new subsection under 🏝️ Europese eilanden, batch 14). Oekraïne/Belarus/Europees Rusland deliberately not added, on Youri's own instruction. De Egeïsche-kust exception sharpened the list's own inclusion rule for future edge cases: not strictly "Europa, geografisch" but "dichtbij, geschikt voor city trip/~1 week, geen dure/lange vlucht voor zo'n korte periode."
 
 - **Trip Taxonomy: Groep 3 tagging complete, 450 rows total in `TRIP_DATABASE.csv` (2026-08-18)** — all 21 planned sub-batches of `EUROPA_TRIP_IDEAS.md`'s 319 items tagged, closing out Fase 2 (Groep 1: 13 Grand Trips, Groep 2: 118 splitroutes, Groep 3: 319 items, reusing `EUROPA_TRIP_IDEAS.md`'s own 15 named batches with the 6 largest split into two halves each). Total cost 4,270,377 tokens across 43 tagging batches run over several sessions specifically to avoid burning a whole session's budget in one pass (Groep 1+2: 2,059,921 tokens for 131 items, ~15,725/item; Groep 3: 2,210,456 tokens for 319 items, ~6,930/item — less than half Groep 2's rate, confirming plain-markdown source content tags cheaper than diving into `routeBuilder.js`'s 9000+ line source). Per-batch cost table:
