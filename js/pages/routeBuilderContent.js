@@ -16222,3 +16222,209 @@ function rbSeedEuropaDenmarkFinlandRoutes() {
   );
   rbSave();
 }
+
+// Phase 2 batch 11c (Northern Europe: Faroe Islands + Iceland) — closes out batch 11/21.
+// Collision note: 'Faroe Islands 🐑' (rbBuildFaroeIslandsRoute) and 'Iceland ❄️' (rbBuildIcelandRoute)
+// already exist as standalone splitroutes off Nordic Arctic Expedition ❄️ (the long, epic, expedition
+// versions). The 7 routes below are the realistic, shorter "Trip Ideas" versions of the same two
+// destinations — distinct function names, distinct route names/emoji, and each carries an explicit
+// cross-reference note back to the pre-existing route. Neither pre-existing route is touched.
+
+function rbBuildFaroeIslandsShortRoute() {
+  return rbBuildFlatSeedRoute('Faroe Islands (6 days) 🐦', [
+    {
+      code: 'FO', name: 'Faroe Islands', days: 6, budget: 660, lat: 62.0079, lng: -6.7716,
+      destinations: [
+        { name: 'Tórshavn', lat: 62.0079, lng: -6.7716 },
+        { name: 'Múlafossur / Gásadalur', lat: 62.1064, lng: -7.6153 },
+        { name: 'Saksun', lat: 62.2872, lng: -7.2119 },
+        { name: 'Vestmanna bird cliffs boat tour', lat: 62.1546, lng: -7.1698 },
+      ],
+      notes: "Tórshavn (2 days) plus Múlafossur/Gásadalur, Saksun, and the Vestmanna bird-cliffs boat tour. Budget ~€100-120/day — the Faroes are expensive, Scandinavian-level food/accommodation prices, and a rental car is practically essential. Season: May-September, since the Vestmanna boat tours generally only run in this window. Web check (2026-08): Atlantic Airways flies from Copenhagen at least 2x/day, up to 4x/day in summer (June-August), and even more in July 2026 (111 vs. 100 flights in July 2025) — but Vágar Airport is notorious for fog and wind, delays/cancellations are real, so build in buffer time. The Smyril Line ferry Hirtshals-Tórshavn runs 2x/week, ~30-38h, from ~€150 (an alternative if flights are disrupted, or if bringing your own car). The Trælanípa hike has real wind danger (>15 m/s) on the unprotected cliff edge, and fog can remove the view entirely — check weather.fo locally beforehand. The Faroe Islands are in the Nordic Passport Union but NOT in the EU/Schengen — a Dutch traveler needs their actual passport (not an ID card, since it's outside Schengen); occasional passport checks are possible despite the flight feeling like a Danish domestic hop. General travel advisory (2026-08 web check): Denmark, which the Faroes fall under, is green (as of 08-05-2026), with no separate note for the Faroes themselves.\n\nDistinct from the existing 'Faroe Islands 🐑' route (split off from Nordic Arctic Expedition ❄️), which is the longer, epic expedition version. This one is deliberately the realistic, shorter 'Trip Ideas' version of the same destination — a different kind of trip (short holiday vs. epic), not a duplicate.",
+      transport_to_next: 'End of this route — fly home via Copenhagen (Atlantic Airways), or take the Smyril Line ferry back to Hirtshals if timing allows.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Rental car around Tórshavn and the villages, plus a Vestmanna bird-cliffs boat tour.',
+    climate_summary: 'May-September, matching the Vestmanna boat-tour season.',
+    description: 'Tórshavn, Múlafossur/Gásadalur, Saksun, and the Vestmanna bird-cliffs boat tour.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11c (Northern Europe: Faroe Islands + Iceland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 11/21. A deliberately short, realistic 'Trip Ideas' route distinct from the existing standalone 'Faroe Islands 🐑' route (split off from Nordic Arctic Expedition ❄️, the longer epic version); named/emoji'd differently (🐦 vs 🐑) to avoid confusion, and 'Faroe Islands 🐑' itself is left untouched. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildFaroeIslandsIcelandRoute() {
+  return rbBuildFlatSeedRoute('Faroe Islands + Iceland (9 days) ⛴️', [
+    {
+      code: 'FO', name: 'Faroe Islands', days: 3, budget: 360, lat: 62.0079, lng: -6.7716,
+      destinations: [
+        { name: 'Tórshavn', lat: 62.0079, lng: -6.7716 },
+        { name: 'Vestmanna bird cliffs boat tour', lat: 62.1546, lng: -7.1698 },
+      ],
+      notes: "Tórshavn plus the Vestmanna bird-cliffs boat tour, kept short since this is the combined trip with Iceland below. Budget ~€110-130/day overall for the whole trip (Iceland runs pricier than the Faroes). Practical connection: the Smyril Line MS Norröna combines both legs in one crossing (a weekly Faroe-Iceland sailing) with a required minimum stay of 1 week Iceland + 3 days-1 week Faroe Islands, from ~€810 (25% deposit) — note that strict minimum adds up to about 10 days, slightly more than this 9-day version, so treat this as a compressed take on the Norröna combo or plan on flying the two legs separately instead (no direct Atlantic Airways FAE-Reykjavík route was found, most likely via Copenhagen). Season: June-August for the most favorable Norröna sailing schedule.",
+      transport_to_next: 'Smyril Line MS Norröna ferry crossing to Iceland (the weekly Faroe-Iceland leg) — or fly separately via Copenhagen if the ferry minimum-stay/schedule doesn\'t fit.',
+    },
+    {
+      code: 'IS', name: 'Iceland', days: 6, budget: 720, lat: 64.1466, lng: -21.9426,
+      destinations: [
+        { name: 'Reykjavík', lat: 64.1466, lng: -21.9426 },
+        { name: 'Þingvellir', lat: 64.2559, lng: -21.1295 },
+        { name: 'Geysir', lat: 64.3104, lng: -20.3024 },
+        { name: 'Gullfoss', lat: 64.3271, lng: -20.1199 },
+        { name: 'Blue Lagoon', lat: 63.8804, lng: -22.4495 },
+      ],
+      notes: "Reykjavík plus the Golden Circle (Þingvellir, Geysir, Gullfoss) and the Blue Lagoon, on the Iceland side of the combined trip. Web check (2026-08): this is deliberately the short-holiday version alongside the aspirational 'Nordic Arctic Expedition' epic in the Route Builder — not a duplicate, but a shorter, practical combination of the two islands. See the Reykjavík + Golden Circle (5 days) route below for the full Reykjanes Peninsula volcanic-activity safety note and Schengen entry details, both of which apply here too.",
+      transport_to_next: 'End of this route — fly home from Keflavík (Reykjavík-Amsterdam with KLM/Icelandair/Transavia).',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Smyril Line MS Norröna ferry between the two islands (or separate flights via Copenhagen), rental car on each island.',
+    climate_summary: 'June-August, for the most favorable Norröna ferry schedule.',
+    description: 'The Faroe Islands (Tórshavn, Vestmanna bird cliffs) combined with Iceland (Reykjavík, the Golden Circle, the Blue Lagoon) via the Smyril Line ferry.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11c (Northern Europe: Faroe Islands + Iceland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 11/21. Deliberately the short, practical combination of both islands, distinct from the aspirational 'Nordic Arctic Expedition ❄️' epic (which also includes both as separate legs) — not a duplicate. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildReykjavikGoldenCircleRoute() {
+  return rbBuildFlatSeedRoute('Reykjavík + Golden Circle (5 days) 🌋', [
+    {
+      code: 'IS', name: 'Iceland', days: 5, budget: 725, lat: 64.1466, lng: -21.9426,
+      destinations: [
+        { name: 'Reykjavík', lat: 64.1466, lng: -21.9426 },
+        { name: 'Þingvellir', lat: 64.2559, lng: -21.1295 },
+        { name: 'Geysir', lat: 64.3104, lng: -20.3024 },
+        { name: 'Gullfoss', lat: 64.3271, lng: -20.1199 },
+        { name: 'Blue Lagoon', lat: 63.8804, lng: -22.4495 },
+      ],
+      notes: "Reykjavík (2 days, city and harbor) plus a Golden Circle day tour (Þingvellir, Geysir, Gullfoss, 1 day), the Blue Lagoon via Keflavík (1 day), and a buffer day. Budget ~€130-160/day (budget-comfort accommodation plus a rental car/day tour and meals — Iceland is expensive). Season: year-round; summer (June-August) for long days, winter (October-March) for northern lights, but with shorter daylight hours and icy roads. Web check (2026-08): the Blue Lagoon requires mandatory advance booking, no walk-ins, indicative price from ~€65-75 (Comfort tier) — the exact 2026 price isn't confirmed with certainty, so verify just before booking. The drive to the Blue Lagoon passes through the Reykjanes Peninsula (see the safety note below); the Golden Circle itself (Þingvellir/Geysir/Gullfoss) lies outside that area, unaffected.\n\nIceland safety note (2026-08 web check, currently active — travel advisory last changed 21-04-2026, valid through 14-08-2026): yellow for the Reykjanes Peninsula specifically, due to ongoing volcanic activity near Grindavík — the risk of a new eruption remains. Green for the rest of Iceland. No active eruption since September 2025; Grindavík itself has reopened but remains vulnerable (fresh lava, gas risk, sirens possible) — check safetravel.is/eruption-in-reykjanes/ just before travel. Keflavík Airport and the Reykjavík-Keflavík road function normally. Schengen — a Dutch passport is visa-free, no ETA needed, standard Schengen entry.",
+      transport_to_next: 'End of this route — fly home from Keflavík.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Based in Reykjavík, a Golden Circle day tour and a Blue Lagoon day via Keflavík.',
+    climate_summary: 'Year-round; summer for long days, winter (October-March) for northern lights with shorter daylight and icy roads.',
+    description: 'Reykjavík, the Golden Circle (Þingvellir, Geysir, Gullfoss), and the Blue Lagoon.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11c (Northern Europe: Faroe Islands + Iceland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 11/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSouthIcelandRoute() {
+  return rbBuildFlatSeedRoute('South Iceland (6 days) 🌊', [
+    {
+      code: 'IS', name: 'Iceland', days: 6, budget: 810, lat: 64.1466, lng: -21.9426,
+      destinations: [
+        { name: 'Reykjavík', lat: 64.1466, lng: -21.9426 },
+        { name: 'Þingvellir', lat: 64.2559, lng: -21.1295 },
+        { name: 'Geysir', lat: 64.3104, lng: -20.3024 },
+        { name: 'Gullfoss', lat: 64.3271, lng: -20.1199 },
+        { name: 'Seljalandsfoss', lat: 63.6156, lng: -19.9886 },
+        { name: 'Skógafoss', lat: 63.5321, lng: -19.5116 },
+        { name: 'Reynisfjara black beach', lat: 63.4045, lng: -19.0424 },
+        { name: 'Vík í Mýrdal', lat: 63.4186, lng: -19.0060 },
+      ],
+      notes: "Reykjavík (1-2 days) plus the Golden Circle (1 day) and the South Coast as far as Vík (Seljalandsfoss, Skógafoss, Reynisfjara black beach, 2-3 days), then back to Reykjavík — the differentiator against the routes below is stopping at Vík, not continuing further. Budget ~€120-150/day. Season: May-September for the best road conditions. Web check (2026-08): Route 1 as far as Vík is fully paved/2WD, no F-roads needed, and no volcanic impact on this stretch. Reynisfjara: watch for 'sneaker waves' (dangerous surprise waves) — a year-round warning. See the Reykjavík + Golden Circle (5 days) route above for the Reykjanes Peninsula volcanic-activity safety note and Schengen entry details.",
+      transport_to_next: 'End of this route — back to Reykjavík/Keflavík to fly home, or continue on to the Iceland South Coast route below for Jökulsárlón and Höfn.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Rental car, Reykjavík and the Golden Circle plus a South Coast drive as far as Vík.',
+    climate_summary: 'May-September for the best road conditions.',
+    description: 'Reykjavík, the Golden Circle, and the South Coast to Vík (Seljalandsfoss, Skógafoss, Reynisfjara black beach).',
+    notes: "Built (2026-08) as part of Phase 2 batch 11c (Northern Europe: Faroe Islands + Iceland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 11/21. Differentiator: ends at Vík, unlike the Iceland South Coast and Ring Road routes below which continue further. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildIcelandSouthCoastRoute() {
+  return rbBuildFlatSeedRoute('Iceland South Coast (9 days) 🧊', [
+    {
+      code: 'IS', name: 'Iceland', days: 9, budget: 1170, lat: 64.1466, lng: -21.9426,
+      destinations: [
+        { name: 'Reykjavík', lat: 64.1466, lng: -21.9426 },
+        { name: 'Golden Circle (Þingvellir/Geysir/Gullfoss)', lat: 64.3104, lng: -20.3024 },
+        { name: 'Seljalandsfoss', lat: 63.6156, lng: -19.9886 },
+        { name: 'Skógafoss', lat: 63.5321, lng: -19.5116 },
+        { name: 'Reynisfjara black beach / Vík í Mýrdal', lat: 63.4045, lng: -19.0424 },
+        { name: 'Jökulsárlón Glacier Lagoon', lat: 64.0784, lng: -16.2300 },
+        { name: 'Diamond Beach', lat: 64.0446, lng: -16.1793 },
+        { name: 'Höfn', lat: 64.2539, lng: -15.2082 },
+      ],
+      notes: "The same as South Iceland above, but continuing on past Vík to the Jökulsárlón glacier lagoon, Diamond Beach, and Höfn (2-3 extra days) — the differentiator here is pushing on past Vík instead of stopping there. Optionally an ice cave tour in winter (November-March, guided only). Budget ~€120-145/day. Season: June-September for driving comfort; winter (November-March) specifically for the ice caves at Vatnajökull (guided tours only, weather-dependent). Web check (2026-08): Route 1 as far as Höfn is fully paved, no 4x4 needed; always book ice cave tours with a local guide — they require one regardless of experience. See the Reykjavík + Golden Circle (5 days) route above for the Reykjanes Peninsula volcanic-activity safety note and Schengen entry details.",
+      transport_to_next: 'End of this route — back to Reykjavík/Keflavík to fly home, or continue on to the full Iceland Ring Road route below.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Rental car, the South Coast extended past Vík to Jökulsárlón, Diamond Beach and Höfn.',
+    climate_summary: 'June-September for driving comfort; November-March specifically for guided ice cave tours at Vatnajökull.',
+    description: 'Reykjavík, the Golden Circle, the South Coast to Vík, Jökulsárlón Glacier Lagoon, Diamond Beach and Höfn.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11c (Northern Europe: Faroe Islands + Iceland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 11/21. Differentiator: continues past Vík to Jökulsárlón/Höfn, unlike the shorter South Iceland route above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildIcelandRingRoadRoute() {
+  return rbBuildFlatSeedRoute('Iceland Ring Road (12 days) 🛣️', [
+    {
+      code: 'IS', name: 'Iceland', days: 12, budget: 1560, lat: 64.1466, lng: -21.9426,
+      destinations: [
+        { name: 'Reykjavík', lat: 64.1466, lng: -21.9426 },
+        { name: 'Vík í Mýrdal', lat: 63.4186, lng: -19.0060 },
+        { name: 'Jökulsárlón Glacier Lagoon', lat: 64.0784, lng: -16.2300 },
+        { name: 'Höfn', lat: 64.2539, lng: -15.2082 },
+        { name: 'Egilsstaðir', lat: 65.2669, lng: -14.3948 },
+        { name: 'Seyðisfjörður', lat: 65.2646, lng: -13.9552 },
+        { name: 'Mývatn', lat: 65.6000, lng: -17.0000 },
+        { name: 'Akureyri', lat: 65.6835, lng: -18.0878 },
+        { name: 'Húsavík', lat: 66.0449, lng: -17.3389 },
+      ],
+      notes: "The complete Route 1 loop (1,332 km): Reykjavík → the South Coast/Jökulsárlón → the East Fjords (Egilsstaðir/Seyðisfjörður) → North Iceland (Mývatn, Akureyri, Húsavík whale watching) → back via the west — the differentiator against the routes above is the full circle, not just the south coast. Budget ~€115-140/day (a rental car is essential, most days self-catering or a guesthouse). Season: June-mid September is optimal (all roads open, lowest risk of snowfall). Web check (2026-08): Route 1 itself stays 2WD/paved, no F-roads needed for the ring road; some unpaved side roads do exist to attractions off the main route (e.g. parts of Snæfellsnes, if added). Check umferdin.is for current road conditions just before departure, especially outside peak summer. See the Reykjavík + Golden Circle (5 days) route above for the Reykjanes Peninsula volcanic-activity safety note and Schengen entry details.\n\nDistinct from the existing standalone 'Iceland ❄️' route (split off from Nordic Arctic Expedition ❄️), which is the longer, epic expedition version. This one is deliberately the realistic, shorter 'Trip Ideas' Ring Road version — a different kind of trip (holiday vs. epic), not a duplicate.",
+      transport_to_next: 'End of this route — fly home from Keflavík, or continue on to the Iceland Extended route below for the Westfjords or Highlands.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Full self-drive Ring Road loop, rental car for the whole trip.',
+    climate_summary: 'June-mid September for all roads open and the lowest risk of snowfall.',
+    description: 'The complete Route 1 Ring Road loop: the South Coast, Jökulsárlón, the East Fjords, North Iceland, and back via the west.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11c (Northern Europe: Faroe Islands + Iceland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 11/21. A deliberately shorter, realistic 'Trip Ideas' route distinct from the existing standalone 'Iceland ❄️' route (split off from Nordic Arctic Expedition ❄️, the longer epic version); named/emoji'd differently (🛣️ vs ❄️) to avoid confusion, and 'Iceland ❄️' itself is left untouched. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildIcelandExtendedRoute() {
+  return rbBuildFlatSeedRoute('Iceland Extended (14 days) 🗺️', [
+    {
+      code: 'IS', name: 'Iceland', days: 14, budget: 2030, lat: 64.1466, lng: -21.9426,
+      destinations: [
+        { name: 'Reykjavík', lat: 64.1466, lng: -21.9426 },
+        { name: 'Vík í Mýrdal', lat: 63.4186, lng: -19.0060 },
+        { name: 'Jökulsárlón Glacier Lagoon', lat: 64.0784, lng: -16.2300 },
+        { name: 'Egilsstaðir / Seyðisfjörður', lat: 65.2669, lng: -14.3948 },
+        { name: 'Mývatn / Akureyri / Húsavík', lat: 65.6000, lng: -17.0000 },
+        { name: 'Westfjords (Ísafjörður)', lat: 66.0748, lng: -23.1339 },
+        { name: 'Dynjandi waterfall', lat: 65.7333, lng: -23.1833 },
+        { name: 'Landmannalaugar (highland alternative)', lat: 63.9938, lng: -19.0619 },
+        { name: 'Þórsmörk (highland alternative)', lat: 63.6833, lng: -19.5333 },
+      ],
+      notes: "The full Ring Road (as above) plus an extra branch: either the Westfjords (remote, dramatic fjords, the Dynjandi waterfall) or a highland tour (e.g. Landmannalaugar/Þórsmörk via an F-road, 4x4 required) — the differentiator here is that extra depth, not just more days on the same route. Budget ~€130-160/day (the highland tour needs a 4x4 rental, pricier than 2WD; the Westfjords option means more fuel/distance and fewer amenities). Season: the highland option is only feasible roughly mid-June-early September (F-roads only open then, varies year to year — check vegagerdin.is/umferdin.is); the Westfjords are accessible all summer, though some mountain passes have winter closures. Web check (2026-08): the highland route requires mandatory 4x4 plus river fords, NOT covered by a standard 2WD rental — check opening dates right before departure. The Westfjords option stays on paved/2WD-suitable main roads throughout. See the Reykjavík + Golden Circle (5 days) route above for the Reykjanes Peninsula volcanic-activity safety note and Schengen entry details.",
+      transport_to_next: 'End of this route — fly home from Keflavík.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Full self-drive Ring Road plus either a Westfjords extension (2WD) or a highland 4x4 tour (Landmannalaugar/Þórsmörk).',
+    climate_summary: 'June-August for the highland F-roads to be open (mid-June-early September, weather-dependent); the Westfjords are accessible all summer.',
+    description: 'The full Ring Road plus either the remote Westfjords (Dynjandi waterfall) or a 4x4 highland tour (Landmannalaugar/Þórsmörk).',
+    notes: "Built (2026-08) as part of Phase 2 batch 11c (Northern Europe: Faroe Islands + Iceland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 11/21. The deepest of the Iceland routes in this batch, adding a Westfjords or highland branch onto the Ring Road above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaFaroeIcelandRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_FAROE_ICELAND)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_FAROE_ICELAND, '1');
+
+  rbRoutes.push(
+    rbBuildFaroeIslandsShortRoute(),
+    rbBuildFaroeIslandsIcelandRoute(),
+    rbBuildReykjavikGoldenCircleRoute(),
+    rbBuildSouthIcelandRoute(),
+    rbBuildIcelandSouthCoastRoute(),
+    rbBuildIcelandRingRoadRoute(),
+    rbBuildIcelandExtendedRoute(),
+  );
+  rbSave();
+}
