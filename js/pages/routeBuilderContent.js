@@ -16924,3 +16924,210 @@ function rbSeedEuropaEnglandWalesNorthernIrelandRoutes() {
   );
   rbSave();
 }
+
+// ---- Phase 2 batch 13/21 (Baltic States: Estonia + Latvia + Lithuania) — 6 hand-authored
+// routes converting EUROPA_TRIP_IDEAS.md into Route Builder content (2026-08). ----
+
+function rbBuildEstoniaRoute() {
+  return rbBuildFlatSeedRoute('Estonia (5-7 days) 🏰', [
+    {
+      code: 'EE', name: 'Estonia', days: 6, budget: 480, lat: 59.4370, lng: 24.7536,
+      destinations: [
+        { name: 'Tallinn (Old Town)', lat: 59.4370, lng: 24.7454 },
+        { name: 'Lahemaa National Park', lat: 59.4711, lng: 25.9106 },
+        { name: 'Kuressaare Castle (Saaremaa)', lat: 58.2481, lng: 22.4886 },
+        { name: 'Muhu-Virtsu ferry link', lat: 58.5667, lng: 23.5167 },
+      ],
+      notes: "Entry: fly into Tallinn from Amsterdam (direct or one-stop, airBaltic/Ryanair/Finnair depending on season). Tallinn's Old Town (2-3 days), then either Lahemaa National Park (1 day, forests and bog coastline east of Tallinn) or Saaremaa (2 days, Kuressaare Castle, reached via the Virtsu-Muhu ferry and the Muhu causeway) — pick one depending on available days. Budget ~€70-90/day. Season: May-September is best; Saaremaa/Muhu is strongly seasonal, with many restaurants and a more limited ferry schedule outside summer. New for 2026: Finnair is launching a Helsinki-Kuressaare route. Web check (2026-08): book car-ferry spots for the Tallinn-Saaremaa crossing well ahead for July/August. The Narva-Russia border crossing has been closed to vehicles since February 2024, extended through at least 31 August 2026 — not relevant unless considering Narva as a day trip (the town itself is safe and within Schengen). General safety note: watch for pickpocketing in Tallinn, Russian-plated vehicles are not allowed, and there is an LGBTIQ+ discrimination risk outside Tallinn/Tartu.",
+      transport_to_next: 'End of this route — fly home from Tallinn.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Tallinn as a base, with either a national-park day trip or a longer island trip to Saaremaa via ferry.',
+    climate_summary: 'May-September best; Saaremaa/Muhu is strongly seasonal and much quieter outside summer.',
+    description: "Tallinn's Old Town plus either Lahemaa National Park or Saaremaa/Kuressaare Castle.",
+    notes: "Built (2026-08) as part of Phase 2 batch 13/21 (Baltic States: Estonia + Latvia + Lithuania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. No pre-existing Route Builder expedition covers Estonia, so no collision check was needed beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildLatviaRoute() {
+  return rbBuildFlatSeedRoute('Latvia (5-7 days) 🌲', [
+    {
+      code: 'LV', name: 'Latvia', days: 6, budget: 480, lat: 56.9496, lng: 24.1052,
+      destinations: [
+        { name: 'Riga (Old Town)', lat: 56.9496, lng: 24.1052 },
+        { name: 'Sigulda', lat: 57.1536, lng: 24.8592 },
+        { name: 'Turaida Castle', lat: 57.1719, lng: 24.8494 },
+        { name: 'Gauja National Park', lat: 57.1667, lng: 24.8600 },
+        { name: 'Rundāle Palace', lat: 56.4149, lng: 24.0128 },
+      ],
+      notes: "Entry: fly into Riga from Amsterdam (direct or one-stop, airBaltic/Ryanair/Wizz Air depending on season). Riga's Old Town (2-3 days), then Sigulda/Turaida Castle/Gauja National Park — the so-called 'Latvian Switzerland' (2 days) — plus a day trip to Rundāle Palace. Budget ~€70-90/day. Season: May-September. Rundāle Palace is open Wednesday-Sunday (closed Monday/Tuesday), summer hours 10:00-17:00 (the garden until 20:00 on weekends), winter hours 10:00-16:00. Web check (2026-08): Rundāle 2026 prices are roughly €12 for the palace / €6 for the garden / €17 combined — check rundale.net for the current rate. Sigulda's cable car and summer bobsled last-confirmed prices (~€9-14) date from 2021 — check on-site, likely higher by now. General safety note: Latvia's border strip with Belarus is orange (essential travel only) and there is an LGBTIQ+ discrimination risk outside the capital — neither is relevant to this route's itinerary.",
+      transport_to_next: 'End of this route — fly home from Riga.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Riga as a base, with a rental car or day tours out to Sigulda/Gauja National Park and Rundāle Palace.',
+    climate_summary: 'May-September best.',
+    description: "Riga's Old Town, Sigulda/Turaida Castle/Gauja National Park, and Rundāle Palace.",
+    notes: "Built (2026-08) as part of Phase 2 batch 13/21 (Baltic States: Estonia + Latvia + Lithuania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. No pre-existing Route Builder expedition covers Latvia, so no collision check was needed beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildLithuaniaRoute() {
+  return rbBuildFlatSeedRoute('Lithuania (5-7 days) 🌊', [
+    {
+      code: 'LT', name: 'Lithuania', days: 6, budget: 480, lat: 54.6872, lng: 25.2797,
+      destinations: [
+        { name: 'Vilnius (Old Town)', lat: 54.6872, lng: 25.2797 },
+        { name: 'Trakai Castle', lat: 54.6551, lng: 24.9339 },
+        { name: 'Kaunas', lat: 54.8985, lng: 23.9036 },
+        { name: 'Klaipėda (Smiltynė ferry)', lat: 55.7033, lng: 21.1443 },
+        { name: 'Curonian Spit / Nida', lat: 55.3033, lng: 21.0058 },
+      ],
+      notes: "Entry: fly into Vilnius from Amsterdam (direct or one-stop, airBaltic/Ryanair/Wizz Air depending on season). Vilnius's Old Town (2-3 days), a day trip to Trakai Castle, Kaunas (1 day), then the Curonian Spit/Nida (2 days) via the Klaipėda-Smiltynė ferry. Budget ~€70-90/day. Season: May-September; the dunes at Nida are at their best in summer. Web check (2026-08): the Trakai Castle ticket is €12 (May-Sep) / €10 (Oct-Apr); the Klaipėda-Smiltynė car ferry is €23.20 return (2026); there's an extra eco-toll for cars in Neringa/Nida — €50 (20 June-20 August) or €10 the rest of the year, with electric cars free outside peak season. General safety note: there is an LGBTIQ+ discrimination risk outside Vilnius, similar to the other Baltic capitals.",
+      transport_to_next: 'End of this route — fly home from Vilnius.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Vilnius as a base, with day trips to Trakai and Kaunas, then a car or bus trip out to the Curonian Spit via the Klaipėda ferry.',
+    climate_summary: 'May-September best; the Nida dunes are nicest in summer.',
+    description: "Vilnius's Old Town, Trakai Castle, Kaunas, and the Curonian Spit/Nida.",
+    notes: "Built (2026-08) as part of Phase 2 batch 13/21 (Baltic States: Estonia + Latvia + Lithuania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. No pre-existing Route Builder expedition covers Lithuania, so no collision check was needed beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildTallinnRigaVilniusRoute() {
+  return rbBuildFlatSeedRoute('Tallinn + Riga + Vilnius (7-10 days) 🚌', [
+    {
+      code: 'EE', name: 'Estonia', days: 3, budget: 270, lat: 59.4370, lng: 24.7536,
+      destinations: [
+        { name: 'Tallinn (Old Town)', lat: 59.4370, lng: 24.7454 },
+      ],
+      notes: "Entry: fly into Tallinn from Amsterdam. Pure capital-hop, no detours to the countryside or islands — 3 days in Tallinn's Old Town. Budget ~€80-100/day (cities run a little more expensive than the countryside legs). Season: May-September. General safety note: watch for pickpocketing in Tallinn.",
+      transport_to_next: 'Bus with Lux Express (~3h40) from Tallinn to Riga — no border formalities, both EU/Schengen.',
+    },
+    {
+      code: 'LV', name: 'Latvia', days: 3, budget: 270, lat: 56.9496, lng: 24.1052,
+      destinations: [
+        { name: 'Riga (Old Town)', lat: 56.9496, lng: 24.1052 },
+      ],
+      notes: "3 days in Riga's Old Town. Budget ~€80-100/day. Season: May-September.",
+      transport_to_next: 'Bus with Lux Express (~5h10) from Riga to Vilnius — no border formalities, both EU/Schengen.',
+    },
+    {
+      code: 'LT', name: 'Lithuania', days: 3, budget: 270, lat: 54.6872, lng: 25.2797,
+      destinations: [
+        { name: 'Vilnius (Old Town)', lat: 54.6872, lng: 25.2797 },
+      ],
+      notes: "3 days in Vilnius's Old Town. Budget ~€80-100/day. Web check (2026-08): the Rail Baltica high-speed line is not yet operational (target 2030, with the Latvian section possibly not until 2035), so this route travels entirely by bus (Lux Express/Ecolines, not train) — book ahead in high season, prices roughly $11-60 per leg.",
+      transport_to_next: 'End of this route — fly home from Vilnius.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Pure capital hop by bus — Tallinn, then Riga, then Vilnius — with no detours to the countryside or islands.',
+    climate_summary: 'May-September best.',
+    description: "A capital-city bus tour: Tallinn, Riga, and Vilnius, connected by Lux Express coaches.",
+    notes: "Built (2026-08) as part of Phase 2 batch 13/21 (Baltic States: Estonia + Latvia + Lithuania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Differentiator vs. the standalone Estonia/Latvia/Lithuania and Baltic States Roadtrip routes above: this is deliberately just the three capitals by bus, no countryside or island legs. No pre-existing Route Builder expedition covers this combination, so no collision check was needed beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildBalticStatesRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Baltic States Roadtrip (10-14 days) 🚗', [
+    {
+      code: 'EE', name: 'Estonia', days: 5, budget: 400, lat: 59.4370, lng: 24.7536,
+      destinations: [
+        { name: 'Tallinn (Old Town)', lat: 59.4370, lng: 24.7454 },
+        { name: 'Lahemaa National Park', lat: 59.4711, lng: 25.9106 },
+        { name: 'Kuressaare Castle (Saaremaa)', lat: 58.2481, lng: 22.4886 },
+      ],
+      notes: "Entry: fly into Tallinn from Amsterdam, pick up a rental car. Tallinn (2 days), Lahemaa National Park (1 day), Saaremaa (2 days). Budget ~€70-90/day (book the rental car early for summer). Season: May-September. Web check (2026-08): book the Tallinn-Saaremaa car ferry well ahead for high season.",
+      transport_to_next: 'Drive south from Saaremaa/Muhu to Riga — all EU/Schengen, no border controls.',
+    },
+    {
+      code: 'LV', name: 'Latvia', days: 4, budget: 320, lat: 56.9496, lng: 24.1052,
+      destinations: [
+        { name: 'Riga (Old Town)', lat: 56.9496, lng: 24.1052 },
+        { name: 'Sigulda / Turaida Castle / Gauja NP', lat: 57.1536, lng: 24.8592 },
+        { name: 'Rundāle Palace (day trip)', lat: 56.4149, lng: 24.0128 },
+      ],
+      notes: "Riga (2 days), then Sigulda/Turaida Castle/Gauja National Park (2 days) plus a day trip to Rundāle Palace. Budget ~€70-90/day.",
+      transport_to_next: 'Drive south from Riga/Sigulda to Vilnius — all EU/Schengen, no border controls.',
+    },
+    {
+      code: 'LT', name: 'Lithuania', days: 4, budget: 320, lat: 54.6872, lng: 25.2797,
+      destinations: [
+        { name: 'Vilnius (Old Town)', lat: 54.6872, lng: 25.2797 },
+        { name: 'Trakai Castle (day trip)', lat: 54.6551, lng: 24.9339 },
+        { name: 'Curonian Spit / Nida', lat: 55.3033, lng: 21.0058 },
+      ],
+      notes: "Vilnius (2 days) with a day trip to Trakai Castle, then the Curonian Spit/Nida (2 days). Budget ~€70-90/day. Web check (2026-08): the Curonian Spit's Neringa/Nida car eco-toll applies here — €50 (20 June-20 August) or €10 the rest of the year, electric cars free outside peak season. General note: all three Baltic states are EU/Schengen with no internal border controls between them.",
+      transport_to_next: 'End of this route — fly home from Vilnius (or Kaunas, if flight availability is better).',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Self-drive rental-car loop through all three Baltic states, taking in smaller regions (Sigulda, the Curonian Spit, Saaremaa) rather than just the capitals.',
+    climate_summary: 'May-September best.',
+    description: "A self-drive loop: Tallinn, Lahemaa and Saaremaa in Estonia; Riga, Sigulda/Gauja NP and Rundāle Palace in Latvia; Vilnius, Trakai and the Curonian Spit in Lithuania.",
+    notes: "Built (2026-08) as part of Phase 2 batch 13/21 (Baltic States: Estonia + Latvia + Lithuania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Differentiator vs. 'Tallinn + Riga + Vilnius' above: a genuine self-drive loop through smaller regions rather than an extended capitals trip. No pre-existing Route Builder expedition covers this combination, so no collision check was needed beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildBalticsPolandRoute() {
+  return rbBuildFlatSeedRoute('Baltics + Poland (10-14 days) 🇵🇱', [
+    {
+      code: 'EE', name: 'Estonia', days: 3, budget: 270, lat: 59.4370, lng: 24.7536,
+      destinations: [
+        { name: 'Tallinn (Old Town)', lat: 59.4370, lng: 24.7454 },
+      ],
+      notes: "Entry: fly into Tallinn from Amsterdam. 3 days in Tallinn's Old Town, as the start of the capitals-hop portion of this trip (~7-8 days total for Tallinn+Riga+Vilnius). Budget ~€80-100/day.",
+      transport_to_next: 'Bus with Lux Express (~3h40) from Tallinn to Riga — no border formalities, both EU/Schengen.',
+    },
+    {
+      code: 'LV', name: 'Latvia', days: 3, budget: 270, lat: 56.9496, lng: 24.1052,
+      destinations: [
+        { name: 'Riga (Old Town)', lat: 56.9496, lng: 24.1052 },
+      ],
+      notes: "3 days in Riga's Old Town. Budget ~€80-100/day.",
+      transport_to_next: 'Bus with Lux Express (~5h10) from Riga to Vilnius — no border formalities, both EU/Schengen.',
+    },
+    {
+      code: 'LT', name: 'Lithuania', days: 3, budget: 270, lat: 54.6872, lng: 25.2797,
+      destinations: [
+        { name: 'Vilnius (Old Town)', lat: 54.6872, lng: 25.2797 },
+      ],
+      notes: "3 days in Vilnius's Old Town. Budget ~€80-100/day. Web check (2026-08): no Rail Baltica train is available yet, so the capitals leg travels by bus (Lux Express/Ecolines). In the Suwałki Gap (the Lithuania-Poland border area this route crosses next), NATO and Lithuania are actively reinforcing infrastructure and military presence in 2026 (a new training ground at Kapčiamiestis, a road upgrade Vilnius-Augustów) — no danger to tourists, but visible military activity; follow local instructions. The border crossing itself is Schengen, with no passport control.",
+      transport_to_next: 'Drive or bus via the Suwałki corridor (the Lithuania-Poland border area) south into Poland — a Schengen crossing with no passport control.',
+    },
+    {
+      code: 'PL', name: 'Poland', days: 4, budget: 360, lat: 52.2297, lng: 21.0122,
+      destinations: [
+        { name: 'Warsaw', lat: 52.2297, lng: 21.0122 },
+        { name: 'Masurian Lakes (Giżycko)', lat: 54.0367, lng: 21.7644 },
+        { name: 'Gdańsk / Hel Peninsula', lat: 54.6084, lng: 18.8006 },
+      ],
+      notes: "3-5 days extending south from the Suwałki corridor into either Warsaw, or the Masurian Lakes and Gdańsk — pick one branch depending on available days and interest (lakes/coast vs. the capital). Budget ~€80-100/day. Season: May-September. Warsaw/Gdańsk coordinates reused from the Poland Roadtrip and Poland: North to South routes (batch 9c) for consistency. General note: Poland's travel advisory has been green since 5 March 2026; some border crossings with Belarus/Ukraine/Kaliningrad remain closed or restricted, not relevant to this route.",
+      transport_to_next: 'End of this route — fly home from Warsaw or Gdańsk depending on which branch was taken.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Capitals-hop by bus through the Baltics, then a rental car or train extension south via the Suwałki corridor into Poland.',
+    climate_summary: 'May-September best.',
+    description: "Tallinn, Riga and Vilnius by bus, then south via the Suwałki corridor to either Warsaw or the Masurian Lakes/Gdańsk.",
+    notes: "Built (2026-08) as part of Phase 2 batch 13/21 (Baltic States: Estonia + Latvia + Lithuania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Modeled as four blocks (EE, LV, LT, PL) since Poland genuinely extends the trip as its own leg. Warsaw and Gdańsk coordinates reused from the existing 'Poland Roadtrip 🚗' and 'Poland: North to South ⚓' routes (batch 9c) for consistency; Masurian Lakes (Giżycko) coordinates are new, since no prior Poland route in this repo covers that region. No pre-existing Route Builder expedition covers this Baltics+Poland combination, so no collision check was needed beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaBalticStatesRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_BALTIC_STATES)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_BALTIC_STATES, '1');
+
+  rbRoutes.push(
+    rbBuildEstoniaRoute(),
+    rbBuildLatviaRoute(),
+    rbBuildLithuaniaRoute(),
+    rbBuildTallinnRigaVilniusRoute(),
+    rbBuildBalticStatesRoadtripRoute(),
+    rbBuildBalticsPolandRoute(),
+  );
+  rbSave();
+}
