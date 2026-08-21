@@ -15587,3 +15587,391 @@ function rbSeedEuropaGreeceCyprusTurkeyRoutes() {
   );
   rbSave();
 }
+
+function rbBuildOsloRoute() {
+  return rbBuildFlatSeedRoute('Oslo (5 days) 🏛️', [
+    {
+      code: 'NO', name: 'Norway', days: 5, budget: 625, lat: 59.9139, lng: 10.7522,
+      destinations: [
+        { name: 'Oslo (Karl Johans gate)', lat: 59.9139, lng: 10.7522 },
+        { name: 'Vigeland Park', lat: 59.9270, lng: 10.7003 },
+        { name: 'Viking Ship Museum & Fram Museum (Bygdøy)', lat: 59.9037, lng: 10.6860 },
+        { name: 'Munch Museum', lat: 59.9075, lng: 10.7563 },
+        { name: 'Hovedøya (Oslofjord islands day trip)', lat: 59.8971, lng: 10.7351 },
+        { name: 'Fredrikstad (alternative day trip)', lat: 59.2103, lng: 10.9299 },
+      ],
+      notes: "Oslo city center (2-3 days): Vigeland Park's sculpture garden, the Viking Ship Museum and Fram Museum on the Bygdøy peninsula, and the Munch Museum, plus a day trip to the Oslofjord islands (Hovedøya) or south to the old town of Fredrikstad. Budget ~€110-140/day — a city trip, no rental car needed, a public transport day pass runs about 120 NOK. Season: May-September for the best weather and long daylight hours; the museums themselves are open year-round. Web check (2026-08): fjord ferries and island boats run a reduced winter schedule — check current times before relying on one. Travel advisory: green (last updated 2 July 2026) — watch for pickpockets around Oslo Gardermoen and the central station, and avalanche risk in winter. Schengen, no visa needed, just a valid passport/ID (Svalbard is the one exception — see that route).",
+      transport_to_next: 'End of this route — fly home from Oslo.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'City trip on foot/public transport, one day trip by ferry or train.',
+    climate_summary: 'May-September for the best weather and longest days; museums open year-round.',
+    description: 'Oslo city center, Vigeland Park, the Viking Ship and Fram museums on Bygdøy, and a day trip to the Oslofjord islands or Fredrikstad.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11a (Northern Europe: Norway + Sweden) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildBergenFjordsRoute() {
+  return rbBuildFlatSeedRoute('Bergen + Fjords (6 days) ⛴️', [
+    {
+      code: 'NO', name: 'Norway', days: 6, budget: 870, lat: 60.3959, lng: 5.3245,
+      destinations: [
+        { name: 'Bergen (Bryggen)', lat: 60.3959, lng: 5.3245 },
+        { name: 'Fløyen', lat: 60.3975, lng: 5.3401 },
+        { name: 'Ulriken', lat: 60.3736, lng: 5.3597 },
+        { name: 'Flåm (Flåm Railway)', lat: 60.8617, lng: 7.1136 },
+        { name: 'Nærøyfjord', lat: 60.8666, lng: 6.8666 },
+        { name: 'Voss', lat: 60.6293, lng: 6.4152 },
+        { name: 'Hardangerfjord / Eidfjord (optional extension)', lat: 60.4679, lng: 7.0708 },
+      ],
+      notes: "Bergen (2-3 days): Bryggen's old wharf houses, plus the Fløyen and Ulriken viewpoints, then the classic 'Norway in a Nutshell' day trip — the Flåm Railway, a Nærøyfjord cruise, and Voss — with an optional extension into the Hardangerfjord. Budget ~€130-160/day; the Flåm Railway and fjord cruise are the expensive part of this trip. Season: June-September for the driest weather and the full timetable of services. Web check (2026-08): the Flåm Railway now costs about 570 NOK one-way / 850 NOK return (2026 prices, 30% off with a Eurail/Interrail pass) — noticeably pricier than a few years back, so book online ahead given the demand. Travel advisory and entry details: see the Oslo (5 days) route above.",
+      transport_to_next: 'End of this route — fly home from Bergen.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Bergen on foot/funicular, then a guided rail+boat+bus day trip for the fjords.',
+    climate_summary: 'June-September for the driest weather and full service.',
+    description: "Bergen's Bryggen and viewpoints, plus the Flåm Railway and a Nærøyfjord cruise.",
+    notes: "Built (2026-08) as part of Phase 2 batch 11a (Northern Europe: Norway + Sweden) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSouthNorwayRoute() {
+  return rbBuildFlatSeedRoute('South Norway (9 days) 🏞️', [
+    {
+      code: 'NO', name: 'Norway', days: 9, budget: 1215, lat: 59.9139, lng: 10.7522,
+      destinations: [
+        { name: 'Oslo', lat: 59.9139, lng: 10.7522 },
+        { name: 'Rjukan', lat: 59.8794, lng: 8.5921 },
+        { name: 'Telemark Canal boat (Dalen)', lat: 59.4386, lng: 8.0000 },
+        { name: 'Kristiansand', lat: 58.1467, lng: 7.9956 },
+        { name: 'Mandal', lat: 58.0296, lng: 7.4593 },
+      ],
+      notes: "Oslo (2-3 days) then west into Telemark — Rjukan and a boat trip on the Telemark Canal — before the Sørlandet coast towns of Kristiansand and Mandal, then back. Deliberately fjord-free, leaning into culture and the southern coastline instead of the fjord routes below. Budget ~€120-150/day including a shared rental car. Season: June-August, when the coastal towns are liveliest and the Telemark Canal boat mainly runs. Web check (2026-08): the Telemark Canal boat has a limited summer schedule — book ahead. Travel advisory and entry details: see the Oslo (5 days) route above.",
+      transport_to_next: 'End of this route — back to Oslo to fly home.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Shared rental car from Oslo, looping via Telemark and the Sørlandet coast.',
+    climate_summary: 'June-August, when the coast is liveliest and the canal boat runs.',
+    description: 'Oslo, Telemark (Rjukan, a Telemark Canal boat trip) and the Sørlandet coast towns of Kristiansand and Mandal.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11a (Northern Europe: Norway + Sweden) converting EUROPA_TRIP_IDEAS.md into Route Builder content — deliberately fjord-free, a culture/coast counterpart to the Fjord Norway route below. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildFjordNorwayRoute() {
+  return rbBuildFlatSeedRoute('Fjord Norway (9 days) 🏔️', [
+    {
+      code: 'NO', name: 'Norway', days: 9, budget: 1395, lat: 60.3959, lng: 5.3245,
+      destinations: [
+        { name: 'Bergen', lat: 60.3959, lng: 5.3245 },
+        { name: 'Sognefjord / Nærøyfjord', lat: 60.8666, lng: 6.8666 },
+        { name: 'Nordfjord (Olden)', lat: 61.8394, lng: 6.7961 },
+        { name: 'Geirangerfjord', lat: 62.1004, lng: 7.2062 },
+        { name: 'Trolltunga (optional detour)', lat: 60.1242, lng: 6.7401 },
+        { name: 'Preikestolen (optional detour)', lat: 58.9866, lng: 6.1900 },
+      ],
+      notes: "Bergen, then the Sognefjord/Nærøyfjord, on to the Nordfjord and Geirangerfjord, with Trolltunga or Preikestolen as an optional day-hike detour — the purest fjord-focused route of the bunch, unlike South Norway above. Budget ~€140-170/day (rental car plus fjord cruises plus tolls/ferries). Season: mid-June to mid-September; mountain passes like Gaularfjellet are typically open May-October, snow-dependent. Web check (2026-08): since 1 January 2026, Geirangerfjord and Nærøyfjord enforce a zero-emission rule for passenger ships under 10,000 GT (larger cruise ships get until 2032) — small fjord cruises/ferries are typically already electric/hybrid and keep running, but check per operator. Preikestolen: P1 parking runs about 250 NOK/day, the Stavanger shuttle bus must be pre-booked online (not sold on board), and it's busiest 8:00-16:00 June-August. Trolltunga needs no permit, but parking costs 330/550/770 NOK for 1/2/3 days, with 1-2 hour queues at the rock itself in July-August — late June or early September is quieter with still-good conditions. Travel advisory and entry details: see the Oslo (5 days) route above.",
+      transport_to_next: 'End of this route — fly home from Bergen or Ålesund, whichever connects best.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Rental car looping the Bergen-Geiranger fjord corridor.',
+    climate_summary: 'Mid-June to mid-September; mountain passes typically open May-October, snow-dependent.',
+    description: 'Bergen, the Sognefjord/Nærøyfjord, the Nordfjord, and Geirangerfjord, with Trolltunga or Preikestolen as an optional detour.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11a (Northern Europe: Norway + Sweden) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a pure-fjords counterpart to the fjord-free South Norway route above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildNorwayRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Norway Roadtrip (12 days) 🚙', [
+    {
+      code: 'NO', name: 'Norway', days: 12, budget: 1800, lat: 59.9139, lng: 10.7522,
+      destinations: [
+        { name: 'Oslo', lat: 59.9139, lng: 10.7522 },
+        { name: 'Bergen', lat: 60.3959, lng: 5.3245 },
+        { name: 'Sognefjord / Nærøyfjord', lat: 60.8666, lng: 6.8666 },
+        { name: 'Geirangerfjord', lat: 62.1004, lng: 7.2062 },
+        { name: 'Ålesund', lat: 62.4722, lng: 6.1549 },
+        { name: 'Trondheim', lat: 63.4305, lng: 10.3951 },
+        { name: 'Rondane / Femundsmarka National Park', lat: 61.6167, lng: 9.7833 },
+      ],
+      notes: "The broadest self-drive loop of the Norway routes: Oslo, Bergen, the Sognefjord, Geiranger, Ålesund, Trondheim, and Rondane/Femundsmarka national park, back to Oslo. Budget ~€140-160/day (shared rental car, tolls, ferries, fuel). Season: mid-June to mid-September for the mountain passes to be fully open. Web check (2026-08): mountain passes like Trollstigen and Sognefjellet are typically open mid-May to mid-October, weather-dependent year to year — check current opening dates at vegvesen.no just before departure. Travel advisory and entry details: see the Oslo (5 days) route above.",
+      transport_to_next: 'End of this route — back to Oslo to fly home.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Full self-drive loop, rental car for the whole trip.',
+    climate_summary: 'Mid-June to mid-September for full mountain-pass access.',
+    description: 'Oslo, Bergen, the Sognefjord, Geirangerfjord, Ålesund, Trondheim and Rondane/Femundsmarka national park.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11a (Northern Europe: Norway + Sweden) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildBergenAlesundRoute() {
+  return rbBuildFlatSeedRoute('Bergen + Ålesund (12 days) 🛣️', [
+    {
+      code: 'NO', name: 'Norway', days: 12, budget: 1920, lat: 60.3959, lng: 5.3245,
+      destinations: [
+        { name: 'Bergen', lat: 60.3959, lng: 5.3245 },
+        { name: 'Sognefjord (Nærøyfjord/Flåm)', lat: 60.8666, lng: 6.8666 },
+        { name: 'Nordfjord / Stryn', lat: 61.9086, lng: 6.7186 },
+        { name: 'Geirangerfjord', lat: 62.1004, lng: 7.2062 },
+        { name: 'Atlantic Ocean Road (Atlanterhavsveien)', lat: 63.0206, lng: 7.3654 },
+        { name: 'Ålesund', lat: 62.4722, lng: 6.1549 },
+      ],
+      notes: "A one-way coastal route: Bergen, the Sognefjord (Nærøyfjord/Flåm), the Nordfjord/Stryn, Geirangerfjord, the Atlantic Ocean Road (Atlanterhavsveien), ending in Ålesund with a return flight from there or Molde — a one-way rental car drop-off, so watch for the fee, unlike the round-trip Norway Roadtrip above. Budget ~€150-170/day (one-way rental car costs more, plus fjord ferries). Season: June-September; the Trollstigen/Geiranger-Ålesund stretch is snow-dependent, typically open roughly May-October. Web check (2026-08): a one-way Bergen-Ålesund rental car often carries a substantial drop-off fee — compare providers in advance; the same Geiranger zero-emission rule applies as on the Fjord Norway route above. Travel advisory and entry details: see the Oslo (5 days) route above.",
+      transport_to_next: 'End of this route — fly home from Ålesund or Molde.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'One-way rental car, ending in Ålesund; check the drop-off fee before booking.',
+    climate_summary: 'June-September; the Trollstigen/Geiranger-Ålesund stretch is snow-dependent (roughly May-October).',
+    description: 'A one-way coastal drive from Bergen via the Sognefjord and Geirangerfjord to Ålesund, including the Atlantic Ocean Road.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11a (Northern Europe: Norway + Sweden) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a one-way coastal variant of the round-trip Norway Roadtrip route above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSouthCentralNorwayRoute() {
+  return rbBuildFlatSeedRoute('South & Central Norway (14 days) 🗺️', [
+    {
+      code: 'NO', name: 'Norway', days: 14, budget: 2100, lat: 59.9139, lng: 10.7522,
+      destinations: [
+        { name: 'Oslo', lat: 59.9139, lng: 10.7522 },
+        { name: 'Rjukan / Telemark', lat: 59.8794, lng: 8.5921 },
+        { name: 'Kristiansand (Sørlandet coast)', lat: 58.1467, lng: 7.9956 },
+        { name: 'Bergen', lat: 60.3959, lng: 5.3245 },
+        { name: 'Sognefjord / Geirangerfjord', lat: 60.8666, lng: 6.8666 },
+        { name: 'Ålesund', lat: 62.4722, lng: 6.1549 },
+        { name: 'Trondheim (optional)', lat: 63.4305, lng: 10.3951 },
+      ],
+      notes: "The longest and most complete of the Norway routes: Oslo plus Telemark and the Sørlandet coast, then Bergen, the Sognefjord/Geirangerfjord fjords, Ålesund, and optionally on to Trondheim, with a return flight from Trondheim or Oslo. Budget ~€140-160/day averaged over the whole trip. Season: June to mid-September — the only one of these routes reaching Trondheim, so it needs a slightly wider window for the mountain passes. Web check (2026-08): the same Geiranger zero-emission rule and Preikestolen/Trolltunga crowding notes apply as on the shorter fjord routes above; consider the Dovrebanen train Trondheim-Oslo as the way back instead of flying. Travel advisory and entry details: see the Oslo (5 days) route above.",
+      transport_to_next: 'End of this route — fly home from Trondheim or Oslo, or take the Dovrebanen train back to Oslo.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Rental car for the southern loop and fjords, optional train back from Trondheim.',
+    climate_summary: 'June to mid-September, with a wider window needed for the mountain passes given the Trondheim extension.',
+    description: 'Oslo, Telemark, the Sørlandet coast, Bergen, the Sognefjord/Geiranger fjords, Ålesund and optionally Trondheim.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11a (Northern Europe: Norway + Sweden) converting EUROPA_TRIP_IDEAS.md into Route Builder content — the longest, most complete combination of the Norway routes in this batch. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSvalbardShortRoute() {
+  return rbBuildFlatSeedRoute('Svalbard (Longyearbyen) (6 days) 🌌', [
+    {
+      code: 'NO', name: 'Norway', days: 6, budget: 1140, lat: 78.2232, lng: 15.6469,
+      destinations: [
+        { name: 'Longyearbyen', lat: 78.2232, lng: 15.6469 },
+        { name: 'Svalbard Museum', lat: 78.2199, lng: 15.6259 },
+        { name: 'Nordpolet', lat: 78.2202, lng: 15.6270 },
+        { name: 'Isfjorden boat tour (summer)', lat: 78.3000, lng: 14.0000 },
+        { name: 'Pyramiden (summer boat destination)', lat: 79.0333, lng: 16.3333 },
+      ],
+      notes: "This is the short, realistic 'Trip Ideas' version of Svalbard — Longyearbyen itself (the Svalbard Museum, the Nordpolet shop) plus 1-2 day tours, not the multi-day expedition boat. Budget ~€160-220/day — the Oslo-Longyearbyen flight is itself expensive, and day tours run 1500-3000 NOK/day (these tour prices couldn't be freshly re-verified — treat as indicative 2024-2025 level, recheck just before booking). Season: March-May for the best combination of daylight and snow for a snowmobile or dog-sledding trip, with a chance of northern lights still in March; June-August for boat trips (Isfjorden, Pyramiden) and the midnight sun; October-February is polar night — dark, and not well suited to a short trip. Web check (2026-08): Svalbard is NOT part of Schengen despite being Norwegian territory — no visa is needed to enter Svalbard itself (the Svalbard Treaty means visa-free entry for all nationalities), but the flight always routes via mainland Norway (Schengen), so normal Schengen entry rules apply for that layover. Leaving Longyearbyen's built-up area without an armed, experienced guide is illegal because of polar bear risk — any organized tour already arranges this. Only SAS and Norwegian fly to Longyearbyen (LYR), from Oslo (~2h50) and Tromsø (~1h40), with more frequent service in the March-August peak season.\n\nDistinct from the existing 'Svalbard 🐻‍❄️' route (split off from Nordic Arctic Expedition ❄️), which is the longer, multi-day expedition-boat version of Svalbard — that route is untouched. This one is deliberately just Longyearbyen plus short day tours, a separate, shorter concept, not a duplicate.",
+      transport_to_next: 'End of this route — fly home via Oslo or Tromsø.',
+    },
+  ], {
+    best_starting_month: 'March',
+    travel_style: 'Based in Longyearbyen, 1-2 day tours (snowmobile/dog sledding or boat, season-dependent) — no multi-day expedition boat.',
+    climate_summary: 'March-May for daylight+snow and a chance of aurora; June-August for boat trips and midnight sun; October-February is polar night.',
+    description: 'Longyearbyen (Svalbard Museum, Nordpolet) plus a short day tour — an Isfjorden/Pyramiden boat trip in summer or snowmobiling/dog sledding in winter/spring.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11a (Northern Europe: Norway + Sweden) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a distinct, deliberately short 'Trip Ideas' route from the existing standalone 'Svalbard 🐻‍❄️' route (split off from Nordic Arctic Expedition ❄️, which is the longer multi-day expedition-boat version); named/emoji'd differently (🌌 vs 🐻‍❄️) to avoid confusion between the two, and 'Svalbard 🐻‍❄️' itself is left untouched. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildStockholmRoute() {
+  return rbBuildFlatSeedRoute('Stockholm (4 days) 🏰', [
+    {
+      code: 'SE', name: 'Sweden', days: 4, budget: 460, lat: 59.3251, lng: 18.0711,
+      destinations: [
+        { name: 'Gamla Stan', lat: 59.3251, lng: 18.0711 },
+        { name: 'Södermalm', lat: 59.3141, lng: 18.0687 },
+        { name: 'Vasa Museum', lat: 59.3280, lng: 18.0910 },
+        { name: 'Skansen', lat: 59.3252, lng: 18.1036 },
+        { name: 'Djurgården', lat: 59.3230, lng: 18.1000 },
+      ],
+      notes: "Gamla Stan's old town, the Södermalm neighborhood, the Vasa Museum, Skansen open-air museum, and the green island of Djurgården. Budget ~€100-130/day. Season: May-September (June-August is the busiest and most expensive). Web check (2026-08): check whether a Stockholm Pass is worth it against current 2026 museum prices before buying one. Travel advisory: green, threat level 3/5 for attacks (elevated) — watch for pickpocketing in crowds; gang violence exists mainly in Stockholm/Malmö/Gothenburg but isn't tourist-targeted. Schengen — no border friction with Norway/Denmark/Germany, though Sweden has run periodic temporary ID checks on the Öresund crossing (train/bridge Copenhagen-Malmö) since 2015, repeatedly extended — check just before travel via politie.se or oresundsbron.com.",
+      transport_to_next: 'End of this route — fly home from Stockholm.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'City trip on foot/metro.',
+    climate_summary: 'May-September; June-August is busiest and most expensive.',
+    description: 'Gamla Stan, Södermalm, the Vasa Museum, Skansen and Djurgården.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11a (Northern Europe: Norway + Sweden) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildStockholmSurroundingsRoute() {
+  return rbBuildFlatSeedRoute('Stockholm + Surroundings (6 days) 🚢', [
+    {
+      code: 'SE', name: 'Sweden', days: 6, budget: 690, lat: 59.3251, lng: 18.0711,
+      destinations: [
+        { name: 'Stockholm (Gamla Stan)', lat: 59.3251, lng: 18.0711 },
+        { name: 'Uppsala Cathedral', lat: 59.8586, lng: 17.6389 },
+        { name: 'Gamla Uppsala', lat: 59.8994, lng: 17.6339 },
+        { name: 'Sigtuna', lat: 59.6178, lng: 17.7233 },
+        { name: 'Stockholm archipelago (Vaxholm)', lat: 59.4025, lng: 18.3286 },
+      ],
+      notes: "Stockholm itself (3 days) plus day trips to Uppsala (the cathedral, Gamla Uppsala), Sigtuna, and the Stockholm archipelago (Vaxholm, by boat) — day trips only, no trip south to Skåne, unlike the roadtrip routes below. Budget ~€100-130/day, plus €30-50 on archipelago-boat days. Season: May-September. Web check (2026-08): the archipelago boat service is seasonal (its full schedule mainly runs April/May-October) — check the 2026 sailing schedule before relying on it. Travel advisory and entry details: see the Stockholm (4 days) route above.",
+      transport_to_next: 'End of this route — fly home from Stockholm.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Based in Stockholm, day trips by train and archipelago boat.',
+    climate_summary: 'May-September for the full archipelago boat schedule.',
+    description: 'Stockholm plus day trips to Uppsala, Sigtuna, and the Stockholm archipelago.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11a (Northern Europe: Norway + Sweden) converting EUROPA_TRIP_IDEAS.md into Route Builder content — day-trips-only, unlike the broader roadtrip routes below. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSouthSwedenSkaneRoute() {
+  return rbBuildFlatSeedRoute('South Sweden (Skåne) (9 days) 🪨', [
+    {
+      code: 'SE', name: 'Sweden', days: 9, budget: 855, lat: 55.6050, lng: 13.0038,
+      destinations: [
+        { name: 'Malmö', lat: 55.6050, lng: 13.0038 },
+        { name: 'Lund', lat: 55.7047, lng: 13.1910 },
+        { name: 'Ystad', lat: 55.4295, lng: 13.8204 },
+        { name: 'Kivik', lat: 55.6817, lng: 14.2434 },
+        { name: "Ale's Stones (Kåseberga)", lat: 55.4667, lng: 14.2333 },
+        { name: 'Stenshuvud National Park', lat: 55.5167, lng: 14.2667 },
+      ],
+      notes: "Malmö (2 days), a day trip to Lund, then Ystad, and Kivik/Österlen (Ale's Stones near Kåseberga, Stenshuvud National Park) — confined to just the Skåne region, unlike the wider Sweden Roadtrip below. Budget ~€80-110/day plus a rental car at ~€35-50/day. Season: May-September; Kivik's apple blossom is in May, the harvest runs September-October. Web check (2026-08): Ystad Studios' opening hours are seasonal — check before visiting. As Malmö is the Swedish end of the Öresund crossing, note the periodic ID checks mentioned in the Stockholm route above.",
+      transport_to_next: 'End of this route — fly home from Malmö.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Rental car around the Skåne region, starting and ending in Malmö.',
+    climate_summary: 'May-September; apple blossom in May, harvest in September-October at Kivik.',
+    description: "Malmö, Lund, Ystad, and Kivik/Österlen's Ale's Stones and Stenshuvud National Park.",
+    notes: "Built (2026-08) as part of Phase 2 batch 11a (Northern Europe: Norway + Sweden) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a Skåne-only counterpart to the broader Sweden Roadtrip route below. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSwedenRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Sweden Roadtrip (9 days) 🚗', [
+    {
+      code: 'SE', name: 'Sweden', days: 9, budget: 945, lat: 59.3251, lng: 18.0711,
+      destinations: [
+        { name: 'Stockholm', lat: 59.3251, lng: 18.0711 },
+        { name: 'Göta Canal / Vadstena', lat: 58.4550, lng: 14.8953 },
+        { name: 'Gothenburg', lat: 57.7089, lng: 11.9746 },
+        { name: 'Malmö / Skåne', lat: 55.6050, lng: 13.0038 },
+        { name: 'Småland (Glasriket, Kosta)', lat: 56.8419, lng: 15.4067 },
+      ],
+      notes: "Stockholm, a boat trip on the Göta Canal via Vadstena, Gothenburg, the Skåne region, and Småland's Glasriket ('glass kingdom') glassworks, back to the start — a broader central-plus-south loop than the Skåne-only route above. Budget ~€90-120/day including a rental car. Season: May-September. Web check (2026-08): Göta Canal boats run May-September; Stockholm and Gothenburg have a camera-based city toll billed afterward, the rest of Sweden is toll-free.",
+      transport_to_next: 'End of this route — fly home from Stockholm.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Rental car loop, central Sweden plus the south.',
+    climate_summary: 'May-September, matching the Göta Canal boat season.',
+    description: 'Stockholm, the Göta Canal and Vadstena, Gothenburg, Skåne, and the Glasriket glassworks region.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11a (Northern Europe: Norway + Sweden) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a broader central+south loop than the Skåne-only route above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSwedenNorwayRoute() {
+  return rbBuildFlatSeedRoute('Sweden + Norway (12 days) 🌉', [
+    {
+      code: 'SE', name: 'Sweden', days: 7, budget: 770, lat: 59.3251, lng: 18.0711,
+      destinations: [
+        { name: 'Stockholm', lat: 59.3251, lng: 18.0711 },
+        { name: 'Kiruna', lat: 67.8558, lng: 20.2253 },
+        { name: 'Abisko', lat: 68.3540, lng: 18.7885 },
+        { name: 'Riksgränsen (border crossing)', lat: 68.4297, lng: 18.1200 },
+      ],
+      notes: "Stockholm, then north by train to Swedish Lapland — Kiruna and Abisko — up to the Riksgränsen border crossing. Budget ~€110/day for this leg; the Norwegian leg below runs pricier. Season: June-August for the midnight sun and 15-20°C; avoid October-April for a roadtrip (ice and polar night make the Riksgränsen-Narvik stretch impractical). Web check (2026-08): Norwegian tolls run via AutoPASS; Lofoten ferry services are seasonal; ask the rental company in advance about cross-border rules if picking up the car in Sweden.",
+      transport_to_next: 'Train or rental car over the Riksgränsen border crossing into Norway, on to Narvik.',
+    },
+    {
+      code: 'NO', name: 'Norway', days: 5, budget: 750, lat: 68.4384, lng: 17.4272,
+      destinations: [
+        { name: 'Narvik', lat: 68.4384, lng: 17.4272 },
+        { name: 'Lofoten (Svolvær)', lat: 68.2340, lng: 14.5686 },
+      ],
+      notes: "Narvik, then on to the Lofoten islands. Budget ~€150/day or more — Norway runs noticeably pricier than the Swedish leg above. Season: June-August, the same midnight-sun window as Swedish Lapland. Web check (2026-08): Norway is Schengen but not EU — normally no border control, but spot customs checks do happen (alcohol/tobacco allowances). Lofoten's ferry connections are seasonal, so check the current schedule before relying on one.",
+      transport_to_next: 'End of this route — fly home from Narvik or Bodø/Harstad, whichever connects best from Lofoten.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Train from Stockholm to Kiruna/Abisko, then a rental car over the border into Norway.',
+    climate_summary: 'June-August for the midnight sun and 15-20°C; avoid October-April.',
+    description: 'Stockholm, Swedish Lapland (Kiruna, Abisko), the Riksgränsen border crossing, Narvik and the Lofoten islands.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11a (Northern Europe: Norway + Sweden) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a two-country route (Sweden + Norway). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSwedishLaplandRoute() {
+  return rbBuildFlatSeedRoute('Swedish Lapland (Kiruna + Abisko) (6 days) 🦌', [
+    {
+      code: 'SE', name: 'Sweden', days: 6, budget: 870, lat: 67.8558, lng: 20.2253,
+      destinations: [
+        { name: 'Kiruna', lat: 67.8558, lng: 20.2253 },
+        { name: 'Icehotel (Jukkasjärvi)', lat: 67.8500, lng: 20.5958 },
+        { name: 'Abisko', lat: 68.3540, lng: 18.7885 },
+        { name: 'Aurora Sky Station', lat: 68.3547, lng: 18.7361 },
+        { name: 'Kungsleden day hike', lat: 68.3600, lng: 18.7000 },
+      ],
+      notes: "Kiruna (2-3 days, with one night at the Icehotel in nearby Jukkasjärvi), then Abisko (2-3 days: the Aurora Sky Station chairlift and a day hike on the Kungsleden trail) — the shorter of the two Lapland aurora trips, unlike the longer route below. Budget ~€130-160/day, including one Icehotel upgrade night at €400-500, the rest at a regular €90-120/day. Season: December-February for peak winter, or the shoulder months of September/March. Web check (2026-08): the Aurora Sky Station chairlift runs on a seasonal schedule — check opening days before relying on it. Kiruna's town relocation is ongoing — the 1912 wooden church (672 tons) moved to its new site on 20 August 2025, the new town center has been in use since September 2022, and the project continues to around 2035 — check the current map at the Kiruna tourist office, since parts of the old center are demolished or inaccessible.",
+      transport_to_next: 'End of this route — fly home from Kiruna.',
+    },
+  ], {
+    best_starting_month: 'December',
+    travel_style: 'Based in Kiruna and Abisko, one Icehotel night, chairlift and day-hike excursions.',
+    climate_summary: 'December-February for peak winter aurora conditions; September or March as a milder alternative.',
+    description: 'Kiruna (with an Icehotel night) and Abisko (the Aurora Sky Station and a Kungsleden day hike).',
+    notes: "Built (2026-08) as part of Phase 2 batch 11a (Northern Europe: Norway + Sweden) converting EUROPA_TRIP_IDEAS.md into Route Builder content — the shorter of two Swedish Lapland aurora trips, see the longer/darker route below for the extended version. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSwedishLaplandNorthernLightsRoute() {
+  return rbBuildFlatSeedRoute('Swedish Lapland + Northern Lights (9 days) 💫', [
+    {
+      code: 'SE', name: 'Sweden', days: 9, budget: 1440, lat: 67.8558, lng: 20.2253,
+      destinations: [
+        { name: 'Kiruna', lat: 67.8558, lng: 20.2253 },
+        { name: 'Icehotel (Jukkasjärvi)', lat: 67.8500, lng: 20.5958 },
+        { name: 'Abisko', lat: 68.3540, lng: 18.7885 },
+        { name: 'Aurora Sky Station', lat: 68.3547, lng: 18.7361 },
+        { name: 'Nikkaluokta (optional day trip)', lat: 67.8667, lng: 19.0167 },
+        { name: 'Kebnekaise', lat: 67.9014, lng: 18.5432 },
+      ],
+      notes: "Kiruna (3 days: the Icehotel, dog sledding or snowmobiling) then Abisko (3-4 days, with multiple aurora evenings) and an optional day trip to Nikkaluokta/Kebnekaise — a longer, darker version of the Swedish Lapland route above. Budget ~€140-180/day, with excursions running €150-250 each on top of that. Season: December-January for true polar night (-15 to -25°C) — November or February as a milder alternative. Web check (2026-08): check snowmobile license requirements before booking one; the extra days compared to the shorter Lapland route above meaningfully raise the odds of catching a clear aurora night. Abisko's 'blue hole' microclimate gives structurally clearer skies for aurora viewing than the surrounding area.",
+      transport_to_next: 'End of this route — fly home from Kiruna.',
+    },
+  ], {
+    best_starting_month: 'December',
+    travel_style: 'Based in Kiruna and Abisko, with dog sledding/snowmobiling and an optional Nikkaluokta/Kebnekaise day trip.',
+    climate_summary: 'December-January for true polar night; November or February milder.',
+    description: 'A longer, darker version of the Swedish Lapland trip — Kiruna, multiple aurora evenings in Abisko, and an optional trip to Nikkaluokta/Kebnekaise.',
+    notes: "Built (2026-08) as part of Phase 2 batch 11a (Northern Europe: Norway + Sweden) converting EUROPA_TRIP_IDEAS.md into Route Builder content — the longer, darker counterpart to the shorter Swedish Lapland route above, with multiple aurora evenings. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaNorwaySwedenRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_NORWAY_SWEDEN)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_NORWAY_SWEDEN, '1');
+
+  rbRoutes.push(
+    rbBuildOsloRoute(),
+    rbBuildBergenFjordsRoute(),
+    rbBuildSouthNorwayRoute(),
+    rbBuildFjordNorwayRoute(),
+    rbBuildNorwayRoadtripRoute(),
+    rbBuildBergenAlesundRoute(),
+    rbBuildSouthCentralNorwayRoute(),
+    rbBuildSvalbardShortRoute(),
+    rbBuildStockholmRoute(),
+    rbBuildStockholmSurroundingsRoute(),
+    rbBuildSouthSwedenSkaneRoute(),
+    rbBuildSwedenRoadtripRoute(),
+    rbBuildSwedenNorwayRoute(),
+    rbBuildSwedishLaplandRoute(),
+    rbBuildSwedishLaplandNorthernLightsRoute(),
+  );
+  rbSave();
+}
