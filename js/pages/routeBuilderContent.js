@@ -17608,3 +17608,315 @@ function rbSeedEuropaCanaryBalearicRoutes() {
   );
   rbSave();
 }
+
+// ---- Phase 2 batch 14c/21 (Islands: Sicily + Sardinia) ----
+//
+// EUROPA_TRIP_IDEAS.md's own intro note for this "Italiaanse eilanden" subsection says these 7
+// items are deliberately more granular/newer than the general Italy-section content, so they're
+// not simply re-listing what's already built. Two of the 7 (Sardinia Roadtrip, Sicily Roadtrip)
+// nonetheless land very close to the existing 9-day full-island-loop routes (Sardinia (9 days) ⛵,
+// Sicily (9 days) 🍋) — built anyway per the source list, each flagged with an explicit
+// cross-reference note in its own text, not merged and not migrated into the existing routes.
+
+function rbBuildSicilyEastRoute() {
+  return rbBuildFlatSeedRoute('Sicily East (4-5 days) 🏝️', [
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 120, lat: 37.5079, lng: 15.0830,
+      destinations: [
+        { name: 'Catania', lat: 37.5079, lng: 15.0830 },
+      ],
+      notes: "Entry: direct flight Amsterdam-Catania (Transavia/Ryanair/KLM, ~2h50-3h20, well served). Catania itself (2 days) as the base for this east-coast-only loop. Budget ~€55-70/day average across the route (used here at ~€60/day). Season: April-June or September-October; high summer is very hot.",
+      transport_to_next: 'Short drive up the coast to Taormina, with Etna inland.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 120, lat: 37.8516, lng: 15.2853,
+      destinations: [
+        { name: 'Taormina', lat: 37.8516, lng: 15.2853 },
+        { name: 'Mount Etna', lat: 37.7510, lng: 14.9934 },
+      ],
+      notes: "Taormina and Etna (2 days). ⚠️ Web check (2026-08): above a certain altitude, Etna's crater zone is only reachable by cable car plus a mandatory licensed guide (roughly the 2,900m+ zone), and current volcanic activity can close specific trails or the cable car itself — check just before going. Catania airport has occasionally had to close temporarily during an active eruption, so build a little slack around this leg if flying in/out of Catania.",
+      transport_to_next: 'Drive south down the coast to Syracuse.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 60, lat: 37.0755, lng: 15.2866,
+      destinations: [
+        { name: 'Syracuse / Ortigia', lat: 37.0755, lng: 15.2866 },
+      ],
+      notes: 'Syracuse and the Ortigia old town (1-2 days) to close the loop.',
+      transport_to_next: 'End of this route — return flight from Catania to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Rental car, staying entirely on the east coast — Catania, Taormina/Etna, Syracuse/Ortigia, no crossing to the west of the island.',
+    climate_summary: 'April-June or September-October; high summer is very hot.',
+    description: 'Catania, Taormina and Etna, and Syracuse/Ortigia — a compact east-coast-only Sicily trip.',
+    notes: "Built (2026-08) as part of Phase 2 batch 14c/21 (Islands: Sicily + Sardinia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately narrower than the pre-existing Sicily 🌋 (10d, Palermo-based, full west-to-east loop), Sicily (9 days) 🍋 (9d, open-jaw Palermo-Catania loop incl. the Val di Noto) and the Sicily + Malta/Malta + Gozo + Sicily routes (which also start from Catania but continue to Malta) — this one stays on the east coast only, no Palermo/Agrigento/west side, matching EUROPA_TRIP_IDEAS.md's own framing that these 7 items are more granular regional slices, not a repeat of the full-island content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSicilyWestRoute() {
+  return rbBuildFlatSeedRoute('Sicily West (4-5 days) 🏝️', [
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 110, lat: 38.1157, lng: 13.3613,
+      destinations: [
+        { name: 'Palermo', lat: 38.1157, lng: 13.3613 },
+        { name: 'Monreale', lat: 38.0819, lng: 13.2896 },
+      ],
+      notes: "Entry: direct flight Amsterdam-Palermo (Transavia only, roughly 3x/week — book early). Palermo plus a day trip to Monreale's cathedral (2 days). Budget ~€50-65/day average across the route, cheaper than the east-coast/Aeolian legs (used here at ~€55/day).",
+      transport_to_next: 'Drive west to Trapani/Erice.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 110, lat: 38.0176, lng: 12.5365,
+      destinations: [
+        { name: 'Trapani', lat: 38.0176, lng: 12.5365 },
+        { name: 'Erice', lat: 38.0387, lng: 12.5865 },
+      ],
+      notes: 'Trapani and the hilltop town of Erice (2 days). Season: April-June or September-October.',
+      transport_to_next: 'Short drive to Segesta for a day trip, then back toward Palermo.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 55, lat: 37.9411, lng: 12.8375,
+      destinations: [
+        { name: 'Segesta (Doric temple)', lat: 37.9411, lng: 12.8375 },
+      ],
+      notes: "Segesta as a day trip (its Doric temple and theater). ⚠️ Web check (2026-08): no special permits needed for this side of the island, but Segesta's and Erice's opening hours are seasonal and noticeably shorter outside the main season — check the current 2026 hours before planning the day.",
+      transport_to_next: 'End of this route — return flight from Palermo to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: "Rental car, staying entirely on Sicily's west side — Palermo/Monreale, Trapani/Erice, Segesta.",
+    climate_summary: 'April-June or September-October.',
+    description: 'Palermo and Monreale, Trapani and Erice, and a Segesta day trip — a compact west-Sicily-only trip.',
+    notes: "Built (2026-08) as part of Phase 2 batch 14c/21 (Islands: Sicily + Sardinia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Distinct from the pre-existing Sicily 🌋 and Sicily (9 days) 🍋 routes (both of which pass through Palermo but continue on to Agrigento/Syracuse/Taormina/Etna) — this one is deliberately confined to the west side only (Palermo/Monreale, Trapani/Erice, Segesta), per EUROPA_TRIP_IDEAS.md's own framing that these 7 items are more granular regional slices. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSardiniaNorthRoute() {
+  return rbBuildFlatSeedRoute('Sardinia North (4-5 days) 🏝️', [
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 70, lat: 40.9236, lng: 9.4980,
+      destinations: [
+        { name: 'Olbia', lat: 40.9236, lng: 9.4980 },
+      ],
+      notes: "Entry: direct flight Amsterdam-Olbia (easyJet/Transavia, seasonal — mainly April-September, check the current schedule). Olbia itself as the arrival point (1 day). Budget ~€70-90/day average across the route — Costa Smeralda runs well above the rest of Sardinia (used here at ~€70-90/day depending on the leg).",
+      transport_to_next: 'Short drive to the Costa Smeralda.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 180, lat: 41.1333, lng: 9.5333,
+      destinations: [
+        { name: 'Costa Smeralda / Porto Cervo', lat: 41.1333, lng: 9.5333 },
+      ],
+      notes: 'The Costa Smeralda / Porto Cervo (2 days) — the priciest stretch of this route. Season: June or September; July-August is extremely busy and expensive.',
+      transport_to_next: 'Boat crossing to the La Maddalena archipelago.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 160, lat: 41.2145, lng: 9.4052,
+      destinations: [
+        { name: 'La Maddalena archipelago', lat: 41.2145, lng: 9.4052 },
+        { name: 'Budelli (Spiaggia Rosa)', lat: 41.2064, lng: 9.3733 },
+      ],
+      notes: "A boat trip through the La Maddalena archipelago (1-2 days). ⚠️ Web check (2026-08): book archipelago boat tickets ahead in high season, they sell out. Some beaches are permit-only, and Budelli's Spiaggia Rosa is explicitly forbidden to set foot on (look, don't land) — an active, enforced protection rule, not a soft suggestion.",
+      transport_to_next: 'End of this route — back to Olbia for the return flight to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Direct flight into Olbia, short drives plus an archipelago boat trip — no rental car strictly required but useful for the Costa Smeralda leg.',
+    climate_summary: 'June or September; July-August is extremely busy and expensive, especially on the Costa Smeralda.',
+    description: 'Olbia, the Costa Smeralda/Porto Cervo, and a boat trip through the La Maddalena archipelago.',
+    notes: "Built (2026-08) as part of Phase 2 batch 14c/21 (Islands: Sicily + Sardinia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. The pre-existing Sardinia 🗿 (6d, Cagliari-based) and Sardinia (9 days) ⛵ (a full Olbia-in/out island loop) both touch the Costa Smeralda in passing, but neither dedicates a whole short trip to the north coast plus the La Maddalena archipelago the way this one does — per EUROPA_TRIP_IDEAS.md's own framing, a more granular regional slice, not a repeat. Not yet checked against Route Builder-level price research beyond the archipelago-ticket/permit notes folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSardiniaSouthRoute() {
+  return rbBuildFlatSeedRoute('Sardinia South (4-5 days) 🏝️', [
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 120, lat: 39.2238, lng: 9.1217,
+      destinations: [
+        { name: 'Cagliari', lat: 39.2238, lng: 9.1217 },
+      ],
+      notes: "Entry: direct flight Amsterdam-Cagliari (Transavia/KLM, ~2h20-2h40). Cagliari itself (2 days) — the cheapest of the four Sicily/Sardinia short trips in this batch. Budget ~€55-70/day average across the route (used here at ~€55-65/day).",
+      transport_to_next: 'Short drive/day trip to Poetto beach and the Nora ruins.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 55, lat: 39.2039, lng: 9.1583,
+      destinations: [
+        { name: 'Poetto beach', lat: 39.2039, lng: 9.1583 },
+        { name: 'Nora ruins', lat: 38.9897, lng: 9.0186 },
+      ],
+      notes: "Poetto beach plus a day trip to the Nora ruins. ⚠️ Web check (2026-08): Nora's opening hours are seasonal — check ahead rather than assuming a fixed schedule. Season: May-June or September.",
+      transport_to_next: 'Drive on to the Chia beaches.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 130, lat: 38.8886, lng: 8.8425,
+      destinations: [
+        { name: 'Chia beaches', lat: 38.8886, lng: 8.8425 },
+      ],
+      notes: 'The Chia beaches (2 days, optional/extendable) to close the trip.',
+      transport_to_next: 'End of this route — return flight from Cagliari to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Direct flight into Cagliari, short drives around the south coast — a rental car is useful but this stays compact enough to manage without one for the Cagliari/Poetto stretch.',
+    climate_summary: 'May-June or September.',
+    description: 'Cagliari, Poetto beach and the Nora ruins, and the Chia beaches — the cheapest of the short Sicily/Sardinia trips in this batch.',
+    notes: "Built (2026-08) as part of Phase 2 batch 14c/21 (Islands: Sicily + Sardinia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. The pre-existing Sardinia 🗿 route also starts from Cagliari but continues on to Su Nuraxi/Costa Smeralda across the whole island; this one instead stays purely in the Cagliari area (Poetto, Nora, Chia) per EUROPA_TRIP_IDEAS.md's own framing that these 7 items are more granular regional slices, not a repeat. Not yet checked against Route Builder-level price research beyond the Nora opening-hours note folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSicilyAeolianIslandsRoute() {
+  return rbBuildFlatSeedRoute('Sicily + Aeolian Islands (3-4 days) 🏝️', [
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 70, lat: 38.2205, lng: 15.2406,
+      destinations: [
+        { name: 'Milazzo (ferry port)', lat: 38.2205, lng: 15.2406 },
+        { name: 'Lipari', lat: 38.4667, lng: 14.9500 },
+      ],
+      notes: "Entry: fly into Catania (direct AMS-Catania, Transavia/Ryanair/KLM, ~2h50-3h20) then drive to the ferry port of Milazzo for the crossing to the Aeolian Islands. Lipari (1 day). Budget ~€65-85/day average across the route — the ferry costs and the guided Stromboli tour push this above the other short Sicily/Sardinia trips in this batch (used here at ~€70-85/day). ⚠️ Web check (2026-08): no cars or scooters may be taken on the ferry to the islands May-October for non-residents, and there's no Cinque-Terre-style permit/cap system on the ferries themselves.",
+      transport_to_next: 'Short inter-island ferry hop to Vulcano.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 75, lat: 38.4048, lng: 14.9622,
+      destinations: [
+        { name: 'Vulcano (mud baths)', lat: 38.4048, lng: 14.9622 },
+      ],
+      notes: 'Vulcano and its mud baths (1 day). Season: May-September; the smaller inter-island ferries to Alicudi, Filicudi and Panarea run a limited or no service November-March, so this route only really works in the warmer half of the year.',
+      transport_to_next: 'Ferry on to Stromboli.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 170, lat: 38.7891, lng: 15.2133,
+      destinations: [
+        { name: 'Stromboli', lat: 38.7891, lng: 15.2133 },
+      ],
+      notes: "Stromboli, including its evening crater trek (2 days, allowing for the guided hike plus a buffer for sailing/weather). ⚠️⚠️ Web check (2026-08): the crater hike is only permitted with a licensed guide (e.g. Magmatrek) — this is not optional. Current alert level is yellow (2/4), and the exclusion zone around the crater changes with ongoing activity — check daily via Protezione Civile rather than relying on a fixed map. This sits inside the same volcanic-risk note that Italy's official (green) travel advisory calls out by name for Etna and Stromboli specifically — check Protezione Civile before travel, not just the general country advisory.",
+      transport_to_next: 'End of this route — ferry back to Milazzo, then return flight from Catania to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Ferry-hopping between the Aeolian Islands from Milazzo — no rental car needed once on the islands, but one is useful for the Catania-Milazzo transfer.',
+    climate_summary: 'May-September; smaller inter-island ferries (Alicudi/Filicudi/Panarea) run limited or no service November-March.',
+    description: 'Milazzo, Lipari, Vulcano and its mud baths, and a guided evening crater trek on Stromboli.',
+    notes: "Built (2026-08) as part of Phase 2 batch 14c/21 (Islands: Sicily + Sardinia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. No pre-existing Route Builder route reaches the Aeolian Islands at all — the existing Sicily-based routes (Sicily 🌋, Sicily (9 days) 🍋, Sicily + Southern Italy 🍊, Sicily + Malta 🌋, Malta + Gozo + Sicily 🐚) all stay on mainland Sicily. Genuinely new ground for Route Builder, not a granular slice of an existing route. Not yet checked against Route Builder-level price research beyond the ferry/permit/volcanic-safety notes folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSardiniaRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Sardinia Roadtrip (7-10 days) 🏝️', [
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 130, lat: 39.2238, lng: 9.1217,
+      destinations: [
+        { name: 'Cagliari', lat: 39.2238, lng: 9.1217 },
+      ],
+      notes: "Entry: direct flight Amsterdam-Cagliari (Transavia/KLM, ~2h20-2h40). Cagliari (2 days) to start. Rental car essential for the whole loop. Budget ~€65-80/day average across the route (used here at ~€60-90/day depending on the leg — the interior is cheaper, the Costa Smeralda pricier).",
+      transport_to_next: 'Short drive to the south coast/Chia.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 70, lat: 38.8886, lng: 8.8425,
+      destinations: [
+        { name: 'Chia (south coast)', lat: 38.8886, lng: 8.8425 },
+      ],
+      notes: 'The south coast around Chia (1 day). Season: May-June or September, avoiding the August crowds on the coastal roads.',
+      transport_to_next: 'Drive inland to the Barbagia.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 120, lat: 40.2853, lng: 9.3922,
+      destinations: [
+        { name: 'Barbagia (interior, Orgosolo area)', lat: 40.2853, lng: 9.3922 },
+      ],
+      notes: "The Barbagia interior (1-2 days), Sardinia's least touristy, cheapest stretch. ⚠️ Web check (2026-08): the inland mountain roads here are narrow and slow — plan extra driving time, don't assume coastal-road speeds.",
+      transport_to_next: 'Drive north to the Costa Smeralda/Olbia.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 180, lat: 41.1333, lng: 9.5333,
+      destinations: [
+        { name: 'Costa Smeralda / Porto Cervo', lat: 41.1333, lng: 9.5333 },
+        { name: 'Olbia', lat: 40.9236, lng: 9.4980 },
+      ],
+      notes: "Costa Smeralda/Olbia (2 days) — the priciest stretch. ⚠️ Web check (2026-08): coastal parking is scarce and expensive here in high season.",
+      transport_to_next: 'Boat crossing to the La Maddalena archipelago.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 150, lat: 41.2145, lng: 9.4052,
+      destinations: [
+        { name: 'La Maddalena archipelago', lat: 41.2145, lng: 9.4052 },
+      ],
+      notes: 'La Maddalena (1-2 days) to close the loop — see the Sardinia North route above for the same archipelago-ticket/Budelli-permit notes, which apply equally here.',
+      transport_to_next: 'End of this route — back to Olbia (or Cagliari, if returning open-jaw) for the return flight to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Rental car essential for the full island loop — Cagliari, Chia, the Barbagia interior, Costa Smeralda/Olbia, and La Maddalena.',
+    climate_summary: 'May-June or September; avoid the August crowds on the coastal roads.',
+    description: 'A full Sardinia loop: Cagliari, Chia, the Barbagia interior, the Costa Smeralda/Olbia, and La Maddalena.',
+    notes: "Built (2026-08) as part of Phase 2 batch 14c/21 (Islands: Sicily + Sardinia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. EUROPA_TRIP_IDEAS.md also has this as a separate item; Route Builder already has a very similar 9-day loop in 'Sardinia (9 days) ⛵' — built anyway per the source list, flagged here for review, not merged. The overlap is real: both run a roughly 9-day full-island loop touching Cagliari, the Costa Smeralda/Olbia and La Maddalena. The difference is this route adds the Barbagia interior and Chia (which the existing 9-day route doesn't reach) while dropping Cala Gonone/Golfo di Orosei, Oristano and Alghero (which the existing route does cover) — different specific stops, same rough shape and length, hence the explicit flag rather than a silent duplicate. Deliberately given a distinct function name rather than reusing rbBuildSardiniaNineDaysRoute, per this project's established collision-resolution pattern (see Svalbard (Longyearbyen) (6 days) 🌌 vs. the pre-existing Svalbard 🐻‍❄️ for the precedent). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSicilyRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Sicily Roadtrip (7-10 days) 🏝️', [
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 120, lat: 38.1157, lng: 13.3613,
+      destinations: [
+        { name: 'Palermo', lat: 38.1157, lng: 13.3613 },
+      ],
+      notes: "Entry: open-jaw AMS-Palermo in, AMS-Catania out (Palermo direct via Transavia only, ~3x/week; Catania direct and well served via Transavia/Ryanair/KLM). Palermo (2 days) to start. Rental car essential for the whole loop. Budget ~€55-75/day average across the route (used here at ~€55-70/day depending on the leg).",
+      transport_to_next: 'Drive west to Trapani/Erice/Segesta.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 110, lat: 38.0176, lng: 12.5365,
+      destinations: [
+        { name: 'Trapani', lat: 38.0176, lng: 12.5365 },
+        { name: 'Erice', lat: 38.0387, lng: 12.5865 },
+        { name: 'Segesta', lat: 37.9411, lng: 12.8375 },
+      ],
+      notes: 'Trapani, Erice and a Segesta day trip (2 days).',
+      transport_to_next: 'Drive south to Agrigento.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 1, budget: 60, lat: 37.2903, lng: 13.5928,
+      destinations: [
+        { name: 'Agrigento — Valle dei Templi', lat: 37.2903, lng: 13.5928 },
+      ],
+      notes: "Agrigento/Valle dei Templi (1 day). ⚠️ Web check (2026-08): book Valle dei Templi tickets online ahead of time — it gets busy.",
+      transport_to_next: 'Drive east to Etna/Taormina.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 140, lat: 37.8516, lng: 15.2853,
+      destinations: [
+        { name: 'Mount Etna', lat: 37.7510, lng: 14.9934 },
+        { name: 'Taormina', lat: 37.8516, lng: 15.2853 },
+      ],
+      notes: "Etna/Taormina (2 days). ⚠️ Web check (2026-08): Etna's crater zone above a certain altitude requires a licensed guide — the same access rule as on the Sicily East route above.",
+      transport_to_next: 'Drive south to Syracuse.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 130, lat: 37.0755, lng: 15.2866,
+      destinations: [
+        { name: 'Syracuse / Ortigia', lat: 37.0755, lng: 15.2866 },
+      ],
+      notes: 'Syracuse and the Ortigia old town (2 days) to close the loop.',
+      transport_to_next: 'End of this route — return flight from Catania to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Open-jaw AMS-Palermo in, AMS-Catania out — rental car essential for the whole loop.',
+    climate_summary: 'April-June or September-October; high summer is heavy going for driving.',
+    description: 'A full Sicily loop: Palermo, Trapani/Erice/Segesta, Agrigento (Valle dei Templi), Etna/Taormina, and Syracuse/Ortigia.',
+    notes: "Built (2026-08) as part of Phase 2 batch 14c/21 (Islands: Sicily + Sardinia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. EUROPA_TRIP_IDEAS.md also has this as a separate item; Route Builder already has a very similar 9-day loop in 'Sicily (9 days) 🍋' — built anyway per the source list, flagged here for review, not merged. The overlap is real: both run a roughly 9-day open-jaw Palermo-to-Catania loop touching almost the same stops (Palermo, Trapani/Erice/Segesta or Cefalù, Agrigento, Etna/Taormina, Syracuse). The main difference is this route swaps the existing route's Cefalù and Val di Noto (Ragusa/Modica/Noto) stops for Trapani/Erice/Segesta on the west side instead — same rough shape and length, different specific stops, hence the explicit flag rather than a silent duplicate. Deliberately given a distinct function name rather than reusing rbBuildSicilyNineDaysRoute, per this project's established collision-resolution pattern (see Svalbard (Longyearbyen) (6 days) 🌌 vs. the pre-existing Svalbard 🐻‍❄️ for the precedent). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaSicilySardiniaRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_SICILY_SARDINIA)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_SICILY_SARDINIA, '1');
+
+  rbRoutes.push(
+    rbBuildSicilyEastRoute(),
+    rbBuildSicilyWestRoute(),
+    rbBuildSardiniaNorthRoute(),
+    rbBuildSardiniaSouthRoute(),
+    rbBuildSicilyAeolianIslandsRoute(),
+    rbBuildSardiniaRoadtripRoute(),
+    rbBuildSicilyRoadtripRoute(),
+  );
+  rbSave();
+}
