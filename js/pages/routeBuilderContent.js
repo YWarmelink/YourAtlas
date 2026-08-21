@@ -12192,3 +12192,402 @@ function rbSeedEuropaMicrostatesRoutes() {
   );
   rbSave();
 }
+
+function rbBuildBarcelonaRoute() {
+  return rbBuildFlatSeedRoute('Barcelona (4 days) 🎨', [
+    {
+      code: 'ES', name: 'Spain', days: 4, budget: 460, lat: 41.3851, lng: 2.1734,
+      destinations: [
+        { name: 'Barcelona (Gothic Quarter / Barri Gòtic)', lat: 41.3833, lng: 2.1761 },
+        { name: 'Sagrada Família', lat: 41.4036, lng: 2.1744 },
+        { name: 'Park Güell', lat: 41.4145, lng: 2.1527 },
+        { name: 'Barceloneta Beach', lat: 41.3784, lng: 2.1925 },
+        { name: 'Montjuïc', lat: 41.3641, lng: 2.1652 },
+      ],
+      notes: "Entry: direct AMS-BCN (KLM/Vueling/Transavia, ~2h10, up to 370 flights/week in high season). No day trips needed — the Gothic Quarter, Sagrada Família, Park Güell, Barceloneta beach and Montjuïc fill the city itself. Season: April-June or September-October; avoid August. Budget ~€115/day. Web check (2026-08): 2026 is Gaudí's centenary year (100 years since his death, June 1926) — the Sagrada Família's central tower is expected to be completed around then, so extra crowds and higher prices especially around June; normally book 2-3 weeks ahead, in 2026 better 1-2 months ahead, and book Park Güell 1-2 months ahead too. Barcelona's tourist tax doubled as of 1 April 2026 (regional €0.80-4.50/night + a municipal surcharge of €5/night, up to ~€12/night at 5-star hotels) — check the current rate before budgeting.",
+      transport_to_next: 'End of this route — fly back AMS-BCN direct.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Direct flight, city-based throughout — no rental car needed.',
+    climate_summary: 'April-June or September-October; avoid August (heat and peak crowds).',
+    description: "Gaudí's Barcelona: the Gothic Quarter, Sagrada Família, Park Güell, Barceloneta beach and Montjuïc, all within the city itself.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildMadridRoute() {
+  return rbBuildFlatSeedRoute('Madrid (4 days) 🖼️', [
+    {
+      code: 'ES', name: 'Spain', days: 4, budget: 400, lat: 40.4168, lng: -3.7038,
+      destinations: [
+        { name: 'Madrid (Prado Museum)', lat: 40.4138, lng: -3.6921 },
+        { name: 'Retiro Park', lat: 40.4153, lng: -3.6844 },
+        { name: 'Puerta del Sol', lat: 40.4169, lng: -3.7035 },
+        { name: 'Gran Vía', lat: 40.4200, lng: -3.7025 },
+        { name: 'Toledo (day trip)', lat: 39.8628, lng: -4.0273 },
+        { name: 'Segovia (day trip)', lat: 40.9429, lng: -4.1088 },
+      ],
+      notes: "Entry: direct AMS-MAD (KLM/Iberia/Air Europa, ~2h30-45, 70+ flights/week). The city itself (Prado/Retiro/Puerta del Sol/Gran Vía) fills 2-3 days, plus a day trip to Toledo or Segovia by AVE high-speed train (30-90 min, easy to do independently). Season: April-June or September-November; Madrid is landlocked with no sea breeze and can get very hot in summer too — avoid July-August if possible. Budget ~€100/day. Web check (2026-08): the Segovia AVE from Chamartín station takes ~30 min and costs €12-14; the Paseo del Arte combined ticket (~€32, covering the Prado, Reina Sofía and Thyssen-Bornemisza, a 20% discount) is worth it. Madrid has less booking pressure than Barcelona or Granada, but still reserve Toledo/Segovia train tickets a few days ahead in high season.",
+      transport_to_next: 'End of this route — fly back AMS-MAD direct.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Direct flight, city-based with an independent AVE day trip.',
+    climate_summary: 'April-June or September-November; avoid July-August (inland heat, no sea breeze).',
+    description: "Madrid's Prado, Retiro Park, Puerta del Sol and Gran Vía, plus an AVE day trip to Toledo or Segovia.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildAndalusiaSevilleGranadaRoute() {
+  return rbBuildFlatSeedRoute('Andalusia: Seville + Granada (5 days) 🏰', [
+    {
+      code: 'ES', name: 'Spain', days: 5, budget: 425, lat: 37.3891, lng: -5.9845,
+      destinations: [
+        { name: 'Seville (Alcázar & Cathedral)', lat: 37.3839, lng: -5.9903 },
+        { name: 'Granada (Alhambra)', lat: 37.1761, lng: -3.5881 },
+      ],
+      notes: "Just the two capitals, Seville and Granada — no wider Andalusia loop here (see the Andalusia Roadtrip below for that). Entry: fly to Málaga or Seville (no direct NL flight found to Seville or Granada themselves — check seasonal routes) or connect via Madrid/Barcelona; train Seville-Granada ~3h. Season: March-May or October-November — avoid July-August, when inland Andalusia regularly hits 40°C+ and Córdoba/Seville/Granada/Jaén rank among Europe's hottest cities (2026 already saw orange heat alerts). Budget ~€85/day. Web check (2026-08): Alhambra tickets need to be booked 2-3 months ahead — they sell out weeks to months in advance even outside peak season (tour groups and school trips fill much of the allocation), there's no reliable walk-up/box-office availability.",
+      transport_to_next: 'End of this route — fly home from Málaga, Seville or via Madrid/Barcelona depending on the inbound routing.',
+    },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'Flight in, train between the two cities (Seville-Granada ~3h).',
+    climate_summary: 'March-May or October-November; avoid July-August (severe inland heat).',
+    description: "Seville's Alcázar and Cathedral, and Granada's Alhambra — Andalusia's two great Moorish capitals.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildBasqueCountryRoute() {
+  return rbBuildFlatSeedRoute('Basque Country: San Sebastián + Bilbao (6 days) 🐟', [
+    {
+      code: 'ES', name: 'Spain', days: 6, budget: 630, lat: 43.2951, lng: -2.4622,
+      destinations: [
+        { name: 'San Sebastián (La Concha)', lat: 43.3183, lng: -1.9812 },
+        { name: 'Bilbao (Guggenheim Museum)', lat: 43.2630, lng: -2.9350 },
+        { name: 'Hondarribia', lat: 43.3822, lng: -1.7967 },
+        { name: 'Getaria', lat: 43.3050, lng: -2.2000 },
+        { name: 'Zarautz', lat: 43.2833, lng: -2.1667 },
+      ],
+      notes: "San Sebastián + Bilbao (Guggenheim) plus short coastal towns (Hondarribia, Getaria/Zarautz) — deliberately coast/Basque-only, no La Rioja or Pamplona (that's the longer Northern Spain version further down). Entry: direct AMS-Bilbao (KLM/Vueling, ~2h15, 21 KLM flights/week); San Sebastián has no daily direct AMS flight, so fly into Bilbao and drive/bus ~1h. Budget ~€105/day (pintxo culture and a high Michelin-star density push food costs up). Season: June-September works really well here (cooler Atlantic climate) — a solid summer alternative to the hot south. Web check (2026-08): San Sebastián books up fast in July-August (Semana Grande, mid-August).",
+      transport_to_next: 'End of this route — fly back AMS-Bilbao direct.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Direct flight into Bilbao, short drives/buses along the coast.',
+    climate_summary: 'June-September (cooler Atlantic climate) — a summer alternative to the hot Spanish south.',
+    description: "San Sebastián's La Concha, Bilbao's Guggenheim, and the coastal towns of Hondarribia, Getaria and Zarautz.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately coast-only so it doesn't overlap with Northern Spain: Basque Interior + Rioja (9 days) 🍷 below, which covers the inland Basque Country instead. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildMallorcaTramuntanaRoute() {
+  return rbBuildFlatSeedRoute('Mallorca: Serra de Tramuntana Loop (6 days) 🏔️', [
+    {
+      code: 'ES', name: 'Spain', days: 6, budget: 630, lat: 39.5696, lng: 2.6502,
+      destinations: [
+        { name: 'Palma (base)', lat: 39.5696, lng: 2.6502 },
+        { name: 'Valldemossa', lat: 39.7098, lng: 2.6228 },
+        { name: 'Deià', lat: 39.7481, lng: 2.6478 },
+        { name: 'Sóller', lat: 39.7662, lng: 2.7147 },
+        { name: 'Cap de Formentor', lat: 39.9583, lng: 3.2078 },
+      ],
+      notes: "Palma as a base for a Serra de Tramuntana loop: Valldemossa → Deià → Sóller (do at least one leg on the antique wooden train between Palma and Sóller) → Cap de Formentor in the north → an optional east-coast beach day to close it out. Entry: direct AMS-PMI (Transavia, ~2h25, ~30 flights/week); a rental car is recommended for the mountain roads. Budget ~€105/day (rental car +€25-35/day). Season: May-June or September; July-August is very busy and expensive. Web check (2026-08): the Balearic eco-tax (ITS) runs €1.10-4.40 pp/night in high season (1 May-31 October) depending on accommodation category, and €0.28-1.10 in low season — charged separately at check-in/check-out, often not folded into the booking price.",
+      transport_to_next: 'End of this route — fly back AMS-PMI direct.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Direct flight, rental car for the mountain roads.',
+    climate_summary: 'May-June or September; avoid July-August (crowded and expensive).',
+    description: "A Serra de Tramuntana loop from Palma: Valldemossa, Deià, Sóller (with the antique wooden train) and Cap de Formentor.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildValenciaCostaBlancaRoute() {
+  return rbBuildFlatSeedRoute('Valencia + Costa Blanca (6 days) 🎆', [
+    {
+      code: 'ES', name: 'Spain', days: 6, budget: 540, lat: 39.4699, lng: -0.3763,
+      destinations: [
+        { name: 'Valencia (Ciutat Vella)', lat: 39.4756, lng: -0.3757 },
+        { name: 'City of Arts and Sciences', lat: 39.4544, lng: -0.3517 },
+        { name: 'Albufera', lat: 39.3167, lng: -0.3500 },
+        { name: 'Alicante (Castillo de Santa Bárbara)', lat: 38.3472, lng: -0.4795 },
+        { name: 'Peñíscola (optional, north of Valencia)', lat: 40.3597, lng: 0.4053 },
+        { name: 'Calpe (optional)', lat: 38.6447, lng: 0.0713 },
+      ],
+      notes: "Valencia city (2-3 days: Ciutat Vella, the City of Arts and Sciences, Albufera) then south along the Costa Blanca to Alicante (Castillo de Santa Bárbara) — optionally add Peñíscola (castle, to the north — better done on the way down if arriving from above) or Calpe/Dénia. Entry: direct AMS-VLC (KLM/Vueling/Transavia/easyJet, ~2h28, ~175 flights/week). Budget ~€90/day. Season: March is spectacular but chaotic (Las Fallas, mid-March, a UNESCO-listed festival with huge crowds and fireworks every night) — otherwise April-June or September-October is ideal, July-August is hot and busy on the coast. Web check (2026-08): book months ahead if visiting during Las Fallas.",
+      transport_to_next: 'End of this route — fly back AMS-VLC direct.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Direct flight, rental car recommended for the Costa Blanca stretch.',
+    climate_summary: 'April-June or September-October ideal; March is Las Fallas (spectacular but very crowded); avoid July-August.',
+    description: "Valencia's Ciutat Vella and City of Arts and Sciences, then south along the Costa Blanca to Alicante, with an optional Peñíscola or Calpe/Dénia detour.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildAndalusiaRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Andalusia Roadtrip (9 days) 🚗', [
+    {
+      code: 'ES', name: 'Spain', days: 9, budget: 855, lat: 37.1000, lng: -4.7000,
+      destinations: [
+        { name: 'Málaga (fly in)', lat: 36.7213, lng: -4.4214 },
+        { name: 'Ronda', lat: 36.7466, lng: -5.1652 },
+        { name: 'Cádiz', lat: 36.5297, lng: -6.2923 },
+        { name: 'Jerez de la Frontera', lat: 36.6850, lng: -6.1261 },
+        { name: 'Seville', lat: 37.3891, lng: -5.9845 },
+        { name: 'Córdoba', lat: 37.8882, lng: -4.7794 },
+        { name: 'Granada', lat: 37.1773, lng: -3.5986 },
+      ],
+      notes: "Málaga (fly in) → Ronda → Cádiz/Jerez de la Frontera → Seville → Córdoba → Granada → back to Málaga. A circular route, ~1,040km, with no backtracking. Entry: direct AMS-Málaga (Transavia/easyJet/Vueling/KLM/Ryanair, ~3h, ~97 flights/week — the cheapest and best-connected Andalusian airport), rental car in Málaga for the whole loop. Budget ~€95/day + €30-40/day rental car. Season: April-June or September-November is essential — the same heat warning as the Seville+Granada trip above, amplified because a road trip means more time outdoors and driving during the day (Córdoba/Seville regularly hit 40°C+, with 2026 forecasts up to 47°C during heatwaves). Web check (2026-08): same Alhambra booking rule as above (2-3 months ahead); this loop is mostly toll-free (the AP-7 Costa del Sol stretch is free).",
+      transport_to_next: 'End of this route — fly back AMS-Málaga direct.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Direct flight into Málaga, rental car for the full circular loop.',
+    climate_summary: 'April-June or September-November essential; inland Andalusia is dangerously hot in July-August.',
+    description: "A circular Andalusia road trip: Málaga, Ronda, Cádiz, Jerez de la Frontera, Seville, Córdoba and Granada.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildNorthernSpainBasqueRiojaRoute() {
+  return rbBuildFlatSeedRoute('Northern Spain: Basque Interior + Rioja (9 days) 🍷', [
+    {
+      code: 'ES', name: 'Spain', days: 9, budget: 900, lat: 42.8467, lng: -2.6716,
+      destinations: [
+        { name: 'San Sebastián', lat: 43.3183, lng: -1.9812 },
+        { name: 'Vitoria-Gasteiz', lat: 42.8467, lng: -2.6716 },
+        { name: 'Elciego (Rioja Alavesa)', lat: 42.4256, lng: -2.5936 },
+        { name: 'Haro (Rioja Alavesa)', lat: 42.5763, lng: -2.8467 },
+        { name: 'Pamplona', lat: 42.8125, lng: -1.6458 },
+        { name: 'Bilbao', lat: 43.2630, lng: -2.9350 },
+      ],
+      notes: "Restructured around the Basque interior and wine country, with no overlap now with the coast (see Basque Country: San Sebastián + Bilbao above) or Cantabria/Asturias/Galicia (see the standalone items further down): San Sebastián → Vitoria-Gasteiz → the Rioja Alavesa wine region (Elciego/Haro) → Pamplona → back to Bilbao. Entry: direct AMS-Bilbao, rental car for the inland loop. Budget ~€100/day. Season: May-September (Rioja's grape harvest is in September, a nice bonus for a wine-focused trip).",
+      transport_to_next: 'End of this route — fly back AMS-Bilbao direct.',
+    },
+  ], {
+    best_starting_month: 'September',
+    travel_style: 'Direct flight into Bilbao, rental car for the inland loop.',
+    climate_summary: 'May-September; September adds the Rioja grape harvest as a bonus.',
+    description: "The inland Basque Country and Rioja Alavesa wine region: San Sebastián, Vitoria-Gasteiz, Elciego/Haro and Pamplona.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately inland-only so it doesn't repeat Basque Country: San Sebastián + Bilbao (6 days) 🐟 above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCataloniaPyreneesRoute() {
+  return rbBuildFlatSeedRoute('Catalonia + Pyrenees (9 days) ⛰️', [
+    {
+      code: 'ES', name: 'Spain', days: 9, budget: 855, lat: 42.1000, lng: 1.8000,
+      destinations: [
+        { name: 'Barcelona', lat: 41.3851, lng: 2.1734 },
+        { name: 'Girona', lat: 41.9794, lng: 2.8214 },
+        { name: 'Costa Brava (Tossa de Mar)', lat: 41.7196, lng: 2.9319 },
+        { name: 'Ribes de Freser (Cremallera departure)', lat: 42.3011, lng: 2.1697 },
+        { name: 'Vall de Núria', lat: 42.3986, lng: 2.1614 },
+        { name: 'Cerdanya / Puigcerdà', lat: 42.4331, lng: 1.9284 },
+        { name: 'Aigüestortes i Estany de Sant Maurici NP (optional)', lat: 42.5745, lng: 0.9505 },
+        { name: 'La Garrotxa Volcanic Zone', lat: 42.1364, lng: 2.5647 },
+      ],
+      notes: "Barcelona (1-2 days) → Girona (medieval old town) → a brief Costa Brava coastal stop → into the Pyrenees: Vall de Núria (via the Cremallera rack railway from Ribes de Freser) → Cerdanya/Puigcerdà → optionally Aigüestortes i Estany de Sant Maurici National Park → back via the La Garrotxa volcanic park. Deliberately inland/mountain-focused — don't let this turn into a full Costa Brava beach holiday, that would overlap with Spain: East to South (12 days) 🌅 below. Entry: direct AMS-Barcelona, rental car for the mountain legs. Budget ~€95/day. Season: June-September for hiking access (trails free of snow).",
+      transport_to_next: 'End of this route — fly back AMS-Barcelona direct.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Direct flight into Barcelona, rental car for the mountain legs.',
+    climate_summary: 'June-September for snow-free hiking trails in the Pyrenees.',
+    description: "Barcelona and Girona, a brief Costa Brava stop, then into the Pyrenees via the Vall de Núria Cremallera railway, Cerdanya and the La Garrotxa volcanic park.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately mountain/inland-focused, not a Costa Brava beach trip, to avoid overlapping with Spain: East to South (12 days) 🌅 below. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildNorthernSpainRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Northern Spain Roadtrip (12 days) 🛣️', [
+    {
+      code: 'ES', name: 'Spain', days: 12, budget: 1080, lat: 43.2000, lng: -5.5000,
+      destinations: [
+        { name: 'San Sebastián', lat: 43.3183, lng: -1.9812 },
+        { name: 'Bilbao', lat: 43.2630, lng: -2.9350 },
+        { name: 'Santander', lat: 43.4623, lng: -3.8099 },
+        { name: 'Santillana del Mar', lat: 43.3897, lng: -4.1097 },
+        { name: 'Comillas', lat: 43.3856, lng: -4.2919 },
+        { name: 'Picos de Europa (Potes)', lat: 43.1553, lng: -4.6236 },
+        { name: 'Fuente Dé (cable car)', lat: 43.1439, lng: -4.8142 },
+        { name: 'Oviedo', lat: 43.3619, lng: -5.8494 },
+        { name: 'Gijón', lat: 43.5322, lng: -5.6611 },
+        { name: 'Santiago de Compostela', lat: 42.8805, lng: -8.5456 },
+        { name: 'Cíes Islands (optional)', lat: 42.2378, lng: -8.8994 },
+      ],
+      notes: "Restructured as the connector trip for a full north-coast crossing: San Sebastián → Bilbao → Santander → Santillana del Mar/Comillas → Picos de Europa (Potes, Fuente Dé cable car) → Oviedo/Gijón (Asturias) → Santiago de Compostela → optionally the Rías Baixas/Cíes Islands. Deliberately strings the three shorter standalone trips (Basque Country, Asturias+Cantabria, Galicia) together for anyone with 2 weeks, instead of repeating one of them. Entry: open-jaw AMS-Bilbao in, AMS-Santiago de Compostela out — KLM has flown a seasonal direct AMS-Santiago route since 30 May 2026 (6x/week), and Vueling since 16 June 2026 too; check whether this new 2026 route is still on the schedule for your own dates. Budget ~€90/day. Season: June-September (conveniently lines up with the Santiago flight's seasonal window). Web check (2026-08): a one-way rental car drop-off from Bilbao to Santiago carries a return/repositioning fee.",
+      transport_to_next: 'End of this route — fly home from Santiago de Compostela (seasonal direct AMS-Santiago, or via Madrid year-round on Iberia).',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Open-jaw flight (Bilbao in, Santiago de Compostela out), rental car throughout.',
+    climate_summary: 'June-September, matching the seasonal direct Santiago flight window.',
+    description: "A full north-coast connector: the Basque coast, Cantabria, the Picos de Europa, Asturias and Galicia, ending in Santiago de Compostela.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Strings together the standalone Basque Country, Asturias+Cantabria and Galicia trips rather than repeating one of them for travellers with the full 12 days. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSpainNorthToCentralRoute() {
+  return rbBuildFlatSeedRoute('Spain: North to Central (12 days) 🚉', [
+    {
+      code: 'ES', name: 'Spain', days: 12, budget: 1140, lat: 41.6000, lng: -3.7000,
+      destinations: [
+        { name: 'San Sebastián / Bilbao', lat: 43.2630, lng: -2.9350 },
+        { name: 'Vitoria-Gasteiz', lat: 42.8467, lng: -2.6716 },
+        { name: 'Burgos (cathedral)', lat: 42.3439, lng: -3.6969 },
+        { name: 'Madrid', lat: 40.4168, lng: -3.7038 },
+        { name: 'Toledo (day trip)', lat: 39.8628, lng: -4.0273 },
+        { name: 'Segovia (day trip)', lat: 40.9429, lng: -4.1088 },
+        { name: 'Ávila (optional)', lat: 40.6566, lng: -4.6818 },
+        { name: 'Salamanca (optional)', lat: 40.9701, lng: -5.6635 },
+      ],
+      notes: "San Sebastián/Bilbao → Vitoria-Gasteiz → Burgos (cathedral) → Madrid (3-4 days, including Toledo/Segovia day trips as in the standalone Madrid trip above) → optionally Ávila or Salamanca before the flight home. Deliberately linear (north → inland → Madrid), with no return to the coast — that would overlap with the previous trip's coastal loop. Entry: open-jaw AMS-Bilbao in, AMS-Madrid out (or reversed), both well connected with direct flights. Budget ~€95/day. Season: May-June or September; the Meseta (Burgos and the interior) is cold in winter and hot in high summer (drier than Andalusia, less extreme).",
+      transport_to_next: 'End of this route — fly home from Madrid (or Bilbao if reversed).',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Open-jaw flight (Bilbao in, Madrid out, or reversed), rental car/train for the inland transect.',
+    climate_summary: 'May-June or September; the Meseta interior is cold in winter, hot in high summer.',
+    description: "A linear north-to-inland transect: the Basque coast, Vitoria-Gasteiz, Burgos, Madrid and optionally Ávila or Salamanca.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately linear with no return to the coast, so it complements rather than repeats Northern Spain Roadtrip (12 days) 🛣️ above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSpainEastToSouthRoute() {
+  return rbBuildFlatSeedRoute('Spain: East to South (12 days) 🌅', [
+    {
+      code: 'ES', name: 'Spain', days: 12, budget: 1080, lat: 39.0000, lng: -1.5000,
+      destinations: [
+        { name: 'Barcelona', lat: 41.3851, lng: 2.1734 },
+        { name: 'Tarragona', lat: 41.1189, lng: 1.2445 },
+        { name: 'Valencia', lat: 39.4699, lng: -0.3763 },
+        { name: 'Alicante (Costa Blanca)', lat: 38.3452, lng: -0.4810 },
+        { name: 'Murcia', lat: 37.9922, lng: -1.1307 },
+        { name: 'Almería coast', lat: 36.8381, lng: -2.4597 },
+        { name: 'Málaga / Costa del Sol', lat: 36.7213, lng: -4.4214 },
+        { name: 'Granada (optional inland detour)', lat: 37.1773, lng: -3.5986 },
+      ],
+      notes: "Barcelona (1-2 days) → Tarragona → Valencia (2 days) → Alicante (Costa Blanca) → the Murcia region → the Almería coast → Málaga/Costa del Sol, optionally finishing with an inland Granada detour. Deliberately stays coastal/lowland — as soon as this reaches inland into the Pyrenees or deep Andalusia it overlaps with Catalonia + Pyrenees above and the Andalusia Roadtrip. Entry: open-jaw AMS-Barcelona in, AMS-Málaga out, rental car for the coastal legs (the AP-7 is almost entirely toll-free — Barcelona-Alicante, ~525km/5h, is fully free; only a short toll stretch south of Cartagena towards Almería, ~€6). Budget ~€90/day. Season: May-June or September-October; the southern half (Almería/Costa del Sol) gets very hot and busy in July-August.",
+      transport_to_next: 'End of this route — fly home from Málaga.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Open-jaw flight (Barcelona in, Málaga out), rental car for the coastal sweep.',
+    climate_summary: 'May-June or September-October; the southern half gets very hot in July-August.',
+    description: "A Mediterranean coastal sweep from Barcelona to Málaga, via Valencia, Alicante, the Murcia region and the Almería coast.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately coastal/lowland so it complements rather than repeats Catalonia + Pyrenees (9 days) ⛰️ and Andalusia Roadtrip (9 days) 🚗 above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildGaliciaSantiagoRoute() {
+  return rbBuildFlatSeedRoute('Galicia: Santiago de Compostela + Coast (6 days) 🐚', [
+    {
+      code: 'ES', name: 'Spain', days: 6, budget: 480, lat: 42.8805, lng: -8.5456,
+      destinations: [
+        { name: 'Santiago de Compostela (Praza do Obradoiro)', lat: 42.8805, lng: -8.5456 },
+        { name: 'Pontevedra (Rías Baixas)', lat: 42.4300, lng: -8.6444 },
+        { name: 'Combarro', lat: 42.4297, lng: -8.6858 },
+        { name: 'O Grove', lat: 42.4897, lng: -8.8756 },
+        { name: 'Vigo', lat: 42.2406, lng: -8.7207 },
+        { name: 'Cíes Islands', lat: 42.2378, lng: -8.8994 },
+        { name: 'A Coruña (optional)', lat: 43.3623, lng: -8.4115 },
+      ],
+      notes: "Santiago de Compostela (1-2 days: Praza do Obradoiro, the cathedral) → a Rías Baixas day trip (Pontevedra, Combarro, O Grove) → Vigo → the Cíes Islands ferry (book ahead in season, there's a visitor cap) → optionally A Coruña/Costa da Morte if using the full 6 days. New for 2026: direct seasonal flights AMS-Santiago — KLM from 30 May 2026 (6x/week), Vueling from 16 June 2026; Iberia flies year-round with a connection via Madrid. Budget ~€80/day (Galicia is one of the cheaper Spanish regions, with excellent seafood at a reasonable price). Season: June-September — Galicia is Atlantic/rainy outside summer, and the new direct flights are seasonal-summer anyway. Web check (2026-08): check whether the new KLM/Vueling Santiago route is still on the schedule for your own dates (brand new for 2026); the Cíes Islands ferry has a daily visitor cap in high season — book ahead in July-August.",
+      transport_to_next: 'End of this route — fly home from Santiago de Compostela (seasonal direct AMS-Santiago, or via Madrid on Iberia).',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Direct (seasonal) flight into Santiago de Compostela, short drives/ferry for the coast.',
+    climate_summary: 'June-September — Galicia is Atlantic and rainy outside summer.',
+    description: "Santiago de Compostela's cathedral, the Rías Baixas (Pontevedra, Combarro, O Grove), Vigo and the Cíes Islands.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. New for 2026: uses the brand-new seasonal direct AMS-Santiago flights (KLM from 30 May 2026, Vueling from 16 June 2026) — worth re-checking against the live schedule closer to booking. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildAsturiasCantabriaRoute() {
+  return rbBuildFlatSeedRoute('Asturias + Cantabria (6 days) 🌲', [
+    {
+      code: 'ES', name: 'Spain', days: 6, budget: 480, lat: 43.3000, lng: -5.0000,
+      destinations: [
+        { name: 'Santander (Magdalena Peninsula)', lat: 43.4623, lng: -3.8099 },
+        { name: 'Santillana del Mar', lat: 43.3897, lng: -4.1097 },
+        { name: 'Comillas (El Capricho)', lat: 43.3856, lng: -4.2919 },
+        { name: 'Picos de Europa (Potes)', lat: 43.1553, lng: -4.6236 },
+        { name: 'Fuente Dé (cable car)', lat: 43.1439, lng: -4.8142 },
+        { name: 'Oviedo', lat: 43.3619, lng: -5.8494 },
+        { name: 'Gijón', lat: 43.5322, lng: -5.6611 },
+      ],
+      notes: "Santander (1-2 days: the Magdalena Peninsula, the old town) → Santillana del Mar (a medieval village, with the Altamira cave museum nearby) → Comillas (Gaudí's El Capricho) → the Picos de Europa (based in Potes, with the Fuente Dé cable car) → Oviedo/Gijón (Asturias) as a finale. There's no direct AMS-Santander flight (connect via Barcelona or Madrid); the best option is a direct AMS-Bilbao flight (much more frequent) and driving east, or a direct AMS-Asturias/Oviedo flight (KLM only, ~2h15, ~6 flights/week) and driving west. Budget ~€80/day. Season: June-September — this is 'Green Spain', cooler and rainier than the south year-round, which is actually pleasant in summer while the rest of Spain scorches. Web check (2026-08): a rental car is essential (public transport is thin around the Picos de Europa and coastal villages); the Fuente Dé cable car has capacity limits and long waits in August — go early in the morning.",
+      transport_to_next: 'End of this route — drive back to Bilbao or Asturias airport for the flight home.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Fly into Bilbao or Asturias/Oviedo, rental car essential throughout.',
+    climate_summary: '"Green Spain" — cooler and rainier year-round than the south; pleasant June-September while the rest of Spain scorches.',
+    description: "Cantabria and Asturias: Santander, Santillana del Mar, Comillas' El Capricho, the Picos de Europa and Oviedo/Gijón.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildGibraltarAndalusiaRoute() {
+  return rbBuildFlatSeedRoute('Gibraltar + Andalusia: Costa del Sol (4 days) 🐒', [
+    {
+      code: 'ES', name: 'Spain', days: 3, budget: 300, lat: 36.6000, lng: -4.8000,
+      destinations: [
+        { name: 'Málaga (fly in)', lat: 36.7213, lng: -4.4214 },
+        { name: 'Marbella / Puerto Banús', lat: 36.5099, lng: -4.8858 },
+        { name: 'Estepona', lat: 36.4285, lng: -5.1451 },
+        { name: 'La Línea de la Concepción', lat: 36.1667, lng: -5.3500 },
+        { name: 'Ronda (optional, added at 4 days)', lat: 36.7466, lng: -5.1652 },
+      ],
+      notes: "Deliberately just the Costa del Sol/Gibraltar corner, not Seville or Granada: Málaga (fly in, 1 day) → Marbella/Puerto Banús (1 day) → Estepona → La Línea de la Concepción → Gibraltar (day trip or 1 night) → back to Málaga; at 4 days add Ronda (~1h45 from Marbella) as a mountain excursion. Entry: direct AMS-Málaga, then drive Málaga→border (~132km, ~1h30-1h45 via the toll road or ~2h+ on the free route). Budget ~€100/day (Marbella/Puerto Banús is also one of Andalusia's pricier spots). Season: doable year-round on the coast (milder than inland) but April-June/September-October is best; avoid July-August for value.",
+      transport_to_next: "Park on the Spanish side in La Línea de la Concepción and walk across the border into Gibraltar instead of driving in — avoids the traffic jams at the crossing.",
+    },
+    {
+      code: 'GI', name: 'Gibraltar', days: 1, budget: 100, lat: 36.1408, lng: -5.3536,
+      destinations: [
+        { name: 'Rock of Gibraltar', lat: 36.1408, lng: -5.3536 },
+        { name: 'St Michael’s Cave', lat: 36.1359, lng: -5.3453 },
+      ],
+      notes: "The Rock of Gibraltar (cable car, Barbary macaques) and St Michael's Cave. Budget here runs higher than the Spanish side — Gibraltar uses GBP and is noticeably pricier than Spain for food and drink. Web check (2026-08): Gibraltar joined Schengen on 15 July 2026 — the land border from Spain now has no passport/customs control for most travellers, though queues can still occur at the old border post (check frontierqueue.gi ahead of time); flights into Gibraltar Airport now do the Schengen check in the terminal instead. Dutch travellers can normally enter with just an ID card, but bringing a passport along is still the safer default.",
+      transport_to_next: 'End of this route — walk back across the border to La Línea and drive back to Málaga (~132km) for the flight home.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Direct flight into Málaga, rental car, walk-across border crossing to Gibraltar.',
+    climate_summary: 'Doable year-round (coastal, milder than inland Andalusia); April-June/September-October is best value, avoid July-August.',
+    description: "The Costa del Sol and Gibraltar: Málaga, Marbella/Puerto Banús, Estepona, a walk-across border crossing to the Rock of Gibraltar, and optionally Ronda.",
+    notes: "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Two-block route (ES + GI) since Gibraltar is a separate territory/currency from Spain, even though the border is now mostly controls-free post-Schengen (15 July 2026). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaSpainRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_SPAIN)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_SPAIN, '1');
+
+  rbRoutes.push(
+    rbBuildBarcelonaRoute(),
+    rbBuildMadridRoute(),
+    rbBuildAndalusiaSevilleGranadaRoute(),
+    rbBuildBasqueCountryRoute(),
+    rbBuildMallorcaTramuntanaRoute(),
+    rbBuildValenciaCostaBlancaRoute(),
+    rbBuildAndalusiaRoadtripRoute(),
+    rbBuildNorthernSpainBasqueRiojaRoute(),
+    rbBuildCataloniaPyreneesRoute(),
+    rbBuildNorthernSpainRoadtripRoute(),
+    rbBuildSpainNorthToCentralRoute(),
+    rbBuildSpainEastToSouthRoute(),
+    rbBuildGaliciaSantiagoRoute(),
+    rbBuildAsturiasCantabriaRoute(),
+    rbBuildGibraltarAndalusiaRoute(),
+  );
+  rbSave();
+}
