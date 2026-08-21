@@ -13245,3 +13245,474 @@ function rbSeedEuropaCroatiaSloveniaRoutes() {
   );
   rbSave();
 }
+
+function rbBuildSarajevoMostarRoute() {
+  return rbBuildFlatSeedRoute('Sarajevo + Mostar (5 days) 🌉', [
+    {
+      code: 'BA', name: 'Bosnia and Herzegovina', days: 5, budget: 250, lat: 43.8563, lng: 18.4131,
+      destinations: [
+        { name: 'Sarajevo (Baščaršija)', lat: 43.8563, lng: 18.4131 },
+        { name: 'Tunnel of Hope (Butmir)', lat: 43.8194, lng: 18.3319 },
+        { name: 'Trebević cable car', lat: 43.8347, lng: 18.4444 },
+        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078 },
+        { name: 'Kravice Waterfalls', lat: 43.1225, lng: 17.6725 },
+        { name: 'Blagaj Tekija', lat: 43.2489, lng: 17.8942 },
+      ],
+      notes: "Sarajevo (2-3 days: Baščaršija's old bazaar, the Tunnel of Hope siege museum, the Trebević cable car up the hillside) — Mostar (2 days: the Stari Most bridge, a day trip out to the Kravice Waterfalls and Blagaj Tekija). Budget ~€45-55/day. Season: May-June/September — July-August is hot, but the Kravice water itself sits at a swimmable 19-20°C then, so it's not a bad tradeoff. Web check (2026-08): the Tunnel of Hope charges 20 BAM (~€10.50), cash only (KM, no cards); Kravice is €10 (includes Koćuša and the Humac Monastery), open 7am-10pm June-September; the Sarajevo-Mostar bus is roughly €10 and takes 2.5-3 hours.",
+      transport_to_next: 'End of this route — fly home from Sarajevo (or a connecting bus back from Mostar).',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Sarajevo, bus/rental car for the Sarajevo-Mostar hop.',
+    climate_summary: 'May-June or September; July-August is hot but the Kravice waterfalls stay swimmable.',
+    description: "Sarajevo's Baščaršija, Tunnel of Hope and Trebević cable car, then Mostar's Stari Most bridge with a day trip to the Kravice Waterfalls and Blagaj Tekija.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8b (Balkan-cluster: Bosnia + Montenegro + Albania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildBosniaRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Bosnia Roadtrip (6 days) 🚗', [
+    {
+      code: 'BA', name: 'Bosnia and Herzegovina', days: 6, budget: 270, lat: 43.8563, lng: 18.4131,
+      destinations: [
+        { name: 'Sarajevo', lat: 43.8563, lng: 18.4131 },
+        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078 },
+        { name: 'Kravice Waterfalls', lat: 43.1225, lng: 17.6725 },
+        { name: 'Blagaj Tekija', lat: 43.2489, lng: 17.8942 },
+        { name: "Konjic (Tito's Bunker / ARK D-0)", lat: 43.6531, lng: 17.9614 },
+        { name: 'Jajce (waterfalls)', lat: 44.3411, lng: 17.2694 },
+      ],
+      notes: "Sarajevo (2 days) — Mostar (2 days, with Kravice and Blagaj) — Konjic (Tito's Cold War bunker, ARK D-0) — Jajce (the in-town waterfalls). Budget ~€40-50/day including the rental car (~€25-35/day on its own). Season: May-June/September. Web check (2026-08): no green card is needed for the rental car within Bosnia itself; spring and autumn flooding can occasionally block roads, so build in some slack.",
+      transport_to_next: 'End of this route — fly home from Sarajevo.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Sarajevo, rental car throughout.',
+    climate_summary: 'May-June or September; watch for spring/autumn flooding on rural roads.',
+    description: "A Bosnia road trip: Sarajevo, Mostar with Kravice and Blagaj, Konjic's Tito-era bunker, and the waterfalls of Jajce.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8b (Balkan-cluster: Bosnia + Montenegro + Albania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildBosniaCroatiaRoute() {
+  return rbBuildFlatSeedRoute('Bosnia + Croatia (9 days) 🏛️', [
+    {
+      code: 'HR', name: 'Croatia', days: 2, budget: 300, lat: 42.6507, lng: 18.0944,
+      destinations: [
+        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
+      ],
+      notes: "Dubrovnik (2 days) as the flight-in/flight-out anchor for this trip. Budget ~€150/day — Dubrovnik is clearly the priciest stop on this route. Season: May-June/September (avoid the August crowds in Dubrovnik).",
+      transport_to_next: 'Overland into Bosnia and Herzegovina towards Mostar — a non-Schengen border, so this crossing now includes EES biometric registration (fingerprint + facial scan); build in extra time versus older pre-EES expectations.',
+    },
+    {
+      code: 'BA', name: 'Bosnia and Herzegovina', days: 7, budget: 350, lat: 43.8563, lng: 18.4131,
+      destinations: [
+        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078 },
+        { name: 'Sarajevo', lat: 43.8563, lng: 18.4131 },
+        { name: 'Trebinje', lat: 42.7106, lng: 18.3438 },
+      ],
+      notes: "Mostar (2 days) — Sarajevo (3 days) — Trebinje (1 day) — back to Dubrovnik for the flight home (1 day, folded into this block). Budget ~€50/day. Web check (2026-08): allow extra time at the Croatia-Bosnia border for EES registration, same as on the way in.",
+      transport_to_next: 'End of this route — back to Dubrovnik to fly home.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into and out of Dubrovnik, rental car/bus for the Bosnia loop.',
+    climate_summary: 'May-June or September; avoid August in Dubrovnik.',
+    description: "Dubrovnik as bookends, with Mostar, Sarajevo and Trebinje in Bosnia and Herzegovina in between.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8b (Balkan-cluster: Bosnia + Montenegro + Albania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildBosniaMontenegroRoute() {
+  return rbBuildFlatSeedRoute('Bosnia + Montenegro (9 days) ⛰️', [
+    {
+      code: 'BA', name: 'Bosnia and Herzegovina', days: 6, budget: 300, lat: 43.8563, lng: 18.4131,
+      destinations: [
+        { name: 'Sarajevo', lat: 43.8563, lng: 18.4131 },
+        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078 },
+        { name: 'Trebinje', lat: 42.7106, lng: 18.3438 },
+      ],
+      notes: "Sarajevo (2-3 days) — Mostar (2 days) — Trebinje (1 day). Budget ~€50/day.",
+      transport_to_next: 'Overland from Trebinje into Montenegro towards Kotor — a quiet, non-Schengen border crossing; no green card is needed on the Bosnian side, but check with the rental company whether their Montenegro coverage is included.',
+    },
+    {
+      code: 'ME', name: 'Montenegro', days: 3, budget: 180, lat: 42.4247, lng: 18.7712,
+      destinations: [
+        { name: 'Kotor Old Town', lat: 42.4247, lng: 18.7712 },
+        { name: 'Perast', lat: 42.4875, lng: 18.7089 },
+      ],
+      notes: "Kotor and Perast (3 days). Budget ~€60/day. Season: May-June/September.",
+      transport_to_next: 'End of this route — fly home from Podgorica or Tivat, or back overland via Dubrovnik.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Sarajevo, rental car/bus throughout, fly home from the Montenegrin coast.',
+    climate_summary: 'May-June or September.',
+    description: "Sarajevo, Mostar and Trebinje in Bosnia and Herzegovina, continuing overland into Montenegro for Kotor and Perast.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8b (Balkan-cluster: Bosnia + Montenegro + Albania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildBosniaCroatiaMontenegroRoute() {
+  return rbBuildFlatSeedRoute('Bosnia + Croatia + Montenegro (12 days) 🗺️', [
+    {
+      code: 'HR', name: 'Croatia', days: 3, budget: 450, lat: 43.5081, lng: 16.4402,
+      destinations: [
+        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402 },
+        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
+      ],
+      notes: "Split or Dubrovnik (3 days combined, either as a single flight-in base or a short Split-Dubrovnik hop) as the entry point. Budget ~€150/day.",
+      transport_to_next: 'Overland into Bosnia and Herzegovina towards Mostar — a non-Schengen border with EES biometric registration, allow extra time.',
+    },
+    {
+      code: 'BA', name: 'Bosnia and Herzegovina', days: 6, budget: 330, lat: 43.8563, lng: 18.4131,
+      destinations: [
+        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078 },
+        { name: 'Sarajevo', lat: 43.8563, lng: 18.4131 },
+        { name: 'Trebinje', lat: 42.7106, lng: 18.3438 },
+      ],
+      notes: "Mostar (2 days) — Sarajevo (3 days) — Trebinje (1 day). Budget ~€55/day.",
+      transport_to_next: 'Overland from Trebinje into Montenegro towards Kotor — a quiet crossing, but check the rental car covers Montenegro.',
+    },
+    {
+      code: 'ME', name: 'Montenegro', days: 3, budget: 180, lat: 42.4247, lng: 18.7712,
+      destinations: [
+        { name: 'Kotor Old Town + Bay of Kotor', lat: 42.4247, lng: 18.7712 },
+      ],
+      notes: "Kotor and the Bay of Kotor (3 days). Budget ~€60/day. Season: May-June/September because of border traffic. Web check (2026-08): if the flight home is out of Dubrovnik rather than Podgorica/Tivat, the return leg crosses back into Croatia via the coastal Karasovići border crossing — that crossing saw 2-5 hour waits in July-August 2026 due to EES, so plan a morning crossing.",
+      transport_to_next: 'End of this route — fly home from Podgorica/Tivat, or back overland to Dubrovnik (see the Karasovići note above).',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Open-jaw flight (Split/Dubrovnik in, Montenegro out, or reversed), rental car throughout.',
+    climate_summary: 'May-June or September, partly because of border crowding.',
+    description: "Split/Dubrovnik in Croatia, Mostar, Sarajevo and Trebinje in Bosnia and Herzegovina, and Kotor + the Bay of Kotor in Montenegro.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8b (Balkan-cluster: Bosnia + Montenegro + Albania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. The day split across the three blocks compresses the source's looser 2-3 day ranges (e.g. Split/Dubrovnik, Sarajevo) to fit the stated 12-day total — extend those and shorten elsewhere if 14 days are available instead. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildKotorBayOfKotorRoute() {
+  return rbBuildFlatSeedRoute('Kotor + Bay of Kotor (5 days) ⚓', [
+    {
+      code: 'ME', name: 'Montenegro', days: 5, budget: 250, lat: 42.4247, lng: 18.7712,
+      destinations: [
+        { name: 'Kotor Old Town', lat: 42.4247, lng: 18.7712 },
+        { name: 'Perast', lat: 42.4875, lng: 18.7089 },
+        { name: 'Herceg Novi', lat: 42.4531, lng: 18.5375 },
+        { name: 'Tivat', lat: 42.4356, lng: 18.6961 },
+      ],
+      notes: "Kotor's old town (2 days, the city walls) — Perast as a day trip (boat out to Our Lady of the Rocks) — Herceg Novi/Tivat (1-2 days). Budget ~€45-55/day. Season: April-June/September-October — July-August gets swamped by cruise ships. Web check (2026-08): the city-walls ticket runs €8-15 (prices vary by source, check ahead), open 8am-5pm — go before 9am or after 5pm to dodge the crowds.",
+      transport_to_next: 'End of this route — fly home from Podgorica or Tivat.',
+    },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'Fly into Podgorica or Tivat, short hops by car/boat within the bay.',
+    climate_summary: 'April-June or September-October; July-August is packed with cruise ships.',
+    description: "Kotor's old town and city walls, a boat day out to Perast and Our Lady of the Rocks, and Herceg Novi/Tivat around the rest of the bay.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8b (Balkan-cluster: Bosnia + Montenegro + Albania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildMontenegroRoute() {
+  return rbBuildFlatSeedRoute('Montenegro (6 days) 🏔️', [
+    {
+      code: 'ME', name: 'Montenegro', days: 6, budget: 300, lat: 42.7000, lng: 19.0000,
+      destinations: [
+        { name: 'Kotor Old Town', lat: 42.4247, lng: 18.7712 },
+        { name: 'Budva', lat: 42.2911, lng: 18.8400 },
+        { name: 'Lovćen National Park', lat: 42.3939, lng: 18.8300 },
+        { name: 'Njeguši', lat: 42.4106, lng: 18.8494 },
+        { name: 'Žabljak / Durmitor National Park', lat: 43.1550, lng: 19.1225 },
+        { name: 'Ostrog Monastery', lat: 42.7758, lng: 18.9967 },
+      ],
+      notes: "Kotor (2 days) — Budva (1-2 days) — Lovćen National Park and the village of Njeguši as a day trip — Žabljak/Durmitor (2 days) — Ostrog Monastery on the way back. Budget ~€45-55/day. Season: June/September for the coast, July-September for Durmitor. Web check (2026-08): national-park entry is €5/day per person, or a €13.50 season pass covering all 5 parks — buy it in Žabljak itself, not at the gate; under-15s go free.",
+      transport_to_next: 'End of this route — fly home from Podgorica or Tivat.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Fly into Podgorica/Tivat, rental car for the coast-to-mountains loop.',
+    climate_summary: 'June/September for the coast; July-September for Durmitor.',
+    description: "Kotor and Budva on the coast, Lovćen National Park and Njeguši inland, Žabljak/Durmitor's Black Lake country, and Ostrog Monastery on the way back.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8b (Balkan-cluster: Bosnia + Montenegro + Albania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildMontenegroRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Montenegro Roadtrip (9 days) 🚙', [
+    {
+      code: 'ME', name: 'Montenegro', days: 9, budget: 495, lat: 42.8000, lng: 19.2000,
+      destinations: [
+        { name: 'Podgorica', lat: 42.4304, lng: 19.2594 },
+        { name: 'Ostrog Monastery', lat: 42.7758, lng: 18.9967 },
+        { name: 'Žabljak / Durmitor (Black Lake)', lat: 43.1394, lng: 19.0692 },
+        { name: 'Kolašin', lat: 42.8236, lng: 19.5181 },
+        { name: 'Kotor Old Town', lat: 42.4247, lng: 18.7712 },
+        { name: 'Perast', lat: 42.4875, lng: 18.7089 },
+        { name: 'Budva', lat: 42.2911, lng: 18.8400 },
+      ],
+      notes: "Podgorica — Ostrog Monastery as a day trip — Žabljak/Durmitor (2 days, the Black Lake) — Kolašin (1 day) — Kotor + Perast (3 days) — Budva. Budget ~€50-60/day including the rental car. Season: June-September — the mountain passes are sometimes snowed in outside that window. Web check (2026-08): Montenegro has occasionally seen violent protests in 2026 — avoid gatherings and demonstrations, and keep an eye on local news while there.",
+      transport_to_next: 'End of this route — fly home from Podgorica or Tivat.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Fly into Podgorica, rental car for the full country loop.',
+    climate_summary: 'June-September; mountain passes can be snowed in outside that window.',
+    description: "A Montenegro road trip: Podgorica, Ostrog Monastery, Žabljak/Durmitor's Black Lake, Kolašin, Kotor + Perast, and Budva.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8b (Balkan-cluster: Bosnia + Montenegro + Albania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildMontenegroBosniaRoute() {
+  return rbBuildFlatSeedRoute('Montenegro + Bosnia (9 days) 🕊️', [
+    {
+      code: 'ME', name: 'Montenegro', days: 3, budget: 165, lat: 42.4247, lng: 18.7712,
+      destinations: [
+        { name: 'Kotor Old Town', lat: 42.4247, lng: 18.7712 },
+      ],
+      notes: "Kotor (3 days) as the flight-in anchor. Budget ~€55/day.",
+      transport_to_next: 'Overland into Bosnia and Herzegovina towards Trebinje — a quiet, non-Schengen border crossing. Montenegro prices in euros, Bosnia in convertible marks (KM) — bring some cash, since cards aren\'t accepted everywhere in Bosnia.',
+    },
+    {
+      code: 'BA', name: 'Bosnia and Herzegovina', days: 6, budget: 300, lat: 43.8563, lng: 18.4131,
+      destinations: [
+        { name: 'Trebinje', lat: 42.7106, lng: 18.3438 },
+        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078 },
+        { name: 'Sarajevo', lat: 43.8563, lng: 18.4131 },
+      ],
+      notes: "Trebinje (1 day) — Mostar (2 days) — Sarajevo (3 days). Budget ~€50/day. Season: May-June/September.",
+      transport_to_next: 'End of this route — fly home from Sarajevo.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Podgorica/Tivat, fly home from Sarajevo (or reversed), rental car/bus throughout.',
+    climate_summary: 'May-June or September.',
+    description: "Kotor in Montenegro, continuing overland into Bosnia and Herzegovina for Trebinje, Mostar and Sarajevo.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8b (Balkan-cluster: Bosnia + Montenegro + Albania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildMontenegroCroatiaRoute() {
+  return rbBuildFlatSeedRoute('Montenegro + Croatia (9 days) ⛵', [
+    {
+      code: 'HR', name: 'Croatia', days: 3, budget: 450, lat: 42.6507, lng: 18.0944,
+      destinations: [
+        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
+      ],
+      notes: "Dubrovnik (2-3 days) as the flight-in anchor. Budget ~€150/day.",
+      transport_to_next: 'Overland to Kotor via the Karasovići border crossing — this saw 2-5 hour waits in July-August 2026 due to EES, so plan a morning crossing.',
+    },
+    {
+      code: 'ME', name: 'Montenegro', days: 6, budget: 360, lat: 42.3500, lng: 18.8000,
+      destinations: [
+        { name: 'Kotor Old Town', lat: 42.4247, lng: 18.7712 },
+        { name: 'Perast', lat: 42.4875, lng: 18.7089 },
+        { name: 'Budva', lat: 42.2911, lng: 18.8400 },
+        { name: 'Herceg Novi', lat: 42.4531, lng: 18.5375 },
+      ],
+      notes: "Kotor + Perast (3 days) — Budva (2 days) — Herceg Novi (1 day). Budget ~€60/day. Season: May-June/September (July-August very busy).",
+      transport_to_next: 'End of this route — fly home from Podgorica or Tivat.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Dubrovnik, fly home from Podgorica/Tivat (or reversed), rental car throughout.',
+    climate_summary: 'May-June or September; July-August is very busy.',
+    description: "Dubrovnik in Croatia, crossing into Montenegro for Kotor + Perast, Budva and Herceg Novi.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8b (Balkan-cluster: Bosnia + Montenegro + Albania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCroatiaMontenegroBosniaRoute() {
+  return rbBuildFlatSeedRoute('Croatia + Montenegro + Bosnia (12 days) 🧭', [
+    {
+      code: 'HR', name: 'Croatia', days: 4, budget: 600, lat: 43.0000, lng: 17.3000,
+      destinations: [
+        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402 },
+        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
+      ],
+      notes: "Split (2 days) — Dubrovnik (2 days). Budget ~€150/day.",
+      transport_to_next: 'Overland to Kotor via the Karasovići border crossing — 2-5 hour waits in July-August 2026 due to EES, plan a morning crossing.',
+    },
+    {
+      code: 'ME', name: 'Montenegro', days: 4, budget: 240, lat: 42.3500, lng: 18.8000,
+      destinations: [
+        { name: 'Kotor Old Town + Bay of Kotor', lat: 42.4247, lng: 18.7712 },
+        { name: 'Budva', lat: 42.2911, lng: 18.8400 },
+      ],
+      notes: "Kotor + the Bay of Kotor (3 days) — Budva (1 day). Budget ~€60/day.",
+      transport_to_next: 'Overland into Bosnia and Herzegovina towards Trebinje — a quiet, non-Schengen border crossing.',
+    },
+    {
+      code: 'BA', name: 'Bosnia and Herzegovina', days: 4, budget: 200, lat: 43.8563, lng: 18.4131,
+      destinations: [
+        { name: 'Trebinje', lat: 42.7106, lng: 18.3438 },
+        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078 },
+        { name: 'Sarajevo', lat: 43.8563, lng: 18.4131 },
+      ],
+      notes: "Trebinje (1 day) — Mostar (2 days) — Sarajevo (1 day). Budget ~€50/day. Season: May-June/September. Web check (2026-08): multiple EES registrations happen along this route (Croatia-Montenegro and Croatia-Bosnia both being non-Schengen crossings) — build in a time buffer at each border; the Pelješac bridge helps skip the old Neum detour on the Croatian side.",
+      transport_to_next: 'End of this route — fly home from Sarajevo.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Split, fly home from Sarajevo (or reversed), rental car throughout.',
+    climate_summary: 'May-June or September.',
+    description: "Split and Dubrovnik in Croatia, Kotor + the Bay of Kotor and Budva in Montenegro, and Trebinje, Mostar and Sarajevo in Bosnia and Herzegovina.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8b (Balkan-cluster: Bosnia + Montenegro + Albania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. The day split compresses the source's looser 1-3 day ranges per stop (e.g. Sarajevo, Split) to fit the stated 12-day total — extend those and shorten elsewhere if 14 days are available instead. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildAlbaniaRoute() {
+  return rbBuildFlatSeedRoute('Albania (6 days) 🏖️', [
+    {
+      code: 'AL', name: 'Albania', days: 6, budget: 240, lat: 40.9000, lng: 19.8000,
+      destinations: [
+        { name: 'Tirana', lat: 41.3275, lng: 19.8187 },
+        { name: 'Berat', lat: 40.7058, lng: 19.9522 },
+        { name: 'Dhermi', lat: 40.1461, lng: 19.6417 },
+        { name: 'Himarë', lat: 40.1017, lng: 19.7444 },
+      ],
+      notes: "Tirana (2 days) — Berat (1-2 days, the UNESCO-listed 'city of a thousand windows') — Dhermi/Himarë on the Riviera (2-3 days). Budget ~€35-45/day — Albania is the cheapest Balkan country to travel in. Season: May-June or early September. Web check (2026-08): a lot of Riviera infrastructure around Dhermi is closed outside June-September; the local currency is the Lek, and the euro exchange rate offered locally is often unfavorable, so change money carefully or pay in Lek where possible.",
+      transport_to_next: 'End of this route — fly home from Tirana.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Tirana, bus/rental car onward to Berat and the Riviera.',
+    climate_summary: 'May-June or early September for the Riviera without the peak-season crowds and prices.',
+    description: "Tirana's capital energy, Berat's UNESCO old town, and the beaches of Dhermi/Himarë on the Albanian Riviera.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8b (Balkan-cluster: Bosnia + Montenegro + Albania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildAlbaniaRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Albania Roadtrip (9 days) 🥾', [
+    {
+      code: 'AL', name: 'Albania', days: 9, budget: 360, lat: 41.7000, lng: 19.7000,
+      destinations: [
+        { name: 'Tirana', lat: 41.3275, lng: 19.8187 },
+        { name: 'Shkodër', lat: 42.0683, lng: 19.5126 },
+        { name: 'Theth', lat: 42.3961, lng: 19.7692 },
+        { name: 'Valbona', lat: 42.4644, lng: 19.8919 },
+        { name: 'Berat', lat: 40.7058, lng: 19.9522 },
+      ],
+      notes: "Tirana (2 days) — Shkodër (1 day) — Theth (2 days) — the hike over to Valbona (1 day) — back down, or onward to Berat (3 days). Budget ~€35-45/day including the rental car. Season: the Theth-Valbona hike is only reliably passable from mid-June to the end of September — the road up to Theth itself only opens at the end of May, and the minibuses only run in high season. Web check (2026-08): the last stretch of road into Theth is partly unpaved — check the rental car insurance covers that before setting off.",
+      transport_to_next: 'End of this route — fly home from Tirana.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Fly into Tirana, rental car for the mountain roads, on foot for the Theth-Valbona hike.',
+    climate_summary: 'Mid-June to end of September only — the Theth road and the Theth-Valbona hike are not reliably passable outside that window.',
+    description: "Tirana and Shkodër, then into the Albanian Alps for Theth and the classic hike over to Valbona, with an option to continue on to Berat.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8b (Balkan-cluster: Bosnia + Montenegro + Albania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildAlbanianRivieraRoute() {
+  return rbBuildFlatSeedRoute('Albanian Riviera (9 days) 🌊', [
+    {
+      code: 'AL', name: 'Albania', days: 9, budget: 360, lat: 40.1000, lng: 19.8000,
+      destinations: [
+        { name: 'Vlorë', lat: 40.4667, lng: 19.4900 },
+        { name: 'Dhermi', lat: 40.1461, lng: 19.6417 },
+        { name: 'Himarë', lat: 40.1017, lng: 19.7444 },
+        { name: 'Porto Palermo', lat: 40.0389, lng: 19.7994 },
+        { name: 'Saranda', lat: 39.8756, lng: 20.0053 },
+        { name: 'Ksamil', lat: 39.7717, lng: 19.9967 },
+        { name: 'Butrint', lat: 39.7439, lng: 20.0225 },
+      ],
+      notes: "Vlorë (1 day) — Dhermi (2 days) — Himarë (2 days, with Porto Palermo as a day trip) — Saranda (2 days) — Ksamil + the Butrint ruins (2 days). Budget ~€35-50/day (higher in August). Season: early June or the first two weeks of September are ideal — mid-July to mid-August is packed and expensive. Web check (2026-08): Dhermi's infrastructure runs mostly on the summer season, so it's thin outside it; Saranda gets 300+ days of sunshine a year, which is part of why it's become the Riviera's main hub.",
+      transport_to_next: 'End of this route — fly home from Tirana, or a shorter regional flight from Corfu/Kërkirë across the strait.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Fly into Tirana, rental car/bus down the coastal Riviera road.',
+    climate_summary: 'Early June or early September ideal; mid-July to mid-August is overcrowded and pricier.',
+    description: "A sweep down the Albanian Riviera: Vlorë, Dhermi, Himarë and Porto Palermo, then Saranda, Ksamil and the Butrint ruins.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8b (Balkan-cluster: Bosnia + Montenegro + Albania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildAlbaniaMontenegroRoute() {
+  return rbBuildFlatSeedRoute('Albania + Montenegro (12 days) 🏝️', [
+    {
+      code: 'AL', name: 'Albania', days: 7, budget: 315, lat: 40.6000, lng: 19.7000,
+      destinations: [
+        { name: 'Tirana', lat: 41.3275, lng: 19.8187 },
+        { name: 'Berat', lat: 40.7058, lng: 19.9522 },
+        { name: 'Dhermi', lat: 40.1461, lng: 19.6417 },
+        { name: 'Himarë', lat: 40.1017, lng: 19.7444 },
+      ],
+      notes: "Tirana (2 days) — Berat (1 day) — the Albanian Riviera (4 days). Budget ~€45/day. Season: May-June/September.",
+      transport_to_next: "Overland via the Sukobin-Muriqan border crossing into Montenegro. Web check (2026-08): usually 10-45 minutes, but summer weekends can push that to 1.5-2 hours; the rental car needs a green card covering both Albania and Montenegro (arrange this in advance, it typically adds ~€30-50).",
+    },
+    {
+      code: 'ME', name: 'Montenegro', days: 5, budget: 300, lat: 42.3500, lng: 18.8000,
+      destinations: [
+        { name: 'Kotor Old Town + Bay of Kotor', lat: 42.4247, lng: 18.7712 },
+        { name: 'Budva', lat: 42.2911, lng: 18.8400 },
+      ],
+      notes: "Kotor + the Bay of Kotor (3 days) — Budva (2 days). Budget ~€60/day.",
+      transport_to_next: 'End of this route — fly home from Podgorica or Tivat.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Tirana, fly home from Podgorica/Tivat (or reversed), rental car throughout.',
+    climate_summary: 'May-June or September; July-August is busy on both the Riviera and the Montenegrin coast.',
+    description: "Tirana, Berat and the Albanian Riviera, continuing overland into Montenegro for Kotor + the Bay of Kotor and Budva.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8b (Balkan-cluster: Bosnia + Montenegro + Albania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildAlbaniaNorthMacedoniaRoute() {
+  return rbBuildFlatSeedRoute('Albania + North Macedonia (12 days) 🏞️', [
+    {
+      code: 'AL', name: 'Albania', days: 4, budget: 160, lat: 41.0000, lng: 20.3000,
+      destinations: [
+        { name: 'Tirana', lat: 41.3275, lng: 19.8187 },
+        { name: 'Berat', lat: 40.7058, lng: 19.9522 },
+        { name: 'Korçë', lat: 40.6186, lng: 20.7808 },
+      ],
+      notes: "Tirana (2 days) — Berat (1 day) — Korçë (1 day). Budget ~€40/day.",
+      transport_to_next: 'Overland via the Qafë Thanë border crossing into North Macedonia towards Ohrid. Web check (2026-08): this crossing is generally smooth, and there\'s no EES registration here — it isn\'t a Schengen external border.',
+    },
+    {
+      code: 'MK', name: 'North Macedonia', days: 8, budget: 320, lat: 41.5000, lng: 21.0000,
+      destinations: [
+        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 },
+        { name: 'Skopje', lat: 41.9973, lng: 21.4280 },
+        { name: 'Mavrovo National Park (optional)', lat: 41.6667, lng: 20.7500 },
+      ],
+      notes: "Ohrid (4 days, its lake is at its most swimmable in July-August, though that's also the busiest window) — Skopje (3 days) — optionally Mavrovo National Park (1 day). Budget ~€40/day. Season: May-June/September for a quieter trip. Web check (2026-08): North Macedonia bans photographing military objects — a fine or even a prison sentence of up to 3 years is on the books for this, so be careful around any installations.",
+      transport_to_next: 'End of this route — fly home from Skopje (or Ohrid, seasonal routes permitting).',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Tirana, fly home from Skopje (or reversed), rental car/bus throughout.',
+    climate_summary: 'May-June or September for a quieter trip; July-August is warmest for swimming in Lake Ohrid but also busiest.',
+    description: "Tirana, Berat and Korçë in Albania, continuing overland into North Macedonia for Ohrid, Skopje and an optional stop at Mavrovo National Park.",
+    notes: "Built (2026-08) as part of Phase 2 batch 8b (Balkan-cluster: Bosnia + Montenegro + Albania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaBosniaMontenegroAlbaniaRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_BOSNIA_MONTENEGRO_ALBANIA)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_BOSNIA_MONTENEGRO_ALBANIA, '1');
+
+  rbRoutes.push(
+    rbBuildSarajevoMostarRoute(),
+    rbBuildBosniaRoadtripRoute(),
+    rbBuildBosniaCroatiaRoute(),
+    rbBuildBosniaMontenegroRoute(),
+    rbBuildBosniaCroatiaMontenegroRoute(),
+    rbBuildKotorBayOfKotorRoute(),
+    rbBuildMontenegroRoute(),
+    rbBuildMontenegroRoadtripRoute(),
+    rbBuildMontenegroBosniaRoute(),
+    rbBuildMontenegroCroatiaRoute(),
+    rbBuildCroatiaMontenegroBosniaRoute(),
+    rbBuildAlbaniaRoute(),
+    rbBuildAlbaniaRoadtripRoute(),
+    rbBuildAlbanianRivieraRoute(),
+    rbBuildAlbaniaMontenegroRoute(),
+    rbBuildAlbaniaNorthMacedoniaRoute(),
+  );
+  rbSave();
+}
