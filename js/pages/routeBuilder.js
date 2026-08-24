@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbSeedEuropaChannelIslandsIoMRoutes();
   rbSeedEuropaComboIberiaRoutes();
   rbSeedEuropaComboBalkanRoutes();
+  rbSeedEuropaComboCentralRoutes();
   rbMigrateLonghaulBuffer();
   rbMigrateExpeditionRenames();
   rbMigrateExpeditionEmojiNames();

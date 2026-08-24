@@ -18674,6 +18674,226 @@ function rbBuildAdriaticRoadtripRoute() {
   });
 }
 
+function rbBuildAustriaSloveniaGrossglocknerRoute() {
+  return rbBuildFlatSeedRoute('Austria + Slovenia via Grossglockner (7-10 days) 🏔️', [
+    {
+      code: 'AT', name: 'Austria', days: 5, budget: 560, lat: 46.6249, lng: 14.3050,
+      destinations: [
+        { name: 'Salzburg or Grossglockner area', lat: 47.8095, lng: 13.0550 },
+        { name: 'Klagenfurt', lat: 46.6249, lng: 14.3050 },
+        { name: 'Wörthersee', lat: 46.6167, lng: 14.1667 },
+      ],
+      notes: "5 days in Austria: Salzburg or the Grossglockner High Alpine Road, then south to Klagenfurt/Wörthersee (Carinthia). Budget ~€95-130/day p.p. Season: June-September.",
+      transport_to_next: 'Drive to the Julian Alps, Slovenia — Bled is only ~79km/50 min from Klagenfurt, genuinely no detour.',
+    },
+    {
+      code: 'SI', name: 'Slovenia', days: 4, budget: 380, lat: 46.3683, lng: 14.1146,
+      destinations: [
+        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+        { name: 'Bohinj', lat: 46.2833, lng: 13.9333 },
+        { name: 'Ljubljana (optional)', lat: 46.0569, lng: 14.5058 },
+      ],
+      notes: "4 days in Slovenia's Julian Alps: Bled, Bohinj, with Ljubljana as an optional add-on. Budget ~€90-110/day p.p. — Bled itself is a price outlier within that range. Season: June-September. Slovenia does not use the Austrian vignette — a separate e-vinjeta (toll sticker) is needed once driving Slovenian motorways.",
+      transport_to_next: 'End of this route — drive back to the Netherlands via Austria.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Own car throughout — Klagenfurt to Bled is a short, direct hop, no detour.',
+    climate_summary: 'June-September.',
+    description: "Austria's Carinthia (Salzburg or Grossglockner, then Klagenfurt/Wörthersee) paired with Slovenia's Julian Alps (Bled, Bohinj, optional Ljubljana).",
+    notes: "Built (2026-08) as part of Phase 2 batch 15c (Grand European combinations — Central Europe cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️⚠️ Near-total overlap, explicitly flagged as the closest pair found across this entire Phase 2 workstream so far: Route Builder already has Austria + Slovenia (9 days) 🏝️ (rbBuildAustriaSloveniaRoute, built in Phase 2 batch 3) — same two countries, same cities (Salzburg/Grossglockner + Klagenfurt/Wörthersee, then Bled/Bohinj/optional Ljubljana), the exact same 5+4 day split, the same budget ranges, and the same Austrian-vignette/Slovenian e-vinjeta note. The only meaningful difference is this route's title matching the source document's own '(7-10 days)' framing versus the existing route's fixed '9 days'. Built anyway per the source list, given a deliberately distinct function name (rbBuildAustriaSloveniaGrossglocknerRoute) per this project's established collision-resolution pattern (never merge/delete on a real collision — Youri's 2026-08-21 instruction) — flagged prominently in ROUTE_SIMILARITY_REVIEW.md as a strong consolidation candidate, not resolved here. Not yet checked against Route Builder-level price research beyond the vignette checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildHungaryAustriaSloveniaRoute() {
+  return rbBuildFlatSeedRoute('Hungary + Austria + Slovenia (7-10 days) 🚆', [
+    {
+      code: 'HU', name: 'Hungary', days: 2, budget: 120, lat: 47.4960, lng: 19.0396,
+      destinations: [
+        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396 },
+        { name: 'Hungarian Parliament Building', lat: 47.5076, lng: 19.0458 },
+      ],
+      notes: "Budapest (2 days): the Castle district and the Parliament/Pest riverside. Budget ~€55-65/day.",
+      transport_to_next: 'Drive to Vienna, ~250km/2.5h — a fully Schengen border, no checks expected on this leg.',
+    },
+    {
+      code: 'AT', name: 'Austria', days: 3, budget: 345, lat: 48.2082, lng: 16.3738,
+      destinations: [
+        { name: 'Vienna (old town, Schönbrunn)', lat: 48.2082, lng: 16.3738 },
+      ],
+      notes: "Vienna (2-3 days). Budget ~€95-130/day p.p. Web check (2026-08): Austria has already extended border controls with Czechia/Slovakia — it may also apply spot checks toward Hungary/Slovenia on this route; not confirmed as of this writing, check close to departure.",
+      transport_to_next: 'Drive to Ljubljana/Bled, ~380km/4h via Graz-Maribor or via Klagenfurt.',
+    },
+    {
+      code: 'SI', name: 'Slovenia', days: 4, budget: 400, lat: 46.3683, lng: 14.1146,
+      destinations: [
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+      ],
+      notes: "Ljubljana and Lake Bled (3-4 days). Budget ~€90-110/day p.p. — Bled itself runs pricier than the Ljubljana average. Season: May-June or September.",
+      transport_to_next: 'End of this route — fly home from Ljubljana.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Budapest, rental car through Vienna to Ljubljana/Bled, fly home from Ljubljana (or reversed).',
+    climate_summary: 'May-June or September.',
+    description: "Budapest, then west to Vienna, then south into Slovenia for Ljubljana and Lake Bled.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15c (Grand European combinations — Central Europe cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Partial overlap flagged: shares its Bled/Julian-Alps content with Austria + Slovenia (9 days) 🏝️ (rbBuildAustriaSloveniaRoute) and this same batch's Austria + Slovenia via Grossglockner (7-10 days) 🏔️ (rbBuildAustriaSloveniaGrossglocknerRoute) — but this route's Austria leg is Vienna, not Salzburg/Klagenfurt/Grossglockner, so the Austria content itself is genuinely different, only the Slovenia tail overlaps. Also checked against Hungary + Slovenia + Croatia (9 days) 🧭 (rbBuildHungarySloveniaCroatiaRoute): confirmed genuinely different — that route continues into Croatia (Plitvice/Zagreb) instead of Austria, no meaningful overlap. Kept as a distinct route; logged in ROUTE_SIMILARITY_REVIEW.md. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildPolandSlovakiaHungaryRoute() {
+  return rbBuildFlatSeedRoute('Poland + Slovakia + Hungary (10-14 days) 🥾', [
+    {
+      code: 'PL', name: 'Poland', days: 5, budget: 325, lat: 50.0614, lng: 19.9366,
+      destinations: [
+        { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 },
+        { name: 'Zakopane', lat: 49.2992, lng: 19.9496 },
+        { name: 'Tatra National Park', lat: 49.1997, lng: 20.0669 },
+      ],
+      notes: "Krakow (2-3 days) — Zakopane/Tatra National Park (2 days). Budget ~€60-75/day. Season: June-September (Tatra hiking season).",
+      transport_to_next: 'Short crossing over the mountains into Slovakia — fully Schengen, no border checks — to Poprad/the High Tatras.',
+    },
+    {
+      code: 'SK', name: 'Slovakia', days: 4, budget: 220, lat: 49.1660, lng: 20.2870,
+      destinations: [
+        { name: 'Poprad / Tatranská Lomnica (Slovak High Tatras)', lat: 49.1660, lng: 20.2870 },
+        { name: 'Bratislava', lat: 48.1486, lng: 17.1077 },
+      ],
+      notes: "The Slovak side of the High Tatras/Poprad (1-2 days, a short cross-border hop from the Polish Tatra) — Bratislava (2 days). Budget ~€50-60/day. Web check (2026-08): one-way rental-car returns between countries are expensive — plan to hand the car back in the same country you picked it up.",
+      transport_to_next: 'Drive or train to Budapest.',
+    },
+    {
+      code: 'HU', name: 'Hungary', days: 3, budget: 180, lat: 47.4960, lng: 19.0396,
+      destinations: [
+        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396 },
+        { name: 'Eger (optional extension)', lat: 47.9025, lng: 20.3772 },
+      ],
+      notes: "Budapest (3 days), with Eger and its wine cellars as an optional 1-2 day extension if time allows (not counted in this route's day total). Budget ~€55-65/day. Season: June-September.",
+      transport_to_next: 'End of this route — fly home from Budapest.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Fly into Krakow, rental car for the whole loop (return it in the same country you picked it up — one-way cross-border drop-off is expensive), fly home from Budapest.',
+    climate_summary: 'June-September (Tatra hiking season).',
+    description: "Krakow and the Tatra Mountains on the Polish side, over the border into the Slovak High Tatras and Bratislava, finishing in Budapest with an optional Eger wine detour.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15c (Grand European combinations — Central Europe cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️ Real overlap, explicitly flagged: Route Builder already has Slovakia + Poland (9 days) 🥾 (rbBuildSlovakiaPolandRoute, batch 9c) — the same Poland+Slovakia two-country core (Bratislava/High Tatras ↔ Zakopane/Krakow), essentially reversed in direction (that route runs Bratislava→Zakopane→Krakow, this one runs Krakow→Zakopane→the Slovak Tatras→Bratislava) and extended here with a Hungary leg. Also reuses content close to Bratislava + High Tatras (5 days) 🏔️ (rbBuildBratislavaHighTatrasRoute) and Krakow + Tatra (6 days) ⛰️ (rbBuildKrakowTatraRoute), and shares its Slovakia→Hungary tail with Slovakia + Hungary (9 days) 🚆 (rbBuildSlovakiaHungaryRoute, which instead reaches Hungary via a Győr day trip rather than via Poland/the Tatras). Kept as a distinct route, not merged. Logged in ROUTE_SIMILARITY_REVIEW.md. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCzechiaAustriaHungaryRoute() {
+  return rbBuildFlatSeedRoute('Czechia + Austria + Hungary (10-14 days) 🏛️', [
+    {
+      code: 'CZ', name: 'Czechia', days: 5, budget: 410, lat: 50.0875, lng: 14.4213,
+      destinations: [
+        { name: 'Staré Město / Prague Castle', lat: 50.0875, lng: 14.4213 },
+        { name: 'Český Krumlov', lat: 48.8127, lng: 14.3175 },
+      ],
+      notes: "Prague (3 days) — Český Krumlov (1-2 days). Budget ~€75-90/day.",
+      transport_to_next: "Cross into Austria — a Schengen border, but Austria has extended its border controls with Czechia through at least 15 June 2026: expect spot ID checks, no visa needed. A separate Austrian highway vignette is required in addition to the Czech dálniční známka.",
+    },
+    {
+      code: 'AT', name: 'Austria', days: 3, budget: 345, lat: 48.2082, lng: 16.3738,
+      destinations: [
+        { name: 'Vienna (old town, Schönbrunn)', lat: 48.2082, lng: 16.3738 },
+      ],
+      notes: "Vienna (3 days). Budget ~€100-130/day p.p. Web check (2026-08): Austria may also apply spot checks toward Hungary on this leg — not confirmed as of this writing, check close to departure.",
+      transport_to_next: 'Train onward to Budapest, about 2.5 hours — a fully Schengen border.',
+    },
+    {
+      code: 'HU', name: 'Hungary', days: 4, budget: 240, lat: 47.4960, lng: 19.0396,
+      destinations: [
+        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396 },
+        { name: 'Eger (optional extension)', lat: 47.9025, lng: 20.3772 },
+      ],
+      notes: "Budapest (3-4 days), with Eger as an optional 1-2 day wine-region extension if time allows. Budget ~€55-65/day. Season: May-June or September.",
+      transport_to_next: 'End of this route — fly home from Budapest.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Prague, rental car/train through Vienna, train onward (~2.5h) to Budapest, fly home from Budapest.',
+    climate_summary: 'May-June or September.',
+    description: "Prague and Český Krumlov, across into Austria for Vienna, then on to Budapest with an optional Eger wine detour.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15c (Grand European combinations — Central Europe cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️ Real overlap, explicitly flagged: this route is essentially Czechia + Austria (9 days) 🏔️ (rbBuildCzechiaAustriaRoute, batch 9b — same Prague/Český Krumlov/Vienna backbone) with a Budapest(+optional Eger) leg appended. Also reuses content close to Prague + Bohemia (5 days) 🏘️ (rbBuildPragueBohemiaRoute) on the Czechia side and Budapest + Eger (5 days) 🍷 (rbBuildBudapestEgerRoute) on the optional Hungary extension. Kept as a distinct route, not merged. Logged in ROUTE_SIMILARITY_REVIEW.md. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCentralEuropeRoadtripFourteenDaysRoute() {
+  return rbBuildFlatSeedRoute('Central Europe Roadtrip (14 days) 🚂', [
+    {
+      code: 'DE', name: 'Germany', days: 2, budget: 180, lat: 52.5200, lng: 13.4050,
+      destinations: [
+        { name: 'Brandenburg Gate', lat: 52.5163, lng: 13.3777 },
+        { name: 'Museum Island', lat: 52.5169, lng: 13.4014 },
+        { name: 'Berlin Wall Memorial', lat: 52.5350, lng: 13.3900 },
+      ],
+      notes: "Berlin (2 days) as the opener. Budget ~€80-95/day.",
+      transport_to_next: 'Train or drive to Prague — a fully Schengen border, no checks.',
+    },
+    {
+      code: 'CZ', name: 'Czechia', days: 3, budget: 240, lat: 50.0875, lng: 14.4213,
+      destinations: [
+        { name: 'Staré Město / Prague Castle', lat: 50.0875, lng: 14.4213 },
+      ],
+      notes: "Prague (3 days). Budget ~€75-90/day.",
+      transport_to_next: 'Train or drive to Krakow — a fully Schengen border, no checks.',
+    },
+    {
+      code: 'PL', name: 'Poland', days: 2, budget: 130, lat: 50.0614, lng: 19.9366,
+      destinations: [
+        { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 },
+        { name: 'Auschwitz-Birkenau (day trip)', lat: 50.0359, lng: 19.1783 },
+      ],
+      notes: "Krakow (2-3 days), including a half-day Auschwitz-Birkenau trip. Budget ~€60-75/day. Web check (2026-08): since March 2026 Auschwitz-Birkenau can only be booked online (visit.auschwitz.org) — book at least 2-4 weeks ahead.",
+      transport_to_next: 'Train or drive to Bratislava — a fully Schengen border, no checks.',
+    },
+    {
+      code: 'SK', name: 'Slovakia', days: 1, budget: 55, lat: 48.1486, lng: 17.1077,
+      destinations: [
+        { name: 'Bratislava', lat: 48.1486, lng: 17.1077 },
+      ],
+      notes: "Bratislava (1-2 days). Budget ~€50-60/day.",
+      transport_to_next: 'Train or drive to Vienna, about an hour — a fully Schengen border, no checks.',
+    },
+    {
+      code: 'AT', name: 'Austria', days: 3, budget: 345, lat: 48.2082, lng: 16.3738,
+      destinations: [
+        { name: 'Vienna (old town, Schönbrunn)', lat: 48.2082, lng: 16.3738 },
+      ],
+      notes: "Vienna (2-3 days). Budget ~€100-130/day p.p. — noticeably above this route's own flat source-level daily-budget estimate, see the route notes below.",
+      transport_to_next: 'Train onward to Budapest, about 2.5 hours.',
+    },
+    {
+      code: 'HU', name: 'Hungary', days: 3, budget: 180, lat: 47.4960, lng: 19.0396,
+      destinations: [
+        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396 },
+      ],
+      notes: "Budapest (3 days), the trip's departure point. Budget ~€55-65/day.",
+      transport_to_next: 'End of this route — fly home from Budapest.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Train throughout (a rental car works as a fallback/local option) — Berlin, Prague, Krakow, Bratislava, Vienna and Budapest are all well connected by rail. Fly into Berlin, fly home from Budapest.',
+    climate_summary: 'May-June or September.',
+    description: "A six-country capital-hopping loop by train: Berlin, Prague, Krakow (with an Auschwitz-Birkenau day trip), Bratislava, Vienna and Budapest.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15c (Grand European combinations — Central Europe cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Budget note: the source material gives one flat ~€70-85/day estimate for the whole trip, but per-country rates verified elsewhere in this repo vary well outside that band (Austria/Vienna in particular runs ~€100-130/day in every other Austria route built so far) — the per-country budgets above use those more realistic verified rates rather than a flat number, which pulls the trip's true daily average above the source's own ~€70-85 estimate; flagged here rather than silently smoothed over. All six countries are Schengen/EU with no border control between them, but three use their own currency (CZK/PLN/HUF) alongside three euro countries (DE/SK/AT). ⚠️⚠️ Real overlap with a much bigger existing route, explicitly flagged: despite the near-identical expected function name, this is NOT the same as Central European Grand Roadtrip 🚗 (rbBuildCentralEuropeRoadtripRoute) — that existing function is the flagship Grand Expedition (45-70 days, 14 countries: France/Germany/Switzerland/Liechtenstein/Austria/Italy/San Marino/Slovenia/Croatia/Serbia/Hungary/Slovakia/Czechia/Poland), whose Alpine Countries/Balkans/Central Europe regions do cover the same six-country core (Germany/Czechia/Poland/Slovakia/Austria/Hungary) as this route. Same relationship pattern as Isle of Man (3-4 days) 🏝️ vs England, Wales & Isle of Man 🎩 (rbBuildIsleOfManRoute vs rbBuildEnglandWalesIoMRoute) — a realistic standalone 2-week trip vs. a leg buried inside a month-plus expedition. Genuinely different in practice, not just in length: this route adds Berlin (which the Grand Roadtrip never visits at all — it goes Alsace→Alpine Countries→Dolomites/Northern Italy first instead), its Austria leg is specifically Vienna (the Grand Roadtrip's Austria leg is Innsbruck/Salzburg/Grossglockner — no Vienna at all), and even where countries overlap the order/cities differ (the Grand Roadtrip's 'Central Europe' region runs Slovakia→Czechia(Brno/Prague)→Poland(Wrocław)→Germany(Dresden), the reverse direction and different cities from this route's Berlin→Prague→Krakow→Bratislava→Vienna→Budapest). Given a deliberately distinct function name (rbBuildCentralEuropeRoadtripFourteenDaysRoute) per this project's established collision-resolution pattern. The pre-existing Central European Grand Roadtrip 🚗 itself is untouched, not renamed, not modified. Logged in ROUTE_SIMILARITY_REVIEW.md. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaComboCentralRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_COMBO_CENTRAL)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_COMBO_CENTRAL, '1');
+
+  rbRoutes.push(
+    rbBuildAustriaSloveniaGrossglocknerRoute(),
+    rbBuildHungaryAustriaSloveniaRoute(),
+    rbBuildPolandSlovakiaHungaryRoute(),
+    rbBuildCzechiaAustriaHungaryRoute(),
+    rbBuildCentralEuropeRoadtripFourteenDaysRoute(),
+  );
+  rbSave();
+}
+
 function rbSeedEuropaComboBalkanRoutes() {
   if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_COMBO_BALKAN)) return;
   localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_COMBO_BALKAN, '1');
