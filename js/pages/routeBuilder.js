@@ -122,6 +122,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateNorthAmericaFamilyEnglish();
   rbMigrateOceaniaFamilyEnglish();
   rbMigrateFaroeHikingDestination();
+  rbMigrateRemoveSimilarityReviewDuplicates();
   rbBindEvents();
 
   try {

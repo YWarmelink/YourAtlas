@@ -3002,9 +3002,6 @@ function rbSeedNordicArcticSplitExpeditions() {
 
   rbRoutes.push(
     rbBuildScandinaviaOverlandRoute(),
-    rbBuildSvalbardRoute(),
-    rbBuildFaroeIslandsRoute(),
-    rbBuildIcelandRoute(),
     rbBuildGreenlandRoute(),
   );
   rbSave();
@@ -3027,45 +3024,11 @@ function rbBuildScandinaviaOverlandRoute() {
   });
 }
 
-function rbBuildSvalbardRoute() {
-  const arctic = (code, name) => rbContentFor('Nordic Arctic Expedition ❄️', code, name);
-  return rbBuildSeedRoute('Svalbard 🐻‍❄️', [
-    { name: 'Svalbard', season: 'July', budget: 900, note: 'Longyearbyen itself with 1-2 day tours — no more multi-day expedition boat (2026-08, at Youri\'s request).', countries: [{ ...arctic('SJ', 'Svalbard'), notes: "Entry: flight Amsterdam-Oslo-Longyearbyen (±5-6h incl. connection, no direct flight, from ±€400-600 return, best period July). Price indication from 2026-08 web research, a snapshot. " + (arctic('SJ', 'Svalbard').notes || '') }] },
-  ], {
-    best_starting_month: 'July',
-    travel_style: 'Longyearbyen as a base, with 1-2 guided day tours (e.g. boat trip to Pyramiden, snowmobile/dog-sledding trip towards Barentsburg); outside town an armed guide (polar bears) is mandatory, already included in the tours.',
-    climate_summary: 'July-August is the only window with accessible sea ice, reliable boat trips and midnight sun.',
-    description: 'Glaciers, wildlife and midnight sun on Spitsbergen, shortened down to Longyearbyen itself.',
-    notes: 'Split off from Nordic Arctic Expedition ❄️ as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Nordic Arctic Expedition ❄️ itself remains unchanged as a separate, full expedition.\n\n' +
-      "Shortened (2026-08, at Youri's request): from 8 days/€3,725 (multi-day guided boat expedition) to 4 days/€900 — just Longyearbyen itself with 1-2 day tours instead of a multi-day expedition boat. Coordinates per destination added.",
-  });
-}
-
-function rbBuildFaroeIslandsRoute() {
-  const arctic = (code, name) => rbContentFor('Nordic Arctic Expedition ❄️', code, name);
-  return rbBuildSeedRoute('Faroe Islands 🐑', [
-    { name: 'Faroe Islands', season: 'July–August', budget: 1675, note: 'More reliable ferry services and the best hiking weather in these months.', countries: [{ ...arctic('FO', 'Faroe Islands'), notes: "Entry: flight Amsterdam-Copenhagen-Vágar (±4-4.5h incl. connection, no direct flight, from ±€350-550 return, best period July-August). Price indication from 2026-08 web research, a snapshot. " + (arctic('FO', 'Faroe Islands').notes || '') }] },
-  ], {
-    best_starting_month: 'July',
-    travel_style: 'Local buses/ferries between the islands.',
-    climate_summary: 'July-August gives the most stable weather for the cliffs and hiking routes.',
-    description: 'Dramatic cliffs, green villages and hiking routes between Tórshavn and Gjógv.',
-    notes: 'Split off from Nordic Arctic Expedition ❄️ as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Country, days and budget are carried over unchanged. Nordic Arctic Expedition ❄️ itself remains unchanged as a separate, full expedition.',
-  });
-}
-
-function rbBuildIcelandRoute() {
-  const arctic = (code, name) => rbContentFor('Nordic Arctic Expedition ❄️', code, name);
-  return rbBuildSeedRoute('Iceland ❄️', [
-    { name: 'Iceland', season: 'July–August', budget: 2800, note: 'Highland roads fully open; outside this window parts of the country are inaccessible.', countries: [{ ...arctic('IS', 'Iceland'), notes: "Entry: flight Amsterdam-Reykjavik/Keflavík (±4h, from ±€300-450 return, best period July-August). Price indication from 2026-08 web research, a snapshot. " + (arctic('IS', 'Iceland').notes || '') }] },
-  ], {
-    best_starting_month: 'July',
-    travel_style: 'Rental car (virtually essential for the Ring Road and the highlands).',
-    climate_summary: 'July-August keeps the highland roads fully open — outside this window large parts of the interior are closed.',
-    description: 'The Golden Circle, the south coast, Vatnajökull and Snæfellsnes by rental car.',
-    notes: "Split off from Nordic Arctic Expedition ❄️ as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Country, days and budget are carried over unchanged (incl. the yellow travel advisory for the Reykjanes peninsula due to ongoing volcanic activity near Grindavík). Iceland is one of the most-booked standalone trips in the world — this block stands entirely on its own. Nordic Arctic Expedition ❄️ itself remains unchanged as a separate, full expedition.",
-  });
-}
+// rbBuildSvalbardRoute, rbBuildFaroeIslandsRoute and rbBuildIcelandRoute were removed 2026-08-24
+// per ROUTE_SIMILARITY_REVIEW.md's final resolution — each was a near-duplicate of a later, more
+// detailed Phase 2 standalone route (Svalbard (Longyearbyen) (6 days) 🌌, Faroe Islands (6 days) 🐦,
+// Iceland Ring Road (12 days) 🛣️ respectively). See rbMigrateRemoveSimilarityReviewDuplicates()
+// for the removal migration and ROUTE_SIMILARITY_REVIEW.md for the full reasoning.
 
 function rbBuildGreenlandRoute() {
   const arctic = (code, name) => rbContentFor('Nordic Arctic Expedition ❄️', code, name);
@@ -5907,9 +5870,6 @@ function rbMigrateNordicArcticEnglish() {
   const targets = [
     { oldName: 'Nordic Arctic Expedition ❄️', newName: 'Nordic Arctic Expedition ❄️', buildFn: rbBuildArcticCircleRoute },
     { oldName: 'Scandinavië Overland 🚂', newName: 'Scandinavia Overland 🚂', buildFn: rbBuildScandinaviaOverlandRoute },
-    { oldName: 'Svalbard 🐻‍❄️', newName: 'Svalbard 🐻‍❄️', buildFn: rbBuildSvalbardRoute },
-    { oldName: 'Faeröer 🐑', newName: 'Faroe Islands 🐑', buildFn: rbBuildFaroeIslandsRoute },
-    { oldName: 'IJsland ❄️', newName: 'Iceland ❄️', buildFn: rbBuildIcelandRoute },
     { oldName: 'Groenland 🧊', newName: 'Greenland 🧊', buildFn: rbBuildGreenlandRoute },
   ];
 
@@ -6730,7 +6690,6 @@ function rbMigrateMediterraneanFamilyEnglish() {
     { oldName: 'Griekenland & Kreta 🫒', newName: 'Greece & Crete 🫒', buildFn: rbBuildGreeceCreteRoute },
     { oldName: 'Rome & omgeving 🍕', newName: 'Rome & Surroundings 🍕', buildFn: rbBuildRomeRoute },
     { oldName: 'Sardinië 🗿', newName: 'Sardinia 🗿', buildFn: rbBuildSardiniaRoute },
-    { oldName: 'Cyprus 🕊️', newName: 'Cyprus 🕊️', buildFn: rbBuildCyprusRoute },
     { oldName: 'Golfstaten-trio 🛢️', newName: 'Gulf States Trio 🛢️', buildFn: rbBuildGulfStatesRoute },
     { oldName: 'Malta ⚔️', newName: 'Malta ⚔️', buildFn: rbBuildMaltaRoute },
     { oldName: 'Tunesië 🧿', newName: 'Tunisia 🧿', buildFn: rbBuildTunisiaRoute },
@@ -8250,7 +8209,6 @@ function rbSeedStandaloneCountryRoutesBatch6() {
     rbBuildZambiaMalawiRoute(),
     rbBuildEthiopiaRoute(),
     rbBuildSardiniaRoute(),
-    rbBuildCyprusRoute(),
     rbBuildGulfStatesRoute(),
     rbBuildMalaysiaRoute(),
     rbBuildSaintLuciaGrenadaRoute(),
@@ -8372,26 +8330,10 @@ function rbBuildSardiniaRoute() {
   });
 }
 
-function rbBuildCyprusRoute() {
-  return rbBuildFlatSeedRoute('Cyprus 🕊️', [
-    {
-      code: 'CY', name: 'Cyprus', days: 5, budget: 400, lat: 35.1856, lng: 33.3823,
-      destinations: [
-        { name: 'Paphos', lat: 34.7720, lng: 32.4297 },
-        { name: 'Limassol', lat: 34.7071, lng: 33.0226 },
-        { name: 'Nicosia', lat: 35.1856, lng: 33.3823 },
-      ],
-      notes: 'Entry: direct flight Amsterdam-Larnaca (Transavia/easyJet, ±4h15, year-round; from ±€90-250 return; best period May-June/September-October) — deliberately Larnaca over Paphos, since the latter more often needs a stopover. Price indication from 2026-08 web research, a snapshot. Greek, Roman and Byzantine layers on one island: the mosaics of Paphos (UNESCO), the Roman theater of Kourion near Limassol as a hidden gem, and the divided capital Nicosia. Travel advisory: green. Visa: none, EU.',
-      transport_to_next: 'End of this route — direct return flight from Larnaca to Amsterdam.',
-    },
-  ], {
-    best_starting_month: 'May',
-    travel_style: 'Rental car from Larnaca.',
-    climate_summary: 'May-June (or September-October) is warm enough for the beach but still outside the harshest July-August heat.',
-    description: 'Paphos, Limassol and the divided capital Nicosia.',
-    notes: 'Split off from Mediterranean Civilizations Expedition 🏛️ (via Greece & Cyprus 🏺) as part of the sixth batch of standalone countries (2026-08) — short (5d) but Strong per ROUTE_BUILDER_MODULES.md. Country, days and budget are carried over unchanged. Mediterranean Civilizations Expedition 🏛️ and Greece & Cyprus 🏺 themselves continue to exist unchanged.',
-  });
-}
+// rbBuildCyprusRoute was removed 2026-08-24 per ROUTE_SIMILARITY_REVIEW.md's final resolution — it
+// was a subset of the later, more detailed Phase 2 standalone route Cyprus (6 days) 🏝️
+// (rbBuildCyprusClassicRoute, which contains all 3 of this route's stops plus Larnaca and the
+// Troodos Mountains). See rbMigrateRemoveSimilarityReviewDuplicates() for the removal migration.
 
 function rbBuildGulfStatesRoute() {
   return rbBuildFlatSeedRoute('Gulf States Trio 🛢️', [
@@ -12648,41 +12590,11 @@ function rbBuildAndorraFrenchPyreneesAriegeRoute() {
   });
 }
 
-function rbBuildAndorraSpanishPyreneesRoute() {
-  return rbBuildFlatSeedRoute('Andorra + Spanish Pyrenees (9 days) 🥾', [
-    {
-      code: 'AD', name: 'Andorra', days: 3, budget: 375, lat: 42.5063, lng: 1.5218,
-      destinations: [
-        { name: 'Andorra la Vella (Casa de la Vall)', lat: 42.5063, lng: 1.5218 },
-        { name: 'Ordino', lat: 42.5551, lng: 1.5332 },
-        { name: 'Vall del Madriu-Perafita-Claror (hike)', lat: 42.4926, lng: 1.5665 },
-      ],
-      notes: "Andorra la Vella, Ordino, and a hike into the Vall del Madriu-Perafita-Claror (Andorra's only UNESCO World Heritage site) — the mountain-focused start of this longer route. Entry: fly AMS-Barcelona (most frequent) or AMS-Girona, rental car for the whole loop — public transport is thin in these valleys. Budget ~€120-125/day for these Andorra-town days.",
-      transport_to_next: "Drive to La Seu d'Urgell, Spain — a short overland hop across the border, no formalities within Schengen.",
-    },
-    {
-      code: 'ES', name: 'Spain', days: 6, budget: 540, lat: 42.6000, lng: 0.9000,
-      destinations: [
-        { name: "La Seu d'Urgell (cathedral)", lat: 42.3585, lng: 1.4614 },
-        { name: 'Puigcerdà / Cerdanya valley', lat: 42.4331, lng: 1.9284 },
-        { name: "Vielha (Val d'Aran)", lat: 42.7027, lng: 0.7966 },
-        { name: 'Port de la Bonaigua (pass)', lat: 42.7228, lng: 0.9860 },
-        { name: 'Boí (Aigüestortes NP shuttle)', lat: 42.5200, lng: 0.8375 },
-        { name: 'Estany de Sant Maurici', lat: 42.5735, lng: 0.9535 },
-        { name: 'Espot (Aigüestortes NP shuttle)', lat: 42.5766, lng: 0.9591 },
-        { name: 'Ripoll', lat: 42.1997, lng: 2.1904 },
-      ],
-      notes: "Restructured as the Spanish/Catalan side of the old combined Andorra+Pyrenees idea, using the extra length for a wider area: La Seu d'Urgell (cathedral town, ~10km from the border) — the Puigcerdà/Cerdanya valley — Vielha/Val d'Aran (via the Port de la Bonaigua pass) — Aigüestortes i Estany de Sant Maurici National Park (from Boí or Espot) — back via Ripoll toward Barcelona/Girona. Rental car for the whole loop — public transport is thin in these valleys. Budget ~€90/day (rural Catalan Pyrenees pension €65-80, food €25-30, park shuttle/activities €15-25 — pulled up by the pricier Andorra days into a ~€100-105/day average for the whole route). Season: June-September, in practice a summer-only route. Web check (2026-08): Aigüestortes NP bans private vehicles inside the park — a mandatory taxi/4x4 shuttle from Boí or Espot, book ahead in July-August; the Port de la Bonaigua closes with snow roughly November-April — check the current 2026 opening dates for shoulder-season travel.",
-      transport_to_next: 'End of this route — drive to Barcelona or Girona for the flight home.',
-    },
-  ], {
-    best_starting_month: 'July',
-    travel_style: 'Fly into Barcelona or Girona, rental car for the whole loop — public transport is thin in these valleys.',
-    climate_summary: 'June-September — in practice a summer-only route given mountain-pass and park-shuttle access.',
-    description: "Andorra's Vall del Madriu, then the Spanish/Catalan Pyrenees: La Seu d'Urgell, the Cerdanya valley, Vielha/Val d'Aran and Aigüestortes i Estany de Sant Maurici National Park.",
-    notes: "Built (2026-08) as part of Phase 2 batch 7b (Iberia: Andorra + Portugal) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Split into a French/Ariège side (see Andorra + French Pyrenees: Ariège (6 days) ♨️ above) and this Spanish/Catalan side — two genuinely different areas (thermal baths/caves vs. high mountains/national park) rather than the same region driven more slowly. Also deliberately distinct from Catalonia + Pyrenees (9 days) ⛰️ (Phase 2 batch 7a): that route stays Barcelona/Girona/Vall de Núria/Cerdanya without Andorra or Val d'Aran/Aigüestortes (it does share the same Cerdanya/Puigcerdà waypoint, a legitimate shared crossroads, not a duplicate route); this one is Andorra-anchored and reaches further west into Val d'Aran and the national park. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
-  });
-}
+// rbBuildAndorraSpanishPyreneesRoute was removed 2026-08-24 per ROUTE_SIMILARITY_REVIEW.md's final
+// resolution — it was near-identical to the later route Andorra + Spanish Pyrenees: Grand Circuit
+// (9 days) 🏔️ (rbBuildAndorraSpanishPyreneesCircuitRoute, batch 15e), which also fixes a factual
+// error in this route's border note (Andorra isn't actually in Schengen). See
+// rbMigrateRemoveSimilarityReviewDuplicates() for the removal migration.
 
 function rbBuildPortoRoute() {
   return rbBuildFlatSeedRoute('Porto (4 days) 🌉', [
@@ -12901,7 +12813,6 @@ function rbSeedEuropaAndorraPortugalRoutes() {
   rbRoutes.push(
     rbBuildAndorraRoute(),
     rbBuildAndorraFrenchPyreneesAriegeRoute(),
-    rbBuildAndorraSpanishPyreneesRoute(),
     rbBuildPortoRoute(),
     rbBuildLisbonSintraRoute(),
     rbBuildNorthernPortugalMinhoRoute(),
@@ -13323,35 +13234,10 @@ function rbBuildBosniaCroatiaRoute() {
   });
 }
 
-function rbBuildBosniaMontenegroRoute() {
-  return rbBuildFlatSeedRoute('Bosnia + Montenegro (9 days) ⛰️', [
-    {
-      code: 'BA', name: 'Bosnia and Herzegovina', days: 6, budget: 300, lat: 43.8563, lng: 18.4131,
-      destinations: [
-        { name: 'Sarajevo', lat: 43.8563, lng: 18.4131 },
-        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078 },
-        { name: 'Trebinje', lat: 42.7106, lng: 18.3438 },
-      ],
-      notes: "Sarajevo (2-3 days) — Mostar (2 days) — Trebinje (1 day). Budget ~€50/day.",
-      transport_to_next: 'Overland from Trebinje into Montenegro towards Kotor — a quiet, non-Schengen border crossing; no green card is needed on the Bosnian side, but check with the rental company whether their Montenegro coverage is included.',
-    },
-    {
-      code: 'ME', name: 'Montenegro', days: 3, budget: 180, lat: 42.4247, lng: 18.7712,
-      destinations: [
-        { name: 'Kotor Old Town', lat: 42.4247, lng: 18.7712 },
-        { name: 'Perast', lat: 42.4875, lng: 18.7089 },
-      ],
-      notes: "Kotor and Perast (3 days). Budget ~€60/day. Season: May-June/September.",
-      transport_to_next: 'End of this route — fly home from Podgorica or Tivat, or back overland via Dubrovnik.',
-    },
-  ], {
-    best_starting_month: 'May',
-    travel_style: 'Fly into Sarajevo, rental car/bus throughout, fly home from the Montenegrin coast.',
-    climate_summary: 'May-June or September.',
-    description: "Sarajevo, Mostar and Trebinje in Bosnia and Herzegovina, continuing overland into Montenegro for Kotor and Perast.",
-    notes: "Built (2026-08) as part of Phase 2 batch 8b (Balkan-cluster: Bosnia + Montenegro + Albania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
-  });
-}
+// rbBuildBosniaMontenegroRoute was removed 2026-08-24 per ROUTE_SIMILARITY_REVIEW.md's final
+// resolution — it was a strict subset of the later route Bosnia + Montenegro + Budva (7-10 days)
+// ⛰️ (rbBuildBosniaMontenegroBudvaRoute, batch 15b), which has identical stops plus Budva.
+// See rbMigrateRemoveSimilarityReviewDuplicates() for the removal migration.
 
 function rbBuildBosniaCroatiaMontenegroRoute() {
   return rbBuildFlatSeedRoute('Bosnia + Croatia + Montenegro (12 days) 🗺️', [
@@ -13700,7 +13586,6 @@ function rbSeedEuropaBosniaMontenegroAlbaniaRoutes() {
     rbBuildSarajevoMostarRoute(),
     rbBuildBosniaRoadtripRoute(),
     rbBuildBosniaCroatiaRoute(),
-    rbBuildBosniaMontenegroRoute(),
     rbBuildBosniaCroatiaMontenegroRoute(),
     rbBuildKotorBayOfKotorRoute(),
     rbBuildMontenegroRoute(),
@@ -18674,36 +18559,11 @@ function rbBuildAdriaticRoadtripRoute() {
   });
 }
 
-function rbBuildAustriaSloveniaGrossglocknerRoute() {
-  return rbBuildFlatSeedRoute('Austria + Slovenia via Grossglockner (7-10 days) 🏔️', [
-    {
-      code: 'AT', name: 'Austria', days: 5, budget: 560, lat: 46.6249, lng: 14.3050,
-      destinations: [
-        { name: 'Salzburg or Grossglockner area', lat: 47.8095, lng: 13.0550 },
-        { name: 'Klagenfurt', lat: 46.6249, lng: 14.3050 },
-        { name: 'Wörthersee', lat: 46.6167, lng: 14.1667 },
-      ],
-      notes: "5 days in Austria: Salzburg or the Grossglockner High Alpine Road, then south to Klagenfurt/Wörthersee (Carinthia). Budget ~€95-130/day p.p. Season: June-September.",
-      transport_to_next: 'Drive to the Julian Alps, Slovenia — Bled is only ~79km/50 min from Klagenfurt, genuinely no detour.',
-    },
-    {
-      code: 'SI', name: 'Slovenia', days: 4, budget: 380, lat: 46.3683, lng: 14.1146,
-      destinations: [
-        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
-        { name: 'Bohinj', lat: 46.2833, lng: 13.9333 },
-        { name: 'Ljubljana (optional)', lat: 46.0569, lng: 14.5058 },
-      ],
-      notes: "4 days in Slovenia's Julian Alps: Bled, Bohinj, with Ljubljana as an optional add-on. Budget ~€90-110/day p.p. — Bled itself is a price outlier within that range. Season: June-September. Slovenia does not use the Austrian vignette — a separate e-vinjeta (toll sticker) is needed once driving Slovenian motorways.",
-      transport_to_next: 'End of this route — drive back to the Netherlands via Austria.',
-    },
-  ], {
-    best_starting_month: 'July',
-    travel_style: 'Own car throughout — Klagenfurt to Bled is a short, direct hop, no detour.',
-    climate_summary: 'June-September.',
-    description: "Austria's Carinthia (Salzburg or Grossglockner, then Klagenfurt/Wörthersee) paired with Slovenia's Julian Alps (Bled, Bohinj, optional Ljubljana).",
-    notes: "Built (2026-08) as part of Phase 2 batch 15c (Grand European combinations — Central Europe cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️⚠️ Near-total overlap, explicitly flagged as the closest pair found across this entire Phase 2 workstream so far: Route Builder already has Austria + Slovenia (9 days) 🏝️ (rbBuildAustriaSloveniaRoute, built in Phase 2 batch 3) — same two countries, same cities (Salzburg/Grossglockner + Klagenfurt/Wörthersee, then Bled/Bohinj/optional Ljubljana), the exact same 5+4 day split, the same budget ranges, and the same Austrian-vignette/Slovenian e-vinjeta note. The only meaningful difference is this route's title matching the source document's own '(7-10 days)' framing versus the existing route's fixed '9 days'. Built anyway per the source list, given a deliberately distinct function name (rbBuildAustriaSloveniaGrossglocknerRoute) per this project's established collision-resolution pattern (never merge/delete on a real collision — Youri's 2026-08-21 instruction) — flagged prominently in ROUTE_SIMILARITY_REVIEW.md as a strong consolidation candidate, not resolved here. Not yet checked against Route Builder-level price research beyond the vignette checks folded in above — treat as a first concept, not a bookable plan.",
-  });
-}
+// rbBuildAustriaSloveniaGrossglocknerRoute was removed 2026-08-24 per ROUTE_SIMILARITY_REVIEW.md's
+// final resolution — the one pair resolved in favor of the OLDER route: this route and the
+// pre-existing Austria + Slovenia (9 days) 🏝️ (rbBuildAustriaSloveniaRoute, batch 3) were
+// essentially byte-for-byte identical, and the older route was already "Verified" status. See
+// rbMigrateRemoveSimilarityReviewDuplicates() for the removal migration.
 
 function rbBuildHungaryAustriaSloveniaRoute() {
   return rbBuildFlatSeedRoute('Hungary + Austria + Slovenia (7-10 days) 🚆', [
@@ -19483,7 +19343,6 @@ function rbSeedEuropaComboCentralRoutes() {
   localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_COMBO_CENTRAL, '1');
 
   rbRoutes.push(
-    rbBuildAustriaSloveniaGrossglocknerRoute(),
     rbBuildHungaryAustriaSloveniaRoute(),
     rbBuildPolandSlovakiaHungaryRoute(),
     rbBuildCzechiaAustriaHungaryRoute(),
@@ -19725,4 +19584,36 @@ function rbSeedEuropaComboGrandRoutes() {
     rbBuildGrandEuropeanRoadtripFourteenToTwentyOneDaysRoute(),
   );
   rbSave();
+}
+
+/**
+ * ROUTE_SIMILARITY_REVIEW.md's 2026-08-24 final resolution: removes the 6 routes that turned out
+ * to be near-duplicates of another route already in Route Builder, keeping whichever of each pair
+ * had more content, more current research, or (for Austria + Slovenia) already-Verified status.
+ * See ROUTE_SIMILARITY_REVIEW.md's "Final resolution" section for the full per-pair reasoning.
+ * Malta (4 days) 🌅 vs. Malta ⚔️ was reviewed in the same pass and kept as both — not part of this
+ * removal. A pure deletion, not a replace: each of these 7 names (6 routes, since two names —
+ * Bosnia + Montenegro and Austria + Slovenia via Grossglockner — were both decided this same
+ * session) simply no longer exists as its own route once this runs.
+ */
+function rbMigrateRemoveSimilarityReviewDuplicates() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_SIMILARITY_REVIEW_CLEANUP)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_SIMILARITY_REVIEW_CLEANUP, '1');
+
+  const staleNames = [
+    'Cyprus 🕊️',
+    'Svalbard 🐻‍❄️',
+    'Faroe Islands 🐑',
+    'Iceland ❄️',
+    'Bosnia + Montenegro (9 days) ⛰️',
+    'Austria + Slovenia via Grossglockner (7-10 days) 🏔️',
+    'Andorra + Spanish Pyrenees (9 days) 🥾',
+  ];
+  let touched = false;
+  staleNames.forEach(name => {
+    const idx = rbRoutes.findIndex(r => r.name === name);
+    if (idx !== -1) { rbRoutes.splice(idx, 1); touched = true; }
+  });
+
+  if (touched) rbSave();
 }
