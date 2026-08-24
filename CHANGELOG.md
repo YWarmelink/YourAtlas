@@ -12,6 +12,43 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **ROUTE_SIMILARITY_REVIEW.md: review-order plan drawn up, not yet acted on (2026-08-24)** — with
+  Phase 2 complete and all 48 pairs logged, Youri asked for the 48 findings ranked from least to
+  most similar so he can work through them starting with the safest "probably no action needed"
+  cases before reaching the real keep-vs-merge decisions. Ranked by re-reading every pair's existing
+  "how similar?" note (no new comparison work done, no route touched) into 6 bands:
+  - **Band 1 — genuine gaps / confirmed distinct**: #41 (French+Spanish Pyrenees, no existing
+    coverage), #7 (Ireland Complete vs Ireland 22d), #8 (Scotland Extended vs Scotland & N.
+    Ireland), #22 (Slovenia+Croatian Istria vs Slovenia+N.Croatia, different Croatian region), #43
+    (Norway+Sweden Fjords&Capitals vs Sweden+Norway, no shared stops).
+  - **Band 2 — confirmed different despite a similar title**: #30 (Hungary+Austria+Slovenia), #33
+    (Central Europe Roadtrip 14d vs the 45-70d flagship), #38 (France+Switzerland+Italy), #39
+    (Alpine Roadtrip, 5 countries), #42 (Portugal+Spain: Porto to Madrid), #44 (Denmark+Sweden+
+    Norway Overland), #9 (Northern Ireland, Belfast+Causeway), #10 (England+Wales+NI Roadtrip).
+  - **Band 3 — real but partial overlap, distinct purpose/shape**: #13 (Crete Roadtrip), #18
+    (N.Portugal+Galicia), #20 (Portugal+Andalusia), #21 (Portugal+Spain Roadtrip 14d), #25
+    (Slovenia+Croatia+Bosnia), #27 (Grand Balkan Roadtrip), #28 (Adriatic Roadtrip), #34
+    (Germany+Austria+Italy), #45 (N.Europe Baltic Ferry Roadtrip), #46 (Balkan Roadtrip:
+    Serbia+NMac+Albania+Kosovo), #47 (Southern Europe Highlights Roadtrip), #2 (Corsica+South of
+    France), #5 (Faroe Islands).
+  - **Band 4 — meaningfully close, worth a real look**: #15 (Cyclades Island Hopping), #19
+    (Porto+Northern Spain), #23 (Croatia+Bosnia via Split), #26 (Slovenia+Croatia+Montenegro
+    Coast), #31 (Poland+Slovakia+Hungary), #32 (Czechia+Austria+Hungary), #36
+    (Austria+Slovenia+Croatia).
+  - **Band 5 — high overlap / heavy direct content reuse**: #1 (Malta 4d vs 5d), #6 (Iceland Ring
+    Road — plus a whole 5-route Iceland cluster worth reviewing together), #14 (Cyclades vs Greek
+    Islands: Paros/Naxos/Santorini), #16 (Jersey+Guernsey), #17 (Isle of Man), #24
+    (Bosnia+Montenegro+Budva), #35 (Germany+Austria+Slovenia), #37 (Italy+Slovenia+Croatia), #48
+    (Grand European Roadtrip — the file's own "strongest 3-way overlap" call-out).
+  - **Band 6 — near-total duplicates, review last (the real keep-vs-merge decisions)**: #3 (Cyprus
+    6d vs 5d), #4 (Svalbard), #11 (Sardinia Roadtrip vs Sardinia 9d), #12 (Sicily Roadtrip vs
+    Sicily 9d), #29 (Austria+Slovenia via Grossglockner), #40 (Andorra+Spanish Pyrenees: Grand
+    Circuit) — the file's own text already flags all six of these as its closest/most-redundant
+    pairs.
+  **Nothing merged, deleted, or renamed** — Youri will work through this list at his own pace in a
+  future session; this entry exists so the ranking survives even if `ROUTE_SIMILARITY_REVIEW.md`
+  itself gets edited/reorganized once decisions start getting made.
+
 - **Europa Trip Ideas: all 15 batches of `EUROPA_TRIP_IDEAS.md` complete (2026-08)** — Youri's raw list of realistic European trips (long weekend to ~3 weeks) grew from ~230 items to ~300 (micro-states, Cyprus/Malta/Moldova/Kosovo/Corsica/Turkey's European part, a new "Europese eilanden" category) to a final 319 across three extension rounds. Batches 1-8 (Benelux, Duitsland, Oostenrijk+Zwitserland, Frankrijk, Italië, micro-states & small islands, Iberië, Balkan-cluster) each got 2-3 parallel WebSearch research agents before writing (standard practice from batch 2 on), surfacing real corrections: the Bayeux Tapestry is on loan to the British Museum from Sept 2026, unviewable in Bayeux itself; the Croatia-Bosnia Neum coastal corridor now bypasses the old double-border-crossing via the Pelješac bridge (open since July 2022); the EU's Entry/Exit System (EES, fully live since 10 April 2026) adds real biometric-registration wait times at Balkan borders, worst at Croatia-Montenegro (Karasovići, 2-5h in July/Aug); Kosovo items are deliberately combined only with North Macedonia/Albania/Montenegro, never Serbia, since Serbia doesn't recognize Kosovo border crossings. Batches 9-11 (Centraal/Oost-Europa, Oost-Mediterraan, Noord-Europa): Romania and Bulgaria became fully Schengen (land borders included) on 1 January 2025; Bulgaria adopted the euro on 1 January 2026; the Moldova+Transnistria item carries its own red Dutch travel advisory (stricter than Moldova proper), handled with an explicit mitigation (day-trip only, no overnight, check insurance) rather than a rubber-stamped inclusion; Gellért thermal bath in Budapest is closed for renovation (Oct 2025-~2028, items route through Széchenyi instead); Auschwitz-Birkenau requires online-only booking since March 2026; Greece carries a yellow Dutch advisory since Aug 2026 for active wildfires (70+ simultaneous, incl. Crete and the Athens region); Cyprus is EU-but-not-Schengen and rental cars from the Republic side usually can't cross into Northern Cyprus without separate Turkish border insurance; Hagia Sophia's upper gallery closes 5x/day for prayer as a working mosque again. Batches 12-15 (Britse eilanden, Baltische staten, 🏝️ Europese eilanden, combinatiesecties): the UK ETA fee rose £16→£20 (~€23-24) on 8 April 2026 and applies to Northern Ireland even when crossing overland from the Republic (Ireland itself needs no ETA at all — Common Travel Area is separate from Schengen); Skye is bridge-connected (free since Dec 2004) while Orkney/Shetland/Outer Hebrides genuinely need a ferry; the UK ETA was extended to cover Jersey/Guernsey/Isle of Man from 23 April 2026; Condor Ferries rebranded (Jersey route → DFDS, Guernsey route → Brittany Ferries, March 2025); Santorini tightened its 2025-2026 cruise-passenger cap; a stale intro note claiming Crete was already covered under the Griekenland batch turned out wrong on inspection, so the batch-14 "Kreta roadtrip" item fills a real gap rather than duplicating one. **Decided: these become Route Builder routes, not Trips entries** (per `ROADMAP.md`'s "commitment, not scale" rule for the Trips↔Route Builder split) — conversion into real `rbBuildXRoute()` code is tracked separately under the Route Builder English-content workstream (see README, Phase 2).
 
 - **Route Builder English content: Phase 2 batches 1-13 done, 255/319 EUROPA_TRIP_IDEAS.md items
