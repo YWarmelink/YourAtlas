@@ -19221,6 +19221,233 @@ function rbBuildAlpineRoadtripFiveCountriesRoute() {
   });
 }
 
+function rbBuildAndorraSpanishPyreneesCircuitRoute() {
+  return rbBuildFlatSeedRoute('Andorra + Spanish Pyrenees: Grand Circuit (9 days) 🏔️', [
+    {
+      code: 'AD', name: 'Andorra', days: 3, budget: 375, lat: 42.5063, lng: 1.5218,
+      destinations: [
+        { name: 'Andorra la Vella (Casa de la Vall)', lat: 42.5063, lng: 1.5218 },
+        { name: 'Ordino', lat: 42.5551, lng: 1.5332 },
+        { name: 'Vall del Madriu-Perafita-Claror (hike)', lat: 42.4926, lng: 1.5665 },
+      ],
+      notes: "Andorra la Vella, Ordino, and a hike into the Vall del Madriu-Perafita-Claror (Andorra's only UNESCO World Heritage site). Entry: fly AMS-Barcelona or AMS-Girona, rental car for the whole loop — public transport is thin in these valleys. Budget ~€120-125/day. Web check (2026-08): Andorra is neither an EU nor a Schengen member, but runs a de facto open border with both France and Spain — no fixed control posts on the small mountain roads, though random/spot passport checks do happen occasionally; carry an EU ID card or passport for the whole route, not just this leg.",
+      transport_to_next: "Drive to La Seu d'Urgell, Spain — a short overland hop, in practice frictionless, though technically an EU/Schengen-adjacent crossing given Andorra's status (see the webcheck note above).",
+    },
+    {
+      code: 'ES', name: 'Spain', days: 6, budget: 540, lat: 42.6000, lng: 0.9000,
+      destinations: [
+        { name: "La Seu d'Urgell (cathedral)", lat: 42.3585, lng: 1.4614 },
+        { name: 'Cerdanya / Puigcerdà', lat: 42.4331, lng: 1.9284 },
+        { name: "Vielha (Val d'Aran)", lat: 42.7027, lng: 0.7966 },
+        { name: 'Port de la Bonaigua (pass)', lat: 42.7228, lng: 0.9860 },
+        { name: 'Boí (Aigüestortes NP shuttle)', lat: 42.5200, lng: 0.8375 },
+        { name: 'Espot (Aigüestortes NP shuttle)', lat: 42.5766, lng: 0.9591 },
+        { name: 'Ripoll', lat: 42.1997, lng: 2.1904 },
+      ],
+      notes: "La Seu d'Urgell (cathedral town) — the Cerdanya/Puigcerdà valley — Vielha/Val d'Aran via the Port de la Bonaigua pass — Aigüestortes i Estany de Sant Maurici National Park (from Boí or Espot) — back via Ripoll toward Barcelona/Girona. Rental car for the whole loop. Budget ~€90/day (pulled up to a ~€100-105/day trip-wide average once combined with the pricier Andorra leg). Season: June-September — a summer-only route in practice. Web check (2026-08): Aigüestortes NP bans private vehicles inside the park — a mandatory taxi/4x4 shuttle from Boí or Espot, book ahead in July-August; the Port de la Bonaigua closes with snow roughly November-April.",
+      transport_to_next: 'End of this route — drive to Barcelona or Girona for the flight home.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Fly into Barcelona or Girona, rental car for the whole loop — public transport is thin in these valleys.',
+    climate_summary: 'June-September — in practice a summer-only route given mountain-pass and park-shuttle access.',
+    description: "Andorra's Vall del Madriu, then the Spanish/Catalan Pyrenees: La Seu d'Urgell, Cerdanya/Puigcerdà, Vielha/Val d'Aran and Aigüestortes i Estany de Sant Maurici National Park, looping back via Ripoll.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15e (Grand European combinations — Pyrenees/Nordic cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️⚠️ Near-total overlap, explicitly flagged as the closest pair in this whole sub-batch (same relationship pattern as Austria + Slovenia via Grossglockner (7-10 days) 🏔️ vs. Austria + Slovenia (9 days) 🏝️ in batch 15c): this route's stops, day split (3 Andorra + 6 Spain) and even the ~€100-105/day trip-wide budget are essentially identical to the pre-existing Andorra + Spanish Pyrenees (9 days) 🥾 (rbBuildAndorraSpanishPyreneesRoute, batch 7b) — the source document appears to record the same underlying trip idea twice, once in its Iberia section and again in its 'Grote Europese combinaties' (Grand European combinations) section. Kept as a distinct route per project policy, not merged/deleted — given a deliberately distinct function name and title ('Grand Circuit'). The one genuine addition here versus the older route: a corrected Andorra Schengen/EU-status note — Andorra is neither an EU nor a Schengen member, it just has a de facto open border with occasional spot passport checks; the older route's transport note simply said 'no formalities within Schengen', which is imprecise for a country that isn't actually in Schengen. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildFrenchSpanishPyreneesRoute() {
+  return rbBuildFlatSeedRoute('French + Spanish Pyrenees (9 days) 🥖', [
+    {
+      code: 'FR', name: 'France', days: 5, budget: 500, lat: 42.8853, lng: -0.1147,
+      destinations: [
+        { name: 'Lourdes (arrival)', lat: 43.0961, lng: -0.0450 },
+        { name: "Cauterets (Pont d'Espagne)", lat: 42.8853, lng: -0.1147 },
+        { name: 'Gavarnie (Cirque de Gavarnie)', lat: 42.6928, lng: -0.0092 },
+        { name: 'Brèche de Roland', lat: 42.6875, lng: -0.0122 },
+      ],
+      notes: "Lourdes (arrival) — Cauterets (2 days, the Pont d'Espagne) — Gavarnie (2 days, the Cirque de Gavarnie and, for fitter hikers, the Brèche de Roland). Entry: fly into Toulouse or Lourdes-Tarbes-Pyrénées airport, rental car for the whole trip. Budget ~€90-110/day. Season: strictly July-September, same hard boundary as the mountain-pass crossing into Spain below.",
+      transport_to_next: "Drive over the Port de Boucharo/Puerto de Bujaruelo pass (2,270m) — the only direct road/hiking connection between the French and Spanish halves of the same Mont Perdu/Monte Perdido UNESCO World Heritage massif; narrow and single-lane, open only roughly July-September. Outside that window there is no direct crossing here at all — the only option is the long detour via Jaca/Pau (+3h).",
+    },
+    {
+      code: 'ES', name: 'Spain', days: 4, budget: 340, lat: 42.6167, lng: -0.1167,
+      destinations: [
+        { name: 'Torla', lat: 42.6167, lng: -0.1167 },
+        { name: 'Ordesa y Monte Perdido National Park', lat: 42.6497, lng: -0.0400 },
+        { name: 'Aínsa (optional)', lat: 42.4167, lng: 0.1333 },
+      ],
+      notes: "Torla and Ordesa y Monte Perdido National Park (3 days), plus an optional stop in Aínsa on the way out. Budget ~€75-95/day. Web check (2026-08): Schengen-to-Schengen zero friction crossing into Spain here — no passport/customs formalities at all — but check with the rental-car company in advance whether the mountain/gravel roads on both sides of the pass are actually covered by the insurance/rental agreement, since some contracts exclude unpaved high-altitude roads.",
+      transport_to_next: 'End of this route — drive to Zaragoza or back to Toulouse for the flight home, depending on the inbound routing.',
+    },
+  ], {
+    best_starting_month: 'August',
+    travel_style: 'Rental car throughout; the France-Spain link (Port de Boucharo/Puerto de Bujaruelo) is a narrow mountain pass only open in summer.',
+    climate_summary: 'Strictly July-September — the Port de Boucharo/Puerto de Bujaruelo pass is the only direct link between the two halves of the trip and is closed the rest of the year, with no realistic direct alternative.',
+    description: 'Lourdes, Cauterets and the Cirque de Gavarnie in the French Pyrenees, over the Port de Boucharo/Puerto de Bujaruelo pass into Ordesa y Monte Perdido National Park on the Spanish side.',
+    notes: "Built (2026-08) as part of Phase 2 batch 15e (Grand European combinations — Pyrenees/Nordic cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Checked against Andorra + French Pyrenees: Ariège (6 days) ♨️ (rbBuildAndorraFrenchPyreneesAriegeRoute) — genuinely different, that route is Andorra-anchored and covers the Ariège's thermal baths/caves (Ax-les-Thermes/Foix/Grotte de Niaux), no Andorra or Gavarnie/Ordesa content here at all. Also checked against Catalonia + Pyrenees (9 days) ⛰️ (rbBuildCataloniaPyreneesRoute) — genuinely different, that route stays in Catalonia (Barcelona/Girona/Vall de Núria/Cerdanya), well east of this route's Gavarnie/Ordesa corridor. No pre-existing Route Builder expedition covers the Gavarnie/Ordesa y Monte Perdido corridor specifically — a genuine content gap being filled, not a duplicate. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSpainPortugalPortoMadridRoute() {
+  return rbBuildFlatSeedRoute('Portugal + Spain: Porto to Madrid (12 days) 🚆', [
+    {
+      code: 'PT', name: 'Portugal', days: 8, budget: 720, lat: 39.9000, lng: -8.9000,
+      destinations: [
+        { name: 'Porto (Ribeira)', lat: 41.1405, lng: -8.6118 },
+        { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366 },
+        { name: 'Sintra (Palace of Pena)', lat: 38.7876, lng: -9.3905 },
+        { name: 'Algarve / Lagos', lat: 37.1021, lng: -8.6743 },
+      ],
+      notes: "Porto (2 days) — Lisbon + Sintra (3 days) — the Algarve/Lagos (3 days) — a purely linear sweep with no backtracking, deliberately without the Douro/Coimbra/Évora detours of the fuller Portugal Roadtrip (12 days) 🗺️ route or the Córdoba/Granada loop of the broader Portugal + Spain Roadtrip (14 days) 🚗 route (see this route's own notes below for both). Entry: open-jaw AMS-Porto in, ending overland in Madrid for the flight home. Budget ~€90-100/day. Season: April-June or September-October — July-August is too hot in the Algarve and gets extreme further along the route in Seville.",
+      transport_to_next: 'Drive or bus from the Algarve to Seville, Spain (~2h30-3h) — a Schengen border, no formalities.',
+    },
+    {
+      code: 'ES', name: 'Spain', days: 4, budget: 380, lat: 39.0000, lng: -5.0000,
+      destinations: [
+        { name: 'Seville (Alcázar & Cathedral)', lat: 37.3839, lng: -5.9903 },
+        { name: 'Madrid (Prado Museum)', lat: 40.4138, lng: -3.6921 },
+      ],
+      notes: "Seville (2 days, the Alcázar and Cathedral) — Madrid (2 days, the Prado, departure) — deliberately no Córdoba/Granada detour here, unlike the sibling route named above. Budget ~€90-100/day. Madrid-Seville by AVE high-speed train (~2h30) is a realistic alternative to driving the whole leg, if the rental car is dropped off in Seville.",
+      transport_to_next: 'End of this route — fly home from Madrid.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Open-jaw flight (Porto in, Madrid out), rental car or a mix of rental car/AVE train for the Seville-Madrid leg.',
+    climate_summary: 'April-June or September-October; July-August is too hot for the Algarve/Seville stretch.',
+    description: 'A linear sweep from Porto through Lisbon/Sintra and the Algarve, into Spain via Seville, ending in Madrid — no backtracking.',
+    notes: "Built (2026-08) as part of Phase 2 batch 15e (Grand European combinations — Pyrenees/Nordic cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. This is the more linear 'Porto to Madrid' combination explicitly flagged as incoming by Portugal + Spain Roadtrip (14 days) 🚗 (rbBuildPortugalSpainRoadtripRoute, batch 15a)'s own notes. Cross-referenced as instructed: that sibling route runs Porto→Douro→Coimbra→Lisbon→Algarve→Seville→Córdoba→Granada and loops back through Andalusia, while this route stays strictly linear (no Douro/Coimbra detour, no Córdoba/Granada loop) and ends in Madrid instead — genuinely different endpoints and different southern-Spain depth, real overlap only on the shared Porto→Lisbon→Algarve→Seville backbone. Also checked against Portugal Roadtrip (12 days) 🗺️ (rbBuildPortugalRoadtripRoute) — that route stays entirely within Portugal (adds the Serra da Estrela and Évora/Alentejo, never crosses into Spain) — genuinely different scope, not a duplicate. Also checked against Spain 💃 (rbBuildSpainRoute, Málaga/Granada/Córdoba/Seville, no Madrid or Porto) and Madrid (4 days) 🖼️ (rbBuildMadridRoute, Madrid + Toledo/Segovia day trips) — both genuinely different, no Porto/Lisbon/Algarve content in either. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildNorwaySwedenFjordsCapitalsRoute() {
+  return rbBuildFlatSeedRoute('Norway + Sweden: Fjords & Capitals (12 days) ⛴️', [
+    {
+      code: 'NO', name: 'Norway', days: 7, budget: 980, lat: 60.0000, lng: 8.0000,
+      destinations: [
+        { name: 'Oslo (Karl Johans gate)', lat: 59.9139, lng: 10.7522 },
+        { name: 'Bergen (Bryggen)', lat: 60.3959, lng: 5.3245 },
+        { name: 'Sognefjord / Nærøyfjord', lat: 60.8666, lng: 6.8666 },
+        { name: 'Flåm (Flåm Railway)', lat: 60.8617, lng: 7.1136 },
+      ],
+      notes: "Oslo (3 days: Vigeland Park, the Viking Ship/Fram museums) — by train to Bergen, then the classic Sognefjord/Nærøyfjord and Flåm Railway circuit (4 days) — same fjord content as Bergen + Fjords (6 days) ⛴️ (rbBuildBergenFjordsRoute). Budget ~€140/day — Norway dominates this route's overall cost. Season: June-August for the full fjord-tour timetable and the midnight-sun window. Web check (2026-08): the Bergen Railway (Oslo-Bergen, ~6h30, one of Europe's most scenic train rides) needs booking ahead in summer; the Flåm Railway costs roughly 570 NOK one-way/850 NOK return (2026 prices).",
+      transport_to_next: 'Train back to Oslo, then onward by train to Gothenburg, Sweden (Oslo-Gothenburg, ~4h) — a Nordic Passport Union crossing, no border control.',
+    },
+    {
+      code: 'SE', name: 'Sweden', days: 5, budget: 500, lat: 58.5000, lng: 15.0000,
+      destinations: [
+        { name: 'Gothenburg (transit stop)', lat: 57.7089, lng: 11.9746 },
+        { name: 'Stockholm (Gamla Stan)', lat: 59.3251, lng: 18.0711 },
+      ],
+      notes: "A brief Gothenburg stopover (transit, optionally an overnight), then on to Stockholm (Gamla Stan, the Vasa Museum, Skansen — same content as Stockholm (4 days) 🏰, rbBuildStockholmRoute) for the last 3-4 days. Budget ~€110/day. Web check (2026-08): the Gothenburg-Stockholm train takes ~3h, making the transit stop easy to extend into a full day if the schedule allows.",
+      transport_to_next: 'End of this route — fly home from Stockholm.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Entirely by train — Oslo, the Bergen Railway, the Flåm Railway/fjord cruise, back to Oslo, then on to Gothenburg and Stockholm.',
+    climate_summary: 'June-August, for the full fjord-cruise/rail timetable and the midnight-sun window.',
+    description: 'Oslo, the Bergen-Sognefjord-Flåm fjord circuit, and the Swedish capitals corridor via Gothenburg to Stockholm — entirely by train and ferry.',
+    notes: "Built (2026-08) as part of Phase 2 batch 15e (Grand European combinations — Pyrenees/Nordic cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️ Checked carefully against the near-identically-titled pre-existing Sweden + Norway (12 days) 🌉 (rbBuildSwedenNorwayRoute, batch 11a) — confirmed genuinely different despite the name collision risk: that route is a Swedish-Lapland-to-Arctic-Norway trip (Stockholm→Kiruna→Abisko→the Riksgränsen border crossing→Narvik→Lofoten), while this route is the fjords-and-capitals angle (Oslo→Bergen/Sognefjord/Flåm→back to Oslo→Gothenburg→Stockholm) — no shared stops at all beyond both routes touching Stockholm, and this route never goes near Lapland/the Arctic. Reuses content from Oslo (5 days) 🏛️ (rbBuildOsloRoute), Bergen + Fjords (6 days) ⛴️ (rbBuildBergenFjordsRoute) and Stockholm (4 days) 🏰 (rbBuildStockholmRoute) — flagged here since it directly reuses those standalone routes' destinations. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildDenmarkSwedenNorwayOverlandRoute() {
+  return rbBuildFlatSeedRoute('Denmark + Sweden + Norway Overland (12 days) 🌉', [
+    {
+      code: 'DK', name: 'Denmark', days: 3, budget: 375, lat: 55.6761, lng: 12.5683,
+      destinations: [
+        { name: 'Copenhagen (Nyhavn)', lat: 55.6790, lng: 12.5910 },
+        { name: 'Tivoli Gardens', lat: 55.6736, lng: 12.5681 },
+      ],
+      notes: "Copenhagen (3 days: Nyhavn, Tivoli Gardens, Strøget) — same content as Copenhagen (4 days) 🧜‍♀️ (rbBuildCopenhagenRoute), one day shorter here to make room for the overland legs. Budget ~€125/day.",
+      transport_to_next: 'The Öresund Bridge/train to Malmö, Sweden (~35 minutes) — Schengen-internal, though Sweden has run periodic temporary ID checks on this crossing since 2015, repeatedly extended; check the current status via politie.se or oresundsbron.com just before departure.',
+    },
+    {
+      code: 'SE', name: 'Sweden', days: 5, budget: 500, lat: 56.6500, lng: 12.5000,
+      destinations: [
+        { name: 'Malmö', lat: 55.6050, lng: 13.0038 },
+        { name: 'Gothenburg', lat: 57.7089, lng: 11.9746 },
+      ],
+      notes: "Malmö (2 days, same Öresund-crossing content as Denmark + South Sweden (9 days) 🌉's Skåne leg), then north along the coast to Gothenburg (3 days). Budget ~€100/day. Season: June-August.",
+      transport_to_next: 'Train or E6 drive from Gothenburg to Oslo, Norway (~3h30-4h) — a Nordic Passport Union crossing, no border control (this crossing has been checkpoint-free since well before Schengen existed).',
+    },
+    {
+      code: 'NO', name: 'Norway', days: 4, budget: 600, lat: 59.9139, lng: 10.7522,
+      destinations: [
+        { name: 'Oslo (Karl Johans gate)', lat: 59.9139, lng: 10.7522 },
+        { name: 'Flåm (optional day trip, 14-day version)', lat: 60.8617, lng: 7.1136 },
+      ],
+      notes: "Oslo (4 days) — same content as Oslo (5 days) 🏛️ (rbBuildOsloRoute), one day shorter here. With the full 14 days (the top of this route's 10-14 day range) there's room for an optional Flåm day trip (a long day, or better an overnight) before flying home. Budget ~€150/day.",
+      transport_to_next: 'End of this route — fly home from Oslo.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Entirely overland — train/Öresund Bridge to Malmö, then a coastal train or E6 drive north through Gothenburg to Oslo.',
+    climate_summary: 'June-August.',
+    description: 'Copenhagen, overland via the Öresund Bridge to Malmö and Gothenburg, then on to Oslo, with an optional Flåm day trip at 14 days.',
+    notes: "Built (2026-08) as part of Phase 2 batch 15e (Grand European combinations — Pyrenees/Nordic cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately the south/overland-via-Sweden angle, distinct from Norway + Sweden: Fjords & Capitals (12 days) ⛴️ above (this sub-batch's other Nordic combo, which instead runs Oslo→Bergen/fjords→back to Oslo→Gothenburg→Stockholm). Checked against Denmark + South Sweden (9 days) 🌉 (rbBuildDenmarkSouthSwedenRoute, batch 11b) — real overlap on the Copenhagen/Malmö opening, but that route stops in Skåne and never reaches Gothenburg or Norway; this route adds Gothenburg and a full Norway/Oslo leg. Checked against Scandinavia Overland 🚂 (rbBuildScandinaviaOverlandRoute, a Nordic Arctic Expedition split) — confirmed genuinely different, that route is a Lapland/Arctic-Norway overland trip (Rovaniemi-Kiruna-Narvik), no Denmark or southern Sweden/Gothenburg content at all. Reuses content from Copenhagen (4 days) 🧜‍♀️, South Sweden (Skåne) (9 days) 🪨's Malmö coordinates, and Oslo (5 days) 🏛️. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildNorthernEuropeBalticFerryRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️', [
+    {
+      code: 'DK', name: 'Denmark', days: 2, budget: 250, lat: 55.6761, lng: 12.5683,
+      destinations: [
+        { name: 'Copenhagen (Nyhavn)', lat: 55.6790, lng: 12.5910 },
+      ],
+      notes: "Copenhagen (2 days, a shortened version of Copenhagen (4 days) 🧜‍♀️'s content — Nyhavn, Tivoli Gardens, Strøget). Budget ~€125/day.",
+      transport_to_next: 'Train to Stockholm, Sweden (~5h) — Schengen-internal, no border formalities.',
+    },
+    {
+      code: 'SE', name: 'Sweden', days: 3, budget: 340, lat: 59.3251, lng: 18.0711,
+      destinations: [
+        { name: 'Stockholm (Gamla Stan)', lat: 59.3251, lng: 18.0711 },
+      ],
+      notes: "Stockholm (3 days) — same content as Stockholm (4 days) 🏰 (rbBuildStockholmRoute), one day shorter here. Budget ~€110/day.",
+      transport_to_next: 'Overnight ferry (Viking Line or Tallink Silja, ~15-17h, a cabin is needed) from Stockholm to Helsinki, Finland — one of the Baltic Sea\'s classic established ferry routes.',
+    },
+    {
+      code: 'FI', name: 'Finland', days: 3, budget: 240, lat: 60.1699, lng: 24.9384,
+      destinations: [
+        { name: 'Helsinki (Senate Square)', lat: 60.1699, lng: 24.9384 },
+        { name: 'Suomenlinna', lat: 60.1454, lng: 24.9880 },
+      ],
+      notes: "Helsinki (3 days) — same content as Helsinki (4 days) 🏛️ (rbBuildHelsinkiRoute), one day shorter here. Budget ~€80/day.",
+      transport_to_next: 'Ferry (~2h) from Helsinki to Tallinn, Estonia — the busiest ferry route in the world, with sailings roughly every hour in high season.',
+    },
+    {
+      code: 'EE', name: 'Estonia', days: 2, budget: 180, lat: 59.4370, lng: 24.7536,
+      destinations: [
+        { name: 'Tallinn (Old Town)', lat: 59.4370, lng: 24.7454 },
+      ],
+      notes: "Tallinn's Old Town (2 days) — same capital-hop content as Tallinn + Riga + Vilnius (7-10 days) 🚌 (rbBuildTallinnRigaVilniusRoute)'s Estonia leg. Budget ~€90/day.",
+      transport_to_next: 'Bus with Lux Express (~3h40) from Tallinn to Riga — no border formalities, both EU/Schengen.',
+    },
+    {
+      code: 'LV', name: 'Latvia', days: 2, budget: 180, lat: 56.9496, lng: 24.1052,
+      destinations: [
+        { name: 'Riga (Old Town)', lat: 56.9496, lng: 24.1052 },
+      ],
+      notes: "Riga's Old Town (2 days) — same content as Tallinn + Riga + Vilnius (7-10 days) 🚌's Latvia leg. Budget ~€90/day.",
+      transport_to_next: 'Bus with Lux Express (~5h10) from Riga to Vilnius — no border formalities, both EU/Schengen.',
+    },
+    {
+      code: 'LT', name: 'Lithuania', days: 2, budget: 180, lat: 54.6872, lng: 25.2797,
+      destinations: [
+        { name: 'Vilnius (Old Town)', lat: 54.6872, lng: 25.2797 },
+      ],
+      notes: "Vilnius's Old Town (2 days, departure) — same content as Tallinn + Riga + Vilnius (7-10 days) 🚌's Lithuania leg. Budget ~€90/day.",
+      transport_to_next: 'End of this route — fly home from Vilnius.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Train (Copenhagen-Stockholm), then a chain of Baltic Sea ferries (Stockholm-Helsinki overnight, Helsinki-Tallinn) and buses (Tallinn-Riga-Vilnius) — no flights until the final departure.',
+    climate_summary: 'June-August best, matching the Baltic ferry high season and the Nordic/Baltic capitals\' best weather window.',
+    description: 'Copenhagen and Stockholm by train, an overnight ferry to Helsinki, then onward by ferry and bus through Tallinn, Riga and Vilnius — a full Nordic-to-Baltic sweep by boat and land.',
+    notes: "Built (2026-08) as part of Phase 2 batch 15e (Grand European combinations — Pyrenees/Nordic cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️ Real overlap, explicitly flagged: this route's Tallinn-Riga-Vilnius tail is essentially the pre-existing Tallinn + Riga + Vilnius (7-10 days) 🚌 (rbBuildTallinnRigaVilniusRoute, batch 13/21) — same three capitals, same order, same bus connections, one day shorter per capital here to make room for the Nordic ferry lead-in. The genuine new content is the Nordic half: Copenhagen and Stockholm (reusing Copenhagen (4 days) 🧜‍♀️ and Stockholm (4 days) 🏰's content) plus Helsinki (reusing Helsinki (4 days) 🏛️'s content), connected to the Baltics via the Stockholm-Helsinki and Helsinki-Tallinn ferries instead of flying directly into Tallinn — no pre-existing Route Builder expedition combines the Nordic capitals with the Baltic states via ferry, so that half is a genuine gap being filled. Also checked against Baltics + Poland (10-14 days) 🇵🇱 (rbBuildBalticsPolandRoute) — genuinely different, that route extends the Baltic capitals south into Poland via the Suwałki corridor, no Nordic/ferry content at all. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
 function rbSeedEuropaComboAlpsRoutes() {
   if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_COMBO_ALPS)) return;
   localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_COMBO_ALPS, '1');
@@ -19232,6 +19459,21 @@ function rbSeedEuropaComboAlpsRoutes() {
     rbBuildItalySloveniaCroatiaRoute(),
     rbBuildFranceSwitzerlandItalyRoute(),
     rbBuildAlpineRoadtripFiveCountriesRoute(),
+  );
+  rbSave();
+}
+
+function rbSeedEuropaComboNordicPyreneesRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_COMBO_NORDIC_PYRENEES)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_COMBO_NORDIC_PYRENEES, '1');
+
+  rbRoutes.push(
+    rbBuildAndorraSpanishPyreneesCircuitRoute(),
+    rbBuildFrenchSpanishPyreneesRoute(),
+    rbBuildSpainPortugalPortoMadridRoute(),
+    rbBuildNorwaySwedenFjordsCapitalsRoute(),
+    rbBuildDenmarkSwedenNorwayOverlandRoute(),
+    rbBuildNorthernEuropeBalticFerryRoadtripRoute(),
   );
   rbSave();
 }

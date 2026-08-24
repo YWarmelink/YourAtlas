@@ -118,6 +118,7 @@ const RB_SEED_FLAG_KEY_EUROPA_COMBO_IBERIA = 'atlas_grand_trips_seeded_europa_co
 const RB_SEED_FLAG_KEY_EUROPA_COMBO_BALKAN = 'atlas_grand_trips_seeded_europa_combo_balkan_v1';
 const RB_SEED_FLAG_KEY_EUROPA_COMBO_CENTRAL = 'atlas_grand_trips_seeded_europa_combo_central_v1';
 const RB_SEED_FLAG_KEY_EUROPA_COMBO_ALPS = 'atlas_grand_trips_seeded_europa_combo_alps_v1';
+const RB_SEED_FLAG_KEY_EUROPA_COMBO_NORDIC_PYRENEES = 'atlas_grand_trips_seeded_europa_combo_nordic_pyrenees_v1';
 const RB_BLOCK_COLORS =['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
