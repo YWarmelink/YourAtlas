@@ -96,6 +96,45 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   [`ROUTE_SIMILARITY_REVIEW.md`](ROUTE_SIMILARITY_REVIEW.md) for Youri to review once all 319
   items are built, rather than deciding case-by-case mid-build.
 
+- **Route Builder English content: Phase 2 batch 15 done — 319/319 items complete, Phase 2
+  finished (2026-08-24)** — the final batch, "combinatiesecties" (combination routes), covering
+  three sections at the end of `EUROPA_TRIP_IDEAS.md`: Iberia combinations, Balkan combinations,
+  and the 20-item "Grote Europese combinaties" (Grand European combinations). Of the source
+  document's 34 combo items, 3 turned out to already be built in earlier batches (Croatia+Bosnia+
+  Montenegro, Czechia+Austria, and Prague+Poland all pre-existed under slightly different framing)
+  and were skipped, leaving 31 real items — split into 6 geography-based sub-batches: **#15a**
+  Iberia combinations (4 routes, 114,240 tokens), **#15b** Balkan combinations (7 routes, 133,827
+  tokens), **#15c** Central-Europe cluster (5 routes, 141,135 tokens), **#15d** Alps/Italy cluster
+  (6 routes, 203,539 tokens, the priciest sub-batch), **#15e** Pyrenees/Nordic cluster (6 routes,
+  167,968 tokens), **#15f** Grand/South cluster (3 routes, 191,610 tokens) — **952,319 tokens
+  total for 31 items (~30,720/item), roughly double batch 14's already-elevated per-item rate**,
+  confirming the README's own advance prediction that a "combinations" batch would carry the
+  highest collision-check burden in the whole workstream: combo routes by nature re-touch content
+  from many earlier batches, and several items required reading a large pre-existing function in
+  full before writing a single line.
+  **The closest near-duplicates found across the entire Phase 2 workstream turned up here**: the
+  new "Austria + Slovenia via Grossglockner" (15c) and "Andorra + Spanish Pyrenees: Grand Circuit"
+  (15e) each matched an existing pre-Phase-2 route almost stop-for-stop, identical day/budget
+  splits included. Also newly confirmed: the new "Central Europe Roadtrip (14 days)" (15c) and
+  "Grand European Roadtrip (14-21 days)" (15f) are both compressed subsets of the pre-Phase-2
+  flagship **Central European Grand Roadtrip 🚗** (45-70 days, 14 countries) — same relationship
+  pattern as the earlier `rbBuildIsleOfManRoute`/`rbBuildEnglandWalesIoMRoute` pair, just split
+  along two different geographic axes (15c's version goes Berlin→Prague→Krakow→Bratislava→Vienna→
+  Budapest by train; 15f's goes Germany→Austria→Switzerland→Italy→Slovenia→Croatia→Hungary→
+  Czechia by car), with only Prague and Budapest actually shared between the two new routes
+  themselves. Conversely, some superficially similar existing titles turned out to be genuine
+  gaps on closer inspection — "Sweden + Norway" (15e) is real new content since the existing
+  `rbBuildSwedenNorwayRoute` is actually a Lapland/Arctic trip with no Oslo/Bergen/fjords at all,
+  and no pre-existing Chamonix route existed anywhere in the repo before 15d's France+Switzerland+
+  Italy route. **Per Youri's 2026-08-21 instruction, none of these were merged or deleted** — same
+  treatment as every prior batch (distinct function name + explicit cross-reference note,
+  pre-existing route untouched), logged as entries #18-48 in `ROUTE_SIMILARITY_REVIEW.md`, which
+  now closes out with a note that all of Phase 2 is done and the accumulated findings are ready
+  for Youri's review at his own pace. `TRIP_DATABASE.csv` confirms 0 remaining "No" rows in the
+  "In Route Builder?" column — every one of the 319 `EUROPA_TRIP_IDEAS.md` items is now a real
+  Route Builder route. **Next workstream: Phase 3** — making the Trip Taxonomy's 29 fields and
+  450 tagged rows filterable in the app UI (see README's "Phase 3" section).
+
 - **Europa Trip Ideas: third content addition processed, checklist closed out (2026-08)** — Youri supplied a broad region checklist (West-/Noord-/Centraal-/Zuid-Europa, Balkan, microstaten, Turkije, bijzondere eilanden); almost everything on it already existed, and the genuinely new regions were converted to the "X dagen — route" format and filed under their existing country/section: Engeland/Wales/Noord-Ierland (new section, batch 12), Zweeds Lapland (Zweden, batch 11), Faeröer (new section, batch 11, alongside the existing aspirational Route Builder splitroute), Moravië (Tsjechië, batch 9), Campanië/Puglia (Italië, batch 5), Galicië/Asturië+Cantabrië/Gibraltar (Spanje, batch 7), Centraal-Portugal (Portugal, batch 7), Egeïsche kust (Turkije, batch 10), Svalbard (Noorwegen, batch 11), Åland (Finland, batch 11), Shetland/Orkney/Buiten-Hebriden (Schotland, batch 12), Isle of Man/Jersey & Guernsey (new subsection under 🏝️ Europese eilanden, batch 14). Oekraïne/Belarus/Europees Rusland deliberately not added, on Youri's own instruction. De Egeïsche-kust exception sharpened the list's own inclusion rule for future edge cases: not strictly "Europa, geografisch" but "dichtbij, geschikt voor city trip/~1 week, geen dure/lange vlucht voor zo'n korte periode."
 
 - **Trip Taxonomy: Groep 3 tagging complete, 450 rows total in `TRIP_DATABASE.csv` (2026-08-18)** — all 21 planned sub-batches of `EUROPA_TRIP_IDEAS.md`'s 319 items tagged, closing out Fase 2 (Groep 1: 13 Grand Trips, Groep 2: 118 splitroutes, Groep 3: 319 items, reusing `EUROPA_TRIP_IDEAS.md`'s own 15 named batches with the 6 largest split into two halves each). Total cost 4,270,377 tokens across 43 tagging batches run over several sessions specifically to avoid burning a whole session's budget in one pass (Groep 1+2: 2,059,921 tokens for 131 items, ~15,725/item; Groep 3: 2,210,456 tokens for 319 items, ~6,930/item — less than half Groep 2's rate, confirming plain-markdown source content tags cheaper than diving into `routeBuilder.js`'s 9000+ line source). Per-batch cost table:

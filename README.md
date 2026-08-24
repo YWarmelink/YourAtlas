@@ -413,60 +413,55 @@ English against an already-all-English Route Builder.
 
 ### Phase 2 — convert `EUROPA_TRIP_IDEAS.md`'s 319 tagged items into real `rbBuildXRoute()` code
 
-Started 2026-08-20, in progress — every new route is written directly in English from
+**Done (2026-08-20 to 2026-08-24).** Every route was written directly in English from
 `EUROPA_TRIP_IDEAS.md`'s Dutch source content (no machine-translation step), against an
-already-all-English Route Builder (Phase 1 is done).
+already-all-English Route Builder (Phase 1 was done first).
 
-Chosen approach (2026-08-18 decision): **full hand-authored, same depth as the 131 existing
+Chosen approach (2026-08-18 decision): **full hand-authored, same depth as the pre-Phase-2
 routes** — real per-destination coordinates (so the "🔍 Gedetailleerd" map view works on every new
 route, not just a subset) and full narrative notes per leg, not a thinner data-driven auto-generated
-version. Reuses the exact 21 sub-batch structure already proven for Trip Taxonomy's Groep 3 tagging
+version. Reused the exact 21 sub-batch structure already proven for Trip Taxonomy's Groep 3 tagging
 (same 15 named clusters from `EUROPA_TRIP_IDEAS.md`, same 6 split into two halves) — see
-`CHANGELOG.md`'s "Recently fixed" section for that batch table; same batches apply here, now for
-code instead of tags.
+`CHANGELOG.md`'s "Recently fixed" section for that batch table.
 
-**Status — batches 1-14 done, 285 of 319 items done, all local commits not yet pushed as of
-2026-08-21.** Full batch-by-batch history (per-batch real token costs, every name-collision found
-and how it was resolved, cross-batch coordinate reuse, preserved safety/political nuances) has
-been moved to `CHANGELOG.md`'s "Route Builder English content" entries — read those before
-starting a new batch, they have the lessons that keep recurring (especially: check every batch for
-a name collision against a pre-existing expedition-family splitroute, or even against an
-*earlier Phase 2 batch itself*, before writing any code — batch 14's Sicily/Sardinia/Cyclades
-sub-batches found same-workstream near-duplicates, not just Phase-1-family ones). **Per Youri's
-instruction (2026-08-21): every "this looks like an existing route" case gets logged in
-[`ROUTE_SIMILARITY_REVIEW.md`](ROUTE_SIMILARITY_REVIEW.md) rather than resolved by
-merging/deleting — new routes get a distinct function name + a cross-reference note and nothing
-pre-existing is touched, so Youri can decide what (if anything) to consolidate once all 319 items
-are built.** Real per-item cost has settled around 7,000-11,000 tokens, at or under the original
-9,000-16,000/item estimate except when a batch needs real collision-resolution work. Big batches
-(>20 items) get split into geography-based sub-batches matching `EUROPA_TRIP_IDEAS.md`'s own
-section boundaries (batch 14's 30 items became 5 sub-batches: 14a Madeira+Azores, 14b Canary+
-Balearics, 14c Sicily+Sardinia, 14d Greek islands, 14e Channel Islands+Isle of Man). Each batch
-also flips its rows' "In Route Builder?" No→Yes in `TRIP_DATABASE.csv` in a separate commit to
-keep the taxonomy in sync; no Phase 2 batch has ever needed an `rbMigrateX()` migration (brand-new
-routes, nothing pre-existing to patch). Next up: **batch 15, Grote Europese combinaties (big
-cross-country combo routes) — expect a HIGH collision-check burden here specifically, since combo
-routes by nature re-touch content from many earlier batches**.
+**Status — all 15 batches done, 319/319 items built (2026-08-24).** Full batch-by-batch history
+(per-batch real token costs, every name-collision found and how it was resolved, cross-batch
+coordinate reuse, preserved safety/political nuances) lives in `CHANGELOG.md`'s "Route Builder
+English content" entries. Big batches (>20 items) got split into geography-based sub-batches
+matching `EUROPA_TRIP_IDEAS.md`'s own section boundaries (batch 14's 30 items became 5 sub-batches;
+the final batch 15's 31 items — 3 of the source's 34 combo items turned out to already be built in
+earlier batches — became 6 sub-batches: 15a Iberia combinations, 15b Balkan combinations, 15c-15f
+covering the 20-item "Grote Europese combinaties" section in Central-Europe/Alps-Italy/
+Pyrenees-Nordic/Grand-South clusters). Each batch also flipped its rows' "In Route Builder?" No→Yes
+in `TRIP_DATABASE.csv` in a separate commit to keep the taxonomy in sync; no Phase 2 batch ever
+needed an `rbMigrateX()` migration (brand-new routes, nothing pre-existing to patch).
 
-**Estimated cost**: ~9,000-16,000 tokens/item × 319 items ≈ **3-5M tokens total** — based on the
-`rbBuildJordanRoute()` example (fresh single-country build with real coordinates, no shared content
-to reuse, since these are new destinations never coded before).
+**Per Youri's instruction (2026-08-21): every "this looks like an existing route" case was logged
+in [`ROUTE_SIMILARITY_REVIEW.md`](ROUTE_SIMILARITY_REVIEW.md) rather than resolved by
+merging/deleting** — new routes got a distinct function name + a cross-reference note and nothing
+pre-existing was touched. That file now holds 48 confirmed pairs across the whole workstream and is
+ready for Youri to review at his own pace — batch 15 alone (the "combinations" batch, exactly as
+predicted) surfaced the closest near-duplicates found in the entire project: `Austria + Slovenia`
+and `Andorra + Spanish Pyrenees` each matched an existing route almost stop-for-stop, and the new
+`Grand European Roadtrip` (14-21 days) and batch 15c's own `Central Europe Roadtrip (14 days)` are
+both compressed subsets of the pre-Phase-2 flagship `Central European Grand Roadtrip 🚗` (45-70
+days), just split along different geographic axes.
 
-**Per item**: read `EUROPA_TRIP_IDEAS.md`'s Dutch source (already has route/budget/season/webcheck
-detail, no fresh research needed), write an `rbBuildXRoute()` with real per-destination coordinates
-and English notes, seed it (no migration needed — brand new, never previously seeded), flip
-`TRIP_DATABASE.csv`'s "In Route Builder?" from No to Yes for that row so the taxonomy stays in sync,
-`node --check` before commit.
+**Real cost**: batch 15's 31 items cost ~952,000 tokens total (~30,700/item average) — well above
+the original 9,000-16,000/item estimate, confirming the README's own prediction that combination
+routes would carry a high collision-check burden (re-touching content from many earlier batches,
+often requiring a full read of a large pre-existing function before writing a single line). Earlier,
+less collision-heavy batches ran closer to the original estimate.
 
 ### Phase 3 — make the Trip Taxonomy filters visible in the app UI
 
 Not started, not designed. `TRIP_TAXONOMY.md`'s 29 fields and `TRIP_DATABASE.csv`'s tagged rows
-(450, soon 450+ once Phase 2 lands) currently aren't read by any code in `js/` or any `.html` page —
-no filter UI, no page that displays a trip's tags. Comes after Phase 2 specifically because a filter
-UI is far more valuable once most of Route Builder's content is actually searchable/filterable by
-these fields, rather than just today's 131 hand-built routes. Revisit design (new page vs. filter
-component bolted onto the existing Route Builder list, how it reads the CSV the way `dataService.js`
-reads the Sheet) once Phase 2 is substantially done.
+(450, all now built in Route Builder since Phase 2 finished) currently aren't read by any code in
+`js/` or any `.html` page — no filter UI, no page that displays a trip's tags. This is now the
+**next workstream** — Phase 2 is done, so a filter UI is more valuable than ever since essentially
+all of Route Builder's content is searchable/filterable by these fields, not just a subset. Revisit
+design (new page vs. filter component bolted onto the existing Route Builder list, how it reads the
+CSV the way `dataService.js` reads the Sheet).
 
 ## Search
 
