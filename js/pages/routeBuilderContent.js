@@ -18414,3 +18414,278 @@ function rbSeedEuropaComboIberiaRoutes() {
   );
   rbSave();
 }
+
+function rbBuildSloveniaCroatiaCoastalRoute() {
+  return rbBuildFlatSeedRoute('Slovenia + Croatian Istria (7-10 days) 🏖️', [
+    {
+      code: 'SI', name: 'Slovenia', days: 4, budget: 400, lat: 46.0569, lng: 14.5058,
+      destinations: [
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+      ],
+      notes: "Ljubljana (1-2 days) — Bled (2 days). Budget ~€100/day. Season: May-June or September.",
+      transport_to_next: 'Car, overland hop into Croatian Istria — Schengen-internal since Croatia joined Schengen on 1 January 2023, zero checks or delay, no EES.',
+    },
+    {
+      code: 'HR', name: 'Croatia', days: 5, budget: 600, lat: 45.0000, lng: 13.7500,
+      destinations: [
+        { name: 'Rovinj', lat: 45.0811, lng: 13.6387 },
+        { name: 'Pula (Arena)', lat: 44.8737, lng: 13.8467 },
+      ],
+      notes: "Rovinj (2-3 days) — Pula (2 days, the Roman amphitheater). Budget ~€120-130/day (coastal Istria is pricier than inland Croatia). Season: May-June/September, July-August is hot and full.",
+      transport_to_next: 'End of this route — fly home from Pula, or via Zagreb with a connection.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Ljubljana, fly home from Pula (or reversed), rental car throughout.',
+    climate_summary: 'May-June or September; July-August is hot and full on the Istrian coast.',
+    description: "Ljubljana and Lake Bled in Slovenia, continuing overland into Croatian Istria for Rovinj and Pula's Roman amphitheater — the coastal counterpart to the existing inland Zagreb/Plitvice Slovenia+Croatia route.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15b (Balkan combinations) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Schengen-internal throughout (the Slovenia-Croatia border has had zero checks since Croatia joined Schengen on 1 January 2023) — no EES anywhere on this route. ⚠️ Real overlap, explicitly flagged: deliberately a different regional pairing from Slovenia + Northern Croatia (9 days) 🌲 (rbBuildSloveniaNorthernCroatiaRoute) — that route shares the same Ljubljana+Bled opening but continues to Zagreb/Plitvice inland, this one continues to coastal Istria (Rovinj/Pula) instead. Logged in ROUTE_SIMILARITY_REVIEW.md per project policy; kept as a distinct route, not merged. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildCroatiaBosniaSplitRoute() {
+  return rbBuildFlatSeedRoute('Croatia + Bosnia via Split (7-10 days) 🌉', [
+    {
+      code: 'HR', name: 'Croatia', days: 3, budget: 420, lat: 43.5081, lng: 16.4402,
+      destinations: [
+        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402 },
+      ],
+      notes: "Split (2-3 days, Diocletian's Palace) as the flight-in/flight-out anchor — a different anchor city from the existing Dubrovnik-anchored Bosnia + Croatia (9 days) 🏛️ (rbBuildBosniaCroatiaRoute). Budget ~€140/day.",
+      transport_to_next: 'Overland into Bosnia and Herzegovina towards Mostar — a non-Schengen EES external border, roughly 3-6 minutes per person for the biometric registration; a passport is required (an ID card is not enough), and rental-car insurance often adds a €10-15/day Bosnia surcharge.',
+    },
+    {
+      code: 'BA', name: 'Bosnia and Herzegovina', days: 6, budget: 300, lat: 43.8563, lng: 18.4131,
+      destinations: [
+        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078 },
+        { name: 'Kravice Waterfalls', lat: 43.1225, lng: 17.6725 },
+        { name: 'Blagaj Tekija', lat: 43.2489, lng: 17.8942 },
+        { name: 'Sarajevo (Baščaršija)', lat: 43.8563, lng: 18.4131 },
+      ],
+      notes: "Mostar (2 days: Stari Most, a day trip out to the Kravice Waterfalls and Blagaj Tekija) — Sarajevo (2-3 days: Baščaršija, the Tunnel of Hope, the Trebević cable car). Budget ~€50/day. Season: May-June or September.",
+      transport_to_next: 'Back to Croatia via the Pelješac bridge (open since July 2022, skips the old Neum detour) to Split or Dubrovnik for the flight home — the same EES biometric registration applies on the way back out.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into and out of Split, rental car throughout, back via the Pelješac bridge.',
+    climate_summary: 'May-June or September.',
+    description: "Split as the Croatian anchor, then overland into Bosnia and Herzegovina for Mostar (with Kravice and Blagaj) and Sarajevo, returning via the Pelješac bridge.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15b (Balkan combinations) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️ Real overlap, explicitly flagged and checked carefully per this batch's collision-check instructions: this route covers much the same Croatia+Bosnia ground as the existing Bosnia + Croatia (9 days) 🏛️ (rbBuildBosniaCroatiaRoute) — but that route anchors on Dubrovnik (2 days) then loops Mostar→Sarajevo→Trebinje and back to Dubrovnik, while this one anchors on Split, skips Trebinje, and returns via the Pelješac bridge rather than backtracking through Dubrovnik. Different anchor city and different loop shape, not a duplicate. Also touches the same Bosnia content as the standalone Sarajevo + Mostar (5 days) 🌉 (rbBuildSarajevoMostarRoute). Logged in ROUTE_SIMILARITY_REVIEW.md per project policy; kept distinct, not merged. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildBosniaMontenegroBudvaRoute() {
+  return rbBuildFlatSeedRoute('Bosnia + Montenegro + Budva (7-10 days) ⛰️', [
+    {
+      code: 'BA', name: 'Bosnia and Herzegovina', days: 5, budget: 250, lat: 43.8563, lng: 18.4131,
+      destinations: [
+        { name: 'Sarajevo (Baščaršija)', lat: 43.8563, lng: 18.4131 },
+        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078 },
+        { name: 'Trebinje', lat: 42.7106, lng: 18.3438 },
+      ],
+      notes: "Sarajevo (2 days) — Mostar (2 days) — Trebinje (1 day). Budget ~€50/day.",
+      transport_to_next: 'Overland from Trebinje into Montenegro towards Kotor — a non-Schengen-to-non-Schengen border, no EES here, generally quiet. Bosnia prices in convertible marks (KM), Montenegro unilaterally uses the euro despite not being in the EU — bring cash for both.',
+    },
+    {
+      code: 'ME', name: 'Montenegro', days: 4, budget: 230, lat: 42.4247, lng: 18.7712,
+      destinations: [
+        { name: 'Kotor Old Town', lat: 42.4247, lng: 18.7712 },
+        { name: 'Perast', lat: 42.4875, lng: 18.7089 },
+        { name: 'Budva', lat: 42.2911, lng: 18.8400 },
+      ],
+      notes: "Kotor + Perast (2 days) — Budva (2 days). Budget ~€55-60/day. Season: May-June or September.",
+      transport_to_next: 'End of this route — fly home from Podgorica or Tivat.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Sarajevo, fly home from Podgorica/Tivat (or reversed), rental car/bus throughout.',
+    climate_summary: 'May-June or September.',
+    description: "Sarajevo, Mostar and Trebinje in Bosnia and Herzegovina, continuing overland into Montenegro for Kotor, Perast and Budva.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15b (Balkan combinations) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️ Real overlap, explicitly flagged and checked carefully: this route follows almost the same Bosnia→Montenegro direction and stops as the existing Bosnia + Montenegro (9 days) ⛰️ (rbBuildBosniaMontenegroRoute, Sarajevo→Mostar→Trebinje→Kotor+Perast) — the only itinerary difference is this route adds a Budva extension after Kotor. Genuinely reversed in direction from the *other* existing pairing, Montenegro + Bosnia (9 days) 🕊️ (rbBuildMontenegroBosniaRoute), which starts in Kotor and ends in Sarajevo. Kept distinct per project policy (different endpoint content, Budva added), not merged — logged in ROUTE_SIMILARITY_REVIEW.md. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSloveniaCroatiaBosniaRoute() {
+  return rbBuildFlatSeedRoute('Slovenia + Croatia + Bosnia (10-14 days) 🗺️', [
+    {
+      code: 'SI', name: 'Slovenia', days: 4, budget: 400, lat: 46.0569, lng: 14.5058,
+      destinations: [
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+      ],
+      notes: "Ljubljana (2 days) — Bled (2 days). Budget ~€100/day. Season: May-June or September.",
+      transport_to_next: 'Car, overland hop to Zagreb, Croatia — Schengen-internal since 1 January 2023, zero checks or delay.',
+    },
+    {
+      code: 'HR', name: 'Croatia', days: 4, budget: 520, lat: 44.7000, lng: 16.0000,
+      destinations: [
+        { name: 'Zagreb', lat: 45.8150, lng: 15.9819 },
+        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820 },
+        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402 },
+      ],
+      notes: "Zagreb (1 day) — Plitvice Lakes (1-2 days, book the hourly-capacity-capped entry ahead) — Split (2 days, Diocletian's Palace). Budget ~€130/day (Split pulls the average up versus Zagreb/Plitvice). Web check (2026-08): 2026 enforces a strict hourly capacity cap at Plitvice (max 300 people per entrance) — book ahead.",
+      transport_to_next: 'Overland into Bosnia and Herzegovina towards Mostar — a non-Schengen EES external border, roughly 3-6 minutes per person for the biometric check, passport required.',
+    },
+    {
+      code: 'BA', name: 'Bosnia and Herzegovina', days: 4, budget: 200, lat: 43.8563, lng: 18.4131,
+      destinations: [
+        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078 },
+        { name: 'Sarajevo (Baščaršija)', lat: 43.8563, lng: 18.4131 },
+      ],
+      notes: "Mostar (2 days: Stari Most, a day trip to Kravice/Blagaj) — Sarajevo (2 days: Baščaršija, the Tunnel of Hope). Budget ~€50/day. Season: May-June or September. Web check (2026-08): the return leg crosses back into Croatia via the Pelješac bridge (open since July 2022) rather than the old Neum detour, to fly home from Split or Dubrovnik — the same EES registration applies on the way back out.",
+      transport_to_next: 'End of this route — back via the Pelješac bridge to fly home from Split or Dubrovnik.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Ljubljana, fly home from Split/Dubrovnik (or reversed), rental car throughout.',
+    climate_summary: 'May-June or September.',
+    description: "Ljubljana and Lake Bled in Slovenia, Zagreb, Plitvice Lakes and Split in Croatia, and Mostar and Sarajevo in Bosnia and Herzegovina, returning via the Pelješac bridge.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15b (Balkan combinations) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️ Real overlap, explicitly flagged: the Slovenia+Zagreb/Plitvice opening is essentially the same as the existing Slovenia + Northern Croatia (9 days) 🌲 (rbBuildSloveniaNorthernCroatiaRoute), extended here with a Split stop and a full Bosnia leg (Mostar+Sarajevo) instead of ending at Plitvice. Also shares Croatia+Bosnia content with Bosnia + Croatia (9 days) 🏛️ (rbBuildBosniaCroatiaRoute) and Croatia + Bosnia via Split (7-10 days) 🌉 (rbBuildCroatiaBosniaSplitRoute, built earlier in this same sub-batch 15b — see that route's own notes for the Split-anchor detail, not repeated here). Kept as a distinct 3-country route, not merged. Logged in ROUTE_SIMILARITY_REVIEW.md per project policy. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSloveniaCroatiaMontenegroCoastRoute() {
+  return rbBuildFlatSeedRoute('Slovenia + Croatia + Montenegro Coast (10-14 days) ⛵', [
+    {
+      code: 'SI', name: 'Slovenia', days: 4, budget: 400, lat: 46.0569, lng: 14.5058,
+      destinations: [
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+      ],
+      notes: "Ljubljana (2 days) — Bled (2 days). Budget ~€100/day. Season: May-June or September.",
+      transport_to_next: 'Car, overland hop to Croatia — Schengen-internal since 1 January 2023, zero checks or delay. (Istria makes an equally valid coastal entry point instead of Split, if flying into Pula/Rijeka is more convenient — see Slovenia + Croatian Istria (7-10 days) 🏖️, built earlier in this same sub-batch 15b, for that variant.)',
+    },
+    {
+      code: 'HR', name: 'Croatia', days: 5, budget: 700, lat: 43.0000, lng: 17.2000,
+      destinations: [
+        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402 },
+        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
+      ],
+      notes: "Split (2-3 days, Diocletian's Palace) — Dubrovnik (2-3 days, Old Town). Budget ~€140/day (Dubrovnik pulls this up). Season: May-June or September, avoid the August crowds in Dubrovnik.",
+      transport_to_next: 'Overland to Kotor via the Karasovići border crossing — a non-Schengen crossing that saw 2-5 hour waits in July-August 2026 due to EES; plan a morning crossing.',
+    },
+    {
+      code: 'ME', name: 'Montenegro', days: 3, budget: 210, lat: 42.3600, lng: 18.8100,
+      destinations: [
+        { name: 'Kotor Old Town', lat: 42.4247, lng: 18.7712 },
+        { name: 'Budva', lat: 42.2911, lng: 18.8400 },
+      ],
+      notes: "Kotor (1-2 days) — Budva (1-2 days). Budget ~€70/day. Season: May-June or September, July-August very busy.",
+      transport_to_next: 'End of this route — fly home from Podgorica or Tivat.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Ljubljana, fly home from Podgorica/Tivat (or reversed), rental car throughout.',
+    climate_summary: 'May-June or September; no cheap Bosnia leg keeps the daily average higher than the Bosnia-inclusive combinations in this batch.',
+    description: "Ljubljana and Lake Bled in Slovenia, Split and Dubrovnik on the Croatian coast, and Kotor and Budva in Montenegro — a coast-only trio deliberately without Bosnia's cheaper interior.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15b (Balkan combinations) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️ Real overlap, explicitly flagged: the Croatia+Montenegro tail (Dubrovnik→Kotor→Budva) is essentially the same as the existing Montenegro + Croatia (9 days) ⛵ (rbBuildMontenegroCroatiaRoute), just with a Slovenia+Split lead-in prepended instead of starting cold at Dubrovnik. Also shares its Slovenia opening with Slovenia + Northern Croatia (9 days) 🌲 (rbBuildSloveniaNorthernCroatiaRoute) and Slovenia + Croatian Istria (7-10 days) 🏖️ (built earlier in this same sub-batch 15b) — those two continue inland/to Istria respectively, this one continues down the coast to Dubrovnik and Montenegro instead. Same-batch internal note: also similar in shape (though not identical stops) to Adriatic Roadtrip (14 days) 🌊 (rbBuildAdriaticRoadtripRoute, built later in this same sub-batch) — that route is the fuller 14-day coastal version with Piran/Rovinj/Pula/Hvar/Perast detail and an optional Albania extension; this one is the tighter 10-14 day version. Kept as a distinct route, not merged. Logged in ROUTE_SIMILARITY_REVIEW.md per project policy. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildGrandBalkanRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Grand Balkan Roadtrip (14 days) 🏔️', [
+    {
+      code: 'SI', name: 'Slovenia', days: 3, budget: 300, lat: 46.0569, lng: 14.5058,
+      destinations: [
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+      ],
+      notes: "Ljubljana (1-2 days) — Bled (1-2 days). Budget ~€100/day. This is the widest loop in this batch's Balkan combinations — pick 5-6 headline stops out of the ones listed rather than trying to do all of them justice in 14 days.",
+      transport_to_next: 'Car, overland hop to Zagreb, Croatia — Schengen-internal since 1 January 2023, zero checks or delay.',
+    },
+    {
+      code: 'HR', name: 'Croatia', days: 4, budget: 480, lat: 44.9000, lng: 15.7000,
+      destinations: [
+        { name: 'Zagreb', lat: 45.8150, lng: 15.9819 },
+        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820 },
+        { name: 'Zadar / Split (choose one)', lat: 44.1194, lng: 15.2314 },
+      ],
+      notes: "Zagreb (1 day) — Plitvice Lakes (1-2 days, book the hourly-capacity-capped entry ahead) — Zadar or Split (1-2 days, pick one coastal base rather than both to keep the pace realistic). Budget ~€120/day average.",
+      transport_to_next: 'Overland into Bosnia and Herzegovina towards Mostar — a non-Schengen EES external border, roughly 3-6 minutes per person for the biometric check, one of 2-3 EES crossings on this route.',
+    },
+    {
+      code: 'BA', name: 'Bosnia and Herzegovina', days: 4, budget: 200, lat: 43.8563, lng: 18.4131,
+      destinations: [
+        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078 },
+        { name: 'Sarajevo (Baščaršija)', lat: 43.8563, lng: 18.4131 },
+        { name: 'Trebinje', lat: 42.7106, lng: 18.3438 },
+      ],
+      notes: "Mostar (2 days, Stari Most) — Sarajevo (1-2 days) — Trebinje (1 day) on the way out. Budget ~€50/day. Season: May-June or September.",
+      transport_to_next: 'Overland from Trebinje into Montenegro towards Kotor — a quiet non-Schengen-to-non-Schengen crossing, no EES here.',
+    },
+    {
+      code: 'ME', name: 'Montenegro', days: 3, budget: 195, lat: 42.3500, lng: 18.8100,
+      destinations: [
+        { name: 'Kotor Old Town', lat: 42.4247, lng: 18.7712 },
+        { name: 'Budva', lat: 42.2911, lng: 18.8400 },
+      ],
+      notes: "Kotor (1-2 days) — Budva (1 day). Budget ~€65/day. Optional: continue back to Dubrovnik (Croatia) to fly home instead of Podgorica/Tivat — that adds the Karasovići EES border crossing (2-5 hour waits in July-August 2026) as a third crossing on this route.",
+      transport_to_next: 'End of this route — fly home from Podgorica or Tivat, or optionally continue overland to Dubrovnik to fly home from there instead (see note above).',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Ljubljana, fly home from Podgorica/Tivat (or optionally Dubrovnik), rental car throughout — pick 5-6 headline stops rather than everything listed.',
+    climate_summary: 'May-June or September.',
+    description: "The widest loop in this batch: Ljubljana and Lake Bled in Slovenia, Zagreb/Plitvice/Zadar-or-Split in Croatia, Mostar/Sarajevo/Trebinje in Bosnia and Herzegovina, and Kotor/Budva in Montenegro, with an optional Dubrovnik return.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15b (Balkan combinations) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately a wider, more southeastern-interior-inclusive loop than Adriatic Roadtrip (14 days) 🌊 (rbBuildAdriaticRoadtripRoute, built later in this same sub-batch) — that route is coast-only and explicitly skips Sarajevo/Bosnia. ⚠️ Checked carefully per this batch's collision-check instructions against Balkan 🐺 (rbBuildBalkanRoute, a leg split off Eurasia Grand Tour 🌏 in an earlier combo batch) — confirmed NOT the same route: that one covers Bosnia+Croatia+Montenegro+Albania+North Macedonia (Sarajevo/Mostar, Dubrovnik, Kotor/Durmitor, Tirana/Gjirokastër, Ohrid/Skopje), a more southeastern country set with no Slovenia — genuinely different scope per the source document's own note, not a duplicate. ⚠️ Real overlap that IS confirmed, explicitly flagged: shares its core Croatia+Bosnia+Montenegro three-country combination with both existing 12-day routes Bosnia + Croatia + Montenegro (12 days) 🗺️ (rbBuildBosniaCroatiaMontenegroRoute, Croatia→Bosnia→Montenegro order) and Croatia + Montenegro + Bosnia (12 days) 🧭 (rbBuildCroatiaMontenegroBosniaRoute, Croatia→Montenegro→Bosnia order, already seeded pre-batch-15b as the source document's own 'Croatia + Bosnia + Montenegro' item) — this route adds Slovenia and widens the Croatia leg (Zagreb+Plitvice+Zadar/Split instead of just Split/Dubrovnik) into a longer 14-day loop. Also overlaps this same sub-batch's own Slovenia + Croatia + Bosnia (10-14 days) 🗺️ (rbBuildSloveniaCroatiaBosniaRoute) and Slovenia + Croatia + Montenegro Coast (10-14 days) ⛵ (rbBuildSloveniaCroatiaMontenegroCoastRoute) — this route is effectively their union plus Montenegro and Bosnia both together. Kept as a distinct route, not merged. Logged in ROUTE_SIMILARITY_REVIEW.md per project policy. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildAdriaticRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Adriatic Roadtrip (14 days) 🌊', [
+    {
+      code: 'SI', name: 'Slovenia', days: 2, budget: 220, lat: 45.7900, lng: 14.0400,
+      destinations: [
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
+        { name: 'Piran', lat: 45.5285, lng: 13.5686 },
+      ],
+      notes: "Ljubljana (1 day) — Piran on the Slovenian coast (1 day). Budget ~€110/day. This is the coast-only counterpart to Grand Balkan Roadtrip (14 days) 🏔️ elsewhere in this same sub-batch — explicitly skips Sarajevo/Bosnia's interior.",
+      transport_to_next: 'Car, short overland hop from Piran into Croatian Istria — Schengen-internal since Croatia joined Schengen on 1 January 2023, zero checks or delay.',
+    },
+    {
+      code: 'HR', name: 'Croatia', days: 8, budget: 1040, lat: 44.0000, lng: 16.0000,
+      destinations: [
+        { name: 'Rovinj', lat: 45.0811, lng: 13.6387 },
+        { name: 'Pula (Arena)', lat: 44.8737, lng: 13.8467 },
+        { name: 'Zadar', lat: 44.1194, lng: 15.2314 },
+        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402 },
+        { name: 'Hvar Town', lat: 43.1729, lng: 16.4413 },
+        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
+      ],
+      notes: "Rovinj/Pula in Istria (2 days) — Zadar/Split/Hvar down the coast (3-4 days, pick a subset rather than all three) — Dubrovnik (2 days), reached via the Pelješac bridge rather than the old Neum detour through Bosnia, so this route never touches Bosnian territory. Budget ~€130/day average (Dubrovnik and Hvar pull this up). Season: May-June or September, avoid July-August.",
+      transport_to_next: 'Overland to Kotor via the Karasovići border crossing — a non-Schengen EES crossing that saw 2-5 hour waits in July-August 2026, so plan a morning crossing; the only EES crossing on this whole route thanks to the Pelješac bridge bypassing Bosnia entirely.',
+    },
+    {
+      code: 'ME', name: 'Montenegro', days: 4, budget: 360, lat: 42.4000, lng: 18.7800,
+      destinations: [
+        { name: 'Kotor Old Town', lat: 42.4247, lng: 18.7712 },
+        { name: 'Perast', lat: 42.4875, lng: 18.7089 },
+        { name: 'Budva', lat: 42.2911, lng: 18.8400 },
+      ],
+      notes: "Kotor + Perast (2 days) — Budva (2 days). Budget ~€90/day. Season: May-June or September, July-August very busy. Optional: extend onward to the Albanian Riviera via the Sukobin-Muriqan border crossing (10-45 minutes normally, up to 1.5-2 hours on weekends) — see Albanian Riviera (9 days) 🌊 (rbBuildAlbanianRivieraRoute) for that content, not included in this route's own 14-day count.",
+      transport_to_next: 'End of this route — fly home from Podgorica or Tivat, or continue on to the optional Albanian Riviera extension (see note above).',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into Ljubljana, fly home from Podgorica/Tivat (or reversed), rental car throughout, Pelješac bridge instead of the old Neum detour.',
+    climate_summary: 'May-June or September; July-August is packed and pricier all along this coast.',
+    description: "A coast-only Adriatic sweep: Ljubljana and Piran in Slovenia, Istria/Zadar/Split/Hvar/Dubrovnik in Croatia (via the Pelješac bridge, never touching Bosnia), and Kotor/Perast/Budva in Montenegro, with an optional Albanian Riviera extension.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15b (Balkan combinations) converting EUROPA_TRIP_IDEAS.md into Route Builder content — the deliberate coast-only counterpart to Grand Balkan Roadtrip (14 days) 🏔️ (rbBuildGrandBalkanRoadtripRoute, built earlier in this same sub-batch 15b) — that route goes inland to Sarajevo/Bosnia, this one explicitly stays on the coast and skips Bosnia entirely via the Pelješac bridge. ⚠️ Real overlap, explicitly flagged: overlaps Croatia Coastal Roadtrip (9 days) 🛣️ (rbBuildCroatiaCoastalRoadtripRoute, same Zadar→Split→Hvar→Dubrovnik D8 spine) and Complete Croatia (12 days) 🇭🇷 (rbBuildCompleteCroatiaRoute) on the Croatia portion, and Montenegro + Croatia (9 days) ⛵ (rbBuildMontenegroCroatiaRoute) on the Dubrovnik→Kotor/Perast/Budva tail. The optional Albania extension shares content with Albanian Riviera (9 days) 🌊 (rbBuildAlbanianRivieraRoute). Also similar in overall shape (though not identical stops/length) to this same sub-batch's Slovenia + Croatia + Montenegro Coast (10-14 days) ⛵ (rbBuildSloveniaCroatiaMontenegroCoastRoute) — that one is the tighter 10-14 day version without the Istria/Piran/Hvar detail or the Albania option. Kept as a distinct route, not merged. Logged in ROUTE_SIMILARITY_REVIEW.md per project policy. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaComboBalkanRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_COMBO_BALKAN)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_COMBO_BALKAN, '1');
+
+  rbRoutes.push(
+    rbBuildSloveniaCroatiaCoastalRoute(),
+    rbBuildCroatiaBosniaSplitRoute(),
+    rbBuildBosniaMontenegroBudvaRoute(),
+    rbBuildSloveniaCroatiaBosniaRoute(),
+    rbBuildSloveniaCroatiaMontenegroCoastRoute(),
+    rbBuildGrandBalkanRoadtripRoute(),
+    rbBuildAdriaticRoadtripRoute(),
+  );
+  rbSave();
+}
