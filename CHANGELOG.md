@@ -12,6 +12,68 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **ROUTE_SIMILARITY_REVIEW.md: full 48-pair review complete, 7 routes deleted from Route Builder
+  (2026-08-24)** — following up on the review-order plan below, Youri worked through all 6 bands
+  in order. Decision rule used throughout: a route that's a smaller piece extracted from a bigger
+  existing trip is fine to keep (not "too similar" on its own), and a route visiting genuinely more
+  countries than an existing one is a different trip, not a duplicate — but two routes of
+  near-identical size/scope with no such relationship between them are too similar and need
+  resolving. **Result: 40 of 48 pairs confirmed fine as-is (keep both), 8 pairs flagged, and after
+  reading the actual route content (not just the CSV summaries) for those 8, Youri decided one pair
+  should keep both (Malta) and the other 7 should have one route deleted.**
+  **Final delete list (7 routes — one pair's "delete" target, Austria + Slovenia via
+  Grossglockner, is itself a Phase 2 batch 15c route, not pre-existing)**:
+  1. `rbBuildCyprusRoute` (Cyprus 🕊️, Mediterranean Civilizations split) — kept
+     `rbBuildCyprusClassicRoute` (Cyprus, 6 days) instead, since it's a strict superset (same 3
+     stops plus Larnaca + the Troodos Mountains).
+  2. `rbBuildSvalbardRoute` (Svalbard 🐻‍❄️, Nordic Arctic Expedition split) — kept
+     `rbBuildSvalbardShortRoute` (Svalbard, 6 days), more destinations and more current research at
+     a similar price tier.
+  3. `rbBuildFaroeIslandsRoute` (Faroe Islands 🐑, Nordic Arctic Expedition split) — kept
+     `rbBuildFaroeIslandsShortRoute` (Faroe Islands, 6 days) despite a real price gap flagged during
+     review (existing €239/day vs. new €100-120/day) — kept for the more thorough/current research
+     behind it; flagged as a good candidate for a follow-up route-price-checker pass rather than
+     fully trusted as-is.
+  4. `rbBuildIcelandRoute` (Iceland ❄️, Nordic Arctic Expedition split) — kept
+     `rbBuildIcelandRingRoadRoute` (Iceland Ring Road, 12 days), more destinations (full East
+     Fjords/North Iceland loop) and cheaper per day with clearer reasoning.
+  5. `rbBuildBosniaMontenegroRoute` (Bosnia + Montenegro, 9 days, batch 8b) — kept
+     `rbBuildBosniaMontenegroBudvaRoute` (Bosnia + Montenegro + Budva, batch 15b), a strict
+     superset (identical route plus Budva).
+  6. `rbBuildAndorraSpanishPyreneesRoute` (Andorra + Spanish Pyrenees, 9 days, batch 7b) — kept
+     `rbBuildAndorraSpanishPyreneesCircuitRoute` (Andorra + Spanish Pyrenees: Grand Circuit, batch
+     15e), which fixes a factual error in the older route's border note (Andorra isn't actually in
+     Schengen; the older note implied it was).
+  7. `rbBuildAustriaSloveniaGrossglocknerRoute` (Austria + Slovenia via Grossglockner, batch
+     15c) — the one pair resolved the other direction: the two routes are essentially
+     byte-for-byte identical (same stops, same day split, same budget), so the already-"Verified"
+     pre-existing `rbBuildAustriaSloveniaRoute` (Austria + Slovenia, 9 days, batch 3) was kept
+     instead, and this newer "Draft"-status duplicate is the one marked for removal.
+  **Malta (4 days) 🌅 vs Malta ⚔️ (5 days)** — un-marked, keep both: on closer reading (not just the
+  CSV summary), the existing route includes Gozo + the Ġgantija temples + the Hypogeum (a whole
+  separate island), while the new route deliberately stays mainland-only (its own notes say "Gozo
+  deliberately skipped") and covers Marsaxlokk + Hagar Qim/Mnajdra temples + the Blue Grotto
+  instead — genuinely different content, not a re-tread.
+  **Executed same session.** Removed all 7 `rbBuild*Route()` functions and their seed-push lines
+  from `js/pages/routeBuilderContent.js`. Two of the 7 (Cyprus 🕊️, and the 3 dict-based Nordic
+  Arctic Expedition splits Svalbard/Faroe/Iceland) were also referenced in already-fired Phase 1
+  English-translation migrations (`rbMigrateMediterraneanFamilyEnglish()`,
+  `rbMigrateNordicArcticEnglish()`) — their entries were removed from those migrations' `targets`
+  arrays too, so a fresh/reset browser can't crash calling a now-deleted build function. A new
+  migration, `rbMigrateRemoveSimilarityReviewDuplicates()` (flag
+  `RB_MIGRATE_FLAG_2026_08_SIMILARITY_REVIEW_CLEANUP`), strips all 7 stale routes by name out of
+  `rbRoutes` for any browser that already seeded them — registered as the last call in
+  `routeBuilder.js`'s init sequence. **Verified with a one-off Node `vm`-based smoke test** (not
+  committed to the repo) that ran the actual pre-cleanup code to build a realistic "already seeded"
+  `localStorage` snapshot, then ran the new code on top of it: all 7 stale names gone, all 7
+  replacements present, zero duplicate route names, route count dropped by exactly 7 (447 → 440),
+  the migration is idempotent on a second run, and a brand-new browser never creates the stale
+  routes at all. `node --check` passed on all 3 touched files; a full-file grep confirmed zero
+  remaining *executable* references to any of the 7 deleted function names (only prose mentions
+  inside other routes' historical `notes` text remain, left untouched). `TRIP_DATABASE.csv`'s 7
+  corresponding rows flipped `In Route Builder?` Yes→No. Full per-pair reasoning lives in
+  `ROUTE_SIMILARITY_REVIEW.md`'s "Final resolution" section.
+
 - **ROUTE_SIMILARITY_REVIEW.md: review-order plan drawn up, not yet acted on (2026-08-24)** — with
   Phase 2 complete and all 48 pairs logged, Youri asked for the 48 findings ranked from least to
   most similar so he can work through them starting with the safest "probably no action needed"

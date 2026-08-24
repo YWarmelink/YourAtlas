@@ -15,6 +15,141 @@ duplicate" — nothing has been deleted or merged, this file is the decision log
 `grep -n "^function <name>" js/pages/routeBuilderContent.js` — gives the line number, then read
 from there.
 
+## Youri's decisions (in progress, 2026-08-24 review session)
+
+Working through the "least → most similar" bands from `CHANGELOG.md`'s 2026-08-24 entry, one band
+at a time. Marked items below are confirmed "too similar, needs changing" — not yet acted on,
+Youri wants to batch the actual changes together once the whole review is done, not one at a time.
+
+- **#5 — Faroe Islands (6 days) 🐦 (`rbBuildFaroeIslandsShortRoute`) vs Faroe Islands 🐑
+  (`rbBuildFaroeIslandsRoute`)** — MARKED FOR CHANGE. Too similar (both Faroe-Islands-only,
+  overlapping stops), decided during Band 3 review.
+
+Band 1, Band 2, and the rest of Band 3 (#2, #13, #18, #20, #21, #25, #27, #28, #34, #45, #46, #47)
+reviewed and confirmed fine as-is — no change needed.
+
+Band 4 (#15, #19, #23, #26, #31, #32, #36) reviewed and confirmed fine as-is, keep all — no change
+needed. #15 (Cyclades Island Hopping) was the closest call in this band (real but thin
+differentiation from the existing Greek Islands: Paros/Naxos/Santorini route, and entangled with
+#14 in Band 5), but Youri decided to keep it too rather than deferring.
+
+**Decision rule established during Band 5 (2026-08-24), apply to all remaining bands**: a new route
+that is a smaller extracted piece of a bigger existing trip is fine to keep (e.g. a standalone
+leg pulled out of a Grand Expedition) — being a subset of a bigger trip is not "too similar" on its
+own. Likewise, a route visiting genuinely more countries than an existing one is a different trip,
+not a duplicate. What IS "too similar" and needs marking: two routes of near-identical size/scope
+that are basically the same trip told twice, with no country-count difference and no clean
+subset/superset relationship between them.
+
+Band 5 (#1, #6, #14, #16, #17, #24, #35, #37, #48) reviewed against that rule:
+- **KEPT** (fits the rule): #14 (Cyclades — smaller piece of the existing Paros/Naxos/Santorini
+  route), #16 (Jersey+Guernsey — opening legs of the 28-day Channel Islands expedition), #17 (Isle
+  of Man — same pattern vs the 38-day England/Wales/IoM expedition), #35 (Germany+Austria+Slovenia
+  — genuinely adds a country vs. the 2-country existing routes), #37 (Italy+Slovenia+Croatia —
+  genuine 3-country trip built from smaller pieces), #48 (Grand European Roadtrip — compressed
+  subset of the flagship, minimal overlap with its 15c sibling).
+- **MARKED FOR CHANGE** (fails the rule — same-size, same-scope, no new country, no clean
+  subset/superset relationship):
+  - **#1 — Malta (4 days) 🌅 (`rbBuildMaltaFourDaysRoute`) vs Malta ⚔️ (`rbBuildMaltaRoute`,
+    5 days)** — two alternate "just Malta" itineraries at nearly the same length (Gozo vs.
+    temples/Blue Grotto), neither a subset of the other, no extra country.
+  - **#6 — Iceland Ring Road (12 days) 🛣️ (`rbBuildIcelandRingRoadRoute`) vs Iceland ❄️
+    (`rbBuildIcelandRoute`, 14 days)** — both are literally the same full Route 1 ring-road loop,
+    2 days apart, same trip told twice (differ mainly in price tier).
+  - **#24 — Bosnia + Montenegro + Budva (7-10 days) ⛰️ (`rbBuildBosniaMontenegroBudvaRoute`) vs
+    Bosnia + Montenegro (`rbBuildBosniaMontenegroRoute`, 9 days)** — identical stops in identical
+    order, only difference is one extra city (Budva) within the same 2 countries, no new country
+    added.
+
+Band 6 (#3, #4, #11, #12, #29, #40 — the file's own "closest pairs" list) reviewed, last band, all
+48 pairs now covered:
+- **KEPT**: #11 (Sardinia Roadtrip vs Sardinia 9d) and #12 (Sicily Roadtrip vs Sicily 9d) — despite
+  the overlap flagged in this file, roughly half of each itinerary is genuinely different named
+  places, not the same sights relabeled: Sardinia's new route covers Barbagia (interior) + La
+  Maddalena vs. the existing route's Barumini/Su Nuraxi + Alghero; Sicily's new route covers the
+  west (Trapani/Erice/Segesta) vs. the existing route's Cefalù + Val di Noto Baroque towns
+  (Ragusa/Modica/Noto). Judged more substantial than a same-size/no-difference case.
+- **MARKED FOR CHANGE**:
+  - **#3 — Cyprus (6 days) 🏝️ (`rbBuildCyprusClassicRoute`) vs Cyprus 🕊️ (`rbBuildCyprusRoute`,
+    5 days)** — existing is essentially a subset of the new one (Paphos/Limassol/Nicosia all
+    appear in both), new just adds Larnaca+Troodos on top — same country, near-identical length,
+    no new country/region added.
+  - **#4 — Svalbard (Longyearbyen) (6 days) 🌌 (`rbBuildSvalbardShortRoute`) vs Svalbard 🐻‍❄️
+    (`rbBuildSvalbardRoute`, 4 days)** — same "short Longyearbyen" concept at a similar price
+    tier, no distinct secondary destinations on either side (existing was already shortened once
+    before to become this same concept).
+  - **#29 — Austria + Slovenia via Grossglockner (7-10 days) 🏔️
+    (`rbBuildAustriaSloveniaGrossglocknerRoute`) vs Austria + Slovenia
+    (`rbBuildAustriaSloveniaRoute`, 9 days)** — same two countries, same cities, same day split
+    and budget range, no new country.
+  - **#40 — Andorra + Spanish Pyrenees: Grand Circuit (9 days) 🏔️
+    (`rbBuildAndorraSpanishPyreneesCircuitRoute`) vs Andorra + Spanish Pyrenees
+    (`rbBuildAndorraSpanishPyreneesRoute`, 9 days)** — identical stop list, identical day count,
+    identical budget. The closest pair in the whole 48.
+
+## Full review complete (2026-08-24) — 8 of 48 pairs marked for change
+
+All 6 bands reviewed against the rule established during Band 5 (subset-of-a-bigger-trip = fine;
+genuinely more countries = a different trip; same-size/same-scope with no such relationship = too
+similar). **8 pairs marked for change, to be resolved together in a future session (Youri's own
+call — batch the actual merges/renames, don't do them one at a time):**
+1. #1 — Malta (4 days) vs Malta ⚔️ (5 days)
+2. #3 — Cyprus (6 days) vs Cyprus 🕊️ (5 days)
+3. #4 — Svalbard (Longyearbyen) (6 days) vs Svalbard 🐻‍❄️ (4 days)
+4. #5 — Faroe Islands (6 days) vs Faroe Islands 🐑 (7 days)
+5. #6 — Iceland Ring Road (12 days) vs Iceland ❄️ (14 days)
+6. #24 — Bosnia + Montenegro + Budva (7-10 days) vs Bosnia + Montenegro (9 days)
+7. #29 — Austria + Slovenia via Grossglockner (7-10 days) vs Austria + Slovenia (9 days)
+8. #40 — Andorra + Spanish Pyrenees: Grand Circuit (9 days) vs Andorra + Spanish Pyrenees (9 days)
+
+**The other 40 of 48 pairs are confirmed fine as-is, keep both, no change needed.**
+
+## Final resolution of the 8 marked pairs (2026-08-24) — ready to execute
+
+After reading the actual route content (not just the CSV summaries) for all 16 routes in the 8
+marked pairs, Youri made a final call on each. **Net result: 7 routes to delete, 1 pair where both
+stay.**
+
+| # | Pair | Decision | Why |
+|---|---|---|---|
+| 1 | Malta (4 days) 🌅 vs Malta ⚔️ (5 days) | **Keep both, un-mark** | Re-reading the full content: existing includes Gozo + the Ġgantija temples + the Hypogeum (a whole separate island); new deliberately stays mainland-only (its own notes say "Gozo deliberately skipped") and covers Marsaxlokk + Hagar Qim/Mnajdra temples + the Blue Grotto instead — genuinely different sites, same shape of difference as the Sardinia/Sicily calls in Band 6. |
+| 3 | Cyprus (6 days) 🏝️ vs Cyprus 🕊️ (5 days) | **Delete Cyprus 🕊️** (`rbBuildCyprusRoute`) | New route is a strict superset — contains all 3 of the existing route's stops (Paphos/Limassol/Nicosia) plus Larnaca + the Troodos Mountains. |
+| 4 | Svalbard (Longyearbyen) (6 days) 🌌 vs Svalbard 🐻‍❄️ (4 days) | **Delete Svalbard 🐻‍❄️** (`rbBuildSvalbardRoute`) | New has more destinations (5 vs 3) and more current/detailed research; similar price tier (€190 vs €225/day). |
+| 5 | Faroe Islands (6 days) 🐦 vs Faroe Islands 🐑 (7 days) | **Delete Faroe Islands 🐑** (`rbBuildFaroeIslandsRoute`) | New has more destinations and much more detailed/current research (specific ferry/flight schedules, a hike safety warning). Price gap flagged (existing €239/day vs new €100-120/day, nearly 2x) — Youri's call: keep the new one anyway since it has the more thorough research behind it, but this is a candidate for a follow-up price re-check via the route-price-checker agent rather than fully trusted as-is. |
+| 6 | Iceland Ring Road (12 days) 🛣️ vs Iceland ❄️ (14 days) | **Delete Iceland ❄️** (`rbBuildIcelandRoute`) | New has more destinations (10 vs 7, full East Fjords/North Iceland loop), cheaper per day with clear reasoning, more current road-condition research. |
+| 24 | Bosnia+Montenegro+Budva (7-10 days) ⛰️ vs Bosnia+Montenegro (9 days) | **Delete Bosnia + Montenegro** (`rbBuildBosniaMontenegroRoute`) | New is a strict superset — identical Bosnia leg, identical Kotor+Perast, plus Budva added, same per-day rates. |
+| 29 | Austria+Slovenia via Grossglockner (7-10 days) 🏔️ vs Austria+Slovenia (9 days) 🏝️ | **Delete Austria + Slovenia via Grossglockner** (`rbBuildAustriaSloveniaGrossglocknerRoute`) | The one pair where the OLDER route wins: the two are essentially byte-for-byte the same itinerary (same 3+3 stops, same day split, same budget). Existing is already "Verified" status, the new one is still "Draft" — keep the verified one. |
+| 40 | Andorra+Spanish Pyrenees: Grand Circuit (9 days) 🏔️ vs Andorra+Spanish Pyrenees (9 days) 🥾 | **Delete Andorra + Spanish Pyrenees** (`rbBuildAndorraSpanishPyreneesRoute`) | Near-identical content, but the new one fixes a factual error in the existing route's border note (existing wrongly implies Andorra has "no formalities within Schengen" — Andorra isn't in Schengen at all). |
+
+**Final delete list — 7 routes to remove from Route Builder:**
+1. `rbBuildCyprusRoute` — Cyprus 🕊️ (Mediterranean Civilizations Expedition split)
+2. `rbBuildSvalbardRoute` — Svalbard 🐻‍❄️ (Nordic Arctic Expedition split)
+3. `rbBuildFaroeIslandsRoute` — Faroe Islands 🐑 (Nordic Arctic Expedition split)
+4. `rbBuildIcelandRoute` — Iceland ❄️ (Nordic Arctic Expedition split)
+5. `rbBuildBosniaMontenegroRoute` — Bosnia + Montenegro (9 days) (Phase 2 batch 8b)
+6. `rbBuildAustriaSloveniaGrossglocknerRoute` — Austria + Slovenia via Grossglockner (7-10 days) (Phase 2 batch 15c)
+7. `rbBuildAndorraSpanishPyreneesRoute` — Andorra + Spanish Pyrenees (9 days) (Phase 2 batch 7b)
+
+**Executed (2026-08-24).** All 7 `rbBuild*Route()` functions above were removed from
+`js/pages/routeBuilderContent.js`, along with their seed-push lines. Two of them (Cyprus 🕊️ and
+the 3 dict-based Nordic Arctic splits — Svalbard/Faroe/Iceland) were also referenced in
+already-fired Phase 1 English-translation migrations (`rbMigrateMediterraneanFamilyEnglish()` and
+`rbMigrateNordicArcticEnglish()`); their entries were removed from those migrations' `targets`
+arrays too, so a fresh/reset browser can't crash trying to call a now-deleted build function.
+A new migration, `rbMigrateRemoveSimilarityReviewDuplicates()` (flag
+`RB_MIGRATE_FLAG_2026_08_SIMILARITY_REVIEW_CLEANUP`), removes all 7 stale routes by name from
+`rbRoutes` on any browser that already seeded them, registered as the last call in
+`routeBuilder.js`'s init sequence. Verified with a one-off Node `vm`-based smoke test (not
+committed to the repo) that actually ran the full old-code seed sequence to build a realistic
+"already seeded" `localStorage` snapshot, then ran the new code on top of it: confirmed all 7 stale
+names are gone, all 7 replacement routes are present, no duplicate route names, route count drops
+by exactly 7 (447 → 440), the migration is idempotent on a second run, and a brand-new browser
+never creates the stale routes in the first place. `node --check` passed on all 3 touched files,
+and a full-file grep confirmed zero remaining *executable* references to any of the 7 deleted
+function names (only prose mentions inside other routes' historical `notes` text remain, left
+untouched as accurate historical record). `TRIP_DATABASE.csv`'s corresponding 7 rows were flipped
+`In Route Builder?` Yes→No to keep the taxonomy in sync.
+
 ## Confirmed pairs so far (batches 1-13)
 
 | # | New route (Phase 2) | Existing route (pre-Phase-2 family) | How similar? |
