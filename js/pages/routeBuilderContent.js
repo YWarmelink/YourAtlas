@@ -18880,6 +18880,362 @@ function rbBuildCentralEuropeRoadtripFourteenDaysRoute() {
   });
 }
 
+// ---- Phase 2 batch 15d (2026-08) — "Grote Europese combinaties" / big cross-country combos,
+// Alps/Italy cluster (second of four sub-batches covering that 20-item section; 15a Iberia, 15b
+// Balkan and 15c Central Europe are already done). Heavy overlap risk with both the pre-Phase-2
+// Central European Grand Roadtrip 🚗 (rbBuildCentralEuropeRoadtripRoute) and batch 15c's own
+// Austria+Slovenia output — see each route's notes below for the specific collision.
+
+function rbBuildGermanyAustriaItalyRoute() {
+  return rbBuildFlatSeedRoute('Germany + Austria + Italy (10-14 days) 🏔️', [
+    {
+      code: 'DE', name: 'Germany', days: 2, budget: 220, lat: 48.1351, lng: 11.5820,
+      destinations: [
+        { name: 'Munich (Marienplatz, Englischer Garten)', lat: 48.1351, lng: 11.5820 },
+      ],
+      notes: "Munich (2-3 days) as the opener — same content as Bavaria: Munich + Alps (5 days) 🥨's Munich stop (see that route's notes for Deutsches Museum/ticket detail). Budget ~€90-130/day p.p.",
+      transport_to_next: 'Drive south (~90km/1-1.5h) to Garmisch-Partenkirchen/Füssen.',
+    },
+    {
+      code: 'DE', name: 'Germany', days: 2, budget: 220, lat: 47.5722, lng: 10.7017,
+      destinations: [
+        { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0956 },
+        { name: 'Füssen / Hohenschwangau (Neuschwanstein)', lat: 47.5722, lng: 10.7017 },
+      ],
+      notes: "Garmisch-Partenkirchen and Füssen/Hohenschwangau (1-2 days) — same Zugspitze cable car and Neuschwanstein mandatory-timed-tour caveats as Bavaria: Munich + Alps (5 days) 🥨 (see that route's notes: book Neuschwanstein up to 8 weeks ahead, castle open during restoration until ~2029). Budget ~€90-130/day p.p.",
+      transport_to_next: 'Drive to Innsbruck via the Fernpass (~1h15-1h30) — a Schengen border, no checks.',
+    },
+    {
+      code: 'AT', name: 'Austria', days: 2, budget: 220, lat: 47.2692, lng: 11.4041,
+      destinations: [
+        { name: 'Innsbruck (old town, Golden Roof)', lat: 47.2692, lng: 11.4041 },
+      ],
+      notes: "Innsbruck (2 days) — a shorter, transit-oriented stop than the standalone Tyrol (6 days) 🌉 route above (that route builds a full 6-day loop out of Innsbruck via Seefeld/Achensee/Zillertal; this one just covers the old town before continuing south). Budget ~€90-125/day p.p. Austrian 10-day vignette (€12.80/car) required.",
+      transport_to_next: 'Drive over the Brenner Pass (Brennerpass/Passo del Brennero) into Italy — open year-round via both the tunnel and the motorway (no seasonal closure, unlike the high alpine passes elsewhere in this batch), a Schengen border with no checks. A separate Italian autostrada toll applies (per-kilometre) in addition to the Austrian vignette already paid for the Innsbruck leg.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 4, budget: 480, lat: 46.5369, lng: 12.1357,
+      destinations: [
+        { name: 'Bolzano', lat: 46.4983, lng: 11.3548 },
+        { name: 'Val Gardena / Ortisei', lat: 46.5765, lng: 11.6750 },
+        { name: "Cortina d'Ampezzo", lat: 46.5369, lng: 12.1357 },
+      ],
+      notes: "Bolzano as the gateway, then Val Gardena or Cortina d'Ampezzo (3-4 days) — same Dolomites content as Dolomites (6 days) ⛰️ (rbBuildDolomitesDeepRoute) and the Dolomites opening leg of Dolomieten & Noord-Italië 🚡 (rbBuildDolomitesNorthItalyRoute)/Venice + Dolomites (5 days) 🎭 (rbBuildVeniceDolomitesRoute) above — see those routes' notes for lift-season and parking-cap detail (Tre Cime/Lago di Braies book ahead in season). Budget ~€105-140/day p.p. Season: June-September (lifts fully open).",
+      transport_to_next: 'Drive south (~150km/2h) to Lake Garda/Verona, or continue to Venice instead (either/or, see this route\'s notes below).',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 230, lat: 45.4384, lng: 10.9916,
+      destinations: [
+        { name: 'Lake Garda / Sirmione', lat: 45.4933, lng: 10.6089 },
+        { name: 'Verona (Arena, old town)', lat: 45.4384, lng: 10.9916 },
+      ],
+      notes: "Lake Garda/Verona chosen here as the concrete closing stop rather than Venice — same Sirmione/Desenzano/Verona content as the Lake Garda/Verona legs of Northern Italy (6 days) 🚤 (rbBuildNorthernItalyLakesRoute) and Northern Italy Roadtrip (9 days) 🚙 (rbBuildNorthernItalyRoadtripRoute) above — see those routes' notes for the Milan Area C/Arena-ticket caveats. Deliberately not Venice: Venice is already the closing stop of three other Dolomites-adjacent routes in this repo (Dolomieten & Noord-Italië 🚡, Venice + Dolomites (5 days) 🎭, Northern Italy Roadtrip (9 days) 🚙) — picking Lake Garda/Verona instead avoids piling a fourth near-identical Dolomites→Venice tail onto the list. Budget ~€105-140/day p.p., Venice would run noticeably higher per those other routes' own price checks.",
+      transport_to_next: 'End of this route — drive back to Munich or fly home from Verona/Venice.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Own car throughout — Munich south to Garmisch/Füssen, over the Fernpass to Innsbruck, over the Brenner Pass into the Dolomites, then Lake Garda/Verona to close.',
+    climate_summary: 'June-September (Dolomites lifts fully open in this window).',
+    description: "Munich, Garmisch-Partenkirchen and Füssen/Neuschwanstein, Innsbruck, the Dolomites (Val Gardena/Cortina) via the Brenner Pass, and Lake Garda/Verona.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15d (Grand European combinations — Alps/Italy cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️⚠️ Real overlap, explicitly flagged: this route's Alsace-free path (Munich→Garmisch/Füssen→Innsbruck→Dolomites) closely tracks the transition between the Central European Grand Roadtrip 🚗 (rbBuildCentralEuropeRoadtripRoute)'s 'Alpine Countries' and 'Dolomites & Northern Italy' regions — but that flagship 45-70 day/14-country expedition additionally routes through France/Switzerland/Liechtenstein first and covers the fuller Salzburg/Berchtesgaden/Salzkammergut/Grossglockner side of Austria (not just Innsbruck), then continues from the Dolomites on to Milan/Turin/the Cinque Terre/Tuscany/San Marino/Venice — this standalone route is a tight DE-AT-IT-only 12-day trip with none of that extra ground, closer in spirit to Isle of Man (3-4 days) 🏝️ vs England, Wales & Isle of Man 🎩's realistic-trip-vs-expedition-leg relationship. Also reuses content from Bavaria: Munich + Alps (5 days) 🥨 (Munich/Garmisch/Füssen), Tyrol (6 days) 🌉 (Innsbruck, though this route's Innsbruck stop is much shorter), Dolomites (6 days) ⛰️/Dolomieten & Noord-Italië 🚡/Venice + Dolomites (5 days) 🎭 (the Dolomites leg) and Northern Italy (6 days) 🚤/Northern Italy Roadtrip (9 days) 🚙 (the Lake Garda/Verona closer) — all flagged in ROUTE_SIMILARITY_REVIEW.md. Not yet checked against Route Builder-level price research beyond the vignette/toll checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildGermanyAustriaSloveniaRoute() {
+  return rbBuildFlatSeedRoute('Germany + Austria + Slovenia (10-14 days) 🥨', [
+    {
+      code: 'DE', name: 'Germany', days: 2, budget: 200, lat: 48.1351, lng: 11.5820,
+      destinations: [
+        { name: 'Munich (Marienplatz, Englischer Garten)', lat: 48.1351, lng: 11.5820 },
+      ],
+      notes: "Munich (2-3 days) as the opener — same content as Bavaria: Munich + Alps (5 days) 🥨's Munich stop. Budget ~€90-115/day p.p.",
+      transport_to_next: 'Drive to Salzburg, Austria (~145km/1h30) — a Schengen border, no checks.',
+    },
+    {
+      code: 'AT', name: 'Austria', days: 2, budget: 220, lat: 47.8095, lng: 13.0550,
+      destinations: [
+        { name: 'Salzburg (old town, Hohensalzburg Fortress)', lat: 47.8095, lng: 13.0550 },
+      ],
+      notes: "Salzburg (2 days) — same old-town content as Salzburg + Surroundings (4 days) 🎻 above (see that route's notes). Budget ~€95-130/day p.p. Austrian 10-day vignette (€12.80/car) required.",
+      transport_to_next: 'Drive south to Klagenfurt/Wörthersee (~200km/2h15).',
+    },
+    {
+      code: 'AT', name: 'Austria', days: 2, budget: 220, lat: 46.6249, lng: 14.3050,
+      destinations: [
+        { name: 'Klagenfurt', lat: 46.6249, lng: 14.3050 },
+        { name: 'Wörthersee', lat: 46.6167, lng: 14.1667 },
+      ],
+      notes: "Klagenfurt/Wörthersee (Carinthia, 2 days) — same content as the Austria leg of Austria + Slovenia (9 days) 🏝️ (rbBuildAustriaSloveniaRoute) and this same sub-batch's sibling Austria + Slovenia via Grossglockner (7-10 days) 🏔️ (rbBuildAustriaSloveniaGrossglocknerRoute, batch 15c). Budget ~€95-130/day p.p.",
+      transport_to_next: 'Drive to Bled, Slovenia — only ~79km/50min from Klagenfurt, genuinely no detour.',
+    },
+    {
+      code: 'SI', name: 'Slovenia', days: 4, budget: 440, lat: 46.3683, lng: 14.1146,
+      destinations: [
+        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+        { name: 'Bohinj', lat: 46.2833, lng: 13.9333 },
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
+      ],
+      notes: "Ljubljana, Bled and Bohinj (3-4 days) — same Julian Alps content as Austria + Slovenia (9 days) 🏝️ and Austria + Slovenia via Grossglockner (7-10 days) 🏔️ above. Budget ~€90-130/day p.p. — Bled itself is a price outlier within that range. Season: June-September. Slovenia does not use the Austrian vignette — a separate e-vinjeta (toll sticker) is needed once driving Slovenian motorways.",
+      transport_to_next: 'Drive west to the Soča Valley via Kranjska Gora/the Vršič Pass, or south to Piran on the coast (either/or, see this route\'s notes below).',
+    },
+    {
+      code: 'SI', name: 'Slovenia', days: 2, budget: 220, lat: 46.3297, lng: 13.5522,
+      destinations: [
+        { name: 'Bovec / Soča Valley', lat: 46.3297, lng: 13.5522 },
+        { name: 'Piran (coastal alternative)', lat: 45.5285, lng: 13.5686 },
+      ],
+      notes: "Soča Valley or Piran (2 days) — the source frames this leg as an add-on only worth doing at the 14-day end of this route's range, dropped entirely for a tighter 10-day version. Soča Valley overlaps Slovenia Alpine Loop (6 days) 🏔️/Julian Alps + Soča Valley (6 days) 🚣 above (rafting/canyoning, the Vršič Pass traffic regime); Piran overlaps the coastal leg of Slovenia + Italy (9 days) 🍝/Slovenia Roadtrip (9 days) 🗺️ above. Budget ~€90-130/day p.p.",
+      transport_to_next: 'End of this route — fly home from Ljubljana.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Own car throughout — Munich to Salzburg to Klagenfurt/Wörthersee, a short hop to Bled, then west to the Soča Valley or south to Piran.',
+    climate_summary: 'June-September.',
+    description: "Munich, Salzburg, Klagenfurt/Wörthersee, Ljubljana/Bled/Bohinj, and (at 14 days) the Soča Valley or the Slovenian coast at Piran.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15d (Grand European combinations — Alps/Italy cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️⚠️ Real overlap, explicitly flagged: this route extends the exact same Austria+Slovenia core as Austria + Slovenia (9 days) 🏝️ (rbBuildAustriaSloveniaRoute, Phase 2 batch 3) and this same sub-batch's own sibling Austria + Slovenia via Grossglockner (7-10 days) 🏔️ (rbBuildAustriaSloveniaGrossglocknerRoute, batch 15c) — same Salzburg/Klagenfurt/Wörthersee→Bled/Bohinj/Ljubljana backbone, here with Munich prepended and a Soča Valley/Piran tail appended. Per this project's collision-resolution policy (never merge/delete — Youri's 2026-08-21 instruction), kept as a distinct route with its own function name. Also reuses content from Bavaria: Munich + Alps (5 days) 🥨 (Munich), Salzburg + Surroundings (4 days) 🎻 (Salzburg), and Slovenia Alpine Loop (6 days) 🏔️/Julian Alps + Soča Valley (6 days) 🚣/Slovenia + Italy (9 days) 🍝 (the Soča/Piran tail) — all flagged in ROUTE_SIMILARITY_REVIEW.md. Not yet checked against Route Builder-level price research beyond the vignette checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildAustriaSloveniaCroatiaRoute() {
+  return rbBuildFlatSeedRoute('Austria + Slovenia + Croatia (10-14 days) 🚙', [
+    {
+      code: 'AT', name: 'Austria', days: 3, budget: 330, lat: 46.6249, lng: 14.3050,
+      destinations: [
+        { name: 'Klagenfurt', lat: 46.6249, lng: 14.3050 },
+        { name: 'Wörthersee', lat: 46.6167, lng: 14.1667 },
+      ],
+      notes: "Klagenfurt/Wörthersee (2-3 days) — same Carinthia content as Austria + Slovenia (9 days) 🏝️ and this batch's other Austria+Slovenia routes above. Budget ~€95-130/day p.p.",
+      transport_to_next: "Drive to Ljubljana/Bled via the Karawankentunnel or the Loibl Pass (Loiblpass/Ljubelj) — both open year-round (the tunnel unaffected by weather; the pass itself can need winter tyres/chains in snow, but is not seasonally closed).",
+    },
+    {
+      code: 'SI', name: 'Slovenia', days: 3, budget: 330, lat: 46.3683, lng: 14.1146,
+      destinations: [
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+      ],
+      notes: "Ljubljana and Bled (3 days) — same content as the Slovenia leg of Slovenia + Northern Croatia (9 days) 🌲 (rbBuildSloveniaNorthernCroatiaRoute) above. Budget ~€90-130/day p.p. Slovenia needs its own e-vinjeta, separate from the Austrian vignette.",
+      transport_to_next: 'Drive to Zagreb, Croatia — a Schengen-internal border with zero checks or delay since Croatia joined Schengen on 1 January 2023.',
+    },
+    {
+      code: 'HR', name: 'Croatia', days: 2, budget: 200, lat: 45.8150, lng: 15.9819,
+      destinations: [
+        { name: 'Zagreb', lat: 45.8150, lng: 15.9819 },
+      ],
+      notes: "Zagreb (1-2 days) — same content as the Zagreb leg of Slovenia + Northern Croatia (9 days) 🌲 and Plitvice + Zagreb (6 days) 🏞️ (rbBuildPlitviceZagrebRoute) above. Budget ~€80-120/day p.p.",
+      transport_to_next: 'Drive south to Plitvice Lakes National Park (~130km/1h45).',
+    },
+    {
+      code: 'HR', name: 'Croatia', days: 2, budget: 240, lat: 44.8654, lng: 15.5820,
+      destinations: [
+        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820 },
+      ],
+      notes: "Plitvice (2 days) — same content and hourly-capacity-cap caveat as Plitvice + Zagreb (6 days) 🏞️ above (2026 enforces a strict cap, max 300 people per entrance — book ahead). Budget higher here than Zagreb because of the park entry fee (peak season €40 p.p.).",
+      transport_to_next: 'Drive to Zadar on the coast (~130km/1h45).',
+    },
+    {
+      code: 'HR', name: 'Croatia', days: 2, budget: 260, lat: 44.1194, lng: 15.2314,
+      destinations: [
+        { name: 'Zadar', lat: 44.1194, lng: 15.2314 },
+      ],
+      notes: "Zadar chosen here as the concrete '14-day-only' coastal add-on rather than Istria — same content as the Zadar leg of Croatia North to South (9 days) 🧭/Croatia Coastal Roadtrip (9 days) 🛣️ above. Zadar deliberately picked over Istria specifically to avoid duplicating this same sub-batch's sibling Italy + Slovenia + Croatia (10-14 days) route below, which already covers Istria/Rovinj-Pula in depth. Budget ~€80-150/day p.p. (coast pricier than inland). Season: May-June/September (June-September if combining with the coast/Alps as here).",
+      transport_to_next: 'End of this route — fly home from Zadar or Zagreb.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Own car throughout — Klagenfurt/Wörthersee to Ljubljana/Bled via the Karawankentunnel or Loibl Pass, then south to Zagreb, Plitvice and the coast at Zadar.',
+    climate_summary: 'May-June/September for the inland legs; June-September if extending to the coast as here.',
+    description: "Austria's Klagenfurt/Wörthersee, Slovenia's Ljubljana and Bled via the Karawankentunnel/Loibl Pass, Croatia's Zagreb and Plitvice Lakes, and (at 14 days) the coast at Zadar.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15d (Grand European combinations — Alps/Italy cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️ Real overlap, explicitly flagged: this route's Austria+Slovenia opening reuses the same Klagenfurt/Wörthersee→Bled/Ljubljana content as Austria + Slovenia (9 days) 🏝️ and this batch's other Austria+Slovenia routes, and its Slovenia→Croatia continuation (Ljubljana/Bled→Zagreb/Plitvice) is essentially Slovenia + Northern Croatia (9 days) 🌲 (rbBuildSloveniaNorthernCroatiaRoute) with an Austria leg prepended and a Zadar coastal tail appended. Also reuses Plitvice + Zagreb (6 days) 🏞️'s content directly. Deliberately picked Zadar over Istria for the coastal add-on to avoid duplicating this sub-batch's own Italy + Slovenia + Croatia (10-14 days) route (see that route's notes) — a same-batch design choice, not a separate collision. Kept as a distinct route per this project's collision-resolution policy. All cross-batch overlaps flagged in ROUTE_SIMILARITY_REVIEW.md. Not yet checked against Route Builder-level price research beyond the vignette/capacity-cap checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildItalySloveniaCroatiaRoute() {
+  return rbBuildFlatSeedRoute('Italy + Slovenia + Croatia (10-14 days) ⛵', [
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 320, lat: 45.4408, lng: 12.3155,
+      destinations: [
+        { name: 'Piazza San Marco', lat: 45.4408, lng: 12.3155 },
+        { name: 'Rialto Bridge', lat: 45.4380, lng: 12.3358 },
+      ],
+      notes: "Venice (2 days) as the opener — same San Marco/Rialto content and day-tripper-tax caveat as Venice + Dolomites (5 days) 🎭 above (the 2026 tax calendar runs 3 April-26 July, waived by an overnight stay in the Venice municipality, so not applicable here). Budget ~€100-120/day p.p. blended across this whole route (Venice itself runs pricier).",
+      transport_to_next: 'Drive via Trieste to Ljubljana, Slovenia — Schengen-Schengen throughout, no border control or lost time.',
+    },
+    {
+      code: 'SI', name: 'Slovenia', days: 2, budget: 200, lat: 46.0569, lng: 14.5058,
+      destinations: [
+        { name: 'Trieste (Italy, waypoint)', lat: 45.6495, lng: 13.7768 },
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
+      ],
+      notes: "Trieste as a waypoint, then Ljubljana (2 days) — same core content as Slovenia + Italy (9 days) 🍝 (rbBuildSloveniaItalyRoute) above, run in reverse (that route goes Slovenia→Trieste→Venice; this one goes Venice→Trieste→Slovenia).",
+      transport_to_next: 'Drive to Bled (~55km/1h).',
+    },
+    {
+      code: 'SI', name: 'Slovenia', days: 2, budget: 220, lat: 46.3683, lng: 14.1146,
+      destinations: [
+        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+      ],
+      notes: "Bled (2 days) — same content as the Bled legs of Austria + Slovenia (9 days) 🏝️ and this batch's other Slovenia routes above.",
+      transport_to_next: 'Drive south to Istria, Croatia — a Schengen-internal border with zero checks or delay since Croatia joined Schengen on 1 January 2023.',
+    },
+    {
+      code: 'HR', name: 'Croatia', days: 3, budget: 390, lat: 45.0811, lng: 13.6387,
+      destinations: [
+        { name: 'Rovinj', lat: 45.0811, lng: 13.6387 },
+        { name: 'Pula (Arena)', lat: 44.8737, lng: 13.8467 },
+      ],
+      notes: "Istria (Rovinj-Pula, 3 days) — same content as Istria (6 days) 🍇 (rbBuildIstriaRoute) above (Rovinj/Pula, the Rovinj-Pula bus/drive at ~1h/€5). Budget ~€90-150/day p.p. (Rovinj at the top end).",
+      transport_to_next: 'Drive inland to Plitvice Lakes National Park.',
+    },
+    {
+      code: 'HR', name: 'Croatia', days: 2, budget: 240, lat: 44.8654, lng: 15.5820,
+      destinations: [
+        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820 },
+      ],
+      notes: "Plitvice (2 days) — same content and 2026 hourly-capacity-cap caveat as Plitvice + Zagreb (6 days) 🏞️ (rbBuildPlitviceZagrebRoute) and this sub-batch's sibling Austria + Slovenia + Croatia (10-14 days) 🚙 above.",
+      transport_to_next: 'Drive to Zagreb (~130km/1h45) for departure.',
+    },
+    {
+      code: 'HR', name: 'Croatia', days: 1, budget: 90, lat: 45.8150, lng: 15.9819,
+      destinations: [
+        { name: 'Zagreb', lat: 45.8150, lng: 15.9819 },
+      ],
+      notes: "Zagreb (1 day), the trip's departure point — same content as the Zagreb legs of Plitvice + Zagreb (6 days) 🏞️ and this batch's sibling Austria + Slovenia + Croatia (10-14 days) 🚙 above.",
+      transport_to_next: 'End of this route — fly home from Zagreb.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Own car throughout — Venice via Trieste into Slovenia (Ljubljana, Bled), south into Istria, inland to Plitvice, ending in Zagreb.',
+    climate_summary: 'May-June or September.',
+    description: "Venice, Trieste and Ljubljana, Bled, Istria (Rovinj-Pula), Plitvice Lakes National Park, and Zagreb.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15d (Grand European combinations — Alps/Italy cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Source note: Croatia's landmine warning around Plitvice, historically a standard caveat in older travel guidance, has lapsed as of March 2026 (the country was officially declared mine-free) — not repeated as a live warning here. ⚠️ Real overlap, explicitly flagged: shares its Venice/Trieste/Ljubljana core with Slovenia + Italy (9 days) 🍝 (rbBuildSloveniaItalyRoute, run in reverse), its Istria content with Istria (6 days) 🍇 (rbBuildIstriaRoute), and its Plitvice/Zagreb content with Plitvice + Zagreb (6 days) 🏞️ (rbBuildPlitviceZagrebRoute) — all three pre-existing standalone routes. Also overlaps this same sub-batch's sibling Austria + Slovenia + Croatia (10-14 days) 🚙 on the Plitvice/Zagreb tail (that route deliberately picked Zadar over Istria as its own coastal add-on specifically to keep the two routes distinct — see that route's notes). All cross-batch overlaps flagged in ROUTE_SIMILARITY_REVIEW.md. Not yet checked against Route Builder-level price research beyond the tax/capacity-cap checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildFranceSwitzerlandItalyRoute() {
+  return rbBuildFlatSeedRoute('France + Switzerland + Italy (10-14 days) 🗻', [
+    {
+      code: 'FR', name: 'France', days: 3, budget: 375, lat: 45.9237, lng: 6.8694,
+      destinations: [
+        { name: 'Chamonix (Mont Blanc)', lat: 45.9237, lng: 6.8694 },
+        { name: 'Aiguille du Midi cable car', lat: 45.8786, lng: 6.8873 },
+      ],
+      notes: "Chamonix/Mont Blanc (3 days) — the first standalone Chamonix content built in this repo: French Alps: Écrins National Park (6 days) 🐐 above explicitly chose Écrins over Chamonix specifically to avoid overlap with the Switzerland-Alps routes, so this is a genuine gap being filled, not a duplicate. Budget ~€100-130/day p.p. — the Aiguille du Midi cable car (~€75-80 p.p. return) is a real optional-splurge cost, not folded into the daily rate. Season: June-September.",
+      transport_to_next: 'Drive to Geneva, Switzerland (~90km/1h15) — a Schengen border, no checks, but Switzerland is outside the EU customs union (occasional spot checks).',
+    },
+    {
+      code: 'CH', name: 'Switzerland', days: 1, budget: 150, lat: 46.2044, lng: 6.1432,
+      destinations: [
+        { name: 'Geneva (old town, lake)', lat: 46.2044, lng: 6.1432 },
+      ],
+      notes: "Geneva (1 day) as a short waypoint. Budget ~€120-150/day p.p. — Switzerland pulls the trip's blended average up noticeably (see this route's overall budget note below). Currency note: Switzerland uses CHF, not the euro.",
+      transport_to_next: 'Drive to Täsch/Zermatt (~180km/2h30).',
+    },
+    {
+      code: 'CH', name: 'Switzerland', days: 3, budget: 450, lat: 46.0207, lng: 7.7491,
+      destinations: [
+        { name: 'Täsch (parking)', lat: 46.0489, lng: 7.7710 },
+        { name: 'Zermatt (car-free)', lat: 46.0207, lng: 7.7491 },
+        { name: 'Matterhorn / Mattertal', lat: 45.9763, lng: 7.6586 },
+      ],
+      notes: "Zermatt/Matterhorn (3 days) — same car-free-Zermatt/Täsch-parking content as Swiss Alps: Zermatt / Matterhorn (6 days) 🗻 (rbBuildZermattMatterhornRoute) above, compressed here to fit this longer multi-country itinerary (see that route's notes for the Gornergrat/Matterhorn Glacier Paradise ticket caveats). Budget ~€130-170/day p.p. — one of the priciest legs in this batch.",
+      transport_to_next: 'Drive south over the Simplon Pass (open year-round, no seasonal closure) into Italy — a Schengen border, no checks, but a passport/ID should still be carried.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 3, budget: 330, lat: 45.9860, lng: 9.2578,
+      destinations: [
+        { name: 'Lake Como / Bellagio', lat: 45.9860, lng: 9.2578 },
+        { name: 'Varenna', lat: 46.0139, lng: 9.2856 },
+      ],
+      notes: "Lake Como (3 days, ferry-hopping Bellagio/Varenna) — same content as the Lake Como leg of Northern Italy (6 days) 🚤 (rbBuildNorthernItalyLakesRoute)/Northern Italy Roadtrip (9 days) 🚙 (rbBuildNorthernItalyRoadtripRoute) above. Noticeably cheaper than the Swiss legs, ~€90-115/day p.p. Italy uses toll autostrade, not a vignette — budget an extra ~€20-40 in tolls; check that a rental car's insurance covers Italy if it isn't your own vehicle.",
+      transport_to_next: 'Drive to Milan (~75km/1h).',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 2, budget: 250, lat: 45.4642, lng: 9.1900,
+      destinations: [
+        { name: 'Milan (Duomo, Galleria)', lat: 45.4642, lng: 9.1900 },
+      ],
+      notes: "Milan (1-2 days) as the trip's departure point — same content as the Milan legs of Northern Italy (6 days) 🚤/Northern Italy Roadtrip (9 days) 🚙 and Dolomieten & Noord-Italië 🚡 (rbBuildDolomitesNorthItalyRoute) above. Budget ~€105-140/day p.p.",
+      transport_to_next: 'End of this route — direct return flight Milan to Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Own car throughout — Chamonix, over to Geneva, on to Zermatt (park at Täsch, car-free into the resort), over the Simplon Pass to Lake Como, ending in Milan.',
+    climate_summary: 'June-September — mountain passes/cable cars are only fully open in this window.',
+    description: "Chamonix and Mont Blanc, Geneva, Zermatt and the Matterhorn, Lake Como, and Milan.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15d (Grand European combinations — Alps/Italy cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Budget note: Switzerland's two legs (Geneva, Zermatt) pull the trip's blended average sharply above the France/Italy legs' own rates, matching the source's own '~€120-150/day, Switzerland drives it up hard' framing. ⚠️ Real overlap, explicitly flagged: this route's Zermatt leg directly reuses Swiss Alps: Zermatt / Matterhorn (6 days) 🗻 (rbBuildZermattMatterhornRoute)'s content, and its Lake Como leg reuses Northern Italy (6 days) 🚤/Northern Italy Roadtrip (9 days) 🚙's content. Also checked against Switzerland + Northern Italy (9 days) 🚞 (rbBuildSwitzerlandNorthernItalyRoute): confirmed genuinely different — that route reaches Italy via the Bernina Express from Graubünden/St. Moritz into Valtellina, a completely different Swiss region/pass and a different stretch of northern Italy from this route's Geneva→Zermatt→Simplon Pass→Lake Como corridor, despite both ending up in Lake Como territory. Also checked against Switzerland Alpine Roadtrip (9 days) 🛣️ (rbBuildSwitzerlandAlpineRoadtripRoute), which also visits Zermatt (compressed) as one stop among six passes/regions — that route never reaches France or Italy's lakes, so the overlap is limited to the Zermatt stop alone. No pre-existing standalone Chamonix route exists in this repo (French Alps: Écrins National Park (6 days) 🐐 explicitly avoided Chamonix, see that route's own notes) — this is a genuine content gap being filled here, not a duplicate. All cross-batch overlaps flagged in ROUTE_SIMILARITY_REVIEW.md. Not yet checked against Route Builder-level price research beyond the toll/insurance checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildAlpineRoadtripFiveCountriesRoute() {
+  return rbBuildFlatSeedRoute('Alpine Roadtrip (14 days) 🏕️', [
+    {
+      code: 'FR', name: 'France', days: 3, budget: 375, lat: 45.9237, lng: 6.8694,
+      destinations: [
+        { name: 'Chamonix (Mont Blanc)', lat: 45.9237, lng: 6.8694 },
+      ],
+      notes: "Chamonix (2-3 days) — same content as this sub-batch's sibling France + Switzerland + Italy (10-14 days) 🗻 route above (see that route's notes on Chamonix being a genuine content gap, not a duplicate of the Écrins-focused French Alps route). Budget ~€100-130/day p.p.",
+      transport_to_next: 'Drive to Zermatt or Interlaken, Switzerland (~180-250km depending on which — both routes cross into Switzerland via Martigny).',
+    },
+    {
+      code: 'CH', name: 'Switzerland', days: 3, budget: 450, lat: 46.0207, lng: 7.7491,
+      destinations: [
+        { name: 'Zermatt (car-free, Matterhorn)', lat: 46.0207, lng: 7.7491 },
+        { name: 'Interlaken (alternative base)', lat: 46.6863, lng: 7.8632 },
+      ],
+      notes: "Zermatt or Interlaken (3 days, either/or — same pattern as the Pilatus/Rigi either-or choice in Zurich + Lucerne + Surroundings (5 days) ⛴️ above) — same content as Swiss Alps: Zermatt / Matterhorn (6 days) 🗻 (rbBuildZermattMatterhornRoute) or Interlaken + Lauterbrunnen + Grindelwald (6 days) 🪂 (rbBuildInterlakenLauterbrunnenGrindelwaldRoute), whichever is picked. Budget ~€120-160/day p.p. — one of Switzerland's priciest legs either way.",
+      transport_to_next: 'Drive to Innsbruck, Austria via the Arlberg Pass (Arlbergpass, ~250km/3h from Zermatt or ~200km/2h30 from Interlaken) — the pass has a year-round road tunnel alternative (Arlbergtunnel) so this crossing works outside the pure summer window too, unlike several other passes in this batch.',
+    },
+    {
+      code: 'AT', name: 'Austria', days: 2, budget: 240, lat: 47.2692, lng: 11.4041,
+      destinations: [
+        { name: 'Innsbruck (old town, Golden Roof)', lat: 47.2692, lng: 11.4041 },
+      ],
+      notes: "Innsbruck (2 days) — same shorter, transit-oriented Innsbruck stop as this sub-batch's sibling Germany + Austria + Italy (10-14 days) 🏔️ route above, reached here via the Arlberg Pass instead of via Germany/the Fernpass. Budget ~€90-125/day p.p. Austrian 10-day vignette (€12.80/car) required.",
+      transport_to_next: 'Drive over the Brenner Pass into Italy (open year-round via the tunnel and motorway) toward the Dolomites/Cortina.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 3, budget: 360, lat: 46.5369, lng: 12.1357,
+      destinations: [
+        { name: "Cortina d'Ampezzo", lat: 46.5369, lng: 12.1357 },
+        { name: 'Tre Cime di Lavaredo', lat: 46.6198, lng: 12.3032 },
+      ],
+      notes: "Dolomites/Cortina (3 days) — same content as Dolomites (6 days) ⛰️ (rbBuildDolomitesDeepRoute)'s Cortina base and this sub-batch's sibling Germany + Austria + Italy (10-14 days) 🏔️ route's Dolomites leg above. Budget ~€105-140/day p.p. Season: June-September — a hard boundary for lift/trail access.",
+      transport_to_next: 'Drive east to the Julian Alps, Slovenia (~200km/2h30-3h via Tarvisio) — a Schengen border, no checks.',
+    },
+    {
+      code: 'SI', name: 'Slovenia', days: 3, budget: 330, lat: 46.4858, lng: 13.7861,
+      destinations: [
+        { name: 'Kranjska Gora', lat: 46.4858, lng: 13.7861 },
+        { name: 'Vršič Pass', lat: 46.4331, lng: 13.7478 },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+      ],
+      notes: "The Julian Alps and Bled (2-3 days), closing the trip — same content as Julian Alps + Soča Valley (6 days) 🚣 (rbBuildJulianAlpsSocaValleyRoute)/Slovenia Alpine Loop (6 days) 🏔️ above (Kranjska Gora, the Vršič Pass 2026 traffic regime, Bled). Budget ~€110-130/day p.p. Season: June-September only — the Vršič Pass is closed in winter for snow/avalanche risk.",
+      transport_to_next: 'End of this route — fly home from Ljubljana.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Own car throughout, one continuous corridor with no backtracking — Chamonix, over to Zermatt/Interlaken, over the Arlberg Pass to Innsbruck, over the Brenner Pass to the Dolomites, then east to the Julian Alps/Bled.',
+    climate_summary: 'Strictly late June-September — the high-altitude passes, cable cars and trail networks this route depends on are closed or inaccessible outside that window.',
+    description: "A pure five-country mountain corridor: Chamonix (France), Zermatt/Interlaken (Switzerland) via the Arlberg Pass to Innsbruck (Austria), the Dolomites/Cortina (Italy), and the Julian Alps/Bled (Slovenia).",
+    notes: "Built (2026-08) as part of Phase 2 batch 15d (Grand European combinations — Alps/Italy cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately a different scope from this same sub-batch's France + Switzerland + Italy (10-14 days) 🗻 route above per the source's own framing — this one is a pure mountain-country corridor with no Milan/Geneva/lakes detour, extended instead into Austria and Slovenia for a full five-country Alpine sweep. ⚠️⚠️ Substantial internal overlap with three of this same sub-batch's own siblings, called out explicitly here rather than logged as separate ROUTE_SIMILARITY_REVIEW.md entries (same-batch internal overlap, not a cross-batch collision, per this project's established convention): shares its Chamonix content with France + Switzerland + Italy (10-14 days) 🗻 above, its Innsbruck content with Germany + Austria + Italy (10-14 days) 🏔️ above (reached via the Arlberg Pass here instead of via Germany/the Fernpass there), its Dolomites/Cortina content with that same route's Dolomites leg, and its Julian Alps/Bled content with Germany + Austria + Slovenia (10-14 days) 🥨 above's Slovenia leg. Also reuses pre-existing content from Swiss Alps: Zermatt / Matterhorn (6 days) 🗻/Interlaken + Lauterbrunnen + Grindelwald (6 days) 🪂 (the Switzerland leg, either/or), Dolomites (6 days) ⛰️ (the Dolomites leg) and Julian Alps + Soča Valley (6 days) 🚣/Slovenia Alpine Loop (6 days) 🏔️ (the Slovenia leg) — all pre-existing cross-batch overlaps flagged in ROUTE_SIMILARITY_REVIEW.md; only the same-batch internal overlap is kept here in this route's own notes instead. Also checked against Switzerland Alpine Roadtrip (9 days) 🛣️ (rbBuildSwitzerlandAlpineRoadtripRoute) and Austria Alpine Roadtrip (9 days) 🗺️ (rbBuildAustriaAlpineRoadtripRoute): confirmed genuinely different in scope — both are single-country pass-hopping loops that stay within their own country, while this route is a cross-border five-country single corridor with no return loop. Not yet checked against Route Builder-level price research beyond the vignette/pass checks folded in above — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaComboAlpsRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_COMBO_ALPS)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_COMBO_ALPS, '1');
+
+  rbRoutes.push(
+    rbBuildGermanyAustriaItalyRoute(),
+    rbBuildGermanyAustriaSloveniaRoute(),
+    rbBuildAustriaSloveniaCroatiaRoute(),
+    rbBuildItalySloveniaCroatiaRoute(),
+    rbBuildFranceSwitzerlandItalyRoute(),
+    rbBuildAlpineRoadtripFiveCountriesRoute(),
+  );
+  rbSave();
+}
+
 function rbSeedEuropaComboCentralRoutes() {
   if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_COMBO_CENTRAL)) return;
   localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_COMBO_CENTRAL, '1');
