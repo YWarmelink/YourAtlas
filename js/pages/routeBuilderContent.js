@@ -19507,3 +19507,222 @@ function rbSeedEuropaComboBalkanRoutes() {
   );
   rbSave();
 }
+
+// ---- Phase 2 batch 15f (2026-08) — "Grote Europese combinaties" / big cross-country combos,
+// Grand/South cluster (fourth and FINAL of four sub-batches covering that 20-item section; 15a
+// Iberia, 15b Balkan, 15c Central Europe and 15d Alps/Italy are already done). This is also the
+// very last sub-batch of the entire Phase 2 workstream (all 319 EUROPA_TRIP_IDEAS.md items).
+
+function rbBuildBalkanRoadtripSerbiaNMacedoniaAlbaniaKosovoRoute() {
+  return rbBuildFlatSeedRoute('Balkan Roadtrip: Serbia + North Macedonia + Albania + Kosovo (14 days) 🔄', [
+    {
+      code: 'RS', name: 'Serbia', days: 3, budget: 105, lat: 44.8225, lng: 20.4506,
+      destinations: [
+        { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 },
+      ],
+      notes: "Belgrade (2-3 days) as the opener. Budget ~€35/day. This is a deliberately different, more southeastern country set than Grand Balkan Roadtrip (14 days) 🏔️ (rbBuildGrandBalkanRoadtripRoute, built earlier in batch 15b) — Serbia/North Macedonia/Albania/Kosovo here, no Slovenia/Croatia/Bosnia/Montenegro, so no overlap with that route.",
+      transport_to_next: 'Overland (bus/rental car) south towards Skopje — a real non-Schengen/non-EU border crossing with an actual passport check, unlike the Schengen-internal hops in most of this batch\'s other combo routes.',
+    },
+    {
+      code: 'MK', name: 'North Macedonia', days: 2, budget: 80, lat: 41.9973, lng: 21.4280,
+      destinations: [
+        { name: 'Skopje', lat: 41.9973, lng: 21.4280 },
+      ],
+      notes: "Skopje (2 days). Budget ~€40/day. Web check (2026-08): as elsewhere in the country, avoid photographing military objects — fines or prison sentences of up to 3 years apply.",
+      transport_to_next: 'Overland to Ohrid.',
+    },
+    {
+      code: 'MK', name: 'North Macedonia', days: 3, budget: 120, lat: 41.1231, lng: 20.8016,
+      destinations: [
+        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 },
+        { name: 'Sveti Naum', lat: 40.9086, lng: 20.7222 },
+      ],
+      notes: "Ohrid (2-3 days), including the Sveti Naum monastery and a swim in Lake Ohrid. Budget ~€40/day.",
+      transport_to_next: "Cross-border bus/rental car to Tirana via the Kapshticë/Qafë Thanë crossing — a much more direct route into Albania than backtracking via Skopje.",
+    },
+    {
+      code: 'AL', name: 'Albania', days: 3, budget: 90, lat: 41.3275, lng: 19.8187,
+      destinations: [
+        { name: 'Tirana', lat: 41.3275, lng: 19.8187 },
+        { name: 'Berat', lat: 40.7058, lng: 19.9522 },
+      ],
+      notes: "Tirana and Berat's UNESCO-listed old town (3 days). Budget ~€30/day.",
+      transport_to_next: 'Overland to Prizren, Kosovo — a straightforward Albania-Kosovo border crossing.',
+    },
+    {
+      code: 'XK', name: 'Kosovo', days: 2, budget: 60, lat: 42.2139, lng: 20.7397,
+      destinations: [
+        { name: 'Prizren', lat: 42.2139, lng: 20.7397 },
+      ],
+      notes: "Prizren (1-2 days). Budget ~€30/day. ⚠️⚠️ Web check (2026-08): the Serbia-Kosovo border crossing on the way back to Belgrade can give real administrative friction — Serbia does not recognize Kosovo's borders, and travelers who entered Kosovo from a country other than Serbia (as this route does, via Albania) have occasionally been challenged or refused entry into Serbia afterward, since Serbian officials can treat that as having entered Serbian territory through an unrecognized checkpoint. This is the same underlying issue already flagged in batch 8's Kosovo-Serbia border-sequence warning (see the standalone Kosovo route's notes) — check the current situation and carry documentation of the full itinerary before attempting this crossing; consider verifying with the Serbian embassy/consulate if in doubt. Travel advisory: overwhelmingly green across this route; northern Kosovo (Mitrovica area) is orange since the August 2026 KFOR tensions, but the Pristina/Prizren corridor this route actually uses is not affected.",
+      transport_to_next: 'Overland back to Belgrade (the border crossing flagged above) to close the loop.',
+    },
+    {
+      code: 'RS', name: 'Serbia', days: 1, budget: 35, lat: 44.8225, lng: 20.4506,
+      destinations: [
+        { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 },
+      ],
+      notes: "A short return stop in Belgrade — buffer day for the long overland leg back from Prizren (~350km) and the border-crossing friction flagged above, before flying home. Budget ~€35/day.",
+      transport_to_next: 'End of this route — fly home from Belgrade.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Fly into and out of Belgrade, bus/rental car overland for the full loop — no Schengen/EU countries anywhere on this route, so expect real passport checks at every border.',
+    climate_summary: 'May-June or September; August is too hot/busy on the Albanian coast side-trips this route doesn\'t actually take, but still the season to avoid overall.',
+    description: "A round-trip loop from Belgrade through Skopje and Ohrid in North Macedonia, Tirana and Berat in Albania, and Prizren in Kosovo, back to Belgrade — the cheapest regional roadtrip in this whole document.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15f (Grand European combinations — Grand/South cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this is the first of the final three items in this workstream. ⚠️ Real overlap, explicitly flagged: the Kosovo+North Macedonia+Albania core of this route (Skopje/Ohrid/Tirana/Berat/Prizren) closely tracks two existing routes — Kosovo + North Macedonia + Albania (9 days) 🎒 (rbBuildKosovoNorthMacedoniaAlbaniaRoute) and Kosovo + Albania + North Macedonia (12 days) 🧭 (rbBuildKosovoAlbaniaNorthMacedoniaRoute) — both cover the exact same three countries and several of the same cities (Pristina/Prizren, Skopje/Ohrid, Tirana/Berat), just without Serbia and without the round-trip-back-to-Belgrade structure. This route's genuine addition is Serbia as a fourth country, framed as a round trip that starts and ends in Belgrade rather than a one-way itinerary between two different fly-in/fly-out cities. Also checked against Serbia Roadtrip (9 days) 🚙 (rbBuildSerbiaRoadtripRoute, Serbia-only, no Balkan-country crossing) and Skopje + Ohrid (5 days) 🌅 (rbBuildSkopjeOhridRoute, North Macedonia-only) — both confirmed genuinely narrower in scope, not duplicates. Explicitly checked against Balkan 🐺 (rbBuildBalkanRoute, a Eurasia Grand Tour 🌏 split) and confirmed distinct per the source document's own note: that route's actual country set is Bosnia+Croatia+Montenegro+Albania+North Macedonia — no Serbia, no Kosovo — a different, more northwestern-inclusive scope with only Albania/North Macedonia in common. Kept as a distinct route, not merged. Logged in ROUTE_SIMILARITY_REVIEW.md per project policy. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildSouthernEuropeHighlightsRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Southern Europe Highlights Roadtrip (14 days) 🎯', [
+    {
+      code: 'PT', name: 'Portugal', days: 3, budget: 294, lat: 38.7223, lng: -9.1393,
+      destinations: [
+        { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366 },
+        { name: 'Alfama', lat: 38.7139, lng: -9.1301 },
+        { name: 'Belém Tower', lat: 38.6916, lng: -9.2160 },
+      ],
+      notes: "Lisbon's Baixa, Alfama and Belém (3 days) — same content as Lisbon + Sintra (5 days) 🏰 (rbBuildLisbonSintraRoute), compressed and without the Sintra day trip to fit this route's much wider scope. Budget ~€98/day (reused from that route's per-day rate). Entry: direct AMS-Lisbon.",
+      transport_to_next: 'Overland (train/bus) to Seville — no direct train, a bus (ALSA, ~6-7h) or a rental car via Extremadura; fully Schengen-internal, no border checks.',
+    },
+    {
+      code: 'ES', name: 'Spain', days: 3, budget: 270, lat: 37.3891, lng: -5.9845,
+      destinations: [
+        { name: 'Seville (Alcázar & Cathedral)', lat: 37.3839, lng: -5.9903 },
+      ],
+      notes: "Seville's Alcázar and Cathedral (3 days) — the same Andalusian capital covered (alongside Granada) by Andalusia: Seville + Granada (5 days) 🏰 (rbBuildAndalusiaSevilleGranadaRoute) and (alongside the rest of the region) by Andalusia Roadtrip (9 days) 🚗 (rbBuildAndalusiaRoadtripRoute) — this route deliberately stops at Seville alone, no Granada/Córdoba/Ronda loop, to leave room for Italy and Greece. Budget ~€90/day.",
+      transport_to_next: "Flight to Rome — this is the crux of why 14 days doesn't really work for this route: Italy and Greece have no land border with Iberia, and Seville-Rome has no direct flight either (a connection is typical, e.g. via Madrid/Lisbon/Barcelona).",
+    },
+    {
+      code: 'IT', name: 'Italy', days: 3, budget: 300, lat: 41.9028, lng: 12.4964,
+      destinations: [
+        { name: 'Colosseum', lat: 41.8902, lng: 12.4922 },
+        { name: 'Roman Forum', lat: 41.8925, lng: 12.4853 },
+        { name: 'Pantheon', lat: 41.8986, lng: 12.4769 },
+        { name: 'Vatican', lat: 41.9029, lng: 12.4534 },
+      ],
+      notes: "The heart of the Roman Empire (3 days) — same content as Rome & Surroundings 🍕 (rbBuildRomeRoute)'s Rome leg, without that route's Naples/Pompeii/Herculaneum days. Budget ~€100/day (reused from that route's Rome-leg rate).",
+      transport_to_next: "Flight to Athens, or the slower alternative: an overnight ferry Ancona/Bari-Patras (15-20 hours) — Italy and Greece share no land border, this is the route's second and final flight-or-long-ferry gap.",
+    },
+    {
+      code: 'GR', name: 'Greece', days: 3, budget: 240, lat: 37.9838, lng: 23.7275,
+      destinations: [
+        { name: 'Acropolis & Plaka/Monastiraki', lat: 37.9715, lng: 23.7267 },
+        { name: 'Acropolis Museum', lat: 37.9686, lng: 23.7285 },
+      ],
+      notes: "Acropolis, Plaka and Monastiraki (3 days) — same content as Athens (4 days) 🏛️ (rbBuildAthensRoute), one day shorter and without the Cape Sounion day trip here. Budget ~€80/day. Travel advisory: yellow since 4 August 2026 for wildfires (same nationwide Greece advisory as the standalone Athens route) — re-check shortly before travel.",
+      transport_to_next: 'Optional (only at the full 14 days): ferry or short flight from Athens/Piraeus to Santorini.',
+    },
+    {
+      code: 'GR', name: 'Greece', days: 2, budget: 320, lat: 36.4167, lng: 25.4325,
+      destinations: [
+        { name: 'Santorini (Fira)', lat: 36.4167, lng: 25.4325 },
+        { name: 'Oia', lat: 36.4614, lng: 25.3753 },
+      ],
+      notes: "Optional Santorini extension (2 days, only fits at the full 14 days) — Fira and Oia's caldera views. Budget ~€160/day — standalone Santorini runs well above the ~€70-75/day used for it inside the cheaper multi-island Cyclades routes elsewhere in this repo (e.g. Cyclades (5-7 days) 🏝️, rbBuildCycladesRoute), since there's no cheaper island here to blend the average down. ⚠️ Web check (2026-08): Santorini's cruise-passenger cap (8,000/day since 2025, now calculated on 100% ship capacity) plus a €20 peak-season per-person disembarkation fee, same as noted on the existing Cyclades routes.",
+      transport_to_next: 'End of this route — fly home from Santorini or Athens.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: "Explicitly not a real roadtrip despite the name (kept from the source list's own title) — overland/train for Lisbon-Seville, then flights (or a long ferry) for both Seville-Rome and Rome-Athens, since Italy and Greece share no land border with Iberia or with each other in any practical sense.",
+    climate_summary: 'May-June or September; Greece carries a seasonal wildfire risk (see the Athens leg\'s travel advisory).',
+    description: "A compressed 'greatest hits' sampler across four countries: Lisbon, Seville, Rome and Athens (with an optional Santorini extension) — explicitly a highlights reel, not a deep-dive trip.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15f (Grand European combinations — Grand/South cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. The source material is explicit that this is NOT a real roadtrip: Italy and Greece have no land border, only a flight or a 15-20 hour Ancona/Bari-Patras ferry connects them, which is exactly why 14 days doesn't allow for real depth here — the source flags 21+ days as more realistic for genuine depth, this route stays at 14 as literally specified. Real overlap, explicitly flagged: directly reuses content from four existing standalone routes — Lisbon + Sintra (5 days) 🏰 (rbBuildLisbonSintraRoute, Sintra day dropped here), Andalusia: Seville + Granada (5 days) 🏰 (rbBuildAndalusiaSevilleGranadaRoute) / Andalusia Roadtrip (9 days) 🚗 (rbBuildAndalusiaRoadtripRoute) (Seville portion only, Granada/Córdoba/Ronda dropped here), Rome & Surroundings 🍕 (rbBuildRomeRoute, Rome-only portion, Naples/Pompeii/Herculaneum dropped here), and Athens (4 days) 🏛️ (rbBuildAthensRoute, Cape Sounion day trip dropped here) plus its optional Santorini extension reusing Cyclades (5-7 days) 🏝️ (rbBuildCycladesRoute)'s Santorini content at a higher, unblended daily rate (see that leg's own note). Kept as a distinct route, not merged — this is a genuinely different trip shape (a fast four-country/five-stop sampler) from any of the single-country/single-region routes it draws from. Logged in ROUTE_SIMILARITY_REVIEW.md per project policy. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildGrandEuropeanRoadtripFourteenToTwentyOneDaysRoute() {
+  return rbBuildFlatSeedRoute('Grand European Roadtrip (14-21 days) 🪣', [
+    {
+      code: 'DE', name: 'Germany', days: 2, budget: 220, lat: 49.9786, lng: 7.9047,
+      destinations: [
+        { name: 'Rüdesheim am Rhein / Loreley (Rhine Valley)', lat: 49.9786, lng: 7.9047 },
+        { name: 'Munich / Neuschwanstein (Bavaria)', lat: 48.1351, lng: 11.5820 },
+      ],
+      notes: "A deliberately compressed opener (2-3 days) squeezing both the Rhine Valley and Bavaria into one stop — a real taste, not a proper visit of either (the flagship Central European Grand Roadtrip 🚗 below gives Bavaria/Neuschwanstein 4 full days on its own). Budget ~€110/day.",
+      transport_to_next: 'Drive south to Salzburg — a Schengen border, no checks.',
+    },
+    {
+      code: 'AT', name: 'Austria', days: 2, budget: 230, lat: 47.8095, lng: 13.0550,
+      destinations: [
+        { name: 'Salzburg', lat: 47.8095, lng: 13.0550 },
+        { name: 'Innsbruck', lat: 47.2692, lng: 11.4041 },
+      ],
+      notes: "Salzburg and Innsbruck (2 days) — both cities get a full standalone visit elsewhere in this repo; here it's one day each. Budget ~€115/day. Austrian 10-day vignette required.",
+      transport_to_next: 'Drive over the Arlberg Pass into Switzerland towards Interlaken — a Schengen border, no checks, Swiss vignette needed.',
+    },
+    {
+      code: 'CH', name: 'Switzerland', days: 2, budget: 300, lat: 46.6863, lng: 7.8632,
+      destinations: [
+        { name: 'Interlaken / Lauterbrunnen', lat: 46.6863, lng: 7.8632 },
+      ],
+      notes: "Interlaken (2 days) — a fraction of the 5-6 days the Bernese Oberland deserves (see the flagship route below, or Interlaken + Lauterbrunnen + Grindelwald (6 days) 🪂). Budget ~€150/day — Switzerland pulls this route's blended average up sharply, same finding as every other route in this repo that touches it.",
+      transport_to_next: 'Drive over the Alps into Italy towards the Dolomites/Venice — a Schengen border, no checks, Italian autostrada toll applies.',
+    },
+    {
+      code: 'IT', name: 'Italy', days: 3, budget: 390, lat: 46.5369, lng: 12.1357,
+      destinations: [
+        { name: 'Dolomites (Cortina d\'Ampezzo / Tre Cime)', lat: 46.6198, lng: 12.3032 },
+        { name: 'Venice (Piazza San Marco)', lat: 45.4408, lng: 12.3155 },
+      ],
+      notes: "The Dolomites and Venice (3 days) — squeezed into a single stop where the flagship route below gives them roughly 8 combined days. Budget ~€130/day.",
+      transport_to_next: 'Drive to Bled via Trieste-Ljubljana — a Schengen border, no checks, Slovenian e-vinjeta needed.',
+    },
+    {
+      code: 'SI', name: 'Slovenia', days: 1, budget: 100, lat: 46.3683, lng: 14.1146,
+      destinations: [
+        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+      ],
+      notes: "Bled (1-2 days) — a single-day taste of a lake that deserves several (see Grand Balkan Roadtrip (14 days) 🏔️ or the flagship route below, both of which give Bled/the Julian Alps multiple days). Budget ~€100/day.",
+      transport_to_next: 'Drive into Croatia towards Istria/Plitvice/the coast — Schengen-internal since Croatia joined on 1 January 2023, zero checks.',
+    },
+    {
+      code: 'HR', name: 'Croatia', days: 2, budget: 220, lat: 44.8654, lng: 15.5820,
+      destinations: [
+        { name: 'Istria (Rovinj/Pula)', lat: 45.0811, lng: 13.6387 },
+        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820 },
+      ],
+      notes: "Istria, Plitvice and a taste of the coast (2 days) — deliberately picks a slice rather than a full Croatia loop, unlike this same document's own dedicated Croatia routes. Budget ~€110/day. Optional (only realistic at the 21-day end of this range, not counted in this route's own day/budget totals): extend to Kotor, Montenegro (1-2 days, ~€45-60/day) via the Karasovići EES crossing — a real non-Schengen/non-EU border with a genuine passport check, the only one on this whole route.",
+      transport_to_next: 'Drive north to Budapest via Zagreb — a Schengen border, no checks.',
+    },
+    {
+      code: 'HU', name: 'Hungary', days: 1, budget: 60, lat: 47.4979, lng: 19.0402,
+      destinations: [
+        { name: 'Budapest', lat: 47.4979, lng: 19.0402 },
+      ],
+      notes: "Budapest (2 days at the source's own count, compressed to 1 here to keep the 14-day total honest) — same city covered far more thoroughly by Central Europe Roadtrip (14 days) 🚂 (rbBuildCentralEuropeRoadtripFourteenDaysRoute) below. Budget ~€60/day.",
+      transport_to_next: 'Drive or train to Prague — a Schengen border, no checks.',
+    },
+    {
+      code: 'CZ', name: 'Czechia', days: 1, budget: 85, lat: 50.0755, lng: 14.4378,
+      destinations: [
+        { name: 'Prague', lat: 50.0755, lng: 14.4378 },
+      ],
+      notes: "Prague (2 days at the source's own count, compressed to 1 here for the same reason as Budapest above) — same closing city as Central Europe Roadtrip (14 days) 🚂 below. Budget ~€85/day.",
+      transport_to_next: 'End of this route — fly home from Prague, or drive back to the Netherlands.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: "Own car for the whole loop (a rental works too) — no single month suits all 8-9 countries equally, May-June/September is the least-bad compromise. Nadrukkelijk aspirational/bucket-list, not a bookable plan, per the source list's own framing — the widest and last, most all-encompassing trip in the entire EUROPA_TRIP_IDEAS.md document.",
+    climate_summary: 'May-June or September as the best compromise — no month is optimal for all 8-9 countries simultaneously.',
+    description: "An aspirational 'greatest hits of Central Europe' bucket-list loop: the Rhine Valley and Bavaria, Salzburg and Innsbruck, Interlaken, the Dolomites and Venice, Lake Bled, Istria/Plitvice/the Croatian coast (with an optional Kotor, Montenegro extension), Budapest and Prague.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15f (Grand European combinations — Grand/South cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this is the LAST item of the entire Phase 2 workstream (all 319 EUROPA_TRIP_IDEAS.md items now built). The source is explicit that this is a bucket-list/aspirational trip, not a bookable plan: ~2 days average per country at the 21-day end is a 'tasted it' tour, not the deeper travel style Youri favors elsewhere in this document — realistically this would want 5-6+ weeks to do properly, which is exactly what the two routes below already do.\n\n" +
+      "⚠️⚠️ MAJOR real overlap, explicitly and carefully flagged per this batch's collision-check instructions — this route's relationship to TWO existing routes needs to be read together, not separately:\n\n" +
+      "(1) Central European Grand Roadtrip 🚗 (rbBuildCentralEuropeRoadtripRoute) — the pre-Phase-2 flagship Grand Expedition (45-70 days, 14 countries: France/Germany/Switzerland/Liechtenstein/Austria/Italy/San Marino/Slovenia/Croatia/Serbia/Hungary/Slovakia/Czechia/Poland). This new route's own country list (Germany/Austria/Switzerland/Italy/Slovenia/Croatia/optional Montenegro/Hungary/Czechia) is almost a direct SUBSET of the flagship's 14 countries — missing only France/Liechtenstein/San Marino/Serbia/Slovakia/Poland from that list, and adding only Montenegro (as an explicitly optional, uncounted extension) that the flagship doesn't have. Where the two overlap, the flagship gives every region dramatically more time: its 'Alpine Countries' region alone (France/Germany/Switzerland/Liechtenstein/Austria) runs 18 days vs. this route's 6 days covering the DE/AT/CH portion; its 'Dolomites & Northern Italy' region runs 20 days (also covering Milan/Turin/Cinque Terre/Tuscany/San Marino, none of which this route touches) vs. this route's 3 days for just the Dolomites/Venice; its 'Balkans' region (Slovenia/Croatia/Serbia/Hungary) runs 16 days vs. this route's 4 days for Slovenia/Croatia/Hungary combined (this route swaps in optional Montenegro instead of Serbia); its 'Central Europe' region includes Czechia at 6 days (split Brno+Prague) vs. this route's 1 day.\n\n" +
+      "(2) Central Europe Roadtrip (14 days) 🚂 (rbBuildCentralEuropeRoadtripFourteenDaysRoute, built earlier in this same overall workstream as batch 15c's own compressed subset of the same flagship) — the most directly comparable sibling, since both routes are deliberately compressed 14-day subsets of the identical 45-70 day flagship, just carved out along different country lines: that route's subset is France(none actually, it drops France)/Germany(Berlin)/Czechia/Poland/Slovakia/Hungary/Austria(Vienna) — a purely Central/Eastern European capital-hopping loop by train, explicitly built around Berlin+Prague+Krakow+Bratislava+Vienna+Budapest, none of which (except Prague/Budapest) appear on this route at all. This route's own subset instead runs Germany(Rhine+Bavaria, not Berlin)/Austria(Salzburg+Innsbruck, not Vienna)/Switzerland/Italy/Slovenia/Croatia(+optional Montenegro)/Hungary/Czechia — the Alpine-and-Adriatic half of the flagship that batch 15c's route deliberately left untouched. Together the two 14-day routes cover almost the full flagship between them, split along a Central/Eastern-Europe-by-train axis (batch 15c) vs. an Alpine/Adriatic-by-car axis (this route) — genuinely complementary rather than duplicates of each other, even though both are 'compressed flagship subset' routes by construction. The only cities both routes share are Prague and Budapest, each given radically different amounts of time (2 days each in batch 15c's route vs. 1 day each here).\n\n" +
+      "Same relationship pattern as Isle of Man (3-4 days) 🏝️ vs. England, Wales & Isle of Man 🎩 (rbBuildIsleOfManRoute vs. rbBuildEnglandWalesIoMRoute) and as batch 15c's own Central Europe Roadtrip vs. the flagship (see that route's notes) — a realistic-length standalone trip vs. a leg buried inside a month-plus expedition, except pushed to an even more extreme compression ratio here (14-21 days standing in for 45-70). Deliberately given a distinct function name (rbBuildGrandEuropeanRoadtripFourteenToTwentyOneDaysRoute) that doesn't collide with either rbBuildCentralEuropeRoadtripRoute or rbBuildCentralEuropeRoadtripFourteenDaysRoute. All three routes (this one, the flagship, and batch 15c's route) continue to exist unchanged, none renamed, none merged. Also touches this same sub-batch's own Balkan Roadtrip item on the optional-Montenegro/Croatia-coast content only lightly (different country combination overall). Flagged prominently in ROUTE_SIMILARITY_REVIEW.md per project policy — this is very likely the strongest 3-way overlap case in the entire Phase 2 workstream given how directly it maps onto the flagship's own country list. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan; days/budgets above are the 14-day base case, with Montenegro as an explicitly uncounted optional extension towards the 21-day end of the range.",
+  });
+}
+
+function rbSeedEuropaComboGrandRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_COMBO_GRAND)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_COMBO_GRAND, '1');
+
+  rbRoutes.push(
+    rbBuildBalkanRoadtripSerbiaNMacedoniaAlbaniaKosovoRoute(),
+    rbBuildSouthernEuropeHighlightsRoadtripRoute(),
+    rbBuildGrandEuropeanRoadtripFourteenToTwentyOneDaysRoute(),
+  );
+  rbSave();
+}
