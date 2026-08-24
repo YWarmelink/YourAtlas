@@ -18258,3 +18258,159 @@ function rbSeedEuropaChannelIslandsIoMRoutes() {
   );
   rbSave();
 }
+
+function rbBuildNorthernPortugalGaliciaRoute() {
+  return rbBuildFlatSeedRoute('Northern Portugal + Galicia (7-10 days) 🌊', [
+    {
+      code: 'PT', name: 'Portugal', days: 5, budget: 400, lat: 41.3000, lng: -8.5000,
+      destinations: [
+        { name: 'Porto (Ribeira)', lat: 41.1405, lng: -8.6118 },
+        { name: 'Vila Nova de Gaia (port wine cellars)', lat: 41.1333, lng: -8.6111 },
+        { name: 'Pinhão (Douro day trip)', lat: 41.1897, lng: -7.5461 },
+        { name: 'Guimarães (Paço dos Duques, day trip)', lat: 41.4419, lng: -8.2918 },
+        { name: 'Braga (Bom Jesus do Monte, day trip)', lat: 41.5519, lng: -8.3789 },
+        { name: 'Viana do Castelo (Santa Luzia viewpoint)', lat: 41.6932, lng: -8.8327 },
+      ],
+      notes: "Porto (2-3 days: Ribeira, Vila Nova de Gaia's port wine cellars, a Douro day trip to Pinhão) — Guimarães and Braga as day trips from Porto — Viana do Castelo on the coast, closest to the Spanish border. Entry: direct AMS-Porto (KLM/Transavia). Budget ~€75-85/day, used here at ~€80/day. Season: June-September.",
+      transport_to_next: 'Cross into Spain at the Valença (Portugal)-Tui (Spain) bridge over the Minho river — no border control, fully Schengen-internal, no EES — then on to Santiago de Compostela (~130km/1h45).',
+    },
+    {
+      code: 'ES', name: 'Spain', days: 4, budget: 320, lat: 42.7000, lng: -8.7000,
+      destinations: [
+        { name: 'Santiago de Compostela (Praza do Obradoiro)', lat: 42.8805, lng: -8.5456 },
+        { name: 'Pontevedra / Combarro (Rías Baixas day trip)', lat: 42.4300, lng: -8.6444 },
+        { name: 'Cíes Islands (optional)', lat: 42.2378, lng: -8.8994 },
+      ],
+      notes: "Santiago de Compostela (2 days: the cathedral, Praza do Obradoiro) — a Rías Baixas day trip (Pontevedra, Combarro) — optionally the Cíes Islands ferry if time allows (book ahead, there's a daily visitor cap in high season). Budget ~€75-85/day, used here at ~€80/day. Season: June-September — Galicia is Atlantic/rainy outside summer.",
+      transport_to_next: 'End of this route — fly home from Santiago de Compostela (seasonal direct AMS-Santiago on KLM/Vueling, or via Madrid year-round on Iberia), or back through Porto if reversed.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Rental car throughout — needed for the Guimarães/Braga day trips, Viana do Castelo, and the overland crossing into Galicia.',
+    climate_summary: 'June-September; Galicia is Atlantic and rainy outside summer.',
+    description: "Porto's Ribeira and Douro, Guimarães/Braga day trips and Viana do Castelo's coast, crossing overland into Galicia for Santiago de Compostela and the Rías Baixas.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15a (Iberia combinations) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Both Portugal and Spain are Schengen-internal here — no border control, no EES, on this route. ⚠️ Real overlap, explicitly flagged: on the Portugal side, the Porto/Guimarães/Braga/Viana do Castelo content closely tracks Northern Portugal: Minho (6 days) 🌿 (rbBuildNorthernPortugalMinhoRoute) — that existing route loops back to Porto instead of continuing overland into Galicia. On the Spain side, the Santiago/Rías Baixas/Cíes content closely tracks Galicia: Santiago de Compostela + Coast (6 days) 🐚 (rbBuildGaliciaSantiagoRoute). This new route is essentially those two existing standalone trips joined end-to-end via the Valença-Tui border crossing, not a genuinely new itinerary — logged in ROUTE_SIMILARITY_REVIEW.md per project policy; kept as a distinct route, not merged. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildPortoNorthernSpainRoute() {
+  return rbBuildFlatSeedRoute('Porto + Northern Spain (10-14 days) 🏔️', [
+    {
+      code: 'PT', name: 'Portugal', days: 4, budget: 340, lat: 41.3000, lng: -8.5000,
+      destinations: [
+        { name: 'Porto (Ribeira)', lat: 41.1405, lng: -8.6118 },
+        { name: 'Vila Nova de Gaia (port wine cellars)', lat: 41.1333, lng: -8.6111 },
+        { name: 'Guimarães (Paço dos Duques, day trip)', lat: 41.4419, lng: -8.2918 },
+        { name: 'Braga (Bom Jesus do Monte, day trip)', lat: 41.5519, lng: -8.3789 },
+        { name: 'Viana do Castelo (Santa Luzia viewpoint)', lat: 41.6932, lng: -8.8327 },
+      ],
+      notes: "The Portugal lead-in for the wider crossing below: Porto (2 days: Ribeira, Vila Nova de Gaia) — Guimarães/Braga day trips — Viana do Castelo on the coast, closest to the Spanish border. Entry: open-jaw AMS-Porto in / AMS-Bilbao out. Budget ~€80-90/day, used here at ~€85/day. Season: June-September.",
+      transport_to_next: 'Cross into Spain at the Valença (Portugal)-Tui (Spain) bridge over the Minho river — no border control, fully Schengen-internal — then on to Santiago de Compostela (~130km/1h45).',
+    },
+    {
+      code: 'ES', name: 'Spain', days: 8, budget: 680, lat: 43.2000, lng: -5.0000,
+      destinations: [
+        { name: 'Santiago de Compostela (Praza do Obradoiro)', lat: 42.8805, lng: -8.5456 },
+        { name: 'Oviedo (Asturias)', lat: 43.3619, lng: -5.8494 },
+        { name: 'Gijón (Asturias)', lat: 43.5322, lng: -5.6611 },
+        { name: 'Picos de Europa (Potes)', lat: 43.1553, lng: -4.6236 },
+        { name: 'Fuente Dé (cable car)', lat: 43.1439, lng: -4.8142 },
+        { name: 'Santander (Magdalena Peninsula)', lat: 43.4623, lng: -3.8099 },
+        { name: 'Santillana del Mar', lat: 43.3897, lng: -4.1097 },
+        { name: 'Bilbao (Guggenheim Museum)', lat: 43.2630, lng: -2.9350 },
+        { name: 'San Sebastián (La Concha, optional extension)', lat: 43.3183, lng: -1.9812 },
+      ],
+      notes: "Santiago de Compostela (2 days) → Oviedo/Gijón, Asturias (2 days) → the Picos de Europa, based in Potes with the Fuente Dé cable car (1-2 days) → Santander/Santillana del Mar, Cantabria (1-2 days) → Bilbao, optionally extending to San Sebastián (1-2 days) as the closing leg. A rental car is essential throughout this leg (public transport is thin around the Picos de Europa and coastal villages). Budget ~€80-90/day, used here at ~€85/day. Season: June-September. Web check (2026-08): this is an open-jaw trip — Porto in, Bilbao out — so a one-way rental car carries a return/repositioning drop fee; price that in before booking, and compare it against picking the car up fresh at the Spanish border (e.g. in Santiago or Bilbao) instead of driving one car the whole way.",
+      transport_to_next: 'End of this route — fly home from Bilbao (or San Sebastián if extending that far), open-jaw ticket with Porto as the inbound leg.',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Open-jaw flight (Porto in, Bilbao out), rental car for the entire overland crossing.',
+    climate_summary: 'June-September.',
+    description: "An extended Iberian north-coast crossing: Porto and the Minho, then overland across Galicia, Asturias, Cantabria and the Basque Country to Bilbao (optionally San Sebastián).",
+    notes: "Built (2026-08) as part of Phase 2 batch 15a (Iberia combinations) converting EUROPA_TRIP_IDEAS.md into Route Builder content. This item extends Northern Portugal + Galicia (7-10 days) 🌊 (rbBuildNorthernPortugalGaliciaRoute, built earlier in this same sub-batch) eastward with the rest of the Spanish north coast — see that route's own notes for the Portugal/Galicia overlap detail, not repeated here. ⚠️ Real overlap, explicitly flagged: the Spain-side stops (Santiago → Asturias/Picos de Europa → Santander/Santillana del Mar → Bilbao) are near-identical to Northern Spain Roadtrip (12 days) 🛣️ (rbBuildNorthernSpainRoadtripRoute) — same regions, essentially the same itinerary run in reverse (that route starts at San Sebastián/Bilbao and ends at Santiago; this one starts at Porto and ends at Bilbao). Also overlaps Asturias + Cantabria (6 days) 🌲 (rbBuildAsturiasCantabriaRoute) on the Asturias/Picos/Santander portion, and Porto (4 days) 🌉/Northern Portugal: Minho (6 days) 🌿 on the Portugal portion. Logged in ROUTE_SIMILARITY_REVIEW.md per project policy; kept as a distinct route, not merged, since the Porto-in/Bilbao-out open-jaw framing is a genuinely different trip shape from the existing all-Spain loop. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildPortugalAndalusiaRoute() {
+  return rbBuildFlatSeedRoute('Portugal + Andalusia (10-14 days) 🕌', [
+    {
+      code: 'PT', name: 'Portugal', days: 7, budget: 630, lat: 38.0000, lng: -8.3000,
+      destinations: [
+        { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366 },
+        { name: 'Alfama', lat: 38.7139, lng: -9.1301 },
+        { name: 'Belém Tower', lat: 38.6916, lng: -9.2160 },
+        { name: 'Sintra (Palace of Pena)', lat: 38.7876, lng: -9.3905 },
+        { name: 'Faro (Ria Formosa)', lat: 37.0194, lng: -7.9304 },
+        { name: 'Lagos (Ponta da Piedade)', lat: 37.0836, lng: -8.6698 },
+        { name: 'Sagres / Cabo de São Vicente', lat: 37.0206, lng: -8.9773 },
+      ],
+      notes: "Lisbon + Sintra (3-4 days: Baixa/Alfama, Belém, a full day in Sintra at the Palace of Pena) — south to the Algarve (3 days: Faro, Lagos' Ponta da Piedade, Sagres/Cabo de São Vicente). Entry: direct AMS-Lisbon. Budget ~€85-95/day, used here at ~€90/day. Season: April-June or September-October; avoid July-August.",
+      transport_to_next: 'Cross into Spain at the Ayamonte (Portugal)-Huelva (Spain) bridge over the Guadiana river — no border control, fully Schengen-internal — then on to Seville (~1h15).',
+    },
+    {
+      code: 'ES', name: 'Spain', days: 5, budget: 450, lat: 37.5000, lng: -5.0000,
+      destinations: [
+        { name: 'Seville (Alcázar & Cathedral)', lat: 37.3839, lng: -5.9903 },
+        { name: 'Córdoba (Mezquita)', lat: 37.8882, lng: -4.7794 },
+        { name: 'Granada (Alhambra)', lat: 37.1773, lng: -3.5986 },
+      ],
+      notes: "Seville (2 days: the Alcázar, the Cathedral) → Córdoba (1-2 days: the Mezquita) → Granada (2 days: the Alhambra). Budget ~€85-95/day, used here at ~€90/day. Season: April-June or September-October — avoid July-August, when inland Andalusia regularly hits 40°C+. Web check (2026-08): Alhambra tickets need to be booked 2-3 months ahead — they sell out weeks to months in advance even outside peak season, with no reliable walk-up availability.",
+      transport_to_next: 'End of this route — fly home from Granada or Málaga (the nearest well-connected airport), or via Madrid/Barcelona depending on the return routing.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Open-jaw flight (Lisbon in, Granada/Málaga out), rental car for the Algarve and Andalusia legs, train usable for Seville-Córdoba-Granada.',
+    climate_summary: 'April-June or September-October; avoid July-August (severe inland Andalusian heat).',
+    description: "Lisbon and Sintra, the Algarve, then overland into Andalusia for Seville, Córdoba and Granada.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15a (Iberia combinations) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Both Portugal and Spain are Schengen-internal here — no border control, no EES. ⚠️ Real overlap, explicitly flagged: this route combines three existing standalone trips end-to-end via the Ayamonte-Huelva border crossing rather than being a genuinely new itinerary — Lisbon + Sintra (5 days) 🏰 (rbBuildLisbonSintraRoute), Algarve (6 days) 🏖️ (rbBuildAlgarveRoute), and the Seville/Córdoba/Granada content shared with both Andalusia: Seville + Granada (5 days) 🏰 (rbBuildAndalusiaSevilleGranadaRoute, which omits Córdoba) and the Seville-Córdoba-Granada leg of Andalusia Roadtrip (9 days) 🚗 (rbBuildAndalusiaRoadtripRoute). Also adjacent to Portugal: North to South (9 days) 🧭 (rbBuildPortugalNorthToSouthRoute), which covers the same Lisbon+Sintra+Algarve portion but stays Portugal-only. Logged in ROUTE_SIMILARITY_REVIEW.md per project policy; kept as a distinct route, not merged. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbBuildPortugalSpainRoadtripRoute() {
+  return rbBuildFlatSeedRoute('Portugal + Spain Roadtrip (14 days) 🚗', [
+    {
+      code: 'PT', name: 'Portugal', days: 9, budget: 810, lat: 40.0000, lng: -8.4000,
+      destinations: [
+        { name: 'Porto (Ribeira)', lat: 41.1405, lng: -8.6118 },
+        { name: 'Pinhão (Douro Valley)', lat: 41.1897, lng: -7.5461 },
+        { name: 'Coimbra (University)', lat: 40.2076, lng: -8.4257 },
+        { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366 },
+        { name: 'Sintra (Palace of Pena)', lat: 38.7876, lng: -9.3905 },
+        { name: 'Faro (Ria Formosa)', lat: 37.0194, lng: -7.9304 },
+        { name: 'Lagos (Ponta da Piedade)', lat: 37.0836, lng: -8.6698 },
+      ],
+      notes: "The broadest version of this batch's Portugal content: Porto (2 days) — the Douro Valley (1 day, Pinhão) — Coimbra (1 day) — Lisbon + Sintra (3 days) — the Algarve (2 days, compressed compared to the standalone 6-day Algarve trip, to fit the wider Iberian loop within 14 days total). Entry: open-jaw Porto in / Granada or Málaga out. Budget ~€85-95/day, used here at ~€90/day. Season: April-June or September-October.",
+      transport_to_next: 'Cross into Spain at the Ayamonte (Portugal)-Huelva (Spain) bridge over the Guadiana river — no border control, fully Schengen-internal — then on to Seville (~1h15).',
+    },
+    {
+      code: 'ES', name: 'Spain', days: 5, budget: 450, lat: 37.5000, lng: -5.0000,
+      destinations: [
+        { name: 'Seville (Alcázar & Cathedral)', lat: 37.3839, lng: -5.9903 },
+        { name: 'Córdoba (Mezquita)', lat: 37.8882, lng: -4.7794 },
+        { name: 'Granada (Alhambra)', lat: 37.1773, lng: -3.5986 },
+      ],
+      notes: "Seville (2 days) → Córdoba (1 day) → Granada (2 days). Same Andalusian heat warning and Alhambra 2-3 month booking rule as the shorter Portugal + Andalusia item in this same batch. Budget ~€85-95/day, used here at ~€90/day. Season: April-June or September-October. ⚠️ Web check (2026-08): 14 days across 6+ regions (Porto, the Douro, Coimbra, Lisbon/Sintra, the Algarve, Seville, Córdoba, Granada) is ambitious — treat this as a checklist to trim down to 5-6 real stops rather than a literal itinerary, echoing the identical pace warning already logged on Portugal Roadtrip (12 days) 🗺️ above for the Portugal-only version.",
+      transport_to_next: 'End of this route — fly home from Granada or Málaga (the nearest well-connected airport), or via Madrid/Barcelona depending on the return routing.',
+    },
+  ], {
+    best_starting_month: 'May',
+    travel_style: 'Open-jaw flight (Porto in, Granada/Málaga out), rental car for the whole loop.',
+    climate_summary: 'April-June or September-October; avoid July-August (severe inland Andalusian heat, plus a hot Douro interior).',
+    description: "The broadest Iberia combination in this batch: Porto, the Douro, Coimbra, Lisbon + Sintra and the Algarve, then overland into Andalusia for Seville, Córdoba and Granada.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15a (Iberia combinations) converting EUROPA_TRIP_IDEAS.md into Route Builder content — the broadest of the four combination routes in this sub-batch, combining north AND south. ⚠️ Same-batch internal overlap, explicitly flagged (not a separate ROUTE_SIMILARITY_REVIEW.md pairing, per project policy — these were all built together in batch 15a): this route's Portugal content overlaps Northern Portugal + Galicia (7-10 days) 🌊 (rbBuildNorthernPortugalGaliciaRoute)'s Porto portion, and its Lisbon/Sintra/Algarve/Seville/Córdoba/Granada content is essentially the same as Portugal + Andalusia (10-14 days) 🕌 (rbBuildPortugalAndalusiaRoute) above, just with Porto/Douro/Coimbra prepended. ⚠️ Also real overlap with pre-existing routes, logged in ROUTE_SIMILARITY_REVIEW.md: Portugal Roadtrip (12 days) 🗺️ (rbBuildPortugalRoadtripRoute) shares the same Porto→Douro→Coimbra→Lisbon+Sintra→Algarve backbone (that route additionally covers the Serra da Estrela and Évora/Alentejo, which this one omits in favour of continuing into Spain), and Andalusia Roadtrip (9 days) 🚗 (rbBuildAndalusiaRoadtripRoute) shares the Seville/Córdoba/Granada portion. ⚠️ Sibling-batch flag (factual only, not yet built): a second, more linear Portugal+Spain combination route — 'Porto to Madrid' (Porto→Lisbon→Algarve→Seville→Madrid, no Córdoba/Granada detour) — is planned for sibling sub-batch 15e later in this same Phase 2 batch 15; worth cross-checking the two once that lands, since both are 'Portugal + Spain' combos but with different endpoints and different southern-Spain depth. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+  });
+}
+
+function rbSeedEuropaComboIberiaRoutes() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EUROPA_COMBO_IBERIA)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EUROPA_COMBO_IBERIA, '1');
+
+  rbRoutes.push(
+    rbBuildNorthernPortugalGaliciaRoute(),
+    rbBuildPortoNorthernSpainRoute(),
+    rbBuildPortugalAndalusiaRoute(),
+    rbBuildPortugalSpainRoadtripRoute(),
+  );
+  rbSave();
+}
