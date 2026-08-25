@@ -546,6 +546,12 @@ the "Trips route map" section above for the exact steps.
 trip actually looks when opened (`trip.html`) at some point — no direction decided yet, see
 `ROADMAP.md`'s "Planned features" for the placeholder note.
 
+**Home page — explain the site further (2026-08-25, wants to revisit later):** just did a first
+pass on `index.html`'s About section (Trips vs. Route Builder distinction made explicit, tiles for
+Trips/Route Builder/Countries — Search tile tried then dropped again). Youri wants to come back and
+develop this further at some point; no specific direction yet, just flagged so it isn't treated as
+finished/closed.
+
 **Everything else**: see [`ROADMAP.md`](ROADMAP.md) for the rest of the planned work and direction
 (visa/passport tracker, visited-countries badges, yearly travel recap, the Trips↔Route Builder
 rethink, a Sabbatical page, folding in `youridealtravel`, live flight-price scraping, a real
