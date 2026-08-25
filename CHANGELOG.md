@@ -21,6 +21,8 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   - `Verification Status` → **Research Verified** (briefly dropped as a filter, then Youri asked
     for it back under a clearer name — whether a route's budget/season/practical facts were
     actually WebSearch-checked (`Verified`) or are still a first-pass guess (`Draft`)).
+  - `Grand Expedition` (FAMILY group — which of the 13 big expeditions a route is split from) →
+    **Part of Expedition**.
   - `Duration` options now show the day range inline (`Weekend (2-4 days)`, `Short Trip (5-7
     days)`, … `Expedition (22+ days)`) instead of just the bucket name — matches
     `TRIP_TAXONOMY.md`'s own bucket definitions.

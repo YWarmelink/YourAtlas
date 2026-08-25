@@ -160,7 +160,7 @@ const RB_TAXONOMY_FILTERS = [
   { axis: 'STATUS', label: 'Safety Status', keys: ['advisory_level'], normalize: rbNormalizeAdvisoryLevel,
     order: ['Green', 'Yellow', 'Orange', 'Red'] },
   { axis: 'STATUS', label: 'Research Verified', keys: ['verification_status'], order: ['Verified', 'Needs Review', 'Draft'] },
-  { axis: 'FAMILY', label: 'Grand Expedition', keys: ['parent_expedition'] },
+  { axis: 'FAMILY', label: 'Part of Expedition', keys: ['parent_expedition'] },
 ];
 const RB_FILTER_AXIS_ORDER = ['WHERE', 'HOW LONG', 'HOW', 'WHAT', 'WHY', 'STYLE', 'DIFFICULTY', 'WHEN', 'COST', 'STATUS', 'FAMILY'];
 
@@ -202,7 +202,7 @@ function rbFilterFieldValues(row, field) {
 }
 
 function rbSortFilterValues(values, field) {
-  const order = field.order || (field.label === 'Grand Expedition' ? [...RB_GRAND_EXPEDITION_NAMES] : null);
+  const order = field.order || (field.label === 'Part of Expedition' ? [...RB_GRAND_EXPEDITION_NAMES] : null);
   if (!order) return values.slice().sort((a, b) => a.localeCompare(b));
   return values.slice().sort((a, b) => {
     const ia = order.indexOf(a), ib = order.indexOf(b);
