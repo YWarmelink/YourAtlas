@@ -12,6 +12,28 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Phase 3 filter panel: clarity pass on labels + multi-select for the inherently-multi fields
+  (2026-08-25)** — feedback from actually using it. Changes to `RB_TAXONOMY_FILTERS` in
+  `js/pages/routeBuilderUI.js`:
+  - `Advisory Level` → **Safety Status** (clearer what the Green/Yellow/Orange/Red values mean).
+  - `Month` → **Best Time to Visit** (the old label didn't say it was about *when to go*, not
+    just any month mentioned).
+  - `Verification Status` **removed** — didn't earn its place as a filter (whether a route's
+    facts were WebSearch-checked isn't something you'd filter trip ideas by); still in
+    `TRIP_DATABASE.csv` and visible in each row for reference, just not filterable here.
+  - `Duration` options now show the day range inline (`Weekend (2-4 days)`, `Short Trip (5-7
+    days)`, … `Expedition (22+ days)`) instead of just the bucket name — matches
+    `TRIP_TAXONOMY.md`'s own bucket definitions.
+  - **Travel Mode, Trip Type, Theme, Travel Style and Best Time to Visit are now real multi-select
+    filters** (a checkbox dropdown, not a plain `<select>`) — these are the fields that are
+    inherently multi-value in the taxonomy (a route usually has 2+ themes/travel modes), so
+    single-select never made sense for them. Selecting 2+ values within one filter is OR logic
+    (route matches if it has *any* selected value); across different filters it's still AND, same
+    as before. `rbActiveFilters` changed from `label -> string` to `label -> string[]`
+    accordingly. Verified live: Travel Mode = [Flight] → 107 routes, adding Car/Rental Car → 350
+    (correct OR-widening), badge still counts 1 (active *filters*, not selected values), Clear
+    filters resets both select and multi-select controls, zero console errors.
+
 - **The 15 leftover-Dutch routes found while shipping Phase 3 are now translated (2026-08-25)** —
   follow-up to the entry directly below. Root cause, confirmed via `ROUTE_BUILDER_MODULES.md` and
   git history, not guessed: these 15 are "standalone companion routes" split off the big expeditions

@@ -98,6 +98,59 @@
   width: 100%;
 }
 
+/* --- multi-select (checkbox dropdown) filters: Travel Mode, Trip Type, Theme, Travel Style, Best Time to Visit --- */
+.rb-multiselect {
+  position: relative;
+  width: 100%;
+}
+
+.rb-multiselect-toggle {
+  width: 100%;
+  text-align: left;
+  background: var(--atlas-bg);
+}
+
+.rb-multiselect-toggle--active {
+  border-color: var(--atlas-blue);
+  color: var(--atlas-blue-dark);
+  font-weight: var(--fw-medium);
+}
+
+.rb-multiselect-menu {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + var(--sp-1));
+  left: 0;
+  right: 0;
+  max-height: 220px;
+  overflow-y: auto;
+  background: var(--atlas-card);
+  border: 1px solid var(--atlas-border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--sp-2);
+}
+
+.rb-multiselect-option {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-2);
+  border-radius: var(--r-md);
+  font-size: var(--fs-sm);
+  color: var(--atlas-text);
+  cursor: pointer;
+}
+
+.rb-multiselect-option:hover {
+  background: var(--atlas-bg-alt);
+}
+
+.rb-multiselect-option input[type="checkbox"] {
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
 .rb-filter-empty {
   grid-column: 1 / -1;
   font-size: var(--fs-sm);

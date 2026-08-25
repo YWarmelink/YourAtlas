@@ -127,6 +127,14 @@ function rbRouteGroupKey(route) {
 // plain alphabetical sort. Grouped by axis (the same WHERE/HOW LONG/HOW/WHAT/WHY/STYLE/
 // DIFFICULTY/WHEN/COST structure TRIP_TAXONOMY.md itself uses), plus a STATUS and FAMILY group
 // for the fields that don't map onto one of the nine taxonomy axes.
+const RB_DURATION_OPTION_LABELS = {
+  Weekend: 'Weekend (2-4 days)',
+  'Short Trip': 'Short Trip (5-7 days)',
+  Holiday: 'Holiday (8-14 days)',
+  'Extended Trip': 'Extended Trip (15-21 days)',
+  Expedition: 'Expedition (22+ days)',
+};
+
 const RB_TAXONOMY_FILTERS = [
   { axis: 'WHERE', label: 'Country', keys: ['countries'] },
   { axis: 'WHERE', label: 'Continent', keys: ['continent'], splitContinent: true,
@@ -134,37 +142,37 @@ const RB_TAXONOMY_FILTERS = [
   { axis: 'WHERE', label: 'Geographic Scope', keys: ['geographic_scope'],
     order: ['City', 'Single Region', 'Single Country', 'Multi-Region (same country)', 'Multi-Country', 'Grand Tour / Continental'] },
   { axis: 'HOW LONG', label: 'Duration', keys: ['duration_category'],
-    order: ['Weekend', 'Short Trip', 'Holiday', 'Extended Trip', 'Expedition'] },
-  { axis: 'HOW', label: 'Travel Mode', keys: ['primary_travel_mode', 'secondary_travel_modes'] },
-  { axis: 'WHAT', label: 'Trip Type', keys: ['primary_trip_type', 'secondary_trip_types'] },
+    order: ['Weekend', 'Short Trip', 'Holiday', 'Extended Trip', 'Expedition'], optionLabels: RB_DURATION_OPTION_LABELS },
+  { axis: 'HOW', label: 'Travel Mode', keys: ['primary_travel_mode', 'secondary_travel_modes'], multi: true },
+  { axis: 'WHAT', label: 'Trip Type', keys: ['primary_trip_type', 'secondary_trip_types'], multi: true },
   { axis: 'WHAT', label: 'Combination Potential', keys: ['combination_potential'],
     order: ['Standalone', 'Combinable', 'Gateway / Building Block'] },
-  { axis: 'WHY', label: 'Theme', keys: ['themes'] },
-  { axis: 'STYLE', label: 'Travel Style', keys: ['travel_style'] },
+  { axis: 'WHY', label: 'Theme', keys: ['themes'], multi: true },
+  { axis: 'STYLE', label: 'Travel Style', keys: ['travel_style'], multi: true },
   { axis: 'DIFFICULTY', label: 'Activity Level', keys: ['activity_level'],
     order: ['Relaxed', 'Light', 'Moderate', 'Active', 'Very Active'] },
   { axis: 'DIFFICULTY', label: 'Trip Complexity', keys: ['trip_complexity'], order: ['Easy', 'Moderate', 'Complex'] },
   { axis: 'DIFFICULTY', label: 'Border Complexity', keys: ['border_complexity'],
     order: ['Schengen-only', 'Simple non-Schengen', 'Complex'] },
-  { axis: 'WHEN', label: 'Month', keys: ['best_months', 'good_months'],
+  { axis: 'WHEN', label: 'Best Time to Visit', keys: ['best_months', 'good_months'], multi: true,
     order: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] },
   { axis: 'COST', label: 'Budget Level', keys: ['budget_level'], order: ['€', '€€', '€€€', '€€€€'] },
-  { axis: 'STATUS', label: 'Advisory Level', keys: ['advisory_level'], normalize: rbNormalizeAdvisoryLevel,
+  { axis: 'STATUS', label: 'Safety Status', keys: ['advisory_level'], normalize: rbNormalizeAdvisoryLevel,
     order: ['Green', 'Yellow', 'Orange', 'Red'] },
-  { axis: 'STATUS', label: 'Verification Status', keys: ['verification_status'], order: ['Verified', 'Needs Review', 'Draft'] },
   { axis: 'FAMILY', label: 'Grand Expedition', keys: ['parent_expedition'] },
 ];
 const RB_FILTER_AXIS_ORDER = ['WHERE', 'HOW LONG', 'HOW', 'WHAT', 'WHY', 'STYLE', 'DIFFICULTY', 'WHEN', 'COST', 'STATUS', 'FAMILY'];
 
-let rbActiveFilters = {}; // filter label -> selected value (empty/absent = no filter on that field)
+let rbActiveFilters = {}; // filter label -> array of selected values (empty/absent = no filter on that field)
 let rbSearchQuery = '';
 
 /**
- * `Advisory Level` mixes clean Green/Yellow/Orange/Red tags with legacy Dutch values (Geel/
- * Groen/Oranje) and long free-text safety notes ("Red — Bahrain is on 'do not travel'…").
- * Only a recognized leading color word becomes a filter value — everything else is left out of
- * the dropdown (the nuance still lives in the route's own notes, same as TRIP_TAXONOMY.md
- * already treats Photography-as-theme: filter on the reliable signal, not free text).
+ * The `Safety Status` filter reads `advisory_level`, which mixes clean Green/Yellow/Orange/Red
+ * tags with legacy Dutch values (Geel/Groen/Oranje) and long free-text safety notes ("Red —
+ * Bahrain is on 'do not travel'…"). Only a recognized leading color word becomes a filter value —
+ * everything else is left out of the dropdown (the nuance still lives in the route's own notes,
+ * same as TRIP_TAXONOMY.md already treats Photography-as-theme: filter on the reliable signal,
+ * not free text).
  */
 function rbNormalizeAdvisoryLevel(raw) {
   const lead = (raw || '').split(/[—-]/)[0].trim().toLowerCase();
@@ -204,7 +212,34 @@ function rbSortFilterValues(values, field) {
   });
 }
 
-/** Builds (or rebuilds) the tag filter panel's dropdowns from whatever taxonomy data loaded. */
+/** Display text for one option — usually the value itself, but e.g. Duration adds a day range. */
+function rbOptionLabel(field, value) {
+  return (field.optionLabels && field.optionLabels[value]) || value;
+}
+
+/** One dropdown's markup — a native `<select>` for single-value fields, a checkbox menu for `multi` ones. */
+function rbBuildFilterControlHTML(field, values) {
+  if (field.multi) {
+    return `
+      <div class="rb-multiselect" data-filter-label="${escapeHTML(field.label)}">
+        <button type="button" class="filter-select rb-multiselect-toggle">${escapeHTML(field.label)} (all)</button>
+        <div class="rb-multiselect-menu" hidden>
+          ${values.map(v => `
+            <label class="rb-multiselect-option">
+              <input type="checkbox" value="${escapeHTML(v)}">
+              <span>${escapeHTML(rbOptionLabel(field, v))}</span>
+            </label>`).join('')}
+        </div>
+      </div>`;
+  }
+  return `
+    <select class="filter-select rb-filter-select" data-filter-label="${escapeHTML(field.label)}">
+      <option value="">${escapeHTML(field.label)} (all)</option>
+      ${values.map(v => `<option value="${escapeHTML(v)}">${escapeHTML(rbOptionLabel(field, v))}</option>`).join('')}
+    </select>`;
+}
+
+/** Builds (or rebuilds) the tag filter panel's controls from whatever taxonomy data loaded. */
 function rbInitFilterPanel() {
   const panel = document.getElementById('rbFilterPanel');
   if (!panel) return;
@@ -226,16 +261,20 @@ function rbInitFilterPanel() {
   panel.innerHTML = RB_FILTER_AXIS_ORDER.filter(axis => byAxis[axis]).map(axis => `
     <div class="rb-filter-group">
       <div class="rb-filter-group-title">${escapeHTML(axis)}</div>
-      ${byAxis[axis].map(({ field, values }) => `
-        <select class="filter-select rb-filter-select" data-filter-label="${escapeHTML(field.label)}">
-          <option value="">${escapeHTML(field.label)} (all)</option>
-          ${values.map(v => `<option value="${escapeHTML(v)}">${escapeHTML(v)}</option>`).join('')}
-        </select>`).join('')}
+      ${byAxis[axis].map(({ field, values }) => rbBuildFilterControlHTML(field, values)).join('')}
     </div>`).join('');
 }
 
+/** Updates a multi-select's toggle button text ("Theme (all)" / "Theme (2)") and active styling. */
+function rbUpdateMultiselectToggleLabel(wrap, label, selected) {
+  const btn = wrap.querySelector('.rb-multiselect-toggle');
+  if (!btn) return;
+  btn.textContent = selected.length ? `${label} (${selected.length})` : `${label} (all)`;
+  btn.classList.toggle('rb-multiselect-toggle--active', selected.length > 0);
+}
+
 function rbUpdateFilterBadge() {
-  const activeCount = Object.values(rbActiveFilters).filter(Boolean).length;
+  const activeCount = Object.values(rbActiveFilters).filter(v => v && v.length).length;
   const badge = document.getElementById('rbFilterBadge');
   const clearBtn = document.getElementById('rbFilterClearBtn');
   if (badge) { badge.hidden = !activeCount; badge.textContent = String(activeCount); }
@@ -246,15 +285,20 @@ function rbUpdateFilterBadge() {
 function rbRouteMatchesFilters(route) {
   if (rbSearchQuery && !(route.name || '').toLowerCase().includes(rbSearchQuery)) return false;
 
-  const activeEntries = Object.entries(rbActiveFilters).filter(([, v]) => v);
+  const activeEntries = Object.entries(rbActiveFilters).filter(([, v]) => v && v.length);
   if (!activeEntries.length) return true;
 
   const row = rbTaxonomyByName[rbTaxonomyKey(route.name)];
   if (!row) return false; // no taxonomy data for this route — can't confirm a match once filters are active
 
-  return activeEntries.every(([label, value]) => {
+  // Across different filters: every active filter must match (AND). Within one multi-select
+  // filter: any one selected value matching is enough (OR) — e.g. Theme = [Hiking, Beaches]
+  // matches a route tagged with either.
+  return activeEntries.every(([label, selected]) => {
     const field = RB_TAXONOMY_FILTERS.find(f => f.label === label);
-    return field && rbFilterFieldValues(row, field).includes(value);
+    if (!field) return true;
+    const routeValues = rbFilterFieldValues(row, field);
+    return selected.some(v => routeValues.includes(v));
   });
 }
 
@@ -262,7 +306,7 @@ function rbRenderList() {
   const grid = document.getElementById('routeListGrid');
   const count = document.getElementById('routeListCount');
   const filtered = rbRoutes.filter(rbRouteMatchesFilters);
-  const filtersActive = rbSearchQuery || Object.values(rbActiveFilters).some(Boolean);
+  const filtersActive = rbSearchQuery || Object.values(rbActiveFilters).some(v => v && v.length);
 
   if (count) {
     count.textContent = filtersActive
@@ -1060,10 +1104,40 @@ function rbBindEvents() {
     panel.hidden = !panel.hidden;
   });
 
+  // Opens/closes one multi-select's checkbox menu — closes any other open menu first (only one
+  // at a time), and stops the click from immediately reaching the document-level "close on
+  // outside click" handler below.
+  document.getElementById('rbFilterPanel').addEventListener('click', e => {
+    const toggle = e.target.closest('.rb-multiselect-toggle');
+    if (!toggle) return;
+    const menu = toggle.closest('.rb-multiselect').querySelector('.rb-multiselect-menu');
+    const willOpen = menu.hidden;
+    document.querySelectorAll('.rb-multiselect-menu').forEach(m => { m.hidden = true; });
+    menu.hidden = !willOpen;
+    e.stopPropagation();
+  });
+
+  document.addEventListener('click', e => {
+    if (e.target.closest('.rb-multiselect')) return;
+    document.querySelectorAll('.rb-multiselect-menu').forEach(m => { m.hidden = true; });
+  });
+
   document.getElementById('rbFilterPanel').addEventListener('change', e => {
     const select = e.target.closest('.rb-filter-select');
-    if (!select) return;
-    rbActiveFilters[select.dataset.filterLabel] = select.value;
+    if (select) {
+      rbActiveFilters[select.dataset.filterLabel] = select.value ? [select.value] : [];
+      rbUpdateFilterBadge();
+      rbRenderList();
+      return;
+    }
+
+    const checkbox = e.target.closest('.rb-multiselect-option input[type="checkbox"]');
+    if (!checkbox) return;
+    const wrap = checkbox.closest('.rb-multiselect');
+    const label = wrap.dataset.filterLabel;
+    const selected = [...wrap.querySelectorAll('input[type="checkbox"]:checked')].map(c => c.value);
+    rbActiveFilters[label] = selected;
+    rbUpdateMultiselectToggleLabel(wrap, label, selected);
     rbUpdateFilterBadge();
     rbRenderList();
   });
@@ -1071,6 +1145,10 @@ function rbBindEvents() {
   document.getElementById('rbFilterClearBtn').addEventListener('click', () => {
     rbActiveFilters = {};
     document.querySelectorAll('.rb-filter-select').forEach(sel => { sel.value = ''; });
+    document.querySelectorAll('.rb-multiselect').forEach(wrap => {
+      wrap.querySelectorAll('input[type="checkbox"]').forEach(c => { c.checked = false; });
+      rbUpdateMultiselectToggleLabel(wrap, wrap.dataset.filterLabel, []);
+    });
     rbUpdateFilterBadge();
     rbRenderList();
   });
