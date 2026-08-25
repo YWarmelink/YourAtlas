@@ -463,6 +463,17 @@ join needed emoji-stripping. **All 440/440 built routes now join to a taxonomy r
 didn't at ship time (7 CSV title-text mismatches, 15 leftover-Dutch routes from a Phase 1 scope
 gap) were fixed same-day, see the two CHANGELOG entries above the "Phase 3 shipped" one.
 
+Post-ship refinements from actually using it (2026-08-25, see `CHANGELOG.md` for each): filter
+labels clarified (Safety Status, Best Time to Visit, Research Verified, Part of Expedition),
+Duration options show their day range inline, Travel Mode/Trip Type/Theme/Travel Style/Best Time
+to Visit are real multi-select checkbox dropdowns, and route cards preview Budget Level/Primary
+Trip Type/Best Time to Visit plus a corrected unique-country count (was block count).
+
+**Next up, queued by Youri for a future session — not started**: show what actually differs
+between a `Draft` and a `Research Verified` route. Scope not yet defined (a per-route diff view? a
+visual marker on which specific fields were WebSearch-checked vs. still a first-pass guess? something
+else?) — needs a proper scoping conversation before starting, not something to guess at here.
+
 ## Search
 
 `search.html` — one search box across Trips, Route Builder expeditions (incl. country blocks,
