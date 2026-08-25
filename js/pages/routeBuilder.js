@@ -123,6 +123,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateOceaniaFamilyEnglish();
   rbMigrateFaroeHikingDestination();
   rbMigrateRemoveSimilarityReviewDuplicates();
+  rbMigrateStandaloneCountryRoutesEnglish();
   rbBindEvents();
 
   try {

@@ -459,8 +459,9 @@ already the one overview of all routes, so a separate page would just split that
 (the taxonomy's own WHERE/HOW LONG/HOW/WHAT/WHY/STYLE/DIFFICULTY/WHEN/COST axes, plus STATUS and
 FAMILY), reading `TRIP_DATABASE.csv` directly and joining to each route by name. See
 `CHANGELOG.md`'s "Phase 3 shipped" entry for the full implementation notes, including why the name
-join needed emoji-stripping and the 22 routes (of 440) that still don't join to a taxonomy row —
-mostly old un-translated Dutch route names, a follow-up item, not blocking.
+join needed emoji-stripping. **All 440/440 built routes now join to a taxonomy row** — the 22 that
+didn't at ship time (7 CSV title-text mismatches, 15 leftover-Dutch routes from a Phase 1 scope
+gap) were fixed same-day, see the two CHANGELOG entries above the "Phase 3 shipped" one.
 
 ## Search
 

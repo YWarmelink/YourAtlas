@@ -12,6 +12,50 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **The 15 leftover-Dutch routes found while shipping Phase 3 are now translated (2026-08-25)** —
+  follow-up to the entry directly below. Root cause, confirmed via `ROUTE_BUILDER_MODULES.md` and
+  git history, not guessed: these 15 are "standalone companion routes" split off the big expeditions
+  during a **July 2026** modularization effort — a different, earlier mechanism
+  (`rbSeedStandaloneCountryRoutesBatch1-6()`, `rbSeedCentralAsiaFurtherSplitRoutes()`,
+  `rbSeedComboBatch7()`, `rbSeedDolomitesNorthItalyRoute()`, `rbSeedUSLooseTrips()`) than the 13
+  Grand-Trip-family batches Phase 1 (August 2026) actually swept. Phase 1's batches were scoped
+  per-family ("translate this family + its official splitroutes"), so this separate layer was never
+  enumerated — a scope gap, not a deliberate skip (except `US Northeast 🗽`/`US Southwest 🏜️`, which
+  *were* seen and deliberately excluded from the North America batch as "not really part of that
+  family," which had the side effect of leaving them Dutch since no other batch claimed them either
+  — see that batch's own note further down this file).
+  - All 15 translated + renamed to match `TRIP_DATABASE.csv`'s already-correct English names (that
+    CSV data was untouched — only the live route content was ever wrong): Caucasus 🍷, Central Asia
+    🐎, Philippines 🏖️, Argentine Patagonia 🥩, Chilean Patagonia 🥾, Uzbekistan 🐪, Kyrgyzstan 🐴,
+    Mongolia 🦅, Vietnam & Cambodia 🛺, Malaysia 🦋, Kazakhstan & Kyrgyzstan ⛺, Uzbekistan &
+    Tajikistan 🌄, Dolomites & North Italy 🚡, US Northeast 🗽, US Southwest 🏜️. Day counts
+    unchanged and verified to match `TRIP_DATABASE.csv`'s `ideal_duration` exactly for all 15 —
+    confirmed a pure language fix, not a content change.
+  - One new migration, `rbMigrateStandaloneCountryRoutesEnglish()` (wholesale-replace table, same
+    idiom as `rbMigrateMediterraneanFamilyEnglish()`), flag
+    `RB_MIGRATE_FLAG_2026_08_STANDALONE_COUNTRIES_ENGLISH`, registered last in
+    `routeBuilder.js`'s `DOMContentLoaded` sequence.
+  - **Real migration-collision bug found and fixed before it could bite**: `rbMigrateReplace
+    KazakhstanTajikistanCombo()` only ever checked for the Dutch name `'Oezbekistan &
+    Tadzjikistan 🌄'` before conditionally re-pushing a fresh `rbBuildUzbekistanTajikistanRoute()`
+    — once that build function started returning the English name, a browser that had already run
+    the older migration would have seen "the Dutch name is gone" and silently pushed a duplicate.
+    Fixed by widening the check to recognize both names. Caught via this project's standing
+    discipline (grep the whole file for bare name references before renaming/deleting anything),
+    not by accident.
+  - **5 already-English Phase 2 routes referenced the old Dutch Dolomites name in their own notes**
+    (`Germany + Austria + Italy`, `France + Switzerland + Italy`, `Venice + Dolomites`, `Dolomites
+    (6 days)`, `Northern Italy Roadtrip`) — fixed in source and field-patched (not wholesale-replaced,
+    since those 5 routes are otherwise unrelated and already correct) inside the same migration,
+    scanning every notes-bearing field for the literal old string.
+  - Verified via a Node `vm`-based seed+migrate smoke test (this project's established regression
+    check) and independently re-verified live in a real browser after the batch: 440/440 routes now
+    join to a `TRIP_DATABASE.csv` taxonomy row (up from 425/440), zero duplicate route names, zero
+    console errors, all 15 routes present with unchanged day counts, filter panel confirmed working
+    against the newly-joined data.
+  - `TRIP_DATABASE.csv` itself was not touched by this entry (see the entry below for its 7-row
+    title-text cleanup, which is separate).
+
 - **Phase 3 shipped: Trip Taxonomy tag filters on the Route Builder list (2026-08-25)** — the
   workstream README/`TRIP_TAXONOMY.md` had flagged as "not started, not designed." Decision (per
   Youri, after clarifying that essentially all 450 `TRIP_DATABASE.csv` rows are now built): filters
@@ -39,7 +83,7 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
     Playwright smoke test (no project skill covers running this static site yet) against a temp
     local server: raw exact-match joined only 111/440 built routes; after emoji-stripping, 418/440
     (95%) — checked for join-key collisions across all 447 CSV rows first (none).
-  - **Known gap, not fixed here**: 22 built routes still don't join to a taxonomy row (so they drop
+  - **Known gap, not fixed here — resolved same day, see the entry above this one**: 22 built routes still don't join to a taxonomy row (so they drop
     out of results once any tag filter is active, though they still show with no filters set). ~15
     are old standalone-country routes that were apparently never swept by the Phase 1 Dutch→English
     translation (`Kaukasus 🍷`, `Centraal-Azië 🐎`, `Filipijnen 🏖️`, `Argentijns/Chileens Patagonië`,

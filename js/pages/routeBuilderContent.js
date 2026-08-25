@@ -6616,7 +6616,7 @@ function rbMigrateReplaceKazakhstanTajikistanCombo() {
 
   const staleIndex = rbRoutes.findIndex(r => r.name === 'Kazachstan & Tadzjikistan 🌄');
   if (staleIndex !== -1) rbRoutes.splice(staleIndex, 1);
-  if (!rbRoutes.some(r => r.name === 'Oezbekistan & Tadzjikistan 🌄')) {
+  if (!rbRoutes.some(r => r.name === 'Oezbekistan & Tadzjikistan 🌄' || r.name === 'Uzbekistan & Tajikistan 🌄')) {
     rbRoutes.push(rbBuildUzbekistanTajikistanRoute());
   }
   rbSave();
@@ -7301,22 +7301,22 @@ function rbBuildNewZealandSouthIslandRoute() {
 
 function rbBuildCaucasusRoute() {
   const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
-  return rbBuildFlatSeedRoute('Kaukasus 🍷', [
+  return rbBuildFlatSeedRoute('Caucasus 🍷', [
     {
       ...eurasia('GE', 'Georgia'),
-      notes: 'Instap: vlucht Amsterdam-Tbilisi, met overstap (geen directe verbinding, bv. via Frankfurt/Zürich of Istanbul, ±7-10 uur incl. overstap; vanaf ±€250-400 retour — januari is doorgaans de goedkoopste vluchtmaand, maar valt buiten het bergseizoen van deze route; beste reisperiode juni). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (eurasia('GE', 'Georgia').notes || ''),
+      notes: "Entry: flight Amsterdam-Tbilisi, with a connection (no direct connection, e.g. via Frankfurt/Zürich or Istanbul, ±7-10 hours incl. connection; from ±€250-400 return — January is usually the cheapest flight month, but falls outside this route's mountain season; best travel period June). Price indication from 2026-08 web research, a snapshot. " + (eurasia('GE', 'Georgia').notes || ''),
     },
     eurasia('AM', 'Armenia'),
     {
       ...eurasia('AZ', 'Azerbaijan'),
-      transport_to_next: 'Einde van deze route — terug naar Baku (bus/deeltaxi vanaf Qabala/Sheki, ~3u), dan terugvlucht Baku-Amsterdam (1 tussenstop, geen directe verbinding).',
+      transport_to_next: 'End of this route — back to Baku (bus/shared taxi from Qabala/Sheki, ~3h), then a return flight Baku-Amsterdam (1 stopover, no direct connection).',
     },
   ], {
-    best_starting_month: 'Juni',
-    travel_style: 'Backpacker — overland (bus, marshrutka/deeltaxi) tussen de drie landen.',
-    climate_summary: 'Juni-augustus houdt de bergpassen en Svaneti sneeuwvrij.',
-    description: 'Georgië, Armenië en Azerbeidzjan: Tbilisi, Svaneti, Yerevan en Baku.',
-    notes: 'Losgesplitst van Eurasia Grand Tour 🌏 (via West-Eurazië Overland 🐫, waar dit al als eigen "Sterk"-blok stond in ROUTE_BUILDER_MODULES.md — "Georgië/Armenië/Azerbeidzjan is al een bekende standalone trip") als onderdeel van deze tweede batch losse landen (2026-08, Youri\'s eigen top-10-keuze). Landen, dagen en budgetten zijn ongewijzigd overgenomen. Eurasia Grand Tour 🌏 en West-Eurazië Overland 🐫 zelf blijven ongewijzigd bestaan.',
+    best_starting_month: 'June',
+    travel_style: 'Backpacker — overland (bus, marshrutka/shared taxi) between the three countries.',
+    climate_summary: 'June-August keeps the mountain passes and Svaneti snow-free.',
+    description: 'Georgia, Armenia and Azerbaijan: Tbilisi, Svaneti, Yerevan and Baku.',
+    notes: 'Split off from Eurasia Grand Tour 🌏 (via West Eurasia Overland 🐫, where this already stood as its own "Strong" block in ROUTE_BUILDER_MODULES.md — "Georgia/Armenia/Azerbaijan is already a well-known standalone trip") as part of this second batch of standalone countries (2026-08, Youri\'s own top-10 pick). Countries, days and budgets are carried over unchanged. Eurasia Grand Tour 🌏 and West Eurasia Overland 🐫 themselves continue to exist unchanged.',
   });
 }
 
@@ -7535,23 +7535,23 @@ function rbBuildEcuadorRoute() {
 
 function rbBuildCentralAsiaRoute() {
   const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
-  return rbBuildFlatSeedRoute('Centraal-Azië 🐎', [
+  return rbBuildFlatSeedRoute('Central Asia 🐎', [
     {
       ...eurasia('KZ', 'Kazakhstan'),
-      notes: 'Instap: vlucht Amsterdam-Almaty, met overstap (bv. via Istanboel, ±10-15 uur incl. overstap; vanaf ±€250-650 retour — januari is doorgaans de goedkoopste vluchtmaand, maar valt buiten het bergseizoen van deze route; beste reisperiode juni). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (eurasia('KZ', 'Kazakhstan').notes || ''),
+      notes: "Entry: flight Amsterdam-Almaty, with a connection (e.g. via Istanbul, ±10-15 hours incl. connection; from ±€250-650 return — January is usually the cheapest flight month, but falls outside this route's mountain season; best travel period June). Price indication from 2026-08 web research, a snapshot. " + (eurasia('KZ', 'Kazakhstan').notes || ''),
     },
     eurasia('KG', 'Kyrgyzstan'),
     eurasia('TJ', 'Tajikistan'),
     {
       ...eurasia('UZ', 'Uzbekistan'),
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Tasjkent naar Amsterdam (1 tussenstop, bv. via Istanboel).',
+      transport_to_next: 'End of this route — return flight from Tashkent to Amsterdam (1 stopover, e.g. via Istanbul).',
     },
   ], {
-    best_starting_month: 'Juni',
-    travel_style: 'Backpacker — overland (bus, deeltaxi, Pamir Highway-jeep) tussen de vier landen.',
-    climate_summary: 'Juni-september is het enige venster waarin de Pamir Highway en hooggelegen passen begaanbaar zijn.',
-    description: 'De vier "Stans"-landen: Almaty, de Pamir Highway, en de Zijderoute-steden Samarkand, Bukhara en Khiva.',
-    notes: 'Losgesplitst van Eurasia Grand Tour 🌏 (via West-Eurazië Overland 🐫, waar dit al als eigen "Sterk"-blok stond in ROUTE_BUILDER_MODULES.md — "visum/seizoen-gebonden aan de Pamir Highway, precies het soort eigen-identiteit-block") als onderdeel van deze derde batch losse landen (2026-08, Youri\'s eigen tweede top-10-keuze). Landen, dagen en budgetten zijn ongewijzigd overgenomen. Eurasia Grand Tour 🌏 en West-Eurazië Overland 🐫 zelf blijven ongewijzigd bestaan.\n\nDit is met 4 landen en ~45 dagen de langste/breedste van alle standalone-landenroutes tot nu toe — zie README.md voor de aantekening dat dit later mogelijk verder opgesplitst kan worden (bv. Kazachstan+Kirgizië apart van Tadzjikistan+Oezbekistan), net zoals eerder al met de grote expedities is gedaan.',
+    best_starting_month: 'June',
+    travel_style: 'Backpacker — overland (bus, shared taxi, Pamir Highway jeep) between the four countries.',
+    climate_summary: 'June-September is the only window in which the Pamir Highway and high-altitude passes are passable.',
+    description: 'The four "Stans": Almaty, the Pamir Highway, and the Silk Road cities of Samarkand, Bukhara and Khiva.',
+    notes: 'Split off from Eurasia Grand Tour 🌏 (via West Eurasia Overland 🐫, where this already stood as its own "Strong" block in ROUTE_BUILDER_MODULES.md — "visa/season-bound to the Pamir Highway, exactly the kind of self-contained-identity block") as part of this third batch of standalone countries (2026-08, Youri\'s own second top-10 pick). Countries, days and budgets are carried over unchanged. Eurasia Grand Tour 🌏 and West Eurasia Overland 🐫 themselves continue to exist unchanged.\n\nAt 4 countries and ~45 days this is the longest/broadest of all standalone country routes so far — see README.md for the note that this could later be split further (e.g. Kazakhstan+Kyrgyzstan separate from Tajikistan+Uzbekistan), the same way the big expeditions were split earlier.',
   });
 }
 
@@ -7645,18 +7645,18 @@ function rbBuildFijiRoute() {
 
 function rbBuildPhilippinesRoute() {
   const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
-  return rbBuildFlatSeedRoute('Filipijnen 🏖️', [
+  return rbBuildFlatSeedRoute('Philippines 🏖️', [
     {
       ...eurasia('PH', 'Philippines'),
-      notes: 'Instap: rechtstreekse KLM-vlucht Amsterdam-Manila (±15 uur; vanaf ±€700-900 retour; beste periode februari — september is qua vluchtprijs goedkoper maar valt buiten het beste seizoen van deze route). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (eurasia('PH', 'Philippines').notes || ''),
-      transport_to_next: 'Einde van deze route — terug naar Manila (binnenlandse vlucht vanaf Cebu), dan rechtstreekse KLM-terugvlucht Manila-Amsterdam.',
+      notes: 'Entry: direct KLM flight Amsterdam-Manila (±15 hours; from ±€700-900 return; best period February — September is cheaper flight-wise but falls outside this route\'s best season). Price indication from 2026-08 web research, a snapshot. ' + (eurasia('PH', 'Philippines').notes || ''),
+      transport_to_next: 'End of this route — back to Manila (domestic flight from Cebu), then a direct KLM return flight Manila-Amsterdam.',
     },
   ], {
-    best_starting_month: 'Februari',
-    travel_style: 'Backpacker — binnenlandse vluchten tussen de eilandgroepen, boottochten voor El Nido/Coron.',
-    climate_summary: 'Februari-maart is droog seizoen in de meeste regio\'s, vóór de moesson die later in het voorjaar begint.',
-    description: 'Manila, Banaue, de eilanden El Nido en Coron, Siargao, Bohol en Cebu.',
-    notes: 'Losgesplitst van Eurasia Grand Tour 🌏 (via Zuidoost-Azië Grand Loop 🛕) als onderdeel van deze derde batch losse landen (2026-08, Youri\'s eigen tweede top-10-keuze) — eiland-hoppen op zijn eigen manier, anders dan Vietnam/Thailand. Land, dagen en budget zijn ongewijzigd overgenomen. Eurasia Grand Tour 🌏 en Zuidoost-Azië Grand Loop 🛕 zelf blijven ongewijzigd bestaan.',
+    best_starting_month: 'February',
+    travel_style: 'Backpacker — domestic flights between the island groups, boat trips for El Nido/Coron.',
+    climate_summary: 'February-March is dry season in most regions, ahead of the monsoon that starts later in spring.',
+    description: 'Manila, Banaue, the islands of El Nido and Coron, Siargao, Bohol and Cebu.',
+    notes: 'Split off from Eurasia Grand Tour 🌏 (via Southeast Asia Grand Loop 🛕) as part of this third batch of standalone countries (2026-08, Youri\'s own second top-10 pick) — island-hopping in its own way, different from Vietnam/Thailand. Country, days and budget are carried over unchanged. Eurasia Grand Tour 🌏 and Southeast Asia Grand Loop 🛕 themselves continue to exist unchanged.',
   });
 }
 
@@ -7751,10 +7751,10 @@ function rbBuildMauritiusRoute() {
 
 function rbBuildArgentinePatagoniaRoute() {
   const patagonia = (code, name) => rbContentFor('Patagonia & Antarctica Expedition 🧊', code, name);
-  return rbBuildFlatSeedRoute('Argentijns Patagonië 🥩', [
+  return rbBuildFlatSeedRoute('Argentine Patagonia 🥩', [
     {
       ...patagonia('AR', 'Argentina'),
-      notes: 'Instap: vlucht Amsterdam-El Calafate, via Buenos Aires (KLM/Aerolíneas Argentinas + binnenlandse aansluitvlucht, ±21,5-24 uur totaal incl. overstap; vanaf ±€1.200-1.800 retour; beste periode november). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (patagonia('AR', 'Argentina').notes || ''),
+      notes: 'Entry: flight Amsterdam-El Calafate, via Buenos Aires (KLM/Aerolíneas Argentinas + a domestic connecting flight, ±21.5-24 hours total incl. connection; from ±€1,200-1,800 return; best period November). Price indication from 2026-08 web research, a snapshot. ' + (patagonia('AR', 'Argentina').notes || ''),
     },
     {
       code: 'AR', name: 'Argentina', days: 8, budget: 1055, lat: -54.8019, lng: -68.303,
@@ -7763,41 +7763,41 @@ function rbBuildArgentinePatagoniaRoute() {
         { name: 'Tierra del Fuego National Park', lat: -54.85, lng: -68.5833 },
         { name: 'Beagle Channel', lat: -54.87, lng: -67.9 },
       ],
-      notes: 'Vuurland-etappe. Argentinië vereist sinds juli 2025 bewijs van reis-/zorgverzekering bij binnenkomst.',
-      transport_to_next: 'Einde van deze route — vlucht Ushuaia-Buenos Aires, dan terugvlucht naar Amsterdam (1 overstap).',
+      notes: 'Tierra del Fuego leg. Since July 2025, Argentina requires proof of travel/health insurance on entry.',
+      transport_to_next: 'End of this route — flight Ushuaia-Buenos Aires, then a return flight to Amsterdam (1 stopover).',
     },
   ], {
     best_starting_month: 'November',
-    travel_style: 'Backpacker/trekking — refugios en camping in de nationale parken, lokale bussen tussen de Patagonische steden.',
-    climate_summary: 'Begin november valt samen met het begin van het Patagonische trekkingseizoen (november-maart) — vóór die tijd liggen de paden rond El Chaltén nog onder de sneeuw.',
-    description: 'Trekkingexpeditie door Argentijns Patagonië: Fitz Roy, El Chaltén en Ushuaia/Vuurland.',
-    notes: 'Losgesplitst van Patagonia Overland 🏔️ (zelf al losgesplitst van Patagonia & Antarctica Expedition 🧊 — zie ROUTE_BUILDER_MODULES.md, waar dit al genoemd stond als vakantie-schaal-kandidaat, 18 dagen) als onderdeel van de vierde batch losse landen (2026-08) — het Argentijnse deel van Patagonia Overland 🏔️ als losstaande reis, zonder het Chileense deel. Land, dagen en budget zijn ongewijzigd overgenomen. Patagonia Overland 🏔️ en Patagonia & Antarctica Expedition 🧊 zelf blijven ongewijzigd bestaan.',
+    travel_style: 'Backpacker/trekking — refugios and camping in the national parks, local buses between the Patagonian towns.',
+    climate_summary: 'Early November coincides with the start of the Patagonian trekking season (November-March) — before that, the trails around El Chaltén are still under snow.',
+    description: 'A trekking expedition through Argentine Patagonia: Fitz Roy, El Chaltén and Ushuaia/Tierra del Fuego.',
+    notes: 'Split off from Patagonia Overland 🏔️ (itself already split off from Patagonia & Antarctica Expedition 🧊 — see ROUTE_BUILDER_MODULES.md, where this was already named as a vacation-scale candidate, 18 days) as part of the fourth batch of standalone countries (2026-08) — the Argentine part of Patagonia Overland 🏔️ as a standalone trip, without the Chilean part. Country, days and budget are carried over unchanged. Patagonia Overland 🏔️ and Patagonia & Antarctica Expedition 🧊 themselves continue to exist unchanged.',
   });
 }
 
 function rbBuildChileanPatagoniaRoute() {
   const patagonia = (code, name) => rbContentFor('Patagonia & Antarctica Expedition 🧊', code, name);
-  return rbBuildFlatSeedRoute('Chileens Patagonië 🥾', [
+  return rbBuildFlatSeedRoute('Chilean Patagonia 🥾', [
     {
       ...patagonia('CL', 'Chile'),
-      notes: 'Instap: vlucht Amsterdam-Santiago de Chile (KLM, technische tussenstop in Buenos Aires, ±17,5 uur), met binnenlandse aansluiting naar Puerto Montt (±19-21 uur totaal; vanaf ±€1.000-1.700 retour; beste periode november). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (patagonia('CL', 'Chile').notes || ''),
+      notes: 'Entry: flight Amsterdam-Santiago de Chile (KLM, technical stopover in Buenos Aires, ±17.5 hours), with a domestic connection to Puerto Montt (±19-21 hours total; from ±€1,000-1,700 return; best period November). Price indication from 2026-08 web research, a snapshot. ' + (patagonia('CL', 'Chile').notes || ''),
     },
     {
       code: 'CL', name: 'Chile', days: 9, budget: 1200, lat: -51.7236, lng: -72.4875,
       destinations: [
         { name: 'Puerto Natales', lat: -51.7236, lng: -72.4875 },
         { name: 'Torres del Paine National Park', lat: -50.9423, lng: -73.0357 },
-        { name: 'Punta Arenas (dagtrip Isla Magdalena)', lat: -53.1638, lng: -70.9171 },
+        { name: 'Punta Arenas (day trip to Isla Magdalena)', lat: -53.1638, lng: -70.9171 },
       ],
-      notes: "Torres del Paine-piek: refugio-overnachtingen incl. maaltijden lopen op tot $100-150/nacht. Punta Arenas is een bewuste dagtrip voor Isla Magdalena's pinguïnkolonie.",
-      transport_to_next: 'Einde van deze route — vlucht Punta Arenas-Santiago, dan terugvlucht naar Amsterdam.',
+      notes: "Torres del Paine peak: refugio stays incl. meals run up to $100-150/night. Punta Arenas is a deliberate day trip for Isla Magdalena's penguin colony.",
+      transport_to_next: 'End of this route — flight Punta Arenas-Santiago, then a return flight to Amsterdam.',
     },
   ], {
     best_starting_month: 'November',
-    travel_style: 'Backpacker/trekking — refugios en camping in de nationale parken, lokale bussen tussen de Patagonische steden.',
-    climate_summary: 'Begin november valt samen met het begin van het Patagonische trekkingseizoen (november-maart) — vóór die tijd ligt Torres del Paine nog onder de sneeuw.',
-    description: 'Trekkingexpeditie door Chileens Patagonië: de Carretera Austral, Torres del Paine en Puerto Natales.',
-    notes: 'Losgesplitst van Patagonia Overland 🏔️ (zelf al losgesplitst van Patagonia & Antarctica Expedition 🧊 — zie ROUTE_BUILDER_MODULES.md, waar dit al genoemd stond als vakantie-schaal-kandidaat, 24 dagen "met een iets strakkere planning") als onderdeel van de vierde batch losse landen (2026-08) — het Chileense deel van Patagonia Overland 🏔️ als losstaande reis, zonder het Argentijnse deel. Land, dagen en budget zijn ongewijzigd overgenomen. Patagonia Overland 🏔️ en Patagonia & Antarctica Expedition 🧊 zelf blijven ongewijzigd bestaan.',
+    travel_style: 'Backpacker/trekking — refugios and camping in the national parks, local buses between the Patagonian towns.',
+    climate_summary: 'Early November coincides with the start of the Patagonian trekking season (November-March) — before that, Torres del Paine is still under snow.',
+    description: 'A trekking expedition through Chilean Patagonia: the Carretera Austral, Torres del Paine and Puerto Natales.',
+    notes: 'Split off from Patagonia Overland 🏔️ (itself already split off from Patagonia & Antarctica Expedition 🧊 — see ROUTE_BUILDER_MODULES.md, where this was already named as a vacation-scale candidate, 24 days "with a slightly tighter schedule") as part of the fourth batch of standalone countries (2026-08) — the Chilean part of Patagonia Overland 🏔️ as a standalone trip, without the Argentine part. Country, days and budget are carried over unchanged. Patagonia Overland 🏔️ and Patagonia & Antarctica Expedition 🧊 themselves continue to exist unchanged.',
   });
 }
 
@@ -7837,35 +7837,35 @@ function rbBuildGreeceCreteRoute() {
 
 function rbBuildUzbekistanRoute() {
   const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
-  return rbBuildFlatSeedRoute('Oezbekistan 🐪', [
+  return rbBuildFlatSeedRoute('Uzbekistan 🐪', [
     {
       ...eurasia('UZ', 'Uzbekistan'),
-      notes: 'Instap: vlucht Amsterdam-Tasjkent, met overstap via Istanboel (Turkish Airlines, ±10u20 totaal; vanaf ±€500-700 retour; beste periode september-oktober). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (eurasia('UZ', 'Uzbekistan').notes || ''),
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Tasjkent naar Amsterdam (1 overstap via Istanboel).',
+      notes: 'Entry: flight Amsterdam-Tashkent, with a connection via Istanbul (Turkish Airlines, ±10h20 total; from ±€500-700 return; best period September-October). Price indication from 2026-08 web research, a snapshot. ' + (eurasia('UZ', 'Uzbekistan').notes || ''),
+      transport_to_next: 'End of this route — return flight from Tashkent to Amsterdam (1 stopover via Istanbul).',
     },
   ], {
     best_starting_month: 'September',
-    travel_style: 'Trein/bus tussen de Zijderoute-steden — Samarkand-Bukhara-Khiva-Tasjkent is goed door binnenlandse hogesnelheidstreinen verbonden.',
-    climate_summary: 'September-oktober vermijdt de zomerhitte (40°C+) in Bukhara/Khiva en de wintersmog, met nog aangenaam mild weer voor stedentrips.',
-    description: 'De Zijderoute-steden Samarkand, Bukhara, Khiva en Tasjkent.',
-    notes: 'Losgesplitst van Eurasia Grand Tour 🌏 (via West-Eurazië Overland 🐫, waar dit al als eigen "Sterk"-blok stond in ROUTE_BUILDER_MODULES.md — "klassieke Zijderoute-stedentrip") als onderdeel van de vierde batch losse landen (2026-08). Land, dagen en budget zijn ongewijzigd overgenomen. Eurasia Grand Tour 🌏 en West-Eurazië Overland 🐫 zelf blijven ongewijzigd bestaan.',
+    travel_style: 'Train/bus between the Silk Road cities — Samarkand-Bukhara-Khiva-Tashkent is well connected by domestic high-speed trains.',
+    climate_summary: 'September-October avoids the summer heat (40°C+) in Bukhara/Khiva and the winter smog, with still-pleasant mild weather for city trips.',
+    description: 'The Silk Road cities of Samarkand, Bukhara, Khiva and Tashkent.',
+    notes: 'Split off from Eurasia Grand Tour 🌏 (via West Eurasia Overland 🐫, where this already stood as its own "Strong" block in ROUTE_BUILDER_MODULES.md — "classic Silk Road city trip") as part of this fourth batch of standalone countries (2026-08). Country, days and budget are carried over unchanged. Eurasia Grand Tour 🌏 and West Eurasia Overland 🐫 themselves continue to exist unchanged.',
   });
 }
 
 function rbBuildKyrgyzstanRoute() {
   const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
-  return rbBuildFlatSeedRoute('Kirgizië 🐴', [
+  return rbBuildFlatSeedRoute('Kyrgyzstan 🐴', [
     {
       ...eurasia('KG', 'Kyrgyzstan'),
-      notes: 'Instap: vlucht Amsterdam-Bishkek, met overstap via Istanboel (Turkish Airlines/Pegasus, ±9u40-10 uur totaal; vanaf ±€450-700 retour; beste periode september). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (eurasia('KG', 'Kyrgyzstan').notes || ''),
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Bishkek naar Amsterdam (1 overstap via Istanboel).',
+      notes: 'Entry: flight Amsterdam-Bishkek, with a connection via Istanbul (Turkish Airlines/Pegasus, ±9h40-10 hours total; from ±€450-700 return; best period September). Price indication from 2026-08 web research, a snapshot. ' + (eurasia('KG', 'Kyrgyzstan').notes || ''),
+      transport_to_next: 'End of this route — return flight from Bishkek to Amsterdam (1 stopover via Istanbul).',
     },
   ], {
     best_starting_month: 'September',
-    travel_style: 'Deeltaxi/marshrutka tussen Bishkek, Issyk-Kul en Karakol; paard/gids voor de trekking rond Song-Kul.',
-    climate_summary: 'September valt nog binnen het venster (juni-september) waarin Song-Kul (~3.000m) begaanbaar is, met minder drukte dan het hoogseizoen.',
-    description: 'Trekking rond Issyk-Kul, Karakol en het hooggelegen jurtenkamp bij Song-Kul.',
-    notes: 'Losgesplitst van Eurasia Grand Tour 🌏 (via West-Eurazië Overland 🐫) als onderdeel van de vierde batch losse landen (2026-08) — groeiende populariteit als losse trekkingbestemming. Land, dagen en budget zijn ongewijzigd overgenomen. Eurasia Grand Tour 🌏 en West-Eurazië Overland 🐫 zelf blijven ongewijzigd bestaan.',
+    travel_style: 'Shared taxi/marshrutka between Bishkek, Issyk-Kul and Karakol; horse/guide for the trek around Song-Kul.',
+    climate_summary: 'September still falls within the window (June-September) in which Song-Kul (~3,000m) is passable, with fewer crowds than peak season.',
+    description: 'Trekking around Issyk-Kul, Karakol and the high-altitude yurt camp at Song-Kul.',
+    notes: 'Split off from Eurasia Grand Tour 🌏 (via West Eurasia Overland 🐫) as part of this fourth batch of standalone countries (2026-08) — growing popularity as a standalone trekking destination. Country, days and budget are carried over unchanged. Eurasia Grand Tour 🌏 and West Eurasia Overland 🐫 themselves continue to exist unchanged.',
   });
 }
 
@@ -7950,39 +7950,39 @@ function rbSeedStandaloneCountryRoutesBatch5() {
 function rbBuildMongoliaRoute() {
   const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
   const base = eurasia('MN', 'Mongolia');
-  return rbBuildFlatSeedRoute('Mongolië 🦅', [
+  return rbBuildFlatSeedRoute('Mongolia 🦅', [
     {
       ...base,
       days: base.days + 2,
-      notes: 'Instap: vlucht Amsterdam-Ulaanbaatar, met overstap via Istanboel (Turkish Airlines) of Berlijn (MIAT, seizoensgebonden) (±14-19 uur totaal; vanaf ±€600-800 retour; beste periode september). Prijsindicatie webonderzoek 2026-08, momentopname. Langeafstandsvlucht-buffer (2026-08, zie CLAUDE.md): +2 dagen t.o.v. het oorspronkelijke aantal (10→12) — korte reis (≤10 dagen) met een overstapvlucht rechtvaardigt een aankomstdag zonder programma. ' + (base.notes || ''),
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Ulaanbaatar naar Amsterdam (1 overstap).',
+      notes: "Entry: flight Amsterdam-Ulaanbaatar, with a connection via Istanbul (Turkish Airlines) or Berlin (MIAT, seasonal) (±14-19 hours total; from ±€600-800 return; best period September). Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days compared to the original count (10→12) — a short trip (≤10 days) with a connecting flight justifies an arrival day with no programme. " + (base.notes || ''),
+      transport_to_next: 'End of this route — return flight from Ulaanbaatar to Amsterdam (1 stopover).',
     },
   ], {
     best_starting_month: 'September',
-    travel_style: 'Georganiseerde jeeptour voor de Gobiwoestijn-etappe, verder eigen vervoer/dagtochten rond Ulaanbaatar.',
-    climate_summary: 'September vermijdt de julidrukte van het Naadam-festival en blijft nog warm genoeg voor zowel de steppe (Terelj) als de woestijn (Gobi).',
-    description: 'Ulaanbaatar, Terelj National Park, Kharkhorin en een jeeptocht door de Gobiwoestijn.',
-    notes: 'Losgesplitst van Eurasia Grand Tour 🌏 (via Oost-Azië & Stille Oceaan 🗻) als onderdeel van de vijfde batch losse landen (2026-08). Land en dagbudget zijn ongewijzigd overgenomen; dagen verhoogd van 10 naar 12 als langeafstandsvlucht-buffer (zie CLAUDE.md). Eurasia Grand Tour 🌏 en Oost-Azië & Stille Oceaan 🗻 zelf blijven ongewijzigd bestaan.',
+    travel_style: 'Organized jeep tour for the Gobi Desert leg, own transport/day trips elsewhere around Ulaanbaatar.',
+    climate_summary: 'September avoids the July crowds of the Naadam festival and stays warm enough for both the steppe (Terelj) and the desert (Gobi).',
+    description: 'Ulaanbaatar, Terelj National Park, Kharkhorin and a jeep trip through the Gobi Desert.',
+    notes: 'Split off from Eurasia Grand Tour 🌏 (via East Asia & Pacific 🗻) as part of this fifth batch of standalone countries (2026-08). Country and daily budget are carried over unchanged; days increased from 10 to 12 as a long-haul flight buffer (see CLAUDE.md). Eurasia Grand Tour 🌏 and East Asia & Pacific 🗻 themselves continue to exist unchanged.',
   });
 }
 
 function rbBuildVietnamCambodiaRoute() {
   const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
-  return rbBuildFlatSeedRoute('Vietnam & Cambodja 🛺', [
+  return rbBuildFlatSeedRoute('Vietnam & Cambodia 🛺', [
     {
       ...eurasia('VN', 'Vietnam'),
-      notes: 'Instap: vlucht Amsterdam-Hanoi — vanaf 16 juni 2026 rechtstreeks met Vietnam Airlines (3x/week, ±11-12 uur), daarbuiten met 1 overstap (bv. via Istanboel/Doha/München, ±14-16 uur totaal); vanaf ±€700-1.000 retour (open-jaw met de Cambodja-uitstap); beste periode mei/september-oktober. Prijsindicatie webonderzoek 2026-08, momentopname. ' + (eurasia('VN', 'Vietnam').notes || ''),
+      notes: 'Entry: flight Amsterdam-Hanoi — from June 16, 2026 direct with Vietnam Airlines (3x/week, ±11-12 hours), otherwise with 1 stopover (e.g. via Istanbul/Doha/Munich, ±14-16 hours total); from ±€700-1,000 return (open-jaw with the Cambodia exit); best period May/September-October. Price indication from 2026-08 web research, a snapshot. ' + (eurasia('VN', 'Vietnam').notes || ''),
     },
     {
       ...eurasia('KH', 'Cambodia'),
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Phnom Penh of Siem Reap naar Amsterdam (1-2 overstappen, bv. via Bangkok/Singapore/Doha).',
+      transport_to_next: 'End of this route — return flight from Phnom Penh or Siem Reap to Amsterdam (1-2 stopovers, e.g. via Bangkok/Singapore/Doha).',
     },
   ], {
     best_starting_month: 'September',
-    travel_style: 'Backpacker — binnenlandse vlucht Hanoi-Ho Chi Minh City, bus/boot over de Mekongdelta naar Cambodja.',
-    climate_summary: 'September-oktober valt na de zomerhitte en vóór het drukke/duurdere hoogseizoen (november-februari) — een erkend goed compromis tussen weer, drukte en prijs.',
-    description: 'Van Hanoi en de Ha Giang Loop via Ho Chi Minh City naar Phnom Penh, Siem Reap en Angkor Wat.',
-    notes: 'Losgesplitst van Eurasia Grand Tour 🌏 (via Zuidoost-Azië Grand Loop 🛕, waar dit al het "Mainland Southeast Asia"-blok was, "Sterk — dé klassieke SEA-backpackroute" volgens ROUTE_BUILDER_MODULES.md) als onderdeel van de vijfde batch losse landen (2026-08) — hier bewust alleen het Vietnam/Cambodja-tweeluik, zonder Laos/Thailand. Landen, dagen en budgetten zijn ongewijzigd overgenomen. Eurasia Grand Tour 🌏 en Zuidoost-Azië Grand Loop 🛕 zelf blijven ongewijzigd bestaan.',
+    travel_style: 'Backpacker — domestic flight Hanoi-Ho Chi Minh City, bus/boat across the Mekong Delta into Cambodia.',
+    climate_summary: 'September-October falls after the summer heat and ahead of the busier/pricier high season (November-February) — a well-known good compromise between weather, crowds and price.',
+    description: 'From Hanoi and the Ha Giang Loop via Ho Chi Minh City to Phnom Penh, Siem Reap and Angkor Wat.',
+    notes: 'Split off from Eurasia Grand Tour 🌏 (via Southeast Asia Grand Loop 🛕, where this was already the "Mainland Southeast Asia" block, "Strong — the classic SEA backpacker route" per ROUTE_BUILDER_MODULES.md) as part of this fifth batch of standalone countries (2026-08) — deliberately just the Vietnam/Cambodia pairing here, without Laos/Thailand. Countries, days and budgets are carried over unchanged. Eurasia Grand Tour 🌏 and Southeast Asia Grand Loop 🛕 themselves continue to exist unchanged.',
   });
 }
 
@@ -8375,18 +8375,18 @@ function rbBuildGulfStatesRoute() {
 
 function rbBuildMalaysiaRoute() {
   const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
-  return rbBuildFlatSeedRoute('Maleisië 🦋', [
+  return rbBuildFlatSeedRoute('Malaysia 🦋', [
     {
       ...eurasia('MY', 'Malaysia'),
-      notes: 'Instap: rechtstreekse KLM-vlucht Amsterdam-Kuala Lumpur (±12u25; vanaf ±€650-950 retour; beste periode augustus). Prijsindicatie webonderzoek 2026-08, momentopname.',
-      transport_to_next: 'Einde van deze route — rechtstreekse KLM-terugvlucht Kuala Lumpur-Amsterdam.',
+      notes: 'Entry: direct KLM flight Amsterdam-Kuala Lumpur (±12h25; from ±€650-950 return; best period August). Price indication from 2026-08 web research, a snapshot.',
+      transport_to_next: 'End of this route — direct KLM return flight Kuala Lumpur-Amsterdam.',
     },
   ], {
-    best_starting_month: 'Augustus',
-    travel_style: 'Trein/bus tussen de steden op het schiereiland.',
-    climate_summary: 'Augustus valt buiten het noordoost-moessonseizoen (november-februari) — droger op het westelijke schiereiland.',
-    description: 'Langkawi, Penang, de Cameron Highlands, Malacca en Kuala Lumpur — bewust alleen het schiereiland, zonder Borneo.',
-    notes: 'Losgesplitst van Eurasia Grand Tour 🌏 (via Zuidoost-Azië Grand Loop 🛕) als onderdeel van de zesde batch losse landen (2026-08) — hier bewust alleen het schiereiland-deel, Sarawak/Sabah (Borneo) blijft in de grotere expeditie staan. Land, dagen en budget zijn ongewijzigd overgenomen. Eurasia Grand Tour 🌏 en Zuidoost-Azië Grand Loop 🛕 zelf blijven ongewijzigd bestaan.',
+    best_starting_month: 'August',
+    travel_style: 'Train/bus between the cities on the peninsula.',
+    climate_summary: 'August falls outside the northeast monsoon season (November-February) — drier on the western peninsula.',
+    description: 'Langkawi, Penang, the Cameron Highlands, Malacca and Kuala Lumpur — deliberately just the peninsula, without Borneo.',
+    notes: 'Split off from Eurasia Grand Tour 🌏 (via Southeast Asia Grand Loop 🛕) as part of this sixth batch of standalone countries (2026-08) — deliberately just the peninsula part here, Sarawak/Sabah (Borneo) stays in the larger expedition. Country, days and budget are carried over unchanged. Eurasia Grand Tour 🌏 and Southeast Asia Grand Loop 🛕 themselves continue to exist unchanged.',
   });
 }
 
@@ -8559,42 +8559,42 @@ function rbSeedCentralAsiaFurtherSplitRoutes() {
 
 function rbBuildKazakhstanKyrgyzstanRoute() {
   const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
-  return rbBuildFlatSeedRoute('Kazachstan & Kirgizië ⛺', [
+  return rbBuildFlatSeedRoute('Kazakhstan & Kyrgyzstan ⛺', [
     {
       ...eurasia('KZ', 'Kazakhstan'),
-      notes: 'Instap: vlucht Amsterdam-Almaty, met overstap (bv. via Istanboel met Turkish Airlines, of seizoensgebonden via Frankfurt met Lufthansa vanaf maart 2026, ±10-13 uur totaal; vanaf ±€250-650 retour; beste periode juni). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (eurasia('KZ', 'Kazakhstan').notes || ''),
+      notes: 'Entry: flight Amsterdam-Almaty, with a connection (e.g. via Istanbul with Turkish Airlines, or seasonally via Frankfurt with Lufthansa from March 2026, ±10-13 hours total; from ±€250-650 return; best period June). Price indication from 2026-08 web research, a snapshot. ' + (eurasia('KZ', 'Kazakhstan').notes || ''),
     },
     {
       ...eurasia('KG', 'Kyrgyzstan'),
-      transport_to_next: 'Einde van deze route — vlucht vanuit Bishkek naar Amsterdam (1 overstap via Istanboel, Turkish Airlines/Pegasus).',
+      transport_to_next: 'End of this route — flight from Bishkek to Amsterdam (1 stopover via Istanbul, Turkish Airlines/Pegasus).',
     },
   ], {
-    best_starting_month: 'Juni',
-    travel_style: 'Bus/deeltaxi over land tussen de twee landen — Almaty-Bishkek is een drukke maar eenvoudige grensovergang.',
-    climate_summary: 'Juni is het begin van het bergseizoen — de hooggelegen passen en Song-Kul zijn dan net begaanbaar, aansluitend op het beste venster voor beide landen.',
-    description: 'Almaty en de Charyn Canyon in Kazachstan, gevolgd door Bishkek, Issyk-Kul, Karakol en Song-Kul in Kirgizië.',
-    notes: 'Losgesplitst van Eurasia Grand Tour 🌏 (via West-Eurazië Overland 🐫 en de bestaande combinatieroute Centraal-Azië 🐎) als onderdeel van de aantekening bij Centraal-Azië 🐎 om die verder op te splitsen. Landen, dagen en budgetten zijn ongewijzigd overgenomen. Visumcorrectie t.o.v. eerdere aannames: Kirgizië is 30 dagen visumvrij binnen elke periode van 60 dagen, niet "60 dagen" — voor deze 12-daagse etappe ruim voldoende. Eurasia Grand Tour 🌏, West-Eurazië Overland 🐫 en Centraal-Azië 🐎 zelf blijven ongewijzigd bestaan (Kirgizië 🐴 en Oezbekistan 🐪 bestaan ook al los, uit batch 4).',
+    best_starting_month: 'June',
+    travel_style: 'Overland bus/shared taxi between the two countries — Almaty-Bishkek is a busy but straightforward border crossing.',
+    climate_summary: 'June is the start of the mountain season — the high-altitude passes and Song-Kul just become passable then, matching the best window for both countries.',
+    description: 'Almaty and the Charyn Canyon in Kazakhstan, followed by Bishkek, Issyk-Kul, Karakol and Song-Kul in Kyrgyzstan.',
+    notes: 'Split off from Eurasia Grand Tour 🌏 (via West Eurasia Overland 🐫 and the existing combo route Central Asia 🐎) as part of the note on Central Asia 🐎 to split it further. Countries, days and budgets are carried over unchanged. Visa correction vs. earlier assumptions: Kyrgyzstan is visa-free for 30 days within any 60-day period, not "60 days" — plenty for this 12-day leg. Eurasia Grand Tour 🌏, West Eurasia Overland 🐫 and Central Asia 🐎 themselves continue to exist unchanged (Kyrgyzstan 🐴 and Uzbekistan 🐪 also already exist standalone, from batch 4).',
   });
 }
 
 function rbBuildUzbekistanTajikistanRoute() {
   const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
-  return rbBuildFlatSeedRoute('Oezbekistan & Tadzjikistan 🌄', [
+  return rbBuildFlatSeedRoute('Uzbekistan & Tajikistan 🌄', [
     {
       ...eurasia('UZ', 'Uzbekistan'),
-      notes: 'Instap: vlucht Amsterdam-Tasjkent, met overstap via Istanboel (Turkish Airlines, ±9-12 uur totaal; vanaf ±€500-700 retour; beste periode juni-september, nodig voor de hooggelegen Pamir Highway later in de route). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (eurasia('UZ', 'Uzbekistan').notes || ''),
-      transport_to_next: "Terug naar Samarkand (±300 km vanaf Tasjkent, ±2u met de Afrosiyob-hogesnelheidstrein), dan marshrutka/deeltaxi naar Panjakent en de grensovergang Jartepa/Sarazm (±60 km, courante overgang, doorgaans zonder problemen) naar Tadzjikistan. Check de actuele grensstatus vlak vóór vertrek (bv. via caravanistan.com) — de grens is sinds 2018 goed open, maar kende in het verleden periodes van tijdelijke sluiting.",
+      notes: 'Entry: flight Amsterdam-Tashkent, with a connection via Istanbul (Turkish Airlines, ±9-12 hours total; from ±€500-700 return; best period June-September, needed for the high-altitude Pamir Highway later in the route). Price indication from 2026-08 web research, a snapshot. ' + (eurasia('UZ', 'Uzbekistan').notes || ''),
+      transport_to_next: "Back to Samarkand (±300 km from Tashkent, ±2h on the Afrosiyob high-speed train), then a marshrutka/shared taxi to Panjakent and the Jartepa/Sarazm border crossing (±60 km, a common crossing, usually without issues) into Tajikistan. Check the current border status shortly before departure (e.g. via caravanistan.com) — the border has been reliably open since 2018, but has had periods of temporary closure in the past.",
     },
     {
       ...eurasia('TJ', 'Tajikistan'),
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Dushanbe naar Amsterdam (1 overstap via Istanboel, Turkish Airlines; ±9-12 uur totaal).',
+      transport_to_next: 'End of this route — return flight from Dushanbe to Amsterdam (1 stopover via Istanbul, Turkish Airlines; ±9-12 hours total).',
     },
   ], {
-    best_starting_month: 'Juni',
-    travel_style: 'Trein/marshrutka in Oezbekistan, deeltaxi/jeep over de Pamir Highway in Tadzjikistan — een echte overland-route, de twee landen delen een grens bij Samarkand/Panjakent.',
-    climate_summary: 'Juni-september is het enige venster waarin de hooggelegen Pamir Highway-passen begaanbaar zijn — buiten dat seizoen ligt de route deels onder de sneeuw.',
-    description: 'De Zijderoute-steden Samarkand, Bukhara, Khiva en Tasjkent, gevolgd door de Pamir Highway, Murghab en Dushanbe.',
-    notes: 'Losgesplitst van Eurasia Grand Tour 🌏 (via West-Eurazië Overland 🐫 en de bestaande combinatieroute Centraal-Azië 🐎) als onderdeel van de aantekening bij Centraal-Azië 🐎 om die verder op te splitsen. Landen, dagen en budgetten zijn ongewijzigd overgenomen. Vervangt de eerder gebouwde "Kazachstan & Tadzjikistan"-combinatie (2026-08) — die vloog over Kirgizië/Oezbekistan heen omdat Kazachstan en Tadzjikistan geen gedeelde grens hebben; Oezbekistan en Tadzjikistan delen wél een grens (bij Samarkand/Panjakent, grensovergang Jartepa/Sarazm), wat dit een logischere, volledig overland te doen combinatie maakt — Youri\'s eigen voorkeur. Tadzjikistan-visum: e-visa ($30) met optionele GBAO-vergunning voor de Pamir Highway direct erbij aan te vragen (+$20) — ruim vooraf regelen, niet bij aankomst verkrijgbaar. Eurasia Grand Tour 🌏, West-Eurazië Overland 🐫 en Centraal-Azië 🐎 zelf blijven ongewijzigd bestaan (net als Kirgizië 🐴 en Oezbekistan 🐪, die ook al los bestaan uit batch 4).',
+    best_starting_month: 'June',
+    travel_style: 'Train/marshrutka in Uzbekistan, shared taxi/jeep on the Pamir Highway in Tajikistan — a genuine overland route, the two countries share a border near Samarkand/Panjakent.',
+    climate_summary: 'June-September is the only window in which the high-altitude Pamir Highway passes are passable — outside that season part of the route lies under snow.',
+    description: 'The Silk Road cities of Samarkand, Bukhara, Khiva and Tashkent, followed by the Pamir Highway, Murghab and Dushanbe.',
+    notes: 'Split off from Eurasia Grand Tour 🌏 (via West Eurasia Overland 🐫 and the existing combo route Central Asia 🐎) as part of the note on Central Asia 🐎 to split it further. Countries, days and budgets are carried over unchanged. Replaces the earlier-built "Kazakhstan & Tajikistan" combo (2026-08) — that one flew over Kyrgyzstan/Uzbekistan because Kazakhstan and Tajikistan don\'t share a border; Uzbekistan and Tajikistan do share a border (near Samarkand/Panjakent, the Jartepa/Sarazm crossing), making this a more logical, fully overland-doable combo — Youri\'s own preference. Tajikistan visa: e-visa ($30) with an optional GBAO permit for the Pamir Highway applied for at the same time (+$20) — arrange well in advance, not available on arrival. Eurasia Grand Tour 🌏, West Eurasia Overland 🐫 and Central Asia 🐎 themselves continue to exist unchanged (as do Kyrgyzstan 🐴 and Uzbekistan 🐪, which also already exist standalone from batch 4).',
   });
 }
 
@@ -9015,7 +9015,7 @@ function rbSeedDolomitesNorthItalyRoute() {
 }
 
 function rbBuildDolomitesNorthItalyRoute() {
-  return rbBuildFlatSeedRoute('Dolomieten & Noord-Italië 🚡', [
+  return rbBuildFlatSeedRoute('Dolomites & North Italy 🚡', [
     {
       code: 'IT', name: 'Italy', days: 6, budget: 720, lat: 46.5369, lng: 12.1357,
       destinations: [
@@ -9024,8 +9024,8 @@ function rbBuildDolomitesNorthItalyRoute() {
         { name: 'Seceda', lat: 46.5765, lng: 11.7099 },
         { name: 'Val Gardena', lat: 46.5645, lng: 11.6750 },
       ],
-      notes: 'Instap: rechtstreekse vlucht Amsterdam-Venetië (VCE), huurauto, ≈150 km naar de Dolomieten (Cortina d\'Ampezzo-richting; vanaf ±€80-200 retour, ±1u40; beste periode juli-augustus). Prijsindicatie webonderzoek 2026-08, momentopname. Een van de grootste hoogtepunten van de hele reis — de bekende wandelingen (Tre Cime-rondje, Seceda) zijn elk een dag op zich.',
-      transport_to_next: 'Auto, ≈410 km naar Milaan — vroeg vertrekken of splitsen met een tussenstop bij Verona/Brescia. Italiaanse autostrada rekent tol per kilometer.',
+      notes: "Entry: direct flight Amsterdam-Venice (VCE), rental car, ≈150 km to the Dolomites (toward Cortina d'Ampezzo; from ±€80-200 return, ±1h40; best period July-August). Price indication from 2026-08 web research, a snapshot. One of the biggest highlights of the whole trip — the well-known hikes (Tre Cime loop, Seceda) are each a full day in themselves.",
+      transport_to_next: 'Car, ≈410 km to Milan — leave early or split the drive with a stop at Verona/Brescia. Italian autostrada tolls charge per kilometre.',
     },
     {
       code: 'IT', name: 'Italy', days: 2, budget: 240, lat: 45.4642, lng: 9.1900,
@@ -9033,20 +9033,20 @@ function rbBuildDolomitesNorthItalyRoute() {
         { name: 'Duomo', lat: 45.4642, lng: 9.1900 },
         { name: 'Galleria', lat: 45.4656, lng: 9.1896 },
         { name: 'Navigli', lat: 45.4514, lng: 9.1739 },
-        { name: 'Laatste Avondmaal', lat: 45.4661, lng: 9.1706 },
+        { name: 'Last Supper', lat: 45.4661, lng: 9.1706 },
       ],
-      notes: 'Eén volle dag voor de binnenstad, een tweede als je het Laatste Avondmaal (reservering vereist) wilt meepakken.',
-      transport_to_next: 'Auto, ≈140 km naar Turijn via de A4/A55, tolweg.',
+      notes: 'One full day for the city centre, a second if you want to include the Last Supper (reservation required).',
+      transport_to_next: 'Car, ≈140 km to Turin via the A4/A55, toll road.',
     },
     {
       code: 'IT', name: 'Italy', days: 2, budget: 190, lat: 45.0703, lng: 7.6869,
       destinations: [
-        { name: 'Egyptisch Museum', lat: 45.0703, lng: 7.6869 },
+        { name: 'Egyptian Museum', lat: 45.0703, lng: 7.6869 },
         { name: 'Mole Antonelliana', lat: 45.0691, lng: 7.6934 },
-        { name: 'historisch centrum', lat: 45.0703, lng: 7.6869 },
+        { name: 'Historic centre', lat: 45.0703, lng: 7.6869 },
       ],
-      notes: 'Compacte, onderschatte stad — het Egyptisch Museum (op één na grootste ter wereld) verdient zelf al een halve dag. Prijscheck (2026-07): Turijn is goedkoper dan het vlakke €120/dag-tarief, gecorrigeerd naar €95/dag.',
-      transport_to_next: 'Auto tot een bewaakte parkeerplaats bij Monterosso/La Spezia (≈260 km via Alessandria/Genua) — de dorpjes zelf zijn grotendeels autovrij.',
+      notes: 'A compact, underrated city — the Egyptian Museum (the second largest in the world) deserves half a day on its own. Price check (2026-07): Turin is cheaper than the flat €120/day rate, corrected to €95/day.',
+      transport_to_next: 'Car to a guarded parking lot near Monterosso/La Spezia (≈260 km via Alessandria/Genoa) — the villages themselves are largely car-free.',
     },
     {
       code: 'IT', name: 'Italy', days: 3, budget: 435, lat: 44.1461, lng: 9.6558,
@@ -9057,8 +9057,8 @@ function rbBuildDolomitesNorthItalyRoute() {
         { name: 'Manarola', lat: 44.1067, lng: 9.7275 },
         { name: 'Riomaggiore', lat: 44.0993, lng: 9.7378 },
       ],
-      notes: 'De vijf dorpjes en de wandelpaden ertussen (Sentiero Azzurro) zijn het hele punt — drie dagen voor rustig wandelen plus een boottochtje. Prijscheck (2026-07): schaarse/dure accommodatie en toeristenopslag op eten duwen dit boven het vlakke €120/dag-tarief, gecorrigeerd naar €145/dag.',
-      transport_to_next: 'Auto, ≈140 km naar Florence via La Spezia-Lucca-Firenze.',
+      notes: 'The five villages and the hiking trails between them (Sentiero Azzurro) are the whole point — three days for relaxed hiking plus a short boat trip. Price check (2026-07): scarce/expensive accommodation and tourist markup on food push this above the flat €120/day rate, corrected to €145/day.',
+      transport_to_next: 'Car, ≈140 km to Florence via La Spezia-Lucca-Florence.',
     },
     {
       code: 'IT', name: 'Italy', days: 3, budget: 360, lat: 43.7696, lng: 11.2558,
@@ -9068,14 +9068,14 @@ function rbBuildDolomitesNorthItalyRoute() {
         { name: 'San Gimignano', lat: 43.4674, lng: 11.0431 },
         { name: 'Chianti', lat: 43.4708, lng: 11.3350 },
       ],
-      notes: 'Compact gehouden ("een stukje Toscane") — Florence plus één dag Chianti/Siena/San Gimignano.',
-      transport_to_next: 'Auto, ≈180 km naar San Marino — Florence en San Marino liggen dicht bij elkaar.',
+      notes: 'Kept compact ("a slice of Tuscany") — Florence plus one day of Chianti/Siena/San Gimignano.',
+      transport_to_next: 'Car, ≈180 km to San Marino — Florence and San Marino are close to each other.',
     },
     {
       code: 'SM', name: 'San Marino', days: 1, budget: 120, lat: 43.9424, lng: 12.4578,
-      destinations: [{ name: 'Historisch centrum', lat: 43.9424, lng: 12.4578 }],
-      notes: 'Klein genoeg voor één dag, dicht bij Florence — een bewuste stop, geen omweg meer om over te twijfelen.',
-      transport_to_next: 'Auto, ≈300 km naar Venetië, met een overnachting daar — de stad zelf is autovrij, park bij Tronchetto of Mestre.',
+      destinations: [{ name: 'Historic centre', lat: 43.9424, lng: 12.4578 }],
+      notes: 'Small enough for one day, close to Florence — a deliberate stop, not a detour worth second-guessing.',
+      transport_to_next: 'Car, ≈300 km to Venice, staying overnight there — the city itself is car-free, park at Tronchetto or Mestre.',
     },
     {
       code: 'IT', name: 'Italy', days: 2, budget: 320, lat: 45.4408, lng: 12.3155,
@@ -9084,15 +9084,15 @@ function rbBuildDolomitesNorthItalyRoute() {
         { name: 'Dorsoduro', lat: 45.4302, lng: 12.3245 },
         { name: 'Murano/Burano', lat: 45.4585, lng: 12.3538 },
       ],
-      notes: 'Ligt vlak bij VCE — een efficiënte laatste stop voor de terugvlucht. Prijscheck (2026-07): centraal Venetië is een bekende prijs-uitschieter (accommodatie 2-3x Mestre-niveau, dure vaporetto-dagpassen) — gecorrigeerd van €120 naar €160/dag.',
-      transport_to_next: 'Einde van deze route — auto terug naar Venetië (VCE), rechtstreekse terugvlucht naar Amsterdam.',
+      notes: 'Right next to VCE — an efficient last stop before the flight home. Price check (2026-07): central Venice is a well-known price outlier (accommodation 2-3x Mestre-level, expensive vaporetto day passes) — corrected from €120 to €160/day.',
+      transport_to_next: 'End of this route — drive back to Venice (VCE), direct return flight to Amsterdam.',
     },
   ], {
-    best_starting_month: 'Juli',
-    travel_style: 'Huurauto vanaf Venetië — dezelfde lus als in Central European Grand Roadtrip 🚗, nu vanaf/naar het vliegveld in plaats van vanuit Nederland.',
-    climate_summary: 'Juli-augustus is het gangbare wandelseizoen in de Dolomieten (Tre Cime, Seceda); mei-juni/september zijn rustiger en nog steeds goed begaanbaar, maar de hoogste paden kunnen dan nog restsneeuw hebben.',
-    description: 'De Dolomieten, Milaan, Turijn, de Cinque Terre, een stukje Toscane, San Marino en Venetië — één lus met huurauto vanaf Venetië.',
-    notes: 'Losgesplitst van Central European Grand Roadtrip 🚗 (het "Dolomieten & Noord-Italië"-blok) als eigen vlieg+huurauto-trip — in ROUTE_BUILDER_MODULES.md aangemerkt als de sterkste van de twee fly-in-reframes uit die expeditie (de andere, Balkan-as-flyto, is Medium-beoordeeld, nog niet gebouwd). Landen, dagen en budgetten per etappe zijn ongewijzigd overgenomen (19 dagen, €2.385) — alleen instap/uitstap zijn aangepast van "eigen auto vanuit Nederland" naar "vlucht naar Venetië, huurauto, dezelfde lus, terug naar Venetië voor de thuisvlucht" (dezelfde ≈300km San Marino-Venetië-rit die al in de brontekst stond, nu het sluitstuk van de lus i.p.v. een tussenstop op weg naar de Balkan). Visum/reisadvies (uit de brontekst, 2026-07 geverifieerd): Italië en San Marino zijn beide visumvrij voor een Nederlands paspoort, Italië is Schengen, San Marino heeft een open grens met Italië — reisadvies overal groen. Central European Grand Roadtrip 🚗 zelf blijft ongewijzigd bestaan.',
+    best_starting_month: 'July',
+    travel_style: 'Rental car from Venice — the same loop as in Central European Grand Roadtrip 🚗, now from/to the airport instead of from the Netherlands.',
+    climate_summary: 'July-August is the standard hiking season in the Dolomites (Tre Cime, Seceda); May-June/September are quieter and still well passable, but the highest trails may still have residual snow then.',
+    description: 'The Dolomites, Milan, Turin, the Cinque Terre, a slice of Tuscany, San Marino and Venice — one loop by rental car from Venice.',
+    notes: 'Split off from Central European Grand Roadtrip 🚗 (the "Dolomites & North Italy" block) as its own fly-in + rental-car trip — flagged in ROUTE_BUILDER_MODULES.md as the stronger of the two fly-in reframes from that expedition (the other, Balkan-as-fly-to, was rated Medium, not yet built). Countries, days and budgets per leg are carried over unchanged (19 days, €2,385) — only the entry/exit points changed from "own car from the Netherlands" to "fly to Venice, rental car, same loop, back to Venice for the flight home" (the same ≈300km San Marino-Venice drive that was already in the source text, now the closing leg of the loop instead of a stop on the way to the Balkans). Visa/travel advisory (from the source text, verified 2026-07): Italy and San Marino are both visa-free for a Dutch passport, Italy is Schengen, San Marino has an open border with Italy — travel advisory green everywhere. Central European Grand Roadtrip 🚗 itself continues to exist unchanged.',
   });
 }
 
@@ -9120,7 +9120,7 @@ function rbSeedUSLooseTrips() {
 }
 
 function rbBuildUSNortheastRoute() {
-  return rbBuildFlatSeedRoute('US Oostkust 🗽', [
+  return rbBuildFlatSeedRoute('US Northeast 🗽', [
     {
       code: 'US', name: 'United States', days: 3, budget: 270, lat: 38.9072, lng: -77.0369,
       destinations: [
@@ -9129,8 +9129,8 @@ function rbBuildUSNortheastRoute() {
         { name: 'Capitol Hill', lat: 38.8899, lng: -77.0091 },
         { name: 'Georgetown', lat: 38.9097, lng: -77.0654 },
       ],
-      notes: 'Instap: rechtstreekse vlucht Amsterdam-Washington DC (KLM, ±8-9 uur; beste periode half september-eind oktober). Prijsindicatie webonderzoek 2026-08, momentopname. ESTA verplicht ($40, ruim vooraf aanvragen, paspoort nog 6+ maanden geldig). De Smithsonian-musea en de meeste monumenten zijn gratis — bewust een goedkopere stop dan de andere drie steden.',
-      transport_to_next: 'Trein (Amtrak Northeast Regional), ≈2 uur naar Philadelphia — boek 2-4 weken vooruit en reis dinsdag-donderdag voor de beste "Saver"-tarieven.',
+      notes: 'Entry: direct flight Amsterdam-Washington DC (KLM, ±8-9 hours; best period mid-September-late October). Price indication from 2026-08 web research, a snapshot. ESTA required ($40, apply well in advance, passport valid 6+ months). The Smithsonian museums and most monuments are free — deliberately a cheaper stop than the other three cities.',
+      transport_to_next: 'Train (Amtrak Northeast Regional), ≈2 hours to Philadelphia — book 2-4 weeks ahead and travel Tuesday-Thursday for the best "Saver" fares.',
     },
     {
       code: 'US', name: 'United States', days: 2, budget: 190, lat: 39.9526, lng: -75.1652,
@@ -9139,8 +9139,8 @@ function rbBuildUSNortheastRoute() {
         { name: 'Old City & Society Hill', lat: 39.9476, lng: -75.1449 },
         { name: 'Reading Terminal Market', lat: 39.9532, lng: -75.1590 },
       ],
-      notes: 'Duidelijk goedkoper dan New York/Boston — blijf \'s avonds rond Center City/Old City/Society Hill, niet in onbekende buitenwijken.',
-      transport_to_next: 'Trein, ≈1,5 uur naar New York.',
+      notes: 'Clearly cheaper than New York/Boston — stay around Center City/Old City/Society Hill in the evening, not in unfamiliar outer neighbourhoods.',
+      transport_to_next: 'Train, ≈1.5 hours to New York.',
     },
     {
       code: 'US', name: 'United States', days: 4, budget: 560, lat: 40.7128, lng: -74.0060,
@@ -9149,8 +9149,8 @@ function rbBuildUSNortheastRoute() {
         { name: 'MoMA / The Met', lat: 40.7794, lng: -73.9632 },
         { name: 'Brooklyn (Williamsburg, DUMBO)', lat: 40.7081, lng: -73.9571 },
       ],
-      notes: 'De duurste stop van de route — een privékamer/klein Airbnb, geen dorm, past nog binnen de tussen-budget-en-comfort-stijl.',
-      transport_to_next: 'Trein, ≈4 uur naar Boston (of het directe DC-Boston-traject, ≈7,5-8 uur, als je Philadelphia/New York had overgeslagen).',
+      notes: 'The most expensive stop on the route — a private room/small Airbnb, not a dorm, still fits within the between-budget-and-comfort style.',
+      transport_to_next: 'Train, ≈4 hours to Boston (or the direct DC-Boston route, ≈7.5-8 hours, if you had skipped Philadelphia/New York).',
     },
     {
       code: 'US', name: 'United States', days: 3, budget: 345, lat: 42.3601, lng: -71.0589,
@@ -9159,20 +9159,20 @@ function rbBuildUSNortheastRoute() {
         { name: 'Harvard & Cambridge', lat: 42.3770, lng: -71.1167 },
         { name: 'Fenway', lat: 42.3467, lng: -71.0972 },
       ],
-      notes: 'Reisadvies (2026-08): VS staat groen — normale voorzichtigheid, geen bijzondere restricties. Alle vier steden zitten in een reële veiligheidsverbetering (misdaadcijfers dalen in NYC/DC/Philadelphia).',
-      transport_to_next: 'Einde van deze route — rechtstreekse terugvlucht vanuit Boston naar Amsterdam.',
+      notes: 'Travel advisory (2026-08): the US is green — normal caution, no special restrictions. All four cities are seeing a real safety improvement (crime rates falling in NYC/DC/Philadelphia).',
+      transport_to_next: 'End of this route — direct return flight from Boston to Amsterdam.',
     },
   ], {
     best_starting_month: 'September',
-    travel_style: 'Trein (Northeast Corridor) tussen alle vier steden — geen huurauto nodig, 15-20+ treinen per dag per traject.',
-    climate_summary: 'Half september-eind oktober: mild, herfstkleuren richting New England, ruim voorbij de zomerhitte/vochtigheid van juli-augustus. Vermijd november-maart (bitter koud) en juli-augustus (drukkend heet/vochtig in DC/New York).',
-    description: 'Washington DC, Philadelphia, New York en Boston via de Northeast Corridor-trein — vier klassieke Amerikaanse steden op één rechte lijn.',
-    notes: 'Gebouwd (2026-08) na een audit die de hele Amerikaanse oostkust volledig miste in Route Builder — geen bewuste keuze, gewoon nooit gebouwd. Op Youri\'s verzoek een losse, op zichzelf staande trip, niet samengevoegd met North America Grand Traverse 🌎 (die blijft ongewijzigd bestaan). Onderzocht via een WebSearch-backed research-agent: route/dagen/budget/seizoen/transport/veiligheid. Bewust géén verlenging naar het zuiden (Charleston/Savannah/Miami/New Orleans) — ten zuiden van DC rijdt er nog maar ~1 trein per dag, orkaanseizoen overlapt met het beste NEC-seizoen, en Miami/het zuiden verdienen een eigen aanpak (zie Florida 🐊, apart gebouwd). 12 dagen, €1.365 grondkosten. Nog niet getoetst aan actuele prijzen — behandel als een eerste concept, geen boekbaar plan.',
+    travel_style: 'Train (Northeast Corridor) between all four cities — no rental car needed, 15-20+ trains a day per route.',
+    climate_summary: 'Mid-September-late October: mild, autumn colours toward New England, well past the summer heat/humidity of July-August. Avoid November-March (bitterly cold) and July-August (oppressively hot/humid in DC/New York).',
+    description: 'Washington DC, Philadelphia, New York and Boston via the Northeast Corridor train — four classic American cities on one straight line.',
+    notes: 'Built (2026-08) after an audit that found the entire US East Coast completely missing from Route Builder — not a deliberate choice, just never built. At Youri\'s request a standalone, self-contained trip, not merged into North America Grand Traverse 🌎 (which continues to exist unchanged). Researched via a WebSearch-backed research agent: route/days/budget/season/transport/safety. Deliberately no extension south (Charleston/Savannah/Miami/New Orleans) — south of DC there\'s only ~1 train a day, hurricane season overlaps the best NEC season, and Miami/the south deserve their own approach (see Florida 🐊, built separately). 12 days, €1,365 ground costs. Not yet checked against current prices — treat as a first concept, not a bookable plan.',
   });
 }
 
 function rbBuildUSSouthwestRoute() {
-  return rbBuildFlatSeedRoute('US Zuidwesten 🏜️', [
+  return rbBuildFlatSeedRoute('US Southwest 🏜️', [
     {
       code: 'US', name: 'United States', days: 3, budget: 375, lat: 37.2982, lng: -113.0263,
       destinations: [
@@ -9180,8 +9180,8 @@ function rbBuildUSSouthwestRoute() {
         { name: 'The Narrows', lat: 37.2999, lng: -112.9484 },
         { name: 'Emerald Pools', lat: 37.2586, lng: -112.9723 },
       ],
-      notes: 'Instap: vlucht Amsterdam-Las Vegas (met overstap, meestal via een Amerikaanse hub, ±13-15 uur; beste periode half september-half oktober). Prijsindicatie webonderzoek 2026-08, momentopname. Huurauto ophalen in Vegas — een overnachting daar is optioneel, niet nodig voor de route zelf.',
-      transport_to_next: 'Auto, ≈1u50 naar Bryce Canyon.',
+      notes: 'Entry: flight Amsterdam-Las Vegas (with a connection, usually via a US hub, ±13-15 hours; best period mid-September-mid-October). Price indication from 2026-08 web research, a snapshot. Pick up the rental car in Vegas — an overnight stay there is optional, not needed for the route itself.',
+      transport_to_next: 'Car, ≈1h50 to Bryce Canyon.',
     },
     {
       code: 'US', name: 'United States', days: 2, budget: 250, lat: 37.5930, lng: -112.1871,
@@ -9189,7 +9189,7 @@ function rbBuildUSSouthwestRoute() {
         { name: 'Bryce Amphitheater', lat: 37.5930, lng: -112.1871 },
         { name: "Navajo Loop / Queen's Garden Trail", lat: 37.6283, lng: -112.1660 },
       ],
-      transport_to_next: 'Auto, ≈3 uur naar Page.',
+      transport_to_next: 'Car, ≈3 hours to Page.',
     },
     {
       code: 'US', name: 'United States', days: 2, budget: 250, lat: 36.9147, lng: -111.4558,
@@ -9197,14 +9197,14 @@ function rbBuildUSSouthwestRoute() {
         { name: 'Antelope Canyon', lat: 36.8619, lng: -111.4103 },
         { name: 'Horseshoe Bend', lat: 36.8791, lng: -111.5104 },
       ],
-      notes: 'Antelope Canyon is alleen te bezoeken met een verplichte Navajo-gids (sinds een overstroming in 1997) — reken ~$80 p.p. all-in bij een erkende operator (Ken\'s Tours/Dixie Ellis\'), een aparte kostenpost bovenop het dagbudget.',
-      transport_to_next: 'Auto, ≈2-2,5 uur naar Monument Valley.',
+      notes: "Antelope Canyon can only be visited with a mandatory Navajo guide (since a 1997 flood) — budget ~$80 p.p. all-in with a licensed operator (Ken's Tours/Dixie Ellis'), a separate cost on top of the daily budget.",
+      transport_to_next: 'Car, ≈2-2.5 hours to Monument Valley.',
     },
     {
       code: 'US', name: 'United States', days: 1, budget: 125, lat: 36.9989, lng: -110.1007,
       destinations: [{ name: '17-mile scenic loop', lat: 36.9989, lng: -110.1007 }],
-      notes: 'Navajo Nation-entree ($15 p.p. + $20/auto, contant) — niet gedekt door de America the Beautiful-jaarpas (die geldt alleen voor NPS-parken: Zion/Bryce/Grand Canyon).',
-      transport_to_next: 'Auto (via Cameron), ≈2,5-3 uur naar Grand Canyon South Rim.',
+      notes: 'Navajo Nation entry fee ($15 p.p. + $20/car, cash) — not covered by the America the Beautiful annual pass (which only applies to NPS parks: Zion/Bryce/Grand Canyon).',
+      transport_to_next: 'Car (via Cameron), ≈2.5-3 hours to Grand Canyon South Rim.',
     },
     {
       code: 'US', name: 'United States', days: 2, budget: 250, lat: 36.0544, lng: -112.1401,
@@ -9212,8 +9212,8 @@ function rbBuildUSSouthwestRoute() {
         { name: 'Rim Trail', lat: 36.0544, lng: -112.1401 },
         { name: 'Bright Angel Trailhead', lat: 36.0572, lng: -112.1445 },
       ],
-      notes: 'Een America the Beautiful-jaarpas (~€75) is de moeite waard zodra je Zion, Bryce én hier komt.',
-      transport_to_next: 'Auto, ≈3,5-4 uur naar Sedona.',
+      notes: 'An America the Beautiful annual pass (~€75) is worth it once you visit Zion, Bryce and here.',
+      transport_to_next: 'Car, ≈3.5-4 hours to Sedona.',
     },
     {
       code: 'US', name: 'United States', days: 2, budget: 250, lat: 34.8697, lng: -111.7610,
@@ -9221,15 +9221,15 @@ function rbBuildUSSouthwestRoute() {
         { name: 'Cathedral Rock', lat: 34.8214, lng: -111.7897 },
         { name: 'Red Rock State Park', lat: 34.8236, lng: -111.8302 },
       ],
-      notes: 'Reisadvies (2026-08): VS staat groen. Zomer is hier levensgevaarlijk heet (Page/Monument Valley/de canyonbodem regelmatig 38°C+) — vandaar het najaarsseizoen, niet mei-juni.',
-      transport_to_next: 'Einde van deze route — auto naar Phoenix (≈2 uur), huurauto inleveren (one-way, drop-off-vergoeding), terugvlucht naar Amsterdam.',
+      notes: 'Travel advisory (2026-08): the US is green. Summer is dangerously hot here (Page/Monument Valley/the canyon floor regularly 38°C+) — hence the autumn season, not May-June.',
+      transport_to_next: 'End of this route — drive to Phoenix (≈2 hours), return the rental car (one-way, drop-off fee), return flight to Amsterdam.',
     },
   ], {
     best_starting_month: 'September',
-    travel_style: 'Huurauto, one-way Las Vegas-Phoenix — een rechte oostwaartse sweep zonder terugrijden.',
-    climate_summary: 'Half september-half oktober: stabiel, droog, ver van de dodelijke zomerhitte. Voor- en naseizoen (april-mei) is ook begaanbaar maar drukker/duurder; november-februari brengt sneeuw op de hogere delen (Bryce ligt op 2.400m).',
-    description: 'Zion, Bryce Canyon, Antelope Canyon, Monument Valley, Grand Canyon en Sedona — een woestijn-roadtrip met huurauto van Las Vegas naar Phoenix.',
-    notes: 'Gebouwd (2026-08) na een audit die de hele Amerikaanse zuidwestelijke woestijn volledig miste in Route Builder. Op Youri\'s verzoek een losse, op zichzelf staande trip, niet samengevoegd met North America Grand Traverse 🌎. Onderzocht via een WebSearch-backed research-agent. Bewuste keuze voor one-way Phoenix in plaats van een lus terug naar Vegas: kost een inleververgoeding voor de huurauto, maar behoudt Sedona en Phoenix is een logischer knooppunt (Southwest Airlines-hub, direct aan de I-10 richting Texas) dan de doodlopende richting die Vegas is. 12 dagen, €1.500 grondkosten. Nog niet getoetst aan actuele prijzen — behandel als een eerste concept, geen boekbaar plan.',
+    travel_style: 'Rental car, one-way Las Vegas-Phoenix — a straight eastward sweep with no backtracking.',
+    climate_summary: 'Mid-September-mid-October: stable, dry, far from the deadly summer heat. Shoulder season (April-May) is also workable but busier/pricier; November-February brings snow to the higher elevations (Bryce sits at 2,400m).',
+    description: 'Zion, Bryce Canyon, Antelope Canyon, Monument Valley, Grand Canyon and Sedona — a desert road trip by rental car from Las Vegas to Phoenix.',
+    notes: 'Built (2026-08) after an audit that found the entire American southwestern desert completely missing from Route Builder. At Youri\'s request a standalone, self-contained trip, not merged into North America Grand Traverse 🌎. Researched via a WebSearch-backed research agent. Deliberate choice for one-way to Phoenix instead of a loop back to Vegas: costs a rental-car drop-off fee, but keeps Sedona in, and Phoenix is a more logical hub (Southwest Airlines hub, right on the I-10 toward Texas) than the dead-end direction Vegas represents. 12 days, €1,500 ground costs. Not yet checked against current prices — treat as a first concept, not a bookable plan.',
   });
 }
 
@@ -10796,7 +10796,7 @@ function rbBuildVeniceDolomitesRoute() {
     travel_style: 'Direct flight Amsterdam-Venice, rental car for the Dolomites leg, then back to Venice for the flight home.',
     climate_summary: 'Early June or September — a compromise between cable cars opening (late May/June) and lower Venice crowds.',
     description: "Venice (San Marco, Rialto, Murano/Burano) and Cortina d'Ampezzo or Val Gardena (Tre Cime, Lago di Braies, Cinque Torri).",
-    notes: "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. The pre-existing Dolomieten & Noord-Italië 🚡 route also combines Venice with the Dolomites (Tre Cime, Lago di Braies, Seceda, Val Gardena), but only as the entry/exit legs of a much broader 19-day fly-into-Venice loop that continues on to Milan, Turin, the Cinque Terre, Tuscany and San Marino — this standalone route is a tight 5-day Venice+Dolomites-only trip with none of that extra ground. Deliberately shallower than the standalone Dolomites (6 days) ⛰️ route below, which the source explicitly frames as going deeper into the valleys (Alta Badia, Pusteria) than this shorter combo trip can. Not yet checked against Route Builder-level price research beyond the tax/ticket checks folded in above — treat as a first concept, not a bookable plan.",
+    notes: "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. The pre-existing Dolomites & North Italy 🚡 route also combines Venice with the Dolomites (Tre Cime, Lago di Braies, Seceda, Val Gardena), but only as the entry/exit legs of a much broader 19-day fly-into-Venice loop that continues on to Milan, Turin, the Cinque Terre, Tuscany and San Marino — this standalone route is a tight 5-day Venice+Dolomites-only trip with none of that extra ground. Deliberately shallower than the standalone Dolomites (6 days) ⛰️ route below, which the source explicitly frames as going deeper into the valleys (Alta Badia, Pusteria) than this shorter combo trip can. Not yet checked against Route Builder-level price research beyond the tax/ticket checks folded in above — treat as a first concept, not a bookable plan.",
   });
 }
 
@@ -10880,7 +10880,7 @@ function rbBuildDolomitesDeepRoute() {
     travel_style: 'Fly into Innsbruck (Pusteria/north side) or Verona/Venice (Cortina/south side), rental car for the whole trip — two dedicated bases, no city or Venice leg.',
     climate_summary: 'June-September — a hard boundary; outside this window most high-altitude lifts/trails are snowed in.',
     description: 'Ortisei/Val Gardena (Alpe di Siusi, Seceda, Passo Gardena, Vallunga) and, via Passo Valparola/Falzarego, Cortina d\'Ampezzo (Tre Cime, Cadini di Misurina, Lago di Braies, Cinque Torri, Passo Giau).',
-    notes: "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. The pre-existing Dolomieten & Noord-Italië 🚡 route also passes through the Dolomites (Tre Cime, Lago di Braies, Seceda, Val Gardena) but only as one 6-day leg inside a much broader 19-day fly-into-Venice loop that continues to Milan, Turin, the Cinque Terre, Tuscany, San Marino and Venice — this standalone route instead spends the full 6 days across two dedicated Dolomites bases and reaches valleys (Alta Badia, Pusteria) that pre-existing route's single Cortina-area leg doesn't cover. Deliberately deeper/narrower than Venice + Dolomites (5 days) 🎭 above per the source's own framing (no city/Venice, goes further into the valleys). Not yet checked against Route Builder-level price research beyond the lift/parking checks folded in above — treat as a first concept, not a bookable plan.",
+    notes: "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. The pre-existing Dolomites & North Italy 🚡 route also passes through the Dolomites (Tre Cime, Lago di Braies, Seceda, Val Gardena) but only as one 6-day leg inside a much broader 19-day fly-into-Venice loop that continues to Milan, Turin, the Cinque Terre, Tuscany, San Marino and Venice — this standalone route instead spends the full 6 days across two dedicated Dolomites bases and reaches valleys (Alta Badia, Pusteria) that pre-existing route's single Cortina-area leg doesn't cover. Deliberately deeper/narrower than Venice + Dolomites (5 days) 🎭 above per the source's own framing (no city/Venice, goes further into the valleys). Not yet checked against Route Builder-level price research beyond the lift/parking checks folded in above — treat as a first concept, not a bookable plan.",
   });
 }
 
@@ -10987,7 +10987,7 @@ function rbBuildNorthernItalyRoadtripRoute() {
     travel_style: 'Open-jaw AMS-Milan in, AMS-Venice out — rental car for the lakes and Dolomites, train Verona-Venice.',
     climate_summary: 'May-June or September; Dolomites passes are only fully open/warm June-September, avoid August.',
     description: 'Milan, Lake Como, Lake Garda, Verona, the Dolomites via Bolzano/Lago di Braies, and Venice — west to east, no zigzag.',
-    notes: "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. The 'big sibling' of the standalone Northern Italy (6 days) 🚤 route above per the source's own framing — same lakes-and-cities loop, extended east to the Dolomites and Venice via an open-jaw flight rather than a round trip through Milan. Shares Dolomites ground with Dolomites (6 days) ⛰️ and Venice ground with Venice + Dolomites (5 days) 🎭 above, and lakes/Milan/Venice ground with the pre-existing Dolomieten & Noord-Italië 🚡 route (which is Cinque Terre/Turin/San Marino-focused rather than lakes-focused) — per this project's overlap-is-fine convention, built independently. Not yet checked against Route Builder-level price research beyond the vignette/toll checks folded in above — treat as a first concept, not a bookable plan.",
+    notes: "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. The 'big sibling' of the standalone Northern Italy (6 days) 🚤 route above per the source's own framing — same lakes-and-cities loop, extended east to the Dolomites and Venice via an open-jaw flight rather than a round trip through Milan. Shares Dolomites ground with Dolomites (6 days) ⛰️ and Venice ground with Venice + Dolomites (5 days) 🎭 above, and lakes/Milan/Venice ground with the pre-existing Dolomites & North Italy 🚡 route (which is Cinque Terre/Turin/San Marino-focused rather than lakes-focused) — per this project's overlap-is-fine convention, built independently. Not yet checked against Route Builder-level price research beyond the vignette/toll checks folded in above — treat as a first concept, not a bookable plan.",
   });
 }
 
@@ -18780,7 +18780,7 @@ function rbBuildGermanyAustriaItalyRoute() {
         { name: 'Val Gardena / Ortisei', lat: 46.5765, lng: 11.6750 },
         { name: "Cortina d'Ampezzo", lat: 46.5369, lng: 12.1357 },
       ],
-      notes: "Bolzano as the gateway, then Val Gardena or Cortina d'Ampezzo (3-4 days) — same Dolomites content as Dolomites (6 days) ⛰️ (rbBuildDolomitesDeepRoute) and the Dolomites opening leg of Dolomieten & Noord-Italië 🚡 (rbBuildDolomitesNorthItalyRoute)/Venice + Dolomites (5 days) 🎭 (rbBuildVeniceDolomitesRoute) above — see those routes' notes for lift-season and parking-cap detail (Tre Cime/Lago di Braies book ahead in season). Budget ~€105-140/day p.p. Season: June-September (lifts fully open).",
+      notes: "Bolzano as the gateway, then Val Gardena or Cortina d'Ampezzo (3-4 days) — same Dolomites content as Dolomites (6 days) ⛰️ (rbBuildDolomitesDeepRoute) and the Dolomites opening leg of Dolomites & North Italy 🚡 (rbBuildDolomitesNorthItalyRoute)/Venice + Dolomites (5 days) 🎭 (rbBuildVeniceDolomitesRoute) above — see those routes' notes for lift-season and parking-cap detail (Tre Cime/Lago di Braies book ahead in season). Budget ~€105-140/day p.p. Season: June-September (lifts fully open).",
       transport_to_next: 'Drive south (~150km/2h) to Lake Garda/Verona, or continue to Venice instead (either/or, see this route\'s notes below).',
     },
     {
@@ -18789,7 +18789,7 @@ function rbBuildGermanyAustriaItalyRoute() {
         { name: 'Lake Garda / Sirmione', lat: 45.4933, lng: 10.6089 },
         { name: 'Verona (Arena, old town)', lat: 45.4384, lng: 10.9916 },
       ],
-      notes: "Lake Garda/Verona chosen here as the concrete closing stop rather than Venice — same Sirmione/Desenzano/Verona content as the Lake Garda/Verona legs of Northern Italy (6 days) 🚤 (rbBuildNorthernItalyLakesRoute) and Northern Italy Roadtrip (9 days) 🚙 (rbBuildNorthernItalyRoadtripRoute) above — see those routes' notes for the Milan Area C/Arena-ticket caveats. Deliberately not Venice: Venice is already the closing stop of three other Dolomites-adjacent routes in this repo (Dolomieten & Noord-Italië 🚡, Venice + Dolomites (5 days) 🎭, Northern Italy Roadtrip (9 days) 🚙) — picking Lake Garda/Verona instead avoids piling a fourth near-identical Dolomites→Venice tail onto the list. Budget ~€105-140/day p.p., Venice would run noticeably higher per those other routes' own price checks.",
+      notes: "Lake Garda/Verona chosen here as the concrete closing stop rather than Venice — same Sirmione/Desenzano/Verona content as the Lake Garda/Verona legs of Northern Italy (6 days) 🚤 (rbBuildNorthernItalyLakesRoute) and Northern Italy Roadtrip (9 days) 🚙 (rbBuildNorthernItalyRoadtripRoute) above — see those routes' notes for the Milan Area C/Arena-ticket caveats. Deliberately not Venice: Venice is already the closing stop of three other Dolomites-adjacent routes in this repo (Dolomites & North Italy 🚡, Venice + Dolomites (5 days) 🎭, Northern Italy Roadtrip (9 days) 🚙) — picking Lake Garda/Verona instead avoids piling a fourth near-identical Dolomites→Venice tail onto the list. Budget ~€105-140/day p.p., Venice would run noticeably higher per those other routes' own price checks.",
       transport_to_next: 'End of this route — drive back to Munich or fly home from Verona/Venice.',
     },
   ], {
@@ -18797,7 +18797,7 @@ function rbBuildGermanyAustriaItalyRoute() {
     travel_style: 'Own car throughout — Munich south to Garmisch/Füssen, over the Fernpass to Innsbruck, over the Brenner Pass into the Dolomites, then Lake Garda/Verona to close.',
     climate_summary: 'June-September (Dolomites lifts fully open in this window).',
     description: "Munich, Garmisch-Partenkirchen and Füssen/Neuschwanstein, Innsbruck, the Dolomites (Val Gardena/Cortina) via the Brenner Pass, and Lake Garda/Verona.",
-    notes: "Built (2026-08) as part of Phase 2 batch 15d (Grand European combinations — Alps/Italy cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️⚠️ Real overlap, explicitly flagged: this route's Alsace-free path (Munich→Garmisch/Füssen→Innsbruck→Dolomites) closely tracks the transition between the Central European Grand Roadtrip 🚗 (rbBuildCentralEuropeRoadtripRoute)'s 'Alpine Countries' and 'Dolomites & Northern Italy' regions — but that flagship 45-70 day/14-country expedition additionally routes through France/Switzerland/Liechtenstein first and covers the fuller Salzburg/Berchtesgaden/Salzkammergut/Grossglockner side of Austria (not just Innsbruck), then continues from the Dolomites on to Milan/Turin/the Cinque Terre/Tuscany/San Marino/Venice — this standalone route is a tight DE-AT-IT-only 12-day trip with none of that extra ground, closer in spirit to Isle of Man (3-4 days) 🏝️ vs England, Wales & Isle of Man 🎩's realistic-trip-vs-expedition-leg relationship. Also reuses content from Bavaria: Munich + Alps (5 days) 🥨 (Munich/Garmisch/Füssen), Tyrol (6 days) 🌉 (Innsbruck, though this route's Innsbruck stop is much shorter), Dolomites (6 days) ⛰️/Dolomieten & Noord-Italië 🚡/Venice + Dolomites (5 days) 🎭 (the Dolomites leg) and Northern Italy (6 days) 🚤/Northern Italy Roadtrip (9 days) 🚙 (the Lake Garda/Verona closer) — all flagged in ROUTE_SIMILARITY_REVIEW.md. Not yet checked against Route Builder-level price research beyond the vignette/toll checks folded in above — treat as a first concept, not a bookable plan.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15d (Grand European combinations — Alps/Italy cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️⚠️ Real overlap, explicitly flagged: this route's Alsace-free path (Munich→Garmisch/Füssen→Innsbruck→Dolomites) closely tracks the transition between the Central European Grand Roadtrip 🚗 (rbBuildCentralEuropeRoadtripRoute)'s 'Alpine Countries' and 'Dolomites & Northern Italy' regions — but that flagship 45-70 day/14-country expedition additionally routes through France/Switzerland/Liechtenstein first and covers the fuller Salzburg/Berchtesgaden/Salzkammergut/Grossglockner side of Austria (not just Innsbruck), then continues from the Dolomites on to Milan/Turin/the Cinque Terre/Tuscany/San Marino/Venice — this standalone route is a tight DE-AT-IT-only 12-day trip with none of that extra ground, closer in spirit to Isle of Man (3-4 days) 🏝️ vs England, Wales & Isle of Man 🎩's realistic-trip-vs-expedition-leg relationship. Also reuses content from Bavaria: Munich + Alps (5 days) 🥨 (Munich/Garmisch/Füssen), Tyrol (6 days) 🌉 (Innsbruck, though this route's Innsbruck stop is much shorter), Dolomites (6 days) ⛰️/Dolomites & North Italy 🚡/Venice + Dolomites (5 days) 🎭 (the Dolomites leg) and Northern Italy (6 days) 🚤/Northern Italy Roadtrip (9 days) 🚙 (the Lake Garda/Verona closer) — all flagged in ROUTE_SIMILARITY_REVIEW.md. Not yet checked against Route Builder-level price research beyond the vignette/toll checks folded in above — treat as a first concept, not a bookable plan.",
   });
 }
 
@@ -19014,7 +19014,7 @@ function rbBuildFranceSwitzerlandItalyRoute() {
       destinations: [
         { name: 'Milan (Duomo, Galleria)', lat: 45.4642, lng: 9.1900 },
       ],
-      notes: "Milan (1-2 days) as the trip's departure point — same content as the Milan legs of Northern Italy (6 days) 🚤/Northern Italy Roadtrip (9 days) 🚙 and Dolomieten & Noord-Italië 🚡 (rbBuildDolomitesNorthItalyRoute) above. Budget ~€105-140/day p.p.",
+      notes: "Milan (1-2 days) as the trip's departure point — same content as the Milan legs of Northern Italy (6 days) 🚤/Northern Italy Roadtrip (9 days) 🚙 and Dolomites & North Italy 🚡 (rbBuildDolomitesNorthItalyRoute) above. Budget ~€105-140/day p.p.",
       transport_to_next: 'End of this route — direct return flight Milan to Amsterdam.',
     },
   ], {
@@ -19613,6 +19613,98 @@ function rbMigrateRemoveSimilarityReviewDuplicates() {
   staleNames.forEach(name => {
     const idx = rbRoutes.findIndex(r => r.name === name);
     if (idx !== -1) { rbRoutes.splice(idx, 1); touched = true; }
+  });
+
+  if (touched) rbSave();
+}
+
+/**
+ * Standalone country routes — Dutch-to-English translation (2026-08). While building the Trip
+ * Taxonomy filter UI, 15 routes turned up that every earlier translation batch (1-13, see
+ * ROUTE_BUILDER_TRANSLATION_GLOSSARY.md, Phase 1) had missed entirely: they were seeded via
+ * rbSeedStandaloneCountryRoutesBatch1-6()/rbSeedCentralAsiaFurtherSplitRoutes()/rbSeedComboBatch7()/
+ * rbSeedDolomitesNorthItalyRoute()/rbSeedUSLooseTrips() — a mechanism the earlier expedition-family-
+ * by-family sweep never enumerated, since these are standalone companion routes split off the big
+ * expeditions (see ROUTE_BUILDER_MODULES.md), not the grand expeditions/split-companions batches 1-13
+ * covered. Content translated (notes, transport_to_next, travel_style, climate_summary, description,
+ * destination names where Dutch); days/budget/coordinates/destinations left unchanged (TRIP_DATABASE.csv
+ * already carries the correct English name + verified duration for all 15, untouched by this batch).
+ * Same wholesale-replace-via-rebuilt-buildFn() idiom as every prior translation batch (see
+ * rbMigrateMediterraneanFamilyEnglish) — looked up by old-or-new name so this is idempotent whichever
+ * language a given route was seeded/migrated in.
+ *
+ * Collision fix: rbMigrateReplaceKazakhstanTajikistanCombo() (above) only ever checked for the Dutch
+ * name 'Oezbekistan & Tadzjikistan 🌄' before pushing a fresh rbBuildUzbekistanTajikistanRoute() — now
+ * that build function returns the English name, that check has been widened (see the edit there) so a
+ * browser that already ran that older migration doesn't get a duplicate route pushed here.
+ *
+ * Also field-patches 5 already-English routes whose own `notes` text still referenced the old Dutch
+ * name 'Dolomieten & Noord-Italië 🚡' by name — not a wholesale replace, since these 5 are unrelated
+ * Phase 2 routes that are otherwise already fully English. Two of them were flagged going into this
+ * batch (Germany + Austria + Italy (10-14 days) 🏔️, France + Switzerland + Italy (10-14 days) 🗻);
+ * three more turned up during this batch's own verification grep for the old name (Venice + Dolomites
+ * (5 days) 🎭, Dolomites (6 days) ⛰️, Northern Italy Roadtrip (9 days) 🚙) — the original brief's list of
+ * cross-references was incomplete. Scans every notes-bearing field (top-level description/travel_style/
+ * climate_summary/notes, plus every block's notes/transport_to_next) for the literal old string rather
+ * than targeting one specific field, so it's robust to which block happens to hold the reference and a
+ * true no-op once a route no longer contains it.
+ */
+function rbMigrateStandaloneCountryRoutesEnglish() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_08_STANDALONE_COUNTRIES_ENGLISH)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_08_STANDALONE_COUNTRIES_ENGLISH, '1');
+
+  const targets = [
+    { oldName: 'Kaukasus 🍷', newName: 'Caucasus 🍷', buildFn: rbBuildCaucasusRoute },
+    { oldName: 'Centraal-Azië 🐎', newName: 'Central Asia 🐎', buildFn: rbBuildCentralAsiaRoute },
+    { oldName: 'Filipijnen 🏖️', newName: 'Philippines 🏖️', buildFn: rbBuildPhilippinesRoute },
+    { oldName: 'Argentijns Patagonië 🥩', newName: 'Argentine Patagonia 🥩', buildFn: rbBuildArgentinePatagoniaRoute },
+    { oldName: 'Chileens Patagonië 🥾', newName: 'Chilean Patagonia 🥾', buildFn: rbBuildChileanPatagoniaRoute },
+    { oldName: 'Oezbekistan 🐪', newName: 'Uzbekistan 🐪', buildFn: rbBuildUzbekistanRoute },
+    { oldName: 'Kirgizië 🐴', newName: 'Kyrgyzstan 🐴', buildFn: rbBuildKyrgyzstanRoute },
+    { oldName: 'Mongolië 🦅', newName: 'Mongolia 🦅', buildFn: rbBuildMongoliaRoute },
+    { oldName: 'Vietnam & Cambodja 🛺', newName: 'Vietnam & Cambodia 🛺', buildFn: rbBuildVietnamCambodiaRoute },
+    { oldName: 'Maleisië 🦋', newName: 'Malaysia 🦋', buildFn: rbBuildMalaysiaRoute },
+    { oldName: 'Kazachstan & Kirgizië ⛺', newName: 'Kazakhstan & Kyrgyzstan ⛺', buildFn: rbBuildKazakhstanKyrgyzstanRoute },
+    { oldName: 'Oezbekistan & Tadzjikistan 🌄', newName: 'Uzbekistan & Tajikistan 🌄', buildFn: rbBuildUzbekistanTajikistanRoute },
+    { oldName: 'Dolomieten & Noord-Italië 🚡', newName: 'Dolomites & North Italy 🚡', buildFn: rbBuildDolomitesNorthItalyRoute },
+    { oldName: 'US Oostkust 🗽', newName: 'US Northeast 🗽', buildFn: rbBuildUSNortheastRoute },
+    { oldName: 'US Zuidwesten 🏜️', newName: 'US Southwest 🏜️', buildFn: rbBuildUSSouthwestRoute },
+  ];
+
+  let touched = false;
+  targets.forEach(({ oldName, newName, buildFn }) => {
+    const idx = rbRoutes.findIndex(r => r.name === oldName || r.name === newName);
+    if (idx === -1) return;
+    rbRoutes.splice(idx, 1, buildFn());
+    touched = true;
+  });
+
+  const OLD_DOLOMITES_NAME = 'Dolomieten & Noord-Italië 🚡';
+  const NEW_DOLOMITES_NAME = 'Dolomites & North Italy 🚡';
+  const crossRefRouteNames = [
+    'Germany + Austria + Italy (10-14 days) 🏔️',
+    'France + Switzerland + Italy (10-14 days) 🗻',
+    'Venice + Dolomites (5 days) 🎭',
+    'Dolomites (6 days) ⛰️',
+    'Northern Italy Roadtrip (9 days) 🚙',
+  ];
+  crossRefRouteNames.forEach(routeName => {
+    const route = rbRoutes.find(r => r.name === routeName);
+    if (!route) return;
+    ['description', 'travel_style', 'climate_summary', 'notes'].forEach(field => {
+      if (typeof route[field] === 'string' && route[field].includes(OLD_DOLOMITES_NAME)) {
+        route[field] = route[field].split(OLD_DOLOMITES_NAME).join(NEW_DOLOMITES_NAME);
+        touched = true;
+      }
+    });
+    (route.blocks || []).forEach(block => {
+      ['notes', 'transport_to_next'].forEach(field => {
+        if (typeof block[field] === 'string' && block[field].includes(OLD_DOLOMITES_NAME)) {
+          block[field] = block[field].split(OLD_DOLOMITES_NAME).join(NEW_DOLOMITES_NAME);
+          touched = true;
+        }
+      });
+    });
   });
 
   if (touched) rbSave();
