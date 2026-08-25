@@ -220,7 +220,7 @@ Builder's list view automatically.
 Not yet done: converting each worked-out item into a real `rbBuildXRoute()` in
 `routeBuilderContent.js` — tracked as Phase 2 of the Route Builder workstream below.
 
-## Trip Taxonomy (Fase 2 done, Phase 3 UI not started)
+## Trip Taxonomy (Fase 2 done, Phase 3 UI done — 2026-08-25)
 
 See [`TRIP_TAXONOMY.md`](TRIP_TAXONOMY.md) for the 29-field schema (Fase 1, approved by Youri
 as-is) and [`TRIP_DATABASE.csv`](TRIP_DATABASE.csv) for the tagged data — or
@@ -237,10 +237,8 @@ batches. Full per-batch cost table and specific findings (Moldova/Transnistria, 
 Kosovo-Serbia, Switzerland/Norway/Iceland budget overrides, etc.) are in
 [`CHANGELOG.md`](CHANGELOG.md)'s "Recently fixed" section.
 
-**Not yet started: Phase 3, making this data visible/usable in the app UI.** No code in `js/` or
-any `.html` page currently reads either file (confirmed by grepping the whole codebase, 2026-08-17)
-— no filter UI, no page that displays a trip's tags. See Phase 3 under the Route Builder workstream
-below.
+**Phase 3, making this data visible/usable in the app UI: done (2026-08-25).** See Phase 3 under
+the Route Builder workstream below and `CHANGELOG.md`'s "Phase 3 shipped" entry.
 
 ## Route Builder: English content + EUROPA_TRIP_IDEAS conversion + Taxonomy UI (2026-08, 3-phase plan)
 
@@ -455,13 +453,14 @@ less collision-heavy batches ran closer to the original estimate.
 
 ### Phase 3 — make the Trip Taxonomy filters visible in the app UI
 
-Not started, not designed. `TRIP_TAXONOMY.md`'s 29 fields and `TRIP_DATABASE.csv`'s tagged rows
-(450, all now built in Route Builder since Phase 2 finished) currently aren't read by any code in
-`js/` or any `.html` page — no filter UI, no page that displays a trip's tags. This is now the
-**next workstream** — Phase 2 is done, so a filter UI is more valuable than ever since essentially
-all of Route Builder's content is searchable/filterable by these fields, not just a subset. Revisit
-design (new page vs. filter component bolted onto the existing Route Builder list, how it reads the
-CSV the way `dataService.js` reads the Sheet).
+**Done (2026-08-25).** Filters live on the existing Route Builder list itself (Youri's call — it's
+already the one overview of all routes, so a separate page would just split that view in two). A
+"🔍 Search routes by name…" box plus a "🎛️ Filter by tags" panel with 17 dropdowns across 11 groups
+(the taxonomy's own WHERE/HOW LONG/HOW/WHAT/WHY/STYLE/DIFFICULTY/WHEN/COST axes, plus STATUS and
+FAMILY), reading `TRIP_DATABASE.csv` directly and joining to each route by name. See
+`CHANGELOG.md`'s "Phase 3 shipped" entry for the full implementation notes, including why the name
+join needed emoji-stripping and the 22 routes (of 440) that still don't join to a taxonomy row —
+mostly old un-translated Dutch route names, a follow-up item, not blocking.
 
 ## Search
 

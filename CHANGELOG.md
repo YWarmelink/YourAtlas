@@ -12,6 +12,48 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Phase 3 shipped: Trip Taxonomy tag filters on the Route Builder list (2026-08-25)** — the
+  workstream README/`TRIP_TAXONOMY.md` had flagged as "not started, not designed." Decision (per
+  Youri, after clarifying that essentially all 450 `TRIP_DATABASE.csv` rows are now built): filters
+  live on the existing Route Builder list itself (not a separate page), since that's already the
+  one overview of all routes.
+  - `js/pages/routeBuilderCore.js`: `rbLoadTaxonomy()` fetches `TRIP_DATABASE.csv` directly
+    (client-side, not through `dataService.js` — it's a static repo file, not a Sheet source) and
+    joins each row to its route by name via `rbTaxonomyKey()`.
+  - `js/pages/routeBuilderUI.js`: 17 dropdown filters across 11 groups (`RB_TAXONOMY_FILTERS`),
+    grouped by the same WHERE/HOW LONG/HOW/WHAT/WHY/STYLE/DIFFICULTY/WHEN/COST axes
+    `TRIP_TAXONOMY.md` itself uses, plus STATUS (Advisory/Verification) and FAMILY (Parent
+    Expedition). Free-text/numeric fields (Trip Name, Region/Area, exact day counts, exact €/day,
+    Last Verified date) were deliberately left out of the filter set — not categorical enough for a
+    dropdown; a plain name search box covers Trip Name instead. Multi-value CSV cells (Themes,
+    Travel Style, Best/Good Months, etc.) match on "contains one of the selected value" logic;
+    Primary+Secondary pairs (Travel Mode, Trip Type) are combined into one dropdown each.
+    `Advisory Level` normalizes Dutch legacy values (Geel/Groen/Oranje) and free-text safety notes
+    down to a clean Green/Yellow/Orange/Red — anything that doesn't start with a recognized color
+    word is left out of the dropdown rather than guessed at.
+  - **The name join needed emoji-stripping to actually work**: a large share of `TRIP_DATABASE.csv`
+    rows were tagged before their route's trailing emoji existed (e.g. CSV `"Ardennes (3 days)"` vs.
+    the live route `"Ardennes (3 days) 🦌"`). `rbTaxonomyKey()` strips trailing
+    `\p{Extended_Pictographic}` *and* flag emoji (`\p{Regional_Indicator}` pairs, e.g. 🇭🇷 — not
+    covered by `Extended_Pictographic`) from both sides before comparing. Verified via a headless
+    Playwright smoke test (no project skill covers running this static site yet) against a temp
+    local server: raw exact-match joined only 111/440 built routes; after emoji-stripping, 418/440
+    (95%) — checked for join-key collisions across all 447 CSV rows first (none).
+  - **Known gap, not fixed here**: 22 built routes still don't join to a taxonomy row (so they drop
+    out of results once any tag filter is active, though they still show with no filters set). ~15
+    are old standalone-country routes that were apparently never swept by the Phase 1 Dutch→English
+    translation (`Kaukasus 🍷`, `Centraal-Azië 🐎`, `Filipijnen 🏖️`, `Argentijns/Chileens Patagonië`,
+    `Oezbekistan 🐪`, `Kirgizië 🐴`, `Mongolië 🦅`, `Vietnam & Cambodja 🛺`, `Maleisië 🦋`,
+    `Kazachstan & Kirgizië ⛺`, `Oezbekistan & Tadzjikistan 🌄`, `Dolomieten & Noord-Italië 🚡`,
+    `US Oostkust 🗽`, `US Zuidwesten 🏜️` — their CSV rows are already correctly in English, only the
+    live route names are still Dutch). The rest are small CSV-vs-route text drift: one word
+    ("Corsica & South France" in the CSV vs. "& Southern France" in the route) and five day-count/
+    subtitle mismatches (Northern Ireland, Andorra + Spanish Pyrenees, French + Spanish Pyrenees,
+    Portugal + Spain: Porto to Madrid, Norway + Sweden: Fjords & Capitals, Denmark + Sweden + Norway
+    Overland — CSV still has an old duration range like "10-14 days" where the built route settled
+    on one number). Fixing these needs per-route judgment (rename the CSV row vs. the live route,
+    and which day count is actually correct), not a mechanical batch — left as a follow-up.
+
 - **ROUTE_SIMILARITY_REVIEW.md: full 48-pair review complete, 7 routes deleted from Route Builder
   (2026-08-24)** — following up on the review-order plan below, Youri worked through all 6 bands
   in order. Decision rule used throughout: a route that's a smaller piece extracted from a bigger

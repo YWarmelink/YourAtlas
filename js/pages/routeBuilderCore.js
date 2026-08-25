@@ -131,6 +131,42 @@ let rbCountryOptions = []; // [{ code, name }] — pulled from the same sheet th
 let rbLibrary = [];        // [{ id, name, blocks: [{country, country_code, days, budget, notes}], created_at }]
 let rbSelectedLibIds = new Set();
 
+// ---- Trip Taxonomy (TRIP_DATABASE.csv) — see TRIP_TAXONOMY.md for the 29-field schema ----
+// Powers the tag-based filter panel on the route list (README's Phase 3). A static repo file,
+// not a Sheet source, so it's fetched directly rather than through dataService.
+const RB_TAXONOMY_CSV_URL = 'TRIP_DATABASE.csv';
+let rbTaxonomyByName = {}; // rbTaxonomyKey(trip name) -> parsed CSV row
+let rbTaxonomyLoaded = false;
+
+/**
+ * Join key for matching a live route's `name` against TRIP_DATABASE.csv's `Trip Name` column.
+ * A large share of the CSV's `trip_name` values were tagged before their route's trailing emoji
+ * was added when it got built (e.g. CSV "Ardennes (3 days)" vs. the live route's "Ardennes (3
+ * days) 🦌") — stripping the trailing emoji from both sides before comparing is what makes the
+ * join actually work for those. Checked for collisions across all 447 CSV rows: none.
+ */
+function rbTaxonomyKey(name) {
+  // \p{Extended_Pictographic} covers most emoji but not flag emoji (two \p{Regional_Indicator}
+  // codepoints, e.g. 🇭🇷), which need their own class.
+  return (name || '').replace(/[\s\u{FE0F}\u{200D}\p{Extended_Pictographic}\p{Regional_Indicator}]+$/gu, '').trim();
+}
+
+async function rbLoadTaxonomy() {
+  try {
+    const res = await fetch(RB_TAXONOMY_CSV_URL);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const rows = parseCSV(await res.text());
+    const byName = {};
+    rows.forEach(row => { if (row.trip_name) byName[rbTaxonomyKey(row.trip_name)] = row; });
+    rbTaxonomyByName = byName;
+    rbTaxonomyLoaded = true;
+  } catch (err) {
+    console.warn('[RouteBuilder] Trip Taxonomy CSV failed to load — tag filters disabled.', err);
+    rbTaxonomyByName = {};
+    rbTaxonomyLoaded = false;
+  }
+}
+
 
 /** Flag emoji from an ISO alpha-2 code — works for any country, not just a curated list. */
 function rbFlagFromCode(code) {

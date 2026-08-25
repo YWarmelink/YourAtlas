@@ -46,6 +46,16 @@
               <button class="btn btn-primary" id="newRouteBtn">+ New Route</button>
             </div>
           </div>
+
+          <div class="filter-bar rb-filter-bar">
+            <input type="search" id="rbSearchInput" class="search-input" placeholder="🔍  Search routes by name…">
+            <button type="button" class="btn btn-outline btn-sm" id="rbFilterToggleBtn">
+              🎛️ Filter by tags <span class="rb-filter-badge" id="rbFilterBadge" hidden>0</span>
+            </button>
+            <button type="button" class="btn btn-outline btn-sm" id="rbFilterClearBtn" hidden>✕ Clear filters</button>
+          </div>
+          <div class="rb-filter-panel" id="rbFilterPanel" hidden></div>
+
           <div class="rb-list-groups" id="routeListGrid"></div>
         </div>
 

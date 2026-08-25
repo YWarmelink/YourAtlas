@@ -119,10 +119,156 @@ function rbRouteGroupKey(route) {
   return best;
 }
 
+// ---- tag filter panel (Trip Taxonomy — see TRIP_TAXONOMY.md) ----
+//
+// Each entry describes one dropdown. `keys` are the normalizeHeader()'d CSV column(s) it reads —
+// two keys means "Primary + Secondary" are combined into a single filter (e.g. Travel Mode).
+// `order` gives an explicit ordinal sort (duration/activity/budget tiers etc); omit it for a
+// plain alphabetical sort. Grouped by axis (the same WHERE/HOW LONG/HOW/WHAT/WHY/STYLE/
+// DIFFICULTY/WHEN/COST structure TRIP_TAXONOMY.md itself uses), plus a STATUS and FAMILY group
+// for the fields that don't map onto one of the nine taxonomy axes.
+const RB_TAXONOMY_FILTERS = [
+  { axis: 'WHERE', label: 'Country', keys: ['countries'] },
+  { axis: 'WHERE', label: 'Continent', keys: ['continent'], splitContinent: true,
+    order: ['Europe', 'Asia', 'Africa', 'North America', 'South America', 'Caribbean', 'Oceania', 'Antarctica'] },
+  { axis: 'WHERE', label: 'Geographic Scope', keys: ['geographic_scope'],
+    order: ['City', 'Single Region', 'Single Country', 'Multi-Region (same country)', 'Multi-Country', 'Grand Tour / Continental'] },
+  { axis: 'HOW LONG', label: 'Duration', keys: ['duration_category'],
+    order: ['Weekend', 'Short Trip', 'Holiday', 'Extended Trip', 'Expedition'] },
+  { axis: 'HOW', label: 'Travel Mode', keys: ['primary_travel_mode', 'secondary_travel_modes'] },
+  { axis: 'WHAT', label: 'Trip Type', keys: ['primary_trip_type', 'secondary_trip_types'] },
+  { axis: 'WHAT', label: 'Combination Potential', keys: ['combination_potential'],
+    order: ['Standalone', 'Combinable', 'Gateway / Building Block'] },
+  { axis: 'WHY', label: 'Theme', keys: ['themes'] },
+  { axis: 'STYLE', label: 'Travel Style', keys: ['travel_style'] },
+  { axis: 'DIFFICULTY', label: 'Activity Level', keys: ['activity_level'],
+    order: ['Relaxed', 'Light', 'Moderate', 'Active', 'Very Active'] },
+  { axis: 'DIFFICULTY', label: 'Trip Complexity', keys: ['trip_complexity'], order: ['Easy', 'Moderate', 'Complex'] },
+  { axis: 'DIFFICULTY', label: 'Border Complexity', keys: ['border_complexity'],
+    order: ['Schengen-only', 'Simple non-Schengen', 'Complex'] },
+  { axis: 'WHEN', label: 'Month', keys: ['best_months', 'good_months'],
+    order: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] },
+  { axis: 'COST', label: 'Budget Level', keys: ['budget_level'], order: ['€', '€€', '€€€', '€€€€'] },
+  { axis: 'STATUS', label: 'Advisory Level', keys: ['advisory_level'], normalize: rbNormalizeAdvisoryLevel,
+    order: ['Green', 'Yellow', 'Orange', 'Red'] },
+  { axis: 'STATUS', label: 'Verification Status', keys: ['verification_status'], order: ['Verified', 'Needs Review', 'Draft'] },
+  { axis: 'FAMILY', label: 'Grand Expedition', keys: ['parent_expedition'] },
+];
+const RB_FILTER_AXIS_ORDER = ['WHERE', 'HOW LONG', 'HOW', 'WHAT', 'WHY', 'STYLE', 'DIFFICULTY', 'WHEN', 'COST', 'STATUS', 'FAMILY'];
+
+let rbActiveFilters = {}; // filter label -> selected value (empty/absent = no filter on that field)
+let rbSearchQuery = '';
+
+/**
+ * `Advisory Level` mixes clean Green/Yellow/Orange/Red tags with legacy Dutch values (Geel/
+ * Groen/Oranje) and long free-text safety notes ("Red — Bahrain is on 'do not travel'…").
+ * Only a recognized leading color word becomes a filter value — everything else is left out of
+ * the dropdown (the nuance still lives in the route's own notes, same as TRIP_TAXONOMY.md
+ * already treats Photography-as-theme: filter on the reliable signal, not free text).
+ */
+function rbNormalizeAdvisoryLevel(raw) {
+  const lead = (raw || '').split(/[—-]/)[0].trim().toLowerCase();
+  const map = { green: 'Green', groen: 'Green', geel: 'Yellow', yellow: 'Yellow', orange: 'Orange', oranje: 'Orange', red: 'Red', rood: 'Red' };
+  return map[lead] || null;
+}
+
+/** "Europe & Africa" / "Europe/Africa/Asia" / "Americas (Central & South America)" -> individual continents. */
+function rbSplitContinent(raw) {
+  const cleaned = raw.replace(/\([^)]*\)/g, '').trim();
+  if (/^americas$/i.test(cleaned)) return ['North America', 'South America'];
+  return cleaned.split(/[&/]/).map(s => s.trim()).filter(Boolean);
+}
+
+/** Extracts this field's value(s) for one taxonomy row as a deduped array of clean tokens. */
+function rbFilterFieldValues(row, field) {
+  let tokens = field.keys
+    .map(k => row[k] || '')
+    .join(';')
+    .split(';')
+    .map(s => s.trim().replace(/\s*\/\s*/g, ' / '))
+    .filter(s => s && s !== '—' && s !== '-');
+  if (field.splitContinent) tokens = tokens.flatMap(rbSplitContinent);
+  if (field.normalize) tokens = tokens.map(field.normalize).filter(Boolean);
+  return [...new Set(tokens)];
+}
+
+function rbSortFilterValues(values, field) {
+  const order = field.order || (field.label === 'Grand Expedition' ? [...RB_GRAND_EXPEDITION_NAMES] : null);
+  if (!order) return values.slice().sort((a, b) => a.localeCompare(b));
+  return values.slice().sort((a, b) => {
+    const ia = order.indexOf(a), ib = order.indexOf(b);
+    if (ia === -1 && ib === -1) return a.localeCompare(b);
+    if (ia === -1) return 1;
+    if (ib === -1) return -1;
+    return ia - ib;
+  });
+}
+
+/** Builds (or rebuilds) the tag filter panel's dropdowns from whatever taxonomy data loaded. */
+function rbInitFilterPanel() {
+  const panel = document.getElementById('rbFilterPanel');
+  if (!panel) return;
+
+  if (!rbTaxonomyLoaded || !Object.keys(rbTaxonomyByName).length) {
+    panel.innerHTML = `<p class="rb-filter-empty">Trip tags aren't available right now, so filtering by tag is disabled — search by name above still works.</p>`;
+    return;
+  }
+
+  const rows = Object.values(rbTaxonomyByName);
+  const byAxis = {};
+  RB_TAXONOMY_FILTERS.forEach(field => {
+    const set = new Set();
+    rows.forEach(row => rbFilterFieldValues(row, field).forEach(v => set.add(v)));
+    if (!set.size) return;
+    (byAxis[field.axis] = byAxis[field.axis] || []).push({ field, values: rbSortFilterValues([...set], field) });
+  });
+
+  panel.innerHTML = RB_FILTER_AXIS_ORDER.filter(axis => byAxis[axis]).map(axis => `
+    <div class="rb-filter-group">
+      <div class="rb-filter-group-title">${escapeHTML(axis)}</div>
+      ${byAxis[axis].map(({ field, values }) => `
+        <select class="filter-select rb-filter-select" data-filter-label="${escapeHTML(field.label)}">
+          <option value="">${escapeHTML(field.label)} (all)</option>
+          ${values.map(v => `<option value="${escapeHTML(v)}">${escapeHTML(v)}</option>`).join('')}
+        </select>`).join('')}
+    </div>`).join('');
+}
+
+function rbUpdateFilterBadge() {
+  const activeCount = Object.values(rbActiveFilters).filter(Boolean).length;
+  const badge = document.getElementById('rbFilterBadge');
+  const clearBtn = document.getElementById('rbFilterClearBtn');
+  if (badge) { badge.hidden = !activeCount; badge.textContent = String(activeCount); }
+  if (clearBtn) clearBtn.hidden = !activeCount;
+}
+
+/** True if `route` should show given the current search text + active tag filters. */
+function rbRouteMatchesFilters(route) {
+  if (rbSearchQuery && !(route.name || '').toLowerCase().includes(rbSearchQuery)) return false;
+
+  const activeEntries = Object.entries(rbActiveFilters).filter(([, v]) => v);
+  if (!activeEntries.length) return true;
+
+  const row = rbTaxonomyByName[rbTaxonomyKey(route.name)];
+  if (!row) return false; // no taxonomy data for this route — can't confirm a match once filters are active
+
+  return activeEntries.every(([label, value]) => {
+    const field = RB_TAXONOMY_FILTERS.find(f => f.label === label);
+    return field && rbFilterFieldValues(row, field).includes(value);
+  });
+}
+
 function rbRenderList() {
   const grid = document.getElementById('routeListGrid');
   const count = document.getElementById('routeListCount');
-  if (count) count.textContent = `${rbRoutes.length} route${rbRoutes.length !== 1 ? 's' : ''}`;
+  const filtered = rbRoutes.filter(rbRouteMatchesFilters);
+  const filtersActive = rbSearchQuery || Object.values(rbActiveFilters).some(Boolean);
+
+  if (count) {
+    count.textContent = filtersActive
+      ? `${filtered.length} of ${rbRoutes.length} route${rbRoutes.length !== 1 ? 's' : ''}`
+      : `${rbRoutes.length} route${rbRoutes.length !== 1 ? 's' : ''}`;
+  }
 
   if (!rbRoutes.length) {
     grid.innerHTML = `
@@ -133,8 +279,17 @@ function rbRenderList() {
     return;
   }
 
+  if (!filtered.length) {
+    grid.innerHTML = `
+      <div class="empty-message" style="grid-column:1/-1;padding:3rem 1rem">
+        <span class="empty-icon">🔍</span>
+        <p>No routes match these filters. Try clearing one or use "✕ Clear filters".</p>
+      </div>`;
+    return;
+  }
+
   const byGroup = {};
-  rbRoutes.forEach(route => {
+  filtered.forEach(route => {
     const key = rbRouteGroupKey(route);
     (byGroup[key] = byGroup[key] || []).push(route);
   });
@@ -893,6 +1048,31 @@ function rbBindEvents() {
   document.getElementById('backToListBtn').addEventListener('click', () => {
     rbCurrentId = null;
     rbShowList();
+  });
+
+  document.getElementById('rbSearchInput').addEventListener('input', e => {
+    rbSearchQuery = e.target.value.toLowerCase().trim();
+    rbRenderList();
+  });
+
+  document.getElementById('rbFilterToggleBtn').addEventListener('click', () => {
+    const panel = document.getElementById('rbFilterPanel');
+    panel.hidden = !panel.hidden;
+  });
+
+  document.getElementById('rbFilterPanel').addEventListener('change', e => {
+    const select = e.target.closest('.rb-filter-select');
+    if (!select) return;
+    rbActiveFilters[select.dataset.filterLabel] = select.value;
+    rbUpdateFilterBadge();
+    rbRenderList();
+  });
+
+  document.getElementById('rbFilterClearBtn').addEventListener('click', () => {
+    rbActiveFilters = {};
+    document.querySelectorAll('.rb-filter-select').forEach(sel => { sel.value = ''; });
+    rbUpdateFilterBadge();
+    rbRenderList();
   });
 
   document.getElementById('openLibraryBtn').addEventListener('click', rbShowLibrary);

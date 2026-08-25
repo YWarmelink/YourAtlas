@@ -135,6 +135,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     rbCountryOptions = [];
   }
 
+  await rbLoadTaxonomy();
+  rbInitFilterPanel();
+
   document.getElementById('rbLoading').hidden = true;
   rbShowList();
 
