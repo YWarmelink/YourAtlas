@@ -278,6 +278,17 @@
   color: var(--atlas-text-muted);
 }
 
+/* Budget / Trip Type / Best Time to Visit — taxonomy chips previewed on the card itself. */
+.route-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-top: var(--sp-3);
+}
+
+.badge-budget    { background: #fef3c7; color: #78350f; }
+.badge-best-time { background: #e0f2fe; color: #075985; }
+
 .route-card-open {
   margin-top: var(--sp-4);
   font-size: var(--fs-sm);

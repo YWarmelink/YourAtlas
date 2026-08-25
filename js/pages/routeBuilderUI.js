@@ -368,6 +368,8 @@ function rbBuildRouteCard(route) {
   const totalDays = rbTotalDays(route);
   const months = totalDays ? (totalDays / 30).toFixed(1) : '0';
   const status = route.status || 'Idea';
+  const tax = rbTaxonomyByName[rbTaxonomyKey(route.name)];
+  const tagsHTML = tax ? rbBuildRouteCardTagsHTML(tax) : '';
   return `
     <div class="route-card" data-route-id="${route.id}">
       <button class="route-card-delete" data-action="delete" title="Delete route">✕</button>
@@ -380,9 +382,53 @@ function rbBuildRouteCard(route) {
           <span>📅 ${totalDays} days</span>
           <span>~${months} mo</span>
         </div>
+        ${tagsHTML}
       </div>
       <div class="route-card-open">Open →</div>
     </div>`;
+}
+
+/** Budget / Primary Trip Type / Best Time to Visit chips — the 3 taxonomy fields Youri picked to
+ *  preview on the card itself, so browsing the list doesn't require opening every route. */
+function rbBuildRouteCardTagsHTML(tax) {
+  const chips = [];
+  const budget = (tax.budget_level || '').trim();
+  if (budget) chips.push(`<span class="badge badge-budget">${escapeHTML(budget)}</span>`);
+
+  const tripType = (tax.primary_trip_type || '').trim();
+  if (tripType && tripType !== '—') chips.push(`<span class="badge badge-type">${escapeHTML(tripType)}</span>`);
+
+  const bestTime = rbFormatBestMonths(tax.best_months);
+  if (bestTime) chips.push(`<span class="badge badge-best-time">☀️ ${escapeHTML(bestTime)}</span>`);
+
+  return chips.length ? `<div class="route-card-tags">${chips.join('')}</div>` : '';
+}
+
+const RB_MONTH_ABBR = {
+  January: 'Jan', February: 'Feb', March: 'Mar', April: 'Apr', May: 'May', June: 'Jun',
+  July: 'Jul', August: 'Aug', September: 'Sep', October: 'Oct', November: 'Nov', December: 'Dec',
+};
+const RB_MONTH_ORDER = Object.keys(RB_MONTH_ABBR);
+
+/**
+ * "June; July; August" -> "Jun–Aug". Detects a calendar-contiguous run (handles a Dec->Feb
+ * wraparound, common for southern-hemisphere summer routes) and collapses it to a compact range;
+ * a non-contiguous spread (e.g. "April; September") is shown as a comma list instead, since a
+ * range would wrongly imply the gap between them is also a good time to go.
+ */
+function rbFormatBestMonths(raw) {
+  const months = (raw || '').split(';').map(s => s.trim()).filter(s => s && s !== '—' && s !== '-');
+  if (!months.length) return '';
+  const abbr = months.map(m => RB_MONTH_ABBR[m] || m);
+  if (abbr.length === 1) return abbr[0];
+
+  const indices = months.map(m => RB_MONTH_ORDER.indexOf(m));
+  const isContiguous = indices.every((idx, i) => {
+    if (idx === -1) return false;
+    if (i === 0) return true;
+    return (idx - indices[i - 1] + 12) % 12 === 1;
+  });
+  return isContiguous ? `${abbr[0]}–${abbr[abbr.length - 1]}` : abbr.join(', ');
 }
 
 function rbStatusBadgeClass(status) {

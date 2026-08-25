@@ -12,6 +12,19 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Route cards now preview 3 taxonomy fields (2026-08-25)** — Youri asked whether more info could
+  go on each route's tile so browsing the list doesn't require opening every route. Added a chip
+  row below the existing blocks/days/months line: **Budget Level** (€-€€€€), **Primary Trip Type**
+  (Roadtrip, City Trip, …) and **Best Time to Visit** (e.g. `Jun–Sep`, collapsed from
+  `best_months` — detects a calendar-contiguous run, including a Dec→Feb year wraparound for
+  southern-hemisphere routes, and only shows it as a range when the months really are contiguous;
+  a non-contiguous spread like `April; September` shows as a comma list instead, since a range
+  would wrongly imply the gap between them is also good timing). Deliberately left off: Safety
+  Status and Continent/Country (Youri's choice — the former wasn't picked, the latter is already
+  implied by the segment bar + which group section a card sits in). `rbBuildRouteCard()` in
+  `js/pages/routeBuilderUI.js` looks up each route's taxonomy row the same way the filter panel
+  does; verified live across all 440 cards (all render a tags row, matching the 440/440 join rate).
+
 - **Phase 3 filter panel: clarity pass on labels + multi-select for the inherently-multi fields
   (2026-08-25)** — feedback from actually using it. Changes to `RB_TAXONOMY_FILTERS` in
   `js/pages/routeBuilderUI.js`:
