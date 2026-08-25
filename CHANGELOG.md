@@ -12,6 +12,15 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Route cards: "blocks" → unique country count (2026-08-25, list view only)** — Youri asked
+  whether "🧱 X blocks" meant country count; it didn't quite — a route can have more blocks than
+  countries when one country is split across stages (e.g. Eurasia Grand Tour's Malaysia: peninsula
+  + a separate Borneo leg = 2 blocks, 1 country — confirmed live, the card used to say "29 blocks"
+  for a 27-country route). Changed to `🌍 X countries`, deduped by `country_code`, in
+  `rbBuildRouteCard()` only — the editor view's own block-by-block breakdown (region stats,
+  block list) is untouched, exactly as Youri asked, since that's a different, correct use of
+  "blocks" once you're actually editing a route's stages.
+
 - **Route cards now preview 3 taxonomy fields (2026-08-25)** — Youri asked whether more info could
   go on each route's tile so browsing the list doesn't require opening every route. Added a chip
   row below the existing blocks/days/months line: **Budget Level** (€-€€€€), **Primary Trip Type**

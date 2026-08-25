@@ -370,6 +370,11 @@ function rbBuildRouteCard(route) {
   const status = route.status || 'Idea';
   const tax = rbTaxonomyByName[rbTaxonomyKey(route.name)];
   const tagsHTML = tax ? rbBuildRouteCardTagsHTML(tax) : '';
+  // Card-only metric: unique countries, not block count — a route can hold more blocks than
+  // countries when one country is split across stages (e.g. Eurasia Grand Tour's Malaysia:
+  // peninsula + a separate Borneo leg = 2 blocks, 1 country). The editor view still shows the
+  // real block-by-block breakdown; this is just the list-view tile summary.
+  const countryCount = new Set((route.blocks || []).map(b => b.country_code || b.country)).size;
   return `
     <div class="route-card" data-route-id="${route.id}">
       <button class="route-card-delete" data-action="delete" title="Delete route">✕</button>
@@ -378,7 +383,7 @@ function rbBuildRouteCard(route) {
       <div class="route-card-body">
         <div class="route-card-name">${escapeHTML(route.name || 'Untitled Route')}</div>
         <div class="route-card-meta">
-          <span>🧱 ${route.blocks.length} block${route.blocks.length !== 1 ? 's' : ''}</span>
+          <span>🌍 ${countryCount} countr${countryCount !== 1 ? 'ies' : 'y'}</span>
           <span>📅 ${totalDays} days</span>
           <span>~${months} mo</span>
         </div>
