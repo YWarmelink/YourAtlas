@@ -12,6 +12,20 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Home page "About" section now explains what the site actually is (2026-08-25)** — Youri asked
+  whether the Trips-vs-Route-Builder distinction was written down anywhere; it was, but only in
+  `CLAUDE.md`'s "Known gotchas" section (a dev note, not visible to an actual site visitor). The 4
+  `about-feature` tiles in `index.html` were generic ("Trip History", "Day-by-Day Itineraries",
+  "Countries & Continents", "Future Adventures") and never mentioned Route Builder, Map or Search
+  at all. Replaced with tiles that map directly onto the site's real nav sections and make the
+  distinction explicit: **Trips** (real, completed/booked/realistically planned) vs. **Route
+  Builder** (big aspirational "someday" expeditions, nothing here needs booking), plus
+  **Countries** (folds in Map — visited/planned/wishlisted, browsable or on the world map) and
+  **Search** (one box across everything). Intro paragraph above the tiles now states the
+  two-layer concept ("real trips actually happening" vs. "aspirational expeditions still just an
+  idea") up front instead of leaving it implicit. Verified visually via screenshot before shipping
+  — balances fine against the 4-stat-card grid beside it, no overflow/wrapping issues.
+
 - **Route cards: "blocks" → unique country count (2026-08-25, list view only)** — Youri asked
   whether "🧱 X blocks" meant country count; it didn't quite — a route can have more blocks than
   countries when one country is split across stages (e.g. Eurasia Grand Tour's Malaysia: peninsula
