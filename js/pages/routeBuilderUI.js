@@ -159,6 +159,7 @@ const RB_TAXONOMY_FILTERS = [
   { axis: 'COST', label: 'Budget Level', keys: ['budget_level'], order: ['€', '€€', '€€€', '€€€€'] },
   { axis: 'STATUS', label: 'Safety Status', keys: ['advisory_level'], normalize: rbNormalizeAdvisoryLevel,
     order: ['Green', 'Yellow', 'Orange', 'Red'] },
+  { axis: 'STATUS', label: 'Research Verified', keys: ['verification_status'], order: ['Verified', 'Needs Review', 'Draft'] },
   { axis: 'FAMILY', label: 'Grand Expedition', keys: ['parent_expedition'] },
 ];
 const RB_FILTER_AXIS_ORDER = ['WHERE', 'HOW LONG', 'HOW', 'WHAT', 'WHY', 'STYLE', 'DIFFICULTY', 'WHEN', 'COST', 'STATUS', 'FAMILY'];
