@@ -44,6 +44,13 @@ trips that span months, not weeks. Lives at `route-builder.html`.
   "Wadi Rum" under Jordan), separate from the country-level Note field.
 - **Expedition details**: Status (Idea / Planning / Active / Completed), Travel
   Style, Best Starting Month, Description, Climate Summary, and route-wide Notes.
+- **Overview / Edit Route toggle (2026-08-28)**: opening an existing route lands on a
+  read-only **Overview** — the map (up top, always visible, no extra click) plus a
+  compact per-country list (flag, name, day range, destinations and notes as plain
+  text, grouped under any Regional Blocks) — instead of the full edit form. The
+  "✎ Edit Route" button reveals the same form as before (all fields still fully
+  editable there); a brand-new empty route opens straight into Edit since there's
+  nothing yet to show in an overview. See `CHANGELOG.md` for why.
 - **Calendar view**: set an optional start date to see the route laid out on real
   month grids, colored by country.
 - **World map view**: highlights the route's countries on the same Leaflet world map

@@ -398,6 +398,19 @@
   margin-bottom: var(--sp-6);
 }
 
+.rb-editor-header-actions {
+  display: flex;
+  gap: var(--sp-3);
+  flex-shrink: 0;
+}
+
+/* === OVERVIEW / EDIT MODE SWITCH ===
+   Both sections always render (so switching is instant); the inactive one is just hidden. */
+.rb-editor-card[data-rb-mode="edit"] .rb-overview-only { display: none; }
+.rb-editor-card[data-rb-mode="overview"] .rb-edit-only { display: none; }
+
+.rb-summary { margin-bottom: var(--sp-6); }
+
 .rb-name-input {
   flex: 1;
   border: none;
@@ -931,6 +944,92 @@
   gap: var(--sp-3);
 }
 
+/* === OVERVIEW BLOCKS (read-only trip-at-a-glance list) === */
+.rb-overview-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.rb-overview-block {
+  display: flex;
+  gap: var(--sp-4);
+  background: var(--atlas-bg);
+  border: 1px solid var(--atlas-border);
+  border-left: 4px solid var(--block-color, var(--atlas-blue));
+  border-radius: var(--r-xl);
+  padding: var(--sp-4);
+}
+
+.rb-overview-block-flag { font-size: 1.5rem; line-height: 1.3; flex-shrink: 0; }
+
+.rb-overview-block-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.rb-overview-block-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+.rb-overview-block-name {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semi);
+  color: var(--atlas-text);
+}
+
+.rb-overview-block-range {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semi);
+  color: var(--atlas-text-muted);
+  white-space: nowrap;
+}
+
+.rb-overview-block-dests,
+.rb-overview-block-note,
+.rb-overview-block-transport {
+  font-size: var(--fs-sm);
+  color: var(--atlas-text-muted);
+  line-height: 1.5;
+}
+
+.rb-overview-block-note { color: var(--atlas-text); }
+
+.rb-overview-region {
+  border: 1px dashed var(--atlas-border-dark);
+  border-radius: var(--r-xl);
+  padding: var(--sp-4);
+  background: rgba(14, 165, 233, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.rb-overview-region-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-3);
+}
+
+.rb-overview-region-name {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+  color: var(--atlas-text);
+}
+
+.rb-overview-region-stat {
+  font-size: var(--fs-xs);
+  color: var(--atlas-text-muted);
+}
+
 /* === ADD BLOCK === */
 .rb-add-block-btn {
   width: 100%;
@@ -965,6 +1064,7 @@
   .rb-block-actions { width: 100%; flex-direction: row; align-items: center; }
   .rb-block-actions-icons { flex: 1; }
   .rb-editor-header { flex-wrap: wrap; }
+  .rb-overview-block { flex-wrap: wrap; }
   .rb-details-grid { grid-template-columns: 1fr; }
   .rb-details-grid-2 { grid-template-columns: 1fr; }
   .rb-destination-row { flex-wrap: wrap; }

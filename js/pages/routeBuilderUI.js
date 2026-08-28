@@ -6,6 +6,10 @@
 
 // ---- view switching ----
 
+// 'overview' (read-only trip-at-a-glance: map + compact per-country list) or 'edit' (the full
+// form). rbShowEditor() below picks the starting mode; the toggle button flips it from there.
+let rbEditorMode = 'overview';
+
 function rbHideAllViews() {
   document.getElementById('routeListView').hidden = true;
   document.getElementById('routeEditorView').hidden = true;
@@ -22,6 +26,9 @@ function rbShowList() {
 function rbShowEditor() {
   rbHideAllViews();
   document.getElementById('routeEditorView').hidden = false;
+  const route = rbGetCurrent();
+  // A brand-new/empty route has nothing to show in Overview, so open straight into Edit.
+  rbEditorMode = (route && route.blocks && route.blocks.length) ? 'overview' : 'edit';
   rbRenderEditor();
 }
 
@@ -503,7 +510,11 @@ function rbRenderEditor() {
   document.getElementById('rbRouteNotesInput').value = route.notes || '';
   document.title = `${route.name || 'Route Builder'} | Youri's Travel Atlas`;
 
+  document.getElementById('rbEditorCard').dataset.rbMode = rbEditorMode;
+  document.getElementById('rbModeToggleBtn').textContent = rbEditorMode === 'overview' ? '✎ Edit Route' : '👁️ Overview';
+
   rbRenderBlocks(route);
+  rbRenderOverviewBlocks(route);
   rbRefreshDerived(route);
   rbRenderInsertSelect();
   rbRenderCalendarIfVisible(route);
@@ -651,6 +662,77 @@ function rbRenderBlockRow(b, r, route) {
           <button class="rb-icon-btn" data-action="down" ${idx === route.blocks.length - 1 ? 'disabled' : ''} title="Move down">↓</button>
           <button class="rb-icon-btn rb-icon-btn-danger" data-action="remove" title="Remove block">✕</button>
         </div>
+      </div>
+    </div>`;
+}
+
+// ---- overview mode: read-only trip-at-a-glance list (map lives in the HTML alongside it) ----
+
+function rbRenderOverviewBlocks(route) {
+  const container = document.getElementById('rbOverviewBlocks');
+  if (!container) return;
+
+  if (!route.blocks.length) {
+    container.innerHTML = `
+      <div class="empty-message" style="padding:2.5rem 1rem">
+        <span class="empty-icon">🧱</span>
+        <p>No countries yet. Switch to "Edit Route" to add your first stop.</p>
+      </div>`;
+    return;
+  }
+
+  const ranges = rbComputeRanges(route.blocks);
+  route.regions = route.regions || [];
+
+  let html = '';
+  let i = 0;
+  while (i < route.blocks.length) {
+    const b = route.blocks[i];
+    const region = b.region_id && route.regions.find(r => r.id === b.region_id);
+
+    if (region) {
+      let j = i;
+      while (j < route.blocks.length && route.blocks[j].region_id === region.id) j++;
+      const groupBlocks = route.blocks.slice(i, j);
+      const groupRanges = ranges.slice(i, j);
+      const totalDays = groupBlocks.reduce((s, bl) => s + (parseInt(bl.days) || 0), 0);
+      html += `
+        <div class="rb-overview-region">
+          <div class="rb-overview-region-header">
+            <span class="rb-overview-region-name">${escapeHTML(region.name || 'Region')}</span>
+            <span class="rb-overview-region-stat">📅 ${totalDays} days</span>
+          </div>
+          ${groupBlocks.map((bl, k) => rbRenderOverviewBlockRow(bl, groupRanges[k], route)).join('')}
+        </div>`;
+      i = j;
+    } else {
+      html += rbRenderOverviewBlockRow(b, ranges[i], route);
+      i++;
+    }
+  }
+
+  container.innerHTML = html;
+}
+
+function rbRenderOverviewBlockRow(b, r, route) {
+  const idx = route.blocks.findIndex(x => x.id === b.id);
+  const color = RB_BLOCK_COLORS[idx % RB_BLOCK_COLORS.length];
+  const flag = rbFlagFor(b);
+  const name = b.country || 'Country';
+  const rangeLabel = r.days > 0 ? `Day ${r.start}${r.end !== r.start ? '–' + r.end : ''} · ${r.days}d` : '—';
+  const destNames = (b.destinations || []).map(d => d.name).filter(Boolean);
+
+  return `
+    <div class="rb-overview-block" style="--block-color:${color}">
+      <div class="rb-overview-block-flag">${flag}</div>
+      <div class="rb-overview-block-body">
+        <div class="rb-overview-block-top">
+          <span class="rb-overview-block-name">${escapeHTML(name)}</span>
+          <span class="rb-overview-block-range">${rangeLabel}</span>
+        </div>
+        ${destNames.length ? `<div class="rb-overview-block-dests">📍 ${destNames.map(n => escapeHTML(n)).join(' · ')}</div>` : ''}
+        ${b.notes ? `<div class="rb-overview-block-note">${escapeHTML(b.notes)}</div>` : ''}
+        ${b.transport_to_next ? `<div class="rb-overview-block-transport">→ ${escapeHTML(b.transport_to_next)}</div>` : ''}
       </div>
     </div>`;
 }
@@ -853,8 +935,9 @@ async function rbGetWorldGeoJSON() {
 }
 
 function rbRenderMapIfVisible(route) {
-  const panel = document.getElementById('rbMapPanel');
-  if (panel && !panel.hidden) rbRenderMap(route);
+  // The map panel lives inside the Overview-only section — only render it while that's showing,
+  // both to avoid wasted work and because Leaflet can't size itself into a display:none div.
+  if (rbEditorMode === 'overview') rbRenderMap(route);
 }
 
 function rbEnsureMiniMap(mapDiv) {
@@ -1336,13 +1419,9 @@ function rbBindEvents() {
     if (!panel.hidden) rbRenderCalendar(route);
   });
 
-  document.getElementById('toggleMapBtn').addEventListener('click', e => {
-    const panel = document.getElementById('rbMapPanel');
-    const route = rbGetCurrent();
-    if (!panel || !route) return;
-    panel.hidden = !panel.hidden;
-    e.target.textContent = panel.hidden ? '🗺️ Show Map' : '🗺️ Hide Map';
-    if (!panel.hidden) rbRenderMap(route);
+  document.getElementById('rbModeToggleBtn').addEventListener('click', () => {
+    rbEditorMode = rbEditorMode === 'overview' ? 'edit' : 'overview';
+    rbRenderEditor();
   });
 
   document.querySelectorAll('.rb-map-mode-btn').forEach(btn => {

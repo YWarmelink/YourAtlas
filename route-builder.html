@@ -63,87 +63,97 @@
         <div id="routeEditorView" hidden>
           <button class="back-link-inline" id="backToListBtn">← All Routes</button>
 
-          <div class="rb-editor-card">
+          <div class="rb-editor-card" id="rbEditorCard">
             <div class="rb-editor-header">
               <input type="text" id="rbNameInput" class="rb-name-input" placeholder="Name this route… (e.g. South America 2027)">
-              <button class="btn btn-outline btn-sm" id="deleteRouteBtn">Delete Route</button>
-            </div>
-
-            <div class="rb-details-panel">
-              <div class="rb-details-grid">
-                <div class="rb-field">
-                  <label>Status</label>
-                  <select class="rb-input" id="rbStatusInput">
-                    <option value="Idea">Idea</option>
-                    <option value="Planning">Planning</option>
-                    <option value="Active">Active</option>
-                    <option value="Completed">Completed</option>
-                  </select>
-                </div>
-                <div class="rb-field">
-                  <label>Travel Style <span class="rb-optional">optional</span></label>
-                  <input type="text" class="rb-input" id="rbTravelStyleInput" placeholder="e.g. Backpacking, slow travel">
-                </div>
-                <div class="rb-field">
-                  <label>Best Starting Month <span class="rb-optional">optional</span></label>
-                  <select class="rb-input" id="rbBestMonthInput">
-                    <option value="">— Any month —</option>
-                    <option>January</option><option>February</option><option>March</option><option>April</option>
-                    <option>May</option><option>June</option><option>July</option><option>August</option>
-                    <option>September</option><option>October</option><option>November</option><option>December</option>
-                  </select>
-                </div>
-              </div>
-              <div class="rb-field">
-                <label>Description <span class="rb-optional">optional</span></label>
-                <textarea class="rb-input" id="rbDescriptionInput" placeholder="What's this expedition about?"></textarea>
-              </div>
-              <div class="rb-details-grid-2">
-                <div class="rb-field">
-                  <label>Climate Summary <span class="rb-optional">optional</span></label>
-                  <textarea class="rb-input" id="rbClimateInput" placeholder="e.g. Dry season Nov–Mar, avoid monsoon in..."></textarea>
-                </div>
-                <div class="rb-field">
-                  <label>Notes <span class="rb-optional">optional</span></label>
-                  <textarea class="rb-input" id="rbRouteNotesInput" placeholder="Overall notes for this expedition"></textarea>
-                </div>
+              <div class="rb-editor-header-actions">
+                <button class="btn btn-outline btn-sm" id="rbModeToggleBtn">✎ Edit Route</button>
+                <button class="btn btn-outline btn-sm" id="deleteRouteBtn">Delete Route</button>
               </div>
             </div>
 
-            <div class="rb-library-toolbar">
-              <button class="btn btn-outline btn-sm" id="saveAsBlockBtn">💾 Save as Block</button>
-              <select class="rb-input" id="insertBlockSelect"></select>
-            </div>
-
-            <div class="rb-calendar-toolbar">
-              <div class="rb-field rb-field-startdate">
-                <label>Start date <span class="rb-optional">optional</span></label>
-                <input type="date" class="rb-input" id="rbStartDateInput">
-              </div>
-              <div class="rb-toolbar-buttons">
-                <button class="btn btn-outline btn-sm" id="toggleCalendarBtn">📅 Show Calendar</button>
-                <button class="btn btn-outline btn-sm" id="toggleMapBtn">🗺️ Show Map</button>
-              </div>
-            </div>
-
-            <div class="rb-calendar-panel" id="rbCalendarPanel" hidden></div>
-
-            <div class="rb-map-panel" id="rbMapPanel" hidden>
-              <div class="rb-map-mode-toggle">
-                <button class="rb-map-mode-btn is-active" id="rbMapModeCountries" data-mode="countries">🌍 Landen</button>
-                <button class="rb-map-mode-btn" id="rbMapModeLine" data-mode="line">📍 Routelijn</button>
-                <button class="rb-map-mode-btn" id="rbMapModeDetailed" data-mode="detailed">🔍 Gedetailleerd</button>
-              </div>
-              <div id="rbMapDiv" class="rb-map-div"></div>
-            </div>
+            <div class="rb-summary" id="rbSummary"></div>
 
             <div class="rb-timeline-bar" id="rbTimelineBar"></div>
 
-            <div class="rb-blocks" id="rbBlocks"></div>
+            <!-- OVERVIEW: read-only trip-at-a-glance, shown by default when opening a route -->
+            <div class="rb-overview-only" id="rbOverviewSection">
+              <div class="rb-map-panel" id="rbMapPanel">
+                <div class="rb-map-mode-toggle">
+                  <button class="rb-map-mode-btn is-active" id="rbMapModeCountries" data-mode="countries">🌍 Landen</button>
+                  <button class="rb-map-mode-btn" id="rbMapModeLine" data-mode="line">📍 Routelijn</button>
+                  <button class="rb-map-mode-btn" id="rbMapModeDetailed" data-mode="detailed">🔍 Gedetailleerd</button>
+                </div>
+                <div id="rbMapDiv" class="rb-map-div"></div>
+              </div>
 
-            <button class="rb-add-block-btn" id="addBlockBtn">+ Add country block</button>
+              <div class="rb-overview-blocks" id="rbOverviewBlocks"></div>
+            </div>
 
-            <div class="rb-summary" id="rbSummary"></div>
+            <!-- EDIT: the full form, opened via the "Edit Route" button above -->
+            <div class="rb-edit-only" id="rbEditSection">
+              <div class="rb-details-panel">
+                <div class="rb-details-grid">
+                  <div class="rb-field">
+                    <label>Status</label>
+                    <select class="rb-input" id="rbStatusInput">
+                      <option value="Idea">Idea</option>
+                      <option value="Planning">Planning</option>
+                      <option value="Active">Active</option>
+                      <option value="Completed">Completed</option>
+                    </select>
+                  </div>
+                  <div class="rb-field">
+                    <label>Travel Style <span class="rb-optional">optional</span></label>
+                    <input type="text" class="rb-input" id="rbTravelStyleInput" placeholder="e.g. Backpacking, slow travel">
+                  </div>
+                  <div class="rb-field">
+                    <label>Best Starting Month <span class="rb-optional">optional</span></label>
+                    <select class="rb-input" id="rbBestMonthInput">
+                      <option value="">— Any month —</option>
+                      <option>January</option><option>February</option><option>March</option><option>April</option>
+                      <option>May</option><option>June</option><option>July</option><option>August</option>
+                      <option>September</option><option>October</option><option>November</option><option>December</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="rb-field">
+                  <label>Description <span class="rb-optional">optional</span></label>
+                  <textarea class="rb-input" id="rbDescriptionInput" placeholder="What's this expedition about?"></textarea>
+                </div>
+                <div class="rb-details-grid-2">
+                  <div class="rb-field">
+                    <label>Climate Summary <span class="rb-optional">optional</span></label>
+                    <textarea class="rb-input" id="rbClimateInput" placeholder="e.g. Dry season Nov–Mar, avoid monsoon in..."></textarea>
+                  </div>
+                  <div class="rb-field">
+                    <label>Notes <span class="rb-optional">optional</span></label>
+                    <textarea class="rb-input" id="rbRouteNotesInput" placeholder="Overall notes for this expedition"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rb-library-toolbar">
+                <button class="btn btn-outline btn-sm" id="saveAsBlockBtn">💾 Save as Block</button>
+                <select class="rb-input" id="insertBlockSelect"></select>
+              </div>
+
+              <div class="rb-calendar-toolbar">
+                <div class="rb-field rb-field-startdate">
+                  <label>Start date <span class="rb-optional">optional</span></label>
+                  <input type="date" class="rb-input" id="rbStartDateInput">
+                </div>
+                <div class="rb-toolbar-buttons">
+                  <button class="btn btn-outline btn-sm" id="toggleCalendarBtn">📅 Show Calendar</button>
+                </div>
+              </div>
+
+              <div class="rb-calendar-panel" id="rbCalendarPanel" hidden></div>
+
+              <div class="rb-blocks" id="rbBlocks"></div>
+
+              <button class="rb-add-block-btn" id="addBlockBtn">+ Add country block</button>
+            </div>
           </div>
         </div>
 

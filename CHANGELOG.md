@@ -12,6 +12,32 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Route Builder: read-only "Overview" mode, shown by default instead of the full edit form
+  (2026-08-28)** — Youri's complaint: a route has notes at three levels (route/country/
+  destination), but the destination-level one is basically never filled in, and viewing a whole
+  route meant scrolling past every field of the full edit form (day/budget inputs, textareas,
+  destination rows) just to read it. He also wanted the map shown more prominently — it lived
+  behind a "🗺️ Show Map" toggle button before this. Added a mode switch to the editor
+  (`rbEditorMode`, 'overview' | 'edit', in `js/pages/routeBuilderUI.js`): **Overview** renders the
+  map (unchanged Leaflet code, just relocated + no longer hidden by default) followed by a
+  compact read-only per-country list (`rbRenderOverviewBlocks()` — flag, name, day range,
+  destinations and notes as plain text, respecting Regional Block grouping); **Edit** is the
+  existing full form, completely unchanged, reached via a new "✎ Edit Route" button. Opening an
+  existing route from the list (or a `?open=<id>` deep link) defaults to Overview; a brand-new
+  empty route opens straight into Edit since there's nothing yet to show. Both sections render on
+  every `rbRenderEditor()` call and the inactive one is just CSS-hidden (`display:none` via
+  `.rb-editor-card[data-rb-mode]`), so toggling is instant and the map's Leaflet instance never
+  needs to be recreated. Removed the now-redundant "Show Map" toggle button/handler entirely — the
+  map is simply always there when Overview is showing. Verified via a local static server +
+  Playwright (Chromium already installed from the Phase 3 filter-panel testing session): mode
+  defaults correctly for an existing vs. brand-new route, toggling both directions re-renders the
+  right section with zero console errors, the map re-renders correctly after toggling back to
+  Overview, map-mode buttons (Landen/Routelijn/Gedetailleerd) still work inside Overview, and the
+  layout holds up at a 390px mobile width. Screenshotted a 27-country/338-day route (Eurasia Grand
+  Tour) before/after: Overview rendered at ~7,000px full-page height vs. ~20,000px for the same
+  route's old always-shown full form — confirms the "logical overview, not detailed info by
+  default" goal Youri asked for.
+
 - **Home page "About" section now explains what the site actually is (2026-08-25)** — Youri asked
   whether the Trips-vs-Route-Builder distinction was written down anywhere; it was, but only in
   `CLAUDE.md`'s "Known gotchas" section (a dev note, not visible to an actual site visitor). The 4
