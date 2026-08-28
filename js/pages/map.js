@@ -326,13 +326,20 @@ async function initMap() {
 
 /* ── Country list ────────────────────────────────────────────────────────── */
 /* ── Continents Explored breakdown (moved here from the now-retired countries.html, 2026-08) ── */
-const CONTINENT_TOTALS = { Europe: 44, Asia: 48, Africa: 54, Americas: 35, Oceania: 14 };
+// Canonical list of every continent shown, in display-priority order — always rendered even at
+// 0% (so "which continents am I ignoring" is visible, not just the ones you've started).
+const CANONICAL_CONTINENTS = ['Europe', 'Asia', 'Africa', 'North America', 'South America', 'Oceania', 'Antarctica'];
+
+// Palette re-validated for CVD-safety as a 7-way categorical set after the Americas split
+// (scripts/validate_palette.js from the dataviz skill — all checks pass).
 const CONTINENT_COLORS = {
-  Europe:   '#3b82f6',
-  Asia:     '#ef4444',
-  Africa:   '#f59e0b',
-  Americas: '#10b981',
-  Oceania:  '#8b5cf6',
+  'Europe':        '#3b82f6',
+  'Asia':          '#ef4444',
+  'Africa':        '#f59e0b',
+  'North America': '#10b981',
+  'South America': '#a16207',
+  'Oceania':       '#8b5cf6',
+  'Antarctica':    '#06b6d4',
 };
 
 function simplifyContinent(raw) {
@@ -340,15 +347,19 @@ function simplifyContinent(raw) {
   if (c.includes('europe'))  return 'Europe';
   if (c.includes('asia'))    return 'Asia';
   if (c.includes('africa'))  return 'Africa';
+  if (c.includes('antarc'))  return 'Antarctica';
   if (c.includes('ocean') || c.includes('australia')) return 'Oceania';
-  if (c.includes('america') || c.includes('caribbean')) return 'Americas';
+  if (c.includes('south america')) return 'South America';
+  if (c.includes('america') || c.includes('caribbean')) return 'North America';
   return 'Other';
 }
 
 /* ── Continent completion badges (2026-08) ───────────────────────────────────
    Bronze/Silver/Gold at 25/50/75%; Diamond is deliberately a different look, not
    just the next step up — it marks a continent fully explored (100%), so it gets
-   its own gradient/glow treatment instead of a flat medal color. */
+   its own gradient/glow treatment instead of a flat medal color. Below Bronze, 0
+   visited reads "Unexplored" but 1+ visited (just not 25% yet) gets a more
+   positive "Getting Started" instead of implying nothing has happened there. */
 const BADGE_TIERS = [
   { key: 'diamond', min: 100, icon: '💎', label: 'Diamond' },
   { key: 'gold',     min: 75, icon: '🥇', label: 'Gold' },
@@ -360,14 +371,17 @@ function badgeTier(pct) {
   return BADGE_TIERS.find(t => pct >= t.min) || null;
 }
 
-function badgeHTML(pct) {
+function badgeHTML(pct, count) {
   const tier = badgeTier(pct);
-  if (!tier) return `<span class="badge-tier badge-tier--none">Unexplored</span>`;
-  return `<span class="badge-tier badge-tier--${tier.key}">${tier.icon} ${tier.label}</span>`;
+  if (tier) return `<span class="badge-tier badge-tier--${tier.key}">${tier.icon} ${tier.label}</span>`;
+  if (count > 0) return `<span class="badge-tier badge-tier--started">🌱 Getting Started</span>`;
+  return `<span class="badge-tier badge-tier--none">Unexplored</span>`;
 }
 
 /** World-wide progress meter — one hue, fills as the % grows (a single measure, not a
- *  multi-continent comparison, so this deliberately doesn't use CONTINENT_COLORS). */
+ *  multi-continent comparison, so this deliberately doesn't use CONTINENT_COLORS). Deliberately
+ *  NOT counting Antarctica's synthetic slot below — this stays tied to the same 197 tracked rows
+ *  the "All Countries" list itself shows, so the two numbers never disagree. */
 function buildWorldProgress(visitedCount, totalCount) {
   const pct = totalCount ? Math.round(visitedCount / totalCount * 100) : 0;
   return `
@@ -383,16 +397,31 @@ function buildWorldProgress(visitedCount, totalCount) {
     </div>`;
 }
 
-function buildBreakdown(visited) {
-  const counts = {};
-  visited.filter(c => c.status === 'visited').forEach(c => {
+function buildBreakdown(all) {
+  const totals = {};
+  const visited = {};
+  all.forEach(c => {
     const cont = simplifyContinent(c.continent);
-    counts[cont] = (counts[cont] || 0) + 1;
+    totals[cont] = (totals[cont] || 0) + 1;
+    if (c.status === 'visited') visited[cont] = (visited[cont] || 0) + 1;
   });
+  // Antarctica has no countries and — as of 2026-08 — no row at all in the Countries sheet, so it
+  // never appears via the loop above. Treat it as "one place" (total 1) so it still shows as
+  // Unexplored rather than silently vanishing; it'll start reflecting real data the moment a row
+  // for it exists in the sheet.
+  totals['Antarctica'] = 1;
+  visited['Antarctica'] = visited['Antarctica'] || 0;
 
-  const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
-  const maxCount = sorted[0]?.[1] || 1;
-  const totalVisited = sorted.reduce((s, [, n]) => s + n, 0);
+  const rows = CANONICAL_CONTINENTS
+    .map(cont => {
+      const count = visited[cont] || 0;
+      const total = totals[cont] || 0;
+      return { cont, count, total, pct: total ? Math.round(count / total * 100) : 0 };
+    })
+    .sort((a, b) => b.count - a.count);
+
+  const maxCount = Math.max(1, ...rows.map(r => r.count));
+  const totalVisited = rows.reduce((s, r) => s + r.count, 0);
 
   return `
     <div class="continent-breakdown">
@@ -401,11 +430,9 @@ function buildBreakdown(visited) {
         <span class="breakdown-total">${totalVisited} countries visited in total</span>
       </div>
       <div class="breakdown-bars">
-        ${sorted.map(([cont, count]) => {
-          const total  = CONTINENT_TOTALS[cont] || count;
-          const pct    = Math.round(count / total * 100);
-          const barW   = Math.round(count / maxCount * 100);
-          const color  = CONTINENT_COLORS[cont] || '#64748b';
+        ${rows.map(({ cont, count, total, pct }) => {
+          const barW  = Math.round(count / maxCount * 100);
+          const color = CONTINENT_COLORS[cont] || '#64748b';
           return `
             <div class="breakdown-row">
               <div class="breakdown-label">
@@ -417,7 +444,7 @@ function buildBreakdown(visited) {
               </div>
               <span class="breakdown-stats">${count} <span class="breakdown-of">/ ~${total}</span></span>
               <span class="breakdown-pct">${pct}%</span>
-              ${badgeHTML(pct)}
+              ${badgeHTML(pct, count)}
             </div>`;
         }).join('')}
       </div>

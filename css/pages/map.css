@@ -163,7 +163,7 @@
 
 .breakdown-row {
   display: grid;
-  grid-template-columns: 130px 1fr 60px 42px 100px;
+  grid-template-columns: 140px 1fr 60px 42px 145px;
   align-items: center;
   gap: var(--sp-4);
 }
@@ -221,7 +221,7 @@
 }
 
 @media (max-width: 600px) {
-  .breakdown-row { grid-template-columns: 110px 1fr 42px 88px; }
+  .breakdown-row { grid-template-columns: 110px 1fr 42px 125px; }
   .breakdown-stats { display: none; }
 }
 
@@ -244,6 +244,11 @@
 .badge-tier--none {
   color: var(--atlas-text-light);
   background: var(--atlas-bg-alt);
+}
+
+.badge-tier--started {
+  color: #166534;
+  background: #dcfce7;
 }
 
 .badge-tier--bronze {

@@ -12,6 +12,28 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Continent badges: split Americas into North/South, added Antarctica, better
+  below-Bronze labels, re-validated colors (2026-08-28)** — same-day follow-up to the badges
+  feature below, three requests from actually using it. (1) The raw Countries sheet already
+  tags rows "North America"/"South America" separately (confirmed live) — `simplifyContinent()`
+  now keeps that split instead of merging them, so `CONTINENT_COLORS` covers 7 continents.
+  (2) Added **Antarctica** as its own row even though the Countries sheet has zero rows for it —
+  no country there to track, so it's hardcoded as "1 place" (total=1) and shows Unexplored until
+  a real Sheet row exists for it; once Youri adds one, it'll start reflecting real data with no
+  code change needed. (3) `buildBreakdown()` now iterates a fixed 7-continent list and derives
+  each one's total from the live sheet data itself (was a hardcoded `CONTINENT_TOTALS` table,
+  slightly stale — Europe was 44 vs the sheet's actual 45) — every continent shows a row now,
+  including zero-visited ones, not just whichever ones happened to have a visited country.
+  (4) Below Bronze, "Unexplored" now only applies to genuinely 0 visited; 1+ visited (just under
+  25%) gets a new, more positive "🌱 Getting Started" tier instead. **Colors re-validated as a
+  7-way categorical palette** via the dataviz skill's `validate_palette.js` (first pass failed —
+  South America's color was too close to North America's green for deuteranopia, ΔE 4.9; picked
+  `#a16207` instead, now all checks pass). Fixed a real layout bug caught during verification:
+  the "Getting Started" badge (132px rendered) was wider than its 100px grid column, silently
+  overlapping the % column — widened `.breakdown-row`'s grid to fit. Verified live + at 390px
+  mobile width: all 7 continents render correctly (Europe Silver, Asia/Africa/North America/
+  Oceania Getting Started, South America/Antarctica Unexplored), 0 console errors.
+
 - **Map: World Explorer progress meter + continent completion badges (2026-08-28)** — the
   "Visited-countries progress/badges" roadmap item, done. Youri's spec: a world-wide % meter, plus
   a Bronze/Silver/Gold/Diamond badge per continent at 25/50/75/100% visited — Diamond deliberately
