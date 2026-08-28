@@ -1019,9 +1019,11 @@ function rbRenderCountriesLayer(route, geojson) {
  * or turn-by-turn road route), with a numbered marker per stop. The line always starts and ends at
  * RB_HOME_LATLNG (Utrecht) — every expedition begins and ends with leaving/returning to the
  * Netherlands, whether by car or plane, so the loop closes there regardless of the route itself.
- * Only legs that have both lat and lng render; a route with fewer than two such legs shows an
- * empty-state message instead. See README's "Future plans" section for the plan this implements,
- * and rbBuildCentralEuropeRoadtripRoute for the reference example of adding lat/lng to a route's blocks.
+ * Only legs that have both lat and lng render; a route with none of those shows an empty-state
+ * message instead. A single-leg route still draws fine — it's just the home→country→home
+ * out-and-back line — so the empty state only needs to guard against zero stops, not two. See
+ * README's "Future plans" section for the plan this implements, and rbBuildCentralEuropeRoadtripRoute
+ * for the reference example of adding lat/lng to a route's blocks.
  */
 function rbRenderRouteLine(route, geojson) {
   const mapDiv = document.getElementById('rbMapDiv');
@@ -1031,7 +1033,7 @@ function rbRenderRouteLine(route, geojson) {
 
   rbMiniMapLineLayer = rbClearMapLayer(rbMiniMapLineLayer);
 
-  if (stops.length < 2) {
+  if (stops.length < 1) {
     mapDiv.querySelector('.rb-map-empty')?.remove();
     const empty = document.createElement('div');
     empty.className = 'rb-map-empty';
@@ -1102,7 +1104,9 @@ function rbRenderDetailedRouteLine(route, geojson) {
 
   rbMiniMapDetailedLayer = rbClearMapLayer(rbMiniMapDetailedLayer);
 
-  if (points.length < 2) {
+  // A single point still draws fine (home→point→home), so only zero points is truly empty —
+  // same fix as rbRenderRouteLine's identical off-by-one (see its docstring).
+  if (points.length < 1) {
     mapDiv.querySelector('.rb-map-empty')?.remove();
     const empty = document.createElement('div');
     empty.className = 'rb-map-empty';

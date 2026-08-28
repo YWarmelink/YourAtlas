@@ -12,6 +12,18 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Fix: "Routelijn" map mode showed "no route-line data" for every single-country route
+  (2026-08-28)** — Youri spotted this while trying the new Overview mode. Root cause: both
+  `rbRenderRouteLine()` and `rbRenderDetailedRouteLine()` (`js/pages/routeBuilderUI.js`) required
+  at least 2 stops with coordinates before drawing anything, but a 1-block route only ever has 1 —
+  an off-by-one, not a real data gap, since the polyline logic (`[home, ...stops, home]`) already
+  draws a perfectly valid home→country→home line for a single stop. Confirmed via the live seeded
+  data: **229 of 440 routes are single-country routes, and every one of them already has valid
+  lat/lng** — all 229 were affected. Fixed by changing both guards from `< 2` to `< 1` (only
+  genuinely zero coordinates is an empty state now). Verified live: Egypt 🏺 (1 block) now draws
+  its out-and-back line with 0 console errors; Eurasia Grand Tour (27 blocks) still renders
+  exactly as before — no regression.
+
 - **Route Builder: read-only "Overview" mode, shown by default instead of the full edit form
   (2026-08-28)** — Youri's complaint: a route has notes at three levels (route/country/
   destination), but the destination-level one is basically never filled in, and viewing a whole
