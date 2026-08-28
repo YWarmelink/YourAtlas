@@ -125,6 +125,106 @@
 }
 .map-tooltip::before { display: none !important; }
 
+/* === CONTINENTS EXPLORED BREAKDOWN (moved here from the now-retired countries.html, 2026-08) === */
+.continent-breakdown {
+  background: var(--atlas-card);
+  border-radius: var(--r-2xl);
+  padding: var(--sp-8);
+  border: 1px solid var(--atlas-border);
+  box-shadow: var(--shadow-card);
+  margin-bottom: var(--sp-10);
+}
+
+.breakdown-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-8);
+}
+
+.breakdown-title {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--atlas-text);
+}
+
+.breakdown-total {
+  font-size: var(--fs-sm);
+  color: var(--atlas-text-muted);
+}
+
+.breakdown-bars {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.breakdown-row {
+  display: grid;
+  grid-template-columns: 130px 1fr 60px 42px;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+.breakdown-label {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.breakdown-cont-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--r-full);
+  flex-shrink: 0;
+}
+
+.breakdown-cont-name {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  color: var(--atlas-text);
+}
+
+.breakdown-bar-wrap {
+  background: var(--atlas-bg-alt);
+  border-radius: var(--r-full);
+  height: 10px;
+  overflow: hidden;
+}
+
+.breakdown-bar {
+  height: 100%;
+  border-radius: var(--r-full);
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.breakdown-stats {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  color: var(--atlas-text);
+  text-align: right;
+}
+
+.breakdown-of {
+  font-size: var(--fs-xs);
+  color: var(--atlas-text-muted);
+  font-weight: var(--fw-normal);
+}
+
+.breakdown-pct {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  color: var(--atlas-text-muted);
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .breakdown-row { grid-template-columns: 110px 1fr 42px; }
+  .breakdown-stats { display: none; }
+}
+
 /* === COUNTRY LIST === */
 .country-list-header {
   display: flex;

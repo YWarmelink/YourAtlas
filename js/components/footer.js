@@ -13,7 +13,6 @@ function renderFooter() {
           <a href="index.html">Home</a>
           <a href="trips.html">Trips</a>
           <a href="route-builder.html">Route Builder</a>
-          <a href="countries.html">Countries</a>
           <a href="map.html">Map</a>
           <a href="search.html">Search</a>
         </div>

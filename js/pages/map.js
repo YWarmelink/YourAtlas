@@ -98,7 +98,10 @@ function updateStats() {
   });
   const totalEl  = document.getElementById('mapStatsTotal');
   const detailEl = document.getElementById('mapStatsDetail');
-  if (totalEl)  totalEl.textContent  = visited + planned + wishlist;
+  // "All Countries (X)" must match what the "All" tab actually lists (stateManager.allEntries()
+  // — every country in the sheet, tracked or not), not just the tracked visited+planned+wishlist
+  // subset — those two numbers disagreeing is exactly what looked like a bug.
+  if (totalEl)  totalEl.textContent  = all.length;
   if (detailEl) detailEl.textContent = [wishlist && `${wishlist} wishlist`, planned && `${planned} planned`].filter(Boolean).join(' · ');
 }
 
@@ -292,6 +295,66 @@ async function initMap() {
 }
 
 /* ── Country list ────────────────────────────────────────────────────────── */
+/* ── Continents Explored breakdown (moved here from the now-retired countries.html, 2026-08) ── */
+const CONTINENT_TOTALS = { Europe: 44, Asia: 48, Africa: 54, Americas: 35, Oceania: 14 };
+const CONTINENT_COLORS = {
+  Europe:   '#3b82f6',
+  Asia:     '#ef4444',
+  Africa:   '#f59e0b',
+  Americas: '#10b981',
+  Oceania:  '#8b5cf6',
+};
+
+function simplifyContinent(raw) {
+  const c = (raw || '').toLowerCase();
+  if (c.includes('europe'))  return 'Europe';
+  if (c.includes('asia'))    return 'Asia';
+  if (c.includes('africa'))  return 'Africa';
+  if (c.includes('ocean') || c.includes('australia')) return 'Oceania';
+  if (c.includes('america') || c.includes('caribbean')) return 'Americas';
+  return 'Other';
+}
+
+function buildBreakdown(visited) {
+  const counts = {};
+  visited.filter(c => c.status === 'visited').forEach(c => {
+    const cont = simplifyContinent(c.continent);
+    counts[cont] = (counts[cont] || 0) + 1;
+  });
+
+  const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+  const maxCount = sorted[0]?.[1] || 1;
+  const totalVisited = sorted.reduce((s, [, n]) => s + n, 0);
+
+  return `
+    <div class="continent-breakdown">
+      <div class="breakdown-header">
+        <h2 class="breakdown-title">Continents Explored</h2>
+        <span class="breakdown-total">${totalVisited} countries visited in total</span>
+      </div>
+      <div class="breakdown-bars">
+        ${sorted.map(([cont, count]) => {
+          const total  = CONTINENT_TOTALS[cont] || count;
+          const pct    = Math.round(count / total * 100);
+          const barW   = Math.round(count / maxCount * 100);
+          const color  = CONTINENT_COLORS[cont] || '#64748b';
+          return `
+            <div class="breakdown-row">
+              <div class="breakdown-label">
+                <span class="breakdown-cont-dot" style="background:${color}"></span>
+                <span class="breakdown-cont-name">${cont}</span>
+              </div>
+              <div class="breakdown-bar-wrap">
+                <div class="breakdown-bar" style="width:${barW}%;background:${color}"></div>
+              </div>
+              <span class="breakdown-stats">${count} <span class="breakdown-of">/ ~${total}</span></span>
+              <span class="breakdown-pct">${pct}%</span>
+            </div>`;
+        }).join('')}
+      </div>
+    </div>`;
+}
+
 function renderCountryList(entries, container) {
   if (!entries.length) { container.innerHTML = emptyMsg('No countries found.'); return; }
   container.innerHTML = entries.map(c => `
@@ -314,6 +377,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     updateStats();
     await initMap();
     if (listEl) renderCountryList(stateManager.allEntries(), listEl);
+
+    const breakdownEl = document.getElementById('continentBreakdown');
+    if (breakdownEl && countries.length) breakdownEl.innerHTML = buildBreakdown(countries);
 
     document.querySelectorAll('.country-tab').forEach(btn => {
       btn.addEventListener('click', () => {

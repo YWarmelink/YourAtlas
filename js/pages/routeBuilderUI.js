@@ -1060,7 +1060,7 @@ function rbRenderRouteLine(route, geojson) {
     iconSize: [26, 26], iconAnchor: [13, 13],
   });
   L.marker(RB_HOME_LATLNG, { icon: homeIcon })
-    .bindTooltip('🇳🇱 Utrecht — vertrek & aankomst')
+    .bindTooltip('🇳🇱 Nederland — vertrek & aankomst')
     .addTo(layerGroup);
 
   stops.forEach(({ block, index }, i) => {
@@ -1133,7 +1133,7 @@ function rbRenderDetailedRouteLine(route, geojson) {
     iconSize: [26, 26], iconAnchor: [13, 13],
   });
   L.marker(RB_HOME_LATLNG, { icon: homeIcon })
-    .bindTooltip('🇳🇱 Utrecht — vertrek & aankomst')
+    .bindTooltip('🇳🇱 Nederland — vertrek & aankomst')
     .addTo(layerGroup);
 
   points.forEach(({ block, blockIndex, dest }) => {

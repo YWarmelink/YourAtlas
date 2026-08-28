@@ -13,7 +13,6 @@ A personal travel dashboard built with vanilla HTML, CSS and JavaScript. Part of
 | Home | [/](https://ywarmelink.github.io/YourAtlas/) |
 | All Trips | [/trips.html](https://ywarmelink.github.io/YourAtlas/trips.html) |
 | Route Builder | [/route-builder.html](https://ywarmelink.github.io/YourAtlas/route-builder.html) |
-| Countries | [/countries.html](https://ywarmelink.github.io/YourAtlas/countries.html) |
 | Map | [/map.html](https://ywarmelink.github.io/YourAtlas/map.html) |
 | Search | [/search.html](https://ywarmelink.github.io/YourAtlas/search.html) |
 

@@ -6,7 +6,6 @@ function renderNavbar() {
     { href: 'index.html',    label: 'Home' },
     { href: 'trips.html',    label: 'Trips' },
     { href: 'route-builder.html', label: 'Route Builder' },
-    { href: 'countries.html',label: 'Countries' },
     { href: 'map.html',      label: 'Map' },
     { href: 'search.html',  label: 'Search' },
   ];
@@ -14,7 +13,6 @@ function renderNavbar() {
   const SUBPAGES = {
     'trips.html':    ['trip.html', 'itinerary.html', 'notes.html'],
     'route-builder.html': [],
-    'countries.html': [],
     'map.html':      [],
     'search.html':   [],
   };

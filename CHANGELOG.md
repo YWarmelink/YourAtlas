@@ -12,6 +12,30 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Countries page retired, merged into Map (2026-08-28)** — Youri's read: `countries.html`
+  really only did one useful thing — a "Continents Explored" breakdown — and that belonged on Map
+  anyway, since Map already tracks every country's status. The rest of Countries (a card per
+  country listing every one of its `Trips` sheet entries inline) he didn't want. Moved
+  `buildBreakdown()`/`CONTINENT_TOTALS`/`CONTINENT_COLORS`/`simplifyContinent()` from
+  `js/pages/countries.js` into `js/pages/map.js` unchanged, rendering into a new
+  `#continentBreakdown` div between the world map and the country list; ported the matching CSS
+  from `css/pages/countries.css` into `css/pages/map.css`. Deleted `countries.html`,
+  `js/pages/countries.js`, `css/pages/countries.css` entirely, and repointed every reference:
+  `js/components/navbar.js` and `footer.js` (nav link removed), `index.html` (hero "Explore
+  Countries" button → "Explore the Map" pointing at `map.html`; the About-section tile retitled
+  Countries → Map), and `README.md`'s page table. Verified via the local server: `countries.html`
+  now 404s as expected, nav/footer no longer show it, and the merged Map page renders both
+  sections correctly with 0 console errors.
+
+- **Fix: Map's "All Countries" count didn't match what the "All" tab actually listed
+  (2026-08-28)** — found while investigating why Youri saw "90 landen" and expected more. Root
+  cause: `updateStats()` in `js/pages/map.js` set the `#mapStatsTotal` label to
+  `visited + planned + wishlist` (92) while the "All" tab's own list
+  (`stateManager.allEntries()`) always rendered every country in the sheet regardless of status
+  (197 — the Countries sheet already covers essentially the whole world, with 105 rows still
+  unstatused). Fixed by setting the label to `all.length` instead, so the header number always
+  matches what's actually listed underneath it. Verified live: both now read 197.
+
 - **Fix: "Routelijn" map mode showed "no route-line data" for every single-country route
   (2026-08-28)** — Youri spotted this while trying the new Overview mode. Root cause: both
   `rbRenderRouteLine()` and `rbRenderDetailedRouteLine()` (`js/pages/routeBuilderUI.js`) required
