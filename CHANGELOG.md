@@ -12,6 +12,14 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Continent badges renamed to a travel theme — Wanderer/Voyager/Globetrotter/Mister World Wide
+  (2026-08-28)** — Youri's own pick after being asked for thematic alternatives to plain Bronze/
+  Silver/Gold/Diamond text (medal colors and 25/50/75/100% thresholds unchanged, just the labels
+  in `BADGE_TIERS`). "Mister World Wide" for the 100% tier was his explicit joke pick. Caught
+  during verification: at 148px rendered, it didn't fit the 145px badge column from the earlier
+  fix — widened `.breakdown-row`'s last grid column to 165px. Verified live + at 390px mobile:
+  Europe now reads "🥈 Voyager" instead of "Silver", no overlap, 0 console errors.
+
 - **Continent badges: split Americas into North/South, added Antarctica, better
   below-Bronze labels, re-validated colors (2026-08-28)** — same-day follow-up to the badges
   feature below, three requests from actually using it. (1) The raw Countries sheet already

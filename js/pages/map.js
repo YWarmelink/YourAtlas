@@ -355,16 +355,18 @@ function simplifyContinent(raw) {
 }
 
 /* ── Continent completion badges (2026-08) ───────────────────────────────────
-   Bronze/Silver/Gold at 25/50/75%; Diamond is deliberately a different look, not
-   just the next step up — it marks a continent fully explored (100%), so it gets
-   its own gradient/glow treatment instead of a flat medal color. Below Bronze, 0
-   visited reads "Unexplored" but 1+ visited (just not 25% yet) gets a more
-   positive "Getting Started" instead of implying nothing has happened there. */
+   Wanderer/Voyager/Globetrotter at 25/50/75% (thematic names over plain Bronze/
+   Silver/Gold, medal colors/tiers unchanged). Mister World Wide is deliberately a
+   different look, not just the next step up — it marks a continent fully explored
+   (100%), so it gets its own gradient/glow treatment instead of a flat medal
+   color. Below that, 0 visited reads "Unexplored" but 1+ visited (just not 25%
+   yet) gets a more positive "Getting Started" instead of implying nothing has
+   happened there. */
 const BADGE_TIERS = [
-  { key: 'diamond', min: 100, icon: '💎', label: 'Diamond' },
-  { key: 'gold',     min: 75, icon: '🥇', label: 'Gold' },
-  { key: 'silver',   min: 50, icon: '🥈', label: 'Silver' },
-  { key: 'bronze',   min: 25, icon: '🥉', label: 'Bronze' },
+  { key: 'diamond', min: 100, icon: '💎', label: 'Mister World Wide' },
+  { key: 'gold',     min: 75, icon: '🥇', label: 'Globetrotter' },
+  { key: 'silver',   min: 50, icon: '🥈', label: 'Voyager' },
+  { key: 'bronze',   min: 25, icon: '🥉', label: 'Wanderer' },
 ];
 
 function badgeTier(pct) {
