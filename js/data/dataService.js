@@ -183,7 +183,9 @@ class DataService {
       this.getTrips(), this.getTripItems(), this.getCountriesVisited(),
     ]);
 
-    const completed = trips.filter(t => (t.status || '').toLowerCase() === 'completed');
+    // "Done" is the status text actually used in the sheet for a finished trip — "completed"
+    // alone missed every real trip marked this way, so the homepage always showed 0.
+    const completed = trips.filter(t => ['completed', 'done'].includes((t.status || '').toLowerCase()));
     const planned   = trips.filter(t => ['planned', 'booked'].includes((t.status || '').toLowerCase()));
     const continents = new Set();
 
@@ -194,7 +196,10 @@ class DataService {
     const totalDays = completed.reduce((s, t) => s + (parseInt(t.duration_days) || 0), 0);
 
     const visitedCount = countriesVisited.filter(c => c.status === 'visited').length;
-    const worldPct = Math.round(visitedCount / 195 * 100);
+    // Derived from the live Countries sheet (same denominator map.html's World Explorer meter
+    // uses) instead of a hardcoded 195 — the two disagreed (27% vs 26%) since the sheet actually
+    // carries 197 rows, not 195.
+    const worldPct = countriesVisited.length ? Math.round(visitedCount / countriesVisited.length * 100) : 0;
 
     return {
       totalTrips:        trips.length,

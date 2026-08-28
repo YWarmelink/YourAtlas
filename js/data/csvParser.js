@@ -7,8 +7,7 @@ function normalizeHeader(raw) {
   return raw
     .trim()
     .toLowerCase()
-    .replace(/\s*\(.*?\)/g, '')   // strip parenthetical suffixes
-    .replace(/[^a-z0-9]+/g, '_')  // non-alnum → underscore
+    .replace(/[^a-z0-9]+/g, '_')  // non-alnum (incl. parentheses) → underscore
     .replace(/_+/g, '_')
     .replace(/^_|_$/g, '');
 }

@@ -59,6 +59,7 @@ function statusClass(status) {
   const s = (status || '').toLowerCase().replace(/\s+/g, '-');
   const map = {
     'completed': 'status-completed',
+    'done':      'status-completed',
     'planned':   'status-planned',
     'booked':    'status-booked',
     'wishlist':  'status-wishlist',

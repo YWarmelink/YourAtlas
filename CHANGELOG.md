@@ -12,6 +12,42 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Fixes from a full site walkthrough as a fresh visitor (2026-08-28)** — Youri asked for an
+  analysis of the whole site from a user's perspective (own record-keeping, showing it to people,
+  letting them explore themselves). Three confirmed bugs, all fixed:
+  - **"0 Trips Completed" / "0 Days Traveled" on the homepage, despite a real completed trip
+    existing.** `dataService.js`'s `getStats()` only matched status `"completed"`, but the actual
+    Trips sheet uses `"Done"` — added `'done'` as a recognized synonym there and in
+    `helpers.js`'s `statusClass()` (so a Done trip's badge also gets the completed styling, not
+    the default).
+  - **Bigger find while chasing the "Days Traveled" fix: `duration_days` was `undefined` on
+    every single trip, sitewide** — not just the stats. Root cause in `js/data/csvParser.js`'s
+    `normalizeHeader()`: a `.replace(/\s*\(.*?\)/g, '')` step stripped parenthetical suffixes
+    entirely, so the real sheet header **"Duration (days)"** normalized to `"duration"` instead
+    of the `"duration_days"` every page (`home.js`, `trips.js`, `tripDetail.js`, `itinerary.js`)
+    actually reads — confirmed via the live sheet's own header row. Removed that step; the
+    general non-alnum→underscore rule already produces `"duration_days"` correctly once parens
+    aren't special-cased. Checked all 4 published sheet tabs (Trips/TripItems/TripNotes/
+    Countries) for other parenthetical headers first — "Duration (days)" was the only one, so
+    nothing else was affected. Verified live: trip cards now show "📅 X days", the Vietnam trip
+    detail page shows "38 days" in three places (header, overview grid, sidebar) that were all
+    blank before, and the homepage's "Days Traveled" stat went from 0 → 38.
+  - **World-% mismatch between pages**: homepage showed "27% of the world", Map showed "26%" —
+    `dataService.js`'s `getStats()` divided by a hardcoded `195`, Map's `buildWorldProgress()`
+    divided by the live sheet's actual `197` rows. Changed `getStats()` to divide by the live
+    country count too, so both pages now agree (26%).
+  - **Route Builder's map-mode buttons and empty-state messages were still Dutch** ("🌍 Landen",
+    "📍 Routelijn", "🔍 Gedetailleerd", "Deze route heeft nog geen...") — a leftover from before
+    this repo's English-content conversion project, since these are UI chrome/labels rather than
+    route content the earlier translation batches targeted. Translated to Countries/Route
+    Line/Detailed and their two matching empty-state strings in `js/pages/routeBuilderUI.js`.
+  - Other findings from the same walkthrough, not fixed yet by Youri's own choice: the "Big
+    routes are saved locally..." banner on Route Builder reads as a dev note to an outside
+    visitor (kept as-is for now); the homepage's "All Trips" and "On the Horizon" sections
+    currently show the exact same trips; only 5 real trips exist in the Trips sheet today
+    (vs. 440 Route Builder routes) — Youri's already planning to backfill his own completed
+    trips at a lighter (country-level, not full itinerary) level of detail for older trips.
+
 - **Continent badges: finer thresholds (20/40/60/80/100%), new Jetsetter tier, ranked by %
   not raw count (2026-08-28)** — Youri felt too much sat in "Getting Started" under the old
   25/50/75/100 spacing. New 5-step scale in `BADGE_TIERS`: Wanderer 20% → Voyager 40% →

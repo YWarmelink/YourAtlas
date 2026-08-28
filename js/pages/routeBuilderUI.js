@@ -893,7 +893,7 @@ let rbMapMode = 'countries'; // 'countries' | 'line' | 'detailed'
  * A handful of countries (Fiji, Russia, ...) have ring geometry that crosses the ±180° antimeridian.
  * Without this, Leaflet draws a straight line across the entire map between e.g. lng 179 and -179
  * instead of a short segment near the dateline — the stray horizontal lines Youri spotted on the
- * "Landen" map. Fix: "unwrap" each ring's longitudes so they stay continuous past ±180 instead of
+ * "Countries" map. Fix: "unwrap" each ring's longitudes so they stay continuous past ±180 instead of
  * jumping back — the map's maxBounds already extends to ±200 to accommodate exactly this, so an
  * unwrapped point (e.g. lng 181 instead of -179) still renders in its correct on-screen position.
  */
@@ -1037,7 +1037,7 @@ function rbRenderRouteLine(route, geojson) {
     mapDiv.querySelector('.rb-map-empty')?.remove();
     const empty = document.createElement('div');
     empty.className = 'rb-map-empty';
-    empty.textContent = 'Deze route heeft nog geen routelijn-gegevens (lat/lng per etappe) — nog niet elke expeditie heeft die.';
+    empty.textContent = 'This route doesn\'t have route-line data yet (lat/lng per leg) — not every expedition has it yet.';
     mapDiv.appendChild(empty);
     return;
   }
@@ -1110,7 +1110,7 @@ function rbRenderDetailedRouteLine(route, geojson) {
     mapDiv.querySelector('.rb-map-empty')?.remove();
     const empty = document.createElement('div');
     empty.className = 'rb-map-empty';
-    empty.textContent = 'Deze route heeft nog geen coördinaten per bestemming — nog niet elke expeditie heeft die.';
+    empty.textContent = 'This route doesn\'t have per-destination coordinates yet — not every expedition has them yet.';
     mapDiv.appendChild(empty);
     return;
   }
