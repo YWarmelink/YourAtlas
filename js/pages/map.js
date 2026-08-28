@@ -96,13 +96,34 @@ function updateStats() {
   document.querySelectorAll('#mapStatsVisited, #mapStatsVisited2').forEach(el => {
     el.textContent = visited;
   });
-  const totalEl  = document.getElementById('mapStatsTotal');
   const detailEl = document.getElementById('mapStatsDetail');
-  // "All Countries (X)" must match what the "All" tab actually lists (stateManager.allEntries()
-  // — every country in the sheet, tracked or not), not just the tracked visited+planned+wishlist
-  // subset — those two numbers disagreeing is exactly what looked like a bug.
-  if (totalEl)  totalEl.textContent  = all.length;
   if (detailEl) detailEl.textContent = [wishlist && `${wishlist} wishlist`, planned && `${planned} planned`].filter(Boolean).join(' · ');
+}
+
+/* ── Country list: filter tabs + the title's live count ─────────────────────
+   The title must always match whichever tab is active, not just the "All" count — otherwise
+   clicking "Visited" still shows the all-countries total, which is exactly what looked wrong. */
+const FILTER_LABELS = { all: 'All Countries', visited: 'Visited Countries', wishlist: 'Wishlist Countries', planned: 'Planned Countries' };
+
+function filteredEntries(filter) {
+  const all = stateManager.allEntries();
+  return filter === 'all' ? all : all.filter(c => c.status === filter);
+}
+
+function currentFilter() {
+  return document.querySelector('.country-tab.active')?.dataset.filter || 'all';
+}
+
+function updateListTitle(filter) {
+  const titleEl = document.getElementById('countryListTitle');
+  if (!titleEl) return;
+  titleEl.textContent = `${FILTER_LABELS[filter] || 'Countries'} (${filteredEntries(filter).length})`;
+}
+
+function refreshCountryList(filter) {
+  updateListTitle(filter);
+  const listEl = document.getElementById('countryList');
+  if (listEl) renderCountryList(filteredEntries(filter), listEl);
 }
 
 /* ── Refresh map colours ─────────────────────────────────────────────────── */
@@ -172,12 +193,7 @@ function showStatusPicker(code, name, clientX, clientY) {
       picker.remove();
       refreshMapColors();
       updateStats();
-      const listEl       = document.getElementById('countryList');
-      const activeFilter = document.querySelector('.country-tab.active')?.dataset.filter || 'all';
-      const entries = activeFilter === 'all'
-        ? stateManager.allEntries()
-        : stateManager.allEntries().filter(c => c.status === activeFilter);
-      if (listEl) renderCountryList(entries, listEl);
+      refreshCountryList(currentFilter());
     });
   });
 
@@ -368,7 +384,6 @@ function renderCountryList(entries, container) {
 /* ── Page init ───────────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', async () => {
   const mapDiv = document.getElementById('mapDiv');
-  const listEl = document.getElementById('countryList');
   if (!mapDiv) return;
 
   try {
@@ -376,7 +391,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     stateManager.loadSheet(countries);
     updateStats();
     await initMap();
-    if (listEl) renderCountryList(stateManager.allEntries(), listEl);
+    refreshCountryList('all');
 
     const breakdownEl = document.getElementById('continentBreakdown');
     if (breakdownEl && countries.length) breakdownEl.innerHTML = buildBreakdown(countries);
@@ -385,11 +400,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.country-tab').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        const entries = filter === 'all'
-          ? stateManager.allEntries()
-          : stateManager.allEntries().filter(c => c.status === filter);
-        if (listEl) renderCountryList(entries, listEl);
+        refreshCountryList(btn.dataset.filter);
       });
     });
 

@@ -12,6 +12,17 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Map's country-list title now counts whichever tab is active, not just "All" (2026-08-28)** —
+  follow-up to the "All Countries" count fix above. Youri asked for the Visited/Wishlist tabs to
+  show their own count too, not leave the header stuck on the all-countries total. Refactored
+  `js/pages/map.js`: `filteredEntries(filter)`/`updateListTitle(filter)`/`refreshCountryList(filter)`
+  now back all three places that render the country list (initial load, clicking a tab, and
+  changing a country's status via the map picker), replacing three separate copies of the same
+  `filter === 'all' ? ... : ...` logic. `#countryListTitle` (`map.html`) now reads e.g. "Visited
+  Countries (52)" / "Wishlist Countries (40)" / "Planned Countries (0)" depending on the active
+  tab, instead of a static "All Countries (X)". Verified live: all four tabs show correct counts
+  matching their actual row count, 0 console errors.
+
 - **Countries page retired, merged into Map (2026-08-28)** — Youri's read: `countries.html`
   really only did one useful thing — a "Continents Explored" breakdown — and that belonged on Map
   anyway, since Map already tracks every country's status. The rest of Countries (a card per
