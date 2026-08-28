@@ -126,6 +126,19 @@ function refreshCountryList(filter) {
   if (listEl) renderCountryList(filteredEntries(filter), listEl);
 }
 
+/** Re-renders the world-progress meter and continent badges from current stateManager data —
+ *  called on load and whenever a country's status changes via the map picker. */
+function refreshWorldAndBreakdown() {
+  const all = stateManager.allEntries();
+  if (!all.length) return;
+
+  const worldEl = document.getElementById('worldProgress');
+  if (worldEl) worldEl.innerHTML = buildWorldProgress(all.filter(c => c.status === 'visited').length, all.length);
+
+  const breakdownEl = document.getElementById('continentBreakdown');
+  if (breakdownEl) breakdownEl.innerHTML = buildBreakdown(all);
+}
+
 /* ── Refresh map colours ─────────────────────────────────────────────────── */
 function refreshMapColors() {
   if (!geoLayer) return;
@@ -194,6 +207,7 @@ function showStatusPicker(code, name, clientX, clientY) {
       refreshMapColors();
       updateStats();
       refreshCountryList(currentFilter());
+      refreshWorldAndBreakdown();
     });
   });
 
@@ -331,6 +345,44 @@ function simplifyContinent(raw) {
   return 'Other';
 }
 
+/* ── Continent completion badges (2026-08) ───────────────────────────────────
+   Bronze/Silver/Gold at 25/50/75%; Diamond is deliberately a different look, not
+   just the next step up — it marks a continent fully explored (100%), so it gets
+   its own gradient/glow treatment instead of a flat medal color. */
+const BADGE_TIERS = [
+  { key: 'diamond', min: 100, icon: '💎', label: 'Diamond' },
+  { key: 'gold',     min: 75, icon: '🥇', label: 'Gold' },
+  { key: 'silver',   min: 50, icon: '🥈', label: 'Silver' },
+  { key: 'bronze',   min: 25, icon: '🥉', label: 'Bronze' },
+];
+
+function badgeTier(pct) {
+  return BADGE_TIERS.find(t => pct >= t.min) || null;
+}
+
+function badgeHTML(pct) {
+  const tier = badgeTier(pct);
+  if (!tier) return `<span class="badge-tier badge-tier--none">Unexplored</span>`;
+  return `<span class="badge-tier badge-tier--${tier.key}">${tier.icon} ${tier.label}</span>`;
+}
+
+/** World-wide progress meter — one hue, fills as the % grows (a single measure, not a
+ *  multi-continent comparison, so this deliberately doesn't use CONTINENT_COLORS). */
+function buildWorldProgress(visitedCount, totalCount) {
+  const pct = totalCount ? Math.round(visitedCount / totalCount * 100) : 0;
+  return `
+    <div class="world-progress">
+      <div class="world-progress-header">
+        <span class="world-progress-label">🌍 World Explorer</span>
+        <span class="world-progress-pct">${pct}%</span>
+      </div>
+      <div class="world-progress-bar-wrap">
+        <div class="world-progress-bar" style="width:${pct}%"></div>
+      </div>
+      <div class="world-progress-detail">${visitedCount} of ${totalCount} countries visited</div>
+    </div>`;
+}
+
 function buildBreakdown(visited) {
   const counts = {};
   visited.filter(c => c.status === 'visited').forEach(c => {
@@ -365,6 +417,7 @@ function buildBreakdown(visited) {
               </div>
               <span class="breakdown-stats">${count} <span class="breakdown-of">/ ~${total}</span></span>
               <span class="breakdown-pct">${pct}%</span>
+              ${badgeHTML(pct)}
             </div>`;
         }).join('')}
       </div>
@@ -393,8 +446,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     await initMap();
     refreshCountryList('all');
 
-    const breakdownEl = document.getElementById('continentBreakdown');
-    if (breakdownEl && countries.length) breakdownEl.innerHTML = buildBreakdown(countries);
+    refreshWorldAndBreakdown();
 
     document.querySelectorAll('.country-tab').forEach(btn => {
       btn.addEventListener('click', () => {

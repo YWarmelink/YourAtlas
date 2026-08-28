@@ -163,7 +163,7 @@
 
 .breakdown-row {
   display: grid;
-  grid-template-columns: 130px 1fr 60px 42px;
+  grid-template-columns: 130px 1fr 60px 42px 100px;
   align-items: center;
   gap: var(--sp-4);
 }
@@ -221,8 +221,110 @@
 }
 
 @media (max-width: 600px) {
-  .breakdown-row { grid-template-columns: 110px 1fr 42px; }
+  .breakdown-row { grid-template-columns: 110px 1fr 42px 88px; }
   .breakdown-stats { display: none; }
+}
+
+/* === CONTINENT COMPLETION BADGES (2026-08) ===
+   Bronze/Silver/Gold are flat medal-tone chips; Diamond (100%, fully explored) gets a
+   deliberately different gradient+glow treatment so it reads as genuinely exclusive,
+   not just "one more tier up" from gold. */
+.badge-tier {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px var(--sp-3);
+  border-radius: var(--r-full);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semi);
+  white-space: nowrap;
+  justify-self: end;
+}
+
+.badge-tier--none {
+  color: var(--atlas-text-light);
+  background: var(--atlas-bg-alt);
+}
+
+.badge-tier--bronze {
+  color: #7c3a12;
+  background: linear-gradient(135deg, #f0c9a0, #d99a5b);
+}
+
+.badge-tier--silver {
+  color: #3f4a5a;
+  background: linear-gradient(135deg, #eef1f5, #c3ccd6);
+}
+
+.badge-tier--gold {
+  color: #6b4a06;
+  background: linear-gradient(135deg, #ffe8a3, #f0b429);
+}
+
+.badge-tier--diamond {
+  color: #ffffff;
+  background: linear-gradient(135deg, #38bdf8, #818cf8, #e879f9);
+  box-shadow: 0 0 0 1px rgba(255,255,255,.5) inset, 0 2px 10px rgba(129, 140, 248, .55);
+  animation: badge-diamond-glow 2.4s ease-in-out infinite;
+}
+
+@keyframes badge-diamond-glow {
+  0%, 100% { box-shadow: 0 0 0 1px rgba(255,255,255,.5) inset, 0 2px 10px rgba(129, 140, 248, .55); }
+  50%      { box-shadow: 0 0 0 1px rgba(255,255,255,.7) inset, 0 2px 18px rgba(232, 121, 249, .75); }
+}
+
+/* === WORLD PROGRESS METER (2026-08) === */
+.world-progress {
+  background: var(--atlas-card);
+  border-radius: var(--r-2xl);
+  padding: var(--sp-6) var(--sp-8);
+  border: 1px solid var(--atlas-border);
+  box-shadow: var(--shadow-card);
+  margin-bottom: var(--sp-6);
+}
+
+.world-progress-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--sp-3);
+}
+
+.world-progress-label {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+  color: var(--atlas-text);
+}
+
+.world-progress-pct {
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-xbold);
+  color: var(--atlas-blue);
+  line-height: 1;
+}
+
+.world-progress-bar-wrap {
+  background: var(--atlas-bg-alt);
+  border-radius: var(--r-full);
+  height: 14px;
+  overflow: hidden;
+}
+
+.world-progress-bar {
+  height: 100%;
+  border-radius: var(--r-full);
+  background: linear-gradient(90deg, #0ea5e9, #6366f1);
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.world-progress-detail {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-sm);
+  color: var(--atlas-text-muted);
+}
+
+@media (max-width: 600px) {
+  .badge-tier { padding: 4px var(--sp-2); font-size: 11px; }
 }
 
 /* === COUNTRY LIST === */

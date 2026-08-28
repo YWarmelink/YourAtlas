@@ -12,6 +12,23 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Map: World Explorer progress meter + continent completion badges (2026-08-28)** — the
+  "Visited-countries progress/badges" roadmap item, done. Youri's spec: a world-wide % meter, plus
+  a Bronze/Silver/Gold/Diamond badge per continent at 25/50/75/100% visited — Diamond deliberately
+  gets its own gradient+glow treatment (not just "gold but more") since it marks a continent fully
+  explored and Youri wanted that to feel genuinely exclusive. Added to `js/pages/map.js`:
+  `buildWorldProgress()` (a single-hue progress bar, `visited/all.length` — same denominator the
+  "All Countries" title fix above already uses, so the world total stays internally consistent
+  rather than relying on the separately-hardcoded `CONTINENT_TOTALS`), and `badgeTier()`/
+  `badgeHTML()` wired into the existing `buildBreakdown()` continent rows. `refreshWorldAndBreakdown()`
+  keeps both live when a country's status changes via the map's click picker, not just on page
+  load. New `#worldProgress` div in `map.html`, new CSS in `css/pages/map.css` (`.world-progress-*`,
+  `.badge-tier--{bronze,silver,gold,diamond,none}`). Verified live with real data (52/197 = 26%
+  world, Europe the only continent past 25% at 73% → Silver) and previewed all 5 badge states
+  (including Diamond, unreachable with current data) by calling the real `badgeHTML()` directly in
+  the browser — all render correctly, 0 console errors. Removed the now-done line from
+  `ROADMAP.md`'s Planned features.
+
 - **Map's country-list title now counts whichever tab is active, not just "All" (2026-08-28)** —
   follow-up to the "All Countries" count fix above. Youri asked for the Visited/Wishlist tabs to
   show their own count too, not leave the header stuck on the all-countries total. Refactored
