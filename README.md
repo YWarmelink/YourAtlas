@@ -512,6 +512,11 @@ out first when you sit down with it, then do the destinations below.
 
 ## Open items
 
+**Past Trips backfill — Youri's current #1 priority (2026-08-28, not started)**: the `Trips`
+sheet only has 5 rows today; see [`PAST_TRIPS_PLAN.md`](PAST_TRIPS_PLAN.md) for the full plan —
+lightweight (country-level, no day-by-day items) entries for old trips, full detail stays for new
+ones. This is a Sheet data-entry task for Youri, not code — ahead of everything else below.
+
 **GitHub Pages/push deploy — investigate a "build failed"-style email (2026-08-13, not yet
 diagnosed)**: Youri received an email suggesting a push/deploy failure, but the `git push` itself
 (commit `99d75e6`, the micro-staten batch) completed successfully — confirmed via `git log`/`git
