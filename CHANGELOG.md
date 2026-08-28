@@ -12,6 +12,17 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Continent badges: finer thresholds (20/40/60/80/100%), new Jetsetter tier, ranked by %
+  not raw count (2026-08-28)** — Youri felt too much sat in "Getting Started" under the old
+  25/50/75/100 spacing. New 5-step scale in `BADGE_TIERS`: Wanderer 20% → Voyager 40% →
+  Globetrotter 60% → **Jetsetter 80%** (new, an icy platinum-toned badge between Gold and
+  Diamond) → Mister World Wide 100%. Also fixed the continent ordering: `buildBreakdown()` sorted
+  by raw visited *count* before, so Africa (4 visited / 54 total = 7%) outranked Oceania (2/14 =
+  14%) just for having more countries visited in absolute terms — now sorts by `pct` descending,
+  so the continent you've actually explored *most of* shows first. Verified live: order is now
+  Europe (71%) → Asia (20%) → North America (17%) → Oceania (14%) → Africa (7%) → South
+  America/Antarctica (0%, tied) — Africa correctly dropped below Oceania despite more raw visits.
+
 - **Continent badges renamed to a travel theme — Wanderer/Voyager/Globetrotter/Mister World Wide
   (2026-08-28)** — Youri's own pick after being asked for thematic alternatives to plain Bronze/
   Silver/Gold/Diamond text (medal colors and 25/50/75/100% thresholds unchanged, just the labels

@@ -355,18 +355,20 @@ function simplifyContinent(raw) {
 }
 
 /* ── Continent completion badges (2026-08) ───────────────────────────────────
-   Wanderer/Voyager/Globetrotter at 25/50/75% (thematic names over plain Bronze/
-   Silver/Gold, medal colors/tiers unchanged). Mister World Wide is deliberately a
-   different look, not just the next step up — it marks a continent fully explored
-   (100%), so it gets its own gradient/glow treatment instead of a flat medal
-   color. Below that, 0 visited reads "Unexplored" but 1+ visited (just not 25%
-   yet) gets a more positive "Getting Started" instead of implying nothing has
-   happened there. */
+   Wanderer/Voyager/Globetrotter/Jetsetter at 20/40/60/80% (thematic names over
+   plain medal-tier text). Mister World Wide is deliberately a different look,
+   not just the next step up — it marks a continent fully explored (100%), so it
+   gets its own gradient/glow treatment instead of a flat tier color. Below
+   Wanderer, 0 visited reads "Unexplored" but 1+ visited (just not 20% yet) gets
+   a more positive "Getting Started" instead of implying nothing has happened
+   there. Jetsetter's name was picked to fit between Globetrotter and Mister
+   World Wide — swap it if a better one comes to mind. */
 const BADGE_TIERS = [
-  { key: 'diamond', min: 100, icon: '💎', label: 'Mister World Wide' },
-  { key: 'gold',     min: 75, icon: '🥇', label: 'Globetrotter' },
-  { key: 'silver',   min: 50, icon: '🥈', label: 'Voyager' },
-  { key: 'bronze',   min: 25, icon: '🥉', label: 'Wanderer' },
+  { key: 'diamond',  min: 100, icon: '💎', label: 'Mister World Wide' },
+  { key: 'platinum', min: 80,  icon: '✈️', label: 'Jetsetter' },
+  { key: 'gold',     min: 60,  icon: '🥇', label: 'Globetrotter' },
+  { key: 'silver',   min: 40,  icon: '🥈', label: 'Voyager' },
+  { key: 'bronze',   min: 20,  icon: '🥉', label: 'Wanderer' },
 ];
 
 function badgeTier(pct) {
@@ -420,7 +422,7 @@ function buildBreakdown(all) {
       const total = totals[cont] || 0;
       return { cont, count, total, pct: total ? Math.round(count / total * 100) : 0 };
     })
-    .sort((a, b) => b.count - a.count);
+    .sort((a, b) => b.pct - a.pct);
 
   const maxCount = Math.max(1, ...rows.map(r => r.count));
   const totalVisited = rows.reduce((s, r) => s + r.count, 0);
