@@ -475,10 +475,14 @@ Duration options show their day range inline, Travel Mode/Trip Type/Theme/Travel
 to Visit are real multi-select checkbox dropdowns, and route cards preview Budget Level/Primary
 Trip Type/Best Time to Visit plus a corrected unique-country count (was block count).
 
-**Next up, queued by Youri for a future session — not started**: show what actually differs
-between a `Draft` and a `Research Verified` route. Scope not yet defined (a per-route diff view? a
-visual marker on which specific fields were WebSearch-checked vs. still a first-pass guess? something
-else?) — needs a proper scoping conversation before starting, not something to guess at here.
+**Draft route verification — scoped 2026-09-02, not started**: see
+[`DRAFT_ROUTE_VERIFICATION_PLAN.md`](DRAFT_ROUTE_VERIFICATION_PLAN.md) for the full plan. 35 of
+447 routes are still `Draft` status — 4 solo US routes that never got a price-check pass, plus 31
+`EUROPA_TRIP_IDEAS.md` combination roadtrips whose individual countries are already verified but
+whose combination itself wasn't. Classified into 3 effort tiers (full research vs. quick
+consistency-check vs. medium) since they're far from equal-sized work. A per-field diff view (what
+README originally speculated about) turned out not to be buildable from the existing data — see
+the plan doc for why.
 
 ## Search
 
