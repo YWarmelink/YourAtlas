@@ -163,6 +163,39 @@ few files large enough that a blind full read is wasteful:
 - **Route-line map view** draws one anchor coordinate per leg (`block.lat`/`lng`), not per destination — multi-city legs collapse to a single point, and the line is straight segments, not real roads. Deliberate simplification, not a bug; see README's "Future plans" for the potential upgrade path.
 - **Route Builder vs. Trips sheet overlap is accepted, not deduped** — Route Builder expeditions are epic/aspirational trips, the Trips sheet holds realistic plannable vacations; some countries/regions legitimately appear in both and that's fine as-is.
 
+## Auditing for leftover Dutch content
+
+Route Builder's Dutch→English translation history (see `ROUTE_BUILDER_TRANSLATION_GLOSSARY.md`)
+has repeatedly turned up routes that were missed by an otherwise-systematic batch sweep — Hawaii
+and Florida were found still fully in Dutch as late as 2026-09 (see `CHANGELOG.md`'s "Draft Route
+Verification, Tier 1" entry), and a follow-up audit the same month found 4 more (Japan & Taiwan,
+Vietnam, Thailand, Balkan) plus a subtler regression where an old migration was silently
+re-reverting Nepal's already-translated `transport_to_next` back to Dutch on every fresh browser.
+
+**Don't grep the raw JS source for Dutch words to check for this** — `routeBuilderContent.js`'s
+own translation-migration history means a blind text search also matches code comments, deliberate
+`oldName:` Dutch matching keys (used so a migration can find and rename a stale browser's data),
+and old data tables a *later* migration overwrites before anything reaches the UI. All of that is
+noise, not a bug, and it drowns out the real hits.
+
+Instead, use the two-step tool built for this (`scripts/simulate_route_builder.js` +
+`scripts/find_dutch_in_live_content.py`):
+
+```
+node scripts/simulate_route_builder.js --pretty > /tmp/live_routes.json
+python3 scripts/find_dutch_in_live_content.py /tmp/live_routes.json --detail
+```
+
+The first script replays the exact same `rbSeed*()`/`rbMigrate*()` call sequence a brand-new
+browser runs (extracted straight from `routeBuilder.js`'s init order, so it can't drift out of
+sync), against an in-memory `localStorage` shim — producing the TRUE final `rbRoutes` state. The
+second scans that JSON for a curated Dutch wordlist. A handful of hits on "Grote"/"Kleine" are
+expected and fine (real place names like Curaçao's "Grote Knip" beach or Switzerland's "Kleine
+Scheidegg" pass, not Dutch prose) — everything else is a genuine live bug. There's also a plain
+source-grep variant, `scripts/find_dutch_text.py` (app-facing files only by default, `--include-docs`
+for the `*.md` planning notes), but it's a rougher, noisier tool — prefer the live-content scan
+above when the question is "does the app actually show Dutch text anywhere."
+
 ## Conventions
 
 - Fictitious/personal data only where relevant — this is Youri's own personal travel data, not shared/multi-tenant (though `js/config/users.js` is structured to allow more users later)

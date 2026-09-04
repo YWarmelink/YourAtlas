@@ -6591,7 +6591,13 @@ function rbMigrateSplitRouteEntryNotes() {
     if (block.transport_to_next !== transportToNext) { block.transport_to_next = transportToNext; touched = true; }
   };
   fixEnding('Noord-India 🕌', 'IN', 'Einde van de expeditie — binnenlandse vlucht Varanasi-Delhi (±1u20), dan terugvlucht Delhi-Amsterdam (KLM, rechtstreeks, ±8u15, vanaf ±€350-550 retour, geen rechtstreekse internationale verbinding vanuit Varanasi zelf). Prijsindicatie webonderzoek 2026-08, momentopname.');
-  fixEnding('Nepal 🏔️', 'NP', 'Einde van de expeditie — terugvlucht Kathmandu-Amsterdam, met overstap (bv. via Doha of Istanbul, ±13-16 uur, vanaf ±€350-550 retour, geen rechtstreekse verbinding vanuit Kathmandu). Prijsindicatie webonderzoek 2026-08, momentopname.');
+  // Nepal 🏔️'s own fixEnding() call used to live here too, but it hardcoded a Dutch
+  // transport_to_next string that (unlike 'Noord-India 🕌' above, since renamed to 'North India 🕌'
+  // and so no longer matched by this function) kept matching the still-named 'Nepal 🏔️' route and
+  // silently reverting its transport_to_next back to Dutch on every fresh browser, even after
+  // rbBuildNepalRoute() itself was translated to English — see
+  // rbMigrateFixNepalEntryNotesRegression() below for the one-time correction, and 2026-09's Dutch
+  // text audit in CHANGELOG.md for how this was found.
 
   // Greenland: both the instap note AND the ending were wrong (flew to Reykjavik under an
   // "end of expedition" label instead of home to NL) — full override for both fields.
@@ -7207,19 +7213,19 @@ function rbBuildJapanTaiwanRoute() {
   return rbBuildFlatSeedRoute('Japan & Taiwan 🗻', [
     {
       ...eurasia('JP', 'Japan'),
-      notes: 'Instap: rechtstreekse vlucht Amsterdam-Tokio (KLM/Air France/SAS, ±13u15; vanaf ±€900-1.300 retour; beste periode oktober-november). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (eurasia('JP', 'Japan').notes || ''),
-      // transport_to_next (Osaka/Tokio-Taipei) is correctly internal to this 2-country route — kept as-is.
+      notes: 'Entry: direct flight Amsterdam-Tokyo (KLM/Air France/SAS, ±13h15; from ±€900-1,300 return; best period October-November). Price indication from 2026-08 web research, a snapshot. ' + (eurasia('JP', 'Japan').notes || ''),
+      // transport_to_next (Osaka/Tokyo-Taipei) is correctly internal to this 2-country route — kept as-is.
     },
     {
       ...eurasia('TW', 'Taiwan'),
-      transport_to_next: 'Einde van deze route — HSR terug naar Taipei (~2u vanaf Kenting), dan terugvlucht Taipei-Amsterdam (1 tussenstop, geen directe verbinding).',
+      transport_to_next: 'End of this route — HSR back to Taipei (~2h from Kenting), then a return flight Taipei-Amsterdam (1 stopover, no direct connection).',
     },
   ], {
-    best_starting_month: 'Oktober',
-    travel_style: 'Backpacker/budget-comfort hybride — trein/metro in Japan, HSR in Taiwan, korte vlucht ertussen.',
-    climate_summary: 'Oktober-november geeft herfstkleuren in Japan (rustiger dan de kersenbloesem-drukte) en droog, mild weer in Taiwan vóór het koelere winterseizoen in het noorden.',
-    description: 'Van Tokyo via Kyoto/Osaka naar Taiwan: Taipei, de Taroko-kloof en het zuidelijke Kenting.',
-    notes: 'Losgesplitst van Eurasia Grand Tour 🌏 (via Oost-Azië & Stille Oceaan 🗻, waar dit al als eigen "Sterk"-blok stond in ROUTE_BUILDER_MODULES.md — "klassieke Oost-Azië combinatie, visumvrij, geen haken") als onderdeel van deze tweede batch losse landen (2026-08, Youri\'s eigen top-10-keuze). Landen, dagen en budgetten zijn ongewijzigd overgenomen. Eurasia Grand Tour 🌏 en Oost-Azië & Stille Oceaan 🗻 zelf blijven ongewijzigd bestaan.',
+    best_starting_month: 'October',
+    travel_style: 'Backpacker/budget-comfort hybrid — train/metro in Japan, HSR in Taiwan, a short flight between them.',
+    climate_summary: 'October-November brings autumn colors in Japan (quieter than the cherry-blossom crowds) and dry, mild weather in Taiwan ahead of the cooler winter season in the north.',
+    description: 'From Tokyo via Kyoto/Osaka to Taiwan: Taipei, Taroko Gorge and Kenting in the south.',
+    notes: 'Split off from Eurasia Grand Tour 🌏 (via East Asia & Pacific 🗻, where this already stood as its own "Strong" block in ROUTE_BUILDER_MODULES.md — "classic East Asia combination, visa-free, no snags") as part of this second batch of standalone countries (2026-08, Youri\'s own top-10 pick). Countries, days and budgets are carried over unchanged. Eurasia Grand Tour 🌏 and East Asia & Pacific 🗻 themselves continue to exist unchanged.',
   });
 }
 
@@ -7262,15 +7268,15 @@ function rbBuildVietnamRoute() {
   return rbBuildFlatSeedRoute('Vietnam 🛵', [
     {
       ...eurasia('VN', 'Vietnam'),
-      notes: 'Instap: vlucht Amsterdam-Hanoi (±15-17 uur, doorgaans 1 tussenstop; vanaf ±€630-720 retour; beste periode december). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (eurasia('VN', 'Vietnam').notes || ''),
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Ho Chi Minh City naar Amsterdam (1 tussenstop, geen directe verbinding).',
+      notes: 'Entry: flight Amsterdam-Hanoi (±15-17 hours, usually 1 stopover; from ±€630-720 return; best period December). Price indication from 2026-08 web research, a snapshot. ' + (eurasia('VN', 'Vietnam').notes || ''),
+      transport_to_next: 'End of this route — return flight from Ho Chi Minh City to Amsterdam (1 stopover, no direct connection).',
     },
   ], {
     best_starting_month: 'December',
-    travel_style: 'Backpacker — lokale bussen, de Ha Giang Loop met gids/motor, interne vlucht Hanoi-HCMC.',
-    climate_summary: 'December-februari is het droge seizoen op het vasteland van Zuidoost-Azië — geen moesson, aangename temperaturen.',
-    description: 'Van Hanoi en de Ha Giang Loop via Ha Long Bay naar Ho Chi Minh City, Da Lat en Phu Quoc.',
-    notes: 'Losgesplitst van Eurasia Grand Tour 🌏 (via Zuidoost-Azië Grand Loop 🛕) als onderdeel van deze tweede batch losse landen (2026-08, Youri\'s eigen top-10-keuze) — een van de meest geboekte backpacker-bestemmingen wereldwijd. Land, dagen en budget zijn ongewijzigd overgenomen. Eurasia Grand Tour 🌏 en Zuidoost-Azië Grand Loop 🛕 zelf blijven ongewijzigd bestaan.',
+    travel_style: 'Backpacker — local buses, the Ha Giang Loop with a guide/motorbike, a domestic flight Hanoi-HCMC.',
+    climate_summary: 'December-February is the dry season on mainland Southeast Asia — no monsoon, pleasant temperatures.',
+    description: 'From Hanoi and the Ha Giang Loop via Ha Long Bay to Ho Chi Minh City, Da Lat and Phu Quoc.',
+    notes: 'Split off from Eurasia Grand Tour 🌏 (via Southeast Asia Grand Loop 🛕) as part of this second batch of standalone countries (2026-08, Youri\'s own top-10 pick) — one of the most-booked backpacker destinations worldwide. Country, days and budget are carried over unchanged. Eurasia Grand Tour 🌏 and Southeast Asia Grand Loop 🛕 themselves continue to exist unchanged.',
   });
 }
 
@@ -7470,15 +7476,15 @@ function rbBuildThailandRoute() {
   return rbBuildFlatSeedRoute('Thailand 🛕', [
     {
       ...eurasia('TH', 'Thailand'),
-      notes: 'Instap: rechtstreekse KLM-vlucht Amsterdam-Bangkok (±11u15; vanaf ±€650-900 retour; beste periode december), met binnenlandse aansluiting naar Chiang Mai. Prijsindicatie webonderzoek 2026-08, momentopname. ' + (eurasia('TH', 'Thailand').notes || ''),
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Krabi/Phuket naar Bangkok, dan rechtstreekse KLM-terugvlucht Bangkok-Amsterdam.',
+      notes: 'Entry: direct KLM flight Amsterdam-Bangkok (±11h15; from ±€650-900 return; best period December), with a domestic connection to Chiang Mai. Price indication from 2026-08 web research, a snapshot. ' + (eurasia('TH', 'Thailand').notes || ''),
+      transport_to_next: 'End of this route — return flight from Krabi/Phuket to Bangkok, then a direct KLM return flight Bangkok-Amsterdam.',
     },
   ], {
     best_starting_month: 'December',
-    travel_style: 'Backpacker — lokale bussen/treinen, binnenlandse vlucht Chiang Mai-Bangkok.',
-    climate_summary: 'December-februari is het droge seizoen op het Thaise vasteland — geen moesson, aangename temperaturen.',
-    description: 'Van Chiang Mai en Sukhothai via Bangkok naar de eilanden en stranden bij Krabi.',
-    notes: 'Losgesplitst van Eurasia Grand Tour 🌏 (via Zuidoost-Azië Grand Loop 🛕) als onderdeel van deze derde batch losse landen (2026-08, Youri\'s eigen tweede top-10-keuze) — een van de meest bezochte landen wereldwijd. Land, dagen en budget zijn ongewijzigd overgenomen. Eurasia Grand Tour 🌏 en Zuidoost-Azië Grand Loop 🛕 zelf blijven ongewijzigd bestaan.',
+    travel_style: 'Backpacker — local buses/trains, a domestic flight Chiang Mai-Bangkok.',
+    climate_summary: 'December-February is the dry season on mainland Thailand — no monsoon, pleasant temperatures.',
+    description: 'From Chiang Mai and Sukhothai via Bangkok to the islands and beaches around Krabi.',
+    notes: 'Split off from Eurasia Grand Tour 🌏 (via Southeast Asia Grand Loop 🛕) as part of this third batch of standalone countries (2026-08, Youri\'s own second top-10 pick) — one of the most-visited countries in the world. Country, days and budget are carried over unchanged. Eurasia Grand Tour 🌏 and Southeast Asia Grand Loop 🛕 themselves continue to exist unchanged.',
   });
 }
 
@@ -8864,21 +8870,21 @@ function rbBuildBalkanRoute() {
   return rbBuildFlatSeedRoute('Balkan 🐺', [
     {
       ...eurasia('BA', 'Bosnia and Herzegovina'),
-      notes: 'Instap: vlucht Amsterdam-Sarajevo, met overstap (bv. via Wenen/Frankfurt/Zagreb, ±7 uur totaal; vanaf ±€125-330 retour; beste periode april-mei/september-oktober). Prijsindicatie webonderzoek 2026-08, momentopname. ' + (eurasia('BA', 'Bosnia and Herzegovina').notes || ''),
+      notes: 'Entry: flight Amsterdam-Sarajevo, with a connection (e.g. via Vienna/Frankfurt/Zagreb, ±7 hours total; from ±€125-330 return; best period April-May/September-October). Price indication from 2026-08 web research, a snapshot. ' + (eurasia('BA', 'Bosnia and Herzegovina').notes || ''),
     },
     eurasia('HR', 'Croatia'),
     eurasia('ME', 'Montenegro'),
     eurasia('AL', 'Albania'),
     {
       ...eurasia('MK', 'North Macedonia'),
-      transport_to_next: 'Einde van deze route — vlucht vanuit Skopje naar Amsterdam (1 overstap, bv. via Wenen/Zagreb).',
+      transport_to_next: 'End of this route — flight from Skopje to Amsterdam (1 stopover, e.g. via Vienna/Zagreb).',
     },
   ], {
     best_starting_month: 'April',
-    travel_style: 'Bus over land tussen de vijf landen — allemaal eenvoudige grensovergangen.',
-    climate_summary: 'April-mei (of september-oktober) geeft mild weer voor de kustlijn en de bergen, ruim vóór/na de zomerdrukte en -hitte van de Adriatische kust.',
-    description: 'Sarajevo en Mostar in Bosnië, Dubrovnik in Kroatië, Kotor en Durmitor NP in Montenegro, Tirana en Gjirokastër in Albanië, en Ohrid/Skopje in Noord-Macedonië.',
-    notes: 'Losgesplitst van Eurasia Grand Tour 🌏 (via West-Eurazië Overland 🐫, waar dit al als eigen "Sterk"-blok stond in ROUTE_BUILDER_MODULES.md — "al een klassieke standalone backpackroute") als onderdeel van de zevende combi-batch (2026-08). Landen, dagen en budgetten zijn ongewijzigd overgenomen (huidige routegegevens: 35d, niet de 45d uit de oudere 2026-07-analyse — de Eurasia-route kreeg sindsdien een routelogica-herziening). Eurasia Grand Tour 🌏 en West-Eurazië Overland 🐫 zelf blijven ongewijzigd bestaan.',
+    travel_style: 'Bus overland between the five countries — all straightforward border crossings.',
+    climate_summary: "April-May (or September-October) brings mild weather for the coastline and the mountains, well ahead of/after the Adriatic coast's summer crowds and heat.",
+    description: 'Sarajevo and Mostar in Bosnia, Dubrovnik in Croatia, Kotor and Durmitor NP in Montenegro, Tirana and Gjirokastër in Albania, and Ohrid/Skopje in North Macedonia.',
+    notes: 'Split off from Eurasia Grand Tour 🌏 (via West Eurasia Overland 🐫, where this already stood as its own "Strong" block in ROUTE_BUILDER_MODULES.md — "already a classic standalone backpacking route") as part of the seventh combo batch (2026-08). Countries, days and budgets are carried over unchanged (current route data: 35d, not the 45d from the older 2026-07 analysis — the Eurasia route has had a route-logic overhaul since then). Eurasia Grand Tour 🌏 and West Eurasia Overland 🐫 themselves continue to exist unchanged.',
   });
 }
 
@@ -19940,6 +19946,60 @@ function rbMigrateDraftVerificationTier3() {
   );
 
   if (touched) rbSave();
+}
+
+/**
+ * 2026-09 Dutch-text audit (see scripts/find_dutch_in_live_content.py's simulated-live-state
+ * scan, and CHANGELOG.md): found 4 more standalone-country/split routes that were still fully in
+ * Dutch, on top of the Hawaii/Florida case already fixed by rbMigrateDraftVerificationTier1() —
+ * these four were seeded via rbSeedPredefinedExpeditions()'s underlying build functions directly
+ * (not via any of the rbSeedStandaloneCountryRoutesBatch*() functions), a mechanism
+ * rbMigrateStandaloneCountryRoutesEnglish()'s own audit never enumerated either. Wholesale content
+ * replacement per this project's migration convention, since every field changed language.
+ */
+function rbMigrateDutchAuditStandaloneEnglish() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_DUTCH_AUDIT_STANDALONE_ENGLISH)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_DUTCH_AUDIT_STANDALONE_ENGLISH, '1');
+
+  let touched = false;
+  [
+    ['Japan & Taiwan 🗻', rbBuildJapanTaiwanRoute],
+    ['Vietnam 🛵', rbBuildVietnamRoute],
+    ['Thailand 🛕', rbBuildThailandRoute],
+    ['Balkan 🐺', rbBuildBalkanRoute],
+  ].forEach(([name, buildFn]) => {
+    const idx = rbRoutes.findIndex(r => r.name === name);
+    if (idx === -1) return;
+    rbRoutes.splice(idx, 1, buildFn());
+    touched = true;
+  });
+
+  if (touched) rbSave();
+}
+
+/**
+ * One-time correction for a regression found during the same 2026-09 Dutch-text audit:
+ * rbMigrateSplitRouteEntryNotes()'s fixEnding('Nepal 🏔️', ...) call hardcoded a Dutch
+ * transport_to_next string and unconditionally re-applied it whenever the live value didn't
+ * match — which kept reverting Nepal's transport_to_next back to Dutch on every fresh browser
+ * even after rbBuildNepalRoute() itself was translated to English, since that migration always
+ * ran (in file order) after Nepal was freshly seeded. The stale fixEnding() call has been removed
+ * from source (see the comment left in its place); this migration corrects any browser that
+ * already has the reverted Dutch text stuck in localStorage from a previous page load.
+ */
+function rbMigrateFixNepalEntryNotesRegression() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_FIX_NEPAL_ENTRY_NOTES_REGRESSION)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_FIX_NEPAL_ENTRY_NOTES_REGRESSION, '1');
+
+  const route = rbRoutes.find(r => r.name === 'Nepal 🏔️');
+  if (!route) return;
+  const block = route.blocks.find(b => b.country_code === 'NP');
+  if (!block) return;
+  const correct = "End of the expedition — return flight Kathmandu-Amsterdam, with a connection (e.g. via Doha or Istanbul, ±13-16 hours, from ±€350-550 return, no direct connection from Kathmandu). Price indication from 2026-08 web research, a snapshot.";
+  if (block.transport_to_next !== correct) {
+    block.transport_to_next = correct;
+    rbSave();
+  }
 }
 
 /**

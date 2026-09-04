@@ -128,6 +128,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateDraftVerificationTier2Batch2();
   rbMigrateDraftVerificationTier3();
   rbMigrateDraftVerificationTier1();
+  rbMigrateDutchAuditStandaloneEnglish();
+  rbMigrateFixNepalEntryNotesRegression();
   rbBindEvents();
 
   try {

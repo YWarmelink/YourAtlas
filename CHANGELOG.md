@@ -12,6 +12,42 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Repo-wide Dutch-text audit + tooling (2026-09-04)** — after Tier 1 turned up Hawaii/Florida
+  still fully in Dutch, Youri asked for a way to check the whole repo for leftover Dutch text so
+  it can't silently happen again. Built a two-step tool rather than a blind grep, since this
+  repo's own translation-migration history (`oldName:` Dutch matching keys, old data tables a
+  later migration overwrites, code comments describing past Dutch→English fixes) makes a plain
+  text search too noisy to trust — see CLAUDE.md's new "Auditing for leftover Dutch content"
+  section for the full explanation and usage:
+  - `scripts/simulate_route_builder.js` — replays the app's exact `rbSeed*()`/`rbMigrate*()` call
+    sequence (extracted straight from `routeBuilder.js`'s init order) against an in-memory
+    `localStorage` shim, producing the TRUE final route state a brand-new browser ends up with.
+  - `scripts/find_dutch_in_live_content.py` — scans that simulated output for a curated Dutch
+    wordlist; every hit here is a real, live, user-visible bug, not source-code noise.
+  - `scripts/find_dutch_text.py` — a rougher plain-source-grep variant (app-facing files only by
+    default), kept as a secondary/faster option but not the primary tool.
+
+  Running the live-content scan found 2 real, previously-unknown problems beyond Hawaii/Florida:
+  - **4 more fully-Dutch routes**: Japan & Taiwan 🗻, Vietnam 🛵, Thailand 🛕 and Balkan 🐺 — all
+    standalone/split routes seeded directly by `rbSeedPredefinedExpeditions()`'s underlying build
+    functions, a mechanism `rbMigrateStandaloneCountryRoutesEnglish()`'s own earlier audit (which
+    caught 15 similar cases) never enumerated either. Translated to English via
+    `rbMigrateDutchAuditStandaloneEnglish()` (wholesale content replacement, all four routes were
+    already price-`Verified` — this was a pure language bug, not a data-accuracy one).
+  - **A subtler regression, not a missed-translation**: Nepal 🏔️'s `transport_to_next` had
+    genuinely been translated to English, but an old migration (`rbMigrateSplitRouteEntryNotes()`'s
+    `fixEnding('Nepal 🏔️', ...)` call) hardcoded the old Dutch string and unconditionally
+    re-applied it whenever the live value didn't match — silently reverting it back to Dutch on
+    every fresh browser, since that migration always ran (in file order) after Nepal was freshly
+    seeded. The equivalent call for "Noord-India 🕌" was harmless only because that route had since
+    been renamed to "North India 🕌", so the name lookup no longer matched. Removed the stale call
+    from source and added `rbMigrateFixNepalEntryNotesRegression()` to correct any browser that
+    already has the reverted text stuck in localStorage.
+
+  Re-ran the live-content scan after both fixes: 0 genuine Dutch text remains anywhere in the app
+  (5 residual hits are all real place names — Curaçao's "Grote Knip" beach, Switzerland's "Kleine
+  Scheidegg" pass — or a deliberate bilingual reference note, not translation bugs).
+
 - **Draft Route Verification, Tier 1 — all 4 solo US/Hawaii/Florida routes, the final tier
   (2026-09-04)** — US Northeast, US Southwest, Hawaii and Florida, the heaviest tier (full
   research from scratch, not a consistency-check). Applied via `rbMigrateDraftVerificationTier1()`.
