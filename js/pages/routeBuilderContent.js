@@ -9122,14 +9122,14 @@ function rbSeedUSLooseTrips() {
 function rbBuildUSNortheastRoute() {
   return rbBuildFlatSeedRoute('US Northeast 🗽', [
     {
-      code: 'US', name: 'United States', days: 3, budget: 270, lat: 38.9072, lng: -77.0369,
+      code: 'US', name: 'United States', days: 3, budget: 315, lat: 38.9072, lng: -77.0369,
       destinations: [
         { name: 'National Mall & Smithsonians', lat: 38.8899, lng: -77.0091 },
         { name: 'Lincoln Memorial', lat: 38.8893, lng: -77.0502 },
         { name: 'Capitol Hill', lat: 38.8899, lng: -77.0091 },
         { name: 'Georgetown', lat: 38.9097, lng: -77.0654 },
       ],
-      notes: 'Entry: direct flight Amsterdam-Washington DC (KLM, ±8-9 hours; best period mid-September-late October). Price indication from 2026-08 web research, a snapshot. ESTA required ($40, apply well in advance, passport valid 6+ months). The Smithsonian museums and most monuments are free — deliberately a cheaper stop than the other three cities.',
+      notes: "Entry: direct flight Amsterdam-Washington DC (KLM, ±8-9 hours; best period mid-September-late October). Price indication from 2026-08 web research, a snapshot. ESTA required (Web check 2026-09: now $40.27, up from $21 pre-2025 — apply well in advance, passport valid 6+ months; ESTA/visa-waiver travelers are exempt from the separate new $250 Visa Integrity Fee, that only applies to actual visa applicants. Note: US ESTA/visa forms now only accept M/F gender markers, relevant for some travelers). The Smithsonian museums and most monuments are free — deliberately a cheaper stop than the other three cities. Web check (2026-09): €90/day was slightly low for a Budget/Comfort-Backpacker blend even leaning on the free museums — bumped to ~€105/day.",
       transport_to_next: 'Train (Amtrak Northeast Regional), ≈2 hours to Philadelphia — book 2-4 weeks ahead and travel Tuesday-Thursday for the best "Saver" fares.',
     },
     {
@@ -9153,13 +9153,13 @@ function rbBuildUSNortheastRoute() {
       transport_to_next: 'Train, ≈4 hours to Boston (or the direct DC-Boston route, ≈7.5-8 hours, if you had skipped Philadelphia/New York).',
     },
     {
-      code: 'US', name: 'United States', days: 3, budget: 345, lat: 42.3601, lng: -71.0589,
+      code: 'US', name: 'United States', days: 3, budget: 375, lat: 42.3601, lng: -71.0589,
       destinations: [
         { name: 'Freedom Trail', lat: 42.3601, lng: -71.0589 },
         { name: 'Harvard & Cambridge', lat: 42.3770, lng: -71.1167 },
         { name: 'Fenway', lat: 42.3467, lng: -71.0972 },
       ],
-      notes: 'Travel advisory (2026-08): the US is green — normal caution, no special restrictions. All four cities are seeing a real safety improvement (crime rates falling in NYC/DC/Philadelphia).',
+      notes: "Travel advisory: the US is still green (Web check 2026-09) — normal caution, no special restrictions. All four cities' safety improvement is confirmed and even stronger than assumed: NYC is on track for its safest year on record (violent crime down ~13%, murders 9.8% below the prior record low), Washington DC homicides down ~41-44% year-over-year in H1 2026, Philadelphia homicide down 54% in Q1 2026 vs. Q1 2025. Web check (2026-09): €115/day was slightly conservative for Boston specifically (pricier lodging than Philly/DC) — bumped to ~€125/day. Season note: early-to-mid October is also New England's peak leaf-peeping season, pushing Boston-area weekend lodging prices up — late September or the tail end of October can be cheaper than the fall-foliage peak weeks.",
       transport_to_next: 'End of this route — direct return flight from Boston to Amsterdam.',
     },
   ], {
@@ -9167,7 +9167,7 @@ function rbBuildUSNortheastRoute() {
     travel_style: 'Train (Northeast Corridor) between all four cities — no rental car needed, 15-20+ trains a day per route.',
     climate_summary: 'Mid-September-late October: mild, autumn colours toward New England, well past the summer heat/humidity of July-August. Avoid November-March (bitterly cold) and July-August (oppressively hot/humid in DC/New York).',
     description: 'Washington DC, Philadelphia, New York and Boston via the Northeast Corridor train — four classic American cities on one straight line.',
-    notes: 'Built (2026-08) after an audit that found the entire US East Coast completely missing from Route Builder — not a deliberate choice, just never built. At Youri\'s request a standalone, self-contained trip, not merged into North America Grand Traverse 🌎 (which continues to exist unchanged). Researched via a WebSearch-backed research agent: route/days/budget/season/transport/safety. Deliberately no extension south (Charleston/Savannah/Miami/New Orleans) — south of DC there\'s only ~1 train a day, hurricane season overlaps the best NEC season, and Miami/the south deserve their own approach (see Florida 🐊, built separately). 12 days, €1,365 ground costs. Not yet checked against current prices — treat as a first concept, not a bookable plan.',
+    notes: "Built (2026-08) after an audit that found the entire US East Coast completely missing from Route Builder — not a deliberate choice, just never built. At Youri's request a standalone, self-contained trip, not merged into North America Grand Traverse 🌎 (which continues to exist unchanged). Researched via a WebSearch-backed research agent: route/days/budget/season/transport/safety (2026-08 first pass; price/visa/advisory fully verified 2026-09, see each leg's own notes for what was confirmed vs. corrected — DC and Boston's daily budgets were nudged up slightly). Deliberately no extension south (Charleston/Savannah/Miami/New Orleans) — south of DC there's only ~1 train a day, hurricane season overlaps the best NEC season, and Miami/the south deserve their own approach (see Florida 🐊, built separately). 12 days, ~€1,440 ground costs (updated from €1,365 after the DC/Boston budget corrections).",
   });
 }
 
@@ -9180,7 +9180,7 @@ function rbBuildUSSouthwestRoute() {
         { name: 'The Narrows', lat: 37.2999, lng: -112.9484 },
         { name: 'Emerald Pools', lat: 37.2586, lng: -112.9723 },
       ],
-      notes: 'Entry: flight Amsterdam-Las Vegas (with a connection, usually via a US hub, ±13-15 hours; best period mid-September-mid-October). Price indication from 2026-08 web research, a snapshot. Pick up the rental car in Vegas — an overnight stay there is optional, not needed for the route itself.',
+      notes: "Entry: flight Amsterdam-Las Vegas (with a connection, usually via a US hub, ±13-15 hours; best period mid-September-mid-October). Price indication from 2026-08 web research, a snapshot. ESTA required (Web check 2026-09: now $40.27, up from $21 pre-2025). Pick up the rental car in Vegas — an overnight stay there is optional, not needed for the route itself. Daily budget confirmed reasonable (2026-09).",
       transport_to_next: 'Car, ≈1h50 to Bryce Canyon.',
     },
     {
@@ -9197,13 +9197,13 @@ function rbBuildUSSouthwestRoute() {
         { name: 'Antelope Canyon', lat: 36.8619, lng: -111.4103 },
         { name: 'Horseshoe Bend', lat: 36.8791, lng: -111.5104 },
       ],
-      notes: "Antelope Canyon can only be visited with a mandatory Navajo guide (since a 1997 flood) — budget ~$80 p.p. all-in with a licensed operator (Ken's Tours/Dixie Ellis'), a separate cost on top of the daily budget.",
+      notes: "Antelope Canyon can only be visited with a mandatory Navajo guide (since a 1997 flood) — budget ~$80 p.p. all-in with a licensed operator (Ken's Tours/Dixie Ellis'), a separate cost on top of the daily budget. Confirmed accurate (Web check 2026-09): both operators still price their standard tour at ~$80.50 p.p., permit/fees bundled in.",
       transport_to_next: 'Car, ≈2-2.5 hours to Monument Valley.',
     },
     {
       code: 'US', name: 'United States', days: 1, budget: 125, lat: 36.9989, lng: -110.1007,
       destinations: [{ name: '17-mile scenic loop', lat: 36.9989, lng: -110.1007 }],
-      notes: 'Navajo Nation entry fee ($15 p.p. + $20/car, cash) — not covered by the America the Beautiful annual pass (which only applies to NPS parks: Zion/Bryce/Grand Canyon).',
+      notes: "Navajo Nation entry fee — Web check (2026-09), correction: fees were raised 1 January 2026 but landed lower than previously listed, roughly $8-10 p.p. + $15/vehicle (was overstated at $15pp+$20/car); also the gate reportedly no longer reliably accepts cash and requires a card — bring a card as primary, cash as backup. Still not covered by the America the Beautiful pass (Navajo Nation explicitly doesn't accept NPS passes — this is tribal land, not an NPS park).",
       transport_to_next: 'Car (via Cameron), ≈2.5-3 hours to Grand Canyon South Rim.',
     },
     {
@@ -9212,7 +9212,7 @@ function rbBuildUSSouthwestRoute() {
         { name: 'Rim Trail', lat: 36.0544, lng: -112.1401 },
         { name: 'Bright Angel Trailhead', lat: 36.0572, lng: -112.1445 },
       ],
-      notes: 'An America the Beautiful annual pass (~€75) is worth it once you visit Zion, Bryce and here.',
+      notes: "Web check (2026-09), significant correction: since 1 January 2026 all non-US-residents aged 16+ pay a new $100 p.p. surcharge on top of the standard $35/vehicle (7-day) entrance fee at Zion, Bryce AND Grand Canyon — without a pass, that's up to ~$405 in park fees alone across the three. The old ~€75 'America the Beautiful' annual pass is now the US-resident price ($80) only; non-residents need the new 'America the Beautiful Non-Resident Annual Pass' at $250 (~€230) instead, which covers the pass-holder's vehicle (all occupants) at every fee park AND waives the new $100 surcharge — still clearly worth buying for this route, just budget €230 rather than €75.",
       transport_to_next: 'Car, ≈3.5-4 hours to Sedona.',
     },
     {
@@ -9221,15 +9221,15 @@ function rbBuildUSSouthwestRoute() {
         { name: 'Cathedral Rock', lat: 34.8214, lng: -111.7897 },
         { name: 'Red Rock State Park', lat: 34.8236, lng: -111.8302 },
       ],
-      notes: 'Travel advisory (2026-08): the US is green. Summer is dangerously hot here (Page/Monument Valley/the canyon floor regularly 38°C+) — hence the autumn season, not May-June.',
-      transport_to_next: 'End of this route — drive to Phoenix (≈2 hours), return the rental car (one-way, drop-off fee), return flight to Amsterdam.',
+      notes: "Travel advisory: the US is still green (Web check 2026-09). Summer is dangerously hot here (Page/Monument Valley/the canyon floor regularly 38°C+) — hence the autumn season, not May-June; even mid-September can still hit high-30s°C at these low-elevation stops, so leaning toward a late-September start gives more safety margin than mid-September. Minor addition: a small Red Rock Pass ($5/day or $20/year) covers trailhead parking around Sedona, not previously listed.",
+      transport_to_next: "End of this route — drive to Phoenix (≈2 hours), return the rental car (one-way drop-off fee — no fixed number exists, reports range from $0 on occasional relocation deals up to $200-600 depending on company/season/how far ahead it's booked; budget a placeholder ~$150-250 and shop multiple companies close to departure), return flight to Amsterdam.",
     },
   ], {
     best_starting_month: 'September',
     travel_style: 'Rental car, one-way Las Vegas-Phoenix — a straight eastward sweep with no backtracking.',
     climate_summary: 'Mid-September-mid-October: stable, dry, far from the deadly summer heat. Shoulder season (April-May) is also workable but busier/pricier; November-February brings snow to the higher elevations (Bryce sits at 2,400m).',
     description: 'Zion, Bryce Canyon, Antelope Canyon, Monument Valley, Grand Canyon and Sedona — a desert road trip by rental car from Las Vegas to Phoenix.',
-    notes: 'Built (2026-08) after an audit that found the entire American southwestern desert completely missing from Route Builder. At Youri\'s request a standalone, self-contained trip, not merged into North America Grand Traverse 🌎. Researched via a WebSearch-backed research agent. Deliberate choice for one-way to Phoenix instead of a loop back to Vegas: costs a rental-car drop-off fee, but keeps Sedona in, and Phoenix is a more logical hub (Southwest Airlines hub, right on the I-10 toward Texas) than the dead-end direction Vegas represents. 12 days, €1,500 ground costs. Not yet checked against current prices — treat as a first concept, not a bookable plan.',
+    notes: "Built (2026-08) after an audit that found the entire American southwestern desert completely missing from Route Builder. At Youri's request a standalone, self-contained trip, not merged into North America Grand Traverse 🌎. Researched via a WebSearch-backed research agent (2026-08 first pass; price/visa/advisory fully verified 2026-09 — the big finding was a brand-new $100pp non-resident park surcharge at Zion/Bryce/Grand Canyon effective 1 January 2026, plus a corrected, cheaper Monument Valley entry fee; see each leg's own notes for the full detail). Deliberate choice for one-way to Phoenix instead of a loop back to Vegas: costs a rental-car drop-off fee, but keeps Sedona in, and Phoenix is a more logical hub (Southwest Airlines hub, right on the I-10 toward Texas) than the dead-end direction Vegas represents. 12 days, €1,500 ground costs (unchanged — the park-fee correction is a separate cost on top of ground costs, not a change to the daily budgets themselves) plus ~€230 for the non-resident annual park pass and a variable one-way rental car drop-off fee.",
   });
 }
 
@@ -9243,8 +9243,8 @@ function rbBuildHawaiiRoute() {
         { name: 'Koko Crater Trail', lat: 21.2810, lng: -157.6987 },
         { name: 'Chinatown Honolulu', lat: 21.3097, lng: -157.8626 },
       ],
-      notes: 'Instap: vlucht Amsterdam-Honolulu (met overstap, meestal via een Amerikaanse westkust-hub; ±18-20 uur totaal; beste periode april-mei of september-oktober). Prijsindicatie webonderzoek 2026-08, momentopname. Enige eiland met een echt OV-alternatief (TheBus) — een huurauto is hier optioneel, in tegenstelling tot Maui/Kauai.',
-      transport_to_next: 'Vlucht Honolulu-Kahului (Maui), Hawaiian Airlines/Southwest, veelvuldig, ±35-45 minuten.',
+      notes: "Entry: flight Amsterdam-Honolulu (with a connection, usually via a US west-coast hub; ±18-20 hours total; best period April-May or September-October). Price indication from 2026-08 web research, a snapshot. Web check (2026-09): ESTA now costs ~$40 (up from $21, raised Sept 2025 plus a further Jan 2026 cost-of-living bump) — a per-person fixed cost, not part of the daily budget. Only island with a real public-transit alternative (TheBus) — a rental car is optional here, unlike Maui/Kauai. Daily budget confirmed reasonable for Budget/Comfort-Backpacker style (hostel dorms $60-80/night, meals $25-90/day).",
+      transport_to_next: 'Flight Honolulu-Kahului (Maui), Hawaiian Airlines/Southwest, frequent, ±35-45 minutes.',
     },
     {
       code: 'US', name: 'United States', days: 5, budget: 800, lat: 20.7984, lng: -156.3319,
@@ -9253,26 +9253,26 @@ function rbBuildHawaiiRoute() {
         { name: 'Haleakalā National Park', lat: 20.7204, lng: -156.1552 },
         { name: 'Lahaina', lat: 20.8783, lng: -156.6825 },
       ],
-      notes: 'Huurauto hier wél nodig (Road to Hana). Let op: 2026 kent een reële autoverhuur-krapte op Maui (vlootrecalls, weektarieven soms +180% t.o.v. vorig jaar) — ruim vooraf boeken is hier geen overdreven voorzorg.',
-      transport_to_next: 'Vlucht Kahului-Lihue (Kauai), ±30-40 minuten.',
+      notes: "A rental car is needed here (Road to Hana). Web check (2026-09): Maui's 2026 rental-car scarcity is real but volatile, not a stable fact — repeated fleet recalls (Jeep Wrangler, Ford SUVs, Chrysler Pacifica, Chevy Malibu) spiked weekly rates to an all-time record ~$2,015 in February 2026, then eased back to ~$1,154 by March, swinging since. Book 6-8+ weeks ahead and recheck close to departure rather than trusting any single quoted price.",
+      transport_to_next: 'Flight Kahului-Lihue (Kauai), ±30-40 minutes.',
     },
     {
       code: 'US', name: 'United States', days: 5, budget: 800, lat: 22.0964, lng: -159.5261,
       destinations: [
         { name: 'Waimea Canyon', lat: 22.0808, lng: -159.6653 },
         { name: 'Nā Pali Coast', lat: 22.1883, lng: -159.5896 },
-        { name: "Hanakāpī'ai Falls (dagtocht)", lat: 22.2166, lng: -159.5921 },
+        { name: "Hanakāpī'ai Falls (day-hike)", lat: 22.2166, lng: -159.5921 },
         { name: "Kōke'e State Park", lat: 22.1319, lng: -159.6394 },
       ],
-      notes: 'De sterkste natuur van de drie eilanden, maar ook hier vlootkrapte (weektarieven +65% t.o.v. vorig jaar). ⚠️ De volledige Kalalau Trail (11 mijl) is écht gevaarlijk (18+ dodelijke slachtoffers, exclusief verdrinkingen) — deze route doet alleen de dagtocht tot Hanakāpī\'ai Falls (3,2km, geen permit nodig), niet de volledige trail. Respectvol toerisme: reële spanning rond overtoerisme op Hawaï (druk op water/land, heilige plekken) — blijf op aangewezen paden, respecteer reserveringslimieten, geen ongevraagde omwegen naar heilige plekken.',
-      transport_to_next: 'Einde van deze route — terugvlucht vanuit Lihue via Honolulu naar Amsterdam.',
+      notes: "The strongest nature of the three islands — the same recall-driven rental-car volatility applies here too (rates have swung both up and down through 2026, book well ahead). ⚠️ The full Kalalau Trail (11 miles) is genuinely dangerous (18+ deaths excluding drownings) — this route only does the Hanakāpī'ai Falls day-hike (3.2km, no wilderness permit needed for that stretch), not the full trail. Web check (2026-09): Hāʻena State Park (the Kēʻē Beach trailhead) requires an advance parking or shuttle reservation via gohaena.com, bookable 1-30 days ahead — capped at 900 visitors/day, passes sell out within minutes to hours in peak season (May-September); check DLNR's live trail-status page shortly before departure too, since sections beyond the day-hike have had closures this year. Respectful tourism: real overtourism tension in Hawaii (pressure on water/land, sacred sites, plus Honolulu's Bill 47 phasing out vacation rentals from July 2026) — stay on marked trails, respect reservation limits, no uninvited detours to sacred sites.",
+      transport_to_next: 'End of this route — return flight from Lihue via Honolulu to Amsterdam.',
     },
   ], {
     best_starting_month: 'April',
-    travel_style: 'Inter-eilandvluchten (Hawaiian Airlines/Southwest, elke 30-60 min op de drukke routes) plus huurauto per eiland.',
-    climate_summary: 'April-mei (of september-oktober) vermijdt orkaanseizoen (juni-september) en de natste wintermaanden, met minder drukte/lagere prijzen dan de winterpiek — ondanks dat de winter ook walvisseizoen is, wegen minder toegankelijkheid en hogere kosten daar niet tegenop.',
-    description: 'Oahu, Maui en Kauai — drie eilanden, van stad en cultuur (Oahu) naar de Road to Hana (Maui) tot de sterkste natuur van de drie (Kauai).',
-    notes: 'Gebouwd (2026-08) na een audit die Hawaii volledig miste in Route Builder. Op Youri\'s verzoek een losse, op zichzelf staande trip, niet samengevoegd met North America Grand Traverse 🌎. Onderzocht via een WebSearch-backed research-agent. Big Island (vulkanen) bewust niet meegenomen — waardevol, maar +€150-250 aan vluchten/huurauto en 4-5 extra dagen, alleen te rechtvaardigen als vulkanen een harde wens zijn; bewaar als mogelijke vierde-eiland-uitbreiding later (dan ook Kīlauea\'s status checken via HVO/USGS, sinds eind 2024 actief). 14 dagen, €2.240 grondkosten. Nog niet getoetst aan actuele prijzen — behandel als een eerste concept, geen boekbaar plan.',
+    travel_style: 'Inter-island flights (Hawaiian Airlines/Southwest, every 30-60 min on the busy routes — confirmed still healthy service, three carriers including Mokulele, no capacity issues) plus a rental car per island.',
+    climate_summary: "April-May (or September-October) avoids hurricane season (June-September, Central/Eastern Pacific basin) and the wettest winter months, with less crowding/lower prices than the winter peak — despite winter also being whale season, the lower accessibility and higher costs don't outweigh that.",
+    description: 'Oahu, Maui and Kauai — three islands, from city and culture (Oahu) to the Road to Hana (Maui) to the strongest nature of the three (Kauai).',
+    notes: "Built (2026-08) after an audit that found Hawaii completely missing from Route Builder. At Youri's request a standalone, self-contained trip, not merged into North America Grand Traverse 🌎. Researched via a WebSearch-backed research agent (2026-08 first pass; price/visa/advisory fully verified 2026-09, see each leg's own notes for what was confirmed vs. corrected — this route's content was also translated from an earlier Dutch draft as part of that same verification pass). Big Island (volcanoes) deliberately excluded — valuable, but +€150-250 in flights/rental car and 4-5 extra days, only justified if volcanoes are a hard want; kept as a possible future 4th-island expansion. Web check (2026-09): Kīlauea has been erupting intermittently since December 2024 in discrete episodes (each under 12 hours) separated by 2+ week pauses — currently paused (Episode 54 was 25 August 2026), Alert Level ADVISORY/Aviation color YELLOW, with USGS/HVO forecasting a possible Episode 55 window of 7-12 September 2026; a recent tourist fatality near the park after ignoring safety barriers reinforces that any future Big Island addition would need a 'check HVO within days of departure, stay behind barriers' caveat. 14 days, €2,240 ground costs.",
   });
 }
 
@@ -9286,18 +9286,18 @@ function rbBuildFloridaRoute() {
         { name: 'Wynwood Walls', lat: 25.8010, lng: -80.1994 },
         { name: 'Coral Gables & Coconut Grove', lat: 25.7215, lng: -80.2684 },
       ],
-      notes: 'Instap: rechtstreekse vlucht Amsterdam-Miami (KLM, ±9-10 uur; beste periode december-april, droog seizoen). Prijsindicatie webonderzoek 2026-08, momentopname. Blijf rond South Beach (5th-25th St)/Brickell/Coral Gables/Coconut Grove/Wynwood (overdag); wees voorzichtig in Overtown/Liberty City/Little Haiti en in Little Havana voorbij 8th St/22nd Ave, vooral \'s avonds. Bewust géén Orlando/pretparken — $150-200+/dag alleen al aan tickets, en sluit niet aan bij een reisstijl die natuur/cultuur boven generieke toeristenattracties zet.',
-      transport_to_next: 'Auto, ≈45-90 minuten naar de Everglades (Homestead/Flamingo-kant).',
+      notes: "Entry: direct flight Amsterdam-Miami (KLM, ±9-10 hours; best period December-April, dry season). Price indication from 2026-08 web research, a snapshot. Web check (2026-09): ESTA now costs ~$40 (up from $21, raised Sept 2025 plus a further Jan 2026 cost-of-living bump) — a per-person fixed cost, not part of the daily budget. Stay around South Beach (5th-25th St)/Brickell/Coral Gables/Coconut Grove/Wynwood by day; be careful in Overtown/Liberty City/Little Haiti and in Little Havana beyond 8th St/22nd Ave, especially at night. Deliberately no Orlando/theme parks — $150-200+/day on tickets alone, and doesn't fit a travel style that favors nature/culture over generic tourist attractions. Daily budget confirmed reasonable for this style (budget travelers run $75-170/day; hostel dorms $30-65/night).",
+      transport_to_next: 'Car, ≈45-90 minutes to the Everglades (Homestead/Flamingo side).',
     },
     {
       code: 'US', name: 'United States', days: 2, budget: 200, lat: 25.3928, lng: -80.6371,
       destinations: [
         { name: 'Anhinga Trail', lat: 25.3861, lng: -80.6114 },
-        { name: 'Airboat-tocht (gegidst)', lat: 25.7617, lng: -80.6081 },
+        { name: 'Guided airboat tour', lat: 25.7617, lng: -80.6081 },
         { name: 'Flamingo', lat: 25.1398, lng: -80.9231 },
       ],
-      notes: 'Alligator-veiligheid: minimaal 15 meter afstand, nooit voeren, niet zwemmen bij schemer/ochtend — 2026 zag een reële piek in incidenten (droogte duwt alligators richting bewoonde gebieden). Kies een gegidste airboat-/wandeltocht (Anhinga Trail) boven zelfstandig door ondiep water waden.',
-      transport_to_next: 'Auto, ≈1-1,5 uur naar Key Largo.',
+      notes: "Alligator safety: stay at least 15m away, never feed them, and — Web check (2026-09) — avoid swimming/wading in any natural Florida waterway during the current drought, not just at dusk/dawn: 2026 has seen a real, confirmed spike in incidents (at least 4 attacks including one fatality between 21 June-3 July 2026 alone, drought pushing alligators toward populated areas statewide, all 67 counties) — still an active, current risk as of September 2026, not something that's eased. Choose a guided airboat/walking tour (Anhinga Trail) over wading independently through shallow water.",
+      transport_to_next: 'Car, ≈1-1.5 hours to Key Largo.',
     },
     {
       code: 'US', name: 'United States', days: 2, budget: 260, lat: 25.0865, lng: -80.4473,
@@ -9305,25 +9305,25 @@ function rbBuildFloridaRoute() {
         { name: 'John Pennekamp Coral Reef State Park', lat: 25.1276, lng: -80.4062 },
         { name: 'Islamorada', lat: 24.9391, lng: -80.6276 },
       ],
-      notes: 'Snorkelen/duiken op het rif — reef-safe zonnebrand, schuifel je voeten door het zand (roggen), raak het rif niet aan (vuurkoraal, zee-egels).',
-      transport_to_next: 'Auto via de Overseas Highway (US-1), ≈2-2,5 uur naar Key West (optionele tussenstop in Marathon bij de Seven Mile Bridge).',
+      notes: 'Snorkeling/diving on the reef — reef-safe sunscreen (still a current Florida Keys ordinance), shuffle your feet through the sand (stingrays), don\'t touch the reef (fire coral, sea urchins).',
+      transport_to_next: 'Car via the Overseas Highway (US-1), ≈2-2.5 hours to Key West (optional stop in Marathon at the Seven Mile Bridge).',
     },
     {
       code: 'US', name: 'United States', days: 3, budget: 450, lat: 24.5551, lng: -81.7800,
       destinations: [
         { name: 'Old Town Key West', lat: 24.5551, lng: -81.7800 },
-        { name: 'Mallory Square (zonsondergang)', lat: 24.5610, lng: -81.8080 },
+        { name: 'Mallory Square (sunset)', lat: 24.5610, lng: -81.8080 },
         { name: 'Hemingway House', lat: 24.5545, lng: -81.8017 },
       ],
-      notes: 'De Overseas Highway kruist 42 bruggen (incl. de Seven Mile Bridge) — een All-American Road, geen tol op US-1 zelf. Reisverzekering vóór vertrek boeken, niet vlak ervoor: zodra een orkaan een naam krijgt, sluiten verzekeraars die storm uit van polissen die daarna zijn afgesloten. Old Town zelf is goed te voet/fiets te doen, geen auto nodig.',
-      transport_to_next: 'Einde van deze route — terugrijden naar Miami (≈3-4 uur) voor een rechtstreekse terugvlucht naar Amsterdam (Key West\'s eigen vliegveld is klein, bijna altijd met overstap in Miami).',
+      notes: "The Overseas Highway crosses 42 bridges (incl. the Seven Mile Bridge) — an All-American Road, no toll on US-1 itself. Book travel insurance right after booking the trip, not right before departure: once a storm gets a name, insurers exclude it from policies bought afterward — confirmed (2026-09) still exactly how named-storm exclusions work. Old Town itself is easily walkable/bikeable, no car needed. Web check (2026-09): budget-style Key West typically runs €150-170/day rather than a flat €150 once lodging is booked late — treat €150/day as the floor of a realistic range, not a ceiling.",
+      transport_to_next: "End of this route — drive back to Miami (≈3-4 hours) for a direct return flight to Amsterdam (Key West's own airport is small, almost always with a Miami connection).",
     },
   ], {
-    best_starting_month: 'Januari',
-    travel_style: 'Huurauto verplicht (Miami\'s OV bereikt de Everglades/Keys niet) — alleen Key West Old Town is zelf goed te voet/fiets te doen.',
-    climate_summary: 'December-april (droog seizoen) is de enige verstandige keuze — vermijd orkaanseizoen (juni-november, piek augustus-oktober) en de drukkende zomervochtigheid.',
-    description: 'Miami, de Everglades en de Florida Keys tot en met Key West — zuid-Florida via de Overseas Highway.',
-    notes: 'Gebouwd (2026-08) op Youri\'s eigen verzoek — hij noemde Florida expliciet als "een beetje apart als omgeving", los van de Noordoost- en Zuidwesten-tripjes. Onderzocht via een WebSearch-backed research-agent: route/dagen/budget/seizoen/transport/veiligheid. Bewust een gefocuste zuid-Florida-route: Orlando/pretparken weggelaten (zie hierboven), en St. Augustine/de Gulf Coast (Naples/Sarasota)/de Panhandle ook — die verdunnen de focus of liggen simpelweg te ver (St. Augustine is al ~5-5,5 uur enkele reis vanaf Miami). 10 dagen, €1.360 grondkosten. Nog niet getoetst aan actuele prijzen — behandel als een eerste concept, geen boekbaar plan.',
+    best_starting_month: 'January',
+    travel_style: "A rental car is required (Miami's public transit doesn't reach the Everglades/Keys) — only Key West's Old Town itself is easily walkable/bikeable.",
+    climate_summary: "December-April (dry season) is the only sensible choice — avoid hurricane season (June-November, peak August-October) and the oppressive summer humidity. Web check (2026-09): as of early September 2026 the NHC shows no active tropical threats to Florida and 2026 is tracking as a below-normal season overall (only two named storms plus one landfalling system, Edouard, in Louisiana/Texas — no hurricanes yet past the statistical Sept 10 peak); doesn't change the Dec-April recommendation, just confirms nothing acute is happening right now.",
+    description: 'Miami, the Everglades and the Florida Keys down to Key West — South Florida via the Overseas Highway.',
+    notes: "Built (2026-08) at Youri's own request — he specifically called out Florida as \"a bit of an outlier environment,\" separate from the Northeast and Southwest trips. Researched via a WebSearch-backed research agent (2026-08 first pass; price/visa/advisory fully verified 2026-09, see each leg's own notes for what was confirmed vs. corrected — this route's content was also translated from an earlier Dutch draft as part of that same verification pass). Deliberately a focused South Florida route: Orlando/theme parks left out (see above), and St. Augustine/the Gulf Coast (Naples/Sarasota)/the Panhandle too — these dilute the focus or are simply too far (St. Augustine is already ~5-5.5 hours one-way from Miami). 10 days, €1,360 ground costs.",
   });
 }
 
@@ -19938,6 +19938,106 @@ function rbMigrateDraftVerificationTier3() {
     "Acropolis, Plaka and Monastiraki (3 days) — same content as Athens (4 days) 🏛️ (rbBuildAthensRoute), one day shorter and without the Cape Sounion day trip here. Budget ~€80/day. Travel advisory: yellow since 4 August 2026 for wildfires (same nationwide Greece advisory as the standalone Athens route) — re-check shortly before travel.",
     "Acropolis, Plaka and Monastiraki (3 days) — same content as Athens (4 days) 🏛️ (rbBuildAthensRoute), one day shorter and without the Cape Sounion day trip here. Budget ~€80/day. Travel advisory: yellow since 4 August 2026 for wildfires (same nationwide Greece advisory as the standalone Athens route). Web check (2026-09): the acute multi-fatality emergency (Crete evacuations, an Athens-area helicopter crash) was late July-early August and has since eased — 2026's total burned area nationally is actually 37% below the 20-year average — but a fresh extreme fire-danger spell is forecast across Greece for 3-9 September 2026 (i.e. right now); not an active emergency, but check the daily fire-risk map before any hikes/rural drives and re-check shortly before travel."
   );
+
+  if (touched) rbSave();
+}
+
+/**
+ * Draft Route Verification, Tier 1 — the last tier, 4 solo US/Hawaii/Florida routes needing full
+ * research from scratch (2026-09-04). US Northeast and US Southwest get targeted field patches;
+ * Hawaii and Florida get a wholesale content replacement since their entire content was also
+ * translated from an earlier Dutch-only draft as part of this same verification pass (a deliberate
+ * wholesale replacement, not a field patch, per this project's migration convention).
+ */
+function rbMigrateDraftVerificationTier1() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_DRAFT_VERIFICATION_TIER1)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_DRAFT_VERIFICATION_TIER1, '1');
+
+  let touched = false;
+  const patchField = (routeName, code, field, oldValue, newValue) => {
+    const route = rbRoutes.find(r => r.name === routeName);
+    if (!route) return;
+    const block = route.blocks.find(b => b.country_code === code);
+    if (!block || block[field] !== oldValue) return;
+    block[field] = newValue;
+    touched = true;
+  };
+  const patchRouteNotes = (routeName, oldValue, newValue) => {
+    const route = rbRoutes.find(r => r.name === routeName);
+    if (!route || route.notes !== oldValue) return;
+    route.notes = newValue;
+    touched = true;
+  };
+
+  // US Northeast — DC and Boston blocks are the 1st and 4th blocks with country_code 'US', so
+  // patchField's find-first-match won't disambiguate them; patch by array index instead.
+  (() => {
+    const route = rbRoutes.find(r => r.name === 'US Northeast 🗽');
+    if (!route) return;
+    const dc = route.blocks[0];
+    if (dc && dc.budget === 270) { dc.budget = 315; touched = true; }
+    if (dc && dc.notes === 'Entry: direct flight Amsterdam-Washington DC (KLM, ±8-9 hours; best period mid-September-late October). Price indication from 2026-08 web research, a snapshot. ESTA required ($40, apply well in advance, passport valid 6+ months). The Smithsonian museums and most monuments are free — deliberately a cheaper stop than the other three cities.') {
+      dc.notes = "Entry: direct flight Amsterdam-Washington DC (KLM, ±8-9 hours; best period mid-September-late October). Price indication from 2026-08 web research, a snapshot. ESTA required (Web check 2026-09: now $40.27, up from $21 pre-2025 — apply well in advance, passport valid 6+ months; ESTA/visa-waiver travelers are exempt from the separate new $250 Visa Integrity Fee, that only applies to actual visa applicants. Note: US ESTA/visa forms now only accept M/F gender markers, relevant for some travelers). The Smithsonian museums and most monuments are free — deliberately a cheaper stop than the other three cities. Web check (2026-09): €90/day was slightly low for a Budget/Comfort-Backpacker blend even leaning on the free museums — bumped to ~€105/day.";
+      touched = true;
+    }
+    const boston = route.blocks[3];
+    if (boston && boston.budget === 345) { boston.budget = 375; touched = true; }
+    if (boston && boston.notes === 'Travel advisory (2026-08): the US is green — normal caution, no special restrictions. All four cities are seeing a real safety improvement (crime rates falling in NYC/DC/Philadelphia).') {
+      boston.notes = "Travel advisory: the US is still green (Web check 2026-09) — normal caution, no special restrictions. All four cities' safety improvement is confirmed and even stronger than assumed: NYC is on track for its safest year on record (violent crime down ~13%, murders 9.8% below the prior record low), Washington DC homicides down ~41-44% year-over-year in H1 2026, Philadelphia homicide down 54% in Q1 2026 vs. Q1 2025. Web check (2026-09): €115/day was slightly conservative for Boston specifically (pricier lodging than Philly/DC) — bumped to ~€125/day. Season note: early-to-mid October is also New England's peak leaf-peeping season, pushing Boston-area weekend lodging prices up — late September or the tail end of October can be cheaper than the fall-foliage peak weeks.";
+      touched = true;
+    }
+  })();
+  patchRouteNotes(
+    'US Northeast 🗽',
+    'Built (2026-08) after an audit that found the entire US East Coast completely missing from Route Builder — not a deliberate choice, just never built. At Youri\'s request a standalone, self-contained trip, not merged into North America Grand Traverse 🌎 (which continues to exist unchanged). Researched via a WebSearch-backed research agent: route/days/budget/season/transport/safety. Deliberately no extension south (Charleston/Savannah/Miami/New Orleans) — south of DC there\'s only ~1 train a day, hurricane season overlaps the best NEC season, and Miami/the south deserve their own approach (see Florida 🐊, built separately). 12 days, €1,365 ground costs. Not yet checked against current prices — treat as a first concept, not a bookable plan.',
+    "Built (2026-08) after an audit that found the entire US East Coast completely missing from Route Builder — not a deliberate choice, just never built. At Youri's request a standalone, self-contained trip, not merged into North America Grand Traverse 🌎 (which continues to exist unchanged). Researched via a WebSearch-backed research agent: route/days/budget/season/transport/safety (2026-08 first pass; price/visa/advisory fully verified 2026-09, see each leg's own notes for what was confirmed vs. corrected — DC and Boston's daily budgets were nudged up slightly). Deliberately no extension south (Charleston/Savannah/Miami/New Orleans) — south of DC there's only ~1 train a day, hurricane season overlaps the best NEC season, and Miami/the south deserve their own approach (see Florida 🐊, built separately). 12 days, ~€1,440 ground costs (updated from €1,365 after the DC/Boston budget corrections)."
+  );
+
+  // US Southwest
+  patchField(
+    'US Southwest 🏜️', 'US', 'notes',
+    'Entry: flight Amsterdam-Las Vegas (with a connection, usually via a US hub, ±13-15 hours; best period mid-September-mid-October). Price indication from 2026-08 web research, a snapshot. Pick up the rental car in Vegas — an overnight stay there is optional, not needed for the route itself.',
+    "Entry: flight Amsterdam-Las Vegas (with a connection, usually via a US hub, ±13-15 hours; best period mid-September-mid-October). Price indication from 2026-08 web research, a snapshot. ESTA required (Web check 2026-09: now $40.27, up from $21 pre-2025). Pick up the rental car in Vegas — an overnight stay there is optional, not needed for the route itself. Daily budget confirmed reasonable (2026-09)."
+  );
+  (() => {
+    const route = rbRoutes.find(r => r.name === 'US Southwest 🏜️');
+    if (!route) return;
+    const antelope = route.blocks[2];
+    if (antelope && antelope.notes === "Antelope Canyon can only be visited with a mandatory Navajo guide (since a 1997 flood) — budget ~$80 p.p. all-in with a licensed operator (Ken's Tours/Dixie Ellis'), a separate cost on top of the daily budget.") {
+      antelope.notes = "Antelope Canyon can only be visited with a mandatory Navajo guide (since a 1997 flood) — budget ~$80 p.p. all-in with a licensed operator (Ken's Tours/Dixie Ellis'), a separate cost on top of the daily budget. Confirmed accurate (Web check 2026-09): both operators still price their standard tour at ~$80.50 p.p., permit/fees bundled in.";
+      touched = true;
+    }
+    const monumentValley = route.blocks[3];
+    if (monumentValley && monumentValley.notes === 'Navajo Nation entry fee ($15 p.p. + $20/car, cash) — not covered by the America the Beautiful annual pass (which only applies to NPS parks: Zion/Bryce/Grand Canyon).') {
+      monumentValley.notes = "Navajo Nation entry fee — Web check (2026-09), correction: fees were raised 1 January 2026 but landed lower than previously listed, roughly $8-10 p.p. + $15/vehicle (was overstated at $15pp+$20/car); also the gate reportedly no longer reliably accepts cash and requires a card — bring a card as primary, cash as backup. Still not covered by the America the Beautiful pass (Navajo Nation explicitly doesn't accept NPS passes — this is tribal land, not an NPS park).";
+      touched = true;
+    }
+    const grandCanyon = route.blocks[4];
+    if (grandCanyon && grandCanyon.notes === 'An America the Beautiful annual pass (~€75) is worth it once you visit Zion, Bryce and here.') {
+      grandCanyon.notes = "Web check (2026-09), significant correction: since 1 January 2026 all non-US-residents aged 16+ pay a new $100 p.p. surcharge on top of the standard $35/vehicle (7-day) entrance fee at Zion, Bryce AND Grand Canyon — without a pass, that's up to ~$405 in park fees alone across the three. The old ~€75 'America the Beautiful' annual pass is now the US-resident price ($80) only; non-residents need the new 'America the Beautiful Non-Resident Annual Pass' at $250 (~€230) instead, which covers the pass-holder's vehicle (all occupants) at every fee park AND waives the new $100 surcharge — still clearly worth buying for this route, just budget €230 rather than €75.";
+      touched = true;
+    }
+    const sedona = route.blocks[5];
+    if (sedona && sedona.notes === 'Travel advisory (2026-08): the US is green. Summer is dangerously hot here (Page/Monument Valley/the canyon floor regularly 38°C+) — hence the autumn season, not May-June.') {
+      sedona.notes = "Travel advisory: the US is still green (Web check 2026-09). Summer is dangerously hot here (Page/Monument Valley/the canyon floor regularly 38°C+) — hence the autumn season, not May-June; even mid-September can still hit high-30s°C at these low-elevation stops, so leaning toward a late-September start gives more safety margin than mid-September. Minor addition: a small Red Rock Pass ($5/day or $20/year) covers trailhead parking around Sedona, not previously listed.";
+      touched = true;
+    }
+    if (sedona && sedona.transport_to_next === 'End of this route — drive to Phoenix (≈2 hours), return the rental car (one-way, drop-off fee), return flight to Amsterdam.') {
+      sedona.transport_to_next = "End of this route — drive to Phoenix (≈2 hours), return the rental car (one-way drop-off fee — no fixed number exists, reports range from $0 on occasional relocation deals up to $200-600 depending on company/season/how far ahead it's booked; budget a placeholder ~$150-250 and shop multiple companies close to departure), return flight to Amsterdam.";
+      touched = true;
+    }
+  })();
+  patchRouteNotes(
+    'US Southwest 🏜️',
+    'Built (2026-08) after an audit that found the entire American southwestern desert completely missing from Route Builder. At Youri\'s request a standalone, self-contained trip, not merged into North America Grand Traverse 🌎. Researched via a WebSearch-backed research agent. Deliberate choice for one-way to Phoenix instead of a loop back to Vegas: costs a rental-car drop-off fee, but keeps Sedona in, and Phoenix is a more logical hub (Southwest Airlines hub, right on the I-10 toward Texas) than the dead-end direction Vegas represents. 12 days, €1,500 ground costs. Not yet checked against current prices — treat as a first concept, not a bookable plan.',
+    "Built (2026-08) after an audit that found the entire American southwestern desert completely missing from Route Builder. At Youri's request a standalone, self-contained trip, not merged into North America Grand Traverse 🌎. Researched via a WebSearch-backed research agent (2026-08 first pass; price/visa/advisory fully verified 2026-09 — the big finding was a brand-new $100pp non-resident park surcharge at Zion/Bryce/Grand Canyon effective 1 January 2026, plus a corrected, cheaper Monument Valley entry fee; see each leg's own notes for the full detail). Deliberate choice for one-way to Phoenix instead of a loop back to Vegas: costs a rental-car drop-off fee, but keeps Sedona in, and Phoenix is a more logical hub (Southwest Airlines hub, right on the I-10 toward Texas) than the dead-end direction Vegas represents. 12 days, €1,500 ground costs (unchanged — the park-fee correction is a separate cost on top of ground costs, not a change to the daily budgets themselves) plus ~€230 for the non-resident annual park pass and a variable one-way rental car drop-off fee."
+  );
+
+  // Hawaii and Florida — wholesale replacement (also translated from Dutch as part of this pass).
+  const hawaiiIdx = rbRoutes.findIndex(r => r.name === 'Hawaii 🐢');
+  if (hawaiiIdx !== -1) { rbRoutes.splice(hawaiiIdx, 1, rbBuildHawaiiRoute()); touched = true; }
+  const floridaIdx = rbRoutes.findIndex(r => r.name === 'Florida 🐊');
+  if (floridaIdx !== -1) { rbRoutes.splice(floridaIdx, 1, rbBuildFloridaRoute()); touched = true; }
 
   if (touched) rbSave();
 }

@@ -475,14 +475,17 @@ Duration options show their day range inline, Travel Mode/Trip Type/Theme/Travel
 to Visit are real multi-select checkbox dropdowns, and route cards preview Budget Level/Primary
 Trip Type/Best Time to Visit plus a corrected unique-country count (was block count).
 
-**Draft route verification — scoped 2026-09-02, not started**: see
-[`DRAFT_ROUTE_VERIFICATION_PLAN.md`](DRAFT_ROUTE_VERIFICATION_PLAN.md) for the full plan. 35 of
-447 routes are still `Draft` status — 4 solo US routes that never got a price-check pass, plus 31
-`EUROPA_TRIP_IDEAS.md` combination roadtrips whose individual countries are already verified but
-whose combination itself wasn't. Classified into 3 effort tiers (full research vs. quick
-consistency-check vs. medium) since they're far from equal-sized work. A per-field diff view (what
-README originally speculated about) turned out not to be buildable from the existing data — see
-the plan doc for why.
+**Draft route verification — done (2026-09-04)**: see
+[`DRAFT_ROUTE_VERIFICATION_PLAN.md`](DRAFT_ROUTE_VERIFICATION_PLAN.md) for the full plan and
+`CHANGELOG.md` for the batch-by-batch results. All 35 routes that were still `Draft` status (4
+solo US routes that never got a price-check pass, plus 31 `EUROPA_TRIP_IDEAS.md` combination
+roadtrips whose individual countries were already verified but whose combination itself wasn't)
+are now `Verified` — **0 Draft routes remain** out of 447. Classified into 3 effort tiers (full
+research vs. quick consistency-check vs. medium) since they were far from equal-sized work; a
+per-field diff view (what README originally speculated about) turned out not to be buildable from
+the existing data — see the plan doc for why. Biggest individual finding: Hawaii and Florida were
+still fully in Dutch, missed by every earlier translation batch — translated to English along the
+way.
 
 ## Search
 

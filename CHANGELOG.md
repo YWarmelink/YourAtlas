@@ -12,6 +12,42 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Draft Route Verification, Tier 1 — all 4 solo US/Hawaii/Florida routes, the final tier
+  (2026-09-04)** — US Northeast, US Southwest, Hawaii and Florida, the heaviest tier (full
+  research from scratch, not a consistency-check). Applied via `rbMigrateDraftVerificationTier1()`.
+  This completes `DRAFT_ROUTE_VERIFICATION_PLAN.md`: **all 35 originally-Draft routes are now
+  `Verified`.** Highlights:
+  - **Hawaii and Florida were still fully in Dutch** (missed by every earlier translation batch,
+    since they were seeded via `rbSeedUSLooseTrips()`, a mechanism the batch-by-batch translation
+    sweeps never enumerated) — translated to English as part of this pass, alongside the price
+    corrections below. Both got a wholesale content replacement rather than field patches, since
+    every field changed language.
+  - **US Southwest's biggest finding**: a brand-new $100pp non-resident surcharge at Zion, Bryce
+    and Grand Canyon effective 1 January 2026 — up to ~$405 in park fees alone across the three
+    without a pass. The old ~€75 "America the Beautiful" annual pass is now the US-resident price
+    only; non-residents need the new "Non-Resident Annual Pass" at $250 (~€230) instead, which also
+    waives the surcharge. Also corrected: Monument Valley's Navajo Nation fee is actually lower
+    than previously listed (~$8-10pp+$15/vehicle, not $15pp+$20/car) but now requires a card, not
+    cash.
+  - **ESTA fee** confirmed risen to $40.27 (from $21 pre-2025) across all four routes — ESTA/VWP
+    travelers confirmed exempt from the separate new $250 Visa Integrity Fee (that only applies to
+    actual visa applicants).
+  - **Hawaii**: the Maui/Kauai rental-car-scarcity claim reframed from fixed "+180%/+65%" figures
+    (accurate at their worst point, already stale) to "ongoing recall-driven volatility, book 6-8+
+    weeks ahead" — and a real gap filled in: Kauai's Hāʻena State Park (the trailhead for the
+    Hanakāpī'ai Falls day-hike) now requires an advance parking/shuttle reservation via
+    gohaena.com, not previously mentioned at all.
+  - **Florida**: the 2026 alligator-incident spike (drought pushing alligators into populated
+    areas) confirmed still real and current, if anything under-stated — strengthened rather than
+    softened. Confirmed the September 2026 hurricane-season snapshot shows no active threats to
+    Florida (below-normal season so far), no change to the route's own Dec-April recommendation.
+  - **US Northeast**: DC and Boston's daily budgets nudged up slightly (€90→€105/day,
+    €115→€125/day) after research showed both were a bit tight for the intended Budget/
+    Comfort-Backpacker style; the "crime rates falling in NYC/DC/Philadelphia" claim confirmed and
+    found even stronger than assumed (NYC on track for its safest year on record).
+  All 4 `TRIP_DATABASE.csv` rows flipped `Draft` → `Verified` (US Northeast's indicative daily rate
+  also bumped 114→120 to match its corrected leg budgets).
+
 - **Draft Route Verification, Tier 3 — all 7 medium mega-combo routes (2026-09-04)** — Grand
   Balkan Roadtrip, Alpine Roadtrip, Northern Europe Baltic Ferry Roadtrip, Central Europe
   Roadtrip, Balkan Roadtrip: Serbia + North Macedonia + Albania + Kosovo, Southern Europe

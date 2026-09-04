@@ -127,6 +127,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateDraftVerificationTier2Batch1();
   rbMigrateDraftVerificationTier2Batch2();
   rbMigrateDraftVerificationTier3();
+  rbMigrateDraftVerificationTier1();
   rbBindEvents();
 
   try {

@@ -1,8 +1,10 @@
 # Draft Route Verification — Plan
 
-Status: **in progress.** Tier 2 and Tier 3 both fully done (2026-09-04, see `CHANGELOG.md`) — 31 of
-the original 35 Draft routes are now `Verified`. Only Tier 1 remains: 4 solo US/Hawaii/Florida
-routes needing full research from scratch (not a consistency-check). Came out of a 2026-09-02
+Status: **DONE (2026-09-04), see `CHANGELOG.md`.** All three tiers complete — all 35 originally
+`Draft` routes are now `Verified`. Tier 1 (US Northeast, US Southwest, Hawaii, Florida) turned up
+one real surprise beyond price/advisory drift: Hawaii and Florida were still fully in Dutch, missed
+by every earlier translation batch — translated to English as part of applying Tier 1's findings.
+Came out of a 2026-09-02
 scoping conversation about README's old "show Draft vs Research Verified" open item — see that
 conversation's conclusion below for why the scope changed from what README originally speculated.
 
@@ -31,6 +33,13 @@ The 35 Draft routes are two structurally different kinds of work — **classify 
 by treating all 35 as equal-sized tasks**:
 
 ### Tier 1 — full research from scratch (4 routes, heaviest per-route)
+
+**Done (2026-09-04), see `CHANGELOG.md`.** All 4 flipped to `Verified`. Biggest finding: a new
+$100pp non-resident surcharge at Zion/Bryce/Grand Canyon (US Southwest) effective 1 January 2026 —
+budget the new ~€230 Non-Resident Annual Pass instead of the old ~€75 figure. Also: Hawaii and
+Florida turned out to still be fully in Dutch (a gap in every earlier translation batch) — both
+translated to English as part of applying these findings.
+
 Solo single-country routes that never got a `route-price-checker` pass at all. Nothing to reuse —
 full daily-cost + visa + advisory research needed, same depth as any brand-new route:
 - **US Northeast 🗽** (12d)
@@ -129,8 +138,7 @@ follow-up, can be done independently of (before, during, or after) the batches a
 
 ## What's next
 
-1. Decide batch order/pace when picking this up (suggested order above, but Youri's call as
-   always).
-2. Work through Tier 2 → Tier 3 → Tier 1 in small batches per the workflow above.
-3. Optionally build the "easier to find" UI piece at any point — it's independent of the
-   verification work itself.
+**All 35 Draft routes verified as of 2026-09-04 — the core plan is done.** The only remaining
+open item from this document is the "easier to find" UI piece above (small badge/indicator for
+Draft routes) — genuinely optional now that there are 0 Draft routes left, but still worth doing
+before the next time a new route gets built as Draft, so it doesn't go unnoticed again.
