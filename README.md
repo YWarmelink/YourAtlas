@@ -524,14 +524,6 @@ sheet only has 5 rows today; see [`PAST_TRIPS_PLAN.md`](PAST_TRIPS_PLAN.md) for 
 lightweight (country-level, no day-by-day items) entries for old trips, full detail stays for new
 ones. This is a Sheet data-entry task for Youri, not code — ahead of everything else below.
 
-**GitHub Pages/push deploy — investigate a "build failed"-style email (2026-08-13, not yet
-diagnosed)**: Youri received an email suggesting a push/deploy failure, but the `git push` itself
-(commit `99d75e6`, the micro-staten batch) completed successfully — confirmed via `git log`/`git
-push` output. Checked locally: no `.github/workflows`, no `_config.yml`/`.nojekyll`, no stray
-`{{`/`{%` (Jekyll/Liquid) syntax in the changed files — so no obvious local cause found yet. Youri
-found the actual email and wants to check it himself; revisit with the real error text before
-assuming it's benign.
-
 **Route Builder — remaining split candidates** (all rated weaker in `ROUTE_BUILDER_MODULES.md`,
 none built yet — everything Sterk/Medium is done as of the combo batch above, except the one item
 below marked done):
