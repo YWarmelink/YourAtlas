@@ -16,6 +16,11 @@ Agreed direction (2026-07 brainstorm), not yet designed or scheduled. **Criterio
 - **Universal search across trips/expeditions/notes** — with 13 expeditions full of long `notes` fields, plus the Trips sheet, "where was that tip about X" is already a real problem. Client-side text search over data that's already loaded (no new data source needed).
 - **Bucket-list counter across Route Builder expeditions** — a simple "X countries done, Y to go" tally across all 13 expeditions combined. Aggregation over existing data, no new fields.
 - **Yearly travel recap** — a "wrapped"-style end-of-year summary (countries visited, km traveled, money spent, top trip), pulling from Trips + Countries + Route Builder together. Natural home is here since it spans all three, rather than in youridealtravel.
+- **Trips route map — revisit once actually seen live** (2026-09 idea, not scoped) — the route
+  line for SEA2024 just went live (see `TRIP_ROUTE_MAP.md`/`CHANGELOG.md`) but hasn't been visually
+  confirmed in a browser yet. Once Youri's actually looked at it, he wants to consider whether/how
+  to improve it — no specific direction decided yet, revisit after that first real look.
+
 - **Trips vs. Route Builder — clearer page-level naming/tagline** (2026-09 idea, not designed) —
   Youri wants the two pages to visually/textually signal their distinction more clearly: Trips =
   what he's actually done or concretely planned, Route Builder = future/someday aspirations. Scoped
