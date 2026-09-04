@@ -1,7 +1,9 @@
 # Draft Route Verification — Plan
 
-Status: **in progress.** Tier 2 batch 1 done (2026-09-04, see `CHANGELOG.md`) — the 12 two-country
-combo routes (11 real + the Grossglockner CSV leftover, see Tier 2 below). Came out of a 2026-09-02
+Status: **in progress.** Tier 2 fully done (2026-09-04, see `CHANGELOG.md`) — batch 1 (12
+two-country routes, 11 real + the Grossglockner CSV leftover) and batch 2 (12 three-country
+routes), all 24 flipped to `Verified`. Next up: Tier 3 (7 medium mega-combos), then Tier 1 (4 solo
+research jobs). Came out of a 2026-09-02
 scoping conversation about README's old "show Draft vs Research Verified" open item — see that
 conversation's conclusion below for why the scope changed from what README originally speculated.
 
@@ -39,10 +41,16 @@ full daily-cost + visa + advisory research needed, same depth as any brand-new r
 
 ### Tier 2 — light consistency-check (24 routes, lightest per-route)
 
-**Two-country batch — done (2026-09-04), see `CHANGELOG.md`.** All 12 flipped to `Verified`
-(Grossglockner as a duplicate-of-an-already-verified-route, no research needed; the other 11 via a
-real consistency-check, 4 with corrections applied). Original candidate list below kept for
-reference — next up: the 12 three-country routes.
+**Done (2026-09-04), see `CHANGELOG.md`.** Both batches complete, all 24 flipped to `Verified`:
+- **Two-country batch (12)**: Grossglockner as a duplicate-of-an-already-verified-route (no
+  research needed), the other 11 via a real consistency-check, 4 with corrections applied.
+- **Three-country batch (12)**: 5 confirmed with no changes, 7 with corrections applied — notably
+  resolving two long-standing "not confirmed as of this writing" notes about Austria's
+  border-control regime toward Hungary/Slovenia (now confirmed active, through at least
+  2026-09-15), and firming up Italy + Slovenia + Croatia's Croatia-mine-free claim into a dated
+  fact.
+
+Original candidate list below kept for reference — next up: Tier 3 (7 medium mega-combos).
 
 2-3 country combination roadtrips from `EUROPA_TRIP_IDEAS.md` batch 15. **Every individual country
 in these is already `Verified` elsewhere in the CSV/route data** — the combination itself just

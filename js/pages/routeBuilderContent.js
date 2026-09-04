@@ -18409,7 +18409,7 @@ function rbBuildSloveniaCroatiaBosniaRoute() {
         { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402 },
       ],
       notes: "Zagreb (1 day) — Plitvice Lakes (1-2 days, book the hourly-capacity-capped entry ahead) — Split (2 days, Diocletian's Palace). Budget ~€130/day (Split pulls the average up versus Zagreb/Plitvice). Web check (2026-08): 2026 enforces a strict hourly capacity cap at Plitvice (max 300 people per entrance) — book ahead.",
-      transport_to_next: 'Overland into Bosnia and Herzegovina towards Mostar — a non-Schengen EES external border, roughly 3-6 minutes per person for the biometric check, passport required.',
+      transport_to_next: 'Overland into Bosnia and Herzegovina towards Mostar — a non-Schengen EES external border, roughly 3-6 minutes per person for the biometric check when the lane is moving — total wait can still stretch much longer at busy crossings/times (Web check 2026-09); passport required.',
     },
     {
       code: 'BA', name: 'Bosnia and Herzegovina', days: 4, budget: 200, lat: 43.8563, lng: 18.4131,
@@ -18418,7 +18418,7 @@ function rbBuildSloveniaCroatiaBosniaRoute() {
         { name: 'Sarajevo (Baščaršija)', lat: 43.8563, lng: 18.4131 },
       ],
       notes: "Mostar (2 days: Stari Most, a day trip to Kravice/Blagaj) — Sarajevo (2 days: Baščaršija, the Tunnel of Hope). Budget ~€50/day. Season: May-June or September. Web check (2026-08): the return leg crosses back into Croatia via the Pelješac bridge (open since July 2022) rather than the old Neum detour, to fly home from Split or Dubrovnik — the same EES registration applies on the way back out.",
-      transport_to_next: 'End of this route — back via the Pelješac bridge to fly home from Split or Dubrovnik.',
+      transport_to_next: 'End of this route — back via the Pelješac bridge to fly home from Split or Dubrovnik. Web check (2026-09): the bridge has a maintenance/renovation window scheduled October 2026-May 2027 (single-lane/reduced-speed sections, no full closure) — expect possible delays if travelling then.',
     },
   ], {
     best_starting_month: 'May',
@@ -18447,7 +18447,7 @@ function rbBuildSloveniaCroatiaMontenegroCoastRoute() {
         { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
       ],
       notes: "Split (2-3 days, Diocletian's Palace) — Dubrovnik (2-3 days, Old Town). Budget ~€140/day (Dubrovnik pulls this up). Season: May-June or September, avoid the August crowds in Dubrovnik.",
-      transport_to_next: 'Overland to Kotor via the Karasovići border crossing — a non-Schengen crossing that saw 2-5 hour waits in July-August 2026 due to EES; plan a morning crossing.',
+      transport_to_next: 'Overland to Kotor via the Karasovići border crossing — Web check (2026-09): this has NOT normalized since EES went fully live in April 2026, if anything it is worse — 2-5 hour waits are routine in July-August 2026, with an extreme ~15km queue and up to 10-hour waits reported on a peak Sunday in August 2026. Pre-register on the EU "Travel to Europe" app and cross before 8am or after 9pm to avoid the worst of it.',
     },
     {
       code: 'ME', name: 'Montenegro', days: 3, budget: 210, lat: 42.3600, lng: 18.8100,
@@ -18538,7 +18538,7 @@ function rbBuildAdriaticRoadtripRoute() {
         { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
       ],
       notes: "Rovinj/Pula in Istria (2 days) — Zadar/Split/Hvar down the coast (3-4 days, pick a subset rather than all three) — Dubrovnik (2 days), reached via the Pelješac bridge rather than the old Neum detour through Bosnia, so this route never touches Bosnian territory. Budget ~€130/day average (Dubrovnik and Hvar pull this up). Season: May-June or September, avoid July-August.",
-      transport_to_next: 'Overland to Kotor via the Karasovići border crossing — a non-Schengen EES crossing that saw 2-5 hour waits in July-August 2026, so plan a morning crossing; the only EES crossing on this whole route thanks to the Pelješac bridge bypassing Bosnia entirely.',
+      transport_to_next: 'Overland to Kotor via the Karasovići border crossing — Web check (2026-09): still not normalized since EES went fully live in April 2026 — 2-5 hour waits are routine in July-August, with an extreme ~15km queue/up to 10-hour wait reported one peak Sunday in August 2026; pre-register on the EU "Travel to Europe" app and cross before 8am or after 9pm. The only EES crossing on this whole route thanks to the Pelješac bridge bypassing Bosnia entirely.',
     },
     {
       code: 'ME', name: 'Montenegro', days: 4, budget: 360, lat: 42.4000, lng: 18.7800,
@@ -18547,7 +18547,7 @@ function rbBuildAdriaticRoadtripRoute() {
         { name: 'Perast', lat: 42.4875, lng: 18.7089 },
         { name: 'Budva', lat: 42.2911, lng: 18.8400 },
       ],
-      notes: "Kotor + Perast (2 days) — Budva (2 days). Budget ~€90/day. Season: May-June or September, July-August very busy. Optional: extend onward to the Albanian Riviera via the Sukobin-Muriqan border crossing (10-45 minutes normally, up to 1.5-2 hours on weekends) — see Albanian Riviera (9 days) 🌊 (rbBuildAlbanianRivieraRoute) for that content, not included in this route's own 14-day count.",
+      notes: "Kotor + Perast (2 days) — Budva (2 days). Budget ~€90/day. Season: May-June or September, July-August very busy. Optional: extend onward to the Albanian Riviera via the Sukobin-Muriqan border crossing (10-20 minutes off-season/normal, up to 3 hours in peak season July-August — corrected 2026-09, previously understated at 1.5-2 hours) — see Albanian Riviera (9 days) 🌊 (rbBuildAlbanianRivieraRoute) for that content, not included in this route's own 14-day count.",
       transport_to_next: 'End of this route — fly home from Podgorica or Tivat, or continue on to the optional Albanian Riviera extension (see note above).',
     },
   ], {
@@ -18581,7 +18581,7 @@ function rbBuildHungaryAustriaSloveniaRoute() {
       destinations: [
         { name: 'Vienna (old town, Schönbrunn)', lat: 48.2082, lng: 16.3738 },
       ],
-      notes: "Vienna (2-3 days). Budget ~€95-130/day p.p. Web check (2026-08): Austria has already extended border controls with Czechia/Slovakia — it may also apply spot checks toward Hungary/Slovenia on this route; not confirmed as of this writing, check close to departure.",
+      notes: "Vienna (2-3 days). Budget ~€95-130/day p.p. Web check (2026-09): confirmed — Austria's border-control regime is an official, named extension that DOES cover Hungary and Slovenia too (alongside Czechia/Slovakia), currently running through at least 15 September 2026 (a 3-month extension from an earlier 15 June 2026 deadline; in place since 2015, repeatedly re-extended, likely to be extended again around that date). Practical effect: ad-hoc document checks at motorway lay-bys, rail crossings and cross-border buses, typically adding 15-45 minutes — not a closed border. Recheck close to departure given the pattern of rolling extensions.",
       transport_to_next: 'Drive to Ljubljana/Bled, ~380km/4h via Graz-Maribor or via Klagenfurt.',
     },
     {
@@ -18650,14 +18650,14 @@ function rbBuildCzechiaAustriaHungaryRoute() {
         { name: 'Český Krumlov', lat: 48.8127, lng: 14.3175 },
       ],
       notes: "Prague (3 days) — Český Krumlov (1-2 days). Budget ~€75-90/day.",
-      transport_to_next: "Cross into Austria — a Schengen border, but Austria has extended its border controls with Czechia through at least 15 June 2026: expect spot ID checks, no visa needed. A separate Austrian highway vignette is required in addition to the Czech dálniční známka.",
+      transport_to_next: "Cross into Austria — a Schengen border, but Austria's border-control regime with Czechia is still active as of 2026-09 (extended a further three months to at least 15 September 2026, from an earlier 15 June 2026 deadline; running since 2015, repeatedly re-extended, likely again around that date): expect spot ID checks, no visa needed. A separate Austrian highway vignette is required in addition to the Czech dálniční známka.",
     },
     {
       code: 'AT', name: 'Austria', days: 3, budget: 345, lat: 48.2082, lng: 16.3738,
       destinations: [
         { name: 'Vienna (old town, Schönbrunn)', lat: 48.2082, lng: 16.3738 },
       ],
-      notes: "Vienna (3 days). Budget ~€100-130/day p.p. Web check (2026-08): Austria may also apply spot checks toward Hungary on this leg — not confirmed as of this writing, check close to departure.",
+      notes: "Vienna (3 days). Budget ~€100-130/day p.p. Web check (2026-09): confirmed — Austria's border-control regime does cover Hungary too, not just Czechia/Slovakia, adding ad-hoc document checks (15-45 min) at motorway lay-bys/rail crossings/cross-border buses rather than a closed border. Recheck close to departure given the rolling-extension pattern.",
       transport_to_next: 'Train onward to Budapest, about 2.5 hours — a fully Schengen border.',
     },
     {
@@ -18917,7 +18917,7 @@ function rbBuildItalySloveniaCroatiaRoute() {
         { name: 'Piazza San Marco', lat: 45.4408, lng: 12.3155 },
         { name: 'Rialto Bridge', lat: 45.4380, lng: 12.3358 },
       ],
-      notes: "Venice (2 days) as the opener — same San Marco/Rialto content and day-tripper-tax caveat as Venice + Dolomites (5 days) 🎭 above (the 2026 tax calendar runs 3 April-26 July, waived by an overnight stay in the Venice municipality, so not applicable here). Budget ~€100-120/day p.p. blended across this whole route (Venice itself runs pricier).",
+      notes: "Venice (2 days) as the opener — same San Marco/Rialto content and day-tripper-tax caveat as Venice + Dolomites (5 days) 🎭 above (waived by an overnight stay in the Venice municipality, so not applicable here). Web check (2026-09): the 2026 tax season (Fri/Sat/Sun, 3 April-26 July plus a few extra dates) has already ended; no 2027 calendar has been announced yet, pending the city's post-season review — check closer to any actual booking. Budget ~€100-120/day p.p. blended across this whole route (Venice itself runs pricier).",
       transport_to_next: 'Drive via Trieste to Ljubljana, Slovenia — Schengen-Schengen throughout, no border control or lost time.',
     },
     {
@@ -18967,7 +18967,7 @@ function rbBuildItalySloveniaCroatiaRoute() {
     travel_style: 'Own car throughout — Venice via Trieste into Slovenia (Ljubljana, Bled), south into Istria, inland to Plitvice, ending in Zagreb.',
     climate_summary: 'May-June or September.',
     description: "Venice, Trieste and Ljubljana, Bled, Istria (Rovinj-Pula), Plitvice Lakes National Park, and Zagreb.",
-    notes: "Built (2026-08) as part of Phase 2 batch 15d (Grand European combinations — Alps/Italy cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Source note: Croatia's landmine warning around Plitvice, historically a standard caveat in older travel guidance, has lapsed as of March 2026 (the country was officially declared mine-free) — not repeated as a live warning here. ⚠️ Real overlap, explicitly flagged: shares its Venice/Trieste/Ljubljana core with Slovenia + Italy (9 days) 🍝 (rbBuildSloveniaItalyRoute, run in reverse), its Istria content with Istria (6 days) 🍇 (rbBuildIstriaRoute), and its Plitvice/Zagreb content with Plitvice + Zagreb (6 days) 🏞️ (rbBuildPlitviceZagrebRoute) — all three pre-existing standalone routes. Also overlaps this same sub-batch's sibling Austria + Slovenia + Croatia (10-14 days) 🚙 on the Plitvice/Zagreb tail (that route deliberately picked Zadar over Istria as its own coastal add-on specifically to keep the two routes distinct — see that route's notes). All cross-batch overlaps flagged in ROUTE_SIMILARITY_REVIEW.md. Not yet checked against Route Builder-level price research beyond the tax/capacity-cap checks folded in above — treat as a first concept, not a bookable plan.",
+    notes: "Built (2026-08) as part of Phase 2 batch 15d (Grand European combinations — Alps/Italy cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Source note: Croatia's landmine warning around Plitvice, historically a standard caveat in older travel guidance, no longer applies — confirmed (Web check 2026-09): Croatia officially declared itself mine-free nationwide on 9 March 2026 (Ottawa Convention Article 5 compliance, final mine removed in Lika-Senj County), so no landmine risk warning stands for Plitvice or anywhere else in Croatia; not repeated as a live warning here. ⚠️ Real overlap, explicitly flagged: shares its Venice/Trieste/Ljubljana core with Slovenia + Italy (9 days) 🍝 (rbBuildSloveniaItalyRoute, run in reverse), its Istria content with Istria (6 days) 🍇 (rbBuildIstriaRoute), and its Plitvice/Zagreb content with Plitvice + Zagreb (6 days) 🏞️ (rbBuildPlitviceZagrebRoute) — all three pre-existing standalone routes. Also overlaps this same sub-batch's sibling Austria + Slovenia + Croatia (10-14 days) 🚙 on the Plitvice/Zagreb tail (that route deliberately picked Zadar over Istria as its own coastal add-on specifically to keep the two routes distinct — see that route's notes). All cross-batch overlaps flagged in ROUTE_SIMILARITY_REVIEW.md. Not yet checked against Route Builder-level price research beyond the tax/capacity-cap checks folded in above — treat as a first concept, not a bookable plan.",
   });
 }
 
@@ -19219,7 +19219,7 @@ function rbBuildDenmarkSwedenNorwayOverlandRoute() {
         { name: 'Tivoli Gardens', lat: 55.6736, lng: 12.5681 },
       ],
       notes: "Copenhagen (3 days: Nyhavn, Tivoli Gardens, Strøget) — same content as Copenhagen (4 days) 🧜‍♀️ (rbBuildCopenhagenRoute), one day shorter here to make room for the overland legs. Budget ~€125/day.",
-      transport_to_next: 'The Öresund Bridge/train to Malmö, Sweden (~35 minutes) — Schengen-internal, though Sweden has run periodic temporary ID checks on this crossing since 2015, repeatedly extended; check the current status via politie.se or oresundsbron.com just before departure.',
+      transport_to_next: 'The Öresund Bridge/train to Malmö, Sweden (~35 minutes) — Schengen-internal, though Sweden has run ID/border checks on this crossing since 2015 and confirmed (Web check 2026-09) still active and unchanged in mechanism: random/targeted checks — cars at the Lernacken toll station, rail passengers at Hyllie Station, ferry passengers at Helsingborg port. No indication of these being lifted.',
     },
     {
       code: 'SE', name: 'Sweden', days: 5, budget: 500, lat: 56.6500, lng: 12.5000,
@@ -19756,6 +19756,92 @@ function rbMigrateDraftVerificationTier2Batch1() {
     'French + Spanish Pyrenees (9 days) 🥖', 'FR', 'notes',
     "Lourdes (arrival) — Cauterets (2 days, the Pont d'Espagne) — Gavarnie (2 days, the Cirque de Gavarnie and, for fitter hikers, the Brèche de Roland). Entry: fly into Toulouse or Lourdes-Tarbes-Pyrénées airport, rental car for the whole trip. Budget ~€90-110/day. Season: strictly July-September, same hard boundary as the mountain-pass crossing into Spain below.",
     "Lourdes (arrival) — Cauterets (2 days, the Pont d'Espagne) — Gavarnie (2 days, the Cirque de Gavarnie and, for fitter hikers, the Brèche de Roland). Entry: fly into Toulouse or Lourdes-Tarbes-Pyrénées airport, rental car for the whole trip. Budget ~€90-110/day. Season: strictly July-September, same hard boundary as the mountain-pass crossing into Spain below. Travel advisory (2026-09): France is code yellow, not green — an elevated terrorism alert level in place since March 2024 (not new, just worth noting since Spain and every other country on this route's siblings sit at green) — stay alert in cities/crowded places and expect the possibility of ID/passport spot checks."
+  );
+
+  if (touched) rbSave();
+}
+
+/**
+ * Draft Route Verification, Tier 2 batch 2: field corrections out of 12 three-country combo
+ * routes' 2026-09 consistency check (5 came back CONFIRMED with no field changes: Poland +
+ * Slovakia + Hungary, Germany + Austria + Italy, Germany + Austria + Slovenia, Austria +
+ * Slovenia + Croatia, France + Switzerland + Italy).
+ */
+function rbMigrateDraftVerificationTier2Batch2() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_DRAFT_VERIFICATION_TIER2_BATCH2)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_DRAFT_VERIFICATION_TIER2_BATCH2, '1');
+
+  let touched = false;
+  const patchField = (routeName, code, field, oldValue, newValue) => {
+    const route = rbRoutes.find(r => r.name === routeName);
+    if (!route) return;
+    const block = route.blocks.find(b => b.country_code === code);
+    if (!block || block[field] !== oldValue) return;
+    block[field] = newValue;
+    touched = true;
+  };
+
+  patchField(
+    'Slovenia + Croatia + Bosnia (10-14 days) 🗺️', 'HR', 'transport_to_next',
+    'Overland into Bosnia and Herzegovina towards Mostar — a non-Schengen EES external border, roughly 3-6 minutes per person for the biometric check, passport required.',
+    'Overland into Bosnia and Herzegovina towards Mostar — a non-Schengen EES external border, roughly 3-6 minutes per person for the biometric check when the lane is moving — total wait can still stretch much longer at busy crossings/times (Web check 2026-09); passport required.'
+  );
+  patchField(
+    'Slovenia + Croatia + Bosnia (10-14 days) 🗺️', 'BA', 'transport_to_next',
+    'End of this route — back via the Pelješac bridge to fly home from Split or Dubrovnik.',
+    'End of this route — back via the Pelješac bridge to fly home from Split or Dubrovnik. Web check (2026-09): the bridge has a maintenance/renovation window scheduled October 2026-May 2027 (single-lane/reduced-speed sections, no full closure) — expect possible delays if travelling then.'
+  );
+
+  patchField(
+    'Slovenia + Croatia + Montenegro Coast (10-14 days) ⛵', 'HR', 'transport_to_next',
+    'Overland to Kotor via the Karasovići border crossing — a non-Schengen crossing that saw 2-5 hour waits in July-August 2026 due to EES; plan a morning crossing.',
+    'Overland to Kotor via the Karasovići border crossing — Web check (2026-09): this has NOT normalized since EES went fully live in April 2026, if anything it is worse — 2-5 hour waits are routine in July-August 2026, with an extreme ~15km queue and up to 10-hour waits reported on a peak Sunday in August 2026. Pre-register on the EU "Travel to Europe" app and cross before 8am or after 9pm to avoid the worst of it.'
+  );
+
+  patchField(
+    'Adriatic Roadtrip (14 days) 🌊', 'HR', 'transport_to_next',
+    'Overland to Kotor via the Karasovići border crossing — a non-Schengen EES crossing that saw 2-5 hour waits in July-August 2026, so plan a morning crossing; the only EES crossing on this whole route thanks to the Pelješac bridge bypassing Bosnia entirely.',
+    'Overland to Kotor via the Karasovići border crossing — Web check (2026-09): still not normalized since EES went fully live in April 2026 — 2-5 hour waits are routine in July-August, with an extreme ~15km queue/up to 10-hour wait reported one peak Sunday in August 2026; pre-register on the EU "Travel to Europe" app and cross before 8am or after 9pm. The only EES crossing on this whole route thanks to the Pelješac bridge bypassing Bosnia entirely.'
+  );
+  patchField(
+    'Adriatic Roadtrip (14 days) 🌊', 'ME', 'notes',
+    "Kotor + Perast (2 days) — Budva (2 days). Budget ~€90/day. Season: May-June or September, July-August very busy. Optional: extend onward to the Albanian Riviera via the Sukobin-Muriqan border crossing (10-45 minutes normally, up to 1.5-2 hours on weekends) — see Albanian Riviera (9 days) 🌊 (rbBuildAlbanianRivieraRoute) for that content, not included in this route's own 14-day count.",
+    "Kotor + Perast (2 days) — Budva (2 days). Budget ~€90/day. Season: May-June or September, July-August very busy. Optional: extend onward to the Albanian Riviera via the Sukobin-Muriqan border crossing (10-20 minutes off-season/normal, up to 3 hours in peak season July-August — corrected 2026-09, previously understated at 1.5-2 hours) — see Albanian Riviera (9 days) 🌊 (rbBuildAlbanianRivieraRoute) for that content, not included in this route's own 14-day count."
+  );
+
+  patchField(
+    'Hungary + Austria + Slovenia (7-10 days) 🚆', 'AT', 'notes',
+    "Vienna (2-3 days). Budget ~€95-130/day p.p. Web check (2026-08): Austria has already extended border controls with Czechia/Slovakia — it may also apply spot checks toward Hungary/Slovenia on this route; not confirmed as of this writing, check close to departure.",
+    "Vienna (2-3 days). Budget ~€95-130/day p.p. Web check (2026-09): confirmed — Austria's border-control regime is an official, named extension that DOES cover Hungary and Slovenia too (alongside Czechia/Slovakia), currently running through at least 15 September 2026 (a 3-month extension from an earlier 15 June 2026 deadline; in place since 2015, repeatedly re-extended, likely to be extended again around that date). Practical effect: ad-hoc document checks at motorway lay-bys, rail crossings and cross-border buses, typically adding 15-45 minutes — not a closed border. Recheck close to departure given the pattern of rolling extensions."
+  );
+
+  patchField(
+    'Czechia + Austria + Hungary (10-14 days) 🏛️', 'CZ', 'transport_to_next',
+    "Cross into Austria — a Schengen border, but Austria has extended its border controls with Czechia through at least 15 June 2026: expect spot ID checks, no visa needed. A separate Austrian highway vignette is required in addition to the Czech dálniční známka.",
+    "Cross into Austria — a Schengen border, but Austria's border-control regime with Czechia is still active as of 2026-09 (extended a further three months to at least 15 September 2026, from an earlier 15 June 2026 deadline; running since 2015, repeatedly re-extended, likely again around that date): expect spot ID checks, no visa needed. A separate Austrian highway vignette is required in addition to the Czech dálniční známka."
+  );
+  patchField(
+    'Czechia + Austria + Hungary (10-14 days) 🏛️', 'AT', 'notes',
+    "Vienna (3 days). Budget ~€100-130/day p.p. Web check (2026-08): Austria may also apply spot checks toward Hungary on this leg — not confirmed as of this writing, check close to departure.",
+    "Vienna (3 days). Budget ~€100-130/day p.p. Web check (2026-09): confirmed — Austria's border-control regime does cover Hungary too, not just Czechia/Slovakia, adding ad-hoc document checks (15-45 min) at motorway lay-bys/rail crossings/cross-border buses rather than a closed border. Recheck close to departure given the rolling-extension pattern."
+  );
+
+  patchField(
+    'Italy + Slovenia + Croatia (10-14 days) ⛵', 'IT', 'notes',
+    "Venice (2 days) as the opener — same San Marco/Rialto content and day-tripper-tax caveat as Venice + Dolomites (5 days) 🎭 above (the 2026 tax calendar runs 3 April-26 July, waived by an overnight stay in the Venice municipality, so not applicable here). Budget ~€100-120/day p.p. blended across this whole route (Venice itself runs pricier).",
+    "Venice (2 days) as the opener — same San Marco/Rialto content and day-tripper-tax caveat as Venice + Dolomites (5 days) 🎭 above (waived by an overnight stay in the Venice municipality, so not applicable here). Web check (2026-09): the 2026 tax season (Fri/Sat/Sun, 3 April-26 July plus a few extra dates) has already ended; no 2027 calendar has been announced yet, pending the city's post-season review — check closer to any actual booking. Budget ~€100-120/day p.p. blended across this whole route (Venice itself runs pricier)."
+  );
+  const italySloveniaCroatiaOldNotes = "Built (2026-08) as part of Phase 2 batch 15d (Grand European combinations — Alps/Italy cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Source note: Croatia's landmine warning around Plitvice, historically a standard caveat in older travel guidance, has lapsed as of March 2026 (the country was officially declared mine-free) — not repeated as a live warning here. ⚠️ Real overlap, explicitly flagged: shares its Venice/Trieste/Ljubljana core with Slovenia + Italy (9 days) 🍝 (rbBuildSloveniaItalyRoute, run in reverse), its Istria content with Istria (6 days) 🍇 (rbBuildIstriaRoute), and its Plitvice/Zagreb content with Plitvice + Zagreb (6 days) 🏞️ (rbBuildPlitviceZagrebRoute) — all three pre-existing standalone routes. Also overlaps this same sub-batch's sibling Austria + Slovenia + Croatia (10-14 days) 🚙 on the Plitvice/Zagreb tail (that route deliberately picked Zadar over Istria as its own coastal add-on specifically to keep the two routes distinct — see that route's notes). All cross-batch overlaps flagged in ROUTE_SIMILARITY_REVIEW.md. Not yet checked against Route Builder-level price research beyond the tax/capacity-cap checks folded in above — treat as a first concept, not a bookable plan.";
+  const italySloveniaCroatiaNewNotes = "Built (2026-08) as part of Phase 2 batch 15d (Grand European combinations — Alps/Italy cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Source note: Croatia's landmine warning around Plitvice, historically a standard caveat in older travel guidance, no longer applies — confirmed (Web check 2026-09): Croatia officially declared itself mine-free nationwide on 9 March 2026 (Ottawa Convention Article 5 compliance, final mine removed in Lika-Senj County), so no landmine risk warning stands for Plitvice or anywhere else in Croatia; not repeated as a live warning here. ⚠️ Real overlap, explicitly flagged: shares its Venice/Trieste/Ljubljana core with Slovenia + Italy (9 days) 🍝 (rbBuildSloveniaItalyRoute, run in reverse), its Istria content with Istria (6 days) 🍇 (rbBuildIstriaRoute), and its Plitvice/Zagreb content with Plitvice + Zagreb (6 days) 🏞️ (rbBuildPlitviceZagrebRoute) — all three pre-existing standalone routes. Also overlaps this same sub-batch's sibling Austria + Slovenia + Croatia (10-14 days) 🚙 on the Plitvice/Zagreb tail (that route deliberately picked Zadar over Istria as its own coastal add-on specifically to keep the two routes distinct — see that route's notes). All cross-batch overlaps flagged in ROUTE_SIMILARITY_REVIEW.md. Not yet checked against Route Builder-level price research beyond the tax/capacity-cap checks folded in above — treat as a first concept, not a bookable plan.";
+  (() => {
+    const route = rbRoutes.find(r => r.name === 'Italy + Slovenia + Croatia (10-14 days) ⛵');
+    if (route && route.notes === italySloveniaCroatiaOldNotes) { route.notes = italySloveniaCroatiaNewNotes; touched = true; }
+  })();
+
+  patchField(
+    'Denmark + Sweden + Norway Overland (12 days) 🌉', 'DK', 'transport_to_next',
+    'The Öresund Bridge/train to Malmö, Sweden (~35 minutes) — Schengen-internal, though Sweden has run periodic temporary ID checks on this crossing since 2015, repeatedly extended; check the current status via politie.se or oresundsbron.com just before departure.',
+    'The Öresund Bridge/train to Malmö, Sweden (~35 minutes) — Schengen-internal, though Sweden has run ID/border checks on this crossing since 2015 and confirmed (Web check 2026-09) still active and unchanged in mechanism: random/targeted checks — cars at the Lernacken toll station, rail passengers at Hyllie Station, ferry passengers at Helsingborg port. No indication of these being lifted.'
   );
 
   if (touched) rbSave();

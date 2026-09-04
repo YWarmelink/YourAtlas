@@ -125,6 +125,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateRemoveSimilarityReviewDuplicates();
   rbMigrateStandaloneCountryRoutesEnglish();
   rbMigrateDraftVerificationTier2Batch1();
+  rbMigrateDraftVerificationTier2Batch2();
   rbBindEvents();
 
   try {

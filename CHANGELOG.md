@@ -12,6 +12,37 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Draft Route Verification, Tier 2 batch 2 (2026-09-04)** — the 12 three-country combo routes
+  from `DRAFT_ROUTE_VERIFICATION_PLAN.md`'s Tier 2. 5 confirmed with no changes (Poland + Slovakia
+  + Hungary, Germany + Austria + Italy, Germany + Austria + Slovenia, Austria + Slovenia +
+  Croatia, France + Switzerland + Italy); 7 needed corrections, applied via
+  `rbMigrateDraftVerificationTier2Batch2()`. The two most consequential:
+  - **Hungary + Austria + Slovenia and Czechia + Austria + Hungary** both carried an unresolved
+    "not confirmed as of this writing" note about whether Austria's border-control regime (already
+    known to cover Czechia/Slovakia) also applies to Hungary/Slovenia. Now confirmed: yes, it's an
+    official named extension covering all four, currently running through at least 15 September
+    2026 (extended from an earlier 15 June 2026 deadline, in place since 2015, repeatedly
+    re-extended) — practical effect is 15-45 min ad-hoc document checks, not a closed border.
+  - **Italy + Slovenia + Croatia**'s Croatia-mine-free claim firmed up into a dated, confirmed fact
+    (Croatia declared itself mine-free nationwide 9 March 2026, Ottawa Convention Article 5) rather
+    than a hedge; its Venice day-tripper-tax note updated to say the 2026 season already ended and
+    no 2027 calendar exists yet.
+  - **Slovenia + Croatia + Montenegro Coast and Adriatic Roadtrip** — the Karasovići (Croatia-
+    Montenegro) border crossing has NOT improved since EES went fully live in April 2026, if
+    anything worse (routine 2-5hr waits in peak summer, one reported 10hr/15km-queue extreme) —
+    strengthened the warning and added the EU "Travel to Europe" pre-registration tip. Adriatic
+    Roadtrip's Albania-extension border-time estimate also corrected upward (was 1.5-2hr peak,
+    actually up to 3hr).
+  - **Slovenia + Croatia + Bosnia** — added a Pelješac bridge maintenance-window note (Oct 2026-May
+    2027, same finding as Tier 2 batch 1) and softened the Croatia-Bosnia EES crossing-time claim
+    to note peak-time waits can run well past the quoted 3-6 min.
+  - **Denmark + Sweden + Norway Overland** — Sweden's Öresund-crossing ID checks confirmed still
+    active and unchanged (Lernacken toll station/Hyllie Station/Helsingborg port), replacing an
+    open "check current status" note with a firm answer.
+  All 12 `TRIP_DATABASE.csv` rows flipped `Draft` → `Verified`, `Last Verified` bumped to 2026-09.
+  Combined with batch 1, all 24 Tier 2 routes are now done. Next up per the plan: Tier 3 (7 medium
+  mega-combo routes), then Tier 1 (4 solo US/Hawaii/Florida routes needing full research).
+
 - **Draft Route Verification, Tier 2 batch 1 (2026-09-04)** — first batch from
   `DRAFT_ROUTE_VERIFICATION_PLAN.md`: consistency-checked the 12 two-country combo routes flagged
   `Draft` (11 real routes + one CSV-only leftover). One, **Austria + Slovenia via Grossglockner**,

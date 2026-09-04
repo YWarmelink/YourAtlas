@@ -123,6 +123,7 @@ const RB_SEED_FLAG_KEY_EUROPA_COMBO_GRAND = 'atlas_grand_trips_seeded_europa_com
 const RB_MIGRATE_FLAG_2026_08_SIMILARITY_REVIEW_CLEANUP = 'atlas_grand_trips_migrate_2026_08_similarity_review_cleanup_v1';
 const RB_MIGRATE_FLAG_2026_08_STANDALONE_COUNTRIES_ENGLISH = 'atlas_grand_trips_migrate_2026_08_standalone_countries_english_v1';
 const RB_MIGRATE_FLAG_2026_09_DRAFT_VERIFICATION_TIER2_BATCH1 = 'atlas_grand_trips_migrate_2026_09_draft_verification_tier2_batch1_v1';
+const RB_MIGRATE_FLAG_2026_09_DRAFT_VERIFICATION_TIER2_BATCH2 = 'atlas_grand_trips_migrate_2026_09_draft_verification_tier2_batch2_v1';
 const RB_BLOCK_COLORS =['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
