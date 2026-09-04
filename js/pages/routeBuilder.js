@@ -126,6 +126,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateStandaloneCountryRoutesEnglish();
   rbMigrateDraftVerificationTier2Batch1();
   rbMigrateDraftVerificationTier2Batch2();
+  rbMigrateDraftVerificationTier3();
   rbBindEvents();
 
   try {

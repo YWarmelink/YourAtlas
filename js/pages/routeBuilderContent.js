@@ -18486,7 +18486,7 @@ function rbBuildGrandBalkanRoadtripRoute() {
         { name: 'Zadar / Split (choose one)', lat: 44.1194, lng: 15.2314 },
       ],
       notes: "Zagreb (1 day) — Plitvice Lakes (1-2 days, book the hourly-capacity-capped entry ahead) — Zadar or Split (1-2 days, pick one coastal base rather than both to keep the pace realistic). Budget ~€120/day average.",
-      transport_to_next: 'Overland into Bosnia and Herzegovina towards Mostar — a non-Schengen EES external border, roughly 3-6 minutes per person for the biometric check, one of 2-3 EES crossings on this route.',
+      transport_to_next: 'Overland into Bosnia and Herzegovina towards Mostar — a non-Schengen EES external border. Web check (2026-09): the "3-6 min/person" figure was a pre-EES estimate — actual current waits run 2-5 hours in July-August peak, occasionally spiking to ~10 hours; one of 2-3 EES crossings on this route.',
     },
     {
       code: 'BA', name: 'Bosnia and Herzegovina', days: 4, budget: 200, lat: 43.8563, lng: 18.4131,
@@ -18713,7 +18713,7 @@ function rbBuildCentralEuropeRoadtripFourteenDaysRoute() {
         { name: 'Bratislava', lat: 48.1486, lng: 17.1077 },
       ],
       notes: "Bratislava (1-2 days). Budget ~€50-60/day.",
-      transport_to_next: 'Train or drive to Vienna, about an hour — a fully Schengen border, no checks.',
+      transport_to_next: "Train or drive to Vienna, about an hour — Schengen, but Web check (2026-09): this specific Bratislava-Vienna corridor IS affected by Austria's ongoing border-control regime (running through at least 15 September 2026, likely re-extended) — expect the same 15-45 min ad-hoc document checks as elsewhere on that regime, not a formality-free crossing.",
     },
     {
       code: 'AT', name: 'Austria', days: 3, budget: 345, lat: 48.2082, lng: 16.3738,
@@ -19069,7 +19069,7 @@ function rbBuildAlpineRoadtripFiveCountriesRoute() {
         { name: 'Vršič Pass', lat: 46.4331, lng: 13.7478 },
         { name: 'Bled', lat: 46.3683, lng: 14.1146 },
       ],
-      notes: "The Julian Alps and Bled (2-3 days), closing the trip — same content as Julian Alps + Soča Valley (6 days) 🚣 (rbBuildJulianAlpsSocaValleyRoute)/Slovenia Alpine Loop (6 days) 🏔️ above (Kranjska Gora, the Vršič Pass 2026 traffic regime, Bled). Budget ~€110-130/day p.p. Season: June-September only — the Vršič Pass is closed in winter for snow/avalanche risk.",
+      notes: "The Julian Alps and Bled (2-3 days), closing the trip — same content as Julian Alps + Soča Valley (6 days) 🚣 (rbBuildJulianAlpsSocaValleyRoute)/Slovenia Alpine Loop (6 days) 🏔️ above (Kranjska Gora, the Vršič Pass 2026 traffic regime, Bled). Budget ~€110-130/day p.p. Season: June-September only — the Vršič Pass is closed in winter for snow/avalanche risk. Web check (2026-09): a new traffic-management regime took effect 15 June 2026 for the whole 1 June-30 Sept tourist season (free shuttle bus + barrier monitoring) — private cars/motorbikes/bicycles still cross free and unrestricted, the only change is no parking right at the summit (use the designated areas near the Russian Chapel/Erjavčeva koča instead).",
       transport_to_next: 'End of this route — fly home from Ljubljana.',
     },
   ], {
@@ -19256,7 +19256,7 @@ function rbBuildNorthernEuropeBalticFerryRoadtripRoute() {
         { name: 'Copenhagen (Nyhavn)', lat: 55.6790, lng: 12.5910 },
       ],
       notes: "Copenhagen (2 days, a shortened version of Copenhagen (4 days) 🧜‍♀️'s content — Nyhavn, Tivoli Gardens, Strøget). Budget ~€125/day.",
-      transport_to_next: 'Train to Stockholm, Sweden (~5h) — Schengen-internal, no border formalities.',
+      transport_to_next: "Train to Stockholm, Sweden — Web check (2026-09), significant change: the direct SJ X2000 Copenhagen-Stockholm service has been suspended since 2024 (fleet/re-approval issues) and, as of Sept 2026, its restart keeps getting pushed back (mid-2025 → early 2026 → \"autumn 2026,\" still no confirmed date). Currently this means changing at Malmö: Öresundståg Copenhagen-Malmö, then SJ X2000 Malmö-Stockholm — total journey still roughly ~5-6h with the transfer, but not a single direct train right now. This also means Sweden's Öresundståg-linked ID check at Hyllie Station (see the context on this crossing elsewhere in this project) DOES apply to this leg today, via the Malmö transfer.",
     },
     {
       code: 'SE', name: 'Sweden', days: 3, budget: 340, lat: 59.3251, lng: 18.0711,
@@ -19273,7 +19273,7 @@ function rbBuildNorthernEuropeBalticFerryRoadtripRoute() {
         { name: 'Suomenlinna', lat: 60.1454, lng: 24.9880 },
       ],
       notes: "Helsinki (3 days) — same content as Helsinki (4 days) 🏛️ (rbBuildHelsinkiRoute), one day shorter here. Budget ~€80/day.",
-      transport_to_next: 'Ferry (~2h) from Helsinki to Tallinn, Estonia — the busiest ferry route in the world, with sailings roughly every hour in high season.',
+      transport_to_next: 'Ferry (~2h45min-3h15, corrected 2026-09 from an understated "~2h") from Helsinki to Tallinn, Estonia — still the busiest ferry route in the world (up to 13 daily crossings/94 weekly sailings across 3 operators, Viking Line the fastest at ~2h45).',
     },
     {
       code: 'EE', name: 'Estonia', days: 2, budget: 180, lat: 59.4370, lng: 24.7536,
@@ -19281,7 +19281,7 @@ function rbBuildNorthernEuropeBalticFerryRoadtripRoute() {
         { name: 'Tallinn (Old Town)', lat: 59.4370, lng: 24.7454 },
       ],
       notes: "Tallinn's Old Town (2 days) — same capital-hop content as Tallinn + Riga + Vilnius (7-10 days) 🚌 (rbBuildTallinnRigaVilniusRoute)'s Estonia leg. Budget ~€90/day.",
-      transport_to_next: 'Bus with Lux Express (~3h40) from Tallinn to Riga — no border formalities, both EU/Schengen.',
+      transport_to_next: 'Bus with Lux Express (~4-4.5h, corrected 2026-09 from an understated "~3h40") from Tallinn to Riga — no border formalities, both EU/Schengen.',
     },
     {
       code: 'LV', name: 'Latvia', days: 2, budget: 180, lat: 56.9496, lng: 24.1052,
@@ -19289,7 +19289,7 @@ function rbBuildNorthernEuropeBalticFerryRoadtripRoute() {
         { name: 'Riga (Old Town)', lat: 56.9496, lng: 24.1052 },
       ],
       notes: "Riga's Old Town (2 days) — same content as Tallinn + Riga + Vilnius (7-10 days) 🚌's Latvia leg. Budget ~€90/day.",
-      transport_to_next: 'Bus with Lux Express (~5h10) from Riga to Vilnius — no border formalities, both EU/Schengen.',
+      transport_to_next: 'Bus with Lux Express (~4-4.5h, corrected 2026-09 — actually faster than the previously stated "~5h10") from Riga to Vilnius — no border formalities, both EU/Schengen.',
     },
     {
       code: 'LT', name: 'Lithuania', days: 2, budget: 180, lat: 54.6872, lng: 25.2797,
@@ -19413,7 +19413,7 @@ function rbBuildBalkanRoadtripSerbiaNMacedoniaAlbaniaKosovoRoute() {
       destinations: [
         { name: 'Prizren', lat: 42.2139, lng: 20.7397 },
       ],
-      notes: "Prizren (1-2 days). Budget ~€30/day. ⚠️⚠️ Web check (2026-08): the Serbia-Kosovo border crossing on the way back to Belgrade can give real administrative friction — Serbia does not recognize Kosovo's borders, and travelers who entered Kosovo from a country other than Serbia (as this route does, via Albania) have occasionally been challenged or refused entry into Serbia afterward, since Serbian officials can treat that as having entered Serbian territory through an unrecognized checkpoint. This is the same underlying issue already flagged in batch 8's Kosovo-Serbia border-sequence warning (see the standalone Kosovo route's notes) — check the current situation and carry documentation of the full itinerary before attempting this crossing; consider verifying with the Serbian embassy/consulate if in doubt. Travel advisory: overwhelmingly green across this route; northern Kosovo (Mitrovica area) is orange since the August 2026 KFOR tensions, but the Pristina/Prizren corridor this route actually uses is not affected.",
+      notes: "Prizren (1-2 days). Budget ~€30/day. ⚠️⚠️ Web check (2026-08): the Serbia-Kosovo border crossing on the way back to Belgrade can give real administrative friction — Serbia does not recognize Kosovo's borders, and travelers who entered Kosovo from a country other than Serbia (as this route does, via Albania) have occasionally been challenged or refused entry into Serbia afterward, since Serbian officials can treat that as having entered Serbian territory through an unrecognized checkpoint. This is the same underlying issue already flagged in batch 8's Kosovo-Serbia border-sequence warning (see the standalone Kosovo route's notes) — check the current situation and carry documentation of the full itinerary before attempting this crossing; consider verifying with the Serbian embassy/consulate if in doubt. Travel advisory: overwhelmingly green across this route; northern Kosovo (Mitrovica area) is orange since the August 2026 KFOR tensions — Web check (2026-09): this is actively escalating, not settled (KFOR began withdrawing from its permanent Mitrovica Ibar bridge checkpoint from ~10 August 2026, and Serbian officials have since escalated rhetoric sharply through early September, appealing to the EU/NATO/US over the bridge — no reports yet of actual violence on the ground, but watch the news closer to departure), while the Pristina/Prizren corridor this route actually uses remains explicitly unaffected and rated safe. Serbia-Kosovo third-country-entry border friction (see below) also confirmed still real and current as of 2026.",
       transport_to_next: 'Overland back to Belgrade (the border crossing flagged above) to close the loop.',
     },
     {
@@ -19470,7 +19470,7 @@ function rbBuildSouthernEuropeHighlightsRoadtripRoute() {
         { name: 'Acropolis & Plaka/Monastiraki', lat: 37.9715, lng: 23.7267 },
         { name: 'Acropolis Museum', lat: 37.9686, lng: 23.7285 },
       ],
-      notes: "Acropolis, Plaka and Monastiraki (3 days) — same content as Athens (4 days) 🏛️ (rbBuildAthensRoute), one day shorter and without the Cape Sounion day trip here. Budget ~€80/day. Travel advisory: yellow since 4 August 2026 for wildfires (same nationwide Greece advisory as the standalone Athens route) — re-check shortly before travel.",
+      notes: "Acropolis, Plaka and Monastiraki (3 days) — same content as Athens (4 days) 🏛️ (rbBuildAthensRoute), one day shorter and without the Cape Sounion day trip here. Budget ~€80/day. Travel advisory: yellow since 4 August 2026 for wildfires (same nationwide Greece advisory as the standalone Athens route). Web check (2026-09): the acute multi-fatality emergency (Crete evacuations, an Athens-area helicopter crash) was late July-early August and has since eased — 2026's total burned area nationally is actually 37% below the 20-year average — but a fresh extreme fire-danger spell is forecast across Greece for 3-9 September 2026 (i.e. right now); not an active emergency, but check the daily fire-risk map before any hikes/rural drives and re-check shortly before travel.",
       transport_to_next: 'Optional (only at the full 14 days): ferry or short flight from Athens/Piraeus to Santorini.',
     },
     {
@@ -19499,7 +19499,7 @@ function rbBuildGrandEuropeanRoadtripFourteenToTwentyOneDaysRoute() {
         { name: 'Rüdesheim am Rhein / Loreley (Rhine Valley)', lat: 49.9786, lng: 7.9047 },
         { name: 'Munich / Neuschwanstein (Bavaria)', lat: 48.1351, lng: 11.5820 },
       ],
-      notes: "A deliberately compressed opener (2-3 days) squeezing both the Rhine Valley and Bavaria into one stop — a real taste, not a proper visit of either (the flagship Central European Grand Roadtrip 🚗 below gives Bavaria/Neuschwanstein 4 full days on its own). Budget ~€110/day.",
+      notes: "A deliberately compressed opener (2-3 days) squeezing both the Rhine Valley and Bavaria into one stop — a real taste, not a proper visit of either (the flagship Central European Grand Roadtrip 🚗 below gives Bavaria/Neuschwanstein 4 full days on its own). Budget ~€110/day. ⚠️ Web check (2026-09): even tighter than it looks — Rüdesheim to Füssen is ~500-550km/5-5.5h, then a further 2.5-3h on to Salzburg, and Neuschwanstein tickets are timed-entry, routinely selling out weeks to ~2-3 months ahead in the May-September season (same-day tickets often gone by 8am). Realistically this 2-day leg means an exterior/Marienbrücke stop at most, no time for the castle interior tour unless booked well ahead — flagged as a route-logic tension, not silently smoothed over.",
       transport_to_next: 'Drive south to Salzburg — a Schengen border, no checks.',
     },
     {
@@ -19509,7 +19509,7 @@ function rbBuildGrandEuropeanRoadtripFourteenToTwentyOneDaysRoute() {
         { name: 'Innsbruck', lat: 47.2692, lng: 11.4041 },
       ],
       notes: "Salzburg and Innsbruck (2 days) — both cities get a full standalone visit elsewhere in this repo; here it's one day each. Budget ~€115/day. Austrian 10-day vignette required.",
-      transport_to_next: 'Drive over the Arlberg Pass into Switzerland towards Interlaken — a Schengen border, no checks, Swiss vignette needed.',
+      transport_to_next: "Drive over the Arlberg Pass towards Interlaken, Switzerland — Web check (2026-09): the Arlberg Pass itself (St. Anton-Bludenz) is entirely within Austria, not the Swiss border; using the Arlberg road tunnel (S16) instead adds a separate €13 section toll not covered by the vignette. The actual Swiss border crossing comes further along (e.g. near Feldkirch/St. Margrethen) — Schengen, no checks, that's where the Swiss vignette (CHF ~40, annual-only, no short-stay option) is needed.",
     },
     {
       code: 'CH', name: 'Switzerland', days: 2, budget: 300, lat: 46.6863, lng: 7.8632,
@@ -19526,7 +19526,7 @@ function rbBuildGrandEuropeanRoadtripFourteenToTwentyOneDaysRoute() {
         { name: 'Venice (Piazza San Marco)', lat: 45.4408, lng: 12.3155 },
       ],
       notes: "The Dolomites and Venice (3 days) — squeezed into a single stop where the flagship route below gives them roughly 8 combined days. Budget ~€130/day.",
-      transport_to_next: 'Drive to Bled via Trieste-Ljubljana — a Schengen border, no checks, Slovenian e-vinjeta needed.',
+      transport_to_next: 'Drive to Bled via Trieste-Ljubljana — Web check (2026-09): Italy has its own separate border-check regime with Slovenia (Fernetti, Gorizia-Nova Gorica crossings), extended through 18 December 2026 for terrorism/migration-smuggling concerns and Winter Olympics/Paralympics security — random spot checks only, typically 15-40 min, not a closed border. Slovenian e-vinjeta needed (fully digital since Dec 2021, plate-based; 7-day tier ~€16 covers this route\'s 1-day Slovenia leg).',
     },
     {
       code: 'SI', name: 'Slovenia', days: 1, budget: 100, lat: 46.3683, lng: 14.1146,
@@ -19534,7 +19534,7 @@ function rbBuildGrandEuropeanRoadtripFourteenToTwentyOneDaysRoute() {
         { name: 'Bled', lat: 46.3683, lng: 14.1146 },
       ],
       notes: "Bled (1-2 days) — a single-day taste of a lake that deserves several (see Grand Balkan Roadtrip (14 days) 🏔️ or the flagship route below, both of which give Bled/the Julian Alps multiple days). Budget ~€100/day.",
-      transport_to_next: 'Drive into Croatia towards Istria/Plitvice/the coast — Schengen-internal since Croatia joined on 1 January 2023, zero checks.',
+      transport_to_next: "Drive into Croatia towards Istria/Plitvice/the coast — Schengen-internal, zero checks today. Web check (2026-09), minor precision: Croatia joined Schengen 1 January 2023, but Slovenia separately reinstated its own temporary controls on this border from 21 October 2023, only lifting them again on 11 June 2026 — so \"zero checks since 2023\" wasn't continuously true; it's accurate again now (Sept 2026).",
     },
     {
       code: 'HR', name: 'Croatia', days: 2, budget: 220, lat: 44.8654, lng: 15.5820,
@@ -19842,6 +19842,101 @@ function rbMigrateDraftVerificationTier2Batch2() {
     'Denmark + Sweden + Norway Overland (12 days) 🌉', 'DK', 'transport_to_next',
     'The Öresund Bridge/train to Malmö, Sweden (~35 minutes) — Schengen-internal, though Sweden has run periodic temporary ID checks on this crossing since 2015, repeatedly extended; check the current status via politie.se or oresundsbron.com just before departure.',
     'The Öresund Bridge/train to Malmö, Sweden (~35 minutes) — Schengen-internal, though Sweden has run ID/border checks on this crossing since 2015 and confirmed (Web check 2026-09) still active and unchanged in mechanism: random/targeted checks — cars at the Lernacken toll station, rail passengers at Hyllie Station, ferry passengers at Helsingborg port. No indication of these being lifted.'
+  );
+
+  if (touched) rbSave();
+}
+
+/**
+ * Draft Route Verification, Tier 3 (2026-09-04): field corrections out of the 7 medium mega-combo
+ * routes' consistency check (2 confirmed with no field changes: Central Europe Roadtrip's
+ * Auschwitz-Birkenau claim, and the Serbia/N.Macedonia/Albania/Kosovo route's North Macedonia
+ * photography warning both held up as already-accurate).
+ */
+function rbMigrateDraftVerificationTier3() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_DRAFT_VERIFICATION_TIER3)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_DRAFT_VERIFICATION_TIER3, '1');
+
+  let touched = false;
+  const patchField = (routeName, code, field, oldValue, newValue) => {
+    const route = rbRoutes.find(r => r.name === routeName);
+    if (!route) return;
+    const block = route.blocks.find(b => b.country_code === code);
+    if (!block || block[field] !== oldValue) return;
+    block[field] = newValue;
+    touched = true;
+  };
+
+  patchField(
+    'Grand Balkan Roadtrip (14 days) 🏔️', 'HR', 'transport_to_next',
+    'Overland into Bosnia and Herzegovina towards Mostar — a non-Schengen EES external border, roughly 3-6 minutes per person for the biometric check, one of 2-3 EES crossings on this route.',
+    'Overland into Bosnia and Herzegovina towards Mostar — a non-Schengen EES external border. Web check (2026-09): the "3-6 min/person" figure was a pre-EES estimate — actual current waits run 2-5 hours in July-August peak, occasionally spiking to ~10 hours; one of 2-3 EES crossings on this route.'
+  );
+
+  patchField(
+    'Alpine Roadtrip (14 days) 🏕️', 'SI', 'notes',
+    "The Julian Alps and Bled (2-3 days), closing the trip — same content as Julian Alps + Soča Valley (6 days) 🚣 (rbBuildJulianAlpsSocaValleyRoute)/Slovenia Alpine Loop (6 days) 🏔️ above (Kranjska Gora, the Vršič Pass 2026 traffic regime, Bled). Budget ~€110-130/day p.p. Season: June-September only — the Vršič Pass is closed in winter for snow/avalanche risk.",
+    "The Julian Alps and Bled (2-3 days), closing the trip — same content as Julian Alps + Soča Valley (6 days) 🚣 (rbBuildJulianAlpsSocaValleyRoute)/Slovenia Alpine Loop (6 days) 🏔️ above (Kranjska Gora, the Vršič Pass 2026 traffic regime, Bled). Budget ~€110-130/day p.p. Season: June-September only — the Vršič Pass is closed in winter for snow/avalanche risk. Web check (2026-09): a new traffic-management regime took effect 15 June 2026 for the whole 1 June-30 Sept tourist season (free shuttle bus + barrier monitoring) — private cars/motorbikes/bicycles still cross free and unrestricted, the only change is no parking right at the summit (use the designated areas near the Russian Chapel/Erjavčeva koča instead)."
+  );
+
+  patchField(
+    'Grand European Roadtrip (14-21 days) 🪣', 'DE', 'notes',
+    "A deliberately compressed opener (2-3 days) squeezing both the Rhine Valley and Bavaria into one stop — a real taste, not a proper visit of either (the flagship Central European Grand Roadtrip 🚗 below gives Bavaria/Neuschwanstein 4 full days on its own). Budget ~€110/day.",
+    "A deliberately compressed opener (2-3 days) squeezing both the Rhine Valley and Bavaria into one stop — a real taste, not a proper visit of either (the flagship Central European Grand Roadtrip 🚗 below gives Bavaria/Neuschwanstein 4 full days on its own). Budget ~€110/day. ⚠️ Web check (2026-09): even tighter than it looks — Rüdesheim to Füssen is ~500-550km/5-5.5h, then a further 2.5-3h on to Salzburg, and Neuschwanstein tickets are timed-entry, routinely selling out weeks to ~2-3 months ahead in the May-September season (same-day tickets often gone by 8am). Realistically this 2-day leg means an exterior/Marienbrücke stop at most, no time for the castle interior tour unless booked well ahead — flagged as a route-logic tension, not silently smoothed over."
+  );
+  patchField(
+    'Grand European Roadtrip (14-21 days) 🪣', 'AT', 'transport_to_next',
+    'Drive over the Arlberg Pass into Switzerland towards Interlaken — a Schengen border, no checks, Swiss vignette needed.',
+    "Drive over the Arlberg Pass towards Interlaken, Switzerland — Web check (2026-09): the Arlberg Pass itself (St. Anton-Bludenz) is entirely within Austria, not the Swiss border; using the Arlberg road tunnel (S16) instead adds a separate €13 section toll not covered by the vignette. The actual Swiss border crossing comes further along (e.g. near Feldkirch/St. Margrethen) — Schengen, no checks, that's where the Swiss vignette (CHF ~40, annual-only, no short-stay option) is needed."
+  );
+  patchField(
+    'Grand European Roadtrip (14-21 days) 🪣', 'IT', 'transport_to_next',
+    'Drive to Bled via Trieste-Ljubljana — a Schengen border, no checks, Slovenian e-vinjeta needed.',
+    'Drive to Bled via Trieste-Ljubljana — Web check (2026-09): Italy has its own separate border-check regime with Slovenia (Fernetti, Gorizia-Nova Gorica crossings), extended through 18 December 2026 for terrorism/migration-smuggling concerns and Winter Olympics/Paralympics security — random spot checks only, typically 15-40 min, not a closed border. Slovenian e-vinjeta needed (fully digital since Dec 2021, plate-based; 7-day tier ~€16 covers this route\'s 1-day Slovenia leg).'
+  );
+  patchField(
+    'Grand European Roadtrip (14-21 days) 🪣', 'SI', 'transport_to_next',
+    'Drive into Croatia towards Istria/Plitvice/the coast — Schengen-internal since Croatia joined on 1 January 2023, zero checks.',
+    "Drive into Croatia towards Istria/Plitvice/the coast — Schengen-internal, zero checks today. Web check (2026-09), minor precision: Croatia joined Schengen 1 January 2023, but Slovenia separately reinstated its own temporary controls on this border from 21 October 2023, only lifting them again on 11 June 2026 — so \"zero checks since 2023\" wasn't continuously true; it's accurate again now (Sept 2026)."
+  );
+
+  patchField(
+    'Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️', 'DK', 'transport_to_next',
+    'Train to Stockholm, Sweden (~5h) — Schengen-internal, no border formalities.',
+    "Train to Stockholm, Sweden — Web check (2026-09), significant change: the direct SJ X2000 Copenhagen-Stockholm service has been suspended since 2024 (fleet/re-approval issues) and, as of Sept 2026, its restart keeps getting pushed back (mid-2025 → early 2026 → \"autumn 2026,\" still no confirmed date). Currently this means changing at Malmö: Öresundståg Copenhagen-Malmö, then SJ X2000 Malmö-Stockholm — total journey still roughly ~5-6h with the transfer, but not a single direct train right now. This also means Sweden's Öresundståg-linked ID check at Hyllie Station (see the context on this crossing elsewhere in this project) DOES apply to this leg today, via the Malmö transfer."
+  );
+  patchField(
+    'Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️', 'FI', 'transport_to_next',
+    "Ferry (~2h) from Helsinki to Tallinn, Estonia — the busiest ferry route in the world, with sailings roughly every hour in high season.",
+    'Ferry (~2h45min-3h15, corrected 2026-09 from an understated "~2h") from Helsinki to Tallinn, Estonia — still the busiest ferry route in the world (up to 13 daily crossings/94 weekly sailings across 3 operators, Viking Line the fastest at ~2h45).'
+  );
+  patchField(
+    'Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️', 'EE', 'transport_to_next',
+    "Bus with Lux Express (~3h40) from Tallinn to Riga — no border formalities, both EU/Schengen.",
+    'Bus with Lux Express (~4-4.5h, corrected 2026-09 from an understated "~3h40") from Tallinn to Riga — no border formalities, both EU/Schengen.'
+  );
+  patchField(
+    'Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️', 'LV', 'transport_to_next',
+    "Bus with Lux Express (~5h10) from Riga to Vilnius — no border formalities, both EU/Schengen.",
+    'Bus with Lux Express (~4-4.5h, corrected 2026-09 — actually faster than the previously stated "~5h10") from Riga to Vilnius — no border formalities, both EU/Schengen.'
+  );
+
+  patchField(
+    'Central Europe Roadtrip (14 days) 🚂', 'SK', 'transport_to_next',
+    'Train or drive to Vienna, about an hour — a fully Schengen border, no checks.',
+    "Train or drive to Vienna, about an hour — Schengen, but Web check (2026-09): this specific Bratislava-Vienna corridor IS affected by Austria's ongoing border-control regime (running through at least 15 September 2026, likely re-extended) — expect the same 15-45 min ad-hoc document checks as elsewhere on that regime, not a formality-free crossing."
+  );
+
+  patchField(
+    'Balkan Roadtrip: Serbia + North Macedonia + Albania + Kosovo (14 days) 🔄', 'XK', 'notes',
+    "Prizren (1-2 days). Budget ~€30/day. ⚠️⚠️ Web check (2026-08): the Serbia-Kosovo border crossing on the way back to Belgrade can give real administrative friction — Serbia does not recognize Kosovo's borders, and travelers who entered Kosovo from a country other than Serbia (as this route does, via Albania) have occasionally been challenged or refused entry into Serbia afterward, since Serbian officials can treat that as having entered Serbian territory through an unrecognized checkpoint. This is the same underlying issue already flagged in batch 8's Kosovo-Serbia border-sequence warning (see the standalone Kosovo route's notes) — check the current situation and carry documentation of the full itinerary before attempting this crossing; consider verifying with the Serbian embassy/consulate if in doubt. Travel advisory: overwhelmingly green across this route; northern Kosovo (Mitrovica area) is orange since the August 2026 KFOR tensions, but the Pristina/Prizren corridor this route actually uses is not affected.",
+    "Prizren (1-2 days). Budget ~€30/day. ⚠️⚠️ Web check (2026-08): the Serbia-Kosovo border crossing on the way back to Belgrade can give real administrative friction — Serbia does not recognize Kosovo's borders, and travelers who entered Kosovo from a country other than Serbia (as this route does, via Albania) have occasionally been challenged or refused entry into Serbia afterward, since Serbian officials can treat that as having entered Serbian territory through an unrecognized checkpoint. This is the same underlying issue already flagged in batch 8's Kosovo-Serbia border-sequence warning (see the standalone Kosovo route's notes) — check the current situation and carry documentation of the full itinerary before attempting this crossing; consider verifying with the Serbian embassy/consulate if in doubt. Travel advisory: overwhelmingly green across this route; northern Kosovo (Mitrovica area) is orange since the August 2026 KFOR tensions — Web check (2026-09): this is actively escalating, not settled (KFOR began withdrawing from its permanent Mitrovica Ibar bridge checkpoint from ~10 August 2026, and Serbian officials have since escalated rhetoric sharply through early September, appealing to the EU/NATO/US over the bridge — no reports yet of actual violence on the ground, but watch the news closer to departure), while the Pristina/Prizren corridor this route actually uses remains explicitly unaffected and rated safe. Serbia-Kosovo third-country-entry border friction (see below) also confirmed still real and current as of 2026."
+  );
+
+  patchField(
+    'Southern Europe Highlights Roadtrip (14 days) 🎯', 'GR', 'notes',
+    "Acropolis, Plaka and Monastiraki (3 days) — same content as Athens (4 days) 🏛️ (rbBuildAthensRoute), one day shorter and without the Cape Sounion day trip here. Budget ~€80/day. Travel advisory: yellow since 4 August 2026 for wildfires (same nationwide Greece advisory as the standalone Athens route) — re-check shortly before travel.",
+    "Acropolis, Plaka and Monastiraki (3 days) — same content as Athens (4 days) 🏛️ (rbBuildAthensRoute), one day shorter and without the Cape Sounion day trip here. Budget ~€80/day. Travel advisory: yellow since 4 August 2026 for wildfires (same nationwide Greece advisory as the standalone Athens route). Web check (2026-09): the acute multi-fatality emergency (Crete evacuations, an Athens-area helicopter crash) was late July-early August and has since eased — 2026's total burned area nationally is actually 37% below the 20-year average — but a fresh extreme fire-danger spell is forecast across Greece for 3-9 September 2026 (i.e. right now); not an active emergency, but check the daily fire-risk map before any hikes/rural drives and re-check shortly before travel."
   );
 
   if (touched) rbSave();

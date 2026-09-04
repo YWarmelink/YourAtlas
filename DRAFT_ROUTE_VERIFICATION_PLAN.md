@@ -1,9 +1,8 @@
 # Draft Route Verification — Plan
 
-Status: **in progress.** Tier 2 fully done (2026-09-04, see `CHANGELOG.md`) — batch 1 (12
-two-country routes, 11 real + the Grossglockner CSV leftover) and batch 2 (12 three-country
-routes), all 24 flipped to `Verified`. Next up: Tier 3 (7 medium mega-combos), then Tier 1 (4 solo
-research jobs). Came out of a 2026-09-02
+Status: **in progress.** Tier 2 and Tier 3 both fully done (2026-09-04, see `CHANGELOG.md`) — 31 of
+the original 35 Draft routes are now `Verified`. Only Tier 1 remains: 4 solo US/Hawaii/Florida
+routes needing full research from scratch (not a consistency-check). Came out of a 2026-09-02
 scoping conversation about README's old "show Draft vs Research Verified" open item — see that
 conversation's conclusion below for why the scope changed from what README originally speculated.
 
@@ -73,6 +72,15 @@ was last checked. Much cheaper than Tier 1 per route:
   *(12 three-country routes)*
 
 ### Tier 3 — medium, mega-combos (7 routes, heavier than Tier 2, lighter than Tier 1)
+
+**Done (2026-09-04), see `CHANGELOG.md`.** All 7 flipped to `Verified` — 6 checked together, Grand
+European Roadtrip checked separately as its own batch (it's the biggest, 9 countries). Two
+safety/timing-relevant findings worth knowing about before actually booking either route: Kosovo's
+Mitrovica/KFOR situation is actively escalating (not settled) as of early September 2026, and
+Greece has a fresh extreme fire-danger spell forecast for 3-9 September 2026 even though the acute
+wildfire emergency from late July/early August has eased. Original candidate list below kept for
+reference — next up: Tier 1 (4 solo research jobs).
+
 Same "components already verified" starting point as Tier 2, but 4-9 countries each means more
 border-crossings and route-logic to sanity-check, and budget totals that are easier to get subtly
 wrong when stacking that many legs:

@@ -12,6 +12,44 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Draft Route Verification, Tier 3 — all 7 medium mega-combo routes (2026-09-04)** — Grand
+  Balkan Roadtrip, Alpine Roadtrip, Northern Europe Baltic Ferry Roadtrip, Central Europe
+  Roadtrip, Balkan Roadtrip: Serbia + North Macedonia + Albania + Kosovo, Southern Europe
+  Highlights Roadtrip, and Grand European Roadtrip (checked separately as its own batch per the
+  plan, being the biggest at 9 countries). Applied via `rbMigrateDraftVerificationTier3()`.
+  Highlights, most consequential first:
+  - **Kosovo/Serbia (Balkan Roadtrip: Serbia+NMac+Albania+Kosovo)** — the Mitrovica/KFOR situation
+    is actively escalating (not settled) as of early September 2026: KFOR began withdrawing from
+    its permanent Ibar bridge checkpoint ~10 August, Serbian officials have since escalated
+    rhetoric through the EU/NATO/US. No violence reported yet; the Pristina/Prizren corridor this
+    route actually uses remains explicitly unaffected and rated safe, but the note now says
+    "watch the news closer to departure" instead of implying it's settled.
+  - **Greece wildfires (Southern Europe Highlights)** — the acute late-July/early-August emergency
+    has eased (2026's total burned area is actually 37% below the 20-year average nationally), but
+    a fresh extreme fire-danger spell is forecast for Greece 3-9 September 2026 — i.e. right now.
+    Downgraded from "acute emergency" framing to an active-but-not-emergency caution flag.
+  - **Copenhagen-Stockholm train (Northern Europe Baltic Ferry Roadtrip)** — the direct SJ X2000
+    service has actually been suspended since 2024 and its restart keeps slipping ("autumn 2026,"
+    unconfirmed); currently requires a Malmö transfer, which also means Sweden's Öresund ID checks
+    (Hyllie Station) do apply to this leg today. Two more minor bus/ferry duration corrections in
+    the same route (Helsinki-Tallinn ferry, Tallinn-Riga and Riga-Vilnius buses).
+  - **Austria's border-control regime confirmed to also affect Bratislava→Vienna** (Central Europe
+    Roadtrip) — same 15-45 min ad-hoc checks as the Tier 2 finding, now confirmed for this specific
+    corridor too.
+  - **Grand European Roadtrip** (its own batch, being the biggest route): Italy has a *separate*
+    border-check regime with Slovenia (through 18 Dec 2026, distinct from Austria's), the
+    Arlberg-Pass/Swiss-vignette wording was corrected (Arlberg is entirely within Austria, not the
+    Swiss border), a minor Croatia-Schengen precision fix, and a flagged route-logic tension: the
+    2-day Germany leg is tighter than it looks once Neuschwanstein's booking lead time and real
+    drive times are accounted for.
+  - **Grand Balkan Roadtrip and Alpine Roadtrip**: the Croatia-Bosnia EES crossing-time figure
+    updated to reflect real (not pre-EES-estimate) wait times, and a new 2026 Vršič Pass
+    traffic-management regime noted (free shuttle + no summit parking, private cars still cross
+    free).
+  All 7 `TRIP_DATABASE.csv` rows flipped `Draft` → `Verified`. Combined with Tier 2, all 31 of the
+  35 originally-Draft routes are now Verified — only Tier 1's 4 solo US/Hawaii/Florida routes
+  remain (full research jobs, not consistency-checks).
+
 - **Draft Route Verification, Tier 2 batch 2 (2026-09-04)** — the 12 three-country combo routes
   from `DRAFT_ROUTE_VERIFICATION_PLAN.md`'s Tier 2. 5 confirmed with no changes (Poland + Slovakia
   + Hungary, Germany + Austria + Italy, Germany + Austria + Slovenia, Austria + Slovenia +
