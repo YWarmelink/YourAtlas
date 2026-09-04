@@ -124,6 +124,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateFaroeHikingDestination();
   rbMigrateRemoveSimilarityReviewDuplicates();
   rbMigrateStandaloneCountryRoutesEnglish();
+  rbMigrateDraftVerificationTier2Batch1();
   rbBindEvents();
 
   try {

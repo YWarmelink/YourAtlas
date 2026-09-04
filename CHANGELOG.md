@@ -12,6 +12,30 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Draft Route Verification, Tier 2 batch 1 (2026-09-04)** — first batch from
+  `DRAFT_ROUTE_VERIFICATION_PLAN.md`: consistency-checked the 12 two-country combo routes flagged
+  `Draft` (11 real routes + one CSV-only leftover). One, **Austria + Slovenia via Grossglockner**,
+  was already removed from Route Builder on 2026-08-24 as an exact duplicate of the already-Verified
+  Austria + Slovenia (9 days) — its `TRIP_DATABASE.csv` row still said `Draft`; flipped to `Verified`
+  (matching precedent rows 227/252 for other kept-but-unbuilt duplicate taxonomy entries) rather than
+  researching a route that doesn't exist. The other 11 got a real WebSearch consistency-check
+  (advisories, border/EES facts, a couple of prices) against their already-verified component
+  countries — 7 confirmed with no changes, 4 needed corrections, applied via
+  `rbMigrateDraftVerificationTier2Batch1()`:
+  - **Norway + Sweden: Fjords & Capitals** — Flåm Railway price was overstated (570/850 NOK →
+    corrected to ~510/730 NOK high-season 2026 prices).
+  - **Croatia + Bosnia via Split** — added that EES has been fully live at the Croatia-Bosnia
+    border since 10 April 2026 (was already assumed, now confirmed) plus a caveat that the
+    stated 3-6 min crossing time is off-peak only (summer weekend peaks can run to hours); also
+    flagged a Pelješac bridge maintenance window (Oct 2026-May 2027, bridge stays open).
+  - **Bosnia + Montenegro + Budva** — added a peak-season caveat to the "generally quiet" Bosnia-
+    Montenegro border crossing claim (25-90 min typical, but summer weekends can spike to hours).
+  - **French + Spanish Pyrenees** — added that France sits at travel-advisory code yellow
+    (elevated terrorism alert since March 2024), unlike every other country on this route's
+    siblings which are all green; `TRIP_DATABASE.csv`'s Advisory Level updated to reflect it.
+  All 12 rows in `TRIP_DATABASE.csv` flipped `Draft` → `Verified`, `Last Verified` bumped to
+  2026-09. Next up per the plan: the 12 three-country Tier 2 routes, then Tier 3, then Tier 1.
+
 - **Fixes from a full site walkthrough as a fresh visitor (2026-08-28)** — Youri asked for an
   analysis of the whole site from a user's perspective (own record-keeping, showing it to people,
   letting them explore themselves). Three confirmed bugs, all fixed:

@@ -1,8 +1,9 @@
 # Draft Route Verification — Plan
 
-Status: **scoped, not started.** Came out of a 2026-09-02 scoping conversation about README's old
-"show Draft vs Research Verified" open item — see that conversation's conclusion below for why the
-scope changed from what README originally speculated.
+Status: **in progress.** Tier 2 batch 1 done (2026-09-04, see `CHANGELOG.md`) — the 12 two-country
+combo routes (11 real + the Grossglockner CSV leftover, see Tier 2 below). Came out of a 2026-09-02
+scoping conversation about README's old "show Draft vs Research Verified" open item — see that
+conversation's conclusion below for why the scope changed from what README originally speculated.
 
 Pick this back up by pointing Claude Code at this file, or just say "let's continue the draft
 route verification work."
@@ -37,6 +38,12 @@ full daily-cost + visa + advisory research needed, same depth as any brand-new r
 - **Florida 🐊** (10d)
 
 ### Tier 2 — light consistency-check (24 routes, lightest per-route)
+
+**Two-country batch — done (2026-09-04), see `CHANGELOG.md`.** All 12 flipped to `Verified`
+(Grossglockner as a duplicate-of-an-already-verified-route, no research needed; the other 11 via a
+real consistency-check, 4 with corrections applied). Original candidate list below kept for
+reference — next up: the 12 three-country routes.
+
 2-3 country combination roadtrips from `EUROPA_TRIP_IDEAS.md` batch 15. **Every individual country
 in these is already `Verified` elsewhere in the CSV/route data** — the combination itself just
 was never separately checked. Work here is *not* re-researching each country: it's confirming the

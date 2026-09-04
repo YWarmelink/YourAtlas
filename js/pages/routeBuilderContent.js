@@ -18337,7 +18337,7 @@ function rbBuildCroatiaBosniaSplitRoute() {
         { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402 },
       ],
       notes: "Split (2-3 days, Diocletian's Palace) as the flight-in/flight-out anchor — a different anchor city from the existing Dubrovnik-anchored Bosnia + Croatia (9 days) 🏛️ (rbBuildBosniaCroatiaRoute). Budget ~€140/day.",
-      transport_to_next: 'Overland into Bosnia and Herzegovina towards Mostar — a non-Schengen EES external border, roughly 3-6 minutes per person for the biometric registration; a passport is required (an ID card is not enough), and rental-car insurance often adds a €10-15/day Bosnia surcharge.',
+      transport_to_next: 'Overland into Bosnia and Herzegovina towards Mostar — a non-Schengen EES external border (EES fully live since 10 April 2026), roughly 3-6 minutes per person for the biometric registration off-peak — Fri/Sun summer-weekend peak traffic at busier crossings can run to hours instead, so avoid arriving in that window if the schedule allows; a passport is required (an ID card is not enough), and rental-car insurance often adds a €10-15/day Bosnia surcharge.',
     },
     {
       code: 'BA', name: 'Bosnia and Herzegovina', days: 6, budget: 300, lat: 43.8563, lng: 18.4131,
@@ -18348,7 +18348,7 @@ function rbBuildCroatiaBosniaSplitRoute() {
         { name: 'Sarajevo (Baščaršija)', lat: 43.8563, lng: 18.4131 },
       ],
       notes: "Mostar (2 days: Stari Most, a day trip out to the Kravice Waterfalls and Blagaj Tekija) — Sarajevo (2-3 days: Baščaršija, the Tunnel of Hope, the Trebević cable car). Budget ~€50/day. Season: May-June or September.",
-      transport_to_next: 'Back to Croatia via the Pelješac bridge (open since July 2022, skips the old Neum detour) to Split or Dubrovnik for the flight home — the same EES biometric registration applies on the way back out.',
+      transport_to_next: 'Back to Croatia via the Pelješac bridge (open since July 2022, skips the old Neum detour) to Split or Dubrovnik for the flight home — the same EES biometric registration applies on the way back out. Web check (2026-09): the bridge itself has a maintenance/renovation window scheduled October 2026-May 2027 — it stays open with no planned full closure, but expect occasional delays if travelling in that window.',
     },
   ], {
     best_starting_month: 'May',
@@ -18369,7 +18369,7 @@ function rbBuildBosniaMontenegroBudvaRoute() {
         { name: 'Trebinje', lat: 42.7106, lng: 18.3438 },
       ],
       notes: "Sarajevo (2 days) — Mostar (2 days) — Trebinje (1 day). Budget ~€50/day.",
-      transport_to_next: 'Overland from Trebinje into Montenegro towards Kotor — a non-Schengen-to-non-Schengen border, no EES here, generally quiet. Bosnia prices in convertible marks (KM), Montenegro unilaterally uses the euro despite not being in the EU — bring cash for both.',
+      transport_to_next: 'Overland from Trebinje into Montenegro towards Kotor — a non-Schengen-to-non-Schengen border, no EES here, generally quiet (25-90 minutes typical as of 2026-09) though summer peak weekends can still run to several hours. Bosnia prices in convertible marks (KM), Montenegro unilaterally uses the euro despite not being in the EU — bring cash for both.',
     },
     {
       code: 'ME', name: 'Montenegro', days: 4, budget: 230, lat: 42.4247, lng: 18.7712,
@@ -19126,7 +19126,7 @@ function rbBuildFrenchSpanishPyreneesRoute() {
         { name: 'Gavarnie (Cirque de Gavarnie)', lat: 42.6928, lng: -0.0092 },
         { name: 'Brèche de Roland', lat: 42.6875, lng: -0.0122 },
       ],
-      notes: "Lourdes (arrival) — Cauterets (2 days, the Pont d'Espagne) — Gavarnie (2 days, the Cirque de Gavarnie and, for fitter hikers, the Brèche de Roland). Entry: fly into Toulouse or Lourdes-Tarbes-Pyrénées airport, rental car for the whole trip. Budget ~€90-110/day. Season: strictly July-September, same hard boundary as the mountain-pass crossing into Spain below.",
+      notes: "Lourdes (arrival) — Cauterets (2 days, the Pont d'Espagne) — Gavarnie (2 days, the Cirque de Gavarnie and, for fitter hikers, the Brèche de Roland). Entry: fly into Toulouse or Lourdes-Tarbes-Pyrénées airport, rental car for the whole trip. Budget ~€90-110/day. Season: strictly July-September, same hard boundary as the mountain-pass crossing into Spain below. Travel advisory (2026-09): France is code yellow, not green — an elevated terrorism alert level in place since March 2024 (not new, just worth noting since Spain and every other country on this route's siblings sit at green) — stay alert in cities/crowded places and expect the possibility of ID/passport spot checks.",
       transport_to_next: "Drive over the Port de Boucharo/Puerto de Bujaruelo pass (2,270m) — the only direct road/hiking connection between the French and Spanish halves of the same Mont Perdu/Monte Perdido UNESCO World Heritage massif; narrow and single-lane, open only roughly July-September. Outside that window there is no direct crossing here at all — the only option is the long detour via Jaca/Pau (+3h).",
     },
     {
@@ -19189,7 +19189,7 @@ function rbBuildNorwaySwedenFjordsCapitalsRoute() {
         { name: 'Sognefjord / Nærøyfjord', lat: 60.8666, lng: 6.8666 },
         { name: 'Flåm (Flåm Railway)', lat: 60.8617, lng: 7.1136 },
       ],
-      notes: "Oslo (3 days: Vigeland Park, the Viking Ship/Fram museums) — by train to Bergen, then the classic Sognefjord/Nærøyfjord and Flåm Railway circuit (4 days) — same fjord content as Bergen + Fjords (6 days) ⛴️ (rbBuildBergenFjordsRoute). Budget ~€140/day — Norway dominates this route's overall cost. Season: June-August for the full fjord-tour timetable and the midnight-sun window. Web check (2026-08): the Bergen Railway (Oslo-Bergen, ~6h30, one of Europe's most scenic train rides) needs booking ahead in summer; the Flåm Railway costs roughly 570 NOK one-way/850 NOK return (2026 prices).",
+      notes: "Oslo (3 days: Vigeland Park, the Viking Ship/Fram museums) — by train to Bergen, then the classic Sognefjord/Nærøyfjord and Flåm Railway circuit (4 days) — same fjord content as Bergen + Fjords (6 days) ⛴️ (rbBuildBergenFjordsRoute). Budget ~€140/day — Norway dominates this route's overall cost. Season: June-August for the full fjord-tour timetable and the midnight-sun window. Web check (2026-08): the Bergen Railway (Oslo-Bergen, ~6h30, one of Europe's most scenic train rides) needs booking ahead in summer — tickets release 90 days out and the cheapest fares sell first, book 6-8 weeks ahead for July; the Flåm Railway costs roughly 510 NOK one-way/730 NOK return in high season (2026 prices, corrected 2026-09 — originally overstated at 570/850 NOK).",
       transport_to_next: 'Train back to Oslo, then onward by train to Gothenburg, Sweden (Oslo-Gothenburg, ~4h) — a Nordic Passport Union crossing, no border control.',
     },
     {
@@ -19706,6 +19706,57 @@ function rbMigrateStandaloneCountryRoutesEnglish() {
       });
     });
   });
+
+  if (touched) rbSave();
+}
+
+/**
+ * Draft Route Verification (DRAFT_ROUTE_VERIFICATION_PLAN.md), Tier 2 batch 1: 4 field corrections
+ * out of 11 combo routes' 2026-09 consistency check (7 came back CONFIRMED with no field changes).
+ * Patches only browsers that already seeded these routes before this correction landed in source.
+ */
+function rbMigrateDraftVerificationTier2Batch1() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_DRAFT_VERIFICATION_TIER2_BATCH1)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_DRAFT_VERIFICATION_TIER2_BATCH1, '1');
+
+  let touched = false;
+  const patchField = (routeName, code, field, oldValue, newValue) => {
+    const route = rbRoutes.find(r => r.name === routeName);
+    if (!route) return;
+    const block = route.blocks.find(b => b.country_code === code);
+    if (!block || block[field] !== oldValue) return;
+    block[field] = newValue;
+    touched = true;
+  };
+
+  patchField(
+    'Norway + Sweden: Fjords & Capitals (12 days) ⛴️', 'NO', 'notes',
+    "Oslo (3 days: Vigeland Park, the Viking Ship/Fram museums) — by train to Bergen, then the classic Sognefjord/Nærøyfjord and Flåm Railway circuit (4 days) — same fjord content as Bergen + Fjords (6 days) ⛴️ (rbBuildBergenFjordsRoute). Budget ~€140/day — Norway dominates this route's overall cost. Season: June-August for the full fjord-tour timetable and the midnight-sun window. Web check (2026-08): the Bergen Railway (Oslo-Bergen, ~6h30, one of Europe's most scenic train rides) needs booking ahead in summer; the Flåm Railway costs roughly 570 NOK one-way/850 NOK return (2026 prices).",
+    "Oslo (3 days: Vigeland Park, the Viking Ship/Fram museums) — by train to Bergen, then the classic Sognefjord/Nærøyfjord and Flåm Railway circuit (4 days) — same fjord content as Bergen + Fjords (6 days) ⛴️ (rbBuildBergenFjordsRoute). Budget ~€140/day — Norway dominates this route's overall cost. Season: June-August for the full fjord-tour timetable and the midnight-sun window. Web check (2026-08): the Bergen Railway (Oslo-Bergen, ~6h30, one of Europe's most scenic train rides) needs booking ahead in summer — tickets release 90 days out and the cheapest fares sell first, book 6-8 weeks ahead for July; the Flåm Railway costs roughly 510 NOK one-way/730 NOK return in high season (2026 prices, corrected 2026-09 — originally overstated at 570/850 NOK)."
+  );
+
+  patchField(
+    'Croatia + Bosnia via Split (7-10 days) 🌉', 'HR', 'transport_to_next',
+    "Overland into Bosnia and Herzegovina towards Mostar — a non-Schengen EES external border, roughly 3-6 minutes per person for the biometric registration; a passport is required (an ID card is not enough), and rental-car insurance often adds a €10-15/day Bosnia surcharge.",
+    "Overland into Bosnia and Herzegovina towards Mostar — a non-Schengen EES external border (EES fully live since 10 April 2026), roughly 3-6 minutes per person for the biometric registration off-peak — Fri/Sun summer-weekend peak traffic at busier crossings can run to hours instead, so avoid arriving in that window if the schedule allows; a passport is required (an ID card is not enough), and rental-car insurance often adds a €10-15/day Bosnia surcharge."
+  );
+  patchField(
+    'Croatia + Bosnia via Split (7-10 days) 🌉', 'BA', 'transport_to_next',
+    "Back to Croatia via the Pelješac bridge (open since July 2022, skips the old Neum detour) to Split or Dubrovnik for the flight home — the same EES biometric registration applies on the way back out.",
+    "Back to Croatia via the Pelješac bridge (open since July 2022, skips the old Neum detour) to Split or Dubrovnik for the flight home — the same EES biometric registration applies on the way back out. Web check (2026-09): the bridge itself has a maintenance/renovation window scheduled October 2026-May 2027 — it stays open with no planned full closure, but expect occasional delays if travelling in that window."
+  );
+
+  patchField(
+    'Bosnia + Montenegro + Budva (7-10 days) ⛰️', 'BA', 'transport_to_next',
+    "Overland from Trebinje into Montenegro towards Kotor — a non-Schengen-to-non-Schengen border, no EES here, generally quiet. Bosnia prices in convertible marks (KM), Montenegro unilaterally uses the euro despite not being in the EU — bring cash for both.",
+    "Overland from Trebinje into Montenegro towards Kotor — a non-Schengen-to-non-Schengen border, no EES here, generally quiet (25-90 minutes typical as of 2026-09) though summer peak weekends can still run to several hours. Bosnia prices in convertible marks (KM), Montenegro unilaterally uses the euro despite not being in the EU — bring cash for both."
+  );
+
+  patchField(
+    'French + Spanish Pyrenees (9 days) 🥖', 'FR', 'notes',
+    "Lourdes (arrival) — Cauterets (2 days, the Pont d'Espagne) — Gavarnie (2 days, the Cirque de Gavarnie and, for fitter hikers, the Brèche de Roland). Entry: fly into Toulouse or Lourdes-Tarbes-Pyrénées airport, rental car for the whole trip. Budget ~€90-110/day. Season: strictly July-September, same hard boundary as the mountain-pass crossing into Spain below.",
+    "Lourdes (arrival) — Cauterets (2 days, the Pont d'Espagne) — Gavarnie (2 days, the Cirque de Gavarnie and, for fitter hikers, the Brèche de Roland). Entry: fly into Toulouse or Lourdes-Tarbes-Pyrénées airport, rental car for the whole trip. Budget ~€90-110/day. Season: strictly July-September, same hard boundary as the mountain-pass crossing into Spain below. Travel advisory (2026-09): France is code yellow, not green — an elevated terrorism alert level in place since March 2024 (not new, just worth noting since Spain and every other country on this route's siblings sit at green) — stay alert in cities/crowded places and expect the possibility of ID/passport spot checks."
+  );
 
   if (touched) rbSave();
 }
