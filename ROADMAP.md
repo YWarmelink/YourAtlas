@@ -16,6 +16,20 @@ Agreed direction (2026-07 brainstorm), not yet designed or scheduled. **Criterio
 - **Universal search across trips/expeditions/notes** — with 13 expeditions full of long `notes` fields, plus the Trips sheet, "where was that tip about X" is already a real problem. Client-side text search over data that's already loaded (no new data source needed).
 - **Bucket-list counter across Route Builder expeditions** — a simple "X countries done, Y to go" tally across all 13 expeditions combined. Aggregation over existing data, no new fields.
 - **Yearly travel recap** — a "wrapped"-style end-of-year summary (countries visited, km traveled, money spent, top trip), pulling from Trips + Countries + Route Builder together. Natural home is here since it spans all three, rather than in youridealtravel.
+- **Trips vs. Route Builder — clearer page-level naming/tagline** (2026-09 idea, not designed) —
+  Youri wants the two pages to visually/textually signal their distinction more clearly: Trips =
+  what he's actually done or concretely planned, Route Builder = future/someday aspirations. Scoped
+  during the 2026-09 conversation about it: **don't rename "Route Builder"** (it's an established
+  name across months of content, and a full rename would ripple through the navbar, page titles and
+  a large number of README/CHANGELOG/CLAUDE.md prose references for little functional gain — also,
+  Route Builder's own per-route Status field already includes "Completed", which would clash with a
+  literal "Future Trips" page name). Instead: add a short, clear tagline/subtitle to each page — e.g.
+  Trips gets something like "what I've actually done or planned", Route Builder gets something like
+  "future adventures & someday ideas". Lightweight (a couple of lines of HTML/copy), no data-model
+  changes. Related to, but distinct from, the "Rethink the Trips ↔ Route Builder split" item below —
+  that one is about the underlying commitment-vs-scale data model; this one is just page-level
+  labeling/copy on top of whatever that model already is.
+
 - **Trip detail page — look and feel pass** (2026-08 idea, not designed) — Youri wants to revisit how a trip actually looks when you open it (`trip.html`/`js/pages/tripDetail.js`: banner, overview, map, itinerary, notes, sidebar) — currently a fairly plain/functional layout. No direction decided yet on what changes (layout, visual style, information density); revisit once there's time to actually think it through, likely worth doing after a first batch of `EUROPA_TRIP_IDEAS.md` trips exist so there's real varied content to design against instead of just Youri's own handful of trips.
 
 - **Route Builder Module Library** — the content side of the modularization analysis in [`ROUTE_BUILDER_MODULES.md`](ROUTE_BUILDER_MODULES.md) is done: 27 new standalone routes now exist alongside 11 of the 13 original expeditions (see `CHANGELOG.md`). What's left is the technical layer described in that doc's "Route Builder implementation" section — evolving the existing Block Library into a "Module Library" with metadata (`standalone_score`, `season`, `possible_next_blocks`, etc.), a per-expedition "possible standalone trips" UI, and a "build your own expedition" flow that merges saved modules while keeping their internal region structure. Naming, exact metadata fields and whether to build compatible/incompatible-blocks scoring are all intentionally still open — see the doc's own open questions. Not started.
