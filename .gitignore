@@ -3,3 +3,4 @@ Thumbs.db
 *.log
 scratch_live_routes.json
 past_trips_backfill.csv
+trip_destinations_backfill.csv

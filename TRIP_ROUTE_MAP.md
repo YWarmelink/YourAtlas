@@ -1,7 +1,12 @@
 # Trips — Route Map Plan
 
-Status: **data model, plumbing and map UI done (2026-08). Only the Sheet content is missing** —
-nothing has coordinates yet, so the map doesn't show up anywhere until that's filled in.
+Status: **live (2026-09) for one trip.** The `TripDestinations` Sheet tab now exists, is published
+as CSV, and is wired into `js/config/users.js` — the pilot trip turned out to be **SEA2024
+(Vietnam/Cambodia/Thailand)**, not South Korea as originally planned (Youri picked SEA2024 first
+since he had real, already-traveled destinations to source coordinates for). 12 destinations filled
+in (Hanoi through Bangkok, including the two Hanoi return-stops as separate rows since the route
+genuinely revisits it). South Korea still has zero `TripDestinations` rows and needs its own
+adjustments first (see "What's next" below) before it gets the same treatment.
 Follow-up on the roadmap's "Rethink the Trips ↔ Route Builder split" item (see `ROADMAP.md`).
 
 Pick this back up by pointing Claude Code at this file, or just say "let's continue the Trips route map."
@@ -65,18 +70,34 @@ instead of nested in a `blocks` array.
   relevant view.
 - Shared CSS for this (`.atlas-map-*` classes) lives in `css/components.css`, not duplicated
   per-page — same classes routeMap.js's markup expects.
-- **Not visually verified in a real browser** (none was available this session) — only
-  Node-level syntax + logic-with-mocked-Leaflet smoke tests. Worth an actual look once there's
-  real coordinate data to render.
+- **Still not visually confirmed in a real browser** (2026-09: no browser automation tool was
+  available in this session either, and Youri hadn't checked it live as of this writing) — the
+  full data path was traced by hand instead (`getTripDestinations('SEA2024')` correctly filters/
+  sorts/parses all 12 rows as valid floats, `trip.html` loads Leaflet/topojson/`routeMap.js` in the
+  right order before `tripDetail.js`, and all three functions `tripDetail.js` calls
+  (`atlasGetWorldGeoJSON`/`atlasEnsureMiniMap`/`atlasRenderRouteLine`) exist in `routeMap.js` with
+  matching names) — a strong code-level signal but not a substitute for actually looking at it.
+  **Next session: confirm the Route Map section actually renders on SEA2024's trip page** before
+  treating this as fully done.
+- **Sheet-editing gotcha hit while filling this in**: pasting lat/lng values into Google Sheets
+  under a Dutch locale can silently mangle them — "21.0285" got reinterpreted as "210.285" (period
+  read as a thousands separator) until the lat/lng columns were explicitly set to **Format → Number
+  → Plain text** before pasting. Worth doing that pre-emptively for any future numeric-coordinate
+  paste into this Sheet (South Korea's turn included).
+- **A per-country colored-map view (matching Route Builder's "🌍 Landen" mode) was considered and
+  deliberately skipped** (2026-09) — `TripDestinations` rows do carry `country_code`, so it would be
+  technically buildable, but Youri's Map page already shows sitewide country-visited coloring;
+  repeating that per-trip would be redundant with what the route-line view uniquely offers (the
+  actual journey shape/order for that one trip). Not ruled out forever, just not worth building now.
 
 ## What's next
 
-1. **The Sheet part (Youri, whenever there's time)** — **South Korea** (planned & booked) is the
-   pilot trip. It also needs some small adjustments of its own beyond just destinations/
-   coordinates — details TBD, sort those out first when starting on it. See `README.md`'s
-   "Trips route map" section for the exact Sheet checklist (tab + columns, publish as CSV, fill
-   in coordinates, send Claude the CSV URL to wire into `js/config/users.js`).
-2. **Route Builder → shared util migration** (later, separate step, not blocking) — once there's
+1. **South Korea** — still the originally-planned second pilot, needs its own trip-detail
+   adjustments sorted out first (details TBD, per the original plan), then the same
+   `TripDestinations` treatment SEA2024 just got.
+2. **Confirm SEA2024's Route Map actually renders** (see the browser-verification gap above) —
+   the very next thing to check, before assuming this feature works end-to-end.
+3. **Route Builder → shared util migration** (later, separate step, not blocking) — once there's
    a browser available to verify, move Route Builder's own map drawing onto
    `js/utils/routeMap.js` too, retiring its private copy of the same logic. Verify Route
    Builder's map still renders identically before/after — that's the whole point of waiting on

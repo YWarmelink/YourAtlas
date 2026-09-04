@@ -495,27 +495,29 @@ loaded. Groups results by source, each result links straight to the right page (
 results deep-link via `route-builder.html?open=<id>`, opening that expedition's editor
 directly). See `js/pages/search.js`.
 
-## Trips route map (in progress)
+## Trips route map (live for one trip, 2026-09)
 
-Trips can now show a "🔍 Gedetailleerd"-style route line too, same idea as Route Builder's —
-see [`TRIP_ROUTE_MAP.md`](TRIP_ROUTE_MAP.md) for the full plan. The map code
-(`js/utils/routeMap.js`, wired into `trip.html`/`js/pages/tripDetail.js`) is done and only
-shows up on a trip once it has ≥2 destinations with coordinates. **Nothing has coordinates
-yet** — that needs a new Sheet tab, which is the next action:
+Trips can show a "🔍 Gedetailleerd"-style route line too, same idea as Route Builder's — see
+[`TRIP_ROUTE_MAP.md`](TRIP_ROUTE_MAP.md) for the full plan. The map code (`js/utils/routeMap.js`,
+wired into `trip.html`/`js/pages/tripDetail.js`) is done and only shows up on a trip once it has
+≥2 destinations with coordinates.
 
-**Pilot trip: South Korea** (planned & booked) — first one to get `TripDestinations` rows.
+**First trip with real data: SEA2024 (Vietnam/Cambodia/Thailand)** — not South Korea as originally
+planned; Youri picked this one first since he had real, already-traveled stops to source
+coordinates for. 12 destinations filled in via a new `TripDestinations` Sheet tab, published as
+CSV and wired into `js/config/users.js`. Not yet visually confirmed in a browser (see
+`TRIP_ROUTE_MAP.md` for the code-level trace done instead) — check that before treating this as
+fully proven end-to-end.
 
-**Reminder for when you start on it:** the South Korea trip itself also needs some small
-adjustments beyond just adding destinations/coordinates — exact details still TBD, sort those
-out first when you sit down with it, then do the destinations below.
-
-**Youri — next time you're in the Google Sheet:**
-1. Add a tab named `TripDestinations` with columns: `trip_id | order | country | country_code | name | lat | lng | notes`.
-2. `File → Share → Publish to web` → CSV, same as the other tabs.
-3. Fill in rows for the South Korea trip first (coordinates: right-click a spot in Google Maps
-   → the lat/lng shows at the top of the context menu, click to copy).
-4. Send Claude the published CSV URL — it swaps into `js/config/users.js`'s `trip_destinations`
-   source (currently pointed at an empty local JSON fallback as a placeholder).
+**South Korea** still needs its own trip-detail adjustments sorted out first (exact details still
+TBD), then the same `TripDestinations` treatment. General recipe for any future trip:
+1. Add rows to the existing `TripDestinations` tab: `trip_id | order | country | country_code | name | lat | lng | notes`.
+2. Coordinates: right-click a spot in Google Maps → the lat/lng shows at the top of the context
+   menu, click to copy. **Set the lat/lng columns to Format → Number → Plain text before pasting**
+   — a Dutch-locale Sheet can otherwise silently mangle "21.0285" into "210.285" (period read as a
+   thousands separator).
+3. It publishes automatically alongside the rest of the workbook (same "publish entire document"
+   setting already in place) — no separate publish step needed per new tab.
 
 ## Open items
 

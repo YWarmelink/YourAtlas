@@ -12,6 +12,24 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Trips route map goes live for its first real trip (2026-09-04)** — the map code
+  (`js/utils/routeMap.js`) had been sitting ready since 2026-08 with zero coordinate data (see
+  `TRIP_ROUTE_MAP.md`). Youri picked **SEA2024 (Vietnam/Cambodia/Thailand)** as the actual pilot
+  instead of the originally-planned South Korea, since he had real destinations to source
+  coordinates for. Added the new `TripDestinations` Sheet tab (12 rows: Hanoi through Bangkok,
+  including two genuine Hanoi return-stops as the itinerary actually revisited it), published it
+  as CSV, and wired it into `js/config/users.js`'s `trip_destinations` source. Hit a real
+  Sheet-editing gotcha along the way: pasting lat/lng under a Dutch-locale Sheet silently mangled
+  "21.0285" into "210.285" (period read as a thousands separator) until the columns were set to
+  Plain Text before pasting — documented in `TRIP_ROUTE_MAP.md` for next time. Traced the full code
+  path by hand to confirm it should render (data fetch → parse → ≥2-valid-coordinates gate →
+  Leaflet/topojson script order → the three `routeMap.js` functions `tripDetail.js` calls all
+  exist) since no browser automation tool was available to actually screenshot it this session —
+  **still needs a real visual confirmation** before calling this fully proven. Considered and
+  explicitly skipped: a per-country colored-map view matching Route Builder's "🌍 Landen" mode —
+  `TripDestinations` rows do carry `country_code` so it's technically buildable, but would be
+  redundant with the sitewide Map page's existing country-visited coloring.
+
 - **Two new Route Builder routes replacing Trips-sheet wishlist entries (2026-09-04)** — while
   backfilling old trips into the `Trips` sheet (see `PAST_TRIPS_PLAN.md`), Youri realized his 3
   "Planned"/"Wishlist" rows there (Balkan Loop, Malaysia+Borneo+Brunei, Peru+Bolivia) were really

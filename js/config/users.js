@@ -26,11 +26,10 @@ const USERS = {
         url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSOk8DnxhAXV3yw9ZuegXNLcvQebAUFdz4mXcE8hjUqPBhlAFkSZ5uf9kSWufmRmOpsocPPbmHQGrvf/pub?gid=1297443404&single=true&output=csv',
         fallback: 'data/youri/countries.json',
       },
-      // No published Sheet tab yet — see TRIP_ROUTE_MAP.md. Once the `TripDestinations`
-      // tab exists and is published, swap this to the same google_sheets_csv shape as above.
       trip_destinations: {
-        type: 'json',
-        url: 'data/youri/trip_destinations.json',
+        type: 'google_sheets_csv',
+        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSOk8DnxhAXV3yw9ZuegXNLcvQebAUFdz4mXcE8hjUqPBhlAFkSZ5uf9kSWufmRmOpsocPPbmHQGrvf/pub?gid=1003412636&single=true&output=csv',
+        fallback: 'data/youri/trip_destinations.json',
       },
     },
   },
