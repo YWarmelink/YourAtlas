@@ -20101,3 +20101,197 @@ function rbMigrateDraftVerificationTier1() {
 
   if (touched) rbSave();
 }
+
+// ---- 2026-09: two new standalone combo routes replacing Trips-sheet wishlist entries Youri
+// decided belong in Route Builder instead (someday-aspirations, not concretely planned trips) —
+// Balkan Loop already had an exact match (Balkan 🐺, built 2026-08), these two didn't.
+
+function rbBuildPeruBoliviaAndesSaltFlatsRoute() {
+  return rbBuildFlatSeedRoute('Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂', [
+    {
+      code: 'PE', name: 'Peru', days: 1, budget: 30, lat: -12.0464, lng: -77.0428,
+      destinations: [
+        { name: 'Lima (arrival, transit only)', lat: -12.0464, lng: -77.0428 },
+      ],
+      notes: "Entry: flight Amsterdam-Lima (with a connection, ±14-16 hours; from ±€800-950 return; best period June-August). Web-research price indication 2026-09, a snapshot. Deliberately just an overnight transit here, not a sightseeing stop — there's no direct international flight into Cusco (all arrivals route through Lima's Jorge Chávez airport, single-terminal since June 2026), but Lima itself is skippable as a destination: it's currently under a local state of emergency for rising violent crime (tourist zones Miraflores/San Isidro/Barranco are explicitly called low-risk even so, but there's no reason to linger). Fly onward to Cusco the same or next day (149 flights/week, ~1h20, earliest departs 04:40).",
+      transport_to_next: 'Domestic flight Lima-Cusco (~1h20, frequent).',
+    },
+    {
+      code: 'PE', name: 'Peru', days: 3, budget: 90, lat: -13.5320, lng: -71.9675,
+      destinations: [
+        { name: 'Cusco (Sacsayhuamán, Qorikancha)', lat: -13.5320, lng: -71.9675 },
+      ],
+      notes: 'Cusco (2 days on arrival + 1 buffer day later in the route) — altitude acclimatization matters here (3,400m), take the first day slow. Budget ~€25-35/day.',
+      transport_to_next: 'Car/bus to the Sacred Valley (~1h to Pisac).',
+    },
+    {
+      code: 'PE', name: 'Peru', days: 2, budget: 60, lat: -13.4271, lng: -71.8465,
+      destinations: [
+        { name: 'Pisac (market)', lat: -13.4271, lng: -71.8465 },
+        { name: 'Ollantaytambo', lat: -13.2585, lng: -72.2632 },
+        { name: 'Chinchero / Moray / Salineras', lat: -13.3833, lng: -72.0500 },
+      ],
+      notes: 'Pisac market, Ollantaytambo\'s ruins, and Chinchero/Moray/Salineras. Budget ~€25-35/day.',
+      transport_to_next: 'Train from Ollantaytambo to Aguas Calientes for Machu Picchu.',
+    },
+    {
+      code: 'PE', name: 'Peru', days: 2, budget: 60, lat: -13.1547, lng: -72.5254,
+      destinations: [
+        { name: 'Machu Picchu', lat: -13.1631, lng: -72.5450 },
+        { name: 'Aguas Calientes', lat: -13.1547, lng: -72.5254 },
+      ],
+      notes: "Web check (2026-09): entrance ticket ~S/163 (~$55, includes a new S/11 conservation fee added May 2026); train one-way ~$72 (Expedition) to ~$115 (Vistadome), cheaper departing from Ollantaytambo than Cusco/Poroy. A full self-organized 2-day trip (train + entrance + 1 night in Aguas Calientes) runs ~€150-250 all-in as a separate cost on top of the daily budget; a guided package with a mid-range hotel runs €230-350. Budget ~€25-35/day for the base daily rate.",
+      transport_to_next: 'Train back to Cusco (the buffer day happens here), then bus to Puno (~7h).',
+    },
+    {
+      code: 'PE', name: 'Peru', days: 2, budget: 50, lat: -15.8402, lng: -70.0219,
+      destinations: [
+        { name: 'Uros floating islands', lat: -15.8200, lng: -69.9800 },
+        { name: 'Taquile Island', lat: -15.7833, lng: -69.6833 },
+      ],
+      notes: 'Puno as the base for the Uros floating islands and Taquile Island on Lake Titicaca. Budget ~€20-30/day.',
+      transport_to_next: 'Bus to the border at Yunguyo/Kasani (~3-4h incl. border formalities), then on to Copacabana, Bolivia — Dutch passport holders are visa-free for both Peru and Bolivia (up to 90 days each), confirmed current, no e-visa needed for either.',
+    },
+    {
+      code: 'BO', name: 'Bolivia', days: 2, budget: 50, lat: -16.1667, lng: -69.0833,
+      destinations: [
+        { name: 'Copacabana', lat: -16.1667, lng: -69.0833 },
+        { name: 'Isla del Sol (day trip)', lat: -16.0167, lng: -69.1667 },
+      ],
+      notes: 'Copacabana on the Bolivian side of Lake Titicaca, with a day trip to Isla del Sol. Budget ~€20-30/day.',
+      transport_to_next: 'Bus to La Paz (~3-4h).',
+    },
+    {
+      code: 'BO', name: 'Bolivia', days: 2, budget: 66, lat: -16.5000, lng: -68.1193,
+      destinations: [
+        { name: 'Valle de la Luna', lat: -16.5667, lng: -68.0667 },
+        { name: 'Mi Teleférico (cable car)', lat: -16.5000, lng: -68.1193 },
+        { name: "Witches' Market", lat: -16.4958, lng: -68.1381 },
+      ],
+      notes: "La Paz: Valle de la Luna, the Mi Teleférico cable-car network, the Witches' Market (Death Road cycling is a well-known optional add-on, not included here). Budget ~€25-40/day. ⚠️ Web check (2026-09): Bolivia's state of emergency (declared 20 June 2026 against road blockades) is due to expire ~18-20 September 2026 — an extension is politically contested (needs two-thirds approval in the Plurinational Legislative Assembly, unions publicly oppose it) and genuinely unresolved as of this writing. Current unrest is concentrated in Santa Cruz/Cochabamba departments, not on this La Paz-Oruro-Uyuni corridor, but re-check nederlandwereldwijd.nl close to departure — roads/airports/borders \"can temporarily and unexpectedly close for multiple days\" per that advisory's own wording.",
+      transport_to_next: 'Overnight bus or short flight La Paz-Uyuni.',
+    },
+    {
+      code: 'BO', name: 'Bolivia', days: 4, budget: 100, lat: -20.1338, lng: -67.4891,
+      destinations: [
+        { name: 'Uyuni Salt Flat', lat: -20.1338, lng: -67.4891 },
+        { name: 'Train Cemetery', lat: -20.2167, lng: -66.8500 },
+        { name: 'Incahuasi Island', lat: -20.2667, lng: -67.6667 },
+        { name: 'Colored lagoons & geysers (Eduardo Avaroa NP)', lat: -22.3333, lng: -67.7833 },
+      ],
+      notes: "The classic 3-day/2-night jeep tour: the train cemetery, the salt flats themselves, Incahuasi Island, and the colored lagoons and geysers of Eduardo Avaroa NP. Web check (2026-09): tour prices have risen since the 2026-07 estimate — realistic Budget-Comfort range is now $150-280 (was quoted €140-180), a separate cost on top of the ~€25/day ground budget. Season note: the dry season (Jun-Aug, this route's own recommended window) gives the classic white salt crust, not the famous mirror-reflection photos — those need the wetter Dec-April shoulder season instead, a deliberate trade-off for aligning with Peru's own dry season.",
+      transport_to_next: 'Bus or flight back to La Paz to connect with the international flight home — build in a buffer day here given the blockade history above, rather than a tight same-day connection.',
+    },
+    {
+      code: 'BO', name: 'Bolivia', days: 2, budget: 60, lat: -16.5000, lng: -68.1193,
+      destinations: [
+        { name: 'La Paz (departure buffer)', lat: -16.5000, lng: -68.1193 },
+      ],
+      notes: "A deliberate buffer before the international flight home, given Bolivia's history of unexpected road/airport closures during unrest — see the La Paz leg's notes above. Budget ~€25-35/day.",
+      transport_to_next: 'End of this route — return flight from La Paz to Amsterdam (with a connection).',
+    },
+  ], {
+    best_starting_month: 'June',
+    travel_style: 'Domestic flight Lima-Cusco, train for Machu Picchu, buses between Cusco/Puno/Copacabana/La Paz, an organized jeep tour for Uyuni.',
+    climate_summary: "June-August is the dry season in both the Peruvian Andes and Bolivia's altiplano — matches Youri's own original 'dry season Jun-Sep' target. Trade-off: this is also Andean winter, with very cold nights at altitude (Uyuni and La Paz can drop below -10°C overnight) — pack accordingly.",
+    description: "Cusco, the Sacred Valley and Machu Picchu, Lake Titicaca on both the Peruvian (Puno) and Bolivian (Copacabana/Isla del Sol) sides, La Paz, and the Uyuni Salt Flats.",
+    notes: "Built (2026-09) to replace a Trips-sheet wishlist entry ('Peru + Bolivia Andes & Salt Flats', 21 days/~€3,000/dry season Jun-Sep) that Youri decided belongs in Route Builder instead, as a someday-aspiration rather than a concretely planned trip. Researched via a WebSearch-backed research agent — a curated ~20-day version of Youri's own vision (Andes, Machu Picchu, Uyuni Salt Flats), not a mechanical concatenation of the full standalone Peru (35 days) and Bolivia (17 days) routes (which together would run 52 days). Deliberately cut from Peru's full itinerary: Máncora (north coast), Ica/Huacachina (south coast) and Huaraz — all multi-day detours away from the Cusco-Puno-Bolivia line; Arequipa was the closest cut geographically but still adds 3+ days with Colca Canyon. Deliberately cut from Bolivia's full itinerary: Sucre and Potosí, which would need a ~4-5 day additional loop south of Uyuni. The Amazon (Youri's own 'optional' note) was considered — a worthwhile Puerto Maldonado/Tambopata add-on needs 3-4 days minimum and would push the total to ~23-24 days — Youri's explicit call: leave it out, keep the tighter ~20-day version. Ground-cost budget (~€570 for 20 days) plus the international flight (~€800-950) and separate Machu Picchu/Uyuni tour costs (~€400-530 combined) comes to roughly €1,800-2,050 all-in — lower than Youri's original €3,000 estimate, since this repo's already-verified Peru/Bolivia daily rates (~€25-35/day) are cheaper than his rough guess assumed. Not yet checked against a specific travel date — re-verify Bolivia's state-of-emergency status (see the La Paz leg's notes) before actually booking.",
+  });
+}
+
+function rbBuildMalaysiaBorneoBruneiRoute() {
+  return rbBuildFlatSeedRoute('Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧', [
+    {
+      code: 'MY', name: 'Malaysia', days: 4, budget: 200, lat: 3.1390, lng: 101.6869,
+      destinations: [
+        { name: 'Petronas Towers / KLCC', lat: 3.1579, lng: 101.7116 },
+        { name: 'Batu Caves', lat: 3.2379, lng: 101.6840 },
+        { name: 'Chinatown & Merdeka Square', lat: 3.1428, lng: 101.6953 },
+        { name: 'Malacca (optional day trip)', lat: 2.1896, lng: 102.2501 },
+      ],
+      notes: "Entry: direct KLM flight Amsterdam-Kuala Lumpur (±12h25; from ±€650-950 return; best period April-May, secondary option August — confirmed current, KLM is the only nonstop carrier, ~4x/week). Web check (2026-09): Malaysia requires a Malaysia Digital Arrival Card, registered online within 3 days before arrival — a mandatory registration step, not a visa (Dutch passport holders remain visa-free for tourism). KL city (Petronas Towers, Batu Caves, Chinatown/Merdeka Square) plus an optional Malacca day trip (~2h bus each way) — deliberately just the capital here, not the full Langkawi/Penang/Cameron Highlands peninsula circuit, since Youri's own trip notes named only 'KL' for the city component. Budget ~€50/day. Travel advisory: Malaysia overall is yellow — travel possible, be aware of specific security risks (see the Semporna leg below for a more serious regional exception).",
+      transport_to_next: 'Direct flight Kuala Lumpur-Bandar Seri Begawan (Royal Brunei/Malaysia Airlines, ~2h).',
+    },
+    {
+      code: 'BN', name: 'Brunei', days: 2, budget: 240, lat: 4.9031, lng: 114.9398,
+      destinations: [
+        { name: 'Bandar Seri Begawan', lat: 4.9031, lng: 114.9398 },
+        { name: 'Kampong Ayer', lat: 4.8875, lng: 114.9425 },
+        { name: 'Ulu Temburong NP (guided day tour)', lat: 4.5333, lng: 115.1667 },
+      ],
+      notes: "Bandar Seri Begawan (Kampong Ayer, Sultan Omar Ali Mosque, Royal Regalia Museum) plus a full-day guided Ulu Temburong NP tour — confirmed still mandatory-guide-only, no independent access, ~BND 140-180 (~€115-150) all-in including transfers/permit/guide/lunch, a separate cost; only 4 licensed operators run it. Budget ~€120/day (Brunei is genuinely pricier than its neighbors). Visa-free for Dutch passport holders up to 90 days, no changes. Travel advisory: yellow, general risks only (earthquakes/floods in rainy season, petty crime, strict Sharia-law enforcement on alcohol/dress/behavior) — no elevated regional warning.",
+      transport_to_next: 'Direct flight Bandar Seri Begawan-Kota Kinabalu (Royal Brunei/Malaysia Airlines, ~40 min, ~11-14x/week) — a real upgrade over the old overland bus/ferry-via-Labuan option, which stays available as a slower budget alternative.',
+    },
+    {
+      code: 'MY', name: 'Malaysia', days: 1, budget: 65, lat: 5.9788, lng: 116.0753,
+      destinations: [
+        { name: 'Kota Kinabalu waterfront', lat: 5.9788, lng: 116.0753 },
+      ],
+      notes: 'Kota Kinabalu on arrival — city and waterfront, base for the Mount Kinabalu climb next. Budget ~€65/day.',
+      transport_to_next: 'Transfer to Kinabalu Park HQ (~2h drive) for the climb.',
+    },
+    {
+      code: 'MY', name: 'Malaysia', days: 3, budget: 580, lat: 6.0754, lng: 116.5580,
+      destinations: [
+        { name: 'Mount Kinabalu (Low\'s Peak summit)', lat: 6.0754, lng: 116.5580 },
+        { name: 'Laban Rata (overnight rest stop)', lat: 6.0667, lng: 116.5500 },
+      ],
+      notes: "Youri's explicit call: the Mount Kinabalu 2D1N summit climb, added on top of the base itinerary. Web check (2026-09): confirmed as a real, expensive, physically demanding package, not something to fold casually into a daily budget — 2D1N package ~RM2,790-2,890 (~€560-580) per non-Malaysian, including the mandatory guide (RM350) and permit (RM400); the budget field here reflects that all-in package cost for these 3 days (transfer + climb + descent), not a normal daily rate. Bookings for 2026 opened 1 December 2025 via sabapakeco.com and peak-period slots fill fast — book well ahead. Doesn't add wildlife value (it's a mountaineering objective, not orangutans/proboscis monkeys) but Youri wants it included regardless.",
+      transport_to_next: 'Transfer back to Kota Kinabalu, then on to Sandakan (fly or drive) for Sepilok.',
+    },
+    {
+      code: 'MY', name: 'Malaysia', days: 2, budget: 130, lat: 5.8742, lng: 117.9478,
+      destinations: [
+        { name: 'Sepilok Orang-utan Rehabilitation Centre', lat: 5.8742, lng: 117.9478 },
+        { name: 'Rainforest Discovery Centre', lat: 5.8781, lng: 117.9464 },
+        { name: 'Bornean Sun Bear Conservation Centre', lat: 5.8756, lng: 117.9481 },
+      ],
+      notes: 'Sepilok: the Orang-utan Rehabilitation Centre, the Rainforest Discovery Centre canopy walk, and the Sun Bear Conservation Centre. Sepilok entry ~RM90 (~€18) for foreigners, confirmed current. Budget ~€65/day.',
+      transport_to_next: 'Transfer to Sukau/Bilit on the Kinabatangan River (~1.5-2h).',
+    },
+    {
+      code: 'MY', name: 'Malaysia', days: 3, budget: 210, lat: 5.5000, lng: 118.3667,
+      destinations: [
+        { name: 'Kinabatangan River wildlife cruises', lat: 5.5000, lng: 118.3667 },
+      ],
+      notes: 'A multi-night riverside lodge stay rather than a single day trip — confirmed via research that consecutive dawn/dusk cruises significantly raise wildlife-sighting odds (proboscis monkeys, orangutans, pygmy elephants, hornbills) over a one-off visit. Includes a guided night walk. Budget ~€70/day (lodge packages typically bundle meals and cruises into the rate).',
+      transport_to_next: 'Transfer to Semporna via Lahad Datu/Tawau (~4-5h).',
+    },
+    {
+      code: 'MY', name: 'Malaysia', days: 4, budget: 280, lat: 4.4816, lng: 118.6120,
+      destinations: [
+        { name: 'Semporna', lat: 4.4816, lng: 118.6120 },
+        { name: 'Mabul Island', lat: 4.2500, lng: 118.6333 },
+        { name: 'Sipadan (diving, permit required)', lat: 4.1147, lng: 118.6289 },
+      ],
+      notes: "⚠️ Travel advisory (checked 2026-09): the islands Mabul, Pom Pom, Kapalai, Ligitan, Sipadan and Mataking (this exact leg) are separately coded ORANGE by the Dutch government advisory — \"only travel if necessary\" — due to an explicit kidnapping/piracy risk in this part of the Celebes Sea, a step above Malaysia's general yellow rating elsewhere on this route. Youri's explicit decision (2026-09): keep this leg in the route with this warning attached, rather than cutting or relocating it. Sipadan diving itself remains capped at 254 daily permits, allocated to resorts/operators (not individually bookable) — realistically needs a 3-5 night stay on Mabul/Kapalai/Semporna booked 6-12 months ahead for peak season, plus an Advanced Open Water certification (mandatory since Oct 2022). Sipadan is closed annually 15-30 November for conservation — avoid that window regardless of season. Non-divers can still snorkel around Mabul/Kapalai without the permit constraint. Base budget ~€70/day; diving days add ~€150-250/day on top as a separate cost, not included above.",
+      transport_to_next: 'Transfer back to Kota Kinabalu via Tawau.',
+    },
+    {
+      code: 'MY', name: 'Malaysia', days: 2, budget: 130, lat: 5.9788, lng: 116.0753,
+      destinations: [
+        { name: 'Kota Kinabalu (departure buffer)', lat: 5.9788, lng: 116.0753 },
+        { name: 'Mari Mari Cultural Village (optional)', lat: 6.0333, lng: 116.1333 },
+      ],
+      notes: 'Buffer day plus an optional Mari Mari Cultural Village visit, before flying home. Budget ~€65/day.',
+      transport_to_next: "End of this route — domestic flight Kota Kinabalu-Kuala Lumpur (very frequent, 9+ daily flights, ~2h25, from ~€35-70), connecting to the KLM Kuala Lumpur-Amsterdam nonstop. Given KLM's limited ~4x/week frequency on that final leg, book with a comfortable buffer (or an overnight in KL) rather than a tight same-day connection — no direct flight exists from Kota Kinabalu to Amsterdam.",
+    },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'Direct flights between Peninsula Malaysia, Brunei and Sabah (no overland legs needed), a guided climb for Mount Kinabalu, a multi-night river lodge for Kinabatangan, and a dive-focused stay in Semporna.',
+    climate_summary: "April-May sits inside Brunei's dry season, Sabah's dry/good-diving window, and has no sharply negative season for KL — the best combined window. August is a solid secondary option (matches KL's own verified best-period guidance and Sabah's east-coast beach season) but pushes Brunei slightly into its more humid shoulder period. Avoid September-January entirely: Brunei's wet season and Borneo's northeast monsoon overlap then, and Sipadan is also closed 15-30 November regardless.",
+    description: "Kuala Lumpur, a stop in Brunei (Bandar Seri Begawan and Ulu Temburong NP), the Mount Kinabalu summit climb, Sepilok's orang-utans, Kinabatangan River wildlife cruises, and Semporna/Sipadan diving.",
+    notes: "Built (2026-09) to replace a Trips-sheet wishlist entry ('Malaysia + Borneo + Brunei Nature Trip', 21 days/~€2,700/dry season preferred) that Youri decided belongs in Route Builder instead, as a someday-aspiration rather than a concretely planned trip. Researched via a WebSearch-backed research agent — a curated ~21-day version of Youri's own vision ('jungle + islands + city mix, KL, Borneo wildlife, Brunei stop'), not a mechanical concatenation of the full standalone Malaysia Peninsula (10 days), Sarawak (6 days), Brunei (2 days) and Sabah (11 days) blocks (which together would run 29 days). Deliberately cut: all of Sarawak (Kuching/Bako/Mulu Caves) — Mulu specifically is a costly detour that doesn't add unique value beyond what Sabah's wildlife stops already deliver, and the Miri overland crossing costs a travel day; most of the Peninsula circuit (Langkawi/Penang/Cameron Highlands) — Youri named only 'KL', not a beach/hill-station tour. The Mount Kinabalu summit climb was initially proposed as optional/cuttable (it doesn't add wildlife value and costs ~€560-580 pp plus 2-3 days) — Youri's explicit call: include it anyway. The Semporna/Sipadan diving leg carries a genuine orange travel-advisory rating (kidnapping/piracy risk, not just a general caution) — also explicitly kept in by Youri's own decision, with the warning documented directly in that leg's notes above. Ground-cost/package budget across the 21 days comes to roughly €1,835, plus the international flight (~€650-950) and optional Sipadan diving-day costs — landing close to Youri's original €2,700 estimate. Not yet checked against a specific travel date — re-verify the Sabah advisory status (see the Semporna leg's notes) before actually booking.",
+  });
+}
+
+function rbSeedTripsSheetWishlistReplacements() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_TRIPS_WISHLIST_REPLACEMENTS)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_TRIPS_WISHLIST_REPLACEMENTS, '1');
+
+  rbRoutes.push(
+    rbBuildPeruBoliviaAndesSaltFlatsRoute(),
+    rbBuildMalaysiaBorneoBruneiRoute(),
+  );
+  rbSave();
+}

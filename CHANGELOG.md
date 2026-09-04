@@ -12,6 +12,36 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Two new Route Builder routes replacing Trips-sheet wishlist entries (2026-09-04)** — while
+  backfilling old trips into the `Trips` sheet (see `PAST_TRIPS_PLAN.md`), Youri realized his 3
+  "Planned"/"Wishlist" rows there (Balkan Loop, Malaysia+Borneo+Brunei, Peru+Bolivia) were really
+  someday-aspirations, not concretely planned trips — i.e. they belonged in Route Builder, not
+  Trips (see `CLAUDE.md`'s "Route Builder vs. Trips sheet overlap" note on that exact distinction).
+  Balkan Loop already had an exact match (**Balkan 🐺**, 35 days, same 5 countries, built 2026-08)
+  — Youri will just delete that Trips row himself. The other two didn't exist yet, so built them:
+  - **Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂** — a curated ~20-day version of Youri's
+    own wishlist vision (Andes, Machu Picchu, Uyuni Salt Flats; Amazon considered but explicitly
+    left out per Youri's own call, since a proper Tambopata add-on needs 3-4 more days), not a
+    mechanical concatenation of the full standalone Peru (35d) and Bolivia (17d) routes (52d
+    combined). Lead finding: Bolivia's state of emergency (declared 20 June 2026 against road
+    blockades) is due to expire ~18-20 September 2026 with an extension now politically contested
+    (needs two-thirds parliamentary approval, unions publicly opposed) — genuinely unresolved as
+    of this writing, flagged prominently in the route's La Paz leg for a re-check before booking.
+  - **Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧** — a curated ~21-day version of
+    Youri's vision ("jungle + islands + city mix, KL, Borneo wildlife, Brunei stop"), not the full
+    29-day mechanical sum of Malaysia Peninsula (10d) + Sarawak (6d) + Brunei (2d) + Sabah (11d).
+    Cut all of Sarawak and most of the Peninsula circuit (Youri named only "KL"). Two explicit
+    Youri decisions overrode the research agent's own optional/cuttable recommendations: the Mount
+    Kinabalu summit climb (~€560-580pp, 2-3 extra days, no wildlife value) is included anyway, and
+    the Semporna/Sipadan diving leg stays in **despite carrying a genuine Orange travel-advisory
+    rating** (kidnapping/piracy risk in that specific part of the Celebes Sea, one level above
+    Malaysia's general Yellow elsewhere) — kept with the warning documented directly in that leg's
+    notes, not cut or relocated.
+  Both added via `rbSeedTripsSheetWishlistReplacements()`. Both taxonomy-tagged in
+  `TRIP_DATABASE.csv` as `Verified` (2026-09) — this was fresh WebSearch-backed research, not a
+  Draft needing a later verification pass. Re-scanned with the Dutch-text audit tooling above:
+  clean.
+
 - **Repo-wide Dutch-text audit + tooling (2026-09-04)** — after Tier 1 turned up Hawaii/Florida
   still fully in Dutch, Youri asked for a way to check the whole repo for leftover Dutch text so
   it can't silently happen again. Built a two-step tool rather than a blind grep, since this
