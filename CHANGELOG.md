@@ -12,6 +12,23 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Route Builder: "Export JSON" safety-net button + Sheet-sync plan verified against real
+  data (2026-09-07)** — `ROUTE_BUILDER_SYNC.md`'s Google Sheet sync is still not started
+  (no Sheet access this session), but as prep: added `rbExportRoutesAsJSON()`
+  (`js/pages/routeBuilderUI.js`, wired to a new "⬇️ Export JSON" button in the route list
+  toolbar) that copies every route + the Block Library to the clipboard as JSON, shaped
+  1:1 to match the planned `GrandTrips`/`GrandTripRegions`/`GrandTripBlocks`/
+  `GrandTripDestinations`/`BlockLibrary`/`BlockLibraryItems` sheet tabs — both a manual
+  backup (localStorage is still the only copy of every route) and the exact payload a
+  future bulk-import Apps Script endpoint can consume unchanged. Verified against the
+  TRUE simulated live state (`scripts/simulate_route_builder.js`'s harness): **442 real
+  routes**, not the "~13" the sync doc's examples implied — 1058 blocks, 3952
+  destinations, all correctly linked. That scale means the eventual migration needs one
+  chunked bulk-import call, not 442 individual POSTs (Apps Script caps execution at 6
+  minutes). Also found while building this: the sync doc's planned `GrandTripBlocks`/
+  `BlockLibraryItems` columns were missing `transport_to_next`, which turns out to be
+  real, populated per-block data — added to the doc.
+
 - **Trips route map goes live for its first real trip (2026-09-04)** — the map code
   (`js/utils/routeMap.js`) had been sitting ready since 2026-08 with zero coordinate data (see
   `TRIP_ROUTE_MAP.md`). Youri picked **SEA2024 (Vietnam/Cambodia/Thailand)** as the actual pilot

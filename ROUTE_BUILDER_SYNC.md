@@ -1,8 +1,18 @@
 # Route Builder — Google Sheet Sync Plan
 
-Status: **not started**. The Route Builder (`route-builder.html`) currently stores
-everything in `localStorage` only — per browser, per device. Nothing syncs between
-your laptop and your phone yet. This doc is the plan for when you're ready to fix that.
+Status: **not started** (Sheet/Apps Script side). The Route Builder (`route-builder.html`)
+currently stores everything in `localStorage` only — per browser, per device. Nothing
+syncs between your laptop and your phone yet. This doc is the plan for when you're ready
+to fix that.
+
+**Prep done 2026-09-07, no Sheet access needed:** an "⬇️ Export JSON" button now exists
+in the route list toolbar (`rbExportRoutesAsJSON()` in `js/pages/routeBuilderUI.js`) that
+copies every route + the Block Library to the clipboard, shaped 1:1 to match the sheet
+tabs below — both a manual backup and the exact bulk-import payload for whenever step 3
+below gets built. Verified against the real simulated live state: **442 routes, 1058
+blocks, 3952 destinations** — the migration is at that scale, not the "handful of
+routes" this doc originally assumed; plan the bulk-import Apps Script branch (step 3)
+with chunking in mind, since Apps Script caps execution at 6 minutes per call.
 
 Pick this back up by pasting this file's content into a Claude Code conversation in
 this repo, or just say "let's finish the Route Builder sheet sync" and point Claude
@@ -59,12 +69,17 @@ This needs the same sheet treatment as routes:
 
 **`BlockLibraryItems`** tab — one row per country in a saved block:
 
-| item_id | library_id | order | country_code | country_name | days | budget | notes |
-|---|---|---|---|---|---|---|---|
+| item_id | library_id | order | country_code | country_name | days | budget | notes | transport_to_next |
+|---|---|---|---|---|---|---|---|---|
 
 Same shape as `GrandTripBlocks` below, just keyed to `library_id` instead of
 `grand_trip_id`. Client-side: `getBlockLibrary()` in `dataService.js`, merge with
 `localStorage` the same way as routes.
+
+Saved Library blocks also carry their own `destinations` (nested per block, not a
+separate tab in this plan yet — see the "Export JSON" note below). Decide when this
+actually gets built whether that stays nested JSON in a cell or becomes its own
+`BlockLibraryDestinations` tab, mirroring `GrandTripDestinations`.
 
 ## Expedition model (added after "Block Library" above)
 
@@ -123,8 +138,10 @@ countries. Nothing to sync there.
 
 **`GrandTripBlocks`** — one row per country block, linked by `grand_trip_id` and optionally `region_id`:
 
-| block_id | grand_trip_id | region_id | order | country_code | country_name | days | budget | notes |
-|---|---|---|---|---|---|---|---|---|
+| block_id | grand_trip_id | region_id | order | country_code | country_name | days | budget | notes | transport_to_next |
+|---|---|---|---|---|---|---|---|---|---|
+
+(`transport_to_next` added 2026-09-07 — missing from this table originally, but it's real, populated per-block data; see the "Export JSON" note below.)
 
 **`GrandTripDestinations`** — one row per destination, linked by `block_id`:
 

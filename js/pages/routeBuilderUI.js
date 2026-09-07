@@ -1185,9 +1185,99 @@ function rbBuildSegmentsHTML(blocks, mini) {
   }).join('');
 }
 
+// ---- export ----
+
+// Flat, per-tab shape matching ROUTE_BUILDER_SYNC.md's planned GrandTrip*/BlockLibrary*
+// sheet tabs 1:1, so a future Apps Script bulk-import can consume this JSON directly
+// without a format redesign. Doubles as a manual backup: localStorage is the only copy
+// of every route today, this is copy-pasteable elsewhere until Sheet sync exists.
+function rbBuildRoutesExport() {
+  const grandTrips = rbRoutes.map(r => ({
+    grand_trip_id: r.id, name: r.name, status: r.status, start_date: r.start_date,
+    description: r.description, travel_style: r.travel_style, climate_summary: r.climate_summary,
+    best_starting_month: r.best_starting_month, notes: r.notes, created_at: r.created_at,
+  }));
+
+  const grandTripRegions = rbRoutes.flatMap(r => (r.regions || []).map((reg, i) => ({
+    region_id: reg.id, grand_trip_id: r.id, order: i, name: reg.name,
+    season: reg.season, budget: reg.budget, notes: reg.notes, collapsed: !!reg.collapsed,
+  })));
+
+  const grandTripBlocks = rbRoutes.flatMap(r => (r.blocks || []).map((b, i) => ({
+    block_id: b.id, grand_trip_id: r.id, region_id: b.region_id || '', order: i,
+    country_code: b.country_code, country_name: b.country, days: b.days, budget: b.budget,
+    notes: b.notes, transport_to_next: b.transport_to_next || '',
+  })));
+
+  const grandTripDestinations = rbRoutes.flatMap(r => (r.blocks || []).flatMap(b =>
+    (b.destinations || []).map((d, i) => ({
+      destination_id: d.id, block_id: b.id, order: i, name: d.name, notes: d.notes || '',
+    }))
+  ));
+
+  const blockLibrary = rbLibrary.map(l => ({
+    library_id: l.id, name: l.name, created_at: l.created_at,
+  }));
+
+  // Saved Library blocks keep their own destinations nested (not flattened into a
+  // separate tab) and have no persistent per-item id yet — see ROUTE_BUILDER_SYNC.md,
+  // BlockLibraryItems has no destinations column today; Phase B should decide whether
+  // to add one or keep this nested-JSON shape.
+  const blockLibraryItems = rbLibrary.flatMap(l => (l.blocks || []).map((b, i) => ({
+    item_id: `${l.id}_${i}`, library_id: l.id, order: i,
+    country_code: b.country_code, country_name: b.country, days: b.days, budget: b.budget,
+    notes: b.notes, transport_to_next: b.transport_to_next || '',
+    destinations: (b.destinations || []).map(d => ({ name: d.name, notes: d.notes || '' })),
+  })));
+
+  return {
+    exported_at: new Date().toISOString(),
+    grand_trips: grandTrips,
+    grand_trip_regions: grandTripRegions,
+    grand_trip_blocks: grandTripBlocks,
+    grand_trip_destinations: grandTripDestinations,
+    block_library: blockLibrary,
+    block_library_items: blockLibraryItems,
+  };
+}
+
+function rbCopyTextToClipboard(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    return navigator.clipboard.writeText(text);
+  }
+  // Fallback for file:// (no secure-context Clipboard API there).
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  try {
+    document.execCommand('copy');
+    return Promise.resolve();
+  } catch (err) {
+    return Promise.reject(err);
+  } finally {
+    document.body.removeChild(ta);
+  }
+}
+
+function rbExportRoutesAsJSON() {
+  const json = JSON.stringify(rbBuildRoutesExport(), null, 2);
+  rbCopyTextToClipboard(json)
+    .then(() => alert(`Copied ${rbRoutes.length} route(s) + ${rbLibrary.length} library block(s) as JSON to your clipboard.`))
+    .catch(() => {
+      // Clipboard write failed (permissions/unsupported) — fall back to a manual-copy prompt.
+      prompt('Copy this JSON manually (Ctrl+A, Ctrl+C):', json);
+    });
+}
+
 // ---- events ----
 
 function rbBindEvents() {
+  document.getElementById('exportRoutesBtn').addEventListener('click', rbExportRoutesAsJSON);
+
   document.getElementById('newRouteBtn').addEventListener('click', () => {
     const route = {
       id: 'gt_' + Date.now(),
