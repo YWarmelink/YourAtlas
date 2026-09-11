@@ -199,8 +199,75 @@ function rbLoad() {
   }
 }
 
-function rbSave() {
+/**
+ * Saves rbRoutes to localStorage (always). Pass the id of the one route that actually
+ * changed to also fire a fire-and-forget sync push for it (upsert if still present in
+ * rbRoutes, delete if not) — see ROUTE_BUILDER_SYNC.md. Omit it for bulk operations that
+ * touch many/all routes at once (seeding, migrations) — those never push; the seeded
+ * content already lives identically in source across every browser, so there's nothing
+ * to sync, and pushing all ~442 routes on every fresh page load would spam the endpoint.
+ */
+function rbSave(changedId) {
   try { localStorage.setItem(RB_STORAGE_KEY, JSON.stringify(rbRoutes)); } catch (_) {}
+  if (!changedId) return;
+  const route = rbRoutes.find(r => r.id === changedId);
+  if (route) rbPushGrandTripToSheet(route);
+  else rbDeleteGrandTripFromSheet(changedId);
+}
+
+// ---- Google Sheet sync (see ROUTE_BUILDER_SYNC.md) ----
+
+const RB_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzfvEBxhAUEGfxXU-jRvdE5R1oBNXWPJzP27l20-VPwZlTdij1UeoG4BrkRoi9TWT9p/exec';
+
+/**
+ * Flattens one route into the { grand_trip, regions, blocks, destinations } shape the
+ * Apps Script's `grand_trip` upsert branch expects — 1:1 with the GrandTrips/
+ * GrandTripRegions/GrandTripBlocks/GrandTripDestinations sheet tabs. Shared by the
+ * single-route push below and the bulk "Export JSON" button in routeBuilderUI.js, so the
+ * field mapping only lives in one place.
+ */
+function rbBuildGrandTripPayload(route) {
+  const grand_trip = {
+    grand_trip_id: route.id, name: route.name, status: route.status, start_date: route.start_date,
+    description: route.description, travel_style: route.travel_style, climate_summary: route.climate_summary,
+    best_starting_month: route.best_starting_month, notes: route.notes, created_at: route.created_at,
+  };
+
+  const regions = (route.regions || []).map((reg, i) => ({
+    region_id: reg.id, grand_trip_id: route.id, order: i, name: reg.name,
+    season: reg.season, budget: reg.budget, notes: reg.notes, collapsed: !!reg.collapsed,
+  }));
+
+  const blocks = (route.blocks || []).map((b, i) => ({
+    block_id: b.id, grand_trip_id: route.id, region_id: b.region_id || '', order: i,
+    country_code: b.country_code, country_name: b.country, days: b.days, budget: b.budget,
+    notes: b.notes, transport_to_next: b.transport_to_next || '',
+  }));
+
+  const destinations = (route.blocks || []).flatMap(b => (b.destinations || []).map((d, i) => ({
+    destination_id: d.id, block_id: b.id, order: i, name: d.name, notes: d.notes || '',
+  })));
+
+  return { grand_trip, regions, blocks, destinations };
+}
+
+function rbPushGrandTripToSheet(route) {
+  if (!RB_APPS_SCRIPT_URL) return;
+  const payload = { type: 'grand_trip', ...rbBuildGrandTripPayload(route) };
+  fetch(RB_APPS_SCRIPT_URL, {
+    method: 'POST', mode: 'no-cors',
+    headers: { 'Content-Type': 'text/plain' },
+    body: JSON.stringify(payload),
+  }).catch(() => {}); // offline/unreachable — localStorage already has the change, sync catches up next time it succeeds
+}
+
+function rbDeleteGrandTripFromSheet(grandTripId) {
+  if (!RB_APPS_SCRIPT_URL) return;
+  fetch(RB_APPS_SCRIPT_URL, {
+    method: 'POST', mode: 'no-cors',
+    headers: { 'Content-Type': 'text/plain' },
+    body: JSON.stringify({ type: 'grand_trip_delete', grand_trip_id: grandTripId }),
+  }).catch(() => {});
 }
 
 function rbLoadLibrary() {

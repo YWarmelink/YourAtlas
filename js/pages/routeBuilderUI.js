@@ -1192,28 +1192,14 @@ function rbBuildSegmentsHTML(blocks, mini) {
 // without a format redesign. Doubles as a manual backup: localStorage is the only copy
 // of every route today, this is copy-pasteable elsewhere until Sheet sync exists.
 function rbBuildRoutesExport() {
-  const grandTrips = rbRoutes.map(r => ({
-    grand_trip_id: r.id, name: r.name, status: r.status, start_date: r.start_date,
-    description: r.description, travel_style: r.travel_style, climate_summary: r.climate_summary,
-    best_starting_month: r.best_starting_month, notes: r.notes, created_at: r.created_at,
-  }));
-
-  const grandTripRegions = rbRoutes.flatMap(r => (r.regions || []).map((reg, i) => ({
-    region_id: reg.id, grand_trip_id: r.id, order: i, name: reg.name,
-    season: reg.season, budget: reg.budget, notes: reg.notes, collapsed: !!reg.collapsed,
-  })));
-
-  const grandTripBlocks = rbRoutes.flatMap(r => (r.blocks || []).map((b, i) => ({
-    block_id: b.id, grand_trip_id: r.id, region_id: b.region_id || '', order: i,
-    country_code: b.country_code, country_name: b.country, days: b.days, budget: b.budget,
-    notes: b.notes, transport_to_next: b.transport_to_next || '',
-  })));
-
-  const grandTripDestinations = rbRoutes.flatMap(r => (r.blocks || []).flatMap(b =>
-    (b.destinations || []).map((d, i) => ({
-      destination_id: d.id, block_id: b.id, order: i, name: d.name, notes: d.notes || '',
-    }))
-  ));
+  // Field mapping lives once in rbBuildGrandTripPayload() (routeBuilderCore.js), shared
+  // with the fire-and-forget per-route sync push — flatten each route the same way, then
+  // regroup from [{grand_trip, regions, blocks, destinations}, ...] into 4 flat arrays.
+  const perRoute = rbRoutes.map(rbBuildGrandTripPayload);
+  const grandTrips = perRoute.map(p => p.grand_trip);
+  const grandTripRegions = perRoute.flatMap(p => p.regions);
+  const grandTripBlocks = perRoute.flatMap(p => p.blocks);
+  const grandTripDestinations = perRoute.flatMap(p => p.destinations);
 
   const blockLibrary = rbLibrary.map(l => ({
     library_id: l.id, name: l.name, created_at: l.created_at,
@@ -1294,7 +1280,7 @@ function rbBindEvents() {
       blocks: [],
     };
     rbRoutes.unshift(route);
-    rbSave();
+    rbSave(route.id);
     rbCurrentId = route.id;
     rbShowEditor();
   });
@@ -1309,7 +1295,7 @@ function rbBindEvents() {
       const route = rbRoutes.find(r => r.id === id);
       if (!confirm(`Delete "${route?.name || 'this route'}"? This cannot be undone.`)) return;
       rbRoutes = rbRoutes.filter(r => r.id !== id);
-      rbSave();
+      rbSave(id);
       rbRenderList();
       return;
     }
@@ -1412,7 +1398,7 @@ function rbBindEvents() {
       destinations: (b.destinations || []).map(d => ({ id: rbNewDestId(), name: d.name, notes: d.notes || '' })),
     }));
     route.blocks.push(...copies);
-    rbSave();
+    rbSave(route.id);
     rbRenderEditor();
   });
 
@@ -1467,7 +1453,7 @@ function rbBindEvents() {
     if (!route) return;
     if (!confirm(`Delete "${route.name || 'this route'}"? This cannot be undone.`)) return;
     rbRoutes = rbRoutes.filter(r => r.id !== route.id);
-    rbSave();
+    rbSave(route.id);
     rbCurrentId = null;
     rbShowList();
   });
@@ -1476,7 +1462,7 @@ function rbBindEvents() {
     const route = rbGetCurrent();
     if (!route) return;
     route.name = e.target.value;
-    rbSave();
+    rbSave(route.id);
   });
 
   const RB_DETAIL_FIELD_MAP = {
@@ -1490,7 +1476,7 @@ function rbBindEvents() {
       const route = rbGetCurrent();
       if (!route) return;
       route[RB_DETAIL_FIELD_MAP[id]] = e.target.value;
-      rbSave();
+      rbSave(route.id);
     });
   });
 
@@ -1498,7 +1484,7 @@ function rbBindEvents() {
     const route = rbGetCurrent();
     if (!route) return;
     route.start_date = e.target.value;
-    rbSave();
+    rbSave(route.id);
     rbRenderCalendarIfVisible(route);
   };
   document.getElementById('rbStartDateInput').addEventListener('input', handleStartDateChange);
@@ -1532,7 +1518,7 @@ function rbBindEvents() {
     const route = rbGetCurrent();
     if (!route) return;
     route.blocks.push({ id: rbNewBlockId(), country: '', country_code: '', region_id: '', days: 7, budget: '', notes: '', transport_to_next: '', destinations: [] });
-    rbSave();
+    rbSave(route.id);
     rbRenderEditor();
   });
 
@@ -1554,7 +1540,7 @@ function rbBindEvents() {
         if (e.target.classList.contains('rb-dest-name')) dest.name = e.target.value;
         else if (e.target.classList.contains('rb-dest-note')) dest.notes = e.target.value;
         else return;
-        rbSave();
+        rbSave(route.id);
         return;
       }
 
@@ -1573,7 +1559,7 @@ function rbBindEvents() {
         return;
       }
 
-      rbSave();
+      rbSave(route.id);
       rbRefreshDerived(route);
       return;
     }
@@ -1589,7 +1575,7 @@ function rbBindEvents() {
       else if (e.target.classList.contains('rb-region-notes')) region.notes = e.target.value;
       else return;
 
-      rbSave();
+      rbSave(route.id);
     }
   };
 
@@ -1615,7 +1601,7 @@ function rbBindEvents() {
     } else {
       block.region_id = value;
     }
-    rbSave();
+    rbSave(route.id);
     rbRenderEditor();
   });
 
@@ -1637,7 +1623,7 @@ function rbBindEvents() {
         route.blocks.forEach(b => { if (b.region_id === region.id) b.region_id = ''; });
         route.regions = route.regions.filter(r => r.id !== region.id);
       }
-      rbSave();
+      rbSave(route.id);
       rbRenderEditor();
       return;
     }
@@ -1665,7 +1651,7 @@ function rbBindEvents() {
       return;
     }
 
-    rbSave();
+    rbSave(route.id);
     rbRenderEditor();
   });
 }

@@ -213,6 +213,57 @@ class DataService {
     };
   }
 
+  // ---- Route Builder Sheet sync (see ROUTE_BUILDER_SYNC.md) ----
+
+  async getGrandTrips() { return this._load('grand_trips'); }
+  async getGrandTripRegions() { return this._load('grand_trip_regions'); }
+  async getGrandTripBlocks() { return this._load('grand_trip_blocks'); }
+  async getGrandTripDestinations() { return this._load('grand_trip_destinations'); }
+
+  /**
+   * Joins the 4 flat GrandTrip* sheet tables back into the nested shape Route Builder
+   * keeps in memory (rbRoutes) — the reverse of rbBuildGrandTripPayload() in
+   * routeBuilderCore.js. Returns [] while the sheet has no rows yet (nothing synced
+   * there so far, or unreachable) — callers treat that as "nothing to merge in".
+   */
+  async getGrandTripsFull() {
+    const [trips, regions, blocks, destinations] = await Promise.all([
+      this.getGrandTrips(), this.getGrandTripRegions(), this.getGrandTripBlocks(), this.getGrandTripDestinations(),
+    ]);
+    const byOrder = (a, b) => (parseInt(a.order, 10) || 0) - (parseInt(b.order, 10) || 0);
+    const toNum = v => (v === '' || v === undefined || v === null) ? '' : parseFloat(v);
+
+    return trips.map(t => {
+      const tripRegions = regions
+        .filter(r => r.grand_trip_id === t.grand_trip_id)
+        .sort(byOrder)
+        .map(r => ({
+          id: r.region_id, name: r.name, season: r.season, budget: toNum(r.budget),
+          notes: r.notes, collapsed: String(r.collapsed).toUpperCase() === 'TRUE',
+        }));
+
+      const tripBlocks = blocks
+        .filter(b => b.grand_trip_id === t.grand_trip_id)
+        .sort(byOrder)
+        .map(b => ({
+          id: b.block_id, country: b.country_name, country_code: b.country_code,
+          region_id: b.region_id || '', days: b.days === '' ? '' : (parseInt(b.days, 10) || 0),
+          budget: toNum(b.budget), notes: b.notes, transport_to_next: b.transport_to_next || '',
+          destinations: destinations
+            .filter(d => d.block_id === b.block_id)
+            .sort(byOrder)
+            .map(d => ({ id: d.destination_id, name: d.name, notes: d.notes || '' })),
+        }));
+
+      return {
+        id: t.grand_trip_id, name: t.name, status: t.status, start_date: t.start_date,
+        description: t.description, travel_style: t.travel_style, climate_summary: t.climate_summary,
+        best_starting_month: t.best_starting_month, notes: t.notes, created_at: t.created_at,
+        regions: tripRegions, blocks: tripBlocks,
+      };
+    });
+  }
+
   clearCache() { this.cache.clear(); }
 }
 

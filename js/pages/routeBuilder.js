@@ -131,6 +131,23 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateDraftVerificationTier1();
   rbMigrateDutchAuditStandaloneEnglish();
   rbMigrateFixNepalEntryNotesRegression();
+
+  // Sheet as source of truth once reachable, localStorage as offline fallback — same
+  // resilience pattern map.js uses. A route already synced to the Sheet overrides its
+  // seeded/migrated localStorage version; a route not yet in the Sheet (nothing's been
+  // pushed there yet, or it's brand new) just stays as-is. See ROUTE_BUILDER_SYNC.md.
+  try {
+    const sheetRoutes = await dataService.getGrandTripsFull();
+    if (sheetRoutes.length) {
+      const sheetIds = new Set(sheetRoutes.map(r => r.id));
+      const localOnly = rbRoutes.filter(r => !sheetIds.has(r.id));
+      rbRoutes = [...sheetRoutes, ...localOnly];
+      rbSave();
+    }
+  } catch (_) {
+    // Sheet unreachable — keep the seeded/migrated localStorage state as-is.
+  }
+
   rbBindEvents();
 
   try {
