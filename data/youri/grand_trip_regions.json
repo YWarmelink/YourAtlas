@@ -1,1 +1,1162 @@
-[]
+[
+  {
+    "region_id": "rg_1789134492073_jkekk",
+    "grand_trip_id": "gt_seed_eurasia-grand-tour",
+    "order": "0",
+    "name": "Balkans",
+    "season": "April–June",
+    "budget": "1909",
+    "notes": "Mild spring weather, ahead of the summer crowds and heat — fits a deliberately early start to the whole expedition.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_ys9f2",
+    "grand_trip_id": "gt_seed_eurasia-grand-tour",
+    "order": "1",
+    "name": "Turkey",
+    "season": "June",
+    "budget": "1300",
+    "notes": "Following on from the Balkans, still ahead of the worst summer heat in Cappadocia and the interior.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_qsow9",
+    "grand_trip_id": "gt_seed_eurasia-grand-tour",
+    "order": "2",
+    "name": "Caucasus",
+    "season": "June–August",
+    "budget": "1475",
+    "notes": "Mountain passes and Svaneti are snow-free then; connects directly with the Central Asian mountain season.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_381pi",
+    "grand_trip_id": "gt_seed_eurasia-grand-tour",
+    "order": "3",
+    "name": "Central Asia",
+    "season": "June–September",
+    "budget": "2350",
+    "notes": "The Pamir Highway and high-altitude passes are only passable in these months — outside this window there is snow/ice. Turkmenistan has been deliberately cut (hard to visit / not realistic for this travel style), and Nur-Sultan/Astana has been dropped (it lay too far out of the route).",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_8mfe9",
+    "grand_trip_id": "gt_seed_eurasia-grand-tour",
+    "order": "4",
+    "name": "China",
+    "season": "September",
+    "budget": "1625",
+    "notes": "After the summer crowds/heat, well ahead of the Mongolian winter cold that follows. Xinjiang has been deliberately cut (socio-political reasons); Zhangjiajie and Guilin/Yangshuo replace it.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_iwsig",
+    "grand_trip_id": "gt_seed_eurasia-grand-tour",
+    "order": "5",
+    "name": "Mongolia",
+    "season": "Late August–September",
+    "budget": "650",
+    "notes": "Before the freezing cold sets in from October; the Gobi is still dry and warm enough then for a multi-day 4x4 trip.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_w0rjp",
+    "grand_trip_id": "gt_seed_eurasia-grand-tour",
+    "order": "6",
+    "name": "Japan",
+    "season": "October–November",
+    "budget": "2700",
+    "notes": "Autumn colours, and quieter than the cherry-blossom crowds in spring.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_rn37v",
+    "grand_trip_id": "gt_seed_eurasia-grand-tour",
+    "order": "7",
+    "name": "Taiwan",
+    "season": "November",
+    "budget": "750",
+    "notes": "Dry and mild, ahead of the cooler winter season in the north of the island.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_7wbzf",
+    "grand_trip_id": "gt_seed_eurasia-grand-tour",
+    "order": "8",
+    "name": "Mainland Southeast Asia",
+    "season": "December–February",
+    "budget": "2700",
+    "notes": "The dry season on mainland Southeast Asia — no monsoon, pleasant temperatures. Myanmar has been deliberately cut (hard to visit / not realistic for this travel style). Order reversed (2026-08): Vietnam → Cambodia → Laos → Thailand, via the classic Mekong Delta and Huay Xai border crossings, instead of the earlier Vietnam-Laos order which required an unnecessary backtrack to the north.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_k03so",
+    "grand_trip_id": "gt_seed_eurasia-grand-tour",
+    "order": "9",
+    "name": "Maritime Southeast Asia",
+    "season": "February–March",
+    "budget": "2735",
+    "notes": "Still dry in most regions, ahead of the monsoon that starts later in spring. Malaysia has been expanded (2026-08) with a Borneo leg (Sarawak → Brunei → Sabah, the well-known \"Borneo Overland Trail\") between the peninsula and Brunei — as a result, Malaysia appears twice in this route.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_a2n8o",
+    "grand_trip_id": "gt_seed_eurasia-grand-tour",
+    "order": "10",
+    "name": "Indonesia & East Timor",
+    "season": "March",
+    "budget": "1275",
+    "notes": "Dry season continues in most regions until April/May. Java and Bali have been deliberately cut (already visited) — Sumatra replaces them. East Timor connects logically here, via the land border at Kupang (West Timor).",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_dng7p",
+    "grand_trip_id": "gt_seed_eurasia-grand-tour",
+    "order": "11",
+    "name": "Singapore Finale",
+    "season": "March",
+    "budget": "375",
+    "notes": "A deliberate, compact finale to the whole Eurasia expedition — a quiet city stop after East Timor.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_kqnlc",
+    "grand_trip_id": "gt_seed_pan-american-grand-tour",
+    "order": "0",
+    "name": "Mexico",
+    "season": "November–December",
+    "budget": "1000",
+    "notes": "Dry season, after the summer rains.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_e41j0",
+    "grand_trip_id": "gt_seed_pan-american-grand-tour",
+    "order": "1",
+    "name": "Northern Central America",
+    "season": "December–January",
+    "budget": "1770",
+    "notes": "Dry season, hurricane season over.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_ib8u4",
+    "grand_trip_id": "gt_seed_pan-american-grand-tour",
+    "order": "2",
+    "name": "Southern Central America",
+    "season": "January–February",
+    "budget": "1975",
+    "notes": "Pacific dry season in Costa Rica/Panama — best time for the coast.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_g8hr3",
+    "grand_trip_id": "gt_seed_pan-american-grand-tour",
+    "order": "3",
+    "name": "Colombia",
+    "season": "February–March",
+    "budget": "1260",
+    "notes": "Dry in both the Caribbean region and the coffee zone/Andes.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_0uf6v",
+    "grand_trip_id": "gt_seed_pan-american-grand-tour",
+    "order": "4",
+    "name": "Ecuador",
+    "season": "March–April",
+    "budget": "1650",
+    "notes": "Sierra dry enough for hiking; Galápagos is good year-round but quieter in this season.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_n5pt8",
+    "grand_trip_id": "gt_seed_pan-american-grand-tour",
+    "order": "5",
+    "name": "Peru",
+    "season": "April–May",
+    "budget": "1050",
+    "notes": "The Andes dry season begins — ideal for Cusco/Sacred Valley and Huaraz trekking.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_tawcn",
+    "grand_trip_id": "gt_seed_pan-american-grand-tour",
+    "order": "6",
+    "name": "Bolivia",
+    "season": "May–June",
+    "budget": "344",
+    "notes": "Dry season, clear Uyuni Salt Flat (note: no mirror effect like in the wet season — a deliberate trade-off).",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_eah11",
+    "grand_trip_id": "gt_seed_pan-american-grand-tour",
+    "order": "7",
+    "name": "Northern Chile",
+    "season": "June–July",
+    "budget": "520",
+    "notes": "Northern Chile only (Atacama, Antofagasta) — Patagonia is a separate future expedition. The Atacama is dry year-round; cold nights in the Chilean winter, fine during the day.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_rlc29",
+    "grand_trip_id": "gt_seed_pan-american-grand-tour",
+    "order": "8",
+    "name": "Northern Argentina",
+    "season": "July",
+    "budget": "350",
+    "notes": "Northern Argentina only (Salta, Jujuy) — Patagonia is a separate future expedition. Dry peak season in Salta/Jujuy, cold nights in the high mountains.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_7hlfs",
+    "grand_trip_id": "gt_seed_pan-american-grand-tour",
+    "order": "9",
+    "name": "Southern Brazil",
+    "season": "July–August",
+    "budget": "1166",
+    "notes": "Southern Brazil only — Northern Brazil is a separate future expedition. Southern Brazilian winter: mild and dry for sightseeing (Iguaçu, colonial towns), but not beach weather; for beach time start the whole trip 1-2 months later.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_xo97d",
+    "grand_trip_id": "gt_seed_africa-grand-tour",
+    "order": "0",
+    "name": "South Africa, Lesotho & Eswatini",
+    "season": "June–early July",
+    "budget": "2975",
+    "notes": "The opener of the expedition, with a real international airport as the entry point (Cape Town/Johannesburg) — Kruger wildlife spotting is at its best here, well before the rainy season.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_pewvt",
+    "grand_trip_id": "gt_seed_africa-grand-tour",
+    "order": "1",
+    "name": "Southern Africa",
+    "season": "July–October",
+    "budget": "14035",
+    "notes": "From Mozambique to Malawi via Zimbabwe, Botswana, Namibia, Angola and Zambia — with this order it falls almost entirely within the dry season (May-October), with the best wildlife viewing right toward the end (August-October). The Angola-Zambia border crossing in southeastern Angola is less traveled than the rest of this route — check extra carefully beforehand.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_7jcpx",
+    "grand_trip_id": "gt_seed_africa-grand-tour",
+    "order": "2",
+    "name": "Islands",
+    "season": "October–November",
+    "budget": "2650",
+    "notes": "Madagascar and Mauritius — Madagascar's notoriously slow roads are the biggest time sink here, not the sights themselves.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_prr0d",
+    "grand_trip_id": "gt_seed_africa-grand-tour",
+    "order": "3",
+    "name": "East Africa",
+    "season": "November–January",
+    "budget": "10320",
+    "notes": "Tanzania, Rwanda, Uganda and Kenya — lands in the short rains (October-December, light afternoon showers, manageable) and the following short dry spell (January-February), including the southern Serengeti's calving season. Not the absolute peak (June-October, which here coincides with Southern Africa's only good season), but a recognized strong alternative.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_6lvvu",
+    "grand_trip_id": "gt_seed_africa-grand-tour",
+    "order": "4",
+    "name": "Horn of Africa & Egypt",
+    "season": "February–March",
+    "budget": "3115",
+    "notes": "Ethiopia and Egypt as the finale. Ethiopia's main rainy season (kiremt) falls June-September — the old order accidentally dropped Ethiopia right in the middle of it; here it lands in its own good window (October-March, peak December-February). As an added bonus, Egypt benefits from the cooler late season instead of the early summer heat.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492521_1vo1q",
+    "grand_trip_id": "gt_seed_mediterranean-civilizations-expedition",
+    "order": "0",
+    "name": "Iberia & Maghreb",
+    "season": "September",
+    "budget": "1270",
+    "notes": "From Moorish Spain via Berber culture in Morocco to Punic/Roman Tunisia — the western Mediterranean where Phoenicians, Carthaginians, Romans and the Islamic world succeeded one another.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492521_10dsr",
+    "grand_trip_id": "gt_seed_mediterranean-civilizations-expedition",
+    "order": "1",
+    "name": "Malta & Italy",
+    "season": "October",
+    "budget": "2775",
+    "notes": "From temples older than the pyramids (Malta) via Magna Graecia and Roman southern Italy to the heart of the Roman Empire, with Sardinia's Nuraghe civilization as a unique finale.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492521_i5jna",
+    "grand_trip_id": "gt_seed_mediterranean-civilizations-expedition",
+    "order": "2",
+    "name": "Corsica & Southern France",
+    "season": "November",
+    "budget": "1075",
+    "notes": "Two French legs connecting Bonifacio's cliffs and the Gallo-Roman monuments of Provence, before the trip crosses the Aegean Sea by flight.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492521_aquet",
+    "grand_trip_id": "gt_seed_mediterranean-civilizations-expedition",
+    "order": "3",
+    "name": "Greece & Cyprus",
+    "season": "November-December",
+    "budget": "1690",
+    "notes": "From Greek antiquity on the mainland via the Minoan civilization of Crete to the Greek-Roman-Byzantine layer of Cyprus, just before the crossing to Anatolia.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492521_kzzv4",
+    "grand_trip_id": "gt_seed_mediterranean-civilizations-expedition",
+    "order": "4",
+    "name": "Anatolia",
+    "season": "December",
+    "budget": "850",
+    "notes": "One big leg bringing together Byzantium, the Ottoman Empire and the Roman cities of the Aegean coast, with Cappadocia as a bridge to the rest of Anatolia.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492521_s48pn",
+    "grand_trip_id": "gt_seed_mediterranean-civilizations-expedition",
+    "order": "5",
+    "name": "Egypt & the Arabian Peninsula",
+    "season": "December-January",
+    "budget": "2669",
+    "notes": "From ancient Egyptian civilization via the Nabataean trade routes of Jordan and the Arab trading world of Oman and the Dilmun civilization of Bahrain to modern Qatar as a deliberately contemporary finale.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_a7fry",
+    "grand_trip_id": "gt_seed_nordic-arctic-expedition",
+    "order": "0",
+    "name": "Scandinavia",
+    "season": "June",
+    "budget": "4400",
+    "notes": "Lapland and Norwegian fjords/islands by train and bus — the only leg of this expedition still doable overland.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492073_cqarf",
+    "grand_trip_id": "gt_seed_nordic-arctic-expedition",
+    "order": "1",
+    "name": "North Atlantic Islands",
+    "season": "July–August",
+    "budget": "9550",
+    "notes": "Svalbard, Denmark, the Faroe Islands, Iceland and Greenland — each one a separate flight hop, not a continuous route; budget in weather buffers.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492562_yasic",
+    "grand_trip_id": "gt_seed_north-america-grand-traverse",
+    "order": "0",
+    "name": "Atlantic Canada – Nova Scotia",
+    "season": "June",
+    "budget": "900",
+    "notes": "Starting point of the expedition — flight Netherlands-Halifax. Rugged coast, fishing villages and lighthouses; no rental car needed, everything is doable via short distances from Halifax.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492562_kdlw7",
+    "grand_trip_id": "gt_seed_north-america-grand-traverse",
+    "order": "1",
+    "name": "Eastern Canada – Historic Cities",
+    "season": "June",
+    "budget": "1500",
+    "notes": "Traveling by train, no rental car in this block. Niagara Falls is an optional day trip from Toronto, not a separate block.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492562_m5ahm",
+    "grand_trip_id": "gt_seed_north-america-grand-traverse",
+    "order": "2",
+    "name": "Canadian Rockies",
+    "season": "June-July",
+    "budget": "2600",
+    "notes": "Rental car 2 (Calgary-Vancouver). Plan for at least 2-3 nights per national park so you can also hike, not just drive through.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492562_yl5e9",
+    "grand_trip_id": "gt_seed_north-america-grand-traverse",
+    "order": "3",
+    "name": "Vancouver",
+    "season": "July",
+    "budget": "700",
+    "notes": "No rental car needed in Vancouver itself. Research train vs. bus vs. short flight to Seattle — train is the most scenic and simplest regarding the border.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492562_gdsuc",
+    "grand_trip_id": "gt_seed_north-america-grand-traverse",
+    "order": "4",
+    "name": "Pacific Northwest & Northern California Roadtrip",
+    "season": "July-August",
+    "budget": "2200",
+    "notes": "Rental car 3 (Seattle-San Francisco). Relaxed pace: better to spend 2-3 nights at a park than drive every day — this is a coastal route, not a race.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492562_saksc",
+    "grand_trip_id": "gt_seed_north-america-grand-traverse",
+    "order": "5",
+    "name": "California Finale",
+    "season": "August",
+    "budget": "2100",
+    "notes": "Book Yosemite Valley accommodation well in advance (limited spots permitted during high season). Watch for wildfire risk/air quality in August — check current park alerts shortly before departure.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492573_98pc5",
+    "grand_trip_id": "gt_seed_oceania-grand-expedition",
+    "order": "0",
+    "name": "Pacific Opener",
+    "season": "May-June",
+    "budget": "4125",
+    "notes": "Five island groups in the dry season, well before cyclone season (November-April) — the calm, relaxed opener of the expedition.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492573_x0c51",
+    "grand_trip_id": "gt_seed_oceania-grand-expedition",
+    "order": "1",
+    "name": "Tropical Australia",
+    "season": "June-August",
+    "budget": "6300",
+    "notes": "Dry season: the Kimberley roads are passable, no monsoon, no jellyfish season near Cairns.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492573_i9j3k",
+    "grand_trip_id": "gt_seed_oceania-grand-expedition",
+    "order": "2",
+    "name": "Temperate Australia",
+    "season": "August-September",
+    "budget": "4130",
+    "notes": "Late winter/early spring — cooler than the summer peak (December-February), but manageable; the deliberate compromise of this route (see the whole expedition's climate reasoning).",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492573_zp1zx",
+    "grand_trip_id": "gt_seed_oceania-grand-expedition",
+    "order": "3",
+    "name": "New Zealand Finale",
+    "season": "September-November",
+    "budget": "3388",
+    "notes": "Spring — stable weather, quieter than the summer rush (December-February); often recommended by travel guides as a shoulder season. The emotional highlight of the whole expedition, deliberately chosen as the closer.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492529_4pc57",
+    "grand_trip_id": "gt_seed_caribbean-amazon-expedition",
+    "order": "0",
+    "name": "Greater Antilles",
+    "season": "December",
+    "budget": "2340",
+    "notes": "Dry season, well after hurricane season (which runs June-November) — a safe, pleasant opener.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492529_jvzqd",
+    "grand_trip_id": "gt_seed_caribbean-amazon-expedition",
+    "order": "1",
+    "name": "Dutch Caribbean",
+    "season": "December-January",
+    "budget": "1220",
+    "notes": "Dry season — clearer water for snorkeling and diving.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492529_j2p07",
+    "grand_trip_id": "gt_seed_caribbean-amazon-expedition",
+    "order": "2",
+    "name": "Lesser Antilles",
+    "season": "January-February",
+    "budget": "2445",
+    "notes": "Dry season (carême) — the best time to hike Dominica's rainforest. The island order follows the natural north-south chain, and coincidentally also the L'Express des Îles ferry line.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492529_ymo2h",
+    "grand_trip_id": "gt_seed_caribbean-amazon-expedition",
+    "order": "3",
+    "name": "Suriname & Amazon",
+    "season": "February-March",
+    "budget": "1445",
+    "notes": "Suriname's short dry spell lines up perfectly here for jungle/river trips. Northern Brazil's dune coast (Jericoacoara/Lençóis) is then just outside its absolute peak season (June-January) — the only accepted compromise of the whole route.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492549_3p83d",
+    "grand_trip_id": "gt_seed_west-central-africa-expedition",
+    "order": "0",
+    "name": "Cape Verde Islands",
+    "season": "November",
+    "budget": "780",
+    "notes": "Just after the rainy season (August-October) — the dry season lasts until June. A calm, pleasant opener.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492549_y9oa9",
+    "grand_trip_id": "gt_seed_west-central-africa-expedition",
+    "order": "1",
+    "name": "Senegambia",
+    "season": "November-December",
+    "budget": "858",
+    "notes": "Start of the West African dry season (November-April).",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492549_49nvl",
+    "grand_trip_id": "gt_seed_west-central-africa-expedition",
+    "order": "2",
+    "name": "Gulf of Guinea",
+    "season": "December-January",
+    "budget": "1634",
+    "notes": "Harmattan season — dry but dusty, the best period to travel here.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492549_hatxb",
+    "grand_trip_id": "gt_seed_west-central-africa-expedition",
+    "order": "3",
+    "name": "Central Africa & Islands",
+    "season": "January-February",
+    "budget": "1888",
+    "notes": "Cameroon's least wet period (November-February) and Gabon's short dry season (December-February) coincide here; São Tomé is the exception (rainy season, see the climate reasoning for the whole route).",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492161_v4jil",
+    "grand_trip_id": "gt_seed_central-european-grand-roadtrip",
+    "order": "0",
+    "name": "Alpine Countries",
+    "season": "June",
+    "budget": "2605",
+    "notes": "Mountain passes and high-altitude hiking trails are only fully snow-free from mid-May/June onward (the Grossglockner High Alpine Road usually opens mid-May) — mid-June to early July is the best window, right after the opening and still ahead of the July crowds/heat in the valleys.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492161_fafun",
+    "grand_trip_id": "gt_seed_central-european-grand-roadtrip",
+    "order": "1",
+    "name": "Dolomites & Northern Italy",
+    "season": "July",
+    "budget": "2385",
+    "notes": "The Dolomites right after the Alpine Countries opener; Milan/Turin/Cinque Terre/Tuscany/San Marino together form one continuous loop instead of two separate southward detours (see the route notes).",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492161_rnsmv",
+    "grand_trip_id": "gt_seed_central-european-grand-roadtrip",
+    "order": "2",
+    "name": "Balkans",
+    "season": "July-August",
+    "budget": "1425",
+    "notes": "May-June and September are nicest here, and July-August can be warm but is manageable — the waterfalls at Plitvice still have plenty of water then.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492161_u30pd",
+    "grand_trip_id": "gt_seed_central-european-grand-roadtrip",
+    "order": "3",
+    "name": "Central Europe",
+    "season": "August-September/early October",
+    "budget": "1615",
+    "notes": "The High Tatras stay well within the hiking season (June-September); the return route through Czechia/Poland/Germany is pleasant year-round and offers nice autumn colors in September.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492539_4kme7",
+    "grand_trip_id": "gt_seed_british-isles-celtic-coast-expedition",
+    "order": "0",
+    "name": "England & Wales",
+    "season": "June",
+    "budget": "4275",
+    "notes": "The opening of the expedition: from the chalk cliffs and historic towns of Southern England via rugged Cornwall to the mountains of Wales, with Isle of Man as a side trip from the Lake District (route-logic fix 2026-08, see the legs below) before the route turns north via Yorkshire/Northumberland towards Scotland.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492539_um9da",
+    "grand_trip_id": "gt_seed_british-isles-celtic-coast-expedition",
+    "order": "1",
+    "name": "Scotland & Northern Ireland",
+    "season": "July",
+    "budget": "3020",
+    "notes": "The single largest component of the whole expedition — the Scottish Highlands and islands, followed by the Northern Irish coast — and the window where the start-in-June plan matters most: well ahead of the midge peak in July-August.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492539_c6y4o",
+    "grand_trip_id": "gt_seed_british-isles-celtic-coast-expedition",
+    "order": "2",
+    "name": "Ireland",
+    "season": "August",
+    "budget": "2590",
+    "notes": "From Donegal in the northwest via the west coast to Kerry, then southeast to Rosslare — deliberately driven north-to-south so that after the south coast the route can exit directly via Rosslare, without having to go back to Dublin.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492539_nmjuw",
+    "grand_trip_id": "gt_seed_british-isles-celtic-coast-expedition",
+    "order": "3",
+    "name": "Channel Islands & Brittany",
+    "season": "Late August-September",
+    "budget": "1865",
+    "notes": "From the British Crown Dependencies in the Channel (with their own occupation history from the Second World War) to the Celtic culture and megaliths of Brittany — the best autumn window before French coastal weather turns in November.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492539_2ml78",
+    "grand_trip_id": "gt_seed_british-isles-celtic-coast-expedition",
+    "order": "4",
+    "name": "Normandy, Opal Coast & Belgium",
+    "season": "September",
+    "budget": "1445",
+    "notes": "The final French legs and Belgium as a quiet finale, just inside the last good autumn window before the coast turns wet and dark in November.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491595_xfpbl",
+    "grand_trip_id": "gt_seed_west-eurasia-overland",
+    "order": "0",
+    "name": "Balkans",
+    "season": "April–June",
+    "budget": "1909",
+    "notes": "Mild spring weather, ahead of the summer crowds and heat — fits a deliberately early start to the whole expedition.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491595_0rf1i",
+    "grand_trip_id": "gt_seed_west-eurasia-overland",
+    "order": "1",
+    "name": "Turkey",
+    "season": "June",
+    "budget": "1300",
+    "notes": "Following on from the Balkans, still ahead of the worst summer heat in Cappadocia and the interior.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491595_a6xc2",
+    "grand_trip_id": "gt_seed_west-eurasia-overland",
+    "order": "2",
+    "name": "Caucasus",
+    "season": "June–August",
+    "budget": "1475",
+    "notes": "Mountain passes and Svaneti are snow-free then; connects directly with the Central Asian mountain season.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491595_j5nv1",
+    "grand_trip_id": "gt_seed_west-eurasia-overland",
+    "order": "3",
+    "name": "Central Asia",
+    "season": "June–September",
+    "budget": "2350",
+    "notes": "The Pamir Highway and high-altitude passes are only passable in these months — outside this window there is snow/ice. Turkmenistan has been deliberately cut (hard to visit / not realistic for this travel style), and Nur-Sultan/Astana has been dropped (it lay too far out of the route).",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491595_5z4i4",
+    "grand_trip_id": "gt_seed_east-asia-pacific",
+    "order": "0",
+    "name": "China",
+    "season": "September",
+    "budget": "1625",
+    "notes": "After the summer crowds/heat, well ahead of the Mongolian winter cold that follows.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491595_2fou0",
+    "grand_trip_id": "gt_seed_east-asia-pacific",
+    "order": "1",
+    "name": "Mongolia",
+    "season": "Late August–September",
+    "budget": "650",
+    "notes": "Before the freezing cold sets in from October; the Gobi is still dry and warm enough then for a multi-day 4x4 trip.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491595_ip23d",
+    "grand_trip_id": "gt_seed_east-asia-pacific",
+    "order": "2",
+    "name": "Japan",
+    "season": "October–November",
+    "budget": "2700",
+    "notes": "Autumn colours, and quieter than the cherry-blossom crowds in spring.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491595_gz3rn",
+    "grand_trip_id": "gt_seed_east-asia-pacific",
+    "order": "3",
+    "name": "Taiwan",
+    "season": "November",
+    "budget": "750",
+    "notes": "Dry and mild, ahead of the cooler winter season in the north of the island.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491595_bl6uw",
+    "grand_trip_id": "gt_seed_southeast-asia-grand-loop",
+    "order": "0",
+    "name": "Mainland Southeast Asia",
+    "season": "December–February",
+    "budget": "2700",
+    "notes": "The dry season on mainland Southeast Asia — no monsoon, pleasant temperatures. Myanmar has been deliberately cut (hard to visit / not realistic for this travel style). Order reversed (2026-08): Vietnam → Cambodia → Laos → Thailand, via the classic Mekong Delta and Huay Xai border crossings.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491595_l1lgp",
+    "grand_trip_id": "gt_seed_southeast-asia-grand-loop",
+    "order": "1",
+    "name": "Maritime Southeast Asia",
+    "season": "February–March",
+    "budget": "2735",
+    "notes": "Still dry in most regions, ahead of the monsoon that starts later in spring. Malaysia has been expanded (2026-08) with a Borneo leg (Sarawak → Brunei → Sabah, the 'Borneo Overland Trail') between the peninsula and Brunei.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491595_81eru",
+    "grand_trip_id": "gt_seed_southeast-asia-grand-loop",
+    "order": "2",
+    "name": "Indonesia & East Timor",
+    "season": "March",
+    "budget": "1275",
+    "notes": "Dry season continues in most regions until April/May — Bali, Gili, Lombok and Komodo still perfectly passable. East Timor connects logically here, via the land border at Kupang (West Timor).",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491595_frls2",
+    "grand_trip_id": "gt_seed_southeast-asia-grand-loop",
+    "order": "3",
+    "name": "Singapore Finale",
+    "season": "March",
+    "budget": "375",
+    "notes": "A deliberate, compact finale — a quiet city stop after East Timor.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491597_cxdeq",
+    "grand_trip_id": "gt_seed_mexico",
+    "order": "0",
+    "name": "Mexico",
+    "season": "November–December",
+    "budget": "1000",
+    "notes": "Dry season, after the summer rains.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491597_w30xz",
+    "grand_trip_id": "gt_seed_central-america-loop",
+    "order": "0",
+    "name": "Northern Central America",
+    "season": "December–January",
+    "budget": "1770",
+    "notes": "Dry season, hurricane season over.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491597_r32zb",
+    "grand_trip_id": "gt_seed_central-america-loop",
+    "order": "1",
+    "name": "Southern Central America",
+    "season": "January–February",
+    "budget": "1975",
+    "notes": "Pacific dry season in Costa Rica/Panama — best time for the coast.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491597_672z3",
+    "grand_trip_id": "gt_seed_andes-grand-traverse",
+    "order": "0",
+    "name": "Colombia",
+    "season": "February–March",
+    "budget": "1260",
+    "notes": "Dry in both the Caribbean region and the coffee zone/Andes.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491597_ksgoo",
+    "grand_trip_id": "gt_seed_andes-grand-traverse",
+    "order": "1",
+    "name": "Ecuador",
+    "season": "March–April",
+    "budget": "1650",
+    "notes": "Sierra dry enough for hiking; Galápagos is good year-round but quieter in this season.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491597_njoxp",
+    "grand_trip_id": "gt_seed_andes-grand-traverse",
+    "order": "2",
+    "name": "Peru",
+    "season": "April–May",
+    "budget": "1050",
+    "notes": "The Andes dry season begins — ideal for Cusco/Sacred Valley and Huaraz trekking.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491597_pqcpd",
+    "grand_trip_id": "gt_seed_andes-grand-traverse",
+    "order": "3",
+    "name": "Bolivia",
+    "season": "May–June",
+    "budget": "344",
+    "notes": "Dry season, clear Uyuni Salt Flat (note: no mirror effect like in the wet season — a deliberate trade-off).",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491597_cyxzj",
+    "grand_trip_id": "gt_seed_southern-cone-brazil-finale",
+    "order": "0",
+    "name": "Northern Chile",
+    "season": "June–July",
+    "budget": "520",
+    "notes": "Northern Chile only (Atacama, Antofagasta) — Patagonia is a separate future expedition. The Atacama is dry year-round; cold nights in the Chilean winter, fine during the day.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491597_2q234",
+    "grand_trip_id": "gt_seed_southern-cone-brazil-finale",
+    "order": "1",
+    "name": "Northern Argentina",
+    "season": "July",
+    "budget": "350",
+    "notes": "Northern Argentina only (Salta, Jujuy) — Patagonia is a separate future expedition. Dry peak season in Salta/Jujuy, cold nights in the high mountains.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491597_n9nte",
+    "grand_trip_id": "gt_seed_southern-cone-brazil-finale",
+    "order": "2",
+    "name": "Southern Brazil",
+    "season": "July–August",
+    "budget": "1166",
+    "notes": "Southern Brazil only — Northern Brazil is a separate future expedition. Southern Brazilian winter: mild and dry for sightseeing (Iguaçu, colonial towns), but not beach weather; for beach time start the whole trip 1-2 months later.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491598_t17nj",
+    "grand_trip_id": "gt_seed_southern-africa-safari-loop",
+    "order": "0",
+    "name": "South Africa, Lesotho & Eswatini",
+    "season": "June–early July",
+    "budget": "2975",
+    "notes": "The opener, with a real international airport as the entry point (Cape Town/Johannesburg) — Kruger wildlife spotting is at its best here, well before the rainy season.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491598_76sk6",
+    "grand_trip_id": "gt_seed_southern-africa-safari-loop",
+    "order": "1",
+    "name": "Southern Africa",
+    "season": "July–October",
+    "budget": "14035",
+    "notes": "From Mozambique to Malawi via Zimbabwe, Botswana, Namibia, Angola and Zambia — with this order it falls almost entirely within the dry season (May-October), with the best wildlife viewing right toward the end (August-October). The Angola-Zambia border crossing in southeastern Angola is less traveled than the rest of this route — check extra carefully beforehand.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491599_3h2lh",
+    "grand_trip_id": "gt_seed_african-islands",
+    "order": "0",
+    "name": "Islands",
+    "season": "October–November",
+    "budget": "2650",
+    "notes": "Madagascar and Mauritius — Madagascar's notoriously slow roads are the biggest time sink here, not the sights themselves.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491599_pkryy",
+    "grand_trip_id": "gt_seed_east-africa-safari-classic",
+    "order": "0",
+    "name": "East Africa",
+    "season": "November–January",
+    "budget": "10320",
+    "notes": "Tanzania, Rwanda, Uganda and Kenya — lands in the short rains (October-December, light afternoon showers, manageable) and the following short dry spell (January-February), including the southern Serengeti's calving season. Not the absolute peak (June-October), but a recognized strong alternative.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491599_0ozy2",
+    "grand_trip_id": "gt_seed_horn-of-africa-egypt",
+    "order": "0",
+    "name": "Horn of Africa & Egypt",
+    "season": "February–March",
+    "budget": "3115",
+    "notes": "Ethiopia and Egypt as the finale. Ethiopia's main rainy season (kiremt) falls June-September, so this window (October-March, peak December-February) is its own good time. Egypt benefits from the cooler late season instead of the early summer heat.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492521_gumr5",
+    "grand_trip_id": "gt_seed_iberia-moroccotunisia",
+    "order": "0",
+    "name": "Iberia & Maghreb",
+    "season": "September",
+    "budget": "1270",
+    "notes": "From Moorish Spain via Berber culture in Morocco to Punic/Roman Tunisia — the western Mediterranean where Phoenicians, Carthaginians, Romans and the Islamic world succeeded one another.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492521_y1s9r",
+    "grand_trip_id": "gt_seed_malta-italy",
+    "order": "0",
+    "name": "Malta & Italy",
+    "season": "October",
+    "budget": "2775",
+    "notes": "From temples older than the pyramids (Malta) via Magna Graecia and Roman southern Italy to the heart of the Roman Empire, with Sardinia's Nuraghe civilization as a unique finale.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492522_qofah",
+    "grand_trip_id": "gt_seed_corsica-southern-france",
+    "order": "0",
+    "name": "Corsica & Southern France",
+    "season": "November",
+    "budget": "1075",
+    "notes": "Two French legs connecting Bonifacio's cliffs and the Gallo-Roman monuments of Provence.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492522_xj90q",
+    "grand_trip_id": "gt_seed_greece-cyprus",
+    "order": "0",
+    "name": "Greece & Cyprus",
+    "season": "November-December",
+    "budget": "1690",
+    "notes": "From Greek antiquity on the mainland via the Minoan civilization of Crete to the Greek-Roman-Byzantine layer of Cyprus, just before the crossing to Anatolia.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492522_t3b2c",
+    "grand_trip_id": "gt_seed_anatolia",
+    "order": "0",
+    "name": "Anatolia",
+    "season": "December",
+    "budget": "850",
+    "notes": "One big leg bringing together Byzantium, the Ottoman Empire and the Roman cities of the Aegean coast, with Cappadocia as a bridge to the rest of Anatolia.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492522_h7rnd",
+    "grand_trip_id": "gt_seed_egypt-arabian-peninsula",
+    "order": "0",
+    "name": "Egypt & the Arabian Peninsula",
+    "season": "December-January",
+    "budget": "2669",
+    "notes": "From ancient Egyptian civilization via the Nabataean trade routes of Jordan and the Arab trading world of Oman and the Dilmun civilization of Bahrain to modern Qatar as a deliberately contemporary finale.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491604_i7k7p",
+    "grand_trip_id": "gt_seed_scandinavia-overland",
+    "order": "0",
+    "name": "Scandinavia",
+    "season": "June",
+    "budget": "4400",
+    "notes": "Lapland and Norwegian fjords/islands by train and bus — the only genuinely overland-connected part of the original Nordic Arctic Expedition.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134491604_eug4q",
+    "grand_trip_id": "gt_seed_greenland",
+    "order": "0",
+    "name": "Greenland",
+    "season": "July–August",
+    "budget": "3725",
+    "notes": "Best boat access to the Disko Bay icebergs near Ilulissat.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492562_97vxm",
+    "grand_trip_id": "gt_seed_eastern-canada",
+    "order": "0",
+    "name": "Atlantic Canada – Nova Scotia",
+    "season": "June",
+    "budget": "900",
+    "notes": "Starting point — flight Netherlands-Halifax. Rugged coast, fishing villages and lighthouses; no rental car needed, everything is doable via short distances from Halifax.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492562_akwzi",
+    "grand_trip_id": "gt_seed_eastern-canada",
+    "order": "1",
+    "name": "Eastern Canada – Historic Cities",
+    "season": "June",
+    "budget": "1500",
+    "notes": "Traveling by train, no rental car in this block. Niagara Falls is an optional day trip from Toronto, not a separate block.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492562_if2u8",
+    "grand_trip_id": "gt_seed_western-canada-rockies-vancouver",
+    "order": "0",
+    "name": "Canadian Rockies",
+    "season": "June-July",
+    "budget": "2600",
+    "notes": "Rental car (Calgary-Vancouver). Plan for at least 2-3 nights per national park so you can also hike, not just drive through.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492562_158hl",
+    "grand_trip_id": "gt_seed_western-canada-rockies-vancouver",
+    "order": "1",
+    "name": "Vancouver",
+    "season": "July",
+    "budget": "700",
+    "notes": "No rental car needed in Vancouver itself.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492562_000u1",
+    "grand_trip_id": "gt_seed_western-canada-rockies-vancouver",
+    "order": "2",
+    "name": "Alaska",
+    "season": "June-August",
+    "budget": "1600",
+    "notes": "Flight Vancouver-Anchorage, then continue overland/by train. Optional — the route also works fine if you stop at Vancouver.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492562_pycpk",
+    "grand_trip_id": "gt_seed_us-west-coast-roadtrip",
+    "order": "0",
+    "name": "Pacific Northwest & Northern California Roadtrip",
+    "season": "July-August",
+    "budget": "2200",
+    "notes": "Rental car (Seattle-San Francisco). Relaxed pace: better to spend 2-3 nights at a park than drive every day — this is a coastal route, not a race.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492562_nuxzz",
+    "grand_trip_id": "gt_seed_us-west-coast-roadtrip",
+    "order": "1",
+    "name": "California Finale",
+    "season": "August",
+    "budget": "2100",
+    "notes": "Book Yosemite Valley accommodation well in advance (limited spots permitted during high season). Watch for wildfire risk/air quality in August — check current park alerts shortly before departure.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492573_xhgwp",
+    "grand_trip_id": "gt_seed_pacific-islands",
+    "order": "0",
+    "name": "Pacific Opener",
+    "season": "May-June",
+    "budget": "4125",
+    "notes": "Five island groups in the dry season, well before cyclone season (November-April).",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492573_hllgg",
+    "grand_trip_id": "gt_seed_tropicaloutback-australia",
+    "order": "0",
+    "name": "Tropical Australia",
+    "season": "June-August",
+    "budget": "6300",
+    "notes": "Dry season: the Kimberley roads are passable, no monsoon, no jellyfish season near Cairns.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492573_18hxv",
+    "grand_trip_id": "gt_seed_temperatesouthern-australia",
+    "order": "0",
+    "name": "Temperate Australia",
+    "season": "August-September",
+    "budget": "4130",
+    "notes": "Late winter/early spring — cooler than the summer peak (December-February), but manageable.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492573_ut42v",
+    "grand_trip_id": "gt_seed_new-zealand",
+    "order": "0",
+    "name": "New Zealand Finale",
+    "season": "September-November",
+    "budget": "3388",
+    "notes": "Spring — stable weather, quieter than the summer rush (December-February); often recommended by travel guides as a shoulder season.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492529_wocoi",
+    "grand_trip_id": "gt_seed_caribbean-islands-hop",
+    "order": "0",
+    "name": "Greater Antilles",
+    "season": "December",
+    "budget": "2340",
+    "notes": "Dry season, well after hurricane season (which runs June-November) — a safe, pleasant opener.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492529_zf341",
+    "grand_trip_id": "gt_seed_caribbean-islands-hop",
+    "order": "1",
+    "name": "Dutch Caribbean",
+    "season": "December-January",
+    "budget": "1220",
+    "notes": "Dry season — clearer water for snorkeling and diving.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492529_izzf4",
+    "grand_trip_id": "gt_seed_caribbean-islands-hop",
+    "order": "2",
+    "name": "Lesser Antilles",
+    "season": "January-February",
+    "budget": "2445",
+    "notes": "Dry season (carême) — the best time to hike Dominica's rainforest. The island order follows the natural north-south chain, and coincidentally also the L'Express des Îles ferry line.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492530_mvbfr",
+    "grand_trip_id": "gt_seed_suriname-northern-brazil",
+    "order": "0",
+    "name": "Suriname & Amazon",
+    "season": "February-March",
+    "budget": "1445",
+    "notes": "Suriname's short dry spell lines up perfectly here for jungle/river trips. Northern Brazil's dune coast (Jericoacoara/Lençóis) is then just outside its absolute peak season (June-January) — the only accepted compromise of the whole original route.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492549_5rnor",
+    "grand_trip_id": "gt_seed_west-africa-overland",
+    "order": "0",
+    "name": "Cape Verde Islands",
+    "season": "November",
+    "budget": "780",
+    "notes": "Just after the rainy season (August-October) — the dry season lasts until June. A calm, pleasant opener.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492549_3abaw",
+    "grand_trip_id": "gt_seed_west-africa-overland",
+    "order": "1",
+    "name": "Senegambia",
+    "season": "November-December",
+    "budget": "858",
+    "notes": "Start of the West African dry season (November-April).",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492549_veg3s",
+    "grand_trip_id": "gt_seed_west-africa-overland",
+    "order": "2",
+    "name": "Gulf of Guinea",
+    "season": "December-January",
+    "budget": "1634",
+    "notes": "Harmattan season — dry but dusty, the best period to travel here.",
+    "collapsed": "FALSE"
+  },
+  {
+    "region_id": "rg_1789134492550_1oc27",
+    "grand_trip_id": "gt_seed_central-africa-islands",
+    "order": "0",
+    "name": "Central Africa & Islands",
+    "season": "January-February",
+    "budget": "1888",
+    "notes": "Cameroon's least wet period (November-February) and Gabon's short dry season (December-February) coincide here; São Tomé is the exception (rainy season).",
+    "collapsed": "FALSE"
+  }
+]
