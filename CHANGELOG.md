@@ -12,6 +12,43 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Route Builder → Google Sheet sync, Phase B — actually wired up and migrated
+  (2026-09-11)** — the plan from `ROUTE_BUILDER_SYNC.md` and the Phase A prep below are now
+  real. Four new Sheet tabs (`GrandTrips`, `GrandTripRegions`, `GrandTripBlocks`,
+  `GrandTripDestinations`), published as CSV and wired into `js/config/users.js` +
+  `dataService.js` (`getGrandTripsFull()` joins the four flat tables back into the nested
+  shape `rbRoutes` uses). The Apps Script Web App (same one the map already posts to) got a
+  `type`-dispatch branch in `doPost` — `grand_trip` (upsert, full-replace of a route's
+  regions/blocks/destinations), `grand_trip_delete`, and `grand_trip_bulk_import` (chunked,
+  for the one-time migration) — split across two files in the Apps Script project
+  (`Code.gs` keeps the untouched country-status handler, `GrandTripSync.gs` holds the new
+  logic; Apps Script only allows one `doPost` per project regardless of file count, so
+  `Code.gs`'s `doPost` is just the dispatcher). `rbSave()` (`routeBuilderCore.js`) now takes
+  the changed route's id and fires a fire-and-forget push/delete for it; all 14 UI edit-sites
+  in `routeBuilderUI.js` were updated to pass it. Seed/migration calls still call bare
+  `rbSave()` with no id, so seeding the 442 built-in routes into a fresh browser never spams
+  the endpoint — only real edits sync.
+
+  **Found and fixed a real bug before it could bite**: seeded routes got a random
+  `'gt_' + Date.now() + random()` id, generated once per browser at first seed. Since two
+  browsers seeding the same built-in route independently would get two *different* ids for
+  it, the Sheet-merge (which matches by id) would never have recognized them as the same
+  route — the first time Youri opened Route Builder on a second device, all 442 seeded
+  routes would have silently duplicated. Fixed with `rbSeedRouteId(name)`
+  (`routeBuilderCore.js`, a deterministic slug of the route's name — all 442 checked
+  unique) and a one-time migration `rbMigrateDeterministicSeedIds()`, positioned as the
+  very last migration (needs every rename/translation migration to have already settled
+  `route.name`) and right before the new Sheet-merge step. Verified deterministic by
+  diffing two independent `simulate_route_builder.js` runs (identical route ids both
+  times) and by a real browser test — cleared `localStorage`, hard-reloaded: 442 routes,
+  no duplicates, Sheet data merged in correctly, zero console errors.
+
+  **Real migration run and verified**: all 442 routes / 116 regions / 1058 blocks / 3952
+  destinations are now actually in the Sheet — row counts double-checked against the exact
+  expected totals, no duplicate ids. `data/youri/grand_trip*.json` fallbacks now hold a real
+  snapshot instead of empty arrays. Not done in this pass: `BlockLibrary`/
+  `BlockLibraryItems` tabs (the saved reusable country blocks) stay `localStorage`-only.
+
 - **Route Builder: "Export JSON" safety-net button + Sheet-sync plan verified against real
   data (2026-09-07)** — `ROUTE_BUILDER_SYNC.md`'s Google Sheet sync is still not started
   (no Sheet access this session), but as prep: added `rbExportRoutesAsJSON()`

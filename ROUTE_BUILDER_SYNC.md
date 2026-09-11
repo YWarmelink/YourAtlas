@@ -1,22 +1,18 @@
 # Route Builder — Google Sheet Sync Plan
 
-Status: **not started** (Sheet/Apps Script side). The Route Builder (`route-builder.html`)
-currently stores everything in `localStorage` only — per browser, per device. Nothing
-syncs between your laptop and your phone yet. This doc is the plan for when you're ready
-to fix that.
+Status: **done (2026-09-11)** for routes/regions/blocks/destinations — see `CHANGELOG.md`'s
+"Route Builder → Google Sheet sync, Phase B" entry for what actually shipped and the
+deterministic-seed-id bug it caught along the way. The plan below is kept as historical
+reference and because the client-side implementation still matches its shape closely.
+**Not done**: the `BlockLibrary`/`BlockLibraryItems` tabs described further down (saved
+reusable country blocks) — those stay `localStorage`-only for now, not scheduled.
 
-**Prep done 2026-09-07, no Sheet access needed:** an "⬇️ Export JSON" button now exists
+**Prep done 2026-09-07, no Sheet access needed:** an "⬇️ Export JSON" button exists
 in the route list toolbar (`rbExportRoutesAsJSON()` in `js/pages/routeBuilderUI.js`) that
 copies every route + the Block Library to the clipboard, shaped 1:1 to match the sheet
-tabs below — both a manual backup and the exact bulk-import payload for whenever step 3
-below gets built. Verified against the real simulated live state: **442 routes, 1058
-blocks, 3952 destinations** — the migration is at that scale, not the "handful of
-routes" this doc originally assumed; plan the bulk-import Apps Script branch (step 3)
-with chunking in mind, since Apps Script caps execution at 6 minutes per call.
-
-Pick this back up by pasting this file's content into a Claude Code conversation in
-this repo, or just say "let's finish the Route Builder sheet sync" and point Claude
-at this file.
+tabs below — both a manual backup and the exact bulk-import payload used for the real
+migration. Verified against the real simulated live state: **442 routes, 1058
+blocks, 3952 destinations** — all of which are now actually in the Sheet.
 
 **Note (2026-08): `js/pages/routeBuilder.js` is now 4 files** (`routeBuilderCore.js`,
 `routeBuilderContent.js`, `routeBuilderUI.js`, `routeBuilder.js` — see `CLAUDE.md`'s

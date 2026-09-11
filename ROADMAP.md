@@ -6,7 +6,8 @@ Where this project is headed. For what already works, see `README.md`. For histo
 
 ## Next up
 
-- **Route Builder → Google Sheet sync** — routes currently only live in `localStorage`, so they don't follow Youri across devices/browsers. Full plan already written in `ROUTE_BUILDER_SYNC.md`. Next concrete step: add 4 new tabs (`GrandTrips`, `GrandTripRegions`, `GrandTripBlocks`, `GrandTripDestinations`) to the Google Sheet, publish each as CSV, then extend the Apps Script `doPost` for `GrandTrip*` payloads.
+Nothing queued right now — see "Planned features" below for buildable-anytime ideas, or
+"Long-term / someday" for the bigger blocked-on-something items.
 
 ## Planned features
 
@@ -59,12 +60,14 @@ Agreed direction (2026-07 brainstorm), not yet designed or scheduled. **Criterio
 - **Fold `youridealtravel` into YourAtlas as its ranking-engine mode** (decided direction, 2026-07 brainstorm — not yet designed or started):
   - **Goal is functional integration, not just a shared dataset** — the two apps should end up actually using each other's logic, not just reading the same Sheet.
   - **YourAtlas is the umbrella** — it already is the broader dashboard concept (Trips/Countries/Map/Route Builder); youridealtravel's budget/style/season trip-ranking engine becomes an additional mode inside it, not a rename or a from-scratch new identity.
-  - **Sequencing: after the Route Builder Sheet-sync is done**, not alongside it — finish that as standalone work first, then pick this up seriously (both touch the Sheet schema, easier to design once rather than twice, but the sync shouldn't wait on the merge decision).
+  - **Sequencing: after the Route Builder Sheet-sync is done** — done as of 2026-09-11 (see
+    `CHANGELOG.md`), so this merge is now unblocked and can be picked up seriously whenever
+    there's time for it — still not started, still needs its own design pass first.
   - **Candidate integrations floated in the brainstorm, none decided yet** — deliberately left open rather than picked now:
     - Applying the ranking engine's season/budget fit-scoring (`countrySeasonScore`/`calcBudgetScore`) to Route Builder's country blocks
     - One shared traveler profile (budget, travel-style weights, season preference) instead of each part keeping its own settings
     - One shared "visited" status, sourced from YourAtlas' Countries/Map tracker, that the ranking engine reads instead of tracking it separately
-  - Revisit this whole section properly once the sync work is done — don't start designing the merge itself before then.
+  - Revisit this whole section properly before starting — nothing here is designed yet, only the sequencing decision.
 
 - **Live flight-price scraping**, replacing the static low/mid/high season estimates in FLIGHTS with real current prices. Real value (estimates go stale, actual fares swing a lot), but a genuinely bigger step than it sounds: scraping needs to run somewhere other than the user's browser (a scheduled job, not client-side JS — CORS and rate-limits rule that out), and flight-search sites change their markup and sometimes prohibit scraping in their ToS, so it'd need real, ongoing maintenance rather than a one-time build. Depends on the backend-migration item below existing first, since there's nowhere to run a scheduled scraper without one.
 

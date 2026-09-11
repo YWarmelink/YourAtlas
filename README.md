@@ -20,11 +20,13 @@ A personal travel dashboard built with vanilla HTML, CSS and JavaScript. Part of
 
 Live data is pulled from a public Google Sheets spreadsheet (CSV). Fallback JSON files are in `data/youri/` when the sheet is unreachable.
 
-**Route Builder is the exception**: it stores big, multi-country routes in `localStorage`
-only (per browser, per device) — it doesn't touch the Google Sheet yet. There's a
-concrete plan to change that in [`ROUTE_BUILDER_SYNC.md`](ROUTE_BUILDER_SYNC.md) —
-new sheet tabs, Apps Script changes, client code — pick it up whenever you're ready
-to make routes sync across devices.
+**Route Builder now also syncs to the Sheet** (2026-09-11, see
+[`ROUTE_BUILDER_SYNC.md`](ROUTE_BUILDER_SYNC.md) for the full history): every route
+still saves to `localStorage` first (instant, offline-safe), then fires a
+fire-and-forget push to the same Apps Script Web App the map already used, so routes
+now follow you across devices/browsers instead of being stuck in one browser. The
+Block Library (saved reusable country blocks) is the one remaining piece still
+`localStorage`-only.
 
 ## Route Builder
 
@@ -83,9 +85,10 @@ verified as of 2026-07 (see `CHANGELOG.md` for the verification history):
 **Central European Grand Roadtrip 🚗**, and **British Isles & Celtic Coast
 Expedition 🍀**.
 
-Everything above lives in `localStorage` (`atlas_grand_trips`,
-`atlas_route_blocks_library`) — see [`ROUTE_BUILDER_SYNC.md`](ROUTE_BUILDER_SYNC.md)
-for the plan to move it into the Google Sheet.
+All routes (`atlas_grand_trips` in `localStorage`) now also sync to the Sheet's
+`GrandTrips`/`GrandTripRegions`/`GrandTripBlocks`/`GrandTripDestinations` tabs — see
+[`ROUTE_BUILDER_SYNC.md`](ROUTE_BUILDER_SYNC.md). The Block Library
+(`atlas_route_blocks_library`) is still `localStorage`-only.
 
 **Modularizing the 13 expeditions**: a full analysis of which expeditions can split into
 smaller, reusable "Major Trip" / "Travel Block" pieces (grounded in the actual route
@@ -545,10 +548,10 @@ below marked done):
   standalone trips" section per Grand Expedition, and evolving Block Library into an actual Module
   Library. For now every new route above is just a plain route, same as the original 13.
 
-**Route Builder → Google Sheet sync**: still 100% `localStorage`, doesn't follow Youri across
-devices/browsers. Next concrete step per `ROUTE_BUILDER_SYNC.md`: add 4 new Sheet tabs
-(`GrandTrips`, `GrandTripRegions`, `GrandTripBlocks`, `GrandTripDestinations`), publish each as CSV,
-then extend the Apps Script `doPost` for `GrandTrip*` payloads.
+~~**Route Builder → Google Sheet sync**~~ — **done (2026-09-11)**, see `CHANGELOG.md`'s
+"Route Builder Google Sheet sync — Phase B" entry and `ROUTE_BUILDER_SYNC.md`. All 442
+routes now sync to the 4 `GrandTrip*` Sheet tabs; only the Block Library remains
+`localStorage`-only.
 
 **Trips route map — South Korea pilot**: needs Youri's manual Google Sheet work (new
 `TripDestinations` tab + coordinates) before the already-built map code will show anything — see
