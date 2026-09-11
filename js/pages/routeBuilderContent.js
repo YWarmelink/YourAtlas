@@ -20003,6 +20003,33 @@ function rbMigrateFixNepalEntryNotesRegression() {
 }
 
 /**
+ * Reassigns every seeded route's `id` from its original throwaway `'gt_' + Date.now() + '_' +
+ * random` (see rbBuildSeedRoute()/rbBuildFlatSeedRoute() above) to the deterministic
+ * rbSeedRouteId(route.name) (routeBuilderCore.js) — every browser that seeds the same named
+ * route converges on the same id, which the Google Sheet sync (ROUTE_BUILDER_SYNC.md) needs
+ * to recognize "same route" across devices instead of duplicating it on every new device.
+ *
+ * Must run LAST, after every other seed/rename/translation migration above — it needs
+ * route.name already settled to its final value, the same for every browser regardless of
+ * when it first seeded. Checked 2026-09: all 442 route names are unique, so no collisions.
+ *
+ * One-time only, like every other migration here: a route's id is deliberately frozen after
+ * this fires once, exactly like every other field this codebase patches via migrations — a
+ * future rename doesn't retroactively change history. Skips anything already using this id
+ * scheme (defensive; shouldn't happen since the flag guards against re-running at all).
+ */
+function rbMigrateDeterministicSeedIds() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_DETERMINISTIC_SEED_IDS)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_DETERMINISTIC_SEED_IDS, '1');
+
+  rbRoutes.forEach(route => {
+    if (route.id.startsWith('gt_seed_')) return;
+    route.id = rbSeedRouteId(route.name);
+  });
+  rbSave();
+}
+
+/**
  * Draft Route Verification, Tier 1 — the last tier, 4 solo US/Hawaii/Florida routes needing full
  * research from scratch (2026-09-04). US Northeast and US Southwest get targeted field patches;
  * Hawaii and Florida get a wholesale content replacement since their entire content was also

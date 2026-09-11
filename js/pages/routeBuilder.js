@@ -132,6 +132,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateDutchAuditStandaloneEnglish();
   rbMigrateFixNepalEntryNotesRegression();
 
+  // Must run after every migration above (needs route.name fully settled) and before the
+  // Sheet merge below (needs route.id already deterministic) — see its own doc comment.
+  rbMigrateDeterministicSeedIds();
+
   // Sheet as source of truth once reachable, localStorage as offline fallback — same
   // resilience pattern map.js uses. A route already synced to the Sheet overrides its
   // seeded/migrated localStorage version; a route not yet in the Sheet (nothing's been

@@ -129,6 +129,7 @@ const RB_MIGRATE_FLAG_2026_09_DRAFT_VERIFICATION_TIER3 = 'atlas_grand_trips_migr
 const RB_MIGRATE_FLAG_2026_09_DRAFT_VERIFICATION_TIER1 = 'atlas_grand_trips_migrate_2026_09_draft_verification_tier1_v1';
 const RB_MIGRATE_FLAG_2026_09_DUTCH_AUDIT_STANDALONE_ENGLISH = 'atlas_grand_trips_migrate_2026_09_dutch_audit_standalone_english_v1';
 const RB_MIGRATE_FLAG_2026_09_FIX_NEPAL_ENTRY_NOTES_REGRESSION = 'atlas_grand_trips_migrate_2026_09_fix_nepal_entry_notes_regression_v1';
+const RB_MIGRATE_FLAG_2026_09_DETERMINISTIC_SEED_IDS = 'atlas_grand_trips_migrate_2026_09_deterministic_seed_ids_v1';
 const RB_BLOCK_COLORS =['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -301,5 +302,25 @@ function rbNewDestId() {
 
 function rbNewBlockId() {
   return 'blk_' + Date.now() + '_' + Math.random().toString(36).slice(2, 7);
+}
+
+/**
+ * Deterministic id for a seeded (built-in) route, derived from its name — every browser
+ * that seeds the same named route (identical content everywhere, from source) converges on
+ * the same id, so the Google Sheet sync can recognize "this is the same route" across
+ * devices instead of duplicating it. rbBuildSeedRoute()/rbBuildFlatSeedRoute() still assign
+ * a throwaway random id at seed time (harmless — see rbMigrateDeterministicSeedIds() in
+ * routeBuilderContent.js, which overwrites it with this one, once, after every seed/rename/
+ * translation migration has settled route.name to its final value). NOT used for routes
+ * made via the "New Route" button — those keep their own unique 'gt_' + Date.now() id, since
+ * no other browser needs to converge on a user's own custom route.
+ */
+function rbSeedRouteId(name) {
+  const slug = (name || '')
+    .normalize('NFKD').replace(/[^\x00-\x7F]/g, '') // strip accent marks left after NFKD decomposition (and any other non-ASCII, e.g. emoji)
+    .replace(/[^\w\s-]/g, '') // strip remaining punctuation (&, parens, apostrophes, ...)
+    .trim().toLowerCase().replace(/\s+/g, '-')
+    .slice(0, 60);
+  return 'gt_seed_' + (slug || 'unnamed');
 }
 
