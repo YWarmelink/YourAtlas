@@ -28,6 +28,13 @@ now follow you across devices/browsers instead of being stuck in one browser. Th
 Block Library (saved reusable country blocks) is the one remaining piece still
 `localStorage`-only.
 
+**Countries sheet now carries visa/vaccination/health data** (2026-09-14, see
+`CHANGELOG.md` and [`VISA_VACCINATION_RESEARCH.md`](VISA_VACCINATION_RESEARCH.md)) —
+visa requirements, max stay, required/recommended vaccines, malaria risk and health
+notes for all 197 countries, dated snapshots for a Dutch (NL) passport holder. Shown
+read-only via a click-to-open info panel in `map.html`'s country list, and per-route in
+Route Builder's "🩺 Show Visa & Vaccinations" overview panel.
+
 ## Route Builder
 
 Plan long, multi-country "expeditions" by stacking country blocks in sequence — for

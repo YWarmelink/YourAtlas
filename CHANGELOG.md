@@ -12,6 +12,26 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Visa & vaccination info researched for all 197 countries, surfaced in Map and Route
+  Builder (2026-09-14)** — the Countries sheet gained 8 new columns (`visa_requirement`,
+  `visa_max_stay_days`, `visa_notes`, `vaccines_required`, `vaccines_recommended`,
+  `malaria_risk`, `health_notes`, `requirements_checked_date`), populated for a Dutch (NL)
+  passport holder by the new `visa-vaccination-checker` agent spec (`.claude/agents/`), run
+  in 13 batches (2 batches recovered from a 2026-09-11 session that hit its usage limit
+  mid-run — see `VISA_VACCINATION_RESEARCH.md` for the full per-batch research log, flags,
+  and sourcing notes). Imported via a one-time CSV
+  (`data/youri/countries_visa_vaccination_import.csv`), pasted into the live Sheet by hand
+  to avoid touching any other columns.
+
+  Surfaced in the app itself (`js/utils/helpers.js`'s shared `buildCountryHealthHTML()`,
+  reused by both): clicking a country in `map.html`'s country list opens a read-only info
+  side panel; Route Builder's route overview gets a "🩺 Show Visa & Vaccinations" toggle
+  listing every unique country in the open route, positioned right below the map (not at
+  the bottom of the page) so it doesn't need scrolling past the whole block list to reach.
+  Partially addresses the "Visa/passport tracker" item in `ROADMAP.md` — the informational
+  side is done; the personal obtained/expiry-date tracking layer described there is still
+  open.
+
 - **Route Builder → Google Sheet sync, Phase B — actually wired up and migrated
   (2026-09-11)** — the plan from `ROUTE_BUILDER_SYNC.md` and the Phase A prep below are now
   real. Four new Sheet tabs (`GrandTrips`, `GrandTripRegions`, `GrandTripBlocks`,

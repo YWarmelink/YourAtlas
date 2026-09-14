@@ -13,7 +13,12 @@ Nothing queued right now — see "Planned features" below for buildable-anytime 
 
 Agreed direction (2026-07 brainstorm), not yet designed or scheduled. **Criterion for this section: buildable with the current stack, no blocking dependency** — nothing here needs to wait on something bigger below.
 
-- **Visa/passport tracker** — visa info is already researched (by hand and via the `route-price-checker` agent) but currently just buried in free-text `notes` per country block. Turn it into a structured per-country field: visa type needed, obtained yes/no, expiry date — so it's an actionable checklist, not prose you have to re-read.
+- **Visa/passport tracker — informational half done (2026-09-14)**: visa/vaccination/health
+  data for all 197 countries is now a structured Countries-sheet field (not buried in
+  free-text notes anymore) and displayed read-only in both Map and Route Builder — see
+  `CHANGELOG.md` and `VISA_VACCINATION_RESEARCH.md`. **Still open**: the actionable-checklist
+  half — per-trip "obtained yes/no" + expiry-date tracking for Youri's own passport/visas,
+  which this display doesn't do (it only shows what's *required*, not what he's already sorted).
 - **Universal search across trips/expeditions/notes** — with 13 expeditions full of long `notes` fields, plus the Trips sheet, "where was that tip about X" is already a real problem. Client-side text search over data that's already loaded (no new data source needed).
 - **Bucket-list counter across Route Builder expeditions** — a simple "X countries done, Y to go" tally across all 13 expeditions combined. Aggregation over existing data, no new fields.
 - **Yearly travel recap** — a "wrapped"-style end-of-year summary (countries visited, km traveled, money spent, top trip), pulling from Trips + Countries + Route Builder together. Natural home is here since it spans all three, rather than in youridealtravel.
