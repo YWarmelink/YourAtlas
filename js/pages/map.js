@@ -32,6 +32,14 @@ class CountryStateManager {
   getName(code)   { return this._local[code]?.country_name || this._sheet[code]?.country_name || code; }
   getContinent(code) { return this._sheet[code]?.continent || ''; }
 
+  /** Full raw Countries-sheet row for one country (visa/vaccination fields included),
+   *  merged with any local status override. Null if the country isn't in the sheet at all. */
+  getRecord(code) {
+    const sheetRec = this._sheet[code];
+    if (!sheetRec && !this._local[code]) return null;
+    return { ...sheetRec, ...this._local[code] };
+  }
+
   setStatus(code, status) {
     const existing = this._sheet[code] || {};
     this._local[code] = { ...existing, country_code: code, status };
@@ -218,6 +226,38 @@ function showStatusPicker(code, name, clientX, clientY) {
     }
   };
   setTimeout(() => document.addEventListener('pointerdown', closeOnOutside), 0);
+}
+
+/* ── Country info panel (visa/vaccination) ──────────────────────────────────
+   Read-only — this only displays the Countries sheet's visa/vaccination columns,
+   it never edits anything, unlike the status picker above. Slides in from the
+   right edge rather than anchoring to the click point, since its content (7 text
+   fields) needs more room than a small anchored popup can give it. */
+function showCountryInfoPanel(code) {
+  document.getElementById('countryInfoPanel')?.remove();
+  document.getElementById('countryInfoBackdrop')?.remove();
+  const record = stateManager.getRecord(code);
+  const name = stateManager.getName(code);
+
+  const backdrop = document.createElement('div');
+  backdrop.id = 'countryInfoBackdrop';
+  backdrop.className = 'country-info-backdrop';
+
+  const panel = document.createElement('div');
+  panel.id = 'countryInfoPanel';
+  panel.className = 'country-info-panel';
+  panel.innerHTML = `
+    <div class="ci-header">
+      <span class="ci-name">${escapeHTML(name)}</span>
+      <button class="ci-close" aria-label="Close">×</button>
+    </div>
+    <div class="ci-body">${buildCountryHealthHTML(record)}</div>`;
+
+  const close = () => { backdrop.remove(); panel.remove(); };
+  document.body.appendChild(backdrop);
+  document.body.appendChild(panel);
+  backdrop.addEventListener('click', close);
+  panel.querySelector('.ci-close').addEventListener('click', close);
 }
 
 /* ── Leaflet map ─────────────────────────────────────────────────────────── */
@@ -458,7 +498,7 @@ function buildBreakdown(all) {
 function renderCountryList(entries, container) {
   if (!entries.length) { container.innerHTML = emptyMsg('No countries found.'); return; }
   container.innerHTML = entries.map(c => `
-    <div class="country-item" id="country-item-${escapeHTML(c.country_code)}">
+    <div class="country-item" id="country-item-${escapeHTML(c.country_code)}" data-code="${escapeHTML(c.country_code)}">
       <div class="country-item-dot ${c.status || 'not-visited'}"></div>
       <div class="country-item-name">${escapeHTML(c.country_name)}</div>
       <div class="country-item-continent">${escapeHTML(c.continent || '')}</div>
@@ -485,6 +525,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         btn.classList.add('active');
         refreshCountryList(btn.dataset.filter);
       });
+    });
+
+    document.getElementById('countryList')?.addEventListener('click', e => {
+      const item = e.target.closest('.country-item');
+      if (item?.dataset.code) showCountryInfoPanel(item.dataset.code);
     });
 
     function syncWishlistUI() {

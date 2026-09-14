@@ -519,6 +519,7 @@ function rbRenderEditor() {
   rbRenderInsertSelect();
   rbRenderCalendarIfVisible(route);
   rbRenderMapIfVisible(route);
+  rbRenderVisaPanelIfVisible(route);
 }
 
 function rbRenderInsertSelect() {
@@ -790,6 +791,38 @@ function rbRefreshDerived(route) {
 
   rbRenderCalendarIfVisible(route);
   rbRenderMapIfVisible(route);
+  rbRenderVisaPanelIfVisible(route);
+}
+
+// ---- visa & vaccinations panel: one card per unique country in the route, in route order ----
+
+function rbRenderVisaPanelIfVisible(route) {
+  const panel = document.getElementById('rbVisaPanel');
+  if (panel && !panel.hidden) rbRenderVisaPanel(route);
+}
+
+function rbRenderVisaPanel(route) {
+  const panel = document.getElementById('rbVisaPanel');
+  if (!panel) return;
+
+  const seen = new Set();
+  const countries = [];
+  (route.blocks || []).forEach(b => {
+    if (!b.country_code || seen.has(b.country_code)) return;
+    seen.add(b.country_code);
+    countries.push({ code: b.country_code, name: b.country || b.country_code });
+  });
+
+  if (!countries.length) {
+    panel.innerHTML = `<div class="empty-message" style="padding:2rem 1rem"><span class="empty-icon">🩺</span><p>Add country blocks to see visa &amp; vaccination info here.</p></div>`;
+    return;
+  }
+
+  panel.innerHTML = countries.map(c => `
+    <div class="rb-visa-country">
+      <div class="rb-visa-country-name">${escapeHTML(c.name)}</div>
+      <div class="rb-visa-country-body">${buildCountryHealthHTML(rbCountryDetails[c.code])}</div>
+    </div>`).join('');
 }
 
 // ---- calendar view ----
@@ -1497,6 +1530,15 @@ function rbBindEvents() {
     panel.hidden = !panel.hidden;
     e.target.textContent = panel.hidden ? '📅 Show Calendar' : '📅 Hide Calendar';
     if (!panel.hidden) rbRenderCalendar(route);
+  });
+
+  document.getElementById('toggleVisaBtn').addEventListener('click', e => {
+    const panel = document.getElementById('rbVisaPanel');
+    const route = rbGetCurrent();
+    if (!panel || !route) return;
+    panel.hidden = !panel.hidden;
+    e.target.textContent = panel.hidden ? '🩺 Show Visa & Vaccinations' : '🩺 Hide Visa & Vaccinations';
+    if (!panel.hidden) rbRenderVisaPanel(route);
   });
 
   document.getElementById('rbModeToggleBtn').addEventListener('click', () => {

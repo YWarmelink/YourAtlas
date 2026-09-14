@@ -951,6 +951,63 @@
   gap: var(--sp-3);
 }
 
+/* === VISA & VACCINATIONS PANEL (read-only, per unique country in the route) === */
+.rb-visa-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--sp-4);
+}
+
+.rb-visa-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-8);
+}
+
+.rb-visa-country {
+  padding: var(--sp-5);
+  background: var(--atlas-bg);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--atlas-border);
+}
+
+.rb-visa-country-name {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semi);
+  color: var(--atlas-text);
+  margin-bottom: var(--sp-3);
+}
+
+.rb-visa-country-body .ci-field {
+  padding: var(--sp-2) 0;
+  border-bottom: 1px solid var(--atlas-border);
+}
+.rb-visa-country-body .ci-field:last-of-type { border-bottom: none; }
+
+.rb-visa-country-body .ci-field-label {
+  font-size: 11px;
+  font-weight: var(--fw-semi);
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  color: var(--atlas-text-light);
+  margin-bottom: 4px;
+}
+
+.rb-visa-country-body .ci-field-value {
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  color: var(--atlas-text);
+}
+.rb-visa-country-body .ci-field-value strong { color: #b45309; }
+
+.rb-visa-country-body .ci-checked {
+  margin-top: var(--sp-3);
+  font-size: 12px;
+  color: var(--atlas-text-light);
+  font-style: italic;
+}
+
 .rb-overview-block {
   display: flex;
   gap: var(--sp-4);

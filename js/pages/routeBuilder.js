@@ -160,8 +160,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       .filter(c => c.country_code && c.country_name)
       .map(c => ({ code: c.country_code, name: c.country_name }))
       .sort((a, b) => a.name.localeCompare(b.name));
+    rbCountryDetails = {};
+    countries.forEach(c => { if (c.country_code) rbCountryDetails[c.country_code] = c; });
   } catch (_) {
     rbCountryOptions = [];
+    rbCountryDetails = {};
   }
 
   await rbLoadTaxonomy();

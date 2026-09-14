@@ -566,6 +566,87 @@
   flex-shrink: 0;
 }
 
+/* === COUNTRY INFO PANEL (visa/vaccination, read-only) === */
+.country-item { cursor: pointer; }
+
+.country-info-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 1099;
+}
+
+.country-info-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(420px, 100vw);
+  background: #1e293b;
+  border-left: 1px solid #334155;
+  box-shadow: -20px 0 40px rgba(0,0,0,.45);
+  z-index: 1100;
+  overflow-y: auto;
+  font-family: var(--font-sans);
+}
+
+.ci-header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 16px 20px;
+  background: #1e293b;
+  border-bottom: 1px solid #334155;
+}
+
+.ci-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.ci-close {
+  background: none;
+  border: none;
+  color: #64748b;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 4px;
+}
+.ci-close:hover { color: #f8fafc; }
+
+.ci-body { padding: 8px 20px 24px; }
+
+.ci-field { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
+.ci-field:last-of-type { border-bottom: none; }
+
+.ci-field-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  color: #94a3b8;
+  margin-bottom: 4px;
+}
+
+.ci-field-value {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #e2e8f0;
+}
+.ci-field-value strong { color: #fbbf24; }
+
+.ci-checked {
+  margin-top: 14px;
+  font-size: 12px;
+  color: #64748b;
+  font-style: italic;
+}
+
 /* === MAP TOOLTIP (amCharts override) === */
 .am5-tooltip-label {
   font-family: var(--font-sans) !important;

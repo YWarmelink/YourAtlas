@@ -175,3 +175,43 @@ function escapeHTML(str) {
     .replace(/&/g, '&amp;').replace(/</g, '&lt;')
     .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
+
+/** Escapes HTML then re-enables **bold** markers from the visa/vaccination research
+ *  data (e.g. "**⚠ ACTIVE CONFLICT**") as <strong> — safe since escaping happens first. */
+function mdBold(str) {
+  return escapeHTML(str).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+}
+
+/**
+ * Renders one country's visa/vaccination/health fields (from the Countries sheet's
+ * visa_requirement..requirements_checked_date columns) as a list of labeled rows.
+ * Shared by map.html's country info panel and Route Builder's per-route visa panel.
+ * `record` is a raw Countries-sheet row (or null/undefined if the country has no data yet).
+ */
+function buildCountryHealthHTML(record) {
+  if (!record || !record.visa_requirement) {
+    return `<div class="empty-message" style="padding:1.5rem 1rem">
+      <span class="empty-icon">🩺</span><p>No visa/vaccination data yet for this country.</p>
+    </div>`;
+  }
+
+  const field = (icon, label, value) => !value ? '' : `
+    <div class="ci-field">
+      <div class="ci-field-label">${icon} ${label}</div>
+      <div class="ci-field-value">${mdBold(value)}</div>
+    </div>`;
+
+  const visaLine = [record.visa_requirement, record.visa_max_stay_days && `Max stay: ${record.visa_max_stay_days} days`]
+    .filter(Boolean).join(' — ');
+
+  return `
+    ${field('🛂', 'Visa', visaLine)}
+    ${field('📝', 'Visa notes', record.visa_notes)}
+    ${field('💉', 'Vaccines required', record.vaccines_required)}
+    ${field('💊', 'Vaccines recommended', record.vaccines_recommended)}
+    ${field('🦟', 'Malaria risk', record.malaria_risk)}
+    ${field('⚕️', 'Health notes', record.health_notes)}
+    ${record.requirements_checked_date
+      ? `<div class="ci-checked">Checked ${escapeHTML(record.requirements_checked_date)} — reverify before booking, rules change.</div>`
+      : ''}`;
+}

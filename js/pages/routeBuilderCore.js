@@ -137,6 +137,7 @@ const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countr
 let rbRoutes = [];
 let rbCurrentId = null;
 let rbCountryOptions = []; // [{ code, name }] — pulled from the same sheet that drives the map
+let rbCountryDetails = {}; // country_code -> full sheet row (visa_requirement etc.), same fetch as rbCountryOptions
 let rbLibrary = [];        // [{ id, name, blocks: [{country, country_code, days, budget, notes}], created_at }]
 let rbSelectedLibIds = new Set();
 
