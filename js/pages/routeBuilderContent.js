@@ -8546,6 +8546,144 @@ function rbBuildPacificNorthwestRoute() {
   });
 }
 
+// ---- Standalone single-country routes, batch 7 (2026-09) ----
+//
+// Unlike batches 1-6, none of these four are split off an existing expedition — they're brand-new
+// countries that had never appeared anywhere in Route Builder or TRIP_DATABASE.csv before this
+// batch (verified against both before starting). Content is based on a dedicated research pass
+// (route-price-checker-style, 2026-09-16) covering daily costs, visa requirements for a Dutch
+// passport, and the current Dutch government travel advisory — see each route's own notes for the
+// specifics and re-verify before booking, as usual.
+//
+// A fifth candidate researched in the same pass, Myanmar, was deliberately NOT built here — its
+// Dutch travel advisory has no green or yellow territory anywhere in the country (red/orange
+// split only), including two of its classic anchor stops (Ngapali Beach, Mrauk U) sitting in
+// explicit "do not travel" red zones. Left for Youri to decide separately whether to add it anyway
+// as a purely aspirational/someday entry (Route Builder's own stated purpose per ROADMAP.md) with
+// heavy warnings, given the "Trips vs. Route Builder" split's rationale.
+
+function rbSeedStandaloneCountryRoutesBatch7() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_STANDALONE_COUNTRIES_BATCH7)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_STANDALONE_COUNTRIES_BATCH7, '1');
+
+  rbRoutes.push(
+    rbBuildSouthKoreaRoute(),
+    rbBuildSriLankaRoute(),
+    rbBuildMaldivesRoute(),
+    rbBuildUAERoute(),
+  );
+  rbSave();
+}
+
+function rbBuildSouthKoreaRoute() {
+  const kr = () => ({
+    code: 'KR', name: 'South Korea', days: 13, budget: 845, lat: 37.5665, lng: 126.9780,
+    destinations: [
+      { name: 'Seoul', lat: 37.5665, lng: 126.9780 },
+      { name: 'DMZ / Imjingak', lat: 37.9022, lng: 126.7367 },
+      { name: 'Gyeongju', lat: 35.8562, lng: 129.2247 },
+      { name: 'Busan', lat: 35.1796, lng: 129.0756 },
+      { name: 'Jeju Island', lat: 33.4996, lng: 126.5312 },
+    ],
+    notes: "Hyper-modern Seoul, the DMZ's frozen Cold War tension, the 1,000-year-old Silla capital Gyeongju, port city Busan and Jeju's volcanic coastline. The DMZ can only be visited on an organized/guided tour (no independent access) — book one from Seoul. KTX high-speed rail connects Seoul-Gyeongju-Busan; Jeju has no bridge/rail link, fly or ferry from Busan. Dutch travel advisory (2026-09 snapshot): red for the DMZ border strip itself, yellow for the area just south of it (guided tours only), green for the rest of the route (Seoul, Gyeongju, Busan, Jeju) — check nederlandwereldwijd.nl before departure. Visa: visa-free 90 days for a Dutch passport; K-ETA is currently waived for Dutch citizens through 31 Dec 2026 but re-check if traveling later, as it will likely become mandatory again ($10, apply 72h ahead).",
+  });
+  return rbBuildFlatSeedRoute('South Korea 🏯', [
+    {
+      ...kr(),
+      notes: 'Entry: direct flight Amsterdam-Seoul (KLM/Korean Air, ±11h50, from ±€700-1,100 return; best period early-to-mid October for autumn foliage, or late March/early April for cherry blossoms — avoid Chuseok, Sept 24-27 2026, which jams transport and hotels). Web-research price/timing indication 2026-09, a snapshot. No long-haul flight buffer needed (direct flight, trip already 13 days). ' + kr().notes,
+      transport_to_next: 'End of this route — return flight from Seoul (Incheon) to Amsterdam, direct.',
+    },
+  ], {
+    best_starting_month: 'October',
+    travel_style: 'KTX high-speed rail between cities, T-money card for local metro/bus, guided tour for the DMZ, flight or ferry to Jeju.',
+    climate_summary: "Early-to-mid October brings crisp, mild days for hiking and city walking, without summer's heat/humidity or Chuseok's crowds.",
+    description: "Seoul, Busan and Gyeongju — hyper-modern cities bookending a 1,000-year-old Silla capital, with the DMZ's frozen tension and Jeju's volcanic coastline as the wild cards.",
+    notes: 'New standalone route (2026-09) — first time South Korea appears in Route Builder, not split off from an existing expedition. Built from a dedicated research pass (route-price-checker style, 2026-09-16) covering costs, visa (K-ETA waiver status) and the DMZ-area advisory split. Re-verify K-ETA/visa status and the advisory before booking, especially if traveling after 2026.',
+  });
+}
+
+function rbBuildSriLankaRoute() {
+  const lk = () => ({
+    code: 'LK', name: 'Sri Lanka', days: 15, budget: 675, lat: 6.9271, lng: 79.8612,
+    destinations: [
+      { name: 'Colombo', lat: 6.9271, lng: 79.8612 },
+      { name: 'Sigiriya', lat: 7.9570, lng: 80.7603 },
+      { name: 'Kandy', lat: 7.2906, lng: 80.6337 },
+      { name: 'Ella', lat: 6.8667, lng: 81.0466 },
+      { name: 'Yala National Park', lat: 6.3735, lng: 81.5061 },
+      { name: 'Mirissa / Galle', lat: 5.9483, lng: 80.4589 },
+    ],
+    notes: "Ancient rock fortresses (Sigiriya), misty tea-country trains (Kandy-Ella), leopard safaris (Yala) and a palm-fringed south coast (Mirissa/Galle) in one island loop. Kandy-Ella is the classic scenic train leg — reserved seats sell out within minutes of the 30-day booking window opening, book the moment it opens; the Nanu Oya-Badulla section only reopened June 2026 after cyclone damage, confirm current status before relying on it. Yala safari entry + jeep runs roughly €85-90/person all-in. Dutch travel advisory (2026-09 snapshot): yellow nationwide — flagged risks include landmines in the North/East (Trincomalee, Batticaloa, Ampara, north of the A12 — outside this route), nationwide terrorism risk, high traffic-fatality risk, monsoon flooding and an active dengue outbreak; check nederlandwereldwijd.nl before departure. Visa: as of 25 May 2026 Dutch passport holders get a free 30-day double-entry tourist ETA (eta.gov.lk) — this policy has changed repeatedly, re-verify before booking.",
+  });
+  return rbBuildFlatSeedRoute('Sri Lanka 🐆', [
+    {
+      ...lk(),
+      notes: "Entry: flight Amsterdam-Colombo, one stop (via Doha/Dubai/Abu Dhabi, ±13-16 hours total; best period December-April, with February/March the sweet spot for the south/west coast + hill country — avoid Kandy's Esala Perahera festival, roughly late July-late August 2026, which triples/quadruples Kandy hotel prices). Web-research price/timing indication 2026-09, a snapshot. No long-haul flight buffer needed despite the connecting flight — trip is well over the 10-day threshold. " + lk().notes,
+      transport_to_next: 'End of this route — return flight from Colombo to Amsterdam, one stop.',
+    },
+  ], {
+    best_starting_month: 'February',
+    travel_style: 'Mix of public bus/3rd-class train and a private driver for the harder legs; tuk-tuk self-drive optional.',
+    climate_summary: 'December-April is dry season for the south/west coast and hill country covered by this route (the north/east has the opposite monsoon pattern, May-September).',
+    description: 'Ancient rock fortresses, misty tea-country trains, and leopard safaris ending on a palm-fringed coast — Sri Lanka packs a continent\'s variety into one island loop.',
+    notes: 'New standalone route (2026-09) — first time Sri Lanka appears in Route Builder, not split off from an existing expedition. Built from a dedicated research pass (route-price-checker style, 2026-09-16) covering costs, the 2026 free-ETA policy change, and the current advisory/dengue/rail-status notes above. Re-verify all of these before booking.',
+  });
+}
+
+function rbBuildMaldivesRoute() {
+  const mv = () => ({
+    code: 'MV', name: 'Maldives', days: 10, budget: 750, lat: 4.1755, lng: 73.5093,
+    destinations: [
+      { name: 'Malé', lat: 4.1755, lng: 73.5093 },
+      { name: 'Maafushi', lat: 3.9403, lng: 73.4889 },
+      { name: 'Thulusdhoo', lat: 4.3728, lng: 73.6489 },
+      { name: 'Fulidhoo', lat: 3.6806, lng: 73.4147 },
+      { name: 'Dhigurah', lat: 3.5264, lng: 72.9239 },
+    ],
+    notes: 'The local-island guesthouse circuit (Maafushi, Thulusdhoo, Fulidhoo, Dhigurah) instead of overwater resorts — palm-fringed white sand and turquoise reefs on a backpacker budget, with whale shark and manta ray day trips from Dhigurah/Fulidhoo. Public ferries between islands are cheap (roughly €3) but run on limited schedules — this is the dominant route-planning constraint, check timetables before committing to an island order; a shared speedboat (roughly €23) is the faster fallback. Mandatory: complete the IMUGA online arrival/departure declaration within 96 hours of arrival. Alcohol and swimwear are confined to licensed resorts / designated "bikini beaches" — walking through a local island village in swimwear is illegal and enforced by fines on some islands. Green Tax (roughly €5.50/person/night at guesthouses) and a departure tax (roughly €46 economy) apply on top of the daily budget. Dutch travel advisory (2026-09 snapshot): yellow — no acute terrorism threat but stay alert; strict drug laws (life imprisonment possible); no Dutch embassy in-country, consular support runs via Colombo.',
+  });
+  return rbBuildFlatSeedRoute('Maldives 🏝️', [
+    {
+      ...mv(),
+      notes: 'Entry: flight Amsterdam-Malé, one stop (via Doha/Dubai/Istanbul/Vienna, ±11.5-14 hours total; best period January-March, dry season with calmer seas for the inter-island boat transfers). Web-research price/timing indication 2026-09, a snapshot. Long-haul flight buffer applied (see CLAUDE.md): +2 days on top of the 8-day base recommendation (10 total) — a short trip combined with a connecting flight. ' + mv().notes,
+      transport_to_next: 'End of this route — return flight from Malé to Amsterdam, one stop.',
+    },
+  ], {
+    best_starting_month: 'February',
+    travel_style: 'Public inter-island ferry where schedules allow, shared speedboat otherwise; day-trip boats for snorkeling/whale shark/manta excursions.',
+    climate_summary: 'January-March is dry season — calmer seas for inter-island boat transfers than the May-onwards surf season.',
+    description: "Maafushi and the local-island atolls — palm-fringed white sand and turquoise reefs on a backpacker's budget, whale sharks and sandbanks without the overwater-villa price tag.",
+    notes: 'New standalone route (2026-09) — first time the Maldives appears in Route Builder, not split off from an existing expedition. Built from a dedicated research pass (route-price-checker style, 2026-09-16) covering local-island (not resort) costs, the mandatory IMUGA declaration, and local-island conduct rules (alcohol/swimwear). Re-verify all of these before booking.',
+  });
+}
+
+function rbBuildUAERoute() {
+  const ae = () => ({
+    code: 'AE', name: 'United Arab Emirates', days: 9, budget: 540, lat: 25.2048, lng: 55.2708,
+    destinations: [
+      { name: 'Dubai', lat: 25.2048, lng: 55.2708 },
+      { name: 'Abu Dhabi', lat: 24.4539, lng: 54.3773 },
+      { name: 'Al Ain', lat: 24.2075, lng: 55.7447 },
+      { name: 'Liwa Oasis / Empty Quarter', lat: 23.1167, lng: 53.7500 },
+      { name: 'Fujairah / East Coast', lat: 25.1288, lng: 56.3265 },
+    ],
+    notes: "Dubai's skyscrapers (Burj Khalifa, roughly €39-63 to go up), Abu Dhabi (noticeably cheaper than Dubai for food/lodging), the oasis town Al Ain, the Empty Quarter's dunes at Liwa, and the East Coast's beaches/mountains at Fujairah as a change of pace. A desert safari (roughly €62) and a Dubai-Abu Dhabi E100 intercity bus (roughly €6) are the two things worth budgeting on top of the daily rate. Avoid the Dec 3-6 2026 F1 Abu Dhabi Grand Prix and the mid-December-January Dubai Shopping Festival if cost matters — both spike hotel prices heavily. Dutch travel advisory (2026-09 snapshot): yellow for the vast majority of the country including Dubai/Abu Dhabi (regional Middle East tensions — worth rechecking given how fast this can shift), red only for the uninhabited disputed Abu Musa/Tunb islands, well off this route. Visa: visa-free 90 days within a rolling 180-day period, stamped free on arrival.",
+  });
+  return rbBuildFlatSeedRoute('United Arab Emirates 🏙️', [
+    {
+      ...ae(),
+      notes: 'Entry: direct flight Amsterdam-Dubai (KLM/Emirates, ±6h40-45, from ±€450-750 return; best period November-March, 17-28°C — June-September runs 40-50°C+ and is effectively indoor-only). Web-research price/timing indication 2026-09, a snapshot. No long-haul flight buffer needed (direct flight). ' + ae().notes,
+      transport_to_next: 'End of this route — return flight from Dubai to Amsterdam, direct.',
+    },
+  ], {
+    best_starting_month: 'January',
+    travel_style: 'Metro/Nol Card within Dubai, intercity bus or rental car between cities, 4x4 tour for Liwa/the dunes.',
+    climate_summary: 'November-March is the only comfortable outdoor season (17-28°C); avoid the summer months entirely.',
+    description: "Skyscrapers, souks and the Empty Quarter's dunes — a direct 7-hour hop into a city that outbuilds its own myth.",
+    notes: 'New standalone route (2026-09) — first time the UAE appears in Route Builder as its own destination (distinct from the existing Gulf States Trio 🛢️ combo route). Built from a dedicated research pass (route-price-checker style, 2026-09-16) covering costs, taxes, and the advisory split (yellow vs. the uninhabited red-zone islands). Re-verify the advisory before booking given regional volatility.',
+  });
+}
+
 // ---- Centraal-Azië 🐎 further split (2026-08) ----
 //
 // Centraal-Azië 🐎 (batch 3) was flagged in its own notes as the largest of all standalone routes

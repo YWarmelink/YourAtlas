@@ -114,13 +114,15 @@ correct flight-home ending (2026-08 fix — before this, every one of them excep
 still carried mid-tour waypoint text left over from being a middle leg of the bigger expedition).
 See `CHANGELOG.md`'s "alle 38 losse split-routes" entry.
 
-**Standalone single-country routes (in progress, 2026-08)**: `ROUTE_BUILDER_MODULES.md` also
-flagged ~35 *individual* countries within those combined routes as strong enough to stand fully
-alone ("Sterk") — never built as their own route, only the multi-country groupings were. 75
+**Standalone single-country routes (in progress, 2026-08 onward)**: `ROUTE_BUILDER_MODULES.md`
+also flagged ~35 *individual* countries within those combined routes as strong enough to stand
+fully alone ("Sterk") — never built as their own route, only the multi-country groupings were. 75
 standalone routes built across six batches plus the Centraal-Azië further-split and combo batch 7
-(2026-08) — the full candidate list from that analysis is now done, same reused content +
-country-of-origin notes as every other split route, each with its own NL-departure opener and
-flight-home ending:
+(2026-08) — the full candidate list from that analysis was done at that point, same reused content
++ country-of-origin notes as every other split route, each with its own NL-departure opener and
+flight-home ending. A 7th standalone-country batch (2026-09-16, below) then went beyond that
+original candidate list with 4 genuinely new, freshly-researched countries — 79 standalone routes
+in total as of that batch:
 - **Batch 1** ("most obvious", 2026-08): **Costa Rica 🦥**, **Colombia ☕**, **Peru 🦙**,
   **Egypte 🏺**, **Cuba 🎷**, **Namibië 🏜️**, **Curaçao & Bonaire 🤿**, **Suriname 🛶**.
 - **Batch 2** (Youri's own top-10, 2026-08): **Japan & Taiwan 🗻**, **Zuid-Afrika 🦓**,
@@ -154,6 +156,16 @@ flight-home ending:
   ambassade, wegens het regionale Iran-Israël/VS-conflict; Qatar oranje). Beide routes blijven
   staan (Route Builder is de aspirational/someday-laag), maar check nederlandwereldwijd.nl grondig
   vlak vóór een eventuele echte reis.
+- **Batch 7 (2026-09-16)** — the first standalone-country batch since Batch 6 (name reused here
+  in the "standalone-country" lineage; distinct from the already-existing "combo batch 7"
+  described below, which is a different, earlier addition): **South Korea 🏯**, **Sri Lanka 🐆**,
+  **Maldives 🏝️**, **United Arab Emirates 🏙️**. Unlike Batches 1-6, none of these four were split
+  off an existing expedition — they're genuinely new countries, researched fresh (costs, visa
+  rules, travel advisories, must-see stops) rather than reused from a parent route's content. A
+  fifth researched candidate, **Myanmar**, was deliberately left unbuilt — its Dutch travel
+  advisory has no green/yellow territory anywhere in the country (red/orange only), including two
+  of its classic anchor stops sitting in explicit "do not travel" red zones. See `CHANGELOG.md`
+  for the full per-country notes.
 
 **Long-haul flight buffer (2026-08, see `CLAUDE.md`'s "long-haul flight buffer policy")**: 13 of
 the 75 got a +2 day buffer for exposure to their round-trip flight time — **Tunesië 🧿** (6→8d,

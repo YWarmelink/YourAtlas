@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbSeedStandaloneCountryRoutesBatch4();
   rbSeedStandaloneCountryRoutesBatch5();
   rbSeedStandaloneCountryRoutesBatch6();
+  rbSeedStandaloneCountryRoutesBatch7();
   rbSeedCentralAsiaFurtherSplitRoutes();
   rbSeedComboBatch7();
   rbSeedDolomitesNorthItalyRoute();

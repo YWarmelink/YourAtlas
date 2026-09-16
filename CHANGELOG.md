@@ -12,6 +12,24 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **A new standalone-country batch (call it Batch 7 in that lineage — distinct from the
+  already-existing "combo batch 7"/`rbSeedComboBatch7()`) — South Korea 🏯, Sri Lanka 🐆,
+  Maldives 🏝️, United Arab Emirates 🏙️ (2026-09-16)** — unlike batches 1-6, none of these
+  four were split off an existing expedition: they're brand-new countries that had never appeared
+  anywhere in Route Builder or `TRIP_DATABASE.csv` before (verified against both first).
+  Content is based on a dedicated research pass (route-price-checker-style) covering daily
+  costs, visa requirements for a Dutch passport, current Dutch government travel advisories,
+  and 4-6 must-see stops per country with coordinates. Added via `rbSeedStandaloneCountryRoutesBatch7()`
+  in `js/pages/routeBuilderContent.js`, wired into `routeBuilder.js`'s init order after
+  batch 6; also added as 4 new rows to `TRIP_DATABASE.csv` so they're filterable in the
+  route list. Verified via `scripts/simulate_route_builder.js` (all 4 seed correctly) and
+  `scripts/find_dutch_in_live_content.py` (no leftover Dutch text).
+
+  A fifth candidate researched in the same pass, **Myanmar, was deliberately not built** —
+  its Dutch travel advisory has no green or yellow territory anywhere in the country
+  (red/orange split only), including two of its classic anchor stops (Ngapali Beach,
+  Mrauk U) sitting in explicit "do not travel" red zones. Left open for Youri to decide.
+
 - **Visa & vaccination info researched for all 197 countries, surfaced in Map and Route
   Builder (2026-09-14)** — the Countries sheet gained 8 new columns (`visa_requirement`,
   `visa_max_stay_days`, `visa_notes`, `vaccines_required`, `vaccines_recommended`,
