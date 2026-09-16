@@ -135,6 +135,7 @@ const RB_MIGRATE_FLAG_2026_09_FIX_NEPAL_ENTRY_NOTES_REGRESSION = 'atlas_grand_tr
 const RB_MIGRATE_FLAG_2026_09_JORDAN_DESTINATION_NOTES = 'atlas_grand_trips_migrate_2026_09_jordan_destination_notes_v1';
 const RB_MIGRATE_FLAG_2026_09_JORDAN_DESTINATION_NOTES_SHARED = 'atlas_grand_trips_migrate_2026_09_jordan_destination_notes_shared_v1';
 const RB_MIGRATE_FLAG_2026_09_EURASIA_DESTINATION_NOTES = 'atlas_grand_trips_migrate_2026_09_eurasia_destination_notes_v1';
+const RB_MIGRATE_FLAG_2026_09_AFRICA_DESTINATION_NOTES = 'atlas_grand_trips_migrate_2026_09_africa_destination_notes_v1';
 const RB_MIGRATE_FLAG_2026_09_DETERMINISTIC_SEED_IDS = 'atlas_grand_trips_migrate_2026_09_deterministic_seed_ids_v1';
 const RB_BLOCK_COLORS =['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point

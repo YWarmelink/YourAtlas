@@ -12,6 +12,27 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 3 — Africa Grand Tour (2026-09-16)** — 18 blocks, 100
+  destinations, researched as 4 parallel regional batches (Southern Africa, Southern-Central
+  Africa/desert, East Africa islands, East Africa mainland + Egypt). Same generic
+  name-matching migration approach as Eurasia — `rbMigrateAfricaDestinationNotes()` — so it
+  automatically covers every other route reusing this content (Southern Africa Safari Loop,
+  Victoria Falls & Kalahari Loop, the individual country standalones) without hardcoding route
+  names. App-wide total after this batch: 827 destination-slots filled across 73 routes.
+
+  Two more live corrections caught in passing, same pattern as Eurasia's Berastagi volcano
+  find: Lake Nakuru's famous lesser-flamingo flocks have largely relocated to Lake Bogoria/
+  Elementaita in recent years (the park is now sold on its rhino sanctuary instead), and
+  Ethiopia's Erta Ale currently has no persistent lava lake (hornitos/minor flows only) —
+  older tour marketing still promises the classic lava-lake photo.
+
+  Also fixed a real bug in the batch tooling: the note-insertion script only matched
+  single-quoted `name: '...'` destination objects — one entry (Uganda's "Bwindi Impenetrable
+  Forest (gorillas)") used double quotes in the source and was silently skipped until a
+  cross-check (comparing the plain destination-name count against the pattern-matched count)
+  caught the discrepancy. Fixed by handling both quote styles when reading notes back out of
+  the source to build the migration.
+
 - **Per-destination notes — pilot batch on Jordan (2026-09-16)** — new workflow (see
   `.claude/agents/destination-notes-researcher.md`) to fill the `notes` field every
   destination already has structurally (`rbBuildBlock`) but which was empty for all 4009
