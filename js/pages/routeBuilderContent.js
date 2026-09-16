@@ -1259,10 +1259,10 @@ function rbBuildOceaniaExpeditionRoute() {
         {
           code: 'VU', name: 'Vanuatu', days: 11, budget: 1045, lat: -17.7333, lng: 168.3273,
           destinations: [
-            { name: 'Port Vila', lat: -17.7333, lng: 168.3273 },
-            { name: 'Mount Yasur (Tanna)', lat: -19.5236, lng: 169.4451 },
-            { name: 'SS President Coolidge wreck (Espiritu Santo)', lat: -15.5085, lng: 167.1739 },
-            { name: 'Blue Holes', lat: -15.5000, lng: 167.1500 },
+            { name: 'Port Vila', lat: -17.7333, lng: 168.3273, notes: 'The capital took serious damage in the magnitude 7.3 earthquake in December 2024, which cracked buildings including some embassies; check current status of any specific site before counting on it, though the main tourist areas have largely reopened.' },
+            { name: 'Mount Yasur (Tanna)', lat: -19.5236, lng: 169.4451, notes: 'Local Ni-Vanuatu landowners run the guided 4WD-plus-short-walk trips to the crater rim (a custom landowner fee applies on top of any tour price); it\'s one of the few volcanoes on Earth you can stand at the active rim of after dark and watch lava bursts.' },
+            { name: 'SS President Coolidge wreck (Espiritu Santo)', lat: -15.5085, lng: 167.1739, notes: 'A former US troopship sunk in 1942, dived directly from the beach at Luganville with no boat needed; look for "the Lady," a relief carving above a fireplace mantel, and the helmets/jeeps still visible in the cargo holds.' },
+            { name: 'Blue Holes', lat: -15.5000, lng: 167.1500, notes: 'Several named freshwater swimming holes on Espiritu Santo (Nanda/Matevulu are the well-known ones), each on customary land with a small entry fee to the local family; rope swings into turquoise water are the main draw.' },
           ],
           notes: "One of the most accessible active volcanoes in the world — right up to the crater rim of Mount Yasur. World-class wreck diving on the SS President Coolidge. Price correction (2026-07): €70→€95/day (domestic flights to Tanna/Santo + the Yasur tour weren't covered; Air Vanuatu went bankrupt in 2024, flights have become scarcer/more expensive). Route-logic fix (2026-08, search-confirmed): visited as the first country instead of after Fiji — international arrival still practically routes via Fiji (Nadi, the region's main international gateway) with a short connecting flight to Port Vila, but the actual Fiji visit shifts to after Vanuatu, so the rest of the chain (Fiji→Tonga→Samoa→Cook Islands) is then one uninterrupted eastward line.",
           transport_to_next: 'Flight Port Vila-Nadi (Fiji Airways, direct, ±7x/week, 2h15).',
@@ -1270,10 +1270,10 @@ function rbBuildOceaniaExpeditionRoute() {
         {
           code: 'FJ', name: 'Fiji', days: 14, budget: 1050, lat: -17.7765, lng: 177.4356,
           destinations: [
-            { name: 'Nadi', lat: -17.7765, lng: 177.4356 },
-            { name: 'Mamanuca Islands', lat: -17.6667, lng: 177.1000 },
-            { name: 'Yasawa Islands', lat: -16.8000, lng: 177.4500 },
-            { name: 'Taveuni', lat: -16.8500, lng: 179.9833 },
+            { name: 'Nadi', lat: -17.7765, lng: 177.4356, notes: 'Functions mainly as the airport gateway rather than a beach destination; the Sri Siva Subramaniya Temple (South Pacific\'s largest Hindu temple) is the one specific sight worth a stop if you have a layover.' },
+            { name: 'Mamanuca Islands', lat: -17.6667, lng: 177.1000, notes: 'Home to Cloudbreak, a world-famous surf break, and several of the islands doubled as filming locations for the reality show Survivor; Beachcomber Island is the known party/backpacker stop in the group.' },
+            { name: 'Yasawa Islands', lat: -16.8000, lng: 177.4500, notes: 'Sawa-i-Lau limestone caves with a swimmable interior pool are the standout specific activity; the group was the filming location for the 1980 film "The Blue Lagoon."' },
+            { name: 'Taveuni', lat: -16.8500, lng: 179.9833, notes: 'Nicknamed the "Garden Island"; Bouma National Heritage Park has a series of three waterfalls you can hike to and swim at, and Rainbow Reef nearby is rated among the best soft-coral diving in the world. The International Date Line technically runs through the island.' },
           ],
           notes: "Best backpacker infrastructure in the Pacific — island-hopping by boat (Yasawa Flyer) between the Mamanucas and Yasawas, snorkeling and diving on the coral reefs. Price correction (2026-07): €62.50→€75/day (Yasawa Flyer boat pass + flight to Taveuni weren't covered). Route-logic fix (2026-08, search-confirmed): Nadi is the main international/regional aviation hub of the South Pacific — by now visiting Fiji after Vanuatu instead of before, the hub is only 'passed through' once for the rest of the trip instead of three times (was: Fiji→Vanuatu→back via Fiji→Samoa→back via Fiji→Tonga).",
           transport_to_next: "Flight Nadi-Nuku'alofa (Fiji Airways, direct, 12x/week, ~2h).",
@@ -1281,9 +1281,9 @@ function rbBuildOceaniaExpeditionRoute() {
         {
           code: 'TO', name: 'Tonga', days: 8, budget: 800, lat: -21.1393, lng: -175.2046,
           destinations: [
-            { name: "Nuku'alofa", lat: -21.1393, lng: -175.2046 },
-            { name: "Vava'u (swimming with humpback whales)", lat: -18.6500, lng: -173.9833 },
-            { name: "Ha'apai", lat: -19.8333, lng: -174.3500 },
+            { name: "Nuku'alofa", lat: -21.1393, lng: -175.2046, notes: 'The Royal Palace is a photogenic white wooden building near the waterfront but is not open to the public, viewable from outside only; the Royal Tombs adjacent are also closed to visitors.' },
+            { name: "Vava'u (swimming with humpback whales)", lat: -18.6500, lng: -173.9833, notes: 'Port of Refuge is a well-protected natural harbor that makes this the yachting/sailing hub of Tonga; Swallow\'s Cave and Mariner\'s Cave are specific boat-accessible sea caves worth seeking out beyond the whale swims.' },
+            { name: "Ha'apai", lat: -19.8333, lng: -174.3500, notes: 'The least developed of Tonga\'s main groups, with minimal tourist infrastructure; the volcanic cones of Kao and Tofua are visible from the group\'s beaches, giving a much quieter, undeveloped alternative to Vava\'u.' },
           ],
           notes: "One of the few places in the world where you can legally swim with humpback whales — the best season for that is July-October, so check the exact timing when planning the start date. Price correction (2026-07): €67.50→€100/day, the biggest correction on the route — flight to Vava'u + the whale-swim tour itself (often €150-250/day) weren't covered. Route-logic fix (2026-08, search-confirmed): Tonga sits closer to Fiji in longitude than Samoa does — now visited before Samoa instead of after, so the trip keeps moving monotonically eastward instead of first jumping past Tonga to Samoa and then having to backtrack for Tonga.",
           transport_to_next: "Flight Nuku'alofa-Apia (no direct flight, via Auckland or Fiji, 5h+).",
@@ -1291,10 +1291,10 @@ function rbBuildOceaniaExpeditionRoute() {
         {
           code: 'WS', name: 'Samoa', days: 9, budget: 565, lat: -13.8506, lng: -171.7513,
           destinations: [
-            { name: 'Apia', lat: -13.8506, lng: -171.7513 },
-            { name: 'To Sua Ocean Trench', lat: -13.9333, lng: -171.5333 },
-            { name: 'Lalomanu (beach fales)', lat: -14.0167, lng: -171.4333 },
-            { name: 'Upolu', lat: -13.9167, lng: -171.7667 },
+            { name: 'Apia', lat: -13.8506, lng: -171.7513, notes: 'Robert Louis Stevenson\'s former home, Vailima, is now a museum, and his grave sits atop Mt Vaea above it, reachable by a short hike with harbor views.' },
+            { name: 'To Sua Ocean Trench', lat: -13.9333, lng: -171.5333, notes: 'A giant sunken swimming hole reached by a steep wooden ladder roughly 30m down; like almost everything in Samoa it is closed on Sundays out of religious observance, so plan the visit for another day.' },
+            { name: 'Lalomanu (beach fales)', lat: -14.0167, lng: -171.4333, notes: 'This beach was essentially destroyed by the 2009 tsunami and has since been rebuilt with new fale operations; it remains one of the most popular south-coast beaches on Upolu.' },
+            { name: 'Upolu', lat: -13.9167, lng: -171.7667, notes: 'The main island holding both the capital and most of Samoa\'s sights (To Sua, Lalomanu); Piula Cave Pool, a freshwater pool inside a cave next to the ocean, is a lesser-known specific stop near a Methodist theological college.' },
           ],
           notes: "Authentic Polynesian culture, still little affected by mass tourism. Beach fales are traditional, budget-friendly beach huts — exactly the calm, local experience that fits this travel style. Price verified (2026-07), holds up — relatively cheap for the Pacific.",
           transport_to_next: "Flight Apia-Rarotonga (no direct flight, 12-16h via Auckland or Nadi+Auckland — route-logic fix 2026-08: a slightly less well-connected route than the old Tonga-Cook Islands connection, but that doesn't outweigh removing the double Fiji-hub detour elsewhere in this region, see Vanuatu/Fiji/Tonga's own notes).",
@@ -1302,8 +1302,8 @@ function rbBuildOceaniaExpeditionRoute() {
         {
           code: 'CK', name: 'Cook Islands', days: 7, budget: 665, lat: -21.2367, lng: -159.7777,
           destinations: [
-            { name: 'Rarotonga', lat: -21.2367, lng: -159.7777 },
-            { name: 'Aitutaki Lagoon', lat: -18.8333, lng: -159.7833 },
+            { name: 'Rarotonga', lat: -21.2367, lng: -159.7777, notes: 'There are no traffic lights on the island and just one road that circles the coastline (about 32km); the reef-protected lagoon means calm swimming water right off most of the main road.' },
+            { name: 'Aitutaki Lagoon', lat: -18.8333, lng: -159.7833, notes: 'One Foot Island (Tapuaetai) is a specific islet stop on lagoon cruises where you can get an unofficial foot-shaped passport stamp; it\'s a well-known novelty souvenir from the trip.' },
           ],
           notes: "The Aitutaki Lagoon is at least as beautiful as Bora Bora, for a fraction of the price — the best value-for-money spot in the whole Pacific for lagoon beauty. Price correction (2026-07): €80→€95/day (Air Rarotonga has a monopoly on the Aitutaki flight, plus lagoon cruise).",
           transport_to_next: 'Flight Rarotonga-Perth (long flight, usually with a stopover via Auckland or Sydney) — the single longest flight connection of the whole expedition, needed to get from the Pacific to the dry season in Western Australia',
@@ -1319,11 +1319,11 @@ function rbBuildOceaniaExpeditionRoute() {
         {
           code: 'AU', name: 'Australia', days: 21, budget: 2520, lat: -31.9505, lng: 115.8605,
           destinations: [
-            { name: 'Perth', lat: -31.9505, lng: 115.8605 },
-            { name: 'Ningaloo Reef (whale sharks)', lat: -22.6833, lng: 113.6667 },
-            { name: 'Kimberley & Bungle Bungles', lat: -17.5333, lng: 128.4167 },
-            { name: 'Gibb River Road', lat: -16.5000, lng: 126.5000 },
-            { name: 'Broome', lat: -17.9614, lng: 122.2359 },
+            { name: 'Perth', lat: -31.9505, lng: 115.8605, notes: 'Compact city center with easy day trips to Rottnest Island (quokkas) and Fremantle\'s markets and old prison.' },
+            { name: 'Ningaloo Reef (whale sharks)', lat: -22.6833, lng: 113.6667, notes: 'Whale shark season runs roughly March–July (peak April–June); unlike the GBR, the reef sits close to shore so there\'s no long boat transfer.' },
+            { name: 'Kimberley & Bungle Bungles', lat: -17.5333, lng: 128.4167, notes: 'Purnululu NP\'s striped beehive-domes are best seen via scenic flight or the Cathedral Gorge walk; only accessible in dry season (roughly May–Oct).' },
+            { name: 'Gibb River Road', lat: -16.5000, lng: 126.5000, notes: 'Unsealed 4WD-only track past gorges like Windjana and Bell; closed by flooding in the wet season.' },
+            { name: 'Broome', lat: -17.9614, lng: 122.2359, notes: 'Cable Beach sunset camel rides are the signature activity; the "Staircase to the Moon" tidal light effect only happens a few nights a month (Mar–Oct).' },
           ],
           notes: 'Ningaloo Reef and the Kimberley are spectacular and see little mass tourism — a strong match for nature over luxury. Also the most expensive/remote region of the whole route in terms of distances; first candidate to shorten if time/budget gets tight. Price correction (2026-07): €87.62→€120/day — the most expensive region turned out to also be genuinely underbudgeted (whale shark tours, Bungle Bungles flights, remote roadhouse prices).',
           transport_to_next: "Car overland via the Gibb River Road and Kununurra to Darwin, or flight Broome-Darwin for those who'd rather cross the Kimberley by plane",
@@ -1331,12 +1331,12 @@ function rbBuildOceaniaExpeditionRoute() {
         {
           code: 'AU', name: 'Australia', days: 14, budget: 1470, lat: -12.4634, lng: 130.8456,
           destinations: [
-            { name: 'Darwin', lat: -12.4634, lng: 130.8456 },
-            { name: 'Kakadu National Park', lat: -12.8500, lng: 132.9667 },
-            { name: 'Litchfield National Park', lat: -13.1333, lng: 130.7833 },
-            { name: 'Uluru', lat: -25.3444, lng: 131.0369 },
-            { name: 'Kata Tjuta', lat: -25.3000, lng: 130.7333 },
-            { name: 'Kings Canyon', lat: -24.2500, lng: 131.5667 },
+            { name: 'Darwin', lat: -12.4634, lng: 130.8456, notes: 'Mindil Beach Sunset Market (Thu/Sun, dry season only) is a good easy evening stop.' },
+            { name: 'Kakadu National Park', lat: -12.8500, lng: 132.9667, notes: 'Yellow Water Billabong cruise at dawn or dusk for wildlife; Ubirr and Nourlangie rock art sites are 20,000+ years old.' },
+            { name: 'Litchfield National Park', lat: -13.1333, lng: 130.7833, notes: 'More of an easy day-trip feel than Kakadu; swim at Wangi Falls or Florence Falls, but check current crocodile safe-swimming advisories on arrival.' },
+            { name: 'Uluru', lat: -25.3444, lng: 131.0369, notes: 'Climbing has been permanently banned since October 2019; the ranger-led Mala walk or the full 10.6km base walk are the respectful ways to see it up close.' },
+            { name: 'Kata Tjuta', lat: -25.3000, lng: 130.7333, notes: 'The Valley of the Winds walk is more strenuous than Uluru\'s base walk but far less crowded.' },
+            { name: 'Kings Canyon', lat: -24.2500, lng: 131.5667, notes: 'The Rim Walk (steep climb at the start, ~3–4 hrs) is worth it over the shorter Kings Creek walk if you\'re fit; start at sunrise to beat the heat.' },
           ],
           notes: 'Top End and Red Centre together — the most iconic landscapes of Australia. June-August is also the coolest period for Uluru (still fine to walk during the day, not the scorching heat of summer). Price correction (2026-07): €87.50→€105/day — Yulara/Uluru is a monopoly resort town, even budget options there are pricey.',
           transport_to_next: 'Flight Alice Springs-Cairns or Darwin-Cairns (overland would take days via the outback highways)',
@@ -1344,11 +1344,11 @@ function rbBuildOceaniaExpeditionRoute() {
         {
           code: 'AU', name: 'Australia', days: 21, budget: 2310, lat: -16.9203, lng: 145.771,
           destinations: [
-            { name: 'Cairns', lat: -16.9203, lng: 145.7710 },
-            { name: 'Daintree Rainforest', lat: -16.1667, lng: 145.4167 },
-            { name: 'Great Barrier Reef', lat: -16.5000, lng: 145.9667 },
-            { name: 'Whitsundays & Whitehaven Beach', lat: -20.2833, lng: 149.0333 },
-            { name: "Fraser Island / K'gari", lat: -25.2333, lng: 153.1500 },
+            { name: 'Cairns', lat: -16.9203, lng: 145.7710, notes: 'No real swimming beach in town itself (mudflats at low tide); locals use the artificial Esplanade lagoon instead.' },
+            { name: 'Daintree Rainforest', lat: -16.1667, lng: 145.4167, notes: 'One of the oldest continuously surviving rainforests on Earth; a river cruise for crocodile-spotting pairs well with the Jindalba boardwalk walk.' },
+            { name: 'Great Barrier Reef', lat: -16.5000, lng: 145.9667, notes: 'Coral health varies significantly by specific site and year with bleaching events, so it\'s worth asking your operator which reef sections are currently in best condition.' },
+            { name: 'Whitsundays & Whitehaven Beach', lat: -20.2833, lng: 149.0333, notes: 'The pure silica sand stays cool underfoot even in full sun; Hill Inlet lookout (short walk from a boat drop-off) is the classic swirling-sand photo.' },
+            { name: "Fraser Island / K'gari", lat: -25.2333, lng: 153.1500, notes: 'Officially renamed K\'gari in 2023; 4WD-only access, and dingoes are wild — never feed them and keep food secured.' },
           ],
           notes: 'The strongest match for snorkeling/diving/wildlife from the wishlist. Dry season also means no jellyfish season (that runs November-May) near Cairns. Price correction (2026-07): €87.62→€110/day — a Whitsundays sailing trip or Fraser Island tour alone can easily cost €250-400.',
           transport_to_next: 'Bus or camper overland along the east coast (Cairns-Brisbane-Byron Bay-Sydney), the classic backpacker trail',
@@ -1364,9 +1364,9 @@ function rbBuildOceaniaExpeditionRoute() {
         {
           code: 'AU', name: 'Australia', days: 12, budget: 1050, lat: -33.8688, lng: 151.2093,
           destinations: [
-            { name: 'Byron Bay', lat: -28.6474, lng: 153.6020 },
-            { name: 'Sydney', lat: -33.8688, lng: 151.2093 },
-            { name: 'Blue Mountains', lat: -33.7000, lng: 150.3000 },
+            { name: 'Byron Bay', lat: -28.6474, lng: 153.6020, notes: 'Cape Byron lighthouse walk is mainland Australia\'s easternmost point; more a laid-back surf-town vibe than a single "sight."' },
+            { name: 'Sydney', lat: -33.8688, lng: 151.2093, notes: 'Harbour Bridge Climb and Opera House tours both need advance booking; the Bondi-to-Coogee coastal walk is a good half-day outside the CBD.' },
+            { name: 'Blue Mountains', lat: -33.7000, lng: 150.3000, notes: 'Three Sisters lookout at Echo Point plus Scenic World\'s cable car/railway into the Jamison Valley; add Wentworth Falls for a proper hike.' },
           ],
           notes: 'Classic backpacker trail with good infrastructure; Sydney is too iconic to skip. Price verified (2026-07), holds up.',
           transport_to_next: 'Car overland via the coast or the Hume Highway to Melbourne',
@@ -1374,9 +1374,9 @@ function rbBuildOceaniaExpeditionRoute() {
         {
           code: 'AU', name: 'Australia', days: 10, budget: 875, lat: -37.8136, lng: 144.9631,
           destinations: [
-            { name: 'Great Ocean Road', lat: -38.6667, lng: 143.6667 },
-            { name: 'Melbourne', lat: -37.8136, lng: 144.9631 },
-            { name: 'Grampians National Park', lat: -37.2333, lng: 142.5167 },
+            { name: 'Great Ocean Road', lat: -38.6667, lng: 143.6667, notes: 'The Twelve Apostles are best at sunrise or sunset for light and fewer crowds; ongoing erosion means stacks occasionally collapse (one did in 2005).' },
+            { name: 'Melbourne', lat: -37.8136, lng: 144.9631, notes: 'Laneway culture (Hosier Lane street art, hidden bars/cafes) plus a strong specialty-coffee scene are the city\'s real signature.' },
+            { name: 'Grampians National Park', lat: -37.2333, lng: 142.5167, notes: 'Boroka Lookout and the Pinnacle walk are the standout views; also home to significant Aboriginal rock art (e.g. Bunjil Shelter).' },
           ],
           notes: 'The best roadtrip experience in the whole country — fits perfectly with "roadtrips where that makes sense". Price verified (2026-07), holds up.',
           transport_to_next: 'Spirit of Tasmania ferry (Melbourne-Devonport) or short flight to Hobart/Launceston',
@@ -1384,10 +1384,10 @@ function rbBuildOceaniaExpeditionRoute() {
         {
           code: 'AU', name: 'Australia', days: 12, budget: 1260, lat: -42.8821, lng: 147.3272,
           destinations: [
-            { name: 'Cradle Mountain', lat: -41.6833, lng: 145.9333 },
-            { name: 'Wineglass Bay (Freycinet)', lat: -42.1500, lng: 148.3000 },
-            { name: 'Overland Track', lat: -41.8500, lng: 145.9500 },
-            { name: 'Hobart', lat: -42.8821, lng: 147.3272 },
+            { name: 'Cradle Mountain', lat: -41.6833, lng: 145.9333, notes: 'The Dove Lake Circuit (6km boardwalk loop) gives the classic mountain-reflection view without needing to do the full Overland Track.' },
+            { name: 'Wineglass Bay (Freycinet)', lat: -42.1500, lng: 148.3000, notes: 'The lookout walk is a moderate ~1.5–2hr return; continuing down to the beach itself takes real extra effort but has far fewer people.' },
+            { name: 'Overland Track', lat: -41.8500, lng: 145.9500, notes: 'About 65km over roughly 6 days hut-to-hut; the peak booking season (Oct–May) fills up well in advance.' },
+            { name: 'Hobart', lat: -42.8821, lng: 147.3272, notes: 'MONA (Museum of Old and New Art), reached by ferry from the city, is the must-do; Salamanca Market runs Saturdays only.' },
           ],
           notes: 'Rugged nature, little mass tourism — a strong match for this travel style. August-September is still crisp (sometimes snow in the highlands), so pack warm clothing. Price correction (2026-07): €87.50→€105/day — the Overland Track permit alone costs ~€120-150 per person. Route-logic check (2026-08, search-confirmed): Hobart-Adelaide is a daily direct flight (Jetstar/Virgin/Qantas, ~2h, ±1,175 km) — no detour via Melbourne needed, the earlier assumption was wrong. The order itself (Melbourne→Tasmania→Adelaide) is already optimal.',
           transport_to_next: 'Flight Hobart-Adelaide (direct, Jetstar/Virgin/Qantas, ~2h — no connection in Melbourne needed).',
@@ -1395,10 +1395,10 @@ function rbBuildOceaniaExpeditionRoute() {
         {
           code: 'AU', name: 'Australia', days: 9, budget: 945, lat: -34.9285, lng: 138.6007,
           destinations: [
-            { name: 'Adelaide', lat: -34.9285, lng: 138.6007 },
-            { name: 'Kangaroo Island', lat: -35.8333, lng: 137.2167 },
-            { name: 'Barossa Valley', lat: -34.5333, lng: 138.9500 },
-            { name: 'Flinders Ranges', lat: -31.5000, lng: 138.6000 },
+            { name: 'Adelaide', lat: -34.9285, lng: 138.6007, notes: 'Compact grid-plan city center; Adelaide Central Market and the nearby Adelaide Hills wine area (Hahndorf) are easy add-ons.' },
+            { name: 'Kangaroo Island', lat: -35.8333, lng: 137.2167, notes: 'Seal Bay\'s guided walks bring you close to a wild Australian sea lion colony; Remarkable Rocks and Admirals Arch in Flinders Chase NP are the other headline stops, with vegetation still recovering from the 2020 bushfires.' },
+            { name: 'Barossa Valley', lat: -34.5333, lng: 138.9500, notes: 'Historically German-settled wine region famous for Shiraz; Maggie Beer\'s farm shop is a popular casual stop.' },
+            { name: 'Flinders Ranges', lat: -31.5000, lng: 138.6000, notes: 'Wilpena Pound, a natural amphitheater, is the centerpiece — also known by its dual Aboriginal name, Ikara-Flinders Ranges.' },
           ],
           notes: "Kangaroo Island is excellent for wildlife (sea lions, koalas) — the strongest match for the wildlife wish in this block. Barossa Valley (wine) is the first candidate to drop if shortening is needed. Price correction (2026-07): €87.78→€105/day — the Kangaroo Island ferry plus scarcer/pricier accommodation there.",
           transport_to_next: 'Flight Adelaide-Christchurch (usually with a stopover in Sydney or Melbourne)',
@@ -1414,13 +1414,13 @@ function rbBuildOceaniaExpeditionRoute() {
         {
           code: 'NZ', name: 'New Zealand', days: 21, budget: 2268, lat: -45.0312, lng: 168.6626,
           destinations: [
-            { name: 'Christchurch', lat: -43.5321, lng: 172.6362 },
-            { name: 'Franz Josef & Fox Glaciers', lat: -43.4667, lng: 170.1667 },
-            { name: 'Queenstown', lat: -45.0312, lng: 168.6626 },
-            { name: 'Milford Sound & Fiordland', lat: -44.6714, lng: 167.9250 },
-            { name: 'Dunedin & Catlins', lat: -45.8788, lng: 170.5028 },
-            { name: 'Kaikoura', lat: -42.4000, lng: 173.6817 },
-            { name: 'Abel Tasman', lat: -40.9333, lng: 173.0000 },
+            { name: 'Christchurch', lat: -43.5321, lng: 172.6362, notes: 'The Cardboard Cathedral (Transitional Cathedral), built after the 2011 earthquake destroyed the original ChristChurch Cathedral, is a striking symbol of the rebuild and worth a quick stop in the centre.' },
+            { name: 'Franz Josef & Fox Glaciers', lat: -43.4667, lng: 170.1667, notes: 'Ground access to both glacier faces is closed — a 2019 landslide wrecked the Fox Glacier approach road and it can\'t be rebuilt (still moving) — so a heli-hike (~NZD 750–900pp) is now the only way to actually stand on the ice; valley walks only get you a distant view of the terminus.' },
+            { name: 'Queenstown', lat: -45.0312, lng: 168.6626, notes: 'Kawarau Bridge just outside town is the birthplace of commercial bungy jumping (AJ Hackett, 1988); Fergburger in the centre is famous but expect a long queue at almost any hour.' },
+            { name: 'Milford Sound & Fiordland', lat: -44.6714, lng: 167.9250, notes: 'Take the first morning cruise departure if you can — tour buses converge mid-morning and the sound is calmer and less crowded at dawn; it\'s also one of the wettest inhabited places on Earth, and rain actually multiplies the waterfalls rather than ruining the visit.' },
+            { name: 'Dunedin & Catlins', lat: -45.8788, lng: 170.5028, notes: 'The Catlins\' Cathedral Caves are tide-gated and only open late October–May, accessible roughly 2 hours either side of low tide — check the current opening times before detouring; in Dunedin, the Royal Albatross Centre at Taiaroa Head is the world\'s only mainland-accessible albatross breeding colony.' },
+            { name: 'Kaikoura', lat: -42.4000, lng: 173.6817, notes: 'Whale watching here targets resident sperm whales year-round thanks to a deep offshore canyon close to shore, but tours are frequently cancelled/rescheduled for swell — build in a spare day if seeing them matters.' },
+            { name: 'Abel Tasman', lat: -40.9333, lng: 173.0000, notes: 'Water taxis let you sample the park\'s beaches for a day trip without committing to overnight hiking; Split Apple Rock near Kaiteriteri is a popular quick stop en route.' },
           ],
           notes: "Concentrates most of the iconic New Zealand scenery. Consider at least one Great Walk (Milford Track, Routeburn or Kepler) as a multi-day hut-to-hut trek — book well in advance. Price correction (2026-07): €80→€108/day — Milford Sound cruise, glacier activities and Great Walk hut fees weren't covered; Queenstown is above-average expensive. Route-logic fix (2026-08, search-confirmed): the old order (Christchurch→Kaikoura→Abel Tasman→Franz Josef→Queenstown→Milford Sound→Dunedin) ended at Dunedin (far south) while the Picton ferry is in the far north — an unmentioned backtrack of ≈692 km, which would also mean driving the Christchurch-Kaikoura stretch (≈180 km) a second time. Now Christchurch→Franz Josef→Queenstown→Milford Sound→Dunedin (southern loop first), then Kaikoura→Abel Tasman→Picton as one continuous northward drive to the ferry — every stretch of road driven only once.",
           transport_to_next: 'Ferry Picton-Wellington, continuing overland into the North Island',
@@ -1428,12 +1428,12 @@ function rbBuildOceaniaExpeditionRoute() {
         {
           code: 'NZ', name: 'New Zealand', days: 14, budget: 1120, lat: -41.2865, lng: 174.7762,
           destinations: [
-            { name: 'Wellington', lat: -41.2865, lng: 174.7762 },
-            { name: 'Tongariro Alpine Crossing', lat: -39.1333, lng: 175.6333 },
-            { name: 'Rotorua', lat: -38.1368, lng: 176.2497 },
-            { name: 'Coromandel', lat: -36.7614, lng: 175.4972 },
-            { name: 'Bay of Islands', lat: -35.2667, lng: 174.1167 },
-            { name: 'Auckland', lat: -36.8485, lng: 174.7633 },
+            { name: 'Wellington', lat: -41.2865, lng: 174.7762, notes: 'Te Papa, the national museum, is free to enter and one of the best in the country; the city is famously windy ("Windy Wellington") so pack a real jacket even in summer.' },
+            { name: 'Tongariro Alpine Crossing', lat: -39.1333, lng: 175.6333, notes: 'It\'s a one-way track, so you need a shuttle to the start and a different one from the end car park — book transport in advance; the side trip up Mt Ngauruhoe ("Mount Doom") adds real time and a loose scree slog.' },
+            { name: 'Rotorua', lat: -38.1368, lng: 176.2497, notes: 'The sulphur smell from geothermal activity is constant around town (locals call it "Rotovegas"); Whakarewarewa Forest\'s Redwoods Treewalk is a good pick if you want scenery without a culture-park or geothermal-park visit.' },
+            { name: 'Coromandel', lat: -36.7614, lng: 175.4972, notes: 'Cathedral Cove\'s main track reopened in late January 2026 after repeated weather-driven closures, but it now closes automatically at short notice under an orange/red weather warning, so check DOC\'s status the day of; Hot Water Beach only works at low tide, when you can dig your own spa pool in the sand.' },
+            { name: 'Bay of Islands', lat: -35.2667, lng: 174.1167, notes: 'Waitangi Treaty Grounds is New Zealand\'s most significant historic site (where the founding treaty was signed in 1840); the "Hole in the Rock" cruise to Piercy Island is the classic boat trip.' },
+            { name: 'Auckland', lat: -36.8485, lng: 174.7633, notes: 'Built across dozens of extinct volcanic cones (Mt Eden/Maungawhau, One Tree Hill) that you can walk up for free — no ticket needed — for harbour views; it\'s the "City of Sails" with a harbour on each side.' },
           ],
           notes: 'The Tongariro Alpine Crossing is the best day hike in the country. Rotorua for geothermal phenomena and Māori culture. Price verified (2026-07), holds up.',
           transport_to_next: 'End of the expedition — flight home from Auckland to the Netherlands',
@@ -8038,6 +8038,92 @@ function rbMigratePanAmericanDestinationNotes() {
     'São Paulo': 'Brazil\'s largest and most food-diverse city — worth planning around specific neighborhoods/cuisines rather than sightseeing checklist stops; Avenida Paulista closes to car traffic on Sundays, turning into a pedestrian/cycling strip.',
     'Paraty': 'Cobblestone colonial streets that intentionally flood at high tide (a centuries-old drainage design, not a defect) — plan footwear accordingly; it\'s also a hub for cachaça production/tastings.',
     'Rio de Janeiro': 'Christ the Redeemer (via cog train or van up Corcovado) and the Sugarloaf cable car are the two signature viewpoints; book Sugarloaf for late afternoon to catch sunset over the bay from the second peak.',
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
+ * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
+ * Zealand). Same generic name-matching migration pattern as the other grand tours.
+ */
+function rbMigrateOceaniaDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_OCEANIA_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_OCEANIA_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    "Vava'u (swimming with humpback whales)": 'Port of Refuge is a well-protected natural harbor that makes this the yachting/sailing hub of Tonga; Swallow\'s Cave and Mariner\'s Cave are specific boat-accessible sea caves worth seeking out beyond the whale swims.',
+    "Ha'apai": 'The least developed of Tonga\'s main groups, with minimal tourist infrastructure; the volcanic cones of Kao and Tofua are visible from the group\'s beaches, giving a much quieter, undeveloped alternative to Vava\'u.',
+    "Fraser Island / K'gari": 'Officially renamed K\'gari in 2023; 4WD-only access, and dingoes are wild — never feed them and keep food secured.',
+    'Port Vila': 'The capital took serious damage in the magnitude 7.3 earthquake in December 2024, which cracked buildings including some embassies; check current status of any specific site before counting on it, though the main tourist areas have largely reopened.',
+    'Mount Yasur (Tanna)': 'Local Ni-Vanuatu landowners run the guided 4WD-plus-short-walk trips to the crater rim (a custom landowner fee applies on top of any tour price); it\'s one of the few volcanoes on Earth you can stand at the active rim of after dark and watch lava bursts.',
+    'SS President Coolidge wreck (Espiritu Santo)': 'A former US troopship sunk in 1942, dived directly from the beach at Luganville with no boat needed; look for "the Lady," a relief carving above a fireplace mantel, and the helmets/jeeps still visible in the cargo holds.',
+    'Blue Holes': 'Several named freshwater swimming holes on Espiritu Santo (Nanda/Matevulu are the well-known ones), each on customary land with a small entry fee to the local family; rope swings into turquoise water are the main draw.',
+    'Nadi': 'Functions mainly as the airport gateway rather than a beach destination; the Sri Siva Subramaniya Temple (South Pacific\'s largest Hindu temple) is the one specific sight worth a stop if you have a layover.',
+    'Mamanuca Islands': 'Home to Cloudbreak, a world-famous surf break, and several of the islands doubled as filming locations for the reality show Survivor; Beachcomber Island is the known party/backpacker stop in the group.',
+    'Yasawa Islands': 'Sawa-i-Lau limestone caves with a swimmable interior pool are the standout specific activity; the group was the filming location for the 1980 film "The Blue Lagoon."',
+    'Taveuni': 'Nicknamed the "Garden Island"; Bouma National Heritage Park has a series of three waterfalls you can hike to and swim at, and Rainbow Reef nearby is rated among the best soft-coral diving in the world. The International Date Line technically runs through the island.',
+    'Apia': 'Robert Louis Stevenson\'s former home, Vailima, is now a museum, and his grave sits atop Mt Vaea above it, reachable by a short hike with harbor views.',
+    'To Sua Ocean Trench': 'A giant sunken swimming hole reached by a steep wooden ladder roughly 30m down; like almost everything in Samoa it is closed on Sundays out of religious observance, so plan the visit for another day.',
+    'Lalomanu (beach fales)': 'This beach was essentially destroyed by the 2009 tsunami and has since been rebuilt with new fale operations; it remains one of the most popular south-coast beaches on Upolu.',
+    'Upolu': 'The main island holding both the capital and most of Samoa\'s sights (To Sua, Lalomanu); Piula Cave Pool, a freshwater pool inside a cave next to the ocean, is a lesser-known specific stop near a Methodist theological college.',
+    'Rarotonga': 'There are no traffic lights on the island and just one road that circles the coastline (about 32km); the reef-protected lagoon means calm swimming water right off most of the main road.',
+    'Aitutaki Lagoon': 'One Foot Island (Tapuaetai) is a specific islet stop on lagoon cruises where you can get an unofficial foot-shaped passport stamp; it\'s a well-known novelty souvenir from the trip.',
+    'Perth': 'Compact city center with easy day trips to Rottnest Island (quokkas) and Fremantle\'s markets and old prison.',
+    'Ningaloo Reef (whale sharks)': 'Whale shark season runs roughly March–July (peak April–June); unlike the GBR, the reef sits close to shore so there\'s no long boat transfer.',
+    'Kimberley & Bungle Bungles': 'Purnululu NP\'s striped beehive-domes are best seen via scenic flight or the Cathedral Gorge walk; only accessible in dry season (roughly May–Oct).',
+    'Gibb River Road': 'Unsealed 4WD-only track past gorges like Windjana and Bell; closed by flooding in the wet season.',
+    'Broome': 'Cable Beach sunset camel rides are the signature activity; the "Staircase to the Moon" tidal light effect only happens a few nights a month (Mar–Oct).',
+    'Darwin': 'Mindil Beach Sunset Market (Thu/Sun, dry season only) is a good easy evening stop.',
+    'Kakadu National Park': 'Yellow Water Billabong cruise at dawn or dusk for wildlife; Ubirr and Nourlangie rock art sites are 20,000+ years old.',
+    'Litchfield National Park': 'More of an easy day-trip feel than Kakadu; swim at Wangi Falls or Florence Falls, but check current crocodile safe-swimming advisories on arrival.',
+    'Uluru': 'Climbing has been permanently banned since October 2019; the ranger-led Mala walk or the full 10.6km base walk are the respectful ways to see it up close.',
+    'Kata Tjuta': 'The Valley of the Winds walk is more strenuous than Uluru\'s base walk but far less crowded.',
+    'Kings Canyon': 'The Rim Walk (steep climb at the start, ~3–4 hrs) is worth it over the shorter Kings Creek walk if you\'re fit; start at sunrise to beat the heat.',
+    'Cairns': 'No real swimming beach in town itself (mudflats at low tide); locals use the artificial Esplanade lagoon instead.',
+    'Daintree Rainforest': 'One of the oldest continuously surviving rainforests on Earth; a river cruise for crocodile-spotting pairs well with the Jindalba boardwalk walk.',
+    'Great Barrier Reef': 'Coral health varies significantly by specific site and year with bleaching events, so it\'s worth asking your operator which reef sections are currently in best condition.',
+    'Whitsundays & Whitehaven Beach': 'The pure silica sand stays cool underfoot even in full sun; Hill Inlet lookout (short walk from a boat drop-off) is the classic swirling-sand photo.',
+    'Byron Bay': 'Cape Byron lighthouse walk is mainland Australia\'s easternmost point; more a laid-back surf-town vibe than a single "sight."',
+    'Sydney': 'Harbour Bridge Climb and Opera House tours both need advance booking; the Bondi-to-Coogee coastal walk is a good half-day outside the CBD.',
+    'Blue Mountains': 'Three Sisters lookout at Echo Point plus Scenic World\'s cable car/railway into the Jamison Valley; add Wentworth Falls for a proper hike.',
+    'Great Ocean Road': 'The Twelve Apostles are best at sunrise or sunset for light and fewer crowds; ongoing erosion means stacks occasionally collapse (one did in 2005).',
+    'Melbourne': 'Laneway culture (Hosier Lane street art, hidden bars/cafes) plus a strong specialty-coffee scene are the city\'s real signature.',
+    'Grampians National Park': 'Boroka Lookout and the Pinnacle walk are the standout views; also home to significant Aboriginal rock art (e.g. Bunjil Shelter).',
+    'Cradle Mountain': 'The Dove Lake Circuit (6km boardwalk loop) gives the classic mountain-reflection view without needing to do the full Overland Track.',
+    'Wineglass Bay (Freycinet)': 'The lookout walk is a moderate ~1.5–2hr return; continuing down to the beach itself takes real extra effort but has far fewer people.',
+    'Overland Track': 'About 65km over roughly 6 days hut-to-hut; the peak booking season (Oct–May) fills up well in advance.',
+    'Hobart': 'MONA (Museum of Old and New Art), reached by ferry from the city, is the must-do; Salamanca Market runs Saturdays only.',
+    'Adelaide': 'Compact grid-plan city center; Adelaide Central Market and the nearby Adelaide Hills wine area (Hahndorf) are easy add-ons.',
+    'Kangaroo Island': 'Seal Bay\'s guided walks bring you close to a wild Australian sea lion colony; Remarkable Rocks and Admirals Arch in Flinders Chase NP are the other headline stops, with vegetation still recovering from the 2020 bushfires.',
+    'Barossa Valley': 'Historically German-settled wine region famous for Shiraz; Maggie Beer\'s farm shop is a popular casual stop.',
+    'Flinders Ranges': 'Wilpena Pound, a natural amphitheater, is the centerpiece — also known by its dual Aboriginal name, Ikara-Flinders Ranges.',
+    'Christchurch': 'The Cardboard Cathedral (Transitional Cathedral), built after the 2011 earthquake destroyed the original ChristChurch Cathedral, is a striking symbol of the rebuild and worth a quick stop in the centre.',
+    'Franz Josef & Fox Glaciers': 'Ground access to both glacier faces is closed — a 2019 landslide wrecked the Fox Glacier approach road and it can\'t be rebuilt (still moving) — so a heli-hike (~NZD 750–900pp) is now the only way to actually stand on the ice; valley walks only get you a distant view of the terminus.',
+    'Queenstown': 'Kawarau Bridge just outside town is the birthplace of commercial bungy jumping (AJ Hackett, 1988); Fergburger in the centre is famous but expect a long queue at almost any hour.',
+    'Milford Sound & Fiordland': 'Take the first morning cruise departure if you can — tour buses converge mid-morning and the sound is calmer and less crowded at dawn; it\'s also one of the wettest inhabited places on Earth, and rain actually multiplies the waterfalls rather than ruining the visit.',
+    'Dunedin & Catlins': 'The Catlins\' Cathedral Caves are tide-gated and only open late October–May, accessible roughly 2 hours either side of low tide — check the current opening times before detouring; in Dunedin, the Royal Albatross Centre at Taiaroa Head is the world\'s only mainland-accessible albatross breeding colony.',
+    'Kaikoura': 'Whale watching here targets resident sperm whales year-round thanks to a deep offshore canyon close to shore, but tours are frequently cancelled/rescheduled for swell — build in a spare day if seeing them matters.',
+    'Abel Tasman': 'Water taxis let you sample the park\'s beaches for a day trip without committing to overnight hiking; Split Apple Rock near Kaiteriteri is a popular quick stop en route.',
+    'Wellington': 'Te Papa, the national museum, is free to enter and one of the best in the country; the city is famously windy ("Windy Wellington") so pack a real jacket even in summer.',
+    'Tongariro Alpine Crossing': 'It\'s a one-way track, so you need a shuttle to the start and a different one from the end car park — book transport in advance; the side trip up Mt Ngauruhoe ("Mount Doom") adds real time and a loose scree slog.',
+    'Rotorua': 'The sulphur smell from geothermal activity is constant around town (locals call it "Rotovegas"); Whakarewarewa Forest\'s Redwoods Treewalk is a good pick if you want scenery without a culture-park or geothermal-park visit.',
+    'Coromandel': 'Cathedral Cove\'s main track reopened in late January 2026 after repeated weather-driven closures, but it now closes automatically at short notice under an orange/red weather warning, so check DOC\'s status the day of; Hot Water Beach only works at low tide, when you can dig your own spa pool in the sand.',
+    'Bay of Islands': 'Waitangi Treaty Grounds is New Zealand\'s most significant historic site (where the founding treaty was signed in 1840); the "Hole in the Rock" cruise to Piercy Island is the classic boat trip.',
+    'Auckland': 'Built across dozens of extinct volcanic cones (Mt Eden/Maungawhau, One Tree Hill) that you can walk up for free — no ticket needed — for harbour views; it\'s the "City of Sails" with a harbour on each side.',
+    'Nuku\'alofa': 'The Royal Palace is a photogenic white wooden building near the waterfront but is not open to the public, viewable from outside only; the Royal Tombs adjacent are also closed to visitors.',
   };
 
   let touched = false;

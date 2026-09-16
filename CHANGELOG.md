@@ -12,6 +12,18 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 6 — Oceania Grand Expedition (2026-09-16)** — 14 blocks, 60
+  destinations, researched as 3 parallel batches (Pacific Islands, Australia, New Zealand).
+  Same generic name-matching migration (`rbMigrateOceaniaDestinationNotes()`). App-wide total:
+  1480 destination-slots filled across 148 routes. 110/741 signatures done.
+
+  Caught another live correction: Port Vila (Vanuatu) took real damage in the December 2024
+  magnitude-7.3 earthquake — worth flagging even though the main tourist areas have reopened.
+  Also hit the same regex-escaping quirk as the Pan-American batch (an apostrophe inside an
+  already-double-quoted destination name broke the migration-generator's extraction pattern),
+  this time for 3 of 60 entries — caught the same way via the count cross-check, fixed by
+  hand-adding the missing entries directly rather than continuing to fight the regex.
+
 - **Per-destination notes, batch 5 — Pan-American Grand Tour (2026-09-16)** — 15 blocks, 92
   destinations, researched as 4 parallel batches (Mexico-Honduras, El Salvador-Panama,
   Colombia/Ecuador/Peru, Bolivia-Brazil), all inserted cleanly first try (no missed
