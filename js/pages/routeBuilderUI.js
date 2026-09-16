@@ -818,11 +818,58 @@ function rbRenderVisaPanel(route) {
     return;
   }
 
-  panel.innerHTML = countries.map(c => `
-    <div class="rb-visa-country">
-      <div class="rb-visa-country-name">${escapeHTML(c.name)}</div>
-      <div class="rb-visa-country-body">${buildCountryHealthHTML(rbCountryDetails[c.code])}</div>
-    </div>`).join('');
+  // Two-tier disclosure (the route-wide summary itself is no longer gated behind a click — it
+  // was the redundant tier: opening the panel used to show a collapsed head with nothing
+  // visible until clicked, when the summary is exactly the thing worth seeing immediately).
+  // Now: the summary always shows as soon as the panel opens; one click reveals the
+  // per-country compact-row list; each row expands into that country's full field list.
+  // Without this, opening the panel on a many-country route (a 25-leg grand tour, say) dumped
+  // every country's full visa/vaccine/health text at once with no route-wide picture of "how
+  // many visas do I actually need to arrange". Purely view-state (not persisted, not route
+  // data), so it's plain DOM show/hide on click, not rbSave()/rbRenderEditor() like a real
+  // route edit would use.
+  panel.innerHTML = `
+    <div class="rb-visa-summary-head">
+      <div class="rb-visa-summary-title">🩺 Visa &amp; vaccination overview — ${countries.length} ${countries.length === 1 ? 'country' : 'countries'}</div>
+      <div class="rb-visa-summary-body">${buildRouteHealthSummaryHTML(countries, rbCountryDetails)}</div>
+    </div>
+    <button class="rb-visa-list-toggle" type="button" data-action="toggle-visa-list">
+      <span class="rb-visa-list-chevron">▸</span>
+      <span>Show all countries (${countries.length})</span>
+    </button>
+    <div class="rb-visa-country-list" hidden>
+      ${countries.map(c => `
+        <div class="rb-visa-country">
+          <button class="rb-visa-country-toggle" type="button" data-action="toggle-visa-country">
+            <span class="rb-visa-country-chevron">▸</span>
+            <span class="rb-visa-country-name">${escapeHTML(c.name)}</span>
+            <span class="rb-visa-country-summary">${buildCountryHealthSummaryHTML(rbCountryDetails[c.code])}</span>
+          </button>
+          <div class="rb-visa-country-body" hidden>${buildCountryHealthHTML(rbCountryDetails[c.code])}</div>
+        </div>`).join('')}
+    </div>`;
+
+  if (!panel.dataset.bound) {
+    panel.dataset.bound = '1';
+    panel.addEventListener('click', (e) => {
+      const listBtn = e.target.closest('[data-action="toggle-visa-list"]');
+      if (listBtn) {
+        const list = panel.querySelector('.rb-visa-country-list');
+        const chevron = listBtn.querySelector('.rb-visa-list-chevron');
+        list.hidden = !list.hidden;
+        chevron.textContent = list.hidden ? '▸' : '▾';
+        return;
+      }
+
+      const btn = e.target.closest('[data-action="toggle-visa-country"]');
+      if (!btn) return;
+      const card = btn.closest('.rb-visa-country');
+      const body = card.querySelector('.rb-visa-country-body');
+      const chevron = btn.querySelector('.rb-visa-country-chevron');
+      body.hidden = !body.hidden;
+      chevron.textContent = body.hidden ? '▸' : '▾';
+    });
+  }
 }
 
 // ---- calendar view ----

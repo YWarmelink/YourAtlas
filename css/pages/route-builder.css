@@ -946,18 +946,130 @@
   margin-bottom: var(--sp-8);
 }
 
+/* Route-wide summary (visa-needed count, deduped vaccine/malaria union across every country) —
+   always visible as soon as the panel opens, no click needed. .rb-visa-list-toggle below it is
+   the actual first click, revealing .rb-visa-country-list. */
+.rb-visa-summary-head {
+  background: var(--atlas-blue-light);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--atlas-blue);
+  overflow: hidden;
+}
+
+.rb-visa-summary-title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semi);
+  color: var(--atlas-navy-mid);
+  padding: var(--sp-4) var(--sp-5) var(--sp-2);
+}
+
+.rb-visa-summary-body {
+  padding: 0 var(--sp-5) var(--sp-4);
+}
+
+.rb-visa-summary-line {
+  font-size: var(--fs-sm);
+  color: var(--atlas-navy-mid);
+  line-height: 1.6;
+}
+
+.rb-visa-summary-nodata { opacity: .75; font-style: italic; }
+
+.rb-visa-list-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  width: 100%;
+  padding: var(--sp-3) var(--sp-5);
+  background: none;
+  border: 1px solid var(--atlas-border);
+  border-radius: var(--r-xl);
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  color: var(--atlas-text);
+}
+.rb-visa-list-toggle:hover { background: var(--atlas-bg); }
+
+.rb-visa-list-chevron {
+  color: var(--atlas-text-light);
+  font-size: var(--fs-sm);
+  flex-shrink: 0;
+  width: 1em;
+}
+
+.rb-visa-country-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
 .rb-visa-country {
-  padding: var(--sp-5);
   background: var(--atlas-bg);
   border-radius: var(--r-xl);
   border: 1px solid var(--atlas-border);
+  overflow: hidden;
+}
+
+/* Collapsed-by-default compact row — click anywhere to expand into the full field list below
+   (.rb-visa-country-body). Kept as a <button> for keyboard/a11y, styled to read as a row. */
+.rb-visa-country-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  width: 100%;
+  padding: var(--sp-4) var(--sp-5);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  flex-wrap: wrap;
+}
+.rb-visa-country-toggle:hover { background: var(--atlas-border); }
+
+.rb-visa-country-chevron {
+  color: var(--atlas-text-light);
+  font-size: var(--fs-sm);
+  flex-shrink: 0;
+  width: 1em;
 }
 
 .rb-visa-country-name {
   font-size: var(--fs-md);
   font-weight: var(--fw-semi);
   color: var(--atlas-text);
-  margin-bottom: var(--sp-3);
+  flex-shrink: 0;
+}
+
+.rb-visa-country-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-left: auto;
+}
+
+.rb-visa-summary-chip {
+  font-size: 12px;
+  color: var(--atlas-text-light);
+  background: var(--atlas-border);
+  border-radius: var(--r-md);
+  padding: 2px var(--sp-2);
+  white-space: nowrap;
+}
+
+.rb-visa-summary-empty {
+  font-size: 12px;
+  color: var(--atlas-text-light);
+  font-style: italic;
+  margin-left: auto;
+}
+
+.rb-visa-country-body {
+  padding: var(--sp-3) var(--sp-5) var(--sp-5);
+  border-top: 1px solid var(--atlas-border);
 }
 
 .rb-visa-country-body .ci-field {
@@ -981,6 +1093,21 @@
   color: var(--atlas-text);
 }
 .rb-visa-country-body .ci-field-value strong { color: #b45309; }
+
+.rb-visa-country-body .ci-field-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.rb-visa-country-body .ci-chip {
+  font-size: 12px;
+  color: var(--atlas-text);
+  background: var(--atlas-border);
+  border-radius: var(--r-md);
+  padding: 3px var(--sp-2);
+  white-space: nowrap;
+}
 
 .rb-visa-country-body .ci-checked {
   margin-top: var(--sp-3);

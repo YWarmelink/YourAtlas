@@ -201,6 +201,20 @@ function buildCountryHealthHTML(record) {
       <div class="ci-field-value">${mdBold(value)}</div>
     </div>`;
 
+  // Recommended vaccines are usually a genuine list (e.g. "DTP booster, Hepatitis A, Typhoid")
+  // rather than one sentence — rendered as small chips instead of a paragraph so a country with
+  // a long list doesn't dominate the card the way it did as running prose.
+  const chipField = (icon, label, value) => {
+    if (!value) return '';
+    const items = value.split(/[,;]/).map(s => s.trim()).filter(Boolean);
+    if (!items.length) return '';
+    return `
+      <div class="ci-field">
+        <div class="ci-field-label">${icon} ${label}</div>
+        <div class="ci-field-chips">${items.map(i => `<span class="ci-chip">${mdBold(i)}</span>`).join('')}</div>
+      </div>`;
+  };
+
   const visaLine = [record.visa_requirement, record.visa_max_stay_days && `Max stay: ${record.visa_max_stay_days} days`]
     .filter(Boolean).join(' — ');
 
@@ -208,10 +222,116 @@ function buildCountryHealthHTML(record) {
     ${field('🛂', 'Visa', visaLine)}
     ${field('📝', 'Visa notes', record.visa_notes)}
     ${field('💉', 'Vaccines required', record.vaccines_required)}
-    ${field('💊', 'Vaccines recommended', record.vaccines_recommended)}
+    ${chipField('💊', 'Vaccines recommended', record.vaccines_recommended)}
     ${field('🦟', 'Malaria risk', record.malaria_risk)}
     ${field('⚕️', 'Health notes', record.health_notes)}
     ${record.requirements_checked_date
       ? `<div class="ci-checked">Checked ${escapeHTML(record.requirements_checked_date)} — reverify before booking, rules change.</div>`
       : ''}`;
+}
+
+/**
+ * Compact "at a glance" line for one country's visa/vaccination status — visa requirement +
+ * max stay, plus a chip each for a required vaccine and any non-none malaria risk. Used as the
+ * collapsed-row summary in Route Builder's visa panel (rbRenderVisaPanel in routeBuilderUI.js)
+ * so a many-country route (e.g. a 25-leg grand tour) shows a scannable overview instead of every
+ * country's full field list at once — see buildCountryHealthHTML above for the expanded form.
+ */
+function buildCountryHealthSummaryHTML(record) {
+  if (!record || !record.visa_requirement) {
+    return `<span class="rb-visa-summary-empty">No data yet</span>`;
+  }
+
+  const chips = [];
+  const visaLine = [record.visa_requirement, record.visa_max_stay_days && `${record.visa_max_stay_days}d`]
+    .filter(Boolean).join(' · ');
+  if (visaLine) chips.push(`🛂 ${escapeHTML(visaLine)}`);
+  if (record.vaccines_required) chips.push(`💉 Vaccine required`);
+  if (record.malaria_risk && record.malaria_risk.toLowerCase() !== 'none') chips.push(`🦟 Malaria: ${escapeHTML(record.malaria_risk)}`);
+
+  return chips.map(c => `<span class="rb-visa-summary-chip">${c}</span>`).join('');
+}
+
+// Canonical travel-vaccine names this project already researches against (same vocabulary the
+// visa-vaccination-checker agent spec uses: reisvaccinaties.nl/LCR-style standard travel-health
+// advice). Used to pull real vaccine names out of vaccines_required/vaccines_recommended's free
+// text for the route-wide summary below — those columns are whole sentences, not clean lists
+// (e.g. "DTP, Hepatitis A (consider Hep B/rabies/MMR by itinerary)"), so a plain comma-split
+// fragments qualifier text into junk entries instead of real vaccine names. Matching against
+// this whitelist keeps only genuine vaccine mentions, in a stable order.
+const VACCINE_CANON = [
+  ['Yellow Fever', /yellow\s*fever/i],
+  ['Hepatitis A', /hepatitis\s*a\b/i],
+  ['Hepatitis B', /hepatitis\s*b\b/i],
+  ['Typhoid', /typhoid/i],
+  ['Rabies', /rabies/i],
+  ['DTP', /\bdtp\b/i],
+  ['MMR', /\bmmr\b/i],
+  ['TBE', /\btbe\b|tick-?borne encephalitis/i],
+  ['Japanese Encephalitis', /japanese\s*encephalitis|\bje\b/i],
+  ['Cholera', /cholera/i],
+  ['Meningitis ACWY', /meningitis/i],
+  ['Polio', /\bpolio\b/i],
+  ['Dengue', /dengue/i],
+];
+
+function extractKnownVaccines(text) {
+  if (!text) return [];
+  return VACCINE_CANON.filter(([, re]) => re.test(text)).map(([name]) => name);
+}
+
+/**
+ * Route-wide visa/vaccination summary — which countries in the route need a visa arranged,
+ * a deduped list of vaccines that are actually (unconditionally) required somewhere on the
+ * route, a deduped list of vaccines recommended anywhere on the route, and which countries
+ * carry a malaria risk. The "small head" a Route Builder route's visa panel shows immediately
+ * before drilling into any one country — see buildCountryHealthSummaryHTML (per-country row)
+ * and buildCountryHealthHTML (per-country full detail) above for the other two tiers.
+ *
+ * `countries` is [{ code, name }, ...] in route order; `detailsMap` is rbCountryDetails (code ->
+ * raw Countries-sheet row).
+ */
+function buildRouteHealthSummaryHTML(countries, detailsMap) {
+  const rows = countries.map(c => ({ c, r: detailsMap[c.code] }));
+  const withData = rows.filter(x => x.r && x.r.visa_requirement);
+  const noDataCount = rows.length - withData.length;
+
+  if (!withData.length) {
+    return `<span class="rb-visa-summary-empty">No visa/vaccination data yet for any country in this route.</span>`;
+  }
+
+  const visaCountries = withData
+    .filter(x => !(x.r.visa_requirement || '').toLowerCase().startsWith('visa-free'))
+    .map(x => x.c.name);
+
+  // vaccines_required with a genuine, unconditional requirement only — a country with nothing
+  // hard-required still often reads like "None (Yellow Fever only if arriving from a
+  // YF-endemic country)", one of several phrasings of "not required"; skip any field starting
+  // with "none" before even looking for vaccine names, so that conditional mention doesn't get
+  // counted as an actual requirement.
+  const requiredNames = new Set();
+  withData.forEach(x => {
+    const raw = (x.r.vaccines_required || '').trim();
+    if (!raw || /^none/i.test(raw)) return;
+    extractKnownVaccines(raw).forEach(v => requiredNames.add(v));
+  });
+  const requiredVaccines = VACCINE_CANON.map(([name]) => name).filter(n => requiredNames.has(n));
+
+  // vaccines_recommended is already a genuine (if messily-punctuated) list rather than a
+  // conditional sentence, so no "none" guard needed here.
+  const recommendedNames = new Set();
+  withData.forEach(x => extractKnownVaccines(x.r.vaccines_recommended || '').forEach(v => recommendedNames.add(v)));
+  const recommendedVaccines = VACCINE_CANON.map(([name]) => name).filter(n => recommendedNames.has(n));
+
+  const malariaCountries = withData.filter(x => x.r.malaria_risk && x.r.malaria_risk.toLowerCase() !== 'none').map(x => x.c.name);
+
+  const line = (icon, text) => !text ? '' : `<div class="rb-visa-summary-line">${icon} ${text}</div>`;
+
+  return [
+    line('🛂', `Visa required in: ${visaCountries.length ? escapeHTML(visaCountries.join(', ')) : 'none — every country on this route is visa-free'}`),
+    line('💉', `Vaccine required: ${requiredVaccines.length ? escapeHTML(requiredVaccines.join(', ')) : 'none'}`),
+    line('💊', `Vaccine recommended: ${recommendedVaccines.length ? escapeHTML(recommendedVaccines.join(', ')) : 'none'}`),
+    line('🦟', `Malaria risk in: ${malariaCountries.length ? escapeHTML(malariaCountries.join(', ')) : 'none'}`),
+    noDataCount ? `<div class="rb-visa-summary-line rb-visa-summary-nodata">ℹ️ ${noDataCount} ${noDataCount === 1 ? 'country has' : 'countries have'} no data yet</div>` : '',
+  ].join('');
 }

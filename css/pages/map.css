@@ -640,6 +640,21 @@
 }
 .ci-field-value strong { color: #fbbf24; }
 
+.ci-field-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.ci-chip {
+  font-size: 12px;
+  color: #e2e8f0;
+  background: rgba(255,255,255,.08);
+  border-radius: 6px;
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+
 .ci-checked {
   margin-top: 14px;
   font-size: 12px;

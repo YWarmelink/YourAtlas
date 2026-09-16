@@ -12,6 +12,35 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Route Builder's visa/vaccination panel: route-wide summary + a shorter click path
+  (2026-09-16)** — the panel used to dump every country's full visa/vaccine/health text at
+  once (or, after a first pass, gate a redundant collapsed head behind an extra click before
+  showing anything). Now: opening the panel immediately shows a route-wide summary — "Visa
+  required in: <countries>", "Vaccine required: <names>", "Vaccine recommended: <names>",
+  "Malaria risk in: <countries>" — with one "Show all countries" click revealing the
+  per-country compact rows, each still expandable into its full detail. New
+  `buildRouteHealthSummaryHTML()`/`buildCountryHealthSummaryHTML()` in `js/utils/helpers.js`,
+  restyled `rbRenderVisaPanel()` in `js/pages/routeBuilderUI.js`.
+
+  Two data-quality fixes needed along the way, both in the same file: (1) `vaccines_required`
+  is a whole sentence, not a clean list — a country with nothing hard-required still reads
+  like "None (Yellow Fever only if arriving from a YF-endemic country)" in several slightly
+  different phrasings (confirmed across Eurasia Grand Tour's countries) — any field starting
+  with "none" is now skipped entirely before being counted, instead of showing up as visual
+  noise in the summary. (2) A naive comma-split of `vaccines_recommended`'s free text (e.g.
+  "DTP, Hepatitis A (consider Hep B/rabies/MMR by itinerary)") fragmented qualifier prose into
+  junk entries — up to 50 garbled fragments on a 26-country route in testing. Fixed with
+  `VACCINE_CANON`/`extractKnownVaccines()`, a whitelist of real travel-vaccine names (same
+  vocabulary the `visa-vaccination-checker` agent spec already uses) matched against the free
+  text instead of split on punctuation — the same 26-country route now correctly shows 11 real
+  vaccine names.
+
+  Also gave the per-country full-detail view's "Vaccines recommended" field its own compact
+  chip rendering (`chipField()`/`.ci-field-chips`/`.ci-chip`) instead of one paragraph — shared
+  by `buildCountryHealthHTML()`, so this also affects `map.html`'s country info panel; CSS
+  added to both `css/pages/route-builder.css` (light theme) and `css/pages/map.css` (dark
+  theme) since neither page shares a stylesheet with the other.
+
 - **Removed the stale "saved locally in this browser" banner from Route Builder
   (2026-09-16)** — it dated from before the Sheet sync existed and was now actively wrong
   (routes sync to the Sheet's own `GrandTrips` tabs, not just this browser). The banner's
