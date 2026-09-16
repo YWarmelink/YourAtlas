@@ -171,6 +171,11 @@ in total as of that batch:
   Curaçao & Bonaire 🤿 content reused unchanged — that 2-island route still exists separately,
   same deliberate-overlap pattern as Fiji 🌊/Fiji & Vanuatu 🐚). 81 standalone/combo routes in
   this lineage as of this batch. See `CHANGELOG.md` for the full notes.
+- **Batch 9 (2026-09-16)** — **Palau 🦈**, **Papua New Guinea 🎭**, **Uruguay 🧉**, **Guyana 🦦**.
+  Papua New Guinea's advisory is tiered (red/orange/yellow) — this route deliberately excludes
+  the orange-zone highlands (Mount Hagen, Tari/Hela) rather than visiting them with a warning,
+  and is built entirely from yellow-zone stops instead. 85 standalone/combo routes in this
+  lineage as of this batch. See `CHANGELOG.md` for the full notes.
 
 **Long-haul flight buffer (2026-08, see `CLAUDE.md`'s "long-haul flight buffer policy")**: 13 of
 the 75 got a +2 day buffer for exposure to their round-trip flight time — **Tunesië 🧿** (6→8d,

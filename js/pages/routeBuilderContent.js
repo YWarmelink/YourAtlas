@@ -8776,6 +8776,140 @@ function rbBuildABCIslandsRoute() {
   });
 }
 
+// ---- Standalone single-country routes, batch 9 (2026-09) ----
+//
+// Four more brand-new countries, same approach as batches 7-8 — verified against
+// TRIP_DATABASE.csv and routeBuilderContent.js first, none existed anywhere before this batch.
+// Papua New Guinea is the notable one: its Dutch travel advisory is tiered (red/orange/yellow),
+// and two of the country's most commonly-recommended highlights — Mount Hagen and Tari/Hela —
+// sit in the ORANGE zone ("only essential travel, not vacation-safe"). This route is deliberately
+// built around yellow-zone stops only (Port Moresby, Tufi, Milne Bay, Sepik, Rabaul/Kokopo,
+// Goroka) and skips Mount Hagen/Tari entirely rather than including them with just a warning —
+// unlike Jordan/Bahrain-style orange-flag notes elsewhere in this file, here the flagged areas
+// are simply left out of the itinerary, not visited-with-a-caveat.
+
+function rbSeedStandaloneCountryRoutesBatch9() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_STANDALONE_COUNTRIES_BATCH9)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_STANDALONE_COUNTRIES_BATCH9, '1');
+
+  rbRoutes.push(
+    rbBuildPalauRoute(),
+    rbBuildPapuaNewGuineaRoute(),
+    rbBuildUruguayRoute(),
+    rbBuildGuyanaRoute(),
+  );
+  rbSave();
+}
+
+function rbBuildPalauRoute() {
+  const pw = () => ({
+    code: 'PW', name: 'Palau', days: 10, budget: 1000, lat: 7.3400, lng: 134.4800,
+    destinations: [
+      { name: 'Koror', lat: 7.3400, lng: 134.4800 },
+      { name: 'Rock Islands Southern Lagoon & Jellyfish Lake', lat: 7.15, lng: 134.37 },
+      { name: 'Blue Corner (dive site)', lat: 7.12, lng: 134.22 },
+      { name: 'Peleliu Island (WWII battle sites)', lat: 7.00, lng: 134.24 },
+      { name: 'Ngardmau Waterfall, Babeldaob', lat: 7.58, lng: 134.62 },
+    ],
+    notes: "Blue Corner's sharks, Jellyfish Lake and the Rock Islands lagoon, Peleliu's WWII history, and Babeldaob's waterfalls — world-class diving wrapped around the Pacific's most photogenic islands. The $100 Pristine Paradise Environmental Fee is built directly into every international air ticket (not a separate payment). A Rock Islands Permit is mandatory for the Southern Lagoon area: $50 (10 days, no Jellyfish Lake) or $100 (5 days, includes Jellyfish Lake). Diving is the reason to visit and isn't in the daily rate — budget ~€140-165/day for 2-tank boat dives on top. Non-reef-safe sunscreen is illegal to import, possess or sell — bring reef-safe only. Dutch travel advisory (2026-09 snapshot): green — notable flags are unusually strict drug laws (min. 25 years + $50,000 fine, including soft drugs) and typhoon/tropical storm season June-November.",
+  });
+  return rbBuildFlatSeedRoute('Palau 🦈', [
+    {
+      ...pw(),
+      notes: 'Entry: flight Amsterdam-Koror, 2 stops (via Manila/Philippine Airlines or United, or via Seoul/Korean Air or Asiana, or via Taipei/China Airlines; roughly 20-26 hours total; from ±€1,300-1,750 return; best period December-April for dry-season visibility, or late October/November as a quieter shoulder-season pick). Web-research price/timing indication 2026-09, a snapshot. Long-haul flight buffer applied (see CLAUDE.md): +2 days on top of an 8-day base recommendation (10 total) — a short trip combined with a multi-stop connecting flight. ' + pw().notes,
+      transport_to_next: 'End of this route — return flight from Koror to Amsterdam, 2 stops.',
+    },
+  ], {
+    best_starting_month: 'December',
+    travel_style: 'Boat charters for the Rock Islands/dive sites, scooter or taxi around Koror/Babeldaob.',
+    climate_summary: 'December-April is dry season with the clearest water for diving and snorkeling, avoiding the June-November typhoon season.',
+    description: "Blue Corner's sharks, Jellyfish Lake, and Rock Islands lagoon views — world-class diving wrapped around the Pacific's most photogenic islands.",
+    notes: 'New standalone route (2026-09) — first time Palau appears in Route Builder, not split off from an existing expedition. Built from a dedicated research pass (route-price-checker style, 2026-09-16) covering costs, the environmental fee/permit system, and the current advisory. Re-verify all of these before booking.',
+  });
+}
+
+function rbBuildPapuaNewGuineaRoute() {
+  const pg = () => ({
+    code: 'PG', name: 'Papua New Guinea', days: 13, budget: 1170, lat: -9.4438, lng: 147.1803,
+    destinations: [
+      { name: 'Port Moresby', lat: -9.4438, lng: 147.1803 },
+      { name: 'Tufi (fjords, diving)', lat: -9.08, lng: 149.32 },
+      { name: 'Alotau / Milne Bay (diving)', lat: -10.32, lng: 150.45 },
+      { name: 'Sepik River (Wewak) — spirit houses, canoe villages', lat: -3.57, lng: 143.63 },
+      { name: 'Rabaul / Kokopo, East New Britain — volcanoes, WWII wrecks', lat: -4.20, lng: 152.17 },
+      { name: 'Goroka, Eastern Highlands', lat: -6.08, lng: 145.39 },
+    ],
+    notes: "Sepik River spirit houses, Tufi's fjord-diving, and Rabaul's smoking volcanoes — PNG's rugged edge, deliberately routed around the highlands' real risk zones (see the route-level note on why Mount Hagen/Tari were left out entirely, not just flagged). Domestic flights are close to mandatory here — roads barely connect regions — budget roughly €140-200 each for the Port Moresby-Lae/Goroka/Wewak legs, separate from the daily rate. Highlands/village visits are usually guided (vehicle+guide+village fee bundled, ~€95-235/day); Sepik River canoe/village-stay trips run as multi-day boat charters (~€140-280/day). Goroka Show (around Independence Day/September) is a safer yellow-zone alternative to the orange-zone Mount Hagen Show for the 'cultural festival' draw. Dutch travel advisory (2026-09 snapshot, tiered): RED for Bougainville Island/the Panguna mine area (do not travel, entry prohibited by local authorities) — not part of this route; ORANGE for Enga, Hela, Southern Highlands and Mount Hagen/Western Highlands provinces (only essential travel — deliberately excluded from this itinerary, including Mount Hagen and Tari/Hela despite being classic highlands highlights); YELLOW for the rest of the country, including every stop actually on this route (Port Moresby, Tufi, Milne Bay, Sepik, Rabaul/Kokopo, Goroka). Also flagged: maritime piracy, natural disasters (cyclones, earthquakes, active volcanoes, tsunamis), unexploded WWII ordnance, and weak infrastructure/emergency services.",
+  });
+  return rbBuildFlatSeedRoute('Papua New Guinea 🎭', [
+    {
+      ...pg(),
+      notes: 'Entry: flight Amsterdam-Port Moresby, 2 stops (via Singapore, connecting to Air Niugini, or via Australia; roughly 24-30+ hours total; from ±€1,470-2,020 return; best period May-October dry season for trekking/diving conditions, with July-September doubling as festival season at the yellow-zone-safe Kokopo Mask Festival (July) and Goroka Show (around September) — book festival-town accommodation months ahead). Web-research price/timing indication 2026-09, a snapshot. Long-haul flight buffer applied (see CLAUDE.md): +2 days on top of an 11-day base recommendation (13 total) — a genuinely long, multi-stop connecting flight to a logistically hard country. ' + pg().notes,
+      transport_to_next: 'End of this route — return flight from Port Moresby to Amsterdam, 2 stops.',
+    },
+  ], {
+    best_starting_month: 'July',
+    travel_style: 'Domestic flights between regions (roads don\'t reliably connect them), guided vehicle/boat charters for highlands and Sepik River visits.',
+    climate_summary: 'May-October is dry season, best for trekking and diving conditions; July-September overlaps with the safer, yellow-zone cultural festivals.',
+    description: "Sepik River spirit houses, Tufi's fjord-diving, and Rabaul's smoking volcanoes — PNG's rugged edge, routed around the highlands' real risk zones.",
+    notes: 'New standalone route (2026-09) — first time Papua New Guinea appears in Route Builder, not split off from an existing expedition. Built from a dedicated research pass (route-price-checker style, 2026-09-16) that flagged this country\'s advisory as genuinely tiered rather than a single color — the itinerary deliberately excludes the orange-zone highlands (Mount Hagen, Tari/Hela) rather than including them with a warning, unlike how some other routes in this file handle a partial-orange country. Re-verify the advisory tiers before booking — PNG\'s tribal/political conflict zones shift.',
+  });
+}
+
+function rbBuildUruguayRoute() {
+  const uy = () => ({
+    code: 'UY', name: 'Uruguay', days: 10, budget: 800, lat: -34.9011, lng: -56.1645,
+    destinations: [
+      { name: 'Montevideo (Ciudad Vieja, Mercado del Puerto)', lat: -34.91, lng: -56.19 },
+      { name: 'Colonia del Sacramento (UNESCO old town)', lat: -34.46, lng: -57.84 },
+      { name: 'Punta del Este', lat: -34.97, lng: -54.95 },
+      { name: 'Cabo Polonio (off-grid, 4x4-only)', lat: -34.38, lng: -53.78 },
+      { name: 'Punta del Diablo (incl. Santa Teresa National Park)', lat: -34.03, lng: -53.55 },
+    ],
+    notes: "Colonia's cobblestones, Cabo Polonio's off-grid sea lions, and Punta del Diablo's surf — Uruguay's quiet, uncrowded answer to its bigger neighbors (Argentina/Brazil, both already covered elsewhere in this app). Getting into Cabo Polonio requires the official 4x4 truck transfer (small extra fee) — no regular road access. Optional splurges beyond the daily rate: an estancia (working ranch) stay (~€130-215/night all-inclusive), a Carmelo/Canelones wine tour (~€45-90). Dutch travel advisory (2026-09 snapshot): yellow — avoid walking alone through Montevideo's Ciudad Vieja after dark and avoid remote streets; don't resist if robbed. No Dutch embassy in-country, covered from Buenos Aires.",
+  });
+  return rbBuildFlatSeedRoute('Uruguay 🧉', [
+    {
+      ...uy(),
+      notes: 'Entry: flight Amsterdam-Montevideo, one stop (via Madrid with Air Europa, or via São Paulo/Buenos Aires with KLM; roughly 16h20m minimum; from ±€850-1,100 return; best period November-early December or March-April, shoulder season — avoid December-February full summer, when Punta del Este prices roughly triple and Cabo Polonio gets crowded). Web-research price/timing indication 2026-09, a snapshot. Long-haul flight buffer applied (see CLAUDE.md): +2 days on top of an 8-day base recommendation (10 total) — a connecting flight on a trip at the edge of the 10-day threshold. ' + uy().notes,
+      transport_to_next: 'End of this route — return flight from Montevideo to Amsterdam, one stop.',
+    },
+  ], {
+    best_starting_month: 'November',
+    travel_style: 'Long-distance bus between towns, the official 4x4 transfer for Cabo Polonio.',
+    climate_summary: 'November-early December and March-April are shoulder season — warm and uncrowded, without full summer\'s tripled Punta del Este prices.',
+    description: "Colonia's cobblestones, Cabo Polonio's off-grid sea lions, and Punta del Diablo's surf — Uruguay's quiet, uncrowded answer to its bigger neighbors.",
+    notes: 'New standalone route (2026-09) — first time Uruguay appears in Route Builder, not split off from an existing expedition (Argentina and Brazil already appear elsewhere in this app, but as their own separate routes/expeditions). Built from a dedicated research pass (route-price-checker style, 2026-09-16) covering costs, visa and the current advisory. Re-verify all of these before booking.',
+  });
+}
+
+function rbBuildGuyanaRoute() {
+  const gy = () => ({
+    code: 'GY', name: 'Guyana', days: 9, budget: 450, lat: 6.8013, lng: -58.1551,
+    destinations: [
+      { name: 'Georgetown (Stabroek Market, seawall)', lat: 6.80, lng: -58.16 },
+      { name: 'Kaieteur Falls', lat: 5.17, lng: -59.49 },
+      { name: 'Iwokrama River Lodge', lat: 4.67, lng: -58.68 },
+      { name: 'Atta Rainforest Lodge (canopy walkway)', lat: 4.62, lng: -58.73 },
+      { name: 'Rupununi Savannah / Karanambu Lodge', lat: 3.75, lng: -59.32 },
+    ],
+    notes: "Kaieteur Falls by bush plane, giant otters and jaguars in the Rupununi, and Georgetown's colonial seawall — the Guianas' wildest, least-visited corner. Pairs naturally with the existing Suriname 🛶 route's framing without being merged into it. Two very different cost regimes stitched together: Georgetown/coast runs a normal backpacker daily rate, but the interior (Iwokrama, Rupununi) is only reachable by bush flight and sold as all-inclusive lodge packages (~€230-370/day/person) — budget these as separate line items, not folded into the daily rate. Kaieteur Falls itself is a single day trip (bush flight + guided walk from Georgetown, ~€250-330pp all-in) — book 3-5 days ahead in dry season. Yellow Fever certificate only required if arriving from/transiting 4+ hours through a WHO yellow-fever-risk country (e.g. Brazil) — flying direct from Europe should be exempt, double-check against the actual booked routing. Dutch travel advisory (2026-09 snapshot): yellow — violent crime (armed robbery, mugging, pickpocketing) concentrated specifically around Georgetown's Stabroek/Bourda Markets and the Sophia/South Ruimsveldt/Tigerbay neighborhoods; same-sex acts are criminalized with severe penalties, a more serious LGBTQ+ safety flag than most other routes in this file.",
+  });
+  return rbBuildFlatSeedRoute('Guyana 🦦', [
+    {
+      ...gy(),
+      notes: 'Entry: KLM Amsterdam-Georgetown, 2x/week (Wed/Sat) — outbound has a technical fuel stop in Sint Maarten with no aircraft/ticket change, return nonstop; roughly 9h20m; from ±€740-1,460 return; best period February-April or September-October, the driest windows for both the coast and interior roads/rivers. Web-research price/timing indication 2026-09, a snapshot. No long-haul flight buffer applied — unlike this batch\'s other three routes, the outbound leg is a technical stop on the same aircraft (not a hub transfer/plane change) and total time is well under 24h, so the buffer\'s trigger conditions aren\'t clearly met here. ' + gy().notes,
+      transport_to_next: 'End of this route — return flight from Georgetown to Amsterdam, nonstop.',
+    },
+  ], {
+    best_starting_month: 'February',
+    travel_style: 'Minibus around Georgetown, bush flights to reach Kaieteur Falls and the interior lodges (no road access).',
+    climate_summary: 'February-April and September-October are the driest windows for both the coast and the interior\'s roads/rivers — avoid May-early August and mid-November-January, when interior roads can become impassable.',
+    description: "Kaieteur Falls by bush plane, giant otters in the Rupununi, and Georgetown's colonial seawall — the Guianas' wildest, least-visited corner.",
+    notes: 'New standalone route (2026-09) — first time Guyana appears in Route Builder as its own destination (distinct from the existing Suriname & Northern Brazil 🌴 combo route, which doesn\'t include Guyana). Built from a dedicated research pass (route-price-checker style, 2026-09-16) covering the coast/interior cost split, the yellow fever certificate exemption, and the current advisory\'s specific Georgetown crime hotspots. Re-verify all of these before booking.',
+  });
+}
+
 // ---- Centraal-Azië 🐎 further split (2026-08) ----
 //
 // Centraal-Azië 🐎 (batch 3) was flagged in its own notes as the largest of all standalone routes

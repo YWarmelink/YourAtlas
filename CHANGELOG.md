@@ -12,6 +12,19 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **A third new standalone-country batch — Palau 🦈, Papua New Guinea 🎭, Uruguay 🧉, Guyana 🦦
+  (2026-09-16)** — same treatment as the two batches above, none split off an existing
+  expedition. **Papua New Guinea is the notable one**: its Dutch travel advisory is genuinely
+  tiered (red/orange/yellow), and two of the country's most commonly-recommended highlights —
+  Mount Hagen and Tari/Hela — sit in the orange zone ("only essential travel, not
+  vacation-safe"). Unlike how some other routes in this file handle a partial-orange country
+  (a warning note, still visited), this route deliberately **excludes** those stops entirely
+  and is built only from yellow-zone destinations (Port Moresby, Tufi, Milne Bay, Sepik,
+  Rabaul/Kokopo, Goroka). Guyana pairs conceptually with the existing Suriname 🛶 route (both
+  "the Guianas") but is its own standalone route, not merged into it. Added via
+  `rbSeedStandaloneCountryRoutesBatch9()`; 4 new `TRIP_DATABASE.csv` rows. Verified via the
+  same simulation + Dutch-text-audit scripts, no issues found.
+
 - **A second new standalone-country batch — Seychelles 🌺 and a new ABC Islands 🦩 combo
   route (2026-09-16)** — Seychelles is a brand-new standalone country (3-island loop: Mahé,
   Praslin, La Digue), same treatment as the batch above. ABC Islands 🦩 is a new *combo*
