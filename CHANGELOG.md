@@ -12,6 +12,16 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Removed the stale "saved locally in this browser" banner from Route Builder
+  (2026-09-16)** — it dated from before the Sheet sync existed and was now actively wrong
+  (routes sync to the Sheet's own `GrandTrips` tabs, not just this browser). The banner's
+  other point — that a Route Builder route doesn't yet become a real Trip — is still true,
+  but that's the separate, still-open "graduate a Route Builder expedition into a Trip"
+  roadmap item (see `ROADMAP.md`'s "Rethink the Trips ↔ Route Builder split"), which Youri
+  plans to pick up soon — removed rather than reworded since it'll be revisited properly
+  then. Also dropped the now-unused `.info-banner`/`.info-banner-icon` CSS from
+  `css/pages/route-builder.css`.
+
 - **Route Builder → Sheet sync gap closed: code-added routes now reach the Sheet
   automatically (2026-09-16)** — `rbSave()` only pushes to the Sheet when called with a
   route id (a real browser edit does this; every `rbSeed*()` function calls it with no id,

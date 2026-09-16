@@ -9,25 +9,6 @@
 }
 
 /* === INFO BANNER === */
-.info-banner {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--sp-3);
-  background: var(--atlas-blue-light);
-  border: 1px solid var(--atlas-blue);
-  border-radius: var(--r-xl);
-  padding: var(--sp-4) var(--sp-5);
-  margin-bottom: var(--sp-8);
-}
-
-.info-banner-icon { font-size: 1.1rem; line-height: 1.4; }
-
-.info-banner p {
-  font-size: var(--fs-sm);
-  color: var(--atlas-navy-mid);
-  line-height: 1.6;
-}
-
 /* === LIST VIEW === */
 .rb-list-toolbar {
   display: flex;
