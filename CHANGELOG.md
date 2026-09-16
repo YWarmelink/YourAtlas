@@ -12,6 +12,20 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes — pilot batch on Jordan (2026-09-16)** — new workflow (see
+  `.claude/agents/destination-notes-researcher.md`) to fill the `notes` field every
+  destination already has structurally (`rbBuildBlock`) but which was empty for all 4009
+  destinations across the app until now. Jordan's 5 stops (Amman, Jerash, Petra, Wadi Rum,
+  Dead Sea) got a short, concrete 1-2 sentence tip each — deliberately not repeating anything
+  already in the block-level note (flights/visa/budget). Applied to all 3 routes that share
+  this exact Jordan destination list (Jordan 🏺, and the two routes it was originally split
+  from: Mediterranean Civilizations Expedition 🏛️ and Egypt & Arabian Peninsula 🐪) — one
+  research pass, zero extra cost for the other two. New migrations
+  `rbMigrateJordanDestinationNotes()`/`rbMigrateJordanDestinationNotesShared()`. This is the
+  test case for a much larger planned rollout across the rest of Route Builder (~452 routes,
+  ~741 unique destination-sets once shared/duplicated ones are deduped) — not scheduled yet,
+  pending review of this pilot batch.
+
 - **Fix: "Remove" in the map's country status picker never actually removed the status
   (2026-09-16)** — found via a real case: Algeria showed as visited (confirmed `status:
   'visited'` in the live Countries sheet) despite Youri never having gone. Every other status
@@ -21,11 +35,37 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   `loadSheet()`'s own "Sheet is the single source of truth" design (it wipes the local
   override on every page load), so the local-only clear looked like it worked for the rest of
   that session, then reverted right back on the next reload. Fixed in `js/pages/map.js`:
-  Remove now also calls `pushToSheet(code, '')`. Not yet re-tested live against the real
-  Sheet's Apps Script — if a status still won't clear after this, the next thing to check is
-  whether the Apps Script's `doPost` handler does something special with an empty/blank
-  `status` value (see `ROUTE_BUILDER_SYNC.md`'s note on how to safely inspect/edit that
-  script).
+  Remove now also calls `pushToSheet(code, '')`. Verified live against the real Sheet/Apps
+  Script (2026-09-16): Algeria's status cell edited directly, then the actual fixed code path
+  re-tested end to end via the console (set → wishlist confirmed in the Sheet, then Remove →
+  blank confirmed in the Sheet) — the Apps Script's `handleCountryStatusUpdate` handles an
+  empty status fine, the bug was entirely client-side.
+
+- **Per-destination notes, batch 2 — Eurasia Grand Tour pilot at scale (2026-09-16)** — the
+  Jordan pilot above was 5 destinations/1 route; this batch tested the workflow on a genuinely
+  big route: 29 blocks, 142 destinations, researched as 5 parallel regional batches (Balkans/
+  Turkey, Caucasus/Central Asia, East Asia, mainland SE Asia, maritime SE Asia). Result: 507
+  destination-slots across **53 distinct routes** ended up filled from this one research pass
+  — most of Eurasia Grand Tour's content is reused via `rbContentFor()` by 18 other routes
+  (West Eurasia Overland, Central Asia, Kyrgyzstan, Uzbekistan, Mongolia, Thailand,
+  Philippines, Vietnam & Cambodia, and more), plus 2 more routes with a literal copy-pasted
+  duplicate of the Borneo (Sarawak/Sabah) legs. New generic migration
+  `rbMigrateEurasiaDestinationNotes()` — matches by destination name across *every* route
+  rather than hard-coding route names, so it correctly covers all of this (and only this,
+  since a name match is required) without needing 18 separate migrations.
+
+  Also made the agent leaner based on the Jordan pilot's token cost (~10,400 tokens/destination
+  there): rely on general knowledge for well-established facts, search only for things that can
+  actually change, budget ~1 search per destination max, and batch bigger per call. Result: 47K
+  tokens covered 25-40 destinations per batch here (~1,300-1,900 tokens/destination) — batch 2
+  (Caucasus/Central Asia) used *zero* searches at all. One of the batches also caught a live,
+  current safety-relevant fact in passing (Mount Sinabung's 31 Aug 2026 eruption near
+  Berastagi, Sumatra) that a stale/cached source would have missed.
+
+  New `scripts/generate_destination_notes_plan.py` regenerates `DESTINATION_NOTES_PLAN.md` — a
+  checkbox-tracked list of all 741 unique destination-sets app-wide, sorted by how many routes
+  reuse each one (highest leverage first), so future batches don't need to redo this analysis.
+  36/741 signatures done as of this batch.
 
 - **Route Builder's visa/vaccination panel: route-wide summary + a shorter click path
   (2026-09-16)** — the panel used to dump every country's full visa/vaccine/health text at
