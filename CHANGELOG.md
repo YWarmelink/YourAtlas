@@ -12,6 +12,23 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 4 — Mediterranean Civilizations Expedition (2026-09-16)** —
+  19 blocks, 81 destinations; 68 newly researched as 3 parallel batches (Western Med,
+  Italy+France, Greece/Cyprus/Anatolia/Gulf) — the other 13 were already filled by the Jordan
+  pilot and the Eurasia/Africa batches, since this route's Turkey and Egypt legs partially
+  overlap those routes destination-for-destination. Unlike Eurasia/Africa, this route isn't
+  built via `RB_EXPEDITION_CONTENT`/`rbContentFor()` — it's its own standalone function
+  (`rbBuildMediterraneanExpeditionRoute`), so the notes only needed inserting in one place;
+  the same generic name-matching migration (`rbMigrateMediterraneanDestinationNotes()`) still
+  covers every other route that happens to share a destination name. App-wide total: 1083
+  destination-slots filled across 122 routes. 81/741 signatures done.
+
+  Two data-quality catches this batch: a real transcription typo on my part ("Cefalù" written
+  as "Cefàlù" with an extra accent) caught by cross-checking the inserted-vs-lookup count
+  before trusting it, and another live correction in the research itself — Malta's Azure
+  Window natural arch collapsed into the sea in a 2017 storm and no longer exists, despite
+  still being widely referenced in older travel content.
+
 - **Per-destination notes, batch 3 — Africa Grand Tour (2026-09-16)** — 18 blocks, 100
   destinations, researched as 4 parallel regional batches (Southern Africa, Southern-Central
   Africa/desert, East Africa islands, East Africa mainland + Egypt). Same generic

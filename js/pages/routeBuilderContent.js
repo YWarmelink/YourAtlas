@@ -706,10 +706,10 @@ function rbBuildMediterraneanExpeditionRoute() {
         {
           code: 'ES', name: 'Spain', days: 10, budget: 600, lat: 37.3891, lng: -5.9845,
           destinations: [
-            { name: 'Málaga', lat: 36.7213, lng: -4.4214 },
-            { name: 'Granada (Alhambra)', lat: 37.1760, lng: -3.5883 },
-            { name: 'Córdoba (Mezquita)', lat: 37.8789, lng: -4.7794 },
-            { name: 'Seville', lat: 37.3891, lng: -5.9845 },
+            { name: 'Málaga', lat: 36.7213, lng: -4.4214, notes: 'Birthplace of Picasso — the Museo Picasso Málaga and his birth house on Plaza de la Merced are the draw; also home to the Alcazaba, a well-preserved Moorish fortress right by the port.' },
+            { name: 'Granada (Alhambra)', lat: 37.1760, lng: -3.5883, notes: 'Book Alhambra tickets weeks ahead online (official site) — the Nasrid Palaces section has a timed-entry slot and sells out fast, especially the Comares Palace/Court of the Lions.' },
+            { name: 'Córdoba (Mezquita)', lat: 37.8789, lng: -4.7794, notes: 'The building\'s core feature is the forest of striped red-and-white double arches, with a 16th-century Renaissance cathedral built directly into the middle of the former mosque.' },
+            { name: 'Seville', lat: 37.3891, lng: -5.9845, notes: 'Real Alcázar was a filming location for Game of Thrones (Dorne); Plaza de España\'s tiled alcoves each depict a different Spanish province.' },
           ],
           notes: "Opening leg of the expedition: Moorish and Roman history in Andalusia, from the Alhambra in Granada to the Mezquita in Córdoba. Historic old towns as a calm start to the rest of the trip. Hidden gem: Ronda, with its gorge bridge, as a stop between Málaga and Seville.",
           transport_to_next: "Ferry Tarifa/Algeciras-Tangier (35-90 minutes, several sailings a day) — shortest and cheapest crossing to Africa, no flight needed",
@@ -717,11 +717,11 @@ function rbBuildMediterraneanExpeditionRoute() {
         {
           code: 'MA', name: 'Morocco', days: 10, budget: 450, lat: 31.6295, lng: -7.9811,
           destinations: [
-            { name: 'Tangier', lat: 35.7595, lng: -5.8340 },
-            { name: 'Chefchaouen', lat: 35.1688, lng: -5.2636 },
-            { name: 'Fes', lat: 34.0181, lng: -5.0078 },
-            { name: 'Volubilis', lat: 34.0742, lng: -5.5548 },
-            { name: 'Marrakech', lat: 31.6295, lng: -7.9811 },
+            { name: 'Tangier', lat: 35.7595, lng: -5.8340, notes: 'The old American Legation building is the first property the US government ever owned abroad; Cap Spartel nearby marks the point where the Atlantic meets the Mediterranean.' },
+            { name: 'Chefchaouen', lat: 35.1688, lng: -5.2636, notes: 'Known for the blue-washed walls of its medina (tradition variously linked to Jewish refugees or mosquito-repelling), which makes it one of the most photographed towns in the country.' },
+            { name: 'Fes', lat: 34.0181, lng: -5.0078, notes: 'Home to the University of Al Quaraouiyine, recognized by Guinness as the oldest continuously operating university in the world; the Chouara Tannery is best viewed (and smelled) from the terraces of surrounding leather shops, where mint is handed out to offset the odor.' },
+            { name: 'Volubilis', lat: 34.0742, lng: -5.5548, notes: 'Roman ruins with unusually intact mosaic floors still in situ (not roped off in a museum) — the House of Orpheus and the Triumphal Arch are the standout structures; go near sunset for light and fewer crowds.' },
+            { name: 'Marrakech', lat: 31.6295, lng: -7.9811, notes: 'Jemaa el-Fnaa square shifts character completely after dark, filling with food stalls and performers; Jardin Majorelle, restored by Yves Saint Laurent, is a small but distinct cobalt-blue garden.' },
           ],
           notes: "Berber culture, Islamic history and Roman remains (Volubilis) side by side. The medinas of Fes and Marrakech and the blue city of Chefchaouen as highlights; trains between the main cities are good and cheap.",
           transport_to_next: "Flight Marrakech/Casablanca-Tunis — no practical overland or ferry route due to the closed border with Algeria",
@@ -729,11 +729,11 @@ function rbBuildMediterraneanExpeditionRoute() {
         {
           code: 'TN', name: 'Tunisia', days: 6, budget: 220, lat: 36.8065, lng: 10.1815,
           destinations: [
-            { name: 'Tunis', lat: 36.8065, lng: 10.1815 },
-            { name: 'Carthage', lat: 36.8531, lng: 10.3236 },
-            { name: 'Dougga', lat: 36.4225, lng: 9.2189 },
-            { name: 'El Jem', lat: 35.2967, lng: 10.7050 },
-            { name: 'Sidi Bou Said', lat: 36.8703, lng: 10.3417 },
+            { name: 'Tunis', lat: 36.8065, lng: 10.1815, notes: 'The Bardo Museum holds the world\'s largest collection of Roman mosaics, housed in a former Ottoman-era palace.' },
+            { name: 'Carthage', lat: 36.8531, lng: 10.3236, notes: 'The Antonine Baths ruins sit right on the coast and were once among the largest Roman bath complexes outside Rome itself; little survives above ground elsewhere on the site, so context/imagination does more work here than at Dougga.' },
+            { name: 'Dougga', lat: 36.4225, lng: 9.2189, notes: 'Considered the best-preserved Roman small town in North Africa — the Capitol temple\'s facade and the theater are still largely intact, giving a clearer sense of a functioning Roman town than more famous ruins elsewhere.' },
+            { name: 'El Jem', lat: 35.2967, lng: 10.7050, notes: 'The amphitheater\'s substructure — underground passages and animal pens beneath the arena floor — is walkable and gives a good sense of how the venue actually operated.' },
+            { name: 'Sidi Bou Said', lat: 36.8703, lng: 10.3417, notes: 'Distinctive blue-and-white color scheme (enforced by local ordinance since the 1920s) drew painters like Paul Klee; Café des Nattes on the main street is the classic mint-tea stop overlooking the bay.' },
           ],
           notes: "Carthaginian civilization (Carthage) and Roman North Africa (Dougga, the amphitheater of El Jem, bigger than the one in Rome itself) close together; Sidi Bou Said as a quiet, picturesque village amid the history.",
           transport_to_next: "Flight Tunis-Malta — no reliable year-round ferry connection, only occasional summer services",
@@ -749,11 +749,11 @@ function rbBuildMediterraneanExpeditionRoute() {
         {
           code: 'MT', name: 'Malta', days: 5, budget: 375, lat: 35.8989, lng: 14.5146,
           destinations: [
-            { name: 'Valletta', lat: 35.8989, lng: 14.5146 },
-            { name: 'Mdina', lat: 35.8869, lng: 14.4031 },
-            { name: 'Gozo', lat: 36.0443, lng: 14.2440 },
-            { name: 'Ġgantija temples', lat: 36.0453, lng: 14.2686 },
-            { name: 'Hypogeum', lat: 35.8703, lng: 14.5027 },
+            { name: 'Valletta', lat: 35.8989, lng: 14.5146, notes: 'St. John\'s Co-Cathedral holds Caravaggio\'s "The Beheading of Saint John the Baptist" — his largest known work and the only painting he ever signed.' },
+            { name: 'Mdina', lat: 35.8869, lng: 14.4031, notes: 'Nicknamed the "Silent City" since almost no cars are allowed inside the walls; used as a filming location for King\'s Landing in Game of Thrones (season 1).' },
+            { name: 'Gozo', lat: 36.0443, lng: 14.2440, notes: 'The Azure Window natural arch, once its most photographed landmark, collapsed into the sea in 2017 during a storm — it no longer exists, so don\'t plan around it; Ramla Bay\'s red-sand beach is still there and worth it instead.' },
+            { name: 'Ġgantija temples', lat: 36.0453, lng: 14.2686, notes: 'Two distinct temples enclosed within a single boundary wall, believed linked to a fertility cult; located on Gozo, a short ferry ride from the main island.' },
+            { name: 'Hypogeum', lat: 35.8703, lng: 14.5027, notes: 'Only 80 visitors per day are admitted, in small groups of 10, due to strict humidity/CO2 controls — tickets (only sold via Heritage Malta\'s own site, no third-party resellers) should be booked 2-3 months in advance as they sell out.' },
           ],
           notes: "The Ġgantija temples and the Hypogeum are older than the pyramids of Giza — among the oldest free-standing structures in the world. Alongside that, the Knights of Malta in Valletta and Mdina, with a quieter Gozo as a counterpart.",
           transport_to_next: "Ferry Valletta-Pozzallo or Valletta-Catania (Virtu Ferries, 1.5-3 hours) to Sicily",
@@ -761,12 +761,12 @@ function rbBuildMediterraneanExpeditionRoute() {
         {
           code: 'IT', name: 'Italy', days: 10, budget: 650, lat: 38.1157, lng: 13.3613,
           destinations: [
-            { name: 'Palermo', lat: 38.1157, lng: 13.3613 },
-            { name: 'Cefalù', lat: 38.0387, lng: 14.0231 },
-            { name: 'Agrigento (Valle dei Templi)', lat: 37.2903, lng: 13.5928 },
-            { name: 'Syracuse', lat: 37.0755, lng: 15.2866 },
-            { name: 'Taormina', lat: 37.8516, lng: 15.2853 },
-            { name: 'Etna', lat: 37.7510, lng: 14.9934 },
+            { name: 'Palermo', lat: 38.1157, lng: 13.3613, notes: 'The Cappella Palatina inside Palazzo dei Normanni has some of the best-preserved Byzantine gold mosaics anywhere; it closes for Sunday mass and has restricted visiting windows, so check the schedule before planning around it.' },
+            { name: 'Cefalù', lat: 38.0387, lng: 14.0231, notes: "The Norman cathedral's apse mosaic of Christ Pantocrator predates the more famous ones in Palermo/Monreale; climb La Rocca behind town for a free panoramic view over the cathedral and coastline." },
+            { name: 'Agrigento (Valle dei Templi)', lat: 37.2903, lng: 13.5928, notes: 'Temple of Concordia is one of the best-preserved Doric temples in the world, rivaling the Parthenon in condition. Go at opening time or during the evening illuminated visits (offered in summer) to avoid heat and coach-tour crowds.' },
+            { name: 'Syracuse', lat: 37.0755, lng: 15.2866, notes: 'The Neapolis archaeological park (Greek theatre, Ear of Dionysius) sits apart from the Ortigia old town — budget a half-day for the ruins and a separate half-day for Ortigia\'s market and waterfront. The theatre still stages classical Greek drama in an annual spring festival.' },
+            { name: 'Taormina', lat: 37.8516, lng: 15.2853, notes: 'The Greek theatre frames Mount Etna in the background, one of the most photographed views in Sicily; arrive early morning before day-trippers arrive by bus from cruise ports.' },
+            { name: 'Etna', lat: 37.7510, lng: 14.9934, notes: 'Cable car plus jeep excursions reach the upper craters, but access and open trails depend on current volcanic activity and can close without notice — confirm conditions locally rather than pre-booking rigidly.' },
           ],
           notes: "Magna Graecia (Agrigento, Syracuse), Roman, Norman and Arab influences mixed together on one island, with Etna as a natural change of pace. Hidden gem: the fishing village of Marzamemi, much quieter than Taormina. Route-logic fix (2026-08, search-confirmed): order reversed — Taormina→Syracuse→Agrigento→Etna crossed the island twice (Agrigento sits far in the southwest, Etna back again in the northeast, ≈204 km back after a ≈214 km detour) — now Agrigento first (on the way out from Cefalù), then one continuous loop Syracuse→Taormina→Etna→Messina. Saves ≈195 km.",
           transport_to_next: "Ferry across the Strait of Messina (Messina-Villa San Giovanni, 20-30 minutes) to the mainland, then onward to Naples",
@@ -774,10 +774,10 @@ function rbBuildMediterraneanExpeditionRoute() {
         {
           code: 'IT', name: 'Italy', days: 6, budget: 450, lat: 40.8518, lng: 14.2681,
           destinations: [
-            { name: 'Reggio Calabria', lat: 38.1113, lng: 15.6619 },
-            { name: 'Naples', lat: 40.8518, lng: 14.2681 },
-            { name: 'Pompeii', lat: 40.7461, lng: 14.4989 },
-            { name: 'Herculaneum', lat: 40.8058, lng: 14.3486 },
+            { name: 'Reggio Calabria', lat: 38.1113, lng: 15.6619, notes: 'The Museo Archeologico Nazionale here holds the Riace Bronzes, two of the finest surviving Greek bronze statues (5th century BC) — a genuinely world-class collection for a relatively small city.' },
+            { name: 'Naples', lat: 40.8518, lng: 14.2681, notes: 'The Naples Archaeological Museum (MANN) houses the mosaics, frescoes, and the "Secret Cabinet" erotica removed from Pompeii and Herculaneum — worth seeing before or after visiting the sites themselves to understand what was found there.' },
+            { name: 'Pompeii', lat: 40.7461, lng: 14.4989, notes: 'Much larger than Herculaneum, needing 3+ hours; the Villa of Mysteries frescoes and the body casts are the highlights. Wear sturdy shoes — it\'s a lot of uneven ground with little shade.' },
+            { name: 'Herculaneum', lat: 40.8058, lng: 14.3486, notes: 'Smaller and more compact than Pompeii but arguably better preserved, since it was buried by pyroclastic flow rather than ash, leaving wood, furniture, and roofs intact. Can be seen thoroughly in under two hours.' },
           ],
           notes: "Roman history frozen in reality: Pompeii and Herculaneum, both destroyed and preserved by Vesuvius. Naples itself as a lively, chaotic counterpoint.",
           transport_to_next: "Train Naples-Rome (high-speed train, about 1 hour 10 minutes)",
@@ -785,10 +785,10 @@ function rbBuildMediterraneanExpeditionRoute() {
         {
           code: 'IT', name: 'Italy', days: 7, budget: 700, lat: 41.9028, lng: 12.4964,
           destinations: [
-            { name: 'Colosseum', lat: 41.8902, lng: 12.4922 },
-            { name: 'Roman Forum', lat: 41.8925, lng: 12.4853 },
-            { name: 'Pantheon', lat: 41.8986, lng: 12.4769 },
-            { name: 'Vatican', lat: 41.9029, lng: 12.4534 },
+            { name: 'Colosseum', lat: 41.8902, lng: 12.4922, notes: 'An underground hypogeum and arena-floor tour is bookable separately from standard entry and sells out early — reserve well ahead if you want it.' },
+            { name: 'Roman Forum', lat: 41.8925, lng: 12.4853, notes: 'Included on the same combined ticket as Colosseum and Palatine Hill; the Palatine Hill viewpoint over the Forum is often skipped by rushed visitors but gives the best overall orientation of the site.' },
+            { name: 'Pantheon', lat: 41.8986, lng: 12.4769, notes: 'Now charges an entrance fee (a change from its long history as free); the oculus still opens directly to the sky and rain does fall through onto the floor. Book the timed ticket online to skip the line.' },
+            { name: 'Vatican', lat: 41.9029, lng: 12.4534, notes: 'Vatican Museums/Sistine Chapel require timed, pre-booked tickets to avoid multi-hour queues; St Peter\'s Basilica itself is free to enter but has its own security line and a strict dress code (shoulders/knees covered).' },
           ],
           notes: "The heart of the Roman Empire and the classical history that the whole expedition keeps coming back to — Roman influences also turn up in Spain, Tunisia, Turkey, Egypt and Jordan.",
           transport_to_next: "Flight Rome-Cagliari, or night ferry Civitavecchia-Olbia/Cagliari (about 7-8 hours) for those who prefer the boat over flying",
@@ -796,9 +796,9 @@ function rbBuildMediterraneanExpeditionRoute() {
         {
           code: 'IT', name: 'Italy', days: 6, budget: 600, lat: 39.2238, lng: 9.1217,
           destinations: [
-            { name: 'Cagliari', lat: 39.2238, lng: 9.1217 },
-            { name: 'Su Nuraxi', lat: 39.7167, lng: 8.9833 },
-            { name: 'Costa Smeralda', lat: 41.1333, lng: 9.5167 },
+            { name: 'Cagliari', lat: 39.2238, lng: 9.1217, notes: 'The Museo Archeologico Nazionale holds the best collection of nuraghic bronzetti (small bronze figurines) anywhere, useful context before visiting the nuraghe sites themselves.' },
+            { name: 'Su Nuraxi', lat: 39.7167, lng: 8.9833, notes: 'This Barumini nuraghe complex is the UNESCO-listed reference site for the whole civilization; entry to the central tower is by guided tour only, not free wandering.' },
+            { name: 'Costa Smeralda', lat: 41.1333, lng: 9.5167, notes: 'Developed as a resort enclave by the Aga Khan starting in the 1960s, so it reads as much more modern and manicured than the rest of Sardinia — a deliberate contrast rather than an ancient site. Beaches remain publicly accessible by Italian law even where hotels line the shore.' },
           ],
           notes: "The Nuraghe civilization (Su Nuraxi, UNESCO) is unique to Sardinia and older than the Roman presence on the island. Costa Smeralda for the coast, the quieter Costa Verde as a less touristy alternative.",
           transport_to_next: "Ferry Santa Teresa Gallura-Bonifacio (about 1 hour) — the shortest crossing of the whole route",
@@ -814,9 +814,9 @@ function rbBuildMediterraneanExpeditionRoute() {
         {
           code: 'FR', name: 'France', days: 5, budget: 475, lat: 41.9192, lng: 8.7386,
           destinations: [
-            { name: 'Bonifacio', lat: 41.3869, lng: 9.1595 },
-            { name: 'Ajaccio', lat: 41.9192, lng: 8.7386 },
-            { name: 'Bavella', lat: 41.7833, lng: 9.2167 },
+            { name: 'Bonifacio', lat: 41.3869, lng: 9.1595, notes: 'The King of Aragon\'s Staircase (187 steps carved into the cliff) leads down to the sea below the citadel; boat trips out of the harbor give the classic view of the town perched on the limestone overhang.' },
+            { name: 'Ajaccio', lat: 41.9192, lng: 8.7386, notes: 'Napoleon\'s birthplace — the Maison Bonaparte family home is now a museum; like most French municipal museums it\'s typically closed Mondays.' },
+            { name: 'Bavella', lat: 41.7833, lng: 9.2167, notes: 'The Col de Bavella is a mountain pass beneath the Aiguilles needle peaks and a common day-hike base, also crossed by the long-distance GR20 trail — good option for a shorter taste of that trek without committing to the full route.' },
           ],
           notes: "Mediterranean nature at its best: the limestone cliffs of Bonifacio, the granite needles of Bavella. French and Italian influences intermingle here. Hidden gem: the Scandola Nature Reserve, only accessible by boat.",
           transport_to_next: "Ferry Ajaccio/Bastia-Marseille or Toulon (Corsica Ferries/La Méridionale, about 6-10 hours, often an overnight boat)",
@@ -824,10 +824,10 @@ function rbBuildMediterraneanExpeditionRoute() {
         {
           code: 'FR', name: 'France', days: 6, budget: 600, lat: 43.2965, lng: 5.3698,
           destinations: [
-            { name: 'Marseille', lat: 43.2965, lng: 5.3698 },
-            { name: 'Arles', lat: 43.6767, lng: 4.6278 },
-            { name: 'Nîmes', lat: 43.8367, lng: 4.3601 },
-            { name: 'Pont du Gard', lat: 43.9474, lng: 4.5350 },
+            { name: 'Marseille', lat: 43.2965, lng: 5.3698, notes: 'From the Vieux Port you can take a short boat out to Château d\'If, the island fortress that inspired The Count of Monte Cristo.' },
+            { name: 'Arles', lat: 43.6767, lng: 4.6278, notes: 'The Roman amphitheatre is still an active venue (concerts, ferias) rather than a pure ruin; a combined ticket covers it along with the Roman theatre and cryptoporticus underground galleries.' },
+            { name: 'Nîmes', lat: 43.8367, lng: 4.3601, notes: 'The Maison Carrée is one of the best-preserved Roman temples anywhere (nearly complete, not just foundations), and the Arena of Nîmes still hosts bullfights and concerts today — both worth a combined ticket with the Tour Magne.' },
+            { name: 'Pont du Gard', lat: 43.9474, lng: 4.5350, notes: 'You can rent a canoe from nearby Collias to paddle the Gardon river and pass directly underneath the aqueduct — a different vantage point than the standard walkway view on top.' },
           ],
           notes: "Gallo-Roman history (the aqueduct of the Pont du Gard, the arenas of Arles and Nîmes) in a Provençal atmosphere. Hidden gem: the Camargue near Arles, with wild horses and flamingos, as a nature break.",
           transport_to_next: "Flight Marseille-Athens — no practical overland or ferry route given the distance",
@@ -843,11 +843,11 @@ function rbBuildMediterraneanExpeditionRoute() {
         {
           code: 'GR', name: 'Greece', days: 12, budget: 840, lat: 37.9838, lng: 23.7275,
           destinations: [
-            { name: 'Athens', lat: 37.9838, lng: 23.7275 },
-            { name: 'Peloponnese', lat: 37.5685, lng: 22.8072 },
-            { name: 'Olympia', lat: 37.6384, lng: 21.6300 },
-            { name: 'Delphi', lat: 38.4824, lng: 22.5010 },
-            { name: 'Meteora', lat: 39.7217, lng: 21.6306 },
+            { name: 'Athens', lat: 37.9838, lng: 23.7275, notes: 'The Acropolis Museum\'s top-floor gallery is built at the same orientation and dimensions as the Parthenon itself, so you view the surviving frieze slabs while looking straight at the real building through glass walls.' },
+            { name: 'Peloponnese', lat: 37.5685, lng: 22.8072, notes: 'Don\'t skip Mycenae within the region — the Lion Gate and beehive-shaped "Treasury of Atreus" tomb are the best physical evidence of the Bronze Age Mycenaean world Homer wrote about.' },
+            { name: 'Olympia', lat: 37.6384, lng: 21.6300, notes: 'You can still walk the original stone-lined running track of the ancient stadium; the site museum holds the Hermes of Praxiteles and remnants of the massive Temple of Zeus.' },
+            { name: 'Delphi', lat: 38.4824, lng: 22.5010, notes: 'The museum\'s bronze Charioteer statue (found remarkably intact) is the highlight; the circular Tholos ruin at the nearby Marmaria sanctuary is the most photographed structure at the site.' },
+            { name: 'Meteora', lat: 39.7217, lng: 21.6306, notes: 'The monasteries are still active religious communities, not museums — modest dress (covered shoulders/knees, skirts for women) is required to enter, and a few close one day midweek.' },
           ],
           notes: "Greek antiquity, philosophy, democracy and mythology at the key locations themselves: the Acropolis, the oracle of Delphi, the original Olympic Games in Olympia. Hidden gem: Monemvasia and Nafplio on the Peloponnese, much quieter than Athens.",
           transport_to_next: "Night ferry Piraeus-Heraklion (about 7-9 hours) to Crete",
@@ -855,10 +855,10 @@ function rbBuildMediterraneanExpeditionRoute() {
         {
           code: 'GR', name: 'Greece', days: 7, budget: 450, lat: 35.3387, lng: 25.1442,
           destinations: [
-            { name: 'Heraklion', lat: 35.3387, lng: 25.1442 },
-            { name: 'Knossos', lat: 35.2977, lng: 25.1628 },
-            { name: 'Chania', lat: 35.5138, lng: 24.0180 },
-            { name: 'Samaria Gorge', lat: 35.3167, lng: 23.9500 },
+            { name: 'Heraklion', lat: 35.3387, lng: 25.1442, notes: 'The Archaeological Museum here, not Knossos itself, holds the actual Minoan treasures including the undeciphered Phaistos Disc — worth visiting before or after Knossos to see what was found there.' },
+            { name: 'Knossos', lat: 35.2977, lng: 25.1628, notes: 'Arthur Evans\'s early-1900s concrete reconstructions (including the red columns and Throne Room) are controversial among archaeologists as speculative rather than accurate restoration — treat what you see as part-interpretation.' },
+            { name: 'Chania', lat: 35.5138, lng: 24.0180, notes: 'The Venetian harbor and its lighthouse are the visual centerpiece; the old town\'s architecture is a mix of Venetian and later Ottoman layers.' },
+            { name: 'Samaria Gorge', lat: 35.3167, lng: 23.9500, notes: 'It\'s one of Europe\'s longest gorges (a roughly 13-16 km hike depending on start point) and is only open seasonally, typically May through October, closing when flood risk is high.' },
           ],
           notes: "The Minoan civilization (Knossos) as the oldest layer of Greek history, followed by island culture in Chania and a solid hike through the Samaria Gorge. Hidden gem: the pink sand beach of Elafonisi, in the far west of the island.",
           transport_to_next: "Flight Heraklion-Larnaca (usually with a stopover in Athens) — no reliable direct ferry connection",
@@ -866,9 +866,9 @@ function rbBuildMediterraneanExpeditionRoute() {
         {
           code: 'CY', name: 'Cyprus', days: 5, budget: 400, lat: 35.1856, lng: 33.3823,
           destinations: [
-            { name: 'Paphos', lat: 34.7720, lng: 32.4297 },
-            { name: 'Limassol', lat: 34.7071, lng: 33.0226 },
-            { name: 'Nicosia', lat: 35.1856, lng: 33.3823 },
+            { name: 'Paphos', lat: 34.7720, lng: 32.4297, notes: 'The Tombs of the Kings and the mosaic floors at the Paphos Archaeological Park (House of Dionysus) are the two specific must-sees, both UNESCO-listed.' },
+            { name: 'Limassol', lat: 34.7071, lng: 33.0226, notes: 'Its medieval castle is where Richard the Lionheart married Berengaria of Navarre in 1191 and crowned her Queen of England — now houses the Cyprus Medieval Museum.' },
+            { name: 'Nicosia', lat: 35.1856, lng: 33.3823, notes: 'The world\'s last divided capital city — the UN buffer zone (Green Line) runs through it, and you can walk across the Ledra Street crossing between the Greek and Turkish sides.' },
           ],
           notes: "Greek, Roman and Byzantine layers on one island: the mosaics of Paphos (UNESCO), the Roman theater of Kourion near Limassol as a hidden gem, and the divided capital Nicosia.",
           transport_to_next: "Flight Larnaca-Istanbul — direct and short, no practical alternative by water",
@@ -885,8 +885,8 @@ function rbBuildMediterraneanExpeditionRoute() {
           code: 'TR', name: 'Turkey', days: 20, budget: 850, lat: 41.0082, lng: 28.9784,
           destinations: [
             { name: 'Istanbul', lat: 41.0082, lng: 28.9784 },
-            { name: 'Troy', lat: 39.9575, lng: 26.2389 },
-            { name: 'Pergamon', lat: 39.1319, lng: 27.1836 },
+            { name: 'Troy', lat: 39.9575, lng: 26.2389, notes: 'The site itself is unimpressive to many visitors (low mounded ruins of 9 superimposed cities) — the giant wooden horse replica at the entrance is more a modern photo-op than historical artifact; go for the archaeological/Homeric significance, not visual drama.' },
+            { name: 'Pergamon', lat: 39.1319, lng: 27.1836, notes: 'The steep ancient theater is one of the steepest in the ancient world; note the famous Pergamon Altar itself isn\'t there anymore — it was removed to Berlin\'s Pergamon Museum, so what remains on-site is the foundation platform.' },
             { name: 'Ephesus', lat: 37.9412, lng: 27.3641 },
             { name: 'Pamukkale', lat: 37.9142, lng: 29.1187 },
             { name: 'Cappadocia', lat: 38.6431, lng: 34.8283 },
@@ -908,9 +908,9 @@ function rbBuildMediterraneanExpeditionRoute() {
             { name: 'Cairo', lat: 30.0444, lng: 31.2357 },
             { name: 'Giza', lat: 29.9765, lng: 31.1313 },
             { name: 'Luxor', lat: 25.6872, lng: 32.6396 },
-            { name: 'Karnak', lat: 25.7188, lng: 32.6573 },
+            { name: 'Karnak', lat: 25.7188, lng: 32.6573, notes: 'The Hypostyle Hall\'s 134 massive columns are the single most impressive interior space in Egyptian architecture; check if the evening sound-and-light show is running during your visit.' },
             { name: 'Aswan', lat: 24.0889, lng: 32.8998 },
-            { name: 'Abu Simbel', lat: 22.3372, lng: 31.6258 },
+            { name: 'Abu Simbel', lat: 22.3372, lng: 31.6258, notes: 'The entire temple complex was cut into blocks and relocated in the 1960s to escape flooding from the Aswan High Dam/Lake Nasser — twice a year (around Feb 22 and Oct 22) sunlight aligns to illuminate statues deep in the inner sanctum.' },
           ],
           notes: "Ancient Egyptian civilization in its entirety: pyramids (Giza), temples (Karnak, Abu Simbel) and the Nile as the connecting thread. Hidden gem: the Siwa Oasis, far from the usual route but worth the detour. Travel advisory (2026-07): yellow for Cairo/Giza/Luxor/Aswan/Abu Simbel — fine to visit; only (North) Sinai outside this route is orange/red. Route-logic fix (2026-08, search-confirmed): the Nile order itself (Cairo-Giza-Luxor-Karnak-Aswan-Abu Simbel) is correct, but the ferry to Jordan departs from Nuweiba (Sinai, northeast) — from Abu Simbel (the far south) that's not a short hop but a return trip along the whole Nile corridor, previously unstated in transport_to_next.",
           transport_to_next: "Back to Cairo (Aswan/Abu Simbel-Cairo, ≈850 km, flight ≈1h or night train — route-logic fix 2026-08, search-confirmed: this was previously unstated, Nuweiba doesn't sit on the southward route along the Nile), then bus/car Cairo-Nuweiba (≈450 km, ≈7h), then ferry Nuweiba-Aqaba (alternative: direct flight Cairo-Amman) — shortest route to Jordan without flying via the Gulf",
@@ -930,10 +930,10 @@ function rbBuildMediterraneanExpeditionRoute() {
         {
           code: 'OM', name: 'Oman', days: 7, budget: 770, lat: 23.588, lng: 58.3829,
           destinations: [
-            { name: 'Muscat', lat: 23.5880, lng: 58.3829 },
-            { name: 'Nizwa', lat: 22.9333, lng: 57.5333 },
-            { name: 'Jebel Shams', lat: 23.2394, lng: 57.2661 },
-            { name: 'Wahiba Sands', lat: 22.0667, lng: 58.5000 },
+            { name: 'Muscat', lat: 23.5880, lng: 58.3829, notes: 'Sultan Qaboos Grand Mosque (distinct from Bahrain\'s Al Fateh) is open to non-Muslim visitors mornings only and has a dress code; Mutrah Souq and the corniche are the other core stop.' },
+            { name: 'Nizwa', lat: 22.9333, lng: 57.5333, notes: 'Nizwa Fort is the main sight; the Friday morning livestock/goat market is a genuine local event worth timing your visit around, not a staged tourist show.' },
+            { name: 'Jebel Shams', lat: 23.2394, lng: 57.2661, notes: 'Known as "Oman\'s Grand Canyon" — the Balcony Walk trail along the canyon rim is the specific hike people come for.' },
+            { name: 'Wahiba Sands', lat: 22.0667, lng: 58.5000, notes: 'Desert camps here offer dune-driving and overnight stays with Bedouin hosts; a 4x4 (not the rental sedan used elsewhere) is genuinely necessary for this stretch.' },
           ],
           notes: "Arabian trade routes, forts (Nizwa) and both mountains (Jebel Shams, the \"Grand Canyon of Arabia\") and desert (Wahiba Sands) within short reach of each other. Hidden gem: Bahla Fort and the centuries-old falaj irrigation channels near Nizwa (both UNESCO). Price check (2026-07): Jebel Shams and Wahiba Sands can't be done by public transport — a rental car (4x4) or tour is mandatory here, which pushes the daily budget up considerably compared to Muscat itself. ⚠️ Travel advisory (July 2026): orange for Musandam/Duqm/Salalah/Sohar (hit by Iranian attacks), but yellow — this whole leg — for Muscat/Nizwa/Jebel Shams/Wahiba Sands. Check nederlandwereldwijd.nl shortly before departure, the situation is volatile. Route-logic fix (2026-08, search-confirmed): the return trip Wahiba Sands-Muscat (≈200 km/≈3h, previously unstated) is now made explicit.",
           transport_to_next: "Back to Muscat (≈200 km/≈3h from Wahiba Sands), then flight Muscat-Manama — short Gulf flight",
@@ -941,17 +941,17 @@ function rbBuildMediterraneanExpeditionRoute() {
         {
           code: 'BH', name: 'Bahrain', days: 3, budget: 300, lat: 26.2285, lng: 50.586,
           destinations: [
-            { name: "Qal'at al-Bahrain (Bahrain Fort)", lat: 26.2333, lng: 50.5217 },
-            { name: 'Bahrain National Museum', lat: 26.2367, lng: 50.5936 },
-            { name: 'Al Fateh Grand Mosque', lat: 26.2361, lng: 50.5464 },
-            { name: 'Tree of Life', lat: 25.9167, lng: 50.5833 },
+            { name: "Qal'at al-Bahrain (Bahrain Fort)", lat: 26.2333, lng: 50.5217, notes: 'UNESCO-listed as the former capital of the Dilmun civilization — excavations show roughly 4,000 years of continuous layered occupation on the same mound.' },
+            { name: 'Bahrain National Museum', lat: 26.2367, lng: 50.5936, notes: 'Houses the actual Dilmun-era burial mound artifacts and grave goods excavated from the thousands of tumuli scattered across the island.' },
+            { name: 'Al Fateh Grand Mosque', lat: 26.2361, lng: 50.5464, notes: 'One of the largest mosques in the world by worshipper capacity (around 7,000); open to non-Muslim visitors with guided tours and appropriate dress provided on-site.' },
+            { name: 'Tree of Life', lat: 25.9167, lng: 50.5833, notes: 'A roughly 400-year-old mesquite tree standing alone in barren desert with no visible water source nearby — its survival is genuinely unexplained, which is the whole draw.' },
           ],
           notes: "Qal'at al-Bahrain (UNESCO) was the capital of the Dilmun civilization, a Bronze Age trading civilization that was already trading between Mesopotamia and the Indus Valley around 2000 BCE — an even older layer of history than the Nabataean and Arabian trade routes earlier in this leg. The Tree of Life, a centuries-old tree that survives inexplicably in the middle of the desert, as a natural curiosity amid the history. ⚠️ Travel advisory (July 2026): RED — do not travel. Iran is carrying out attacks on military targets in Bahrain, with warnings of possible attacks in central Manama; no Dutch embassy in Bahrain (nearest: Kuwait). Right now a hard no-go, not a budget/planning issue — check nederlandwereldwijd.nl shortly before departure, this may (hopefully) have changed again.",
           transport_to_next: "Flight Manama-Doha — short Gulf flight",
         },
         {
           code: 'QA', name: 'Qatar', days: 3, budget: 315, lat: 25.2854, lng: 51.531,
-          destinations: [{ name: 'Doha', lat: 25.2854, lng: 51.5310 }],
+          destinations: [{ name: 'Doha', lat: 25.2854, lng: 51.5310, notes: 'The Museum of Islamic Art (designed by I.M. Pei) is the specific cultural anchor; pair it with the Souq Waqif and the modern skyline view from the Corniche for the old/new contrast that fits the "modern finale" theme.' }],
           notes: "Deliberately modern and contemporary as a finale: Islamic architecture (Museum of Islamic Art) and museums as a contrast with the thousands of years of history earlier in the trip. ⚠️ Travel advisory (July 2026): orange — Qatar has been hit by Iranian missiles/drones aimed at American targets. Travel is only recommended if necessary. Check nederlandwereldwijd.nl shortly before departure, the situation may have changed again by then.",
           transport_to_next: "End of the expedition — return flight from Doha (Hamad International Airport) to the Netherlands",
         },
@@ -7811,6 +7811,113 @@ function rbMigrateAfricaDestinationNotes() {
     'Mlilwane Wildlife Sanctuary': 'No dangerous predators, so you can walk, mountain-bike, or horseback ride freely among zebra, warthog, and antelope — one of the few parks in the region where you\'re not confined to a vehicle.',
     'Hlane Royal National Park': 'Eswatini\'s largest protected area and best spot for lion and rhino in the country; the rest camp borders a waterhole with resident hippos, viewable from camp without a game drive.',
     'Bwindi Impenetrable Forest (gorillas)': 'Four separate trailheads (Buhoma, Ruhija, Rushaga, Nkuringo) serve different gorilla families — Rushaga also offers the pricier full-day habituation experience instead of the standard one-hour visit.',
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 4 (2026-09-16) for the per-destination-notes workflow -- Mediterranean Civilizations
+ * Expedition (19 blocks, 81 destinations total; 68 newly researched here as 3 parallel batches --
+ * Western Med, Italy+France, Greece/Cyprus/Anatolia/Gulf -- the other 13 were already filled by the
+ * Jordan pilot and the Eurasia/Africa batches, since Turkey and Egypt partially overlap those routes
+ * destination-for-destination). Unlike Eurasia/Africa, this route is NOT built via
+ * RB_EXPEDITION_CONTENT/rbContentFor -- it is its own standalone function
+ * (rbBuildMediterraneanExpeditionRoute), shared only between its own fresh-seed and migration
+ * paths -- so the notes only needed inserting in that one place. Same generic name-matching
+ * migration pattern as the other two batches regardless, so it still covers every other route
+ * that happens to share any of these destination names (Malta & Italy, Rome & Surroundings,
+ * Southern Europe Highlights Roadtrip, the Cyprus/Sardinia/Gulf standalones, etc.).
+ */
+function rbMigrateMediterraneanDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_MEDITERRANEAN_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_MEDITERRANEAN_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Málaga': 'Birthplace of Picasso — the Museo Picasso Málaga and his birth house on Plaza de la Merced are the draw; also home to the Alcazaba, a well-preserved Moorish fortress right by the port.',
+    'Granada (Alhambra)': 'Book Alhambra tickets weeks ahead online (official site) — the Nasrid Palaces section has a timed-entry slot and sells out fast, especially the Comares Palace/Court of the Lions.',
+    'Córdoba (Mezquita)': 'The building\'s core feature is the forest of striped red-and-white double arches, with a 16th-century Renaissance cathedral built directly into the middle of the former mosque.',
+    'Seville': 'Real Alcázar was a filming location for Game of Thrones (Dorne); Plaza de España\'s tiled alcoves each depict a different Spanish province.',
+    'Tangier': 'The old American Legation building is the first property the US government ever owned abroad; Cap Spartel nearby marks the point where the Atlantic meets the Mediterranean.',
+    'Chefchaouen': 'Known for the blue-washed walls of its medina (tradition variously linked to Jewish refugees or mosquito-repelling), which makes it one of the most photographed towns in the country.',
+    'Fes': 'Home to the University of Al Quaraouiyine, recognized by Guinness as the oldest continuously operating university in the world; the Chouara Tannery is best viewed (and smelled) from the terraces of surrounding leather shops, where mint is handed out to offset the odor.',
+    'Volubilis': 'Roman ruins with unusually intact mosaic floors still in situ (not roped off in a museum) — the House of Orpheus and the Triumphal Arch are the standout structures; go near sunset for light and fewer crowds.',
+    'Marrakech': 'Jemaa el-Fnaa square shifts character completely after dark, filling with food stalls and performers; Jardin Majorelle, restored by Yves Saint Laurent, is a small but distinct cobalt-blue garden.',
+    'Tunis': 'The Bardo Museum holds the world\'s largest collection of Roman mosaics, housed in a former Ottoman-era palace.',
+    'Carthage': 'The Antonine Baths ruins sit right on the coast and were once among the largest Roman bath complexes outside Rome itself; little survives above ground elsewhere on the site, so context/imagination does more work here than at Dougga.',
+    'Dougga': 'Considered the best-preserved Roman small town in North Africa — the Capitol temple\'s facade and the theater are still largely intact, giving a clearer sense of a functioning Roman town than more famous ruins elsewhere.',
+    'El Jem': 'The amphitheater\'s substructure — underground passages and animal pens beneath the arena floor — is walkable and gives a good sense of how the venue actually operated.',
+    'Sidi Bou Said': 'Distinctive blue-and-white color scheme (enforced by local ordinance since the 1920s) drew painters like Paul Klee; Café des Nattes on the main street is the classic mint-tea stop overlooking the bay.',
+    'Valletta': 'St. John\'s Co-Cathedral holds Caravaggio\'s "The Beheading of Saint John the Baptist" — his largest known work and the only painting he ever signed.',
+    'Mdina': 'Nicknamed the "Silent City" since almost no cars are allowed inside the walls; used as a filming location for King\'s Landing in Game of Thrones (season 1).',
+    'Gozo': 'The Azure Window natural arch, once its most photographed landmark, collapsed into the sea in 2017 during a storm — it no longer exists, so don\'t plan around it; Ramla Bay\'s red-sand beach is still there and worth it instead.',
+    'Ġgantija temples': 'Two distinct temples enclosed within a single boundary wall, believed linked to a fertility cult; located on Gozo, a short ferry ride from the main island.',
+    'Hypogeum': 'Only 80 visitors per day are admitted, in small groups of 10, due to strict humidity/CO2 controls — tickets (only sold via Heritage Malta\'s own site, no third-party resellers) should be booked 2-3 months in advance as they sell out.',
+    'Palermo': 'The Cappella Palatina inside Palazzo dei Normanni has some of the best-preserved Byzantine gold mosaics anywhere; it closes for Sunday mass and has restricted visiting windows, so check the schedule before planning around it.',
+    'Agrigento (Valle dei Templi)': 'Temple of Concordia is one of the best-preserved Doric temples in the world, rivaling the Parthenon in condition. Go at opening time or during the evening illuminated visits (offered in summer) to avoid heat and coach-tour crowds.',
+    'Syracuse': 'The Neapolis archaeological park (Greek theatre, Ear of Dionysius) sits apart from the Ortigia old town — budget a half-day for the ruins and a separate half-day for Ortigia\'s market and waterfront. The theatre still stages classical Greek drama in an annual spring festival.',
+    'Taormina': 'The Greek theatre frames Mount Etna in the background, one of the most photographed views in Sicily; arrive early morning before day-trippers arrive by bus from cruise ports.',
+    'Etna': 'Cable car plus jeep excursions reach the upper craters, but access and open trails depend on current volcanic activity and can close without notice — confirm conditions locally rather than pre-booking rigidly.',
+    'Reggio Calabria': 'The Museo Archeologico Nazionale here holds the Riace Bronzes, two of the finest surviving Greek bronze statues (5th century BC) — a genuinely world-class collection for a relatively small city.',
+    'Naples': 'The Naples Archaeological Museum (MANN) houses the mosaics, frescoes, and the "Secret Cabinet" erotica removed from Pompeii and Herculaneum — worth seeing before or after visiting the sites themselves to understand what was found there.',
+    'Pompeii': 'Much larger than Herculaneum, needing 3+ hours; the Villa of Mysteries frescoes and the body casts are the highlights. Wear sturdy shoes — it\'s a lot of uneven ground with little shade.',
+    'Herculaneum': 'Smaller and more compact than Pompeii but arguably better preserved, since it was buried by pyroclastic flow rather than ash, leaving wood, furniture, and roofs intact. Can be seen thoroughly in under two hours.',
+    'Colosseum': 'An underground hypogeum and arena-floor tour is bookable separately from standard entry and sells out early — reserve well ahead if you want it.',
+    'Roman Forum': 'Included on the same combined ticket as Colosseum and Palatine Hill; the Palatine Hill viewpoint over the Forum is often skipped by rushed visitors but gives the best overall orientation of the site.',
+    'Pantheon': 'Now charges an entrance fee (a change from its long history as free); the oculus still opens directly to the sky and rain does fall through onto the floor. Book the timed ticket online to skip the line.',
+    'Vatican': 'Vatican Museums/Sistine Chapel require timed, pre-booked tickets to avoid multi-hour queues; St Peter\'s Basilica itself is free to enter but has its own security line and a strict dress code (shoulders/knees covered).',
+    'Cagliari': 'The Museo Archeologico Nazionale holds the best collection of nuraghic bronzetti (small bronze figurines) anywhere, useful context before visiting the nuraghe sites themselves.',
+    'Su Nuraxi': 'This Barumini nuraghe complex is the UNESCO-listed reference site for the whole civilization; entry to the central tower is by guided tour only, not free wandering.',
+    'Costa Smeralda': 'Developed as a resort enclave by the Aga Khan starting in the 1960s, so it reads as much more modern and manicured than the rest of Sardinia — a deliberate contrast rather than an ancient site. Beaches remain publicly accessible by Italian law even where hotels line the shore.',
+    'Bonifacio': 'The King of Aragon\'s Staircase (187 steps carved into the cliff) leads down to the sea below the citadel; boat trips out of the harbor give the classic view of the town perched on the limestone overhang.',
+    'Ajaccio': 'Napoleon\'s birthplace — the Maison Bonaparte family home is now a museum; like most French municipal museums it\'s typically closed Mondays.',
+    'Bavella': 'The Col de Bavella is a mountain pass beneath the Aiguilles needle peaks and a common day-hike base, also crossed by the long-distance GR20 trail — good option for a shorter taste of that trek without committing to the full route.',
+    'Marseille': 'From the Vieux Port you can take a short boat out to Château d\'If, the island fortress that inspired The Count of Monte Cristo.',
+    'Arles': 'The Roman amphitheatre is still an active venue (concerts, ferias) rather than a pure ruin; a combined ticket covers it along with the Roman theatre and cryptoporticus underground galleries.',
+    'Nîmes': 'The Maison Carrée is one of the best-preserved Roman temples anywhere (nearly complete, not just foundations), and the Arena of Nîmes still hosts bullfights and concerts today — both worth a combined ticket with the Tour Magne.',
+    'Pont du Gard': 'You can rent a canoe from nearby Collias to paddle the Gardon river and pass directly underneath the aqueduct — a different vantage point than the standard walkway view on top.',
+    'Athens': 'The Acropolis Museum\'s top-floor gallery is built at the same orientation and dimensions as the Parthenon itself, so you view the surviving frieze slabs while looking straight at the real building through glass walls.',
+    'Peloponnese': 'Don\'t skip Mycenae within the region — the Lion Gate and beehive-shaped "Treasury of Atreus" tomb are the best physical evidence of the Bronze Age Mycenaean world Homer wrote about.',
+    'Olympia': 'You can still walk the original stone-lined running track of the ancient stadium; the site museum holds the Hermes of Praxiteles and remnants of the massive Temple of Zeus.',
+    'Delphi': 'The museum\'s bronze Charioteer statue (found remarkably intact) is the highlight; the circular Tholos ruin at the nearby Marmaria sanctuary is the most photographed structure at the site.',
+    'Meteora': 'The monasteries are still active religious communities, not museums — modest dress (covered shoulders/knees, skirts for women) is required to enter, and a few close one day midweek.',
+    'Heraklion': 'The Archaeological Museum here, not Knossos itself, holds the actual Minoan treasures including the undeciphered Phaistos Disc — worth visiting before or after Knossos to see what was found there.',
+    'Knossos': 'Arthur Evans\'s early-1900s concrete reconstructions (including the red columns and Throne Room) are controversial among archaeologists as speculative rather than accurate restoration — treat what you see as part-interpretation.',
+    'Chania': 'The Venetian harbor and its lighthouse are the visual centerpiece; the old town\'s architecture is a mix of Venetian and later Ottoman layers.',
+    'Samaria Gorge': 'It\'s one of Europe\'s longest gorges (a roughly 13-16 km hike depending on start point) and is only open seasonally, typically May through October, closing when flood risk is high.',
+    'Paphos': 'The Tombs of the Kings and the mosaic floors at the Paphos Archaeological Park (House of Dionysus) are the two specific must-sees, both UNESCO-listed.',
+    'Limassol': 'Its medieval castle is where Richard the Lionheart married Berengaria of Navarre in 1191 and crowned her Queen of England — now houses the Cyprus Medieval Museum.',
+    'Nicosia': 'The world\'s last divided capital city — the UN buffer zone (Green Line) runs through it, and you can walk across the Ledra Street crossing between the Greek and Turkish sides.',
+    'Troy': 'The site itself is unimpressive to many visitors (low mounded ruins of 9 superimposed cities) — the giant wooden horse replica at the entrance is more a modern photo-op than historical artifact; go for the archaeological/Homeric significance, not visual drama.',
+    'Pergamon': 'The steep ancient theater is one of the steepest in the ancient world; note the famous Pergamon Altar itself isn\'t there anymore — it was removed to Berlin\'s Pergamon Museum, so what remains on-site is the foundation platform.',
+    'Karnak': 'The Hypostyle Hall\'s 134 massive columns are the single most impressive interior space in Egyptian architecture; check if the evening sound-and-light show is running during your visit.',
+    'Abu Simbel': 'The entire temple complex was cut into blocks and relocated in the 1960s to escape flooding from the Aswan High Dam/Lake Nasser — twice a year (around Feb 22 and Oct 22) sunlight aligns to illuminate statues deep in the inner sanctum.',
+    'Jerash': 'Beyond the well-known Roman colonnades, the restored Hippodrome still hosts a live "Roman Army and Chariot Experience" show (gladiator fights, marching legionaries, a real chariot race) at 11:00 and 14:00 daily — worth timing your visit around one of these two slots since it\'s easy to miss if you just wander the ruins.',
+    'Wadi Rum': 'Beyond just camping, a half-day jeep tour typically strings together Khazali Canyon (a narrow slot canyon with Nabataean rock inscriptions on its walls), Lawrence\'s Spring, and a dune climb, ending with sunset tea at a spot like Um Sabatah — ask if your driver is an actual camp-staff Bedouin guide (who narrates the sites) rather than a hired driver who just waits in the car.',
+    'Dead Sea': 'Skip the public beaches (no freshwater showers, which you need immediately after floating) and pay for a resort day-pass instead — it gets you clean mud, showers and lifeguards; float only on your back (front-floating forces your face into the caustic water), and apply mud wet, right out of the sea, letting it dry ~15 minutes before rinsing off.',
+    'Muscat': 'Sultan Qaboos Grand Mosque (distinct from Bahrain\'s Al Fateh) is open to non-Muslim visitors mornings only and has a dress code; Mutrah Souq and the corniche are the other core stop.',
+    'Nizwa': 'Nizwa Fort is the main sight; the Friday morning livestock/goat market is a genuine local event worth timing your visit around, not a staged tourist show.',
+    'Jebel Shams': 'Known as "Oman\'s Grand Canyon" — the Balcony Walk trail along the canyon rim is the specific hike people come for.',
+    'Wahiba Sands': 'Desert camps here offer dune-driving and overnight stays with Bedouin hosts; a 4x4 (not the rental sedan used elsewhere) is genuinely necessary for this stretch.',
+    'Bahrain National Museum': 'Houses the actual Dilmun-era burial mound artifacts and grave goods excavated from the thousands of tumuli scattered across the island.',
+    'Al Fateh Grand Mosque': 'One of the largest mosques in the world by worshipper capacity (around 7,000); open to non-Muslim visitors with guided tours and appropriate dress provided on-site.',
+    'Tree of Life': 'A roughly 400-year-old mesquite tree standing alone in barren desert with no visible water source nearby — its survival is genuinely unexplained, which is the whole draw.',
+    'Doha': 'The Museum of Islamic Art (designed by I.M. Pei) is the specific cultural anchor; pair it with the Souq Waqif and the modern skyline view from the Corniche for the old/new contrast that fits the "modern finale" theme.',
+    'Qal\'at al-Bahrain (Bahrain Fort)': 'UNESCO-listed as the former capital of the Dilmun civilization — excavations show roughly 4,000 years of continuous layered occupation on the same mound.',
+    'Cefalù': 'The Norman cathedral\'s apse mosaic of Christ Pantocrator predates the more famous ones in Palermo/Monreale; climb La Rocca behind town for a free panoramic view over the cathedral and coastline.',
+    'Amman': 'The Citadel (Jabal al-Qal\'a) mixes the Temple of Hercules ruins with the Umayyad Palace and gives the best panoramic view over the 6,000-seat Roman Theatre below and downtown; pair it with an evening stroll on Rainbow Street (cafés, murals, rooftop shisha), which only really comes alive from late afternoon onward — budget a half-day for Citadel + Theatre and do Rainbow Street after dinner.',
+    'Petra': 'Arrive right at the 6:00 gate opening — the Siq and Treasury are dramatically emptier and better lit in the first hour before tour buses arrive at mid-morning; the most commonly skipped highlight is the Monastery (Ad Deir), a ~45-min uphill climb of 800+ steps past the Treasury that\'s actually larger and far less crowded, so don\'t treat the Treasury alone as \\"done.\\"',
   };
 
   let touched = false;
