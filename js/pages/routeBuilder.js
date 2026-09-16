@@ -150,6 +150,17 @@ document.addEventListener('DOMContentLoaded', async () => {
       const localOnly = rbRoutes.filter(r => !sheetIds.has(r.id));
       rbRoutes = [...sheetRoutes, ...localOnly];
       rbSave();
+
+      // Auto-push routes that only exist locally — freshly seeded via a new
+      // rbBuild*Route()/rbSeed*() added to routeBuilderContent.js (rbSave() with no id, used
+      // by every seed function, only writes localStorage, it never pushes) or a local edit
+      // that never made it up. Safe to repeat on every load: rbPushGrandTripToSheet upserts by
+      // the route's deterministic id (rbMigrateDeterministicSeedIds has already run by this
+      // point), and once a route round-trips through the Sheet it'll show up in sheetIds next
+      // load and stop being pushed here. See ROUTE_BUILDER_SYNC.md and the
+      // scripts/sync_new_routes_to_sheet.js one-off tool for pushing a batch immediately
+      // instead of waiting for a browser to load this page.
+      localOnly.forEach(route => rbPushGrandTripToSheet(route));
     }
   } catch (_) {
     // Sheet unreachable — keep the seeded/migrated localStorage state as-is.

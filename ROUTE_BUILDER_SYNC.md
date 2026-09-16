@@ -14,6 +14,21 @@ tabs below — both a manual backup and the exact bulk-import payload used for t
 migration. Verified against the real simulated live state: **442 routes, 1058
 blocks, 3952 destinations** — all of which are now actually in the Sheet.
 
+**Gap closed (2026-09-16): new routes added via code (a `rbSeed*()`/`rbBuild*Route()` batch,
+not a browser edit) now reach the Sheet too**, closing the gap this doc's own "Don't lose
+what's already in localStorage" section (below) originally flagged. Two pieces:
+- `js/pages/routeBuilder.js`'s init now auto-pushes any route missing from the Sheet
+  (`localOnly` in the sheet-merge block) every time a real browser loads the page — since
+  `rbSave()` with no id (what every seed function calls) only ever wrote `localStorage`, a
+  freshly-seeded route previously stayed local-only until someone opened and edited it by
+  hand.
+- `scripts/sync_new_routes_to_sheet.js` — a standalone Node script that runs the same
+  seed/migration simulation as `simulate_route_builder.js`, diffs it against the live
+  GrandTrips Sheet, and pushes whatever's missing immediately, without needing a browser at
+  all. Used once already for the 10 routes added in batches 7-9 (South Korea, Sri Lanka,
+  Maldives, UAE, Seychelles, ABC Islands, Palau, Papua New Guinea, Uruguay, Guyana) — dry-run
+  by default, `--push` to actually POST.
+
 **Note (2026-08): `js/pages/routeBuilder.js` is now 4 files** (`routeBuilderCore.js`,
 `routeBuilderContent.js`, `routeBuilderUI.js`, `routeBuilder.js` — see `CLAUDE.md`'s
 "Route Builder architecture"). This plan predates that split — file references below

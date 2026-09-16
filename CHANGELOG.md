@@ -12,6 +12,21 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Route Builder → Sheet sync gap closed: code-added routes now reach the Sheet
+  automatically (2026-09-16)** — `rbSave()` only pushes to the Sheet when called with a
+  route id (a real browser edit does this; every `rbSeed*()` function calls it with no id,
+  which only writes `localStorage`), so the 10 routes added in the three batches below
+  initially existed only in source/localStorage, not the actual Google Sheet, until this
+  fix. Two pieces: (1) `js/pages/routeBuilder.js`'s init now auto-pushes any route that's
+  missing from the Sheet after the sheet-merge, every time a real browser loads the page;
+  (2) a new standalone script, `scripts/sync_new_routes_to_sheet.js`, runs the same
+  seed/migration simulation `simulate_route_builder.js` does, diffs it against the live
+  Sheet, and pushes whatever's missing immediately (dry-run by default, `--push` to actually
+  send) — no browser needed. Used once already: verified all 10 of this session's new
+  routes (South Korea, Sri Lanka, Maldives, UAE, Seychelles, ABC Islands, Palau, Papua New
+  Guinea, Uruguay, Guyana) are now live in the `GrandTrips`/`GrandTripBlocks` Sheet tabs. See
+  `ROUTE_BUILDER_SYNC.md` for the full note.
+
 - **A third new standalone-country batch — Palau 🦈, Papua New Guinea 🎭, Uruguay 🧉, Guyana 🦦
   (2026-09-16)** — same treatment as the two batches above, none split off an existing
   expedition. **Papua New Guinea is the notable one**: its Dutch travel advisory is genuinely
