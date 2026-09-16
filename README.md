@@ -166,6 +166,11 @@ in total as of that batch:
   advisory has no green/yellow territory anywhere in the country (red/orange only), including two
   of its classic anchor stops sitting in explicit "do not travel" red zones. See `CHANGELOG.md`
   for the full per-country notes.
+- **Batch 8 (2026-09-16)** — **Seychelles 🌺** (new standalone, 3-island loop) and **ABC Islands
+  🦩** (new combo route: freshly-researched Aruba as a new first leg, ahead of the existing
+  Curaçao & Bonaire 🤿 content reused unchanged — that 2-island route still exists separately,
+  same deliberate-overlap pattern as Fiji 🌊/Fiji & Vanuatu 🐚). 81 standalone/combo routes in
+  this lineage as of this batch. See `CHANGELOG.md` for the full notes.
 
 **Long-haul flight buffer (2026-08, see `CLAUDE.md`'s "long-haul flight buffer policy")**: 13 of
 the 75 got a +2 day buffer for exposure to their round-trip flight time — **Tunesië 🧿** (6→8d,

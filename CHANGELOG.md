@@ -12,6 +12,18 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **A second new standalone-country batch — Seychelles 🌺 and a new ABC Islands 🦩 combo
+  route (2026-09-16)** — Seychelles is a brand-new standalone country (3-island loop: Mahé,
+  Praslin, La Digue), same treatment as the batch above. ABC Islands 🦩 is a new *combo*
+  route that adds freshly-researched **Aruba** content as a new first leg ahead of the
+  existing, unmodified **Curaçao & Bonaire 🤿** route's content (reused verbatim) — that
+  2-island route continues to exist unchanged, this is deliberate overlap (same pattern as
+  Fiji 🌊/Fiji & Vanuatu 🐚 and Suriname 🛶/Suriname & Northern Brazil 🌴). Added via
+  `rbSeedStandaloneCountryRoutesBatch8()`, wired in after batch 7; 2 new `TRIP_DATABASE.csv`
+  rows. Verified via the same simulation + Dutch-text-audit scripts (Aruba/Seychelles clean;
+  the only "Grote Knip" hit on the reused Curaçao content is the known, accepted false
+  positive documented in `CLAUDE.md`).
+
 - **A new standalone-country batch (call it Batch 7 in that lineage — distinct from the
   already-existing "combo batch 7"/`rbSeedComboBatch7()`) — South Korea 🏯, Sri Lanka 🐆,
   Maldives 🏝️, United Arab Emirates 🏙️ (2026-09-16)** — unlike batches 1-6, none of these

@@ -8684,6 +8684,98 @@ function rbBuildUAERoute() {
   });
 }
 
+// ---- Standalone single-country routes, batch 8 (2026-09) ----
+//
+// Two more brand-new destinations, same approach as batch 7: verified against
+// TRIP_DATABASE.csv and routeBuilderContent.js first to confirm neither existed anywhere yet.
+// Seychelles is a genuinely new standalone country. The ABC Islands route is a new *combo*
+// route that adds brand-new Aruba content alongside the existing, unchanged Curaçao & Bonaire 🤿
+// route's content (reused verbatim, not modified) — the two islands still also exist as their
+// own 2-island route; this is deliberate overlap, same pattern as Fiji 🌊 / Fiji & Vanuatu 🐚 and
+// Suriname 🛶 / Suriname & Northern Brazil 🌴 elsewhere in this file (see "Known gotchas" in
+// CLAUDE.md: "Route Builder vs. Trips sheet overlap is accepted, not deduped" — the same
+// philosophy applies to overlap between two Route Builder routes themselves).
+
+function rbSeedStandaloneCountryRoutesBatch8() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_STANDALONE_COUNTRIES_BATCH8)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_STANDALONE_COUNTRIES_BATCH8, '1');
+
+  rbRoutes.push(
+    rbBuildSeychellesRoute(),
+    rbBuildABCIslandsRoute(),
+  );
+  rbSave();
+}
+
+function rbBuildSeychellesRoute() {
+  const sc = () => ({
+    code: 'SC', name: 'Seychelles', days: 11, budget: 800, lat: -4.6191, lng: 55.4513,
+    destinations: [
+      { name: 'Victoria & Sainte Anne Marine Park, Mahé', lat: -4.6191, lng: 55.4513 },
+      { name: 'Morne Seychellois National Park, Mahé', lat: -4.6667, lng: 55.4500 },
+      { name: 'Praslin (Vallée de Mai, Anse Lazio)', lat: -4.3311, lng: 55.7383 },
+      { name: 'Curieuse Island', lat: -4.2833, lng: 55.7333 },
+      { name: "La Digue (Anse Source d'Argent)", lat: -4.3728, lng: 55.8317 },
+    ],
+    notes: "A 3-island loop — Mahé, Praslin, La Digue — for granite-boulder beaches (Anse Source d'Argent, Anse Lazio), the primeval Vallée de Mai UNESCO forest (coco de mer palms), and giant tortoises on Curieuse Island. No real hostel scene — budget accommodation is guesthouses/self-catering, not dorms, which pushes the daily rate up from what a similar Southeast Asia trip would cost. Inter-island transport is the real hidden cost: the Cat Cocos/Cat Rose ferry runs Mahé-Praslin (~€56 one-way), Mahé-La Digue (~€66) and Praslin-La Digue (~€15) — a full 3-island loop easily adds €130-150pp in ferry fares alone; a domestic Air Seychelles flight Mahé-Praslin (15 min, ~€90) is a pricier but faster alternative. Mandatory: a free-to-file but paid Seychelles Travel Authorization (SVA, ~€10pp, apply online 30 days ahead via seychelles.govtas.com, ~24h processing) — not a visa, but required regardless. Dutch travel advisory (2026-09 snapshot): yellow — pickpocketing/robbery in poorly-lit areas, maritime piracy risk in the wider Indian Ocean (stay visible from shore), unusually harsh drug laws (up to 30 years, including soft drugs), and Nov-March rainy-season flooding on Mahé's northwest.",
+  });
+  return rbBuildFlatSeedRoute('Seychelles 🌺', [
+    {
+      ...sc(),
+      notes: 'Entry: flight Amsterdam-Mahé, one stop — no direct AMS-SEZ service exists on any carrier; realistic options are via Nairobi (Kenya Airways, SkyTeam partner with KLM), Abu Dhabi (Etihad, usually cheapest) or Doha (Qatar Airways), roughly 11-16 hours total; from ±€680-900 return; best period April or October (calm seas, good diving/snorkel visibility, fewer crowds — deliberately not December-January like the Caribbean ABC routes, since that\'s actually Seychelles\' rainiest stretch). Web-research price/timing indication 2026-09, a snapshot. Long-haul flight buffer applied (see CLAUDE.md): +2 days on top of an 8-9 day base recommendation (11 total) — a short trip combined with a connecting flight. ' + sc().notes,
+      transport_to_next: 'End of this route — return flight from Mahé to Amsterdam, one stop.',
+    },
+  ], {
+    best_starting_month: 'April',
+    travel_style: 'Cat Cocos/Cat Rose inter-island ferry (book ahead in high season), local bus/taxi on each island, domestic flight to Praslin as a faster (pricier) alternative.',
+    climate_summary: 'April and October are the transitional sweet spot — calm seas and good visibility, avoiding both the windier May-September trade-wind season and the wetter/stormier November-March monsoon.',
+    description: "Granite boulders, palm-fringed lagoons and the primeval Vallée de Mai — three islands, one of the world's most photographed beaches, and barely another backpacker in sight.",
+    notes: 'New standalone route (2026-09) — first time the Seychelles appears in Route Builder, not split off from an existing expedition. Built from a dedicated research pass (route-price-checker style, 2026-09-16) covering costs, the mandatory SVA travel authorization, inter-island ferry economics, and the current advisory. Re-verify all of these before booking — nederlandwereldwijd.nl updates roughly weekly.',
+  });
+}
+
+function rbBuildABCIslandsRoute() {
+  return rbBuildFlatSeedRoute('ABC Islands 🦩', [
+    {
+      code: 'AW', name: 'Aruba', days: 5, budget: 425, lat: 12.5246, lng: -70.0270,
+      destinations: [
+        { name: 'Eagle Beach', lat: 12.5750, lng: -70.0472 },
+        { name: 'Arikok National Park & the Natural Pool (Conchi)', lat: 12.4964, lng: -69.9553 },
+        { name: 'Baby Beach & San Nicolas', lat: 12.4306, lng: -69.8975 },
+        { name: 'California Lighthouse', lat: 12.6206, lng: -70.0511 },
+        { name: 'Oranjestad', lat: 12.5246, lng: -70.0270 },
+      ],
+      notes: "Entry point of this loop: direct KLM flight Amsterdam-Aruba (±10h20-30, ~7x/week; from ±€740-820 return; best period December-January to match Curaçao/Bonaire below, though Aruba's own dry season is broader (Feb-Aug) and more forgiving if the trip drifts into Sept-Nov). Web-research price/timing indication 2026-09, a snapshot. Eagle Beach's fofoti trees, the volcanic-rock Arikok NP with its Natural Pool, laid-back Baby Beach near old-Aruba town San Nicolas, and the sunset viewpoint at the California Lighthouse. Mandatory: the ED Card digital immigration form (free to file, but bundles a $20pp Sustainability Fee, ages 8+) — file within 7 days of travel at edcardaruba.aw; this is a separate step from Curaçao/Bonaire's own entry requirements, don't assume one covers all three. Avoid Aruba Carnival season (~Jan 9-Feb 8, 2027, season opens Nov 11 2026) if cost matters — hotel rates spike 40-60%. Dutch travel advisory (2026-09 snapshot): green.",
+      transport_to_next: 'Inter-island flight Aruba-Curaçao (~30-40 min, Divi Divi Air/EZ Air/Winair, no ferry exists — the open-water crossing is too rough; roughly $100-115 one-way).',
+    },
+    {
+      code: 'CW', name: 'Curaçao', days: 7, budget: 560, lat: 12.1084, lng: -68.9335,
+      destinations: [
+        { name: 'Willemstad (UNESCO)', lat: 12.1091, lng: -68.9316 },
+        { name: 'Shete Boka National Park', lat: 12.3667, lng: -69.15 },
+        { name: 'beaches (Grote Knip)', lat: 12.2167, lng: -69.15 },
+      ],
+      notes: "Willemstad with its Dutch colonial architecture is the urban counterpart to laid-back Bonaire and breezy Aruba. Shete Boka (rugged north coast) is the hidden gem, much quieter than the beaches. Digital Immigration Card mandatory to fill in in advance (free) — a separate step from Aruba's ED Card, don't conflate the two. Content and pricing reused unchanged from the existing Curaçao & Bonaire 🤿 route (verified 2026-07/2026-08) — this route doesn't re-verify Curaçao's own numbers, only adds Aruba as a new first leg.",
+      transport_to_next: 'Short flight Curaçao-Bonaire.',
+    },
+    {
+      code: 'BQ', name: 'Bonaire', days: 6, budget: 660, lat: 12.25, lng: -68.4,
+      destinations: [
+        { name: 'Washington Slagbaai National Park', lat: 12.3167, lng: -68.4167 },
+        { name: 'diving/snorkeling (marine park)', lat: 12.15, lng: -68.2833 },
+      ],
+      notes: 'World-class diving/snorkeling right off the coast. Washington Slagbaai NP (flamingos, rugged nature) is the hidden gem, barely visited. The mandatory entry tax of ~€70pp is a separate cost item, not included in the daily rate. Content and pricing reused unchanged from the existing Curaçao & Bonaire 🤿 route (verified 2026-07/2026-08).',
+      transport_to_next: 'End of this route — flight Bonaire-Curaçao (short regional connection), then a direct KLM return flight Curaçao-Amsterdam.',
+    },
+  ], {
+    best_starting_month: 'December',
+    travel_style: 'Direct KLM flight into Aruba, short regional inter-island flights Aruba-Curaçao and Curaçao-Bonaire, direct KLM flight home from Curaçao.',
+    climate_summary: 'December-January is dry season on all three islands — clearer water for snorkeling/diving and the least rain, though Aruba (the driest of the three, ~650mm/yr) tolerates a wider window than Curaçao or Bonaire if the trip has to shift.',
+    description: "White-sand Aruba, colonial Curaçao and diving-paradise Bonaire — the full Dutch Caribbean archipelago in one direct-flight-in, short-hop-between trip.",
+    notes: 'New combo route (2026-09-16) — first time Aruba appears in Route Builder. Built by adding freshly-researched Aruba content (route-price-checker style, 2026-09-16) as a new first leg ahead of the existing, unmodified Curaçao & Bonaire 🤿 content (verified 2026-07/2026-08) — that 2-island route continues to exist unchanged; this is deliberate overlap, not a replacement, same pattern as Fiji 🌊/Fiji & Vanuatu 🐚 elsewhere in this file. Day counts (Aruba 5 / Curaçao 7 / Bonaire 6, 18 total) are a first-cut allocation based on relative island size and how "single-note" each stop is — open to adjustment, not pulled from an existing repo convention. Re-verify Aruba\'s advisory/ED-card fee before booking.',
+  });
+}
+
 // ---- Centraal-Azië 🐎 further split (2026-08) ----
 //
 // Centraal-Azië 🐎 (batch 3) was flagged in its own notes as the largest of all standalone routes
