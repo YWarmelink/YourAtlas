@@ -209,7 +209,13 @@ function showStatusPicker(code, name, clientX, clientY) {
         stateManager.setStatus(code, newStatus);
         pushToSheet(code, newStatus);
       } else {
+        // "Remove" — must also push the clear to the Sheet, not just the local override.
+        // loadSheet() wipes _local on every page load ("Sheet is the single source of truth"),
+        // so clearOverride() alone only ever un-highlighted the country for the current
+        // session; the Sheet's own status cell never changed, so it came right back on the
+        // next reload. This was the actual bug behind a status that "won't remove".
         stateManager.clearOverride(code);
+        pushToSheet(code, '');
       }
       picker.remove();
       refreshMapColors();

@@ -12,6 +12,21 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Fix: "Remove" in the map's country status picker never actually removed the status
+  (2026-09-16)** — found via a real case: Algeria showed as visited (confirmed `status:
+  'visited'` in the live Countries sheet) despite Youri never having gone. Every other status
+  button (Visited/Planned/Wishlist) calls both `stateManager.setStatus()` and
+  `pushToSheet()`; "Remove" only called `stateManager.clearOverride()` — never
+  `pushToSheet()`, so nothing was ever sent to correct the Sheet. Made worse by
+  `loadSheet()`'s own "Sheet is the single source of truth" design (it wipes the local
+  override on every page load), so the local-only clear looked like it worked for the rest of
+  that session, then reverted right back on the next reload. Fixed in `js/pages/map.js`:
+  Remove now also calls `pushToSheet(code, '')`. Not yet re-tested live against the real
+  Sheet's Apps Script — if a status still won't clear after this, the next thing to check is
+  whether the Apps Script's `doPost` handler does something special with an empty/blank
+  `status` value (see `ROUTE_BUILDER_SYNC.md`'s note on how to safely inspect/edit that
+  script).
+
 - **Route Builder's visa/vaccination panel: route-wide summary + a shorter click path
   (2026-09-16)** — the panel used to dump every country's full visa/vaccine/health text at
   once (or, after a first pass, gate a redundant collapsed head behind an extra click before
