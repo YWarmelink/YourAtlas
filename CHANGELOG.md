@@ -12,6 +12,21 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 5 — Pan-American Grand Tour (2026-09-16)** — 15 blocks, 92
+  destinations, researched as 4 parallel batches (Mexico-Honduras, El Salvador-Panama,
+  Colombia/Ecuador/Peru, Bolivia-Brazil), all inserted cleanly first try (no missed
+  double-quoted names this time). Same generic name-matching migration
+  (`rbMigratePanAmericanDestinationNotes()`) — Central America Loop 🌋 (previously in the
+  batch queue at leverage 11) is now fully covered as a side effect. App-wide total: 1320
+  destination-slots filled across 136 routes. 96/741 signatures done.
+
+  One more tooling wrinkle, different from the earlier double-quote issue: a hand-escaped
+  regex pattern (needed because one destination's note itself contained an escaped
+  apostrophe) silently mismatched due to a Python raw-string quoting quirk, dropping exactly
+  1 of 92 entries ("Cusco & Sacred Valley") from the generated migration. Caught the same way
+  as before — cross-checking the extracted count against the known total before trusting it
+  — and fixed by hand-adding the single missing entry rather than fighting the regex further.
+
 - **Per-destination notes, batch 4 — Mediterranean Civilizations Expedition (2026-09-16)** —
   19 blocks, 81 destinations; 68 newly researched as 3 parallel batches (Western Med,
   Italy+France, Greece/Cyprus/Anatolia/Gulf) — the other 13 were already filled by the Jordan

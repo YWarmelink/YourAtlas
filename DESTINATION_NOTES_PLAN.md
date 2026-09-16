@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 81 / 741 signatures.**
+- **Done so far: 96 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -42,16 +42,16 @@ Sorted by how many routes reuse them — highest leverage first.
 - [ ] **AU** (4 dest): Cradle Mountain, Wineglass Bay (Freycinet), Overland Track, Hobart — routes: Oceania Grand Expedition 🌊, Tasmania 🐾, Temperate/Southern Australia 🍇
 - [x] **AZ** (4 dest): Baku, Gobustan, Sheki, Qabala — routes: Caucasus 🍷, Eurasia Grand Tour 🌏, West Eurasia Overland 🐫
 - [x] **BA** (4 dest): Sarajevo, Mostar, Blagaj, Trebinje — routes: Balkan 🐺, Eurasia Grand Tour 🌏, West Eurasia Overland 🐫
-- [ ] **BO** (5 dest): Copacabana, La Paz, Uyuni Salt Flat, Sucre, Potosí — routes: Andes Grand Traverse 🦙, Bolivia 🧂, Pan-American Grand Tour 🌎
+- [x] **BO** (5 dest): Copacabana, La Paz, Uyuni Salt Flat, Sucre, Potosí — routes: Andes Grand Traverse 🦙, Bolivia 🧂, Pan-American Grand Tour 🌎
 - [ ] **BR** (5 dest): Belém, Ilha do Marajó, Lençóis Maranhenses, Jericoacoara, Fortaleza — routes: Caribbean & Amazon Expedition 🌴, Northern Brazil 🪁, Suriname & Northern Brazil 🌴
 - [ ] **CL** (6 dest): Puerto Montt, Chiloé Island (day trip), Parque Pumalín, Queulat National Park, Villa Cerro Castillo, Puerto Río Tranquilo & Marble Caves — routes: Chilean Patagonia 🥾, Patagonia & Antarctica Expedition 🧊, Patagonia Overland 🏔️
 - [ ] **CL** (3 dest): Puerto Natales, Torres del Paine National Park, Punta Arenas (day trip to Isla Magdalena) — routes: Chilean Patagonia 🥾, Patagonia & Antarctica Expedition 🧊, Patagonia Overland 🏔️
-- [ ] **CO** (7 dest): Cartagena, Santa Marta, Parque Tayrona, Medellín, Salento & Coffee Zone, Bogotá, San Agustín — routes: Andes Grand Traverse 🦙, Colombia ☕, Pan-American Grand Tour 🌎
-- [ ] **CR** (6 dest): Liberia, La Fortuna/Arenal, Monteverde, Santa Teresa, Manuel Antonio, Puerto Viejo de Talamanca — routes: Central America Loop 🌋, Costa Rica 🦥, Pan-American Grand Tour 🌎
+- [x] **CO** (7 dest): Cartagena, Santa Marta, Parque Tayrona, Medellín, Salento & Coffee Zone, Bogotá, San Agustín — routes: Andes Grand Traverse 🦙, Colombia ☕, Pan-American Grand Tour 🌎
+- [x] **CR** (6 dest): Liberia, La Fortuna/Arenal, Monteverde, Santa Teresa, Manuel Antonio, Puerto Viejo de Talamanca — routes: Central America Loop 🌋, Costa Rica 🦥, Pan-American Grand Tour 🌎
 - [ ] **CU** (4 dest): Havana (Habana Vieja), Viñales Valley, Cienfuegos, Trinidad — routes: Caribbean & Amazon Expedition 🌴, Caribbean Islands Hop 🏝️, Cuba 🎷
 - [ ] **CV** (3 dest): Santo Antão (Ribeira Grande, Paúl Valley), São Vicente (Mindelo), Fogo (Pico do Fogo volcano, vineyards) — routes: Cape Verde 🎶, West & Central Africa Expedition 🌍, West Africa Overland 🥁
 - [ ] **DM** (3 dest): Boiling Lake Trek, Trafalgar Falls, Champagne Reef — routes: Caribbean & Amazon Expedition 🌴, Caribbean Islands Hop 🏝️, Guadeloupe & Dominica 🍃
-- [ ] **EC** (6 dest): Quito, Otavalo, Mindo, Baños, Cuenca, Galápagos Islands — routes: Andes Grand Traverse 🦙, Ecuador 🐢, Pan-American Grand Tour 🌎
+- [x] **EC** (6 dest): Quito, Otavalo, Mindo, Baños, Cuenca, Galápagos Islands — routes: Andes Grand Traverse 🦙, Ecuador 🐢, Pan-American Grand Tour 🌎
 - [ ] **EE** (1 dest): Tallinn (Old Town) — routes: Baltics + Poland (10-14 days) 🇵🇱, Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️, Tallinn + Riga + Vilnius (7-10 days) 🚌
 - [x] **EG** (7 dest): Cairo, Giza, Dahab, Luxor, Nile cruise/felucca, Aswan, Alexandria — routes: Africa Grand Tour 🌍, Egypt 🏺, Horn of Africa & Egypt 🏺
 - [x] **ES** (4 dest): Málaga, Granada (Alhambra), Córdoba (Mezquita), Seville — routes: Iberia & Morocco/Tunisia 🏰, Mediterranean Civilizations Expedition 🏛️, Spain 💃
@@ -65,7 +65,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **GR** (5 dest): Athens, Peloponnese, Olympia, Delphi, Meteora — routes: Greece & Crete 🫒, Greece & Cyprus 🏺, Mediterranean Civilizations Expedition 🏛️
 - [x] **GR** (4 dest): Heraklion, Knossos, Chania, Samaria Gorge — routes: Greece & Crete 🫒, Greece & Cyprus 🏺, Mediterranean Civilizations Expedition 🏛️
 - [ ] **GR** (2 dest): Santorini (Fira), Oia — routes: Cyclades (5-7 days) 🏝️, Cyclades Island Hopping (7-10 days) 🏝️, Southern Europe Highlights Roadtrip (14 days) 🎯
-- [ ] **GT** (6 dest): Quetzaltenango (Xela), Lake Atitlán, Antigua, Guatemala City, Semuc Champey, Flores & Tikal — routes: Central America Loop 🌋, Guatemala 🦜, Pan-American Grand Tour 🌎
+- [x] **GT** (6 dest): Quetzaltenango (Xela), Lake Atitlán, Antigua, Guatemala City, Semuc Champey, Flores & Tikal — routes: Central America Loop 🌋, Guatemala 🦜, Pan-American Grand Tour 🌎
 - [x] **HR** (1 dest): Dubrovnik — routes: Balkan 🐺, Eurasia Grand Tour 🌏, West Eurasia Overland 🐫
 - [ ] **HR** (2 dest): Split (Diocletian's Palace), Dubrovnik Old Town — routes: Bosnia + Croatia + Montenegro (12 days) 🗺️, Croatia + Montenegro + Bosnia (12 days) 🧭, Slovenia + Croatia + Montenegro Coast (10-14 days) ⛵
 - [x] **IT** (6 dest): Palermo, Cefalù, Agrigento (Valle dei Templi), Syracuse, Taormina, Etna — routes: Malta & Italy 🏛️, Mediterranean Civilizations Expedition 🏛️, Sicily 🌋
@@ -90,12 +90,12 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **MW** (5 dest): Lilongwe, Lake Malawi (Cape Maclear), Liwonde NP, Zomba Plateau, Mount Mulanje — routes: Africa Grand Tour 🌍, Southern Africa Safari Loop 🦁, Zambia & Malawi 💦
 - [x] **MY** (5 dest): Langkawi, Penang, Cameron Highlands, Malacca, Kuala Lumpur — routes: Eurasia Grand Tour 🌏, Malaysia 🦋, Southeast Asia Grand Loop 🛕
 - [x] **NA** (6 dest): Windhoek, Fish River Canyon, Sossusvlei/Namib-Naukluft, Swakopmund, Damaraland, Etosha NP — routes: Africa Grand Tour 🌍, Namibia 🏜️, Southern Africa Safari Loop 🦁
-- [ ] **NI** (6 dest): León, Managua, Granada, Isla de Ometepe, Laguna de Apoyo, San Juan del Sur — routes: Central America Loop 🌋, Nicaragua 🌅, Pan-American Grand Tour 🌎
+- [x] **NI** (6 dest): León, Managua, Granada, Isla de Ometepe, Laguna de Apoyo, San Juan del Sur — routes: Central America Loop 🌋, Nicaragua 🌅, Pan-American Grand Tour 🌎
 - [ ] **NZ** (7 dest): Christchurch, Franz Josef & Fox Glaciers, Queenstown, Milford Sound & Fiordland, Dunedin & Catlins, Kaikoura, Abel Tasman — routes: New Zealand South Island 🏔️, New Zealand 🥝, Oceania Grand Expedition 🌊
 - [ ] **NZ** (6 dest): Wellington, Tongariro Alpine Crossing, Rotorua, Coromandel, Bay of Islands, Auckland — routes: New Zealand North Island 🌿, New Zealand 🥝, Oceania Grand Expedition 🌊
 - [x] **OM** (4 dest): Muscat, Nizwa, Jebel Shams, Wahiba Sands — routes: Egypt & Arabian Peninsula 🐪, Gulf States Trio 🛢️, Mediterranean Civilizations Expedition 🏛️
-- [ ] **PA** (6 dest): Bocas del Toro, Boquete, Panama City, Casco Viejo, Panama Canal, San Blas Islands — routes: Central America Loop 🌋, Pan-American Grand Tour 🌎, Panama 🚢
-- [ ] **PE** (7 dest): Máncora, Huaraz, Lima, Ica & Huacachina, Arequipa, Cusco & Sacred Valley, Puno (Lake Titicaca) — routes: Andes Grand Traverse 🦙, Pan-American Grand Tour 🌎, Peru 🦙
+- [x] **PA** (6 dest): Bocas del Toro, Boquete, Panama City, Casco Viejo, Panama Canal, San Blas Islands — routes: Central America Loop 🌋, Pan-American Grand Tour 🌎, Panama 🚢
+- [x] **PE** (7 dest): Máncora, Huaraz, Lima, Ica & Huacachina, Arequipa, Cusco & Sacred Valley, Puno (Lake Titicaca) — routes: Andes Grand Traverse 🦙, Pan-American Grand Tour 🌎, Peru 🦙
 - [x] **PH** (7 dest): Manila, Banaue, El Nido, Coron, Siargao, Bohol, Cebu — routes: Eurasia Grand Tour 🌏, Philippines 🏖️, Southeast Asia Grand Loop 🛕
 - [x] **QA** (1 dest): Doha — routes: Egypt & Arabian Peninsula 🐪, Gulf States Trio 🛢️, Mediterranean Civilizations Expedition 🏛️
 - [x] **RW** (4 dest): Kigali, Volcanoes NP (gorilla trekking), Lake Kivu (Kibuye/Karongi), Nyungwe Forest — routes: Africa Grand Tour 🌍, East Africa Safari Classic 🦒, Rwanda 🦍
@@ -115,7 +115,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **AL** (2 dest): Tirana, Berat — routes: Balkan Roadtrip: Serbia + North Macedonia + Albania + Kosovo (14 days) 🔄, North Macedonia + Albania (9 days) 🚌
 - [x] **AO** (5 dest): Lubango, Serra da Leba, Tundavala Gorge, Namibe Desert, Luanda — routes: Africa Grand Tour 🌍, Southern Africa Safari Loop 🦁
 - [ ] **AQ** (7 dest): Expedition Cruise from Ushuaia, South Shetland Islands, Antarctic Peninsula, Glaciers & Icebergs, Penguin colonies, Whales, Return to Ushuaia — routes: Antarctica Cruise 🐧, Patagonia & Antarctica Expedition 🧊
-- [ ] **AR** (6 dest): Salta, Cafayate, Purmamarca, Salinas Grandes, Tilcara, Humahuaca — routes: Pan-American Grand Tour 🌎, Southern Cone & Brazil Finale 🧉
+- [x] **AR** (6 dest): Salta, Cafayate, Purmamarca, Salinas Grandes, Tilcara, Humahuaca — routes: Pan-American Grand Tour 🌎, Southern Cone & Brazil Finale 🧉
 - [ ] **AT** (1 dest): Innsbruck (old town, Golden Roof) — routes: Alpine Roadtrip (14 days) 🏕️, Germany + Austria + Italy (10-14 days) 🏔️
 - [ ] **AT** (2 dest): Klagenfurt, Wörthersee — routes: Austria + Slovenia + Croatia (10-14 days) 🚙, Germany + Austria + Slovenia (10-14 days) 🥨
 - [ ] **AU** (5 dest): Perth, Ningaloo Reef (whale sharks), Kimberley & Bungle Bungles, Gibb River Road, Broome — routes: Oceania Grand Expedition 🌊, Tropical/Outback Australia 🐊
@@ -127,9 +127,9 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **BH** (4 dest): Qal'at al-Bahrain (Bahrain Fort), Bahrain National Museum, Al Fateh Grand Mosque, Tree of Life — routes: Egypt & Arabian Peninsula 🐪, Mediterranean Civilizations Expedition 🏛️
 - [ ] **BJ** (3 dest): Abomey (royal palaces, UNESCO), Ouidah (Route des Esclaves, Door of No Return), Ganvié (stilt village on the lake) — routes: West & Central Africa Expedition 🌍, West Africa Overland 🥁
 - [x] **BN** (3 dest): Bandar Seri Begawan, Kampong Ayer, Ulu Temburong NP — routes: Eurasia Grand Tour 🌏, Southeast Asia Grand Loop 🛕
-- [ ] **BR** (7 dest): Foz do Iguaçu (Iguazu Falls), Curitiba, Ilha do Mel, Florianópolis, São Paulo, Paraty, Rio de Janeiro — routes: Pan-American Grand Tour 🌎, Southern Cone & Brazil Finale 🧉
+- [x] **BR** (7 dest): Foz do Iguaçu (Iguazu Falls), Curitiba, Ilha do Mel, Florianópolis, São Paulo, Paraty, Rio de Janeiro — routes: Pan-American Grand Tour 🌎, Southern Cone & Brazil Finale 🧉
 - [ ] **BT** (6 dest): Paro, Thimphu, Dochula Pass, Punakha, Bumthang (optional, by flight Paro-Bumthang), Tiger's Nest Monastery — routes: Bhutan 🐉, India & Himalaya Expedition 🏔️
-- [ ] **BZ** (6 dest): San Ignacio, Belize City, Caye Caulker, Ambergris Caye (San Pedro), Hopkins/Dangriga, Placencia — routes: Central America Loop 🌋, Pan-American Grand Tour 🌎
+- [x] **BZ** (6 dest): San Ignacio, Belize City, Caye Caulker, Ambergris Caye (San Pedro), Hopkins/Dangriga, Placencia — routes: Central America Loop 🌋, Pan-American Grand Tour 🌎
 - [ ] **CA** (4 dest): Halifax, Peggy's Cove, Lunenburg, Cape Breton Island & Cabot Trail — routes: Eastern Canada 🍁, North America Grand Traverse 🌎
 - [ ] **CA** (4 dest): Quebec City (Vieux-Québec), Montreal (Old Port & Mile End), Ottawa (Parliament Hill & museums), Toronto (skyline, with Niagara Falls as a day trip) — routes: Eastern Canada 🍁, North America Grand Traverse 🌎
 - [ ] **CA** (7 dest): Banff National Park, Lake Louise & Moraine Lake, Yoho National Park (Emerald Lake), Icefields Parkway, Jasper National Park, Mount Robson Provincial Park, Whistler — routes: North America Grand Traverse 🌎, Western Canada: Rockies & Vancouver 🏔️
@@ -137,7 +137,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [ ] **CH** (1 dest): Lugano / Ticino — routes: Switzerland + Northern Italy (9 days) 🚞, Switzerland Alpine Roadtrip (9 days) 🛣️
 - [ ] **CI** (2 dest): Abidjan (Le Plateau), Grand-Bassam (UNESCO colonial town) — routes: West & Central Africa Expedition 🌍, West Africa Overland 🥁
 - [ ] **CK** (2 dest): Rarotonga, Aitutaki Lagoon — routes: Oceania Grand Expedition 🌊, Pacific Islands 🌺
-- [ ] **CL** (5 dest): San Pedro de Atacama, Valle de la Luna, Valle del Arcoíris, Antofagasta, Iquique — routes: Pan-American Grand Tour 🌎, Southern Cone & Brazil Finale 🧉
+- [x] **CL** (5 dest): San Pedro de Atacama, Valle de la Luna, Valle del Arcoíris, Antofagasta, Iquique — routes: Pan-American Grand Tour 🌎, Southern Cone & Brazil Finale 🧉
 - [ ] **CM** (3 dest): Douala, Yaoundé, Kribi (Chutes de la Lobé, black beaches) — routes: Central Africa & Islands 🦛, West & Central Africa Expedition 🌍
 - [x] **CN** (6 dest): Xi'an, Chengdu, Zhangjiajie, Guilin/Yangshuo (Li River), Shanghai, Beijing — routes: East Asia & Pacific 🗻, Eurasia Grand Tour 🌏
 - [x] **CY** (3 dest): Paphos, Limassol, Nicosia — routes: Greece & Cyprus 🏺, Mediterranean Civilizations Expedition 🏛️
@@ -167,7 +167,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [ ] **GL** (6 dest): Nuuk, Inuit culture (Nuuk), Ilulissat, Icefjord (Ilulissat Icefjord), Disko Bay, Boat trips (e.g. Eqi Glacier) — routes: Greenland 🧊, Nordic Arctic Expedition ❄️
 - [ ] **GR** (2 dest): Naxos (Chora), Portara — routes: Cyclades (5-7 days) 🏝️, Cyclades Island Hopping (7-10 days) 🏝️
 - [ ] **GR** (2 dest): Paros (Parikia), Naoussa — routes: Cyclades (5-7 days) 🏝️, Cyclades Island Hopping (7-10 days) 🏝️
-- [ ] **HN** (6 dest): Puerto Cortés, Copán Ruinas, Lago de Yojoa, La Ceiba, Roatán, Tegucigalpa — routes: Central America Loop 🌋, Pan-American Grand Tour 🌎
+- [x] **HN** (6 dest): Puerto Cortés, Copán Ruinas, Lago de Yojoa, La Ceiba, Roatán, Tegucigalpa — routes: Central America Loop 🌋, Pan-American Grand Tour 🌎
 - [ ] **HR** (1 dest): Dubrovnik Old Town — routes: Bosnia + Croatia (9 days) 🏛️, Montenegro + Croatia (9 days) ⛵
 - [ ] **HR** (2 dest): Rovinj, Pula (Arena) — routes: Italy + Slovenia + Croatia (10-14 days) ⛵, Slovenia + Croatian Istria (7-10 days) 🏖️
 - [ ] **HR** (1 dest): Zagreb — routes: Austria + Slovenia + Croatia (10-14 days) 🚙, Italy + Slovenia + Croatia (10-14 days) ⛵
@@ -202,7 +202,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [ ] **ME** (3 dest): Kotor Old Town, Perast, Budva — routes: Adriatic Roadtrip (14 days) 🌊, Bosnia + Montenegro + Budva (7-10 days) ⛰️
 - [ ] **ME** (2 dest): Kotor Old Town, Budva — routes: Grand Balkan Roadtrip (14 days) 🏔️, Slovenia + Croatia + Montenegro Coast (10-14 days) ⛵
 - [x] **MT** (5 dest): Valletta, Mdina, Gozo, Ġgantija temples, Hypogeum — routes: Malta ⚔️, Mediterranean Civilizations Expedition 🏛️
-- [ ] **MX** (7 dest): Ciudad de México, Oaxaca, San Cristóbal de las Casas, Palenque, Mérida, Tulum, Bacalar — routes: Mexico 🌵, Pan-American Grand Tour 🌎
+- [x] **MX** (7 dest): Ciudad de México, Oaxaca, San Cristóbal de las Casas, Palenque, Mérida, Tulum, Bacalar — routes: Mexico 🌵, Pan-American Grand Tour 🌎
 - [x] **MY** (3 dest): Kuching, Bako National Park, Mulu Caves (Gunung Mulu NP) — routes: Eurasia Grand Tour 🌏, Southeast Asia Grand Loop 🛕
 - [x] **MY** (5 dest): Kota Kinabalu, Mount Kinabalu, Sepilok Orang-oetan Centre, Kinabatangan River, Semporna/Sipadan — routes: Eurasia Grand Tour 🌏, Southeast Asia Grand Loop 🛕
 - [ ] **NO** (5 dest): Narvik, Lofoten (Svolvær), Senja, Tromsø, North Cape (Nordkapp) — routes: Nordic Arctic Expedition ❄️, Scandinavia Overland 🚂
@@ -214,7 +214,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **SG** (4 dest): Marina Bay, Chinatown, Sentosa, Gardens by the Bay — routes: Eurasia Grand Tour 🌏, Southeast Asia Grand Loop 🛕
 - [ ] **SI** (1 dest): Bled — routes: Grand European Roadtrip (14-21 days) 🪣, Italy + Slovenia + Croatia (10-14 days) ⛵
 - [ ] **SM** (2 dest): City of San Marino (old town), Rocca Guaita — routes: San Marino + Emilia-Romagna (4 days) 🍝, San Marino + Tuscany (5 days) 🍷
-- [ ] **SV** (6 dest): San Salvador, Santa Ana, Cerro Verde & volcanoes, Ruta de las Flores (Juayúa, Ataco), El Tunco, Suchitoto — routes: Central America Loop 🌋, Pan-American Grand Tour 🌎
+- [x] **SV** (6 dest): San Salvador, Santa Ana, Cerro Verde & volcanoes, Ruta de las Flores (Juayúa, Ataco), El Tunco, Suchitoto — routes: Central America Loop 🌋, Pan-American Grand Tour 🌎
 - [ ] **TG** (2 dest): Lomé, Togoville (Vodun culture, Lac Togo) — routes: West & Central Africa Expedition 🌍, West Africa Overland 🥁
 - [x] **TL** (5 dest): Dili, Atauro Island, Jaco Island (Nino Konis Santana NP), Baucau, Maubisse — routes: Eurasia Grand Tour 🌏, Southeast Asia Grand Loop 🛕
 - [ ] **TO** (3 dest): Nuku'alofa, Vava'u (swimming with humpback whales), Ha'apai — routes: Oceania Grand Expedition 🌊, Pacific Islands 🌺
@@ -768,13 +768,11 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| Pan-American Grand Tour 🌎 | 92/92 | 23 |
 | Oceania Grand Expedition 🌊 | 60/60 | 23 |
 | Caribbean & Amazon Expedition 🌴 | 33/33 | 22 |
 | Caribbean Islands Hop 🏝️ | 25/25 | 18 |
 | British Isles & Celtic Coast Expedition 🍀 | 77/77 | 16 |
 | West & Central Africa Expedition 🌍 | 32/32 | 16 |
-| Central America Loop 🌋 | 42/42 | 11 |
 | West Africa Overland 🥁 | 24/24 | 11 |
 | Austria + Slovenia + Croatia (10-14 days) 🚙 | 7/7 | 10 |
 | Slovenia + Croatia + Montenegro Coast (10-14 days) ⛵ | 6/6 | 10 |
@@ -782,13 +780,12 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Grand Balkan Roadtrip (14 days) 🏔️ | 10/10 | 9 |
 | Hungary + Austria + Slovenia (7-10 days) 🚆 | 5/5 | 9 |
 | North America Grand Traverse 🌎 | 27/27 | 8 |
-| Andes Grand Traverse 🦙 | 25/25 | 8 |
 | Patagonia Overland 🏔️ | 17/17 | 8 |
 | Pacific Islands 🌺 | 17/17 | 8 |
 | Slovenia + Croatian Istria (7-10 days) 🏖️ | 4/4 | 8 |
 | Temperate/Southern Australia 🍇 | 14/14 | 7 |
-| Hungary + Slovenia + Croatia (9 days) 🧭 | 7/7 | 7 |
 | Slovenia + Croatia + Bosnia (10-14 days) 🗺️ | 7/7 | 7 |
+| Hungary + Slovenia + Croatia (9 days) 🧭 | 7/7 | 7 |
 | Slovenia + Northern Croatia (9 days) 🌲 | 4/4 | 7 |
 | England, Wales & Isle of Man 🎩 | 28/28 | 6 |
 | Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖 | 27/27 | 6 |
@@ -808,6 +805,9 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | New Zealand 🥝 | 13/13 | 4 |
 | Cyclades Island Hopping (7-10 days) 🏝️ | 10/10 | 4 |
 | Chilean Patagonia 🥾 | 9/9 | 4 |
-| ... 357 more routes with open destinations ... | | |
+| Senegambia 🦩 | 9/9 | 4 |
+| Italy + Slovenia + Croatia (10-14 days) ⛵ | 9/9 | 4 |
+| Argentine Patagonia 🥩 | 8/8 | 4 |
+| ... 344 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).
