@@ -12,6 +12,14 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 14 — Northern Europe Baltic Ferry Roadtrip (14 days)
+  (2026-09-17)** — a small 6-leg/7-destination combo route, researched in a single pass.
+  High-leverage shared-signature batch: Tallinn/Riga/Vilnius are reused by Baltics + Poland and
+  Tallinn + Riga + Vilnius, and Copenhagen/Stockholm/Helsinki by their own standalone city
+  routes. Same generic name-matching migration (`rbMigrateNordicBalticDestinationNotes()`) — 17
+  routes confirmed touched in the live simulation. App-wide total: 2113 destination-slots filled
+  across 243 routes. 179/741 signatures done.
+
 - **Per-destination notes, batch 13 — Croatia + Montenegro + Bosnia (12 days) (2026-09-17)** — a
   small 3-leg/7-destination combo route, researched in a single pass. High-leverage
   shared-signature batch: all 7 destinations (Split, Dubrovnik, Kotor, Budva, Trebinje, Mostar,

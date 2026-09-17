@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 173 / 741 signatures.**
+- **Done so far: 179 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -52,7 +52,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **CV** (3 dest): Santo Antão (Ribeira Grande, Paúl Valley), São Vicente (Mindelo), Fogo (Pico do Fogo volcano, vineyards) — routes: Cape Verde 🎶, West & Central Africa Expedition 🌍, West Africa Overland 🥁
 - [x] **DM** (3 dest): Boiling Lake Trek, Trafalgar Falls, Champagne Reef — routes: Caribbean & Amazon Expedition 🌴, Caribbean Islands Hop 🏝️, Guadeloupe & Dominica 🍃
 - [x] **EC** (6 dest): Quito, Otavalo, Mindo, Baños, Cuenca, Galápagos Islands — routes: Andes Grand Traverse 🦙, Ecuador 🐢, Pan-American Grand Tour 🌎
-- [ ] **EE** (1 dest): Tallinn (Old Town) — routes: Baltics + Poland (10-14 days) 🇵🇱, Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️, Tallinn + Riga + Vilnius (7-10 days) 🚌
+- [x] **EE** (1 dest): Tallinn (Old Town) — routes: Baltics + Poland (10-14 days) 🇵🇱, Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️, Tallinn + Riga + Vilnius (7-10 days) 🚌
 - [x] **EG** (7 dest): Cairo, Giza, Dahab, Luxor, Nile cruise/felucca, Aswan, Alexandria — routes: Africa Grand Tour 🌍, Egypt 🏺, Horn of Africa & Egypt 🏺
 - [x] **ES** (4 dest): Málaga, Granada (Alhambra), Córdoba (Mezquita), Seville — routes: Iberia & Morocco/Tunisia 🏰, Mediterranean Civilizations Expedition 🏛️, Spain 💃
 - [x] **ET** (6 dest): Addis Ababa, Lalibela, Simien Mountains, Gondar, Danakil Depression, Omo Valley — routes: Africa Grand Tour 🌍, Ethiopia ⛪, Horn of Africa & Egypt 🏺
@@ -79,8 +79,8 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **KH** (6 dest): Phnom Penh, Koh Rong, Battambang, Siem Reap, Angkor Wat, Stung Treng — routes: Eurasia Grand Tour 🌏, Southeast Asia Grand Loop 🛕, Vietnam & Cambodia 🛺
 - [x] **LC** (3 dest): The Pitons, Sulphur Springs (drive-in volcano), Tet Paul Nature Trail — routes: Caribbean & Amazon Expedition 🌴, Caribbean Islands Hop 🏝️, Saint Lucia & Grenada 🌰
 - [x] **LS** (6 dest): Maseru, Thaba-Bosiu, Malealea, Roma, Semonkong, Sani Pass — routes: Africa Grand Tour 🌍, South Africa & Mountain Kingdoms 👑, Southern Africa Safari Loop 🦁
-- [ ] **LT** (1 dest): Vilnius (Old Town) — routes: Baltics + Poland (10-14 days) 🇵🇱, Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️, Tallinn + Riga + Vilnius (7-10 days) 🚌
-- [ ] **LV** (1 dest): Riga (Old Town) — routes: Baltics + Poland (10-14 days) 🇵🇱, Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️, Tallinn + Riga + Vilnius (7-10 days) 🚌
+- [x] **LT** (1 dest): Vilnius (Old Town) — routes: Baltics + Poland (10-14 days) 🇵🇱, Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️, Tallinn + Riga + Vilnius (7-10 days) 🚌
+- [x] **LV** (1 dest): Riga (Old Town) — routes: Baltics + Poland (10-14 days) 🇵🇱, Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️, Tallinn + Riga + Vilnius (7-10 days) 🚌
 - [x] **MA** (5 dest): Tangier, Chefchaouen, Fes, Volubilis, Marrakech — routes: Iberia & Morocco/Tunisia 🏰, Mediterranean Civilizations Expedition 🏛️, Morocco 🕌
 - [x] **ME** (4 dest): Kotor, Perast, Budva, Durmitor NP — routes: Balkan 🐺, Eurasia Grand Tour 🌏, West Eurasia Overland 🐫
 - [x] **MG** (6 dest): Antananarivo, Andasibe-Mantadia, Isalo NP, Avenue of the Baobabs, Morondava, Nosy Be — routes: Africa Grand Tour 🌍, African Islands 🏝️, Madagascar 🦎
@@ -333,7 +333,7 @@ Sorted alphabetically by country code.
 - [ ] **DK** (3 dest): Copenhagen (Nyhavn), Roskilde (Viking Ship Museum), Louisiana Museum (Humlebæk) — routes: Denmark + South Sweden (9 days) 🌉
 - [ ] **DK** (2 dest): Copenhagen (Nyhavn), Tivoli Gardens — routes: Denmark + Sweden + Norway Overland (12 days) 🌉
 - [ ] **DK** (4 dest): Nyhavn, Tivoli Gardens, Christiania, Torvehallerne — routes: Nordic Arctic Expedition ❄️
-- [ ] **DK** (1 dest): Copenhagen (Nyhavn) — routes: Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️
+- [x] **DK** (1 dest): Copenhagen (Nyhavn) — routes: Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️
 - [ ] **EE** (3 dest): Tallinn (Old Town), Lahemaa National Park, Kuressaare Castle (Saaremaa) — routes: Baltic States Roadtrip (10-14 days) 🚗
 - [ ] **EE** (4 dest): Tallinn (Old Town), Lahemaa National Park, Kuressaare Castle (Saaremaa), Muhu-Virtsu ferry link — routes: Estonia (5-7 days) 🏰
 - [ ] **ES** (7 dest): Málaga (fly in), Ronda, Cádiz, Jerez de la Frontera, Seville, Córdoba, Granada — routes: Andalusia Roadtrip (9 days) 🚗
@@ -374,7 +374,7 @@ Sorted alphabetically by country code.
 - [ ] **FI** (3 dest): Rovaniemi (Santa Claus Village), Levi (Kittilä), Ylläs (Äkäslompolo) — routes: Finnish Lapland (9 days) 🎅
 - [ ] **FI** (3 dest): Helsinki (Senate Square), Suomenlinna, Design District — routes: Helsinki (4 days) 🏛️
 - [ ] **FI** (4 dest): Helsinki (Senate Square), Lahti, Savonlinna (Olavinlinna Castle), Lake Saimaa — routes: Helsinki + Lake District (6 days) 🛶
-- [ ] **FI** (2 dest): Helsinki (Senate Square), Suomenlinna — routes: Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️
+- [x] **FI** (2 dest): Helsinki (Senate Square), Suomenlinna — routes: Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️
 - [ ] **FI** (5 dest): Helsinki (Senate Square), Turku Castle, Turku Cathedral, Porvoo, Tampere — routes: South Finland (9 days) 🧭
 - [ ] **FI** (2 dest): Mariehamn, Sund (Kastelholm Castle) — routes: Åland (5 days) 🚲
 - [ ] **FO** (4 dest): Tórshavn, Múlafossur / Gásadalur, Saksun, Vestmanna bird cliffs boat tour — routes: Faroe Islands (6 days) 🐦
@@ -697,7 +697,7 @@ Sorted alphabetically by country code.
 - [ ] **SC** (5 dest): Victoria & Sainte Anne Marine Park, Mahé, Morne Seychellois National Park, Mahé, Praslin (Vallée de Mai, Anse Lazio), Curieuse Island, La Digue (Anse Source d'Argent) — routes: Seychelles 🌺
 - [ ] **SE** (4 dest): Malmö, Lund, Ystad, Kivik — routes: Denmark + South Sweden (9 days) 🌉
 - [ ] **SE** (2 dest): Malmö, Gothenburg — routes: Denmark + Sweden + Norway Overland (12 days) 🌉
-- [ ] **SE** (1 dest): Stockholm (Gamla Stan) — routes: Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️
+- [x] **SE** (1 dest): Stockholm (Gamla Stan) — routes: Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️
 - [ ] **SE** (2 dest): Gothenburg (transit stop), Stockholm (Gamla Stan) — routes: Norway + Sweden: Fjords & Capitals (12 days) ⛴️
 - [ ] **SE** (6 dest): Malmö, Lund, Ystad, Kivik, Ale's Stones (Kåseberga), Stenshuvud National Park — routes: South Sweden (Skåne) (9 days) 🪨
 - [ ] **SE** (5 dest): Gamla Stan, Södermalm, Vasa Museum, Skansen, Djurgården — routes: Stockholm (4 days) 🏰
@@ -768,9 +768,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️ | 7/7 | 6 |
-| Baltics + Poland (10-14 days) 🇵🇱 | 6/6 | 6 |
-| Tallinn + Riga + Vilnius (7-10 days) 🚌 | 3/3 | 6 |
 | Central European Grand Roadtrip 🚗 | 65/65 | 5 |
 | Nordic Arctic Expedition ❄️ | 37/37 | 4 |
 | Dolomites & North Italy 🚡 | 24/24 | 4 |
@@ -808,6 +805,9 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Nepal 🏔️ | 7/7 | 1 |
 | Northern Italy (6 days) 🚤 | 7/7 | 1 |
 | Serbia + Montenegro + Bosnia (12 days) 🏔️ | 7/7 | 1 |
-| ... 293 more routes with open destinations ... | | |
+| Faroe Islands + Iceland (9 days) ⛴️ | 7/7 | 1 |
+| Madeira + Porto Santo (7-10 days) 🏝️ | 7/7 | 1 |
+| Canary Islands (10-14 days) 🏝️ | 7/7 | 1 |
+| ... 291 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

@@ -8465,6 +8465,41 @@ function rbMigrateCroatiaMontenegroBosniaDestinationNotes() {
 }
 
 /**
+ * Batch 14 (2026-09-17) for the per-destination-notes workflow -- Northern Europe Baltic Ferry
+ * Roadtrip (14 days), a small 6-leg/7-destination combo route, researched in a single pass.
+ * High-leverage shared-signature batch: Tallinn/Riga/Vilnius are reused verbatim by Baltics +
+ * Poland and Tallinn + Riga + Vilnius, and Copenhagen/Stockholm/Helsinki are reused by their own
+ * standalone city routes. Same generic name-matching migration pattern as the grand-tour batches.
+ */
+function rbMigrateNordicBalticDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_NORDIC_BALTIC_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_NORDIC_BALTIC_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Copenhagen (Nyhavn)': "The candy-colored 17th-century gabled houses along the canal were once a rough sailors' quarter where Hans Christian Andersen lived at three different addresses; go right at opening or after dinner to see it without the tour-group crush, and pick up a canal boat tour departing from the harbor itself.",
+    'Stockholm (Gamla Stan)': "Stortorget, the old town's main square, was the site of the 1520 Stockholm Bloodbath; duck down Mårten Trotzigs Gränd, the city's narrowest alley (about 90cm wide), and time a visit to the Royal Palace courtyard for the Changing of the Guard (around midday, fewer times in winter).",
+    'Helsinki (Senate Square)': "Engel's neoclassical ensemble around the square is capped by Helsinki Cathedral's dramatic white staircase, the city's most photographed viewpoint; climb the steps for the view back over the square, best in the low afternoon light.",
+    'Suomenlinna': "This UNESCO sea fortress spread across six islands mixes original 18th-century bastions with museums (the WWII submarine Vesikko is the standout) and is where locals go to picnic on the ramparts; the public ferry from Market Square is covered by a normal Helsinki AB transit ticket, and it's worth a half day, not a quick stop.",
+    'Tallinn (Old Town)': 'Beyond the main squares, climb Toompea Hill to the Kohtuotsa or Patkuli viewing platforms for the classic skyline shot over the medieval spires and city walls.',
+    'Riga (Old Town)': "The House of the Blackheads and Riga Cathedral anchor the old town, but the real standout is just outside it on Alberta iela — one of the world's densest concentrations of Art Nouveau facades, worth a short detour on foot.",
+    'Vilnius (Old Town)': "Cross the river into Užupis, a bohemian pocket that jokingly declared itself an independent republic with its own tongue-in-cheek constitution posted on a wall (in dozens of languages); it's a 5-minute walk from the old town's edge and worth an hour of wandering its cafés and galleries.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -17189,7 +17224,7 @@ function rbBuildStockholmSurroundingsRoute() {
     {
       code: 'SE', name: 'Sweden', days: 6, budget: 690, lat: 59.3251, lng: 18.0711,
       destinations: [
-        { name: 'Stockholm (Gamla Stan)', lat: 59.3251, lng: 18.0711 },
+        { name: 'Stockholm (Gamla Stan)', lat: 59.3251, lng: 18.0711, notes: "Stortorget, the old town's main square, was the site of the 1520 Stockholm Bloodbath; duck down Mårten Trotzigs Gränd, the city's narrowest alley (about 90cm wide), and time a visit to the Royal Palace courtyard for the Changing of the Guard (around midday, fewer times in winter)." },
         { name: 'Uppsala Cathedral', lat: 59.8586, lng: 17.6389 },
         { name: 'Gamla Uppsala', lat: 59.8994, lng: 17.6339 },
         { name: 'Sigtuna', lat: 59.6178, lng: 17.7233 },
@@ -17384,7 +17419,7 @@ function rbBuildCopenhagenZealandRoute() {
     {
       code: 'DK', name: 'Denmark', days: 5, budget: 575, lat: 55.6761, lng: 12.5683,
       destinations: [
-        { name: 'Copenhagen (Nyhavn)', lat: 55.6790, lng: 12.5910 },
+        { name: 'Copenhagen (Nyhavn)', lat: 55.6790, lng: 12.5910, notes: "The candy-colored 17th-century gabled houses along the canal were once a rough sailors' quarter where Hans Christian Andersen lived at three different addresses; go right at opening or after dinner to see it without the tour-group crush, and pick up a canal boat tour departing from the harbor itself." },
         { name: 'Roskilde (Viking Ship Museum)', lat: 55.6415, lng: 12.0803 },
         { name: 'Louisiana Museum (Humlebæk)', lat: 55.9625, lng: 12.5385 },
         { name: 'Møns Klint', lat: 54.9506, lng: 12.5382 },
@@ -17406,7 +17441,7 @@ function rbBuildDenmarkRoute() {
     {
       code: 'DK', name: 'Denmark', days: 6, budget: 690, lat: 55.6761, lng: 12.5683,
       destinations: [
-        { name: 'Copenhagen (Nyhavn)', lat: 55.6790, lng: 12.5910 },
+        { name: 'Copenhagen (Nyhavn)', lat: 55.6790, lng: 12.5910, notes: "The candy-colored 17th-century gabled houses along the canal were once a rough sailors' quarter where Hans Christian Andersen lived at three different addresses; go right at opening or after dinner to see it without the tour-group crush, and pick up a canal boat tour departing from the harbor itself." },
         { name: 'Odense (H.C. Andersen House)', lat: 55.3959, lng: 10.3883 },
         { name: 'LEGO House (Billund)', lat: 55.7308, lng: 9.1256 },
         { name: 'Aarhus (ARoS Art Museum)', lat: 56.1496, lng: 10.2134 },
@@ -17428,7 +17463,7 @@ function rbBuildDenmarkSouthSwedenRoute() {
     {
       code: 'DK', name: 'Denmark', days: 5, budget: 575, lat: 55.6761, lng: 12.5683,
       destinations: [
-        { name: 'Copenhagen (Nyhavn)', lat: 55.6790, lng: 12.5910 },
+        { name: 'Copenhagen (Nyhavn)', lat: 55.6790, lng: 12.5910, notes: "The candy-colored 17th-century gabled houses along the canal were once a rough sailors' quarter where Hans Christian Andersen lived at three different addresses; go right at opening or after dinner to see it without the tour-group crush, and pick up a canal boat tour departing from the harbor itself." },
         { name: 'Roskilde (Viking Ship Museum)', lat: 55.6415, lng: 12.0803 },
         { name: 'Louisiana Museum (Humlebæk)', lat: 55.9625, lng: 12.5385 },
       ],
@@ -17460,8 +17495,8 @@ function rbBuildHelsinkiRoute() {
     {
       code: 'FI', name: 'Finland', days: 4, budget: 310, lat: 60.1699, lng: 24.9384,
       destinations: [
-        { name: 'Helsinki (Senate Square)', lat: 60.1699, lng: 24.9384 },
-        { name: 'Suomenlinna', lat: 60.1454, lng: 24.9880 },
+        { name: 'Helsinki (Senate Square)', lat: 60.1699, lng: 24.9384, notes: "Engel's neoclassical ensemble around the square is capped by Helsinki Cathedral's dramatic white staircase, the city's most photographed viewpoint; climb the steps for the view back over the square, best in the low afternoon light." },
+        { name: 'Suomenlinna', lat: 60.1454, lng: 24.9880, notes: "This UNESCO sea fortress spread across six islands mixes original 18th-century bastions with museums (the WWII submarine Vesikko is the standout) and is where locals go to picnic on the ramparts; the public ferry from Market Square is covered by a normal Helsinki AB transit ticket, and it's worth a half day, not a quick stop." },
         { name: 'Design District', lat: 60.1636, lng: 24.9402 },
       ],
       notes: "The city itself, the Suomenlinna sea fortress island, and the Design District. Budget ~€70-85/day. Season: May-September for light and terraces, or December for the Christmas market — winter is dark but atmospheric. Web check (2026-08): the Helsinki Card's price rose from 2025 to 2026, so check current rates before assuming it pays off; the Suomenlinna ferry is included in the HSL transit ticket, so no separate boat fare is needed.",
@@ -17481,7 +17516,7 @@ function rbBuildHelsinkiLakeDistrictRoute() {
     {
       code: 'FI', name: 'Finland', days: 6, budget: 525, lat: 60.1699, lng: 24.9384,
       destinations: [
-        { name: 'Helsinki (Senate Square)', lat: 60.1699, lng: 24.9384 },
+        { name: 'Helsinki (Senate Square)', lat: 60.1699, lng: 24.9384, notes: "Engel's neoclassical ensemble around the square is capped by Helsinki Cathedral's dramatic white staircase, the city's most photographed viewpoint; climb the steps for the view back over the square, best in the low afternoon light." },
         { name: 'Lahti', lat: 60.9827, lng: 25.6612 },
         { name: 'Savonlinna (Olavinlinna Castle)', lat: 61.8681, lng: 28.8783 },
         { name: 'Lake Saimaa', lat: 61.6167, lng: 28.3833 },
@@ -17503,7 +17538,7 @@ function rbBuildSouthFinlandRoute() {
     {
       code: 'FI', name: 'Finland', days: 9, budget: 765, lat: 60.1699, lng: 24.9384,
       destinations: [
-        { name: 'Helsinki (Senate Square)', lat: 60.1699, lng: 24.9384 },
+        { name: 'Helsinki (Senate Square)', lat: 60.1699, lng: 24.9384, notes: "Engel's neoclassical ensemble around the square is capped by Helsinki Cathedral's dramatic white staircase, the city's most photographed viewpoint; climb the steps for the view back over the square, best in the low afternoon light." },
         { name: 'Turku Castle', lat: 60.4472, lng: 22.2333 },
         { name: 'Turku Cathedral', lat: 60.4512, lng: 22.2745 },
         { name: 'Porvoo', lat: 60.3932, lng: 25.6645 },
@@ -17547,7 +17582,7 @@ function rbBuildFinlandRoadtripRoute() {
     {
       code: 'FI', name: 'Finland', days: 12, budget: 1110, lat: 60.1699, lng: 24.9384,
       destinations: [
-        { name: 'Helsinki (Senate Square)', lat: 60.1699, lng: 24.9384 },
+        { name: 'Helsinki (Senate Square)', lat: 60.1699, lng: 24.9384, notes: "Engel's neoclassical ensemble around the square is capped by Helsinki Cathedral's dramatic white staircase, the city's most photographed viewpoint; climb the steps for the view back over the square, best in the low afternoon light." },
         { name: 'Turku', lat: 60.4518, lng: 22.2666 },
         { name: 'Tampere', lat: 61.4978, lng: 23.7610 },
         { name: 'Rovaniemi (Santa Claus Village)', lat: 66.5636, lng: 25.8471 },
@@ -18313,7 +18348,7 @@ function rbBuildEstoniaRoute() {
     {
       code: 'EE', name: 'Estonia', days: 6, budget: 480, lat: 59.4370, lng: 24.7536,
       destinations: [
-        { name: 'Tallinn (Old Town)', lat: 59.4370, lng: 24.7454 },
+        { name: 'Tallinn (Old Town)', lat: 59.4370, lng: 24.7454, notes: "Beyond the main squares, climb Toompea Hill to the Kohtuotsa or Patkuli viewing platforms for the classic skyline shot over the medieval spires and city walls." },
         { name: 'Lahemaa National Park', lat: 59.4711, lng: 25.9106 },
         { name: 'Kuressaare Castle (Saaremaa)', lat: 58.2481, lng: 22.4886 },
         { name: 'Muhu-Virtsu ferry link', lat: 58.5667, lng: 23.5167 },
@@ -18335,7 +18370,7 @@ function rbBuildLatviaRoute() {
     {
       code: 'LV', name: 'Latvia', days: 6, budget: 480, lat: 56.9496, lng: 24.1052,
       destinations: [
-        { name: 'Riga (Old Town)', lat: 56.9496, lng: 24.1052 },
+        { name: 'Riga (Old Town)', lat: 56.9496, lng: 24.1052, notes: "The House of the Blackheads and Riga Cathedral anchor the old town, but the real standout is just outside it on Alberta iela — one of the world's densest concentrations of Art Nouveau facades, worth a short detour on foot." },
         { name: 'Sigulda', lat: 57.1536, lng: 24.8592 },
         { name: 'Turaida Castle', lat: 57.1719, lng: 24.8494 },
         { name: 'Gauja National Park', lat: 57.1667, lng: 24.8600 },
@@ -18358,7 +18393,7 @@ function rbBuildLithuaniaRoute() {
     {
       code: 'LT', name: 'Lithuania', days: 6, budget: 480, lat: 54.6872, lng: 25.2797,
       destinations: [
-        { name: 'Vilnius (Old Town)', lat: 54.6872, lng: 25.2797 },
+        { name: 'Vilnius (Old Town)', lat: 54.6872, lng: 25.2797, notes: "Cross the river into Užupis, a bohemian pocket that jokingly declared itself an independent republic with its own tongue-in-cheek constitution posted on a wall (in dozens of languages); it's a 5-minute walk from the old town's edge and worth an hour of wandering its cafés and galleries." },
         { name: 'Trakai Castle', lat: 54.6551, lng: 24.9339 },
         { name: 'Kaunas', lat: 54.8985, lng: 23.9036 },
         { name: 'Klaipėda (Smiltynė ferry)', lat: 55.7033, lng: 21.1443 },
@@ -18381,7 +18416,7 @@ function rbBuildTallinnRigaVilniusRoute() {
     {
       code: 'EE', name: 'Estonia', days: 3, budget: 270, lat: 59.4370, lng: 24.7536,
       destinations: [
-        { name: 'Tallinn (Old Town)', lat: 59.4370, lng: 24.7454 },
+        { name: 'Tallinn (Old Town)', lat: 59.4370, lng: 24.7454, notes: "Beyond the main squares, climb Toompea Hill to the Kohtuotsa or Patkuli viewing platforms for the classic skyline shot over the medieval spires and city walls." },
       ],
       notes: "Entry: fly into Tallinn from Amsterdam. Pure capital-hop, no detours to the countryside or islands — 3 days in Tallinn's Old Town. Budget ~€80-100/day (cities run a little more expensive than the countryside legs). Season: May-September. General safety note: watch for pickpocketing in Tallinn.",
       transport_to_next: 'Bus with Lux Express (~3h40) from Tallinn to Riga — no border formalities, both EU/Schengen.',
@@ -18389,7 +18424,7 @@ function rbBuildTallinnRigaVilniusRoute() {
     {
       code: 'LV', name: 'Latvia', days: 3, budget: 270, lat: 56.9496, lng: 24.1052,
       destinations: [
-        { name: 'Riga (Old Town)', lat: 56.9496, lng: 24.1052 },
+        { name: 'Riga (Old Town)', lat: 56.9496, lng: 24.1052, notes: "The House of the Blackheads and Riga Cathedral anchor the old town, but the real standout is just outside it on Alberta iela — one of the world's densest concentrations of Art Nouveau facades, worth a short detour on foot." },
       ],
       notes: "3 days in Riga's Old Town. Budget ~€80-100/day. Season: May-September.",
       transport_to_next: 'Bus with Lux Express (~5h10) from Riga to Vilnius — no border formalities, both EU/Schengen.',
@@ -18397,7 +18432,7 @@ function rbBuildTallinnRigaVilniusRoute() {
     {
       code: 'LT', name: 'Lithuania', days: 3, budget: 270, lat: 54.6872, lng: 25.2797,
       destinations: [
-        { name: 'Vilnius (Old Town)', lat: 54.6872, lng: 25.2797 },
+        { name: 'Vilnius (Old Town)', lat: 54.6872, lng: 25.2797, notes: "Cross the river into Užupis, a bohemian pocket that jokingly declared itself an independent republic with its own tongue-in-cheek constitution posted on a wall (in dozens of languages); it's a 5-minute walk from the old town's edge and worth an hour of wandering its cafés and galleries." },
       ],
       notes: "3 days in Vilnius's Old Town. Budget ~€80-100/day. Web check (2026-08): the Rail Baltica high-speed line is not yet operational (target 2030, with the Latvian section possibly not until 2035), so this route travels entirely by bus (Lux Express/Ecolines, not train) — book ahead in high season, prices roughly $11-60 per leg.",
       transport_to_next: 'End of this route — fly home from Vilnius.',
@@ -18416,7 +18451,7 @@ function rbBuildBalticStatesRoadtripRoute() {
     {
       code: 'EE', name: 'Estonia', days: 5, budget: 400, lat: 59.4370, lng: 24.7536,
       destinations: [
-        { name: 'Tallinn (Old Town)', lat: 59.4370, lng: 24.7454 },
+        { name: 'Tallinn (Old Town)', lat: 59.4370, lng: 24.7454, notes: "Beyond the main squares, climb Toompea Hill to the Kohtuotsa or Patkuli viewing platforms for the classic skyline shot over the medieval spires and city walls." },
         { name: 'Lahemaa National Park', lat: 59.4711, lng: 25.9106 },
         { name: 'Kuressaare Castle (Saaremaa)', lat: 58.2481, lng: 22.4886 },
       ],
@@ -18426,7 +18461,7 @@ function rbBuildBalticStatesRoadtripRoute() {
     {
       code: 'LV', name: 'Latvia', days: 4, budget: 320, lat: 56.9496, lng: 24.1052,
       destinations: [
-        { name: 'Riga (Old Town)', lat: 56.9496, lng: 24.1052 },
+        { name: 'Riga (Old Town)', lat: 56.9496, lng: 24.1052, notes: "The House of the Blackheads and Riga Cathedral anchor the old town, but the real standout is just outside it on Alberta iela — one of the world's densest concentrations of Art Nouveau facades, worth a short detour on foot." },
         { name: 'Sigulda / Turaida Castle / Gauja NP', lat: 57.1536, lng: 24.8592 },
         { name: 'Rundāle Palace (day trip)', lat: 56.4149, lng: 24.0128 },
       ],
@@ -18436,7 +18471,7 @@ function rbBuildBalticStatesRoadtripRoute() {
     {
       code: 'LT', name: 'Lithuania', days: 4, budget: 320, lat: 54.6872, lng: 25.2797,
       destinations: [
-        { name: 'Vilnius (Old Town)', lat: 54.6872, lng: 25.2797 },
+        { name: 'Vilnius (Old Town)', lat: 54.6872, lng: 25.2797, notes: "Cross the river into Užupis, a bohemian pocket that jokingly declared itself an independent republic with its own tongue-in-cheek constitution posted on a wall (in dozens of languages); it's a 5-minute walk from the old town's edge and worth an hour of wandering its cafés and galleries." },
         { name: 'Trakai Castle (day trip)', lat: 54.6551, lng: 24.9339 },
         { name: 'Curonian Spit / Nida', lat: 55.3033, lng: 21.0058 },
       ],
@@ -18457,7 +18492,7 @@ function rbBuildBalticsPolandRoute() {
     {
       code: 'EE', name: 'Estonia', days: 3, budget: 270, lat: 59.4370, lng: 24.7536,
       destinations: [
-        { name: 'Tallinn (Old Town)', lat: 59.4370, lng: 24.7454 },
+        { name: 'Tallinn (Old Town)', lat: 59.4370, lng: 24.7454, notes: "Beyond the main squares, climb Toompea Hill to the Kohtuotsa or Patkuli viewing platforms for the classic skyline shot over the medieval spires and city walls." },
       ],
       notes: "Entry: fly into Tallinn from Amsterdam. 3 days in Tallinn's Old Town, as the start of the capitals-hop portion of this trip (~7-8 days total for Tallinn+Riga+Vilnius). Budget ~€80-100/day.",
       transport_to_next: 'Bus with Lux Express (~3h40) from Tallinn to Riga — no border formalities, both EU/Schengen.',
@@ -18465,7 +18500,7 @@ function rbBuildBalticsPolandRoute() {
     {
       code: 'LV', name: 'Latvia', days: 3, budget: 270, lat: 56.9496, lng: 24.1052,
       destinations: [
-        { name: 'Riga (Old Town)', lat: 56.9496, lng: 24.1052 },
+        { name: 'Riga (Old Town)', lat: 56.9496, lng: 24.1052, notes: "The House of the Blackheads and Riga Cathedral anchor the old town, but the real standout is just outside it on Alberta iela — one of the world's densest concentrations of Art Nouveau facades, worth a short detour on foot." },
       ],
       notes: "3 days in Riga's Old Town. Budget ~€80-100/day.",
       transport_to_next: 'Bus with Lux Express (~5h10) from Riga to Vilnius — no border formalities, both EU/Schengen.',
@@ -18473,7 +18508,7 @@ function rbBuildBalticsPolandRoute() {
     {
       code: 'LT', name: 'Lithuania', days: 3, budget: 270, lat: 54.6872, lng: 25.2797,
       destinations: [
-        { name: 'Vilnius (Old Town)', lat: 54.6872, lng: 25.2797 },
+        { name: 'Vilnius (Old Town)', lat: 54.6872, lng: 25.2797, notes: "Cross the river into Užupis, a bohemian pocket that jokingly declared itself an independent republic with its own tongue-in-cheek constitution posted on a wall (in dozens of languages); it's a 5-minute walk from the old town's edge and worth an hour of wandering its cafés and galleries." },
       ],
       notes: "3 days in Vilnius's Old Town. Budget ~€80-100/day. Web check (2026-08): no Rail Baltica train is available yet, so the capitals leg travels by bus (Lux Express/Ecolines). In the Suwałki Gap (the Lithuania-Poland border area this route crosses next), NATO and Lithuania are actively reinforcing infrastructure and military presence in 2026 (a new training ground at Kapčiamiestis, a road upgrade Vilnius-Augustów) — no danger to tourists, but visible military activity; follow local instructions. The border crossing itself is Schengen, with no passport control.",
       transport_to_next: 'Drive or bus via the Suwałki corridor (the Lithuania-Poland border area) south into Poland — a Schengen crossing with no passport control.',
@@ -20691,7 +20726,7 @@ function rbBuildNorwaySwedenFjordsCapitalsRoute() {
       code: 'SE', name: 'Sweden', days: 5, budget: 500, lat: 58.5000, lng: 15.0000,
       destinations: [
         { name: 'Gothenburg (transit stop)', lat: 57.7089, lng: 11.9746 },
-        { name: 'Stockholm (Gamla Stan)', lat: 59.3251, lng: 18.0711 },
+        { name: 'Stockholm (Gamla Stan)', lat: 59.3251, lng: 18.0711, notes: "Stortorget, the old town's main square, was the site of the 1520 Stockholm Bloodbath; duck down Mårten Trotzigs Gränd, the city's narrowest alley (about 90cm wide), and time a visit to the Royal Palace courtyard for the Changing of the Guard (around midday, fewer times in winter)." },
       ],
       notes: "A brief Gothenburg stopover (transit, optionally an overnight), then on to Stockholm (Gamla Stan, the Vasa Museum, Skansen — same content as Stockholm (4 days) 🏰, rbBuildStockholmRoute) for the last 3-4 days. Budget ~€110/day. Web check (2026-08): the Gothenburg-Stockholm train takes ~3h, making the transit stop easy to extend into a full day if the schedule allows.",
       transport_to_next: 'End of this route — fly home from Stockholm.',
@@ -20710,7 +20745,7 @@ function rbBuildDenmarkSwedenNorwayOverlandRoute() {
     {
       code: 'DK', name: 'Denmark', days: 3, budget: 375, lat: 55.6761, lng: 12.5683,
       destinations: [
-        { name: 'Copenhagen (Nyhavn)', lat: 55.6790, lng: 12.5910 },
+        { name: 'Copenhagen (Nyhavn)', lat: 55.6790, lng: 12.5910, notes: "The candy-colored 17th-century gabled houses along the canal were once a rough sailors' quarter where Hans Christian Andersen lived at three different addresses; go right at opening or after dinner to see it without the tour-group crush, and pick up a canal boat tour departing from the harbor itself." },
         { name: 'Tivoli Gardens', lat: 55.6736, lng: 12.5681 },
       ],
       notes: "Copenhagen (3 days: Nyhavn, Tivoli Gardens, Strøget) — same content as Copenhagen (4 days) 🧜‍♀️ (rbBuildCopenhagenRoute), one day shorter here to make room for the overland legs. Budget ~€125/day.",
@@ -20748,7 +20783,7 @@ function rbBuildNorthernEuropeBalticFerryRoadtripRoute() {
     {
       code: 'DK', name: 'Denmark', days: 2, budget: 250, lat: 55.6761, lng: 12.5683,
       destinations: [
-        { name: 'Copenhagen (Nyhavn)', lat: 55.6790, lng: 12.5910 },
+        { name: 'Copenhagen (Nyhavn)', lat: 55.6790, lng: 12.5910, notes: "The candy-colored 17th-century gabled houses along the canal were once a rough sailors' quarter where Hans Christian Andersen lived at three different addresses; go right at opening or after dinner to see it without the tour-group crush, and pick up a canal boat tour departing from the harbor itself." },
       ],
       notes: "Copenhagen (2 days, a shortened version of Copenhagen (4 days) 🧜‍♀️'s content — Nyhavn, Tivoli Gardens, Strøget). Budget ~€125/day.",
       transport_to_next: "Train to Stockholm, Sweden — Web check (2026-09), significant change: the direct SJ X2000 Copenhagen-Stockholm service has been suspended since 2024 (fleet/re-approval issues) and, as of Sept 2026, its restart keeps getting pushed back (mid-2025 → early 2026 → \"autumn 2026,\" still no confirmed date). Currently this means changing at Malmö: Öresundståg Copenhagen-Malmö, then SJ X2000 Malmö-Stockholm — total journey still roughly ~5-6h with the transfer, but not a single direct train right now. This also means Sweden's Öresundståg-linked ID check at Hyllie Station (see the context on this crossing elsewhere in this project) DOES apply to this leg today, via the Malmö transfer.",
@@ -20756,7 +20791,7 @@ function rbBuildNorthernEuropeBalticFerryRoadtripRoute() {
     {
       code: 'SE', name: 'Sweden', days: 3, budget: 340, lat: 59.3251, lng: 18.0711,
       destinations: [
-        { name: 'Stockholm (Gamla Stan)', lat: 59.3251, lng: 18.0711 },
+        { name: 'Stockholm (Gamla Stan)', lat: 59.3251, lng: 18.0711, notes: "Stortorget, the old town's main square, was the site of the 1520 Stockholm Bloodbath; duck down Mårten Trotzigs Gränd, the city's narrowest alley (about 90cm wide), and time a visit to the Royal Palace courtyard for the Changing of the Guard (around midday, fewer times in winter)." },
       ],
       notes: "Stockholm (3 days) — same content as Stockholm (4 days) 🏰 (rbBuildStockholmRoute), one day shorter here. Budget ~€110/day.",
       transport_to_next: 'Overnight ferry (Viking Line or Tallink Silja, ~15-17h, a cabin is needed) from Stockholm to Helsinki, Finland — one of the Baltic Sea\'s classic established ferry routes.',
@@ -20764,8 +20799,8 @@ function rbBuildNorthernEuropeBalticFerryRoadtripRoute() {
     {
       code: 'FI', name: 'Finland', days: 3, budget: 240, lat: 60.1699, lng: 24.9384,
       destinations: [
-        { name: 'Helsinki (Senate Square)', lat: 60.1699, lng: 24.9384 },
-        { name: 'Suomenlinna', lat: 60.1454, lng: 24.9880 },
+        { name: 'Helsinki (Senate Square)', lat: 60.1699, lng: 24.9384, notes: "Engel's neoclassical ensemble around the square is capped by Helsinki Cathedral's dramatic white staircase, the city's most photographed viewpoint; climb the steps for the view back over the square, best in the low afternoon light." },
+        { name: 'Suomenlinna', lat: 60.1454, lng: 24.9880, notes: "This UNESCO sea fortress spread across six islands mixes original 18th-century bastions with museums (the WWII submarine Vesikko is the standout) and is where locals go to picnic on the ramparts; the public ferry from Market Square is covered by a normal Helsinki AB transit ticket, and it's worth a half day, not a quick stop." },
       ],
       notes: "Helsinki (3 days) — same content as Helsinki (4 days) 🏛️ (rbBuildHelsinkiRoute), one day shorter here. Budget ~€80/day.",
       transport_to_next: 'Ferry (~2h45min-3h15, corrected 2026-09 from an understated "~2h") from Helsinki to Tallinn, Estonia — still the busiest ferry route in the world (up to 13 daily crossings/94 weekly sailings across 3 operators, Viking Line the fastest at ~2h45).',
@@ -20773,7 +20808,7 @@ function rbBuildNorthernEuropeBalticFerryRoadtripRoute() {
     {
       code: 'EE', name: 'Estonia', days: 2, budget: 180, lat: 59.4370, lng: 24.7536,
       destinations: [
-        { name: 'Tallinn (Old Town)', lat: 59.4370, lng: 24.7454 },
+        { name: 'Tallinn (Old Town)', lat: 59.4370, lng: 24.7454, notes: "Beyond the main squares, climb Toompea Hill to the Kohtuotsa or Patkuli viewing platforms for the classic skyline shot over the medieval spires and city walls." },
       ],
       notes: "Tallinn's Old Town (2 days) — same capital-hop content as Tallinn + Riga + Vilnius (7-10 days) 🚌 (rbBuildTallinnRigaVilniusRoute)'s Estonia leg. Budget ~€90/day.",
       transport_to_next: 'Bus with Lux Express (~4-4.5h, corrected 2026-09 from an understated "~3h40") from Tallinn to Riga — no border formalities, both EU/Schengen.',
@@ -20781,7 +20816,7 @@ function rbBuildNorthernEuropeBalticFerryRoadtripRoute() {
     {
       code: 'LV', name: 'Latvia', days: 2, budget: 180, lat: 56.9496, lng: 24.1052,
       destinations: [
-        { name: 'Riga (Old Town)', lat: 56.9496, lng: 24.1052 },
+        { name: 'Riga (Old Town)', lat: 56.9496, lng: 24.1052, notes: "The House of the Blackheads and Riga Cathedral anchor the old town, but the real standout is just outside it on Alberta iela — one of the world's densest concentrations of Art Nouveau facades, worth a short detour on foot." },
       ],
       notes: "Riga's Old Town (2 days) — same content as Tallinn + Riga + Vilnius (7-10 days) 🚌's Latvia leg. Budget ~€90/day.",
       transport_to_next: 'Bus with Lux Express (~4-4.5h, corrected 2026-09 — actually faster than the previously stated "~5h10") from Riga to Vilnius — no border formalities, both EU/Schengen.',
@@ -20789,7 +20824,7 @@ function rbBuildNorthernEuropeBalticFerryRoadtripRoute() {
     {
       code: 'LT', name: 'Lithuania', days: 2, budget: 180, lat: 54.6872, lng: 25.2797,
       destinations: [
-        { name: 'Vilnius (Old Town)', lat: 54.6872, lng: 25.2797 },
+        { name: 'Vilnius (Old Town)', lat: 54.6872, lng: 25.2797, notes: "Cross the river into Užupis, a bohemian pocket that jokingly declared itself an independent republic with its own tongue-in-cheek constitution posted on a wall (in dozens of languages); it's a 5-minute walk from the old town's edge and worth an hour of wandering its cafés and galleries." },
       ],
       notes: "Vilnius's Old Town (2 days, departure) — same content as Tallinn + Riga + Vilnius (7-10 days) 🚌's Lithuania leg. Budget ~€90/day.",
       transport_to_next: 'End of this route — fly home from Vilnius.',
