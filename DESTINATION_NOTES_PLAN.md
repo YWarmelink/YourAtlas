@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 274 / 741 signatures.**
+- **Done so far: 279 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -149,7 +149,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [ ] **ES** (2 dest): Santa Cruz de Tenerife, Teide National Park — routes: Canary Islands (10-14 days) 🏝️, Gran Canaria + Tenerife (7-10 days) 🏝️
 - [x] **ES** (4 dest): Palma (base), Valldemossa, Deià, Sóller — routes: Balearic Islands (7-10 days) 🏝️, Mallorca + Menorca (7-10 days) 🏝️
 - [x] **ES** (2 dest): Ciutadella, Mahón — routes: Balearic Islands (7-10 days) 🏝️, Mallorca + Menorca (7-10 days) 🏝️
-- [ ] **ES** (3 dest): Seville (Alcázar & Cathedral), Córdoba (Mezquita), Granada (Alhambra) — routes: Portugal + Andalusia (10-14 days) 🕌, Portugal + Spain Roadtrip (14 days) 🚗
+- [x] **ES** (3 dest): Seville (Alcázar & Cathedral), Córdoba (Mezquita), Granada (Alhambra) — routes: Portugal + Andalusia (10-14 days) 🕌, Portugal + Spain Roadtrip (14 days) 🚗
 - [x] **FI** (4 dest): Helsinki, Rovaniemi, Inari, Lemmenjoki National Park — routes: Nordic Arctic Expedition ❄️, Scandinavia Overland 🚂
 - [x] **FR** (3 dest): Bonifacio, Ajaccio, Bavella — routes: Corsica & Southern France ⛵, Mediterranean Civilizations Expedition 🏛️
 - [x] **FR** (4 dest): Marseille, Arles, Nîmes, Pont du Gard — routes: Corsica & Southern France ⛵, Mediterranean Civilizations Expedition 🏛️
@@ -337,7 +337,7 @@ Sorted alphabetically by country code.
 - [ ] **EE** (3 dest): Tallinn (Old Town), Lahemaa National Park, Kuressaare Castle (Saaremaa) — routes: Baltic States Roadtrip (10-14 days) 🚗
 - [ ] **EE** (4 dest): Tallinn (Old Town), Lahemaa National Park, Kuressaare Castle (Saaremaa), Muhu-Virtsu ferry link — routes: Estonia (5-7 days) 🏰
 - [ ] **ES** (7 dest): Málaga (fly in), Ronda, Cádiz, Jerez de la Frontera, Seville, Córdoba, Granada — routes: Andalusia Roadtrip (9 days) 🚗
-- [ ] **ES** (2 dest): Seville (Alcázar & Cathedral), Granada (Alhambra) — routes: Andalusia: Seville + Granada (5 days) 🏰
+- [x] **ES** (2 dest): Seville (Alcázar & Cathedral), Granada (Alhambra) — routes: Andalusia: Seville + Granada (5 days) 🏰
 - [ ] **ES** (7 dest): La Seu d'Urgell (cathedral), Cerdanya / Puigcerdà, Vielha (Val d'Aran), Port de la Bonaigua (pass), Boí (Aigüestortes NP shuttle), Espot (Aigüestortes NP shuttle), Ripoll — routes: Andorra + Spanish Pyrenees: Grand Circuit (9 days) 🏔️
 - [ ] **ES** (7 dest): Santander (Magdalena Peninsula), Santillana del Mar, Comillas (El Capricho), Picos de Europa (Potes), Fuente Dé (cable car), Oviedo, Gijón — routes: Asturias + Cantabria (6 days) 🌲
 - [x] **ES** (1 dest): Ibiza Town / Dalt Vila (UNESCO old town) — routes: Balearic Islands (7-10 days) 🏝️
@@ -363,7 +363,7 @@ Sorted alphabetically by country code.
 - [ ] **ES** (6 dest): San Sebastián, Vitoria-Gasteiz, Elciego (Rioja Alavesa), Haro (Rioja Alavesa), Pamplona, Bilbao — routes: Northern Spain: Basque Interior + Rioja (9 days) 🍷
 - [ ] **ES** (9 dest): Santiago de Compostela (Praza do Obradoiro), Oviedo (Asturias), Gijón (Asturias), Picos de Europa (Potes), Fuente Dé (cable car), Santander (Magdalena Peninsula), Santillana del Mar, Bilbao (Guggenheim Museum), San Sebastián (La Concha, optional extension) — routes: Porto + Northern Spain (10-14 days) 🏔️
 - [ ] **ES** (2 dest): Seville (Alcázar & Cathedral), Madrid (Prado Museum) — routes: Portugal + Spain: Porto to Madrid (12 days) 🚆
-- [ ] **ES** (1 dest): Seville (Alcázar & Cathedral) — routes: Southern Europe Highlights Roadtrip (14 days) 🎯
+- [x] **ES** (1 dest): Seville (Alcázar & Cathedral) — routes: Southern Europe Highlights Roadtrip (14 days) 🎯
 - [ ] **ES** (8 dest): Barcelona, Tarragona, Valencia, Alicante (Costa Blanca), Murcia, Almería coast, Málaga / Costa del Sol, Granada (optional inland detour) — routes: Spain: East to South (12 days) 🌅
 - [ ] **ES** (8 dest): San Sebastián / Bilbao, Vitoria-Gasteiz, Burgos (cathedral), Madrid, Toledo (day trip), Segovia (day trip), Ávila (optional), Salamanca (optional) — routes: Spain: North to Central (12 days) 🚉
 - [ ] **ES** (6 dest): Santa Cruz de Tenerife, La Laguna (UNESCO old town), Teide National Park, Anaga Rural Park (Cruz del Carmen), Costa Adeje, Los Cristianos — routes: Tenerife (5-7 days) 🏝️
@@ -670,12 +670,12 @@ Sorted alphabetically by country code.
 - [ ] **PT** (9 dest): Porto (Ribeira), Dom Luís I Bridge, Sé do Porto (cathedral), Livraria Lello, Vila Nova de Gaia (port wine cellars), Pinhão (Douro day trip), Foz do Douro, Matosinhos, Serralves — routes: Porto (4 days) 🌉
 - [ ] **PT** (7 dest): Porto (Vila Nova de Gaia), Pinhão (Douro Valley, 2-3 nights), São Leonardo da Galafura viewpoint, Peso da Régua, Lisbon (Baixa), Bucelas (optional wine detour), Colares (optional wine detour, near Sintra) — routes: Porto + Douro + Lisbon (9 days) 🍷
 - [ ] **PT** (5 dest): Porto (Ribeira), Vila Nova de Gaia (port wine cellars), Guimarães (Paço dos Duques, day trip), Braga (Bom Jesus do Monte, day trip), Viana do Castelo (Santa Luzia viewpoint) — routes: Porto + Northern Spain (10-14 days) 🏔️
-- [ ] **PT** (7 dest): Lisbon (Baixa), Alfama, Belém Tower, Sintra (Palace of Pena), Faro (Ria Formosa), Lagos (Ponta da Piedade), Sagres / Cabo de São Vicente — routes: Portugal + Andalusia (10-14 days) 🕌
+- [x] **PT** (7 dest): Lisbon (Baixa), Alfama, Belém Tower, Sintra (Palace of Pena), Faro (Ria Formosa), Lagos (Ponta da Piedade), Sagres / Cabo de São Vicente — routes: Portugal + Andalusia (10-14 days) 🕌
 - [ ] **PT** (7 dest): Porto (Ribeira), Pinhão (Douro Valley), Coimbra (University), Lisbon (Baixa), Sintra (Palace of Pena), Faro (Ria Formosa), Lagos (Ponta da Piedade) — routes: Portugal + Spain Roadtrip (14 days) 🚗
 - [ ] **PT** (4 dest): Porto (Ribeira), Lisbon (Baixa), Sintra (Palace of Pena), Algarve / Lagos — routes: Portugal + Spain: Porto to Madrid (12 days) 🚆
 - [ ] **PT** (11 dest): Porto, Pinhão (Douro Valley, lighter stop), Coimbra, Serra da Estrela (Torre), Sabugueiro, Óbidos, Nazaré, Lisbon (Baixa), Sintra (Palace of Pena), Évora (Roman Temple + Chapel of Bones), Algarve / Lagos — routes: Portugal Roadtrip (12 days) 🗺️
 - [ ] **PT** (7 dest): Porto, Coimbra (brief stop), Nazaré, Óbidos, Lisbon (Baixa), Sintra (Palace of Pena), Algarve / Lagos — routes: Portugal: North to South (9 days) 🧭
-- [ ] **PT** (3 dest): Lisbon (Baixa), Alfama, Belém Tower — routes: Southern Europe Highlights Roadtrip (14 days) 🎯
+- [x] **PT** (3 dest): Lisbon (Baixa), Alfama, Belém Tower — routes: Southern Europe Highlights Roadtrip (14 days) 🎯
 - [ ] **PT** (4 dest): Ponta Delgada (town, harbour), Sete Cidades (crater lakes), Furnas (thermal springs, cozido), Lagoa do Fogo — routes: São Miguel (Azores) (5-7 days) 🏝️
 - [ ] **PW** (5 dest): Koror, Rock Islands Southern Lagoon & Jellyfish Lake, Blue Corner (dive site), Peleliu Island (WWII battle sites), Ngardmau Waterfall, Babeldaob — routes: Palau 🦈
 - [ ] **RO** (4 dest): Bucharest (Old Town / Palace of the Parliament, "Ceaușescu's Palace"), Brașov, Bran Castle, Peleș Castle (Sinaia) — routes: Bucharest + Transylvania (5 days) 🏰
@@ -768,10 +768,8 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| Portugal + Andalusia (10-14 days) 🕌 | 10/10 | 1 |
-| Portugal + Spain Roadtrip (14 days) 🚗 | 10/10 | 1 |
-| India & Himalaya Expedition 🏔️ | 9/22 | 1 |
 | North India 🕌 | 9/9 | 1 |
+| India & Himalaya Expedition 🏔️ | 9/22 | 1 |
 | Switzerland Alpine Roadtrip (9 days) 🛣️ | 9/9 | 1 |
 | France + Switzerland + Italy (10-14 days) 🗻 | 9/9 | 1 |
 | Northern Italy (6 days) 🚤 | 7/7 | 1 |
@@ -797,8 +795,8 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Kosovo + Montenegro + Albania (9 days) 🗻 | 3/5 | 1 |
 | San Marino + Tuscany (5 days) 🍷 | 2/5 | 1 |
 | Slovenia + Croatian Istria (7-10 days) 🏖️ | 2/4 | 1 |
-| Kosovo + North Macedonia + Albania (9 days) 🎒 | 2/5 | 1 |
 | Kosovo + North Macedonia (6 days) 🚏 | 2/4 | 1 |
+| Kosovo + North Macedonia + Albania (9 days) 🎒 | 2/5 | 1 |
 | Berlin (4 days) 🐻 | 1/1 | 1 |
 | Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂 | 19/19 | 0 |
 | Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧 | 19/19 | 0 |
@@ -808,6 +806,8 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | US Southwest 🏜️ | 12/12 | 0 |
 | Florida 🐊 | 12/12 | 0 |
 | Hawaii 🐢 | 11/11 | 0 |
-| ... 267 more routes with open destinations ... | | |
+| Rome (4 days) 🏛️ | 11/11 | 0 |
+| Sicily + Malta (9 days) 🌋 | 11/11 | 0 |
+| ... 265 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

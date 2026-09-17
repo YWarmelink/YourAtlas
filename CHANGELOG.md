@@ -12,6 +12,15 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 28 — Portugal + Andalusia (10-14 days) (2026-09-17)** — a small
+  2-leg/10-destination combo route, researched in a single pass. Córdoba/Granada already had
+  notes from an earlier batch, so only 8 destinations were newly researched. High-leverage
+  shared-signature batch: these Lisbon/Sintra/Algarve destinations are reused verbatim by
+  "Portugal + Spain Roadtrip". Same generic name-matching migration
+  (`rbMigratePortugalAndalusiaDestinationNotes()`) — 10 routes confirmed touched in the live
+  simulation. App-wide total: 2556 destination-slots filled across 314 routes. 279/741
+  signatures done.
+
 - **Per-destination notes, batch 27 — Sicily + Southern Italy (12 days) (2026-09-17)** — 7 legs,
   12 destinations (7 newly researched — Taormina/Etna/Syracuse/Palermo/Cefalù already covered
   from earlier batches), researched in a single pass. Same generic name-matching migration

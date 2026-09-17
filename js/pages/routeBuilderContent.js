@@ -9055,6 +9055,43 @@ function rbMigrateSicilySouthernItalyDestinationNotes() {
 }
 
 /**
+ * Batch 28 (2026-09-17) for the per-destination-notes workflow -- Portugal + Andalusia (10-14
+ * days), a small 2-leg/10-destination combo route researched in a single pass -- Córdoba and
+ * Granada already had notes from an earlier batch, so only the remaining 8 destinations were
+ * newly researched. High-leverage shared-signature batch: these Lisbon/Sintra/Algarve
+ * destinations are reused verbatim by the "Portugal + Spain Roadtrip" route. Same generic
+ * name-matching migration pattern as the grand-tour batches above.
+ */
+function rbMigratePortugalAndalusiaDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_PORTUGAL_ANDALUSIA_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_PORTUGAL_ANDALUSIA_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Lisbon (Baixa)': "The flat neoclassical grid rebuilt after the 1755 earthquake, centered on riverside Praça do Comércio and Rossio square — it's the hub connecting Alfama and Bairro Alto, not a destination in itself. Ride the Elevador de Santa Justa or walk up to a miradouro rather than staying on the flat grid, since Baixa is the least distinctive part of central Lisbon by design.",
+    'Alfama': "Lisbon's oldest neighborhood, the only district to largely survive the 1755 earthquake — a maze of narrow medieval alleys below São Jorge Castle and the historic home of Fado. Go early morning to see it before tour groups arrive, or catch a live Fado set in one of the small tascas in the evening.",
+    'Belém Tower': "A 16th-century fortified Manueline tower marking the Tagus's edge, built to guard the harbor during the Age of Discoveries and paired with nearby Jerónimos Monastery. Its narrow spiral staircase limits how many people can be inside at once, so queues build fast — buy a timed ticket online or arrive right at opening.",
+    'Sintra (Palace of Pena)': "A candy-colored Romanticist palace atop a forested hilltop, mixing Gothic, Islamic and Manueline styles at the whim of King Ferdinand II — the standout of Sintra's several palaces. Book a timed-entry ticket online and arrive by 8-9am opening, since day-tripping tour buses from Lisbon fill the site and the shuttle/entrance queues get very long by mid-morning.",
+    'Faro (Ria Formosa)': "Faro town itself is a modest gateway — the real draw is the Ria Formosa, a lagoon system of barrier islands and salt marshes just offshore. Take a boat out to Ilha Deserta or Culatra for near-empty beaches rather than judging the area by Faro's town center.",
+    'Lagos (Ponta da Piedade)': "Dramatic golden limestone cliffs riddled with arches and sea grottoes at Lagos's southern tip. The clifftop viewpoint is only the preview — a kayak or small-boat tour (or a sunset run) gets you into the grottoes at water level, which is the actual highlight.",
+    'Sagres / Cabo de São Vicente': 'Continental Europe\'s southwesternmost point, considered the "end of the known world" in medieval times and tied to Henry the Navigator\'s school of navigation. Go for sunset (among the last places in mainland Europe to see it), but bring a windbreaker — the headland is exposed and reliably windy.',
+    'Seville (Alcázar & Cathedral)': "The Real Alcázar is a still-functioning royal palace showcasing Mudéjar architecture (and a Game of Thrones filming location); the adjoining Cathedral is the world's largest Gothic church, topped by the Giralda tower. Book Alcázar tickets online for a specific time slot well ahead — it sells out, especially in summer — and climb the Giralda via its internal ramps (built for mounted access, not stairs) for city views.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -14272,7 +14309,7 @@ function rbBuildAndalusiaSevilleGranadaRoute() {
     {
       code: 'ES', name: 'Spain', days: 5, budget: 425, lat: 37.3891, lng: -5.9845,
       destinations: [
-        { name: 'Seville (Alcázar & Cathedral)', lat: 37.3839, lng: -5.9903 },
+        { name: 'Seville (Alcázar & Cathedral)', lat: 37.3839, lng: -5.9903, notes: "The Real Alcázar is a still-functioning royal palace showcasing Mudéjar architecture (and a Game of Thrones filming location); the adjoining Cathedral is the world's largest Gothic church, topped by the Giralda tower. Book Alcázar tickets online for a specific time slot well ahead — it sells out, especially in summer — and climb the Giralda via its internal ramps (built for mounted access, not stairs) for city views." },
         { name: 'Granada (Alhambra)', lat: 37.1761, lng: -3.5881 },
       ],
       notes: "Just the two capitals, Seville and Granada — no wider Andalusia loop here (see the Andalusia Roadtrip below for that). Entry: fly to Málaga or Seville (no direct NL flight found to Seville or Granada themselves — check seasonal routes) or connect via Madrid/Barcelona; train Seville-Granada ~3h. Season: March-May or October-November — avoid July-August, when inland Andalusia regularly hits 40°C+ and Córdoba/Seville/Granada/Jaén rank among Europe's hottest cities (2026 already saw orange heat alerts). Budget ~€85/day. Web check (2026-08): Alhambra tickets need to be booked 2-3 months ahead — they sell out weeks to months in advance even outside peak season (tour groups and school trips fill much of the allocation), there's no reliable walk-up/box-office availability.",
@@ -14713,12 +14750,12 @@ function rbBuildLisbonSintraRoute() {
     {
       code: 'PT', name: 'Portugal', days: 5, budget: 490, lat: 38.7223, lng: -9.1393,
       destinations: [
-        { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366 },
-        { name: 'Alfama', lat: 38.7139, lng: -9.1301 },
+        { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366, notes: "The flat neoclassical grid rebuilt after the 1755 earthquake, centered on riverside Praça do Comércio and Rossio square — it's the hub connecting Alfama and Bairro Alto, not a destination in itself. Ride the Elevador de Santa Justa or walk up to a miradouro rather than staying on the flat grid, since Baixa is the least distinctive part of central Lisbon by design." },
+        { name: 'Alfama', lat: 38.7139, lng: -9.1301, notes: "Lisbon's oldest neighborhood, the only district to largely survive the 1755 earthquake — a maze of narrow medieval alleys below São Jorge Castle and the historic home of Fado. Go early morning to see it before tour groups arrive, or catch a live Fado set in one of the small tascas in the evening." },
         { name: 'Castelo de São Jorge', lat: 38.7139, lng: -9.1335 },
-        { name: 'Belém Tower', lat: 38.6916, lng: -9.2160 },
+        { name: 'Belém Tower', lat: 38.6916, lng: -9.2160, notes: "A 16th-century fortified Manueline tower marking the Tagus's edge, built to guard the harbor during the Age of Discoveries and paired with nearby Jerónimos Monastery. Its narrow spiral staircase limits how many people can be inside at once, so queues build fast — buy a timed ticket online or arrive right at opening." },
         { name: 'Jerónimos Monastery', lat: 38.6979, lng: -9.2068 },
-        { name: 'Sintra (Palace of Pena)', lat: 38.7876, lng: -9.3905 },
+        { name: 'Sintra (Palace of Pena)', lat: 38.7876, lng: -9.3905, notes: "A candy-colored Romanticist palace atop a forested hilltop, mixing Gothic, Islamic and Manueline styles at the whim of King Ferdinand II — the standout of Sintra's several palaces. Book a timed-entry ticket online and arrive by 8-9am opening, since day-tripping tour buses from Lisbon fill the site and the shuttle/entrance queues get very long by mid-morning." },
         { name: 'Quinta da Regaleira', lat: 38.7969, lng: -9.3969 },
         { name: 'Cascais', lat: 38.6979, lng: -9.4215 },
         { name: 'Cabo da Roca', lat: 38.7811, lng: -9.4986 },
@@ -14764,10 +14801,10 @@ function rbBuildAlgarveRoute() {
     {
       code: 'PT', name: 'Portugal', days: 6, budget: 550, lat: 37.0891, lng: -8.2493,
       destinations: [
-        { name: 'Faro (Ria Formosa)', lat: 37.0194, lng: -7.9304 },
-        { name: 'Lagos (Ponta da Piedade)', lat: 37.0836, lng: -8.6698 },
+        { name: 'Faro (Ria Formosa)', lat: 37.0194, lng: -7.9304, notes: "Faro town itself is a modest gateway — the real draw is the Ria Formosa, a lagoon system of barrier islands and salt marshes just offshore. Take a boat out to Ilha Deserta or Culatra for near-empty beaches rather than judging the area by Faro's town center." },
+        { name: 'Lagos (Ponta da Piedade)', lat: 37.0836, lng: -8.6698, notes: "Dramatic golden limestone cliffs riddled with arches and sea grottoes at Lagos's southern tip. The clifftop viewpoint is only the preview — a kayak or small-boat tour (or a sunset run) gets you into the grottoes at water level, which is the actual highlight." },
         { name: 'Praia Dona Ana', lat: 37.0906, lng: -8.6689 },
-        { name: 'Sagres / Cabo de São Vicente', lat: 37.0206, lng: -8.9773 },
+        { name: 'Sagres / Cabo de São Vicente', lat: 37.0206, lng: -8.9773, notes: "Continental Europe's southwesternmost point, considered the \"end of the known world\" in medieval times and tied to Henry the Navigator's school of navigation. Go for sunset (among the last places in mainland Europe to see it), but bring a windbreaker — the headland is exposed and reliably windy." },
         { name: 'Portimão', lat: 37.1393, lng: -8.5378 },
         { name: 'Carvoeiro', lat: 37.0968, lng: -8.4747 },
         { name: 'Benagil (sea cave)', lat: 37.0889, lng: -8.4271 },
@@ -14795,8 +14832,8 @@ function rbBuildPortugalNorthToSouthRoute() {
         { name: 'Coimbra (brief stop)', lat: 40.2076, lng: -8.4257 },
         { name: 'Nazaré', lat: 39.6014, lng: -9.0714 },
         { name: 'Óbidos', lat: 39.3604, lng: -9.1571 },
-        { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366 },
-        { name: 'Sintra (Palace of Pena)', lat: 38.7876, lng: -9.3905 },
+        { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366, notes: "The flat neoclassical grid rebuilt after the 1755 earthquake, centered on riverside Praça do Comércio and Rossio square — it's the hub connecting Alfama and Bairro Alto, not a destination in itself. Ride the Elevador de Santa Justa or walk up to a miradouro rather than staying on the flat grid, since Baixa is the least distinctive part of central Lisbon by design." },
+        { name: 'Sintra (Palace of Pena)', lat: 38.7876, lng: -9.3905, notes: "A candy-colored Romanticist palace atop a forested hilltop, mixing Gothic, Islamic and Manueline styles at the whim of King Ferdinand II — the standout of Sintra's several palaces. Book a timed-entry ticket online and arrive by 8-9am opening, since day-tripping tour buses from Lisbon fill the site and the shuttle/entrance queues get very long by mid-morning." },
         { name: 'Algarve / Lagos', lat: 37.1021, lng: -8.6743 },
       ],
       notes: "Restructured as the fast sweep, deliberately treating Coimbra as a brief stop only (see Central Portugal below for the fuller version): Porto (2 days) — Coimbra (1 day, brief) — Nazaré/Óbidos (1 day) — Lisbon + Sintra (2-3 days) — the Algarve/Lagos (2 days). Open-jaw Porto in/Faro out (or reversed) — expect a one-way rental-car drop fee; driving straight Porto-Faro takes ~5h/560km via the A1/A2 with no stops. Budget ~€85-95/day. Season: April-June or September-October — balances the cooler north against the warm-but-not-scorching south. Web check (2026-08): the A1 Lisbon-Porto toll is ~€22-25 one-way (class 1); the previously electronic-toll-only SCUT motorways (A22 Algarve, A23, A24, and since January 2026 also A25) are now free — a real relief for the southern leg.",
@@ -14820,7 +14857,7 @@ function rbBuildPortoDouroLisbonRoute() {
         { name: 'Pinhão (Douro Valley, 2-3 nights)', lat: 41.1897, lng: -7.5461 },
         { name: 'São Leonardo da Galafura viewpoint', lat: 41.1584, lng: -7.6229 },
         { name: 'Peso da Régua', lat: 41.1621, lng: -7.7871 },
-        { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366 },
+        { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366, notes: "The flat neoclassical grid rebuilt after the 1755 earthquake, centered on riverside Praça do Comércio and Rossio square — it's the hub connecting Alfama and Bairro Alto, not a destination in itself. Ride the Elevador de Santa Justa or walk up to a miradouro rather than staying on the flat grid, since Baixa is the least distinctive part of central Lisbon by design." },
         { name: 'Bucelas (optional wine detour)', lat: 38.9167, lng: -9.1167 },
         { name: 'Colares (optional wine detour, near Sintra)', lat: 38.8000, lng: -9.4453 },
       ],
@@ -14848,8 +14885,8 @@ function rbBuildPortugalRoadtripRoute() {
         { name: 'Sabugueiro', lat: 40.3625, lng: -7.6069 },
         { name: 'Óbidos', lat: 39.3604, lng: -9.1571 },
         { name: 'Nazaré', lat: 39.6014, lng: -9.0714 },
-        { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366 },
-        { name: 'Sintra (Palace of Pena)', lat: 38.7876, lng: -9.3905 },
+        { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366, notes: "The flat neoclassical grid rebuilt after the 1755 earthquake, centered on riverside Praça do Comércio and Rossio square — it's the hub connecting Alfama and Bairro Alto, not a destination in itself. Ride the Elevador de Santa Justa or walk up to a miradouro rather than staying on the flat grid, since Baixa is the least distinctive part of central Lisbon by design." },
+        { name: 'Sintra (Palace of Pena)', lat: 38.7876, lng: -9.3905, notes: "A candy-colored Romanticist palace atop a forested hilltop, mixing Gothic, Islamic and Manueline styles at the whim of King Ferdinand II — the standout of Sintra's several palaces. Book a timed-entry ticket online and arrive by 8-9am opening, since day-tripping tour buses from Lisbon fill the site and the shuttle/entrance queues get very long by mid-morning." },
         { name: 'Évora (Roman Temple + Chapel of Bones)', lat: 38.5714, lng: -7.9086 },
         { name: 'Algarve / Lagos', lat: 37.1021, lng: -8.6743 },
       ],
@@ -20307,13 +20344,13 @@ function rbBuildPortugalAndalusiaRoute() {
     {
       code: 'PT', name: 'Portugal', days: 7, budget: 630, lat: 38.0000, lng: -8.3000,
       destinations: [
-        { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366 },
-        { name: 'Alfama', lat: 38.7139, lng: -9.1301 },
-        { name: 'Belém Tower', lat: 38.6916, lng: -9.2160 },
-        { name: 'Sintra (Palace of Pena)', lat: 38.7876, lng: -9.3905 },
-        { name: 'Faro (Ria Formosa)', lat: 37.0194, lng: -7.9304 },
-        { name: 'Lagos (Ponta da Piedade)', lat: 37.0836, lng: -8.6698 },
-        { name: 'Sagres / Cabo de São Vicente', lat: 37.0206, lng: -8.9773 },
+        { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366, notes: "The flat neoclassical grid rebuilt after the 1755 earthquake, centered on riverside Praça do Comércio and Rossio square — it's the hub connecting Alfama and Bairro Alto, not a destination in itself. Ride the Elevador de Santa Justa or walk up to a miradouro rather than staying on the flat grid, since Baixa is the least distinctive part of central Lisbon by design." },
+        { name: 'Alfama', lat: 38.7139, lng: -9.1301, notes: "Lisbon's oldest neighborhood, the only district to largely survive the 1755 earthquake — a maze of narrow medieval alleys below São Jorge Castle and the historic home of Fado. Go early morning to see it before tour groups arrive, or catch a live Fado set in one of the small tascas in the evening." },
+        { name: 'Belém Tower', lat: 38.6916, lng: -9.2160, notes: "A 16th-century fortified Manueline tower marking the Tagus's edge, built to guard the harbor during the Age of Discoveries and paired with nearby Jerónimos Monastery. Its narrow spiral staircase limits how many people can be inside at once, so queues build fast — buy a timed ticket online or arrive right at opening." },
+        { name: 'Sintra (Palace of Pena)', lat: 38.7876, lng: -9.3905, notes: "A candy-colored Romanticist palace atop a forested hilltop, mixing Gothic, Islamic and Manueline styles at the whim of King Ferdinand II — the standout of Sintra's several palaces. Book a timed-entry ticket online and arrive by 8-9am opening, since day-tripping tour buses from Lisbon fill the site and the shuttle/entrance queues get very long by mid-morning." },
+        { name: 'Faro (Ria Formosa)', lat: 37.0194, lng: -7.9304, notes: "Faro town itself is a modest gateway — the real draw is the Ria Formosa, a lagoon system of barrier islands and salt marshes just offshore. Take a boat out to Ilha Deserta or Culatra for near-empty beaches rather than judging the area by Faro's town center." },
+        { name: 'Lagos (Ponta da Piedade)', lat: 37.0836, lng: -8.6698, notes: "Dramatic golden limestone cliffs riddled with arches and sea grottoes at Lagos's southern tip. The clifftop viewpoint is only the preview — a kayak or small-boat tour (or a sunset run) gets you into the grottoes at water level, which is the actual highlight." },
+        { name: 'Sagres / Cabo de São Vicente', lat: 37.0206, lng: -8.9773, notes: "Continental Europe's southwesternmost point, considered the \"end of the known world\" in medieval times and tied to Henry the Navigator's school of navigation. Go for sunset (among the last places in mainland Europe to see it), but bring a windbreaker — the headland is exposed and reliably windy." },
       ],
       notes: "Lisbon + Sintra (3-4 days: Baixa/Alfama, Belém, a full day in Sintra at the Palace of Pena) — south to the Algarve (3 days: Faro, Lagos' Ponta da Piedade, Sagres/Cabo de São Vicente). Entry: direct AMS-Lisbon. Budget ~€85-95/day, used here at ~€90/day. Season: April-June or September-October; avoid July-August.",
       transport_to_next: 'Cross into Spain at the Ayamonte (Portugal)-Huelva (Spain) bridge over the Guadiana river — no border control, fully Schengen-internal — then on to Seville (~1h15).',
@@ -20321,7 +20358,7 @@ function rbBuildPortugalAndalusiaRoute() {
     {
       code: 'ES', name: 'Spain', days: 5, budget: 450, lat: 37.5000, lng: -5.0000,
       destinations: [
-        { name: 'Seville (Alcázar & Cathedral)', lat: 37.3839, lng: -5.9903 },
+        { name: 'Seville (Alcázar & Cathedral)', lat: 37.3839, lng: -5.9903, notes: "The Real Alcázar is a still-functioning royal palace showcasing Mudéjar architecture (and a Game of Thrones filming location); the adjoining Cathedral is the world's largest Gothic church, topped by the Giralda tower. Book Alcázar tickets online for a specific time slot well ahead — it sells out, especially in summer — and climb the Giralda via its internal ramps (built for mounted access, not stairs) for city views." },
         { name: 'Córdoba (Mezquita)', lat: 37.8882, lng: -4.7794 },
         { name: 'Granada (Alhambra)', lat: 37.1773, lng: -3.5986 },
       ],
@@ -20345,10 +20382,10 @@ function rbBuildPortugalSpainRoadtripRoute() {
         { name: 'Porto (Ribeira)', lat: 41.1405, lng: -8.6118 },
         { name: 'Pinhão (Douro Valley)', lat: 41.1897, lng: -7.5461 },
         { name: 'Coimbra (University)', lat: 40.2076, lng: -8.4257 },
-        { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366 },
-        { name: 'Sintra (Palace of Pena)', lat: 38.7876, lng: -9.3905 },
-        { name: 'Faro (Ria Formosa)', lat: 37.0194, lng: -7.9304 },
-        { name: 'Lagos (Ponta da Piedade)', lat: 37.0836, lng: -8.6698 },
+        { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366, notes: "The flat neoclassical grid rebuilt after the 1755 earthquake, centered on riverside Praça do Comércio and Rossio square — it's the hub connecting Alfama and Bairro Alto, not a destination in itself. Ride the Elevador de Santa Justa or walk up to a miradouro rather than staying on the flat grid, since Baixa is the least distinctive part of central Lisbon by design." },
+        { name: 'Sintra (Palace of Pena)', lat: 38.7876, lng: -9.3905, notes: "A candy-colored Romanticist palace atop a forested hilltop, mixing Gothic, Islamic and Manueline styles at the whim of King Ferdinand II — the standout of Sintra's several palaces. Book a timed-entry ticket online and arrive by 8-9am opening, since day-tripping tour buses from Lisbon fill the site and the shuttle/entrance queues get very long by mid-morning." },
+        { name: 'Faro (Ria Formosa)', lat: 37.0194, lng: -7.9304, notes: "Faro town itself is a modest gateway — the real draw is the Ria Formosa, a lagoon system of barrier islands and salt marshes just offshore. Take a boat out to Ilha Deserta or Culatra for near-empty beaches rather than judging the area by Faro's town center." },
+        { name: 'Lagos (Ponta da Piedade)', lat: 37.0836, lng: -8.6698, notes: "Dramatic golden limestone cliffs riddled with arches and sea grottoes at Lagos's southern tip. The clifftop viewpoint is only the preview — a kayak or small-boat tour (or a sunset run) gets you into the grottoes at water level, which is the actual highlight." },
       ],
       notes: "The broadest version of this batch's Portugal content: Porto (2 days) — the Douro Valley (1 day, Pinhão) — Coimbra (1 day) — Lisbon + Sintra (3 days) — the Algarve (2 days, compressed compared to the standalone 6-day Algarve trip, to fit the wider Iberian loop within 14 days total). Entry: open-jaw Porto in / Granada or Málaga out. Budget ~€85-95/day, used here at ~€90/day. Season: April-June or September-October.",
       transport_to_next: 'Cross into Spain at the Ayamonte (Portugal)-Huelva (Spain) bridge over the Guadiana river — no border control, fully Schengen-internal — then on to Seville (~1h15).',
@@ -20356,7 +20393,7 @@ function rbBuildPortugalSpainRoadtripRoute() {
     {
       code: 'ES', name: 'Spain', days: 5, budget: 450, lat: 37.5000, lng: -5.0000,
       destinations: [
-        { name: 'Seville (Alcázar & Cathedral)', lat: 37.3839, lng: -5.9903 },
+        { name: 'Seville (Alcázar & Cathedral)', lat: 37.3839, lng: -5.9903, notes: "The Real Alcázar is a still-functioning royal palace showcasing Mudéjar architecture (and a Game of Thrones filming location); the adjoining Cathedral is the world's largest Gothic church, topped by the Giralda tower. Book Alcázar tickets online for a specific time slot well ahead — it sells out, especially in summer — and climb the Giralda via its internal ramps (built for mounted access, not stairs) for city views." },
         { name: 'Córdoba (Mezquita)', lat: 37.8882, lng: -4.7794 },
         { name: 'Granada (Alhambra)', lat: 37.1773, lng: -3.5986 },
       ],
@@ -21239,8 +21276,8 @@ function rbBuildSpainPortugalPortoMadridRoute() {
       code: 'PT', name: 'Portugal', days: 8, budget: 720, lat: 39.9000, lng: -8.9000,
       destinations: [
         { name: 'Porto (Ribeira)', lat: 41.1405, lng: -8.6118 },
-        { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366 },
-        { name: 'Sintra (Palace of Pena)', lat: 38.7876, lng: -9.3905 },
+        { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366, notes: "The flat neoclassical grid rebuilt after the 1755 earthquake, centered on riverside Praça do Comércio and Rossio square — it's the hub connecting Alfama and Bairro Alto, not a destination in itself. Ride the Elevador de Santa Justa or walk up to a miradouro rather than staying on the flat grid, since Baixa is the least distinctive part of central Lisbon by design." },
+        { name: 'Sintra (Palace of Pena)', lat: 38.7876, lng: -9.3905, notes: "A candy-colored Romanticist palace atop a forested hilltop, mixing Gothic, Islamic and Manueline styles at the whim of King Ferdinand II — the standout of Sintra's several palaces. Book a timed-entry ticket online and arrive by 8-9am opening, since day-tripping tour buses from Lisbon fill the site and the shuttle/entrance queues get very long by mid-morning." },
         { name: 'Algarve / Lagos', lat: 37.1021, lng: -8.6743 },
       ],
       notes: "Porto (2 days) — Lisbon + Sintra (3 days) — the Algarve/Lagos (3 days) — a purely linear sweep with no backtracking, deliberately without the Douro/Coimbra/Évora detours of the fuller Portugal Roadtrip (12 days) 🗺️ route or the Córdoba/Granada loop of the broader Portugal + Spain Roadtrip (14 days) 🚗 route (see this route's own notes below for both). Entry: open-jaw AMS-Porto in, ending overland in Madrid for the flight home. Budget ~€90-100/day. Season: April-June or September-October — July-August is too hot in the Algarve and gets extreme further along the route in Seville.",
@@ -21249,7 +21286,7 @@ function rbBuildSpainPortugalPortoMadridRoute() {
     {
       code: 'ES', name: 'Spain', days: 4, budget: 380, lat: 39.0000, lng: -5.0000,
       destinations: [
-        { name: 'Seville (Alcázar & Cathedral)', lat: 37.3839, lng: -5.9903 },
+        { name: 'Seville (Alcázar & Cathedral)', lat: 37.3839, lng: -5.9903, notes: "The Real Alcázar is a still-functioning royal palace showcasing Mudéjar architecture (and a Game of Thrones filming location); the adjoining Cathedral is the world's largest Gothic church, topped by the Giralda tower. Book Alcázar tickets online for a specific time slot well ahead — it sells out, especially in summer — and climb the Giralda via its internal ramps (built for mounted access, not stairs) for city views." },
         { name: 'Madrid (Prado Museum)', lat: 40.4138, lng: -3.6921 },
       ],
       notes: "Seville (2 days, the Alcázar and Cathedral) — Madrid (2 days, the Prado, departure) — deliberately no Córdoba/Granada detour here, unlike the sibling route named above. Budget ~€90-100/day. Madrid-Seville by AVE high-speed train (~2h30) is a realistic alternative to driving the whole leg, if the rental car is dropped off in Seville.",
@@ -21523,9 +21560,9 @@ function rbBuildSouthernEuropeHighlightsRoadtripRoute() {
     {
       code: 'PT', name: 'Portugal', days: 3, budget: 294, lat: 38.7223, lng: -9.1393,
       destinations: [
-        { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366 },
-        { name: 'Alfama', lat: 38.7139, lng: -9.1301 },
-        { name: 'Belém Tower', lat: 38.6916, lng: -9.2160 },
+        { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366, notes: "The flat neoclassical grid rebuilt after the 1755 earthquake, centered on riverside Praça do Comércio and Rossio square — it's the hub connecting Alfama and Bairro Alto, not a destination in itself. Ride the Elevador de Santa Justa or walk up to a miradouro rather than staying on the flat grid, since Baixa is the least distinctive part of central Lisbon by design." },
+        { name: 'Alfama', lat: 38.7139, lng: -9.1301, notes: "Lisbon's oldest neighborhood, the only district to largely survive the 1755 earthquake — a maze of narrow medieval alleys below São Jorge Castle and the historic home of Fado. Go early morning to see it before tour groups arrive, or catch a live Fado set in one of the small tascas in the evening." },
+        { name: 'Belém Tower', lat: 38.6916, lng: -9.2160, notes: "A 16th-century fortified Manueline tower marking the Tagus's edge, built to guard the harbor during the Age of Discoveries and paired with nearby Jerónimos Monastery. Its narrow spiral staircase limits how many people can be inside at once, so queues build fast — buy a timed ticket online or arrive right at opening." },
       ],
       notes: "Lisbon's Baixa, Alfama and Belém (3 days) — same content as Lisbon + Sintra (5 days) 🏰 (rbBuildLisbonSintraRoute), compressed and without the Sintra day trip to fit this route's much wider scope. Budget ~€98/day (reused from that route's per-day rate). Entry: direct AMS-Lisbon.",
       transport_to_next: 'Overland (train/bus) to Seville — no direct train, a bus (ALSA, ~6-7h) or a rental car via Extremadura; fully Schengen-internal, no border checks.',
@@ -21533,7 +21570,7 @@ function rbBuildSouthernEuropeHighlightsRoadtripRoute() {
     {
       code: 'ES', name: 'Spain', days: 3, budget: 270, lat: 37.3891, lng: -5.9845,
       destinations: [
-        { name: 'Seville (Alcázar & Cathedral)', lat: 37.3839, lng: -5.9903 },
+        { name: 'Seville (Alcázar & Cathedral)', lat: 37.3839, lng: -5.9903, notes: "The Real Alcázar is a still-functioning royal palace showcasing Mudéjar architecture (and a Game of Thrones filming location); the adjoining Cathedral is the world's largest Gothic church, topped by the Giralda tower. Book Alcázar tickets online for a specific time slot well ahead — it sells out, especially in summer — and climb the Giralda via its internal ramps (built for mounted access, not stairs) for city views." },
       ],
       notes: "Seville's Alcázar and Cathedral (3 days) — the same Andalusian capital covered (alongside Granada) by Andalusia: Seville + Granada (5 days) 🏰 (rbBuildAndalusiaSevilleGranadaRoute) and (alongside the rest of the region) by Andalusia Roadtrip (9 days) 🚗 (rbBuildAndalusiaRoadtripRoute) — this route deliberately stops at Seville alone, no Granada/Córdoba/Ronda loop, to leave room for Italy and Greece. Budget ~€90/day.",
       transport_to_next: "Flight to Rome — this is the crux of why 14 days doesn't really work for this route: Italy and Greece have no land border with Iberia, and Seville-Rome has no direct flight either (a connection is typical, e.g. via Madrid/Lisbon/Barcelona).",
