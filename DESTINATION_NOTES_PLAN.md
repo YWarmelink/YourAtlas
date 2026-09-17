@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 265 / 741 signatures.**
+- **Done so far: 268 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -184,7 +184,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **IT** (4 dest): Florence, Siena, San Gimignano, Chianti — routes: Central European Grand Roadtrip 🚗, Dolomites & North Italy 🚡
 - [x] **IT** (3 dest): Piazza San Marco, Dorsoduro, Murano/Burano — routes: Central European Grand Roadtrip 🚗, Dolomites & North Italy 🚡
 - [x] **IT** (1 dest): Siena — routes: Rome + Tuscany (9 days) 🍝, Tuscany (6 days) 🍇
-- [ ] **IT** (2 dest): San Gimignano, Volterra — routes: Rome + Tuscany (9 days) 🍝, Tuscany (6 days) 🍇
+- [x] **IT** (2 dest): San Gimignano, Volterra — routes: Rome + Tuscany (9 days) 🍝, Tuscany (6 days) 🍇
 - [ ] **IT** (1 dest): Milan (Duomo, Galleria) — routes: France + Switzerland + Italy (10-14 days) 🗻, Northern Italy (6 days) 🚤
 - [x] **IT** (1 dest): Florence — routes: Italy: North to Central (12 days) 🚄, Rome + Tuscany (9 days) 🍝
 - [x] **IT** (1 dest): Palermo — routes: Sicily (9 days) 🍋, Sicily Roadtrip (7-10 days) 🏝️
@@ -543,8 +543,8 @@ Sorted alphabetically by country code.
 - [ ] **IT** (1 dest): Lecce (second base) — routes: Puglia (6 days) 🏘️
 - [ ] **IT** (1 dest): Otranto / Salento coast — routes: Puglia (6 days) 🏘️
 - [ ] **IT** (11 dest): Colosseum, Roman Forum, Palatine Hill, Vatican Museums, St. Peter's Basilica, Pantheon, Trevi Fountain, Piazza Navona, Spanish Steps, Borghese Gallery & Gardens (optional day 4), Trastevere / Ostia Antica day trip (optional day 4 alternative) — routes: Rome (4 days) 🏛️
-- [ ] **IT** (3 dest): Colosseum & Roman Forum, Vatican Museums, Pantheon & Trevi Fountain — routes: Rome + Tuscany (9 days) 🍝
-- [ ] **IT** (5 dest): Orvieto (waypoint), Pienza, Montepulciano, Montalcino, San Quirico d'Orcia — routes: Rome + Tuscany (9 days) 🍝
+- [x] **IT** (3 dest): Colosseum & Roman Forum, Vatican Museums, Pantheon & Trevi Fountain — routes: Rome + Tuscany (9 days) 🍝
+- [x] **IT** (5 dest): Orvieto (waypoint), Pienza, Montepulciano, Montalcino, San Quirico d'Orcia — routes: Rome + Tuscany (9 days) 🍝
 - [ ] **IT** (8 dest): Colosseum, Roman Forum, Trastevere, Pantheon, Vatican Necropolis / Scavi excavation tour, Vatican Museums & Sistine Chapel, St. Peter's Basilica dome climb, Vatican Gardens tour (optional) — routes: Rome + Vatican City In-Depth (4 days) ⛪
 - [ ] **IT** (3 dest): Bologna, Ravenna (Byzantine mosaics), Rimini — routes: San Marino + Emilia-Romagna (4 days) 🍝
 - [x] **IT** (3 dest): Siena, San Gimignano, Florence — routes: San Marino + Tuscany (5 days) 🍷
@@ -768,7 +768,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| Rome + Tuscany (9 days) 🍝 | 10/12 | 1 |
 | Sicily + Southern Italy (12 days) 🍊 | 10/12 | 1 |
 | Portugal + Andalusia (10-14 days) 🕌 | 10/10 | 1 |
 | Portugal + Spain Roadtrip (14 days) 🚗 | 10/10 | 1 |
@@ -783,13 +782,12 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Canary Islands (10-14 days) 🏝️ | 7/7 | 1 |
 | Germany: Berlin + Dresden + Bavaria (9 days) 🚂 | 6/6 | 1 |
 | Bavaria + Alps + Berchtesgaden (6 days) ⛰️ | 6/6 | 1 |
-| Tuscany (6 days) 🍇 | 6/7 | 1 |
 | Campania + Puglia (9 days) 🧭 | 6/8 | 1 |
 | Kosovo + Albania (9 days) 🏔️ | 6/6 | 1 |
 | Madeira (5-7 days) 🏝️ | 6/6 | 1 |
 | Italy + Slovenia + Croatia (10-14 days) ⛵ | 6/9 | 1 |
-| South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️ | 5/5 | 1 |
 | Luxembourg + Ardennes (4 days) 🎖️ | 5/5 | 1 |
+| South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️ | 5/5 | 1 |
 | Switzerland + Northern Italy (9 days) 🚞 | 5/5 | 1 |
 | San Marino + Emilia-Romagna (4 days) 🍝 | 5/5 | 1 |
 | Reykjavík + Golden Circle (5 days) 🌋 | 5/5 | 1 |
@@ -801,13 +799,15 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Kosovo + Montenegro + Albania (9 days) 🗻 | 3/5 | 1 |
 | San Marino + Tuscany (5 days) 🍷 | 2/5 | 1 |
 | Slovenia + Croatian Istria (7-10 days) 🏖️ | 2/4 | 1 |
-| Kosovo + North Macedonia (6 days) 🚏 | 2/4 | 1 |
 | Kosovo + North Macedonia + Albania (9 days) 🎒 | 2/5 | 1 |
+| Kosovo + North Macedonia (6 days) 🚏 | 2/4 | 1 |
 | Berlin (4 days) 🐻 | 1/1 | 1 |
 | Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂 | 19/19 | 0 |
 | Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧 | 19/19 | 0 |
 | Porto + Northern Spain (10-14 days) 🏔️ | 14/14 | 0 |
 | US Northeast 🗽 | 13/13 | 0 |
-| ... 269 more routes with open destinations ... | | |
+| Dolomites (6 days) ⛰️ | 13/13 | 0 |
+| US Southwest 🏜️ | 12/12 | 0 |
+| ... 268 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

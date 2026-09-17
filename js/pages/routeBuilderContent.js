@@ -8984,6 +8984,42 @@ function rbMigrateItalyRoadtripDestinationNotes() {
 }
 
 /**
+ * Batch 26 (2026-09-17) for the per-destination-notes workflow -- Rome + Tuscany (9 days), a
+ * 5-leg/12-destination combo route researched in a single pass -- Siena, San Gimignano and
+ * Florence already had notes from earlier batches, so only the remaining 9 destinations were
+ * newly researched. Same generic name-matching migration pattern as the grand-tour batches above.
+ */
+function rbMigrateRomeTuscanyDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_ROME_TUSCANY_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_ROME_TUSCANY_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Colosseum & Roman Forum': "Rome's essential ancient-Rome stop — the arena itself plus the Forum's temple ruins and the Palatine Hill overlooking it, all on one combined ticket; entering via the Palatine Hill or Forum entrance (rather than the Colosseum's own) usually means a much shorter line for the same ticket.",
+    'Vatican Museums': "Miles of galleries culminating in the Sistine Chapel's ceiling — worth 3-4 hours, not a quick pass-through. Skip the last Sunday of the month (free entry, but walk-in only, with 60-90 min queues forming before opening) and go on a paid timed slot instead.",
+    'Pantheon & Trevi Fountain': "The Pantheon's 2,000-year-old coffered dome (still the world's largest unreinforced concrete dome) and the Trevi's baroque coin-toss tradition sit a 10-minute walk apart. Pantheon entry now costs a small fee (~€5-7, book via museiitaliani.it — it used to be free) and Trevi is dramatically less crowded before 8am.",
+    'Orvieto (waypoint)': "Worth more than a quick break — the striped Gothic cathedral facade (Signorelli frescoes inside) and the Orvieto Underground tour through Etruscan-era tunnels beneath the town. An hour or two covers it before continuing into Val d'Orcia.",
+    'Pienza': 'Pius II\'s "ideal Renaissance city," small enough to see in a couple hours — Piazza Pio II\'s cathedral/palazzo, and the pecorino cheese shops lining the main street. Walk the Via dell\'Amore along the town walls for the classic Val d\'Orcia postcard view.',
+    'Montepulciano': 'Built around Vino Nobile di Montepulciano wine, with cantine carved into the rock beneath palazzi like Palazzo Contucci open for tastings right in town — worth descending into at least one cellar rather than just tasting at street level.',
+    'Montalcino': "Home of Brunello di Montalcino, one of Italy's top reds; the medieval Fortezza has an enoteca inside pouring by the glass with a view over the walls, a good option for tasting without driving out to individual wineries if time is tight.",
+    "San Quirico d'Orcia": 'Quieter than Pienza or Montalcino — the Romanesque Collegiata church and the Horti Leonini, a small Renaissance formal garden right off the main square. Works well as an easy lunch stop between the bigger towns.',
+    'Volterra': "Etruscan roots older than Siena or San Gimignano's medieval fame — an Etruscan museum, a Roman theater, and alabaster-carving workshops (the town's traditional craft) are the highlights. Noticeably quieter than San Gimignano even in high season.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -12734,7 +12770,7 @@ function rbBuildRomeCityBreakRoute() {
         { name: 'Colosseum', lat: 41.8902, lng: 12.4922 },
         { name: 'Roman Forum', lat: 41.8925, lng: 12.4853 },
         { name: 'Palatine Hill', lat: 41.8888, lng: 12.4870 },
-        { name: "Vatican Museums", lat: 41.9065, lng: 12.4536 },
+        { name: "Vatican Museums", lat: 41.9065, lng: 12.4536, notes: "Miles of galleries culminating in the Sistine Chapel's ceiling — worth 3-4 hours, not a quick pass-through. Skip the last Sunday of the month (free entry, but walk-in only, with 60-90 min queues forming before opening) and go on a paid timed slot instead." },
         { name: "St. Peter's Basilica", lat: 41.9022, lng: 12.4533 },
         { name: 'Pantheon', lat: 41.8986, lng: 12.4769 },
         { name: 'Trevi Fountain', lat: 41.9009, lng: 12.4833 },
@@ -12836,8 +12872,8 @@ function rbBuildTuscanyRoute() {
       code: 'IT', name: 'Italy', days: 2, budget: 250, lat: 43.0778, lng: 11.6789,
       destinations: [
         { name: 'Montalcino (base, wine country)', lat: 43.0567, lng: 11.4900 },
-        { name: 'Pienza', lat: 43.0778, lng: 11.6789 },
-        { name: 'Montepulciano', lat: 43.0938, lng: 11.7864 },
+        { name: 'Pienza', lat: 43.0778, lng: 11.6789, notes: "Pius II's \"ideal Renaissance city,\" small enough to see in a couple hours — Piazza Pio II's cathedral/palazzo, and the pecorino cheese shops lining the main street. Walk the Via dell'Amore along the town walls for the classic Val d'Orcia postcard view." },
+        { name: 'Montepulciano', lat: 43.0938, lng: 11.7864, notes: "Built around Vino Nobile di Montepulciano wine, with cantine carved into the rock beneath palazzi like Palazzo Contucci open for tastings right in town — worth descending into at least one cellar rather than just tasting at street level." },
       ],
       notes: "Val d'Orcia loop (2 nights, base Pienza/Montalcino, wine country): Montalcino, Pienza, Montepulciano. Season: April-May or September-October; avoid July-August (heat); September is wine-harvest season — beautiful but busier/pricier around Chianti/Montalcino.",
       transport_to_next: 'Drive to San Gimignano/Volterra.',
@@ -12846,7 +12882,7 @@ function rbBuildTuscanyRoute() {
       code: 'IT', name: 'Italy', days: 1, budget: 125, lat: 43.4674, lng: 11.0431,
       destinations: [
         { name: 'San Gimignano', lat: 43.4674, lng: 11.0431, notes: "Its skyline of medieval stone towers (nicknamed \"Medieval Manhattan\") is best appreciated from just outside the walls around sunset, once the day-trip buses thin out." },
-        { name: 'Volterra', lat: 43.4013, lng: 10.8608 },
+        { name: 'Volterra', lat: 43.4013, lng: 10.8608, notes: "Etruscan roots older than Siena or San Gimignano's medieval fame — an Etruscan museum, a Roman theater, and alabaster-carving workshops (the town's traditional craft) are the highlights. Noticeably quieter than San Gimignano even in high season." },
       ],
       notes: 'San Gimignano and Volterra (1-2 nights), then back to Florence. Deliberately no Cinque Terre on this route — different region (Liguria), a full day of driving there and back, not worth it. ⚠️ Park outside the walls at San Gimignano/Volterra — both are pedestrian zones inside.',
       transport_to_next: 'End of this route — drive back to Florence and fly home, or continue self-driving back to the Netherlands.',
@@ -13010,9 +13046,9 @@ function rbBuildRomeTuscanyRoute() {
     {
       code: 'IT', name: 'Italy', days: 3, budget: 420, lat: 41.9028, lng: 12.4964,
       destinations: [
-        { name: 'Colosseum & Roman Forum', lat: 41.8902, lng: 12.4922 },
-        { name: 'Vatican Museums', lat: 41.9065, lng: 12.4536 },
-        { name: 'Pantheon & Trevi Fountain', lat: 41.8986, lng: 12.4769 },
+        { name: 'Colosseum & Roman Forum', lat: 41.8902, lng: 12.4922, notes: "Rome's essential ancient-Rome stop — the arena itself plus the Forum's temple ruins and the Palatine Hill overlooking it, all on one combined ticket; entering via the Palatine Hill or Forum entrance (rather than the Colosseum's own) usually means a much shorter line for the same ticket." },
+        { name: 'Vatican Museums', lat: 41.9065, lng: 12.4536, notes: "Miles of galleries culminating in the Sistine Chapel's ceiling — worth 3-4 hours, not a quick pass-through. Skip the last Sunday of the month (free entry, but walk-in only, with 60-90 min queues forming before opening) and go on a paid timed slot instead." },
+        { name: 'Pantheon & Trevi Fountain', lat: 41.8986, lng: 12.4769, notes: "The Pantheon's 2,000-year-old coffered dome (still the world's largest unreinforced concrete dome) and the Trevi's baroque coin-toss tradition sit a 10-minute walk apart. Pantheon entry now costs a small fee (~€5-7, book via museiitaliani.it — it used to be free) and Trevi is dramatically less crowded before 8am." },
       ],
       notes: "A genuinely connected version of both regions together, not Rome-alone and Tuscany-alone simply glued end to end. Rome (3 days, no car needed). Direct AMS-Rome Fiumicino (~2h15, 314 flights/week); no direct NL flight to Pisa/Florence found, so plan on a return flight via Rome (train Florence-Rome ~1.5h) rather than an open-jaw out of Florence — check this when booking. Budget ~€140/day. ⚠️ Colosseum/Forum and the Vatican Museums require a pre-booked time slot — sold out weeks ahead in high season.",
       transport_to_next: 'Drive north via Orvieto into the Val d\'Orcia — rental car picked up only after Rome (Rome\'s ZTL makes a car useless there).',
@@ -13020,11 +13056,11 @@ function rbBuildRomeTuscanyRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 280, lat: 43.0778, lng: 11.6789,
       destinations: [
-        { name: 'Orvieto (waypoint)', lat: 42.7186, lng: 12.1128 },
-        { name: 'Pienza', lat: 43.0778, lng: 11.6789 },
-        { name: 'Montepulciano', lat: 43.0938, lng: 11.7864 },
-        { name: 'Montalcino', lat: 43.0567, lng: 11.4900 },
-        { name: 'San Quirico d\'Orcia', lat: 43.0578, lng: 11.6083 },
+        { name: 'Orvieto (waypoint)', lat: 42.7186, lng: 12.1128, notes: "Worth more than a quick break — the striped Gothic cathedral facade (Signorelli frescoes inside) and the Orvieto Underground tour through Etruscan-era tunnels beneath the town. An hour or two covers it before continuing into Val d'Orcia." },
+        { name: 'Pienza', lat: 43.0778, lng: 11.6789, notes: "Pius II's \"ideal Renaissance city,\" small enough to see in a couple hours — Piazza Pio II's cathedral/palazzo, and the pecorino cheese shops lining the main street. Walk the Via dell'Amore along the town walls for the classic Val d'Orcia postcard view." },
+        { name: 'Montepulciano', lat: 43.0938, lng: 11.7864, notes: "Built around Vino Nobile di Montepulciano wine, with cantine carved into the rock beneath palazzi like Palazzo Contucci open for tastings right in town — worth descending into at least one cellar rather than just tasting at street level." },
+        { name: 'Montalcino', lat: 43.0567, lng: 11.4900, notes: "Home of Brunello di Montalcino, one of Italy's top reds; the medieval Fortezza has an enoteca inside pouring by the glass with a view over the walls, a good option for tasting without driving out to individual wineries if time is tight." },
+        { name: 'San Quirico d\'Orcia', lat: 43.0578, lng: 11.6083, notes: "Quieter than Pienza or Montalcino — the Romanesque Collegiata church and the Horti Leonini, a small Renaissance formal garden right off the main square. Works well as an easy lunch stop between the bigger towns." },
       ],
       notes: 'Orvieto on the way up, then the Val d\'Orcia (Pienza, Montepulciano, Montalcino, San Quirico d\'Orcia, 2 days).',
       transport_to_next: 'Drive to Siena.',
@@ -13041,7 +13077,7 @@ function rbBuildRomeTuscanyRoute() {
       code: 'IT', name: 'Italy', days: 1, budget: 140, lat: 43.4674, lng: 11.0431,
       destinations: [
         { name: 'San Gimignano', lat: 43.4674, lng: 11.0431, notes: "Its skyline of medieval stone towers (nicknamed \"Medieval Manhattan\") is best appreciated from just outside the walls around sunset, once the day-trip buses thin out." },
-        { name: 'Volterra', lat: 43.4013, lng: 10.8608 },
+        { name: 'Volterra', lat: 43.4013, lng: 10.8608, notes: "Etruscan roots older than Siena or San Gimignano's medieval fame — an Etruscan museum, a Roman theater, and alabaster-carving workshops (the town's traditional craft) are the highlights. Noticeably quieter than San Gimignano even in high season." },
       ],
       notes: 'San Gimignano and Volterra (1 day).',
       transport_to_next: 'Drive to Florence.',
@@ -13905,7 +13941,7 @@ function rbBuildVaticanDayVisitRoute() {
       code: 'IT', name: 'Italy', days: 1, budget: 140, lat: 41.9022, lng: 12.4533,
       destinations: [
         { name: "St. Peter's Basilica", lat: 41.9022, lng: 12.4533 },
-        { name: 'Vatican Museums', lat: 41.9065, lng: 12.4536 },
+        { name: 'Vatican Museums', lat: 41.9065, lng: 12.4536, notes: "Miles of galleries culminating in the Sistine Chapel's ceiling — worth 3-4 hours, not a quick pass-through. Skip the last Sunday of the month (free entry, but walk-in only, with 60-90 min queues forming before opening) and go on a paid timed slot instead." },
         { name: 'Sistine Chapel', lat: 41.9065, lng: 12.4536 },
       ],
       notes: "Confirmed, not disputed: Vatican City has no hotels or airport of its own (a ~44-hectare enclave inside Rome) — every Vatican visit is logistically always a day trip within a Rome stay, however it's labelled. So this stays a day-visit component of a Rome trip rather than a standalone destination card — see Rome + Vatican City In-Depth (4 days) ⛪ above for the concrete way to fill that day. Budget ~€130-150/day, the same general Rome rate; a Vatican-focused day without the extra Scavi/dome-climb/Gardens add-ons doesn't carry the extra ~€60-90 that route calls out.",

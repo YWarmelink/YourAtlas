@@ -12,6 +12,15 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 26 — Rome + Tuscany (9 days) (2026-09-17)** — 5 legs, 12
+  destinations (9 newly researched — Siena/San Gimignano/Florence already covered from earlier
+  batches), researched in a single pass. Same generic name-matching migration
+  (`rbMigrateRomeTuscanyDestinationNotes()`) — 4 routes confirmed touched in the live simulation.
+  Caught a tooling wrinkle: "San Quirico d'Orcia" is stored with an escaped apostrophe
+  (`d\'Orcia`) inside single quotes rather than the usual double-quote-wraps-an-apostrophe
+  convention — the insertion script's regex now handles both forms. App-wide total: 2515
+  destination-slots filled across 308 routes. 268/741 signatures done.
+
 - **Per-destination notes, batch 25 — Italy Roadtrip (12 days) (2026-09-17)** — 6 legs, 13
   destinations (11 newly researched — Naples/Pompeii already covered from an earlier batch),
   researched in a single pass. Same generic name-matching migration
