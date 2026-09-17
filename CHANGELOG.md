@@ -12,6 +12,24 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Locations manifest added (2026-09-17)** — `scripts/generate_locations_manifest.py` +
+  `LOCATIONS_MANIFEST.csv`, built from a brainstorm with Youri about eventually building a
+  canonical Google Sheet `Locations` tab (one row per real place, reusable when building future
+  routes — e.g. picking a country and getting a checklist of already-researched destinations).
+  The script walks the live simulated Route Builder state and extracts every destination that
+  already has a researched `notes` field, deduplicated by `(name, country_code)` — keyed on the
+  pair, not name alone, after discovering that name-only dedup silently merges genuinely
+  different real places that share a name across countries (caught two: "Granada" in Spain vs.
+  Nicaragua, "Valle de la Luna" in Chile vs. Bolivia — both ~700+ km apart despite the identical
+  name). Current manifest: 902 unique researched locations across 452 routes. Also surfaced 3
+  pre-existing duplicate-with-drifted-note-text entries from earlier (pre-batch-project) content
+  — Sarajevo/Budva/Trebinje each have two different hand-written notes in different routes — a
+  known minor cleanup item, not introduced by this addition and not fixed here. **Going forward,
+  regenerate this file after every future per-destination-notes batch** (same as
+  `generate_destination_notes_plan.py`) — it costs nothing extra since country_code/lat/lng were
+  already present in the existing data, no change needed to how batches insert notes or build
+  their migration functions.
+
 - **Per-destination notes, batch 30 — France + Switzerland + Italy (10-14 days) (2026-09-17)** —
   a small 5-leg/9-destination combo route, researched in a single pass. Same generic
   name-matching migration (`rbMigrateFranceSwitzerlandItalyDestinationNotes()`) — 6 routes
