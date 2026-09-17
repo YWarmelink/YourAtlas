@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 154 / 741 signatures.**
+- **Done so far: 159 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -33,8 +33,8 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **ZW** (5 dest): Mana Pools, Great Zimbabwe, Bulawayo, Hwange NP, Victoria Falls — routes: Africa Grand Tour 🌍, Southern Africa Safari Loop 🦁, Victoria Falls & Kalahari Loop 🦏, Zimbabwe 🐆
 - [x] **AL** (6 dest): Shkodër, Tirana, Berat, Gjirokastër, Sarandë, Korçë — routes: Balkan 🐺, Eurasia Grand Tour 🌏, West Eurasia Overland 🐫
 - [x] **AM** (5 dest): Yerevan, Khor Virap, Tatev, Lake Sevan, Dilijan — routes: Caucasus 🍷, Eurasia Grand Tour 🌏, West Eurasia Overland 🐫
-- [ ] **AR** (5 dest): El Calafate, Perito Moreno Glacier, El Chaltén, Fitz Roy & Laguna de los Tres, Cerro Torre — routes: Argentine Patagonia 🥩, Patagonia & Antarctica Expedition 🧊, Patagonia Overland 🏔️
-- [ ] **AR** (3 dest): Ushuaia, Tierra del Fuego National Park, Beagle Channel — routes: Argentine Patagonia 🥩, Patagonia & Antarctica Expedition 🧊, Patagonia Overland 🏔️
+- [x] **AR** (5 dest): El Calafate, Perito Moreno Glacier, El Chaltén, Fitz Roy & Laguna de los Tres, Cerro Torre — routes: Argentine Patagonia 🥩, Patagonia & Antarctica Expedition 🧊, Patagonia Overland 🏔️
+- [x] **AR** (3 dest): Ushuaia, Tierra del Fuego National Park, Beagle Channel — routes: Argentine Patagonia 🥩, Patagonia & Antarctica Expedition 🧊, Patagonia Overland 🏔️
 - [ ] **AT** (1 dest): Vienna (old town, Schönbrunn) — routes: Central Europe Roadtrip (14 days) 🚂, Czechia + Austria + Hungary (10-14 days) 🏛️, Hungary + Austria + Slovenia (7-10 days) 🚆
 - [x] **AU** (5 dest): Cairns, Daintree Rainforest, Great Barrier Reef, Whitsundays & Whitehaven Beach, Fraser Island / K'gari — routes: Cairns & Great Barrier Reef 🐠, Oceania Grand Expedition 🌊, Tropical/Outback Australia 🐊
 - [x] **AU** (3 dest): Byron Bay, Sydney, Blue Mountains — routes: Oceania Grand Expedition 🌊, Sydney/Byron & Great Ocean Road 🦘, Temperate/Southern Australia 🍇
@@ -44,8 +44,8 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **BA** (4 dest): Sarajevo, Mostar, Blagaj, Trebinje — routes: Balkan 🐺, Eurasia Grand Tour 🌏, West Eurasia Overland 🐫
 - [x] **BO** (5 dest): Copacabana, La Paz, Uyuni Salt Flat, Sucre, Potosí — routes: Andes Grand Traverse 🦙, Bolivia 🧂, Pan-American Grand Tour 🌎
 - [x] **BR** (5 dest): Belém, Ilha do Marajó, Lençóis Maranhenses, Jericoacoara, Fortaleza — routes: Caribbean & Amazon Expedition 🌴, Northern Brazil 🪁, Suriname & Northern Brazil 🌴
-- [ ] **CL** (6 dest): Puerto Montt, Chiloé Island (day trip), Parque Pumalín, Queulat National Park, Villa Cerro Castillo, Puerto Río Tranquilo & Marble Caves — routes: Chilean Patagonia 🥾, Patagonia & Antarctica Expedition 🧊, Patagonia Overland 🏔️
-- [ ] **CL** (3 dest): Puerto Natales, Torres del Paine National Park, Punta Arenas (day trip to Isla Magdalena) — routes: Chilean Patagonia 🥾, Patagonia & Antarctica Expedition 🧊, Patagonia Overland 🏔️
+- [x] **CL** (6 dest): Puerto Montt, Chiloé Island (day trip), Parque Pumalín, Queulat National Park, Villa Cerro Castillo, Puerto Río Tranquilo & Marble Caves — routes: Chilean Patagonia 🥾, Patagonia & Antarctica Expedition 🧊, Patagonia Overland 🏔️
+- [x] **CL** (3 dest): Puerto Natales, Torres del Paine National Park, Punta Arenas (day trip to Isla Magdalena) — routes: Chilean Patagonia 🥾, Patagonia & Antarctica Expedition 🧊, Patagonia Overland 🏔️
 - [x] **CO** (7 dest): Cartagena, Santa Marta, Parque Tayrona, Medellín, Salento & Coffee Zone, Bogotá, San Agustín — routes: Andes Grand Traverse 🦙, Colombia ☕, Pan-American Grand Tour 🌎
 - [x] **CR** (6 dest): Liberia, La Fortuna/Arenal, Monteverde, Santa Teresa, Manuel Antonio, Puerto Viejo de Talamanca — routes: Central America Loop 🌋, Costa Rica 🦥, Pan-American Grand Tour 🌎
 - [x] **CU** (4 dest): Havana (Habana Vieja), Viñales Valley, Cienfuegos, Trinidad — routes: Caribbean & Amazon Expedition 🌴, Caribbean Islands Hop 🏝️, Cuba 🎷
@@ -114,7 +114,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [ ] **AL** (4 dest): Tirana, Berat, Dhermi, Himarë — routes: Albania (6 days) 🏖️, Albania + Montenegro (12 days) 🏝️
 - [x] **AL** (2 dest): Tirana, Berat — routes: Balkan Roadtrip: Serbia + North Macedonia + Albania + Kosovo (14 days) 🔄, North Macedonia + Albania (9 days) 🚌
 - [x] **AO** (5 dest): Lubango, Serra da Leba, Tundavala Gorge, Namibe Desert, Luanda — routes: Africa Grand Tour 🌍, Southern Africa Safari Loop 🦁
-- [ ] **AQ** (7 dest): Expedition Cruise from Ushuaia, South Shetland Islands, Antarctic Peninsula, Glaciers & Icebergs, Penguin colonies, Whales, Return to Ushuaia — routes: Antarctica Cruise 🐧, Patagonia & Antarctica Expedition 🧊
+- [x] **AQ** (7 dest): Expedition Cruise from Ushuaia, South Shetland Islands, Antarctic Peninsula, Glaciers & Icebergs, Penguin colonies, Whales, Return to Ushuaia — routes: Antarctica Cruise 🐧, Patagonia & Antarctica Expedition 🧊
 - [x] **AR** (6 dest): Salta, Cafayate, Purmamarca, Salinas Grandes, Tilcara, Humahuaca — routes: Pan-American Grand Tour 🌎, Southern Cone & Brazil Finale 🧉
 - [ ] **AT** (1 dest): Innsbruck (old town, Golden Roof) — routes: Alpine Roadtrip (14 days) 🏕️, Germany + Austria + Italy (10-14 days) 🏔️
 - [x] **AT** (2 dest): Klagenfurt, Wörthersee — routes: Austria + Slovenia + Croatia (10-14 days) 🚙, Germany + Austria + Slovenia (10-14 days) 🥨
@@ -768,9 +768,7 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| Patagonia & Antarctica Expedition 🧊 | 24/24 | 9 |
 | North America Grand Traverse 🌎 | 27/27 | 8 |
-| Patagonia Overland 🏔️ | 17/17 | 8 |
 | Croatia + Montenegro + Bosnia (12 days) 🧭 | 7/7 | 6 |
 | Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️ | 7/7 | 6 |
 | Baltics + Poland (10-14 days) 🇵🇱 | 6/6 | 6 |
@@ -780,8 +778,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Nordic Arctic Expedition ❄️ | 37/37 | 4 |
 | Dolomites & North Italy 🚡 | 24/24 | 4 |
 | Cyclades Island Hopping (7-10 days) 🏝️ | 10/10 | 4 |
-| Chilean Patagonia 🥾 | 9/9 | 4 |
-| Argentine Patagonia 🥩 | 8/8 | 4 |
 | US West Coast Roadtrip 🌉 | 8/8 | 4 |
 | Sicily Roadtrip (7-10 days) 🏝️ | 7/8 | 4 |
 | Cyclades (5-7 days) 🏝️ | 6/6 | 4 |
@@ -808,6 +804,10 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Mallorca + Menorca (7-10 days) 🏝️ | 6/6 | 2 |
 | Bosnia + Montenegro + Budva (7-10 days) ⛰️ | 6/6 | 2 |
 | Pacific Northwest 🦫 | 5/5 | 2 |
-| ... 307 more routes with open destinations ... | | |
+| Azores: São Miguel + Terceira (7-10 days) 🏝️ | 5/5 | 2 |
+| California 🌲 | 3/3 | 2 |
+| Hungary + Austria + Slovenia (7-10 days) 🚆 | 3/5 | 2 |
+| Italy Roadtrip (12 days) 🧀 | 11/13 | 1 |
+| ... 302 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

@@ -443,30 +443,30 @@ const RB_EXPEDITION_CONTENT = {
     // the other way around), and the leg ends at Puerto Río Tranquilo — further south on the
     // Carretera Austral (Cochrane/Villa O'Higgins) has no road connection to Puerto Natales (2026-08 fix).
     CL: { days: 15, budget: 2000, lat: -41.4693, lng: -72.9424, destinations: [
-      { name: 'Puerto Montt', lat: -41.4693, lng: -72.9424 },
-      { name: 'Chiloé Island (day trip)', lat: -42.4827, lng: -73.7626 },
-      { name: 'Parque Pumalín', lat: -42.6083, lng: -72.4886 },
-      { name: 'Queulat National Park', lat: -44.4667, lng: -72.5667 },
-      { name: 'Villa Cerro Castillo', lat: -45.85, lng: -72.15 },
-      { name: 'Puerto Río Tranquilo & Marble Caves', lat: -46.6333, lng: -72.6667 },
+      { name: 'Puerto Montt', lat: -41.4693, lng: -72.9424, notes: "Gateway city on the Reloncaví Sound whose real highlight is the Angelmó waterfront market for fresh seafood and Mapuche/Chilote crafts — worth a couple hours before heading onward, but it's mostly a transit hub, not a destination in itself." },
+      { name: 'Chiloé Island (day trip)', lat: -42.4827, lng: -73.7626, notes: "Known for UNESCO-listed wooden stilt churches and Castro's colorful palafitos (houses on stilts over the water). With only a day, concentrate on Castro itself (palafitos plus one or two nearby churches like Nercón) rather than trying to cover the wider archipelago." },
+      { name: 'Parque Pumalín', lat: -42.6083, lng: -72.4886, notes: "Douglas Tompkins' former private reserve (now a national park) protects old-growth alerce forest and temperate rainforest around volcanic terrain. Enter at Caleta Gonzalo — reached by ferry from Hornopirén in summer (Jan-Feb) or overland via Chaitén the rest of the year — and do the short Cascadas Escondidas or Sendero Los Alerces trail if time is tight." },
+      { name: 'Queulat National Park', lat: -44.4667, lng: -72.5667, notes: "Centered on the Ventisquero Colgante, a glacier hanging off a cliff face with waterfalls dropping into the lagoon below. The lookout trail is under an hour round-trip, but the lagoon boat/kayak trip gets you much closer to the ice." },
+      { name: 'Villa Cerro Castillo', lat: -45.85, lng: -72.15, notes: "Small village serving as the base for Cerro Castillo's jagged granite spires, a multi-day trekking circuit often compared to Torres del Paine but far less crowded. Buy the CONAF entry permit online in advance via PasesParques.cl; note that some side trails (Estero Parada, Laguna Castillo) are now closed to independent hikers and require a certified guide." },
+      { name: 'Puerto Río Tranquilo & Marble Caves', lat: -46.6333, lng: -72.6667, notes: "The Capillas/Catedral de Mármol are marble rock formations on General Carrera Lake, reachable only by a short boat or kayak tour from town. Go early for the best light, and aim for lower-water months (roughly Sept-Feb, before summer snowmelt raises the lake) so boats can actually get inside the caves." },
     ], transport_to_next: "Overland via the Chile Chico-Los Antiguos border crossing (reachable from Puerto Río Tranquilo via the road along Lago General Carrera), then Ruta 40 south to El Calafate — necessary because the Carretera Austral at Cochrane/Villa O'Higgins has no road connection to Puerto Natales; the earlier Balmaceda-Punta Arenas flight was discontinued in October 2025.", notes: "Price verified (2026-07), correct. Naviera Austral sails directly from Quellón (southern Chiloé) to Chaitén during high season (Jan-Mar) — outside that window you go back via Puerto Montt to start the Carretera Austral." },
     // Argentina-Calafate/El Chaltén: now comes before Chile-South, so the trip can cross via the
     // Cancha Carrera border crossing straight to Torres del Paine instead of via Puerto Natales (2026-08).
     AR: { days: 10, budget: 1320, lat: -50.3379, lng: -72.2648, destinations: [
-      { name: 'El Calafate', lat: -50.3379, lng: -72.2648 },
-      { name: 'Perito Moreno Glacier', lat: -50.4967, lng: -73.1387 },
-      { name: 'El Chaltén', lat: -49.3315, lng: -72.8862 },
-      { name: 'Fitz Roy & Laguna de los Tres', lat: -49.2667, lng: -72.9667 },
-      { name: 'Cerro Torre', lat: -49.2833, lng: -73.1167 },
+      { name: 'El Calafate', lat: -50.3379, lng: -72.2648, notes: "Sits on Lago Argentino purely as the logistics base for Perito Moreno — beyond the glacier day trips, the Glaciarium museum and lakeside boardwalk are the only real in-town draws, so budget minimal time here beyond arrival/departure." },
+      { name: 'Perito Moreno Glacier', lat: -50.4967, lng: -73.1387, notes: "One of the few glaciers in the world still advancing, with loud, frequent ice calving visible from a multi-level boardwalk (passarelas) system that needs no guide. For a closer look, the \"Minitrekking\" or \"Big Ice\" ice-trekking tours (crampons + short boat crossing) sell out in peak season (Dec-Feb), so book ahead." },
+      { name: 'El Chaltén', lat: -49.3315, lng: -72.8862, notes: "Argentina's self-styled trekking capital — free trailheads start directly from town (no shuttle needed) leading to both Fitz Roy and Cerro Torre. It's a small village with limited ATMs/services relative to its popularity, so arrive with cash and supplies." },
+      { name: 'Fitz Roy & Laguna de los Tres', lat: -49.2667, lng: -72.9667, notes: "The classic day hike (~20km round trip, 8-10 hours), with a steep final climb to the turquoise glacial lake right beneath Fitz Roy's spires. Start before dawn to catch the \"amanecer\" alpenglow on the peaks and beat both the crowds and the afternoon wind." },
+      { name: 'Cerro Torre', lat: -49.2833, lng: -73.1167, notes: "Reached via the gentler Laguna Torre trail (~18km round trip); the ice-capped spire is notoriously cloud-shrouded, fully visible only a handful of days a month. Build a spare day into your Chaltén stay so you can go on a clear morning rather than a fixed schedule." },
     ], transport_to_next: "Overland via the Cancha Carrera border crossing straight to Torres del Paine (~2.5-3 hours) — no detour via Puerto Natales needed.", notes: "Price verified (2026-07), correct. Wildfire season December-March in Patagonia (including around El Chaltén) — check the current situation shortly before departure. New (2026-08): Argentina has required proof of travel/health insurance on entry since July 2025." },
     AQ: { days: 11, budget: 9500, lat: -62.2, lng: -58.6333, destinations: [
-      { name: 'Expedition Cruise from Ushuaia', lat: -54.8019, lng: -68.303 },
-      { name: 'South Shetland Islands', lat: -62.15, lng: -58.45 },
-      { name: 'Antarctic Peninsula', lat: -64.86, lng: -62.86 },
-      { name: 'Glaciers & Icebergs', lat: -65.0, lng: -63.5 },
-      { name: 'Penguin colonies', lat: -64.77, lng: -62.9 },
-      { name: 'Whales', lat: -64.6, lng: -62.6 },
-      { name: 'Return to Ushuaia', lat: -54.8019, lng: -68.303 },
+      { name: 'Expedition Cruise from Ushuaia', lat: -54.8019, lng: -68.303, notes: "Ushuaia's Beagle Channel harbor is the sole embarkation point for Antarctic Peninsula voyages, and the roughly two-day Drake Passage crossing that follows can range from a smooth \"Drake Lake\" to a rough \"Drake Shake\" — pack seasickness medication and expect a full day of pre-departure gear and biosecurity briefings before boarding." },
+      { name: 'South Shetland Islands', lat: -62.15, lng: -58.45, notes: "Deception Island — a horseshoe-shaped active volcanic caldera you sail directly into through the narrow \"Neptune's Bellows\" entrance — is the archipelago's signature stop, with the rusting remains of a whaling station at Whalers Bay and, on some ships, a polar plunge in its geothermally warmed shallows." },
+      { name: 'Antarctic Peninsula', lat: -64.86, lng: -62.86, notes: "The Lemaire Channel, a narrow cliff-walled passage nicknamed \"Kodak Gap\" for its near-constant photogenic scenery, is the Peninsula's best-known scenic sail-through, alongside continental landings at Neko Harbour or Paradise Harbour; exact stops depend entirely on ice/weather and are only confirmed once aboard." },
+      { name: 'Glaciers & Icebergs', lat: -65.0, lng: -63.5, notes: "Massive tabular icebergs calved from the Peninsula's ice shelves drift through channels like the Gerlache Strait, some towering well over the ship; expedition staff time Zodiac cruises for early morning or late evening light, when low sun turns the ice blue and gold." },
+      { name: 'Penguin colonies', lat: -64.77, lng: -62.9, notes: "Cuverville Island holds one of the Peninsula's largest gentoo penguin rookeries, while chinstrap penguins dominate Half Moon Island — since H5N1 avian flu reached the region in 2023/24, expect mandatory boot-disinfection and gear checks before and after every landing to protect the colonies (per IAATO/SCAR biosecurity protocols still in effect as of the 2026 season)." },
+      { name: 'Whales', lat: -64.6, lng: -62.6, notes: "Wilhelmina Bay, nicknamed \"Whale-mina Bay,\" sees dense krill-driven aggregations of humpback whales especially in the late season (Feb-March), often surfacing right alongside Zodiacs." },
+      { name: 'Return to Ushuaia', lat: -54.8019, lng: -68.303, notes: "The return Drake Passage crossing is typically used for disembarkation briefings and species-count recaps; build in a buffer day in Ushuaia afterward, since Drake weather can delay arrival back into port." },
     ], transport_to_next: "End of the expedition — flight back from Ushuaia", notes: "Price verified (2026-07): €9,500 fits comfortably within the realistic range for an entry-level/shared-cabin Antarctica cruise (2026: ≈$8,000-12,000). 11 days is realistic for an entry-level expedition cruise (2026-08, search-confirmed)." },
   },
   "India & Himalaya Expedition 🏔️": {
@@ -1030,9 +1030,9 @@ function rbBuildPatagoniaAntarcticaRoute() {
     {
       code: 'CL', name: 'Chile', days: 9, budget: 1200, lat: -51.7236, lng: -72.4875,
       destinations: [
-        { name: 'Puerto Natales', lat: -51.7236, lng: -72.4875 },
-        { name: 'Torres del Paine National Park', lat: -50.9423, lng: -73.0357 },
-        { name: 'Punta Arenas (day trip to Isla Magdalena)', lat: -53.1638, lng: -70.9171 },
+        { name: 'Puerto Natales', lat: -51.7236, lng: -72.4875, notes: "Working waterfront town on the Señoret Channel that's the last stop to rent gear and stock up before Torres del Paine. If you have spare time, the restored Puerto Bories wool/meat-processing plant (now part of The Singular hotel) is worth a quick look." },
+        { name: 'Torres del Paine National Park', lat: -50.9423, lng: -73.0357, notes: "The draw is the granite towers themselves and Grey Glacier, usually seen via the multi-day W trek. Buy the park entrance ticket online ahead of time — it's date-stamped and capacity-limited, separate from refugio bookings." },
+        { name: 'Punta Arenas (day trip to Isla Magdalena)', lat: -53.1638, lng: -70.9171, notes: "Beyond the penguin-colony boat trip, downtown's Plaza Muñoz Gamero and the Nao Victoria Museum (full-size replica historic ships) fill out the rest of a day here. Note the Isla Magdalena boats only run in austral summer (roughly November-March) — outside that window it isn't a viable day trip at all." },
       ],
       transport_to_next: 'From Punta Arenas the ferry across the Strait of Magellan (Punta Delgada-Bahía Azul), then the San Sebastián border crossing and the road to Río Grande/Ushuaia — no detour via Puerto Natales needed anymore.',
       notes: "Price verified (2026-07), correct. Torres del Paine peak season: refugio stays including meals run up to $100-150/night — outside the park the daily rate remains manageable. Punta Arenas is a deliberate day trip for Isla Magdalena's penguin colony (only reachable from there, not from Puerto Natales) — the trip then continues straight on to Tierra del Fuego, no return trip to Puerto Natales needed (2026-08).",
@@ -1040,9 +1040,9 @@ function rbBuildPatagoniaAntarcticaRoute() {
     {
       code: 'AR', name: 'Argentina', days: 8, budget: 1055, lat: -54.8019, lng: -68.303,
       destinations: [
-        { name: 'Ushuaia', lat: -54.8019, lng: -68.303 },
-        { name: 'Tierra del Fuego National Park', lat: -54.85, lng: -68.5833 },
-        { name: 'Beagle Channel', lat: -54.87, lng: -67.9 },
+        { name: 'Ushuaia', lat: -54.8019, lng: -68.303, notes: "The world's southernmost city and main embarkation port for Antarctica cruises, with the End of the World Train and Martial Glacier as separate half-day attractions in their own right. Book Antarctica add-ons or the train ahead if traveling Nov-Mar, when both sell out." },
+        { name: 'Tierra del Fuego National Park', lat: -54.85, lng: -68.5833, notes: "Marks the literal end of Ruta 3 (the Pan-American Highway's southern terminus), combining Beagle Channel coastal views with lenga-forest trails around Lapataia Bay. The End of the World Train drops you inside the park, so it's easy to combine with a hike out via the Costera trail." },
+        { name: 'Beagle Channel', lat: -54.87, lng: -67.9, notes: "Boat excursions from Ushuaia's port pass sea lion colonies, cormorant rookeries, and the red-and-white Les Eclaireurs lighthouse — the actual \"lighthouse at the end of the world\" that inspired Jules Verne. A half-day catamaran trip covers this; only pay for a longer option if it includes a penguin-colony landing (e.g. Isla Martillo)." },
       ],
       transport_to_next: 'Boarding in Ushuaia for the expedition cruise — crossing the Drake Passage (approx. 2 days at sea)',
       notes: "Tierra del Fuego leg, decoupled from El Calafate/El Chaltén (2026-08) so the country order follows the real border crossings. Argentina has required proof of travel/health insurance on entry since July 2025.",
@@ -3093,9 +3093,9 @@ function rbBuildPatagoniaOverlandRoute() {
     {
       code: 'CL', name: 'Chile', days: 9, budget: 1200, lat: -51.7236, lng: -72.4875,
       destinations: [
-        { name: 'Puerto Natales', lat: -51.7236, lng: -72.4875 },
-        { name: 'Torres del Paine National Park', lat: -50.9423, lng: -73.0357 },
-        { name: 'Punta Arenas (day trip to Isla Magdalena)', lat: -53.1638, lng: -70.9171 },
+        { name: 'Puerto Natales', lat: -51.7236, lng: -72.4875, notes: "Working waterfront town on the Señoret Channel that's the last stop to rent gear and stock up before Torres del Paine. If you have spare time, the restored Puerto Bories wool/meat-processing plant (now part of The Singular hotel) is worth a quick look." },
+        { name: 'Torres del Paine National Park', lat: -50.9423, lng: -73.0357, notes: "The draw is the granite towers themselves and Grey Glacier, usually seen via the multi-day W trek. Buy the park entrance ticket online ahead of time — it's date-stamped and capacity-limited, separate from refugio bookings." },
+        { name: 'Punta Arenas (day trip to Isla Magdalena)', lat: -53.1638, lng: -70.9171, notes: "Beyond the penguin-colony boat trip, downtown's Plaza Muñoz Gamero and the Nao Victoria Museum (full-size replica historic ships) fill out the rest of a day here. Note the Isla Magdalena boats only run in austral summer (roughly November-March) — outside that window it isn't a viable day trip at all." },
       ],
       transport_to_next: 'From Punta Arenas the ferry across the Strait of Magellan (Punta Delgada-Bahía Azul), then the San Sebastián border crossing and the road to Río Grande/Ushuaia — no detour via Puerto Natales needed anymore.',
       notes: "Price verified (2026-07), correct. Torres del Paine peak season: refugio stays including meals run up to $100-150/night — outside the park the daily rate remains manageable. Punta Arenas is a deliberate day trip for Isla Magdalena's penguin colony (only reachable from there, not from Puerto Natales) — the trip then continues straight on to Tierra del Fuego, no return trip to Puerto Natales needed (2026-08).",
@@ -3103,9 +3103,9 @@ function rbBuildPatagoniaOverlandRoute() {
     {
       code: 'AR', name: 'Argentina', days: 8, budget: 1055, lat: -54.8019, lng: -68.303,
       destinations: [
-        { name: 'Ushuaia', lat: -54.8019, lng: -68.303 },
-        { name: 'Tierra del Fuego National Park', lat: -54.85, lng: -68.5833 },
-        { name: 'Beagle Channel', lat: -54.87, lng: -67.9 },
+        { name: 'Ushuaia', lat: -54.8019, lng: -68.303, notes: "The world's southernmost city and main embarkation port for Antarctica cruises, with the End of the World Train and Martial Glacier as separate half-day attractions in their own right. Book Antarctica add-ons or the train ahead if traveling Nov-Mar, when both sell out." },
+        { name: 'Tierra del Fuego National Park', lat: -54.85, lng: -68.5833, notes: "Marks the literal end of Ruta 3 (the Pan-American Highway's southern terminus), combining Beagle Channel coastal views with lenga-forest trails around Lapataia Bay. The End of the World Train drops you inside the park, so it's easy to combine with a hike out via the Costera trail." },
+        { name: 'Beagle Channel', lat: -54.87, lng: -67.9, notes: "Boat excursions from Ushuaia's port pass sea lion colonies, cormorant rookeries, and the red-and-white Les Eclaireurs lighthouse — the actual \"lighthouse at the end of the world\" that inspired Jules Verne. A half-day catamaran trip covers this; only pay for a longer option if it includes a penguin-colony landing (e.g. Isla Martillo)." },
       ],
       transport_to_next: 'Arrival in Ushuaia — endpoint of this standalone route (the Antarctica cruise is in the separate Antarctica Cruise 🐧 block, not here).',
       notes: "Tierra del Fuego leg, decoupled from El Calafate/El Chaltén (2026-08) so the country order follows the real border crossings. Argentina has required proof of travel/health insurance on entry since July 2025.",
@@ -4998,8 +4998,8 @@ function rbApplyPatagoniaOverhaulToRoute(route) {
     const clZuid = rbBuildBlock('CL', 'Chile', {
       days: 9, budget: 1200, lat: -51.7236, lng: -72.4875,
       destinations: [
-        { name: 'Puerto Natales', lat: -51.7236, lng: -72.4875 },
-        { name: 'Torres del Paine National Park', lat: -50.9423, lng: -73.0357 },
+        { name: 'Puerto Natales', lat: -51.7236, lng: -72.4875, notes: "Working waterfront town on the Señoret Channel that's the last stop to rent gear and stock up before Torres del Paine. If you have spare time, the restored Puerto Bories wool/meat-processing plant (now part of The Singular hotel) is worth a quick look." },
+        { name: 'Torres del Paine National Park', lat: -50.9423, lng: -73.0357, notes: "The draw is the granite towers themselves and Grey Glacier, usually seen via the multi-day W trek. Buy the park entrance ticket online ahead of time — it's date-stamped and capacity-limited, separate from refugio bookings." },
         { name: 'Punta Arenas (dagtrip Isla Magdalena)', lat: -53.1638, lng: -70.9171 },
       ],
       transport_to_next: 'Vanaf Punta Arenas de veerboot over de Straat van Magellaan (Punta Delgada-Bahía Azul), dan de grensovergang bij San Sebastián en de weg naar Río Grande/Ushuaia — geen omweg via Puerto Natales meer nodig.',
@@ -5008,9 +5008,9 @@ function rbApplyPatagoniaOverhaulToRoute(route) {
     const arUshuaia = rbBuildBlock('AR', 'Argentina', {
       days: 8, budget: 1055, lat: -54.8019, lng: -68.303,
       destinations: [
-        { name: 'Ushuaia', lat: -54.8019, lng: -68.303 },
-        { name: 'Tierra del Fuego National Park', lat: -54.85, lng: -68.5833 },
-        { name: 'Beagle Channel', lat: -54.87, lng: -67.9 },
+        { name: 'Ushuaia', lat: -54.8019, lng: -68.303, notes: "The world's southernmost city and main embarkation port for Antarctica cruises, with the End of the World Train and Martial Glacier as separate half-day attractions in their own right. Book Antarctica add-ons or the train ahead if traveling Nov-Mar, when both sell out." },
+        { name: 'Tierra del Fuego National Park', lat: -54.85, lng: -68.5833, notes: "Marks the literal end of Ruta 3 (the Pan-American Highway's southern terminus), combining Beagle Channel coastal views with lenga-forest trails around Lapataia Bay. The End of the World Train drops you inside the park, so it's easy to combine with a hike out via the Costera trail." },
+        { name: 'Beagle Channel', lat: -54.87, lng: -67.9, notes: "Boat excursions from Ushuaia's port pass sea lion colonies, cormorant rookeries, and the red-and-white Les Eclaireurs lighthouse — the actual \"lighthouse at the end of the world\" that inspired Jules Verne. A half-day catamaran trip covers this; only pay for a longer option if it includes a penguin-colony landing (e.g. Isla Martillo)." },
       ],
       transport_to_next: route.name === 'Patagonia & Antarctica Expedition 🧊'
         ? 'Inschepen in Ushuaia voor de expeditiecruise — oversteek van de Drake Passage (ca. 2 dagen varen)'
@@ -8323,6 +8323,58 @@ function rbMigrateAustriaSloveniaCroatiaDestinationNotes() {
 }
 
 /**
+ * Batch 11 (2026-09-17) for the per-destination-notes workflow -- Patagonia & Antarctica
+ * Expedition (5 legs, 24 destinations), researched as 3 parallel batches matching the route's own
+ * country legs (Chilean Patagonia, Argentine Patagonia, Antarctica). Same generic name-matching
+ * migration pattern as the other grand tours -- also lands on Patagonia Overland 🏔️, Chilean
+ * Patagonia 🥾, Argentine Patagonia 🥩 and Antarctica Cruise 🐧 (this route's standalone splits).
+ */
+function rbMigratePatagoniaAntarcticaDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_PATAGONIA_ANTARCTICA_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_PATAGONIA_ANTARCTICA_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Puerto Montt': "Gateway city on the Reloncaví Sound whose real highlight is the Angelmó waterfront market for fresh seafood and Mapuche/Chilote crafts — worth a couple hours before heading onward, but it's mostly a transit hub, not a destination in itself.",
+    'Chiloé Island (day trip)': "Known for UNESCO-listed wooden stilt churches and Castro's colorful palafitos (houses on stilts over the water). With only a day, concentrate on Castro itself (palafitos plus one or two nearby churches like Nercón) rather than trying to cover the wider archipelago.",
+    'Parque Pumalín': "Douglas Tompkins' former private reserve (now a national park) protects old-growth alerce forest and temperate rainforest around volcanic terrain. Enter at Caleta Gonzalo — reached by ferry from Hornopirén in summer (Jan-Feb) or overland via Chaitén the rest of the year — and do the short Cascadas Escondidas or Sendero Los Alerces trail if time is tight.",
+    'Queulat National Park': 'Centered on the Ventisquero Colgante, a glacier hanging off a cliff face with waterfalls dropping into the lagoon below. The lookout trail is under an hour round-trip, but the lagoon boat/kayak trip gets you much closer to the ice.',
+    'Villa Cerro Castillo': "Small village serving as the base for Cerro Castillo's jagged granite spires, a multi-day trekking circuit often compared to Torres del Paine but far less crowded. Buy the CONAF entry permit online in advance via PasesParques.cl; note that some side trails (Estero Parada, Laguna Castillo) are now closed to independent hikers and require a certified guide.",
+    'Puerto Río Tranquilo & Marble Caves': 'The Capillas/Catedral de Mármol are marble rock formations on General Carrera Lake, reachable only by a short boat or kayak tour from town. Go early for the best light, and aim for lower-water months (roughly Sept-Feb, before summer snowmelt raises the lake) so boats can actually get inside the caves.',
+    'Puerto Natales': "Working waterfront town on the Señoret Channel that's the last stop to rent gear and stock up before Torres del Paine. If you have spare time, the restored Puerto Bories wool/meat-processing plant (now part of The Singular hotel) is worth a quick look.",
+    'Torres del Paine National Park': 'The draw is the granite towers themselves and Grey Glacier, usually seen via the multi-day W trek. Buy the park entrance ticket online ahead of time — it\'s date-stamped and capacity-limited, separate from refugio bookings.',
+    'Punta Arenas (day trip to Isla Magdalena)': "Beyond the penguin-colony boat trip, downtown's Plaza Muñoz Gamero and the Nao Victoria Museum (full-size replica historic ships) fill out the rest of a day here. Note the Isla Magdalena boats only run in austral summer (roughly November-March) — outside that window it isn't a viable day trip at all.",
+    'El Calafate': 'Sits on Lago Argentino purely as the logistics base for Perito Moreno — beyond the glacier day trips, the Glaciarium museum and lakeside boardwalk are the only real in-town draws, so budget minimal time here beyond arrival/departure.',
+    'Perito Moreno Glacier': 'One of the few glaciers in the world still advancing, with loud, frequent ice calving visible from a multi-level boardwalk (passarelas) system that needs no guide. For a closer look, the "Minitrekking" or "Big Ice" ice-trekking tours (crampons + short boat crossing) sell out in peak season (Dec-Feb), so book ahead.',
+    'El Chaltén': "Argentina's self-styled trekking capital — free trailheads start directly from town (no shuttle needed) leading to both Fitz Roy and Cerro Torre. It's a small village with limited ATMs/services relative to its popularity, so arrive with cash and supplies.",
+    'Fitz Roy & Laguna de los Tres': 'The classic day hike (~20km round trip, 8-10 hours), with a steep final climb to the turquoise glacial lake right beneath Fitz Roy\'s spires. Start before dawn to catch the "amanecer" alpenglow on the peaks and beat both the crowds and the afternoon wind.',
+    'Cerro Torre': 'Reached via the gentler Laguna Torre trail (~18km round trip); the ice-capped spire is notoriously cloud-shrouded, fully visible only a handful of days a month. Build a spare day into your Chaltén stay so you can go on a clear morning rather than a fixed schedule.',
+    'Ushuaia': "The world's southernmost city and main embarkation port for Antarctica cruises, with the End of the World Train and Martial Glacier as separate half-day attractions in their own right. Book Antarctica add-ons or the train ahead if traveling Nov-Mar, when both sell out.",
+    'Tierra del Fuego National Park': "Marks the literal end of Ruta 3 (the Pan-American Highway's southern terminus), combining Beagle Channel coastal views with lenga-forest trails around Lapataia Bay. The End of the World Train drops you inside the park, so it's easy to combine with a hike out via the Costera trail.",
+    'Beagle Channel': 'Boat excursions from Ushuaia\'s port pass sea lion colonies, cormorant rookeries, and the red-and-white Les Eclaireurs lighthouse — the actual "lighthouse at the end of the world" that inspired Jules Verne. A half-day catamaran trip covers this; only pay for a longer option if it includes a penguin-colony landing (e.g. Isla Martillo).',
+    'Expedition Cruise from Ushuaia': 'Ushuaia\'s Beagle Channel harbor is the sole embarkation point for Antarctic Peninsula voyages, and the roughly two-day Drake Passage crossing that follows can range from a smooth "Drake Lake" to a rough "Drake Shake" — pack seasickness medication and expect a full day of pre-departure gear and biosecurity briefings before boarding.',
+    'South Shetland Islands': 'Deception Island — a horseshoe-shaped active volcanic caldera you sail directly into through the narrow "Neptune\'s Bellows" entrance — is the archipelago\'s signature stop, with the rusting remains of a whaling station at Whalers Bay and, on some ships, a polar plunge in its geothermally warmed shallows.',
+    'Antarctic Peninsula': 'The Lemaire Channel, a narrow cliff-walled passage nicknamed "Kodak Gap" for its near-constant photogenic scenery, is the Peninsula\'s best-known scenic sail-through, alongside continental landings at Neko Harbour or Paradise Harbour; exact stops depend entirely on ice/weather and are only confirmed once aboard.',
+    'Glaciers & Icebergs': "Massive tabular icebergs calved from the Peninsula's ice shelves drift through channels like the Gerlache Strait, some towering well over the ship; expedition staff time Zodiac cruises for early morning or late evening light, when low sun turns the ice blue and gold.",
+    'Penguin colonies': "Cuverville Island holds one of the Peninsula's largest gentoo penguin rookeries, while chinstrap penguins dominate Half Moon Island — since H5N1 avian flu reached the region in 2023/24, expect mandatory boot-disinfection and gear checks before and after every landing to protect the colonies (per IAATO/SCAR biosecurity protocols still in effect as of the 2026 season).",
+    'Whales': 'Wilhelmina Bay, nicknamed "Whale-mina Bay," sees dense krill-driven aggregations of humpback whales especially in the late season (Feb-March), often surfacing right alongside Zodiacs.',
+    'Return to Ushuaia': 'The return Drake Passage crossing is typically used for disembarkation briefings and species-count recaps; build in a buffer day in Ushuaia afterward, since Drake weather can delay arrival back into port.',
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -8748,9 +8800,9 @@ function rbBuildArgentinePatagoniaRoute() {
     {
       code: 'AR', name: 'Argentina', days: 8, budget: 1055, lat: -54.8019, lng: -68.303,
       destinations: [
-        { name: 'Ushuaia', lat: -54.8019, lng: -68.303 },
-        { name: 'Tierra del Fuego National Park', lat: -54.85, lng: -68.5833 },
-        { name: 'Beagle Channel', lat: -54.87, lng: -67.9 },
+        { name: 'Ushuaia', lat: -54.8019, lng: -68.303, notes: "The world's southernmost city and main embarkation port for Antarctica cruises, with the End of the World Train and Martial Glacier as separate half-day attractions in their own right. Book Antarctica add-ons or the train ahead if traveling Nov-Mar, when both sell out." },
+        { name: 'Tierra del Fuego National Park', lat: -54.85, lng: -68.5833, notes: "Marks the literal end of Ruta 3 (the Pan-American Highway's southern terminus), combining Beagle Channel coastal views with lenga-forest trails around Lapataia Bay. The End of the World Train drops you inside the park, so it's easy to combine with a hike out via the Costera trail." },
+        { name: 'Beagle Channel', lat: -54.87, lng: -67.9, notes: "Boat excursions from Ushuaia's port pass sea lion colonies, cormorant rookeries, and the red-and-white Les Eclaireurs lighthouse — the actual \"lighthouse at the end of the world\" that inspired Jules Verne. A half-day catamaran trip covers this; only pay for a longer option if it includes a penguin-colony landing (e.g. Isla Martillo)." },
       ],
       notes: 'Tierra del Fuego leg. Since July 2025, Argentina requires proof of travel/health insurance on entry.',
       transport_to_next: 'End of this route — flight Ushuaia-Buenos Aires, then a return flight to Amsterdam (1 stopover).',
@@ -8774,9 +8826,9 @@ function rbBuildChileanPatagoniaRoute() {
     {
       code: 'CL', name: 'Chile', days: 9, budget: 1200, lat: -51.7236, lng: -72.4875,
       destinations: [
-        { name: 'Puerto Natales', lat: -51.7236, lng: -72.4875 },
-        { name: 'Torres del Paine National Park', lat: -50.9423, lng: -73.0357 },
-        { name: 'Punta Arenas (day trip to Isla Magdalena)', lat: -53.1638, lng: -70.9171 },
+        { name: 'Puerto Natales', lat: -51.7236, lng: -72.4875, notes: "Working waterfront town on the Señoret Channel that's the last stop to rent gear and stock up before Torres del Paine. If you have spare time, the restored Puerto Bories wool/meat-processing plant (now part of The Singular hotel) is worth a quick look." },
+        { name: 'Torres del Paine National Park', lat: -50.9423, lng: -73.0357, notes: "The draw is the granite towers themselves and Grey Glacier, usually seen via the multi-day W trek. Buy the park entrance ticket online ahead of time — it's date-stamped and capacity-limited, separate from refugio bookings." },
+        { name: 'Punta Arenas (day trip to Isla Magdalena)', lat: -53.1638, lng: -70.9171, notes: "Beyond the penguin-colony boat trip, downtown's Plaza Muñoz Gamero and the Nao Victoria Museum (full-size replica historic ships) fill out the rest of a day here. Note the Isla Magdalena boats only run in austral summer (roughly November-March) — outside that window it isn't a viable day trip at all." },
       ],
       notes: "Torres del Paine peak: refugio stays incl. meals run up to $100-150/night. Punta Arenas is a deliberate day trip for Isla Magdalena's penguin colony.",
       transport_to_next: 'End of this route — flight Punta Arenas-Santiago, then a return flight to Amsterdam.',

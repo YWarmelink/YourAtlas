@@ -143,6 +143,7 @@ const RB_MIGRATE_FLAG_2026_09_CARIBBEAN_AMAZON_DESTINATION_NOTES = 'atlas_grand_
 const RB_MIGRATE_FLAG_2026_09_BRITISH_ISLES_DESTINATION_NOTES = 'atlas_grand_trips_migrate_2026_09_british_isles_destination_notes_v1';
 const RB_MIGRATE_FLAG_2026_09_WEST_CENTRAL_AFRICA_DESTINATION_NOTES = 'atlas_grand_trips_migrate_2026_09_west_central_africa_destination_notes_v1';
 const RB_MIGRATE_FLAG_2026_09_AUSTRIA_SLOVENIA_CROATIA_DESTINATION_NOTES = 'atlas_grand_trips_migrate_2026_09_austria_slovenia_croatia_destination_notes_v1';
+const RB_MIGRATE_FLAG_2026_09_PATAGONIA_ANTARCTICA_DESTINATION_NOTES = 'atlas_grand_trips_migrate_2026_09_patagonia_antarctica_destination_notes_v1';
 const RB_MIGRATE_FLAG_2026_09_DETERMINISTIC_SEED_IDS = 'atlas_grand_trips_migrate_2026_09_deterministic_seed_ids_v1';
 const RB_BLOCK_COLORS =['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
