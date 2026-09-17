@@ -8430,6 +8430,41 @@ function rbMigrateNorthAmericaDestinationNotes() {
 }
 
 /**
+ * Batch 13 (2026-09-17) for the per-destination-notes workflow -- Croatia + Montenegro + Bosnia
+ * (12 days), a small 3-leg/7-destination combo route, researched in a single pass. High-leverage
+ * shared-signature batch: all 7 destinations (Split, Dubrovnik, Kotor, Budva, Trebinje, Mostar,
+ * Sarajevo) are reused verbatim across roughly 6 other Balkan combo routes. Same generic
+ * name-matching migration pattern as the grand-tour batches above.
+ */
+function rbMigrateCroatiaMontenegroBosniaDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_CROATIA_MONTENEGRO_BOSNIA_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_CROATIA_MONTENEGRO_BOSNIA_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    "Split (Diocletian's Palace)": "The 4th-century Roman emperor's retirement palace isn't a ruin behind a fence — it's a living neighborhood, with Split's actual old town built directly into and around its walls, colonnaded Peristyle square, and the octagonal Cathedral of St. Domnius (once Diocletian's own mausoleum). Duck into the palace's atmospheric basement halls (substructures) — used as a Game of Thrones filming location — and climb the cathedral's bell tower for a rooftop view over the old town and harbor.",
+    'Dubrovnik Old Town': "Its walled marble streets (the Stradun) and 2km of intact medieval ramparts overlooking the Adriatic are the draw, along with the baroque St. Blaise's Church and Rector's Palace; Game of Thrones fans will recognize it as King's Landing. Walk the city walls right at opening (around 8am) to beat both the midday heat and the cruise-ship crowds that flood the old town by late morning.",
+    'Kotor Old Town + Bay of Kotor': "The Venetian old town sits at the foot of a dramatic fjord-like bay ringed by mountains, and the real highlight is climbing the ~1,300 steps of the city walls up to St. John's Fortress for a sweeping view over the bay and terracotta rooftops. Go early morning to avoid both the heat and cruise-ship crowds on the climb; the fortress ticket runs roughly €8-15 depending on season/entrance, cash or card at the booth.",
+    'Budva': "Its small walled old town is pleasant but modest compared to Kotor or Dubrovnik — Budva's real appeal is as a base for the beach-resort coastline around it, especially the postcard view of the Sveti Stefan islet just south of town. Don't spend more than a couple of hours in the old town itself; head to the Sveti Stefan viewpoint (free, no need to enter the resort) for the classic photo.",
+    'Trebinje': "A quiet, largely untouristed Herzegovinian town centered on a plane-tree-shaded old square and the Arslanagić (Perović) stone bridge over the Trebišnjica river — a genuine break from the crowds of the coast. Cross the old bridge and, if time allows, head up to the Hercegovačka Gračanica monastery on the hill above town for a panoramic view over Trebinje and the river valley.",
+    'Mostar (Stari Most)': "The rebuilt Ottoman-era stone bridge (destroyed in the 1993 war, restored and UNESCO-listed) is the whole reason to stop, with the Old Bridge's steep arch and turquoise Neretva River below it framed by the old bazaar quarter on both banks. Local divers still jump from the bridge year-round (roughly 11:00-15:00, May-October) for tips (€2-5 per spectator is customary) — worth timing your visit around midday to catch one.",
+    'Sarajevo': "Its Baščaršija old bazaar is the atmospheric core (Ottoman architecture, coppersmith alleys, the Sebilj fountain), but the city's real distinguishing story is the 1990s siege — the Tunnel of Hope (Tunel spasa) museum, built around the actual tunnel used to smuggle supplies under the airport during the siege, is a short taxi/tram ride from downtown and shouldn't be treated as optional. Book the Tunnel of Hope visit ahead in peak season (May-October) — it can sell out, entry is about 20 BAM (~€10.50), open daily roughly 9:00-17:00.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -14290,7 +14325,7 @@ function rbBuildDubrovnikSurroundingsRoute() {
     {
       code: 'HR', name: 'Croatia', days: 5, budget: 875, lat: 42.6507, lng: 18.0944,
       destinations: [
-        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
+        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944, notes: "Its walled marble streets (the Stradun) and 2km of intact medieval ramparts overlooking the Adriatic are the draw, along with the baroque St. Blaise's Church and Rector's Palace; Game of Thrones fans will recognize it as King's Landing. Walk the city walls right at opening (around 8am) to beat both the midday heat and the cruise-ship crowds that flood the old town by late morning." },
         { name: 'Lokrum Island', lat: 42.6339, lng: 18.1181 },
         { name: 'Elafiti Islands (Lopud)', lat: 42.6772, lng: 18.0044 },
         { name: 'Cavtat', lat: 42.5806, lng: 18.2189 },
@@ -14336,7 +14371,7 @@ function rbBuildSplitIslandsRoute() {
     {
       code: 'HR', name: 'Croatia', days: 6, budget: 810, lat: 43.5081, lng: 16.4402,
       destinations: [
-        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402 },
+        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402, notes: "The 4th-century Roman emperor's retirement palace isn't a ruin behind a fence — it's a living neighborhood, with Split's actual old town built directly into and around its walls, colonnaded Peristyle square, and the octagonal Cathedral of St. Domnius (once Diocletian's own mausoleum). Duck into the palace's atmospheric basement halls (substructures) — used as a Game of Thrones filming location — and climb the cathedral's bell tower for a rooftop view over the old town and harbor." },
         { name: 'Hvar Town', lat: 43.1729, lng: 16.4413 },
         { name: 'Brač / Zlatni Rat', lat: 43.2564, lng: 16.6386 },
         { name: 'Vis (optional)', lat: 43.0611, lng: 16.1811 },
@@ -14382,8 +14417,8 @@ function rbBuildCroatiaNorthToSouthRoute() {
         { name: 'Zagreb', lat: 45.8150, lng: 15.9819, notes: "The Upper Town's colorful-tiled St. Mark's Church and the Dolac market are the highlights, linked to the Lower Town by the world's shortest funicular (under a minute). A free walking tour is an efficient way to cover both halves in a day." },
         { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820, notes: "16 turquoise terraced lakes connected by waterfalls and wooden boardwalks, with a boat crossing Kozjak Lake as the scenic centerpiece. Pick route C or K (covers both Upper and Lower Lakes, not just one) and start right at opening for boardwalk photos without crowds." },
         { name: 'Zadar', lat: 44.1194, lng: 15.2314, notes: "The Sea Organ (wave-powered pipes built into the waterfront steps) and the adjacent Sun Salutation light installation make the sunset promenade the actual destination here — reportedly the sunset Hitchcock once called the world's most beautiful. Time the visit for sunset; the light show and organ sound together are the point." },
-        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402 },
-        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
+        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402, notes: "The 4th-century Roman emperor's retirement palace isn't a ruin behind a fence — it's a living neighborhood, with Split's actual old town built directly into and around its walls, colonnaded Peristyle square, and the octagonal Cathedral of St. Domnius (once Diocletian's own mausoleum). Duck into the palace's atmospheric basement halls (substructures) — used as a Game of Thrones filming location — and climb the cathedral's bell tower for a rooftop view over the old town and harbor." },
+        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944, notes: "Its walled marble streets (the Stradun) and 2km of intact medieval ramparts overlooking the Adriatic are the draw, along with the baroque St. Blaise's Church and Rector's Palace; Game of Thrones fans will recognize it as King's Landing. Walk the city walls right at opening (around 8am) to beat both the midday heat and the cruise-ship crowds that flood the old town by late morning." },
       ],
       notes: "Zagreb (2 days) — Plitvice (1-2 days) — Zadar (1-2 days) — Split (2 days) — Dubrovnik (2-3 days). Budget averages ~€110-160/day (Zagreb/Zadar cheaper, Dubrovnik pricier). Season: May-June or September. Web check (2026-08): the Split-Dubrovnik leg now mostly runs via the Pelješac bridge (open since July 2022), so the old double Bosnian border crossing at Neum on the main A1/D8 route is no longer needed on this route.",
       transport_to_next: 'End of this route — fly home from Dubrovnik (or reversed, from Zagreb).',
@@ -14404,9 +14439,9 @@ function rbBuildCroatiaCoastalRoadtripRoute() {
       destinations: [
         { name: 'Zadar', lat: 44.1194, lng: 15.2314, notes: "The Sea Organ (wave-powered pipes built into the waterfront steps) and the adjacent Sun Salutation light installation make the sunset promenade the actual destination here — reportedly the sunset Hitchcock once called the world's most beautiful. Time the visit for sunset; the light show and organ sound together are the point." },
         { name: 'Krka National Park / Šibenik', lat: 43.8097, lng: 15.9633 },
-        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402 },
+        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402, notes: "The 4th-century Roman emperor's retirement palace isn't a ruin behind a fence — it's a living neighborhood, with Split's actual old town built directly into and around its walls, colonnaded Peristyle square, and the octagonal Cathedral of St. Domnius (once Diocletian's own mausoleum). Duck into the palace's atmospheric basement halls (substructures) — used as a Game of Thrones filming location — and climb the cathedral's bell tower for a rooftop view over the old town and harbor." },
         { name: 'Hvar Town', lat: 43.1729, lng: 16.4413 },
-        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
+        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944, notes: "Its walled marble streets (the Stradun) and 2km of intact medieval ramparts overlooking the Adriatic are the draw, along with the baroque St. Blaise's Church and Rector's Palace; Game of Thrones fans will recognize it as King's Landing. Walk the city walls right at opening (around 8am) to beat both the midday heat and the cruise-ship crowds that flood the old town by late morning." },
       ],
       notes: "Zadar (1-2 days) — Krka National Park/Šibenik (1 day) — Split (2 days) — Hvar (1-2 days) — Dubrovnik (2-3 days), all along the coastal D8. Budget ~€110-160/day. Season: May-June/September for a quiet coast road without traffic. Web check (2026-08): if you take the old coastal road through Neum (Bosnian territory) instead of the Pelješac bridge — wait times 10-30 min, up to 60 min on July-August weekends, a passport is required (an ID card is not enough for Bosnia), and rental-car insurance often adds a €10-15/day surcharge for Bosnia coverage.",
       transport_to_next: 'End of this route — fly home from Dubrovnik (or reversed, from Zadar).',
@@ -14430,7 +14465,7 @@ function rbBuildCompleteCroatiaRoute() {
         { name: 'Zadar', lat: 44.1194, lng: 15.2314, notes: "The Sea Organ (wave-powered pipes built into the waterfront steps) and the adjacent Sun Salutation light installation make the sunset promenade the actual destination here — reportedly the sunset Hitchcock once called the world's most beautiful. Time the visit for sunset; the light show and organ sound together are the point." },
         { name: "Split (Diocletian's Palace) + islands", lat: 43.5081, lng: 16.4402 },
         { name: 'Hvar Town', lat: 43.1729, lng: 16.4413 },
-        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
+        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944, notes: "Its walled marble streets (the Stradun) and 2km of intact medieval ramparts overlooking the Adriatic are the draw, along with the baroque St. Blaise's Church and Rector's Palace; Game of Thrones fans will recognize it as King's Landing. Walk the city walls right at opening (around 8am) to beat both the midday heat and the cruise-ship crowds that flood the old town by late morning." },
       ],
       notes: "Zagreb (2 days) — Plitvice (2 days) — Zadar (1-2 days) — Split + islands (3 days) — Hvar (2 days) — Dubrovnik (3 days). Budget averages ~€110-150/day across the whole trip. Season: late May-June or September for the full route without a heat/crowd peak. Web check (2026-08): book Plitvice tickets well ahead (hourly slots) and take the Pelješac bridge for the fast run south.",
       transport_to_next: 'End of this route — fly home from Dubrovnik (or reversed, from Zagreb).',
@@ -14625,7 +14660,7 @@ function rbBuildSarajevoMostarRoute() {
         { name: 'Sarajevo (Baščaršija)', lat: 43.8563, lng: 18.4131 },
         { name: 'Tunnel of Hope (Butmir)', lat: 43.8194, lng: 18.3319 },
         { name: 'Trebević cable car', lat: 43.8347, lng: 18.4444 },
-        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078 },
+        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078, notes: "The rebuilt Ottoman-era stone bridge (destroyed in the 1993 war, restored and UNESCO-listed) is the whole reason to stop, with the Old Bridge's steep arch and turquoise Neretva River below it framed by the old bazaar quarter on both banks. Local divers still jump from the bridge year-round (roughly 11:00-15:00, May-October) for tips (€2-5 per spectator is customary) — worth timing your visit around midday to catch one." },
         { name: 'Kravice Waterfalls', lat: 43.1225, lng: 17.6725 },
         { name: 'Blagaj Tekija', lat: 43.2489, lng: 17.8942 },
       ],
@@ -14646,8 +14681,8 @@ function rbBuildBosniaRoadtripRoute() {
     {
       code: 'BA', name: 'Bosnia and Herzegovina', days: 6, budget: 270, lat: 43.8563, lng: 18.4131,
       destinations: [
-        { name: 'Sarajevo', lat: 43.8563, lng: 18.4131 },
-        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078 },
+        { name: 'Sarajevo', lat: 43.8563, lng: 18.4131, notes: "Its Baščaršija old bazaar is the atmospheric core (Ottoman architecture, coppersmith alleys, the Sebilj fountain), but the city's real distinguishing story is the 1990s siege — the Tunnel of Hope (Tunel spasa) museum, built around the actual tunnel used to smuggle supplies under the airport during the siege, is a short taxi/tram ride from downtown and shouldn't be treated as optional. Book the Tunnel of Hope visit ahead in peak season (May-October) — it can sell out, entry is about 20 BAM (~€10.50), open daily roughly 9:00-17:00." },
+        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078, notes: "The rebuilt Ottoman-era stone bridge (destroyed in the 1993 war, restored and UNESCO-listed) is the whole reason to stop, with the Old Bridge's steep arch and turquoise Neretva River below it framed by the old bazaar quarter on both banks. Local divers still jump from the bridge year-round (roughly 11:00-15:00, May-October) for tips (€2-5 per spectator is customary) — worth timing your visit around midday to catch one." },
         { name: 'Kravice Waterfalls', lat: 43.1225, lng: 17.6725 },
         { name: 'Blagaj Tekija', lat: 43.2489, lng: 17.8942 },
         { name: "Konjic (Tito's Bunker / ARK D-0)", lat: 43.6531, lng: 17.9614 },
@@ -14670,7 +14705,7 @@ function rbBuildBosniaCroatiaRoute() {
     {
       code: 'HR', name: 'Croatia', days: 2, budget: 300, lat: 42.6507, lng: 18.0944,
       destinations: [
-        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
+        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944, notes: "Its walled marble streets (the Stradun) and 2km of intact medieval ramparts overlooking the Adriatic are the draw, along with the baroque St. Blaise's Church and Rector's Palace; Game of Thrones fans will recognize it as King's Landing. Walk the city walls right at opening (around 8am) to beat both the midday heat and the cruise-ship crowds that flood the old town by late morning." },
       ],
       notes: "Dubrovnik (2 days) as the flight-in/flight-out anchor for this trip. Budget ~€150/day — Dubrovnik is clearly the priciest stop on this route. Season: May-June/September (avoid the August crowds in Dubrovnik).",
       transport_to_next: 'Overland into Bosnia and Herzegovina towards Mostar — a non-Schengen border, so this crossing now includes EES biometric registration (fingerprint + facial scan); build in extra time versus older pre-EES expectations.',
@@ -14678,9 +14713,9 @@ function rbBuildBosniaCroatiaRoute() {
     {
       code: 'BA', name: 'Bosnia and Herzegovina', days: 7, budget: 350, lat: 43.8563, lng: 18.4131,
       destinations: [
-        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078 },
-        { name: 'Sarajevo', lat: 43.8563, lng: 18.4131 },
-        { name: 'Trebinje', lat: 42.7106, lng: 18.3438 },
+        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078, notes: "The rebuilt Ottoman-era stone bridge (destroyed in the 1993 war, restored and UNESCO-listed) is the whole reason to stop, with the Old Bridge's steep arch and turquoise Neretva River below it framed by the old bazaar quarter on both banks. Local divers still jump from the bridge year-round (roughly 11:00-15:00, May-October) for tips (€2-5 per spectator is customary) — worth timing your visit around midday to catch one." },
+        { name: 'Sarajevo', lat: 43.8563, lng: 18.4131, notes: "Its Baščaršija old bazaar is the atmospheric core (Ottoman architecture, coppersmith alleys, the Sebilj fountain), but the city's real distinguishing story is the 1990s siege — the Tunnel of Hope (Tunel spasa) museum, built around the actual tunnel used to smuggle supplies under the airport during the siege, is a short taxi/tram ride from downtown and shouldn't be treated as optional. Book the Tunnel of Hope visit ahead in peak season (May-October) — it can sell out, entry is about 20 BAM (~€10.50), open daily roughly 9:00-17:00." },
+        { name: 'Trebinje', lat: 42.7106, lng: 18.3438, notes: "A quiet, largely untouristed Herzegovinian town centered on a plane-tree-shaded old square and the Arslanagić (Perović) stone bridge over the Trebišnjica river — a genuine break from the crowds of the coast. Cross the old bridge and, if time allows, head up to the Hercegovačka Gračanica monastery on the hill above town for a panoramic view over Trebinje and the river valley." },
       ],
       notes: "Mostar (2 days) — Sarajevo (3 days) — Trebinje (1 day) — back to Dubrovnik for the flight home (1 day, folded into this block). Budget ~€50/day. Web check (2026-08): allow extra time at the Croatia-Bosnia border for EES registration, same as on the way in.",
       transport_to_next: 'End of this route — back to Dubrovnik to fly home.',
@@ -14704,8 +14739,8 @@ function rbBuildBosniaCroatiaMontenegroRoute() {
     {
       code: 'HR', name: 'Croatia', days: 3, budget: 450, lat: 43.5081, lng: 16.4402,
       destinations: [
-        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402 },
-        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
+        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402, notes: "The 4th-century Roman emperor's retirement palace isn't a ruin behind a fence — it's a living neighborhood, with Split's actual old town built directly into and around its walls, colonnaded Peristyle square, and the octagonal Cathedral of St. Domnius (once Diocletian's own mausoleum). Duck into the palace's atmospheric basement halls (substructures) — used as a Game of Thrones filming location — and climb the cathedral's bell tower for a rooftop view over the old town and harbor." },
+        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944, notes: "Its walled marble streets (the Stradun) and 2km of intact medieval ramparts overlooking the Adriatic are the draw, along with the baroque St. Blaise's Church and Rector's Palace; Game of Thrones fans will recognize it as King's Landing. Walk the city walls right at opening (around 8am) to beat both the midday heat and the cruise-ship crowds that flood the old town by late morning." },
       ],
       notes: "Split or Dubrovnik (3 days combined, either as a single flight-in base or a short Split-Dubrovnik hop) as the entry point. Budget ~€150/day.",
       transport_to_next: 'Overland into Bosnia and Herzegovina towards Mostar — a non-Schengen border with EES biometric registration, allow extra time.',
@@ -14713,9 +14748,9 @@ function rbBuildBosniaCroatiaMontenegroRoute() {
     {
       code: 'BA', name: 'Bosnia and Herzegovina', days: 6, budget: 330, lat: 43.8563, lng: 18.4131,
       destinations: [
-        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078 },
-        { name: 'Sarajevo', lat: 43.8563, lng: 18.4131 },
-        { name: 'Trebinje', lat: 42.7106, lng: 18.3438 },
+        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078, notes: "The rebuilt Ottoman-era stone bridge (destroyed in the 1993 war, restored and UNESCO-listed) is the whole reason to stop, with the Old Bridge's steep arch and turquoise Neretva River below it framed by the old bazaar quarter on both banks. Local divers still jump from the bridge year-round (roughly 11:00-15:00, May-October) for tips (€2-5 per spectator is customary) — worth timing your visit around midday to catch one." },
+        { name: 'Sarajevo', lat: 43.8563, lng: 18.4131, notes: "Its Baščaršija old bazaar is the atmospheric core (Ottoman architecture, coppersmith alleys, the Sebilj fountain), but the city's real distinguishing story is the 1990s siege — the Tunnel of Hope (Tunel spasa) museum, built around the actual tunnel used to smuggle supplies under the airport during the siege, is a short taxi/tram ride from downtown and shouldn't be treated as optional. Book the Tunnel of Hope visit ahead in peak season (May-October) — it can sell out, entry is about 20 BAM (~€10.50), open daily roughly 9:00-17:00." },
+        { name: 'Trebinje', lat: 42.7106, lng: 18.3438, notes: "A quiet, largely untouristed Herzegovinian town centered on a plane-tree-shaded old square and the Arslanagić (Perović) stone bridge over the Trebišnjica river — a genuine break from the crowds of the coast. Cross the old bridge and, if time allows, head up to the Hercegovačka Gračanica monastery on the hill above town for a panoramic view over Trebinje and the river valley." },
       ],
       notes: "Mostar (2 days) — Sarajevo (3 days) — Trebinje (1 day). Budget ~€55/day.",
       transport_to_next: 'Overland from Trebinje into Montenegro towards Kotor — a quiet crossing, but check the rental car covers Montenegro.',
@@ -14723,7 +14758,7 @@ function rbBuildBosniaCroatiaMontenegroRoute() {
     {
       code: 'ME', name: 'Montenegro', days: 3, budget: 180, lat: 42.4247, lng: 18.7712,
       destinations: [
-        { name: 'Kotor Old Town + Bay of Kotor', lat: 42.4247, lng: 18.7712 },
+        { name: 'Kotor Old Town + Bay of Kotor', lat: 42.4247, lng: 18.7712, notes: "The Venetian old town sits at the foot of a dramatic fjord-like bay ringed by mountains, and the real highlight is climbing the ~1,300 steps of the city walls up to St. John's Fortress for a sweeping view over the bay and terracotta rooftops. Go early morning to avoid both the heat and cruise-ship crowds on the climb; the fortress ticket runs roughly €8-15 depending on season/entrance, cash or card at the booth." },
       ],
       notes: "Kotor and the Bay of Kotor (3 days). Budget ~€60/day. Season: May-June/September because of border traffic. Web check (2026-08): if the flight home is out of Dubrovnik rather than Podgorica/Tivat, the return leg crosses back into Croatia via the coastal Karasovići border crossing — that crossing saw 2-5 hour waits in July-August 2026 due to EES, so plan a morning crossing.",
       transport_to_next: 'End of this route — fly home from Podgorica/Tivat, or back overland to Dubrovnik (see the Karasovići note above).',
@@ -14765,7 +14800,7 @@ function rbBuildMontenegroRoute() {
       code: 'ME', name: 'Montenegro', days: 6, budget: 300, lat: 42.7000, lng: 19.0000,
       destinations: [
         { name: 'Kotor Old Town', lat: 42.4247, lng: 18.7712 },
-        { name: 'Budva', lat: 42.2911, lng: 18.8400 },
+        { name: 'Budva', lat: 42.2911, lng: 18.8400, notes: "Its small walled old town is pleasant but modest compared to Kotor or Dubrovnik — Budva's real appeal is as a base for the beach-resort coastline around it, especially the postcard view of the Sveti Stefan islet just south of town. Don't spend more than a couple of hours in the old town itself; head to the Sveti Stefan viewpoint (free, no need to enter the resort) for the classic photo." },
         { name: 'Lovćen National Park', lat: 42.3939, lng: 18.8300 },
         { name: 'Njeguši', lat: 42.4106, lng: 18.8494 },
         { name: 'Žabljak / Durmitor National Park', lat: 43.1550, lng: 19.1225 },
@@ -14794,7 +14829,7 @@ function rbBuildMontenegroRoadtripRoute() {
         { name: 'Kolašin', lat: 42.8236, lng: 19.5181 },
         { name: 'Kotor Old Town', lat: 42.4247, lng: 18.7712 },
         { name: 'Perast', lat: 42.4875, lng: 18.7089 },
-        { name: 'Budva', lat: 42.2911, lng: 18.8400 },
+        { name: 'Budva', lat: 42.2911, lng: 18.8400, notes: "Its small walled old town is pleasant but modest compared to Kotor or Dubrovnik — Budva's real appeal is as a base for the beach-resort coastline around it, especially the postcard view of the Sveti Stefan islet just south of town. Don't spend more than a couple of hours in the old town itself; head to the Sveti Stefan viewpoint (free, no need to enter the resort) for the classic photo." },
       ],
       notes: "Podgorica — Ostrog Monastery as a day trip — Žabljak/Durmitor (2 days, the Black Lake) — Kolašin (1 day) — Kotor + Perast (3 days) — Budva. Budget ~€50-60/day including the rental car. Season: June-September — the mountain passes are sometimes snowed in outside that window. Web check (2026-08): Montenegro has occasionally seen violent protests in 2026 — avoid gatherings and demonstrations, and keep an eye on local news while there.",
       transport_to_next: 'End of this route — fly home from Podgorica or Tivat.',
@@ -14821,9 +14856,9 @@ function rbBuildMontenegroBosniaRoute() {
     {
       code: 'BA', name: 'Bosnia and Herzegovina', days: 6, budget: 300, lat: 43.8563, lng: 18.4131,
       destinations: [
-        { name: 'Trebinje', lat: 42.7106, lng: 18.3438 },
-        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078 },
-        { name: 'Sarajevo', lat: 43.8563, lng: 18.4131 },
+        { name: 'Trebinje', lat: 42.7106, lng: 18.3438, notes: "A quiet, largely untouristed Herzegovinian town centered on a plane-tree-shaded old square and the Arslanagić (Perović) stone bridge over the Trebišnjica river — a genuine break from the crowds of the coast. Cross the old bridge and, if time allows, head up to the Hercegovačka Gračanica monastery on the hill above town for a panoramic view over Trebinje and the river valley." },
+        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078, notes: "The rebuilt Ottoman-era stone bridge (destroyed in the 1993 war, restored and UNESCO-listed) is the whole reason to stop, with the Old Bridge's steep arch and turquoise Neretva River below it framed by the old bazaar quarter on both banks. Local divers still jump from the bridge year-round (roughly 11:00-15:00, May-October) for tips (€2-5 per spectator is customary) — worth timing your visit around midday to catch one." },
+        { name: 'Sarajevo', lat: 43.8563, lng: 18.4131, notes: "Its Baščaršija old bazaar is the atmospheric core (Ottoman architecture, coppersmith alleys, the Sebilj fountain), but the city's real distinguishing story is the 1990s siege — the Tunnel of Hope (Tunel spasa) museum, built around the actual tunnel used to smuggle supplies under the airport during the siege, is a short taxi/tram ride from downtown and shouldn't be treated as optional. Book the Tunnel of Hope visit ahead in peak season (May-October) — it can sell out, entry is about 20 BAM (~€10.50), open daily roughly 9:00-17:00." },
       ],
       notes: "Trebinje (1 day) — Mostar (2 days) — Sarajevo (3 days). Budget ~€50/day. Season: May-June/September.",
       transport_to_next: 'End of this route — fly home from Sarajevo.',
@@ -14842,7 +14877,7 @@ function rbBuildMontenegroCroatiaRoute() {
     {
       code: 'HR', name: 'Croatia', days: 3, budget: 450, lat: 42.6507, lng: 18.0944,
       destinations: [
-        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
+        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944, notes: "Its walled marble streets (the Stradun) and 2km of intact medieval ramparts overlooking the Adriatic are the draw, along with the baroque St. Blaise's Church and Rector's Palace; Game of Thrones fans will recognize it as King's Landing. Walk the city walls right at opening (around 8am) to beat both the midday heat and the cruise-ship crowds that flood the old town by late morning." },
       ],
       notes: "Dubrovnik (2-3 days) as the flight-in anchor. Budget ~€150/day.",
       transport_to_next: 'Overland to Kotor via the Karasovići border crossing — this saw 2-5 hour waits in July-August 2026 due to EES, so plan a morning crossing.',
@@ -14852,7 +14887,7 @@ function rbBuildMontenegroCroatiaRoute() {
       destinations: [
         { name: 'Kotor Old Town', lat: 42.4247, lng: 18.7712 },
         { name: 'Perast', lat: 42.4875, lng: 18.7089 },
-        { name: 'Budva', lat: 42.2911, lng: 18.8400 },
+        { name: 'Budva', lat: 42.2911, lng: 18.8400, notes: "Its small walled old town is pleasant but modest compared to Kotor or Dubrovnik — Budva's real appeal is as a base for the beach-resort coastline around it, especially the postcard view of the Sveti Stefan islet just south of town. Don't spend more than a couple of hours in the old town itself; head to the Sveti Stefan viewpoint (free, no need to enter the resort) for the classic photo." },
         { name: 'Herceg Novi', lat: 42.4531, lng: 18.5375 },
       ],
       notes: "Kotor + Perast (3 days) — Budva (2 days) — Herceg Novi (1 day). Budget ~€60/day. Season: May-June/September (July-August very busy).",
@@ -14872,8 +14907,8 @@ function rbBuildCroatiaMontenegroBosniaRoute() {
     {
       code: 'HR', name: 'Croatia', days: 4, budget: 600, lat: 43.0000, lng: 17.3000,
       destinations: [
-        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402 },
-        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
+        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402, notes: "The 4th-century Roman emperor's retirement palace isn't a ruin behind a fence — it's a living neighborhood, with Split's actual old town built directly into and around its walls, colonnaded Peristyle square, and the octagonal Cathedral of St. Domnius (once Diocletian's own mausoleum). Duck into the palace's atmospheric basement halls (substructures) — used as a Game of Thrones filming location — and climb the cathedral's bell tower for a rooftop view over the old town and harbor." },
+        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944, notes: "Its walled marble streets (the Stradun) and 2km of intact medieval ramparts overlooking the Adriatic are the draw, along with the baroque St. Blaise's Church and Rector's Palace; Game of Thrones fans will recognize it as King's Landing. Walk the city walls right at opening (around 8am) to beat both the midday heat and the cruise-ship crowds that flood the old town by late morning." },
       ],
       notes: "Split (2 days) — Dubrovnik (2 days). Budget ~€150/day.",
       transport_to_next: 'Overland to Kotor via the Karasovići border crossing — 2-5 hour waits in July-August 2026 due to EES, plan a morning crossing.',
@@ -14881,8 +14916,8 @@ function rbBuildCroatiaMontenegroBosniaRoute() {
     {
       code: 'ME', name: 'Montenegro', days: 4, budget: 240, lat: 42.3500, lng: 18.8000,
       destinations: [
-        { name: 'Kotor Old Town + Bay of Kotor', lat: 42.4247, lng: 18.7712 },
-        { name: 'Budva', lat: 42.2911, lng: 18.8400 },
+        { name: 'Kotor Old Town + Bay of Kotor', lat: 42.4247, lng: 18.7712, notes: "The Venetian old town sits at the foot of a dramatic fjord-like bay ringed by mountains, and the real highlight is climbing the ~1,300 steps of the city walls up to St. John's Fortress for a sweeping view over the bay and terracotta rooftops. Go early morning to avoid both the heat and cruise-ship crowds on the climb; the fortress ticket runs roughly €8-15 depending on season/entrance, cash or card at the booth." },
+        { name: 'Budva', lat: 42.2911, lng: 18.8400, notes: "Its small walled old town is pleasant but modest compared to Kotor or Dubrovnik — Budva's real appeal is as a base for the beach-resort coastline around it, especially the postcard view of the Sveti Stefan islet just south of town. Don't spend more than a couple of hours in the old town itself; head to the Sveti Stefan viewpoint (free, no need to enter the resort) for the classic photo." },
       ],
       notes: "Kotor + the Bay of Kotor (3 days) — Budva (1 day). Budget ~€60/day.",
       transport_to_next: 'Overland into Bosnia and Herzegovina towards Trebinje — a quiet, non-Schengen border crossing.',
@@ -14890,9 +14925,9 @@ function rbBuildCroatiaMontenegroBosniaRoute() {
     {
       code: 'BA', name: 'Bosnia and Herzegovina', days: 4, budget: 200, lat: 43.8563, lng: 18.4131,
       destinations: [
-        { name: 'Trebinje', lat: 42.7106, lng: 18.3438 },
-        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078 },
-        { name: 'Sarajevo', lat: 43.8563, lng: 18.4131 },
+        { name: 'Trebinje', lat: 42.7106, lng: 18.3438, notes: "A quiet, largely untouristed Herzegovinian town centered on a plane-tree-shaded old square and the Arslanagić (Perović) stone bridge over the Trebišnjica river — a genuine break from the crowds of the coast. Cross the old bridge and, if time allows, head up to the Hercegovačka Gračanica monastery on the hill above town for a panoramic view over Trebinje and the river valley." },
+        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078, notes: "The rebuilt Ottoman-era stone bridge (destroyed in the 1993 war, restored and UNESCO-listed) is the whole reason to stop, with the Old Bridge's steep arch and turquoise Neretva River below it framed by the old bazaar quarter on both banks. Local divers still jump from the bridge year-round (roughly 11:00-15:00, May-October) for tips (€2-5 per spectator is customary) — worth timing your visit around midday to catch one." },
+        { name: 'Sarajevo', lat: 43.8563, lng: 18.4131, notes: "Its Baščaršija old bazaar is the atmospheric core (Ottoman architecture, coppersmith alleys, the Sebilj fountain), but the city's real distinguishing story is the 1990s siege — the Tunnel of Hope (Tunel spasa) museum, built around the actual tunnel used to smuggle supplies under the airport during the siege, is a short taxi/tram ride from downtown and shouldn't be treated as optional. Book the Tunnel of Hope visit ahead in peak season (May-October) — it can sell out, entry is about 20 BAM (~€10.50), open daily roughly 9:00-17:00." },
       ],
       notes: "Trebinje (1 day) — Mostar (2 days) — Sarajevo (1 day). Budget ~€50/day. Season: May-June/September. Web check (2026-08): multiple EES registrations happen along this route (Croatia-Montenegro and Croatia-Bosnia both being non-Schengen crossings) — build in a time buffer at each border; the Pelješac bridge helps skip the old Neum detour on the Croatian side.",
       transport_to_next: 'End of this route — fly home from Sarajevo.',
@@ -14992,8 +15027,8 @@ function rbBuildAlbaniaMontenegroRoute() {
     {
       code: 'ME', name: 'Montenegro', days: 5, budget: 300, lat: 42.3500, lng: 18.8000,
       destinations: [
-        { name: 'Kotor Old Town + Bay of Kotor', lat: 42.4247, lng: 18.7712 },
-        { name: 'Budva', lat: 42.2911, lng: 18.8400 },
+        { name: 'Kotor Old Town + Bay of Kotor', lat: 42.4247, lng: 18.7712, notes: "The Venetian old town sits at the foot of a dramatic fjord-like bay ringed by mountains, and the real highlight is climbing the ~1,300 steps of the city walls up to St. John's Fortress for a sweeping view over the bay and terracotta rooftops. Go early morning to avoid both the heat and cruise-ship crowds on the climb; the fortress ticket runs roughly €8-15 depending on season/entrance, cash or card at the booth." },
+        { name: 'Budva', lat: 42.2911, lng: 18.8400, notes: "Its small walled old town is pleasant but modest compared to Kotor or Dubrovnik — Budva's real appeal is as a base for the beach-resort coastline around it, especially the postcard view of the Sveti Stefan islet just south of town. Don't spend more than a couple of hours in the old town itself; head to the Sveti Stefan viewpoint (free, no need to enter the resort) for the classic photo." },
       ],
       notes: "Kotor + the Bay of Kotor (3 days) — Budva (2 days). Budget ~€60/day.",
       transport_to_next: 'End of this route — fly home from Podgorica or Tivat.',
@@ -15185,7 +15220,7 @@ function rbBuildSerbiaMontenegroBosniaRoute() {
     {
       code: 'ME', name: 'Montenegro', days: 4, budget: 220, lat: 42.8000, lng: 18.9000,
       destinations: [
-        { name: 'Kotor Old Town + Bay of Kotor', lat: 42.4247, lng: 18.7712 },
+        { name: 'Kotor Old Town + Bay of Kotor', lat: 42.4247, lng: 18.7712, notes: "The Venetian old town sits at the foot of a dramatic fjord-like bay ringed by mountains, and the real highlight is climbing the ~1,300 steps of the city walls up to St. John's Fortress for a sweeping view over the bay and terracotta rooftops. Go early morning to avoid both the heat and cruise-ship crowds on the climb; the fortress ticket runs roughly €8-15 depending on season/entrance, cash or card at the booth." },
         { name: 'Žabljak / Durmitor National Park', lat: 43.1547, lng: 19.1225 },
       ],
       notes: "Kotor + the Bay of Kotor (2 days) — Žabljak/Durmitor National Park (2 days). Budget ~€45-60/day — avoid the Montenegrin coast in July-August, when cruise-ship crowds in Kotor and prices both spike by 25-40%.",
@@ -15397,7 +15432,7 @@ function rbBuildKosovoMontenegroRoute() {
       code: 'ME', name: 'Montenegro', days: 5, budget: 250, lat: 42.8000, lng: 18.9500,
       destinations: [
         { name: 'Žabljak / Durmitor National Park', lat: 43.1547, lng: 19.1225 },
-        { name: 'Kotor Old Town + Bay of Kotor', lat: 42.4247, lng: 18.7712 },
+        { name: 'Kotor Old Town + Bay of Kotor', lat: 42.4247, lng: 18.7712, notes: "The Venetian old town sits at the foot of a dramatic fjord-like bay ringed by mountains, and the real highlight is climbing the ~1,300 steps of the city walls up to St. John's Fortress for a sweeping view over the bay and terracotta rooftops. Go early morning to avoid both the heat and cruise-ship crowds on the climb; the fortress ticket runs roughly €8-15 depending on season/entrance, cash or card at the booth." },
       ],
       notes: "Žabljak/Durmitor National Park (3 days) — Kotor + the Bay of Kotor (2 days). Budget ~€45-60/day, more in July-August on the coast. Season: avoid the Montenegrin coast at the height of summer.",
       transport_to_next: 'End of this route — fly home from Podgorica or Tivat.',
@@ -19794,7 +19829,7 @@ function rbBuildCroatiaBosniaSplitRoute() {
     {
       code: 'HR', name: 'Croatia', days: 3, budget: 420, lat: 43.5081, lng: 16.4402,
       destinations: [
-        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402 },
+        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402, notes: "The 4th-century Roman emperor's retirement palace isn't a ruin behind a fence — it's a living neighborhood, with Split's actual old town built directly into and around its walls, colonnaded Peristyle square, and the octagonal Cathedral of St. Domnius (once Diocletian's own mausoleum). Duck into the palace's atmospheric basement halls (substructures) — used as a Game of Thrones filming location — and climb the cathedral's bell tower for a rooftop view over the old town and harbor." },
       ],
       notes: "Split (2-3 days, Diocletian's Palace) as the flight-in/flight-out anchor — a different anchor city from the existing Dubrovnik-anchored Bosnia + Croatia (9 days) 🏛️ (rbBuildBosniaCroatiaRoute). Budget ~€140/day.",
       transport_to_next: 'Overland into Bosnia and Herzegovina towards Mostar — a non-Schengen EES external border (EES fully live since 10 April 2026), roughly 3-6 minutes per person for the biometric registration off-peak — Fri/Sun summer-weekend peak traffic at busier crossings can run to hours instead, so avoid arriving in that window if the schedule allows; a passport is required (an ID card is not enough), and rental-car insurance often adds a €10-15/day Bosnia surcharge.',
@@ -19802,7 +19837,7 @@ function rbBuildCroatiaBosniaSplitRoute() {
     {
       code: 'BA', name: 'Bosnia and Herzegovina', days: 6, budget: 300, lat: 43.8563, lng: 18.4131,
       destinations: [
-        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078 },
+        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078, notes: "The rebuilt Ottoman-era stone bridge (destroyed in the 1993 war, restored and UNESCO-listed) is the whole reason to stop, with the Old Bridge's steep arch and turquoise Neretva River below it framed by the old bazaar quarter on both banks. Local divers still jump from the bridge year-round (roughly 11:00-15:00, May-October) for tips (€2-5 per spectator is customary) — worth timing your visit around midday to catch one." },
         { name: 'Kravice Waterfalls', lat: 43.1225, lng: 17.6725 },
         { name: 'Blagaj Tekija', lat: 43.2489, lng: 17.8942 },
         { name: 'Sarajevo (Baščaršija)', lat: 43.8563, lng: 18.4131 },
@@ -19825,8 +19860,8 @@ function rbBuildBosniaMontenegroBudvaRoute() {
       code: 'BA', name: 'Bosnia and Herzegovina', days: 5, budget: 250, lat: 43.8563, lng: 18.4131,
       destinations: [
         { name: 'Sarajevo (Baščaršija)', lat: 43.8563, lng: 18.4131 },
-        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078 },
-        { name: 'Trebinje', lat: 42.7106, lng: 18.3438 },
+        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078, notes: "The rebuilt Ottoman-era stone bridge (destroyed in the 1993 war, restored and UNESCO-listed) is the whole reason to stop, with the Old Bridge's steep arch and turquoise Neretva River below it framed by the old bazaar quarter on both banks. Local divers still jump from the bridge year-round (roughly 11:00-15:00, May-October) for tips (€2-5 per spectator is customary) — worth timing your visit around midday to catch one." },
+        { name: 'Trebinje', lat: 42.7106, lng: 18.3438, notes: "A quiet, largely untouristed Herzegovinian town centered on a plane-tree-shaded old square and the Arslanagić (Perović) stone bridge over the Trebišnjica river — a genuine break from the crowds of the coast. Cross the old bridge and, if time allows, head up to the Hercegovačka Gračanica monastery on the hill above town for a panoramic view over Trebinje and the river valley." },
       ],
       notes: "Sarajevo (2 days) — Mostar (2 days) — Trebinje (1 day). Budget ~€50/day.",
       transport_to_next: 'Overland from Trebinje into Montenegro towards Kotor — a non-Schengen-to-non-Schengen border, no EES here, generally quiet (25-90 minutes typical as of 2026-09) though summer peak weekends can still run to several hours. Bosnia prices in convertible marks (KM), Montenegro unilaterally uses the euro despite not being in the EU — bring cash for both.',
@@ -19836,7 +19871,7 @@ function rbBuildBosniaMontenegroBudvaRoute() {
       destinations: [
         { name: 'Kotor Old Town', lat: 42.4247, lng: 18.7712 },
         { name: 'Perast', lat: 42.4875, lng: 18.7089 },
-        { name: 'Budva', lat: 42.2911, lng: 18.8400 },
+        { name: 'Budva', lat: 42.2911, lng: 18.8400, notes: "Its small walled old town is pleasant but modest compared to Kotor or Dubrovnik — Budva's real appeal is as a base for the beach-resort coastline around it, especially the postcard view of the Sveti Stefan islet just south of town. Don't spend more than a couple of hours in the old town itself; head to the Sveti Stefan viewpoint (free, no need to enter the resort) for the classic photo." },
       ],
       notes: "Kotor + Perast (2 days) — Budva (2 days). Budget ~€55-60/day. Season: May-June or September.",
       transport_to_next: 'End of this route — fly home from Podgorica or Tivat.',
@@ -19866,7 +19901,7 @@ function rbBuildSloveniaCroatiaBosniaRoute() {
       destinations: [
         { name: 'Zagreb', lat: 45.8150, lng: 15.9819, notes: "The Upper Town's colorful-tiled St. Mark's Church and the Dolac market are the highlights, linked to the Lower Town by the world's shortest funicular (under a minute). A free walking tour is an efficient way to cover both halves in a day." },
         { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820, notes: "16 turquoise terraced lakes connected by waterfalls and wooden boardwalks, with a boat crossing Kozjak Lake as the scenic centerpiece. Pick route C or K (covers both Upper and Lower Lakes, not just one) and start right at opening for boardwalk photos without crowds." },
-        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402 },
+        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402, notes: "The 4th-century Roman emperor's retirement palace isn't a ruin behind a fence — it's a living neighborhood, with Split's actual old town built directly into and around its walls, colonnaded Peristyle square, and the octagonal Cathedral of St. Domnius (once Diocletian's own mausoleum). Duck into the palace's atmospheric basement halls (substructures) — used as a Game of Thrones filming location — and climb the cathedral's bell tower for a rooftop view over the old town and harbor." },
       ],
       notes: "Zagreb (1 day) — Plitvice Lakes (1-2 days, book the hourly-capacity-capped entry ahead) — Split (2 days, Diocletian's Palace). Budget ~€130/day (Split pulls the average up versus Zagreb/Plitvice). Web check (2026-08): 2026 enforces a strict hourly capacity cap at Plitvice (max 300 people per entrance) — book ahead.",
       transport_to_next: 'Overland into Bosnia and Herzegovina towards Mostar — a non-Schengen EES external border, roughly 3-6 minutes per person for the biometric check when the lane is moving — total wait can still stretch much longer at busy crossings/times (Web check 2026-09); passport required.',
@@ -19874,7 +19909,7 @@ function rbBuildSloveniaCroatiaBosniaRoute() {
     {
       code: 'BA', name: 'Bosnia and Herzegovina', days: 4, budget: 200, lat: 43.8563, lng: 18.4131,
       destinations: [
-        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078 },
+        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078, notes: "The rebuilt Ottoman-era stone bridge (destroyed in the 1993 war, restored and UNESCO-listed) is the whole reason to stop, with the Old Bridge's steep arch and turquoise Neretva River below it framed by the old bazaar quarter on both banks. Local divers still jump from the bridge year-round (roughly 11:00-15:00, May-October) for tips (€2-5 per spectator is customary) — worth timing your visit around midday to catch one." },
         { name: 'Sarajevo (Baščaršija)', lat: 43.8563, lng: 18.4131 },
       ],
       notes: "Mostar (2 days: Stari Most, a day trip to Kravice/Blagaj) — Sarajevo (2 days: Baščaršija, the Tunnel of Hope). Budget ~€50/day. Season: May-June or September. Web check (2026-08): the return leg crosses back into Croatia via the Pelješac bridge (open since July 2022) rather than the old Neum detour, to fly home from Split or Dubrovnik — the same EES registration applies on the way back out.",
@@ -19903,8 +19938,8 @@ function rbBuildSloveniaCroatiaMontenegroCoastRoute() {
     {
       code: 'HR', name: 'Croatia', days: 5, budget: 700, lat: 43.0000, lng: 17.2000,
       destinations: [
-        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402 },
-        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
+        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402, notes: "The 4th-century Roman emperor's retirement palace isn't a ruin behind a fence — it's a living neighborhood, with Split's actual old town built directly into and around its walls, colonnaded Peristyle square, and the octagonal Cathedral of St. Domnius (once Diocletian's own mausoleum). Duck into the palace's atmospheric basement halls (substructures) — used as a Game of Thrones filming location — and climb the cathedral's bell tower for a rooftop view over the old town and harbor." },
+        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944, notes: "Its walled marble streets (the Stradun) and 2km of intact medieval ramparts overlooking the Adriatic are the draw, along with the baroque St. Blaise's Church and Rector's Palace; Game of Thrones fans will recognize it as King's Landing. Walk the city walls right at opening (around 8am) to beat both the midday heat and the cruise-ship crowds that flood the old town by late morning." },
       ],
       notes: "Split (2-3 days, Diocletian's Palace) — Dubrovnik (2-3 days, Old Town). Budget ~€140/day (Dubrovnik pulls this up). Season: May-June or September, avoid the August crowds in Dubrovnik.",
       transport_to_next: 'Overland to Kotor via the Karasovići border crossing — Web check (2026-09): this has NOT normalized since EES went fully live in April 2026, if anything it is worse — 2-5 hour waits are routine in July-August 2026, with an extreme ~15km queue and up to 10-hour waits reported on a peak Sunday in August 2026. Pre-register on the EU "Travel to Europe" app and cross before 8am or after 9pm to avoid the worst of it.',
@@ -19913,7 +19948,7 @@ function rbBuildSloveniaCroatiaMontenegroCoastRoute() {
       code: 'ME', name: 'Montenegro', days: 3, budget: 210, lat: 42.3600, lng: 18.8100,
       destinations: [
         { name: 'Kotor Old Town', lat: 42.4247, lng: 18.7712 },
-        { name: 'Budva', lat: 42.2911, lng: 18.8400 },
+        { name: 'Budva', lat: 42.2911, lng: 18.8400, notes: "Its small walled old town is pleasant but modest compared to Kotor or Dubrovnik — Budva's real appeal is as a base for the beach-resort coastline around it, especially the postcard view of the Sveti Stefan islet just south of town. Don't spend more than a couple of hours in the old town itself; head to the Sveti Stefan viewpoint (free, no need to enter the resort) for the classic photo." },
       ],
       notes: "Kotor (1-2 days) — Budva (1-2 days). Budget ~€70/day. Season: May-June or September, July-August very busy.",
       transport_to_next: 'End of this route — fly home from Podgorica or Tivat.',
@@ -19951,9 +19986,9 @@ function rbBuildGrandBalkanRoadtripRoute() {
     {
       code: 'BA', name: 'Bosnia and Herzegovina', days: 4, budget: 200, lat: 43.8563, lng: 18.4131,
       destinations: [
-        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078 },
+        { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078, notes: "The rebuilt Ottoman-era stone bridge (destroyed in the 1993 war, restored and UNESCO-listed) is the whole reason to stop, with the Old Bridge's steep arch and turquoise Neretva River below it framed by the old bazaar quarter on both banks. Local divers still jump from the bridge year-round (roughly 11:00-15:00, May-October) for tips (€2-5 per spectator is customary) — worth timing your visit around midday to catch one." },
         { name: 'Sarajevo (Baščaršija)', lat: 43.8563, lng: 18.4131 },
-        { name: 'Trebinje', lat: 42.7106, lng: 18.3438 },
+        { name: 'Trebinje', lat: 42.7106, lng: 18.3438, notes: "A quiet, largely untouristed Herzegovinian town centered on a plane-tree-shaded old square and the Arslanagić (Perović) stone bridge over the Trebišnjica river — a genuine break from the crowds of the coast. Cross the old bridge and, if time allows, head up to the Hercegovačka Gračanica monastery on the hill above town for a panoramic view over Trebinje and the river valley." },
       ],
       notes: "Mostar (2 days, Stari Most) — Sarajevo (1-2 days) — Trebinje (1 day) on the way out. Budget ~€50/day. Season: May-June or September.",
       transport_to_next: 'Overland from Trebinje into Montenegro towards Kotor — a quiet non-Schengen-to-non-Schengen crossing, no EES here.',
@@ -19962,7 +19997,7 @@ function rbBuildGrandBalkanRoadtripRoute() {
       code: 'ME', name: 'Montenegro', days: 3, budget: 195, lat: 42.3500, lng: 18.8100,
       destinations: [
         { name: 'Kotor Old Town', lat: 42.4247, lng: 18.7712 },
-        { name: 'Budva', lat: 42.2911, lng: 18.8400 },
+        { name: 'Budva', lat: 42.2911, lng: 18.8400, notes: "Its small walled old town is pleasant but modest compared to Kotor or Dubrovnik — Budva's real appeal is as a base for the beach-resort coastline around it, especially the postcard view of the Sveti Stefan islet just south of town. Don't spend more than a couple of hours in the old town itself; head to the Sveti Stefan viewpoint (free, no need to enter the resort) for the classic photo." },
       ],
       notes: "Kotor (1-2 days) — Budva (1 day). Budget ~€65/day. Optional: continue back to Dubrovnik (Croatia) to fly home instead of Podgorica/Tivat — that adds the Karasovići EES border crossing (2-5 hour waits in July-August 2026) as a third crossing on this route.",
       transport_to_next: 'End of this route — fly home from Podgorica or Tivat, or optionally continue overland to Dubrovnik to fly home from there instead (see note above).',
@@ -19993,9 +20028,9 @@ function rbBuildAdriaticRoadtripRoute() {
         { name: 'Rovinj', lat: 45.0811, lng: 13.6387 },
         { name: 'Pula (Arena)', lat: 44.8737, lng: 13.8467 },
         { name: 'Zadar', lat: 44.1194, lng: 15.2314, notes: "The Sea Organ (wave-powered pipes built into the waterfront steps) and the adjacent Sun Salutation light installation make the sunset promenade the actual destination here — reportedly the sunset Hitchcock once called the world's most beautiful. Time the visit for sunset; the light show and organ sound together are the point." },
-        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402 },
+        { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402, notes: "The 4th-century Roman emperor's retirement palace isn't a ruin behind a fence — it's a living neighborhood, with Split's actual old town built directly into and around its walls, colonnaded Peristyle square, and the octagonal Cathedral of St. Domnius (once Diocletian's own mausoleum). Duck into the palace's atmospheric basement halls (substructures) — used as a Game of Thrones filming location — and climb the cathedral's bell tower for a rooftop view over the old town and harbor." },
         { name: 'Hvar Town', lat: 43.1729, lng: 16.4413 },
-        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
+        { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944, notes: "Its walled marble streets (the Stradun) and 2km of intact medieval ramparts overlooking the Adriatic are the draw, along with the baroque St. Blaise's Church and Rector's Palace; Game of Thrones fans will recognize it as King's Landing. Walk the city walls right at opening (around 8am) to beat both the midday heat and the cruise-ship crowds that flood the old town by late morning." },
       ],
       notes: "Rovinj/Pula in Istria (2 days) — Zadar/Split/Hvar down the coast (3-4 days, pick a subset rather than all three) — Dubrovnik (2 days), reached via the Pelješac bridge rather than the old Neum detour through Bosnia, so this route never touches Bosnian territory. Budget ~€130/day average (Dubrovnik and Hvar pull this up). Season: May-June or September, avoid July-August.",
       transport_to_next: 'Overland to Kotor via the Karasovići border crossing — Web check (2026-09): still not normalized since EES went fully live in April 2026 — 2-5 hour waits are routine in July-August, with an extreme ~15km queue/up to 10-hour wait reported one peak Sunday in August 2026; pre-register on the EU "Travel to Europe" app and cross before 8am or after 9pm. The only EES crossing on this whole route thanks to the Pelješac bridge bypassing Bosnia entirely.',
@@ -20005,7 +20040,7 @@ function rbBuildAdriaticRoadtripRoute() {
       destinations: [
         { name: 'Kotor Old Town', lat: 42.4247, lng: 18.7712 },
         { name: 'Perast', lat: 42.4875, lng: 18.7089 },
-        { name: 'Budva', lat: 42.2911, lng: 18.8400 },
+        { name: 'Budva', lat: 42.2911, lng: 18.8400, notes: "Its small walled old town is pleasant but modest compared to Kotor or Dubrovnik — Budva's real appeal is as a base for the beach-resort coastline around it, especially the postcard view of the Sveti Stefan islet just south of town. Don't spend more than a couple of hours in the old town itself; head to the Sveti Stefan viewpoint (free, no need to enter the resort) for the classic photo." },
       ],
       notes: "Kotor + Perast (2 days) — Budva (2 days). Budget ~€90/day. Season: May-June or September, July-August very busy. Optional: extend onward to the Albanian Riviera via the Sukobin-Muriqan border crossing (10-20 minutes off-season/normal, up to 3 hours in peak season July-August — corrected 2026-09, previously understated at 1.5-2 hours) — see Albanian Riviera (9 days) 🌊 (rbBuildAlbanianRivieraRoute) for that content, not included in this route's own 14-day count.",
       transport_to_next: 'End of this route — fly home from Podgorica or Tivat, or continue on to the optional Albanian Riviera extension (see note above).',

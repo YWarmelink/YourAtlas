@@ -12,6 +12,14 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 13 — Croatia + Montenegro + Bosnia (12 days) (2026-09-17)** — a
+  small 3-leg/7-destination combo route, researched in a single pass. High-leverage
+  shared-signature batch: all 7 destinations (Split, Dubrovnik, Kotor, Budva, Trebinje, Mostar,
+  Sarajevo) are reused verbatim across roughly 6 other Balkan combo routes. Same generic
+  name-matching migration (`rbMigrateCroatiaMontenegroBosniaDestinationNotes()`) — 26 routes
+  confirmed touched in the live simulation. App-wide total: 2083 destination-slots filled across
+  226 routes. 173/741 signatures done.
+
 - **Per-destination notes, batch 12 — North America Grand Traverse (2026-09-17)** — 6 legs, 27
   destinations, researched as 3 parallel batches (Atlantic/Eastern Canada, Canadian
   Rockies/Vancouver, Pacific Northwest/California). All 27 inserted cleanly first try. Same
