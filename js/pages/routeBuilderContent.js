@@ -8657,6 +8657,43 @@ function rbMigrateNordicArcticDestinationNotes() {
 }
 
 /**
+ * Batch 17 (2026-09-17) for the per-destination-notes workflow -- Cyclades Island Hopping (7-10
+ * days), a small 5-leg/10-destination combo route, researched in a single pass. High-leverage
+ * shared-signature batch: Naxos/Portara/Paros/Naoussa are reused verbatim by the shorter Cyclades
+ * (5-7 days) route. Same generic name-matching migration pattern as the grand-tour batches above.
+ */
+function rbMigrateCycladesDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_CYCLADES_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_CYCLADES_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Santorini (Fira)': "Fira's draw is the cliffside caldera walkway itself, not a single sight — the path north toward Imerovigli/Oia hugs the rim with the same views as Oia minus the crowds. Take the cable car (or donkey path) down to the old port instead of doing it on a cruise-ship time crunch on foot.",
+    'Oia': "Greece's single most photographed sunset, framed by blue-domed churches and the castle ruins at the village's western edge. Claim a spot at the Castle viewpoint at least 60-90 minutes before sunset in high season, or skip the crowd entirely and watch from Amoudi Bay just below.",
+    'Ios (Chora)': 'A postcard-white hilltop village wrapped around Panagia Gremiotissa church, with sweeping Aegean views from its highest point. Walk up around sunset — same view as the beach clubs below, without the crowd or cover charge.',
+    'Mylopotas Beach': "Ios's main beach and one of the better sand beaches in the Cyclades, with a long stretch of golden sand and full watersports (kayaking, paddleboarding, banana boats). Go early morning if you want it quiet — by afternoon it's the island's busiest beach-bar/party stretch.",
+    'Naxos (Chora)': "The old town's real highlight is the Venetian Kastro quarter — narrow marble-paved lanes, 13th-century mansions and coats of arms, distinct from the whitewashed Cycladic core around it. Explore it in the morning before tour-boat day-trippers arrive and before the heat sets in.",
+    'Portara': "A massive freestanding marble doorway — the unfinished 6th-century BC Temple of Apollo — standing alone on an islet just off Chora, reachable by a short causeway. It's Naxos's best sunset spot and free to visit; arrive about an hour early to get a good position on the rocks.",
+    'Paros (Parikia)': 'Parikia\'s centerpiece is Panagia Ekatontapiliani ("Church of 100 Doors"), one of the oldest surviving Byzantine churches in Greece, built around a 4th-century core. Visit early morning or later afternoon to beat the day-tripper groups coming off the ferries.',
+    'Naoussa': "A small fishing harbor turned Paros's most upscale village — Venetian fort ruins in the water, fishing boats moored alongside seafood tavernas. Come for dinner, not the day — the harbor is at its best (and priciest/busiest) after sunset; book ahead in July/August.",
+    'Adamas (Milos)': "Milos's low-key main port, with a colorful waterfront that's the departure point for boat tours to the island's sea caves and Kleftiko's white rock formations. Book a Kleftiko boat tour a day or two ahead in high season — it's the main reason to base here and boats fill up.",
+    'Sarakiniko Beach': "A stark white volcanic moonscape rather than a conventional beach — smooth wind-and-wave-eroded rock formations dropping into turquoise water. No shade or sand — bring water shoes and sun protection, and go early morning or for sunset light, when the white rock glows and it's least crowded.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -16821,9 +16858,9 @@ function rbBuildGreekIslandsParosNaxosSantoriniRoute() {
       code: 'GR', name: 'Greece', days: 9, budget: 1125, lat: 37.0844, lng: 25.1489,
       destinations: [
         { name: 'Athens', lat: 37.9838, lng: 23.7275 },
-        { name: 'Paros (Parikia)', lat: 37.0844, lng: 25.1489 },
-        { name: 'Naxos (Chora)', lat: 37.1055, lng: 25.3764 },
-        { name: 'Santorini (Fira)', lat: 36.4167, lng: 25.4325 },
+        { name: 'Paros (Parikia)', lat: 37.0844, lng: 25.1489, notes: "Parikia's centerpiece is Panagia Ekatontapiliani (\"Church of 100 Doors\"), one of the oldest surviving Byzantine churches in Greece, built around a 4th-century core. Visit early morning or later afternoon to beat the day-tripper groups coming off the ferries." },
+        { name: 'Naxos (Chora)', lat: 37.1055, lng: 25.3764, notes: "The old town's real highlight is the Venetian Kastro quarter — narrow marble-paved lanes, 13th-century mansions and coats of arms, distinct from the whitewashed Cycladic core around it. Explore it in the morning before tour-boat day-trippers arrive and before the heat sets in." },
+        { name: 'Santorini (Fira)', lat: 36.4167, lng: 25.4325, notes: "Fira's draw is the cliffside caldera walkway itself, not a single sight — the path north toward Imerovigli/Oia hugs the rim with the same views as Oia minus the crowds. Take the cable car (or donkey path) down to the old port instead of doing it on a cruise-ship time crunch on foot." },
       ],
       notes: "Athens (1 day) then ferry to Paros (3 nights) — Naxos (3 nights) — Santorini (2 nights) — flight or ferry back to Athens. Budget ~€100-150/day including ferries (€20-70 per leg). Season: June to mid-September (July-August busy and expensive; May/September quieter and cheaper). Web check (2026-08): Naxos-Paros is 25-50 minutes (up to 10x/day); Paros-Santorini 1h30-5h40; Naxos-Santorini 1-3h — the final 2026 sailing schedules are only confirmed in spring, so check ferryhopper.com shortly before departure; the meltemi wind can cancel summer ferries, so book flexibly or early in high season. Travel advisory: yellow since 4 August 2026 for wildfires (including Crete, though not on this itinerary) — re-check shortly before travel.",
       transport_to_next: 'End of this route — flight or ferry back to Athens to fly home.',
@@ -19570,8 +19607,8 @@ function rbBuildCycladesRoute() {
     {
       code: 'GR', name: 'Greece', days: 2, budget: 150, lat: 36.4167, lng: 25.4325,
       destinations: [
-        { name: 'Santorini (Fira)', lat: 36.4167, lng: 25.4325 },
-        { name: 'Oia', lat: 36.4614, lng: 25.3753 },
+        { name: 'Santorini (Fira)', lat: 36.4167, lng: 25.4325, notes: "Fira's draw is the cliffside caldera walkway itself, not a single sight — the path north toward Imerovigli/Oia hugs the rim with the same views as Oia minus the crowds. Take the cable car (or donkey path) down to the old port instead of doing it on a cruise-ship time crunch on foot." },
+        { name: 'Oia', lat: 36.4614, lng: 25.3753, notes: "Greece's single most photographed sunset, framed by blue-domed churches and the castle ruins at the village's western edge. Claim a spot at the Castle viewpoint at least 60-90 minutes before sunset in high season, or skip the crowd entirely and watch from Amoudi Bay just below." },
       ],
       notes: "Entry: direct flight Amsterdam-Santorini (seasonal) or via a connection through Athens. Santorini (2-3 days) — Fira and Oia's caldera views. Budget ~€60-75/day average across the route, Santorini pricier than Naxos/Paros (used here at ~€70-75/day). Season: May-September, peak July-August; June/September better for heat and crowds. ⚠️ Web check (2026-08): Santorini's cruise-passenger cap of 8,000/day (since 2025) is enforced more strictly in 2026 — now calculated on 100% ship capacity instead of 80% — plus a €20 peak-season (April-October) per-person fee for disembarking cruise passengers. Travel advisory: yellow since 4 August 2026 for wildfires (nationwide); Santorini itself isn't individually named.",
       transport_to_next: 'Ferry to Naxos.',
@@ -19579,8 +19616,8 @@ function rbBuildCycladesRoute() {
     {
       code: 'GR', name: 'Greece', days: 2, budget: 130, lat: 37.1055, lng: 25.3764,
       destinations: [
-        { name: 'Naxos (Chora)', lat: 37.1055, lng: 25.3764 },
-        { name: 'Portara', lat: 37.1122, lng: 25.3742 },
+        { name: 'Naxos (Chora)', lat: 37.1055, lng: 25.3764, notes: "The old town's real highlight is the Venetian Kastro quarter — narrow marble-paved lanes, 13th-century mansions and coats of arms, distinct from the whitewashed Cycladic core around it. Explore it in the morning before tour-boat day-trippers arrive and before the heat sets in." },
+        { name: 'Portara', lat: 37.1122, lng: 25.3742, notes: "A massive freestanding marble doorway — the unfinished 6th-century BC Temple of Apollo — standing alone on an islet just off Chora, reachable by a short causeway. It's Naxos's best sunset spot and free to visit; arrive about an hour early to get a good position on the rocks." },
       ],
       notes: "Naxos (2 days) — Chora and the Portara, plus the island's beaches, noticeably calmer and cheaper than Santorini.",
       transport_to_next: 'Ferry to Paros.',
@@ -19588,8 +19625,8 @@ function rbBuildCycladesRoute() {
     {
       code: 'GR', name: 'Greece', days: 2, budget: 130, lat: 37.0844, lng: 25.1489,
       destinations: [
-        { name: 'Paros (Parikia)', lat: 37.0844, lng: 25.1489 },
-        { name: 'Naoussa', lat: 37.1256, lng: 25.2367 },
+        { name: 'Paros (Parikia)', lat: 37.0844, lng: 25.1489, notes: "Parikia's centerpiece is Panagia Ekatontapiliani (\"Church of 100 Doors\"), one of the oldest surviving Byzantine churches in Greece, built around a 4th-century core. Visit early morning or later afternoon to beat the day-tripper groups coming off the ferries." },
+        { name: 'Naoussa', lat: 37.1256, lng: 25.2367, notes: "A small fishing harbor turned Paros's most upscale village — Venetian fort ruins in the water, fishing boats moored alongside seafood tavernas. Come for dinner, not the day — the harbor is at its best (and priciest/busiest) after sunset; book ahead in July/August." },
       ],
       notes: "Paros (2 days) — Parikia and Naoussa. ⚠️⚠️ Web check (2026-08): Paros had a wildfire in late July 2026 (~250 hectares, evacuations) — a short incident, reported under control by mid-August 2026, but the Meltemi wind raises fire risk across the Cyclades generally, so re-check the situation right before departure.",
       transport_to_next: 'End of this route — ferry back to Santorini/Athens (Piraeus), then flight to Amsterdam.',
@@ -19693,8 +19730,8 @@ function rbBuildCycladesIslandHoppingRoute() {
     {
       code: 'GR', name: 'Greece', days: 2, budget: 150, lat: 36.4167, lng: 25.4325,
       destinations: [
-        { name: 'Santorini (Fira)', lat: 36.4167, lng: 25.4325 },
-        { name: 'Oia', lat: 36.4614, lng: 25.3753 },
+        { name: 'Santorini (Fira)', lat: 36.4167, lng: 25.4325, notes: "Fira's draw is the cliffside caldera walkway itself, not a single sight — the path north toward Imerovigli/Oia hugs the rim with the same views as Oia minus the crowds. Take the cable car (or donkey path) down to the old port instead of doing it on a cruise-ship time crunch on foot." },
+        { name: 'Oia', lat: 36.4614, lng: 25.3753, notes: "Greece's single most photographed sunset, framed by blue-domed churches and the castle ruins at the village's western edge. Claim a spot at the Castle viewpoint at least 60-90 minutes before sunset in high season, or skip the crowd entirely and watch from Amoudi Bay just below." },
       ],
       notes: "Entry: direct flight Amsterdam-Santorini (seasonal) or via a connection through Athens. Santorini (2 days) to start — same cruise-cap and pricing notes as the shorter Cyclades route apply here too. Budget ~€55-70/day average across the route, Milos/Folegandros noticeably cheaper than Santorini (used here at ~€70-75/day on Santorini, tapering down later in the route). Season: May-September, peak July-August. ⚠️ Web check (2026-08): Santorini's cruise-passenger cap of 8,000/day (since 2025) is enforced more strictly in 2026 (now calculated on 100% ship capacity instead of 80%), plus a €20 peak-season (April-October) per-person fee for disembarking cruise passengers.",
       transport_to_next: 'Ferry to Ios.',
@@ -19702,8 +19739,8 @@ function rbBuildCycladesIslandHoppingRoute() {
     {
       code: 'GR', name: 'Greece', days: 2, budget: 130, lat: 36.7167, lng: 25.2833,
       destinations: [
-        { name: 'Ios (Chora)', lat: 36.7167, lng: 25.2833 },
-        { name: 'Mylopotas Beach', lat: 36.7000, lng: 25.2833 },
+        { name: 'Ios (Chora)', lat: 36.7167, lng: 25.2833, notes: "A postcard-white hilltop village wrapped around Panagia Gremiotissa church, with sweeping Aegean views from its highest point. Walk up around sunset — same view as the beach clubs below, without the crowd or cover charge." },
+        { name: 'Mylopotas Beach', lat: 36.7000, lng: 25.2833, notes: "Ios's main beach and one of the better sand beaches in the Cyclades, with a long stretch of golden sand and full watersports (kayaking, paddleboarding, banana boats). Go early morning if you want it quiet — by afternoon it's the island's busiest beach-bar/party stretch." },
       ],
       notes: 'Ios (1-2 days) — quieter and more laid-back than Santorini.',
       transport_to_next: 'Ferry to Naxos.',
@@ -19711,8 +19748,8 @@ function rbBuildCycladesIslandHoppingRoute() {
     {
       code: 'GR', name: 'Greece', days: 2, budget: 130, lat: 37.1055, lng: 25.3764,
       destinations: [
-        { name: 'Naxos (Chora)', lat: 37.1055, lng: 25.3764 },
-        { name: 'Portara', lat: 37.1122, lng: 25.3742 },
+        { name: 'Naxos (Chora)', lat: 37.1055, lng: 25.3764, notes: "The old town's real highlight is the Venetian Kastro quarter — narrow marble-paved lanes, 13th-century mansions and coats of arms, distinct from the whitewashed Cycladic core around it. Explore it in the morning before tour-boat day-trippers arrive and before the heat sets in." },
+        { name: 'Portara', lat: 37.1122, lng: 25.3742, notes: "A massive freestanding marble doorway — the unfinished 6th-century BC Temple of Apollo — standing alone on an islet just off Chora, reachable by a short causeway. It's Naxos's best sunset spot and free to visit; arrive about an hour early to get a good position on the rocks." },
       ],
       notes: 'Naxos (2 days) — the same stop as on the shorter Cyclades route above.',
       transport_to_next: 'Ferry to Paros.',
@@ -19720,8 +19757,8 @@ function rbBuildCycladesIslandHoppingRoute() {
     {
       code: 'GR', name: 'Greece', days: 1, budget: 65, lat: 37.0844, lng: 25.1489,
       destinations: [
-        { name: 'Paros (Parikia)', lat: 37.0844, lng: 25.1489 },
-        { name: 'Naoussa', lat: 37.1256, lng: 25.2367 },
+        { name: 'Paros (Parikia)', lat: 37.0844, lng: 25.1489, notes: "Parikia's centerpiece is Panagia Ekatontapiliani (\"Church of 100 Doors\"), one of the oldest surviving Byzantine churches in Greece, built around a 4th-century core. Visit early morning or later afternoon to beat the day-tripper groups coming off the ferries." },
+        { name: 'Naoussa', lat: 37.1256, lng: 25.2367, notes: "A small fishing harbor turned Paros's most upscale village — Venetian fort ruins in the water, fishing boats moored alongside seafood tavernas. Come for dinner, not the day — the harbor is at its best (and priciest/busiest) after sunset; book ahead in July/August." },
       ],
       notes: "Paros (1-2 days). ⚠️⚠️ Web check (2026-08): the same Paros wildfire incident noted on the shorter Cyclades route applies here too — a late-July 2026 fire (~250 hectares, evacuations), reported under control by mid-August 2026, with the Meltemi wind keeping fire risk elevated across the Cyclades generally; re-check right before departure.",
       transport_to_next: 'Ferry on to Milos (or Folegandros as an alternative).',
@@ -19729,8 +19766,8 @@ function rbBuildCycladesIslandHoppingRoute() {
     {
       code: 'GR', name: 'Greece', days: 2, budget: 110, lat: 36.7275, lng: 24.4306,
       destinations: [
-        { name: 'Adamas (Milos)', lat: 36.7275, lng: 24.4306 },
-        { name: 'Sarakiniko Beach', lat: 36.7128, lng: 24.4650 },
+        { name: 'Adamas (Milos)', lat: 36.7275, lng: 24.4306, notes: "Milos's low-key main port, with a colorful waterfront that's the departure point for boat tours to the island's sea caves and Kleftiko's white rock formations. Book a Kleftiko boat tour a day or two ahead in high season — it's the main reason to base here and boats fill up." },
+        { name: 'Sarakiniko Beach', lat: 36.7128, lng: 24.4650, notes: "A stark white volcanic moonscape rather than a conventional beach — smooth wind-and-wave-eroded rock formations dropping into turquoise water. No shade or sand — bring water shoes and sun protection, and go early morning or for sunset light, when the white rock glows and it's least crowded." },
       ],
       notes: "Milos (2 days) — or Folegandros (Chora, 36.6167/24.9167) as an alternative — both more remote and quieter than the main Santorini-Naxos-Paros route, and cheaper than Santorini. ⚠️ Web check (2026-08): ferry connections to Milos/Folegandros are less frequent than the main Cyclades route — check the schedule ahead of time.",
       transport_to_next: 'End of this route — ferry back via Santorini/Piraeus, then flight from Athens to Amsterdam.',
@@ -21163,8 +21200,8 @@ function rbBuildSouthernEuropeHighlightsRoadtripRoute() {
     {
       code: 'GR', name: 'Greece', days: 2, budget: 320, lat: 36.4167, lng: 25.4325,
       destinations: [
-        { name: 'Santorini (Fira)', lat: 36.4167, lng: 25.4325 },
-        { name: 'Oia', lat: 36.4614, lng: 25.3753 },
+        { name: 'Santorini (Fira)', lat: 36.4167, lng: 25.4325, notes: "Fira's draw is the cliffside caldera walkway itself, not a single sight — the path north toward Imerovigli/Oia hugs the rim with the same views as Oia minus the crowds. Take the cable car (or donkey path) down to the old port instead of doing it on a cruise-ship time crunch on foot." },
+        { name: 'Oia', lat: 36.4614, lng: 25.3753, notes: "Greece's single most photographed sunset, framed by blue-domed churches and the castle ruins at the village's western edge. Claim a spot at the Castle viewpoint at least 60-90 minutes before sunset in high season, or skip the crowd entirely and watch from Amoudi Bay just below." },
       ],
       notes: "Optional Santorini extension (2 days, only fits at the full 14 days) — Fira and Oia's caldera views. Budget ~€160/day — standalone Santorini runs well above the ~€70-75/day used for it inside the cheaper multi-island Cyclades routes elsewhere in this repo (e.g. Cyclades (5-7 days) 🏝️, rbBuildCycladesRoute), since there's no cheaper island here to blend the average down. ⚠️ Web check (2026-08): Santorini's cruise-passenger cap (8,000/day since 2025, now calculated on 100% ship capacity) plus a €20 peak-season per-person disembarkation fee, same as noted on the existing Cyclades routes.",
       transport_to_next: 'End of this route — fly home from Santorini or Athens.',

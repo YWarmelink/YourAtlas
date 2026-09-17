@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 221 / 741 signatures.**
+- **Done so far: 227 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -64,7 +64,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **GP** (3 dest): La Soufrière (volcano), Carbet Falls, Îles des Saintes — routes: Caribbean & Amazon Expedition 🌴, Caribbean Islands Hop 🏝️, Guadeloupe & Dominica 🍃
 - [x] **GR** (5 dest): Athens, Peloponnese, Olympia, Delphi, Meteora — routes: Greece & Crete 🫒, Greece & Cyprus 🏺, Mediterranean Civilizations Expedition 🏛️
 - [x] **GR** (4 dest): Heraklion, Knossos, Chania, Samaria Gorge — routes: Greece & Crete 🫒, Greece & Cyprus 🏺, Mediterranean Civilizations Expedition 🏛️
-- [ ] **GR** (2 dest): Santorini (Fira), Oia — routes: Cyclades (5-7 days) 🏝️, Cyclades Island Hopping (7-10 days) 🏝️, Southern Europe Highlights Roadtrip (14 days) 🎯
+- [x] **GR** (2 dest): Santorini (Fira), Oia — routes: Cyclades (5-7 days) 🏝️, Cyclades Island Hopping (7-10 days) 🏝️, Southern Europe Highlights Roadtrip (14 days) 🎯
 - [x] **GT** (6 dest): Quetzaltenango (Xela), Lake Atitlán, Antigua, Guatemala City, Semuc Champey, Flores & Tikal — routes: Central America Loop 🌋, Guatemala 🦜, Pan-American Grand Tour 🌎
 - [x] **HR** (1 dest): Dubrovnik — routes: Balkan 🐺, Eurasia Grand Tour 🌏, West Eurasia Overland 🐫
 - [x] **HR** (2 dest): Split (Diocletian's Palace), Dubrovnik Old Town — routes: Bosnia + Croatia + Montenegro (12 days) 🗺️, Croatia + Montenegro + Bosnia (12 days) 🧭, Slovenia + Croatia + Montenegro Coast (10-14 days) ⛵
@@ -165,8 +165,8 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **GB** (4 dest): Belfast, Giant's Causeway, Causeway Coastal Route, Dark Hedges — routes: British Isles & Celtic Coast Expedition 🍀, Scotland & Northern Ireland 🥃
 - [x] **GG** (3 dest): St Peter Port, coastal walks, German occupation bunkers (WWII) — routes: British Isles & Celtic Coast Expedition 🍀, Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖
 - [x] **GL** (6 dest): Nuuk, Inuit culture (Nuuk), Ilulissat, Icefjord (Ilulissat Icefjord), Disko Bay, Boat trips (e.g. Eqi Glacier) — routes: Greenland 🧊, Nordic Arctic Expedition ❄️
-- [ ] **GR** (2 dest): Naxos (Chora), Portara — routes: Cyclades (5-7 days) 🏝️, Cyclades Island Hopping (7-10 days) 🏝️
-- [ ] **GR** (2 dest): Paros (Parikia), Naoussa — routes: Cyclades (5-7 days) 🏝️, Cyclades Island Hopping (7-10 days) 🏝️
+- [x] **GR** (2 dest): Naxos (Chora), Portara — routes: Cyclades (5-7 days) 🏝️, Cyclades Island Hopping (7-10 days) 🏝️
+- [x] **GR** (2 dest): Paros (Parikia), Naoussa — routes: Cyclades (5-7 days) 🏝️, Cyclades Island Hopping (7-10 days) 🏝️
 - [x] **HN** (6 dest): Puerto Cortés, Copán Ruinas, Lago de Yojoa, La Ceiba, Roatán, Tegucigalpa — routes: Central America Loop 🌋, Pan-American Grand Tour 🌎
 - [x] **HR** (1 dest): Dubrovnik Old Town — routes: Bosnia + Croatia (9 days) 🏛️, Montenegro + Croatia (9 days) ⛵
 - [ ] **HR** (2 dest): Rovinj, Pula (Arena) — routes: Italy + Slovenia + Croatia (10-14 days) ⛵, Slovenia + Croatian Istria (7-10 days) 🏖️
@@ -445,11 +445,11 @@ Sorted alphabetically by country code.
 - [x] **GR** (2 dest): Heraklion, Knossos — routes: Crete Roadtrip (7-10 days) 🏝️
 - [ ] **GR** (2 dest): Matala, Plakias — routes: Crete Roadtrip (7-10 days) 🏝️
 - [x] **GR** (1 dest): Samaria Gorge — routes: Crete Roadtrip (7-10 days) 🏝️
-- [ ] **GR** (2 dest): Ios (Chora), Mylopotas Beach — routes: Cyclades Island Hopping (7-10 days) 🏝️
-- [ ] **GR** (2 dest): Adamas (Milos), Sarakiniko Beach — routes: Cyclades Island Hopping (7-10 days) 🏝️
+- [x] **GR** (2 dest): Ios (Chora), Mylopotas Beach — routes: Cyclades Island Hopping (7-10 days) 🏝️
+- [x] **GR** (2 dest): Adamas (Milos), Sarakiniko Beach — routes: Cyclades Island Hopping (7-10 days) 🏝️
 - [ ] **GR** (3 dest): Athens, Aegina (day trip), Santorini (optional continuation) — routes: Cyprus + Greece (9 days) ✈️
 - [ ] **GR** (6 dest): Athens, Meteora, Delphi, Nafplio, Mycenae, Olympia — routes: Greece Roadtrip (12 days) 🚗
-- [ ] **GR** (4 dest): Athens, Paros (Parikia), Naxos (Chora), Santorini (Fira) — routes: Greek Islands: Paros, Naxos & Santorini (9 days) 🏖️
+- [x] **GR** (4 dest): Athens, Paros (Parikia), Naxos (Chora), Santorini (Fira) — routes: Greek Islands: Paros, Naxos & Santorini (9 days) 🏖️
 - [ ] **GR** (3 dest): Argostoli (Kefalonia), Melissani Cave, Myrtos Beach — routes: Ionian Islands (5-7 days) 🏝️
 - [ ] **GR** (3 dest): Zakynthos Town, Navagio (Shipwreck Beach), Blue Caves — routes: Ionian Islands (5-7 days) 🏝️
 - [ ] **GR** (1 dest): Lesbos / Mytilini — routes: Istanbul + Lesbos (Greek Islands) (9 days) 🛳️
@@ -768,15 +768,12 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| Cyclades Island Hopping (7-10 days) 🏝️ | 10/10 | 4 |
 | Sicily Roadtrip (7-10 days) 🏝️ | 7/8 | 4 |
-| Cyclades (5-7 days) 🏝️ | 6/6 | 4 |
 | India & Himalaya Expedition 🏔️ | 22/22 | 3 |
 | Sicily (9 days) 🍋 | 6/9 | 3 |
 | Czechia + Austria + Hungary (10-14 days) 🏛️ | 5/5 | 3 |
 | Sicily East (4-5 days) 🏝️ | 4/4 | 3 |
 | Germany + Austria + Italy (10-14 days) 🏔️ | 9/9 | 2 |
-| Southern Europe Highlights Roadtrip (14 days) 🎯 | 8/12 | 2 |
 | Grand Balkan Roadtrip (14 days) 🏔️ | 8/10 | 2 |
 | Azores Island Hopping (10-14 days) 🏝️ | 8/8 | 2 |
 | Central Europe Roadtrip (14 days) 🚂 | 8/9 | 2 |
@@ -808,6 +805,9 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Bavaria + Alps + Berchtesgaden (6 days) ⛰️ | 6/6 | 1 |
 | Tuscany (6 days) 🍇 | 6/7 | 1 |
 | Campania + Puglia (9 days) 🧭 | 6/8 | 1 |
-| ... 287 more routes with open destinations ... | | |
+| Kosovo + Albania (9 days) 🏔️ | 6/6 | 1 |
+| Madeira (5-7 days) 🏝️ | 6/6 | 1 |
+| Italy + Slovenia + Croatia (10-14 days) ⛵ | 6/9 | 1 |
+| ... 284 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

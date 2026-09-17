@@ -12,6 +12,13 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 17 — Cyclades Island Hopping (7-10 days) (2026-09-17)** — a
+  small 5-leg/10-destination combo route, researched in a single pass. High-leverage
+  shared-signature batch: Naxos/Portara/Paros/Naoussa are reused verbatim by the shorter Cyclades
+  (5-7 days) route. Same generic name-matching migration (`rbMigrateCycladesDestinationNotes()`)
+  — 4 routes confirmed touched in the live simulation. App-wide total: 2342 destination-slots
+  filled across 291 routes. 227/741 signatures done.
+
 - **Per-destination notes, batch 16 — Nordic Arctic Expedition (2026-09-17)** — 8 legs, 37
   destinations, researched as 3 parallel sub-batches matching the route's own region grouping
   (Finland/Sweden/Norway/Svalbard, Denmark/Faroe Islands, Iceland/Greenland). All 37 inserted
