@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 255 / 741 signatures.**
+- **Done so far: 258 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -147,8 +147,8 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **DE** (1 dest): Munich (Marienplatz, Englischer Garten) — routes: Germany + Austria + Italy (10-14 days) 🏔️, Germany + Austria + Slovenia (10-14 days) 🥨
 - [x] **EG** (6 dest): Cairo, Giza, Luxor, Karnak, Aswan, Abu Simbel — routes: Egypt & Arabian Peninsula 🐪, Mediterranean Civilizations Expedition 🏛️
 - [ ] **ES** (2 dest): Santa Cruz de Tenerife, Teide National Park — routes: Canary Islands (10-14 days) 🏝️, Gran Canaria + Tenerife (7-10 days) 🏝️
-- [ ] **ES** (4 dest): Palma (base), Valldemossa, Deià, Sóller — routes: Balearic Islands (7-10 days) 🏝️, Mallorca + Menorca (7-10 days) 🏝️
-- [ ] **ES** (2 dest): Ciutadella, Mahón — routes: Balearic Islands (7-10 days) 🏝️, Mallorca + Menorca (7-10 days) 🏝️
+- [x] **ES** (4 dest): Palma (base), Valldemossa, Deià, Sóller — routes: Balearic Islands (7-10 days) 🏝️, Mallorca + Menorca (7-10 days) 🏝️
+- [x] **ES** (2 dest): Ciutadella, Mahón — routes: Balearic Islands (7-10 days) 🏝️, Mallorca + Menorca (7-10 days) 🏝️
 - [ ] **ES** (3 dest): Seville (Alcázar & Cathedral), Córdoba (Mezquita), Granada (Alhambra) — routes: Portugal + Andalusia (10-14 days) 🕌, Portugal + Spain Roadtrip (14 days) 🚗
 - [x] **FI** (4 dest): Helsinki, Rovaniemi, Inari, Lemmenjoki National Park — routes: Nordic Arctic Expedition ❄️, Scandinavia Overland 🚂
 - [x] **FR** (3 dest): Bonifacio, Ajaccio, Bavella — routes: Corsica & Southern France ⛵, Mediterranean Civilizations Expedition 🏛️
@@ -340,7 +340,7 @@ Sorted alphabetically by country code.
 - [ ] **ES** (2 dest): Seville (Alcázar & Cathedral), Granada (Alhambra) — routes: Andalusia: Seville + Granada (5 days) 🏰
 - [ ] **ES** (7 dest): La Seu d'Urgell (cathedral), Cerdanya / Puigcerdà, Vielha (Val d'Aran), Port de la Bonaigua (pass), Boí (Aigüestortes NP shuttle), Espot (Aigüestortes NP shuttle), Ripoll — routes: Andorra + Spanish Pyrenees: Grand Circuit (9 days) 🏔️
 - [ ] **ES** (7 dest): Santander (Magdalena Peninsula), Santillana del Mar, Comillas (El Capricho), Picos de Europa (Potes), Fuente Dé (cable car), Oviedo, Gijón — routes: Asturias + Cantabria (6 days) 🌲
-- [ ] **ES** (1 dest): Ibiza Town / Dalt Vila (UNESCO old town) — routes: Balearic Islands (7-10 days) 🏝️
+- [x] **ES** (1 dest): Ibiza Town / Dalt Vila (UNESCO old town) — routes: Balearic Islands (7-10 days) 🏝️
 - [ ] **ES** (5 dest): Barcelona (Gothic Quarter / Barri Gòtic), Sagrada Família, Park Güell, Barceloneta Beach, Montjuïc — routes: Barcelona (4 days) 🎨
 - [ ] **ES** (5 dest): San Sebastián (La Concha), Bilbao (Guggenheim Museum), Hondarribia, Getaria, Zarautz — routes: Basque Country: San Sebastián + Bilbao (6 days) 🐟
 - [ ] **ES** (2 dest): Las Palmas de Gran Canaria, Roque Nublo — routes: Canary Islands (10-14 days) 🏝️
@@ -768,15 +768,13 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| Balearic Islands (7-10 days) 🏝️ | 7/7 | 2 |
-| Mallorca + Menorca (7-10 days) 🏝️ | 6/6 | 2 |
 | Italy Roadtrip (12 days) 🧀 | 11/13 | 1 |
 | Rome + Tuscany (9 days) 🍝 | 10/12 | 1 |
 | Sicily + Southern Italy (12 days) 🍊 | 10/12 | 1 |
 | Portugal + Andalusia (10-14 days) 🕌 | 10/10 | 1 |
 | Portugal + Spain Roadtrip (14 days) 🚗 | 10/10 | 1 |
-| India & Himalaya Expedition 🏔️ | 9/22 | 1 |
 | North India 🕌 | 9/9 | 1 |
+| India & Himalaya Expedition 🏔️ | 9/22 | 1 |
 | Switzerland Alpine Roadtrip (9 days) 🛣️ | 9/9 | 1 |
 | France + Switzerland + Italy (10-14 days) 🗻 | 9/9 | 1 |
 | Italy: North to Central (12 days) 🚄 | 8/9 | 1 |
@@ -792,8 +790,8 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Kosovo + Albania (9 days) 🏔️ | 6/6 | 1 |
 | Madeira (5-7 days) 🏝️ | 6/6 | 1 |
 | Italy + Slovenia + Croatia (10-14 days) ⛵ | 6/9 | 1 |
-| Luxembourg + Ardennes (4 days) 🎖️ | 5/5 | 1 |
 | South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️ | 5/5 | 1 |
+| Luxembourg + Ardennes (4 days) 🎖️ | 5/5 | 1 |
 | Switzerland + Northern Italy (9 days) 🚞 | 5/5 | 1 |
 | San Marino + Emilia-Romagna (4 days) 🍝 | 5/5 | 1 |
 | Reykjavík + Golden Circle (5 days) 🌋 | 5/5 | 1 |
@@ -805,9 +803,11 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Kosovo + Montenegro + Albania (9 days) 🗻 | 3/5 | 1 |
 | San Marino + Tuscany (5 days) 🍷 | 2/5 | 1 |
 | Slovenia + Croatian Istria (7-10 days) 🏖️ | 2/4 | 1 |
-| Kosovo + North Macedonia + Albania (9 days) 🎒 | 2/5 | 1 |
 | Kosovo + North Macedonia (6 days) 🚏 | 2/4 | 1 |
+| Kosovo + North Macedonia + Albania (9 days) 🎒 | 2/5 | 1 |
 | Berlin (4 days) 🐻 | 1/1 | 1 |
-| ... 272 more routes with open destinations ... | | |
+| Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂 | 19/19 | 0 |
+| Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧 | 19/19 | 0 |
+| ... 270 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

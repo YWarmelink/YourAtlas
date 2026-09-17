@@ -12,6 +12,15 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 24 — Balearic Islands (7-10 days) (2026-09-17)** — a small
+  3-leg/7-destination combo route, researched in a single pass. Shared-signature batch: these
+  destinations recur in the smaller "Mallorca + Menorca" route. Same generic name-matching
+  migration (`rbMigrateBalearicDestinationNotes()`) — 5 routes confirmed touched in the live
+  simulation. App-wide total: 2484 destination-slots filled across 306 routes. 258/741
+  signatures done. (Note: the India & Himalaya "IN" signature — Delhi plus 8 others — will
+  permanently show as incomplete in the plan tracker since Delhi deliberately has no note beyond
+  its existing block-level "already visited" note; not a gap to chase.)
+
 - **Per-destination notes, batch 23 — Azores Island Hopping (10-14 days) (2026-09-17)** — a
   small 3-leg/8-destination combo route, researched in a single pass. Shared-signature batch:
   São Miguel/Terceira destinations recur in the smaller "Azores: São Miguel + Terceira" route.

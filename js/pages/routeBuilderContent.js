@@ -8912,6 +8912,40 @@ function rbMigrateAzoresDestinationNotes() {
 }
 
 /**
+ * Batch 24 (2026-09-17) for the per-destination-notes workflow -- Balearic Islands (7-10 days),
+ * a small 3-leg/7-destination combo route researched in a single pass. Shared-signature batch:
+ * these destinations recur in the smaller "Mallorca + Menorca" route. Same generic name-matching
+ * migration pattern as the grand-tour batches above.
+ */
+function rbMigrateBalearicDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_BALEARIC_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_BALEARIC_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Palma (base)': "La Seu cathedral - a Gothic giant right on the waterfront with a rose window and rooftop terraces - anchors a walkable old town of tapas bars and boutiques. Visit before 9:30am or after 5pm to dodge cruise-ship crowds, and budget extra time if climbing to the cathedral's rooftop terraces (separate paid access).",
+    'Valldemossa': "Chopin and George Sand wintered here in 1838-39 at the Real Cartuja monastery, now a small museum housing the piano he composed on; the village's steep stone streets and lavender-lined balconies are worth a wander beyond the monastery itself. Arrive early morning - tour buses from Palma clog the single access road by midday.",
+    'Deià': "An artists' village (Robert Graves lived and is buried here; his house Ca N'Alluny is now a small museum) perched above the sea, with a short, steep path down to the pebble cove Cala Deià for a swim. Go early or at sunset - the cove is tiny and packs out by midday in summer.",
+    'Sóller': 'A citrus-growing valley town reached from Palma by a century-old wooden train through the mountains, with a matching antique tram continuing down to the seaside Port de Sóller. Book train tickets ahead in high season - the scenic run sells out.',
+    'Ciutadella': "Menorca's former capital has an elegant, arcaded old-town street (Ses Voltes) wrapped around a small working fishing harbor lined with restaurants - more intimate and less built-up than Mahón. If visiting in late June, the Sant Joan festival's horse-rearing ritual takes over the old town; book accommodation months ahead if timing overlaps.",
+    'Mahón': 'Built around one of the world\'s largest natural harbours, with Georgian-style windows and shutters left over from British rule (1708-1802) and a local gin tradition (Xoriguer distillery, open for tastings) as another legacy. A harbor boat tour is the easiest way to take in the port\'s scale, which stretches nearly 6km inland.',
+    'Ibiza Town / Dalt Vila (UNESCO old town)': "The walled old town's 16th-century Renaissance fortifications (UNESCO-listed) enclose steep, whitewashed lanes climbing to a hilltop cathedral with sweeping harbor views. Walk the ramparts near sunset for the best light and cooler temperatures; the cobbled climbs are steep, so wear proper shoes.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -14172,10 +14206,10 @@ function rbBuildMallorcaTramuntanaRoute() {
     {
       code: 'ES', name: 'Spain', days: 6, budget: 630, lat: 39.5696, lng: 2.6502,
       destinations: [
-        { name: 'Palma (base)', lat: 39.5696, lng: 2.6502 },
-        { name: 'Valldemossa', lat: 39.7098, lng: 2.6228 },
-        { name: 'Deià', lat: 39.7481, lng: 2.6478 },
-        { name: 'Sóller', lat: 39.7662, lng: 2.7147 },
+        { name: 'Palma (base)', lat: 39.5696, lng: 2.6502, notes: "La Seu cathedral - a Gothic giant right on the waterfront with a rose window and rooftop terraces - anchors a walkable old town of tapas bars and boutiques. Visit before 9:30am or after 5pm to dodge cruise-ship crowds, and budget extra time if climbing to the cathedral's rooftop terraces (separate paid access)." },
+        { name: 'Valldemossa', lat: 39.7098, lng: 2.6228, notes: "Chopin and George Sand wintered here in 1838-39 at the Real Cartuja monastery, now a small museum housing the piano he composed on; the village's steep stone streets and lavender-lined balconies are worth a wander beyond the monastery itself. Arrive early morning - tour buses from Palma clog the single access road by midday." },
+        { name: 'Deià', lat: 39.7481, lng: 2.6478, notes: "An artists' village (Robert Graves lived and is buried here; his house Ca N'Alluny is now a small museum) perched above the sea, with a short, steep path down to the pebble cove Cala Deià for a swim. Go early or at sunset - the cove is tiny and packs out by midday in summer." },
+        { name: 'Sóller', lat: 39.7662, lng: 2.7147, notes: "A citrus-growing valley town reached from Palma by a century-old wooden train through the mountains, with a matching antique tram continuing down to the seaside Port de Sóller. Book train tickets ahead in high season - the scenic run sells out." },
         { name: 'Cap de Formentor', lat: 39.9583, lng: 3.2078 },
       ],
       notes: "Palma as a base for a Serra de Tramuntana loop: Valldemossa → Deià → Sóller (do at least one leg on the antique wooden train between Palma and Sóller) → Cap de Formentor in the north → an optional east-coast beach day to close it out. Entry: direct AMS-PMI (Transavia, ~2h25, ~30 flights/week); a rental car is recommended for the mountain roads. Budget ~€105/day (rental car +€25-35/day). Season: May-June or September; July-August is very busy and expensive. Web check (2026-08): the Balearic eco-tax (ITS) runs €1.10-4.40 pp/night in high season (1 May-31 October) depending on accommodation category, and €0.28-1.10 in low season — charged separately at check-in/check-out, often not folded into the booking price.",
@@ -19310,7 +19344,7 @@ function rbBuildMenorcaRoute() {
       code: 'ES', name: 'Spain', days: 5, budget: 400, lat: 39.9496, lng: 4.0523,
       destinations: [
         { name: 'Mahón (Camí de Cavalls coastal path)', lat: 39.8885, lng: 4.2658 },
-        { name: 'Ciutadella', lat: 40.0000, lng: 3.8388 },
+        { name: 'Ciutadella', lat: 40.0000, lng: 3.8388, notes: "Menorca's former capital has an elegant, arcaded old-town street (Ses Voltes) wrapped around a small working fishing harbor lined with restaurants - more intimate and less built-up than Mahón. If visiting in late June, the Sant Joan festival's horse-rearing ritual takes over the old town; book accommodation months ahead if timing overlaps." },
         { name: 'Cala Macarelleta', lat: 39.9394, lng: 3.8763 },
         { name: 'Cala Turqueta', lat: 39.9330, lng: 3.8397 },
       ],
@@ -19331,7 +19365,7 @@ function rbBuildIbizaRoute() {
     {
       code: 'ES', name: 'Spain', days: 5, budget: 500, lat: 38.9800, lng: 1.4800,
       destinations: [
-        { name: 'Ibiza Town / Dalt Vila (UNESCO old town)', lat: 38.9067, lng: 1.4327 },
+        { name: 'Ibiza Town / Dalt Vila (UNESCO old town)', lat: 38.9067, lng: 1.4327, notes: "The walled old town's 16th-century Renaissance fortifications (UNESCO-listed) enclose steep, whitewashed lanes climbing to a hilltop cathedral with sweeping harbor views. Walk the ramparts near sunset for the best light and cooler temperatures; the cobbled climbs are steep, so wear proper shoes." },
         { name: 'Sant Joan de Labritja', lat: 39.0765, lng: 1.5150 },
         { name: 'Portinatx', lat: 39.1102, lng: 1.5347 },
       ],
@@ -19352,10 +19386,10 @@ function rbBuildMallorcaMenorcaRoute() {
     {
       code: 'ES', name: 'Spain', days: 4, budget: 360, lat: 39.5696, lng: 2.6502,
       destinations: [
-        { name: 'Palma (base)', lat: 39.5696, lng: 2.6502 },
-        { name: 'Valldemossa', lat: 39.7098, lng: 2.6228 },
-        { name: 'Deià', lat: 39.7481, lng: 2.6478 },
-        { name: 'Sóller', lat: 39.7662, lng: 2.7147 },
+        { name: 'Palma (base)', lat: 39.5696, lng: 2.6502, notes: "La Seu cathedral - a Gothic giant right on the waterfront with a rose window and rooftop terraces - anchors a walkable old town of tapas bars and boutiques. Visit before 9:30am or after 5pm to dodge cruise-ship crowds, and budget extra time if climbing to the cathedral's rooftop terraces (separate paid access)." },
+        { name: 'Valldemossa', lat: 39.7098, lng: 2.6228, notes: "Chopin and George Sand wintered here in 1838-39 at the Real Cartuja monastery, now a small museum housing the piano he composed on; the village's steep stone streets and lavender-lined balconies are worth a wander beyond the monastery itself. Arrive early morning - tour buses from Palma clog the single access road by midday." },
+        { name: 'Deià', lat: 39.7481, lng: 2.6478, notes: "An artists' village (Robert Graves lived and is buried here; his house Ca N'Alluny is now a small museum) perched above the sea, with a short, steep path down to the pebble cove Cala Deià for a swim. Go early or at sunset - the cove is tiny and packs out by midday in summer." },
+        { name: 'Sóller', lat: 39.7662, lng: 2.7147, notes: "A citrus-growing valley town reached from Palma by a century-old wooden train through the mountains, with a matching antique tram continuing down to the seaside Port de Sóller. Book train tickets ahead in high season - the scenic run sells out." },
       ],
       notes: "Entry: direct AMS-PMI (Transavia, ~2h25, frequent). 3-4 days based in Palma for a Serra de Tramuntana loop — Valldemossa, Deià, Sóller (worth doing a leg on the antique wooden train). A rental car helps on the mountain roads. Budget ~€80-100/day average across this route.",
       transport_to_next: "Ferry Palma-Ciutadella or Palma-Mahón (several hours, varies by operator/route). Web check (2026-08): check the current Mallorca-Menorca ferry frequency outside high season — it runs noticeably less often.",
@@ -19363,8 +19397,8 @@ function rbBuildMallorcaMenorcaRoute() {
     {
       code: 'ES', name: 'Spain', days: 4, budget: 360, lat: 39.9496, lng: 4.0523,
       destinations: [
-        { name: 'Ciutadella', lat: 40.0000, lng: 3.8388 },
-        { name: 'Mahón', lat: 39.8885, lng: 4.2658 },
+        { name: 'Ciutadella', lat: 40.0000, lng: 3.8388, notes: "Menorca's former capital has an elegant, arcaded old-town street (Ses Voltes) wrapped around a small working fishing harbor lined with restaurants - more intimate and less built-up than Mahón. If visiting in late June, the Sant Joan festival's horse-rearing ritual takes over the old town; book accommodation months ahead if timing overlaps." },
+        { name: 'Mahón', lat: 39.8885, lng: 4.2658, notes: "Built around one of the world's largest natural harbours, with Georgian-style windows and shutters left over from British rule (1708-1802) and a local gin tradition (Xoriguer distillery, open for tastings) as another legacy. A harbor boat tour is the easiest way to take in the port's scale, which stretches nearly 6km inland." },
       ],
       notes: "3-4 days between Ciutadella and Mahón on Menorca. Budget ~€80-100/day average. Season: May-June or September, doing the Tramuntana walking outside the summer heat. Web check (2026-08): the Balearic eco-tax applies separately on each island (see general note below); Palma is the epicenter of the 2026 overtourism protests specifically, expect occasional demonstrations/traffic disruption there.",
       transport_to_next: 'End of this route — fly home, likely via Palma.',
@@ -19383,10 +19417,10 @@ function rbBuildBalearicIslandsRoute() {
     {
       code: 'ES', name: 'Spain', days: 3, budget: 285, lat: 39.5696, lng: 2.6502,
       destinations: [
-        { name: 'Palma (base)', lat: 39.5696, lng: 2.6502 },
-        { name: 'Valldemossa', lat: 39.7098, lng: 2.6228 },
-        { name: 'Deià', lat: 39.7481, lng: 2.6478 },
-        { name: 'Sóller', lat: 39.7662, lng: 2.7147 },
+        { name: 'Palma (base)', lat: 39.5696, lng: 2.6502, notes: "La Seu cathedral - a Gothic giant right on the waterfront with a rose window and rooftop terraces - anchors a walkable old town of tapas bars and boutiques. Visit before 9:30am or after 5pm to dodge cruise-ship crowds, and budget extra time if climbing to the cathedral's rooftop terraces (separate paid access)." },
+        { name: 'Valldemossa', lat: 39.7098, lng: 2.6228, notes: "Chopin and George Sand wintered here in 1838-39 at the Real Cartuja monastery, now a small museum housing the piano he composed on; the village's steep stone streets and lavender-lined balconies are worth a wander beyond the monastery itself. Arrive early morning - tour buses from Palma clog the single access road by midday." },
+        { name: 'Deià', lat: 39.7481, lng: 2.6478, notes: "An artists' village (Robert Graves lived and is buried here; his house Ca N'Alluny is now a small museum) perched above the sea, with a short, steep path down to the pebble cove Cala Deià for a swim. Go early or at sunset - the cove is tiny and packs out by midday in summer." },
+        { name: 'Sóller', lat: 39.7662, lng: 2.7147, notes: "A citrus-growing valley town reached from Palma by a century-old wooden train through the mountains, with a matching antique tram continuing down to the seaside Port de Sóller. Book train tickets ahead in high season - the scenic run sells out." },
       ],
       notes: "Entry: direct AMS-PMI (Transavia, ~2h25, frequent). 3 days based in Palma for a shortened Serra de Tramuntana taste (Valldemossa, Deià, Sóller). Budget ~€85-110/day average across this route, plus inter-island ferries/flights (booked and planned separately, not folded into the per-day figure).",
       transport_to_next: "Ferry Palma-Ciutadella or Palma-Mahón. Web check (2026-08): check the current Mallorca-Menorca ferry frequency outside high season.",
@@ -19394,8 +19428,8 @@ function rbBuildBalearicIslandsRoute() {
     {
       code: 'ES', name: 'Spain', days: 3, budget: 285, lat: 39.9496, lng: 4.0523,
       destinations: [
-        { name: 'Ciutadella', lat: 40.0000, lng: 3.8388 },
-        { name: 'Mahón', lat: 39.8885, lng: 4.2658 },
+        { name: 'Ciutadella', lat: 40.0000, lng: 3.8388, notes: "Menorca's former capital has an elegant, arcaded old-town street (Ses Voltes) wrapped around a small working fishing harbor lined with restaurants - more intimate and less built-up than Mahón. If visiting in late June, the Sant Joan festival's horse-rearing ritual takes over the old town; book accommodation months ahead if timing overlaps." },
+        { name: 'Mahón', lat: 39.8885, lng: 4.2658, notes: "Built around one of the world's largest natural harbours, with Georgian-style windows and shutters left over from British rule (1708-1802) and a local gin tradition (Xoriguer distillery, open for tastings) as another legacy. A harbor boat tour is the easiest way to take in the port's scale, which stretches nearly 6km inland." },
       ],
       notes: "2-3 days between Ciutadella and Mahón on Menorca. Budget ~€85-110/day average.",
       transport_to_next: "Ferry or short flight on to Ibiza (multiple operators, varies by route).",
@@ -19403,7 +19437,7 @@ function rbBuildBalearicIslandsRoute() {
     {
       code: 'ES', name: 'Spain', days: 2, budget: 190, lat: 38.9800, lng: 1.4800,
       destinations: [
-        { name: 'Ibiza Town / Dalt Vila (UNESCO old town)', lat: 38.9067, lng: 1.4327 },
+        { name: 'Ibiza Town / Dalt Vila (UNESCO old town)', lat: 38.9067, lng: 1.4327, notes: "The walled old town's 16th-century Renaissance fortifications (UNESCO-listed) enclose steep, whitewashed lanes climbing to a hilltop cathedral with sweeping harbor views. Walk the ramparts near sunset for the best light and cooler temperatures; the cobbled climbs are steep, so wear proper shoes." },
       ],
       notes: "2 days in Ibiza Town/Dalt Vila, with an optional Formentera day trip by ferry from Ibiza (~30 min, frequent, roughly €40-60 return) if there's a spare day. Budget ~€85-110/day average. Season: May-June or September. Web check (2026-08): eco-tax applies per island — plan and book the multiple inter-island ferries/flights ahead; check the current visitor-cap discussion for updates, no hard legal limit yet as of 2026 but growing political pressure. Large-scale overtourism protests hit Mallorca/Ibiza in summer 2025 and again in July 2026 (~30,000 demonstrators in Palma specifically), against a record 19 million Balearic visitors in 2025 — expect crowding/irritation in hotspots July-August and occasional demonstrations/traffic disruption, especially around Palma.",
       transport_to_next: 'End of this route — fly home from Ibiza, or back via Palma.',
