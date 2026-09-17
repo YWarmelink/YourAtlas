@@ -9092,6 +9092,41 @@ function rbMigratePortugalAndalusiaDestinationNotes() {
 }
 
 /**
+ * Batch 29 (2026-09-17) for the per-destination-notes workflow -- Switzerland Alpine Roadtrip (9
+ * days), a small 6-leg/9-destination combo route researched in a single pass. Same generic
+ * name-matching migration pattern as the grand-tour batches above.
+ */
+function rbMigrateSwitzerlandAlpineDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_SWITZERLAND_ALPINE_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_SWITZERLAND_ALPINE_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Zurich': "Beyond the compressed opening night, the Altstadt's Grossmünster and Niederdorf lanes plus a lakeside stroll along Lake Zurich fill a short evening well — with only a few hours, skip the museums and just walk the old-town-to-lake loop.",
+    'Lucerne': "The wooden Chapel Bridge (Kapellbrücke) and its 17th-century roof paintings anchor the old town on the Reuss river, with Lake Lucerne right behind it; walk it around sunset when the water and Mt. Pilatus backdrop light up and day-trippers have thinned out.",
+    'Andermatt': "A once-sleepy garrison village turned into a genuine four-season resort by the Andermatt Reuss redevelopment, and the natural hub for the surrounding pass roads — worth an hour wandering the compact centre rather than treating it as just a fuel stop between passes.",
+    'Sustenpass': "The quietest and least-trafficked of the three passes, prized for its view of the Steingletscher glacier right from the roadside. Pull off at the marked Steingletscher viewpoint partway along for the best glacier shot.",
+    'Furka Pass': "Famous as the Goldfinger car-chase pass and home to the Rhône Glacier ice grotto — a tunnel re-dug into the ice every year, with two viewing platforms over the glacial lake, reached by a short walk from the Hotel Belvédère near the summit. The grotto typically runs mid/late-June through early October — worth confirming it's open for the season before planning the stop.",
+    'Grimsel Pass': 'A stark, almost lunar granite landscape dotted with turquoise hydroelectric reservoirs (Grimselsee, Räterichsbodensee) rather than the glacier views of its neighbours. The lakeside Grimsel Hospiz is worth a short stop for the view alone.',
+    'Wallis / Zermatt (parking at Täsch)': "The payoff for the car-free logistics is the best point-blank Matterhorn views in the Alps; the Gornergrat cogwheel railway is the single best vantage, with the peak on one side and a glacier panorama on the other. Ride it early morning, before afternoon cloud typically builds around the summit.",
+    'Lugano / Ticino': 'Palm-lined lakefront promenades and pastel piazzas give Lugano a genuinely Italian feel despite being Swiss. Take the funicular up Monte Brè or San Salvatore for a panoramic view over Lake Lugano, ideally in late-afternoon light.',
+    'Graubünden / Chur': "Switzerland's oldest town, with a compact, walkable Altstadt (Arcas square, Chur Cathedral) well suited to a short closing-night stop — an hour on foot covers the highlights without needing a full day.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -12335,7 +12370,7 @@ function rbBuildSwitzerlandAlpineRoadtripRoute() {
     {
       code: 'CH', name: 'Switzerland', days: 1, budget: 130, lat: 47.3769, lng: 8.5417,
       destinations: [
-        { name: 'Zurich', lat: 47.3769, lng: 8.5417 },
+        { name: 'Zurich', lat: 47.3769, lng: 8.5417, notes: "Beyond the compressed opening night, the Altstadt's Grossmünster and Niederdorf lanes plus a lakeside stroll along Lake Zurich fill a short evening well — with only a few hours, skip the museums and just walk the old-town-to-lake loop." },
       ],
       notes: 'Zurich as the opening night — same content as Zurich + Lucerne + Surroundings (5 days) ⛴️ above, compressed to one night here.',
       transport_to_next: 'Drive to Lucerne.',
@@ -12343,7 +12378,7 @@ function rbBuildSwitzerlandAlpineRoadtripRoute() {
     {
       code: 'CH', name: 'Switzerland', days: 1, budget: 130, lat: 47.0502, lng: 8.3093,
       destinations: [
-        { name: 'Lucerne', lat: 47.0502, lng: 8.3093 },
+        { name: 'Lucerne', lat: 47.0502, lng: 8.3093, notes: "The wooden Chapel Bridge (Kapellbrücke) and its 17th-century roof paintings anchor the old town on the Reuss river, with Lake Lucerne right behind it; walk it around sunset when the water and Mt. Pilatus backdrop light up and day-trippers have thinned out." },
       ],
       notes: 'Lucerne, one night — same content as Zurich + Lucerne + Surroundings (5 days) ⛴️ above.',
       transport_to_next: 'Drive to Andermatt via the Sustenpass (seasonal, open from 12 June 2026).',
@@ -12351,10 +12386,10 @@ function rbBuildSwitzerlandAlpineRoadtripRoute() {
     {
       code: 'CH', name: 'Switzerland', days: 2, budget: 280, lat: 46.6336, lng: 8.5942,
       destinations: [
-        { name: 'Andermatt', lat: 46.6336, lng: 8.5942 },
-        { name: 'Sustenpass', lat: 46.7314, lng: 8.4436 },
-        { name: 'Furka Pass', lat: 46.5747, lng: 8.4108 },
-        { name: 'Grimsel Pass', lat: 46.5717, lng: 8.3550 },
+        { name: 'Andermatt', lat: 46.6336, lng: 8.5942, notes: "A once-sleepy garrison village turned into a genuine four-season resort by the Andermatt Reuss redevelopment, and the natural hub for the surrounding pass roads — worth an hour wandering the compact centre rather than treating it as just a fuel stop between passes." },
+        { name: 'Sustenpass', lat: 46.7314, lng: 8.4436, notes: "The quietest and least-trafficked of the three passes, prized for its view of the Steingletscher glacier right from the roadside. Pull off at the marked Steingletscher viewpoint partway along for the best glacier shot." },
+        { name: 'Furka Pass', lat: 46.5747, lng: 8.4108, notes: "Famous as the Goldfinger car-chase pass and home to the Rhône Glacier ice grotto — a tunnel re-dug into the ice every year, with two viewing platforms over the glacial lake, reached by a short walk from the Hotel Belvédère near the summit. The grotto typically runs mid/late-June through early October — worth confirming it's open for the season before planning the stop." },
+        { name: 'Grimsel Pass', lat: 46.5717, lng: 8.3550, notes: "A stark, almost lunar granite landscape dotted with turquoise hydroelectric reservoirs (Grimselsee, Räterichsbodensee) rather than the glacier views of its neighbours. The lakeside Grimsel Hospiz is worth a short stop for the view alone." },
       ],
       notes: 'Andermatt as the base for three legendary mountain passes: the Sustenpass (seasonal, 2026 open from 12 June), the Furka Pass (reopened 29 May 2026) and the Grimsel Pass (reopened 14 May 2026) — all seasonal, check current-year opening dates before relying on this route outside summer.',
       transport_to_next: 'Drive over the Simplon Pass (open year-round, no seasonal closure) into Ticino.',
@@ -12362,7 +12397,7 @@ function rbBuildSwitzerlandAlpineRoadtripRoute() {
     {
       code: 'CH', name: 'Switzerland', days: 2, budget: 300, lat: 46.0207, lng: 7.7491,
       destinations: [
-        { name: 'Wallis / Zermatt (parking at Täsch)', lat: 46.0207, lng: 7.7491 },
+        { name: 'Wallis / Zermatt (parking at Täsch)', lat: 46.0207, lng: 7.7491, notes: "The payoff for the car-free logistics is the best point-blank Matterhorn views in the Alps; the Gornergrat cogwheel railway is the single best vantage, with the peak on one side and a glacier panorama on the other. Ride it early morning, before afternoon cloud typically builds around the summit." },
       ],
       notes: 'Wallis/Zermatt — same car-free-Zermatt/Täsch-parking setup as the standalone Swiss Alps: Zermatt / Matterhorn (6 days) 🗻 route above, compressed here to fit this longer multi-pass itinerary.',
       transport_to_next: 'Drive over the Simplon Pass toward Ticino/Lugano.',
@@ -12370,7 +12405,7 @@ function rbBuildSwitzerlandAlpineRoadtripRoute() {
     {
       code: 'CH', name: 'Switzerland', days: 2, budget: 280, lat: 46.0037, lng: 8.9511,
       destinations: [
-        { name: 'Lugano / Ticino', lat: 46.0037, lng: 8.9511 },
+        { name: 'Lugano / Ticino', lat: 46.0037, lng: 8.9511, notes: "Palm-lined lakefront promenades and pastel piazzas give Lugano a genuinely Italian feel despite being Swiss. Take the funicular up Monte Brè or San Salvatore for a panoramic view over Lake Lugano, ideally in late-afternoon light." },
       ],
       notes: 'Lugano/Ticino, reached via the year-round Simplon Pass — a distinctly Italian-flavoured Swiss region. Onward route uses either the seasonal San Bernardino Pass or the year-round Gotthard tunnel, depending on season.',
       transport_to_next: 'Drive over the San Bernardino Pass (seasonal) or through the Gotthard tunnel (year-round alternative) to Graubünden/Chur.',
@@ -12378,7 +12413,7 @@ function rbBuildSwitzerlandAlpineRoadtripRoute() {
     {
       code: 'CH', name: 'Switzerland', days: 1, budget: 140, lat: 46.8499, lng: 9.5320,
       destinations: [
-        { name: 'Graubünden / Chur', lat: 46.8499, lng: 9.5320 },
+        { name: 'Graubünden / Chur', lat: 46.8499, lng: 9.5320, notes: "Switzerland's oldest town, with a compact, walkable Altstadt (Arcas square, Chur Cathedral) well suited to a short closing-night stop — an hour on foot covers the highlights without needing a full day." },
       ],
       notes: 'Graubünden/Chur as the closing night before heading home.',
       transport_to_next: 'End of this route — drive back to the Netherlands from Chur.',
@@ -12415,7 +12450,7 @@ function rbBuildSwitzerlandNorthernItalyRoute() {
     {
       code: 'CH', name: 'Switzerland', days: 3, budget: 420, lat: 46.0037, lng: 8.9511,
       destinations: [
-        { name: 'Lugano / Ticino', lat: 46.0037, lng: 8.9511 },
+        { name: 'Lugano / Ticino', lat: 46.0037, lng: 8.9511, notes: "Palm-lined lakefront promenades and pastel piazzas give Lugano a genuinely Italian feel despite being Swiss. Take the funicular up Monte Brè or San Salvatore for a panoramic view over Lake Lugano, ideally in late-afternoon light." },
       ],
       notes: 'Lugano/Ticino to close the loop, back north via the Gotthard. Season: June-September. Same Swiss vignette caveat as the other Switzerland routes in this batch applies to this leg (CHF40/year, ~€43).',
       transport_to_next: 'End of this route — drive back to the Netherlands from Ticino via the Gotthard.',

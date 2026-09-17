@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 279 / 741 signatures.**
+- **Done so far: 285 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -134,7 +134,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **CA** (4 dest): Quebec City (Vieux-Québec), Montreal (Old Port & Mile End), Ottawa (Parliament Hill & museums), Toronto (skyline, with Niagara Falls as a day trip) — routes: Eastern Canada 🍁, North America Grand Traverse 🌎
 - [x] **CA** (7 dest): Banff National Park, Lake Louise & Moraine Lake, Yoho National Park (Emerald Lake), Icefields Parkway, Jasper National Park, Mount Robson Provincial Park, Whistler — routes: North America Grand Traverse 🌎, Western Canada: Rockies & Vancouver 🏔️
 - [x] **CA** (4 dest): Stanley Park, Granville Island, North Shore (Grouse Mountain / Capilano Suspension Bridge), Gastown & Kitsilano Beach — routes: North America Grand Traverse 🌎, Western Canada: Rockies & Vancouver 🏔️
-- [ ] **CH** (1 dest): Lugano / Ticino — routes: Switzerland + Northern Italy (9 days) 🚞, Switzerland Alpine Roadtrip (9 days) 🛣️
+- [x] **CH** (1 dest): Lugano / Ticino — routes: Switzerland + Northern Italy (9 days) 🚞, Switzerland Alpine Roadtrip (9 days) 🛣️
 - [x] **CI** (2 dest): Abidjan (Le Plateau), Grand-Bassam (UNESCO colonial town) — routes: West & Central Africa Expedition 🌍, West Africa Overland 🥁
 - [x] **CK** (2 dest): Rarotonga, Aitutaki Lagoon — routes: Oceania Grand Expedition 🌊, Pacific Islands 🌺
 - [x] **CL** (5 dest): San Pedro de Atacama, Valle de la Luna, Valle del Arcoíris, Antofagasta, Iquique — routes: Pan-American Grand Tour 🌎, Southern Cone & Brazil Finale 🧉
@@ -291,11 +291,11 @@ Sorted alphabetically by country code.
 - [ ] **CH** (3 dest): Walensee / Sargans, Appenzell, Berggasthaus Aescher (via cable car from Wasserauen) — routes: Liechtenstein + Swiss Alps (3 days) 🏔️
 - [ ] **CH** (4 dest): Täsch (parking), Zermatt (car-free), Matterhorn / Mattertal, Saas-Fee (optional day trip) — routes: Swiss Alps: Zermatt / Matterhorn (6 days) 🗻
 - [ ] **CH** (2 dest): Chur / Graubünden, St. Moritz (Bernina Express) — routes: Switzerland + Northern Italy (9 days) 🚞
-- [ ] **CH** (1 dest): Zurich — routes: Switzerland Alpine Roadtrip (9 days) 🛣️
-- [ ] **CH** (1 dest): Lucerne — routes: Switzerland Alpine Roadtrip (9 days) 🛣️
-- [ ] **CH** (4 dest): Andermatt, Sustenpass, Furka Pass, Grimsel Pass — routes: Switzerland Alpine Roadtrip (9 days) 🛣️
-- [ ] **CH** (1 dest): Wallis / Zermatt (parking at Täsch) — routes: Switzerland Alpine Roadtrip (9 days) 🛣️
-- [ ] **CH** (1 dest): Graubünden / Chur — routes: Switzerland Alpine Roadtrip (9 days) 🛣️
+- [x] **CH** (1 dest): Zurich — routes: Switzerland Alpine Roadtrip (9 days) 🛣️
+- [x] **CH** (1 dest): Lucerne — routes: Switzerland Alpine Roadtrip (9 days) 🛣️
+- [x] **CH** (4 dest): Andermatt, Sustenpass, Furka Pass, Grimsel Pass — routes: Switzerland Alpine Roadtrip (9 days) 🛣️
+- [x] **CH** (1 dest): Wallis / Zermatt (parking at Täsch) — routes: Switzerland Alpine Roadtrip (9 days) 🛣️
+- [x] **CH** (1 dest): Graubünden / Chur — routes: Switzerland Alpine Roadtrip (9 days) 🛣️
 - [ ] **CH** (4 dest): Zurich (old town, lake, Uetliberg hike), Lucerne (Chapel Bridge, lake, old town), Pilatus (Golden Round Trip), Rigi (alternative) — routes: Zurich + Lucerne + Surroundings (5 days) ⛴️
 - [ ] **CY** (5 dest): Larnaca, Nicosia / Ledra Street, Troodos Mountains, Paphos & Aphrodite's Rock, Limassol — routes: Cyprus (6 days) 🏝️
 - [ ] **CY** (2 dest): Larnaca, Paphos — routes: Cyprus + Greece (9 days) ✈️
@@ -770,7 +770,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 |---|---|---|
 | North India 🕌 | 9/9 | 1 |
 | India & Himalaya Expedition 🏔️ | 9/22 | 1 |
-| Switzerland Alpine Roadtrip (9 days) 🛣️ | 9/9 | 1 |
 | France + Switzerland + Italy (10-14 days) 🗻 | 9/9 | 1 |
 | Northern Italy (6 days) 🚤 | 7/7 | 1 |
 | Serbia + Montenegro + Bosnia (12 days) 🏔️ | 7/7 | 1 |
@@ -784,7 +783,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Italy + Slovenia + Croatia (10-14 days) ⛵ | 6/9 | 1 |
 | Luxembourg + Ardennes (4 days) 🎖️ | 5/5 | 1 |
 | South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️ | 5/5 | 1 |
-| Switzerland + Northern Italy (9 days) 🚞 | 5/5 | 1 |
 | San Marino + Emilia-Romagna (4 days) 🍝 | 5/5 | 1 |
 | Reykjavík + Golden Circle (5 days) 🌋 | 5/5 | 1 |
 | Albania + Montenegro (12 days) 🏝️ | 4/6 | 1 |
@@ -795,8 +793,8 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Kosovo + Montenegro + Albania (9 days) 🗻 | 3/5 | 1 |
 | San Marino + Tuscany (5 days) 🍷 | 2/5 | 1 |
 | Slovenia + Croatian Istria (7-10 days) 🏖️ | 2/4 | 1 |
-| Kosovo + North Macedonia (6 days) 🚏 | 2/4 | 1 |
 | Kosovo + North Macedonia + Albania (9 days) 🎒 | 2/5 | 1 |
+| Kosovo + North Macedonia (6 days) 🚏 | 2/4 | 1 |
 | Berlin (4 days) 🐻 | 1/1 | 1 |
 | Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂 | 19/19 | 0 |
 | Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧 | 19/19 | 0 |
@@ -808,6 +806,8 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Hawaii 🐢 | 11/11 | 0 |
 | Rome (4 days) 🏛️ | 11/11 | 0 |
 | Sicily + Malta (9 days) 🌋 | 11/11 | 0 |
-| ... 265 more routes with open destinations ... | | |
+| Northern Spain Roadtrip (12 days) 🛣️ | 11/11 | 0 |
+| Portugal Roadtrip (12 days) 🗺️ | 11/11 | 0 |
+| ... 264 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).
