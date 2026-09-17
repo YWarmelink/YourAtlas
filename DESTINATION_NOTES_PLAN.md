@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 159 / 741 signatures.**
+- **Done so far: 165 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -107,8 +107,8 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **TN** (5 dest): Tunis, Carthage, Dougga, El Jem, Sidi Bou Said — routes: Iberia & Morocco/Tunisia 🏰, Mediterranean Civilizations Expedition 🏛️, Tunisia 🧿
 - [x] **TW** (5 dest): Taipei, Taroko Gorge, Sun Moon Lake, Tainan, Kenting — routes: East Asia & Pacific 🗻, Eurasia Grand Tour 🌏, Japan & Taiwan 🗻
 - [x] **TZ** (7 dest): Arusha, Ngorongoro Crater, Serengeti, Lake Manyara, Kilimanjaro (region), Zanzibar, Dar es Salaam — routes: Africa Grand Tour 🌍, East Africa Safari Classic 🦒, Tanzania 🦁
-- [ ] **US** (5 dest): Seattle (Pike Place Market, Space Needle), Mount Rainier National Park, Olympic National Park (Hurricane Ridge & Hoh Rainforest), Oregon Coast (Cannon Beach, Astoria), Redwood National & State Parks — routes: North America Grand Traverse 🌎, Pacific Northwest 🦫, US West Coast Roadtrip 🌉
-- [ ] **US** (3 dest): San Francisco (Golden Gate Bridge, Alcatraz, Mission District), Yosemite Valley, Sequoia & Kings Canyon National Parks — routes: California 🌲, North America Grand Traverse 🌎, US West Coast Roadtrip 🌉
+- [x] **US** (5 dest): Seattle (Pike Place Market, Space Needle), Mount Rainier National Park, Olympic National Park (Hurricane Ridge & Hoh Rainforest), Oregon Coast (Cannon Beach, Astoria), Redwood National & State Parks — routes: North America Grand Traverse 🌎, Pacific Northwest 🦫, US West Coast Roadtrip 🌉
+- [x] **US** (3 dest): San Francisco (Golden Gate Bridge, Alcatraz, Mission District), Yosemite Valley, Sequoia & Kings Canyon National Parks — routes: California 🌲, North America Grand Traverse 🌎, US West Coast Roadtrip 🌉
 - [x] **VU** (4 dest): Port Vila, Mount Yasur (Tanna), SS President Coolidge wreck (Espiritu Santo), Blue Holes — routes: Fiji & Vanuatu 🐚, Oceania Grand Expedition 🌊, Pacific Islands 🌺
 - [x] **ZM** (4 dest): Lusaka, Lower Zambezi NP, Livingstone/Victoria Falls, South Luangwa NP — routes: Africa Grand Tour 🌍, Southern Africa Safari Loop 🦁, Zambia & Malawi 💦
 - [ ] **AL** (4 dest): Tirana, Berat, Dhermi, Himarë — routes: Albania (6 days) 🏖️, Albania + Montenegro (12 days) 🏝️
@@ -130,10 +130,10 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **BR** (7 dest): Foz do Iguaçu (Iguazu Falls), Curitiba, Ilha do Mel, Florianópolis, São Paulo, Paraty, Rio de Janeiro — routes: Pan-American Grand Tour 🌎, Southern Cone & Brazil Finale 🧉
 - [ ] **BT** (6 dest): Paro, Thimphu, Dochula Pass, Punakha, Bumthang (optional, by flight Paro-Bumthang), Tiger's Nest Monastery — routes: Bhutan 🐉, India & Himalaya Expedition 🏔️
 - [x] **BZ** (6 dest): San Ignacio, Belize City, Caye Caulker, Ambergris Caye (San Pedro), Hopkins/Dangriga, Placencia — routes: Central America Loop 🌋, Pan-American Grand Tour 🌎
-- [ ] **CA** (4 dest): Halifax, Peggy's Cove, Lunenburg, Cape Breton Island & Cabot Trail — routes: Eastern Canada 🍁, North America Grand Traverse 🌎
-- [ ] **CA** (4 dest): Quebec City (Vieux-Québec), Montreal (Old Port & Mile End), Ottawa (Parliament Hill & museums), Toronto (skyline, with Niagara Falls as a day trip) — routes: Eastern Canada 🍁, North America Grand Traverse 🌎
-- [ ] **CA** (7 dest): Banff National Park, Lake Louise & Moraine Lake, Yoho National Park (Emerald Lake), Icefields Parkway, Jasper National Park, Mount Robson Provincial Park, Whistler — routes: North America Grand Traverse 🌎, Western Canada: Rockies & Vancouver 🏔️
-- [ ] **CA** (4 dest): Stanley Park, Granville Island, North Shore (Grouse Mountain / Capilano Suspension Bridge), Gastown & Kitsilano Beach — routes: North America Grand Traverse 🌎, Western Canada: Rockies & Vancouver 🏔️
+- [x] **CA** (4 dest): Halifax, Peggy's Cove, Lunenburg, Cape Breton Island & Cabot Trail — routes: Eastern Canada 🍁, North America Grand Traverse 🌎
+- [x] **CA** (4 dest): Quebec City (Vieux-Québec), Montreal (Old Port & Mile End), Ottawa (Parliament Hill & museums), Toronto (skyline, with Niagara Falls as a day trip) — routes: Eastern Canada 🍁, North America Grand Traverse 🌎
+- [x] **CA** (7 dest): Banff National Park, Lake Louise & Moraine Lake, Yoho National Park (Emerald Lake), Icefields Parkway, Jasper National Park, Mount Robson Provincial Park, Whistler — routes: North America Grand Traverse 🌎, Western Canada: Rockies & Vancouver 🏔️
+- [x] **CA** (4 dest): Stanley Park, Granville Island, North Shore (Grouse Mountain / Capilano Suspension Bridge), Gastown & Kitsilano Beach — routes: North America Grand Traverse 🌎, Western Canada: Rockies & Vancouver 🏔️
 - [ ] **CH** (1 dest): Lugano / Ticino — routes: Switzerland + Northern Italy (9 days) 🚞, Switzerland Alpine Roadtrip (9 days) 🛣️
 - [x] **CI** (2 dest): Abidjan (Le Plateau), Grand-Bassam (UNESCO colonial town) — routes: West & Central Africa Expedition 🌍, West Africa Overland 🥁
 - [x] **CK** (2 dest): Rarotonga, Aitutaki Lagoon — routes: Oceania Grand Expedition 🌊, Pacific Islands 🌺
@@ -768,7 +768,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| North America Grand Traverse 🌎 | 27/27 | 8 |
 | Croatia + Montenegro + Bosnia (12 days) 🧭 | 7/7 | 6 |
 | Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️ | 7/7 | 6 |
 | Baltics + Poland (10-14 days) 🇵🇱 | 6/6 | 6 |
@@ -778,7 +777,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Nordic Arctic Expedition ❄️ | 37/37 | 4 |
 | Dolomites & North Italy 🚡 | 24/24 | 4 |
 | Cyclades Island Hopping (7-10 days) 🏝️ | 10/10 | 4 |
-| US West Coast Roadtrip 🌉 | 8/8 | 4 |
 | Sicily Roadtrip (7-10 days) 🏝️ | 7/8 | 4 |
 | Cyclades (5-7 days) 🏝️ | 6/6 | 4 |
 | Bosnia + Croatia (9 days) 🏛️ | 4/4 | 4 |
@@ -790,12 +788,10 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Sicily East (4-5 days) 🏝️ | 4/4 | 3 |
 | Slovenia + Croatia + Montenegro Coast (10-14 days) ⛵ | 4/6 | 3 |
 | Montenegro + Bosnia (9 days) 🕊️ | 4/4 | 3 |
-| Western Canada: Rockies & Vancouver 🏔️ | 18/18 | 2 |
 | Italy: North to Central (12 days) 🚄 | 9/9 | 2 |
 | Central Europe Roadtrip (14 days) 🚂 | 9/9 | 2 |
 | Germany + Austria + Italy (10-14 days) 🏔️ | 9/9 | 2 |
 | Southern Europe Highlights Roadtrip (14 days) 🎯 | 8/12 | 2 |
-| Eastern Canada 🍁 | 8/8 | 2 |
 | Grand Balkan Roadtrip (14 days) 🏔️ | 8/10 | 2 |
 | Azores Island Hopping (10-14 days) 🏝️ | 8/8 | 2 |
 | Tuscany (6 days) 🍇 | 7/7 | 2 |
@@ -803,11 +799,15 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Albania + Montenegro (12 days) 🏝️ | 6/6 | 2 |
 | Mallorca + Menorca (7-10 days) 🏝️ | 6/6 | 2 |
 | Bosnia + Montenegro + Budva (7-10 days) ⛰️ | 6/6 | 2 |
-| Pacific Northwest 🦫 | 5/5 | 2 |
 | Azores: São Miguel + Terceira (7-10 days) 🏝️ | 5/5 | 2 |
-| California 🌲 | 3/3 | 2 |
 | Hungary + Austria + Slovenia (7-10 days) 🚆 | 3/5 | 2 |
 | Italy Roadtrip (12 days) 🧀 | 11/13 | 1 |
-| ... 302 more routes with open destinations ... | | |
+| Grand European Roadtrip (14-21 days) 🪣 | 11/12 | 1 |
+| Adriatic Roadtrip (14 days) 🌊 | 11/11 | 1 |
+| Sicily + Southern Italy (12 days) 🍊 | 10/12 | 1 |
+| Portugal + Andalusia (10-14 days) 🕌 | 10/10 | 1 |
+| Portugal + Spain Roadtrip (14 days) 🚗 | 10/10 | 1 |
+| North India 🕌 | 9/9 | 1 |
+| ... 297 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

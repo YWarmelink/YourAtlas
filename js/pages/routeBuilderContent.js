@@ -1109,10 +1109,10 @@ function rbBuildNorthAmericaRoute() {
       countries: [{
         code: 'CA', name: 'Canada', days: 8, budget: 1200, lat: 44.6488, lng: -63.5752,
         destinations: [
-          { name: 'Halifax', lat: 44.6488, lng: -63.5752 },
-          { name: "Peggy's Cove", lat: 44.4918, lng: -63.9148 },
-          { name: 'Lunenburg', lat: 44.3767, lng: -64.3097 },
-          { name: 'Cape Breton Island & Cabot Trail', lat: 46.2036, lng: -60.6136 },
+          { name: 'Halifax', lat: 44.6488, lng: -63.5752, notes: "The Halifax Waterfront Boardwalk and the Maritime Museum of the Atlantic (with real Titanic recovery artifacts, since Halifax handled many of the bodies) anchor the city; climb Citadel Hill for a free harbour view and the daily noon gun." },
+          { name: "Peggy's Cove", lat: 44.4918, lng: -63.9148, notes: "The lighthouse perched on wave-smoothed granite is the classic Nova Scotia shot, best visited at sunrise before the tour buses arrive; stay well back from the dark, wet rocks near the water — rogue waves have swept visitors off them, and it's a real, recurring safety warning, not just a sign for show." },
+          { name: 'Lunenburg', lat: 44.3767, lng: -64.3097, notes: "UNESCO-listed for its intact, brightly-painted 18th-century colonial waterfront and home port of the famous Bluenose schooner (its successor, the Bluenose II, is docked here when not out sailing); the Fisheries Museum of the Atlantic on the wharf covers both the town's history and the ship." },
+          { name: 'Cape Breton Island & Cabot Trail', lat: 46.2036, lng: -60.6136, notes: "The Cabot Trail's cliffside loop through Cape Breton Highlands National Park is Atlantic Canada's signature scenic drive, with whale-watching out of Pleasant Bay/Chéticamp along the way. Since this leg has no rental car, public transit doesn't meaningfully cover the island — book a small-group tour (e.g. Cabot Discovery Tours, departing Halifax/Baddeck) rather than assuming buses or trains can piece the loop together." },
         ],
         transport_to_next: "Flight Halifax-Quebec City (~2 hours) — no practical overland route given the distance through uninhabited Eastern Canada",
         notes: 'Starting block: flight Netherlands-Halifax. Introduction to Canada via the rugged Atlantic coast, fishing villages, lighthouses and Celtic/Acadian culture on Cape Breton. Price verified (2026-07), holds up. eTA (when entering by flight) costs only ~€4.70, valid 5 years.',
@@ -1126,10 +1126,10 @@ function rbBuildNorthAmericaRoute() {
       countries: [{
         code: 'CA', name: 'Canada', days: 10, budget: 1675, lat: 46.8139, lng: -71.208,
         destinations: [
-          { name: 'Quebec City (Vieux-Québec)', lat: 46.8139, lng: -71.2080 },
-          { name: 'Montreal (Old Port & Mile End)', lat: 45.5019, lng: -73.5674 },
-          { name: 'Ottawa (Parliament Hill & museums)', lat: 45.4215, lng: -75.6972 },
-          { name: 'Toronto (skyline, with Niagara Falls as a day trip)', lat: 43.6532, lng: -79.3832 },
+          { name: 'Quebec City (Vieux-Québec)', lat: 46.8139, lng: -71.2080, notes: "Vieux-Québec is the only walled city north of Mexico, with Château Frontenac looming over the Terrasse Dufferin; duck into the Petit-Champlain quarter's narrow lanes for the best feel of 17th-century New France." },
+          { name: 'Montreal (Old Port & Mile End)', lat: 45.5019, lng: -73.5674, notes: "The Old Port's cobblestones and old grain silos carry the colonial-waterfront side, while Mile End is the low-key creative/food neighbourhood — the St-Viateur vs. Fairmount wood-fired-bagel rivalry is worth joining the queue for to actually taste the difference." },
+          { name: 'Ottawa (Parliament Hill & museums)', lat: 45.4215, lng: -75.6972, notes: "Parliament Hill's Gothic Revival Centre Block and the summer changing-of-the-guard ceremony are the marquee sight; the Canadian Museum of History, just across the river in Gatineau, is easy to miss but worth the short extra trip beyond the downtown museums." },
+          { name: 'Toronto (skyline, with Niagara Falls as a day trip)', lat: 43.6532, lng: -79.3832, notes: "The CN Tower and harbourfront define the skyline view. For the Niagara day trip with no rental car, a direct Megabus/FlixBus from Union Station (~1h35, frequent departures) is the cheapest option, or an organized day-tour bus (~$80-90) if you'd rather not manage transfers yourself." },
         ],
         transport_to_next: "Train (Via Rail) Quebec City-Montreal-Ottawa-Toronto, then flight Toronto-Calgary (~4 hours) to pick up the rental car for the Rockies",
         notes: 'No long car ride through Canada: the train connections between these four cities are fast and comfortable. French culture and colonial history in Quebec City, food and a modern city in Montreal, politics and museums in Ottawa, skyline and Niagara Falls from Toronto.',
@@ -1143,13 +1143,13 @@ function rbBuildNorthAmericaRoute() {
       countries: [{
         code: 'CA', name: 'Canada', days: 17, budget: 3400, lat: 51.1784, lng: -115.5708,
         destinations: [
-          { name: 'Banff National Park', lat: 51.4968, lng: -115.9281 },
-          { name: 'Lake Louise & Moraine Lake', lat: 51.4254, lng: -116.1773 },
-          { name: 'Yoho National Park (Emerald Lake)', lat: 51.4370, lng: -116.5326 },
-          { name: 'Icefields Parkway', lat: 52.2000, lng: -117.2000 },
-          { name: 'Jasper National Park', lat: 52.8737, lng: -118.0814 },
-          { name: 'Mount Robson Provincial Park', lat: 53.1216, lng: -119.1465 },
-          { name: 'Whistler', lat: 50.1163, lng: -122.9574 },
+          { name: 'Banff National Park', lat: 51.4968, lng: -115.9281, notes: "Canada's oldest national park and the region's hub — Banff townsite sits in the Bow Valley surrounded by peaks, with easy access to Sulphur Mountain and Lake Minnewanka. Take the Banff Gondola up Sulphur Mountain for the valley panorama, or drive the Bow Valley Parkway (not the highway) at dawn/dusk for the best wildlife odds." },
+          { name: 'Lake Louise & Moraine Lake', lat: 51.4254, lng: -116.1773, notes: "The glacial rock flour suspended in the meltwater is what gives both lakes their turquoise colour, and the view improves the higher you climb above them. From Lake Louise, hike up to the Lake Agnes Tea House (about 3.4 km, 1.5-2 hours) for a lake-and-glacier view well above the shoreline crowds." },
+          { name: 'Yoho National Park (Emerald Lake)', lat: 51.4370, lng: -116.5326, notes: "Smaller and far less crowded than Louise or Moraine despite similarly striking colour, plus Takakkaw Falls — one of Canada's tallest waterfalls, fed directly by the Daly Glacier. Rent a canoe on Emerald Lake or walk the easy, flat 5.2 km loop trail around it." },
+          { name: 'Icefields Parkway', lat: 52.2000, lng: -117.2000, notes: "Beyond the drive itself, the two standout stops are the Columbia Icefield (Athabasca Glacier) and Peyto Lake's wolf-head-shaped viewpoint. Only walk onto the glacier with a guided tour (crevasses make it unsafe solo) and hit Peyto Lake early morning before tour buses fill the viewing platform." },
+          { name: 'Jasper National Park', lat: 52.8737, lng: -118.0814, notes: "Wilder and quieter than Banff, with Maligne Lake's boat cruise to Spirit Island and one of the world's largest accessible Dark Sky Preserves for stargazing. As of 2026 Jasper is fully reopened after the 2024 wildfire (Columbia Icefield, Maligne Lake/Canyon, most trails all open), though Cavell Road and Maligne Canyon's day-use area remain closed for the season, so check current closures before finalizing plans. Book the Maligne Lake boat tour ahead — it's the only way to reach Spirit Island." },
+          { name: 'Mount Robson Provincial Park', lat: 53.1216, lng: -119.1465, notes: "The Canadian Rockies' highest peak (3,954 m), usually wrapped in its own cloud cap (\"Yuh-hai-has-kun,\" the mountain of the spiral road to First Nations). The multi-day Berg Lake Trail to its base reopened in June 2025 after 2021 flood damage and is fully running for 2026 — book campground reservations well ahead as they're released months in advance and fill fast; otherwise the highway viewpoint near the visitor centre gives a solid view without hiking." },
+          { name: 'Whistler', lat: 50.1163, lng: -122.9574, notes: "A globally ranked ski resort that runs just as well in summer, anchored by the PEAK 2 PEAK Gondola linking Whistler and Blackcomb mountains with valley views along the way. In summer, ride up for alpine hiking or hit the mountain bike park; book the gondola in advance in peak season to skip ticket-counter queues." },
         ],
         transport_to_next: 'Car Whistler-Vancouver (~2 hours), return the rental car in Vancouver — the same rental car stays within Canada, so no one-way or border fees',
         notes: 'The nature highlight of the entire expedition: glacier lakes, one of the most beautiful roads in the world (Icefields Parkway) and a good chance of wildlife (moose, bears, bighorn sheep). Rental car 2 is picked up here in Calgary. Price verified (2026-07), holds up (provided it is booked well in advance during high season). ⚠️ Moraine Lake Road is only accessible via the mandatory Parks Canada shuttle (no private cars allowed) — booking usually opens mid-April, limited spots, arrange well in advance.',
@@ -1163,10 +1163,10 @@ function rbBuildNorthAmericaRoute() {
       countries: [{
         code: 'CA', name: 'Canada', days: 5, budget: 875, lat: 49.2827, lng: -123.1207,
         destinations: [
-          { name: 'Stanley Park', lat: 49.3017, lng: -123.1444 },
-          { name: 'Granville Island', lat: 49.2714, lng: -123.1348 },
-          { name: 'North Shore (Grouse Mountain / Capilano Suspension Bridge)', lat: 49.3796, lng: -123.0902 },
-          { name: 'Gastown & Kitsilano Beach', lat: 49.2837, lng: -123.1064 },
+          { name: 'Stanley Park', lat: 49.3017, lng: -123.1444, notes: "Vancouver's 400-hectare park is best experienced via its 10 km seawall loop, passing Brockton Point's totem poles and Lions Gate Bridge views. Rent a bike at the park entrance and ride counter-clockwise — it's the mandatory direction for cyclists on the seawall." },
+          { name: 'Granville Island', lat: 49.2714, lng: -123.1348, notes: "A working public market plus artisan studios (glassblowing, pottery, woodworking) packed onto a small former industrial peninsula. Skip driving — take the tiny Aquabus or False Creek Ferry from downtown instead, since parking is scarce and the ferry ride is part of the appeal." },
+          { name: 'North Shore (Grouse Mountain / Capilano Suspension Bridge)', lat: 49.3796, lng: -123.0902, notes: "Capilano's 137m suspension bridge and treetop Cliffwalk, plus Grouse Mountain's grizzly bear refuge and gondola, are the North Shore's two signature stops. Fit hikers can climb the steep Grouse Grind (roughly 1.5-2 hours) and ride the gondola down for free; otherwise visit Capilano first thing in the morning to beat the tour-bus crowds." },
+          { name: 'Gastown & Kitsilano Beach', lat: 49.2837, lng: -123.1064, notes: "Gastown's cobblestone streets and steam clock cover Vancouver's Victorian-era origins, while Kitsilano Beach pairs a sandy beach with mountain and city-skyline views. Kitsilano's heated outdoor saltwater pool (one of the longest in Canada) is worth the small admission fee, and Gastown is best walked early morning before it gets touristy." },
         ],
         transport_to_next: "Train (Amtrak Cascades) or bus Vancouver-Seattle (~4 hours) — simple border crossing; rental car 3 for the US roadtrip is picked up in Seattle",
         notes: 'Last Canadian stop: a city between mountains and sea, easy to combine mountains (North Shore) and water (Stanley Park, Granville Island) without a rental car.',
@@ -1180,11 +1180,11 @@ function rbBuildNorthAmericaRoute() {
       countries: [{
         code: 'US', name: 'United States', days: 15, budget: 3000, lat: 47.6062, lng: -122.3321,
         destinations: [
-          { name: 'Seattle (Pike Place Market, Space Needle)', lat: 47.6062, lng: -122.3321 },
-          { name: 'Mount Rainier National Park', lat: 46.8523, lng: -121.7603 },
-          { name: 'Olympic National Park (Hurricane Ridge & Hoh Rainforest)', lat: 47.9709, lng: -123.4995 },
-          { name: 'Oregon Coast (Cannon Beach, Astoria)', lat: 45.8918, lng: -123.9615 },
-          { name: 'Redwood National & State Parks', lat: 41.2132, lng: -124.0046 },
+          { name: 'Seattle (Pike Place Market, Space Needle)', lat: 47.6062, lng: -122.3321, notes: "Pike Place is a working market (fish-throwing vendors, the original 1971 Starbucks, hidden Post Alley shops) rather than a tourist stage, and the Space Needle gives the best skyline-plus-Rainier view on a clear day. Go to Pike Place right at opening (9-10am) before tour groups arrive, and book Space Needle tickets ahead for a sunset slot." },
+          { name: 'Mount Rainier National Park', lat: 46.8523, lng: -121.7603, notes: "An active volcano with its own glacier system and, in season, some of the best subalpine wildflower meadows in the Cascades (Paradise, Skyline Trail). Mount Rainier dropped its timed-entry reservation system for 2026 — entry is first-come, first-served again, so the real bottleneck is parking at Paradise/Sunrise, which fills by mid-morning on summer weekends; arrive before 9am." },
+          { name: 'Olympic National Park (Hurricane Ridge & Hoh Rainforest)', lat: 47.9709, lng: -123.4995, notes: "Two completely different ecosystems back to back: Hurricane Ridge's subalpine mountain views and Hoh's moss-draped temperate rainforest, both reachable in the same day from Port Angeles. Hurricane Ridge's Day Lodge burned down in a 2023 fire and is still only in the design/rebuild phase — the road and viewpoint are open, but expect no visitor center and no potable water on the ridge through at least August 2026, so bring your own water." },
+          { name: 'Oregon Coast (Cannon Beach, Astoria)', lat: 45.8918, lng: -123.9615, notes: "Cannon Beach's Haystack Rock is one of the most photographed sea stacks on the US coast with tide pools at its base, while Astoria adds Columbia River maritime history and several \"Goonies\" filming locations. Time Haystack Rock around low tide for the tide pools — check the tide table before you go, since high tide submerges most of them." },
+          { name: 'Redwood National & State Parks', lat: 41.2132, lng: -124.0046, notes: "Home to the tallest trees on Earth, including groves easily rivaling (and quieter than) the more famous Sequoia giants further south. Driving in to Tall Trees Grove requires a free permit (limited number per day) available at the Kuchel Visitor Center — plan for that if it's the specific grove you want, otherwise the roadside groves along Newton B. Drury Parkway need no permit at all." },
         ],
         transport_to_next: 'Continue by car to San Francisco (~5-6 hours from the Redwoods), return the rental car in San Francisco',
         notes: "American nature on a grand scale: rainforest, volcanoes, rugged coastline and the tallest trees in the world. Rental car 3 is picked up here in Seattle. Price verified (2026-07), holds up. ESTA was raised to $40.27 (from $21) as of Sept 30, 2025 — valid 2 years. Route-logic fix (2026-08, search-confirmed): order reversed (was Seattle→Olympic NP→Mount Rainier→Oregon Coast) — that crossed the region east-west three times (Olympic NP sits on the peninsula, far west of Seattle; Mount Rainier is southeast instead; there's no bridge across Puget Sound, so you have to go via Olympia/Tacoma regardless). Now Seattle→Mount Rainier→Olympic NP (Hurricane Ridge then Hoh Rainforest)→south via the US-101 along the Washington coast to Oregon — that replaces the most expensive connection (Hoh-Rainier, ≈238 miles) with the shorter Rainier-Port Angeles (≈174 miles), and the west side of the peninsula already connects directly to the US-101 southbound, so no second inland detour. Saves ≈60+ miles/1.5 hours and turns it into one continuous loop instead of a zigzag.",
@@ -1198,9 +1198,9 @@ function rbBuildNorthAmericaRoute() {
       countries: [{
         code: 'US', name: 'United States', days: 14, budget: 2675, lat: 37.7749, lng: -122.4194,
         destinations: [
-          { name: 'San Francisco (Golden Gate Bridge, Alcatraz, Mission District)', lat: 37.7749, lng: -122.4194 },
-          { name: 'Yosemite Valley', lat: 37.7459, lng: -119.5936 },
-          { name: 'Sequoia & Kings Canyon National Parks', lat: 36.4864, lng: -118.5658 },
+          { name: 'San Francisco (Golden Gate Bridge, Alcatraz, Mission District)', lat: 37.7749, lng: -122.4194, notes: "Beyond the bridge itself, Alcatraz's cellhouse audio tour is genuinely worth the trip, and the Mission District's Balmy Alley/Clarion Alley murals plus taquerias are the city's best low-key afternoon. Alcatraz ferry tickets routinely sell out 1-2 weeks ahead in summer — book that the moment your dates are fixed, well before the rest of the SF stop." },
+          { name: 'Yosemite Valley', lat: 37.7459, lng: -119.5936, notes: "El Capitan, Half Dome and Yosemite Falls are all visible from the Valley floor without any hiking, making it one of the few places this scenic that's accessible to non-hikers too. Yosemite dropped its entrance-reservation requirement for 2026, but Valley traffic/parking congestion is still real in summer — arrive before 8am or expect to circle for parking." },
+          { name: 'Sequoia & Kings Canyon National Parks', lat: 36.4864, lng: -118.5658, notes: "Home to General Sherman, the largest tree on Earth by volume, plus Kings Canyon's much less-visited, dramatically deep glacial canyon right next door. The General Sherman parking area fills early on summer days — go first thing in the morning or use the free shuttle from Giant Forest Museum instead of hunting for a spot." },
         ],
         transport_to_next: 'End of the expedition — return flight from San Francisco (SFO) to the Netherlands',
         notes: "Straight from the city into the mountains: Yosemite's granite walls and waterfalls, followed by the giant sequoias of Sequoia/Kings Canyon. No new rental car needed — day trips or a short rental period suffice from San Francisco.",
@@ -3227,10 +3227,10 @@ function rbBuildEasternCanadaRoute() {
       countries: [{
         code: 'CA', name: 'Canada', days: 8, budget: 1200, lat: 44.6488, lng: -63.5752,
         destinations: [
-          { name: 'Halifax', lat: 44.6488, lng: -63.5752 },
-          { name: "Peggy's Cove", lat: 44.4918, lng: -63.9148 },
-          { name: 'Lunenburg', lat: 44.3767, lng: -64.3097 },
-          { name: 'Cape Breton Island & Cabot Trail', lat: 46.2036, lng: -60.6136 },
+          { name: 'Halifax', lat: 44.6488, lng: -63.5752, notes: "The Halifax Waterfront Boardwalk and the Maritime Museum of the Atlantic (with real Titanic recovery artifacts, since Halifax handled many of the bodies) anchor the city; climb Citadel Hill for a free harbour view and the daily noon gun." },
+          { name: "Peggy's Cove", lat: 44.4918, lng: -63.9148, notes: "The lighthouse perched on wave-smoothed granite is the classic Nova Scotia shot, best visited at sunrise before the tour buses arrive; stay well back from the dark, wet rocks near the water — rogue waves have swept visitors off them, and it's a real, recurring safety warning, not just a sign for show." },
+          { name: 'Lunenburg', lat: 44.3767, lng: -64.3097, notes: "UNESCO-listed for its intact, brightly-painted 18th-century colonial waterfront and home port of the famous Bluenose schooner (its successor, the Bluenose II, is docked here when not out sailing); the Fisheries Museum of the Atlantic on the wharf covers both the town's history and the ship." },
+          { name: 'Cape Breton Island & Cabot Trail', lat: 46.2036, lng: -60.6136, notes: "The Cabot Trail's cliffside loop through Cape Breton Highlands National Park is Atlantic Canada's signature scenic drive, with whale-watching out of Pleasant Bay/Chéticamp along the way. Since this leg has no rental car, public transit doesn't meaningfully cover the island — book a small-group tour (e.g. Cabot Discovery Tours, departing Halifax/Baddeck) rather than assuming buses or trains can piece the loop together." },
         ],
         transport_to_next: 'Flight Halifax-Quebec City (~2 hours) — no practical overland route given the distance through uninhabited Eastern Canada',
         notes: 'Starting block: flight Netherlands-Halifax. Introduction to Canada via the rugged Atlantic coast, fishing villages, lighthouses and Celtic/Acadian culture on Cape Breton. Price verified (2026-07), holds up. eTA (when entering by flight) costs only ~€4.70, valid 5 years.',
@@ -3244,10 +3244,10 @@ function rbBuildEasternCanadaRoute() {
       countries: [{
         code: 'CA', name: 'Canada', days: 10, budget: 1675, lat: 46.8139, lng: -71.208,
         destinations: [
-          { name: 'Quebec City (Vieux-Québec)', lat: 46.8139, lng: -71.2080 },
-          { name: 'Montreal (Old Port & Mile End)', lat: 45.5019, lng: -73.5674 },
-          { name: 'Ottawa (Parliament Hill & museums)', lat: 45.4215, lng: -75.6972 },
-          { name: 'Toronto (skyline, with Niagara Falls as a day trip)', lat: 43.6532, lng: -79.3832 },
+          { name: 'Quebec City (Vieux-Québec)', lat: 46.8139, lng: -71.2080, notes: "Vieux-Québec is the only walled city north of Mexico, with Château Frontenac looming over the Terrasse Dufferin; duck into the Petit-Champlain quarter's narrow lanes for the best feel of 17th-century New France." },
+          { name: 'Montreal (Old Port & Mile End)', lat: 45.5019, lng: -73.5674, notes: "The Old Port's cobblestones and old grain silos carry the colonial-waterfront side, while Mile End is the low-key creative/food neighbourhood — the St-Viateur vs. Fairmount wood-fired-bagel rivalry is worth joining the queue for to actually taste the difference." },
+          { name: 'Ottawa (Parliament Hill & museums)', lat: 45.4215, lng: -75.6972, notes: "Parliament Hill's Gothic Revival Centre Block and the summer changing-of-the-guard ceremony are the marquee sight; the Canadian Museum of History, just across the river in Gatineau, is easy to miss but worth the short extra trip beyond the downtown museums." },
+          { name: 'Toronto (skyline, with Niagara Falls as a day trip)', lat: 43.6532, lng: -79.3832, notes: "The CN Tower and harbourfront define the skyline view. For the Niagara day trip with no rental car, a direct Megabus/FlixBus from Union Station (~1h35, frequent departures) is the cheapest option, or an organized day-tour bus (~$80-90) if you'd rather not manage transfers yourself." },
         ],
         transport_to_next: 'End of this route — return flight from Toronto (or flight Toronto-Calgary to continue on to Western Canada: Rockies & Vancouver 🏔️)',
         notes: 'No long car ride through Canada: the train connections between these four cities are fast and comfortable. French culture and colonial history in Quebec City, food and a modern city in Montreal, politics and museums in Ottawa, skyline and Niagara Falls from Toronto.',
@@ -3273,13 +3273,13 @@ function rbBuildWesternCanadaRockiesVancouverRoute() {
       countries: [{
         code: 'CA', name: 'Canada', days: 17, budget: 3400, lat: 51.1784, lng: -115.5708,
         destinations: [
-          { name: 'Banff National Park', lat: 51.4968, lng: -115.9281 },
-          { name: 'Lake Louise & Moraine Lake', lat: 51.4254, lng: -116.1773 },
-          { name: 'Yoho National Park (Emerald Lake)', lat: 51.4370, lng: -116.5326 },
-          { name: 'Icefields Parkway', lat: 52.2000, lng: -117.2000 },
-          { name: 'Jasper National Park', lat: 52.8737, lng: -118.0814 },
-          { name: 'Mount Robson Provincial Park', lat: 53.1216, lng: -119.1465 },
-          { name: 'Whistler', lat: 50.1163, lng: -122.9574 },
+          { name: 'Banff National Park', lat: 51.4968, lng: -115.9281, notes: "Canada's oldest national park and the region's hub — Banff townsite sits in the Bow Valley surrounded by peaks, with easy access to Sulphur Mountain and Lake Minnewanka. Take the Banff Gondola up Sulphur Mountain for the valley panorama, or drive the Bow Valley Parkway (not the highway) at dawn/dusk for the best wildlife odds." },
+          { name: 'Lake Louise & Moraine Lake', lat: 51.4254, lng: -116.1773, notes: "The glacial rock flour suspended in the meltwater is what gives both lakes their turquoise colour, and the view improves the higher you climb above them. From Lake Louise, hike up to the Lake Agnes Tea House (about 3.4 km, 1.5-2 hours) for a lake-and-glacier view well above the shoreline crowds." },
+          { name: 'Yoho National Park (Emerald Lake)', lat: 51.4370, lng: -116.5326, notes: "Smaller and far less crowded than Louise or Moraine despite similarly striking colour, plus Takakkaw Falls — one of Canada's tallest waterfalls, fed directly by the Daly Glacier. Rent a canoe on Emerald Lake or walk the easy, flat 5.2 km loop trail around it." },
+          { name: 'Icefields Parkway', lat: 52.2000, lng: -117.2000, notes: "Beyond the drive itself, the two standout stops are the Columbia Icefield (Athabasca Glacier) and Peyto Lake's wolf-head-shaped viewpoint. Only walk onto the glacier with a guided tour (crevasses make it unsafe solo) and hit Peyto Lake early morning before tour buses fill the viewing platform." },
+          { name: 'Jasper National Park', lat: 52.8737, lng: -118.0814, notes: "Wilder and quieter than Banff, with Maligne Lake's boat cruise to Spirit Island and one of the world's largest accessible Dark Sky Preserves for stargazing. As of 2026 Jasper is fully reopened after the 2024 wildfire (Columbia Icefield, Maligne Lake/Canyon, most trails all open), though Cavell Road and Maligne Canyon's day-use area remain closed for the season, so check current closures before finalizing plans. Book the Maligne Lake boat tour ahead — it's the only way to reach Spirit Island." },
+          { name: 'Mount Robson Provincial Park', lat: 53.1216, lng: -119.1465, notes: "The Canadian Rockies' highest peak (3,954 m), usually wrapped in its own cloud cap (\"Yuh-hai-has-kun,\" the mountain of the spiral road to First Nations). The multi-day Berg Lake Trail to its base reopened in June 2025 after 2021 flood damage and is fully running for 2026 — book campground reservations well ahead as they're released months in advance and fill fast; otherwise the highway viewpoint near the visitor centre gives a solid view without hiking." },
+          { name: 'Whistler', lat: 50.1163, lng: -122.9574, notes: "A globally ranked ski resort that runs just as well in summer, anchored by the PEAK 2 PEAK Gondola linking Whistler and Blackcomb mountains with valley views along the way. In summer, ride up for alpine hiking or hit the mountain bike park; book the gondola in advance in peak season to skip ticket-counter queues." },
         ],
         transport_to_next: 'Car Whistler-Vancouver (~2 hours), return the rental car in Vancouver — the same rental car stays within Canada, so no one-way or border fees',
         notes: 'Entry: flight Amsterdam-Calgary, with a stopover (±12-14 hours, from ±€650-950 return, best period June-July). Price indication from 2026-08 web research, a snapshot. The nature highlight of the entire expedition: glacier lakes, one of the most beautiful roads in the world (Icefields Parkway) and a good chance of wildlife (moose, bears, bighorn sheep). Rental car is picked up here in Calgary. Price verified (2026-07), holds up (provided it is booked well in advance during high season). ⚠️ Moraine Lake Road is only accessible via the mandatory Parks Canada shuttle (no private cars allowed) — booking usually opens mid-April, limited spots, arrange well in advance.',
@@ -3293,10 +3293,10 @@ function rbBuildWesternCanadaRockiesVancouverRoute() {
       countries: [{
         code: 'CA', name: 'Canada', days: 5, budget: 875, lat: 49.2827, lng: -123.1207,
         destinations: [
-          { name: 'Stanley Park', lat: 49.3017, lng: -123.1444 },
-          { name: 'Granville Island', lat: 49.2714, lng: -123.1348 },
-          { name: 'North Shore (Grouse Mountain / Capilano Suspension Bridge)', lat: 49.3796, lng: -123.0902 },
-          { name: 'Gastown & Kitsilano Beach', lat: 49.2837, lng: -123.1064 },
+          { name: 'Stanley Park', lat: 49.3017, lng: -123.1444, notes: "Vancouver's 400-hectare park is best experienced via its 10 km seawall loop, passing Brockton Point's totem poles and Lions Gate Bridge views. Rent a bike at the park entrance and ride counter-clockwise — it's the mandatory direction for cyclists on the seawall." },
+          { name: 'Granville Island', lat: 49.2714, lng: -123.1348, notes: "A working public market plus artisan studios (glassblowing, pottery, woodworking) packed onto a small former industrial peninsula. Skip driving — take the tiny Aquabus or False Creek Ferry from downtown instead, since parking is scarce and the ferry ride is part of the appeal." },
+          { name: 'North Shore (Grouse Mountain / Capilano Suspension Bridge)', lat: 49.3796, lng: -123.0902, notes: "Capilano's 137m suspension bridge and treetop Cliffwalk, plus Grouse Mountain's grizzly bear refuge and gondola, are the North Shore's two signature stops. Fit hikers can climb the steep Grouse Grind (roughly 1.5-2 hours) and ride the gondola down for free; otherwise visit Capilano first thing in the morning to beat the tour-bus crowds." },
+          { name: 'Gastown & Kitsilano Beach', lat: 49.2837, lng: -123.1064, notes: "Gastown's cobblestone streets and steam clock cover Vancouver's Victorian-era origins, while Kitsilano Beach pairs a sandy beach with mountain and city-skyline views. Kitsilano's heated outdoor saltwater pool (one of the longest in Canada) is worth the small admission fee, and Gastown is best walked early morning before it gets touristy." },
         ],
         transport_to_next: 'End of this route — return flight from Vancouver (or train/bus to Seattle to continue on to US West Coast Roadtrip 🌉)',
         notes: 'Last Canadian stop: a city between mountains and sea, easy to combine mountains (North Shore) and water (Stanley Park, Granville Island) without a rental car.',
@@ -3321,11 +3321,11 @@ function rbBuildUSWestCoastRoadtripRoute() {
       countries: [{
         code: 'US', name: 'United States', days: 15, budget: 3000, lat: 47.6062, lng: -122.3321,
         destinations: [
-          { name: 'Seattle (Pike Place Market, Space Needle)', lat: 47.6062, lng: -122.3321 },
-          { name: 'Mount Rainier National Park', lat: 46.8523, lng: -121.7603 },
-          { name: 'Olympic National Park (Hurricane Ridge & Hoh Rainforest)', lat: 47.9709, lng: -123.4995 },
-          { name: 'Oregon Coast (Cannon Beach, Astoria)', lat: 45.8918, lng: -123.9615 },
-          { name: 'Redwood National & State Parks', lat: 41.2132, lng: -124.0046 },
+          { name: 'Seattle (Pike Place Market, Space Needle)', lat: 47.6062, lng: -122.3321, notes: "Pike Place is a working market (fish-throwing vendors, the original 1971 Starbucks, hidden Post Alley shops) rather than a tourist stage, and the Space Needle gives the best skyline-plus-Rainier view on a clear day. Go to Pike Place right at opening (9-10am) before tour groups arrive, and book Space Needle tickets ahead for a sunset slot." },
+          { name: 'Mount Rainier National Park', lat: 46.8523, lng: -121.7603, notes: "An active volcano with its own glacier system and, in season, some of the best subalpine wildflower meadows in the Cascades (Paradise, Skyline Trail). Mount Rainier dropped its timed-entry reservation system for 2026 — entry is first-come, first-served again, so the real bottleneck is parking at Paradise/Sunrise, which fills by mid-morning on summer weekends; arrive before 9am." },
+          { name: 'Olympic National Park (Hurricane Ridge & Hoh Rainforest)', lat: 47.9709, lng: -123.4995, notes: "Two completely different ecosystems back to back: Hurricane Ridge's subalpine mountain views and Hoh's moss-draped temperate rainforest, both reachable in the same day from Port Angeles. Hurricane Ridge's Day Lodge burned down in a 2023 fire and is still only in the design/rebuild phase — the road and viewpoint are open, but expect no visitor center and no potable water on the ridge through at least August 2026, so bring your own water." },
+          { name: 'Oregon Coast (Cannon Beach, Astoria)', lat: 45.8918, lng: -123.9615, notes: "Cannon Beach's Haystack Rock is one of the most photographed sea stacks on the US coast with tide pools at its base, while Astoria adds Columbia River maritime history and several \"Goonies\" filming locations. Time Haystack Rock around low tide for the tide pools — check the tide table before you go, since high tide submerges most of them." },
+          { name: 'Redwood National & State Parks', lat: 41.2132, lng: -124.0046, notes: "Home to the tallest trees on Earth, including groves easily rivaling (and quieter than) the more famous Sequoia giants further south. Driving in to Tall Trees Grove requires a free permit (limited number per day) available at the Kuchel Visitor Center — plan for that if it's the specific grove you want, otherwise the roadside groves along Newton B. Drury Parkway need no permit at all." },
         ],
         transport_to_next: 'Continue by car to San Francisco (~5-6 hours from the Redwoods), return the rental car in San Francisco',
         notes: "Entry: flight Amsterdam-Seattle (KLM, direct, ±10 hours, from ±€650-1,100 return, July-August is high season so prices are on the higher side). Price indication from 2026-08 web research, a snapshot. American nature on a grand scale: rainforest, volcanoes, rugged coastline and the tallest trees in the world. Rental car is picked up here in Seattle. Price verified (2026-07), holds up. ESTA was raised to $40.27 (from $21) as of Sept 30, 2025 — valid 2 years. Route-logic fix (2026-08, search-confirmed): order reversed (was Seattle→Olympic NP→Mount Rainier→Oregon Coast) — that crossed the region east-west three times. Now Seattle→Mount Rainier→Olympic NP (Hurricane Ridge then Hoh Rainforest)→south via the US-101 along the Washington coast to Oregon. See North America Grand Traverse 🌎's own notes for the full writeup.",
@@ -3339,9 +3339,9 @@ function rbBuildUSWestCoastRoadtripRoute() {
       countries: [{
         code: 'US', name: 'United States', days: 14, budget: 2675, lat: 37.7749, lng: -122.4194,
         destinations: [
-          { name: 'San Francisco (Golden Gate Bridge, Alcatraz, Mission District)', lat: 37.7749, lng: -122.4194 },
-          { name: 'Yosemite Valley', lat: 37.7459, lng: -119.5936 },
-          { name: 'Sequoia & Kings Canyon National Parks', lat: 36.4864, lng: -118.5658 },
+          { name: 'San Francisco (Golden Gate Bridge, Alcatraz, Mission District)', lat: 37.7749, lng: -122.4194, notes: "Beyond the bridge itself, Alcatraz's cellhouse audio tour is genuinely worth the trip, and the Mission District's Balmy Alley/Clarion Alley murals plus taquerias are the city's best low-key afternoon. Alcatraz ferry tickets routinely sell out 1-2 weeks ahead in summer — book that the moment your dates are fixed, well before the rest of the SF stop." },
+          { name: 'Yosemite Valley', lat: 37.7459, lng: -119.5936, notes: "El Capitan, Half Dome and Yosemite Falls are all visible from the Valley floor without any hiking, making it one of the few places this scenic that's accessible to non-hikers too. Yosemite dropped its entrance-reservation requirement for 2026, but Valley traffic/parking congestion is still real in summer — arrive before 8am or expect to circle for parking." },
+          { name: 'Sequoia & Kings Canyon National Parks', lat: 36.4864, lng: -118.5658, notes: "Home to General Sherman, the largest tree on Earth by volume, plus Kings Canyon's much less-visited, dramatically deep glacial canyon right next door. The General Sherman parking area fills early on summer days — go first thing in the morning or use the free shuttle from Giant Forest Museum instead of hunting for a spot." },
         ],
         transport_to_next: 'Car back to San Francisco (≈270 miles/≈5 hours from Sequoia & Kings Canyon — route-logic fix 2026-08: count this drive as its own travel day) before the return flight from SFO. Fresno (FAT) is closer but has no direct flight to Amsterdam — SFO remains the better choice.',
         notes: "Straight from the city into the mountains: Yosemite's granite walls and waterfalls, followed by the giant sequoias of Sequoia/Kings Canyon. No new rental car needed — day trips or a short rental period suffice from San Francisco.",
@@ -8375,6 +8375,61 @@ function rbMigratePatagoniaAntarcticaDestinationNotes() {
 }
 
 /**
+ * Batch 12 (2026-09-17) for the per-destination-notes workflow -- North America Grand Traverse (6
+ * legs, 27 destinations), researched as 3 parallel batches (Atlantic/Eastern Canada, Canadian
+ * Rockies/Vancouver, Pacific Northwest/California). Same generic name-matching migration pattern
+ * as the other grand tours -- also lands on the standalone companion route US West Coast Roadtrip
+ * (shares the Pacific NW/California legs, hand-authored not via a shared content table).
+ */
+function rbMigrateNorthAmericaDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_NORTH_AMERICA_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_NORTH_AMERICA_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Halifax': 'The Halifax Waterfront Boardwalk and the Maritime Museum of the Atlantic (with real Titanic recovery artifacts, since Halifax handled many of the bodies) anchor the city; climb Citadel Hill for a free harbour view and the daily noon gun.',
+    "Peggy's Cove": "The lighthouse perched on wave-smoothed granite is the classic Nova Scotia shot, best visited at sunrise before the tour buses arrive; stay well back from the dark, wet rocks near the water — rogue waves have swept visitors off them, and it's a real, recurring safety warning, not just a sign for show.",
+    'Lunenburg': "UNESCO-listed for its intact, brightly-painted 18th-century colonial waterfront and home port of the famous Bluenose schooner (its successor, the Bluenose II, is docked here when not out sailing); the Fisheries Museum of the Atlantic on the wharf covers both the town's history and the ship.",
+    'Cape Breton Island & Cabot Trail': "The Cabot Trail's cliffside loop through Cape Breton Highlands National Park is Atlantic Canada's signature scenic drive, with whale-watching out of Pleasant Bay/Chéticamp along the way. Since this leg has no rental car, public transit doesn't meaningfully cover the island — book a small-group tour (e.g. Cabot Discovery Tours, departing Halifax/Baddeck) rather than assuming buses or trains can piece the loop together.",
+    'Quebec City (Vieux-Québec)': "Vieux-Québec is the only walled city north of Mexico, with Château Frontenac looming over the Terrasse Dufferin; duck into the Petit-Champlain quarter's narrow lanes for the best feel of 17th-century New France.",
+    'Montreal (Old Port & Mile End)': "The Old Port's cobblestones and old grain silos carry the colonial-waterfront side, while Mile End is the low-key creative/food neighbourhood — the St-Viateur vs. Fairmount wood-fired-bagel rivalry is worth joining the queue for to actually taste the difference.",
+    'Ottawa (Parliament Hill & museums)': "Parliament Hill's Gothic Revival Centre Block and the summer changing-of-the-guard ceremony are the marquee sight; the Canadian Museum of History, just across the river in Gatineau, is easy to miss but worth the short extra trip beyond the downtown museums.",
+    'Toronto (skyline, with Niagara Falls as a day trip)': "The CN Tower and harbourfront define the skyline view. For the Niagara day trip with no rental car, a direct Megabus/FlixBus from Union Station (~1h35, frequent departures) is the cheapest option, or an organized day-tour bus (~$80-90) if you'd rather not manage transfers yourself.",
+    'Banff National Park': "Canada's oldest national park and the region's hub — Banff townsite sits in the Bow Valley surrounded by peaks, with easy access to Sulphur Mountain and Lake Minnewanka. Take the Banff Gondola up Sulphur Mountain for the valley panorama, or drive the Bow Valley Parkway (not the highway) at dawn/dusk for the best wildlife odds.",
+    'Lake Louise & Moraine Lake': "The glacial rock flour suspended in the meltwater is what gives both lakes their turquoise colour, and the view improves the higher you climb above them. From Lake Louise, hike up to the Lake Agnes Tea House (about 3.4 km, 1.5-2 hours) for a lake-and-glacier view well above the shoreline crowds.",
+    'Yoho National Park (Emerald Lake)': "Smaller and far less crowded than Louise or Moraine despite similarly striking colour, plus Takakkaw Falls — one of Canada's tallest waterfalls, fed directly by the Daly Glacier. Rent a canoe on Emerald Lake or walk the easy, flat 5.2 km loop trail around it.",
+    'Icefields Parkway': 'Beyond the drive itself, the two standout stops are the Columbia Icefield (Athabasca Glacier) and Peyto Lake\'s wolf-head-shaped viewpoint. Only walk onto the glacier with a guided tour (crevasses make it unsafe solo) and hit Peyto Lake early morning before tour buses fill the viewing platform.',
+    'Jasper National Park': 'Wilder and quieter than Banff, with Maligne Lake\'s boat cruise to Spirit Island and one of the world\'s largest accessible Dark Sky Preserves for stargazing. As of 2026 Jasper is fully reopened after the 2024 wildfire (Columbia Icefield, Maligne Lake/Canyon, most trails all open), though Cavell Road and Maligne Canyon\'s day-use area remain closed for the season, so check current closures before finalizing plans. Book the Maligne Lake boat tour ahead — it\'s the only way to reach Spirit Island.',
+    'Mount Robson Provincial Park': 'The Canadian Rockies\' highest peak (3,954 m), usually wrapped in its own cloud cap ("Yuh-hai-has-kun," the mountain of the spiral road to First Nations). The multi-day Berg Lake Trail to its base reopened in June 2025 after 2021 flood damage and is fully running for 2026 — book campground reservations well ahead as they\'re released months in advance and fill fast; otherwise the highway viewpoint near the visitor centre gives a solid view without hiking.',
+    'Whistler': 'A globally ranked ski resort that runs just as well in summer, anchored by the PEAK 2 PEAK Gondola linking Whistler and Blackcomb mountains with valley views along the way. In summer, ride up for alpine hiking or hit the mountain bike park; book the gondola in advance in peak season to skip ticket-counter queues.',
+    'Stanley Park': "Vancouver's 400-hectare park is best experienced via its 10 km seawall loop, passing Brockton Point's totem poles and Lions Gate Bridge views. Rent a bike at the park entrance and ride counter-clockwise — it's the mandatory direction for cyclists on the seawall.",
+    'Granville Island': 'A working public market plus artisan studios (glassblowing, pottery, woodworking) packed onto a small former industrial peninsula. Skip driving — take the tiny Aquabus or False Creek Ferry from downtown instead, since parking is scarce and the ferry ride is part of the appeal.',
+    'North Shore (Grouse Mountain / Capilano Suspension Bridge)': "Capilano's 137m suspension bridge and treetop Cliffwalk, plus Grouse Mountain's grizzly bear refuge and gondola, are the North Shore's two signature stops. Fit hikers can climb the steep Grouse Grind (roughly 1.5-2 hours) and ride the gondola down for free; otherwise visit Capilano first thing in the morning to beat the tour-bus crowds.",
+    'Gastown & Kitsilano Beach': "Gastown's cobblestone streets and steam clock cover Vancouver's Victorian-era origins, while Kitsilano Beach pairs a sandy beach with mountain and city-skyline views. Kitsilano's heated outdoor saltwater pool (one of the longest in Canada) is worth the small admission fee, and Gastown is best walked early morning before it gets touristy.",
+    'Seattle (Pike Place Market, Space Needle)': "Pike Place is a working market (fish-throwing vendors, the original 1971 Starbucks, hidden Post Alley shops) rather than a tourist stage, and the Space Needle gives the best skyline-plus-Rainier view on a clear day. Go to Pike Place right at opening (9-10am) before tour groups arrive, and book Space Needle tickets ahead for a sunset slot.",
+    'Mount Rainier National Park': 'An active volcano with its own glacier system and, in season, some of the best subalpine wildflower meadows in the Cascades (Paradise, Skyline Trail). Mount Rainier dropped its timed-entry reservation system for 2026 — entry is first-come, first-served again, so the real bottleneck is parking at Paradise/Sunrise, which fills by mid-morning on summer weekends; arrive before 9am.',
+    'Olympic National Park (Hurricane Ridge & Hoh Rainforest)': "Two completely different ecosystems back to back: Hurricane Ridge's subalpine mountain views and Hoh's moss-draped temperate rainforest, both reachable in the same day from Port Angeles. Hurricane Ridge's Day Lodge burned down in a 2023 fire and is still only in the design/rebuild phase — the road and viewpoint are open, but expect no visitor center and no potable water on the ridge through at least August 2026, so bring your own water.",
+    'Oregon Coast (Cannon Beach, Astoria)': 'Cannon Beach\'s Haystack Rock is one of the most photographed sea stacks on the US coast with tide pools at its base, while Astoria adds Columbia River maritime history and several "Goonies" filming locations. Time Haystack Rock around low tide for the tide pools — check the tide table before you go, since high tide submerges most of them.',
+    'Redwood National & State Parks': "Home to the tallest trees on Earth, including groves easily rivaling (and quieter than) the more famous Sequoia giants further south. Driving in to Tall Trees Grove requires a free permit (limited number per day) available at the Kuchel Visitor Center — plan for that if it's the specific grove you want, otherwise the roadside groves along Newton B. Drury Parkway need no permit at all.",
+    'San Francisco (Golden Gate Bridge, Alcatraz, Mission District)': "Beyond the bridge itself, Alcatraz's cellhouse audio tour is genuinely worth the trip, and the Mission District's Balmy Alley/Clarion Alley murals plus taquerias are the city's best low-key afternoon. Alcatraz ferry tickets routinely sell out 1-2 weeks ahead in summer — book that the moment your dates are fixed, well before the rest of the SF stop.",
+    'Yosemite Valley': "El Capitan, Half Dome and Yosemite Falls are all visible from the Valley floor without any hiking, making it one of the few places this scenic that's accessible to non-hikers too. Yosemite dropped its entrance-reservation requirement for 2026, but Valley traffic/parking congestion is still real in summer — arrive before 8am or expect to circle for parking.",
+    'Sequoia & Kings Canyon National Parks': "Home to General Sherman, the largest tree on Earth by volume, plus Kings Canyon's much less-visited, dramatically deep glacial canyon right next door. The General Sherman parking area fills early on summer days — go first thing in the morning or use the free shuttle from Giant Forest Museum instead of hunting for a spot.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -8624,9 +8679,9 @@ function rbBuildCaliforniaRoute() {
     {
       code: 'US', name: 'United States', days: 14, budget: 2675, lat: 37.7749, lng: -122.4194,
       destinations: [
-        { name: 'San Francisco (Golden Gate Bridge, Alcatraz, Mission District)', lat: 37.7749, lng: -122.4194 },
-        { name: 'Yosemite Valley', lat: 37.7459, lng: -119.5936 },
-        { name: 'Sequoia & Kings Canyon National Parks', lat: 36.4864, lng: -118.5658 },
+        { name: 'San Francisco (Golden Gate Bridge, Alcatraz, Mission District)', lat: 37.7749, lng: -122.4194, notes: "Beyond the bridge itself, Alcatraz's cellhouse audio tour is genuinely worth the trip, and the Mission District's Balmy Alley/Clarion Alley murals plus taquerias are the city's best low-key afternoon. Alcatraz ferry tickets routinely sell out 1-2 weeks ahead in summer — book that the moment your dates are fixed, well before the rest of the SF stop." },
+        { name: 'Yosemite Valley', lat: 37.7459, lng: -119.5936, notes: "El Capitan, Half Dome and Yosemite Falls are all visible from the Valley floor without any hiking, making it one of the few places this scenic that's accessible to non-hikers too. Yosemite dropped its entrance-reservation requirement for 2026, but Valley traffic/parking congestion is still real in summer — arrive before 8am or expect to circle for parking." },
+        { name: 'Sequoia & Kings Canyon National Parks', lat: 36.4864, lng: -118.5658, notes: "Home to General Sherman, the largest tree on Earth by volume, plus Kings Canyon's much less-visited, dramatically deep glacial canyon right next door. The General Sherman parking area fills early on summer days — go first thing in the morning or use the free shuttle from Giant Forest Museum instead of hunting for a spot." },
       ],
       notes: "Entry: direct KLM flight Amsterdam-San Francisco (±11 hours; from ±€850-1,150 return; best period July). Price indication from 2026-08 web research, a snapshot. Straight from the city into the mountains: Yosemite's granite walls and waterfalls, followed by the giant sequoias of Sequoia/Kings Canyon. No new rental car needed — day trips or a short rental period suffice from San Francisco.",
       transport_to_next: "End of this route — car back to San Francisco (≈270 miles/≈5 hours from Sequoia & Kings Canyon, count this drive as its own travel day), then direct KLM return flight from SFO. Fresno (FAT) is closer but has no direct flight to Amsterdam — SFO remains the better choice.",
@@ -9563,11 +9618,11 @@ function rbBuildPacificNorthwestRoute() {
     {
       code: 'US', name: 'United States', days: 15, budget: 3000, lat: 47.6062, lng: -122.3321,
       destinations: [
-        { name: 'Seattle (Pike Place Market, Space Needle)', lat: 47.6062, lng: -122.3321 },
-        { name: 'Mount Rainier National Park', lat: 46.8523, lng: -121.7603 },
-        { name: 'Olympic National Park (Hurricane Ridge & Hoh Rainforest)', lat: 47.9709, lng: -123.4995 },
-        { name: 'Oregon Coast (Cannon Beach, Astoria)', lat: 45.8918, lng: -123.9615 },
-        { name: 'Redwood National & State Parks', lat: 41.2132, lng: -124.0046 },
+        { name: 'Seattle (Pike Place Market, Space Needle)', lat: 47.6062, lng: -122.3321, notes: "Pike Place is a working market (fish-throwing vendors, the original 1971 Starbucks, hidden Post Alley shops) rather than a tourist stage, and the Space Needle gives the best skyline-plus-Rainier view on a clear day. Go to Pike Place right at opening (9-10am) before tour groups arrive, and book Space Needle tickets ahead for a sunset slot." },
+        { name: 'Mount Rainier National Park', lat: 46.8523, lng: -121.7603, notes: "An active volcano with its own glacier system and, in season, some of the best subalpine wildflower meadows in the Cascades (Paradise, Skyline Trail). Mount Rainier dropped its timed-entry reservation system for 2026 — entry is first-come, first-served again, so the real bottleneck is parking at Paradise/Sunrise, which fills by mid-morning on summer weekends; arrive before 9am." },
+        { name: 'Olympic National Park (Hurricane Ridge & Hoh Rainforest)', lat: 47.9709, lng: -123.4995, notes: "Two completely different ecosystems back to back: Hurricane Ridge's subalpine mountain views and Hoh's moss-draped temperate rainforest, both reachable in the same day from Port Angeles. Hurricane Ridge's Day Lodge burned down in a 2023 fire and is still only in the design/rebuild phase — the road and viewpoint are open, but expect no visitor center and no potable water on the ridge through at least August 2026, so bring your own water." },
+        { name: 'Oregon Coast (Cannon Beach, Astoria)', lat: 45.8918, lng: -123.9615, notes: "Cannon Beach's Haystack Rock is one of the most photographed sea stacks on the US coast with tide pools at its base, while Astoria adds Columbia River maritime history and several \"Goonies\" filming locations. Time Haystack Rock around low tide for the tide pools — check the tide table before you go, since high tide submerges most of them." },
+        { name: 'Redwood National & State Parks', lat: 41.2132, lng: -124.0046, notes: "Home to the tallest trees on Earth, including groves easily rivaling (and quieter than) the more famous Sequoia giants further south. Driving in to Tall Trees Grove requires a free permit (limited number per day) available at the Kuchel Visitor Center — plan for that if it's the specific grove you want, otherwise the roadside groves along Newton B. Drury Parkway need no permit at all." },
       ],
       notes: 'Entry: direct KLM flight Amsterdam-Seattle (±9-10 hours; from ±€880-1,090 return, January is cheaper but falls outside the best hiking season; best period July-August). Price indication from 2026-08 web research, a snapshot. American nature on a grand scale: rainforest, volcanoes, rugged coastline and the tallest trees in the world. ESTA was raised to $40.27 (from $21) as of Sept 30, 2025 — valid 2 years.',
       transport_to_next: 'End of this route — return flight from San Francisco or Portland to Amsterdam (return the rental car at the end of the coastal route).',

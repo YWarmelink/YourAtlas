@@ -12,6 +12,14 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 12 — North America Grand Traverse (2026-09-17)** — 6 legs, 27
+  destinations, researched as 3 parallel batches (Atlantic/Eastern Canada, Canadian
+  Rockies/Vancouver, Pacific Northwest/California). All 27 inserted cleanly first try. Same
+  generic name-matching migration (`rbMigrateNorthAmericaDestinationNotes()`) — 6 routes
+  confirmed touched in the live simulation (including the standalone companion route US West
+  Coast Roadtrip, which shares the Pacific NW/California legs). App-wide total: 2049
+  destination-slots filled across 221 routes. 165/741 signatures done.
+
 - **Per-destination notes, batch 11 — Patagonia & Antarctica Expedition (2026-09-17)** — 5 legs,
   24 destinations, researched as 3 parallel batches matching the route's own country legs
   (Chilean Patagonia, Argentine Patagonia, Antarctica). All 24 inserted cleanly first try. Same
