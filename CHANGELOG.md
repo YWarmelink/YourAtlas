@@ -12,6 +12,12 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 30 — France + Switzerland + Italy (10-14 days) (2026-09-17)** —
+  a small 5-leg/9-destination combo route, researched in a single pass. Same generic
+  name-matching migration (`rbMigrateFranceSwitzerlandItalyDestinationNotes()`) — 6 routes
+  confirmed touched in the live simulation. App-wide total: 2583 destination-slots filled across
+  319 routes. 292/741 signatures done.
+
 - **Per-destination notes, batch 29 — Switzerland Alpine Roadtrip (9 days) (2026-09-17)** — a
   small 6-leg/9-destination combo route, researched in a single pass. Same generic name-matching
   migration (`rbMigrateSwitzerlandAlpineDestinationNotes()`) — 2 routes confirmed touched in the

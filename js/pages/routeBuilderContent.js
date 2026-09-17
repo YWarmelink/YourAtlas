@@ -9127,6 +9127,41 @@ function rbMigrateSwitzerlandAlpineDestinationNotes() {
 }
 
 /**
+ * Batch 30 (2026-09-17) for the per-destination-notes workflow -- France + Switzerland + Italy
+ * (10-14 days), a small 5-leg/9-destination combo route researched in a single pass. Same
+ * generic name-matching migration pattern as the grand-tour batches above.
+ */
+function rbMigrateFranceSwitzerlandItalyDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_FRANCE_SWITZERLAND_ITALY_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_FRANCE_SWITZERLAND_ITALY_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Chamonix (Mont Blanc)': "The historic birthplace of mountaineering, sitting at the foot of Mont Blanc (Western Europe's highest peak); besides the cable car, the Montenvers rack railway up to the Mer de Glace glacier is worth a half-day if you have extra time.",
+    'Aiguille du Midi cable car': 'Europe\'s highest cable car station (3,842m), with a 360° panorama over the Mont Blanc massif and a glass-floor "Step into the Void" platform. Book your timed-entry slot online in advance (it sells out on clear-weather days) and go as early as possible — afternoon clouds frequently block the view.',
+    'Geneva (old town, lake)': "The lakefront Jet d'Eau fountain and the hilltop Vieille Ville (old town) around St. Pierre Cathedral are the two things worth a walk in your one day here. Climb the cathedral's towers for a free view over the old town and lake if time allows.",
+    'Täsch (parking)': "Täsch itself is purely a functional gateway — a car park and shuttle station, nothing to linger for. The shuttle train to Zermatt runs every ~20 minutes and takes only 12 minutes, so there's no need to arrive much earlier than your onward plans require.",
+    'Zermatt (car-free)': "Beyond the car-free logistics, the town's Bahnhofstrasse and the view of the Matterhorn framed above the church of St. Mauritius are the classic Zermatt shots. For the postcard view without a big hike, ride the Gornergrat railway or walk up to the small chapel/lake viewpoints just above town.",
+    'Matterhorn / Mattertal': "The Matterhorn's near-perfect pyramid shape is the visual anchor of the whole valley (Mattertal); the Gornergrat cogwheel railway gives the best panoramic view without any hiking, while the Klein Matterhorn cable car reaches Europe's highest cable car station and a glacier viewing platform. Take the first train/cable car up for the clearest light and to beat the midday cloud buildup that's common on the peak.",
+    'Lake Como / Bellagio': 'Bellagio sits on the promontory where the lake\'s three branches meet, earning its "pearl of Lake Como" nickname; the lakeside promenade and the gardens of Villa Melzi/Villa Serbelloni are the highlight beyond the ferry views. Garden visiting hours/entry slots are limited, so check ahead if you want to go in rather than just admire from outside.',
+    'Varenna': 'A quieter, more colorful counterpart to Bellagio, with the lakeside "Passeggiata degli Innamorati" (lovers\' walk) and the hilltop Castello di Vezio above town. The castle viewpoint is a short uphill walk and gives one of the best panoramic photos of the lake — good for sunset since Varenna faces west across the water.',
+    'Milan (Duomo, Galleria)': 'Beyond being the trip\'s departure point, the Duomo\'s rooftop terraces (walk among the spires) and the adjoining Galleria Vittorio Emanuele II arcade are worth a couple of hours if there\'s a gap before departure. If anyone wants to see Leonardo\'s "The Last Supper," tickets need booking weeks in advance — not a same-trip walk-up option.',
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -12348,9 +12383,9 @@ function rbBuildZermattMatterhornRoute() {
     {
       code: 'CH', name: 'Switzerland', days: 6, budget: 900, lat: 46.0207, lng: 7.7491,
       destinations: [
-        { name: 'Täsch (parking)', lat: 46.0489, lng: 7.7710 },
-        { name: 'Zermatt (car-free)', lat: 46.0207, lng: 7.7491 },
-        { name: 'Matterhorn / Mattertal', lat: 45.9763, lng: 7.6586 },
+        { name: 'Täsch (parking)', lat: 46.0489, lng: 7.7710, notes: "Täsch itself is purely a functional gateway — a car park and shuttle station, nothing to linger for. The shuttle train to Zermatt runs every ~20 minutes and takes only 12 minutes, so there's no need to arrive much earlier than your onward plans require." },
+        { name: 'Zermatt (car-free)', lat: 46.0207, lng: 7.7491, notes: "Beyond the car-free logistics, the town's Bahnhofstrasse and the view of the Matterhorn framed above the church of St. Mauritius are the classic Zermatt shots. For the postcard view without a big hike, ride the Gornergrat railway or walk up to the small chapel/lake viewpoints just above town." },
+        { name: 'Matterhorn / Mattertal', lat: 45.9763, lng: 7.6586, notes: "The Matterhorn's near-perfect pyramid shape is the visual anchor of the whole valley (Mattertal); the Gornergrat cogwheel railway gives the best panoramic view without any hiking, while the Klein Matterhorn cable car reaches Europe's highest cable car station and a glacier viewing platform. Take the first train/cable car up for the clearest light and to beat the midday cloud buildup that's common on the peak." },
         { name: 'Saas-Fee (optional day trip)', lat: 46.1089, lng: 7.9273 },
       ],
       notes: "The concrete region chosen for this originally vague 'Swiss Alps' item: Zermatt/Matterhorn — a different canton (Valais, not Bern), a different valley (Mattertal), and a different iconic peak (Matterhorn rather than Jungfrau) than the Interlaken/Grindelwald route above, so there's no overlap. Route: drive to Täsch — park (CHF13.50-16.50/day) — 12 min shuttle train to car-free Zermatt (3 nights) — easy hikes (5-Lakes Trail, Gornergrat), optional day trip to the neighbouring car-free Saas-Fee (1 night). Budget ~€130-170/day p.p. — even pricier than the Jungfrau region. Season: July-September. Gornergrat cogwheel railway return is ~CHF80-96 p.p.; the Matterhorn Glacier Paradise cable car is ~CHF120 p.p. — pick one, skip the other.",
@@ -13046,7 +13081,7 @@ function rbBuildNorthernItalyLakesRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 125, lat: 45.4642, lng: 9.1900,
       destinations: [
-        { name: 'Milan (Duomo, Galleria)', lat: 45.4642, lng: 9.1900 },
+        { name: 'Milan (Duomo, Galleria)', lat: 45.4642, lng: 9.1900, notes: "Beyond being the trip's departure point, the Duomo's rooftop terraces (walk among the spires) and the adjoining Galleria Vittorio Emanuele II arcade are worth a couple of hours if there's a gap before departure. If anyone wants to see Leonardo's \"The Last Supper,\" tickets need booking weeks in advance — not a same-trip walk-up option." },
       ],
       notes: "Milan (1-2 nights). Direct AMS-Milan (Malpensa/Linate, KLM/Transavia, frequent); self-driving from the Netherlands is possible (~1073km/11h) but flying + renting locally is more efficient for 5-7 days. Budget ~€125/day (rental car €35-45/day on top — the lakes are pricier than average Italy).",
       transport_to_next: 'Drive to Lake Como.',
@@ -13055,7 +13090,7 @@ function rbBuildNorthernItalyLakesRoute() {
       code: 'IT', name: 'Italy', days: 2, budget: 250, lat: 45.9860, lng: 9.2578,
       destinations: [
         { name: 'Bellagio', lat: 45.9860, lng: 9.2578 },
-        { name: 'Varenna', lat: 46.0139, lng: 9.2856 },
+        { name: 'Varenna', lat: 46.0139, lng: 9.2856, notes: "A quieter, more colorful counterpart to Bellagio, with the lakeside \"Passeggiata degli Innamorati\" (lovers' walk) and the hilltop Castello di Vezio above town. The castle viewpoint is a short uphill walk and gives one of the best panoramic photos of the lake — good for sunset since Varenna faces west across the water." },
         { name: 'Menaggio', lat: 46.0167, lng: 9.2333 },
       ],
       notes: 'Lake Como (2-3 nights), ferry-hopping Bellagio/Varenna/Menaggio. Season: May or September; avoid July-August (heat/crowds, especially the Ferragosto peak 10-20 August: near-full occupancy on both lakes).',
@@ -13100,7 +13135,7 @@ function rbBuildNorthernItalyRoadtripRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 130, lat: 45.9860, lng: 9.2578,
       destinations: [
-        { name: 'Lake Como / Bellagio', lat: 45.9860, lng: 9.2578 },
+        { name: 'Lake Como / Bellagio', lat: 45.9860, lng: 9.2578, notes: "Bellagio sits on the promontory where the lake's three branches meet, earning its \"pearl of Lake Como\" nickname; the lakeside promenade and the gardens of Villa Melzi/Villa Serbelloni are the highlight beyond the ferry views. Garden visiting hours/entry slots are limited, so check ahead if you want to go in rather than just admire from outside." },
       ],
       notes: 'Lake Como/Bellagio (1 day). Budget ~€130/day for this route overall.',
       transport_to_next: 'Drive to Lake Garda/Sirmione.',
@@ -13321,7 +13356,7 @@ function rbBuildItalyNorthToCentralRoute() {
       code: 'IT', name: 'Italy', days: 4, budget: 520, lat: 45.4642, lng: 9.1900,
       destinations: [
         { name: 'Milan', lat: 45.4642, lng: 9.1900, notes: "The Duomo's rooftop terraces and the Navigli canal district are the standouts beyond the obvious sights; Leonardo's Last Supper (Cenacolo Vinciano) requires booking 3-4 months ahead, since tickets for each quarterly release window sell out within minutes of going live." },
-        { name: 'Lake Como / Bellagio', lat: 45.9860, lng: 9.2578 },
+        { name: 'Lake Como / Bellagio', lat: 45.9860, lng: 9.2578, notes: "Bellagio sits on the promontory where the lake's three branches meet, earning its \"pearl of Lake Como\" nickname; the lakeside promenade and the gardens of Villa Melzi/Villa Serbelloni are the highlight beyond the ferry views. Garden visiting hours/entry slots are limited, so check ahead if you want to go in rather than just admire from outside." },
         { name: 'Lake Garda / Sirmione', lat: 45.4933, lng: 10.6089, notes: "Sirmione's peninsula holds the Grotte di Catullo, extensive Roman villa ruins at its tip with lake views on three sides, plus a small thermal-spa scene; the old town gate closes to outside cars, so park before the peninsula and walk in." },
         { name: 'Verona (waypoint)', lat: 45.4384, lng: 10.9916 },
       ],
@@ -21133,8 +21168,8 @@ function rbBuildFranceSwitzerlandItalyRoute() {
     {
       code: 'FR', name: 'France', days: 3, budget: 375, lat: 45.9237, lng: 6.8694,
       destinations: [
-        { name: 'Chamonix (Mont Blanc)', lat: 45.9237, lng: 6.8694 },
-        { name: 'Aiguille du Midi cable car', lat: 45.8786, lng: 6.8873 },
+        { name: 'Chamonix (Mont Blanc)', lat: 45.9237, lng: 6.8694, notes: "The historic birthplace of mountaineering, sitting at the foot of Mont Blanc (Western Europe's highest peak); besides the cable car, the Montenvers rack railway up to the Mer de Glace glacier is worth a half-day if you have extra time." },
+        { name: 'Aiguille du Midi cable car', lat: 45.8786, lng: 6.8873, notes: "Europe's highest cable car station (3,842m), with a 360° panorama over the Mont Blanc massif and a glass-floor \"Step into the Void\" platform. Book your timed-entry slot online in advance (it sells out on clear-weather days) and go as early as possible — afternoon clouds frequently block the view." },
       ],
       notes: "Chamonix/Mont Blanc (3 days) — the first standalone Chamonix content built in this repo: French Alps: Écrins National Park (6 days) 🐐 above explicitly chose Écrins over Chamonix specifically to avoid overlap with the Switzerland-Alps routes, so this is a genuine gap being filled, not a duplicate. Budget ~€100-130/day p.p. — the Aiguille du Midi cable car (~€75-80 p.p. return) is a real optional-splurge cost, not folded into the daily rate. Season: June-September.",
       transport_to_next: 'Drive to Geneva, Switzerland (~90km/1h15) — a Schengen border, no checks, but Switzerland is outside the EU customs union (occasional spot checks).',
@@ -21142,7 +21177,7 @@ function rbBuildFranceSwitzerlandItalyRoute() {
     {
       code: 'CH', name: 'Switzerland', days: 1, budget: 150, lat: 46.2044, lng: 6.1432,
       destinations: [
-        { name: 'Geneva (old town, lake)', lat: 46.2044, lng: 6.1432 },
+        { name: 'Geneva (old town, lake)', lat: 46.2044, lng: 6.1432, notes: "The lakefront Jet d'Eau fountain and the hilltop Vieille Ville (old town) around St. Pierre Cathedral are the two things worth a walk in your one day here. Climb the cathedral's towers for a free view over the old town and lake if time allows." },
       ],
       notes: "Geneva (1 day) as a short waypoint. Budget ~€120-150/day p.p. — Switzerland pulls the trip's blended average up noticeably (see this route's overall budget note below). Currency note: Switzerland uses CHF, not the euro.",
       transport_to_next: 'Drive to Täsch/Zermatt (~180km/2h30).',
@@ -21150,9 +21185,9 @@ function rbBuildFranceSwitzerlandItalyRoute() {
     {
       code: 'CH', name: 'Switzerland', days: 3, budget: 450, lat: 46.0207, lng: 7.7491,
       destinations: [
-        { name: 'Täsch (parking)', lat: 46.0489, lng: 7.7710 },
-        { name: 'Zermatt (car-free)', lat: 46.0207, lng: 7.7491 },
-        { name: 'Matterhorn / Mattertal', lat: 45.9763, lng: 7.6586 },
+        { name: 'Täsch (parking)', lat: 46.0489, lng: 7.7710, notes: "Täsch itself is purely a functional gateway — a car park and shuttle station, nothing to linger for. The shuttle train to Zermatt runs every ~20 minutes and takes only 12 minutes, so there's no need to arrive much earlier than your onward plans require." },
+        { name: 'Zermatt (car-free)', lat: 46.0207, lng: 7.7491, notes: "Beyond the car-free logistics, the town's Bahnhofstrasse and the view of the Matterhorn framed above the church of St. Mauritius are the classic Zermatt shots. For the postcard view without a big hike, ride the Gornergrat railway or walk up to the small chapel/lake viewpoints just above town." },
+        { name: 'Matterhorn / Mattertal', lat: 45.9763, lng: 7.6586, notes: "The Matterhorn's near-perfect pyramid shape is the visual anchor of the whole valley (Mattertal); the Gornergrat cogwheel railway gives the best panoramic view without any hiking, while the Klein Matterhorn cable car reaches Europe's highest cable car station and a glacier viewing platform. Take the first train/cable car up for the clearest light and to beat the midday cloud buildup that's common on the peak." },
       ],
       notes: "Zermatt/Matterhorn (3 days) — same car-free-Zermatt/Täsch-parking content as Swiss Alps: Zermatt / Matterhorn (6 days) 🗻 (rbBuildZermattMatterhornRoute) above, compressed here to fit this longer multi-country itinerary (see that route's notes for the Gornergrat/Matterhorn Glacier Paradise ticket caveats). Budget ~€130-170/day p.p. — one of the priciest legs in this batch.",
       transport_to_next: 'Drive south over the Simplon Pass (open year-round, no seasonal closure) into Italy — a Schengen border, no checks, but a passport/ID should still be carried.',
@@ -21160,8 +21195,8 @@ function rbBuildFranceSwitzerlandItalyRoute() {
     {
       code: 'IT', name: 'Italy', days: 3, budget: 330, lat: 45.9860, lng: 9.2578,
       destinations: [
-        { name: 'Lake Como / Bellagio', lat: 45.9860, lng: 9.2578 },
-        { name: 'Varenna', lat: 46.0139, lng: 9.2856 },
+        { name: 'Lake Como / Bellagio', lat: 45.9860, lng: 9.2578, notes: "Bellagio sits on the promontory where the lake's three branches meet, earning its \"pearl of Lake Como\" nickname; the lakeside promenade and the gardens of Villa Melzi/Villa Serbelloni are the highlight beyond the ferry views. Garden visiting hours/entry slots are limited, so check ahead if you want to go in rather than just admire from outside." },
+        { name: 'Varenna', lat: 46.0139, lng: 9.2856, notes: "A quieter, more colorful counterpart to Bellagio, with the lakeside \"Passeggiata degli Innamorati\" (lovers' walk) and the hilltop Castello di Vezio above town. The castle viewpoint is a short uphill walk and gives one of the best panoramic photos of the lake — good for sunset since Varenna faces west across the water." },
       ],
       notes: "Lake Como (3 days, ferry-hopping Bellagio/Varenna) — same content as the Lake Como leg of Northern Italy (6 days) 🚤 (rbBuildNorthernItalyLakesRoute)/Northern Italy Roadtrip (9 days) 🚙 (rbBuildNorthernItalyRoadtripRoute) above. Noticeably cheaper than the Swiss legs, ~€90-115/day p.p. Italy uses toll autostrade, not a vignette — budget an extra ~€20-40 in tolls; check that a rental car's insurance covers Italy if it isn't your own vehicle.",
       transport_to_next: 'Drive to Milan (~75km/1h).',
@@ -21169,7 +21204,7 @@ function rbBuildFranceSwitzerlandItalyRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 250, lat: 45.4642, lng: 9.1900,
       destinations: [
-        { name: 'Milan (Duomo, Galleria)', lat: 45.4642, lng: 9.1900 },
+        { name: 'Milan (Duomo, Galleria)', lat: 45.4642, lng: 9.1900, notes: "Beyond being the trip's departure point, the Duomo's rooftop terraces (walk among the spires) and the adjoining Galleria Vittorio Emanuele II arcade are worth a couple of hours if there's a gap before departure. If anyone wants to see Leonardo's \"The Last Supper,\" tickets need booking weeks in advance — not a same-trip walk-up option." },
       ],
       notes: "Milan (1-2 days) as the trip's departure point — same content as the Milan legs of Northern Italy (6 days) 🚤/Northern Italy Roadtrip (9 days) 🚙 and Dolomites & North Italy 🚡 (rbBuildDolomitesNorthItalyRoute) above. Budget ~€105-140/day p.p.",
       transport_to_next: 'End of this route — direct return flight Milan to Amsterdam.',
@@ -21188,7 +21223,7 @@ function rbBuildAlpineRoadtripFiveCountriesRoute() {
     {
       code: 'FR', name: 'France', days: 3, budget: 375, lat: 45.9237, lng: 6.8694,
       destinations: [
-        { name: 'Chamonix (Mont Blanc)', lat: 45.9237, lng: 6.8694 },
+        { name: 'Chamonix (Mont Blanc)', lat: 45.9237, lng: 6.8694, notes: "The historic birthplace of mountaineering, sitting at the foot of Mont Blanc (Western Europe's highest peak); besides the cable car, the Montenvers rack railway up to the Mer de Glace glacier is worth a half-day if you have extra time." },
       ],
       notes: "Chamonix (2-3 days) — same content as this sub-batch's sibling France + Switzerland + Italy (10-14 days) 🗻 route above (see that route's notes on Chamonix being a genuine content gap, not a duplicate of the Écrins-focused French Alps route). Budget ~€100-130/day p.p.",
       transport_to_next: 'Drive to Zermatt or Interlaken, Switzerland (~180-250km depending on which — both routes cross into Switzerland via Martigny).',

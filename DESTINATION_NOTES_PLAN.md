@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 285 / 741 signatures.**
+- **Done so far: 292 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -185,7 +185,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **IT** (3 dest): Piazza San Marco, Dorsoduro, Murano/Burano — routes: Central European Grand Roadtrip 🚗, Dolomites & North Italy 🚡
 - [x] **IT** (1 dest): Siena — routes: Rome + Tuscany (9 days) 🍝, Tuscany (6 days) 🍇
 - [x] **IT** (2 dest): San Gimignano, Volterra — routes: Rome + Tuscany (9 days) 🍝, Tuscany (6 days) 🍇
-- [ ] **IT** (1 dest): Milan (Duomo, Galleria) — routes: France + Switzerland + Italy (10-14 days) 🗻, Northern Italy (6 days) 🚤
+- [x] **IT** (1 dest): Milan (Duomo, Galleria) — routes: France + Switzerland + Italy (10-14 days) 🗻, Northern Italy (6 days) 🚤
 - [x] **IT** (1 dest): Florence — routes: Italy: North to Central (12 days) 🚄, Rome + Tuscany (9 days) 🍝
 - [x] **IT** (1 dest): Palermo — routes: Sicily (9 days) 🍋, Sicily Roadtrip (7-10 days) 🏝️
 - [x] **IT** (1 dest): Agrigento — Valle dei Templi — routes: Sicily (9 days) 🍋, Sicily Roadtrip (7-10 days) 🏝️
@@ -282,8 +282,8 @@ Sorted alphabetically by country code.
 - [ ] **BO** (1 dest): La Paz (departure buffer) — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
 - [ ] **CH** (2 dest): Zermatt (car-free, Matterhorn), Interlaken (alternative base) — routes: Alpine Roadtrip (14 days) 🏕️
 - [x] **CH** (4 dest): Lucerne/Lake Lucerne, Interlaken, Lauterbrunnen, Bernese Oberland — routes: Central European Grand Roadtrip 🚗
-- [ ] **CH** (1 dest): Geneva (old town, lake) — routes: France + Switzerland + Italy (10-14 days) 🗻
-- [ ] **CH** (3 dest): Täsch (parking), Zermatt (car-free), Matterhorn / Mattertal — routes: France + Switzerland + Italy (10-14 days) 🗻
+- [x] **CH** (1 dest): Geneva (old town, lake) — routes: France + Switzerland + Italy (10-14 days) 🗻
+- [x] **CH** (3 dest): Täsch (parking), Zermatt (car-free), Matterhorn / Mattertal — routes: France + Switzerland + Italy (10-14 days) 🗻
 - [ ] **CH** (1 dest): Interlaken / Lauterbrunnen — routes: Grand European Roadtrip (14-21 days) 🪣
 - [x] **CH** (1 dest): Interlaken — routes: Interlaken + Lauterbrunnen + Grindelwald (6 days) 🪂
 - [ ] **CH** (2 dest): Lauterbrunnen (Trümmelbach Falls), Mürren / Gimmelwald (car-free) — routes: Interlaken + Lauterbrunnen + Grindelwald (6 days) 🪂
@@ -380,7 +380,7 @@ Sorted alphabetically by country code.
 - [ ] **FO** (4 dest): Tórshavn, Múlafossur / Gásadalur, Saksun, Vestmanna bird cliffs boat tour — routes: Faroe Islands (6 days) 🐦
 - [ ] **FO** (2 dest): Tórshavn, Vestmanna bird cliffs boat tour — routes: Faroe Islands + Iceland (9 days) ⛴️
 - [x] **FO** (5 dest): Tórshavn, Saksun, Gjógv, Vestmanna Cliffs, Trælanípa & Lake Sørvágsvatn hike — routes: Nordic Arctic Expedition ❄️
-- [ ] **FR** (1 dest): Chamonix (Mont Blanc) — routes: Alpine Roadtrip (14 days) 🏕️
+- [x] **FR** (1 dest): Chamonix (Mont Blanc) — routes: Alpine Roadtrip (14 days) 🏕️
 - [ ] **FR** (8 dest): Strasbourg (Petite France, cathedral + astronomical clock), Colmar (base — old town, Little Venice, Unterlinden), Riquewihr, Ribeauvillé, Kaysersberg, Haut-Koenigsbourg Castle (detour), Eguisheim (early, before the tour buses), Turckheim — routes: Alsace (4 days) 🥐
 - [ ] **FR** (4 dest): Ax-les-Thermes (thermal baths), Foix (medieval castle), Tarascon-sur-Ariège, Grotte de Niaux (prehistoric cave) — routes: Andorra + French Pyrenees: Ariège (6 days) ♨️
 - [ ] **FR** (5 dest): Saint-Malo (ramparts), Dinan (medieval old town), Côte de Granit Rose / Ploumanac'h coastal path, Île de Bréhat, Cap Fréhel — routes: Brittany: Saint-Malo, Dinan & Pink Granite Coast (5 days) 🦞
@@ -391,7 +391,7 @@ Sorted alphabetically by country code.
 - [ ] **FR** (6 dest): Bastia, Calvi, Corte, Porto-Vecchio / Col de Bavella, Bonifacio, Ajaccio — routes: Corsica + South of France (9 days) 🛳️
 - [ ] **FR** (10 dest): Calvi, Cap Corse / Nonza, Saint-Florent / Désert des Agriates, Bastia, Corte, East coast (Aléria), Porto-Vecchio / Col de Bavella, Bonifacio, Ajaccio / Golfe de Valinco, Piana calanques / Scandola — routes: Corsica Roadtrip: Full Island Loop (9 days) 🚙
 - [ ] **FR** (5 dest): Ajaccio, Golfe de Valinco / Propriano, Bonifacio, Porto-Vecchio, Col de Bavella — routes: Corsica: South Loop (6 days) 🏖️
-- [ ] **FR** (2 dest): Chamonix (Mont Blanc), Aiguille du Midi cable car — routes: France + Switzerland + Italy (10-14 days) 🗻
+- [x] **FR** (2 dest): Chamonix (Mont Blanc), Aiguille du Midi cable car — routes: France + Switzerland + Italy (10-14 days) 🗻
 - [ ] **FR** (1 dest): Paris — routes: France Roadtrip: Paris to the Côte d'Azur (12 days) 🚗
 - [ ] **FR** (1 dest): Beaune (Burgundy) — Hospices de Beaune, wine tasting — routes: France Roadtrip: Paris to the Côte d'Azur (12 days) 🚗
 - [ ] **FR** (1 dest): Lyon (Vieux Lyon, Presqu'île, traboules) — routes: France Roadtrip: Paris to the Côte d'Azur (12 days) 🚗
@@ -515,7 +515,7 @@ Sorted alphabetically by country code.
 - [ ] **IT** (5 dest): Ortisei / Val Gardena (base), Alpe di Siusi, Seceda, Passo Gardena, Vallunga — routes: Dolomites (6 days) ⛰️
 - [ ] **IT** (8 dest): Passo Valparola, Passo Falzarego, Cortina d'Ampezzo (base), Tre Cime di Lavaredo, Cadini di Misurina, Lago di Braies, Cinque Torri, Passo Giau — routes: Dolomites (6 days) ⛰️
 - [ ] **IT** (8 dest): Florence — Uffizi Gallery, Florence — Duomo (dome climb), Florence — Ponte Vecchio, Florence — Palazzo Vecchio, Siena (day trip), Chianti wine tasting (day trip), San Gimignano (day trip), Pisa (day trip) — routes: Florence + Tuscany (4 days) 🎨
-- [ ] **IT** (2 dest): Lake Como / Bellagio, Varenna — routes: France + Switzerland + Italy (10-14 days) 🗻
+- [x] **IT** (2 dest): Lake Como / Bellagio, Varenna — routes: France + Switzerland + Italy (10-14 days) 🗻
 - [x] **IT** (3 dest): Bolzano, Val Gardena / Ortisei, Cortina d'Ampezzo — routes: Germany + Austria + Italy (10-14 days) 🏔️
 - [x] **IT** (2 dest): Lake Garda / Sirmione, Verona (Arena, old town) — routes: Germany + Austria + Italy (10-14 days) 🏔️
 - [ ] **IT** (2 dest): Dolomites (Cortina d'Ampezzo / Tre Cime), Venice (Piazza San Marco) — routes: Grand European Roadtrip (14-21 days) 🪣
@@ -532,7 +532,7 @@ Sorted alphabetically by country code.
 - [ ] **IT** (2 dest): Sirmione, Desenzano — routes: Northern Italy (6 days) 🚤
 - [ ] **IT** (1 dest): Verona (Arena, Juliet's balcony) — routes: Northern Italy (6 days) 🚤
 - [x] **IT** (1 dest): Milan — routes: Northern Italy Roadtrip (9 days) 🚙
-- [ ] **IT** (1 dest): Lake Como / Bellagio — routes: Northern Italy Roadtrip (9 days) 🚙
+- [x] **IT** (1 dest): Lake Como / Bellagio — routes: Northern Italy Roadtrip (9 days) 🚙
 - [x] **IT** (1 dest): Lake Garda / Sirmione — routes: Northern Italy Roadtrip (9 days) 🚙
 - [ ] **IT** (1 dest): Verona — routes: Northern Italy Roadtrip (9 days) 🚙
 - [x] **IT** (2 dest): Bolzano, Lago di Braies — routes: Northern Italy Roadtrip (9 days) 🚙
@@ -770,8 +770,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 |---|---|---|
 | North India 🕌 | 9/9 | 1 |
 | India & Himalaya Expedition 🏔️ | 9/22 | 1 |
-| France + Switzerland + Italy (10-14 days) 🗻 | 9/9 | 1 |
-| Northern Italy (6 days) 🚤 | 7/7 | 1 |
 | Serbia + Montenegro + Bosnia (12 days) 🏔️ | 7/7 | 1 |
 | Faroe Islands + Iceland (9 days) ⛴️ | 7/7 | 1 |
 | Madeira + Porto Santo (7-10 days) 🏝️ | 7/7 | 1 |
@@ -808,6 +806,8 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Sicily + Malta (9 days) 🌋 | 11/11 | 0 |
 | Northern Spain Roadtrip (12 days) 🛣️ | 11/11 | 0 |
 | Portugal Roadtrip (12 days) 🗺️ | 11/11 | 0 |
-| ... 264 more routes with open destinations ... | | |
+| Corsica Roadtrip: Full Island Loop (9 days) 🚙 | 10/10 | 0 |
+| Corsica + South of France (9 days) 🛳️ | 10/10 | 0 |
+| ... 263 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).
