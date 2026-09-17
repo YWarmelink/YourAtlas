@@ -1849,9 +1849,9 @@ function rbBuildCentralEuropeRoadtripRoute() {
         {
           code: 'FR', name: 'France', days: 2, budget: 240, lat: 48.5734, lng: 7.7521,
           destinations: [
-            { name: 'Strasbourg', lat: 48.5734, lng: 7.7521 },
-            { name: 'Colmar', lat: 48.0794, lng: 7.3585 },
-            { name: 'Alsace villages', lat: 48.0453, lng: 7.3079 },
+            { name: 'Strasbourg', lat: 48.5734, lng: 7.7521, notes: "The Gothic cathedral (climb the tower platform for rooftop views) and the canal-laced half-timbered Petite France quarter are the two things to prioritize; both fit into a half-day on foot." },
+            { name: 'Colmar', lat: 48.0794, lng: 7.3585, notes: "Colmar's old town, especially the \"Petite Venise\" canal district, is the best-preserved fairy-tale half-timbered core on the Alsace Wine Route — walk it at dusk once the day-trip buses have thinned." },
+            { name: 'Alsace villages', lat: 48.0453, lng: 7.3079, notes: "Riquewihr, Eguisheim and Kaysersberg along the Route des Vins pair colorful timbered houses with vineyard walks right from the village edge; pick one or two rather than all of them, and expect Riquewihr/Eguisheim to be very crowded at midday in season." },
           ],
           notes: 'A compact, short cultural opener — more time adds little given the rest of the trip is still ahead. Travel advisory (2026-07): France has been at the highest terrorism threat level (3) since March 2024 — a nationwide baseline status, not Alsace-specific, fine to visit with normal awareness.',
           transport_to_next: 'Car, ≈415 km to Neuschwanstein/Garmisch via Karlsruhe-Stuttgart-Ulm-Munich (route-logic check 2026-08: was previously listed as ≈300 km, which was wrong) — no toll or vignette needed on this stretch.',
@@ -1859,9 +1859,9 @@ function rbBuildCentralEuropeRoadtripRoute() {
         {
           code: 'DE', name: 'Germany', days: 4, budget: 480, lat: 47.5576, lng: 10.7498,
           destinations: [
-            { name: 'Neuschwanstein', lat: 47.5576, lng: 10.7498 },
-            { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0958 },
-            { name: 'Zugspitze', lat: 47.4211, lng: 10.9853 },
+            { name: 'Neuschwanstein', lat: 47.5576, lng: 10.7498, notes: "Ludwig II's fantasy castle (the direct inspiration for Disney's Cinderella castle) photographs best from Marienbrücke, the bridge over the gorge behind it. Book the timed-entry ticket online well in advance — summer slots can sell out several weeks ahead and walk-up availability is unreliable." },
+            { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0958, notes: "Beyond being the Zugspitze gateway, the town's own highlight is the Partnachklamm gorge walk, a shaded ~1-hour loop through a carved rock canyon with waterfalls — an easy half-day add-on." },
+            { name: 'Zugspitze', lat: 47.4211, lng: 10.9853, notes: "Germany's highest peak rewards a clear day with views reaching into Austria, Switzerland and Italy, and its glacier snowfield near the summit still draws skiers in summer." },
           ],
           notes: 'Neuschwanstein deserves half a day on its own (queues, the castle plus surroundings); the Zugspitze cable car is weather-dependent, so a buffer helps.',
           transport_to_next: 'Car, ≈250 km to Lucerne, continuing on to Interlaken/Lauterbrunnen (≈400 km total from Garmisch — route-logic check 2026-08: the original ≈250 km only held for Lucerne itself, not the whole stop group) — Swiss annual vignette required, buy it at the border.',
@@ -1869,28 +1869,28 @@ function rbBuildCentralEuropeRoadtripRoute() {
         {
           code: 'CH', name: 'Switzerland', days: 5, budget: 1000, lat: 46.6863, lng: 7.8632,
           destinations: [
-            { name: 'Lucerne/Lake Lucerne', lat: 47.0502, lng: 8.3093 },
-            { name: 'Interlaken', lat: 46.6863, lng: 7.8632 },
-            { name: 'Lauterbrunnen', lat: 46.5927, lng: 7.9098 },
-            { name: 'Bernese Oberland', lat: 46.6244, lng: 8.0413 },
+            { name: 'Lucerne/Lake Lucerne', lat: 47.0502, lng: 8.3093, notes: "The wooden, tower-flanked Chapel Bridge (Kapellbrücke) anchors a compact, walkable old town; a lake cruise combined with the cogwheel train up Pilatus or Rigi makes a classic half/full-day trip straight from the city." },
+            { name: 'Interlaken', lat: 46.6863, lng: 7.8632, notes: "Sitting between Lake Thun and Lake Brienz, Interlaken itself is mainly a logistics and adventure-sports base (paragliding, canyoning) rather than a sight in its own right — treat it as the region's hub, not a destination to linger in." },
+            { name: 'Lauterbrunnen', lat: 46.5927, lng: 7.9098, notes: "A sheer-walled valley with 72 waterfalls, most famously Staubbach Falls dropping straight past the village; base here or in car-free Wengen/Mürren above it for the region's classic hikes rather than staying down in Interlaken." },
+            { name: 'Bernese Oberland', lat: 46.6244, lng: 8.0413, notes: "Beyond the multi-day Jungfrau hiking already noted, the Schilthorn's revolving Piz Gloria restaurant (a Bond film location) and the First cliff walk near Grindelwald are the other two cable-car viewpoints worth the fare here." },
           ],
           notes: 'The Jungfrau region (Lauterbrunnen/Bernese Oberland) alone deserves multiple hiking days — high costs are a reason to keep it compact, not to rush it. Price check (2026-07): Switzerland is one of the most expensive countries in Europe — the original flat €120/day didn\'t hold up here, corrected to €200/day.',
           transport_to_next: 'Car, ≈150 km to Vaduz — no border control (Schengen), no separate toll.',
         },
         {
           code: 'LI', name: 'Liechtenstein', days: 1, budget: 165, lat: 47.1410, lng: 9.5209,
-          destinations: [{ name: 'Vaduz', lat: 47.1410, lng: 9.5209 }],
+          destinations: [{ name: 'Vaduz', lat: 47.1410, lng: 9.5209, notes: "The capital is a small, walkable strip beneath the reigning prince's hilltop castle, which is a private residence viewable only from outside; an hour covers the pedestrian center and the Kunstmuseum." }],
           notes: 'Small country, one good hike/city walk is plenty. Price check (2026-07): price level follows Switzerland, corrected from €120 to €165/day.',
           transport_to_next: 'Car, ≈150 km to Innsbruck via Feldkirch/Fernpass (route-logic check 2026-08: was previously listed as ≈120 km, which was wrong) — Austrian 10-day vignette needed for the motorways (€12.80, far more logical for a road trip than the €106.80 annual vignette).',
         },
         {
           code: 'AT', name: 'Austria', days: 6, budget: 720, lat: 47.2692, lng: 11.4041,
           destinations: [
-            { name: 'Innsbruck/Tyrol', lat: 47.2692, lng: 11.4041 },
-            { name: 'Salzburg', lat: 47.8095, lng: 13.0550 },
-            { name: 'Berchtesgaden/Königssee', lat: 47.5892, lng: 13.0632 },
-            { name: 'Salzkammergut', lat: 47.5622, lng: 13.6493 },
-            { name: 'Grossglockner High Alpine Road', lat: 47.0742, lng: 12.8306 },
+            { name: 'Innsbruck/Tyrol', lat: 47.2692, lng: 11.4041, notes: "The Nordkette cable car climbs directly from Innsbruck's medieval old town (Golden Roof) into high alpine terrain in under 20 minutes — genuine high-mountain scenery reachable without leaving the city." },
+            { name: 'Salzburg', lat: 47.8095, lng: 13.0550, notes: "Mozart's birthplace and several Sound of Music filming locations sit inside a compact old town dominated by the Hohensalzburg fortress above it; ride the funicular up for the view over the Salzach river." },
+            { name: 'Berchtesgaden/Königssee', lat: 47.5892, lng: 13.0632, notes: "Königssee's emerald water is the draw — a boat trip stops at the onion-domed St. Bartholomä church — and pairs well with the Eagle's Nest (Kehlsteinhaus) above, reachable only by a dedicated shuttle bus from Obersalzberg." },
+            { name: 'Salzkammergut', lat: 47.5622, lng: 13.6493, notes: "The lake district's must-see is Hallstatt's postcard lakeside village, but it's now tightly managed for overtourism: non-hotel-guest day visitors can't drive into the village center 08:00-17:00, so plan on the shuttle or train-and-boat approach and arrive early." },
+            { name: 'Grossglockner High Alpine Road', lat: 47.0742, lng: 12.8306, notes: "This toll road climbs to nearly 2,500m past Austria's highest peak, ending at the Kaiser-Franz-Josefs-Höhe viewpoint over the retreating Pasterze glacier. It's typically only open late April/May through early November (weather-dependent on both ends), so check current status before routing through it outside summer." },
           ],
           notes: 'Four clearly distinct sub-areas (Tyrol, the Salzburg cluster, the lake district, the high-mountain drive) — each deserves at least one full day. Berchtesgaden is formally in Germany but belongs with Salzburg route-wise (20 minutes\' drive, route-logic check 2026-08 confirmed) — treat them as one combined stop.',
           transport_to_next: 'Car, the Grossglockner High Alpine Road (separate toll road, ≈€38 per car) to Lienz, then ≈90 km to Cortina d\'Ampezzo — one of the most scenic drives on the whole route.',
@@ -1906,10 +1906,10 @@ function rbBuildCentralEuropeRoadtripRoute() {
         {
           code: 'IT', name: 'Italy', days: 6, budget: 720, lat: 46.5369, lng: 12.1357,
           destinations: [
-            { name: 'Tre Cime', lat: 46.6198, lng: 12.3032 },
-            { name: 'Lago di Braies', lat: 46.6958, lng: 12.0858 },
-            { name: 'Seceda', lat: 46.5765, lng: 11.7099 },
-            { name: 'Val Gardena', lat: 46.5645, lng: 11.6750 },
+            { name: 'Tre Cime', lat: 46.6198, lng: 12.3032, notes: "The three sheer limestone peaks are best seen on the ~10km loop trail past Rifugio Locatelli; driving up requires the paid Rifugio Auronzo toll road (~€30/car), which fills its lot early on summer mornings." },
+            { name: 'Lago di Braies', lat: 46.6958, lng: 12.0858, notes: "The postcard turquoise lake with wooden rowboats is one of the most photographed spots in the Dolomites. From July 1-Sept 15, the valley road is closed to unbooked cars 9am-4pm — you must pre-book parking online at pragsparking.com or arrive before 9am/after 4pm." },
+            { name: 'Seceda', lat: 46.5765, lng: 11.7099, notes: "The jagged, wave-like ridgeline reached by cable car from Ortisei is one of the single most photographed panoramas in the Dolomites, especially at sunrise before the crowds and cloud build-up arrive." },
+            { name: 'Val Gardena', lat: 46.5645, lng: 11.6750, notes: "Doubles as the springboard for Alpe di Siusi, Europe's largest high-alpine meadow, reachable by cable car and worth a half-day on its own gentle trails." },
           ],
           notes: 'One of the biggest highlights of the whole trip — the famous hikes (the Tre Cime loop, Seceda) are each a day in their own right.',
           transport_to_next: 'Car, ≈410 km to Milan — together with the Alsace-Bavaria drive at the start, one of the longest drives on the whole loop (route-logic check 2026-08: no longer a unique "longest drive" once the Alsace-Bavaria distance is corrected, see that leg\'s own note) — leave early or split it with a stopover at Verona/Brescia. The Italian autostrada charges toll per kilometer.',
@@ -1917,10 +1917,10 @@ function rbBuildCentralEuropeRoadtripRoute() {
         {
           code: 'IT', name: 'Italy', days: 2, budget: 240, lat: 45.4642, lng: 9.1900,
           destinations: [
-            { name: 'Duomo', lat: 45.4642, lng: 9.1900 },
-            { name: 'Galleria', lat: 45.4656, lng: 9.1896 },
-            { name: 'Navigli', lat: 45.4514, lng: 9.1739 },
-            { name: 'The Last Supper', lat: 45.4661, lng: 9.1706 },
+            { name: 'Duomo', lat: 45.4642, lng: 9.1900, notes: "Beyond the interior, the rooftop terraces among the spires (separate ticket) are the real highlight — book that ticket ahead and go early to beat the queue." },
+            { name: 'Galleria', lat: 45.4656, lng: 9.1896, notes: "The 19th-century glass-domed arcade beside the Duomo is worth a stop for the architecture alone; local tradition has visitors spin on their heel three times on the mosaic bull's testicles for good luck." },
+            { name: 'Navigli', lat: 45.4514, lng: 9.1739, notes: "The canal district comes alive in early evening for aperitivo along the water; Naviglio Grande also hosts a Saturday antiques market." },
+            { name: 'The Last Supper', lat: 45.4661, lng: 9.1706, notes: "Only 40 visitors are admitted per 15-minute slot, and tickets for each 3-month release window sell out within minutes of going live — book the instant a window opens, or fall back to a guided-tour slot if direct tickets are gone." },
           ],
           notes: 'One full day for the city center, a second if you want to fit in The Last Supper (reservation required).',
           transport_to_next: 'Car, ≈140 km to Turin via the A4/A55, toll road.',
@@ -1928,9 +1928,9 @@ function rbBuildCentralEuropeRoadtripRoute() {
         {
           code: 'IT', name: 'Italy', days: 2, budget: 190, lat: 45.0703, lng: 7.6869,
           destinations: [
-            { name: 'Egyptian Museum', lat: 45.0703, lng: 7.6869 },
-            { name: 'Mole Antonelliana', lat: 45.0691, lng: 7.6934 },
-            { name: 'historic center', lat: 45.0703, lng: 7.6869 },
+            { name: 'Egyptian Museum', lat: 45.0703, lng: 7.6869, notes: "Holds the second-largest Egyptian collection in the world after Cairo's own museum, which is what justifies the half-day." },
+            { name: 'Mole Antonelliana', lat: 45.0691, lng: 7.6934, notes: "Originally built as a synagogue, it now houses the National Cinema Museum, with a glass panoramic lift to the top for a view over the city and the Alps." },
+            { name: 'historic center', lat: 45.0703, lng: 7.6869, notes: "Grand porticoed boulevards connect baroque piazzas (Piazza Castello, Piazza San Carlo); try a bicerin — Turin's own coffee-chocolate-cream drink — at a historic café like Caffè Al Bicerin." },
           ],
           notes: 'A compact, underrated city — the Egyptian Museum (the second-largest in the world) deserves half a day on its own. Price check (2026-07): Turin is cheaper than the flat €120/day rate, corrected to €95/day.',
           transport_to_next: 'Car to a guarded parking lot near Monterosso/La Spezia (≈260 km via Alessandria/Genoa — route-logic check 2026-08: was previously listed as ≈185 km, which was wrong) — the villages themselves are largely car-free.',
@@ -1938,11 +1938,11 @@ function rbBuildCentralEuropeRoadtripRoute() {
         {
           code: 'IT', name: 'Italy', days: 3, budget: 435, lat: 44.1461, lng: 9.6558,
           destinations: [
-            { name: 'Monterosso', lat: 44.1461, lng: 9.6558 },
-            { name: 'Vernazza', lat: 44.1355, lng: 9.6857 },
-            { name: 'Corniglia', lat: 44.1197, lng: 9.7042 },
-            { name: 'Manarola', lat: 44.1067, lng: 9.7275 },
-            { name: 'Riomaggiore', lat: 44.0993, lng: 9.7378 },
+            { name: 'Monterosso', lat: 44.1461, lng: 9.6558, notes: "The only one of the five villages with a proper sandy beach, making it the spot to actually swim or relax rather than just photograph." },
+            { name: 'Vernazza', lat: 44.1355, lng: 9.6857, notes: "Widely considered the most photogenic of the five, with a small harbor piazza and castle ruin overlooking the water — arrive early before the day-trip crowds off the trail or train." },
+            { name: 'Corniglia', lat: 44.1197, lng: 9.7042, notes: "The only village not directly on the sea, perched on a clifftop; reach it via the ~380-step Lardarina stairway or the shuttle bus from the train station below." },
+            { name: 'Manarola', lat: 44.1067, lng: 9.7275, notes: "Best known for sunset views over its terraced vineyards and stacked colorful houses; the classic photo spot is the harbor breakwater just below town." },
+            { name: 'Riomaggiore', lat: 44.0993, lng: 9.7378, notes: "The southern trailhead for the inter-village hikes, with pastel houses cascading down to a tiny harbor — a good base for an evening after the trails." },
           ],
           notes: 'The five villages and the hiking trails between them (the Sentiero Azzurro) are the whole point — three days for easy hiking plus a short boat trip. Price check (2026-07): scarce/expensive accommodation and a tourist markup on food push this above the flat €120/day rate, corrected to €145/day.',
           transport_to_next: 'Car, ≈140 km to Florence via La Spezia-Lucca-Florence.',
@@ -1950,26 +1950,26 @@ function rbBuildCentralEuropeRoadtripRoute() {
         {
           code: 'IT', name: 'Italy', days: 3, budget: 360, lat: 43.7696, lng: 11.2558,
           destinations: [
-            { name: 'Florence', lat: 43.7696, lng: 11.2558 },
-            { name: 'Siena', lat: 43.3188, lng: 11.3308 },
-            { name: 'San Gimignano', lat: 43.4674, lng: 11.0431 },
-            { name: 'Chianti', lat: 43.4708, lng: 11.3350 },
+            { name: 'Florence', lat: 43.7696, lng: 11.2558, notes: "The Uffizi and the Duomo's dome climb are the two must-do highlights; book Uffizi tickets ahead of time, as walk-up lines run for hours." },
+            { name: 'Siena', lat: 43.3188, lng: 11.3308, notes: "The shell-shaped Piazza del Campo hosts the Palio horse race twice a year (July 2 and Aug 16); climbing the Torre del Mangia gives the best rooftop view over the square." },
+            { name: 'San Gimignano', lat: 43.4674, lng: 11.0431, notes: "Its skyline of medieval stone towers (nicknamed \"Medieval Manhattan\") is best appreciated from just outside the walls around sunset, once the day-trip buses thin out." },
+            { name: 'Chianti', lat: 43.4708, lng: 11.3350, notes: "A scenic drive through vineyard villages like Greve and Radda in Chianti; most estates expect tastings to be booked ahead rather than accepting walk-ins." },
           ],
           notes: 'Kept compact ("a slice of Tuscany") — Florence plus one day for Chianti/Siena/San Gimignano.',
           transport_to_next: 'Car, ≈180 km to San Marino — Florence and San Marino are close to each other.',
         },
         {
           code: 'SM', name: 'San Marino', days: 1, budget: 120, lat: 43.9424, lng: 12.4578,
-          destinations: [{ name: 'Historic center', lat: 43.9424, lng: 12.4578 }],
+          destinations: [{ name: 'Historic center', lat: 43.9424, lng: 12.4578, notes: "San Marino's Three Towers (Guaita, Cesta, Montale) on Mount Titano are the postcard image; the connecting walk via Passo delle Streghe between them gives sweeping Adriatic-coast views on a clear day." }],
           notes: 'Small enough for one day, close to Florence — a deliberate stop, no longer a detour to second-guess.',
           transport_to_next: 'Car, ≈300 km to Venice, with an overnight stay there — the city itself is car-free, park at Tronchetto or Mestre.',
         },
         {
           code: 'IT', name: 'Italy', days: 2, budget: 320, lat: 45.4408, lng: 12.3155,
           destinations: [
-            { name: 'Piazza San Marco', lat: 45.4408, lng: 12.3155 },
-            { name: 'Dorsoduro', lat: 45.4302, lng: 12.3245 },
-            { name: 'Murano/Burano', lat: 45.4585, lng: 12.3538 },
+            { name: 'Piazza San Marco', lat: 45.4408, lng: 12.3155, notes: "St Mark's Basilica and the Doge's Palace anchor the square; the basilica itself is free to enter, but a skip-the-line booking avoids the worst of the queue." },
+            { name: 'Dorsoduro', lat: 45.4302, lng: 12.3245, notes: "A quieter, more residential sestiere than San Marco, home to the Accademia Gallery and the Peggy Guggenheim Collection — a good escape from the main crowds." },
+            { name: 'Murano/Burano', lat: 45.4585, lng: 12.3538, notes: "Worth a separate vaporetto trip from the main islands: Murano for glass-blowing demonstrations, Burano for its brightly painted houses and lace-making tradition." },
           ],
           notes: 'Sits almost exactly on the way back from San Marino to Slovenia — barely any extra kilometers, so an efficient addition. Price check (2026-07): central Venice is a known price outlier (accommodation 2-3x Mestre-level, expensive vaporetto day passes) — corrected from €120 to €160/day.',
           transport_to_next: 'Car, ≈280 km to Bled — Slovenian vignette required (a cheap day vignette is available).',
@@ -1986,10 +1986,10 @@ function rbBuildCentralEuropeRoadtripRoute() {
           code: 'SI', name: 'Slovenia', days: 5, budget: 600, lat: 46.3683, lng: 14.1146,
           destinations: [
             { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
-            { name: 'Bohinj', lat: 46.2833, lng: 13.8833 },
-            { name: 'Soča Valley', lat: 46.3833, lng: 13.6167 },
-            { name: 'Triglav NP', lat: 46.3833, lng: 13.8378 },
-            { name: 'caves (Postojna/Škocjan)', lat: 45.7830, lng: 14.2018 },
+            { name: 'Bohinj', lat: 46.2833, lng: 13.8833, notes: "Slovenia's larger, quieter alpine lake south of Bled — glacial, ringed by forested peaks, with far fewer crowds than Bled. Ride the Vogel cable car above the lake for a panoramic view, or use it as the trailhead for the Savica waterfall hike." },
+            { name: 'Soča Valley', lat: 46.3833, lng: 13.6167, notes: "The turquoise Soča River is Slovenia's adventure-sports hub — rafting, kayaking, and canyoning out of Bovec/Kobarid — and doubles as a WWI history site via Kobarid's Isonzo Front museum. Visit in late spring/early summer for the clearest turquoise water, before summer glacial melt clouds it." },
+            { name: 'Triglav NP', lat: 46.3833, lng: 13.8378, notes: "Slovenia's only national park and home to its highest peak (2,864m, Mt. Triglav). For non-mountaineers the standout is the Seven Lakes Valley (Sedmera Jezera) day hike from Bohinj — the summit itself needs a guide and via ferrata gear, so don't plan on it without one." },
+            { name: 'caves (Postojna/Škocjan)', lat: 45.7830, lng: 14.2018, notes: "Postojna's electric train ride deep into its dripstone cave system is the easy, family-friendly option; Škocjan (UNESCO-listed) is more dramatic — a colossal underground canyon crossed by footbridge — but it's guided-tour-only with limited tour times, so book ahead." },
           ],
           notes: 'Bled alone deserves multiple days; the Soča Valley and the caves are genuinely a separate leg.',
           transport_to_next: 'Car, ≈140 km to Plitvice/Zagreb.',
@@ -1997,7 +1997,7 @@ function rbBuildCentralEuropeRoadtripRoute() {
         {
           code: 'HR', name: 'Croatia', days: 3, budget: 255, lat: 44.8654, lng: 15.5820,
           destinations: [
-            { name: 'Plitvice', lat: 44.8654, lng: 15.5820 },
+            { name: 'Plitvice', lat: 44.8654, lng: 15.5820, notes: "The wooden boardwalks run right along/over the turquoise cascades themselves, which is the actual highlight beyond \"a day of hiking.\" Arrive at opening or enter via Entrance 2 to work against the tour-bus flow and get the Lower Lakes' iconic viewpoints uncrowded." },
             { name: 'Zagreb', lat: 45.8150, lng: 15.9819, notes: "The Upper Town's colorful-tiled St. Mark's Church and the Dolac market are the highlights, linked to the Lower Town by the world's shortest funicular (under a minute). A free walking tour is an efficient way to cover both halves in a day." },
           ],
           notes: 'Plitvice deserves a full day (long hiking trails), Zagreb a short city stop. Update (2026-08): Croatia was officially declared landmine-free as of March 2026 — the earlier warning about uncleared zones around Plitvice is no longer current. Price check (2026-07): inland Croatia (not the coast) is cheaper than the flat €120/day rate, corrected to €85/day (Plitvice entry ~€35-40 separate, not included in the daily rate).',
@@ -2006,9 +2006,9 @@ function rbBuildCentralEuropeRoadtripRoute() {
         {
           code: 'RS', name: 'Serbia', days: 5, budget: 300, lat: 44.7866, lng: 20.4489,
           destinations: [
-            { name: 'Belgrade', lat: 44.7866, lng: 20.4489 },
-            { name: 'Tara National Park (day trip from Belgrade, round-trip)', lat: 43.8931, lng: 19.4206 },
-            { name: 'Novi Sad', lat: 45.2671, lng: 19.8335 },
+            { name: 'Belgrade', lat: 44.7866, lng: 20.4489, notes: "Kalemegdan Fortress, overlooking the Sava/Danube confluence, is the city's best free view and history in one stop; Skadarlija's cobbled bohemian quarter is the spot for a traditional live-music dinner in the evening." },
+            { name: 'Tara National Park (day trip from Belgrade, round-trip)', lat: 43.8931, lng: 19.4206, notes: "The payoff is the Banjska Stena viewpoint over the Drina River canyon and Perućac Lake; if time allows within the day trip, combine it with nearby Drvengrad (Küstendorf, Emir Kusturica's wooden village) and the Šargan Eight heritage railway." },
+            { name: 'Novi Sad', lat: 45.2671, lng: 19.8335, notes: "Petrovaradin Fortress (\"Gibraltar on the Danube\") dominates the skyline and is worth the climb for the river/old-town view. Note: EXIT Festival, long associated with this fortress, has moved to a global-tour format and its return to Novi Sad is unconfirmed (not held there in 2026) — don't plan the visit around it." },
           ],
           notes: "Serbia otherwise has few natural highlights on this route — Tara NP (Drina River, well-known viewpoints) is a deliberate detour that fits this travel style, in the southwest of the country. Route-logic fix (2026-08, search-confirmed): previously listed as the last stop before departing for Budapest — Tara NP-Budapest is actually ≈520 km, not the ≈320 km that was listed, and would have cost some 6-7 extra hours of driving on top of an already long journey. Fixed by doing Tara NP as a day trip/round-trip from Belgrade (±360-400 km round-trip) and then continuing via the existing Belgrade-Novi Sad-Budapest route — the detour cost of Tara NP remains, but the expensive long drive from a corner of the country is eliminated. ⚠️ Travel advisory (2026-07, still current): there are regular demonstrations in Serbia, especially in Belgrade and Novi Sad (an ongoing protest movement since late 2024) — sometimes road blockades, occasional violence, factor in possible delays at road checks. Avoid crowds/demonstrations, check the current situation just before departure. Price check (2026-07): Serbia is by far the cheapest of the Balkan countries on this route — the flat €120/day was more than double the real rate, corrected to €60/day.",
           transport_to_next: 'Car, ≈90 km Belgrade-Novi Sad, then ≈298 km Novi Sad-Budapest (≈388 km total) — Novi Sad already sits on the direct route, so this stretch is unchanged from before.',
@@ -2016,8 +2016,8 @@ function rbBuildCentralEuropeRoadtripRoute() {
         {
           code: 'HU', name: 'Hungary', days: 3, budget: 270, lat: 47.4979, lng: 19.0402,
           destinations: [
-            { name: 'Budapest', lat: 47.4979, lng: 19.0402 },
-            { name: 'thermal baths', lat: 47.5186, lng: 19.0819 },
+            { name: 'Budapest', lat: 47.4979, lng: 19.0402, notes: "Beyond the thermal bath already noted, the Fisherman's Bastion terraces on the Buda side give the best skyline view over Pest and the Danube, especially near sunset — pair it with a walk across Chain Bridge." },
+            { name: 'thermal baths', lat: 47.5186, lng: 19.0819, notes: "Széchenyi (grand, outdoor, Neo-Baroque pools) is the classic choice for a relaxed soak. Worth knowing: on Saturday nights (Feb-Dec) it converts into a ticketed \"Sparty\" night-bathing event, a different crowd/vibe than a daytime visit — pick your day accordingly if you want a quiet soak." },
           ],
           notes: 'Budapest deserves a relaxed city stop with time for a thermal bath, not just checking off the highlights. Price check (2026-07): corrected from the flat €120/day to €90/day (including a thermal bath visit, ~€25-30 on its own).',
           transport_to_next: 'Car, ≈200 km to Bratislava.',
@@ -2033,10 +2033,10 @@ function rbBuildCentralEuropeRoadtripRoute() {
         {
           code: 'SK', name: 'Slovakia', days: 5, budget: 400, lat: 49.0552, lng: 20.2969,
           destinations: [
-            { name: 'Bratislava', lat: 48.1486, lng: 17.1077 },
-            { name: 'High Tatras', lat: 49.1500, lng: 20.0500 },
-            { name: 'Slovenský Raj', lat: 48.9333, lng: 20.4167 },
-            { name: 'Spiš Castle', lat: 48.9958, lng: 20.7644 },
+            { name: 'Bratislava', lat: 48.1486, lng: 17.1077, notes: "Compact walkable Old Town plus the hilltop Bratislava Castle overlooking the Danube; the UFO Bridge's observation deck gives the best skyline view and doubles as a sunset spot." },
+            { name: 'High Tatras', lat: 49.1500, lng: 20.0500, notes: "Štrbské Pleso and Starý Smokovec are the main trailheads, with Gerlachovský štít (2,655m) as the range's highest peak; the cable car up to Skalnaté Pleso/Lomnický štít lets you reach dramatic alpine scenery even without committing to a full hike." },
+            { name: 'Slovenský Raj', lat: 48.9333, lng: 20.4167, notes: "Known for narrow gorge trails secured with ladders, chains and catwalks bolted alongside waterfalls (Suchá Belá is the classic route); trails run one-way upstream only, so wear grippy water-resistant shoes and expect a ~2-hour scramble, not a stroll." },
+            { name: 'Spiš Castle', lat: 48.9958, lng: 20.7644, notes: "One of Central Europe's largest castle complexes, its ruins visible for miles across the Spiš countryside; go late afternoon for the best light and allow time to wander the outer bailey, not just the keep." },
           ],
           notes: 'The High Tatras call for real hiking days; Bratislava is a short addition at the start. Price check (2026-07): corrected from the flat €120/day to €80/day.',
           transport_to_next: 'Car, High Tatras-Brno ≈335 km (route-logic check 2026-08: was previously listed as ≈300 km, which was wrong).',
@@ -2044,8 +2044,8 @@ function rbBuildCentralEuropeRoadtripRoute() {
         {
           code: 'CZ', name: 'Czechia', days: 1, budget: 85, lat: 49.1951, lng: 16.6068,
           destinations: [
-            { name: 'Brno', lat: 49.1951, lng: 16.6068 },
-            { name: 'Špilberk Castle', lat: 49.1943, lng: 16.6034 },
+            { name: 'Brno', lat: 49.1951, lng: 16.6068, notes: "Villa Tugendhat, Mies van der Rohe's UNESCO-listed modernist house, is the city's real highlight beyond the old town; tours sell out within hours of release (release is ~2 months ahead, so book online as early as possible)." },
+            { name: 'Špilberk Castle', lat: 49.1943, lng: 16.6034, notes: "The fortress overlooking Brno doubled as a notorious Habsburg-era prison; its casemates (dungeons) are ticketed separately from the castle museum, and the ramparts give the best panoramic view over the city." },
           ],
           notes: 'Breaks up the long High Tatras-Prague drive (was ≈450 km in one go) into two, and is worthwhile in its own right, not just a technical break. Price check (2026-07): corrected from the flat €120/day to €85/day — outside Prague, Czechia is notably cheaper.',
           transport_to_next: 'Car, ≈200 km to Prague.',
@@ -2053,9 +2053,9 @@ function rbBuildCentralEuropeRoadtripRoute() {
         {
           code: 'CZ', name: 'Czechia', days: 5, budget: 650, lat: 50.0755, lng: 14.4378,
           destinations: [
-            { name: 'Prague', lat: 50.0755, lng: 14.4378 },
-            { name: 'Český Krumlov', lat: 48.8127, lng: 14.3175 },
-            { name: 'Bohemian Paradise (Turnov)', lat: 50.5333, lng: 15.1667 },
+            { name: 'Prague', lat: 50.0755, lng: 14.4378, notes: "Prague Castle complex and Charles Bridge are the anchors, but both are swamped by tour groups from mid-morning; cross the bridge and enter the castle grounds right at opening to see them uncrowded." },
+            { name: 'Český Krumlov', lat: 48.8127, lng: 14.3175, notes: "Its Vltava-river-bend old town and colorfully painted castle tower are the draw; it's overrun with day-trip buses from Prague around midday, so an early-morning visit or an overnight stay is the difference between a quiet town and a crowded one." },
+            { name: 'Bohemian Paradise (Turnov)', lat: 50.5333, lng: 15.1667, notes: "Sandstone rock towers (Prachovské skály) and the twin-towered ruins of Trosky Castle perched on volcanic cones are the standouts; the castle towers are climbable and worth the stairs for the view over the rock landscape." },
           ],
           notes: 'Prague alone deserves 2-3 days; Český Krumlov and Bohemian Paradise are both worth separate day trips. Price check (2026-07): Prague has clearly gotten more expensive in recent years (city-center prices approaching Western European levels) — corrected from €120 to €130/day, the only leg on this route that had to go up even as the rest of Czechia/Central Europe went down.',
           transport_to_next: 'Car, after Bohemian Paradise (Turnov) drive straight on to Wrocław (≈239 km) instead of first returning to Prague (which would be ≈323 km) — route-logic check 2026-08: saves ≈80 km, Turnov already sits on the route.',
@@ -2063,8 +2063,8 @@ function rbBuildCentralEuropeRoadtripRoute() {
         {
           code: 'PL', name: 'Poland', days: 3, budget: 195, lat: 51.1079, lng: 17.0385,
           destinations: [
-            { name: 'Wrocław', lat: 51.1079, lng: 17.0385 },
-            { name: 'Sudetes (optional)', lat: 50.7500, lng: 15.7333 },
+            { name: 'Wrocław', lat: 51.1079, lng: 17.0385, notes: "Beyond the market square, Ostrów Tumski (Cathedral Island) is worth walking at dusk when its gas lamps are lit by hand; the city's 600+ scattered gnome statues make for a fun, low-effort scavenger hunt between sights." },
+            { name: 'Sudetes (optional)', lat: 50.7500, lng: 15.7333, notes: "Karkonosze National Park's Śnieżka (1,603m) is the high point, straddling the Polish-Czech border with a chapel and weather station on top; a chairlift from Karpacz covers most of the ascent for those who don't want the full hike." },
           ],
           notes: 'Wrocław is easily done in a compact visit; the Sudetes mountains are a nice, optional addition. Price check (2026-07): Poland is one of the cheapest countries on this route — the flat €120/day was far too high, corrected to €65/day.',
           transport_to_next: 'Car, ≈280 km to Dresden — Poland doesn\'t charge cars toll on most motorways (only trucks pay, via e-TOLL).',
@@ -2072,8 +2072,8 @@ function rbBuildCentralEuropeRoadtripRoute() {
         {
           code: 'DE', name: 'Germany', days: 3, budget: 285, lat: 51.0504, lng: 13.7373,
           destinations: [
-            { name: 'Dresden', lat: 51.0504, lng: 13.7373 },
-            { name: 'Saxon Switzerland', lat: 50.9167, lng: 14.2667 },
+            { name: 'Dresden', lat: 51.0504, lng: 13.7373, notes: "The rebuilt Frauenkirche and the Zwinger Palace's Old Masters Gallery (Raphael's Sistine Madonna) are the must-sees beyond the old town walk; the Frauenkirche's dome gallery and evening organ recitals are easy to miss if you only see the exterior." },
+            { name: 'Saxon Switzerland', lat: 50.9167, lng: 14.2667, notes: "The Bastei rock formation and its bridge over the Elbe sandstone spires is the signature view; it gets very crowded with tour groups by mid-morning, so arrive at opening or hike in from Rathen for a quieter visit." },
           ],
           notes: 'Saxon Switzerland (rock formations, hiking) deserves a full day alongside the city stop in Dresden. Price check (2026-07): Dresden is relatively cheap for Germany — corrected from €120 to €95/day.',
           transport_to_next: 'End of the road trip — the drive back to the Netherlands, ≈700 km, in one long day or split with one last overnight stop along the way.',
@@ -5365,80 +5365,80 @@ function rbMigrateCentralEuropeRouteLogicOverhaul() {
     FR: {
       destinations: [
         { name: 'Straatsburg', lat: 48.5734, lng: 7.7521 },
-        { name: 'Colmar', lat: 48.0794, lng: 7.3585 },
+        { name: 'Colmar', lat: 48.0794, lng: 7.3585, notes: "Colmar's old town, especially the \"Petite Venise\" canal district, is the best-preserved fairy-tale half-timbered core on the Alsace Wine Route — walk it at dusk once the day-trip buses have thinned." },
         { name: 'Elzasser dorpen', lat: 48.0453, lng: 7.3079 },
       ],
       transport_to_next: 'Auto, ≈415 km naar Neuschwanstein/Garmisch via Karlsruhe-Stuttgart-Ulm-München (routelogica-check 2026-08: was als ≈300 km genoteerd, klopte niet) — geen tol of vignet nodig op dit traject.',
     },
     'DE::Neuschwanstein': {
       destinations: [
-        { name: 'Neuschwanstein', lat: 47.5576, lng: 10.7498 },
-        { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0958 },
-        { name: 'Zugspitze', lat: 47.4211, lng: 10.9853 },
+        { name: 'Neuschwanstein', lat: 47.5576, lng: 10.7498, notes: "Ludwig II's fantasy castle (the direct inspiration for Disney's Cinderella castle) photographs best from Marienbrücke, the bridge over the gorge behind it. Book the timed-entry ticket online well in advance — summer slots can sell out several weeks ahead and walk-up availability is unreliable." },
+        { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0958, notes: "Beyond being the Zugspitze gateway, the town's own highlight is the Partnachklamm gorge walk, a shaded ~1-hour loop through a carved rock canyon with waterfalls — an easy half-day add-on." },
+        { name: 'Zugspitze', lat: 47.4211, lng: 10.9853, notes: "Germany's highest peak rewards a clear day with views reaching into Austria, Switzerland and Italy, and its glacier snowfield near the summit still draws skiers in summer." },
       ],
       transport_to_next: 'Auto, ≈250 km naar Luzern, verder door naar Interlaken/Lauterbrunnen (in totaal ≈400 km vanaf Garmisch — routelogica-check 2026-08: de oorspronkelijke ≈250 km klopte alleen voor Luzern zelf, niet voor de hele stopgroep) — Zwitsers jaarvignet verplicht, koop het bij de grens.',
     },
     CH: {
       destinations: [
         { name: 'Luzern/Vierwoudstrekenmeer', lat: 47.0502, lng: 8.3093 },
-        { name: 'Interlaken', lat: 46.6863, lng: 7.8632 },
-        { name: 'Lauterbrunnen', lat: 46.5927, lng: 7.9098 },
+        { name: 'Interlaken', lat: 46.6863, lng: 7.8632, notes: "Sitting between Lake Thun and Lake Brienz, Interlaken itself is mainly a logistics and adventure-sports base (paragliding, canyoning) rather than a sight in its own right — treat it as the region's hub, not a destination to linger in." },
+        { name: 'Lauterbrunnen', lat: 46.5927, lng: 7.9098, notes: "A sheer-walled valley with 72 waterfalls, most famously Staubbach Falls dropping straight past the village; base here or in car-free Wengen/Mürren above it for the region's classic hikes rather than staying down in Interlaken." },
         { name: 'Berner Oberland', lat: 46.6244, lng: 8.0413 },
       ],
     },
     LI: {
-      destinations: [{ name: 'Vaduz', lat: 47.1410, lng: 9.5209 }],
+      destinations: [{ name: 'Vaduz', lat: 47.1410, lng: 9.5209, notes: "The capital is a small, walkable strip beneath the reigning prince's hilltop castle, which is a private residence viewable only from outside; an hour covers the pedestrian center and the Kunstmuseum." }],
       transport_to_next: 'Auto, ≈150 km naar Innsbruck via Feldkirch/Fernpass (routelogica-check 2026-08: was als ≈120 km genoteerd, klopte niet) — Oostenrijks 10-dagenvignet nodig voor de snelwegen (€12,80, veel logischer voor een roadtrip dan het jaarvignet van €106,80).',
     },
     AT: {
       destinations: [
         { name: 'Innsbruck/Tirol', lat: 47.2692, lng: 11.4041 },
-        { name: 'Salzburg', lat: 47.8095, lng: 13.0550 },
-        { name: 'Berchtesgaden/Königssee', lat: 47.5892, lng: 13.0632 },
-        { name: 'Salzkammergut', lat: 47.5622, lng: 13.6493 },
+        { name: 'Salzburg', lat: 47.8095, lng: 13.0550, notes: "Mozart's birthplace and several Sound of Music filming locations sit inside a compact old town dominated by the Hohensalzburg fortress above it; ride the funicular up for the view over the Salzach river." },
+        { name: 'Berchtesgaden/Königssee', lat: 47.5892, lng: 13.0632, notes: "Königssee's emerald water is the draw — a boat trip stops at the onion-domed St. Bartholomä church — and pairs well with the Eagle's Nest (Kehlsteinhaus) above, reachable only by a dedicated shuttle bus from Obersalzberg." },
+        { name: 'Salzkammergut', lat: 47.5622, lng: 13.6493, notes: "The lake district's must-see is Hallstatt's postcard lakeside village, but it's now tightly managed for overtourism: non-hotel-guest day visitors can't drive into the village center 08:00-17:00, so plan on the shuttle or train-and-boat approach and arrive early." },
         { name: 'Grossglockner Hochalpenstrasse', lat: 47.0742, lng: 12.8306 },
       ],
     },
     'IT::Tre Cime': {
       destinations: [
-        { name: 'Tre Cime', lat: 46.6198, lng: 12.3032 },
-        { name: 'Lago di Braies', lat: 46.6958, lng: 12.0858 },
-        { name: 'Seceda', lat: 46.5765, lng: 11.7099 },
-        { name: 'Val Gardena', lat: 46.5645, lng: 11.6750 },
+        { name: 'Tre Cime', lat: 46.6198, lng: 12.3032, notes: "The three sheer limestone peaks are best seen on the ~10km loop trail past Rifugio Locatelli; driving up requires the paid Rifugio Auronzo toll road (~€30/car), which fills its lot early on summer mornings." },
+        { name: 'Lago di Braies', lat: 46.6958, lng: 12.0858, notes: "The postcard turquoise lake with wooden rowboats is one of the most photographed spots in the Dolomites. From July 1-Sept 15, the valley road is closed to unbooked cars 9am-4pm — you must pre-book parking online at pragsparking.com or arrive before 9am/after 4pm." },
+        { name: 'Seceda', lat: 46.5765, lng: 11.7099, notes: "The jagged, wave-like ridgeline reached by cable car from Ortisei is one of the single most photographed panoramas in the Dolomites, especially at sunrise before the crowds and cloud build-up arrive." },
+        { name: 'Val Gardena', lat: 46.5645, lng: 11.6750, notes: "Doubles as the springboard for Alpe di Siusi, Europe's largest high-alpine meadow, reachable by cable car and worth a half-day on its own gentle trails." },
       ],
       transport_to_next: 'Auto, ≈410 km naar Milaan — samen met de Elzas-Beieren-rit aan het begin een van de langste ritten van de hele lus (routelogica-check 2026-08: geen unieke "langste rit" meer zodra de Elzas-Beieren-afstand gecorrigeerd is, zie dat land zijn eigen notitie) — vroeg vertrekken of splitsen met een tussenstop bij Verona/Brescia. Italiaanse autostrada rekent tol per kilometer.',
     },
     'IT::Duomo': {
       destinations: [
-        { name: 'Duomo', lat: 45.4642, lng: 9.1900 },
-        { name: 'Galleria', lat: 45.4656, lng: 9.1896 },
-        { name: 'Navigli', lat: 45.4514, lng: 9.1739 },
+        { name: 'Duomo', lat: 45.4642, lng: 9.1900, notes: "Beyond the interior, the rooftop terraces among the spires (separate ticket) are the real highlight — book that ticket ahead and go early to beat the queue." },
+        { name: 'Galleria', lat: 45.4656, lng: 9.1896, notes: "The 19th-century glass-domed arcade beside the Duomo is worth a stop for the architecture alone; local tradition has visitors spin on their heel three times on the mosaic bull's testicles for good luck." },
+        { name: 'Navigli', lat: 45.4514, lng: 9.1739, notes: "The canal district comes alive in early evening for aperitivo along the water; Naviglio Grande also hosts a Saturday antiques market." },
         { name: 'Laatste Avondmaal', lat: 45.4661, lng: 9.1706 },
       ],
     },
     'IT::Egyptisch Museum': {
       destinations: [
         { name: 'Egyptisch Museum', lat: 45.0703, lng: 7.6869 },
-        { name: 'Mole Antonelliana', lat: 45.0691, lng: 7.6934 },
+        { name: 'Mole Antonelliana', lat: 45.0691, lng: 7.6934, notes: "Originally built as a synagogue, it now houses the National Cinema Museum, with a glass panoramic lift to the top for a view over the city and the Alps." },
         { name: 'historisch centrum', lat: 45.0703, lng: 7.6869 },
       ],
       transport_to_next: 'Auto tot een bewaakte parkeerplaats bij Monterosso/La Spezia (≈260 km via Alessandria/Genua — routelogica-check 2026-08: was als ≈185 km genoteerd, klopte niet) — de dorpjes zelf zijn grotendeels autovrij.',
     },
     'IT::Monterosso': {
       destinations: [
-        { name: 'Monterosso', lat: 44.1461, lng: 9.6558 },
-        { name: 'Vernazza', lat: 44.1355, lng: 9.6857 },
-        { name: 'Corniglia', lat: 44.1197, lng: 9.7042 },
-        { name: 'Manarola', lat: 44.1067, lng: 9.7275 },
-        { name: 'Riomaggiore', lat: 44.0993, lng: 9.7378 },
+        { name: 'Monterosso', lat: 44.1461, lng: 9.6558, notes: "The only one of the five villages with a proper sandy beach, making it the spot to actually swim or relax rather than just photograph." },
+        { name: 'Vernazza', lat: 44.1355, lng: 9.6857, notes: "Widely considered the most photogenic of the five, with a small harbor piazza and castle ruin overlooking the water — arrive early before the day-trip crowds off the trail or train." },
+        { name: 'Corniglia', lat: 44.1197, lng: 9.7042, notes: "The only village not directly on the sea, perched on a clifftop; reach it via the ~380-step Lardarina stairway or the shuttle bus from the train station below." },
+        { name: 'Manarola', lat: 44.1067, lng: 9.7275, notes: "Best known for sunset views over its terraced vineyards and stacked colorful houses; the classic photo spot is the harbor breakwater just below town." },
+        { name: 'Riomaggiore', lat: 44.0993, lng: 9.7378, notes: "The southern trailhead for the inter-village hikes, with pastel houses cascading down to a tiny harbor — a good base for an evening after the trails." },
       ],
     },
     'IT::Florence': {
       destinations: [
-        { name: 'Florence', lat: 43.7696, lng: 11.2558 },
-        { name: 'Siena', lat: 43.3188, lng: 11.3308 },
-        { name: 'San Gimignano', lat: 43.4674, lng: 11.0431 },
-        { name: 'Chianti', lat: 43.4708, lng: 11.3350 },
+        { name: 'Florence', lat: 43.7696, lng: 11.2558, notes: "The Uffizi and the Duomo's dome climb are the two must-do highlights; book Uffizi tickets ahead of time, as walk-up lines run for hours." },
+        { name: 'Siena', lat: 43.3188, lng: 11.3308, notes: "The shell-shaped Piazza del Campo hosts the Palio horse race twice a year (July 2 and Aug 16); climbing the Torre del Mangia gives the best rooftop view over the square." },
+        { name: 'San Gimignano', lat: 43.4674, lng: 11.0431, notes: "Its skyline of medieval stone towers (nicknamed \"Medieval Manhattan\") is best appreciated from just outside the walls around sunset, once the day-trip buses thin out." },
+        { name: 'Chianti', lat: 43.4708, lng: 11.3350, notes: "A scenic drive through vineyard villages like Greve and Radda in Chianti; most estates expect tastings to be booked ahead rather than accepting walk-ins." },
       ],
     },
     SM: {
@@ -5446,23 +5446,23 @@ function rbMigrateCentralEuropeRouteLogicOverhaul() {
     },
     'IT::Piazza San Marco': {
       destinations: [
-        { name: 'Piazza San Marco', lat: 45.4408, lng: 12.3155 },
-        { name: 'Dorsoduro', lat: 45.4302, lng: 12.3245 },
-        { name: 'Murano/Burano', lat: 45.4585, lng: 12.3538 },
+        { name: 'Piazza San Marco', lat: 45.4408, lng: 12.3155, notes: "St Mark's Basilica and the Doge's Palace anchor the square; the basilica itself is free to enter, but a skip-the-line booking avoids the worst of the queue." },
+        { name: 'Dorsoduro', lat: 45.4302, lng: 12.3245, notes: "A quieter, more residential sestiere than San Marco, home to the Accademia Gallery and the Peggy Guggenheim Collection — a good escape from the main crowds." },
+        { name: 'Murano/Burano', lat: 45.4585, lng: 12.3538, notes: "Worth a separate vaporetto trip from the main islands: Murano for glass-blowing demonstrations, Burano for its brightly painted houses and lace-making tradition." },
       ],
     },
     SI: {
       destinations: [
         { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
-        { name: 'Bohinj', lat: 46.2833, lng: 13.8833 },
+        { name: 'Bohinj', lat: 46.2833, lng: 13.8833, notes: "Slovenia's larger, quieter alpine lake south of Bled — glacial, ringed by forested peaks, with far fewer crowds than Bled. Ride the Vogel cable car above the lake for a panoramic view, or use it as the trailhead for the Savica waterfall hike." },
         { name: 'Soča-vallei', lat: 46.3833, lng: 13.6167 },
-        { name: 'Triglav NP', lat: 46.3833, lng: 13.8378 },
+        { name: 'Triglav NP', lat: 46.3833, lng: 13.8378, notes: "Slovenia's only national park and home to its highest peak (2,864m, Mt. Triglav). For non-mountaineers the standout is the Seven Lakes Valley (Sedmera Jezera) day hike from Bohinj — the summit itself needs a guide and via ferrata gear, so don't plan on it without one." },
         { name: 'grotten (Postojna/Škocjan)', lat: 45.7830, lng: 14.2018 },
       ],
     },
     HR: {
       destinations: [
-        { name: 'Plitvice', lat: 44.8654, lng: 15.5820 },
+        { name: 'Plitvice', lat: 44.8654, lng: 15.5820, notes: "The wooden boardwalks run right along/over the turquoise cascades themselves, which is the actual highlight beyond \"a day of hiking.\" Arrive at opening or enter via Entrance 2 to work against the tour-bus flow and get the Lower Lakes' iconic viewpoints uncrowded." },
         { name: 'Zagreb', lat: 45.8150, lng: 15.9819, notes: "The Upper Town's colorful-tiled St. Mark's Church and the Dolac market are the highlights, linked to the Lower Town by the world's shortest funicular (under a minute). A free walking tour is an efficient way to cover both halves in a day." },
       ],
       notes: 'Plitvice verdient een volle dag (grote wandelroutes), Zagreb een korte stadstop. Update (2026-08): Kroatië is sinds maart 2026 officieel landmijnvrij verklaard — de eerdere waarschuwing over niet-geruimde zones rond Plitvice is niet langer actueel. Prijscheck (2026-07): binnenland-Kroatië (niet de kust) is goedkoper dan het vlakke €120/dag-tarief, gecorrigeerd naar €85/dag (Plitvice-entree ~€35-40 apart, niet in het dagtarief).',
@@ -5471,7 +5471,7 @@ function rbMigrateCentralEuropeRouteLogicOverhaul() {
       destinations: [
         { name: 'Belgrado', lat: 44.7866, lng: 20.4489 },
         { name: 'Tara National Park (dagtrip vanuit Belgrado, retour)', lat: 43.8931, lng: 19.4206 },
-        { name: 'Novi Sad', lat: 45.2671, lng: 19.8335 },
+        { name: 'Novi Sad', lat: 45.2671, lng: 19.8335, notes: "Petrovaradin Fortress (\"Gibraltar on the Danube\") dominates the skyline and is worth the climb for the river/old-town view. Note: EXIT Festival, long associated with this fortress, has moved to a global-tour format and its return to Novi Sad is unconfirmed (not held there in 2026) — don't plan the visit around it." },
       ],
       notes: "Servië heeft verder weinig natuurhoogtepunten op deze route — Tara NP (Drina-rivier, bekende uitkijkpunten) is een bewuste omweg die bij deze reisstijl past, in het zuidwesten van het land. Routelogica-fix (2026-08, search-bevestigd): stond eerder als laatste stop vóór het vertrek naar Boedapest — Tara NP-Boedapest is in werkelijkheid ≈520 km, niet de ≈320 km die genoteerd stond, en zou zo'n 6-7 uur extra rijden hebben gekost bovenop de al lange reis. Opgelost door Tara NP als dagtrip/retourtje vanuit Belgrado te doen (±360-400 km heen-en-terug) en daarna via het bestaande Belgrado-Novi Sad-Boedapest-traject verder te reizen — de detour-kosten van Tara NP blijven bestaan, maar de dure lange rit vanuit een uithoek van het land vervalt. ⚠️ Reisadvies (2026-07, nog actueel): er zijn regelmatig demonstraties in Servië, vooral in Belgrado en Novi Sad (aanhoudende protestbeweging sinds eind 2024) — soms wegblokkades, incidenteel geweld, hou rekening met mogelijke vertraging bij wegcontroles. Vermijd drukte/demonstraties, check actuele situatie vlak voor vertrek. Prijscheck (2026-07): Servië is veruit het goedkoopst van de Balkanlanden op deze route — het vlakke €120/dag was meer dan het dubbele van reëel, gecorrigeerd naar €60/dag.",
       transport_to_next: 'Auto, ≈90 km Belgrado-Novi Sad, dan ≈298 km Novi Sad-Boedapest (≈388 km totaal) — Novi Sad ligt al op de directe route, dus dit stuk is ongewijzigd t.o.v. eerder.',
@@ -5484,36 +5484,36 @@ function rbMigrateCentralEuropeRouteLogicOverhaul() {
     },
     SK: {
       destinations: [
-        { name: 'Bratislava', lat: 48.1486, lng: 17.1077 },
+        { name: 'Bratislava', lat: 48.1486, lng: 17.1077, notes: "Compact walkable Old Town plus the hilltop Bratislava Castle overlooking the Danube; the UFO Bridge's observation deck gives the best skyline view and doubles as a sunset spot." },
         { name: 'Hoge Tatra', lat: 49.1500, lng: 20.0500 },
-        { name: 'Slovenský Raj', lat: 48.9333, lng: 20.4167 },
-        { name: 'Spiš Castle', lat: 48.9958, lng: 20.7644 },
+        { name: 'Slovenský Raj', lat: 48.9333, lng: 20.4167, notes: "Known for narrow gorge trails secured with ladders, chains and catwalks bolted alongside waterfalls (Suchá Belá is the classic route); trails run one-way upstream only, so wear grippy water-resistant shoes and expect a ~2-hour scramble, not a stroll." },
+        { name: 'Spiš Castle', lat: 48.9958, lng: 20.7644, notes: "One of Central Europe's largest castle complexes, its ruins visible for miles across the Spiš countryside; go late afternoon for the best light and allow time to wander the outer bailey, not just the keep." },
       ],
       transport_to_next: 'Auto, Hoge Tatra-Brno ≈335 km (routelogica-check 2026-08: was als ≈300 km genoteerd, klopte niet).',
     },
     'CZ::Brno': {
       destinations: [
-        { name: 'Brno', lat: 49.1951, lng: 16.6068 },
+        { name: 'Brno', lat: 49.1951, lng: 16.6068, notes: "Villa Tugendhat, Mies van der Rohe's UNESCO-listed modernist house, is the city's real highlight beyond the old town; tours sell out within hours of release (release is ~2 months ahead, so book online as early as possible)." },
         { name: 'Špilberk-burcht', lat: 49.1943, lng: 16.6034 },
       ],
     },
     'CZ::Praag': {
       destinations: [
         { name: 'Praag', lat: 50.0755, lng: 14.4378 },
-        { name: 'Český Krumlov', lat: 48.8127, lng: 14.3175 },
+        { name: 'Český Krumlov', lat: 48.8127, lng: 14.3175, notes: "Its Vltava-river-bend old town and colorfully painted castle tower are the draw; it's overrun with day-trip buses from Prague around midday, so an early-morning visit or an overnight stay is the difference between a quiet town and a crowded one." },
         { name: 'Boheems Paradijs (Turnov)', lat: 50.5333, lng: 15.1667 },
       ],
       transport_to_next: 'Auto, rijd na Boheems Paradijs (Turnov) rechtstreeks door naar Wrocław (≈239 km) in plaats van eerst terug naar Praag (zou ≈323 km zijn) — routelogica-check 2026-08: scheelt ≈80 km, Turnov ligt al op de route.',
     },
     PL: {
       destinations: [
-        { name: 'Wrocław', lat: 51.1079, lng: 17.0385 },
+        { name: 'Wrocław', lat: 51.1079, lng: 17.0385, notes: "Beyond the market square, Ostrów Tumski (Cathedral Island) is worth walking at dusk when its gas lamps are lit by hand; the city's 600+ scattered gnome statues make for a fun, low-effort scavenger hunt between sights." },
         { name: 'Sudeten (optioneel)', lat: 50.7500, lng: 15.7333 },
       ],
     },
     'DE::Dresden': {
       destinations: [
-        { name: 'Dresden', lat: 51.0504, lng: 13.7373 },
+        { name: 'Dresden', lat: 51.0504, lng: 13.7373, notes: "The rebuilt Frauenkirche and the Zwinger Palace's Old Masters Gallery (Raphael's Sistine Madonna) are the must-sees beyond the old town walk; the Frauenkirche's dome gallery and evening organ recitals are easy to miss if you only see the exterior." },
         { name: 'Saksisch Zwitserland', lat: 50.9167, lng: 14.2667 },
       ],
     },
@@ -8500,6 +8500,97 @@ function rbMigrateNordicBalticDestinationNotes() {
 }
 
 /**
+ * Batch 15 (2026-09-17) for the per-destination-notes workflow -- Central European Grand Roadtrip
+ * (14 legs, 65 destinations, 63 newly researched here since Bled/Zagreb already had notes from
+ * earlier batches), researched as 4 parallel sub-batches matching the route's own region grouping
+ * (Alpine Countries, Dolomites & Northern Italy, Balkans, Central Europe). Same generic
+ * name-matching migration pattern as the other grand tours.
+ */
+function rbMigrateCentralEuropeanRoadtripDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_CENTRAL_EUROPEAN_ROADTRIP_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_CENTRAL_EUROPEAN_ROADTRIP_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Strasbourg': 'The Gothic cathedral (climb the tower platform for rooftop views) and the canal-laced half-timbered Petite France quarter are the two things to prioritize; both fit into a half-day on foot.',
+    'Colmar': "Colmar's old town, especially the \"Petite Venise\" canal district, is the best-preserved fairy-tale half-timbered core on the Alsace Wine Route — walk it at dusk once the day-trip buses have thinned.",
+    'Alsace villages': 'Riquewihr, Eguisheim and Kaysersberg along the Route des Vins pair colorful timbered houses with vineyard walks right from the village edge; pick one or two rather than all of them, and expect Riquewihr/Eguisheim to be very crowded at midday in season.',
+    'Neuschwanstein': "Ludwig II's fantasy castle (the direct inspiration for Disney's Cinderella castle) photographs best from Marienbrücke, the bridge over the gorge behind it. Book the timed-entry ticket online well in advance — summer slots can sell out several weeks ahead and walk-up availability is unreliable.",
+    'Garmisch-Partenkirchen': "Beyond being the Zugspitze gateway, the town's own highlight is the Partnachklamm gorge walk, a shaded ~1-hour loop through a carved rock canyon with waterfalls — an easy half-day add-on.",
+    'Zugspitze': "Germany's highest peak rewards a clear day with views reaching into Austria, Switzerland and Italy, and its glacier snowfield near the summit still draws skiers in summer.",
+    'Lucerne/Lake Lucerne': 'The wooden, tower-flanked Chapel Bridge (Kapellbrücke) anchors a compact, walkable old town; a lake cruise combined with the cogwheel train up Pilatus or Rigi makes a classic half/full-day trip straight from the city.',
+    'Interlaken': "Sitting between Lake Thun and Lake Brienz, Interlaken itself is mainly a logistics and adventure-sports base (paragliding, canyoning) rather than a sight in its own right — treat it as the region's hub, not a destination to linger in.",
+    'Lauterbrunnen': 'A sheer-walled valley with 72 waterfalls, most famously Staubbach Falls dropping straight past the village; base here or in car-free Wengen/Mürren above it for the region\'s classic hikes rather than staying down in Interlaken.',
+    'Bernese Oberland': "Beyond the multi-day Jungfrau hiking already noted, the Schilthorn's revolving Piz Gloria restaurant (a Bond film location) and the First cliff walk near Grindelwald are the other two cable-car viewpoints worth the fare here.",
+    'Vaduz': "The capital is a small, walkable strip beneath the reigning prince's hilltop castle, which is a private residence viewable only from outside; an hour covers the pedestrian center and the Kunstmuseum.",
+    'Innsbruck/Tyrol': "The Nordkette cable car climbs directly from Innsbruck's medieval old town (Golden Roof) into high alpine terrain in under 20 minutes — genuine high-mountain scenery reachable without leaving the city.",
+    'Salzburg': "Mozart's birthplace and several Sound of Music filming locations sit inside a compact old town dominated by the Hohensalzburg fortress above it; ride the funicular up for the view over the Salzach river.",
+    'Berchtesgaden/Königssee': "Königssee's emerald water is the draw — a boat trip stops at the onion-domed St. Bartholomä church — and pairs well with the Eagle's Nest (Kehlsteinhaus) above, reachable only by a dedicated shuttle bus from Obersalzberg.",
+    'Salzkammergut': "The lake district's must-see is Hallstatt's postcard lakeside village, but it's now tightly managed for overtourism: non-hotel-guest day visitors can't drive into the village center 08:00-17:00, so plan on the shuttle or train-and-boat approach and arrive early.",
+    'Grossglockner High Alpine Road': "This toll road climbs to nearly 2,500m past Austria's highest peak, ending at the Kaiser-Franz-Josefs-Höhe viewpoint over the retreating Pasterze glacier. It's typically only open late April/May through early November (weather-dependent on both ends), so check current status before routing through it outside summer.",
+    'Tre Cime': 'The three sheer limestone peaks are best seen on the ~10km loop trail past Rifugio Locatelli; driving up requires the paid Rifugio Auronzo toll road (~€30/car), which fills its lot early on summer mornings.',
+    'Lago di Braies': 'The postcard turquoise lake with wooden rowboats is one of the most photographed spots in the Dolomites. From July 1-Sept 15, the valley road is closed to unbooked cars 9am-4pm — you must pre-book parking online at pragsparking.com or arrive before 9am/after 4pm.',
+    'Seceda': 'The jagged, wave-like ridgeline reached by cable car from Ortisei is one of the single most photographed panoramas in the Dolomites, especially at sunrise before the crowds and cloud build-up arrive.',
+    'Val Gardena': 'Doubles as the springboard for Alpe di Siusi, Europe\'s largest high-alpine meadow, reachable by cable car and worth a half-day on its own gentle trails.',
+    'Duomo': 'Beyond the interior, the rooftop terraces among the spires (separate ticket) are the real highlight — book that ticket ahead and go early to beat the queue.',
+    'Galleria': "The 19th-century glass-domed arcade beside the Duomo is worth a stop for the architecture alone; local tradition has visitors spin on their heel three times on the mosaic bull's testicles for good luck.",
+    'Navigli': 'The canal district comes alive in early evening for aperitivo along the water; Naviglio Grande also hosts a Saturday antiques market.',
+    'The Last Supper': 'Only 40 visitors are admitted per 15-minute slot, and tickets for each 3-month release window sell out within minutes of going live — book the instant a window opens, or fall back to a guided-tour slot if direct tickets are gone.',
+    'Egyptian Museum': "Holds the second-largest Egyptian collection in the world after Cairo's own museum, which is what justifies the half-day.",
+    'Mole Antonelliana': 'Originally built as a synagogue, it now houses the National Cinema Museum, with a glass panoramic lift to the top for a view over the city and the Alps.',
+    'historic center': 'Grand porticoed boulevards connect baroque piazzas (Piazza Castello, Piazza San Carlo); try a bicerin — Turin\'s own coffee-chocolate-cream drink — at a historic café like Caffè Al Bicerin.',
+    'Monterosso': 'The only one of the five villages with a proper sandy beach, making it the spot to actually swim or relax rather than just photograph.',
+    'Vernazza': 'Widely considered the most photogenic of the five, with a small harbor piazza and castle ruin overlooking the water — arrive early before the day-trip crowds off the trail or train.',
+    'Corniglia': 'The only village not directly on the sea, perched on a clifftop; reach it via the ~380-step Lardarina stairway or the shuttle bus from the train station below.',
+    'Manarola': 'Best known for sunset views over its terraced vineyards and stacked colorful houses; the classic photo spot is the harbor breakwater just below town.',
+    'Riomaggiore': 'The southern trailhead for the inter-village hikes, with pastel houses cascading down to a tiny harbor — a good base for an evening after the trails.',
+    'Florence': "The Uffizi and the Duomo's dome climb are the two must-do highlights; book Uffizi tickets ahead of time, as walk-up lines run for hours.",
+    'Siena': 'The shell-shaped Piazza del Campo hosts the Palio horse race twice a year (July 2 and Aug 16); climbing the Torre del Mangia gives the best rooftop view over the square.',
+    'San Gimignano': 'Its skyline of medieval stone towers (nicknamed "Medieval Manhattan") is best appreciated from just outside the walls around sunset, once the day-trip buses thin out.',
+    'Chianti': 'A scenic drive through vineyard villages like Greve and Radda in Chianti; most estates expect tastings to be booked ahead rather than accepting walk-ins.',
+    'Historic center': "San Marino's Three Towers (Guaita, Cesta, Montale) on Mount Titano are the postcard image; the connecting walk via Passo delle Streghe between them gives sweeping Adriatic-coast views on a clear day.",
+    'Piazza San Marco': "St Mark's Basilica and the Doge's Palace anchor the square; the basilica itself is free to enter, but a skip-the-line booking avoids the worst of the queue.",
+    'Dorsoduro': 'A quieter, more residential sestiere than San Marco, home to the Accademia Gallery and the Peggy Guggenheim Collection — a good escape from the main crowds.',
+    'Murano/Burano': 'Worth a separate vaporetto trip from the main islands: Murano for glass-blowing demonstrations, Burano for its brightly painted houses and lace-making tradition.',
+    'Bohinj': "Slovenia's larger, quieter alpine lake south of Bled — glacial, ringed by forested peaks, with far fewer crowds than Bled. Ride the Vogel cable car above the lake for a panoramic view, or use it as the trailhead for the Savica waterfall hike.",
+    'Soča Valley': "The turquoise Soča River is Slovenia's adventure-sports hub — rafting, kayaking, and canyoning out of Bovec/Kobarid — and doubles as a WWI history site via Kobarid's Isonzo Front museum. Visit in late spring/early summer for the clearest turquoise water, before summer glacial melt clouds it.",
+    'Triglav NP': "Slovenia's only national park and home to its highest peak (2,864m, Mt. Triglav). For non-mountaineers the standout is the Seven Lakes Valley (Sedmera Jezera) day hike from Bohinj — the summit itself needs a guide and via ferrata gear, so don't plan on it without one.",
+    'caves (Postojna/Škocjan)': "Postojna's electric train ride deep into its dripstone cave system is the easy, family-friendly option; Škocjan (UNESCO-listed) is more dramatic — a colossal underground canyon crossed by footbridge — but it's guided-tour-only with limited tour times, so book ahead.",
+    'Plitvice': 'The wooden boardwalks run right along/over the turquoise cascades themselves, which is the actual highlight beyond "a day of hiking." Arrive at opening or enter via Entrance 2 to work against the tour-bus flow and get the Lower Lakes\' iconic viewpoints uncrowded.',
+    'Belgrade': "Kalemegdan Fortress, overlooking the Sava/Danube confluence, is the city's best free view and history in one stop; Skadarlija's cobbled bohemian quarter is the spot for a traditional live-music dinner in the evening.",
+    'Tara National Park (day trip from Belgrade, round-trip)': "The payoff is the Banjska Stena viewpoint over the Drina River canyon and Perućac Lake; if time allows within the day trip, combine it with nearby Drvengrad (Küstendorf, Emir Kusturica's wooden village) and the Šargan Eight heritage railway.",
+    'Novi Sad': 'Petrovaradin Fortress ("Gibraltar on the Danube") dominates the skyline and is worth the climb for the river/old-town view. Note: EXIT Festival, long associated with this fortress, has moved to a global-tour format and its return to Novi Sad is unconfirmed (not held there in 2026) — don\'t plan the visit around it.',
+    'Budapest': "Beyond the thermal bath already noted, the Fisherman's Bastion terraces on the Buda side give the best skyline view over Pest and the Danube, especially near sunset — pair it with a walk across Chain Bridge.",
+    'thermal baths': 'Széchenyi (grand, outdoor, Neo-Baroque pools) is the classic choice for a relaxed soak. Worth knowing: on Saturday nights (Feb-Dec) it converts into a ticketed "Sparty" night-bathing event, a different crowd/vibe than a daytime visit — pick your day accordingly if you want a quiet soak.',
+    'Bratislava': "Compact walkable Old Town plus the hilltop Bratislava Castle overlooking the Danube; the UFO Bridge's observation deck gives the best skyline view and doubles as a sunset spot.",
+    'High Tatras': 'Štrbské Pleso and Starý Smokovec are the main trailheads, with Gerlachovský štít (2,655m) as the range\'s highest peak; the cable car up to Skalnaté Pleso/Lomnický štít lets you reach dramatic alpine scenery even without committing to a full hike.',
+    'Slovenský Raj': 'Known for narrow gorge trails secured with ladders, chains and catwalks bolted alongside waterfalls (Suchá Belá is the classic route); trails run one-way upstream only, so wear grippy water-resistant shoes and expect a ~2-hour scramble, not a stroll.',
+    'Spiš Castle': "One of Central Europe's largest castle complexes, its ruins visible for miles across the Spiš countryside; go late afternoon for the best light and allow time to wander the outer bailey, not just the keep.",
+    'Brno': "Villa Tugendhat, Mies van der Rohe's UNESCO-listed modernist house, is the city's real highlight beyond the old town; tours sell out within hours of release (release is ~2 months ahead, so book online as early as possible).",
+    'Špilberk Castle': 'The fortress overlooking Brno doubled as a notorious Habsburg-era prison; its casemates (dungeons) are ticketed separately from the castle museum, and the ramparts give the best panoramic view over the city.',
+    'Prague': 'Prague Castle complex and Charles Bridge are the anchors, but both are swamped by tour groups from mid-morning; cross the bridge and enter the castle grounds right at opening to see them uncrowded.',
+    'Český Krumlov': "Its Vltava-river-bend old town and colorfully painted castle tower are the draw; it's overrun with day-trip buses from Prague around midday, so an early-morning visit or an overnight stay is the difference between a quiet town and a crowded one.",
+    'Bohemian Paradise (Turnov)': 'Sandstone rock towers (Prachovské skály) and the twin-towered ruins of Trosky Castle perched on volcanic cones are the standouts; the castle towers are climbable and worth the stairs for the view over the rock landscape.',
+    'Wrocław': "Beyond the market square, Ostrów Tumski (Cathedral Island) is worth walking at dusk when its gas lamps are lit by hand; the city's 600+ scattered gnome statues make for a fun, low-effort scavenger hunt between sights.",
+    'Sudetes (optional)': "Karkonosze National Park's Śnieżka (1,603m) is the high point, straddling the Polish-Czech border with a chapel and weather station on top; a chairlift from Karpacz covers most of the ascent for those who don't want the full hike.",
+    'Dresden': 'The rebuilt Frauenkirche and the Zwinger Palace\'s Old Masters Gallery (Raphael\'s Sistine Madonna) are the must-sees beyond the old town walk; the Frauenkirche\'s dome gallery and evening organ recitals are easy to miss if you only see the exterior.',
+    'Saxon Switzerland': 'The Bastei rock formation and its bridge over the Elbe sandstone spires is the signature view; it gets very crowded with tour groups by mid-morning, so arrive at opening or hike in from Rathen for a quieter visit.',
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -10549,10 +10640,10 @@ function rbBuildDolomitesNorthItalyRoute() {
     {
       code: 'IT', name: 'Italy', days: 6, budget: 720, lat: 46.5369, lng: 12.1357,
       destinations: [
-        { name: 'Tre Cime', lat: 46.6198, lng: 12.3032 },
-        { name: 'Lago di Braies', lat: 46.6958, lng: 12.0858 },
-        { name: 'Seceda', lat: 46.5765, lng: 11.7099 },
-        { name: 'Val Gardena', lat: 46.5645, lng: 11.6750 },
+        { name: 'Tre Cime', lat: 46.6198, lng: 12.3032, notes: "The three sheer limestone peaks are best seen on the ~10km loop trail past Rifugio Locatelli; driving up requires the paid Rifugio Auronzo toll road (~€30/car), which fills its lot early on summer mornings." },
+        { name: 'Lago di Braies', lat: 46.6958, lng: 12.0858, notes: "The postcard turquoise lake with wooden rowboats is one of the most photographed spots in the Dolomites. From July 1-Sept 15, the valley road is closed to unbooked cars 9am-4pm — you must pre-book parking online at pragsparking.com or arrive before 9am/after 4pm." },
+        { name: 'Seceda', lat: 46.5765, lng: 11.7099, notes: "The jagged, wave-like ridgeline reached by cable car from Ortisei is one of the single most photographed panoramas in the Dolomites, especially at sunrise before the crowds and cloud build-up arrive." },
+        { name: 'Val Gardena', lat: 46.5645, lng: 11.6750, notes: "Doubles as the springboard for Alpe di Siusi, Europe's largest high-alpine meadow, reachable by cable car and worth a half-day on its own gentle trails." },
       ],
       notes: "Entry: direct flight Amsterdam-Venice (VCE), rental car, ≈150 km to the Dolomites (toward Cortina d'Ampezzo; from ±€80-200 return, ±1h40; best period July-August). Price indication from 2026-08 web research, a snapshot. One of the biggest highlights of the whole trip — the well-known hikes (Tre Cime loop, Seceda) are each a full day in themselves.",
       transport_to_next: 'Car, ≈410 km to Milan — leave early or split the drive with a stop at Verona/Brescia. Italian autostrada tolls charge per kilometre.',
@@ -10560,9 +10651,9 @@ function rbBuildDolomitesNorthItalyRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 240, lat: 45.4642, lng: 9.1900,
       destinations: [
-        { name: 'Duomo', lat: 45.4642, lng: 9.1900 },
-        { name: 'Galleria', lat: 45.4656, lng: 9.1896 },
-        { name: 'Navigli', lat: 45.4514, lng: 9.1739 },
+        { name: 'Duomo', lat: 45.4642, lng: 9.1900, notes: "Beyond the interior, the rooftop terraces among the spires (separate ticket) are the real highlight — book that ticket ahead and go early to beat the queue." },
+        { name: 'Galleria', lat: 45.4656, lng: 9.1896, notes: "The 19th-century glass-domed arcade beside the Duomo is worth a stop for the architecture alone; local tradition has visitors spin on their heel three times on the mosaic bull's testicles for good luck." },
+        { name: 'Navigli', lat: 45.4514, lng: 9.1739, notes: "The canal district comes alive in early evening for aperitivo along the water; Naviglio Grande also hosts a Saturday antiques market." },
         { name: 'Last Supper', lat: 45.4661, lng: 9.1706 },
       ],
       notes: 'One full day for the city centre, a second if you want to include the Last Supper (reservation required).',
@@ -10571,8 +10662,8 @@ function rbBuildDolomitesNorthItalyRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 190, lat: 45.0703, lng: 7.6869,
       destinations: [
-        { name: 'Egyptian Museum', lat: 45.0703, lng: 7.6869 },
-        { name: 'Mole Antonelliana', lat: 45.0691, lng: 7.6934 },
+        { name: 'Egyptian Museum', lat: 45.0703, lng: 7.6869, notes: "Holds the second-largest Egyptian collection in the world after Cairo's own museum, which is what justifies the half-day." },
+        { name: 'Mole Antonelliana', lat: 45.0691, lng: 7.6934, notes: "Originally built as a synagogue, it now houses the National Cinema Museum, with a glass panoramic lift to the top for a view over the city and the Alps." },
         { name: 'Historic centre', lat: 45.0703, lng: 7.6869 },
       ],
       notes: 'A compact, underrated city — the Egyptian Museum (the second largest in the world) deserves half a day on its own. Price check (2026-07): Turin is cheaper than the flat €120/day rate, corrected to €95/day.',
@@ -10581,11 +10672,11 @@ function rbBuildDolomitesNorthItalyRoute() {
     {
       code: 'IT', name: 'Italy', days: 3, budget: 435, lat: 44.1461, lng: 9.6558,
       destinations: [
-        { name: 'Monterosso', lat: 44.1461, lng: 9.6558 },
-        { name: 'Vernazza', lat: 44.1355, lng: 9.6857 },
-        { name: 'Corniglia', lat: 44.1197, lng: 9.7042 },
-        { name: 'Manarola', lat: 44.1067, lng: 9.7275 },
-        { name: 'Riomaggiore', lat: 44.0993, lng: 9.7378 },
+        { name: 'Monterosso', lat: 44.1461, lng: 9.6558, notes: "The only one of the five villages with a proper sandy beach, making it the spot to actually swim or relax rather than just photograph." },
+        { name: 'Vernazza', lat: 44.1355, lng: 9.6857, notes: "Widely considered the most photogenic of the five, with a small harbor piazza and castle ruin overlooking the water — arrive early before the day-trip crowds off the trail or train." },
+        { name: 'Corniglia', lat: 44.1197, lng: 9.7042, notes: "The only village not directly on the sea, perched on a clifftop; reach it via the ~380-step Lardarina stairway or the shuttle bus from the train station below." },
+        { name: 'Manarola', lat: 44.1067, lng: 9.7275, notes: "Best known for sunset views over its terraced vineyards and stacked colorful houses; the classic photo spot is the harbor breakwater just below town." },
+        { name: 'Riomaggiore', lat: 44.0993, lng: 9.7378, notes: "The southern trailhead for the inter-village hikes, with pastel houses cascading down to a tiny harbor — a good base for an evening after the trails." },
       ],
       notes: 'The five villages and the hiking trails between them (Sentiero Azzurro) are the whole point — three days for relaxed hiking plus a short boat trip. Price check (2026-07): scarce/expensive accommodation and tourist markup on food push this above the flat €120/day rate, corrected to €145/day.',
       transport_to_next: 'Car, ≈140 km to Florence via La Spezia-Lucca-Florence.',
@@ -10593,10 +10684,10 @@ function rbBuildDolomitesNorthItalyRoute() {
     {
       code: 'IT', name: 'Italy', days: 3, budget: 360, lat: 43.7696, lng: 11.2558,
       destinations: [
-        { name: 'Florence', lat: 43.7696, lng: 11.2558 },
-        { name: 'Siena', lat: 43.3188, lng: 11.3308 },
-        { name: 'San Gimignano', lat: 43.4674, lng: 11.0431 },
-        { name: 'Chianti', lat: 43.4708, lng: 11.3350 },
+        { name: 'Florence', lat: 43.7696, lng: 11.2558, notes: "The Uffizi and the Duomo's dome climb are the two must-do highlights; book Uffizi tickets ahead of time, as walk-up lines run for hours." },
+        { name: 'Siena', lat: 43.3188, lng: 11.3308, notes: "The shell-shaped Piazza del Campo hosts the Palio horse race twice a year (July 2 and Aug 16); climbing the Torre del Mangia gives the best rooftop view over the square." },
+        { name: 'San Gimignano', lat: 43.4674, lng: 11.0431, notes: "Its skyline of medieval stone towers (nicknamed \"Medieval Manhattan\") is best appreciated from just outside the walls around sunset, once the day-trip buses thin out." },
+        { name: 'Chianti', lat: 43.4708, lng: 11.3350, notes: "A scenic drive through vineyard villages like Greve and Radda in Chianti; most estates expect tastings to be booked ahead rather than accepting walk-ins." },
       ],
       notes: 'Kept compact ("a slice of Tuscany") — Florence plus one day of Chianti/Siena/San Gimignano.',
       transport_to_next: 'Car, ≈180 km to San Marino — Florence and San Marino are close to each other.',
@@ -10610,9 +10701,9 @@ function rbBuildDolomitesNorthItalyRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 320, lat: 45.4408, lng: 12.3155,
       destinations: [
-        { name: 'Piazza San Marco', lat: 45.4408, lng: 12.3155 },
-        { name: 'Dorsoduro', lat: 45.4302, lng: 12.3245 },
-        { name: 'Murano/Burano', lat: 45.4585, lng: 12.3538 },
+        { name: 'Piazza San Marco', lat: 45.4408, lng: 12.3155, notes: "St Mark's Basilica and the Doge's Palace anchor the square; the basilica itself is free to enter, but a skip-the-line booking avoids the worst of the queue." },
+        { name: 'Dorsoduro', lat: 45.4302, lng: 12.3245, notes: "A quieter, more residential sestiere than San Marco, home to the Accademia Gallery and the Peggy Guggenheim Collection — a good escape from the main crowds." },
+        { name: 'Murano/Burano', lat: 45.4585, lng: 12.3538, notes: "Worth a separate vaporetto trip from the main islands: Murano for glass-blowing demonstrations, Burano for its brightly painted houses and lace-making tradition." },
       ],
       notes: 'Right next to VCE — an efficient last stop before the flight home. Price check (2026-07): central Venice is a well-known price outlier (accommodation 2-3x Mestre-level, expensive vaporetto day passes) — corrected from €120 to €160/day.',
       transport_to_next: 'End of this route — drive back to Venice (VCE), direct return flight to Amsterdam.',
@@ -11274,7 +11365,7 @@ function rbBuildBavariaMunichAlpsRoute() {
       code: 'DE', name: 'Germany', days: 5, budget: 525, lat: 48.1351, lng: 11.5820,
       destinations: [
         { name: 'Munich (Marienplatz, Englischer Garten, Deutsches Museum)', lat: 48.1351, lng: 11.5820 },
-        { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0956 },
+        { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0956, notes: "Beyond being the Zugspitze gateway, the town's own highlight is the Partnachklamm gorge walk, a shaded ~1-hour loop through a carved rock canyon with waterfalls — an easy half-day add-on." },
         { name: 'Füssen', lat: 47.5722, lng: 10.7017 },
         { name: 'Hohenschwangau (Neuschwanstein)', lat: 47.5575, lng: 10.7397 },
       ],
@@ -11296,7 +11387,7 @@ function rbBuildBavariaAlpsBerchtesgadenRoute() {
       code: 'DE', name: 'Germany', days: 4, budget: 400, lat: 48.1351, lng: 11.5820,
       destinations: [
         { name: 'Munich', lat: 48.1351, lng: 11.5820 },
-        { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0956 },
+        { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0956, notes: "Beyond being the Zugspitze gateway, the town's own highlight is the Partnachklamm gorge walk, a shaded ~1-hour loop through a carved rock canyon with waterfalls — an easy half-day add-on." },
         { name: 'Füssen', lat: 47.5722, lng: 10.7017 },
         { name: 'Hohenschwangau (Neuschwanstein)', lat: 47.5575, lng: 10.7397 },
       ],
@@ -11379,7 +11470,7 @@ function rbBuildBerlinDresdenBavariaRoute() {
     {
       code: 'DE', name: 'Germany', days: 2, budget: 160, lat: 51.0504, lng: 13.7373,
       destinations: [
-        { name: 'Dresden', lat: 51.0504, lng: 13.7373 },
+        { name: 'Dresden', lat: 51.0504, lng: 13.7373, notes: "The rebuilt Frauenkirche and the Zwinger Palace's Old Masters Gallery (Raphael's Sistine Madonna) are the must-sees beyond the old town walk; the Frauenkirche's dome gallery and evening organ recitals are easy to miss if you only see the exterior." },
         { name: 'Bastei Bridge / Saxon Switzerland NP', lat: 50.9683, lng: 14.0453 },
       ],
       notes: "Shortened to 2 days here from the standalone Dresden + Saxon Switzerland (4 days) 🧗 route — same Frauenkirche dome-climb and Bastei/Felsenburg Neurathen caveats apply (see that route's notes).",
@@ -11389,7 +11480,7 @@ function rbBuildBerlinDresdenBavariaRoute() {
       code: 'DE', name: 'Germany', days: 3, budget: 315, lat: 48.1351, lng: 11.5820,
       destinations: [
         { name: 'Munich', lat: 48.1351, lng: 11.5820 },
-        { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0956 },
+        { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0956, notes: "Beyond being the Zugspitze gateway, the town's own highlight is the Partnachklamm gorge walk, a shaded ~1-hour loop through a carved rock canyon with waterfalls — an easy half-day add-on." },
         { name: 'Füssen / Hohenschwangau (Neuschwanstein)', lat: 47.5722, lng: 10.7017 },
       ],
       notes: "Shortened 3-day version of Bavaria: Munich + Alps (5 days) 🥨 — same Zugspitze cable car and Neuschwanstein timed-tour caveats apply (see that route's notes); with only 3 days, prioritise Neuschwanstein/Füssen over a full Zugspitze day if time is tight.",
@@ -11411,7 +11502,7 @@ function rbBuildGermanAlpineRoadRoute() {
       destinations: [
         { name: 'Lindau (Lake Constance)', lat: 47.5460, lng: 9.6832 },
         { name: 'Füssen', lat: 47.5722, lng: 10.7017 },
-        { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0956 },
+        { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0956, notes: "Beyond being the Zugspitze gateway, the town's own highlight is the Partnachklamm gorge walk, a shaded ~1-hour loop through a carved rock canyon with waterfalls — an easy half-day add-on." },
         { name: 'Chiemsee / Prien am Chiemsee', lat: 47.8514, lng: 12.3450 },
         { name: 'Berchtesgaden', lat: 47.6303, lng: 13.0006 },
       ],
@@ -11475,7 +11566,7 @@ function rbBuildSalzburgBerchtesgadenHallstattRoute() {
     {
       code: 'AT', name: 'Austria', days: 2, budget: 230, lat: 47.8095, lng: 13.0550,
       destinations: [
-        { name: 'Salzburg', lat: 47.8095, lng: 13.0550 },
+        { name: 'Salzburg', lat: 47.8095, lng: 13.0550, notes: "Mozart's birthplace and several Sound of Music filming locations sit inside a compact old town dominated by the Hohensalzburg fortress above it; ride the funicular up for the view over the Salzach river." },
       ],
       notes: "Salzburg's old town as the opener — same Getreidegasse/Hohensalzburg Fortress/Mozart sites as the standalone Salzburg + Surroundings (4 days) 🎻 route above (see that route's notes for details).",
       transport_to_next: 'Drive to Berchtesgaden, Germany — ~24km/30 min, short and overland (Schengen).',
@@ -11554,9 +11645,9 @@ function rbBuildSalzburgGrossglocknerTyrolRoute() {
     {
       code: 'AT', name: 'Austria', days: 3, budget: 360, lat: 47.8095, lng: 13.0550,
       destinations: [
-        { name: 'Salzburg', lat: 47.8095, lng: 13.0550 },
+        { name: 'Salzburg', lat: 47.8095, lng: 13.0550, notes: "Mozart's birthplace and several Sound of Music filming locations sit inside a compact old town dominated by the Hohensalzburg fortress above it; ride the funicular up for the view over the Salzach river." },
         { name: 'Bruck an der Glocknerstraße', lat: 47.2833, lng: 12.8333 },
-        { name: 'Grossglockner High Alpine Road', lat: 47.1219, lng: 12.8264 },
+        { name: 'Grossglockner High Alpine Road', lat: 47.1219, lng: 12.8264, notes: "This toll road climbs to nearly 2,500m past Austria's highest peak, ending at the Kaiser-Franz-Josefs-Höhe viewpoint over the retreating Pasterze glacier. It's typically only open late April/May through early November (weather-dependent on both ends), so check current status before routing through it outside summer." },
       ],
       notes: "Salzburg — Bruck an der Glocknerstraße (~1.5h) — the Grossglockner Hochalpenstraße itself (~1.5-2h driving, plan half a day with stops). Budget ~€100-140/day p.p. Season: the road is open early May-early November 2026. Apart from the vignette: a separate toll on the Grossglockner road, €46.50/car (day ticket, summer 2026) — buying online in advance at Heiligenblut saves a few euros (€42.50).",
       transport_to_next: 'Drive on to Lienz (continuing over the pass), then Innsbruck — the full Salzburg-Innsbruck run via the Grossglockner is 7-8h total, better split across an overnight near Lienz/Zell am See than driven in one long day.',
@@ -11602,7 +11693,7 @@ function rbBuildAustriaAlpineRoadtripRoute() {
     {
       code: 'AT', name: 'Austria', days: 2, budget: 230, lat: 47.1219, lng: 12.8264,
       destinations: [
-        { name: 'Grossglockner High Alpine Road', lat: 47.1219, lng: 12.8264 },
+        { name: 'Grossglockner High Alpine Road', lat: 47.1219, lng: 12.8264, notes: "This toll road climbs to nearly 2,500m past Austria's highest peak, ending at the Kaiser-Franz-Josefs-Höhe viewpoint over the retreating Pasterze glacier. It's typically only open late April/May through early November (weather-dependent on both ends), so check current status before routing through it outside summer." },
       ],
       notes: 'Same Grossglockner toll caveat as Salzburg + Grossglockner + Tyrol (6 days) 🏔️ above (€46.50/car day ticket, or €42.50 pre-booked online).',
       transport_to_next: 'Drive north to the Salzkammergut lake district.',
@@ -11641,7 +11732,7 @@ function rbBuildAustriaSloveniaRoute() {
       code: 'SI', name: 'Slovenia', days: 4, budget: 360, lat: 46.3683, lng: 14.1146,
       destinations: [
         { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
-        { name: 'Bohinj', lat: 46.2833, lng: 13.9333 },
+        { name: 'Bohinj', lat: 46.2833, lng: 13.9333, notes: "Slovenia's larger, quieter alpine lake south of Bled — glacial, ringed by forested peaks, with far fewer crowds than Bled. Ride the Vogel cable car above the lake for a panoramic view, or use it as the trailhead for the Savica waterfall hike." },
         { name: 'Ljubljana (optional)', lat: 46.0569, lng: 14.5058 },
       ],
       notes: "4 days in Slovenia's Julian Alps: Bled, Bohinj, with Ljubljana as an optional cheap, relaxed closer. Slovenia is generally cheaper than Austria overall, though Bled itself is a price outlier — staying 10-20 min outside Bled saves 30-40%. Season: June-September. Slovenia does not use the Austrian vignette — a separate e-vinjeta (toll sticker) is needed once driving Slovenian motorways.",
@@ -11683,7 +11774,7 @@ function rbBuildInterlakenLauterbrunnenGrindelwaldRoute() {
     {
       code: 'CH', name: 'Switzerland', days: 1, budget: 140, lat: 46.6863, lng: 7.8632,
       destinations: [
-        { name: 'Interlaken', lat: 46.6863, lng: 7.8632 },
+        { name: 'Interlaken', lat: 46.6863, lng: 7.8632, notes: "Sitting between Lake Thun and Lake Brienz, Interlaken itself is mainly a logistics and adventure-sports base (paragliding, canyoning) rather than a sight in its own right — treat it as the region's hub, not a destination to linger in." },
       ],
       notes: 'Interlaken as a one-night gateway stop between the two valley bases below.',
       transport_to_next: 'Drive to Lauterbrunnen — short, within the same valley system.',
@@ -12302,7 +12393,7 @@ function rbBuildVeniceDolomitesRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 280, lat: 45.4342, lng: 12.3388,
       destinations: [
-        { name: 'Piazza San Marco', lat: 45.4342, lng: 12.3388 },
+        { name: 'Piazza San Marco', lat: 45.4342, lng: 12.3388, notes: "St Mark's Basilica and the Doge's Palace anchor the square; the basilica itself is free to enter, but a skip-the-line booking avoids the worst of the queue." },
         { name: 'Rialto Bridge', lat: 45.4380, lng: 12.3358 },
         { name: 'Murano (half day)', lat: 45.4587, lng: 12.3538 },
         { name: 'Burano (half day)', lat: 45.4854, lng: 12.4166 },
@@ -12315,7 +12406,7 @@ function rbBuildVeniceDolomitesRoute() {
       destinations: [
         { name: "Cortina d'Ampezzo or Val Gardena (base)", lat: 46.5369, lng: 12.1357 },
         { name: 'Tre Cime di Lavaredo area', lat: 46.6198, lng: 12.3032 },
-        { name: 'Lago di Braies', lat: 46.6958, lng: 12.0858 },
+        { name: 'Lago di Braies', lat: 46.6958, lng: 12.0858, notes: "The postcard turquoise lake with wooden rowboats is one of the most photographed spots in the Dolomites. From July 1-Sept 15, the valley road is closed to unbooked cars 9am-4pm — you must pre-book parking online at pragsparking.com or arrive before 9am/after 4pm." },
         { name: 'Cinque Torri', lat: 46.5333, lng: 12.0333 },
       ],
       notes: "2-3 nights in the Dolomites (Cortina d'Ampezzo or Val Gardena): the Tre Cime area, Lago di Braies, Cinque Torri — then back to Venice for the flight home. Budget ~€105/day in the Dolomites. Dolomites cable cars are seasonal (late May-early October, varies per lift) — check the specific lift. Book Tre Cime/Lago di Braies parking ahead in season. ⚠️ Dolomites-Venice cable cars aside, this leg's own cable cars won't be open before late May.",
@@ -12343,7 +12434,7 @@ function rbBuildTuscanyRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 125, lat: 43.3188, lng: 11.3308,
       destinations: [
-        { name: 'Siena', lat: 43.3188, lng: 11.3308 },
+        { name: 'Siena', lat: 43.3188, lng: 11.3308, notes: "The shell-shaped Piazza del Campo hosts the Palio horse race twice a year (July 2 and Aug 16); climbing the Torre del Mangia gives the best rooftop view over the square." },
       ],
       notes: 'Siena (1 night). Same budget/rental-car logic as the Florence leg above.',
       transport_to_next: "Drive into the Val d'Orcia loop.",
@@ -12361,7 +12452,7 @@ function rbBuildTuscanyRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 125, lat: 43.4674, lng: 11.0431,
       destinations: [
-        { name: 'San Gimignano', lat: 43.4674, lng: 11.0431 },
+        { name: 'San Gimignano', lat: 43.4674, lng: 11.0431, notes: "Its skyline of medieval stone towers (nicknamed \"Medieval Manhattan\") is best appreciated from just outside the walls around sunset, once the day-trip buses thin out." },
         { name: 'Volterra', lat: 43.4013, lng: 10.8608 },
       ],
       notes: 'San Gimignano and Volterra (1-2 nights), then back to Florence. Deliberately no Cinque Terre on this route — different region (Liguria), a full day of driving there and back, not worth it. ⚠️ Park outside the walls at San Gimignano/Volterra — both are pedestrian zones inside.',
@@ -12383,7 +12474,7 @@ function rbBuildDolomitesDeepRoute() {
       destinations: [
         { name: 'Ortisei / Val Gardena (base)', lat: 46.5765, lng: 11.6750 },
         { name: 'Alpe di Siusi', lat: 46.5480, lng: 11.6167 },
-        { name: 'Seceda', lat: 46.5936, lng: 11.6683 },
+        { name: 'Seceda', lat: 46.5936, lng: 11.6683, notes: "The jagged, wave-like ridgeline reached by cable car from Ortisei is one of the single most photographed panoramas in the Dolomites, especially at sunrise before the crowds and cloud build-up arrive." },
         { name: 'Passo Gardena', lat: 46.5478, lng: 11.7756 },
         { name: 'Vallunga', lat: 46.5975, lng: 11.7211 },
       ],
@@ -12398,7 +12489,7 @@ function rbBuildDolomitesDeepRoute() {
         { name: "Cortina d'Ampezzo (base)", lat: 46.5369, lng: 12.1357 },
         { name: 'Tre Cime di Lavaredo', lat: 46.6198, lng: 12.3032 },
         { name: 'Cadini di Misurina', lat: 46.6167, lng: 12.2667 },
-        { name: 'Lago di Braies', lat: 46.6958, lng: 12.0858 },
+        { name: 'Lago di Braies', lat: 46.6958, lng: 12.0858, notes: "The postcard turquoise lake with wooden rowboats is one of the most photographed spots in the Dolomites. From July 1-Sept 15, the valley road is closed to unbooked cars 9am-4pm — you must pre-book parking online at pragsparking.com or arrive before 9am/after 4pm." },
         { name: 'Cinque Torri', lat: 46.5333, lng: 12.0333 },
         { name: 'Passo Giau', lat: 46.4864, lng: 12.0472 },
       ],
@@ -12498,7 +12589,7 @@ function rbBuildNorthernItalyRoadtripRoute() {
       code: 'IT', name: 'Italy', days: 2, budget: 260, lat: 46.4983, lng: 11.3548,
       destinations: [
         { name: 'Bolzano', lat: 46.4983, lng: 11.3548 },
-        { name: 'Lago di Braies', lat: 46.6958, lng: 12.0858 },
+        { name: 'Lago di Braies', lat: 46.6958, lng: 12.0858, notes: "The postcard turquoise lake with wooden rowboats is one of the most photographed spots in the Dolomites. From July 1-Sept 15, the valley road is closed to unbooked cars 9am-4pm — you must pre-book parking online at pragsparking.com or arrive before 9am/after 4pm." },
       ],
       notes: '(10-day version) Dolomites via Bolzano/Lago di Braies (2 days). West→east, no zigzag. Season: May-June or September; Dolomites passes are only fully open/warm June-September, avoid August. ⚠️ Mountain roads outside June-September can need winter tyres — check this for shoulder-season travel.',
       transport_to_next: 'Train (Verona-Venice, direct) or drive on to Venice.',
@@ -12548,7 +12639,7 @@ function rbBuildRomeTuscanyRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 140, lat: 43.3188, lng: 11.3308,
       destinations: [
-        { name: 'Siena', lat: 43.3188, lng: 11.3308 },
+        { name: 'Siena', lat: 43.3188, lng: 11.3308, notes: "The shell-shaped Piazza del Campo hosts the Palio horse race twice a year (July 2 and Aug 16); climbing the Torre del Mangia gives the best rooftop view over the square." },
       ],
       notes: 'Siena (1 day).',
       transport_to_next: 'Drive to San Gimignano/Volterra.',
@@ -12556,7 +12647,7 @@ function rbBuildRomeTuscanyRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 140, lat: 43.4674, lng: 11.0431,
       destinations: [
-        { name: 'San Gimignano', lat: 43.4674, lng: 11.0431 },
+        { name: 'San Gimignano', lat: 43.4674, lng: 11.0431, notes: "Its skyline of medieval stone towers (nicknamed \"Medieval Manhattan\") is best appreciated from just outside the walls around sunset, once the day-trip buses thin out." },
         { name: 'Volterra', lat: 43.4013, lng: 10.8608 },
       ],
       notes: 'San Gimignano and Volterra (1 day).',
@@ -12565,7 +12656,7 @@ function rbBuildRomeTuscanyRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 280, lat: 43.7696, lng: 11.2558,
       destinations: [
-        { name: 'Florence', lat: 43.7696, lng: 11.2558 },
+        { name: 'Florence', lat: 43.7696, lng: 11.2558, notes: "The Uffizi and the Duomo's dome climb are the two must-do highlights; book Uffizi tickets ahead of time, as walk-up lines run for hours." },
       ],
       notes: 'Florence (2-3 days) to close the trip. Season: April-June or September-October; avoid August heat in both Rome and Tuscany. ⚠️ Florence/Siena/San Gimignano\'s old towns are ZTL — park outside the walls.',
       transport_to_next: 'End of this route — return flight to Amsterdam via Rome (rental car dropped off in Florence).',
@@ -12712,7 +12803,7 @@ function rbBuildItalyNorthToCentralRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 260, lat: 43.7696, lng: 11.2558,
       destinations: [
-        { name: 'Florence', lat: 43.7696, lng: 11.2558 },
+        { name: 'Florence', lat: 43.7696, lng: 11.2558, notes: "The Uffizi and the Duomo's dome climb are the two must-do highlights; book Uffizi tickets ahead of time, as walk-up lines run for hours." },
       ],
       notes: 'Florence (2-3 days).',
       transport_to_next: 'Drive or train to Siena/Val d\'Orcia.',
@@ -12720,7 +12811,7 @@ function rbBuildItalyNorthToCentralRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 260, lat: 43.3188, lng: 11.3308,
       destinations: [
-        { name: 'Siena', lat: 43.3188, lng: 11.3308 },
+        { name: 'Siena', lat: 43.3188, lng: 11.3308, notes: "The shell-shaped Piazza del Campo hosts the Palio horse race twice a year (July 2 and Aug 16); climbing the Torre del Mangia gives the best rooftop view over the square." },
         { name: 'Val d\'Orcia (Pienza)', lat: 43.0778, lng: 11.6789 },
       ],
       notes: "Siena/Val d'Orcia (2 days). Season: May-June or September; avoid August.",
@@ -13059,7 +13150,7 @@ function rbBuildLiechtensteinSwissAlpsRoute() {
     {
       code: 'LI', name: 'Liechtenstein', days: 1, budget: 200, lat: 47.1410, lng: 9.5209,
       destinations: [
-        { name: 'Vaduz', lat: 47.1410, lng: 9.5209 },
+        { name: 'Vaduz', lat: 47.1410, lng: 9.5209, notes: "The capital is a small, walkable strip beneath the reigning prince's hilltop castle, which is a private residence viewable only from outside; an hour covers the pedestrian center and the Kunstmuseum." },
       ],
       notes: "Entry: direct flight Amsterdam-Zürich (KLM/Swiss, ~1h30-2h), then rental car to Vaduz (~1h30) — self-driving from the Netherlands (~8-9h) only makes sense as part of a bigger Switzerland trip. One day in Vaduz/Liechtenstein is enough on its own; Liechtenstein's own Alps (Malbun/Steg/Triesenberg) can also cover the 'Alps' half of this trip at 2 days total, without crossing into Switzerland at all. Budget ~CHF180-220/day (guesthouse/3-star ~CHF120, food ~CHF50, local transport/activities ~CHF30-50).",
       transport_to_next: 'Short drive into the Swiss Alps loop (Walensee/Sargans area is ~30-45 min from Vaduz).',
@@ -13088,7 +13179,7 @@ function rbBuildLiechtensteinAustriaSwitzerlandRoute() {
     {
       code: 'LI', name: 'Liechtenstein', days: 2, budget: 380, lat: 47.1410, lng: 9.5209,
       destinations: [
-        { name: 'Vaduz', lat: 47.1410, lng: 9.5209 },
+        { name: 'Vaduz', lat: 47.1410, lng: 9.5209, notes: "The capital is a small, walkable strip beneath the reigning prince's hilltop castle, which is a private residence viewable only from outside; an hour covers the pedestrian center and the Kunstmuseum." },
         { name: 'Malbun', lat: 47.0658, lng: 9.6086 },
         { name: 'Triesenberg', lat: 47.1067, lng: 9.5289 },
       ],
@@ -13480,9 +13571,9 @@ function rbBuildSanMarinoTuscanyRoute() {
     {
       code: 'IT', name: 'Italy', days: 4, budget: 460, lat: 43.3188, lng: 11.3308,
       destinations: [
-        { name: 'Siena', lat: 43.3188, lng: 11.3308 },
-        { name: 'San Gimignano', lat: 43.4674, lng: 11.0431 },
-        { name: 'Florence', lat: 43.7696, lng: 11.2558 },
+        { name: 'Siena', lat: 43.3188, lng: 11.3308, notes: "The shell-shaped Piazza del Campo hosts the Palio horse race twice a year (July 2 and Aug 16); climbing the Torre del Mangia gives the best rooftop view over the square." },
+        { name: 'San Gimignano', lat: 43.4674, lng: 11.0431, notes: "Its skyline of medieval stone towers (nicknamed \"Medieval Manhattan\") is best appreciated from just outside the walls around sunset, once the day-trip buses thin out." },
+        { name: 'Florence', lat: 43.7696, lng: 11.2558, notes: "The Uffizi and the Duomo's dome climb are the two must-do highlights; book Uffizi tickets ahead of time, as walk-up lines run for hours." },
       ],
       notes: "The remaining 3-4 days into Tuscany: San Gimignano, Siena, or Florence. Open-jaw Amsterdam-Bologna in, Amsterdam-Florence/Pisa out is recommended to avoid driving the route twice — check at booking whether the direct Florence/Pisa route still exists (not confirmed in this research, but seen before). Budget ~€100-130/day averaged, plus a possible one-way rental car drop-off fee (€50-150, check ahead). Season: late April-June or September; avoid July-August, especially inland Tuscany. ⚠️ Same San Marino parking notes as above; Tuscan hill towns (Siena, San Gimignano) often have ZTL restrictions in their old centres — park outside and walk in.",
       transport_to_next: 'End of this route — fly home from Florence or Pisa (check at booking if the direct route still exists), or open-jaw back through Bologna to avoid driving the route twice.',
@@ -14543,7 +14634,7 @@ function rbBuildSloveniaAlpineLoopRoute() {
       destinations: [
         { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, notes: "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river." },
         { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
-        { name: 'Bohinj', lat: 46.2833, lng: 13.9333 },
+        { name: 'Bohinj', lat: 46.2833, lng: 13.9333, notes: "Slovenia's larger, quieter alpine lake south of Bled — glacial, ringed by forested peaks, with far fewer crowds than Bled. Ride the Vogel cable car above the lake for a panoramic view, or use it as the trailhead for the Savica waterfall hike." },
         { name: 'Vršič Pass', lat: 46.4331, lng: 13.7478 },
         { name: 'Bovec / Soča Valley', lat: 46.3297, lng: 13.5522 },
         { name: 'Kranjska Gora', lat: 46.4858, lng: 13.7861 },
@@ -15160,7 +15251,7 @@ function rbBuildSerbiaRoute() {
       code: 'RS', name: 'Serbia', days: 6, budget: 240, lat: 44.7866, lng: 20.4489,
       destinations: [
         { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 },
-        { name: 'Novi Sad', lat: 45.2671, lng: 19.8335 },
+        { name: 'Novi Sad', lat: 45.2671, lng: 19.8335, notes: "Petrovaradin Fortress (\"Gibraltar on the Danube\") dominates the skyline and is worth the climb for the river/old-town view. Note: EXIT Festival, long associated with this fortress, has moved to a global-tour format and its return to Novi Sad is unconfirmed (not held there in 2026) — don't plan the visit around it." },
         { name: 'Zlatibor', lat: 43.7286, lng: 19.7089 },
         { name: 'Šarganska Osmica (Mokra Gora)', lat: 43.7397, lng: 19.5289 },
         { name: 'Drvengrad (Mećavnik)', lat: 43.7150, lng: 19.5169 },
@@ -15183,7 +15274,7 @@ function rbBuildSerbiaRoadtripRoute() {
       code: 'RS', name: 'Serbia', days: 9, budget: 360, lat: 44.5000, lng: 20.0000,
       destinations: [
         { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 },
-        { name: 'Novi Sad', lat: 45.2671, lng: 19.8335 },
+        { name: 'Novi Sad', lat: 45.2671, lng: 19.8335, notes: "Petrovaradin Fortress (\"Gibraltar on the Danube\") dominates the skyline and is worth the climb for the river/old-town view. Note: EXIT Festival, long associated with this fortress, has moved to a global-tour format and its return to Novi Sad is unconfirmed (not held there in 2026) — don't plan the visit around it." },
         { name: 'Subotica', lat: 46.1008, lng: 19.6650 },
         { name: 'Zlatibor', lat: 43.7286, lng: 19.7089 },
         { name: 'Mokra Gora / Tara National Park', lat: 43.8833, lng: 19.3667 },
@@ -16173,7 +16264,7 @@ function rbBuildPragueBohemiaRoute() {
       destinations: [
         { name: 'Staré Město / Prague Castle', lat: 50.0875, lng: 14.4213 },
         { name: 'Karlovy Vary (optional stopover)', lat: 50.2306, lng: 12.8722 },
-        { name: 'Český Krumlov', lat: 48.8127, lng: 14.3175 },
+        { name: 'Český Krumlov', lat: 48.8127, lng: 14.3175, notes: "Its Vltava-river-bend old town and colorfully painted castle tower are the draw; it's overrun with day-trip buses from Prague around midday, so an early-morning visit or an overnight stay is the difference between a quiet town and a crowded one." },
       ],
       notes: "Prague (3 days) — Český Krumlov (1-2 days, staying overnight rather than rushing a day trip) — optionally Karlovy Vary as a stopover. Budget ~€82/day on average (Prague runs pricier, Krumlov/Karlovy Vary about 10-15% cheaper). Season: May-June or September; Krumlov's historic center is only quiet after 17:00 once the day-trippers have left. Web check (2026-08): the RegioJet train/bus between Prague and Krumlov (~3 hours) is a solid alternative to renting a car. Dutch travel advisory for Czechia is green (last updated 16 March 2026) — watch for pickpockets around Charles Bridge/the Old Town Square in Prague.",
       transport_to_next: 'End of this route — fly home from Prague.',
@@ -16192,9 +16283,9 @@ function rbBuildCzechiaRoadtripRoute() {
     {
       code: 'CZ', name: 'Czechia', days: 6, budget: 468, lat: 50.0875, lng: 14.4213,
       destinations: [
-        { name: 'Prague', lat: 50.0875, lng: 14.4213 },
+        { name: 'Prague', lat: 50.0875, lng: 14.4213, notes: "Prague Castle complex and Charles Bridge are the anchors, but both are swamped by tour groups from mid-morning; cross the bridge and enter the castle grounds right at opening to see them uncrowded." },
         { name: 'Karlovy Vary', lat: 50.2306, lng: 12.8722 },
-        { name: 'Český Krumlov', lat: 48.8127, lng: 14.3175 },
+        { name: 'Český Krumlov', lat: 48.8127, lng: 14.3175, notes: "Its Vltava-river-bend old town and colorfully painted castle tower are the draw; it's overrun with day-trip buses from Prague around midday, so an early-morning visit or an overnight stay is the difference between a quiet town and a crowded one." },
         { name: 'Brno / Moravia wine region', lat: 49.1951, lng: 16.6068 },
       ],
       notes: "Prague (2 days) — Karlovy Vary (1 day) — Český Krumlov (2 days) — Brno and a Moravian wine tasting (1-2 days). Budget ~€78/day including a rental car (~€35-45/day on its own). Season: May-June or September for the best weather and fewest crowds. Web check (2026-08): a dálniční známka (highway toll sticker) is mandatory — check whether the rental company includes it; parking in historic town centers is limited.",
@@ -16214,8 +16305,8 @@ function rbBuildCzechiaAustriaRoute() {
     {
       code: 'CZ', name: 'Czechia', days: 5, budget: 410, lat: 50.0875, lng: 14.4213,
       destinations: [
-        { name: 'Prague', lat: 50.0875, lng: 14.4213 },
-        { name: 'Český Krumlov', lat: 48.8127, lng: 14.3175 },
+        { name: 'Prague', lat: 50.0875, lng: 14.4213, notes: "Prague Castle complex and Charles Bridge are the anchors, but both are swamped by tour groups from mid-morning; cross the bridge and enter the castle grounds right at opening to see them uncrowded." },
+        { name: 'Český Krumlov', lat: 48.8127, lng: 14.3175, notes: "Its Vltava-river-bend old town and colorfully painted castle tower are the draw; it's overrun with day-trip buses from Prague around midday, so an early-morning visit or an overnight stay is the difference between a quiet town and a crowded one." },
       ],
       notes: "Prague (2-3 days) — Český Krumlov (1-2 days). Budget ~€82/day.",
       transport_to_next: "Cross into Austria — a Schengen border, but Austria has extended its border controls with Czechia through at least 15 June 2026 (possibly further): expect spot ID checks, no visa needed, but keep your passport/ID on you. A separate Austrian highway vignette is required in addition to the Czech dálniční známka.",
@@ -16244,7 +16335,7 @@ function rbBuildPraguePolandRoute() {
     {
       code: 'CZ', name: 'Czechia', days: 3, budget: 240, lat: 50.0875, lng: 14.4213,
       destinations: [
-        { name: 'Prague', lat: 50.0875, lng: 14.4213 },
+        { name: 'Prague', lat: 50.0875, lng: 14.4213, notes: "Prague Castle complex and Charles Bridge are the anchors, but both are swamped by tour groups from mid-morning; cross the bridge and enter the castle grounds right at opening to see them uncrowded." },
       ],
       notes: "Prague (3 days). Budget ~€80/day.",
       transport_to_next: "Cross directly at the Czechia-Poland border — no detour via Germany needed. The Prague-Wrocław-Krakow train run is a solid alternative to driving. (If you instead routed via Germany, note Germany has separately extended its own land border controls with Czechia through 15 September 2026 — spot ID checks, no visa requirement.)",
@@ -16252,7 +16343,7 @@ function rbBuildPraguePolandRoute() {
     {
       code: 'PL', name: 'Poland', days: 6, budget: 390, lat: 51.1079, lng: 17.0385,
       destinations: [
-        { name: 'Wrocław', lat: 51.1079, lng: 17.0385 },
+        { name: 'Wrocław', lat: 51.1079, lng: 17.0385, notes: "Beyond the market square, Ostrów Tumski (Cathedral Island) is worth walking at dusk when its gas lamps are lit by hand; the city's 600+ scattered gnome statues make for a fun, low-effort scavenger hunt between sights." },
         { name: 'Krakow (Main Square / Old Town)', lat: 50.0614, lng: 19.9366 },
       ],
       notes: "Wrocław (2 days) — Krakow (3-4 days). Budget ~€60-70/day (used €65/day here). Season: May-June or September.",
@@ -16272,7 +16363,7 @@ function rbBuildMoraviaBrnoWineRegionRoute() {
     {
       code: 'CZ', name: 'Czechia', days: 5, budget: 360, lat: 49.1951, lng: 16.6068,
       destinations: [
-        { name: 'Brno', lat: 49.1951, lng: 16.6068 },
+        { name: 'Brno', lat: 49.1951, lng: 16.6068, notes: "Villa Tugendhat, Mies van der Rohe's UNESCO-listed modernist house, is the city's real highlight beyond the old town; tours sell out within hours of release (release is ~2 months ahead, so book online as early as possible)." },
         { name: 'Mikulov wine region', lat: 48.8064, lng: 16.6367 },
         { name: 'Znojmo wine region', lat: 48.8555, lng: 16.0488 },
       ],
@@ -16312,7 +16403,7 @@ function rbBuildBratislavaHighTatrasRoute() {
     {
       code: 'SK', name: 'Slovakia', days: 5, budget: 275, lat: 48.1486, lng: 17.1077,
       destinations: [
-        { name: 'Bratislava', lat: 48.1486, lng: 17.1077 },
+        { name: 'Bratislava', lat: 48.1486, lng: 17.1077, notes: "Compact walkable Old Town plus the hilltop Bratislava Castle overlooking the Danube; the UFO Bridge's observation deck gives the best skyline view and doubles as a sunset spot." },
         { name: 'Poprad / Tatranská Lomnica', lat: 49.1660, lng: 20.2870 },
         { name: 'Štrbské Pleso / Hrebienok', lat: 49.1225, lng: 20.0631 },
         { name: 'Lomnický Štít cable car (optional)', lat: 49.1958, lng: 20.2131 },
@@ -16334,7 +16425,7 @@ function rbBuildSlovakiaRoute() {
     {
       code: 'SK', name: 'Slovakia', days: 6, budget: 312, lat: 48.1486, lng: 17.1077,
       destinations: [
-        { name: 'Bratislava', lat: 48.1486, lng: 17.1077 },
+        { name: 'Bratislava', lat: 48.1486, lng: 17.1077, notes: "Compact walkable Old Town plus the hilltop Bratislava Castle overlooking the Danube; the UFO Bridge's observation deck gives the best skyline view and doubles as a sunset spot." },
         { name: 'Banská Štiavnica', lat: 48.4587, lng: 18.8973 },
         { name: 'High Tatras (Štrbské Pleso)', lat: 49.1225, lng: 20.0631 },
         { name: 'Košice', lat: 48.7164, lng: 21.2611 },
@@ -16356,7 +16447,7 @@ function rbBuildSlovakiaPolandRoute() {
     {
       code: 'SK', name: 'Slovakia', days: 4, budget: 220, lat: 48.1486, lng: 17.1077,
       destinations: [
-        { name: 'Bratislava', lat: 48.1486, lng: 17.1077 },
+        { name: 'Bratislava', lat: 48.1486, lng: 17.1077, notes: "Compact walkable Old Town plus the hilltop Bratislava Castle overlooking the Danube; the UFO Bridge's observation deck gives the best skyline view and doubles as a sunset spot." },
         { name: 'High Tatras (Štrbské Pleso)', lat: 49.1225, lng: 20.0631 },
       ],
       notes: "Bratislava (2 days) — the High Tatras (2 days). Budget ~€55/day. Slovakia is fully Schengen with zero border friction toward Poland.",
@@ -16385,7 +16476,7 @@ function rbBuildSlovakiaHungaryRoute() {
     {
       code: 'SK', name: 'Slovakia', days: 3, budget: 180, lat: 48.1486, lng: 17.1077,
       destinations: [
-        { name: 'Bratislava', lat: 48.1486, lng: 17.1077 },
+        { name: 'Bratislava', lat: 48.1486, lng: 17.1077, notes: "Compact walkable Old Town plus the hilltop Bratislava Castle overlooking the Danube; the UFO Bridge's observation deck gives the best skyline view and doubles as a sunset spot." },
         { name: 'Győr (day trip)', lat: 47.6875, lng: 17.6504 },
       ],
       notes: "Bratislava (2 days), with Győr across the border in Hungary as a day trip. Budget ~€55-65/day (used €60/day here). Slovakia is fully Schengen with zero border friction toward Hungary.",
@@ -16503,7 +16594,7 @@ function rbBuildPolandRoadtripRoute() {
         { name: 'Wieliczka Salt Mine', lat: 49.9830, lng: 20.0533 },
         { name: 'Auschwitz-Birkenau', lat: 50.0359, lng: 19.1783 },
         { name: 'Zakopane', lat: 49.2992, lng: 19.9496 },
-        { name: 'Wrocław', lat: 51.1079, lng: 17.0385 },
+        { name: 'Wrocław', lat: 51.1079, lng: 17.0385, notes: "Beyond the market square, Ostrów Tumski (Cathedral Island) is worth walking at dusk when its gas lamps are lit by hand; the city's 600+ scattered gnome statues make for a fun, low-effort scavenger hunt between sights." },
         { name: 'Warsaw', lat: 52.2297, lng: 21.0122 },
       ],
       notes: "Krakow — Wieliczka — Auschwitz — Zakopane — Wrocław — Warsaw (drop Gdańsk for a shorter version of this loop). Budget ~€60-75/day including the rental car (used €65/day here). Season: May-June or September. Web check (2026-08): a car is practical outside the city centers, though parking in central Krakow/Wrocław is difficult; Poland requires no highway vignette, but some stretches use pay-per-use tolls via the e-TOLL app. If routing via Germany instead, note Germany has extended its own land border controls with Poland through 15 September 2026 (spot ID checks).",
@@ -16526,7 +16617,7 @@ function rbBuildPolandNorthToSouthRoute() {
         { name: 'Gdańsk / Hel Peninsula', lat: 54.6084, lng: 18.8006 },
         { name: 'Malbork Castle', lat: 54.0400, lng: 19.0274 },
         { name: 'Warsaw', lat: 52.2297, lng: 21.0122 },
-        { name: 'Wrocław', lat: 51.1079, lng: 17.0385 },
+        { name: 'Wrocław', lat: 51.1079, lng: 17.0385, notes: "Beyond the market square, Ostrów Tumski (Cathedral Island) is worth walking at dusk when its gas lamps are lit by hand; the city's 600+ scattered gnome statues make for a fun, low-effort scavenger hunt between sights." },
         { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 },
       ],
       notes: "Gdańsk and the Hel Peninsula (3 days) — Malbork Castle (day trip) — Warsaw (2-3 days) — Wrocław (2 days) — Krakow (3-4 days), roughly 1300 km total. Budget ~€60-75/day. Season: May-June or September are best (quieter, mild weather); the Hel Peninsula and the coast are especially nice June-August. Web check (2026-08): book Auschwitz/Wieliczka well ahead (at least a month) if adding either as a Krakow-leg day trip — both often sell out in high season; the train between cities is a good alternative to the long drives.",
@@ -20148,7 +20239,7 @@ function rbBuildPolandSlovakiaHungaryRoute() {
       code: 'SK', name: 'Slovakia', days: 4, budget: 220, lat: 49.1660, lng: 20.2870,
       destinations: [
         { name: 'Poprad / Tatranská Lomnica (Slovak High Tatras)', lat: 49.1660, lng: 20.2870 },
-        { name: 'Bratislava', lat: 48.1486, lng: 17.1077 },
+        { name: 'Bratislava', lat: 48.1486, lng: 17.1077, notes: "Compact walkable Old Town plus the hilltop Bratislava Castle overlooking the Danube; the UFO Bridge's observation deck gives the best skyline view and doubles as a sunset spot." },
       ],
       notes: "The Slovak side of the High Tatras/Poprad (1-2 days, a short cross-border hop from the Polish Tatra) — Bratislava (2 days). Budget ~€50-60/day. Web check (2026-08): one-way rental-car returns between countries are expensive — plan to hand the car back in the same country you picked it up.",
       transport_to_next: 'Drive or train to Budapest.',
@@ -20177,7 +20268,7 @@ function rbBuildCzechiaAustriaHungaryRoute() {
       code: 'CZ', name: 'Czechia', days: 5, budget: 410, lat: 50.0875, lng: 14.4213,
       destinations: [
         { name: 'Staré Město / Prague Castle', lat: 50.0875, lng: 14.4213 },
-        { name: 'Český Krumlov', lat: 48.8127, lng: 14.3175 },
+        { name: 'Český Krumlov', lat: 48.8127, lng: 14.3175, notes: "Its Vltava-river-bend old town and colorfully painted castle tower are the draw; it's overrun with day-trip buses from Prague around midday, so an early-morning visit or an overnight stay is the difference between a quiet town and a crowded one." },
       ],
       notes: "Prague (3 days) — Český Krumlov (1-2 days). Budget ~€75-90/day.",
       transport_to_next: "Cross into Austria — a Schengen border, but Austria's border-control regime with Czechia is still active as of 2026-09 (extended a further three months to at least 15 September 2026, from an earlier 15 June 2026 deadline; running since 2015, repeatedly re-extended, likely again around that date): expect spot ID checks, no visa needed. A separate Austrian highway vignette is required in addition to the Czech dálniční známka.",
@@ -20240,7 +20331,7 @@ function rbBuildCentralEuropeRoadtripFourteenDaysRoute() {
     {
       code: 'SK', name: 'Slovakia', days: 1, budget: 55, lat: 48.1486, lng: 17.1077,
       destinations: [
-        { name: 'Bratislava', lat: 48.1486, lng: 17.1077 },
+        { name: 'Bratislava', lat: 48.1486, lng: 17.1077, notes: "Compact walkable Old Town plus the hilltop Bratislava Castle overlooking the Danube; the UFO Bridge's observation deck gives the best skyline view and doubles as a sunset spot." },
       ],
       notes: "Bratislava (1-2 days). Budget ~€50-60/day.",
       transport_to_next: "Train or drive to Vienna, about an hour — Schengen, but Web check (2026-09): this specific Bratislava-Vienna corridor IS affected by Austria's ongoing border-control regime (running through at least 15 September 2026, likely re-extended) — expect the same 15-45 min ad-hoc document checks as elsewhere on that regime, not a formality-free crossing.",
@@ -20289,7 +20380,7 @@ function rbBuildGermanyAustriaItalyRoute() {
     {
       code: 'DE', name: 'Germany', days: 2, budget: 220, lat: 47.5722, lng: 10.7017,
       destinations: [
-        { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0956 },
+        { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0956, notes: "Beyond being the Zugspitze gateway, the town's own highlight is the Partnachklamm gorge walk, a shaded ~1-hour loop through a carved rock canyon with waterfalls — an easy half-day add-on." },
         { name: 'Füssen / Hohenschwangau (Neuschwanstein)', lat: 47.5722, lng: 10.7017 },
       ],
       notes: "Garmisch-Partenkirchen and Füssen/Hohenschwangau (1-2 days) — same Zugspitze cable car and Neuschwanstein mandatory-timed-tour caveats as Bavaria: Munich + Alps (5 days) 🥨 (see that route's notes: book Neuschwanstein up to 8 weeks ahead, castle open during restoration until ~2029). Budget ~€90-130/day p.p.",
@@ -20362,7 +20453,7 @@ function rbBuildGermanyAustriaSloveniaRoute() {
       code: 'SI', name: 'Slovenia', days: 4, budget: 440, lat: 46.3683, lng: 14.1146,
       destinations: [
         { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
-        { name: 'Bohinj', lat: 46.2833, lng: 13.9333 },
+        { name: 'Bohinj', lat: 46.2833, lng: 13.9333, notes: "Slovenia's larger, quieter alpine lake south of Bled — glacial, ringed by forested peaks, with far fewer crowds than Bled. Ride the Vogel cable car above the lake for a panoramic view, or use it as the trailhead for the Savica waterfall hike." },
         { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, notes: "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river." },
       ],
       notes: "Ljubljana, Bled and Bohinj (3-4 days) — same Julian Alps content as Austria + Slovenia (9 days) 🏝️ and Austria + Slovenia via Grossglockner (7-10 days) 🏔️ above. Budget ~€90-130/day p.p. — Bled itself is a price outlier within that range. Season: June-September. Slovenia does not use the Austrian vignette — a separate e-vinjeta (toll sticker) is needed once driving Slovenian motorways.",
@@ -20444,7 +20535,7 @@ function rbBuildItalySloveniaCroatiaRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 320, lat: 45.4408, lng: 12.3155,
       destinations: [
-        { name: 'Piazza San Marco', lat: 45.4408, lng: 12.3155 },
+        { name: 'Piazza San Marco', lat: 45.4408, lng: 12.3155, notes: "St Mark's Basilica and the Doge's Palace anchor the square; the basilica itself is free to enter, but a skip-the-line booking avoids the worst of the queue." },
         { name: 'Rialto Bridge', lat: 45.4380, lng: 12.3358 },
       ],
       notes: "Venice (2 days) as the opener — same San Marco/Rialto content and day-tripper-tax caveat as Venice + Dolomites (5 days) 🎭 above (waived by an overnight stay in the Venice municipality, so not applicable here). Web check (2026-09): the 2026 tax season (Fri/Sat/Sun, 3 April-26 July plus a few extra dates) has already ended; no 2027 calendar has been announced yet, pending the city's post-season review — check closer to any actual booking. Budget ~€100-120/day p.p. blended across this whole route (Venice itself runs pricier).",
@@ -21035,7 +21126,7 @@ function rbBuildGrandEuropeanRoadtripFourteenToTwentyOneDaysRoute() {
     {
       code: 'AT', name: 'Austria', days: 2, budget: 230, lat: 47.8095, lng: 13.0550,
       destinations: [
-        { name: 'Salzburg', lat: 47.8095, lng: 13.0550 },
+        { name: 'Salzburg', lat: 47.8095, lng: 13.0550, notes: "Mozart's birthplace and several Sound of Music filming locations sit inside a compact old town dominated by the Hohensalzburg fortress above it; ride the funicular up for the view over the Salzach river." },
         { name: 'Innsbruck', lat: 47.2692, lng: 11.4041 },
       ],
       notes: "Salzburg and Innsbruck (2 days) — both cities get a full standalone visit elsewhere in this repo; here it's one day each. Budget ~€115/day. Austrian 10-day vignette required.",
@@ -21078,7 +21169,7 @@ function rbBuildGrandEuropeanRoadtripFourteenToTwentyOneDaysRoute() {
     {
       code: 'HU', name: 'Hungary', days: 1, budget: 60, lat: 47.4979, lng: 19.0402,
       destinations: [
-        { name: 'Budapest', lat: 47.4979, lng: 19.0402 },
+        { name: 'Budapest', lat: 47.4979, lng: 19.0402, notes: "Beyond the thermal bath already noted, the Fisherman's Bastion terraces on the Buda side give the best skyline view over Pest and the Danube, especially near sunset — pair it with a walk across Chain Bridge." },
       ],
       notes: "Budapest (2 days at the source's own count, compressed to 1 here to keep the 14-day total honest) — same city covered far more thoroughly by Central Europe Roadtrip (14 days) 🚂 (rbBuildCentralEuropeRoadtripFourteenDaysRoute) below. Budget ~€60/day.",
       transport_to_next: 'Drive or train to Prague — a Schengen border, no checks.',
@@ -21086,7 +21177,7 @@ function rbBuildGrandEuropeanRoadtripFourteenToTwentyOneDaysRoute() {
     {
       code: 'CZ', name: 'Czechia', days: 1, budget: 85, lat: 50.0755, lng: 14.4378,
       destinations: [
-        { name: 'Prague', lat: 50.0755, lng: 14.4378 },
+        { name: 'Prague', lat: 50.0755, lng: 14.4378, notes: "Prague Castle complex and Charles Bridge are the anchors, but both are swamped by tour groups from mid-morning; cross the bridge and enter the castle grounds right at opening to see them uncrowded." },
       ],
       notes: "Prague (2 days at the source's own count, compressed to 1 here for the same reason as Budapest above) — same closing city as Central Europe Roadtrip (14 days) 🚂 below. Budget ~€85/day.",
       transport_to_next: 'End of this route — fly home from Prague, or drive back to the Netherlands.',

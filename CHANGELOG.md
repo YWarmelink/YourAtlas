@@ -12,6 +12,17 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 15 — Central European Grand Roadtrip (2026-09-17)** — 14 legs,
+  65 destinations (63 newly researched, Bled/Zagreb already covered by earlier batches),
+  researched as 4 parallel sub-batches matching the route's own region grouping (Alpine
+  Countries, Dolomites & Northern Italy, Balkans, Central Europe). All 63 inserted cleanly first
+  try. Same generic name-matching migration
+  (`rbMigrateCentralEuropeanRoadtripDestinationNotes()`) — the highest-leverage batch yet, 41
+  routes confirmed touched in the live simulation (this route shares an unusually large number of
+  city/region names — Prague, Budapest, Florence, Dresden, Bratislava, etc. — with dozens of
+  other combo routes across the app). App-wide total: 2251 destination-slots filled across 278
+  routes. 211/741 signatures done.
+
 - **Per-destination notes, batch 14 — Northern Europe Baltic Ferry Roadtrip (14 days)
   (2026-09-17)** — a small 6-leg/7-destination combo route, researched in a single pass.
   High-leverage shared-signature batch: Tallinn/Riga/Vilnius are reused by Baltics + Poland and
