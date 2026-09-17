@@ -12,6 +12,15 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 10 — Austria + Slovenia + Croatia (10-14 days) (2026-09-17)** —
+  a small 5-leg/7-destination combo route, researched in a single pass (well under the
+  ~40-destination split threshold). High-leverage shared-signature batch: all 7 destinations
+  (Klagenfurt, Wörthersee, Ljubljana, Bled, Zagreb, Plitvice, Zadar) are reused verbatim across
+  roughly 10 other Alps/Balkan combo routes. Same generic name-matching migration
+  (`rbMigrateAustriaSloveniaCroatiaDestinationNotes()`) — 23 routes confirmed touched in the live
+  simulation. App-wide total: 1922 destination-slots filled across 210 routes. 154/741
+  signatures done.
+
 - **Per-destination notes, batch 9 — West & Central Africa Expedition (2026-09-17)** — 10 blocks,
   32 destinations, researched as 4 parallel batches matching the route's own region grouping
   (Cape Verde Islands, Senegambia, Gulf of Guinea, Central Africa & Islands). All 32 inserted

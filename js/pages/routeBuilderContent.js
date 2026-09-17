@@ -1985,7 +1985,7 @@ function rbBuildCentralEuropeRoadtripRoute() {
         {
           code: 'SI', name: 'Slovenia', days: 5, budget: 600, lat: 46.3683, lng: 14.1146,
           destinations: [
-            { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+            { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
             { name: 'Bohinj', lat: 46.2833, lng: 13.8833 },
             { name: 'Soča Valley', lat: 46.3833, lng: 13.6167 },
             { name: 'Triglav NP', lat: 46.3833, lng: 13.8378 },
@@ -1998,7 +1998,7 @@ function rbBuildCentralEuropeRoadtripRoute() {
           code: 'HR', name: 'Croatia', days: 3, budget: 255, lat: 44.8654, lng: 15.5820,
           destinations: [
             { name: 'Plitvice', lat: 44.8654, lng: 15.5820 },
-            { name: 'Zagreb', lat: 45.8150, lng: 15.9819 },
+            { name: 'Zagreb', lat: 45.8150, lng: 15.9819, notes: "The Upper Town's colorful-tiled St. Mark's Church and the Dolac market are the highlights, linked to the Lower Town by the world's shortest funicular (under a minute). A free walking tour is an efficient way to cover both halves in a day." },
           ],
           notes: 'Plitvice deserves a full day (long hiking trails), Zagreb a short city stop. Update (2026-08): Croatia was officially declared landmine-free as of March 2026 — the earlier warning about uncleared zones around Plitvice is no longer current. Price check (2026-07): inland Croatia (not the coast) is cheaper than the flat €120/day rate, corrected to €85/day (Plitvice entry ~€35-40 separate, not included in the daily rate).',
           transport_to_next: 'Car, ≈380 km to Belgrade — Novi Sad happens to sit right on the way, easily doable in one day.',
@@ -5453,7 +5453,7 @@ function rbMigrateCentralEuropeRouteLogicOverhaul() {
     },
     SI: {
       destinations: [
-        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
         { name: 'Bohinj', lat: 46.2833, lng: 13.8833 },
         { name: 'Soča-vallei', lat: 46.3833, lng: 13.6167 },
         { name: 'Triglav NP', lat: 46.3833, lng: 13.8378 },
@@ -5463,7 +5463,7 @@ function rbMigrateCentralEuropeRouteLogicOverhaul() {
     HR: {
       destinations: [
         { name: 'Plitvice', lat: 44.8654, lng: 15.5820 },
-        { name: 'Zagreb', lat: 45.8150, lng: 15.9819 },
+        { name: 'Zagreb', lat: 45.8150, lng: 15.9819, notes: "The Upper Town's colorful-tiled St. Mark's Church and the Dolac market are the highlights, linked to the Lower Town by the world's shortest funicular (under a minute). A free walking tour is an efficient way to cover both halves in a day." },
       ],
       notes: 'Plitvice verdient een volle dag (grote wandelroutes), Zagreb een korte stadstop. Update (2026-08): Kroatië is sinds maart 2026 officieel landmijnvrij verklaard — de eerdere waarschuwing over niet-geruimde zones rond Plitvice is niet langer actueel. Prijscheck (2026-07): binnenland-Kroatië (niet de kust) is goedkoper dan het vlakke €120/dag-tarief, gecorrigeerd naar €85/dag (Plitvice-entree ~€35-40 apart, niet in het dagtarief).',
     },
@@ -8269,6 +8269,43 @@ function rbMigrateWestCentralAfricaDestinationNotes() {
     "Loango National Park (surfing hippos, forest elephants on the beach)": "Beyond the beach hippos/elephants, a boat safari up the Ngové/Echira rivers to Akaka camp (about 60km from the main Loango camps) gives close river-bank encounters with forest elephants and buffalo, plus a chance to snorkel alongside elephants in shallow water — an experience unique to Loango. Akaka closes in the rainy season, so this only works in the dry-season window (roughly June-August/September) already best for the route.",
     "Libreville": "Mostly a gateway city, but the Arboretum de Sibang (170 tree species, a quiet rainforest patch inside the city) and L'Église Saint-Michel de Nkembo (31 hand-carved wooden columns depicting Bible scenes) are worth a half-day before heading on to the parks. Note the arboretum keeps limited weekday hours (Mon-Fri, roughly 9am-3pm) and needs someone on-site to unlock the gate.",
     "Pongara National Park (mangroves/rainforest, ≈45 min boat from Libreville)": "One of the world's most important leatherback turtle nesting beaches — roughly 3,500+ nests a year between October and April, peaking December-February — alongside its mangroves and rainforest. Time the visit for a night nesting/hatching walk in-season; outside that window it's a quieter mangrove-channel and beach visit instead.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 10 (2026-09-17) for the per-destination-notes workflow -- Austria + Slovenia + Croatia
+ * (10-14 days), a small 5-leg/7-destination combo route, researched in a single pass since it's
+ * well under the ~40-destination split threshold. High-leverage shared-signature batch: all 7
+ * destinations (Klagenfurt, Wörthersee, Ljubljana, Bled, Zagreb, Plitvice, Zadar) are reused
+ * verbatim across roughly 10 other Alps/Balkan combo routes (Austria + Slovenia, Slovenia +
+ * Northern Croatia, Plitvice + Zagreb, Croatia North to South, Italy + Slovenia + Croatia, etc.)
+ * — same generic name-matching migration pattern as the grand-tour batches above.
+ */
+function rbMigrateAustriaSloveniaCroatiaDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_AUSTRIA_SLOVENIA_CROATIA_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_AUSTRIA_SLOVENIA_CROATIA_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Klagenfurt': 'Known for Minimundus, a park of 150+ miniature replicas of world landmarks, plus a compact pedestrian old town anchored by the Lindwurm dragon fountain. Visit Minimundus in the morning before tour groups arrive; the old town itself only takes an hour or two.',
+    'Wörthersee': 'Austria\'s warmest alpine lake (spring-fed, often 26-28°C in summer), ringed by resort towns like Velden and Pörtschach with lakeside promenades and swimming spots. A roughly 50km path circles the whole lake if you want to see more than one town by bike.',
+    'Ljubljana': "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river.",
+    'Bled': "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame.",
+    'Zagreb': "The Upper Town's colorful-tiled St. Mark's Church and the Dolac market are the highlights, linked to the Lower Town by the world's shortest funicular (under a minute). A free walking tour is an efficient way to cover both halves in a day.",
+    'Plitvice Lakes National Park': '16 turquoise terraced lakes connected by waterfalls and wooden boardwalks, with a boat crossing Kozjak Lake as the scenic centerpiece. Pick route C or K (covers both Upper and Lower Lakes, not just one) and start right at opening for boardwalk photos without crowds.',
+    'Zadar': "The Sea Organ (wave-powered pipes built into the waterfront steps) and the adjacent Sun Salutation light installation make the sunset promenade the actual destination here — reportedly the sunset Hitchcock once called the world's most beautiful. Time the visit for sunset; the light show and organ sound together are the point.",
   };
 
   let touched = false;
@@ -11417,8 +11454,8 @@ function rbBuildAustriaSloveniaRoute() {
       code: 'AT', name: 'Austria', days: 5, budget: 560, lat: 46.6249, lng: 14.3050,
       destinations: [
         { name: 'Salzburg or Grossglockner area', lat: 47.8095, lng: 13.0550 },
-        { name: 'Klagenfurt', lat: 46.6249, lng: 14.3050 },
-        { name: 'Wörthersee', lat: 46.6167, lng: 14.1667 },
+        { name: 'Klagenfurt', lat: 46.6249, lng: 14.3050, notes: "Known for Minimundus, a park of 150+ miniature replicas of world landmarks, plus a compact pedestrian old town anchored by the Lindwurm dragon fountain. Visit Minimundus in the morning before tour groups arrive; the old town itself only takes an hour or two." },
+        { name: 'Wörthersee', lat: 46.6167, lng: 14.1667, notes: "Austria's warmest alpine lake (spring-fed, often 26-28°C in summer), ringed by resort towns like Velden and Pörtschach with lakeside promenades and swimming spots. A roughly 50km path circles the whole lake if you want to see more than one town by bike." },
       ],
       notes: "5 days in Austria: Salzburg or the Grossglockner area, then south to Klagenfurt/Wörthersee (Carinthia). Budget ~€95-130/day p.p.",
       transport_to_next: 'Drive to the Julian Alps, Slovenia — Bled is only ~79km/50 min from Klagenfurt, genuinely no detour.',
@@ -11426,7 +11463,7 @@ function rbBuildAustriaSloveniaRoute() {
     {
       code: 'SI', name: 'Slovenia', days: 4, budget: 360, lat: 46.3683, lng: 14.1146,
       destinations: [
-        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
         { name: 'Bohinj', lat: 46.2833, lng: 13.9333 },
         { name: 'Ljubljana (optional)', lat: 46.0569, lng: 14.5058 },
       ],
@@ -14214,8 +14251,8 @@ function rbBuildPlitviceZagrebRoute() {
     {
       code: 'HR', name: 'Croatia', days: 6, budget: 600, lat: 45.8150, lng: 15.9819,
       destinations: [
-        { name: 'Zagreb', lat: 45.8150, lng: 15.9819 },
-        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820 },
+        { name: 'Zagreb', lat: 45.8150, lng: 15.9819, notes: "The Upper Town's colorful-tiled St. Mark's Church and the Dolac market are the highlights, linked to the Lower Town by the world's shortest funicular (under a minute). A free walking tour is an efficient way to cover both halves in a day." },
+        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820, notes: "16 turquoise terraced lakes connected by waterfalls and wooden boardwalks, with a boat crossing Kozjak Lake as the scenic centerpiece. Pick route C or K (covers both Upper and Lower Lakes, not just one) and start right at opening for boardwalk photos without crowds." },
         { name: 'Rastoke (optional)', lat: 45.1097, lng: 15.5822 },
       ],
       notes: "Zagreb (2-3 days) — Plitvice Lakes (2 days, staying overnight near the park) — optionally the village of Rastoke on the way. Budget: Zagreb ~€80-120/day, Plitvice days run higher because of the park entry fee. Season: April-May/September-October for the best colors and fewer crowds. Web check (2026-08): peak-season entry (1 June-30 September) is €40, shoulder season (Apr/May/Oct) €23.50, winter roughly €10 (ticket office closes 16:00). 2026 enforces a strict hourly capacity cap (max 300 people per entrance) — early-summer slots are already selling out online weeks ahead, so booking ahead is now mandatory, not optional.",
@@ -14235,9 +14272,9 @@ function rbBuildCroatiaNorthToSouthRoute() {
     {
       code: 'HR', name: 'Croatia', days: 9, budget: 1215, lat: 44.5000, lng: 16.5000,
       destinations: [
-        { name: 'Zagreb', lat: 45.8150, lng: 15.9819 },
-        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820 },
-        { name: 'Zadar', lat: 44.1194, lng: 15.2314 },
+        { name: 'Zagreb', lat: 45.8150, lng: 15.9819, notes: "The Upper Town's colorful-tiled St. Mark's Church and the Dolac market are the highlights, linked to the Lower Town by the world's shortest funicular (under a minute). A free walking tour is an efficient way to cover both halves in a day." },
+        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820, notes: "16 turquoise terraced lakes connected by waterfalls and wooden boardwalks, with a boat crossing Kozjak Lake as the scenic centerpiece. Pick route C or K (covers both Upper and Lower Lakes, not just one) and start right at opening for boardwalk photos without crowds." },
+        { name: 'Zadar', lat: 44.1194, lng: 15.2314, notes: "The Sea Organ (wave-powered pipes built into the waterfront steps) and the adjacent Sun Salutation light installation make the sunset promenade the actual destination here — reportedly the sunset Hitchcock once called the world's most beautiful. Time the visit for sunset; the light show and organ sound together are the point." },
         { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402 },
         { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
       ],
@@ -14258,7 +14295,7 @@ function rbBuildCroatiaCoastalRoadtripRoute() {
     {
       code: 'HR', name: 'Croatia', days: 9, budget: 1215, lat: 44.0000, lng: 16.0000,
       destinations: [
-        { name: 'Zadar', lat: 44.1194, lng: 15.2314 },
+        { name: 'Zadar', lat: 44.1194, lng: 15.2314, notes: "The Sea Organ (wave-powered pipes built into the waterfront steps) and the adjacent Sun Salutation light installation make the sunset promenade the actual destination here — reportedly the sunset Hitchcock once called the world's most beautiful. Time the visit for sunset; the light show and organ sound together are the point." },
         { name: 'Krka National Park / Šibenik', lat: 43.8097, lng: 15.9633 },
         { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402 },
         { name: 'Hvar Town', lat: 43.1729, lng: 16.4413 },
@@ -14281,9 +14318,9 @@ function rbBuildCompleteCroatiaRoute() {
     {
       code: 'HR', name: 'Croatia', days: 12, budget: 1560, lat: 44.5000, lng: 16.5000,
       destinations: [
-        { name: 'Zagreb', lat: 45.8150, lng: 15.9819 },
-        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820 },
-        { name: 'Zadar', lat: 44.1194, lng: 15.2314 },
+        { name: 'Zagreb', lat: 45.8150, lng: 15.9819, notes: "The Upper Town's colorful-tiled St. Mark's Church and the Dolac market are the highlights, linked to the Lower Town by the world's shortest funicular (under a minute). A free walking tour is an efficient way to cover both halves in a day." },
+        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820, notes: "16 turquoise terraced lakes connected by waterfalls and wooden boardwalks, with a boat crossing Kozjak Lake as the scenic centerpiece. Pick route C or K (covers both Upper and Lower Lakes, not just one) and start right at opening for boardwalk photos without crowds." },
+        { name: 'Zadar', lat: 44.1194, lng: 15.2314, notes: "The Sea Organ (wave-powered pipes built into the waterfront steps) and the adjacent Sun Salutation light installation make the sunset promenade the actual destination here — reportedly the sunset Hitchcock once called the world's most beautiful. Time the visit for sunset; the light show and organ sound together are the point." },
         { name: "Split (Diocletian's Palace) + islands", lat: 43.5081, lng: 16.4402 },
         { name: 'Hvar Town', lat: 43.1729, lng: 16.4413 },
         { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
@@ -14305,8 +14342,8 @@ function rbBuildLjubljanaLakeBledRoute() {
     {
       code: 'SI', name: 'Slovenia', days: 5, budget: 575, lat: 46.0569, lng: 14.5058,
       destinations: [
-        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
-        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, notes: "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river." },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
         { name: 'Vintgar Gorge', lat: 46.3764, lng: 14.0964 },
         { name: 'Bohinj (optional day trip)', lat: 46.2833, lng: 13.9333 },
       ],
@@ -14327,8 +14364,8 @@ function rbBuildSloveniaAlpineLoopRoute() {
     {
       code: 'SI', name: 'Slovenia', days: 6, budget: 720, lat: 46.3683, lng: 14.1146,
       destinations: [
-        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
-        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, notes: "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river." },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
         { name: 'Bohinj', lat: 46.2833, lng: 13.9333 },
         { name: 'Vršič Pass', lat: 46.4331, lng: 13.7478 },
         { name: 'Bovec / Soča Valley', lat: 46.3297, lng: 13.5522 },
@@ -14374,7 +14411,7 @@ function rbBuildSloveniaRoadtripRoute() {
     {
       code: 'SI', name: 'Slovenia', days: 9, budget: 1080, lat: 46.1000, lng: 14.2000,
       destinations: [
-        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, notes: "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river." },
         { name: 'Bled / Bohinj', lat: 46.3683, lng: 14.1146 },
         { name: 'Vršič Pass / Soča Valley', lat: 46.3297, lng: 13.5522 },
         { name: 'Piran', lat: 45.5285, lng: 13.5686 },
@@ -14396,8 +14433,8 @@ function rbBuildSloveniaNorthernCroatiaRoute() {
     {
       code: 'SI', name: 'Slovenia', days: 5, budget: 575, lat: 46.0569, lng: 14.5058,
       destinations: [
-        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
-        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, notes: "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river." },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
       ],
       notes: "Ljubljana (2 days) — Bled (2 days), plus a travel day. Budget ~€100-130/day. Season: May-June/September ideal for both halves of this trip.",
       transport_to_next: 'Car, short overland hop to Zagreb, Croatia — a Schengen-internal border with zero checks or delay since Croatia joined Schengen on 1 January 2023 (an older assumption of border delay here is outdated).',
@@ -14405,8 +14442,8 @@ function rbBuildSloveniaNorthernCroatiaRoute() {
     {
       code: 'HR', name: 'Croatia', days: 4, budget: 400, lat: 45.8150, lng: 15.9819,
       destinations: [
-        { name: 'Zagreb', lat: 45.8150, lng: 15.9819 },
-        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820 },
+        { name: 'Zagreb', lat: 45.8150, lng: 15.9819, notes: "The Upper Town's colorful-tiled St. Mark's Church and the Dolac market are the highlights, linked to the Lower Town by the world's shortest funicular (under a minute). A free walking tour is an efficient way to cover both halves in a day." },
+        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820, notes: "16 turquoise terraced lakes connected by waterfalls and wooden boardwalks, with a boat crossing Kozjak Lake as the scenic centerpiece. Pick route C or K (covers both Upper and Lower Lakes, not just one) and start right at opening for boardwalk photos without crowds." },
       ],
       notes: "Zagreb (2 days) — Plitvice Lakes (2 days). Budget ~€80-120/day. Web check (2026-08): 2026 enforces a strict hourly capacity cap at Plitvice (max 300 people per entrance) — book ahead, see Plitvice + Zagreb (6 days) 🏞️ above for the current entry fees.",
       transport_to_next: 'End of this route — fly home from Zagreb.',
@@ -14425,8 +14462,8 @@ function rbBuildSloveniaItalyRoute() {
     {
       code: 'SI', name: 'Slovenia', days: 5, budget: 575, lat: 46.0569, lng: 14.5058,
       destinations: [
-        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
-        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, notes: "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river." },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
         { name: 'Piran / Slovenian coast', lat: 45.5285, lng: 13.5686 },
       ],
       notes: "Ljubljana (2 days) — Bled (1-2 days) — Piran/the Slovenian coast (1-2 days). Budget ~€100-130/day. Season: May-June/September, avoid the August crowds in Venice further along this route.",
@@ -15905,8 +15942,8 @@ function rbBuildHungarySloveniaCroatiaRoute() {
     {
       code: 'SI', name: 'Slovenia', days: 3, budget: 300, lat: 46.0569, lng: 14.5058,
       destinations: [
-        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
-        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, notes: "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river." },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
       ],
       notes: "Ljubljana (1 day) — Lake Bled (2 days: the pletna boat to the island, Bled Castle). Budget ~€100/day — pricier than the Hungary leg because of Bled's lakeside attractions.",
       transport_to_next: 'Cross into Croatia — a fully Schengen border, no checks; book Plitvice Lakes tickets online ahead of time, and note the hourly capacity cap.',
@@ -15914,8 +15951,8 @@ function rbBuildHungarySloveniaCroatiaRoute() {
     {
       code: 'HR', name: 'Croatia', days: 3, budget: 270, lat: 44.8654, lng: 15.5820,
       destinations: [
-        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820 },
-        { name: 'Zagreb', lat: 45.8150, lng: 15.9819 },
+        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820, notes: "16 turquoise terraced lakes connected by waterfalls and wooden boardwalks, with a boat crossing Kozjak Lake as the scenic centerpiece. Pick route C or K (covers both Upper and Lower Lakes, not just one) and start right at opening for boardwalk photos without crowds." },
+        { name: 'Zagreb', lat: 45.8150, lng: 15.9819, notes: "The Upper Town's colorful-tiled St. Mark's Church and the Dolac market are the highlights, linked to the Lower Town by the world's shortest funicular (under a minute). A free walking tour is an efficient way to cover both halves in a day." },
         { name: 'Rovinj (optional coastal extension)', lat: 45.0811, lng: 13.6387 },
       ],
       notes: "Plitvice Lakes (1 day) — Zagreb (2 days), with Rovinj on the Istrian coast as an optional extension if time allows — best avoided in the July-August peak, when the coast gets noticeably pricier and busier. Budget ~€90/day for the Zagreb/Plitvice core. Web check (2026-08): book Plitvice entry online ahead of time; one-way rental-car returns between countries are expensive, so plan to hand the car back in the same country you picked it up.",
@@ -19621,8 +19658,8 @@ function rbBuildSloveniaCroatiaCoastalRoute() {
     {
       code: 'SI', name: 'Slovenia', days: 4, budget: 400, lat: 46.0569, lng: 14.5058,
       destinations: [
-        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
-        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, notes: "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river." },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
       ],
       notes: "Ljubljana (1-2 days) — Bled (2 days). Budget ~€100/day. Season: May-June or September.",
       transport_to_next: 'Car, overland hop into Croatian Istria — Schengen-internal since Croatia joined Schengen on 1 January 2023, zero checks or delay, no EES.',
@@ -19711,8 +19748,8 @@ function rbBuildSloveniaCroatiaBosniaRoute() {
     {
       code: 'SI', name: 'Slovenia', days: 4, budget: 400, lat: 46.0569, lng: 14.5058,
       destinations: [
-        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
-        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, notes: "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river." },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
       ],
       notes: "Ljubljana (2 days) — Bled (2 days). Budget ~€100/day. Season: May-June or September.",
       transport_to_next: 'Car, overland hop to Zagreb, Croatia — Schengen-internal since 1 January 2023, zero checks or delay.',
@@ -19720,8 +19757,8 @@ function rbBuildSloveniaCroatiaBosniaRoute() {
     {
       code: 'HR', name: 'Croatia', days: 4, budget: 520, lat: 44.7000, lng: 16.0000,
       destinations: [
-        { name: 'Zagreb', lat: 45.8150, lng: 15.9819 },
-        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820 },
+        { name: 'Zagreb', lat: 45.8150, lng: 15.9819, notes: "The Upper Town's colorful-tiled St. Mark's Church and the Dolac market are the highlights, linked to the Lower Town by the world's shortest funicular (under a minute). A free walking tour is an efficient way to cover both halves in a day." },
+        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820, notes: "16 turquoise terraced lakes connected by waterfalls and wooden boardwalks, with a boat crossing Kozjak Lake as the scenic centerpiece. Pick route C or K (covers both Upper and Lower Lakes, not just one) and start right at opening for boardwalk photos without crowds." },
         { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402 },
       ],
       notes: "Zagreb (1 day) — Plitvice Lakes (1-2 days, book the hourly-capacity-capped entry ahead) — Split (2 days, Diocletian's Palace). Budget ~€130/day (Split pulls the average up versus Zagreb/Plitvice). Web check (2026-08): 2026 enforces a strict hourly capacity cap at Plitvice (max 300 people per entrance) — book ahead.",
@@ -19750,8 +19787,8 @@ function rbBuildSloveniaCroatiaMontenegroCoastRoute() {
     {
       code: 'SI', name: 'Slovenia', days: 4, budget: 400, lat: 46.0569, lng: 14.5058,
       destinations: [
-        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
-        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, notes: "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river." },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
       ],
       notes: "Ljubljana (2 days) — Bled (2 days). Budget ~€100/day. Season: May-June or September.",
       transport_to_next: 'Car, overland hop to Croatia — Schengen-internal since 1 January 2023, zero checks or delay. (Istria makes an equally valid coastal entry point instead of Split, if flying into Pula/Rijeka is more convenient — see Slovenia + Croatian Istria (7-10 days) 🏖️, built earlier in this same sub-batch 15b, for that variant.)',
@@ -19788,8 +19825,8 @@ function rbBuildGrandBalkanRoadtripRoute() {
     {
       code: 'SI', name: 'Slovenia', days: 3, budget: 300, lat: 46.0569, lng: 14.5058,
       destinations: [
-        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
-        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, notes: "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river." },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
       ],
       notes: "Ljubljana (1-2 days) — Bled (1-2 days). Budget ~€100/day. This is the widest loop in this batch's Balkan combinations — pick 5-6 headline stops out of the ones listed rather than trying to do all of them justice in 14 days.",
       transport_to_next: 'Car, overland hop to Zagreb, Croatia — Schengen-internal since 1 January 2023, zero checks or delay.',
@@ -19797,8 +19834,8 @@ function rbBuildGrandBalkanRoadtripRoute() {
     {
       code: 'HR', name: 'Croatia', days: 4, budget: 480, lat: 44.9000, lng: 15.7000,
       destinations: [
-        { name: 'Zagreb', lat: 45.8150, lng: 15.9819 },
-        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820 },
+        { name: 'Zagreb', lat: 45.8150, lng: 15.9819, notes: "The Upper Town's colorful-tiled St. Mark's Church and the Dolac market are the highlights, linked to the Lower Town by the world's shortest funicular (under a minute). A free walking tour is an efficient way to cover both halves in a day." },
+        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820, notes: "16 turquoise terraced lakes connected by waterfalls and wooden boardwalks, with a boat crossing Kozjak Lake as the scenic centerpiece. Pick route C or K (covers both Upper and Lower Lakes, not just one) and start right at opening for boardwalk photos without crowds." },
         { name: 'Zadar / Split (choose one)', lat: 44.1194, lng: 15.2314 },
       ],
       notes: "Zagreb (1 day) — Plitvice Lakes (1-2 days, book the hourly-capacity-capped entry ahead) — Zadar or Split (1-2 days, pick one coastal base rather than both to keep the pace realistic). Budget ~€120/day average.",
@@ -19837,7 +19874,7 @@ function rbBuildAdriaticRoadtripRoute() {
     {
       code: 'SI', name: 'Slovenia', days: 2, budget: 220, lat: 45.7900, lng: 14.0400,
       destinations: [
-        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, notes: "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river." },
         { name: 'Piran', lat: 45.5285, lng: 13.5686 },
       ],
       notes: "Ljubljana (1 day) — Piran on the Slovenian coast (1 day). Budget ~€110/day. This is the coast-only counterpart to Grand Balkan Roadtrip (14 days) 🏔️ elsewhere in this same sub-batch — explicitly skips Sarajevo/Bosnia's interior.",
@@ -19848,7 +19885,7 @@ function rbBuildAdriaticRoadtripRoute() {
       destinations: [
         { name: 'Rovinj', lat: 45.0811, lng: 13.6387 },
         { name: 'Pula (Arena)', lat: 44.8737, lng: 13.8467 },
-        { name: 'Zadar', lat: 44.1194, lng: 15.2314 },
+        { name: 'Zadar', lat: 44.1194, lng: 15.2314, notes: "The Sea Organ (wave-powered pipes built into the waterfront steps) and the adjacent Sun Salutation light installation make the sunset promenade the actual destination here — reportedly the sunset Hitchcock once called the world's most beautiful. Time the visit for sunset; the light show and organ sound together are the point." },
         { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402 },
         { name: 'Hvar Town', lat: 43.1729, lng: 16.4413 },
         { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944 },
@@ -19903,8 +19940,8 @@ function rbBuildHungaryAustriaSloveniaRoute() {
     {
       code: 'SI', name: 'Slovenia', days: 4, budget: 400, lat: 46.3683, lng: 14.1146,
       destinations: [
-        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
-        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, notes: "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river." },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
       ],
       notes: "Ljubljana and Lake Bled (3-4 days). Budget ~€90-110/day p.p. — Bled itself runs pricier than the Ljubljana average. Season: May-June or September.",
       transport_to_next: 'End of this route — fly home from Ljubljana.',
@@ -20138,8 +20175,8 @@ function rbBuildGermanyAustriaSloveniaRoute() {
     {
       code: 'AT', name: 'Austria', days: 2, budget: 220, lat: 46.6249, lng: 14.3050,
       destinations: [
-        { name: 'Klagenfurt', lat: 46.6249, lng: 14.3050 },
-        { name: 'Wörthersee', lat: 46.6167, lng: 14.1667 },
+        { name: 'Klagenfurt', lat: 46.6249, lng: 14.3050, notes: "Known for Minimundus, a park of 150+ miniature replicas of world landmarks, plus a compact pedestrian old town anchored by the Lindwurm dragon fountain. Visit Minimundus in the morning before tour groups arrive; the old town itself only takes an hour or two." },
+        { name: 'Wörthersee', lat: 46.6167, lng: 14.1667, notes: "Austria's warmest alpine lake (spring-fed, often 26-28°C in summer), ringed by resort towns like Velden and Pörtschach with lakeside promenades and swimming spots. A roughly 50km path circles the whole lake if you want to see more than one town by bike." },
       ],
       notes: "Klagenfurt/Wörthersee (Carinthia, 2 days) — same content as the Austria leg of Austria + Slovenia (9 days) 🏝️ (rbBuildAustriaSloveniaRoute) and this same sub-batch's sibling Austria + Slovenia via Grossglockner (7-10 days) 🏔️ (rbBuildAustriaSloveniaGrossglocknerRoute, batch 15c). Budget ~€95-130/day p.p.",
       transport_to_next: 'Drive to Bled, Slovenia — only ~79km/50min from Klagenfurt, genuinely no detour.',
@@ -20147,9 +20184,9 @@ function rbBuildGermanyAustriaSloveniaRoute() {
     {
       code: 'SI', name: 'Slovenia', days: 4, budget: 440, lat: 46.3683, lng: 14.1146,
       destinations: [
-        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
         { name: 'Bohinj', lat: 46.2833, lng: 13.9333 },
-        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, notes: "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river." },
       ],
       notes: "Ljubljana, Bled and Bohinj (3-4 days) — same Julian Alps content as Austria + Slovenia (9 days) 🏝️ and Austria + Slovenia via Grossglockner (7-10 days) 🏔️ above. Budget ~€90-130/day p.p. — Bled itself is a price outlier within that range. Season: June-September. Slovenia does not use the Austrian vignette — a separate e-vinjeta (toll sticker) is needed once driving Slovenian motorways.",
       transport_to_next: 'Drive west to the Soča Valley via Kranjska Gora/the Vršič Pass, or south to Piran on the coast (either/or, see this route\'s notes below).',
@@ -20177,8 +20214,8 @@ function rbBuildAustriaSloveniaCroatiaRoute() {
     {
       code: 'AT', name: 'Austria', days: 3, budget: 330, lat: 46.6249, lng: 14.3050,
       destinations: [
-        { name: 'Klagenfurt', lat: 46.6249, lng: 14.3050 },
-        { name: 'Wörthersee', lat: 46.6167, lng: 14.1667 },
+        { name: 'Klagenfurt', lat: 46.6249, lng: 14.3050, notes: "Known for Minimundus, a park of 150+ miniature replicas of world landmarks, plus a compact pedestrian old town anchored by the Lindwurm dragon fountain. Visit Minimundus in the morning before tour groups arrive; the old town itself only takes an hour or two." },
+        { name: 'Wörthersee', lat: 46.6167, lng: 14.1667, notes: "Austria's warmest alpine lake (spring-fed, often 26-28°C in summer), ringed by resort towns like Velden and Pörtschach with lakeside promenades and swimming spots. A roughly 50km path circles the whole lake if you want to see more than one town by bike." },
       ],
       notes: "Klagenfurt/Wörthersee (2-3 days) — same Carinthia content as Austria + Slovenia (9 days) 🏝️ and this batch's other Austria+Slovenia routes above. Budget ~€95-130/day p.p.",
       transport_to_next: "Drive to Ljubljana/Bled via the Karawankentunnel or the Loibl Pass (Loiblpass/Ljubelj) — both open year-round (the tunnel unaffected by weather; the pass itself can need winter tyres/chains in snow, but is not seasonally closed).",
@@ -20186,8 +20223,8 @@ function rbBuildAustriaSloveniaCroatiaRoute() {
     {
       code: 'SI', name: 'Slovenia', days: 3, budget: 330, lat: 46.3683, lng: 14.1146,
       destinations: [
-        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
-        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, notes: "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river." },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
       ],
       notes: "Ljubljana and Bled (3 days) — same content as the Slovenia leg of Slovenia + Northern Croatia (9 days) 🌲 (rbBuildSloveniaNorthernCroatiaRoute) above. Budget ~€90-130/day p.p. Slovenia needs its own e-vinjeta, separate from the Austrian vignette.",
       transport_to_next: 'Drive to Zagreb, Croatia — a Schengen-internal border with zero checks or delay since Croatia joined Schengen on 1 January 2023.',
@@ -20195,7 +20232,7 @@ function rbBuildAustriaSloveniaCroatiaRoute() {
     {
       code: 'HR', name: 'Croatia', days: 2, budget: 200, lat: 45.8150, lng: 15.9819,
       destinations: [
-        { name: 'Zagreb', lat: 45.8150, lng: 15.9819 },
+        { name: 'Zagreb', lat: 45.8150, lng: 15.9819, notes: "The Upper Town's colorful-tiled St. Mark's Church and the Dolac market are the highlights, linked to the Lower Town by the world's shortest funicular (under a minute). A free walking tour is an efficient way to cover both halves in a day." },
       ],
       notes: "Zagreb (1-2 days) — same content as the Zagreb leg of Slovenia + Northern Croatia (9 days) 🌲 and Plitvice + Zagreb (6 days) 🏞️ (rbBuildPlitviceZagrebRoute) above. Budget ~€80-120/day p.p.",
       transport_to_next: 'Drive south to Plitvice Lakes National Park (~130km/1h45).',
@@ -20203,7 +20240,7 @@ function rbBuildAustriaSloveniaCroatiaRoute() {
     {
       code: 'HR', name: 'Croatia', days: 2, budget: 240, lat: 44.8654, lng: 15.5820,
       destinations: [
-        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820 },
+        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820, notes: "16 turquoise terraced lakes connected by waterfalls and wooden boardwalks, with a boat crossing Kozjak Lake as the scenic centerpiece. Pick route C or K (covers both Upper and Lower Lakes, not just one) and start right at opening for boardwalk photos without crowds." },
       ],
       notes: "Plitvice (2 days) — same content and hourly-capacity-cap caveat as Plitvice + Zagreb (6 days) 🏞️ above (2026 enforces a strict cap, max 300 people per entrance — book ahead). Budget higher here than Zagreb because of the park entry fee (peak season €40 p.p.).",
       transport_to_next: 'Drive to Zadar on the coast (~130km/1h45).',
@@ -20211,7 +20248,7 @@ function rbBuildAustriaSloveniaCroatiaRoute() {
     {
       code: 'HR', name: 'Croatia', days: 2, budget: 260, lat: 44.1194, lng: 15.2314,
       destinations: [
-        { name: 'Zadar', lat: 44.1194, lng: 15.2314 },
+        { name: 'Zadar', lat: 44.1194, lng: 15.2314, notes: "The Sea Organ (wave-powered pipes built into the waterfront steps) and the adjacent Sun Salutation light installation make the sunset promenade the actual destination here — reportedly the sunset Hitchcock once called the world's most beautiful. Time the visit for sunset; the light show and organ sound together are the point." },
       ],
       notes: "Zadar chosen here as the concrete '14-day-only' coastal add-on rather than Istria — same content as the Zadar leg of Croatia North to South (9 days) 🧭/Croatia Coastal Roadtrip (9 days) 🛣️ above. Zadar deliberately picked over Istria specifically to avoid duplicating this same sub-batch's sibling Italy + Slovenia + Croatia (10-14 days) route below, which already covers Istria/Rovinj-Pula in depth. Budget ~€80-150/day p.p. (coast pricier than inland). Season: May-June/September (June-September if combining with the coast/Alps as here).",
       transport_to_next: 'End of this route — fly home from Zadar or Zagreb.',
@@ -20240,7 +20277,7 @@ function rbBuildItalySloveniaCroatiaRoute() {
       code: 'SI', name: 'Slovenia', days: 2, budget: 200, lat: 46.0569, lng: 14.5058,
       destinations: [
         { name: 'Trieste (Italy, waypoint)', lat: 45.6495, lng: 13.7768 },
-        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058 },
+        { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, notes: "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river." },
       ],
       notes: "Trieste as a waypoint, then Ljubljana (2 days) — same core content as Slovenia + Italy (9 days) 🍝 (rbBuildSloveniaItalyRoute) above, run in reverse (that route goes Slovenia→Trieste→Venice; this one goes Venice→Trieste→Slovenia).",
       transport_to_next: 'Drive to Bled (~55km/1h).',
@@ -20248,7 +20285,7 @@ function rbBuildItalySloveniaCroatiaRoute() {
     {
       code: 'SI', name: 'Slovenia', days: 2, budget: 220, lat: 46.3683, lng: 14.1146,
       destinations: [
-        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
       ],
       notes: "Bled (2 days) — same content as the Bled legs of Austria + Slovenia (9 days) 🏝️ and this batch's other Slovenia routes above.",
       transport_to_next: 'Drive south to Istria, Croatia — a Schengen-internal border with zero checks or delay since Croatia joined Schengen on 1 January 2023.',
@@ -20265,7 +20302,7 @@ function rbBuildItalySloveniaCroatiaRoute() {
     {
       code: 'HR', name: 'Croatia', days: 2, budget: 240, lat: 44.8654, lng: 15.5820,
       destinations: [
-        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820 },
+        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820, notes: "16 turquoise terraced lakes connected by waterfalls and wooden boardwalks, with a boat crossing Kozjak Lake as the scenic centerpiece. Pick route C or K (covers both Upper and Lower Lakes, not just one) and start right at opening for boardwalk photos without crowds." },
       ],
       notes: "Plitvice (2 days) — same content and 2026 hourly-capacity-cap caveat as Plitvice + Zagreb (6 days) 🏞️ (rbBuildPlitviceZagrebRoute) and this sub-batch's sibling Austria + Slovenia + Croatia (10-14 days) 🚙 above.",
       transport_to_next: 'Drive to Zagreb (~130km/1h45) for departure.',
@@ -20273,7 +20310,7 @@ function rbBuildItalySloveniaCroatiaRoute() {
     {
       code: 'HR', name: 'Croatia', days: 1, budget: 90, lat: 45.8150, lng: 15.9819,
       destinations: [
-        { name: 'Zagreb', lat: 45.8150, lng: 15.9819 },
+        { name: 'Zagreb', lat: 45.8150, lng: 15.9819, notes: "The Upper Town's colorful-tiled St. Mark's Church and the Dolac market are the highlights, linked to the Lower Town by the world's shortest funicular (under a minute). A free walking tour is an efficient way to cover both halves in a day." },
       ],
       notes: "Zagreb (1 day), the trip's departure point — same content as the Zagreb legs of Plitvice + Zagreb (6 days) 🏞️ and this batch's sibling Austria + Slovenia + Croatia (10-14 days) 🚙 above.",
       transport_to_next: 'End of this route — fly home from Zagreb.',
@@ -20383,7 +20420,7 @@ function rbBuildAlpineRoadtripFiveCountriesRoute() {
       destinations: [
         { name: 'Kranjska Gora', lat: 46.4858, lng: 13.7861 },
         { name: 'Vršič Pass', lat: 46.4331, lng: 13.7478 },
-        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
       ],
       notes: "The Julian Alps and Bled (2-3 days), closing the trip — same content as Julian Alps + Soča Valley (6 days) 🚣 (rbBuildJulianAlpsSocaValleyRoute)/Slovenia Alpine Loop (6 days) 🏔️ above (Kranjska Gora, the Vršič Pass 2026 traffic regime, Bled). Budget ~€110-130/day p.p. Season: June-September only — the Vršič Pass is closed in winter for snow/avalanche risk. Web check (2026-09): a new traffic-management regime took effect 15 June 2026 for the whole 1 June-30 Sept tourist season (free shuttle bus + barrier monitoring) — private cars/motorbikes/bicycles still cross free and unrestricted, the only change is no parking right at the summit (use the designated areas near the Russian Chapel/Erjavčeva koča instead).",
       transport_to_next: 'End of this route — fly home from Ljubljana.',
@@ -20847,7 +20884,7 @@ function rbBuildGrandEuropeanRoadtripFourteenToTwentyOneDaysRoute() {
     {
       code: 'SI', name: 'Slovenia', days: 1, budget: 100, lat: 46.3683, lng: 14.1146,
       destinations: [
-        { name: 'Bled', lat: 46.3683, lng: 14.1146 },
+        { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
       ],
       notes: "Bled (1-2 days) — a single-day taste of a lake that deserves several (see Grand Balkan Roadtrip (14 days) 🏔️ or the flagship route below, both of which give Bled/the Julian Alps multiple days). Budget ~€100/day.",
       transport_to_next: "Drive into Croatia towards Istria/Plitvice/the coast — Schengen-internal, zero checks today. Web check (2026-09), minor precision: Croatia joined Schengen 1 January 2023, but Slovenia separately reinstated its own temporary controls on this border from 21 October 2023, only lifting them again on 11 June 2026 — so \"zero checks since 2023\" wasn't continuously true; it's accurate again now (Sept 2026).",
@@ -20856,7 +20893,7 @@ function rbBuildGrandEuropeanRoadtripFourteenToTwentyOneDaysRoute() {
       code: 'HR', name: 'Croatia', days: 2, budget: 220, lat: 44.8654, lng: 15.5820,
       destinations: [
         { name: 'Istria (Rovinj/Pula)', lat: 45.0811, lng: 13.6387 },
-        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820 },
+        { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820, notes: "16 turquoise terraced lakes connected by waterfalls and wooden boardwalks, with a boat crossing Kozjak Lake as the scenic centerpiece. Pick route C or K (covers both Upper and Lower Lakes, not just one) and start right at opening for boardwalk photos without crowds." },
       ],
       notes: "Istria, Plitvice and a taste of the coast (2 days) — deliberately picks a slice rather than a full Croatia loop, unlike this same document's own dedicated Croatia routes. Budget ~€110/day. Optional (only realistic at the 21-day end of this range, not counted in this route's own day/budget totals): extend to Kotor, Montenegro (1-2 days, ~€45-60/day) via the Karasovići EES crossing — a real non-Schengen/non-EU border with a genuine passport check, the only one on this whole route.",
       transport_to_next: 'Drive north to Budapest via Zagreb — a Schengen border, no checks.',
