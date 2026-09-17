@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 252 / 741 signatures.**
+- **Done so far: 255 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -208,8 +208,8 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **NO** (5 dest): Narvik, Lofoten (Svolvær), Senja, Tromsø, North Cape (Nordkapp) — routes: Nordic Arctic Expedition ❄️, Scandinavia Overland 🚂
 - [x] **NP** (7 dest): Lumbini, Chitwan National Park, Pokhara, Annapurna Region, Kathmandu, Patan, Bhaktapur — routes: India & Himalaya Expedition 🏔️, Nepal 🏔️
 - [ ] **PT** (6 dest): Funchal (old town, Mercado dos Lavradores), Monte (cable car, Monte Palace Gardens), Porto Moniz (natural lava pools), Seixal, São Vicente, 25 Fontes / Caldeirão Verde levada walk — routes: Madeira (5-7 days) 🏝️, Madeira + Porto Santo (7-10 days) 🏝️
-- [ ] **PT** (3 dest): Ponta Delgada (town, harbour), Sete Cidades (crater lakes), Furnas (thermal springs, cozido) — routes: Azores Island Hopping (10-14 days) 🏝️, Azores: São Miguel + Terceira (7-10 days) 🏝️
-- [ ] **PT** (2 dest): Angra do Heroísmo (UNESCO old town), Algar do Carvão (lava cave) — routes: Azores Island Hopping (10-14 days) 🏝️, Azores: São Miguel + Terceira (7-10 days) 🏝️
+- [x] **PT** (3 dest): Ponta Delgada (town, harbour), Sete Cidades (crater lakes), Furnas (thermal springs, cozido) — routes: Azores Island Hopping (10-14 days) 🏝️, Azores: São Miguel + Terceira (7-10 days) 🏝️
+- [x] **PT** (2 dest): Angra do Heroísmo (UNESCO old town), Algar do Carvão (lava cave) — routes: Azores Island Hopping (10-14 days) 🏝️, Azores: São Miguel + Terceira (7-10 days) 🏝️
 - [x] **SE** (3 dest): Kiruna, Sami culture (Jukkasjärvi), Abisko National Park — routes: Nordic Arctic Expedition ❄️, Scandinavia Overland 🚂
 - [x] **SG** (4 dest): Marina Bay, Chinatown, Sentosa, Gardens by the Bay — routes: Eurasia Grand Tour 🌏, Southeast Asia Grand Loop 🛕
 - [x] **SI** (1 dest): Bled — routes: Grand European Roadtrip (14-21 days) 🪣, Italy + Slovenia + Croatia (10-14 days) ⛵
@@ -661,7 +661,7 @@ Sorted alphabetically by country code.
 - [ ] **PL** (2 dest): Zakopane, Krakow (Main Square / Old Town) — routes: Slovakia + Poland (9 days) 🥾
 - [ ] **PL** (5 dest): Krakow Old Town, Wieliczka Salt Mine, Auschwitz-Birkenau, Zakopane / Tatra National Park, Wrocław (optional finale) — routes: South Poland (9 days) 🧭
 - [ ] **PT** (9 dest): Faro (Ria Formosa), Lagos (Ponta da Piedade), Praia Dona Ana, Sagres / Cabo de São Vicente, Portimão, Carvoeiro, Benagil (sea cave), Silves (castle), Tavira — routes: Algarve (6 days) 🏖️
-- [ ] **PT** (3 dest): Horta (Faial, whaling heritage), Madalena (Pico ferry port), Pico volcano climb (optional) — routes: Azores Island Hopping (10-14 days) 🏝️
+- [x] **PT** (3 dest): Horta (Faial, whaling heritage), Madalena (Pico ferry port), Pico volcano climb (optional) — routes: Azores Island Hopping (10-14 days) 🏝️
 - [ ] **PT** (8 dest): Coimbra (University + Biblioteca Joanina), Manteigas (base), Seia (alternative base), Torre (highest point of mainland Portugal), Sabugueiro (highest village), Poço do Inferno waterfall, Linhares da Beira, Piódão — routes: Central Portugal: Coimbra + Serra da Estrela (6 days) 📚
 - [ ] **PT** (10 dest): Lisbon (Baixa), Alfama, Castelo de São Jorge, Belém Tower, Jerónimos Monastery, Sintra (Palace of Pena), Quinta da Regaleira, Cascais, Cabo da Roca, Monserrate (optional) — routes: Lisbon + Sintra (5 days) 🏰
 - [ ] **PT** (1 dest): Vila Baleira / Porto Santo golden beach — routes: Madeira + Porto Santo (7-10 days) 🏝️
@@ -768,10 +768,8 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| Azores Island Hopping (10-14 days) 🏝️ | 8/8 | 2 |
 | Balearic Islands (7-10 days) 🏝️ | 7/7 | 2 |
 | Mallorca + Menorca (7-10 days) 🏝️ | 6/6 | 2 |
-| Azores: São Miguel + Terceira (7-10 days) 🏝️ | 5/5 | 2 |
 | Italy Roadtrip (12 days) 🧀 | 11/13 | 1 |
 | Rome + Tuscany (9 days) 🍝 | 10/12 | 1 |
 | Sicily + Southern Italy (12 days) 🍊 | 10/12 | 1 |
@@ -794,8 +792,8 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Kosovo + Albania (9 days) 🏔️ | 6/6 | 1 |
 | Madeira (5-7 days) 🏝️ | 6/6 | 1 |
 | Italy + Slovenia + Croatia (10-14 days) ⛵ | 6/9 | 1 |
-| South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️ | 5/5 | 1 |
 | Luxembourg + Ardennes (4 days) 🎖️ | 5/5 | 1 |
+| South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️ | 5/5 | 1 |
 | Switzerland + Northern Italy (9 days) 🚞 | 5/5 | 1 |
 | San Marino + Emilia-Romagna (4 days) 🍝 | 5/5 | 1 |
 | Reykjavík + Golden Circle (5 days) 🌋 | 5/5 | 1 |
@@ -808,6 +806,8 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | San Marino + Tuscany (5 days) 🍷 | 2/5 | 1 |
 | Slovenia + Croatian Istria (7-10 days) 🏖️ | 2/4 | 1 |
 | Kosovo + North Macedonia + Albania (9 days) 🎒 | 2/5 | 1 |
-| ... 274 more routes with open destinations ... | | |
+| Kosovo + North Macedonia (6 days) 🚏 | 2/4 | 1 |
+| Berlin (4 days) 🐻 | 1/1 | 1 |
+| ... 272 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

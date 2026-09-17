@@ -8877,6 +8877,41 @@ function rbMigrateGrandBalkanRoadtripDestinationNotes() {
 }
 
 /**
+ * Batch 23 (2026-09-17) for the per-destination-notes workflow -- Azores Island Hopping (10-14
+ * days), a small 3-leg/8-destination combo route researched in a single pass. Shared-signature
+ * batch: São Miguel/Terceira destinations recur in the smaller "Azores: São Miguel + Terceira"
+ * route. Same generic name-matching migration pattern as the grand-tour batches above.
+ */
+function rbMigrateAzoresDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_AZORES_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_AZORES_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Ponta Delgada (town, harbour)': 'The main town\'s charm is compact and walkable: the black-and-white basalt "calçada" streets, the 18th-century Portas da Cidade (city gates) marking the old harbour entrance, and the São Francisco convent/church cluster. Half a day covers the historic core on foot; most whale-watching boats and airport transfers also originate here, so it doubles as your logistics base rather than a standalone sight.',
+    'Sete Cidades (crater lakes)': 'A single volcanic caldera holding two adjacent lakes of strikingly different color (the "blue" and "green" lakes), best appreciated from above rather than lakeside. Go to the Vista do Rei viewpoint in the morning before clouds roll in, since the caldera fills with mist by early afternoon on many days.',
+    'Furnas (thermal springs, cozido)': "Known for its hot springs and for cozido das Furnas, a meat-and-vegetable stew slow-cooked for hours in pots buried in the geothermally heated ground, traditionally ordered ahead so it's ready at lunchtime. Pair it with a soak in Terra Nostra Park's iron-orange thermal pool, which stains light swimwear so bring a dark/old suit.",
+    'Angra do Heroísmo (UNESCO old town)': "Terceira's UNESCO-listed old town, rebuilt in a grid after a devastating 1980 earthquake but keeping its 16th-18th century colonial-era streetscape and colorful facades. Climb Monte Brasil (the volcanic promontory guarding the bay) for the best overview of the town and harbour together.",
+    'Algar do Carvão (lava cave)': 'A walk-down volcanic chimney/lava cave on Terceira, notable for a natural skylight overhead that lets ferns and moss grow deep inside, plus a small lake at the bottom and unusual silica "stalactite" formations rare in a basaltic cave. Access has been unstable through 2026 due to on-site construction — confirm current opening days/hours locally before planning around it.',
+    'Horta (Faial, whaling heritage)': 'The marina is a living tradition: transiting sailors paint murals on the harbour wall for good luck, built up over decades into an open-air gallery, and Peter Café Sport nearby is the legendary yachtie meeting spot with a scrimshaw (whale-bone/tooth carving) museum upstairs. Worth an hour just walking the mural-covered breakwater before or after dinner.',
+    'Madalena (Pico ferry port)': 'The small ferry port facing Faial across the channel, backed by Pico\'s UNESCO-listed vineyard landscape — grids of black lava-rock walls ("currais") built to shield vines from wind and salt spray. Worth pausing here before/after the ferry to walk a stretch of the vineyard paths near town rather than just passing through.',
+    'Pico volcano climb (optional)': "Portugal's actual highest point (2,351m); the reward beyond the permit/guide logistics is standing above the cloud layer at a small secondary crater near the summit. Most guided climbs start pre-dawn to reach the top for sunrise and to finish the roughly 7-8 hour round trip before afternoon cloud/wind builds.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -18985,9 +19020,9 @@ function rbBuildSaoMiguelRoute() {
     {
       code: 'PT', name: 'Portugal', days: 6, budget: 480, lat: 37.7412, lng: -25.6756,
       destinations: [
-        { name: 'Ponta Delgada (town, harbour)', lat: 37.7412, lng: -25.6756 },
-        { name: 'Sete Cidades (crater lakes)', lat: 37.8656, lng: -25.7847 },
-        { name: 'Furnas (thermal springs, cozido)', lat: 37.7847, lng: -25.3208 },
+        { name: 'Ponta Delgada (town, harbour)', lat: 37.7412, lng: -25.6756, notes: "The main town's charm is compact and walkable: the black-and-white basalt \"calçada\" streets, the 18th-century Portas da Cidade (city gates) marking the old harbour entrance, and the São Francisco convent/church cluster. Half a day covers the historic core on foot; most whale-watching boats and airport transfers also originate here, so it doubles as your logistics base rather than a standalone sight." },
+        { name: 'Sete Cidades (crater lakes)', lat: 37.8656, lng: -25.7847, notes: "A single volcanic caldera holding two adjacent lakes of strikingly different color (the \"blue\" and \"green\" lakes), best appreciated from above rather than lakeside. Go to the Vista do Rei viewpoint in the morning before clouds roll in, since the caldera fills with mist by early afternoon on many days." },
+        { name: 'Furnas (thermal springs, cozido)', lat: 37.7847, lng: -25.3208, notes: "Known for its hot springs and for cozido das Furnas, a meat-and-vegetable stew slow-cooked for hours in pots buried in the geothermally heated ground, traditionally ordered ahead so it's ready at lunchtime. Pair it with a soak in Terra Nostra Park's iron-orange thermal pool, which stains light swimwear so bring a dark/old suit." },
         { name: 'Lagoa do Fogo', lat: 37.7683, lng: -25.4667 },
       ],
       notes: "Entry: Transavia flies direct seasonally from Amsterdam to Ponta Delgada; off-season needs a Lisbon connection on TAP. 2 days in Ponta Delgada town and harbour, 1-2 days at the Sete Cidades crater lakes, 2 days at Furnas for the thermal springs and cozido (a stew traditionally cooked underground in volcanic heat) — optionally add Lagoa do Fogo. A rental car is usually needed. Budget ~€75-90/day, a bit higher than mainland Portugal given the remote location. Season: May-September for the best weather, though the Azores stay changeable year-round — always pack rain gear; June-September for whale/dolphin watching. Web check (2026-08): book a rental car well ahead (limited supply, fills up fast in summer); reserve the Furnas cozido lunch ahead.",
@@ -19007,9 +19042,9 @@ function rbBuildAzoresSaoMiguelTerceiraRoute() {
     {
       code: 'PT', name: 'Portugal', days: 5, budget: 400, lat: 37.7412, lng: -25.6756,
       destinations: [
-        { name: 'Ponta Delgada (town, harbour)', lat: 37.7412, lng: -25.6756 },
-        { name: 'Sete Cidades (crater lakes)', lat: 37.8656, lng: -25.7847 },
-        { name: 'Furnas (thermal springs, cozido)', lat: 37.7847, lng: -25.3208 },
+        { name: 'Ponta Delgada (town, harbour)', lat: 37.7412, lng: -25.6756, notes: "The main town's charm is compact and walkable: the black-and-white basalt \"calçada\" streets, the 18th-century Portas da Cidade (city gates) marking the old harbour entrance, and the São Francisco convent/church cluster. Half a day covers the historic core on foot; most whale-watching boats and airport transfers also originate here, so it doubles as your logistics base rather than a standalone sight." },
+        { name: 'Sete Cidades (crater lakes)', lat: 37.8656, lng: -25.7847, notes: "A single volcanic caldera holding two adjacent lakes of strikingly different color (the \"blue\" and \"green\" lakes), best appreciated from above rather than lakeside. Go to the Vista do Rei viewpoint in the morning before clouds roll in, since the caldera fills with mist by early afternoon on many days." },
+        { name: 'Furnas (thermal springs, cozido)', lat: 37.7847, lng: -25.3208, notes: "Known for its hot springs and for cozido das Furnas, a meat-and-vegetable stew slow-cooked for hours in pots buried in the geothermally heated ground, traditionally ordered ahead so it's ready at lunchtime. Pair it with a soak in Terra Nostra Park's iron-orange thermal pool, which stains light swimwear so bring a dark/old suit." },
       ],
       notes: "Entry: Transavia flies direct seasonally from Amsterdam to Ponta Delgada; off-season needs a Lisbon connection on TAP. 4-5 days: Ponta Delgada, the Sete Cidades crater lakes and Furnas (thermal springs, cozido). Budget ~€75-90/day. Season: May-September for the best weather; the Azores stay changeable year-round, so pack rain gear. Web check (2026-08): book a rental car well ahead (limited supply, fills up fast in summer); reserve the Furnas cozido lunch ahead.",
       transport_to_next: "Azores Airlines domestic flight Ponta Delgada-Terceira (~45 min). Web check (2026-08): book early — schedules are limited and sensitive to weather (fog) cancellations.",
@@ -19017,8 +19052,8 @@ function rbBuildAzoresSaoMiguelTerceiraRoute() {
     {
       code: 'PT', name: 'Portugal', days: 4, budget: 320, lat: 38.6559, lng: -27.2158,
       destinations: [
-        { name: 'Angra do Heroísmo (UNESCO old town)', lat: 38.6559, lng: -27.2158 },
-        { name: 'Algar do Carvão (lava cave)', lat: 38.7328, lng: -27.2166 },
+        { name: 'Angra do Heroísmo (UNESCO old town)', lat: 38.6559, lng: -27.2158, notes: "Terceira's UNESCO-listed old town, rebuilt in a grid after a devastating 1980 earthquake but keeping its 16th-18th century colonial-era streetscape and colorful facades. Climb Monte Brasil (the volcanic promontory guarding the bay) for the best overview of the town and harbour together." },
+        { name: 'Algar do Carvão (lava cave)', lat: 38.7328, lng: -27.2166, notes: "A walk-down volcanic chimney/lava cave on Terceira, notable for a natural skylight overhead that lets ferns and moss grow deep inside, plus a small lake at the bottom and unusual silica \"stalactite\" formations rare in a basaltic cave. Access has been unstable through 2026 due to on-site construction — confirm current opening days/hours locally before planning around it." },
       ],
       notes: "3-4 days on Terceira: Angra do Heroísmo's UNESCO-listed old town and the Algar do Carvão volcanic lava cave. Budget ~€75-90/day, plus the domestic flight (~€60-100 one-way, strongly seasonal). Season: May-September; Terceira's Sanjoaninas festival (late June) can push up prices and crowds.",
       transport_to_next: 'End of this route — fly home via Ponta Delgada or Lisbon.',
@@ -19037,9 +19072,9 @@ function rbBuildAzoresIslandHoppingRoute() {
     {
       code: 'PT', name: 'Portugal', days: 5, budget: 425, lat: 37.7412, lng: -25.6756,
       destinations: [
-        { name: 'Ponta Delgada (town, harbour)', lat: 37.7412, lng: -25.6756 },
-        { name: 'Sete Cidades (crater lakes)', lat: 37.8656, lng: -25.7847 },
-        { name: 'Furnas (thermal springs, cozido)', lat: 37.7847, lng: -25.3208 },
+        { name: 'Ponta Delgada (town, harbour)', lat: 37.7412, lng: -25.6756, notes: "The main town's charm is compact and walkable: the black-and-white basalt \"calçada\" streets, the 18th-century Portas da Cidade (city gates) marking the old harbour entrance, and the São Francisco convent/church cluster. Half a day covers the historic core on foot; most whale-watching boats and airport transfers also originate here, so it doubles as your logistics base rather than a standalone sight." },
+        { name: 'Sete Cidades (crater lakes)', lat: 37.8656, lng: -25.7847, notes: "A single volcanic caldera holding two adjacent lakes of strikingly different color (the \"blue\" and \"green\" lakes), best appreciated from above rather than lakeside. Go to the Vista do Rei viewpoint in the morning before clouds roll in, since the caldera fills with mist by early afternoon on many days." },
+        { name: 'Furnas (thermal springs, cozido)', lat: 37.7847, lng: -25.3208, notes: "Known for its hot springs and for cozido das Furnas, a meat-and-vegetable stew slow-cooked for hours in pots buried in the geothermally heated ground, traditionally ordered ahead so it's ready at lunchtime. Pair it with a soak in Terra Nostra Park's iron-orange thermal pool, which stains light swimwear so bring a dark/old suit." },
       ],
       notes: "Entry: Transavia flies direct seasonally from Amsterdam to Ponta Delgada; off-season needs a Lisbon connection on TAP. 4-5 days: Ponta Delgada, the Sete Cidades crater lakes and Furnas. Budget ~€80-95/day, plus 2-3 domestic flights/ferries across this route (reckon on €150-250 extra total, not folded into this per-day figure). Season: June-September is optimal for both weather and the whale-watching season.",
       transport_to_next: "Azores Airlines domestic flight Ponta Delgada-Terceira (~45 min). Web check (2026-08): book early — schedules are limited and sensitive to weather (fog) cancellations; multi-island tickets need advance booking given limited capacity.",
@@ -19047,8 +19082,8 @@ function rbBuildAzoresIslandHoppingRoute() {
     {
       code: 'PT', name: 'Portugal', days: 3, budget: 255, lat: 38.6559, lng: -27.2158,
       destinations: [
-        { name: 'Angra do Heroísmo (UNESCO old town)', lat: 38.6559, lng: -27.2158 },
-        { name: 'Algar do Carvão (lava cave)', lat: 38.7328, lng: -27.2166 },
+        { name: 'Angra do Heroísmo (UNESCO old town)', lat: 38.6559, lng: -27.2158, notes: "Terceira's UNESCO-listed old town, rebuilt in a grid after a devastating 1980 earthquake but keeping its 16th-18th century colonial-era streetscape and colorful facades. Climb Monte Brasil (the volcanic promontory guarding the bay) for the best overview of the town and harbour together." },
+        { name: 'Algar do Carvão (lava cave)', lat: 38.7328, lng: -27.2166, notes: "A walk-down volcanic chimney/lava cave on Terceira, notable for a natural skylight overhead that lets ferns and moss grow deep inside, plus a small lake at the bottom and unusual silica \"stalactite\" formations rare in a basaltic cave. Access has been unstable through 2026 due to on-site construction — confirm current opening days/hours locally before planning around it." },
       ],
       notes: "3 days on Terceira: Angra do Heroísmo's UNESCO old town and the Algar do Carvão lava cave. Budget ~€80-95/day.",
       transport_to_next: "Domestic flight or short ferry on to Faial. Web check (2026-08): book multi-island tickets ahead due to limited capacity.",
@@ -19056,9 +19091,9 @@ function rbBuildAzoresIslandHoppingRoute() {
     {
       code: 'PT', name: 'Portugal', days: 4, budget: 360, lat: 38.5347, lng: -28.6328,
       destinations: [
-        { name: 'Horta (Faial, whaling heritage)', lat: 38.5347, lng: -28.6328 },
-        { name: 'Madalena (Pico ferry port)', lat: 38.5372, lng: -28.5297 },
-        { name: 'Pico volcano climb (optional)', lat: 38.4667, lng: -28.3978 },
+        { name: 'Horta (Faial, whaling heritage)', lat: 38.5347, lng: -28.6328, notes: "The marina is a living tradition: transiting sailors paint murals on the harbour wall for good luck, built up over decades into an open-air gallery, and Peter Café Sport nearby is the legendary yachtie meeting spot with a scrimshaw (whale-bone/tooth carving) museum upstairs. Worth an hour just walking the mural-covered breakwater before or after dinner." },
+        { name: 'Madalena (Pico ferry port)', lat: 38.5372, lng: -28.5297, notes: "The small ferry port facing Faial across the channel, backed by Pico's UNESCO-listed vineyard landscape — grids of black lava-rock walls (\"currais\") built to shield vines from wind and salt spray. Worth pausing here before/after the ferry to walk a stretch of the vineyard paths near town rather than just passing through." },
+        { name: 'Pico volcano climb (optional)', lat: 38.4667, lng: -28.3978, notes: "Portugal's actual highest point (2,351m); the reward beyond the permit/guide logistics is standing above the cloud layer at a small secondary crater near the summit. Most guided climbs start pre-dawn to reach the top for sunrise and to finish the roughly 7-8 hour round trip before afternoon cloud/wind builds." },
       ],
       notes: "3-4 days across Faial and Pico, the westernmost group in this route: Horta's whaling heritage in Faial, a short ~30-minute ferry to Pico instead of flying, and an optional climb of the Pico volcano. Budget ~€80-95/day. Web check (2026-08): climbing Pico needs an advance online reservation plus a guide/permit through Parque Natural do Pico.",
       transport_to_next: 'End of this route — fly home via Ponta Delgada or Lisbon.',

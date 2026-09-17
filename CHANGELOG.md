@@ -12,6 +12,13 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 23 — Azores Island Hopping (10-14 days) (2026-09-17)** — a
+  small 3-leg/8-destination combo route, researched in a single pass. Shared-signature batch:
+  São Miguel/Terceira destinations recur in the smaller "Azores: São Miguel + Terceira" route.
+  Same generic name-matching migration (`rbMigrateAzoresDestinationNotes()`) — 3 routes confirmed
+  touched in the live simulation. App-wide total: 2465 destination-slots filled across 301
+  routes. 255/741 signatures done.
+
 - **Per-destination notes, batch 22 — Grand Balkan Roadtrip (14 days) (2026-09-17)** — a small
   4-leg/10-destination combo route, researched in a single pass. 7 destinations already had
   notes from earlier batches, so only 3 (Zadar/Split, Sarajevo (Baščaršija), Kotor Old Town) were
