@@ -12,6 +12,14 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 19 — India & Himalaya Expedition (2026-09-17)** — 3 legs, 22
+  destinations (21 newly researched — Delhi flagged as having nothing beyond the block-level
+  "already visited, no sightseeing" note, left without one), researched as 3 parallel sub-batches
+  by country (India, Nepal, Bhutan). All 21 inserted cleanly first try. Same generic
+  name-matching migration (`rbMigrateIndiaHimalayaDestinationNotes()`) — 4 routes confirmed
+  touched in the live simulation. App-wide total: 2400 destination-slots filled across 295
+  routes. 234/741 signatures done.
+
 - **Per-destination notes, batch 18 — Sicily Roadtrip (7-10 days) (2026-09-17)** — a small
   5-leg/8-destination combo route, researched in a single pass. Palermo and Taormina already had
   notes from an earlier batch, so only 6 destinations (Trapani, Erice, Segesta, Agrigento, Mount

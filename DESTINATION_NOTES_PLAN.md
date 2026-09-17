@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 232 / 741 signatures.**
+- **Done so far: 234 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -128,7 +128,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **BJ** (3 dest): Abomey (royal palaces, UNESCO), Ouidah (Route des Esclaves, Door of No Return), Ganvié (stilt village on the lake) — routes: West & Central Africa Expedition 🌍, West Africa Overland 🥁
 - [x] **BN** (3 dest): Bandar Seri Begawan, Kampong Ayer, Ulu Temburong NP — routes: Eurasia Grand Tour 🌏, Southeast Asia Grand Loop 🛕
 - [x] **BR** (7 dest): Foz do Iguaçu (Iguazu Falls), Curitiba, Ilha do Mel, Florianópolis, São Paulo, Paraty, Rio de Janeiro — routes: Pan-American Grand Tour 🌎, Southern Cone & Brazil Finale 🧉
-- [ ] **BT** (6 dest): Paro, Thimphu, Dochula Pass, Punakha, Bumthang (optional, by flight Paro-Bumthang), Tiger's Nest Monastery — routes: Bhutan 🐉, India & Himalaya Expedition 🏔️
+- [x] **BT** (6 dest): Paro, Thimphu, Dochula Pass, Punakha, Bumthang (optional, by flight Paro-Bumthang), Tiger's Nest Monastery — routes: Bhutan 🐉, India & Himalaya Expedition 🏔️
 - [x] **BZ** (6 dest): San Ignacio, Belize City, Caye Caulker, Ambergris Caye (San Pedro), Hopkins/Dangriga, Placencia — routes: Central America Loop 🌋, Pan-American Grand Tour 🌎
 - [x] **CA** (4 dest): Halifax, Peggy's Cove, Lunenburg, Cape Breton Island & Cabot Trail — routes: Eastern Canada 🍁, North America Grand Traverse 🌎
 - [x] **CA** (4 dest): Quebec City (Vieux-Québec), Montreal (Old Port & Mile End), Ottawa (Parliament Hill & museums), Toronto (skyline, with Niagara Falls as a day trip) — routes: Eastern Canada 🍁, North America Grand Traverse 🌎
@@ -206,7 +206,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **MY** (3 dest): Kuching, Bako National Park, Mulu Caves (Gunung Mulu NP) — routes: Eurasia Grand Tour 🌏, Southeast Asia Grand Loop 🛕
 - [x] **MY** (5 dest): Kota Kinabalu, Mount Kinabalu, Sepilok Orang-oetan Centre, Kinabatangan River, Semporna/Sipadan — routes: Eurasia Grand Tour 🌏, Southeast Asia Grand Loop 🛕
 - [x] **NO** (5 dest): Narvik, Lofoten (Svolvær), Senja, Tromsø, North Cape (Nordkapp) — routes: Nordic Arctic Expedition ❄️, Scandinavia Overland 🚂
-- [ ] **NP** (7 dest): Lumbini, Chitwan National Park, Pokhara, Annapurna Region, Kathmandu, Patan, Bhaktapur — routes: India & Himalaya Expedition 🏔️, Nepal 🏔️
+- [x] **NP** (7 dest): Lumbini, Chitwan National Park, Pokhara, Annapurna Region, Kathmandu, Patan, Bhaktapur — routes: India & Himalaya Expedition 🏔️, Nepal 🏔️
 - [ ] **PT** (6 dest): Funchal (old town, Mercado dos Lavradores), Monte (cable car, Monte Palace Gardens), Porto Moniz (natural lava pools), Seixal, São Vicente, 25 Fontes / Caldeirão Verde levada walk — routes: Madeira (5-7 days) 🏝️, Madeira + Porto Santo (7-10 days) 🏝️
 - [ ] **PT** (3 dest): Ponta Delgada (town, harbour), Sete Cidades (crater lakes), Furnas (thermal springs, cozido) — routes: Azores Island Hopping (10-14 days) 🏝️, Azores: São Miguel + Terceira (7-10 days) 🏝️
 - [ ] **PT** (2 dest): Angra do Heroísmo (UNESCO old town), Algar do Carvão (lava cave) — routes: Azores Island Hopping (10-14 days) 🏝️, Azores: São Miguel + Terceira (7-10 days) 🏝️
@@ -768,7 +768,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| India & Himalaya Expedition 🏔️ | 22/22 | 3 |
 | Czechia + Austria + Hungary (10-14 days) 🏛️ | 5/5 | 3 |
 | Germany + Austria + Italy (10-14 days) 🏔️ | 9/9 | 2 |
 | Grand Balkan Roadtrip (14 days) 🏔️ | 8/10 | 2 |
@@ -785,19 +784,18 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Sicily + Southern Italy (12 days) 🍊 | 10/12 | 1 |
 | Portugal + Andalusia (10-14 days) 🕌 | 10/10 | 1 |
 | Portugal + Spain Roadtrip (14 days) 🚗 | 10/10 | 1 |
+| India & Himalaya Expedition 🏔️ | 9/22 | 1 |
 | North India 🕌 | 9/9 | 1 |
 | Switzerland Alpine Roadtrip (9 days) 🛣️ | 9/9 | 1 |
 | France + Switzerland + Italy (10-14 days) 🗻 | 9/9 | 1 |
 | Alpine Roadtrip (14 days) 🏕️ | 9/9 | 1 |
 | Italy: North to Central (12 days) 🚄 | 8/9 | 1 |
-| Nepal 🏔️ | 7/7 | 1 |
 | Northern Italy (6 days) 🚤 | 7/7 | 1 |
 | Serbia + Montenegro + Bosnia (12 days) 🏔️ | 7/7 | 1 |
 | Faroe Islands + Iceland (9 days) ⛴️ | 7/7 | 1 |
 | Madeira + Porto Santo (7-10 days) 🏝️ | 7/7 | 1 |
 | Canary Islands (10-14 days) 🏝️ | 7/7 | 1 |
 | Poland + Slovakia + Hungary (10-14 days) 🥾 | 7/7 | 1 |
-| Bhutan 🐉 | 6/6 | 1 |
 | Germany: Berlin + Dresden + Bavaria (9 days) 🚂 | 6/6 | 1 |
 | Bavaria + Alps + Berchtesgaden (6 days) ⛰️ | 6/6 | 1 |
 | Tuscany (6 days) 🍇 | 6/7 | 1 |
@@ -808,6 +806,8 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Luxembourg + Ardennes (4 days) 🎖️ | 5/5 | 1 |
 | South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️ | 5/5 | 1 |
 | Switzerland + Northern Italy (9 days) 🚞 | 5/5 | 1 |
-| ... 283 more routes with open destinations ... | | |
+| San Marino + Emilia-Romagna (4 days) 🍝 | 5/5 | 1 |
+| Reykjavík + Golden Circle (5 days) 🌋 | 5/5 | 1 |
+| ... 281 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

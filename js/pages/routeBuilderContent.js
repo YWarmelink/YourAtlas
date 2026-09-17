@@ -474,31 +474,31 @@ const RB_EXPEDITION_CONTENT = {
     // cut at Youri's request — already visited before. Delhi stays as the mandatory arrival point.
     IN: { days: 22, budget: 935, lat: 28.6139, lng: 77.209, destinations: [
       { name: 'Delhi (arrival, no extra sightseeing — already visited)', lat: 28.6139, lng: 77.209 },
-      { name: 'Jaipur', lat: 26.9124, lng: 75.7873 },
-      { name: 'Pushkar', lat: 26.4899, lng: 74.5511 },
-      { name: 'Jodhpur', lat: 26.2389, lng: 73.0243 },
-      { name: 'Jaisalmer', lat: 26.9157, lng: 70.9083 },
-      { name: 'Udaipur', lat: 24.5854, lng: 73.7125 },
-      { name: 'Manali', lat: 32.2432, lng: 77.1892 },
-      { name: 'Rishikesh', lat: 30.0869, lng: 78.2676 },
-      { name: 'Varanasi', lat: 25.3176, lng: 82.9739 },
+      { name: 'Jaipur', lat: 26.9124, lng: 75.7873, notes: "The Pink City's Amber Fort (hilltop, mirrored Sheesh Mahal) and City Palace/Hawa Mahal complex are the highlights. Visit Amber Fort right at opening (8am) to beat both the heat and the tour-bus crowds, and skip the elephant ride up (long queues, animal-welfare concerns) in favor of a jeep or the walk." },
+      { name: 'Pushkar', lat: 26.4899, lng: 74.5511, notes: "A small holy town built around a sacred lake with 52 ghats and India's only major temple dedicated to Brahma. Sunset at the ghats is the best time to feel the town's pace; if travel dates land in Oct/Nov, check whether they overlap the Pushkar Camel Fair (Kartik Purnima) — spectacular but the town's accommodation and crowds triple." },
+      { name: 'Jodhpur', lat: 26.2389, lng: 73.0243, notes: "Known as the Blue City for the indigo-washed old town, seen best from the ramparts of Mehrangarh Fort towering directly above it. Budget a half-day for the fort's audio-guide route, then spend early evening on the fort walls or a rooftop café for the blue-rooftop panorama at golden hour." },
+      { name: 'Jaisalmer', lat: 26.9157, lng: 70.9083, notes: "A living fort — still inhabited, with homes, shops and havelis inside its sandstone walls — rising out of the Thar Desert, unique among India's forts. The real draw beyond the fort itself is an overnight camel safari/desert camp in the Sam sand dunes just outside town; book that as a separate add-on, not a fort-only stop." },
+      { name: 'Udaipur', lat: 24.5854, lng: 73.7125, notes: "The \"City of Lakes,\" built around Lake Pichola with the City Palace and Jag Mandir island palace on its shore. A sunset boat ride on the lake, or a rooftop restaurant facing the City Palace, is the single best way to see it — book the boat slot in advance in high season since it sells out." },
+      { name: 'Manali', lat: 32.2432, lng: 77.1892, notes: "Himalayan gateway town — Old Manali's cafes/river walk plus Solang Valley for adventure activities, with Rohtang Pass as the classic high-altitude side trip. Rohtang Pass requires a separate paid permit (~₹550, daily vehicle quota, bookable at rohtangpermits.hp.gov.in) and is closed roughly Nov/Dec through mid-May for snow plus every Tuesday for maintenance — confirm it's open and pre-book the permit before planning that day." },
+      { name: 'Rishikesh', lat: 30.0869, lng: 78.2676, notes: "The yoga capital on the Ganges, with Laxman Jhula/Ram Jhula footbridges, ashrams, and white-water rafting on the river. Don't miss the evening Ganga Aarti at Triveni/Parmarth Ghat at sunset — arrive 20-30 min early for a good spot on the steps." },
+      { name: 'Varanasi', lat: 25.3176, lng: 82.9739, notes: "India's oldest living city, its identity is entirely the ghats along the Ganges — cremation rites at Manikarnika Ghat and the nightly Ganga Aarti ceremony at Dashashwamedh Ghat. Take a sunrise boat ride along the ghats (the light and the riverside rituals are best at dawn), separate from the evening Aarti visit." },
     ], transport_to_next: "Bus/train to Sunauli and on foot across the border crossing to Belahiya (Nepal), then bus onward to Lumbini/Pokhara — alternative: short flight Varanasi-Kathmandu", notes: "Trimmed (2026-08, at Youri's request — already visited): Agra/Taj Mahal, Amritsar/Golden Temple and Dharamshala/McLeod Ganj cut. Delhi stays as the mandatory arrival point but without extra sightseeing (Red Fort etc. already seen). Udaipur-Manali is now direct (train/flight via Delhi) — no more stopover in Amritsar/Dharamshala needed. Days/budget scaled along (30→22 days, €1,275→€935). Travel advisory, Punjab border region (2026-08, search-confirmed): explosive incidents near Amritsar/Jalandhar on 5 May 2026 — no longer directly relevant now that Amritsar is off the route, but still a signal to avoid that region regardless." },
     NP: { days: 21, budget: 1260, lat: 27.7172, lng: 85.324, destinations: [
-      { name: 'Lumbini', lat: 27.4833, lng: 83.2767 },
-      { name: 'Chitwan National Park', lat: 27.5291, lng: 84.3542 },
-      { name: 'Pokhara', lat: 28.2096, lng: 83.9856 },
-      { name: 'Annapurna Region', lat: 28.5308, lng: 83.8797 },
-      { name: 'Kathmandu', lat: 27.7172, lng: 85.324 },
-      { name: 'Patan', lat: 27.6588, lng: 85.3247 },
-      { name: 'Bhaktapur', lat: 27.671, lng: 85.4298 },
+      { name: 'Lumbini', lat: 27.4833, lng: 83.2767, notes: "Buddha's birthplace, centered on the Maya Devi Temple and the Ashoka pillar marking the exact birth spot; set aside a half-day to also walk the surrounding Monastic Zone, where a dozen countries have each built a Buddhist temple in their own national style." },
+      { name: 'Chitwan National Park', lat: 27.5291, lng: 84.3542, notes: "Nepal's best spot to see one-horned rhinos (and, with luck, Bengal tigers) via jeep or canoe safari through sal forest and grassland; foreign visitors pay a separate park entry fee of roughly NPR 2,000 per day on top of any safari tour cost, so budget it per day spent inside the park, not once for the whole visit." },
+      { name: 'Pokhara', lat: 28.2096, lng: 83.9856, notes: "The lakeside base with the best up-close mountain views on the route — Machapuchare and the Annapurna range reflect in Phewa Lake, and Sarangkot is the classic sunrise viewpoint; also the launch point for Annapurna treks and Nepal's paragliding hub." },
+      { name: 'Annapurna Region', lat: 28.5308, lng: 83.8797, notes: "Beyond the multi-day treks already covered, Poon Hill (a 3-4 day side trip via Ghorepani) is the classic short trek for a sunrise panorama of Annapurna and Dhaulagiri without committing to the full Base Camp or Circuit routes — worth flagging as the lower-effort option if the full trek doesn't fit the itinerary." },
+      { name: 'Kathmandu', lat: 27.7172, lng: 85.324, notes: "Split a day between three UNESCO sites: Swayambhunath (\"Monkey Temple\") for panoramic valley views, Boudhanath's giant stupa for its Tibetan Buddhist quarter, and Pashupatinath's riverside cremation ghats; go to Boudhanath around sunset, when monks and locals circle the stupa with butter lamps." },
+      { name: 'Patan', lat: 27.6588, lng: 85.3247, notes: "Its Durbar Square rivals Kathmandu's for Newari palace and temple architecture but draws far fewer crowds; the Patan Museum inside the old Malla palace is widely considered the best-curated collection of Nepali religious art, worth an hour or two on its own." },
+      { name: 'Bhaktapur', lat: 27.671, lng: 85.4298, notes: "The best-preserved of the valley's three medieval royal cities, largely car-free, with Durbar Square, Taumadhi Square's five-story Nyatapola Temple, and Pottery Square all on one ticket. Foreigners pay a notably steep entrance fee (confirm on arrival as it drifts), but it's valid for a week on showing your passport, so it's worth timing a visit for the quieter evening light rather than rushing a day trip." },
     ], transport_to_next: "Flight Kathmandu-Paro (a spectacular Himalaya flight, operated only by Drukair or Bhutan Airlines, arrange the Bhutan visa/permit in advance)", notes: "Price correction (2026-07): €47.60→€60/day. Annapurna trekking days cost more than the average: a mandatory guide (since 2023, no more solo trekking) plus porter together already run $50-60/day, plus TIMS/ACAP permits (~$50 one-off). Update (2026-08, search-confirmed): the TIMS card is still officially required but in practice is no longer checked on Annapurna trails (the ACAP permit is the only one actually checked); on 22 March 2026 TAAN dropped the requirement of a minimum of 2 trekkers per group — solo trekking with a guide is now allowed too." },
     BT: { days: 8, budget: 2275, lat: 27.4728, lng: 89.639, destinations: [
-      { name: 'Paro', lat: 27.4305, lng: 89.4133 },
-      { name: 'Thimphu', lat: 27.4728, lng: 89.639 },
-      { name: 'Dochula Pass', lat: 27.3025, lng: 89.6529 },
-      { name: 'Punakha', lat: 27.5921, lng: 89.8797 },
-      { name: 'Bumthang (optional, by flight Paro-Bumthang)', lat: 27.5405, lng: 90.7438 },
-      { name: "Tiger's Nest Monastery", lat: 27.4919, lng: 89.3628 },
+      { name: 'Paro', lat: 27.4305, lng: 89.4133, notes: "Bhutan's only international airport sits here, and the town's own draw beyond arrival is the National Museum (Ta Dzong) and Rinpung Dzong — worth a half-day separate from the Tiger's Nest hike." },
+      { name: 'Thimphu', lat: 27.4728, lng: 89.639, notes: "The capital has no traffic lights — a white-gloved officer directs the main intersection by hand — and its best stops are the giant Buddha Dordenma statue overlooking the valley and the weekend market where farmers sell produce from across the country." },
+      { name: 'Dochula Pass', lat: 27.3025, lng: 89.6529, notes: "A ridge of 108 memorial chortens (Druk Wangyal Chortens) marks the pass, with a clear-morning view across the eastern Himalayan range including Gangkhar Puensum; clouds usually roll in by mid-morning, so pass through early if the peaks matter to you." },
+      { name: 'Punakha', lat: 27.5921, lng: 89.8797, notes: "Punakha Dzong, at the confluence of the Mo Chhu and Pho Chhu rivers, is widely considered Bhutan's most beautiful fortress-monastery and is reached via a long cantilevered wooden footbridge; jacarandas frame it in bloom March-April." },
+      { name: 'Bumthang (optional, by flight Paro-Bumthang)', lat: 27.5405, lng: 90.7438, notes: "Considered Bhutan's spiritual heartland, with some of the country's oldest temples (Jambay Lhakhang, Kurjey Lhakhang) in one valley; worth the extra flight mainly if you have a specific interest in Buddhist history rather than more dzong/valley scenery." },
+      { name: "Tiger's Nest Monastery", lat: 27.4919, lng: 89.3628, notes: "Paro Taktsang clings to a cliff face 900m above the valley floor and the round-trip hike (roughly 4-5 hours total) is usually built around a full day; start at first light to beat both the heat on the exposed switchbacks and the crowds, and treat the halfway cafeteria as a viewpoint/rest stop even if going no further." },
     ], transport_to_next: "End of the expedition — flight back from Paro International Airport", notes: "Price verified (2026-07), comfortably correct — the mandatory Sustainable Development Fee ($100/night, unchanged since 2023, guaranteed through 31 August 2027) is already comfortably absorbed into this daily rate. Flight Paro-Kathmandu (~$400-500 one-way) is a separate cost, not included in this daily rate. New (2026-08): Bhutan has levied a 5% GST on tourist services (hotels, guides, transport) since 1 January 2026 — doesn't affect the SDF/visa costs themselves, but slightly raises the effective daily spend. Bumthang side trip: at Youri's request, the domestic flight Paro-Bumthang is noted as the standard option instead of the long overland return drive." },
   },
 };
@@ -8712,6 +8712,55 @@ function rbMigrateSicilyRoadtripDestinationNotes() {
     'Agrigento — Valle dei Templi': 'The Temple of Concordia is the best-preserved Doric temple outside Greece, and the whole ridge is most striking near sunset when the stone glows gold. Within the same park, the Kolymbethra Garden — an ancient irrigated citrus and almond grove — is an easily-missed highlight most visitors skip (separate small entry fee from the main site).',
     'Mount Etna': "Europe's largest active volcano, with a stark landscape of lava fields, craters, and smaller volcanic cones on the lower slopes that don't require a guide (unlike the summit crater zone). The lower slopes also host Etna DOC vineyards growing in volcanic soil, with wineries open for tastings — worth an afternoon if not doing a full summit excursion.",
     'Syracuse / Ortigia': 'Ortigia\'s small old-town island packs in the Baroque Piazza Duomo — built around the Greek Temple of Athena\'s columns, still visible embedded in the cathedral\'s walls — and a lively daily fish/produce market near Via Trento. On the mainland side, the Neapolis Archaeological Park\'s Greek theater and the "Ear of Dionysius" limestone cave are the must-sees; go early morning to beat heat and cruise-ship crowds.',
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 19 (2026-09-17) for the per-destination-notes workflow -- India & Himalaya Expedition (3
+ * legs, 22 destinations, 21 newly researched -- Delhi flagged by the researcher as having nothing
+ * beyond the block-level "already visited, no sightseeing" note, so deliberately left without
+ * one), researched as 3 parallel sub-batches by country (India, Nepal, Bhutan). Same generic
+ * name-matching migration pattern as the other grand tours.
+ */
+function rbMigrateIndiaHimalayaDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_INDIA_HIMALAYA_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_INDIA_HIMALAYA_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Jaipur': "The Pink City's Amber Fort (hilltop, mirrored Sheesh Mahal) and City Palace/Hawa Mahal complex are the highlights. Visit Amber Fort right at opening (8am) to beat both the heat and the tour-bus crowds, and skip the elephant ride up (long queues, animal-welfare concerns) in favor of a jeep or the walk.",
+    'Pushkar': "A small holy town built around a sacred lake with 52 ghats and India's only major temple dedicated to Brahma. Sunset at the ghats is the best time to feel the town's pace; if travel dates land in Oct/Nov, check whether they overlap the Pushkar Camel Fair (Kartik Purnima) — spectacular but the town's accommodation and crowds triple.",
+    'Jodhpur': "Known as the Blue City for the indigo-washed old town, seen best from the ramparts of Mehrangarh Fort towering directly above it. Budget a half-day for the fort's audio-guide route, then spend early evening on the fort walls or a rooftop café for the blue-rooftop panorama at golden hour.",
+    'Jaisalmer': "A living fort — still inhabited, with homes, shops and havelis inside its sandstone walls — rising out of the Thar Desert, unique among India's forts. The real draw beyond the fort itself is an overnight camel safari/desert camp in the Sam sand dunes just outside town; book that as a separate add-on, not a fort-only stop.",
+    'Udaipur': 'The "City of Lakes," built around Lake Pichola with the City Palace and Jag Mandir island palace on its shore. A sunset boat ride on the lake, or a rooftop restaurant facing the City Palace, is the single best way to see it — book the boat slot in advance in high season since it sells out.',
+    'Manali': "Himalayan gateway town — Old Manali's cafes/river walk plus Solang Valley for adventure activities, with Rohtang Pass as the classic high-altitude side trip. Rohtang Pass requires a separate paid permit (~₹550, daily vehicle quota, bookable at rohtangpermits.hp.gov.in) and is closed roughly Nov/Dec through mid-May for snow plus every Tuesday for maintenance — confirm it's open and pre-book the permit before planning that day.",
+    'Rishikesh': "The yoga capital on the Ganges, with Laxman Jhula/Ram Jhula footbridges, ashrams, and white-water rafting on the river. Don't miss the evening Ganga Aarti at Triveni/Parmarth Ghat at sunset — arrive 20-30 min early for a good spot on the steps.",
+    'Varanasi': "India's oldest living city, its identity is entirely the ghats along the Ganges — cremation rites at Manikarnika Ghat and the nightly Ganga Aarti ceremony at Dashashwamedh Ghat. Take a sunrise boat ride along the ghats (the light and the riverside rituals are best at dawn), separate from the evening Aarti visit.",
+    'Lumbini': "Buddha's birthplace, centered on the Maya Devi Temple and the Ashoka pillar marking the exact birth spot; set aside a half-day to also walk the surrounding Monastic Zone, where a dozen countries have each built a Buddhist temple in their own national style.",
+    'Chitwan National Park': "Nepal's best spot to see one-horned rhinos (and, with luck, Bengal tigers) via jeep or canoe safari through sal forest and grassland; foreign visitors pay a separate park entry fee of roughly NPR 2,000 per day on top of any safari tour cost, so budget it per day spent inside the park, not once for the whole visit.",
+    'Pokhara': "The lakeside base with the best up-close mountain views on the route — Machapuchare and the Annapurna range reflect in Phewa Lake, and Sarangkot is the classic sunrise viewpoint; also the launch point for Annapurna treks and Nepal's paragliding hub.",
+    'Annapurna Region': "Beyond the multi-day treks already covered, Poon Hill (a 3-4 day side trip via Ghorepani) is the classic short trek for a sunrise panorama of Annapurna and Dhaulagiri without committing to the full Base Camp or Circuit routes — worth flagging as the lower-effort option if the full trek doesn't fit the itinerary.",
+    'Kathmandu': 'Split a day between three UNESCO sites: Swayambhunath ("Monkey Temple") for panoramic valley views, Boudhanath\'s giant stupa for its Tibetan Buddhist quarter, and Pashupatinath\'s riverside cremation ghats; go to Boudhanath around sunset, when monks and locals circle the stupa with butter lamps.',
+    'Patan': "Its Durbar Square rivals Kathmandu's for Newari palace and temple architecture but draws far fewer crowds; the Patan Museum inside the old Malla palace is widely considered the best-curated collection of Nepali religious art, worth an hour or two on its own.",
+    'Bhaktapur': "The best-preserved of the valley's three medieval royal cities, largely car-free, with Durbar Square, Taumadhi Square's five-story Nyatapola Temple, and Pottery Square all on one ticket. Foreigners pay a notably steep entrance fee (confirm on arrival as it drifts), but it's valid for a week on showing your passport, so it's worth timing a visit for the quieter evening light rather than rushing a day trip.",
+    'Paro': "Bhutan's only international airport sits here, and the town's own draw beyond arrival is the National Museum (Ta Dzong) and Rinpung Dzong — worth a half-day separate from the Tiger's Nest hike.",
+    'Thimphu': "The capital has no traffic lights — a white-gloved officer directs the main intersection by hand — and its best stops are the giant Buddha Dordenma statue overlooking the valley and the weekend market where farmers sell produce from across the country.",
+    'Dochula Pass': 'A ridge of 108 memorial chortens (Druk Wangyal Chortens) marks the pass, with a clear-morning view across the eastern Himalayan range including Gangkhar Puensum; clouds usually roll in by mid-morning, so pass through early if the peaks matter to you.',
+    'Punakha': "Punakha Dzong, at the confluence of the Mo Chhu and Pho Chhu rivers, is widely considered Bhutan's most beautiful fortress-monastery and is reached via a long cantilevered wooden footbridge; jacarandas frame it in bloom March-April.",
+    'Bumthang (optional, by flight Paro-Bumthang)': "Considered Bhutan's spiritual heartland, with some of the country's oldest temples (Jambay Lhakhang, Kurjey Lhakhang) in one valley; worth the extra flight mainly if you have a specific interest in Buddhist history rather than more dzong/valley scenery.",
+    "Tiger's Nest Monastery": 'Paro Taktsang clings to a cliff face 900m above the valley floor and the round-trip hike (roughly 4-5 hours total) is usually built around a full day; start at first light to beat both the heat on the exposed switchbacks and the crowds, and treat the halfway cafeteria as a viewpoint/rest stop even if going no further.',
   };
 
   let touched = false;
