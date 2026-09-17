@@ -2160,13 +2160,13 @@ function rbBuildBritishIslesExpeditionRoute() {
         {
           code: 'GB', name: 'United Kingdom', days: 10, budget: 1155, lat: 51.5074, lng: -0.1278,
           destinations: [
-            { name: 'Dover (White Cliffs)', lat: 51.1279, lng: 1.3134 },
-            { name: 'Canterbury', lat: 51.2802, lng: 1.0789 },
-            { name: 'Londen', lat: 51.5074, lng: -0.1278 },
-            { name: 'Cotswolds', lat: 51.8830, lng: -1.8433 },
-            { name: 'Bath', lat: 51.3811, lng: -2.3590 },
-            { name: 'Stonehenge', lat: 51.1789, lng: -1.8262 },
-            { name: 'Jurassic Coast', lat: 50.6167, lng: -2.4667 },
+            { name: 'Dover (White Cliffs)', lat: 51.1279, lng: 1.3134, notes: "Dover Castle's Secret Wartime Tunnels, carved into the cliffs themselves, are the standout beyond the view — Operation Dynamo (Dunkirk evacuation) was run from here. Walk the National Trust cliff-top path east of the castle for the classic white-cliffs-over-the-Channel photo rather than just the car park viewpoint." },
+            { name: 'Canterbury', lat: 51.2802, lng: 1.0789, notes: "Canterbury Cathedral (UNESCO, seat of the Archbishop of Canterbury and the murder site of Thomas Becket) is the reason to stop, with the medieval Chaucer connection giving the old town its literary weight. Go early morning or after 4pm — tour coaches fill the cathedral precinct midday and services periodically close parts of the nave to visitors." },
+            { name: 'Londen', lat: 51.5074, lng: -0.1278, notes: "With only a brief stop, pick one anchor rather than skimming the whole city — Westminster/Big Ben plus a river walk along the South Bank covers the classic skyline in a few hours. A single Tube day pass (contactless card works directly, no ticket needed) beats trying to drive or find parking anywhere central." },
+            { name: 'Cotswolds', lat: 51.8830, lng: -1.8433, notes: "Bibury's Arlington Row weavers' cottages and Bourton-on-the-Water's low stone footbridges over the River Windrush are the two most-photographed spots and both are tiny, walkable in under an hour each. Arrive before mid-morning — these villages have almost no capacity for the coach-tour crowds that arrive by midday in summer." },
+            { name: 'Bath', lat: 51.3811, lng: -2.3590, notes: "Beyond the Roman Baths themselves, the Georgian Royal Crescent and Pulteney Bridge (shops built directly across it, one of only a few bridges like this in the world) are worth the short walk. Book Roman Baths tickets online for a timed entry slot — walk-up queues in summer regularly run over an hour." },
+            { name: 'Stonehenge', lat: 51.1789, lng: -1.8262, notes: "As a short drop-in stop, the standard visit is viewing the circle from the roped perimeter path, not walking among the stones. Book the timed-entry ticket online in advance (English Heritage/National Trust) — on-the-day availability is limited and car park access is tied to your slot time." },
+            { name: 'Jurassic Coast', lat: 50.6167, lng: -2.4667, notes: "Durdle Door's natural limestone arch and neighbouring Lulworth Cove are the single most iconic stop along this coastline. For fossil-hunting, Charmouth and Lyme Regis beaches are best right after a storm or at low tide, when fresh material has been exposed from the cliffs." },
           ],
           notes: "A broad opener with plenty of different moods: the chalk cliffs and cathedral of Kent, a brief urban introduction to London, the traditional villages of the Cotswolds, the Roman baths of Bath and the coastal geology of the Jurassic Coast. Stonehenge is deliberately included as a short stop (easily visible from the road) — the first candidate to drop if the trip ever needs to get shorter. Price correction (2026-07): €90→€116/day average (London itself is higher, ~€140/day; the rest ~€105/day). New: since 2 April 2025 a UK ETA has been mandatory for Dutch/EU travellers (~€23 p.p., raised from £16 to £20 on 8 April 2026 — apply well in advance). Cotswolds villages (including Bourton-on-the-Water) now explicitly charge for parking (~£1-14/day). Dartford Crossing (if the route uses it): a one-off £3.50 (~€4), payable online within 30 days. Travel advisory: green for the UK as a whole.",
           transport_to_next: 'Car, ≈450 km to Cornwall via the A30 — no toll along the way.',
@@ -2174,11 +2174,11 @@ function rbBuildBritishIslesExpeditionRoute() {
         {
           code: 'GB', name: 'United Kingdom', days: 7, budget: 875, lat: 50.2144, lng: -5.4791,
           destinations: [
-            { name: 'St Ives', lat: 50.2110, lng: -5.4800 },
-            { name: "Land's End", lat: 50.0657, lng: -5.7139 },
-            { name: "St Michael's Mount", lat: 50.1180, lng: -5.4767 },
-            { name: 'Tintagel Castle', lat: 50.6680, lng: -4.7590 },
-            { name: 'South West Coast Path', lat: 50.0453, lng: -5.6497 },
+            { name: 'St Ives', lat: 50.2110, lng: -5.4800, notes: "A working fishing harbour that became an artist colony for its unusual light — Tate St Ives and the Barbara Hepworth Museum are the concrete reason to stop, plus Porthmeor Beach right below the gallery. Don't drive into the old town itself; park at the park-and-ride on the outskirts, since the medieval streets are effectively unnavigable and unparkable by car in season." },
+            { name: "Land's End", lat: 50.0657, lng: -5.7139, notes: "The mainland's westernmost point, with genuinely dramatic Atlantic cliffs — but the visitor complex itself is a paid, theme-park-style attraction. Skip the paid extras and just walk the coast path a mile or so to Sennen Cove for the same cliff scenery plus a proper beach, without the entry fee or crowds." },
+            { name: "St Michael's Mount", lat: 50.1180, lng: -5.4767, notes: "Beyond the tidal crossing, the summit holds a genuine medieval priory-turned-castle (still a private St Aubyn family home in part) with subtropical terraced gardens cut into the rock. The castle and gardens keep more limited opening days than the island/causeway itself (often closed on Saturdays and in winter) — check the current schedule before making the interior your main reason to go, not just the walk-over." },
+            { name: 'Tintagel Castle', lat: 50.6680, lng: -4.7590, notes: "Beyond the Arthurian legend, the 2019 footbridge spanning the 60m gorge between mainland and headland is itself a striking piece of engineering and the easiest way across (the alternative is a steep original stair down and back up). Site involves a lot of uneven cliff-top ground and steps, so allow more time than the small map suggests, and check tide times if you want to reach Merlin's Cave at the base, which floods at high tide." },
+            { name: 'South West Coast Path', lat: 50.0453, lng: -5.6497, notes: "If only walking one section, the Zennor-to-St Ives stretch (wild moorland dropping straight to granite cliffs, no road access) is one of the most dramatic and manageable-length segments in this part of Cornwall. Because the path constantly climbs in and out of coves rather than running flat, a given mileage takes noticeably longer here than the same distance on level ground — pad your time estimate accordingly." },
           ],
           notes: 'Rugged coastline and narrow roads that eat up time — the South West Coast Path deserves several full walking days, not just viewpoints from the road. St Michael\'s Mount is tide-dependent (only reachable via the causeway at low tide); Tintagel carries the Arthurian legend. Price correction (2026-07): €90→€125/day — Cornwall charges a real premium over Devon, with a further 60-80% on top of peak prices in July-August (St Ives is a well-known pricey resort town).',
           transport_to_next: 'Car, ≈300 km to Wales via Bristol/the Severn crossing.',
@@ -2186,10 +2186,10 @@ function rbBuildBritishIslesExpeditionRoute() {
         {
           code: 'GB', name: 'United Kingdom', days: 8, budget: 800, lat: 53.2799, lng: -3.8278,
           destinations: [
-            { name: 'Pembrokeshire Coast Path', lat: 51.6214, lng: -5.0246 },
-            { name: 'Brecon Beacons/Bannau Brycheiniog', lat: 51.8836, lng: -3.4360 },
-            { name: 'Snowdonia/Eryri', lat: 53.0685, lng: -4.0763 },
-            { name: 'Conwy Castle', lat: 53.2799, lng: -3.8278 },
+            { name: 'Pembrokeshire Coast Path', lat: 51.6214, lng: -5.0246, notes: "The coastline around St Davids (Britain's smallest city) and the Blue Lagoon at Abereiddy are the highlights — a sea-kayaking or coasteering session here is the area's signature activity, not just a coastal walk." },
+            { name: 'Brecon Beacons/Bannau Brycheiniog', lat: 51.8836, lng: -3.4360, notes: "Pen y Fan (886m) is the highest point and the classic there-and-back hike (2-3 hours from the Pont ar Daf car park); the Four Falls Trail near Ystradfellte is the easier waterfall-focused alternative if you want a shorter day. Note the National Park officially rebranded from \"Brecon Beacons\" to \"Bannau Brycheiniog\" in 2023." },
+            { name: 'Snowdonia/Eryri', lat: 53.0685, lng: -4.0763, notes: "Snowdon/Yr Wyddfa (1,085m) is Wales's highest peak and the obvious draw; the Llanberis Path is the easiest ascent, while the Pyg Track/Miners' Track combo gives better views for a moderately fit hiker. Book the Snowdon Mountain Railway well ahead if you'd rather ride than climb — it sells out on clear-forecast days." },
+            { name: 'Conwy Castle', lat: 53.2799, lng: -3.8278, notes: "One of Edward I's \"Iron Ring\" castles and a UNESCO World Heritage Site, still with an intact town wall you can walk almost the full circuit of. Climb the castle's towers for a view over the estuary and the walled town together — better value than the castle interior alone." },
           ],
           notes: 'Snowdonia alone deserves 2-3 days for proper walks (Snowdon itself, Cadair Idris); the Brecon Beacons and the Pembrokeshire coast are each worth a day of their own. Conwy Castle as a compact historical closer. Price nearly confirmed (2026-07): €90→€100/day — rural Wales sits closest of all the British legs to the original flat €90/day, with only a small correction for the summer season.',
           transport_to_next: 'Car, ≈250 km to the Lake District via Chester and the M6 — no ferry, just driving on into Northern England.',
@@ -2197,9 +2197,9 @@ function rbBuildBritishIslesExpeditionRoute() {
         {
           code: 'GB', name: 'United Kingdom', days: 4, budget: 429, lat: 54.4609, lng: -3.0886,
           destinations: [
-            { name: 'Windermere', lat: 54.3720, lng: -2.9080 },
-            { name: 'Scafell Pike', lat: 54.4544, lng: -3.2100 },
-            { name: 'Keswick', lat: 54.6013, lng: -3.1352 },
+            { name: 'Windermere', lat: 54.3720, lng: -2.9080, notes: "England's largest lake and the Lake District's main gateway; a Windermere Lake Cruises boat trip between Bowness, Ambleside, and Lakeside is the easiest way to see the shoreline without a car. Bowness-on-Windermere gets crowded in summer — an early morning or off-season visit is noticeably quieter." },
+            { name: 'Scafell Pike', lat: 54.4544, lng: -3.2100, notes: "England's highest peak (978m) and one leg of the \"Three Peaks Challenge.\" The Corridor Route or Wasdale approach are less crowded and arguably more scenic than the standard Borrowdale/Seathwaite path; allow a full day and expect fast-changing weather even in summer." },
+            { name: 'Keswick', lat: 54.6013, lng: -3.1352, notes: "A good hiking base with Derwentwater and the Catbells fell walk right on its doorstep — Catbells is short (2-3 hours) and one of the best low-effort ridge views in the Lakes. The Keswick Launch boat on Derwentwater is a handy way to start or end a fell walk from a different shore point." },
           ],
           notes: 'The Lake District (hiking) alone calls for 3-4 days. Price correction (2026-07): €90→€107/day, the same corrected rate as the following leg (see that leg\'s note for the route-logic fix that caused this split).',
           transport_to_next: "Car to Heysham (≈55 km from Keswick/Windermere, right next door), then the Heysham-Douglas ferry (Isle of Man Steam Packet, ≈3h45, ~2x/day year-round) as a foot passenger — the foot-passenger fare is a fraction of the car fare. Route-logic fix (2026-08, search-confirmed): Isle of Man is now visited right after the Lake District instead of only after the whole Northern England leg — the latter meant driving all the way back to the latitude of Bamburgh (≈250 km) and then north again to Edinburgh, twice through the same north-south corridor.",
@@ -2207,11 +2207,11 @@ function rbBuildBritishIslesExpeditionRoute() {
         {
           code: 'IM', name: 'Isle of Man', days: 4, budget: 480, lat: 54.1509, lng: -4.4815,
           destinations: [
-            { name: 'Douglas', lat: 54.1509, lng: -4.4815 },
-            { name: 'Peel', lat: 54.2231, lng: -4.6959 },
-            { name: 'TT Mountain Road (Snaefell)', lat: 54.2585, lng: -4.3947 },
-            { name: 'Manx Electric Railway', lat: 54.1747, lng: -4.4629 },
-            { name: 'Snaefell Mountain Railway', lat: 54.2136, lng: -4.3970 },
+            { name: 'Douglas', lat: 54.1509, lng: -4.4815, notes: "Isle of Man's capital, with vintage horse-drawn trams running the length of the promenade and the Manx Museum for context on the island's Norse/Celtic history and TT heritage. The horse trams are seasonal (roughly spring-autumn) rather than year-round." },
+            { name: 'Peel', lat: 54.2231, lng: -4.6959, notes: "A working fishing harbour town on the west coast, with Peel Castle occupying its own tidal islet (St Patrick's Isle) — worth the walk out at low tide for the ruins and sea views. The House of Manannan museum by the harbour covers Manx maritime/Viking history well if the weather turns." },
+            { name: 'TT Mountain Road (Snaefell)', lat: 54.2585, lng: -4.3947, notes: "Outside TT/Manx Grand Prix race weeks the Mountain Road is an ordinary public road with no speed limit for cars in places — driving it yourself (in your hired local car per the block note) past Snaefell's lower slopes is the main appeal, not just watching racing. Note this is genuinely time-sensitive: the road closes to normal traffic entirely during TT fortnight (early June) and the Manx Grand Prix (late August), so check the calendar against your visit dates." },
+            { name: 'Manx Electric Railway', lat: 54.1747, lng: -4.4629, notes: "A heritage tramway (opened 1893, one of the oldest of its kind still running) linking Douglas to Ramsey via Laxey, giving a scenic, slow-paced look at the island's east coast without driving. Runs a seasonal timetable (roughly spring to autumn), not year-round, so check dates before building a day around it." },
+            { name: 'Snaefell Mountain Railway', lat: 54.2136, lng: -4.3970, notes: "An electric mountain railway from Laxey up to the summit of Snaefell, the island's only peak over 2,000ft — on a genuinely clear day you can reportedly see all \"Seven Kingdoms\" (England, Scotland, Ireland, Wales, Man, sea, and sky). Also seasonal (roughly spring-autumn) — worth pairing with the Manx Electric Railway from Laxey since they share that station, and go on a forecast-clear day since the summit view is the entire point." },
           ],
           notes: "A small island with its own identity, easily done in four days. One day of hiring a local car specifically to drive the TT Mountain Road (Youri's own choice after weighing it up — cheaper than bringing his own car on the ferry, and the only part of the island that really calls for a car); the rest of the island is excellently covered by bus and the historic Manx Electric Railway/Snaefell Mountain Railway. Price correction (2026-07): €90→€100/day base (lodging/food), plus the one-day local car hire for the TT Mountain Road budgeted separately at ~€85 (~€480 total, was €360). The choice to leave the car in England rather than bring it on the ferry turns out to be even more worthwhile than expected: a return car ferry Heysham/Liverpool-Douglas now costs ~€390-425, versus ~€85 for the local rental car. Travel advisory/ETA: falls under the same UK ETA as the mainland (no separate application/cost needed since the ETA scheme was extended on 23 April 2026 to Isle of Man/Jersey/Guernsey within the Common Travel Area) — still bring a passport though, an ID card isn't enough.",
           transport_to_next: 'Ferry back Douglas-Heysham (foot passenger), pick the car back up, then ≈80 km to the Yorkshire Dales.',
@@ -2219,10 +2219,10 @@ function rbBuildBritishIslesExpeditionRoute() {
         {
           code: 'GB', name: 'United Kingdom', days: 5, budget: 536, lat: 54.9783, lng: -1.6178,
           destinations: [
-            { name: 'Yorkshire Dales', lat: 54.2361, lng: -2.1500 },
-            { name: 'York', lat: 53.9600, lng: -1.0873 },
-            { name: 'Northumberland', lat: 55.2833, lng: -2.0167 },
-            { name: 'Bamburgh Castle', lat: 55.6088, lng: -1.7086 },
+            { name: 'Yorkshire Dales', lat: 54.2361, lng: -2.1500, notes: "Rolling limestone valleys stitched together with drystone walls and Georgian market towns — Malham Cove's curved limestone amphitheatre and the short walk up to Malham Tarn are the single best stop if you only have half a day here." },
+            { name: 'York', lat: 53.9600, lng: -1.0873, notes: "The walkable medieval core — York Minster's Gothic towers and the crooked, timber-framed Shambles — makes this a full city stop rather than a drive-through. Tip: walk (or rent a bike for) a stretch of the intact city walls at golden hour for the best skyline views, and book Minster tower-climb tickets ahead since they're timed-entry and cap daily numbers." },
+            { name: 'Northumberland', lat: 55.2833, lng: -2.0167, notes: "Beyond Bamburgh, the region's draw is Hadrian's Wall's best-preserved forts (Housesteads, Vindolanda) and England's largest Dark Sky Park for stargazing. Tip: Alnwick Castle (Harry Potter's Hogwarts exteriors) is worth a detour if timing allows, but don't try to fit it in alongside Hadrian's Wall on the same day — they're on opposite sides of the county." },
+            { name: 'Bamburgh Castle', lat: 55.6088, lng: -1.7086, notes: "A working Norman castle perched on a basalt outcrop directly above a vast empty beach — one of Britain's most photogenic castle-and-coast combinations, especially at low tide when the sand mirrors the walls. Tip: pair it with a boat trip to the Farne Islands from nearby Seahouses (puffins May-July, grey seals year-round) rather than treating Bamburgh as a photo-only stop." },
           ],
           notes: "York is a fully-fledged historic city, not a stopover; Northumberland/Bamburgh as a quiet, less touristy coastal finish to this leg. Price correction (2026-07): €90→€107/day — York sits above the average, Yorkshire Dales/Northumberland/Bamburgh remain more rural and cheaper. Route-logic fix (2026-08, search-confirmed): this was the second half of the original 'Northern England' leg (9 days, €965) — split so Isle of Man is visited from the Lake District instead of after Bamburgh, which avoided a double north-south drive via Heysham (Bamburgh-Heysham-Edinburgh was ≈517 km, now Lake District-Heysham-Yorkshire Dales plus Bamburgh-Edinburgh together are ≈260 km). Days/budget split proportionally across the two new legs (4+5 days, €429+€536 = the original €965) — same calculation method as Patagonia & Antarctica's leg split.",
           transport_to_next: 'Car, Bamburgh-Edinburgh ≈124 km via the A1 — direct, no more detour via Heysham (route-logic fix 2026-08, see the Lake District leg above).',
@@ -2238,14 +2238,14 @@ function rbBuildBritishIslesExpeditionRoute() {
         {
           code: 'GB', name: 'United Kingdom', days: 22, budget: 2510, lat: 57.4128, lng: -6.1943,
           destinations: [
-            { name: 'Edinburgh', lat: 55.9533, lng: -3.1883 },
-            { name: 'Cairngorms National Park', lat: 57.0833, lng: -3.6667 },
-            { name: 'Glencoe', lat: 56.6836, lng: -5.1030 },
-            { name: 'Glenfinnan Viaduct', lat: 56.8764, lng: -5.4297 },
-            { name: 'Isle of Skye ⭐ (Old Man of Storr, Fairy Pools, Quiraing)', lat: 57.4128, lng: -6.1943 },
-            { name: 'Applecross Pass', lat: 57.4358, lng: -5.6414 },
-            { name: 'North Coast 500 (gedeeltelijk, tot Ullapool)', lat: 57.8951, lng: -5.1626 },
-            { name: 'Loch Ness/Inverness', lat: 57.4778, lng: -4.2247 },
+            { name: 'Edinburgh', lat: 55.9533, lng: -3.1883, notes: "Edinburgh Castle dominating the skyline and the Royal Mile connecting it to Holyrood are the spine of the city, but the climb up Arthur's Seat (an extinct volcano inside the city, ~1-2hr round trip) gives the best panoramic payoff for relatively little effort. Tip: book castle tickets online in advance for a specific time slot — walk-up queues at the gate can run long even outside Fringe season." },
+            { name: 'Cairngorms National Park', lat: 57.0833, lng: -3.6667, notes: "The UK's largest national park — high sub-arctic plateau, reindeer herds (the only free-ranging herd in Britain, near Aviemore), and the start of Speyside whisky country. Tip: the funicular/chairlift up Cairn Gorm gives mountain views without a full hike if time is tight." },
+            { name: 'Glencoe', lat: 56.6836, lng: -5.1030, notes: "Scotland's most dramatic glen — steep, glacier-carved walls and the Three Sisters ridge line make it one of the most photographed stretches of the Highlands (and a recurring James Bond/Harry Potter filming backdrop). Tip: the view is best from the Glencoe Lochan or the small layby viewpoints on the A82 itself — you don't need a long hike to get the classic shot, just good light and no rushing through." },
+            { name: 'Glenfinnan Viaduct', lat: 56.8764, lng: -5.4297, notes: "The 21-arch curved viaduct made famous as the Hogwarts Express bridge, with the Glenfinnan Monument to the 1745 Jacobite rising at the loch below. Tip: the Jacobite steam train crosses it roughly twice a day (Apr-Oct, Mon-Fri, sometimes extending to weekends in summer) and needs booking well ahead — but the classic photo is just as achievable free from the viewpoint trail above the visitor centre without catching the train at all." },
+            { name: 'Isle of Skye ⭐ (Old Man of Storr, Fairy Pools, Quiraing)', lat: 57.4128, lng: -6.1943, notes: "Beyond the block-level Storr/Fairy Pools/Quiraing days, Portree's harbourfront is the natural overnight base, and Neist Point's lighthouse walk is the island's best sunset spot if you have a free evening. (Talisker Distillery, on the way to/from Neist Point, is worth a stop if whisky interests the group.)" },
+            { name: 'Applecross Pass', lat: 57.4358, lng: -5.6414, notes: "Bealach na Bà is Britain's highest road climb outside the Cairngorms — a single-track hairpin ascent to a wild moorland summit, then a steep drop to the remote Applecross peninsula. Tip: only attempt it in good weather/daylight (it's genuinely not suitable for larger vehicles or in fog/ice), and the Applecross Inn at the bottom is a legitimately good seafood stop, not just a \"made it\" reward." },
+            { name: 'North Coast 500 (gedeeltelijk, tot Ullapool)', lat: 57.8951, lng: -5.1626, notes: "This stretch (Applecross area up to Ullapool) is the NC500's wildest section — empty single-track roads, sea lochs, and small fishing harbours with barely any traffic. Tip: fuel stations are sparse and irregular in opening hours on this leg — fill up whenever the tank is below half, not just when it's low." },
+            { name: 'Loch Ness/Inverness', lat: 57.4778, lng: -4.2247, notes: "Inverness is the practical Highland capital/gateway; the actual highlight is Urquhart Castle's ruins on the loch shore, which give the best vantage for loch-monster photo ops and loch views alike. Tip: a short loch cruise from the castle (rather than driving the whole shoreline) is the most efficient way to see Loch Ness without adding a half-day." },
           ],
           notes: "The highlight of the entire expedition. Isle of Skye deliberately gets 4-5 days instead of a day trip — Old Man of Storr, Fairy Pools and the Quiraing are each half a day to a full walking day. Travel here early in the summer (late June-early July): the Scottish midges only peak in July-August, so an early pass-through saves a lot of grief. ⚠️ Price correction (2026-07): €90→€114/day average — this is the leg with the biggest internal spread: rural Highlands (Cairngorms/Glencoe/Glenfinnan/Loch Ness/Applecross/NC500) stay close to €100/day, Isle of Skye is structurally higher (~€150/day, limited supply drives the price up even outside high season) and Edinburgh normally ~€130/day. ⚠️ Timing risk: the Edinburgh Fringe Festival runs from 7 to 31 August 2026 and triples prices in the city — for a concrete start date, make sure this leg's Edinburgh nights fall before 7 August. Tip: the Historic Environment Scotland Explorer Pass (~£44, 14 days, covers Urquhart Castle near Loch Ness among others) is cheaper than individual tickets for this leg; note that National Trust for Scotland is a different organisation from the National Trust (England/Wales) — an English NT pass doesn't cover Glencoe/Glenfinnan. Route-logic fix (2026-08, search-confirmed): the order was Glenfinnan→Skye→Loch Ness→Applecross→NC500 — that crossed the Highlands east-west twice (Skye/Applecross are both on the west coast, Loch Ness/Inverness is central-east). Now Skye→Applecross (both west coast, ≈100 km) →NC500 partially towards Ullapool →Loch Ness/Inverness, so the route only crosses east once, right before the direct drive to Cairnryan. The NC500 section is deliberately limited to Ullapool (not Durness/John o'Groats) — continuing to the northern tip costs an extra 100-140 km towards Cairnryan, exactly the wrong direction.",
           transport_to_next: 'Ferry Cairnryan-Belfast (Stena Line, ≈2h15, ~6x/day, slightly different sailing times between 29 June-30 Aug 2026 — check when actually booking) — Cairnryan lies ≈400 km south of Inverness, a direct drive (route-logic fix 2026-08, no more zigzag via Loch Ness-Applecross-Loch Ness).',
@@ -2253,10 +2253,10 @@ function rbBuildBritishIslesExpeditionRoute() {
         {
           code: 'GB', name: 'United Kingdom', days: 5, budget: 510, lat: 54.5973, lng: -5.9301,
           destinations: [
-            { name: 'Belfast', lat: 54.5973, lng: -5.9301 },
-            { name: "Giant's Causeway", lat: 55.2408, lng: -6.5116 },
-            { name: 'Causeway Coastal Route', lat: 55.2000, lng: -6.3000 },
-            { name: 'Dark Hedges', lat: 55.1725, lng: -6.3345 },
+            { name: 'Belfast', lat: 54.5973, lng: -5.9301, notes: "Titanic Belfast, built on the actual slipway where the ship was constructed, is the standout modern museum; the Black Cab political history tours through the Falls Road/Shankill murals and Peace Walls are the other distinct Belfast experience nothing else on this route replicates. Tip: book the Black Cab tour rather than self-walking — the drivers (often from the communities themselves) are what make it worthwhile." },
+            { name: "Giant's Causeway", lat: 55.2408, lng: -6.5116, notes: "The columns and coastal path are free and open to the public year-round — only the visitor centre car park/exhibition charges an entry fee — so it's worth skipping the centre and walking straight down if budget-conscious." },
+            { name: 'Causeway Coastal Route', lat: 55.2000, lng: -6.3000, notes: "The A2 linking Belfast to the Causeway is one of the UK's best coastal drives in its own right, with Carrick-a-Rede's rope bridge (crossing to a tiny former salmon-fishing island, big drop below) as its standout stop besides Giant's Causeway and Dark Hedges. Tip: Carrick-a-Rede requires pre-booked timed-entry tickets online — it regularly sells out same-day in summer, so book before arriving in the area." },
+            { name: 'Dark Hedges', lat: 55.1725, lng: -6.3345, notes: "Bregagh Road itself is closed to normal traffic at the hedges section (pedestrian/cyclist access only), so plan for a short walk in from designated parking rather than expecting to drive right up — arriving at opening time avoids both the crowds and the tour-bus crush." },
           ],
           notes: 'Compact but with several unique stops close together: the basalt columns of the Giant\'s Causeway (unique, no comparable spot elsewhere on the route), the coastal road there, and the Dark Hedges as a quick photo stop. Price correction (2026-07): €90→€102/day — Belfast itself sits slightly above average, the coast stays cheaper as a day trip. Logistics tip: the Twelfth of July parade falls on Monday 13 July in 2026 — traffic around central Belfast may be delayed that day (check the date when actually planning, it shifts every year); no effect on the Giant\'s Causeway/Causeway Coastal Route itself. Travel advisory: Northern Ireland actually scores slightly lower on the terrorism threat level than Great Britain (substantial vs. severe).',
           transport_to_next: 'Car across the open land border to Donegal — no ferry or border control needed (Ireland/Northern Ireland).',
@@ -2272,12 +2272,12 @@ function rbBuildBritishIslesExpeditionRoute() {
         {
           code: 'IE', name: 'Ireland', days: 11, budget: 1265, lat: 53.2707, lng: -9.0568,
           destinations: [
-            { name: 'Donegal', lat: 54.6538, lng: -8.1096 },
-            { name: 'Connemara', lat: 53.4900, lng: -9.7500 },
-            { name: 'Galway', lat: 53.2707, lng: -9.0568 },
-            { name: 'Cliffs of Moher', lat: 52.9715, lng: -9.4309 },
-            { name: 'Wild Atlantic Way', lat: 52.5000, lng: -9.9000 },
-            { name: 'Dingle Peninsula', lat: 52.1409, lng: -10.2700 },
+            { name: 'Donegal', lat: 54.6538, lng: -8.1096, notes: "Ireland's wildest, least-touristed county — Slieve League's sea cliffs actually rise higher than the Cliffs of Moher but draw a fraction of the crowds, alongside Glenveagh National Park's mountains and lough. Head to the Bunglass Point viewpoint rather than the lower car park for the full drop." },
+            { name: 'Connemara', lat: 53.4900, lng: -9.7500, notes: "Bog, lakes and the Twelve Bens mountains define this stretch, anchored by Kylemore Abbey on its lakeshore and the looping Sky Road out of Clifden. Drive the Sky Road counter-clockwise from Clifden in late afternoon light for the better sea views." },
+            { name: 'Galway', lat: 53.2707, lng: -9.0568, notes: "A compact, walkable small city built around the Latin Quarter's live trad-music pubs and the Galway Bay waterfront — better explored on foot than by car, and a natural base for day trips into Connemara or out to the Aran Islands." },
+            { name: 'Cliffs of Moher', lat: 52.9715, lng: -9.4309, notes: "Ireland's most-visited natural sight — 214m sea cliffs with O'Brien's Tower marking the highest point. Arrive at opening or after 4pm to avoid the tour-bus crush that peaks late morning to mid-afternoon, and walk the cliff path south past the tower for quieter, equally dramatic views." },
+            { name: 'Wild Atlantic Way', lat: 52.5000, lng: -9.9000, notes: "Not a single stop but the signature ~2,500km coastal touring route this whole leg largely follows, stringing Donegal, Connemara, the Cliffs, Dingle and Kerry together. Worth treating as a destination in itself — the coastal drive between named stops, not just transit." },
+            { name: 'Dingle Peninsula', lat: 52.1409, lng: -10.2700, notes: "An Irish-speaking (Gaeltacht) peninsula where the Slea Head Drive loops past Iron Age beehive huts (clochans), sheer coastal drops and views out to the Blasket Islands. Drive the loop clockwise from Dingle town, as is customary, so oncoming traffic and tour coaches pass on the inland side of the narrow road." },
           ],
           notes: 'The core of the Ireland experience. August is somewhat wetter in terms of rainfall than the May-July peak, but still well ahead of the genuinely wet window (October-January, up to 50% more rain on the west coast than Dublin) — perfectly workable for coastal walks. Price correction (2026-07): €90→€115/day — Ireland is currently the second most expensive EU country (after Denmark), almost entirely due to rising accommodation prices (a national average of €202/night in August 2025, despite falling visitor numbers). Galway is the pricier outlier of this leg. Travel advisory: green.',
           transport_to_next: 'Car south to Kerry, ≈180 km.',
@@ -2285,10 +2285,10 @@ function rbBuildBritishIslesExpeditionRoute() {
         {
           code: 'IE', name: 'Ireland', days: 11, budget: 1325, lat: 52.0599, lng: -9.5044,
           destinations: [
-            { name: 'Ring of Kerry', lat: 51.8333, lng: -10.0000 },
-            { name: 'Killarney National Park', lat: 52.0599, lng: -9.5044 },
-            { name: 'Cork', lat: 51.8985, lng: -8.4756 },
-            { name: 'Kilkenny', lat: 52.6541, lng: -7.2448 },
+            { name: 'Ring of Kerry', lat: 51.8333, lng: -10.0000, notes: "Skellig Michael's UNESCO-listed monastic beehive huts (also known for Star Wars filming) are reachable only via a limited-capacity, weather-dependent boat crossing from Portmagee — that specific booking should be made well ahead of the trip, separately from the general driving-loop planning the block note already covers." },
+            { name: 'Killarney National Park', lat: 52.0599, lng: -9.5044, notes: "Ireland's oldest national park, centered on Muckross House and Abbey, the lakes of Killarney, and Torc Waterfall (a short walk off the main road). A jaunting car (horse-drawn trap) ride from Muckross is the classic way to see the park's own trails without a car." },
+            { name: 'Cork', lat: 51.8985, lng: -8.4756, notes: "Ireland's second city, built around the English Market — a covered Victorian food market in continuous use since 1788 — and a convenient base for the short side trip to Blarney Castle." },
+            { name: 'Kilkenny', lat: 52.6541, lng: -7.2448, notes: "A compact medieval city walkable along the \"Medieval Mile\" between Kilkenny Castle and St Canice's Cathedral, with a notable crafts/design scene centered on the Kilkenny Design Centre." },
           ],
           notes: "Ring of Kerry and Killarney National Park need time for the many viewpoints; Cork and Kilkenny as historic towns before the car goes back on board. Price correction (2026-07): €90→€125/day average — Killarney is heavily marked up for tourists; Ring of Kerry/Cork/Kilkenny sit closer to the Irish base level. Practical tip: drive the Ring of Kerry clockwise (against the usual direction of tour buses) or leave early (before 9am) to avoid the buses. Route-logic fix (2026-08, search-confirmed): Dublin (short stop) has been dropped — it was the last stop before Rosslare, but Kilkenny-Dublin-Rosslare (77+96 miles) costs ≈190 km more than going straight Kilkenny-Rosslare (57 miles), for a deliberately 'short' stop that wasn't worth the detour. Youri's own choice (2026-08): drop it rather than accept the detour. Budget adjusted down accordingly (€1,375→€1,325, Dublin's high daily rate fell away; days unchanged at 11, Kilkenny/Cork get relatively a bit more time). Travel advisory: green; Ireland holds the rotating EU presidency from July through December 2026, with extra security/possible closures around Dublin (no longer relevant for this route now that Dublin has been dropped).",
           transport_to_next: "Car, Kilkenny-Rosslare ≈92 km (route-logic fix 2026-08: direct, no more Dublin detour), then ferry Rosslare-Fishguard/Pembroke (Stena Line/Irish Ferries, ≈3h15-4h, daily), then driving on through South Wales/Southern England (already visited — pure transit, no new stops) to Poole/Portsmouth for the crossing to the Channel Islands.",
@@ -2304,9 +2304,9 @@ function rbBuildBritishIslesExpeditionRoute() {
         {
           code: 'GG', name: 'Guernsey', days: 2, budget: 260, lat: 49.4526, lng: -2.5348,
           destinations: [
-            { name: 'St Peter Port', lat: 49.4551, lng: -2.5359 },
-            { name: 'coastal walks', lat: 49.4700, lng: -2.5800 },
-            { name: 'German occupation bunkers (WWII)', lat: 49.4326, lng: -2.5350 },
+            { name: 'St Peter Port', lat: 49.4551, lng: -2.5359, notes: "Guernsey's compact harbour capital, built up a steep hillside — Castle Cornet guards the harbour mouth and Victor Hugo's Hauteville House (where he wrote much of Les Misérables in exile) is the standout interior stop. The old town core is walkable in half a day; the short climb to Candie Gardens is worth it for the view back over the harbour." },
+            { name: 'coastal walks', lat: 49.4700, lng: -2.5800, notes: "Guernsey's south coast cliff path (roughly St Peter Port to Pleinmont) is the best stretch — steep wooded valleys dropping to coves like Moulin Huet and Petit Bot, very different from the flatter, more built-up north coast. Go in spring for wildflowers and cooler conditions on the exposed clifftop sections." },
+            { name: 'German occupation bunkers (WWII)', lat: 49.4326, lng: -2.5350, notes: "Guernsey's clifftops still hold intact German gun emplacements and bunkers (e.g. around Pleinmont and Fort Hommet) that are free to walk into, unlike the curated museum experience of Jersey's War Tunnels — most sit right on the coastal path, so they're easy to fold into a walk rather than needing a dedicated visit." },
           ],
           notes: 'A small island with its own, lesser-known WWII history: the Channel Islands were the only British soil occupied by Germany — an interesting contrast with Normandy\'s liberation story further along the route. Price correction (2026-07): €90→€130/day. The \'tax haven\' image turns out in practice to mainly involve high living costs for local residents, not tourist prices — Guernsey is even slightly cheaper than Jersey for food/groceries. Travel advisory: falls under the UK ETA scheme (see the Isle of Man note), otherwise green/low risk.',
           transport_to_next: 'Ferry to Jersey (Condor Ferries, inter-island, short).',
@@ -2314,10 +2314,10 @@ function rbBuildBritishIslesExpeditionRoute() {
         {
           code: 'JE', name: 'Jersey', days: 3, budget: 405, lat: 49.1805, lng: -2.1049,
           destinations: [
-            { name: 'coast', lat: 49.1900, lng: -2.1300 },
-            { name: 'cliffs', lat: 49.1667, lng: -2.0333 },
-            { name: 'beaches', lat: 49.1900, lng: -2.2200 },
-            { name: 'Jersey War Tunnels (WWII)', lat: 49.1958, lng: -2.1206 },
+            { name: 'coast', lat: 49.1900, lng: -2.1300, notes: "Jersey's north coast around Bouley Bay and Rozel is its wild side — steep wooded cliffs and a rocky shoreline, a sharp contrast to the flat sandy bays of the south and west. Worth the detour for sea-view pubs and quieter coves than Jersey's busier south coast." },
+            { name: 'cliffs', lat: 49.1667, lng: -2.0333, notes: "Corbière, at Jersey's southwestern tip, is the island's iconic cliff-and-lighthouse spot — the lighthouse is reachable on foot across a causeway at low tide only, so check tide times before heading out." },
+            { name: 'beaches', lat: 49.1900, lng: -2.2200, notes: "St Ouen's Bay, a five-mile sweep of sand on Jersey's west coast, is the island's best beach and main surf spot — livelier and more exposed than the sheltered south-coast beaches, with several surf schools right on the sand." },
+            { name: 'Jersey War Tunnels (WWII)', lat: 49.1958, lng: -2.1206, notes: "The specific draw beyond the general occupation history is the underground hospital wing built with forced labour; allow a genuine 1.5-2 hours since the self-guided route runs deep underground and doesn't loop back quickly." },
           ],
           notes: 'The largest and most touristy of the two islands — the best beaches in the Channel Islands, plus the same occupation history as Guernsey via the War Tunnels. Price correction (2026-07): €90→€135/day — Jersey is the pricier of the two Channel Islands, especially for food/restaurants (~14% above UK prices, ~6% above Guernsey); accommodation peaks in July with hotels averaging around £226/night (cheaper guesthouses from ~£60-90 remain available). Jersey War Tunnels entry ~£21 (~€25) separate from the daily budget. The Guernsey-Jersey crossing (Condor Ferries/Manche Îles Express) has limited frequency — check the current sailing days when planning, this may dictate the order/an extra overnight stay.',
           transport_to_next: 'Ferry Jersey-Saint-Malo (Condor Ferries, ≈1h25 fast ferry) — weather-dependent, keep a buffer day.',
@@ -2325,14 +2325,14 @@ function rbBuildBritishIslesExpeditionRoute() {
         {
           code: 'FR', name: 'France', days: 10, budget: 1200, lat: 48.6493, lng: -2.0257,
           destinations: [
-            { name: 'Saint-Malo', lat: 48.6493, lng: -2.0257 },
-            { name: 'Dinan', lat: 48.4535, lng: -2.0453 },
-            { name: 'Cap Fréhel', lat: 48.6836, lng: -2.3247 },
-            { name: 'Côte de Granit Rose', lat: 48.8339, lng: -3.5772 },
-            { name: 'Quimper', lat: 47.9960, lng: -4.0977 },
-            { name: 'Pointe du Raz', lat: 48.0397, lng: -4.7331 },
-            { name: 'Carnac (megaliths)', lat: 47.5834, lng: -3.0797 },
-            { name: 'Quiberon', lat: 47.4844, lng: -3.1204 },
+            { name: 'Saint-Malo', lat: 48.6493, lng: -2.0257, notes: "The walled old town (rebuilt after WWII bombing but faithfully reconstructed) is best seen by walking the full ramparts circuit, under an hour and giving views over the harbour and offshore forts. Time it around high tide for waves crashing against the sea wall, or low tide to walk out to Fort National on foot." },
+            { name: 'Dinan', lat: 48.4535, lng: -2.0453, notes: "A hilltop medieval town on the Rance river, defined by the cobbled Rue du Jerzual — a steep street of half-timbered artisan houses running down from the old town to the small port below. Walk down and take a more gradual route back up." },
+            { name: 'Cap Fréhel', lat: 48.6836, lng: -2.3247, notes: "One of Brittany's most dramatic headlands, pink sandstone/granite cliffs dropping into the sea with a lighthouse at the tip; also a seabird nesting site (guillemots, kittiwakes) best appreciated with binoculars in late spring/early summer." },
+            { name: 'Côte de Granit Rose', lat: 48.8339, lng: -3.5772, notes: "The pink granite boulders and rock formations around Ploumanac'h are best seen via the Sentier des Douaniers coastal path between Perros-Guirec and Ploumanac'h — the rocks turn a distinctly rosy color at sunset, so time the walk for late afternoon." },
+            { name: 'Quimper', lat: 47.9960, lng: -4.0977, notes: "Finistère's historic capital, centred on the twin-spired Cathédrale Saint-Corentin and a well-preserved half-timbered old town along the Odet river; also the home of Quimper faience pottery, with workshops/factory shops still open to visit." },
+            { name: 'Pointe du Raz', lat: 48.0397, lng: -4.7331, notes: "Mainland France's dramatic westernmost headland, with a knife-edge cliff path out to the point over open Atlantic swell. Gets very crowded in summer — arrive early morning or visit off-season to have the clifftop paths to yourself." },
+            { name: 'Carnac (megaliths)', lat: 47.5834, lng: -3.0797, notes: "Beyond their age, the scale is the real hook — over 3,000 standing stones across the Ménec, Kermario and Kerlescan alignments, more than a mile of rows combined. In peak season the main alignments are typically fenced and only accessible on a guided tour; outside roughly July-August you can usually walk the perimeter paths freely." },
+            { name: 'Quiberon', lat: 47.4844, lng: -3.1204, notes: "A narrow peninsula with two contrasting coasts side by side — the rugged, wave-battered Côte Sauvage on the west, calm sandy beaches on the east — and the main departure point for ferries to Belle-Île. Worth timing a Côte Sauvage stop for a day with some wind/swell for the best wave-watching." },
           ],
           notes: 'The longest, most varied coastline of the whole expedition — eight standalone highlights in ten days is already tight, making this the most densely packed leg of the route. Carnac\'s megaliths (older than Stonehenge) tie in nicely with the history theme. Order verified (2026-08): Saint-Malo→Dinan→Cap Fréhel→Côte de Granit Rose→Quimper→Pointe du Raz→Carnac→Quiberon is not a zigzag but a correct loop around the Finistère peninsula — no change needed. Price correction (2026-07): €90→€120/day — the coastal towns (Saint-Malo, Carnac, Quiberon) charge a real tourist premium, with June as the priciest month (~€175/night on average versus ~€100 in January). Carnac requires paid guided access April-September (~€6 p.p., free October-March). Travel advisory: yellow (France as a whole, elevated terrorism level mainly in cities — the rural Breton coast itself is low risk); check wildfire risk in summer, can locally close roads/campsites.',
           transport_to_next: 'Car, ≈240 km to Mont Saint-Michel/Normandy (route-logic check 2026-08: was noted as ≈100 km, which was wrong — Quiberon is on the south coast, far from Saint-Malo/Normandy, an unavoidable consequence of the full Brittany loop, not a standalone day\'s drive).',
@@ -2348,13 +2348,13 @@ function rbBuildBritishIslesExpeditionRoute() {
         {
           code: 'FR', name: 'France', days: 7, budget: 770, lat: 49.2764, lng: -0.7025,
           destinations: [
-            { name: 'Mont Saint-Michel ⭐', lat: 48.6361, lng: -1.5115 },
-            { name: 'Bayeux (temporary exhibitions)', lat: 49.2764, lng: -0.7025 },
-            { name: 'Omaha Beach', lat: 49.3697, lng: -0.8560 },
-            { name: 'Pointe du Hoc', lat: 49.3958, lng: -0.9897 },
-            { name: 'Honfleur', lat: 49.4189, lng: 0.2333 },
-            { name: 'Étretat', lat: 49.7075, lng: 0.2036 },
-            { name: 'Rouen', lat: 49.4431, lng: 1.0993 },
+            { name: 'Mont Saint-Michel ⭐', lat: 48.6361, lng: -1.5115, notes: "The abbey and ramparts are the reason to go — day-trip buses swamp the causeway and village mid-day, so aim for early morning or evening after the crowds thin, and check the tide chart since the bay has Europe's most extreme tidal range and occasionally affects the approach." },
+            { name: 'Bayeux (temporary exhibitions)', lat: 49.2764, lng: -0.7025, notes: "With the actual Tapestry closed until autumn 2027, Bayeux Cathedral (the building it was likely made for) and the Battle of Normandy Memorial Museum are what fill the visit instead — the museum's own website also offers a free scene-by-scene online viewer as a stand-in." },
+            { name: 'Omaha Beach', lat: 49.3697, lng: -0.8560, notes: "The beach itself is secondary to the Normandy American Cemetery at Colleville-sur-Mer just above it — 9,000+ white crosses overlooking the sand — so budget at least an hour or two there, ideally in late-afternoon light." },
+            { name: 'Pointe du Hoc', lat: 49.3958, lng: -0.9897, notes: "The site where US Army Rangers scaled 30m cliffs under fire on D-Day, preserved with its original bomb craters intact; free entry, self-guided, about an hour is enough, and stay on marked paths since the crater edges are still actively eroding." },
+            { name: 'Honfleur', lat: 49.4189, lng: 0.2333, notes: "The Vieux Bassin harbor of tall slate-fronted houses that drew Monet and the Impressionists is the whole point of a stop here; go at golden hour for the reflections, and step into the wooden Sainte-Catherine church, built by shipwrights using boat-building techniques." },
+            { name: 'Étretat', lat: 49.7075, lng: 0.2036, notes: "Famous for the chalk cliffs and natural arches (Porte d'Aval, the needle-like Aiguille) that inspired Monet and Maupassant; the village's parking fills up fast by mid-morning in season, so arrive early or park further out and walk in." },
+            { name: 'Rouen', lat: 49.4431, lng: 1.0993, notes: "The Gothic Notre-Dame Cathedral (Monet's famous facade series) and the old town where Joan of Arc was tried and burned at Place du Vieux-Marché are the two anchors; half a day covers it, including a slow walk down the Gros-Horloge street." },
           ],
           notes: 'Mont Saint-Michel and the D-Day beaches each deserve a full day. The D-Day history forms a nice counterweight to the Channel Islands\' occupation history earlier on: occupied versus liberated. Price correction (2026-07): €90→€110/day — Honfleur and Étretat are marked-up tourist towns, Rouen/Bayeux itself are more moderate. ⚠️ The Bayeux Tapestry has been closed to visitors since 1 September 2025 (closed for 2 years of renovation, reopening around October 2027) — the original has also been loaned to the British Museum (10 Sep 2026-11 Jul 2027). Two temporary exhibitions in Bayeux itself (Baron Gérard Museum, Battle of Normandy Museum) remain open as an alternative. Mont Saint-Michel: parking ~€9.80/day + abbey entry ~€16 p.p. (high season), separate from the daily budget. D-Day Omaha Museum ~€7.90 p.p.; Pointe du Hoc is free (ABMC site, though an ongoing conservation/safety project 2026-mid 2027, remains accessible). Travel advisory: yellow (same as Brittany); carry a passport/ID, a driving licence alone isn\'t enough for any border checks.',
           transport_to_next: 'Car along the coast to the Opal Coast, ≈350 km.',
@@ -2362,9 +2362,9 @@ function rbBuildBritishIslesExpeditionRoute() {
         {
           code: 'FR', name: 'France', days: 3, budget: 285, lat: 50.6292, lng: 3.0573,
           destinations: [
-            { name: 'Cap Blanc-Nez', lat: 50.9236, lng: 1.7100 },
-            { name: 'Cap Gris-Nez', lat: 50.8564, lng: 1.5872 },
-            { name: 'Lille', lat: 50.6292, lng: 3.0573 },
+            { name: 'Cap Blanc-Nez', lat: 50.9236, lng: 1.7100, notes: "A chalk headland with the closest clear-day view across to England's White Cliffs of Dover, plus WWII bunkers and a memorial; a short, free walk, best in late-afternoon light." },
+            { name: 'Cap Gris-Nez', lat: 50.8564, lng: 1.5872, notes: "The Channel's narrowest crossing point (~34km to England), with a working lighthouse and reliable seal-spotting on the rocks below; quieter than Cap Blanc-Nez and works well as a short add-on paired with it rather than a separate stop." },
+            { name: 'Lille', lat: 50.6292, lng: 3.0573, notes: "Vieux Lille's Flemish-Baroque architecture, especially the ornate Vieille Bourse and Grand Place, is what to see in the couple of hours the block already allots here." },
           ],
           notes: 'A short, beautiful coastal walk along the Opal Coast\'s chalk cliffs, followed by a brief city stop in Lille before the route turns towards Belgium. Price nearly confirmed (2026-07): €90→€95/day — the Capes are essentially free to access, which offsets Lille\'s slightly higher city prices. Lille city-centre parking ~€16-17/24h (garages) — separate from the daily budget. Travel advisory: yellow, standard.',
           transport_to_next: 'Car, ≈110 km to Ghent.',
@@ -2372,8 +2372,8 @@ function rbBuildBritishIslesExpeditionRoute() {
         {
           code: 'BE', name: 'Belgium', days: 3, budget: 390, lat: 51.0543, lng: 3.7174,
           destinations: [
-            { name: 'Bruges', lat: 51.2093, lng: 3.2247 },
-            { name: 'Ghent', lat: 51.0543, lng: 3.7174 },
+            { name: 'Bruges', lat: 51.2093, lng: 3.2247, notes: "The canal-ringed medieval core is best appreciated from the Belfry tower (366 steps) over the Markt; go right at opening before the day-tripper coach crowds arrive." },
+            { name: 'Ghent', lat: 51.0543, lng: 3.7174, notes: "Gravensteen castle (its audio tour is included and worth doing) and the Graslei/Korenlei waterfront are the highlights, with a noticeably more local, student-city feel and far smaller crowds than Bruges's equivalent sights." },
           ],
           notes: 'Two historic cities that each deserve at least a day and a half — a quiet finale before the last drive back to the Netherlands. Route-logic fix (2026-08, search-confirmed): order reversed (was Ghent→Bruges) — Bruges lies further west than Ghent, so Ghent→Bruges→Netherlands meant first driving away from home before turning back; now Bruges→Ghent→Netherlands, the whole final leg heads towards the Netherlands (saves ≈25-40 km). Price correction (2026-07): €90→€130/day — Bruges is a confirmed pricey tourist town (museums ~€14 p.p., canal cruise ~€12-14), Ghent is about 20% cheaper (student city, more budget options) — this budget averages both. Bruges city-centre parking is pricey: garages from ~€5.50/24h (station, with free shuttle bus) to ~€15.80+ central — budget separately. Travel advisory: green; the elevated terrorism level (3/4) is concentrated in Brussels/Antwerp, not Ghent/Bruges.',
           transport_to_next: 'End of the expedition — drive back to the Netherlands, ≈150 km.',
@@ -8118,6 +8118,113 @@ function rbMigrateCaribbeanAmazonDestinationNotes() {
 }
 
 /**
+ * Batch 8 (2026-09-17) for the per-destination-notes workflow -- British Isles & Celtic Coast
+ * Expedition (16 legs, 77 destinations), researched as 6 parallel sub-batches (Southern England &
+ * Cornwall, Wales/Lake District/Isle of Man, Northern England/Scotland/Northern Ireland, Ireland,
+ * Channel Islands & Brittany, Normandy/Opal Coast/Belgium). Same generic name-matching migration
+ * pattern as the other grand tours -- Jersey's three generic destination names ("coast", "cliffs",
+ * "beaches") were each anchored to a distinct named location so they read as genuine notes rather
+ * than interchangeable filler.
+ */
+function rbMigrateBritishIslesDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_BRITISH_ISLES_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_BRITISH_ISLES_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    "Dover (White Cliffs)": "Dover Castle's Secret Wartime Tunnels, carved into the cliffs themselves, are the standout beyond the view — Operation Dynamo (Dunkirk evacuation) was run from here. Walk the National Trust cliff-top path east of the castle for the classic white-cliffs-over-the-Channel photo rather than just the car park viewpoint.",
+    "Canterbury": "Canterbury Cathedral (UNESCO, seat of the Archbishop of Canterbury and the murder site of Thomas Becket) is the reason to stop, with the medieval Chaucer connection giving the old town its literary weight. Go early morning or after 4pm — tour coaches fill the cathedral precinct midday and services periodically close parts of the nave to visitors.",
+    "Londen": "With only a brief stop, pick one anchor rather than skimming the whole city — Westminster/Big Ben plus a river walk along the South Bank covers the classic skyline in a few hours. A single Tube day pass (contactless card works directly, no ticket needed) beats trying to drive or find parking anywhere central.",
+    "Cotswolds": "Bibury's Arlington Row weavers' cottages and Bourton-on-the-Water's low stone footbridges over the River Windrush are the two most-photographed spots and both are tiny, walkable in under an hour each. Arrive before mid-morning — these villages have almost no capacity for the coach-tour crowds that arrive by midday in summer.",
+    "Bath": "Beyond the Roman Baths themselves, the Georgian Royal Crescent and Pulteney Bridge (shops built directly across it, one of only a few bridges like this in the world) are worth the short walk. Book Roman Baths tickets online for a timed entry slot — walk-up queues in summer regularly run over an hour.",
+    "Stonehenge": "As a short drop-in stop, the standard visit is viewing the circle from the roped perimeter path, not walking among the stones. Book the timed-entry ticket online in advance (English Heritage/National Trust) — on-the-day availability is limited and car park access is tied to your slot time.",
+    "Jurassic Coast": "Durdle Door's natural limestone arch and neighbouring Lulworth Cove are the single most iconic stop along this coastline. For fossil-hunting, Charmouth and Lyme Regis beaches are best right after a storm or at low tide, when fresh material has been exposed from the cliffs.",
+    "St Ives": "A working fishing harbour that became an artist colony for its unusual light — Tate St Ives and the Barbara Hepworth Museum are the concrete reason to stop, plus Porthmeor Beach right below the gallery. Don't drive into the old town itself; park at the park-and-ride on the outskirts, since the medieval streets are effectively unnavigable and unparkable by car in season.",
+    "Land's End": "The mainland's westernmost point, with genuinely dramatic Atlantic cliffs — but the visitor complex itself is a paid, theme-park-style attraction. Skip the paid extras and just walk the coast path a mile or so to Sennen Cove for the same cliff scenery plus a proper beach, without the entry fee or crowds.",
+    "St Michael's Mount": "Beyond the tidal crossing, the summit holds a genuine medieval priory-turned-castle (still a private St Aubyn family home in part) with subtropical terraced gardens cut into the rock. The castle and gardens keep more limited opening days than the island/causeway itself (often closed on Saturdays and in winter) — check the current schedule before making the interior your main reason to go, not just the walk-over.",
+    "Tintagel Castle": "Beyond the Arthurian legend, the 2019 footbridge spanning the 60m gorge between mainland and headland is itself a striking piece of engineering and the easiest way across (the alternative is a steep original stair down and back up). Site involves a lot of uneven cliff-top ground and steps, so allow more time than the small map suggests, and check tide times if you want to reach Merlin's Cave at the base, which floods at high tide.",
+    "South West Coast Path": "If only walking one section, the Zennor-to-St Ives stretch (wild moorland dropping straight to granite cliffs, no road access) is one of the most dramatic and manageable-length segments in this part of Cornwall. Because the path constantly climbs in and out of coves rather than running flat, a given mileage takes noticeably longer here than the same distance on level ground — pad your time estimate accordingly.",
+    "Pembrokeshire Coast Path": "The coastline around St Davids (Britain's smallest city) and the Blue Lagoon at Abereiddy are the highlights — a sea-kayaking or coasteering session here is the area's signature activity, not just a coastal walk.",
+    "Brecon Beacons/Bannau Brycheiniog": "Pen y Fan (886m) is the highest point and the classic there-and-back hike (2-3 hours from the Pont ar Daf car park); the Four Falls Trail near Ystradfellte is the easier waterfall-focused alternative if you want a shorter day. Note the National Park officially rebranded from \"Brecon Beacons\" to \"Bannau Brycheiniog\" in 2023.",
+    "Snowdonia/Eryri": "Snowdon/Yr Wyddfa (1,085m) is Wales's highest peak and the obvious draw; the Llanberis Path is the easiest ascent, while the Pyg Track/Miners' Track combo gives better views for a moderately fit hiker. Book the Snowdon Mountain Railway well ahead if you'd rather ride than climb — it sells out on clear-forecast days.",
+    "Conwy Castle": "One of Edward I's \"Iron Ring\" castles and a UNESCO World Heritage Site, still with an intact town wall you can walk almost the full circuit of. Climb the castle's towers for a view over the estuary and the walled town together — better value than the castle interior alone.",
+    "Windermere": "England's largest lake and the Lake District's main gateway; a Windermere Lake Cruises boat trip between Bowness, Ambleside, and Lakeside is the easiest way to see the shoreline without a car. Bowness-on-Windermere gets crowded in summer — an early morning or off-season visit is noticeably quieter.",
+    "Scafell Pike": "England's highest peak (978m) and one leg of the \"Three Peaks Challenge.\" The Corridor Route or Wasdale approach are less crowded and arguably more scenic than the standard Borrowdale/Seathwaite path; allow a full day and expect fast-changing weather even in summer.",
+    "Keswick": "A good hiking base with Derwentwater and the Catbells fell walk right on its doorstep — Catbells is short (2-3 hours) and one of the best low-effort ridge views in the Lakes. The Keswick Launch boat on Derwentwater is a handy way to start or end a fell walk from a different shore point.",
+    "Douglas": "Isle of Man's capital, with vintage horse-drawn trams running the length of the promenade and the Manx Museum for context on the island's Norse/Celtic history and TT heritage. The horse trams are seasonal (roughly spring-autumn) rather than year-round.",
+    "Peel": "A working fishing harbour town on the west coast, with Peel Castle occupying its own tidal islet (St Patrick's Isle) — worth the walk out at low tide for the ruins and sea views. The House of Manannan museum by the harbour covers Manx maritime/Viking history well if the weather turns.",
+    "TT Mountain Road (Snaefell)": "Outside TT/Manx Grand Prix race weeks the Mountain Road is an ordinary public road with no speed limit for cars in places — driving it yourself (in your hired local car per the block note) past Snaefell's lower slopes is the main appeal, not just watching racing. Note this is genuinely time-sensitive: the road closes to normal traffic entirely during TT fortnight (early June) and the Manx Grand Prix (late August), so check the calendar against your visit dates.",
+    "Manx Electric Railway": "A heritage tramway (opened 1893, one of the oldest of its kind still running) linking Douglas to Ramsey via Laxey, giving a scenic, slow-paced look at the island's east coast without driving. Runs a seasonal timetable (roughly spring to autumn), not year-round, so check dates before building a day around it.",
+    "Snaefell Mountain Railway": "An electric mountain railway from Laxey up to the summit of Snaefell, the island's only peak over 2,000ft — on a genuinely clear day you can reportedly see all \"Seven Kingdoms\" (England, Scotland, Ireland, Wales, Man, sea, and sky). Also seasonal (roughly spring-autumn) — worth pairing with the Manx Electric Railway from Laxey since they share that station, and go on a forecast-clear day since the summit view is the entire point.",
+    "Yorkshire Dales": "Rolling limestone valleys stitched together with drystone walls and Georgian market towns — Malham Cove's curved limestone amphitheatre and the short walk up to Malham Tarn are the single best stop if you only have half a day here.",
+    "York": "The walkable medieval core — York Minster's Gothic towers and the crooked, timber-framed Shambles — makes this a full city stop rather than a drive-through. Tip: walk (or rent a bike for) a stretch of the intact city walls at golden hour for the best skyline views, and book Minster tower-climb tickets ahead since they're timed-entry and cap daily numbers.",
+    "Northumberland": "Beyond Bamburgh, the region's draw is Hadrian's Wall's best-preserved forts (Housesteads, Vindolanda) and England's largest Dark Sky Park for stargazing. Tip: Alnwick Castle (Harry Potter's Hogwarts exteriors) is worth a detour if timing allows, but don't try to fit it in alongside Hadrian's Wall on the same day — they're on opposite sides of the county.",
+    "Bamburgh Castle": "A working Norman castle perched on a basalt outcrop directly above a vast empty beach — one of Britain's most photogenic castle-and-coast combinations, especially at low tide when the sand mirrors the walls. Tip: pair it with a boat trip to the Farne Islands from nearby Seahouses (puffins May-July, grey seals year-round) rather than treating Bamburgh as a photo-only stop.",
+    "Edinburgh": "Edinburgh Castle dominating the skyline and the Royal Mile connecting it to Holyrood are the spine of the city, but the climb up Arthur's Seat (an extinct volcano inside the city, ~1-2hr round trip) gives the best panoramic payoff for relatively little effort. Tip: book castle tickets online in advance for a specific time slot — walk-up queues at the gate can run long even outside Fringe season.",
+    "Cairngorms National Park": "The UK's largest national park — high sub-arctic plateau, reindeer herds (the only free-ranging herd in Britain, near Aviemore), and the start of Speyside whisky country. Tip: the funicular/chairlift up Cairn Gorm gives mountain views without a full hike if time is tight.",
+    "Glencoe": "Scotland's most dramatic glen — steep, glacier-carved walls and the Three Sisters ridge line make it one of the most photographed stretches of the Highlands (and a recurring James Bond/Harry Potter filming backdrop). Tip: the view is best from the Glencoe Lochan or the small layby viewpoints on the A82 itself — you don't need a long hike to get the classic shot, just good light and no rushing through.",
+    "Glenfinnan Viaduct": "The 21-arch curved viaduct made famous as the Hogwarts Express bridge, with the Glenfinnan Monument to the 1745 Jacobite rising at the loch below. Tip: the Jacobite steam train crosses it roughly twice a day (Apr-Oct, Mon-Fri, sometimes extending to weekends in summer) and needs booking well ahead — but the classic photo is just as achievable free from the viewpoint trail above the visitor centre without catching the train at all.",
+    "Isle of Skye ⭐ (Old Man of Storr, Fairy Pools, Quiraing)": "Beyond the block-level Storr/Fairy Pools/Quiraing days, Portree's harbourfront is the natural overnight base, and Neist Point's lighthouse walk is the island's best sunset spot if you have a free evening. (Talisker Distillery, on the way to/from Neist Point, is worth a stop if whisky interests the group.)",
+    "Applecross Pass": "Bealach na Bà is Britain's highest road climb outside the Cairngorms — a single-track hairpin ascent to a wild moorland summit, then a steep drop to the remote Applecross peninsula. Tip: only attempt it in good weather/daylight (it's genuinely not suitable for larger vehicles or in fog/ice), and the Applecross Inn at the bottom is a legitimately good seafood stop, not just a \"made it\" reward.",
+    "North Coast 500 (gedeeltelijk, tot Ullapool)": "This stretch (Applecross area up to Ullapool) is the NC500's wildest section — empty single-track roads, sea lochs, and small fishing harbours with barely any traffic. Tip: fuel stations are sparse and irregular in opening hours on this leg — fill up whenever the tank is below half, not just when it's low.",
+    "Loch Ness/Inverness": "Inverness is the practical Highland capital/gateway; the actual highlight is Urquhart Castle's ruins on the loch shore, which give the best vantage for loch-monster photo ops and loch views alike. Tip: a short loch cruise from the castle (rather than driving the whole shoreline) is the most efficient way to see Loch Ness without adding a half-day.",
+    "Belfast": "Titanic Belfast, built on the actual slipway where the ship was constructed, is the standout modern museum; the Black Cab political history tours through the Falls Road/Shankill murals and Peace Walls are the other distinct Belfast experience nothing else on this route replicates. Tip: book the Black Cab tour rather than self-walking — the drivers (often from the communities themselves) are what make it worthwhile.",
+    "Giant's Causeway": "The columns and coastal path are free and open to the public year-round — only the visitor centre car park/exhibition charges an entry fee — so it's worth skipping the centre and walking straight down if budget-conscious.",
+    "Causeway Coastal Route": "The A2 linking Belfast to the Causeway is one of the UK's best coastal drives in its own right, with Carrick-a-Rede's rope bridge (crossing to a tiny former salmon-fishing island, big drop below) as its standout stop besides Giant's Causeway and Dark Hedges. Tip: Carrick-a-Rede requires pre-booked timed-entry tickets online — it regularly sells out same-day in summer, so book before arriving in the area.",
+    "Dark Hedges": "Bregagh Road itself is closed to normal traffic at the hedges section (pedestrian/cyclist access only), so plan for a short walk in from designated parking rather than expecting to drive right up — arriving at opening time avoids both the crowds and the tour-bus crush.",
+    "Donegal": "Ireland's wildest, least-touristed county — Slieve League's sea cliffs actually rise higher than the Cliffs of Moher but draw a fraction of the crowds, alongside Glenveagh National Park's mountains and lough. Head to the Bunglass Point viewpoint rather than the lower car park for the full drop.",
+    "Connemara": "Bog, lakes and the Twelve Bens mountains define this stretch, anchored by Kylemore Abbey on its lakeshore and the looping Sky Road out of Clifden. Drive the Sky Road counter-clockwise from Clifden in late afternoon light for the better sea views.",
+    "Galway": "A compact, walkable small city built around the Latin Quarter's live trad-music pubs and the Galway Bay waterfront — better explored on foot than by car, and a natural base for day trips into Connemara or out to the Aran Islands.",
+    "Cliffs of Moher": "Ireland's most-visited natural sight — 214m sea cliffs with O'Brien's Tower marking the highest point. Arrive at opening or after 4pm to avoid the tour-bus crush that peaks late morning to mid-afternoon, and walk the cliff path south past the tower for quieter, equally dramatic views.",
+    "Wild Atlantic Way": "Not a single stop but the signature ~2,500km coastal touring route this whole leg largely follows, stringing Donegal, Connemara, the Cliffs, Dingle and Kerry together. Worth treating as a destination in itself — the coastal drive between named stops, not just transit.",
+    "Dingle Peninsula": "An Irish-speaking (Gaeltacht) peninsula where the Slea Head Drive loops past Iron Age beehive huts (clochans), sheer coastal drops and views out to the Blasket Islands. Drive the loop clockwise from Dingle town, as is customary, so oncoming traffic and tour coaches pass on the inland side of the narrow road.",
+    "Ring of Kerry": "Skellig Michael's UNESCO-listed monastic beehive huts (also known for Star Wars filming) are reachable only via a limited-capacity, weather-dependent boat crossing from Portmagee — that specific booking should be made well ahead of the trip, separately from the general driving-loop planning the block note already covers.",
+    "Killarney National Park": "Ireland's oldest national park, centered on Muckross House and Abbey, the lakes of Killarney, and Torc Waterfall (a short walk off the main road). A jaunting car (horse-drawn trap) ride from Muckross is the classic way to see the park's own trails without a car.",
+    "Cork": "Ireland's second city, built around the English Market — a covered Victorian food market in continuous use since 1788 — and a convenient base for the short side trip to Blarney Castle.",
+    "Kilkenny": "A compact medieval city walkable along the \"Medieval Mile\" between Kilkenny Castle and St Canice's Cathedral, with a notable crafts/design scene centered on the Kilkenny Design Centre.",
+    "St Peter Port": "Guernsey's compact harbour capital, built up a steep hillside — Castle Cornet guards the harbour mouth and Victor Hugo's Hauteville House (where he wrote much of Les Misérables in exile) is the standout interior stop. The old town core is walkable in half a day; the short climb to Candie Gardens is worth it for the view back over the harbour.",
+    "coastal walks": "Guernsey's south coast cliff path (roughly St Peter Port to Pleinmont) is the best stretch — steep wooded valleys dropping to coves like Moulin Huet and Petit Bot, very different from the flatter, more built-up north coast. Go in spring for wildflowers and cooler conditions on the exposed clifftop sections.",
+    "German occupation bunkers (WWII)": "Guernsey's clifftops still hold intact German gun emplacements and bunkers (e.g. around Pleinmont and Fort Hommet) that are free to walk into, unlike the curated museum experience of Jersey's War Tunnels — most sit right on the coastal path, so they're easy to fold into a walk rather than needing a dedicated visit.",
+    "coast": "Jersey's north coast around Bouley Bay and Rozel is its wild side — steep wooded cliffs and a rocky shoreline, a sharp contrast to the flat sandy bays of the south and west. Worth the detour for sea-view pubs and quieter coves than Jersey's busier south coast.",
+    "cliffs": "Corbière, at Jersey's southwestern tip, is the island's iconic cliff-and-lighthouse spot — the lighthouse is reachable on foot across a causeway at low tide only, so check tide times before heading out.",
+    "beaches": "St Ouen's Bay, a five-mile sweep of sand on Jersey's west coast, is the island's best beach and main surf spot — livelier and more exposed than the sheltered south-coast beaches, with several surf schools right on the sand.",
+    "Jersey War Tunnels (WWII)": "The specific draw beyond the general occupation history is the underground hospital wing built with forced labour; allow a genuine 1.5-2 hours since the self-guided route runs deep underground and doesn't loop back quickly.",
+    "Saint-Malo": "The walled old town (rebuilt after WWII bombing but faithfully reconstructed) is best seen by walking the full ramparts circuit, under an hour and giving views over the harbour and offshore forts. Time it around high tide for waves crashing against the sea wall, or low tide to walk out to Fort National on foot.",
+    "Dinan": "A hilltop medieval town on the Rance river, defined by the cobbled Rue du Jerzual — a steep street of half-timbered artisan houses running down from the old town to the small port below. Walk down and take a more gradual route back up.",
+    "Cap Fréhel": "One of Brittany's most dramatic headlands, pink sandstone/granite cliffs dropping into the sea with a lighthouse at the tip; also a seabird nesting site (guillemots, kittiwakes) best appreciated with binoculars in late spring/early summer.",
+    "Côte de Granit Rose": "The pink granite boulders and rock formations around Ploumanac'h are best seen via the Sentier des Douaniers coastal path between Perros-Guirec and Ploumanac'h — the rocks turn a distinctly rosy color at sunset, so time the walk for late afternoon.",
+    "Quimper": "Finistère's historic capital, centred on the twin-spired Cathédrale Saint-Corentin and a well-preserved half-timbered old town along the Odet river; also the home of Quimper faience pottery, with workshops/factory shops still open to visit.",
+    "Pointe du Raz": "Mainland France's dramatic westernmost headland, with a knife-edge cliff path out to the point over open Atlantic swell. Gets very crowded in summer — arrive early morning or visit off-season to have the clifftop paths to yourself.",
+    "Carnac (megaliths)": "Beyond their age, the scale is the real hook — over 3,000 standing stones across the Ménec, Kermario and Kerlescan alignments, more than a mile of rows combined. In peak season the main alignments are typically fenced and only accessible on a guided tour; outside roughly July-August you can usually walk the perimeter paths freely.",
+    "Quiberon": "A narrow peninsula with two contrasting coasts side by side — the rugged, wave-battered Côte Sauvage on the west, calm sandy beaches on the east — and the main departure point for ferries to Belle-Île. Worth timing a Côte Sauvage stop for a day with some wind/swell for the best wave-watching.",
+    "Mont Saint-Michel ⭐": "The abbey and ramparts are the reason to go — day-trip buses swamp the causeway and village mid-day, so aim for early morning or evening after the crowds thin, and check the tide chart since the bay has Europe's most extreme tidal range and occasionally affects the approach.",
+    "Bayeux (temporary exhibitions)": "With the actual Tapestry closed until autumn 2027, Bayeux Cathedral (the building it was likely made for) and the Battle of Normandy Memorial Museum are what fill the visit instead — the museum's own website also offers a free scene-by-scene online viewer as a stand-in.",
+    "Omaha Beach": "The beach itself is secondary to the Normandy American Cemetery at Colleville-sur-Mer just above it — 9,000+ white crosses overlooking the sand — so budget at least an hour or two there, ideally in late-afternoon light.",
+    "Pointe du Hoc": "The site where US Army Rangers scaled 30m cliffs under fire on D-Day, preserved with its original bomb craters intact; free entry, self-guided, about an hour is enough, and stay on marked paths since the crater edges are still actively eroding.",
+    "Honfleur": "The Vieux Bassin harbor of tall slate-fronted houses that drew Monet and the Impressionists is the whole point of a stop here; go at golden hour for the reflections, and step into the wooden Sainte-Catherine church, built by shipwrights using boat-building techniques.",
+    "Étretat": "Famous for the chalk cliffs and natural arches (Porte d'Aval, the needle-like Aiguille) that inspired Monet and Maupassant; the village's parking fills up fast by mid-morning in season, so arrive early or park further out and walk in.",
+    "Rouen": "The Gothic Notre-Dame Cathedral (Monet's famous facade series) and the old town where Joan of Arc was tried and burned at Place du Vieux-Marché are the two anchors; half a day covers it, including a slow walk down the Gros-Horloge street.",
+    "Cap Blanc-Nez": "A chalk headland with the closest clear-day view across to England's White Cliffs of Dover, plus WWII bunkers and a memorial; a short, free walk, best in late-afternoon light.",
+    "Cap Gris-Nez": "The Channel's narrowest crossing point (~34km to England), with a working lighthouse and reliable seal-spotting on the rocks below; quieter than Cap Blanc-Nez and works well as a short add-on paired with it rather than a separate stop.",
+    "Lille": "Vieux Lille's Flemish-Baroque architecture, especially the ornate Vieille Bourse and Grand Place, is what to see in the couple of hours the block already allots here.",
+    "Bruges": "The canal-ringed medieval core is best appreciated from the Belfry tower (366 steps) over the Markt; go right at opening before the day-tripper coach crowds arrive.",
+    "Ghent": "Gravensteen castle (its audio tour is included and worth doing) and the Graslei/Korenlei waterfront are the highlights, with a noticeably more local, student-city feel and far smaller crowds than Bruges's equivalent sights.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -9779,13 +9886,13 @@ function rbBuildEnglandWalesIoMRoute() {
     {
       code: 'GB', name: 'United Kingdom', days: 10, budget: 1155, lat: 51.5074, lng: -0.1278,
       destinations: [
-        { name: 'Dover (White Cliffs)', lat: 51.1279, lng: 1.3134 },
-        { name: 'Canterbury', lat: 51.2802, lng: 1.0789 },
-        { name: 'Londen', lat: 51.5074, lng: -0.1278 },
-        { name: 'Cotswolds', lat: 51.8830, lng: -1.8433 },
-        { name: 'Bath', lat: 51.3811, lng: -2.3590 },
-        { name: 'Stonehenge', lat: 51.1789, lng: -1.8262 },
-        { name: 'Jurassic Coast', lat: 50.6167, lng: -2.4667 },
+        { name: 'Dover (White Cliffs)', lat: 51.1279, lng: 1.3134, notes: "Dover Castle's Secret Wartime Tunnels, carved into the cliffs themselves, are the standout beyond the view — Operation Dynamo (Dunkirk evacuation) was run from here. Walk the National Trust cliff-top path east of the castle for the classic white-cliffs-over-the-Channel photo rather than just the car park viewpoint." },
+        { name: 'Canterbury', lat: 51.2802, lng: 1.0789, notes: "Canterbury Cathedral (UNESCO, seat of the Archbishop of Canterbury and the murder site of Thomas Becket) is the reason to stop, with the medieval Chaucer connection giving the old town its literary weight. Go early morning or after 4pm — tour coaches fill the cathedral precinct midday and services periodically close parts of the nave to visitors." },
+        { name: 'Londen', lat: 51.5074, lng: -0.1278, notes: "With only a brief stop, pick one anchor rather than skimming the whole city — Westminster/Big Ben plus a river walk along the South Bank covers the classic skyline in a few hours. A single Tube day pass (contactless card works directly, no ticket needed) beats trying to drive or find parking anywhere central." },
+        { name: 'Cotswolds', lat: 51.8830, lng: -1.8433, notes: "Bibury's Arlington Row weavers' cottages and Bourton-on-the-Water's low stone footbridges over the River Windrush are the two most-photographed spots and both are tiny, walkable in under an hour each. Arrive before mid-morning — these villages have almost no capacity for the coach-tour crowds that arrive by midday in summer." },
+        { name: 'Bath', lat: 51.3811, lng: -2.3590, notes: "Beyond the Roman Baths themselves, the Georgian Royal Crescent and Pulteney Bridge (shops built directly across it, one of only a few bridges like this in the world) are worth the short walk. Book Roman Baths tickets online for a timed entry slot — walk-up queues in summer regularly run over an hour." },
+        { name: 'Stonehenge', lat: 51.1789, lng: -1.8262, notes: "As a short drop-in stop, the standard visit is viewing the circle from the roped perimeter path, not walking among the stones. Book the timed-entry ticket online in advance (English Heritage/National Trust) — on-the-day availability is limited and car park access is tied to your slot time." },
+        { name: 'Jurassic Coast', lat: 50.6167, lng: -2.4667, notes: "Durdle Door's natural limestone arch and neighbouring Lulworth Cove are the single most iconic stop along this coastline. For fossil-hunting, Charmouth and Lyme Regis beaches are best right after a storm or at low tide, when fresh material has been exposed from the cliffs." },
       ],
       notes: "Entry: direct flight Amsterdam-London (KLM/easyJet/British Airways, ±1h15-1h30; from ±€70-85 one-way; best period January-February/November). Price indication from 2026-08 web research, a snapshot. Hire a car on arrival in London rather than bringing the own car from the Netherlands on the Calais-Dover ferry (this route is split off from the car-loop expedition). A broad opener with plenty of different moods: the chalk cliffs and cathedral of Kent, a brief urban introduction to London, the traditional villages of the Cotswolds, the Roman baths of Bath and the coastal geology of the Jurassic Coast. Stonehenge is deliberately included as a short stop. Price correction (2026-07): €90→€116/day average. UK ETA mandatory (~€23 p.p., also covers Isle of Man/Jersey/Guernsey since 23 April 2026). Travel advisory: green.",
       transport_to_next: 'Car, ≈450 km to Cornwall via the A30 — no toll along the way.',
@@ -9793,11 +9900,11 @@ function rbBuildEnglandWalesIoMRoute() {
     {
       code: 'GB', name: 'United Kingdom', days: 7, budget: 875, lat: 50.2144, lng: -5.4791,
       destinations: [
-        { name: 'St Ives', lat: 50.2110, lng: -5.4800 },
-        { name: "Land's End", lat: 50.0657, lng: -5.7139 },
-        { name: "St Michael's Mount", lat: 50.1180, lng: -5.4767 },
-        { name: 'Tintagel Castle', lat: 50.6680, lng: -4.7590 },
-        { name: 'South West Coast Path', lat: 50.0453, lng: -5.6497 },
+        { name: 'St Ives', lat: 50.2110, lng: -5.4800, notes: "A working fishing harbour that became an artist colony for its unusual light — Tate St Ives and the Barbara Hepworth Museum are the concrete reason to stop, plus Porthmeor Beach right below the gallery. Don't drive into the old town itself; park at the park-and-ride on the outskirts, since the medieval streets are effectively unnavigable and unparkable by car in season." },
+        { name: "Land's End", lat: 50.0657, lng: -5.7139, notes: "The mainland's westernmost point, with genuinely dramatic Atlantic cliffs — but the visitor complex itself is a paid, theme-park-style attraction. Skip the paid extras and just walk the coast path a mile or so to Sennen Cove for the same cliff scenery plus a proper beach, without the entry fee or crowds." },
+        { name: "St Michael's Mount", lat: 50.1180, lng: -5.4767, notes: "Beyond the tidal crossing, the summit holds a genuine medieval priory-turned-castle (still a private St Aubyn family home in part) with subtropical terraced gardens cut into the rock. The castle and gardens keep more limited opening days than the island/causeway itself (often closed on Saturdays and in winter) — check the current schedule before making the interior your main reason to go, not just the walk-over." },
+        { name: 'Tintagel Castle', lat: 50.6680, lng: -4.7590, notes: "Beyond the Arthurian legend, the 2019 footbridge spanning the 60m gorge between mainland and headland is itself a striking piece of engineering and the easiest way across (the alternative is a steep original stair down and back up). Site involves a lot of uneven cliff-top ground and steps, so allow more time than the small map suggests, and check tide times if you want to reach Merlin's Cave at the base, which floods at high tide." },
+        { name: 'South West Coast Path', lat: 50.0453, lng: -5.6497, notes: "If only walking one section, the Zennor-to-St Ives stretch (wild moorland dropping straight to granite cliffs, no road access) is one of the most dramatic and manageable-length segments in this part of Cornwall. Because the path constantly climbs in and out of coves rather than running flat, a given mileage takes noticeably longer here than the same distance on level ground — pad your time estimate accordingly." },
       ],
       notes: 'Rugged coastline and narrow roads that eat up time — the South West Coast Path deserves several full walking days. St Michael\'s Mount is tide-dependent; Tintagel carries the Arthurian legend. Price correction (2026-07): €90→€125/day.',
       transport_to_next: 'Car, ≈300 km to Wales via Bristol/the Severn crossing.',
@@ -9805,10 +9912,10 @@ function rbBuildEnglandWalesIoMRoute() {
     {
       code: 'GB', name: 'United Kingdom', days: 8, budget: 800, lat: 53.2799, lng: -3.8278,
       destinations: [
-        { name: 'Pembrokeshire Coast Path', lat: 51.6214, lng: -5.0246 },
-        { name: 'Brecon Beacons/Bannau Brycheiniog', lat: 51.8836, lng: -3.4360 },
-        { name: 'Snowdonia/Eryri', lat: 53.0685, lng: -4.0763 },
-        { name: 'Conwy Castle', lat: 53.2799, lng: -3.8278 },
+        { name: 'Pembrokeshire Coast Path', lat: 51.6214, lng: -5.0246, notes: "The coastline around St Davids (Britain's smallest city) and the Blue Lagoon at Abereiddy are the highlights — a sea-kayaking or coasteering session here is the area's signature activity, not just a coastal walk." },
+        { name: 'Brecon Beacons/Bannau Brycheiniog', lat: 51.8836, lng: -3.4360, notes: "Pen y Fan (886m) is the highest point and the classic there-and-back hike (2-3 hours from the Pont ar Daf car park); the Four Falls Trail near Ystradfellte is the easier waterfall-focused alternative if you want a shorter day. Note the National Park officially rebranded from \"Brecon Beacons\" to \"Bannau Brycheiniog\" in 2023." },
+        { name: 'Snowdonia/Eryri', lat: 53.0685, lng: -4.0763, notes: "Snowdon/Yr Wyddfa (1,085m) is Wales's highest peak and the obvious draw; the Llanberis Path is the easiest ascent, while the Pyg Track/Miners' Track combo gives better views for a moderately fit hiker. Book the Snowdon Mountain Railway well ahead if you'd rather ride than climb — it sells out on clear-forecast days." },
+        { name: 'Conwy Castle', lat: 53.2799, lng: -3.8278, notes: "One of Edward I's \"Iron Ring\" castles and a UNESCO World Heritage Site, still with an intact town wall you can walk almost the full circuit of. Climb the castle's towers for a view over the estuary and the walled town together — better value than the castle interior alone." },
       ],
       notes: 'Snowdonia alone deserves 2-3 days for proper walks; the Brecon Beacons and the Pembrokeshire coast are each worth a day of their own. Price nearly confirmed (2026-07): €90→€100/day.',
       transport_to_next: 'Car, ≈250 km to the Lake District via Chester and the M6.',
@@ -9816,9 +9923,9 @@ function rbBuildEnglandWalesIoMRoute() {
     {
       code: 'GB', name: 'United Kingdom', days: 4, budget: 429, lat: 54.4609, lng: -3.0886,
       destinations: [
-        { name: 'Windermere', lat: 54.3720, lng: -2.9080 },
-        { name: 'Scafell Pike', lat: 54.4544, lng: -3.2100 },
-        { name: 'Keswick', lat: 54.6013, lng: -3.1352 },
+        { name: 'Windermere', lat: 54.3720, lng: -2.9080, notes: "England's largest lake and the Lake District's main gateway; a Windermere Lake Cruises boat trip between Bowness, Ambleside, and Lakeside is the easiest way to see the shoreline without a car. Bowness-on-Windermere gets crowded in summer — an early morning or off-season visit is noticeably quieter." },
+        { name: 'Scafell Pike', lat: 54.4544, lng: -3.2100, notes: "England's highest peak (978m) and one leg of the \"Three Peaks Challenge.\" The Corridor Route or Wasdale approach are less crowded and arguably more scenic than the standard Borrowdale/Seathwaite path; allow a full day and expect fast-changing weather even in summer." },
+        { name: 'Keswick', lat: 54.6013, lng: -3.1352, notes: "A good hiking base with Derwentwater and the Catbells fell walk right on its doorstep — Catbells is short (2-3 hours) and one of the best low-effort ridge views in the Lakes. The Keswick Launch boat on Derwentwater is a handy way to start or end a fell walk from a different shore point." },
       ],
       notes: 'The Lake District (hiking) alone calls for 3-4 days. Price correction (2026-07): €90→€107/day.',
       transport_to_next: 'Car to Heysham (≈55 km), then the Heysham-Douglas ferry (Isle of Man Steam Packet, ≈3h45, ~2x/day year-round) as a foot passenger.',
@@ -9826,11 +9933,11 @@ function rbBuildEnglandWalesIoMRoute() {
     {
       code: 'IM', name: 'Isle of Man', days: 4, budget: 480, lat: 54.1509, lng: -4.4815,
       destinations: [
-        { name: 'Douglas', lat: 54.1509, lng: -4.4815 },
-        { name: 'Peel', lat: 54.2231, lng: -4.6959 },
-        { name: 'TT Mountain Road (Snaefell)', lat: 54.2585, lng: -4.3947 },
-        { name: 'Manx Electric Railway', lat: 54.1747, lng: -4.4629 },
-        { name: 'Snaefell Mountain Railway', lat: 54.2136, lng: -4.3970 },
+        { name: 'Douglas', lat: 54.1509, lng: -4.4815, notes: "Isle of Man's capital, with vintage horse-drawn trams running the length of the promenade and the Manx Museum for context on the island's Norse/Celtic history and TT heritage. The horse trams are seasonal (roughly spring-autumn) rather than year-round." },
+        { name: 'Peel', lat: 54.2231, lng: -4.6959, notes: "A working fishing harbour town on the west coast, with Peel Castle occupying its own tidal islet (St Patrick's Isle) — worth the walk out at low tide for the ruins and sea views. The House of Manannan museum by the harbour covers Manx maritime/Viking history well if the weather turns." },
+        { name: 'TT Mountain Road (Snaefell)', lat: 54.2585, lng: -4.3947, notes: "Outside TT/Manx Grand Prix race weeks the Mountain Road is an ordinary public road with no speed limit for cars in places — driving it yourself (in your hired local car per the block note) past Snaefell's lower slopes is the main appeal, not just watching racing. Note this is genuinely time-sensitive: the road closes to normal traffic entirely during TT fortnight (early June) and the Manx Grand Prix (late August), so check the calendar against your visit dates." },
+        { name: 'Manx Electric Railway', lat: 54.1747, lng: -4.4629, notes: "A heritage tramway (opened 1893, one of the oldest of its kind still running) linking Douglas to Ramsey via Laxey, giving a scenic, slow-paced look at the island's east coast without driving. Runs a seasonal timetable (roughly spring to autumn), not year-round, so check dates before building a day around it." },
+        { name: 'Snaefell Mountain Railway', lat: 54.2136, lng: -4.3970, notes: "An electric mountain railway from Laxey up to the summit of Snaefell, the island's only peak over 2,000ft — on a genuinely clear day you can reportedly see all \"Seven Kingdoms\" (England, Scotland, Ireland, Wales, Man, sea, and sky). Also seasonal (roughly spring-autumn) — worth pairing with the Manx Electric Railway from Laxey since they share that station, and go on a forecast-clear day since the summit view is the entire point." },
       ],
       notes: "A small island with its own identity. One day of hiring a local car specifically to drive the TT Mountain Road; the rest of the island is excellently covered by bus and the historic railways. Price correction (2026-07): €90→€100/day base plus ~€85 for the one-day local car hire. Falls under the same UK ETA as the mainland.",
       transport_to_next: 'Ferry back Douglas-Heysham (foot passenger), pick the car back up, then ≈80 km to the Yorkshire Dales.',
@@ -9838,10 +9945,10 @@ function rbBuildEnglandWalesIoMRoute() {
     {
       code: 'GB', name: 'United Kingdom', days: 5, budget: 536, lat: 54.9783, lng: -1.6178,
       destinations: [
-        { name: 'Yorkshire Dales', lat: 54.2361, lng: -2.1500 },
-        { name: 'York', lat: 53.9600, lng: -1.0873 },
-        { name: 'Northumberland', lat: 55.2833, lng: -2.0167 },
-        { name: 'Bamburgh Castle', lat: 55.6088, lng: -1.7086 },
+        { name: 'Yorkshire Dales', lat: 54.2361, lng: -2.1500, notes: "Rolling limestone valleys stitched together with drystone walls and Georgian market towns — Malham Cove's curved limestone amphitheatre and the short walk up to Malham Tarn are the single best stop if you only have half a day here." },
+        { name: 'York', lat: 53.9600, lng: -1.0873, notes: "The walkable medieval core — York Minster's Gothic towers and the crooked, timber-framed Shambles — makes this a full city stop rather than a drive-through. Tip: walk (or rent a bike for) a stretch of the intact city walls at golden hour for the best skyline views, and book Minster tower-climb tickets ahead since they're timed-entry and cap daily numbers." },
+        { name: 'Northumberland', lat: 55.2833, lng: -2.0167, notes: "Beyond Bamburgh, the region's draw is Hadrian's Wall's best-preserved forts (Housesteads, Vindolanda) and England's largest Dark Sky Park for stargazing. Tip: Alnwick Castle (Harry Potter's Hogwarts exteriors) is worth a detour if timing allows, but don't try to fit it in alongside Hadrian's Wall on the same day — they're on opposite sides of the county." },
+        { name: 'Bamburgh Castle', lat: 55.6088, lng: -1.7086, notes: "A working Norman castle perched on a basalt outcrop directly above a vast empty beach — one of Britain's most photogenic castle-and-coast combinations, especially at low tide when the sand mirrors the walls. Tip: pair it with a boat trip to the Farne Islands from nearby Seahouses (puffins May-July, grey seals year-round) rather than treating Bamburgh as a photo-only stop." },
       ],
       notes: 'York is a fully-fledged historic city, not a stopover; Northumberland/Bamburgh as a quiet, less touristy coastal finish. Price correction (2026-07): €90→€107/day.',
       transport_to_next: 'End of this route — car back to Newcastle (≈75 km from Bamburgh), return the car, then direct flight Newcastle-Amsterdam (KLM/easyJet, ±1h15-1h25; from ±€30-90; best period January).',
@@ -9860,14 +9967,14 @@ function rbBuildScotlandNorthernIrelandRoute() {
     {
       code: 'GB', name: 'United Kingdom', days: 22, budget: 2510, lat: 57.4128, lng: -6.1943,
       destinations: [
-        { name: 'Edinburgh', lat: 55.9533, lng: -3.1883 },
-        { name: 'Cairngorms National Park', lat: 57.0833, lng: -3.6667 },
-        { name: 'Glencoe', lat: 56.6836, lng: -5.1030 },
-        { name: 'Glenfinnan Viaduct', lat: 56.8764, lng: -5.4297 },
-        { name: 'Isle of Skye ⭐ (Old Man of Storr, Fairy Pools, Quiraing)', lat: 57.4128, lng: -6.1943 },
-        { name: 'Applecross Pass', lat: 57.4358, lng: -5.6414 },
-        { name: 'North Coast 500 (gedeeltelijk, tot Ullapool)', lat: 57.8951, lng: -5.1626 },
-        { name: 'Loch Ness/Inverness', lat: 57.4778, lng: -4.2247 },
+        { name: 'Edinburgh', lat: 55.9533, lng: -3.1883, notes: "Edinburgh Castle dominating the skyline and the Royal Mile connecting it to Holyrood are the spine of the city, but the climb up Arthur's Seat (an extinct volcano inside the city, ~1-2hr round trip) gives the best panoramic payoff for relatively little effort. Tip: book castle tickets online in advance for a specific time slot — walk-up queues at the gate can run long even outside Fringe season." },
+        { name: 'Cairngorms National Park', lat: 57.0833, lng: -3.6667, notes: "The UK's largest national park — high sub-arctic plateau, reindeer herds (the only free-ranging herd in Britain, near Aviemore), and the start of Speyside whisky country. Tip: the funicular/chairlift up Cairn Gorm gives mountain views without a full hike if time is tight." },
+        { name: 'Glencoe', lat: 56.6836, lng: -5.1030, notes: "Scotland's most dramatic glen — steep, glacier-carved walls and the Three Sisters ridge line make it one of the most photographed stretches of the Highlands (and a recurring James Bond/Harry Potter filming backdrop). Tip: the view is best from the Glencoe Lochan or the small layby viewpoints on the A82 itself — you don't need a long hike to get the classic shot, just good light and no rushing through." },
+        { name: 'Glenfinnan Viaduct', lat: 56.8764, lng: -5.4297, notes: "The 21-arch curved viaduct made famous as the Hogwarts Express bridge, with the Glenfinnan Monument to the 1745 Jacobite rising at the loch below. Tip: the Jacobite steam train crosses it roughly twice a day (Apr-Oct, Mon-Fri, sometimes extending to weekends in summer) and needs booking well ahead — but the classic photo is just as achievable free from the viewpoint trail above the visitor centre without catching the train at all." },
+        { name: 'Isle of Skye ⭐ (Old Man of Storr, Fairy Pools, Quiraing)', lat: 57.4128, lng: -6.1943, notes: "Beyond the block-level Storr/Fairy Pools/Quiraing days, Portree's harbourfront is the natural overnight base, and Neist Point's lighthouse walk is the island's best sunset spot if you have a free evening. (Talisker Distillery, on the way to/from Neist Point, is worth a stop if whisky interests the group.)" },
+        { name: 'Applecross Pass', lat: 57.4358, lng: -5.6414, notes: "Bealach na Bà is Britain's highest road climb outside the Cairngorms — a single-track hairpin ascent to a wild moorland summit, then a steep drop to the remote Applecross peninsula. Tip: only attempt it in good weather/daylight (it's genuinely not suitable for larger vehicles or in fog/ice), and the Applecross Inn at the bottom is a legitimately good seafood stop, not just a \"made it\" reward." },
+        { name: 'North Coast 500 (gedeeltelijk, tot Ullapool)', lat: 57.8951, lng: -5.1626, notes: "This stretch (Applecross area up to Ullapool) is the NC500's wildest section — empty single-track roads, sea lochs, and small fishing harbours with barely any traffic. Tip: fuel stations are sparse and irregular in opening hours on this leg — fill up whenever the tank is below half, not just when it's low." },
+        { name: 'Loch Ness/Inverness', lat: 57.4778, lng: -4.2247, notes: "Inverness is the practical Highland capital/gateway; the actual highlight is Urquhart Castle's ruins on the loch shore, which give the best vantage for loch-monster photo ops and loch views alike. Tip: a short loch cruise from the castle (rather than driving the whole shoreline) is the most efficient way to see Loch Ness without adding a half-day." },
       ],
       notes: "Entry: direct flight Amsterdam-Edinburgh (KLM/easyJet, ±1h25-1h40; from ±€65 one-way; best period January, though late June-early July is better for this route in terms of midges/weather). Price indication from 2026-08 web research, a snapshot. Hire a car on arrival rather than bringing the own car from the Netherlands. The highlight of the entire expedition — Isle of Skye deliberately gets 4-5 days. Travel here early in the summer: the Scottish midges only peak in July-August. ⚠️ Price correction (2026-07): €90→€114/day average — Skye itself is structurally higher (~€150/day). ⚠️ Edinburgh Fringe Festival (7-31 August 2026) triples prices in the city. UK ETA mandatory (~€23 p.p.).",
       transport_to_next: 'Ferry Cairnryan-Belfast (Stena Line, ≈2h15, ~6x/day).',
@@ -9875,10 +9982,10 @@ function rbBuildScotlandNorthernIrelandRoute() {
     {
       code: 'GB', name: 'United Kingdom', days: 5, budget: 510, lat: 54.5973, lng: -5.9301,
       destinations: [
-        { name: 'Belfast', lat: 54.5973, lng: -5.9301 },
-        { name: "Giant's Causeway", lat: 55.2408, lng: -6.5116 },
-        { name: 'Causeway Coastal Route', lat: 55.2000, lng: -6.3000 },
-        { name: 'Dark Hedges', lat: 55.1725, lng: -6.3345 },
+        { name: 'Belfast', lat: 54.5973, lng: -5.9301, notes: "Titanic Belfast, built on the actual slipway where the ship was constructed, is the standout modern museum; the Black Cab political history tours through the Falls Road/Shankill murals and Peace Walls are the other distinct Belfast experience nothing else on this route replicates. Tip: book the Black Cab tour rather than self-walking — the drivers (often from the communities themselves) are what make it worthwhile." },
+        { name: "Giant's Causeway", lat: 55.2408, lng: -6.5116, notes: "The columns and coastal path are free and open to the public year-round — only the visitor centre car park/exhibition charges an entry fee — so it's worth skipping the centre and walking straight down if budget-conscious." },
+        { name: 'Causeway Coastal Route', lat: 55.2000, lng: -6.3000, notes: "The A2 linking Belfast to the Causeway is one of the UK's best coastal drives in its own right, with Carrick-a-Rede's rope bridge (crossing to a tiny former salmon-fishing island, big drop below) as its standout stop besides Giant's Causeway and Dark Hedges. Tip: Carrick-a-Rede requires pre-booked timed-entry tickets online — it regularly sells out same-day in summer, so book before arriving in the area." },
+        { name: 'Dark Hedges', lat: 55.1725, lng: -6.3345, notes: "Bregagh Road itself is closed to normal traffic at the hedges section (pedestrian/cyclist access only), so plan for a short walk in from designated parking rather than expecting to drive right up — arriving at opening time avoids both the crowds and the tour-bus crush." },
       ],
       notes: 'Compact but with several unique stops close together: the basalt columns of the Giant\'s Causeway, the coastal road there, and the Dark Hedges as a quick photo stop. Price correction (2026-07): €90→€102/day. Travel advisory: Northern Ireland actually scores slightly lower on the terrorism threat level than Great Britain.',
       transport_to_next: 'End of this route — return the car in Belfast, then direct flight Belfast-Amsterdam (easyJet from Belfast International, KLM from Belfast City; ±1h28-1h40; from ±€22-60; best period January/November).',
@@ -9897,12 +10004,12 @@ function rbBuildIrelandRoute() {
     {
       code: 'IE', name: 'Ireland', days: 11, budget: 1265, lat: 53.2707, lng: -9.0568,
       destinations: [
-        { name: 'Donegal', lat: 54.6538, lng: -8.1096 },
-        { name: 'Connemara', lat: 53.4900, lng: -9.7500 },
-        { name: 'Galway', lat: 53.2707, lng: -9.0568 },
-        { name: 'Cliffs of Moher', lat: 52.9715, lng: -9.4309 },
-        { name: 'Wild Atlantic Way', lat: 52.5000, lng: -9.9000 },
-        { name: 'Dingle Peninsula', lat: 52.1409, lng: -10.2700 },
+        { name: 'Donegal', lat: 54.6538, lng: -8.1096, notes: "Ireland's wildest, least-touristed county — Slieve League's sea cliffs actually rise higher than the Cliffs of Moher but draw a fraction of the crowds, alongside Glenveagh National Park's mountains and lough. Head to the Bunglass Point viewpoint rather than the lower car park for the full drop." },
+        { name: 'Connemara', lat: 53.4900, lng: -9.7500, notes: "Bog, lakes and the Twelve Bens mountains define this stretch, anchored by Kylemore Abbey on its lakeshore and the looping Sky Road out of Clifden. Drive the Sky Road counter-clockwise from Clifden in late afternoon light for the better sea views." },
+        { name: 'Galway', lat: 53.2707, lng: -9.0568, notes: "A compact, walkable small city built around the Latin Quarter's live trad-music pubs and the Galway Bay waterfront — better explored on foot than by car, and a natural base for day trips into Connemara or out to the Aran Islands." },
+        { name: 'Cliffs of Moher', lat: 52.9715, lng: -9.4309, notes: "Ireland's most-visited natural sight — 214m sea cliffs with O'Brien's Tower marking the highest point. Arrive at opening or after 4pm to avoid the tour-bus crush that peaks late morning to mid-afternoon, and walk the cliff path south past the tower for quieter, equally dramatic views." },
+        { name: 'Wild Atlantic Way', lat: 52.5000, lng: -9.9000, notes: "Not a single stop but the signature ~2,500km coastal touring route this whole leg largely follows, stringing Donegal, Connemara, the Cliffs, Dingle and Kerry together. Worth treating as a destination in itself — the coastal drive between named stops, not just transit." },
+        { name: 'Dingle Peninsula', lat: 52.1409, lng: -10.2700, notes: "An Irish-speaking (Gaeltacht) peninsula where the Slea Head Drive loops past Iron Age beehive huts (clochans), sheer coastal drops and views out to the Blasket Islands. Drive the loop clockwise from Dingle town, as is customary, so oncoming traffic and tour coaches pass on the inland side of the narrow road." },
       ],
       notes: "Entry: direct flight Amsterdam-Dublin (KLM/Aer Lingus/Ryanair, ±1h30-1h47; from ±€40-90 one-way; best period January-February for price). Price indication from 2026-08 web research, a snapshot. Hire a car in Dublin and drive first to Donegal (a deliberate northward start, so the rest of the route can run south towards Rosslare/Cork) instead of the own car from the Netherlands. The core of the Ireland experience. Price correction (2026-07): €90→€115/day — Ireland is currently the second most expensive EU country. Travel advisory: green.",
       transport_to_next: 'Car south to Kerry, ≈180 km.',
@@ -9910,10 +10017,10 @@ function rbBuildIrelandRoute() {
     {
       code: 'IE', name: 'Ireland', days: 11, budget: 1325, lat: 52.0599, lng: -9.5044,
       destinations: [
-        { name: 'Ring of Kerry', lat: 51.8333, lng: -10.0000 },
-        { name: 'Killarney National Park', lat: 52.0599, lng: -9.5044 },
-        { name: 'Cork', lat: 51.8985, lng: -8.4756 },
-        { name: 'Kilkenny', lat: 52.6541, lng: -7.2448 },
+        { name: 'Ring of Kerry', lat: 51.8333, lng: -10.0000, notes: "Skellig Michael's UNESCO-listed monastic beehive huts (also known for Star Wars filming) are reachable only via a limited-capacity, weather-dependent boat crossing from Portmagee — that specific booking should be made well ahead of the trip, separately from the general driving-loop planning the block note already covers." },
+        { name: 'Killarney National Park', lat: 52.0599, lng: -9.5044, notes: "Ireland's oldest national park, centered on Muckross House and Abbey, the lakes of Killarney, and Torc Waterfall (a short walk off the main road). A jaunting car (horse-drawn trap) ride from Muckross is the classic way to see the park's own trails without a car." },
+        { name: 'Cork', lat: 51.8985, lng: -8.4756, notes: "Ireland's second city, built around the English Market — a covered Victorian food market in continuous use since 1788 — and a convenient base for the short side trip to Blarney Castle." },
+        { name: 'Kilkenny', lat: 52.6541, lng: -7.2448, notes: "A compact medieval city walkable along the \"Medieval Mile\" between Kilkenny Castle and St Canice's Cathedral, with a notable crafts/design scene centered on the Kilkenny Design Centre." },
       ],
       notes: "Ring of Kerry and Killarney National Park need time for the many viewpoints; Cork and Kilkenny as historic towns. Price correction (2026-07): €90→€125/day average. Practical tip: drive the Ring of Kerry clockwise or leave early to avoid the tour buses.",
       transport_to_next: 'End of this route — car back to Cork (≈50 km from Kilkenny), return the car, then direct flight Cork-Amsterdam (KLM, ±1h40-1h50; from ±€40-70; best period outside the summer peak).',
@@ -9932,9 +10039,9 @@ function rbBuildChannelIslandsBrittanyRoute() {
     {
       code: 'GG', name: 'Guernsey', days: 2, budget: 260, lat: 49.4526, lng: -2.5348,
       destinations: [
-        { name: 'St Peter Port', lat: 49.4551, lng: -2.5359 },
-        { name: 'coastal walks', lat: 49.4700, lng: -2.5800 },
-        { name: 'German occupation bunkers (WWII)', lat: 49.4326, lng: -2.5350 },
+        { name: 'St Peter Port', lat: 49.4551, lng: -2.5359, notes: "Guernsey's compact harbour capital, built up a steep hillside — Castle Cornet guards the harbour mouth and Victor Hugo's Hauteville House (where he wrote much of Les Misérables in exile) is the standout interior stop. The old town core is walkable in half a day; the short climb to Candie Gardens is worth it for the view back over the harbour." },
+        { name: 'coastal walks', lat: 49.4700, lng: -2.5800, notes: "Guernsey's south coast cliff path (roughly St Peter Port to Pleinmont) is the best stretch — steep wooded valleys dropping to coves like Moulin Huet and Petit Bot, very different from the flatter, more built-up north coast. Go in spring for wildflowers and cooler conditions on the exposed clifftop sections." },
+        { name: 'German occupation bunkers (WWII)', lat: 49.4326, lng: -2.5350, notes: "Guernsey's clifftops still hold intact German gun emplacements and bunkers (e.g. around Pleinmont and Fort Hommet) that are free to walk into, unlike the curated museum experience of Jersey's War Tunnels — most sit right on the coastal path, so they're easy to fold into a walk rather than needing a dedicated visit." },
       ],
       notes: "Entry: flight Amsterdam-Guernsey, with a connection (no direct link — e.g. via London Gatwick with easyJet then Aurigny, or via Southampton, ±3h15 total; from ±€145 return; best period May/September). Price indication from 2026-08 web research, a snapshot. No car needed on Guernsey/Jersey themselves — hire a car only on arrival on the French mainland (Saint-Malo). A small island with its own, lesser-known WWII history. Price correction (2026-07): €90→€130/day. UK ETA mandatory (~€23 p.p., also covers Guernsey since 23 April 2026).",
       transport_to_next: 'Ferry to Jersey (Condor Ferries, inter-island, short).',
@@ -9942,10 +10049,10 @@ function rbBuildChannelIslandsBrittanyRoute() {
     {
       code: 'JE', name: 'Jersey', days: 3, budget: 405, lat: 49.1805, lng: -2.1049,
       destinations: [
-        { name: 'coast', lat: 49.1900, lng: -2.1300 },
-        { name: 'cliffs', lat: 49.1667, lng: -2.0333 },
-        { name: 'beaches', lat: 49.1900, lng: -2.2200 },
-        { name: 'Jersey War Tunnels (WWII)', lat: 49.1958, lng: -2.1206 },
+        { name: 'coast', lat: 49.1900, lng: -2.1300, notes: "Jersey's north coast around Bouley Bay and Rozel is its wild side — steep wooded cliffs and a rocky shoreline, a sharp contrast to the flat sandy bays of the south and west. Worth the detour for sea-view pubs and quieter coves than Jersey's busier south coast." },
+        { name: 'cliffs', lat: 49.1667, lng: -2.0333, notes: "Corbière, at Jersey's southwestern tip, is the island's iconic cliff-and-lighthouse spot — the lighthouse is reachable on foot across a causeway at low tide only, so check tide times before heading out." },
+        { name: 'beaches', lat: 49.1900, lng: -2.2200, notes: "St Ouen's Bay, a five-mile sweep of sand on Jersey's west coast, is the island's best beach and main surf spot — livelier and more exposed than the sheltered south-coast beaches, with several surf schools right on the sand." },
+        { name: 'Jersey War Tunnels (WWII)', lat: 49.1958, lng: -2.1206, notes: "The specific draw beyond the general occupation history is the underground hospital wing built with forced labour; allow a genuine 1.5-2 hours since the self-guided route runs deep underground and doesn't loop back quickly." },
       ],
       notes: 'The largest and most touristy of the two islands — the best beaches in the Channel Islands. Price correction (2026-07): €90→€135/day.',
       transport_to_next: 'Ferry Jersey-Saint-Malo (Condor Ferries, ≈1h25 fast ferry) — weather-dependent, keep a buffer day. Hire the car here for the rest of the route.',
@@ -9953,14 +10060,14 @@ function rbBuildChannelIslandsBrittanyRoute() {
     {
       code: 'FR', name: 'France', days: 10, budget: 1200, lat: 48.6493, lng: -2.0257,
       destinations: [
-        { name: 'Saint-Malo', lat: 48.6493, lng: -2.0257 },
-        { name: 'Dinan', lat: 48.4535, lng: -2.0453 },
-        { name: 'Cap Fréhel', lat: 48.6836, lng: -2.3247 },
-        { name: 'Côte de Granit Rose', lat: 48.8339, lng: -3.5772 },
-        { name: 'Quimper', lat: 47.9960, lng: -4.0977 },
-        { name: 'Pointe du Raz', lat: 48.0397, lng: -4.7331 },
-        { name: 'Carnac (megaliths)', lat: 47.5834, lng: -3.0797 },
-        { name: 'Quiberon', lat: 47.4844, lng: -3.1204 },
+        { name: 'Saint-Malo', lat: 48.6493, lng: -2.0257, notes: "The walled old town (rebuilt after WWII bombing but faithfully reconstructed) is best seen by walking the full ramparts circuit, under an hour and giving views over the harbour and offshore forts. Time it around high tide for waves crashing against the sea wall, or low tide to walk out to Fort National on foot." },
+        { name: 'Dinan', lat: 48.4535, lng: -2.0453, notes: "A hilltop medieval town on the Rance river, defined by the cobbled Rue du Jerzual — a steep street of half-timbered artisan houses running down from the old town to the small port below. Walk down and take a more gradual route back up." },
+        { name: 'Cap Fréhel', lat: 48.6836, lng: -2.3247, notes: "One of Brittany's most dramatic headlands, pink sandstone/granite cliffs dropping into the sea with a lighthouse at the tip; also a seabird nesting site (guillemots, kittiwakes) best appreciated with binoculars in late spring/early summer." },
+        { name: 'Côte de Granit Rose', lat: 48.8339, lng: -3.5772, notes: "The pink granite boulders and rock formations around Ploumanac'h are best seen via the Sentier des Douaniers coastal path between Perros-Guirec and Ploumanac'h — the rocks turn a distinctly rosy color at sunset, so time the walk for late afternoon." },
+        { name: 'Quimper', lat: 47.9960, lng: -4.0977, notes: "Finistère's historic capital, centred on the twin-spired Cathédrale Saint-Corentin and a well-preserved half-timbered old town along the Odet river; also the home of Quimper faience pottery, with workshops/factory shops still open to visit." },
+        { name: 'Pointe du Raz', lat: 48.0397, lng: -4.7331, notes: "Mainland France's dramatic westernmost headland, with a knife-edge cliff path out to the point over open Atlantic swell. Gets very crowded in summer — arrive early morning or visit off-season to have the clifftop paths to yourself." },
+        { name: 'Carnac (megaliths)', lat: 47.5834, lng: -3.0797, notes: "Beyond their age, the scale is the real hook — over 3,000 standing stones across the Ménec, Kermario and Kerlescan alignments, more than a mile of rows combined. In peak season the main alignments are typically fenced and only accessible on a guided tour; outside roughly July-August you can usually walk the perimeter paths freely." },
+        { name: 'Quiberon', lat: 47.4844, lng: -3.1204, notes: "A narrow peninsula with two contrasting coasts side by side — the rugged, wave-battered Côte Sauvage on the west, calm sandy beaches on the east — and the main departure point for ferries to Belle-Île. Worth timing a Côte Sauvage stop for a day with some wind/swell for the best wave-watching." },
       ],
       notes: 'The longest, most varied coastline of the whole route — eight standalone highlights in ten days. Carnac\'s megaliths are older than Stonehenge. Price correction (2026-07): €90→€120/day.',
       transport_to_next: 'Car, ≈240 km to Mont Saint-Michel/Normandy.',
@@ -9968,13 +10075,13 @@ function rbBuildChannelIslandsBrittanyRoute() {
     {
       code: 'FR', name: 'France', days: 7, budget: 770, lat: 49.2764, lng: -0.7025,
       destinations: [
-        { name: 'Mont Saint-Michel ⭐', lat: 48.6361, lng: -1.5115 },
-        { name: 'Bayeux (temporary exhibitions)', lat: 49.2764, lng: -0.7025 },
-        { name: 'Omaha Beach', lat: 49.3697, lng: -0.8560 },
-        { name: 'Pointe du Hoc', lat: 49.3958, lng: -0.9897 },
-        { name: 'Honfleur', lat: 49.4189, lng: 0.2333 },
-        { name: 'Étretat', lat: 49.7075, lng: 0.2036 },
-        { name: 'Rouen', lat: 49.4431, lng: 1.0993 },
+        { name: 'Mont Saint-Michel ⭐', lat: 48.6361, lng: -1.5115, notes: "The abbey and ramparts are the reason to go — day-trip buses swamp the causeway and village mid-day, so aim for early morning or evening after the crowds thin, and check the tide chart since the bay has Europe's most extreme tidal range and occasionally affects the approach." },
+        { name: 'Bayeux (temporary exhibitions)', lat: 49.2764, lng: -0.7025, notes: "With the actual Tapestry closed until autumn 2027, Bayeux Cathedral (the building it was likely made for) and the Battle of Normandy Memorial Museum are what fill the visit instead — the museum's own website also offers a free scene-by-scene online viewer as a stand-in." },
+        { name: 'Omaha Beach', lat: 49.3697, lng: -0.8560, notes: "The beach itself is secondary to the Normandy American Cemetery at Colleville-sur-Mer just above it — 9,000+ white crosses overlooking the sand — so budget at least an hour or two there, ideally in late-afternoon light." },
+        { name: 'Pointe du Hoc', lat: 49.3958, lng: -0.9897, notes: "The site where US Army Rangers scaled 30m cliffs under fire on D-Day, preserved with its original bomb craters intact; free entry, self-guided, about an hour is enough, and stay on marked paths since the crater edges are still actively eroding." },
+        { name: 'Honfleur', lat: 49.4189, lng: 0.2333, notes: "The Vieux Bassin harbor of tall slate-fronted houses that drew Monet and the Impressionists is the whole point of a stop here; go at golden hour for the reflections, and step into the wooden Sainte-Catherine church, built by shipwrights using boat-building techniques." },
+        { name: 'Étretat', lat: 49.7075, lng: 0.2036, notes: "Famous for the chalk cliffs and natural arches (Porte d'Aval, the needle-like Aiguille) that inspired Monet and Maupassant; the village's parking fills up fast by mid-morning in season, so arrive early or park further out and walk in." },
+        { name: 'Rouen', lat: 49.4431, lng: 1.0993, notes: "The Gothic Notre-Dame Cathedral (Monet's famous facade series) and the old town where Joan of Arc was tried and burned at Place du Vieux-Marché are the two anchors; half a day covers it, including a slow walk down the Gros-Horloge street." },
       ],
       notes: 'Mont Saint-Michel and the D-Day beaches each deserve a full day. Price correction (2026-07): €90→€110/day. The Bayeux Tapestry is closed for renovation until around October 2027 — two temporary exhibitions remain open.',
       transport_to_next: 'Car along the coast to the Opal Coast, ≈350 km.',
@@ -9982,9 +10089,9 @@ function rbBuildChannelIslandsBrittanyRoute() {
     {
       code: 'FR', name: 'France', days: 3, budget: 285, lat: 50.6292, lng: 3.0573,
       destinations: [
-        { name: 'Cap Blanc-Nez', lat: 50.9236, lng: 1.7100 },
-        { name: 'Cap Gris-Nez', lat: 50.8564, lng: 1.5872 },
-        { name: 'Lille', lat: 50.6292, lng: 3.0573 },
+        { name: 'Cap Blanc-Nez', lat: 50.9236, lng: 1.7100, notes: "A chalk headland with the closest clear-day view across to England's White Cliffs of Dover, plus WWII bunkers and a memorial; a short, free walk, best in late-afternoon light." },
+        { name: 'Cap Gris-Nez', lat: 50.8564, lng: 1.5872, notes: "The Channel's narrowest crossing point (~34km to England), with a working lighthouse and reliable seal-spotting on the rocks below; quieter than Cap Blanc-Nez and works well as a short add-on paired with it rather than a separate stop." },
+        { name: 'Lille', lat: 50.6292, lng: 3.0573, notes: "Vieux Lille's Flemish-Baroque architecture, especially the ornate Vieille Bourse and Grand Place, is what to see in the couple of hours the block already allots here." },
       ],
       notes: 'A short, beautiful coastal walk along the Opal Coast\'s chalk cliffs, followed by a brief city stop in Lille. Price nearly confirmed (2026-07): €90→€95/day.',
       transport_to_next: 'Car, ≈110 km to Ghent.',
@@ -9992,8 +10099,8 @@ function rbBuildChannelIslandsBrittanyRoute() {
     {
       code: 'BE', name: 'Belgium', days: 3, budget: 390, lat: 51.0543, lng: 3.7174,
       destinations: [
-        { name: 'Bruges', lat: 51.2093, lng: 3.2247 },
-        { name: 'Ghent', lat: 51.0543, lng: 3.7174 },
+        { name: 'Bruges', lat: 51.2093, lng: 3.2247, notes: "The canal-ringed medieval core is best appreciated from the Belfry tower (366 steps) over the Markt; go right at opening before the day-tripper coach crowds arrive." },
+        { name: 'Ghent', lat: 51.0543, lng: 3.7174, notes: "Gravensteen castle (its audio tour is included and worth doing) and the Graslei/Korenlei waterfront are the highlights, with a noticeably more local, student-city feel and far smaller crowds than Bruges's equivalent sights." },
       ],
       notes: 'Two historic cities that each deserve at least a day and a half. Price correction (2026-07): €90→€130/day.',
       transport_to_next: 'End of this route — most European rental companies allow the car to be dropped off cross-border in Amsterdam (one-way drop-off); for this final ≈150 km that\'s simpler than booking a flight/train the other way for such a short stretch.',
@@ -10649,8 +10756,8 @@ function rbBuildBelgianCoastBrugesGhentRoute() {
     {
       code: 'BE', name: 'Belgium', days: 4, budget: 380, lat: 51.2093, lng: 3.2247,
       destinations: [
-        { name: 'Bruges', lat: 51.2093, lng: 3.2247 },
-        { name: 'Ghent', lat: 51.0543, lng: 3.7174 },
+        { name: 'Bruges', lat: 51.2093, lng: 3.2247, notes: "The canal-ringed medieval core is best appreciated from the Belfry tower (366 steps) over the Markt; go right at opening before the day-tripper coach crowds arrive." },
+        { name: 'Ghent', lat: 51.0543, lng: 3.7174, notes: "Gravensteen castle (its audio tour is included and worth doing) and the Graslei/Korenlei waterfront are the highlights, with a noticeably more local, student-city feel and far smaller crowds than Bruges's equivalent sights." },
         { name: 'De Haan', lat: 51.2704, lng: 3.0361 },
         { name: 'Ostend', lat: 51.2154, lng: 2.9286 },
       ],
@@ -10671,8 +10778,8 @@ function rbBuildBelgiumBrugesGhentAntwerpArdennesRoute() {
     {
       code: 'BE', name: 'Belgium', days: 3, budget: 285, lat: 51.2093, lng: 3.2247,
       destinations: [
-        { name: 'Bruges', lat: 51.2093, lng: 3.2247 },
-        { name: 'Ghent', lat: 51.0543, lng: 3.7174 },
+        { name: 'Bruges', lat: 51.2093, lng: 3.2247, notes: "The canal-ringed medieval core is best appreciated from the Belfry tower (366 steps) over the Markt; go right at opening before the day-tripper coach crowds arrive." },
+        { name: 'Ghent', lat: 51.0543, lng: 3.7174, notes: "Gravensteen castle (its audio tour is included and worth doing) and the Graslei/Korenlei waterfront are the highlights, with a noticeably more local, student-city feel and far smaller crowds than Bruges's equivalent sights." },
         { name: 'Antwerp', lat: 51.2194, lng: 4.4025 },
       ],
       notes: 'Bruges — Ghent — Antwerp (Cathedral: nave/interior open, but the tower has been under long-term restoration since 2019 and the status of a scaffolding-free view in 2026 is unconfirmed; MAS building/rooftop free, exhibitions ~€12 separately). Train for the cities. Budget ~€90-100/day in the cities, confirmed via web check.',
@@ -11537,10 +11644,10 @@ function rbBuildNormandyRoute() {
     {
       code: 'FR', name: 'France', days: 5, budget: 625, lat: 49.2764, lng: -0.7025,
       destinations: [
-        { name: 'Honfleur', lat: 49.4189, lng: 0.2333 },
+        { name: 'Honfleur', lat: 49.4189, lng: 0.2333, notes: "The Vieux Bassin harbor of tall slate-fronted houses that drew Monet and the Impressionists is the whole point of a stop here; go at golden hour for the reflections, and step into the wooden Sainte-Catherine church, built by shipwrights using boat-building techniques." },
         { name: 'Bayeux', lat: 49.2764, lng: -0.7025 },
-        { name: 'Omaha Beach', lat: 49.3697, lng: -0.8560 },
-        { name: 'Pointe du Hoc', lat: 49.3958, lng: -0.9897 },
+        { name: 'Omaha Beach', lat: 49.3697, lng: -0.8560, notes: "The beach itself is secondary to the Normandy American Cemetery at Colleville-sur-Mer just above it — 9,000+ white crosses overlooking the sand — so budget at least an hour or two there, ideally in late-afternoon light." },
+        { name: 'Pointe du Hoc', lat: 49.3958, lng: -0.9897, notes: "The site where US Army Rangers scaled 30m cliffs under fire on D-Day, preserved with its original bomb craters intact; free entry, self-guided, about an hour is enough, and stay on marked paths since the crater edges are still actively eroding." },
         { name: 'Normandy American Cemetery, Colleville-sur-Mer', lat: 49.3597, lng: -0.8494 },
         { name: 'Mont Saint-Michel', lat: 48.6361, lng: -1.5115 },
       ],
@@ -11565,7 +11672,7 @@ function rbBuildBrittanyRoute() {
         { name: 'Dinan (medieval old town)', lat: 48.4535, lng: -2.0453 },
         { name: "Côte de Granit Rose / Ploumanac'h coastal path", lat: 48.8236, lng: -3.4739 },
         { name: 'Île de Bréhat', lat: 48.8404, lng: -2.9877 },
-        { name: 'Cap Fréhel', lat: 48.6836, lng: -2.3247 },
+        { name: 'Cap Fréhel', lat: 48.6836, lng: -2.3247, notes: "One of Brittany's most dramatic headlands, pink sandstone/granite cliffs dropping into the sea with a lighthouse at the tip; also a seabird nesting site (guillemots, kittiwakes) best appreciated with binoculars in late spring/early summer." },
       ],
       notes: "Deliberately north Brittany only: Saint-Malo-Dinan is 33km/35min and Saint-Malo-Côte de Granit Rose 163km/~2h — everything stays close together. Adding Carnac/Quiberon (south) costs 2.5-2.8h per drive, which would eat roughly 2 of the 5 days on driving alone — not worth it for this length of trip. Route: Saint-Malo (ramparts, free) — a full day in Saint-Malo (Île du Grand Bé at low tide, check the tide tables) — Dinan (medieval old town) — Côte de Granit Rose/Ploumanac'h coastal path — Île de Bréhat or Cap Fréhel, then the drive home. Amsterdam-Saint-Malo 838km/7h48, tolls ~€25-35 — there's no useful NL ferry (Brittany Ferries only sails from UK ports), so it's a drive. Budget ~€70-100pp/day lodging + €35-45 food (seafood platter €30-45) + €15-25 activities/parking. Season: May-June or September (easier tides, fewer crowds). ⚠️ Bréhat/Sept-Îles boat trips €15-25pp, budget separately.",
       transport_to_next: 'End of this route — drive back to the Netherlands.',
@@ -17508,7 +17615,7 @@ function rbBuildWestIrelandRoute() {
     {
       code: 'IE', name: 'Ireland', days: 6, budget: 468, lat: 53.2707, lng: -9.0568,
       destinations: [
-        { name: 'Galway', lat: 53.2707, lng: -9.0568 },
+        { name: 'Galway', lat: 53.2707, lng: -9.0568, notes: "A compact, walkable small city built around the Latin Quarter's live trad-music pubs and the Galway Bay waterfront — better explored on foot than by car, and a natural base for day trips into Connemara or out to the Aran Islands." },
         { name: 'Connemara National Park / Kylemore Abbey (day trip)', lat: 53.5478, lng: -9.8180 },
         { name: 'Cliffs of Moher / Doolin', lat: 52.9715, lng: -9.4309 },
         { name: 'Aran Islands (optional)', lat: 53.1224, lng: -9.6717 },
@@ -17531,10 +17638,10 @@ function rbBuildIrelandRoadtripRoute() {
       code: 'IE', name: 'Ireland', days: 9, budget: 747, lat: 53.3498, lng: -6.2603,
       destinations: [
         { name: 'Dublin', lat: 53.3498, lng: -6.2603 },
-        { name: 'Kilkenny', lat: 52.6541, lng: -7.2448 },
+        { name: 'Kilkenny', lat: 52.6541, lng: -7.2448, notes: "A compact medieval city walkable along the \"Medieval Mile\" between Kilkenny Castle and St Canice's Cathedral, with a notable crafts/design scene centered on the Kilkenny Design Centre." },
         { name: 'Cork / Kinsale', lat: 51.8985, lng: -8.4756 },
-        { name: 'Ring of Kerry', lat: 51.8333, lng: -10.0000 },
-        { name: 'Galway', lat: 53.2707, lng: -9.0568 },
+        { name: 'Ring of Kerry', lat: 51.8333, lng: -10.0000, notes: "Skellig Michael's UNESCO-listed monastic beehive huts (also known for Star Wars filming) are reachable only via a limited-capacity, weather-dependent boat crossing from Portmagee — that specific booking should be made well ahead of the trip, separately from the general driving-loop planning the block note already covers." },
+        { name: 'Galway', lat: 53.2707, lng: -9.0568, notes: "A compact, walkable small city built around the Latin Quarter's live trad-music pubs and the Galway Bay waterfront — better explored on foot than by car, and a natural base for day trips into Connemara or out to the Aran Islands." },
       ],
       notes: "Dublin, Kilkenny, Cork/Kinsale, the Ring of Kerry, and Galway — a broader loop that also takes in the east and south, unlike the pure west-coast focus of the Wild Atlantic Way below. Budget ~€75-90/day including a rental car. Season: May-September. Web check (2026-08): Ireland drives on the left — arrange CDW insurance for the rental car; on the Ring of Kerry (N71) leave early in the day to stay ahead of the tour-bus crowds.",
       transport_to_next: 'End of this route — fly home from Shannon or Dublin.',
@@ -17553,11 +17660,11 @@ function rbBuildWildAtlanticWayRoute() {
     {
       code: 'IE', name: 'Ireland', days: 9, budget: 747, lat: 54.0000, lng: -9.0000,
       destinations: [
-        { name: 'Donegal', lat: 54.6538, lng: -8.1096 },
+        { name: 'Donegal', lat: 54.6538, lng: -8.1096, notes: "Ireland's wildest, least-touristed county — Slieve League's sea cliffs actually rise higher than the Cliffs of Moher but draw a fraction of the crowds, alongside Glenveagh National Park's mountains and lough. Head to the Bunglass Point viewpoint rather than the lower car park for the full drop." },
         { name: 'Sligo', lat: 54.2697, lng: -8.4694 },
         { name: 'Mayo / Achill Island', lat: 53.9575, lng: -10.0530 },
-        { name: 'Connemara', lat: 53.5478, lng: -9.8180 },
-        { name: 'Galway', lat: 53.2707, lng: -9.0568 },
+        { name: 'Connemara', lat: 53.5478, lng: -9.8180, notes: "Bog, lakes and the Twelve Bens mountains define this stretch, anchored by Kylemore Abbey on its lakeshore and the looping Sky Road out of Clifden. Drive the Sky Road counter-clockwise from Clifden in late afternoon light for the better sea views." },
+        { name: 'Galway', lat: 53.2707, lng: -9.0568, notes: "A compact, walkable small city built around the Latin Quarter's live trad-music pubs and the Galway Bay waterfront — better explored on foot than by car, and a natural base for day trips into Connemara or out to the Aran Islands." },
         { name: 'Cliffs of Moher (Clare)', lat: 52.9715, lng: -9.4309 },
         { name: 'Dingle Peninsula / Ring of Kerry', lat: 52.1409, lng: -10.2700 },
         { name: 'Cork / Kinsale', lat: 51.8985, lng: -8.4756 },
@@ -17581,7 +17688,7 @@ function rbBuildIrelandCompleteRoute() {
       destinations: [
         { name: 'Dublin', lat: 53.3498, lng: -6.2603 },
         { name: 'Wicklow', lat: 53.0092, lng: -6.3283 },
-        { name: 'Kilkenny', lat: 52.6541, lng: -7.2448 },
+        { name: 'Kilkenny', lat: 52.6541, lng: -7.2448, notes: "A compact medieval city walkable along the \"Medieval Mile\" between Kilkenny Castle and St Canice's Cathedral, with a notable crafts/design scene centered on the Kilkenny Design Centre." },
         { name: 'Cork / Kinsale', lat: 51.8985, lng: -8.4756 },
         { name: 'Kerry', lat: 51.8333, lng: -10.0000 },
         { name: 'Cliffs of Moher / Connemara', lat: 52.9715, lng: -9.4309 },
@@ -17629,9 +17736,9 @@ function rbBuildScottishHighlandsRoute() {
       destinations: [
         { name: 'Inverness', lat: 57.4778, lng: -4.2247 },
         { name: 'Loch Ness / Urquhart Castle', lat: 57.3241, lng: -4.4407 },
-        { name: 'Glencoe', lat: 56.6836, lng: -5.1030 },
+        { name: 'Glencoe', lat: 56.6836, lng: -5.1030, notes: "Scotland's most dramatic glen — steep, glacier-carved walls and the Three Sisters ridge line make it one of the most photographed stretches of the Highlands (and a recurring James Bond/Harry Potter filming backdrop). Tip: the view is best from the Glencoe Lochan or the small layby viewpoints on the A82 itself — you don't need a long hike to get the classic shot, just good light and no rushing through." },
         { name: 'Fort William / Ben Nevis', lat: 56.8198, lng: -5.1052 },
-        { name: 'Cairngorms National Park', lat: 57.0833, lng: -3.6667 },
+        { name: 'Cairngorms National Park', lat: 57.0833, lng: -3.6667, notes: "The UK's largest national park — high sub-arctic plateau, reindeer herds (the only free-ranging herd in Britain, near Aviemore), and the start of Speyside whisky country. Tip: the funicular/chairlift up Cairn Gorm gives mountain views without a full hike if time is tight." },
       ],
       notes: "The mainland only, no Isle of Skye (unlike the route below): Inverness, Loch Ness/Urquhart Castle, Glencoe, Fort William/Ben Nevis, and back via the Cairngorms. Budget ~€80-95/day (shared rental car, a B&B/hostel mix). Season: May/September ideal; midges are a real nuisance on the west coast June-August. Web check (2026-08): Urquhart Castle requires a mandatory pre-booked timed slot plus a parking spot online (Historic Environment Scotland) — the separate 'Loch Ness Centre' is an unrelated private museum, not the castle ticket.",
       transport_to_next: 'End of this route — fly home from Inverness or Edinburgh.',
@@ -17652,7 +17759,7 @@ function rbBuildHighlandsSkyeRoute() {
       destinations: [
         { name: 'Inverness', lat: 57.4778, lng: -4.2247 },
         { name: 'Loch Ness', lat: 57.3241, lng: -4.4407 },
-        { name: 'Glencoe', lat: 56.6836, lng: -5.1030 },
+        { name: 'Glencoe', lat: 56.6836, lng: -5.1030, notes: "Scotland's most dramatic glen — steep, glacier-carved walls and the Three Sisters ridge line make it one of the most photographed stretches of the Highlands (and a recurring James Bond/Harry Potter filming backdrop). Tip: the view is best from the Glencoe Lochan or the small layby viewpoints on the A82 itself — you don't need a long hike to get the classic shot, just good light and no rushing through." },
         { name: 'Fort William', lat: 56.8198, lng: -5.1052 },
         { name: 'Skye Bridge', lat: 57.2667, lng: -5.7333 },
         { name: 'Portree', lat: 57.4128, lng: -6.1943 },
@@ -17677,9 +17784,9 @@ function rbBuildScotlandRoadtripRoute() {
     {
       code: 'GB', name: 'United Kingdom', days: 9, budget: 810, lat: 55.9533, lng: -3.1883,
       destinations: [
-        { name: 'Edinburgh', lat: 55.9533, lng: -3.1883 },
+        { name: 'Edinburgh', lat: 55.9533, lng: -3.1883, notes: "Edinburgh Castle dominating the skyline and the Royal Mile connecting it to Holyrood are the spine of the city, but the climb up Arthur's Seat (an extinct volcano inside the city, ~1-2hr round trip) gives the best panoramic payoff for relatively little effort. Tip: book castle tickets online in advance for a specific time slot — walk-up queues at the gate can run long even outside Fringe season." },
         { name: 'Stirling', lat: 56.1233, lng: -3.9475 },
-        { name: 'Glencoe', lat: 56.6836, lng: -5.1030 },
+        { name: 'Glencoe', lat: 56.6836, lng: -5.1030, notes: "Scotland's most dramatic glen — steep, glacier-carved walls and the Three Sisters ridge line make it one of the most photographed stretches of the Highlands (and a recurring James Bond/Harry Potter filming backdrop). Tip: the view is best from the Glencoe Lochan or the small layby viewpoints on the A82 itself — you don't need a long hike to get the classic shot, just good light and no rushing through." },
         { name: 'Fort William', lat: 56.8198, lng: -5.1052 },
         { name: 'Inverness', lat: 57.4778, lng: -4.2247 },
         { name: 'Cairngorms National Park / Perthshire', lat: 56.7833, lng: -3.9333 },
@@ -17701,14 +17808,14 @@ function rbBuildScotlandExtendedRoute() {
     {
       code: 'GB', name: 'United Kingdom', days: 12, budget: 1020, lat: 57.0000, lng: -4.5000,
       destinations: [
-        { name: 'Edinburgh', lat: 55.9533, lng: -3.1883 },
+        { name: 'Edinburgh', lat: 55.9533, lng: -3.1883, notes: "Edinburgh Castle dominating the skyline and the Royal Mile connecting it to Holyrood are the spine of the city, but the climb up Arthur's Seat (an extinct volcano inside the city, ~1-2hr round trip) gives the best panoramic payoff for relatively little effort. Tip: book castle tickets online in advance for a specific time slot — walk-up queues at the gate can run long even outside Fringe season." },
         { name: 'Inverness (NC500 start/end)', lat: 57.4778, lng: -4.2247 },
         { name: "John o' Groats", lat: 58.6373, lng: -3.0699 },
         { name: 'Durness', lat: 58.5661, lng: -4.7500 },
         { name: 'Applecross Pass / Bealach na Bà', lat: 57.4358, lng: -5.6414 },
         { name: 'Ullapool', lat: 57.8951, lng: -5.1626 },
         { name: 'Isle of Skye (Portree)', lat: 57.4128, lng: -6.1943 },
-        { name: 'Glencoe', lat: 56.6836, lng: -5.1030 },
+        { name: 'Glencoe', lat: 56.6836, lng: -5.1030, notes: "Scotland's most dramatic glen — steep, glacier-carved walls and the Three Sisters ridge line make it one of the most photographed stretches of the Highlands (and a recurring James Bond/Harry Potter filming backdrop). Tip: the view is best from the Glencoe Lochan or the small layby viewpoints on the A82 itself — you don't need a long hike to get the classic shot, just good light and no rushing through." },
       ],
       notes: "The longest, most complete version, combining everything including the full North Coast 500: Edinburgh plus the full NC500 (the Inverness loop, 516 miles), Skye, and Glencoe. Budget ~€75-95/day — a longer trip pulls the average down thanks to campervan/self-catering days. Season: May/September strongly recommended — July/August bring overcrowded accommodation plus midges; keep at least 7 days for the NC500 itself. Web check (2026-08): book NC500 accommodation months ahead in high season; the driving direction (clockwise vs. counterclockwise) determines whether the Bealach na Bà comes right at the start of the route or near the end.\n\nDistinct from the existing 'Scotland & Northern Ireland 🥃' route (split off from British Isles & Celtic Coast Expedition 🍀), which is a 27-day version (22 days in Scotland: Edinburgh/Cairngorms/Glencoe/Glenfinnan/Skye/Applecross/NC500-partial-to-Ullapool/Loch Ness, plus 5 days in Belfast/the Giant's Causeway). This route is the shorter, realistic Trip Ideas version — Scotland only, no Northern Ireland leg, and the full NC500 loop rather than a partial one — not a duplicate; 'Scotland & Northern Ireland 🥃' itself is untouched.",
       transport_to_next: 'End of this route — fly home from Inverness or Edinburgh.',
@@ -17847,7 +17954,7 @@ function rbBuildCotswoldsBathSouthwestEnglandRoute() {
         { name: 'Bath (Roman Baths)', lat: 51.3811, lng: -2.3590 },
         { name: 'Bourton-on-the-Water', lat: 51.8767, lng: -1.7546 },
         { name: 'Bibury', lat: 51.8115, lng: -1.8371 },
-        { name: 'Stonehenge', lat: 51.1789, lng: -1.8262 },
+        { name: 'Stonehenge', lat: 51.1789, lng: -1.8262, notes: "As a short drop-in stop, the standard visit is viewing the circle from the roped perimeter path, not walking among the stones. Book the timed-entry ticket online in advance (English Heritage/National Trust) — on-the-day availability is limited and car park access is tied to your slot time." },
         { name: 'Bristol (optional add-on)', lat: 51.4545, lng: -2.5879 },
         { name: 'Cornwall coast (optional extension)', lat: 50.2110, lng: -5.4800 },
       ],
@@ -17870,9 +17977,9 @@ function rbBuildWalesRoute() {
       destinations: [
         { name: 'Snowdon / Yr Wyddfa summit', lat: 53.0685, lng: -4.0763 },
         { name: 'Llanberis (Snowdon Mountain Railway)', lat: 53.1198, lng: -4.1258 },
-        { name: 'Conwy Castle', lat: 53.2799, lng: -3.8278 },
+        { name: 'Conwy Castle', lat: 53.2799, lng: -3.8278, notes: "One of Edward I's \"Iron Ring\" castles and a UNESCO World Heritage Site, still with an intact town wall you can walk almost the full circuit of. Climb the castle's towers for a view over the estuary and the walled town together — better value than the castle interior alone." },
         { name: 'Caernarfon Castle', lat: 53.1390, lng: -4.2758 },
-        { name: 'Pembrokeshire Coast Path', lat: 51.6214, lng: -5.0246 },
+        { name: 'Pembrokeshire Coast Path', lat: 51.6214, lng: -5.0246, notes: "The coastline around St Davids (Britain's smallest city) and the Blue Lagoon at Abereiddy are the highlights — a sea-kayaking or coasteering session here is the area's signature activity, not just a coastal walk." },
       ],
       notes: "Entry: fly Amsterdam-Manchester (KLM/easyJet, ±1h15), then a rental car (public transport is limited around Snowdonia). Snowdonia/Yr Wyddfa, ideally including the Snowdon Mountain Railway from Llanberis, the castles at Conwy and Caernarfon, and the Pembrokeshire coast further south. Budget ~£60-80/day (~€70-94). Season: the Snowdon Mountain Railway (diesel) runs late March-25 October 2026 and is closed in winter (ice) — May-September is the best window. Web check (2026-08): return train tickets run ~£45-62, book ahead in summer; the Holyhead-Dublin ferry (~€27, 3-3.5h, up to 8x/day) exists as a transit option onward, e.g. into the roadtrip version below. Exchange rate used: 1 GBP ≈ 1.17 EUR (August 2026).",
       transport_to_next: 'End of this route — fly home from Manchester or Liverpool.',
@@ -17893,7 +18000,7 @@ function rbBuildNorthernIrelandRoute() {
       destinations: [
         { name: 'Belfast (Titanic Belfast)', lat: 54.6079, lng: -5.9099 },
         { name: 'Belfast murals (Falls Road / Shankill Road)', lat: 54.5964, lng: -5.9450 },
-        { name: "Giant's Causeway", lat: 55.2408, lng: -6.5116 },
+        { name: "Giant's Causeway", lat: 55.2408, lng: -6.5116, notes: "The columns and coastal path are free and open to the public year-round — only the visitor centre car park/exhibition charges an entry fee — so it's worth skipping the centre and walking straight down if budget-conscious." },
         { name: 'Carrick-a-Rede Rope Bridge', lat: 55.2396, lng: -6.3419 },
         { name: 'Antrim Coast / Causeway Coastal Route', lat: 55.2000, lng: -6.3000 },
       ],
@@ -17918,7 +18025,7 @@ function rbBuildEnglandWalesNorthernIrelandRoadtripRoute() {
         { name: 'Bath (Roman Baths)', lat: 51.3811, lng: -2.3590 },
         { name: 'Bourton-on-the-Water (Cotswolds)', lat: 51.8767, lng: -1.7546 },
         { name: 'Snowdon / Yr Wyddfa (Snowdonia)', lat: 53.0685, lng: -4.0763 },
-        { name: 'Conwy Castle', lat: 53.2799, lng: -3.8278 },
+        { name: 'Conwy Castle', lat: 53.2799, lng: -3.8278, notes: "One of Edward I's \"Iron Ring\" castles and a UNESCO World Heritage Site, still with an intact town wall you can walk almost the full circuit of. Climb the castle's towers for a view over the estuary and the walled town together — better value than the castle interior alone." },
         { name: 'Holyhead (ferry port)', lat: 53.3094, lng: -4.6367 },
       ],
       notes: "Entry: bring the own car from the Netherlands via the Hook of Holland-Harwich ferry (Stena Line, ~€66, 6.5-9.5h, 2x/day), landing directly in England. London, then the Cotswolds and Bath, then west into Wales (Snowdonia and the coast), finishing at Holyhead for the ferry on. Budget ~£65-85/day average (~€76-100). Web check (2026-08): one UK ETA (~€23, valid 2 years) covers the whole trip including Northern Ireland; driving is on the left throughout. Exchange rate used: 1 GBP ≈ 1.17 EUR (August 2026).\n\nDistinct from the existing 'England, Wales & Isle of Man 🎩' route (split off from British Isles & Celtic Coast Expedition 🍀), a 38-day version covering Kent/London/Cotswolds/Bath/the Jurassic Coast, then Cornwall, then Pembrokeshire/the Brecon Beacons/Snowdonia/Conwy, then the Lake District with an Isle of Man side trip, then Yorkshire/Northumberland — ending with a flight home from Newcastle, no Northern Ireland leg at all. This route is the shorter, realistic Trip Ideas version restricted to England + Wales + Northern Ireland (no Cornwall, Lake District, Isle of Man or Yorkshire/Northumberland), continuing on into Northern Ireland instead of finishing in the north of England. 'England, Wales & Isle of Man 🎩' itself is untouched.",
@@ -17927,7 +18034,7 @@ function rbBuildEnglandWalesNorthernIrelandRoadtripRoute() {
     {
       code: 'GB', name: 'United Kingdom', days: 4, budget: 340, lat: 54.5973, lng: -5.9301,
       destinations: [
-        { name: "Giant's Causeway", lat: 55.2408, lng: -6.5116 },
+        { name: "Giant's Causeway", lat: 55.2408, lng: -6.5116, notes: "The columns and coastal path are free and open to the public year-round — only the visitor centre car park/exhibition charges an entry fee — so it's worth skipping the centre and walking straight down if budget-conscious." },
         { name: 'Carrick-a-Rede Rope Bridge', lat: 55.2396, lng: -6.3419 },
         { name: 'Antrim Coast / Causeway Coastal Route', lat: 55.2000, lng: -6.3000 },
         { name: 'Belfast (Titanic Belfast)', lat: 54.6079, lng: -5.9099 },
@@ -19225,7 +19332,7 @@ function rbBuildChannelIslandsRoute() {
     {
       code: 'GG', name: 'Guernsey', days: 2, budget: 230, lat: 49.4526, lng: -2.5348,
       destinations: [
-        { name: 'St Peter Port', lat: 49.4551, lng: -2.5359 },
+        { name: 'St Peter Port', lat: 49.4551, lng: -2.5359, notes: "Guernsey's compact harbour capital, built up a steep hillside — Castle Cornet guards the harbour mouth and Victor Hugo's Hauteville House (where he wrote much of Les Misérables in exile) is the standout interior stop. The old town core is walkable in half a day; the short climb to Candie Gardens is worth it for the view back over the harbour." },
       ],
       notes: "Entry: no direct flight from the Netherlands — routed via Southampton/Gatwick (Aurigny hub) or via Jersey. Guernsey has its own currency, pegged 1:1 to the British pound. Budget ~€100-130/day (the Channel Islands are expensive, comparable to South England price levels — used here at ~€115/day). Season: May-September, mild climate but no guarantee of sun. Web check (2026-08): Condor Ferries stopped operating under that brand name on 28 March 2025 — the Guernsey ferry route now runs via Brittany Ferries; older guidebooks still mentioning \"Condor\" are outdated. UK ETA mandatory (£20, valid 2 years or until passport expiry) — since 23 April 2026 this single ETA also covers Jersey and Isle of Man, so a combined UK+Channel Islands+Isle of Man trip needs only one ETA. UK travel advisory: green (28-05-2026), explicitly naming Jersey/Guernsey re: the ETA requirement. ⚠️⚠️ Note: Route Builder already has Guernsey+Jersey content bundled inside 'Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖' (British Isles & Celtic Coast Expedition) — built anyway per the source list since this is a standalone islands-only trip, not a bigger Brittany/Normandy/Belgium combo; flagged for review, not merged. See this route's overall notes below for the full detail on the overlap.",
       transport_to_next: 'Aurigny inter-island flight (~20 min) or ferry to Jersey.',
@@ -19235,7 +19342,7 @@ function rbBuildChannelIslandsRoute() {
       destinations: [
         { name: 'St. Helier', lat: 49.1858, lng: -2.1041 },
         { name: 'Mont Orgueil Castle', lat: 49.1857, lng: -2.0173 },
-        { name: 'Jersey War Tunnels (WWII)', lat: 49.1958, lng: -2.1206 },
+        { name: 'Jersey War Tunnels (WWII)', lat: 49.1958, lng: -2.1206, notes: "The specific draw beyond the general occupation history is the underground hospital wing built with forced labour; allow a genuine 1.5-2 hours since the self-guided route runs deep underground and doesn't loop back quickly." },
       ],
       notes: "St. Helier and Mont Orgueil Castle, plus the Jersey War Tunnels (WWII). Budget ~€100-130/day, used here at ~€115/day. Web check (2026-08): the Jersey ferry route now runs via DFDS Seaways (Condor Ferries, the old brand, stopped operating 28 March 2025). KLM flies a seasonal direct Amsterdam-Jersey route — Guernsey itself has no direct NL flight.",
       transport_to_next: 'End of this route — seasonal direct KLM flight Jersey-Amsterdam, or via the UK.',
@@ -19254,11 +19361,11 @@ function rbBuildIsleOfManRoute() {
     {
       code: 'IM', name: 'Isle of Man', days: 2, budget: 200, lat: 54.1509, lng: -4.4815,
       destinations: [
-        { name: 'Douglas', lat: 54.1509, lng: -4.4815 },
+        { name: 'Douglas', lat: 54.1509, lng: -4.4815, notes: "Isle of Man's capital, with vintage horse-drawn trams running the length of the promenade and the Manx Museum for context on the island's Norse/Celtic history and TT heritage. The horse trams are seasonal (roughly spring-autumn) rather than year-round." },
         { name: 'TT Grandstand & Museum', lat: 54.1523, lng: -4.4749 },
-        { name: 'TT Mountain Road (Snaefell)', lat: 54.2585, lng: -4.3947 },
-        { name: 'Snaefell Mountain Railway', lat: 54.2136, lng: -4.3970 },
-        { name: 'Manx Electric Railway', lat: 54.1747, lng: -4.4629 },
+        { name: 'TT Mountain Road (Snaefell)', lat: 54.2585, lng: -4.3947, notes: "Outside TT/Manx Grand Prix race weeks the Mountain Road is an ordinary public road with no speed limit for cars in places — driving it yourself (in your hired local car per the block note) past Snaefell's lower slopes is the main appeal, not just watching racing. Note this is genuinely time-sensitive: the road closes to normal traffic entirely during TT fortnight (early June) and the Manx Grand Prix (late August), so check the calendar against your visit dates." },
+        { name: 'Snaefell Mountain Railway', lat: 54.2136, lng: -4.3970, notes: "An electric mountain railway from Laxey up to the summit of Snaefell, the island's only peak over 2,000ft — on a genuinely clear day you can reportedly see all \"Seven Kingdoms\" (England, Scotland, Ireland, Wales, Man, sea, and sky). Also seasonal (roughly spring-autumn) — worth pairing with the Manx Electric Railway from Laxey since they share that station, and go on a forecast-clear day since the summit view is the entire point." },
+        { name: 'Manx Electric Railway', lat: 54.1747, lng: -4.4629, notes: "A heritage tramway (opened 1893, one of the oldest of its kind still running) linking Douglas to Ramsey via Laxey, giving a scenic, slow-paced look at the island's east coast without driving. Runs a seasonal timetable (roughly spring to autumn), not year-round, so check dates before building a day around it." },
       ],
       notes: "Entry: no direct connection from the Netherlands — via the UK: fly Liverpool/Manchester/Gatwick, or the Steam Packet ferry Douglas-Heysham (year-round)/Douglas-Liverpool (seasonal, March-November). Douglas as the capital (2 days), including the TT museum, plus the TT Mountain Road up Snaefell and the historic Manx Electric/Snaefell Mountain Railways. Budget ~€90-115/day (UK-level prices, limited budget options — used here at ~€100/day). Season: May-September. ⚠️ Watch out for the TT Races (late May/early June): huge crowds and high prices — book well ahead or avoid those specific weeks. UK ETA mandatory (£20, valid 2 years or until passport expiry) — since 23 April 2026 covers the UK + Jersey + Guernsey + Isle of Man together, no separate application per island needed. ⚠️⚠️ Note: Route Builder already has an Isle of Man leg inside 'England, Wales & Isle of Man 🎩' (British Isles & Celtic Coast Expedition split) — built anyway per the source list since this is a fuller standalone Isle of Man trip; flagged for review, not merged. See this route's overall notes below for the full detail on the overlap.",
       transport_to_next: 'Short drive south to Castletown, then on to Peel on the west coast.',

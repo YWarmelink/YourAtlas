@@ -12,6 +12,18 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 8 — British Isles & Celtic Coast Expedition (2026-09-17)** — 16
+  legs, 77 destinations, researched as 6 parallel sub-batches (Southern England & Cornwall,
+  Wales/Lake District/Isle of Man, Northern England/Scotland/Northern Ireland, Ireland, Channel
+  Islands & Brittany, Normandy/Opal Coast/Belgium). All 77 inserted cleanly first try. Same
+  generic name-matching migration (`rbMigrateBritishIslesDestinationNotes()`) — Jersey's three
+  generic destination names ("coast", "cliffs", "beaches") were each anchored to a distinct named
+  location (Bouley Bay/Rozel, Corbière, St Ouen's Bay) so they read as genuine notes rather than
+  interchangeable filler. 23 routes confirmed touched in the live simulation (this route's own
+  standalone splits plus several unrelated routes that happen to share a Bruges/Ghent/Edinburgh/
+  Galway/Douglas destination). App-wide total: 1773 destination-slots filled across 182 routes.
+  137/741 signatures done.
+
 - **Per-destination notes, batch 7 — Caribbean & Amazon Expedition (2026-09-17)** — 10 blocks, 33
   destinations, researched as 4 parallel batches matching the route's own region grouping
   (Greater Antilles, Dutch Caribbean, Lesser Antilles, Suriname & Amazon). All 33 inserted

@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 120 / 741 signatures.**
+- **Done so far: 137 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -122,7 +122,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **AU** (6 dest): Darwin, Kakadu National Park, Litchfield National Park, Uluru, Kata Tjuta, Kings Canyon — routes: Oceania Grand Expedition 🌊, Tropical/Outback Australia 🐊
 - [x] **AU** (4 dest): Adelaide, Kangaroo Island, Barossa Valley, Flinders Ranges — routes: Oceania Grand Expedition 🌊, Temperate/Southern Australia 🍇
 - [ ] **BA** (3 dest): Sarajevo (Baščaršija), Mostar (Stari Most), Trebinje — routes: Bosnia + Montenegro + Budva (7-10 days) ⛰️, Grand Balkan Roadtrip (14 days) 🏔️
-- [ ] **BE** (2 dest): Bruges, Ghent — routes: British Isles & Celtic Coast Expedition 🍀, Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖
+- [x] **BE** (2 dest): Bruges, Ghent — routes: British Isles & Celtic Coast Expedition 🍀, Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖
 - [ ] **BE** (1 dest): Bastogne — routes: Luxembourg + Ardennes (4 days) 🎖️, South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️
 - [x] **BH** (4 dest): Qal'at al-Bahrain (Bahrain Fort), Bahrain National Museum, Al Fateh Grand Mosque, Tree of Life — routes: Egypt & Arabian Peninsula 🐪, Mediterranean Civilizations Expedition 🏛️
 - [ ] **BJ** (3 dest): Abomey (royal palaces, UNESCO), Ouidah (Route des Esclaves, Door of No Return), Ganvié (stilt village on the lake) — routes: West & Central Africa Expedition 🌍, West Africa Overland 🥁
@@ -153,17 +153,17 @@ Sorted by how many routes reuse them — highest leverage first.
 - [ ] **FI** (4 dest): Helsinki, Rovaniemi, Inari, Lemmenjoki National Park — routes: Nordic Arctic Expedition ❄️, Scandinavia Overland 🚂
 - [x] **FR** (3 dest): Bonifacio, Ajaccio, Bavella — routes: Corsica & Southern France ⛵, Mediterranean Civilizations Expedition 🏛️
 - [x] **FR** (4 dest): Marseille, Arles, Nîmes, Pont du Gard — routes: Corsica & Southern France ⛵, Mediterranean Civilizations Expedition 🏛️
-- [ ] **FR** (8 dest): Saint-Malo, Dinan, Cap Fréhel, Côte de Granit Rose, Quimper, Pointe du Raz, Carnac (megaliths), Quiberon — routes: British Isles & Celtic Coast Expedition 🍀, Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖
-- [ ] **FR** (7 dest): Mont Saint-Michel ⭐, Bayeux (temporary exhibitions), Omaha Beach, Pointe du Hoc, Honfleur, Étretat, Rouen — routes: British Isles & Celtic Coast Expedition 🍀, Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖
-- [ ] **FR** (3 dest): Cap Blanc-Nez, Cap Gris-Nez, Lille — routes: British Isles & Celtic Coast Expedition 🍀, Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖
-- [ ] **GB** (7 dest): Dover (White Cliffs), Canterbury, Londen, Cotswolds, Bath, Stonehenge, Jurassic Coast — routes: British Isles & Celtic Coast Expedition 🍀, England, Wales & Isle of Man 🎩
-- [ ] **GB** (5 dest): St Ives, Land's End, St Michael's Mount, Tintagel Castle, South West Coast Path — routes: British Isles & Celtic Coast Expedition 🍀, England, Wales & Isle of Man 🎩
-- [ ] **GB** (4 dest): Pembrokeshire Coast Path, Brecon Beacons/Bannau Brycheiniog, Snowdonia/Eryri, Conwy Castle — routes: British Isles & Celtic Coast Expedition 🍀, England, Wales & Isle of Man 🎩
-- [ ] **GB** (3 dest): Windermere, Scafell Pike, Keswick — routes: British Isles & Celtic Coast Expedition 🍀, England, Wales & Isle of Man 🎩
-- [ ] **GB** (4 dest): Yorkshire Dales, York, Northumberland, Bamburgh Castle — routes: British Isles & Celtic Coast Expedition 🍀, England, Wales & Isle of Man 🎩
-- [ ] **GB** (8 dest): Edinburgh, Cairngorms National Park, Glencoe, Glenfinnan Viaduct, Isle of Skye ⭐ (Old Man of Storr, Fairy Pools, Quiraing), Applecross Pass, North Coast 500 (gedeeltelijk, tot Ullapool), Loch Ness/Inverness — routes: British Isles & Celtic Coast Expedition 🍀, Scotland & Northern Ireland 🥃
-- [ ] **GB** (4 dest): Belfast, Giant's Causeway, Causeway Coastal Route, Dark Hedges — routes: British Isles & Celtic Coast Expedition 🍀, Scotland & Northern Ireland 🥃
-- [ ] **GG** (3 dest): St Peter Port, coastal walks, German occupation bunkers (WWII) — routes: British Isles & Celtic Coast Expedition 🍀, Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖
+- [x] **FR** (8 dest): Saint-Malo, Dinan, Cap Fréhel, Côte de Granit Rose, Quimper, Pointe du Raz, Carnac (megaliths), Quiberon — routes: British Isles & Celtic Coast Expedition 🍀, Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖
+- [x] **FR** (7 dest): Mont Saint-Michel ⭐, Bayeux (temporary exhibitions), Omaha Beach, Pointe du Hoc, Honfleur, Étretat, Rouen — routes: British Isles & Celtic Coast Expedition 🍀, Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖
+- [x] **FR** (3 dest): Cap Blanc-Nez, Cap Gris-Nez, Lille — routes: British Isles & Celtic Coast Expedition 🍀, Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖
+- [x] **GB** (7 dest): Dover (White Cliffs), Canterbury, Londen, Cotswolds, Bath, Stonehenge, Jurassic Coast — routes: British Isles & Celtic Coast Expedition 🍀, England, Wales & Isle of Man 🎩
+- [x] **GB** (5 dest): St Ives, Land's End, St Michael's Mount, Tintagel Castle, South West Coast Path — routes: British Isles & Celtic Coast Expedition 🍀, England, Wales & Isle of Man 🎩
+- [x] **GB** (4 dest): Pembrokeshire Coast Path, Brecon Beacons/Bannau Brycheiniog, Snowdonia/Eryri, Conwy Castle — routes: British Isles & Celtic Coast Expedition 🍀, England, Wales & Isle of Man 🎩
+- [x] **GB** (3 dest): Windermere, Scafell Pike, Keswick — routes: British Isles & Celtic Coast Expedition 🍀, England, Wales & Isle of Man 🎩
+- [x] **GB** (4 dest): Yorkshire Dales, York, Northumberland, Bamburgh Castle — routes: British Isles & Celtic Coast Expedition 🍀, England, Wales & Isle of Man 🎩
+- [x] **GB** (8 dest): Edinburgh, Cairngorms National Park, Glencoe, Glenfinnan Viaduct, Isle of Skye ⭐ (Old Man of Storr, Fairy Pools, Quiraing), Applecross Pass, North Coast 500 (gedeeltelijk, tot Ullapool), Loch Ness/Inverness — routes: British Isles & Celtic Coast Expedition 🍀, Scotland & Northern Ireland 🥃
+- [x] **GB** (4 dest): Belfast, Giant's Causeway, Causeway Coastal Route, Dark Hedges — routes: British Isles & Celtic Coast Expedition 🍀, Scotland & Northern Ireland 🥃
+- [x] **GG** (3 dest): St Peter Port, coastal walks, German occupation bunkers (WWII) — routes: British Isles & Celtic Coast Expedition 🍀, Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖
 - [ ] **GL** (6 dest): Nuuk, Inuit culture (Nuuk), Ilulissat, Icefjord (Ilulissat Icefjord), Disko Bay, Boat trips (e.g. Eqi Glacier) — routes: Greenland 🧊, Nordic Arctic Expedition ❄️
 - [ ] **GR** (2 dest): Naxos (Chora), Portara — routes: Cyclades (5-7 days) 🏝️, Cyclades Island Hopping (7-10 days) 🏝️
 - [ ] **GR** (2 dest): Paros (Parikia), Naoussa — routes: Cyclades (5-7 days) 🏝️, Cyclades Island Hopping (7-10 days) 🏝️
@@ -174,9 +174,9 @@ Sorted by how many routes reuse them — highest leverage first.
 - [ ] **HR** (1 dest): Plitvice Lakes National Park — routes: Austria + Slovenia + Croatia (10-14 days) 🚙, Italy + Slovenia + Croatia (10-14 days) ⛵
 - [ ] **HU** (2 dest): Buda Castle District, Eger (optional extension) — routes: Czechia + Austria + Hungary (10-14 days) 🏛️, Poland + Slovakia + Hungary (10-14 days) 🥾
 - [x] **ID** (8 dest): Medan, Bukit Lawang, Berastagi, Lake Toba, Bukittinggi, Lombok, Gili Islands, Komodo — routes: Eurasia Grand Tour 🌏, Southeast Asia Grand Loop 🛕
-- [ ] **IE** (6 dest): Donegal, Connemara, Galway, Cliffs of Moher, Wild Atlantic Way, Dingle Peninsula — routes: British Isles & Celtic Coast Expedition 🍀, Ireland ☘️
-- [ ] **IE** (4 dest): Ring of Kerry, Killarney National Park, Cork, Kilkenny — routes: British Isles & Celtic Coast Expedition 🍀, Ireland ☘️
-- [ ] **IM** (5 dest): Douglas, Peel, TT Mountain Road (Snaefell), Manx Electric Railway, Snaefell Mountain Railway — routes: British Isles & Celtic Coast Expedition 🍀, England, Wales & Isle of Man 🎩
+- [x] **IE** (6 dest): Donegal, Connemara, Galway, Cliffs of Moher, Wild Atlantic Way, Dingle Peninsula — routes: British Isles & Celtic Coast Expedition 🍀, Ireland ☘️
+- [x] **IE** (4 dest): Ring of Kerry, Killarney National Park, Cork, Kilkenny — routes: British Isles & Celtic Coast Expedition 🍀, Ireland ☘️
+- [x] **IM** (5 dest): Douglas, Peel, TT Mountain Road (Snaefell), Manx Electric Railway, Snaefell Mountain Railway — routes: British Isles & Celtic Coast Expedition 🍀, England, Wales & Isle of Man 🎩
 - [ ] **IN** (9 dest): Delhi (arrival, no extra sightseeing — already visited), Jaipur, Pushkar, Jodhpur, Jaisalmer, Udaipur, Manali, Rishikesh, Varanasi — routes: India & Himalaya Expedition 🏔️, North India 🕌
 - [ ] **IS** (5 dest): Reykjavík, Þingvellir, Geysir, Gullfoss, Blue Lagoon — routes: Faroe Islands + Iceland (9 days) ⛴️, Reykjavík + Golden Circle (5 days) 🌋
 - [ ] **IT** (4 dest): Tre Cime, Lago di Braies, Seceda, Val Gardena — routes: Central European Grand Roadtrip 🚗, Dolomites & North Italy 🚡
@@ -194,7 +194,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [ ] **IT** (1 dest): Matera — routes: Campania + Puglia (9 days) 🧭, Sicily + Southern Italy (12 days) 🍊
 - [ ] **IT** (1 dest): Syracuse / Ortigia — routes: Sicily East (4-5 days) 🏝️, Sicily Roadtrip (7-10 days) 🏝️
 - [x] **IT** (1 dest): Cagliari — routes: Sardinia Roadtrip (7-10 days) 🏝️, Sardinia South (4-5 days) 🏝️
-- [ ] **JE** (4 dest): coast, cliffs, beaches, Jersey War Tunnels (WWII) — routes: British Isles & Celtic Coast Expedition 🍀, Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖
+- [x] **JE** (4 dest): coast, cliffs, beaches, Jersey War Tunnels (WWII) — routes: British Isles & Celtic Coast Expedition 🍀, Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖
 - [x] **LA** (5 dest): Si Phan Don (4000 Islands), Pakse, Vientiane, Vang Vieng, Luang Prabang — routes: Eurasia Grand Tour 🌏, Southeast Asia Grand Loop 🛕
 - [ ] **LI** (1 dest): Vaduz — routes: Central European Grand Roadtrip 🚗, Liechtenstein + Swiss Alps (3 days) 🏔️
 - [ ] **ME** (2 dest): Kotor Old Town + Bay of Kotor, Budva — routes: Albania + Montenegro (12 days) 🏝️, Croatia + Montenegro + Bosnia (12 days) 🧭
@@ -431,7 +431,7 @@ Sorted alphabetically by country code.
 - [ ] **GB** (6 dest): Edinburgh, Stirling, Glencoe, Fort William, Inverness, Cairngorms National Park / Perthshire — routes: Scotland Roadtrip (7-10 days) 🚙
 - [ ] **GB** (5 dest): Inverness, Loch Ness / Urquhart Castle, Glencoe, Fort William / Ben Nevis, Cairngorms National Park — routes: Scottish Highlands (5-7 days) 🦌
 - [ ] **GB** (5 dest): Snowdon / Yr Wyddfa summit, Llanberis (Snowdon Mountain Railway), Conwy Castle, Caernarfon Castle, Pembrokeshire Coast Path — routes: Wales (Snowdonia + Coast) (5-7 days) 🐉
-- [ ] **GG** (1 dest): St Peter Port — routes: Jersey + Guernsey (Channel Islands) (4-5 days) 🏝️
+- [x] **GG** (1 dest): St Peter Port — routes: Jersey + Guernsey (Channel Islands) (4-5 days) 🏝️
 - [ ] **GI** (2 dest): Rock of Gibraltar, St Michael’s Cave — routes: Gibraltar + Andalusia: Costa del Sol (4 days) 🐒
 - [ ] **GR** (3 dest): Acropolis & Plaka/Monastiraki, Acropolis Museum, Cape Sounion (Temple of Poseidon) — routes: Athens (4 days) 🏛️
 - [ ] **GR** (5 dest): Acropolis & Plaka/Monastiraki, Cape Sounion (Temple of Poseidon), Delphi, Arachova, Nafplio / Mycenae / Epidaurus — routes: Athens + Day Trips (6 days) 🏺
@@ -768,7 +768,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| British Isles & Celtic Coast Expedition 🍀 | 77/77 | 16 |
 | West & Central Africa Expedition 🌍 | 32/32 | 16 |
 | West Africa Overland 🥁 | 24/24 | 11 |
 | Austria + Slovenia + Croatia (10-14 days) 🚙 | 7/7 | 10 |
@@ -782,8 +781,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Hungary + Slovenia + Croatia (9 days) 🧭 | 7/7 | 7 |
 | Slovenia + Croatia + Bosnia (10-14 days) 🗺️ | 7/7 | 7 |
 | Slovenia + Northern Croatia (9 days) 🌲 | 4/4 | 7 |
-| England, Wales & Isle of Man 🎩 | 28/28 | 6 |
-| Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖 | 27/27 | 6 |
 | Croatia + Montenegro + Bosnia (12 days) 🧭 | 7/7 | 6 |
 | Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️ | 7/7 | 6 |
 | Baltics + Poland (10-14 days) 🇵🇱 | 6/6 | 6 |
@@ -808,6 +805,9 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Sicily (9 days) 🍋 | 6/9 | 3 |
 | Czechia + Austria + Hungary (10-14 days) 🏛️ | 5/5 | 3 |
 | Sicily East (4-5 days) 🏝️ | 4/4 | 3 |
-| ... 322 more routes with open destinations ... | | |
+| Montenegro + Bosnia (9 days) 🕊️ | 4/4 | 3 |
+| Western Canada: Rockies & Vancouver 🏔️ | 18/18 | 2 |
+| Grand European Roadtrip (14-21 days) 🪣 | 12/12 | 2 |
+| ... 317 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).
