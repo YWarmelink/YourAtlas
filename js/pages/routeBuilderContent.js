@@ -8810,6 +8810,42 @@ function rbMigrateCzechiaAustriaHungaryDestinationNotes() {
 }
 
 /**
+ * Batch 21 (2026-09-17) for the per-destination-notes workflow -- Germany + Austria + Italy
+ * (10-14 days), a small 5-leg/9-destination combo route researched in a single pass --
+ * Garmisch-Partenkirchen already had notes from an earlier batch, so only the remaining 8
+ * destinations were newly researched. Same generic name-matching migration pattern as the
+ * grand-tour batches above.
+ */
+function rbMigrateGermanyAustriaItalyDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_GERMANY_AUSTRIA_ITALY_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_GERMANY_AUSTRIA_ITALY_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Munich (Marienplatz, Englischer Garten)': "Marienplatz is the old-town core, with the Rathaus-Glockenspiel figures performing daily at 11am and noon (plus 5pm in summer); the Englischer Garten is one of the world's largest urban parks and its main curiosity is the Eisbach standing wave, where surfers ride the current right in the city.",
+    'Füssen / Hohenschwangau (Neuschwanstein)': "Beyond the castle itself, the classic postcard view of Neuschwanstein is from Marienbrücke (Mary's Bridge) just above it — worth the short uphill walk, but the bridge is frequently closed for high wind, ice, or maintenance, so it's not a guaranteed stop.",
+    'Innsbruck (old town, Golden Roof)': "The Golden Roof (Goldenes Dachl) anchors the compact medieval old town; Innsbruck's real distinguishing feature is that the Nordkette cable car starts almost from the city center and gets you to alpine terrain and panoramic views in under 20 minutes, no separate drive needed.",
+    'Bolzano': "Its must-see is the South Tyrol Museum of Archaeology, home to Ötzi the Iceman, the 5,300-year-old mummy found in the nearby Alps — a genuinely unique sight, not just a transit stop; allow about an hour for the exhibit.",
+    'Val Gardena / Ortisei': 'Base for the Alpe di Siusi (Seiser Alm), the largest high-altitude alpine meadow in Europe, reached from Ortisei by cable car; the meadow itself is largely car-restricted in summer, so the cable car/shuttle is the practical way in rather than driving up.',
+    "Cortina d'Ampezzo": 'The signature outing is the Tre Cime di Lavaredo loop hike, a roughly 3-4 hour circuit around the three iconic peaks with a refuge stop; Cortina also just hosted the 2026 Winter Olympics, so book accommodation early as regional infrastructure/prices are still elevated post-Games.',
+    'Lake Garda / Sirmione': "Sirmione's peninsula holds the Grotte di Catullo, extensive Roman villa ruins at its tip with lake views on three sides, plus a small thermal-spa scene; the old town gate closes to outside cars, so park before the peninsula and walk in.",
+    'Verona (Arena, old town)': "The Roman Arena hosts an open-air opera season roughly June-September (book ahead if visiting in that window) and is otherwise open for daytime visits year-round; the old town's Piazza delle Erbe and Casa di Giulietta (Juliet's balcony) are the other quick highlights within easy walking distance of each other.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -11700,7 +11736,7 @@ function rbBuildBerlinDresdenBavariaRoute() {
       destinations: [
         { name: 'Munich', lat: 48.1351, lng: 11.5820 },
         { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0956, notes: "Beyond being the Zugspitze gateway, the town's own highlight is the Partnachklamm gorge walk, a shaded ~1-hour loop through a carved rock canyon with waterfalls — an easy half-day add-on." },
-        { name: 'Füssen / Hohenschwangau (Neuschwanstein)', lat: 47.5722, lng: 10.7017 },
+        { name: 'Füssen / Hohenschwangau (Neuschwanstein)', lat: 47.5722, lng: 10.7017, notes: "Beyond the castle itself, the classic postcard view of Neuschwanstein is from Marienbrücke (Mary's Bridge) just above it — worth the short uphill walk, but the bridge is frequently closed for high wind, ice, or maintenance, so it's not a guaranteed stop." },
       ],
       notes: "Shortened 3-day version of Bavaria: Munich + Alps (5 days) 🥨 — same Zugspitze cable car and Neuschwanstein timed-tour caveats apply (see that route's notes); with only 3 days, prioritise Neuschwanstein/Füssen over a full Zugspitze day if time is tight.",
       transport_to_next: 'End of this route — fly or take the train back to the Netherlands from Munich.',
@@ -12791,7 +12827,7 @@ function rbBuildNorthernItalyRoadtripRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 260, lat: 45.4933, lng: 10.6089,
       destinations: [
-        { name: 'Lake Garda / Sirmione', lat: 45.4933, lng: 10.6089 },
+        { name: 'Lake Garda / Sirmione', lat: 45.4933, lng: 10.6089, notes: "Sirmione's peninsula holds the Grotte di Catullo, extensive Roman villa ruins at its tip with lake views on three sides, plus a small thermal-spa scene; the old town gate closes to outside cars, so park before the peninsula and walk in." },
       ],
       notes: 'Lake Garda/Sirmione (1-2 days).',
       transport_to_next: 'Drive to Verona.',
@@ -12807,7 +12843,7 @@ function rbBuildNorthernItalyRoadtripRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 260, lat: 46.4983, lng: 11.3548,
       destinations: [
-        { name: 'Bolzano', lat: 46.4983, lng: 11.3548 },
+        { name: 'Bolzano', lat: 46.4983, lng: 11.3548, notes: "Its must-see is the South Tyrol Museum of Archaeology, home to Ötzi the Iceman, the 5,300-year-old mummy found in the nearby Alps — a genuinely unique sight, not just a transit stop; allow about an hour for the exhibit." },
         { name: 'Lago di Braies', lat: 46.6958, lng: 12.0858, notes: "The postcard turquoise lake with wooden rowboats is one of the most photographed spots in the Dolomites. From July 1-Sept 15, the valley road is closed to unbooked cars 9am-4pm — you must pre-book parking online at pragsparking.com or arrive before 9am/after 4pm." },
       ],
       notes: '(10-day version) Dolomites via Bolzano/Lago di Braies (2 days). West→east, no zigzag. Season: May-June or September; Dolomites passes are only fully open/warm June-September, avoid August. ⚠️ Mountain roads outside June-September can need winter tyres — check this for shoulder-season travel.',
@@ -13005,7 +13041,7 @@ function rbBuildItalyNorthToCentralRoute() {
       destinations: [
         { name: 'Milan', lat: 45.4642, lng: 9.1900 },
         { name: 'Lake Como / Bellagio', lat: 45.9860, lng: 9.2578 },
-        { name: 'Lake Garda / Sirmione', lat: 45.4933, lng: 10.6089 },
+        { name: 'Lake Garda / Sirmione', lat: 45.4933, lng: 10.6089, notes: "Sirmione's peninsula holds the Grotte di Catullo, extensive Roman villa ruins at its tip with lake views on three sides, plus a small thermal-spa scene; the old town gate closes to outside cars, so park before the peninsula and walk in." },
         { name: 'Verona (waypoint)', lat: 45.4384, lng: 10.9916 },
       ],
       notes: "The classic big-names sweep, linear, no backtrack — mostly along the Milan-Bologna-Florence-Rome high-speed rail line (a real alternative to the car here, except for the lakes/Dolomites stretch). Milan/Lake Como/Lake Garda (3-4 days), then on via Verona. Open-jaw AMS-Milan in, AMS-Rome out (both direct, frequent). Budget ~€130/day. Italian autostrade charge distance-based tolls, roughly €9/100km — Milan-Rome alone is about €44.50 one way if driving the full spine rather than switching to the train.",
@@ -20591,7 +20627,7 @@ function rbBuildGermanyAustriaItalyRoute() {
     {
       code: 'DE', name: 'Germany', days: 2, budget: 220, lat: 48.1351, lng: 11.5820,
       destinations: [
-        { name: 'Munich (Marienplatz, Englischer Garten)', lat: 48.1351, lng: 11.5820 },
+        { name: 'Munich (Marienplatz, Englischer Garten)', lat: 48.1351, lng: 11.5820, notes: "Marienplatz is the old-town core, with the Rathaus-Glockenspiel figures performing daily at 11am and noon (plus 5pm in summer); the Englischer Garten is one of the world's largest urban parks and its main curiosity is the Eisbach standing wave, where surfers ride the current right in the city." },
       ],
       notes: "Munich (2-3 days) as the opener — same content as Bavaria: Munich + Alps (5 days) 🥨's Munich stop (see that route's notes for Deutsches Museum/ticket detail). Budget ~€90-130/day p.p.",
       transport_to_next: 'Drive south (~90km/1-1.5h) to Garmisch-Partenkirchen/Füssen.',
@@ -20600,7 +20636,7 @@ function rbBuildGermanyAustriaItalyRoute() {
       code: 'DE', name: 'Germany', days: 2, budget: 220, lat: 47.5722, lng: 10.7017,
       destinations: [
         { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0956, notes: "Beyond being the Zugspitze gateway, the town's own highlight is the Partnachklamm gorge walk, a shaded ~1-hour loop through a carved rock canyon with waterfalls — an easy half-day add-on." },
-        { name: 'Füssen / Hohenschwangau (Neuschwanstein)', lat: 47.5722, lng: 10.7017 },
+        { name: 'Füssen / Hohenschwangau (Neuschwanstein)', lat: 47.5722, lng: 10.7017, notes: "Beyond the castle itself, the classic postcard view of Neuschwanstein is from Marienbrücke (Mary's Bridge) just above it — worth the short uphill walk, but the bridge is frequently closed for high wind, ice, or maintenance, so it's not a guaranteed stop." },
       ],
       notes: "Garmisch-Partenkirchen and Füssen/Hohenschwangau (1-2 days) — same Zugspitze cable car and Neuschwanstein mandatory-timed-tour caveats as Bavaria: Munich + Alps (5 days) 🥨 (see that route's notes: book Neuschwanstein up to 8 weeks ahead, castle open during restoration until ~2029). Budget ~€90-130/day p.p.",
       transport_to_next: 'Drive to Innsbruck via the Fernpass (~1h15-1h30) — a Schengen border, no checks.',
@@ -20608,7 +20644,7 @@ function rbBuildGermanyAustriaItalyRoute() {
     {
       code: 'AT', name: 'Austria', days: 2, budget: 220, lat: 47.2692, lng: 11.4041,
       destinations: [
-        { name: 'Innsbruck (old town, Golden Roof)', lat: 47.2692, lng: 11.4041 },
+        { name: 'Innsbruck (old town, Golden Roof)', lat: 47.2692, lng: 11.4041, notes: "The Golden Roof (Goldenes Dachl) anchors the compact medieval old town; Innsbruck's real distinguishing feature is that the Nordkette cable car starts almost from the city center and gets you to alpine terrain and panoramic views in under 20 minutes, no separate drive needed." },
       ],
       notes: "Innsbruck (2 days) — a shorter, transit-oriented stop than the standalone Tyrol (6 days) 🌉 route above (that route builds a full 6-day loop out of Innsbruck via Seefeld/Achensee/Zillertal; this one just covers the old town before continuing south). Budget ~€90-125/day p.p. Austrian 10-day vignette (€12.80/car) required.",
       transport_to_next: 'Drive over the Brenner Pass (Brennerpass/Passo del Brennero) into Italy — open year-round via both the tunnel and the motorway (no seasonal closure, unlike the high alpine passes elsewhere in this batch), a Schengen border with no checks. A separate Italian autostrada toll applies (per-kilometre) in addition to the Austrian vignette already paid for the Innsbruck leg.',
@@ -20616,9 +20652,9 @@ function rbBuildGermanyAustriaItalyRoute() {
     {
       code: 'IT', name: 'Italy', days: 4, budget: 480, lat: 46.5369, lng: 12.1357,
       destinations: [
-        { name: 'Bolzano', lat: 46.4983, lng: 11.3548 },
-        { name: 'Val Gardena / Ortisei', lat: 46.5765, lng: 11.6750 },
-        { name: "Cortina d'Ampezzo", lat: 46.5369, lng: 12.1357 },
+        { name: 'Bolzano', lat: 46.4983, lng: 11.3548, notes: "Its must-see is the South Tyrol Museum of Archaeology, home to Ötzi the Iceman, the 5,300-year-old mummy found in the nearby Alps — a genuinely unique sight, not just a transit stop; allow about an hour for the exhibit." },
+        { name: 'Val Gardena / Ortisei', lat: 46.5765, lng: 11.6750, notes: "Base for the Alpe di Siusi (Seiser Alm), the largest high-altitude alpine meadow in Europe, reached from Ortisei by cable car; the meadow itself is largely car-restricted in summer, so the cable car/shuttle is the practical way in rather than driving up." },
+        { name: "Cortina d'Ampezzo", lat: 46.5369, lng: 12.1357, notes: "The signature outing is the Tre Cime di Lavaredo loop hike, a roughly 3-4 hour circuit around the three iconic peaks with a refuge stop; Cortina also just hosted the 2026 Winter Olympics, so book accommodation early as regional infrastructure/prices are still elevated post-Games." },
       ],
       notes: "Bolzano as the gateway, then Val Gardena or Cortina d'Ampezzo (3-4 days) — same Dolomites content as Dolomites (6 days) ⛰️ (rbBuildDolomitesDeepRoute) and the Dolomites opening leg of Dolomites & North Italy 🚡 (rbBuildDolomitesNorthItalyRoute)/Venice + Dolomites (5 days) 🎭 (rbBuildVeniceDolomitesRoute) above — see those routes' notes for lift-season and parking-cap detail (Tre Cime/Lago di Braies book ahead in season). Budget ~€105-140/day p.p. Season: June-September (lifts fully open).",
       transport_to_next: 'Drive south (~150km/2h) to Lake Garda/Verona, or continue to Venice instead (either/or, see this route\'s notes below).',
@@ -20626,8 +20662,8 @@ function rbBuildGermanyAustriaItalyRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 230, lat: 45.4384, lng: 10.9916,
       destinations: [
-        { name: 'Lake Garda / Sirmione', lat: 45.4933, lng: 10.6089 },
-        { name: 'Verona (Arena, old town)', lat: 45.4384, lng: 10.9916 },
+        { name: 'Lake Garda / Sirmione', lat: 45.4933, lng: 10.6089, notes: "Sirmione's peninsula holds the Grotte di Catullo, extensive Roman villa ruins at its tip with lake views on three sides, plus a small thermal-spa scene; the old town gate closes to outside cars, so park before the peninsula and walk in." },
+        { name: 'Verona (Arena, old town)', lat: 45.4384, lng: 10.9916, notes: "The Roman Arena hosts an open-air opera season roughly June-September (book ahead if visiting in that window) and is otherwise open for daytime visits year-round; the old town's Piazza delle Erbe and Casa di Giulietta (Juliet's balcony) are the other quick highlights within easy walking distance of each other." },
       ],
       notes: "Lake Garda/Verona chosen here as the concrete closing stop rather than Venice — same Sirmione/Desenzano/Verona content as the Lake Garda/Verona legs of Northern Italy (6 days) 🚤 (rbBuildNorthernItalyLakesRoute) and Northern Italy Roadtrip (9 days) 🚙 (rbBuildNorthernItalyRoadtripRoute) above — see those routes' notes for the Milan Area C/Arena-ticket caveats. Deliberately not Venice: Venice is already the closing stop of three other Dolomites-adjacent routes in this repo (Dolomites & North Italy 🚡, Venice + Dolomites (5 days) 🎭, Northern Italy Roadtrip (9 days) 🚙) — picking Lake Garda/Verona instead avoids piling a fourth near-identical Dolomites→Venice tail onto the list. Budget ~€105-140/day p.p., Venice would run noticeably higher per those other routes' own price checks.",
       transport_to_next: 'End of this route — drive back to Munich or fly home from Verona/Venice.',
@@ -20646,7 +20682,7 @@ function rbBuildGermanyAustriaSloveniaRoute() {
     {
       code: 'DE', name: 'Germany', days: 2, budget: 200, lat: 48.1351, lng: 11.5820,
       destinations: [
-        { name: 'Munich (Marienplatz, Englischer Garten)', lat: 48.1351, lng: 11.5820 },
+        { name: 'Munich (Marienplatz, Englischer Garten)', lat: 48.1351, lng: 11.5820, notes: "Marienplatz is the old-town core, with the Rathaus-Glockenspiel figures performing daily at 11am and noon (plus 5pm in summer); the Englischer Garten is one of the world's largest urban parks and its main curiosity is the Eisbach standing wave, where surfers ride the current right in the city." },
       ],
       notes: "Munich (2-3 days) as the opener — same content as Bavaria: Munich + Alps (5 days) 🥨's Munich stop. Budget ~€90-115/day p.p.",
       transport_to_next: 'Drive to Salzburg, Austria (~145km/1h30) — a Schengen border, no checks.',
@@ -20888,7 +20924,7 @@ function rbBuildAlpineRoadtripFiveCountriesRoute() {
     {
       code: 'AT', name: 'Austria', days: 2, budget: 240, lat: 47.2692, lng: 11.4041,
       destinations: [
-        { name: 'Innsbruck (old town, Golden Roof)', lat: 47.2692, lng: 11.4041 },
+        { name: 'Innsbruck (old town, Golden Roof)', lat: 47.2692, lng: 11.4041, notes: "The Golden Roof (Goldenes Dachl) anchors the compact medieval old town; Innsbruck's real distinguishing feature is that the Nordkette cable car starts almost from the city center and gets you to alpine terrain and panoramic views in under 20 minutes, no separate drive needed." },
       ],
       notes: "Innsbruck (2 days) — same shorter, transit-oriented Innsbruck stop as this sub-batch's sibling Germany + Austria + Italy (10-14 days) 🏔️ route above, reached here via the Arlberg Pass instead of via Germany/the Fernpass. Budget ~€90-125/day p.p. Austrian 10-day vignette (€12.80/car) required.",
       transport_to_next: 'Drive over the Brenner Pass into Italy (open year-round via the tunnel and motorway) toward the Dolomites/Cortina.',
@@ -20896,7 +20932,7 @@ function rbBuildAlpineRoadtripFiveCountriesRoute() {
     {
       code: 'IT', name: 'Italy', days: 3, budget: 360, lat: 46.5369, lng: 12.1357,
       destinations: [
-        { name: "Cortina d'Ampezzo", lat: 46.5369, lng: 12.1357 },
+        { name: "Cortina d'Ampezzo", lat: 46.5369, lng: 12.1357, notes: "The signature outing is the Tre Cime di Lavaredo loop hike, a roughly 3-4 hour circuit around the three iconic peaks with a refuge stop; Cortina also just hosted the 2026 Winter Olympics, so book accommodation early as regional infrastructure/prices are still elevated post-Games." },
         { name: 'Tre Cime di Lavaredo', lat: 46.6198, lng: 12.3032 },
       ],
       notes: "Dolomites/Cortina (3 days) — same content as Dolomites (6 days) ⛰️ (rbBuildDolomitesDeepRoute)'s Cortina base and this sub-batch's sibling Germany + Austria + Italy (10-14 days) 🏔️ route's Dolomites leg above. Budget ~€105-140/day p.p. Season: June-September — a hard boundary for lift/trail access.",
