@@ -8946,6 +8946,44 @@ function rbMigrateBalearicDestinationNotes() {
 }
 
 /**
+ * Batch 25 (2026-09-17) for the per-destination-notes workflow -- Italy Roadtrip (12 days), a
+ * 6-leg/13-destination combo route researched in a single pass -- Naples and Pompeii already had
+ * notes from an earlier batch, so only the remaining 11 destinations were newly researched. Same
+ * generic name-matching migration pattern as the grand-tour batches above.
+ */
+function rbMigrateItalyRoadtripDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_ITALY_ROADTRIP_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_ITALY_ROADTRIP_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Milan': "The Duomo's rooftop terraces and the Navigli canal district are the standouts beyond the obvious sights; Leonardo's Last Supper (Cenacolo Vinciano) requires booking 3-4 months ahead, since tickets for each quarterly release window sell out within minutes of going live.",
+    'Turin': "The Egyptian Museum (the largest Egyptian collection outside Cairo) and the Mole Antonelliana's panoramic glass lift above the National Cinema Museum are the two standout stops; each is a half-day visit on its own.",
+    'Parma': 'Beyond the historic center, book a farm visit to a Parmigiano-Reggiano caseificio or a Prosciutto di Parma producer in advance — most require reservations and only run production tours on weekday mornings.',
+    'Modena': "Home to Ferrari and Maserati (both museums a short drive away in Maranello) plus traditional balsamic vinegar acetaie open for tastings; Massimo Bottura's Osteria Francescana, one of the world's most acclaimed restaurants, is here too but books out many months ahead.",
+    'Bologna': "The medieval Due Torri and UNESCO-listed porticoes anchor the old center, but the Torre degli Asinelli has been closed to climbers since October 2023 (structural stabilization work on the leaning Garisenda tower next to it, with estimates running to 2028) — climb the Torre dell'Orologio (Clock Tower) instead for a comparable view.",
+    'Perugia': 'An Etruscan hill town with a lively university-town feel; if visiting in July it hosts Umbria Jazz, one of Europe\'s major jazz festivals, and Eurochocolate takes over the city in October.',
+    'Assisi': "The Basilica of San Francesco (upper and lower churches, with Giotto's frescoes in the upper) is the highlight — arrive right at opening to see it before tour-bus groups fill the nave.",
+    'Orvieto': "The Duomo's striped facade and Luca Signorelli's Last Judgment frescoes are the draw above ground; below it, Orvieto Underground tours the Etruscan-era caves and tunnels carved beneath the town.",
+    'Rome': 'Impossible to cover fully even in a longer stop, so prioritize: the Colosseum/Roman Forum and the Vatican Museums/Sistine Chapel each need separate timed-entry tickets booked well in advance, especially for a summer visit.',
+    'Amalfi Coast': "The Path of the Gods trail (Bomerano to Nocelle) is the best way to take in the coastline without fighting traffic, and Ravello's clifftop gardens (Villa Cimbrone, Villa Rufolo) give comparable views with far fewer crowds than Positano.",
+    'Sorrento': 'Works best as a car-free base — leave the car parked and use the Circumvesuviana train or ferries to reach Capri, Positano, and Pompeii rather than driving the coast road yourself.',
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -12911,7 +12949,7 @@ function rbBuildNorthernItalyRoadtripRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 260, lat: 45.4642, lng: 9.1900,
       destinations: [
-        { name: 'Milan', lat: 45.4642, lng: 9.1900 },
+        { name: 'Milan', lat: 45.4642, lng: 9.1900, notes: "The Duomo's rooftop terraces and the Navigli canal district are the standouts beyond the obvious sights; Leonardo's Last Supper (Cenacolo Vinciano) requires booking 3-4 months ahead, since tickets for each quarterly release window sell out within minutes of going live." },
       ],
       notes: 'The big sibling of Northern Italy (6 days) 🚤 above — now continuing on to the Dolomites and Venice. Milan (1-2 days). Open-jaw AMS-Milan in, AMS-Venice out (both direct, frequent) — no return-flight detour.',
       transport_to_next: 'Drive to Lake Como/Bellagio.',
@@ -13139,7 +13177,7 @@ function rbBuildItalyNorthToCentralRoute() {
     {
       code: 'IT', name: 'Italy', days: 4, budget: 520, lat: 45.4642, lng: 9.1900,
       destinations: [
-        { name: 'Milan', lat: 45.4642, lng: 9.1900 },
+        { name: 'Milan', lat: 45.4642, lng: 9.1900, notes: "The Duomo's rooftop terraces and the Navigli canal district are the standouts beyond the obvious sights; Leonardo's Last Supper (Cenacolo Vinciano) requires booking 3-4 months ahead, since tickets for each quarterly release window sell out within minutes of going live." },
         { name: 'Lake Como / Bellagio', lat: 45.9860, lng: 9.2578 },
         { name: 'Lake Garda / Sirmione', lat: 45.4933, lng: 10.6089, notes: "Sirmione's peninsula holds the Grotte di Catullo, extensive Roman villa ruins at its tip with lake views on three sides, plus a small thermal-spa scene; the old town gate closes to outside cars, so park before the peninsula and walk in." },
         { name: 'Verona (waypoint)', lat: 45.4384, lng: 10.9916 },
@@ -13150,7 +13188,7 @@ function rbBuildItalyNorthToCentralRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 130, lat: 44.4949, lng: 11.3426,
       destinations: [
-        { name: 'Bologna', lat: 44.4949, lng: 11.3426 },
+        { name: 'Bologna', lat: 44.4949, lng: 11.3426, notes: "The medieval Due Torri and UNESCO-listed porticoes anchor the old center, but the Torre degli Asinelli has been closed to climbers since October 2023 (structural stabilization work on the leaning Garisenda tower next to it, with estimates running to 2028) — climb the Torre dell'Orologio (Clock Tower) instead for a comparable view." },
       ],
       notes: 'Bologna (1 day).',
       transport_to_next: 'High-speed train to Florence (~35 min).',
@@ -13175,7 +13213,7 @@ function rbBuildItalyNorthToCentralRoute() {
     {
       code: 'IT', name: 'Italy', days: 3, budget: 390, lat: 41.9028, lng: 12.4964,
       destinations: [
-        { name: 'Rome', lat: 41.9028, lng: 12.4964 },
+        { name: 'Rome', lat: 41.9028, lng: 12.4964, notes: "Impossible to cover fully even in a longer stop, so prioritize: the Colosseum/Roman Forum and the Vatican Museums/Sistine Chapel each need separate timed-entry tickets booked well in advance, especially for a summer visit." },
       ],
       notes: 'Rome (3 days) to close the trip.',
       transport_to_next: 'End of this route — direct return flight Rome (Fiumicino) to Amsterdam.',
@@ -13194,8 +13232,8 @@ function rbBuildItalyRoadtripRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 280, lat: 45.4642, lng: 9.1900,
       destinations: [
-        { name: 'Milan', lat: 45.4642, lng: 9.1900 },
-        { name: 'Turin', lat: 45.0703, lng: 7.6869 },
+        { name: 'Milan', lat: 45.4642, lng: 9.1900, notes: "The Duomo's rooftop terraces and the Navigli canal district are the standouts beyond the obvious sights; Leonardo's Last Supper (Cenacolo Vinciano) requires booking 3-4 months ahead, since tickets for each quarterly release window sell out within minutes of going live." },
+        { name: 'Turin', lat: 45.0703, lng: 7.6869, notes: "The Egyptian Museum (the largest Egyptian collection outside Cairo) and the Mole Antonelliana's panoramic glass lift above the National Cinema Museum are the two standout stops; each is a half-day visit on its own." },
       ],
       notes: "Deliberately a different angle from Italy: North to Central (12 days) 🚄 above — car-only, rural/food-focused, skips Tuscany's big names entirely: Milan/Turin (2 days). Open-jaw AMS-Milan in, AMS-Naples out (both direct). Rental car for the whole trip. Budget ~€140/day (the Amalfi stretch plus rental car/tolls pull the average up) — toll costs Milan-Rome ≈€44.50, Rome-Naples ≈€13.50 (2026 rates; autostrada tariffs rose ~1.5% in January 2026).",
       transport_to_next: 'Drive to Emilia-Romagna (Parma).',
@@ -13203,9 +13241,9 @@ function rbBuildItalyRoadtripRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 280, lat: 44.6471, lng: 10.9252,
       destinations: [
-        { name: 'Parma', lat: 44.8015, lng: 10.3279 },
-        { name: 'Modena', lat: 44.6471, lng: 10.9252 },
-        { name: 'Bologna', lat: 44.4949, lng: 11.3426 },
+        { name: 'Parma', lat: 44.8015, lng: 10.3279, notes: "Beyond the historic center, book a farm visit to a Parmigiano-Reggiano caseificio or a Prosciutto di Parma producer in advance — most require reservations and only run production tours on weekday mornings." },
+        { name: 'Modena', lat: 44.6471, lng: 10.9252, notes: "Home to Ferrari and Maserati (both museums a short drive away in Maranello) plus traditional balsamic vinegar acetaie open for tastings; Massimo Bottura's Osteria Francescana, one of the world's most acclaimed restaurants, is here too but books out many months ahead." },
+        { name: 'Bologna', lat: 44.4949, lng: 11.3426, notes: "The medieval Due Torri and UNESCO-listed porticoes anchor the old center, but the Torre degli Asinelli has been closed to climbers since October 2023 (structural stabilization work on the leaning Garisenda tower next to it, with estimates running to 2028) — climb the Torre dell'Orologio (Clock Tower) instead for a comparable view." },
       ],
       notes: 'Emilia-Romagna food route: Parma, Modena, Bologna (2 days).',
       transport_to_next: 'Drive south to Umbria (Perugia).',
@@ -13213,9 +13251,9 @@ function rbBuildItalyRoadtripRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 280, lat: 43.1122, lng: 12.3888,
       destinations: [
-        { name: 'Perugia', lat: 43.1122, lng: 12.3888 },
-        { name: 'Assisi', lat: 43.0707, lng: 12.6196 },
-        { name: 'Orvieto', lat: 42.7186, lng: 12.1128 },
+        { name: 'Perugia', lat: 43.1122, lng: 12.3888, notes: "An Etruscan hill town with a lively university-town feel; if visiting in July it hosts Umbria Jazz, one of Europe's major jazz festivals, and Eurochocolate takes over the city in October." },
+        { name: 'Assisi', lat: 43.0707, lng: 12.6196, notes: "The Basilica of San Francesco (upper and lower churches, with Giotto's frescoes in the upper) is the highlight — arrive right at opening to see it before tour-bus groups fill the nave." },
+        { name: 'Orvieto', lat: 42.7186, lng: 12.1128, notes: "The Duomo's striped facade and Luca Signorelli's Last Judgment frescoes are the draw above ground; below it, Orvieto Underground tours the Etruscan-era caves and tunnels carved beneath the town." },
       ],
       notes: 'Umbria: Perugia, Assisi, Orvieto (2-3 days).',
       transport_to_next: 'Drive to Rome via the A1 autostrada.',
@@ -13223,7 +13261,7 @@ function rbBuildItalyRoadtripRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 280, lat: 41.9028, lng: 12.4964,
       destinations: [
-        { name: 'Rome', lat: 41.9028, lng: 12.4964 },
+        { name: 'Rome', lat: 41.9028, lng: 12.4964, notes: "Impossible to cover fully even in a longer stop, so prioritize: the Colosseum/Roman Forum and the Vatican Museums/Sistine Chapel each need separate timed-entry tickets booked well in advance, especially for a summer visit." },
       ],
       notes: 'Rome (2-3 days).',
       transport_to_next: 'Drive to Naples/Pompeii.',
@@ -13240,8 +13278,8 @@ function rbBuildItalyRoadtripRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 280, lat: 40.6263, lng: 14.3757,
       destinations: [
-        { name: 'Amalfi Coast', lat: 40.6340, lng: 14.6027 },
-        { name: 'Sorrento', lat: 40.6263, lng: 14.3757 },
+        { name: 'Amalfi Coast', lat: 40.6340, lng: 14.6027, notes: "The Path of the Gods trail (Bomerano to Nocelle) is the best way to take in the coastline without fighting traffic, and Ravello's clifftop gardens (Villa Cimbrone, Villa Rufolo) give comparable views with far fewer crowds than Positano." },
+        { name: 'Sorrento', lat: 40.6263, lng: 14.3757, notes: "Works best as a car-free base — leave the car parked and use the Circumvesuviana train or ferries to reach Capri, Positano, and Pompeii rather than driving the coast road yourself." },
       ],
       notes: "Amalfi Coast/Sorrento (2-3 days) to close the trip. Season: May-June or September-early October. ⚠️ The Amalfi Coast stretch has the same odd/even-license-plate and ZTL restrictions as the Campania routes below — check the exact 2026 calendar ahead, especially on a summer-weekend arrival.",
       transport_to_next: 'End of this route — direct return flight Naples to Amsterdam.',
@@ -13434,7 +13472,7 @@ function rbBuildCampaniaPugliaRoute() {
     {
       code: 'IT', name: 'Italy', days: 3, budget: 375, lat: 40.6263, lng: 14.3757,
       destinations: [
-        { name: 'Sorrento', lat: 40.6263, lng: 14.3757 },
+        { name: 'Sorrento', lat: 40.6263, lng: 14.3757, notes: "Works best as a car-free base — leave the car parked and use the Circumvesuviana train or ferries to reach Capri, Positano, and Pompeii rather than driving the coast road yourself." },
         { name: 'Amalfi Coast (Positano)', lat: 40.6280, lng: 14.4849 },
       ],
       notes: 'Sorrento/Amalfi Coast (2-3 days, boat/bus — the same caution as the standalone Campania route above). Rental car picked up after the Amalfi stretch (or leave it altogether and use boat/bus just for Positano/Amalfi, as in the standalone Campania route).',
@@ -13887,7 +13925,7 @@ function rbBuildSanMarinoEmiliaRomagnaRoute() {
     {
       code: 'IT', name: 'Italy', days: 3, budget: 300, lat: 44.4949, lng: 11.3426,
       destinations: [
-        { name: 'Bologna', lat: 44.4949, lng: 11.3426 },
+        { name: 'Bologna', lat: 44.4949, lng: 11.3426, notes: "The medieval Due Torri and UNESCO-listed porticoes anchor the old center, but the Torre degli Asinelli has been closed to climbers since October 2023 (structural stabilization work on the leaning Garisenda tower next to it, with estimates running to 2028) — climb the Torre dell'Orologio (Clock Tower) instead for a comparable view." },
         { name: 'Ravenna (Byzantine mosaics)', lat: 44.4184, lng: 12.2035 },
         { name: 'Rimini', lat: 44.0678, lng: 12.5695 },
       ],

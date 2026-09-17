@@ -12,6 +12,13 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 25 — Italy Roadtrip (12 days) (2026-09-17)** — 6 legs, 13
+  destinations (11 newly researched — Naples/Pompeii already covered from an earlier batch),
+  researched in a single pass. Same generic name-matching migration
+  (`rbMigrateItalyRoadtripDestinationNotes()`) — 5 routes confirmed touched in the live
+  simulation. App-wide total: 2501 destination-slots filled across 307 routes. 265/741
+  signatures done.
+
 - **Per-destination notes, batch 24 — Balearic Islands (7-10 days) (2026-09-17)** — a small
   3-leg/7-destination combo route, researched in a single pass. Shared-signature batch: these
   destinations recur in the smaller "Mallorca + Menorca" route. Same generic name-matching

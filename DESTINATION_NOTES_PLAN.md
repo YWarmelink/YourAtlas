@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 258 / 741 signatures.**
+- **Done so far: 265 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -189,7 +189,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **IT** (1 dest): Florence — routes: Italy: North to Central (12 days) 🚄, Rome + Tuscany (9 days) 🍝
 - [x] **IT** (1 dest): Palermo — routes: Sicily (9 days) 🍋, Sicily Roadtrip (7-10 days) 🏝️
 - [x] **IT** (1 dest): Agrigento — Valle dei Templi — routes: Sicily (9 days) 🍋, Sicily Roadtrip (7-10 days) 🏝️
-- [ ] **IT** (1 dest): Rome — routes: Italy Roadtrip (12 days) 🧀, Italy: North to Central (12 days) 🚄
+- [x] **IT** (1 dest): Rome — routes: Italy Roadtrip (12 days) 🧀, Italy: North to Central (12 days) 🚄
 - [x] **IT** (2 dest): Naples, Pompeii — routes: Campania + Puglia (9 days) 🧭, Italy Roadtrip (12 days) 🧀
 - [ ] **IT** (1 dest): Matera — routes: Campania + Puglia (9 days) 🧭, Sicily + Southern Italy (12 days) 🍊
 - [x] **IT** (1 dest): Syracuse / Ortigia — routes: Sicily East (4-5 days) 🏝️, Sicily Roadtrip (7-10 days) 🏝️
@@ -520,18 +520,18 @@ Sorted alphabetically by country code.
 - [x] **IT** (2 dest): Lake Garda / Sirmione, Verona (Arena, old town) — routes: Germany + Austria + Italy (10-14 days) 🏔️
 - [ ] **IT** (2 dest): Dolomites (Cortina d'Ampezzo / Tre Cime), Venice (Piazza San Marco) — routes: Grand European Roadtrip (14-21 days) 🪣
 - [ ] **IT** (2 dest): Piazza San Marco, Rialto Bridge — routes: Italy + Slovenia + Croatia (10-14 days) ⛵
-- [ ] **IT** (2 dest): Milan, Turin — routes: Italy Roadtrip (12 days) 🧀
-- [ ] **IT** (3 dest): Parma, Modena, Bologna — routes: Italy Roadtrip (12 days) 🧀
-- [ ] **IT** (3 dest): Perugia, Assisi, Orvieto — routes: Italy Roadtrip (12 days) 🧀
-- [ ] **IT** (2 dest): Amalfi Coast, Sorrento — routes: Italy Roadtrip (12 days) 🧀
+- [x] **IT** (2 dest): Milan, Turin — routes: Italy Roadtrip (12 days) 🧀
+- [x] **IT** (3 dest): Parma, Modena, Bologna — routes: Italy Roadtrip (12 days) 🧀
+- [x] **IT** (3 dest): Perugia, Assisi, Orvieto — routes: Italy Roadtrip (12 days) 🧀
+- [x] **IT** (2 dest): Amalfi Coast, Sorrento — routes: Italy Roadtrip (12 days) 🧀
 - [ ] **IT** (4 dest): Milan, Lake Como / Bellagio, Lake Garda / Sirmione, Verona (waypoint) — routes: Italy: North to Central (12 days) 🚄
-- [ ] **IT** (1 dest): Bologna — routes: Italy: North to Central (12 days) 🚄
+- [x] **IT** (1 dest): Bologna — routes: Italy: North to Central (12 days) 🚄
 - [ ] **IT** (2 dest): Siena, Val d'Orcia (Pienza) — routes: Italy: North to Central (12 days) 🚄
 - [ ] **IT** (4 dest): Catania, Mount Etna, Taormina, Syracuse / Ortigia — routes: Malta + Gozo + Sicily (9 days) 🐚
 - [ ] **IT** (3 dest): Bellagio, Varenna, Menaggio — routes: Northern Italy (6 days) 🚤
 - [ ] **IT** (2 dest): Sirmione, Desenzano — routes: Northern Italy (6 days) 🚤
 - [ ] **IT** (1 dest): Verona (Arena, Juliet's balcony) — routes: Northern Italy (6 days) 🚤
-- [ ] **IT** (1 dest): Milan — routes: Northern Italy Roadtrip (9 days) 🚙
+- [x] **IT** (1 dest): Milan — routes: Northern Italy Roadtrip (9 days) 🚙
 - [ ] **IT** (1 dest): Lake Como / Bellagio — routes: Northern Italy Roadtrip (9 days) 🚙
 - [x] **IT** (1 dest): Lake Garda / Sirmione — routes: Northern Italy Roadtrip (9 days) 🚙
 - [ ] **IT** (1 dest): Verona — routes: Northern Italy Roadtrip (9 days) 🚙
@@ -768,7 +768,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| Italy Roadtrip (12 days) 🧀 | 11/13 | 1 |
 | Rome + Tuscany (9 days) 🍝 | 10/12 | 1 |
 | Sicily + Southern Italy (12 days) 🍊 | 10/12 | 1 |
 | Portugal + Andalusia (10-14 days) 🕌 | 10/10 | 1 |
@@ -777,7 +776,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | India & Himalaya Expedition 🏔️ | 9/22 | 1 |
 | Switzerland Alpine Roadtrip (9 days) 🛣️ | 9/9 | 1 |
 | France + Switzerland + Italy (10-14 days) 🗻 | 9/9 | 1 |
-| Italy: North to Central (12 days) 🚄 | 8/9 | 1 |
 | Northern Italy (6 days) 🚤 | 7/7 | 1 |
 | Serbia + Montenegro + Bosnia (12 days) 🏔️ | 7/7 | 1 |
 | Faroe Islands + Iceland (9 days) ⛴️ | 7/7 | 1 |
@@ -808,6 +806,8 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Berlin (4 days) 🐻 | 1/1 | 1 |
 | Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂 | 19/19 | 0 |
 | Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧 | 19/19 | 0 |
-| ... 270 more routes with open destinations ... | | |
+| Porto + Northern Spain (10-14 days) 🏔️ | 14/14 | 0 |
+| US Northeast 🗽 | 13/13 | 0 |
+| ... 269 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).
