@@ -1486,10 +1486,10 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
         {
           code: 'CU', name: 'Cuba', days: 18, budget: 1260, lat: 23.1136, lng: -82.3666,
           destinations: [
-            { name: 'Havana (Habana Vieja)', lat: 23.1136, lng: -82.3666 },
-            { name: 'Viñales Valley', lat: 22.6167, lng: -83.7097 },
-            { name: 'Cienfuegos', lat: 22.1496, lng: -80.4394 },
-            { name: 'Trinidad', lat: 21.8047, lng: -79.9825 },
+            { name: 'Havana (Habana Vieja)', lat: 23.1136, lng: -82.3666, notes: "UNESCO-listed old town centered on Plaza Vieja and Plaza de la Catedral, with 1950s American classic cars doubling as everyday taxis along the Malecón seafront. Walk the old town early morning or sunset — midday heat is brutal and the light on the colonial facades is better anyway." },
+            { name: 'Viñales Valley', lat: 22.6167, lng: -83.7097, notes: "The draw is the landscape itself: dramatic limestone mogotes ringing red-soil tobacco farms, best seen by visiting a working finca to watch cigars hand-rolled. Go at sunrise, mist still clings to the mogotes and it's before the day-trip buses from Havana arrive." },
+            { name: 'Cienfuegos', lat: 22.1496, lng: -80.4394, notes: "Known as the \"Pearl of the South\" — a French-influenced colonial center (its own separate UNESCO site, distinct from Havana/Trinidad) built around the Prado boulevard and the Moorish-style Palacio de Valle. Climb the Palacio de Valle's rooftop terrace/bar for a view over the bay, small entry fee, easily missed by day-trippers who only see the ground floor." },
+            { name: 'Trinidad', lat: 21.8047, lng: -79.9825, notes: "Beyond the cobblestoned Plaza Mayor core, the real highlight is the Valle de los Ingenios (Valley of the Sugar Mills) just outside town. Climb the Manaca Iznaga tower for the valley view, and pair the town with a half-day at nearby Playa Ancón beach." },
           ],
           notes: "Havana and UNESCO-listed colonial Trinidad are the highlights; the quiet Viñales Valley (tobacco, karst landscape) is the hidden gem. Casas particulares (private rooms) are the standard backpacker accommodation. Price verified (2026-07), holds up. ⚠️ Travel advisory orange (confirmed valid, last updated June 23, 2026): major shortages of power/fuel/food/medicine, rising safety risks — the sixth nationwide power outage of 2026 hit on August 2. Cards don't work at ATMs (bring cash). Since July 1, 2025 the paper tourist card has been replaced by an e-Visa (~$50), tied to the mandatory free D'Viajeros form (to be filled in within 72h before arrival). Route logic (2026-08, search-confirmed): order reversed — Viñales used to be the last stop (a double detour: past Cienfuegos to Trinidad first, then back to Cienfuegos, then a 4.5h crossing to Viñales right next to Havana); now a return trip from Havana right at the start, followed by Cienfuegos-Trinidad without crossing routes.",
           transport_to_next: 'Back to Havana (~4h15 driving from Trinidad — the only realistic international gateway, Santiago de Cuba would make the detour worse), then a flight Havana-Kingston (usually with a stopover via Panama City or Miami)',
@@ -1497,10 +1497,10 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
         {
           code: 'JM', name: 'Jamaica', days: 12, budget: 1080, lat: 17.9714, lng: -76.7936,
           destinations: [
-            { name: 'Kingston', lat: 17.9714, lng: -76.7936 },
-            { name: "Dunn's River Falls (Ocho Rios)", lat: 18.4108, lng: -77.1296 },
-            { name: 'Port Antonio', lat: 18.1811, lng: -76.4513 },
-            { name: 'Blue Mountains (Hardwar Gap)', lat: 18.0747, lng: -76.6597 },
+            { name: 'Kingston', lat: 17.9714, lng: -76.7936, notes: "The real draws are reggae history sites, not the city at large: the Bob Marley Museum (his former home/studio at 56 Hope Road) and the Trench Town Culture Yard. Book the Bob Marley Museum's guided tour for the morning — it's small-group and slots fill up." },
+            { name: "Dunn's River Falls (Ocho Rios)", lat: 18.4108, lng: -77.1296, notes: "A 180m terraced waterfall climbed hand-in-hand in a guided human chain — touristy but genuinely one of Jamaica's signature experiences. Entry is about $25/adult as of 2026; go right at opening, before ~9am, to beat the cruise-ship crowds that swamp it by midday." },
+            { name: 'Port Antonio', lat: 18.1811, lng: -76.4513, notes: "Quieter than Ocho Rios/Montego Bay — its specific draws are the Blue Lagoon, Frenchman's Cove, and bamboo rafting down the Rio Grande. Book a Rio Grande raft trip (roughly 2-3 hours) for morning, calmer water and fewer other rafts on the river." },
+            { name: 'Blue Mountains (Hardwar Gap)', lat: 18.0747, lng: -76.6597, notes: "Home to the Blue Mountain coffee estates (farm tours/tastings) and the trailhead for Blue Mountain Peak. If attempting the Peak hike, start around midnight-2am — the summit sunrise is the entire point of doing it, and it's socked in by cloud later in the day." },
           ],
           notes: 'Blue Mountains (coffee, hiking) and Port Antonio (rafting, waterfalls, hardly any tourists compared to Negril/Ocho Rios) are the strongest match for nature over luxury. Price correction (2026-07): €75→€90/day, Jamaica is pricier than assumed (guesthouses + entrance fees). Route logic (2026-08, search-confirmed): order reversed — Blue Mountains used to be a separate out-and-back trip right after Kingston (the coastal road to Ocho Rios doesn\'t run through it); now a mountain-route return leg (Hardwar Gap, coffee plantations/Newcastle) from Port Antonio to Kingston, instead of a separate side trip at the start.',
           transport_to_next: 'Short final stretch Blue Mountains-Kingston (Hardwar Gap mountain route), then a flight Kingston-Curaçao (usually with a stopover via Panama City or Miami)',
@@ -1516,9 +1516,9 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
         {
           code: 'CW', name: 'Curaçao', days: 7, budget: 560, lat: 12.1084, lng: -68.9335,
           destinations: [
-            { name: 'Willemstad (UNESCO)', lat: 12.1091, lng: -68.9316 },
-            { name: 'Shete Boka National Park', lat: 12.3667, lng: -69.15 },
-            { name: 'beaches (Grote Knip)', lat: 12.2167, lng: -69.15 },
+            { name: 'Willemstad (UNESCO)', lat: 12.1091, lng: -68.9316, notes: "Punda and Otrobanda, the two historic districts either side of Sint Anna Bay, are linked by the free pedestrian Queen Emma pontoon bridge that swings open for ship traffic; cross it and catch the gabled Handelskade waterfront at golden hour for the classic photo, and browse the floating fruit market moored alongside Punda." },
+            { name: 'Shete Boka National Park', lat: 12.3667, lng: -69.15, notes: "The standout stop within the park is Boka Tabla, a collapsed sea cave you look down into as waves surge and blow through it — go when the trade-wind swell is up (typically afternoon) for the most dramatic spray, and allow 2-3 hours to also walk out to Boka Wandomi's natural rock bridge." },
+            { name: 'beaches (Grote Knip)', lat: 12.2167, lng: -69.15, notes: "Curaçao's most photographed beach: a steep staircase down a cliff face opens onto a crescent of white sand and calm, strikingly turquoise water good for swimming, with quieter Kleine Knip just over the ridge as an easy add-on. It's a local weekend favorite, so arrive by mid-morning before the small parking area fills." },
           ],
           notes: 'Willemstad with its Dutch colonial architecture is the urban counterpart to laid-back Bonaire. Shete Boka (rugged north coast) is the hidden gem, much quieter than the beaches. Price verified (2026-07), holds up. Digital Immigration Card mandatory to fill in in advance (free).',
           transport_to_next: 'Short flight Curaçao-Bonaire',
@@ -1526,8 +1526,8 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
         {
           code: 'BQ', name: 'Bonaire', days: 6, budget: 660, lat: 12.25, lng: -68.4,
           destinations: [
-            { name: 'Washington Slagbaai National Park', lat: 12.3167, lng: -68.4167 },
-            { name: 'diving/snorkeling (marine park)', lat: 12.15, lng: -68.2833 },
+            { name: 'Washington Slagbaai National Park', lat: 12.3167, lng: -68.4167, notes: "The park is a self-drive loop with a long, rough high-clearance route and a shorter alternative — pick based on your rental car and time. Note the gate stops admitting visitors at 2:30pm even though the park closes at 5pm, and entry uses the same $40 STINAPA nature-fee tag (valid the full calendar year) as Bonaire's marine park, not a separate ticket." },
+            { name: 'diving/snorkeling (marine park)', lat: 12.15, lng: -68.2833, notes: "Nearly all ~90 dive and snorkel sites ring the entire coast and are shore-accessible, marked by yellow-painted rocks, so no boat is needed for most of them — for the clearest water, take the short water-taxi to uninhabited Klein Bonaire's reefs instead. The same $40 STINAPA tag required to dive/snorkel here also covers Washington Slagbaai, so it only needs buying once per trip." },
           ],
           notes: 'World-class diving/snorkeling right off the coast. Washington Slagbaai NP (flamingos, rugged nature) is the hidden gem, barely visited. Price correction (2026-07): €87.50→€110/day (little budget accommodation, dive trips are expensive). The mandatory entry tax of ~€70 p.p. is a separate cost item, not included in the daily rate.',
           transport_to_next: 'Flight Bonaire-Guadeloupe (usually with a stopover via Aruba, Panama City or San Juan)',
@@ -1543,9 +1543,9 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
         {
           code: 'GP', name: 'Guadeloupe', days: 7, budget: 615, lat: 16.0448, lng: -61.6654,
           destinations: [
-            { name: 'La Soufrière (volcano)', lat: 16.0456, lng: -61.6654 },
-            { name: 'Carbet Falls', lat: 16.0472, lng: -61.6167 },
-            { name: 'Îles des Saintes', lat: 15.8667, lng: -61.5833 },
+            { name: 'La Soufrière (volcano)', lat: 16.0456, lng: -61.6654, notes: "The well-marked summit trail takes under 2 hours round-trip and needs no guide, though a roped-off fumarole zone near the top does — check the current activity/alert level before setting out since access can be restricted with little notice." },
+            { name: 'Carbet Falls', lat: 16.0472, lng: -61.6167, notes: "Three cascades on the same river: the lowest (Carbet 3) is a flat 10-minute walk from the car park, while the tallest (Carbet 1, 115m) requires a longer forest hike — pick based on how much time you have rather than trying to see all three." },
+            { name: 'Îles des Saintes', lat: 15.8667, lng: -61.5833, notes: "Rent a scooter on arrival in Terre-de-Haut to cover the island in a day: climb to Fort Napoléon for the best bay panorama, then cool off at Pain de Sucre beach on the northwest tip." },
           ],
           notes: 'French Caribbean culture combined with an active volcano. Îles des Saintes (small islets off the coast) is much quieter than the main island. Price verified (2026-07), holds up.',
           transport_to_next: "L'Express des Îles ferry to Dominica (via Martinique)",
@@ -1553,9 +1553,9 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
         {
           code: 'DM', name: 'Dominica', days: 8, budget: 760, lat: 15.317, lng: -61.268,
           destinations: [
-            { name: 'Boiling Lake Trek', lat: 15.3167, lng: -61.2667 },
-            { name: 'Trafalgar Falls', lat: 15.3181, lng: -61.3331 },
-            { name: 'Champagne Reef', lat: 15.2833, lng: -61.3833 },
+            { name: 'Boiling Lake Trek', lat: 15.3167, lng: -61.2667, notes: "Start from the trailhead beside Titou Gorge near Laudat and begin no later than 10am, since the round trip runs 6-7 hours and the descent gets dangerous in the dark; a local guide is strongly recommended (bookable through most accommodations) even though the path itself is decently marked." },
+            { name: 'Trafalgar Falls', lat: 15.3181, lng: -61.3331, notes: "Twin falls nicknamed \"Mama\" and \"Papa\" are viewable together from a short boardwalk, and natural hot-spring pools sit right at the base of Papa Falls for a post-hike soak." },
+            { name: 'Champagne Reef', lat: 15.2833, lng: -61.3833, notes: "Snorkel gear rents right on site at the dive shop by the entrance, so no need to bring your own — the volcanic bubbles are best seen close to shore in the shallows rather than swimming further out." },
           ],
           notes: '"Nature Island" — the least developed and most unspoiled of the four islands. The Boiling Lake trek is a tough full day on its own; plan a rest day before or after it. Champagne Reef (volcanic bubbles while snorkeling) is unique. Price correction (2026-07): €72.50→€95/day (hardly any hostels, guesthouses from ~€60-70/night, mandatory guide for Boiling Lake ~€55-70).',
           transport_to_next: "L'Express des Îles ferry to St Lucia",
@@ -1563,9 +1563,9 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
         {
           code: 'LC', name: 'Saint Lucia', days: 7, budget: 560, lat: 13.83, lng: -61.0667,
           destinations: [
-            { name: 'The Pitons', lat: 13.8167, lng: -61.0667 },
-            { name: 'Sulphur Springs (drive-in volcano)', lat: 13.8347, lng: -61.0552 },
-            { name: 'Tet Paul Nature Trail', lat: 13.8333, lng: -61.05 },
+            { name: 'The Pitons', lat: 13.8167, lng: -61.0667, notes: "Climbing Gros Piton (Petit Piton is not open to casual hikers) requires a licensed local guide from Fond Gens Libre village and takes about 4 hours round trip on a steep, humid trail — book a day ahead through the interpretive center rather than showing up hoping for a spot." },
+            { name: 'Sulphur Springs (drive-in volcano)', lat: 13.8347, lng: -61.0552, notes: "Entry runs about EC$26/US$10 per person to walk right up to the bubbling vents and steaming mud pools; pay a bit extra to add the mineral mud bath, which locals use for skin ailments and is the highlight beyond the drive-in novelty itself." },
+            { name: 'Tet Paul Nature Trail', lat: 13.8333, lng: -61.05, notes: "A short 30-45 minute loop through a working farm ends at the \"Stairway to Heaven\" platform with a side-by-side view of both Pitons — worth doing even with limited time since it needs no guide and no real fitness." },
           ],
           notes: 'The iconic Pitons, more tourist-developed than the other three. Tet Paul Nature Trail gives the same view of the Pitons, much quieter than the busy hiking trails. Price verified (2026-07), holds up.',
           transport_to_next: 'Flight St Lucia-Grenada (not on the ferry line)',
@@ -1573,9 +1573,9 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
         {
           code: 'GD', name: 'Grenada', days: 7, budget: 510, lat: 12.08, lng: -61.728,
           destinations: [
-            { name: 'Underwater Sculpture Park', lat: 12.0742, lng: -61.7325 },
-            { name: 'spice plantations (nutmeg)', lat: 12.1667, lng: -61.7333 },
-            { name: 'Grand Etang National Park', lat: 12.0833, lng: -61.6833 },
+            { name: 'Underwater Sculpture Park', lat: 12.0742, lng: -61.7325, notes: "Jason deCaires Taylor's submerged figures (including the striking circular \"Vicissitudes\" group) sit in under 3m of water in Molinere Bay, reachable only by boat from St. George's or Grand Anse — a $1 marine-park wristband is required and most tours supply mask/fins/life vest." },
+            { name: 'spice plantations (nutmeg)', lat: 12.1667, lng: -61.7333, notes: "Grenada is nicknamed the \"Isle of Spice\"; the Gouyave Nutmeg Processing Station on the west coast is the place to see the sorting/drying process in a working facility rather than a staged plantation tour." },
+            { name: 'Grand Etang National Park', lat: 12.0833, lng: -61.6833, notes: "Beyond the crater lake itself, mona monkeys gather near the visitor center and will approach for food — arrive earlier in the day for better monkey sightings and cooler hiking conditions on the longer trails." },
           ],
           notes: 'The least touristy of the four islands. Grand Etang NP (rainforest, crater lake) is the hidden gem. Price verified (2026-07), holds up.',
           transport_to_next: 'Flight Grenada-Suriname (usually with a stopover via Trinidad)',
@@ -1591,9 +1591,9 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
         {
           code: 'SR', name: 'Suriname', days: 11, budget: 605, lat: 5.852, lng: -55.2038,
           destinations: [
-            { name: 'Paramaribo (UNESCO)', lat: 5.852, lng: -55.2038 },
-            { name: 'Maroon villages along the river', lat: 4.4, lng: -55.0 },
-            { name: 'Brownsberg Nature Park', lat: 4.95, lng: -55.1667 },
+            { name: 'Paramaribo (UNESCO)', lat: 5.852, lng: -55.2038, notes: "Its UNESCO-listed inner city is unusual for mixing Dutch colonial brick/timber architecture with a Hindu mandir, a mosque, and a synagogue standing side by side on Keizerstraat — a rare interfaith cluster. Walk the Waterkant promenade along the Suriname River at dusk, when the old warehouse facades catch the light and it's cooler to explore on foot." },
+            { name: 'Maroon villages along the river', lat: 4.4, lng: -55.0, notes: "The Upper Suriname River villages (e.g. Pikin Slee, Danpaati) are home to Saamaka Maroon communities — descendants of enslaved Africans who escaped and built an independent Afro-Surinamese culture, visible in distinctive wood-carving art and drum/dance traditions found nowhere else in the country. An overnight stay at a Maroon-run river lodge (rather than a day trip) is worth the extra time — access is by dugout canoe through small rapids, and evenings bring live drumming you won't see on a rushed visit." },
+            { name: 'Brownsberg Nature Park', lat: 4.95, lng: -55.1667, notes: "Beyond the reservoir view, the park's Irene Vallei trail (roughly a 2-hour round trip) leads to a waterfall and is one of the better spots in Suriname for spotting red howler monkeys and tapir tracks. Wildlife is most active at dawn, so staying overnight at the park's basic guesthouse beats a rushed day trip from Paramaribo (it's a few hours' drive each way)." },
           ],
           notes: 'Dutch colonial history in Paramaribo, combined with a river trip to Maroon villages in the interior — plan on 3-5 days for a decent jungle trip alongside the city. Brownsberg (view over the Brokopondo reservoir) is the hidden gem. Price verified (2026-07): probably just enough, Brownsberg/Maroon-village tours ($70-120/day) push the average up. Note: "visa-free" isn\'t entirely accurate — a mandatory online ICF immigration form + yellow fever certificate is needed in advance.',
           transport_to_next: 'Flight Paramaribo-Belém (scarce direct connections; likely with a stopover via Cayenne, Georgetown or a Brazilian hub — check carefully in advance)',
@@ -1601,11 +1601,11 @@ function rbBuildCaribbeanAmazonExpeditionRoute() {
         {
           code: 'BR', name: 'Brazil', days: 14, budget: 840, lat: -2.7458, lng: -42.8339,
           destinations: [
-            { name: 'Belém', lat: -1.4558, lng: -48.5039 },
-            { name: 'Ilha do Marajó', lat: -0.7167, lng: -48.5167 },
-            { name: 'Lençóis Maranhenses', lat: -2.5, lng: -43.0 },
-            { name: 'Jericoacoara', lat: -2.7975, lng: -40.5137 },
-            { name: 'Fortaleza', lat: -3.7172, lng: -38.5433 },
+            { name: 'Belém', lat: -1.4558, lng: -48.5039, notes: "Ver-o-Peso is one of Latin America's largest open-air markets, with an Amazonian fish auction, riverboat cargo unloading, and stalls of herbal/folk medicine unique to the region. Go early (6-8am) to catch the fish auction and the market at its most active, before the midday heat sets in." },
+            { name: 'Ilha do Marajó', lat: -0.7167, lng: -48.5167, notes: "Beyond the water buffalo, Marajó is known for the Marajoara — a pre-Columbian culture famous for elaborately painted ceramics, some displayed at small local museums on the island. The ferry from Belém takes about 3 hours, and interior roads are unpaved and flood-prone, so the dry season (roughly June-December) is far more practical for getting around than the wet months." },
+            { name: 'Lençóis Maranhenses', lat: -2.5, lng: -43.0, notes: "The park's famous turquoise lagoons form purely from rainwater pooling in the dune valleys, and are fullest and bluest roughly June-September — later in the year many dry out to bare sand. Base yourself in Barreirinhas (or the quieter Atins) and take a 4x4 out to Lagoa Azul/Lagoa Bonita at sunrise or late afternoon, both for the light and to skip the midday heat crossing the dunes." },
+            { name: 'Jericoacoara', lat: -2.7975, lng: -40.5137, notes: "Every evening, locals and visitors climb the Duna do Pôr do Sol (Sunset Dune) right in town and applaud when the sun drops — a genuine local ritual, not a tourist gimmick. It's also one of the world's top kitesurfing spots, with the strongest, most consistent wind roughly August-January; note there's no paved road into town, so plan on a 4x4/dune-buggy transfer from Jijoca." },
+            { name: 'Fortaleza', lat: -3.7172, lng: -38.5433, notes: "Functions mainly as the regional flight gateway rather than a headline stop, but it's worth a half-day for the Mercado Central (multi-floor hammock/craft market) and, if timing allows, Thursday night forró at spots like Pirata Bar — one of Brazil's best-known forró nights. If you're just passing through en route to Jericoacoara/Lençóis, budget minimal time here beyond the transfer." },
           ],
           notes: "The transition from the Amazon river mouth (Belém, Marajó — water buffalo, an unspoiled river-delta island) to the completely different sand-dune coast (Lençóis Maranhenses, Jericoacoara) as a breathtaking finale. The distances along the coast are often underestimated. Price verified (2026-07), holds up — the generic Rio/São Paulo safety warnings aren't relevant to this northeastern stretch.",
           transport_to_next: 'End of the expedition — return flight from Fortaleza (or via São Paulo) to the Netherlands',
@@ -3644,10 +3644,10 @@ function rbBuildCaribbeanIslandsHopRoute() {
         {
           code: 'CU', name: 'Cuba', days: 18, budget: 1260, lat: 23.1136, lng: -82.3666,
           destinations: [
-            { name: 'Havana (Habana Vieja)', lat: 23.1136, lng: -82.3666 },
-            { name: 'Viñales Valley', lat: 22.6167, lng: -83.7097 },
-            { name: 'Cienfuegos', lat: 22.1496, lng: -80.4394 },
-            { name: 'Trinidad', lat: 21.8047, lng: -79.9825 },
+            { name: 'Havana (Habana Vieja)', lat: 23.1136, lng: -82.3666, notes: "UNESCO-listed old town centered on Plaza Vieja and Plaza de la Catedral, with 1950s American classic cars doubling as everyday taxis along the Malecón seafront. Walk the old town early morning or sunset — midday heat is brutal and the light on the colonial facades is better anyway." },
+            { name: 'Viñales Valley', lat: 22.6167, lng: -83.7097, notes: "The draw is the landscape itself: dramatic limestone mogotes ringing red-soil tobacco farms, best seen by visiting a working finca to watch cigars hand-rolled. Go at sunrise, mist still clings to the mogotes and it's before the day-trip buses from Havana arrive." },
+            { name: 'Cienfuegos', lat: 22.1496, lng: -80.4394, notes: "Known as the \"Pearl of the South\" — a French-influenced colonial center (its own separate UNESCO site, distinct from Havana/Trinidad) built around the Prado boulevard and the Moorish-style Palacio de Valle. Climb the Palacio de Valle's rooftop terrace/bar for a view over the bay, small entry fee, easily missed by day-trippers who only see the ground floor." },
+            { name: 'Trinidad', lat: 21.8047, lng: -79.9825, notes: "Beyond the cobblestoned Plaza Mayor core, the real highlight is the Valle de los Ingenios (Valley of the Sugar Mills) just outside town. Climb the Manaca Iznaga tower for the valley view, and pair the town with a half-day at nearby Playa Ancón beach." },
           ],
           notes: "Entry: flight Amsterdam-Havana, with a stopover (±15h30, from ±€600-1,100 return, December falls right after the cheapest month November). Price indication from 2026-08 web research, a snapshot. Havana and UNESCO-listed colonial Trinidad are the highlights; the quiet Viñales Valley (tobacco, karst landscape) is the hidden gem. Casas particulares (private rooms) are the standard backpacker accommodation. Price verified (2026-07), holds up. ⚠️ Travel advisory orange (confirmed valid, last updated June 23, 2026): major shortages of power/fuel/food/medicine, rising safety risks — the sixth nationwide power outage of 2026 hit on August 2. Cards don't work at ATMs (bring cash). Since July 1, 2025 the paper tourist card has been replaced by an e-Visa (~$50), tied to the mandatory free D'Viajeros form (to be filled in within 72h before arrival). Route logic (2026-08, search-confirmed): order reversed — Viñales used to be the last stop (a double detour: past Cienfuegos to Trinidad first, then back to Cienfuegos, then a 4.5h crossing to Viñales right next to Havana); now a return trip from Havana right at the start, followed by Cienfuegos-Trinidad without crossing routes.",
           transport_to_next: 'Back to Havana (~4h15 driving from Trinidad — the only realistic international gateway, Santiago de Cuba would make the detour worse), then a flight Havana-Kingston (usually with a stopover via Panama City or Miami)',
@@ -3655,10 +3655,10 @@ function rbBuildCaribbeanIslandsHopRoute() {
         {
           code: 'JM', name: 'Jamaica', days: 12, budget: 1080, lat: 17.9714, lng: -76.7936,
           destinations: [
-            { name: 'Kingston', lat: 17.9714, lng: -76.7936 },
-            { name: "Dunn's River Falls (Ocho Rios)", lat: 18.4108, lng: -77.1296 },
-            { name: 'Port Antonio', lat: 18.1811, lng: -76.4513 },
-            { name: 'Blue Mountains (Hardwar Gap)', lat: 18.0747, lng: -76.6597 },
+            { name: 'Kingston', lat: 17.9714, lng: -76.7936, notes: "The real draws are reggae history sites, not the city at large: the Bob Marley Museum (his former home/studio at 56 Hope Road) and the Trench Town Culture Yard. Book the Bob Marley Museum's guided tour for the morning — it's small-group and slots fill up." },
+            { name: "Dunn's River Falls (Ocho Rios)", lat: 18.4108, lng: -77.1296, notes: "A 180m terraced waterfall climbed hand-in-hand in a guided human chain — touristy but genuinely one of Jamaica's signature experiences. Entry is about $25/adult as of 2026; go right at opening, before ~9am, to beat the cruise-ship crowds that swamp it by midday." },
+            { name: 'Port Antonio', lat: 18.1811, lng: -76.4513, notes: "Quieter than Ocho Rios/Montego Bay — its specific draws are the Blue Lagoon, Frenchman's Cove, and bamboo rafting down the Rio Grande. Book a Rio Grande raft trip (roughly 2-3 hours) for morning, calmer water and fewer other rafts on the river." },
+            { name: 'Blue Mountains (Hardwar Gap)', lat: 18.0747, lng: -76.6597, notes: "Home to the Blue Mountain coffee estates (farm tours/tastings) and the trailhead for Blue Mountain Peak. If attempting the Peak hike, start around midnight-2am — the summit sunrise is the entire point of doing it, and it's socked in by cloud later in the day." },
           ],
           notes: 'Blue Mountains (coffee, hiking) and Port Antonio (rafting, waterfalls, hardly any tourists compared to Negril/Ocho Rios) are the strongest match for nature over luxury. Price correction (2026-07): €75→€90/day, Jamaica is pricier than assumed (guesthouses + entrance fees). Route logic (2026-08, search-confirmed): order reversed — Blue Mountains used to be a separate out-and-back trip right after Kingston (the coastal road to Ocho Rios doesn\'t run through it); now a mountain-route return leg (Hardwar Gap, coffee plantations/Newcastle) from Port Antonio to Kingston, instead of a separate side trip at the start.',
           transport_to_next: 'Short final stretch Blue Mountains-Kingston (Hardwar Gap mountain route), then a flight Kingston-Curaçao (usually with a stopover via Panama City or Miami)',
@@ -3674,9 +3674,9 @@ function rbBuildCaribbeanIslandsHopRoute() {
         {
           code: 'CW', name: 'Curaçao', days: 7, budget: 560, lat: 12.1084, lng: -68.9335,
           destinations: [
-            { name: 'Willemstad (UNESCO)', lat: 12.1091, lng: -68.9316 },
-            { name: 'Shete Boka National Park', lat: 12.3667, lng: -69.15 },
-            { name: 'beaches (Grote Knip)', lat: 12.2167, lng: -69.15 },
+            { name: 'Willemstad (UNESCO)', lat: 12.1091, lng: -68.9316, notes: "Punda and Otrobanda, the two historic districts either side of Sint Anna Bay, are linked by the free pedestrian Queen Emma pontoon bridge that swings open for ship traffic; cross it and catch the gabled Handelskade waterfront at golden hour for the classic photo, and browse the floating fruit market moored alongside Punda." },
+            { name: 'Shete Boka National Park', lat: 12.3667, lng: -69.15, notes: "The standout stop within the park is Boka Tabla, a collapsed sea cave you look down into as waves surge and blow through it — go when the trade-wind swell is up (typically afternoon) for the most dramatic spray, and allow 2-3 hours to also walk out to Boka Wandomi's natural rock bridge." },
+            { name: 'beaches (Grote Knip)', lat: 12.2167, lng: -69.15, notes: "Curaçao's most photographed beach: a steep staircase down a cliff face opens onto a crescent of white sand and calm, strikingly turquoise water good for swimming, with quieter Kleine Knip just over the ridge as an easy add-on. It's a local weekend favorite, so arrive by mid-morning before the small parking area fills." },
           ],
           notes: 'Willemstad with its Dutch colonial architecture is the urban counterpart to laid-back Bonaire. Shete Boka (rugged north coast) is the hidden gem, much quieter than the beaches. Price verified (2026-07), holds up. Digital Immigration Card mandatory to fill in in advance (free).',
           transport_to_next: 'Short flight Curaçao-Bonaire',
@@ -3684,8 +3684,8 @@ function rbBuildCaribbeanIslandsHopRoute() {
         {
           code: 'BQ', name: 'Bonaire', days: 6, budget: 660, lat: 12.25, lng: -68.4,
           destinations: [
-            { name: 'Washington Slagbaai National Park', lat: 12.3167, lng: -68.4167 },
-            { name: 'diving/snorkeling (marine park)', lat: 12.15, lng: -68.2833 },
+            { name: 'Washington Slagbaai National Park', lat: 12.3167, lng: -68.4167, notes: "The park is a self-drive loop with a long, rough high-clearance route and a shorter alternative — pick based on your rental car and time. Note the gate stops admitting visitors at 2:30pm even though the park closes at 5pm, and entry uses the same $40 STINAPA nature-fee tag (valid the full calendar year) as Bonaire's marine park, not a separate ticket." },
+            { name: 'diving/snorkeling (marine park)', lat: 12.15, lng: -68.2833, notes: "Nearly all ~90 dive and snorkel sites ring the entire coast and are shore-accessible, marked by yellow-painted rocks, so no boat is needed for most of them — for the clearest water, take the short water-taxi to uninhabited Klein Bonaire's reefs instead. The same $40 STINAPA tag required to dive/snorkel here also covers Washington Slagbaai, so it only needs buying once per trip." },
           ],
           notes: "World-class diving/snorkeling right off the coast. Washington Slagbaai NP (flamingos, rugged nature) is the hidden gem, barely visited. Price correction (2026-07): €87.50→€110/day (little budget accommodation, dive trips are expensive). The mandatory entry tax of ~€70 p.p. is a separate cost item, not included in the daily rate.",
           transport_to_next: 'Flight Bonaire-Guadeloupe (usually with a stopover via Aruba, Panama City or San Juan)',
@@ -3701,9 +3701,9 @@ function rbBuildCaribbeanIslandsHopRoute() {
         {
           code: 'GP', name: 'Guadeloupe', days: 7, budget: 615, lat: 16.0448, lng: -61.6654,
           destinations: [
-            { name: 'La Soufrière (volcano)', lat: 16.0456, lng: -61.6654 },
-            { name: 'Carbet Falls', lat: 16.0472, lng: -61.6167 },
-            { name: 'Îles des Saintes', lat: 15.8667, lng: -61.5833 },
+            { name: 'La Soufrière (volcano)', lat: 16.0456, lng: -61.6654, notes: "The well-marked summit trail takes under 2 hours round-trip and needs no guide, though a roped-off fumarole zone near the top does — check the current activity/alert level before setting out since access can be restricted with little notice." },
+            { name: 'Carbet Falls', lat: 16.0472, lng: -61.6167, notes: "Three cascades on the same river: the lowest (Carbet 3) is a flat 10-minute walk from the car park, while the tallest (Carbet 1, 115m) requires a longer forest hike — pick based on how much time you have rather than trying to see all three." },
+            { name: 'Îles des Saintes', lat: 15.8667, lng: -61.5833, notes: "Rent a scooter on arrival in Terre-de-Haut to cover the island in a day: climb to Fort Napoléon for the best bay panorama, then cool off at Pain de Sucre beach on the northwest tip." },
           ],
           notes: 'French Caribbean culture combined with an active volcano. Îles des Saintes (small islets off the coast) is much quieter than the main island. Price verified (2026-07), holds up.',
           transport_to_next: "L'Express des Îles ferry to Dominica (via Martinique)",
@@ -3711,9 +3711,9 @@ function rbBuildCaribbeanIslandsHopRoute() {
         {
           code: 'DM', name: 'Dominica', days: 8, budget: 760, lat: 15.317, lng: -61.268,
           destinations: [
-            { name: 'Boiling Lake Trek', lat: 15.3167, lng: -61.2667 },
-            { name: 'Trafalgar Falls', lat: 15.3181, lng: -61.3331 },
-            { name: 'Champagne Reef', lat: 15.2833, lng: -61.3833 },
+            { name: 'Boiling Lake Trek', lat: 15.3167, lng: -61.2667, notes: "Start from the trailhead beside Titou Gorge near Laudat and begin no later than 10am, since the round trip runs 6-7 hours and the descent gets dangerous in the dark; a local guide is strongly recommended (bookable through most accommodations) even though the path itself is decently marked." },
+            { name: 'Trafalgar Falls', lat: 15.3181, lng: -61.3331, notes: "Twin falls nicknamed \"Mama\" and \"Papa\" are viewable together from a short boardwalk, and natural hot-spring pools sit right at the base of Papa Falls for a post-hike soak." },
+            { name: 'Champagne Reef', lat: 15.2833, lng: -61.3833, notes: "Snorkel gear rents right on site at the dive shop by the entrance, so no need to bring your own — the volcanic bubbles are best seen close to shore in the shallows rather than swimming further out." },
           ],
           notes: '"Nature Island" — the least developed and most unspoiled of the four islands. The Boiling Lake trek is a tough full day on its own; plan a rest day before or after it. Champagne Reef (volcanic bubbles while snorkeling) is unique. Price correction (2026-07): €72.50→€95/day (hardly any hostels, guesthouses from ~€60-70/night, mandatory guide for Boiling Lake ~€55-70).',
           transport_to_next: "L'Express des Îles ferry to St Lucia",
@@ -3721,9 +3721,9 @@ function rbBuildCaribbeanIslandsHopRoute() {
         {
           code: 'LC', name: 'Saint Lucia', days: 7, budget: 560, lat: 13.83, lng: -61.0667,
           destinations: [
-            { name: 'The Pitons', lat: 13.8167, lng: -61.0667 },
-            { name: 'Sulphur Springs (drive-in volcano)', lat: 13.8347, lng: -61.0552 },
-            { name: 'Tet Paul Nature Trail', lat: 13.8333, lng: -61.05 },
+            { name: 'The Pitons', lat: 13.8167, lng: -61.0667, notes: "Climbing Gros Piton (Petit Piton is not open to casual hikers) requires a licensed local guide from Fond Gens Libre village and takes about 4 hours round trip on a steep, humid trail — book a day ahead through the interpretive center rather than showing up hoping for a spot." },
+            { name: 'Sulphur Springs (drive-in volcano)', lat: 13.8347, lng: -61.0552, notes: "Entry runs about EC$26/US$10 per person to walk right up to the bubbling vents and steaming mud pools; pay a bit extra to add the mineral mud bath, which locals use for skin ailments and is the highlight beyond the drive-in novelty itself." },
+            { name: 'Tet Paul Nature Trail', lat: 13.8333, lng: -61.05, notes: "A short 30-45 minute loop through a working farm ends at the \"Stairway to Heaven\" platform with a side-by-side view of both Pitons — worth doing even with limited time since it needs no guide and no real fitness." },
           ],
           notes: 'The iconic Pitons, more tourist-developed than the other three. Tet Paul Nature Trail gives the same view of the Pitons, much quieter than the busy hiking trails. Price verified (2026-07), holds up.',
           transport_to_next: 'Flight St Lucia-Grenada (not on the ferry line)',
@@ -3731,9 +3731,9 @@ function rbBuildCaribbeanIslandsHopRoute() {
         {
           code: 'GD', name: 'Grenada', days: 7, budget: 510, lat: 12.08, lng: -61.728,
           destinations: [
-            { name: 'Underwater Sculpture Park', lat: 12.0742, lng: -61.7325 },
-            { name: 'spice plantations (nutmeg)', lat: 12.1667, lng: -61.7333 },
-            { name: 'Grand Etang National Park', lat: 12.0833, lng: -61.6833 },
+            { name: 'Underwater Sculpture Park', lat: 12.0742, lng: -61.7325, notes: "Jason deCaires Taylor's submerged figures (including the striking circular \"Vicissitudes\" group) sit in under 3m of water in Molinere Bay, reachable only by boat from St. George's or Grand Anse — a $1 marine-park wristband is required and most tours supply mask/fins/life vest." },
+            { name: 'spice plantations (nutmeg)', lat: 12.1667, lng: -61.7333, notes: "Grenada is nicknamed the \"Isle of Spice\"; the Gouyave Nutmeg Processing Station on the west coast is the place to see the sorting/drying process in a working facility rather than a staged plantation tour." },
+            { name: 'Grand Etang National Park', lat: 12.0833, lng: -61.6833, notes: "Beyond the crater lake itself, mona monkeys gather near the visitor center and will approach for food — arrive earlier in the day for better monkey sightings and cooler hiking conditions on the longer trails." },
           ],
           notes: 'The least touristy of the four islands. Grand Etang NP (rainforest, crater lake) is the hidden gem. Price verified (2026-07), holds up.',
           transport_to_next: 'End of this route — return flight from Grenada (or a flight Grenada-Suriname to continue on to Suriname & Northern Brazil 🌴)',
@@ -3761,9 +3761,9 @@ function rbBuildSurinameNorthernBrazilRoute() {
         {
           code: 'SR', name: 'Suriname', days: 11, budget: 605, lat: 5.852, lng: -55.2038,
           destinations: [
-            { name: 'Paramaribo (UNESCO)', lat: 5.852, lng: -55.2038 },
-            { name: 'Maroon villages along the river', lat: 4.4, lng: -55.0 },
-            { name: 'Brownsberg Nature Park', lat: 4.95, lng: -55.1667 },
+            { name: 'Paramaribo (UNESCO)', lat: 5.852, lng: -55.2038, notes: "Its UNESCO-listed inner city is unusual for mixing Dutch colonial brick/timber architecture with a Hindu mandir, a mosque, and a synagogue standing side by side on Keizerstraat — a rare interfaith cluster. Walk the Waterkant promenade along the Suriname River at dusk, when the old warehouse facades catch the light and it's cooler to explore on foot." },
+            { name: 'Maroon villages along the river', lat: 4.4, lng: -55.0, notes: "The Upper Suriname River villages (e.g. Pikin Slee, Danpaati) are home to Saamaka Maroon communities — descendants of enslaved Africans who escaped and built an independent Afro-Surinamese culture, visible in distinctive wood-carving art and drum/dance traditions found nowhere else in the country. An overnight stay at a Maroon-run river lodge (rather than a day trip) is worth the extra time — access is by dugout canoe through small rapids, and evenings bring live drumming you won't see on a rushed visit." },
+            { name: 'Brownsberg Nature Park', lat: 4.95, lng: -55.1667, notes: "Beyond the reservoir view, the park's Irene Vallei trail (roughly a 2-hour round trip) leads to a waterfall and is one of the better spots in Suriname for spotting red howler monkeys and tapir tracks. Wildlife is most active at dawn, so staying overnight at the park's basic guesthouse beats a rushed day trip from Paramaribo (it's a few hours' drive each way)." },
           ],
           notes: 'Entry: direct KLM flight Amsterdam-Paramaribo (±9h20, from ±€1,100-1,800 return) — note: February is one of the pricier flight months on this route, despite being the climatologically best period. Price indication from 2026-08 web research, a snapshot. Dutch colonial history in Paramaribo, combined with a river trip to Maroon villages in the interior — plan on 3-5 days for a decent jungle trip alongside the city. Brownsberg (view over the Brokopondo reservoir) is the hidden gem. Price verified (2026-07): probably just enough, Brownsberg/Maroon-village tours ($70-120/day) push the average up. Note: "visa-free" isn\'t entirely accurate — a mandatory online ICF immigration form + yellow fever certificate is needed in advance.',
           transport_to_next: 'Flight Paramaribo-Belém (scarce direct connections; likely with a stopover via Cayenne, Georgetown or a Brazilian hub — check carefully in advance)',
@@ -3771,11 +3771,11 @@ function rbBuildSurinameNorthernBrazilRoute() {
         {
           code: 'BR', name: 'Brazil', days: 14, budget: 840, lat: -2.7458, lng: -42.8339,
           destinations: [
-            { name: 'Belém', lat: -1.4558, lng: -48.5039 },
-            { name: 'Ilha do Marajó', lat: -0.7167, lng: -48.5167 },
-            { name: 'Lençóis Maranhenses', lat: -2.5, lng: -43.0 },
-            { name: 'Jericoacoara', lat: -2.7975, lng: -40.5137 },
-            { name: 'Fortaleza', lat: -3.7172, lng: -38.5433 },
+            { name: 'Belém', lat: -1.4558, lng: -48.5039, notes: "Ver-o-Peso is one of Latin America's largest open-air markets, with an Amazonian fish auction, riverboat cargo unloading, and stalls of herbal/folk medicine unique to the region. Go early (6-8am) to catch the fish auction and the market at its most active, before the midday heat sets in." },
+            { name: 'Ilha do Marajó', lat: -0.7167, lng: -48.5167, notes: "Beyond the water buffalo, Marajó is known for the Marajoara — a pre-Columbian culture famous for elaborately painted ceramics, some displayed at small local museums on the island. The ferry from Belém takes about 3 hours, and interior roads are unpaved and flood-prone, so the dry season (roughly June-December) is far more practical for getting around than the wet months." },
+            { name: 'Lençóis Maranhenses', lat: -2.5, lng: -43.0, notes: "The park's famous turquoise lagoons form purely from rainwater pooling in the dune valleys, and are fullest and bluest roughly June-September — later in the year many dry out to bare sand. Base yourself in Barreirinhas (or the quieter Atins) and take a 4x4 out to Lagoa Azul/Lagoa Bonita at sunrise or late afternoon, both for the light and to skip the midday heat crossing the dunes." },
+            { name: 'Jericoacoara', lat: -2.7975, lng: -40.5137, notes: "Every evening, locals and visitors climb the Duna do Pôr do Sol (Sunset Dune) right in town and applaud when the sun drops — a genuine local ritual, not a tourist gimmick. It's also one of the world's top kitesurfing spots, with the strongest, most consistent wind roughly August-January; note there's no paved road into town, so plan on a 4x4/dune-buggy transfer from Jijoca." },
+            { name: 'Fortaleza', lat: -3.7172, lng: -38.5433, notes: "Functions mainly as the regional flight gateway rather than a headline stop, but it's worth a half-day for the Mercado Central (multi-floor hammock/craft market) and, if timing allows, Thursday night forró at spots like Pirata Bar — one of Brazil's best-known forró nights. If you're just passing through en route to Jericoacoara/Lençóis, budget minimal time here beyond the transfer." },
           ],
           notes: "The transition from the Amazon river mouth (Belém, Marajó — water buffalo, an unspoiled river-delta island) to the completely different sand-dune coast (Lençóis Maranhenses, Jericoacoara) as a breathtaking finale. The distances along the coast are often underestimated. Price verified (2026-07), holds up — the generic Rio/São Paulo safety warnings aren't relevant to this northeastern stretch.",
           transport_to_next: 'End of the expedition — return flight from Fortaleza (or via São Paulo) to the Netherlands',
@@ -5246,64 +5246,64 @@ function rbMigrateCaribbeanAmazonRouteLogicOverhaul() {
   const fixes = {
     CU: {
       destinations: [
-        { name: 'Havana (Habana Vieja)', lat: 23.1136, lng: -82.3666 },
+        { name: 'Havana (Habana Vieja)', lat: 23.1136, lng: -82.3666, notes: "UNESCO-listed old town centered on Plaza Vieja and Plaza de la Catedral, with 1950s American classic cars doubling as everyday taxis along the Malecón seafront. Walk the old town early morning or sunset — midday heat is brutal and the light on the colonial facades is better anyway." },
         { name: 'Viñales-vallei', lat: 22.6167, lng: -83.7097 },
-        { name: 'Cienfuegos', lat: 22.1496, lng: -80.4394 },
-        { name: 'Trinidad', lat: 21.8047, lng: -79.9825 },
+        { name: 'Cienfuegos', lat: 22.1496, lng: -80.4394, notes: "Known as the \"Pearl of the South\" — a French-influenced colonial center (its own separate UNESCO site, distinct from Havana/Trinidad) built around the Prado boulevard and the Moorish-style Palacio de Valle. Climb the Palacio de Valle's rooftop terrace/bar for a view over the bay, small entry fee, easily missed by day-trippers who only see the ground floor." },
+        { name: 'Trinidad', lat: 21.8047, lng: -79.9825, notes: "Beyond the cobblestoned Plaza Mayor core, the real highlight is the Valle de los Ingenios (Valley of the Sugar Mills) just outside town. Climb the Manaca Iznaga tower for the valley view, and pair the town with a half-day at nearby Playa Ancón beach." },
       ],
       notes: "Havana en het UNESCO-koloniale Trinidad zijn de hoogtepunten; de rustige Viñales-vallei (tabak, karstlandschap) is de verborgen parel. Casas particulares (particuliere kamers) zijn de gangbare backpacker-accommodatie. Prijs geverifieerd (2026-07), klopt. ⚠️ Reisadvies oranje (bevestigd geldig, laatst bijgewerkt 23 juni 2026): grote tekorten aan stroom/brandstof/voedsel/medicijnen, toenemende veiligheidsrisico's — de zesde landelijke stroomstoring van 2026 viel op 2 augustus. Kaarten werken niet bij pinautomaten (contant meenemen). Sinds 1 juli 2025 is de papieren tourist card vervangen door een e-Visa (~$50), gekoppeld aan het verplichte gratis D'Viajeros-formulier (invullen binnen 72u vóór aankomst). Routelogica (2026-08, search-bevestigd): volgorde omgedraaid — Viñales stond eerder als laatste stop (een dubbele omweg: eerst voorbij Cienfuegos naar Trinidad, dan terug naar Cienfuegos, dan een 4,5u oversteek naar Viñales vlak bij Havana); nu als retourtje vanuit Havana meteen aan het begin, gevolgd door Cienfuegos-Trinidad zonder kruisende routes.",
       transport_to_next: 'Terug naar Havana (~4u15 rijden vanaf Trinidad — de enige realistische internationale gateway, Santiago de Cuba zou de omweg verergeren), dan vlucht Havana-Kingston (meestal met overstap via Panama City of Miami)',
     },
     JM: {
       destinations: [
-        { name: 'Kingston', lat: 17.9714, lng: -76.7936 },
-        { name: "Dunn's River Falls (Ocho Rios)", lat: 18.4108, lng: -77.1296 },
-        { name: 'Port Antonio', lat: 18.1811, lng: -76.4513 },
-        { name: 'Blue Mountains (Hardwar Gap)', lat: 18.0747, lng: -76.6597 },
+        { name: 'Kingston', lat: 17.9714, lng: -76.7936, notes: "The real draws are reggae history sites, not the city at large: the Bob Marley Museum (his former home/studio at 56 Hope Road) and the Trench Town Culture Yard. Book the Bob Marley Museum's guided tour for the morning — it's small-group and slots fill up." },
+        { name: "Dunn's River Falls (Ocho Rios)", lat: 18.4108, lng: -77.1296, notes: "A 180m terraced waterfall climbed hand-in-hand in a guided human chain — touristy but genuinely one of Jamaica's signature experiences. Entry is about $25/adult as of 2026; go right at opening, before ~9am, to beat the cruise-ship crowds that swamp it by midday." },
+        { name: 'Port Antonio', lat: 18.1811, lng: -76.4513, notes: "Quieter than Ocho Rios/Montego Bay — its specific draws are the Blue Lagoon, Frenchman's Cove, and bamboo rafting down the Rio Grande. Book a Rio Grande raft trip (roughly 2-3 hours) for morning, calmer water and fewer other rafts on the river." },
+        { name: 'Blue Mountains (Hardwar Gap)', lat: 18.0747, lng: -76.6597, notes: "Home to the Blue Mountain coffee estates (farm tours/tastings) and the trailhead for Blue Mountain Peak. If attempting the Peak hike, start around midnight-2am — the summit sunrise is the entire point of doing it, and it's socked in by cloud later in the day." },
       ],
       notes: 'Blue Mountains (koffie, wandelen) en Port Antonio (rafting, watervallen, nauwelijks toeristen vergeleken met Negril/Ocho Rios) zijn de sterkste match met natuur boven luxe. Prijscorrectie (2026-07): €75→€90/dag, Jamaica is duurder dan aangenomen (guesthouses + entreegelden). Routelogica (2026-08, search-bevestigd): volgorde omgedraaid — Blue Mountains stond als losse heen-en-terugtrip vlak na Kingston (de kustweg naar Ocho Rios loopt daar niet doorheen); nu als bergroute-terugweg (Hardwar Gap, koffieplantages/Newcastle) vanaf Port Antonio naar Kingston, in plaats van een aparte uitstap aan het begin.',
       transport_to_next: 'Kort eindstuk Blue Mountains-Kingston (Hardwar Gap-bergroute), dan vlucht Kingston-Curaçao (meestal met overstap via Panama City of Miami)',
     },
     CW: { destinations: [
-      { name: 'Willemstad (UNESCO)', lat: 12.1091, lng: -68.9316 },
-      { name: 'Shete Boka National Park', lat: 12.3667, lng: -69.15 },
+      { name: 'Willemstad (UNESCO)', lat: 12.1091, lng: -68.9316, notes: "Punda and Otrobanda, the two historic districts either side of Sint Anna Bay, are linked by the free pedestrian Queen Emma pontoon bridge that swings open for ship traffic; cross it and catch the gabled Handelskade waterfront at golden hour for the classic photo, and browse the floating fruit market moored alongside Punda." },
+      { name: 'Shete Boka National Park', lat: 12.3667, lng: -69.15, notes: "The standout stop within the park is Boka Tabla, a collapsed sea cave you look down into as waves surge and blow through it — go when the trade-wind swell is up (typically afternoon) for the most dramatic spray, and allow 2-3 hours to also walk out to Boka Wandomi's natural rock bridge." },
       { name: 'stranden (Grote Knip)', lat: 12.2167, lng: -69.15 },
     ] },
     BQ: { destinations: [
-      { name: 'Washington Slagbaai National Park', lat: 12.3167, lng: -68.4167 },
+      { name: 'Washington Slagbaai National Park', lat: 12.3167, lng: -68.4167, notes: "The park is a self-drive loop with a long, rough high-clearance route and a shorter alternative — pick based on your rental car and time. Note the gate stops admitting visitors at 2:30pm even though the park closes at 5pm, and entry uses the same $40 STINAPA nature-fee tag (valid the full calendar year) as Bonaire's marine park, not a separate ticket." },
       { name: 'duiken/snorkelen (marine park)', lat: 12.15, lng: -68.2833 },
     ] },
     GP: { destinations: [
       { name: 'La Soufrière (vulkaan)', lat: 16.0456, lng: -61.6654 },
       { name: 'Carbet-watervallen', lat: 16.0472, lng: -61.6167 },
-      { name: 'Îles des Saintes', lat: 15.8667, lng: -61.5833 },
+      { name: 'Îles des Saintes', lat: 15.8667, lng: -61.5833, notes: "Rent a scooter on arrival in Terre-de-Haut to cover the island in a day: climb to Fort Napoléon for the best bay panorama, then cool off at Pain de Sucre beach on the northwest tip." },
     ] },
     DM: { destinations: [
       { name: 'Boiling Lake-trektocht', lat: 15.3167, lng: -61.2667 },
-      { name: 'Trafalgar Falls', lat: 15.3181, lng: -61.3331 },
-      { name: 'Champagne Reef', lat: 15.2833, lng: -61.3833 },
+      { name: 'Trafalgar Falls', lat: 15.3181, lng: -61.3331, notes: "Twin falls nicknamed \"Mama\" and \"Papa\" are viewable together from a short boardwalk, and natural hot-spring pools sit right at the base of Papa Falls for a post-hike soak." },
+      { name: 'Champagne Reef', lat: 15.2833, lng: -61.3833, notes: "Snorkel gear rents right on site at the dive shop by the entrance, so no need to bring your own — the volcanic bubbles are best seen close to shore in the shallows rather than swimming further out." },
     ] },
     LC: { destinations: [
-      { name: 'The Pitons', lat: 13.8167, lng: -61.0667 },
+      { name: 'The Pitons', lat: 13.8167, lng: -61.0667, notes: "Climbing Gros Piton (Petit Piton is not open to casual hikers) requires a licensed local guide from Fond Gens Libre village and takes about 4 hours round trip on a steep, humid trail — book a day ahead through the interpretive center rather than showing up hoping for a spot." },
       { name: 'Sulphur Springs (drive-in vulkaan)', lat: 13.8347, lng: -61.0552 },
-      { name: 'Tet Paul Nature Trail', lat: 13.8333, lng: -61.05 },
+      { name: 'Tet Paul Nature Trail', lat: 13.8333, lng: -61.05, notes: "A short 30-45 minute loop through a working farm ends at the \"Stairway to Heaven\" platform with a side-by-side view of both Pitons — worth doing even with limited time since it needs no guide and no real fitness." },
     ] },
     GD: { destinations: [
       { name: 'Onderwaterbeeldenpark', lat: 12.0742, lng: -61.7325 },
       { name: 'kruidenplantages (nootmuskaat)', lat: 12.1667, lng: -61.7333 },
-      { name: 'Grand Etang National Park', lat: 12.0833, lng: -61.6833 },
+      { name: 'Grand Etang National Park', lat: 12.0833, lng: -61.6833, notes: "Beyond the crater lake itself, mona monkeys gather near the visitor center and will approach for food — arrive earlier in the day for better monkey sightings and cooler hiking conditions on the longer trails." },
     ] },
     SR: { destinations: [
-      { name: 'Paramaribo (UNESCO)', lat: 5.852, lng: -55.2038 },
+      { name: 'Paramaribo (UNESCO)', lat: 5.852, lng: -55.2038, notes: "Its UNESCO-listed inner city is unusual for mixing Dutch colonial brick/timber architecture with a Hindu mandir, a mosque, and a synagogue standing side by side on Keizerstraat — a rare interfaith cluster. Walk the Waterkant promenade along the Suriname River at dusk, when the old warehouse facades catch the light and it's cooler to explore on foot." },
       { name: 'Marrondorpen aan de rivier', lat: 4.4, lng: -55.0 },
-      { name: 'Brownsberg Nature Park', lat: 4.95, lng: -55.1667 },
+      { name: 'Brownsberg Nature Park', lat: 4.95, lng: -55.1667, notes: "Beyond the reservoir view, the park's Irene Vallei trail (roughly a 2-hour round trip) leads to a waterfall and is one of the better spots in Suriname for spotting red howler monkeys and tapir tracks. Wildlife is most active at dawn, so staying overnight at the park's basic guesthouse beats a rushed day trip from Paramaribo (it's a few hours' drive each way)." },
     ] },
     BR: { destinations: [
-      { name: 'Belém', lat: -1.4558, lng: -48.5039 },
-      { name: 'Ilha do Marajó', lat: -0.7167, lng: -48.5167 },
-      { name: 'Lençóis Maranhenses', lat: -2.5, lng: -43.0 },
-      { name: 'Jericoacoara', lat: -2.7975, lng: -40.5137 },
-      { name: 'Fortaleza', lat: -3.7172, lng: -38.5433 },
+      { name: 'Belém', lat: -1.4558, lng: -48.5039, notes: "Ver-o-Peso is one of Latin America's largest open-air markets, with an Amazonian fish auction, riverboat cargo unloading, and stalls of herbal/folk medicine unique to the region. Go early (6-8am) to catch the fish auction and the market at its most active, before the midday heat sets in." },
+      { name: 'Ilha do Marajó', lat: -0.7167, lng: -48.5167, notes: "Beyond the water buffalo, Marajó is known for the Marajoara — a pre-Columbian culture famous for elaborately painted ceramics, some displayed at small local museums on the island. The ferry from Belém takes about 3 hours, and interior roads are unpaved and flood-prone, so the dry season (roughly June-December) is far more practical for getting around than the wet months." },
+      { name: 'Lençóis Maranhenses', lat: -2.5, lng: -43.0, notes: "The park's famous turquoise lagoons form purely from rainwater pooling in the dune valleys, and are fullest and bluest roughly June-September — later in the year many dry out to bare sand. Base yourself in Barreirinhas (or the quieter Atins) and take a 4x4 out to Lagoa Azul/Lagoa Bonita at sunrise or late afternoon, both for the light and to skip the midday heat crossing the dunes." },
+      { name: 'Jericoacoara', lat: -2.7975, lng: -40.5137, notes: "Every evening, locals and visitors climb the Duna do Pôr do Sol (Sunset Dune) right in town and applaud when the sun drops — a genuine local ritual, not a tourist gimmick. It's also one of the world's top kitesurfing spots, with the strongest, most consistent wind roughly August-January; note there's no paved road into town, so plan on a 4x4/dune-buggy transfer from Jijoca." },
+      { name: 'Fortaleza', lat: -3.7172, lng: -38.5433, notes: "Functions mainly as the regional flight gateway rather than a headline stop, but it's worth a half-day for the Mercado Central (multi-floor hammock/craft market) and, if timing allows, Thursday night forró at spots like Pirata Bar — one of Brazil's best-known forró nights. If you're just passing through en route to Jericoacoara/Lençóis, budget minimal time here beyond the transfer." },
     ] },
   };
 
@@ -7126,10 +7126,10 @@ function rbBuildCubaRoute() {
     {
       code: 'CU', name: 'Cuba', days: 18, budget: 1260, lat: 23.1136, lng: -82.3666,
       destinations: [
-        { name: 'Havana (Habana Vieja)', lat: 23.1136, lng: -82.3666 },
-        { name: 'Viñales Valley', lat: 22.6167, lng: -83.7097 },
-        { name: 'Cienfuegos', lat: 22.1496, lng: -80.4394 },
-        { name: 'Trinidad', lat: 21.8047, lng: -79.9825 },
+        { name: 'Havana (Habana Vieja)', lat: 23.1136, lng: -82.3666, notes: "UNESCO-listed old town centered on Plaza Vieja and Plaza de la Catedral, with 1950s American classic cars doubling as everyday taxis along the Malecón seafront. Walk the old town early morning or sunset — midday heat is brutal and the light on the colonial facades is better anyway." },
+        { name: 'Viñales Valley', lat: 22.6167, lng: -83.7097, notes: "The draw is the landscape itself: dramatic limestone mogotes ringing red-soil tobacco farms, best seen by visiting a working finca to watch cigars hand-rolled. Go at sunrise, mist still clings to the mogotes and it's before the day-trip buses from Havana arrive." },
+        { name: 'Cienfuegos', lat: 22.1496, lng: -80.4394, notes: "Known as the \"Pearl of the South\" — a French-influenced colonial center (its own separate UNESCO site, distinct from Havana/Trinidad) built around the Prado boulevard and the Moorish-style Palacio de Valle. Climb the Palacio de Valle's rooftop terrace/bar for a view over the bay, small entry fee, easily missed by day-trippers who only see the ground floor." },
+        { name: 'Trinidad', lat: 21.8047, lng: -79.9825, notes: "Beyond the cobblestoned Plaza Mayor core, the real highlight is the Valle de los Ingenios (Valley of the Sugar Mills) just outside town. Climb the Manaca Iznaga tower for the valley view, and pair the town with a half-day at nearby Playa Ancón beach." },
       ],
       notes: "Entry: flight Amsterdam-Havana, with a stopover (±15h30, from ±€600-1,100 return, December falls right after the cheapest month November). Price indication from 2026-08 web research, a snapshot. Havana and UNESCO-listed colonial Trinidad are the highlights; the quiet Viñales Valley (tobacco, karst landscape) is the hidden gem. Casas particulares (private rooms) are the standard backpacker accommodation. Price verified (2026-07), holds up. ⚠️ Travel advisory orange (confirmed valid, last updated June 23, 2026): major shortages of power/fuel/food/medicine, rising safety risks — the sixth nationwide power outage of 2026 hit on August 2. Cards don't work at ATMs (bring cash). Since July 1, 2025 the paper tourist card has been replaced by an e-Visa (~$50), tied to the mandatory free D'Viajeros form (to be filled in within 72h before arrival).",
       transport_to_next: 'End of this route — back to Havana (~4h15 driving from Trinidad), then a return flight Havana-Amsterdam (usually with a stopover via Panama City or Miami).',
@@ -7165,9 +7165,9 @@ function rbBuildCuracaoBonaireRoute() {
     {
       code: 'CW', name: 'Curaçao', days: 7, budget: 560, lat: 12.1084, lng: -68.9335,
       destinations: [
-        { name: 'Willemstad (UNESCO)', lat: 12.1091, lng: -68.9316 },
-        { name: 'Shete Boka National Park', lat: 12.3667, lng: -69.15 },
-        { name: 'beaches (Grote Knip)', lat: 12.2167, lng: -69.15 },
+        { name: 'Willemstad (UNESCO)', lat: 12.1091, lng: -68.9316, notes: "Punda and Otrobanda, the two historic districts either side of Sint Anna Bay, are linked by the free pedestrian Queen Emma pontoon bridge that swings open for ship traffic; cross it and catch the gabled Handelskade waterfront at golden hour for the classic photo, and browse the floating fruit market moored alongside Punda." },
+        { name: 'Shete Boka National Park', lat: 12.3667, lng: -69.15, notes: "The standout stop within the park is Boka Tabla, a collapsed sea cave you look down into as waves surge and blow through it — go when the trade-wind swell is up (typically afternoon) for the most dramatic spray, and allow 2-3 hours to also walk out to Boka Wandomi's natural rock bridge." },
+        { name: 'beaches (Grote Knip)', lat: 12.2167, lng: -69.15, notes: "Curaçao's most photographed beach: a steep staircase down a cliff face opens onto a crescent of white sand and calm, strikingly turquoise water good for swimming, with quieter Kleine Knip just over the ridge as an easy add-on. It's a local weekend favorite, so arrive by mid-morning before the small parking area fills." },
       ],
       notes: "Entry: direct KLM flight Amsterdam-Curaçao (±9h45; from ±€650-750 return, about €100 pricier since April 2026 than before due to higher fuel costs; best period December-January). Price indication from 2026-08 web research, a snapshot. Willemstad with its Dutch colonial architecture is the urban counterpart to laid-back Bonaire. Shete Boka (rugged north coast) is the hidden gem, much quieter than the beaches. Price verified (2026-07), holds up. Digital Immigration Card mandatory to fill in in advance (free).",
       transport_to_next: 'Short flight Curaçao-Bonaire',
@@ -7175,8 +7175,8 @@ function rbBuildCuracaoBonaireRoute() {
     {
       code: 'BQ', name: 'Bonaire', days: 6, budget: 660, lat: 12.25, lng: -68.4,
       destinations: [
-        { name: 'Washington Slagbaai National Park', lat: 12.3167, lng: -68.4167 },
-        { name: 'diving/snorkeling (marine park)', lat: 12.15, lng: -68.2833 },
+        { name: 'Washington Slagbaai National Park', lat: 12.3167, lng: -68.4167, notes: "The park is a self-drive loop with a long, rough high-clearance route and a shorter alternative — pick based on your rental car and time. Note the gate stops admitting visitors at 2:30pm even though the park closes at 5pm, and entry uses the same $40 STINAPA nature-fee tag (valid the full calendar year) as Bonaire's marine park, not a separate ticket." },
+        { name: 'diving/snorkeling (marine park)', lat: 12.15, lng: -68.2833, notes: "Nearly all ~90 dive and snorkel sites ring the entire coast and are shore-accessible, marked by yellow-painted rocks, so no boat is needed for most of them — for the clearest water, take the short water-taxi to uninhabited Klein Bonaire's reefs instead. The same $40 STINAPA tag required to dive/snorkel here also covers Washington Slagbaai, so it only needs buying once per trip." },
       ],
       notes: "World-class diving/snorkeling right off the coast. Washington Slagbaai NP (flamingos, rugged nature) is the hidden gem, barely visited. Price correction (2026-07): €87.50→€110/day (little budget accommodation, dive trips are expensive). The mandatory entry tax of ~€70 p.p. is a separate cost item, not included in the daily rate.",
       transport_to_next: 'End of this route — flight Bonaire-Curaçao (short regional connection), then a direct KLM return flight Curaçao-Amsterdam.',
@@ -7195,9 +7195,9 @@ function rbBuildSurinameRoute() {
     {
       code: 'SR', name: 'Suriname', days: 11, budget: 605, lat: 5.852, lng: -55.2038,
       destinations: [
-        { name: 'Paramaribo (UNESCO)', lat: 5.852, lng: -55.2038 },
-        { name: 'Maroon villages along the river', lat: 4.4, lng: -55.0 },
-        { name: 'Brownsberg Nature Park', lat: 4.95, lng: -55.1667 },
+        { name: 'Paramaribo (UNESCO)', lat: 5.852, lng: -55.2038, notes: "Its UNESCO-listed inner city is unusual for mixing Dutch colonial brick/timber architecture with a Hindu mandir, a mosque, and a synagogue standing side by side on Keizerstraat — a rare interfaith cluster. Walk the Waterkant promenade along the Suriname River at dusk, when the old warehouse facades catch the light and it's cooler to explore on foot." },
+        { name: 'Maroon villages along the river', lat: 4.4, lng: -55.0, notes: "The Upper Suriname River villages (e.g. Pikin Slee, Danpaati) are home to Saamaka Maroon communities — descendants of enslaved Africans who escaped and built an independent Afro-Surinamese culture, visible in distinctive wood-carving art and drum/dance traditions found nowhere else in the country. An overnight stay at a Maroon-run river lodge (rather than a day trip) is worth the extra time — access is by dugout canoe through small rapids, and evenings bring live drumming you won't see on a rushed visit." },
+        { name: 'Brownsberg Nature Park', lat: 4.95, lng: -55.1667, notes: "Beyond the reservoir view, the park's Irene Vallei trail (roughly a 2-hour round trip) leads to a waterfall and is one of the better spots in Suriname for spotting red howler monkeys and tapir tracks. Wildlife is most active at dawn, so staying overnight at the park's basic guesthouse beats a rushed day trip from Paramaribo (it's a few hours' drive each way)." },
       ],
       notes: 'Entry: direct KLM flight Amsterdam-Paramaribo (±9h20, from ±€1,100-1,800 return) — note: February is one of the pricier flight months on this route, despite being the climatologically best period. Price indication from 2026-08 web research, a snapshot. Dutch colonial history in Paramaribo, combined with a river trip to Maroon villages in the interior — plan on 3-5 days for a decent jungle trip alongside the city. Brownsberg (view over the Brokopondo reservoir) is the hidden gem. Price verified (2026-07): probably just enough, Brownsberg/Maroon-village tours ($70-120/day) push the average up. Note: "visa-free" isn\'t entirely accurate — a mandatory online ICF immigration form + yellow fever certificate is needed in advance.',
       transport_to_next: 'End of this route — direct KLM return flight Paramaribo-Amsterdam (±9h20).',
@@ -8055,6 +8055,69 @@ function rbMigratePanAmericanDestinationNotes() {
 }
 
 /**
+ * Batch 7 (2026-09-17) for the per-destination-notes workflow -- Caribbean & Amazon Expedition
+ * (10 blocks, 33 destinations), researched as 4 parallel regional batches matching the route's
+ * own region grouping (Greater Antilles, Dutch Caribbean, Lesser Antilles, Suriname & Amazon).
+ * Same generic name-matching migration pattern as the other grand tours -- also lands on
+ * Caribbean Islands Hop, ABC Islands, Curaçao & Bonaire, Cuba, Jamaica, Guadeloupe & Dominica,
+ * Saint Lucia & Grenada, Suriname, Suriname & Northern Brazil, Northern Brazil and every other
+ * route sharing one of these destination names.
+ */
+function rbMigrateCaribbeanAmazonDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_CARIBBEAN_AMAZON_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_CARIBBEAN_AMAZON_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Havana (Habana Vieja)': 'UNESCO-listed old town centered on Plaza Vieja and Plaza de la Catedral, with 1950s American classic cars doubling as everyday taxis along the Malecón seafront. Walk the old town early morning or sunset — midday heat is brutal and the light on the colonial facades is better anyway.',
+    'Viñales Valley': "The draw is the landscape itself: dramatic limestone mogotes ringing red-soil tobacco farms, best seen by visiting a working finca to watch cigars hand-rolled. Go at sunrise, mist still clings to the mogotes and it's before the day-trip buses from Havana arrive.",
+    'Cienfuegos': "Known as the \"Pearl of the South\" — a French-influenced colonial center (its own separate UNESCO site, distinct from Havana/Trinidad) built around the Prado boulevard and the Moorish-style Palacio de Valle. Climb the Palacio de Valle's rooftop terrace/bar for a view over the bay, small entry fee, easily missed by day-trippers who only see the ground floor.",
+    'Trinidad': 'Beyond the cobblestoned Plaza Mayor core, the real highlight is the Valle de los Ingenios (Valley of the Sugar Mills) just outside town. Climb the Manaca Iznaga tower for the valley view, and pair the town with a half-day at nearby Playa Ancón beach.',
+    'Kingston': "The real draws are reggae history sites, not the city at large: the Bob Marley Museum (his former home/studio at 56 Hope Road) and the Trench Town Culture Yard. Book the Bob Marley Museum's guided tour for the morning — it's small-group and slots fill up.",
+    "Dunn's River Falls (Ocho Rios)": "A 180m terraced waterfall climbed hand-in-hand in a guided human chain — touristy but genuinely one of Jamaica's signature experiences. Entry is about $25/adult as of 2026; go right at opening, before ~9am, to beat the cruise-ship crowds that swamp it by midday.",
+    'Port Antonio': "Quieter than Ocho Rios/Montego Bay — its specific draws are the Blue Lagoon, Frenchman's Cove, and bamboo rafting down the Rio Grande. Book a Rio Grande raft trip (roughly 2-3 hours) for morning, calmer water and fewer other rafts on the river.",
+    'Blue Mountains (Hardwar Gap)': "Home to the Blue Mountain coffee estates (farm tours/tastings) and the trailhead for Blue Mountain Peak. If attempting the Peak hike, start around midnight-2am — the summit sunrise is the entire point of doing it, and it's socked in by cloud later in the day.",
+    'Willemstad (UNESCO)': 'Punda and Otrobanda, the two historic districts either side of Sint Anna Bay, are linked by the free pedestrian Queen Emma pontoon bridge that swings open for ship traffic; cross it and catch the gabled Handelskade waterfront at golden hour for the classic photo, and browse the floating fruit market moored alongside Punda.',
+    'Shete Boka National Park': "The standout stop within the park is Boka Tabla, a collapsed sea cave you look down into as waves surge and blow through it — go when the trade-wind swell is up (typically afternoon) for the most dramatic spray, and allow 2-3 hours to also walk out to Boka Wandomi's natural rock bridge.",
+    'beaches (Grote Knip)': "Curaçao's most photographed beach: a steep staircase down a cliff face opens onto a crescent of white sand and calm, strikingly turquoise water good for swimming, with quieter Kleine Knip just over the ridge as an easy add-on. It's a local weekend favorite, so arrive by mid-morning before the small parking area fills.",
+    'Washington Slagbaai National Park': "The park is a self-drive loop with a long, rough high-clearance route and a shorter alternative — pick based on your rental car and time. Note the gate stops admitting visitors at 2:30pm even though the park closes at 5pm, and entry uses the same $40 STINAPA nature-fee tag (valid the full calendar year) as Bonaire's marine park, not a separate ticket.",
+    'diving/snorkeling (marine park)': "Nearly all ~90 dive and snorkel sites ring the entire coast and are shore-accessible, marked by yellow-painted rocks, so no boat is needed for most of them — for the clearest water, take the short water-taxi to uninhabited Klein Bonaire's reefs instead. The same $40 STINAPA tag required to dive/snorkel here also covers Washington Slagbaai, so it only needs buying once per trip.",
+    'La Soufrière (volcano)': 'The well-marked summit trail takes under 2 hours round-trip and needs no guide, though a roped-off fumarole zone near the top does — check the current activity/alert level before setting out since access can be restricted with little notice.',
+    'Carbet Falls': 'Three cascades on the same river: the lowest (Carbet 3) is a flat 10-minute walk from the car park, while the tallest (Carbet 1, 115m) requires a longer forest hike — pick based on how much time you have rather than trying to see all three.',
+    'Îles des Saintes': 'Rent a scooter on arrival in Terre-de-Haut to cover the island in a day: climb to Fort Napoléon for the best bay panorama, then cool off at Pain de Sucre beach on the northwest tip.',
+    'Boiling Lake Trek': 'Start from the trailhead beside Titou Gorge near Laudat and begin no later than 10am, since the round trip runs 6-7 hours and the descent gets dangerous in the dark; a local guide is strongly recommended (bookable through most accommodations) even though the path itself is decently marked.',
+    'Trafalgar Falls': 'Twin falls nicknamed "Mama" and "Papa" are viewable together from a short boardwalk, and natural hot-spring pools sit right at the base of Papa Falls for a post-hike soak.',
+    'Champagne Reef': 'Snorkel gear rents right on site at the dive shop by the entrance, so no need to bring your own — the volcanic bubbles are best seen close to shore in the shallows rather than swimming further out.',
+    'The Pitons': 'Climbing Gros Piton (Petit Piton is not open to casual hikers) requires a licensed local guide from Fond Gens Libre village and takes about 4 hours round trip on a steep, humid trail — book a day ahead through the interpretive center rather than showing up hoping for a spot.',
+    'Sulphur Springs (drive-in volcano)': 'Entry runs about EC$26/US$10 per person to walk right up to the bubbling vents and steaming mud pools; pay a bit extra to add the mineral mud bath, which locals use for skin ailments and is the highlight beyond the drive-in novelty itself.',
+    'Tet Paul Nature Trail': 'A short 30-45 minute loop through a working farm ends at the "Stairway to Heaven" platform with a side-by-side view of both Pitons — worth doing even with limited time since it needs no guide and no real fitness.',
+    'Underwater Sculpture Park': "Jason deCaires Taylor's submerged figures (including the striking circular \"Vicissitudes\" group) sit in under 3m of water in Molinere Bay, reachable only by boat from St. George's or Grand Anse — a $1 marine-park wristband is required and most tours supply mask/fins/life vest.",
+    'spice plantations (nutmeg)': 'Grenada is nicknamed the "Isle of Spice"; the Gouyave Nutmeg Processing Station on the west coast is the place to see the sorting/drying process in a working facility rather than a staged plantation tour.',
+    'Grand Etang National Park': 'Beyond the crater lake itself, mona monkeys gather near the visitor center and will approach for food — arrive earlier in the day for better monkey sightings and cooler hiking conditions on the longer trails.',
+    'Paramaribo (UNESCO)': "Its UNESCO-listed inner city is unusual for mixing Dutch colonial brick/timber architecture with a Hindu mandir, a mosque, and a synagogue standing side by side on Keizerstraat — a rare interfaith cluster. Walk the Waterkant promenade along the Suriname River at dusk, when the old warehouse facades catch the light and it's cooler to explore on foot.",
+    'Maroon villages along the river': "The Upper Suriname River villages (e.g. Pikin Slee, Danpaati) are home to Saamaka Maroon communities — descendants of enslaved Africans who escaped and built an independent Afro-Surinamese culture, visible in distinctive wood-carving art and drum/dance traditions found nowhere else in the country. An overnight stay at a Maroon-run river lodge (rather than a day trip) is worth the extra time — access is by dugout canoe through small rapids, and evenings bring live drumming you won't see on a rushed visit.",
+    'Brownsberg Nature Park': "Beyond the reservoir view, the park's Irene Vallei trail (roughly a 2-hour round trip) leads to a waterfall and is one of the better spots in Suriname for spotting red howler monkeys and tapir tracks. Wildlife is most active at dawn, so staying overnight at the park's basic guesthouse beats a rushed day trip from Paramaribo (it's a few hours' drive each way).",
+    'Belém': "Ver-o-Peso is one of Latin America's largest open-air markets, with an Amazonian fish auction, riverboat cargo unloading, and stalls of herbal/folk medicine unique to the region. Go early (6-8am) to catch the fish auction and the market at its most active, before the midday heat sets in.",
+    'Ilha do Marajó': 'Beyond the water buffalo, Marajó is known for the Marajoara — a pre-Columbian culture famous for elaborately painted ceramics, some displayed at small local museums on the island. The ferry from Belém takes about 3 hours, and interior roads are unpaved and flood-prone, so the dry season (roughly June-December) is far more practical for getting around than the wet months.',
+    'Lençóis Maranhenses': 'The park\'s famous turquoise lagoons form purely from rainwater pooling in the dune valleys, and are fullest and bluest roughly June-September — later in the year many dry out to bare sand. Base yourself in Barreirinhas (or the quieter Atins) and take a 4x4 out to Lagoa Azul/Lagoa Bonita at sunrise or late afternoon, both for the light and to skip the midday heat crossing the dunes.',
+    'Jericoacoara': "Every evening, locals and visitors climb the Duna do Pôr do Sol (Sunset Dune) right in town and applaud when the sun drops — a genuine local ritual, not a tourist gimmick. It's also one of the world's top kitesurfing spots, with the strongest, most consistent wind roughly August-January; note there's no paved road into town, so plan on a 4x4/dune-buggy transfer from Jijoca.",
+    'Fortaleza': "Functions mainly as the regional flight gateway rather than a headline stop, but it's worth a half-day for the Mercado Central (multi-floor hammock/craft market) and, if timing allows, Thursday night forró at spots like Pirata Bar — one of Brazil's best-known forró nights. If you're just passing through en route to Jericoacoara/Lençóis, budget minimal time here beyond the transfer.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -8325,10 +8388,10 @@ function rbBuildJamaicaRoute() {
     {
       code: 'JM', name: 'Jamaica', days: 12, budget: 1080, lat: 17.9714, lng: -76.7936,
       destinations: [
-        { name: 'Kingston', lat: 17.9714, lng: -76.7936 },
-        { name: "Dunn's River Falls (Ocho Rios)", lat: 18.4108, lng: -77.1296 },
-        { name: 'Port Antonio', lat: 18.1811, lng: -76.4513 },
-        { name: 'Blue Mountains (Hardwar Gap)', lat: 18.0747, lng: -76.6597 },
+        { name: 'Kingston', lat: 17.9714, lng: -76.7936, notes: "The real draws are reggae history sites, not the city at large: the Bob Marley Museum (his former home/studio at 56 Hope Road) and the Trench Town Culture Yard. Book the Bob Marley Museum's guided tour for the morning — it's small-group and slots fill up." },
+        { name: "Dunn's River Falls (Ocho Rios)", lat: 18.4108, lng: -77.1296, notes: "A 180m terraced waterfall climbed hand-in-hand in a guided human chain — touristy but genuinely one of Jamaica's signature experiences. Entry is about $25/adult as of 2026; go right at opening, before ~9am, to beat the cruise-ship crowds that swamp it by midday." },
+        { name: 'Port Antonio', lat: 18.1811, lng: -76.4513, notes: "Quieter than Ocho Rios/Montego Bay — its specific draws are the Blue Lagoon, Frenchman's Cove, and bamboo rafting down the Rio Grande. Book a Rio Grande raft trip (roughly 2-3 hours) for morning, calmer water and fewer other rafts on the river." },
+        { name: 'Blue Mountains (Hardwar Gap)', lat: 18.0747, lng: -76.6597, notes: "Home to the Blue Mountain coffee estates (farm tours/tastings) and the trailhead for Blue Mountain Peak. If attempting the Peak hike, start around midnight-2am — the summit sunrise is the entire point of doing it, and it's socked in by cloud later in the day." },
       ],
       notes: 'Entry: flight Amsterdam-Kingston, with a stopover (no direct connection, ±13-16 hours incl. stopover; from ±€750-900 return; best period December — May is usually cheaper on flight price but falls outside the dry season). Price indication from 2026-08 web research, a snapshot. Blue Mountains (coffee, hiking) and Port Antonio (rafting, waterfalls, hardly any tourists compared to Negril/Ocho Rios) are the strongest match for nature over luxury. Price correction (2026-07): €75→€90/day, Jamaica is pricier than assumed (guesthouses + entrance fees).',
       transport_to_next: 'End of this route — short final stretch Blue Mountains-Kingston (Hardwar Gap mountain route), then a return flight Kingston-Amsterdam (usually with a stopover via Panama City or Miami).',
@@ -8881,9 +8944,9 @@ function rbBuildGuadeloupeDominicaRoute() {
     {
       code: 'GP', name: 'Guadeloupe', days: 7, budget: 615, lat: 16.0448, lng: -61.6654,
       destinations: [
-        { name: 'La Soufrière (volcano)', lat: 16.0456, lng: -61.6654 },
-        { name: 'Carbet Falls', lat: 16.0472, lng: -61.6167 },
-        { name: 'Îles des Saintes', lat: 15.8667, lng: -61.5833 },
+        { name: 'La Soufrière (volcano)', lat: 16.0456, lng: -61.6654, notes: "The well-marked summit trail takes under 2 hours round-trip and needs no guide, though a roped-off fumarole zone near the top does — check the current activity/alert level before setting out since access can be restricted with little notice." },
+        { name: 'Carbet Falls', lat: 16.0472, lng: -61.6167, notes: "Three cascades on the same river: the lowest (Carbet 3) is a flat 10-minute walk from the car park, while the tallest (Carbet 1, 115m) requires a longer forest hike — pick based on how much time you have rather than trying to see all three." },
+        { name: 'Îles des Saintes', lat: 15.8667, lng: -61.5833, notes: "Rent a scooter on arrival in Terre-de-Haut to cover the island in a day: climb to Fort Napoléon for the best bay panorama, then cool off at Pain de Sucre beach on the northwest tip." },
       ],
       notes: "Entry: flight Amsterdam-Pointe-à-Pitre, with a stopover via Paris (Air France/KLM, ±10h45; from ±€650-1,700 return; best period February). Price indication from 2026-08 web research, a snapshot. French Caribbean culture combined with an active volcano. Îles des Saintes (small islets off the coast) is much quieter than the main island. Price verified (2026-07), holds up. Guadeloupe is French/EU (not Schengen) — no visa needed, just a passport/ID.",
       transport_to_next: "L'Express des Îles ferry to Dominica.",
@@ -8891,9 +8954,9 @@ function rbBuildGuadeloupeDominicaRoute() {
     {
       code: 'DM', name: 'Dominica', days: 8, budget: 760, lat: 15.317, lng: -61.268,
       destinations: [
-        { name: 'Boiling Lake Trek', lat: 15.3167, lng: -61.2667 },
-        { name: 'Trafalgar Falls', lat: 15.3181, lng: -61.3331 },
-        { name: 'Champagne Reef', lat: 15.2833, lng: -61.3833 },
+        { name: 'Boiling Lake Trek', lat: 15.3167, lng: -61.2667, notes: "Start from the trailhead beside Titou Gorge near Laudat and begin no later than 10am, since the round trip runs 6-7 hours and the descent gets dangerous in the dark; a local guide is strongly recommended (bookable through most accommodations) even though the path itself is decently marked." },
+        { name: 'Trafalgar Falls', lat: 15.3181, lng: -61.3331, notes: "Twin falls nicknamed \"Mama\" and \"Papa\" are viewable together from a short boardwalk, and natural hot-spring pools sit right at the base of Papa Falls for a post-hike soak." },
+        { name: 'Champagne Reef', lat: 15.2833, lng: -61.3833, notes: "Snorkel gear rents right on site at the dive shop by the entrance, so no need to bring your own — the volcanic bubbles are best seen close to shore in the shallows rather than swimming further out." },
       ],
       notes: '"Nature Island" — the least developed and most unspoiled of the four islands from the original expedition. The Boiling Lake trek is a tough full day on its own; plan a rest day before or after it. Champagne Reef (volcanic bubbles while snorkeling) is unique. Price correction (2026-07): €72.50→€95/day. Visa-free, up to 90 days.',
       transport_to_next: 'End of this route — return flight from Dominica to Amsterdam (1-2 stopovers, no direct connection).',
@@ -9116,9 +9179,9 @@ function rbBuildSaintLuciaGrenadaRoute() {
     {
       code: 'LC', name: 'Saint Lucia', days: 7, budget: 560, lat: 13.83, lng: -61.0667,
       destinations: [
-        { name: 'The Pitons', lat: 13.8167, lng: -61.0667 },
-        { name: 'Sulphur Springs (drive-in volcano)', lat: 13.8347, lng: -61.0552 },
-        { name: 'Tet Paul Nature Trail', lat: 13.8333, lng: -61.05 },
+        { name: 'The Pitons', lat: 13.8167, lng: -61.0667, notes: "Climbing Gros Piton (Petit Piton is not open to casual hikers) requires a licensed local guide from Fond Gens Libre village and takes about 4 hours round trip on a steep, humid trail — book a day ahead through the interpretive center rather than showing up hoping for a spot." },
+        { name: 'Sulphur Springs (drive-in volcano)', lat: 13.8347, lng: -61.0552, notes: "Entry runs about EC$26/US$10 per person to walk right up to the bubbling vents and steaming mud pools; pay a bit extra to add the mineral mud bath, which locals use for skin ailments and is the highlight beyond the drive-in novelty itself." },
+        { name: 'Tet Paul Nature Trail', lat: 13.8333, lng: -61.05, notes: "A short 30-45 minute loop through a working farm ends at the \"Stairway to Heaven\" platform with a side-by-side view of both Pitons — worth doing even with limited time since it needs no guide and no real fitness." },
       ],
       notes: 'Entry: flight Amsterdam-Saint Lucia, with a stopover (e.g. via the US, ±19 hours total; from ±€700-1,000 return; best period August-September — note, that falls right in the middle of hurricane season June-November; consider December-April for more certainty at a higher price). Price indication from 2026-08 web research, a snapshot. The iconic Pitons, more tourist-developed than Grenada. Tet Paul Nature Trail gives the same view of the Pitons, much quieter than the busy hiking trails. Price verified (2026-07), holds up.',
       transport_to_next: 'Flight St Lucia-Grenada (regional connection, ±1 hour).',
@@ -9126,9 +9189,9 @@ function rbBuildSaintLuciaGrenadaRoute() {
     {
       code: 'GD', name: 'Grenada', days: 7, budget: 510, lat: 12.08, lng: -61.728,
       destinations: [
-        { name: 'Underwater Sculpture Park', lat: 12.0742, lng: -61.7325 },
-        { name: 'spice plantations (nutmeg)', lat: 12.1667, lng: -61.7333 },
-        { name: 'Grand Etang National Park', lat: 12.0833, lng: -61.6833 },
+        { name: 'Underwater Sculpture Park', lat: 12.0742, lng: -61.7325, notes: "Jason deCaires Taylor's submerged figures (including the striking circular \"Vicissitudes\" group) sit in under 3m of water in Molinere Bay, reachable only by boat from St. George's or Grand Anse — a $1 marine-park wristband is required and most tours supply mask/fins/life vest." },
+        { name: 'spice plantations (nutmeg)', lat: 12.1667, lng: -61.7333, notes: "Grenada is nicknamed the \"Isle of Spice\"; the Gouyave Nutmeg Processing Station on the west coast is the place to see the sorting/drying process in a working facility rather than a staged plantation tour." },
+        { name: 'Grand Etang National Park', lat: 12.0833, lng: -61.6833, notes: "Beyond the crater lake itself, mona monkeys gather near the visitor center and will approach for food — arrive earlier in the day for better monkey sightings and cooler hiking conditions on the longer trails." },
       ],
       notes: 'The least touristy of the two islands. Grand Etang NP (rainforest, crater lake) is the hidden gem. Price verified (2026-07), holds up.',
       transport_to_next: 'End of this route — return flight from Grenada to Amsterdam (1 stopover, open-jaw).',
@@ -9466,9 +9529,9 @@ function rbBuildABCIslandsRoute() {
     {
       code: 'CW', name: 'Curaçao', days: 7, budget: 560, lat: 12.1084, lng: -68.9335,
       destinations: [
-        { name: 'Willemstad (UNESCO)', lat: 12.1091, lng: -68.9316 },
-        { name: 'Shete Boka National Park', lat: 12.3667, lng: -69.15 },
-        { name: 'beaches (Grote Knip)', lat: 12.2167, lng: -69.15 },
+        { name: 'Willemstad (UNESCO)', lat: 12.1091, lng: -68.9316, notes: "Punda and Otrobanda, the two historic districts either side of Sint Anna Bay, are linked by the free pedestrian Queen Emma pontoon bridge that swings open for ship traffic; cross it and catch the gabled Handelskade waterfront at golden hour for the classic photo, and browse the floating fruit market moored alongside Punda." },
+        { name: 'Shete Boka National Park', lat: 12.3667, lng: -69.15, notes: "The standout stop within the park is Boka Tabla, a collapsed sea cave you look down into as waves surge and blow through it — go when the trade-wind swell is up (typically afternoon) for the most dramatic spray, and allow 2-3 hours to also walk out to Boka Wandomi's natural rock bridge." },
+        { name: 'beaches (Grote Knip)', lat: 12.2167, lng: -69.15, notes: "Curaçao's most photographed beach: a steep staircase down a cliff face opens onto a crescent of white sand and calm, strikingly turquoise water good for swimming, with quieter Kleine Knip just over the ridge as an easy add-on. It's a local weekend favorite, so arrive by mid-morning before the small parking area fills." },
       ],
       notes: "Willemstad with its Dutch colonial architecture is the urban counterpart to laid-back Bonaire and breezy Aruba. Shete Boka (rugged north coast) is the hidden gem, much quieter than the beaches. Digital Immigration Card mandatory to fill in in advance (free) — a separate step from Aruba's ED Card, don't conflate the two. Content and pricing reused unchanged from the existing Curaçao & Bonaire 🤿 route (verified 2026-07/2026-08) — this route doesn't re-verify Curaçao's own numbers, only adds Aruba as a new first leg.",
       transport_to_next: 'Short flight Curaçao-Bonaire.',
@@ -9476,8 +9539,8 @@ function rbBuildABCIslandsRoute() {
     {
       code: 'BQ', name: 'Bonaire', days: 6, budget: 660, lat: 12.25, lng: -68.4,
       destinations: [
-        { name: 'Washington Slagbaai National Park', lat: 12.3167, lng: -68.4167 },
-        { name: 'diving/snorkeling (marine park)', lat: 12.15, lng: -68.2833 },
+        { name: 'Washington Slagbaai National Park', lat: 12.3167, lng: -68.4167, notes: "The park is a self-drive loop with a long, rough high-clearance route and a shorter alternative — pick based on your rental car and time. Note the gate stops admitting visitors at 2:30pm even though the park closes at 5pm, and entry uses the same $40 STINAPA nature-fee tag (valid the full calendar year) as Bonaire's marine park, not a separate ticket." },
+        { name: 'diving/snorkeling (marine park)', lat: 12.15, lng: -68.2833, notes: "Nearly all ~90 dive and snorkel sites ring the entire coast and are shore-accessible, marked by yellow-painted rocks, so no boat is needed for most of them — for the clearest water, take the short water-taxi to uninhabited Klein Bonaire's reefs instead. The same $40 STINAPA tag required to dive/snorkel here also covers Washington Slagbaai, so it only needs buying once per trip." },
       ],
       notes: 'World-class diving/snorkeling right off the coast. Washington Slagbaai NP (flamingos, rugged nature) is the hidden gem, barely visited. The mandatory entry tax of ~€70pp is a separate cost item, not included in the daily rate. Content and pricing reused unchanged from the existing Curaçao & Bonaire 🤿 route (verified 2026-07/2026-08).',
       transport_to_next: 'End of this route — flight Bonaire-Curaçao (short regional connection), then a direct KLM return flight Curaçao-Amsterdam.',
@@ -10060,11 +10123,11 @@ function rbBuildNorthernBrazilRoute() {
     code, name,
     days: 14, budget: 840, lat: -2.7458, lng: -42.8339,
     destinations: [
-      { name: 'Belém', lat: -1.4558, lng: -48.5039 },
-      { name: 'Ilha do Marajó', lat: -0.7167, lng: -48.5167 },
-      { name: 'Lençóis Maranhenses', lat: -2.5, lng: -43.0 },
-      { name: 'Jericoacoara', lat: -2.7975, lng: -40.5137 },
-      { name: 'Fortaleza', lat: -3.7172, lng: -38.5433 },
+      { name: 'Belém', lat: -1.4558, lng: -48.5039, notes: "Ver-o-Peso is one of Latin America's largest open-air markets, with an Amazonian fish auction, riverboat cargo unloading, and stalls of herbal/folk medicine unique to the region. Go early (6-8am) to catch the fish auction and the market at its most active, before the midday heat sets in." },
+      { name: 'Ilha do Marajó', lat: -0.7167, lng: -48.5167, notes: "Beyond the water buffalo, Marajó is known for the Marajoara — a pre-Columbian culture famous for elaborately painted ceramics, some displayed at small local museums on the island. The ferry from Belém takes about 3 hours, and interior roads are unpaved and flood-prone, so the dry season (roughly June-December) is far more practical for getting around than the wet months." },
+      { name: 'Lençóis Maranhenses', lat: -2.5, lng: -43.0, notes: "The park's famous turquoise lagoons form purely from rainwater pooling in the dune valleys, and are fullest and bluest roughly June-September — later in the year many dry out to bare sand. Base yourself in Barreirinhas (or the quieter Atins) and take a 4x4 out to Lagoa Azul/Lagoa Bonita at sunrise or late afternoon, both for the light and to skip the midday heat crossing the dunes." },
+      { name: 'Jericoacoara', lat: -2.7975, lng: -40.5137, notes: "Every evening, locals and visitors climb the Duna do Pôr do Sol (Sunset Dune) right in town and applaud when the sun drops — a genuine local ritual, not a tourist gimmick. It's also one of the world's top kitesurfing spots, with the strongest, most consistent wind roughly August-January; note there's no paved road into town, so plan on a 4x4/dune-buggy transfer from Jijoca." },
+      { name: 'Fortaleza', lat: -3.7172, lng: -38.5433, notes: "Functions mainly as the regional flight gateway rather than a headline stop, but it's worth a half-day for the Mercado Central (multi-floor hammock/craft market) and, if timing allows, Thursday night forró at spots like Pirata Bar — one of Brazil's best-known forró nights. If you're just passing through en route to Jericoacoara/Lençóis, budget minimal time here beyond the transfer." },
     ],
     transport_to_next: 'End of this route — return flight from Fortaleza (via Paris with Air France, or via Lisbon with TAP) to Amsterdam.',
     notes: "The transition from the Amazon river mouth (Belém, Marajó — water buffalo, an unspoiled river-delta island) to the completely different sand-dune coast (Lençóis Maranhenses, Jericoacoara) as a breathtaking finale. The distances along the coast are often underestimated. Price verified (2026-07), holds up.",

@@ -12,6 +12,17 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 7 — Caribbean & Amazon Expedition (2026-09-17)** — 10 blocks, 33
+  destinations, researched as 4 parallel batches matching the route's own region grouping
+  (Greater Antilles, Dutch Caribbean, Lesser Antilles, Suriname & Amazon). All 33 inserted
+  cleanly first try (no missed double-quoted/apostrophe names this batch). Same generic
+  name-matching migration (`rbMigrateCaribbeanAmazonDestinationNotes()`) — this route's 22-route
+  leverage came from its many split-off standalone/companion routes (Caribbean Islands Hop, ABC
+  Islands, Curaçao & Bonaire, Cuba, Jamaica, Guadeloupe & Dominica, Saint Lucia & Grenada,
+  Suriname, Suriname & Northern Brazil, Northern Brazil), 11 routes confirmed touched in the live
+  simulation. App-wide total: 1584 destination-slots filled across 159 routes. 120/741
+  signatures done.
+
 - **Per-destination notes, batch 6 — Oceania Grand Expedition (2026-09-16)** — 14 blocks, 60
   destinations, researched as 3 parallel batches (Pacific Islands, Australia, New Zealand).
   Same generic name-matching migration (`rbMigrateOceaniaDestinationNotes()`). App-wide total:
