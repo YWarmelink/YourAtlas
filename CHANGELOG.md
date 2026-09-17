@@ -12,6 +12,15 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 18 — Sicily Roadtrip (7-10 days) (2026-09-17)** — a small
+  5-leg/8-destination combo route, researched in a single pass. Palermo and Taormina already had
+  notes from an earlier batch, so only 6 destinations (Trapani, Erice, Segesta, Agrigento, Mount
+  Etna, Syracuse/Ortigia) were newly researched. Shared-signature batch: these names recur across
+  the other Sicily combo routes (Sicily (9 days), Sicily East). Same generic name-matching
+  migration (`rbMigrateSicilyRoadtripDestinationNotes()`) — 6 routes confirmed touched in the live
+  simulation. App-wide total: 2358 destination-slots filled across 291 routes. 232/741 signatures
+  done.
+
 - **Per-destination notes, batch 17 — Cyclades Island Hopping (7-10 days) (2026-09-17)** — a
   small 5-leg/10-destination combo route, researched in a single pass. High-leverage
   shared-signature batch: Naxos/Portara/Paros/Naoussa are reused verbatim by the shorter Cyclades

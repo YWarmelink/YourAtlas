@@ -8694,6 +8694,41 @@ function rbMigrateCycladesDestinationNotes() {
 }
 
 /**
+ * Batch 18 (2026-09-17) for the per-destination-notes workflow -- Sicily Roadtrip (7-10 days), a
+ * small 5-leg/8-destination combo route researched in a single pass -- Palermo and Taormina
+ * already had notes from an earlier batch, so only the remaining 6 destinations (Trapani, Erice,
+ * Segesta, Agrigento, Mount Etna, Syracuse/Ortigia) were newly researched here. Shared-signature
+ * batch: these names recur across the other Sicily combo routes (Sicily (9 days), Sicily East).
+ * Same generic name-matching migration pattern as the grand-tour batches above.
+ */
+function rbMigrateSicilyRoadtripDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_SICILY_ROADTRIP_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_SICILY_ROADTRIP_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Trapani': 'Historic port city known for its salt pans (Saline di Trapani e Paceco) with pink-hued evaporation ponds and old windmills, plus a compact old town famous for busiate pasta and couscous di pesce reflecting centuries of Arab trading influence. Visit the salt pans near sunset when the light turns the water pink, and pair it with the small on-site salt museum.',
+    'Erice': 'Medieval hilltop town above Trapani with a Norman castle (Castello di Venere) built over an ancient temple to Venus, and sweeping views over the coast and Egadi Islands on clear days. Take the cable car (funivia) up from Trapani rather than the switchback drive, and stop at Pasticceria Grammatico for its famous almond pastries.',
+    'Segesta': 'An isolated, never-finished 5th-century BC Doric temple standing alone on a hillside with no city ever built around it, paired with a well-preserved ancient theater with panoramic valley views a 20-30 min walk/shuttle away from the temple. The theater still hosts open-air classical performances some summers (roughly June-August) — worth checking ahead if visiting in that window.',
+    'Agrigento — Valle dei Templi': 'The Temple of Concordia is the best-preserved Doric temple outside Greece, and the whole ridge is most striking near sunset when the stone glows gold. Within the same park, the Kolymbethra Garden — an ancient irrigated citrus and almond grove — is an easily-missed highlight most visitors skip (separate small entry fee from the main site).',
+    'Mount Etna': "Europe's largest active volcano, with a stark landscape of lava fields, craters, and smaller volcanic cones on the lower slopes that don't require a guide (unlike the summit crater zone). The lower slopes also host Etna DOC vineyards growing in volcanic soil, with wineries open for tastings — worth an afternoon if not doing a full summit excursion.",
+    'Syracuse / Ortigia': 'Ortigia\'s small old-town island packs in the Baroque Piazza Duomo — built around the Greek Temple of Athena\'s columns, still visible embedded in the cathedral\'s walls — and a lively daily fish/produce market near Via Trento. On the mainland side, the Neapolis Archaeological Park\'s Greek theater and the "Ear of Dionysius" limestone cave are the must-sees; go early morning to beat heat and cruise-ship crowds.',
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -12794,7 +12829,7 @@ function rbBuildSicilyNineDaysRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 110, lat: 37.3111, lng: 13.5765,
       destinations: [
-        { name: 'Agrigento — Valle dei Templi', lat: 37.2903, lng: 13.5928 },
+        { name: 'Agrigento — Valle dei Templi', lat: 37.2903, lng: 13.5928, notes: "The Temple of Concordia is the best-preserved Doric temple outside Greece, and the whole ridge is most striking near sunset when the stone glows gold. Within the same park, the Kolymbethra Garden — an ancient irrigated citrus and almond grove — is an easily-missed highlight most visitors skip (separate small entry fee from the main site)." },
       ],
       notes: 'Agrigento/Valle dei Templi (1-2 days). Season: May-June or September-early October; July-August is very hot, especially in the inland stone towns (Agrigento, Val di Noto).',
       transport_to_next: 'Drive to the Val di Noto.',
@@ -12820,7 +12855,7 @@ function rbBuildSicilyNineDaysRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 220, lat: 37.8516, lng: 15.2853,
       destinations: [
-        { name: 'Mount Etna', lat: 37.7510, lng: 14.9934 },
+        { name: 'Mount Etna', lat: 37.7510, lng: 14.9934, notes: "Europe's largest active volcano, with a stark landscape of lava fields, craters, and smaller volcanic cones on the lower slopes that don't require a guide (unlike the summit crater zone). The lower slopes also host Etna DOC vineyards growing in volcanic soil, with wineries open for tastings — worth an afternoon if not doing a full summit excursion." },
         { name: 'Taormina', lat: 37.8516, lng: 15.2853 },
       ],
       notes: "Etna/Taormina (2 days), closing the loop at Catania. ⚠️ A one-off rental-car drop-off fee applies for Palermo→Catania; Etna's summit above a certain altitude is only accessible with a guide and depends on current volcanic activity — check this close to your travel date, it changes.",
@@ -13767,9 +13802,9 @@ function rbBuildSicilyMaltaRoute() {
       code: 'IT', name: 'Italy', days: 7, budget: 1050, lat: 37.5079, lng: 15.0830,
       destinations: [
         { name: 'Catania', lat: 37.5079, lng: 15.0830 },
-        { name: 'Mount Etna', lat: 37.7510, lng: 14.9934 },
+        { name: 'Mount Etna', lat: 37.7510, lng: 14.9934, notes: "Europe's largest active volcano, with a stark landscape of lava fields, craters, and smaller volcanic cones on the lower slopes that don't require a guide (unlike the summit crater zone). The lower slopes also host Etna DOC vineyards growing in volcanic soil, with wineries open for tastings — worth an afternoon if not doing a full summit excursion." },
         { name: 'Taormina', lat: 37.8527, lng: 15.2853 },
-        { name: 'Syracuse / Ortigia', lat: 37.0587, lng: 15.2874 },
+        { name: 'Syracuse / Ortigia', lat: 37.0587, lng: 15.2874, notes: "Ortigia's small old-town island packs in the Baroque Piazza Duomo — built around the Greek Temple of Athena's columns, still visible embedded in the cathedral's walls — and a lively daily fish/produce market near Via Trento. On the mainland side, the Neapolis Archaeological Park's Greek theater and the \"Ear of Dionysius\" limestone cave are the must-sees; go early morning to beat heat and cruise-ship crowds." },
         { name: 'Modica', lat: 36.8477, lng: 14.7546 },
         { name: 'Ragusa', lat: 36.9256, lng: 14.7297 },
         { name: 'Agrigento (Valle dei Templi)', lat: 37.2903, lng: 13.5865 },
@@ -13803,9 +13838,9 @@ function rbBuildMaltaGozoSicilyRoute() {
       code: 'IT', name: 'Italy', days: 5, budget: 750, lat: 37.5079, lng: 15.0830,
       destinations: [
         { name: 'Catania', lat: 37.5079, lng: 15.0830 },
-        { name: 'Mount Etna', lat: 37.7510, lng: 14.9934 },
+        { name: 'Mount Etna', lat: 37.7510, lng: 14.9934, notes: "Europe's largest active volcano, with a stark landscape of lava fields, craters, and smaller volcanic cones on the lower slopes that don't require a guide (unlike the summit crater zone). The lower slopes also host Etna DOC vineyards growing in volcanic soil, with wineries open for tastings — worth an afternoon if not doing a full summit excursion." },
         { name: 'Taormina', lat: 37.8527, lng: 15.2853 },
-        { name: 'Syracuse / Ortigia', lat: 37.0587, lng: 15.2874 },
+        { name: 'Syracuse / Ortigia', lat: 37.0587, lng: 15.2874, notes: "Ortigia's small old-town island packs in the Baroque Piazza Duomo — built around the Greek Temple of Athena's columns, still visible embedded in the cathedral's walls — and a lively daily fish/produce market near Via Trento. On the mainland side, the Neapolis Archaeological Park's Greek theater and the \"Ear of Dionysius\" limestone cave are the must-sees; go early morning to beat heat and cruise-ship crowds." },
       ],
       notes: "Confirmed: the only real difference from Sicily + Malta (9 days) 🌋 above is Gozo. The same Sicily core, but shortened (Catania → Etna → Taormina → Syracuse, with Agrigento/Palermo dropped to make time) to make room for Gozo afterwards. Budget ~€150/day (rental car and fuel included).",
       transport_to_next: 'Direct Ryanair flight Malta-Catania (~50 min) or the Virtu Ferries Pozzallo-Valletta ferry (~1h45) — either crossing works.',
@@ -19241,7 +19276,7 @@ function rbBuildSicilyEastRoute() {
       code: 'IT', name: 'Italy', days: 2, budget: 120, lat: 37.8516, lng: 15.2853,
       destinations: [
         { name: 'Taormina', lat: 37.8516, lng: 15.2853 },
-        { name: 'Mount Etna', lat: 37.7510, lng: 14.9934 },
+        { name: 'Mount Etna', lat: 37.7510, lng: 14.9934, notes: "Europe's largest active volcano, with a stark landscape of lava fields, craters, and smaller volcanic cones on the lower slopes that don't require a guide (unlike the summit crater zone). The lower slopes also host Etna DOC vineyards growing in volcanic soil, with wineries open for tastings — worth an afternoon if not doing a full summit excursion." },
       ],
       notes: "Taormina and Etna (2 days). ⚠️ Web check (2026-08): above a certain altitude, Etna's crater zone is only reachable by cable car plus a mandatory licensed guide (roughly the 2,900m+ zone), and current volcanic activity can close specific trails or the cable car itself — check just before going. Catania airport has occasionally had to close temporarily during an active eruption, so build a little slack around this leg if flying in/out of Catania.",
       transport_to_next: 'Drive south down the coast to Syracuse.',
@@ -19249,7 +19284,7 @@ function rbBuildSicilyEastRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 60, lat: 37.0755, lng: 15.2866,
       destinations: [
-        { name: 'Syracuse / Ortigia', lat: 37.0755, lng: 15.2866 },
+        { name: 'Syracuse / Ortigia', lat: 37.0755, lng: 15.2866, notes: "Ortigia's small old-town island packs in the Baroque Piazza Duomo — built around the Greek Temple of Athena's columns, still visible embedded in the cathedral's walls — and a lively daily fish/produce market near Via Trento. On the mainland side, the Neapolis Archaeological Park's Greek theater and the \"Ear of Dionysius\" limestone cave are the must-sees; go early morning to beat heat and cruise-ship crowds." },
       ],
       notes: 'Syracuse and the Ortigia old town (1-2 days) to close the loop.',
       transport_to_next: 'End of this route — return flight from Catania to Amsterdam.',
@@ -19277,8 +19312,8 @@ function rbBuildSicilyWestRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 110, lat: 38.0176, lng: 12.5365,
       destinations: [
-        { name: 'Trapani', lat: 38.0176, lng: 12.5365 },
-        { name: 'Erice', lat: 38.0387, lng: 12.5865 },
+        { name: 'Trapani', lat: 38.0176, lng: 12.5365, notes: "Historic port city known for its salt pans (Saline di Trapani e Paceco) with pink-hued evaporation ponds and old windmills, plus a compact old town famous for busiate pasta and couscous di pesce reflecting centuries of Arab trading influence. Visit the salt pans near sunset when the light turns the water pink, and pair it with the small on-site salt museum." },
+        { name: 'Erice', lat: 38.0387, lng: 12.5865, notes: "Medieval hilltop town above Trapani with a Norman castle (Castello di Venere) built over an ancient temple to Venus, and sweeping views over the coast and Egadi Islands on clear days. Take the cable car (funivia) up from Trapani rather than the switchback drive, and stop at Pasticceria Grammatico for its famous almond pastries." },
       ],
       notes: 'Trapani and the hilltop town of Erice (2 days). Season: April-June or September-October.',
       transport_to_next: 'Short drive to Segesta for a day trip, then back toward Palermo.',
@@ -19473,9 +19508,9 @@ function rbBuildSicilyRoadtripRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 110, lat: 38.0176, lng: 12.5365,
       destinations: [
-        { name: 'Trapani', lat: 38.0176, lng: 12.5365 },
-        { name: 'Erice', lat: 38.0387, lng: 12.5865 },
-        { name: 'Segesta', lat: 37.9411, lng: 12.8375 },
+        { name: 'Trapani', lat: 38.0176, lng: 12.5365, notes: "Historic port city known for its salt pans (Saline di Trapani e Paceco) with pink-hued evaporation ponds and old windmills, plus a compact old town famous for busiate pasta and couscous di pesce reflecting centuries of Arab trading influence. Visit the salt pans near sunset when the light turns the water pink, and pair it with the small on-site salt museum." },
+        { name: 'Erice', lat: 38.0387, lng: 12.5865, notes: "Medieval hilltop town above Trapani with a Norman castle (Castello di Venere) built over an ancient temple to Venus, and sweeping views over the coast and Egadi Islands on clear days. Take the cable car (funivia) up from Trapani rather than the switchback drive, and stop at Pasticceria Grammatico for its famous almond pastries." },
+        { name: 'Segesta', lat: 37.9411, lng: 12.8375, notes: "An isolated, never-finished 5th-century BC Doric temple standing alone on a hillside with no city ever built around it, paired with a well-preserved ancient theater with panoramic valley views a 20-30 min walk/shuttle away from the temple. The theater still hosts open-air classical performances some summers (roughly June-August) — worth checking ahead if visiting in that window." },
       ],
       notes: 'Trapani, Erice and a Segesta day trip (2 days).',
       transport_to_next: 'Drive south to Agrigento.',
@@ -19483,7 +19518,7 @@ function rbBuildSicilyRoadtripRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 60, lat: 37.2903, lng: 13.5928,
       destinations: [
-        { name: 'Agrigento — Valle dei Templi', lat: 37.2903, lng: 13.5928 },
+        { name: 'Agrigento — Valle dei Templi', lat: 37.2903, lng: 13.5928, notes: "The Temple of Concordia is the best-preserved Doric temple outside Greece, and the whole ridge is most striking near sunset when the stone glows gold. Within the same park, the Kolymbethra Garden — an ancient irrigated citrus and almond grove — is an easily-missed highlight most visitors skip (separate small entry fee from the main site)." },
       ],
       notes: "Agrigento/Valle dei Templi (1 day). ⚠️ Web check (2026-08): book Valle dei Templi tickets online ahead of time — it gets busy.",
       transport_to_next: 'Drive east to Etna/Taormina.',
@@ -19491,7 +19526,7 @@ function rbBuildSicilyRoadtripRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 140, lat: 37.8516, lng: 15.2853,
       destinations: [
-        { name: 'Mount Etna', lat: 37.7510, lng: 14.9934 },
+        { name: 'Mount Etna', lat: 37.7510, lng: 14.9934, notes: "Europe's largest active volcano, with a stark landscape of lava fields, craters, and smaller volcanic cones on the lower slopes that don't require a guide (unlike the summit crater zone). The lower slopes also host Etna DOC vineyards growing in volcanic soil, with wineries open for tastings — worth an afternoon if not doing a full summit excursion." },
         { name: 'Taormina', lat: 37.8516, lng: 15.2853 },
       ],
       notes: "Etna/Taormina (2 days). ⚠️ Web check (2026-08): Etna's crater zone above a certain altitude requires a licensed guide — the same access rule as on the Sicily East route above.",
@@ -19500,7 +19535,7 @@ function rbBuildSicilyRoadtripRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 130, lat: 37.0755, lng: 15.2866,
       destinations: [
-        { name: 'Syracuse / Ortigia', lat: 37.0755, lng: 15.2866 },
+        { name: 'Syracuse / Ortigia', lat: 37.0755, lng: 15.2866, notes: "Ortigia's small old-town island packs in the Baroque Piazza Duomo — built around the Greek Temple of Athena's columns, still visible embedded in the cathedral's walls — and a lively daily fish/produce market near Via Trento. On the mainland side, the Neapolis Archaeological Park's Greek theater and the \"Ear of Dionysius\" limestone cave are the must-sees; go early morning to beat heat and cruise-ship crowds." },
       ],
       notes: 'Syracuse and the Ortigia old town (2 days) to close the loop.',
       transport_to_next: 'End of this route — return flight from Catania to Amsterdam.',

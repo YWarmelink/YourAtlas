@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 227 / 741 signatures.**
+- **Done so far: 232 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -71,7 +71,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **IT** (6 dest): Palermo, Cefalù, Agrigento (Valle dei Templi), Syracuse, Taormina, Etna — routes: Malta & Italy 🏛️, Mediterranean Civilizations Expedition 🏛️, Sicily 🌋
 - [x] **IT** (4 dest): Reggio Calabria, Naples, Pompeii, Herculaneum — routes: Malta & Italy 🏛️, Mediterranean Civilizations Expedition 🏛️, Rome & Surroundings 🍕
 - [x] **IT** (3 dest): Cagliari, Su Nuraxi, Costa Smeralda — routes: Malta & Italy 🏛️, Mediterranean Civilizations Expedition 🏛️, Sardinia 🗿
-- [ ] **IT** (2 dest): Mount Etna, Taormina — routes: Sicily (9 days) 🍋, Sicily East (4-5 days) 🏝️, Sicily Roadtrip (7-10 days) 🏝️
+- [x] **IT** (2 dest): Mount Etna, Taormina — routes: Sicily (9 days) 🍋, Sicily East (4-5 days) 🏝️, Sicily Roadtrip (7-10 days) 🏝️
 - [x] **JM** (4 dest): Kingston, Dunn's River Falls (Ocho Rios), Port Antonio, Blue Mountains (Hardwar Gap) — routes: Caribbean & Amazon Expedition 🌴, Caribbean Islands Hop 🏝️, Jamaica 🎵
 - [x] **JO** (5 dest): Amman, Jerash, Petra, Wadi Rum, Dead Sea — routes: Egypt & Arabian Peninsula 🐪, Jordan 🏺, Mediterranean Civilizations Expedition 🏛️
 - [x] **JP** (6 dest): Tokyo, Hakone/Fuji, Kyoto, Nara, Osaka, Hiroshima — routes: East Asia & Pacific 🗻, Eurasia Grand Tour 🌏, Japan & Taiwan 🗻
@@ -188,11 +188,11 @@ Sorted by how many routes reuse them — highest leverage first.
 - [ ] **IT** (1 dest): Milan (Duomo, Galleria) — routes: France + Switzerland + Italy (10-14 days) 🗻, Northern Italy (6 days) 🚤
 - [x] **IT** (1 dest): Florence — routes: Italy: North to Central (12 days) 🚄, Rome + Tuscany (9 days) 🍝
 - [x] **IT** (1 dest): Palermo — routes: Sicily (9 days) 🍋, Sicily Roadtrip (7-10 days) 🏝️
-- [ ] **IT** (1 dest): Agrigento — Valle dei Templi — routes: Sicily (9 days) 🍋, Sicily Roadtrip (7-10 days) 🏝️
+- [x] **IT** (1 dest): Agrigento — Valle dei Templi — routes: Sicily (9 days) 🍋, Sicily Roadtrip (7-10 days) 🏝️
 - [ ] **IT** (1 dest): Rome — routes: Italy Roadtrip (12 days) 🧀, Italy: North to Central (12 days) 🚄
 - [x] **IT** (2 dest): Naples, Pompeii — routes: Campania + Puglia (9 days) 🧭, Italy Roadtrip (12 days) 🧀
 - [ ] **IT** (1 dest): Matera — routes: Campania + Puglia (9 days) 🧭, Sicily + Southern Italy (12 days) 🍊
-- [ ] **IT** (1 dest): Syracuse / Ortigia — routes: Sicily East (4-5 days) 🏝️, Sicily Roadtrip (7-10 days) 🏝️
+- [x] **IT** (1 dest): Syracuse / Ortigia — routes: Sicily East (4-5 days) 🏝️, Sicily Roadtrip (7-10 days) 🏝️
 - [x] **IT** (1 dest): Cagliari — routes: Sardinia Roadtrip (7-10 days) 🏝️, Sardinia South (4-5 days) 🏝️
 - [x] **JE** (4 dest): coast, cliffs, beaches, Jersey War Tunnels (WWII) — routes: British Isles & Celtic Coast Expedition 🍀, Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖
 - [x] **LA** (5 dest): Si Phan Don (4000 Islands), Pakse, Vientiane, Vang Vieng, Luang Prabang — routes: Eurasia Grand Tour 🌏, Southeast Asia Grand Loop 🛕
@@ -575,9 +575,9 @@ Sorted alphabetically by country code.
 - [ ] **IT** (1 dest): Agrigento — routes: Sicily + Southern Italy (12 days) 🍊
 - [x] **IT** (2 dest): Palermo, Cefalù — routes: Sicily + Southern Italy (12 days) 🍊
 - [ ] **IT** (1 dest): Catania — routes: Sicily East (4-5 days) 🏝️
-- [ ] **IT** (3 dest): Trapani, Erice, Segesta — routes: Sicily Roadtrip (7-10 days) 🏝️
+- [x] **IT** (3 dest): Trapani, Erice, Segesta — routes: Sicily Roadtrip (7-10 days) 🏝️
 - [ ] **IT** (2 dest): Palermo, Monreale — routes: Sicily West (4-5 days) 🏝️
-- [ ] **IT** (2 dest): Trapani, Erice — routes: Sicily West (4-5 days) 🏝️
+- [x] **IT** (2 dest): Trapani, Erice — routes: Sicily West (4-5 days) 🏝️
 - [ ] **IT** (1 dest): Segesta (Doric temple) — routes: Sicily West (4-5 days) 🏝️
 - [ ] **IT** (3 dest): Trieste, Venice (Piazza San Marco), Friuli (Udine, alternative) — routes: Slovenia + Italy (9 days) 🍝
 - [ ] **IT** (2 dest): Tirano, Valtellina / Lake Como — routes: Switzerland + Northern Italy (9 days) 🚞
@@ -768,11 +768,8 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| Sicily Roadtrip (7-10 days) 🏝️ | 7/8 | 4 |
 | India & Himalaya Expedition 🏔️ | 22/22 | 3 |
-| Sicily (9 days) 🍋 | 6/9 | 3 |
 | Czechia + Austria + Hungary (10-14 days) 🏛️ | 5/5 | 3 |
-| Sicily East (4-5 days) 🏝️ | 4/4 | 3 |
 | Germany + Austria + Italy (10-14 days) 🏔️ | 9/9 | 2 |
 | Grand Balkan Roadtrip (14 days) 🏔️ | 8/10 | 2 |
 | Azores Island Hopping (10-14 days) 🏝️ | 8/8 | 2 |
@@ -808,6 +805,9 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Kosovo + Albania (9 days) 🏔️ | 6/6 | 1 |
 | Madeira (5-7 days) 🏝️ | 6/6 | 1 |
 | Italy + Slovenia + Croatia (10-14 days) ⛵ | 6/9 | 1 |
-| ... 284 more routes with open destinations ... | | |
+| Luxembourg + Ardennes (4 days) 🎖️ | 5/5 | 1 |
+| South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️ | 5/5 | 1 |
+| Switzerland + Northern Italy (9 days) 🚞 | 5/5 | 1 |
+| ... 283 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).
