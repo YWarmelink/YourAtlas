@@ -12,6 +12,14 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 22 — Grand Balkan Roadtrip (14 days) (2026-09-17)** — a small
+  4-leg/10-destination combo route, researched in a single pass. 7 destinations already had
+  notes from earlier batches, so only 3 (Zadar/Split, Sarajevo (Baščaršija), Kotor Old Town) were
+  newly researched. Same generic name-matching migration
+  (`rbMigrateGrandBalkanRoadtripDestinationNotes()`) — 14 routes confirmed touched in the live
+  simulation. App-wide total: 2449 destination-slots filled across 298 routes. 252/741
+  signatures done.
+
 - **Per-destination notes, batch 21 — Germany + Austria + Italy (10-14 days) (2026-09-17)** — a
   small 5-leg/9-destination combo route, researched in a single pass. Garmisch-Partenkirchen
   already had notes from an earlier batch, so only 8 destinations were newly researched. Same

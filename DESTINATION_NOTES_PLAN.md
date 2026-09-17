@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 246 / 741 signatures.**
+- **Done so far: 252 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -121,7 +121,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **AU** (5 dest): Perth, Ningaloo Reef (whale sharks), Kimberley & Bungle Bungles, Gibb River Road, Broome — routes: Oceania Grand Expedition 🌊, Tropical/Outback Australia 🐊
 - [x] **AU** (6 dest): Darwin, Kakadu National Park, Litchfield National Park, Uluru, Kata Tjuta, Kings Canyon — routes: Oceania Grand Expedition 🌊, Tropical/Outback Australia 🐊
 - [x] **AU** (4 dest): Adelaide, Kangaroo Island, Barossa Valley, Flinders Ranges — routes: Oceania Grand Expedition 🌊, Temperate/Southern Australia 🍇
-- [ ] **BA** (3 dest): Sarajevo (Baščaršija), Mostar (Stari Most), Trebinje — routes: Bosnia + Montenegro + Budva (7-10 days) ⛰️, Grand Balkan Roadtrip (14 days) 🏔️
+- [x] **BA** (3 dest): Sarajevo (Baščaršija), Mostar (Stari Most), Trebinje — routes: Bosnia + Montenegro + Budva (7-10 days) ⛰️, Grand Balkan Roadtrip (14 days) 🏔️
 - [x] **BE** (2 dest): Bruges, Ghent — routes: British Isles & Celtic Coast Expedition 🍀, Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖
 - [ ] **BE** (1 dest): Bastogne — routes: Luxembourg + Ardennes (4 days) 🎖️, South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️
 - [x] **BH** (4 dest): Qal'at al-Bahrain (Bahrain Fort), Bahrain National Museum, Al Fateh Grand Mosque, Tree of Life — routes: Egypt & Arabian Peninsula 🐪, Mediterranean Civilizations Expedition 🏛️
@@ -199,8 +199,8 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **LI** (1 dest): Vaduz — routes: Central European Grand Roadtrip 🚗, Liechtenstein + Swiss Alps (3 days) 🏔️
 - [x] **ME** (2 dest): Kotor Old Town + Bay of Kotor, Budva — routes: Albania + Montenegro (12 days) 🏝️, Croatia + Montenegro + Bosnia (12 days) 🧭
 - [ ] **ME** (2 dest): Kotor Old Town + Bay of Kotor, Žabljak / Durmitor National Park — routes: Kosovo + Montenegro (9 days) 🏞️, Serbia + Montenegro + Bosnia (12 days) 🏔️
-- [ ] **ME** (3 dest): Kotor Old Town, Perast, Budva — routes: Adriatic Roadtrip (14 days) 🌊, Bosnia + Montenegro + Budva (7-10 days) ⛰️
-- [ ] **ME** (2 dest): Kotor Old Town, Budva — routes: Grand Balkan Roadtrip (14 days) 🏔️, Slovenia + Croatia + Montenegro Coast (10-14 days) ⛵
+- [x] **ME** (3 dest): Kotor Old Town, Perast, Budva — routes: Adriatic Roadtrip (14 days) 🌊, Bosnia + Montenegro + Budva (7-10 days) ⛰️
+- [x] **ME** (2 dest): Kotor Old Town, Budva — routes: Grand Balkan Roadtrip (14 days) 🏔️, Slovenia + Croatia + Montenegro Coast (10-14 days) ⛵
 - [x] **MT** (5 dest): Valletta, Mdina, Gozo, Ġgantija temples, Hypogeum — routes: Malta ⚔️, Mediterranean Civilizations Expedition 🏛️
 - [x] **MX** (7 dest): Ciudad de México, Oaxaca, San Cristóbal de las Casas, Palenque, Mérida, Tulum, Bacalar — routes: Mexico 🌵, Pan-American Grand Tour 🌎
 - [x] **MY** (3 dest): Kuching, Bako National Park, Mulu Caves (Gunung Mulu NP) — routes: Eurasia Grand Tour 🌏, Southeast Asia Grand Loop 🛕
@@ -263,7 +263,7 @@ Sorted alphabetically by country code.
 - [ ] **BA** (6 dest): Sarajevo (Baščaršija), Tunnel of Hope (Butmir), Trebević cable car, Mostar (Stari Most), Kravice Waterfalls, Blagaj Tekija — routes: Sarajevo + Mostar (5 days) 🌉
 - [ ] **BA** (3 dest): Sarajevo (Baščaršija), Mostar, Blagaj (Tekija) — routes: Serbia + Bosnia (9 days) 🛶
 - [ ] **BA** (3 dest): Tara Canyon / Drina rafting (Perućac), Sarajevo (Baščaršija), Mostar — routes: Serbia + Montenegro + Bosnia (12 days) 🏔️
-- [ ] **BA** (2 dest): Mostar (Stari Most), Sarajevo (Baščaršija) — routes: Slovenia + Croatia + Bosnia (10-14 days) 🗺️
+- [x] **BA** (2 dest): Mostar (Stari Most), Sarajevo (Baščaršija) — routes: Slovenia + Croatia + Bosnia (10-14 days) 🗺️
 - [ ] **BE** (4 dest): La Roche-en-Ardenne, Han-sur-Lesse, Coo, Durbuy — routes: Ardennes (3 days) 🦌
 - [ ] **BE** (4 dest): Bruges, Ghent, De Haan, Ostend — routes: Belgian Coast + Bruges + Ghent (4 days) 🚲
 - [ ] **BE** (3 dest): Bruges, Ghent, Antwerp — routes: Belgium: Bruges + Ghent + Antwerp + Ardennes (5 days) 🍺
@@ -470,7 +470,7 @@ Sorted alphabetically by country code.
 - [ ] **HR** (5 dest): Zadar, Krka National Park / Šibenik, Split (Diocletian's Palace), Hvar Town, Dubrovnik Old Town — routes: Croatia Coastal Roadtrip (9 days) 🛣️
 - [x] **HR** (5 dest): Zagreb, Plitvice Lakes National Park, Zadar, Split (Diocletian's Palace), Dubrovnik Old Town — routes: Croatia North to South (9 days) 🧭
 - [ ] **HR** (5 dest): Dubrovnik Old Town, Lokrum Island, Elafiti Islands (Lopud), Cavtat, Trsteno Arboretum — routes: Dubrovnik + Surroundings (5 days) 🏛️
-- [ ] **HR** (3 dest): Zagreb, Plitvice Lakes National Park, Zadar / Split (choose one) — routes: Grand Balkan Roadtrip (14 days) 🏔️
+- [x] **HR** (3 dest): Zagreb, Plitvice Lakes National Park, Zadar / Split (choose one) — routes: Grand Balkan Roadtrip (14 days) 🏔️
 - [ ] **HR** (2 dest): Istria (Rovinj/Pula), Plitvice Lakes National Park — routes: Grand European Roadtrip (14-21 days) 🪣
 - [ ] **HR** (3 dest): Plitvice Lakes National Park, Zagreb, Rovinj (optional coastal extension) — routes: Hungary + Slovenia + Croatia (9 days) 🧭
 - [ ] **HR** (5 dest): Pula (Arena), Rovinj, Poreč, Motovun, Grožnjan — routes: Istria (6 days) 🍇
@@ -609,7 +609,7 @@ Sorted alphabetically by country code.
 - [ ] **ME** (1 dest): Žabljak / Durmitor National Park — routes: Kosovo + Montenegro + Albania (9 days) 🗻
 - [ ] **ME** (4 dest): Kotor Old Town, Perast, Herceg Novi, Tivat — routes: Kotor + Bay of Kotor (5 days) ⚓
 - [ ] **ME** (6 dest): Kotor Old Town, Budva, Lovćen National Park, Njeguši, Žabljak / Durmitor National Park, Ostrog Monastery — routes: Montenegro (6 days) 🏔️
-- [ ] **ME** (1 dest): Kotor Old Town — routes: Montenegro + Bosnia (9 days) 🕊️
+- [x] **ME** (1 dest): Kotor Old Town — routes: Montenegro + Bosnia (9 days) 🕊️
 - [ ] **ME** (4 dest): Kotor Old Town, Perast, Budva, Herceg Novi — routes: Montenegro + Croatia (9 days) ⛵
 - [ ] **ME** (7 dest): Podgorica, Ostrog Monastery, Žabljak / Durmitor (Black Lake), Kolašin, Kotor Old Town, Perast, Budva — routes: Montenegro Roadtrip (9 days) 🚙
 - [ ] **MK** (3 dest): Ohrid, Skopje, Mavrovo National Park (optional) — routes: Albania + North Macedonia (12 days) 🏞️
@@ -768,14 +768,11 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| Grand Balkan Roadtrip (14 days) 🏔️ | 8/10 | 2 |
 | Azores Island Hopping (10-14 days) 🏝️ | 8/8 | 2 |
 | Balearic Islands (7-10 days) 🏝️ | 7/7 | 2 |
 | Mallorca + Menorca (7-10 days) 🏝️ | 6/6 | 2 |
-| Bosnia + Montenegro + Budva (7-10 days) ⛰️ | 6/6 | 2 |
 | Azores: São Miguel + Terceira (7-10 days) 🏝️ | 5/5 | 2 |
 | Italy Roadtrip (12 days) 🧀 | 11/13 | 1 |
-| Adriatic Roadtrip (14 days) 🌊 | 11/11 | 1 |
 | Rome + Tuscany (9 days) 🍝 | 10/12 | 1 |
 | Sicily + Southern Italy (12 days) 🍊 | 10/12 | 1 |
 | Portugal + Andalusia (10-14 days) 🕌 | 10/10 | 1 |
@@ -797,8 +794,8 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Kosovo + Albania (9 days) 🏔️ | 6/6 | 1 |
 | Madeira (5-7 days) 🏝️ | 6/6 | 1 |
 | Italy + Slovenia + Croatia (10-14 days) ⛵ | 6/9 | 1 |
-| Luxembourg + Ardennes (4 days) 🎖️ | 5/5 | 1 |
 | South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️ | 5/5 | 1 |
+| Luxembourg + Ardennes (4 days) 🎖️ | 5/5 | 1 |
 | Switzerland + Northern Italy (9 days) 🚞 | 5/5 | 1 |
 | San Marino + Emilia-Romagna (4 days) 🍝 | 5/5 | 1 |
 | Reykjavík + Golden Circle (5 days) 🌋 | 5/5 | 1 |
@@ -808,6 +805,9 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Gran Canaria + Tenerife (7-10 days) 🏝️ | 4/4 | 1 |
 | Salzburg + Berchtesgaden + Hallstatt (5 days) 🛥️ | 3/4 | 1 |
 | Kosovo + Montenegro + Albania (9 days) 🗻 | 3/5 | 1 |
-| ... 279 more routes with open destinations ... | | |
+| San Marino + Tuscany (5 days) 🍷 | 2/5 | 1 |
+| Slovenia + Croatian Istria (7-10 days) 🏖️ | 2/4 | 1 |
+| Kosovo + North Macedonia + Albania (9 days) 🎒 | 2/5 | 1 |
+| ... 274 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).
