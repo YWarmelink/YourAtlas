@@ -8778,6 +8778,38 @@ function rbMigrateIndiaHimalayaDestinationNotes() {
 }
 
 /**
+ * Batch 20 (2026-09-17) for the per-destination-notes workflow -- Czechia + Austria + Hungary
+ * (10-14 days), a small 3-leg/5-destination combo route researched in a single pass -- Český
+ * Krumlov already had notes from an earlier batch, so only the remaining 4 destinations were
+ * newly researched. Shared-signature batch: this route overlaps Czechia + Austria (9 days) and
+ * Budapest + Eger (5 days). Same generic name-matching migration pattern as the grand tours.
+ */
+function rbMigrateCzechiaAustriaHungaryDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_CZECHIA_AUSTRIA_HUNGARY_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_CZECHIA_AUSTRIA_HUNGARY_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Staré Město / Prague Castle': "Staré Město's Old Town Square (Astronomical Clock, Týn Church) and Charles Bridge sit right below Prague Castle's hilltop complex (St. Vitus Cathedral, Golden Lane) — the largest ancient castle complex in the world by area. Go to the Castle first thing at opening (9am) before tour buses arrive, and catch the Astronomical Clock's hourly show from the square rather than pressing right up against it, since the actual figures are underwhelming up close.",
+    'Vienna (old town, Schönbrunn)': "The Innere Stadt (St. Stephen's Cathedral, Hofburg) is compact and walkable, while Schönbrunn Palace — the Habsburgs' summer residence — is a separate half-day trip across town for the palace rooms and the sprawling gardens/Gloriette viewpoint. Book Schönbrunn's timed-entry ticket online in advance (it regularly sells out same-day in high season); the gardens themselves are free to enter even without a palace ticket.",
+    'Buda Castle District': "Buda Castle Hill combines the former royal palace with Fisherman's Bastion and Matthias Church, and it's the classic vantage point for the Danube/Pest skyline and Parliament building across the river. Time it for sunset for the best light on that view, and take the Castle Hill Funicular up rather than the steep walk.",
+    'Eger (optional extension)': 'Beyond its Baroque old town and hilltop castle, Eger\'s main draw is the Valley of the Beautiful Women just outside town — a cluster of wine cellars for tasting Egri Bikavér ("Bull\'s Blood") and other local reds. Walk between a handful of cellars rather than committing to just one; most pours are cheap and informal, no reservation needed.',
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -16321,7 +16353,7 @@ function rbBuildBudapestRoute() {
     {
       code: 'HU', name: 'Hungary', days: 4, budget: 260, lat: 47.4960, lng: 19.0396,
       destinations: [
-        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396 },
+        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396, notes: "Buda Castle Hill combines the former royal palace with Fisherman's Bastion and Matthias Church, and it's the classic vantage point for the Danube/Pest skyline and Parliament building across the river. Time it for sunset for the best light on that view, and take the Castle Hill Funicular up rather than the steep walk." },
         { name: 'Hungarian Parliament Building / Pest riverside', lat: 47.5076, lng: 19.0458 },
         { name: 'Széchenyi Thermal Baths', lat: 47.5186, lng: 19.0821 },
         { name: 'Ruin bar district (Kazinczy utca)', lat: 47.4973, lng: 19.0662 },
@@ -16343,7 +16375,7 @@ function rbBuildBudapestEgerRoute() {
     {
       code: 'HU', name: 'Hungary', days: 5, budget: 300, lat: 47.4960, lng: 19.0396,
       destinations: [
-        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396 },
+        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396, notes: "Buda Castle Hill combines the former royal palace with Fisherman's Bastion and Matthias Church, and it's the classic vantage point for the Danube/Pest skyline and Parliament building across the river. Time it for sunset for the best light on that view, and take the Castle Hill Funicular up rather than the steep walk." },
         { name: 'Hungarian Parliament Building', lat: 47.5076, lng: 19.0458 },
         { name: 'Széchenyi Thermal Baths', lat: 47.5186, lng: 19.0821 },
         { name: 'Szentendre (day trip)', lat: 47.6698, lng: 19.0714 },
@@ -16366,7 +16398,7 @@ function rbBuildHungaryRoadtripRoute() {
     {
       code: 'HU', name: 'Hungary', days: 6, budget: 360, lat: 47.4960, lng: 19.0396,
       destinations: [
-        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396 },
+        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396, notes: "Buda Castle Hill combines the former royal palace with Fisherman's Bastion and Matthias Church, and it's the classic vantage point for the Danube/Pest skyline and Parliament building across the river. Time it for sunset for the best light on that view, and take the Castle Hill Funicular up rather than the steep walk." },
         { name: 'Eger', lat: 47.9025, lng: 20.3772 },
         { name: 'Tokaj wine region', lat: 48.1214, lng: 21.4094 },
         { name: 'Lake Balaton / Tihany', lat: 46.9122, lng: 17.8908 },
@@ -16388,7 +16420,7 @@ function rbBuildHungarySloveniaCroatiaRoute() {
     {
       code: 'HU', name: 'Hungary', days: 3, budget: 180, lat: 47.4960, lng: 19.0396,
       destinations: [
-        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396 },
+        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396, notes: "Buda Castle Hill combines the former royal palace with Fisherman's Bastion and Matthias Church, and it's the classic vantage point for the Danube/Pest skyline and Parliament building across the river. Time it for sunset for the best light on that view, and take the Castle Hill Funicular up rather than the steep walk." },
         { name: 'Lake Balaton / Tihany', lat: 46.9122, lng: 17.8908 },
       ],
       notes: "Budapest (2 days) — Lake Balaton (1 day) on the way south. Budget ~€60/day. Hungary is fully Schengen with zero border friction toward Slovakia, Austria, Croatia, Slovenia or Romania.",
@@ -16449,7 +16481,7 @@ function rbBuildPragueBohemiaRoute() {
     {
       code: 'CZ', name: 'Czechia', days: 5, budget: 410, lat: 50.0875, lng: 14.4213,
       destinations: [
-        { name: 'Staré Město / Prague Castle', lat: 50.0875, lng: 14.4213 },
+        { name: 'Staré Město / Prague Castle', lat: 50.0875, lng: 14.4213, notes: "Staré Město's Old Town Square (Astronomical Clock, Týn Church) and Charles Bridge sit right below Prague Castle's hilltop complex (St. Vitus Cathedral, Golden Lane) — the largest ancient castle complex in the world by area. Go to the Castle first thing at opening (9am) before tour buses arrive, and catch the Astronomical Clock's hourly show from the square rather than pressing right up against it, since the actual figures are underwhelming up close." },
         { name: 'Karlovy Vary (optional stopover)', lat: 50.2306, lng: 12.8722 },
         { name: 'Český Krumlov', lat: 48.8127, lng: 14.3175, notes: "Its Vltava-river-bend old town and colorfully painted castle tower are the draw; it's overrun with day-trip buses from Prague around midday, so an early-morning visit or an overnight stay is the difference between a quiet town and a crowded one." },
       ],
@@ -16672,7 +16704,7 @@ function rbBuildSlovakiaHungaryRoute() {
     {
       code: 'HU', name: 'Hungary', days: 6, budget: 360, lat: 47.4960, lng: 19.0396,
       destinations: [
-        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396 },
+        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396, notes: "Buda Castle Hill combines the former royal palace with Fisherman's Bastion and Matthias Church, and it's the classic vantage point for the Danube/Pest skyline and Parliament building across the river. Time it for sunset for the best light on that view, and take the Castle Hill Funicular up rather than the steep walk." },
         { name: 'Eger', lat: 47.9025, lng: 20.3772 },
       ],
       notes: "Budapest (3 days) — Eger and its wine cellars (1-2 days). Budget ~€55-65/day (used €60/day here). Season: May-September. As throughout Hungary, keep an eye on demonstrations in central Budapest.",
@@ -20378,7 +20410,7 @@ function rbBuildHungaryAustriaSloveniaRoute() {
     {
       code: 'HU', name: 'Hungary', days: 2, budget: 120, lat: 47.4960, lng: 19.0396,
       destinations: [
-        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396 },
+        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396, notes: "Buda Castle Hill combines the former royal palace with Fisherman's Bastion and Matthias Church, and it's the classic vantage point for the Danube/Pest skyline and Parliament building across the river. Time it for sunset for the best light on that view, and take the Castle Hill Funicular up rather than the steep walk." },
         { name: 'Hungarian Parliament Building', lat: 47.5076, lng: 19.0458 },
       ],
       notes: "Budapest (2 days): the Castle district and the Parliament/Pest riverside. Budget ~€55-65/day.",
@@ -20387,7 +20419,7 @@ function rbBuildHungaryAustriaSloveniaRoute() {
     {
       code: 'AT', name: 'Austria', days: 3, budget: 345, lat: 48.2082, lng: 16.3738,
       destinations: [
-        { name: 'Vienna (old town, Schönbrunn)', lat: 48.2082, lng: 16.3738 },
+        { name: 'Vienna (old town, Schönbrunn)', lat: 48.2082, lng: 16.3738, notes: "The Innere Stadt (St. Stephen's Cathedral, Hofburg) is compact and walkable, while Schönbrunn Palace — the Habsburgs' summer residence — is a separate half-day trip across town for the palace rooms and the sprawling gardens/Gloriette viewpoint. Book Schönbrunn's timed-entry ticket online in advance (it regularly sells out same-day in high season); the gardens themselves are free to enter even without a palace ticket." },
       ],
       notes: "Vienna (2-3 days). Budget ~€95-130/day p.p. Web check (2026-09): confirmed — Austria's border-control regime is an official, named extension that DOES cover Hungary and Slovenia too (alongside Czechia/Slovakia), currently running through at least 15 September 2026 (a 3-month extension from an earlier 15 June 2026 deadline; in place since 2015, repeatedly re-extended, likely to be extended again around that date). Practical effect: ad-hoc document checks at motorway lay-bys, rail crossings and cross-border buses, typically adding 15-45 minutes — not a closed border. Recheck close to departure given the pattern of rolling extensions.",
       transport_to_next: 'Drive to Ljubljana/Bled, ~380km/4h via Graz-Maribor or via Klagenfurt.',
@@ -20434,8 +20466,8 @@ function rbBuildPolandSlovakiaHungaryRoute() {
     {
       code: 'HU', name: 'Hungary', days: 3, budget: 180, lat: 47.4960, lng: 19.0396,
       destinations: [
-        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396 },
-        { name: 'Eger (optional extension)', lat: 47.9025, lng: 20.3772 },
+        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396, notes: "Buda Castle Hill combines the former royal palace with Fisherman's Bastion and Matthias Church, and it's the classic vantage point for the Danube/Pest skyline and Parliament building across the river. Time it for sunset for the best light on that view, and take the Castle Hill Funicular up rather than the steep walk." },
+        { name: 'Eger (optional extension)', lat: 47.9025, lng: 20.3772, notes: "Beyond its Baroque old town and hilltop castle, Eger's main draw is the Valley of the Beautiful Women just outside town — a cluster of wine cellars for tasting Egri Bikavér (\"Bull's Blood\") and other local reds. Walk between a handful of cellars rather than committing to just one; most pours are cheap and informal, no reservation needed." },
       ],
       notes: "Budapest (3 days), with Eger and its wine cellars as an optional 1-2 day extension if time allows (not counted in this route's day total). Budget ~€55-65/day. Season: June-September.",
       transport_to_next: 'End of this route — fly home from Budapest.',
@@ -20454,7 +20486,7 @@ function rbBuildCzechiaAustriaHungaryRoute() {
     {
       code: 'CZ', name: 'Czechia', days: 5, budget: 410, lat: 50.0875, lng: 14.4213,
       destinations: [
-        { name: 'Staré Město / Prague Castle', lat: 50.0875, lng: 14.4213 },
+        { name: 'Staré Město / Prague Castle', lat: 50.0875, lng: 14.4213, notes: "Staré Město's Old Town Square (Astronomical Clock, Týn Church) and Charles Bridge sit right below Prague Castle's hilltop complex (St. Vitus Cathedral, Golden Lane) — the largest ancient castle complex in the world by area. Go to the Castle first thing at opening (9am) before tour buses arrive, and catch the Astronomical Clock's hourly show from the square rather than pressing right up against it, since the actual figures are underwhelming up close." },
         { name: 'Český Krumlov', lat: 48.8127, lng: 14.3175, notes: "Its Vltava-river-bend old town and colorfully painted castle tower are the draw; it's overrun with day-trip buses from Prague around midday, so an early-morning visit or an overnight stay is the difference between a quiet town and a crowded one." },
       ],
       notes: "Prague (3 days) — Český Krumlov (1-2 days). Budget ~€75-90/day.",
@@ -20463,7 +20495,7 @@ function rbBuildCzechiaAustriaHungaryRoute() {
     {
       code: 'AT', name: 'Austria', days: 3, budget: 345, lat: 48.2082, lng: 16.3738,
       destinations: [
-        { name: 'Vienna (old town, Schönbrunn)', lat: 48.2082, lng: 16.3738 },
+        { name: 'Vienna (old town, Schönbrunn)', lat: 48.2082, lng: 16.3738, notes: "The Innere Stadt (St. Stephen's Cathedral, Hofburg) is compact and walkable, while Schönbrunn Palace — the Habsburgs' summer residence — is a separate half-day trip across town for the palace rooms and the sprawling gardens/Gloriette viewpoint. Book Schönbrunn's timed-entry ticket online in advance (it regularly sells out same-day in high season); the gardens themselves are free to enter even without a palace ticket." },
       ],
       notes: "Vienna (3 days). Budget ~€100-130/day p.p. Web check (2026-09): confirmed — Austria's border-control regime does cover Hungary too, not just Czechia/Slovakia, adding ad-hoc document checks (15-45 min) at motorway lay-bys/rail crossings/cross-border buses rather than a closed border. Recheck close to departure given the rolling-extension pattern.",
       transport_to_next: 'Train onward to Budapest, about 2.5 hours — a fully Schengen border.',
@@ -20471,8 +20503,8 @@ function rbBuildCzechiaAustriaHungaryRoute() {
     {
       code: 'HU', name: 'Hungary', days: 4, budget: 240, lat: 47.4960, lng: 19.0396,
       destinations: [
-        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396 },
-        { name: 'Eger (optional extension)', lat: 47.9025, lng: 20.3772 },
+        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396, notes: "Buda Castle Hill combines the former royal palace with Fisherman's Bastion and Matthias Church, and it's the classic vantage point for the Danube/Pest skyline and Parliament building across the river. Time it for sunset for the best light on that view, and take the Castle Hill Funicular up rather than the steep walk." },
+        { name: 'Eger (optional extension)', lat: 47.9025, lng: 20.3772, notes: "Beyond its Baroque old town and hilltop castle, Eger's main draw is the Valley of the Beautiful Women just outside town — a cluster of wine cellars for tasting Egri Bikavér (\"Bull's Blood\") and other local reds. Walk between a handful of cellars rather than committing to just one; most pours are cheap and informal, no reservation needed." },
       ],
       notes: "Budapest (3-4 days), with Eger as an optional 1-2 day wine-region extension if time allows. Budget ~€55-65/day. Season: May-June or September.",
       transport_to_next: 'End of this route — fly home from Budapest.',
@@ -20501,7 +20533,7 @@ function rbBuildCentralEuropeRoadtripFourteenDaysRoute() {
     {
       code: 'CZ', name: 'Czechia', days: 3, budget: 240, lat: 50.0875, lng: 14.4213,
       destinations: [
-        { name: 'Staré Město / Prague Castle', lat: 50.0875, lng: 14.4213 },
+        { name: 'Staré Město / Prague Castle', lat: 50.0875, lng: 14.4213, notes: "Staré Město's Old Town Square (Astronomical Clock, Týn Church) and Charles Bridge sit right below Prague Castle's hilltop complex (St. Vitus Cathedral, Golden Lane) — the largest ancient castle complex in the world by area. Go to the Castle first thing at opening (9am) before tour buses arrive, and catch the Astronomical Clock's hourly show from the square rather than pressing right up against it, since the actual figures are underwhelming up close." },
       ],
       notes: "Prague (3 days). Budget ~€75-90/day.",
       transport_to_next: 'Train or drive to Krakow — a fully Schengen border, no checks.',
@@ -20526,7 +20558,7 @@ function rbBuildCentralEuropeRoadtripFourteenDaysRoute() {
     {
       code: 'AT', name: 'Austria', days: 3, budget: 345, lat: 48.2082, lng: 16.3738,
       destinations: [
-        { name: 'Vienna (old town, Schönbrunn)', lat: 48.2082, lng: 16.3738 },
+        { name: 'Vienna (old town, Schönbrunn)', lat: 48.2082, lng: 16.3738, notes: "The Innere Stadt (St. Stephen's Cathedral, Hofburg) is compact and walkable, while Schönbrunn Palace — the Habsburgs' summer residence — is a separate half-day trip across town for the palace rooms and the sprawling gardens/Gloriette viewpoint. Book Schönbrunn's timed-entry ticket online in advance (it regularly sells out same-day in high season); the gardens themselves are free to enter even without a palace ticket." },
       ],
       notes: "Vienna (2-3 days). Budget ~€100-130/day p.p. — noticeably above this route's own flat source-level daily-budget estimate, see the route notes below.",
       transport_to_next: 'Train onward to Budapest, about 2.5 hours.',
@@ -20534,7 +20566,7 @@ function rbBuildCentralEuropeRoadtripFourteenDaysRoute() {
     {
       code: 'HU', name: 'Hungary', days: 3, budget: 180, lat: 47.4960, lng: 19.0396,
       destinations: [
-        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396 },
+        { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396, notes: "Buda Castle Hill combines the former royal palace with Fisherman's Bastion and Matthias Church, and it's the classic vantage point for the Danube/Pest skyline and Parliament building across the river. Time it for sunset for the best light on that view, and take the Castle Hill Funicular up rather than the steep walk." },
       ],
       notes: "Budapest (3 days), the trip's departure point. Budget ~€55-65/day.",
       transport_to_next: 'End of this route — fly home from Budapest.',

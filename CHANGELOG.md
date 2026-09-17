@@ -12,6 +12,14 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 20 — Czechia + Austria + Hungary (10-14 days) (2026-09-17)** —
+  a small 3-leg/5-destination combo route, researched in a single pass. Český Krumlov already had
+  notes from an earlier batch, so only 4 destinations were newly researched. Shared-signature
+  batch: overlaps Czechia + Austria (9 days) and Budapest + Eger (5 days). Same generic
+  name-matching migration (`rbMigrateCzechiaAustriaHungaryDestinationNotes()`) — 10 routes
+  confirmed touched in the live simulation. App-wide total: 2417 destination-slots filled across
+  298 routes. 239/741 signatures done.
+
 - **Per-destination notes, batch 19 — India & Himalaya Expedition (2026-09-17)** — 3 legs, 22
   destinations (21 newly researched — Delhi flagged as having nothing beyond the block-level
   "already visited, no sightseeing" note, left without one), researched as 3 parallel sub-batches

@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 234 / 741 signatures.**
+- **Done so far: 239 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -35,7 +35,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **AM** (5 dest): Yerevan, Khor Virap, Tatev, Lake Sevan, Dilijan — routes: Caucasus 🍷, Eurasia Grand Tour 🌏, West Eurasia Overland 🐫
 - [x] **AR** (5 dest): El Calafate, Perito Moreno Glacier, El Chaltén, Fitz Roy & Laguna de los Tres, Cerro Torre — routes: Argentine Patagonia 🥩, Patagonia & Antarctica Expedition 🧊, Patagonia Overland 🏔️
 - [x] **AR** (3 dest): Ushuaia, Tierra del Fuego National Park, Beagle Channel — routes: Argentine Patagonia 🥩, Patagonia & Antarctica Expedition 🧊, Patagonia Overland 🏔️
-- [ ] **AT** (1 dest): Vienna (old town, Schönbrunn) — routes: Central Europe Roadtrip (14 days) 🚂, Czechia + Austria + Hungary (10-14 days) 🏛️, Hungary + Austria + Slovenia (7-10 days) 🚆
+- [x] **AT** (1 dest): Vienna (old town, Schönbrunn) — routes: Central Europe Roadtrip (14 days) 🚂, Czechia + Austria + Hungary (10-14 days) 🏛️, Hungary + Austria + Slovenia (7-10 days) 🚆
 - [x] **AU** (5 dest): Cairns, Daintree Rainforest, Great Barrier Reef, Whitsundays & Whitehaven Beach, Fraser Island / K'gari — routes: Cairns & Great Barrier Reef 🐠, Oceania Grand Expedition 🌊, Tropical/Outback Australia 🐊
 - [x] **AU** (3 dest): Byron Bay, Sydney, Blue Mountains — routes: Oceania Grand Expedition 🌊, Sydney/Byron & Great Ocean Road 🦘, Temperate/Southern Australia 🍇
 - [x] **AU** (3 dest): Great Ocean Road, Melbourne, Grampians National Park — routes: Oceania Grand Expedition 🌊, Sydney/Byron & Great Ocean Road 🦘, Temperate/Southern Australia 🍇
@@ -172,7 +172,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [ ] **HR** (2 dest): Rovinj, Pula (Arena) — routes: Italy + Slovenia + Croatia (10-14 days) ⛵, Slovenia + Croatian Istria (7-10 days) 🏖️
 - [x] **HR** (1 dest): Zagreb — routes: Austria + Slovenia + Croatia (10-14 days) 🚙, Italy + Slovenia + Croatia (10-14 days) ⛵
 - [x] **HR** (1 dest): Plitvice Lakes National Park — routes: Austria + Slovenia + Croatia (10-14 days) 🚙, Italy + Slovenia + Croatia (10-14 days) ⛵
-- [ ] **HU** (2 dest): Buda Castle District, Eger (optional extension) — routes: Czechia + Austria + Hungary (10-14 days) 🏛️, Poland + Slovakia + Hungary (10-14 days) 🥾
+- [x] **HU** (2 dest): Buda Castle District, Eger (optional extension) — routes: Czechia + Austria + Hungary (10-14 days) 🏛️, Poland + Slovakia + Hungary (10-14 days) 🥾
 - [x] **ID** (8 dest): Medan, Bukit Lawang, Berastagi, Lake Toba, Bukittinggi, Lombok, Gili Islands, Komodo — routes: Eurasia Grand Tour 🌏, Southeast Asia Grand Loop 🛕
 - [x] **IE** (6 dest): Donegal, Connemara, Galway, Cliffs of Moher, Wild Atlantic Way, Dingle Peninsula — routes: British Isles & Celtic Coast Expedition 🍀, Ireland ☘️
 - [x] **IE** (4 dest): Ring of Kerry, Killarney National Park, Cork, Kilkenny — routes: British Isles & Celtic Coast Expedition 🍀, Ireland ☘️
@@ -300,11 +300,11 @@ Sorted alphabetically by country code.
 - [ ] **CY** (5 dest): Larnaca, Nicosia / Ledra Street, Troodos Mountains, Paphos & Aphrodite's Rock, Limassol — routes: Cyprus (6 days) 🏝️
 - [ ] **CY** (2 dest): Larnaca, Paphos — routes: Cyprus + Greece (9 days) ✈️
 - [ ] **CY** (7 dest): Larnaca, Nicosia / Ledra Street, North Nicosia (Lefkoşa), Troodos wine villages, Paphos, Akamas/Avakas Gorge & Blue Lagoon, Limassol, Kourion & Aphrodite's Rock, Ayia Napa / Protaras — routes: Cyprus Roadtrip including Northern Cyprus (9 days) 🚙
-- [ ] **CZ** (1 dest): Staré Město / Prague Castle — routes: Central Europe Roadtrip (14 days) 🚂
+- [x] **CZ** (1 dest): Staré Město / Prague Castle — routes: Central Europe Roadtrip (14 days) 🚂
 - [x] **CZ** (2 dest): Brno, Špilberk Castle — routes: Central European Grand Roadtrip 🚗
 - [x] **CZ** (3 dest): Prague, Český Krumlov, Bohemian Paradise (Turnov) — routes: Central European Grand Roadtrip 🚗
 - [x] **CZ** (2 dest): Prague, Český Krumlov — routes: Czechia + Austria (9 days) 🏔️
-- [ ] **CZ** (2 dest): Staré Město / Prague Castle, Český Krumlov — routes: Czechia + Austria + Hungary (10-14 days) 🏛️
+- [x] **CZ** (2 dest): Staré Město / Prague Castle, Český Krumlov — routes: Czechia + Austria + Hungary (10-14 days) 🏛️
 - [ ] **CZ** (4 dest): Prague, Karlovy Vary, Český Krumlov, Brno / Moravia wine region — routes: Czechia Roadtrip (6 days) 🛣️
 - [ ] **CZ** (3 dest): Brno, Mikulov wine region, Znojmo wine region — routes: Moravia: Brno + Wine Region (5 days) 🍇
 - [ ] **CZ** (4 dest): Staré Město (Old Town Square), Malá Strana, Prague Castle, Vyšehrad — routes: Prague (4 days) 🏰
@@ -480,7 +480,7 @@ Sorted alphabetically by country code.
 - [ ] **HR** (4 dest): Split (Diocletian's Palace), Hvar Town, Brač / Zlatni Rat, Vis (optional) — routes: Split + Islands (6 days) ⛵
 - [ ] **HU** (4 dest): Buda Castle District, Hungarian Parliament Building / Pest riverside, Széchenyi Thermal Baths, Ruin bar district (Kazinczy utca) — routes: Budapest (4 days) 🛁
 - [ ] **HU** (5 dest): Buda Castle District, Hungarian Parliament Building, Széchenyi Thermal Baths, Szentendre (day trip), Eger / Valley of the Beautiful Women wine cellars — routes: Budapest + Eger (5 days) 🍷
-- [ ] **HU** (1 dest): Buda Castle District — routes: Central Europe Roadtrip (14 days) 🚂
+- [x] **HU** (1 dest): Buda Castle District — routes: Central Europe Roadtrip (14 days) 🚂
 - [x] **HU** (2 dest): Budapest, thermal baths — routes: Central European Grand Roadtrip 🚗
 - [x] **HU** (1 dest): Budapest — routes: Grand European Roadtrip (14-21 days) 🪣
 - [ ] **HU** (2 dest): Buda Castle District, Hungarian Parliament Building — routes: Hungary + Austria + Slovenia (7-10 days) 🚆
@@ -768,24 +768,21 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| Czechia + Austria + Hungary (10-14 days) 🏛️ | 5/5 | 3 |
 | Germany + Austria + Italy (10-14 days) 🏔️ | 9/9 | 2 |
 | Grand Balkan Roadtrip (14 days) 🏔️ | 8/10 | 2 |
 | Azores Island Hopping (10-14 days) 🏝️ | 8/8 | 2 |
-| Central Europe Roadtrip (14 days) 🚂 | 8/9 | 2 |
 | Balearic Islands (7-10 days) 🏝️ | 7/7 | 2 |
 | Mallorca + Menorca (7-10 days) 🏝️ | 6/6 | 2 |
 | Bosnia + Montenegro + Budva (7-10 days) ⛰️ | 6/6 | 2 |
 | Azores: São Miguel + Terceira (7-10 days) 🏝️ | 5/5 | 2 |
-| Hungary + Austria + Slovenia (7-10 days) 🚆 | 3/5 | 2 |
 | Italy Roadtrip (12 days) 🧀 | 11/13 | 1 |
 | Adriatic Roadtrip (14 days) 🌊 | 11/11 | 1 |
 | Rome + Tuscany (9 days) 🍝 | 10/12 | 1 |
 | Sicily + Southern Italy (12 days) 🍊 | 10/12 | 1 |
 | Portugal + Andalusia (10-14 days) 🕌 | 10/10 | 1 |
 | Portugal + Spain Roadtrip (14 days) 🚗 | 10/10 | 1 |
-| India & Himalaya Expedition 🏔️ | 9/22 | 1 |
 | North India 🕌 | 9/9 | 1 |
+| India & Himalaya Expedition 🏔️ | 9/22 | 1 |
 | Switzerland Alpine Roadtrip (9 days) 🛣️ | 9/9 | 1 |
 | France + Switzerland + Italy (10-14 days) 🗻 | 9/9 | 1 |
 | Alpine Roadtrip (14 days) 🏕️ | 9/9 | 1 |
@@ -795,7 +792,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Faroe Islands + Iceland (9 days) ⛴️ | 7/7 | 1 |
 | Madeira + Porto Santo (7-10 days) 🏝️ | 7/7 | 1 |
 | Canary Islands (10-14 days) 🏝️ | 7/7 | 1 |
-| Poland + Slovakia + Hungary (10-14 days) 🥾 | 7/7 | 1 |
 | Germany: Berlin + Dresden + Bavaria (9 days) 🚂 | 6/6 | 1 |
 | Bavaria + Alps + Berchtesgaden (6 days) ⛰️ | 6/6 | 1 |
 | Tuscany (6 days) 🍇 | 6/7 | 1 |
@@ -803,11 +799,15 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Kosovo + Albania (9 days) 🏔️ | 6/6 | 1 |
 | Madeira (5-7 days) 🏝️ | 6/6 | 1 |
 | Italy + Slovenia + Croatia (10-14 days) ⛵ | 6/9 | 1 |
-| Luxembourg + Ardennes (4 days) 🎖️ | 5/5 | 1 |
 | South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️ | 5/5 | 1 |
+| Luxembourg + Ardennes (4 days) 🎖️ | 5/5 | 1 |
 | Switzerland + Northern Italy (9 days) 🚞 | 5/5 | 1 |
 | San Marino + Emilia-Romagna (4 days) 🍝 | 5/5 | 1 |
 | Reykjavík + Golden Circle (5 days) 🌋 | 5/5 | 1 |
-| ... 281 more routes with open destinations ... | | |
+| Albania + Montenegro (12 days) 🏝️ | 4/6 | 1 |
+| Albania (6 days) 🏖️ | 4/4 | 1 |
+| Kosovo + Montenegro (9 days) 🏞️ | 4/4 | 1 |
+| Gran Canaria + Tenerife (7-10 days) 🏝️ | 4/4 | 1 |
+| ... 280 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).
