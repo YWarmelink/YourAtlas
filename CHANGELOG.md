@@ -12,6 +12,15 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 9 — West & Central Africa Expedition (2026-09-17)** — 10 blocks,
+  32 destinations, researched as 4 parallel batches matching the route's own region grouping
+  (Cape Verde Islands, Senegambia, Gulf of Guinea, Central Africa & Islands). All 32 inserted
+  cleanly first try. Same generic name-matching migration
+  (`rbMigrateWestCentralAfricaDestinationNotes()`) — 8 routes confirmed touched in the live
+  simulation (this route's own standalone country splits via West Africa Overland 🥁 and its
+  descendants). App-wide total: 1859 destination-slots filled across 190 routes. 147/741
+  signatures done.
+
 - **Per-destination notes, batch 8 — British Isles & Celtic Coast Expedition (2026-09-17)** — 16
   legs, 77 destinations, researched as 6 parallel sub-batches (Southern England & Cornwall,
   Wales/Lake District/Isle of Man, Northern England/Scotland/Northern Ireland, Ireland, Channel

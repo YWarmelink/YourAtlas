@@ -1660,9 +1660,9 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
         {
           code: 'CV', name: 'Cape Verde', days: 13, budget: 780, lat: 16.8901, lng: -24.9825,
           destinations: [
-            { name: 'Santo Antão (Ribeira Grande, Paúl Valley)', lat: 17.1833, lng: -25.0667 },
-            { name: 'São Vicente (Mindelo)', lat: 16.8901, lng: -24.9825 },
-            { name: 'Fogo (Pico do Fogo volcano, vineyards)', lat: 14.9481, lng: -24.3553 },
+            { name: 'Santo Antão (Ribeira Grande, Paúl Valley)', lat: 17.1833, lng: -25.0667, notes: "The classic point-to-point trail drops from the Cova crater rim through terraced sugarcane/coffee plots down to Paúl Valley's lush ravine floor — a single hike covers desert-dry crater and green valley in one descent. Arrange a one-way guide/transport in advance (it's not a loop), since you'll end up far from your starting point in Ribeira Grande." },
+            { name: 'São Vicente (Mindelo)', lat: 16.8901, lng: -24.9825, notes: "Mindelo itself is the destination here — Cesária Évora's hometown, with pastel Portuguese-colonial streets around the Mercado Municipal and a live-music scene built on her legacy (small bars host morna most evenings). If your dates allow it, February's Mindelo Carnival is Cape Verde's biggest and most colorful, rivaling Rio in miniature." },
+            { name: 'Fogo (Pico do Fogo volcano, vineyards)', lat: 14.9481, lng: -24.3553, notes: "The vineyards aren't just \"on volcanic soil\" incidentally — Chã das Caldeiras is a village literally inside the still-active caldera, where farmers grow grapes and manioc in the black ash right beside the 2014-15 lava flows that partly destroyed it. A licensed local guide is legally mandatory for the summit climb (no solo hikes) — start at 5-7am to beat the midday heat and reach the top before clouds roll in." },
           ],
           notes: "Deliberately different islands from an earlier visit (not Sal again) — Santo Antão for the dramatic hiking valleys, São Vicente for Mindelo's music culture, Fogo for the volcano climb and vineyards on volcanic soil. Between islands by ferry (cheaper, less reliable schedule) or Binter Cabo Verde flight. Price verified (2026-07), holds up — the Fogo flight (~€70-100 one-way, ferry unreliable) is a separate cost item. Mandatory online EASE registration ≥5 days in advance.",
           transport_to_next: 'Domestic flight Fogo-Praia, then international flight Praia-Dakar (route-logic fix 2026-08, search-confirmed: Fogo has no broad international connections, all flights go via Praia — this was previously hidden behind "Praia/Sal-Dakar" as if they were interchangeable direct departure points).',
@@ -1678,11 +1678,11 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
         {
           code: 'SN', name: 'Senegal', days: 13, budget: 618, lat: 14.7167, lng: -17.4677,
           destinations: [
-            { name: 'Dakar', lat: 14.7167, lng: -17.4677 },
-            { name: 'Île de Gorée', lat: 14.6672, lng: -17.3984 },
-            { name: 'Lompoul Desert', lat: 15.3833, lng: -16.7500 },
-            { name: 'Saint-Louis (UNESCO)', lat: 16.0179, lng: -16.4896 },
-            { name: 'Sine-Saloum Delta', lat: 13.9333, lng: -16.5333 },
+            { name: 'Dakar', lat: 14.7167, lng: -17.4677, notes: "Senegal's buzzing capital is worth a day for the African Renaissance Monument (Africa's tallest statue, with a viewing platform over the city) and the sprawling Sandaga/Kermel markets and Medina district's mbalax music scene. Go to the Monument in late afternoon for cooler climbing weather and better light for the skyline view." },
+            { name: 'Île de Gorée', lat: 14.6672, lng: -17.3984, notes: "Beyond its slavery-history significance, the island itself is a small, car-free maze of ochre-and-bougainvillea colonial houses that's genuinely pleasant just to wander, with a lively artisan/craft market near the pier. Take one of the first morning ferries from Dakar — the island gets crowded with day-trippers by midday and empties out again by late afternoon." },
+            { name: 'Lompoul Desert', lat: 15.3833, lng: -16.7500, notes: "A pocket of orange Sahara-like dunes only a few km across, small enough to fully explore but photogenic enough that it's used as a stand-in \"Sahara\" for shoots — the appeal is spending the night in a desert camp. Book a campement stay for sunset/sunrise over the dunes and clear stargazing, rather than a same-day pass-through." },
+            { name: 'Saint-Louis (UNESCO)', lat: 16.0179, lng: -16.4896, notes: "Beyond the colonial old town, Saint-Louis is the gateway to Djoudj National Bird Sanctuary, one of West Africa's most important wetland reserves (also UNESCO-listed) with huge pelican and flamingo colonies. Combine the two: a morning walk across the colorful Pont Faidherbe bridge, then a half-day pirogue trip into Djoudj (best November-April when migratory birds are present)." },
+            { name: 'Sine-Saloum Delta', lat: 13.9333, lng: -16.5333, notes: "Beyond the mangrove/bird ecosystem, the delta's standout single site is Fadiouth, a village built entirely on a mound of seashells and linked to the mainland by a footbridge, with a shared Muslim-Christian cemetery. Allot half a day: a pirogue ride through the mangrove channels plus a walking stop in Fadiouth." },
           ],
           notes: "Île de Gorée (slavery history, short boat ride from Dakar) and Saint-Louis (colonial capital) are the historical highlights; Sine-Saloum (mangroves, birds) and the Lompoul dunes give a completely different natural scenery within one country. Price verified (2026-07), holds up. Orange border strip along Gambia/Guinea-Bissau/Mali/Mauritania — not relevant for this route. Route-logic fix (2026-08, search-confirmed): order reversed — Dakar→Saint-Louis(north)→Sine-Saloum(south)→Lompoul(north) crossed the Dakar corridor three times (≈850+ km avoidable detour). Now Dakar→Gorée→Lompoul→Saint-Louis (both northern stops together) →Sine-Saloum (south, already close to the Gambian border) — only one north-south switch left, unavoidable because Dakar sits precisely between the northern desert/UNESCO stops and the southern delta/Gambia.",
           transport_to_next: 'Bus/shared taxi overland to Gambia via the Senegambia Bridge (opened 2019, considerably smoother than the former ferry) — Sine-Saloum is already close to the border.',
@@ -1690,10 +1690,10 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
         {
           code: 'GM', name: 'Gambia', days: 6, budget: 240, lat: 13.4549, lng: -16.579,
           destinations: [
-            { name: 'Banjul', lat: 13.4549, lng: -16.5790 },
-            { name: 'Gambia River (boat cruise)', lat: 13.4500, lng: -15.5000 },
-            { name: 'Kunta Kinteh Island (UNESCO, slavery history)', lat: 13.2833, lng: -16.0500 },
-            { name: 'Makasutu Culture Forest', lat: 13.3667, lng: -16.6333 },
+            { name: 'Banjul', lat: 13.4549, lng: -16.5790, notes: "The Gambia's small, low-key capital is more a logistics stop than a highlight — Albert Market for everyday local life and the Arch 22 monument (with a rooftop city view) are the two things worth a quick look. Most visitors only pass through for a few hours before heading to Serekunda/the coast or upriver — don't plan more than half a day here." },
+            { name: 'Gambia River (boat cruise)', lat: 13.4500, lng: -15.5000, notes: "The river cruise's draw is wildlife, not scenery for its own sake: upriver toward Kuntaur/River Gambia National Park you can spot hippos, crocodiles, and — via the Chimpanzee Rehabilitation Project on the \"Baboon Islands\" — rescued chimps that often come down to the water's edge around mid-afternoon. Time the boat trip for early morning (hippos, birdlife) or ~3pm (chimps at the riverbank)." },
+            { name: 'Kunta Kinteh Island (UNESCO, slavery history)', lat: 13.2833, lng: -16.0500, notes: "Beyond its major slavery-heritage significance, the practical visit is a short pirogue crossing from Albreda/Juffureh village — the same village made famous as the ancestral home in Alex Haley's novel \"Roots.\" Pair the island visit with a short walk through Juffureh/Albreda itself rather than treating it as a boat-out-boat-back stop." },
+            { name: 'Makasutu Culture Forest', lat: 13.3667, lng: -16.6333, notes: "A private reserve of palm forest, savanna, and mangrove about an hour from Banjul, best known for a pirogue trip through mangrove channels plus guided walks past palm-wine tapping and a crafts centre. Full-day tours combine the forest/mangrove walk with a traditional drumming/dance demonstration — worth booking as a full day, not a quick stop, to get all of it." },
           ],
           notes: "Small but with its own recognizable highlight: Kunta Kinteh Island (formerly James Island) is one of the most important slavery heritage sites in West Africa. Price verified (2026-07), holds up. Presidential election December 5, 2026 — possible unrest, check the current situation shortly before departure.",
           transport_to_next: 'Flight to Abidjan — no practical overland route (Guinea-Bissau, Guinea, Sierra Leone and Liberia lie in between, too much of a detour/visa hassle for this travel style).',
@@ -1709,8 +1709,8 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
         {
           code: 'CI', name: 'Ivory Coast', days: 7, budget: 333, lat: 5.36, lng: -4.0083,
           destinations: [
-            { name: 'Abidjan (Le Plateau)', lat: 5.3600, lng: -4.0083 },
-            { name: 'Grand-Bassam (UNESCO colonial town)', lat: 5.2107, lng: -3.7380 },
+            { name: 'Abidjan (Le Plateau)', lat: 5.3600, lng: -4.0083, notes: "Le Plateau is Abidjan's skyscraper CBD on a lagoon peninsula — West Africa's most modern skyline, anchored by the striking Cathédrale Saint-Paul; walk it in late afternoon when the lagoon light and rush-hour energy peak." },
+            { name: 'Grand-Bassam (UNESCO colonial town)', lat: 5.2107, lng: -3.7380, notes: "The former French colonial capital (UNESCO-listed since 2012) has a slowly decaying strip of colonial administrative buildings and merchant houses along the beach, plus the N'zima artisan quarter next door; go on a weekday morning to see the buildings without the Abidjan weekend day-tripper crowds." },
           ],
           notes: "Taï National Park is deliberately left out — beautiful, but its remote location costs 3-4 extra days of travel time for chimpanzees that can also be seen elsewhere in West/Central Africa. Abidjan and Grand-Bassam keep this country compact and worthwhile. Price verified (2026-07), holds up. Red/orange only along the Mali/Burkina Faso and Liberia border — not relevant here.",
           transport_to_next: 'Bus overland to Ghana via the Elubo border crossing — an established backpacker route.',
@@ -1718,11 +1718,11 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
         {
           code: 'GH', name: 'Ghana', days: 15, budget: 713, lat: 5.1053, lng: -1.2466,
           destinations: [
-            { name: 'Cape Coast Castle', lat: 5.1053, lng: -1.2466 },
-            { name: 'Elmina Castle', lat: 5.0844, lng: -1.3499 },
-            { name: 'Kakum National Park (canopy walkway)', lat: 5.3500, lng: -1.3833 },
-            { name: 'Accra', lat: 5.6037, lng: -0.1870 },
-            { name: 'Volta Region (Wli Falls, Mount Afadjato)', lat: 6.8667, lng: 0.4667 },
+            { name: 'Cape Coast Castle', lat: 5.1053, lng: -1.2466, notes: "Served as the British Gold Coast headquarters and had the largest slave dungeons on this coast, with the \"Door of No Return\" opening straight onto the Atlantic; book the guided tour (included with the ticket) rather than walking it alone — the guides' testimony is the actual substance of the visit." },
+            { name: 'Elmina Castle', lat: 5.0844, lng: -1.3499, notes: "Built by the Portuguese in 1482, it's the oldest European-built structure in sub-Saharan Africa (originally a trading fort before becoming a slave-trade hub); the upper ramparts give the clearest view of how the fort, town, and fishing harbour physically interlock." },
+            { name: 'Kakum National Park (canopy walkway)', lat: 5.3500, lng: -1.3833, notes: "Ghana's rainforest canopy walkway runs about 350m across 7 treetop platforms up to 40m high. Go right at opening (visit before ~10am) — by mid-morning it fills with school groups and the wildlife-viewing window closes." },
+            { name: 'Accra', lat: 5.6037, lng: -0.1870, notes: "Ghana's capital is worth it for Jamestown's old lighthouse/fishing harbour and the sprawling Makola Market, not the modern city center. Go to Jamestown in the morning when the fishing canoes come in — it's the most photogenic and least staged part of the visit." },
+            { name: 'Volta Region (Wli Falls, Mount Afadjato)', lat: 6.8667, lng: 0.4667, notes: "Wli Falls is the highest waterfall in Ghana and in West Africa (~80m upper drop), and nearby Mount Afadjato is Ghana's highest peak — pair the falls' easy 45-min walk with Afadjato's steeper 1-2hr summit hike if time allows. Go in/just after rainy season (roughly April-October) for the falls at full flow." },
           ],
           notes: "Cape Coast and Elmina Castle are the heaviest, most important slavery history sites of the entire expedition. Ghana has by far the richest program of the trip — hence the most time. Price verified (2026-07), holds up, including Cape Coast/Kakum entrance fees. Route-logic fix (2026-08, search-confirmed): order reversed — the border crossing from Ivory Coast (Elubo) sits right next to Cape Coast/Elmina (≈215 km/3h10), far from Accra (≈361 km); the old order (Accra→Cape Coast/Elmina/Kakum→Volta) meant first 360 km eastward to Accra, then 165 km back westward to Cape Coast, then another 165 km eastward through Accra to Volta — ≈330 km of pure detour. Now Cape Coast/Elmina/Kakum (right next to Elubo) →Accra→Volta Region (right next to the Aflao border crossing to Togo) — one continuous eastward movement that lines up exactly with entry and exit.",
           transport_to_next: 'Bus overland to Togo via the Aflao border crossing.',
@@ -1730,8 +1730,8 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
         {
           code: 'TG', name: 'Togo', days: 4, budget: 160, lat: 6.1319, lng: 1.2228,
           destinations: [
-            { name: 'Lomé', lat: 6.1319, lng: 1.2228 },
-            { name: 'Togoville (Vodun culture, Lac Togo)', lat: 6.2667, lng: 1.5333 },
+            { name: 'Lomé', lat: 6.1319, lng: 1.2228, notes: "Togo's capital is mainly a stop for the Akodessewa Fetish Market — a genuine working Vodun supply/spiritual market, not a tourist recreation — plus the Grand Marché for everyday city life. A local guide is worth it at the fetish market to get real context rather than just photographing the stalls." },
+            { name: 'Togoville (Vodun culture, Lac Togo)', lat: 6.2667, lng: 1.5333, notes: "The spiritual birthplace of Togolese Vodun, reached by dugout pirogue across Lac Togo, with King Mlapa's palace and a Vodun-Catholic syncretic basilica in the same small village. The boat crossing itself (rather than the village) is the highlight — go by pirogue, not the road causeway, for the full experience." },
           ],
           notes: "Deliberately short — with its German colonial history (before the later French takeover), Togo does add a different angle than Ghana/Benin, but has few highlights. It already sits directly on the route, so the extra cost of including it is low. Price verified (2026-07), holds up. Visa-on-arrival has been abolished — only an e-visa in advance via the official evisa.gouv.tg (avoid pricier third parties).",
           transport_to_next: 'Bus overland to Benin via the Hillacondji border crossing.',
@@ -1739,9 +1739,9 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
         {
           code: 'BJ', name: 'Benin', days: 9, budget: 428, lat: 6.3667, lng: 2.0833,
           destinations: [
-            { name: 'Abomey (royal palaces, UNESCO)', lat: 7.1833, lng: 1.9833 },
-            { name: 'Ouidah (Route des Esclaves, Door of No Return)', lat: 6.3667, lng: 2.0833 },
-            { name: 'Ganvié (stilt village on the lake)', lat: 6.4667, lng: 2.4167 },
+            { name: 'Abomey (royal palaces, UNESCO)', lat: 7.1833, lng: 1.9833, notes: "The UNESCO-listed royal palaces of the former Kingdom of Dahomey, with historical bas-relief walls narrating each king's reign and a museum built into the palace compound. Allow a guide (mandatory/included) to decode the bas-reliefs — the symbolism is unreadable without one." },
+            { name: 'Ouidah (Route des Esclaves, Door of No Return)', lat: 6.3667, lng: 2.0833, notes: "Follow the 4km Route des Esclaves memorial walk from the old slave auction point to the beachside Door of No Return monument; Ouidah is also Benin's Vodun spiritual capital, so pair it with the Python Temple in town. Walk the route in the direction the enslaved were marched (town to sea) for the intended narrative arc." },
+            { name: 'Ganvié (stilt village on the lake)', lat: 6.4667, lng: 2.4167, notes: "Known as the \"Venice of Africa,\" Ganvié was built entirely on stilts over Lake Nokoué by the Tofinu people, who fled inland Fon slave-raiders under a religious taboo that kept warriors off the water. Go by motorized pirogue in the early morning when the floating market and daily lake life are actually active, not just staged for tour boats." },
           ],
           notes: "Exactly the combination this expedition is looking for: old kingdoms (Abomey, the former Dahomey), slavery history (Ouidah) and living Vodun culture. Price verified (2026-07), holds up. Red/orange only in the north and the Nigeria border strip — not relevant here. Route-logic fix (2026-08, search-confirmed): order reversed — Abomey used to be the last stop (≈135 km inland from Cotonou) while the flight departs from Cotonou, an unmentioned return trip that's the same category of mistake found earlier in other routes (a destination as the last stop while the departure point is somewhere else). Now Abomey first, then Ouidah (≈42 km from Cotonou) and Ganvié (≈18 km from Cotonou) — the trip ends right near the airport, no more backtrack needed.",
           transport_to_next: "Flight Cotonou-Douala (usually with a layover) — overland through Nigeria is not an option for this trip, the only unavoidable jump of the entire route.",
@@ -1757,9 +1757,9 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
         {
           code: 'CM', name: 'Cameroon', days: 8, budget: 380, lat: 4.0511, lng: 9.7679,
           destinations: [
-            { name: 'Douala', lat: 4.0511, lng: 9.7679 },
-            { name: 'Yaoundé', lat: 3.8480, lng: 11.5021 },
-            { name: 'Kribi (Chutes de la Lobé, black beaches)', lat: 2.9333, lng: 9.9167 },
+            { name: 'Douala', lat: 4.0511, lng: 9.7679, notes: "Cameroon's economic capital and main port — busier and more chaotic than scenic, worth the Marché des Fleurs and Doual'art's contemporary-art scene rather than lingering; most visitors treat it as a gateway and move on within a day." },
+            { name: 'Yaoundé', lat: 3.8480, lng: 11.5021, notes: "Built across seven hills, calmer and greener than Douala, with the National Museum and Mont Fébé's viewpoint over the city as the main draws. One day covers it comfortably before continuing to Kribi." },
+            { name: 'Kribi (Chutes de la Lobé, black beaches)', lat: 2.9333, lng: 9.9167, notes: "Beyond the Chutes de la Lobé, Kribi itself is a laid-back fishing town with black-sand beaches and fresh grilled-fish shacks along the shore. Take a pirogue right up to the base of the falls rather than viewing only from the clifftop — it's a different, better view." },
           ],
           notes: 'Adjusted relative to the original plan: Mount Cameroon and Limbe lie in the Southwest Region, where an armed conflict (the "Anglophone Crisis") has been active since 2016 — travel advisories have discouraged this area at various points. Instead Douala, Kribi (the Chutes de la Lobé literally flow into the sea — unique) and Yaoundé, all in the more stable Francophone Littoral/Centre regions. Check the current situation in the Southwest shortly before departure — should it have improved, Mount Cameroon would still be worth considering as an addition. Price verified (2026-07), holds up. Confirmed: Anglophone Crisis still active/red in 2026 — the route choice remains justified. Mandatory e-visa in advance (~€150-230), a separate cost item. Route-logic fix (2026-08, search-confirmed): order reversed — Douala is the only international gateway to São Tomé (no direct Yaoundé flight exists), so a return trip to Douala is unavoidable either way from both Kribi and Yaoundé (no shared route between the two). The old order ended at Yaoundé (≈240 km/3.5-4h back to Douala, unmentioned); now the leg ends at Kribi (≈175 km/2.5-3h back, the shorter of the two) and the return trip is explicitly named instead of hidden.',
           transport_to_next: 'Back to Douala (≈175 km from Kribi, ≈2.5-3 hours), then flight Douala-São Tomé (regional connection).',
@@ -1767,8 +1767,8 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
         {
           code: 'ST', name: 'São Tomé and Príncipe', days: 9, budget: 653, lat: 0.3365, lng: 6.7273,
           destinations: [
-            { name: 'São Tomé (roças/plantations, rainforest)', lat: 0.3365, lng: 6.7273 },
-            { name: 'Príncipe (remote, less visited)', lat: 1.6167, lng: 7.4167 },
+            { name: 'São Tomé (roças/plantations, rainforest)', lat: 0.3365, lng: 6.7273, notes: "Roça Agostinho Neto, once the country's largest cocoa plantation, is the most evocative of the island's decaying colonial-plantation architecture, and a guided hike inland into Obô Natural Park reaches Pico Cão Grande's dramatic volcanic spire. Allow a half-day for the roça, a full day if adding the rainforest hike." },
+            { name: 'Príncipe (remote, less visited)', lat: 1.6167, lng: 7.4167, notes: "Far smaller and far less visited than São Tomé — reachable only by small plane, which naturally caps visitor numbers. Roça Sundy, now a boutique hotel, is where Arthur Eddington's 1919 eclipse observations confirmed Einstein's general relativity; worth the detour even for non-guests as a place to see, not just stay." },
           ],
           notes: "Unique in the whole Travel Atlas: Portuguese colonial plantation history on a small, calm tropical island. Falls within the rainy season (October-May) on this route — mainly afternoon showers, no sustained monsoon. Price verified (2026-07), holds up. Presidential election July 19, 2026 — possible protests around that period, check local news shortly before departure.",
           transport_to_next: 'Flight São Tomé-Libreville (regional connection).',
@@ -1776,9 +1776,9 @@ function rbBuildWestCentralAfricaExpeditionRoute() {
         {
           code: 'GA', name: 'Gabon', days: 9, budget: 855, lat: -1.95, lng: 9.7,
           destinations: [
-            { name: 'Loango National Park (surfing hippos, forest elephants on the beach)', lat: -2.3667, lng: 9.5667 },
-            { name: 'Libreville', lat: 0.4162, lng: 9.4673 },
-            { name: 'Pongara National Park (mangroves/rainforest, ≈45 min boat from Libreville)', lat: 0.3833, lng: 9.3500 },
+            { name: 'Loango National Park (surfing hippos, forest elephants on the beach)', lat: -2.3667, lng: 9.5667, notes: "Beyond the beach hippos/elephants, a boat safari up the Ngové/Echira rivers to Akaka camp (about 60km from the main Loango camps) gives close river-bank encounters with forest elephants and buffalo, plus a chance to snorkel alongside elephants in shallow water — an experience unique to Loango. Akaka closes in the rainy season, so this only works in the dry-season window (roughly June-August/September) already best for the route." },
+            { name: 'Libreville', lat: 0.4162, lng: 9.4673, notes: "Mostly a gateway city, but the Arboretum de Sibang (170 tree species, a quiet rainforest patch inside the city) and L'Église Saint-Michel de Nkembo (31 hand-carved wooden columns depicting Bible scenes) are worth a half-day before heading on to the parks. Note the arboretum keeps limited weekday hours (Mon-Fri, roughly 9am-3pm) and needs someone on-site to unlock the gate." },
+            { name: 'Pongara National Park (mangroves/rainforest, ≈45 min boat from Libreville)', lat: 0.3833, lng: 9.3500, notes: "One of the world's most important leatherback turtle nesting beaches — roughly 3,500+ nests a year between October and April, peaking December-February — alongside its mangroves and rainforest. Time the visit for a night nesting/hatching walk in-season; outside that window it's a quieter mangrove-channel and beach visit instead." },
           ],
           notes: "A deliberate, strong finale for the entire expedition — Loango is one of the few places in the world where you see elephants and hippos on the beach. Happens to fall within its short dry season (December-February) on this route. ⚠️ Price check (2026-07): the tightest/riskiest budget of the route — Loango logistics (guide/park fees/possible charter flight) can run up to $100-300+/day; €95/day is only achievable with budget transport (road/pirogue) and simple campsites. Insufficient hard consensus for a fixed correction, but expect a real chance this turns out higher. Route-logic fix (2026-08, search-confirmed): 'rainforest' was an unnamed third destination, impossible to verify by location — filled in as Pongara National Park (mangroves/rainforest/beaches, short boat from Libreville, no backtrack risk since it's already close to the departure point). Loango(south)→Libreville(north, capital)→Pongara (close to Libreville) is the correct direction, ending at the departure point for the return flight.",
           transport_to_next: 'End of the expedition — return flight from Libreville to the Netherlands (usually with a layover).',
@@ -3821,9 +3821,9 @@ function rbBuildWestAfricaOverlandRoute() {
         {
           code: 'CV', name: 'Cape Verde', days: 13, budget: 780, lat: 16.8901, lng: -24.9825,
           destinations: [
-            { name: 'Santo Antão (Ribeira Grande, Paúl Valley)', lat: 17.1833, lng: -25.0667 },
-            { name: 'São Vicente (Mindelo)', lat: 16.8901, lng: -24.9825 },
-            { name: 'Fogo (Pico do Fogo volcano, vineyards)', lat: 14.9481, lng: -24.3553 },
+            { name: 'Santo Antão (Ribeira Grande, Paúl Valley)', lat: 17.1833, lng: -25.0667, notes: "The classic point-to-point trail drops from the Cova crater rim through terraced sugarcane/coffee plots down to Paúl Valley's lush ravine floor — a single hike covers desert-dry crater and green valley in one descent. Arrange a one-way guide/transport in advance (it's not a loop), since you'll end up far from your starting point in Ribeira Grande." },
+            { name: 'São Vicente (Mindelo)', lat: 16.8901, lng: -24.9825, notes: "Mindelo itself is the destination here — Cesária Évora's hometown, with pastel Portuguese-colonial streets around the Mercado Municipal and a live-music scene built on her legacy (small bars host morna most evenings). If your dates allow it, February's Mindelo Carnival is Cape Verde's biggest and most colorful, rivaling Rio in miniature." },
+            { name: 'Fogo (Pico do Fogo volcano, vineyards)', lat: 14.9481, lng: -24.3553, notes: "The vineyards aren't just \"on volcanic soil\" incidentally — Chã das Caldeiras is a village literally inside the still-active caldera, where farmers grow grapes and manioc in the black ash right beside the 2014-15 lava flows that partly destroyed it. A licensed local guide is legally mandatory for the summit climb (no solo hikes) — start at 5-7am to beat the midday heat and reach the top before clouds roll in." },
           ],
           notes: "Entry: flight Amsterdam-Sal (TUI fly, direct, ±6h40), with a domestic connection to São Vicente/Santo Antão (±7-8 hours total, from ±€350-600 return, best period November). Price indication from 2026-08 web research, a snapshot. Deliberately different islands from an earlier visit (not Sal again) — Santo Antão for the dramatic hiking valleys, São Vicente for Mindelo's music culture, Fogo for the volcano climb and vineyards on volcanic soil. Between islands by ferry (cheaper, less reliable schedule) or Binter Cabo Verde flight. Price verified (2026-07), holds up. Mandatory online EASE registration ≥5 days in advance.",
           transport_to_next: 'Domestic flight Fogo-Praia, then international flight Praia-Dakar (route-logic fix 2026-08: Fogo has no broad international connections, all flights go via Praia).',
@@ -3839,11 +3839,11 @@ function rbBuildWestAfricaOverlandRoute() {
         {
           code: 'SN', name: 'Senegal', days: 13, budget: 618, lat: 14.7167, lng: -17.4677,
           destinations: [
-            { name: 'Dakar', lat: 14.7167, lng: -17.4677 },
-            { name: 'Île de Gorée', lat: 14.6672, lng: -17.3984 },
-            { name: 'Lompoul Desert', lat: 15.3833, lng: -16.7500 },
-            { name: 'Saint-Louis (UNESCO)', lat: 16.0179, lng: -16.4896 },
-            { name: 'Sine-Saloum Delta', lat: 13.9333, lng: -16.5333 },
+            { name: 'Dakar', lat: 14.7167, lng: -17.4677, notes: "Senegal's buzzing capital is worth a day for the African Renaissance Monument (Africa's tallest statue, with a viewing platform over the city) and the sprawling Sandaga/Kermel markets and Medina district's mbalax music scene. Go to the Monument in late afternoon for cooler climbing weather and better light for the skyline view." },
+            { name: 'Île de Gorée', lat: 14.6672, lng: -17.3984, notes: "Beyond its slavery-history significance, the island itself is a small, car-free maze of ochre-and-bougainvillea colonial houses that's genuinely pleasant just to wander, with a lively artisan/craft market near the pier. Take one of the first morning ferries from Dakar — the island gets crowded with day-trippers by midday and empties out again by late afternoon." },
+            { name: 'Lompoul Desert', lat: 15.3833, lng: -16.7500, notes: "A pocket of orange Sahara-like dunes only a few km across, small enough to fully explore but photogenic enough that it's used as a stand-in \"Sahara\" for shoots — the appeal is spending the night in a desert camp. Book a campement stay for sunset/sunrise over the dunes and clear stargazing, rather than a same-day pass-through." },
+            { name: 'Saint-Louis (UNESCO)', lat: 16.0179, lng: -16.4896, notes: "Beyond the colonial old town, Saint-Louis is the gateway to Djoudj National Bird Sanctuary, one of West Africa's most important wetland reserves (also UNESCO-listed) with huge pelican and flamingo colonies. Combine the two: a morning walk across the colorful Pont Faidherbe bridge, then a half-day pirogue trip into Djoudj (best November-April when migratory birds are present)." },
+            { name: 'Sine-Saloum Delta', lat: 13.9333, lng: -16.5333, notes: "Beyond the mangrove/bird ecosystem, the delta's standout single site is Fadiouth, a village built entirely on a mound of seashells and linked to the mainland by a footbridge, with a shared Muslim-Christian cemetery. Allot half a day: a pirogue ride through the mangrove channels plus a walking stop in Fadiouth." },
           ],
           notes: "Île de Gorée (slavery history, short boat ride from Dakar) and Saint-Louis (colonial capital) are the historical highlights; Sine-Saloum (mangroves, birds) and the Lompoul dunes give a completely different natural scenery within one country. Price verified (2026-07), holds up. Route-logic fix (2026-08): order reversed (Dakar→Gorée→Lompoul→Saint-Louis→Sine-Saloum) to avoid a triple north-south detour via Dakar — see West & Central Africa Expedition 🌍's own notes for the full reasoning.",
           transport_to_next: 'Bus/shared taxi overland to Gambia via the Senegambia Bridge (opened 2019, considerably smoother than the former ferry) — Sine-Saloum is already close to the border.',
@@ -3851,10 +3851,10 @@ function rbBuildWestAfricaOverlandRoute() {
         {
           code: 'GM', name: 'Gambia', days: 6, budget: 240, lat: 13.4549, lng: -16.579,
           destinations: [
-            { name: 'Banjul', lat: 13.4549, lng: -16.5790 },
-            { name: 'Gambia River (boat cruise)', lat: 13.4500, lng: -15.5000 },
-            { name: 'Kunta Kinteh Island (UNESCO, slavery history)', lat: 13.2833, lng: -16.0500 },
-            { name: 'Makasutu Culture Forest', lat: 13.3667, lng: -16.6333 },
+            { name: 'Banjul', lat: 13.4549, lng: -16.5790, notes: "The Gambia's small, low-key capital is more a logistics stop than a highlight — Albert Market for everyday local life and the Arch 22 monument (with a rooftop city view) are the two things worth a quick look. Most visitors only pass through for a few hours before heading to Serekunda/the coast or upriver — don't plan more than half a day here." },
+            { name: 'Gambia River (boat cruise)', lat: 13.4500, lng: -15.5000, notes: "The river cruise's draw is wildlife, not scenery for its own sake: upriver toward Kuntaur/River Gambia National Park you can spot hippos, crocodiles, and — via the Chimpanzee Rehabilitation Project on the \"Baboon Islands\" — rescued chimps that often come down to the water's edge around mid-afternoon. Time the boat trip for early morning (hippos, birdlife) or ~3pm (chimps at the riverbank)." },
+            { name: 'Kunta Kinteh Island (UNESCO, slavery history)', lat: 13.2833, lng: -16.0500, notes: "Beyond its major slavery-heritage significance, the practical visit is a short pirogue crossing from Albreda/Juffureh village — the same village made famous as the ancestral home in Alex Haley's novel \"Roots.\" Pair the island visit with a short walk through Juffureh/Albreda itself rather than treating it as a boat-out-boat-back stop." },
+            { name: 'Makasutu Culture Forest', lat: 13.3667, lng: -16.6333, notes: "A private reserve of palm forest, savanna, and mangrove about an hour from Banjul, best known for a pirogue trip through mangrove channels plus guided walks past palm-wine tapping and a crafts centre. Full-day tours combine the forest/mangrove walk with a traditional drumming/dance demonstration — worth booking as a full day, not a quick stop, to get all of it." },
           ],
           notes: "Small but with its own recognizable highlight: Kunta Kinteh Island (formerly James Island) is one of the most important slavery heritage sites in West Africa. Price verified (2026-07), holds up. Presidential election December 5, 2026 — possible unrest, check the current situation shortly before departure.",
           transport_to_next: 'End of this route — return flight from Banjul (or flight to Abidjan to continue to Gulf of Guinea, below).',
@@ -3870,8 +3870,8 @@ function rbBuildWestAfricaOverlandRoute() {
         {
           code: 'CI', name: 'Ivory Coast', days: 7, budget: 333, lat: 5.36, lng: -4.0083,
           destinations: [
-            { name: 'Abidjan (Le Plateau)', lat: 5.3600, lng: -4.0083 },
-            { name: 'Grand-Bassam (UNESCO colonial town)', lat: 5.2107, lng: -3.7380 },
+            { name: 'Abidjan (Le Plateau)', lat: 5.3600, lng: -4.0083, notes: "Le Plateau is Abidjan's skyscraper CBD on a lagoon peninsula — West Africa's most modern skyline, anchored by the striking Cathédrale Saint-Paul; walk it in late afternoon when the lagoon light and rush-hour energy peak." },
+            { name: 'Grand-Bassam (UNESCO colonial town)', lat: 5.2107, lng: -3.7380, notes: "The former French colonial capital (UNESCO-listed since 2012) has a slowly decaying strip of colonial administrative buildings and merchant houses along the beach, plus the N'zima artisan quarter next door; go on a weekday morning to see the buildings without the Abidjan weekend day-tripper crowds." },
           ],
           notes: "Taï National Park is deliberately left out — beautiful, but its remote location costs 3-4 extra days of travel time. Abidjan and Grand-Bassam keep this country compact and worthwhile. Price verified (2026-07), holds up.",
           transport_to_next: 'Bus overland to Ghana via the Elubo border crossing — an established backpacker route.',
@@ -3879,11 +3879,11 @@ function rbBuildWestAfricaOverlandRoute() {
         {
           code: 'GH', name: 'Ghana', days: 15, budget: 713, lat: 5.1053, lng: -1.2466,
           destinations: [
-            { name: 'Cape Coast Castle', lat: 5.1053, lng: -1.2466 },
-            { name: 'Elmina Castle', lat: 5.0844, lng: -1.3499 },
-            { name: 'Kakum National Park (canopy walkway)', lat: 5.3500, lng: -1.3833 },
-            { name: 'Accra', lat: 5.6037, lng: -0.1870 },
-            { name: 'Volta Region (Wli Falls, Mount Afadjato)', lat: 6.8667, lng: 0.4667 },
+            { name: 'Cape Coast Castle', lat: 5.1053, lng: -1.2466, notes: "Served as the British Gold Coast headquarters and had the largest slave dungeons on this coast, with the \"Door of No Return\" opening straight onto the Atlantic; book the guided tour (included with the ticket) rather than walking it alone — the guides' testimony is the actual substance of the visit." },
+            { name: 'Elmina Castle', lat: 5.0844, lng: -1.3499, notes: "Built by the Portuguese in 1482, it's the oldest European-built structure in sub-Saharan Africa (originally a trading fort before becoming a slave-trade hub); the upper ramparts give the clearest view of how the fort, town, and fishing harbour physically interlock." },
+            { name: 'Kakum National Park (canopy walkway)', lat: 5.3500, lng: -1.3833, notes: "Ghana's rainforest canopy walkway runs about 350m across 7 treetop platforms up to 40m high. Go right at opening (visit before ~10am) — by mid-morning it fills with school groups and the wildlife-viewing window closes." },
+            { name: 'Accra', lat: 5.6037, lng: -0.1870, notes: "Ghana's capital is worth it for Jamestown's old lighthouse/fishing harbour and the sprawling Makola Market, not the modern city center. Go to Jamestown in the morning when the fishing canoes come in — it's the most photogenic and least staged part of the visit." },
+            { name: 'Volta Region (Wli Falls, Mount Afadjato)', lat: 6.8667, lng: 0.4667, notes: "Wli Falls is the highest waterfall in Ghana and in West Africa (~80m upper drop), and nearby Mount Afadjato is Ghana's highest peak — pair the falls' easy 45-min walk with Afadjato's steeper 1-2hr summit hike if time allows. Go in/just after rainy season (roughly April-October) for the falls at full flow." },
           ],
           notes: "Cape Coast and Elmina Castle are the heaviest, most important slavery history sites of the entire expedition. Ghana has by far the richest program, hence the most time. Price verified (2026-07), holds up. Route-logic fix (2026-08): order reversed (Cape Coast/Elmina/Kakum first, then Accra, then Volta) — the Elubo border crossing sits right next to Cape Coast, not Accra, so the old order backtracked ≈330 km. See West & Central Africa Expedition 🌍's own notes for the full reasoning.",
           transport_to_next: 'Bus overland to Togo via the Aflao border crossing.',
@@ -3891,8 +3891,8 @@ function rbBuildWestAfricaOverlandRoute() {
         {
           code: 'TG', name: 'Togo', days: 4, budget: 160, lat: 6.1319, lng: 1.2228,
           destinations: [
-            { name: 'Lomé', lat: 6.1319, lng: 1.2228 },
-            { name: 'Togoville (Vodun culture, Lac Togo)', lat: 6.2667, lng: 1.5333 },
+            { name: 'Lomé', lat: 6.1319, lng: 1.2228, notes: "Togo's capital is mainly a stop for the Akodessewa Fetish Market — a genuine working Vodun supply/spiritual market, not a tourist recreation — plus the Grand Marché for everyday city life. A local guide is worth it at the fetish market to get real context rather than just photographing the stalls." },
+            { name: 'Togoville (Vodun culture, Lac Togo)', lat: 6.2667, lng: 1.5333, notes: "The spiritual birthplace of Togolese Vodun, reached by dugout pirogue across Lac Togo, with King Mlapa's palace and a Vodun-Catholic syncretic basilica in the same small village. The boat crossing itself (rather than the village) is the highlight — go by pirogue, not the road causeway, for the full experience." },
           ],
           notes: "Deliberately short — with its German colonial history, Togo does add a different angle than Ghana/Benin, but has few highlights. Price verified (2026-07), holds up.",
           transport_to_next: 'Bus overland to Benin via the Hillacondji border crossing.',
@@ -3900,9 +3900,9 @@ function rbBuildWestAfricaOverlandRoute() {
         {
           code: 'BJ', name: 'Benin', days: 9, budget: 428, lat: 6.3667, lng: 2.0833,
           destinations: [
-            { name: 'Abomey (royal palaces, UNESCO)', lat: 7.1833, lng: 1.9833 },
-            { name: 'Ouidah (Route des Esclaves, Door of No Return)', lat: 6.3667, lng: 2.0833 },
-            { name: 'Ganvié (stilt village on the lake)', lat: 6.4667, lng: 2.4167 },
+            { name: 'Abomey (royal palaces, UNESCO)', lat: 7.1833, lng: 1.9833, notes: "The UNESCO-listed royal palaces of the former Kingdom of Dahomey, with historical bas-relief walls narrating each king's reign and a museum built into the palace compound. Allow a guide (mandatory/included) to decode the bas-reliefs — the symbolism is unreadable without one." },
+            { name: 'Ouidah (Route des Esclaves, Door of No Return)', lat: 6.3667, lng: 2.0833, notes: "Follow the 4km Route des Esclaves memorial walk from the old slave auction point to the beachside Door of No Return monument; Ouidah is also Benin's Vodun spiritual capital, so pair it with the Python Temple in town. Walk the route in the direction the enslaved were marched (town to sea) for the intended narrative arc." },
+            { name: 'Ganvié (stilt village on the lake)', lat: 6.4667, lng: 2.4167, notes: "Known as the \"Venice of Africa,\" Ganvié was built entirely on stilts over Lake Nokoué by the Tofinu people, who fled inland Fon slave-raiders under a religious taboo that kept warriors off the water. Go by motorized pirogue in the early morning when the floating market and daily lake life are actually active, not just staged for tour boats." },
           ],
           notes: "Old kingdoms (Abomey, the former Dahomey), slavery history (Ouidah) and living Vodun culture. Price verified (2026-07), holds up. Route-logic fix (2026-08): order reversed (Abomey first, then Ouidah/Ganvié) so the leg ends right near Cotonou instead of at Abomey (≈135 km inland) — see West & Central Africa Expedition 🌍's own notes for the full reasoning.",
           transport_to_next: "End of this route — flight home from Cotonou (or flight Cotonou-Douala to continue to Central Africa & Islands 🦛 — overland through Nigeria is not an option).",
@@ -3929,9 +3929,9 @@ function rbBuildCentralAfricaIslandsRoute() {
         {
           code: 'CM', name: 'Cameroon', days: 8, budget: 380, lat: 4.0511, lng: 9.7679,
           destinations: [
-            { name: 'Douala', lat: 4.0511, lng: 9.7679 },
-            { name: 'Yaoundé', lat: 3.8480, lng: 11.5021 },
-            { name: 'Kribi (Chutes de la Lobé, black beaches)', lat: 2.9333, lng: 9.9167 },
+            { name: 'Douala', lat: 4.0511, lng: 9.7679, notes: "Cameroon's economic capital and main port — busier and more chaotic than scenic, worth the Marché des Fleurs and Doual'art's contemporary-art scene rather than lingering; most visitors treat it as a gateway and move on within a day." },
+            { name: 'Yaoundé', lat: 3.8480, lng: 11.5021, notes: "Built across seven hills, calmer and greener than Douala, with the National Museum and Mont Fébé's viewpoint over the city as the main draws. One day covers it comfortably before continuing to Kribi." },
+            { name: 'Kribi (Chutes de la Lobé, black beaches)', lat: 2.9333, lng: 9.9167, notes: "Beyond the Chutes de la Lobé, Kribi itself is a laid-back fishing town with black-sand beaches and fresh grilled-fish shacks along the shore. Take a pirogue right up to the base of the falls rather than viewing only from the clifftop — it's a different, better view." },
           ],
           notes: 'Entry: flight Amsterdam-Douala, via Paris or Brussels (no direct connection from the Netherlands, ±9-11 hours total, from ±€700-1,150 return, best period January-February). Price indication from 2026-08 web research, a snapshot. Mount Cameroon and Limbe (Southwest Region) deliberately avoided due to the "Anglophone Crisis" active since 2016 — instead Douala, Kribi and Yaoundé in the more stable Francophone regions. Confirmed (2026-07): conflict still active. Mandatory e-visa in advance (~€150-230), a separate cost item. Route-logic fix (2026-08): order reversed (Douala→Yaoundé→Kribi) so the return trip to Douala from Kribi (≈175 km) is shorter than from Yaoundé (≈240 km) — now also explicitly named instead of hidden. See West & Central Africa Expedition 🌍\'s own notes for the full reasoning.',
           transport_to_next: 'Back to Douala (≈175 km from Kribi, ≈2.5-3 hours), then flight Douala-São Tomé (regional connection).',
@@ -3939,8 +3939,8 @@ function rbBuildCentralAfricaIslandsRoute() {
         {
           code: 'ST', name: 'São Tomé and Príncipe', days: 9, budget: 653, lat: 0.3365, lng: 6.7273,
           destinations: [
-            { name: 'São Tomé (roças/plantations, rainforest)', lat: 0.3365, lng: 6.7273 },
-            { name: 'Príncipe (remote, less visited)', lat: 1.6167, lng: 7.4167 },
+            { name: 'São Tomé (roças/plantations, rainforest)', lat: 0.3365, lng: 6.7273, notes: "Roça Agostinho Neto, once the country's largest cocoa plantation, is the most evocative of the island's decaying colonial-plantation architecture, and a guided hike inland into Obô Natural Park reaches Pico Cão Grande's dramatic volcanic spire. Allow a half-day for the roça, a full day if adding the rainforest hike." },
+            { name: 'Príncipe (remote, less visited)', lat: 1.6167, lng: 7.4167, notes: "Far smaller and far less visited than São Tomé — reachable only by small plane, which naturally caps visitor numbers. Roça Sundy, now a boutique hotel, is where Arthur Eddington's 1919 eclipse observations confirmed Einstein's general relativity; worth the detour even for non-guests as a place to see, not just stay." },
           ],
           notes: "Portuguese colonial plantation history on a small, calm tropical island. Falls within the rainy season (October-May) on this route — mainly afternoon showers. Price verified (2026-07), holds up. Presidential election July 19, 2026 — check local news shortly before departure.",
           transport_to_next: 'Flight São Tomé-Libreville (regional connection).',
@@ -3948,9 +3948,9 @@ function rbBuildCentralAfricaIslandsRoute() {
         {
           code: 'GA', name: 'Gabon', days: 9, budget: 855, lat: -1.95, lng: 9.7,
           destinations: [
-            { name: 'Loango National Park (surfing hippos, forest elephants on the beach)', lat: -2.3667, lng: 9.5667 },
-            { name: 'Libreville', lat: 0.4162, lng: 9.4673 },
-            { name: 'Pongara National Park (mangroves/rainforest, ≈45 min boat from Libreville)', lat: 0.3833, lng: 9.3500 },
+            { name: 'Loango National Park (surfing hippos, forest elephants on the beach)', lat: -2.3667, lng: 9.5667, notes: "Beyond the beach hippos/elephants, a boat safari up the Ngové/Echira rivers to Akaka camp (about 60km from the main Loango camps) gives close river-bank encounters with forest elephants and buffalo, plus a chance to snorkel alongside elephants in shallow water — an experience unique to Loango. Akaka closes in the rainy season, so this only works in the dry-season window (roughly June-August/September) already best for the route." },
+            { name: 'Libreville', lat: 0.4162, lng: 9.4673, notes: "Mostly a gateway city, but the Arboretum de Sibang (170 tree species, a quiet rainforest patch inside the city) and L'Église Saint-Michel de Nkembo (31 hand-carved wooden columns depicting Bible scenes) are worth a half-day before heading on to the parks. Note the arboretum keeps limited weekday hours (Mon-Fri, roughly 9am-3pm) and needs someone on-site to unlock the gate." },
+            { name: 'Pongara National Park (mangroves/rainforest, ≈45 min boat from Libreville)', lat: 0.3833, lng: 9.3500, notes: "One of the world's most important leatherback turtle nesting beaches — roughly 3,500+ nests a year between October and April, peaking December-February — alongside its mangroves and rainforest. Time the visit for a night nesting/hatching walk in-season; outside that window it's a quieter mangrove-channel and beach visit instead." },
           ],
           notes: "One of the few places in the world where you see elephants and hippos on the beach. ⚠️ Price check (2026-07): the tightest/riskiest budget of the route — Loango logistics can run up to $100-300+/day. Route-logic fix (2026-08): 'rainforest' was an unnamed destination — filled in as Pongara National Park (close to Libreville, no backtrack risk). See West & Central Africa Expedition 🌍's own notes for the full reasoning.",
           transport_to_next: 'End of the expedition — return flight from Libreville to the Netherlands (usually with a layover).',
@@ -8225,6 +8225,67 @@ function rbMigrateBritishIslesDestinationNotes() {
 }
 
 /**
+ * Batch 9 (2026-09-17) for the per-destination-notes workflow -- West & Central Africa Expedition
+ * (10 blocks, 32 destinations), researched as 4 parallel batches matching the route's own region
+ * grouping (Cape Verde Islands, Senegambia, Gulf of Guinea, Central Africa & Islands). Same
+ * generic name-matching migration pattern as the other grand tours -- also lands on this route's
+ * many standalone split-off countries (Cape Verde, Senegambia-family, Ghana, Central Africa &
+ * Islands, São Tomé & Príncipe, Gabon splits) via West Africa Overland 🥁 and its own descendants.
+ */
+function rbMigrateWestCentralAfricaDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_WEST_CENTRAL_AFRICA_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_WEST_CENTRAL_AFRICA_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    "Santo Antão (Ribeira Grande, Paúl Valley)": "The classic point-to-point trail drops from the Cova crater rim through terraced sugarcane/coffee plots down to Paúl Valley's lush ravine floor — a single hike covers desert-dry crater and green valley in one descent. Arrange a one-way guide/transport in advance (it's not a loop), since you'll end up far from your starting point in Ribeira Grande.",
+    "São Vicente (Mindelo)": "Mindelo itself is the destination here — Cesária Évora's hometown, with pastel Portuguese-colonial streets around the Mercado Municipal and a live-music scene built on her legacy (small bars host morna most evenings). If your dates allow it, February's Mindelo Carnival is Cape Verde's biggest and most colorful, rivaling Rio in miniature.",
+    "Fogo (Pico do Fogo volcano, vineyards)": "The vineyards aren't just \"on volcanic soil\" incidentally — Chã das Caldeiras is a village literally inside the still-active caldera, where farmers grow grapes and manioc in the black ash right beside the 2014-15 lava flows that partly destroyed it. A licensed local guide is legally mandatory for the summit climb (no solo hikes) — start at 5-7am to beat the midday heat and reach the top before clouds roll in.",
+    "Dakar": "Senegal's buzzing capital is worth a day for the African Renaissance Monument (Africa's tallest statue, with a viewing platform over the city) and the sprawling Sandaga/Kermel markets and Medina district's mbalax music scene. Go to the Monument in late afternoon for cooler climbing weather and better light for the skyline view.",
+    "Île de Gorée": "Beyond its slavery-history significance, the island itself is a small, car-free maze of ochre-and-bougainvillea colonial houses that's genuinely pleasant just to wander, with a lively artisan/craft market near the pier. Take one of the first morning ferries from Dakar — the island gets crowded with day-trippers by midday and empties out again by late afternoon.",
+    "Lompoul Desert": "A pocket of orange Sahara-like dunes only a few km across, small enough to fully explore but photogenic enough that it's used as a stand-in \"Sahara\" for shoots — the appeal is spending the night in a desert camp. Book a campement stay for sunset/sunrise over the dunes and clear stargazing, rather than a same-day pass-through.",
+    "Saint-Louis (UNESCO)": "Beyond the colonial old town, Saint-Louis is the gateway to Djoudj National Bird Sanctuary, one of West Africa's most important wetland reserves (also UNESCO-listed) with huge pelican and flamingo colonies. Combine the two: a morning walk across the colorful Pont Faidherbe bridge, then a half-day pirogue trip into Djoudj (best November-April when migratory birds are present).",
+    "Sine-Saloum Delta": "Beyond the mangrove/bird ecosystem, the delta's standout single site is Fadiouth, a village built entirely on a mound of seashells and linked to the mainland by a footbridge, with a shared Muslim-Christian cemetery. Allot half a day: a pirogue ride through the mangrove channels plus a walking stop in Fadiouth.",
+    "Banjul": "The Gambia's small, low-key capital is more a logistics stop than a highlight — Albert Market for everyday local life and the Arch 22 monument (with a rooftop city view) are the two things worth a quick look. Most visitors only pass through for a few hours before heading to Serekunda/the coast or upriver — don't plan more than half a day here.",
+    "Gambia River (boat cruise)": "The river cruise's draw is wildlife, not scenery for its own sake: upriver toward Kuntaur/River Gambia National Park you can spot hippos, crocodiles, and — via the Chimpanzee Rehabilitation Project on the \"Baboon Islands\" — rescued chimps that often come down to the water's edge around mid-afternoon. Time the boat trip for early morning (hippos, birdlife) or ~3pm (chimps at the riverbank).",
+    "Kunta Kinteh Island (UNESCO, slavery history)": "Beyond its major slavery-heritage significance, the practical visit is a short pirogue crossing from Albreda/Juffureh village — the same village made famous as the ancestral home in Alex Haley's novel \"Roots.\" Pair the island visit with a short walk through Juffureh/Albreda itself rather than treating it as a boat-out-boat-back stop.",
+    "Makasutu Culture Forest": "A private reserve of palm forest, savanna, and mangrove about an hour from Banjul, best known for a pirogue trip through mangrove channels plus guided walks past palm-wine tapping and a crafts centre. Full-day tours combine the forest/mangrove walk with a traditional drumming/dance demonstration — worth booking as a full day, not a quick stop, to get all of it.",
+    "Abidjan (Le Plateau)": "Le Plateau is Abidjan's skyscraper CBD on a lagoon peninsula — West Africa's most modern skyline, anchored by the striking Cathédrale Saint-Paul; walk it in late afternoon when the lagoon light and rush-hour energy peak.",
+    "Grand-Bassam (UNESCO colonial town)": "The former French colonial capital (UNESCO-listed since 2012) has a slowly decaying strip of colonial administrative buildings and merchant houses along the beach, plus the N'zima artisan quarter next door; go on a weekday morning to see the buildings without the Abidjan weekend day-tripper crowds.",
+    "Cape Coast Castle": "Served as the British Gold Coast headquarters and had the largest slave dungeons on this coast, with the \"Door of No Return\" opening straight onto the Atlantic; book the guided tour (included with the ticket) rather than walking it alone — the guides' testimony is the actual substance of the visit.",
+    "Elmina Castle": "Built by the Portuguese in 1482, it's the oldest European-built structure in sub-Saharan Africa (originally a trading fort before becoming a slave-trade hub); the upper ramparts give the clearest view of how the fort, town, and fishing harbour physically interlock.",
+    "Kakum National Park (canopy walkway)": "Ghana's rainforest canopy walkway runs about 350m across 7 treetop platforms up to 40m high. Go right at opening (visit before ~10am) — by mid-morning it fills with school groups and the wildlife-viewing window closes.",
+    "Accra": "Ghana's capital is worth it for Jamestown's old lighthouse/fishing harbour and the sprawling Makola Market, not the modern city center. Go to Jamestown in the morning when the fishing canoes come in — it's the most photogenic and least staged part of the visit.",
+    "Volta Region (Wli Falls, Mount Afadjato)": "Wli Falls is the highest waterfall in Ghana and in West Africa (~80m upper drop), and nearby Mount Afadjato is Ghana's highest peak — pair the falls' easy 45-min walk with Afadjato's steeper 1-2hr summit hike if time allows. Go in/just after rainy season (roughly April-October) for the falls at full flow.",
+    "Lomé": "Togo's capital is mainly a stop for the Akodessewa Fetish Market — a genuine working Vodun supply/spiritual market, not a tourist recreation — plus the Grand Marché for everyday city life. A local guide is worth it at the fetish market to get real context rather than just photographing the stalls.",
+    "Togoville (Vodun culture, Lac Togo)": "The spiritual birthplace of Togolese Vodun, reached by dugout pirogue across Lac Togo, with King Mlapa's palace and a Vodun-Catholic syncretic basilica in the same small village. The boat crossing itself (rather than the village) is the highlight — go by pirogue, not the road causeway, for the full experience.",
+    "Abomey (royal palaces, UNESCO)": "The UNESCO-listed royal palaces of the former Kingdom of Dahomey, with historical bas-relief walls narrating each king's reign and a museum built into the palace compound. Allow a guide (mandatory/included) to decode the bas-reliefs — the symbolism is unreadable without one.",
+    "Ouidah (Route des Esclaves, Door of No Return)": "Follow the 4km Route des Esclaves memorial walk from the old slave auction point to the beachside Door of No Return monument; Ouidah is also Benin's Vodun spiritual capital, so pair it with the Python Temple in town. Walk the route in the direction the enslaved were marched (town to sea) for the intended narrative arc.",
+    "Ganvié (stilt village on the lake)": "Known as the \"Venice of Africa,\" Ganvié was built entirely on stilts over Lake Nokoué by the Tofinu people, who fled inland Fon slave-raiders under a religious taboo that kept warriors off the water. Go by motorized pirogue in the early morning when the floating market and daily lake life are actually active, not just staged for tour boats.",
+    "Douala": "Cameroon's economic capital and main port — busier and more chaotic than scenic, worth the Marché des Fleurs and Doual'art's contemporary-art scene rather than lingering; most visitors treat it as a gateway and move on within a day.",
+    "Yaoundé": "Built across seven hills, calmer and greener than Douala, with the National Museum and Mont Fébé's viewpoint over the city as the main draws. One day covers it comfortably before continuing to Kribi.",
+    "Kribi (Chutes de la Lobé, black beaches)": "Beyond the Chutes de la Lobé, Kribi itself is a laid-back fishing town with black-sand beaches and fresh grilled-fish shacks along the shore. Take a pirogue right up to the base of the falls rather than viewing only from the clifftop — it's a different, better view.",
+    "São Tomé (roças/plantations, rainforest)": "Roça Agostinho Neto, once the country's largest cocoa plantation, is the most evocative of the island's decaying colonial-plantation architecture, and a guided hike inland into Obô Natural Park reaches Pico Cão Grande's dramatic volcanic spire. Allow a half-day for the roça, a full day if adding the rainforest hike.",
+    "Príncipe (remote, less visited)": "Far smaller and far less visited than São Tomé — reachable only by small plane, which naturally caps visitor numbers. Roça Sundy, now a boutique hotel, is where Arthur Eddington's 1919 eclipse observations confirmed Einstein's general relativity; worth the detour even for non-guests as a place to see, not just stay.",
+    "Loango National Park (surfing hippos, forest elephants on the beach)": "Beyond the beach hippos/elephants, a boat safari up the Ngové/Echira rivers to Akaka camp (about 60km from the main Loango camps) gives close river-bank encounters with forest elephants and buffalo, plus a chance to snorkel alongside elephants in shallow water — an experience unique to Loango. Akaka closes in the rainy season, so this only works in the dry-season window (roughly June-August/September) already best for the route.",
+    "Libreville": "Mostly a gateway city, but the Arboretum de Sibang (170 tree species, a quiet rainforest patch inside the city) and L'Église Saint-Michel de Nkembo (31 hand-carved wooden columns depicting Bible scenes) are worth a half-day before heading on to the parks. Note the arboretum keeps limited weekday hours (Mon-Fri, roughly 9am-3pm) and needs someone on-site to unlock the gate.",
+    "Pongara National Park (mangroves/rainforest, ≈45 min boat from Libreville)": "One of the world's most important leatherback turtle nesting beaches — roughly 3,500+ nests a year between October and April, peaking December-February — alongside its mangroves and rainforest. Time the visit for a night nesting/hatching walk in-season; outside that window it's a quieter mangrove-channel and beach visit instead.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -8949,11 +9010,11 @@ function rbBuildGhanaRoute() {
     {
       code: 'GH', name: 'Ghana', days: 15, budget: 713, lat: 5.1053, lng: -1.2466,
       destinations: [
-        { name: 'Cape Coast Castle', lat: 5.1053, lng: -1.2466 },
-        { name: 'Elmina Castle', lat: 5.0844, lng: -1.3499 },
-        { name: 'Kakum National Park (canopy walkway)', lat: 5.3500, lng: -1.3833 },
-        { name: 'Accra', lat: 5.6037, lng: -0.1870 },
-        { name: 'Volta Region (Wli Falls, Mount Afadjato)', lat: 6.8667, lng: 0.4667 },
+        { name: 'Cape Coast Castle', lat: 5.1053, lng: -1.2466, notes: "Served as the British Gold Coast headquarters and had the largest slave dungeons on this coast, with the \"Door of No Return\" opening straight onto the Atlantic; book the guided tour (included with the ticket) rather than walking it alone — the guides' testimony is the actual substance of the visit." },
+        { name: 'Elmina Castle', lat: 5.0844, lng: -1.3499, notes: "Built by the Portuguese in 1482, it's the oldest European-built structure in sub-Saharan Africa (originally a trading fort before becoming a slave-trade hub); the upper ramparts give the clearest view of how the fort, town, and fishing harbour physically interlock." },
+        { name: 'Kakum National Park (canopy walkway)', lat: 5.3500, lng: -1.3833, notes: "Ghana's rainforest canopy walkway runs about 350m across 7 treetop platforms up to 40m high. Go right at opening (visit before ~10am) — by mid-morning it fills with school groups and the wildlife-viewing window closes." },
+        { name: 'Accra', lat: 5.6037, lng: -0.1870, notes: "Ghana's capital is worth it for Jamestown's old lighthouse/fishing harbour and the sprawling Makola Market, not the modern city center. Go to Jamestown in the morning when the fishing canoes come in — it's the most photogenic and least staged part of the visit." },
+        { name: 'Volta Region (Wli Falls, Mount Afadjato)', lat: 6.8667, lng: 0.4667, notes: "Wli Falls is the highest waterfall in Ghana and in West Africa (~80m upper drop), and nearby Mount Afadjato is Ghana's highest peak — pair the falls' easy 45-min walk with Afadjato's steeper 1-2hr summit hike if time allows. Go in/just after rainy season (roughly April-October) for the falls at full flow." },
       ],
       notes: "Entry: direct KLM flight Amsterdam-Accra (±6h45; from ±€700-1,100 return; best period March/October). Price indication from 2026-08 web research, a snapshot. Cape Coast and Elmina Castle are the heaviest, most important slavery history sites of the entire expedition. Ghana has by far the richest program of the trip — hence the most time. Price verified (2026-07), holds up, including Cape Coast/Kakum entrance fees. Visa: e-visa mandatory (evisa.nia.gov.gh, ~$60-150 depending on processing speed, plus yellow fever certificate) — arrange in advance. Travel advisory: yellow; orange only along the northern border with Burkina Faso, not on this route.",
       transport_to_next: 'End of this route — direct KLM return flight Accra-Amsterdam.',
@@ -9317,9 +9378,9 @@ function rbBuildCapeVerdeRoute() {
     {
       code: 'CV', name: 'Cape Verde', days: 13, budget: 780, lat: 16.8901, lng: -24.9825,
       destinations: [
-        { name: 'Santo Antão (Ribeira Grande, Paúl Valley)', lat: 17.1833, lng: -25.0667 },
-        { name: 'São Vicente (Mindelo)', lat: 16.8901, lng: -24.9825 },
-        { name: 'Fogo (Pico do Fogo volcano, vineyards)', lat: 14.9481, lng: -24.3553 },
+        { name: 'Santo Antão (Ribeira Grande, Paúl Valley)', lat: 17.1833, lng: -25.0667, notes: "The classic point-to-point trail drops from the Cova crater rim through terraced sugarcane/coffee plots down to Paúl Valley's lush ravine floor — a single hike covers desert-dry crater and green valley in one descent. Arrange a one-way guide/transport in advance (it's not a loop), since you'll end up far from your starting point in Ribeira Grande." },
+        { name: 'São Vicente (Mindelo)', lat: 16.8901, lng: -24.9825, notes: "Mindelo itself is the destination here — Cesária Évora's hometown, with pastel Portuguese-colonial streets around the Mercado Municipal and a live-music scene built on her legacy (small bars host morna most evenings). If your dates allow it, February's Mindelo Carnival is Cape Verde's biggest and most colorful, rivaling Rio in miniature." },
+        { name: 'Fogo (Pico do Fogo volcano, vineyards)', lat: 14.9481, lng: -24.3553, notes: "The vineyards aren't just \"on volcanic soil\" incidentally — Chã das Caldeiras is a village literally inside the still-active caldera, where farmers grow grapes and manioc in the black ash right beside the 2014-15 lava flows that partly destroyed it. A licensed local guide is legally mandatory for the summit climb (no solo hikes) — start at 5-7am to beat the midday heat and reach the top before clouds roll in." },
       ],
       notes: "Entry: direct TUI fly flight Amsterdam-São Vicente/Mindelo (±7h10, Monday/Thursday, also Sunday in summer; from ±€280-360 return; best period August-October price-wise, December-May weather-wise). Price indication from 2026-08 web research, a snapshot. Deliberately different islands from an earlier visit (not Sal again) — Santo Antão for the dramatic hiking valleys, São Vicente for Mindelo's music culture, Fogo for the volcano climb and vineyards on volcanic soil. Between islands by ferry or Binter Cabo Verde flight via Praia. Price verified (2026-07), holds up. Mandatory online EASE registration ≥5 days in advance plus ~€30 airport security fee.",
       transport_to_next: 'End of this route — domestic flight Fogo-Praia, then return flight to Amsterdam.',
@@ -9338,11 +9399,11 @@ function rbBuildSenegambiaRoute() {
     {
       code: 'SN', name: 'Senegal', days: 13, budget: 618, lat: 14.7167, lng: -17.4677,
       destinations: [
-        { name: 'Dakar', lat: 14.7167, lng: -17.4677 },
-        { name: 'Île de Gorée', lat: 14.6672, lng: -17.3984 },
-        { name: 'Lompoul Desert', lat: 15.3833, lng: -16.7500 },
-        { name: 'Saint-Louis (UNESCO)', lat: 16.0179, lng: -16.4896 },
-        { name: 'Sine-Saloum Delta', lat: 13.9333, lng: -16.5333 },
+        { name: 'Dakar', lat: 14.7167, lng: -17.4677, notes: "Senegal's buzzing capital is worth a day for the African Renaissance Monument (Africa's tallest statue, with a viewing platform over the city) and the sprawling Sandaga/Kermel markets and Medina district's mbalax music scene. Go to the Monument in late afternoon for cooler climbing weather and better light for the skyline view." },
+        { name: 'Île de Gorée', lat: 14.6672, lng: -17.3984, notes: "Beyond its slavery-history significance, the island itself is a small, car-free maze of ochre-and-bougainvillea colonial houses that's genuinely pleasant just to wander, with a lively artisan/craft market near the pier. Take one of the first morning ferries from Dakar — the island gets crowded with day-trippers by midday and empties out again by late afternoon." },
+        { name: 'Lompoul Desert', lat: 15.3833, lng: -16.7500, notes: "A pocket of orange Sahara-like dunes only a few km across, small enough to fully explore but photogenic enough that it's used as a stand-in \"Sahara\" for shoots — the appeal is spending the night in a desert camp. Book a campement stay for sunset/sunrise over the dunes and clear stargazing, rather than a same-day pass-through." },
+        { name: 'Saint-Louis (UNESCO)', lat: 16.0179, lng: -16.4896, notes: "Beyond the colonial old town, Saint-Louis is the gateway to Djoudj National Bird Sanctuary, one of West Africa's most important wetland reserves (also UNESCO-listed) with huge pelican and flamingo colonies. Combine the two: a morning walk across the colorful Pont Faidherbe bridge, then a half-day pirogue trip into Djoudj (best November-April when migratory birds are present)." },
+        { name: 'Sine-Saloum Delta', lat: 13.9333, lng: -16.5333, notes: "Beyond the mangrove/bird ecosystem, the delta's standout single site is Fadiouth, a village built entirely on a mound of seashells and linked to the mainland by a footbridge, with a shared Muslim-Christian cemetery. Allot half a day: a pirogue ride through the mangrove channels plus a walking stop in Fadiouth." },
       ],
       notes: "Entry: flight Amsterdam-Dakar — TUI fly flies direct 2x/week in winter (October-mid-April); outside that 1 layover (e.g. via Brussels/Casablanca/Lisbon, ±10 hours total); from ±€500-900 return; best period December (dry season). Price indication from 2026-08 web research, a snapshot. Île de Gorée (slavery history, short boat ride from Dakar) and Saint-Louis (colonial capital) are the historical highlights; Sine-Saloum (mangroves, birds) and the Lompoul dunes give a completely different natural scenery within one country. Price verified (2026-07), holds up. Orange border strip along Gambia/Guinea-Bissau/Mali/Mauritania, incl. the Senegal-Gambia border zone itself — relevant for the crossing below.",
       transport_to_next: 'Bus/shared taxi overland to Gambia via the Senegambia Bridge (opened 2019) — the border area itself is orange, stay on the usual route.',
@@ -9350,10 +9411,10 @@ function rbBuildSenegambiaRoute() {
     {
       code: 'GM', name: 'Gambia', days: 6, budget: 240, lat: 13.4549, lng: -16.579,
       destinations: [
-        { name: 'Banjul', lat: 13.4549, lng: -16.5790 },
-        { name: 'Gambia River (boat cruise)', lat: 13.4500, lng: -15.5000 },
-        { name: 'Kunta Kinteh Island (UNESCO, slavery history)', lat: 13.2833, lng: -16.0500 },
-        { name: 'Makasutu Culture Forest', lat: 13.3667, lng: -16.6333 },
+        { name: 'Banjul', lat: 13.4549, lng: -16.5790, notes: "The Gambia's small, low-key capital is more a logistics stop than a highlight — Albert Market for everyday local life and the Arch 22 monument (with a rooftop city view) are the two things worth a quick look. Most visitors only pass through for a few hours before heading to Serekunda/the coast or upriver — don't plan more than half a day here." },
+        { name: 'Gambia River (boat cruise)', lat: 13.4500, lng: -15.5000, notes: "The river cruise's draw is wildlife, not scenery for its own sake: upriver toward Kuntaur/River Gambia National Park you can spot hippos, crocodiles, and — via the Chimpanzee Rehabilitation Project on the \"Baboon Islands\" — rescued chimps that often come down to the water's edge around mid-afternoon. Time the boat trip for early morning (hippos, birdlife) or ~3pm (chimps at the riverbank)." },
+        { name: 'Kunta Kinteh Island (UNESCO, slavery history)', lat: 13.2833, lng: -16.0500, notes: "Beyond its major slavery-heritage significance, the practical visit is a short pirogue crossing from Albreda/Juffureh village — the same village made famous as the ancestral home in Alex Haley's novel \"Roots.\" Pair the island visit with a short walk through Juffureh/Albreda itself rather than treating it as a boat-out-boat-back stop." },
+        { name: 'Makasutu Culture Forest', lat: 13.3667, lng: -16.6333, notes: "A private reserve of palm forest, savanna, and mangrove about an hour from Banjul, best known for a pirogue trip through mangrove channels plus guided walks past palm-wine tapping and a crafts centre. Full-day tours combine the forest/mangrove walk with a traditional drumming/dance demonstration — worth booking as a full day, not a quick stop, to get all of it." },
       ],
       notes: 'Small but with its own recognizable highlight: Kunta Kinteh Island (formerly James Island) is one of the most important slavery heritage sites in West Africa. Price verified (2026-07), holds up. Presidential election December 5, 2026 — possible unrest, check the current situation shortly before departure. Mandatory cash airport security fee (~$20/1,000 GMD p.p.) on entry/exit via Banjul.',
       transport_to_next: 'End of this route — return flight from Banjul to Amsterdam (winter season: TUI fly/Corendon nearly direct; outside that 1 layover, e.g. via Brussels/Casablanca/Lisbon).',
@@ -9372,9 +9433,9 @@ function rbBuildGabonRoute() {
     {
       code: 'GA', name: 'Gabon', days: 11, budget: 855, lat: -1.95, lng: 9.7,
       destinations: [
-        { name: 'Loango National Park (surfing hippos, forest elephants on the beach)', lat: -2.3667, lng: 9.5667 },
-        { name: 'Libreville', lat: 0.4162, lng: 9.4673 },
-        { name: 'Pongara National Park (mangroves/rainforest, ≈45 min boat from Libreville)', lat: 0.3833, lng: 9.3500 },
+        { name: 'Loango National Park (surfing hippos, forest elephants on the beach)', lat: -2.3667, lng: 9.5667, notes: "Beyond the beach hippos/elephants, a boat safari up the Ngové/Echira rivers to Akaka camp (about 60km from the main Loango camps) gives close river-bank encounters with forest elephants and buffalo, plus a chance to snorkel alongside elephants in shallow water — an experience unique to Loango. Akaka closes in the rainy season, so this only works in the dry-season window (roughly June-August/September) already best for the route." },
+        { name: 'Libreville', lat: 0.4162, lng: 9.4673, notes: "Mostly a gateway city, but the Arboretum de Sibang (170 tree species, a quiet rainforest patch inside the city) and L'Église Saint-Michel de Nkembo (31 hand-carved wooden columns depicting Bible scenes) are worth a half-day before heading on to the parks. Note the arboretum keeps limited weekday hours (Mon-Fri, roughly 9am-3pm) and needs someone on-site to unlock the gate." },
+        { name: 'Pongara National Park (mangroves/rainforest, ≈45 min boat from Libreville)', lat: 0.3833, lng: 9.3500, notes: "One of the world's most important leatherback turtle nesting beaches — roughly 3,500+ nests a year between October and April, peaking December-February — alongside its mangroves and rainforest. Time the visit for a night nesting/hatching walk in-season; outside that window it's a quieter mangrove-channel and beach visit instead." },
       ],
       notes: "Entry: flight Amsterdam-Libreville, with a layover via Paris or Addis Ababa (±11-16 hours total; from ±€1,180 return; best period June-September). Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days relative to the original count (9→11) — a short trip (≤10 days) with a connecting flight justifies an arrival day with no program. A deliberate, strong destination — Loango is one of the few places in the world where you see elephants and hippos on the beach. ⚠️ Price check (2026-07): the tightest/riskiest budget of the route — Loango logistics (guide/park fees/possible charter flight) can run up to $100-300+/day; €95/day is only achievable with budget transport and simple campsites. Visa: e-visa mandatory (evisa.dgdi.ga).",
       transport_to_next: 'End of this route — return flight from Libreville to Amsterdam (1 layover).',
@@ -9393,8 +9454,8 @@ function rbBuildSaoTomeRoute() {
     {
       code: 'ST', name: 'São Tomé and Príncipe', days: 11, budget: 653, lat: 0.3365, lng: 6.7273,
       destinations: [
-        { name: 'São Tomé (roças/plantations, rainforest)', lat: 0.3365, lng: 6.7273 },
-        { name: 'Príncipe (remote, less visited)', lat: 1.6167, lng: 7.4167 },
+        { name: 'São Tomé (roças/plantations, rainforest)', lat: 0.3365, lng: 6.7273, notes: "Roça Agostinho Neto, once the country's largest cocoa plantation, is the most evocative of the island's decaying colonial-plantation architecture, and a guided hike inland into Obô Natural Park reaches Pico Cão Grande's dramatic volcanic spire. Allow a half-day for the roça, a full day if adding the rainforest hike." },
+        { name: 'Príncipe (remote, less visited)', lat: 1.6167, lng: 7.4167, notes: "Far smaller and far less visited than São Tomé — reachable only by small plane, which naturally caps visitor numbers. Roça Sundy, now a boutique hotel, is where Arthur Eddington's 1919 eclipse observations confirmed Einstein's general relativity; worth the detour even for non-guests as a place to see, not just stay." },
       ],
       notes: 'Entry: flight Amsterdam-São Tomé via Lisbon (TAP Portugal, ±13 hours total; from ±€700-2,500 return, price fluctuates strongly; best period June-September, the dry "gravana" season). Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days relative to the original count (9→11) — a short trip (≤10 days) with a connecting flight justifies an arrival day with no program. Unique in the whole Travel Atlas: Portuguese colonial plantation history on a small, calm tropical island. Price verified (2026-07), holds up. Visa: not needed up to 15 days — so this 11-day route requires no visa. Elections July 19 and September 27, 2026 — avoid gatherings around those dates. Limited medical care, evacuation may be necessary — good travel insurance important.',
       transport_to_next: 'End of this route — return flight from São Tomé to Amsterdam via Lisbon.',
