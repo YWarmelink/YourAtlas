@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 211 / 741 signatures.**
+- **Done so far: 221 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -150,7 +150,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [ ] **ES** (4 dest): Palma (base), Valldemossa, Deià, Sóller — routes: Balearic Islands (7-10 days) 🏝️, Mallorca + Menorca (7-10 days) 🏝️
 - [ ] **ES** (2 dest): Ciutadella, Mahón — routes: Balearic Islands (7-10 days) 🏝️, Mallorca + Menorca (7-10 days) 🏝️
 - [ ] **ES** (3 dest): Seville (Alcázar & Cathedral), Córdoba (Mezquita), Granada (Alhambra) — routes: Portugal + Andalusia (10-14 days) 🕌, Portugal + Spain Roadtrip (14 days) 🚗
-- [ ] **FI** (4 dest): Helsinki, Rovaniemi, Inari, Lemmenjoki National Park — routes: Nordic Arctic Expedition ❄️, Scandinavia Overland 🚂
+- [x] **FI** (4 dest): Helsinki, Rovaniemi, Inari, Lemmenjoki National Park — routes: Nordic Arctic Expedition ❄️, Scandinavia Overland 🚂
 - [x] **FR** (3 dest): Bonifacio, Ajaccio, Bavella — routes: Corsica & Southern France ⛵, Mediterranean Civilizations Expedition 🏛️
 - [x] **FR** (4 dest): Marseille, Arles, Nîmes, Pont du Gard — routes: Corsica & Southern France ⛵, Mediterranean Civilizations Expedition 🏛️
 - [x] **FR** (8 dest): Saint-Malo, Dinan, Cap Fréhel, Côte de Granit Rose, Quimper, Pointe du Raz, Carnac (megaliths), Quiberon — routes: British Isles & Celtic Coast Expedition 🍀, Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖
@@ -164,7 +164,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **GB** (8 dest): Edinburgh, Cairngorms National Park, Glencoe, Glenfinnan Viaduct, Isle of Skye ⭐ (Old Man of Storr, Fairy Pools, Quiraing), Applecross Pass, North Coast 500 (gedeeltelijk, tot Ullapool), Loch Ness/Inverness — routes: British Isles & Celtic Coast Expedition 🍀, Scotland & Northern Ireland 🥃
 - [x] **GB** (4 dest): Belfast, Giant's Causeway, Causeway Coastal Route, Dark Hedges — routes: British Isles & Celtic Coast Expedition 🍀, Scotland & Northern Ireland 🥃
 - [x] **GG** (3 dest): St Peter Port, coastal walks, German occupation bunkers (WWII) — routes: British Isles & Celtic Coast Expedition 🍀, Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖
-- [ ] **GL** (6 dest): Nuuk, Inuit culture (Nuuk), Ilulissat, Icefjord (Ilulissat Icefjord), Disko Bay, Boat trips (e.g. Eqi Glacier) — routes: Greenland 🧊, Nordic Arctic Expedition ❄️
+- [x] **GL** (6 dest): Nuuk, Inuit culture (Nuuk), Ilulissat, Icefjord (Ilulissat Icefjord), Disko Bay, Boat trips (e.g. Eqi Glacier) — routes: Greenland 🧊, Nordic Arctic Expedition ❄️
 - [ ] **GR** (2 dest): Naxos (Chora), Portara — routes: Cyclades (5-7 days) 🏝️, Cyclades Island Hopping (7-10 days) 🏝️
 - [ ] **GR** (2 dest): Paros (Parikia), Naoussa — routes: Cyclades (5-7 days) 🏝️, Cyclades Island Hopping (7-10 days) 🏝️
 - [x] **HN** (6 dest): Puerto Cortés, Copán Ruinas, Lago de Yojoa, La Ceiba, Roatán, Tegucigalpa — routes: Central America Loop 🌋, Pan-American Grand Tour 🌎
@@ -205,12 +205,12 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **MX** (7 dest): Ciudad de México, Oaxaca, San Cristóbal de las Casas, Palenque, Mérida, Tulum, Bacalar — routes: Mexico 🌵, Pan-American Grand Tour 🌎
 - [x] **MY** (3 dest): Kuching, Bako National Park, Mulu Caves (Gunung Mulu NP) — routes: Eurasia Grand Tour 🌏, Southeast Asia Grand Loop 🛕
 - [x] **MY** (5 dest): Kota Kinabalu, Mount Kinabalu, Sepilok Orang-oetan Centre, Kinabatangan River, Semporna/Sipadan — routes: Eurasia Grand Tour 🌏, Southeast Asia Grand Loop 🛕
-- [ ] **NO** (5 dest): Narvik, Lofoten (Svolvær), Senja, Tromsø, North Cape (Nordkapp) — routes: Nordic Arctic Expedition ❄️, Scandinavia Overland 🚂
+- [x] **NO** (5 dest): Narvik, Lofoten (Svolvær), Senja, Tromsø, North Cape (Nordkapp) — routes: Nordic Arctic Expedition ❄️, Scandinavia Overland 🚂
 - [ ] **NP** (7 dest): Lumbini, Chitwan National Park, Pokhara, Annapurna Region, Kathmandu, Patan, Bhaktapur — routes: India & Himalaya Expedition 🏔️, Nepal 🏔️
 - [ ] **PT** (6 dest): Funchal (old town, Mercado dos Lavradores), Monte (cable car, Monte Palace Gardens), Porto Moniz (natural lava pools), Seixal, São Vicente, 25 Fontes / Caldeirão Verde levada walk — routes: Madeira (5-7 days) 🏝️, Madeira + Porto Santo (7-10 days) 🏝️
 - [ ] **PT** (3 dest): Ponta Delgada (town, harbour), Sete Cidades (crater lakes), Furnas (thermal springs, cozido) — routes: Azores Island Hopping (10-14 days) 🏝️, Azores: São Miguel + Terceira (7-10 days) 🏝️
 - [ ] **PT** (2 dest): Angra do Heroísmo (UNESCO old town), Algar do Carvão (lava cave) — routes: Azores Island Hopping (10-14 days) 🏝️, Azores: São Miguel + Terceira (7-10 days) 🏝️
-- [ ] **SE** (3 dest): Kiruna, Sami culture (Jukkasjärvi), Abisko National Park — routes: Nordic Arctic Expedition ❄️, Scandinavia Overland 🚂
+- [x] **SE** (3 dest): Kiruna, Sami culture (Jukkasjärvi), Abisko National Park — routes: Nordic Arctic Expedition ❄️, Scandinavia Overland 🚂
 - [x] **SG** (4 dest): Marina Bay, Chinatown, Sentosa, Gardens by the Bay — routes: Eurasia Grand Tour 🌏, Southeast Asia Grand Loop 🛕
 - [x] **SI** (1 dest): Bled — routes: Grand European Roadtrip (14-21 days) 🪣, Italy + Slovenia + Croatia (10-14 days) ⛵
 - [ ] **SM** (2 dest): City of San Marino (old town), Rocca Guaita — routes: San Marino + Emilia-Romagna (4 days) 🍝, San Marino + Tuscany (5 days) 🍷
@@ -331,8 +331,8 @@ Sorted alphabetically by country code.
 - [ ] **DK** (4 dest): Copenhagen (Nyhavn), Roskilde (Viking Ship Museum), Louisiana Museum (Humlebæk), Møns Klint — routes: Copenhagen + Zealand (5 days) 🖼️
 - [ ] **DK** (4 dest): Copenhagen (Nyhavn), Odense (H.C. Andersen House), LEGO House (Billund), Aarhus (ARoS Art Museum) — routes: Denmark (6 days) 🧱
 - [ ] **DK** (3 dest): Copenhagen (Nyhavn), Roskilde (Viking Ship Museum), Louisiana Museum (Humlebæk) — routes: Denmark + South Sweden (9 days) 🌉
-- [ ] **DK** (2 dest): Copenhagen (Nyhavn), Tivoli Gardens — routes: Denmark + Sweden + Norway Overland (12 days) 🌉
-- [ ] **DK** (4 dest): Nyhavn, Tivoli Gardens, Christiania, Torvehallerne — routes: Nordic Arctic Expedition ❄️
+- [x] **DK** (2 dest): Copenhagen (Nyhavn), Tivoli Gardens — routes: Denmark + Sweden + Norway Overland (12 days) 🌉
+- [x] **DK** (4 dest): Nyhavn, Tivoli Gardens, Christiania, Torvehallerne — routes: Nordic Arctic Expedition ❄️
 - [x] **DK** (1 dest): Copenhagen (Nyhavn) — routes: Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️
 - [ ] **EE** (3 dest): Tallinn (Old Town), Lahemaa National Park, Kuressaare Castle (Saaremaa) — routes: Baltic States Roadtrip (10-14 days) 🚗
 - [ ] **EE** (4 dest): Tallinn (Old Town), Lahemaa National Park, Kuressaare Castle (Saaremaa), Muhu-Virtsu ferry link — routes: Estonia (5-7 days) 🏰
@@ -379,7 +379,7 @@ Sorted alphabetically by country code.
 - [ ] **FI** (2 dest): Mariehamn, Sund (Kastelholm Castle) — routes: Åland (5 days) 🚲
 - [ ] **FO** (4 dest): Tórshavn, Múlafossur / Gásadalur, Saksun, Vestmanna bird cliffs boat tour — routes: Faroe Islands (6 days) 🐦
 - [ ] **FO** (2 dest): Tórshavn, Vestmanna bird cliffs boat tour — routes: Faroe Islands + Iceland (9 days) ⛴️
-- [ ] **FO** (5 dest): Tórshavn, Saksun, Gjógv, Vestmanna Cliffs, Trælanípa & Lake Sørvágsvatn hike — routes: Nordic Arctic Expedition ❄️
+- [x] **FO** (5 dest): Tórshavn, Saksun, Gjógv, Vestmanna Cliffs, Trælanípa & Lake Sørvágsvatn hike — routes: Nordic Arctic Expedition ❄️
 - [ ] **FR** (1 dest): Chamonix (Mont Blanc) — routes: Alpine Roadtrip (14 days) 🏕️
 - [ ] **FR** (8 dest): Strasbourg (Petite France, cathedral + astronomical clock), Colmar (base — old town, Little Venice, Unterlinden), Riquewihr, Ribeauvillé, Kaysersberg, Haut-Koenigsbourg Castle (detour), Eguisheim (early, before the tour buses), Turckheim — routes: Alsace (4 days) 🥐
 - [ ] **FR** (4 dest): Ax-les-Thermes (thermal baths), Foix (medieval castle), Tarascon-sur-Ariège, Grotte de Niaux (prehistoric cave) — routes: Andorra + French Pyrenees: Ariège (6 days) ♨️
@@ -497,7 +497,7 @@ Sorted alphabetically by country code.
 - [ ] **IS** (9 dest): Reykjavík, Vík í Mýrdal, Jökulsárlón Glacier Lagoon, Egilsstaðir / Seyðisfjörður, Mývatn / Akureyri / Húsavík, Westfjords (Ísafjörður), Dynjandi waterfall, Landmannalaugar (highland alternative), Þórsmörk (highland alternative) — routes: Iceland Extended (14 days) 🗺️
 - [ ] **IS** (9 dest): Reykjavík, Vík í Mýrdal, Jökulsárlón Glacier Lagoon, Höfn, Egilsstaðir, Seyðisfjörður, Mývatn, Akureyri, Húsavík — routes: Iceland Ring Road (12 days) 🛣️
 - [ ] **IS** (8 dest): Reykjavík, Golden Circle (Þingvellir/Geysir/Gullfoss), Seljalandsfoss, Skógafoss, Reynisfjara black beach / Vík í Mýrdal, Jökulsárlón Glacier Lagoon, Diamond Beach, Höfn — routes: Iceland South Coast (9 days) 🧊
-- [ ] **IS** (7 dest): Reykjavik, Golden Circle (Þingvellir), South Coast (Vík í Mýrdal), Vatnajökull, Jökulsárlón, Akureyri, Snæfellsnes — routes: Nordic Arctic Expedition ❄️
+- [x] **IS** (7 dest): Reykjavik, Golden Circle (Þingvellir), South Coast (Vík í Mýrdal), Vatnajökull, Jökulsárlón, Akureyri, Snæfellsnes — routes: Nordic Arctic Expedition ❄️
 - [ ] **IS** (8 dest): Reykjavík, Þingvellir, Geysir, Gullfoss, Seljalandsfoss, Skógafoss, Reynisfjara black beach, Vík í Mýrdal — routes: South Iceland (6 days) 🌊
 - [ ] **IT** (2 dest): Cortina d'Ampezzo, Tre Cime di Lavaredo — routes: Alpine Roadtrip (14 days) 🏕️
 - [ ] **IT** (2 dest): Sorrento, Amalfi Coast (Positano) — routes: Campania + Puglia (9 days) 🧭
@@ -641,7 +641,7 @@ Sorted alphabetically by country code.
 - [ ] **NO** (7 dest): Oslo, Rjukan / Telemark, Kristiansand (Sørlandet coast), Bergen, Sognefjord / Geirangerfjord, Ålesund, Trondheim (optional) — routes: South & Central Norway (14 days) 🗺️
 - [ ] **NO** (5 dest): Oslo, Rjukan, Telemark Canal boat (Dalen), Kristiansand, Mandal — routes: South Norway (9 days) 🏞️
 - [ ] **NO** (5 dest): Longyearbyen, Svalbard Museum, Nordpolet, Isfjorden boat tour (summer), Pyramiden (summer boat destination) — routes: Svalbard (Longyearbyen) (6 days) 🌌
-- [ ] **NO** (2 dest): Narvik, Lofoten (Svolvær) — routes: Sweden + Norway (12 days) 🌉
+- [x] **NO** (2 dest): Narvik, Lofoten (Svolvær) — routes: Sweden + Norway (12 days) 🌉
 - [ ] **PE** (1 dest): Lima (arrival, transit only) — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
 - [ ] **PE** (1 dest): Cusco (Sacsayhuamán, Qorikancha) — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
 - [ ] **PE** (3 dest): Pisac (market), Ollantaytambo, Chinchero / Moray / Salineras — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
@@ -718,7 +718,7 @@ Sorted alphabetically by country code.
 - [ ] **SI** (3 dest): Ljubljana, Bled, Piran / Slovenian coast — routes: Slovenia + Italy (9 days) 🍝
 - [ ] **SI** (6 dest): Ljubljana, Bled, Bohinj, Vršič Pass, Bovec / Soča Valley, Kranjska Gora — routes: Slovenia Alpine Loop (6 days) 🏔️
 - [ ] **SI** (4 dest): Ljubljana, Bled / Bohinj, Vršič Pass / Soča Valley, Piran — routes: Slovenia Roadtrip (9 days) 🗺️
-- [ ] **SJ** (3 dest): Longyearbyen, Svalbard Museum, Pyramiden (day trip by boat) — routes: Nordic Arctic Expedition ❄️
+- [x] **SJ** (3 dest): Longyearbyen, Svalbard Museum, Pyramiden (day trip by boat) — routes: Nordic Arctic Expedition ❄️
 - [ ] **SK** (4 dest): Bratislava, Poprad / Tatranská Lomnica, Štrbské Pleso / Hrebienok, Lomnický Štít cable car (optional) — routes: Bratislava + High Tatras (5 days) 🏔️
 - [x] **SK** (1 dest): Bratislava — routes: Central Europe Roadtrip (14 days) 🚂
 - [x] **SK** (4 dest): Bratislava, High Tatras, Slovenský Raj, Spiš Castle — routes: Central European Grand Roadtrip 🚗
@@ -768,12 +768,10 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| Nordic Arctic Expedition ❄️ | 37/37 | 4 |
 | Cyclades Island Hopping (7-10 days) 🏝️ | 10/10 | 4 |
 | Sicily Roadtrip (7-10 days) 🏝️ | 7/8 | 4 |
 | Cyclades (5-7 days) 🏝️ | 6/6 | 4 |
 | India & Himalaya Expedition 🏔️ | 22/22 | 3 |
-| Scandinavia Overland 🚂 | 12/12 | 3 |
 | Sicily (9 days) 🍋 | 6/9 | 3 |
 | Czechia + Austria + Hungary (10-14 days) 🏛️ | 5/5 | 3 |
 | Sicily East (4-5 days) 🏝️ | 4/4 | 3 |
@@ -805,9 +803,11 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Madeira + Porto Santo (7-10 days) 🏝️ | 7/7 | 1 |
 | Canary Islands (10-14 days) 🏝️ | 7/7 | 1 |
 | Poland + Slovakia + Hungary (10-14 days) 🥾 | 7/7 | 1 |
-| Greenland 🧊 | 6/6 | 1 |
 | Bhutan 🐉 | 6/6 | 1 |
 | Germany: Berlin + Dresden + Bavaria (9 days) 🚂 | 6/6 | 1 |
-| ... 290 more routes with open destinations ... | | |
+| Bavaria + Alps + Berchtesgaden (6 days) ⛰️ | 6/6 | 1 |
+| Tuscany (6 days) 🍇 | 6/7 | 1 |
+| Campania + Puglia (9 days) 🧭 | 6/8 | 1 |
+| ... 287 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

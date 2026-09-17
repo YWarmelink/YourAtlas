@@ -12,6 +12,15 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 16 — Nordic Arctic Expedition (2026-09-17)** — 8 legs, 37
+  destinations, researched as 3 parallel sub-batches matching the route's own region grouping
+  (Finland/Sweden/Norway/Svalbard, Denmark/Faroe Islands, Iceland/Greenland). All 37 inserted
+  cleanly first try. Same generic name-matching migration (`rbMigrateNordicArcticDestinationNotes()`)
+  — 12 routes confirmed touched in the live simulation (this route's own standalone splits —
+  Faroe Islands, Greenland — plus companion routes Faroe Islands + Iceland, Reykjavík + Golden
+  Circle, Scandinavia Overland). App-wide total: 2321 destination-slots filled across 289 routes.
+  221/741 signatures done.
+
 - **Per-destination notes, batch 15 — Central European Grand Roadtrip (2026-09-17)** — 14 legs,
   65 destinations (63 newly researched, Bled/Zagreb already covered by earlier batches),
   researched as 4 parallel sub-batches matching the route's own region grouping (Alpine

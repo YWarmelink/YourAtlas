@@ -385,57 +385,57 @@ const RB_EXPEDITION_CONTENT = {
   },
   "Nordic Arctic Expedition ❄️": {
     FI: { days: 8, budget: 1200, lat: 66.5039, lng: 25.7294, destinations: [
-      { name: 'Helsinki', lat: 60.1699, lng: 24.9384 },
-      { name: 'Rovaniemi', lat: 66.5039, lng: 25.7294 },
-      { name: 'Inari', lat: 68.9056, lng: 27.0286 },
-      { name: 'Lemmenjoki National Park', lat: 68.7333, lng: 25.7833 },
+      { name: 'Helsinki', lat: 60.1699, lng: 24.9384, notes: "The sea fortress of Suomenlinna (UNESCO-listed, spread across several islands) and the compact Design District are the two things worth carving out time for. Suomenlinna's ferry is covered by a standard Helsinki city transport ticket, so no separate fare is needed." },
+      { name: 'Rovaniemi', lat: 66.5039, lng: 25.7294, notes: "Straddles the Arctic Circle line itself at Santa Claus Village, and the Arktikum museum (partly built underground) is a genuinely good primer on Arctic science, Sámi culture and the aurora before heading further north. Santa Claus Village draws heavy tour-bus traffic — visiting early morning avoids the worst of the crowds." },
+      { name: 'Inari', lat: 68.9056, lng: 27.0286, notes: "The Siida museum (Sámi Museum and Nature Centre) is the single best introduction to Finnish Sámi culture and Arctic ecology on the whole route. Lake Inari boat trips out to the sacred island of Ukonsaari only run in the ice-free summer months." },
+      { name: 'Lemmenjoki National Park', lat: 68.7333, lng: 25.7833, notes: "Finland's largest national park still has an active recreational gold-panning tradition dating back to a 1940s gold rush, with old prospector cabins deep in the wilderness. The historic gold-panning area around Kultahamina is a multi-day trek on foot, but a river boat-taxi from the Njurgalahti trailhead reaches it in a few hours for those without days to spare." },
     ], transport_to_next: "Back to Rovaniemi (no direct connection from Inari/Lemmenjoki), then train or bus Rovaniemi–Kiruna via the Finnish/Swedish coast (Kemi-Haparanda-Boden), 8-9.5 hours. With your own rental car, Inari-Kaaresuvanto-Karesuando-Kiruna (~6-7h) is faster and avoids the return to Rovaniemi.", notes: "Price verified (2026-07), correct. Route logic (2026-08, search-confirmed): there is no bus/train connection from Inari/Lemmenjoki directly to Sweden — the only public-transport option goes back via Rovaniemi, and even Rovaniemi-Kiruna by bus/train is itself already a detour via the coast (8-9.5h) compared to the car (4h16m direct)." },
     SE: { days: 6, budget: 950, lat: 67.8558, lng: 20.2253, destinations: [
-      { name: 'Kiruna', lat: 67.8558, lng: 20.2253 },
-      { name: 'Sami culture (Jukkasjärvi)', lat: 67.8556, lng: 20.5928 },
-      { name: 'Abisko National Park', lat: 68.3558, lng: 18.7883 },
+      { name: 'Kiruna', lat: 67.8558, lng: 20.2253, notes: "Sweden's northernmost town is being physically relocated a few kilometres east because the LKAB iron-ore mine beneath it is causing ground subsidence — an unusual \"moving city\" story worth a stop in itself, alongside the mine itself. LKAB's underground mine tours are popular and capacity-limited, so book ahead rather than assuming a same-day slot." },
+      { name: 'Sami culture (Jukkasjärvi)', lat: 67.8556, lng: 20.5928, notes: "Home to the original ICEHOTEL, rebuilt from scratch each winter out of Torne River ice and snow, with Sámi-linked reindeer and cultural activities offered alongside it. It only exists roughly December-April; outside that window, the permanent ICEHOTEL 365 wing (climate-controlled) is the year-round alternative." },
+      { name: 'Abisko National Park', lat: 68.3558, lng: 18.7883, notes: "Sits in a rare mountain \"blue hole\" microclimate that keeps skies clearer than the surrounding region, making it one of the most reliable aurora-viewing spots in the world, with the Aurora Sky Station chairlift up Nuolja putting you above valley cloud. The chairlift only runs in the dark-season months and has limited capacity, so book a slot in advance rather than turning up." },
     ], transport_to_next: "Train Kiruna–Narvik (Malmbanan/Ofotbanen, overland, spectacular mountain route)", notes: "Price verified (2026-07), correct." },
     NO: { days: 15, budget: 2250, lat: 69.6492, lng: 18.9553, destinations: [
-      { name: 'Narvik', lat: 68.4384, lng: 17.4272 },
-      { name: 'Lofoten (Svolvær)', lat: 68.2341, lng: 14.5686 },
-      { name: 'Senja', lat: 69.3167, lng: 17.5333 },
-      { name: 'Tromsø', lat: 69.6492, lng: 18.9553 },
-      { name: 'North Cape (Nordkapp)', lat: 71.171, lng: 25.7858 },
+      { name: 'Narvik', lat: 68.4384, lng: 17.4272, notes: "Beyond the scenic rail line already noted, Narvik was the site of major WWII naval and land battles for control of its ice-free ore port, covered in depth at the Narvik War Museum. The Fjellheisen cable car climbs above town for wide fjord views and is also a solid aurora-viewing spot when skies are clear." },
+      { name: 'Lofoten (Svolvær)', lat: 68.2341, lng: 14.5686, notes: "Jagged peaks rising straight out of the sea around traditional rorbuer fishing cabins and cod-drying racks define the look of Lofoten, and Svolvær is the natural base for it. The Svolværgeita (\"goat\") peak and Fløya ridge above town are the classic hikes, but the goat's summit leap is for experienced climbers only — the ridge trail is the accessible version." },
+      { name: 'Senja', lat: 69.3167, lng: 17.5333, notes: "Norway's second-largest island offers scenery as dramatic as Lofoten's with far fewer visitors, strung along the Senja National Tourist Route. The Bergsbotn viewpoint platform and the Segla/Hesten ridge hike are the two standout stops if time only allows a partial drive." },
+      { name: 'Tromsø', lat: 69.6492, lng: 18.9553, notes: "Billed as the \"Gateway to the Arctic,\" it's the best-equipped base on the route for whale-watching boats and aurora tours, with its own cable car (Fjellheisen) up Storsteinen for a quick above-town view. Going up Fjellheisen on a clear night gets you above the town's light pollution without needing a tour." },
+      { name: 'North Cape (Nordkapp)', lat: 71.171, lng: 25.7858, notes: "The dramatic 300m cliff plateau is marketed as mainland Europe's northernmost point (technically Knivskjellodden, a nearby headland, edges it out, but has no road access). Weather here is fickle — fog or low cloud often obscures the view, so build in flexibility to visit on a clearer day if the itinerary allows rather than treating it as a fixed one-shot stop." },
     ], transport_to_next: "Short flight Honningsvåg (HVG, 31 km from Nordkapp) to Tromsø (Widerøe, ~1h05) — avoids the ~540 km drive back — followed by a connecting flight Tromsø-Longyearbyen (the only realistic connection to Svalbard, Alta has no LYR flight).", notes: "Price verified (2026-07), correct. Route logic (2026-08, search-confirmed): Longyearbyen only has flights from Oslo and Tromsø — flying back Honningsvåg-Tromsø instead of driving back saves ~6 hours." },
     SJ: { days: 4, budget: 900, lat: 78.2232, lng: 15.6469, destinations: [
-      { name: 'Longyearbyen', lat: 78.2232, lng: 15.6469 },
-      { name: 'Svalbard Museum', lat: 78.2199, lng: 15.6259 },
-      { name: 'Pyramiden (day trip by boat)', lat: 78.657, lng: 16.3606 },
+      { name: 'Longyearbyen', lat: 78.2232, lng: 15.6469, notes: "The world's largest settlement this far north, built on a coal-mining economy now shifting toward tourism and Arctic research; the Svalbard Global Seed Vault sits on a hillside just outside town and is visible from outside (not open to visitors). Beyond the block-level guide requirement: even short walks just past the town's signposted boundary count as \"outside town\" for polar bear risk, not just longer excursions." },
+      { name: 'Svalbard Museum', lat: 78.2199, lng: 15.6259, notes: "A compact but well-curated overview of whaling, trapping, coal-mining history and polar bear/Arctic wildlife exhibits, located right in Longyearbyen. Worth about an hour, and best used as an orientation stop early in the Svalbard stay before heading out on excursions." },
+      { name: 'Pyramiden (day trip by boat)', lat: 78.657, lng: 16.3606, notes: "An abandoned Soviet-era coal-mining settlement preserved almost intact by the cold, complete with the world's northernmost Lenin bust — an eerie time-capsule of Soviet Arctic life, still Russian-operated. Full-day (or overnight) boat tours from Longyearbyen operate roughly late May-September once Isfjorden/Billefjorden clears of ice, and should be booked ahead as departures are limited to specific days per week." },
     ], transport_to_next: "Flight Longyearbyen–Oslo–Copenhagen (SAS/Norwegian, no direct connection, ~4h10-4h15 total)", notes: "Shortened (2026-08, at Youri's request): from 8 days/€3,725 (multi-day guided boat expedition) to 4 days/€900 — just Longyearbyen itself with 1-2 day tours (e.g. the boat trip to the abandoned mining town of Pyramiden, or a snowmobile/dog-sledding trip towards Barentsburg) instead of a multi-day expedition boat. Outside Longyearbyen an armed guide (polar bears) is mandatory — already included in the day tours." },
     DK: { days: 3, budget: 450, lat: 55.6761, lng: 12.5683, destinations: [
-      { name: 'Nyhavn', lat: 55.6798, lng: 12.591 },
-      { name: 'Tivoli Gardens', lat: 55.6736, lng: 12.5681 },
-      { name: 'Christiania', lat: 55.6739, lng: 12.5975 },
-      { name: 'Torvehallerne', lat: 55.6838, lng: 12.5713 },
+      { name: 'Nyhavn', lat: 55.6798, lng: 12.591, notes: "17th-century harbor lined with colorful gabled townhouses and canal-front cafes; walk a block or two back from the waterfront for a meal at local prices, since the restaurants sitting directly on the canal charge a steep premium for the view." },
+      { name: 'Tivoli Gardens', lat: 55.6736, lng: 12.5681, notes: "One of the world's oldest amusement parks (opened 1843) and a direct inspiration for Disneyland, with gardens and rides that are especially atmospheric lit up after dark. It runs seasonally, not year-round (2026: open ~27 March-20 September, plus separate Halloween and Christmas windows), so check its season calendar before planning around it." },
+      { name: 'Christiania', lat: 55.6739, lng: 12.5975, notes: "A self-governing \"freetown\" since 1971, known for colorful murals and an alternative, car-free community feel; residents themselves shut down the once-notorious open-air cannabis market on Pusher Street in 2024, so the area is calmer than its old reputation suggests, though photography is still restricted/frowned on in parts of the settlement." },
+      { name: 'Torvehallerne', lat: 55.6838, lng: 12.5713, notes: "Copenhagen's modern food hall (two glass pavilions) with New Nordic snack stalls, artisan produce, and smørrebrød; go for an early weekday lunch to beat the midday crowd for a seat." },
     ], transport_to_next: "Flight Copenhagen–Vágar (Faroe Islands) with Atlantic Airways, ~2h15, at least 2x per day year-round (up to 4x/day in summer) — more flexible than the earlier option via Oslo (Atlantic Airways RC435, only 3x/week).", notes: "Addition (2026-08, at Youri's request — not yet visited, although Oslo and Stockholm have already been seen). Copenhagen is one of the pricier European capitals; the daily budget includes private-room accommodation, mixed restaurant/street food, and 1 paid attraction per day. Practical choice: this was already the connection point towards the Faroe Islands (previously Longyearbyen-Oslo-Copenhagen-Vágar as pure transit) — now as a fully-fledged stop with its own days." },
     FO: { days: 7, budget: 1675, lat: 62.0107, lng: -6.7741, destinations: [
-      { name: 'Tórshavn', lat: 62.0107, lng: -6.7741 },
-      { name: 'Saksun', lat: 62.2667, lng: -7.2167 },
-      { name: 'Gjógv', lat: 62.3167, lng: -6.8 },
-      { name: 'Vestmanna Cliffs', lat: 62.1553, lng: -7.1668 },
-      { name: 'Trælanípa & Lake Sørvágsvatn hike', lat: 62.0977, lng: -7.2967 },
+      { name: 'Tórshavn', lat: 62.0107, lng: -6.7741, notes: "The Faroese capital is compact enough to see on foot in half a day, centered on Tinganes, the turf-roofed peninsula that has hosted the islands' parliament since Viking times." },
+      { name: 'Saksun', lat: 62.2667, lng: -7.2167, notes: "Tiny hamlet around a turf-roofed church overlooking Pollurin, a tidal lagoon that was once a harbor before a storm sealed it off with sand. The final approach crosses private farmland, so park at the village and be prepared for a posted access/parking fee." },
+      { name: 'Gjógv', lat: 62.3167, lng: -6.8, notes: "Named for the natural sea-filled gorge that cuts through the village to a small boat harbor; walk up along the gorge's edge for the view down to where fishing boats are winched up from the water." },
+      { name: 'Vestmanna Cliffs', lat: 62.1553, lng: -7.1668, notes: "Nearly 700m sea cliffs toured by boat, sailing into narrow grottos carved into the rock beneath large seabird colonies (puffins, guillemots, kittiwakes). Puffins are only present during the May-September tour season, and sailings are weather-dependent, so book ahead and time the visit to that window." },
+      { name: 'Trælanípa & Lake Sørvágsvatn hike', lat: 62.0977, lng: -7.2967, notes: "Famous for the optical illusion where the lake appears to float above the ocean, seen from the Trælanípa cliff edge at the end of a roughly 5-6km round-trip walk. The trail crosses private land and requires paying an entry fee at the trailhead reception (~200 DKK self-guided, ~450 DKK with a guide) before starting." },
     ], transport_to_next: "Short flight Vágar–Reykjavik (or seasonal Smyril Line ferry, summer only)", notes: "Price verified (2026-07), correct. The Faroe Islands are not EU/Schengen (though part of the Nordic Passport Union) — a regular passport/ID is needed on arrival." },
     IS: { days: 14, budget: 2800, lat: 64.1466, lng: -21.9426, destinations: [
-      { name: 'Reykjavik', lat: 64.1466, lng: -21.9426 },
-      { name: 'Golden Circle (Þingvellir)', lat: 64.2559, lng: -21.131 },
-      { name: 'South Coast (Vík í Mýrdal)', lat: 63.4186, lng: -19.006 },
-      { name: 'Vatnajökull', lat: 64.0165, lng: -16.9787 },
-      { name: 'Jökulsárlón', lat: 64.0784, lng: -16.23 },
-      { name: 'Akureyri', lat: 65.6835, lng: -18.1002 },
-      { name: 'Snæfellsnes', lat: 64.9257, lng: -23.3072 },
+      { name: 'Reykjavik', lat: 64.1466, lng: -21.9426, notes: "Iceland's small, walkable capital — Hallgrímskirkja's tower and the Old Harbour (departure point for whale-watching and Golden Circle day tours) are the main draws inside the city itself; budget half a day, not more." },
+      { name: 'Golden Circle (Þingvellir)', lat: 64.2559, lng: -21.131, notes: "Þingvellir is where the Althing, one of the world's oldest parliaments, met from 930 AD, and it sits directly on the rift between the North American and Eurasian tectonic plates — walk the visible fissure, or book ahead to snorkel/dive it at Silfra, one of the clearest waters on earth." },
+      { name: 'South Coast (Vík í Mýrdal)', lat: 63.4186, lng: -19.006, notes: "Vík is the base for Reynisfjara's black-sand beach, basalt columns and the Reynisdrangar sea stacks just offshore; stay well back from the water here — the sneaker waves are strong enough to have caused fatalities." },
+      { name: 'Vatnajökull', lat: 64.0165, lng: -16.9787, notes: "Europe's largest glacier by volume, and the main place in Iceland to do a guided glacier hike or visit a natural blue ice cave; the ice caves are only safely accessible Nov-March, so a summer visit means the hike/hiking trails instead." },
+      { name: 'Jökulsárlón', lat: 64.0784, lng: -16.23, notes: "A lagoon of icebergs calving off Breiðamerkurjökull, often with seals hauled out on the ice; cross the road afterward to Diamond Beach, where chunks of that same ice wash up on black sand — easy to skip if you don't know it's there." },
+      { name: 'Akureyri', lat: 65.6835, lng: -18.1002, notes: "The \"capital of the north\" and the practical base for Mývatn's geothermal area and whale-watching in Eyjafjörður, which has one of Iceland's highest sighting rates thanks to the nutrient-rich fjord water." },
+      { name: 'Snæfellsnes', lat: 64.9257, lng: -23.3072, notes: "Often called \"Iceland in miniature\" for packing glacier, volcano (Snæfellsjökull, the setting of Jules Verne's Journey to the Center of the Earth) and coastline into one peninsula; Kirkjufell mountain with Kirkjufellsfoss waterfall in the foreground is the classic shot, best near sunrise when it's quieter." },
     ], transport_to_next: "Back to Reykjavik (Ring Road, return the rental car), then a direct flight Reykjavik (Keflavík)–Nuuk with Icelandair/Air Greenland (year-round) — no ferry connection possible", notes: "Price verified (2026-07), correct (incl. rental car, virtually essential). Yellow travel advisory for the Reykjanes peninsula due to ongoing volcanic activity near Grindavík. Route logic (2026-08, search-confirmed): order reversed — Snæfellsnes used to sit between Jökulsárlón and Akureyri (an illogical zigzag back to the west); now the last stop before returning to Reykjavik, as any standard Ring Road plan does." },
     GL: { days: 10, budget: 3725, lat: 69.2198, lng: -51.1, destinations: [
-      { name: 'Nuuk', lat: 64.1836, lng: -51.7214 },
-      { name: 'Inuit culture (Nuuk)', lat: 64.1836, lng: -51.7214 },
-      { name: 'Ilulissat', lat: 69.2198, lng: -51.1 },
-      { name: 'Icefjord (Ilulissat Icefjord)', lat: 69.1833, lng: -51.05 },
-      { name: 'Disko Bay', lat: 69.25, lng: -53.0 },
-      { name: 'Boat trips (e.g. Eqi Glacier)', lat: 69.8167, lng: -50.3167 },
+      { name: 'Nuuk', lat: 64.1836, lng: -51.7214, notes: "Greenland's small, colorful capital, worth a wander through the old colonial harbour area; a fjord boat trip from town is the easiest way to see icebergs and possibly whales without going further north." },
+      { name: 'Inuit culture (Nuuk)', lat: 64.1836, lng: -51.7214, notes: "The Greenland National Museum here holds the Qilakitsoq mummies, remarkably preserved 15th-century Inuit remains — the single most worthwhile exhibit if you only have time for one museum in Nuuk." },
+      { name: 'Ilulissat', lat: 69.2198, lng: -51.1, notes: "Greenland's third-largest town and the main gateway to the Icefjord, with more sled dogs than people living there — the town itself is walkable in under an hour, so most time here is spent on Icefjord/boat activities rather than in town." },
+      { name: 'Icefjord (Ilulissat Icefjord)', lat: 69.1833, lng: -51.05, notes: "A UNESCO World Heritage site where the Sermeq Kujalleq glacier — one of the fastest-moving and most productive outside Antarctica — calves the icebergs that drift through Disko Bay; free marked hiking trails from Ilulissat (roughly 1.5-3 hours) reach viewpoints without needing a boat." },
+      { name: 'Disko Bay', lat: 69.25, lng: -53.0, notes: "The open bay where Icefjord icebergs end up, often towering and dense enough to look like a floating ice field; best appreciated from a small boat tour, which also has good odds of humpback whale sightings." },
+      { name: 'Boat trips (e.g. Eqi Glacier)', lat: 69.8167, lng: -50.3167, notes: "Day or overnight boat excursions from Ilulissat to the Eqi Glacier (\"calving glacier\") let you watch active ice-calving events from a safe distance on the water. Note there's some sound-delay — the crack/roar arrives a few seconds after you see the ice fall, so it can catch first-timers off guard." },
     ], transport_to_next: "End of the expedition — direct flight back from Ilulissat to Reykjavik with Icelandair (seasonal, roughly June-September; from late October 2026 also year-round direct from Copenhagen with Air Greenland)", notes: "Price verified (2026-07), tight but workable — domestic flights between towns (Air Greenland, near-monopoly) are a structural cost, not an incidental one, including the Nuuk-Ilulissat flight itself (no road connection between Greenlandic towns). Not EU/Schengen (though part of the Kingdom of Denmark) — passport check on arrival/departure, EHIC not valid. Route logic (2026-08, search-confirmed): entry/exit corrected — entry is Nuuk (year-round direct flight from Reykjavik), exit is Ilulissat (seasonal direct flight back, no more detour via Nuuk)." },
   },
   "Patagonia & Antarctica Expedition 🧊": {
@@ -6499,7 +6499,7 @@ function rbMigrateFaroeHikingDestination() {
     if (!block || !Array.isArray(block.destinations)) return;
     const idx = block.destinations.findIndex(d => typeof d === 'string');
     if (idx === -1) return;
-    block.destinations.splice(idx, 1, { name: 'Trælanípa & Lake Sørvágsvatn hike', lat: 62.0977, lng: -7.2967 });
+    block.destinations.splice(idx, 1, { name: 'Trælanípa & Lake Sørvágsvatn hike', lat: 62.0977, lng: -7.2967, notes: "Famous for the optical illusion where the lake appears to float above the ocean, seen from the Trælanípa cliff edge at the end of a roughly 5-6km round-trip walk. The trail crosses private land and requires paying an entry fee at the trailhead reception (~200 DKK self-guided, ~450 DKK with a guide) before starting." });
     touched = true;
   });
 
@@ -8574,6 +8574,72 @@ function rbMigrateCentralEuropeanRoadtripDestinationNotes() {
     'Sudetes (optional)': "Karkonosze National Park's Śnieżka (1,603m) is the high point, straddling the Polish-Czech border with a chapel and weather station on top; a chairlift from Karpacz covers most of the ascent for those who don't want the full hike.",
     'Dresden': 'The rebuilt Frauenkirche and the Zwinger Palace\'s Old Masters Gallery (Raphael\'s Sistine Madonna) are the must-sees beyond the old town walk; the Frauenkirche\'s dome gallery and evening organ recitals are easy to miss if you only see the exterior.',
     'Saxon Switzerland': 'The Bastei rock formation and its bridge over the Elbe sandstone spires is the signature view; it gets very crowded with tour groups by mid-morning, so arrive at opening or hike in from Rathen for a quieter visit.',
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 16 (2026-09-17) for the per-destination-notes workflow -- Nordic Arctic Expedition (8
+ * legs, 37 destinations), researched as 3 parallel sub-batches matching the route's own region
+ * grouping (Finland/Sweden/Norway/Svalbard, Denmark/Faroe Islands, Iceland/Greenland). Same
+ * generic name-matching migration pattern as the other grand tours -- also lands on this route's
+ * standalone splits (Faroe Islands, Greenland) and companion routes (Faroe Islands + Iceland,
+ * Reykjavík + Golden Circle, Scandinavia Overland).
+ */
+function rbMigrateNordicArcticDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_NORDIC_ARCTIC_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_NORDIC_ARCTIC_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Helsinki': "The sea fortress of Suomenlinna (UNESCO-listed, spread across several islands) and the compact Design District are the two things worth carving out time for. Suomenlinna's ferry is covered by a standard Helsinki city transport ticket, so no separate fare is needed.",
+    'Rovaniemi': 'Straddles the Arctic Circle line itself at Santa Claus Village, and the Arktikum museum (partly built underground) is a genuinely good primer on Arctic science, Sámi culture and the aurora before heading further north. Santa Claus Village draws heavy tour-bus traffic — visiting early morning avoids the worst of the crowds.',
+    'Inari': 'The Siida museum (Sámi Museum and Nature Centre) is the single best introduction to Finnish Sámi culture and Arctic ecology on the whole route. Lake Inari boat trips out to the sacred island of Ukonsaari only run in the ice-free summer months.',
+    'Lemmenjoki National Park': "Finland's largest national park still has an active recreational gold-panning tradition dating back to a 1940s gold rush, with old prospector cabins deep in the wilderness. The historic gold-panning area around Kultahamina is a multi-day trek on foot, but a river boat-taxi from the Njurgalahti trailhead reaches it in a few hours for those without days to spare.",
+    'Kiruna': 'Sweden\'s northernmost town is being physically relocated a few kilometres east because the LKAB iron-ore mine beneath it is causing ground subsidence — an unusual "moving city" story worth a stop in itself, alongside the mine itself. LKAB\'s underground mine tours are popular and capacity-limited, so book ahead rather than assuming a same-day slot.',
+    'Sami culture (Jukkasjärvi)': "Home to the original ICEHOTEL, rebuilt from scratch each winter out of Torne River ice and snow, with Sámi-linked reindeer and cultural activities offered alongside it. It only exists roughly December-April; outside that window, the permanent ICEHOTEL 365 wing (climate-controlled) is the year-round alternative.",
+    'Abisko National Park': 'Sits in a rare mountain "blue hole" microclimate that keeps skies clearer than the surrounding region, making it one of the most reliable aurora-viewing spots in the world, with the Aurora Sky Station chairlift up Nuolja putting you above valley cloud. The chairlift only runs in the dark-season months and has limited capacity, so book a slot in advance rather than turning up.',
+    'Narvik': 'Beyond the scenic rail line already noted, Narvik was the site of major WWII naval and land battles for control of its ice-free ore port, covered in depth at the Narvik War Museum. The Fjellheisen cable car climbs above town for wide fjord views and is also a solid aurora-viewing spot when skies are clear.',
+    'Lofoten (Svolvær)': 'Jagged peaks rising straight out of the sea around traditional rorbuer fishing cabins and cod-drying racks define the look of Lofoten, and Svolvær is the natural base for it. The Svolværgeita ("goat") peak and Fløya ridge above town are the classic hikes, but the goat\'s summit leap is for experienced climbers only — the ridge trail is the accessible version.',
+    'Senja': "Norway's second-largest island offers scenery as dramatic as Lofoten's with far fewer visitors, strung along the Senja National Tourist Route. The Bergsbotn viewpoint platform and the Segla/Hesten ridge hike are the two standout stops if time only allows a partial drive.",
+    'Tromsø': 'Billed as the "Gateway to the Arctic," it\'s the best-equipped base on the route for whale-watching boats and aurora tours, with its own cable car (Fjellheisen) up Storsteinen for a quick above-town view. Going up Fjellheisen on a clear night gets you above the town\'s light pollution without needing a tour.',
+    'North Cape (Nordkapp)': 'The dramatic 300m cliff plateau is marketed as mainland Europe\'s northernmost point (technically Knivskjellodden, a nearby headland, edges it out, but has no road access). Weather here is fickle — fog or low cloud often obscures the view, so build in flexibility to visit on a clearer day if the itinerary allows rather than treating it as a fixed one-shot stop.',
+    'Longyearbyen': 'The world\'s largest settlement this far north, built on a coal-mining economy now shifting toward tourism and Arctic research; the Svalbard Global Seed Vault sits on a hillside just outside town and is visible from outside (not open to visitors). Beyond the block-level guide requirement: even short walks just past the town\'s signposted boundary count as "outside town" for polar bear risk, not just longer excursions.',
+    'Svalbard Museum': 'A compact but well-curated overview of whaling, trapping, coal-mining history and polar bear/Arctic wildlife exhibits, located right in Longyearbyen. Worth about an hour, and best used as an orientation stop early in the Svalbard stay before heading out on excursions.',
+    'Pyramiden (day trip by boat)': "An abandoned Soviet-era coal-mining settlement preserved almost intact by the cold, complete with the world's northernmost Lenin bust — an eerie time-capsule of Soviet Arctic life, still Russian-operated. Full-day (or overnight) boat tours from Longyearbyen operate roughly late May-September once Isfjorden/Billefjorden clears of ice, and should be booked ahead as departures are limited to specific days per week.",
+    'Nyhavn': '17th-century harbor lined with colorful gabled townhouses and canal-front cafes; walk a block or two back from the waterfront for a meal at local prices, since the restaurants sitting directly on the canal charge a steep premium for the view.',
+    'Tivoli Gardens': 'One of the world\'s oldest amusement parks (opened 1843) and a direct inspiration for Disneyland, with gardens and rides that are especially atmospheric lit up after dark. It runs seasonally, not year-round (2026: open ~27 March-20 September, plus separate Halloween and Christmas windows), so check its season calendar before planning around it.',
+    'Christiania': 'A self-governing "freetown" since 1971, known for colorful murals and an alternative, car-free community feel; residents themselves shut down the once-notorious open-air cannabis market on Pusher Street in 2024, so the area is calmer than its old reputation suggests, though photography is still restricted/frowned on in parts of the settlement.',
+    'Torvehallerne': "Copenhagen's modern food hall (two glass pavilions) with New Nordic snack stalls, artisan produce, and smørrebrød; go for an early weekday lunch to beat the midday crowd for a seat.",
+    'Tórshavn': "The Faroese capital is compact enough to see on foot in half a day, centered on Tinganes, the turf-roofed peninsula that has hosted the islands' parliament since Viking times.",
+    'Saksun': 'Tiny hamlet around a turf-roofed church overlooking Pollurin, a tidal lagoon that was once a harbor before a storm sealed it off with sand. The final approach crosses private farmland, so park at the village and be prepared for a posted access/parking fee.',
+    'Gjógv': 'Named for the natural sea-filled gorge that cuts through the village to a small boat harbor; walk up along the gorge\'s edge for the view down to where fishing boats are winched up from the water.',
+    'Vestmanna Cliffs': 'Nearly 700m sea cliffs toured by boat, sailing into narrow grottos carved into the rock beneath large seabird colonies (puffins, guillemots, kittiwakes). Puffins are only present during the May-September tour season, and sailings are weather-dependent, so book ahead and time the visit to that window.',
+    'Trælanípa & Lake Sørvágsvatn hike': 'Famous for the optical illusion where the lake appears to float above the ocean, seen from the Trælanípa cliff edge at the end of a roughly 5-6km round-trip walk. The trail crosses private land and requires paying an entry fee at the trailhead reception (~200 DKK self-guided, ~450 DKK with a guide) before starting.',
+    'Reykjavik': "Iceland's small, walkable capital — Hallgrímskirkja's tower and the Old Harbour (departure point for whale-watching and Golden Circle day tours) are the main draws inside the city itself; budget half a day, not more.",
+    'Golden Circle (Þingvellir)': "Þingvellir is where the Althing, one of the world's oldest parliaments, met from 930 AD, and it sits directly on the rift between the North American and Eurasian tectonic plates — walk the visible fissure, or book ahead to snorkel/dive it at Silfra, one of the clearest waters on earth.",
+    'South Coast (Vík í Mýrdal)': "Vík is the base for Reynisfjara's black-sand beach, basalt columns and the Reynisdrangar sea stacks just offshore; stay well back from the water here — the sneaker waves are strong enough to have caused fatalities.",
+    'Vatnajökull': 'Europe\'s largest glacier by volume, and the main place in Iceland to do a guided glacier hike or visit a natural blue ice cave; the ice caves are only safely accessible Nov-March, so a summer visit means the hike/hiking trails instead.',
+    'Jökulsárlón': 'A lagoon of icebergs calving off Breiðamerkurjökull, often with seals hauled out on the ice; cross the road afterward to Diamond Beach, where chunks of that same ice wash up on black sand — easy to skip if you don\'t know it\'s there.',
+    'Akureyri': 'The "capital of the north" and the practical base for Mývatn\'s geothermal area and whale-watching in Eyjafjörður, which has one of Iceland\'s highest sighting rates thanks to the nutrient-rich fjord water.',
+    'Snæfellsnes': 'Often called "Iceland in miniature" for packing glacier, volcano (Snæfellsjökull, the setting of Jules Verne\'s Journey to the Center of the Earth) and coastline into one peninsula; Kirkjufell mountain with Kirkjufellsfoss waterfall in the foreground is the classic shot, best near sunrise when it\'s quieter.',
+    'Nuuk': "Greenland's small, colorful capital, worth a wander through the old colonial harbour area; a fjord boat trip from town is the easiest way to see icebergs and possibly whales without going further north.",
+    'Inuit culture (Nuuk)': 'The Greenland National Museum here holds the Qilakitsoq mummies, remarkably preserved 15th-century Inuit remains — the single most worthwhile exhibit if you only have time for one museum in Nuuk.',
+    'Ilulissat': "Greenland's third-largest town and the main gateway to the Icefjord, with more sled dogs than people living there — the town itself is walkable in under an hour, so most time here is spent on Icefjord/boat activities rather than in town.",
+    'Icefjord (Ilulissat Icefjord)': "A UNESCO World Heritage site where the Sermeq Kujalleq glacier — one of the fastest-moving and most productive outside Antarctica — calves the icebergs that drift through Disko Bay; free marked hiking trails from Ilulissat (roughly 1.5-3 hours) reach viewpoints without needing a boat.",
+    'Disko Bay': 'The open bay where Icefjord icebergs end up, often towering and dense enough to look like a floating ice field; best appreciated from a small boat tour, which also has good odds of humpback whale sightings.',
+    'Boat trips (e.g. Eqi Glacier)': 'Day or overnight boat excursions from Ilulissat to the Eqi Glacier ("calving glacier") let you watch active ice-calving events from a safe distance on the water. Note there\'s some sound-delay — the crack/roar arrives a few seconds after you see the ice fall, so it can catch first-timers off guard.',
   };
 
   let touched = false;
@@ -17269,8 +17335,8 @@ function rbBuildSvalbardShortRoute() {
     {
       code: 'NO', name: 'Norway', days: 6, budget: 1140, lat: 78.2232, lng: 15.6469,
       destinations: [
-        { name: 'Longyearbyen', lat: 78.2232, lng: 15.6469 },
-        { name: 'Svalbard Museum', lat: 78.2199, lng: 15.6259 },
+        { name: 'Longyearbyen', lat: 78.2232, lng: 15.6469, notes: "The world's largest settlement this far north, built on a coal-mining economy now shifting toward tourism and Arctic research; the Svalbard Global Seed Vault sits on a hillside just outside town and is visible from outside (not open to visitors). Beyond the block-level guide requirement: even short walks just past the town's signposted boundary count as \"outside town\" for polar bear risk, not just longer excursions." },
+        { name: 'Svalbard Museum', lat: 78.2199, lng: 15.6259, notes: "A compact but well-curated overview of whaling, trapping, coal-mining history and polar bear/Arctic wildlife exhibits, located right in Longyearbyen. Worth about an hour, and best used as an orientation stop early in the Svalbard stay before heading out on excursions." },
         { name: 'Nordpolet', lat: 78.2202, lng: 15.6270 },
         { name: 'Isfjorden boat tour (summer)', lat: 78.3000, lng: 14.0000 },
         { name: 'Pyramiden (summer boat destination)', lat: 79.0333, lng: 16.3333 },
@@ -17386,7 +17452,7 @@ function rbBuildSwedenNorwayRoute() {
       code: 'SE', name: 'Sweden', days: 7, budget: 770, lat: 59.3251, lng: 18.0711,
       destinations: [
         { name: 'Stockholm', lat: 59.3251, lng: 18.0711 },
-        { name: 'Kiruna', lat: 67.8558, lng: 20.2253 },
+        { name: 'Kiruna', lat: 67.8558, lng: 20.2253, notes: "Sweden's northernmost town is being physically relocated a few kilometres east because the LKAB iron-ore mine beneath it is causing ground subsidence — an unusual \"moving city\" story worth a stop in itself, alongside the mine itself. LKAB's underground mine tours are popular and capacity-limited, so book ahead rather than assuming a same-day slot." },
         { name: 'Abisko', lat: 68.3540, lng: 18.7885 },
         { name: 'Riksgränsen (border crossing)', lat: 68.4297, lng: 18.1200 },
       ],
@@ -17396,8 +17462,8 @@ function rbBuildSwedenNorwayRoute() {
     {
       code: 'NO', name: 'Norway', days: 5, budget: 750, lat: 68.4384, lng: 17.4272,
       destinations: [
-        { name: 'Narvik', lat: 68.4384, lng: 17.4272 },
-        { name: 'Lofoten (Svolvær)', lat: 68.2340, lng: 14.5686 },
+        { name: 'Narvik', lat: 68.4384, lng: 17.4272, notes: "Beyond the scenic rail line already noted, Narvik was the site of major WWII naval and land battles for control of its ice-free ore port, covered in depth at the Narvik War Museum. The Fjellheisen cable car climbs above town for wide fjord views and is also a solid aurora-viewing spot when skies are clear." },
+        { name: 'Lofoten (Svolvær)', lat: 68.2340, lng: 14.5686, notes: "Jagged peaks rising straight out of the sea around traditional rorbuer fishing cabins and cod-drying racks define the look of Lofoten, and Svolvær is the natural base for it. The Svolværgeita (\"goat\") peak and Fløya ridge above town are the classic hikes, but the goat's summit leap is for experienced climbers only — the ridge trail is the accessible version." },
       ],
       notes: "Narvik, then on to the Lofoten islands. Budget ~€150/day or more — Norway runs noticeably pricier than the Swedish leg above. Season: June-August, the same midnight-sun window as Swedish Lapland. Web check (2026-08): Norway is Schengen but not EU — normally no border control, but spot customs checks do happen (alcohol/tobacco allowances). Lofoten's ferry connections are seasonal, so check the current schedule before relying on one.",
       transport_to_next: 'End of this route — fly home from Narvik or Bodø/Harstad, whichever connects best from Lofoten.',
@@ -17416,7 +17482,7 @@ function rbBuildSwedishLaplandRoute() {
     {
       code: 'SE', name: 'Sweden', days: 6, budget: 870, lat: 67.8558, lng: 20.2253,
       destinations: [
-        { name: 'Kiruna', lat: 67.8558, lng: 20.2253 },
+        { name: 'Kiruna', lat: 67.8558, lng: 20.2253, notes: "Sweden's northernmost town is being physically relocated a few kilometres east because the LKAB iron-ore mine beneath it is causing ground subsidence — an unusual \"moving city\" story worth a stop in itself, alongside the mine itself. LKAB's underground mine tours are popular and capacity-limited, so book ahead rather than assuming a same-day slot." },
         { name: 'Icehotel (Jukkasjärvi)', lat: 67.8500, lng: 20.5958 },
         { name: 'Abisko', lat: 68.3540, lng: 18.7885 },
         { name: 'Aurora Sky Station', lat: 68.3547, lng: 18.7361 },
@@ -17439,7 +17505,7 @@ function rbBuildSwedishLaplandNorthernLightsRoute() {
     {
       code: 'SE', name: 'Sweden', days: 9, budget: 1440, lat: 67.8558, lng: 20.2253,
       destinations: [
-        { name: 'Kiruna', lat: 67.8558, lng: 20.2253 },
+        { name: 'Kiruna', lat: 67.8558, lng: 20.2253, notes: "Sweden's northernmost town is being physically relocated a few kilometres east because the LKAB iron-ore mine beneath it is causing ground subsidence — an unusual \"moving city\" story worth a stop in itself, alongside the mine itself. LKAB's underground mine tours are popular and capacity-limited, so book ahead rather than assuming a same-day slot." },
         { name: 'Icehotel (Jukkasjärvi)', lat: 67.8500, lng: 20.5958 },
         { name: 'Abisko', lat: 68.3540, lng: 18.7885 },
         { name: 'Aurora Sky Station', lat: 68.3547, lng: 18.7361 },
@@ -17487,10 +17553,10 @@ function rbBuildCopenhagenRoute() {
     {
       code: 'DK', name: 'Denmark', days: 4, budget: 500, lat: 55.6761, lng: 12.5683,
       destinations: [
-        { name: 'Nyhavn', lat: 55.6790, lng: 12.5910 },
-        { name: 'Tivoli Gardens', lat: 55.6736, lng: 12.5681 },
+        { name: 'Nyhavn', lat: 55.6790, lng: 12.5910, notes: "17th-century harbor lined with colorful gabled townhouses and canal-front cafes; walk a block or two back from the waterfront for a meal at local prices, since the restaurants sitting directly on the canal charge a steep premium for the view." },
+        { name: 'Tivoli Gardens', lat: 55.6736, lng: 12.5681, notes: "One of the world's oldest amusement parks (opened 1843) and a direct inspiration for Disneyland, with gardens and rides that are especially atmospheric lit up after dark. It runs seasonally, not year-round (2026: open ~27 March-20 September, plus separate Halloween and Christmas windows), so check its season calendar before planning around it." },
         { name: 'Strøget', lat: 55.6787, lng: 12.5751 },
-        { name: 'Christiania', lat: 55.6736, lng: 12.5992 },
+        { name: 'Christiania', lat: 55.6736, lng: 12.5992, notes: "A self-governing \"freetown\" since 1971, known for colorful murals and an alternative, car-free community feel; residents themselves shut down the once-notorious open-air cannabis market on Pusher Street in 2024, so the area is calmer than its old reputation suggests, though photography is still restricted/frowned on in parts of the settlement." },
         { name: 'Rosenborg Castle', lat: 55.6857, lng: 12.5775 },
       ],
       notes: "The colorful Nyhavn harbor, Tivoli Gardens, the Strøget shopping street, the freetown of Christiania, and Rosenborg Castle. Budget ~€110-140/day. Season: May-September; Tivoli Gardens closes during the shoulder season (roughly early January to late March) — check the 2026 calendar for its exact reopening date before planning a winter or early-spring trip. Web check (2026-08): work out whether a Copenhagen Card actually pays for itself against current 2026 museum/attraction prices before buying one — it depends heavily on how many paid sights you'll realistically fit into 4 days.",
@@ -17741,9 +17807,9 @@ function rbBuildFaroeIslandsShortRoute() {
     {
       code: 'FO', name: 'Faroe Islands', days: 6, budget: 660, lat: 62.0079, lng: -6.7716,
       destinations: [
-        { name: 'Tórshavn', lat: 62.0079, lng: -6.7716 },
+        { name: 'Tórshavn', lat: 62.0079, lng: -6.7716, notes: "The Faroese capital is compact enough to see on foot in half a day, centered on Tinganes, the turf-roofed peninsula that has hosted the islands' parliament since Viking times." },
         { name: 'Múlafossur / Gásadalur', lat: 62.1064, lng: -7.6153 },
-        { name: 'Saksun', lat: 62.2872, lng: -7.2119 },
+        { name: 'Saksun', lat: 62.2872, lng: -7.2119, notes: "Tiny hamlet around a turf-roofed church overlooking Pollurin, a tidal lagoon that was once a harbor before a storm sealed it off with sand. The final approach crosses private farmland, so park at the village and be prepared for a posted access/parking fee." },
         { name: 'Vestmanna bird cliffs boat tour', lat: 62.1546, lng: -7.1698 },
       ],
       notes: "Tórshavn (2 days) plus Múlafossur/Gásadalur, Saksun, and the Vestmanna bird-cliffs boat tour. Budget ~€100-120/day — the Faroes are expensive, Scandinavian-level food/accommodation prices, and a rental car is practically essential. Season: May-September, since the Vestmanna boat tours generally only run in this window. Web check (2026-08): Atlantic Airways flies from Copenhagen at least 2x/day, up to 4x/day in summer (June-August), and even more in July 2026 (111 vs. 100 flights in July 2025) — but Vágar Airport is notorious for fog and wind, delays/cancellations are real, so build in buffer time. The Smyril Line ferry Hirtshals-Tórshavn runs 2x/week, ~30-38h, from ~€150 (an alternative if flights are disrupted, or if bringing your own car). The Trælanípa hike has real wind danger (>15 m/s) on the unprotected cliff edge, and fog can remove the view entirely — check weather.fo locally beforehand. The Faroe Islands are in the Nordic Passport Union but NOT in the EU/Schengen — a Dutch traveler needs their actual passport (not an ID card, since it's outside Schengen); occasional passport checks are possible despite the flight feeling like a Danish domestic hop. General travel advisory (2026-08 web check): Denmark, which the Faroes fall under, is green (as of 08-05-2026), with no separate note for the Faroes themselves.\n\nDistinct from the existing 'Faroe Islands 🐑' route (split off from Nordic Arctic Expedition ❄️), which is the longer, epic expedition version. This one is deliberately the realistic, shorter 'Trip Ideas' version of the same destination — a different kind of trip (short holiday vs. epic), not a duplicate.",
@@ -17763,7 +17829,7 @@ function rbBuildFaroeIslandsIcelandRoute() {
     {
       code: 'FO', name: 'Faroe Islands', days: 3, budget: 360, lat: 62.0079, lng: -6.7716,
       destinations: [
-        { name: 'Tórshavn', lat: 62.0079, lng: -6.7716 },
+        { name: 'Tórshavn', lat: 62.0079, lng: -6.7716, notes: "The Faroese capital is compact enough to see on foot in half a day, centered on Tinganes, the turf-roofed peninsula that has hosted the islands' parliament since Viking times." },
         { name: 'Vestmanna bird cliffs boat tour', lat: 62.1546, lng: -7.1698 },
       ],
       notes: "Tórshavn plus the Vestmanna bird-cliffs boat tour, kept short since this is the combined trip with Iceland below. Budget ~€110-130/day overall for the whole trip (Iceland runs pricier than the Faroes). Practical connection: the Smyril Line MS Norröna combines both legs in one crossing (a weekly Faroe-Iceland sailing) with a required minimum stay of 1 week Iceland + 3 days-1 week Faroe Islands, from ~€810 (25% deposit) — note that strict minimum adds up to about 10 days, slightly more than this 9-day version, so treat this as a compressed take on the Norröna combo or plan on flying the two legs separately instead (no direct Atlantic Airways FAE-Reykjavík route was found, most likely via Copenhagen). Season: June-August for the most favorable Norröna sailing schedule.",
@@ -17877,7 +17943,7 @@ function rbBuildIcelandRingRoadRoute() {
         { name: 'Egilsstaðir', lat: 65.2669, lng: -14.3948 },
         { name: 'Seyðisfjörður', lat: 65.2646, lng: -13.9552 },
         { name: 'Mývatn', lat: 65.6000, lng: -17.0000 },
-        { name: 'Akureyri', lat: 65.6835, lng: -18.0878 },
+        { name: 'Akureyri', lat: 65.6835, lng: -18.0878, notes: "The \"capital of the north\" and the practical base for Mývatn's geothermal area and whale-watching in Eyjafjörður, which has one of Iceland's highest sighting rates thanks to the nutrient-rich fjord water." },
         { name: 'Húsavík', lat: 66.0449, lng: -17.3389 },
       ],
       notes: "The complete Route 1 loop (1,332 km): Reykjavík → the South Coast/Jökulsárlón → the East Fjords (Egilsstaðir/Seyðisfjörður) → North Iceland (Mývatn, Akureyri, Húsavík whale watching) → back via the west — the differentiator against the routes above is the full circle, not just the south coast. Budget ~€115-140/day (a rental car is essential, most days self-catering or a guesthouse). Season: June-mid September is optimal (all roads open, lowest risk of snowfall). Web check (2026-08): Route 1 itself stays 2WD/paved, no F-roads needed for the ring road; some unpaved side roads do exist to attractions off the main route (e.g. parts of Snæfellsnes, if added). Check umferdin.is for current road conditions just before departure, especially outside peak summer. See the Reykjavík + Golden Circle (5 days) route above for the Reykjanes Peninsula volcanic-activity safety note and Schengen entry details.\n\nDistinct from the existing standalone 'Iceland ❄️' route (split off from Nordic Arctic Expedition ❄️), which is the longer, epic expedition version. This one is deliberately the realistic, shorter 'Trip Ideas' Ring Road version — a different kind of trip (holiday vs. epic), not a duplicate.",
@@ -20837,7 +20903,7 @@ function rbBuildDenmarkSwedenNorwayOverlandRoute() {
       code: 'DK', name: 'Denmark', days: 3, budget: 375, lat: 55.6761, lng: 12.5683,
       destinations: [
         { name: 'Copenhagen (Nyhavn)', lat: 55.6790, lng: 12.5910, notes: "The candy-colored 17th-century gabled houses along the canal were once a rough sailors' quarter where Hans Christian Andersen lived at three different addresses; go right at opening or after dinner to see it without the tour-group crush, and pick up a canal boat tour departing from the harbor itself." },
-        { name: 'Tivoli Gardens', lat: 55.6736, lng: 12.5681 },
+        { name: 'Tivoli Gardens', lat: 55.6736, lng: 12.5681, notes: "One of the world's oldest amusement parks (opened 1843) and a direct inspiration for Disneyland, with gardens and rides that are especially atmospheric lit up after dark. It runs seasonally, not year-round (2026: open ~27 March-20 September, plus separate Halloween and Christmas windows), so check its season calendar before planning around it." },
       ],
       notes: "Copenhagen (3 days: Nyhavn, Tivoli Gardens, Strøget) — same content as Copenhagen (4 days) 🧜‍♀️ (rbBuildCopenhagenRoute), one day shorter here to make room for the overland legs. Budget ~€125/day.",
       transport_to_next: 'The Öresund Bridge/train to Malmö, Sweden (~35 minutes) — Schengen-internal, though Sweden has run ID/border checks on this crossing since 2015 and confirmed (Web check 2026-09) still active and unchanged in mechanism: random/targeted checks — cars at the Lernacken toll station, rail passengers at Hyllie Station, ferry passengers at Helsingborg port. No indication of these being lifted.',
