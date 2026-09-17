@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 268 / 741 signatures.**
+- **Done so far: 274 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -191,7 +191,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **IT** (1 dest): Agrigento — Valle dei Templi — routes: Sicily (9 days) 🍋, Sicily Roadtrip (7-10 days) 🏝️
 - [x] **IT** (1 dest): Rome — routes: Italy Roadtrip (12 days) 🧀, Italy: North to Central (12 days) 🚄
 - [x] **IT** (2 dest): Naples, Pompeii — routes: Campania + Puglia (9 days) 🧭, Italy Roadtrip (12 days) 🧀
-- [ ] **IT** (1 dest): Matera — routes: Campania + Puglia (9 days) 🧭, Sicily + Southern Italy (12 days) 🍊
+- [x] **IT** (1 dest): Matera — routes: Campania + Puglia (9 days) 🧭, Sicily + Southern Italy (12 days) 🍊
 - [x] **IT** (1 dest): Syracuse / Ortigia — routes: Sicily East (4-5 days) 🏝️, Sicily Roadtrip (7-10 days) 🏝️
 - [x] **IT** (1 dest): Cagliari — routes: Sardinia Roadtrip (7-10 days) 🏝️, Sardinia South (4-5 days) 🏝️
 - [x] **JE** (4 dest): coast, cliffs, beaches, Jersey War Tunnels (WWII) — routes: British Isles & Celtic Coast Expedition 🍀, Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖
@@ -568,11 +568,11 @@ Sorted alphabetically by country code.
 - [ ] **IT** (1 dest): Vulcano (mud baths) — routes: Sicily + Aeolian Islands (3-4 days) 🏝️
 - [ ] **IT** (1 dest): Stromboli — routes: Sicily + Aeolian Islands (3-4 days) 🏝️
 - [ ] **IT** (8 dest): Catania, Mount Etna, Taormina, Syracuse / Ortigia, Modica, Ragusa, Agrigento (Valle dei Templi), Palermo (optional) — routes: Sicily + Malta (9 days) 🌋
-- [ ] **IT** (1 dest): Naples/Salerno — routes: Sicily + Southern Italy (12 days) 🍊
-- [ ] **IT** (1 dest): Tropea — routes: Sicily + Southern Italy (12 days) 🍊
-- [ ] **IT** (4 dest): Villa San Giovanni (ferry crossing), Messina (ferry crossing), Taormina, Etna — routes: Sicily + Southern Italy (12 days) 🍊
-- [ ] **IT** (2 dest): Syracuse, Noto (Val di Noto) — routes: Sicily + Southern Italy (12 days) 🍊
-- [ ] **IT** (1 dest): Agrigento — routes: Sicily + Southern Italy (12 days) 🍊
+- [x] **IT** (1 dest): Naples/Salerno — routes: Sicily + Southern Italy (12 days) 🍊
+- [x] **IT** (1 dest): Tropea — routes: Sicily + Southern Italy (12 days) 🍊
+- [x] **IT** (4 dest): Villa San Giovanni (ferry crossing), Messina (ferry crossing), Taormina, Etna — routes: Sicily + Southern Italy (12 days) 🍊
+- [x] **IT** (2 dest): Syracuse, Noto (Val di Noto) — routes: Sicily + Southern Italy (12 days) 🍊
+- [x] **IT** (1 dest): Agrigento — routes: Sicily + Southern Italy (12 days) 🍊
 - [x] **IT** (2 dest): Palermo, Cefalù — routes: Sicily + Southern Italy (12 days) 🍊
 - [ ] **IT** (1 dest): Catania — routes: Sicily East (4-5 days) 🏝️
 - [x] **IT** (3 dest): Trapani, Erice, Segesta — routes: Sicily Roadtrip (7-10 days) 🏝️
@@ -768,11 +768,10 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| Sicily + Southern Italy (12 days) 🍊 | 10/12 | 1 |
 | Portugal + Andalusia (10-14 days) 🕌 | 10/10 | 1 |
 | Portugal + Spain Roadtrip (14 days) 🚗 | 10/10 | 1 |
-| North India 🕌 | 9/9 | 1 |
 | India & Himalaya Expedition 🏔️ | 9/22 | 1 |
+| North India 🕌 | 9/9 | 1 |
 | Switzerland Alpine Roadtrip (9 days) 🛣️ | 9/9 | 1 |
 | France + Switzerland + Italy (10-14 days) 🗻 | 9/9 | 1 |
 | Northern Italy (6 days) 🚤 | 7/7 | 1 |
@@ -782,7 +781,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Canary Islands (10-14 days) 🏝️ | 7/7 | 1 |
 | Germany: Berlin + Dresden + Bavaria (9 days) 🚂 | 6/6 | 1 |
 | Bavaria + Alps + Berchtesgaden (6 days) ⛰️ | 6/6 | 1 |
-| Campania + Puglia (9 days) 🧭 | 6/8 | 1 |
 | Kosovo + Albania (9 days) 🏔️ | 6/6 | 1 |
 | Madeira (5-7 days) 🏝️ | 6/6 | 1 |
 | Italy + Slovenia + Croatia (10-14 days) ⛵ | 6/9 | 1 |
@@ -808,6 +806,8 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | US Northeast 🗽 | 13/13 | 0 |
 | Dolomites (6 days) ⛰️ | 13/13 | 0 |
 | US Southwest 🏜️ | 12/12 | 0 |
-| ... 268 more routes with open destinations ... | | |
+| Florida 🐊 | 12/12 | 0 |
+| Hawaii 🐢 | 11/11 | 0 |
+| ... 267 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

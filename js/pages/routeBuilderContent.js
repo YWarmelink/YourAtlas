@@ -9020,6 +9020,41 @@ function rbMigrateRomeTuscanyDestinationNotes() {
 }
 
 /**
+ * Batch 27 (2026-09-17) for the per-destination-notes workflow -- Sicily + Southern Italy (12
+ * days), a 7-leg/12-destination combo route researched in a single pass -- Taormina, Etna,
+ * Syracuse, Palermo and Cefalù already had notes from earlier batches, so only the remaining 7
+ * destinations were newly researched. Same generic name-matching migration pattern as the
+ * grand-tour batches above.
+ */
+function rbMigrateSicilySouthernItalyDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_SICILY_SOUTHERN_ITALY_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_SICILY_SOUTHERN_ITALY_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Naples/Salerno': "Naples' UNESCO-listed historic center is the birthplace of pizza (Da Michele, Sorbillo) and the gateway to Pompeii/Herculaneum, while Salerno is the practical, less-crowded base for day trips onto the Amalfi Coast. Stay in Salerno rather than Amalfi-side towns to avoid the coast's summer traffic and inflated prices, and do Pompeii as a half-day from Naples.",
+    'Matera': "The Sassi di Matera — cave dwellings carved into the ravine, inhabited since the Paleolithic and dotted with frescoed rupestrian churches — is one of Europe's oldest continuously inhabited urban landscapes. Catch sunset from the Belvedere Murgia Timone across the ravine, when the cave city glows gold and the crowds thin out.",
+    'Tropea': "A clifftop old town on Calabria's coast, best known for the Santa Maria dell'Isola church perched on a rock stack right below it and the sweet red onions (cipolla rossa) grown locally. The viewpoint by the church at the cliff edge is the spot for photos, and a staircase leads down to the beach directly beneath the town.",
+    'Villa San Giovanni (ferry crossing)': "The mainland ferry terminal for the Strait of Messina crossing itself offers little beyond the port, but the short crossing gives open views across to Sicily and, on a clear day, Mount Etna in the distance. It's mainly a functional stop — don't plan extra time here beyond the ferry queue/crossing.",
+    'Messina (ferry crossing)': "Sicily's ferry-arrival city was largely rebuilt after the 1908 earthquake, and its main draw is the Duomo's astronomical clock tower — one of the world's largest and most complex — which puts on an animated mechanical show at noon. Time arrival to catch the noon clock show if there's a gap before continuing onward.",
+    'Noto (Val di Noto)': 'Noto is the showcase town of Sicilian Baroque, rebuilt in warm golden limestone after the 1693 earthquake, with Via Nicolaci and the Cathedral of San Nicolò as its centerpiece. The honey-colored facades are best seen in late-afternoon light, and if travel dates land in mid-to-late May, the Infiorata festival covers Via Nicolaci in flower-petal art.',
+    'Agrigento': 'The Valle dei Templi holds some of the best-preserved Greek temples outside Greece itself, with the Temple of Concordia rivaling the Parthenon in completeness. Visit at opening time or join the evening/night visit (when offered) to avoid both the heat and the tour-bus crowds.',
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -13334,7 +13369,7 @@ function rbBuildSicilySouthernItalyRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 130, lat: 40.6824, lng: 14.7681,
       destinations: [
-        { name: 'Naples/Salerno', lat: 40.6824, lng: 14.7681 },
+        { name: 'Naples/Salerno', lat: 40.6824, lng: 14.7681, notes: "Naples' UNESCO-listed historic center is the birthplace of pizza (Da Michele, Sorbillo) and the gateway to Pompeii/Herculaneum, while Salerno is the practical, less-crowded base for day trips onto the Amalfi Coast. Stay in Salerno rather than Amalfi-side towns to avoid the coast's summer traffic and inflated prices, and do Pompeii as a half-day from Naples." },
       ],
       notes: "Only genuinely distinct from Sicily-alone by keeping Calabria+Matera on the mainland, not just 'more Sicily days'. Naples/Salerno (1 day). Open-jaw AMS-Naples in, AMS-Palermo or Catania out (both direct). Rental car for the whole trip. Budget ~€130/day.",
       transport_to_next: 'Drive to Matera.',
@@ -13342,7 +13377,7 @@ function rbBuildSicilySouthernItalyRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 260, lat: 40.6664, lng: 16.6043,
       destinations: [
-        { name: 'Matera', lat: 40.6664, lng: 16.6043 },
+        { name: 'Matera', lat: 40.6664, lng: 16.6043, notes: "The Sassi di Matera — cave dwellings carved into the ravine, inhabited since the Paleolithic and dotted with frescoed rupestrian churches — is one of Europe's oldest continuously inhabited urban landscapes. Catch sunset from the Belvedere Murgia Timone across the ravine, when the cave city glows gold and the crowds thin out." },
       ],
       notes: 'Matera (2 days).',
       transport_to_next: 'Drive to Tropea/the Calabrian coast.',
@@ -13350,7 +13385,7 @@ function rbBuildSicilySouthernItalyRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 260, lat: 38.6759, lng: 15.8988,
       destinations: [
-        { name: 'Tropea', lat: 38.6759, lng: 15.8988 },
+        { name: 'Tropea', lat: 38.6759, lng: 15.8988, notes: "A clifftop old town on Calabria's coast, best known for the Santa Maria dell'Isola church perched on a rock stack right below it and the sweet red onions (cipolla rossa) grown locally. The viewpoint by the church at the cliff edge is the spot for photos, and a staircase leads down to the beach directly beneath the town." },
       ],
       notes: 'Tropea/Calabrian coast (2 days). Season: May-June or September (Calabria and Sicily both very hot July-August; Matera is also hot in the daytime, though its cave dwellings stay cooler).',
       transport_to_next: 'Ferry Villa San Giovanni↔Messina (~20 min, 2-3x/hour, 24/7, no reservation needed, pay/book on arrival).',
@@ -13358,8 +13393,8 @@ function rbBuildSicilySouthernItalyRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 260, lat: 37.8516, lng: 15.2853,
       destinations: [
-        { name: 'Villa San Giovanni (ferry crossing)', lat: 38.2167, lng: 15.6333 },
-        { name: 'Messina (ferry crossing)', lat: 38.1938, lng: 15.5540 },
+        { name: 'Villa San Giovanni (ferry crossing)', lat: 38.2167, lng: 15.6333, notes: "The mainland ferry terminal for the Strait of Messina crossing itself offers little beyond the port, but the short crossing gives open views across to Sicily and, on a clear day, Mount Etna in the distance. It's mainly a functional stop — don't plan extra time here beyond the ferry queue/crossing." },
+        { name: 'Messina (ferry crossing)', lat: 38.1938, lng: 15.5540, notes: "Sicily's ferry-arrival city was largely rebuilt after the 1908 earthquake, and its main draw is the Duomo's astronomical clock tower — one of the world's largest and most complex — which puts on an animated mechanical show at noon. Time arrival to catch the noon clock show if there's a gap before continuing onward." },
         { name: 'Taormina', lat: 37.8516, lng: 15.2853 },
         { name: 'Etna', lat: 37.7510, lng: 14.9934 },
       ],
@@ -13370,7 +13405,7 @@ function rbBuildSicilySouthernItalyRoute() {
       code: 'IT', name: 'Italy', days: 2, budget: 260, lat: 37.0755, lng: 15.2866,
       destinations: [
         { name: 'Syracuse', lat: 37.0755, lng: 15.2866 },
-        { name: 'Noto (Val di Noto)', lat: 36.8917, lng: 15.0703 },
+        { name: 'Noto (Val di Noto)', lat: 36.8917, lng: 15.0703, notes: "Noto is the showcase town of Sicilian Baroque, rebuilt in warm golden limestone after the 1693 earthquake, with Via Nicolaci and the Cathedral of San Nicolò as its centerpiece. The honey-colored facades are best seen in late-afternoon light, and if travel dates land in mid-to-late May, the Infiorata festival covers Via Nicolaci in flower-petal art." },
       ],
       notes: 'Syracuse/Val di Noto (2 days).',
       transport_to_next: 'Drive to Agrigento.',
@@ -13378,7 +13413,7 @@ function rbBuildSicilySouthernItalyRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 130, lat: 37.3111, lng: 13.5765,
       destinations: [
-        { name: 'Agrigento', lat: 37.2903, lng: 13.5928 },
+        { name: 'Agrigento', lat: 37.2903, lng: 13.5928, notes: "The Valle dei Templi holds some of the best-preserved Greek temples outside Greece itself, with the Temple of Concordia rivaling the Parthenon in completeness. Visit at opening time or join the evening/night visit (when offered) to avoid both the heat and the tour-bus crowds." },
       ],
       notes: 'Agrigento (1-2 days).',
       transport_to_next: 'Drive to Palermo/Cefalù.',
@@ -13517,7 +13552,7 @@ function rbBuildCampaniaPugliaRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 125, lat: 40.6664, lng: 16.6043,
       destinations: [
-        { name: 'Matera', lat: 40.6664, lng: 16.6043 },
+        { name: 'Matera', lat: 40.6664, lng: 16.6043, notes: "The Sassi di Matera — cave dwellings carved into the ravine, inhabited since the Paleolithic and dotted with frescoed rupestrian churches — is one of Europe's oldest continuously inhabited urban landscapes. Catch sunset from the Belvedere Murgia Timone across the ravine, when the cave city glows gold and the crowds thin out." },
       ],
       notes: 'Matera (1-2 days, a natural stopover, ~2h from the Salerno/Amalfi side) — the one genuinely unique addition per the source.',
       transport_to_next: "Drive to the Valle d'Itria.",

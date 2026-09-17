@@ -12,6 +12,13 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batch 27 — Sicily + Southern Italy (12 days) (2026-09-17)** — 7 legs,
+  12 destinations (7 newly researched — Taormina/Etna/Syracuse/Palermo/Cefalù already covered
+  from earlier batches), researched in a single pass. Same generic name-matching migration
+  (`rbMigrateSicilySouthernItalyDestinationNotes()`) — 2 routes confirmed touched in the live
+  simulation. App-wide total: 2523 destination-slots filled across 308 routes. 274/741
+  signatures done.
+
 - **Per-destination notes, batch 26 — Rome + Tuscany (9 days) (2026-09-17)** — 5 legs, 12
   destinations (9 newly researched — Siena/San Gimignano/Florence already covered from earlier
   batches), researched in a single pass. Same generic name-matching migration
