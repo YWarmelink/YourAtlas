@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 524 / 741 signatures.**
+- **Done so far: 539 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -229,7 +229,7 @@ Sorted by how many routes reuse them — highest leverage first.
 
 Sorted alphabetically by country code.
 
-- [ ] **AD** (6 dest): Andorra la Vella (Casa de la Vall), Escaldes-Engordany (Caldea spa), Ordino (Museu Casa d'Areny-Plandolit), Canillo (Roc del Quer viewpoint), Sant Joan de Caselles, Encamp (optional) — routes: Andorra (4 days) 🏔️
+- [x] **AD** (6 dest): Andorra la Vella (Casa de la Vall), Escaldes-Engordany (Caldea spa), Ordino (Museu Casa d'Areny-Plandolit), Canillo (Roc del Quer viewpoint), Sant Joan de Caselles, Encamp (optional) — routes: Andorra (4 days) 🏔️
 - [x] **AD** (3 dest): Andorra la Vella (Casa de la Vall), Ordino, Pas de la Casa — routes: Andorra + French Pyrenees: Ariège (6 days) ♨️
 - [x] **AD** (3 dest): Andorra la Vella (Casa de la Vall), Ordino, Vall del Madriu-Perafita-Claror (hike) — routes: Andorra + Spanish Pyrenees: Grand Circuit (9 days) 🏔️
 - [ ] **AE** (5 dest): Dubai, Abu Dhabi, Al Ain, Liwa Oasis / Empty Quarter, Fujairah / East Coast — routes: United Arab Emirates 🏙️
@@ -355,21 +355,21 @@ Sorted alphabetically by country code.
 - [ ] **ES** (3 dest): Ibiza Town / Dalt Vila (UNESCO old town), Sant Joan de Labritja, Portinatx — routes: Ibiza (4-5 days) 🏝️
 - [ ] **ES** (3 dest): Timanfaya National Park (Islote de Hilario), Arrecife, Costa Teguise — routes: Lanzarote + Fuerteventura (5-7 days) 🏝️
 - [ ] **ES** (2 dest): Corralejo, El Cotillo — routes: Lanzarote + Fuerteventura (5-7 days) 🏝️
-- [ ] **ES** (6 dest): Madrid (Prado Museum), Retiro Park, Puerta del Sol, Gran Vía, Toledo (day trip), Segovia (day trip) — routes: Madrid (4 days) 🖼️
+- [x] **ES** (6 dest): Madrid (Prado Museum), Retiro Park, Puerta del Sol, Gran Vía, Toledo (day trip), Segovia (day trip) — routes: Madrid (4 days) 🖼️
 - [ ] **ES** (5 dest): Palma (base), Valldemossa, Deià, Sóller, Cap de Formentor — routes: Mallorca: Serra de Tramuntana Loop (6 days) 🏔️
 - [ ] **ES** (4 dest): Mahón (Camí de Cavalls coastal path), Ciutadella, Cala Macarelleta, Cala Turqueta — routes: Menorca (4-5 days) 🏝️
 - [ ] **ES** (3 dest): Santiago de Compostela (Praza do Obradoiro), Pontevedra / Combarro (Rías Baixas day trip), Cíes Islands (optional) — routes: Northern Portugal + Galicia (7-10 days) 🌊
 - [x] **ES** (11 dest): San Sebastián, Bilbao, Santander, Santillana del Mar, Comillas, Picos de Europa (Potes), Fuente Dé (cable car), Oviedo, Gijón, Santiago de Compostela, Cíes Islands (optional) — routes: Northern Spain Roadtrip (12 days) 🛣️
-- [ ] **ES** (6 dest): San Sebastián, Vitoria-Gasteiz, Elciego (Rioja Alavesa), Haro (Rioja Alavesa), Pamplona, Bilbao — routes: Northern Spain: Basque Interior + Rioja (9 days) 🍷
+- [x] **ES** (6 dest): San Sebastián, Vitoria-Gasteiz, Elciego (Rioja Alavesa), Haro (Rioja Alavesa), Pamplona, Bilbao — routes: Northern Spain: Basque Interior + Rioja (9 days) 🍷
 - [x] **ES** (9 dest): Santiago de Compostela (Praza do Obradoiro), Oviedo (Asturias), Gijón (Asturias), Picos de Europa (Potes), Fuente Dé (cable car), Santander (Magdalena Peninsula), Santillana del Mar, Bilbao (Guggenheim Museum), San Sebastián (La Concha, optional extension) — routes: Porto + Northern Spain (10-14 days) 🏔️
-- [ ] **ES** (2 dest): Seville (Alcázar & Cathedral), Madrid (Prado Museum) — routes: Portugal + Spain: Porto to Madrid (12 days) 🚆
+- [x] **ES** (2 dest): Seville (Alcázar & Cathedral), Madrid (Prado Museum) — routes: Portugal + Spain: Porto to Madrid (12 days) 🚆
 - [x] **ES** (1 dest): Seville (Alcázar & Cathedral) — routes: Southern Europe Highlights Roadtrip (14 days) 🎯
 - [x] **ES** (8 dest): Barcelona, Tarragona, Valencia, Alicante (Costa Blanca), Murcia, Almería coast, Málaga / Costa del Sol, Granada (optional inland detour) — routes: Spain: East to South (12 days) 🌅
 - [x] **ES** (8 dest): San Sebastián / Bilbao, Vitoria-Gasteiz, Burgos (cathedral), Madrid, Toledo (day trip), Segovia (day trip), Ávila (optional), Salamanca (optional) — routes: Spain: North to Central (12 days) 🚉
 - [ ] **ES** (6 dest): Santa Cruz de Tenerife, La Laguna (UNESCO old town), Teide National Park, Anaga Rural Park (Cruz del Carmen), Costa Adeje, Los Cristianos — routes: Tenerife (5-7 days) 🏝️
 - [x] **ES** (3 dest): Santa Cruz de Tenerife, Teide National Park, Los Cristianos — routes: Tenerife + La Gomera (7-10 days) 🏝️
 - [x] **ES** (4 dest): San Sebastián de la Gomera, Garajonay National Park, Valle Gran Rey, Agulo — routes: Tenerife + La Gomera (7-10 days) 🏝️
-- [ ] **ES** (6 dest): Valencia (Ciutat Vella), City of Arts and Sciences, Albufera, Alicante (Castillo de Santa Bárbara), Peñíscola (optional, north of Valencia), Calpe (optional) — routes: Valencia + Costa Blanca (6 days) 🎆
+- [x] **ES** (6 dest): Valencia (Ciutat Vella), City of Arts and Sciences, Albufera, Alicante (Castillo de Santa Bárbara), Peñíscola (optional, north of Valencia), Calpe (optional) — routes: Valencia + Costa Blanca (6 days) 🎆
 - [ ] **FI** (4 dest): Helsinki (Senate Square), Turku, Tampere, Rovaniemi (Santa Claus Village) — routes: Finland Roadtrip (12 days) 🛣️
 - [ ] **FI** (3 dest): Rovaniemi (Santa Claus Village), Levi (Kittilä), Ylläs (Äkäslompolo) — routes: Finnish Lapland (9 days) 🎅
 - [ ] **FI** (3 dest): Helsinki (Senate Square), Suomenlinna, Design District — routes: Helsinki (4 days) 🏛️
@@ -401,17 +401,17 @@ Sorted alphabetically by country code.
 - [x] **FR** (4 dest): Briançon, Gap, Embrun, Écrins (Vallouise/La Bérarde) — routes: French Alps + Provence (9 days) 🛤️
 - [x] **FR** (3 dest): Sisteron (Route Napoléon waypoint), Avignon, Luberon — routes: French Alps + Provence (9 days) 🛤️
 - [ ] **FR** (3 dest): Briançon (gateway), Vallouise, La Bérarde — routes: French Alps: Écrins National Park (6 days) 🐐
-- [ ] **FR** (1 dest): La Rochelle — routes: French Atlantic Coast: La Rochelle to Biarritz (12 days) 🏄
-- [ ] **FR** (1 dest): Bordeaux — routes: French Atlantic Coast: La Rochelle to Biarritz (12 days) 🏄
-- [ ] **FR** (2 dest): Arcachon, Dune du Pilat — routes: French Atlantic Coast: La Rochelle to Biarritz (12 days) 🏄
-- [ ] **FR** (2 dest): Biarritz, Saint-Jean-de-Luz (Basque Coast) — routes: French Atlantic Coast: La Rochelle to Biarritz (12 days) 🏄
+- [x] **FR** (1 dest): La Rochelle — routes: French Atlantic Coast: La Rochelle to Biarritz (12 days) 🏄
+- [x] **FR** (1 dest): Bordeaux — routes: French Atlantic Coast: La Rochelle to Biarritz (12 days) 🏄
+- [x] **FR** (2 dest): Arcachon, Dune du Pilat — routes: French Atlantic Coast: La Rochelle to Biarritz (12 days) 🏄
+- [x] **FR** (2 dest): Biarritz, Saint-Jean-de-Luz (Basque Coast) — routes: French Atlantic Coast: La Rochelle to Biarritz (12 days) 🏄
 - [x] **FR** (4 dest): Amboise (base) — Château d'Amboise + Clos Lucé, Chenonceau (day trip, ~30 min), Villandry (gardens), Azay-le-Rideau — routes: Loire Valley Castles (6 days) 🗝️
 - [x] **FR** (3 dest): Chambord (~45 min from Amboise), Cheverny (nearby), Blois (base, Château Royal) — routes: Loire Valley Castles (6 days) 🗝️
 - [x] **FR** (5 dest): Nice (base), Èze, Villefranche-sur-Mer, Menton, Cannes (optional) — routes: Monaco + Côte d'Azur (4 days) 🎰
 - [x] **FR** (1 dest): Nice (base) — routes: Monaco + Nice + Provence (5 days) 🍇
 - [x] **FR** (4 dest): Avignon (base), Aix-en-Provence, Les Baux-de-Provence (optional), Rhône wine region (optional) — routes: Monaco + Nice + Provence (5 days) 🍇
 - [x] **FR** (1 dest): Nice (overnight base) — routes: Monaco: Monte Carlo (2 days) 🎲
-- [ ] **FR** (6 dest): Honfleur, Bayeux, Omaha Beach, Pointe du Hoc, Normandy American Cemetery, Colleville-sur-Mer, Mont Saint-Michel — routes: Normandy (5 days) 🪖
+- [x] **FR** (6 dest): Honfleur, Bayeux, Omaha Beach, Pointe du Hoc, Normandy American Cemetery, Colleville-sur-Mer, Mont Saint-Michel — routes: Normandy (5 days) 🪖
 - [x] **FR** (7 dest): Île de la Cité, Le Marais (quieter, "real culture" district), Louvre, Tuileries, Eiffel Tower / Trocadéro, Musée Rodin (7th arr., quiet garden, less touristy than the classics), Montmartre — routes: Paris (4 days) 🗼
 - [x] **FR** (5 dest): Avignon (base) — Palais des Papes, Pont du Gard (nearby), Gordes (Luberon loop), Roussillon (Luberon loop), Ménerbes (Luberon loop) — routes: Provence (6 days) 🌻
 - [x] **FR** (3 dest): Les Baux-de-Provence + Carrières des Lumières, Arles (base, Roman sites), Camargue day trip (Saintes-Maries-de-la-Mer) — routes: Provence (6 days) 🌻
@@ -524,13 +524,13 @@ Sorted alphabetically by country code.
 - [x] **IT** (3 dest): Parma, Modena, Bologna — routes: Italy Roadtrip (12 days) 🧀
 - [x] **IT** (3 dest): Perugia, Assisi, Orvieto — routes: Italy Roadtrip (12 days) 🧀
 - [x] **IT** (2 dest): Amalfi Coast, Sorrento — routes: Italy Roadtrip (12 days) 🧀
-- [ ] **IT** (4 dest): Milan, Lake Como / Bellagio, Lake Garda / Sirmione, Verona (waypoint) — routes: Italy: North to Central (12 days) 🚄
+- [x] **IT** (4 dest): Milan, Lake Como / Bellagio, Lake Garda / Sirmione, Verona (waypoint) — routes: Italy: North to Central (12 days) 🚄
 - [x] **IT** (1 dest): Bologna — routes: Italy: North to Central (12 days) 🚄
-- [ ] **IT** (2 dest): Siena, Val d'Orcia (Pienza) — routes: Italy: North to Central (12 days) 🚄
+- [x] **IT** (2 dest): Siena, Val d'Orcia (Pienza) — routes: Italy: North to Central (12 days) 🚄
 - [x] **IT** (4 dest): Catania, Mount Etna, Taormina, Syracuse / Ortigia — routes: Malta + Gozo + Sicily (9 days) 🐚
-- [ ] **IT** (3 dest): Bellagio, Varenna, Menaggio — routes: Northern Italy (6 days) 🚤
-- [ ] **IT** (2 dest): Sirmione, Desenzano — routes: Northern Italy (6 days) 🚤
-- [ ] **IT** (1 dest): Verona (Arena, Juliet's balcony) — routes: Northern Italy (6 days) 🚤
+- [x] **IT** (3 dest): Bellagio, Varenna, Menaggio — routes: Northern Italy (6 days) 🚤
+- [x] **IT** (2 dest): Sirmione, Desenzano — routes: Northern Italy (6 days) 🚤
+- [x] **IT** (1 dest): Verona (Arena, Juliet's balcony) — routes: Northern Italy (6 days) 🚤
 - [x] **IT** (1 dest): Milan — routes: Northern Italy Roadtrip (9 days) 🚙
 - [x] **IT** (1 dest): Lake Como / Bellagio — routes: Northern Italy Roadtrip (9 days) 🚙
 - [x] **IT** (1 dest): Lake Garda / Sirmione — routes: Northern Italy Roadtrip (9 days) 🚙
@@ -769,14 +769,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
 | Dolomites & North Italy 🚡 | 8/24 | 0 |
-| Normandy (5 days) 🪖 | 6/6 | 0 |
-| French Atlantic Coast: La Rochelle to Biarritz (12 days) 🏄 | 6/6 | 0 |
-| Northern Italy (6 days) 🚤 | 6/7 | 0 |
-| Italy: North to Central (12 days) 🚄 | 6/9 | 0 |
-| Madrid (4 days) 🖼️ | 6/6 | 0 |
-| Valencia + Costa Blanca (6 days) 🎆 | 6/6 | 0 |
-| Northern Spain: Basque Interior + Rioja (9 days) 🍷 | 6/6 | 0 |
-| Andorra (4 days) 🏔️ | 6/6 | 0 |
 | Complete Croatia (12 days) 🇭🇷 | 6/6 | 0 |
 | Slovenia Alpine Loop (6 days) 🏔️ | 6/6 | 0 |
 | Slovenia + Italy (9 days) 🍝 | 6/6 | 0 |
@@ -808,6 +800,14 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Brittany: Saint-Malo, Dinan & Pink Granite Coast (5 days) 🦞 | 5/5 | 0 |
 | France Roadtrip: Paris to the Côte d'Azur (12 days) 🚗 | 5/5 | 0 |
 | Campania + Puglia (9 days) 🧭 | 5/8 | 0 |
-| ... 130 more routes with open destinations ... | | |
+| Liechtenstein: Vaduz (2 days) 🏰 | 5/5 | 0 |
+| Corsica: South Loop (6 days) 🏖️ | 5/5 | 0 |
+| Malta (4 days) 🌅 | 5/5 | 0 |
+| Barcelona (4 days) 🎨 | 5/5 | 0 |
+| Basque Country: San Sebastián + Bilbao (6 days) 🐟 | 5/5 | 0 |
+| Mallorca: Serra de Tramuntana Loop (6 days) 🏔️ | 5/5 | 0 |
+| Dubrovnik + Surroundings (5 days) 🏛️ | 5/5 | 0 |
+| Istria (6 days) 🍇 | 5/5 | 0 |
+| ... 121 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

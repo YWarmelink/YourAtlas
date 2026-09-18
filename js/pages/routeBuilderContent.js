@@ -12193,6 +12193,119 @@ function rbMigrateAustriaAlpineClusterDestinationNotes() {
 }
 
 /**
+ * Batch 120 (2026-09-18) -- Normandy + French Atlantic Coast: La Rochelle to Biarritz -- 9
+ * destinations researched (fresh). Closes both routes out entirely. Same generic name-matching
+ * migration pattern as the other batches.
+ */
+function rbMigrateNormandyAtlanticCoastDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_NORMANDY_ATLANTIC_COAST_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_NORMANDY_ATLANTIC_COAST_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Bayeux': "The first French town liberated after D-Day, home to the 68m Bayeux Tapestry depicting the 1066 Norman conquest of England, displayed in a dedicated museum with an included audio guide.",
+    'Normandy American Cemetery, Colleville-sur-Mer': "9,388 American WWII dead are buried here above Omaha Beach, with a visitor center telling individual soldiers' stories; the reflecting pool and rows of white crosses and Stars of David overlooking the beach below are the somber centerpiece.",
+    'Mont Saint-Michel': "A tidal island abbey reached by a raised causeway, with dramatic tides (among Europe's largest) that can cut it off from the mainland; check tide tables before visiting, and climb to the abbey church at the top — a long, steep walk through the village — for the views.",
+    'La Rochelle': "A historic port town with two medieval stone towers (Tour Saint-Nicolas, Tour de la Chaîne) still flanking the harbor entrance; the old town's arcaded streets and the Vieux Port make for an easy half-day wander.",
+    'Bordeaux': "France's wine capital, with a UNESCO-listed 18th-century riverfront and the Cité du Vin, an interactive wine museum; the Miroir d'Eau (Water Mirror) reflecting pool in front of the Place de la Bourse is the signature photo spot, especially at sunset.",
+    'Arcachon': "A Belle Époque seaside town on its namesake bay, known for oyster farming and Victorian-era villas in the Ville d'Hiver district; the small casino and boardwalk make it a pleasant coastal base.",
+    'Dune du Pilat': "Europe's tallest sand dune (over 100m), overlooking Arcachon Bay and the Atlantic pine forest; climb it (steep, no shade) for the view, and go at sunset for the best light — it gets crowded midday in summer.",
+    'Biarritz': "A glamorous surf town on the Basque coast, with world-class beach breaks (Grande Plage, Côte des Basques) drawing surfers year-round; the Rocher de la Vierge, a small rock islet with a footbridge, is the classic viewpoint.",
+    'Saint-Jean-de-Luz (Basque Coast)': "A quieter fishing town near the Spanish border, where Louis XIV married Marie-Thérèse of Spain in 1660 (the church is still standing); a sheltered bay makes its beach calmer than Biarritz's surf breaks.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 121 (2026-09-18) -- Northern Italy lakes cluster leftovers (Northern Italy, Italy: North
+ * to Central) -- 6 destinations, mostly fresh plus 2 reuse of the existing Verona note under new
+ * name-string variants. Closes both routes out entirely. Same generic name-matching migration
+ * pattern as the other batches.
+ */
+function rbMigrateNorthernItalyLakesLeftoverDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_NORTHERN_ITALY_LAKES_LEFTOVER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_NORTHERN_ITALY_LAKES_LEFTOVER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Bellagio': "Bellagio sits on the promontory where the lake's three branches meet, earning its \"pearl of Lake Como\" nickname; the lakeside promenade and the gardens of Villa Melzi/Villa Serbelloni are the highlight beyond the ferry views. Garden visiting hours/entry slots are limited, so check ahead if you want to go in rather than just admire from outside.",
+    'Menaggio': "A lakeside town on Lake Como's western shore, quieter than Bellagio, and the starting point for ferries across to Varenna and Bellagio or hikes up into the hills above the lake.",
+    'Sirmione': "Sirmione's peninsula holds the Grotte di Catullo, extensive Roman villa ruins at its tip with lake views on three sides, plus a small thermal-spa scene; the old town gate closes to outside cars, so park before the peninsula and walk in.",
+    'Desenzano': "Lake Garda's largest town, with a lakeside old town, castle, and a well-preserved Roman villa with mosaic floors (Villa Romana); its train station makes it the easiest lake access point directly from Milan or Verona.",
+    "Verona (Arena, Juliet's balcony)": "The Roman Arena hosts an open-air opera season roughly June-September (book ahead if visiting in that window) and is otherwise open for daytime visits year-round; Casa di Giulietta (Juliet's balcony) and the Piazza delle Erbe old-town market square are the other quick highlights within easy walking distance of each other.",
+    'Verona (waypoint)': "The Roman Arena hosts an open-air opera season roughly June-September (book ahead if visiting in that window) and is otherwise open for daytime visits year-round; Casa di Giulietta (Juliet's balcony) and the Piazza delle Erbe old-town market square are the other quick highlights within easy walking distance of each other.",
+    "Val d'Orcia (Pienza)": "A UNESCO-listed stretch of rolling Tuscan farmland with cypress-lined roads (the classic Tuscany postcard image), and Pienza, a small Renaissance \"ideal city\" planned in the 1450s, known for its pecorino cheese; stop at the San Quirico d'Orcia viewpoint for the classic cypress-road photo.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 122 (2026-09-18) -- Spain + Andorra cluster (Madrid, Valencia + Costa Blanca, Northern
+ * Spain: Basque Interior + Rioja, Andorra) -- 18 destinations researched (fresh). Closes all 4
+ * routes out entirely. Same generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateSpainAndorraClusterDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_SPAIN_ANDORRA_CLUSTER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_SPAIN_ANDORRA_CLUSTER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Madrid (Prado Museum)': "One of the world's great art museums, with the largest collections of Velázquez and Goya anywhere; free entry runs the last two hours before closing daily (check current hours), though it gets crowded then — book a timed ticket in advance for a calmer visit.",
+    'Retiro Park': "Madrid's central green space, home to a large ornamental lake with rowboat rentals and the glass-and-iron Crystal Palace (Palacio de Cristal); the Rosaleda rose garden is the quieter corner worth seeking out beyond the lake.",
+    'Puerta del Sol': "Madrid's symbolic central square, marked by the Kilometre Zero plaque (the reference point for Spain's road network) and the city's bear-and-strawberry-tree statue; also where Madrileños gather each New Year's Eve for the midnight bell/grape tradition.",
+    'Gran Vía': "Madrid's main shopping boulevard, lined with early-20th-century architecture and theaters, often nicknamed the \"Spanish Broadway\"; walk it in the evening when the buildings' facades are lit up.",
+    'Valencia (Ciutat Vella)': "Valencia's old town, centered on a Gothic cathedral (said to hold the Holy Grail) and the ornate Mercado Central; also try horchata (a local tiger-nut drink) and paella, which originated in this region.",
+    'City of Arts and Sciences': "A striking futuristic architecture complex by Santiago Calatrava, built along the dried-up former riverbed of the Turia; includes Europe's largest aquarium (Oceanogràfic), an IMAX/planetarium (Hemisfèric) and a science museum, best photographed from the reflecting pools out front.",
+    'Albufera': "A freshwater lagoon and wetland just south of Valencia, ringed by rice paddies (where the region's famous paella rice is grown); take a traditional wooden boat out on the water at sunset for the classic photo.",
+    'Alicante (Castillo de Santa Bárbara)': "A hilltop Moorish-origin castle overlooking Alicante's harbor and old town, reachable by a free elevator built into the hillside (access via a tunnel from Postiguet Beach) or a walking path; the views over the city and Mediterranean are the main draw.",
+    'Peñíscola (optional, north of Valencia)': "A walled medieval town on a rocky headland, dominated by the Papa Luna Castle (used as a filming location for Game of Thrones' Meereen); the narrow whitewashed streets climbing to the castle are worth wandering beyond just the castle itself.",
+    'Calpe (optional)': "A resort town dominated by the Peñón de Ifach, a dramatic 332m limestone rock jutting straight out of the sea; a hiking trail (moderate, partly via a short tunnel) climbs to its summit for sweeping coastal views.",
+    'Elciego (Rioja Alavesa)': "A small Rioja wine village known for the Marqués de Riscal winery, whose titanium-ribbon Frank Gehry-designed hotel/visitor building rises dramatically over the vineyards; book a winery tour/tasting ahead, as it's the main reason to stop here.",
+    'Haro (Rioja Alavesa)': "Considered the historic capital of Rioja wine, with several long-established bodegas open for tours along the \"Barrio de la Estación\" train station district; the annual Haro Wine Battle (Batalla del Vino) each June, where locals drench each other in red wine, is the town's best-known event.",
+    'Pamplona': "Best known internationally for the Running of the Bulls (Encierro) during the San Fermín festival each July, immortalized by Hemingway; outside festival dates, its walkable old town and citadel are calm and far less crowded than the festival images suggest.",
+    'Escaldes-Engordany (Caldea spa)': "Home to Caldea, one of Europe's largest thermal spa complexes, built over natural hot springs beneath a distinctive glass-pyramid building; a good half-day soak, especially in winter after a day of skiing.",
+    "Ordino (Museu Casa d'Areny-Plandolit)": "A quiet mountain village with a preserved 17th-century manor house museum showing how a wealthy Andorran family lived across centuries; one of the best-preserved traditional villages in the country, worth a short wander beyond just the museum.",
+    'Canillo (Roc del Quer viewpoint)': "Home to the Roc del Quer, a cantilevered wooden viewing platform jutting out over a mountain valley with a lone sculpted figure (\"El Pensador\") appearing to contemplate the view; a popular short stop for photos rather than a full destination.",
+    'Sant Joan de Caselles': "A small Romanesque church near Canillo, notable for its well-preserved 12th-century bell tower and a Gothic crucifixion mural inside; a quick 15-20 minute stop for those interested in Andorra's Romanesque architecture, of which the country has an unusually dense concentration for its size.",
+    'Encamp (optional)': "Home to the Andorra National Automobile Museum, with a large collection of vintage cars and motorcycles, plus a cable car link up to the Vall de la Neu ski area; mainly of interest to car enthusiasts or as a ski-season base.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Two of batch 2's standalone routes were flagged as too exposed to their long-haul flight time
  * relative to trip length — Jordanië (8d, connecting flight) and Nieuw-Zeeland Zuidereiland (21d,
  * but 27-38h with multiple stops). Adds +2 days to each as a recovery/margin buffer, matching the
@@ -15527,11 +15640,11 @@ function rbBuildNormandyRoute() {
       code: 'FR', name: 'France', days: 5, budget: 625, lat: 49.2764, lng: -0.7025,
       destinations: [
         { name: 'Honfleur', lat: 49.4189, lng: 0.2333, notes: "The Vieux Bassin harbor of tall slate-fronted houses that drew Monet and the Impressionists is the whole point of a stop here; go at golden hour for the reflections, and step into the wooden Sainte-Catherine church, built by shipwrights using boat-building techniques." },
-        { name: 'Bayeux', lat: 49.2764, lng: -0.7025 },
+        { name: 'Bayeux', lat: 49.2764, lng: -0.7025 , notes: 'The first French town liberated after D-Day, home to the 68m Bayeux Tapestry depicting the 1066 Norman conquest of England, displayed in a dedicated museum with an included audio guide.' },
         { name: 'Omaha Beach', lat: 49.3697, lng: -0.8560, notes: "The beach itself is secondary to the Normandy American Cemetery at Colleville-sur-Mer just above it — 9,000+ white crosses overlooking the sand — so budget at least an hour or two there, ideally in late-afternoon light." },
         { name: 'Pointe du Hoc', lat: 49.3958, lng: -0.9897, notes: "The site where US Army Rangers scaled 30m cliffs under fire on D-Day, preserved with its original bomb craters intact; free entry, self-guided, about an hour is enough, and stay on marked paths since the crater edges are still actively eroding." },
-        { name: 'Normandy American Cemetery, Colleville-sur-Mer', lat: 49.3597, lng: -0.8494 },
-        { name: 'Mont Saint-Michel', lat: 48.6361, lng: -1.5115 },
+        { name: 'Normandy American Cemetery, Colleville-sur-Mer', lat: 49.3597, lng: -0.8494 , notes: '9,388 American WWII dead are buried here above Omaha Beach, with a visitor center telling individual soldiers\' stories; the reflecting pool and rows of white crosses and Stars of David overlooking the beach below are the somber centerpiece.' },
+        { name: 'Mont Saint-Michel', lat: 48.6361, lng: -1.5115 , notes: 'A tidal island abbey reached by a raised causeway, with dramatic tides (among Europe\'s largest) that can cut it off from the mainland; check tide tables before visiting, and climb to the abbey church at the top — a long, steep walk through the village — for the views.' },
       ],
       notes: "NL→Honfleur (~7h) — Honfleur→Bayeux (1h15) — a full D-Day beaches day (Omaha, Pointe du Hoc, the American cemetery) — Bayeux→Mont Saint-Michel (2.5h) — abbey morning, then the drive home. Étretat deliberately left out — it needs a separate 2-3h detour, Honfleur fits the route better. Amsterdam-Bayeux ~697km/6.5-7h, tolls ~€35-55 one way. Budget ~€100-150pp/day (lodging €45-65, food €40-55, activities €15-30). Season: May-June or September; avoid 6 June (D-Day commemoration, busy and expensive). ⚠️ Bayeux Tapestry museum: closed since September 2025 for renovation, reopening October 2027; the tapestry itself will be on display at the British Museum, London, 10 Sept 2026-11 July 2027 — so in 2026 it isn't visible anywhere in Bayeux itself, only in London from September onward. Guided D-Day tour €93 (half-day)/€168 (full day) pp; Mont St-Michel parking €6.80-9.80/day + free shuttle; abbey entry €13-16.",
       transport_to_next: 'End of this route — drive back to the Netherlands.',
@@ -15780,7 +15893,7 @@ function rbBuildFrenchAtlanticCoastRoute() {
     {
       code: 'FR', name: 'France', days: 3, budget: 291, lat: 46.1603, lng: -1.1511,
       destinations: [
-        { name: 'La Rochelle', lat: 46.1603, lng: -1.1511 },
+        { name: 'La Rochelle', lat: 46.1603, lng: -1.1511 , notes: 'A historic port town with two medieval stone towers (Tour Saint-Nicolas, Tour de la Chaîne) still flanking the harbor entrance; the old town\'s arcaded streets and the Vieux Port make for an easy half-day wander.' },
       ],
       notes: "NL → La Rochelle (~970km/~9.5h). Budget ~€85-110/day.",
       transport_to_next: 'Drive to Bordeaux (~180km/2h).',
@@ -15788,7 +15901,7 @@ function rbBuildFrenchAtlanticCoastRoute() {
     {
       code: 'FR', name: 'France', days: 3, budget: 291, lat: 44.8378, lng: -0.5792,
       destinations: [
-        { name: 'Bordeaux', lat: 44.8378, lng: -0.5792 },
+        { name: 'Bordeaux', lat: 44.8378, lng: -0.5792 , notes: 'France\'s wine capital, with a UNESCO-listed 18th-century riverfront and the Cité du Vin, an interactive wine museum; the Miroir d\'Eau (Water Mirror) reflecting pool in front of the Place de la Bourse is the signature photo spot, especially at sunset.' },
       ],
       notes: "Bordeaux. Budget ~€85-110/day. Bordeaux city-centre parking ~€20-30/day garage (or €2.50-3.40/h on-street).",
       transport_to_next: 'Short detour to Arcachon/Dune du Pilat (~65km/1h).',
@@ -15796,8 +15909,8 @@ function rbBuildFrenchAtlanticCoastRoute() {
     {
       code: 'FR', name: 'France', days: 2, budget: 260, lat: 44.6605, lng: -1.1682,
       destinations: [
-        { name: 'Arcachon', lat: 44.6605, lng: -1.1682 },
-        { name: 'Dune du Pilat', lat: 44.5896, lng: -1.2153 },
+        { name: 'Arcachon', lat: 44.6605, lng: -1.1682 , notes: 'A Belle Époque seaside town on its namesake bay, known for oyster farming and Victorian-era villas in the Ville d\'Hiver district; the small casino and boardwalk make it a pleasant coastal base.' },
+        { name: 'Dune du Pilat', lat: 44.5896, lng: -1.2153 , notes: 'Europe\'s tallest sand dune (over 100m), overlooking Arcachon Bay and the Atlantic pine forest; climb it (steep, no shade) for the view, and go at sunset for the best light — it gets crowded midday in summer.' },
       ],
       notes: "A short detour from Bordeaux to Arcachon and the Dune du Pilat. Budget ~€110-150/day in high season. Beach parking peaks in summer.",
       transport_to_next: 'Drive south to the Basque Coast (~180km/2h).',
@@ -15805,8 +15918,8 @@ function rbBuildFrenchAtlanticCoastRoute() {
     {
       code: 'FR', name: 'France', days: 4, budget: 520, lat: 43.4832, lng: -1.5586,
       destinations: [
-        { name: 'Biarritz', lat: 43.4832, lng: -1.5586 },
-        { name: 'Saint-Jean-de-Luz (Basque Coast)', lat: 43.3888, lng: -1.6631 },
+        { name: 'Biarritz', lat: 43.4832, lng: -1.5586 , notes: 'A glamorous surf town on the Basque coast, with world-class beach breaks (Grande Plage, Côte des Basques) drawing surfers year-round; the Rocher de la Vierge, a small rock islet with a footbridge, is the classic viewpoint.' },
+        { name: 'Saint-Jean-de-Luz (Basque Coast)', lat: 43.3888, lng: -1.6631 , notes: 'A quieter fishing town near the Spanish border, where Louis XIV married Marie-Thérèse of Spain in 1660 (the church is still standing); a sheltered bay makes its beach calmer than Biarritz\'s surf breaks.' },
       ],
       notes: "Biarritz/Saint-Jean-de-Luz on the Basque Coast — flowing steadily south with only one small westward detour (Arcachon), no real backtrack. Budget ~€110-150/day in high season. ⚠️ A10/A63 toll corridor — budget a **total of ~€250-300** round trip. Beach parking in Arcachon/Biarritz peaks in summer.",
       transport_to_next: 'End of this route — drive back to the Netherlands.',
@@ -16034,9 +16147,9 @@ function rbBuildNorthernItalyLakesRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 250, lat: 45.9860, lng: 9.2578,
       destinations: [
-        { name: 'Bellagio', lat: 45.9860, lng: 9.2578 },
+        { name: 'Bellagio', lat: 45.9860, lng: 9.2578 , notes: 'Bellagio sits on the promontory where the lake\'s three branches meet, earning its "pearl of Lake Como" nickname; the lakeside promenade and the gardens of Villa Melzi/Villa Serbelloni are the highlight beyond the ferry views. Garden visiting hours/entry slots are limited, so check ahead if you want to go in rather than just admire from outside.' },
         { name: 'Varenna', lat: 46.0139, lng: 9.2856, notes: "A quieter, more colorful counterpart to Bellagio, with the lakeside \"Passeggiata degli Innamorati\" (lovers' walk) and the hilltop Castello di Vezio above town. The castle viewpoint is a short uphill walk and gives one of the best panoramic photos of the lake — good for sunset since Varenna faces west across the water." },
-        { name: 'Menaggio', lat: 46.0167, lng: 9.2333 },
+        { name: 'Menaggio', lat: 46.0167, lng: 9.2333 , notes: 'A lakeside town on Lake Como\'s western shore, quieter than Bellagio, and the starting point for ferries across to Varenna and Bellagio or hikes up into the hills above the lake.' },
       ],
       notes: 'Lake Como (2-3 nights), ferry-hopping Bellagio/Varenna/Menaggio. Season: May or September; avoid July-August (heat/crowds, especially the Ferragosto peak 10-20 August: near-full occupancy on both lakes).',
       transport_to_next: 'Drive to Lake Garda.',
@@ -16044,8 +16157,8 @@ function rbBuildNorthernItalyLakesRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 250, lat: 45.4933, lng: 10.6089,
       destinations: [
-        { name: 'Sirmione', lat: 45.4933, lng: 10.6089 },
-        { name: 'Desenzano', lat: 45.4667, lng: 10.5333 },
+        { name: 'Sirmione', lat: 45.4933, lng: 10.6089 , notes: 'Sirmione\'s peninsula holds the Grotte di Catullo, extensive Roman villa ruins at its tip with lake views on three sides, plus a small thermal-spa scene; the old town gate closes to outside cars, so park before the peninsula and walk in.' },
+        { name: 'Desenzano', lat: 45.4667, lng: 10.5333 , notes: 'Lake Garda\'s largest town, with a lakeside old town, castle, and a well-preserved Roman villa with mosaic floors (Villa Romana); its train station makes it the easiest lake access point directly from Milan or Verona.' },
       ],
       notes: 'Lake Garda (2 nights, Sirmione/Desenzano).',
       transport_to_next: 'Drive to Verona (short hop).',
@@ -16053,7 +16166,7 @@ function rbBuildNorthernItalyLakesRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 125, lat: 45.4384, lng: 10.9916,
       destinations: [
-        { name: "Verona (Arena, Juliet's balcony)", lat: 45.4384, lng: 10.9916 },
+        { name: "Verona (Arena, Juliet's balcony)", lat: 45.4384, lng: 10.9916 , notes: 'The Roman Arena hosts an open-air opera season roughly June-September (book ahead if visiting in that window) and is otherwise open for daytime visits year-round; Casa di Giulietta (Juliet\'s balcony) and the Piazza delle Erbe old-town market square are the other quick highlights within easy walking distance of each other.' },
       ],
       notes: "Verona (1 night, Arena/Juliet's balcony), then back to Milan. Deliberately a flat lakes-and-cities loop, no Dolomites/Venice on this route — that's the longer roadtrip version below. ⚠️ No entry/reservation hassle like Venice/Rome, but do book ferries and any Arena opera performances ahead; if self-driving via Germany/Austria, an Austrian vignette is needed (10-day version ~€12.80) — Switzerland only sells an annual vignette (~€43), less worthwhile for a one-off trip.",
       transport_to_next: 'End of this route — drive back to Milan and fly home.',
@@ -16303,7 +16416,7 @@ function rbBuildItalyNorthToCentralRoute() {
         { name: 'Milan', lat: 45.4642, lng: 9.1900, notes: "The Duomo's rooftop terraces and the Navigli canal district are the standouts beyond the obvious sights; Leonardo's Last Supper (Cenacolo Vinciano) requires booking 3-4 months ahead, since tickets for each quarterly release window sell out within minutes of going live." },
         { name: 'Lake Como / Bellagio', lat: 45.9860, lng: 9.2578, notes: "Bellagio sits on the promontory where the lake's three branches meet, earning its \"pearl of Lake Como\" nickname; the lakeside promenade and the gardens of Villa Melzi/Villa Serbelloni are the highlight beyond the ferry views. Garden visiting hours/entry slots are limited, so check ahead if you want to go in rather than just admire from outside." },
         { name: 'Lake Garda / Sirmione', lat: 45.4933, lng: 10.6089, notes: "Sirmione's peninsula holds the Grotte di Catullo, extensive Roman villa ruins at its tip with lake views on three sides, plus a small thermal-spa scene; the old town gate closes to outside cars, so park before the peninsula and walk in." },
-        { name: 'Verona (waypoint)', lat: 45.4384, lng: 10.9916 },
+        { name: 'Verona (waypoint)', lat: 45.4384, lng: 10.9916 , notes: 'The Roman Arena hosts an open-air opera season roughly June-September (book ahead if visiting in that window) and is otherwise open for daytime visits year-round; Casa di Giulietta (Juliet\'s balcony) and the Piazza delle Erbe old-town market square are the other quick highlights within easy walking distance of each other.' },
       ],
       notes: "The classic big-names sweep, linear, no backtrack — mostly along the Milan-Bologna-Florence-Rome high-speed rail line (a real alternative to the car here, except for the lakes/Dolomites stretch). Milan/Lake Como/Lake Garda (3-4 days), then on via Verona. Open-jaw AMS-Milan in, AMS-Rome out (both direct, frequent). Budget ~€130/day. Italian autostrade charge distance-based tolls, roughly €9/100km — Milan-Rome alone is about €44.50 one way if driving the full spine rather than switching to the train.",
       transport_to_next: 'Drive or take the high-speed train via Verona to Bologna (~1h).',
@@ -16328,7 +16441,7 @@ function rbBuildItalyNorthToCentralRoute() {
       code: 'IT', name: 'Italy', days: 2, budget: 260, lat: 43.3188, lng: 11.3308,
       destinations: [
         { name: 'Siena', lat: 43.3188, lng: 11.3308, notes: "The shell-shaped Piazza del Campo hosts the Palio horse race twice a year (July 2 and Aug 16); climbing the Torre del Mangia gives the best rooftop view over the square." },
-        { name: 'Val d\'Orcia (Pienza)', lat: 43.0778, lng: 11.6789 },
+        { name: 'Val d\'Orcia (Pienza)', lat: 43.0778, lng: 11.6789 , notes: 'A UNESCO-listed stretch of rolling Tuscan farmland with cypress-lined roads (the classic Tuscany postcard image), and Pienza, a small Renaissance "ideal city" planned in the 1450s, known for its pecorino cheese; stop at the San Quirico d\'Orcia viewpoint for the classic cypress-road photo.' },
       ],
       notes: "Siena/Val d'Orcia (2 days). Season: May-June or September; avoid August.",
       transport_to_next: 'High-speed train to Rome (~1h30).',
@@ -17300,10 +17413,10 @@ function rbBuildMadridRoute() {
     {
       code: 'ES', name: 'Spain', days: 4, budget: 400, lat: 40.4168, lng: -3.7038,
       destinations: [
-        { name: 'Madrid (Prado Museum)', lat: 40.4138, lng: -3.6921 },
-        { name: 'Retiro Park', lat: 40.4153, lng: -3.6844 },
-        { name: 'Puerta del Sol', lat: 40.4169, lng: -3.7035 },
-        { name: 'Gran Vía', lat: 40.4200, lng: -3.7025 },
+        { name: 'Madrid (Prado Museum)', lat: 40.4138, lng: -3.6921 , notes: 'One of the world\'s great art museums, with the largest collections of Velázquez and Goya anywhere; free entry runs the last two hours before closing daily (check current hours), though it gets crowded then — book a timed ticket in advance for a calmer visit.' },
+        { name: 'Retiro Park', lat: 40.4153, lng: -3.6844 , notes: 'Madrid\'s central green space, home to a large ornamental lake with rowboat rentals and the glass-and-iron Crystal Palace (Palacio de Cristal); the Rosaleda rose garden is the quieter corner worth seeking out beyond the lake.' },
+        { name: 'Puerta del Sol', lat: 40.4169, lng: -3.7035 , notes: 'Madrid\'s symbolic central square, marked by the Kilometre Zero plaque (the reference point for Spain\'s road network) and the city\'s bear-and-strawberry-tree statue; also where Madrileños gather each New Year\'s Eve for the midnight bell/grape tradition.' },
+        { name: 'Gran Vía', lat: 40.4200, lng: -3.7025 , notes: 'Madrid\'s main shopping boulevard, lined with early-20th-century architecture and theaters, often nicknamed the "Spanish Broadway"; walk it in the evening when the buildings\' facades are lit up.' },
         { name: 'Toledo (day trip)', lat: 39.8628, lng: -4.0273 , notes: 'A hilltop former capital where a mosque-turned-church, synagogues, and a Gothic cathedral sit within a few blocks of each other; arrive on an early train from Madrid (under 1 hour) before the day-trip buses land midday, and don\'t skip Santo Tomé for El Greco\'s Burial of the Count of Orgaz.' },
         { name: 'Segovia (day trip)', lat: 40.9429, lng: -4.1088 , notes: 'Known for its intact Roman aqueduct running through the town center and the turret-heavy Alcázar that reportedly inspired Disney\'s castle; a fast train from Madrid takes about 30 minutes, so it\'s an easy half-day — climb the Alcázar\'s tower for the view and try cochinillo (roast suckling pig) for lunch.' },
       ],
@@ -17390,12 +17503,12 @@ function rbBuildValenciaCostaBlancaRoute() {
     {
       code: 'ES', name: 'Spain', days: 6, budget: 540, lat: 39.4699, lng: -0.3763,
       destinations: [
-        { name: 'Valencia (Ciutat Vella)', lat: 39.4756, lng: -0.3757 },
-        { name: 'City of Arts and Sciences', lat: 39.4544, lng: -0.3517 },
-        { name: 'Albufera', lat: 39.3167, lng: -0.3500 },
-        { name: 'Alicante (Castillo de Santa Bárbara)', lat: 38.3472, lng: -0.4795 },
-        { name: 'Peñíscola (optional, north of Valencia)', lat: 40.3597, lng: 0.4053 },
-        { name: 'Calpe (optional)', lat: 38.6447, lng: 0.0713 },
+        { name: 'Valencia (Ciutat Vella)', lat: 39.4756, lng: -0.3757 , notes: 'Valencia\'s old town, centered on a Gothic cathedral (said to hold the Holy Grail) and the ornate Mercado Central; also try horchata (a local tiger-nut drink) and paella, which originated in this region.' },
+        { name: 'City of Arts and Sciences', lat: 39.4544, lng: -0.3517 , notes: 'A striking futuristic architecture complex by Santiago Calatrava, built along the dried-up former riverbed of the Turia; includes Europe\'s largest aquarium (Oceanogràfic), an IMAX/planetarium (Hemisfèric) and a science museum, best photographed from the reflecting pools out front.' },
+        { name: 'Albufera', lat: 39.3167, lng: -0.3500 , notes: 'A freshwater lagoon and wetland just south of Valencia, ringed by rice paddies (where the region\'s famous paella rice is grown); take a traditional wooden boat out on the water at sunset for the classic photo.' },
+        { name: 'Alicante (Castillo de Santa Bárbara)', lat: 38.3472, lng: -0.4795 , notes: 'A hilltop Moorish-origin castle overlooking Alicante\'s harbor and old town, reachable by a free elevator built into the hillside (access via a tunnel from Postiguet Beach) or a walking path; the views over the city and Mediterranean are the main draw.' },
+        { name: 'Peñíscola (optional, north of Valencia)', lat: 40.3597, lng: 0.4053 , notes: 'A walled medieval town on a rocky headland, dominated by the Papa Luna Castle (used as a filming location for Game of Thrones\' Meereen); the narrow whitewashed streets climbing to the castle are worth wandering beyond just the castle itself.' },
+        { name: 'Calpe (optional)', lat: 38.6447, lng: 0.0713 , notes: 'A resort town dominated by the Peñón de Ifach, a dramatic 332m limestone rock jutting straight out of the sea; a hiking trail (moderate, partly via a short tunnel) climbs to its summit for sweeping coastal views.' },
       ],
       notes: "Valencia city (2-3 days: Ciutat Vella, the City of Arts and Sciences, Albufera) then south along the Costa Blanca to Alicante (Castillo de Santa Bárbara) — optionally add Peñíscola (castle, to the north — better done on the way down if arriving from above) or Calpe/Dénia. Entry: direct AMS-VLC (KLM/Vueling/Transavia/easyJet, ~2h28, ~175 flights/week). Budget ~€90/day. Season: March is spectacular but chaotic (Las Fallas, mid-March, a UNESCO-listed festival with huge crowds and fireworks every night) — otherwise April-June or September-October is ideal, July-August is hot and busy on the coast. Web check (2026-08): book months ahead if visiting during Las Fallas.",
       transport_to_next: 'End of this route — fly back AMS-VLC direct.',
@@ -17441,9 +17554,9 @@ function rbBuildNorthernSpainBasqueRiojaRoute() {
       destinations: [
         { name: 'San Sebastián', lat: 43.3183, lng: -1.9812 , notes: 'Shell-shaped urban bay often ranked among Europe\'s best city beaches, backed by Belle Époque architecture. Walk the promenade at sunset and ride the funicular up Monte Igueldo for the view over the bay, then do a pintxos crawl through the Parte Vieja.' },
         { name: 'Vitoria-Gasteiz', lat: 42.8467, lng: -2.6716 , notes: 'Basque Country\'s official capital with a walled medieval old town (almond-shaped Casco Medieval); take the "Abierta por Obras" guided tour inside Santa María Cathedral, which lets you see the ongoing restoration/archaeology up close — a half-day is enough, and it\'s far less crowded than Bilbao or San Sebastián.' },
-        { name: 'Elciego (Rioja Alavesa)', lat: 42.4256, lng: -2.5936 },
-        { name: 'Haro (Rioja Alavesa)', lat: 42.5763, lng: -2.8467 },
-        { name: 'Pamplona', lat: 42.8125, lng: -1.6458 },
+        { name: 'Elciego (Rioja Alavesa)', lat: 42.4256, lng: -2.5936 , notes: 'A small Rioja wine village known for the Marqués de Riscal winery, whose titanium-ribbon Frank Gehry-designed hotel/visitor building rises dramatically over the vineyards; book a winery tour/tasting ahead, as it\'s the main reason to stop here.' },
+        { name: 'Haro (Rioja Alavesa)', lat: 42.5763, lng: -2.8467 , notes: 'Considered the historic capital of Rioja wine, with several long-established bodegas open for tours along the "Barrio de la Estación" train station district; the annual Haro Wine Battle (Batalla del Vino) each June, where locals drench each other in red wine, is the town\'s best-known event.' },
+        { name: 'Pamplona', lat: 42.8125, lng: -1.6458 , notes: 'Best known internationally for the Running of the Bulls (Encierro) during the San Fermín festival each July, immortalized by Hemingway; outside festival dates, its walkable old town and citadel are calm and far less crowded than the festival images suggest.' },
         { name: 'Bilbao', lat: 43.2630, lng: -2.9350 , notes: 'Gehry\'s titanium-clad Guggenheim building is as much the draw as what\'s inside, along with Koons\' giant flower "Puppy" out front. Book timed entry online to skip the queue, and return after dark to see the building lit and reflected in the river.' },
       ],
       notes: "Restructured around the Basque interior and wine country, with no overlap now with the coast (see Basque Country: San Sebastián + Bilbao above) or Cantabria/Asturias/Galicia (see the standalone items further down): San Sebastián → Vitoria-Gasteiz → the Rioja Alavesa wine region (Elciego/Haro) → Pamplona → back to Bilbao. Entry: direct AMS-Bilbao, rental car for the inland loop. Budget ~€100/day. Season: May-September (Rioja's grape harvest is in September, a nice bonus for a wine-focused trip).",
@@ -17677,11 +17790,11 @@ function rbBuildAndorraRoute() {
       code: 'AD', name: 'Andorra', days: 4, budget: 480, lat: 42.5063, lng: 1.5218,
       destinations: [
         { name: 'Andorra la Vella (Casa de la Vall)', lat: 42.5063, lng: 1.5218 , notes: 'A 16th-century stone building that served as Andorra\'s parliament until 2011, now a small museum; visits are by free guided tour only with limited daily slots, so book/reserve ahead rather than just showing up.' },
-        { name: 'Escaldes-Engordany (Caldea spa)', lat: 42.5106, lng: 1.5394 },
-        { name: "Ordino (Museu Casa d'Areny-Plandolit)", lat: 42.5551, lng: 1.5332 },
-        { name: 'Canillo (Roc del Quer viewpoint)', lat: 42.5691, lng: 1.5975 },
-        { name: 'Sant Joan de Caselles', lat: 42.5735, lng: 1.6027 },
-        { name: 'Encamp (optional)', lat: 42.5359, lng: 1.5809 },
+        { name: 'Escaldes-Engordany (Caldea spa)', lat: 42.5106, lng: 1.5394 , notes: 'Home to Caldea, one of Europe\'s largest thermal spa complexes, built over natural hot springs beneath a distinctive glass-pyramid building; a good half-day soak, especially in winter after a day of skiing.' },
+        { name: "Ordino (Museu Casa d'Areny-Plandolit)", lat: 42.5551, lng: 1.5332 , notes: 'A quiet mountain village with a preserved 17th-century manor house museum showing how a wealthy Andorran family lived across centuries; one of the best-preserved traditional villages in the country, worth a short wander beyond just the museum.' },
+        { name: 'Canillo (Roc del Quer viewpoint)', lat: 42.5691, lng: 1.5975 , notes: 'Home to the Roc del Quer, a cantilevered wooden viewing platform jutting out over a mountain valley with a lone sculpted figure ("El Pensador") appearing to contemplate the view; a popular short stop for photos rather than a full destination.' },
+        { name: 'Sant Joan de Caselles', lat: 42.5735, lng: 1.6027 , notes: 'A small Romanesque church near Canillo, notable for its well-preserved 12th-century bell tower and a Gothic crucifixion mural inside; a quick 15-20 minute stop for those interested in Andorra\'s Romanesque architecture, of which the country has an unusually dense concentration for its size.' },
+        { name: 'Encamp (optional)', lat: 42.5359, lng: 1.5809 , notes: 'Home to the Andorra National Automobile Museum, with a large collection of vintage cars and motorcycles, plus a cable car link up to the Vall de la Neu ski area; mainly of interest to car enthusiasts or as a ski-season base.' },
       ],
       notes: "Andorra la Vella (Casa de la Vall, the Caldea spa, the main shopping street) — Ordino (Museu Casa d'Areny-Plandolit) — Canillo (the Roc del Quer viewpoint, Sant Joan de Caselles) — optionally Encamp. Andorra has no airport of its own — fly AMS-Barcelona (daily KLM/Transavia/Vueling, the most reliable option), then bus (Alsa/Novatel, ~3h) or rental car (~2h15, ~200km); Girona is closer (~1.5h) but has only ~2 direct Transavia flights/week from AMS, making it less practical. Driving the whole way from the Netherlands (~1,360km/13h40) is too far for a long weekend. Budget ~€110-130/day (Andorra is pricier than Portugal, with few hostels). Season: May-June or September for hiking weather without full ski-season prices; the high trails (Vall del Madriu) can hold snow into June. Web check (2026-08): Andorra's general VAT (IGI) is only 4.5% — it applies automatically to everyone at every shop, no separate tax-free form needed — a real saving on electronics/perfume/alcohol/ski gear (10-25%). Bring your passport — spot checks at the French/Spanish border do happen.",
       transport_to_next: 'End of this route — bus or rental car back to Barcelona or Girona for the flight home.',
@@ -24302,7 +24415,7 @@ function rbBuildSpainPortugalPortoMadridRoute() {
       code: 'ES', name: 'Spain', days: 4, budget: 380, lat: 39.0000, lng: -5.0000,
       destinations: [
         { name: 'Seville (Alcázar & Cathedral)', lat: 37.3839, lng: -5.9903, notes: "The Real Alcázar is a still-functioning royal palace showcasing Mudéjar architecture (and a Game of Thrones filming location); the adjoining Cathedral is the world's largest Gothic church, topped by the Giralda tower. Book Alcázar tickets online for a specific time slot well ahead — it sells out, especially in summer — and climb the Giralda via its internal ramps (built for mounted access, not stairs) for city views." },
-        { name: 'Madrid (Prado Museum)', lat: 40.4138, lng: -3.6921 },
+        { name: 'Madrid (Prado Museum)', lat: 40.4138, lng: -3.6921 , notes: 'One of the world\'s great art museums, with the largest collections of Velázquez and Goya anywhere; free entry runs the last two hours before closing daily (check current hours), though it gets crowded then — book a timed ticket in advance for a calmer visit.' },
       ],
       notes: "Seville (2 days, the Alcázar and Cathedral) — Madrid (2 days, the Prado, departure) — deliberately no Córdoba/Granada detour here, unlike the sibling route named above. Budget ~€90-100/day. Madrid-Seville by AVE high-speed train (~2h30) is a realistic alternative to driving the whole leg, if the rental car is dropped off in Seville.",
       transport_to_next: 'End of this route — fly home from Madrid.',

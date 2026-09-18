@@ -12,6 +12,22 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batches 120-122 — Normandy + French Atlantic Coast, Northern Italy
+  lakes cluster leftovers, Spain + Andorra cluster (2026-09-18)** — 35 destinations researched
+  (fresh, plus 2 Verona reuse under new name-string variants), closing out 8 routes entirely:
+  Normandy, French Atlantic Coast: La Rochelle to Biarritz, Northern Italy, Italy: North to
+  Central, Madrid, Valencia + Costa Blanca, Northern Spain: Basque Interior + Rioja, Andorra.
+  - Batch 120: Normandy + French Atlantic Coast — Bayeux, Normandy American Cemetery, Mont
+    Saint-Michel, La Rochelle, Bordeaux, Arcachon, Dune du Pilat, Biarritz, Saint-Jean-de-Luz
+    (`rbMigrateNormandyAtlanticCoastDestinationNotes()`)
+  - Batch 121: Northern Italy lakes cluster leftovers — Bellagio, Menaggio, Sirmione, Desenzano,
+    2 Verona variants (reuse), Val d'Orcia/Pienza
+    (`rbMigrateNorthernItalyLakesLeftoverDestinationNotes()`)
+  - Batch 122: Spain + Andorra cluster — Madrid (Prado, Retiro, Puerta del Sol, Gran Vía),
+    Valencia + Costa Blanca (6), Basque Interior + Rioja leftovers (Elciego, Haro, Pamplona),
+    Andorra leftovers (5) (`rbMigrateSpainAndorraClusterDestinationNotes()`)
+  App-wide total: 3525 destination-slots filled across 407 routes. 539/741 signatures done.
+
 - **Per-destination notes, batches 115-119 — Austria Alpine cluster (2026-09-18)** — 11 fresh
   destinations plus 8 reuse-under-new-name-string entries, closing out Salzburg + Grossglockner
   + Tyrol, Austria Alpine Roadtrip, Austria + Slovenia, and Liechtenstein + Austria + Switzerland
