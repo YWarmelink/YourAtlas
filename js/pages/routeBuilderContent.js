@@ -9659,6 +9659,86 @@ function rbMigrateMalaysiaBorneoBruneiDestinationNotes() {
 }
 
 /**
+ * Batch 45 (2026-09-18) -- Dolomites (6 days), two bases (Ortisei/Val Gardena, Cortina
+ * d'Ampezzo) -- 11 destinations researched (Seceda/Lago di Braies already had notes). Same
+ * generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateDolomitesDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_DOLOMITES_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_DOLOMITES_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Ortisei / Val Gardena (base)': "Ladin-culture valley town known for woodcarving workshops along Via Rezia; step out the door onto the Ortisei-Seceda cable car so you can reach the high country without ever driving.",
+    'Alpe di Siusi': "Europe's largest high-alpine meadow, framed by the jagged Sassolungo massif. Cars are banned in daytime (roughly 9am-5pm) June-Oct, so ride the cable car from Ortisei/Siusi or Compatsch shuttle bus, and go early morning for both light and thinner crowds.",
+    'Passo Gardena': "Hairpin pass linking Val Gardena and Alta Badia with close-up views of the Sella and Sassolungo groups. Stop at Rifugio Frara/Jimmy right on the pass, or use it as the trailhead for an easy walk toward the Cir group.",
+    'Vallunga': "Car-free, dead-flat valley behind Selva walled in by sheer dolomite faces on both sides. One of the few easy, family-friendly walks in the range — plan 2-3 hours round trip, no real elevation gain.",
+    'Passo Valparola': "Pass beneath Lagazuoi with an open-air WWI museum of forts and trenches, plus views to Sasso di Stria. Pair it with the Passo Falzarego side to make a half-day of both passes and the fort ruins.",
+    'Passo Falzarego': "Gateway to the Lagazuoi cable car, the single best 360-degree Dolomites viewpoint, with WWI tunnels carved through the mountain. Ride the cable car up and walk the lit tunnel circuit down — allow a half day including the tunnels.",
+    "Cortina d'Ampezzo (base)": "Genteel 1956-Olympics mountain town with the Corso Italia pedestrian strip for an evening stroll after a day on the passes; no must-see sight in town itself, it's purely the base for Tre Cime, Cinque Torri and Giau.",
+    'Tre Cime di Lavaredo': "The three sheer towers are the most photographed profile in the Dolomites, circled by a ~3hr loop trail from Rifugio Auronzo. Drive up very early (before 8am) — the toll road and its limited parking fill fast in summer, and pre-booking the parking slot online is now standard practice.",
+    'Cadini di Misurina': "A jagged crown of rock spires, arguably more dramatic than Tre Cime but far less crowded. Easily missed: take the short signposted detour off the Tre Cime loop to Rifugio Fonda Savio for the classic viewpoint over the spires.",
+    'Cinque Torri': "Five freestanding rock towers ringed by preserved WWI trenches and gun positions, now an open-air museum. Take the chairlift up, walk the loop among the towers (about 2 hours), and stay for sunset if timing allows.",
+    'Passo Giau': "Widely rated the most scenic drivable pass in the Dolomites, with Rifugio Passo Giau sitting right at the 2236m summit. No hike needed — just pull over; it's a quieter sunrise/sunset alternative to the crowds at Tre Cime.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 46 (2026-09-18) -- Porto + Northern Spain (10-14 days), an open-jaw Iberian
+ * north-coast crossing (Porto in, Bilbao out) -- 14 destinations researched, high real-world
+ * leverage despite the plan showing 0 (Porto/Vila Nova de Gaia/Picos de Europa/Fuente Dé/
+ * Santillana del Mar/Santiago de Compostela all recur unnoted across several other Iberia
+ * routes -- 5 routes confirmed touched for Porto (Ribeira) alone in the live simulation). Same
+ * generic name-matching migration pattern as the other batches.
+ */
+function rbMigratePortoNorthernSpainDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_PORTO_NORTHERN_SPAIN_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_PORTO_NORTHERN_SPAIN_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Porto (Ribeira)': "Porto's riverside old quarter — tiered, colorful facades along the Douro, narrow medieval lanes behind. Walk (or wait for a tram) across the upper deck of the Dom Luís I bridge to Gaia for the classic elevated view back over the Ribeira, best at golden hour.",
+    'Vila Nova de Gaia (port wine cellars)': "Across the river from Porto, home to the historic port lodges (Taylor's, Graham's, Calém, Ferreira). Book a cellar tour with tasting ahead in summer, and time it to end at Taylor's or Graham's terrace for sunset over the Ribeira skyline.",
+    'Guimarães (Paço dos Duques, day trip)': 'Considered the "birthplace of Portugal" — the 15th-century Ducal Palace and the adjoining hilltop castle where the first king was reputedly born. A half day covers palace, castle and the medieval old town; fast train from Porto is about an hour.',
+    'Braga (Bom Jesus do Monte, day trip)': "Baroque pilgrimage sanctuary on a wooded hill, famous for its zigzagging Via Sacra staircase lined with allegorical fountains. Climb the stairs (about 20 min) or ride the 1882 water-counterweight funicular — one of the oldest of its kind still running — then add Braga's old town center to fill the day.",
+    'Viana do Castelo (Santa Luzia viewpoint)': "Hilltop basilica with a sweeping panorama over the Lima river estuary and Atlantic coastline. Take the funicular up (or the 20-min walk) and go late afternoon when the light hits the river mouth.",
+    'Santiago de Compostela (Praza do Obradoiro)': 'The Camino\'s finish line and the cathedral\'s grand baroque facade square. Enter through the Arco do Pazo for the classic first reveal of the square and cathedral, and book the rooftop "Catedral" tour in advance if you want the terrace views over the old town.',
+    'Oviedo (Asturias)': "Compact, elegant old town plus Santa María del Naranco, a rare pre-Romanesque royal hall from the 9th century up on a hillside just outside the center. Reserve half a day for the old town and end at a chigre (cider house) to see sidra poured from height in the traditional escanciado style.",
+    'Gijón (Asturias)': 'Working port city with the atmospheric Cimadevilla fishing quarter and Chillida\'s monumental "Elogio del Horizonte" sculpture overlooking the Cantabrian Sea. Walk the San Lorenzo beach promenade out to the sculpture for sunset.',
+    'Picos de Europa (Potes)': "Medieval stone-bridge town in the Liébana valley, the practical gateway to the Picos massif and the Monasterio de Santo Toribio (said to hold the largest surviving fragment of the True Cross). Base here for the Fuente Dé cable car and try the local orujo liqueur; Monday is the traditional market day if your dates line up.",
+    'Fuente Dé (cable car)': "One of Europe's steepest cable cars, climbing almost 800m vertically in under 4 minutes to the Áliva plateau below Peña Vieja. Book your timed ticket online in advance — on sunny weekends the queue builds fast and arriving before 9am is the reliable way to avoid a long wait; it's also closed roughly mid-January to mid-February each year.",
+    'Santander (Magdalena Peninsula)': "Royal summer palace (Palacio de la Magdalena) sitting on a green peninsula park between two city beaches, with a small seal/sea-lion pool near the palace. Walk or cycle the peninsula loop and stay for sunset over the bay.",
+    'Santillana del Mar': "Exceptionally well-preserved medieval stone village, often used as the base for visiting Altamira — original cave access is essentially closed to casual visitors, so the standard museum ticket includes the Neocueva, a full-scale faithful replica, not the real cave. Walk the cobbled center early morning before the day-tripper coach groups arrive.",
+    'Bilbao (Guggenheim Museum)': 'Gehry\'s titanium-clad building is as much the draw as what\'s inside, along with Koons\' giant flower "Puppy" out front. Book timed entry online to skip the queue, and return after dark to see the building lit and reflected in the river.',
+    'San Sebastián (La Concha, optional extension)': "Shell-shaped urban bay often ranked among Europe's best city beaches, backed by Belle Époque architecture. Walk the promenade at sunset and ride the funicular up Monte Igueldo for the view over the bay, then do a pintxos crawl through the Parte Vieja.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -13475,7 +13555,7 @@ function rbBuildVeniceDolomitesRoute() {
         { name: "Cortina d'Ampezzo or Val Gardena (base)", lat: 46.5369, lng: 12.1357 },
         { name: 'Tre Cime di Lavaredo area', lat: 46.6198, lng: 12.3032 },
         { name: 'Lago di Braies', lat: 46.6958, lng: 12.0858, notes: "The postcard turquoise lake with wooden rowboats is one of the most photographed spots in the Dolomites. From July 1-Sept 15, the valley road is closed to unbooked cars 9am-4pm — you must pre-book parking online at pragsparking.com or arrive before 9am/after 4pm." },
-        { name: 'Cinque Torri', lat: 46.5333, lng: 12.0333 },
+        { name: 'Cinque Torri', lat: 46.5333, lng: 12.0333 , notes: 'Five freestanding rock towers ringed by preserved WWI trenches and gun positions, now an open-air museum. Take the chairlift up, walk the loop among the towers (about 2 hours), and stay for sunset if timing allows.' },
       ],
       notes: "2-3 nights in the Dolomites (Cortina d'Ampezzo or Val Gardena): the Tre Cime area, Lago di Braies, Cinque Torri — then back to Venice for the flight home. Budget ~€105/day in the Dolomites. Dolomites cable cars are seasonal (late May-early October, varies per lift) — check the specific lift. Book Tre Cime/Lago di Braies parking ahead in season. ⚠️ Dolomites-Venice cable cars aside, this leg's own cable cars won't be open before late May.",
       transport_to_next: 'End of this route — drive back to Venice (VCE) for the direct return flight to Amsterdam.',
@@ -13540,11 +13620,11 @@ function rbBuildDolomitesDeepRoute() {
     {
       code: 'IT', name: 'Italy', days: 3, budget: 330, lat: 46.5765, lng: 11.6750,
       destinations: [
-        { name: 'Ortisei / Val Gardena (base)', lat: 46.5765, lng: 11.6750 },
-        { name: 'Alpe di Siusi', lat: 46.5480, lng: 11.6167 },
+        { name: 'Ortisei / Val Gardena (base)', lat: 46.5765, lng: 11.6750 , notes: 'Ladin-culture valley town known for woodcarving workshops along Via Rezia; step out the door onto the Ortisei-Seceda cable car so you can reach the high country without ever driving.' },
+        { name: 'Alpe di Siusi', lat: 46.5480, lng: 11.6167 , notes: 'Europe\'s largest high-alpine meadow, framed by the jagged Sassolungo massif. Cars are banned in daytime (roughly 9am-5pm) June-Oct, so ride the cable car from Ortisei/Siusi or Compatsch shuttle bus, and go early morning for both light and thinner crowds.' },
         { name: 'Seceda', lat: 46.5936, lng: 11.6683, notes: "The jagged, wave-like ridgeline reached by cable car from Ortisei is one of the single most photographed panoramas in the Dolomites, especially at sunrise before the crowds and cloud build-up arrive." },
-        { name: 'Passo Gardena', lat: 46.5478, lng: 11.7756 },
-        { name: 'Vallunga', lat: 46.5975, lng: 11.7211 },
+        { name: 'Passo Gardena', lat: 46.5478, lng: 11.7756 , notes: 'Hairpin pass linking Val Gardena and Alta Badia with close-up views of the Sella and Sassolungo groups. Stop at Rifugio Frara/Jimmy right on the pass, or use it as the trailhead for an easy walk toward the Cir group.' },
+        { name: 'Vallunga', lat: 46.5975, lng: 11.7211 , notes: 'Car-free, dead-flat valley behind Selva walled in by sheer dolomite faces on both sides. One of the few easy, family-friendly walks in the range — plan 2-3 hours round trip, no real elevation gain.' },
       ],
       notes: "Two bases. Base one: Ortisei/Val Gardena (3 nights) — Alpe di Siusi, Seceda, Passo Gardena, Vallunga. Deliberately no city/Venice on this route — this goes deeper into the valleys (Alta Badia, Pusteria) than the shorter Venice + Dolomites (5 days) 🎭 combo above can. No direct flight to the Dolomites themselves; best gateways are Innsbruck (Transavia direct from AMS, ~1h35, but seasonal Thu/Sun — check the current schedule) for Pusteria/the north side, or Verona/Venice for Cortina/the south side. Self-driving from the Netherlands (~12-13h via Germany-Austria-Brenner Pass) is only worthwhile as a stopover trip, otherwise fly + rent locally. Budget ~€110/day (Cortina pricier/chicer than Val Gardena) plus rental car €35-45/day plus lift passes €10-25/day.",
       transport_to_next: "Drive via Passo Valparola/Falzarego to Cortina d'Ampezzo.",
@@ -13552,14 +13632,14 @@ function rbBuildDolomitesDeepRoute() {
     {
       code: 'IT', name: 'Italy', days: 3, budget: 330, lat: 46.5369, lng: 12.1357,
       destinations: [
-        { name: 'Passo Valparola', lat: 46.5928, lng: 11.9331 },
-        { name: 'Passo Falzarego', lat: 46.5486, lng: 12.0250 },
-        { name: "Cortina d'Ampezzo (base)", lat: 46.5369, lng: 12.1357 },
-        { name: 'Tre Cime di Lavaredo', lat: 46.6198, lng: 12.3032 },
-        { name: 'Cadini di Misurina', lat: 46.6167, lng: 12.2667 },
+        { name: 'Passo Valparola', lat: 46.5928, lng: 11.9331 , notes: 'Pass beneath Lagazuoi with an open-air WWI museum of forts and trenches, plus views to Sasso di Stria. Pair it with the Passo Falzarego side to make a half-day of both passes and the fort ruins.' },
+        { name: 'Passo Falzarego', lat: 46.5486, lng: 12.0250 , notes: 'Gateway to the Lagazuoi cable car, the single best 360-degree Dolomites viewpoint, with WWI tunnels carved through the mountain. Ride the cable car up and walk the lit tunnel circuit down — allow a half day including the tunnels.' },
+        { name: "Cortina d'Ampezzo (base)", lat: 46.5369, lng: 12.1357 , notes: 'Genteel 1956-Olympics mountain town with the Corso Italia pedestrian strip for an evening stroll after a day on the passes; no must-see sight in town itself, it\'s purely the base for Tre Cime, Cinque Torri and Giau.' },
+        { name: 'Tre Cime di Lavaredo', lat: 46.6198, lng: 12.3032 , notes: 'The three sheer towers are the most photographed profile in the Dolomites, circled by a ~3hr loop trail from Rifugio Auronzo. Drive up very early (before 8am) — the toll road and its limited parking fill fast in summer, and pre-booking the parking slot online is now standard practice.' },
+        { name: 'Cadini di Misurina', lat: 46.6167, lng: 12.2667 , notes: 'A jagged crown of rock spires, arguably more dramatic than Tre Cime but far less crowded. Easily missed: take the short signposted detour off the Tre Cime loop to Rifugio Fonda Savio for the classic viewpoint over the spires.' },
         { name: 'Lago di Braies', lat: 46.6958, lng: 12.0858, notes: "The postcard turquoise lake with wooden rowboats is one of the most photographed spots in the Dolomites. From July 1-Sept 15, the valley road is closed to unbooked cars 9am-4pm — you must pre-book parking online at pragsparking.com or arrive before 9am/after 4pm." },
-        { name: 'Cinque Torri', lat: 46.5333, lng: 12.0333 },
-        { name: 'Passo Giau', lat: 46.4864, lng: 12.0472 },
+        { name: 'Cinque Torri', lat: 46.5333, lng: 12.0333 , notes: 'Five freestanding rock towers ringed by preserved WWI trenches and gun positions, now an open-air museum. Take the chairlift up, walk the loop among the towers (about 2 hours), and stay for sunset if timing allows.' },
+        { name: 'Passo Giau', lat: 46.4864, lng: 12.0472 , notes: 'Widely rated the most scenic drivable pass in the Dolomites, with Rifugio Passo Giau sitting right at the 2236m summit. No hike needed — just pull over; it\'s a quieter sunrise/sunset alternative to the crowds at Tre Cime.' },
       ],
       notes: "Base two: Cortina d'Ampezzo (3-4 nights) — Tre Cime di Lavaredo, Cadini di Misurina, Lago di Braies, Cinque Torri, Passo Giau. Season: June-September — a hard boundary, not a soft preference: outside this window most lifts/trails are snowed in. Exact 2026 opening dates differ per valley and year (e.g. Val Gardena 6 June-11 October 2026, Cortina's lifts staggered from late May) — check close to departure. ⚠️ Book Tre Cime/Lago di Braies parking ahead in season (daily vehicle limit); afternoon thunderstorms are normal even in summer — hike in the mornings.",
       transport_to_next: 'End of this route — drive back to Innsbruck or Verona/Venice for the flight home.',
@@ -14897,7 +14977,7 @@ function rbBuildBasqueCountryRoute() {
       code: 'ES', name: 'Spain', days: 6, budget: 630, lat: 43.2951, lng: -2.4622,
       destinations: [
         { name: 'San Sebastián (La Concha)', lat: 43.3183, lng: -1.9812 },
-        { name: 'Bilbao (Guggenheim Museum)', lat: 43.2630, lng: -2.9350 },
+        { name: 'Bilbao (Guggenheim Museum)', lat: 43.2630, lng: -2.9350 , notes: 'Gehry\'s titanium-clad building is as much the draw as what\'s inside, along with Koons\' giant flower "Puppy" out front. Book timed entry online to skip the queue, and return after dark to see the building lit and reflected in the river.' },
         { name: 'Hondarribia', lat: 43.3822, lng: -1.7967 },
         { name: 'Getaria', lat: 43.3050, lng: -2.2000 },
         { name: 'Zarautz', lat: 43.2833, lng: -2.1667 },
@@ -15044,10 +15124,10 @@ function rbBuildNorthernSpainRoadtripRoute() {
         { name: 'San Sebastián', lat: 43.3183, lng: -1.9812 },
         { name: 'Bilbao', lat: 43.2630, lng: -2.9350 },
         { name: 'Santander', lat: 43.4623, lng: -3.8099 },
-        { name: 'Santillana del Mar', lat: 43.3897, lng: -4.1097 },
+        { name: 'Santillana del Mar', lat: 43.3897, lng: -4.1097 , notes: 'Exceptionally well-preserved medieval stone village, often used as the base for visiting Altamira — original cave access is essentially closed to casual visitors, so the standard museum ticket includes the Neocueva, a full-scale faithful replica, not the real cave. Walk the cobbled center early morning before the day-tripper coach groups arrive.' },
         { name: 'Comillas', lat: 43.3856, lng: -4.2919 },
-        { name: 'Picos de Europa (Potes)', lat: 43.1553, lng: -4.6236 },
-        { name: 'Fuente Dé (cable car)', lat: 43.1439, lng: -4.8142 },
+        { name: 'Picos de Europa (Potes)', lat: 43.1553, lng: -4.6236 , notes: 'Medieval stone-bridge town in the Liébana valley, the practical gateway to the Picos massif and the Monasterio de Santo Toribio (said to hold the largest surviving fragment of the True Cross). Base here for the Fuente Dé cable car and try the local orujo liqueur; Monday is the traditional market day if your dates line up.' },
+        { name: 'Fuente Dé (cable car)', lat: 43.1439, lng: -4.8142 , notes: 'One of Europe\'s steepest cable cars, climbing almost 800m vertically in under 4 minutes to the Áliva plateau below Peña Vieja. Book your timed ticket online in advance — on sunny weekends the queue builds fast and arriving before 9am is the reliable way to avoid a long wait; it\'s also closed roughly mid-January to mid-February each year.' },
         { name: 'Oviedo', lat: 43.3619, lng: -5.8494 },
         { name: 'Gijón', lat: 43.5322, lng: -5.6611 },
         { name: 'Santiago de Compostela', lat: 42.8805, lng: -8.5456 },
@@ -15122,7 +15202,7 @@ function rbBuildGaliciaSantiagoRoute() {
     {
       code: 'ES', name: 'Spain', days: 6, budget: 480, lat: 42.8805, lng: -8.5456,
       destinations: [
-        { name: 'Santiago de Compostela (Praza do Obradoiro)', lat: 42.8805, lng: -8.5456 },
+        { name: 'Santiago de Compostela (Praza do Obradoiro)', lat: 42.8805, lng: -8.5456 , notes: 'The Camino\'s finish line and the cathedral\'s grand baroque facade square. Enter through the Arco do Pazo for the classic first reveal of the square and cathedral, and book the rooftop "Catedral" tour in advance if you want the terrace views over the old town.' },
         { name: 'Pontevedra (Rías Baixas)', lat: 42.4300, lng: -8.6444 },
         { name: 'Combarro', lat: 42.4297, lng: -8.6858 },
         { name: 'O Grove', lat: 42.4897, lng: -8.8756 },
@@ -15147,11 +15227,11 @@ function rbBuildAsturiasCantabriaRoute() {
     {
       code: 'ES', name: 'Spain', days: 6, budget: 480, lat: 43.3000, lng: -5.0000,
       destinations: [
-        { name: 'Santander (Magdalena Peninsula)', lat: 43.4623, lng: -3.8099 },
-        { name: 'Santillana del Mar', lat: 43.3897, lng: -4.1097 },
+        { name: 'Santander (Magdalena Peninsula)', lat: 43.4623, lng: -3.8099 , notes: 'Royal summer palace (Palacio de la Magdalena) sitting on a green peninsula park between two city beaches, with a small seal/sea-lion pool near the palace. Walk or cycle the peninsula loop and stay for sunset over the bay.' },
+        { name: 'Santillana del Mar', lat: 43.3897, lng: -4.1097 , notes: 'Exceptionally well-preserved medieval stone village, often used as the base for visiting Altamira — original cave access is essentially closed to casual visitors, so the standard museum ticket includes the Neocueva, a full-scale faithful replica, not the real cave. Walk the cobbled center early morning before the day-tripper coach groups arrive.' },
         { name: 'Comillas (El Capricho)', lat: 43.3856, lng: -4.2919 },
-        { name: 'Picos de Europa (Potes)', lat: 43.1553, lng: -4.6236 },
-        { name: 'Fuente Dé (cable car)', lat: 43.1439, lng: -4.8142 },
+        { name: 'Picos de Europa (Potes)', lat: 43.1553, lng: -4.6236 , notes: 'Medieval stone-bridge town in the Liébana valley, the practical gateway to the Picos massif and the Monasterio de Santo Toribio (said to hold the largest surviving fragment of the True Cross). Base here for the Fuente Dé cable car and try the local orujo liqueur; Monday is the traditional market day if your dates line up.' },
+        { name: 'Fuente Dé (cable car)', lat: 43.1439, lng: -4.8142 , notes: 'One of Europe\'s steepest cable cars, climbing almost 800m vertically in under 4 minutes to the Áliva plateau below Peña Vieja. Book your timed ticket online in advance — on sunny weekends the queue builds fast and arriving before 9am is the reliable way to avoid a long wait; it\'s also closed roughly mid-January to mid-February each year.' },
         { name: 'Oviedo', lat: 43.3619, lng: -5.8494 },
         { name: 'Gijón', lat: 43.5322, lng: -5.6611 },
       ],
@@ -15290,11 +15370,11 @@ function rbBuildPortoRoute() {
     {
       code: 'PT', name: 'Portugal', days: 4, budget: 340, lat: 41.1579, lng: -8.6291,
       destinations: [
-        { name: 'Porto (Ribeira)', lat: 41.1405, lng: -8.6118 },
+        { name: 'Porto (Ribeira)', lat: 41.1405, lng: -8.6118 , notes: 'Porto\'s riverside old quarter — tiered, colorful facades along the Douro, narrow medieval lanes behind. Walk (or wait for a tram) across the upper deck of the Dom Luís I bridge to Gaia for the classic elevated view back over the Ribeira, best at golden hour.' },
         { name: 'Dom Luís I Bridge', lat: 41.1394, lng: -8.6089 },
         { name: 'Sé do Porto (cathedral)', lat: 41.1436, lng: -8.6109 },
         { name: 'Livraria Lello', lat: 41.1467, lng: -8.6146 },
-        { name: 'Vila Nova de Gaia (port wine cellars)', lat: 41.1333, lng: -8.6111 },
+        { name: 'Vila Nova de Gaia (port wine cellars)', lat: 41.1333, lng: -8.6111 , notes: 'Across the river from Porto, home to the historic port lodges (Taylor\'s, Graham\'s, Calém, Ferreira). Book a cellar tour with tasting ahead in summer, and time it to end at Taylor\'s or Graham\'s terrace for sunset over the Ribeira skyline.' },
         { name: 'Pinhão (Douro day trip)', lat: 41.1897, lng: -7.5461 },
         { name: 'Foz do Douro', lat: 41.1494, lng: -8.6789 },
         { name: 'Matosinhos', lat: 41.1815, lng: -8.6893 },
@@ -15348,7 +15428,7 @@ function rbBuildNorthernPortugalMinhoRoute() {
         { name: 'Porto', lat: 41.1405, lng: -8.6118 },
         { name: 'Guimarães (Paço dos Duques)', lat: 41.4419, lng: -8.2918 },
         { name: 'Braga (Bom Jesus do Monte)', lat: 41.5519, lng: -8.3789 },
-        { name: 'Viana do Castelo (Santa Luzia viewpoint)', lat: 41.6932, lng: -8.8327 },
+        { name: 'Viana do Castelo (Santa Luzia viewpoint)', lat: 41.6932, lng: -8.8327 , notes: 'Hilltop basilica with a sweeping panorama over the Lima river estuary and Atlantic coastline. Take the funicular up (or the 20-min walk) and go late afternoon when the light hits the river mouth.' },
         { name: 'Ponte de Lima (optional)', lat: 41.7700, lng: -8.5833 },
       ],
       notes: "Restructured around heritage and coast (Minho), deliberately without a Douro side trip (see Porto + Douro + Lisbon below for that): Porto (2 days) — Guimarães (the birthplace of Portugal, ~45 min) — Braga (Bom Jesus do Monte, ~50 min) — Viana do Castelo (coast, the Santa Luzia viewpoint) — optionally Ponte de Lima (Portugal's oldest town) — back to Porto. Entry: direct AMS-Porto; train for Porto-Braga-Guimarães, a rental car for Viana do Castelo/Ponte de Lima/rural Minho. Budget ~€70-85/day (Portugal's cheapest region). Season: April-October; Minho is Portugal's greenest and wettest region — check autumn/winter rainfall.",
@@ -20838,12 +20918,12 @@ function rbBuildNorthernPortugalGaliciaRoute() {
     {
       code: 'PT', name: 'Portugal', days: 5, budget: 400, lat: 41.3000, lng: -8.5000,
       destinations: [
-        { name: 'Porto (Ribeira)', lat: 41.1405, lng: -8.6118 },
-        { name: 'Vila Nova de Gaia (port wine cellars)', lat: 41.1333, lng: -8.6111 },
+        { name: 'Porto (Ribeira)', lat: 41.1405, lng: -8.6118 , notes: 'Porto\'s riverside old quarter — tiered, colorful facades along the Douro, narrow medieval lanes behind. Walk (or wait for a tram) across the upper deck of the Dom Luís I bridge to Gaia for the classic elevated view back over the Ribeira, best at golden hour.' },
+        { name: 'Vila Nova de Gaia (port wine cellars)', lat: 41.1333, lng: -8.6111 , notes: 'Across the river from Porto, home to the historic port lodges (Taylor\'s, Graham\'s, Calém, Ferreira). Book a cellar tour with tasting ahead in summer, and time it to end at Taylor\'s or Graham\'s terrace for sunset over the Ribeira skyline.' },
         { name: 'Pinhão (Douro day trip)', lat: 41.1897, lng: -7.5461 },
-        { name: 'Guimarães (Paço dos Duques, day trip)', lat: 41.4419, lng: -8.2918 },
-        { name: 'Braga (Bom Jesus do Monte, day trip)', lat: 41.5519, lng: -8.3789 },
-        { name: 'Viana do Castelo (Santa Luzia viewpoint)', lat: 41.6932, lng: -8.8327 },
+        { name: 'Guimarães (Paço dos Duques, day trip)', lat: 41.4419, lng: -8.2918 , notes: 'Considered the "birthplace of Portugal" — the 15th-century Ducal Palace and the adjoining hilltop castle where the first king was reputedly born. A half day covers palace, castle and the medieval old town; fast train from Porto is about an hour.' },
+        { name: 'Braga (Bom Jesus do Monte, day trip)', lat: 41.5519, lng: -8.3789 , notes: 'Baroque pilgrimage sanctuary on a wooded hill, famous for its zigzagging Via Sacra staircase lined with allegorical fountains. Climb the stairs (about 20 min) or ride the 1882 water-counterweight funicular — one of the oldest of its kind still running — then add Braga\'s old town center to fill the day.' },
+        { name: 'Viana do Castelo (Santa Luzia viewpoint)', lat: 41.6932, lng: -8.8327 , notes: 'Hilltop basilica with a sweeping panorama over the Lima river estuary and Atlantic coastline. Take the funicular up (or the 20-min walk) and go late afternoon when the light hits the river mouth.' },
       ],
       notes: "Porto (2-3 days: Ribeira, Vila Nova de Gaia's port wine cellars, a Douro day trip to Pinhão) — Guimarães and Braga as day trips from Porto — Viana do Castelo on the coast, closest to the Spanish border. Entry: direct AMS-Porto (KLM/Transavia). Budget ~€75-85/day, used here at ~€80/day. Season: June-September.",
       transport_to_next: 'Cross into Spain at the Valença (Portugal)-Tui (Spain) bridge over the Minho river — no border control, fully Schengen-internal, no EES — then on to Santiago de Compostela (~130km/1h45).',
@@ -20851,7 +20931,7 @@ function rbBuildNorthernPortugalGaliciaRoute() {
     {
       code: 'ES', name: 'Spain', days: 4, budget: 320, lat: 42.7000, lng: -8.7000,
       destinations: [
-        { name: 'Santiago de Compostela (Praza do Obradoiro)', lat: 42.8805, lng: -8.5456 },
+        { name: 'Santiago de Compostela (Praza do Obradoiro)', lat: 42.8805, lng: -8.5456 , notes: 'The Camino\'s finish line and the cathedral\'s grand baroque facade square. Enter through the Arco do Pazo for the classic first reveal of the square and cathedral, and book the rooftop "Catedral" tour in advance if you want the terrace views over the old town.' },
         { name: 'Pontevedra / Combarro (Rías Baixas day trip)', lat: 42.4300, lng: -8.6444 },
         { name: 'Cíes Islands (optional)', lat: 42.2378, lng: -8.8994 },
       ],
@@ -20872,11 +20952,11 @@ function rbBuildPortoNorthernSpainRoute() {
     {
       code: 'PT', name: 'Portugal', days: 4, budget: 340, lat: 41.3000, lng: -8.5000,
       destinations: [
-        { name: 'Porto (Ribeira)', lat: 41.1405, lng: -8.6118 },
-        { name: 'Vila Nova de Gaia (port wine cellars)', lat: 41.1333, lng: -8.6111 },
-        { name: 'Guimarães (Paço dos Duques, day trip)', lat: 41.4419, lng: -8.2918 },
-        { name: 'Braga (Bom Jesus do Monte, day trip)', lat: 41.5519, lng: -8.3789 },
-        { name: 'Viana do Castelo (Santa Luzia viewpoint)', lat: 41.6932, lng: -8.8327 },
+        { name: 'Porto (Ribeira)', lat: 41.1405, lng: -8.6118 , notes: 'Porto\'s riverside old quarter — tiered, colorful facades along the Douro, narrow medieval lanes behind. Walk (or wait for a tram) across the upper deck of the Dom Luís I bridge to Gaia for the classic elevated view back over the Ribeira, best at golden hour.' },
+        { name: 'Vila Nova de Gaia (port wine cellars)', lat: 41.1333, lng: -8.6111 , notes: 'Across the river from Porto, home to the historic port lodges (Taylor\'s, Graham\'s, Calém, Ferreira). Book a cellar tour with tasting ahead in summer, and time it to end at Taylor\'s or Graham\'s terrace for sunset over the Ribeira skyline.' },
+        { name: 'Guimarães (Paço dos Duques, day trip)', lat: 41.4419, lng: -8.2918 , notes: 'Considered the "birthplace of Portugal" — the 15th-century Ducal Palace and the adjoining hilltop castle where the first king was reputedly born. A half day covers palace, castle and the medieval old town; fast train from Porto is about an hour.' },
+        { name: 'Braga (Bom Jesus do Monte, day trip)', lat: 41.5519, lng: -8.3789 , notes: 'Baroque pilgrimage sanctuary on a wooded hill, famous for its zigzagging Via Sacra staircase lined with allegorical fountains. Climb the stairs (about 20 min) or ride the 1882 water-counterweight funicular — one of the oldest of its kind still running — then add Braga\'s old town center to fill the day.' },
+        { name: 'Viana do Castelo (Santa Luzia viewpoint)', lat: 41.6932, lng: -8.8327 , notes: 'Hilltop basilica with a sweeping panorama over the Lima river estuary and Atlantic coastline. Take the funicular up (or the 20-min walk) and go late afternoon when the light hits the river mouth.' },
       ],
       notes: "The Portugal lead-in for the wider crossing below: Porto (2 days: Ribeira, Vila Nova de Gaia) — Guimarães/Braga day trips — Viana do Castelo on the coast, closest to the Spanish border. Entry: open-jaw AMS-Porto in / AMS-Bilbao out. Budget ~€80-90/day, used here at ~€85/day. Season: June-September.",
       transport_to_next: 'Cross into Spain at the Valença (Portugal)-Tui (Spain) bridge over the Minho river — no border control, fully Schengen-internal — then on to Santiago de Compostela (~130km/1h45).',
@@ -20884,15 +20964,15 @@ function rbBuildPortoNorthernSpainRoute() {
     {
       code: 'ES', name: 'Spain', days: 8, budget: 680, lat: 43.2000, lng: -5.0000,
       destinations: [
-        { name: 'Santiago de Compostela (Praza do Obradoiro)', lat: 42.8805, lng: -8.5456 },
-        { name: 'Oviedo (Asturias)', lat: 43.3619, lng: -5.8494 },
-        { name: 'Gijón (Asturias)', lat: 43.5322, lng: -5.6611 },
-        { name: 'Picos de Europa (Potes)', lat: 43.1553, lng: -4.6236 },
-        { name: 'Fuente Dé (cable car)', lat: 43.1439, lng: -4.8142 },
-        { name: 'Santander (Magdalena Peninsula)', lat: 43.4623, lng: -3.8099 },
-        { name: 'Santillana del Mar', lat: 43.3897, lng: -4.1097 },
-        { name: 'Bilbao (Guggenheim Museum)', lat: 43.2630, lng: -2.9350 },
-        { name: 'San Sebastián (La Concha, optional extension)', lat: 43.3183, lng: -1.9812 },
+        { name: 'Santiago de Compostela (Praza do Obradoiro)', lat: 42.8805, lng: -8.5456 , notes: 'The Camino\'s finish line and the cathedral\'s grand baroque facade square. Enter through the Arco do Pazo for the classic first reveal of the square and cathedral, and book the rooftop "Catedral" tour in advance if you want the terrace views over the old town.' },
+        { name: 'Oviedo (Asturias)', lat: 43.3619, lng: -5.8494 , notes: 'Compact, elegant old town plus Santa María del Naranco, a rare pre-Romanesque royal hall from the 9th century up on a hillside just outside the center. Reserve half a day for the old town and end at a chigre (cider house) to see sidra poured from height in the traditional escanciado style.' },
+        { name: 'Gijón (Asturias)', lat: 43.5322, lng: -5.6611 , notes: 'Working port city with the atmospheric Cimadevilla fishing quarter and Chillida\'s monumental "Elogio del Horizonte" sculpture overlooking the Cantabrian Sea. Walk the San Lorenzo beach promenade out to the sculpture for sunset.' },
+        { name: 'Picos de Europa (Potes)', lat: 43.1553, lng: -4.6236 , notes: 'Medieval stone-bridge town in the Liébana valley, the practical gateway to the Picos massif and the Monasterio de Santo Toribio (said to hold the largest surviving fragment of the True Cross). Base here for the Fuente Dé cable car and try the local orujo liqueur; Monday is the traditional market day if your dates line up.' },
+        { name: 'Fuente Dé (cable car)', lat: 43.1439, lng: -4.8142 , notes: 'One of Europe\'s steepest cable cars, climbing almost 800m vertically in under 4 minutes to the Áliva plateau below Peña Vieja. Book your timed ticket online in advance — on sunny weekends the queue builds fast and arriving before 9am is the reliable way to avoid a long wait; it\'s also closed roughly mid-January to mid-February each year.' },
+        { name: 'Santander (Magdalena Peninsula)', lat: 43.4623, lng: -3.8099 , notes: 'Royal summer palace (Palacio de la Magdalena) sitting on a green peninsula park between two city beaches, with a small seal/sea-lion pool near the palace. Walk or cycle the peninsula loop and stay for sunset over the bay.' },
+        { name: 'Santillana del Mar', lat: 43.3897, lng: -4.1097 , notes: 'Exceptionally well-preserved medieval stone village, often used as the base for visiting Altamira — original cave access is essentially closed to casual visitors, so the standard museum ticket includes the Neocueva, a full-scale faithful replica, not the real cave. Walk the cobbled center early morning before the day-tripper coach groups arrive.' },
+        { name: 'Bilbao (Guggenheim Museum)', lat: 43.2630, lng: -2.9350 , notes: 'Gehry\'s titanium-clad building is as much the draw as what\'s inside, along with Koons\' giant flower "Puppy" out front. Book timed entry online to skip the queue, and return after dark to see the building lit and reflected in the river.' },
+        { name: 'San Sebastián (La Concha, optional extension)', lat: 43.3183, lng: -1.9812 , notes: 'Shell-shaped urban bay often ranked among Europe\'s best city beaches, backed by Belle Époque architecture. Walk the promenade at sunset and ride the funicular up Monte Igueldo for the view over the bay, then do a pintxos crawl through the Parte Vieja.' },
       ],
       notes: "Santiago de Compostela (2 days) → Oviedo/Gijón, Asturias (2 days) → the Picos de Europa, based in Potes with the Fuente Dé cable car (1-2 days) → Santander/Santillana del Mar, Cantabria (1-2 days) → Bilbao, optionally extending to San Sebastián (1-2 days) as the closing leg. A rental car is essential throughout this leg (public transport is thin around the Picos de Europa and coastal villages). Budget ~€80-90/day, used here at ~€85/day. Season: June-September. Web check (2026-08): this is an open-jaw trip — Porto in, Bilbao out — so a one-way rental car carries a return/repositioning drop fee; price that in before booking, and compare it against picking the car up fresh at the Spanish border (e.g. in Santiago or Bilbao) instead of driving one car the whole way.",
       transport_to_next: 'End of this route — fly home from Bilbao (or San Sebastián if extending that far), open-jaw ticket with Porto as the inbound leg.',
@@ -20946,7 +21026,7 @@ function rbBuildPortugalSpainRoadtripRoute() {
     {
       code: 'PT', name: 'Portugal', days: 9, budget: 810, lat: 40.0000, lng: -8.4000,
       destinations: [
-        { name: 'Porto (Ribeira)', lat: 41.1405, lng: -8.6118 },
+        { name: 'Porto (Ribeira)', lat: 41.1405, lng: -8.6118 , notes: 'Porto\'s riverside old quarter — tiered, colorful facades along the Douro, narrow medieval lanes behind. Walk (or wait for a tram) across the upper deck of the Dom Luís I bridge to Gaia for the classic elevated view back over the Ribeira, best at golden hour.' },
         { name: 'Pinhão (Douro Valley)', lat: 41.1897, lng: -7.5461 },
         { name: 'Coimbra (University)', lat: 40.2076, lng: -8.4257 },
         { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366, notes: "The flat neoclassical grid rebuilt after the 1755 earthquake, centered on riverside Praça do Comércio and Rossio square — it's the hub connecting Alfama and Bairro Alto, not a destination in itself. Ride the Elevador de Santa Justa or walk up to a miradouro rather than staying on the flat grid, since Baixa is the least distinctive part of central Lisbon by design." },
@@ -21746,7 +21826,7 @@ function rbBuildAlpineRoadtripFiveCountriesRoute() {
       code: 'IT', name: 'Italy', days: 3, budget: 360, lat: 46.5369, lng: 12.1357,
       destinations: [
         { name: "Cortina d'Ampezzo", lat: 46.5369, lng: 12.1357, notes: "The signature outing is the Tre Cime di Lavaredo loop hike, a roughly 3-4 hour circuit around the three iconic peaks with a refuge stop; Cortina also just hosted the 2026 Winter Olympics, so book accommodation early as regional infrastructure/prices are still elevated post-Games." },
-        { name: 'Tre Cime di Lavaredo', lat: 46.6198, lng: 12.3032 },
+        { name: 'Tre Cime di Lavaredo', lat: 46.6198, lng: 12.3032 , notes: 'The three sheer towers are the most photographed profile in the Dolomites, circled by a ~3hr loop trail from Rifugio Auronzo. Drive up very early (before 8am) — the toll road and its limited parking fill fast in summer, and pre-booking the parking slot online is now standard practice.' },
       ],
       notes: "Dolomites/Cortina (3 days) — same content as Dolomites (6 days) ⛰️ (rbBuildDolomitesDeepRoute)'s Cortina base and this sub-batch's sibling Germany + Austria + Italy (10-14 days) 🏔️ route's Dolomites leg above. Budget ~€105-140/day p.p. Season: June-September — a hard boundary for lift/trail access.",
       transport_to_next: 'Drive east to the Julian Alps, Slovenia (~200km/2h30-3h via Tarvisio) — a Schengen border, no checks.',
@@ -21842,7 +21922,7 @@ function rbBuildSpainPortugalPortoMadridRoute() {
     {
       code: 'PT', name: 'Portugal', days: 8, budget: 720, lat: 39.9000, lng: -8.9000,
       destinations: [
-        { name: 'Porto (Ribeira)', lat: 41.1405, lng: -8.6118 },
+        { name: 'Porto (Ribeira)', lat: 41.1405, lng: -8.6118 , notes: 'Porto\'s riverside old quarter — tiered, colorful facades along the Douro, narrow medieval lanes behind. Walk (or wait for a tram) across the upper deck of the Dom Luís I bridge to Gaia for the classic elevated view back over the Ribeira, best at golden hour.' },
         { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366, notes: "The flat neoclassical grid rebuilt after the 1755 earthquake, centered on riverside Praça do Comércio and Rossio square — it's the hub connecting Alfama and Bairro Alto, not a destination in itself. Ride the Elevador de Santa Justa or walk up to a miradouro rather than staying on the flat grid, since Baixa is the least distinctive part of central Lisbon by design." },
         { name: 'Sintra (Palace of Pena)', lat: 38.7876, lng: -9.3905, notes: "A candy-colored Romanticist palace atop a forested hilltop, mixing Gothic, Islamic and Manueline styles at the whim of King Ferdinand II — the standout of Sintra's several palaces. Book a timed-entry ticket online and arrive by 8-9am opening, since day-tripping tour buses from Lisbon fill the site and the shuttle/entrance queues get very long by mid-morning." },
         { name: 'Algarve / Lagos', lat: 37.1021, lng: -8.6743 },

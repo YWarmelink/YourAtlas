@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 350 / 741 signatures.**
+- **Done so far: 355 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -361,7 +361,7 @@ Sorted alphabetically by country code.
 - [ ] **ES** (3 dest): Santiago de Compostela (Praza do Obradoiro), Pontevedra / Combarro (Rías Baixas day trip), Cíes Islands (optional) — routes: Northern Portugal + Galicia (7-10 days) 🌊
 - [ ] **ES** (11 dest): San Sebastián, Bilbao, Santander, Santillana del Mar, Comillas, Picos de Europa (Potes), Fuente Dé (cable car), Oviedo, Gijón, Santiago de Compostela, Cíes Islands (optional) — routes: Northern Spain Roadtrip (12 days) 🛣️
 - [ ] **ES** (6 dest): San Sebastián, Vitoria-Gasteiz, Elciego (Rioja Alavesa), Haro (Rioja Alavesa), Pamplona, Bilbao — routes: Northern Spain: Basque Interior + Rioja (9 days) 🍷
-- [ ] **ES** (9 dest): Santiago de Compostela (Praza do Obradoiro), Oviedo (Asturias), Gijón (Asturias), Picos de Europa (Potes), Fuente Dé (cable car), Santander (Magdalena Peninsula), Santillana del Mar, Bilbao (Guggenheim Museum), San Sebastián (La Concha, optional extension) — routes: Porto + Northern Spain (10-14 days) 🏔️
+- [x] **ES** (9 dest): Santiago de Compostela (Praza do Obradoiro), Oviedo (Asturias), Gijón (Asturias), Picos de Europa (Potes), Fuente Dé (cable car), Santander (Magdalena Peninsula), Santillana del Mar, Bilbao (Guggenheim Museum), San Sebastián (La Concha, optional extension) — routes: Porto + Northern Spain (10-14 days) 🏔️
 - [ ] **ES** (2 dest): Seville (Alcázar & Cathedral), Madrid (Prado Museum) — routes: Portugal + Spain: Porto to Madrid (12 days) 🚆
 - [x] **ES** (1 dest): Seville (Alcázar & Cathedral) — routes: Southern Europe Highlights Roadtrip (14 days) 🎯
 - [ ] **ES** (8 dest): Barcelona, Tarragona, Valencia, Alicante (Costa Blanca), Murcia, Almería coast, Málaga / Costa del Sol, Granada (optional inland detour) — routes: Spain: East to South (12 days) 🌅
@@ -499,7 +499,7 @@ Sorted alphabetically by country code.
 - [ ] **IS** (8 dest): Reykjavík, Golden Circle (Þingvellir/Geysir/Gullfoss), Seljalandsfoss, Skógafoss, Reynisfjara black beach / Vík í Mýrdal, Jökulsárlón Glacier Lagoon, Diamond Beach, Höfn — routes: Iceland South Coast (9 days) 🧊
 - [x] **IS** (7 dest): Reykjavik, Golden Circle (Þingvellir), South Coast (Vík í Mýrdal), Vatnajökull, Jökulsárlón, Akureyri, Snæfellsnes — routes: Nordic Arctic Expedition ❄️
 - [ ] **IS** (8 dest): Reykjavík, Þingvellir, Geysir, Gullfoss, Seljalandsfoss, Skógafoss, Reynisfjara black beach, Vík í Mýrdal — routes: South Iceland (6 days) 🌊
-- [ ] **IT** (2 dest): Cortina d'Ampezzo, Tre Cime di Lavaredo — routes: Alpine Roadtrip (14 days) 🏕️
+- [x] **IT** (2 dest): Cortina d'Ampezzo, Tre Cime di Lavaredo — routes: Alpine Roadtrip (14 days) 🏕️
 - [ ] **IT** (2 dest): Sorrento, Amalfi Coast (Positano) — routes: Campania + Puglia (9 days) 🧭
 - [ ] **IT** (2 dest): Alberobello, Ostuni — routes: Campania + Puglia (9 days) 🧭
 - [ ] **IT** (1 dest): Lecce / Salento — routes: Campania + Puglia (9 days) 🧭
@@ -512,8 +512,8 @@ Sorted alphabetically by country code.
 - [ ] **IT** (3 dest): Santa Teresa Gallura, Palau, La Maddalena archipelago — routes: Corsica + Sardinia: South Corsica & North Sardinia (5 days) 🏝️
 - [ ] **IT** (4 dest): Duomo, Galleria, Navigli, Last Supper — routes: Dolomites & North Italy 🚡
 - [ ] **IT** (3 dest): Egyptian Museum, Mole Antonelliana, Historic centre — routes: Dolomites & North Italy 🚡
-- [ ] **IT** (5 dest): Ortisei / Val Gardena (base), Alpe di Siusi, Seceda, Passo Gardena, Vallunga — routes: Dolomites (6 days) ⛰️
-- [ ] **IT** (8 dest): Passo Valparola, Passo Falzarego, Cortina d'Ampezzo (base), Tre Cime di Lavaredo, Cadini di Misurina, Lago di Braies, Cinque Torri, Passo Giau — routes: Dolomites (6 days) ⛰️
+- [x] **IT** (5 dest): Ortisei / Val Gardena (base), Alpe di Siusi, Seceda, Passo Gardena, Vallunga — routes: Dolomites (6 days) ⛰️
+- [x] **IT** (8 dest): Passo Valparola, Passo Falzarego, Cortina d'Ampezzo (base), Tre Cime di Lavaredo, Cadini di Misurina, Lago di Braies, Cinque Torri, Passo Giau — routes: Dolomites (6 days) ⛰️
 - [ ] **IT** (8 dest): Florence — Uffizi Gallery, Florence — Duomo (dome climb), Florence — Ponte Vecchio, Florence — Palazzo Vecchio, Siena (day trip), Chianti wine tasting (day trip), San Gimignano (day trip), Pisa (day trip) — routes: Florence + Tuscany (4 days) 🎨
 - [x] **IT** (2 dest): Lake Como / Bellagio, Varenna — routes: France + Switzerland + Italy (10-14 days) 🗻
 - [x] **IT** (3 dest): Bolzano, Val Gardena / Ortisei, Cortina d'Ampezzo — routes: Germany + Austria + Italy (10-14 days) 🏔️
@@ -669,7 +669,7 @@ Sorted alphabetically by country code.
 - [ ] **PT** (5 dest): Porto, Guimarães (Paço dos Duques), Braga (Bom Jesus do Monte), Viana do Castelo (Santa Luzia viewpoint), Ponte de Lima (optional) — routes: Northern Portugal: Minho (6 days) 🌿
 - [ ] **PT** (9 dest): Porto (Ribeira), Dom Luís I Bridge, Sé do Porto (cathedral), Livraria Lello, Vila Nova de Gaia (port wine cellars), Pinhão (Douro day trip), Foz do Douro, Matosinhos, Serralves — routes: Porto (4 days) 🌉
 - [ ] **PT** (7 dest): Porto (Vila Nova de Gaia), Pinhão (Douro Valley, 2-3 nights), São Leonardo da Galafura viewpoint, Peso da Régua, Lisbon (Baixa), Bucelas (optional wine detour), Colares (optional wine detour, near Sintra) — routes: Porto + Douro + Lisbon (9 days) 🍷
-- [ ] **PT** (5 dest): Porto (Ribeira), Vila Nova de Gaia (port wine cellars), Guimarães (Paço dos Duques, day trip), Braga (Bom Jesus do Monte, day trip), Viana do Castelo (Santa Luzia viewpoint) — routes: Porto + Northern Spain (10-14 days) 🏔️
+- [x] **PT** (5 dest): Porto (Ribeira), Vila Nova de Gaia (port wine cellars), Guimarães (Paço dos Duques, day trip), Braga (Bom Jesus do Monte, day trip), Viana do Castelo (Santa Luzia viewpoint) — routes: Porto + Northern Spain (10-14 days) 🏔️
 - [x] **PT** (7 dest): Lisbon (Baixa), Alfama, Belém Tower, Sintra (Palace of Pena), Faro (Ria Formosa), Lagos (Ponta da Piedade), Sagres / Cabo de São Vicente — routes: Portugal + Andalusia (10-14 days) 🕌
 - [ ] **PT** (7 dest): Porto (Ribeira), Pinhão (Douro Valley), Coimbra (University), Lisbon (Baixa), Sintra (Palace of Pena), Faro (Ria Formosa), Lagos (Ponta da Piedade) — routes: Portugal + Spain Roadtrip (14 days) 🚗
 - [ ] **PT** (4 dest): Porto (Ribeira), Lisbon (Baixa), Sintra (Palace of Pena), Algarve / Lagos — routes: Portugal + Spain: Porto to Madrid (12 days) 🚆
@@ -768,9 +768,7 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| Porto + Northern Spain (10-14 days) 🏔️ | 14/14 | 0 |
 | US Northeast 🗽 | 13/13 | 0 |
-| Dolomites (6 days) ⛰️ | 13/13 | 0 |
 | US Southwest 🏜️ | 12/12 | 0 |
 | Florida 🐊 | 12/12 | 0 |
 | Hawaii 🐢 | 11/11 | 0 |
@@ -808,6 +806,8 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Catalonia + Pyrenees (9 days) ⛰️ | 8/8 | 0 |
 | Spain: North to Central (12 days) 🚉 | 8/8 | 0 |
 | Spain: East to South (12 days) 🌅 | 8/8 | 0 |
-| ... 232 more routes with open destinations ... | | |
+| Central Portugal: Coimbra + Serra da Estrela (6 days) 📚 | 8/8 | 0 |
+| Transylvania + Carpathian Mountains (9 days) 🏔️ | 8/8 | 0 |
+| ... 230 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

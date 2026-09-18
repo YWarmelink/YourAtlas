@@ -30,6 +30,19 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   already present in the existing data, no change needed to how batches insert notes or build
   their migration functions.
 
+- **Per-destination notes, batch 46 — Porto + Northern Spain (10-14 days) (2026-09-18)** — an
+  open-jaw Iberian north-coast crossing (Porto in, Bilbao out), 14 destinations. Plan showed 0
+  leverage but the real-world reuse was high: Porto (Ribeira) alone confirmed touching 5 routes
+  in the live simulation, with Vila Nova de Gaia/Picos de Europa/Fuente Dé/Santillana del
+  Mar/Santiago de Compostela all also recurring unnoted across other Iberia routes — another
+  reminder the plan's leverage column can undercount reuse, same lesson as batch 31. Same
+  generic name-matching migration (`rbMigratePortoNorthernSpainDestinationNotes()`). App-wide
+  total: 2813 destination-slots filled across 348 routes. 355/741 signatures done.
+
+- **Per-destination notes, batch 45 — Dolomites (6 days) (2026-09-18)** — two bases (Ortisei/Val
+  Gardena, Cortina d'Ampezzo), 11 destinations (Seceda/Lago di Braies already had notes). Same
+  generic name-matching migration (`rbMigrateDolomitesDestinationNotes()`).
+
 - **Per-destination notes, batch 44 — Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days)
   (2026-09-18)** — 19 destinations, researched in a single pass (none had notes yet, a solo
   signature with no cross-route leverage). Same generic name-matching migration
