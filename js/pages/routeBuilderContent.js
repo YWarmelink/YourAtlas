@@ -12415,6 +12415,87 @@ function rbMigrateNordicUkClusterDestinationNotes() {
 }
 
 /**
+ * Batches 131-136 (2026-09-18) -- West Europe small-routes cluster -- closes out Belgium:
+ * Bruges + Ghent + Antwerp + Ardennes, Romantic Road, German Alpine Road, Interlaken +
+ * Lauterbrunnen + Grindelwald, Brittany: Saint-Malo/Dinan/Pink Granite Coast, Liechtenstein:
+ * Vaduz, Corsica: South Loop, Malta (4 days), Barcelona (4 days), Basque Country: San
+ * Sebastián + Bilbao, Mallorca: Serra de Tramuntana Loop, Dubrovnik + Surroundings, Istria, and
+ * Julian Alps + Soča Valley entirely. 39 fresh destinations plus 5 reuse of already-written
+ * canonical notes under new name-string variants (Saint-Malo/Dinan/Côte de Granit Rose/Malbun/
+ * San Sebastián/Bovec). Same generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateWestEuropeSmallRoutesClusterDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_WEST_EUROPE_SMALL_ROUTES_CLUSTER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_WEST_EUROPE_SMALL_ROUTES_CLUSTER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Antwerp': "Belgium's second city and a historic diamond-trading hub, with a Gothic cathedral (home to several Rubens altarpieces) and the ornate Grote Markt guild houses; the Museum aan de Stroom (MAS) building gives a free rooftop panorama over the city and port.",
+    'Dinant': "A riverside town on the Meuse dominated by a hilltop citadel, and the birthplace of Adolphe Sax (inventor of the saxophone, honored with statues around town); the citadel is reached by a cable car or a long staircase, with WWI history exhibits inside.",
+    'La Roche-en-Ardenne': "A small town in a loop of the Ourthe river, overlooked by a ruined medieval castle keep; a good base for Ardennes forest hikes and kayaking the river, and it saw heavy fighting during the WWII Battle of the Bulge.",
+    'Würzburg': "A Baroque city on the Main river, home to the Würzburg Residenz palace (a UNESCO-listed Baroque residence with a Tiepolo fresco covering Europe's largest painted ceiling) and the Alte Mainbrücke bridge lined with statues, popular for evening wine-drinking with a view of the fortress above.",
+    'Rothenburg ob der Tauber': "The best-preserved walled medieval town on the Romantic Road, with intact town walls walkable end-to-end and half-timbered houses virtually untouched since the Middle Ages; the Christmas Museum and a year-round Christmas shop reflect the town's famous holiday-market reputation.",
+    'Nördlingen': "A walled town built inside a 15-million-year-old meteor crater (the Ries), with its walls and towers still fully intact and walkable in a full loop; the Daniel church tower gives a view over both the town and the crater's rim in the distance.",
+    'Augsburg': "One of Germany's oldest cities, founded by the Romans, known for the Fuggerei, the world's oldest still-inhabited social housing complex (built 1516, rent unchanged at a symbolic annual token amount for centuries); the Rathausplatz and gilded Perlachturm tower are the old-town center.",
+    'Lindau (Lake Constance)': "An island town on Lake Constance connected to the mainland by a bridge and causeway, with a harbor entrance marked by a lighthouse and a stone lion statue; the promenade gives views across the lake to the Austrian and Swiss Alps on a clear day.",
+    'Chiemsee / Prien am Chiemsee': "Bavaria's largest lake, with a boat trip out to Herrenchiemsee Island the highlight — home to King Ludwig II's unfinished, over-the-top palace modeled on Versailles; Prien am Chiemsee is the main lakeside town and boat departure point.",
+    'Lauterbrunnen (Trümmelbach Falls)': "A sheer-walled valley with 72 waterfalls, most famously Staubbach Falls dropping straight past the village; the Trümmelbach Falls are a separate, dramatic series of ten glacier-fed waterfalls inside the mountain, reached via a short funicular and walkway through the rock.",
+    'Mürren / Gimmelwald (car-free)': "Two tiny, car-free villages perched on a cliff shelf above the Lauterbrunnen valley, reachable only by cable car; Mürren has the more developed tourist infrastructure while Gimmelwald remains a quieter, working farming village a short walk below it.",
+    'Grindelwald': "The main base town beneath the Eiger's north face, with cable cars running up to First and the Männlichen ridge; its glacier gorge (Gletscherschlucht) walkway is a lower-effort add-on beyond the big cable-car outings.",
+    'First Cliff Walk': "A metal walkway clipped directly onto the cliff face at the First cable car station above Grindelwald, ending at a glass viewing platform jutting out over the void; the same station is also the base for a zipline and a mountain cart track back down.",
+    'Bachalpsee': "A glacial lake above Grindelwald reached by an easy hike from the First cable car station, famous for mirror reflections of the surrounding peaks (including the Wetterhorn) on calm mornings.",
+    'Saint-Malo (ramparts)': "The walled old town (rebuilt after WWII bombing but faithfully reconstructed) is best seen by walking the full ramparts circuit, under an hour and giving views over the harbour and offshore forts. Time it around high tide for waves crashing against the sea wall, or low tide to walk out to Fort National on foot.",
+    'Dinan (medieval old town)': "A hilltop medieval town on the Rance river, defined by the cobbled Rue du Jerzual — a steep street of half-timbered artisan houses running down from the old town to the small port below. Walk down and take a more gradual route back up.",
+    "Côte de Granit Rose / Ploumanac'h coastal path": "The pink granite boulders and rock formations around Ploumanac'h are best seen via the Sentier des Douaniers coastal path between Perros-Guirec and Ploumanac'h — the rocks turn a distinctly rosy color at sunset, so time the walk for late afternoon.",
+    'Île de Bréhat': "A small, car-free island off Brittany's pink granite coast, reached by a short ferry; split into a wilder northern half and a gentler, garden-filled southern half thanks to a unique subtropical microclimate that lets Mediterranean plants grow this far north.",
+    'Vaduz old town (Städtle pedestrian area)': "Liechtenstein's compact capital core, a single pedestrian street (Städtle) lined with government buildings, the parliament, and most of the country's museums; walkable end to end in well under an hour.",
+    'Vaduz Castle viewpoint': "The reigning prince's actual residence on the hill above town, not open to visitors inside, but the walk or short drive up gives the best view over Vaduz and the Rhine valley to Switzerland.",
+    'Kunstmuseum Liechtenstein': "A small but well-regarded modern art museum in a striking black basalt-and-glass building, holding part of the princely family's private art collection alongside contemporary exhibitions.",
+    'Liechtenstein Center': "The country's official visitor center and tourist office, doubling as a small museum/exhibition space and the spot to get a novelty passport stamp — a popular souvenir since Liechtenstein itself has no border checks or stamps of its own.",
+    'Malbun (day trip)': "Liechtenstein's only ski resort, a small, low-key alpine village high in the mountains above Vaduz, reached by a winding road up from Triesenberg.",
+    'Golfe de Valinco / Propriano': "A sheltered gulf on Corsica's southwest coast with the town of Propriano as its main harbor and beach base; a quieter, less-visited stretch of coastline than Corsica's more famous northern beaches.",
+    'Porto-Vecchio': "A lively harbor town known as the gateway to some of Corsica's best beaches (Palombaggia, Santa Giulia), with a hilltop old town of narrow lanes above the marina; historically a salt-trading port, hence the name (\"old port\").",
+    'Col de Bavella': "A dramatic mountain pass through the granite Aiguilles de Bavella needles, with a roadside viewpoint giving one of Corsica's most photographed mountain panoramas; also a trailhead for hikes into the surrounding peaks.",
+    'Valletta & the Three Cities (Vittoriosa/Senglea/Cospicua)': "Malta's fortified capital, a UNESCO World Heritage city built by the Knights of St. John after the Great Siege of 1565; a short ferry across the Grand Harbour reaches the older Three Cities, with Vittoriosa's waterfront and narrow lanes predating Valletta itself.",
+    'Mdina / Rabat': "Malta's former medieval capital, a walled hilltop \"Silent City\" with narrow winding streets and near-total car access restrictions; used as a Game of Thrones filming location for King's Landing's early scenes, with Rabat just outside the walls holding early Christian catacombs.",
+    'Hagar Qim / Mnajdra temples': "Two megalithic temple complexes older than Stonehenge or the Egyptian pyramids, among the oldest free-standing stone structures in the world; both are now sheltered under protective modern canopy structures to slow weathering.",
+    'Blue Grotto': "A set of sea caves and arches on Malta's south coast, best seen by a short boat trip from the nearby harbor in the morning when sunlight reflecting off the seabed turns the water a vivid blue; boats don't run in rough seas, so calm mornings are the most reliable.",
+    'Barcelona (Gothic Quarter / Barri Gòtic)': "Barcelona's medieval core, a maze of narrow stone lanes around the Gothic cathedral and the Plaça Reial; Roman-era wall fragments are still visible tucked between later buildings throughout the quarter.",
+    'Sagrada Família': "Gaudí's still-unfinished basilica, under construction since 1882 and now targeted for completion around its architect's 2026 death centenary (dates have slipped before — check current status); book tickets online well ahead, including a separate tower-climb ticket if wanted, since walk-up availability is unreliable.",
+    'Park Güell': "A whimsical public park designed by Gaudí, covered in mosaic-tiled benches and structures including the famous serpentine bench overlooking the city; the main monumental zone requires a timed-entry ticket booked in advance, while the rest of the park is free to enter.",
+    'Barceloneta Beach': "Barcelona's main city beach, a man-made stretch created for the 1992 Olympics along the former industrial waterfront; backed by seafood restaurants and beach bars, it gets very crowded in summer but is an easy walk or metro ride from the old town.",
+    'Montjuïc': "A hill overlooking the harbor holding a mix of attractions — the Olympic Stadium from 1992, the Joan Miró Foundation museum, and a hilltop castle reachable by cable car; also the site of the Magic Fountain's evening light-and-water shows near the base.",
+    'San Sebastián (La Concha)': "Shell-shaped urban bay often ranked among Europe's best city beaches, backed by Belle Époque architecture. Walk the promenade at sunset and ride the funicular up Monte Igueldo for the view over the bay, then do a pintxos crawl through the Parte Vieja.",
+    'Hondarribia': "A small fortified fishing town near the French border, with a colorful old quarter of Basque-style balconied houses inside surviving medieval walls; a popular short stop for pintxos away from San Sebastián's crowds.",
+    'Getaria': "A tiny fishing village known as the birthplace of Juan Sebastián Elcano (the first person to complete a circumnavigation of the globe, after Magellan's death partway through) and for its grilled-fish/seafood restaurants along the harbor.",
+    'Zarautz': "The Basque Coast's main surf town, with the region's longest beach and consistent, popular breaks; also produces notable Getariako Txakolina white wine from vineyards on the surrounding hillsides.",
+    'Cap de Formentor': "The dramatic, narrow peninsula at Mallorca's northeastern tip, reached by a winding cliff-edge road with a lighthouse at its very end; the Mirador des Colomer viewpoint partway along is the classic photo stop over the sheer cliffs and turquoise water below.",
+    'Lokrum Island': "A small, mostly wooded island a short ferry ride from Dubrovnik's old harbor, home to a former Benedictine monastery, a saltwater \"Dead Sea\" swimming lake, and a resident population of peacocks; also used as a Game of Thrones filming location for Qarth.",
+    'Elafiti Islands (Lopud)': "A chain of small, mostly car-free islands near Dubrovnik; Lopud is the most visited, with a sandy beach (Šunj) on its far side and a ruined Franciscan monastery, reachable by a short ferry or boat tour from the mainland.",
+    'Cavtat': "A quieter coastal town south of Dubrovnik, with a palm-lined seafront promenade and Roman-era ruins; a good half-day escape from Dubrovnik's cruise-ship crowds, reachable by a short boat or bus ride.",
+    'Trsteno Arboretum': "A centuries-old botanical garden on the coast north of Dubrovnik, home to two giant plane trees over 500 years old and an ornamental aqueduct-fed fountain; its Renaissance garden terraces were used as a Game of Thrones filming location for the King's Landing gardens.",
+    'Poreč': "A coastal town with a well-preserved Roman street grid still visible in its old town layout, and the Euphrasian Basilica, a UNESCO-listed 6th-century church with striking Byzantine gold mosaics; a lively waterfront promenade makes it a popular resort base.",
+    'Motovun': "A hilltop hill-town in inland Istria's truffle country, surrounded by oak forest known for white truffle foraging; also hosts an annual summer film festival, and the walk up through its stacked stone gates rewards with views over the Mirna valley vineyards below.",
+    'Grožnjan': "A small hilltop artists' village, largely resettled by painters, sculptors and musicians from the 1960s onward after wartime depopulation; narrow lanes are lined with small galleries and studios, and it hosts a summer international music academy known as the \"town of musicians.\"",
+    'Bovec': "An adventure-sports base in Slovenia's Julian Alps along the vivid turquoise Soča river, popular for whitewater rafting and kayaking and as a hiking gateway; the river's striking color comes from glacial rock flour and is most vivid during early-summer snowmelt.",
+    'Kobarid': "A small Slovenian town at the center of the WWI Isonzo Front battles (a young Ernest Hemingway served nearby, later drawing on the experience for \"A Farewell to Arms\"); the Kobarid Museum is considered one of Europe's best WWI museums, and the nearby Kozjak waterfall is a short, easy hike from town.",
+    'Tolmin Gorge': "A dramatic river gorge carved by the Tolminka and Zadlaščica rivers, with a walkway leading to the \"Dante's Cave\" and Slovenia's deepest gorge cut, the \"Bear's Head\" rock formation; a shorter, less crowded alternative to the busier Vintgar Gorge near Bled.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Two of batch 2's standalone routes were flagged as too exposed to their long-haul flight time
  * relative to trip length — Jordanië (8d, connecting flight) and Nieuw-Zeeland Zuidereiland (21d,
  * but 27-38h with multiple stops). Adds +2 days to each as a recovery/margin buffer, matching the
@@ -14786,7 +14867,7 @@ function rbBuildArdennesRoute() {
     {
       code: 'BE', name: 'Belgium', days: 3, budget: 264, lat: 50.1833, lng: 5.5833,
       destinations: [
-        { name: 'La Roche-en-Ardenne', lat: 50.1833, lng: 5.5833 },
+        { name: 'La Roche-en-Ardenne', lat: 50.1833, lng: 5.5833 , notes: 'A small town in a loop of the Ourthe river, overlooked by a ruined medieval castle keep; a good base for Ardennes forest hikes and kayaking the river, and it saw heavy fighting during the WWII Battle of the Bulge.' },
         { name: 'Han-sur-Lesse', lat: 50.1167, lng: 5.2000 },
         { name: 'Coo', lat: 50.3833, lng: 5.9167 },
         { name: 'Durbuy', lat: 50.3522, lng: 5.4536 },
@@ -14884,7 +14965,7 @@ function rbBuildBelgiumBrugesGhentAntwerpArdennesRoute() {
       destinations: [
         { name: 'Bruges', lat: 51.2093, lng: 3.2247, notes: "The canal-ringed medieval core is best appreciated from the Belfry tower (366 steps) over the Markt; go right at opening before the day-tripper coach crowds arrive." },
         { name: 'Ghent', lat: 51.0543, lng: 3.7174, notes: "Gravensteen castle (its audio tour is included and worth doing) and the Graslei/Korenlei waterfront are the highlights, with a noticeably more local, student-city feel and far smaller crowds than Bruges's equivalent sights." },
-        { name: 'Antwerp', lat: 51.2194, lng: 4.4025 },
+        { name: 'Antwerp', lat: 51.2194, lng: 4.4025 , notes: 'Belgium\'s second city and a historic diamond-trading hub, with a Gothic cathedral (home to several Rubens altarpieces) and the ornate Grote Markt guild houses; the Museum aan de Stroom (MAS) building gives a free rooftop panorama over the city and port.' },
       ],
       notes: 'Bruges — Ghent — Antwerp (Cathedral: nave/interior open, but the tower has been under long-term restoration since 2019 and the status of a scaffolding-free view in 2026 is unconfirmed; MAS building/rooftop free, exhibitions ~€12 separately). Train for the cities. Budget ~€90-100/day in the cities, confirmed via web check.',
       transport_to_next: 'A car is needed from here — drive to Dinant or La Roche-en-Ardenne for the Ardennes leg.',
@@ -14892,8 +14973,8 @@ function rbBuildBelgiumBrugesGhentAntwerpArdennesRoute() {
     {
       code: 'BE', name: 'Belgium', days: 2, budget: 150, lat: 50.2603, lng: 4.9106,
       destinations: [
-        { name: 'Dinant', lat: 50.2603, lng: 4.9106 },
-        { name: 'La Roche-en-Ardenne', lat: 50.1833, lng: 5.5833 },
+        { name: 'Dinant', lat: 50.2603, lng: 4.9106 , notes: 'A riverside town on the Meuse dominated by a hilltop citadel, and the birthplace of Adolphe Sax (inventor of the saxophone, honored with statues around town); the citadel is reached by a cable car or a long staircase, with WWI history exhibits inside.' },
+        { name: 'La Roche-en-Ardenne', lat: 50.1833, lng: 5.5833 , notes: 'A small town in a loop of the Ourthe river, overlooked by a ruined medieval castle keep; a good base for Ardennes forest hikes and kayaking the river, and it saw heavy fighting during the WWII Battle of the Bulge.' },
       ],
       notes: "Dinant OR La Roche-en-Ardenne (an either/or choice, not both combined) for 1-2 days of nature as a counterpart to the cities. Budget lower than the city leg. Season: possible year-round overall, April-October better for this Ardennes part.",
       transport_to_next: 'End of this route — drive back to the Netherlands.',
@@ -15155,10 +15236,10 @@ function rbBuildRomanticRoadRoute() {
     {
       code: 'DE', name: 'Germany', days: 6, budget: 510, lat: 49.7913, lng: 9.9534,
       destinations: [
-        { name: 'Würzburg', lat: 49.7913, lng: 9.9534 },
-        { name: 'Rothenburg ob der Tauber', lat: 49.3757, lng: 10.1786 },
-        { name: 'Nördlingen', lat: 48.8506, lng: 10.4886 },
-        { name: 'Augsburg', lat: 48.3705, lng: 10.8978 },
+        { name: 'Würzburg', lat: 49.7913, lng: 9.9534 , notes: 'A Baroque city on the Main river, home to the Würzburg Residenz palace (a UNESCO-listed Baroque residence with a Tiepolo fresco covering Europe\'s largest painted ceiling) and the Alte Mainbrücke bridge lined with statues, popular for evening wine-drinking with a view of the fortress above.' },
+        { name: 'Rothenburg ob der Tauber', lat: 49.3757, lng: 10.1786 , notes: 'The best-preserved walled medieval town on the Romantic Road, with intact town walls walkable end-to-end and half-timbered houses virtually untouched since the Middle Ages; the Christmas Museum and a year-round Christmas shop reflect the town\'s famous holiday-market reputation.' },
+        { name: 'Nördlingen', lat: 48.8506, lng: 10.4886 , notes: 'A walled town built inside a 15-million-year-old meteor crater (the Ries), with its walls and towers still fully intact and walkable in a full loop; the Daniel church tower gives a view over both the town and the crater\'s rim in the distance.' },
+        { name: 'Augsburg', lat: 48.3705, lng: 10.8978 , notes: 'One of Germany\'s oldest cities, founded by the Romans, known for the Fuggerei, the world\'s oldest still-inhabited social housing complex (built 1516, rent unchanged at a symbolic annual token amount for centuries); the Rathausplatz and gilded Perlachturm tower are the old-town center.' },
         { name: 'Füssen', lat: 47.5722, lng: 10.7017 , notes: 'The Hohes Schloss old town and the Lechfall gorge waterfall just south of the center are worth an hour beyond being the Neuschwanstein access base; walk the riverside path to Lechfall in the early morning to have it to yourself.' },
       ],
       notes: "The official signed 'Romantische Straße' route, confirmed: Würzburg — Rothenburg ob der Tauber — Nördlingen — Augsburg — Füssen (via Landsberg am Lech), 413km total, no backtracking. NL-Würzburg ~5h/550km. Budget ~€75-95/day p.p. in the smaller Franconian towns, rising to €110+ on the last day near Neuschwanstein (same timed-tour caveat as Bavaria: Munich + Alps (5 days) 🥨 if that detour is added). Season: late spring/early autumn (fewer crowds in Rothenburg) — late November-December for Rothenburg's Reiterlesmarkt (Christmas market) as a well-known alternative in a completely different season.",
@@ -15238,10 +15319,10 @@ function rbBuildGermanAlpineRoadRoute() {
     {
       code: 'DE', name: 'Germany', days: 9, budget: 890, lat: 47.5460, lng: 9.6832,
       destinations: [
-        { name: 'Lindau (Lake Constance)', lat: 47.5460, lng: 9.6832 },
+        { name: 'Lindau (Lake Constance)', lat: 47.5460, lng: 9.6832 , notes: 'An island town on Lake Constance connected to the mainland by a bridge and causeway, with a harbor entrance marked by a lighthouse and a stone lion statue; the promenade gives views across the lake to the Austrian and Swiss Alps on a clear day.' },
         { name: 'Füssen', lat: 47.5722, lng: 10.7017 , notes: 'The Hohes Schloss old town and the Lechfall gorge waterfall just south of the center are worth an hour beyond being the Neuschwanstein access base; walk the riverside path to Lechfall in the early morning to have it to yourself.' },
         { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0956, notes: "Beyond being the Zugspitze gateway, the town's own highlight is the Partnachklamm gorge walk, a shaded ~1-hour loop through a carved rock canyon with waterfalls — an easy half-day add-on." },
-        { name: 'Chiemsee / Prien am Chiemsee', lat: 47.8514, lng: 12.3450 },
+        { name: 'Chiemsee / Prien am Chiemsee', lat: 47.8514, lng: 12.3450 , notes: 'Bavaria\'s largest lake, with a boat trip out to Herrenchiemsee Island the highlight — home to King Ludwig II\'s unfinished, over-the-top palace modeled on Versailles; Prien am Chiemsee is the main lakeside town and boat departure point.' },
         { name: 'Berchtesgaden', lat: 47.6303, lng: 13.0006 , notes: 'Alpine town best known as the access point for the Kehlsteinhaus (Eagle\'s Nest) and the Obersalzberg documentation center on WWII history; the Eagle\'s Nest is reachable only by special bus and only May-October, so book that slot early in the day.' },
       ],
       notes: "Better framed as the official 'Deutsche Alpenstraße' (German Alpine Road) — a designated scenic route from Lindau to Königssee — rather than simply 'Bavaria again': Lindau (Lake Constance) — Füssen (~101km/1h19) — Garmisch-Partenkirchen (~51 min) — Chiemsee/Prien (~135km/1h41) — Berchtesgaden (~76km/1h01) — west to east, confirmed no backtracking. Budget ~€80-105/day p.p. on average (roughly 7 normal days at ~€90 plus two peak-cost days around €120-140), with two peak days: Neuschwanstein+Zugspitze (same caveats as Bavaria: Munich + Alps (5 days) 🥨), and Königssee (same boat-trip caveat as Bavaria + Alps + Berchtesgaden (6 days) ⛰️). Season: June-September for full access to mountain roads/cable cars/high-altitude trails. Zugspitze cable car fully closed 9-13, 16-20 and 23-26 November 2026 for maintenance (irrelevant for a summer trip). Parking near Hohenschwangau/Neuschwanstein (~€8/day) and Königssee (~€5-8/day) are real extra costs, not folded into the flat daily budget.",
@@ -15520,8 +15601,8 @@ function rbBuildInterlakenLauterbrunnenGrindelwaldRoute() {
     {
       code: 'CH', name: 'Switzerland', days: 2, budget: 280, lat: 46.5934, lng: 7.9086,
       destinations: [
-        { name: 'Lauterbrunnen (Trümmelbach Falls)', lat: 46.5934, lng: 7.9086 },
-        { name: 'Mürren / Gimmelwald (car-free)', lat: 46.5602, lng: 7.8926 },
+        { name: 'Lauterbrunnen (Trümmelbach Falls)', lat: 46.5934, lng: 7.9086 , notes: 'A sheer-walled valley with 72 waterfalls, most famously Staubbach Falls dropping straight past the village; the Trümmelbach Falls are a separate, dramatic series of ten glacier-fed waterfalls inside the mountain, reached via a short funicular and walkway through the rock.' },
+        { name: 'Mürren / Gimmelwald (car-free)', lat: 46.5602, lng: 7.8926 , notes: 'Two tiny, car-free villages perched on a cliff shelf above the Lauterbrunnen valley, reachable only by cable car; Mürren has the more developed tourist infrastructure while Gimmelwald remains a quieter, working farming village a short walk below it.' },
       ],
       notes: 'Lauterbrunnen (2 nights: waterfalls, Trümmelbach Falls) — cable car up to car-free Mürren/Gimmelwald. Own car as far as Lauterbrunnen, then train/cable car onward — Wengen, in the same valley, is entirely car-free.',
       transport_to_next: 'Drive/train to Grindelwald — a short hop within the same region.',
@@ -15529,9 +15610,9 @@ function rbBuildInterlakenLauterbrunnenGrindelwaldRoute() {
     {
       code: 'CH', name: 'Switzerland', days: 3, budget: 420, lat: 46.6244, lng: 8.0345,
       destinations: [
-        { name: 'Grindelwald', lat: 46.6244, lng: 8.0345 },
-        { name: 'First Cliff Walk', lat: 46.6597, lng: 8.0725 },
-        { name: 'Bachalpsee', lat: 46.6539, lng: 8.0453 },
+        { name: 'Grindelwald', lat: 46.6244, lng: 8.0345 , notes: 'The main base town beneath the Eiger\'s north face, with cable cars running up to First and the Männlichen ridge; its glacier gorge (Gletscherschlucht) walkway is a lower-effort add-on beyond the big cable-car outings.' },
+        { name: 'First Cliff Walk', lat: 46.6597, lng: 8.0725 , notes: 'A metal walkway clipped directly onto the cliff face at the First cable car station above Grindelwald, ending at a glass viewing platform jutting out over the void; the same station is also the base for a zipline and a mountain cart track back down.' },
+        { name: 'Bachalpsee', lat: 46.6539, lng: 8.0453 , notes: 'A glacial lake above Grindelwald reached by an easy hike from the First cable car station, famous for mirror reflections of the surrounding peaks (including the Wetterhorn) on calm mornings.' },
       ],
       notes: "Grindelwald (2 nights: First Cliff Walk, Bachalpsee hike, or the Männlichen-Kleine Scheidegg ridge). Budget ~€120-160/day p.p. — one of Switzerland's priciest valleys. Season: June-September for full trail access. The Jungfraujoch excursion (Interlaken-Jungfraujoch return CHF261.20, May-Oct, plus a mandatory CHF10 seat reservation) is a legitimate but skippable splurge — Männlichen-Kleine Scheidegg or Bachalpsee give comparable free Eiger/Jungfrau views on foot.",
       transport_to_next: 'End of this route — drive/train back to the Netherlands via Interlaken.',
@@ -15772,10 +15853,10 @@ function rbBuildBrittanyRoute() {
     {
       code: 'FR', name: 'France', days: 5, budget: 425, lat: 48.6493, lng: -2.0257,
       destinations: [
-        { name: 'Saint-Malo (ramparts)', lat: 48.6493, lng: -2.0257 },
-        { name: 'Dinan (medieval old town)', lat: 48.4535, lng: -2.0453 },
-        { name: "Côte de Granit Rose / Ploumanac'h coastal path", lat: 48.8236, lng: -3.4739 },
-        { name: 'Île de Bréhat', lat: 48.8404, lng: -2.9877 },
+        { name: 'Saint-Malo (ramparts)', lat: 48.6493, lng: -2.0257 , notes: 'The walled old town (rebuilt after WWII bombing but faithfully reconstructed) is best seen by walking the full ramparts circuit, under an hour and giving views over the harbour and offshore forts. Time it around high tide for waves crashing against the sea wall, or low tide to walk out to Fort National on foot.' },
+        { name: 'Dinan (medieval old town)', lat: 48.4535, lng: -2.0453 , notes: 'A hilltop medieval town on the Rance river, defined by the cobbled Rue du Jerzual — a steep street of half-timbered artisan houses running down from the old town to the small port below. Walk down and take a more gradual route back up.' },
+        { name: "Côte de Granit Rose / Ploumanac'h coastal path", lat: 48.8236, lng: -3.4739 , notes: 'The pink granite boulders and rock formations around Ploumanac\'h are best seen via the Sentier des Douaniers coastal path between Perros-Guirec and Ploumanac\'h — the rocks turn a distinctly rosy color at sunset, so time the walk for late afternoon.' },
+        { name: 'Île de Bréhat', lat: 48.8404, lng: -2.9877 , notes: 'A small, car-free island off Brittany\'s pink granite coast, reached by a short ferry; split into a wilder northern half and a gentler, garden-filled southern half thanks to a unique subtropical microclimate that lets Mediterranean plants grow this far north.' },
         { name: 'Cap Fréhel', lat: 48.6836, lng: -2.3247, notes: "One of Brittany's most dramatic headlands, pink sandstone/granite cliffs dropping into the sea with a lighthouse at the tip; also a seabird nesting site (guillemots, kittiwakes) best appreciated with binoculars in late spring/early summer." },
       ],
       notes: "Deliberately north Brittany only: Saint-Malo-Dinan is 33km/35min and Saint-Malo-Côte de Granit Rose 163km/~2h — everything stays close together. Adding Carnac/Quiberon (south) costs 2.5-2.8h per drive, which would eat roughly 2 of the 5 days on driving alone — not worth it for this length of trip. Route: Saint-Malo (ramparts, free) — a full day in Saint-Malo (Île du Grand Bé at low tide, check the tide tables) — Dinan (medieval old town) — Côte de Granit Rose/Ploumanac'h coastal path — Île de Bréhat or Cap Fréhel, then the drive home. Amsterdam-Saint-Malo 838km/7h48, tolls ~€25-35 — there's no useful NL ferry (Brittany Ferries only sails from UK ports), so it's a drive. Budget ~€70-100pp/day lodging + €35-45 food (seafood platter €30-45) + €15-25 activities/parking. Season: May-June or September (easier tides, fewer crowds). ⚠️ Bréhat/Sept-Îles boat trips €15-25pp, budget separately.",
@@ -16948,11 +17029,11 @@ function rbBuildLiechtensteinVaduzRoute() {
     {
       code: 'LI', name: 'Liechtenstein', days: 2, budget: 340, lat: 47.1410, lng: 9.5209,
       destinations: [
-        { name: 'Vaduz old town (Städtle pedestrian area)', lat: 47.1416, lng: 9.5209 },
-        { name: 'Vaduz Castle viewpoint', lat: 47.1339, lng: 9.5228 },
-        { name: 'Kunstmuseum Liechtenstein', lat: 47.1411, lng: 9.5206 },
-        { name: 'Liechtenstein Center', lat: 47.1410, lng: 9.5217 },
-        { name: 'Malbun (day trip)', lat: 47.0658, lng: 9.6086 },
+        { name: 'Vaduz old town (Städtle pedestrian area)', lat: 47.1416, lng: 9.5209 , notes: 'Liechtenstein\'s compact capital core, a single pedestrian street (Städtle) lined with government buildings, the parliament, and most of the country\'s museums; walkable end to end in well under an hour.' },
+        { name: 'Vaduz Castle viewpoint', lat: 47.1339, lng: 9.5228 , notes: 'The reigning prince\'s actual residence on the hill above town, not open to visitors inside, but the walk or short drive up gives the best view over Vaduz and the Rhine valley to Switzerland.' },
+        { name: 'Kunstmuseum Liechtenstein', lat: 47.1411, lng: 9.5206 , notes: 'A small but well-regarded modern art museum in a striking black basalt-and-glass building, holding part of the princely family\'s private art collection alongside contemporary exhibitions.' },
+        { name: 'Liechtenstein Center', lat: 47.1410, lng: 9.5217 , notes: 'The country\'s official visitor center and tourist office, doubling as a small museum/exhibition space and the spot to get a novelty passport stamp — a popular souvenir since Liechtenstein itself has no border checks or stamps of its own.' },
+        { name: 'Malbun (day trip)', lat: 47.0658, lng: 9.6086 , notes: 'Liechtenstein\'s only ski resort, a small, low-key alpine village high in the mountains above Vaduz, reached by a winding road up from Triesenberg.' },
       ],
       notes: "Liechtenstein has no airport or train station of its own. Realistic access: fly to Zürich (a standard flight from the Netherlands, no detour needed), then train Zürich-Sargans (~45 min) plus a LIEmobil bus to Vaduz Post (~35 min, ~CHF7), or a rental car (~1h30). St. Gallen-Altenrhein is geographically closer but has no realistic scheduled service from the Netherlands; Innsbruck only makes sense if already heading toward Austria anyway. Day 1: Vaduz's old town (Städtle pedestrian area, the castle viewpoint from outside, the Kunstmuseum, the Landesmuseum, the Liechtenstein Center for information plus a passport stamp). Day 2 (needed so it doesn't feel like padding): a day trip to Malbun (LIEmobil line 21 from Vaduz Post, ~28-40 min, hourly) for hiking (summer) or skiing (winter, 23km of slopes) — without Malbun, 1 day is enough for Vaduz itself. Budget ~CHF150-180/day (accommodation is relatively limited/expensive for such a small country; add CHF45-55 for a Malbun ski pass if applicable). Season: summer for hiking, winter for skiing in Malbun. ⚠️ A passport-stamp souvenir costs CHF3/€3.30 at the Liechtenstein Center and the Malbun Center; museums are often closed on Sunday/Monday — don't plan around that.",
       transport_to_next: 'End of this route — train Sargans-Zürich (or drive) and fly home from Zürich.',
@@ -17075,10 +17156,10 @@ function rbBuildCorsicaSouthLoopRoute() {
       code: 'FR', name: 'France', days: 6, budget: 840, lat: 41.9192, lng: 8.7386,
       destinations: [
         { name: 'Ajaccio', lat: 41.9192, lng: 8.7386 },
-        { name: 'Golfe de Valinco / Propriano', lat: 41.6769, lng: 8.9058 },
+        { name: 'Golfe de Valinco / Propriano', lat: 41.6769, lng: 8.9058 , notes: 'A sheltered gulf on Corsica\'s southwest coast with the town of Propriano as its main harbor and beach base; a quieter, less-visited stretch of coastline than Corsica\'s more famous northern beaches.' },
         { name: 'Bonifacio', lat: 41.3870, lng: 9.1595 },
-        { name: 'Porto-Vecchio', lat: 41.5910, lng: 9.2795 },
-        { name: 'Col de Bavella', lat: 41.7906, lng: 9.2183 },
+        { name: 'Porto-Vecchio', lat: 41.5910, lng: 9.2795 , notes: 'A lively harbor town known as the gateway to some of Corsica\'s best beaches (Palombaggia, Santa Giulia), with a hilltop old town of narrow lanes above the marina; historically a salt-trading port, hence the name ("old port").' },
+        { name: 'Col de Bavella', lat: 41.7906, lng: 9.2183 , notes: 'A dramatic mountain pass through the granite Aiguilles de Bavella needles, with a roadside viewpoint giving one of Corsica\'s most photographed mountain panoramas; also a trailhead for hikes into the surrounding peaks.' },
       ],
       notes: "Deliberately a single region, not a full island loop — there's too little time for that given the driving distances. Best compact loop: Ajaccio → Golfe de Valinco → Bonifacio → Porto-Vecchio/Col de Bavella → back to Ajaccio (southern Corsica). Connecting flight to Figari (closest to Bonifacio/the south) or Ajaccio — no direct flight from the Netherlands to Corsica itself. Rental car is required in practice (very limited public transport outside the coast). Budget ~€140/day (including a shared rental car). Season: May-June or September; avoid August (crowds/prices). ⚠️ Bonifacio: park in the official car parks (P3/P5/Valli plus shuttle) outside the citadel, don't drive in; parking charges apply from the spring school holidays through All Saints' Day (~1 Nov) — check exact 2026 dates. The Scandola Nature Reserve (boat-only access) has tightening rules (250m distance from nesting zones, partly restricted anchoring) — check current access rules before booking a boat trip.",
       transport_to_next: 'End of this route — connecting flight home via Figari or Ajaccio.',
@@ -17352,11 +17433,11 @@ function rbBuildMaltaFourDaysRoute() {
     {
       code: 'MT', name: 'Malta', days: 4, budget: 420, lat: 35.8989, lng: 14.5146,
       destinations: [
-        { name: 'Valletta & the Three Cities (Vittoriosa/Senglea/Cospicua)', lat: 35.8989, lng: 14.5146 },
-        { name: 'Mdina / Rabat', lat: 35.8869, lng: 14.4033 },
+        { name: 'Valletta & the Three Cities (Vittoriosa/Senglea/Cospicua)', lat: 35.8989, lng: 14.5146 , notes: 'Malta\'s fortified capital, a UNESCO World Heritage city built by the Knights of St. John after the Great Siege of 1565; a short ferry across the Grand Harbour reaches the older Three Cities, with Vittoriosa\'s waterfront and narrow lanes predating Valletta itself.' },
+        { name: 'Mdina / Rabat', lat: 35.8869, lng: 14.4033 , notes: 'Malta\'s former medieval capital, a walled hilltop "Silent City" with narrow winding streets and near-total car access restrictions; used as a Game of Thrones filming location for King\'s Landing\'s early scenes, with Rabat just outside the walls holding early Christian catacombs.' },
         { name: 'Marsaxlokk', lat: 35.8419, lng: 14.5453 , notes: 'Malta\'s fishing village with colorful luzzu boats and a Sunday fish/produce market; go early (before 9am) to beat the tour-bus crowds.' },
-        { name: 'Hagar Qim / Mnajdra temples', lat: 35.8256, lng: 14.4408 },
-        { name: 'Blue Grotto', lat: 35.8236, lng: 14.4536 },
+        { name: 'Hagar Qim / Mnajdra temples', lat: 35.8256, lng: 14.4408 , notes: 'Two megalithic temple complexes older than Stonehenge or the Egyptian pyramids, among the oldest free-standing stone structures in the world; both are now sheltered under protective modern canopy structures to slow weathering.' },
+        { name: 'Blue Grotto', lat: 35.8236, lng: 14.4536 , notes: 'A set of sea caves and arches on Malta\'s south coast, best seen by a short boat trip from the nearby harbor in the morning when sunlight reflecting off the seabed turns the water a vivid blue; boats don\'t run in rough seas, so calm mornings are the most reliable.' },
       ],
       notes: "Valletta plus the Three Cities (Vittoriosa/Senglea/Cospicua) → Mdina/Rabat → Marsaxlokk (fishing village) → the Hagar Qim/Mnajdra temples (south) → the Blue Grotto. Gozo deliberately skipped — not enough time to do it justice alongside the mainland in under 4 days. Direct flights from the Netherlands: Eindhoven-Malta (Ryanair/Wizz Air/Transavia/KM Malta Airlines, ~2h50) and Amsterdam-Malta (KM Malta Airlines/easyJet, ~3h10) — a well-served route, no connection needed. Budget ~€100-110/day. Season: any shoulder season works well for this city/history-focused trip, even winter is fine (few boat-dependent activities). ⚠️ The Hal Saflieni Hypogeum (a prehistoric must-see) has no walk-in access — book tickets 2-3 months ahead, especially May-September; book this at the same time as the flight if it's on the list.",
       transport_to_next: 'End of this route — direct flight home from Malta.',
@@ -17499,11 +17580,11 @@ function rbBuildBarcelonaRoute() {
     {
       code: 'ES', name: 'Spain', days: 4, budget: 460, lat: 41.3851, lng: 2.1734,
       destinations: [
-        { name: 'Barcelona (Gothic Quarter / Barri Gòtic)', lat: 41.3833, lng: 2.1761 },
-        { name: 'Sagrada Família', lat: 41.4036, lng: 2.1744 },
-        { name: 'Park Güell', lat: 41.4145, lng: 2.1527 },
-        { name: 'Barceloneta Beach', lat: 41.3784, lng: 2.1925 },
-        { name: 'Montjuïc', lat: 41.3641, lng: 2.1652 },
+        { name: 'Barcelona (Gothic Quarter / Barri Gòtic)', lat: 41.3833, lng: 2.1761 , notes: 'Barcelona\'s medieval core, a maze of narrow stone lanes around the Gothic cathedral and the Plaça Reial; Roman-era wall fragments are still visible tucked between later buildings throughout the quarter.' },
+        { name: 'Sagrada Família', lat: 41.4036, lng: 2.1744 , notes: 'Gaudí\'s still-unfinished basilica, under construction since 1882 and now targeted for completion around its architect\'s 2026 death centenary (dates have slipped before — check current status); book tickets online well ahead, including a separate tower-climb ticket if wanted, since walk-up availability is unreliable.' },
+        { name: 'Park Güell', lat: 41.4145, lng: 2.1527 , notes: 'A whimsical public park designed by Gaudí, covered in mosaic-tiled benches and structures including the famous serpentine bench overlooking the city; the main monumental zone requires a timed-entry ticket booked in advance, while the rest of the park is free to enter.' },
+        { name: 'Barceloneta Beach', lat: 41.3784, lng: 2.1925 , notes: 'Barcelona\'s main city beach, a man-made stretch created for the 1992 Olympics along the former industrial waterfront; backed by seafood restaurants and beach bars, it gets very crowded in summer but is an easy walk or metro ride from the old town.' },
+        { name: 'Montjuïc', lat: 41.3641, lng: 2.1652 , notes: 'A hill overlooking the harbor holding a mix of attractions — the Olympic Stadium from 1992, the Joan Miró Foundation museum, and a hilltop castle reachable by cable car; also the site of the Magic Fountain\'s evening light-and-water shows near the base.' },
       ],
       notes: "Entry: direct AMS-BCN (KLM/Vueling/Transavia, ~2h10, up to 370 flights/week in high season). No day trips needed — the Gothic Quarter, Sagrada Família, Park Güell, Barceloneta beach and Montjuïc fill the city itself. Season: April-June or September-October; avoid August. Budget ~€115/day. Web check (2026-08): 2026 is Gaudí's centenary year (100 years since his death, June 1926) — the Sagrada Família's central tower is expected to be completed around then, so extra crowds and higher prices especially around June; normally book 2-3 weeks ahead, in 2026 better 1-2 months ahead, and book Park Güell 1-2 months ahead too. Barcelona's tourist tax doubled as of 1 April 2026 (regional €0.80-4.50/night + a municipal surcharge of €5/night, up to ~€12/night at 5-star hotels) — check the current rate before budgeting.",
       transport_to_next: 'End of this route — fly back AMS-BCN direct.',
@@ -17566,11 +17647,11 @@ function rbBuildBasqueCountryRoute() {
     {
       code: 'ES', name: 'Spain', days: 6, budget: 630, lat: 43.2951, lng: -2.4622,
       destinations: [
-        { name: 'San Sebastián (La Concha)', lat: 43.3183, lng: -1.9812 },
+        { name: 'San Sebastián (La Concha)', lat: 43.3183, lng: -1.9812 , notes: 'Shell-shaped urban bay often ranked among Europe\'s best city beaches, backed by Belle Époque architecture. Walk the promenade at sunset and ride the funicular up Monte Igueldo for the view over the bay, then do a pintxos crawl through the Parte Vieja.' },
         { name: 'Bilbao (Guggenheim Museum)', lat: 43.2630, lng: -2.9350 , notes: 'Gehry\'s titanium-clad building is as much the draw as what\'s inside, along with Koons\' giant flower "Puppy" out front. Book timed entry online to skip the queue, and return after dark to see the building lit and reflected in the river.' },
-        { name: 'Hondarribia', lat: 43.3822, lng: -1.7967 },
-        { name: 'Getaria', lat: 43.3050, lng: -2.2000 },
-        { name: 'Zarautz', lat: 43.2833, lng: -2.1667 },
+        { name: 'Hondarribia', lat: 43.3822, lng: -1.7967 , notes: 'A small fortified fishing town near the French border, with a colorful old quarter of Basque-style balconied houses inside surviving medieval walls; a popular short stop for pintxos away from San Sebastián\'s crowds.' },
+        { name: 'Getaria', lat: 43.3050, lng: -2.2000 , notes: 'A tiny fishing village known as the birthplace of Juan Sebastián Elcano (the first person to complete a circumnavigation of the globe, after Magellan\'s death partway through) and for its grilled-fish/seafood restaurants along the harbor.' },
+        { name: 'Zarautz', lat: 43.2833, lng: -2.1667 , notes: 'The Basque Coast\'s main surf town, with the region\'s longest beach and consistent, popular breaks; also produces notable Getariako Txakolina white wine from vineyards on the surrounding hillsides.' },
       ],
       notes: "San Sebastián + Bilbao (Guggenheim) plus short coastal towns (Hondarribia, Getaria/Zarautz) — deliberately coast/Basque-only, no La Rioja or Pamplona (that's the longer Northern Spain version further down). Entry: direct AMS-Bilbao (KLM/Vueling, ~2h15, 21 KLM flights/week); San Sebastián has no daily direct AMS flight, so fly into Bilbao and drive/bus ~1h. Budget ~€105/day (pintxo culture and a high Michelin-star density push food costs up). Season: June-September works really well here (cooler Atlantic climate) — a solid summer alternative to the hot south. Web check (2026-08): San Sebastián books up fast in July-August (Semana Grande, mid-August).",
       transport_to_next: 'End of this route — fly back AMS-Bilbao direct.',
@@ -17593,7 +17674,7 @@ function rbBuildMallorcaTramuntanaRoute() {
         { name: 'Valldemossa', lat: 39.7098, lng: 2.6228, notes: "Chopin and George Sand wintered here in 1838-39 at the Real Cartuja monastery, now a small museum housing the piano he composed on; the village's steep stone streets and lavender-lined balconies are worth a wander beyond the monastery itself. Arrive early morning - tour buses from Palma clog the single access road by midday." },
         { name: 'Deià', lat: 39.7481, lng: 2.6478, notes: "An artists' village (Robert Graves lived and is buried here; his house Ca N'Alluny is now a small museum) perched above the sea, with a short, steep path down to the pebble cove Cala Deià for a swim. Go early or at sunset - the cove is tiny and packs out by midday in summer." },
         { name: 'Sóller', lat: 39.7662, lng: 2.7147, notes: "A citrus-growing valley town reached from Palma by a century-old wooden train through the mountains, with a matching antique tram continuing down to the seaside Port de Sóller. Book train tickets ahead in high season - the scenic run sells out." },
-        { name: 'Cap de Formentor', lat: 39.9583, lng: 3.2078 },
+        { name: 'Cap de Formentor', lat: 39.9583, lng: 3.2078 , notes: 'The dramatic, narrow peninsula at Mallorca\'s northeastern tip, reached by a winding cliff-edge road with a lighthouse at its very end; the Mirador des Colomer viewpoint partway along is the classic photo stop over the sheer cliffs and turquoise water below.' },
       ],
       notes: "Palma as a base for a Serra de Tramuntana loop: Valldemossa → Deià → Sóller (do at least one leg on the antique wooden train between Palma and Sóller) → Cap de Formentor in the north → an optional east-coast beach day to close it out. Entry: direct AMS-PMI (Transavia, ~2h25, ~30 flights/week); a rental car is recommended for the mountain roads. Budget ~€105/day (rental car +€25-35/day). Season: May-June or September; July-August is very busy and expensive. Web check (2026-08): the Balearic eco-tax (ITS) runs €1.10-4.40 pp/night in high season (1 May-31 October) depending on accommodation category, and €0.28-1.10 in low season — charged separately at check-in/check-out, often not folded into the booking price.",
       transport_to_next: 'End of this route — fly back AMS-PMI direct.',
@@ -18190,10 +18271,10 @@ function rbBuildDubrovnikSurroundingsRoute() {
       code: 'HR', name: 'Croatia', days: 5, budget: 875, lat: 42.6507, lng: 18.0944,
       destinations: [
         { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944, notes: "Its walled marble streets (the Stradun) and 2km of intact medieval ramparts overlooking the Adriatic are the draw, along with the baroque St. Blaise's Church and Rector's Palace; Game of Thrones fans will recognize it as King's Landing. Walk the city walls right at opening (around 8am) to beat both the midday heat and the cruise-ship crowds that flood the old town by late morning." },
-        { name: 'Lokrum Island', lat: 42.6339, lng: 18.1181 },
-        { name: 'Elafiti Islands (Lopud)', lat: 42.6772, lng: 18.0044 },
-        { name: 'Cavtat', lat: 42.5806, lng: 18.2189 },
-        { name: 'Trsteno Arboretum', lat: 42.7069, lng: 17.9954 },
+        { name: 'Lokrum Island', lat: 42.6339, lng: 18.1181 , notes: 'A small, mostly wooded island a short ferry ride from Dubrovnik\'s old harbor, home to a former Benedictine monastery, a saltwater "Dead Sea" swimming lake, and a resident population of peacocks; also used as a Game of Thrones filming location for Qarth.' },
+        { name: 'Elafiti Islands (Lopud)', lat: 42.6772, lng: 18.0044 , notes: 'A chain of small, mostly car-free islands near Dubrovnik; Lopud is the most visited, with a sandy beach (Šunj) on its far side and a ruined Franciscan monastery, reachable by a short ferry or boat tour from the mainland.' },
+        { name: 'Cavtat', lat: 42.5806, lng: 18.2189 , notes: 'A quieter coastal town south of Dubrovnik, with a palm-lined seafront promenade and Roman-era ruins; a good half-day escape from Dubrovnik\'s cruise-ship crowds, reachable by a short boat or bus ride.' },
+        { name: 'Trsteno Arboretum', lat: 42.7069, lng: 17.9954 , notes: 'A centuries-old botanical garden on the coast north of Dubrovnik, home to two giant plane trees over 500 years old and an ornamental aqueduct-fed fountain; its Renaissance garden terraces were used as a Game of Thrones filming location for the King\'s Landing gardens.' },
       ],
       notes: "Dubrovnik's old town (2 days) — a boat day to Lokrum and the Elafiti Islands (1 day) — Cavtat or the Trsteno Arboretum as a day trip (1 day) — optionally a day trip across the border to Kotor, Montenegro (1 day). Budget ~€150-200/day — Dubrovnik is clearly pricier than the rest of Croatia. Season: May-June/September for the best weather-crowd balance, July-August very busy and hot. Web check (2026-08): cruise-ship crowds in the old town peak around midday — book the city-walls ticket online ahead. Note: the optional Kotor day trip leaves Schengen entirely — since 10 April 2026 the EU's Entry/Exit System (EES) is fully operational, so that crossing now includes biometric registration (fingerprint + facial scan, 3-6 min/person) each way.",
       transport_to_next: 'End of this route — fly home from Dubrovnik, or via Split/Zagreb with a connection.',
@@ -18214,9 +18295,9 @@ function rbBuildIstriaRoute() {
       destinations: [
         { name: 'Pula (Arena)', lat: 44.8737, lng: 13.8467 , notes: 'One of the best-preserved Roman amphitheaters in the world, still used for concerts; check the events calendar before visiting since summer concert setup can restrict daytime access, and go in the morning to avoid both heat and tour groups.' },
         { name: 'Rovinj', lat: 45.0811, lng: 13.6387 , notes: 'Car-free Istrian old town on a small peninsula with pastel houses and the hilltop St. Euphemia church; park outside the center and climb the church bell tower for the view over the rooftops to the sea.' },
-        { name: 'Poreč', lat: 45.2269, lng: 13.5950 },
-        { name: 'Motovun', lat: 45.3325, lng: 13.8347 },
-        { name: 'Grožnjan', lat: 45.3833, lng: 13.7250 },
+        { name: 'Poreč', lat: 45.2269, lng: 13.5950 , notes: 'A coastal town with a well-preserved Roman street grid still visible in its old town layout, and the Euphrasian Basilica, a UNESCO-listed 6th-century church with striking Byzantine gold mosaics; a lively waterfront promenade makes it a popular resort base.' },
+        { name: 'Motovun', lat: 45.3325, lng: 13.8347 , notes: 'A hilltop hill-town in inland Istria\'s truffle country, surrounded by oak forest known for white truffle foraging; also hosts an annual summer film festival, and the walk up through its stacked stone gates rewards with views over the Mirna valley vineyards below.' },
+        { name: 'Grožnjan', lat: 45.3833, lng: 13.7250 , notes: 'A small hilltop artists\' village, largely resettled by painters, sculptors and musicians from the 1960s onward after wartime depopulation; narrow lanes are lined with small galleries and studios, and it hosts a summer international music academy known as the "town of musicians."' },
       ],
       notes: "Pula (1-2 days, the Roman amphitheater) — Rovinj (2 days) — Poreč (1 day) — the inland hill towns of Motovun/Grožnjan (1-2 days). Budget ~€90-150/day (Rovinj at the top end, Pula somewhat cheaper). Season: May-June or September, July-August is full and warm. Web check (2026-08): the Rovinj-Pula bus/drive is ~1h, roughly €5; the Brijuni Islands are only accessible on a guided tour, not independently.",
       transport_to_next: 'End of this route — fly home from Pula, or via Zagreb with a connection.',
@@ -18396,9 +18477,9 @@ function rbBuildJulianAlpsSocaValleyRoute() {
       destinations: [
         { name: 'Kranjska Gora', lat: 46.4858, lng: 13.7861 , notes: 'Slovenia\'s main ski resort town, tucked at the base of the Julian Alps near the Austrian and Italian borders; in summer it\'s the trailhead for hikes into the Alps and the start of the Vršič Pass road, with the nearby Lake Jasna\'s turquoise water and horse statues a popular quick stop.' },
         { name: 'Vršič Pass', lat: 46.4331, lng: 13.7478 , notes: 'Slovenia\'s highest mountain pass, with 50 numbered hairpin bends (24 up the northern side alone), linking the Soča Valley to the Sava valley through the Julian Alps; open only roughly late May through October/November depending on snow, and the pass-top viewpoint over the switchbacks below is the classic photo stop.' },
-        { name: 'Bovec', lat: 46.3297, lng: 13.5522 },
-        { name: 'Kobarid', lat: 46.2467, lng: 13.5789 },
-        { name: 'Tolmin Gorge', lat: 46.2030, lng: 13.7595 },
+        { name: 'Bovec', lat: 46.3297, lng: 13.5522 , notes: 'An adventure-sports base in Slovenia\'s Julian Alps along the vivid turquoise Soča river, popular for whitewater rafting and kayaking and as a hiking gateway; the river\'s striking color comes from glacial rock flour and is most vivid during early-summer snowmelt.' },
+        { name: 'Kobarid', lat: 46.2467, lng: 13.5789 , notes: 'A small Slovenian town at the center of the WWI Isonzo Front battles (a young Ernest Hemingway served nearby, later drawing on the experience for "A Farewell to Arms"); the Kobarid Museum is considered one of Europe\'s best WWI museums, and the nearby Kozjak waterfall is a short, easy hike from town.' },
+        { name: 'Tolmin Gorge', lat: 46.2030, lng: 13.7595 , notes: 'A dramatic river gorge carved by the Tolminka and Zadlaščica rivers, with a walkway leading to the "Dante\'s Cave" and Slovenia\'s deepest gorge cut, the "Bear\'s Head" rock formation; a shorter, less crowded alternative to the busier Vintgar Gorge near Bled.' },
       ],
       notes: "Kranjska Gora (1-2 days) — over the Vršič Pass to Bovec (2 days, rafting/canyoning) — Kobarid (1 day, WWI history) — Tolmin Gorge (1 day). Budget €100-140/day as a base, with adventure activities adding €50-80 pp per activity. Season: June-September — the pass and high mountains are often closed/snowed in outside that window. Web check (2026-08): Triglav NP itself is free to enter without a permit, though paid parking and specific attractions apply (e.g. the Vogel cable car, €20-25 return); see the Vršič Pass traffic regime above for the 2026 details.",
       transport_to_next: 'End of this route — fly home from Ljubljana.',

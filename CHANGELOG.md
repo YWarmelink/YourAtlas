@@ -12,6 +12,18 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batches 131-136 — West Europe small-routes cluster (2026-09-18)** —
+  39 fresh destinations plus 5 reuse-under-new-name-string entries, closing out 14 routes
+  entirely: Belgium: Bruges + Ghent + Antwerp + Ardennes, Romantic Road, German Alpine Road,
+  Interlaken + Lauterbrunnen + Grindelwald, Brittany: Saint-Malo/Dinan/Pink Granite Coast,
+  Liechtenstein: Vaduz, Corsica: South Loop, Malta (4 days), Barcelona (4 days), Basque Country:
+  San Sebastián + Bilbao, Mallorca: Serra de Tramuntana Loop, Dubrovnik + Surroundings, Istria,
+  Julian Alps + Soča Valley (`rbMigrateWestEuropeSmallRoutesClusterDestinationNotes()`).
+  App-wide total: 3657 destination-slots filled across 417 routes. 577/741 signatures done.
+  Note: this batch's Dutch-content audit surfaced a new false positive — Antwerp's real "Grote
+  Markt" square name — same accepted category as the existing Grote Knip/Kleine Scheidegg hits,
+  not a bug.
+
 - **Per-destination notes, batches 126-130 — Nordic/UK cluster (2026-09-18)** — 38 fresh
   destinations researched, closing out 9 routes entirely: Poland Roadtrip, Oslo, South Sweden
   (Skåne), both Swedish Lapland routes, Orkney + Shetland, Cotswolds + Bath + Southwest England,
