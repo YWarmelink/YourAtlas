@@ -30,6 +30,22 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   already present in the existing data, no change needed to how batches insert notes or build
   their migration functions.
 
+- **Per-destination notes, batches 76-79 — Scotland/Iceland/Ireland clusters (2026-09-18)** — 27
+  destinations researched across two parallel sub-batches, plus 6 name-variant reuses.
+  - Batch 76: Scotland cluster (Scottish Highlands, Highlands + Isle of Skye, Scotland Roadtrip,
+    Scotland Extended) — Inverness, Loch Ness, Fort William, Skye Bridge, Portree, Old Man of
+    Storr, Quiraing, Fairy Pools, Stirling, Cairngorms/Perthshire, John o' Groats, Durness,
+    Applecross Pass, Ullapool (`rbMigrateScotlandClusterDestinationNotes()`)
+  - Batch 77: Iceland leftovers (South Iceland, Iceland South Coast) — Seljalandsfoss,
+    Skógafoss, Reynisfjara black beach, Diamond Beach, plus 2 combined-name variants
+    (`rbMigrateIcelandLeftoversDestinationNotes()`)
+  - Batch 78: Ireland cluster (Wild Atlantic Way, Ireland Complete, West Ireland, Dublin) —
+    Sligo, Mayo/Achill Island, Cliffs of Moher, Dingle/Ring of Kerry, Cork/Kinsale, Dublin,
+    Wicklow, Kerry, Belfast/Giant's Causeway (`rbMigrateIrelandClusterDestinationNotes()`)
+  - Batch 79: Ireland combo name variants ("Sligo / Donegal", "Cliffs of Moher / Connemara")
+    built by merging existing place notes (`rbMigrateIrelandCombosDestinationNotes()`)
+  App-wide total: 3191 destination-slots filled across 380 routes. 441/741 signatures done.
+
 - **Per-destination notes, batches 73-75 — Romania/Bulgaria/Moldova clusters (2026-09-18)** — a
   very high-leverage trio spanning many sibling routes (Transylvania + Carpathian Mountains,
   Romania Roadtrip, Romania: Extended, Romania + Bulgaria: Transylvania Focus, Sofia + Rila

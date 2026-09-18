@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 432 / 741 signatures.**
+- **Done so far: 441 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -422,14 +422,14 @@ Sorted alphabetically by country code.
 - [ ] **GB** (4 dest): Old Town / Royal Mile, Edinburgh Castle, Arthur's Seat, Stirling Castle (day trip) — routes: Edinburgh (3-4 days) 🏰
 - [ ] **GB** (6 dest): London (British Museum), Bath (Roman Baths), Bourton-on-the-Water (Cotswolds), Snowdon / Yr Wyddfa (Snowdonia), Conwy Castle, Holyhead (ferry port) — routes: England + Wales + Northern Ireland Roadtrip (10-14 days) 🛣️
 - [ ] **GB** (4 dest): Giant's Causeway, Carrick-a-Rede Rope Bridge, Antrim Coast / Causeway Coastal Route, Belfast (Titanic Belfast) — routes: England + Wales + Northern Ireland Roadtrip (10-14 days) 🛣️
-- [ ] **GB** (9 dest): Inverness, Loch Ness, Glencoe, Fort William, Skye Bridge, Portree, Old Man of Storr, Quiraing, Fairy Pools — routes: Highlands + Isle of Skye (7-10 days) 🏔️
+- [x] **GB** (9 dest): Inverness, Loch Ness, Glencoe, Fort William, Skye Bridge, Portree, Old Man of Storr, Quiraing, Fairy Pools — routes: Highlands + Isle of Skye (7-10 days) 🏔️
 - [ ] **GB** (5 dest): British Museum, Tower of London, Camden Market, Westminster (Big Ben / Houses of Parliament), Greenwich (Royal Observatory / Cutty Sark) — routes: London (3-4 days) 🎡
 - [ ] **GB** (5 dest): Belfast (Titanic Belfast), Belfast murals (Falls Road / Shankill Road), Giant's Causeway, Carrick-a-Rede Rope Bridge, Antrim Coast / Causeway Coastal Route — routes: Northern Ireland (5-7 days) 🌉
 - [ ] **GB** (6 dest): Aberdeen (or Scrabster / Gills Bay), Kirkwall, Skara Brae, Ring of Brodgar, Lerwick, Jarlshof — routes: Orkney + Shetland (5-7 days) ⚓
 - [ ] **GB** (5 dest): Highlands to Skye (Uig), Tarbert (Harris, CalMac ferry from Uig), Luskentyre beach, Callanish Standing Stones (Lewis), Stornoway (return via Ullapool) — routes: Outer Hebrides (Lewis + Harris) (5-7 days) 🏖️
-- [ ] **GB** (8 dest): Edinburgh, Inverness (NC500 start/end), John o' Groats, Durness, Applecross Pass / Bealach na Bà, Ullapool, Isle of Skye (Portree), Glencoe — routes: Scotland Extended (10-14 days) 🏴
-- [ ] **GB** (6 dest): Edinburgh, Stirling, Glencoe, Fort William, Inverness, Cairngorms National Park / Perthshire — routes: Scotland Roadtrip (7-10 days) 🚙
-- [ ] **GB** (5 dest): Inverness, Loch Ness / Urquhart Castle, Glencoe, Fort William / Ben Nevis, Cairngorms National Park — routes: Scottish Highlands (5-7 days) 🦌
+- [x] **GB** (8 dest): Edinburgh, Inverness (NC500 start/end), John o' Groats, Durness, Applecross Pass / Bealach na Bà, Ullapool, Isle of Skye (Portree), Glencoe — routes: Scotland Extended (10-14 days) 🏴
+- [x] **GB** (6 dest): Edinburgh, Stirling, Glencoe, Fort William, Inverness, Cairngorms National Park / Perthshire — routes: Scotland Roadtrip (7-10 days) 🚙
+- [x] **GB** (5 dest): Inverness, Loch Ness / Urquhart Castle, Glencoe, Fort William / Ben Nevis, Cairngorms National Park — routes: Scottish Highlands (5-7 days) 🦌
 - [ ] **GB** (5 dest): Snowdon / Yr Wyddfa summit, Llanberis (Snowdon Mountain Railway), Conwy Castle, Caernarfon Castle, Pembrokeshire Coast Path — routes: Wales (Snowdonia + Coast) (5-7 days) 🐉
 - [x] **GG** (1 dest): St Peter Port — routes: Jersey + Guernsey (Channel Islands) (4-5 days) 🏝️
 - [ ] **GI** (2 dest): Rock of Gibraltar, St Michael’s Cave — routes: Gibraltar + Andalusia: Costa del Sol (4 days) 🐒
@@ -488,17 +488,17 @@ Sorted alphabetically by country code.
 - [ ] **HU** (4 dest): Buda Castle District, Eger, Tokaj wine region, Lake Balaton / Tihany — routes: Hungary Roadtrip (6 days) 🚗
 - [ ] **HU** (2 dest): Buda Castle District, Eger — routes: Slovakia + Hungary (9 days) 🚆
 - [ ] **IE** (4 dest): Trinity College / Book of Kells, Guinness Storehouse, Temple Bar, Wicklow Mountains / Glendalough (day trip) — routes: Dublin (3-4 days) 🍺
-- [ ] **IE** (8 dest): Dublin, Wicklow, Kilkenny, Cork / Kinsale, Kerry, Cliffs of Moher / Connemara, Sligo / Donegal, Belfast / Giant's Causeway (optional side trip) — routes: Ireland Complete (10-14 days) 🌈
-- [ ] **IE** (5 dest): Dublin, Kilkenny, Cork / Kinsale, Ring of Kerry, Galway — routes: Ireland Roadtrip (7-10 days) 🚗
+- [x] **IE** (8 dest): Dublin, Wicklow, Kilkenny, Cork / Kinsale, Kerry, Cliffs of Moher / Connemara, Sligo / Donegal, Belfast / Giant's Causeway (optional side trip) — routes: Ireland Complete (10-14 days) 🌈
+- [x] **IE** (5 dest): Dublin, Kilkenny, Cork / Kinsale, Ring of Kerry, Galway — routes: Ireland Roadtrip (7-10 days) 🚗
 - [ ] **IE** (4 dest): Galway, Connemara National Park / Kylemore Abbey (day trip), Cliffs of Moher / Doolin, Aran Islands (optional) — routes: West Ireland (5-7 days) 🌊
-- [ ] **IE** (8 dest): Donegal, Sligo, Mayo / Achill Island, Connemara, Galway, Cliffs of Moher (Clare), Dingle Peninsula / Ring of Kerry, Cork / Kinsale — routes: Wild Atlantic Way (7-10 days) 🌅
+- [x] **IE** (8 dest): Donegal, Sligo, Mayo / Achill Island, Connemara, Galway, Cliffs of Moher (Clare), Dingle Peninsula / Ring of Kerry, Cork / Kinsale — routes: Wild Atlantic Way (7-10 days) 🌅
 - [ ] **IM** (5 dest): Douglas, TT Grandstand & Museum, TT Mountain Road (Snaefell), Snaefell Mountain Railway, Manx Electric Railway — routes: Isle of Man (3-4 days) 🏝️
 - [ ] **IM** (2 dest): Castletown (Castle Rushen), Peel Castle — routes: Isle of Man (3-4 days) 🏝️
 - [x] **IS** (9 dest): Reykjavík, Vík í Mýrdal, Jökulsárlón Glacier Lagoon, Egilsstaðir / Seyðisfjörður, Mývatn / Akureyri / Húsavík, Westfjords (Ísafjörður), Dynjandi waterfall, Landmannalaugar (highland alternative), Þórsmörk (highland alternative) — routes: Iceland Extended (14 days) 🗺️
 - [x] **IS** (9 dest): Reykjavík, Vík í Mýrdal, Jökulsárlón Glacier Lagoon, Höfn, Egilsstaðir, Seyðisfjörður, Mývatn, Akureyri, Húsavík — routes: Iceland Ring Road (12 days) 🛣️
-- [ ] **IS** (8 dest): Reykjavík, Golden Circle (Þingvellir/Geysir/Gullfoss), Seljalandsfoss, Skógafoss, Reynisfjara black beach / Vík í Mýrdal, Jökulsárlón Glacier Lagoon, Diamond Beach, Höfn — routes: Iceland South Coast (9 days) 🧊
+- [x] **IS** (8 dest): Reykjavík, Golden Circle (Þingvellir/Geysir/Gullfoss), Seljalandsfoss, Skógafoss, Reynisfjara black beach / Vík í Mýrdal, Jökulsárlón Glacier Lagoon, Diamond Beach, Höfn — routes: Iceland South Coast (9 days) 🧊
 - [x] **IS** (7 dest): Reykjavik, Golden Circle (Þingvellir), South Coast (Vík í Mýrdal), Vatnajökull, Jökulsárlón, Akureyri, Snæfellsnes — routes: Nordic Arctic Expedition ❄️
-- [ ] **IS** (8 dest): Reykjavík, Þingvellir, Geysir, Gullfoss, Seljalandsfoss, Skógafoss, Reynisfjara black beach, Vík í Mýrdal — routes: South Iceland (6 days) 🌊
+- [x] **IS** (8 dest): Reykjavík, Þingvellir, Geysir, Gullfoss, Seljalandsfoss, Skógafoss, Reynisfjara black beach, Vík í Mýrdal — routes: South Iceland (6 days) 🌊
 - [x] **IT** (2 dest): Cortina d'Ampezzo, Tre Cime di Lavaredo — routes: Alpine Roadtrip (14 days) 🏕️
 - [ ] **IT** (2 dest): Sorrento, Amalfi Coast (Positano) — routes: Campania + Puglia (9 days) 🧭
 - [ ] **IT** (2 dest): Alberobello, Ostuni — routes: Campania + Puglia (9 days) 🧭
@@ -771,7 +771,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | England + Wales + Northern Ireland Roadtrip (10-14 days) 🛣️ | 10/10 | 0 |
 | Rhine + Moselle (5 days) 🚤 | 9/9 | 0 |
 | Grand European Roadtrip (14-21 days) 🪣 | 9/12 | 0 |
-| Highlands + Isle of Skye (7-10 days) 🏔️ | 9/9 | 0 |
 | Baltic States Roadtrip (10-14 days) 🚗 | 9/9 | 0 |
 | Dolomites & North Italy 🚡 | 8/24 | 0 |
 | Alsace (4 days) 🥐 | 8/8 | 0 |
@@ -781,11 +780,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Catalonia + Pyrenees (9 days) ⛰️ | 8/8 | 0 |
 | Spain: North to Central (12 days) 🚉 | 8/8 | 0 |
 | Spain: East to South (12 days) 🌅 | 8/8 | 0 |
-| South Iceland (6 days) 🌊 | 8/8 | 0 |
-| Iceland South Coast (9 days) 🧊 | 8/8 | 0 |
-| Wild Atlantic Way (7-10 days) 🌅 | 8/8 | 0 |
-| Ireland Complete (10-14 days) 🌈 | 8/8 | 0 |
-| Scotland Extended (10-14 days) 🏴 | 8/8 | 0 |
 | Adriatic Roadtrip (14 days) 🌊 | 8/11 | 0 |
 | Western Canada: Rockies & Vancouver 🏔️ | 7/18 | 0 |
 | Paris (4 days) 🗼 | 7/7 | 0 |
@@ -808,6 +802,12 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Isle of Man (3-4 days) 🏝️ | 7/7 | 0 |
 | Portugal + Spain Roadtrip (14 days) 🚗 | 7/10 | 0 |
 | French + Spanish Pyrenees (9 days) 🥖 | 7/7 | 0 |
-| ... 186 more routes with open destinations ... | | |
+| Sri Lanka 🐆 | 6/6 | 0 |
+| Papua New Guinea 🎭 | 6/6 | 0 |
+| Austria Alpine Roadtrip (9 days) 🗺️ | 6/7 | 0 |
+| Austria + Slovenia (9 days) 🏝️ | 6/6 | 0 |
+| Normandy (5 days) 🪖 | 6/6 | 0 |
+| South of France: Provence to Côte d'Azur (9 days) 🕶️ | 6/6 | 0 |
+| ... 177 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

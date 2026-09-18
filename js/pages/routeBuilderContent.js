@@ -10752,6 +10752,152 @@ function rbMigrateMoldovaClusterDestinationNotes() {
 }
 
 /**
+ * Batch 76 (2026-09-18) -- Scotland cluster (Scottish Highlands, Highlands + Isle of Skye,
+ * Scotland Roadtrip, Scotland Extended, Edinburgh) -- high leverage, 14 destinations
+ * researched, with Inverness/Loch Ness/Fort William/Portree each getting a name-variant reuse
+ * (same real place, different exact strings). Same generic name-matching migration pattern as
+ * the other batches.
+ */
+function rbMigrateScotlandClusterDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_SCOTLAND_CLUSTER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_SCOTLAND_CLUSTER_DESTINATION_NOTES, '1');
+
+  const invernessNote = "The Highland capital — walkable riverside town, useful base for Loch Ness day trips and the start/end of the NC500 rather than a sightseeing destination itself; half a day is plenty.";
+  const lochNessNote = 'Scotland\'s deepest loch, famous for the "monster" legend, with the ruined Urquhart Castle perched on its shore giving the best loch views; take a short boat cruise from Drumnadrochit past the castle rather than just viewing from the road.';
+  const fortWilliamNote = 'The "Outdoor Capital of the UK" at the foot of Glen Nevis, main base for climbing Ben Nevis; even without hiking the summit, drive the short Glen Nevis road for close-up mountain scenery in under an hour.';
+  const portreeNote = "Skye's colorful harbor capital, known for its row of painted waterfront buildings; parking fills up fast in high season, so arrive in the morning and allow 1-2 hours.";
+  const notesByName = {
+    'Inverness': invernessNote,
+    'Inverness (NC500 start/end)': invernessNote,
+    'Loch Ness': lochNessNote,
+    'Loch Ness / Urquhart Castle': lochNessNote,
+    'Fort William': fortWilliamNote,
+    'Fort William / Ben Nevis': fortWilliamNote,
+    'Skye Bridge': "The bridge linking Skye to the mainland at Kyle of Lochalsh, toll-free since 2004 after once being one of the most expensive tolls per mile in the world; it's a quick drive-through, worth only a brief photo stop, not a real destination.",
+    'Portree': portreeNote,
+    'Isle of Skye (Portree)': portreeNote,
+    'Old Man of Storr': "A distinctive rock pinnacle on Skye reached by a popular uphill trail; the walk to the viewpoint takes 45-60 minutes, and the pay car park fills by mid-morning in summer, so go early or in evening light.",
+    'Quiraing': "A landscape of rock towers and hidden green valleys on Skye, walked as a loop; the full loop takes about 3 hours, but a 20-minute walk from the car park already reaches the main viewpoint if time is short.",
+    'Fairy Pools': "A chain of clear waterfall pools on Skye popular for wild swimming; it's a 30-45 minute walk each way on a rough path, the water is glacially cold, and going early on a weekday avoids the tour-bus crowds.",
+    'Stirling': "A historic city built around Stirling Castle, near the sites of the battles of Stirling Bridge and Bannockburn; the castle alone deserves a half day, and buying tickets in advance is worth it in peak season.",
+    'Cairngorms National Park / Perthshire': 'Perthshire ("Big Tree Country") adds lochs like Loch Tay, glens, and whisky distilleries around Pitlochry and Dunkeld to the Cairngorms\' mountain scenery; a whisky distillery stop pairs naturally with a Cairngorms driving day.',
+    "John o' Groats": 'Mainland Britain\'s classic "end of the road" signpost photo stop on the NC500; note the actual northernmost point of mainland Britain is nearby Dunnet Head, not here — 30 minutes is enough for John o\' Groats itself.',
+    'Durness': "A remote north-coast village on the NC500, next to Smoo Cave, a large sea cave with a waterfall inside; it's free and only a short walk from the car park, worth 30-45 minutes.",
+    'Applecross Pass / Bealach na Bà': "One of the UK's highest and steepest roads, a single-track switchback climb with views to Skye from the summit; avoid it in winter, fog, or with a large campervan, and budget extra driving time for the hairpins.",
+    'Ullapool': "A fishing port on Scotland's northwest coast and the ferry gateway to Stornoway/Outer Hebrides; if continuing by ferry, book the crossing well ahead for summer travel.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 77 (2026-09-18) -- Iceland leftovers (South Iceland, Iceland South Coast) -- 4
+ * newly researched, plus 2 combined-name variants built by merging the individual notes. Same
+ * generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateIcelandLeftoversDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_ICELAND_LEFTOVERS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_ICELAND_LEFTOVERS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Seljalandsfoss': "A waterfall you can walk fully behind via a path circling the falls; wear waterproof clothing (the spray is heavy) and check for the smaller, partly hidden Gljúfrabúi falls just north, tucked behind a rock slot.",
+    'Skógafoss': "One of Iceland's widest, most powerful waterfalls, with a staircase beside it climbing to a viewing platform and the start of the Fimmvörðuháls hiking trail; sunny afternoons often produce a rainbow in the mist at the base.",
+    'Reynisfjara black beach': "Black sand beach with the Hálsanefshellir basalt column cave at its western end; never turn your back on the ocean here — sneaker waves have killed tourists, so stay well back from the water's edge.",
+    'Diamond Beach': "The black sand beach where icebergs from Jökulsárlón wash up and glitter like ice diamonds; walk the shoreline for photos but don't climb or touch the ice chunks, they can flip suddenly — 30-45 minutes is enough.",
+    'Golden Circle (Þingvellir/Geysir/Gullfoss)': "The classic trio: Þingvellir (walking inside the Mid-Atlantic Ridge rift valley), Geysir (where neighboring Strokkur, not the dormant original, erupts every 5-10 minutes), and Gullfoss (a powerful two-tier waterfall — walk down to the lower viewpoint for the full drop). Budget about half a day for all three; go early to beat tour-bus traffic from Reykjavík.",
+    'Reynisfjara black beach / Vík í Mýrdal': "Iceland's southernmost village next to the black sand beach at Reynisfjara, with the basalt sea stacks of Reynisdrangar offshore and the Hálsanefshellir basalt column cave at the beach's western end. Never turn your back on the ocean here — sneaker waves have killed tourists — go early morning for fewer people and the best light.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 78 (2026-09-18) -- Ireland cluster (Wild Atlantic Way, Ireland Complete, West Ireland,
+ * Dublin) -- high leverage, 9 destinations researched (Donegal/Connemara/Galway/Kilkenny
+ * already had notes). Same generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateIrelandClusterDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_IRELAND_CLUSTER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_IRELAND_CLUSTER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Sligo': "Yeats country, with his grave at Drumcliffe churchyard sitting right under Benbulben's distinctive flat-topped ridge; stop at the grave (5 minutes) then view Benbulben from the R477 coast road toward Mullaghmore, half a day is enough.",
+    'Mayo / Achill Island': "Ireland's largest island, reached by a road bridge, with Keem Bay's cliff-ringed beach at the very end of the island road as the highlight; drive the full loop out to Keem Bay and back, allow a full day including Croagh Patrick views en route.",
+    'Cliffs of Moher (Clare)': "200m sea cliffs on the Atlantic with views to the Aran Islands on a clear day; pre-book the timed entry ticket online to skip the entrance queue, and arrive before 10am or after 4pm to beat the tour-bus crowds.",
+    'Dingle Peninsula / Ring of Kerry': "Dingle's Slea Head Drive passes beehive huts and Dunquin with far fewer coaches than the Ring of Kerry; if doing the Ring of Kerry, drive it counter-clockwise (against the standard tour-bus direction) to avoid getting stuck behind convoys on the narrow bends.",
+    'Cork / Kinsale': "Cork's English Market is the city's food centerpiece, while Kinsale's harbor is ringed with seafood restaurants and the 17th-century Charles Fort; book a Kinsale dinner table ahead in summer, and walk out to Charles Fort for the best harbor view.",
+    'Dublin': "A compact, walkable historic core along the River Liffey — Grafton Street, St. Stephen's Green, and the Georgian squares — best explored on foot rather than by car; skip the tourist-trap pubs directly on Temple Bar and head a block or two further for a more local scene.",
+    'Wicklow': "The Wicklow Mountains hold Glendalough's early monastic ruins beside two glacial lakes; arrive before 10am to beat the tour-bus crowds at the Round Tower and Upper Lake, half a day covers the site plus a short lakeside walk.",
+    'Kerry': "Beyond the Ring of Kerry drive itself, Killarney National Park (Torc Waterfall, Muckross House, lakes) makes a good base, and Portmagee on the peninsula is the departure point for Skellig Michael boat trips; landing tours run mid-May to late September only, are capped at 15 licensed boats/180 people a day, and sell out weeks to months ahead, so book early.",
+    "Belfast / Giant's Causeway (optional side trip)": "Belfast's Titanic Belfast museum sits on the actual shipyard slipway, and the Giant's Causeway's hexagonal basalt columns are a short walk from the visitor center; the walk down to the stones is free (you only pay for parking/exhibition), so arrive early to beat the coach groups.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 79 (2026-09-18) -- Ireland combo name variants ("Sligo / Donegal", "Cliffs of Moher /
+ * Connemara") -- built by merging the individual place notes from batch 78 and earlier batches
+ * (same real places, different exact strings). Same generic name-matching migration pattern as
+ * the other batches.
+ */
+function rbMigrateIrelandCombosDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_IRELAND_COMBOS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_IRELAND_COMBOS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Sligo / Donegal': "Sligo (Yeats country, Benbulben, his grave at Drumcliffe churchyard) paired here with Donegal just north — Slieve League's sea cliffs, higher than the Cliffs of Moher but far less crowded, plus Glenveagh National Park. Stop at Drumcliffe for the grave, then head to Bunglass Point (not the lower car park) for Slieve League's full drop.",
+    'Cliffs of Moher / Connemara': "The Cliffs of Moher's 200m sea cliffs (pre-book timed entry, arrive before 10am or after 4pm) paired here with Connemara's bog, lakes and Twelve Bens mountains further north — Kylemore Abbey and the Sky Road out of Clifden are the highlights there.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -19983,9 +20129,9 @@ function rbBuildSouthIcelandRoute() {
         { name: 'Þingvellir', lat: 64.2559, lng: -21.1295 , notes: 'Historically Iceland\'s original parliament site, but the actual reason to walk it is that you\'re walking inside the Mid-Atlantic Ridge rift valley — the Almannagjá gorge is the tectonic plate boundary itself. Walk down into the gorge (not just the rim viewpoint); 1-1.5hrs is enough, parking fee but no entry fee.' },
         { name: 'Geysir', lat: 64.3104, lng: -20.3024 , notes: 'The original "Geysir" is dormant most of the time — it\'s neighboring Strokkur that erupts reliably every 5-10 minutes and is what everyone actually watches. Stand to the side rather than directly downwind, and you\'ll only need 20-30 minutes here.' },
         { name: 'Gullfoss', lat: 64.3271, lng: -20.1199 , notes: 'A powerful two-tier waterfall on the Hvítá river, dropping into a canyon. Walk down to the lower viewpoint for the full-drop view rather than just the top overlook — paths get icy/slippery outside summer, so grippy shoes matter.' },
-        { name: 'Seljalandsfoss', lat: 63.6156, lng: -19.9886 },
-        { name: 'Skógafoss', lat: 63.5321, lng: -19.5116 },
-        { name: 'Reynisfjara black beach', lat: 63.4045, lng: -19.0424 },
+        { name: 'Seljalandsfoss', lat: 63.6156, lng: -19.9886 , notes: 'A waterfall you can walk fully behind via a path circling the falls; wear waterproof clothing (the spray is heavy) and check for the smaller, partly hidden Gljúfrabúi falls just north, tucked behind a rock slot.' },
+        { name: 'Skógafoss', lat: 63.5321, lng: -19.5116 , notes: 'One of Iceland\'s widest, most powerful waterfalls, with a staircase beside it climbing to a viewing platform and the start of the Fimmvörðuháls hiking trail; sunny afternoons often produce a rainbow in the mist at the base.' },
+        { name: 'Reynisfjara black beach', lat: 63.4045, lng: -19.0424 , notes: 'Black sand beach with the Hálsanefshellir basalt column cave at its western end; never turn your back on the ocean here — sneaker waves have killed tourists, so stay well back from the water\'s edge.' },
         { name: 'Vík í Mýrdal', lat: 63.4186, lng: -19.0060 , notes: 'Iceland\'s southernmost village, next to the black sand beach at Reynisfjara and the basalt sea stacks of Reynisdrangar just offshore. Never turn your back on the ocean here — sneaker waves have killed tourists — and go early morning for both fewer people and the best light on the stacks.' },
       ],
       notes: "Reykjavík (1-2 days) plus the Golden Circle (1 day) and the South Coast as far as Vík (Seljalandsfoss, Skógafoss, Reynisfjara black beach, 2-3 days), then back to Reykjavík — the differentiator against the routes below is stopping at Vík, not continuing further. Budget ~€120-150/day. Season: May-September for the best road conditions. Web check (2026-08): Route 1 as far as Vík is fully paved/2WD, no F-roads needed, and no volcanic impact on this stretch. Reynisfjara: watch for 'sneaker waves' (dangerous surprise waves) — a year-round warning. See the Reykjavík + Golden Circle (5 days) route above for the Reykjanes Peninsula volcanic-activity safety note and Schengen entry details.",
@@ -20006,12 +20152,12 @@ function rbBuildIcelandSouthCoastRoute() {
       code: 'IS', name: 'Iceland', days: 9, budget: 1170, lat: 64.1466, lng: -21.9426,
       destinations: [
         { name: 'Reykjavík', lat: 64.1466, lng: -21.9426 , notes: 'Small enough to cover on foot — Hallgrímskirkja\'s tower (small fee) is the one worthwhile "view" stop, plus the Old Harbour for whale-watching departures. No special timing tip beyond the route\'s own — just allocate a half day, more if doing a whale-watching add-on.' },
-        { name: 'Golden Circle (Þingvellir/Geysir/Gullfoss)', lat: 64.3104, lng: -20.3024 },
-        { name: 'Seljalandsfoss', lat: 63.6156, lng: -19.9886 },
-        { name: 'Skógafoss', lat: 63.5321, lng: -19.5116 },
-        { name: 'Reynisfjara black beach / Vík í Mýrdal', lat: 63.4045, lng: -19.0424 },
+        { name: 'Golden Circle (Þingvellir/Geysir/Gullfoss)', lat: 64.3104, lng: -20.3024 , notes: 'The classic trio: Þingvellir (walking inside the Mid-Atlantic Ridge rift valley), Geysir (where neighboring Strokkur, not the dormant original, erupts every 5-10 minutes), and Gullfoss (a powerful two-tier waterfall — walk down to the lower viewpoint for the full drop). Budget about half a day for all three; go early to beat tour-bus traffic from Reykjavík.' },
+        { name: 'Seljalandsfoss', lat: 63.6156, lng: -19.9886 , notes: 'A waterfall you can walk fully behind via a path circling the falls; wear waterproof clothing (the spray is heavy) and check for the smaller, partly hidden Gljúfrabúi falls just north, tucked behind a rock slot.' },
+        { name: 'Skógafoss', lat: 63.5321, lng: -19.5116 , notes: 'One of Iceland\'s widest, most powerful waterfalls, with a staircase beside it climbing to a viewing platform and the start of the Fimmvörðuháls hiking trail; sunny afternoons often produce a rainbow in the mist at the base.' },
+        { name: 'Reynisfjara black beach / Vík í Mýrdal', lat: 63.4045, lng: -19.0424 , notes: 'Iceland\'s southernmost village next to the black sand beach at Reynisfjara, with the basalt sea stacks of Reynisdrangar offshore and the Hálsanefshellir basalt column cave at the beach\'s western end. Never turn your back on the ocean here — sneaker waves have killed tourists — go early morning for fewer people and the best light.' },
         { name: 'Jökulsárlón Glacier Lagoon', lat: 64.0784, lng: -16.2300 , notes: 'Iceland\'s famous glacial lagoon filled with floating icebergs calved from Breiðamerkurjökull. Cross the road afterward to Diamond Beach, where chunks of ice wash up on black sand — allocate an hour or two for both together.' },
-        { name: 'Diamond Beach', lat: 64.0446, lng: -16.1793 },
+        { name: 'Diamond Beach', lat: 64.0446, lng: -16.1793 , notes: 'The black sand beach where icebergs from Jökulsárlón wash up and glitter like ice diamonds; walk the shoreline for photos but don\'t climb or touch the ice chunks, they can flip suddenly — 30-45 minutes is enough.' },
         { name: 'Höfn', lat: 64.2539, lng: -15.2082 , notes: 'A small fishing town and the main gateway to Vatnajökull glacier tours, known locally for langoustine (humar). Eat langoustine at a local restaurant here and use the town as an overnight base before/after a glacier tour.' },
       ],
       notes: "The same as South Iceland above, but continuing on past Vík to the Jökulsárlón glacier lagoon, Diamond Beach, and Höfn (2-3 extra days) — the differentiator here is pushing on past Vík instead of stopping there. Optionally an ice cave tour in winter (November-March, guided only). Budget ~€120-145/day. Season: June-September for driving comfort; winter (November-March) specifically for the ice caves at Vatnajökull (guided tours only, weather-dependent). Web check (2026-08): Route 1 as far as Höfn is fully paved, no 4x4 needed; always book ice cave tours with a local guide — they require one regardless of experience. See the Reykjavík + Golden Circle (5 days) route above for the Reykjanes Peninsula volcanic-activity safety note and Schengen entry details.",
@@ -20164,9 +20310,9 @@ function rbBuildIrelandRoadtripRoute() {
     {
       code: 'IE', name: 'Ireland', days: 9, budget: 747, lat: 53.3498, lng: -6.2603,
       destinations: [
-        { name: 'Dublin', lat: 53.3498, lng: -6.2603 },
+        { name: 'Dublin', lat: 53.3498, lng: -6.2603 , notes: 'A compact, walkable historic core along the River Liffey — Grafton Street, St. Stephen\'s Green, and the Georgian squares — best explored on foot rather than by car; skip the tourist-trap pubs directly on Temple Bar and head a block or two further for a more local scene.' },
         { name: 'Kilkenny', lat: 52.6541, lng: -7.2448, notes: "A compact medieval city walkable along the \"Medieval Mile\" between Kilkenny Castle and St Canice's Cathedral, with a notable crafts/design scene centered on the Kilkenny Design Centre." },
-        { name: 'Cork / Kinsale', lat: 51.8985, lng: -8.4756 },
+        { name: 'Cork / Kinsale', lat: 51.8985, lng: -8.4756 , notes: 'Cork\'s English Market is the city\'s food centerpiece, while Kinsale\'s harbor is ringed with seafood restaurants and the 17th-century Charles Fort; book a Kinsale dinner table ahead in summer, and walk out to Charles Fort for the best harbor view.' },
         { name: 'Ring of Kerry', lat: 51.8333, lng: -10.0000, notes: "Skellig Michael's UNESCO-listed monastic beehive huts (also known for Star Wars filming) are reachable only via a limited-capacity, weather-dependent boat crossing from Portmagee — that specific booking should be made well ahead of the trip, separately from the general driving-loop planning the block note already covers." },
         { name: 'Galway', lat: 53.2707, lng: -9.0568, notes: "A compact, walkable small city built around the Latin Quarter's live trad-music pubs and the Galway Bay waterfront — better explored on foot than by car, and a natural base for day trips into Connemara or out to the Aran Islands." },
       ],
@@ -20188,13 +20334,13 @@ function rbBuildWildAtlanticWayRoute() {
       code: 'IE', name: 'Ireland', days: 9, budget: 747, lat: 54.0000, lng: -9.0000,
       destinations: [
         { name: 'Donegal', lat: 54.6538, lng: -8.1096, notes: "Ireland's wildest, least-touristed county — Slieve League's sea cliffs actually rise higher than the Cliffs of Moher but draw a fraction of the crowds, alongside Glenveagh National Park's mountains and lough. Head to the Bunglass Point viewpoint rather than the lower car park for the full drop." },
-        { name: 'Sligo', lat: 54.2697, lng: -8.4694 },
-        { name: 'Mayo / Achill Island', lat: 53.9575, lng: -10.0530 },
+        { name: 'Sligo', lat: 54.2697, lng: -8.4694 , notes: 'Yeats country, with his grave at Drumcliffe churchyard sitting right under Benbulben\'s distinctive flat-topped ridge; stop at the grave (5 minutes) then view Benbulben from the R477 coast road toward Mullaghmore, half a day is enough.' },
+        { name: 'Mayo / Achill Island', lat: 53.9575, lng: -10.0530 , notes: 'Ireland\'s largest island, reached by a road bridge, with Keem Bay\'s cliff-ringed beach at the very end of the island road as the highlight; drive the full loop out to Keem Bay and back, allow a full day including Croagh Patrick views en route.' },
         { name: 'Connemara', lat: 53.5478, lng: -9.8180, notes: "Bog, lakes and the Twelve Bens mountains define this stretch, anchored by Kylemore Abbey on its lakeshore and the looping Sky Road out of Clifden. Drive the Sky Road counter-clockwise from Clifden in late afternoon light for the better sea views." },
         { name: 'Galway', lat: 53.2707, lng: -9.0568, notes: "A compact, walkable small city built around the Latin Quarter's live trad-music pubs and the Galway Bay waterfront — better explored on foot than by car, and a natural base for day trips into Connemara or out to the Aran Islands." },
-        { name: 'Cliffs of Moher (Clare)', lat: 52.9715, lng: -9.4309 },
-        { name: 'Dingle Peninsula / Ring of Kerry', lat: 52.1409, lng: -10.2700 },
-        { name: 'Cork / Kinsale', lat: 51.8985, lng: -8.4756 },
+        { name: 'Cliffs of Moher (Clare)', lat: 52.9715, lng: -9.4309 , notes: '200m sea cliffs on the Atlantic with views to the Aran Islands on a clear day; pre-book the timed entry ticket online to skip the entrance queue, and arrive before 10am or after 4pm to beat the tour-bus crowds.' },
+        { name: 'Dingle Peninsula / Ring of Kerry', lat: 52.1409, lng: -10.2700 , notes: 'Dingle\'s Slea Head Drive passes beehive huts and Dunquin with far fewer coaches than the Ring of Kerry; if doing the Ring of Kerry, drive it counter-clockwise (against the standard tour-bus direction) to avoid getting stuck behind convoys on the narrow bends.' },
+        { name: 'Cork / Kinsale', lat: 51.8985, lng: -8.4756 , notes: 'Cork\'s English Market is the city\'s food centerpiece, while Kinsale\'s harbor is ringed with seafood restaurants and the 17th-century Charles Fort; book a Kinsale dinner table ahead in summer, and walk out to Charles Fort for the best harbor view.' },
       ],
       notes: "The full coastal route end-to-end, purely the west coast, no east or south-east detour: Donegal, Sligo, Mayo/Achill, Connemara, Galway, Clare, Kerry (Dingle/Ring of Kerry), and Cork/Kinsale. Budget ~€75-90/day. Season: May/June/September are best, July-August the busiest and most expensive, winter closes some attractions. Web check (2026-08): long distances and narrow roads throughout, with sparse fuel stations along the way — fill up in good time.",
       transport_to_next: 'End of this route — fly home from Cork or Shannon.',
@@ -20213,14 +20359,14 @@ function rbBuildIrelandCompleteRoute() {
     {
       code: 'IE', name: 'Ireland', days: 12, budget: 1020, lat: 53.3498, lng: -6.2603,
       destinations: [
-        { name: 'Dublin', lat: 53.3498, lng: -6.2603 },
-        { name: 'Wicklow', lat: 53.0092, lng: -6.3283 },
+        { name: 'Dublin', lat: 53.3498, lng: -6.2603 , notes: 'A compact, walkable historic core along the River Liffey — Grafton Street, St. Stephen\'s Green, and the Georgian squares — best explored on foot rather than by car; skip the tourist-trap pubs directly on Temple Bar and head a block or two further for a more local scene.' },
+        { name: 'Wicklow', lat: 53.0092, lng: -6.3283 , notes: 'The Wicklow Mountains hold Glendalough\'s early monastic ruins beside two glacial lakes; arrive before 10am to beat the tour-bus crowds at the Round Tower and Upper Lake, half a day covers the site plus a short lakeside walk.' },
         { name: 'Kilkenny', lat: 52.6541, lng: -7.2448, notes: "A compact medieval city walkable along the \"Medieval Mile\" between Kilkenny Castle and St Canice's Cathedral, with a notable crafts/design scene centered on the Kilkenny Design Centre." },
-        { name: 'Cork / Kinsale', lat: 51.8985, lng: -8.4756 },
-        { name: 'Kerry', lat: 51.8333, lng: -10.0000 },
-        { name: 'Cliffs of Moher / Connemara', lat: 52.9715, lng: -9.4309 },
-        { name: 'Sligo / Donegal', lat: 54.2697, lng: -8.4694 },
-        { name: "Belfast / Giant's Causeway (optional side trip)", lat: 54.5973, lng: -5.9301 },
+        { name: 'Cork / Kinsale', lat: 51.8985, lng: -8.4756 , notes: 'Cork\'s English Market is the city\'s food centerpiece, while Kinsale\'s harbor is ringed with seafood restaurants and the 17th-century Charles Fort; book a Kinsale dinner table ahead in summer, and walk out to Charles Fort for the best harbor view.' },
+        { name: 'Kerry', lat: 51.8333, lng: -10.0000 , notes: 'Beyond the Ring of Kerry drive itself, Killarney National Park (Torc Waterfall, Muckross House, lakes) makes a good base, and Portmagee on the peninsula is the departure point for Skellig Michael boat trips; landing tours run mid-May to late September only, are capped at 15 licensed boats/180 people a day, and sell out weeks to months ahead, so book early.' },
+        { name: 'Cliffs of Moher / Connemara', lat: 52.9715, lng: -9.4309 , notes: 'The Cliffs of Moher\'s 200m sea cliffs (pre-book timed entry, arrive before 10am or after 4pm) paired here with Connemara\'s bog, lakes and Twelve Bens mountains further north — Kylemore Abbey and the Sky Road out of Clifden are the highlights there.' },
+        { name: 'Sligo / Donegal', lat: 54.2697, lng: -8.4694 , notes: 'Sligo (Yeats country, Benbulben, his grave at Drumcliffe churchyard) paired here with Donegal just north — Slieve League\'s sea cliffs, higher than the Cliffs of Moher but far less crowded, plus Glenveagh National Park. Stop at Drumcliffe for the grave, then head to Bunglass Point (not the lower car park) for Slieve League\'s full drop.' },
+        { name: "Belfast / Giant's Causeway (optional side trip)", lat: 54.5973, lng: -5.9301 , notes: 'Belfast\'s Titanic Belfast museum sits on the actual shipyard slipway, and the Giant\'s Causeway\'s hexagonal basalt columns are a short walk from the visitor center; the walk down to the stones is free (you only pay for parking/exhibition), so arrive early to beat the coach groups.' },
       ],
       notes: "The longest, most complete version — east, west, south and north-west in one trip: Dublin, Wicklow, Kilkenny, Cork/Kinsale, Kerry, the Cliffs of Moher/Connemara, and Sligo/Donegal, with an optional side trip to Belfast/the Giant's Causeway. Budget ~€75-95/day. Web check (2026-08): a side trip into Northern Ireland still needs the UK ETA (mandatory since 2 April 2025 for Dutch passport holders, fee ~€23-24 since 8 April 2026, valid 2 years or until the passport expires, multiple entry) even though there's no border checkpoint on the road.\n\nDistinct from the existing 'Ireland ☘️' route (split off from British Isles & Celtic Coast Expedition 🍀), which is a 22-day version built the same way (Donegal/Connemara/Galway/Cliffs of Moher/Wild Atlantic Way/Dingle, then Ring of Kerry/Killarney/Cork/Kilkenny) but without Dublin, Wicklow, Sligo or the Belfast side trip. This is the shorter, realistic Trip Ideas version of a full-Ireland loop, not a duplicate — 'Ireland ☘️' itself is untouched.",
       transport_to_next: 'End of this route — fly home from Dublin or Cork.',
@@ -20261,10 +20407,10 @@ function rbBuildScottishHighlandsRoute() {
     {
       code: 'GB', name: 'United Kingdom', days: 6, budget: 528, lat: 57.4778, lng: -4.2247,
       destinations: [
-        { name: 'Inverness', lat: 57.4778, lng: -4.2247 },
-        { name: 'Loch Ness / Urquhart Castle', lat: 57.3241, lng: -4.4407 },
+        { name: 'Inverness', lat: 57.4778, lng: -4.2247 , notes: 'The Highland capital — walkable riverside town, useful base for Loch Ness day trips and the start/end of the NC500 rather than a sightseeing destination itself; half a day is plenty.' },
+        { name: 'Loch Ness / Urquhart Castle', lat: 57.3241, lng: -4.4407 , notes: 'Scotland\'s deepest loch, famous for the "monster" legend, with the ruined Urquhart Castle perched on its shore giving the best loch views; take a short boat cruise from Drumnadrochit past the castle rather than just viewing from the road.' },
         { name: 'Glencoe', lat: 56.6836, lng: -5.1030, notes: "Scotland's most dramatic glen — steep, glacier-carved walls and the Three Sisters ridge line make it one of the most photographed stretches of the Highlands (and a recurring James Bond/Harry Potter filming backdrop). Tip: the view is best from the Glencoe Lochan or the small layby viewpoints on the A82 itself — you don't need a long hike to get the classic shot, just good light and no rushing through." },
-        { name: 'Fort William / Ben Nevis', lat: 56.8198, lng: -5.1052 },
+        { name: 'Fort William / Ben Nevis', lat: 56.8198, lng: -5.1052 , notes: 'The "Outdoor Capital of the UK" at the foot of Glen Nevis, main base for climbing Ben Nevis; even without hiking the summit, drive the short Glen Nevis road for close-up mountain scenery in under an hour.' },
         { name: 'Cairngorms National Park', lat: 57.0833, lng: -3.6667, notes: "The UK's largest national park — high sub-arctic plateau, reindeer herds (the only free-ranging herd in Britain, near Aviemore), and the start of Speyside whisky country. Tip: the funicular/chairlift up Cairn Gorm gives mountain views without a full hike if time is tight." },
       ],
       notes: "The mainland only, no Isle of Skye (unlike the route below): Inverness, Loch Ness/Urquhart Castle, Glencoe, Fort William/Ben Nevis, and back via the Cairngorms. Budget ~€80-95/day (shared rental car, a B&B/hostel mix). Season: May/September ideal; midges are a real nuisance on the west coast June-August. Web check (2026-08): Urquhart Castle requires a mandatory pre-booked timed slot plus a parking spot online (Historic Environment Scotland) — the separate 'Loch Ness Centre' is an unrelated private museum, not the castle ticket.",
@@ -20284,15 +20430,15 @@ function rbBuildHighlandsSkyeRoute() {
     {
       code: 'GB', name: 'United Kingdom', days: 9, budget: 855, lat: 57.4778, lng: -4.2247,
       destinations: [
-        { name: 'Inverness', lat: 57.4778, lng: -4.2247 },
-        { name: 'Loch Ness', lat: 57.3241, lng: -4.4407 },
+        { name: 'Inverness', lat: 57.4778, lng: -4.2247 , notes: 'The Highland capital — walkable riverside town, useful base for Loch Ness day trips and the start/end of the NC500 rather than a sightseeing destination itself; half a day is plenty.' },
+        { name: 'Loch Ness', lat: 57.3241, lng: -4.4407 , notes: 'Scotland\'s deepest loch, famous for the "monster" legend, with the ruined Urquhart Castle perched on its shore giving the best loch views; take a short boat cruise from Drumnadrochit past the castle rather than just viewing from the road.' },
         { name: 'Glencoe', lat: 56.6836, lng: -5.1030, notes: "Scotland's most dramatic glen — steep, glacier-carved walls and the Three Sisters ridge line make it one of the most photographed stretches of the Highlands (and a recurring James Bond/Harry Potter filming backdrop). Tip: the view is best from the Glencoe Lochan or the small layby viewpoints on the A82 itself — you don't need a long hike to get the classic shot, just good light and no rushing through." },
-        { name: 'Fort William', lat: 56.8198, lng: -5.1052 },
-        { name: 'Skye Bridge', lat: 57.2667, lng: -5.7333 },
-        { name: 'Portree', lat: 57.4128, lng: -6.1943 },
-        { name: 'Old Man of Storr', lat: 57.5074, lng: -6.1826 },
-        { name: 'Quiraing', lat: 57.6444, lng: -6.2725 },
-        { name: 'Fairy Pools', lat: 57.2456, lng: -6.2597 },
+        { name: 'Fort William', lat: 56.8198, lng: -5.1052 , notes: 'The "Outdoor Capital of the UK" at the foot of Glen Nevis, main base for climbing Ben Nevis; even without hiking the summit, drive the short Glen Nevis road for close-up mountain scenery in under an hour.' },
+        { name: 'Skye Bridge', lat: 57.2667, lng: -5.7333 , notes: 'The bridge linking Skye to the mainland at Kyle of Lochalsh, toll-free since 2004 after once being one of the most expensive tolls per mile in the world; it\'s a quick drive-through, worth only a brief photo stop, not a real destination.' },
+        { name: 'Portree', lat: 57.4128, lng: -6.1943 , notes: 'Skye\'s colorful harbor capital, known for its row of painted waterfront buildings; parking fills up fast in high season, so arrive in the morning and allow 1-2 hours.' },
+        { name: 'Old Man of Storr', lat: 57.5074, lng: -6.1826 , notes: 'A distinctive rock pinnacle on Skye reached by a popular uphill trail; the walk to the viewpoint takes 45-60 minutes, and the pay car park fills by mid-morning in summer, so go early or in evening light.' },
+        { name: 'Quiraing', lat: 57.6444, lng: -6.2725 , notes: 'A landscape of rock towers and hidden green valleys on Skye, walked as a loop; the full loop takes about 3 hours, but a 20-minute walk from the car park already reaches the main viewpoint if time is short.' },
+        { name: 'Fairy Pools', lat: 57.2456, lng: -6.2597 , notes: 'A chain of clear waterfall pools on Skye popular for wild swimming; it\'s a 30-45 minute walk each way on a rough path, the water is glacially cold, and going early on a weekday avoids the tour-bus crowds.' },
       ],
       notes: "As the Highlands route above, plus crossing the Skye Bridge (free since December 2004, no ferry needed) to Portree, Old Man of Storr, Quiraing, and the Fairy Pools. Budget ~€85-105/day — Skye itself runs a little pricier, with less accommodation on offer. Season: May/September; July-August makes Portree overcrowded. Web check (2026-08): no ferry or permit is needed for Skye itself thanks to the bridge, but expect crowding and parking pressure at the hotspots — arriving early in the day helps.",
       transport_to_next: 'End of this route — fly home from Inverness.',
@@ -20312,11 +20458,11 @@ function rbBuildScotlandRoadtripRoute() {
       code: 'GB', name: 'United Kingdom', days: 9, budget: 810, lat: 55.9533, lng: -3.1883,
       destinations: [
         { name: 'Edinburgh', lat: 55.9533, lng: -3.1883, notes: "Edinburgh Castle dominating the skyline and the Royal Mile connecting it to Holyrood are the spine of the city, but the climb up Arthur's Seat (an extinct volcano inside the city, ~1-2hr round trip) gives the best panoramic payoff for relatively little effort. Tip: book castle tickets online in advance for a specific time slot — walk-up queues at the gate can run long even outside Fringe season." },
-        { name: 'Stirling', lat: 56.1233, lng: -3.9475 },
+        { name: 'Stirling', lat: 56.1233, lng: -3.9475 , notes: 'A historic city built around Stirling Castle, near the sites of the battles of Stirling Bridge and Bannockburn; the castle alone deserves a half day, and buying tickets in advance is worth it in peak season.' },
         { name: 'Glencoe', lat: 56.6836, lng: -5.1030, notes: "Scotland's most dramatic glen — steep, glacier-carved walls and the Three Sisters ridge line make it one of the most photographed stretches of the Highlands (and a recurring James Bond/Harry Potter filming backdrop). Tip: the view is best from the Glencoe Lochan or the small layby viewpoints on the A82 itself — you don't need a long hike to get the classic shot, just good light and no rushing through." },
-        { name: 'Fort William', lat: 56.8198, lng: -5.1052 },
-        { name: 'Inverness', lat: 57.4778, lng: -4.2247 },
-        { name: 'Cairngorms National Park / Perthshire', lat: 56.7833, lng: -3.9333 },
+        { name: 'Fort William', lat: 56.8198, lng: -5.1052 , notes: 'The "Outdoor Capital of the UK" at the foot of Glen Nevis, main base for climbing Ben Nevis; even without hiking the summit, drive the short Glen Nevis road for close-up mountain scenery in under an hour.' },
+        { name: 'Inverness', lat: 57.4778, lng: -4.2247 , notes: 'The Highland capital — walkable riverside town, useful base for Loch Ness day trips and the start/end of the NC500 rather than a sightseeing destination itself; half a day is plenty.' },
+        { name: 'Cairngorms National Park / Perthshire', lat: 56.7833, lng: -3.9333 , notes: 'Perthshire ("Big Tree Country") adds lochs like Loch Tay, glens, and whisky distilleries around Pitlochry and Dunkeld to the Cairngorms\' mountain scenery; a whisky distillery stop pairs naturally with a Cairngorms driving day.' },
       ],
       notes: "A broader loop that also takes in the lowlands — no Skye, but Highlands and lowlands combined: Edinburgh, Stirling, Glencoe, Fort William, Inverness, and back via the Cairngorms/Perthshire. Budget ~€80-100/day. Season: May-September. Web check (2026-08): picking up the rental car in Edinburgh is cheaper than in the Highlands — check for a one-way drop-off fee if planning to end the loop elsewhere.",
       transport_to_next: 'End of this route — fly home from Edinburgh.',
@@ -20336,12 +20482,12 @@ function rbBuildScotlandExtendedRoute() {
       code: 'GB', name: 'United Kingdom', days: 12, budget: 1020, lat: 57.0000, lng: -4.5000,
       destinations: [
         { name: 'Edinburgh', lat: 55.9533, lng: -3.1883, notes: "Edinburgh Castle dominating the skyline and the Royal Mile connecting it to Holyrood are the spine of the city, but the climb up Arthur's Seat (an extinct volcano inside the city, ~1-2hr round trip) gives the best panoramic payoff for relatively little effort. Tip: book castle tickets online in advance for a specific time slot — walk-up queues at the gate can run long even outside Fringe season." },
-        { name: 'Inverness (NC500 start/end)', lat: 57.4778, lng: -4.2247 },
-        { name: "John o' Groats", lat: 58.6373, lng: -3.0699 },
-        { name: 'Durness', lat: 58.5661, lng: -4.7500 },
-        { name: 'Applecross Pass / Bealach na Bà', lat: 57.4358, lng: -5.6414 },
-        { name: 'Ullapool', lat: 57.8951, lng: -5.1626 },
-        { name: 'Isle of Skye (Portree)', lat: 57.4128, lng: -6.1943 },
+        { name: 'Inverness (NC500 start/end)', lat: 57.4778, lng: -4.2247 , notes: 'The Highland capital — walkable riverside town, useful base for Loch Ness day trips and the start/end of the NC500 rather than a sightseeing destination itself; half a day is plenty.' },
+        { name: "John o' Groats", lat: 58.6373, lng: -3.0699 , notes: 'Mainland Britain\'s classic "end of the road" signpost photo stop on the NC500; note the actual northernmost point of mainland Britain is nearby Dunnet Head, not here — 30 minutes is enough for John o\' Groats itself.' },
+        { name: 'Durness', lat: 58.5661, lng: -4.7500 , notes: 'A remote north-coast village on the NC500, next to Smoo Cave, a large sea cave with a waterfall inside; it\'s free and only a short walk from the car park, worth 30-45 minutes.' },
+        { name: 'Applecross Pass / Bealach na Bà', lat: 57.4358, lng: -5.6414 , notes: 'One of the UK\'s highest and steepest roads, a single-track switchback climb with views to Skye from the summit; avoid it in winter, fog, or with a large campervan, and budget extra driving time for the hairpins.' },
+        { name: 'Ullapool', lat: 57.8951, lng: -5.1626 , notes: 'A fishing port on Scotland\'s northwest coast and the ferry gateway to Stornoway/Outer Hebrides; if continuing by ferry, book the crossing well ahead for summer travel.' },
+        { name: 'Isle of Skye (Portree)', lat: 57.4128, lng: -6.1943 , notes: 'Skye\'s colorful harbor capital, known for its row of painted waterfront buildings; parking fills up fast in high season, so arrive in the morning and allow 1-2 hours.' },
         { name: 'Glencoe', lat: 56.6836, lng: -5.1030, notes: "Scotland's most dramatic glen — steep, glacier-carved walls and the Three Sisters ridge line make it one of the most photographed stretches of the Highlands (and a recurring James Bond/Harry Potter filming backdrop). Tip: the view is best from the Glencoe Lochan or the small layby viewpoints on the A82 itself — you don't need a long hike to get the classic shot, just good light and no rushing through." },
       ],
       notes: "The longest, most complete version, combining everything including the full North Coast 500: Edinburgh plus the full NC500 (the Inverness loop, 516 miles), Skye, and Glencoe. Budget ~€75-95/day — a longer trip pulls the average down thanks to campervan/self-catering days. Season: May/September strongly recommended — July/August bring overcrowded accommodation plus midges; keep at least 7 days for the NC500 itself. Web check (2026-08): book NC500 accommodation months ahead in high season; the driving direction (clockwise vs. counterclockwise) determines whether the Bealach na Bà comes right at the start of the route or near the end.\n\nDistinct from the existing 'Scotland & Northern Ireland 🥃' route (split off from British Isles & Celtic Coast Expedition 🍀), which is a 27-day version (22 days in Scotland: Edinburgh/Cairngorms/Glencoe/Glenfinnan/Skye/Applecross/NC500-partial-to-Ullapool/Loch Ness, plus 5 days in Belfast/the Giant's Causeway). This route is the shorter, realistic Trip Ideas version — Scotland only, no Northern Ireland leg, and the full NC500 loop rather than a partial one — not a duplicate; 'Scotland & Northern Ireland 🥃' itself is untouched.",
