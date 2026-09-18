@@ -2861,11 +2861,11 @@ function rbBuildGreeceCyprusRoute() {
         {
           code: 'GR', name: 'Greece', days: 12, budget: 840, lat: 37.9838, lng: 23.7275,
           destinations: [
-            { name: 'Athens', lat: 37.9838, lng: 23.7275 },
+            { name: 'Athens', lat: 37.9838, lng: 23.7275 , notes: 'The Acropolis and Parthenon, the Plaka old town below it, and the Acropolis Museum are the core of the city; buy the Acropolis combo ticket online and go right at the 8am opening to beat both heat and tour-bus crowds.' },
             { name: 'Peloponnese', lat: 37.5685, lng: 22.8072 },
-            { name: 'Olympia', lat: 37.6384, lng: 21.6300 },
-            { name: 'Delphi', lat: 38.4824, lng: 22.5010 },
-            { name: 'Meteora', lat: 39.7217, lng: 21.6306 },
+            { name: 'Olympia', lat: 37.6384, lng: 21.6300 , notes: 'The original Olympic Games site, with the stadium track still walkable and the fallen columns of the Temple of Zeus, plus a museum holding the Nike of Paionios and other finds; allow 2-3 hours including the museum, and go early before tour groups fill the stadium entrance.' },
+            { name: 'Delphi', lat: 38.4824, lng: 22.5010 , notes: 'The Sanctuary of Apollo (Temple of Apollo, theater, stadium) climbs a slope on Mount Parnassus, with the site museum across the road holding the bronze Charioteer statue; go to the site at opening before the heat and crowds, then the museum afterward.' },
+            { name: 'Meteora', lat: 39.7217, lng: 21.6306 , notes: 'Monasteries perched on sheer sandstone pillars, several still inhabited by monks or nuns and open to visitors; each monastery closes on a different weekday, so check the current rotation before picking which 2-3 to visit, and catch sunset from the Psaropetra viewpoint above Kastraki.' },
           ],
           notes: 'Entry: flight Amsterdam-Athens (±3h20, from ±€90-160 return, best period November). Price indication from 2026-08 web research, a snapshot. Greek antiquity, philosophy, democracy and mythology at the key locations themselves: the Acropolis, the oracle of Delphi, the original Olympic Games in Olympia. Hidden gem: Monemvasia and Nafplio on the Peloponnese, much quieter than Athens. Route-logic fix (2026-08, search-confirmed): order reversed — Athens→Delphi→Olympia→Meteora→Peloponnese switched back and forth between north (Delphi/Meteora) and south (Olympia/Peloponnese), while Piraeus (the ferry port to Crete) sits right next to Athens, not the Peloponnese. Now Athens→Peloponnese/Olympia (south, one loop)→Delphi→Meteora (north, one loop, ending with the return trip to Piraeus/Athens for the ferry) — only one return trip instead of two.',
           transport_to_next: 'Car/bus back to Piraeus/Athens from Meteora (≈350 km), then night ferry Piraeus-Heraklion (about 7-9 hours) to Crete',
@@ -10573,6 +10573,80 @@ function rbMigrateCentralPortugalSerraExtrasDestinationNotes() {
 }
 
 /**
+ * Batch 71 (2026-09-18) -- Athens + Peloponnese cluster (Peloponnese Loop, Athens +
+ * Peloponnese Extended, Greece Roadtrip, Greek Islands: Paros/Naxos/Santorini) -- very high
+ * leverage, 11 destinations researched (bare "Athens" and "Athens (arrival)" share one note --
+ * same real place, different exact strings, same lesson as batches 47-50). Same generic
+ * name-matching migration pattern as the other batches.
+ */
+function rbMigrateAthensPeloponneseClusterDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_ATHENS_PELOPONNESE_CLUSTER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_ATHENS_PELOPONNESE_CLUSTER_DESTINATION_NOTES, '1');
+
+  const athensNote = "The Acropolis and Parthenon, the Plaka old town below it, and the Acropolis Museum are the core of the city; buy the Acropolis combo ticket online and go right at the 8am opening to beat both heat and tour-bus crowds.";
+  const notesByName = {
+    'Athens (arrival)': athensNote,
+    'Athens': athensNote,
+    'Nafplio': "Small Venetian-era port town with the Palamidi fortress towering above it and the tiny Bourtzi fortress-island in the bay; climb Palamidi's roughly 900 steps in the early morning before the heat sets in, allow about an hour at the top.",
+    'Mycenae': "Bronze Age citadel with the carved Lion Gate and the beehive-domed Treasury of Atreus tomb just outside the walls; allow 1-1.5 hours and arrive early since tour buses from Athens converge here mid-morning.",
+    'Epidaurus': "The best-preserved ancient Greek theater, famous because a coin dropped or a whisper from the center of the circular orchestra is audible from the top row; test the acoustics yourself from the center point, and check if an Athens & Epidaurus Festival performance is on during your visit for an evening show in the theater.",
+    'Mystras': "Ruined Byzantine hill town with several frescoed churches and monasteries climbing a steep slope, including the still-active Pantanassa convent near the top; wear real walking shoes, enter at the upper gate and walk down, and go early since there's almost no shade across the 2-3 hour visit.",
+    'Sparta': "The modern town sits on the ancient site, but almost nothing of ancient Sparta survives beyond a small theater and acropolis mound; treat it as a base for Mystras rather than a sight in itself, a half day covering the archaeological museum is plenty.",
+    'Monemvasia': "A fortified medieval town built into a rock peninsula, joined to the mainland by a short causeway, with a lower town of churches and shops and a ruined upper town/castle above; stay overnight in the lower town to see it emptied out at sunset, and climb to the upper town early morning before the heat.",
+    'Corinth': "Ancient Corinth's ruins (Temple of Apollo, agora) sit below the fortified hilltop of Acrocorinth, while the separate Corinth Canal a few km away is the more striking quick stop; a short visit to both fits in half a day, the canal bridge is worth 15 minutes for the view straight down the cut.",
+    'Kalamata / Mani (Areopoli)': "Areopoli and the Mani peninsula are known for stark stone tower-house villages (Vatheia is the most photographed) and the Diros Caves boat tour nearby; get to Diros early since the boat tour has limited daily capacity and queues build fast in season.",
+    'Olympia': "The original Olympic Games site, with the stadium track still walkable and the fallen columns of the Temple of Zeus, plus a museum holding the Nike of Paionios and other finds; allow 2-3 hours including the museum, and go early before tour groups fill the stadium entrance.",
+    'Patras': "Primarily a ferry hub to Italy with little to detain travelers beyond a hilltop Venetian/Ottoman castle overlooking the port; treat it as a transit stop rather than a destination unless passing through during its February carnival.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 72 (2026-09-18) -- Northern Greece / Greece Roadtrip cluster -- 7 destinations
+ * researched, high leverage (Meteora recurred across 5 routes, Delphi across 4). Same generic
+ * name-matching migration pattern as the other batches.
+ */
+function rbMigrateNorthernGreeceClusterDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_NORTHERN_GREECE_CLUSTER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_NORTHERN_GREECE_CLUSTER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Meteora': "Monasteries perched on sheer sandstone pillars, several still inhabited by monks or nuns and open to visitors; each monastery closes on a different weekday, so check the current rotation before picking which 2-3 to visit, and catch sunset from the Psaropetra viewpoint above Kastraki.",
+    'Delphi': "The Sanctuary of Apollo (Temple of Apollo, theater, stadium) climbs a slope on Mount Parnassus, with the site museum across the road holding the bronze Charioteer statue; go to the site at opening before the heat and crowds, then the museum afterward.",
+    'Kalabaka': "The modern town at the foot of the Meteora pillars, functioning mainly as the accommodation base; if short on time, the Agios Stefanos monastery is the closest and easiest to reach on foot/short drive from town.",
+    'Halkidiki': "Three finger-like peninsulas: Kassandra and Sithonia for beaches, and Mount Athos as an all-male monastic republic with restricted access; Sithonia's beaches are quieter and less developed than Kassandra's, and any Mount Athos visit needs a permit arranged months in advance.",
+    'Vergina': "An underground museum built directly over the royal Macedonian tombs, including the unlooted tomb of Philip II with its original gold larnax and armor; allow about 1.5 hours, and note photography is not allowed inside the tomb chambers.",
+    'Edessa': "A small northern Greek town built around waterfalls that drop right in the town center, with a walkable park (Kataraktes) around them. A short visit of about an hour is enough; flow is most dramatic in spring.",
+    'Mount Olympus / Litochoro': "Greece's highest mountain, the mythological seat of the gods, with Litochoro as its trailhead town; a full summit attempt needs an overnight in a mountain refuge, but a shorter half-day option is the Enipeas Gorge trail from Litochoro to the Agios Dionysios monastery ruins.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -11045,11 +11119,11 @@ function rbBuildGreeceCreteRoute() {
     {
       code: 'GR', name: 'Greece', days: 12, budget: 840, lat: 37.9838, lng: 23.7275,
       destinations: [
-        { name: 'Athens', lat: 37.9838, lng: 23.7275 },
+        { name: 'Athens', lat: 37.9838, lng: 23.7275 , notes: 'The Acropolis and Parthenon, the Plaka old town below it, and the Acropolis Museum are the core of the city; buy the Acropolis combo ticket online and go right at the 8am opening to beat both heat and tour-bus crowds.' },
         { name: 'Peloponnese', lat: 37.5685, lng: 22.8072 },
-        { name: 'Olympia', lat: 37.6384, lng: 21.6300 },
-        { name: 'Delphi', lat: 38.4824, lng: 22.5010 },
-        { name: 'Meteora', lat: 39.7217, lng: 21.6306 },
+        { name: 'Olympia', lat: 37.6384, lng: 21.6300 , notes: 'The original Olympic Games site, with the stadium track still walkable and the fallen columns of the Temple of Zeus, plus a museum holding the Nike of Paionios and other finds; allow 2-3 hours including the museum, and go early before tour groups fill the stadium entrance.' },
+        { name: 'Delphi', lat: 38.4824, lng: 22.5010 , notes: 'The Sanctuary of Apollo (Temple of Apollo, theater, stadium) climbs a slope on Mount Parnassus, with the site museum across the road holding the bronze Charioteer statue; go to the site at opening before the heat and crowds, then the museum afterward.' },
+        { name: 'Meteora', lat: 39.7217, lng: 21.6306 , notes: 'Monasteries perched on sheer sandstone pillars, several still inhabited by monks or nuns and open to visitors; each monastery closes on a different weekday, so check the current rotation before picking which 2-3 to visit, and catch sunset from the Psaropetra viewpoint above Kastraki.' },
       ],
       notes: "Entry: direct flight Amsterdam-Athens (KLM/Aegean/Transavia, ±3h15-3h35; from ±€140-220 return; best period November). Price indication from 2026-08 web research, a snapshot. Greek antiquity, philosophy, democracy and mythology at the key locations themselves: the Acropolis, the oracle of Delphi, the original Olympic Games in Olympia. Hidden gem: Monemvasia and Nafplio on the Peloponnese, much quieter than Athens. ⚠️ Travel advisory: yellow (updated August 4, 2026, wildfires) — check the local situation shortly before/during the trip, especially around heat/wind. Visa: none, Schengen.",
       transport_to_next: 'Short flight Athens-Heraklion (±55 min, from ±€60-90 return) — faster than the night ferry (7h50-12h) and more logical with only 7 days on Crete.',
@@ -17963,8 +18037,8 @@ function rbBuildBulgariaGreeceSofiaMeteoraRoute() {
       code: 'GR', name: 'Greece', days: 6, budget: 450, lat: 40.6401, lng: 22.9444,
       destinations: [
         { name: 'Thessaloniki', lat: 40.6401, lng: 22.9444 , notes: 'Greece\'s second city, walkable waterfront with the White Tower, the Rotunda and several UNESCO-listed early Byzantine churches woven through downtown. Go up to Ano Poli (the old Ottoman-era hillside quarter and city walls) in late afternoon for the best views and the least touristy streets.' },
-        { name: 'Meteora', lat: 39.7217, lng: 21.6306 },
-        { name: 'Kalabaka', lat: 39.7025, lng: 21.6280 },
+        { name: 'Meteora', lat: 39.7217, lng: 21.6306 , notes: 'Monasteries perched on sheer sandstone pillars, several still inhabited by monks or nuns and open to visitors; each monastery closes on a different weekday, so check the current rotation before picking which 2-3 to visit, and catch sunset from the Psaropetra viewpoint above Kastraki.' },
+        { name: 'Kalabaka', lat: 39.7025, lng: 21.6280 , notes: 'The modern town at the foot of the Meteora pillars, functioning mainly as the accommodation base; if short on time, the Agios Stefanos monastery is the closest and easiest to reach on foot/short drive from town.' },
       ],
       notes: "Thessaloniki (2 days) — Meteora (2 days, day trip or overnight in Kalabaka) — optionally back via Thessaloniki. Budget ~€75/day (Greece runs pricier on average than Bulgaria). Season: May-June or September; Meteora is very hot and crowded with tour buses in July-August. Web check (2026-08): each Meteora monastery has its own rotating closing day and a dress code — check per monastery which day it's closed.",
       transport_to_next: 'End of this route — fly home from Thessaloniki.',
@@ -18664,7 +18738,7 @@ function rbBuildAthensDayTripsRoute() {
       destinations: [
         { name: 'Acropolis & Plaka/Monastiraki', lat: 37.9715, lng: 23.7267 },
         { name: 'Cape Sounion (Temple of Poseidon)', lat: 37.6505, lng: 24.0247 },
-        { name: 'Delphi', lat: 38.4824, lng: 22.5010 },
+        { name: 'Delphi', lat: 38.4824, lng: 22.5010 , notes: 'The Sanctuary of Apollo (Temple of Apollo, theater, stadium) climbs a slope on Mount Parnassus, with the site museum across the road holding the bronze Charioteer statue; go to the site at opening before the heat and crowds, then the museum afterward.' },
         { name: 'Arachova', lat: 38.4794, lng: 22.5883 },
         { name: 'Nafplio / Mycenae / Epidaurus', lat: 37.5673, lng: 22.8078 },
       ],
@@ -18685,14 +18759,14 @@ function rbBuildPeloponneseLoopRoute() {
     {
       code: 'GR', name: 'Greece', days: 9, budget: 990, lat: 37.5673, lng: 22.8078,
       destinations: [
-        { name: 'Athens (arrival)', lat: 37.9838, lng: 23.7275 },
-        { name: 'Nafplio', lat: 37.5673, lng: 22.8078 },
-        { name: 'Mycenae', lat: 37.7304, lng: 22.7558 },
-        { name: 'Epidaurus', lat: 37.5960, lng: 23.0778 },
-        { name: 'Mystras', lat: 37.0708, lng: 22.3663 },
-        { name: 'Sparta', lat: 37.0733, lng: 22.4297 },
-        { name: 'Monemvasia', lat: 36.6874, lng: 23.0533 },
-        { name: 'Corinth', lat: 37.9407, lng: 22.9337 },
+        { name: 'Athens (arrival)', lat: 37.9838, lng: 23.7275 , notes: 'The Acropolis and Parthenon, the Plaka old town below it, and the Acropolis Museum are the core of the city; buy the Acropolis combo ticket online and go right at the 8am opening to beat both heat and tour-bus crowds.' },
+        { name: 'Nafplio', lat: 37.5673, lng: 22.8078 , notes: 'Small Venetian-era port town with the Palamidi fortress towering above it and the tiny Bourtzi fortress-island in the bay; climb Palamidi\'s roughly 900 steps in the early morning before the heat sets in, allow about an hour at the top.' },
+        { name: 'Mycenae', lat: 37.7304, lng: 22.7558 , notes: 'Bronze Age citadel with the carved Lion Gate and the beehive-domed Treasury of Atreus tomb just outside the walls; allow 1-1.5 hours and arrive early since tour buses from Athens converge here mid-morning.' },
+        { name: 'Epidaurus', lat: 37.5960, lng: 23.0778 , notes: 'The best-preserved ancient Greek theater, famous because a coin dropped or a whisper from the center of the circular orchestra is audible from the top row; test the acoustics yourself from the center point, and check if an Athens & Epidaurus Festival performance is on during your visit for an evening show in the theater.' },
+        { name: 'Mystras', lat: 37.0708, lng: 22.3663 , notes: 'Ruined Byzantine hill town with several frescoed churches and monasteries climbing a steep slope, including the still-active Pantanassa convent near the top; wear real walking shoes, enter at the upper gate and walk down, and go early since there\'s almost no shade across the 2-3 hour visit.' },
+        { name: 'Sparta', lat: 37.0733, lng: 22.4297 , notes: 'The modern town sits on the ancient site, but almost nothing of ancient Sparta survives beyond a small theater and acropolis mound; treat it as a base for Mystras rather than a sight in itself, a half day covering the archaeological museum is plenty.' },
+        { name: 'Monemvasia', lat: 36.6874, lng: 23.0533 , notes: 'A fortified medieval town built into a rock peninsula, joined to the mainland by a short causeway, with a lower town of churches and shops and a ruined upper town/castle above; stay overnight in the lower town to see it emptied out at sunset, and climb to the upper town early morning before the heat.' },
+        { name: 'Corinth', lat: 37.9407, lng: 22.9337 , notes: 'Ancient Corinth\'s ruins (Temple of Apollo, agora) sit below the fortified hilltop of Acrocorinth, while the separate Corinth Canal a few km away is the more striking quick stop; a short visit to both fits in half a day, the canal bridge is worth 15 minutes for the view straight down the cut.' },
       ],
       notes: "A genuine loop, not an Athens base: Athens (1-2 days on arrival) — Nafplio (2 days) — Mycenae/Epidaurus (day trip) — Mystras/Sparta (2 days) — optionally Monemvasia (1-2 days) — back via Corinth. Budget ~€70-90/day plus a rental car/fuel at ~€25-35/day on top. Season: April-June or September-October; note the Epidaurus summer festival (20 June-29 August 2026) can bring crowds and higher prices to the region. Web check (2026-08): Mystras tickets run €12-20 (check hhticket.gr in advance), festival tickets separately €10-55, and the mountain roads near Mystras are narrow. Travel advisory: yellow since 4 August 2026 for wildfires — re-check shortly before travel, especially April-October.",
       transport_to_next: 'End of this route — back to Athens to fly home.',
@@ -18712,12 +18786,12 @@ function rbBuildNorthernGreeceRoute() {
       code: 'GR', name: 'Greece', days: 9, budget: 675, lat: 40.6401, lng: 22.9444,
       destinations: [
         { name: 'Thessaloniki', lat: 40.6401, lng: 22.9444 , notes: 'Greece\'s second city, walkable waterfront with the White Tower, the Rotunda and several UNESCO-listed early Byzantine churches woven through downtown. Go up to Ano Poli (the old Ottoman-era hillside quarter and city walls) in late afternoon for the best views and the least touristy streets.' },
-        { name: 'Meteora', lat: 39.7217, lng: 21.6306 },
-        { name: 'Kalabaka', lat: 39.7025, lng: 21.6280 },
-        { name: 'Halkidiki', lat: 40.0000, lng: 23.6000 },
-        { name: 'Vergina', lat: 40.4667, lng: 22.3167 },
-        { name: 'Edessa', lat: 40.7994, lng: 22.0475 },
-        { name: 'Mount Olympus / Litochoro', lat: 40.0925, lng: 22.4989 },
+        { name: 'Meteora', lat: 39.7217, lng: 21.6306 , notes: 'Monasteries perched on sheer sandstone pillars, several still inhabited by monks or nuns and open to visitors; each monastery closes on a different weekday, so check the current rotation before picking which 2-3 to visit, and catch sunset from the Psaropetra viewpoint above Kastraki.' },
+        { name: 'Kalabaka', lat: 39.7025, lng: 21.6280 , notes: 'The modern town at the foot of the Meteora pillars, functioning mainly as the accommodation base; if short on time, the Agios Stefanos monastery is the closest and easiest to reach on foot/short drive from town.' },
+        { name: 'Halkidiki', lat: 40.0000, lng: 23.6000 , notes: 'Three finger-like peninsulas: Kassandra and Sithonia for beaches, and Mount Athos as an all-male monastic republic with restricted access; Sithonia\'s beaches are quieter and less developed than Kassandra\'s, and any Mount Athos visit needs a permit arranged months in advance.' },
+        { name: 'Vergina', lat: 40.4667, lng: 22.3167 , notes: 'An underground museum built directly over the royal Macedonian tombs, including the unlooted tomb of Philip II with its original gold larnax and armor; allow about 1.5 hours, and note photography is not allowed inside the tomb chambers.' },
+        { name: 'Edessa', lat: 40.7994, lng: 22.0475 , notes: 'A small northern Greek town built around waterfalls that drop right in the town center, with a walkable park (Kataraktes) around them. A short visit of about an hour is enough; flow is most dramatic in spring.' },
+        { name: 'Mount Olympus / Litochoro', lat: 40.0925, lng: 22.4989 , notes: 'Greece\'s highest mountain, the mythological seat of the gods, with Litochoro as its trailhead town; a full summit attempt needs an overnight in a mountain refuge, but a shorter half-day option is the Enipeas Gorge trail from Litochoro to the Agios Dionysios monastery ruins.' },
       ],
       notes: "Thessaloniki (2-3 days) — Meteora/Kalabaka (2 days) — Halkidiki beaches (2-3 days), with Vergina, Edessa and Mount Olympus as options. Budget ~€65-85/day (cheaper than Athens or the islands), a car is recommended. Season: May-June or September are best; Halkidiki gets busier and pricier in July-August. Web check (2026-08): each Meteora monastery has its own rotating closing day — check per monastery in advance — plus a dress code (shoulders and knees covered), entry ~€3 per monastery, sometimes cash-only. Travel advisory: yellow since 4 August 2026 for wildfires, situation can shift fast in heat/wind — re-check shortly before travel.",
       transport_to_next: 'End of this route — fly home from Thessaloniki.',
@@ -18736,7 +18810,7 @@ function rbBuildGreekIslandsParosNaxosSantoriniRoute() {
     {
       code: 'GR', name: 'Greece', days: 9, budget: 1125, lat: 37.0844, lng: 25.1489,
       destinations: [
-        { name: 'Athens', lat: 37.9838, lng: 23.7275 },
+        { name: 'Athens', lat: 37.9838, lng: 23.7275 , notes: 'The Acropolis and Parthenon, the Plaka old town below it, and the Acropolis Museum are the core of the city; buy the Acropolis combo ticket online and go right at the 8am opening to beat both heat and tour-bus crowds.' },
         { name: 'Paros (Parikia)', lat: 37.0844, lng: 25.1489, notes: "Parikia's centerpiece is Panagia Ekatontapiliani (\"Church of 100 Doors\"), one of the oldest surviving Byzantine churches in Greece, built around a 4th-century core. Visit early morning or later afternoon to beat the day-tripper groups coming off the ferries." },
         { name: 'Naxos (Chora)', lat: 37.1055, lng: 25.3764, notes: "The old town's real highlight is the Venetian Kastro quarter — narrow marble-paved lanes, 13th-century mansions and coats of arms, distinct from the whitewashed Cycladic core around it. Explore it in the morning before tour-boat day-trippers arrive and before the heat sets in." },
         { name: 'Santorini (Fira)', lat: 36.4167, lng: 25.4325, notes: "Fira's draw is the cliffside caldera walkway itself, not a single sight — the path north toward Imerovigli/Oia hugs the rim with the same views as Oia minus the crowds. Take the cable car (or donkey path) down to the old port instead of doing it on a cruise-ship time crunch on foot." },
@@ -18758,12 +18832,12 @@ function rbBuildGreeceRoadtripRoute() {
     {
       code: 'GR', name: 'Greece', days: 12, budget: 1380, lat: 37.9838, lng: 23.7275,
       destinations: [
-        { name: 'Athens', lat: 37.9838, lng: 23.7275 },
-        { name: 'Meteora', lat: 39.7217, lng: 21.6306 },
-        { name: 'Delphi', lat: 38.4824, lng: 22.5010 },
-        { name: 'Nafplio', lat: 37.5673, lng: 22.8078 },
-        { name: 'Mycenae', lat: 37.7304, lng: 22.7558 },
-        { name: 'Olympia', lat: 37.6383, lng: 21.6300 },
+        { name: 'Athens', lat: 37.9838, lng: 23.7275 , notes: 'The Acropolis and Parthenon, the Plaka old town below it, and the Acropolis Museum are the core of the city; buy the Acropolis combo ticket online and go right at the 8am opening to beat both heat and tour-bus crowds.' },
+        { name: 'Meteora', lat: 39.7217, lng: 21.6306 , notes: 'Monasteries perched on sheer sandstone pillars, several still inhabited by monks or nuns and open to visitors; each monastery closes on a different weekday, so check the current rotation before picking which 2-3 to visit, and catch sunset from the Psaropetra viewpoint above Kastraki.' },
+        { name: 'Delphi', lat: 38.4824, lng: 22.5010 , notes: 'The Sanctuary of Apollo (Temple of Apollo, theater, stadium) climbs a slope on Mount Parnassus, with the site museum across the road holding the bronze Charioteer statue; go to the site at opening before the heat and crowds, then the museum afterward.' },
+        { name: 'Nafplio', lat: 37.5673, lng: 22.8078 , notes: 'Small Venetian-era port town with the Palamidi fortress towering above it and the tiny Bourtzi fortress-island in the bay; climb Palamidi\'s roughly 900 steps in the early morning before the heat sets in, allow about an hour at the top.' },
+        { name: 'Mycenae', lat: 37.7304, lng: 22.7558 , notes: 'Bronze Age citadel with the carved Lion Gate and the beehive-domed Treasury of Atreus tomb just outside the walls; allow 1-1.5 hours and arrive early since tour buses from Athens converge here mid-morning.' },
+        { name: 'Olympia', lat: 37.6383, lng: 21.6300 , notes: 'The original Olympic Games site, with the stadium track still walkable and the fallen columns of the Temple of Zeus, plus a museum holding the Nike of Paionios and other finds; allow 2-3 hours including the museum, and go early before tour groups fill the stadium entrance.' },
       ],
       notes: "Athens (2 days) — Meteora (2 days) — Delphi (1 day) — the Peloponnese: Nafplio/Mycenae/Olympia (3-4 days) — back to Athens, by rental car throughout. Budget ~€90-140/day including the rental car. Season: April-June or September-October (the interior gets very hot in summer). Web check (2026-08): each Meteora monastery has its own rotating closing day; check rental car insurance and toll roads in advance; parking in central Athens is difficult. Acropolis needs its mandatory hhticket.gr timed-entry booking — see the standalone Athens trip for the full details. Travel advisory: yellow since 4 August 2026 for wildfires — re-check shortly before travel, especially April-October.",
       transport_to_next: 'End of this route — fly home from Athens.',
@@ -18782,16 +18856,16 @@ function rbBuildAthensPeloponneseExtendedRoute() {
     {
       code: 'GR', name: 'Greece', days: 12, budget: 1020, lat: 37.9838, lng: 23.7275,
       destinations: [
-        { name: 'Athens', lat: 37.9838, lng: 23.7275 },
-        { name: 'Nafplio', lat: 37.5673, lng: 22.8078 },
-        { name: 'Mycenae', lat: 37.7304, lng: 22.7558 },
-        { name: 'Epidaurus', lat: 37.5960, lng: 23.0778 },
-        { name: 'Mystras', lat: 37.0708, lng: 22.3663 },
-        { name: 'Sparta', lat: 37.0733, lng: 22.4297 },
-        { name: 'Monemvasia', lat: 36.6874, lng: 23.0533 },
-        { name: 'Kalamata / Mani (Areopoli)', lat: 37.0389, lng: 22.1142 },
-        { name: 'Olympia', lat: 37.6383, lng: 21.6300 },
-        { name: 'Patras', lat: 38.2466, lng: 21.7346 },
+        { name: 'Athens', lat: 37.9838, lng: 23.7275 , notes: 'The Acropolis and Parthenon, the Plaka old town below it, and the Acropolis Museum are the core of the city; buy the Acropolis combo ticket online and go right at the 8am opening to beat both heat and tour-bus crowds.' },
+        { name: 'Nafplio', lat: 37.5673, lng: 22.8078 , notes: 'Small Venetian-era port town with the Palamidi fortress towering above it and the tiny Bourtzi fortress-island in the bay; climb Palamidi\'s roughly 900 steps in the early morning before the heat sets in, allow about an hour at the top.' },
+        { name: 'Mycenae', lat: 37.7304, lng: 22.7558 , notes: 'Bronze Age citadel with the carved Lion Gate and the beehive-domed Treasury of Atreus tomb just outside the walls; allow 1-1.5 hours and arrive early since tour buses from Athens converge here mid-morning.' },
+        { name: 'Epidaurus', lat: 37.5960, lng: 23.0778 , notes: 'The best-preserved ancient Greek theater, famous because a coin dropped or a whisper from the center of the circular orchestra is audible from the top row; test the acoustics yourself from the center point, and check if an Athens & Epidaurus Festival performance is on during your visit for an evening show in the theater.' },
+        { name: 'Mystras', lat: 37.0708, lng: 22.3663 , notes: 'Ruined Byzantine hill town with several frescoed churches and monasteries climbing a steep slope, including the still-active Pantanassa convent near the top; wear real walking shoes, enter at the upper gate and walk down, and go early since there\'s almost no shade across the 2-3 hour visit.' },
+        { name: 'Sparta', lat: 37.0733, lng: 22.4297 , notes: 'The modern town sits on the ancient site, but almost nothing of ancient Sparta survives beyond a small theater and acropolis mound; treat it as a base for Mystras rather than a sight in itself, a half day covering the archaeological museum is plenty.' },
+        { name: 'Monemvasia', lat: 36.6874, lng: 23.0533 , notes: 'A fortified medieval town built into a rock peninsula, joined to the mainland by a short causeway, with a lower town of churches and shops and a ruined upper town/castle above; stay overnight in the lower town to see it emptied out at sunset, and climb to the upper town early morning before the heat.' },
+        { name: 'Kalamata / Mani (Areopoli)', lat: 37.0389, lng: 22.1142 , notes: 'Areopoli and the Mani peninsula are known for stark stone tower-house villages (Vatheia is the most photographed) and the Diros Caves boat tour nearby; get to Diros early since the boat tour has limited daily capacity and queues build fast in season.' },
+        { name: 'Olympia', lat: 37.6383, lng: 21.6300 , notes: 'The original Olympic Games site, with the stadium track still walkable and the fallen columns of the Temple of Zeus, plus a museum holding the Nike of Paionios and other finds; allow 2-3 hours including the museum, and go early before tour groups fill the stadium entrance.' },
+        { name: 'Patras', lat: 38.2466, lng: 21.7346 , notes: 'Primarily a ferry hub to Italy with little to detain travelers beyond a hilltop Venetian/Ottoman castle overlooking the port; treat it as a transit stop rather than a destination unless passing through during its February carnival.' },
       ],
       notes: "A longer, more elaborate loop with more stops than the standalone Peloponnese Loop above — Monemvasia, the Mani and Olympia, instead of the Athens day trips of the 'Athens + Day Trips' version. Athens (3 days) — Nafplio (2 days) — Mycenae/Epidaurus (day trip) — Mystras/Sparta (2 days) — Monemvasia (2 days) — Kalamata/Mani (2 days) — Olympia (1-2 days) — back via Patras/Corinth. Budget ~€75-95/day. Season: same as the other Greece routes. Web check (2026-08): the Olympia site+museum combo runs ~€20 in summer / €10 in winter; the Mani roads are narrow and slow, plan extra travel time. Acropolis needs its mandatory hhticket.gr timed-entry booking — see the standalone Athens trip. Travel advisory: yellow since 4 August 2026 for wildfires — re-check shortly before travel.",
       transport_to_next: 'End of this route — fly home from Athens.',
@@ -18867,7 +18941,7 @@ function rbBuildCyprusGreeceRoute() {
     {
       code: 'GR', name: 'Greece', days: 4, budget: 500, lat: 37.9838, lng: 23.7275,
       destinations: [
-        { name: 'Athens', lat: 37.9838, lng: 23.7275 },
+        { name: 'Athens', lat: 37.9838, lng: 23.7275 , notes: 'The Acropolis and Parthenon, the Plaka old town below it, and the Acropolis Museum are the core of the city; buy the Acropolis combo ticket online and go right at the 8am opening to beat both heat and tour-bus crowds.' },
         { name: 'Aegina (day trip)', lat: 37.7460, lng: 23.4283 },
         { name: 'Santorini (optional continuation)', lat: 36.4167, lng: 25.4325 },
       ],

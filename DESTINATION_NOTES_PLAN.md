@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 412 / 741 signatures.**
+- **Done so far: 417 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -435,8 +435,8 @@ Sorted alphabetically by country code.
 - [ ] **GI** (2 dest): Rock of Gibraltar, St Michael’s Cave — routes: Gibraltar + Andalusia: Costa del Sol (4 days) 🐒
 - [ ] **GR** (3 dest): Acropolis & Plaka/Monastiraki, Acropolis Museum, Cape Sounion (Temple of Poseidon) — routes: Athens (4 days) 🏛️
 - [ ] **GR** (5 dest): Acropolis & Plaka/Monastiraki, Cape Sounion (Temple of Poseidon), Delphi, Arachova, Nafplio / Mycenae / Epidaurus — routes: Athens + Day Trips (6 days) 🏺
-- [ ] **GR** (10 dest): Athens, Nafplio, Mycenae, Epidaurus, Mystras, Sparta, Monemvasia, Kalamata / Mani (Areopoli), Olympia, Patras — routes: Athens + Peloponnese: Extended (12 days) 👑
-- [ ] **GR** (3 dest): Thessaloniki, Meteora, Kalabaka — routes: Bulgaria + Greece: Sofia to Meteora (12 days) ⛰️
+- [x] **GR** (10 dest): Athens, Nafplio, Mycenae, Epidaurus, Mystras, Sparta, Monemvasia, Kalamata / Mani (Areopoli), Olympia, Patras — routes: Athens + Peloponnese: Extended (12 days) 👑
+- [x] **GR** (3 dest): Thessaloniki, Meteora, Kalabaka — routes: Bulgaria + Greece: Sofia to Meteora (12 days) ⛰️
 - [ ] **GR** (1 dest): Corfu Town (Venetian old town) — routes: Corfu (5-7 days) 🏝️
 - [ ] **GR** (1 dest): Paleokastritsa — routes: Corfu (5-7 days) 🏝️
 - [ ] **GR** (1 dest): Sidari (north coast) — routes: Corfu (5-7 days) 🏝️
@@ -448,14 +448,14 @@ Sorted alphabetically by country code.
 - [x] **GR** (2 dest): Ios (Chora), Mylopotas Beach — routes: Cyclades Island Hopping (7-10 days) 🏝️
 - [x] **GR** (2 dest): Adamas (Milos), Sarakiniko Beach — routes: Cyclades Island Hopping (7-10 days) 🏝️
 - [ ] **GR** (3 dest): Athens, Aegina (day trip), Santorini (optional continuation) — routes: Cyprus + Greece (9 days) ✈️
-- [ ] **GR** (6 dest): Athens, Meteora, Delphi, Nafplio, Mycenae, Olympia — routes: Greece Roadtrip (12 days) 🚗
+- [x] **GR** (6 dest): Athens, Meteora, Delphi, Nafplio, Mycenae, Olympia — routes: Greece Roadtrip (12 days) 🚗
 - [x] **GR** (4 dest): Athens, Paros (Parikia), Naxos (Chora), Santorini (Fira) — routes: Greek Islands: Paros, Naxos & Santorini (9 days) 🏖️
 - [ ] **GR** (3 dest): Argostoli (Kefalonia), Melissani Cave, Myrtos Beach — routes: Ionian Islands (5-7 days) 🏝️
 - [ ] **GR** (3 dest): Zakynthos Town, Navagio (Shipwreck Beach), Blue Caves — routes: Ionian Islands (5-7 days) 🏝️
 - [ ] **GR** (1 dest): Lesbos / Mytilini — routes: Istanbul + Lesbos (Greek Islands) (9 days) 🛳️
 - [x] **GR** (1 dest): Thessaloniki — routes: North Macedonia + Greece (9 days) 🏛️
-- [ ] **GR** (7 dest): Thessaloniki, Meteora, Kalabaka, Halkidiki, Vergina, Edessa, Mount Olympus / Litochoro — routes: Northern Greece (9 days) ⛰️
-- [ ] **GR** (8 dest): Athens (arrival), Nafplio, Mycenae, Epidaurus, Mystras, Sparta, Monemvasia, Corinth — routes: Peloponnese Loop (9 days) 🏟️
+- [x] **GR** (7 dest): Thessaloniki, Meteora, Kalabaka, Halkidiki, Vergina, Edessa, Mount Olympus / Litochoro — routes: Northern Greece (9 days) ⛰️
+- [x] **GR** (8 dest): Athens (arrival), Nafplio, Mycenae, Epidaurus, Mystras, Sparta, Monemvasia, Corinth — routes: Peloponnese Loop (9 days) 🏟️
 - [ ] **GR** (2 dest): Rhodes Old Town, Palace of the Grand Master — routes: Rhodes (5-7 days) 🏝️
 - [ ] **GR** (2 dest): Lindos, Acropolis of Lindos — routes: Rhodes (5-7 days) 🏝️
 - [ ] **GR** (1 dest): Prasonisi (windsurfing point) — routes: Rhodes (5-7 days) 🏝️
@@ -768,7 +768,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| Athens + Peloponnese: Extended (12 days) 👑 | 10/10 | 0 |
 | England + Wales + Northern Ireland Roadtrip (10-14 days) 🛣️ | 10/10 | 0 |
 | Rhine + Moselle (5 days) 🚤 | 9/9 | 0 |
 | Grand European Roadtrip (14-21 days) 🪣 | 9/12 | 0 |
@@ -786,7 +785,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Romania: Extended (12 days) 🏰 | 8/8 | 0 |
 | Romania + Bulgaria: Transylvania Focus (12 days) 🏰 | 8/8 | 0 |
 | Romania + Moldova: Extended (12 days) 🍷 | 8/8 | 0 |
-| Peloponnese Loop (9 days) 🏟️ | 8/8 | 0 |
 | South Iceland (6 days) 🌊 | 8/8 | 0 |
 | Iceland South Coast (9 days) 🧊 | 8/8 | 0 |
 | Wild Atlantic Way (7-10 days) 🌅 | 8/8 | 0 |
@@ -806,8 +804,10 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Andorra + French Pyrenees: Ariège (6 days) ♨️ | 7/7 | 0 |
 | Montenegro Roadtrip (9 days) 🚙 | 7/7 | 0 |
 | Romania Roadtrip (9 days) 🚗 | 7/7 | 0 |
-| Northern Greece (9 days) ⛰️ | 7/7 | 0 |
 | Cyprus Roadtrip including Northern Cyprus (9 days) 🚙 | 7/7 | 0 |
-| ... 201 more routes with open destinations ... | | |
+| Bergen + Fjords (6 days) ⛴️ | 7/7 | 0 |
+| Norway Roadtrip (12 days) 🚙 | 7/7 | 0 |
+| South & Central Norway (14 days) 🗺️ | 7/7 | 0 |
+| ... 197 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

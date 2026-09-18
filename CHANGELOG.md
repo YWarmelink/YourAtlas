@@ -30,6 +30,17 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   already present in the existing data, no change needed to how batches insert notes or build
   their migration functions.
 
+- **Per-destination notes, batches 71-72 — Athens+Peloponnese / Northern Greece clusters
+  (2026-09-18)** — a very high-leverage pair: Athens (6 routes, 2 name variants sharing one
+  note), Meteora (5 routes), Delphi/Olympia (4 routes each). 18 destinations total.
+  - Batch 71: Athens + Peloponnese cluster (Peloponnese Loop, Athens + Peloponnese Extended,
+    Greece Roadtrip, the Cyclades island-hop route) — Athens, Nafplio, Mycenae, Epidaurus,
+    Mystras, Sparta, Monemvasia, Corinth, Kalamata/Mani, Olympia, Patras
+    (`rbMigrateAthensPeloponneseClusterDestinationNotes()`)
+  - Batch 72: Northern Greece / Greece Roadtrip cluster — Meteora, Delphi, Kalabaka, Halkidiki,
+    Vergina, Edessa, Mount Olympus/Litochoro (`rbMigrateNorthernGreeceClusterDestinationNotes()`)
+  App-wide total: 3074 destination-slots filled across 366 routes. 417/741 signatures done.
+
 - **Per-destination notes, batches 67-70 — Sardinia/Rome+Vatican/Malta+Gozo/Central Portugal
   extras (2026-09-18)** — 21 destinations researched, plus 3 name-variant reuses. Also confirmed
   Sicily + Malta (9 days) is now fully done as a side effect of earlier cascades.
