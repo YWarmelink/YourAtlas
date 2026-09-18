@@ -2771,7 +2771,7 @@ function rbBuildMaltaItalyRoute() {
           code: 'IT', name: 'Italy', days: 6, budget: 450, lat: 40.8518, lng: 14.2681,
           destinations: [
             { name: 'Reggio Calabria', lat: 38.1113, lng: 15.6619 },
-            { name: 'Naples', lat: 40.8518, lng: 14.2681 },
+            { name: 'Naples', lat: 40.8518, lng: 14.2681 , notes: 'Italy\'s third-largest city and the birthplace of pizza, with a chaotic, dense historic center (Spaccanapoli, Spanish Quarter) and underground Roman/Greek tunnels (Napoli Sotterranea) beneath it. Go to a classic pizzeria (Sorbillo, Da Michele) right when it opens for lunch or dinner — queues get very long within 20-30 minutes.' },
             { name: 'Pompeii', lat: 40.7461, lng: 14.4989 },
             { name: 'Herculaneum', lat: 40.8058, lng: 14.3486 },
           ],
@@ -11713,6 +11713,134 @@ function rbMigrateOceaniaDestinationNotes() {
 }
 
 /**
+ * Batch 102 (2026-09-18) -- Loire Valley Castles -- 7 destinations researched (all fresh, no
+ * existing notes anywhere in the app). Same generic name-matching migration pattern as the other
+ * batches.
+ */
+function rbMigrateLoireValleyDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_LOIRE_VALLEY_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_LOIRE_VALLEY_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    "Amboise (base) — Château d'Amboise + Clos Lucé": "Royal château (Leonardo da Vinci's reputed burial site) paired with Clos Lucé, the manor where he spent his final three years; buy the combined ticket and budget half a day for both, with Clos Lucé's garden of machine models built from his sketches as the easy-to-skip highlight.",
+    'Chenonceau (day trip, ~30 min)': "A Renaissance château built spanning the Cher river via a long gallery, shaped by Diane de Poitiers and Catherine de Medici; go right at the 9am opening to beat tour-bus crowds and walk the gardens beyond the château itself.",
+    'Villandry (gardens)': "Famous for six tiers of geometric Renaissance gardens, including an ornamental potager (vegetable garden) laid out in patterns; climb to the belvedere terrace above the gardens for the full aerial view of the design.",
+    'Azay-le-Rideau': 'A Renaissance château built directly on an island in the Indre river, giving it striking water reflections; a 1-1.5 hour visit is enough, and in July-August the evening "Nocturnes" light/sound show over the water is worth timing for.',
+    'Chambord (~45 min from Amboise)': "The largest Loire château, built for François I with a famous double-helix staircase (design attributed to Leonardo da Vinci's circle); climb to the rooftop terrace for the best view of the chimneys and towers, and consider renting a bike to explore the vast walled forest estate around it.",
+    'Cheverny (nearby)': 'The real-life model for Tintin\'s Marlinspike Hall (Moulinsart), also known for its kennels of ~100 Anglo-French hounds; time your visit for the daily "soupe des chiens" feeding show (year-round, typically ~11:30am, sometimes also ~5pm — check the château\'s site for the day\'s exact time).',
+    'Blois (base, Château Royal)': "One château combining Gothic, Renaissance and Classical wings from different centuries, plus the site of the Duke of Guise's 1588 assassination; a 1-1.5 hour visit covers it, with the François I spiral-staircase facade in the Renaissance wing an easily-missed detail worth seeking out (evening light shows run in high season).",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 103 (2026-09-18) -- Campania: Naples + Amalfi Coast -- 7 destinations researched (all
+ * fresh, no existing notes anywhere in the app; shared with the Italy Roadtrip and Campania +
+ * Puglia sibling routes, so high cross-route leverage). Same generic name-matching migration
+ * pattern as the other batches.
+ */
+function rbMigrateCampaniaAmalfiDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_CAMPANIA_AMALFI_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_CAMPANIA_AMALFI_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Naples': "Italy's third-largest city and the birthplace of pizza, with a chaotic, dense historic center (Spaccanapoli, Spanish Quarter) and underground Roman/Greek tunnels (Napoli Sotterranea) beneath it. Go to a classic pizzeria (Sorbillo, Da Michele) right when it opens for lunch or dinner — queues get very long within 20-30 minutes.",
+    'Pompeii (day trip)': "The Roman city buried and preserved by Vesuvius' 79 AD eruption, with intact streets, frescoes, and plaster body casts. Book skip-the-line tickets online, arrive at the 9am opening (especially in summer heat), and allow at least 3-4 hours for the site.",
+    'Sorrento (base)': "A cliffside town over the Bay of Naples that works as the practical hub for ferries to Capri and buses along the Amalfi Coast, with lemon groves and a small old-town core. Base here to avoid driving the coast road yourself, and catch sunset from Marina Grande.",
+    'Positano': "The most photographed Amalfi town, with pastel houses stacked down a ravine to Spiaggia Grande beach. Arrive by ferry from Sorrento or Amalfi rather than by car (parking is scarce/expensive and the roads jam), and go early before day-trippers arrive.",
+    'Amalfi': "The coast's namesake town, centered on the Duomo di Sant'Andrea with its Byzantine-Moorish facade. The adjoining Cloister of Paradise (Chiostro del Paradiso) is the easily-missed highlight — small separate ticket — and 2 hours covers the town center.",
+    'Ravello': 'A quieter hilltop town above the coast, known for the gardens of Villa Rufolo and Villa Cimbrone with sweeping sea views. Time it for late afternoon and end at Villa Cimbrone\'s "Terrace of Infinity"; it\'s reached by bus from Amalfi since there\'s no direct coastal road down to the water.',
+    'Capri (day trip)': "A glamorous island off Sorrento known for the Blue Grotto sea cave and the Faraglioni rock stacks. Do the Blue Grotto first thing in the morning — it closes at any sign of rough seas or wind (checked each morning around 9am, and can open/close repeatedly through the day) — then take the funicular to Capri town and chairlift up Monte Solaro for the views.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 104 (2026-09-18) -- South of France: Provence to Côte d'Azur leftovers -- 5 destinations,
+ * all pure reuse/combos of notes already written for sibling routes' Avignon/Gordes/Camargue/
+ * Antibes/Villefranche/Nice entries (Antibes+Villefranche combined into one note since the route
+ * lists them as an either/or base choice). Same generic name-matching migration pattern as the
+ * other batches.
+ */
+function rbMigrateProvenceCoteDazurLeftoverDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_PROVENCE_COTE_DAZUR_LEFTOVER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_PROVENCE_COTE_DAZUR_LEFTOVER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Avignon area (base)': "A walled Provençal city centered on the Palais des Papes, the largest Gothic palace in Europe, plus the half-collapsed Pont Saint-Bénézet on the Rhône; book Palais des Papes tickets online to skip the queue and get the combo ticket that includes the bridge.",
+    'Luberon/Gordes day trip': "A hilltop stone village whose tiered houses form the classic Luberon postcard view; stop at the roadside viewpoint on the D15 below town for that shot, and arrive before 10am as parking is very limited.",
+    'Camargue / Saintes-Maries-de-la-Mer': "The wetland delta south of Arles known for wild pink flamingos, salt flats, and semi-wild white horses; the Parc Ornithologique de Pont de Gau gives reliable flamingo sightings, best visited early morning for wildlife activity and cooler heat.",
+    'Antibes or Villefranche-sur-Mer (base — more authentic/less party-resort than Cannes)': "Antibes' walled old town (Vieil Antibes) beside Port Vauban's yacht harbour, or Villefranche-sur-Mer's pastel old town around a deep natural bay with the Cocteau-decorated Chapelle Saint-Pierre — either is a quieter, more authentic base than Cannes; walk Antibes' seafront ramparts, or check Villefranche's cruise-ship schedule for a quiet waterfront day.",
+    'Nice (city anchor)': "The Riviera's main city — Promenade des Anglais, Vieux Nice, and the Colline du Château viewpoint; hit the Cours Saleya market in the old town in the morning before it closes.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 105 (2026-09-18) -- Portugal + Spain Roadtrip (14 days) leftovers -- 2 destinations, pure
+ * reuse of the existing canonical Pinhão/Douro Valley and Coimbra notes. Same generic
+ * name-matching migration pattern as the other batches.
+ */
+function rbMigratePortugalSpainLeftoverDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_PORTUGAL_SPAIN_LEFTOVER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_PORTUGAL_SPAIN_LEFTOVER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Pinhão (Douro Valley)': "The terraced port-wine vineyard heartland along the Douro, centered on the small riverside town of Pinhão with its azulejo-covered train station. Ride the scenic Linha do Douro train from Porto (or Régua) to Pinhão, or take a river cruise, and pair it with a quinta tasting — allocate a full day.",
+    'Coimbra (University)': "Home to Portugal's oldest university and the gilded Biblioteca Joanina, set in a hilltop old town over the Mondego river. The library is timed-entry only (20-minute slots, ticket = your entry time) — book online in advance, as slots sell out on busy days.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Two of batch 2's standalone routes were flagged as too exposed to their long-haul flight time
  * relative to trip length — Jordanië (8d, connecting flight) and Nieuw-Zeeland Zuidereiland (21d,
  * but 27-38h with multiple stops). Adds +2 days to each as a recovery/margin buffer, matching the
@@ -12285,7 +12413,7 @@ function rbBuildRomeRoute() {
       code: 'IT', name: 'Italy', days: 6, budget: 450, lat: 40.8518, lng: 14.2681,
       destinations: [
         { name: 'Reggio Calabria', lat: 38.1113, lng: 15.6619 },
-        { name: 'Naples', lat: 40.8518, lng: 14.2681 },
+        { name: 'Naples', lat: 40.8518, lng: 14.2681 , notes: 'Italy\'s third-largest city and the birthplace of pizza, with a chaotic, dense historic center (Spaccanapoli, Spanish Quarter) and underground Roman/Greek tunnels (Napoli Sotterranea) beneath it. Go to a classic pizzeria (Sorbillo, Da Michele) right when it opens for lunch or dinner — queues get very long within 20-30 minutes.' },
         { name: 'Pompeii', lat: 40.7461, lng: 14.4989 },
         { name: 'Herculaneum', lat: 40.8058, lng: 14.3486 },
       ],
@@ -15093,10 +15221,10 @@ function rbBuildLoireValleyCastlesRoute() {
     {
       code: 'FR', name: 'France', days: 4, budget: 420, lat: 47.4136, lng: 0.9829,
       destinations: [
-        { name: "Amboise (base) — Château d'Amboise + Clos Lucé", lat: 47.4136, lng: 0.9829 },
-        { name: 'Chenonceau (day trip, ~30 min)', lat: 47.3241, lng: 1.0708 },
-        { name: 'Villandry (gardens)', lat: 47.3403, lng: 0.5153 },
-        { name: 'Azay-le-Rideau', lat: 47.2611, lng: 0.4667 },
+        { name: "Amboise (base) — Château d'Amboise + Clos Lucé", lat: 47.4136, lng: 0.9829 , notes: 'Royal château (Leonardo da Vinci\'s reputed burial site) paired with Clos Lucé, the manor where he spent his final three years; buy the combined ticket and budget half a day for both, with Clos Lucé\'s garden of machine models built from his sketches as the easy-to-skip highlight.' },
+        { name: 'Chenonceau (day trip, ~30 min)', lat: 47.3241, lng: 1.0708 , notes: 'A Renaissance château built spanning the Cher river via a long gallery, shaped by Diane de Poitiers and Catherine de Medici; go right at the 9am opening to beat tour-bus crowds and walk the gardens beyond the château itself.' },
+        { name: 'Villandry (gardens)', lat: 47.3403, lng: 0.5153 , notes: 'Famous for six tiers of geometric Renaissance gardens, including an ornamental potager (vegetable garden) laid out in patterns; climb to the belvedere terrace above the gardens for the full aerial view of the design.' },
+        { name: 'Azay-le-Rideau', lat: 47.2611, lng: 0.4667 , notes: 'A Renaissance château built directly on an island in the Indre river, giving it striking water reflections; a 1-1.5 hour visit is enough, and in July-August the evening "Nocturnes" light/sound show over the water is worth timing for.' },
       ],
       notes: "Base Amboise (3 nights): Château d'Amboise + Clos Lucé (Da Vinci) — Chenonceau as a day trip (~30 min) — Villandry (gardens) + Azay-le-Rideau on the way. Budget ~€90-120/day (lodging €70-90 2-star/B&B, food €30-40, one castle €15-20pp). Season: April-June or September (avoid July/August crowds and heat). NL-Amboise/Tours ~590-650km/6.5-7.5h, tolls ~€45-60 one way. ⚠️ Castle entries add up fast (3-4 castles = €50-70pp on tickets alone) — a combi-pass (Blois+Chambord+Chenonceau, saves ~11%) is worth it at 3+ castles.",
       transport_to_next: 'Drive to Blois (~45 min).',
@@ -15104,9 +15232,9 @@ function rbBuildLoireValleyCastlesRoute() {
     {
       code: 'FR', name: 'France', days: 2, budget: 210, lat: 47.5861, lng: 1.3359,
       destinations: [
-        { name: 'Chambord (~45 min from Amboise)', lat: 47.6161, lng: 1.5170 },
-        { name: 'Cheverny (nearby)', lat: 47.5006, lng: 1.4592 },
-        { name: 'Blois (base, Château Royal)', lat: 47.5861, lng: 1.3359 },
+        { name: 'Chambord (~45 min from Amboise)', lat: 47.6161, lng: 1.5170 , notes: 'The largest Loire château, built for François I with a famous double-helix staircase (design attributed to Leonardo da Vinci\'s circle); climb to the rooftop terrace for the best view of the chimneys and towers, and consider renting a bike to explore the vast walled forest estate around it.' },
+        { name: 'Cheverny (nearby)', lat: 47.5006, lng: 1.4592 , notes: 'The real-life model for Tintin\'s Marlinspike Hall (Moulinsart), also known for its kennels of ~100 Anglo-French hounds; time your visit for the daily "soupe des chiens" feeding show (year-round, typically ~11:30am, sometimes also ~5pm — check the château\'s site for the day\'s exact time).' },
+        { name: 'Blois (base, Château Royal)', lat: 47.5861, lng: 1.3359 , notes: 'One château combining Gothic, Renaissance and Classical wings from different centuries, plus the site of the Duke of Guise\'s 1588 assassination; a 1-1.5 hour visit covers it, with the François I spiral-staircase facade in the Renaissance wing an easily-missed detail worth seeking out (evening light shows run in high season).' },
       ],
       notes: "Base Blois (2 nights): Chambord + nearby Cheverny — Blois (Château Royal). Same budget/combi-pass logic as the Amboise leg above.",
       transport_to_next: 'End of this route — drive back to the Netherlands.',
@@ -15179,8 +15307,8 @@ function rbBuildSouthOfFranceProvenceCoteAzurRoute() {
     {
       code: 'FR', name: 'France', days: 3, budget: 315, lat: 43.9493, lng: 4.8055,
       destinations: [
-        { name: 'Avignon area (base)', lat: 43.9493, lng: 4.8055 },
-        { name: 'Luberon/Gordes day trip', lat: 43.9114, lng: 5.2003 },
+        { name: 'Avignon area (base)', lat: 43.9493, lng: 4.8055 , notes: 'A walled Provençal city centered on the Palais des Papes, the largest Gothic palace in Europe, plus the half-collapsed Pont Saint-Bénézet on the Rhône; book Palais des Papes tickets online to skip the queue and get the combo ticket that includes the bridge.' },
+        { name: 'Luberon/Gordes day trip', lat: 43.9114, lng: 5.2003 , notes: 'A hilltop stone village whose tiered houses form the classic Luberon postcard view; stop at the roadside viewpoint on the D15 below town for that shot, and arrive before 10am as parking is very limited.' },
       ],
       notes: "Avignon area (2-3 nights), with a Luberon/Gordes day trip. Budget ~€90-120/day inland. NL-Avignon ~1,150km/~11h.",
       transport_to_next: 'Drive to the Arles/Camargue area (~1h20, ~80km).',
@@ -15189,7 +15317,7 @@ function rbBuildSouthOfFranceProvenceCoteAzurRoute() {
       code: 'FR', name: 'France', days: 2, budget: 210, lat: 43.4522, lng: 4.4283,
       destinations: [
         { name: 'Arles', lat: 43.6767, lng: 4.6278 },
-        { name: 'Camargue / Saintes-Maries-de-la-Mer', lat: 43.4522, lng: 4.4283 },
+        { name: 'Camargue / Saintes-Maries-de-la-Mer', lat: 43.4522, lng: 4.4283 , notes: 'The wetland delta south of Arles known for wild pink flamingos, salt flats, and semi-wild white horses; the Parc Ornithologique de Pont de Gau gives reliable flamingo sightings, best visited early morning for wildlife activity and cooler heat.' },
       ],
       notes: "Arles/Camargue (Saintes-Maries-de-la-Mer, ~80km/1h20 from Avignon, 1-2 nights). Same ~€90-120/day inland rate as the Avignon leg.",
       transport_to_next: 'Drive east via the A8 to the Côte d\'Azur (~260km/2.5h from the Avignon area) — no backtracking.',
@@ -15197,8 +15325,8 @@ function rbBuildSouthOfFranceProvenceCoteAzurRoute() {
     {
       code: 'FR', name: 'France', days: 4, budget: 540, lat: 43.5804, lng: 7.1251,
       destinations: [
-        { name: 'Antibes or Villefranche-sur-Mer (base — more authentic/less party-resort than Cannes)', lat: 43.7042, lng: 7.3097 },
-        { name: 'Nice (city anchor)', lat: 43.7102, lng: 7.2620 },
+        { name: 'Antibes or Villefranche-sur-Mer (base — more authentic/less party-resort than Cannes)', lat: 43.7042, lng: 7.3097 , notes: 'Antibes\' walled old town (Vieil Antibes) beside Port Vauban\'s yacht harbour, or Villefranche-sur-Mer\'s pastel old town around a deep natural bay with the Cocteau-decorated Chapelle Saint-Pierre — either is a quieter, more authentic base than Cannes; walk Antibes\' seafront ramparts, or check Villefranche\'s cruise-ship schedule for a quiet waterfront day.' },
+        { name: 'Nice (city anchor)', lat: 43.7102, lng: 7.2620 , notes: 'The Riviera\'s main city — Promenade des Anglais, Vieux Nice, and the Colline du Château viewpoint; hit the Cours Saleya market in the old town in the morning before it closes.' },
       ],
       notes: "East via the A8 to the Côte d'Azur, base in Antibes or Villefranche-sur-Mer (more authentic/less of a party resort than Cannes) with Nice as the city anchor (2-3 nights). Budget ~€120-150/day at the coast. ⚠️ Tolls: Avignon-Nice ~€25-30 on the A8; NL-Avignon another ~€90-110 — budget a **total of ~€250-300 in tolls** round trip. Nice city-centre parking €24-35/day garage.",
       transport_to_next: 'End of this route — drive back to the Netherlands.',
@@ -15912,7 +16040,7 @@ function rbBuildItalyRoadtripRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 280, lat: 40.8518, lng: 14.2681,
       destinations: [
-        { name: 'Naples', lat: 40.8518, lng: 14.2681 },
+        { name: 'Naples', lat: 40.8518, lng: 14.2681 , notes: 'Italy\'s third-largest city and the birthplace of pizza, with a chaotic, dense historic center (Spaccanapoli, Spanish Quarter) and underground Roman/Greek tunnels (Napoli Sotterranea) beneath it. Go to a classic pizzeria (Sorbillo, Da Michele) right when it opens for lunch or dinner — queues get very long within 20-30 minutes.' },
         { name: 'Pompeii', lat: 40.7461, lng: 14.4989 },
       ],
       notes: 'Naples/Pompeii (2 days).',
@@ -16013,8 +16141,8 @@ function rbBuildCampaniaNaplesAmalfiRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 250, lat: 40.8518, lng: 14.2681,
       destinations: [
-        { name: 'Naples', lat: 40.8518, lng: 14.2681 },
-        { name: 'Pompeii (day trip)', lat: 40.7461, lng: 14.4989 },
+        { name: 'Naples', lat: 40.8518, lng: 14.2681 , notes: 'Italy\'s third-largest city and the birthplace of pizza, with a chaotic, dense historic center (Spaccanapoli, Spanish Quarter) and underground Roman/Greek tunnels (Napoli Sotterranea) beneath it. Go to a classic pizzeria (Sorbillo, Da Michele) right when it opens for lunch or dinner — queues get very long within 20-30 minutes.' },
+        { name: 'Pompeii (day trip)', lat: 40.7461, lng: 14.4989 , notes: 'The Roman city buried and preserved by Vesuvius\' 79 AD eruption, with intact streets, frescoes, and plaster body casts. Book skip-the-line tickets online, arrive at the 9am opening (especially in summer heat), and allow at least 3-4 hours for the site.' },
       ],
       notes: "Naples (2 days, including a Pompeii day trip). Direct AMS-Naples (easyJet/Transavia/ITA, ~2-2.5h). No rental car recommended — use the Circumvesuviana train (Naples-Pompeii-Sorrento), SITA buses and seasonal ferries (Sorrento-Positano-Amalfi-Capri) instead of self-driving the narrow, busy SS163, especially given the restrictions below. Budget ~€125/day (Capri/Amalfi are pricey, Naples itself is cheaper). ⚠️ (check yearly) Pompeii 2026 requires a mandatory timed-entry ticket, linked to name/ID, max 20,000/day, book ≥1 week ahead (morning slots sell out weeks ahead in high season).",
       transport_to_next: 'Circumvesuviana train to Sorrento.',
@@ -16022,10 +16150,10 @@ function rbBuildCampaniaNaplesAmalfiRoute() {
     {
       code: 'IT', name: 'Italy', days: 3, budget: 375, lat: 40.6263, lng: 14.3757,
       destinations: [
-        { name: 'Sorrento (base)', lat: 40.6263, lng: 14.3757 },
-        { name: 'Positano', lat: 40.6280, lng: 14.4849 },
-        { name: 'Amalfi', lat: 40.6340, lng: 14.6027 },
-        { name: 'Ravello', lat: 40.6492, lng: 14.6114 },
+        { name: 'Sorrento (base)', lat: 40.6263, lng: 14.3757 , notes: 'A cliffside town over the Bay of Naples that works as the practical hub for ferries to Capri and buses along the Amalfi Coast, with lemon groves and a small old-town core. Base here to avoid driving the coast road yourself, and catch sunset from Marina Grande.' },
+        { name: 'Positano', lat: 40.6280, lng: 14.4849 , notes: 'The most photographed Amalfi town, with pastel houses stacked down a ravine to Spiaggia Grande beach. Arrive by ferry from Sorrento or Amalfi rather than by car (parking is scarce/expensive and the roads jam), and go early before day-trippers arrive.' },
+        { name: 'Amalfi', lat: 40.6340, lng: 14.6027 , notes: 'The coast\'s namesake town, centered on the Duomo di Sant\'Andrea with its Byzantine-Moorish facade. The adjoining Cloister of Paradise (Chiostro del Paradiso) is the easily-missed highlight — small separate ticket — and 2 hours covers the town center.' },
+        { name: 'Ravello', lat: 40.6492, lng: 14.6114 , notes: 'A quieter hilltop town above the coast, known for the gardens of Villa Rufolo and Villa Cimbrone with sweeping sea views. Time it for late afternoon and end at Villa Cimbrone\'s "Terrace of Infinity"; it\'s reached by bus from Amalfi since there\'s no direct coastal road down to the water.' },
       ],
       notes: "Sorrento as a base (2-3 days), with the Amalfi Coast (Positano/Amalfi/Ravello) by bus/boat, not self-driving (2 days). Season: late May-June or September; July-August is very busy/hot and the restrictions below apply daily then; ferries are seasonal (~May-September) — check the current schedule. ⚠️ The Amalfi Coast's odd/even-license-plate rule applies 10:00-18:00 daily late June-early September plus Easter/25 April, weekends June-July & October (scooters exempt, guests with a hotel reservation may drive on their check-in/check-out day regardless of plate); Positano closes the centre to private vehicles 6:30-24:00 in high summer.",
       transport_to_next: 'Ferry to Capri (day trip).',
@@ -16033,7 +16161,7 @@ function rbBuildCampaniaNaplesAmalfiRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 125, lat: 40.5532, lng: 14.2229,
       destinations: [
-        { name: 'Capri (day trip)', lat: 40.5532, lng: 14.2229 },
+        { name: 'Capri (day trip)', lat: 40.5532, lng: 14.2229 , notes: 'A glamorous island off Sorrento known for the Blue Grotto sea cave and the Faraglioni rock stacks. Do the Blue Grotto first thing in the morning — it closes at any sign of rough seas or wind (checked each morning around 9am, and can open/close repeatedly through the day) — then take the funicular to Capri town and chairlift up Monte Solaro for the views.' },
       ],
       notes: 'Capri day trip (1 day) to close the trip.',
       transport_to_next: 'End of this route — direct return flight Naples to Amsterdam.',
@@ -16106,7 +16234,7 @@ function rbBuildCampaniaPugliaRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 250, lat: 40.8518, lng: 14.2681,
       destinations: [
-        { name: 'Naples', lat: 40.8518, lng: 14.2681 },
+        { name: 'Naples', lat: 40.8518, lng: 14.2681 , notes: 'Italy\'s third-largest city and the birthplace of pizza, with a chaotic, dense historic center (Spaccanapoli, Spanish Quarter) and underground Roman/Greek tunnels (Napoli Sotterranea) beneath it. Go to a classic pizzeria (Sorbillo, Da Michele) right when it opens for lunch or dinner — queues get very long within 20-30 minutes.' },
         { name: 'Pompeii', lat: 40.7461, lng: 14.4989 },
       ],
       notes: "Naples/Pompeii (2 days). Open-jaw AMS-Naples in, AMS-Bari out (both direct) — fits nicely with the west→east sweep. Budget ~€125/day.",
@@ -22915,8 +23043,8 @@ function rbBuildPortugalSpainRoadtripRoute() {
       code: 'PT', name: 'Portugal', days: 9, budget: 810, lat: 40.0000, lng: -8.4000,
       destinations: [
         { name: 'Porto (Ribeira)', lat: 41.1405, lng: -8.6118 , notes: 'Porto\'s riverside old quarter — tiered, colorful facades along the Douro, narrow medieval lanes behind. Walk (or wait for a tram) across the upper deck of the Dom Luís I bridge to Gaia for the classic elevated view back over the Ribeira, best at golden hour.' },
-        { name: 'Pinhão (Douro Valley)', lat: 41.1897, lng: -7.5461 },
-        { name: 'Coimbra (University)', lat: 40.2076, lng: -8.4257 },
+        { name: 'Pinhão (Douro Valley)', lat: 41.1897, lng: -7.5461 , notes: 'The terraced port-wine vineyard heartland along the Douro, centered on the small riverside town of Pinhão with its azulejo-covered train station. Ride the scenic Linha do Douro train from Porto (or Régua) to Pinhão, or take a river cruise, and pair it with a quinta tasting — allocate a full day.' },
+        { name: 'Coimbra (University)', lat: 40.2076, lng: -8.4257 , notes: 'Home to Portugal\'s oldest university and the gilded Biblioteca Joanina, set in a hilltop old town over the Mondego river. The library is timed-entry only (20-minute slots, ticket = your entry time) — book online in advance, as slots sell out on busy days.' },
         { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366, notes: "The flat neoclassical grid rebuilt after the 1755 earthquake, centered on riverside Praça do Comércio and Rossio square — it's the hub connecting Alfama and Bairro Alto, not a destination in itself. Ride the Elevador de Santa Justa or walk up to a miradouro rather than staying on the flat grid, since Baixa is the least distinctive part of central Lisbon by design." },
         { name: 'Sintra (Palace of Pena)', lat: 38.7876, lng: -9.3905, notes: "A candy-colored Romanticist palace atop a forested hilltop, mixing Gothic, Islamic and Manueline styles at the whim of King Ferdinand II — the standout of Sintra's several palaces. Book a timed-entry ticket online and arrive by 8-9am opening, since day-tripping tour buses from Lisbon fill the site and the shuttle/entrance queues get very long by mid-morning." },
         { name: 'Faro (Ria Formosa)', lat: 37.0194, lng: -7.9304, notes: "Faro town itself is a modest gateway — the real draw is the Ria Formosa, a lagoon system of barrier islands and salt marshes just offshore. Take a boat out to Ilha Deserta or Culatra for near-empty beaches rather than judging the area by Faro's town center." },

@@ -12,6 +12,21 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batches 102-105 — Loire Valley Castles, Campania: Naples + Amalfi
+  Coast, Provence to Côte d'Azur leftovers, Portugal + Spain Roadtrip leftovers (2026-09-18)** —
+  14 destinations researched, plus 7 reuse/combo leftovers closing out two sibling routes.
+  - Batch 102: Loire Valley Castles (fresh region) — Amboise, Chenonceau, Villandry,
+    Azay-le-Rideau, Chambord, Cheverny, Blois (`rbMigrateLoireValleyDestinationNotes()`)
+  - Batch 103: Campania: Naples + Amalfi Coast (fresh region, high leverage — shared with Italy
+    Roadtrip and Campania + Puglia siblings) — Naples, Pompeii, Sorrento, Positano, Amalfi,
+    Ravello, Capri (`rbMigrateCampaniaAmalfiDestinationNotes()`)
+  - Batch 104: South of France: Provence to Côte d'Azur leftovers — Avignon area, Luberon/Gordes,
+    Camargue, Antibes-or-Villefranche-sur-Mer (new combined note), Nice
+    (`rbMigrateProvenceCoteDazurLeftoverDestinationNotes()`)
+  - Batch 105: Portugal + Spain Roadtrip leftovers, closing it out entirely — Pinhão (Douro
+    Valley), Coimbra (`rbMigratePortugalSpainLeftoverDestinationNotes()`)
+  App-wide total: 3393 destination-slots filled across 398 routes. 489/741 signatures done.
+
 - **Locations manifest added (2026-09-17)** — `scripts/generate_locations_manifest.py` +
   `LOCATIONS_MANIFEST.csv`, built from a brainstorm with Youri about eventually building a
   canonical Google Sheet `Locations` tab (one row per real place, reusable when building future
