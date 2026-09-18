@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 385 / 741 signatures.**
+- **Done so far: 394 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -231,7 +231,7 @@ Sorted alphabetically by country code.
 
 - [ ] **AD** (6 dest): Andorra la Vella (Casa de la Vall), Escaldes-Engordany (Caldea spa), Ordino (Museu Casa d'Areny-Plandolit), Canillo (Roc del Quer viewpoint), Sant Joan de Caselles, Encamp (optional) — routes: Andorra (4 days) 🏔️
 - [ ] **AD** (3 dest): Andorra la Vella (Casa de la Vall), Ordino, Pas de la Casa — routes: Andorra + French Pyrenees: Ariège (6 days) ♨️
-- [ ] **AD** (3 dest): Andorra la Vella (Casa de la Vall), Ordino, Vall del Madriu-Perafita-Claror (hike) — routes: Andorra + Spanish Pyrenees: Grand Circuit (9 days) 🏔️
+- [x] **AD** (3 dest): Andorra la Vella (Casa de la Vall), Ordino, Vall del Madriu-Perafita-Claror (hike) — routes: Andorra + Spanish Pyrenees: Grand Circuit (9 days) 🏔️
 - [ ] **AE** (5 dest): Dubai, Abu Dhabi, Al Ain, Liwa Oasis / Empty Quarter, Fujairah / East Coast — routes: United Arab Emirates 🏙️
 - [x] **AL** (3 dest): Tirana, Berat, Korçë — routes: Albania + North Macedonia (12 days) 🏞️
 - [x] **AL** (5 dest): Tirana, Shkodër, Theth, Valbona, Berat — routes: Albania Roadtrip (9 days) 🥾
@@ -338,7 +338,7 @@ Sorted alphabetically by country code.
 - [ ] **EE** (4 dest): Tallinn (Old Town), Lahemaa National Park, Kuressaare Castle (Saaremaa), Muhu-Virtsu ferry link — routes: Estonia (5-7 days) 🏰
 - [ ] **ES** (7 dest): Málaga (fly in), Ronda, Cádiz, Jerez de la Frontera, Seville, Córdoba, Granada — routes: Andalusia Roadtrip (9 days) 🚗
 - [x] **ES** (2 dest): Seville (Alcázar & Cathedral), Granada (Alhambra) — routes: Andalusia: Seville + Granada (5 days) 🏰
-- [ ] **ES** (7 dest): La Seu d'Urgell (cathedral), Cerdanya / Puigcerdà, Vielha (Val d'Aran), Port de la Bonaigua (pass), Boí (Aigüestortes NP shuttle), Espot (Aigüestortes NP shuttle), Ripoll — routes: Andorra + Spanish Pyrenees: Grand Circuit (9 days) 🏔️
+- [x] **ES** (7 dest): La Seu d'Urgell (cathedral), Cerdanya / Puigcerdà, Vielha (Val d'Aran), Port de la Bonaigua (pass), Boí (Aigüestortes NP shuttle), Espot (Aigüestortes NP shuttle), Ripoll — routes: Andorra + Spanish Pyrenees: Grand Circuit (9 days) 🏔️
 - [ ] **ES** (7 dest): Santander (Magdalena Peninsula), Santillana del Mar, Comillas (El Capricho), Picos de Europa (Potes), Fuente Dé (cable car), Oviedo, Gijón — routes: Asturias + Cantabria (6 days) 🌲
 - [x] **ES** (1 dest): Ibiza Town / Dalt Vila (UNESCO old town) — routes: Balearic Islands (7-10 days) 🏝️
 - [ ] **ES** (5 dest): Barcelona (Gothic Quarter / Barri Gòtic), Sagrada Família, Park Güell, Barceloneta Beach, Montjuïc — routes: Barcelona (4 days) 🎨
@@ -387,9 +387,9 @@ Sorted alphabetically by country code.
 - [x] **FR** (3 dest): Strasbourg, Colmar, Alsace villages — routes: Central European Grand Roadtrip 🚗
 - [ ] **FR** (4 dest): Bastia or Calvi (entry), Corte, Porto-Vecchio / Col de Bavella, Bonifacio — routes: Corsica + Sardinia: Full Island Loop (12 days) 🌊
 - [ ] **FR** (1 dest): Figari / Bonifacio — routes: Corsica + Sardinia: South Corsica & North Sardinia (5 days) 🏝️
-- [ ] **FR** (4 dest): Nice, Antibes, Cannes, Marseille (optional) — routes: Corsica + South of France (9 days) 🛳️
-- [ ] **FR** (6 dest): Bastia, Calvi, Corte, Porto-Vecchio / Col de Bavella, Bonifacio, Ajaccio — routes: Corsica + South of France (9 days) 🛳️
-- [ ] **FR** (10 dest): Calvi, Cap Corse / Nonza, Saint-Florent / Désert des Agriates, Bastia, Corte, East coast (Aléria), Porto-Vecchio / Col de Bavella, Bonifacio, Ajaccio / Golfe de Valinco, Piana calanques / Scandola — routes: Corsica Roadtrip: Full Island Loop (9 days) 🚙
+- [x] **FR** (4 dest): Nice, Antibes, Cannes, Marseille (optional) — routes: Corsica + South of France (9 days) 🛳️
+- [x] **FR** (6 dest): Bastia, Calvi, Corte, Porto-Vecchio / Col de Bavella, Bonifacio, Ajaccio — routes: Corsica + South of France (9 days) 🛳️
+- [x] **FR** (10 dest): Calvi, Cap Corse / Nonza, Saint-Florent / Désert des Agriates, Bastia, Corte, East coast (Aléria), Porto-Vecchio / Col de Bavella, Bonifacio, Ajaccio / Golfe de Valinco, Piana calanques / Scandola — routes: Corsica Roadtrip: Full Island Loop (9 days) 🚙
 - [ ] **FR** (5 dest): Ajaccio, Golfe de Valinco / Propriano, Bonifacio, Porto-Vecchio, Col de Bavella — routes: Corsica: South Loop (6 days) 🏖️
 - [x] **FR** (2 dest): Chamonix (Mont Blanc), Aiguille du Midi cable car — routes: France + Switzerland + Italy (10-14 days) 🗻
 - [ ] **FR** (1 dest): Paris — routes: France Roadtrip: Paris to the Côte d'Azur (12 days) 🚗
@@ -527,7 +527,7 @@ Sorted alphabetically by country code.
 - [ ] **IT** (4 dest): Milan, Lake Como / Bellagio, Lake Garda / Sirmione, Verona (waypoint) — routes: Italy: North to Central (12 days) 🚄
 - [x] **IT** (1 dest): Bologna — routes: Italy: North to Central (12 days) 🚄
 - [ ] **IT** (2 dest): Siena, Val d'Orcia (Pienza) — routes: Italy: North to Central (12 days) 🚄
-- [ ] **IT** (4 dest): Catania, Mount Etna, Taormina, Syracuse / Ortigia — routes: Malta + Gozo + Sicily (9 days) 🐚
+- [x] **IT** (4 dest): Catania, Mount Etna, Taormina, Syracuse / Ortigia — routes: Malta + Gozo + Sicily (9 days) 🐚
 - [ ] **IT** (3 dest): Bellagio, Varenna, Menaggio — routes: Northern Italy (6 days) 🚤
 - [ ] **IT** (2 dest): Sirmione, Desenzano — routes: Northern Italy (6 days) 🚤
 - [ ] **IT** (1 dest): Verona (Arena, Juliet's balcony) — routes: Northern Italy (6 days) 🚤
@@ -567,14 +567,14 @@ Sorted alphabetically by country code.
 - [ ] **IT** (2 dest): Milazzo (ferry port), Lipari — routes: Sicily + Aeolian Islands (3-4 days) 🏝️
 - [ ] **IT** (1 dest): Vulcano (mud baths) — routes: Sicily + Aeolian Islands (3-4 days) 🏝️
 - [ ] **IT** (1 dest): Stromboli — routes: Sicily + Aeolian Islands (3-4 days) 🏝️
-- [ ] **IT** (8 dest): Catania, Mount Etna, Taormina, Syracuse / Ortigia, Modica, Ragusa, Agrigento (Valle dei Templi), Palermo (optional) — routes: Sicily + Malta (9 days) 🌋
+- [x] **IT** (8 dest): Catania, Mount Etna, Taormina, Syracuse / Ortigia, Modica, Ragusa, Agrigento (Valle dei Templi), Palermo (optional) — routes: Sicily + Malta (9 days) 🌋
 - [x] **IT** (1 dest): Naples/Salerno — routes: Sicily + Southern Italy (12 days) 🍊
 - [x] **IT** (1 dest): Tropea — routes: Sicily + Southern Italy (12 days) 🍊
 - [x] **IT** (4 dest): Villa San Giovanni (ferry crossing), Messina (ferry crossing), Taormina, Etna — routes: Sicily + Southern Italy (12 days) 🍊
 - [x] **IT** (2 dest): Syracuse, Noto (Val di Noto) — routes: Sicily + Southern Italy (12 days) 🍊
 - [x] **IT** (1 dest): Agrigento — routes: Sicily + Southern Italy (12 days) 🍊
 - [x] **IT** (2 dest): Palermo, Cefalù — routes: Sicily + Southern Italy (12 days) 🍊
-- [ ] **IT** (1 dest): Catania — routes: Sicily East (4-5 days) 🏝️
+- [x] **IT** (1 dest): Catania — routes: Sicily East (4-5 days) 🏝️
 - [x] **IT** (3 dest): Trapani, Erice, Segesta — routes: Sicily Roadtrip (7-10 days) 🏝️
 - [ ] **IT** (2 dest): Palermo, Monreale — routes: Sicily West (4-5 days) 🏝️
 - [x] **IT** (2 dest): Trapani, Erice — routes: Sicily West (4-5 days) 🏝️
@@ -621,7 +621,7 @@ Sorted alphabetically by country code.
 - [ ] **MT** (5 dest): Valletta & the Three Cities (Vittoriosa/Senglea/Cospicua), Mdina / Rabat, Marsaxlokk, Hagar Qim / Mnajdra temples, Blue Grotto — routes: Malta (4 days) 🌅
 - [ ] **MT** (8 dest): Valletta, Mdina, Southern coast temples (Hagar Qim), Marsaxlokk, Cittadella, Victoria (Gozo), Ramla Bay (Gozo), Dwejra / former Azure Window site (Gozo), Xlendi (Gozo) — routes: Malta + Gozo (6 days) ⛵
 - [ ] **MT** (4 dest): Valletta, Three Cities, Cittadella, Victoria (Gozo), Ramla Bay (Gozo) — routes: Malta + Gozo + Sicily (9 days) 🐚
-- [ ] **MT** (3 dest): Valletta, Three Cities, Marsaxlokk — routes: Sicily + Malta (9 days) 🌋
+- [x] **MT** (3 dest): Valletta, Three Cities, Marsaxlokk — routes: Sicily + Malta (9 days) 🌋
 - [ ] **MV** (5 dest): Malé, Maafushi, Thulusdhoo, Fulidhoo, Dhigurah — routes: Maldives 🏝️
 - [x] **MY** (4 dest): Petronas Towers / KLCC, Batu Caves, Chinatown & Merdeka Square, Malacca (optional day trip) — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
 - [x] **MY** (1 dest): Kota Kinabalu waterfront — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
@@ -768,12 +768,8 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| Sicily + Malta (9 days) 🌋 | 11/11 | 0 |
-| Corsica Roadtrip: Full Island Loop (9 days) 🚙 | 10/10 | 0 |
-| Corsica + South of France (9 days) 🛳️ | 10/10 | 0 |
 | Athens + Peloponnese: Extended (12 days) 👑 | 10/10 | 0 |
 | England + Wales + Northern Ireland Roadtrip (10-14 days) 🛣️ | 10/10 | 0 |
-| Andorra + Spanish Pyrenees: Grand Circuit (9 days) 🏔️ | 10/10 | 0 |
 | Rhine + Moselle (5 days) 🚤 | 9/9 | 0 |
 | Corsica + Sardinia: Full Island Loop (12 days) 🌊 | 9/9 | 0 |
 | Grand European Roadtrip (14-21 days) 🪣 | 9/12 | 0 |
@@ -789,7 +785,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Monaco + Côte d'Azur (4 days) 🎰 | 8/8 | 0 |
 | Rome + Vatican City In-Depth (4 days) ⛪ | 8/8 | 0 |
 | Malta + Gozo (6 days) ⛵ | 8/8 | 0 |
-| Malta + Gozo + Sicily (9 days) 🐚 | 8/8 | 0 |
 | Catalonia + Pyrenees (9 days) ⛰️ | 8/8 | 0 |
 | Spain: North to Central (12 days) 🚉 | 8/8 | 0 |
 | Spain: East to South (12 days) 🌅 | 8/8 | 0 |
@@ -808,6 +803,11 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Western Canada: Rockies & Vancouver 🏔️ | 7/18 | 0 |
 | Paris (4 days) 🗼 | 7/7 | 0 |
 | Loire Valley Castles (6 days) 🗝️ | 7/7 | 0 |
-| ... 215 more routes with open destinations ... | | |
+| French Alps + Provence (9 days) 🛤️ | 7/7 | 0 |
+| Campania: Naples + Amalfi Coast (6 days) 🌊 | 7/7 | 0 |
+| Monaco: Monte Carlo (2 days) 🎲 | 7/7 | 0 |
+| Andalusia Roadtrip (9 days) 🚗 | 7/7 | 0 |
+| Galicia: Santiago de Compostela + Coast (6 days) 🐚 | 7/7 | 0 |
+| ... 210 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

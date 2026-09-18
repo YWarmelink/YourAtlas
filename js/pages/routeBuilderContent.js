@@ -10178,6 +10178,139 @@ function rbMigrateFloridaDestinationNotes() {
 }
 
 /**
+ * Batch 59 (2026-09-18) -- Sicily + Malta cluster (Sicily + Malta, Malta + Gozo + Sicily) -- 6
+ * destinations researched (Etna/Taormina/Syracuse/Agrigento/Valletta already had notes from
+ * earlier batches). Same generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateSicilyMaltaClusterDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_SICILY_MALTA_CLUSTER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_SICILY_MALTA_CLUSTER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Catania': "Sicily's second city, rebuilt in black lava-stone Baroque after the 1693 earthquake; visit La Pescheria fish market early morning and use it as your Etna base.",
+    'Modica': 'A Baroque hill town famous for cold-processed "Aztec-method" chocolate that stays grainy rather than glossy; taste it at Antica Dolceria Bonajuto (Italy\'s oldest chocolate shop, since 1880) and see the San Giorgio staircase church.',
+    'Ragusa': "Split between modern Ragusa Superiore and the Baroque old town Ragusa Ibla below it (Montalbano filming locations, Duomo di San Giorgio); park up top and walk down, allow 2-3 hours, best light at sunset from the Belvedere.",
+    'Palermo (optional)': "Norman-Arab UNESCO architecture (Palatine Chapel) plus the Ballaro/Vucciria street markets for arancine and panelle; go hungry in the late afternoon/evening when Vucciria turns into an open-air food scene.",
+    'Three Cities': "Vittoriosa/Birgu, Senglea and Cospicua — the Knights' original fortified capital across the harbour from Valletta, far quieter than Valletta itself; cross by the traditional dgħajsa water-taxi instead of driving.",
+    'Marsaxlokk': "Malta's fishing village with colorful luzzu boats and a Sunday fish/produce market; go early (before 9am) to beat the tour-bus crowds.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 60 (2026-09-18) -- Corsica cluster (Corsica Roadtrip: Full Island Loop, Corsica + South
+ * of France) -- 9 destinations researched (Bonifacio/bare Ajaccio already had notes). Same
+ * generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateCorsicaClusterDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_CORSICA_CLUSTER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_CORSICA_CLUSTER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Calvi': "A Genoese citadel on a headland above a sandy bay and marina; walk the citadel ramparts at sunset for the best view over the gulf.",
+    'Cap Corse / Nonza': "Corsica's wild northern peninsula, watchtowers, and Nonza's black-pebble beach (tailings from an old asbestos mine) far below the cliffside village; view the beach from Nonza's Genoese tower rather than climbing all the way down.",
+    'Saint-Florent / Désert des Agriates': "A chic port town beside a scrubland coastal reserve hiding Corsica's best beach, Saleccia; take the summer boat shuttle from Saint-Florent instead of the rough unpaved track.",
+    'Bastia': "Corsica's main ferry port and second city, with an old harbour (Vieux Port) and citadel; linger over dinner at the Vieux Port, it's less touristy than Ajaccio's.",
+    'Corte': "The historic mountain capital with a citadel on a rock outcrop, gateway to the Restonica gorge; drive up the narrow Restonica valley road early in the day (parking fills fast in summer) for swimming holes.",
+    'East coast (Aléria)': "A modest Greek/Roman archaeological site and Fort de Matra museum on Corsica's flat eastern coast; a quick 45-60 minute stop is enough, don't expect mainland-scale ruins.",
+    'Porto-Vecchio / Col de Bavella': "A southern port town near the jagged Bavella needle peaks; drive the Col de Bavella road and stop at the pass for a short walk right up to the aiguilles.",
+    'Ajaccio / Golfe de Valinco': "Napoleon's birthplace (Maison Bonaparte) and a scenic gulf to the south around Propriano; skip Ajaccio's town beaches for the quieter ones around the Golfe de Valinco.",
+    'Piana calanques / Scandola': "Red granite cliff formations along the D81 and Corsica's roadless marine reserve; since Scandola has no land access, book a boat trip from Porto or Cargèse, and drive the calanques road at golden hour for the red rock light.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 61 (2026-09-18) -- Côte d'Azur cluster (the mainland leg of Corsica + South of France)
+ * -- 4 destinations researched. Same generic name-matching migration pattern as the other
+ * batches.
+ */
+function rbMigrateCoteDazurClusterDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_COTE_DAZUR_CLUSTER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_COTE_DAZUR_CLUSTER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Nice': "The Riviera's main city — Promenade des Anglais, Vieux Nice, and the Colline du Château viewpoint; hit the Cours Saleya market in the old town in the morning before it closes.",
+    'Antibes': "A walled old town (Vieil Antibes) beside Port Vauban, Europe's biggest yacht/superyacht harbour; walk the seafront rampart path and browse the Marché Provençal.",
+    'Cannes': "La Croisette promenade and the Palais des Festivals; avoid during the film festival (mid-May) unless that's the point, otherwise a sunset walk on La Croisette is the move.",
+    'Marseille (optional)': "France's second city and Provence's biggest port, centered on the Vieux-Port and the Le Panier district; cross the Vieux-Port on the small pedestrian ferry rather than walking around it, and add MuCEM.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 62 (2026-09-18) -- Andorra + Spanish Pyrenees: Grand Circuit -- 10 destinations, a solo
+ * route researched in a single pass. Same generic name-matching migration pattern as the other
+ * batches.
+ */
+function rbMigrateAndorraPyreneesClusterDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_ANDORRA_PYRENEES_CLUSTER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_ANDORRA_PYRENEES_CLUSTER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Andorra la Vella (Casa de la Vall)': "A 16th-century stone building that served as Andorra's parliament until 2011, now a small museum; visits are by free guided tour only with limited daily slots, so book/reserve ahead rather than just showing up.",
+    'Ordino': "A quieter mountain village of stone houses (Areny-Plandolit manor house museum) — a calmer alternative base to Andorra la Vella's shopping strip.",
+    'Vall del Madriu-Perafita-Claror (hike)': "Andorra's only UNESCO site, a roadless glacial valley with centuries-old shepherd huts (bordes); no permit needed, but it's on foot only from trailheads like Ràcò or Engolasters, so allow at least half a day for a proper loop.",
+    "La Seu d'Urgell (cathedral)": "A small Catalan Pyrenees town with a 12th-century Romanesque cathedral and cloister; pair it with a walk down the arcaded medieval Carrer Major, about an hour total.",
+    'Cerdanya / Puigcerdà': "Catalonia's widest, sunniest Pyrenees plateau, centered on Puigcerdà's lake and bell tower; good lunch stop, with a lively market on Sundays.",
+    "Vielha (Val d'Aran)": "Main town of a valley with its own Aranese language and Romanesque churches; don't miss the carved Crist de Mijaran inside the church of Sant Miquèu.",
+    'Port de la Bonaigua (pass)': "A high (~2072m) scenic pass linking Val d'Aran to the Pallars valleys; the road can be snowbound outside summer, so check conditions if crossing in shoulder season.",
+    'Boí (Aigüestortes NP shuttle)': "The main western gateway to Aigüestortes NP, where private cars are restricted; go early to catch the 4x4 taxi shuttle (Vall de Boí Taxi Association) up into the park.",
+    'Espot (Aigüestortes NP shuttle)': "The eastern gateway village, also with a restricted-access 4x4 taxi shuttle, but a shorter ride in to Lake Sant Maurici than from Boí.",
+    'Ripoll': "A Catalan town built around the Santa Maria de Ripoll monastery; the elaborately carved 12th-century west portal is the real highlight, worth seeing even if you skip the interior.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -14286,8 +14419,8 @@ function rbBuildSicilyNineDaysRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 220, lat: 36.8917, lng: 15.0703,
       destinations: [
-        { name: 'Ragusa', lat: 36.9269, lng: 14.7255 },
-        { name: 'Modica', lat: 36.8467, lng: 14.7692 },
+        { name: 'Ragusa', lat: 36.9269, lng: 14.7255 , notes: 'Split between modern Ragusa Superiore and the Baroque old town Ragusa Ibla below it (Montalbano filming locations, Duomo di San Giorgio); park up top and walk down, allow 2-3 hours, best light at sunset from the Belvedere.' },
+        { name: 'Modica', lat: 36.8467, lng: 14.7692 , notes: 'A Baroque hill town famous for cold-processed "Aztec-method" chocolate that stays grainy rather than glossy; taste it at Antica Dolceria Bonajuto (Italy\'s oldest chocolate shop, since 1880) and see the San Giorgio staircase church.' },
         { name: 'Noto', lat: 36.8917, lng: 15.0703 },
       ],
       notes: 'Val di Noto — Ragusa/Modica/Noto (1-2 days).',
@@ -14946,16 +15079,16 @@ function rbBuildCorsicaFullIslandLoopRoute() {
     {
       code: 'FR', name: 'France', days: 9, budget: 1305, lat: 42.5677, lng: 8.7573,
       destinations: [
-        { name: 'Calvi', lat: 42.5677, lng: 8.7573 },
-        { name: 'Cap Corse / Nonza', lat: 42.7889, lng: 9.3417 },
-        { name: 'Saint-Florent / Désert des Agriates', lat: 42.6789, lng: 9.2989 },
-        { name: 'Bastia', lat: 42.6979, lng: 9.4508 },
-        { name: 'Corte', lat: 42.3062, lng: 9.1499 },
-        { name: 'East coast (Aléria)', lat: 42.1058, lng: 9.5108 },
-        { name: 'Porto-Vecchio / Col de Bavella', lat: 41.5910, lng: 9.2795 },
+        { name: 'Calvi', lat: 42.5677, lng: 8.7573 , notes: 'A Genoese citadel on a headland above a sandy bay and marina; walk the citadel ramparts at sunset for the best view over the gulf.' },
+        { name: 'Cap Corse / Nonza', lat: 42.7889, lng: 9.3417 , notes: 'Corsica\'s wild northern peninsula, watchtowers, and Nonza\'s black-pebble beach (tailings from an old asbestos mine) far below the cliffside village; view the beach from Nonza\'s Genoese tower rather than climbing all the way down.' },
+        { name: 'Saint-Florent / Désert des Agriates', lat: 42.6789, lng: 9.2989 , notes: 'A chic port town beside a scrubland coastal reserve hiding Corsica\'s best beach, Saleccia; take the summer boat shuttle from Saint-Florent instead of the rough unpaved track.' },
+        { name: 'Bastia', lat: 42.6979, lng: 9.4508 , notes: 'Corsica\'s main ferry port and second city, with an old harbour (Vieux Port) and citadel; linger over dinner at the Vieux Port, it\'s less touristy than Ajaccio\'s.' },
+        { name: 'Corte', lat: 42.3062, lng: 9.1499 , notes: 'The historic mountain capital with a citadel on a rock outcrop, gateway to the Restonica gorge; drive up the narrow Restonica valley road early in the day (parking fills fast in summer) for swimming holes.' },
+        { name: 'East coast (Aléria)', lat: 42.1058, lng: 9.5108 , notes: 'A modest Greek/Roman archaeological site and Fort de Matra museum on Corsica\'s flat eastern coast; a quick 45-60 minute stop is enough, don\'t expect mainland-scale ruins.' },
+        { name: 'Porto-Vecchio / Col de Bavella', lat: 41.5910, lng: 9.2795 , notes: 'A southern port town near the jagged Bavella needle peaks; drive the Col de Bavella road and stop at the pass for a short walk right up to the aiguilles.' },
         { name: 'Bonifacio', lat: 41.3870, lng: 9.1595 },
-        { name: 'Ajaccio / Golfe de Valinco', lat: 41.9192, lng: 8.7386 },
-        { name: 'Piana calanques / Scandola', lat: 42.2405, lng: 8.6339 },
+        { name: 'Ajaccio / Golfe de Valinco', lat: 41.9192, lng: 8.7386 , notes: 'Napoleon\'s birthplace (Maison Bonaparte) and a scenic gulf to the south around Propriano; skip Ajaccio\'s town beaches for the quieter ones around the Golfe de Valinco.' },
+        { name: 'Piana calanques / Scandola', lat: 42.2405, lng: 8.6339 , notes: 'Red granite cliff formations along the D81 and Corsica\'s roadless marine reserve; since Scandola has no land access, book a boat trip from Porto or Cargèse, and drive the calanques road at golden hour for the red rock light.' },
       ],
       notes: "Explicitly the full island loop, not just the shorter southern trip extended: Calvi → Cap Corse/Saint-Florent/Désert des Agriates → Bastia → Corte (interior, mountains) → east coast → Porto-Vecchio/Bavella → Bonifacio → Ajaccio/the Golfe → Piana calanques/Scandola → back to Calvi/Bastia. Covers the north (Cap Corse), the interior (Corte) and the south (Bonifacio) — regions the shorter trip skips. Open-jaw Bastia in/Ajaccio out (or the reverse) avoids backtracking. Rental car required throughout. Budget ~€140-150/day (slightly higher from more driving/fuel). Season: same as the shorter trip, the shoulder season matters even more here given the longer duration and more time on busy coastal roads in August.",
       transport_to_next: 'End of this route — open-jaw flight home from Bastia or Calvi (arriving into the other), no direct flight from the Netherlands.',
@@ -14974,10 +15107,10 @@ function rbBuildCorsicaSouthOfFranceNineDaysRoute() {
     {
       code: 'FR', name: 'France', days: 3, budget: 465, lat: 43.7102, lng: 7.2620,
       destinations: [
-        { name: 'Nice', lat: 43.7102, lng: 7.2620 },
-        { name: 'Antibes', lat: 43.5808, lng: 7.1239 },
-        { name: 'Cannes', lat: 43.5528, lng: 7.0174 },
-        { name: 'Marseille (optional)', lat: 43.2965, lng: 5.3698 },
+        { name: 'Nice', lat: 43.7102, lng: 7.2620 , notes: 'The Riviera\'s main city — Promenade des Anglais, Vieux Nice, and the Colline du Château viewpoint; hit the Cours Saleya market in the old town in the morning before it closes.' },
+        { name: 'Antibes', lat: 43.5808, lng: 7.1239 , notes: 'A walled old town (Vieil Antibes) beside Port Vauban, Europe\'s biggest yacht/superyacht harbour; walk the seafront rampart path and browse the Marché Provençal.' },
+        { name: 'Cannes', lat: 43.5528, lng: 7.0174 , notes: 'La Croisette promenade and the Palais des Festivals; avoid during the film festival (mid-May) unless that\'s the point, otherwise a sunset walk on La Croisette is the move.' },
+        { name: 'Marseille (optional)', lat: 43.2965, lng: 5.3698 , notes: 'France\'s second city and Provence\'s biggest port, centered on the Vieux-Port and the Le Panier district; cross the Vieux-Port on the small pedestrian ferry rather than walking around it, and add MuCEM.' },
       ],
       notes: "Entry: direct flight to Nice (from Amsterdam/Eindhoven). Days on the Côte d'Azur/Provence coast (Nice, Antibes, Cannes, optionally Marseille) before the ferry to Corsica. Budget ~€150-160/day for this mainland leg.",
       transport_to_next: 'Overnight ferry from Nice (Corsica Ferries) or Toulon/Marseille (Corsica Linea/La Méridionale) to Corsica — Nice is the fastest mainland ferry port (~8-10h, often overnight) and pairs best with Côte d\'Azur time; Marseille takes longer (~11-14h).',
@@ -14985,10 +15118,10 @@ function rbBuildCorsicaSouthOfFranceNineDaysRoute() {
     {
       code: 'FR', name: 'France', days: 6, budget: 840, lat: 42.6979, lng: 9.4508,
       destinations: [
-        { name: 'Bastia', lat: 42.6979, lng: 9.4508 },
-        { name: 'Calvi', lat: 42.5677, lng: 8.7573 },
-        { name: 'Corte', lat: 42.3062, lng: 9.1499 },
-        { name: 'Porto-Vecchio / Col de Bavella', lat: 41.5910, lng: 9.2795 },
+        { name: 'Bastia', lat: 42.6979, lng: 9.4508 , notes: 'Corsica\'s main ferry port and second city, with an old harbour (Vieux Port) and citadel; linger over dinner at the Vieux Port, it\'s less touristy than Ajaccio\'s.' },
+        { name: 'Calvi', lat: 42.5677, lng: 8.7573 , notes: 'A Genoese citadel on a headland above a sandy bay and marina; walk the citadel ramparts at sunset for the best view over the gulf.' },
+        { name: 'Corte', lat: 42.3062, lng: 9.1499 , notes: 'The historic mountain capital with a citadel on a rock outcrop, gateway to the Restonica gorge; drive up the narrow Restonica valley road early in the day (parking fills fast in summer) for swimming holes.' },
+        { name: 'Porto-Vecchio / Col de Bavella', lat: 41.5910, lng: 9.2795 , notes: 'A southern port town near the jagged Bavella needle peaks; drive the Col de Bavella road and stop at the pass for a short walk right up to the aiguilles.' },
         { name: 'Bonifacio', lat: 41.3870, lng: 9.1595 },
         { name: 'Ajaccio', lat: 41.9192, lng: 8.7386 },
       ],
@@ -15039,8 +15172,8 @@ function rbBuildCorsicaSardiniaFullLoopRoute() {
       code: 'FR', name: 'France', days: 6, budget: 750, lat: 42.6979, lng: 9.4508,
       destinations: [
         { name: 'Bastia or Calvi (entry)', lat: 42.6979, lng: 9.4508 },
-        { name: 'Corte', lat: 42.3062, lng: 9.1499 },
-        { name: 'Porto-Vecchio / Col de Bavella', lat: 41.5910, lng: 9.2795 },
+        { name: 'Corte', lat: 42.3062, lng: 9.1499 , notes: 'The historic mountain capital with a citadel on a rock outcrop, gateway to the Restonica gorge; drive up the narrow Restonica valley road early in the day (parking fills fast in summer) for swimming holes.' },
+        { name: 'Porto-Vecchio / Col de Bavella', lat: 41.5910, lng: 9.2795 , notes: 'A southern port town near the jagged Bavella needle peaks; drive the Col de Bavella road and stop at the pass for a short walk right up to the aiguilles.' },
         { name: 'Bonifacio', lat: 41.3870, lng: 9.1595 },
       ],
       notes: "Not a slower version of the same loop — deliberately covers more of both islands. A full Corsica loop first (as in Corsica Roadtrip: Full Island Loop (9 days) 🚙 above), flying in via Bastia or Calvi (northern Corsica) and driving south to Bonifacio. Budget ~€120-130/day averaged across both islands.",
@@ -15203,7 +15336,7 @@ function rbBuildMaltaFourDaysRoute() {
       destinations: [
         { name: 'Valletta & the Three Cities (Vittoriosa/Senglea/Cospicua)', lat: 35.8989, lng: 14.5146 },
         { name: 'Mdina / Rabat', lat: 35.8869, lng: 14.4033 },
-        { name: 'Marsaxlokk', lat: 35.8419, lng: 14.5453 },
+        { name: 'Marsaxlokk', lat: 35.8419, lng: 14.5453 , notes: 'Malta\'s fishing village with colorful luzzu boats and a Sunday fish/produce market; go early (before 9am) to beat the tour-bus crowds.' },
         { name: 'Hagar Qim / Mnajdra temples', lat: 35.8256, lng: 14.4408 },
         { name: 'Blue Grotto', lat: 35.8236, lng: 14.4536 },
       ],
@@ -15227,7 +15360,7 @@ function rbBuildMaltaGozoRoute() {
         { name: 'Valletta', lat: 35.8989, lng: 14.5146 },
         { name: 'Mdina', lat: 35.8869, lng: 14.4033 },
         { name: 'Southern coast temples (Hagar Qim)', lat: 35.8256, lng: 14.4408 },
-        { name: 'Marsaxlokk', lat: 35.8419, lng: 14.5453 },
+        { name: 'Marsaxlokk', lat: 35.8419, lng: 14.5453 , notes: 'Malta\'s fishing village with colorful luzzu boats and a Sunday fish/produce market; go early (before 9am) to beat the tour-bus crowds.' },
         { name: 'Cittadella, Victoria (Gozo)', lat: 36.0448, lng: 14.2400 },
         { name: 'Ramla Bay (Gozo)', lat: 36.0672, lng: 14.2789 },
         { name: 'Dwejra / former Azure Window site (Gozo)', lat: 36.0578, lng: 14.1917 },
@@ -15250,14 +15383,14 @@ function rbBuildSicilyMaltaRoute() {
     {
       code: 'IT', name: 'Italy', days: 7, budget: 1050, lat: 37.5079, lng: 15.0830,
       destinations: [
-        { name: 'Catania', lat: 37.5079, lng: 15.0830 },
+        { name: 'Catania', lat: 37.5079, lng: 15.0830 , notes: 'Sicily\'s second city, rebuilt in black lava-stone Baroque after the 1693 earthquake; visit La Pescheria fish market early morning and use it as your Etna base.' },
         { name: 'Mount Etna', lat: 37.7510, lng: 14.9934, notes: "Europe's largest active volcano, with a stark landscape of lava fields, craters, and smaller volcanic cones on the lower slopes that don't require a guide (unlike the summit crater zone). The lower slopes also host Etna DOC vineyards growing in volcanic soil, with wineries open for tastings — worth an afternoon if not doing a full summit excursion." },
         { name: 'Taormina', lat: 37.8527, lng: 15.2853 },
         { name: 'Syracuse / Ortigia', lat: 37.0587, lng: 15.2874, notes: "Ortigia's small old-town island packs in the Baroque Piazza Duomo — built around the Greek Temple of Athena's columns, still visible embedded in the cathedral's walls — and a lively daily fish/produce market near Via Trento. On the mainland side, the Neapolis Archaeological Park's Greek theater and the \"Ear of Dionysius\" limestone cave are the must-sees; go early morning to beat heat and cruise-ship crowds." },
-        { name: 'Modica', lat: 36.8477, lng: 14.7546 },
-        { name: 'Ragusa', lat: 36.9256, lng: 14.7297 },
+        { name: 'Modica', lat: 36.8477, lng: 14.7546 , notes: 'A Baroque hill town famous for cold-processed "Aztec-method" chocolate that stays grainy rather than glossy; taste it at Antica Dolceria Bonajuto (Italy\'s oldest chocolate shop, since 1880) and see the San Giorgio staircase church.' },
+        { name: 'Ragusa', lat: 36.9256, lng: 14.7297 , notes: 'Split between modern Ragusa Superiore and the Baroque old town Ragusa Ibla below it (Montalbano filming locations, Duomo di San Giorgio); park up top and walk down, allow 2-3 hours, best light at sunset from the Belvedere.' },
         { name: 'Agrigento (Valle dei Templi)', lat: 37.2903, lng: 13.5865 },
-        { name: 'Palermo (optional)', lat: 38.1157, lng: 13.3613 },
+        { name: 'Palermo (optional)', lat: 38.1157, lng: 13.3613 , notes: 'Norman-Arab UNESCO architecture (Palatine Chapel) plus the Ballaro/Vucciria street markets for arancine and panelle; go hungry in the late afternoon/evening when Vucciria turns into an open-air food scene.' },
       ],
       notes: "Sicily-heavy, deliberately no Gozo (see Malta + Gozo + Sicily (9 days) 🐚 below for that distinction): Catania → Etna → Taormina → Syracuse/Ortigia → Val di Noto (Modica, Ragusa) → Agrigento (Valle dei Templi) → optionally Palermo → crossing to Malta. Rental car needed to get between Sicily's smaller towns. Budget ~€150/day (rental car and fuel included). Season: April-June or September-early November for Sicily (July-August hot/busy/expensive); overlaps well with Malta's own good season.",
       transport_to_next: 'Direct Ryanair flight Malta-Catania (~50 min, from ~€18-35, up to 18x/week) — much simpler than the ferry (Virtu Ferries Pozzallo-Valletta, ~1h45, year-round, up to 3x/day, €37-111, as an alternative).',
@@ -15266,8 +15399,8 @@ function rbBuildSicilyMaltaRoute() {
       code: 'MT', name: 'Malta', days: 2, budget: 210, lat: 35.8989, lng: 14.5146,
       destinations: [
         { name: 'Valletta', lat: 35.8989, lng: 14.5146 },
-        { name: 'Three Cities', lat: 35.8886, lng: 14.5228 },
-        { name: 'Marsaxlokk', lat: 35.8419, lng: 14.5453 },
+        { name: 'Three Cities', lat: 35.8886, lng: 14.5228 , notes: 'Vittoriosa/Birgu, Senglea and Cospicua — the Knights\' original fortified capital across the harbour from Valletta, far quieter than Valletta itself; cross by the traditional dgħajsa water-taxi instead of driving.' },
+        { name: 'Marsaxlokk', lat: 35.8419, lng: 14.5453 , notes: 'Malta\'s fishing village with colorful luzzu boats and a Sunday fish/produce market; go early (before 9am) to beat the tour-bus crowds.' },
       ],
       notes: '2-3 days on Malta: Valletta, the Three Cities, the southern coast temples, Marsaxlokk. Budget ~€100-110/day.',
       transport_to_next: 'End of this route — direct flight home from Malta.',
@@ -15286,7 +15419,7 @@ function rbBuildMaltaGozoSicilyRoute() {
     {
       code: 'IT', name: 'Italy', days: 5, budget: 750, lat: 37.5079, lng: 15.0830,
       destinations: [
-        { name: 'Catania', lat: 37.5079, lng: 15.0830 },
+        { name: 'Catania', lat: 37.5079, lng: 15.0830 , notes: 'Sicily\'s second city, rebuilt in black lava-stone Baroque after the 1693 earthquake; visit La Pescheria fish market early morning and use it as your Etna base.' },
         { name: 'Mount Etna', lat: 37.7510, lng: 14.9934, notes: "Europe's largest active volcano, with a stark landscape of lava fields, craters, and smaller volcanic cones on the lower slopes that don't require a guide (unlike the summit crater zone). The lower slopes also host Etna DOC vineyards growing in volcanic soil, with wineries open for tastings — worth an afternoon if not doing a full summit excursion." },
         { name: 'Taormina', lat: 37.8527, lng: 15.2853 },
         { name: 'Syracuse / Ortigia', lat: 37.0587, lng: 15.2874, notes: "Ortigia's small old-town island packs in the Baroque Piazza Duomo — built around the Greek Temple of Athena's columns, still visible embedded in the cathedral's walls — and a lively daily fish/produce market near Via Trento. On the mainland side, the Neapolis Archaeological Park's Greek theater and the \"Ear of Dionysius\" limestone cave are the must-sees; go early morning to beat heat and cruise-ship crowds." },
@@ -15298,7 +15431,7 @@ function rbBuildMaltaGozoSicilyRoute() {
       code: 'MT', name: 'Malta', days: 4, budget: 420, lat: 35.8989, lng: 14.5146,
       destinations: [
         { name: 'Valletta', lat: 35.8989, lng: 14.5146 },
-        { name: 'Three Cities', lat: 35.8886, lng: 14.5228 },
+        { name: 'Three Cities', lat: 35.8886, lng: 14.5228 , notes: 'Vittoriosa/Birgu, Senglea and Cospicua — the Knights\' original fortified capital across the harbour from Valletta, far quieter than Valletta itself; cross by the traditional dgħajsa water-taxi instead of driving.' },
         { name: 'Cittadella, Victoria (Gozo)', lat: 36.0448, lng: 14.2400 },
         { name: 'Ramla Bay (Gozo)', lat: 36.0672, lng: 14.2789 },
       ],
@@ -15539,7 +15672,7 @@ function rbBuildCataloniaPyreneesRoute() {
         { name: 'Costa Brava (Tossa de Mar)', lat: 41.7196, lng: 2.9319 },
         { name: 'Ribes de Freser (Cremallera departure)', lat: 42.3011, lng: 2.1697 },
         { name: 'Vall de Núria', lat: 42.3986, lng: 2.1614 },
-        { name: 'Cerdanya / Puigcerdà', lat: 42.4331, lng: 1.9284 },
+        { name: 'Cerdanya / Puigcerdà', lat: 42.4331, lng: 1.9284 , notes: 'Catalonia\'s widest, sunniest Pyrenees plateau, centered on Puigcerdà\'s lake and bell tower; good lunch stop, with a lively market on Sundays.' },
         { name: 'Aigüestortes i Estany de Sant Maurici NP (optional)', lat: 42.5745, lng: 0.9505 },
         { name: 'La Garrotxa Volcanic Zone', lat: 42.1364, lng: 2.5647 },
       ],
@@ -15747,7 +15880,7 @@ function rbBuildAndorraRoute() {
     {
       code: 'AD', name: 'Andorra', days: 4, budget: 480, lat: 42.5063, lng: 1.5218,
       destinations: [
-        { name: 'Andorra la Vella (Casa de la Vall)', lat: 42.5063, lng: 1.5218 },
+        { name: 'Andorra la Vella (Casa de la Vall)', lat: 42.5063, lng: 1.5218 , notes: 'A 16th-century stone building that served as Andorra\'s parliament until 2011, now a small museum; visits are by free guided tour only with limited daily slots, so book/reserve ahead rather than just showing up.' },
         { name: 'Escaldes-Engordany (Caldea spa)', lat: 42.5106, lng: 1.5394 },
         { name: "Ordino (Museu Casa d'Areny-Plandolit)", lat: 42.5551, lng: 1.5332 },
         { name: 'Canillo (Roc del Quer viewpoint)', lat: 42.5691, lng: 1.5975 },
@@ -15771,8 +15904,8 @@ function rbBuildAndorraFrenchPyreneesAriegeRoute() {
     {
       code: 'AD', name: 'Andorra', days: 3, budget: 375, lat: 42.5063, lng: 1.5218,
       destinations: [
-        { name: 'Andorra la Vella (Casa de la Vall)', lat: 42.5063, lng: 1.5218 },
-        { name: 'Ordino', lat: 42.5551, lng: 1.5332 },
+        { name: 'Andorra la Vella (Casa de la Vall)', lat: 42.5063, lng: 1.5218 , notes: 'A 16th-century stone building that served as Andorra\'s parliament until 2011, now a small museum; visits are by free guided tour only with limited daily slots, so book/reserve ahead rather than just showing up.' },
+        { name: 'Ordino', lat: 42.5551, lng: 1.5332 , notes: 'A quieter mountain village of stone houses (Areny-Plandolit manor house museum) — a calmer alternative base to Andorra la Vella\'s shopping strip.' },
         { name: 'Pas de la Casa', lat: 42.5427, lng: 1.7339 },
       ],
       notes: "Andorra la Vella and Ordino, then east via Pas de la Casa toward the French border. Entry options: fly AMS-Barcelona or AMS-Girona and drive in (see the standalone Andorra (4 days) route for the details), or fly KLM's direct AMS-Toulouse route, rent a car there and drive the whole loop without touching Spain at all. A rental car is essential either way. Budget ~€120-125/day for these Andorra-town days (no hostel scene here).",
@@ -20716,7 +20849,7 @@ function rbBuildSicilyEastRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 120, lat: 37.5079, lng: 15.0830,
       destinations: [
-        { name: 'Catania', lat: 37.5079, lng: 15.0830 },
+        { name: 'Catania', lat: 37.5079, lng: 15.0830 , notes: 'Sicily\'s second city, rebuilt in black lava-stone Baroque after the 1693 earthquake; visit La Pescheria fish market early morning and use it as your Etna base.' },
       ],
       notes: "Entry: direct flight Amsterdam-Catania (Transavia/Ryanair/KLM, ~2h50-3h20, well served). Catania itself (2 days) as the base for this east-coast-only loop. Budget ~€55-70/day average across the route (used here at ~€60/day). Season: April-June or September-October; high summer is very hot.",
       transport_to_next: 'Short drive up the coast to Taormina, with Etna inland.',
@@ -22294,9 +22427,9 @@ function rbBuildAndorraSpanishPyreneesCircuitRoute() {
     {
       code: 'AD', name: 'Andorra', days: 3, budget: 375, lat: 42.5063, lng: 1.5218,
       destinations: [
-        { name: 'Andorra la Vella (Casa de la Vall)', lat: 42.5063, lng: 1.5218 },
-        { name: 'Ordino', lat: 42.5551, lng: 1.5332 },
-        { name: 'Vall del Madriu-Perafita-Claror (hike)', lat: 42.4926, lng: 1.5665 },
+        { name: 'Andorra la Vella (Casa de la Vall)', lat: 42.5063, lng: 1.5218 , notes: 'A 16th-century stone building that served as Andorra\'s parliament until 2011, now a small museum; visits are by free guided tour only with limited daily slots, so book/reserve ahead rather than just showing up.' },
+        { name: 'Ordino', lat: 42.5551, lng: 1.5332 , notes: 'A quieter mountain village of stone houses (Areny-Plandolit manor house museum) — a calmer alternative base to Andorra la Vella\'s shopping strip.' },
+        { name: 'Vall del Madriu-Perafita-Claror (hike)', lat: 42.4926, lng: 1.5665 , notes: 'Andorra\'s only UNESCO site, a roadless glacial valley with centuries-old shepherd huts (bordes); no permit needed, but it\'s on foot only from trailheads like Ràcò or Engolasters, so allow at least half a day for a proper loop.' },
       ],
       notes: "Andorra la Vella, Ordino, and a hike into the Vall del Madriu-Perafita-Claror (Andorra's only UNESCO World Heritage site). Entry: fly AMS-Barcelona or AMS-Girona, rental car for the whole loop — public transport is thin in these valleys. Budget ~€120-125/day. Web check (2026-08): Andorra is neither an EU nor a Schengen member, but runs a de facto open border with both France and Spain — no fixed control posts on the small mountain roads, though random/spot passport checks do happen occasionally; carry an EU ID card or passport for the whole route, not just this leg.",
       transport_to_next: "Drive to La Seu d'Urgell, Spain — a short overland hop, in practice frictionless, though technically an EU/Schengen-adjacent crossing given Andorra's status (see the webcheck note above).",
@@ -22304,13 +22437,13 @@ function rbBuildAndorraSpanishPyreneesCircuitRoute() {
     {
       code: 'ES', name: 'Spain', days: 6, budget: 540, lat: 42.6000, lng: 0.9000,
       destinations: [
-        { name: "La Seu d'Urgell (cathedral)", lat: 42.3585, lng: 1.4614 },
-        { name: 'Cerdanya / Puigcerdà', lat: 42.4331, lng: 1.9284 },
-        { name: "Vielha (Val d'Aran)", lat: 42.7027, lng: 0.7966 },
-        { name: 'Port de la Bonaigua (pass)', lat: 42.7228, lng: 0.9860 },
-        { name: 'Boí (Aigüestortes NP shuttle)', lat: 42.5200, lng: 0.8375 },
-        { name: 'Espot (Aigüestortes NP shuttle)', lat: 42.5766, lng: 0.9591 },
-        { name: 'Ripoll', lat: 42.1997, lng: 2.1904 },
+        { name: "La Seu d'Urgell (cathedral)", lat: 42.3585, lng: 1.4614 , notes: 'A small Catalan Pyrenees town with a 12th-century Romanesque cathedral and cloister; pair it with a walk down the arcaded medieval Carrer Major, about an hour total.' },
+        { name: 'Cerdanya / Puigcerdà', lat: 42.4331, lng: 1.9284 , notes: 'Catalonia\'s widest, sunniest Pyrenees plateau, centered on Puigcerdà\'s lake and bell tower; good lunch stop, with a lively market on Sundays.' },
+        { name: "Vielha (Val d'Aran)", lat: 42.7027, lng: 0.7966 , notes: 'Main town of a valley with its own Aranese language and Romanesque churches; don\'t miss the carved Crist de Mijaran inside the church of Sant Miquèu.' },
+        { name: 'Port de la Bonaigua (pass)', lat: 42.7228, lng: 0.9860 , notes: 'A high (~2072m) scenic pass linking Val d\'Aran to the Pallars valleys; the road can be snowbound outside summer, so check conditions if crossing in shoulder season.' },
+        { name: 'Boí (Aigüestortes NP shuttle)', lat: 42.5200, lng: 0.8375 , notes: 'The main western gateway to Aigüestortes NP, where private cars are restricted; go early to catch the 4x4 taxi shuttle (Vall de Boí Taxi Association) up into the park.' },
+        { name: 'Espot (Aigüestortes NP shuttle)', lat: 42.5766, lng: 0.9591 , notes: 'The eastern gateway village, also with a restricted-access 4x4 taxi shuttle, but a shorter ride in to Lake Sant Maurici than from Boí.' },
+        { name: 'Ripoll', lat: 42.1997, lng: 2.1904 , notes: 'A Catalan town built around the Santa Maria de Ripoll monastery; the elaborately carved 12th-century west portal is the real highlight, worth seeing even if you skip the interior.' },
       ],
       notes: "La Seu d'Urgell (cathedral town) — the Cerdanya/Puigcerdà valley — Vielha/Val d'Aran via the Port de la Bonaigua pass — Aigüestortes i Estany de Sant Maurici National Park (from Boí or Espot) — back via Ripoll toward Barcelona/Girona. Rental car for the whole loop. Budget ~€90/day (pulled up to a ~€100-105/day trip-wide average once combined with the pricier Andorra leg). Season: June-September — a summer-only route in practice. Web check (2026-08): Aigüestortes NP bans private vehicles inside the park — a mandatory taxi/4x4 shuttle from Boí or Espot, book ahead in July-August; the Port de la Bonaigua closes with snow roughly November-April.",
       transport_to_next: 'End of this route — drive to Barcelona or Girona for the flight home.',

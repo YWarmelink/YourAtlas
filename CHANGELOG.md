@@ -30,6 +30,23 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   already present in the existing data, no change needed to how batches insert notes or build
   their migration functions.
 
+- **Per-destination notes, batches 59-62 — Sicily+Malta/Corsica/Côte d'Azur/Andorra-Pyrenees
+  clusters (2026-09-18)** — 29 destinations across 4 sibling-route clusters, checked for
+  overlap/cascade before dispatching (per the standing practice since batches 51-54).
+  - Batch 59: Sicily + Malta cluster — Catania, Modica, Ragusa, Palermo, Three Cities,
+    Marsaxlokk (Etna/Taormina/Syracuse/Agrigento/Valletta already had notes)
+    (`rbMigrateSicilyMaltaClusterDestinationNotes()`)
+  - Batch 60: Corsica cluster (Full Island Loop + Corsica + South of France) — Calvi, Cap
+    Corse/Nonza, Saint-Florent/Désert des Agriates, Bastia, Corte, East coast (Aléria),
+    Porto-Vecchio/Col de Bavella, Ajaccio/Golfe de Valinco, Piana calanques/Scandola
+    (Bonifacio/bare Ajaccio already had notes) (`rbMigrateCorsicaClusterDestinationNotes()`)
+  - Batch 61: Côte d'Azur cluster (the mainland leg of Corsica + South of France) — Nice,
+    Antibes, Cannes, Marseille (`rbMigrateCoteDazurClusterDestinationNotes()`)
+  - Batch 62: Andorra + Spanish Pyrenees: Grand Circuit — Andorra la Vella, Ordino, Vall del
+    Madriu hike, La Seu d'Urgell, Cerdanya/Puigcerdà, Vielha, Port de la Bonaigua, Boí, Espot,
+    Ripoll (`rbMigrateAndorraPyreneesClusterDestinationNotes()`)
+  App-wide total: 2991 destination-slots filled across 358 routes. 394/741 signatures done.
+
 - **Per-destination notes, batches 55-58 — US Northeast/Southwest, Hawaii, Florida (2026-09-18)**
   — the destination-notes plan's high-leverage shared-signature routes are now exhausted; this
   round moved into four fully independent solo US routes with zero cross-route overlap (confirmed
