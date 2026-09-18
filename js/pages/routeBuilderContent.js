@@ -12628,6 +12628,77 @@ function rbMigrateMediterraneanNordicUkCluster2DestinationNotes() {
 }
 
 /**
+ * Batches 147-152 (2026-09-18) -- Mixed Europe cluster round 3 -- closes out France Roadtrip:
+ * Paris to the Côte d'Azur, Campania + Puglia, Wales, Northern Ireland, Latvia, Lithuania,
+ * Lanzarote + Fuerteventura, Sardinia Roadtrip, Rhodes (5-7 days), Crete Roadtrip, Poland +
+ * Slovakia + Hungary, and Central Europe Roadtrip entirely. 35 fresh destinations plus 7 reuse
+ * of already-written canonical notes under new name-string variants (Positano, Avignon, Nice,
+ * Rundāle Palace, Trakai Castle, Rhodes, Auschwitz-Birkenau). Same generic name-matching
+ * migration pattern as the other batches.
+ */
+function rbMigrateMixedEuropeCluster3DestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_MIXED_EUROPE_CLUSTER3_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_MIXED_EUROPE_CLUSTER3_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Paris': "France's capital anchors the trip's start — the Eiffel Tower, Louvre, Notre-Dame and Champs-Élysées are the essential first-timer sights; even a couple of days barely scratches the surface of what the city offers.",
+    'Beaune (Burgundy) — Hospices de Beaune, wine tasting': "Burgundy's wine capital, centered on the Hospices de Beaune, a former charity hospital famous for its colorful glazed-tile roof and an annual November wine auction that helps set regional prices; countless cellar-door tastings are within easy reach in the surrounding vineyard villages.",
+    "Lyon (Vieux Lyon, Presqu'île, traboules)": "France's food capital, with a well-preserved Renaissance old town (Vieux Lyon) connected by traboules — hidden passageways through buildings, originally used by silk workers to move goods away from the weather; a bouchon (traditional Lyonnais bistro) meal is the essential food stop.",
+    'Avignon (Palais des Papes)': "A walled Provençal city centered on the Palais des Papes, the largest Gothic palace in Europe, plus the half-collapsed Pont Saint-Bénézet on the Rhône; book Palais des Papes tickets online to skip the queue and get the combo ticket that includes the bridge.",
+    'Nice (Promenade des Anglais)': "The Riviera's main city — Promenade des Anglais, Vieux Nice, and the Colline du Château viewpoint; hit the Cours Saleya market in the old town in the morning before it closes.",
+    'Amalfi Coast (Positano)': "The most photographed Amalfi town, with pastel houses stacked down a ravine to Spiaggia Grande beach. Arrive by ferry from Sorrento or Amalfi rather than by car (parking is scarce/expensive and the roads jam), and go early before day-trippers arrive.",
+    'Alberobello': "A small Puglia town famous for its trulli, whitewashed conical-roofed stone huts unique to the region, densely clustered in the Rione Monti district; many now operate as shops, guesthouses or small museums rather than private homes.",
+    'Lecce / Salento': "Nicknamed the \"Florence of the South\" for its ornate Baroque architecture carved from local honey-colored limestone (pietra leccese); Salento, the surrounding peninsula, holds some of Puglia's best beaches on both its Adriatic and Ionian coasts.",
+    'Snowdon / Yr Wyddfa summit': "Wales's highest peak (renamed Yr Wyddfa in official use alongside \"Snowdon\"), reachable by several hiking routes of varying difficulty or by the Snowdon Mountain Railway; the summit visitor center and viewpoint reward with views stretching to Ireland on a clear day.",
+    'Llanberis (Snowdon Mountain Railway)': "The main village base for climbing Snowdon, and the departure point for the Snowdon Mountain Railway, a Victorian-era rack-and-pinion train that's been carrying visitors to near the summit since 1896.",
+    'Caernarfon Castle': "A massive medieval fortress built by King Edward I as a symbol of English dominance over Wales, still used for the investiture of the Prince of Wales (most recently in 1969); its polygonal towers and colored masonry banding were modeled on the walls of Constantinople.",
+    'Belfast murals (Falls Road / Shankill Road)': "Large political murals along these two adjacent but historically divided neighborhoods (Falls Road republican/nationalist, Shankill Road loyalist/unionist) document decades of the Troubles; black taxi tours with local guides are the most common way to see and understand them in context.",
+    'Sigulda': "Nicknamed \"Latvian Switzerland\" for its river gorge scenery, with a cable car crossing high over the Gauja valley and, in winter, a bobsled track built for Soviet-era Olympic training.",
+    'Turaida Castle': "A restored red-brick medieval castle above the Gauja valley; climb its main tower for the best view over the gorge and surrounding forest.",
+    'Gauja National Park': "Latvia's largest national park, a river-carved valley of sandstone cliffs, caves and dense forest around Sigulda and Cēsis; popular for hiking, biking and canoeing along the Gauja river.",
+    'Rundāle Palace': "A Baroque summer palace designed by Rastrelli (the same architect behind St. Petersburg's Winter Palace), often called the \"Versailles of Latvia\"; the French-style formal gardens behind the palace are worth the extra hour beyond the interior room tour.",
+    'Trakai Castle': "A red-brick island castle on a lake just outside Vilnius, built by the Grand Duchy of Lithuania and reachable by a short causeway walk or rented rowboat; the surrounding town is home to the Karaim, a small Turkic ethnic minority, whose traditional kibinai pastries are the local food to try.",
+    'Kaunas': "Lithuania's second city and interwar (1920s-30s) temporary capital, giving it a notable concentration of Art Deco/Bauhaus-influenced architecture from that period; its old town sits at the confluence of the Nemunas and Neris rivers.",
+    'Klaipėda (Smiltynė ferry)': "Lithuania's main port city and gateway to the Curonian Spit via a short ferry across to Smiltynė; the old town's Baltic-German half-timbered architecture reflects the city's former name, Memel, under Prussian/German rule.",
+    'Costa Teguise': "A purpose-built resort town on Lanzarote's east coast, developed in the 1970s-80s with wide beaches and a marina; quieter and more low-key than the island's larger resort strips.",
+    'El Cotillo': "A former fishing village on Fuerteventura's northwest coast, known for a series of calm, shallow lagoons (Lagos de El Cotillo) sheltered by volcanic rock — a popular swimming spot for families, in contrast to the bigger surf breaks elsewhere on the island.",
+    'Chia (south coast)': "A stretch of dune-backed white-sand beaches on Sardinia's south coast, with a lagoon behind the dunes home to flamingos; less developed than Sardinia's northern resort coast.",
+    'Barbagia (interior, Orgosolo area)': "Sardinia's mountainous, historically isolated interior, known for shepherding traditions and Orgosolo's murals — political and social commentary painted directly on building walls since the 1960s.",
+    'Olbia': "A port city on Sardinia's northeast coast, mainly the practical ferry/flight gateway to the Costa Smeralda rather than a sightseeing destination; a small old town and Romanesque church are the quick options if time allows.",
+    'La Maddalena archipelago': "A cluster of granite islands off Sardinia's northern tip, protected as a national park; boat tours from Palau or La Maddalena town visit the archipelago's turquoise coves, including the pink-sand Budelli beach (now off-limits to swimmers to protect it).",
+    'Rhodes Old Town': "A UNESCO-listed medieval old town built by the Knights of Rhodes, with the Street of the Knights running through its core; wander the walls and moat at their quietest in early morning or evening.",
+    'Palace of the Grand Master': "The fortified former headquarters of the Knights of Rhodes' Grand Master, largely rebuilt by the Italians in the 1930s over the medieval ruins; the mosaic-floored halls and small archaeology collection inside are the main draw beyond the imposing exterior.",
+    'Lindos': "A whitewashed hillside village on Rhodes's east coast, with a beach below and a steep climb (or donkey ride) up to the acropolis above; one of the island's most-visited spots outside Rhodes Town itself.",
+    'Acropolis of Lindos': "A fortified hilltop combining ancient Greek temple ruins (a Temple of Athena) with a medieval Knights of Rhodes castle built directly on top of it; the climb rewards with sweeping views over Lindos village and the coast below.",
+    'Prasonisi (windsurfing point)': "Rhodes's southern tip, where a narrow sandy strip connects to a small islet and two seas meet — the calmer Aegean side and the choppier, windier Mediterranean side — making it one of the best windsurfing/kitesurfing spots in the Mediterranean.",
+    'Chania Old Town': "Crete's most atmospheric old town, layered with Venetian and Ottoman-era architecture; the narrow lanes behind the harbor hold most of the best tavernas and shops.",
+    'Chania Venetian Harbour': "A curved 14th-century harbor lined with pastel buildings, anchored by an Egyptian-built lighthouse at its mouth; especially photogenic at sunset when the harbor lights come on.",
+    'Rethymno Old Town': "A well-preserved old town blending Venetian and Ottoman architecture, with a fortified hilltop Fortezza overlooking both the town and the sea; quieter and less crowded than Chania's old town.",
+    'Matala': "A small beach village on Crete's south coast, known for ancient carved caves in the cliffs above the beach that sheltered a hippie community in the 1960s-70s (Joni Mitchell wrote a song about it); the caves are now a protected, ticketed archaeological site.",
+    'Plakias': "A relaxed south-coast beach town below the Lefka Ori (White Mountains), used as a base for the E4 European long-distance hiking trail and as an endpoint for several Samaria Gorge-adjacent gorge hikes.",
+    'Tatra National Park': "A shared Polish-Slovak mountain range and national park (split into separate parks on each side of the border), with the highest peaks in the Carpathians; hiking trails on both sides connect to form some of Central Europe's most dramatic alpine scenery.",
+    'Poprad / Tatranská Lomnica (Slovak High Tatras)': "Poprad is the main gateway town to the Slovak side of the High Tatras; Tatranská Lomnica nearby has a cable car climbing to Lomnický štít, the second-highest peak in the range, for high-altitude views without a full mountaineering ascent.",
+    'Brandenburg Gate': "Berlin's most iconic monument, an 18th-century neoclassical gate that stood right on the Cold War border and became a symbol of German reunification after the Wall fell in 1989; the Quadriga sculpture on top depicts the goddess of victory.",
+    'Museum Island': "A UNESCO-listed cluster of five major museums on an island in the Spree river, including the Pergamon Museum (ancient Near Eastern monumental architecture) and the Neues Museum (home to the bust of Nefertiti); realistically pick 1-2 museums rather than trying to see all five in one visit.",
+    'Berlin Wall Memorial': "A preserved stretch of the Berlin Wall along Bernauer Straße, including the death strip, a watchtower, and documentation center explaining the Wall's history and the escape attempts across it; more historically substantial than the shorter East Side Gallery mural section elsewhere in the city.",
+    'Auschwitz-Birkenau (day trip)': "The largest Nazi concentration and extermination camp, preserved as a memorial and museum; entry is free but requires a booked timed-entry slot (often with a mandatory guided tour in peak season) — book well in advance, and allow at least 3-4 hours to see both the Auschwitz I and Birkenau sites.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Two of batch 2's standalone routes were flagged as too exposed to their long-haul flight time
  * relative to trip length — Jordanië (8d, connecting flight) and Nieuw-Zeeland Zuidereiland (21d,
  * but 27-38h with multiple stops). Adds +2 days to each as a recovery/margin buffer, matching the
@@ -16164,7 +16235,7 @@ function rbBuildFranceRoadtripParisCoteAzurRoute() {
     {
       code: 'FR', name: 'France', days: 3, budget: 270, lat: 48.8566, lng: 2.3522,
       destinations: [
-        { name: 'Paris', lat: 48.8566, lng: 2.3522 },
+        { name: 'Paris', lat: 48.8566, lng: 2.3522 , notes: 'France\'s capital anchors the trip\'s start — the Eiffel Tower, Louvre, Notre-Dame and Champs-Élysées are the essential first-timer sights; even a couple of days barely scratches the surface of what the city offers.' },
       ],
       notes: "Paris, compressed to 3 days here — same highlights as the standalone Paris (4 days) 🗼 route above (Île de la Cité/Le Marais, Louvre, Eiffel Tower/Trocadéro, Montmartre). Budget ~€80-100/day.",
       transport_to_next: 'Drive to Beaune, Burgundy (~3h).',
@@ -16172,7 +16243,7 @@ function rbBuildFranceRoadtripParisCoteAzurRoute() {
     {
       code: 'FR', name: 'France', days: 2, budget: 180, lat: 47.0244, lng: 4.8397,
       destinations: [
-        { name: 'Beaune (Burgundy) — Hospices de Beaune, wine tasting', lat: 47.0244, lng: 4.8397 },
+        { name: 'Beaune (Burgundy) — Hospices de Beaune, wine tasting', lat: 47.0244, lng: 4.8397 , notes: 'Burgundy\'s wine capital, centered on the Hospices de Beaune, a former charity hospital famous for its colorful glazed-tile roof and an annual November wine auction that helps set regional prices; countless cellar-door tastings are within easy reach in the surrounding vineyard villages.' },
       ],
       notes: "Beaune, the wine capital of Burgundy — Hospices de Beaune and cellar tastings. Budget ~€80-100/day.",
       transport_to_next: 'Drive to Lyon (~1h30).',
@@ -16180,7 +16251,7 @@ function rbBuildFranceRoadtripParisCoteAzurRoute() {
     {
       code: 'FR', name: 'France', days: 2, budget: 180, lat: 45.764, lng: 4.8357,
       destinations: [
-        { name: 'Lyon (Vieux Lyon, Presqu\'île, traboules)', lat: 45.7640, lng: 4.8357 },
+        { name: 'Lyon (Vieux Lyon, Presqu\'île, traboules)', lat: 45.7640, lng: 4.8357 , notes: 'France\'s food capital, with a well-preserved Renaissance old town (Vieux Lyon) connected by traboules — hidden passageways through buildings, originally used by silk workers to move goods away from the weather; a bouchon (traditional Lyonnais bistro) meal is the essential food stop.' },
       ],
       notes: "Lyon — Vieux Lyon, the Presqu'île, and the traboules (hidden passageways). Budget ~€80-100/day.",
       transport_to_next: 'Drive to Avignon (~2.5h).',
@@ -16188,7 +16259,7 @@ function rbBuildFranceRoadtripParisCoteAzurRoute() {
     {
       code: 'FR', name: 'France', days: 2, budget: 240, lat: 43.9493, lng: 4.8055,
       destinations: [
-        { name: 'Avignon (Palais des Papes)', lat: 43.9493, lng: 4.8055 },
+        { name: 'Avignon (Palais des Papes)', lat: 43.9493, lng: 4.8055 , notes: 'A walled Provençal city centered on the Palais des Papes, the largest Gothic palace in Europe, plus the half-collapsed Pont Saint-Bénézet on the Rhône; book Palais des Papes tickets online to skip the queue and get the combo ticket that includes the bridge.' },
       ],
       notes: "Avignon — the Palais des Papes. Budget ~€100-140/day at this point in the route.",
       transport_to_next: 'Drive to Nice (~2.5h).',
@@ -16196,7 +16267,7 @@ function rbBuildFranceRoadtripParisCoteAzurRoute() {
     {
       code: 'FR', name: 'France', days: 3, budget: 420, lat: 43.7102, lng: 7.262,
       destinations: [
-        { name: 'Nice (Promenade des Anglais)', lat: 43.7102, lng: 7.2620 },
+        { name: 'Nice (Promenade des Anglais)', lat: 43.7102, lng: 7.2620 , notes: 'The Riviera\'s main city — Promenade des Anglais, Vieux Nice, and the Colline du Château viewpoint; hit the Cours Saleya market in the old town in the morning before it closes.' },
       ],
       notes: "Nice and the Côte d'Azur to close the trip. Budget ~€100-140/day. ⚠️ This Paris-Nice spine is a heavy toll-road stretch (A6/A7/A8) — budget ~€150-180 one way, so a **total of ~€250-300** including the NL-Paris leg. Recommended: drop the rental car off in Nice and fly back to Amsterdam rather than driving the same stretch in reverse.",
       transport_to_next: 'End of this route — drop the rental car off in Nice and fly back to Amsterdam.',
@@ -17031,7 +17102,7 @@ function rbBuildCampaniaPugliaRoute() {
       code: 'IT', name: 'Italy', days: 3, budget: 375, lat: 40.6263, lng: 14.3757,
       destinations: [
         { name: 'Sorrento', lat: 40.6263, lng: 14.3757, notes: "Works best as a car-free base — leave the car parked and use the Circumvesuviana train or ferries to reach Capri, Positano, and Pompeii rather than driving the coast road yourself." },
-        { name: 'Amalfi Coast (Positano)', lat: 40.6280, lng: 14.4849 },
+        { name: 'Amalfi Coast (Positano)', lat: 40.6280, lng: 14.4849 , notes: 'The most photographed Amalfi town, with pastel houses stacked down a ravine to Spiaggia Grande beach. Arrive by ferry from Sorrento or Amalfi rather than by car (parking is scarce/expensive and the roads jam), and go early before day-trippers arrive.' },
       ],
       notes: 'Sorrento/Amalfi Coast (2-3 days, boat/bus — the same caution as the standalone Campania route above). Rental car picked up after the Amalfi stretch (or leave it altogether and use boat/bus just for Positano/Amalfi, as in the standalone Campania route).',
       transport_to_next: 'Drive to Matera (~2h from the Salerno/Amalfi side).',
@@ -17047,7 +17118,7 @@ function rbBuildCampaniaPugliaRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 250, lat: 40.7844, lng: 17.2378,
       destinations: [
-        { name: 'Alberobello', lat: 40.7844, lng: 17.2378 },
+        { name: 'Alberobello', lat: 40.7844, lng: 17.2378 , notes: 'A small Puglia town famous for its trulli, whitewashed conical-roofed stone huts unique to the region, densely clustered in the Rione Monti district; many now operate as shops, guesthouses or small museums rather than private homes.' },
         { name: 'Ostuni', lat: 40.7285, lng: 17.5786 , notes: 'Puglia\'s "White City," a whitewashed hilltop town with a Gothic-Romanesque cathedral at its highest point; visit in late afternoon/evening when the light on the white walls is best and the alleys are cooler.' },
       ],
       notes: "Valle d'Itria (Alberobello/Ostuni, 2 days). Season: late May-June or September (avoids both Amalfi's peak-season plate rules and Puglia's Ferragosto crowds).",
@@ -17056,7 +17127,7 @@ function rbBuildCampaniaPugliaRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 125, lat: 40.3515, lng: 18.1750,
       destinations: [
-        { name: 'Lecce / Salento', lat: 40.3515, lng: 18.1750 },
+        { name: 'Lecce / Salento', lat: 40.3515, lng: 18.1750 , notes: 'Nicknamed the "Florence of the South" for its ornate Baroque architecture carved from local honey-colored limestone (pietra leccese); Salento, the surrounding peninsula, holds some of Puglia\'s best beaches on both its Adriatic and Ionian coasts.' },
       ],
       notes: "Lecce/Salento (1-2 days) to close the trip. ⚠️ Same Pompeii and Amalfi plate/ZTL rules as the standalone Campania route apply to the first half; Matera's cave churches (Casa Grotta, Cripta del Peccato Originale) have their own smaller time-slot/guide rules — check the current 2026 requirements close to your travel date, these change more often than the rules at the major sites. Overlap note: this route heavily overlaps Campania: Naples + Amalfi Coast (6 days) 🌊 plus Puglia (6 days) 🏘️ combined — Matera is the only genuinely unique addition. Treat this as the 'highlights, less time per place' version, not something to do again after the two standalone trips.",
       transport_to_next: 'End of this route — direct return flight Bari to Amsterdam.',
@@ -17383,7 +17454,7 @@ function rbBuildCorsicaSardiniaSouthNorthRoute() {
       destinations: [
         { name: 'Santa Teresa Gallura', lat: 41.2372, lng: 9.1908 , notes: 'Northern Sardinia\'s ferry port town, the closest point to Corsica with Bonifacio visible across the strait; the short ferry crossing (~1 hour) should be booked ahead in summer, and the port sits an easy walk from Rena Bianca beach.' },
         { name: 'Palau', lat: 41.1772, lng: 9.3833 },
-        { name: 'La Maddalena archipelago', lat: 41.2167, lng: 9.4000 },
+        { name: 'La Maddalena archipelago', lat: 41.2167, lng: 9.4000 , notes: 'A cluster of granite islands off Sardinia\'s northern tip, protected as a national park; boat tours from Palau or La Maddalena town visit the archipelago\'s turquoise coves, including the pink-sand Budelli beach (now off-limits to swimmers to protect it).' },
       ],
       notes: "2-3 days of northern Sardinia: Santa Teresa Gallura, Palau, the La Maddalena archipelago. Fly home from Olbia. Budget ~€100-110/day. Season: in practice only May-October given the ferry/flight restrictions below, and specifically August-October for an easy direct flight home. ⚠️ The Bonifacio-Santa Teresa ferry (Ichnusa/Moby Lines) only runs 16 January-31 October 2026 (no winter service); direct Amsterdam/Eindhoven-Olbia flights are seasonal in 2026 (August-October only) — outside that window, fly via Rome/Milan instead, or return via Nice.",
       transport_to_next: 'End of this route — fly home from Olbia (seasonal, August-October) or via Rome/Milan outside that window.',
@@ -22292,10 +22363,10 @@ function rbBuildWalesRoute() {
     {
       code: 'GB', name: 'United Kingdom', days: 6, budget: 510, lat: 53.0685, lng: -4.0763,
       destinations: [
-        { name: 'Snowdon / Yr Wyddfa summit', lat: 53.0685, lng: -4.0763 },
-        { name: 'Llanberis (Snowdon Mountain Railway)', lat: 53.1198, lng: -4.1258 },
+        { name: 'Snowdon / Yr Wyddfa summit', lat: 53.0685, lng: -4.0763 , notes: 'Wales\'s highest peak (renamed Yr Wyddfa in official use alongside "Snowdon"), reachable by several hiking routes of varying difficulty or by the Snowdon Mountain Railway; the summit visitor center and viewpoint reward with views stretching to Ireland on a clear day.' },
+        { name: 'Llanberis (Snowdon Mountain Railway)', lat: 53.1198, lng: -4.1258 , notes: 'The main village base for climbing Snowdon, and the departure point for the Snowdon Mountain Railway, a Victorian-era rack-and-pinion train that\'s been carrying visitors to near the summit since 1896.' },
         { name: 'Conwy Castle', lat: 53.2799, lng: -3.8278, notes: "One of Edward I's \"Iron Ring\" castles and a UNESCO World Heritage Site, still with an intact town wall you can walk almost the full circuit of. Climb the castle's towers for a view over the estuary and the walled town together — better value than the castle interior alone." },
-        { name: 'Caernarfon Castle', lat: 53.1390, lng: -4.2758 },
+        { name: 'Caernarfon Castle', lat: 53.1390, lng: -4.2758 , notes: 'A massive medieval fortress built by King Edward I as a symbol of English dominance over Wales, still used for the investiture of the Prince of Wales (most recently in 1969); its polygonal towers and colored masonry banding were modeled on the walls of Constantinople.' },
         { name: 'Pembrokeshire Coast Path', lat: 51.6214, lng: -5.0246, notes: "The coastline around St Davids (Britain's smallest city) and the Blue Lagoon at Abereiddy are the highlights — a sea-kayaking or coasteering session here is the area's signature activity, not just a coastal walk." },
       ],
       notes: "Entry: fly Amsterdam-Manchester (KLM/easyJet, ±1h15), then a rental car (public transport is limited around Snowdonia). Snowdonia/Yr Wyddfa, ideally including the Snowdon Mountain Railway from Llanberis, the castles at Conwy and Caernarfon, and the Pembrokeshire coast further south. Budget ~£60-80/day (~€70-94). Season: the Snowdon Mountain Railway (diesel) runs late March-25 October 2026 and is closed in winter (ice) — May-September is the best window. Web check (2026-08): return train tickets run ~£45-62, book ahead in summer; the Holyhead-Dublin ferry (~€27, 3-3.5h, up to 8x/day) exists as a transit option onward, e.g. into the roadtrip version below. Exchange rate used: 1 GBP ≈ 1.17 EUR (August 2026).",
@@ -22316,7 +22387,7 @@ function rbBuildNorthernIrelandRoute() {
       code: 'GB', name: 'United Kingdom', days: 6, budget: 510, lat: 54.5973, lng: -5.9301,
       destinations: [
         { name: 'Belfast (Titanic Belfast)', lat: 54.6079, lng: -5.9099 , notes: 'A Titanic-themed museum built on the original Harland & Wolff shipyard slipways where the ship was constructed; allow 2-2.5 hours and book online in advance for a guaranteed time slot in summer.' },
-        { name: 'Belfast murals (Falls Road / Shankill Road)', lat: 54.5964, lng: -5.9450 },
+        { name: 'Belfast murals (Falls Road / Shankill Road)', lat: 54.5964, lng: -5.9450 , notes: 'Large political murals along these two adjacent but historically divided neighborhoods (Falls Road republican/nationalist, Shankill Road loyalist/unionist) document decades of the Troubles; black taxi tours with local guides are the most common way to see and understand them in context.' },
         { name: "Giant's Causeway", lat: 55.2408, lng: -6.5116, notes: "The columns and coastal path are free and open to the public year-round — only the visitor centre car park/exhibition charges an entry fee — so it's worth skipping the centre and walking straight down if budget-conscious." },
         { name: 'Carrick-a-Rede Rope Bridge', lat: 55.2396, lng: -6.3419 , notes: 'A rope bridge crossing to a small island with nesting seabird cliffs off the Antrim Coast; book timed tickets in advance for summer since they frequently sell out, and note the bridge can close in high wind.' },
         { name: 'Antrim Coast / Causeway Coastal Route', lat: 55.2000, lng: -6.3000 , notes: 'Northern Ireland\'s dramatic coastal drive linking sights like the Giant\'s Causeway, Dunluce Castle, and Ballintoy; allocate a full day to the drive itself, not just the Giant\'s Causeway stop, for the smaller viewpoints along the way.' },
@@ -22413,10 +22484,10 @@ function rbBuildLatviaRoute() {
       code: 'LV', name: 'Latvia', days: 6, budget: 480, lat: 56.9496, lng: 24.1052,
       destinations: [
         { name: 'Riga (Old Town)', lat: 56.9496, lng: 24.1052, notes: "The House of the Blackheads and Riga Cathedral anchor the old town, but the real standout is just outside it on Alberta iela — one of the world's densest concentrations of Art Nouveau facades, worth a short detour on foot." },
-        { name: 'Sigulda', lat: 57.1536, lng: 24.8592 },
-        { name: 'Turaida Castle', lat: 57.1719, lng: 24.8494 },
-        { name: 'Gauja National Park', lat: 57.1667, lng: 24.8600 },
-        { name: 'Rundāle Palace', lat: 56.4149, lng: 24.0128 },
+        { name: 'Sigulda', lat: 57.1536, lng: 24.8592 , notes: 'Nicknamed "Latvian Switzerland" for its river gorge scenery, with a cable car crossing high over the Gauja valley and, in winter, a bobsled track built for Soviet-era Olympic training.' },
+        { name: 'Turaida Castle', lat: 57.1719, lng: 24.8494 , notes: 'A restored red-brick medieval castle above the Gauja valley; climb its main tower for the best view over the gorge and surrounding forest.' },
+        { name: 'Gauja National Park', lat: 57.1667, lng: 24.8600 , notes: 'Latvia\'s largest national park, a river-carved valley of sandstone cliffs, caves and dense forest around Sigulda and Cēsis; popular for hiking, biking and canoeing along the Gauja river.' },
+        { name: 'Rundāle Palace', lat: 56.4149, lng: 24.0128 , notes: 'A Baroque summer palace designed by Rastrelli (the same architect behind St. Petersburg\'s Winter Palace), often called the "Versailles of Latvia"; the French-style formal gardens behind the palace are worth the extra hour beyond the interior room tour.' },
       ],
       notes: "Entry: fly into Riga from Amsterdam (direct or one-stop, airBaltic/Ryanair/Wizz Air depending on season). Riga's Old Town (2-3 days), then Sigulda/Turaida Castle/Gauja National Park — the so-called 'Latvian Switzerland' (2 days) — plus a day trip to Rundāle Palace. Budget ~€70-90/day. Season: May-September. Rundāle Palace is open Wednesday-Sunday (closed Monday/Tuesday), summer hours 10:00-17:00 (the garden until 20:00 on weekends), winter hours 10:00-16:00. Web check (2026-08): Rundāle 2026 prices are roughly €12 for the palace / €6 for the garden / €17 combined — check rundale.net for the current rate. Sigulda's cable car and summer bobsled last-confirmed prices (~€9-14) date from 2021 — check on-site, likely higher by now. General safety note: Latvia's border strip with Belarus is orange (essential travel only) and there is an LGBTIQ+ discrimination risk outside the capital — neither is relevant to this route's itinerary.",
       transport_to_next: 'End of this route — fly home from Riga.',
@@ -22436,9 +22507,9 @@ function rbBuildLithuaniaRoute() {
       code: 'LT', name: 'Lithuania', days: 6, budget: 480, lat: 54.6872, lng: 25.2797,
       destinations: [
         { name: 'Vilnius (Old Town)', lat: 54.6872, lng: 25.2797, notes: "Cross the river into Užupis, a bohemian pocket that jokingly declared itself an independent republic with its own tongue-in-cheek constitution posted on a wall (in dozens of languages); it's a 5-minute walk from the old town's edge and worth an hour of wandering its cafés and galleries." },
-        { name: 'Trakai Castle', lat: 54.6551, lng: 24.9339 },
-        { name: 'Kaunas', lat: 54.8985, lng: 23.9036 },
-        { name: 'Klaipėda (Smiltynė ferry)', lat: 55.7033, lng: 21.1443 },
+        { name: 'Trakai Castle', lat: 54.6551, lng: 24.9339 , notes: 'A red-brick island castle on a lake just outside Vilnius, built by the Grand Duchy of Lithuania and reachable by a short causeway walk or rented rowboat; the surrounding town is home to the Karaim, a small Turkic ethnic minority, whose traditional kibinai pastries are the local food to try.' },
+        { name: 'Kaunas', lat: 54.8985, lng: 23.9036 , notes: 'Lithuania\'s second city and interwar (1920s-30s) temporary capital, giving it a notable concentration of Art Deco/Bauhaus-influenced architecture from that period; its old town sits at the confluence of the Nemunas and Neris rivers.' },
+        { name: 'Klaipėda (Smiltynė ferry)', lat: 55.7033, lng: 21.1443 , notes: 'Lithuania\'s main port city and gateway to the Curonian Spit via a short ferry across to Smiltynė; the old town\'s Baltic-German half-timbered architecture reflects the city\'s former name, Memel, under Prussian/German rule.' },
         { name: 'Curonian Spit / Nida', lat: 55.3033, lng: 21.0058 , notes: 'A UNESCO-listed 98km sand-dune peninsula shared with Russia\'s Kaliningrad exclave; Nida\'s shifting Parnidis dune is the highlight, and the seasonal car eco-toll (steep in peak summer, cheaper or free outside it) applies to drive onto the spit.' },
       ],
       notes: "Entry: fly into Vilnius from Amsterdam (direct or one-stop, airBaltic/Ryanair/Wizz Air depending on season). Vilnius's Old Town (2-3 days), a day trip to Trakai Castle, Kaunas (1 day), then the Curonian Spit/Nida (2 days) via the Klaipėda-Smiltynė ferry. Budget ~€70-90/day. Season: May-September; the dunes at Nida are at their best in summer. Web check (2026-08): the Trakai Castle ticket is €12 (May-Sep) / €10 (Oct-Apr); the Klaipėda-Smiltynė car ferry is €23.20 return (2026); there's an extra eco-toll for cars in Neringa/Nida — €50 (20 June-20 August) or €10 the rest of the year, with electric cars free outside peak season. General safety note: there is an LGBTIQ+ discrimination risk outside Vilnius, similar to the other Baltic capitals.",
@@ -22804,7 +22875,7 @@ function rbBuildLanzaroteFuerteventuraRoute() {
       destinations: [
         { name: 'Timanfaya National Park (Islote de Hilario)', lat: 28.9967, lng: -13.7167 , notes: 'A stark 1730s-eruption moonscape — the catch is you can\'t hike freely inside; the interior is only seen via the guided "Ruta de los Volcanes" bus tour departing from Islote de Hilario, where rangers also do the classic geothermal demos (brush bursting into flame, water flash-boiling in a pipe from ground heat). Arrive early since timed bus-tour slots can back up.' },
         { name: 'Arrecife', lat: 28.9630, lng: -13.5477 , notes: 'Lanzarote\'s capital isn\'t a major sightseeing stop — treat it as a base. The one pleasant part is the Charco de San Ginés lagoon and adjoining promenade, good for an evening stroll and dinner.' },
-        { name: 'Costa Teguise', lat: 28.9930, lng: -13.4881 },
+        { name: 'Costa Teguise', lat: 28.9930, lng: -13.4881 , notes: 'A purpose-built resort town on Lanzarote\'s east coast, developed in the 1970s-80s with wide beaches and a marina; quieter and more low-key than the island\'s larger resort strips.' },
       ],
       notes: "Entry: easyJet and Transavia fly direct from Amsterdam/Rotterdam to Lanzarote; TUI fly runs winter-sun charters. 1 day at Timanfaya, then 1-2 days around Arrecife and Costa Teguise. Budget ~€50-65/day. Web check (2026-08): Timanfaya can only be seen via the mandatory \"Ruta de los Volcanes\" bus tour — free wandering isn't allowed — and its two hiking trails require a guide plus an advance reservation. Camel rides are bookable separately near the park entrance; animal-welfare concerns around them are a live debate, worth knowing about before booking. Same Canaries-wide IGIC price advantage on electronics/alcohol/tobacco/perfume as elsewhere in this archipelago.",
       transport_to_next: "Ferry Playa Blanca-Corralejo (~25 min, frequent). Web check (2026-08): confirm the current timetable before relying on it.",
@@ -22813,7 +22884,7 @@ function rbBuildLanzaroteFuerteventuraRoute() {
       code: 'ES', name: 'Spain', days: 3, budget: 165, lat: 28.6919, lng: -13.8737,
       destinations: [
         { name: 'Corralejo', lat: 28.7343, lng: -13.8672 , notes: 'The draw is Corralejo Natural Park\'s large white sand dune system meeting turquoise water, plus it\'s the departure point for a short boat trip to Isla de Lobos (uninhabited islet, good snorkeling). Walk the dunes early morning before the wind (which this coast is known for) picks up in the afternoon.' },
-        { name: 'El Cotillo', lat: 28.6841, lng: -14.0086 },
+        { name: 'El Cotillo', lat: 28.6841, lng: -14.0086 , notes: 'A former fishing village on Fuerteventura\'s northwest coast, known for a series of calm, shallow lagoons (Lagos de El Cotillo) sheltered by volcanic rock — a popular swimming spot for families, in contrast to the bigger surf breaks elsewhere on the island.' },
       ],
       notes: "2-3 days on Fuerteventura around Corralejo and El Cotillo. Budget ~€50-65/day. Season: good year-round; October-April brings the best consistent wind for surfing/kitesurfing. Web check (2026-08): ongoing peaceful overtourism protests (\"Canarias tiene un límite\") across the Canaries since April 2024, continuing into 2025 — no direct safety concern, respectful behavior advised.",
       transport_to_next: 'End of this route — fly home from Fuerteventura, or back via Lanzarote.',
@@ -23153,7 +23224,7 @@ function rbBuildSardiniaNorthRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 70, lat: 40.9236, lng: 9.4980,
       destinations: [
-        { name: 'Olbia', lat: 40.9236, lng: 9.4980 },
+        { name: 'Olbia', lat: 40.9236, lng: 9.4980 , notes: 'A port city on Sardinia\'s northeast coast, mainly the practical ferry/flight gateway to the Costa Smeralda rather than a sightseeing destination; a small old town and Romanesque church are the quick options if time allows.' },
       ],
       notes: "Entry: direct flight Amsterdam-Olbia (easyJet/Transavia, seasonal — mainly April-September, check the current schedule). Olbia itself as the arrival point (1 day). Budget ~€70-90/day average across the route — Costa Smeralda runs well above the rest of Sardinia (used here at ~€70-90/day depending on the leg).",
       transport_to_next: 'Short drive to the Costa Smeralda.',
@@ -23169,7 +23240,7 @@ function rbBuildSardiniaNorthRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 160, lat: 41.2145, lng: 9.4052,
       destinations: [
-        { name: 'La Maddalena archipelago', lat: 41.2145, lng: 9.4052 },
+        { name: 'La Maddalena archipelago', lat: 41.2145, lng: 9.4052 , notes: 'A cluster of granite islands off Sardinia\'s northern tip, protected as a national park; boat tours from Palau or La Maddalena town visit the archipelago\'s turquoise coves, including the pink-sand Budelli beach (now off-limits to swimmers to protect it).' },
         { name: 'Budelli (Spiaggia Rosa)', lat: 41.2064, lng: 9.3733 },
       ],
       notes: "A boat trip through the La Maddalena archipelago (1-2 days). ⚠️ Web check (2026-08): book archipelago boat tickets ahead in high season, they sell out. Some beaches are permit-only, and Budelli's Spiaggia Rosa is explicitly forbidden to set foot on (look, don't land) — an active, enforced protection rule, not a soft suggestion.",
@@ -23269,7 +23340,7 @@ function rbBuildSardiniaRoadtripRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 70, lat: 38.8886, lng: 8.8425,
       destinations: [
-        { name: 'Chia (south coast)', lat: 38.8886, lng: 8.8425 },
+        { name: 'Chia (south coast)', lat: 38.8886, lng: 8.8425 , notes: 'A stretch of dune-backed white-sand beaches on Sardinia\'s south coast, with a lagoon behind the dunes home to flamingos; less developed than Sardinia\'s northern resort coast.' },
       ],
       notes: 'The south coast around Chia (1 day). Season: May-June or September, avoiding the August crowds on the coastal roads.',
       transport_to_next: 'Drive inland to the Barbagia.',
@@ -23277,7 +23348,7 @@ function rbBuildSardiniaRoadtripRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 120, lat: 40.2853, lng: 9.3922,
       destinations: [
-        { name: 'Barbagia (interior, Orgosolo area)', lat: 40.2853, lng: 9.3922 },
+        { name: 'Barbagia (interior, Orgosolo area)', lat: 40.2853, lng: 9.3922 , notes: 'Sardinia\'s mountainous, historically isolated interior, known for shepherding traditions and Orgosolo\'s murals — political and social commentary painted directly on building walls since the 1960s.' },
       ],
       notes: "The Barbagia interior (1-2 days), Sardinia's least touristy, cheapest stretch. ⚠️ Web check (2026-08): the inland mountain roads here are narrow and slow — plan extra driving time, don't assume coastal-road speeds.",
       transport_to_next: 'Drive north to the Costa Smeralda/Olbia.',
@@ -23286,7 +23357,7 @@ function rbBuildSardiniaRoadtripRoute() {
       code: 'IT', name: 'Italy', days: 2, budget: 180, lat: 41.1333, lng: 9.5333,
       destinations: [
         { name: 'Costa Smeralda / Porto Cervo', lat: 41.1333, lng: 9.5333 , notes: 'Manmade luxury resort coast built in the 1960s around Porto Cervo\'s yacht marina; worth an afternoon stroll and people-watching among the superyachts rather than an overnight given the steep prices.' },
-        { name: 'Olbia', lat: 40.9236, lng: 9.4980 },
+        { name: 'Olbia', lat: 40.9236, lng: 9.4980 , notes: 'A port city on Sardinia\'s northeast coast, mainly the practical ferry/flight gateway to the Costa Smeralda rather than a sightseeing destination; a small old town and Romanesque church are the quick options if time allows.' },
       ],
       notes: "Costa Smeralda/Olbia (2 days) — the priciest stretch. ⚠️ Web check (2026-08): coastal parking is scarce and expensive here in high season.",
       transport_to_next: 'Boat crossing to the La Maddalena archipelago.',
@@ -23294,7 +23365,7 @@ function rbBuildSardiniaRoadtripRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 150, lat: 41.2145, lng: 9.4052,
       destinations: [
-        { name: 'La Maddalena archipelago', lat: 41.2145, lng: 9.4052 },
+        { name: 'La Maddalena archipelago', lat: 41.2145, lng: 9.4052 , notes: 'A cluster of granite islands off Sardinia\'s northern tip, protected as a national park; boat tours from Palau or La Maddalena town visit the archipelago\'s turquoise coves, including the pink-sand Budelli beach (now off-limits to swimmers to protect it).' },
       ],
       notes: 'La Maddalena (1-2 days) to close the loop — see the Sardinia North route above for the same archipelago-ticket/Budelli-permit notes, which apply equally here.',
       transport_to_next: 'End of this route — back to Olbia (or Cagliari, if returning open-jaw) for the return flight to Amsterdam.',
@@ -23418,8 +23489,8 @@ function rbBuildRhodesRoute() {
     {
       code: 'GR', name: 'Greece', days: 2, budget: 130, lat: 36.4341, lng: 28.2176,
       destinations: [
-        { name: 'Rhodes Old Town', lat: 36.4341, lng: 28.2176 },
-        { name: 'Palace of the Grand Master', lat: 36.4436, lng: 28.2258 },
+        { name: 'Rhodes Old Town', lat: 36.4341, lng: 28.2176 , notes: 'A UNESCO-listed medieval old town built by the Knights of Rhodes, with the Street of the Knights running through its core; wander the walls and moat at their quietest in early morning or evening.' },
+        { name: 'Palace of the Grand Master', lat: 36.4436, lng: 28.2258 , notes: 'The fortified former headquarters of the Knights of Rhodes\' Grand Master, largely rebuilt by the Italians in the 1930s over the medieval ruins; the mosaic-floored halls and small archaeology collection inside are the main draw beyond the imposing exterior.' },
       ],
       notes: "Entry: direct flight Amsterdam-Rhodes (easyJet, Transavia and TUI all fly direct in summer, mostly seasonal). Rhodes Old Town (2 days), including the Palace of the Grand Master. Budget ~€55-70/day average across the route (used here at ~€60-65/day). Season: May-October. ⚠️ Web check (2026-08): the Palace of the Grand Master runs a summer schedule (1 April-31 October) daily 08:00-20:00 and a winter schedule (1 November-31 March) Wed-Mon 08:30-15:30, closed Tuesday; ticket price revised since April 2025 to €20. No active wildfire/evacuation reported on Rhodes as of 7 August 2026 — relatively calm compared to Crete/Corfu this season, though the general yellow Greece-wide wildfire advisory (since 4 August 2026) still applies.",
       transport_to_next: 'Short drive south down the coast to Lindos.',
@@ -23427,8 +23498,8 @@ function rbBuildRhodesRoute() {
     {
       code: 'GR', name: 'Greece', days: 2, budget: 130, lat: 36.0917, lng: 28.0864,
       destinations: [
-        { name: 'Lindos', lat: 36.0917, lng: 28.0864 },
-        { name: 'Acropolis of Lindos', lat: 36.0906, lng: 28.0906 },
+        { name: 'Lindos', lat: 36.0917, lng: 28.0864 , notes: 'A whitewashed hillside village on Rhodes\'s east coast, with a beach below and a steep climb (or donkey ride) up to the acropolis above; one of the island\'s most-visited spots outside Rhodes Town itself.' },
+        { name: 'Acropolis of Lindos', lat: 36.0906, lng: 28.0906 , notes: 'A fortified hilltop combining ancient Greek temple ruins (a Temple of Athena) with a medieval Knights of Rhodes castle built directly on top of it; the climb rewards with sweeping views over Lindos village and the coast below.' },
       ],
       notes: "Lindos and its hilltop Acropolis of Lindos (2 days), overlooking the town's bay.",
       transport_to_next: "Drive on to the island's southern tip, Prasonisi.",
@@ -23436,7 +23507,7 @@ function rbBuildRhodesRoute() {
     {
       code: 'GR', name: 'Greece', days: 2, budget: 120, lat: 35.8833, lng: 27.7333,
       destinations: [
-        { name: 'Prasonisi (windsurfing point)', lat: 35.8833, lng: 27.7333 },
+        { name: 'Prasonisi (windsurfing point)', lat: 35.8833, lng: 27.7333 , notes: 'Rhodes\'s southern tip, where a narrow sandy strip connects to a small islet and two seas meet — the calmer Aegean side and the choppier, windier Mediterranean side — making it one of the best windsurfing/kitesurfing spots in the Mediterranean.' },
       ],
       notes: "Prasonisi (1-2 days) — a windsurfing/kitesurfing point at the island's southern tip, where the Aegean and Mediterranean meet, to close the trip.",
       transport_to_next: 'End of this route — return flight from Rhodes to Amsterdam.',
@@ -23524,8 +23595,8 @@ function rbBuildCreteRoadtripRoute() {
     {
       code: 'GR', name: 'Greece', days: 2, budget: 140, lat: 35.5138, lng: 24.0180,
       destinations: [
-        { name: 'Chania Old Town', lat: 35.5138, lng: 24.0180 },
-        { name: 'Chania Venetian Harbour', lat: 35.5158, lng: 24.0203 },
+        { name: 'Chania Old Town', lat: 35.5138, lng: 24.0180 , notes: 'Crete\'s most atmospheric old town, layered with Venetian and Ottoman-era architecture; the narrow lanes behind the harbor hold most of the best tavernas and shops.' },
+        { name: 'Chania Venetian Harbour', lat: 35.5158, lng: 24.0203 , notes: 'A curved 14th-century harbor lined with pastel buildings, anchored by an Egyptian-built lighthouse at its mouth; especially photogenic at sunset when the harbor lights come on.' },
       ],
       notes: "Entry: direct flight Amsterdam-Chania or Amsterdam-Heraklion (seasonal, various carriers). Rental car essential for the whole loop. Chania's old town and Venetian harbour (2 days). Budget ~€60-75/day including the rental car (used here at ~€65-70/day). Season: April-October. ⚠️⚠️ Note: Route Builder already has Crete content bundled inside 'Greece & Crete 🫒' (Mediterranean Civilizations) — built anyway per the source list since this is a standalone Crete-only trip, not a Greece+Crete combo; flagged for review, not merged. See this route's overall notes below for the full detail on the overlap.",
       transport_to_next: 'Short drive east along the coast to Rethymno.',
@@ -23533,7 +23604,7 @@ function rbBuildCreteRoadtripRoute() {
     {
       code: 'GR', name: 'Greece', days: 1, budget: 70, lat: 35.3667, lng: 24.4833,
       destinations: [
-        { name: 'Rethymno Old Town', lat: 35.3667, lng: 24.4833 },
+        { name: 'Rethymno Old Town', lat: 35.3667, lng: 24.4833 , notes: 'A well-preserved old town blending Venetian and Ottoman architecture, with a fortified hilltop Fortezza overlooking both the town and the sea; quieter and less crowded than Chania\'s old town.' },
       ],
       notes: 'Rethymno\'s old town (1 day) — a quieter stop on the drive between Chania and Heraklion.',
       transport_to_next: 'Drive on east to Heraklion and Knossos.',
@@ -23550,8 +23621,8 @@ function rbBuildCreteRoadtripRoute() {
     {
       code: 'GR', name: 'Greece', days: 2, budget: 140, lat: 34.9967, lng: 24.7500,
       destinations: [
-        { name: 'Matala', lat: 34.9967, lng: 24.7500 },
-        { name: 'Plakias', lat: 35.1900, lng: 24.4067 },
+        { name: 'Matala', lat: 34.9967, lng: 24.7500 , notes: 'A small beach village on Crete\'s south coast, known for ancient carved caves in the cliffs above the beach that sheltered a hippie community in the 1960s-70s (Joni Mitchell wrote a song about it); the caves are now a protected, ticketed archaeological site.' },
+        { name: 'Plakias', lat: 35.1900, lng: 24.4067 , notes: 'A relaxed south-coast beach town below the Lefka Ori (White Mountains), used as a base for the E4 European long-distance hiking trail and as an endpoint for several Samaria Gorge-adjacent gorge hikes.' },
       ],
       notes: "The south coast on the Libyan Sea — Matala (former hippie caves) and Plakias (2 days). ⚠️⚠️ Web check (2026-08): Crete had confirmed evacuations on 30 July 2026, with large fires destroying farmland and olive groves — one of the season's hardest-hit areas alongside Corfu. Possible road closures; re-check the situation right before departure, this is an active-incident note, not a resolved one.",
       transport_to_next: 'Optional inland detour to the Samaria Gorge before closing the loop.',
@@ -24181,7 +24252,7 @@ function rbBuildPolandSlovakiaHungaryRoute() {
       destinations: [
         { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 , notes: 'Poland\'s former royal capital, centered on the vast medieval Rynek Główny square (Europe\'s largest medieval town square) with the Renaissance Cloth Hall in its middle and Wawel Castle on a hill above the Vistula river; St. Mary\'s Basilica\'s trumpet call (a broken-off bugle note, played every hour from the tower) commemorates a 13th-century Mongol invasion.' },
         { name: 'Zakopane', lat: 49.2992, lng: 19.9496 , notes: 'Poland\'s main mountain resort town in the Tatra range, known as the "winter capital of Poland"; Krupówki street is the lively pedestrian core, and a cable car up Gubałówka or Kasprowy Wierch gives panoramic Tatra views without a full hike.' },
-        { name: 'Tatra National Park', lat: 49.1997, lng: 20.0669 },
+        { name: 'Tatra National Park', lat: 49.1997, lng: 20.0669 , notes: 'A shared Polish-Slovak mountain range and national park (split into separate parks on each side of the border), with the highest peaks in the Carpathians; hiking trails on both sides connect to form some of Central Europe\'s most dramatic alpine scenery.' },
       ],
       notes: "Krakow (2-3 days) — Zakopane/Tatra National Park (2 days). Budget ~€60-75/day. Season: June-September (Tatra hiking season).",
       transport_to_next: 'Short crossing over the mountains into Slovakia — fully Schengen, no border checks — to Poprad/the High Tatras.',
@@ -24189,7 +24260,7 @@ function rbBuildPolandSlovakiaHungaryRoute() {
     {
       code: 'SK', name: 'Slovakia', days: 4, budget: 220, lat: 49.1660, lng: 20.2870,
       destinations: [
-        { name: 'Poprad / Tatranská Lomnica (Slovak High Tatras)', lat: 49.1660, lng: 20.2870 },
+        { name: 'Poprad / Tatranská Lomnica (Slovak High Tatras)', lat: 49.1660, lng: 20.2870 , notes: 'Poprad is the main gateway town to the Slovak side of the High Tatras; Tatranská Lomnica nearby has a cable car climbing to Lomnický štít, the second-highest peak in the range, for high-altitude views without a full mountaineering ascent.' },
         { name: 'Bratislava', lat: 48.1486, lng: 17.1077, notes: "Compact walkable Old Town plus the hilltop Bratislava Castle overlooking the Danube; the UFO Bridge's observation deck gives the best skyline view and doubles as a sunset spot." },
       ],
       notes: "The Slovak side of the High Tatras/Poprad (1-2 days, a short cross-border hop from the Polish Tatra) — Bratislava (2 days). Budget ~€50-60/day. Web check (2026-08): one-way rental-car returns between countries are expensive — plan to hand the car back in the same country you picked it up.",
@@ -24255,9 +24326,9 @@ function rbBuildCentralEuropeRoadtripFourteenDaysRoute() {
     {
       code: 'DE', name: 'Germany', days: 2, budget: 180, lat: 52.5200, lng: 13.4050,
       destinations: [
-        { name: 'Brandenburg Gate', lat: 52.5163, lng: 13.3777 },
-        { name: 'Museum Island', lat: 52.5169, lng: 13.4014 },
-        { name: 'Berlin Wall Memorial', lat: 52.5350, lng: 13.3900 },
+        { name: 'Brandenburg Gate', lat: 52.5163, lng: 13.3777 , notes: 'Berlin\'s most iconic monument, an 18th-century neoclassical gate that stood right on the Cold War border and became a symbol of German reunification after the Wall fell in 1989; the Quadriga sculpture on top depicts the goddess of victory.' },
+        { name: 'Museum Island', lat: 52.5169, lng: 13.4014 , notes: 'A UNESCO-listed cluster of five major museums on an island in the Spree river, including the Pergamon Museum (ancient Near Eastern monumental architecture) and the Neues Museum (home to the bust of Nefertiti); realistically pick 1-2 museums rather than trying to see all five in one visit.' },
+        { name: 'Berlin Wall Memorial', lat: 52.5350, lng: 13.3900 , notes: 'A preserved stretch of the Berlin Wall along Bernauer Straße, including the death strip, a watchtower, and documentation center explaining the Wall\'s history and the escape attempts across it; more historically substantial than the shorter East Side Gallery mural section elsewhere in the city.' },
       ],
       notes: "Berlin (2 days) as the opener. Budget ~€80-95/day.",
       transport_to_next: 'Train or drive to Prague — a fully Schengen border, no checks.',
@@ -24274,7 +24345,7 @@ function rbBuildCentralEuropeRoadtripFourteenDaysRoute() {
       code: 'PL', name: 'Poland', days: 2, budget: 130, lat: 50.0614, lng: 19.9366,
       destinations: [
         { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 , notes: 'Poland\'s former royal capital, centered on the vast medieval Rynek Główny square (Europe\'s largest medieval town square) with the Renaissance Cloth Hall in its middle and Wawel Castle on a hill above the Vistula river; St. Mary\'s Basilica\'s trumpet call (a broken-off bugle note, played every hour from the tower) commemorates a 13th-century Mongol invasion.' },
-        { name: 'Auschwitz-Birkenau (day trip)', lat: 50.0359, lng: 19.1783 },
+        { name: 'Auschwitz-Birkenau (day trip)', lat: 50.0359, lng: 19.1783 , notes: 'The largest Nazi concentration and extermination camp, preserved as a memorial and museum; entry is free but requires a booked timed-entry slot (often with a mandatory guided tour in peak season) — book well in advance, and allow at least 3-4 hours to see both the Auschwitz I and Birkenau sites.' },
       ],
       notes: "Krakow (2-3 days), including a half-day Auschwitz-Birkenau trip. Budget ~€60-75/day. Web check (2026-08): since March 2026 Auschwitz-Birkenau can only be booked online (visit.auschwitz.org) — book at least 2-4 weeks ahead.",
       transport_to_next: 'Train or drive to Bratislava — a fully Schengen border, no checks.',

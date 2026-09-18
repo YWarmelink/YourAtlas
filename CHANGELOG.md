@@ -12,6 +12,13 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batches 147-152 — Mixed Europe cluster round 3 (2026-09-18)** — 35
+  fresh destinations plus 7 reuse entries, closing out 12 routes entirely: France Roadtrip:
+  Paris to the Côte d'Azur, Campania + Puglia, Wales, Northern Ireland, Latvia, Lithuania,
+  Lanzarote + Fuerteventura, Sardinia Roadtrip, Rhodes (5-7 days), Crete Roadtrip, Poland +
+  Slovakia + Hungary, Central Europe Roadtrip (`rbMigrateMixedEuropeCluster3DestinationNotes()`).
+  App-wide total: 3788 destination-slots filled across 428 routes. 632/741 signatures done.
+
 - **Per-destination notes, batches 141-146 — Mediterranean/Nordic/UK cluster round 2
   (2026-09-18)** — 43 fresh destinations plus 1 reuse entry, closing out 12 routes entirely:
   Athens + Day Trips, Cyprus, Istanbul (both routes), Turkey + Greece: Aegean Coast &
