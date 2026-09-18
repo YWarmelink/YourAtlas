@@ -12,6 +12,24 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batches 126-130 — Nordic/UK cluster (2026-09-18)** — 38 fresh
+  destinations researched, closing out 9 routes entirely: Poland Roadtrip, Oslo, South Sweden
+  (Skåne), both Swedish Lapland routes, Orkney + Shetland, Cotswolds + Bath + Southwest England,
+  Tenerife, Ionian Islands, and Norway + Sweden: Fjords & Capitals
+  (`rbMigrateNordicUkClusterDestinationNotes()`):
+  - Batch 126: Poland — Krakow Old Town (7x leverage), Wieliczka Salt Mine, Auschwitz-Birkenau,
+    Zakopane (4x), Warsaw
+  - Batch 127: Oslo + Norway/Sweden Fjords leftovers — Karl Johans gate, Vigeland Park, Viking
+    Ship/Fram Museums, Munch Museum, Hovedøya, Fredrikstad, Gothenburg
+  - Batch 128: South Sweden + Swedish Lapland leftovers — Ale's Stones, Stenshuvud NP, Icehotel,
+    Abisko (3x), Aurora Sky Station, Kungsleden, Nikkaluokta, Kebnekaise
+  - Batch 129: Orkney + Shetland — Aberdeen, Kirkwall, Skara Brae, Ring of Brodgar, Lerwick,
+    Jarlshof
+  - Batch 130: Cotswolds/Bath, Tenerife, Ionian Islands leftovers — Bourton-on-the-Water, Bibury,
+    Bristol, Cornwall coast, La Laguna, Anaga Rural Park, Costa Adeje, Argostoli, Melissani Cave,
+    Myrtos Beach, Zakynthos Town, Navagio, Blue Caves
+  App-wide total: 3606 destination-slots filled across 414 routes. 561/741 signatures done.
+
 - **Per-destination notes, batches 123-125 — Balkan/Alpine cluster leftovers (2026-09-18)** — 14
   fresh destinations researched, closing out 6 routes entirely: Complete Croatia, Slovenia
   Alpine Loop, Slovenia + Italy, Sarajevo + Mostar, Bosnia Roadtrip, Montenegro

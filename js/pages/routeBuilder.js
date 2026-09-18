@@ -254,6 +254,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateNorthernItalyLakesLeftoverDestinationNotes();
   rbMigrateSpainAndorraClusterDestinationNotes();
   rbMigrateBalkanAlpineClusterDestinationNotes();
+  rbMigrateNordicUkClusterDestinationNotes();
 
   // Must run after every migration above (needs route.name fully settled) and before the
   // Sheet merge below (needs route.id already deterministic) — see its own doc comment.

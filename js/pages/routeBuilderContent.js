@@ -12348,6 +12348,73 @@ function rbMigrateBalkanAlpineClusterDestinationNotes() {
 }
 
 /**
+ * Batches 126-130 (2026-09-18) -- Nordic/UK cluster -- closes out Poland Roadtrip, Oslo, South
+ * Sweden (Skåne), both Swedish Lapland routes, Orkney + Shetland, Cotswolds + Bath, Tenerife,
+ * Ionian Islands, and Norway + Sweden: Fjords & Capitals entirely. 38 fresh destinations
+ * researched (several shared across sibling routes -- Krakow Old Town 7x, Zakopane 4x, Abisko
+ * 3x). Same generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateNordicUkClusterDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_NORDIC_UK_CLUSTER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_NORDIC_UK_CLUSTER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Krakow Old Town': "Poland's former royal capital, centered on the vast medieval Rynek Główny square (Europe's largest medieval town square) with the Renaissance Cloth Hall in its middle and Wawel Castle on a hill above the Vistula river; St. Mary's Basilica's trumpet call (a broken-off bugle note, played every hour from the tower) commemorates a 13th-century Mongol invasion.",
+    'Wieliczka Salt Mine': "A working salt mine for over 700 years, with an underground world of chapels, statues and even a chandelier carved entirely from rock salt (the deepest tourist route reaches roughly 135m); the highlight is St. Kinga's Chapel, a full underground church carved by miners.",
+    'Auschwitz-Birkenau': "The largest Nazi concentration and extermination camp, preserved as a memorial and museum; entry is free but requires a booked timed-entry slot (often with a mandatory guided tour in peak season) — book well in advance, and allow at least 3-4 hours to see both the Auschwitz I and Birkenau sites.",
+    'Zakopane': "Poland's main mountain resort town in the Tatra range, known as the \"winter capital of Poland\"; Krupówki street is the lively pedestrian core, and a cable car up Gubałówka or Kasprowy Wierch gives panoramic Tatra views without a full hike.",
+    'Warsaw': "Poland's capital, almost entirely rebuilt after being deliberately razed in WWII — its meticulously reconstructed Old Town (UNESCO-listed specifically for the quality of that postwar rebuild) looks centuries older than it is; the POLIN Museum of the History of Polish Jews is the standout modern addition.",
+    'Oslo (Karl Johans gate)': "Oslo's main boulevard, running from the Royal Palace down to the central train station past the Parliament building; a straightforward walking spine linking most of the city's central sights.",
+    'Vigeland Park': "An open-air sculpture park inside Frogner Park with over 200 bronze, granite and iron works by Gustav Vigeland, all made specifically for the site; the centerpiece is the Monolith, a granite column carved with 121 intertwined human figures.",
+    'Viking Ship Museum & Fram Museum (Bygdøy)': "Two adjoining museums on the Bygdøy peninsula: the Viking Ship Museum (reopening after renovation — check current status) holds actual excavated 9th-century Viking burial ships, while the Fram Museum houses the polar ship Fram, used on both Arctic and Antarctic expeditions — the vessel that traveled furthest north and south of any wooden ship.",
+    'Munch Museum': "A dedicated museum for Edvard Munch, holding the world's largest collection of his work including multiple versions of The Scream; located in a striking modern tower building by the harbor (relocated from its older site in 2021).",
+    'Hovedøya (Oslofjord islands day trip)': "The closest of Oslo's Oslofjord islands, a short ferry ride from the city center, with ruins of a 12th-century Cistercian monastery, old artillery fortifications, and swimming beaches; a popular easy half-day escape from downtown.",
+    'Fredrikstad (alternative day trip)': "Home to Gamlebyen (Old Town), Northern Europe's best-preserved fortified town, with intact star-shaped ramparts and moat still surrounding cobbled streets and wooden houses; about an hour south of Oslo by train.",
+    'Gothenburg (transit stop)': "Sweden's second city, mainly used here as a transit/overnight stop; if there's time, the Haga district's wooden houses and cafés, or the Liseberg amusement park, are the quick options.",
+    "Ale's Stones (Kåseberga)": "A Bronze/Iron Age stone ship setting — 59 standing stones arranged in the outline of a ship — perched on a coastal ridge above the Baltic; likely a burial monument, sometimes called \"Sweden's Stonehenge,\" with sweeping sea views especially at sunset.",
+    'Stenshuvud National Park': "A small coastal national park with a distinctive hilltop (Stenshuvud) rising abruptly from the shoreline, mixing beech forest, sandy beach and orchid meadows in a compact area; the short climb to the hilltop gives a wide view over the Baltic coastline.",
+    'Icehotel (Jukkasjärvi)': "A hotel rebuilt from ice and snow every winter near Kiruna, with rooms and art installations carved fresh each season (some artist suites) and open roughly December-April before melting; even non-guests can tour it during the day, and it includes an ice bar and ice church.",
+    'Abisko': "One of the best spots in the world for aurora viewing, thanks to a specific dry microclimate (\"the blue hole\") that keeps skies clearer than surrounding areas even when it's cloudy elsewhere in the region.",
+    'Aurora Sky Station': "A viewing station reached by chairlift above Abisko, purpose-built for aurora viewing above the treeline and cloud base; open seasonally (roughly late Aug-early April) with reservations required in the main season.",
+    'Kungsleden day hike': "A short section of the Kungsleden (\"King's Trail\"), Sweden's most famous long-distance hiking route running through Lapland's mountains; even a single day-hike section gives a taste of the trail's dramatic tundra and mountain scenery.",
+    'Nikkaluokta (optional day trip)': "A small Sami settlement and the main trailhead for reaching Kebnekaise, reachable by bus from Kiruna; mostly a jumping-off point rather than a destination itself.",
+    'Kebnekaise': "Sweden's highest mountain, with two summits (the southern one now the taller since the northern glacier-topped peak has shrunk); the summit climb is a serious multi-day undertaking, but the STF mountain station at its base is reachable on an easier day hike from Nikkaluokta.",
+    'Aberdeen (or Scrabster / Gills Bay)': "Mainly the ferry departure point for Orkney/Shetland rather than a stop in itself on this route; Aberdeen itself has a granite-built city center nicknamed the \"Granite City\" if there's time before the crossing.",
+    'Kirkwall': "Orkney's capital, centered on the red sandstone St Magnus Cathedral, built starting in 1137 and still the seat of the Bishop of Orkney; the compact old town's narrow flagstone main street is easily walked in an hour or two.",
+    'Skara Brae': "A remarkably preserved Neolithic village older than Stonehenge or the Egyptian pyramids, with stone furniture (beds, dressers) still visible inside the houses; a storm in 1850 first exposed it by stripping away the covering sand dune.",
+    'Ring of Brodgar': "A Neolithic stone circle (originally up to 60 stones, 27 survive) inside a natural amphitheater setting between two lochs, part of the same UNESCO World Heritage complex as Skara Brae; unlike Stonehenge, visitors can walk right up to and among the stones.",
+    'Lerwick': "Shetland's only town and main port, with a compact harborfront old town; the Shetland Museum covers the islands' Norse heritage in depth, and late January's Up Helly Aa fire festival (Viking longship burning) is the islands' best-known event if timing coincides.",
+    'Jarlshof': "A layered archaeological site at Shetland's southern tip showing roughly 4,000 years of continuous settlement stacked on top of each other — Bronze Age, Iron Age broch, Viking longhouse, and a medieval laird's house all visible in one place.",
+    'Bourton-on-the-Water': "Known as the \"Venice of the Cotswolds\" for the shallow River Windrush running directly through the village center, crossed by a series of low stone footbridges; can get very crowded with day-trippers in summer.",
+    'Bibury': "Famous for Arlington Row, a line of 17th-century weavers' cottages William Morris once called \"the most beautiful village in England\"; one of the most-photographed streets in the Cotswolds, so visit early to avoid the crowds gathering for that exact shot.",
+    'Bristol (optional add-on)': "A larger, edgier city than the surrounding Cotswolds villages, known for street art (it's Banksy's hometown, with several of his works still visible around the city) and Isambard Kingdom Brunel's Clifton Suspension Bridge over the Avon Gorge.",
+    'Cornwall coast (optional extension)': "A significant further drive southwest from the Cotswolds/Bath area, with dramatic Atlantic coastline, fishing villages like St Ives and Padstow, and the Eden Project's biome domes; realistically needs its own dedicated days rather than a quick add-on if actually visited.",
+    'La Laguna (UNESCO old town)': "Tenerife's former capital and a UNESCO World Heritage town; its grid-pattern colonial street layout (an unusually early example, later used as a model for Spanish colonial cities in the Americas) is lined with colorful facades and wooden balconies.",
+    'Anaga Rural Park (Cruz del Carmen)': "A rugged, mist-shrouded mountain range at Tenerife's northeastern tip, covered in ancient laurel forest (laurisilva, a relict ecosystem from the Tertiary period); the Cruz del Carmen visitor center is a good starting point for hikes into the park's ridgeline trails.",
+    'Costa Adeje': "Tenerife's main upmarket resort area on the south coast, with the island's driest, sunniest climate and a long stretch of beaches and beach clubs; mostly a resort base rather than a sightseeing stop.",
+    'Argostoli (Kefalonia)': "Kefalonia's capital, set on a long, narrow bay; the Drapano Bridge (a 19th-century causeway) crosses the bay, and a colony of loggerhead sea turtles is regularly spotted right in the harbor.",
+    'Melissani Cave': "A collapsed limestone cave with a partially open roof, holding a strikingly blue underground lake; small boats row visitors across the lake, with the best light (sunbeams hitting the water) around midday.",
+    'Myrtos Beach': "Widely ranked among Greece's most photogenic beaches, a long crescent of white pebbles below dramatic cliffs on Kefalonia's northwest coast; the road down offers a well-known elevated viewpoint before descending to the beach itself.",
+    'Zakynthos Town': "The capital of Zakynthos (Zante), largely rebuilt in Venetian style after a 1953 earthquake destroyed the original town; the hilltop Bohali fortress above town gives the best view over the harbor.",
+    'Navagio (Shipwreck Beach)': "Zakynthos's signature beach, a white-pebble cove only reachable by boat (or a cliff-top viewpoint above it), named for a rusted shipwreck that ran aground on the beach in 1980 and remains partially visible.",
+    'Blue Caves': "A set of sea caves at Zakynthos's northern tip where sunlight reflecting off the white limestone and seabed turns the water a vivid electric blue; best visited by boat tour in the morning when the light angle is right and the sea is calm.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Two of batch 2's standalone routes were flagged as too exposed to their long-haul flight time
  * relative to trip length — Jordanië (8d, connecting flight) and Nieuw-Zeeland Zuidereiland (21d,
  * but 27-38h with multiple stops). Adds +2 days to each as a recovery/margin buffer, matching the
@@ -20127,7 +20194,7 @@ function rbBuildSlovakiaPolandRoute() {
     {
       code: 'PL', name: 'Poland', days: 5, budget: 300, lat: 49.2992, lng: 19.9496,
       destinations: [
-        { name: 'Zakopane', lat: 49.2992, lng: 19.9496 },
+        { name: 'Zakopane', lat: 49.2992, lng: 19.9496 , notes: 'Poland\'s main mountain resort town in the Tatra range, known as the "winter capital of Poland"; Krupówki street is the lively pedestrian core, and a cable car up Gubałówka or Kasprowy Wierch gives panoramic Tatra views without a full hike.' },
         { name: 'Krakow (Main Square / Old Town)', lat: 50.0614, lng: 19.9366 },
       ],
       notes: "Zakopane (2 days) — Krakow (2-3 days). Budget ~€60/day. Season: June-September (Morskie Oko and the surrounding trails look their best then, but are also at their busiest). Web check (2026-08): the Krakow-Zakopane bus costs about €4.50 one-way, with no border control anywhere on the route.",
@@ -20197,8 +20264,8 @@ function rbBuildKrakowAuschwitzRoute() {
     {
       code: 'PL', name: 'Poland', days: 5, budget: 325, lat: 50.0614, lng: 19.9366,
       destinations: [
-        { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 },
-        { name: 'Auschwitz-Birkenau', lat: 50.0359, lng: 19.1783 },
+        { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 , notes: 'Poland\'s former royal capital, centered on the vast medieval Rynek Główny square (Europe\'s largest medieval town square) with the Renaissance Cloth Hall in its middle and Wawel Castle on a hill above the Vistula river; St. Mary\'s Basilica\'s trumpet call (a broken-off bugle note, played every hour from the tower) commemorates a 13th-century Mongol invasion.' },
+        { name: 'Auschwitz-Birkenau', lat: 50.0359, lng: 19.1783 , notes: 'The largest Nazi concentration and extermination camp, preserved as a memorial and museum; entry is free but requires a booked timed-entry slot (often with a mandatory guided tour in peak season) — book well in advance, and allow at least 3-4 hours to see both the Auschwitz I and Birkenau sites.' },
       ],
       notes: "Krakow (3 days) — Auschwitz-Birkenau as a half-day trip (1 day), deliberately compact with no hiking excursions added on. Budget ~€60-75/day (used €65/day here). Season: open year-round; winter is quieter but bleak — this is an emotionally heavy visit, not a 'nice weather' destination. Web check (2026-08): since March 2026, Auschwitz-Birkenau can only be booked online (visit.auschwitz.org) — there is no on-site ticket sales anymore, not even for a free individual visit. Slots open 3 months ahead; an English-language guided tour runs about 150 PLN (~€35) for 3.5 hours. Book at least 2-4 weeks ahead.",
       transport_to_next: 'End of this route — fly home from Krakow.',
@@ -20217,8 +20284,8 @@ function rbBuildKrakowTatraRoute() {
     {
       code: 'PL', name: 'Poland', days: 6, budget: 420, lat: 50.0614, lng: 19.9366,
       destinations: [
-        { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 },
-        { name: 'Zakopane', lat: 49.2992, lng: 19.9496 },
+        { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 , notes: 'Poland\'s former royal capital, centered on the vast medieval Rynek Główny square (Europe\'s largest medieval town square) with the Renaissance Cloth Hall in its middle and Wawel Castle on a hill above the Vistula river; St. Mary\'s Basilica\'s trumpet call (a broken-off bugle note, played every hour from the tower) commemorates a 13th-century Mongol invasion.' },
+        { name: 'Zakopane', lat: 49.2992, lng: 19.9496 , notes: 'Poland\'s main mountain resort town in the Tatra range, known as the "winter capital of Poland"; Krupówki street is the lively pedestrian core, and a cable car up Gubałówka or Kasprowy Wierch gives panoramic Tatra views without a full hike.' },
         { name: 'Morskie Oko / Tatra National Park', lat: 49.1997, lng: 20.0669 },
       ],
       notes: "Krakow (2-3 days) — Zakopane (3-4 days) — a day trip to Morskie Oko/Tatra National Park, mountains taking priority over history on this one. Budget ~€65-80/day (mountain chalets run a bit pricier on weekends). Season: peak June-September; May-June and September-October are quieter and still good walking weather. Web check (2026-08): Tatra National Park entry runs about 9-10 PLN/day; the Morskie Oko trail (8km, paved) is walk/horse-carriage/bike only — no cars — and the Palenica Białczańska parking lot fills fast on weekends.",
@@ -20238,9 +20305,9 @@ function rbBuildSouthPolandRoute() {
     {
       code: 'PL', name: 'Poland', days: 9, budget: 630, lat: 50.0614, lng: 19.9366,
       destinations: [
-        { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 },
-        { name: 'Wieliczka Salt Mine', lat: 49.9830, lng: 20.0533 },
-        { name: 'Auschwitz-Birkenau', lat: 50.0359, lng: 19.1783 },
+        { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 , notes: 'Poland\'s former royal capital, centered on the vast medieval Rynek Główny square (Europe\'s largest medieval town square) with the Renaissance Cloth Hall in its middle and Wawel Castle on a hill above the Vistula river; St. Mary\'s Basilica\'s trumpet call (a broken-off bugle note, played every hour from the tower) commemorates a 13th-century Mongol invasion.' },
+        { name: 'Wieliczka Salt Mine', lat: 49.9830, lng: 20.0533 , notes: 'A working salt mine for over 700 years, with an underground world of chapels, statues and even a chandelier carved entirely from rock salt (the deepest tourist route reaches roughly 135m); the highlight is St. Kinga\'s Chapel, a full underground church carved by miners.' },
+        { name: 'Auschwitz-Birkenau', lat: 50.0359, lng: 19.1783 , notes: 'The largest Nazi concentration and extermination camp, preserved as a memorial and museum; entry is free but requires a booked timed-entry slot (often with a mandatory guided tour in peak season) — book well in advance, and allow at least 3-4 hours to see both the Auschwitz I and Birkenau sites.' },
         { name: 'Zakopane / Tatra National Park', lat: 49.2992, lng: 19.9496 },
         { name: 'Wrocław (optional finale)', lat: 51.1079, lng: 17.0385 },
       ],
@@ -20261,12 +20328,12 @@ function rbBuildPolandRoadtripRoute() {
     {
       code: 'PL', name: 'Poland', days: 9, budget: 585, lat: 50.0614, lng: 19.9366,
       destinations: [
-        { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 },
-        { name: 'Wieliczka Salt Mine', lat: 49.9830, lng: 20.0533 },
-        { name: 'Auschwitz-Birkenau', lat: 50.0359, lng: 19.1783 },
-        { name: 'Zakopane', lat: 49.2992, lng: 19.9496 },
+        { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 , notes: 'Poland\'s former royal capital, centered on the vast medieval Rynek Główny square (Europe\'s largest medieval town square) with the Renaissance Cloth Hall in its middle and Wawel Castle on a hill above the Vistula river; St. Mary\'s Basilica\'s trumpet call (a broken-off bugle note, played every hour from the tower) commemorates a 13th-century Mongol invasion.' },
+        { name: 'Wieliczka Salt Mine', lat: 49.9830, lng: 20.0533 , notes: 'A working salt mine for over 700 years, with an underground world of chapels, statues and even a chandelier carved entirely from rock salt (the deepest tourist route reaches roughly 135m); the highlight is St. Kinga\'s Chapel, a full underground church carved by miners.' },
+        { name: 'Auschwitz-Birkenau', lat: 50.0359, lng: 19.1783 , notes: 'The largest Nazi concentration and extermination camp, preserved as a memorial and museum; entry is free but requires a booked timed-entry slot (often with a mandatory guided tour in peak season) — book well in advance, and allow at least 3-4 hours to see both the Auschwitz I and Birkenau sites.' },
+        { name: 'Zakopane', lat: 49.2992, lng: 19.9496 , notes: 'Poland\'s main mountain resort town in the Tatra range, known as the "winter capital of Poland"; Krupówki street is the lively pedestrian core, and a cable car up Gubałówka or Kasprowy Wierch gives panoramic Tatra views without a full hike.' },
         { name: 'Wrocław', lat: 51.1079, lng: 17.0385, notes: "Beyond the market square, Ostrów Tumski (Cathedral Island) is worth walking at dusk when its gas lamps are lit by hand; the city's 600+ scattered gnome statues make for a fun, low-effort scavenger hunt between sights." },
-        { name: 'Warsaw', lat: 52.2297, lng: 21.0122 },
+        { name: 'Warsaw', lat: 52.2297, lng: 21.0122 , notes: 'Poland\'s capital, almost entirely rebuilt after being deliberately razed in WWII — its meticulously reconstructed Old Town (UNESCO-listed specifically for the quality of that postwar rebuild) looks centuries older than it is; the POLIN Museum of the History of Polish Jews is the standout modern addition.' },
       ],
       notes: "Krakow — Wieliczka — Auschwitz — Zakopane — Wrocław — Warsaw (drop Gdańsk for a shorter version of this loop). Budget ~€60-75/day including the rental car (used €65/day here). Season: May-June or September. Web check (2026-08): a car is practical outside the city centers, though parking in central Krakow/Wrocław is difficult; Poland requires no highway vignette, but some stretches use pay-per-use tolls via the e-TOLL app. If routing via Germany instead, note Germany has extended its own land border controls with Poland through 15 September 2026 (spot ID checks).",
       transport_to_next: 'End of this route — fly home from Warsaw.',
@@ -20287,9 +20354,9 @@ function rbBuildPolandNorthToSouthRoute() {
       destinations: [
         { name: 'Gdańsk / Hel Peninsula', lat: 54.6084, lng: 18.8006 },
         { name: 'Malbork Castle', lat: 54.0400, lng: 19.0274 },
-        { name: 'Warsaw', lat: 52.2297, lng: 21.0122 },
+        { name: 'Warsaw', lat: 52.2297, lng: 21.0122 , notes: 'Poland\'s capital, almost entirely rebuilt after being deliberately razed in WWII — its meticulously reconstructed Old Town (UNESCO-listed specifically for the quality of that postwar rebuild) looks centuries older than it is; the POLIN Museum of the History of Polish Jews is the standout modern addition.' },
         { name: 'Wrocław', lat: 51.1079, lng: 17.0385, notes: "Beyond the market square, Ostrów Tumski (Cathedral Island) is worth walking at dusk when its gas lamps are lit by hand; the city's 600+ scattered gnome statues make for a fun, low-effort scavenger hunt between sights." },
-        { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 },
+        { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 , notes: 'Poland\'s former royal capital, centered on the vast medieval Rynek Główny square (Europe\'s largest medieval town square) with the Renaissance Cloth Hall in its middle and Wawel Castle on a hill above the Vistula river; St. Mary\'s Basilica\'s trumpet call (a broken-off bugle note, played every hour from the tower) commemorates a 13th-century Mongol invasion.' },
       ],
       notes: "Gdańsk and the Hel Peninsula (3 days) — Malbork Castle (day trip) — Warsaw (2-3 days) — Wrocław (2 days) — Krakow (3-4 days), roughly 1300 km total. Budget ~€60-75/day. Season: May-June or September are best (quieter, mild weather); the Hel Peninsula and the coast are especially nice June-August. Web check (2026-08): book Auschwitz/Wieliczka well ahead (at least a month) if adding either as a Krakow-leg day trip — both often sell out in high season; the train between cities is a good alternative to the long drives.",
       transport_to_next: 'End of this route — fly home from Krakow.',
@@ -20770,12 +20837,12 @@ function rbBuildOsloRoute() {
     {
       code: 'NO', name: 'Norway', days: 5, budget: 625, lat: 59.9139, lng: 10.7522,
       destinations: [
-        { name: 'Oslo (Karl Johans gate)', lat: 59.9139, lng: 10.7522 },
-        { name: 'Vigeland Park', lat: 59.9270, lng: 10.7003 },
-        { name: 'Viking Ship Museum & Fram Museum (Bygdøy)', lat: 59.9037, lng: 10.6860 },
-        { name: 'Munch Museum', lat: 59.9075, lng: 10.7563 },
-        { name: 'Hovedøya (Oslofjord islands day trip)', lat: 59.8971, lng: 10.7351 },
-        { name: 'Fredrikstad (alternative day trip)', lat: 59.2103, lng: 10.9299 },
+        { name: 'Oslo (Karl Johans gate)', lat: 59.9139, lng: 10.7522 , notes: 'Oslo\'s main boulevard, running from the Royal Palace down to the central train station past the Parliament building; a straightforward walking spine linking most of the city\'s central sights.' },
+        { name: 'Vigeland Park', lat: 59.9270, lng: 10.7003 , notes: 'An open-air sculpture park inside Frogner Park with over 200 bronze, granite and iron works by Gustav Vigeland, all made specifically for the site; the centerpiece is the Monolith, a granite column carved with 121 intertwined human figures.' },
+        { name: 'Viking Ship Museum & Fram Museum (Bygdøy)', lat: 59.9037, lng: 10.6860 , notes: 'Two adjoining museums on the Bygdøy peninsula: the Viking Ship Museum (reopening after renovation — check current status) holds actual excavated 9th-century Viking burial ships, while the Fram Museum houses the polar ship Fram, used on both Arctic and Antarctic expeditions — the vessel that traveled furthest north and south of any wooden ship.' },
+        { name: 'Munch Museum', lat: 59.9075, lng: 10.7563 , notes: 'A dedicated museum for Edvard Munch, holding the world\'s largest collection of his work including multiple versions of The Scream; located in a striking modern tower building by the harbor (relocated from its older site in 2021).' },
+        { name: 'Hovedøya (Oslofjord islands day trip)', lat: 59.8971, lng: 10.7351 , notes: 'The closest of Oslo\'s Oslofjord islands, a short ferry ride from the city center, with ruins of a 12th-century Cistercian monastery, old artillery fortifications, and swimming beaches; a popular easy half-day escape from downtown.' },
+        { name: 'Fredrikstad (alternative day trip)', lat: 59.2103, lng: 10.9299 , notes: 'Home to Gamlebyen (Old Town), Northern Europe\'s best-preserved fortified town, with intact star-shaped ramparts and moat still surrounding cobbled streets and wooden houses; about an hour south of Oslo by train.' },
       ],
       notes: "Oslo city center (2-3 days): Vigeland Park's sculpture garden, the Viking Ship Museum and Fram Museum on the Bygdøy peninsula, and the Munch Museum, plus a day trip to the Oslofjord islands (Hovedøya) or south to the old town of Fredrikstad. Budget ~€110-140/day — a city trip, no rental car needed, a public transport day pass runs about 120 NOK. Season: May-September for the best weather and long daylight hours; the museums themselves are open year-round. Web check (2026-08): fjord ferries and island boats run a reduced winter schedule — check current times before relying on one. Travel advisory: green (last updated 2 July 2026) — watch for pickpockets around Oslo Gardermoen and the central station, and avalanche risk in winter. Schengen, no visa needed, just a valid passport/ID (Svalbard is the one exception — see that route).",
       transport_to_next: 'End of this route — fly home from Oslo.',
@@ -21013,8 +21080,8 @@ function rbBuildSouthSwedenSkaneRoute() {
         { name: 'Lund', lat: 55.7047, lng: 13.1910 , notes: 'Small university city centered on a Romanesque cathedral with a 15th-century astronomical clock (Horologium mirabile). Time your visit for the mechanical show — weekdays at 12:00 and 15:00, Sundays at 13:00.' },
         { name: 'Ystad', lat: 55.4295, lng: 13.8204 , notes: 'Well-preserved half-timbered old town on the Swedish coast, familiar as the setting of the Wallander detective novels/TV series. Just wander the cobbled lanes, or follow a self-guided Wallander sites walk; it\'s also the ferry town for Bornholm.' },
         { name: 'Kivik', lat: 55.6817, lng: 14.2434 , notes: 'Small coastal village in Österlen known for apple orchards and the Bronze Age Kiviksgraven burial cairn, whose central chamber has carved stone slabs. Visit in spring for blossom season, and pay the small entry fee to get inside the cairn and see the carvings up close.' },
-        { name: "Ale's Stones (Kåseberga)", lat: 55.4667, lng: 14.2333 },
-        { name: 'Stenshuvud National Park', lat: 55.5167, lng: 14.2667 },
+        { name: "Ale's Stones (Kåseberga)", lat: 55.4667, lng: 14.2333 , notes: 'A Bronze/Iron Age stone ship setting — 59 standing stones arranged in the outline of a ship — perched on a coastal ridge above the Baltic; likely a burial monument, sometimes called "Sweden\'s Stonehenge," with sweeping sea views especially at sunset.' },
+        { name: 'Stenshuvud National Park', lat: 55.5167, lng: 14.2667 , notes: 'A small coastal national park with a distinctive hilltop (Stenshuvud) rising abruptly from the shoreline, mixing beech forest, sandy beach and orchid meadows in a compact area; the short climb to the hilltop gives a wide view over the Baltic coastline.' },
       ],
       notes: "Malmö (2 days), a day trip to Lund, then Ystad, and Kivik/Österlen (Ale's Stones near Kåseberga, Stenshuvud National Park) — confined to just the Skåne region, unlike the wider Sweden Roadtrip below. Budget ~€80-110/day plus a rental car at ~€35-50/day. Season: May-September; Kivik's apple blossom is in May, the harvest runs September-October. Web check (2026-08): Ystad Studios' opening hours are seasonal — check before visiting. As Malmö is the Swedish end of the Öresund crossing, note the periodic ID checks mentioned in the Stockholm route above.",
       transport_to_next: 'End of this route — fly home from Malmö.',
@@ -21058,7 +21125,7 @@ function rbBuildSwedenNorwayRoute() {
       destinations: [
         { name: 'Stockholm', lat: 59.3251, lng: 18.0711 },
         { name: 'Kiruna', lat: 67.8558, lng: 20.2253, notes: "Sweden's northernmost town is being physically relocated a few kilometres east because the LKAB iron-ore mine beneath it is causing ground subsidence — an unusual \"moving city\" story worth a stop in itself, alongside the mine itself. LKAB's underground mine tours are popular and capacity-limited, so book ahead rather than assuming a same-day slot." },
-        { name: 'Abisko', lat: 68.3540, lng: 18.7885 },
+        { name: 'Abisko', lat: 68.3540, lng: 18.7885 , notes: 'One of the best spots in the world for aurora viewing, thanks to a specific dry microclimate ("the blue hole") that keeps skies clearer than surrounding areas even when it\'s cloudy elsewhere in the region.' },
         { name: 'Riksgränsen (border crossing)', lat: 68.4297, lng: 18.1200 },
       ],
       notes: "Stockholm, then north by train to Swedish Lapland — Kiruna and Abisko — up to the Riksgränsen border crossing. Budget ~€110/day for this leg; the Norwegian leg below runs pricier. Season: June-August for the midnight sun and 15-20°C; avoid October-April for a roadtrip (ice and polar night make the Riksgränsen-Narvik stretch impractical). Web check (2026-08): Norwegian tolls run via AutoPASS; Lofoten ferry services are seasonal; ask the rental company in advance about cross-border rules if picking up the car in Sweden.",
@@ -21088,10 +21155,10 @@ function rbBuildSwedishLaplandRoute() {
       code: 'SE', name: 'Sweden', days: 6, budget: 870, lat: 67.8558, lng: 20.2253,
       destinations: [
         { name: 'Kiruna', lat: 67.8558, lng: 20.2253, notes: "Sweden's northernmost town is being physically relocated a few kilometres east because the LKAB iron-ore mine beneath it is causing ground subsidence — an unusual \"moving city\" story worth a stop in itself, alongside the mine itself. LKAB's underground mine tours are popular and capacity-limited, so book ahead rather than assuming a same-day slot." },
-        { name: 'Icehotel (Jukkasjärvi)', lat: 67.8500, lng: 20.5958 },
-        { name: 'Abisko', lat: 68.3540, lng: 18.7885 },
-        { name: 'Aurora Sky Station', lat: 68.3547, lng: 18.7361 },
-        { name: 'Kungsleden day hike', lat: 68.3600, lng: 18.7000 },
+        { name: 'Icehotel (Jukkasjärvi)', lat: 67.8500, lng: 20.5958 , notes: 'A hotel rebuilt from ice and snow every winter near Kiruna, with rooms and art installations carved fresh each season (some artist suites) and open roughly December-April before melting; even non-guests can tour it during the day, and it includes an ice bar and ice church.' },
+        { name: 'Abisko', lat: 68.3540, lng: 18.7885 , notes: 'One of the best spots in the world for aurora viewing, thanks to a specific dry microclimate ("the blue hole") that keeps skies clearer than surrounding areas even when it\'s cloudy elsewhere in the region.' },
+        { name: 'Aurora Sky Station', lat: 68.3547, lng: 18.7361 , notes: 'A viewing station reached by chairlift above Abisko, purpose-built for aurora viewing above the treeline and cloud base; open seasonally (roughly late Aug-early April) with reservations required in the main season.' },
+        { name: 'Kungsleden day hike', lat: 68.3600, lng: 18.7000 , notes: 'A short section of the Kungsleden ("King\'s Trail"), Sweden\'s most famous long-distance hiking route running through Lapland\'s mountains; even a single day-hike section gives a taste of the trail\'s dramatic tundra and mountain scenery.' },
       ],
       notes: "Kiruna (2-3 days, with one night at the Icehotel in nearby Jukkasjärvi), then Abisko (2-3 days: the Aurora Sky Station chairlift and a day hike on the Kungsleden trail) — the shorter of the two Lapland aurora trips, unlike the longer route below. Budget ~€130-160/day, including one Icehotel upgrade night at €400-500, the rest at a regular €90-120/day. Season: December-February for peak winter, or the shoulder months of September/March. Web check (2026-08): the Aurora Sky Station chairlift runs on a seasonal schedule — check opening days before relying on it. Kiruna's town relocation is ongoing — the 1912 wooden church (672 tons) moved to its new site on 20 August 2025, the new town center has been in use since September 2022, and the project continues to around 2035 — check the current map at the Kiruna tourist office, since parts of the old center are demolished or inaccessible.",
       transport_to_next: 'End of this route — fly home from Kiruna.',
@@ -21111,11 +21178,11 @@ function rbBuildSwedishLaplandNorthernLightsRoute() {
       code: 'SE', name: 'Sweden', days: 9, budget: 1440, lat: 67.8558, lng: 20.2253,
       destinations: [
         { name: 'Kiruna', lat: 67.8558, lng: 20.2253, notes: "Sweden's northernmost town is being physically relocated a few kilometres east because the LKAB iron-ore mine beneath it is causing ground subsidence — an unusual \"moving city\" story worth a stop in itself, alongside the mine itself. LKAB's underground mine tours are popular and capacity-limited, so book ahead rather than assuming a same-day slot." },
-        { name: 'Icehotel (Jukkasjärvi)', lat: 67.8500, lng: 20.5958 },
-        { name: 'Abisko', lat: 68.3540, lng: 18.7885 },
-        { name: 'Aurora Sky Station', lat: 68.3547, lng: 18.7361 },
-        { name: 'Nikkaluokta (optional day trip)', lat: 67.8667, lng: 19.0167 },
-        { name: 'Kebnekaise', lat: 67.9014, lng: 18.5432 },
+        { name: 'Icehotel (Jukkasjärvi)', lat: 67.8500, lng: 20.5958 , notes: 'A hotel rebuilt from ice and snow every winter near Kiruna, with rooms and art installations carved fresh each season (some artist suites) and open roughly December-April before melting; even non-guests can tour it during the day, and it includes an ice bar and ice church.' },
+        { name: 'Abisko', lat: 68.3540, lng: 18.7885 , notes: 'One of the best spots in the world for aurora viewing, thanks to a specific dry microclimate ("the blue hole") that keeps skies clearer than surrounding areas even when it\'s cloudy elsewhere in the region.' },
+        { name: 'Aurora Sky Station', lat: 68.3547, lng: 18.7361 , notes: 'A viewing station reached by chairlift above Abisko, purpose-built for aurora viewing above the treeline and cloud base; open seasonally (roughly late Aug-early April) with reservations required in the main season.' },
+        { name: 'Nikkaluokta (optional day trip)', lat: 67.8667, lng: 19.0167 , notes: 'A small Sami settlement and the main trailhead for reaching Kebnekaise, reachable by bus from Kiruna; mostly a jumping-off point rather than a destination itself.' },
+        { name: 'Kebnekaise', lat: 67.9014, lng: 18.5432 , notes: 'Sweden\'s highest mountain, with two summits (the southern one now the taller since the northern glacier-topped peak has shrunk); the summit climb is a serious multi-day undertaking, but the STF mountain station at its base is reachable on an easier day hike from Nikkaluokta.' },
       ],
       notes: "Kiruna (3 days: the Icehotel, dog sledding or snowmobiling) then Abisko (3-4 days, with multiple aurora evenings) and an optional day trip to Nikkaluokta/Kebnekaise — a longer, darker version of the Swedish Lapland route above. Budget ~€140-180/day, with excursions running €150-250 each on top of that. Season: December-January for true polar night (-15 to -25°C) — November or February as a milder alternative. Web check (2026-08): check snowmobile license requirements before booking one; the extra days compared to the shorter Lapland route above meaningfully raise the odds of catching a clear aurora night. Abisko's 'blue hole' microclimate gives structurally clearer skies for aurora viewing than the surrounding area.",
       transport_to_next: 'End of this route — fly home from Kiruna.',
@@ -21871,12 +21938,12 @@ function rbBuildOrkneyShetlandRoute() {
     {
       code: 'GB', name: 'United Kingdom', days: 6, budget: 600, lat: 59.4000, lng: -2.5000,
       destinations: [
-        { name: 'Aberdeen (or Scrabster / Gills Bay)', lat: 57.1497, lng: -2.0943 },
-        { name: 'Kirkwall', lat: 58.9808, lng: -2.9600 },
-        { name: 'Skara Brae', lat: 59.0489, lng: -3.3397 },
-        { name: 'Ring of Brodgar', lat: 59.0006, lng: -3.2286 },
-        { name: 'Lerwick', lat: 60.1547, lng: -1.1494 },
-        { name: 'Jarlshof', lat: 59.8794, lng: -1.2986 },
+        { name: 'Aberdeen (or Scrabster / Gills Bay)', lat: 57.1497, lng: -2.0943 , notes: 'Mainly the ferry departure point for Orkney/Shetland rather than a stop in itself on this route; Aberdeen itself has a granite-built city center nicknamed the "Granite City" if there\'s time before the crossing.' },
+        { name: 'Kirkwall', lat: 58.9808, lng: -2.9600 , notes: 'Orkney\'s capital, centered on the red sandstone St Magnus Cathedral, built starting in 1137 and still the seat of the Bishop of Orkney; the compact old town\'s narrow flagstone main street is easily walked in an hour or two.' },
+        { name: 'Skara Brae', lat: 59.0489, lng: -3.3397 , notes: 'A remarkably preserved Neolithic village older than Stonehenge or the Egyptian pyramids, with stone furniture (beds, dressers) still visible inside the houses; a storm in 1850 first exposed it by stripping away the covering sand dune.' },
+        { name: 'Ring of Brodgar', lat: 59.0006, lng: -3.2286 , notes: 'A Neolithic stone circle (originally up to 60 stones, 27 survive) inside a natural amphitheater setting between two lochs, part of the same UNESCO World Heritage complex as Skara Brae; unlike Stonehenge, visitors can walk right up to and among the stones.' },
+        { name: 'Lerwick', lat: 60.1547, lng: -1.1494 , notes: 'Shetland\'s only town and main port, with a compact harborfront old town; the Shetland Museum covers the islands\' Norse heritage in depth, and late January\'s Up Helly Aa fire festival (Viking longship burning) is the islands\' best-known event if timing coincides.' },
+        { name: 'Jarlshof', lat: 59.8794, lng: -1.2986 , notes: 'A layered archaeological site at Shetland\'s southern tip showing roughly 4,000 years of continuous settlement stacked on top of each other — Bronze Age, Iron Age broch, Viking longhouse, and a medieval laird\'s house all visible in one place.' },
       ],
       notes: "Aberdeen (or Scrabster/Gills Bay) to Kirkwall on Orkney (Skara Brae, the Ring of Brodgar), then on by ferry to Lerwick on Shetland (Jarlshof, puffins). Budget ~€90-110/day — ferry crossings and island prices run higher than the mainland. Season: May-August for birds/daylight, with Shetland's 'simmer dim' (near-endless summer twilight) in June. Web check (2026-08): NorthLink ferries sail Aberdeen-Kirkwall/Lerwick, a cabin is recommended for the overnight crossing; Pentland Ferries' Gills Bay-St Margaret's Hope crossing (~1h15) is a separate, often cheaper/faster Orkney-only alternative. Peak island ferry fares were abolished for residents from 24 March 2026 — not for tourists.",
       transport_to_next: 'End of this route — fly home from Kirkwall or Lerwick, or ferry back to Aberdeen.',
@@ -21989,11 +22056,11 @@ function rbBuildCotswoldsBathSouthwestEnglandRoute() {
       code: 'GB', name: 'United Kingdom', days: 6, budget: 540, lat: 51.3811, lng: -2.3590,
       destinations: [
         { name: 'Bath (Roman Baths)', lat: 51.3811, lng: -2.3590 , notes: 'A well-preserved ancient Roman bathing complex fed by natural hot springs, set within Bath\'s wider Georgian architecture (Royal Crescent, Pulteney Bridge); buy timed tickets online in advance to skip the queue.' },
-        { name: 'Bourton-on-the-Water', lat: 51.8767, lng: -1.7546 },
-        { name: 'Bibury', lat: 51.8115, lng: -1.8371 },
+        { name: 'Bourton-on-the-Water', lat: 51.8767, lng: -1.7546 , notes: 'Known as the "Venice of the Cotswolds" for the shallow River Windrush running directly through the village center, crossed by a series of low stone footbridges; can get very crowded with day-trippers in summer.' },
+        { name: 'Bibury', lat: 51.8115, lng: -1.8371 , notes: 'Famous for Arlington Row, a line of 17th-century weavers\' cottages William Morris once called "the most beautiful village in England"; one of the most-photographed streets in the Cotswolds, so visit early to avoid the crowds gathering for that exact shot.' },
         { name: 'Stonehenge', lat: 51.1789, lng: -1.8262, notes: "As a short drop-in stop, the standard visit is viewing the circle from the roped perimeter path, not walking among the stones. Book the timed-entry ticket online in advance (English Heritage/National Trust) — on-the-day availability is limited and car park access is tied to your slot time." },
-        { name: 'Bristol (optional add-on)', lat: 51.4545, lng: -2.5879 },
-        { name: 'Cornwall coast (optional extension)', lat: 50.2110, lng: -5.4800 },
+        { name: 'Bristol (optional add-on)', lat: 51.4545, lng: -2.5879 , notes: 'A larger, edgier city than the surrounding Cotswolds villages, known for street art (it\'s Banksy\'s hometown, with several of his works still visible around the city) and Isambard Kingdom Brunel\'s Clifton Suspension Bridge over the Avon Gorge.' },
+        { name: 'Cornwall coast (optional extension)', lat: 50.2110, lng: -5.4800 , notes: 'A significant further drive southwest from the Cotswolds/Bath area, with dramatic Atlantic coastline, fishing villages like St Ives and Padstow, and the Eden Project\'s biome domes; realistically needs its own dedicated days rather than a quick add-on if actually visited.' },
       ],
       notes: "Entry: fly into London or Bristol, then a rental car (public transport is limited around the Cotswolds villages). Bath's Roman Baths, the Cotswolds villages of Bourton-on-the-Water and Bibury, Stonehenge, with Bristol or a Cornwall coast add-on left optional. Budget ~£65-85/day (~€76-100). Season: May-September overall, though the Cotswolds themselves are also lovely in spring/autumn. Web check (2026-08): the Roman Baths run timed-entry, ~£28; Stonehenge (English Heritage) should be booked ahead of arrival. Exchange rate used: 1 GBP ≈ 1.17 EUR (August 2026).",
       transport_to_next: 'End of this route — fly home from Bristol or London.',
@@ -22278,7 +22345,7 @@ function rbBuildBalticsPolandRoute() {
     {
       code: 'PL', name: 'Poland', days: 4, budget: 360, lat: 52.2297, lng: 21.0122,
       destinations: [
-        { name: 'Warsaw', lat: 52.2297, lng: 21.0122 },
+        { name: 'Warsaw', lat: 52.2297, lng: 21.0122 , notes: 'Poland\'s capital, almost entirely rebuilt after being deliberately razed in WWII — its meticulously reconstructed Old Town (UNESCO-listed specifically for the quality of that postwar rebuild) looks centuries older than it is; the POLIN Museum of the History of Polish Jews is the standout modern addition.' },
         { name: 'Masurian Lakes (Giżycko)', lat: 54.0367, lng: 21.7644 },
         { name: 'Gdańsk / Hel Peninsula', lat: 54.6084, lng: 18.8006 },
       ],
@@ -22477,10 +22544,10 @@ function rbBuildTenerifeRoute() {
       code: 'ES', name: 'Spain', days: 6, budget: 390, lat: 28.2916, lng: -16.6291,
       destinations: [
         { name: 'Santa Cruz de Tenerife', lat: 28.4636, lng: -16.2518 , notes: 'The city itself (Calatrava\'s Auditorio de Tenerife, Plaza de España) doesn\'t need more than a few hours. The easily-missed highlight nearby is Anaga Rural Park — dramatic laurel-forest ridges and coastal cliffs a short drive away — worth carving out time for rather than skipping.' },
-        { name: 'La Laguna (UNESCO old town)', lat: 28.4874, lng: -16.3159 },
+        { name: 'La Laguna (UNESCO old town)', lat: 28.4874, lng: -16.3159 , notes: 'Tenerife\'s former capital and a UNESCO World Heritage town; its grid-pattern colonial street layout (an unusually early example, later used as a model for Spanish colonial cities in the Americas) is lined with colorful facades and wooden balconies.' },
         { name: 'Teide National Park', lat: 28.2723, lng: -16.6417 , notes: 'Spain\'s highest peak (3,715m) with a genuinely otherworldly volcanic landscape; the cable car takes you most of the way up. If you want the actual summit, you need a separate free National Park permit booked online in advance (slots release Mondays 7am Canary time, up to ~56 days ahead) — the cable car ticket alone does not include summit access. Go early for clearer skies before afternoon cloud rolls in.' },
-        { name: 'Anaga Rural Park (Cruz del Carmen)', lat: 28.5477, lng: -16.2135 },
-        { name: 'Costa Adeje', lat: 28.0994, lng: -16.7357 },
+        { name: 'Anaga Rural Park (Cruz del Carmen)', lat: 28.5477, lng: -16.2135 , notes: 'A rugged, mist-shrouded mountain range at Tenerife\'s northeastern tip, covered in ancient laurel forest (laurisilva, a relict ecosystem from the Tertiary period); the Cruz del Carmen visitor center is a good starting point for hikes into the park\'s ridgeline trails.' },
+        { name: 'Costa Adeje', lat: 28.0994, lng: -16.7357 , notes: 'Tenerife\'s main upmarket resort area on the south coast, with the island\'s driest, sunniest climate and a long stretch of beaches and beach clubs; mostly a resort base rather than a sightseeing stop.' },
         { name: 'Los Cristianos', lat: 28.0525, lng: -16.7192 , notes: 'Tenerife\'s south-coast resort town, mainly useful as the ferry departure point for La Gomera. Book the Fred Olsen/Naviera Armas ferry ahead in high season; the crossing to San Sebastián takes about 50 minutes.' },
       ],
       notes: "Entry: easyJet and Transavia fly direct from Amsterdam/Rotterdam to Tenerife South, plus winter-sun charters on TUI fly. 1-2 days in Santa Cruz and the UNESCO-listed university town of La Laguna next door, 1 day up at Teide National Park, 1-2 days walking in the Anaga mountains in the northeast, then 2 days winding down on the south coast around Costa Adeje/Los Cristianos. A rental car is worth it for Anaga's winding roads. Budget ~€55-75/day. Season: good year-round; October-May is nicest for hiking. Web check (2026-08): the Teide cable car is roughly €40 return, weather-dependent and worth booking ahead; a free permit is mandatory for the final 200m to the summit (capped at ~200 visitors/day, apply well ahead via reservasparquesnacionales.es) — without it you still reach the upper cable-car station at 3,555m, which is impressive on its own. The Canaries are EU/Schengen but sit outside the EU VAT zone, running their own IGIC system (general rate ~7% vs mainland Spain's 21% IVA) — noticeably cheaper on electronics, alcohol, tobacco and perfume, island-wide, not just at the airport. Since April 2024 there have been ongoing peaceful overtourism protests (\"Canarias tiene un límite\") against housing shortage/hotel construction, continuing into 2025 — no direct safety concern for visitors, but respectful behavior is advised given growing local sentiment.",
@@ -23213,9 +23280,9 @@ function rbBuildIonianIslandsRoute() {
     {
       code: 'GR', name: 'Greece', days: 3, budget: 195, lat: 38.1756, lng: 20.4881,
       destinations: [
-        { name: 'Argostoli (Kefalonia)', lat: 38.1756, lng: 20.4881 },
-        { name: 'Melissani Cave', lat: 38.2531, lng: 20.6167 },
-        { name: 'Myrtos Beach', lat: 38.3167, lng: 20.4333 },
+        { name: 'Argostoli (Kefalonia)', lat: 38.1756, lng: 20.4881 , notes: 'Kefalonia\'s capital, set on a long, narrow bay; the Drapano Bridge (a 19th-century causeway) crosses the bay, and a colony of loggerhead sea turtles is regularly spotted right in the harbor.' },
+        { name: 'Melissani Cave', lat: 38.2531, lng: 20.6167 , notes: 'A collapsed limestone cave with a partially open roof, holding a strikingly blue underground lake; small boats row visitors across the lake, with the best light (sunbeams hitting the water) around midday.' },
+        { name: 'Myrtos Beach', lat: 38.3167, lng: 20.4333 , notes: 'Widely ranked among Greece\'s most photogenic beaches, a long crescent of white pebbles below dramatic cliffs on Kefalonia\'s northwest coast; the road down offers a well-known elevated viewpoint before descending to the beach itself.' },
       ],
       notes: "Entry: flight to Kefalonia (seasonal charter/low-cost carriers from Amsterdam in summer) or a mainland ferry from Kyllini (Peloponnese) — deliberately no Corfu link on this route, see below. Kefalonia (3 days): the Melissani Cave and Myrtos Beach. Budget ~€55-70/day average across the route (used here at ~€65/day). Season: May-October. Route note: this deliberately excludes Corfu — there's currently no direct Corfu-Zakynthos ferry, and the full island chain Corfu-Paxos-Lefkada-Meganisi-Ithaca-Kefalonia-Zakynthos takes 12-13 hours of sailing time, not realistic within a 5-7 day trip; both islands here are reachable via the mainland ferry from Kyllini instead, no Corfu connection needed. ⚠️ Web check (2026-08): Kefalonia was not named in the wildfire sources consulted as of August 2026 — less acute than Corfu/Crete/Paros this season, though the general yellow Greece-wide wildfire advisory (since 4 August 2026) still applies.",
       transport_to_next: 'Ferry from Kefalonia (or via the mainland at Kyllini, Peloponnese) to Zakynthos.',
@@ -23223,9 +23290,9 @@ function rbBuildIonianIslandsRoute() {
     {
       code: 'GR', name: 'Greece', days: 3, budget: 195, lat: 37.7870, lng: 20.8995,
       destinations: [
-        { name: 'Zakynthos Town', lat: 37.7870, lng: 20.8995 },
-        { name: 'Navagio (Shipwreck Beach)', lat: 37.8595, lng: 20.6247 },
-        { name: 'Blue Caves', lat: 37.9128, lng: 20.7261 },
+        { name: 'Zakynthos Town', lat: 37.7870, lng: 20.8995 , notes: 'The capital of Zakynthos (Zante), largely rebuilt in Venetian style after a 1953 earthquake destroyed the original town; the hilltop Bohali fortress above town gives the best view over the harbor.' },
+        { name: 'Navagio (Shipwreck Beach)', lat: 37.8595, lng: 20.6247 , notes: 'Zakynthos\'s signature beach, a white-pebble cove only reachable by boat (or a cliff-top viewpoint above it), named for a rusted shipwreck that ran aground on the beach in 1980 and remains partially visible.' },
+        { name: 'Blue Caves', lat: 37.9128, lng: 20.7261 , notes: 'A set of sea caves at Zakynthos\'s northern tip where sunlight reflecting off the white limestone and seabed turns the water a vivid electric blue; best visited by boat tour in the morning when the light angle is right and the sea is calm.' },
       ],
       notes: "Zakynthos (3 days): Navagio/Shipwreck Beach and the Blue Caves. Same wildfire-advisory note as Kefalonia above — neither island was named in the sources consulted as of August 2026.",
       transport_to_next: 'End of this route — mainland ferry back via Kyllini, or a flight from Zakynthos to Amsterdam.',
@@ -23899,8 +23966,8 @@ function rbBuildPolandSlovakiaHungaryRoute() {
     {
       code: 'PL', name: 'Poland', days: 5, budget: 325, lat: 50.0614, lng: 19.9366,
       destinations: [
-        { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 },
-        { name: 'Zakopane', lat: 49.2992, lng: 19.9496 },
+        { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 , notes: 'Poland\'s former royal capital, centered on the vast medieval Rynek Główny square (Europe\'s largest medieval town square) with the Renaissance Cloth Hall in its middle and Wawel Castle on a hill above the Vistula river; St. Mary\'s Basilica\'s trumpet call (a broken-off bugle note, played every hour from the tower) commemorates a 13th-century Mongol invasion.' },
+        { name: 'Zakopane', lat: 49.2992, lng: 19.9496 , notes: 'Poland\'s main mountain resort town in the Tatra range, known as the "winter capital of Poland"; Krupówki street is the lively pedestrian core, and a cable car up Gubałówka or Kasprowy Wierch gives panoramic Tatra views without a full hike.' },
         { name: 'Tatra National Park', lat: 49.1997, lng: 20.0669 },
       ],
       notes: "Krakow (2-3 days) — Zakopane/Tatra National Park (2 days). Budget ~€60-75/day. Season: June-September (Tatra hiking season).",
@@ -23993,7 +24060,7 @@ function rbBuildCentralEuropeRoadtripFourteenDaysRoute() {
     {
       code: 'PL', name: 'Poland', days: 2, budget: 130, lat: 50.0614, lng: 19.9366,
       destinations: [
-        { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 },
+        { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 , notes: 'Poland\'s former royal capital, centered on the vast medieval Rynek Główny square (Europe\'s largest medieval town square) with the Renaissance Cloth Hall in its middle and Wawel Castle on a hill above the Vistula river; St. Mary\'s Basilica\'s trumpet call (a broken-off bugle note, played every hour from the tower) commemorates a 13th-century Mongol invasion.' },
         { name: 'Auschwitz-Birkenau (day trip)', lat: 50.0359, lng: 19.1783 },
       ],
       notes: "Krakow (2-3 days), including a half-day Auschwitz-Birkenau trip. Budget ~€60-75/day. Web check (2026-08): since March 2026 Auschwitz-Birkenau can only be booked online (visit.auschwitz.org) — book at least 2-4 weeks ahead.",
@@ -24476,7 +24543,7 @@ function rbBuildNorwaySwedenFjordsCapitalsRoute() {
     {
       code: 'NO', name: 'Norway', days: 7, budget: 980, lat: 60.0000, lng: 8.0000,
       destinations: [
-        { name: 'Oslo (Karl Johans gate)', lat: 59.9139, lng: 10.7522 },
+        { name: 'Oslo (Karl Johans gate)', lat: 59.9139, lng: 10.7522 , notes: 'Oslo\'s main boulevard, running from the Royal Palace down to the central train station past the Parliament building; a straightforward walking spine linking most of the city\'s central sights.' },
         { name: 'Bergen (Bryggen)', lat: 60.3959, lng: 5.3245 , notes: 'Bergen\'s core draw is the UNESCO-listed Bryggen wharf: rows of colorful wooden Hanseatic trading houses right next to the Fisketorget fish market. Go early morning before cruise-ship crowds hit, and walk into the narrow alleys ("boder") between the houses, which most people passing by on the waterfront skip.' },
         { name: 'Sognefjord / Nærøyfjord', lat: 60.8666, lng: 6.8666 , notes: 'Sognefjord (Norway\'s longest, 205km) branches into the narrow, cliff-walled Nærøyfjord, the scenic centerpiece of the "Norway in a Nutshell" boat leg between Flåm and Gudvangen. Where possible pick the smaller electric boat (Future of the Fjords / Vision of the Fjords) over the standard ferry, and stay on the open top deck for photos even if it\'s cold.' },
         { name: 'Flåm (Flåm Railway)', lat: 60.8617, lng: 7.1136 , notes: 'The Flåm Railway (Flåmsbana) is one of the world\'s steepest standard-gauge railways, dropping 866m over 20km with a scheduled photo-stop at Kjosfossen waterfall. Book seats ahead in peak summer and sit on the right side going down from Myrdal to Flåm for the best waterfall/valley views.' },
@@ -24487,7 +24554,7 @@ function rbBuildNorwaySwedenFjordsCapitalsRoute() {
     {
       code: 'SE', name: 'Sweden', days: 5, budget: 500, lat: 58.5000, lng: 15.0000,
       destinations: [
-        { name: 'Gothenburg (transit stop)', lat: 57.7089, lng: 11.9746 },
+        { name: 'Gothenburg (transit stop)', lat: 57.7089, lng: 11.9746 , notes: 'Sweden\'s second city, mainly used here as a transit/overnight stop; if there\'s time, the Haga district\'s wooden houses and cafés, or the Liseberg amusement park, are the quick options.' },
         { name: 'Stockholm (Gamla Stan)', lat: 59.3251, lng: 18.0711, notes: "Stortorget, the old town's main square, was the site of the 1520 Stockholm Bloodbath; duck down Mårten Trotzigs Gränd, the city's narrowest alley (about 90cm wide), and time a visit to the Royal Palace courtyard for the Changing of the Guard (around midday, fewer times in winter)." },
       ],
       notes: "A brief Gothenburg stopover (transit, optionally an overnight), then on to Stockholm (Gamla Stan, the Vasa Museum, Skansen — same content as Stockholm (4 days) 🏰, rbBuildStockholmRoute) for the last 3-4 days. Budget ~€110/day. Web check (2026-08): the Gothenburg-Stockholm train takes ~3h, making the transit stop easy to extend into a full day if the schedule allows.",
@@ -24525,7 +24592,7 @@ function rbBuildDenmarkSwedenNorwayOverlandRoute() {
     {
       code: 'NO', name: 'Norway', days: 4, budget: 600, lat: 59.9139, lng: 10.7522,
       destinations: [
-        { name: 'Oslo (Karl Johans gate)', lat: 59.9139, lng: 10.7522 },
+        { name: 'Oslo (Karl Johans gate)', lat: 59.9139, lng: 10.7522 , notes: 'Oslo\'s main boulevard, running from the Royal Palace down to the central train station past the Parliament building; a straightforward walking spine linking most of the city\'s central sights.' },
         { name: 'Flåm (optional day trip, 14-day version)', lat: 60.8617, lng: 7.1136 },
       ],
       notes: "Oslo (4 days) — same content as Oslo (5 days) 🏛️ (rbBuildOsloRoute), one day shorter here. With the full 14 days (the top of this route's 10-14 day range) there's room for an optional Flåm day trip (a long day, or better an overnight) before flying home. Budget ~€150/day.",
