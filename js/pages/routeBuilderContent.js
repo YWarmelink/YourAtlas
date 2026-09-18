@@ -12699,6 +12699,82 @@ function rbMigrateMixedEuropeCluster3DestinationNotes() {
 }
 
 /**
+ * Batches 153-158 (2026-09-18) -- Alpine/Adriatic cluster round 4 -- closes out Ardennes,
+ * Luxembourg, Belgian Coast + Bruges + Ghent, Bavaria: Munich + Alps, Black Forest, Salzburg +
+ * Surroundings, Tyrol, Zurich + Lucerne + Surroundings, Swiss Alps: Zermatt/Matterhorn,
+ * Switzerland + Northern Italy, Tuscany, Corsica + Sardinia: South Corsica & North Sardinia,
+ * San Marino: Day Visit, Split + Islands, Ljubljana + Lake Bled, Slovenia Roadtrip, Kotor + Bay
+ * of Kotor, and Montenegro + Croatia entirely. 40 fresh destinations plus 6 reuse/combo entries
+ * of already-written canonical notes (Munich, Salzburg, Florence, Bonifacio, Bohinj, Vršič
+ * Pass/Soča Valley combos). Same generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateAlpineAdriaticCluster4DestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_ALPINE_ADRIATIC_CLUSTER4_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_ALPINE_ADRIATIC_CLUSTER4_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Han-sur-Lesse': "Home to the Grottes de Han, one of Europe's most visited show caves, with an underground boat ride along the Lesse river partway through the tour; above ground, a wildlife safari park (Parc Animalier) with European species like bison and wolves is included with the same ticket complex.",
+    'Coo': "Known for Belgium's highest waterfall (roughly 15m), an artificial cascade created centuries ago by monks diverting the Amblève river; also home to a cable car and a small amusement park (Plopsa Coo) aimed at families.",
+    'Durbuy': "Marketed as \"the smallest town in the world\" due to its historic town charter despite a tiny population; a compact, walkable old center with an adjoining adventure park (kayaking, mountain biking, a giant slide) along the Ourthe river.",
+    'Luxembourg City (Bock Casemates)': "A network of underground tunnels and fortifications carved into the Bock cliff, the original defensive core around which Luxembourg City grew; parts are open to explore on foot, with viewpoints looking out over the Alzette valley and the old town's bridges.",
+    'Berdorf': "A small village in Luxembourg's \"Little Switzerland\" (Mullerthal) region, known as a hiking base for sandstone rock formations, narrow gorges and the Mullerthal Trail; also has an outdoor climbing area popular with rock climbers.",
+    'Echternach': "Luxembourg's oldest town, built around a Benedictine abbey; hosts a centuries-old hopping procession (Springprozession) each Whit Tuesday, a UNESCO-listed intangible cultural tradition.",
+    'De Haan': "A Belgian coastal resort town known for its well-preserved Belle Époque villas and a vintage tram line running along the coast; quieter and more architecturally distinct than Belgium's larger, more built-up beach towns.",
+    'Ostend': "Belgium's largest coastal town, with a long sandy beach, a working fishing port, and a casino on the seafront; also home to the Mercator, a preserved 1930s sailing ship open for tours in the harbor.",
+    'Munich (Marienplatz, Englischer Garten, Deutsches Museum)': "Marienplatz's Rathaus-Glockenspiel figures perform daily at 11am and noon (plus 5pm in summer); the Englischer Garten is one of the world's largest urban parks, where surfers ride the Eisbach standing wave right in the city, and the Deutsches Museum nearby is one of the world's largest science and technology museums.",
+    'Freiburg im Breisgau (base)': "A university town on the edge of the Black Forest, with a Gothic cathedral and a network of small open water channels (Bächle) running along its old-town streets; a good base for day trips into the surrounding forest and vineyards.",
+    'Titisee': "A glacial lake in the Black Forest surrounded by forested hills, with a lakeside promenade lined with shops selling the region's cuckoo clocks and Black Forest cake; boat rentals and short lake cruises are the main on-water activity.",
+    'Triberg': "Home to Germany's highest waterfall (163m total drop over several cascades) and considered the birthplace of the cuckoo clock, with shops selling every size imaginable including giant novelty clocks.",
+    'Baden-Baden': "An elegant 19th-century spa town, still built around its thermal baths (including the ornate Friedrichsbad) and a casino modeled after the palace of Versailles; long a fashionable retreat for European aristocracy and now for spa tourism.",
+    'Salzburg (Getreidegasse, Hohensalzburg Fortress, Mozart sites)': "Mozart's birthplace and several Sound of Music filming locations sit inside a compact old town dominated by the Hohensalzburg fortress above it; ride the funicular up for the view over the Salzach river, and browse Getreidegasse's old guild signs on the way.",
+    'Werfen (Hohenwerfen Castle & Eisriesenwelt ice caves)': "Hohenwerfen is a hilltop medieval fortress used in filming \"The Sound of Music\" and \"Where Eagles Dare\"; the nearby Eisriesenwelt, the world's largest ice cave, has a permanent ice formation extending over a kilometer into the mountain, reached by cable car plus a guided walk.",
+    'Wolfgangsee / St. Wolfgang': "A lake in the Salzkammergut known for the White Horse Inn (Weißes Rössl), made famous by an old operetta of the same name; a cog railway climbs from the lakeside village up the Schafberg peak for panoramic Alpine views.",
+    'Untersberg cable car': "A cable car climbing steeply from just outside Salzburg to over 1,800m on the Untersberg massif, giving quick access to alpine hiking trails and views over Salzburg and Bavaria without a long drive; local legend holds the mountain is home to a sleeping emperor who will one day awaken.",
+    'Seefeld': "A high-plateau resort town in Tyrol, host of Winter Olympic cross-country skiing/ski jumping events (1964, 1976) and now a year-round base for hiking and biking on its plateau trails, with easy access to surrounding peaks by cable car.",
+    'Achensee': "Tyrol's largest lake, ringed by mountains and served by a historic steam cog railway (one of the oldest in the world still running) from Jenbach; popular for sailing, windsurfing and lakeside hiking in summer.",
+    'Zillertal / Mayrhofen (Olperer suspension bridge)': "Mayrhofen anchors the Zillertal valley as its main resort town; the Olperer suspension bridge nearby is one of the highest pedestrian suspension bridges in the Alps, reached via cable car and a hike, hanging dramatically over the valley.",
+    'Zurich (old town, lake, Uetliberg hike)': "Zurich's old town (Altstadt) straddles the Limmat river near where it meets Lake Zurich; the Uetliberg, a forested hill on the city's edge reachable by train, is nicknamed Zurich's \"home mountain\" for its easy hike and skyline views.",
+    'Lucerne (Chapel Bridge, lake, old town)': "Lucerne's covered wooden Chapel Bridge (Kapellbrücke), partially rebuilt after a 1993 fire, is Europe's oldest surviving truss bridge and the city's signature landmark, spanning the Reuss river beside Lake Lucerne's old town.",
+    'Pilatus (Golden Round Trip)': "Mount Pilatus above Lucerne is reached via the world's steepest cogwheel railway, and the \"Golden Round Trip\" combines that train up with a cable car down (or vice versa) plus a boat across the lake — a full-circle scenic day out.",
+    'Rigi (alternative)': "Known as the \"Queen of the Mountains,\" Rigi is reached by Europe's oldest mountain railway (opened 1871) and offers a gentler, less crowded alternative to Pilatus with similar panoramic views over Lake Lucerne and the surrounding peaks.",
+    'Saas-Fee (optional day trip)': "A car-free glacier village near Zermatt, ringed by 13 peaks over 4,000m, sometimes called the \"pearl of the Alps\"; a cable car up to the Mittelallalin viewpoint includes access to Europe's highest-altitude revolving restaurant and an ice pavilion carved into the glacier.",
+    'Chur / Graubünden': "Switzerland's oldest town, and the capital of Graubünden canton; mainly serves as the starting point for the scenic Bernina Express and Glacier Express train routes rather than being a long stop itself.",
+    'St. Moritz (Bernina Express)': "A glamorous Alpine resort town, birthplace of winter tourism and host of two Winter Olympics (1928, 1948); also the starting point of the Bernina Express, a UNESCO-listed scenic rail route crossing into Italy over dramatic viaducts and passes.",
+    'Tirano': "The Italian terminus of the Bernina Express, where the train famously runs directly through the town's streets alongside cars and pedestrians before reaching the station; a good lunch stop before heading back up into the mountains.",
+    'Valtellina / Lake Como': "Valtellina is an Italian Alpine wine valley known for Nebbiolo-based reds; the route continues to Lake Como's northern reaches, connecting the Bernina Express journey to Italy's lake district.",
+    'Florence (hub)': "The Uffizi and the Duomo's dome climb are the two must-do highlights; book Uffizi tickets ahead of time, as walk-up lines run for hours.",
+    'Montalcino (base, wine country)': "A hilltop Tuscan town surrounded by the vineyards that produce Brunello di Montalcino, one of Italy's most prestigious red wines; a 14th-century fortress (Rocca) at the top of town doubles as an enoteca for tasting the local wine.",
+    'Figari / Bonifacio': "Figari is Corsica's small regional airport near Bonifacio, the dramatic cliff-top citadel town where the King of Aragon's Staircase (187 steps carved into the cliff) leads down to the sea; boat trips out of the harbor give the classic view of the town perched on the limestone overhang.",
+    'Palau': "A small port town on Sardinia's northern tip, mainly used as the ferry departure point for the La Maddalena archipelago; the nearby Roccia dell'Orso (Bear Rock), a wind-eroded rock formation resembling a bear, is a short detour with panoramic views over the strait.",
+    'San Marino old town': "A hilltop old town inside Europe's oldest surviving republic (founded, by tradition, in 301 AD); narrow stepped streets connect its main square to the three fortified towers above.",
+    'City walls': "San Marino's old town is still encircled by intact medieval walls and gates, with walkable ramparts connecting several of its watchtowers and offering views out over the surrounding Italian countryside.",
+    'Rocca Guaita (main tower)': "The oldest and largest of San Marino's three towers, dating to the 11th century, once used as a prison; the climb up gives the best panoramic view over the country and the Adriatic coast on a clear day.",
+    'Torre Cesta (second tower)': "The second of San Marino's three towers, built atop the highest point of Monte Titano; houses a small museum of antique weapons and is connected to Rocca Guaita by a scenic walking path along the ridge.",
+    'Brač / Zlatni Rat': "Brač is Croatia's third-largest island, known for white limestone (historically quarried for the White House and Diocletian's Palace) and Zlatni Rat, a distinctive horn-shaped pebble spit voted among Europe's best beaches, its shape and orientation shifting slightly over time with the currents.",
+    'Vis (optional)': "One of the more remote, less-developed Croatian islands, closed to foreign visitors under Yugoslav military rule until 1989, which left it with fewer resorts and crowds than Hvar or Brač; the Blue Cave on nearby Biševo island is a popular boat-trip add-on.",
+    'Vintgar Gorge': "A 1.6km wooden walkway clinging to the walls of a narrow river gorge near Bled, ending at the Šum waterfall; a shorter, easier alternative to Slovenia's more remote gorges, making it a popular half-day add-on to a Bled visit.",
+    'Bohinj (optional day trip)': "Slovenia's larger, quieter alpine lake south of Bled — glacial, ringed by forested peaks, with far fewer crowds than Bled. Ride the Vogel cable car above the lake for a panoramic view, or use it as the trailhead for the Savica waterfall hike.",
+    'Bled / Bohinj': "Bled's postcard island church (reached by traditional wooden pletna boats, with Bled Castle on the cliff above) pairs with Bohinj, Slovenia's larger and quieter glacial lake further into the Julian Alps — ring Bled church's \"wishing bell\" for luck, and ride Bohinj's Vogel cable car for a panoramic view above the lake.",
+    'Vršič Pass / Soča Valley': "Slovenia's highest mountain pass, with 50 numbered hairpin bends linking the Soča Valley's vivid turquoise river to the Sava valley through the Julian Alps; the road is open only roughly late May through October/November depending on snow.",
+    'Herceg Novi': "A Montenegrin coastal town near the Croatian border, known for a subtropical microclimate that supports palm trees, citrus groves and even bananas; its old fortress town center sits above a working harbor.",
+    'Tivat': "A Bay of Kotor town transformed by Porto Montenegro, a large modern marina and residential/resort development built on the site of a former Yugoslav naval base, now a base for superyachts.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Two of batch 2's standalone routes were flagged as too exposed to their long-haul flight time
  * relative to trip length — Jordanië (8d, connecting flight) and Nieuw-Zeeland Zuidereiland (21d,
  * but 27-38h with multiple stops). Adds +2 days to each as a recovery/margin buffer, matching the
@@ -15071,9 +15147,9 @@ function rbBuildArdennesRoute() {
       code: 'BE', name: 'Belgium', days: 3, budget: 264, lat: 50.1833, lng: 5.5833,
       destinations: [
         { name: 'La Roche-en-Ardenne', lat: 50.1833, lng: 5.5833 , notes: 'A small town in a loop of the Ourthe river, overlooked by a ruined medieval castle keep; a good base for Ardennes forest hikes and kayaking the river, and it saw heavy fighting during the WWII Battle of the Bulge.' },
-        { name: 'Han-sur-Lesse', lat: 50.1167, lng: 5.2000 },
-        { name: 'Coo', lat: 50.3833, lng: 5.9167 },
-        { name: 'Durbuy', lat: 50.3522, lng: 5.4536 },
+        { name: 'Han-sur-Lesse', lat: 50.1167, lng: 5.2000 , notes: 'Home to the Grottes de Han, one of Europe\'s most visited show caves, with an underground boat ride along the Lesse river partway through the tour; above ground, a wildlife safari park (Parc Animalier) with European species like bison and wolves is included with the same ticket complex.' },
+        { name: 'Coo', lat: 50.3833, lng: 5.9167 , notes: 'Known for Belgium\'s highest waterfall (roughly 15m), an artificial cascade created centuries ago by monks diverting the Amblève river; also home to a cable car and a small amusement park (Plopsa Coo) aimed at families.' },
+        { name: 'Durbuy', lat: 50.3522, lng: 5.4536 , notes: 'Marketed as "the smallest town in the world" due to its historic town charter despite a tiny population; a compact, walkable old center with an adjoining adventure park (kayaking, mountain biking, a giant slide) along the Ourthe river.' },
       ],
       notes: "Entry: own car from the Netherlands (~2.5-3h drive). Base in La Roche-en-Ardenne (castle ruin, canoeing on the Ourthe), with a day trip to Han-sur-Lesse (caves + wildlife park), then Coo (waterfalls, cable car) and an optional stop in Durbuy ('the world's smallest city'). Season: April-October for canoeing/hiking. Budget ~€80-95/day (B&B/hotel + food + activities) — revised after a web check, €70-80 was slightly too low once a Han-sur-Lesse day is factored in. Web check (2026-08): the Han-sur-Lesse caves + wildlife park combo ticket is €41.50 p.p. — a separate cost, not included in the daily budget; the park closes from 12 November and has shorter opening hours outside peak season (sometimes only 10:00-15:00). The Coo cable car sits within Plopsaland Ardennes, which is NOT open every day outside school holidays (2026: daily open 4-19 April, 25 April-10 May, 28 May-31 August, 17 October-8 November) — check the calendar, don't assume 'April-October = always open'.",
       transport_to_next: 'End of this route — drive back to the Netherlands (~2.5-3h).',
@@ -15092,9 +15168,9 @@ function rbBuildLuxembourgRoute() {
     {
       code: 'LU', name: 'Luxembourg', days: 4, budget: 440, lat: 49.6116, lng: 6.1319,
       destinations: [
-        { name: 'Luxembourg City (Bock Casemates)', lat: 49.6116, lng: 6.1319 },
-        { name: 'Berdorf', lat: 49.8167, lng: 6.3500 },
-        { name: 'Echternach', lat: 49.8114, lng: 6.4211 },
+        { name: 'Luxembourg City (Bock Casemates)', lat: 49.6116, lng: 6.1319 , notes: 'A network of underground tunnels and fortifications carved into the Bock cliff, the original defensive core around which Luxembourg City grew; parts are open to explore on foot, with viewpoints looking out over the Alzette valley and the old town\'s bridges.' },
+        { name: 'Berdorf', lat: 49.8167, lng: 6.3500 , notes: 'A small village in Luxembourg\'s "Little Switzerland" (Mullerthal) region, known as a hiking base for sandstone rock formations, narrow gorges and the Mullerthal Trail; also has an outdoor climbing area popular with rock climbers.' },
+        { name: 'Echternach', lat: 49.8114, lng: 6.4211 , notes: 'Luxembourg\'s oldest town, built around a Benedictine abbey; hosts a centuries-old hopping procession (Springprozession) each Whit Tuesday, a UNESCO-listed intangible cultural tradition.' },
         { name: 'Vianden', lat: 49.9350, lng: 6.2081 , notes: 'One of the region\'s largest feudal castles, perched above the town; ride the chairlift (télésiège) across the valley for the classic castle-and-town photo, or visit the castle interior right at opening to beat tour groups.' },
       ],
       notes: "Entry: own car from the Netherlands (~4h drive). Luxembourg City (Bock Casemates, open year-round, €11) — Müllerthal/'Luxembourg's Switzerland' (Berdorf/Echternach, the well-known rock-formation hiking trails) — Vianden (castle €11-13 + cable car). Season: April-October for hiking in Müllerthal. Budget ~€100-120/day — revised after a web check, €90-100 was too low: Luxembourg City is one of the pricier cities in the EU for food and accommodation. Web check (2026-08): the Vianden cable car is still running, but with seasonal gaps (e.g. 2025: 4 Apr-27 Jun and 1 Sep-12 Oct, not the whole summer) — check the current 2026 dates before relying on it.",
@@ -15146,8 +15222,8 @@ function rbBuildBelgianCoastBrugesGhentRoute() {
       destinations: [
         { name: 'Bruges', lat: 51.2093, lng: 3.2247, notes: "The canal-ringed medieval core is best appreciated from the Belfry tower (366 steps) over the Markt; go right at opening before the day-tripper coach crowds arrive." },
         { name: 'Ghent', lat: 51.0543, lng: 3.7174, notes: "Gravensteen castle (its audio tour is included and worth doing) and the Graslei/Korenlei waterfront are the highlights, with a noticeably more local, student-city feel and far smaller crowds than Bruges's equivalent sights." },
-        { name: 'De Haan', lat: 51.2704, lng: 3.0361 },
-        { name: 'Ostend', lat: 51.2154, lng: 2.9286 },
+        { name: 'De Haan', lat: 51.2704, lng: 3.0361 , notes: 'A Belgian coastal resort town known for its well-preserved Belle Époque villas and a vintage tram line running along the coast; quieter and more architecturally distinct than Belgium\'s larger, more built-up beach towns.' },
+        { name: 'Ostend', lat: 51.2154, lng: 2.9286 , notes: 'Belgium\'s largest coastal town, with a long sandy beach, a working fishing port, and a casino on the seafront; also home to the Mercator, a preserved 1930s sailing ship open for tours in the harbor.' },
       ],
       notes: 'Bruges (canals, Belfry) — Ghent (Gravensteen castle, Graslei) — Belgian coast (De Haan/Ostend, seafront and beach). Car or train — all three are well reachable by train. Budget ~€90-100/day, confirmed via web check, nothing noteworthy found. Season: year-round for the cities, May-September nicer for the coast.',
       transport_to_next: 'End of this route.',
@@ -15386,7 +15462,7 @@ function rbBuildBavariaMunichAlpsRoute() {
     {
       code: 'DE', name: 'Germany', days: 5, budget: 525, lat: 48.1351, lng: 11.5820,
       destinations: [
-        { name: 'Munich (Marienplatz, Englischer Garten, Deutsches Museum)', lat: 48.1351, lng: 11.5820 },
+        { name: 'Munich (Marienplatz, Englischer Garten, Deutsches Museum)', lat: 48.1351, lng: 11.5820 , notes: 'Marienplatz\'s Rathaus-Glockenspiel figures perform daily at 11am and noon (plus 5pm in summer); the Englischer Garten is one of the world\'s largest urban parks, where surfers ride the Eisbach standing wave right in the city, and the Deutsches Museum nearby is one of the world\'s largest science and technology museums.' },
         { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0956, notes: "Beyond being the Zugspitze gateway, the town's own highlight is the Partnachklamm gorge walk, a shaded ~1-hour loop through a carved rock canyon with waterfalls — an easy half-day add-on." },
         { name: 'Füssen', lat: 47.5722, lng: 10.7017 , notes: 'The Hohes Schloss old town and the Lechfall gorge waterfall just south of the center are worth an hour beyond being the Neuschwanstein access base; walk the riverside path to Lechfall in the early morning to have it to yourself.' },
         { name: 'Hohenschwangau (Neuschwanstein)', lat: 47.5575, lng: 10.7397 , notes: '"Mad" King Ludwig II\'s fairy-tale 19th-century castle that inspired Disney\'s — interior only seen on a timed guided tour, so book the slot online in advance; walk up to Marienbrücke bridge for the classic postcard view of the castle.' },
@@ -15462,10 +15538,10 @@ function rbBuildBlackForestRoute() {
     {
       code: 'DE', name: 'Germany', days: 6, budget: 540, lat: 47.9990, lng: 7.8421,
       destinations: [
-        { name: 'Freiburg im Breisgau (base)', lat: 47.9990, lng: 7.8421 },
-        { name: 'Titisee', lat: 47.9018, lng: 8.1517 },
-        { name: 'Triberg', lat: 48.1264, lng: 8.2311 },
-        { name: 'Baden-Baden', lat: 48.7606, lng: 8.2400 },
+        { name: 'Freiburg im Breisgau (base)', lat: 47.9990, lng: 7.8421 , notes: 'A university town on the edge of the Black Forest, with a Gothic cathedral and a network of small open water channels (Bächle) running along its old-town streets; a good base for day trips into the surrounding forest and vineyards.' },
+        { name: 'Titisee', lat: 47.9018, lng: 8.1517 , notes: 'A glacial lake in the Black Forest surrounded by forested hills, with a lakeside promenade lined with shops selling the region\'s cuckoo clocks and Black Forest cake; boat rentals and short lake cruises are the main on-water activity.' },
+        { name: 'Triberg', lat: 48.1264, lng: 8.2311 , notes: 'Home to Germany\'s highest waterfall (163m total drop over several cascades) and considered the birthplace of the cuckoo clock, with shops selling every size imaginable including giant novelty clocks.' },
+        { name: 'Baden-Baden', lat: 48.7606, lng: 8.2400 , notes: 'An elegant 19th-century spa town, still built around its thermal baths (including the ornate Friedrichsbad) and a casino modeled after the palace of Versailles; long a fashionable retreat for European aristocracy and now for spa tourism.' },
       ],
       notes: "Freiburg as a base — Titisee (~50km/45-60min) — Triberg (waterfalls, cuckoo clocks) — Baden-Baden (~65km/1h) — back toward the Netherlands (northward, no detour). NL-Freiburg 5-7h depending on starting point. Budget ~€85-100/day p.p. Season: May or September-October for price/crowds, summer for swimming/hiking at Titisee, autumn for the colours. Baden-Baden has two very different spas — Caracalla Spa (swimwear required, ~€21/2h-€35 day pass, casual/family-friendly) vs. Friedrichsbad (traditional Roman-Irish bath, nude and mixed, ~€36 without massage) — worth knowing which one you're booking before you go. No general Autobahn toll for cars (see Cologne + Bonn + Rhine (4 days) 🛳️'s notes).",
       transport_to_next: 'End of this route — drive back to the Netherlands (northward).',
@@ -15566,10 +15642,10 @@ function rbBuildSalzburgSurroundingsRoute() {
     {
       code: 'AT', name: 'Austria', days: 4, budget: 420, lat: 47.8095, lng: 13.0550,
       destinations: [
-        { name: 'Salzburg (Getreidegasse, Hohensalzburg Fortress, Mozart sites)', lat: 47.8095, lng: 13.0550 },
-        { name: 'Werfen (Hohenwerfen Castle & Eisriesenwelt ice caves)', lat: 47.4761, lng: 13.1889 },
-        { name: 'Wolfgangsee / St. Wolfgang', lat: 47.7377, lng: 13.4512 },
-        { name: 'Untersberg cable car', lat: 47.7307, lng: 13.0121 },
+        { name: 'Salzburg (Getreidegasse, Hohensalzburg Fortress, Mozart sites)', lat: 47.8095, lng: 13.0550 , notes: 'Mozart\'s birthplace and several Sound of Music filming locations sit inside a compact old town dominated by the Hohensalzburg fortress above it; ride the funicular up for the view over the Salzach river, and browse Getreidegasse\'s old guild signs on the way.' },
+        { name: 'Werfen (Hohenwerfen Castle & Eisriesenwelt ice caves)', lat: 47.4761, lng: 13.1889 , notes: 'Hohenwerfen is a hilltop medieval fortress used in filming "The Sound of Music" and "Where Eagles Dare"; the nearby Eisriesenwelt, the world\'s largest ice cave, has a permanent ice formation extending over a kilometer into the mountain, reached by cable car plus a guided walk.' },
+        { name: 'Wolfgangsee / St. Wolfgang', lat: 47.7377, lng: 13.4512 , notes: 'A lake in the Salzkammergut known for the White Horse Inn (Weißes Rössl), made famous by an old operetta of the same name; a cog railway climbs from the lakeside village up the Schafberg peak for panoramic Alpine views.' },
+        { name: 'Untersberg cable car', lat: 47.7307, lng: 13.0121 , notes: 'A cable car climbing steeply from just outside Salzburg to over 1,800m on the Untersberg massif, giving quick access to alpine hiking trails and views over Salzburg and Bavaria without a long drive; local legend holds the mountain is home to a sleeping emperor who will one day awaken.' },
       ],
       notes: "At least 2 nights in Salzburg's old town (Getreidegasse, Hohensalzburg Fortress, Mozart's birthplace and residence) plus one day trip — ranked: (a) Werfen (Hohenwerfen Castle + Eisriesenwelt ice caves, 45 min, far less crowded than Hallstatt, but only open May-October), (b) Wolfgangsee/St. Wolfgang (lake + Schafberg cogwheel railway, 45 min), (c) Untersberg cable car (20 min, a half-day option). Hallstatt is deliberately skipped here — it already has its own trip below. NL-Salzburg ~965km/9h15. Budget ~€90-120/day p.p. Season: May-September (the ice caves need the summer season to be open).",
       transport_to_next: 'End of this route — drive back to the Netherlands (~9h15).',
@@ -15646,9 +15722,9 @@ function rbBuildTyrolRoute() {
       code: 'AT', name: 'Austria', days: 6, budget: 642, lat: 47.2692, lng: 11.4041,
       destinations: [
         { name: 'Innsbruck', lat: 47.2692, lng: 11.4041 , notes: 'The Nordkette cable car climbs directly from Innsbruck\'s medieval old town (Golden Roof) into high alpine terrain in under 20 minutes — genuine high-mountain scenery reachable without leaving the city.' },
-        { name: 'Seefeld', lat: 47.3227, lng: 11.1910 },
-        { name: 'Achensee', lat: 47.4667, lng: 11.7167 },
-        { name: 'Zillertal / Mayrhofen (Olperer suspension bridge)', lat: 47.1667, lng: 11.8667 },
+        { name: 'Seefeld', lat: 47.3227, lng: 11.1910 , notes: 'A high-plateau resort town in Tyrol, host of Winter Olympic cross-country skiing/ski jumping events (1964, 1976) and now a year-round base for hiking and biking on its plateau trails, with easy access to surrounding peaks by cable car.' },
+        { name: 'Achensee', lat: 47.4667, lng: 11.7167 , notes: 'Tyrol\'s largest lake, ringed by mountains and served by a historic steam cog railway (one of the oldest in the world still running) from Jenbach; popular for sailing, windsurfing and lakeside hiking in summer.' },
+        { name: 'Zillertal / Mayrhofen (Olperer suspension bridge)', lat: 47.1667, lng: 11.8667 , notes: 'Mayrhofen anchors the Zillertal valley as its main resort town; the Olperer suspension bridge nearby is one of the highest pedestrian suspension bridges in the Alps, reached via cable car and a hike, hanging dramatically over the valley.' },
       ],
       notes: "Innsbruck (2 nights) — Seefeld (20-25 min, a high-altitude hiking hub) — Achensee (turquoise lake, ~1h) — Zillertal/Mayrhofen (Olperer suspension bridge, ~40 min) — loop back to Innsbruck. NL-Innsbruck direct ~940-950km/9-10h. Budget ~€90-125/day p.p. Season: June-September. Zillertal cable cars/suspension bridges and Achensee boat trips are separate cost items (€15-30 each), not folded into the daily budget.",
       transport_to_next: 'End of this route — drive back to the Netherlands from Innsbruck.',
@@ -15774,10 +15850,10 @@ function rbBuildZurichLucerneRoute() {
     {
       code: 'CH', name: 'Switzerland', days: 5, budget: 650, lat: 47.3769, lng: 8.5417,
       destinations: [
-        { name: 'Zurich (old town, lake, Uetliberg hike)', lat: 47.3769, lng: 8.5417 },
-        { name: 'Lucerne (Chapel Bridge, lake, old town)', lat: 47.0502, lng: 8.3093 },
-        { name: 'Pilatus (Golden Round Trip)', lat: 46.9789, lng: 8.2547 },
-        { name: 'Rigi (alternative)', lat: 47.0567, lng: 8.4875 },
+        { name: 'Zurich (old town, lake, Uetliberg hike)', lat: 47.3769, lng: 8.5417 , notes: 'Zurich\'s old town (Altstadt) straddles the Limmat river near where it meets Lake Zurich; the Uetliberg, a forested hill on the city\'s edge reachable by train, is nicknamed Zurich\'s "home mountain" for its easy hike and skyline views.' },
+        { name: 'Lucerne (Chapel Bridge, lake, old town)', lat: 47.0502, lng: 8.3093 , notes: 'Lucerne\'s covered wooden Chapel Bridge (Kapellbrücke), partially rebuilt after a 1993 fire, is Europe\'s oldest surviving truss bridge and the city\'s signature landmark, spanning the Reuss river beside Lake Lucerne\'s old town.' },
+        { name: 'Pilatus (Golden Round Trip)', lat: 46.9789, lng: 8.2547 , notes: 'Mount Pilatus above Lucerne is reached via the world\'s steepest cogwheel railway, and the "Golden Round Trip" combines that train up with a cable car down (or vice versa) plus a boat across the lake — a full-circle scenic day out.' },
+        { name: 'Rigi (alternative)', lat: 47.0567, lng: 8.4875 , notes: 'Known as the "Queen of the Mountains," Rigi is reached by Europe\'s oldest mountain railway (opened 1871) and offers a gentler, less crowded alternative to Pilatus with similar panoramic views over Lake Lucerne and the surrounding peaks.' },
       ],
       notes: "Zurich (2 nights: old town, lake, Uetliberg hike) — 45 min train — Lucerne (3 nights: Chapel Bridge, lake, old town) — a day trip to either Pilatus (Golden Round Trip: cable car up, cogwheel railway down) or Rigi. The train clearly beats the car here — no vignette needed, city parking is scarce/expensive, trains run every 30 min (~1h). Budget ~€115-150/day p.p. Season: May-September. Pilatus Golden Round Trip is CHF119.80 p.p. (~€125); Rigi is the quieter/cheaper alternative — pick one, not both.",
       transport_to_next: 'End of this route — train back to the Netherlands or fly out of Zurich.',
@@ -15837,7 +15913,7 @@ function rbBuildZermattMatterhornRoute() {
         { name: 'Täsch (parking)', lat: 46.0489, lng: 7.7710, notes: "Täsch itself is purely a functional gateway — a car park and shuttle station, nothing to linger for. The shuttle train to Zermatt runs every ~20 minutes and takes only 12 minutes, so there's no need to arrive much earlier than your onward plans require." },
         { name: 'Zermatt (car-free)', lat: 46.0207, lng: 7.7491, notes: "Beyond the car-free logistics, the town's Bahnhofstrasse and the view of the Matterhorn framed above the church of St. Mauritius are the classic Zermatt shots. For the postcard view without a big hike, ride the Gornergrat railway or walk up to the small chapel/lake viewpoints just above town." },
         { name: 'Matterhorn / Mattertal', lat: 45.9763, lng: 7.6586, notes: "The Matterhorn's near-perfect pyramid shape is the visual anchor of the whole valley (Mattertal); the Gornergrat cogwheel railway gives the best panoramic view without any hiking, while the Klein Matterhorn cable car reaches Europe's highest cable car station and a glacier viewing platform. Take the first train/cable car up for the clearest light and to beat the midday cloud buildup that's common on the peak." },
-        { name: 'Saas-Fee (optional day trip)', lat: 46.1089, lng: 7.9273 },
+        { name: 'Saas-Fee (optional day trip)', lat: 46.1089, lng: 7.9273 , notes: 'A car-free glacier village near Zermatt, ringed by 13 peaks over 4,000m, sometimes called the "pearl of the Alps"; a cable car up to the Mittelallalin viewpoint includes access to Europe\'s highest-altitude revolving restaurant and an ice pavilion carved into the glacier.' },
       ],
       notes: "The concrete region chosen for this originally vague 'Swiss Alps' item: Zermatt/Matterhorn — a different canton (Valais, not Bern), a different valley (Mattertal), and a different iconic peak (Matterhorn rather than Jungfrau) than the Interlaken/Grindelwald route above, so there's no overlap. Route: drive to Täsch — park (CHF13.50-16.50/day) — 12 min shuttle train to car-free Zermatt (3 nights) — easy hikes (5-Lakes Trail, Gornergrat), optional day trip to the neighbouring car-free Saas-Fee (1 night). Budget ~€130-170/day p.p. — even pricier than the Jungfrau region. Season: July-September. Gornergrat cogwheel railway return is ~CHF80-96 p.p.; the Matterhorn Glacier Paradise cable car is ~CHF120 p.p. — pick one, skip the other.",
       transport_to_next: 'End of this route — drive back to the Netherlands from Täsch.',
@@ -15918,8 +15994,8 @@ function rbBuildSwitzerlandNorthernItalyRoute() {
     {
       code: 'CH', name: 'Switzerland', days: 3, budget: 420, lat: 46.4908, lng: 9.8355,
       destinations: [
-        { name: 'Chur / Graubünden', lat: 46.8499, lng: 9.5320 },
-        { name: 'St. Moritz (Bernina Express)', lat: 46.4908, lng: 9.8355 },
+        { name: 'Chur / Graubünden', lat: 46.8499, lng: 9.5320 , notes: 'Switzerland\'s oldest town, and the capital of Graubünden canton; mainly serves as the starting point for the scenic Bernina Express and Glacier Express train routes rather than being a long stop itself.' },
+        { name: 'St. Moritz (Bernina Express)', lat: 46.4908, lng: 9.8355 , notes: 'A glamorous Alpine resort town, birthplace of winter tourism and host of two Winter Olympics (1928, 1948); also the starting point of the Bernina Express, a UNESCO-listed scenic rail route crossing into Italy over dramatic viaducts and passes.' },
       ],
       notes: 'Chur/St. Moritz area, including a Bernina Express day — the Bernina Express/pass is the best-verified link into Italy from here.',
       transport_to_next: 'Ride the Bernina Express/pass across the border to Tirano, Italy — Schengen, no stamp, but border checks do still happen occasionally, carry a passport/ID.',
@@ -15927,8 +16003,8 @@ function rbBuildSwitzerlandNorthernItalyRoute() {
     {
       code: 'IT', name: 'Italy', days: 3, budget: 255, lat: 46.2167, lng: 10.1667,
       destinations: [
-        { name: 'Tirano', lat: 46.2167, lng: 10.1667 },
-        { name: 'Valtellina / Lake Como', lat: 45.8081, lng: 9.0852 },
+        { name: 'Tirano', lat: 46.2167, lng: 10.1667 , notes: 'The Italian terminus of the Bernina Express, where the train famously runs directly through the town\'s streets alongside cars and pedestrians before reaching the station; a good lunch stop before heading back up into the mountains.' },
+        { name: 'Valtellina / Lake Como', lat: 45.8081, lng: 9.0852 , notes: 'Valtellina is an Italian Alpine wine valley known for Nebbiolo-based reds; the route continues to Lake Como\'s northern reaches, connecting the Bernina Express journey to Italy\'s lake district.' },
       ],
       notes: 'Tirano — Valtellina/Lake Como. Noticeably cheaper than the Swiss legs, ~€70-100/day p.p. Italy uses toll motorways (autostrade), not a vignette — budget an extra ~€20-40 in tolls for this stretch; check that a rental car\'s insurance covers Italy if it is not your own vehicle.',
       transport_to_next: 'Drive back north over the Gotthard toward Ticino/Lugano, Switzerland.',
@@ -16448,7 +16524,7 @@ function rbBuildTuscanyRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 250, lat: 43.7696, lng: 11.2558,
       destinations: [
-        { name: 'Florence (hub)', lat: 43.7696, lng: 11.2558 },
+        { name: 'Florence (hub)', lat: 43.7696, lng: 11.2558 , notes: 'The Uffizi and the Duomo\'s dome climb are the two must-do highlights; book Uffizi tickets ahead of time, as walk-up lines run for hours.' },
       ],
       notes: "Florence as a hub (1-2 nights). Direct AMS-FLR (~2h), rental car in Florence for the whole week — self-driving from the Netherlands (~12h/1384km) is too much for this trip length. Budget ~€125/day (agriturismo/B&B for 2, €90-130/night ≈€45-65pp, plus rental car €35-45/day/2 people, plus food €40-50).",
       transport_to_next: 'Drive to Siena (~1h15).',
@@ -16464,7 +16540,7 @@ function rbBuildTuscanyRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 250, lat: 43.0778, lng: 11.6789,
       destinations: [
-        { name: 'Montalcino (base, wine country)', lat: 43.0567, lng: 11.4900 },
+        { name: 'Montalcino (base, wine country)', lat: 43.0567, lng: 11.4900 , notes: 'A hilltop Tuscan town surrounded by the vineyards that produce Brunello di Montalcino, one of Italy\'s most prestigious red wines; a 14th-century fortress (Rocca) at the top of town doubles as an enoteca for tasting the local wine.' },
         { name: 'Pienza', lat: 43.0778, lng: 11.6789, notes: "Pius II's \"ideal Renaissance city,\" small enough to see in a couple hours — Piazza Pio II's cathedral/palazzo, and the pecorino cheese shops lining the main street. Walk the Via dell'Amore along the town walls for the classic Val d'Orcia postcard view." },
         { name: 'Montepulciano', lat: 43.0938, lng: 11.7864, notes: "Built around Vino Nobile di Montepulciano wine, with cantine carved into the rock beneath palazzi like Palazzo Contucci open for tastings right in town — worth descending into at least one cellar rather than just tasting at street level." },
       ],
@@ -17444,7 +17520,7 @@ function rbBuildCorsicaSardiniaSouthNorthRoute() {
     {
       code: 'FR', name: 'France', days: 2, budget: 280, lat: 41.3870, lng: 9.1595,
       destinations: [
-        { name: 'Figari / Bonifacio', lat: 41.3870, lng: 9.1595 },
+        { name: 'Figari / Bonifacio', lat: 41.3870, lng: 9.1595 , notes: 'Figari is Corsica\'s small regional airport near Bonifacio, the dramatic cliff-top citadel town where the King of Aragon\'s Staircase (187 steps carved into the cliff) leads down to the sea; boat trips out of the harbor give the classic view of the town perched on the limestone overhang.' },
       ],
       notes: "Deliberately just the southern tip of Corsica plus northern Sardinia — too short for more: connecting flight to Figari/Bonifacio for 2 days of southern Corsica. Budget ~€140/day.",
       transport_to_next: 'Ferry Bonifacio-Santa Teresa Gallura (~50 min, very frequent in season).',
@@ -17453,7 +17529,7 @@ function rbBuildCorsicaSardiniaSouthNorthRoute() {
       code: 'IT', name: 'Italy', days: 3, budget: 315, lat: 41.2372, lng: 9.1908,
       destinations: [
         { name: 'Santa Teresa Gallura', lat: 41.2372, lng: 9.1908 , notes: 'Northern Sardinia\'s ferry port town, the closest point to Corsica with Bonifacio visible across the strait; the short ferry crossing (~1 hour) should be booked ahead in summer, and the port sits an easy walk from Rena Bianca beach.' },
-        { name: 'Palau', lat: 41.1772, lng: 9.3833 },
+        { name: 'Palau', lat: 41.1772, lng: 9.3833 , notes: 'A small port town on Sardinia\'s northern tip, mainly used as the ferry departure point for the La Maddalena archipelago; the nearby Roccia dell\'Orso (Bear Rock), a wind-eroded rock formation resembling a bear, is a short detour with panoramic views over the strait.' },
         { name: 'La Maddalena archipelago', lat: 41.2167, lng: 9.4000 , notes: 'A cluster of granite islands off Sardinia\'s northern tip, protected as a national park; boat tours from Palau or La Maddalena town visit the archipelago\'s turquoise coves, including the pink-sand Budelli beach (now off-limits to swimmers to protect it).' },
       ],
       notes: "2-3 days of northern Sardinia: Santa Teresa Gallura, Palau, the La Maddalena archipelago. Fly home from Olbia. Budget ~€100-110/day. Season: in practice only May-October given the ferry/flight restrictions below, and specifically August-October for an easy direct flight home. ⚠️ The Bonifacio-Santa Teresa ferry (Ichnusa/Moby Lines) only runs 16 January-31 October 2026 (no winter service); direct Amsterdam/Eindhoven-Olbia flights are seasonal in 2026 (August-October only) — outside that window, fly via Rome/Milan instead, or return via Nice.",
@@ -17614,10 +17690,10 @@ function rbBuildSanMarinoDayVisitRoute() {
     {
       code: 'SM', name: 'San Marino', days: 1, budget: 50, lat: 43.9364, lng: 12.4477,
       destinations: [
-        { name: 'San Marino old town', lat: 43.9364, lng: 12.4477 },
-        { name: 'City walls', lat: 43.9370, lng: 12.4500 },
-        { name: 'Rocca Guaita (main tower)', lat: 43.9377, lng: 12.4536 },
-        { name: 'Torre Cesta (second tower)', lat: 43.9394, lng: 12.4552 },
+        { name: 'San Marino old town', lat: 43.9364, lng: 12.4477 , notes: 'A hilltop old town inside Europe\'s oldest surviving republic (founded, by tradition, in 301 AD); narrow stepped streets connect its main square to the three fortified towers above.' },
+        { name: 'City walls', lat: 43.9370, lng: 12.4500 , notes: 'San Marino\'s old town is still encircled by intact medieval walls and gates, with walkable ramparts connecting several of its watchtowers and offering views out over the surrounding Italian countryside.' },
+        { name: 'Rocca Guaita (main tower)', lat: 43.9377, lng: 12.4536 , notes: 'The oldest and largest of San Marino\'s three towers, dating to the 11th century, once used as a prison; the climb up gives the best panoramic view over the country and the Adriatic coast on a clear day.' },
+        { name: 'Torre Cesta (second tower)', lat: 43.9394, lng: 12.4552 , notes: 'The second of San Marino\'s three towers, built atop the highest point of Monte Titano; houses a small museum of antique weapons and is connected to Rocca Guaita by a scenic walking path along the ridge.' },
       ],
       notes: "Half a day (4-6h) covers the highlights (old town, city walls, 1-2 of the three towers — Rocca Guaita is the main tower, Torre Cesta the second, Montale isn't accessible); a full day isn't a stretch either, leaving room for museums (the Museum of Ancient Weapons, the Basilica) and a quieter sunset from the walls. Honest caveat: flying from the Netherlands purely for San Marino is a lot of travel overhead for half a day — this works best as an add-on day from an Adriatic coast stay (Rimini/Riccione) or the Emilia-Romagna trip above, not as a standalone fly-in-fly-out trip. Access: Rimini (RMI) is the closest airport, no direct flight from the Netherlands (always 1+ connection); from Rimini station the Bonelli Bus runs straight to San Marino (~1h, ~€7 one-way). Budget ~€40-60 for the day itself (bus €7 round trip or a car plus parking ~€8/day, a tower ticket ~€10-15, lunch €20-25) — cheap once you're there, the flight/connection dominates the cost on a genuine one-off trip.",
       transport_to_next: "End of this day — best treated as an add-on from an Adriatic coast stay or the Emilia-Romagna route above, not as its own fly-in-fly-out trip.",
@@ -18521,8 +18597,8 @@ function rbBuildSplitIslandsRoute() {
       destinations: [
         { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402, notes: "The 4th-century Roman emperor's retirement palace isn't a ruin behind a fence — it's a living neighborhood, with Split's actual old town built directly into and around its walls, colonnaded Peristyle square, and the octagonal Cathedral of St. Domnius (once Diocletian's own mausoleum). Duck into the palace's atmospheric basement halls (substructures) — used as a Game of Thrones filming location — and climb the cathedral's bell tower for a rooftop view over the old town and harbor." },
         { name: 'Hvar Town', lat: 43.1729, lng: 16.4413 , notes: 'A glamorous harbor town known for lavender fields, upscale yachting/nightlife, and the 16th-century Fortica fortress on the hill above; climb up to the fortress for the best view over the harbor and the Pakleni Islands just offshore.' },
-        { name: 'Brač / Zlatni Rat', lat: 43.2564, lng: 16.6386 },
-        { name: 'Vis (optional)', lat: 43.0611, lng: 16.1811 },
+        { name: 'Brač / Zlatni Rat', lat: 43.2564, lng: 16.6386 , notes: 'Brač is Croatia\'s third-largest island, known for white limestone (historically quarried for the White House and Diocletian\'s Palace) and Zlatni Rat, a distinctive horn-shaped pebble spit voted among Europe\'s best beaches, its shape and orientation shifting slightly over time with the currents.' },
+        { name: 'Vis (optional)', lat: 43.0611, lng: 16.1811 , notes: 'One of the more remote, less-developed Croatian islands, closed to foreign visitors under Yugoslav military rule until 1989, which left it with fewer resorts and crowds than Hvar or Brač; the Blue Cave on nearby Biševo island is a popular boat-trip add-on.' },
       ],
       notes: "Split's old town/Diocletian's Palace (2 days) — Hvar (2 days) — Brač/Zlatni Rat beach (1 day) — optionally Vis (1-2 days, further out and quieter). Budget ~€120-150/day. Season: June or September is ideal, July-August is peak crowding on Hvar. Web check (2026-08): the Split-Hvar catamaran is ~1h, €6-25 depending on operator/season; a direct Split-Bol (Brač) transfer costs roughly €48 return, while a standalone ferry crossing is cheaper.",
       transport_to_next: 'End of this route — fly home from Split.',
@@ -18634,8 +18710,8 @@ function rbBuildLjubljanaLakeBledRoute() {
       destinations: [
         { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, notes: "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river." },
         { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
-        { name: 'Vintgar Gorge', lat: 46.3764, lng: 14.0964 },
-        { name: 'Bohinj (optional day trip)', lat: 46.2833, lng: 13.9333 },
+        { name: 'Vintgar Gorge', lat: 46.3764, lng: 14.0964 , notes: 'A 1.6km wooden walkway clinging to the walls of a narrow river gorge near Bled, ending at the Šum waterfall; a shorter, easier alternative to Slovenia\'s more remote gorges, making it a popular half-day add-on to a Bled visit.' },
+        { name: 'Bohinj (optional day trip)', lat: 46.2833, lng: 13.9333 , notes: 'Slovenia\'s larger, quieter alpine lake south of Bled — glacial, ringed by forested peaks, with far fewer crowds than Bled. Ride the Vogel cable car above the lake for a panoramic view, or use it as the trailhead for the Savica waterfall hike.' },
       ],
       notes: "Ljubljana (2 days) — Bled (2 days) — optionally Bohinj as a day trip (1 day). Budget: Ljubljana ~€100/day, Bled ~€120-140/day (pricier because of the attractions). Season: May-June/September, summer is very busy at the lake. Web check (2026-08): the pletna boat to the island costs €20 return (cash only), Bled Castle €19, Vintgar Gorge €15 (timed slot — book ahead, especially in July-August).",
       transport_to_next: 'End of this route — fly home from Ljubljana.',
@@ -18702,8 +18778,8 @@ function rbBuildSloveniaRoadtripRoute() {
       code: 'SI', name: 'Slovenia', days: 9, budget: 1080, lat: 46.1000, lng: 14.2000,
       destinations: [
         { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, notes: "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river." },
-        { name: 'Bled / Bohinj', lat: 46.3683, lng: 14.1146 },
-        { name: 'Vršič Pass / Soča Valley', lat: 46.3297, lng: 13.5522 },
+        { name: 'Bled / Bohinj', lat: 46.3683, lng: 14.1146 , notes: 'Bled\'s postcard island church (reached by traditional wooden pletna boats, with Bled Castle on the cliff above) pairs with Bohinj, Slovenia\'s larger and quieter glacial lake further into the Julian Alps — ring Bled church\'s "wishing bell" for luck, and ride Bohinj\'s Vogel cable car for a panoramic view above the lake.' },
+        { name: 'Vršič Pass / Soča Valley', lat: 46.3297, lng: 13.5522 , notes: 'Slovenia\'s highest mountain pass, with 50 numbered hairpin bends linking the Soča Valley\'s vivid turquoise river to the Sava valley through the Julian Alps; the road is open only roughly late May through October/November depending on snow.' },
         { name: 'Piran', lat: 45.5285, lng: 13.5686 , notes: 'Slovenia\'s only real coastal town, with a compact Venetian-Gothic old town centered on Tartini Square; climb up to the town walls above it for a view over the terracotta rooftops to the Adriatic, and stop at the nearby Sečovlje salt pans, still harvested by hand using centuries-old methods.' },
       ],
       notes: "Ljubljana (2 days) — Bled/Bohinj (2 days) — Vršič/Soča Valley (2-3 days) — Piran/the coast (1-2 days) — back to Ljubljana. Budget ~€100-140/day on average. Season: June-September because of the mountain pass, May/October works for the non-Alpine part. Web check (2026-08): check the 2026 Vršič Pass traffic regime beforehand (see Slovenia Alpine Loop above); the coastal stretch around Piran is compact, with no border delay inside Slovenia itself.",
@@ -18927,8 +19003,8 @@ function rbBuildKotorBayOfKotorRoute() {
       destinations: [
         { name: 'Kotor Old Town', lat: 42.4247, lng: 18.7712, notes: "Beyond the Venetian-walled old town itself, the real highlight is climbing the fortifications up to St. John's (San Giovanni) Fortress for a view over the bay and the town's terracotta roofs. It's a steep ~1,350-step climb (roughly 1-1.5 hours round trip) — start at first light or late afternoon to avoid both the midday heat and the crowds that arrive once cruise ships dock." },
         { name: 'Perast', lat: 42.4875, lng: 18.7089 },
-        { name: 'Herceg Novi', lat: 42.4531, lng: 18.5375 },
-        { name: 'Tivat', lat: 42.4356, lng: 18.6961 },
+        { name: 'Herceg Novi', lat: 42.4531, lng: 18.5375 , notes: 'A Montenegrin coastal town near the Croatian border, known for a subtropical microclimate that supports palm trees, citrus groves and even bananas; its old fortress town center sits above a working harbor.' },
+        { name: 'Tivat', lat: 42.4356, lng: 18.6961 , notes: 'A Bay of Kotor town transformed by Porto Montenegro, a large modern marina and residential/resort development built on the site of a former Yugoslav naval base, now a base for superyachts.' },
       ],
       notes: "Kotor's old town (2 days, the city walls) — Perast as a day trip (boat out to Our Lady of the Rocks) — Herceg Novi/Tivat (1-2 days). Budget ~€45-55/day. Season: April-June/September-October — July-August gets swamped by cruise ships. Web check (2026-08): the city-walls ticket runs €8-15 (prices vary by source, check ahead), open 8am-5pm — go before 9am or after 5pm to dodge the crowds.",
       transport_to_next: 'End of this route — fly home from Podgorica or Tivat.',
@@ -19036,7 +19112,7 @@ function rbBuildMontenegroCroatiaRoute() {
         { name: 'Kotor Old Town', lat: 42.4247, lng: 18.7712, notes: "Beyond the Venetian-walled old town itself, the real highlight is climbing the fortifications up to St. John's (San Giovanni) Fortress for a view over the bay and the town's terracotta roofs. It's a steep ~1,350-step climb (roughly 1-1.5 hours round trip) — start at first light or late afternoon to avoid both the midday heat and the crowds that arrive once cruise ships dock." },
         { name: 'Perast', lat: 42.4875, lng: 18.7089 },
         { name: 'Budva', lat: 42.2911, lng: 18.8400, notes: "Its small walled old town is pleasant but modest compared to Kotor or Dubrovnik — Budva's real appeal is as a base for the beach-resort coastline around it, especially the postcard view of the Sveti Stefan islet just south of town. Don't spend more than a couple of hours in the old town itself; head to the Sveti Stefan viewpoint (free, no need to enter the resort) for the classic photo." },
-        { name: 'Herceg Novi', lat: 42.4531, lng: 18.5375 },
+        { name: 'Herceg Novi', lat: 42.4531, lng: 18.5375 , notes: 'A Montenegrin coastal town near the Croatian border, known for a subtropical microclimate that supports palm trees, citrus groves and even bananas; its old fortress town center sits above a working harbor.' },
       ],
       notes: "Kotor + Perast (3 days) — Budva (2 days) — Herceg Novi (1 day). Budget ~€60/day. Season: May-June/September (July-August very busy).",
       transport_to_next: 'End of this route — fly home from Podgorica or Tivat.',

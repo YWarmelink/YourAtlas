@@ -12,6 +12,15 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batches 153-158 — Alpine/Adriatic cluster round 4 (2026-09-18)** — 40
+  fresh destinations plus 6 reuse/combo entries, closing out 18 routes entirely: Ardennes,
+  Luxembourg, Belgian Coast + Bruges + Ghent, Bavaria: Munich + Alps, Black Forest, Salzburg +
+  Surroundings, Tyrol, Zurich + Lucerne + Surroundings, Swiss Alps: Zermatt/Matterhorn,
+  Switzerland + Northern Italy, Tuscany, Corsica + Sardinia: South Corsica & North Sardinia,
+  San Marino: Day Visit, Split + Islands, Ljubljana + Lake Bled, Slovenia Roadtrip, Kotor + Bay
+  of Kotor, Montenegro + Croatia (`rbMigrateAlpineAdriaticCluster4DestinationNotes()`).
+  App-wide total: 3834 destination-slots filled across 432 routes. 653/741 signatures done.
+
 - **Per-destination notes, batches 147-152 — Mixed Europe cluster round 3 (2026-09-18)** — 35
   fresh destinations plus 7 reuse entries, closing out 12 routes entirely: France Roadtrip:
   Paris to the Côte d'Azur, Campania + Puglia, Wales, Northern Ireland, Latvia, Lithuania,
