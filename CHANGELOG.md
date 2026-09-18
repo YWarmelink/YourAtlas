@@ -30,6 +30,23 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   already present in the existing data, no change needed to how batches insert notes or build
   their migration functions.
 
+- **Per-destination notes, batches 63-66 — Monaco/Provence/Corsica+Sardinia clusters
+  (2026-09-18)** — 24 destinations researched, plus 3 name-variant reuses (Nice/Cannes bare
+  names, one Avignon variant). Checked sibling routes for overlap first, same standing practice.
+  - Batch 63: Monaco + Côte d'Azur (4 days) extras — Èze, Villefranche-sur-Mer, Menton, Monte
+    Carlo Casino Square, Prince's Palace, Port Hercule, plus "Nice (base)"/"Cannes (optional)"
+    reusing existing bare-name notes (`rbMigrateMonacoCoteDazurExtrasDestinationNotes()`)
+  - Batch 64: Monaco + Nice + Provence (5 days) extras — Monte Carlo/Monaco-Ville, Avignon,
+    Aix-en-Provence, Les Baux-de-Provence, Rhône wine region
+    (`rbMigrateMonacoProvenceExtrasDestinationNotes()`)
+  - Batch 65: Provence (6 days) extras — Pont du Gard, Gordes, Roussillon, Ménerbes, Les
+    Baux-de-Provence + Carrières des Lumières, Arles, Camargue, plus a second Avignon name
+    variant reusing batch 64's note (`rbMigrateProvenceExtrasDestinationNotes()`)
+  - Batch 66: Corsica + Sardinia: Full Island Loop — Bastia or Calvi (entry), Santa Teresa
+    Gallura, Costa Smeralda/Palau, Alghero, Bosa, Cagliari
+    (`rbMigrateCorsicaSardiniaDestinationNotes()`)
+  App-wide total: 3022 destination-slots filled across 363 routes. 403/741 signatures done.
+
 - **Per-destination notes, batches 59-62 — Sicily+Malta/Corsica/Côte d'Azur/Andorra-Pyrenees
   clusters (2026-09-18)** — 29 destinations across 4 sibling-route clusters, checked for
   overlap/cascade before dispatching (per the standing practice since batches 51-54).

@@ -10311,6 +10311,138 @@ function rbMigrateAndorraPyreneesClusterDestinationNotes() {
 }
 
 /**
+ * Batch 63 (2026-09-18) -- Monaco + Côte d'Azur (4 days) extras -- 6 newly researched, plus
+ * "Nice (base)" and "Cannes (optional)" reusing the existing bare Nice/Cannes note text (same
+ * real places, different exact strings). Same generic name-matching migration pattern as the
+ * other batches.
+ */
+function rbMigrateMonacoCoteDazurExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_MONACO_COTE_DAZUR_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_MONACO_COTE_DAZUR_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Èze': "A clifftop medieval village of stone lanes above the Riviera, capped by the Jardin Exotique's panoramic coastal view; go early morning or at sunset to dodge the day-tripper coach crowds that clog the village midday.",
+    'Villefranche-sur-Mer': "A deep natural bay ringed by a pastel old town and the small Chapelle Saint-Pierre decorated inside by Jean Cocteau; check the cruise-ship schedule and pick a day without one docked for a quieter waterfront, and budget just 1-2 hours here.",
+    'Menton': "The last French Riviera town before Italy, with Belle Époque villas, lemon groves, and gardens like Val Rahmeh climbing toward the old town's Basilique Saint-Michel; stroll the Vieux Port and Cocteau museum, and if visiting in February check the citrus-themed Fête du Citron.",
+    'Monte Carlo Casino Square': "The Casino de Monte-Carlo and Place du Casino, Monaco's belle-époque centerpiece with luxury cars parked out front; the atrium/exterior is free to see and best photographed before mid-morning tour groups arrive, while the gaming rooms require ID, a fee, and no shorts/sneakers after 2pm.",
+    "Prince's Palace": "Monaco's royal residence atop the Rock, with a changing-of-the-guard ceremony every day at 11:55am; arrive by 11:40 to get a spot near the palace gates, and note the State Apartments are only open to visitors roughly April through October.",
+    'Port Hercule': "Monaco's main harbor, packed with superyachts and doubling as the F1 Grand Prix start/finish straight in May; the best free overview is from the terraces near the Prince's Palace or the Fairmont hairpin above.",
+    'Nice (base)': "The Riviera's main city — Promenade des Anglais, Vieux Nice, and the Colline du Château viewpoint; hit the Cours Saleya market in the old town in the morning before it closes.",
+    'Cannes (optional)': "La Croisette promenade and the Palais des Festivals; avoid during the film festival (mid-May) unless that's the point, otherwise a sunset walk on La Croisette is the move.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 64 (2026-09-18) -- Monaco + Nice + Provence (5 days) extras -- 5 destinations
+ * researched. Same generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateMonacoProvenceExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_MONACO_PROVENCE_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_MONACO_PROVENCE_EXTRAS_DESTINATION_NOTES, '1');
+
+  const avignonNote = "A walled Provençal city centered on the Palais des Papes, the largest Gothic palace in Europe, plus the half-collapsed Pont Saint-Bénézet on the Rhône; book Palais des Papes tickets online to skip the queue and get the combo ticket that includes the bridge.";
+  const notesByName = {
+    'Monte Carlo / Monaco-Ville': "The old town on the Rock, separate from the casino district, holding the Cathedral (Grace Kelly's tomb), the Oceanographic Museum, and ramparts with harbor views; visit the Oceanographic Museum first thing before tour buses arrive, and allow 2-3 hours to also walk the ramparts.",
+    'Avignon (base)': avignonNote,
+    'Aix-en-Provence': "Cézanne's elegant hometown, built around the fountain-lined Cours Mirabeau and old-town squares; the Tuesday/Thursday/Saturday morning market on Cours Mirabeau is the best time to see it in full swing.",
+    'Les Baux-de-Provence (optional)': "A hilltop Provençal village crowned by the dramatic ruined Château des Baux perched on sheer limestone cliffs; go before 10am or in late afternoon, since the shadeless ruins draw heavy tour-bus crowds and heat midday.",
+    'Rhône wine region (optional)': "The Côtes du Rhône vineyards around Avignon, centered on Châteauneuf-du-Pape; book a tasting appointment ahead at a domaine rather than walking in, since many are by-appointment only.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 65 (2026-09-18) -- Provence (6 days) extras -- 7 newly researched, plus "Avignon (base)
+ * — Palais des Papes" reusing the same Avignon note as batch 64 (same real place, different
+ * exact string). Same generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateProvenceExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_PROVENCE_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_PROVENCE_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Avignon (base) — Palais des Papes': "A walled Provençal city centered on the Palais des Papes, the largest Gothic palace in Europe, plus the half-collapsed Pont Saint-Bénézet on the Rhône; book Palais des Papes tickets online to skip the queue and get the combo ticket that includes the bridge.",
+    'Pont du Gard (nearby)': "The best-preserved Roman aqueduct bridge in the world, spanning the Gardon river near Avignon; go early morning or evening for good light and thinner crowds, and note swimming below the bridge is allowed and popular in summer.",
+    'Gordes (Luberon loop)': "A hilltop stone village whose tiered houses form the classic Luberon postcard view; stop at the roadside viewpoint on the D15 below town for that shot, and arrive before 10am as parking is very limited.",
+    'Roussillon (Luberon loop)': "A Luberon village built from and colored by its ochre-red cliffs; walk the small paid Sentier des Ocres loop (30-45 min) in late-afternoon light when the reds and oranges are most vivid.",
+    'Ménerbes (Luberon loop)': 'A quieter, less-visited Luberon hilltop village (setting for Peter Mayle\'s "A Year in Provence"), with no major sight beyond its lanes and views; treat it as a 30-45 minute lunch stop rather than a long visit.',
+    'Les Baux-de-Provence + Carrières des Lumières': "The hilltop ruined-castle village paired with the Carrières des Lumières, an immersive digital art projection show inside a former limestone quarry just outside the village; book a timed entry online in advance and allow about 45 minutes for the show.",
+    'Arles (base, Roman sites)': "A Roman arena/amphitheater still used for events today, plus the streets and cafés Van Gogh painted while living here; get the combined Pass Arles ticket covering the amphitheater and theatre, and don't expect original Van Gogh paintings on site, only places he painted.",
+    'Camargue day trip (Saintes-Maries-de-la-Mer)': "The wetland delta south of Arles known for wild pink flamingos, salt flats, and semi-wild white horses; the Parc Ornithologique de Pont de Gau gives reliable flamingo sightings, best visited early morning for wildlife activity and cooler heat.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 66 (2026-09-18) -- Corsica + Sardinia: Full Island Loop -- 6 destinations researched
+ * (Corte/Porto-Vecchio-Bavella/Bonifacio already had notes from earlier batches). Same generic
+ * name-matching migration pattern as the other batches.
+ */
+function rbMigrateCorsicaSardiniaDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_CORSICA_SARDINIA_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_CORSICA_SARDINIA_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Bastia or Calvi (entry)': "Just Corsica's two main northern gateways, not destinations in themselves: Bastia has more ferry links (Genoa, Livorno, Nice) while Calvi is smaller and scenic with its own citadel, so pick whichever matches your ferry/flight routing.",
+    'Santa Teresa Gallura': "Northern Sardinia's ferry port town, the closest point to Corsica with Bonifacio visible across the strait; the short ferry crossing (~1 hour) should be booked ahead in summer, and the port sits an easy walk from Rena Bianca beach.",
+    'Costa Smeralda / Palau': 'Sardinia\'s glamorous "Emerald Coast," centered on Porto Cervo\'s yacht marina and upscale resorts; the marina is worth a stroll for yacht-watching in July-August, but nearby beaches like Liscia Ruja need an early arrival for parking and sunbeds.',
+    'Alghero': "A Catalan-founded walled coastal town in northwest Sardinia where Catalan is still spoken, with sea-facing ramparts around the old town; walk the ramparts at sunset, and consider a boat trip to Neptune's Grotto at Capo Caccia (reachable by boat or a steep 656-step staircase).",
+    'Bosa': "A colorful town lining the Temo river, overlooked by the hilltop Malaspina Castle; climb to the castle in late afternoon for the best light on the pastel houses below, and try a local Malvasia wine tasting in town.",
+    'Cagliari (optional, exit)': "Sardinia's southern capital, built around the Castello quarter; the Bastione di Saint Remy terrace gives the best free panoramic view over the city and gulf, worth combining with the archaeological museum's Nuragic bronzes if time allows.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -13809,11 +13941,11 @@ function rbBuildProvenceRoute() {
     {
       code: 'FR', name: 'France', days: 3, budget: 300, lat: 43.9493, lng: 4.8055,
       destinations: [
-        { name: 'Avignon (base) — Palais des Papes', lat: 43.9493, lng: 4.8055 },
-        { name: 'Pont du Gard (nearby)', lat: 43.9474, lng: 4.5350 },
-        { name: 'Gordes (Luberon loop)', lat: 43.9114, lng: 5.2003 },
-        { name: 'Roussillon (Luberon loop)', lat: 43.9019, lng: 5.2944 },
-        { name: 'Ménerbes (Luberon loop)', lat: 43.8283, lng: 5.1836 },
+        { name: 'Avignon (base) — Palais des Papes', lat: 43.9493, lng: 4.8055 , notes: 'A walled Provençal city centered on the Palais des Papes, the largest Gothic palace in Europe, plus the half-collapsed Pont Saint-Bénézet on the Rhône; book Palais des Papes tickets online to skip the queue and get the combo ticket that includes the bridge.' },
+        { name: 'Pont du Gard (nearby)', lat: 43.9474, lng: 4.5350 , notes: 'The best-preserved Roman aqueduct bridge in the world, spanning the Gardon river near Avignon; go early morning or evening for good light and thinner crowds, and note swimming below the bridge is allowed and popular in summer.' },
+        { name: 'Gordes (Luberon loop)', lat: 43.9114, lng: 5.2003 , notes: 'A hilltop stone village whose tiered houses form the classic Luberon postcard view; stop at the roadside viewpoint on the D15 below town for that shot, and arrive before 10am as parking is very limited.' },
+        { name: 'Roussillon (Luberon loop)', lat: 43.9019, lng: 5.2944 , notes: 'A Luberon village built from and colored by its ochre-red cliffs; walk the small paid Sentier des Ocres loop (30-45 min) in late-afternoon light when the reds and oranges are most vivid.' },
+        { name: 'Ménerbes (Luberon loop)', lat: 43.8283, lng: 5.1836 , notes: 'A quieter, less-visited Luberon hilltop village (setting for Peter Mayle\'s "A Year in Provence"), with no major sight beyond its lanes and views; treat it as a 30-45 minute lunch stop rather than a long visit.' },
       ],
       notes: "Base Avignon or a Luberon village (3 nights): Avignon (Palais des Papes, Pont du Gard nearby) — Luberon loop (Gordes → Roussillon → Ménerbes). Budget ~€85-110/day (gîte/B&B €65-85, food €30-40, activities €10-20). Season: May-June or September — lavender only blooms end of June-first week of July (Valensole/lower Luberon), which pushes the trip into a hotter/busier window — a deliberate trade-off, not automatically the best choice. NL-Avignon ~1,090km/11.5-12h, tolls ~€70-90 one way. ⚠️ Hill-village parking (Gordes €4/day, Les Baux €5 first hour + meter).",
       transport_to_next: 'Drive to the Arles area (~45 min).',
@@ -13821,9 +13953,9 @@ function rbBuildProvenceRoute() {
     {
       code: 'FR', name: 'France', days: 3, budget: 300, lat: 43.6767, lng: 4.6278,
       destinations: [
-        { name: 'Les Baux-de-Provence + Carrières des Lumières', lat: 43.7444, lng: 4.7947 },
-        { name: 'Arles (base, Roman sites)', lat: 43.6767, lng: 4.6278 },
-        { name: 'Camargue day trip (Saintes-Maries-de-la-Mer)', lat: 43.4522, lng: 4.4283 },
+        { name: 'Les Baux-de-Provence + Carrières des Lumières', lat: 43.7444, lng: 4.7947 , notes: 'The hilltop ruined-castle village paired with the Carrières des Lumières, an immersive digital art projection show inside a former limestone quarry just outside the village; book a timed entry online in advance and allow about 45 minutes for the show.' },
+        { name: 'Arles (base, Roman sites)', lat: 43.6767, lng: 4.6278 , notes: 'A Roman arena/amphitheater still used for events today, plus the streets and cafés Van Gogh painted while living here; get the combined Pass Arles ticket covering the amphitheater and theatre, and don\'t expect original Van Gogh paintings on site, only places he painted.' },
+        { name: 'Camargue day trip (Saintes-Maries-de-la-Mer)', lat: 43.4522, lng: 4.4283 , notes: 'The wetland delta south of Arles known for wild pink flamingos, salt flats, and semi-wild white horses; the Parc Ornithologique de Pont de Gau gives reliable flamingo sightings, best visited early morning for wildlife activity and cooler heat.' },
       ],
       notes: "Base the Arles area (3 nights): Les Baux-de-Provence + Carrières des Lumières — Arles (Roman sites) — a Camargue day trip (flamingos, salt flats, beaches). Carrières des Lumières ~€16-17, Camargue boat/horseback trips +€25-40. Same seasonal lavender trade-off as the Avignon leg above.",
       transport_to_next: 'End of this route — drive back to the Netherlands.',
@@ -14485,7 +14617,7 @@ function rbBuildSardiniaNineDaysRoute() {
       code: 'IT', name: 'Italy', days: 2, budget: 240, lat: 40.5589, lng: 8.3181,
       destinations: [
         { name: 'Oristano (waypoint)', lat: 39.9036, lng: 8.5919 },
-        { name: 'Alghero', lat: 40.5589, lng: 8.3181 },
+        { name: 'Alghero', lat: 40.5589, lng: 8.3181 , notes: 'A Catalan-founded walled coastal town in northwest Sardinia where Catalan is still spoken, with sea-facing ramparts around the old town; walk the ramparts at sunset, and consider a boat trip to Neptune\'s Grotto at Capo Caccia (reachable by boat or a steep 656-step staircase).' },
       ],
       notes: 'West coast via Oristano to Alghero (2 days), then back to Olbia. ⚠️ If self-driving with a car ferry, book the vehicle deck 3-4+ months ahead for August (spaces fill up, peak-day one-way fares can exceed €300); flight routes are seasonal — check the current schedule before booking.',
       transport_to_next: 'End of this route — drive back to Olbia for the direct return flight to Amsterdam.',
@@ -14953,11 +15085,11 @@ function rbBuildMonacoCoteDAzurRoute() {
     {
       code: 'FR', name: 'France', days: 3, budget: 435, lat: 43.7102, lng: 7.2620,
       destinations: [
-        { name: 'Nice (base)', lat: 43.7102, lng: 7.2620 },
-        { name: 'Èze', lat: 43.7278, lng: 7.3617 },
-        { name: 'Villefranche-sur-Mer', lat: 43.7044, lng: 7.3097 },
-        { name: 'Menton', lat: 43.7748, lng: 7.5039 },
-        { name: 'Cannes (optional)', lat: 43.5528, lng: 7.0174 },
+        { name: 'Nice (base)', lat: 43.7102, lng: 7.2620 , notes: 'The Riviera\'s main city — Promenade des Anglais, Vieux Nice, and the Colline du Château viewpoint; hit the Cours Saleya market in the old town in the morning before it closes.' },
+        { name: 'Èze', lat: 43.7278, lng: 7.3617 , notes: 'A clifftop medieval village of stone lanes above the Riviera, capped by the Jardin Exotique\'s panoramic coastal view; go early morning or at sunset to dodge the day-tripper coach crowds that clog the village midday.' },
+        { name: 'Villefranche-sur-Mer', lat: 43.7044, lng: 7.3097 , notes: 'A deep natural bay ringed by a pastel old town and the small Chapelle Saint-Pierre decorated inside by Jean Cocteau; check the cruise-ship schedule and pick a day without one docked for a quieter waterfront, and budget just 1-2 hours here.' },
+        { name: 'Menton', lat: 43.7748, lng: 7.5039 , notes: 'The last French Riviera town before Italy, with Belle Époque villas, lemon groves, and gardens like Val Rahmeh climbing toward the old town\'s Basilique Saint-Michel; stroll the Vieux Port and Cocteau museum, and if visiting in February check the citrus-themed Fête du Citron.' },
+        { name: 'Cannes (optional)', lat: 43.5528, lng: 7.0174 , notes: 'La Croisette promenade and the Palais des Festivals; avoid during the film festival (mid-May) unless that\'s the point, otherwise a sunset walk on La Croisette is the move.' },
       ],
       notes: "Entry: direct flight Amsterdam-Nice (KLM/easyJet/Transavia, ~2h, very frequent). Base in Nice (or Menton), with day trips to Èze, Villefranche-sur-Mer, Menton and optionally Cannes. No car needed — the coastal rail network is excellent and parking in Monaco is expensive/scarce. Budget ~€130-160/day (a 3-star hotel in the Nice area, €100-160/night, is the biggest cost). Season: May-June or September; avoid July-August (heat/crowds/prices) and the week of the Monaco Grand Prix (late May, a huge price spike) — check the exact 2026 dates before booking.",
       transport_to_next: 'Train Nice-Monaco (~25 min, ~€4-8 one-way).',
@@ -14965,9 +15097,9 @@ function rbBuildMonacoCoteDAzurRoute() {
     {
       code: 'MC', name: 'Monaco', days: 1, budget: 145, lat: 43.7396, lng: 7.4275,
       destinations: [
-        { name: 'Monte Carlo Casino Square', lat: 43.7396, lng: 7.4275 },
-        { name: "Prince's Palace", lat: 43.7314, lng: 7.4197 },
-        { name: 'Port Hercule', lat: 43.7325, lng: 7.4276 },
+        { name: 'Monte Carlo Casino Square', lat: 43.7396, lng: 7.4275 , notes: 'The Casino de Monte-Carlo and Place du Casino, Monaco\'s belle-époque centerpiece with luxury cars parked out front; the atrium/exterior is free to see and best photographed before mid-morning tour groups arrive, while the gaming rooms require ID, a fee, and no shorts/sneakers after 2pm.' },
+        { name: "Prince's Palace", lat: 43.7314, lng: 7.4197 , notes: 'Monaco\'s royal residence atop the Rock, with a changing-of-the-guard ceremony every day at 11:55am; arrive by 11:40 to get a spot near the palace gates, and note the State Apartments are only open to visitors roughly April through October.' },
+        { name: 'Port Hercule', lat: 43.7325, lng: 7.4276 , notes: 'Monaco\'s main harbor, packed with superyachts and doubling as the F1 Grand Prix start/finish straight in May; the best free overview is from the terraces near the Prince\'s Palace or the Fairmont hairpin above.' },
       ],
       notes: "⚠️ Casino de Monte-Carlo: €20 entry, 18+ (from the day after your birthday), passport/ID required for the gaming rooms (no copy/digital ID, no driving licence); the Oceanographic Museum is ~€10 (check the current 2026 price); a combined Palace+Museum ticket saves money.",
       transport_to_next: 'End of this route — train back to Nice, direct flight home.',
@@ -14986,7 +15118,7 @@ function rbBuildMonacoNiceProvenceRoute() {
     {
       code: 'FR', name: 'France', days: 1, budget: 130, lat: 43.7102, lng: 7.2620,
       destinations: [
-        { name: 'Nice (base)', lat: 43.7102, lng: 7.2620 },
+        { name: 'Nice (base)', lat: 43.7102, lng: 7.2620 , notes: 'The Riviera\'s main city — Promenade des Anglais, Vieux Nice, and the Colline du Château viewpoint; hit the Cours Saleya market in the old town in the morning before it closes.' },
       ],
       notes: 'Entry: direct flight Amsterdam-Nice (~2h). Day 1: Nice itself, base for the Monaco day trip that follows.',
       transport_to_next: 'Train Nice-Monaco (~25 min).',
@@ -14994,7 +15126,7 @@ function rbBuildMonacoNiceProvenceRoute() {
     {
       code: 'MC', name: 'Monaco', days: 1, budget: 145, lat: 43.7396, lng: 7.4275,
       destinations: [
-        { name: 'Monte Carlo / Monaco-Ville', lat: 43.7396, lng: 7.4275 },
+        { name: 'Monte Carlo / Monaco-Ville', lat: 43.7396, lng: 7.4275 , notes: 'The old town on the Rock, separate from the casino district, holding the Cathedral (Grace Kelly\'s tomb), the Oceanographic Museum, and ramparts with harbor views; visit the Oceanographic Museum first thing before tour buses arrive, and allow 2-3 hours to also walk the ramparts.' },
       ],
       notes: 'Day 2: Monaco/Monte Carlo as a day trip from Nice — same casino/palace notes as Monaco + Côte d\'Azur (4 days) 🎰 above.',
       transport_to_next: 'Rental car pickup in Nice, then drive inland into Provence (~1-1.5h to the Aix-en-Provence area).',
@@ -15002,10 +15134,10 @@ function rbBuildMonacoNiceProvenceRoute() {
     {
       code: 'FR', name: 'France', days: 3, budget: 330, lat: 43.9493, lng: 4.8055,
       destinations: [
-        { name: 'Avignon (base)', lat: 43.9493, lng: 4.8055 },
-        { name: 'Aix-en-Provence', lat: 43.5297, lng: 5.4474 },
-        { name: 'Les Baux-de-Provence (optional)', lat: 43.7443, lng: 4.7952 },
-        { name: 'Rhône wine region (optional)', lat: 44.0558, lng: 4.8306 },
+        { name: 'Avignon (base)', lat: 43.9493, lng: 4.8055 , notes: 'A walled Provençal city centered on the Palais des Papes, the largest Gothic palace in Europe, plus the half-collapsed Pont Saint-Bénézet on the Rhône; book Palais des Papes tickets online to skip the queue and get the combo ticket that includes the bridge.' },
+        { name: 'Aix-en-Provence', lat: 43.5297, lng: 5.4474 , notes: 'Cézanne\'s elegant hometown, built around the fountain-lined Cours Mirabeau and old-town squares; the Tuesday/Thursday/Saturday morning market on Cours Mirabeau is the best time to see it in full swing.' },
+        { name: 'Les Baux-de-Provence (optional)', lat: 43.7443, lng: 4.7952 , notes: 'A hilltop Provençal village crowned by the dramatic ruined Château des Baux perched on sheer limestone cliffs; go before 10am or in late afternoon, since the shadeless ruins draw heavy tour-bus crowds and heat midday.' },
+        { name: 'Rhône wine region (optional)', lat: 44.0558, lng: 4.8306 , notes: 'The Côtes du Rhône vineyards around Avignon, centered on Châteauneuf-du-Pape; book a tasting appointment ahead at a domaine rather than walking in, since many are by-appointment only.' },
       ],
       notes: "Days 3-5: inland into Provence — Aix-en-Provence, Avignon, optionally Les Baux-de-Provence or the Rhône wine region. Avignon makes a good central Provence base (Aix is ~1h drive or 2h by train from Avignon). Budget ~€90-120/day for these Provence days (lower than the coastal days) plus a €40-60/day rental car. Season: May-June or September; lavender only blooms late June-July — a deliberate trade-off against the heat/crowds on the coast in that period. ⚠️ French toll roads (péage, pay-per-use, no vignette) — budget ~€15-25 extra toll for the Nice-Provence-Nice loop.",
       transport_to_next: 'End of this route — drive back toward Nice (or fly out from Marseille if more convenient) for the flight home.',
@@ -15036,7 +15168,7 @@ function rbBuildMonacoMonteCarloRoute() {
         { name: "Prince's Palace (changing of the guard, 11:55)", lat: 43.7314, lng: 7.4197 },
         { name: 'Monaco-Ville old town', lat: 43.7306, lng: 7.4222 },
         { name: 'Oceanographic Museum', lat: 43.7317, lng: 7.4249 },
-        { name: 'Port Hercule', lat: 43.7325, lng: 7.4276 },
+        { name: 'Port Hercule', lat: 43.7325, lng: 7.4276 , notes: 'Monaco\'s main harbor, packed with superyachts and doubling as the F1 Grand Prix start/finish straight in May; the best free overview is from the terraces near the Prince\'s Palace or the Fairmont hairpin above.' },
         { name: 'Larvotto beach', lat: 43.7455, lng: 7.4342 },
       ],
       notes: "Casino Square, the Prince's Palace plus the changing of the guard (11:55), the Monaco-Ville old town, the Oceanographic Museum, Port Hercule and Larvotto beach — several guidebooks deliberately structure Monaco as a one-day itinerary. Honest caveat: a second day mainly makes sense for a casino evening, beach relaxation, or a half-day trip to Èze/Villefranche — at which point it starts to look like the Côte d'Azur combo above. Budget ~€60-90/day excluding accommodation. Season: year-round, no strong seasonal dependency for this itinerary. ⚠️ Same casino rules as elsewhere (€20 entry, 18+, passport/ID required); the Prince's Palace interior is only open seasonally (typically April-October) — check the exact 2026 dates if that matters, otherwise the exterior plus the changing of the guard is visible year-round.",
@@ -15150,7 +15282,7 @@ function rbBuildCorsicaSardiniaSouthNorthRoute() {
     {
       code: 'IT', name: 'Italy', days: 3, budget: 315, lat: 41.2372, lng: 9.1908,
       destinations: [
-        { name: 'Santa Teresa Gallura', lat: 41.2372, lng: 9.1908 },
+        { name: 'Santa Teresa Gallura', lat: 41.2372, lng: 9.1908 , notes: 'Northern Sardinia\'s ferry port town, the closest point to Corsica with Bonifacio visible across the strait; the short ferry crossing (~1 hour) should be booked ahead in summer, and the port sits an easy walk from Rena Bianca beach.' },
         { name: 'Palau', lat: 41.1772, lng: 9.3833 },
         { name: 'La Maddalena archipelago', lat: 41.2167, lng: 9.4000 },
       ],
@@ -15171,7 +15303,7 @@ function rbBuildCorsicaSardiniaFullLoopRoute() {
     {
       code: 'FR', name: 'France', days: 6, budget: 750, lat: 42.6979, lng: 9.4508,
       destinations: [
-        { name: 'Bastia or Calvi (entry)', lat: 42.6979, lng: 9.4508 },
+        { name: 'Bastia or Calvi (entry)', lat: 42.6979, lng: 9.4508 , notes: 'Just Corsica\'s two main northern gateways, not destinations in themselves: Bastia has more ferry links (Genoa, Livorno, Nice) while Calvi is smaller and scenic with its own citadel, so pick whichever matches your ferry/flight routing.' },
         { name: 'Corte', lat: 42.3062, lng: 9.1499 , notes: 'The historic mountain capital with a citadel on a rock outcrop, gateway to the Restonica gorge; drive up the narrow Restonica valley road early in the day (parking fills fast in summer) for swimming holes.' },
         { name: 'Porto-Vecchio / Col de Bavella', lat: 41.5910, lng: 9.2795 , notes: 'A southern port town near the jagged Bavella needle peaks; drive the Col de Bavella road and stop at the pass for a short walk right up to the aiguilles.' },
         { name: 'Bonifacio', lat: 41.3870, lng: 9.1595 },
@@ -15182,11 +15314,11 @@ function rbBuildCorsicaSardiniaFullLoopRoute() {
     {
       code: 'IT', name: 'Italy', days: 6, budget: 750, lat: 41.2372, lng: 9.1908,
       destinations: [
-        { name: 'Santa Teresa Gallura', lat: 41.2372, lng: 9.1908 },
-        { name: 'Costa Smeralda / Palau', lat: 41.1772, lng: 9.3833 },
-        { name: 'Alghero', lat: 40.5586, lng: 8.3197 },
-        { name: 'Bosa', lat: 40.2986, lng: 8.5000 },
-        { name: 'Cagliari (optional, exit)', lat: 39.2238, lng: 9.1217 },
+        { name: 'Santa Teresa Gallura', lat: 41.2372, lng: 9.1908 , notes: 'Northern Sardinia\'s ferry port town, the closest point to Corsica with Bonifacio visible across the strait; the short ferry crossing (~1 hour) should be booked ahead in summer, and the port sits an easy walk from Rena Bianca beach.' },
+        { name: 'Costa Smeralda / Palau', lat: 41.1772, lng: 9.3833 , notes: 'Sardinia\'s glamorous "Emerald Coast," centered on Porto Cervo\'s yacht marina and upscale resorts; the marina is worth a stroll for yacht-watching in July-August, but nearby beaches like Liscia Ruja need an early arrival for parking and sunbeds.' },
+        { name: 'Alghero', lat: 40.5586, lng: 8.3197 , notes: 'A Catalan-founded walled coastal town in northwest Sardinia where Catalan is still spoken, with sea-facing ramparts around the old town; walk the ramparts at sunset, and consider a boat trip to Neptune\'s Grotto at Capo Caccia (reachable by boat or a steep 656-step staircase).' },
+        { name: 'Bosa', lat: 40.2986, lng: 8.5000 , notes: 'A colorful town lining the Temo river, overlooked by the hilltop Malaspina Castle; climb to the castle in late afternoon for the best light on the pastel houses below, and try a local Malvasia wine tasting in town.' },
+        { name: 'Cagliari (optional, exit)', lat: 39.2238, lng: 9.1217 , notes: 'Sardinia\'s southern capital, built around the Castello quarter; the Bastione di Saint Remy terrace gives the best free panoramic view over the city and gulf, worth combining with the archaeological museum\'s Nuragic bronzes if time allows.' },
       ],
       notes: "A fuller Sardinia loop via the same Bonifacio-Santa Teresa ferry: the north coast and Costa Smeralda, plus central/west Sardinia (Alghero, Bosa, optionally Cagliari in the south). Fly home from Cagliari (KLM direct from Amsterdam, year-round, 7x/week) instead of the seasonal Olbia route — this also removes the shorter variant's seasonal restriction. Budget ~€120-130/day, same range as the Corsica leg. Season: May-June or September; the Bonifacio-Santa Teresa ferry's window (16 Jan-31 Oct 2026) still applies.",
       transport_to_next: 'End of this route — direct flight home from Cagliari (KLM, year-round, 7x/week).',

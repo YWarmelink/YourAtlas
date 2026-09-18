@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 394 / 741 signatures.**
+- **Done so far: 403 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -385,7 +385,7 @@ Sorted alphabetically by country code.
 - [ ] **FR** (4 dest): Ax-les-Thermes (thermal baths), Foix (medieval castle), Tarascon-sur-Ariège, Grotte de Niaux (prehistoric cave) — routes: Andorra + French Pyrenees: Ariège (6 days) ♨️
 - [ ] **FR** (5 dest): Saint-Malo (ramparts), Dinan (medieval old town), Côte de Granit Rose / Ploumanac'h coastal path, Île de Bréhat, Cap Fréhel — routes: Brittany: Saint-Malo, Dinan & Pink Granite Coast (5 days) 🦞
 - [x] **FR** (3 dest): Strasbourg, Colmar, Alsace villages — routes: Central European Grand Roadtrip 🚗
-- [ ] **FR** (4 dest): Bastia or Calvi (entry), Corte, Porto-Vecchio / Col de Bavella, Bonifacio — routes: Corsica + Sardinia: Full Island Loop (12 days) 🌊
+- [x] **FR** (4 dest): Bastia or Calvi (entry), Corte, Porto-Vecchio / Col de Bavella, Bonifacio — routes: Corsica + Sardinia: Full Island Loop (12 days) 🌊
 - [ ] **FR** (1 dest): Figari / Bonifacio — routes: Corsica + Sardinia: South Corsica & North Sardinia (5 days) 🏝️
 - [x] **FR** (4 dest): Nice, Antibes, Cannes, Marseille (optional) — routes: Corsica + South of France (9 days) 🛳️
 - [x] **FR** (6 dest): Bastia, Calvi, Corte, Porto-Vecchio / Col de Bavella, Bonifacio, Ajaccio — routes: Corsica + South of France (9 days) 🛳️
@@ -407,14 +407,14 @@ Sorted alphabetically by country code.
 - [ ] **FR** (2 dest): Biarritz, Saint-Jean-de-Luz (Basque Coast) — routes: French Atlantic Coast: La Rochelle to Biarritz (12 days) 🏄
 - [ ] **FR** (4 dest): Amboise (base) — Château d'Amboise + Clos Lucé, Chenonceau (day trip, ~30 min), Villandry (gardens), Azay-le-Rideau — routes: Loire Valley Castles (6 days) 🗝️
 - [ ] **FR** (3 dest): Chambord (~45 min from Amboise), Cheverny (nearby), Blois (base, Château Royal) — routes: Loire Valley Castles (6 days) 🗝️
-- [ ] **FR** (5 dest): Nice (base), Èze, Villefranche-sur-Mer, Menton, Cannes (optional) — routes: Monaco + Côte d'Azur (4 days) 🎰
-- [ ] **FR** (1 dest): Nice (base) — routes: Monaco + Nice + Provence (5 days) 🍇
-- [ ] **FR** (4 dest): Avignon (base), Aix-en-Provence, Les Baux-de-Provence (optional), Rhône wine region (optional) — routes: Monaco + Nice + Provence (5 days) 🍇
+- [x] **FR** (5 dest): Nice (base), Èze, Villefranche-sur-Mer, Menton, Cannes (optional) — routes: Monaco + Côte d'Azur (4 days) 🎰
+- [x] **FR** (1 dest): Nice (base) — routes: Monaco + Nice + Provence (5 days) 🍇
+- [x] **FR** (4 dest): Avignon (base), Aix-en-Provence, Les Baux-de-Provence (optional), Rhône wine region (optional) — routes: Monaco + Nice + Provence (5 days) 🍇
 - [ ] **FR** (1 dest): Nice (overnight base) — routes: Monaco: Monte Carlo (2 days) 🎲
 - [ ] **FR** (6 dest): Honfleur, Bayeux, Omaha Beach, Pointe du Hoc, Normandy American Cemetery, Colleville-sur-Mer, Mont Saint-Michel — routes: Normandy (5 days) 🪖
 - [ ] **FR** (7 dest): Île de la Cité, Le Marais (quieter, "real culture" district), Louvre, Tuileries, Eiffel Tower / Trocadéro, Musée Rodin (7th arr., quiet garden, less touristy than the classics), Montmartre — routes: Paris (4 days) 🗼
-- [ ] **FR** (5 dest): Avignon (base) — Palais des Papes, Pont du Gard (nearby), Gordes (Luberon loop), Roussillon (Luberon loop), Ménerbes (Luberon loop) — routes: Provence (6 days) 🌻
-- [ ] **FR** (3 dest): Les Baux-de-Provence + Carrières des Lumières, Arles (base, Roman sites), Camargue day trip (Saintes-Maries-de-la-Mer) — routes: Provence (6 days) 🌻
+- [x] **FR** (5 dest): Avignon (base) — Palais des Papes, Pont du Gard (nearby), Gordes (Luberon loop), Roussillon (Luberon loop), Ménerbes (Luberon loop) — routes: Provence (6 days) 🌻
+- [x] **FR** (3 dest): Les Baux-de-Provence + Carrières des Lumières, Arles (base, Roman sites), Camargue day trip (Saintes-Maries-de-la-Mer) — routes: Provence (6 days) 🌻
 - [ ] **FR** (2 dest): Avignon area (base), Luberon/Gordes day trip — routes: South of France: Provence to Côte d'Azur (9 days) 🕶️
 - [ ] **FR** (2 dest): Arles, Camargue / Saintes-Maries-de-la-Mer — routes: South of France: Provence to Côte d'Azur (9 days) 🕶️
 - [ ] **FR** (2 dest): Antibes or Villefranche-sur-Mer (base — more authentic/less party-resort than Cannes), Nice (city anchor) — routes: South of France: Provence to Côte d'Azur (9 days) 🕶️
@@ -508,7 +508,7 @@ Sorted alphabetically by country code.
 - [ ] **IT** (1 dest): Capri (day trip) — routes: Campania: Naples + Amalfi Coast (6 days) 🌊
 - [x] **IT** (4 dest): Duomo, Galleria, Navigli, The Last Supper — routes: Central European Grand Roadtrip 🚗
 - [x] **IT** (3 dest): Egyptian Museum, Mole Antonelliana, historic center — routes: Central European Grand Roadtrip 🚗
-- [ ] **IT** (5 dest): Santa Teresa Gallura, Costa Smeralda / Palau, Alghero, Bosa, Cagliari (optional, exit) — routes: Corsica + Sardinia: Full Island Loop (12 days) 🌊
+- [x] **IT** (5 dest): Santa Teresa Gallura, Costa Smeralda / Palau, Alghero, Bosa, Cagliari (optional, exit) — routes: Corsica + Sardinia: Full Island Loop (12 days) 🌊
 - [ ] **IT** (3 dest): Santa Teresa Gallura, Palau, La Maddalena archipelago — routes: Corsica + Sardinia: South Corsica & North Sardinia (5 days) 🏝️
 - [ ] **IT** (4 dest): Duomo, Galleria, Navigli, Last Supper — routes: Dolomites & North Italy 🚡
 - [ ] **IT** (3 dest): Egyptian Museum, Mole Antonelliana, Historic centre — routes: Dolomites & North Italy 🚡
@@ -598,8 +598,8 @@ Sorted alphabetically by country code.
 - [x] **LU** (2 dest): Vianden, Luxembourg City — routes: South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️
 - [ ] **LV** (3 dest): Riga (Old Town), Sigulda / Turaida Castle / Gauja NP, Rundāle Palace (day trip) — routes: Baltic States Roadtrip (10-14 days) 🚗
 - [ ] **LV** (5 dest): Riga (Old Town), Sigulda, Turaida Castle, Gauja National Park, Rundāle Palace — routes: Latvia (5-7 days) 🌲
-- [ ] **MC** (3 dest): Monte Carlo Casino Square, Prince's Palace, Port Hercule — routes: Monaco + Côte d'Azur (4 days) 🎰
-- [ ] **MC** (1 dest): Monte Carlo / Monaco-Ville — routes: Monaco + Nice + Provence (5 days) 🍇
+- [x] **MC** (3 dest): Monte Carlo Casino Square, Prince's Palace, Port Hercule — routes: Monaco + Côte d'Azur (4 days) 🎰
+- [x] **MC** (1 dest): Monte Carlo / Monaco-Ville — routes: Monaco + Nice + Provence (5 days) 🍇
 - [ ] **MC** (6 dest): Casino Square, Prince's Palace (changing of the guard, 11:55), Monaco-Ville old town, Oceanographic Museum, Port Hercule, Larvotto beach — routes: Monaco: Monte Carlo (2 days) 🎲
 - [ ] **MD** (5 dest): Chișinău, Cricova wine cellar, Mileștii Mici wine cellar, Orheiul Vechi, Comrat (Gagauzia) — routes: Moldova (5 days) 🍷
 - [ ] **MD** (2 dest): Chișinău, Orheiul Vechi — routes: Moldova + Romania (9 days) 🍷
@@ -771,18 +771,15 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Athens + Peloponnese: Extended (12 days) 👑 | 10/10 | 0 |
 | England + Wales + Northern Ireland Roadtrip (10-14 days) 🛣️ | 10/10 | 0 |
 | Rhine + Moselle (5 days) 🚤 | 9/9 | 0 |
-| Corsica + Sardinia: Full Island Loop (12 days) 🌊 | 9/9 | 0 |
 | Grand European Roadtrip (14-21 days) 🪣 | 9/12 | 0 |
 | Highlands + Isle of Skye (7-10 days) 🏔️ | 9/9 | 0 |
 | Baltic States Roadtrip (10-14 days) 🚗 | 9/9 | 0 |
 | Dolomites & North Italy 🚡 | 8/24 | 0 |
 | Alsace (4 days) 🥐 | 8/8 | 0 |
-| Provence (6 days) 🌻 | 8/8 | 0 |
 | Florence + Tuscany (4 days) 🎨 | 8/8 | 0 |
 | Venice + Dolomites (5 days) 🎭 | 8/8 | 0 |
 | Sardinia (9 days) ⛵ | 8/8 | 0 |
 | Puglia (6 days) 🏘️ | 8/8 | 0 |
-| Monaco + Côte d'Azur (4 days) 🎰 | 8/8 | 0 |
 | Rome + Vatican City In-Depth (4 days) ⛪ | 8/8 | 0 |
 | Malta + Gozo (6 days) ⛵ | 8/8 | 0 |
 | Catalonia + Pyrenees (9 days) ⛰️ | 8/8 | 0 |
@@ -808,6 +805,9 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Monaco: Monte Carlo (2 days) 🎲 | 7/7 | 0 |
 | Andalusia Roadtrip (9 days) 🚗 | 7/7 | 0 |
 | Galicia: Santiago de Compostela + Coast (6 days) 🐚 | 7/7 | 0 |
-| ... 210 more routes with open destinations ... | | |
+| Asturias + Cantabria (6 days) 🌲 | 7/7 | 0 |
+| Gibraltar + Andalusia: Costa del Sol (4 days) 🐒 | 7/7 | 0 |
+| Andorra + French Pyrenees: Ariège (6 days) ♨️ | 7/7 | 0 |
+| ... 206 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).
