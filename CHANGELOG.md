@@ -30,6 +30,25 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   already present in the existing data, no change needed to how batches insert notes or build
   their migration functions.
 
+- **Per-destination notes, batch 44 — Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days)
+  (2026-09-18)** — 19 destinations, researched in a single pass (none had notes yet, a solo
+  signature with no cross-route leverage). Same generic name-matching migration
+  (`rbMigrateMalaysiaBorneoBruneiDestinationNotes()`). Caught another insertion-script gotcha:
+  "Mount Kinabalu (Low's Peak summit)" is stored single-quoted with an escaped apostrophe
+  (`Low\'s Peak`), same category as the "San Quirico d'Orcia" gotcha from batch 26. App-wide
+  total: 2766 destination-slots filled across 340 routes. 350/741 signatures done.
+
+- **Per-destination notes, batch 43 — Peru + Bolivia: Andes & Salt Flats (20 days) (2026-09-18)**
+  — 17 destinations researched, plus 2 more (Copacabana, Uyuni Salt Flat) reusing existing note
+  text from already-noted same-place instances elsewhere in the file (same coordinates) rather
+  than re-researching. "Valle de la Luna" here is deliberately Bolivia's La Paz one, not Chile's
+  Atacama one of the same name (the exact collision flagged during the 2026-09-17 Locations-
+  manifest work) — confirmed safe to reuse the plain name-matching migration since the Chile
+  instance already has its own note and the guard only touches empty ones. Also caught an
+  insertion-script gotcha: "Witches' Market" is stored double-quoted (`"Witches' Market"`)
+  rather than the usual single-quote convention. Same generic name-matching migration
+  (`rbMigratePeruBoliviaAndesDestinationNotes()`).
+
 - **Per-destination notes, batch 42 — North Macedonia + Kosovo + Greece cluster (2026-09-18)** —
   Skopje, Ohrid, Bitola, Pelister National Park, Pristina, Thessaloniki, plus the "Prizren (Sinan
   Pasha Mosque, Liga House)" and "Visoki Dečani / Peć Patriarchate" name variants — 8

@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 333 / 741 signatures.**
+- **Done so far: 350 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -275,11 +275,11 @@ Sorted alphabetically by country code.
 - [ ] **BG** (3 dest): Sofia, Plovdiv (Old Town / Roman Theatre), Rila Monastery — routes: Sofia + Plovdiv (6 days) 🏛️
 - [ ] **BG** (3 dest): Sofia (Alexander Nevski Cathedral), Vitosha Mountain, Rila Monastery — routes: Sofia + Rila Monastery (5 days) ⛪
 - [x] **BH** (3 dest): Qal'at al-Bahrain (Bahrain Fort), Bahrain National Museum, Al Fateh Grand Mosque — routes: Gulf States Trio 🛢️
-- [ ] **BN** (3 dest): Bandar Seri Begawan, Kampong Ayer, Ulu Temburong NP (guided day tour) — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
-- [ ] **BO** (2 dest): Copacabana, Isla del Sol (day trip) — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
-- [ ] **BO** (3 dest): Valle de la Luna, Mi Teleférico (cable car), Witches' Market — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
-- [ ] **BO** (4 dest): Uyuni Salt Flat, Train Cemetery, Incahuasi Island, Colored lagoons & geysers (Eduardo Avaroa NP) — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
-- [ ] **BO** (1 dest): La Paz (departure buffer) — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
+- [x] **BN** (3 dest): Bandar Seri Begawan, Kampong Ayer, Ulu Temburong NP (guided day tour) — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
+- [x] **BO** (2 dest): Copacabana, Isla del Sol (day trip) — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
+- [x] **BO** (3 dest): Valle de la Luna, Mi Teleférico (cable car), Witches' Market — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
+- [x] **BO** (4 dest): Uyuni Salt Flat, Train Cemetery, Incahuasi Island, Colored lagoons & geysers (Eduardo Avaroa NP) — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
+- [x] **BO** (1 dest): La Paz (departure buffer) — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
 - [ ] **CH** (2 dest): Zermatt (car-free, Matterhorn), Interlaken (alternative base) — routes: Alpine Roadtrip (14 days) 🏕️
 - [x] **CH** (4 dest): Lucerne/Lake Lucerne, Interlaken, Lauterbrunnen, Bernese Oberland — routes: Central European Grand Roadtrip 🚗
 - [x] **CH** (1 dest): Geneva (old town, lake) — routes: France + Switzerland + Italy (10-14 days) 🗻
@@ -623,13 +623,13 @@ Sorted alphabetically by country code.
 - [ ] **MT** (4 dest): Valletta, Three Cities, Cittadella, Victoria (Gozo), Ramla Bay (Gozo) — routes: Malta + Gozo + Sicily (9 days) 🐚
 - [ ] **MT** (3 dest): Valletta, Three Cities, Marsaxlokk — routes: Sicily + Malta (9 days) 🌋
 - [ ] **MV** (5 dest): Malé, Maafushi, Thulusdhoo, Fulidhoo, Dhigurah — routes: Maldives 🏝️
-- [ ] **MY** (4 dest): Petronas Towers / KLCC, Batu Caves, Chinatown & Merdeka Square, Malacca (optional day trip) — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
-- [ ] **MY** (1 dest): Kota Kinabalu waterfront — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
-- [ ] **MY** (2 dest): Mount Kinabalu (Low's Peak summit), Laban Rata (overnight rest stop) — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
-- [ ] **MY** (3 dest): Sepilok Orang-utan Rehabilitation Centre, Rainforest Discovery Centre, Bornean Sun Bear Conservation Centre — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
-- [ ] **MY** (1 dest): Kinabatangan River wildlife cruises — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
-- [ ] **MY** (3 dest): Semporna, Mabul Island, Sipadan (diving, permit required) — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
-- [ ] **MY** (2 dest): Kota Kinabalu (departure buffer), Mari Mari Cultural Village (optional) — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
+- [x] **MY** (4 dest): Petronas Towers / KLCC, Batu Caves, Chinatown & Merdeka Square, Malacca (optional day trip) — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
+- [x] **MY** (1 dest): Kota Kinabalu waterfront — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
+- [x] **MY** (2 dest): Mount Kinabalu (Low's Peak summit), Laban Rata (overnight rest stop) — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
+- [x] **MY** (3 dest): Sepilok Orang-utan Rehabilitation Centre, Rainforest Discovery Centre, Bornean Sun Bear Conservation Centre — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
+- [x] **MY** (1 dest): Kinabatangan River wildlife cruises — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
+- [x] **MY** (3 dest): Semporna, Mabul Island, Sipadan (diving, permit required) — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
+- [x] **MY** (2 dest): Kota Kinabalu (departure buffer), Mari Mari Cultural Village (optional) — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
 - [x] **NL** (2 dest): Maastricht (Vrijthof, Sint-Pietersberg caves), Valkenburg (Fluweelengrot cave) — routes: South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️
 - [ ] **NO** (7 dest): Bergen (Bryggen), Fløyen, Ulriken, Flåm (Flåm Railway), Nærøyfjord, Voss, Hardangerfjord / Eidfjord (optional extension) — routes: Bergen + Fjords (6 days) ⛴️
 - [ ] **NO** (6 dest): Bergen, Sognefjord (Nærøyfjord/Flåm), Nordfjord / Stryn, Geirangerfjord, Atlantic Ocean Road (Atlanterhavsveien), Ålesund — routes: Bergen + Ålesund (12 days) 🛣️
@@ -642,11 +642,11 @@ Sorted alphabetically by country code.
 - [ ] **NO** (5 dest): Oslo, Rjukan, Telemark Canal boat (Dalen), Kristiansand, Mandal — routes: South Norway (9 days) 🏞️
 - [ ] **NO** (5 dest): Longyearbyen, Svalbard Museum, Nordpolet, Isfjorden boat tour (summer), Pyramiden (summer boat destination) — routes: Svalbard (Longyearbyen) (6 days) 🌌
 - [x] **NO** (2 dest): Narvik, Lofoten (Svolvær) — routes: Sweden + Norway (12 days) 🌉
-- [ ] **PE** (1 dest): Lima (arrival, transit only) — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
-- [ ] **PE** (1 dest): Cusco (Sacsayhuamán, Qorikancha) — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
-- [ ] **PE** (3 dest): Pisac (market), Ollantaytambo, Chinchero / Moray / Salineras — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
-- [ ] **PE** (2 dest): Machu Picchu, Aguas Calientes — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
-- [ ] **PE** (2 dest): Uros floating islands, Taquile Island — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
+- [x] **PE** (1 dest): Lima (arrival, transit only) — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
+- [x] **PE** (1 dest): Cusco (Sacsayhuamán, Qorikancha) — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
+- [x] **PE** (3 dest): Pisac (market), Ollantaytambo, Chinchero / Moray / Salineras — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
+- [x] **PE** (2 dest): Machu Picchu, Aguas Calientes — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
+- [x] **PE** (2 dest): Uros floating islands, Taquile Island — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
 - [ ] **PG** (6 dest): Port Moresby, Tufi (fjords, diving), Alotau / Milne Bay (diving), Sepik River (Wewak) — spirit houses, canoe villages, Rabaul / Kokopo, East New Britain — volcanoes, WWII wrecks, Goroka, Eastern Highlands — routes: Papua New Guinea 🎭
 - [ ] **PL** (3 dest): Warsaw, Masurian Lakes (Giżycko), Gdańsk / Hel Peninsula — routes: Baltics + Poland (10-14 days) 🇵🇱
 - [ ] **PL** (2 dest): Krakow Old Town, Auschwitz-Birkenau (day trip) — routes: Central Europe Roadtrip (14 days) 🚂
@@ -768,8 +768,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂 | 19/19 | 0 |
-| Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧 | 19/19 | 0 |
 | Porto + Northern Spain (10-14 days) 🏔️ | 14/14 | 0 |
 | US Northeast 🗽 | 13/13 | 0 |
 | Dolomites (6 days) ⛰️ | 13/13 | 0 |
@@ -808,6 +806,8 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Malta + Gozo (6 days) ⛵ | 8/8 | 0 |
 | Malta + Gozo + Sicily (9 days) 🐚 | 8/8 | 0 |
 | Catalonia + Pyrenees (9 days) ⛰️ | 8/8 | 0 |
-| ... 234 more routes with open destinations ... | | |
+| Spain: North to Central (12 days) 🚉 | 8/8 | 0 |
+| Spain: East to South (12 days) 🌅 | 8/8 | 0 |
+| ... 232 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

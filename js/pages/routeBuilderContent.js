@@ -9564,6 +9564,101 @@ function rbMigrateNorthMacedoniaKosovoGreeceDestinationNotes() {
 }
 
 /**
+ * Batch 43 (2026-09-18) -- Peru + Bolivia: Andes & Salt Flats (20 days) -- 17 destinations
+ * researched, 2 more (Copacabana, Uyuni Salt Flat) reusing existing note text from the
+ * already-noted same-place instances elsewhere in the file (same coordinates). "Valle de la
+ * Luna" here is deliberately the La Paz/Bolivia one, distinct from the already-noted Atacama/
+ * Chile "Valle de la Luna" -- the exact name collision flagged during the Locations-manifest
+ * work (2026-09-17); safe because the migration only patches destinations still missing a note,
+ * and the Chile instance already has one. Same generic name-matching migration pattern as the
+ * other batches.
+ */
+function rbMigratePeruBoliviaAndesDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_PERU_BOLIVIA_ANDES_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_PERU_BOLIVIA_ANDES_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Lima (arrival, transit only)': "Just an overnight arrival buffer before flying to Cusco — Lima sightseeing is currently skipped due to a local crime advisory, so treat it as a place to sleep and rest, not a stop to explore.",
+    'Cusco (Sacsayhuamán, Qorikancha)': "Sacsayhuamán's massive polygonal Inca stone walls (some blocks over 100 tons) and Qorikancha's sun temple (with a colonial church built directly on top) are the city's two best examples of Inca engineering; buy the boleto turístico covering both, and visit Sacsayhuamán late afternoon for soft light and thinner crowds.",
+    'Pisac (market)': "The Sunday market is the big draw for textiles and produce, but don't skip the sprawling Inca ruins terracing the hillside above town — go early morning by taxi/colectivo before tour buses arrive around midday.",
+    'Ollantaytambo': "The best-preserved living Inca town in Peru — houses still sit on original Inca foundations, and terraced fortress ruins tower above the plaza; climb the free Pinkuylluna granaries across the valley at sunrise for a crowd-free view over the whole site.",
+    'Chinchero / Moray / Salineras': "Moray's mysterious concentric farming terraces, the cascading Salineras de Maras salt pans, and Chinchero's Sunday market and weaving demonstrations make a good half-day loop by car; visit Salineras before midday when the sun best lights the salt pools.",
+    'Machu Picchu': "The Inca citadel needs no introduction; 2026 entry runs on a strict phased-release circuit system (four routes, hourly slots, max 4-hour visit, no re-entry) — book your specific circuit and entry time 3-4 months ahead for a June-August visit, and take the earliest slot for fewer crowds and better odds of clear skies.",
+    'Aguas Calientes': "Purely a functional base town for Machu Picchu access — the hot springs themselves are small and touristy, worth a soak only if you have a spare evening, not a destination in their own right.",
+    'Uros floating islands': 'Manmade reed islands where Aymara families still live, though the visit is short and heavily set up for tour groups — take an early morning boat from Puno to beat the biggest groups and keep expectations realistic about how "untouched" it feels.',
+    'Taquile Island': "A car-free island famous for its UNESCO-listed textile weaving tradition, with terraced paths and wide Titicaca views; it's a full day (3-4hr boat each way from Puno), so bring cash for the community-cooked lunch and sturdy shoes for the hillside walk.",
+    'Isla del Sol (day trip)': "Considered the mythological birthplace of the Inca sun god, with Inca ruins, terraces, and a ridge trail with lake views on both sides; take the earlier catamaran/boat from Copacabana for enough daylight to walk the full north-to-south route, and carry small bills for local community entry fees along the way.",
+    'Valle de la Luna': "A compact badlands of eroded clay and rock spires just outside La Paz — not the more famous Atacama site of the same name — walkable in about an hour on a signed loop trail; go in the afternoon for warmer light on the formations, easy cheap minibus ride from the city center.",
+    'Mi Teleférico (cable car)': "The world's most extensive urban cable-car transit network; riding a line (Red or Yellow) is the easiest way to see La Paz's dramatic bowl-shaped cityscape and El Alto above it. Ride mid-morning on a clear day for best visibility and take a round trip rather than just one leg.",
+    "Witches' Market": "Calle Jaén/Sagárnaga's Mercado de las Brujas sells traditional Aymara ritual items, most memorably dried llama fetuses used as house-blessing offerings to Pachamama. Browsing takes under an hour, prices are largely fixed so don't expect much bargaining, and ask before photographing vendors or stalls.",
+    'Train Cemetery': "A rusted graveyard of abandoned 19th/20th-century steam locomotives in the desert, usually the first stop on salt flat tours; only takes 30-45 minutes, so treat it as a quick sunrise-light photo stop rather than a highlight in itself.",
+    'Incahuasi Island': "A rocky island in the middle of the salt flat covered in centuries-old giant cacti, with a short climb to a panoramic viewpoint; small entrance fee (around 30 Bolivianos), usually the lunch stop on day one of the jeep tour.",
+    'Colored lagoons & geysers (Eduardo Avaroa NP)': "Laguna Colorada's red algae-tinted water with flamingos and the Sol de Mañana geyser field are the highlights near the Chilean border; visit the geysers at dawn when steam and colors are most visible, and dress for well below freezing since you're near 5,000m altitude.",
+    'La Paz (departure buffer)': "A deliberate buffer day before flying home, not a must-see stop — if you have spare hours, wander the San Francisco Church/Mercado Lanza area, or fit in Valle de la Luna or the Teleférico if you haven't done them yet.",
+    'Copacabana': 'Lakeside base for boat trips to Isla del Sol (Inca sun-birthplace legend); Saturdays see the "blessing of the vehicles" ritual outside the basilica, worth timing a visit around.',
+    'Uyuni Salt Flat': "Go wet season (roughly Dec-Apr) for the mirror effect, dry season for the cracked-hexagon surface photos everyone associates with Uyuni; Isla Incahuasi's giant cacti make a good midday stop, and the rusting Train Cemetery near Uyuni town is a free add-on.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 44 (2026-09-18) -- Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) -- 19
+ * destinations researched in a single pass (none had notes yet). Same generic name-matching
+ * migration pattern as the other batches.
+ */
+function rbMigrateMalaysiaBorneoBruneiDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_MALAYSIA_BORNEO_BRUNEI_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_MALAYSIA_BORNEO_BRUNEI_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Petronas Towers / KLCC': "Malaysia's iconic 88-story twin towers with a skybridge and observation deck, plus the KLCC park and mall at the base. Book skybridge/observation deck tickets online for a specific time slot in advance — walk-up tickets often sell out — and go near sunset for the tower lighting.",
+    'Batu Caves': "A limestone cave temple reached by 272 rainbow-colored steps guarded by a giant golden Murugan statue, with monkeys along the way. Go early morning (before 9am) to beat both the heat and the tour-bus crowds on the stairs.",
+    'Chinatown & Merdeka Square': "Petaling Street's market/food stalls and the colonial-era Merdeka Square/Sultan Abdul Samad Building nearby combine into one walkable half-day. Visit Chinatown in the evening when the street-food stalls are in full swing.",
+    'Malacca (optional day trip)': "A UNESCO-listed old trading port with Dutch/Portuguese colonial buildings around Jonker Street and the Stadthuys, about 2 hours each way from KL — only worth it if you can dedicate a full day, ideally over a weekend evening for the Jonker Street night market.",
+    'Bandar Seri Begawan': "Brunei's capital is really about the Kampong Ayer stilt village and the gold-domed Sultan Omar Ali Saifuddin Mosque; sunset boat-viewing of the mosque from the river is the single best photo op and costs nothing.",
+    'Kampong Ayer': "One of the world's largest stilt-house settlements, still home to thousands of people, connected by boardwalks over the river. Hire one of the small water taxis for a short cruise through the settlement rather than only viewing it from the mosque waterfront.",
+    'Ulu Temburong NP (guided day tour)': "Brunei's pristine rainforest reserve, reachable only by longboat plus a jungle walk, centers on a roughly 40m-high canopy walkway above the treetops and a swim/tube stop at a jungle waterfall. Access is guided-tour only and must be booked in advance — arrange it before arriving in Brunei rather than counting on walk-up availability.",
+    'Kota Kinabalu waterfront': "The main draw is the nightly waterfront/Filipino night market for seafood and the sunset over the South China Sea — go right around sunset for both.",
+    "Mount Kinabalu (Low's Peak summit)": "Southeast Asia's highest peak between the Philippines and New Guinea, climbed over two days via Laban Rata. Climbing permits and mountain-hut beds are strictly capped and sell out months ahead (annual slots open 1 December for the following year), so book through the official Sabah Parks portal as early as possible — ideally 3-6+ months out.",
+    'Laban Rata (overnight rest stop)': "Just the mid-climb hut where you sleep before the pre-dawn summit push — little to see here beyond a basic meal and a few hours of rest, so treat it purely as a logistics stop and turn in early since wake-up is around 1:30-2am.",
+    'Sepilok Orang-utan Rehabilitation Centre': "One of the best places in Borneo to reliably see semi-wild orangutans up close at the feeding platform. Go to the morning feeding (around 10am) rather than the afternoon one — mornings tend to draw more orangutans before the heat sets in.",
+    'Rainforest Discovery Centre': "A quieter canopy walkway and boardwalk right next to Sepilok, good for birdwatching and treetop views without the orangutan-centre crowds. Go at dawn for the best bird activity; easy to pair with Sepilok the same morning.",
+    'Bornean Sun Bear Conservation Centre': "Sits right next to the orangutan centre and lets you view the world's smallest bear species from an elevated walkway. Visit right after the Sepilok morning feeding since it's a 5-minute walk away and takes under an hour.",
+    'Kinabatangan River wildlife cruises': "The best chance in Borneo to see wild proboscis monkeys, orangutans, hornbills, and elephants from a boat. Early morning and dusk cruises are far more productive than midday, so plan an overnight at a river lodge to catch both.",
+    'Semporna': "Mainly a jumping-off point/base for boats to Mabul and Sipadan rather than a sight itself — little reason to linger beyond arranging onward diving/island transport.",
+    'Mabul Island': "Known for muck diving (rare small critters like frogfish and seahorses) and as the accommodation base for Sipadan trips, since overnight stays aren't allowed on Sipadan itself. Book your resort well ahead, since bed availability is tied to Sipadan permit allocations.",
+    'Sipadan (diving, permit required)': 'One of the world\'s top dive sites for pelagics, sea turtles, and a famous "turtle tomb" cave. Permits are capped at roughly 250-ish/day and allocated to dive operators, so book your resort/operator months ahead; note the island closes completely for diving every November for reef recovery.',
+    'Kota Kinabalu (departure buffer)': "A deliberate buffer day before flying out, not a must-see stop — if you have spare hours, revisit the waterfront night market or use the day for the optional Mari Mari Cultural Village tour.",
+    'Mari Mari Cultural Village (optional)': "A recreated village near Kota Kinabalu showcasing Sabah's ethnic groups (Kadazan-Dusun, Bajau, Murut, etc.) with demonstrations, traditional food, and a fire-making/blowpipe show. Runs as a half-day tour with set departure times and an early dinner — a good fit for the KK departure-buffer day.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -22726,7 +22821,7 @@ function rbBuildPeruBoliviaAndesSaltFlatsRoute() {
     {
       code: 'PE', name: 'Peru', days: 1, budget: 30, lat: -12.0464, lng: -77.0428,
       destinations: [
-        { name: 'Lima (arrival, transit only)', lat: -12.0464, lng: -77.0428 },
+        { name: 'Lima (arrival, transit only)', lat: -12.0464, lng: -77.0428 , notes: 'Just an overnight arrival buffer before flying to Cusco — Lima sightseeing is currently skipped due to a local crime advisory, so treat it as a place to sleep and rest, not a stop to explore.' },
       ],
       notes: "Entry: flight Amsterdam-Lima (with a connection, ±14-16 hours; from ±€800-950 return; best period June-August). Web-research price indication 2026-09, a snapshot. Deliberately just an overnight transit here, not a sightseeing stop — there's no direct international flight into Cusco (all arrivals route through Lima's Jorge Chávez airport, single-terminal since June 2026), but Lima itself is skippable as a destination: it's currently under a local state of emergency for rising violent crime (tourist zones Miraflores/San Isidro/Barranco are explicitly called low-risk even so, but there's no reason to linger). Fly onward to Cusco the same or next day (149 flights/week, ~1h20, earliest departs 04:40).",
       transport_to_next: 'Domestic flight Lima-Cusco (~1h20, frequent).',
@@ -22734,7 +22829,7 @@ function rbBuildPeruBoliviaAndesSaltFlatsRoute() {
     {
       code: 'PE', name: 'Peru', days: 3, budget: 90, lat: -13.5320, lng: -71.9675,
       destinations: [
-        { name: 'Cusco (Sacsayhuamán, Qorikancha)', lat: -13.5320, lng: -71.9675 },
+        { name: 'Cusco (Sacsayhuamán, Qorikancha)', lat: -13.5320, lng: -71.9675 , notes: 'Sacsayhuamán\'s massive polygonal Inca stone walls (some blocks over 100 tons) and Qorikancha\'s sun temple (with a colonial church built directly on top) are the city\'s two best examples of Inca engineering; buy the boleto turístico covering both, and visit Sacsayhuamán late afternoon for soft light and thinner crowds.' },
       ],
       notes: 'Cusco (2 days on arrival + 1 buffer day later in the route) — altitude acclimatization matters here (3,400m), take the first day slow. Budget ~€25-35/day.',
       transport_to_next: 'Car/bus to the Sacred Valley (~1h to Pisac).',
@@ -22742,9 +22837,9 @@ function rbBuildPeruBoliviaAndesSaltFlatsRoute() {
     {
       code: 'PE', name: 'Peru', days: 2, budget: 60, lat: -13.4271, lng: -71.8465,
       destinations: [
-        { name: 'Pisac (market)', lat: -13.4271, lng: -71.8465 },
-        { name: 'Ollantaytambo', lat: -13.2585, lng: -72.2632 },
-        { name: 'Chinchero / Moray / Salineras', lat: -13.3833, lng: -72.0500 },
+        { name: 'Pisac (market)', lat: -13.4271, lng: -71.8465 , notes: 'The Sunday market is the big draw for textiles and produce, but don\'t skip the sprawling Inca ruins terracing the hillside above town — go early morning by taxi/colectivo before tour buses arrive around midday.' },
+        { name: 'Ollantaytambo', lat: -13.2585, lng: -72.2632 , notes: 'The best-preserved living Inca town in Peru — houses still sit on original Inca foundations, and terraced fortress ruins tower above the plaza; climb the free Pinkuylluna granaries across the valley at sunrise for a crowd-free view over the whole site.' },
+        { name: 'Chinchero / Moray / Salineras', lat: -13.3833, lng: -72.0500 , notes: 'Moray\'s mysterious concentric farming terraces, the cascading Salineras de Maras salt pans, and Chinchero\'s Sunday market and weaving demonstrations make a good half-day loop by car; visit Salineras before midday when the sun best lights the salt pools.' },
       ],
       notes: 'Pisac market, Ollantaytambo\'s ruins, and Chinchero/Moray/Salineras. Budget ~€25-35/day.',
       transport_to_next: 'Train from Ollantaytambo to Aguas Calientes for Machu Picchu.',
@@ -22752,8 +22847,8 @@ function rbBuildPeruBoliviaAndesSaltFlatsRoute() {
     {
       code: 'PE', name: 'Peru', days: 2, budget: 60, lat: -13.1547, lng: -72.5254,
       destinations: [
-        { name: 'Machu Picchu', lat: -13.1631, lng: -72.5450 },
-        { name: 'Aguas Calientes', lat: -13.1547, lng: -72.5254 },
+        { name: 'Machu Picchu', lat: -13.1631, lng: -72.5450 , notes: 'The Inca citadel needs no introduction; 2026 entry runs on a strict phased-release circuit system (four routes, hourly slots, max 4-hour visit, no re-entry) — book your specific circuit and entry time 3-4 months ahead for a June-August visit, and take the earliest slot for fewer crowds and better odds of clear skies.' },
+        { name: 'Aguas Calientes', lat: -13.1547, lng: -72.5254 , notes: 'Purely a functional base town for Machu Picchu access — the hot springs themselves are small and touristy, worth a soak only if you have a spare evening, not a destination in their own right.' },
       ],
       notes: "Web check (2026-09): entrance ticket ~S/163 (~$55, includes a new S/11 conservation fee added May 2026); train one-way ~$72 (Expedition) to ~$115 (Vistadome), cheaper departing from Ollantaytambo than Cusco/Poroy. A full self-organized 2-day trip (train + entrance + 1 night in Aguas Calientes) runs ~€150-250 all-in as a separate cost on top of the daily budget; a guided package with a mid-range hotel runs €230-350. Budget ~€25-35/day for the base daily rate.",
       transport_to_next: 'Train back to Cusco (the buffer day happens here), then bus to Puno (~7h).',
@@ -22761,8 +22856,8 @@ function rbBuildPeruBoliviaAndesSaltFlatsRoute() {
     {
       code: 'PE', name: 'Peru', days: 2, budget: 50, lat: -15.8402, lng: -70.0219,
       destinations: [
-        { name: 'Uros floating islands', lat: -15.8200, lng: -69.9800 },
-        { name: 'Taquile Island', lat: -15.7833, lng: -69.6833 },
+        { name: 'Uros floating islands', lat: -15.8200, lng: -69.9800 , notes: 'Manmade reed islands where Aymara families still live, though the visit is short and heavily set up for tour groups — take an early morning boat from Puno to beat the biggest groups and keep expectations realistic about how "untouched" it feels.' },
+        { name: 'Taquile Island', lat: -15.7833, lng: -69.6833 , notes: 'A car-free island famous for its UNESCO-listed textile weaving tradition, with terraced paths and wide Titicaca views; it\'s a full day (3-4hr boat each way from Puno), so bring cash for the community-cooked lunch and sturdy shoes for the hillside walk.' },
       ],
       notes: 'Puno as the base for the Uros floating islands and Taquile Island on Lake Titicaca. Budget ~€20-30/day.',
       transport_to_next: 'Bus to the border at Yunguyo/Kasani (~3-4h incl. border formalities), then on to Copacabana, Bolivia — Dutch passport holders are visa-free for both Peru and Bolivia (up to 90 days each), confirmed current, no e-visa needed for either.',
@@ -22770,8 +22865,8 @@ function rbBuildPeruBoliviaAndesSaltFlatsRoute() {
     {
       code: 'BO', name: 'Bolivia', days: 2, budget: 50, lat: -16.1667, lng: -69.0833,
       destinations: [
-        { name: 'Copacabana', lat: -16.1667, lng: -69.0833 },
-        { name: 'Isla del Sol (day trip)', lat: -16.0167, lng: -69.1667 },
+        { name: 'Copacabana', lat: -16.1667, lng: -69.0833 , notes: 'Lakeside base for boat trips to Isla del Sol (Inca sun-birthplace legend); Saturdays see the "blessing of the vehicles" ritual outside the basilica, worth timing a visit around.' },
+        { name: 'Isla del Sol (day trip)', lat: -16.0167, lng: -69.1667 , notes: 'Considered the mythological birthplace of the Inca sun god, with Inca ruins, terraces, and a ridge trail with lake views on both sides; take the earlier catamaran/boat from Copacabana for enough daylight to walk the full north-to-south route, and carry small bills for local community entry fees along the way.' },
       ],
       notes: 'Copacabana on the Bolivian side of Lake Titicaca, with a day trip to Isla del Sol. Budget ~€20-30/day.',
       transport_to_next: 'Bus to La Paz (~3-4h).',
@@ -22779,9 +22874,9 @@ function rbBuildPeruBoliviaAndesSaltFlatsRoute() {
     {
       code: 'BO', name: 'Bolivia', days: 2, budget: 66, lat: -16.5000, lng: -68.1193,
       destinations: [
-        { name: 'Valle de la Luna', lat: -16.5667, lng: -68.0667 },
-        { name: 'Mi Teleférico (cable car)', lat: -16.5000, lng: -68.1193 },
-        { name: "Witches' Market", lat: -16.4958, lng: -68.1381 },
+        { name: 'Valle de la Luna', lat: -16.5667, lng: -68.0667 , notes: 'A compact badlands of eroded clay and rock spires just outside La Paz — not the more famous Atacama site of the same name — walkable in about an hour on a signed loop trail; go in the afternoon for warmer light on the formations, easy cheap minibus ride from the city center.' },
+        { name: 'Mi Teleférico (cable car)', lat: -16.5000, lng: -68.1193 , notes: 'The world\'s most extensive urban cable-car transit network; riding a line (Red or Yellow) is the easiest way to see La Paz\'s dramatic bowl-shaped cityscape and El Alto above it. Ride mid-morning on a clear day for best visibility and take a round trip rather than just one leg.' },
+        { name: "Witches' Market", lat: -16.4958, lng: -68.1381 , notes: 'Calle Jaén/Sagárnaga\'s Mercado de las Brujas sells traditional Aymara ritual items, most memorably dried llama fetuses used as house-blessing offerings to Pachamama. Browsing takes under an hour, prices are largely fixed so don\'t expect much bargaining, and ask before photographing vendors or stalls.' },
       ],
       notes: "La Paz: Valle de la Luna, the Mi Teleférico cable-car network, the Witches' Market (Death Road cycling is a well-known optional add-on, not included here). Budget ~€25-40/day. ⚠️ Web check (2026-09): Bolivia's state of emergency (declared 20 June 2026 against road blockades) is due to expire ~18-20 September 2026 — an extension is politically contested (needs two-thirds approval in the Plurinational Legislative Assembly, unions publicly oppose it) and genuinely unresolved as of this writing. Current unrest is concentrated in Santa Cruz/Cochabamba departments, not on this La Paz-Oruro-Uyuni corridor, but re-check nederlandwereldwijd.nl close to departure — roads/airports/borders \"can temporarily and unexpectedly close for multiple days\" per that advisory's own wording.",
       transport_to_next: 'Overnight bus or short flight La Paz-Uyuni.',
@@ -22789,10 +22884,10 @@ function rbBuildPeruBoliviaAndesSaltFlatsRoute() {
     {
       code: 'BO', name: 'Bolivia', days: 4, budget: 100, lat: -20.1338, lng: -67.4891,
       destinations: [
-        { name: 'Uyuni Salt Flat', lat: -20.1338, lng: -67.4891 },
-        { name: 'Train Cemetery', lat: -20.2167, lng: -66.8500 },
-        { name: 'Incahuasi Island', lat: -20.2667, lng: -67.6667 },
-        { name: 'Colored lagoons & geysers (Eduardo Avaroa NP)', lat: -22.3333, lng: -67.7833 },
+        { name: 'Uyuni Salt Flat', lat: -20.1338, lng: -67.4891 , notes: 'Go wet season (roughly Dec-Apr) for the mirror effect, dry season for the cracked-hexagon surface photos everyone associates with Uyuni; Isla Incahuasi\'s giant cacti make a good midday stop, and the rusting Train Cemetery near Uyuni town is a free add-on.' },
+        { name: 'Train Cemetery', lat: -20.2167, lng: -66.8500 , notes: 'A rusted graveyard of abandoned 19th/20th-century steam locomotives in the desert, usually the first stop on salt flat tours; only takes 30-45 minutes, so treat it as a quick sunrise-light photo stop rather than a highlight in itself.' },
+        { name: 'Incahuasi Island', lat: -20.2667, lng: -67.6667 , notes: 'A rocky island in the middle of the salt flat covered in centuries-old giant cacti, with a short climb to a panoramic viewpoint; small entrance fee (around 30 Bolivianos), usually the lunch stop on day one of the jeep tour.' },
+        { name: 'Colored lagoons & geysers (Eduardo Avaroa NP)', lat: -22.3333, lng: -67.7833 , notes: 'Laguna Colorada\'s red algae-tinted water with flamingos and the Sol de Mañana geyser field are the highlights near the Chilean border; visit the geysers at dawn when steam and colors are most visible, and dress for well below freezing since you\'re near 5,000m altitude.' },
       ],
       notes: "The classic 3-day/2-night jeep tour: the train cemetery, the salt flats themselves, Incahuasi Island, and the colored lagoons and geysers of Eduardo Avaroa NP. Web check (2026-09): tour prices have risen since the 2026-07 estimate — realistic Budget-Comfort range is now $150-280 (was quoted €140-180), a separate cost on top of the ~€25/day ground budget. Season note: the dry season (Jun-Aug, this route's own recommended window) gives the classic white salt crust, not the famous mirror-reflection photos — those need the wetter Dec-April shoulder season instead, a deliberate trade-off for aligning with Peru's own dry season.",
       transport_to_next: 'Bus or flight back to La Paz to connect with the international flight home — build in a buffer day here given the blockade history above, rather than a tight same-day connection.',
@@ -22800,7 +22895,7 @@ function rbBuildPeruBoliviaAndesSaltFlatsRoute() {
     {
       code: 'BO', name: 'Bolivia', days: 2, budget: 60, lat: -16.5000, lng: -68.1193,
       destinations: [
-        { name: 'La Paz (departure buffer)', lat: -16.5000, lng: -68.1193 },
+        { name: 'La Paz (departure buffer)', lat: -16.5000, lng: -68.1193 , notes: 'A deliberate buffer day before flying home, not a must-see stop — if you have spare hours, wander the San Francisco Church/Mercado Lanza area, or fit in Valle de la Luna or the Teleférico if you haven\'t done them yet.' },
       ],
       notes: "A deliberate buffer before the international flight home, given Bolivia's history of unexpected road/airport closures during unrest — see the La Paz leg's notes above. Budget ~€25-35/day.",
       transport_to_next: 'End of this route — return flight from La Paz to Amsterdam (with a connection).',
@@ -22819,10 +22914,10 @@ function rbBuildMalaysiaBorneoBruneiRoute() {
     {
       code: 'MY', name: 'Malaysia', days: 4, budget: 200, lat: 3.1390, lng: 101.6869,
       destinations: [
-        { name: 'Petronas Towers / KLCC', lat: 3.1579, lng: 101.7116 },
-        { name: 'Batu Caves', lat: 3.2379, lng: 101.6840 },
-        { name: 'Chinatown & Merdeka Square', lat: 3.1428, lng: 101.6953 },
-        { name: 'Malacca (optional day trip)', lat: 2.1896, lng: 102.2501 },
+        { name: 'Petronas Towers / KLCC', lat: 3.1579, lng: 101.7116 , notes: 'Malaysia\'s iconic 88-story twin towers with a skybridge and observation deck, plus the KLCC park and mall at the base. Book skybridge/observation deck tickets online for a specific time slot in advance — walk-up tickets often sell out — and go near sunset for the tower lighting.' },
+        { name: 'Batu Caves', lat: 3.2379, lng: 101.6840 , notes: 'A limestone cave temple reached by 272 rainbow-colored steps guarded by a giant golden Murugan statue, with monkeys along the way. Go early morning (before 9am) to beat both the heat and the tour-bus crowds on the stairs.' },
+        { name: 'Chinatown & Merdeka Square', lat: 3.1428, lng: 101.6953 , notes: 'Petaling Street\'s market/food stalls and the colonial-era Merdeka Square/Sultan Abdul Samad Building nearby combine into one walkable half-day. Visit Chinatown in the evening when the street-food stalls are in full swing.' },
+        { name: 'Malacca (optional day trip)', lat: 2.1896, lng: 102.2501 , notes: 'A UNESCO-listed old trading port with Dutch/Portuguese colonial buildings around Jonker Street and the Stadthuys, about 2 hours each way from KL — only worth it if you can dedicate a full day, ideally over a weekend evening for the Jonker Street night market.' },
       ],
       notes: "Entry: direct KLM flight Amsterdam-Kuala Lumpur (±12h25; from ±€650-950 return; best period April-May, secondary option August — confirmed current, KLM is the only nonstop carrier, ~4x/week). Web check (2026-09): Malaysia requires a Malaysia Digital Arrival Card, registered online within 3 days before arrival — a mandatory registration step, not a visa (Dutch passport holders remain visa-free for tourism). KL city (Petronas Towers, Batu Caves, Chinatown/Merdeka Square) plus an optional Malacca day trip (~2h bus each way) — deliberately just the capital here, not the full Langkawi/Penang/Cameron Highlands peninsula circuit, since Youri's own trip notes named only 'KL' for the city component. Budget ~€50/day. Travel advisory: Malaysia overall is yellow — travel possible, be aware of specific security risks (see the Semporna leg below for a more serious regional exception).",
       transport_to_next: 'Direct flight Kuala Lumpur-Bandar Seri Begawan (Royal Brunei/Malaysia Airlines, ~2h).',
@@ -22830,9 +22925,9 @@ function rbBuildMalaysiaBorneoBruneiRoute() {
     {
       code: 'BN', name: 'Brunei', days: 2, budget: 240, lat: 4.9031, lng: 114.9398,
       destinations: [
-        { name: 'Bandar Seri Begawan', lat: 4.9031, lng: 114.9398 },
-        { name: 'Kampong Ayer', lat: 4.8875, lng: 114.9425 },
-        { name: 'Ulu Temburong NP (guided day tour)', lat: 4.5333, lng: 115.1667 },
+        { name: 'Bandar Seri Begawan', lat: 4.9031, lng: 114.9398 , notes: 'Brunei\'s capital is really about the Kampong Ayer stilt village and the gold-domed Sultan Omar Ali Saifuddin Mosque; sunset boat-viewing of the mosque from the river is the single best photo op and costs nothing.' },
+        { name: 'Kampong Ayer', lat: 4.8875, lng: 114.9425 , notes: 'One of the world\'s largest stilt-house settlements, still home to thousands of people, connected by boardwalks over the river. Hire one of the small water taxis for a short cruise through the settlement rather than only viewing it from the mosque waterfront.' },
+        { name: 'Ulu Temburong NP (guided day tour)', lat: 4.5333, lng: 115.1667 , notes: 'Brunei\'s pristine rainforest reserve, reachable only by longboat plus a jungle walk, centers on a roughly 40m-high canopy walkway above the treetops and a swim/tube stop at a jungle waterfall. Access is guided-tour only and must be booked in advance — arrange it before arriving in Brunei rather than counting on walk-up availability.' },
       ],
       notes: "Bandar Seri Begawan (Kampong Ayer, Sultan Omar Ali Mosque, Royal Regalia Museum) plus a full-day guided Ulu Temburong NP tour — confirmed still mandatory-guide-only, no independent access, ~BND 140-180 (~€115-150) all-in including transfers/permit/guide/lunch, a separate cost; only 4 licensed operators run it. Budget ~€120/day (Brunei is genuinely pricier than its neighbors). Visa-free for Dutch passport holders up to 90 days, no changes. Travel advisory: yellow, general risks only (earthquakes/floods in rainy season, petty crime, strict Sharia-law enforcement on alcohol/dress/behavior) — no elevated regional warning.",
       transport_to_next: 'Direct flight Bandar Seri Begawan-Kota Kinabalu (Royal Brunei/Malaysia Airlines, ~40 min, ~11-14x/week) — a real upgrade over the old overland bus/ferry-via-Labuan option, which stays available as a slower budget alternative.',
@@ -22840,7 +22935,7 @@ function rbBuildMalaysiaBorneoBruneiRoute() {
     {
       code: 'MY', name: 'Malaysia', days: 1, budget: 65, lat: 5.9788, lng: 116.0753,
       destinations: [
-        { name: 'Kota Kinabalu waterfront', lat: 5.9788, lng: 116.0753 },
+        { name: 'Kota Kinabalu waterfront', lat: 5.9788, lng: 116.0753 , notes: 'The main draw is the nightly waterfront/Filipino night market for seafood and the sunset over the South China Sea — go right around sunset for both.' },
       ],
       notes: 'Kota Kinabalu on arrival — city and waterfront, base for the Mount Kinabalu climb next. Budget ~€65/day.',
       transport_to_next: 'Transfer to Kinabalu Park HQ (~2h drive) for the climb.',
@@ -22848,8 +22943,8 @@ function rbBuildMalaysiaBorneoBruneiRoute() {
     {
       code: 'MY', name: 'Malaysia', days: 3, budget: 580, lat: 6.0754, lng: 116.5580,
       destinations: [
-        { name: 'Mount Kinabalu (Low\'s Peak summit)', lat: 6.0754, lng: 116.5580 },
-        { name: 'Laban Rata (overnight rest stop)', lat: 6.0667, lng: 116.5500 },
+        { name: 'Mount Kinabalu (Low\'s Peak summit)', lat: 6.0754, lng: 116.5580 , notes: 'Southeast Asia\'s highest peak between the Philippines and New Guinea, climbed over two days via Laban Rata. Climbing permits and mountain-hut beds are strictly capped and sell out months ahead (annual slots open 1 December for the following year), so book through the official Sabah Parks portal as early as possible — ideally 3-6+ months out.' },
+        { name: 'Laban Rata (overnight rest stop)', lat: 6.0667, lng: 116.5500 , notes: 'Just the mid-climb hut where you sleep before the pre-dawn summit push — little to see here beyond a basic meal and a few hours of rest, so treat it purely as a logistics stop and turn in early since wake-up is around 1:30-2am.' },
       ],
       notes: "Youri's explicit call: the Mount Kinabalu 2D1N summit climb, added on top of the base itinerary. Web check (2026-09): confirmed as a real, expensive, physically demanding package, not something to fold casually into a daily budget — 2D1N package ~RM2,790-2,890 (~€560-580) per non-Malaysian, including the mandatory guide (RM350) and permit (RM400); the budget field here reflects that all-in package cost for these 3 days (transfer + climb + descent), not a normal daily rate. Bookings for 2026 opened 1 December 2025 via sabapakeco.com and peak-period slots fill fast — book well ahead. Doesn't add wildlife value (it's a mountaineering objective, not orangutans/proboscis monkeys) but Youri wants it included regardless.",
       transport_to_next: 'Transfer back to Kota Kinabalu, then on to Sandakan (fly or drive) for Sepilok.',
@@ -22857,9 +22952,9 @@ function rbBuildMalaysiaBorneoBruneiRoute() {
     {
       code: 'MY', name: 'Malaysia', days: 2, budget: 130, lat: 5.8742, lng: 117.9478,
       destinations: [
-        { name: 'Sepilok Orang-utan Rehabilitation Centre', lat: 5.8742, lng: 117.9478 },
-        { name: 'Rainforest Discovery Centre', lat: 5.8781, lng: 117.9464 },
-        { name: 'Bornean Sun Bear Conservation Centre', lat: 5.8756, lng: 117.9481 },
+        { name: 'Sepilok Orang-utan Rehabilitation Centre', lat: 5.8742, lng: 117.9478 , notes: 'One of the best places in Borneo to reliably see semi-wild orangutans up close at the feeding platform. Go to the morning feeding (around 10am) rather than the afternoon one — mornings tend to draw more orangutans before the heat sets in.' },
+        { name: 'Rainforest Discovery Centre', lat: 5.8781, lng: 117.9464 , notes: 'A quieter canopy walkway and boardwalk right next to Sepilok, good for birdwatching and treetop views without the orangutan-centre crowds. Go at dawn for the best bird activity; easy to pair with Sepilok the same morning.' },
+        { name: 'Bornean Sun Bear Conservation Centre', lat: 5.8756, lng: 117.9481 , notes: 'Sits right next to the orangutan centre and lets you view the world\'s smallest bear species from an elevated walkway. Visit right after the Sepilok morning feeding since it\'s a 5-minute walk away and takes under an hour.' },
       ],
       notes: 'Sepilok: the Orang-utan Rehabilitation Centre, the Rainforest Discovery Centre canopy walk, and the Sun Bear Conservation Centre. Sepilok entry ~RM90 (~€18) for foreigners, confirmed current. Budget ~€65/day.',
       transport_to_next: 'Transfer to Sukau/Bilit on the Kinabatangan River (~1.5-2h).',
@@ -22867,7 +22962,7 @@ function rbBuildMalaysiaBorneoBruneiRoute() {
     {
       code: 'MY', name: 'Malaysia', days: 3, budget: 210, lat: 5.5000, lng: 118.3667,
       destinations: [
-        { name: 'Kinabatangan River wildlife cruises', lat: 5.5000, lng: 118.3667 },
+        { name: 'Kinabatangan River wildlife cruises', lat: 5.5000, lng: 118.3667 , notes: 'The best chance in Borneo to see wild proboscis monkeys, orangutans, hornbills, and elephants from a boat. Early morning and dusk cruises are far more productive than midday, so plan an overnight at a river lodge to catch both.' },
       ],
       notes: 'A multi-night riverside lodge stay rather than a single day trip — confirmed via research that consecutive dawn/dusk cruises significantly raise wildlife-sighting odds (proboscis monkeys, orangutans, pygmy elephants, hornbills) over a one-off visit. Includes a guided night walk. Budget ~€70/day (lodge packages typically bundle meals and cruises into the rate).',
       transport_to_next: 'Transfer to Semporna via Lahad Datu/Tawau (~4-5h).',
@@ -22875,9 +22970,9 @@ function rbBuildMalaysiaBorneoBruneiRoute() {
     {
       code: 'MY', name: 'Malaysia', days: 4, budget: 280, lat: 4.4816, lng: 118.6120,
       destinations: [
-        { name: 'Semporna', lat: 4.4816, lng: 118.6120 },
-        { name: 'Mabul Island', lat: 4.2500, lng: 118.6333 },
-        { name: 'Sipadan (diving, permit required)', lat: 4.1147, lng: 118.6289 },
+        { name: 'Semporna', lat: 4.4816, lng: 118.6120 , notes: 'Mainly a jumping-off point/base for boats to Mabul and Sipadan rather than a sight itself — little reason to linger beyond arranging onward diving/island transport.' },
+        { name: 'Mabul Island', lat: 4.2500, lng: 118.6333 , notes: 'Known for muck diving (rare small critters like frogfish and seahorses) and as the accommodation base for Sipadan trips, since overnight stays aren\'t allowed on Sipadan itself. Book your resort well ahead, since bed availability is tied to Sipadan permit allocations.' },
+        { name: 'Sipadan (diving, permit required)', lat: 4.1147, lng: 118.6289 , notes: 'One of the world\'s top dive sites for pelagics, sea turtles, and a famous "turtle tomb" cave. Permits are capped at roughly 250-ish/day and allocated to dive operators, so book your resort/operator months ahead; note the island closes completely for diving every November for reef recovery.' },
       ],
       notes: "⚠️ Travel advisory (checked 2026-09): the islands Mabul, Pom Pom, Kapalai, Ligitan, Sipadan and Mataking (this exact leg) are separately coded ORANGE by the Dutch government advisory — \"only travel if necessary\" — due to an explicit kidnapping/piracy risk in this part of the Celebes Sea, a step above Malaysia's general yellow rating elsewhere on this route. Youri's explicit decision (2026-09): keep this leg in the route with this warning attached, rather than cutting or relocating it. Sipadan diving itself remains capped at 254 daily permits, allocated to resorts/operators (not individually bookable) — realistically needs a 3-5 night stay on Mabul/Kapalai/Semporna booked 6-12 months ahead for peak season, plus an Advanced Open Water certification (mandatory since Oct 2022). Sipadan is closed annually 15-30 November for conservation — avoid that window regardless of season. Non-divers can still snorkel around Mabul/Kapalai without the permit constraint. Base budget ~€70/day; diving days add ~€150-250/day on top as a separate cost, not included above.",
       transport_to_next: 'Transfer back to Kota Kinabalu via Tawau.',
@@ -22885,8 +22980,8 @@ function rbBuildMalaysiaBorneoBruneiRoute() {
     {
       code: 'MY', name: 'Malaysia', days: 2, budget: 130, lat: 5.9788, lng: 116.0753,
       destinations: [
-        { name: 'Kota Kinabalu (departure buffer)', lat: 5.9788, lng: 116.0753 },
-        { name: 'Mari Mari Cultural Village (optional)', lat: 6.0333, lng: 116.1333 },
+        { name: 'Kota Kinabalu (departure buffer)', lat: 5.9788, lng: 116.0753 , notes: 'A deliberate buffer day before flying out, not a must-see stop — if you have spare hours, revisit the waterfront night market or use the day for the optional Mari Mari Cultural Village tour.' },
+        { name: 'Mari Mari Cultural Village (optional)', lat: 6.0333, lng: 116.1333 , notes: 'A recreated village near Kota Kinabalu showcasing Sabah\'s ethnic groups (Kadazan-Dusun, Bajau, Murut, etc.) with demonstrations, traditional food, and a fire-making/blowpipe show. Runs as a half-day tour with set departure times and an early dinner — a good fit for the KK departure-buffer day.' },
       ],
       notes: 'Buffer day plus an optional Mari Mari Cultural Village visit, before flying home. Budget ~€65/day.',
       transport_to_next: "End of this route — domestic flight Kota Kinabalu-Kuala Lumpur (very frequent, 9+ daily flights, ~2h25, from ~€35-70), connecting to the KLM Kuala Lumpur-Amsterdam nonstop. Given KLM's limited ~4x/week frequency on that final leg, book with a comfortable buffer (or an overnight in KL) rather than a tight same-day connection — no direct flight exists from Kota Kinabalu to Amsterdam.",
