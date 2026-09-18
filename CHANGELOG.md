@@ -30,6 +30,22 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   already present in the existing data, no change needed to how batches insert notes or build
   their migration functions.
 
+- **Per-destination notes, batches 67-70 — Sardinia/Rome+Vatican/Malta+Gozo/Central Portugal
+  extras (2026-09-18)** — 21 destinations researched, plus 3 name-variant reuses. Also confirmed
+  Sicily + Malta (9 days) is now fully done as a side effect of earlier cascades.
+  - Batch 67: Sardinia (9 days) extras — Olbia, Costa Smeralda/Porto Cervo, Cala Gonone, Golfo
+    di Orosei, Barumini/Su Nuraxi, Oristano (`rbMigrateSardiniaExtrasDestinationNotes()`)
+  - Batch 68: Rome + Vatican City In-Depth extras — Trastevere, Vatican Necropolis/Scavi tour,
+    Vatican Museums & Sistine Chapel, St. Peter's dome climb, Vatican Gardens tour
+    (`rbMigrateRomeVaticanExtrasDestinationNotes()`)
+  - Batch 69: Malta + Gozo extras — Hagar Qim, Cittadella/Victoria, Ramla Bay, Dwejra/Azure
+    Window site, Xlendi (`rbMigrateMaltaGozoExtrasDestinationNotes()`)
+  - Batch 70: Central Portugal: Coimbra + Serra da Estrela extras — Manteigas, Seia, Poço do
+    Inferno waterfall, Linhares da Beira, Piódão, plus 3 Coimbra/Torre/Sabugueiro name variants
+    reusing batches 53/54's existing notes
+    (`rbMigrateCentralPortugalSerraExtrasDestinationNotes()`)
+  App-wide total: 3050 destination-slots filled across 365 routes. 412/741 signatures done.
+
 - **Per-destination notes, batches 63-66 — Monaco/Provence/Corsica+Sardinia clusters
   (2026-09-18)** — 24 destinations researched, plus 3 name-variant reuses (Nice/Cannes bare
   names, one Avignon variant). Checked sibling routes for overlap first, same standing practice.

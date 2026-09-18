@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 403 / 741 signatures.**
+- **Done so far: 412 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -545,15 +545,15 @@ Sorted alphabetically by country code.
 - [x] **IT** (11 dest): Colosseum, Roman Forum, Palatine Hill, Vatican Museums, St. Peter's Basilica, Pantheon, Trevi Fountain, Piazza Navona, Spanish Steps, Borghese Gallery & Gardens (optional day 4), Trastevere / Ostia Antica day trip (optional day 4 alternative) — routes: Rome (4 days) 🏛️
 - [x] **IT** (3 dest): Colosseum & Roman Forum, Vatican Museums, Pantheon & Trevi Fountain — routes: Rome + Tuscany (9 days) 🍝
 - [x] **IT** (5 dest): Orvieto (waypoint), Pienza, Montepulciano, Montalcino, San Quirico d'Orcia — routes: Rome + Tuscany (9 days) 🍝
-- [ ] **IT** (8 dest): Colosseum, Roman Forum, Trastevere, Pantheon, Vatican Necropolis / Scavi excavation tour, Vatican Museums & Sistine Chapel, St. Peter's Basilica dome climb, Vatican Gardens tour (optional) — routes: Rome + Vatican City In-Depth (4 days) ⛪
+- [x] **IT** (8 dest): Colosseum, Roman Forum, Trastevere, Pantheon, Vatican Necropolis / Scavi excavation tour, Vatican Museums & Sistine Chapel, St. Peter's Basilica dome climb, Vatican Gardens tour (optional) — routes: Rome + Vatican City In-Depth (4 days) ⛪
 - [x] **IT** (3 dest): Bologna, Ravenna (Byzantine mosaics), Rimini — routes: San Marino + Emilia-Romagna (4 days) 🍝
 - [x] **IT** (3 dest): Siena, San Gimignano, Florence — routes: San Marino + Tuscany (5 days) 🍷
-- [ ] **IT** (2 dest): Olbia (in/out), Costa Smeralda / Porto Cervo — routes: Sardinia (9 days) ⛵
-- [ ] **IT** (2 dest): Cala Gonone, Golfo di Orosei — routes: Sardinia (9 days) ⛵
-- [ ] **IT** (2 dest): Barumini — Su Nuraxi (UNESCO), Cagliari — routes: Sardinia (9 days) ⛵
-- [ ] **IT** (2 dest): Oristano (waypoint), Alghero — routes: Sardinia (9 days) ⛵
+- [x] **IT** (2 dest): Olbia (in/out), Costa Smeralda / Porto Cervo — routes: Sardinia (9 days) ⛵
+- [x] **IT** (2 dest): Cala Gonone, Golfo di Orosei — routes: Sardinia (9 days) ⛵
+- [x] **IT** (2 dest): Barumini — Su Nuraxi (UNESCO), Cagliari — routes: Sardinia (9 days) ⛵
+- [x] **IT** (2 dest): Oristano (waypoint), Alghero — routes: Sardinia (9 days) ⛵
 - [ ] **IT** (1 dest): Olbia — routes: Sardinia North (4-5 days) 🏝️
-- [ ] **IT** (1 dest): Costa Smeralda / Porto Cervo — routes: Sardinia North (4-5 days) 🏝️
+- [x] **IT** (1 dest): Costa Smeralda / Porto Cervo — routes: Sardinia North (4-5 days) 🏝️
 - [ ] **IT** (2 dest): La Maddalena archipelago, Budelli (Spiaggia Rosa) — routes: Sardinia North (4-5 days) 🏝️
 - [ ] **IT** (1 dest): Chia (south coast) — routes: Sardinia Roadtrip (7-10 days) 🏝️
 - [ ] **IT** (1 dest): Barbagia (interior, Orgosolo area) — routes: Sardinia Roadtrip (7-10 days) 🏝️
@@ -619,8 +619,8 @@ Sorted alphabetically by country code.
 - [ ] **MK** (3 dest): Skopje, Ohrid, Sveti Naum — routes: Skopje + Ohrid (5 days) 🌅
 - [ ] **MT** (5 dest): Valletta, Mdina, Gozo, Ġgantija-tempels, Hypogeum — routes: Malta & Italy 🏛️
 - [ ] **MT** (5 dest): Valletta & the Three Cities (Vittoriosa/Senglea/Cospicua), Mdina / Rabat, Marsaxlokk, Hagar Qim / Mnajdra temples, Blue Grotto — routes: Malta (4 days) 🌅
-- [ ] **MT** (8 dest): Valletta, Mdina, Southern coast temples (Hagar Qim), Marsaxlokk, Cittadella, Victoria (Gozo), Ramla Bay (Gozo), Dwejra / former Azure Window site (Gozo), Xlendi (Gozo) — routes: Malta + Gozo (6 days) ⛵
-- [ ] **MT** (4 dest): Valletta, Three Cities, Cittadella, Victoria (Gozo), Ramla Bay (Gozo) — routes: Malta + Gozo + Sicily (9 days) 🐚
+- [x] **MT** (8 dest): Valletta, Mdina, Southern coast temples (Hagar Qim), Marsaxlokk, Cittadella, Victoria (Gozo), Ramla Bay (Gozo), Dwejra / former Azure Window site (Gozo), Xlendi (Gozo) — routes: Malta + Gozo (6 days) ⛵
+- [x] **MT** (4 dest): Valletta, Three Cities, Cittadella, Victoria (Gozo), Ramla Bay (Gozo) — routes: Malta + Gozo + Sicily (9 days) 🐚
 - [x] **MT** (3 dest): Valletta, Three Cities, Marsaxlokk — routes: Sicily + Malta (9 days) 🌋
 - [ ] **MV** (5 dest): Malé, Maafushi, Thulusdhoo, Fulidhoo, Dhigurah — routes: Maldives 🏝️
 - [x] **MY** (4 dest): Petronas Towers / KLCC, Batu Caves, Chinatown & Merdeka Square, Malacca (optional day trip) — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
@@ -662,7 +662,7 @@ Sorted alphabetically by country code.
 - [ ] **PL** (5 dest): Krakow Old Town, Wieliczka Salt Mine, Auschwitz-Birkenau, Zakopane / Tatra National Park, Wrocław (optional finale) — routes: South Poland (9 days) 🧭
 - [x] **PT** (9 dest): Faro (Ria Formosa), Lagos (Ponta da Piedade), Praia Dona Ana, Sagres / Cabo de São Vicente, Portimão, Carvoeiro, Benagil (sea cave), Silves (castle), Tavira — routes: Algarve (6 days) 🏖️
 - [x] **PT** (3 dest): Horta (Faial, whaling heritage), Madalena (Pico ferry port), Pico volcano climb (optional) — routes: Azores Island Hopping (10-14 days) 🏝️
-- [ ] **PT** (8 dest): Coimbra (University + Biblioteca Joanina), Manteigas (base), Seia (alternative base), Torre (highest point of mainland Portugal), Sabugueiro (highest village), Poço do Inferno waterfall, Linhares da Beira, Piódão — routes: Central Portugal: Coimbra + Serra da Estrela (6 days) 📚
+- [x] **PT** (8 dest): Coimbra (University + Biblioteca Joanina), Manteigas (base), Seia (alternative base), Torre (highest point of mainland Portugal), Sabugueiro (highest village), Poço do Inferno waterfall, Linhares da Beira, Piódão — routes: Central Portugal: Coimbra + Serra da Estrela (6 days) 📚
 - [x] **PT** (10 dest): Lisbon (Baixa), Alfama, Castelo de São Jorge, Belém Tower, Jerónimos Monastery, Sintra (Palace of Pena), Quinta da Regaleira, Cascais, Cabo da Roca, Monserrate (optional) — routes: Lisbon + Sintra (5 days) 🏰
 - [x] **PT** (1 dest): Vila Baleira / Porto Santo golden beach — routes: Madeira + Porto Santo (7-10 days) 🏝️
 - [x] **PT** (6 dest): Porto (Ribeira), Vila Nova de Gaia (port wine cellars), Pinhão (Douro day trip), Guimarães (Paço dos Duques, day trip), Braga (Bom Jesus do Monte, day trip), Viana do Castelo (Santa Luzia viewpoint) — routes: Northern Portugal + Galicia (7-10 days) 🌊
@@ -778,14 +778,10 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Alsace (4 days) 🥐 | 8/8 | 0 |
 | Florence + Tuscany (4 days) 🎨 | 8/8 | 0 |
 | Venice + Dolomites (5 days) 🎭 | 8/8 | 0 |
-| Sardinia (9 days) ⛵ | 8/8 | 0 |
 | Puglia (6 days) 🏘️ | 8/8 | 0 |
-| Rome + Vatican City In-Depth (4 days) ⛪ | 8/8 | 0 |
-| Malta + Gozo (6 days) ⛵ | 8/8 | 0 |
 | Catalonia + Pyrenees (9 days) ⛰️ | 8/8 | 0 |
 | Spain: North to Central (12 days) 🚉 | 8/8 | 0 |
 | Spain: East to South (12 days) 🌅 | 8/8 | 0 |
-| Central Portugal: Coimbra + Serra da Estrela (6 days) 📚 | 8/8 | 0 |
 | Transylvania + Carpathian Mountains (9 days) 🏔️ | 8/8 | 0 |
 | Romania: Extended (12 days) 🏰 | 8/8 | 0 |
 | Romania + Bulgaria: Transylvania Focus (12 days) 🏰 | 8/8 | 0 |
@@ -808,6 +804,10 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Asturias + Cantabria (6 days) 🌲 | 7/7 | 0 |
 | Gibraltar + Andalusia: Costa del Sol (4 days) 🐒 | 7/7 | 0 |
 | Andorra + French Pyrenees: Ariège (6 days) ♨️ | 7/7 | 0 |
-| ... 206 more routes with open destinations ... | | |
+| Montenegro Roadtrip (9 days) 🚙 | 7/7 | 0 |
+| Romania Roadtrip (9 days) 🚗 | 7/7 | 0 |
+| Northern Greece (9 days) ⛰️ | 7/7 | 0 |
+| Cyprus Roadtrip including Northern Cyprus (9 days) 🚙 | 7/7 | 0 |
+| ... 201 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

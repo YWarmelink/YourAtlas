@@ -10443,6 +10443,136 @@ function rbMigrateCorsicaSardiniaDestinationNotes() {
 }
 
 /**
+ * Batch 67 (2026-09-18) -- Sardinia (9 days) extras -- 6 destinations researched (Alghero/bare
+ * Cagliari already had notes). Same generic name-matching migration pattern as the other
+ * batches.
+ */
+function rbMigrateSardiniaExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_SARDINIA_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_SARDINIA_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Olbia (in/out)': "Mostly a functional arrival/departure point with little to see itself — don't budget sightseeing time here, head straight on to Costa Smeralda or Cala Gonone.",
+    'Costa Smeralda / Porto Cervo': "Manmade luxury resort coast built in the 1960s around Porto Cervo's yacht marina; worth an afternoon stroll and people-watching among the superyachts rather than an overnight given the steep prices.",
+    'Cala Gonone': "Small, walkable resort with a decent beach of its own, but its real value is as the boat-launch point for the Golfo di Orosei — book the boat to Cala Luna a day ahead in summer since morning departures sell out.",
+    'Golfo di Orosei': "Roadless limestone coastline of cliffs and hidden coves reachable only by boat or on foot (Cala Luna, Cala Goloritzé, Cala Mariolu); take a full-day boat tour from Cala Gonone and go early to beat the midday crowds at Cala Luna.",
+    'Barumini — Su Nuraxi (UNESCO)': "Sardinia's best-preserved Bronze Age nuraghe complex, a stone tower-and-village dating to the 2nd millennium BC; entry is guided-only on a fixed schedule, so allow about 1 hour and check tour times on arrival.",
+    'Oristano (waypoint)': "Unremarkable driving stop between Cagliari and Alghero with no dedicated highlight — worth a coffee/fuel break, not a planned stop.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 68 (2026-09-18) -- Rome + Vatican City In-Depth (4 days) extras -- 5 destinations
+ * researched (Colosseum/Roman Forum/Pantheon already had notes). Same generic name-matching
+ * migration pattern as the other batches.
+ */
+function rbMigrateRomeVaticanExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_ROME_VATICAN_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_ROME_VATICAN_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Trastevere': "Rome's atmospheric old quarter turned nightlife/dining hub, narrow cobbled lanes and ivy-draped facades centered on Piazza di Santa Maria in Trastevere; go early evening for the light and aperitivo, but claim a piazza seat before 7pm before it fills.",
+    'Vatican Necropolis / Scavi excavation tour': "Underground pre-Constantinian burial ground traditionally holding St. Peter's tomb, seen only on a small guided walk-through, not a regular museum stop; book via the Ufficio Scavi by email 3-6 months ahead (longer for May-Sept) since only ~250 visitors/day are admitted.",
+    'Vatican Museums & Sistine Chapel': "Miles of papal art collections funneling toward Michelangelo's ceiling and Last Judgment, the most crowded room in the complex; book timed entry online and go right at opening or in the last two hours before closing to avoid the worst crush.",
+    "St. Peter's Basilica dome climb": "320 steps (plus an optional partial elevator) up to the outer gallery for a rooftop-level panorama over Rome and the square; skip the elevator queue and take the stairs, budget about an hour round trip, go early morning for cooler climbing and clearer views.",
+    'Vatican Gardens tour (optional)': "Manicured grounds behind the Basilica with fountains, grottoes and the papal heliport, visitable only on a paid guided minibus or walking tour, never independently; book 60-90 days ahead as slots are limited.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 69 (2026-09-18) -- Malta + Gozo (6 days) extras -- 5 destinations researched
+ * (Valletta/Mdina/Marsaxlokk already had notes). Same generic name-matching migration pattern
+ * as the other batches.
+ */
+function rbMigrateMaltaGozoExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_MALTA_GOZO_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_MALTA_GOZO_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Southern coast temples (Hagar Qim)': "One of the world's oldest freestanding stone structures, perched on a sea cliff with the twin Mnajdra temple a 500m walk away; buy the combined ticket covering both plus the visitor centre and allow about 2 hours total.",
+    'Cittadella, Victoria (Gozo)': "Gozo's walled hilltop old town with sweeping views over the whole island from its bastion walls, plus a small cathedral and museums inside; go near sunset for the best light and emptiest ramparts.",
+    'Ramla Bay (Gozo)': "Gozo's biggest beach, with distinctive reddish-orange sand backed by dunes and few buildings; arrive by mid-morning in summer as the small car park fills fast and shade is scarce.",
+    'Dwejra / former Azure Window site (Gozo)': "Dramatic limestone coastline with the Inland Sea lagoon and the Blue Hole, where the famous Azure Window arch stood before it collapsed into the sea in a 2017 storm; still worth the stop for the Inland Sea boat trip and Blue Hole snorkeling/diving rather than the now-absent arch.",
+    'Xlendi (Gozo)': "A tiny, sheltered fishing cove with a harbor-front promenade of restaurants; good for an easy swim off the rocks and a low-key seafood dinner rather than a big sandy beach.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 70 (2026-09-18) -- Central Portugal: Coimbra + Serra da Estrela (6 days) extras -- 5
+ * newly researched, plus 3 name variants ("Coimbra (University + Biblioteca Joanina)", "Torre
+ * (highest point of mainland Portugal)", "Sabugueiro (highest village)") reusing existing note
+ * text from batches 53/54 (same real places, different exact strings). Same generic
+ * name-matching migration pattern as the other batches.
+ */
+function rbMigrateCentralPortugalSerraExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_CENTRAL_PORTUGAL_SERRA_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_CENTRAL_PORTUGAL_SERRA_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Manteigas (base)': "Small stone-built town in the glacial Zêzere valley, the most convenient base for Serra da Estrela's trails and the Poço do Inferno waterfall; pick it over Seia if you want to be closer to the high mountain roads.",
+    'Seia (alternative base)': "Larger, lower-altitude Serra da Estrela gateway town with a small Museu do Pão (bread museum) worth a quick stop; more services/lodging than Manteigas but a longer drive up into the park.",
+    'Poço do Inferno waterfall': "A roughly 10m waterfall dropping into a granite pool in a wooded gorge near Manteigas, reached via a short, easy walk from a small parking area; visit outside peak summer weekends when the pool fills with local swimmers.",
+    'Linhares da Beira': "A small, little-visited granite village of narrow lanes below a well-preserved 13th-century hilltop castle with sweeping valley views; climb to the castle walls at golden hour for the view over the terraced valley.",
+    'Piódão': 'An isolated schist village of dark stone houses with slate roofs stacked into a steep valley in the Serra do Açor, one of Portugal\'s official "aldeias históricas"; arrive early or stay overnight, since the single approach road and small square clog with day-trip traffic by midday.',
+    'Coimbra (University + Biblioteca Joanina)': "Home to Portugal's oldest university and the gilded Biblioteca Joanina, set in a hilltop old town over the Mondego river. The library is timed-entry only (20-minute slots, ticket = your entry time) — book online in advance, as slots sell out on busy days.",
+    'Torre (highest point of mainland Portugal)': "Mainland Portugal's highest point, with a small, commercialized ski/snow area at the summit (roughly December-March, snow unreliable). Go early to beat the tour buses and souvenir crowds at the top, and check road conditions if visiting in winter.",
+    'Sabugueiro (highest village)': "Mainland Portugal's highest village, in the Serra da Estrela. A quick stop for shopping at its shops selling local smoked meats and cheese — 20-30 minutes is enough.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -14589,8 +14719,8 @@ function rbBuildSardiniaNineDaysRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 240, lat: 41.1333, lng: 9.5333,
       destinations: [
-        { name: 'Olbia (in/out)', lat: 40.9236, lng: 9.4980 },
-        { name: 'Costa Smeralda / Porto Cervo', lat: 41.1333, lng: 9.5333 },
+        { name: 'Olbia (in/out)', lat: 40.9236, lng: 9.4980 , notes: 'Mostly a functional arrival/departure point with little to see itself — don\'t budget sightseeing time here, head straight on to Costa Smeralda or Cala Gonone.' },
+        { name: 'Costa Smeralda / Porto Cervo', lat: 41.1333, lng: 9.5333 , notes: 'Manmade luxury resort coast built in the 1960s around Porto Cervo\'s yacht marina; worth an afternoon stroll and people-watching among the superyachts rather than an overnight given the steep prices.' },
       ],
       notes: "Olbia in/out (the simplest option given the limited seasonal flight routes) — a loop: Olbia → Costa Smeralda/Porto Cervo (2 days). Direct AMS-Olbia (easyJet/Transavia, 12x/week, but seasonal April-September); Cagliari only via KLM, seasonal July-October, 4x/week; Alghero also seasonal — check the current schedule. Self-driving + ferry from the Netherlands (Civitavecchia/Genoa/Livorno→Olbia, 5-11h crossing) is impractical for a short trip — flying is the realistic choice. Rental car essential. Budget ~€120/day (Costa Smeralda in August is clearly above this average).",
       transport_to_next: 'Drive down the east coast to Cala Gonone.',
@@ -14598,8 +14728,8 @@ function rbBuildSardiniaNineDaysRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 240, lat: 40.2833, lng: 9.6333,
       destinations: [
-        { name: 'Cala Gonone', lat: 40.2833, lng: 9.6333 },
-        { name: 'Golfo di Orosei', lat: 40.2500, lng: 9.6500 },
+        { name: 'Cala Gonone', lat: 40.2833, lng: 9.6333 , notes: 'Small, walkable resort with a decent beach of its own, but its real value is as the boat-launch point for the Golfo di Orosei — book the boat to Cala Luna a day ahead in summer since morning departures sell out.' },
+        { name: 'Golfo di Orosei', lat: 40.2500, lng: 9.6500 , notes: 'Roadless limestone coastline of cliffs and hidden coves reachable only by boat or on foot (Cala Luna, Cala Goloritzé, Cala Mariolu); take a full-day boat tour from Cala Gonone and go early to beat the midday crowds at Cala Luna.' },
       ],
       notes: 'Cala Gonone/Golfo di Orosei (2 days).',
       transport_to_next: 'Drive inland to Barumini, then on to Cagliari.',
@@ -14607,7 +14737,7 @@ function rbBuildSardiniaNineDaysRoute() {
     {
       code: 'IT', name: 'Italy', days: 3, budget: 360, lat: 39.2238, lng: 9.1217,
       destinations: [
-        { name: 'Barumini — Su Nuraxi (UNESCO)', lat: 39.7167, lng: 8.9833 },
+        { name: 'Barumini — Su Nuraxi (UNESCO)', lat: 39.7167, lng: 8.9833 , notes: 'Sardinia\'s best-preserved Bronze Age nuraghe complex, a stone tower-and-village dating to the 2nd millennium BC; entry is guided-only on a fixed schedule, so allow about 1 hour and check tour times on arrival.' },
         { name: 'Cagliari', lat: 39.2238, lng: 9.1217 },
       ],
       notes: 'Barumini (Su Nuraxi, UNESCO) plus Cagliari (2-3 days). Season: June or September; July-August very expensive/busy, especially on the Costa Smeralda.',
@@ -14616,7 +14746,7 @@ function rbBuildSardiniaNineDaysRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 240, lat: 40.5589, lng: 8.3181,
       destinations: [
-        { name: 'Oristano (waypoint)', lat: 39.9036, lng: 8.5919 },
+        { name: 'Oristano (waypoint)', lat: 39.9036, lng: 8.5919 , notes: 'Unremarkable driving stop between Cagliari and Alghero with no dedicated highlight — worth a coffee/fuel break, not a planned stop.' },
         { name: 'Alghero', lat: 40.5589, lng: 8.3181 , notes: 'A Catalan-founded walled coastal town in northwest Sardinia where Catalan is still spoken, with sea-facing ramparts around the old town; walk the ramparts at sunset, and consider a boat trip to Neptune\'s Grotto at Capo Caccia (reachable by boat or a steep 656-step staircase).' },
       ],
       notes: 'West coast via Oristano to Alghero (2 days), then back to Olbia. ⚠️ If self-driving with a car ferry, book the vehicle deck 3-4+ months ahead for August (spaces fill up, peak-day one-way fares can exceed €300); flight routes are seasonal — check the current schedule before booking.',
@@ -15339,12 +15469,12 @@ function rbBuildRomeVaticanInDepthRoute() {
       destinations: [
         { name: 'Colosseum', lat: 41.8902, lng: 12.4922 },
         { name: 'Roman Forum', lat: 41.8925, lng: 12.4853 },
-        { name: 'Trastevere', lat: 41.8896, lng: 12.4692 },
+        { name: 'Trastevere', lat: 41.8896, lng: 12.4692 , notes: 'Rome\'s atmospheric old quarter turned nightlife/dining hub, narrow cobbled lanes and ivy-draped facades centered on Piazza di Santa Maria in Trastevere; go early evening for the light and aperitivo, but claim a piazza seat before 7pm before it fills.' },
         { name: 'Pantheon', lat: 41.8986, lng: 12.4769 },
-        { name: 'Vatican Necropolis / Scavi excavation tour', lat: 41.9022, lng: 12.4533 },
-        { name: 'Vatican Museums & Sistine Chapel', lat: 41.9065, lng: 12.4536 },
-        { name: "St. Peter's Basilica dome climb", lat: 41.9022, lng: 12.4533 },
-        { name: 'Vatican Gardens tour (optional)', lat: 41.9029, lng: 12.4494 },
+        { name: 'Vatican Necropolis / Scavi excavation tour', lat: 41.9022, lng: 12.4533 , notes: 'Underground pre-Constantinian burial ground traditionally holding St. Peter\'s tomb, seen only on a small guided walk-through, not a regular museum stop; book via the Ufficio Scavi by email 3-6 months ahead (longer for May-Sept) since only ~250 visitors/day are admitted.' },
+        { name: 'Vatican Museums & Sistine Chapel', lat: 41.9065, lng: 12.4536 , notes: 'Miles of papal art collections funneling toward Michelangelo\'s ceiling and Last Judgment, the most crowded room in the complex; book timed entry online and go right at opening or in the last two hours before closing to avoid the worst crush.' },
+        { name: "St. Peter's Basilica dome climb", lat: 41.9022, lng: 12.4533 , notes: '320 steps (plus an optional partial elevator) up to the outer gallery for a rooftop-level panorama over Rome and the square; skip the elevator queue and take the stairs, budget about an hour round trip, go early morning for cooler climbing and clearer views.' },
+        { name: 'Vatican Gardens tour (optional)', lat: 41.9029, lng: 12.4494 , notes: 'Manicured grounds behind the Basilica with fountains, grottoes and the papal heliport, visitable only on a paid guided minibus or walking tour, never independently; book 60-90 days ahead as slots are limited.' },
       ],
       notes: "The real distinction from a generic Rome trip (see the Italy batch's Rome (4 days) 🏛️ above — St. Peter's/the Sistine Chapel are already standard there): this books the Vatican-specific extras a rushed first-time Rome trip usually skips. Days 1-2: general Rome (Colosseum/Forum, Trastevere, Pantheon, food). Day 3: a dedicated Vatican day — morning Necropolis/Scavi tour (an excavated early-Christian burial ground under St. Peter's, separate from standard Vatican Museums tickets, guided-only, children under 10 not admitted, book months ahead) → Vatican Museums/Sistine Chapel (timed slot) → the dome climb at St. Peter's → optionally a Vatican Gardens tour (guided-only, no walk-up access, €32-40, books out 1-3 weeks ahead in the April-October season). Day 4: optional buffer/return day. Direct flight Amsterdam-Rome Fiumicino (KLM, ~2h13, very frequent). Budget ~€130-150/day generally, plus an extra ~€60-90 on the Vatican day for the three extras together. Season: April-June or September-October; avoid August heat. ⚠️ Sistine Chapel restoration work starts 1 February 2026 for ~3 months — it stays open/visitable, but expect partial scaffolding/adjusted viewing routes — check current status if travelling Feb-Apr 2026. Vatican Museums base ticket ~€17 plus booking fee; booking a timed slot ahead saves 1-2 hours of queueing in high season.",
       transport_to_next: 'End of this route — direct return flight Rome (Fiumicino) to Amsterdam.',
@@ -15491,12 +15621,12 @@ function rbBuildMaltaGozoRoute() {
       destinations: [
         { name: 'Valletta', lat: 35.8989, lng: 14.5146 },
         { name: 'Mdina', lat: 35.8869, lng: 14.4033 },
-        { name: 'Southern coast temples (Hagar Qim)', lat: 35.8256, lng: 14.4408 },
+        { name: 'Southern coast temples (Hagar Qim)', lat: 35.8256, lng: 14.4408 , notes: 'One of the world\'s oldest freestanding stone structures, perched on a sea cliff with the twin Mnajdra temple a 500m walk away; buy the combined ticket covering both plus the visitor centre and allow about 2 hours total.' },
         { name: 'Marsaxlokk', lat: 35.8419, lng: 14.5453 , notes: 'Malta\'s fishing village with colorful luzzu boats and a Sunday fish/produce market; go early (before 9am) to beat the tour-bus crowds.' },
-        { name: 'Cittadella, Victoria (Gozo)', lat: 36.0448, lng: 14.2400 },
-        { name: 'Ramla Bay (Gozo)', lat: 36.0672, lng: 14.2789 },
-        { name: 'Dwejra / former Azure Window site (Gozo)', lat: 36.0578, lng: 14.1917 },
-        { name: 'Xlendi (Gozo)', lat: 36.0272, lng: 14.2069 },
+        { name: 'Cittadella, Victoria (Gozo)', lat: 36.0448, lng: 14.2400 , notes: 'Gozo\'s walled hilltop old town with sweeping views over the whole island from its bastion walls, plus a small cathedral and museums inside; go near sunset for the best light and emptiest ramparts.' },
+        { name: 'Ramla Bay (Gozo)', lat: 36.0672, lng: 14.2789 , notes: 'Gozo\'s biggest beach, with distinctive reddish-orange sand backed by dunes and few buildings; arrive by mid-morning in summer as the small car park fills fast and shade is scarce.' },
+        { name: 'Dwejra / former Azure Window site (Gozo)', lat: 36.0578, lng: 14.1917 , notes: 'Dramatic limestone coastline with the Inland Sea lagoon and the Blue Hole, where the famous Azure Window arch stood before it collapsed into the sea in a 2017 storm; still worth the stop for the Inland Sea boat trip and Blue Hole snorkeling/diving rather than the now-absent arch.' },
+        { name: 'Xlendi (Gozo)', lat: 36.0272, lng: 14.2069 , notes: 'A tiny, sheltered fishing cove with a harbor-front promenade of restaurants; good for an easy swim off the rocks and a low-key seafood dinner rather than a big sandy beach.' },
       ],
       notes: "3 days on mainland Malta (Valletta, Mdina, the southern coast temples, Marsaxlokk) plus 2-3 days on Gozo (the Cittadella in Victoria/Rabat, Ramla Bay, Dwejra/the former Azure Window site, Xlendi) via the Cirkewwa-Mgarr ferry (24/7, year-round, no booking needed). Budget ~€100-110/day (Gozo a little cheaper/quieter than the mainland). Season: April-June or September-October is best; avoid winter for the swim/beach focus (Ramla Bay, the Blue Lagoon en route). ⚠️ Blue Lagoon/Comino: since May 2025 (still in force for 2026), a free timed slot via blcomino.com is required for anyone landing (3 slots/day, max 4,000 visitors) — anyone arriving by private boat and staying on the water doesn't need this, but anyone landing does — book ahead.",
       transport_to_next: 'End of this route — direct flight home from Malta.',
@@ -15564,8 +15694,8 @@ function rbBuildMaltaGozoSicilyRoute() {
       destinations: [
         { name: 'Valletta', lat: 35.8989, lng: 14.5146 },
         { name: 'Three Cities', lat: 35.8886, lng: 14.5228 , notes: 'Vittoriosa/Birgu, Senglea and Cospicua — the Knights\' original fortified capital across the harbour from Valletta, far quieter than Valletta itself; cross by the traditional dgħajsa water-taxi instead of driving.' },
-        { name: 'Cittadella, Victoria (Gozo)', lat: 36.0448, lng: 14.2400 },
-        { name: 'Ramla Bay (Gozo)', lat: 36.0672, lng: 14.2789 },
+        { name: 'Cittadella, Victoria (Gozo)', lat: 36.0448, lng: 14.2400 , notes: 'Gozo\'s walled hilltop old town with sweeping views over the whole island from its bastion walls, plus a small cathedral and museums inside; go near sunset for the best light and emptiest ramparts.' },
+        { name: 'Ramla Bay (Gozo)', lat: 36.0672, lng: 14.2789 , notes: 'Gozo\'s biggest beach, with distinctive reddish-orange sand backed by dunes and few buildings; arrive by mid-morning in summer as the small car park fills fast and shade is scarce.' },
       ],
       notes: "Malta mainland (2 days: Valletta plus surroundings) then Gozo (1-2 days) via the Cirkewwa-Mgarr ferry. Treat this explicitly as 'Sicily shortened to make room for Gozo' against the previous route's 'Sicily in full, Gozo skipped' — otherwise the two read as near-duplicates. Budget ~€115-125/day averaged across this leg. Season: same as Sicily + Malta (9 days) 🌋 above.",
       transport_to_next: 'End of this route — the Cirkewwa-Mgarr ferry to/from Gozo is folded into the Malta days above; direct flight home from Malta.',
@@ -16258,14 +16388,14 @@ function rbBuildCentralPortugalCoimbraSerraDaEstrelaRoute() {
     {
       code: 'PT', name: 'Portugal', days: 6, budget: 430, lat: 40.3000, lng: -7.6000,
       destinations: [
-        { name: 'Coimbra (University + Biblioteca Joanina)', lat: 40.2076, lng: -8.4257 },
-        { name: 'Manteigas (base)', lat: 40.3958, lng: -7.5406 },
-        { name: 'Seia (alternative base)', lat: 40.4189, lng: -7.7028 },
-        { name: 'Torre (highest point of mainland Portugal)', lat: 40.3320, lng: -7.6108 },
-        { name: 'Sabugueiro (highest village)', lat: 40.3625, lng: -7.6069 },
-        { name: 'Poço do Inferno waterfall', lat: 40.3477, lng: -7.5765 },
-        { name: 'Linhares da Beira', lat: 40.4014, lng: -7.5033 },
-        { name: 'Piódão', lat: 40.2039, lng: -7.7228 },
+        { name: 'Coimbra (University + Biblioteca Joanina)', lat: 40.2076, lng: -8.4257 , notes: 'Home to Portugal\'s oldest university and the gilded Biblioteca Joanina, set in a hilltop old town over the Mondego river. The library is timed-entry only (20-minute slots, ticket = your entry time) — book online in advance, as slots sell out on busy days.' },
+        { name: 'Manteigas (base)', lat: 40.3958, lng: -7.5406 , notes: 'Small stone-built town in the glacial Zêzere valley, the most convenient base for Serra da Estrela\'s trails and the Poço do Inferno waterfall; pick it over Seia if you want to be closer to the high mountain roads.' },
+        { name: 'Seia (alternative base)', lat: 40.4189, lng: -7.7028 , notes: 'Larger, lower-altitude Serra da Estrela gateway town with a small Museu do Pão (bread museum) worth a quick stop; more services/lodging than Manteigas but a longer drive up into the park.' },
+        { name: 'Torre (highest point of mainland Portugal)', lat: 40.3320, lng: -7.6108 , notes: 'Mainland Portugal\'s highest point, with a small, commercialized ski/snow area at the summit (roughly December-March, snow unreliable). Go early to beat the tour buses and souvenir crowds at the top, and check road conditions if visiting in winter.' },
+        { name: 'Sabugueiro (highest village)', lat: 40.3625, lng: -7.6069 , notes: 'Mainland Portugal\'s highest village, in the Serra da Estrela. A quick stop for shopping at its shops selling local smoked meats and cheese — 20-30 minutes is enough.' },
+        { name: 'Poço do Inferno waterfall', lat: 40.3477, lng: -7.5765 , notes: 'A roughly 10m waterfall dropping into a granite pool in a wooded gorge near Manteigas, reached via a short, easy walk from a small parking area; visit outside peak summer weekends when the pool fills with local swimmers.' },
+        { name: 'Linhares da Beira', lat: 40.4014, lng: -7.5033 , notes: 'A small, little-visited granite village of narrow lanes below a well-preserved 13th-century hilltop castle with sweeping valley views; climb to the castle walls at golden hour for the view over the terraced valley.' },
+        { name: 'Piódão', lat: 40.2039, lng: -7.7228 , notes: 'An isolated schist village of dark stone houses with slate roofs stacked into a steep valley in the Serra do Açor, one of Portugal\'s official "aldeias históricas"; arrive early or stay overnight, since the single approach road and small square clog with day-trip traffic by midday.' },
       ],
       notes: "Positioned as the connecting middle leg between the Porto/north cluster and the Algarve/south cluster (see Portugal: North to South and Portugal Roadtrip above, which both explicitly point here): Coimbra (2 days: the University/Biblioteca Joanina, the old town, Fado de Coimbra) — the Serra da Estrela National Park, based in Manteigas or Seia (3-4 days): Torre (mainland Portugal's highest point), Sabugueiro (the highest village, ~1h30 from Coimbra), the Zêzere glacial valley, the Poço do Inferno waterfall, and 1-2 historic 'Aldeias Históricas' (e.g. Linhares da Beira, Piódão). No airport with a direct NL flight nearby — fly into Porto or Lisbon (both ~2h drive to Coimbra) and rent a car; the mountain section needs a car (very limited/seasonal public transport into the park). Coimbra itself is reachable by train from Porto/Lisbon (~1-1.5h). Budget ~€65-80/day (the cheapest Portugal item here — rural pension/agroturismo €45-60, food €20-25). Season: late May-June or September (clear hiking weather, no snow on the mountain roads); winter brings real snow to the Torre (Portugal's only ski area) — a different, colder trip, otherwise best avoided. Web check (2026-08): the Biblioteca Joanina has a daily visitor cap/timed slot — book ahead in high season.",
       transport_to_next: 'End of this route — drive back to Porto or Lisbon for the flight home.',
@@ -21062,7 +21192,7 @@ function rbBuildSardiniaNorthRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 180, lat: 41.1333, lng: 9.5333,
       destinations: [
-        { name: 'Costa Smeralda / Porto Cervo', lat: 41.1333, lng: 9.5333 },
+        { name: 'Costa Smeralda / Porto Cervo', lat: 41.1333, lng: 9.5333 , notes: 'Manmade luxury resort coast built in the 1960s around Porto Cervo\'s yacht marina; worth an afternoon stroll and people-watching among the superyachts rather than an overnight given the steep prices.' },
       ],
       notes: 'The Costa Smeralda / Porto Cervo (2 days) — the priciest stretch of this route. Season: June or September; July-August is extremely busy and expensive.',
       transport_to_next: 'Boat crossing to the La Maddalena archipelago.',
@@ -21186,7 +21316,7 @@ function rbBuildSardiniaRoadtripRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 180, lat: 41.1333, lng: 9.5333,
       destinations: [
-        { name: 'Costa Smeralda / Porto Cervo', lat: 41.1333, lng: 9.5333 },
+        { name: 'Costa Smeralda / Porto Cervo', lat: 41.1333, lng: 9.5333 , notes: 'Manmade luxury resort coast built in the 1960s around Porto Cervo\'s yacht marina; worth an afternoon stroll and people-watching among the superyachts rather than an overnight given the steep prices.' },
         { name: 'Olbia', lat: 40.9236, lng: 9.4980 },
       ],
       notes: "Costa Smeralda/Olbia (2 days) — the priciest stretch. ⚠️ Web check (2026-08): coastal parking is scarce and expensive here in high season.",
