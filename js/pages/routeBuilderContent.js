@@ -9162,6 +9162,144 @@ function rbMigrateFranceSwitzerlandItalyDestinationNotes() {
 }
 
 /**
+ * Batch 31 (2026-09-18) for the per-destination-notes workflow -- Serbia + Montenegro + Bosnia
+ * (12 days), a small 3-leg/7-destination combo route -- Sarajevo and Kotor already had notes from
+ * earlier batches, so only 5 destinations were newly researched. Shared-signature batch: this
+ * content (Belgrade, Zlatibor, bare "Mostar") recurs across several other Serbia/Bosnia combo
+ * routes. Same generic name-matching migration pattern as the grand tours.
+ */
+function rbMigrateSerbiaMontenegroBosniaDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_SERBIA_MONTENEGRO_BOSNIA_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_SERBIA_MONTENEGRO_BOSNIA_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Belgrade (Kalemegdan)': "The fortress park sits right where the Sava meets the Danube — walk to the ledge near the Pobednik monument for the best river-confluence view, ideally about an hour before sunset when it's free and uncrowded.",
+    'Zlatibor': "The mountain resort itself is low-key (lake, kajmak/pršuta tastings); the real highlight is a half-day trip to the Šargan Eight heritage narrow-gauge railway nearby — book ahead (train runs only late March-October, 4 departures/day, tickets ~1,500 RSD) since it can sell out in season.",
+    'Tara Canyon / Drina rafting (Perućac)': 'Rafting the Drina through Tara National Park\'s canyon (one of Europe\'s deepest) starts from Perućac Lake and covers roughly 18km; also worth a quick detour to see the famous "House on the Drina" (Kuća na Drini) near Bajina Bašta before or after the float.',
+    'Mostar': "The 16th-century Stari Most (Old Bridge) and its Ottoman old town are the draw, plus the local divers who leap ~24m from the bridge for tip money. Arrive before 9am for bridge photos without crowds, or midday/afternoon when there are enough tourists around for the divers to actually jump.",
+    'Žabljak / Durmitor National Park': "Durmitor has 48 peaks over 2000m; the easy Black Lake (Crno Jezero) loop trail (~1.5hr, flat) is the must-do, and Ćurevac viewpoint is the easily-missed extra if you have another hour — it gives a full panorama over the Tara Canyon.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 32 (2026-09-18) for the per-destination-notes workflow -- Faroe Islands + Iceland
+ * (9 days), a small 2-leg/7-destination combo route -- Tórshavn already had a note from an
+ * earlier batch, so only 6 destinations were newly researched. High-leverage shared-signature
+ * batch: Reykjavík/Þingvellir/Geysir/Gullfoss/Blue Lagoon recur across most other Iceland routes
+ * (Reykjavík + Golden Circle, the South Iceland/Ring Road variants). Same generic name-matching
+ * migration pattern as the grand tours.
+ */
+function rbMigrateFaroeIcelandDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_FAROE_ICELAND_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_FAROE_ICELAND_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Vestmanna bird cliffs boat tour': "Sheer sea cliffs and sea caves reachable only by boat, with puffins nesting roughly April-August. Book the ~2hr boat tour in advance in summer and pick a calm-sea day — it's cancelled in rough weather.",
+    'Reykjavík': "Small enough to cover on foot — Hallgrímskirkja's tower (small fee) is the one worthwhile \"view\" stop, plus the Old Harbour for whale-watching departures. No special timing tip beyond the route's own — just allocate a half day, more if doing a whale-watching add-on.",
+    'Þingvellir': "Historically Iceland's original parliament site, but the actual reason to walk it is that you're walking inside the Mid-Atlantic Ridge rift valley — the Almannagjá gorge is the tectonic plate boundary itself. Walk down into the gorge (not just the rim viewpoint); 1-1.5hrs is enough, parking fee but no entry fee.",
+    'Geysir': 'The original "Geysir" is dormant most of the time — it\'s neighboring Strokkur that erupts reliably every 5-10 minutes and is what everyone actually watches. Stand to the side rather than directly downwind, and you\'ll only need 20-30 minutes here.',
+    'Gullfoss': "A powerful two-tier waterfall on the Hvítá river, dropping into a canyon. Walk down to the lower viewpoint for the full-drop view rather than just the top overlook — paths get icy/slippery outside summer, so grippy shoes matter.",
+    'Blue Lagoon': "The milky, silica-rich geothermal water near Grindavík is the whole point — it's touristy for a reason. Book timed-entry tickets well ahead (they routinely sell out) and check bluelagoon.com/seismic-activity before you go, since nearby volcanic activity has caused short (days-to-weeks) closures in 2024-2025; as of now it's been open the large majority of the time.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 33 (2026-09-18) for the per-destination-notes workflow -- Madeira + Porto Santo
+ * (7-10 days), a small 2-leg/7-destination combo route researched in a single pass (none had
+ * notes yet). Shared-signature batch: the Madeira core (Funchal/Monte/Porto Moniz/Seixal/São
+ * Vicente/25 Fontes) recurs verbatim in the standalone "Madeira (5-7 days)" route. Same generic
+ * name-matching migration pattern as the grand tours.
+ */
+function rbMigrateMadeiraPortoSantoDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_MADEIRA_PORTO_SANTO_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_MADEIRA_PORTO_SANTO_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Funchal (old town, Mercado dos Lavradores)': 'The old town\'s Rua de Santa Maria "painted doors" project is worth a wander, and the Mercado dos Lavradores market is genuinely full of exotic fruit, flower and fish stalls, not a tourist trap. Go in the morning (Fri/Sat busiest with locals) when produce is freshest.',
+    'Monte (cable car, Monte Palace Gardens)': "Take the cable car up from Funchal, then the famous move is riding one of the wicker toboggans (carreiros do Monte) back down the hill — a genuinely old form of transport, not just a gimmick. Costs roughly €30 for two people (cash), and pair it with the Monte Palace Tropical Gardens (separate ~€12-13 entry) if you have time.",
+    'Porto Moniz (natural lava pools)': "Natural volcanic lava pools right on the coast that you can swim in. Go earlier in the day before tour buses arrive, and note the pools close when the sea is too rough — check conditions if it's windy.",
+    'Seixal': "A quieter black-sand-beach village with its own natural pools and a nice viewpoint over terraced vineyards — the low-key alternative to Porto Moniz if that one's crowded.",
+    'São Vicente': "The specific reason to stop is the Grutas de São Vicente (volcanic lava caves) with a short guided tour (~45 min) through the Volcanism Interpretation Center — otherwise it's just a pass-through village on the north coast loop.",
+    '25 Fontes / Caldeirão Verde levada walk': "Two of Madeira's classic levada (irrigation-channel) trails: 25 Fontes ends at a pool fed by dozens of small waterfalls (~11km round trip from Rabaçal, ~4hrs); Caldeirão Verde passes through several unlit tunnels to a waterfall (bring a rain layer/headtorch, gets wet and cold in the tunnels). Start early — both get busy with tour groups by midday.",
+    'Vila Baleira / Porto Santo golden beach': "Porto Santo's whole appeal versus Madeira is its ~9km stretch of actual golden sand (Madeira's beaches are volcanic black sand). Reached by ferry (~2h15 from Funchal) or a short flight; the Ponta da Calheta end of the beach is quieter than the stretch right by Vila Baleira town.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 34 (2026-09-18) for the per-destination-notes workflow -- Canary Islands (10-14 days),
+ * a small 4-leg/7-destination combo route researched in a single pass (none had notes yet).
+ * High-leverage shared-signature batch: every destination recurs across the standalone
+ * single-island routes (Tenerife, Gran Canaria, Lanzarote, Fuerteventura) and the Canary
+ * Islands + Balearics combo. Same generic name-matching migration pattern as the grand tours.
+ */
+function rbMigrateCanaryIslandsDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_CANARY_ISLANDS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_CANARY_ISLANDS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Santa Cruz de Tenerife': "The city itself (Calatrava's Auditorio de Tenerife, Plaza de España) doesn't need more than a few hours. The easily-missed highlight nearby is Anaga Rural Park — dramatic laurel-forest ridges and coastal cliffs a short drive away — worth carving out time for rather than skipping.",
+    'Teide National Park': "Spain's highest peak (3,715m) with a genuinely otherworldly volcanic landscape; the cable car takes you most of the way up. If you want the actual summit, you need a separate free National Park permit booked online in advance (slots release Mondays 7am Canary time, up to ~56 days ahead) — the cable car ticket alone does not include summit access. Go early for clearer skies before afternoon cloud rolls in.",
+    'Las Palmas de Gran Canaria': "Playa de Las Canteras is a genuinely excellent urban beach (one of Europe's best), right in the city — walk the promenade toward sunset. Vegueta old town is the separate, worthwhile half-day for the cathedral and Casa de Colón.",
+    'Roque Nublo': "The iconic volcanic monolith and symbol of Gran Canaria, set in the mountainous interior. It's a straightforward ~1hr-each-way walk from the La Goriona parking area; go early morning both for cooler temps and because clouds frequently move in by midday and obscure the rock.",
+    'Timanfaya National Park (Islote de Hilario)': 'A stark 1730s-eruption moonscape — the catch is you can\'t hike freely inside; the interior is only seen via the guided "Ruta de los Volcanes" bus tour departing from Islote de Hilario, where rangers also do the classic geothermal demos (brush bursting into flame, water flash-boiling in a pipe from ground heat). Arrive early since timed bus-tour slots can back up.',
+    'Arrecife': "Lanzarote's capital isn't a major sightseeing stop — treat it as a base. The one pleasant part is the Charco de San Ginés lagoon and adjoining promenade, good for an evening stroll and dinner.",
+    'Corralejo': "The draw is Corralejo Natural Park's large white sand dune system meeting turquoise water, plus it's the departure point for a short boat trip to Isla de Lobos (uninhabited islet, good snorkeling). Walk the dunes early morning before the wind (which this coast is known for) picks up in the afternoon.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -15500,7 +15638,7 @@ function rbBuildMontenegroRoute() {
         { name: 'Budva', lat: 42.2911, lng: 18.8400, notes: "Its small walled old town is pleasant but modest compared to Kotor or Dubrovnik — Budva's real appeal is as a base for the beach-resort coastline around it, especially the postcard view of the Sveti Stefan islet just south of town. Don't spend more than a couple of hours in the old town itself; head to the Sveti Stefan viewpoint (free, no need to enter the resort) for the classic photo." },
         { name: 'Lovćen National Park', lat: 42.3939, lng: 18.8300 },
         { name: 'Njeguši', lat: 42.4106, lng: 18.8494 },
-        { name: 'Žabljak / Durmitor National Park', lat: 43.1550, lng: 19.1225 },
+        { name: 'Žabljak / Durmitor National Park', lat: 43.1550, lng: 19.1225 , notes: 'Durmitor has 48 peaks over 2000m; the easy Black Lake (Crno Jezero) loop trail (~1.5hr, flat) is the must-do, and Ćurevac viewpoint is the easily-missed extra if you have another hour — it gives a full panorama over the Tara Canyon.' },
         { name: 'Ostrog Monastery', lat: 42.7758, lng: 18.9967 },
       ],
       notes: "Kotor (2 days) — Budva (1-2 days) — Lovćen National Park and the village of Njeguši as a day trip — Žabljak/Durmitor (2 days) — Ostrog Monastery on the way back. Budget ~€45-55/day. Season: June/September for the coast, July-September for Durmitor. Web check (2026-08): national-park entry is €5/day per person, or a €13.50 season pass covering all 5 parks — buy it in Žabljak itself, not at the gate; under-15s go free.",
@@ -15799,7 +15937,7 @@ function rbBuildBelgradeSurroundingsRoute() {
     {
       code: 'RS', name: 'Serbia', days: 5, budget: 200, lat: 44.8225, lng: 20.4506,
       destinations: [
-        { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 },
+        { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 , notes: 'The fortress park sits right where the Sava meets the Danube — walk to the ledge near the Pobednik monument for the best river-confluence view, ideally about an hour before sunset when it\'s free and uncrowded.' },
         { name: 'Belgrade (Skadarlija)', lat: 44.8186, lng: 20.4658 },
         { name: 'Novi Sad + Petrovaradin Fortress', lat: 45.2519, lng: 19.8600 },
         { name: 'Fruška Gora monasteries (Krušedol)', lat: 45.1614, lng: 19.8331 },
@@ -15821,9 +15959,9 @@ function rbBuildSerbiaRoute() {
     {
       code: 'RS', name: 'Serbia', days: 6, budget: 240, lat: 44.7866, lng: 20.4489,
       destinations: [
-        { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 },
+        { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 , notes: 'The fortress park sits right where the Sava meets the Danube — walk to the ledge near the Pobednik monument for the best river-confluence view, ideally about an hour before sunset when it\'s free and uncrowded.' },
         { name: 'Novi Sad', lat: 45.2671, lng: 19.8335, notes: "Petrovaradin Fortress (\"Gibraltar on the Danube\") dominates the skyline and is worth the climb for the river/old-town view. Note: EXIT Festival, long associated with this fortress, has moved to a global-tour format and its return to Novi Sad is unconfirmed (not held there in 2026) — don't plan the visit around it." },
-        { name: 'Zlatibor', lat: 43.7286, lng: 19.7089 },
+        { name: 'Zlatibor', lat: 43.7286, lng: 19.7089 , notes: 'The mountain resort itself is low-key (lake, kajmak/pršuta tastings); the real highlight is a half-day trip to the Šargan Eight heritage narrow-gauge railway nearby — book ahead (train runs only late March-October, 4 departures/day, tickets ~1,500 RSD) since it can sell out in season.' },
         { name: 'Šarganska Osmica (Mokra Gora)', lat: 43.7397, lng: 19.5289 },
         { name: 'Drvengrad (Mećavnik)', lat: 43.7150, lng: 19.5169 },
       ],
@@ -15844,10 +15982,10 @@ function rbBuildSerbiaRoadtripRoute() {
     {
       code: 'RS', name: 'Serbia', days: 9, budget: 360, lat: 44.5000, lng: 20.0000,
       destinations: [
-        { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 },
+        { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 , notes: 'The fortress park sits right where the Sava meets the Danube — walk to the ledge near the Pobednik monument for the best river-confluence view, ideally about an hour before sunset when it\'s free and uncrowded.' },
         { name: 'Novi Sad', lat: 45.2671, lng: 19.8335, notes: "Petrovaradin Fortress (\"Gibraltar on the Danube\") dominates the skyline and is worth the climb for the river/old-town view. Note: EXIT Festival, long associated with this fortress, has moved to a global-tour format and its return to Novi Sad is unconfirmed (not held there in 2026) — don't plan the visit around it." },
         { name: 'Subotica', lat: 46.1008, lng: 19.6650 },
-        { name: 'Zlatibor', lat: 43.7286, lng: 19.7089 },
+        { name: 'Zlatibor', lat: 43.7286, lng: 19.7089 , notes: 'The mountain resort itself is low-key (lake, kajmak/pršuta tastings); the real highlight is a half-day trip to the Šargan Eight heritage narrow-gauge railway nearby — book ahead (train runs only late March-October, 4 departures/day, tickets ~1,500 RSD) since it can sell out in season.' },
         { name: 'Mokra Gora / Tara National Park', lat: 43.8833, lng: 19.3667 },
       ],
       notes: "Belgrade (2 days) — Novi Sad — Subotica (1 day, Austro-Hungarian architecture near the Hungarian border) — Zlatibor (2 days) — Mokra Gora/Tara National Park (2 days) — back to Belgrade. Budget ~€35-45/day (rental car extra). Season: late April-June or September-early October for the best road conditions and light. Web check (2026-08): summer wildfires can occasionally close roads in this region — check conditions before setting out in July-August.",
@@ -15867,9 +16005,9 @@ function rbBuildSerbiaBosniaRoute() {
     {
       code: 'RS', name: 'Serbia', days: 5, budget: 200, lat: 44.5000, lng: 19.9000,
       destinations: [
-        { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 },
-        { name: 'Zlatibor', lat: 43.7286, lng: 19.7089 },
-        { name: 'Tara Canyon / Drina rafting (Perućac)', lat: 43.9711, lng: 19.4142 },
+        { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 , notes: 'The fortress park sits right where the Sava meets the Danube — walk to the ledge near the Pobednik monument for the best river-confluence view, ideally about an hour before sunset when it\'s free and uncrowded.' },
+        { name: 'Zlatibor', lat: 43.7286, lng: 19.7089 , notes: 'The mountain resort itself is low-key (lake, kajmak/pršuta tastings); the real highlight is a half-day trip to the Šargan Eight heritage narrow-gauge railway nearby — book ahead (train runs only late March-October, 4 departures/day, tickets ~1,500 RSD) since it can sell out in season.' },
+        { name: 'Tara Canyon / Drina rafting (Perućac)', lat: 43.9711, lng: 19.4142 , notes: 'Rafting the Drina through Tara National Park\'s canyon (one of Europe\'s deepest) starts from Perućac Lake and covers roughly 18km; also worth a quick detour to see the famous "House on the Drina" (Kuća na Drini) near Bajina Bašta before or after the float.' },
       ],
       notes: "Belgrade (2 days) — Zlatibor (1 day) — the Tara Canyon/Drina river rafting put-in near Perućac (2 days; the rafting itself runs ~€60/day on top of the base budget). Budget ~€35-45/day. Season: May-June/September; the rafting season itself runs April-October. Web check (2026-08): Tara rafting centers offer pickup from both Sarajevo and Mostar, which makes the onward hop into Bosnia straightforward to arrange.",
       transport_to_next: "Overland into Bosnia and Herzegovina towards Sarajevo, often via the rafting operator's own transfer or a rental car — a well-worn route with no particular border complications.",
@@ -15878,7 +16016,7 @@ function rbBuildSerbiaBosniaRoute() {
       code: 'BA', name: 'Bosnia and Herzegovina', days: 4, budget: 140, lat: 43.8563, lng: 18.4131,
       destinations: [
         { name: 'Sarajevo (Baščaršija)', lat: 43.8563, lng: 18.4131, notes: "The Ottoman-era bazaar quarter is where Sarajevo's \"meeting of civilizations\" is most literal — mosques, an Orthodox church, a Catholic cathedral and a synagogue all sit within a few minutes' walk of the Sebilj fountain. Grab a Bosnian coffee in a copper dzezva at one of the quarter's cafes and sit for a while rather than rushing through — it's meant to be sipped slowly over 30-45 minutes." },
-        { name: 'Mostar', lat: 43.3438, lng: 17.8078 },
+        { name: 'Mostar', lat: 43.3438, lng: 17.8078 , notes: 'The 16th-century Stari Most (Old Bridge) and its Ottoman old town are the draw, plus the local divers who leap ~24m from the bridge for tip money. Arrive before 9am for bridge photos without crowds, or midday/afternoon when there are enough tourists around for the divers to actually jump.' },
         { name: 'Blagaj (Tekija)', lat: 43.2489, lng: 17.8942 },
       ],
       notes: "Sarajevo (2 days) — Mostar and the Blagaj Tekija (2 days). Budget ~€30-40/day.",
@@ -15898,8 +16036,8 @@ function rbBuildSerbiaMontenegroBosniaRoute() {
     {
       code: 'RS', name: 'Serbia', days: 3, budget: 120, lat: 44.5000, lng: 19.9000,
       destinations: [
-        { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 },
-        { name: 'Zlatibor', lat: 43.7286, lng: 19.7089 },
+        { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 , notes: 'The fortress park sits right where the Sava meets the Danube — walk to the ledge near the Pobednik monument for the best river-confluence view, ideally about an hour before sunset when it\'s free and uncrowded.' },
+        { name: 'Zlatibor', lat: 43.7286, lng: 19.7089 , notes: 'The mountain resort itself is low-key (lake, kajmak/pršuta tastings); the real highlight is a half-day trip to the Šargan Eight heritage narrow-gauge railway nearby — book ahead (train runs only late March-October, 4 departures/day, tickets ~1,500 RSD) since it can sell out in season.' },
       ],
       notes: "Belgrade (2 days) — Zlatibor (1 day). Budget ~€35-45/day.",
       transport_to_next: "Overland (rental car or a rafting-operator transfer) towards the Tara Canyon/Drina rafting put-in near Perućac, then on into Bosnia and Herzegovina.",
@@ -15907,9 +16045,9 @@ function rbBuildSerbiaMontenegroBosniaRoute() {
     {
       code: 'BA', name: 'Bosnia and Herzegovina', days: 5, budget: 200, lat: 43.9000, lng: 18.7000,
       destinations: [
-        { name: 'Tara Canyon / Drina rafting (Perućac)', lat: 43.9711, lng: 19.4142 },
+        { name: 'Tara Canyon / Drina rafting (Perućac)', lat: 43.9711, lng: 19.4142 , notes: 'Rafting the Drina through Tara National Park\'s canyon (one of Europe\'s deepest) starts from Perućac Lake and covers roughly 18km; also worth a quick detour to see the famous "House on the Drina" (Kuća na Drini) near Bajina Bašta before or after the float.' },
         { name: 'Sarajevo (Baščaršija)', lat: 43.8563, lng: 18.4131, notes: "The Ottoman-era bazaar quarter is where Sarajevo's \"meeting of civilizations\" is most literal — mosques, an Orthodox church, a Catholic cathedral and a synagogue all sit within a few minutes' walk of the Sebilj fountain. Grab a Bosnian coffee in a copper dzezva at one of the quarter's cafes and sit for a while rather than rushing through — it's meant to be sipped slowly over 30-45 minutes." },
-        { name: 'Mostar', lat: 43.3438, lng: 17.8078 },
+        { name: 'Mostar', lat: 43.3438, lng: 17.8078 , notes: 'The 16th-century Stari Most (Old Bridge) and its Ottoman old town are the draw, plus the local divers who leap ~24m from the bridge for tip money. Arrive before 9am for bridge photos without crowds, or midday/afternoon when there are enough tourists around for the divers to actually jump.' },
       ],
       notes: "The Tara Canyon/Drina rafting stop (2 days; rafting itself ~€60/day on top of the base budget) — Sarajevo (2 days) — Mostar (1 day). Budget ~€35-45/day. Rafting season runs April-October.",
       transport_to_next: "Overland via the border near Trebinje/Nikšić into Montenegro towards Kotor. Web check (2026-08): usually a straightforward crossing, but budget extra queueing time on summer weekends.",
@@ -15918,7 +16056,7 @@ function rbBuildSerbiaMontenegroBosniaRoute() {
       code: 'ME', name: 'Montenegro', days: 4, budget: 220, lat: 42.8000, lng: 18.9000,
       destinations: [
         { name: 'Kotor Old Town + Bay of Kotor', lat: 42.4247, lng: 18.7712, notes: "The Venetian old town sits at the foot of a dramatic fjord-like bay ringed by mountains, and the real highlight is climbing the ~1,300 steps of the city walls up to St. John's Fortress for a sweeping view over the bay and terracotta rooftops. Go early morning to avoid both the heat and cruise-ship crowds on the climb; the fortress ticket runs roughly €8-15 depending on season/entrance, cash or card at the booth." },
-        { name: 'Žabljak / Durmitor National Park', lat: 43.1547, lng: 19.1225 },
+        { name: 'Žabljak / Durmitor National Park', lat: 43.1547, lng: 19.1225 , notes: 'Durmitor has 48 peaks over 2000m; the easy Black Lake (Crno Jezero) loop trail (~1.5hr, flat) is the must-do, and Ćurevac viewpoint is the easily-missed extra if you have another hour — it gives a full panorama over the Tara Canyon.' },
       ],
       notes: "Kotor + the Bay of Kotor (2 days) — Žabljak/Durmitor National Park (2 days). Budget ~€45-60/day — avoid the Montenegrin coast in July-August, when cruise-ship crowds in Kotor and prices both spike by 25-40%.",
       transport_to_next: 'End of this route — fly home from Podgorica or Tivat.',
@@ -16128,7 +16266,7 @@ function rbBuildKosovoMontenegroRoute() {
     {
       code: 'ME', name: 'Montenegro', days: 5, budget: 250, lat: 42.8000, lng: 18.9500,
       destinations: [
-        { name: 'Žabljak / Durmitor National Park', lat: 43.1547, lng: 19.1225 },
+        { name: 'Žabljak / Durmitor National Park', lat: 43.1547, lng: 19.1225 , notes: 'Durmitor has 48 peaks over 2000m; the easy Black Lake (Crno Jezero) loop trail (~1.5hr, flat) is the must-do, and Ćurevac viewpoint is the easily-missed extra if you have another hour — it gives a full panorama over the Tara Canyon.' },
         { name: 'Kotor Old Town + Bay of Kotor', lat: 42.4247, lng: 18.7712, notes: "The Venetian old town sits at the foot of a dramatic fjord-like bay ringed by mountains, and the real highlight is climbing the ~1,300 steps of the city walls up to St. John's Fortress for a sweeping view over the bay and terracotta rooftops. Go early morning to avoid both the heat and cruise-ship crowds on the climb; the fortress ticket runs roughly €8-15 depending on season/entrance, cash or card at the booth." },
       ],
       notes: "Žabljak/Durmitor National Park (3 days) — Kotor + the Bay of Kotor (2 days). Budget ~€45-60/day, more in July-August on the coast. Season: avoid the Montenegrin coast at the height of summer.",
@@ -16157,7 +16295,7 @@ function rbBuildKosovoMontenegroAlbaniaRoute() {
     {
       code: 'ME', name: 'Montenegro', days: 2, budget: 100, lat: 43.1547, lng: 19.1225,
       destinations: [
-        { name: 'Žabljak / Durmitor National Park', lat: 43.1547, lng: 19.1225 },
+        { name: 'Žabljak / Durmitor National Park', lat: 43.1547, lng: 19.1225 , notes: 'Durmitor has 48 peaks over 2000m; the easy Black Lake (Crno Jezero) loop trail (~1.5hr, flat) is the must-do, and Ćurevac viewpoint is the easily-missed extra if you have another hour — it gives a full panorama over the Tara Canyon.' },
       ],
       notes: "Durmitor National Park (2 days). Budget ~€45-60/day, pricier in July-August.",
       transport_to_next: "Overland towards the Albanian border and Shkodër.",
@@ -18315,7 +18453,7 @@ function rbBuildFaroeIslandsShortRoute() {
         { name: 'Tórshavn', lat: 62.0079, lng: -6.7716, notes: "The Faroese capital is compact enough to see on foot in half a day, centered on Tinganes, the turf-roofed peninsula that has hosted the islands' parliament since Viking times." },
         { name: 'Múlafossur / Gásadalur', lat: 62.1064, lng: -7.6153 },
         { name: 'Saksun', lat: 62.2872, lng: -7.2119, notes: "Tiny hamlet around a turf-roofed church overlooking Pollurin, a tidal lagoon that was once a harbor before a storm sealed it off with sand. The final approach crosses private farmland, so park at the village and be prepared for a posted access/parking fee." },
-        { name: 'Vestmanna bird cliffs boat tour', lat: 62.1546, lng: -7.1698 },
+        { name: 'Vestmanna bird cliffs boat tour', lat: 62.1546, lng: -7.1698 , notes: 'Sheer sea cliffs and sea caves reachable only by boat, with puffins nesting roughly April-August. Book the ~2hr boat tour in advance in summer and pick a calm-sea day — it\'s cancelled in rough weather.' },
       ],
       notes: "Tórshavn (2 days) plus Múlafossur/Gásadalur, Saksun, and the Vestmanna bird-cliffs boat tour. Budget ~€100-120/day — the Faroes are expensive, Scandinavian-level food/accommodation prices, and a rental car is practically essential. Season: May-September, since the Vestmanna boat tours generally only run in this window. Web check (2026-08): Atlantic Airways flies from Copenhagen at least 2x/day, up to 4x/day in summer (June-August), and even more in July 2026 (111 vs. 100 flights in July 2025) — but Vágar Airport is notorious for fog and wind, delays/cancellations are real, so build in buffer time. The Smyril Line ferry Hirtshals-Tórshavn runs 2x/week, ~30-38h, from ~€150 (an alternative if flights are disrupted, or if bringing your own car). The Trælanípa hike has real wind danger (>15 m/s) on the unprotected cliff edge, and fog can remove the view entirely — check weather.fo locally beforehand. The Faroe Islands are in the Nordic Passport Union but NOT in the EU/Schengen — a Dutch traveler needs their actual passport (not an ID card, since it's outside Schengen); occasional passport checks are possible despite the flight feeling like a Danish domestic hop. General travel advisory (2026-08 web check): Denmark, which the Faroes fall under, is green (as of 08-05-2026), with no separate note for the Faroes themselves.\n\nDistinct from the existing 'Faroe Islands 🐑' route (split off from Nordic Arctic Expedition ❄️), which is the longer, epic expedition version. This one is deliberately the realistic, shorter 'Trip Ideas' version of the same destination — a different kind of trip (short holiday vs. epic), not a duplicate.",
       transport_to_next: 'End of this route — fly home via Copenhagen (Atlantic Airways), or take the Smyril Line ferry back to Hirtshals if timing allows.',
@@ -18335,7 +18473,7 @@ function rbBuildFaroeIslandsIcelandRoute() {
       code: 'FO', name: 'Faroe Islands', days: 3, budget: 360, lat: 62.0079, lng: -6.7716,
       destinations: [
         { name: 'Tórshavn', lat: 62.0079, lng: -6.7716, notes: "The Faroese capital is compact enough to see on foot in half a day, centered on Tinganes, the turf-roofed peninsula that has hosted the islands' parliament since Viking times." },
-        { name: 'Vestmanna bird cliffs boat tour', lat: 62.1546, lng: -7.1698 },
+        { name: 'Vestmanna bird cliffs boat tour', lat: 62.1546, lng: -7.1698 , notes: 'Sheer sea cliffs and sea caves reachable only by boat, with puffins nesting roughly April-August. Book the ~2hr boat tour in advance in summer and pick a calm-sea day — it\'s cancelled in rough weather.' },
       ],
       notes: "Tórshavn plus the Vestmanna bird-cliffs boat tour, kept short since this is the combined trip with Iceland below. Budget ~€110-130/day overall for the whole trip (Iceland runs pricier than the Faroes). Practical connection: the Smyril Line MS Norröna combines both legs in one crossing (a weekly Faroe-Iceland sailing) with a required minimum stay of 1 week Iceland + 3 days-1 week Faroe Islands, from ~€810 (25% deposit) — note that strict minimum adds up to about 10 days, slightly more than this 9-day version, so treat this as a compressed take on the Norröna combo or plan on flying the two legs separately instead (no direct Atlantic Airways FAE-Reykjavík route was found, most likely via Copenhagen). Season: June-August for the most favorable Norröna sailing schedule.",
       transport_to_next: 'Smyril Line MS Norröna ferry crossing to Iceland (the weekly Faroe-Iceland leg) — or fly separately via Copenhagen if the ferry minimum-stay/schedule doesn\'t fit.',
@@ -18343,11 +18481,11 @@ function rbBuildFaroeIslandsIcelandRoute() {
     {
       code: 'IS', name: 'Iceland', days: 6, budget: 720, lat: 64.1466, lng: -21.9426,
       destinations: [
-        { name: 'Reykjavík', lat: 64.1466, lng: -21.9426 },
-        { name: 'Þingvellir', lat: 64.2559, lng: -21.1295 },
-        { name: 'Geysir', lat: 64.3104, lng: -20.3024 },
-        { name: 'Gullfoss', lat: 64.3271, lng: -20.1199 },
-        { name: 'Blue Lagoon', lat: 63.8804, lng: -22.4495 },
+        { name: 'Reykjavík', lat: 64.1466, lng: -21.9426 , notes: 'Small enough to cover on foot — Hallgrímskirkja\'s tower (small fee) is the one worthwhile "view" stop, plus the Old Harbour for whale-watching departures. No special timing tip beyond the route\'s own — just allocate a half day, more if doing a whale-watching add-on.' },
+        { name: 'Þingvellir', lat: 64.2559, lng: -21.1295 , notes: 'Historically Iceland\'s original parliament site, but the actual reason to walk it is that you\'re walking inside the Mid-Atlantic Ridge rift valley — the Almannagjá gorge is the tectonic plate boundary itself. Walk down into the gorge (not just the rim viewpoint); 1-1.5hrs is enough, parking fee but no entry fee.' },
+        { name: 'Geysir', lat: 64.3104, lng: -20.3024 , notes: 'The original "Geysir" is dormant most of the time — it\'s neighboring Strokkur that erupts reliably every 5-10 minutes and is what everyone actually watches. Stand to the side rather than directly downwind, and you\'ll only need 20-30 minutes here.' },
+        { name: 'Gullfoss', lat: 64.3271, lng: -20.1199 , notes: 'A powerful two-tier waterfall on the Hvítá river, dropping into a canyon. Walk down to the lower viewpoint for the full-drop view rather than just the top overlook — paths get icy/slippery outside summer, so grippy shoes matter.' },
+        { name: 'Blue Lagoon', lat: 63.8804, lng: -22.4495 , notes: 'The milky, silica-rich geothermal water near Grindavík is the whole point — it\'s touristy for a reason. Book timed-entry tickets well ahead (they routinely sell out) and check bluelagoon.com/seismic-activity before you go, since nearby volcanic activity has caused short (days-to-weeks) closures in 2024-2025; as of now it\'s been open the large majority of the time.' },
       ],
       notes: "Reykjavík plus the Golden Circle (Þingvellir, Geysir, Gullfoss) and the Blue Lagoon, on the Iceland side of the combined trip. Web check (2026-08): this is deliberately the short-holiday version alongside the aspirational 'Nordic Arctic Expedition' epic in the Route Builder — not a duplicate, but a shorter, practical combination of the two islands. See the Reykjavík + Golden Circle (5 days) route below for the full Reykjanes Peninsula volcanic-activity safety note and Schengen entry details, both of which apply here too.",
       transport_to_next: 'End of this route — fly home from Keflavík (Reykjavík-Amsterdam with KLM/Icelandair/Transavia).',
@@ -18366,11 +18504,11 @@ function rbBuildReykjavikGoldenCircleRoute() {
     {
       code: 'IS', name: 'Iceland', days: 5, budget: 725, lat: 64.1466, lng: -21.9426,
       destinations: [
-        { name: 'Reykjavík', lat: 64.1466, lng: -21.9426 },
-        { name: 'Þingvellir', lat: 64.2559, lng: -21.1295 },
-        { name: 'Geysir', lat: 64.3104, lng: -20.3024 },
-        { name: 'Gullfoss', lat: 64.3271, lng: -20.1199 },
-        { name: 'Blue Lagoon', lat: 63.8804, lng: -22.4495 },
+        { name: 'Reykjavík', lat: 64.1466, lng: -21.9426 , notes: 'Small enough to cover on foot — Hallgrímskirkja\'s tower (small fee) is the one worthwhile "view" stop, plus the Old Harbour for whale-watching departures. No special timing tip beyond the route\'s own — just allocate a half day, more if doing a whale-watching add-on.' },
+        { name: 'Þingvellir', lat: 64.2559, lng: -21.1295 , notes: 'Historically Iceland\'s original parliament site, but the actual reason to walk it is that you\'re walking inside the Mid-Atlantic Ridge rift valley — the Almannagjá gorge is the tectonic plate boundary itself. Walk down into the gorge (not just the rim viewpoint); 1-1.5hrs is enough, parking fee but no entry fee.' },
+        { name: 'Geysir', lat: 64.3104, lng: -20.3024 , notes: 'The original "Geysir" is dormant most of the time — it\'s neighboring Strokkur that erupts reliably every 5-10 minutes and is what everyone actually watches. Stand to the side rather than directly downwind, and you\'ll only need 20-30 minutes here.' },
+        { name: 'Gullfoss', lat: 64.3271, lng: -20.1199 , notes: 'A powerful two-tier waterfall on the Hvítá river, dropping into a canyon. Walk down to the lower viewpoint for the full-drop view rather than just the top overlook — paths get icy/slippery outside summer, so grippy shoes matter.' },
+        { name: 'Blue Lagoon', lat: 63.8804, lng: -22.4495 , notes: 'The milky, silica-rich geothermal water near Grindavík is the whole point — it\'s touristy for a reason. Book timed-entry tickets well ahead (they routinely sell out) and check bluelagoon.com/seismic-activity before you go, since nearby volcanic activity has caused short (days-to-weeks) closures in 2024-2025; as of now it\'s been open the large majority of the time.' },
       ],
       notes: "Reykjavík (2 days, city and harbor) plus a Golden Circle day tour (Þingvellir, Geysir, Gullfoss, 1 day), the Blue Lagoon via Keflavík (1 day), and a buffer day. Budget ~€130-160/day (budget-comfort accommodation plus a rental car/day tour and meals — Iceland is expensive). Season: year-round; summer (June-August) for long days, winter (October-March) for northern lights, but with shorter daylight hours and icy roads. Web check (2026-08): the Blue Lagoon requires mandatory advance booking, no walk-ins, indicative price from ~€65-75 (Comfort tier) — the exact 2026 price isn't confirmed with certainty, so verify just before booking. The drive to the Blue Lagoon passes through the Reykjanes Peninsula (see the safety note below); the Golden Circle itself (Þingvellir/Geysir/Gullfoss) lies outside that area, unaffected.\n\nIceland safety note (2026-08 web check, currently active — travel advisory last changed 21-04-2026, valid through 14-08-2026): yellow for the Reykjanes Peninsula specifically, due to ongoing volcanic activity near Grindavík — the risk of a new eruption remains. Green for the rest of Iceland. No active eruption since September 2025; Grindavík itself has reopened but remains vulnerable (fresh lava, gas risk, sirens possible) — check safetravel.is/eruption-in-reykjanes/ just before travel. Keflavík Airport and the Reykjavík-Keflavík road function normally. Schengen — a Dutch passport is visa-free, no ETA needed, standard Schengen entry.",
       transport_to_next: 'End of this route — fly home from Keflavík.',
@@ -18389,10 +18527,10 @@ function rbBuildSouthIcelandRoute() {
     {
       code: 'IS', name: 'Iceland', days: 6, budget: 810, lat: 64.1466, lng: -21.9426,
       destinations: [
-        { name: 'Reykjavík', lat: 64.1466, lng: -21.9426 },
-        { name: 'Þingvellir', lat: 64.2559, lng: -21.1295 },
-        { name: 'Geysir', lat: 64.3104, lng: -20.3024 },
-        { name: 'Gullfoss', lat: 64.3271, lng: -20.1199 },
+        { name: 'Reykjavík', lat: 64.1466, lng: -21.9426 , notes: 'Small enough to cover on foot — Hallgrímskirkja\'s tower (small fee) is the one worthwhile "view" stop, plus the Old Harbour for whale-watching departures. No special timing tip beyond the route\'s own — just allocate a half day, more if doing a whale-watching add-on.' },
+        { name: 'Þingvellir', lat: 64.2559, lng: -21.1295 , notes: 'Historically Iceland\'s original parliament site, but the actual reason to walk it is that you\'re walking inside the Mid-Atlantic Ridge rift valley — the Almannagjá gorge is the tectonic plate boundary itself. Walk down into the gorge (not just the rim viewpoint); 1-1.5hrs is enough, parking fee but no entry fee.' },
+        { name: 'Geysir', lat: 64.3104, lng: -20.3024 , notes: 'The original "Geysir" is dormant most of the time — it\'s neighboring Strokkur that erupts reliably every 5-10 minutes and is what everyone actually watches. Stand to the side rather than directly downwind, and you\'ll only need 20-30 minutes here.' },
+        { name: 'Gullfoss', lat: 64.3271, lng: -20.1199 , notes: 'A powerful two-tier waterfall on the Hvítá river, dropping into a canyon. Walk down to the lower viewpoint for the full-drop view rather than just the top overlook — paths get icy/slippery outside summer, so grippy shoes matter.' },
         { name: 'Seljalandsfoss', lat: 63.6156, lng: -19.9886 },
         { name: 'Skógafoss', lat: 63.5321, lng: -19.5116 },
         { name: 'Reynisfjara black beach', lat: 63.4045, lng: -19.0424 },
@@ -18415,7 +18553,7 @@ function rbBuildIcelandSouthCoastRoute() {
     {
       code: 'IS', name: 'Iceland', days: 9, budget: 1170, lat: 64.1466, lng: -21.9426,
       destinations: [
-        { name: 'Reykjavík', lat: 64.1466, lng: -21.9426 },
+        { name: 'Reykjavík', lat: 64.1466, lng: -21.9426 , notes: 'Small enough to cover on foot — Hallgrímskirkja\'s tower (small fee) is the one worthwhile "view" stop, plus the Old Harbour for whale-watching departures. No special timing tip beyond the route\'s own — just allocate a half day, more if doing a whale-watching add-on.' },
         { name: 'Golden Circle (Þingvellir/Geysir/Gullfoss)', lat: 64.3104, lng: -20.3024 },
         { name: 'Seljalandsfoss', lat: 63.6156, lng: -19.9886 },
         { name: 'Skógafoss', lat: 63.5321, lng: -19.5116 },
@@ -18441,7 +18579,7 @@ function rbBuildIcelandRingRoadRoute() {
     {
       code: 'IS', name: 'Iceland', days: 12, budget: 1560, lat: 64.1466, lng: -21.9426,
       destinations: [
-        { name: 'Reykjavík', lat: 64.1466, lng: -21.9426 },
+        { name: 'Reykjavík', lat: 64.1466, lng: -21.9426 , notes: 'Small enough to cover on foot — Hallgrímskirkja\'s tower (small fee) is the one worthwhile "view" stop, plus the Old Harbour for whale-watching departures. No special timing tip beyond the route\'s own — just allocate a half day, more if doing a whale-watching add-on.' },
         { name: 'Vík í Mýrdal', lat: 63.4186, lng: -19.0060 },
         { name: 'Jökulsárlón Glacier Lagoon', lat: 64.0784, lng: -16.2300 },
         { name: 'Höfn', lat: 64.2539, lng: -15.2082 },
@@ -18468,7 +18606,7 @@ function rbBuildIcelandExtendedRoute() {
     {
       code: 'IS', name: 'Iceland', days: 14, budget: 2030, lat: 64.1466, lng: -21.9426,
       destinations: [
-        { name: 'Reykjavík', lat: 64.1466, lng: -21.9426 },
+        { name: 'Reykjavík', lat: 64.1466, lng: -21.9426 , notes: 'Small enough to cover on foot — Hallgrímskirkja\'s tower (small fee) is the one worthwhile "view" stop, plus the Old Harbour for whale-watching departures. No special timing tip beyond the route\'s own — just allocate a half day, more if doing a whale-watching add-on.' },
         { name: 'Vík í Mýrdal', lat: 63.4186, lng: -19.0060 },
         { name: 'Jökulsárlón Glacier Lagoon', lat: 64.0784, lng: -16.2300 },
         { name: 'Egilsstaðir / Seyðisfjörður', lat: 65.2669, lng: -14.3948 },
@@ -19214,12 +19352,12 @@ function rbBuildMadeiraRoute() {
     {
       code: 'PT', name: 'Portugal', days: 6, budget: 465, lat: 32.6669, lng: -16.9241,
       destinations: [
-        { name: 'Funchal (old town, Mercado dos Lavradores)', lat: 32.6474, lng: -16.9068 },
-        { name: 'Monte (cable car, Monte Palace Gardens)', lat: 32.6801, lng: -16.9054 },
-        { name: 'Porto Moniz (natural lava pools)', lat: 32.8607, lng: -17.1706 },
-        { name: 'Seixal', lat: 32.8283, lng: -17.0500 },
-        { name: 'São Vicente', lat: 32.7986, lng: -17.0486 },
-        { name: '25 Fontes / Caldeirão Verde levada walk', lat: 32.7681, lng: -17.1364 },
+        { name: 'Funchal (old town, Mercado dos Lavradores)', lat: 32.6474, lng: -16.9068 , notes: 'The old town\'s Rua de Santa Maria "painted doors" project is worth a wander, and the Mercado dos Lavradores market is genuinely full of exotic fruit, flower and fish stalls, not a tourist trap. Go in the morning (Fri/Sat busiest with locals) when produce is freshest.' },
+        { name: 'Monte (cable car, Monte Palace Gardens)', lat: 32.6801, lng: -16.9054 , notes: 'Take the cable car up from Funchal, then the famous move is riding one of the wicker toboggans (carreiros do Monte) back down the hill — a genuinely old form of transport, not just a gimmick. Costs roughly €30 for two people (cash), and pair it with the Monte Palace Tropical Gardens (separate ~€12-13 entry) if you have time.' },
+        { name: 'Porto Moniz (natural lava pools)', lat: 32.8607, lng: -17.1706 , notes: 'Natural volcanic lava pools right on the coast that you can swim in. Go earlier in the day before tour buses arrive, and note the pools close when the sea is too rough — check conditions if it\'s windy.' },
+        { name: 'Seixal', lat: 32.8283, lng: -17.0500 , notes: 'A quieter black-sand-beach village with its own natural pools and a nice viewpoint over terraced vineyards — the low-key alternative to Porto Moniz if that one\'s crowded.' },
+        { name: 'São Vicente', lat: 32.7986, lng: -17.0486 , notes: 'The specific reason to stop is the Grutas de São Vicente (volcanic lava caves) with a short guided tour (~45 min) through the Volcanism Interpretation Center — otherwise it\'s just a pass-through village on the north coast loop.' },
+        { name: '25 Fontes / Caldeirão Verde levada walk', lat: 32.7681, lng: -17.1364 , notes: 'Two of Madeira\'s classic levada (irrigation-channel) trails: 25 Fontes ends at a pool fed by dozens of small waterfalls (~11km round trip from Rabaçal, ~4hrs); Caldeirão Verde passes through several unlit tunnels to a waterfall (bring a rain layer/headtorch, gets wet and cold in the tunnels). Start early — both get busy with tour groups by midday.' },
       ],
       notes: "Entry: easyJet and Transavia fly direct year-round from Amsterdam to Funchal; TUI fly seasonally. 2-3 days based in Funchal (the Monte cable car and toboggan run, Mercado dos Lavradores, the old town), then a rental-car loop of the north coast (Porto Moniz's natural lava pools, Seixal, São Vicente) plus one levada walk (25 Fontes or Caldeirão Verde). A Dutch driving license is valid (EU/Schengen). Season: mild year-round (18-25°C); best April-June or September-October; avoid August for wildfire risk (historically elevated, including the 2016 fires). Budget ~€70-85/day. Web check (2026-08): the Monte cable car is roughly €12.50 one-way/€19 return (verify the current price); levada walks can be temporarily closed after rain — check a local hiking app before setting out.",
       transport_to_next: 'End of this route — fly home from Funchal.',
@@ -19238,12 +19376,12 @@ function rbBuildMadeiraPortoSantoRoute() {
     {
       code: 'PT', name: 'Portugal', days: 6, budget: 450, lat: 32.6669, lng: -16.9241,
       destinations: [
-        { name: 'Funchal (old town, Mercado dos Lavradores)', lat: 32.6474, lng: -16.9068 },
-        { name: 'Monte (cable car, Monte Palace Gardens)', lat: 32.6801, lng: -16.9054 },
-        { name: 'Porto Moniz (natural lava pools)', lat: 32.8607, lng: -17.1706 },
-        { name: 'Seixal', lat: 32.8283, lng: -17.0500 },
-        { name: 'São Vicente', lat: 32.7986, lng: -17.0486 },
-        { name: '25 Fontes / Caldeirão Verde levada walk', lat: 32.7681, lng: -17.1364 },
+        { name: 'Funchal (old town, Mercado dos Lavradores)', lat: 32.6474, lng: -16.9068 , notes: 'The old town\'s Rua de Santa Maria "painted doors" project is worth a wander, and the Mercado dos Lavradores market is genuinely full of exotic fruit, flower and fish stalls, not a tourist trap. Go in the morning (Fri/Sat busiest with locals) when produce is freshest.' },
+        { name: 'Monte (cable car, Monte Palace Gardens)', lat: 32.6801, lng: -16.9054 , notes: 'Take the cable car up from Funchal, then the famous move is riding one of the wicker toboggans (carreiros do Monte) back down the hill — a genuinely old form of transport, not just a gimmick. Costs roughly €30 for two people (cash), and pair it with the Monte Palace Tropical Gardens (separate ~€12-13 entry) if you have time.' },
+        { name: 'Porto Moniz (natural lava pools)', lat: 32.8607, lng: -17.1706 , notes: 'Natural volcanic lava pools right on the coast that you can swim in. Go earlier in the day before tour buses arrive, and note the pools close when the sea is too rough — check conditions if it\'s windy.' },
+        { name: 'Seixal', lat: 32.8283, lng: -17.0500 , notes: 'A quieter black-sand-beach village with its own natural pools and a nice viewpoint over terraced vineyards — the low-key alternative to Porto Moniz if that one\'s crowded.' },
+        { name: 'São Vicente', lat: 32.7986, lng: -17.0486 , notes: 'The specific reason to stop is the Grutas de São Vicente (volcanic lava caves) with a short guided tour (~45 min) through the Volcanism Interpretation Center — otherwise it\'s just a pass-through village on the north coast loop.' },
+        { name: '25 Fontes / Caldeirão Verde levada walk', lat: 32.7681, lng: -17.1364 , notes: 'Two of Madeira\'s classic levada (irrigation-channel) trails: 25 Fontes ends at a pool fed by dozens of small waterfalls (~11km round trip from Rabaçal, ~4hrs); Caldeirão Verde passes through several unlit tunnels to a waterfall (bring a rain layer/headtorch, gets wet and cold in the tunnels). Start early — both get busy with tour groups by midday.' },
       ],
       notes: "Entry: easyJet and Transavia fly direct year-round from Amsterdam to Funchal; TUI fly seasonally. Same Madeira core as the standalone Madeira route: Funchal (Monte cable car/toboggan, Mercado dos Lavradores, old town) plus a rental-car loop of the north coast (Porto Moniz, Seixal, São Vicente) and a levada walk. A Dutch driving license is valid (EU/Schengen). Season: mild year-round (18-25°C); best April-June or September-October; avoid August (wildfire risk). Budget ~€70-85/day. Web check (2026-08): the Monte cable car is roughly €12.50 one-way/€19 return (verify the current price); levadas can close temporarily after rain.",
       transport_to_next: "Ferry Lobo Marinho from Funchal to Porto Santo (~2h15) — usually only runs May-October; a short regional-carrier flight (~15-20 min) is the reliable year-round/off-season alternative. Web check (2026-08): confirm the current ferry schedule before relying on it.",
@@ -19251,7 +19389,7 @@ function rbBuildMadeiraPortoSantoRoute() {
     {
       code: 'PT', name: 'Portugal', days: 3, budget: 255, lat: 33.0642, lng: -16.3439,
       destinations: [
-        { name: 'Vila Baleira / Porto Santo golden beach', lat: 33.0642, lng: -16.3439 },
+        { name: 'Vila Baleira / Porto Santo golden beach', lat: 33.0642, lng: -16.3439 , notes: 'Porto Santo\'s whole appeal versus Madeira is its ~9km stretch of actual golden sand (Madeira\'s beaches are volcanic black sand). Reached by ferry (~2h15 from Funchal) or a short flight; the Ponta da Calheta end of the beach is quieter than the stretch right by Vila Baleira town.' },
       ],
       notes: "2-3 days on Porto Santo for its golden sand beach and a quieter pace than Madeira. Budget ~€70-90/day, slightly higher than Madeira due to import costs and less restaurant competition.",
       transport_to_next: 'End of this route — return to Funchal (ferry or short flight) and fly home.',
@@ -19376,9 +19514,9 @@ function rbBuildTenerifeRoute() {
     {
       code: 'ES', name: 'Spain', days: 6, budget: 390, lat: 28.2916, lng: -16.6291,
       destinations: [
-        { name: 'Santa Cruz de Tenerife', lat: 28.4636, lng: -16.2518 },
+        { name: 'Santa Cruz de Tenerife', lat: 28.4636, lng: -16.2518 , notes: 'The city itself (Calatrava\'s Auditorio de Tenerife, Plaza de España) doesn\'t need more than a few hours. The easily-missed highlight nearby is Anaga Rural Park — dramatic laurel-forest ridges and coastal cliffs a short drive away — worth carving out time for rather than skipping.' },
         { name: 'La Laguna (UNESCO old town)', lat: 28.4874, lng: -16.3159 },
-        { name: 'Teide National Park', lat: 28.2723, lng: -16.6417 },
+        { name: 'Teide National Park', lat: 28.2723, lng: -16.6417 , notes: 'Spain\'s highest peak (3,715m) with a genuinely otherworldly volcanic landscape; the cable car takes you most of the way up. If you want the actual summit, you need a separate free National Park permit booked online in advance (slots release Mondays 7am Canary time, up to ~56 days ahead) — the cable car ticket alone does not include summit access. Go early for clearer skies before afternoon cloud rolls in.' },
         { name: 'Anaga Rural Park (Cruz del Carmen)', lat: 28.5477, lng: -16.2135 },
         { name: 'Costa Adeje', lat: 28.0994, lng: -16.7357 },
         { name: 'Los Cristianos', lat: 28.0525, lng: -16.7192 },
@@ -19400,9 +19538,9 @@ function rbBuildGranCanariaRoute() {
     {
       code: 'ES', name: 'Spain', days: 6, budget: 360, lat: 28.0083, lng: -15.5817,
       destinations: [
-        { name: 'Las Palmas de Gran Canaria', lat: 28.1235, lng: -15.4366 },
+        { name: 'Las Palmas de Gran Canaria', lat: 28.1235, lng: -15.4366 , notes: 'Playa de Las Canteras is a genuinely excellent urban beach (one of Europe\'s best), right in the city — walk the promenade toward sunset. Vegueta old town is the separate, worthwhile half-day for the cathedral and Casa de Colón.' },
         { name: 'Maspalomas dunes', lat: 27.7606, lng: -15.5875 },
-        { name: 'Roque Nublo', lat: 27.9600, lng: -15.5719 },
+        { name: 'Roque Nublo', lat: 27.9600, lng: -15.5719 , notes: 'The iconic volcanic monolith and symbol of Gran Canaria, set in the mountainous interior. It\'s a straightforward ~1hr-each-way walk from the La Goriona parking area; go early morning both for cooler temps and because clouds frequently move in by midday and obscure the rock.' },
         { name: 'Tejeda', lat: 27.9908, lng: -15.6144 },
       ],
       notes: "Entry: easyJet and Transavia fly direct from Amsterdam/Rotterdam to Gran Canaria; TUI fly runs winter-sun charters. 2 days in Las Palmas, 2 days on the Maspalomas dunes in the south, then 1-2 days up in the mountainous interior around Roque Nublo and Tejeda. Budget ~€50-70/day. Season: good year-round; the mountains are most pleasant October-April. Web check (2026-08): no permits needed anywhere on this route; the Roque Nublo parking area fills up early on weekends, so start early; the Maspalomas dunes are a protected nature reserve — stay on the marked paths. Same IGIC-vs-mainland-IVA price advantage on electronics/alcohol/tobacco/perfume as elsewhere in the Canaries (~7% vs 21%). Ongoing peaceful overtourism protests (\"Canarias tiene un límite\") since April 2024, continuing into 2025 — no direct safety concern, respectful behavior advised.",
@@ -19422,8 +19560,8 @@ function rbBuildLanzaroteFuerteventuraRoute() {
     {
       code: 'ES', name: 'Spain', days: 3, budget: 165, lat: 28.9985, lng: -13.6000,
       destinations: [
-        { name: 'Timanfaya National Park (Islote de Hilario)', lat: 28.9967, lng: -13.7167 },
-        { name: 'Arrecife', lat: 28.9630, lng: -13.5477 },
+        { name: 'Timanfaya National Park (Islote de Hilario)', lat: 28.9967, lng: -13.7167 , notes: 'A stark 1730s-eruption moonscape — the catch is you can\'t hike freely inside; the interior is only seen via the guided "Ruta de los Volcanes" bus tour departing from Islote de Hilario, where rangers also do the classic geothermal demos (brush bursting into flame, water flash-boiling in a pipe from ground heat). Arrive early since timed bus-tour slots can back up.' },
+        { name: 'Arrecife', lat: 28.9630, lng: -13.5477 , notes: 'Lanzarote\'s capital isn\'t a major sightseeing stop — treat it as a base. The one pleasant part is the Charco de San Ginés lagoon and adjoining promenade, good for an evening stroll and dinner.' },
         { name: 'Costa Teguise', lat: 28.9930, lng: -13.4881 },
       ],
       notes: "Entry: easyJet and Transavia fly direct from Amsterdam/Rotterdam to Lanzarote; TUI fly runs winter-sun charters. 1 day at Timanfaya, then 1-2 days around Arrecife and Costa Teguise. Budget ~€50-65/day. Web check (2026-08): Timanfaya can only be seen via the mandatory \"Ruta de los Volcanes\" bus tour — free wandering isn't allowed — and its two hiking trails require a guide plus an advance reservation. Camel rides are bookable separately near the park entrance; animal-welfare concerns around them are a live debate, worth knowing about before booking. Same Canaries-wide IGIC price advantage on electronics/alcohol/tobacco/perfume as elsewhere in this archipelago.",
@@ -19432,7 +19570,7 @@ function rbBuildLanzaroteFuerteventuraRoute() {
     {
       code: 'ES', name: 'Spain', days: 3, budget: 165, lat: 28.6919, lng: -13.8737,
       destinations: [
-        { name: 'Corralejo', lat: 28.7343, lng: -13.8672 },
+        { name: 'Corralejo', lat: 28.7343, lng: -13.8672 , notes: 'The draw is Corralejo Natural Park\'s large white sand dune system meeting turquoise water, plus it\'s the departure point for a short boat trip to Isla de Lobos (uninhabited islet, good snorkeling). Walk the dunes early morning before the wind (which this coast is known for) picks up in the afternoon.' },
         { name: 'El Cotillo', lat: 28.6841, lng: -14.0086 },
       ],
       notes: "2-3 days on Fuerteventura around Corralejo and El Cotillo. Budget ~€50-65/day. Season: good year-round; October-April brings the best consistent wind for surfing/kitesurfing. Web check (2026-08): ongoing peaceful overtourism protests (\"Canarias tiene un límite\") across the Canaries since April 2024, continuing into 2025 — no direct safety concern, respectful behavior advised.",
@@ -19452,8 +19590,8 @@ function rbBuildTenerifeLaGomeraRoute() {
     {
       code: 'ES', name: 'Spain', days: 5, budget: 300, lat: 28.2916, lng: -16.6291,
       destinations: [
-        { name: 'Santa Cruz de Tenerife', lat: 28.4636, lng: -16.2518 },
-        { name: 'Teide National Park', lat: 28.2723, lng: -16.6417 },
+        { name: 'Santa Cruz de Tenerife', lat: 28.4636, lng: -16.2518 , notes: 'The city itself (Calatrava\'s Auditorio de Tenerife, Plaza de España) doesn\'t need more than a few hours. The easily-missed highlight nearby is Anaga Rural Park — dramatic laurel-forest ridges and coastal cliffs a short drive away — worth carving out time for rather than skipping.' },
+        { name: 'Teide National Park', lat: 28.2723, lng: -16.6417 , notes: 'Spain\'s highest peak (3,715m) with a genuinely otherworldly volcanic landscape; the cable car takes you most of the way up. If you want the actual summit, you need a separate free National Park permit booked online in advance (slots release Mondays 7am Canary time, up to ~56 days ahead) — the cable car ticket alone does not include summit access. Go early for clearer skies before afternoon cloud rolls in.' },
         { name: 'Los Cristianos', lat: 28.0525, lng: -16.7192 },
       ],
       notes: "Entry: easyJet and Transavia fly direct from Amsterdam/Rotterdam to Tenerife South. 4-5 days on Tenerife in short form: Santa Cruz, Teide National Park, and the south-coast base at Los Cristianos (departure point for La Gomera). Budget ~€50-70/day. Web check (2026-08): the Teide cable car is ~€40 return, weather-dependent, book ahead; a free permit is mandatory for the last 200m to the summit (max ~200/day, apply via reservasparquesnacionales.es well ahead) — without it you still reach the 3,555m upper station.",
@@ -19484,7 +19622,7 @@ function rbBuildGranCanariaTenerifeRoute() {
     {
       code: 'ES', name: 'Spain', days: 4, budget: 260, lat: 28.0083, lng: -15.5817,
       destinations: [
-        { name: 'Las Palmas de Gran Canaria', lat: 28.1235, lng: -15.4366 },
+        { name: 'Las Palmas de Gran Canaria', lat: 28.1235, lng: -15.4366 , notes: 'Playa de Las Canteras is a genuinely excellent urban beach (one of Europe\'s best), right in the city — walk the promenade toward sunset. Vegueta old town is the separate, worthwhile half-day for the cathedral and Casa de Colón.' },
         { name: 'Maspalomas dunes', lat: 27.7606, lng: -15.5875 },
       ],
       notes: "Entry: easyJet and Transavia fly direct from Amsterdam/Rotterdam to Gran Canaria. 4-5 days: Las Palmas plus the Maspalomas dunes. Budget ~€55-75/day.",
@@ -19493,8 +19631,8 @@ function rbBuildGranCanariaTenerifeRoute() {
     {
       code: 'ES', name: 'Spain', days: 4, budget: 260, lat: 28.2916, lng: -16.6291,
       destinations: [
-        { name: 'Santa Cruz de Tenerife', lat: 28.4636, lng: -16.2518 },
-        { name: 'Teide National Park', lat: 28.2723, lng: -16.6417 },
+        { name: 'Santa Cruz de Tenerife', lat: 28.4636, lng: -16.2518 , notes: 'The city itself (Calatrava\'s Auditorio de Tenerife, Plaza de España) doesn\'t need more than a few hours. The easily-missed highlight nearby is Anaga Rural Park — dramatic laurel-forest ridges and coastal cliffs a short drive away — worth carving out time for rather than skipping.' },
+        { name: 'Teide National Park', lat: 28.2723, lng: -16.6417 , notes: 'Spain\'s highest peak (3,715m) with a genuinely otherworldly volcanic landscape; the cable car takes you most of the way up. If you want the actual summit, you need a separate free National Park permit booked online in advance (slots release Mondays 7am Canary time, up to ~56 days ahead) — the cable car ticket alone does not include summit access. Go early for clearer skies before afternoon cloud rolls in.' },
       ],
       notes: "4-5 days on Tenerife: Santa Cruz and Teide National Park. Budget ~€55-75/day. Web check (2026-08): same Teide cable-car/summit-permit caveat as the standalone Tenerife route (~€40 return cable car, weather-dependent; free summit permit via reservasparquesnacionales.es, apply well ahead).",
       transport_to_next: 'End of this route — fly home from Tenerife South or Tenerife North.',
@@ -19513,8 +19651,8 @@ function rbBuildCanaryIslandsRoute() {
     {
       code: 'ES', name: 'Spain', days: 4, budget: 260, lat: 28.2916, lng: -16.6291,
       destinations: [
-        { name: 'Santa Cruz de Tenerife', lat: 28.4636, lng: -16.2518 },
-        { name: 'Teide National Park', lat: 28.2723, lng: -16.6417 },
+        { name: 'Santa Cruz de Tenerife', lat: 28.4636, lng: -16.2518 , notes: 'The city itself (Calatrava\'s Auditorio de Tenerife, Plaza de España) doesn\'t need more than a few hours. The easily-missed highlight nearby is Anaga Rural Park — dramatic laurel-forest ridges and coastal cliffs a short drive away — worth carving out time for rather than skipping.' },
+        { name: 'Teide National Park', lat: 28.2723, lng: -16.6417 , notes: 'Spain\'s highest peak (3,715m) with a genuinely otherworldly volcanic landscape; the cable car takes you most of the way up. If you want the actual summit, you need a separate free National Park permit booked online in advance (slots release Mondays 7am Canary time, up to ~56 days ahead) — the cable car ticket alone does not include summit access. Go early for clearer skies before afternoon cloud rolls in.' },
       ],
       notes: "Entry: easyJet and Transavia fly direct from Amsterdam/Rotterdam to Tenerife South; TUI fly runs winter-sun charters. 4 days: Santa Cruz and Teide National Park. Budget ~€55-75/day average across this route, plus inter-island transport (see below). Web check (2026-08): Teide cable car ~€40 return, weather-dependent, book ahead; free summit permit mandatory for the last 200m (max ~200/day via reservasparquesnacionales.es) — book weeks ahead in high season, it sells out.",
       transport_to_next: "Binter Canarias flies between all the Canary Islands (~30-45 min each hop). Web check (2026-08): book ahead in high season.",
@@ -19522,8 +19660,8 @@ function rbBuildCanaryIslandsRoute() {
     {
       code: 'ES', name: 'Spain', days: 3, budget: 195, lat: 28.0083, lng: -15.5817,
       destinations: [
-        { name: 'Las Palmas de Gran Canaria', lat: 28.1235, lng: -15.4366 },
-        { name: 'Roque Nublo', lat: 27.9600, lng: -15.5719 },
+        { name: 'Las Palmas de Gran Canaria', lat: 28.1235, lng: -15.4366 , notes: 'Playa de Las Canteras is a genuinely excellent urban beach (one of Europe\'s best), right in the city — walk the promenade toward sunset. Vegueta old town is the separate, worthwhile half-day for the cathedral and Casa de Colón.' },
+        { name: 'Roque Nublo', lat: 27.9600, lng: -15.5719 , notes: 'The iconic volcanic monolith and symbol of Gran Canaria, set in the mountainous interior. It\'s a straightforward ~1hr-each-way walk from the La Goriona parking area; go early morning both for cooler temps and because clouds frequently move in by midday and obscure the rock.' },
       ],
       notes: "3 days: Las Palmas and the Roque Nublo/Tejeda highlands. Budget ~€55-75/day.",
       transport_to_next: "Binter Canarias flight on to Lanzarote (~40 min).",
@@ -19531,8 +19669,8 @@ function rbBuildCanaryIslandsRoute() {
     {
       code: 'ES', name: 'Spain', days: 3, budget: 195, lat: 28.9985, lng: -13.6000,
       destinations: [
-        { name: 'Timanfaya National Park (Islote de Hilario)', lat: 28.9967, lng: -13.7167 },
-        { name: 'Arrecife', lat: 28.9630, lng: -13.5477 },
+        { name: 'Timanfaya National Park (Islote de Hilario)', lat: 28.9967, lng: -13.7167 , notes: 'A stark 1730s-eruption moonscape — the catch is you can\'t hike freely inside; the interior is only seen via the guided "Ruta de los Volcanes" bus tour departing from Islote de Hilario, where rangers also do the classic geothermal demos (brush bursting into flame, water flash-boiling in a pipe from ground heat). Arrive early since timed bus-tour slots can back up.' },
+        { name: 'Arrecife', lat: 28.9630, lng: -13.5477 , notes: 'Lanzarote\'s capital isn\'t a major sightseeing stop — treat it as a base. The one pleasant part is the Charco de San Ginés lagoon and adjoining promenade, good for an evening stroll and dinner.' },
       ],
       notes: "3 days: Timanfaya National Park and Arrecife. Budget ~€55-75/day. Web check (2026-08): Timanfaya only via the mandatory \"Ruta de los Volcanes\" bus tour, no free wandering; book the tour ahead in high season, it sells out weeks in advance.",
       transport_to_next: "Fred Olsen Express or Naviera Armas ferry Playa Blanca-Corralejo (~25 min, frequent).",
@@ -19540,7 +19678,7 @@ function rbBuildCanaryIslandsRoute() {
     {
       code: 'ES', name: 'Spain', days: 3, budget: 195, lat: 28.6919, lng: -13.8737,
       destinations: [
-        { name: 'Corralejo', lat: 28.7343, lng: -13.8672 },
+        { name: 'Corralejo', lat: 28.7343, lng: -13.8672 , notes: 'The draw is Corralejo Natural Park\'s large white sand dune system meeting turquoise water, plus it\'s the departure point for a short boat trip to Isla de Lobos (uninhabited islet, good snorkeling). Walk the dunes early morning before the wind (which this coast is known for) picks up in the afternoon.' },
       ],
       notes: "3 days around Corralejo on Fuerteventura. Budget ~€55-75/day. Season: October-May for hiking, June-September fine for beach time. Web check (2026-08): build in at least 1 buffer day somewhere across the crossings for weather delays (cable car/ferries); book the Teide permit and Timanfaya tour well ahead, both sell out weeks in advance in high season. Same Canaries-wide IGIC price advantage on electronics/alcohol/tobacco/perfume throughout this route. Ongoing peaceful overtourism protests (\"Canarias tiene un límite\") since April 2024, continuing into 2025 — no direct safety concern, respectful behavior advised.",
       transport_to_next: 'End of this route — fly home from Fuerteventura, or back via Gran Canaria/Tenerife.',
@@ -21569,7 +21707,7 @@ function rbBuildBalkanRoadtripSerbiaNMacedoniaAlbaniaKosovoRoute() {
     {
       code: 'RS', name: 'Serbia', days: 3, budget: 105, lat: 44.8225, lng: 20.4506,
       destinations: [
-        { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 },
+        { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 , notes: 'The fortress park sits right where the Sava meets the Danube — walk to the ledge near the Pobednik monument for the best river-confluence view, ideally about an hour before sunset when it\'s free and uncrowded.' },
       ],
       notes: "Belgrade (2-3 days) as the opener. Budget ~€35/day. This is a deliberately different, more southeastern country set than Grand Balkan Roadtrip (14 days) 🏔️ (rbBuildGrandBalkanRoadtripRoute, built earlier in batch 15b) — Serbia/North Macedonia/Albania/Kosovo here, no Slovenia/Croatia/Bosnia/Montenegro, so no overlap with that route.",
       transport_to_next: 'Overland (bus/rental car) south towards Skopje — a real non-Schengen/non-EU border crossing with an actual passport check, unlike the Schengen-internal hops in most of this batch\'s other combo routes.',
@@ -21611,7 +21749,7 @@ function rbBuildBalkanRoadtripSerbiaNMacedoniaAlbaniaKosovoRoute() {
     {
       code: 'RS', name: 'Serbia', days: 1, budget: 35, lat: 44.8225, lng: 20.4506,
       destinations: [
-        { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 },
+        { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 , notes: 'The fortress park sits right where the Sava meets the Danube — walk to the ledge near the Pobednik monument for the best river-confluence view, ideally about an hour before sunset when it\'s free and uncrowded.' },
       ],
       notes: "A short return stop in Belgrade — buffer day for the long overland leg back from Prizren (~350km) and the border-crossing friction flagged above, before flying home. Budget ~€35/day.",
       transport_to_next: 'End of this route — fly home from Belgrade.',

@@ -30,6 +30,41 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   already present in the existing data, no change needed to how batches insert notes or build
   their migration functions.
 
+- **Per-destination notes, batch 34 — Canary Islands (10-14 days) (2026-09-18)** — a small
+  4-leg/7-destination combo route, researched in a single pass (none had notes yet). High-leverage
+  shared-signature batch: every destination recurs across the standalone single-island routes
+  (Tenerife, Gran Canaria, Lanzarote, Fuerteventura) and the Canary Islands + Balearics combo.
+  Same generic name-matching migration (`rbMigrateCanaryIslandsDestinationNotes()`) — 6 routes
+  confirmed touched in the live simulation. (Note: the plan queue's top two items, North India 🕌
+  and India & Himalaya Expedition 🏔️, were checked first and turned out to already be fully
+  researched in source — the only gap is Delhi's deliberate no-note, the same permanent tracker
+  quirk flagged in batch 24. Skipped straight to the next real items below.) App-wide total: 2651
+  destination-slots filled across 332 routes. 306/741 signatures done.
+
+- **Per-destination notes, batch 33 — Madeira + Porto Santo (7-10 days) (2026-09-18)** — a small
+  2-leg/7-destination combo route, researched in a single pass (none had notes yet).
+  Shared-signature batch: the Madeira core (Funchal/Monte/Porto Moniz/Seixal/São Vicente/25
+  Fontes) recurs verbatim in the standalone "Madeira (5-7 days)" route. Same generic name-matching
+  migration (`rbMigrateMadeiraPortoSantoDestinationNotes()`) — 2 routes confirmed touched in the
+  live simulation.
+
+- **Per-destination notes, batch 32 — Faroe Islands + Iceland (9 days) (2026-09-18)** — a small
+  2-leg/7-destination combo route — Tórshavn already had a note from an earlier batch, so only 6
+  destinations were newly researched. High-leverage shared-signature batch:
+  Reykjavík/Þingvellir/Geysir/Gullfoss/Blue Lagoon recur across most other Iceland routes
+  (Reykjavík + Golden Circle, the South Iceland/Ring Road variants). Same generic name-matching
+  migration (`rbMigrateFaroeIcelandDestinationNotes()`) — 7 routes confirmed touched in the live
+  simulation.
+
+- **Per-destination notes, batch 31 — Serbia + Montenegro + Bosnia (12 days) (2026-09-18)** — a
+  small 3-leg/7-destination combo route — Sarajevo and Kotor already had notes from earlier
+  batches, so only 5 destinations were newly researched. Shared-signature batch: this content
+  (Belgrade, Zlatibor, bare "Mostar") recurs across several other Serbia/Bosnia combo routes. Same
+  generic name-matching migration (`rbMigrateSerbiaMontenegroBosniaDestinationNotes()`) — 12
+  routes confirmed touched in the live simulation, the highest leverage of this group despite the
+  plan showing it as leverage 1 — a reminder the queue table's leverage count can undercount reuse
+  that isn't captured by whole-route signature matching.
+
 - **Per-destination notes, batch 30 — France + Switzerland + Italy (10-14 days) (2026-09-17)** —
   a small 5-leg/9-destination combo route, researched in a single pass. Same generic
   name-matching migration (`rbMigrateFranceSwitzerlandItalyDestinationNotes()`) — 6 routes
