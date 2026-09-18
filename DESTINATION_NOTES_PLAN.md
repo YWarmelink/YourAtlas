@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 489 / 741 signatures.**
+- **Done so far: 504 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -249,7 +249,7 @@ Sorted alphabetically by country code.
 - [x] **AT** (5 dest): Innsbruck/Tyrol, Salzburg, Berchtesgaden/Königssee, Salzkammergut, Grossglockner High Alpine Road — routes: Central European Grand Roadtrip 🚗
 - [ ] **AT** (3 dest): Linz, Salzkammergut (Hallstatt), Vienna — routes: Czechia + Austria (9 days) 🏔️
 - [ ] **AT** (1 dest): Salzburg (old town, Hohensalzburg Fortress) — routes: Germany + Austria + Slovenia (10-14 days) 🥨
-- [ ] **AT** (2 dest): Salzburg, Innsbruck — routes: Grand European Roadtrip (14-21 days) 🪣
+- [x] **AT** (2 dest): Salzburg, Innsbruck — routes: Grand European Roadtrip (14-21 days) 🪣
 - [ ] **AT** (3 dest): Feldkirch, Bregenz / Lake Constance (Bodensee), Innsbruck (optional) — routes: Liechtenstein + Austria + Switzerland (5 days) 🚞
 - [x] **AT** (1 dest): Salzburg — routes: Salzburg + Berchtesgaden + Hallstatt (5 days) 🛥️
 - [ ] **AT** (1 dest): Hallstatt — routes: Salzburg + Berchtesgaden + Hallstatt (5 days) 🛥️
@@ -284,7 +284,7 @@ Sorted alphabetically by country code.
 - [x] **CH** (4 dest): Lucerne/Lake Lucerne, Interlaken, Lauterbrunnen, Bernese Oberland — routes: Central European Grand Roadtrip 🚗
 - [x] **CH** (1 dest): Geneva (old town, lake) — routes: France + Switzerland + Italy (10-14 days) 🗻
 - [x] **CH** (3 dest): Täsch (parking), Zermatt (car-free), Matterhorn / Mattertal — routes: France + Switzerland + Italy (10-14 days) 🗻
-- [ ] **CH** (1 dest): Interlaken / Lauterbrunnen — routes: Grand European Roadtrip (14-21 days) 🪣
+- [x] **CH** (1 dest): Interlaken / Lauterbrunnen — routes: Grand European Roadtrip (14-21 days) 🪣
 - [x] **CH** (1 dest): Interlaken — routes: Interlaken + Lauterbrunnen + Grindelwald (6 days) 🪂
 - [ ] **CH** (2 dest): Lauterbrunnen (Trümmelbach Falls), Mürren / Gimmelwald (car-free) — routes: Interlaken + Lauterbrunnen + Grindelwald (6 days) 🪂
 - [ ] **CH** (3 dest): Grindelwald, First Cliff Walk, Bachalpsee — routes: Interlaken + Lauterbrunnen + Grindelwald (6 days) 🪂
@@ -315,17 +315,17 @@ Sorted alphabetically by country code.
 - [ ] **DE** (3 dest): Brandenburg Gate, Museum Island, Berlin Wall Memorial — routes: Central Europe Roadtrip (14 days) 🚂
 - [x] **DE** (3 dest): Neuschwanstein, Garmisch-Partenkirchen, Zugspitze — routes: Central European Grand Roadtrip 🚗
 - [x] **DE** (2 dest): Dresden, Saxon Switzerland — routes: Central European Grand Roadtrip 🚗
-- [ ] **DE** (5 dest): Cologne (Dom, Altstadt), Bonn (Beethoven-Haus), Rüdesheim am Rhein, Bacharach, Loreley — routes: Cologne + Bonn + Rhine (4 days) 🛳️
+- [x] **DE** (5 dest): Cologne (Dom, Altstadt), Bonn (Beethoven-Haus), Rüdesheim am Rhein, Bacharach, Loreley — routes: Cologne + Bonn + Rhine (4 days) 🛳️
 - [ ] **DE** (2 dest): Dresden (Altstadt, Frauenkirche, Zwinger), Bastei Bridge / Rathen (Saxon Switzerland NP) — routes: Dresden + Saxon Switzerland (4 days) 🧗
 - [ ] **DE** (5 dest): Lindau (Lake Constance), Füssen, Garmisch-Partenkirchen, Chiemsee / Prien am Chiemsee, Berchtesgaden — routes: German Alpine Road / Deutsche Alpenstraße (9 days) 🏞️
 - [x] **DE** (2 dest): Garmisch-Partenkirchen, Füssen / Hohenschwangau (Neuschwanstein) — routes: Germany + Austria + Italy (10-14 days) 🏔️
 - [x] **DE** (2 dest): Dresden, Bastei Bridge / Saxon Switzerland NP — routes: Germany: Berlin + Dresden + Bavaria (9 days) 🚂
 - [x] **DE** (3 dest): Munich, Garmisch-Partenkirchen, Füssen / Hohenschwangau (Neuschwanstein) — routes: Germany: Berlin + Dresden + Bavaria (9 days) 🚂
-- [ ] **DE** (2 dest): Rüdesheim am Rhein / Loreley (Rhine Valley), Munich / Neuschwanstein (Bavaria) — routes: Grand European Roadtrip (14-21 days) 🪣
+- [x] **DE** (2 dest): Rüdesheim am Rhein / Loreley (Rhine Valley), Munich / Neuschwanstein (Bavaria) — routes: Grand European Roadtrip (14-21 days) 🪣
 - [ ] **DE** (2 dest): Hamburg (Speicherstadt/HafenCity), Lübeck (optional day trip) — routes: Hamburg (4 days) ⚓
-- [ ] **DE** (4 dest): Trier (Porta Nigra), Bernkastel-Kues, Cochem, Burg Eltz — routes: Moselle Valley (4 days) 🍇
-- [ ] **DE** (6 dest): Cologne, Bonn, Rüdesheim am Rhein, Bacharach, Loreley, Koblenz — routes: Rhine + Moselle (5 days) 🚤
-- [ ] **DE** (3 dest): Cochem, Bernkastel-Kues, Trier — routes: Rhine + Moselle (5 days) 🚤
+- [x] **DE** (4 dest): Trier (Porta Nigra), Bernkastel-Kues, Cochem, Burg Eltz — routes: Moselle Valley (4 days) 🍇
+- [x] **DE** (6 dest): Cologne, Bonn, Rüdesheim am Rhein, Bacharach, Loreley, Koblenz — routes: Rhine + Moselle (5 days) 🚤
+- [x] **DE** (3 dest): Cochem, Bernkastel-Kues, Trier — routes: Rhine + Moselle (5 days) 🚤
 - [ ] **DE** (5 dest): Würzburg, Rothenburg ob der Tauber, Nördlingen, Augsburg, Füssen — routes: Romantic Road (6 days) 🏰
 - [ ] **DK** (5 dest): Nyhavn, Tivoli Gardens, Strøget, Christiania, Rosenborg Castle — routes: Copenhagen (4 days) 🧜‍♀️
 - [ ] **DK** (4 dest): Copenhagen (Nyhavn), Roskilde (Viking Ship Museum), Louisiana Museum (Humlebæk), Møns Klint — routes: Copenhagen + Zealand (5 days) 🖼️
@@ -334,7 +334,7 @@ Sorted alphabetically by country code.
 - [x] **DK** (2 dest): Copenhagen (Nyhavn), Tivoli Gardens — routes: Denmark + Sweden + Norway Overland (12 days) 🌉
 - [x] **DK** (4 dest): Nyhavn, Tivoli Gardens, Christiania, Torvehallerne — routes: Nordic Arctic Expedition ❄️
 - [x] **DK** (1 dest): Copenhagen (Nyhavn) — routes: Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️
-- [ ] **EE** (3 dest): Tallinn (Old Town), Lahemaa National Park, Kuressaare Castle (Saaremaa) — routes: Baltic States Roadtrip (10-14 days) 🚗
+- [x] **EE** (3 dest): Tallinn (Old Town), Lahemaa National Park, Kuressaare Castle (Saaremaa) — routes: Baltic States Roadtrip (10-14 days) 🚗
 - [ ] **EE** (4 dest): Tallinn (Old Town), Lahemaa National Park, Kuressaare Castle (Saaremaa), Muhu-Virtsu ferry link — routes: Estonia (5-7 days) 🏰
 - [x] **ES** (7 dest): Málaga (fly in), Ronda, Cádiz, Jerez de la Frontera, Seville, Córdoba, Granada — routes: Andalusia Roadtrip (9 days) 🚗
 - [x] **ES** (2 dest): Seville (Alcázar & Cathedral), Granada (Alhambra) — routes: Andalusia: Seville + Granada (5 days) 🏰
@@ -471,7 +471,7 @@ Sorted alphabetically by country code.
 - [x] **HR** (5 dest): Zagreb, Plitvice Lakes National Park, Zadar, Split (Diocletian's Palace), Dubrovnik Old Town — routes: Croatia North to South (9 days) 🧭
 - [ ] **HR** (5 dest): Dubrovnik Old Town, Lokrum Island, Elafiti Islands (Lopud), Cavtat, Trsteno Arboretum — routes: Dubrovnik + Surroundings (5 days) 🏛️
 - [x] **HR** (3 dest): Zagreb, Plitvice Lakes National Park, Zadar / Split (choose one) — routes: Grand Balkan Roadtrip (14 days) 🏔️
-- [ ] **HR** (2 dest): Istria (Rovinj/Pula), Plitvice Lakes National Park — routes: Grand European Roadtrip (14-21 days) 🪣
+- [x] **HR** (2 dest): Istria (Rovinj/Pula), Plitvice Lakes National Park — routes: Grand European Roadtrip (14-21 days) 🪣
 - [ ] **HR** (3 dest): Plitvice Lakes National Park, Zagreb, Rovinj (optional coastal extension) — routes: Hungary + Slovenia + Croatia (9 days) 🧭
 - [ ] **HR** (5 dest): Pula (Arena), Rovinj, Poreč, Motovun, Grožnjan — routes: Istria (6 days) 🍇
 - [ ] **HR** (3 dest): Zagreb, Plitvice Lakes National Park, Rastoke (optional) — routes: Plitvice + Zagreb (6 days) 🏞️
@@ -514,11 +514,11 @@ Sorted alphabetically by country code.
 - [ ] **IT** (3 dest): Egyptian Museum, Mole Antonelliana, Historic centre — routes: Dolomites & North Italy 🚡
 - [x] **IT** (5 dest): Ortisei / Val Gardena (base), Alpe di Siusi, Seceda, Passo Gardena, Vallunga — routes: Dolomites (6 days) ⛰️
 - [x] **IT** (8 dest): Passo Valparola, Passo Falzarego, Cortina d'Ampezzo (base), Tre Cime di Lavaredo, Cadini di Misurina, Lago di Braies, Cinque Torri, Passo Giau — routes: Dolomites (6 days) ⛰️
-- [ ] **IT** (8 dest): Florence — Uffizi Gallery, Florence — Duomo (dome climb), Florence — Ponte Vecchio, Florence — Palazzo Vecchio, Siena (day trip), Chianti wine tasting (day trip), San Gimignano (day trip), Pisa (day trip) — routes: Florence + Tuscany (4 days) 🎨
+- [x] **IT** (8 dest): Florence — Uffizi Gallery, Florence — Duomo (dome climb), Florence — Ponte Vecchio, Florence — Palazzo Vecchio, Siena (day trip), Chianti wine tasting (day trip), San Gimignano (day trip), Pisa (day trip) — routes: Florence + Tuscany (4 days) 🎨
 - [x] **IT** (2 dest): Lake Como / Bellagio, Varenna — routes: France + Switzerland + Italy (10-14 days) 🗻
 - [x] **IT** (3 dest): Bolzano, Val Gardena / Ortisei, Cortina d'Ampezzo — routes: Germany + Austria + Italy (10-14 days) 🏔️
 - [x] **IT** (2 dest): Lake Garda / Sirmione, Verona (Arena, old town) — routes: Germany + Austria + Italy (10-14 days) 🏔️
-- [ ] **IT** (2 dest): Dolomites (Cortina d'Ampezzo / Tre Cime), Venice (Piazza San Marco) — routes: Grand European Roadtrip (14-21 days) 🪣
+- [x] **IT** (2 dest): Dolomites (Cortina d'Ampezzo / Tre Cime), Venice (Piazza San Marco) — routes: Grand European Roadtrip (14-21 days) 🪣
 - [x] **IT** (2 dest): Piazza San Marco, Rialto Bridge — routes: Italy + Slovenia + Croatia (10-14 days) ⛵
 - [x] **IT** (2 dest): Milan, Turin — routes: Italy Roadtrip (12 days) 🧀
 - [x] **IT** (3 dest): Parma, Modena, Bologna — routes: Italy Roadtrip (12 days) 🧀
@@ -584,19 +584,19 @@ Sorted alphabetically by country code.
 - [ ] **IT** (1 dest): Florence (hub) — routes: Tuscany (6 days) 🍇
 - [ ] **IT** (3 dest): Montalcino (base, wine country), Pienza, Montepulciano — routes: Tuscany (6 days) 🍇
 - [ ] **IT** (3 dest): St. Peter's Basilica, Vatican Museums, Sistine Chapel — routes: Vatican City Day Visit within a Rome Stay (1 day) 🕊️
-- [ ] **IT** (4 dest): Piazza San Marco, Rialto Bridge, Murano (half day), Burano (half day) — routes: Venice + Dolomites (5 days) 🎭
-- [ ] **IT** (4 dest): Cortina d'Ampezzo or Val Gardena (base), Tre Cime di Lavaredo area, Lago di Braies, Cinque Torri — routes: Venice + Dolomites (5 days) 🎭
+- [x] **IT** (4 dest): Piazza San Marco, Rialto Bridge, Murano (half day), Burano (half day) — routes: Venice + Dolomites (5 days) 🎭
+- [x] **IT** (4 dest): Cortina d'Ampezzo or Val Gardena (base), Tre Cime di Lavaredo area, Lago di Braies, Cinque Torri — routes: Venice + Dolomites (5 days) 🎭
 - [ ] **JE** (3 dest): St. Helier, Mont Orgueil Castle, Jersey War Tunnels (WWII) — routes: Jersey + Guernsey (Channel Islands) (4-5 days) 🏝️
 - [ ] **KR** (5 dest): Seoul, DMZ / Imjingak, Gyeongju, Busan, Jeju Island — routes: South Korea 🏯
 - [ ] **LI** (3 dest): Vaduz, Malbun, Triesenberg — routes: Liechtenstein + Austria + Switzerland (5 days) 🚞
 - [ ] **LI** (5 dest): Vaduz old town (Städtle pedestrian area), Vaduz Castle viewpoint, Kunstmuseum Liechtenstein, Liechtenstein Center, Malbun (day trip) — routes: Liechtenstein: Vaduz (2 days) 🏰
 - [x] **LK** (6 dest): Colombo, Sigiriya, Kandy, Ella, Yala National Park, Mirissa / Galle — routes: Sri Lanka 🐆
-- [ ] **LT** (3 dest): Vilnius (Old Town), Trakai Castle (day trip), Curonian Spit / Nida — routes: Baltic States Roadtrip (10-14 days) 🚗
+- [x] **LT** (3 dest): Vilnius (Old Town), Trakai Castle (day trip), Curonian Spit / Nida — routes: Baltic States Roadtrip (10-14 days) 🚗
 - [ ] **LT** (5 dest): Vilnius (Old Town), Trakai Castle, Kaunas, Klaipėda (Smiltynė ferry), Curonian Spit / Nida — routes: Lithuania (5-7 days) 🌊
 - [ ] **LU** (4 dest): Luxembourg City (Bock Casemates), Berdorf, Echternach, Vianden — routes: Luxembourg (4 days) 🪨
 - [x] **LU** (4 dest): Vianden, Luxembourg City, Berdorf (Müllerthal day trip), Echternach (Müllerthal day trip) — routes: Luxembourg + Ardennes (4 days) 🎖️
 - [x] **LU** (2 dest): Vianden, Luxembourg City — routes: South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️
-- [ ] **LV** (3 dest): Riga (Old Town), Sigulda / Turaida Castle / Gauja NP, Rundāle Palace (day trip) — routes: Baltic States Roadtrip (10-14 days) 🚗
+- [x] **LV** (3 dest): Riga (Old Town), Sigulda / Turaida Castle / Gauja NP, Rundāle Palace (day trip) — routes: Baltic States Roadtrip (10-14 days) 🚗
 - [ ] **LV** (5 dest): Riga (Old Town), Sigulda, Turaida Castle, Gauja National Park, Rundāle Palace — routes: Latvia (5-7 days) 🌲
 - [x] **MC** (3 dest): Monte Carlo Casino Square, Prince's Palace, Port Hercule — routes: Monaco + Côte d'Azur (4 days) 🎰
 - [x] **MC** (1 dest): Monte Carlo / Monaco-Ville — routes: Monaco + Nice + Provence (5 days) 🍇
@@ -768,12 +768,7 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| Rhine + Moselle (5 days) 🚤 | 9/9 | 0 |
-| Grand European Roadtrip (14-21 days) 🪣 | 9/12 | 0 |
-| Baltic States Roadtrip (10-14 days) 🚗 | 9/9 | 0 |
 | Dolomites & North Italy 🚡 | 8/24 | 0 |
-| Florence + Tuscany (4 days) 🎨 | 8/8 | 0 |
-| Venice + Dolomites (5 days) 🎭 | 8/8 | 0 |
 | Adriatic Roadtrip (14 days) 🌊 | 8/11 | 0 |
 | Western Canada: Rockies & Vancouver 🏔️ | 7/18 | 0 |
 | Paris (4 days) 🗼 | 7/7 | 0 |
@@ -808,6 +803,11 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | ABC Islands 🦩 | 5/10 | 0 |
 | South Korea 🏯 | 5/5 | 0 |
 | Maldives 🏝️ | 5/5 | 0 |
-| ... 147 more routes with open destinations ... | | |
+| United Arab Emirates 🏙️ | 5/5 | 0 |
+| Seychelles 🌺 | 5/5 | 0 |
+| Palau 🦈 | 5/5 | 0 |
+| Uruguay 🧉 | 5/5 | 0 |
+| Guyana 🦦 | 5/5 | 0 |
+| ... 140 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

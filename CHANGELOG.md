@@ -12,6 +12,29 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batches 106-110 — Rhine + Moselle cluster, Grand European Roadtrip
+  leftovers, Baltic States Roadtrip, Florence + Tuscany, Venice + Dolomites leftovers
+  (2026-09-18)** — 20 destinations researched, plus name-variant reuse closing out 5 routes
+  entirely in one round.
+  - Batch 106: Rhine + Moselle cluster (fresh; same real places reused across 3 sibling routes —
+    Cologne + Bonn + Rhine, Moselle Valley, Rhine + Moselle) — Cologne, Bonn, Rüdesheim am Rhein,
+    Bacharach, Loreley, Trier, Bernkastel-Kues, Cochem, Burg Eltz, Koblenz
+    (`rbMigrateRhineMoselleClusterDestinationNotes()`)
+  - Batch 107: Grand European Roadtrip leftovers — 6 combo/reuse notes composed from
+    already-written canonical notes (Rüdesheim/Loreley, Munich/Neuschwanstein,
+    Interlaken/Lauterbrunnen, Cortina/Tre Cime, Piazza San Marco, Rovinj/Pula) plus Innsbruck
+    (`rbMigrateGrandEuropeanRoadtripLeftoverDestinationNotes()`)
+  - Batch 108: Baltic States Roadtrip (fresh) — Lahemaa NP, Kuressaare Castle, Sigulda/Turaida
+    Castle/Gauja NP, Rundāle Palace, Trakai Castle, Curonian Spit/Nida
+    (`rbMigrateBalticStatesRoadtripDestinationNotes()`)
+  - Batch 109: Florence + Tuscany — 4 fresh Florence facets (Uffizi, Duomo dome climb, Ponte
+    Vecchio, Palazzo Vecchio) plus Pisa (fresh) and 3 Siena/Chianti/San Gimignano reuse
+    (`rbMigrateFlorenceTuscanyDestinationNotes()`)
+  - Batch 110: Venice + Dolomites leftovers — Murano/Burano split into their own tailored notes,
+    a fresh Cortina/Val Gardena base note, and a Tre Cime reuse
+    (`rbMigrateVeniceDolomitesLeftoverDestinationNotes()`)
+  App-wide total: 3441 destination-slots filled across 403 routes. 504/741 signatures done.
+
 - **Per-destination notes, batches 102-105 — Loire Valley Castles, Campania: Naples + Amalfi
   Coast, Provence to Côte d'Azur leftovers, Portugal + Spain Roadtrip leftovers (2026-09-18)** —
   14 destinations researched, plus 7 reuse/combo leftovers closing out two sibling routes.

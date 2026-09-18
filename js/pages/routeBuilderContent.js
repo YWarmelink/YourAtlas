@@ -11841,6 +11841,182 @@ function rbMigratePortugalSpainLeftoverDestinationNotes() {
 }
 
 /**
+ * Batch 106 (2026-09-18) -- Rhine + Moselle cluster (Cologne + Bonn + Rhine, Moselle Valley,
+ * Rhine + Moselle) -- 9 fresh destinations researched, applied under 13 name-string variants to
+ * close out all three sibling routes at once (each route reuses the same real places under
+ * slightly different exact strings). Same generic name-matching migration pattern as the other
+ * batches.
+ */
+function rbMigrateRhineMoselleClusterDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_RHINE_MOSELLE_CLUSTER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_RHINE_MOSELLE_CLUSTER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Cologne (Dom, Altstadt)': "Cologne Cathedral (Kölner Dom), Germany's most-visited landmark, took over 600 years to complete and survived WWII bombing as one of the few structures left standing near the rail yards; climb the south tower's 533 steps for a rooftop view, and wander the Altstadt's riverside Fischmarkt square below it.",
+    'Bonn (Beethoven-Haus)': "Beethoven's birth house, a modest townhouse near the old town, holds the world's largest collection of his personal artifacts including several original instruments and manuscripts; through April 2027 it also runs a temporary \"Beethoven by Warhol\" exhibition pairing the composer with pop-art portraits.",
+    'Rüdesheim am Rhein': "Gateway town to the Rhine Gorge, best known for the Drosselgasse alley of wine taverns and the Niederwalddenkmal monument reachable by cable car (Seilbahn) with sweeping views back over the vineyards and river.",
+    'Bacharach': "One of the best-preserved medieval walled towns on the Rhine, with half-timbered houses and the ruined Wernerkapelle chapel; the short KD line panoramic cruise from here past the Loreley rock is the classic way to see the gorge without driving it.",
+    'Loreley': "A dramatic slate rock cliff over the Rhine's narrowest, deepest bend, tied to the legend of a siren who lured sailors to their deaths on the rocks below; the viewpoint above is reachable by a short walk or drive, and the open-air amphitheatre atop it hosts summer concerts.",
+    "Trier (Porta Nigra)": "Germany's oldest city, founded by the Romans; the Porta Nigra, a massive blackened Roman city gate, is the best-preserved north of the Alps and anchors a compact old town that also holds Roman baths and a UNESCO-listed basilica.",
+    'Bernkastel-Kues': "A postcard half-timbered Moselle wine town split by the river, overlooked by the ruined Burg Landshut castle on the hill above; climb up for the valley view, then taste at one of the many riesling wineries lining the waterfront.",
+    'Cochem': "The Moselle's most-photographed town, dominated by the reconstructed Reichsburg castle on a hill directly above the old town; the castle's 19th-century neo-Gothic interior is only seen on a guided tour, but the view up at the silhouette from the riverside promenade is free.",
+    'Burg Eltz': "A fairy-tale castle still owned by the same family after 33 generations, tucked in a forested side valley off the Moselle rather than on the river itself; no car access to the castle — park at Antoniusweg and either shuttle or walk 30-40 minutes, and the interior is only seen on an included guided tour (bring cash, no cards).",
+    'Cologne': "Cologne Cathedral (Kölner Dom), Germany's most-visited landmark, took over 600 years to complete and survived WWII bombing as one of the few structures left standing near the rail yards; climb the south tower's 533 steps for a rooftop view, and wander the Altstadt's riverside Fischmarkt square below it.",
+    'Bonn': "Beethoven's birth house, a modest townhouse near the old town, holds the world's largest collection of his personal artifacts including several original instruments and manuscripts; through April 2027 it also runs a temporary \"Beethoven by Warhol\" exhibition pairing the composer with pop-art portraits.",
+    'Koblenz': "Sits at the Deutsches Eck, the scenic confluence where the Moselle meets the Rhine, marked by a huge equestrian monument to Kaiser Wilhelm I; ride the cable car across the Rhine to the Ehrenbreitstein fortress above town for the best view down over the confluence itself.",
+    'Trier': "Germany's oldest city, founded by the Romans; the Porta Nigra, a massive blackened Roman city gate, is the best-preserved north of the Alps and anchors a compact old town that also holds Roman baths and a UNESCO-listed basilica.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 107 (2026-09-18) -- Grand European Roadtrip (14-21 days) leftovers -- 7 destinations,
+ * mostly combo notes composed from already-written canonical notes for their component places
+ * (Rüdesheim/Loreley, Munich/Neuschwanstein, Interlaken/Lauterbrunnen, Cortina/Tre Cime, Piazza
+ * San Marco, Rovinj/Pula), plus a plain Innsbruck reuse. Closes this route out entirely. Same
+ * generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateGrandEuropeanRoadtripLeftoverDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_GRAND_EUROPEAN_ROADTRIP_LEFTOVER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_GRAND_EUROPEAN_ROADTRIP_LEFTOVER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    "Rüdesheim am Rhein / Loreley (Rhine Valley)": "Rüdesheim's Drosselgasse wine-tavern alley and Niederwalddenkmal cable car pair with the dramatic Loreley cliff further downriver, tied to the legend of a siren luring sailors onto the rocks below; a short scenic drive or the KD line panoramic cruise link the two.",
+    "Munich / Neuschwanstein (Bavaria)": "Munich's Marienplatz/Frauenkirche old town (climb St. Peter's church tower for the best rooftop view, skipping the glockenspiel crowd) pairs with Ludwig II's fairy-tale Neuschwanstein castle near Füssen, about 1h40 further south — the direct inspiration for Disney's Cinderella castle. Book Neuschwanstein's timed-entry ticket online well ahead, since summer slots can sell out weeks in advance, and photograph it from the Marienbrücke bridge over the gorge behind it.",
+    'Innsbruck': "The Nordkette cable car climbs directly from Innsbruck's medieval old town (Golden Roof) into high alpine terrain in under 20 minutes — genuine high-mountain scenery reachable without leaving the city.",
+    "Interlaken / Lauterbrunnen": "Interlaken itself is mainly a logistics/adventure-sports base between Lake Thun and Lake Brienz; the real scenery is a few minutes further into the sheer-walled Lauterbrunnen valley and its 72 waterfalls (most famously Staubbach Falls dropping straight past the village) — base in car-free Wengen or Mürren above it if time allows, rather than staying down in Interlaken.",
+    "Dolomites (Cortina d'Ampezzo / Tre Cime)": "Cortina d'Ampezzo, which just hosted the 2026 Winter Olympics (book accommodation early, prices are still elevated), is the base for the Tre Cime di Lavaredo loop — a roughly 3-4 hour hike past Rifugio Locatelli around the three iconic limestone peaks, or drive up via the paid Rifugio Auronzo toll road (~€30/car, fills its lot early).",
+    'Venice (Piazza San Marco)': "St Mark's Basilica and the Doge's Palace anchor the square; the basilica itself is free to enter, but a skip-the-line booking avoids the worst of the queue.",
+    'Istria (Rovinj/Pula)': "Rovinj's car-free old town on a small peninsula (park outside and climb the St. Euphemia church bell tower for the view) pairs with Pula's Roman Arena, one of the best-preserved amphitheaters in the world and still used for concerts — check the events calendar, since summer setup can restrict daytime access.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 108 (2026-09-18) -- Baltic States Roadtrip (10-14 days) -- 6 destinations researched
+ * (fresh; Tallinn/Riga/Vilnius old towns already had notes from the sibling Baltics + Poland
+ * route). Closes this route out entirely. Same generic name-matching migration pattern as the
+ * other batches.
+ */
+function rbMigrateBalticStatesRoadtripDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_BALTIC_STATES_ROADTRIP_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_BALTIC_STATES_ROADTRIP_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Lahemaa National Park': "Estonia's largest national park, a mix of bog, forest and coastline dotted with former Soviet-era border-guard watchtowers and old manor estates like Palmse and Sagadi; the Viru Bog boardwalk trail is the easiest short walk for a taste of the raised-bog landscape.",
+    'Kuressaare Castle (Saaremaa)': "A remarkably intact 14th-century Livonian Order stone fortress on Saaremaa island, surrounded by a moat and star-shaped bastions; the car ferry from the mainland (book ahead in summer) is itself part of the trip out to Estonia's largest island.",
+    'Sigulda / Turaida Castle / Gauja NP': "Nicknamed \"Latvian Switzerland\" for its river gorge scenery; Turaida Castle's red-brick tower gives the best view over the Gauja valley, and the area is also known for its cable car crossing the gorge and, in winter, a bobsled track built for Soviet-era Olympic training.",
+    'Rundāle Palace (day trip)': "A Baroque summer palace designed by Rastrelli (the same architect behind St. Petersburg's Winter Palace), often called the \"Versailles of Latvia\"; the French-style formal gardens behind the palace are worth the extra hour beyond the interior room tour.",
+    'Trakai Castle (day trip)': "A red-brick island castle on a lake just outside Vilnius, built by the Grand Duchy of Lithuania and reachable by a short causeway walk or rented rowboat; the surrounding town is home to the Karaim, a small Turkic ethnic minority, whose traditional kibinai pastries are the local food to try.",
+    'Curonian Spit / Nida': "A UNESCO-listed 98km sand-dune peninsula shared with Russia's Kaliningrad exclave; Nida's shifting Parnidis dune is the highlight, and the seasonal car eco-toll (steep in peak summer, cheaper or free outside it) applies to drive onto the spit.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 109 (2026-09-18) -- Florence + Tuscany (4 days) -- 5 fresh Florence-facet/Pisa
+ * destinations researched, plus 3 reuse of existing Siena/Chianti/San Gimignano canonical
+ * notes under their "(day trip)"-suffixed name variants. Closes this route out entirely. Same
+ * generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateFlorenceTuscanyDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_FLORENCE_TUSCANY_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_FLORENCE_TUSCANY_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Florence — Uffizi Gallery': "Holds one of the world's great Renaissance art collections, including Botticelli's Birth of Venus and works by Michelangelo and Leonardo; book a timed-entry ticket weeks ahead, since walk-up lines can run several hours in high season.",
+    'Florence — Duomo (dome climb)': "Brunelleschi's dome, still the largest brick dome ever built, is climbed via a separate 463-step ticket from the free cathedral entry — book that dome slot first, since it sells out faster than general entry, and the climb rewards with the best rooftop panorama over the city's terracotta roofs.",
+    'Florence — Ponte Vecchio': "The medieval bridge lined with gold and jewelry shops, rebuilt after floods but spared by retreating German troops in WWII (unlike Florence's other bridges); the view of it from the neighboring Ponte Santa Trinita, especially at sunset, is the classic postcard shot.",
+    'Florence — Palazzo Vecchio': "The fortress-like former seat of Florentine government, still Florence's city hall today, with an over-the-top frescoed Salone dei Cinquecento inside; Michelangelo's original David once stood right outside its entrance (a copy stands there now, the original is in the Accademia) — climb the Arnolfo Tower for a quieter alternative view to the Duomo dome.",
+    'Siena (day trip)': "The shell-shaped Piazza del Campo hosts the Palio horse race twice a year (July 2 and Aug 16); climbing the Torre del Mangia gives the best rooftop view over the square.",
+    'Chianti wine tasting (day trip)': "A scenic drive through vineyard villages like Greve and Radda in Chianti; most estates expect tastings to be booked ahead rather than accepting walk-ins.",
+    'San Gimignano (day trip)': 'Its skyline of medieval stone towers (nicknamed "Medieval Manhattan") is best appreciated from just outside the walls around sunset, once the day-trip buses thin out.',
+    'Pisa (day trip)': "Best known for the Leaning Tower, one of four gleaming white marble buildings on the Piazza dei Miracoli (also the cathedral, baptistery and cemetery); book a timed slot to climb the tower itself well ahead, since daily visitor numbers are capped, and the tilt is most dramatic photographed from the lawn's northwest corner.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 110 (2026-09-18) -- Venice + Dolomites (5 days) leftovers -- 4 destinations: Murano and
+ * Burano split into their own tailored notes (previously only a combined "Murano/Burano" note
+ * existed elsewhere), a fresh Cortina/Val Gardena base-choice note, and a reuse of the canonical
+ * Tre Cime note. Closes this route out entirely. Same generic name-matching migration pattern as
+ * the other batches.
+ */
+function rbMigrateVeniceDolomitesLeftoverDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_VENICE_DOLOMITES_LEFTOVER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_VENICE_DOLOMITES_LEFTOVER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Murano (half day)': "The glass-blowing island, with furnace demonstrations at several workshops (many free, but expect a sales pitch afterward) and its own small glass museum.",
+    'Burano (half day)': "Known for its rows of brightly painted fishermen's houses (locals repaint them regularly to keep the colors vivid) and a centuries-old lace-making tradition, still demonstrated at the small lace museum on the main square.",
+    "Cortina d'Ampezzo or Val Gardena (base)": "Cortina d'Ampezzo — genteel, host of the 2026 Winter Olympics (book early, prices still elevated) — and Val Gardena, springboard for Alpe di Siusi, Europe's largest high-alpine meadow, are the two standard Dolomites bases; neither has a must-see sight in town itself, both are purely launch points for the surrounding hikes, passes and cable cars.",
+    'Tre Cime di Lavaredo area': "The three sheer limestone peaks are best seen on the ~10km loop trail past Rifugio Locatelli; driving up requires the paid Rifugio Auronzo toll road (~€30/car), which fills its lot early on summer mornings.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Two of batch 2's standalone routes were flagged as too exposed to their long-haul flight time
  * relative to trip length — Jordanië (8d, connecting flight) and Nieuw-Zeeland Zuidereiland (21d,
  * but 27-38h with multiple stops). Adds +2 days to each as a recovery/margin buffer, matching the
@@ -14390,11 +14566,11 @@ function rbBuildCologneBonnRhineRoute() {
     {
       code: 'DE', name: 'Germany', days: 4, budget: 400, lat: 50.9375, lng: 6.9603,
       destinations: [
-        { name: 'Cologne (Dom, Altstadt)', lat: 50.9375, lng: 6.9603 },
-        { name: 'Bonn (Beethoven-Haus)', lat: 50.7374, lng: 7.0982 },
-        { name: 'Rüdesheim am Rhein', lat: 49.9786, lng: 7.9256 },
-        { name: 'Bacharach', lat: 50.0552, lng: 7.7669 },
-        { name: 'Loreley', lat: 50.1386, lng: 7.7297 },
+        { name: 'Cologne (Dom, Altstadt)', lat: 50.9375, lng: 6.9603 , notes: 'Cologne Cathedral (Kölner Dom), Germany\'s most-visited landmark, took over 600 years to complete and survived WWII bombing as one of the few structures left standing near the rail yards; climb the south tower\'s 533 steps for a rooftop view, and wander the Altstadt\'s riverside Fischmarkt square below it.' },
+        { name: 'Bonn (Beethoven-Haus)', lat: 50.7374, lng: 7.0982 , notes: 'Beethoven\'s birth house, a modest townhouse near the old town, holds the world\'s largest collection of his personal artifacts including several original instruments and manuscripts; through April 2027 it also runs a temporary "Beethoven by Warhol" exhibition pairing the composer with pop-art portraits.' },
+        { name: 'Rüdesheim am Rhein', lat: 49.9786, lng: 7.9256 , notes: 'Gateway town to the Rhine Gorge, best known for the Drosselgasse alley of wine taverns and the Niederwalddenkmal monument reachable by cable car (Seilbahn) with sweeping views back over the vineyards and river.' },
+        { name: 'Bacharach', lat: 50.0552, lng: 7.7669 , notes: 'One of the best-preserved medieval walled towns on the Rhine, with half-timbered houses and the ruined Wernerkapelle chapel; the short KD line panoramic cruise from here past the Loreley rock is the classic way to see the gorge without driving it.' },
+        { name: 'Loreley', lat: 50.1386, lng: 7.7297 , notes: 'A dramatic slate rock cliff over the Rhine\'s narrowest, deepest bend, tied to the legend of a siren who lured sailors to their deaths on the rocks below; the viewpoint above is reachable by a short walk or drive, and the open-air amphitheatre atop it hosts summer concerts.' },
       ],
       notes: "Entry: own car from the Netherlands (Utrecht-Cologne ~2h12/222km, no toll). Cologne (2d: Dom, Altstadt) — Bonn as a stopover on the way south, not a there-and-back trip from Cologne, it already sits on the route (Beethoven-Haus, through April 2027 also a 'Beethoven by Warhol' exhibition) — Middle Rhine Valley (Rüdesheim/Bacharach/Loreley, 1-2d) with a short 1-2h panoramic cruise (e.g. Bacharach-St. Goar past the Loreley, KD line 25 April-4 October 2026) instead of a full-day cruise. Budget ~€90-115/day p.p. Season: May-June or September-October (grape harvest/autumn colours, less crowded than July-August). Cologne Cathedral requires a paid ticket for the interior from 1 July 2026 (new). Parking in the old town centres is scarce/expensive — use Park+Ride. No general toll for passenger cars on German Autobahns (the Pkw-Maut was ruled illegal by the EU Court in 2019 and never reintroduced; only trucks/buses >3.5t pay Lkw-Maut) — applies to every car-based route in this batch.",
       transport_to_next: 'End of this route — drive back to the Netherlands (~2h12).',
@@ -14413,10 +14589,10 @@ function rbBuildMoselleValleyRoute() {
     {
       code: 'DE', name: 'Germany', days: 4, budget: 340, lat: 49.7596, lng: 6.6441,
       destinations: [
-        { name: 'Trier (Porta Nigra)', lat: 49.7596, lng: 6.6441 },
-        { name: 'Bernkastel-Kues', lat: 49.9169, lng: 7.0692 },
-        { name: 'Cochem', lat: 50.1479, lng: 7.1653 },
-        { name: 'Burg Eltz', lat: 50.1017, lng: 7.3372 },
+        { name: 'Trier (Porta Nigra)', lat: 49.7596, lng: 6.6441 , notes: 'Germany\'s oldest city, founded by the Romans; the Porta Nigra, a massive blackened Roman city gate, is the best-preserved north of the Alps and anchors a compact old town that also holds Roman baths and a UNESCO-listed basilica.' },
+        { name: 'Bernkastel-Kues', lat: 49.9169, lng: 7.0692 , notes: 'A postcard half-timbered Moselle wine town split by the river, overlooked by the ruined Burg Landshut castle on the hill above; climb up for the valley view, then taste at one of the many riesling wineries lining the waterfront.' },
+        { name: 'Cochem', lat: 50.1479, lng: 7.1653 , notes: 'The Moselle\'s most-photographed town, dominated by the reconstructed Reichsburg castle on a hill directly above the old town; the castle\'s 19th-century neo-Gothic interior is only seen on a guided tour, but the view up at the silhouette from the riverside promenade is free.' },
+        { name: 'Burg Eltz', lat: 50.1017, lng: 7.3372 , notes: 'A fairy-tale castle still owned by the same family after 33 generations, tucked in a forested side valley off the Moselle rather than on the river itself; no car access to the castle — park at Antoniusweg and either shuttle or walk 30-40 minutes, and the interior is only seen on an included guided tour (bring cash, no cards).' },
       ],
       notes: "Entry: own car from the Netherlands (Maastricht-Trier ~2h/175km, the closest Moselle access from NL). Trier (Porta Nigra, Germany's oldest city) — Bernkastel-Kues (~30 min) — Cochem (~45 min further) — Burg Eltz. Budget ~€75-100/day p.p. Season: September-October for the Winzerfeste (wine harvest festivals) — busier on the narrow valley roads then. Burg Eltz is open 29 March-1 November 2026, 09:30-17:00; no car access to the castle itself — park at Antoniusweg (€4/car, cash) plus shuttle (€2 p.p., cash) or a 30-40 min walk; interior only by guided tour (included, continuous tours from 09:30, English available) — bring cash. No general Autobahn toll for cars (see Cologne + Bonn + Rhine (4 days) 🛳️'s notes).",
       transport_to_next: 'End of this route — drive back to the Netherlands (~2h).',
@@ -14435,12 +14611,12 @@ function rbBuildRhineMoselleRoute() {
     {
       code: 'DE', name: 'Germany', days: 3, budget: 285, lat: 50.9375, lng: 6.9603,
       destinations: [
-        { name: 'Cologne', lat: 50.9375, lng: 6.9603 },
-        { name: 'Bonn', lat: 50.7374, lng: 7.0982 },
-        { name: 'Rüdesheim am Rhein', lat: 49.9786, lng: 7.9256 },
-        { name: 'Bacharach', lat: 50.0552, lng: 7.7669 },
-        { name: 'Loreley', lat: 50.1386, lng: 7.7297 },
-        { name: 'Koblenz', lat: 50.3569, lng: 7.5890 },
+        { name: 'Cologne', lat: 50.9375, lng: 6.9603 , notes: 'Cologne Cathedral (Kölner Dom), Germany\'s most-visited landmark, took over 600 years to complete and survived WWII bombing as one of the few structures left standing near the rail yards; climb the south tower\'s 533 steps for a rooftop view, and wander the Altstadt\'s riverside Fischmarkt square below it.' },
+        { name: 'Bonn', lat: 50.7374, lng: 7.0982 , notes: 'Beethoven\'s birth house, a modest townhouse near the old town, holds the world\'s largest collection of his personal artifacts including several original instruments and manuscripts; through April 2027 it also runs a temporary "Beethoven by Warhol" exhibition pairing the composer with pop-art portraits.' },
+        { name: 'Rüdesheim am Rhein', lat: 49.9786, lng: 7.9256 , notes: 'Gateway town to the Rhine Gorge, best known for the Drosselgasse alley of wine taverns and the Niederwalddenkmal monument reachable by cable car (Seilbahn) with sweeping views back over the vineyards and river.' },
+        { name: 'Bacharach', lat: 50.0552, lng: 7.7669 , notes: 'One of the best-preserved medieval walled towns on the Rhine, with half-timbered houses and the ruined Wernerkapelle chapel; the short KD line panoramic cruise from here past the Loreley rock is the classic way to see the gorge without driving it.' },
+        { name: 'Loreley', lat: 50.1386, lng: 7.7297 , notes: 'A dramatic slate rock cliff over the Rhine\'s narrowest, deepest bend, tied to the legend of a siren who lured sailors to their deaths on the rocks below; the viewpoint above is reachable by a short walk or drive, and the open-air amphitheatre atop it hosts summer concerts.' },
+        { name: 'Koblenz', lat: 50.3569, lng: 7.5890 , notes: 'Sits at the Deutsches Eck, the scenic confluence where the Moselle meets the Rhine, marked by a huge equestrian monument to Kaiser Wilhelm I; ride the cable car across the Rhine to the Ehrenbreitstein fortress above town for the best view down over the confluence itself.' },
       ],
       notes: "Better ordering than simply gluing the two standalone routes together: Cologne/Bonn — Middle Rhine (Rüdesheim/Bacharach/Loreley) — Koblenz, the natural hinge point where the Moselle meets the Rhine. Own car from the Netherlands. Budget ~€85-110/day p.p. Season: May-June or September-October.",
       transport_to_next: 'Drive from Koblenz up the Moselle valley to Cochem (~45 min) — overland, no border crossing.',
@@ -14448,9 +14624,9 @@ function rbBuildRhineMoselleRoute() {
     {
       code: 'DE', name: 'Germany', days: 2, budget: 190, lat: 50.1479, lng: 7.1653,
       destinations: [
-        { name: 'Cochem', lat: 50.1479, lng: 7.1653 },
-        { name: 'Bernkastel-Kues', lat: 49.9169, lng: 7.0692 },
-        { name: 'Trier', lat: 49.7596, lng: 6.6441 },
+        { name: 'Cochem', lat: 50.1479, lng: 7.1653 , notes: 'The Moselle\'s most-photographed town, dominated by the reconstructed Reichsburg castle on a hill directly above the old town; the castle\'s 19th-century neo-Gothic interior is only seen on a guided tour, but the view up at the silhouette from the riverside promenade is free.' },
+        { name: 'Bernkastel-Kues', lat: 49.9169, lng: 7.0692 , notes: 'A postcard half-timbered Moselle wine town split by the river, overlooked by the ruined Burg Landshut castle on the hill above; climb up for the valley view, then taste at one of the many riesling wineries lining the waterfront.' },
+        { name: 'Trier', lat: 49.7596, lng: 6.6441 , notes: 'Germany\'s oldest city, founded by the Romans; the Porta Nigra, a massive blackened Roman city gate, is the best-preserved north of the Alps and anchors a compact old town that also holds Roman baths and a UNESCO-listed basilica.' },
       ],
       notes: "Cochem — Bernkastel-Kues — Trier as the endpoint: closest to the Netherlands for the drive home, so not a detour but the logical exit. Same Burg Eltz cash/shuttle caveat as the standalone Moselle Valley (4 days) 🍇 route if that detour is added. No general Autobahn toll for cars (see Cologne + Bonn + Rhine (4 days) 🛳️'s notes).",
       transport_to_next: 'End of this route — drive back to the Netherlands (~2h from Trier).',
@@ -14787,7 +14963,7 @@ function rbBuildTyrolRoute() {
     {
       code: 'AT', name: 'Austria', days: 6, budget: 642, lat: 47.2692, lng: 11.4041,
       destinations: [
-        { name: 'Innsbruck', lat: 47.2692, lng: 11.4041 },
+        { name: 'Innsbruck', lat: 47.2692, lng: 11.4041 , notes: 'The Nordkette cable car climbs directly from Innsbruck\'s medieval old town (Golden Roof) into high alpine terrain in under 20 minutes — genuine high-mountain scenery reachable without leaving the city.' },
         { name: 'Seefeld', lat: 47.3227, lng: 11.1910 },
         { name: 'Achensee', lat: 47.4667, lng: 11.7167 },
         { name: 'Zillertal / Mayrhofen (Olperer suspension bridge)', lat: 47.1667, lng: 11.8667 },
@@ -15531,14 +15707,14 @@ function rbBuildFlorenceTuscanyRoute() {
     {
       code: 'IT', name: 'Italy', days: 4, budget: 480, lat: 43.7696, lng: 11.2558,
       destinations: [
-        { name: 'Florence — Uffizi Gallery', lat: 43.7687, lng: 11.2560 },
-        { name: 'Florence — Duomo (dome climb)', lat: 43.7731, lng: 11.2560 },
-        { name: 'Florence — Ponte Vecchio', lat: 43.7680, lng: 11.2531 },
-        { name: 'Florence — Palazzo Vecchio', lat: 43.7696, lng: 11.2558 },
-        { name: 'Siena (day trip)', lat: 43.3188, lng: 11.3308 },
-        { name: 'Chianti wine tasting (day trip)', lat: 43.5000, lng: 11.3000 },
-        { name: 'San Gimignano (day trip)', lat: 43.4674, lng: 11.0431 },
-        { name: 'Pisa (day trip)', lat: 43.7228, lng: 10.3966 },
+        { name: 'Florence — Uffizi Gallery', lat: 43.7687, lng: 11.2560 , notes: 'Holds one of the world\'s great Renaissance art collections, including Botticelli\'s Birth of Venus and works by Michelangelo and Leonardo; book a timed-entry ticket weeks ahead, since walk-up lines can run several hours in high season.' },
+        { name: 'Florence — Duomo (dome climb)', lat: 43.7731, lng: 11.2560 , notes: 'Brunelleschi\'s dome, still the largest brick dome ever built, is climbed via a separate 463-step ticket from the free cathedral entry — book that dome slot first, since it sells out faster than general entry, and the climb rewards with the best rooftop panorama over the city\'s terracotta roofs.' },
+        { name: 'Florence — Ponte Vecchio', lat: 43.7680, lng: 11.2531 , notes: 'The medieval bridge lined with gold and jewelry shops, rebuilt after floods but spared by retreating German troops in WWII (unlike Florence\'s other bridges); the view of it from the neighboring Ponte Santa Trinita, especially at sunset, is the classic postcard shot.' },
+        { name: 'Florence — Palazzo Vecchio', lat: 43.7696, lng: 11.2558 , notes: 'The fortress-like former seat of Florentine government, still Florence\'s city hall today, with an over-the-top frescoed Salone dei Cinquecento inside; Michelangelo\'s original David once stood right outside its entrance (a copy stands there now, the original is in the Accademia) — climb the Arnolfo Tower for a quieter alternative view to the Duomo dome.' },
+        { name: 'Siena (day trip)', lat: 43.3188, lng: 11.3308 , notes: 'The shell-shaped Piazza del Campo hosts the Palio horse race twice a year (July 2 and Aug 16); climbing the Torre del Mangia gives the best rooftop view over the square.' },
+        { name: 'Chianti wine tasting (day trip)', lat: 43.5000, lng: 11.3000 , notes: 'A scenic drive through vineyard villages like Greve and Radda in Chianti; most estates expect tastings to be booked ahead rather than accepting walk-ins.' },
+        { name: 'San Gimignano (day trip)', lat: 43.4674, lng: 11.0431 , notes: 'Its skyline of medieval stone towers (nicknamed "Medieval Manhattan") is best appreciated from just outside the walls around sunset, once the day-trip buses thin out.' },
+        { name: 'Pisa (day trip)', lat: 43.7228, lng: 10.3966 , notes: 'Best known for the Leaning Tower, one of four gleaming white marble buildings on the Piazza dei Miracoli (also the cathedral, baptistery and cemetery); book a timed slot to climb the tower itself well ahead, since daily visitor numbers are capped, and the tilt is most dramatic photographed from the lawn\'s northwest corner.' },
       ],
       notes: "Florence as a fixed base, no overnight changes. Days 1-2: the city (Uffizi, Duomo dome climb, Ponte Vecchio, Palazzo Vecchio). Day 3(-4): one full Tuscany day trip, Siena → Chianti (wine tasting) → San Gimignano → Pisa, either self-driven (one day's rental car — more flexible/cheaper for 2+ people) or a guided day tour. Direct AMS-FLR (KLM only, ~2h, 4x/day). Budget ~€120/day plus a one-off €20-30 for the rental car/day tour. Season: April-May or September-October; July-August is hot (30-35°C) and busy. ⚠️ Book the Uffizi and Accademia weeks ahead; the Duomo dome climb has its own time slot separate from the free cathedral entry and fills up faster than the rest of the sights — book that first.",
       transport_to_next: 'End of this route — direct return flight Florence to Amsterdam.',
@@ -15559,8 +15735,8 @@ function rbBuildVeniceDolomitesRoute() {
       destinations: [
         { name: 'Piazza San Marco', lat: 45.4342, lng: 12.3388, notes: "St Mark's Basilica and the Doge's Palace anchor the square; the basilica itself is free to enter, but a skip-the-line booking avoids the worst of the queue." },
         { name: 'Rialto Bridge', lat: 45.4380, lng: 12.3358 , notes: 'Venice\'s iconic Grand Canal crossing with the adjoining Rialto Market; cross before 9am for photos without the day-tripper crush, and hit the market stalls in the same early slot.' },
-        { name: 'Murano (half day)', lat: 45.4587, lng: 12.3538 },
-        { name: 'Burano (half day)', lat: 45.4854, lng: 12.4166 },
+        { name: 'Murano (half day)', lat: 45.4587, lng: 12.3538 , notes: 'The glass-blowing island, with furnace demonstrations at several workshops (many free, but expect a sales pitch afterward) and its own small glass museum.' },
+        { name: 'Burano (half day)', lat: 45.4854, lng: 12.4166 , notes: 'Known for its rows of brightly painted fishermen\'s houses (locals repaint them regularly to keep the colors vivid) and a centuries-old lace-making tradition, still demonstrated at the small lace museum on the main square.' },
       ],
       notes: "1-2 nights in Venice: San Marco, the Rialto, a half day on Murano/Burano. Direct AMS-VCE (KLM/easyJet, ~2h, 110 flights/week) — Marco Polo airport has no direct train, take a bus/taxi to Mestre then the train, or the Alilaguna boat straight into the city. Budget ~€140/day in Venice. Season: early June or September — a compromise between open cable cars (which only open late May/June) and fewer Venice crowds. ⚠️ Venice's day-tripper tax is back for 2026: €5pp if paid ≥4 days ahead, €10 if paid late/on the spot, on ~60 days between 3 April-26 July 2026 (Fri-Sun, 8:30-16:00) — waived by an overnight stay within the Venice municipality (including Mestre/Lido), so normally not applicable on this trip, but check when booking.",
       transport_to_next: "Rental car, ~150km/2h15 to Cortina d'Ampezzo or Val Gardena.",
@@ -15568,8 +15744,8 @@ function rbBuildVeniceDolomitesRoute() {
     {
       code: 'IT', name: 'Italy', days: 3, budget: 315, lat: 46.5369, lng: 12.1357,
       destinations: [
-        { name: "Cortina d'Ampezzo or Val Gardena (base)", lat: 46.5369, lng: 12.1357 },
-        { name: 'Tre Cime di Lavaredo area', lat: 46.6198, lng: 12.3032 },
+        { name: "Cortina d'Ampezzo or Val Gardena (base)", lat: 46.5369, lng: 12.1357 , notes: 'Cortina d\'Ampezzo — genteel, host of the 2026 Winter Olympics (book early, prices still elevated) — and Val Gardena, springboard for Alpe di Siusi, Europe\'s largest high-alpine meadow, are the two standard Dolomites bases; neither has a must-see sight in town itself, both are purely launch points for the surrounding hikes, passes and cable cars.' },
+        { name: 'Tre Cime di Lavaredo area', lat: 46.6198, lng: 12.3032 , notes: 'The three sheer limestone peaks are best seen on the ~10km loop trail past Rifugio Locatelli; driving up requires the paid Rifugio Auronzo toll road (~€30/car), which fills its lot early on summer mornings.' },
         { name: 'Lago di Braies', lat: 46.6958, lng: 12.0858, notes: "The postcard turquoise lake with wooden rowboats is one of the most photographed spots in the Dolomites. From July 1-Sept 15, the valley road is closed to unbooked cars 9am-4pm — you must pre-book parking online at pragsparking.com or arrive before 9am/after 4pm." },
         { name: 'Cinque Torri', lat: 46.5333, lng: 12.0333 , notes: 'Five freestanding rock towers ringed by preserved WWI trenches and gun positions, now an open-air museum. Take the chairlift up, walk the loop among the towers (about 2 hours), and stay for sunset if timing allows.' },
       ],
@@ -17905,7 +18081,7 @@ function rbBuildSloveniaItalyRoute() {
       code: 'IT', name: 'Italy', days: 4, budget: 640, lat: 45.6495, lng: 13.7768,
       destinations: [
         { name: 'Trieste', lat: 45.6495, lng: 13.7768 },
-        { name: 'Venice (Piazza San Marco)', lat: 45.4408, lng: 12.3155 },
+        { name: 'Venice (Piazza San Marco)', lat: 45.4408, lng: 12.3155 , notes: 'St Mark\'s Basilica and the Doge\'s Palace anchor the square; the basilica itself is free to enter, but a skip-the-line booking avoids the worst of the queue.' },
         { name: 'Friuli (Udine, alternative)', lat: 46.0693, lng: 13.2346 },
       ],
       notes: "Trieste (1 day) — Venice or Friuli (2 days). Budget ~€130-180/day (Venice pricier). Web check (2026-08): Slovenia-Italy is Schengen-Schengen, so no border control or lost time; Venice has had a day-tripper entry fee (contributo di accesso) since 2024 on certain peak days — check the current 2026 calendar in advance if adding a Venice day trip.",
@@ -21604,8 +21780,8 @@ function rbBuildEstoniaRoute() {
       code: 'EE', name: 'Estonia', days: 6, budget: 480, lat: 59.4370, lng: 24.7536,
       destinations: [
         { name: 'Tallinn (Old Town)', lat: 59.4370, lng: 24.7454, notes: "Beyond the main squares, climb Toompea Hill to the Kohtuotsa or Patkuli viewing platforms for the classic skyline shot over the medieval spires and city walls." },
-        { name: 'Lahemaa National Park', lat: 59.4711, lng: 25.9106 },
-        { name: 'Kuressaare Castle (Saaremaa)', lat: 58.2481, lng: 22.4886 },
+        { name: 'Lahemaa National Park', lat: 59.4711, lng: 25.9106 , notes: 'Estonia\'s largest national park, a mix of bog, forest and coastline dotted with former Soviet-era border-guard watchtowers and old manor estates like Palmse and Sagadi; the Viru Bog boardwalk trail is the easiest short walk for a taste of the raised-bog landscape.' },
+        { name: 'Kuressaare Castle (Saaremaa)', lat: 58.2481, lng: 22.4886 , notes: 'A remarkably intact 14th-century Livonian Order stone fortress on Saaremaa island, surrounded by a moat and star-shaped bastions; the car ferry from the mainland (book ahead in summer) is itself part of the trip out to Estonia\'s largest island.' },
         { name: 'Muhu-Virtsu ferry link', lat: 58.5667, lng: 23.5167 },
       ],
       notes: "Entry: fly into Tallinn from Amsterdam (direct or one-stop, airBaltic/Ryanair/Finnair depending on season). Tallinn's Old Town (2-3 days), then either Lahemaa National Park (1 day, forests and bog coastline east of Tallinn) or Saaremaa (2 days, Kuressaare Castle, reached via the Virtsu-Muhu ferry and the Muhu causeway) — pick one depending on available days. Budget ~€70-90/day. Season: May-September is best; Saaremaa/Muhu is strongly seasonal, with many restaurants and a more limited ferry schedule outside summer. New for 2026: Finnair is launching a Helsinki-Kuressaare route. Web check (2026-08): book car-ferry spots for the Tallinn-Saaremaa crossing well ahead for July/August. The Narva-Russia border crossing has been closed to vehicles since February 2024, extended through at least 31 August 2026 — not relevant unless considering Narva as a day trip (the town itself is safe and within Schengen). General safety note: watch for pickpocketing in Tallinn, Russian-plated vehicles are not allowed, and there is an LGBTIQ+ discrimination risk outside Tallinn/Tartu.",
@@ -21652,7 +21828,7 @@ function rbBuildLithuaniaRoute() {
         { name: 'Trakai Castle', lat: 54.6551, lng: 24.9339 },
         { name: 'Kaunas', lat: 54.8985, lng: 23.9036 },
         { name: 'Klaipėda (Smiltynė ferry)', lat: 55.7033, lng: 21.1443 },
-        { name: 'Curonian Spit / Nida', lat: 55.3033, lng: 21.0058 },
+        { name: 'Curonian Spit / Nida', lat: 55.3033, lng: 21.0058 , notes: 'A UNESCO-listed 98km sand-dune peninsula shared with Russia\'s Kaliningrad exclave; Nida\'s shifting Parnidis dune is the highlight, and the seasonal car eco-toll (steep in peak summer, cheaper or free outside it) applies to drive onto the spit.' },
       ],
       notes: "Entry: fly into Vilnius from Amsterdam (direct or one-stop, airBaltic/Ryanair/Wizz Air depending on season). Vilnius's Old Town (2-3 days), a day trip to Trakai Castle, Kaunas (1 day), then the Curonian Spit/Nida (2 days) via the Klaipėda-Smiltynė ferry. Budget ~€70-90/day. Season: May-September; the dunes at Nida are at their best in summer. Web check (2026-08): the Trakai Castle ticket is €12 (May-Sep) / €10 (Oct-Apr); the Klaipėda-Smiltynė car ferry is €23.20 return (2026); there's an extra eco-toll for cars in Neringa/Nida — €50 (20 June-20 August) or €10 the rest of the year, with electric cars free outside peak season. General safety note: there is an LGBTIQ+ discrimination risk outside Vilnius, similar to the other Baltic capitals.",
       transport_to_next: 'End of this route — fly home from Vilnius.',
@@ -21707,8 +21883,8 @@ function rbBuildBalticStatesRoadtripRoute() {
       code: 'EE', name: 'Estonia', days: 5, budget: 400, lat: 59.4370, lng: 24.7536,
       destinations: [
         { name: 'Tallinn (Old Town)', lat: 59.4370, lng: 24.7454, notes: "Beyond the main squares, climb Toompea Hill to the Kohtuotsa or Patkuli viewing platforms for the classic skyline shot over the medieval spires and city walls." },
-        { name: 'Lahemaa National Park', lat: 59.4711, lng: 25.9106 },
-        { name: 'Kuressaare Castle (Saaremaa)', lat: 58.2481, lng: 22.4886 },
+        { name: 'Lahemaa National Park', lat: 59.4711, lng: 25.9106 , notes: 'Estonia\'s largest national park, a mix of bog, forest and coastline dotted with former Soviet-era border-guard watchtowers and old manor estates like Palmse and Sagadi; the Viru Bog boardwalk trail is the easiest short walk for a taste of the raised-bog landscape.' },
+        { name: 'Kuressaare Castle (Saaremaa)', lat: 58.2481, lng: 22.4886 , notes: 'A remarkably intact 14th-century Livonian Order stone fortress on Saaremaa island, surrounded by a moat and star-shaped bastions; the car ferry from the mainland (book ahead in summer) is itself part of the trip out to Estonia\'s largest island.' },
       ],
       notes: "Entry: fly into Tallinn from Amsterdam, pick up a rental car. Tallinn (2 days), Lahemaa National Park (1 day), Saaremaa (2 days). Budget ~€70-90/day (book the rental car early for summer). Season: May-September. Web check (2026-08): book the Tallinn-Saaremaa car ferry well ahead for high season.",
       transport_to_next: 'Drive south from Saaremaa/Muhu to Riga — all EU/Schengen, no border controls.',
@@ -21717,8 +21893,8 @@ function rbBuildBalticStatesRoadtripRoute() {
       code: 'LV', name: 'Latvia', days: 4, budget: 320, lat: 56.9496, lng: 24.1052,
       destinations: [
         { name: 'Riga (Old Town)', lat: 56.9496, lng: 24.1052, notes: "The House of the Blackheads and Riga Cathedral anchor the old town, but the real standout is just outside it on Alberta iela — one of the world's densest concentrations of Art Nouveau facades, worth a short detour on foot." },
-        { name: 'Sigulda / Turaida Castle / Gauja NP', lat: 57.1536, lng: 24.8592 },
-        { name: 'Rundāle Palace (day trip)', lat: 56.4149, lng: 24.0128 },
+        { name: 'Sigulda / Turaida Castle / Gauja NP', lat: 57.1536, lng: 24.8592 , notes: 'Nicknamed "Latvian Switzerland" for its river gorge scenery; Turaida Castle\'s red-brick tower gives the best view over the Gauja valley, and the area is also known for its cable car crossing the gorge and, in winter, a bobsled track built for Soviet-era Olympic training.' },
+        { name: 'Rundāle Palace (day trip)', lat: 56.4149, lng: 24.0128 , notes: 'A Baroque summer palace designed by Rastrelli (the same architect behind St. Petersburg\'s Winter Palace), often called the "Versailles of Latvia"; the French-style formal gardens behind the palace are worth the extra hour beyond the interior room tour.' },
       ],
       notes: "Riga (2 days), then Sigulda/Turaida Castle/Gauja National Park (2 days) plus a day trip to Rundāle Palace. Budget ~€70-90/day.",
       transport_to_next: 'Drive south from Riga/Sigulda to Vilnius — all EU/Schengen, no border controls.',
@@ -21727,8 +21903,8 @@ function rbBuildBalticStatesRoadtripRoute() {
       code: 'LT', name: 'Lithuania', days: 4, budget: 320, lat: 54.6872, lng: 25.2797,
       destinations: [
         { name: 'Vilnius (Old Town)', lat: 54.6872, lng: 25.2797, notes: "Cross the river into Užupis, a bohemian pocket that jokingly declared itself an independent republic with its own tongue-in-cheek constitution posted on a wall (in dozens of languages); it's a 5-minute walk from the old town's edge and worth an hour of wandering its cafés and galleries." },
-        { name: 'Trakai Castle (day trip)', lat: 54.6551, lng: 24.9339 },
-        { name: 'Curonian Spit / Nida', lat: 55.3033, lng: 21.0058 },
+        { name: 'Trakai Castle (day trip)', lat: 54.6551, lng: 24.9339 , notes: 'A red-brick island castle on a lake just outside Vilnius, built by the Grand Duchy of Lithuania and reachable by a short causeway walk or rented rowboat; the surrounding town is home to the Karaim, a small Turkic ethnic minority, whose traditional kibinai pastries are the local food to try.' },
+        { name: 'Curonian Spit / Nida', lat: 55.3033, lng: 21.0058 , notes: 'A UNESCO-listed 98km sand-dune peninsula shared with Russia\'s Kaliningrad exclave; Nida\'s shifting Parnidis dune is the highlight, and the seasonal car eco-toll (steep in peak summer, cheaper or free outside it) applies to drive onto the spit.' },
       ],
       notes: "Vilnius (2 days) with a day trip to Trakai Castle, then the Curonian Spit/Nida (2 days). Budget ~€70-90/day. Web check (2026-08): the Curonian Spit's Neringa/Nida car eco-toll applies here — €50 (20 June-20 August) or €10 the rest of the year, electric cars free outside peak season. General note: all three Baltic states are EU/Schengen with no internal border controls between them.",
       transport_to_next: 'End of this route — fly home from Vilnius (or Kaunas, if flight availability is better).',
@@ -24281,8 +24457,8 @@ function rbBuildGrandEuropeanRoadtripFourteenToTwentyOneDaysRoute() {
     {
       code: 'DE', name: 'Germany', days: 2, budget: 220, lat: 49.9786, lng: 7.9047,
       destinations: [
-        { name: 'Rüdesheim am Rhein / Loreley (Rhine Valley)', lat: 49.9786, lng: 7.9047 },
-        { name: 'Munich / Neuschwanstein (Bavaria)', lat: 48.1351, lng: 11.5820 },
+        { name: 'Rüdesheim am Rhein / Loreley (Rhine Valley)', lat: 49.9786, lng: 7.9047 , notes: 'Rüdesheim\'s Drosselgasse wine-tavern alley and Niederwalddenkmal cable car pair with the dramatic Loreley cliff further downriver, tied to the legend of a siren luring sailors onto the rocks below; a short scenic drive or the KD line panoramic cruise link the two.' },
+        { name: 'Munich / Neuschwanstein (Bavaria)', lat: 48.1351, lng: 11.5820 , notes: 'Munich\'s Marienplatz/Frauenkirche old town (climb St. Peter\'s church tower for the best rooftop view, skipping the glockenspiel crowd) pairs with Ludwig II\'s fairy-tale Neuschwanstein castle near Füssen, about 1h40 further south — the direct inspiration for Disney\'s Cinderella castle. Book Neuschwanstein\'s timed-entry ticket online well ahead, since summer slots can sell out weeks in advance, and photograph it from the Marienbrücke bridge over the gorge behind it.' },
       ],
       notes: "A deliberately compressed opener (2-3 days) squeezing both the Rhine Valley and Bavaria into one stop — a real taste, not a proper visit of either (the flagship Central European Grand Roadtrip 🚗 below gives Bavaria/Neuschwanstein 4 full days on its own). Budget ~€110/day. ⚠️ Web check (2026-09): even tighter than it looks — Rüdesheim to Füssen is ~500-550km/5-5.5h, then a further 2.5-3h on to Salzburg, and Neuschwanstein tickets are timed-entry, routinely selling out weeks to ~2-3 months ahead in the May-September season (same-day tickets often gone by 8am). Realistically this 2-day leg means an exterior/Marienbrücke stop at most, no time for the castle interior tour unless booked well ahead — flagged as a route-logic tension, not silently smoothed over.",
       transport_to_next: 'Drive south to Salzburg — a Schengen border, no checks.',
@@ -24291,7 +24467,7 @@ function rbBuildGrandEuropeanRoadtripFourteenToTwentyOneDaysRoute() {
       code: 'AT', name: 'Austria', days: 2, budget: 230, lat: 47.8095, lng: 13.0550,
       destinations: [
         { name: 'Salzburg', lat: 47.8095, lng: 13.0550, notes: "Mozart's birthplace and several Sound of Music filming locations sit inside a compact old town dominated by the Hohensalzburg fortress above it; ride the funicular up for the view over the Salzach river." },
-        { name: 'Innsbruck', lat: 47.2692, lng: 11.4041 },
+        { name: 'Innsbruck', lat: 47.2692, lng: 11.4041 , notes: 'The Nordkette cable car climbs directly from Innsbruck\'s medieval old town (Golden Roof) into high alpine terrain in under 20 minutes — genuine high-mountain scenery reachable without leaving the city.' },
       ],
       notes: "Salzburg and Innsbruck (2 days) — both cities get a full standalone visit elsewhere in this repo; here it's one day each. Budget ~€115/day. Austrian 10-day vignette required.",
       transport_to_next: "Drive over the Arlberg Pass towards Interlaken, Switzerland — Web check (2026-09): the Arlberg Pass itself (St. Anton-Bludenz) is entirely within Austria, not the Swiss border; using the Arlberg road tunnel (S16) instead adds a separate €13 section toll not covered by the vignette. The actual Swiss border crossing comes further along (e.g. near Feldkirch/St. Margrethen) — Schengen, no checks, that's where the Swiss vignette (CHF ~40, annual-only, no short-stay option) is needed.",
@@ -24299,7 +24475,7 @@ function rbBuildGrandEuropeanRoadtripFourteenToTwentyOneDaysRoute() {
     {
       code: 'CH', name: 'Switzerland', days: 2, budget: 300, lat: 46.6863, lng: 7.8632,
       destinations: [
-        { name: 'Interlaken / Lauterbrunnen', lat: 46.6863, lng: 7.8632 },
+        { name: 'Interlaken / Lauterbrunnen', lat: 46.6863, lng: 7.8632 , notes: 'Interlaken itself is mainly a logistics/adventure-sports base between Lake Thun and Lake Brienz; the real scenery is a few minutes further into the sheer-walled Lauterbrunnen valley and its 72 waterfalls (most famously Staubbach Falls dropping straight past the village) — base in car-free Wengen or Mürren above it if time allows, rather than staying down in Interlaken.' },
       ],
       notes: "Interlaken (2 days) — a fraction of the 5-6 days the Bernese Oberland deserves (see the flagship route below, or Interlaken + Lauterbrunnen + Grindelwald (6 days) 🪂). Budget ~€150/day — Switzerland pulls this route's blended average up sharply, same finding as every other route in this repo that touches it.",
       transport_to_next: 'Drive over the Alps into Italy towards the Dolomites/Venice — a Schengen border, no checks, Italian autostrada toll applies.',
@@ -24307,8 +24483,8 @@ function rbBuildGrandEuropeanRoadtripFourteenToTwentyOneDaysRoute() {
     {
       code: 'IT', name: 'Italy', days: 3, budget: 390, lat: 46.5369, lng: 12.1357,
       destinations: [
-        { name: 'Dolomites (Cortina d\'Ampezzo / Tre Cime)', lat: 46.6198, lng: 12.3032 },
-        { name: 'Venice (Piazza San Marco)', lat: 45.4408, lng: 12.3155 },
+        { name: 'Dolomites (Cortina d\'Ampezzo / Tre Cime)', lat: 46.6198, lng: 12.3032 , notes: 'Cortina d\'Ampezzo, which just hosted the 2026 Winter Olympics (book accommodation early, prices are still elevated), is the base for the Tre Cime di Lavaredo loop — a roughly 3-4 hour hike past Rifugio Locatelli around the three iconic limestone peaks, or drive up via the paid Rifugio Auronzo toll road (~€30/car, fills its lot early).' },
+        { name: 'Venice (Piazza San Marco)', lat: 45.4408, lng: 12.3155 , notes: 'St Mark\'s Basilica and the Doge\'s Palace anchor the square; the basilica itself is free to enter, but a skip-the-line booking avoids the worst of the queue.' },
       ],
       notes: "The Dolomites and Venice (3 days) — squeezed into a single stop where the flagship route below gives them roughly 8 combined days. Budget ~€130/day.",
       transport_to_next: 'Drive to Bled via Trieste-Ljubljana — Web check (2026-09): Italy has its own separate border-check regime with Slovenia (Fernetti, Gorizia-Nova Gorica crossings), extended through 18 December 2026 for terrorism/migration-smuggling concerns and Winter Olympics/Paralympics security — random spot checks only, typically 15-40 min, not a closed border. Slovenian e-vinjeta needed (fully digital since Dec 2021, plate-based; 7-day tier ~€16 covers this route\'s 1-day Slovenia leg).',
@@ -24324,7 +24500,7 @@ function rbBuildGrandEuropeanRoadtripFourteenToTwentyOneDaysRoute() {
     {
       code: 'HR', name: 'Croatia', days: 2, budget: 220, lat: 44.8654, lng: 15.5820,
       destinations: [
-        { name: 'Istria (Rovinj/Pula)', lat: 45.0811, lng: 13.6387 },
+        { name: 'Istria (Rovinj/Pula)', lat: 45.0811, lng: 13.6387 , notes: 'Rovinj\'s car-free old town on a small peninsula (park outside and climb the St. Euphemia church bell tower for the view) pairs with Pula\'s Roman Arena, one of the best-preserved amphitheaters in the world and still used for concerts — check the events calendar, since summer setup can restrict daytime access.' },
         { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820, notes: "16 turquoise terraced lakes connected by waterfalls and wooden boardwalks, with a boat crossing Kozjak Lake as the scenic centerpiece. Pick route C or K (covers both Upper and Lower Lakes, not just one) and start right at opening for boardwalk photos without crowds." },
       ],
       notes: "Istria, Plitvice and a taste of the coast (2 days) — deliberately picks a slice rather than a full Croatia loop, unlike this same document's own dedicated Croatia routes. Budget ~€110/day. Optional (only realistic at the 21-day end of this range, not counted in this route's own day/budget totals): extend to Kotor, Montenegro (1-2 days, ~€45-60/day) via the Karasovići EES crossing — a real non-Schengen/non-EU border with a genuine passport check, the only one on this whole route.",
