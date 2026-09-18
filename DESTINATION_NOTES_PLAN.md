@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 359 / 741 signatures.**
+- **Done so far: 368 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -494,8 +494,8 @@ Sorted alphabetically by country code.
 - [ ] **IE** (8 dest): Donegal, Sligo, Mayo / Achill Island, Connemara, Galway, Cliffs of Moher (Clare), Dingle Peninsula / Ring of Kerry, Cork / Kinsale — routes: Wild Atlantic Way (7-10 days) 🌅
 - [ ] **IM** (5 dest): Douglas, TT Grandstand & Museum, TT Mountain Road (Snaefell), Snaefell Mountain Railway, Manx Electric Railway — routes: Isle of Man (3-4 days) 🏝️
 - [ ] **IM** (2 dest): Castletown (Castle Rushen), Peel Castle — routes: Isle of Man (3-4 days) 🏝️
-- [ ] **IS** (9 dest): Reykjavík, Vík í Mýrdal, Jökulsárlón Glacier Lagoon, Egilsstaðir / Seyðisfjörður, Mývatn / Akureyri / Húsavík, Westfjords (Ísafjörður), Dynjandi waterfall, Landmannalaugar (highland alternative), Þórsmörk (highland alternative) — routes: Iceland Extended (14 days) 🗺️
-- [ ] **IS** (9 dest): Reykjavík, Vík í Mýrdal, Jökulsárlón Glacier Lagoon, Höfn, Egilsstaðir, Seyðisfjörður, Mývatn, Akureyri, Húsavík — routes: Iceland Ring Road (12 days) 🛣️
+- [x] **IS** (9 dest): Reykjavík, Vík í Mýrdal, Jökulsárlón Glacier Lagoon, Egilsstaðir / Seyðisfjörður, Mývatn / Akureyri / Húsavík, Westfjords (Ísafjörður), Dynjandi waterfall, Landmannalaugar (highland alternative), Þórsmörk (highland alternative) — routes: Iceland Extended (14 days) 🗺️
+- [x] **IS** (9 dest): Reykjavík, Vík í Mýrdal, Jökulsárlón Glacier Lagoon, Höfn, Egilsstaðir, Seyðisfjörður, Mývatn, Akureyri, Húsavík — routes: Iceland Ring Road (12 days) 🛣️
 - [ ] **IS** (8 dest): Reykjavík, Golden Circle (Þingvellir/Geysir/Gullfoss), Seljalandsfoss, Skógafoss, Reynisfjara black beach / Vík í Mýrdal, Jökulsárlón Glacier Lagoon, Diamond Beach, Höfn — routes: Iceland South Coast (9 days) 🧊
 - [x] **IS** (7 dest): Reykjavik, Golden Circle (Þingvellir), South Coast (Vík í Mýrdal), Vatnajökull, Jökulsárlón, Akureyri, Snæfellsnes — routes: Nordic Arctic Expedition ❄️
 - [ ] **IS** (8 dest): Reykjavík, Þingvellir, Geysir, Gullfoss, Seljalandsfoss, Skógafoss, Reynisfjara black beach, Vík í Mýrdal — routes: South Iceland (6 days) 🌊
@@ -660,21 +660,21 @@ Sorted alphabetically by country code.
 - [ ] **PL** (2 dest): Wrocław, Krakow (Main Square / Old Town) — routes: Prague + Poland (9 days) 🚂
 - [ ] **PL** (2 dest): Zakopane, Krakow (Main Square / Old Town) — routes: Slovakia + Poland (9 days) 🥾
 - [ ] **PL** (5 dest): Krakow Old Town, Wieliczka Salt Mine, Auschwitz-Birkenau, Zakopane / Tatra National Park, Wrocław (optional finale) — routes: South Poland (9 days) 🧭
-- [ ] **PT** (9 dest): Faro (Ria Formosa), Lagos (Ponta da Piedade), Praia Dona Ana, Sagres / Cabo de São Vicente, Portimão, Carvoeiro, Benagil (sea cave), Silves (castle), Tavira — routes: Algarve (6 days) 🏖️
+- [x] **PT** (9 dest): Faro (Ria Formosa), Lagos (Ponta da Piedade), Praia Dona Ana, Sagres / Cabo de São Vicente, Portimão, Carvoeiro, Benagil (sea cave), Silves (castle), Tavira — routes: Algarve (6 days) 🏖️
 - [x] **PT** (3 dest): Horta (Faial, whaling heritage), Madalena (Pico ferry port), Pico volcano climb (optional) — routes: Azores Island Hopping (10-14 days) 🏝️
 - [ ] **PT** (8 dest): Coimbra (University + Biblioteca Joanina), Manteigas (base), Seia (alternative base), Torre (highest point of mainland Portugal), Sabugueiro (highest village), Poço do Inferno waterfall, Linhares da Beira, Piódão — routes: Central Portugal: Coimbra + Serra da Estrela (6 days) 📚
 - [x] **PT** (10 dest): Lisbon (Baixa), Alfama, Castelo de São Jorge, Belém Tower, Jerónimos Monastery, Sintra (Palace of Pena), Quinta da Regaleira, Cascais, Cabo da Roca, Monserrate (optional) — routes: Lisbon + Sintra (5 days) 🏰
 - [x] **PT** (1 dest): Vila Baleira / Porto Santo golden beach — routes: Madeira + Porto Santo (7-10 days) 🏝️
-- [ ] **PT** (6 dest): Porto (Ribeira), Vila Nova de Gaia (port wine cellars), Pinhão (Douro day trip), Guimarães (Paço dos Duques, day trip), Braga (Bom Jesus do Monte, day trip), Viana do Castelo (Santa Luzia viewpoint) — routes: Northern Portugal + Galicia (7-10 days) 🌊
+- [x] **PT** (6 dest): Porto (Ribeira), Vila Nova de Gaia (port wine cellars), Pinhão (Douro day trip), Guimarães (Paço dos Duques, day trip), Braga (Bom Jesus do Monte, day trip), Viana do Castelo (Santa Luzia viewpoint) — routes: Northern Portugal + Galicia (7-10 days) 🌊
 - [x] **PT** (5 dest): Porto, Guimarães (Paço dos Duques), Braga (Bom Jesus do Monte), Viana do Castelo (Santa Luzia viewpoint), Ponte de Lima (optional) — routes: Northern Portugal: Minho (6 days) 🌿
-- [ ] **PT** (9 dest): Porto (Ribeira), Dom Luís I Bridge, Sé do Porto (cathedral), Livraria Lello, Vila Nova de Gaia (port wine cellars), Pinhão (Douro day trip), Foz do Douro, Matosinhos, Serralves — routes: Porto (4 days) 🌉
-- [ ] **PT** (7 dest): Porto (Vila Nova de Gaia), Pinhão (Douro Valley, 2-3 nights), São Leonardo da Galafura viewpoint, Peso da Régua, Lisbon (Baixa), Bucelas (optional wine detour), Colares (optional wine detour, near Sintra) — routes: Porto + Douro + Lisbon (9 days) 🍷
+- [x] **PT** (9 dest): Porto (Ribeira), Dom Luís I Bridge, Sé do Porto (cathedral), Livraria Lello, Vila Nova de Gaia (port wine cellars), Pinhão (Douro day trip), Foz do Douro, Matosinhos, Serralves — routes: Porto (4 days) 🌉
+- [x] **PT** (7 dest): Porto (Vila Nova de Gaia), Pinhão (Douro Valley, 2-3 nights), São Leonardo da Galafura viewpoint, Peso da Régua, Lisbon (Baixa), Bucelas (optional wine detour), Colares (optional wine detour, near Sintra) — routes: Porto + Douro + Lisbon (9 days) 🍷
 - [x] **PT** (5 dest): Porto (Ribeira), Vila Nova de Gaia (port wine cellars), Guimarães (Paço dos Duques, day trip), Braga (Bom Jesus do Monte, day trip), Viana do Castelo (Santa Luzia viewpoint) — routes: Porto + Northern Spain (10-14 days) 🏔️
 - [x] **PT** (7 dest): Lisbon (Baixa), Alfama, Belém Tower, Sintra (Palace of Pena), Faro (Ria Formosa), Lagos (Ponta da Piedade), Sagres / Cabo de São Vicente — routes: Portugal + Andalusia (10-14 days) 🕌
 - [ ] **PT** (7 dest): Porto (Ribeira), Pinhão (Douro Valley), Coimbra (University), Lisbon (Baixa), Sintra (Palace of Pena), Faro (Ria Formosa), Lagos (Ponta da Piedade) — routes: Portugal + Spain Roadtrip (14 days) 🚗
-- [ ] **PT** (4 dest): Porto (Ribeira), Lisbon (Baixa), Sintra (Palace of Pena), Algarve / Lagos — routes: Portugal + Spain: Porto to Madrid (12 days) 🚆
-- [ ] **PT** (11 dest): Porto, Pinhão (Douro Valley, lighter stop), Coimbra, Serra da Estrela (Torre), Sabugueiro, Óbidos, Nazaré, Lisbon (Baixa), Sintra (Palace of Pena), Évora (Roman Temple + Chapel of Bones), Algarve / Lagos — routes: Portugal Roadtrip (12 days) 🗺️
-- [ ] **PT** (7 dest): Porto, Coimbra (brief stop), Nazaré, Óbidos, Lisbon (Baixa), Sintra (Palace of Pena), Algarve / Lagos — routes: Portugal: North to South (9 days) 🧭
+- [x] **PT** (4 dest): Porto (Ribeira), Lisbon (Baixa), Sintra (Palace of Pena), Algarve / Lagos — routes: Portugal + Spain: Porto to Madrid (12 days) 🚆
+- [x] **PT** (11 dest): Porto, Pinhão (Douro Valley, lighter stop), Coimbra, Serra da Estrela (Torre), Sabugueiro, Óbidos, Nazaré, Lisbon (Baixa), Sintra (Palace of Pena), Évora (Roman Temple + Chapel of Bones), Algarve / Lagos — routes: Portugal Roadtrip (12 days) 🗺️
+- [x] **PT** (7 dest): Porto, Coimbra (brief stop), Nazaré, Óbidos, Lisbon (Baixa), Sintra (Palace of Pena), Algarve / Lagos — routes: Portugal: North to South (9 days) 🧭
 - [x] **PT** (3 dest): Lisbon (Baixa), Alfama, Belém Tower — routes: Southern Europe Highlights Roadtrip (14 days) 🎯
 - [ ] **PT** (4 dest): Ponta Delgada (town, harbour), Sete Cidades (crater lakes), Furnas (thermal springs, cozido), Lagoa do Fogo — routes: São Miguel (Azores) (5-7 days) 🏝️
 - [ ] **PW** (5 dest): Koror, Rock Islands Southern Lagoon & Jellyfish Lake, Blue Corner (dive site), Peleliu Island (WWII battle sites), Ngardmau Waterfall, Babeldaob — routes: Palau 🦈
@@ -773,7 +773,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Florida 🐊 | 12/12 | 0 |
 | Hawaii 🐢 | 11/11 | 0 |
 | Sicily + Malta (9 days) 🌋 | 11/11 | 0 |
-| Portugal Roadtrip (12 days) 🗺️ | 11/11 | 0 |
 | Corsica Roadtrip: Full Island Loop (9 days) 🚙 | 10/10 | 0 |
 | Corsica + South of France (9 days) 🛳️ | 10/10 | 0 |
 | Athens + Peloponnese: Extended (12 days) 👑 | 10/10 | 0 |
@@ -781,14 +780,9 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Andorra + Spanish Pyrenees: Grand Circuit (9 days) 🏔️ | 10/10 | 0 |
 | Rhine + Moselle (5 days) 🚤 | 9/9 | 0 |
 | Corsica + Sardinia: Full Island Loop (12 days) 🌊 | 9/9 | 0 |
-| Porto (4 days) 🌉 | 9/9 | 0 |
-| Algarve (6 days) 🏖️ | 9/9 | 0 |
 | Grand European Roadtrip (14-21 days) 🪣 | 9/12 | 0 |
-| Iceland Ring Road (12 days) 🛣️ | 9/9 | 0 |
-| Iceland Extended (14 days) 🗺️ | 9/9 | 0 |
 | Highlands + Isle of Skye (7-10 days) 🏔️ | 9/9 | 0 |
 | Baltic States Roadtrip (10-14 days) 🚗 | 9/9 | 0 |
-| Northern Portugal + Galicia (7-10 days) 🌊 | 9/9 | 0 |
 | Dolomites & North Italy 🚡 | 8/24 | 0 |
 | Alsace (4 days) 🥐 | 8/8 | 0 |
 | Provence (6 days) 🌻 | 8/8 | 0 |
@@ -808,6 +802,12 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Romania: Extended (12 days) 🏰 | 8/8 | 0 |
 | Romania + Bulgaria: Transylvania Focus (12 days) 🏰 | 8/8 | 0 |
 | Romania + Moldova: Extended (12 days) 🍷 | 8/8 | 0 |
-| ... 226 more routes with open destinations ... | | |
+| Peloponnese Loop (9 days) 🏟️ | 8/8 | 0 |
+| South Iceland (6 days) 🌊 | 8/8 | 0 |
+| Iceland South Coast (9 days) 🧊 | 8/8 | 0 |
+| Wild Atlantic Way (7-10 days) 🌅 | 8/8 | 0 |
+| Ireland Complete (10-14 days) 🌈 | 8/8 | 0 |
+| Scotland Extended (10-14 days) 🏴 | 8/8 | 0 |
+| ... 219 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

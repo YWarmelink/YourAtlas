@@ -30,6 +30,31 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   already present in the existing data, no change needed to how batches insert notes or build
   their migration functions.
 
+- **Per-destination notes, batches 51-54 — Porto/Algarve/Central Portugal/Iceland clusters
+  (2026-09-18)** — applying the batch 47-50 lesson proactively this time (check sibling routes
+  for name-variant duplicates *before* dispatching research, not after): checked the whole
+  Portugal cluster and Iceland Ring Road/Extended cluster up front, found several genuinely new
+  destinations plus a few more same-place/different-string variants, and researched everything
+  in one pass.
+  - Batch 51: Porto city extras (Porto (4 days) route) — Dom Luís I Bridge, Sé do Porto,
+    Livraria Lello, Foz do Douro, Matosinhos, Serralves; the three Pinhão/Douro Valley name
+    variants across sibling routes share one canonical note; "Porto (Vila Nova de Gaia)" reuses
+    the existing Vila Nova de Gaia note verbatim (`rbMigratePortoCityExtrasDestinationNotes()`)
+  - Batch 52: Algarve extras — Praia Dona Ana, Portimão, Carvoeiro, Benagil, Silves, Tavira,
+    plus the "Algarve / Lagos" regional-name variant (`rbMigrateAlgarveExtrasDestinationNotes()`)
+  - Batch 53: Central Portugal/Douro/Alentejo extras — Coimbra (two name variants, one note),
+    Nazaré, Óbidos, São Leonardo da Galafura viewpoint, Peso da Régua, Bucelas, Colares, Serra da
+    Estrela (Torre), Sabugueiro, Évora
+    (`rbMigrateCentralPortugalDouroAlentejoDestinationNotes()`)
+  - Batch 54: Iceland cluster (Ring Road + Extended) — Vík í Mýrdal, Jökulsárlón, Höfn,
+    Egilsstaðir, Seyðisfjörður, Mývatn, Húsavík, Westfjords, Dynjandi waterfall, Landmannalaugar,
+    Þórsmörk, plus two combined-name variants ("Egilsstaðir / Seyðisfjörður", "Mývatn / Akureyri
+    / Húsavík") built by merging the individual notes since Akureyri already had one from batch
+    32 (`rbMigrateIcelandClusterDestinationNotes()`)
+  This also fully finished Northern Portugal: Minho (6 days) as a side effect of the earlier
+  batch 49 work. App-wide total: 2897 destination-slots filled across 349 routes. 368/741
+  signatures done.
+
 - **Per-destination notes, batches 47-50 — Iberia/Rome cascade cleanup (2026-09-18)** — while
   checking the plan's next queue items, found that Northern Spain Roadtrip, Lisbon + Sintra,
   Northern Portugal: Minho and Rome (4 days) had all been partially filled already by earlier

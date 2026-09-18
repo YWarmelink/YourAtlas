@@ -9874,6 +9874,158 @@ function rbMigrateRomeExtrasDestinationNotes() {
 }
 
 /**
+ * Batch 51 (2026-09-18) -- Porto city extras (Porto (4 days) route) -- Dom Luís I Bridge, Sé do
+ * Porto, Livraria Lello, Foz do Douro, Matosinhos, Serralves newly researched; the three Pinhão/
+ * Douro Valley name variants across sibling routes share one canonical note; "Porto (Vila Nova
+ * de Gaia)" reuses the existing Vila Nova de Gaia note verbatim (same real place, different exact
+ * string, same lesson as batches 47-50). Same generic name-matching migration pattern.
+ */
+function rbMigratePortoCityExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_PORTO_CITY_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_PORTO_CITY_EXTRAS_DESTINATION_NOTES, '1');
+
+  const pinhaoNote = "The terraced port-wine vineyard heartland along the Douro, centered on the small riverside town of Pinhão with its azulejo-covered train station. Ride the scenic Linha do Douro train from Porto (or Régua) to Pinhão, or take a river cruise, and pair it with a quinta tasting — allocate a full day.";
+  const notesByName = {
+    'Dom Luís I Bridge': "Porto's two-tier iron bridge (built by a disciple of Eiffel) linking Ribeira to Vila Nova de Gaia, with the best skyline view in the city. Walk the free upper pedestrian/metro deck near sunset for the classic view over the port-wine cellars and river.",
+    'Sé do Porto (cathedral)': "A fortress-like Romanesque cathedral with a Gothic cloister covered in 18th-century azulejo tiles. Pay the small cloister fee and step onto the terrace outside for one of the best free viewpoints over Ribeira.",
+    'Livraria Lello': "Porto's ornate 1906 Art Nouveau bookshop with a carved wooden staircase and stained-glass skylight, long rumored to have inspired J.K. Rowling. Book a timed ticket online in advance (from about €10, redeemable against a book) — you cannot just walk in, and slots sell out in high season.",
+    'Pinhão (Douro day trip)': pinhaoNote,
+    'Pinhão (Douro Valley, 2-3 nights)': pinhaoNote,
+    'Pinhão (Douro Valley, lighter stop)': pinhaoNote,
+    'Foz do Douro': "Porto's seafront district where the Douro meets the Atlantic, with a lighthouse (Farol de Felgueiras) and a long oceanfront promenade. Walk or cycle the boardwalk from Foz to Matosinhos in the late afternoon for sunset over the water.",
+    'Matosinhos': "Porto's fishing/seafood suburb, famous for grilled sardines and fresh catch. Eat lunch at one of the grilled-fish restaurants near the market rather than in central Porto — cheaper and fresher.",
+    'Serralves': "Porto's modern art museum, Art Deco villa, and extensive gardens. Even skipping the museum, the gardens alone justify a visit — allocate at least half a day.",
+    'Porto (Vila Nova de Gaia)': "Across the river from Porto, home to the historic port lodges (Taylor's, Graham's, Calém, Ferreira). Book a cellar tour with tasting ahead in summer, and time it to end at Taylor's or Graham's terrace for sunset over the Ribeira skyline.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 52 (2026-09-18) -- Algarve extras (Algarve (6 days) route + the "Algarve / Lagos"
+ * regional-name variant used by several roadtrip combos) -- 7 destinations researched. Same
+ * generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateAlgarveExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_ALGARVE_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_ALGARVE_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Praia Dona Ana': "A small, famous Algarve beach near Lagos framed by golden cliffs and rock arches. Arrive early morning in summer to get sand space, and combine with a walk to nearby Ponta da Piedade.",
+    'Portimão': "An Algarve coastal town centered on its marina and the long Praia da Rocha beach beneath sandstone cliffs. Boat trips to the coastal caves depart from the marina — book a morning slot for calmer water.",
+    'Carvoeiro': "A small cliff-top Algarve beach town with the striking Algar Seco rock formations just east of the village. The tiny beach fills up fast in summer, so go early or visit Algar Seco instead for space.",
+    'Benagil (sea cave)': "The famous Algarve sea cave with a circular skylight opening, reachable only by boat, guided kayak or guided SUP. As of 2026, swimming into the cave and unguided landing on its sand are banned (fines apply) — book a licensed boat or guided kayak/SUP tour, and expect only 5-10 minutes inside.",
+    'Silves (castle)': "The former Moorish capital of the Algarve, its red sandstone castle ringing the hilltop old town. Visit in the morning before the heat and walk the full circuit of ramparts for views over the Arade valley.",
+    'Tavira': "An elegant, less touristy eastern Algarve town on the Gilão river with a Roman-origin bridge. Take the short ferry across to Ilha de Tavira for a quieter beach than the western Algarve's.",
+    'Algarve / Lagos': "The western Algarve's main base town, with a historic old town (former Slave Market site) and easy access to the region's cliffs and beaches. Use it as a base and book a boat trip from the marina to see the coastline rather than trying to drive to every cove.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 53 (2026-09-18) -- Central Portugal / Douro / Alentejo extras (Coimbra + Serra da
+ * Estrela, Portugal Roadtrip, Porto + Douro + Lisbon) -- 10 destinations researched; the two
+ * Coimbra name variants share one canonical note. Same generic name-matching migration pattern
+ * as the other batches.
+ */
+function rbMigrateCentralPortugalDouroAlentejoDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_CENTRAL_PORTUGAL_DOURO_ALENTEJO_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_CENTRAL_PORTUGAL_DOURO_ALENTEJO_DESTINATION_NOTES, '1');
+
+  const coimbraNote = "Home to Portugal's oldest university and the gilded Biblioteca Joanina, set in a hilltop old town over the Mondego river. The library is timed-entry only (20-minute slots, ticket = your entry time) — book online in advance, as slots sell out on busy days.";
+  const notesByName = {
+    'Coimbra (brief stop)': coimbraNote,
+    'Coimbra': coimbraNote,
+    'Nazaré': "A Portuguese fishing town famous for the world's biggest surfable waves at Praia do Norte. Visit October-March for a chance at giant swell (watch safely from the Miradouro do Suberco by the lighthouse); in summer it's just a normal beach town.",
+    'Óbidos': "A small walled medieval hilltop town north of Lisbon. Walk the unguarded town walls for free (no barriers, so watch your footing) and try ginjinha liqueur served in an edible chocolate cup from a street stall.",
+    'São Leonardo da Galafura viewpoint': "A classic panoramic viewpoint over the Douro Valley's terraced vineyard slopes, near Peso da Régua. Go early morning or late afternoon for the best raking light on the terraces; it's a quick detour off the N222.",
+    'Peso da Régua': "The historic town where port wine was traditionally shipped down the Douro, and the main rail hub for the scenic Douro line. Visit the Museu do Douro on the riverfront, and use the town as the practical base for boarding the train to Pinhão.",
+    'Bucelas (optional wine detour)': "A small wine region just north of Lisbon known for crisp, high-acid white wines from the Arinto grape. An easy under-30-minute day trip from Lisbon — visit a small quinta for an uncrowded tasting.",
+    'Colares (optional wine detour, near Sintra)': "A tiny coastal wine region near Sintra known for old, ungrafted vines grown directly in sandy dunes (one of the few areas phylloxera never reached). Visit the Adega Regional de Colares co-op for tastings and pair it with a stop at nearby Praia Grande.",
+    'Serra da Estrela (Torre)': "Mainland Portugal's highest point, with a small, commercialized ski/snow area at the summit (roughly December-March, snow unreliable). Go early to beat the tour buses and souvenir crowds at the top, and check road conditions if visiting in winter.",
+    'Sabugueiro': "Mainland Portugal's highest village, in the Serra da Estrela. A quick stop for shopping at its shops selling local smoked meats and cheese — 20-30 minutes is enough.",
+    'Évora (Roman Temple + Chapel of Bones)': "A UNESCO-listed Alentejo city with a well-preserved Roman Temple of Diana and the unsettling Capela dos Ossos lined with human bones and skulls. Go early morning to see the Chapel of Bones before Lisbon day-trip tour groups arrive.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 54 (2026-09-18) -- Iceland cluster (Iceland Ring Road, Iceland Extended) -- 11
+ * individual-place destinations researched, plus two combined-name variants
+ * ("Egilsstaðir / Seyðisfjörður", "Mývatn / Akureyri / Húsavík") used by the Extended route,
+ * built by combining the individual notes (Akureyri already had a note from batch 32). Same
+ * generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateIcelandClusterDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_ICELAND_CLUSTER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_ICELAND_CLUSTER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Vík í Mýrdal': "Iceland's southernmost village, next to the black sand beach at Reynisfjara and the basalt sea stacks of Reynisdrangar just offshore. Never turn your back on the ocean here — sneaker waves have killed tourists — and go early morning for both fewer people and the best light on the stacks.",
+    'Jökulsárlón Glacier Lagoon': "Iceland's famous glacial lagoon filled with floating icebergs calved from Breiðamerkurjökull. Cross the road afterward to Diamond Beach, where chunks of ice wash up on black sand — allocate an hour or two for both together.",
+    'Höfn': "A small fishing town and the main gateway to Vatnajökull glacier tours, known locally for langoustine (humar). Eat langoustine at a local restaurant here and use the town as an overnight base before/after a glacier tour.",
+    'Egilsstaðir': "The main service town of East Iceland and gateway to the East Fjords, on Lake Lagarfljót. It's mostly a fuel/supplies stop rather than a sight in itself — treat it as a base, not a destination.",
+    'Seyðisfjörður': "A picturesque East Iceland fjord town, known for its rainbow-painted street leading to a blue church and its international ferry link (Smyril Line to the Faroe Islands/Denmark). Drive the mountain pass from Egilsstaðir with care (it can close in bad weather/winter), and photograph the rainbow street early before day-trippers arrive.",
+    'Mývatn': "A volcanic lake area with geothermal mud pools (Hverir), lava formations (Dimmuborgir), and the Mývatn Nature Baths. Visit the Nature Baths in the evening for a quieter, cheaper alternative to the Blue Lagoon.",
+    'Húsavík': "Iceland's whale-watching capital, in the north. Book an early morning tour for calmer seas and a higher chance of humpback sightings (best June-August); warm suits are provided.",
+    'Westfjords (Ísafjörður)': "Iceland's remote, dramatic northwestern peninsula, centered on the small town of Ísafjörður. Roads are largely narrow and winding (some gravel), so budget extra driving time and go June-September, as many mountain passes close in winter.",
+    'Dynjandi waterfall': "A wide, tiered waterfall in the Westfjords, often called Iceland's most impressive. Walk the roughly 15-20 minute uphill path from the parking area to reach the base of the main tier — it stays far less crowded than Iceland's Ring Road waterfalls.",
+    'Landmannalaugar (highland alternative)': "A colorful volcanic highland area with hiking trails and a natural warm river/hot spring for bathing. Only reachable by 4x4 with river-crossing capability or a highland bus, and only open roughly June-September — bring swimwear for the hot spring.",
+    'Þórsmörk (highland alternative)': "A lush, glacier-flanked highland valley and a base for the Laugavegur hiking trail. Leave a regular rental car at the last paved parking area and take the highland bus/super-jeep in, since river crossings on the F-road will strand a normal car.",
+    'Egilsstaðir / Seyðisfjörður': "Egilsstaðir is mainly a fuel/supplies base for the East Fjords, while Seyðisfjörður over the pass is the real destination — a picturesque fjord town with a rainbow-painted street leading to a blue church and the international Smyril Line ferry link to the Faroe Islands/Denmark. Drive the mountain pass with care (it can close in bad weather/winter), and photograph the rainbow street early before day-trippers arrive.",
+    'Mývatn / Akureyri / Húsavík': 'Three very different stops in one: Mývatn\'s geothermal mud pools (Hverir), lava formations (Dimmuborgir) and Nature Baths; Akureyri as the practical "capital of the north" base with strong Eyjafjörður whale-watching odds; and Húsavík, Iceland\'s dedicated whale-watching capital further north. Visit the Mývatn Nature Baths in the evening for a quieter, cheaper alternative to the Blue Lagoon, and book an early-morning Húsavík whale tour for calmer seas.',
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -15506,14 +15658,14 @@ function rbBuildPortoRoute() {
       code: 'PT', name: 'Portugal', days: 4, budget: 340, lat: 41.1579, lng: -8.6291,
       destinations: [
         { name: 'Porto (Ribeira)', lat: 41.1405, lng: -8.6118 , notes: 'Porto\'s riverside old quarter — tiered, colorful facades along the Douro, narrow medieval lanes behind. Walk (or wait for a tram) across the upper deck of the Dom Luís I bridge to Gaia for the classic elevated view back over the Ribeira, best at golden hour.' },
-        { name: 'Dom Luís I Bridge', lat: 41.1394, lng: -8.6089 },
-        { name: 'Sé do Porto (cathedral)', lat: 41.1436, lng: -8.6109 },
-        { name: 'Livraria Lello', lat: 41.1467, lng: -8.6146 },
+        { name: 'Dom Luís I Bridge', lat: 41.1394, lng: -8.6089 , notes: 'Porto\'s two-tier iron bridge (built by a disciple of Eiffel) linking Ribeira to Vila Nova de Gaia, with the best skyline view in the city. Walk the free upper pedestrian/metro deck near sunset for the classic view over the port-wine cellars and river.' },
+        { name: 'Sé do Porto (cathedral)', lat: 41.1436, lng: -8.6109 , notes: 'A fortress-like Romanesque cathedral with a Gothic cloister covered in 18th-century azulejo tiles. Pay the small cloister fee and step onto the terrace outside for one of the best free viewpoints over Ribeira.' },
+        { name: 'Livraria Lello', lat: 41.1467, lng: -8.6146 , notes: 'Porto\'s ornate 1906 Art Nouveau bookshop with a carved wooden staircase and stained-glass skylight, long rumored to have inspired J.K. Rowling. Book a timed ticket online in advance (from about €10, redeemable against a book) — you cannot just walk in, and slots sell out in high season.' },
         { name: 'Vila Nova de Gaia (port wine cellars)', lat: 41.1333, lng: -8.6111 , notes: 'Across the river from Porto, home to the historic port lodges (Taylor\'s, Graham\'s, Calém, Ferreira). Book a cellar tour with tasting ahead in summer, and time it to end at Taylor\'s or Graham\'s terrace for sunset over the Ribeira skyline.' },
-        { name: 'Pinhão (Douro day trip)', lat: 41.1897, lng: -7.5461 },
-        { name: 'Foz do Douro', lat: 41.1494, lng: -8.6789 },
-        { name: 'Matosinhos', lat: 41.1815, lng: -8.6893 },
-        { name: 'Serralves', lat: 41.1596, lng: -8.6644 },
+        { name: 'Pinhão (Douro day trip)', lat: 41.1897, lng: -7.5461 , notes: 'The terraced port-wine vineyard heartland along the Douro, centered on the small riverside town of Pinhão with its azulejo-covered train station. Ride the scenic Linha do Douro train from Porto (or Régua) to Pinhão, or take a river cruise, and pair it with a quinta tasting — allocate a full day.' },
+        { name: 'Foz do Douro', lat: 41.1494, lng: -8.6789 , notes: 'Porto\'s seafront district where the Douro meets the Atlantic, with a lighthouse (Farol de Felgueiras) and a long oceanfront promenade. Walk or cycle the boardwalk from Foz to Matosinhos in the late afternoon for sunset over the water.' },
+        { name: 'Matosinhos', lat: 41.1815, lng: -8.6893 , notes: 'Porto\'s fishing/seafood suburb, famous for grilled sardines and fresh catch. Eat lunch at one of the grilled-fish restaurants near the market rather than in central Porto — cheaper and fresher.' },
+        { name: 'Serralves', lat: 41.1596, lng: -8.6644 , notes: 'Porto\'s modern art museum, Art Deco villa, and extensive gardens. Even skipping the museum, the gardens alone justify a visit — allocate at least half a day.' },
       ],
       notes: "Ribeira, the Dom Luís I Bridge and Sé Cathedral, plus Livraria Lello (day 1) — Vila Nova de Gaia's port wine cellars and a river cruise (day 2) — a Douro day trip by train to Pinhão or Régua, or to Guimarães/Braga instead (day 3) — Foz do Douro/Matosinhos for seafood plus Serralves (day 4). Entry: direct AMS-Porto (KLM/Transavia, ~2h45, ~20-23 flights/week); metro line E from the airport into the centre (~35-45 min). Budget ~€80-90/day. Season: April-June or September-October; July-August is hot and busy, winter is mild but wetter than the south. Web check (2026-08): Porto's tourist tax is €3 pp/night (max 7 nights); Livraria Lello requires a pre-purchased timed-slot ticket — walk-ins are often sold out; historic-centre Airbnb supply is regulated, book early.",
       transport_to_next: 'End of this route — fly back AMS-Porto direct.',
@@ -15585,13 +15737,13 @@ function rbBuildAlgarveRoute() {
       destinations: [
         { name: 'Faro (Ria Formosa)', lat: 37.0194, lng: -7.9304, notes: "Faro town itself is a modest gateway — the real draw is the Ria Formosa, a lagoon system of barrier islands and salt marshes just offshore. Take a boat out to Ilha Deserta or Culatra for near-empty beaches rather than judging the area by Faro's town center." },
         { name: 'Lagos (Ponta da Piedade)', lat: 37.0836, lng: -8.6698, notes: "Dramatic golden limestone cliffs riddled with arches and sea grottoes at Lagos's southern tip. The clifftop viewpoint is only the preview — a kayak or small-boat tour (or a sunset run) gets you into the grottoes at water level, which is the actual highlight." },
-        { name: 'Praia Dona Ana', lat: 37.0906, lng: -8.6689 },
+        { name: 'Praia Dona Ana', lat: 37.0906, lng: -8.6689 , notes: 'A small, famous Algarve beach near Lagos framed by golden cliffs and rock arches. Arrive early morning in summer to get sand space, and combine with a walk to nearby Ponta da Piedade.' },
         { name: 'Sagres / Cabo de São Vicente', lat: 37.0206, lng: -8.9773, notes: "Continental Europe's southwesternmost point, considered the \"end of the known world\" in medieval times and tied to Henry the Navigator's school of navigation. Go for sunset (among the last places in mainland Europe to see it), but bring a windbreaker — the headland is exposed and reliably windy." },
-        { name: 'Portimão', lat: 37.1393, lng: -8.5378 },
-        { name: 'Carvoeiro', lat: 37.0968, lng: -8.4747 },
-        { name: 'Benagil (sea cave)', lat: 37.0889, lng: -8.4271 },
-        { name: 'Silves (castle)', lat: 37.1889, lng: -8.4386 },
-        { name: 'Tavira', lat: 37.1258, lng: -7.6486 },
+        { name: 'Portimão', lat: 37.1393, lng: -8.5378 , notes: 'An Algarve coastal town centered on its marina and the long Praia da Rocha beach beneath sandstone cliffs. Boat trips to the coastal caves depart from the marina — book a morning slot for calmer water.' },
+        { name: 'Carvoeiro', lat: 37.0968, lng: -8.4747 , notes: 'A small cliff-top Algarve beach town with the striking Algar Seco rock formations just east of the village. The tiny beach fills up fast in summer, so go early or visit Algar Seco instead for space.' },
+        { name: 'Benagil (sea cave)', lat: 37.0889, lng: -8.4271 , notes: 'The famous Algarve sea cave with a circular skylight opening, reachable only by boat, guided kayak or guided SUP. As of 2026, swimming into the cave and unguided landing on its sand are banned (fines apply) — book a licensed boat or guided kayak/SUP tour, and expect only 5-10 minutes inside.' },
+        { name: 'Silves (castle)', lat: 37.1889, lng: -8.4386 , notes: 'The former Moorish capital of the Algarve, its red sandstone castle ringing the hilltop old town. Visit in the morning before the heat and walk the full circuit of ramparts for views over the Arade valley.' },
+        { name: 'Tavira', lat: 37.1258, lng: -7.6486 , notes: 'An elegant, less touristy eastern Algarve town on the Gilão river with a Roman-origin bridge. Take the short ferry across to Ilha de Tavira for a quieter beach than the western Algarve\'s.' },
       ],
       notes: "Faro (Ria Formosa) — Lagos (Ponta da Piedade, Praia Dona Ana) — Sagres/Cabo de São Vicente — Portimão/Carvoeiro/Benagil (boat trip) — Silves — Tavira — back to Faro. Faro sits roughly central, so a west-then-east loop from there makes sense with no zigzagging. Entry: direct AMS-Faro (Transavia ~13/week plus seasonal easyJet ~7/week in summer) or direct Eindhoven-Faro (Transavia/Ryanair, ~14/week — less well-known but a good alternative); a rental car is strongly recommended. Budget ~€85-100/day. Season: May-June or September for the best price/crowd balance (hotel prices ~30-40% below the July-August peak, the sea already warm). Web check (2026-08): the Algarve's tourist tax is small and varies by municipality, roughly €1-2/night; the Benagil cave is now visited almost exclusively by boat/kayak tour (unguided swimming access is limited) — book an official tour ahead in high season.",
       transport_to_next: 'End of this route — fly back AMS-Faro (or Eindhoven-Faro) direct.',
@@ -15611,12 +15763,12 @@ function rbBuildPortugalNorthToSouthRoute() {
       code: 'PT', name: 'Portugal', days: 9, budget: 810, lat: 39.9000, lng: -8.7000,
       destinations: [
         { name: 'Porto', lat: 41.1405, lng: -8.6118 , notes: 'Porto\'s riverside old quarter — tiered, colorful facades along the Douro, narrow medieval lanes behind. Walk (or wait for a tram) across the upper deck of the Dom Luís I bridge to Gaia for the classic elevated view back over the Ribeira, best at golden hour.' },
-        { name: 'Coimbra (brief stop)', lat: 40.2076, lng: -8.4257 },
-        { name: 'Nazaré', lat: 39.6014, lng: -9.0714 },
-        { name: 'Óbidos', lat: 39.3604, lng: -9.1571 },
+        { name: 'Coimbra (brief stop)', lat: 40.2076, lng: -8.4257 , notes: 'Home to Portugal\'s oldest university and the gilded Biblioteca Joanina, set in a hilltop old town over the Mondego river. The library is timed-entry only (20-minute slots, ticket = your entry time) — book online in advance, as slots sell out on busy days.' },
+        { name: 'Nazaré', lat: 39.6014, lng: -9.0714 , notes: 'A Portuguese fishing town famous for the world\'s biggest surfable waves at Praia do Norte. Visit October-March for a chance at giant swell (watch safely from the Miradouro do Suberco by the lighthouse); in summer it\'s just a normal beach town.' },
+        { name: 'Óbidos', lat: 39.3604, lng: -9.1571 , notes: 'A small walled medieval hilltop town north of Lisbon. Walk the unguarded town walls for free (no barriers, so watch your footing) and try ginjinha liqueur served in an edible chocolate cup from a street stall.' },
         { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366, notes: "The flat neoclassical grid rebuilt after the 1755 earthquake, centered on riverside Praça do Comércio and Rossio square — it's the hub connecting Alfama and Bairro Alto, not a destination in itself. Ride the Elevador de Santa Justa or walk up to a miradouro rather than staying on the flat grid, since Baixa is the least distinctive part of central Lisbon by design." },
         { name: 'Sintra (Palace of Pena)', lat: 38.7876, lng: -9.3905, notes: "A candy-colored Romanticist palace atop a forested hilltop, mixing Gothic, Islamic and Manueline styles at the whim of King Ferdinand II — the standout of Sintra's several palaces. Book a timed-entry ticket online and arrive by 8-9am opening, since day-tripping tour buses from Lisbon fill the site and the shuttle/entrance queues get very long by mid-morning." },
-        { name: 'Algarve / Lagos', lat: 37.1021, lng: -8.6743 },
+        { name: 'Algarve / Lagos', lat: 37.1021, lng: -8.6743 , notes: 'The western Algarve\'s main base town, with a historic old town (former Slave Market site) and easy access to the region\'s cliffs and beaches. Use it as a base and book a boat trip from the marina to see the coastline rather than trying to drive to every cove.' },
       ],
       notes: "Restructured as the fast sweep, deliberately treating Coimbra as a brief stop only (see Central Portugal below for the fuller version): Porto (2 days) — Coimbra (1 day, brief) — Nazaré/Óbidos (1 day) — Lisbon + Sintra (2-3 days) — the Algarve/Lagos (2 days). Open-jaw Porto in/Faro out (or reversed) — expect a one-way rental-car drop fee; driving straight Porto-Faro takes ~5h/560km via the A1/A2 with no stops. Budget ~€85-95/day. Season: April-June or September-October — balances the cooler north against the warm-but-not-scorching south. Web check (2026-08): the A1 Lisbon-Porto toll is ~€22-25 one-way (class 1); the previously electronic-toll-only SCUT motorways (A22 Algarve, A23, A24, and since January 2026 also A25) are now free — a real relief for the southern leg.",
       transport_to_next: 'End of this route — fly home from the Algarve (or Porto if reversed).',
@@ -15635,13 +15787,13 @@ function rbBuildPortoDouroLisbonRoute() {
     {
       code: 'PT', name: 'Portugal', days: 9, budget: 920, lat: 41.1579, lng: -8.6291,
       destinations: [
-        { name: 'Porto (Vila Nova de Gaia)', lat: 41.1333, lng: -8.6111 },
-        { name: 'Pinhão (Douro Valley, 2-3 nights)', lat: 41.1897, lng: -7.5461 },
-        { name: 'São Leonardo da Galafura viewpoint', lat: 41.1584, lng: -7.6229 },
-        { name: 'Peso da Régua', lat: 41.1621, lng: -7.7871 },
+        { name: 'Porto (Vila Nova de Gaia)', lat: 41.1333, lng: -8.6111 , notes: 'Across the river from Porto, home to the historic port lodges (Taylor\'s, Graham\'s, Calém, Ferreira). Book a cellar tour with tasting ahead in summer, and time it to end at Taylor\'s or Graham\'s terrace for sunset over the Ribeira skyline.' },
+        { name: 'Pinhão (Douro Valley, 2-3 nights)', lat: 41.1897, lng: -7.5461 , notes: 'The terraced port-wine vineyard heartland along the Douro, centered on the small riverside town of Pinhão with its azulejo-covered train station. Ride the scenic Linha do Douro train from Porto (or Régua) to Pinhão, or take a river cruise, and pair it with a quinta tasting — allocate a full day.' },
+        { name: 'São Leonardo da Galafura viewpoint', lat: 41.1584, lng: -7.6229 , notes: 'A classic panoramic viewpoint over the Douro Valley\'s terraced vineyard slopes, near Peso da Régua. Go early morning or late afternoon for the best raking light on the terraces; it\'s a quick detour off the N222.' },
+        { name: 'Peso da Régua', lat: 41.1621, lng: -7.7871 , notes: 'The historic town where port wine was traditionally shipped down the Douro, and the main rail hub for the scenic Douro line. Visit the Museu do Douro on the riverfront, and use the town as the practical base for boarding the train to Pinhão.' },
         { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366, notes: "The flat neoclassical grid rebuilt after the 1755 earthquake, centered on riverside Praça do Comércio and Rossio square — it's the hub connecting Alfama and Bairro Alto, not a destination in itself. Ride the Elevador de Santa Justa or walk up to a miradouro rather than staying on the flat grid, since Baixa is the least distinctive part of central Lisbon by design." },
-        { name: 'Bucelas (optional wine detour)', lat: 38.9167, lng: -9.1167 },
-        { name: 'Colares (optional wine detour, near Sintra)', lat: 38.8000, lng: -9.4453 },
+        { name: 'Bucelas (optional wine detour)', lat: 38.9167, lng: -9.1167 , notes: 'A small wine region just north of Lisbon known for crisp, high-acid white wines from the Arinto grape. An easy under-30-minute day trip from Lisbon — visit a small quinta for an uncrowded tasting.' },
+        { name: 'Colares (optional wine detour, near Sintra)', lat: 38.8000, lng: -9.4453 , notes: 'A tiny coastal wine region near Sintra known for old, ungrafted vines grown directly in sandy dunes (one of the few areas phylloxera never reached). Visit the Adega Regional de Colares co-op for tastings and pair it with a stop at nearby Praia Grande.' },
       ],
       notes: "Restructured around the wine-region angle: Porto (2-3 days, Vila Nova de Gaia's port wine cellars) — the Douro Valley, 2-3 nights actually staying in Pinhão (quinta visits, a river cruise, the São Leonardo da Galafura viewpoint) — Lisbon (2-3 days, optionally adding the Bucelas/Colares wine regions near Sintra). Rule to stay distinctive: at least 2 nights genuinely sleeping in the Douro itself, not a Porto day trip — otherwise this overlaps with Northern Portugal: Minho above and Portugal: North to South above, which only pass through/day-trip the region. Open-jaw Porto in/Lisbon out; the Douro by scenic train (budget option) or car (for several out-of-the-way quintas) from Porto; the Porto-Lisbon Alfa Pendular fast train (~3h) as an alternative to driving/tolls/parking. Budget ~€95-110/day (quinta visits/tastings at €30-60 per experience push this above Northern Portugal's budget). Season: May-June (green, quiet) or September-October (harvest, atmospheric, but book quintas early); avoid high summer — the Douro interior gets noticeably hotter than the coast (up to the high 30s°C).",
       transport_to_next: 'End of this route — fly home from Lisbon (or Porto if reversed).',
@@ -15661,16 +15813,16 @@ function rbBuildPortugalRoadtripRoute() {
       code: 'PT', name: 'Portugal', days: 12, budget: 1080, lat: 39.5000, lng: -8.2000,
       destinations: [
         { name: 'Porto', lat: 41.1405, lng: -8.6118 , notes: 'Porto\'s riverside old quarter — tiered, colorful facades along the Douro, narrow medieval lanes behind. Walk (or wait for a tram) across the upper deck of the Dom Luís I bridge to Gaia for the classic elevated view back over the Ribeira, best at golden hour.' },
-        { name: 'Pinhão (Douro Valley, lighter stop)', lat: 41.1897, lng: -7.5461 },
-        { name: 'Coimbra', lat: 40.2076, lng: -8.4257 },
-        { name: 'Serra da Estrela (Torre)', lat: 40.3320, lng: -7.6108 },
-        { name: 'Sabugueiro', lat: 40.3625, lng: -7.6069 },
-        { name: 'Óbidos', lat: 39.3604, lng: -9.1571 },
-        { name: 'Nazaré', lat: 39.6014, lng: -9.0714 },
+        { name: 'Pinhão (Douro Valley, lighter stop)', lat: 41.1897, lng: -7.5461 , notes: 'The terraced port-wine vineyard heartland along the Douro, centered on the small riverside town of Pinhão with its azulejo-covered train station. Ride the scenic Linha do Douro train from Porto (or Régua) to Pinhão, or take a river cruise, and pair it with a quinta tasting — allocate a full day.' },
+        { name: 'Coimbra', lat: 40.2076, lng: -8.4257 , notes: 'Home to Portugal\'s oldest university and the gilded Biblioteca Joanina, set in a hilltop old town over the Mondego river. The library is timed-entry only (20-minute slots, ticket = your entry time) — book online in advance, as slots sell out on busy days.' },
+        { name: 'Serra da Estrela (Torre)', lat: 40.3320, lng: -7.6108 , notes: 'Mainland Portugal\'s highest point, with a small, commercialized ski/snow area at the summit (roughly December-March, snow unreliable). Go early to beat the tour buses and souvenir crowds at the top, and check road conditions if visiting in winter.' },
+        { name: 'Sabugueiro', lat: 40.3625, lng: -7.6069 , notes: 'Mainland Portugal\'s highest village, in the Serra da Estrela. A quick stop for shopping at its shops selling local smoked meats and cheese — 20-30 minutes is enough.' },
+        { name: 'Óbidos', lat: 39.3604, lng: -9.1571 , notes: 'A small walled medieval hilltop town north of Lisbon. Walk the unguarded town walls for free (no barriers, so watch your footing) and try ginjinha liqueur served in an edible chocolate cup from a street stall.' },
+        { name: 'Nazaré', lat: 39.6014, lng: -9.0714 , notes: 'A Portuguese fishing town famous for the world\'s biggest surfable waves at Praia do Norte. Visit October-March for a chance at giant swell (watch safely from the Miradouro do Suberco by the lighthouse); in summer it\'s just a normal beach town.' },
         { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366, notes: "The flat neoclassical grid rebuilt after the 1755 earthquake, centered on riverside Praça do Comércio and Rossio square — it's the hub connecting Alfama and Bairro Alto, not a destination in itself. Ride the Elevador de Santa Justa or walk up to a miradouro rather than staying on the flat grid, since Baixa is the least distinctive part of central Lisbon by design." },
         { name: 'Sintra (Palace of Pena)', lat: 38.7876, lng: -9.3905, notes: "A candy-colored Romanticist palace atop a forested hilltop, mixing Gothic, Islamic and Manueline styles at the whim of King Ferdinand II — the standout of Sintra's several palaces. Book a timed-entry ticket online and arrive by 8-9am opening, since day-tripping tour buses from Lisbon fill the site and the shuttle/entrance queues get very long by mid-morning." },
-        { name: 'Évora (Roman Temple + Chapel of Bones)', lat: 38.5714, lng: -7.9086 },
-        { name: 'Algarve / Lagos', lat: 37.1021, lng: -8.6743 },
+        { name: 'Évora (Roman Temple + Chapel of Bones)', lat: 38.5714, lng: -7.9086 , notes: 'A UNESCO-listed Alentejo city with a well-preserved Roman Temple of Diana and the unsettling Capela dos Ossos lined with human bones and skulls. Go early morning to see the Chapel of Bones before Lisbon day-trip tour groups arrive.' },
+        { name: 'Algarve / Lagos', lat: 37.1021, lng: -8.6743 , notes: 'The western Algarve\'s main base town, with a historic old town (former Slave Market site) and easy access to the region\'s cliffs and beaches. Use it as a base and book a boat trip from the marina to see the coastline rather than trying to drive to every cove.' },
       ],
       notes: "Restructured as the full country loop, deliberately including Central Portugal and the Alentejo: Porto (2 days) — the Douro Valley (1-2 days, lighter than the dedicated wine-region trip above) — Coimbra (1-2 days) — the Serra da Estrela (1-2 days: Torre, Sabugueiro, the Zêzere glacial valley, historic villages) — Óbidos/Nazaré (1 day) — Lisbon + Sintra (2-3 days) — Évora/Alentejo (1-2 days: Roman ruins, the Chapel of Bones) — the Algarve (2-3 days). Open-jaw Porto in/Faro out (or reversed), a rental car for the whole loop — essential outside the Porto-Lisbon-Algarve rail corridor (Serra da Estrela, Alentejo). Same toll notes as Portugal: North to South above. Budget ~€85-95/day on average (more days average out the pricier Lisbon/Algarve/Douro days against the cheaper interior/Alentejo). Season: April-June or September-early October — the Serra da Estrela can hold snow/cold at altitude into May and turns cold again from November; the Alentejo interior regularly tops 35°C in July-August. ⚠️ Pace warning: 12-14 days across 7 regions is ambitious — pick 5-6 stops rather than literally everything, or this turns into a rushed one-night-everywhere trip. This item differs from Portugal: North to South specifically at Coimbra: that item treats it as a brief stop, this one gives Coimbra + the Serra da Estrela + the Alentejo real time of their own.",
       transport_to_next: 'End of this route — fly home from the Algarve (or Porto if reversed).',
@@ -19108,7 +19260,7 @@ function rbBuildSouthIcelandRoute() {
         { name: 'Seljalandsfoss', lat: 63.6156, lng: -19.9886 },
         { name: 'Skógafoss', lat: 63.5321, lng: -19.5116 },
         { name: 'Reynisfjara black beach', lat: 63.4045, lng: -19.0424 },
-        { name: 'Vík í Mýrdal', lat: 63.4186, lng: -19.0060 },
+        { name: 'Vík í Mýrdal', lat: 63.4186, lng: -19.0060 , notes: 'Iceland\'s southernmost village, next to the black sand beach at Reynisfjara and the basalt sea stacks of Reynisdrangar just offshore. Never turn your back on the ocean here — sneaker waves have killed tourists — and go early morning for both fewer people and the best light on the stacks.' },
       ],
       notes: "Reykjavík (1-2 days) plus the Golden Circle (1 day) and the South Coast as far as Vík (Seljalandsfoss, Skógafoss, Reynisfjara black beach, 2-3 days), then back to Reykjavík — the differentiator against the routes below is stopping at Vík, not continuing further. Budget ~€120-150/day. Season: May-September for the best road conditions. Web check (2026-08): Route 1 as far as Vík is fully paved/2WD, no F-roads needed, and no volcanic impact on this stretch. Reynisfjara: watch for 'sneaker waves' (dangerous surprise waves) — a year-round warning. See the Reykjavík + Golden Circle (5 days) route above for the Reykjanes Peninsula volcanic-activity safety note and Schengen entry details.",
       transport_to_next: 'End of this route — back to Reykjavík/Keflavík to fly home, or continue on to the Iceland South Coast route below for Jökulsárlón and Höfn.',
@@ -19132,9 +19284,9 @@ function rbBuildIcelandSouthCoastRoute() {
         { name: 'Seljalandsfoss', lat: 63.6156, lng: -19.9886 },
         { name: 'Skógafoss', lat: 63.5321, lng: -19.5116 },
         { name: 'Reynisfjara black beach / Vík í Mýrdal', lat: 63.4045, lng: -19.0424 },
-        { name: 'Jökulsárlón Glacier Lagoon', lat: 64.0784, lng: -16.2300 },
+        { name: 'Jökulsárlón Glacier Lagoon', lat: 64.0784, lng: -16.2300 , notes: 'Iceland\'s famous glacial lagoon filled with floating icebergs calved from Breiðamerkurjökull. Cross the road afterward to Diamond Beach, where chunks of ice wash up on black sand — allocate an hour or two for both together.' },
         { name: 'Diamond Beach', lat: 64.0446, lng: -16.1793 },
-        { name: 'Höfn', lat: 64.2539, lng: -15.2082 },
+        { name: 'Höfn', lat: 64.2539, lng: -15.2082 , notes: 'A small fishing town and the main gateway to Vatnajökull glacier tours, known locally for langoustine (humar). Eat langoustine at a local restaurant here and use the town as an overnight base before/after a glacier tour.' },
       ],
       notes: "The same as South Iceland above, but continuing on past Vík to the Jökulsárlón glacier lagoon, Diamond Beach, and Höfn (2-3 extra days) — the differentiator here is pushing on past Vík instead of stopping there. Optionally an ice cave tour in winter (November-March, guided only). Budget ~€120-145/day. Season: June-September for driving comfort; winter (November-March) specifically for the ice caves at Vatnajökull (guided tours only, weather-dependent). Web check (2026-08): Route 1 as far as Höfn is fully paved, no 4x4 needed; always book ice cave tours with a local guide — they require one regardless of experience. See the Reykjavík + Golden Circle (5 days) route above for the Reykjanes Peninsula volcanic-activity safety note and Schengen entry details.",
       transport_to_next: 'End of this route — back to Reykjavík/Keflavík to fly home, or continue on to the full Iceland Ring Road route below.',
@@ -19154,14 +19306,14 @@ function rbBuildIcelandRingRoadRoute() {
       code: 'IS', name: 'Iceland', days: 12, budget: 1560, lat: 64.1466, lng: -21.9426,
       destinations: [
         { name: 'Reykjavík', lat: 64.1466, lng: -21.9426 , notes: 'Small enough to cover on foot — Hallgrímskirkja\'s tower (small fee) is the one worthwhile "view" stop, plus the Old Harbour for whale-watching departures. No special timing tip beyond the route\'s own — just allocate a half day, more if doing a whale-watching add-on.' },
-        { name: 'Vík í Mýrdal', lat: 63.4186, lng: -19.0060 },
-        { name: 'Jökulsárlón Glacier Lagoon', lat: 64.0784, lng: -16.2300 },
-        { name: 'Höfn', lat: 64.2539, lng: -15.2082 },
-        { name: 'Egilsstaðir', lat: 65.2669, lng: -14.3948 },
-        { name: 'Seyðisfjörður', lat: 65.2646, lng: -13.9552 },
-        { name: 'Mývatn', lat: 65.6000, lng: -17.0000 },
+        { name: 'Vík í Mýrdal', lat: 63.4186, lng: -19.0060 , notes: 'Iceland\'s southernmost village, next to the black sand beach at Reynisfjara and the basalt sea stacks of Reynisdrangar just offshore. Never turn your back on the ocean here — sneaker waves have killed tourists — and go early morning for both fewer people and the best light on the stacks.' },
+        { name: 'Jökulsárlón Glacier Lagoon', lat: 64.0784, lng: -16.2300 , notes: 'Iceland\'s famous glacial lagoon filled with floating icebergs calved from Breiðamerkurjökull. Cross the road afterward to Diamond Beach, where chunks of ice wash up on black sand — allocate an hour or two for both together.' },
+        { name: 'Höfn', lat: 64.2539, lng: -15.2082 , notes: 'A small fishing town and the main gateway to Vatnajökull glacier tours, known locally for langoustine (humar). Eat langoustine at a local restaurant here and use the town as an overnight base before/after a glacier tour.' },
+        { name: 'Egilsstaðir', lat: 65.2669, lng: -14.3948 , notes: 'The main service town of East Iceland and gateway to the East Fjords, on Lake Lagarfljót. It\'s mostly a fuel/supplies stop rather than a sight in itself — treat it as a base, not a destination.' },
+        { name: 'Seyðisfjörður', lat: 65.2646, lng: -13.9552 , notes: 'A picturesque East Iceland fjord town, known for its rainbow-painted street leading to a blue church and its international ferry link (Smyril Line to the Faroe Islands/Denmark). Drive the mountain pass from Egilsstaðir with care (it can close in bad weather/winter), and photograph the rainbow street early before day-trippers arrive.' },
+        { name: 'Mývatn', lat: 65.6000, lng: -17.0000 , notes: 'A volcanic lake area with geothermal mud pools (Hverir), lava formations (Dimmuborgir), and the Mývatn Nature Baths. Visit the Nature Baths in the evening for a quieter, cheaper alternative to the Blue Lagoon.' },
         { name: 'Akureyri', lat: 65.6835, lng: -18.0878, notes: "The \"capital of the north\" and the practical base for Mývatn's geothermal area and whale-watching in Eyjafjörður, which has one of Iceland's highest sighting rates thanks to the nutrient-rich fjord water." },
-        { name: 'Húsavík', lat: 66.0449, lng: -17.3389 },
+        { name: 'Húsavík', lat: 66.0449, lng: -17.3389 , notes: 'Iceland\'s whale-watching capital, in the north. Book an early morning tour for calmer seas and a higher chance of humpback sightings (best June-August); warm suits are provided.' },
       ],
       notes: "The complete Route 1 loop (1,332 km): Reykjavík → the South Coast/Jökulsárlón → the East Fjords (Egilsstaðir/Seyðisfjörður) → North Iceland (Mývatn, Akureyri, Húsavík whale watching) → back via the west — the differentiator against the routes above is the full circle, not just the south coast. Budget ~€115-140/day (a rental car is essential, most days self-catering or a guesthouse). Season: June-mid September is optimal (all roads open, lowest risk of snowfall). Web check (2026-08): Route 1 itself stays 2WD/paved, no F-roads needed for the ring road; some unpaved side roads do exist to attractions off the main route (e.g. parts of Snæfellsnes, if added). Check umferdin.is for current road conditions just before departure, especially outside peak summer. See the Reykjavík + Golden Circle (5 days) route above for the Reykjanes Peninsula volcanic-activity safety note and Schengen entry details.\n\nDistinct from the existing standalone 'Iceland ❄️' route (split off from Nordic Arctic Expedition ❄️), which is the longer, epic expedition version. This one is deliberately the realistic, shorter 'Trip Ideas' Ring Road version — a different kind of trip (holiday vs. epic), not a duplicate.",
       transport_to_next: 'End of this route — fly home from Keflavík, or continue on to the Iceland Extended route below for the Westfjords or Highlands.',
@@ -19181,14 +19333,14 @@ function rbBuildIcelandExtendedRoute() {
       code: 'IS', name: 'Iceland', days: 14, budget: 2030, lat: 64.1466, lng: -21.9426,
       destinations: [
         { name: 'Reykjavík', lat: 64.1466, lng: -21.9426 , notes: 'Small enough to cover on foot — Hallgrímskirkja\'s tower (small fee) is the one worthwhile "view" stop, plus the Old Harbour for whale-watching departures. No special timing tip beyond the route\'s own — just allocate a half day, more if doing a whale-watching add-on.' },
-        { name: 'Vík í Mýrdal', lat: 63.4186, lng: -19.0060 },
-        { name: 'Jökulsárlón Glacier Lagoon', lat: 64.0784, lng: -16.2300 },
-        { name: 'Egilsstaðir / Seyðisfjörður', lat: 65.2669, lng: -14.3948 },
-        { name: 'Mývatn / Akureyri / Húsavík', lat: 65.6000, lng: -17.0000 },
-        { name: 'Westfjords (Ísafjörður)', lat: 66.0748, lng: -23.1339 },
-        { name: 'Dynjandi waterfall', lat: 65.7333, lng: -23.1833 },
-        { name: 'Landmannalaugar (highland alternative)', lat: 63.9938, lng: -19.0619 },
-        { name: 'Þórsmörk (highland alternative)', lat: 63.6833, lng: -19.5333 },
+        { name: 'Vík í Mýrdal', lat: 63.4186, lng: -19.0060 , notes: 'Iceland\'s southernmost village, next to the black sand beach at Reynisfjara and the basalt sea stacks of Reynisdrangar just offshore. Never turn your back on the ocean here — sneaker waves have killed tourists — and go early morning for both fewer people and the best light on the stacks.' },
+        { name: 'Jökulsárlón Glacier Lagoon', lat: 64.0784, lng: -16.2300 , notes: 'Iceland\'s famous glacial lagoon filled with floating icebergs calved from Breiðamerkurjökull. Cross the road afterward to Diamond Beach, where chunks of ice wash up on black sand — allocate an hour or two for both together.' },
+        { name: 'Egilsstaðir / Seyðisfjörður', lat: 65.2669, lng: -14.3948 , notes: 'Egilsstaðir is mainly a fuel/supplies base for the East Fjords, while Seyðisfjörður over the pass is the real destination — a picturesque fjord town with a rainbow-painted street leading to a blue church and the international Smyril Line ferry link to the Faroe Islands/Denmark. Drive the mountain pass with care (it can close in bad weather/winter), and photograph the rainbow street early before day-trippers arrive.' },
+        { name: 'Mývatn / Akureyri / Húsavík', lat: 65.6000, lng: -17.0000 , notes: 'Three very different stops in one: Mývatn\'s geothermal mud pools (Hverir), lava formations (Dimmuborgir) and Nature Baths; Akureyri as the practical "capital of the north" base with strong Eyjafjörður whale-watching odds; and Húsavík, Iceland\'s dedicated whale-watching capital further north. Visit the Mývatn Nature Baths in the evening for a quieter, cheaper alternative to the Blue Lagoon, and book an early-morning Húsavík whale tour for calmer seas.' },
+        { name: 'Westfjords (Ísafjörður)', lat: 66.0748, lng: -23.1339 , notes: 'Iceland\'s remote, dramatic northwestern peninsula, centered on the small town of Ísafjörður. Roads are largely narrow and winding (some gravel), so budget extra driving time and go June-September, as many mountain passes close in winter.' },
+        { name: 'Dynjandi waterfall', lat: 65.7333, lng: -23.1833 , notes: 'A wide, tiered waterfall in the Westfjords, often called Iceland\'s most impressive. Walk the roughly 15-20 minute uphill path from the parking area to reach the base of the main tier — it stays far less crowded than Iceland\'s Ring Road waterfalls.' },
+        { name: 'Landmannalaugar (highland alternative)', lat: 63.9938, lng: -19.0619 , notes: 'A colorful volcanic highland area with hiking trails and a natural warm river/hot spring for bathing. Only reachable by 4x4 with river-crossing capability or a highland bus, and only open roughly June-September — bring swimwear for the hot spring.' },
+        { name: 'Þórsmörk (highland alternative)', lat: 63.6833, lng: -19.5333 , notes: 'A lush, glacier-flanked highland valley and a base for the Laugavegur hiking trail. Leave a regular rental car at the last paved parking area and take the highland bus/super-jeep in, since river crossings on the F-road will strand a normal car.' },
       ],
       notes: "The full Ring Road (as above) plus an extra branch: either the Westfjords (remote, dramatic fjords, the Dynjandi waterfall) or a highland tour (e.g. Landmannalaugar/Þórsmörk via an F-road, 4x4 required) — the differentiator here is that extra depth, not just more days on the same route. Budget ~€130-160/day (the highland tour needs a 4x4 rental, pricier than 2WD; the Westfjords option means more fuel/distance and fewer amenities). Season: the highland option is only feasible roughly mid-June-early September (F-roads only open then, varies year to year — check vegagerdin.is/umferdin.is); the Westfjords are accessible all summer, though some mountain passes have winter closures. Web check (2026-08): the highland route requires mandatory 4x4 plus river fords, NOT covered by a standard 2WD rental — check opening dates right before departure. The Westfjords option stays on paved/2WD-suitable main roads throughout. See the Reykjavík + Golden Circle (5 days) route above for the Reykjanes Peninsula volcanic-activity safety note and Schengen entry details.",
       transport_to_next: 'End of this route — fly home from Keflavík.',
@@ -21055,7 +21207,7 @@ function rbBuildNorthernPortugalGaliciaRoute() {
       destinations: [
         { name: 'Porto (Ribeira)', lat: 41.1405, lng: -8.6118 , notes: 'Porto\'s riverside old quarter — tiered, colorful facades along the Douro, narrow medieval lanes behind. Walk (or wait for a tram) across the upper deck of the Dom Luís I bridge to Gaia for the classic elevated view back over the Ribeira, best at golden hour.' },
         { name: 'Vila Nova de Gaia (port wine cellars)', lat: 41.1333, lng: -8.6111 , notes: 'Across the river from Porto, home to the historic port lodges (Taylor\'s, Graham\'s, Calém, Ferreira). Book a cellar tour with tasting ahead in summer, and time it to end at Taylor\'s or Graham\'s terrace for sunset over the Ribeira skyline.' },
-        { name: 'Pinhão (Douro day trip)', lat: 41.1897, lng: -7.5461 },
+        { name: 'Pinhão (Douro day trip)', lat: 41.1897, lng: -7.5461 , notes: 'The terraced port-wine vineyard heartland along the Douro, centered on the small riverside town of Pinhão with its azulejo-covered train station. Ride the scenic Linha do Douro train from Porto (or Régua) to Pinhão, or take a river cruise, and pair it with a quinta tasting — allocate a full day.' },
         { name: 'Guimarães (Paço dos Duques, day trip)', lat: 41.4419, lng: -8.2918 , notes: 'Considered the "birthplace of Portugal" — the 15th-century Ducal Palace and the adjoining hilltop castle where the first king was reputedly born. A half day covers palace, castle and the medieval old town; fast train from Porto is about an hour.' },
         { name: 'Braga (Bom Jesus do Monte, day trip)', lat: 41.5519, lng: -8.3789 , notes: 'Baroque pilgrimage sanctuary on a wooded hill, famous for its zigzagging Via Sacra staircase lined with allegorical fountains. Climb the stairs (about 20 min) or ride the 1882 water-counterweight funicular — one of the oldest of its kind still running — then add Braga\'s old town center to fill the day.' },
         { name: 'Viana do Castelo (Santa Luzia viewpoint)', lat: 41.6932, lng: -8.8327 , notes: 'Hilltop basilica with a sweeping panorama over the Lima river estuary and Atlantic coastline. Take the funicular up (or the 20-min walk) and go late afternoon when the light hits the river mouth.' },
@@ -22060,7 +22212,7 @@ function rbBuildSpainPortugalPortoMadridRoute() {
         { name: 'Porto (Ribeira)', lat: 41.1405, lng: -8.6118 , notes: 'Porto\'s riverside old quarter — tiered, colorful facades along the Douro, narrow medieval lanes behind. Walk (or wait for a tram) across the upper deck of the Dom Luís I bridge to Gaia for the classic elevated view back over the Ribeira, best at golden hour.' },
         { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366, notes: "The flat neoclassical grid rebuilt after the 1755 earthquake, centered on riverside Praça do Comércio and Rossio square — it's the hub connecting Alfama and Bairro Alto, not a destination in itself. Ride the Elevador de Santa Justa or walk up to a miradouro rather than staying on the flat grid, since Baixa is the least distinctive part of central Lisbon by design." },
         { name: 'Sintra (Palace of Pena)', lat: 38.7876, lng: -9.3905, notes: "A candy-colored Romanticist palace atop a forested hilltop, mixing Gothic, Islamic and Manueline styles at the whim of King Ferdinand II — the standout of Sintra's several palaces. Book a timed-entry ticket online and arrive by 8-9am opening, since day-tripping tour buses from Lisbon fill the site and the shuttle/entrance queues get very long by mid-morning." },
-        { name: 'Algarve / Lagos', lat: 37.1021, lng: -8.6743 },
+        { name: 'Algarve / Lagos', lat: 37.1021, lng: -8.6743 , notes: 'The western Algarve\'s main base town, with a historic old town (former Slave Market site) and easy access to the region\'s cliffs and beaches. Use it as a base and book a boat trip from the marina to see the coastline rather than trying to drive to every cove.' },
       ],
       notes: "Porto (2 days) — Lisbon + Sintra (3 days) — the Algarve/Lagos (3 days) — a purely linear sweep with no backtracking, deliberately without the Douro/Coimbra/Évora detours of the fuller Portugal Roadtrip (12 days) 🗺️ route or the Córdoba/Granada loop of the broader Portugal + Spain Roadtrip (14 days) 🚗 route (see this route's own notes below for both). Entry: open-jaw AMS-Porto in, ending overland in Madrid for the flight home. Budget ~€90-100/day. Season: April-June or September-October — July-August is too hot in the Algarve and gets extreme further along the route in Seville.",
       transport_to_next: 'Drive or bus from the Algarve to Seville, Spain (~2h30-3h) — a Schengen border, no formalities.',
