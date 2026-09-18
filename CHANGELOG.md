@@ -30,6 +30,16 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   already present in the existing data, no change needed to how batches insert notes or build
   their migration functions.
 
+- **Per-destination notes, batch 35 — Delhi (2026-09-18)** — at Youri's explicit request, gave
+  Delhi its own real sightseeing note (Humayun's Tomb + Lodi Gardens, Delhi Metro tip) instead of
+  leaving it deliberately blank. This was a conscious reversal of the batch-19 decision to skip
+  Delhi (since Red Fort/Chandni Chowk etc. were already covered on Youri's earlier visit) — closes
+  out the permanent "IN signature never shows done" tracker quirk flagged in batches 19/24/34,
+  since the plan generator only marks a signature done once every destination has a note. Same
+  generic name-matching migration (`rbMigrateDelhiDestinationNote()`); North India 🕌 and India &
+  Himalaya Expedition 🏔️ now both show `[x]` done in the plan and are gone from the batch queue.
+  App-wide total: 2653 destination-slots filled across 332 routes. 307/741 signatures done.
+
 - **Per-destination notes, batch 34 — Canary Islands (10-14 days) (2026-09-18)** — a small
   4-leg/7-destination combo route, researched in a single pass (none had notes yet). High-leverage
   shared-signature batch: every destination recurs across the standalone single-island routes

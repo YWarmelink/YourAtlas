@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 306 / 741 signatures.**
+- **Done so far: 307 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -177,7 +177,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **IE** (6 dest): Donegal, Connemara, Galway, Cliffs of Moher, Wild Atlantic Way, Dingle Peninsula — routes: British Isles & Celtic Coast Expedition 🍀, Ireland ☘️
 - [x] **IE** (4 dest): Ring of Kerry, Killarney National Park, Cork, Kilkenny — routes: British Isles & Celtic Coast Expedition 🍀, Ireland ☘️
 - [x] **IM** (5 dest): Douglas, Peel, TT Mountain Road (Snaefell), Manx Electric Railway, Snaefell Mountain Railway — routes: British Isles & Celtic Coast Expedition 🍀, England, Wales & Isle of Man 🎩
-- [ ] **IN** (9 dest): Delhi (arrival, no extra sightseeing — already visited), Jaipur, Pushkar, Jodhpur, Jaisalmer, Udaipur, Manali, Rishikesh, Varanasi — routes: India & Himalaya Expedition 🏔️, North India 🕌
+- [x] **IN** (9 dest): Delhi (arrival, no extra sightseeing — already visited), Jaipur, Pushkar, Jodhpur, Jaisalmer, Udaipur, Manali, Rishikesh, Varanasi — routes: India & Himalaya Expedition 🏔️, North India 🕌
 - [x] **IS** (5 dest): Reykjavík, Þingvellir, Geysir, Gullfoss, Blue Lagoon — routes: Faroe Islands + Iceland (9 days) ⛴️, Reykjavík + Golden Circle (5 days) 🌋
 - [x] **IT** (4 dest): Tre Cime, Lago di Braies, Seceda, Val Gardena — routes: Central European Grand Roadtrip 🚗, Dolomites & North Italy 🚡
 - [x] **IT** (5 dest): Monterosso, Vernazza, Corniglia, Manarola, Riomaggiore — routes: Central European Grand Roadtrip 🚗, Dolomites & North Italy 🚡
@@ -768,14 +768,12 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| North India 🕌 | 9/9 | 1 |
-| India & Himalaya Expedition 🏔️ | 9/22 | 1 |
 | Germany: Berlin + Dresden + Bavaria (9 days) 🚂 | 6/6 | 1 |
 | Bavaria + Alps + Berchtesgaden (6 days) ⛰️ | 6/6 | 1 |
 | Kosovo + Albania (9 days) 🏔️ | 6/6 | 1 |
 | Italy + Slovenia + Croatia (10-14 days) ⛵ | 6/9 | 1 |
-| Luxembourg + Ardennes (4 days) 🎖️ | 5/5 | 1 |
 | South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️ | 5/5 | 1 |
+| Luxembourg + Ardennes (4 days) 🎖️ | 5/5 | 1 |
 | San Marino + Emilia-Romagna (4 days) 🍝 | 5/5 | 1 |
 | Albania + Montenegro (12 days) 🏝️ | 4/6 | 1 |
 | Albania (6 days) 🏖️ | 4/4 | 1 |
@@ -808,6 +806,8 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Corsica + Sardinia: Full Island Loop (12 days) 🌊 | 9/9 | 0 |
 | Porto (4 days) 🌉 | 9/9 | 0 |
 | Algarve (6 days) 🏖️ | 9/9 | 0 |
-| ... 257 more routes with open destinations ... | | |
+| Grand European Roadtrip (14-21 days) 🪣 | 9/12 | 0 |
+| Iceland Ring Road (12 days) 🛣️ | 9/9 | 0 |
+| ... 255 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

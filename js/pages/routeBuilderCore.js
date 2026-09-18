@@ -167,6 +167,7 @@ const RB_MIGRATE_FLAG_2026_09_SERBIA_MONTENEGRO_BOSNIA_DESTINATION_NOTES = 'atla
 const RB_MIGRATE_FLAG_2026_09_FAROE_ICELAND_DESTINATION_NOTES = 'atlas_grand_trips_migrate_2026_09_faroe_iceland_destination_notes_v1';
 const RB_MIGRATE_FLAG_2026_09_MADEIRA_PORTO_SANTO_DESTINATION_NOTES = 'atlas_grand_trips_migrate_2026_09_madeira_porto_santo_destination_notes_v1';
 const RB_MIGRATE_FLAG_2026_09_CANARY_ISLANDS_DESTINATION_NOTES = 'atlas_grand_trips_migrate_2026_09_canary_islands_destination_notes_v1';
+const RB_MIGRATE_FLAG_2026_09_DELHI_DESTINATION_NOTE = 'atlas_grand_trips_migrate_2026_09_delhi_destination_note_v1';
 const RB_MIGRATE_FLAG_2026_09_DETERMINISTIC_SEED_IDS = 'atlas_grand_trips_migrate_2026_09_deterministic_seed_ids_v1';
 const RB_BLOCK_COLORS =['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point

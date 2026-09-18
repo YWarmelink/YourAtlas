@@ -473,7 +473,7 @@ const RB_EXPEDITION_CONTENT = {
     // India trimmed (2026-08): Agra/Taj Mahal, Amritsar/Golden Temple and Dharamshala/McLeod Ganj
     // cut at Youri's request — already visited before. Delhi stays as the mandatory arrival point.
     IN: { days: 22, budget: 935, lat: 28.6139, lng: 77.209, destinations: [
-      { name: 'Delhi (arrival, no extra sightseeing — already visited)', lat: 28.6139, lng: 77.209 },
+      { name: 'Delhi (arrival, no extra sightseeing — already visited)', lat: 28.6139, lng: 77.209, notes: "Since Red Fort, Jama Masjid and Chandni Chowk are already covered from an earlier visit, Humayun's Tomb — the Mughal-era precursor to the Taj Mahal, and far quieter — plus the adjoining Lodi Gardens are the most worthwhile stops if extra time opens up. The Delhi Metro is faster than a taxi across town most hours given the traffic, and a fixed-line airport express connects straight from the international terminal." },
       { name: 'Jaipur', lat: 26.9124, lng: 75.7873, notes: "The Pink City's Amber Fort (hilltop, mirrored Sheesh Mahal) and City Palace/Hawa Mahal complex are the highlights. Visit Amber Fort right at opening (8am) to beat both the heat and the tour-bus crowds, and skip the elephant ride up (long queues, animal-welfare concerns) in favor of a jeep or the walk." },
       { name: 'Pushkar', lat: 26.4899, lng: 74.5511, notes: "A small holy town built around a sacred lake with 52 ghats and India's only major temple dedicated to Brahma. Sunset at the ghats is the best time to feel the town's pace; if travel dates land in Oct/Nov, check whether they overlap the Pushkar Camel Fair (Kartik Purnima) — spectacular but the town's accommodation and crowds triple." },
       { name: 'Jodhpur', lat: 26.2389, lng: 73.0243, notes: "Known as the Blue City for the indigo-washed old town, seen best from the ramparts of Mehrangarh Fort towering directly above it. Budget a half-day for the fort's audio-guide route, then spend early evening on the fort walls or a rooftop café for the blue-rooftop panorama at golden hour." },
@@ -9283,6 +9283,35 @@ function rbMigrateCanaryIslandsDestinationNotes() {
     'Timanfaya National Park (Islote de Hilario)': 'A stark 1730s-eruption moonscape — the catch is you can\'t hike freely inside; the interior is only seen via the guided "Ruta de los Volcanes" bus tour departing from Islote de Hilario, where rangers also do the classic geothermal demos (brush bursting into flame, water flash-boiling in a pipe from ground heat). Arrive early since timed bus-tour slots can back up.',
     'Arrecife': "Lanzarote's capital isn't a major sightseeing stop — treat it as a base. The one pleasant part is the Charco de San Ginés lagoon and adjoining promenade, good for an evening stroll and dinner.",
     'Corralejo': "The draw is Corralejo Natural Park's large white sand dune system meeting turquoise water, plus it's the departure point for a short boat trip to Isla de Lobos (uninhabited islet, good snorkeling). Walk the dunes early morning before the wind (which this coast is known for) picks up in the afternoon.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 35 (2026-09-18) -- Delhi, at Youri's explicit request, to close out the permanent
+ * "Delhi never shows done" tracker quirk flagged since batch 19/24: the plan generator marks a
+ * signature done only when every destination has a note, so Delhi's deliberate no-note kept
+ * India & Himalaya Expedition / North India resurfacing at the top of the queue. Same generic
+ * name-matching migration pattern as the other batches.
+ */
+function rbMigrateDelhiDestinationNote() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_DELHI_DESTINATION_NOTE)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_DELHI_DESTINATION_NOTE, '1');
+
+  const notesByName = {
+    'Delhi (arrival, no extra sightseeing — already visited)': "Since Red Fort, Jama Masjid and Chandni Chowk are already covered from an earlier visit, Humayun's Tomb — the Mughal-era precursor to the Taj Mahal, and far quieter — plus the adjoining Lodi Gardens are the most worthwhile stops if extra time opens up. The Delhi Metro is faster than a taxi across town most hours given the traffic, and a fixed-line airport express connects straight from the international terminal.",
   };
 
   let touched = false;
