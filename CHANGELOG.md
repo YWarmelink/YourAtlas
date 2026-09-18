@@ -12,6 +12,13 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batches 166-169 — Solo-nation cluster 1 (2026-09-18)** — 41 fresh
+  destinations researched, closing out 9 routes entirely: Malta & Italy leftover (final
+  destination — Gozo's Ġgantija temples), ABC Islands (Aruba leftovers), South Korea, Maldives,
+  United Arab Emirates, Seychelles, Palau, Uruguay, Guyana
+  (`rbMigrateSoloNationsCluster1DestinationNotes()`).
+  App-wide total: 3938 destination-slots filled across 444 routes. 694/741 signatures done.
+
 - **Per-destination notes, batches 159-165 — Europe mixed cluster round 5 (2026-09-18)** — 46
   fresh destinations plus 5 reuse entries, closing out 26 routes entirely: Belgrade +
   Surroundings, Bucharest + Transylvania, Budapest, Hungary Roadtrip, Prague, Czechia Roadtrip,

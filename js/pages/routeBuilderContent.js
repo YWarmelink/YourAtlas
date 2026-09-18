@@ -2748,7 +2748,7 @@ function rbBuildMaltaItalyRoute() {
             { name: 'Valletta', lat: 35.8989, lng: 14.5146 },
             { name: 'Mdina', lat: 35.8869, lng: 14.4031 },
             { name: 'Gozo', lat: 36.0443, lng: 14.2440 },
-            { name: 'Ġgantija-tempels', lat: 36.0453, lng: 14.2686 },
+            { name: 'Ġgantija-tempels', lat: 36.0453, lng: 14.2686 , notes: 'Gozo\'s megalithic temple complex, among the oldest free-standing structures in the world (older than Stonehenge and the Egyptian pyramids), predating even Malta\'s own Hagar Qim/Mnajdra temples by several centuries; a small on-site museum interprets the site\'s Neolithic construction techniques.' },
             { name: 'Hypogeum', lat: 35.8703, lng: 14.5027 },
           ],
           notes: 'Entry: flight Amsterdam-Malta/Luqa (±3h20, from ±€120-250 return, best period October). Price indication from 2026-08 web research, a snapshot. The Ġgantija temples and the Hypogeum are older than the pyramids of Giza — among the oldest free-standing structures in the world. Alongside that, the Knights of Malta in Valletta and Mdina, with a quieter Gozo as a counterpart.',
@@ -12866,6 +12866,74 @@ function rbMigrateEuropeMixedCluster5DestinationNotes() {
 }
 
 /**
+ * Batches 166-169 (2026-09-18) -- Solo-nation cluster 1 -- closes out Malta & Italy leftover, ABC
+ * Islands, South Korea, Maldives, United Arab Emirates, Seychelles, Palau, Uruguay, and Guyana
+ * entirely. 41 fresh destinations researched. Same generic name-matching migration pattern as
+ * the other batches.
+ */
+function rbMigrateSoloNationsCluster1DestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_SOLO_NATIONS_CLUSTER1_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_SOLO_NATIONS_CLUSTER1_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Ġgantija-tempels': "Gozo's megalithic temple complex, among the oldest free-standing structures in the world (older than Stonehenge and the Egyptian pyramids), predating even Malta's own Hagar Qim/Mnajdra temples by several centuries; a small on-site museum interprets the site's Neolithic construction techniques.",
+    'Eagle Beach': "Aruba's most famous beach, consistently ranked among the world's best, known for its powdery white sand and iconic divi-divi trees bent permanently sideways by the trade winds; calmer and less crowded than the resort-lined Palm Beach further north.",
+    'Arikok National Park & the Natural Pool (Conchi)': "Aruba's national park covers roughly a fifth of the island, protecting desert-like cactus terrain, sand dunes, and limestone caves; the Natural Pool (Conchi) is a rock-enclosed swimming hole on the rugged east coast, reachable only by 4x4 or a rough hike.",
+    'Baby Beach & San Nicolas': "Baby Beach is a shallow, calm horseshoe-shaped bay at Aruba's southern tip, ideal for families and snorkeling; San Nicolas nearby is the island's \"second city,\" known for colorful street art and a more local, less touristy feel than the resort strip.",
+    'California Lighthouse': "A lighthouse at Aruba's northwestern tip, named after the SS California, a ship that sank nearby; the surrounding dunes and rocky coastline give one of the island's best sunset viewpoints.",
+    'Oranjestad': "Aruba's colorful capital, with Dutch colonial-style pastel buildings along the harbor and main shopping street; also home to a small but engaging archaeological museum covering the island's pre-Columbian Arawak history.",
+    'Seoul': "A vast, hyper-modern capital layered over centuries of history, with five restored Joseon-dynasty royal palaces (Gyeongbokgung the largest) alongside districts like Myeongdong for shopping and Hongdae for nightlife; the changing-of-the-guard ceremony at Gyeongbokgung runs several times daily.",
+    'DMZ / Imjingak': "The Korean Demilitarized Zone, one of the most heavily fortified borders on Earth, paradoxically also an accidental wildlife sanctuary due to decades without human development; Imjingak park nearby has memorials and a viewing platform toward North Korea, and deeper DMZ tours (including infiltration tunnels) require advance booking and passport ID.",
+    'Gyeongju': "The capital of the ancient Silla kingdom for nearly a thousand years, sometimes called \"the museum without walls\" for its density of tombs, temples and royal sites, including the Bulguksa Temple and Seokguram Grotto, both UNESCO-listed.",
+    'Busan': "South Korea's second city and main port, known for Haeundae Beach, the colorful hillside Gamcheon Culture Village (often compared to Santorini), and Jagalchi, the country's largest seafood market.",
+    'Jeju Island': "A volcanic island off the south coast, home to Hallasan, South Korea's highest peak (a dormant shield volcano), lava tube caves, and a distinct matriarchal diving culture (haenyeo, elderly female free-divers); a popular honeymoon and nature-focused getaway from the mainland.",
+    'Malé': "The Maldives' tiny, densely packed capital island, one of the most crowded urban areas in the world relative to its size; mainly a transit hub for connecting to resort or local islands rather than a beach destination itself.",
+    'Maafushi': "One of the most popular \"local islands\" for budget travelers, offering an affordable alternative to private resort islands with guesthouses, a bikini beach, and easy access to snorkeling and dolphin/whale shark excursions.",
+    'Thulusdhoo': "A small local island known as a surf destination (the famous \"Cokes\" and \"Chickens\" breaks are just offshore) and home to the Maldives' only Coca-Cola bottling plant, giving the island its nickname.",
+    'Fulidhoo': "A quiet, traditional local island in Vaavu Atoll known for regular nighttime nurse shark sightings right off the jetty and turtle encounters, offering a calmer, less developed alternative to the busier tourist islands.",
+    'Dhigurah': "A long, narrow local island in South Ari Atoll, used as a base for whale shark snorkeling trips year-round in the nearby waters — one of the few places in the world with a resident whale shark population.",
+    'Dubai': "A city built rapidly on oil wealth then diversified into tourism/finance, home to the Burj Khalifa (the world's tallest building) and the Burj Al Arab; also has a traditional side in the Al Fahidi historic district and abra boat crossings on Dubai Creek.",
+    'Abu Dhabi': "The UAE's capital and wealthiest emirate, home to the Sheikh Zayed Grand Mosque (one of the world's largest, with a vast hand-knotted carpet and chandeliers), plus the Louvre Abu Dhabi, an outpost of the Paris museum in a striking dome structure.",
+    'Al Ain': "Known as the \"Garden City,\" a green oasis town near the Oman border built around ancient falaj irrigation channels; Jebel Hafeet, a mountain on its edge, has a scenic road to the summit and hot springs at its base.",
+    'Liwa Oasis / Empty Quarter': "The gateway to the Rub' al Khali (Empty Quarter), the world's largest contiguous sand desert, with towering dunes reaching over 300m; dune bashing, sandboarding and overnight desert camps are the main draws.",
+    'Fujairah / East Coast': "The UAE's only emirate facing the Gulf of Oman rather than the Persian Gulf, with a more mountainous, less developed coastline; known for the Fujairah Fort and as a diving/snorkeling base, notably around Snoopy Island.",
+    'Victoria & Sainte Anne Marine Park, Mahé': "Victoria is one of the world's smallest capitals, with a compact market and a small-scale replica of Big Ben; Sainte Anne Marine National Park just offshore protects coral reefs and seagrass beds around a cluster of small islands.",
+    'Morne Seychellois National Park, Mahé': "Covers about a fifth of Mahé island, protecting the granite peaks and dense jungle at its center; hiking trails climb to Morne Seychellois itself, the archipelago's highest point, with views over much of the main island.",
+    'Praslin (Vallée de Mai, Anse Lazio)': "Praslin's Vallée de Mai is a UNESCO-listed primeval palm forest, home to the coco de mer, a palm producing the largest seed in the plant kingdom; Anse Lazio nearby is regularly ranked among the world's best beaches.",
+    'Curieuse Island': "A nature reserve island near Praslin, home to a colony of giant Aldabra tortoises that roam freely and a historic former leper colony's ruins; a popular boat-trip stop combining wildlife and a bit of history.",
+    "La Digue (Anse Source d'Argent)": "A car-free island where ox carts and bicycles are the main transport; Anse Source d'Argent, framed by giant granite boulders, is one of the most photographed beaches in the world.",
+    'Koror': "Palau's largest town and former capital, the main hub for arranging dive trips and boat tours into the Rock Islands; also home to the Belau National Museum, one of Micronesia's oldest museums.",
+    'Rock Islands Southern Lagoon & Jellyfish Lake': "A UNESCO World Heritage cluster of mushroom-shaped limestone islands; Jellyfish Lake is a marine lake where millions of golden jellyfish have evolved to lose most of their sting, allowing snorkelers to swim among them.",
+    'Blue Corner (dive site)': "One of the world's most famous dive sites, a sheer wall dropping into deep water where strong currents draw large numbers of sharks, napoleon wrasse and other pelagic species; divers use reef hooks to stay in place and watch the action.",
+    'Peleliu Island (WWII battle sites)': "The site of one of the Pacific War's bloodiest battles (1944), with rusted tanks, bunkers and artillery still scattered through the jungle; far less visited than other Palau sites, giving it an untouched, memorial-like atmosphere.",
+    'Ngardmau Waterfall, Babeldaob': "Palau's tallest waterfall, on Babeldaob, the country's largest and least-developed island; reached via a boardwalk trail and small cable-car-style skyride through the rainforest canopy.",
+    'Montevideo (Ciudad Vieja, Mercado del Puerto)': "Uruguay's laid-back capital, with the historic Ciudad Vieja old town and Mercado del Puerto, a 19th-century iron market hall now packed with parrillas (grill restaurants) serving Uruguayan beef.",
+    'Colonia del Sacramento (UNESCO old town)': "A UNESCO-listed Portuguese colonial town founded in 1680, with cobbled streets and a lighthouse offering views over the Río de la Plata toward Buenos Aires, just a short ferry ride away.",
+    'Punta del Este': "Uruguay's glamorous beach resort, known for the \"Mano\" (Hand) sculpture emerging from the sand and a lively summer nightlife scene, drawing wealthy visitors from across South America.",
+    'Cabo Polonio (off-grid, 4x4-only)': "A remote, off-grid beach settlement with no mains electricity, reachable only by 4x4 truck across dunes; known for a large sea lion colony on the rocks near its lighthouse.",
+    'Punta del Diablo (incl. Santa Teresa National Park)': "A former fishing village turned laid-back surf town, much less developed than Punta del Este; neighboring Santa Teresa National Park has a Spanish colonial fortress and forested camping/hiking grounds.",
+    'Georgetown (Stabroek Market, seawall)': "Guyana's capital, with wooden colonial-era architecture (including a cathedral once among the tallest wooden buildings in the world) and the bustling Stabroek Market beneath its clock tower; the seawall protects the low-lying city from the Atlantic and is a popular evening gathering spot.",
+    'Kaieteur Falls': "One of the world's most powerful single-drop waterfalls, nearly five times the height of Niagara, set deep in untouched rainforest and reachable mainly by small chartered flight; remains uncrowded due to its remoteness.",
+    'Iwokrama River Lodge': "A rainforest research and conservation lodge on the Essequibo River within the Iwokrama forest reserve, offering night wildlife spotting and access to the surrounding pristine jungle.",
+    'Atta Rainforest Lodge (canopy walkway)': "A rainforest lodge known for its suspended canopy walkway high above the forest floor, giving a rare eye-level view into the treetop ecosystem where much of the rainforest's wildlife actually lives.",
+    'Rupununi Savannah / Karanambu Lodge': "A vast tropical savannah region in southern Guyana, home to giant river otters, anteaters, and jaguars; Karanambu Lodge is known for its river otter rehabilitation program, founded by conservationist Diane McTurk.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Two of batch 2's standalone routes were flagged as too exposed to their long-haul flight time
  * relative to trip length — Jordanië (8d, connecting flight) and Nieuw-Zeeland Zuidereiland (21d,
  * but 27-38h with multiple stops). Adds +2 days to each as a recovery/margin buffer, matching the
@@ -14019,11 +14087,11 @@ function rbBuildSouthKoreaRoute() {
   const kr = () => ({
     code: 'KR', name: 'South Korea', days: 13, budget: 845, lat: 37.5665, lng: 126.9780,
     destinations: [
-      { name: 'Seoul', lat: 37.5665, lng: 126.9780 },
-      { name: 'DMZ / Imjingak', lat: 37.9022, lng: 126.7367 },
-      { name: 'Gyeongju', lat: 35.8562, lng: 129.2247 },
-      { name: 'Busan', lat: 35.1796, lng: 129.0756 },
-      { name: 'Jeju Island', lat: 33.4996, lng: 126.5312 },
+      { name: 'Seoul', lat: 37.5665, lng: 126.9780 , notes: 'A vast, hyper-modern capital layered over centuries of history, with five restored Joseon-dynasty royal palaces (Gyeongbokgung the largest) alongside districts like Myeongdong for shopping and Hongdae for nightlife; the changing-of-the-guard ceremony at Gyeongbokgung runs several times daily.' },
+      { name: 'DMZ / Imjingak', lat: 37.9022, lng: 126.7367 , notes: 'The Korean Demilitarized Zone, one of the most heavily fortified borders on Earth, paradoxically also an accidental wildlife sanctuary due to decades without human development; Imjingak park nearby has memorials and a viewing platform toward North Korea, and deeper DMZ tours (including infiltration tunnels) require advance booking and passport ID.' },
+      { name: 'Gyeongju', lat: 35.8562, lng: 129.2247 , notes: 'The capital of the ancient Silla kingdom for nearly a thousand years, sometimes called "the museum without walls" for its density of tombs, temples and royal sites, including the Bulguksa Temple and Seokguram Grotto, both UNESCO-listed.' },
+      { name: 'Busan', lat: 35.1796, lng: 129.0756 , notes: 'South Korea\'s second city and main port, known for Haeundae Beach, the colorful hillside Gamcheon Culture Village (often compared to Santorini), and Jagalchi, the country\'s largest seafood market.' },
+      { name: 'Jeju Island', lat: 33.4996, lng: 126.5312 , notes: 'A volcanic island off the south coast, home to Hallasan, South Korea\'s highest peak (a dormant shield volcano), lava tube caves, and a distinct matriarchal diving culture (haenyeo, elderly female free-divers); a popular honeymoon and nature-focused getaway from the mainland.' },
     ],
     notes: "Hyper-modern Seoul, the DMZ's frozen Cold War tension, the 1,000-year-old Silla capital Gyeongju, port city Busan and Jeju's volcanic coastline. The DMZ can only be visited on an organized/guided tour (no independent access) — book one from Seoul. KTX high-speed rail connects Seoul-Gyeongju-Busan; Jeju has no bridge/rail link, fly or ferry from Busan. Dutch travel advisory (2026-09 snapshot): red for the DMZ border strip itself, yellow for the area just south of it (guided tours only), green for the rest of the route (Seoul, Gyeongju, Busan, Jeju) — check nederlandwereldwijd.nl before departure. Visa: visa-free 90 days for a Dutch passport; K-ETA is currently waived for Dutch citizens through 31 Dec 2026 but re-check if traveling later, as it will likely become mandatory again ($10, apply 72h ahead).",
   });
@@ -14074,11 +14142,11 @@ function rbBuildMaldivesRoute() {
   const mv = () => ({
     code: 'MV', name: 'Maldives', days: 10, budget: 750, lat: 4.1755, lng: 73.5093,
     destinations: [
-      { name: 'Malé', lat: 4.1755, lng: 73.5093 },
-      { name: 'Maafushi', lat: 3.9403, lng: 73.4889 },
-      { name: 'Thulusdhoo', lat: 4.3728, lng: 73.6489 },
-      { name: 'Fulidhoo', lat: 3.6806, lng: 73.4147 },
-      { name: 'Dhigurah', lat: 3.5264, lng: 72.9239 },
+      { name: 'Malé', lat: 4.1755, lng: 73.5093 , notes: 'The Maldives\' tiny, densely packed capital island, one of the most crowded urban areas in the world relative to its size; mainly a transit hub for connecting to resort or local islands rather than a beach destination itself.' },
+      { name: 'Maafushi', lat: 3.9403, lng: 73.4889 , notes: 'One of the most popular "local islands" for budget travelers, offering an affordable alternative to private resort islands with guesthouses, a bikini beach, and easy access to snorkeling and dolphin/whale shark excursions.' },
+      { name: 'Thulusdhoo', lat: 4.3728, lng: 73.6489 , notes: 'A small local island known as a surf destination (the famous "Cokes" and "Chickens" breaks are just offshore) and home to the Maldives\' only Coca-Cola bottling plant, giving the island its nickname.' },
+      { name: 'Fulidhoo', lat: 3.6806, lng: 73.4147 , notes: 'A quiet, traditional local island in Vaavu Atoll known for regular nighttime nurse shark sightings right off the jetty and turtle encounters, offering a calmer, less developed alternative to the busier tourist islands.' },
+      { name: 'Dhigurah', lat: 3.5264, lng: 72.9239 , notes: 'A long, narrow local island in South Ari Atoll, used as a base for whale shark snorkeling trips year-round in the nearby waters — one of the few places in the world with a resident whale shark population.' },
     ],
     notes: 'The local-island guesthouse circuit (Maafushi, Thulusdhoo, Fulidhoo, Dhigurah) instead of overwater resorts — palm-fringed white sand and turquoise reefs on a backpacker budget, with whale shark and manta ray day trips from Dhigurah/Fulidhoo. Public ferries between islands are cheap (roughly €3) but run on limited schedules — this is the dominant route-planning constraint, check timetables before committing to an island order; a shared speedboat (roughly €23) is the faster fallback. Mandatory: complete the IMUGA online arrival/departure declaration within 96 hours of arrival. Alcohol and swimwear are confined to licensed resorts / designated "bikini beaches" — walking through a local island village in swimwear is illegal and enforced by fines on some islands. Green Tax (roughly €5.50/person/night at guesthouses) and a departure tax (roughly €46 economy) apply on top of the daily budget. Dutch travel advisory (2026-09 snapshot): yellow — no acute terrorism threat but stay alert; strict drug laws (life imprisonment possible); no Dutch embassy in-country, consular support runs via Colombo.',
   });
@@ -14101,11 +14169,11 @@ function rbBuildUAERoute() {
   const ae = () => ({
     code: 'AE', name: 'United Arab Emirates', days: 9, budget: 540, lat: 25.2048, lng: 55.2708,
     destinations: [
-      { name: 'Dubai', lat: 25.2048, lng: 55.2708 },
-      { name: 'Abu Dhabi', lat: 24.4539, lng: 54.3773 },
-      { name: 'Al Ain', lat: 24.2075, lng: 55.7447 },
-      { name: 'Liwa Oasis / Empty Quarter', lat: 23.1167, lng: 53.7500 },
-      { name: 'Fujairah / East Coast', lat: 25.1288, lng: 56.3265 },
+      { name: 'Dubai', lat: 25.2048, lng: 55.2708 , notes: 'A city built rapidly on oil wealth then diversified into tourism/finance, home to the Burj Khalifa (the world\'s tallest building) and the Burj Al Arab; also has a traditional side in the Al Fahidi historic district and abra boat crossings on Dubai Creek.' },
+      { name: 'Abu Dhabi', lat: 24.4539, lng: 54.3773 , notes: 'The UAE\'s capital and wealthiest emirate, home to the Sheikh Zayed Grand Mosque (one of the world\'s largest, with a vast hand-knotted carpet and chandeliers), plus the Louvre Abu Dhabi, an outpost of the Paris museum in a striking dome structure.' },
+      { name: 'Al Ain', lat: 24.2075, lng: 55.7447 , notes: 'Known as the "Garden City," a green oasis town near the Oman border built around ancient falaj irrigation channels; Jebel Hafeet, a mountain on its edge, has a scenic road to the summit and hot springs at its base.' },
+      { name: 'Liwa Oasis / Empty Quarter', lat: 23.1167, lng: 53.7500 , notes: 'The gateway to the Rub\' al Khali (Empty Quarter), the world\'s largest contiguous sand desert, with towering dunes reaching over 300m; dune bashing, sandboarding and overnight desert camps are the main draws.' },
+      { name: 'Fujairah / East Coast', lat: 25.1288, lng: 56.3265 , notes: 'The UAE\'s only emirate facing the Gulf of Oman rather than the Persian Gulf, with a more mountainous, less developed coastline; known for the Fujairah Fort and as a diving/snorkeling base, notably around Snoopy Island.' },
     ],
     notes: "Dubai's skyscrapers (Burj Khalifa, roughly €39-63 to go up), Abu Dhabi (noticeably cheaper than Dubai for food/lodging), the oasis town Al Ain, the Empty Quarter's dunes at Liwa, and the East Coast's beaches/mountains at Fujairah as a change of pace. A desert safari (roughly €62) and a Dubai-Abu Dhabi E100 intercity bus (roughly €6) are the two things worth budgeting on top of the daily rate. Avoid the Dec 3-6 2026 F1 Abu Dhabi Grand Prix and the mid-December-January Dubai Shopping Festival if cost matters — both spike hotel prices heavily. Dutch travel advisory (2026-09 snapshot): yellow for the vast majority of the country including Dubai/Abu Dhabi (regional Middle East tensions — worth rechecking given how fast this can shift), red only for the uninhabited disputed Abu Musa/Tunb islands, well off this route. Visa: visa-free 90 days within a rolling 180-day period, stamped free on arrival.",
   });
@@ -14151,11 +14219,11 @@ function rbBuildSeychellesRoute() {
   const sc = () => ({
     code: 'SC', name: 'Seychelles', days: 11, budget: 800, lat: -4.6191, lng: 55.4513,
     destinations: [
-      { name: 'Victoria & Sainte Anne Marine Park, Mahé', lat: -4.6191, lng: 55.4513 },
-      { name: 'Morne Seychellois National Park, Mahé', lat: -4.6667, lng: 55.4500 },
-      { name: 'Praslin (Vallée de Mai, Anse Lazio)', lat: -4.3311, lng: 55.7383 },
-      { name: 'Curieuse Island', lat: -4.2833, lng: 55.7333 },
-      { name: "La Digue (Anse Source d'Argent)", lat: -4.3728, lng: 55.8317 },
+      { name: 'Victoria & Sainte Anne Marine Park, Mahé', lat: -4.6191, lng: 55.4513 , notes: 'Victoria is one of the world\'s smallest capitals, with a compact market and a small-scale replica of Big Ben; Sainte Anne Marine National Park just offshore protects coral reefs and seagrass beds around a cluster of small islands.' },
+      { name: 'Morne Seychellois National Park, Mahé', lat: -4.6667, lng: 55.4500 , notes: 'Covers about a fifth of Mahé island, protecting the granite peaks and dense jungle at its center; hiking trails climb to Morne Seychellois itself, the archipelago\'s highest point, with views over much of the main island.' },
+      { name: 'Praslin (Vallée de Mai, Anse Lazio)', lat: -4.3311, lng: 55.7383 , notes: 'Praslin\'s Vallée de Mai is a UNESCO-listed primeval palm forest, home to the coco de mer, a palm producing the largest seed in the plant kingdom; Anse Lazio nearby is regularly ranked among the world\'s best beaches.' },
+      { name: 'Curieuse Island', lat: -4.2833, lng: 55.7333 , notes: 'A nature reserve island near Praslin, home to a colony of giant Aldabra tortoises that roam freely and a historic former leper colony\'s ruins; a popular boat-trip stop combining wildlife and a bit of history.' },
+      { name: "La Digue (Anse Source d'Argent)", lat: -4.3728, lng: 55.8317 , notes: 'A car-free island where ox carts and bicycles are the main transport; Anse Source d\'Argent, framed by giant granite boulders, is one of the most photographed beaches in the world.' },
     ],
     notes: "A 3-island loop — Mahé, Praslin, La Digue — for granite-boulder beaches (Anse Source d'Argent, Anse Lazio), the primeval Vallée de Mai UNESCO forest (coco de mer palms), and giant tortoises on Curieuse Island. No real hostel scene — budget accommodation is guesthouses/self-catering, not dorms, which pushes the daily rate up from what a similar Southeast Asia trip would cost. Inter-island transport is the real hidden cost: the Cat Cocos/Cat Rose ferry runs Mahé-Praslin (~€56 one-way), Mahé-La Digue (~€66) and Praslin-La Digue (~€15) — a full 3-island loop easily adds €130-150pp in ferry fares alone; a domestic Air Seychelles flight Mahé-Praslin (15 min, ~€90) is a pricier but faster alternative. Mandatory: a free-to-file but paid Seychelles Travel Authorization (SVA, ~€10pp, apply online 30 days ahead via seychelles.govtas.com, ~24h processing) — not a visa, but required regardless. Dutch travel advisory (2026-09 snapshot): yellow — pickpocketing/robbery in poorly-lit areas, maritime piracy risk in the wider Indian Ocean (stay visible from shore), unusually harsh drug laws (up to 30 years, including soft drugs), and Nov-March rainy-season flooding on Mahé's northwest.",
   });
@@ -14179,11 +14247,11 @@ function rbBuildABCIslandsRoute() {
     {
       code: 'AW', name: 'Aruba', days: 5, budget: 425, lat: 12.5246, lng: -70.0270,
       destinations: [
-        { name: 'Eagle Beach', lat: 12.5750, lng: -70.0472 },
-        { name: 'Arikok National Park & the Natural Pool (Conchi)', lat: 12.4964, lng: -69.9553 },
-        { name: 'Baby Beach & San Nicolas', lat: 12.4306, lng: -69.8975 },
-        { name: 'California Lighthouse', lat: 12.6206, lng: -70.0511 },
-        { name: 'Oranjestad', lat: 12.5246, lng: -70.0270 },
+        { name: 'Eagle Beach', lat: 12.5750, lng: -70.0472 , notes: 'Aruba\'s most famous beach, consistently ranked among the world\'s best, known for its powdery white sand and iconic divi-divi trees bent permanently sideways by the trade winds; calmer and less crowded than the resort-lined Palm Beach further north.' },
+        { name: 'Arikok National Park & the Natural Pool (Conchi)', lat: 12.4964, lng: -69.9553 , notes: 'Aruba\'s national park covers roughly a fifth of the island, protecting desert-like cactus terrain, sand dunes, and limestone caves; the Natural Pool (Conchi) is a rock-enclosed swimming hole on the rugged east coast, reachable only by 4x4 or a rough hike.' },
+        { name: 'Baby Beach & San Nicolas', lat: 12.4306, lng: -69.8975 , notes: 'Baby Beach is a shallow, calm horseshoe-shaped bay at Aruba\'s southern tip, ideal for families and snorkeling; San Nicolas nearby is the island\'s "second city," known for colorful street art and a more local, less touristy feel than the resort strip.' },
+        { name: 'California Lighthouse', lat: 12.6206, lng: -70.0511 , notes: 'A lighthouse at Aruba\'s northwestern tip, named after the SS California, a ship that sank nearby; the surrounding dunes and rocky coastline give one of the island\'s best sunset viewpoints.' },
+        { name: 'Oranjestad', lat: 12.5246, lng: -70.0270 , notes: 'Aruba\'s colorful capital, with Dutch colonial-style pastel buildings along the harbor and main shopping street; also home to a small but engaging archaeological museum covering the island\'s pre-Columbian Arawak history.' },
       ],
       notes: "Entry point of this loop: direct KLM flight Amsterdam-Aruba (±10h20-30, ~7x/week; from ±€740-820 return; best period December-January to match Curaçao/Bonaire below, though Aruba's own dry season is broader (Feb-Aug) and more forgiving if the trip drifts into Sept-Nov). Web-research price/timing indication 2026-09, a snapshot. Eagle Beach's fofoti trees, the volcanic-rock Arikok NP with its Natural Pool, laid-back Baby Beach near old-Aruba town San Nicolas, and the sunset viewpoint at the California Lighthouse. Mandatory: the ED Card digital immigration form (free to file, but bundles a $20pp Sustainability Fee, ages 8+) — file within 7 days of travel at edcardaruba.aw; this is a separate step from Curaçao/Bonaire's own entry requirements, don't assume one covers all three. Avoid Aruba Carnival season (~Jan 9-Feb 8, 2027, season opens Nov 11 2026) if cost matters — hotel rates spike 40-60%. Dutch travel advisory (2026-09 snapshot): green.",
       transport_to_next: 'Inter-island flight Aruba-Curaçao (~30-40 min, Divi Divi Air/EZ Air/Winair, no ferry exists — the open-water crossing is too rough; roughly $100-115 one-way).',
@@ -14245,11 +14313,11 @@ function rbBuildPalauRoute() {
   const pw = () => ({
     code: 'PW', name: 'Palau', days: 10, budget: 1000, lat: 7.3400, lng: 134.4800,
     destinations: [
-      { name: 'Koror', lat: 7.3400, lng: 134.4800 },
-      { name: 'Rock Islands Southern Lagoon & Jellyfish Lake', lat: 7.15, lng: 134.37 },
-      { name: 'Blue Corner (dive site)', lat: 7.12, lng: 134.22 },
-      { name: 'Peleliu Island (WWII battle sites)', lat: 7.00, lng: 134.24 },
-      { name: 'Ngardmau Waterfall, Babeldaob', lat: 7.58, lng: 134.62 },
+      { name: 'Koror', lat: 7.3400, lng: 134.4800 , notes: 'Palau\'s largest town and former capital, the main hub for arranging dive trips and boat tours into the Rock Islands; also home to the Belau National Museum, one of Micronesia\'s oldest museums.' },
+      { name: 'Rock Islands Southern Lagoon & Jellyfish Lake', lat: 7.15, lng: 134.37 , notes: 'A UNESCO World Heritage cluster of mushroom-shaped limestone islands; Jellyfish Lake is a marine lake where millions of golden jellyfish have evolved to lose most of their sting, allowing snorkelers to swim among them.' },
+      { name: 'Blue Corner (dive site)', lat: 7.12, lng: 134.22 , notes: 'One of the world\'s most famous dive sites, a sheer wall dropping into deep water where strong currents draw large numbers of sharks, napoleon wrasse and other pelagic species; divers use reef hooks to stay in place and watch the action.' },
+      { name: 'Peleliu Island (WWII battle sites)', lat: 7.00, lng: 134.24 , notes: 'The site of one of the Pacific War\'s bloodiest battles (1944), with rusted tanks, bunkers and artillery still scattered through the jungle; far less visited than other Palau sites, giving it an untouched, memorial-like atmosphere.' },
+      { name: 'Ngardmau Waterfall, Babeldaob', lat: 7.58, lng: 134.62 , notes: 'Palau\'s tallest waterfall, on Babeldaob, the country\'s largest and least-developed island; reached via a boardwalk trail and small cable-car-style skyride through the rainforest canopy.' },
     ],
     notes: "Blue Corner's sharks, Jellyfish Lake and the Rock Islands lagoon, Peleliu's WWII history, and Babeldaob's waterfalls — world-class diving wrapped around the Pacific's most photogenic islands. The $100 Pristine Paradise Environmental Fee is built directly into every international air ticket (not a separate payment). A Rock Islands Permit is mandatory for the Southern Lagoon area: $50 (10 days, no Jellyfish Lake) or $100 (5 days, includes Jellyfish Lake). Diving is the reason to visit and isn't in the daily rate — budget ~€140-165/day for 2-tank boat dives on top. Non-reef-safe sunscreen is illegal to import, possess or sell — bring reef-safe only. Dutch travel advisory (2026-09 snapshot): green — notable flags are unusually strict drug laws (min. 25 years + $50,000 fine, including soft drugs) and typhoon/tropical storm season June-November.",
   });
@@ -14300,11 +14368,11 @@ function rbBuildUruguayRoute() {
   const uy = () => ({
     code: 'UY', name: 'Uruguay', days: 10, budget: 800, lat: -34.9011, lng: -56.1645,
     destinations: [
-      { name: 'Montevideo (Ciudad Vieja, Mercado del Puerto)', lat: -34.91, lng: -56.19 },
-      { name: 'Colonia del Sacramento (UNESCO old town)', lat: -34.46, lng: -57.84 },
-      { name: 'Punta del Este', lat: -34.97, lng: -54.95 },
-      { name: 'Cabo Polonio (off-grid, 4x4-only)', lat: -34.38, lng: -53.78 },
-      { name: 'Punta del Diablo (incl. Santa Teresa National Park)', lat: -34.03, lng: -53.55 },
+      { name: 'Montevideo (Ciudad Vieja, Mercado del Puerto)', lat: -34.91, lng: -56.19 , notes: 'Uruguay\'s laid-back capital, with the historic Ciudad Vieja old town and Mercado del Puerto, a 19th-century iron market hall now packed with parrillas (grill restaurants) serving Uruguayan beef.' },
+      { name: 'Colonia del Sacramento (UNESCO old town)', lat: -34.46, lng: -57.84 , notes: 'A UNESCO-listed Portuguese colonial town founded in 1680, with cobbled streets and a lighthouse offering views over the Río de la Plata toward Buenos Aires, just a short ferry ride away.' },
+      { name: 'Punta del Este', lat: -34.97, lng: -54.95 , notes: 'Uruguay\'s glamorous beach resort, known for the "Mano" (Hand) sculpture emerging from the sand and a lively summer nightlife scene, drawing wealthy visitors from across South America.' },
+      { name: 'Cabo Polonio (off-grid, 4x4-only)', lat: -34.38, lng: -53.78 , notes: 'A remote, off-grid beach settlement with no mains electricity, reachable only by 4x4 truck across dunes; known for a large sea lion colony on the rocks near its lighthouse.' },
+      { name: 'Punta del Diablo (incl. Santa Teresa National Park)', lat: -34.03, lng: -53.55 , notes: 'A former fishing village turned laid-back surf town, much less developed than Punta del Este; neighboring Santa Teresa National Park has a Spanish colonial fortress and forested camping/hiking grounds.' },
     ],
     notes: "Colonia's cobblestones, Cabo Polonio's off-grid sea lions, and Punta del Diablo's surf — Uruguay's quiet, uncrowded answer to its bigger neighbors (Argentina/Brazil, both already covered elsewhere in this app). Getting into Cabo Polonio requires the official 4x4 truck transfer (small extra fee) — no regular road access. Optional splurges beyond the daily rate: an estancia (working ranch) stay (~€130-215/night all-inclusive), a Carmelo/Canelones wine tour (~€45-90). Dutch travel advisory (2026-09 snapshot): yellow — avoid walking alone through Montevideo's Ciudad Vieja after dark and avoid remote streets; don't resist if robbed. No Dutch embassy in-country, covered from Buenos Aires.",
   });
@@ -14327,11 +14395,11 @@ function rbBuildGuyanaRoute() {
   const gy = () => ({
     code: 'GY', name: 'Guyana', days: 9, budget: 450, lat: 6.8013, lng: -58.1551,
     destinations: [
-      { name: 'Georgetown (Stabroek Market, seawall)', lat: 6.80, lng: -58.16 },
-      { name: 'Kaieteur Falls', lat: 5.17, lng: -59.49 },
-      { name: 'Iwokrama River Lodge', lat: 4.67, lng: -58.68 },
-      { name: 'Atta Rainforest Lodge (canopy walkway)', lat: 4.62, lng: -58.73 },
-      { name: 'Rupununi Savannah / Karanambu Lodge', lat: 3.75, lng: -59.32 },
+      { name: 'Georgetown (Stabroek Market, seawall)', lat: 6.80, lng: -58.16 , notes: 'Guyana\'s capital, with wooden colonial-era architecture (including a cathedral once among the tallest wooden buildings in the world) and the bustling Stabroek Market beneath its clock tower; the seawall protects the low-lying city from the Atlantic and is a popular evening gathering spot.' },
+      { name: 'Kaieteur Falls', lat: 5.17, lng: -59.49 , notes: 'One of the world\'s most powerful single-drop waterfalls, nearly five times the height of Niagara, set deep in untouched rainforest and reachable mainly by small chartered flight; remains uncrowded due to its remoteness.' },
+      { name: 'Iwokrama River Lodge', lat: 4.67, lng: -58.68 , notes: 'A rainforest research and conservation lodge on the Essequibo River within the Iwokrama forest reserve, offering night wildlife spotting and access to the surrounding pristine jungle.' },
+      { name: 'Atta Rainforest Lodge (canopy walkway)', lat: 4.62, lng: -58.73 , notes: 'A rainforest lodge known for its suspended canopy walkway high above the forest floor, giving a rare eye-level view into the treetop ecosystem where much of the rainforest\'s wildlife actually lives.' },
+      { name: 'Rupununi Savannah / Karanambu Lodge', lat: 3.75, lng: -59.32 , notes: 'A vast tropical savannah region in southern Guyana, home to giant river otters, anteaters, and jaguars; Karanambu Lodge is known for its river otter rehabilitation program, founded by conservationist Diane McTurk.' },
     ],
     notes: "Kaieteur Falls by bush plane, giant otters and jaguars in the Rupununi, and Georgetown's colonial seawall — the Guianas' wildest, least-visited corner. Pairs naturally with the existing Suriname 🛶 route's framing without being merged into it. Two very different cost regimes stitched together: Georgetown/coast runs a normal backpacker daily rate, but the interior (Iwokrama, Rupununi) is only reachable by bush flight and sold as all-inclusive lodge packages (~€230-370/day/person) — budget these as separate line items, not folded into the daily rate. Kaieteur Falls itself is a single day trip (bush flight + guided walk from Georgetown, ~€250-330pp all-in) — book 3-5 days ahead in dry season. Yellow Fever certificate only required if arriving from/transiting 4+ hours through a WHO yellow-fever-risk country (e.g. Brazil) — flying direct from Europe should be exempt, double-check against the actual booked routing. Dutch travel advisory (2026-09 snapshot): yellow — violent crime (armed robbery, mugging, pickpocketing) concentrated specifically around Georgetown's Stabroek/Bourda Markets and the Sophia/South Ruimsveldt/Tigerbay neighborhoods; same-sex acts are criminalized with severe penalties, a more serious LGBTQ+ safety flag than most other routes in this file.",
   });
