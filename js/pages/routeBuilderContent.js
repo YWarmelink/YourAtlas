@@ -12547,6 +12547,87 @@ function rbMigrateEastEuropeClusterDestinationNotes() {
 }
 
 /**
+ * Batches 141-146 (2026-09-18) -- Mediterranean/Nordic/UK cluster round 2 -- closes out Athens +
+ * Day Trips, Cyprus, Istanbul (both routes), Turkey + Greece: Aegean Coast & Dodecanese,
+ * Svalbard, Stockholm (both routes), Sweden Roadtrip, Copenhagen, South Finland, Outer Hebrides,
+ * and London entirely. 43 fresh destinations plus 1 reuse (Istanbul/Sultanahmet). Same generic
+ * name-matching migration pattern as the other batches.
+ */
+function rbMigrateMediterraneanNordicUkCluster2DestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_MEDITERRANEAN_NORDIC_UK_CLUSTER2_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_MEDITERRANEAN_NORDIC_UK_CLUSTER2_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Acropolis & Plaka/Monastiraki': "The Acropolis hilltop citadel holds the Parthenon and other classical monuments, best visited right at opening to beat both heat and crowds; Plaka below is the old town's maze of neoclassical lanes and tavernas, while neighboring Monastiraki has the flea market and Ancient Agora ruins at its edge.",
+    'Cape Sounion (Temple of Poseidon)': "A dramatic clifftop Temple of Poseidon at the southern tip of the Attica peninsula, roughly an hour from Athens; sunset is the classic time to visit, when the marble columns glow gold against the sea.",
+    'Arachova': "A mountain village near Delphi on the slopes of Mount Parnassus, known as a ski-season base and for its handwoven rugs, cheese and honey sold along the main street; a good overnight stop between Athens and Delphi.",
+    'Nafplio / Mycenae / Epidaurus': "Nafplio is a Venetian-era port town with a hilltop fortress (Palamidi) reached by nearly 1,000 steps; nearby Mycenae holds the Lion Gate and beehive tombs of the Bronze Age Mycenaean civilization, and Epidaurus has an ancient theater famous for near-perfect acoustics (a dropped coin on stage is audible from the highest seats).",
+    'Troodos Mountains': "Cyprus's central mountain range, home to a cluster of UNESCO-listed painted Byzantine churches hidden in remote villages, plus the island's only ski resort at Mount Olympus; wine villages along the southern slopes are known for the local Commandaria dessert wine.",
+    "Paphos & Aphrodite's Rock": "Paphos holds extensive Roman-era mosaics (House of Dionysus) and mythologically is where Aphrodite was said to have emerged from the sea; the sea-stack rock formation associated with that myth sits just along the coast, though it's a roadside viewpoint rather than a swimmable beach.",
+    'Sultanahmet & Hagia Sophia': "Istanbul's old city core, where the Byzantine-turned-Ottoman Hagia Sophia (a mosque again since 2020) faces the Blue Mosque across a shared square; go right at opening to see Hagia Sophia's interior mosaics and dome before tour groups fill the space.",
+    'Blue Mosque': "Formally the Sultan Ahmed Mosque, named for the thousands of blue Iznik tiles lining its interior; still an active mosque, so visits pause during the five daily prayer times and modest dress (covered shoulders/legs, headscarves provided for women) is required.",
+    'Topkapi Palace': "The Ottoman sultans' primary residence for roughly 400 years, with a treasury holding one of the world's largest emerald collections and the Harem section requiring a separate ticket; the palace grounds' viewpoint over the Bosphorus and Golden Horn is a highlight in itself.",
+    'Grand Bazaar': "One of the world's oldest and largest covered markets, with over 4,000 shops along winding covered streets selling everything from carpets to gold; haggling is expected and part of the experience, and it's easy to lose your bearings — note a few landmark gates to navigate back out.",
+    'Galata Tower': "A medieval stone watchtower built by the Genoese, now offering a 360-degree observation deck over the Bosphorus, the old city, and the Golden Horn; book a timed ticket online to skip the often-long walk-up line.",
+    'Istanbul (Sultanahmet)': "Istanbul's old city core, where the Byzantine-turned-Ottoman Hagia Sophia (a mosque again since 2020) faces the Blue Mosque across a shared square; go right at opening to see Hagia Sophia's interior mosaics and dome before tour groups fill the space.",
+    'Gallipoli: Anzac Cove & Lone Pine': "The WWI battlefield peninsula where Allied (notably Australian and New Zealand — ANZAC) and Ottoman forces fought an 8-month campaign with massive casualties on both sides; Anzac Cove's small landing beach and the Lone Pine cemetery/memorial are the most visited sites, with an April 25 Anzac Day dawn service drawing large crowds annually.",
+    'Çanakkale': "The main gateway town for visiting Gallipoli, on the Asian side of the Dardanelles strait opposite the peninsula; also close to ancient Troy, and home to a giant wooden horse replica used in the 2004 \"Troy\" film, now displayed on the waterfront.",
+    'Bursa (optional)': "The Ottoman Empire's first capital before Istanbul, known for the Grand Mosque (Ulu Cami) with 20 domes, silk and textile history, and İskender kebab, said to have originated here; also a cable car up Uludağ mountain for a ski-season or viewpoint side trip.",
+    'Izmir': "Turkey's third-largest city and a major Aegean port, with a long seafront promenade (Kordon) and the ancient Agora ruins in its center; mainly used as a gateway to Ephesus and the surrounding coast rather than a long stop itself.",
+    'Kuşadası & Ephesus': "Kuşadası is a resort port town and cruise stop; Ephesus nearby is one of the best-preserved ancient Roman cities anywhere, with the Library of Celsus facade and a large amphitheater — arrive early to avoid both heat and cruise-ship tour groups.",
+    'Bodrum': "A whitewashed resort town built around a marina and the Bodrum Castle (built by the Knights Hospitaller, also housing an underwater archaeology museum); known for its nightlife and as a base for Aegean sailing trips on traditional gulet boats.",
+    'Rhodes': "Greece's Dodecanese hub, with a UNESCO-listed medieval old town built by the Knights of Rhodes; the Street of the Knights and the Palace of the Grand Master are the standout sights within the walls.",
+    'Kos': "A Greek island known for the Asklepion, an ancient healing sanctuary associated with Hippocrates (said to have taught medicine here), plus a large plane tree in Kos Town locals claim is where he once taught, though its actual age is far younger than the legend suggests.",
+    'Nordpolet': "The world's northernmost liquor/wine/spirits shop, in Longyearbyen; a quirky practical stop since alcohol sales are otherwise tightly rationed for residents (tourists face fewer restrictions but still need to show ID/travel documents).",
+    'Isfjorden boat tour (summer)': "A boat trip through Svalbard's largest fjord system in the ice-free summer months, giving chances to spot walrus, seals, seabirds and glacier fronts calving into the water; a common way to see remote coastline not reachable overland.",
+    'Pyramiden (summer boat destination)': "An abandoned Soviet coal-mining settlement, reachable only by boat in summer, left largely frozen in time since its sudden 1998 closure; guided tours (required, due to polar bear risk) walk through the ghost-town buildings including a still-standing bust of Lenin, the world's northernmost.",
+    'Gamla Stan': "Stockholm's medieval old town on its own small island, with narrow cobbled lanes, the Royal Palace, and Stortorget square (site of the 1520 Stockholm Bloodbath); the daily changing-of-the-guard ceremony at the palace is a free, easy add-on.",
+    'Södermalm': "A trendy, hilly district known for its café/vintage-shop scene and sweeping viewpoints over the city and water, especially from Monteliusvägen path or Fjällgatan; also the setting for Stieg Larsson's \"Millennium\" (Girl with the Dragon Tattoo) novels.",
+    'Vasa Museum': "Houses the Vasa, a 17th-century warship that sank on its maiden voyage in Stockholm harbor in 1628 and was salvaged largely intact in 1961; one of the best-preserved ships from that era anywhere, displayed in a dedicated purpose-built museum.",
+    'Skansen': "An open-air museum of relocated historic buildings from across Sweden, plus a zoo of native Nordic wildlife (moose, wolves, lynx); a good half-day for a broad overview of traditional Swedish architecture and culture in one place.",
+    'Djurgården': "The green island park holding both the Vasa Museum and Skansen, plus the Gröna Lund amusement park and the ABBA Museum; easily walkable or reachable by ferry/tram from the city center, making it Stockholm's main museum/attraction cluster.",
+    'Uppsala Cathedral': "Scandinavia's largest cathedral, the traditional coronation site of Swedish monarchs and the burial place of several historical figures including botanist Carl Linnaeus; the twin spires dominate the Uppsala skyline.",
+    'Gamla Uppsala': "The site of Sweden's ancient pre-Christian royal center, marked by large earthen burial mounds tied to early Swedish kings in Norse legend; a small museum on-site covers the Viking-era history and archaeology.",
+    'Sigtuna': "Sweden's oldest still-existing town, founded around 980 AD, with Viking-era rune stones scattered along its main street — more than any other town in Sweden; a quiet lakeside stop between Stockholm and Uppsala.",
+    'Stockholm archipelago (Vaxholm)': "Vaxholm is the main gateway town into the Stockholm archipelago's roughly 30,000 islands and islets, with a 19th-century fortress guarding the channel into the city; a short ferry ride from central Stockholm makes it an easy half-day taste of the archipelago.",
+    'Stockholm': "Sweden's capital, spread across 14 islands connected by bridges; Gamla Stan's medieval old town, the Vasa Museum's preserved 17th-century warship, and the green island of Djurgården are the essential first stops.",
+    'Göta Canal / Vadstena': "A 19th-century canal system linking the Baltic to Gothenburg via a chain of lakes and locks, popular for canal-boat cruises; Vadstena along the route holds a 14th-century abbey founded by Saint Birgitta and a moated Renaissance castle right on Lake Vättern.",
+    'Gothenburg': "Sweden's second city, with the Haga district's wooden houses and cafés, and the Liseberg amusement park, one of Scandinavia's largest; also a major port with a lively fish market (Feskekôrka, built to resemble a church).",
+    'Malmö / Skåne': "Malmö is Sweden's third city, connected to Copenhagen by the Öresund Bridge, with the modern twisting Turning Torso skyscraper as its skyline landmark; Skåne, the surrounding region, is Sweden's agricultural heartland with medieval castles and rapeseed fields.",
+    'Småland (Glasriket, Kosta)': "Known as \"Glasriket\" (the Kingdom of Crystal) for its concentration of glassworks, including the famous Kosta Boda studio (Sweden's oldest, founded 1742); visitors can watch live glassblowing demonstrations at several of the workshops.",
+    'Strøget': "One of Europe's longest pedestrian shopping streets, running through the heart of Copenhagen from City Hall Square toward Kongens Nytorv; lined with both international chains and smaller Danish design shops.",
+    'Rosenborg Castle': "A Dutch Renaissance-style castle built by King Christian IV, now home to the Danish crown jewels and royal regalia in a fortified basement treasury; set inside the King's Garden, one of Copenhagen's oldest public parks.",
+    'Turku Castle': "Finland's largest surviving medieval castle, founded in the 13th century at the mouth of the Aura river; its round tower and medieval halls host historical exhibitions, and part of it is still used for state receptions today.",
+    'Turku Cathedral': "Finland's national shrine and \"mother church,\" originally consecrated in the 13th century though largely rebuilt after fires over the centuries; holds several historically significant royal and noble tombs.",
+    'Porvoo': "One of Finland's oldest towns, with a riverside old town of red ochre-painted wooden warehouses that are among the most-photographed buildings in the country; a popular easy day trip from Helsinki.",
+    'Tampere': "Finland's third-largest city, built between two lakes and shaped by its industrial-era textile mills, several now converted into museums, shops and event spaces (the Finlayson and Tampella complexes); also home to the Moomin Museum, one of the world's few dedicated to the Moomin characters created by Finnish author Tove Jansson.",
+    'Highlands to Skye (Uig)': "The drive from the Scottish Highlands out to Skye's Uig ferry port passes through dramatic glens and mountains; Uig itself is mainly the departure point for the CalMac ferry across to the Outer Hebrides, not a destination in its own right.",
+    'Tarbert (Harris, CalMac ferry from Uig)': "The main port and only real town on the Isle of Harris, serving as the ferry gateway from Skye; used mostly as an arrival/departure point and base rather than a sightseeing stop.",
+    'Luskentyre beach': "Widely considered one of the UK's most beautiful beaches, a vast stretch of white sand backed by turquoise water and views to the Harris hills; often nearly empty even in summer due to its remoteness.",
+    'Callanish Standing Stones (Lewis)': "A Neolithic stone circle roughly 5,000 years old, among the earliest and best-preserved in Scotland (predating Stonehenge); set on a low ridge with views over Loch Roag, and free to walk among at any time of day.",
+    'Stornoway (return via Ullapool)': "The only real town in the Outer Hebrides and the ferry link back to the mainland at Ullapool; Lews Castle and its surrounding woodland grounds are the main in-town sight beyond the harbor itself.",
+    'British Museum': "One of the world's largest and oldest museums, free to enter, holding the Rosetta Stone and the Parthenon (Elgin) Marbles among millions of other artifacts — the latter subject to an ongoing repatriation dispute with Greece; the collection is vast enough that picking 2-3 specific galleries beats trying to see everything.",
+    'Tower of London': "A nearly 1,000-year-old fortress on the Thames, home to the Crown Jewels and centuries of history as a royal residence, prison and execution site; the Yeoman Warders (\"Beefeaters\") give included guided tours, and the ravens kept on-site are tied to a centuries-old superstition about the Tower's fate.",
+    'Camden Market': "A sprawling market complex along the Regent's Canal known for alternative fashion, vintage clothing and street food stalls; also close to Camden's live-music pub scene, historically tied to punk and indie music culture.",
+    'Westminster (Big Ben / Houses of Parliament)': "The Houses of Parliament and its clock tower (officially the Elizabeth Tower, \"Big Ben\" technically refers to the bell inside) sit beside Westminster Abbey, the coronation church for English and British monarchs since 1066; guided tours of Parliament itself run on select dates, mainly when it's not in session.",
+    'Greenwich (Royal Observatory / Cutty Sark)': "Home to the Royal Observatory, marking the Prime Meridian (0° longitude) where visitors can stand with one foot in each hemisphere, and the preserved 19th-century tea-clipper ship Cutty Sark; also a pleasant riverside park with a classic view back toward central London's skyline.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Two of batch 2's standalone routes were flagged as too exposed to their long-haul flight time
  * relative to trip length — Jordanië (8d, connecting flight) and Nieuw-Zeeland Zuidereiland (21d,
  * but 27-38h with multiple stops). Adds +2 days to each as a recovery/margin buffer, matching the
@@ -20529,9 +20610,9 @@ function rbBuildAthensRoute() {
     {
       code: 'GR', name: 'Greece', days: 4, budget: 320, lat: 37.9838, lng: 23.7275,
       destinations: [
-        { name: 'Acropolis & Plaka/Monastiraki', lat: 37.9715, lng: 23.7267 },
+        { name: 'Acropolis & Plaka/Monastiraki', lat: 37.9715, lng: 23.7267 , notes: 'The Acropolis hilltop citadel holds the Parthenon and other classical monuments, best visited right at opening to beat both heat and crowds; Plaka below is the old town\'s maze of neoclassical lanes and tavernas, while neighboring Monastiraki has the flea market and Ancient Agora ruins at its edge.' },
         { name: 'Acropolis Museum', lat: 37.9686, lng: 23.7285 },
-        { name: 'Cape Sounion (Temple of Poseidon)', lat: 37.6505, lng: 24.0247 },
+        { name: 'Cape Sounion (Temple of Poseidon)', lat: 37.6505, lng: 24.0247 , notes: 'A dramatic clifftop Temple of Poseidon at the southern tip of the Attica peninsula, roughly an hour from Athens; sunset is the classic time to visit, when the marble columns glow gold against the sea.' },
       ],
       notes: "Acropolis, Plaka and Monastiraki (2 days) plus the Acropolis Museum, then a day trip to Cape Sounion and the Temple of Poseidon (1 day). Budget ~€70-90/day (private hostel room or budget hotel ~€45-55, food €20-30, extras €10-15). Season: April-June or September-October are best (less heat and fewer crowds), summer can hit 40°C. Web check (2026-08): the Acropolis now requires a mandatory timed-entry ticket booked in advance via hhticket.gr — €30 in summer (Apr-Oct) / €15 in winter, capped at 20,000 visitors/day, already selling out 5-7 days ahead in June-August (morning and late-afternoon slots go first); last entry 19:00, closes 19:30, free for EU citizens under 25. Travel advisory: yellow since 4 August 2026 for wildfires (70+ burning simultaneously at the August 2026 peak, including the Athens region) — can cause road closures or poor air quality and the situation can shift quickly in heat/wind; re-check just before travel, no overall negative advisory otherwise.",
       transport_to_next: 'End of this route — fly home from Athens.',
@@ -20550,11 +20631,11 @@ function rbBuildAthensDayTripsRoute() {
     {
       code: 'GR', name: 'Greece', days: 6, budget: 510, lat: 37.9838, lng: 23.7275,
       destinations: [
-        { name: 'Acropolis & Plaka/Monastiraki', lat: 37.9715, lng: 23.7267 },
-        { name: 'Cape Sounion (Temple of Poseidon)', lat: 37.6505, lng: 24.0247 },
+        { name: 'Acropolis & Plaka/Monastiraki', lat: 37.9715, lng: 23.7267 , notes: 'The Acropolis hilltop citadel holds the Parthenon and other classical monuments, best visited right at opening to beat both heat and crowds; Plaka below is the old town\'s maze of neoclassical lanes and tavernas, while neighboring Monastiraki has the flea market and Ancient Agora ruins at its edge.' },
+        { name: 'Cape Sounion (Temple of Poseidon)', lat: 37.6505, lng: 24.0247 , notes: 'A dramatic clifftop Temple of Poseidon at the southern tip of the Attica peninsula, roughly an hour from Athens; sunset is the classic time to visit, when the marble columns glow gold against the sea.' },
         { name: 'Delphi', lat: 38.4824, lng: 22.5010 , notes: 'The Sanctuary of Apollo (Temple of Apollo, theater, stadium) climbs a slope on Mount Parnassus, with the site museum across the road holding the bronze Charioteer statue; go to the site at opening before the heat and crowds, then the museum afterward.' },
-        { name: 'Arachova', lat: 38.4794, lng: 22.5883 },
-        { name: 'Nafplio / Mycenae / Epidaurus', lat: 37.5673, lng: 22.8078 },
+        { name: 'Arachova', lat: 38.4794, lng: 22.5883 , notes: 'A mountain village near Delphi on the slopes of Mount Parnassus, known as a ski-season base and for its handwoven rugs, cheese and honey sold along the main street; a good overnight stop between Athens and Delphi.' },
+        { name: 'Nafplio / Mycenae / Epidaurus', lat: 37.5673, lng: 22.8078 , notes: 'Nafplio is a Venetian-era port town with a hilltop fortress (Palamidi) reached by nearly 1,000 steps; nearby Mycenae holds the Lion Gate and beehive tombs of the Bronze Age Mycenaean civilization, and Epidaurus has an ancient theater famous for near-perfect acoustics (a dropped coin on stage is audible from the highest seats).' },
       ],
       notes: "Athens (3 days, Acropolis/Plaka/Monastiraki) plus day trips: Cape Sounion, Delphi (a long one — 3.5-4 hours each way, consider one overnight in Delphi or nearby Arachova instead of a rushed there-and-back), and Nafplio/Mycenae/Epidaurus as a single day trip. Stays Athens-based throughout, unlike the looping Peloponnese trip below — no change of base. Budget ~€75-95/day. Season: same as the standalone Athens trip. Web check (2026-08): the Delphi site+museum combo ticket runs ~€12 in summer / €6 in winter; the Mycenae/Epidaurus combo is ~€20 summer / €10 winter, free for EU visitors under 25 and 50% off for EU seniors 65+ (Oct-May). Acropolis still needs its mandatory hhticket.gr timed-entry booking — see the standalone Athens trip for the full details. Travel advisory: yellow since 4 August 2026 for wildfires — re-check shortly before travel, especially April-October.",
       transport_to_next: 'End of this route — fly home from Athens.',
@@ -20700,8 +20781,8 @@ function rbBuildCyprusClassicRoute() {
       destinations: [
         { name: 'Larnaca', lat: 34.9167, lng: 33.6333 , notes: 'Cyprus\'s main airport gateway city, built around the palm-lined Finikoudes seafront promenade. It\'s mostly a stopover rather than a destination — pair it with the nearby Salt Lake (flamingos in winter) and Ayios Lazaros church if you have a spare hour.' },
         { name: 'Nicosia / Ledra Street', lat: 35.1706, lng: 33.3656 , notes: 'Cyprus\'s divided capital, with a pedestrian checkpoint on Ledra Street crossing into the Turkish-controlled north. Bring your passport for the crossing (it\'s quick, no visa needed for EU/most nationalities); allow an hour or two for the old town and Cyprus Museum on the south side.' },
-        { name: 'Troodos Mountains', lat: 34.9186, lng: 32.8595 },
-        { name: "Paphos & Aphrodite's Rock", lat: 34.7720, lng: 32.4297 },
+        { name: 'Troodos Mountains', lat: 34.9186, lng: 32.8595 , notes: 'Cyprus\'s central mountain range, home to a cluster of UNESCO-listed painted Byzantine churches hidden in remote villages, plus the island\'s only ski resort at Mount Olympus; wine villages along the southern slopes are known for the local Commandaria dessert wine.' },
+        { name: "Paphos & Aphrodite's Rock", lat: 34.7720, lng: 32.4297 , notes: 'Paphos holds extensive Roman-era mosaics (House of Dionysus) and mythologically is where Aphrodite was said to have emerged from the sea; the sea-stack rock formation associated with that myth sits just along the coast, though it\'s a roadside viewpoint rather than a swimmable beach.' },
         { name: 'Limassol', lat: 34.7071, lng: 33.0226 },
       ],
       notes: "Larnaca (1 day) — Nicosia including the Ledra Street crossing point (1 day) — the Troodos Mountains (1 day) — Paphos including Aphrodite's Rock (2 days) — Limassol (1 day). Budget ~€110-140/day. Season: April-June or September-October (July-August runs 35°C+). Web check (2026-08): Cyprus is EU but not Schengen — a passport/ID check on entry, no visa needed for Dutch/EU citizens; a rental car is needed, public transport outside the cities is limited.",
@@ -20776,11 +20857,11 @@ function rbBuildIstanbulRoute() {
     {
       code: 'TR', name: 'Turkey', days: 4, budget: 300, lat: 41.0082, lng: 28.9784,
       destinations: [
-        { name: 'Sultanahmet & Hagia Sophia', lat: 41.0086, lng: 28.9802 },
-        { name: 'Blue Mosque', lat: 41.0054, lng: 28.9768 },
-        { name: 'Topkapi Palace', lat: 41.0115, lng: 28.9834 },
-        { name: 'Grand Bazaar', lat: 41.0106, lng: 28.9681 },
-        { name: 'Galata Tower', lat: 41.0256, lng: 28.9744 },
+        { name: 'Sultanahmet & Hagia Sophia', lat: 41.0086, lng: 28.9802 , notes: 'Istanbul\'s old city core, where the Byzantine-turned-Ottoman Hagia Sophia (a mosque again since 2020) faces the Blue Mosque across a shared square; go right at opening to see Hagia Sophia\'s interior mosaics and dome before tour groups fill the space.' },
+        { name: 'Blue Mosque', lat: 41.0054, lng: 28.9768 , notes: 'Formally the Sultan Ahmed Mosque, named for the thousands of blue Iznik tiles lining its interior; still an active mosque, so visits pause during the five daily prayer times and modest dress (covered shoulders/legs, headscarves provided for women) is required.' },
+        { name: 'Topkapi Palace', lat: 41.0115, lng: 28.9834 , notes: 'The Ottoman sultans\' primary residence for roughly 400 years, with a treasury holding one of the world\'s largest emerald collections and the Harem section requiring a separate ticket; the palace grounds\' viewpoint over the Bosphorus and Golden Horn is a highlight in itself.' },
+        { name: 'Grand Bazaar', lat: 41.0106, lng: 28.9681 , notes: 'One of the world\'s oldest and largest covered markets, with over 4,000 shops along winding covered streets selling everything from carpets to gold; haggling is expected and part of the experience, and it\'s easy to lose your bearings — note a few landmark gates to navigate back out.' },
+        { name: 'Galata Tower', lat: 41.0256, lng: 28.9744 , notes: 'A medieval stone watchtower built by the Genoese, now offering a 360-degree observation deck over the Bosphorus, the old city, and the Golden Horn; book a timed ticket online to skip the often-long walk-up line.' },
       ],
       notes: "Sultanahmet (Hagia Sophia, the Blue Mosque, Topkapi Palace) plus the Grand Bazaar/Galata and a Bosphorus cruise day trip. Budget ~€70-80/day (boutique 3-star, limited taxis, good meals). Season: April-May or September-October (mild, less crowded); winter is cheapest but wet/cold, July-August is hot and packed. Web check (2026-08): Hagia Sophia is a functioning mosque — tourists only get access to the upper gallery, €25 entry (the Istanbul Museum Pass does NOT cover this), it closes 5x/day for ~30-45 minutes at prayer times, with an extra-long Friday afternoon closure (~12:00-14:30) — plan around it. The Blue Mosque is free, also has prayer-time closures, and a dress code (shoulders/knees covered, headscarf for women — free loan available). Topkapi Palace is €55 for the palace+Harem+Hagia Irene combo; the Museum Pass covers only the main palace, not the Harem or Hagia Irene. Visa: Dutch passport holders are visa-exempt for Turkey, max 90 days within 180 days, passport valid at least 6 months beyond the return date. Travel advisory: yellow (elevated terrorism risk, pickpocketing at the Grand Bazaar). Earthquake risk: Istanbul sits near the North Anatolian Fault, geologists warn of an expected major earthquake (M7-7.6) in the Marmara region — a standard awareness point, not a travel deterrent. The Turkish lira has depreciated significantly — think in euros, not outdated TRY prices still floating online.",
       transport_to_next: 'End of this route — fly home from Istanbul.',
@@ -20799,7 +20880,7 @@ function rbBuildIstanbulThraceRoute() {
     {
       code: 'TR', name: 'Turkey', days: 6, budget: 420, lat: 41.0082, lng: 28.9784,
       destinations: [
-        { name: 'Istanbul (Sultanahmet)', lat: 41.0086, lng: 28.9802 },
+        { name: 'Istanbul (Sultanahmet)', lat: 41.0086, lng: 28.9802 , notes: 'Istanbul\'s old city core, where the Byzantine-turned-Ottoman Hagia Sophia (a mosque again since 2020) faces the Blue Mosque across a shared square; go right at opening to see Hagia Sophia\'s interior mosaics and dome before tour groups fill the space.' },
         { name: 'Edirne (Selimiye Mosque)', lat: 41.6771, lng: 26.5557 },
         { name: 'Gallipoli Peninsula', lat: 40.1867, lng: 26.3536 },
       ],
@@ -20820,11 +20901,11 @@ function rbBuildIstanbulGallipoliTroyRoute() {
     {
       code: 'TR', name: 'Turkey', days: 9, budget: 720, lat: 41.0082, lng: 28.9784,
       destinations: [
-        { name: 'Istanbul (Sultanahmet)', lat: 41.0086, lng: 28.9802 },
-        { name: 'Gallipoli: Anzac Cove & Lone Pine', lat: 40.2508, lng: 26.2822 },
-        { name: 'Çanakkale', lat: 40.1553, lng: 26.4142 },
+        { name: 'Istanbul (Sultanahmet)', lat: 41.0086, lng: 28.9802 , notes: 'Istanbul\'s old city core, where the Byzantine-turned-Ottoman Hagia Sophia (a mosque again since 2020) faces the Blue Mosque across a shared square; go right at opening to see Hagia Sophia\'s interior mosaics and dome before tour groups fill the space.' },
+        { name: 'Gallipoli: Anzac Cove & Lone Pine', lat: 40.2508, lng: 26.2822 , notes: 'The WWI battlefield peninsula where Allied (notably Australian and New Zealand — ANZAC) and Ottoman forces fought an 8-month campaign with massive casualties on both sides; Anzac Cove\'s small landing beach and the Lone Pine cemetery/memorial are the most visited sites, with an April 25 Anzac Day dawn service drawing large crowds annually.' },
+        { name: 'Çanakkale', lat: 40.1553, lng: 26.4142 , notes: 'The main gateway town for visiting Gallipoli, on the Asian side of the Dardanelles strait opposite the peninsula; also close to ancient Troy, and home to a giant wooden horse replica used in the 2004 "Troy" film, now displayed on the waterfront.' },
         { name: 'Troy', lat: 39.9575, lng: 26.2389 },
-        { name: 'Bursa (optional)', lat: 40.1826, lng: 29.0665 },
+        { name: 'Bursa (optional)', lat: 40.1826, lng: 29.0665 , notes: 'The Ottoman Empire\'s first capital before Istanbul, known for the Grand Mosque (Ulu Cami) with 20 domes, silk and textile history, and İskender kebab, said to have originated here; also a cable car up Uludağ mountain for a ski-season or viewpoint side trip.' },
       ],
       notes: "Istanbul (4-5 days) plus a 2-day tour of Gallipoli (Anzac Cove, Lone Pine) and Troy via Çanakkale (overnight there), with Bursa as an optional add-on. Budget ~€75-85/day including the tour. Season: spring/autumn are most pleasant for walking the battlefields (less heat). Web check (2026-08): 2-day Istanbul-Gallipoli-Troy tours run ~€150-250 per person all-in (bus, Çanakkale hotel, guides) — a single-day trip is possible but is a very long ride, 2 days is recommended. Troy entry is separately ~€15-20. Visa (visa-exempt, max 90/180 days), travel advisory (yellow) and earthquake/lira notes: see the standalone Istanbul trip.",
       transport_to_next: 'End of this route — fly home from Istanbul.',
@@ -20843,7 +20924,7 @@ function rbBuildIstanbulLesbosRoute() {
     {
       code: 'TR', name: 'Turkey', days: 6, budget: 450, lat: 41.0082, lng: 28.9784,
       destinations: [
-        { name: 'Istanbul (Sultanahmet)', lat: 41.0086, lng: 28.9802 },
+        { name: 'Istanbul (Sultanahmet)', lat: 41.0086, lng: 28.9802 , notes: 'Istanbul\'s old city core, where the Byzantine-turned-Ottoman Hagia Sophia (a mosque again since 2020) faces the Blue Mosque across a shared square; go right at opening to see Hagia Sophia\'s interior mosaics and dome before tour groups fill the space.' },
         { name: 'Ayvalık', lat: 39.3186, lng: 26.6947 },
       ],
       notes: "Istanbul (5 days) then a bus or flight to Ayvalık (1 day) for a short ferry crossing to Lesbos/Mytilini. Istanbul-based, a single island hop — unlike the longer Aegean-coast-to-islands combo below. Budget ~€70-85/day. Season: the ferry runs June-September daily, far fewer sailings off-season — plan the island hop for summer. Web check (2026-08): the Ayvalık-Lesbos ferry costs ~€20-35 one-way, a 40-minute to 1-hour crossing, mainly a summer service (June-September daily). Visa (visa-exempt, max 90/180 days), travel advisory (yellow) and earthquake/lira notes: see the standalone Istanbul trip.",
@@ -20871,9 +20952,9 @@ function rbBuildTurkeyGreeceAegeanDodecaneseRoute() {
     {
       code: 'TR', name: 'Turkey', days: 6, budget: 450, lat: 38.4237, lng: 27.1428,
       destinations: [
-        { name: 'Izmir', lat: 38.4237, lng: 27.1428 },
-        { name: 'Kuşadası & Ephesus', lat: 37.9410, lng: 27.3417 },
-        { name: 'Bodrum', lat: 37.0344, lng: 27.4305 },
+        { name: 'Izmir', lat: 38.4237, lng: 27.1428 , notes: 'Turkey\'s third-largest city and a major Aegean port, with a long seafront promenade (Kordon) and the ancient Agora ruins in its center; mainly used as a gateway to Ephesus and the surrounding coast rather than a long stop itself.' },
+        { name: 'Kuşadası & Ephesus', lat: 37.9410, lng: 27.3417 , notes: 'Kuşadası is a resort port town and cruise stop; Ephesus nearby is one of the best-preserved ancient Roman cities anywhere, with the Library of Celsus facade and a large amphitheater — arrive early to avoid both heat and cruise-ship tour groups.' },
+        { name: 'Bodrum', lat: 37.0344, lng: 27.4305 , notes: 'A whitewashed resort town built around a marina and the Bodrum Castle (built by the Knights Hospitaller, also housing an underwater archaeology museum); known for its nightlife and as a base for Aegean sailing trips on traditional gulet boats.' },
       ],
       notes: "Izmir/Kuşadası (Ephesus), then on to Bodrum — no Istanbul on this route, unlike the routes above. Budget ~€75-90/day on average (the Turkish coast is cheaper, the Greek islands pricier). Season: strictly June-September — outside that window almost all the ferry routes disappear (off-season sometimes only 3x/week instead of daily). Web check (2026-08): Bodrum-Kos is ~20-30 minutes by catamaran, €20-35 one-way, 3-6x/day in summer; Marmaris-Rhodes is ~1 hour, €45-62 (pricier), daily in summer — book well ahead in July-August given the crowds. 2026 Ephesus entry is €40 (including the now-mandatory new 'Ephesus Experience' museum), Terrace Houses an extra €15. Visa (visa-exempt, max 90/180 days), travel advisory (yellow) and earthquake/lira notes: see the standalone Istanbul trip.",
       transport_to_next: 'Ferry Bodrum-Kos or Marmaris-Rhodes (mainly June-September, book ahead in July-August).',
@@ -20881,8 +20962,8 @@ function rbBuildTurkeyGreeceAegeanDodecaneseRoute() {
     {
       code: 'GR', name: 'Greece', days: 6, budget: 540, lat: 36.4341, lng: 28.2176,
       destinations: [
-        { name: 'Rhodes', lat: 36.4341, lng: 28.2176 },
-        { name: 'Kos', lat: 36.8933, lng: 27.2881 },
+        { name: 'Rhodes', lat: 36.4341, lng: 28.2176 , notes: 'Greece\'s Dodecanese hub, with a UNESCO-listed medieval old town built by the Knights of Rhodes; the Street of the Knights and the Palace of the Grand Master are the standout sights within the walls.' },
+        { name: 'Kos', lat: 36.8933, lng: 27.2881 , notes: 'A Greek island known for the Asklepion, an ancient healing sanctuary associated with Hippocrates (said to have taught medicine here), plus a large plane tree in Kos Town locals claim is where he once taught, though its actual age is far younger than the legend suggests.' },
       ],
       notes: "Ferry-hop the Dodecanese (2-3 islands, e.g. Kos and Rhodes) before heading back via Bodrum/Izmir. Budget noticeably higher than the Turkish coast. Season: same strict June-September window as the Turkish leg — outside it, ferry frequency drops sharply.",
       transport_to_next: 'End of this route — fly home from Rhodes or Kos.',
@@ -20901,7 +20982,7 @@ function rbBuildIzmirAegeanCoastRoute() {
     {
       code: 'TR', name: 'Turkey', days: 5, budget: 350, lat: 38.4237, lng: 27.1428,
       destinations: [
-        { name: 'Izmir', lat: 38.4237, lng: 27.1428 },
+        { name: 'Izmir', lat: 38.4237, lng: 27.1428 , notes: 'Turkey\'s third-largest city and a major Aegean port, with a long seafront promenade (Kordon) and the ancient Agora ruins in its center; mainly used as a gateway to Ephesus and the surrounding coast rather than a long stop itself.' },
         { name: 'Selçuk', lat: 37.9500, lng: 27.3667 },
         { name: 'Ephesus', lat: 37.9410, lng: 27.3417 },
         { name: 'Çeşme', lat: 38.3225, lng: 26.3033 },
@@ -21141,9 +21222,9 @@ function rbBuildSvalbardShortRoute() {
       destinations: [
         { name: 'Longyearbyen', lat: 78.2232, lng: 15.6469, notes: "The world's largest settlement this far north, built on a coal-mining economy now shifting toward tourism and Arctic research; the Svalbard Global Seed Vault sits on a hillside just outside town and is visible from outside (not open to visitors). Beyond the block-level guide requirement: even short walks just past the town's signposted boundary count as \"outside town\" for polar bear risk, not just longer excursions." },
         { name: 'Svalbard Museum', lat: 78.2199, lng: 15.6259, notes: "A compact but well-curated overview of whaling, trapping, coal-mining history and polar bear/Arctic wildlife exhibits, located right in Longyearbyen. Worth about an hour, and best used as an orientation stop early in the Svalbard stay before heading out on excursions." },
-        { name: 'Nordpolet', lat: 78.2202, lng: 15.6270 },
-        { name: 'Isfjorden boat tour (summer)', lat: 78.3000, lng: 14.0000 },
-        { name: 'Pyramiden (summer boat destination)', lat: 79.0333, lng: 16.3333 },
+        { name: 'Nordpolet', lat: 78.2202, lng: 15.6270 , notes: 'The world\'s northernmost liquor/wine/spirits shop, in Longyearbyen; a quirky practical stop since alcohol sales are otherwise tightly rationed for residents (tourists face fewer restrictions but still need to show ID/travel documents).' },
+        { name: 'Isfjorden boat tour (summer)', lat: 78.3000, lng: 14.0000 , notes: 'A boat trip through Svalbard\'s largest fjord system in the ice-free summer months, giving chances to spot walrus, seals, seabirds and glacier fronts calving into the water; a common way to see remote coastline not reachable overland.' },
+        { name: 'Pyramiden (summer boat destination)', lat: 79.0333, lng: 16.3333 , notes: 'An abandoned Soviet coal-mining settlement, reachable only by boat in summer, left largely frozen in time since its sudden 1998 closure; guided tours (required, due to polar bear risk) walk through the ghost-town buildings including a still-standing bust of Lenin, the world\'s northernmost.' },
       ],
       notes: "This is the short, realistic 'Trip Ideas' version of Svalbard — Longyearbyen itself (the Svalbard Museum, the Nordpolet shop) plus 1-2 day tours, not the multi-day expedition boat. Budget ~€160-220/day — the Oslo-Longyearbyen flight is itself expensive, and day tours run 1500-3000 NOK/day (these tour prices couldn't be freshly re-verified — treat as indicative 2024-2025 level, recheck just before booking). Season: March-May for the best combination of daylight and snow for a snowmobile or dog-sledding trip, with a chance of northern lights still in March; June-August for boat trips (Isfjorden, Pyramiden) and the midnight sun; October-February is polar night — dark, and not well suited to a short trip. Web check (2026-08): Svalbard is NOT part of Schengen despite being Norwegian territory — no visa is needed to enter Svalbard itself (the Svalbard Treaty means visa-free entry for all nationalities), but the flight always routes via mainland Norway (Schengen), so normal Schengen entry rules apply for that layover. Leaving Longyearbyen's built-up area without an armed, experienced guide is illegal because of polar bear risk — any organized tour already arranges this. Only SAS and Norwegian fly to Longyearbyen (LYR), from Oslo (~2h50) and Tromsø (~1h40), with more frequent service in the March-August peak season.\n\nDistinct from the existing 'Svalbard 🐻‍❄️' route (split off from Nordic Arctic Expedition ❄️), which is the longer, multi-day expedition-boat version of Svalbard — that route is untouched. This one is deliberately just Longyearbyen plus short day tours, a separate, shorter concept, not a duplicate.",
       transport_to_next: 'End of this route — fly home via Oslo or Tromsø.',
@@ -21162,11 +21243,11 @@ function rbBuildStockholmRoute() {
     {
       code: 'SE', name: 'Sweden', days: 4, budget: 460, lat: 59.3251, lng: 18.0711,
       destinations: [
-        { name: 'Gamla Stan', lat: 59.3251, lng: 18.0711 },
-        { name: 'Södermalm', lat: 59.3141, lng: 18.0687 },
-        { name: 'Vasa Museum', lat: 59.3280, lng: 18.0910 },
-        { name: 'Skansen', lat: 59.3252, lng: 18.1036 },
-        { name: 'Djurgården', lat: 59.3230, lng: 18.1000 },
+        { name: 'Gamla Stan', lat: 59.3251, lng: 18.0711 , notes: 'Stockholm\'s medieval old town on its own small island, with narrow cobbled lanes, the Royal Palace, and Stortorget square (site of the 1520 Stockholm Bloodbath); the daily changing-of-the-guard ceremony at the palace is a free, easy add-on.' },
+        { name: 'Södermalm', lat: 59.3141, lng: 18.0687 , notes: 'A trendy, hilly district known for its café/vintage-shop scene and sweeping viewpoints over the city and water, especially from Monteliusvägen path or Fjällgatan; also the setting for Stieg Larsson\'s "Millennium" (Girl with the Dragon Tattoo) novels.' },
+        { name: 'Vasa Museum', lat: 59.3280, lng: 18.0910 , notes: 'Houses the Vasa, a 17th-century warship that sank on its maiden voyage in Stockholm harbor in 1628 and was salvaged largely intact in 1961; one of the best-preserved ships from that era anywhere, displayed in a dedicated purpose-built museum.' },
+        { name: 'Skansen', lat: 59.3252, lng: 18.1036 , notes: 'An open-air museum of relocated historic buildings from across Sweden, plus a zoo of native Nordic wildlife (moose, wolves, lynx); a good half-day for a broad overview of traditional Swedish architecture and culture in one place.' },
+        { name: 'Djurgården', lat: 59.3230, lng: 18.1000 , notes: 'The green island park holding both the Vasa Museum and Skansen, plus the Gröna Lund amusement park and the ABBA Museum; easily walkable or reachable by ferry/tram from the city center, making it Stockholm\'s main museum/attraction cluster.' },
       ],
       notes: "Gamla Stan's old town, the Södermalm neighborhood, the Vasa Museum, Skansen open-air museum, and the green island of Djurgården. Budget ~€100-130/day. Season: May-September (June-August is the busiest and most expensive). Web check (2026-08): check whether a Stockholm Pass is worth it against current 2026 museum prices before buying one. Travel advisory: green, threat level 3/5 for attacks (elevated) — watch for pickpocketing in crowds; gang violence exists mainly in Stockholm/Malmö/Gothenburg but isn't tourist-targeted. Schengen — no border friction with Norway/Denmark/Germany, though Sweden has run periodic temporary ID checks on the Öresund crossing (train/bridge Copenhagen-Malmö) since 2015, repeatedly extended — check just before travel via politie.se or oresundsbron.com.",
       transport_to_next: 'End of this route — fly home from Stockholm.',
@@ -21186,10 +21267,10 @@ function rbBuildStockholmSurroundingsRoute() {
       code: 'SE', name: 'Sweden', days: 6, budget: 690, lat: 59.3251, lng: 18.0711,
       destinations: [
         { name: 'Stockholm (Gamla Stan)', lat: 59.3251, lng: 18.0711, notes: "Stortorget, the old town's main square, was the site of the 1520 Stockholm Bloodbath; duck down Mårten Trotzigs Gränd, the city's narrowest alley (about 90cm wide), and time a visit to the Royal Palace courtyard for the Changing of the Guard (around midday, fewer times in winter)." },
-        { name: 'Uppsala Cathedral', lat: 59.8586, lng: 17.6389 },
-        { name: 'Gamla Uppsala', lat: 59.8994, lng: 17.6339 },
-        { name: 'Sigtuna', lat: 59.6178, lng: 17.7233 },
-        { name: 'Stockholm archipelago (Vaxholm)', lat: 59.4025, lng: 18.3286 },
+        { name: 'Uppsala Cathedral', lat: 59.8586, lng: 17.6389 , notes: 'Scandinavia\'s largest cathedral, the traditional coronation site of Swedish monarchs and the burial place of several historical figures including botanist Carl Linnaeus; the twin spires dominate the Uppsala skyline.' },
+        { name: 'Gamla Uppsala', lat: 59.8994, lng: 17.6339 , notes: 'The site of Sweden\'s ancient pre-Christian royal center, marked by large earthen burial mounds tied to early Swedish kings in Norse legend; a small museum on-site covers the Viking-era history and archaeology.' },
+        { name: 'Sigtuna', lat: 59.6178, lng: 17.7233 , notes: 'Sweden\'s oldest still-existing town, founded around 980 AD, with Viking-era rune stones scattered along its main street — more than any other town in Sweden; a quiet lakeside stop between Stockholm and Uppsala.' },
+        { name: 'Stockholm archipelago (Vaxholm)', lat: 59.4025, lng: 18.3286 , notes: 'Vaxholm is the main gateway town into the Stockholm archipelago\'s roughly 30,000 islands and islets, with a 19th-century fortress guarding the channel into the city; a short ferry ride from central Stockholm makes it an easy half-day taste of the archipelago.' },
       ],
       notes: "Stockholm itself (3 days) plus day trips to Uppsala (the cathedral, Gamla Uppsala), Sigtuna, and the Stockholm archipelago (Vaxholm, by boat) — day trips only, no trip south to Skåne, unlike the roadtrip routes below. Budget ~€100-130/day, plus €30-50 on archipelago-boat days. Season: May-September. Web check (2026-08): the archipelago boat service is seasonal (its full schedule mainly runs April/May-October) — check the 2026 sailing schedule before relying on it. Travel advisory and entry details: see the Stockholm (4 days) route above.",
       transport_to_next: 'End of this route — fly home from Stockholm.',
@@ -21232,11 +21313,11 @@ function rbBuildSwedenRoadtripRoute() {
     {
       code: 'SE', name: 'Sweden', days: 9, budget: 945, lat: 59.3251, lng: 18.0711,
       destinations: [
-        { name: 'Stockholm', lat: 59.3251, lng: 18.0711 },
-        { name: 'Göta Canal / Vadstena', lat: 58.4550, lng: 14.8953 },
-        { name: 'Gothenburg', lat: 57.7089, lng: 11.9746 },
-        { name: 'Malmö / Skåne', lat: 55.6050, lng: 13.0038 },
-        { name: 'Småland (Glasriket, Kosta)', lat: 56.8419, lng: 15.4067 },
+        { name: 'Stockholm', lat: 59.3251, lng: 18.0711 , notes: 'Sweden\'s capital, spread across 14 islands connected by bridges; Gamla Stan\'s medieval old town, the Vasa Museum\'s preserved 17th-century warship, and the green island of Djurgården are the essential first stops.' },
+        { name: 'Göta Canal / Vadstena', lat: 58.4550, lng: 14.8953 , notes: 'A 19th-century canal system linking the Baltic to Gothenburg via a chain of lakes and locks, popular for canal-boat cruises; Vadstena along the route holds a 14th-century abbey founded by Saint Birgitta and a moated Renaissance castle right on Lake Vättern.' },
+        { name: 'Gothenburg', lat: 57.7089, lng: 11.9746 , notes: 'Sweden\'s second city, with the Haga district\'s wooden houses and cafés, and the Liseberg amusement park, one of Scandinavia\'s largest; also a major port with a lively fish market (Feskekôrka, built to resemble a church).' },
+        { name: 'Malmö / Skåne', lat: 55.6050, lng: 13.0038 , notes: 'Malmö is Sweden\'s third city, connected to Copenhagen by the Öresund Bridge, with the modern twisting Turning Torso skyscraper as its skyline landmark; Skåne, the surrounding region, is Sweden\'s agricultural heartland with medieval castles and rapeseed fields.' },
+        { name: 'Småland (Glasriket, Kosta)', lat: 56.8419, lng: 15.4067 , notes: 'Known as "Glasriket" (the Kingdom of Crystal) for its concentration of glassworks, including the famous Kosta Boda studio (Sweden\'s oldest, founded 1742); visitors can watch live glassblowing demonstrations at several of the workshops.' },
       ],
       notes: "Stockholm, a boat trip on the Göta Canal via Vadstena, Gothenburg, the Skåne region, and Småland's Glasriket ('glass kingdom') glassworks, back to the start — a broader central-plus-south loop than the Skåne-only route above. Budget ~€90-120/day including a rental car. Season: May-September. Web check (2026-08): Göta Canal boats run May-September; Stockholm and Gothenburg have a camera-based city toll billed afterward, the rest of Sweden is toll-free.",
       transport_to_next: 'End of this route — fly home from Stockholm.',
@@ -21255,7 +21336,7 @@ function rbBuildSwedenNorwayRoute() {
     {
       code: 'SE', name: 'Sweden', days: 7, budget: 770, lat: 59.3251, lng: 18.0711,
       destinations: [
-        { name: 'Stockholm', lat: 59.3251, lng: 18.0711 },
+        { name: 'Stockholm', lat: 59.3251, lng: 18.0711 , notes: 'Sweden\'s capital, spread across 14 islands connected by bridges; Gamla Stan\'s medieval old town, the Vasa Museum\'s preserved 17th-century warship, and the green island of Djurgården are the essential first stops.' },
         { name: 'Kiruna', lat: 67.8558, lng: 20.2253, notes: "Sweden's northernmost town is being physically relocated a few kilometres east because the LKAB iron-ore mine beneath it is causing ground subsidence — an unusual \"moving city\" story worth a stop in itself, alongside the mine itself. LKAB's underground mine tours are popular and capacity-limited, so book ahead rather than assuming a same-day slot." },
         { name: 'Abisko', lat: 68.3540, lng: 18.7885 , notes: 'One of the best spots in the world for aurora viewing, thanks to a specific dry microclimate ("the blue hole") that keeps skies clearer than surrounding areas even when it\'s cloudy elsewhere in the region.' },
         { name: 'Riksgränsen (border crossing)', lat: 68.4297, lng: 18.1200 },
@@ -21359,9 +21440,9 @@ function rbBuildCopenhagenRoute() {
       destinations: [
         { name: 'Nyhavn', lat: 55.6790, lng: 12.5910, notes: "17th-century harbor lined with colorful gabled townhouses and canal-front cafes; walk a block or two back from the waterfront for a meal at local prices, since the restaurants sitting directly on the canal charge a steep premium for the view." },
         { name: 'Tivoli Gardens', lat: 55.6736, lng: 12.5681, notes: "One of the world's oldest amusement parks (opened 1843) and a direct inspiration for Disneyland, with gardens and rides that are especially atmospheric lit up after dark. It runs seasonally, not year-round (2026: open ~27 March-20 September, plus separate Halloween and Christmas windows), so check its season calendar before planning around it." },
-        { name: 'Strøget', lat: 55.6787, lng: 12.5751 },
+        { name: 'Strøget', lat: 55.6787, lng: 12.5751 , notes: 'One of Europe\'s longest pedestrian shopping streets, running through the heart of Copenhagen from City Hall Square toward Kongens Nytorv; lined with both international chains and smaller Danish design shops.' },
         { name: 'Christiania', lat: 55.6736, lng: 12.5992, notes: "A self-governing \"freetown\" since 1971, known for colorful murals and an alternative, car-free community feel; residents themselves shut down the once-notorious open-air cannabis market on Pusher Street in 2024, so the area is calmer than its old reputation suggests, though photography is still restricted/frowned on in parts of the settlement." },
-        { name: 'Rosenborg Castle', lat: 55.6857, lng: 12.5775 },
+        { name: 'Rosenborg Castle', lat: 55.6857, lng: 12.5775 , notes: 'A Dutch Renaissance-style castle built by King Christian IV, now home to the Danish crown jewels and royal regalia in a fortified basement treasury; set inside the King\'s Garden, one of Copenhagen\'s oldest public parks.' },
       ],
       notes: "The colorful Nyhavn harbor, Tivoli Gardens, the Strøget shopping street, the freetown of Christiania, and Rosenborg Castle. Budget ~€110-140/day. Season: May-September; Tivoli Gardens closes during the shoulder season (roughly early January to late March) — check the 2026 calendar for its exact reopening date before planning a winter or early-spring trip. Web check (2026-08): work out whether a Copenhagen Card actually pays for itself against current 2026 museum/attraction prices before buying one — it depends heavily on how many paid sights you'll realistically fit into 4 days.",
       transport_to_next: 'End of this route — fly home from Copenhagen.',
@@ -21500,10 +21581,10 @@ function rbBuildSouthFinlandRoute() {
       code: 'FI', name: 'Finland', days: 9, budget: 765, lat: 60.1699, lng: 24.9384,
       destinations: [
         { name: 'Helsinki (Senate Square)', lat: 60.1699, lng: 24.9384, notes: "Engel's neoclassical ensemble around the square is capped by Helsinki Cathedral's dramatic white staircase, the city's most photographed viewpoint; climb the steps for the view back over the square, best in the low afternoon light." },
-        { name: 'Turku Castle', lat: 60.4472, lng: 22.2333 },
-        { name: 'Turku Cathedral', lat: 60.4512, lng: 22.2745 },
-        { name: 'Porvoo', lat: 60.3932, lng: 25.6645 },
-        { name: 'Tampere', lat: 61.4978, lng: 23.7610 },
+        { name: 'Turku Castle', lat: 60.4472, lng: 22.2333 , notes: 'Finland\'s largest surviving medieval castle, founded in the 13th century at the mouth of the Aura river; its round tower and medieval halls host historical exhibitions, and part of it is still used for state receptions today.' },
+        { name: 'Turku Cathedral', lat: 60.4512, lng: 22.2745 , notes: 'Finland\'s national shrine and "mother church," originally consecrated in the 13th century though largely rebuilt after fires over the centuries; holds several historically significant royal and noble tombs.' },
+        { name: 'Porvoo', lat: 60.3932, lng: 25.6645 , notes: 'One of Finland\'s oldest towns, with a riverside old town of red ochre-painted wooden warehouses that are among the most-photographed buildings in the country; a popular easy day trip from Helsinki.' },
+        { name: 'Tampere', lat: 61.4978, lng: 23.7610 , notes: 'Finland\'s third-largest city, built between two lakes and shaped by its industrial-era textile mills, several now converted into museums, shops and event spaces (the Finlayson and Tampella complexes); also home to the Moomin Museum, one of the world\'s few dedicated to the Moomin characters created by Finnish author Tove Jansson.' },
       ],
       notes: "The differentiator versus the shorter Helsinki routes above: a wider geographic scope — Helsinki, Turku, Porvoo and optionally Tampere, 3-4 cities instead of just one. Budget ~€80-90/day. Season: May-September. Web check (2026-08): Porvoo's old town is free to visit; Turku Castle and Turku Cathedral entry runs roughly €10-14 each.",
       transport_to_next: 'End of this route — fly home from Helsinki.',
@@ -21545,7 +21626,7 @@ function rbBuildFinlandRoadtripRoute() {
       destinations: [
         { name: 'Helsinki (Senate Square)', lat: 60.1699, lng: 24.9384, notes: "Engel's neoclassical ensemble around the square is capped by Helsinki Cathedral's dramatic white staircase, the city's most photographed viewpoint; climb the steps for the view back over the square, best in the low afternoon light." },
         { name: 'Turku', lat: 60.4518, lng: 22.2666 },
-        { name: 'Tampere', lat: 61.4978, lng: 23.7610 },
+        { name: 'Tampere', lat: 61.4978, lng: 23.7610 , notes: 'Finland\'s third-largest city, built between two lakes and shaped by its industrial-era textile mills, several now converted into museums, shops and event spaces (the Finlayson and Tampella complexes); also home to the Moomin Museum, one of the world\'s few dedicated to the Moomin characters created by Finnish author Tove Jansson.' },
         { name: 'Rovaniemi (Santa Claus Village)', lat: 66.5636, lng: 25.8471 },
       ],
       notes: "Helsinki, through South Finland, up into a Lapland loop — Helsinki-Turku-Tampere-Rovaniemi. Budget ~€85-100/day on average (car/fuel plus a mix of city and nature). Season: June-August, to cover the whole route without snow problems on the roads up north. Web check (2026-08): the distances are long (Helsinki-Rovaniemi is roughly 830km) — consider the VR night train with car transport instead of driving the whole way yourself.",
@@ -22094,11 +22175,11 @@ function rbBuildOuterHebridesRoute() {
     {
       code: 'GB', name: 'United Kingdom', days: 6, budget: 558, lat: 58.0500, lng: -6.7000,
       destinations: [
-        { name: 'Highlands to Skye (Uig)', lat: 57.5926, lng: -6.3719 },
-        { name: 'Tarbert (Harris, CalMac ferry from Uig)', lat: 57.8965, lng: -6.7967 },
-        { name: 'Luskentyre beach', lat: 57.9167, lng: -7.0833 },
-        { name: 'Callanish Standing Stones (Lewis)', lat: 58.1972, lng: -6.7450 },
-        { name: 'Stornoway (return via Ullapool)', lat: 58.2090, lng: -6.3874 },
+        { name: 'Highlands to Skye (Uig)', lat: 57.5926, lng: -6.3719 , notes: 'The drive from the Scottish Highlands out to Skye\'s Uig ferry port passes through dramatic glens and mountains; Uig itself is mainly the departure point for the CalMac ferry across to the Outer Hebrides, not a destination in its own right.' },
+        { name: 'Tarbert (Harris, CalMac ferry from Uig)', lat: 57.8965, lng: -6.7967 , notes: 'The main port and only real town on the Isle of Harris, serving as the ferry gateway from Skye; used mostly as an arrival/departure point and base rather than a sightseeing stop.' },
+        { name: 'Luskentyre beach', lat: 57.9167, lng: -7.0833 , notes: 'Widely considered one of the UK\'s most beautiful beaches, a vast stretch of white sand backed by turquoise water and views to the Harris hills; often nearly empty even in summer due to its remoteness.' },
+        { name: 'Callanish Standing Stones (Lewis)', lat: 58.1972, lng: -6.7450 , notes: 'A Neolithic stone circle roughly 5,000 years old, among the earliest and best-preserved in Scotland (predating Stonehenge); set on a low ridge with views over Loch Roag, and free to walk among at any time of day.' },
+        { name: 'Stornoway (return via Ullapool)', lat: 58.2090, lng: -6.3874 , notes: 'The only real town in the Outer Hebrides and the ferry link back to the mainland at Ullapool; Lews Castle and its surrounding woodland grounds are the main in-town sight beyond the harbor itself.' },
       ],
       notes: "From the Highlands via Skye (Uig), a CalMac ferry crossing Uig-Tarbert (Harris, ~1h40), then Luskentyre beach and the Callanish Standing Stones (Lewis), returning either via Stornoway-Ullapool or the same ferry. Budget ~€85-100/day. Season: May-September, with changeable weather throughout. Web check (2026-08): CalMac ferry tickets are sailing-specific (a fixed date and time, even for foot passengers) — book early in summer, since vehicle spots are scarce; check calmac.co.uk for current fares.",
       transport_to_next: 'End of this route — fly home from Stornoway or Inverness.',
@@ -22164,11 +22245,11 @@ function rbBuildLondonRoute() {
     {
       code: 'GB', name: 'United Kingdom', days: 4, budget: 380, lat: 51.5074, lng: -0.1278,
       destinations: [
-        { name: 'British Museum', lat: 51.5194, lng: -0.1270 },
-        { name: 'Tower of London', lat: 51.5081, lng: -0.0759 },
-        { name: 'Camden Market', lat: 51.5390, lng: -0.1426 },
-        { name: 'Westminster (Big Ben / Houses of Parliament)', lat: 51.4995, lng: -0.1248 },
-        { name: 'Greenwich (Royal Observatory / Cutty Sark)', lat: 51.4769, lng: -0.0005 },
+        { name: 'British Museum', lat: 51.5194, lng: -0.1270 , notes: 'One of the world\'s largest and oldest museums, free to enter, holding the Rosetta Stone and the Parthenon (Elgin) Marbles among millions of other artifacts — the latter subject to an ongoing repatriation dispute with Greece; the collection is vast enough that picking 2-3 specific galleries beats trying to see everything.' },
+        { name: 'Tower of London', lat: 51.5081, lng: -0.0759 , notes: 'A nearly 1,000-year-old fortress on the Thames, home to the Crown Jewels and centuries of history as a royal residence, prison and execution site; the Yeoman Warders ("Beefeaters") give included guided tours, and the ravens kept on-site are tied to a centuries-old superstition about the Tower\'s fate.' },
+        { name: 'Camden Market', lat: 51.5390, lng: -0.1426 , notes: 'A sprawling market complex along the Regent\'s Canal known for alternative fashion, vintage clothing and street food stalls; also close to Camden\'s live-music pub scene, historically tied to punk and indie music culture.' },
+        { name: 'Westminster (Big Ben / Houses of Parliament)', lat: 51.4995, lng: -0.1248 , notes: 'The Houses of Parliament and its clock tower (officially the Elizabeth Tower, "Big Ben" technically refers to the bell inside) sit beside Westminster Abbey, the coronation church for English and British monarchs since 1066; guided tours of Parliament itself run on select dates, mainly when it\'s not in session.' },
+        { name: 'Greenwich (Royal Observatory / Cutty Sark)', lat: 51.4769, lng: -0.0005 , notes: 'Home to the Royal Observatory, marking the Prime Meridian (0° longitude) where visitors can stand with one foot in each hemisphere, and the preserved 19th-century tea-clipper ship Cutty Sark; also a pleasant riverside park with a classic view back toward central London\'s skyline.' },
       ],
       notes: "Entry: direct flight Amsterdam-London (KLM/easyJet/British Airways, ±1h15-1h30). A compact city break: the British Museum, the Tower of London, a look at Camden, the Westminster landmarks, and a day out to Greenwich. Budget ~£75-90/day (~€88-105). Season: year-round, May-September is prettiest. Web check (2026-08): the UK ETA is mandatory in advance (~€23, valid 2 years, also covers Northern Ireland/Isle of Man/Jersey/Guernsey); many of London's major museums (including the British Museum) are free to enter; Oyster or a contactless card covers the Underground/buses/DLR. Travel advisory: green, though the UK carries a 'severe' (4/5) terrorism threat level — routine city-break precautions, nothing route-specific. Exchange rate used: 1 GBP ≈ 1.17 EUR (August 2026).",
       transport_to_next: 'End of this route — fly home from London.',
@@ -24716,7 +24797,7 @@ function rbBuildDenmarkSwedenNorwayOverlandRoute() {
       code: 'SE', name: 'Sweden', days: 5, budget: 500, lat: 56.6500, lng: 12.5000,
       destinations: [
         { name: 'Malmö', lat: 55.6050, lng: 13.0038 , notes: 'Sweden\'s third city, joined to Copenhagen by the Öresund Bridge, known for the Turning Torso skyscraper and the Lilla Torg old-town square. Easiest as a train day trip from Copenhagen Central (about 35 minutes), no car needed.' },
-        { name: 'Gothenburg', lat: 57.7089, lng: 11.9746 },
+        { name: 'Gothenburg', lat: 57.7089, lng: 11.9746 , notes: 'Sweden\'s second city, with the Haga district\'s wooden houses and cafés, and the Liseberg amusement park, one of Scandinavia\'s largest; also a major port with a lively fish market (Feskekôrka, built to resemble a church).' },
       ],
       notes: "Malmö (2 days, same Öresund-crossing content as Denmark + South Sweden (9 days) 🌉's Skåne leg), then north along the coast to Gothenburg (3 days). Budget ~€100/day. Season: June-August.",
       transport_to_next: 'Train or E6 drive from Gothenburg to Oslo, Norway (~3h30-4h) — a Nordic Passport Union crossing, no border control (this crossing has been checkpoint-free since well before Schengen existed).',
@@ -24958,7 +25039,7 @@ function rbBuildSouthernEuropeHighlightsRoadtripRoute() {
     {
       code: 'GR', name: 'Greece', days: 3, budget: 240, lat: 37.9838, lng: 23.7275,
       destinations: [
-        { name: 'Acropolis & Plaka/Monastiraki', lat: 37.9715, lng: 23.7267 },
+        { name: 'Acropolis & Plaka/Monastiraki', lat: 37.9715, lng: 23.7267 , notes: 'The Acropolis hilltop citadel holds the Parthenon and other classical monuments, best visited right at opening to beat both heat and crowds; Plaka below is the old town\'s maze of neoclassical lanes and tavernas, while neighboring Monastiraki has the flea market and Ancient Agora ruins at its edge.' },
         { name: 'Acropolis Museum', lat: 37.9686, lng: 23.7285 },
       ],
       notes: "Acropolis, Plaka and Monastiraki (3 days) — same content as Athens (4 days) 🏛️ (rbBuildAthensRoute), one day shorter and without the Cape Sounion day trip here. Budget ~€80/day. Travel advisory: yellow since 4 August 2026 for wildfires (same nationwide Greece advisory as the standalone Athens route). Web check (2026-09): the acute multi-fatality emergency (Crete evacuations, an Athens-area helicopter crash) was late July-early August and has since eased — 2026's total burned area nationally is actually 37% below the 20-year average — but a fresh extreme fire-danger spell is forecast across Greece for 3-9 September 2026 (i.e. right now); not an active emergency, but check the daily fire-risk map before any hikes/rural drives and re-check shortly before travel.",

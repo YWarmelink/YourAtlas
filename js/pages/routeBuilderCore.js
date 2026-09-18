@@ -255,6 +255,7 @@ const RB_MIGRATE_FLAG_2026_09_BALKAN_ALPINE_CLUSTER_DESTINATION_NOTES = 'atlas_g
 const RB_MIGRATE_FLAG_2026_09_NORDIC_UK_CLUSTER_DESTINATION_NOTES = 'atlas_grand_trips_migrate_2026_09_nordic_uk_cluster_destination_notes_v1';
 const RB_MIGRATE_FLAG_2026_09_WEST_EUROPE_SMALL_ROUTES_CLUSTER_DESTINATION_NOTES = 'atlas_grand_trips_migrate_2026_09_west_europe_small_routes_cluster_destination_notes_v1';
 const RB_MIGRATE_FLAG_2026_09_EAST_EUROPE_CLUSTER_DESTINATION_NOTES = 'atlas_grand_trips_migrate_2026_09_east_europe_cluster_destination_notes_v1';
+const RB_MIGRATE_FLAG_2026_09_MEDITERRANEAN_NORDIC_UK_CLUSTER2_DESTINATION_NOTES = 'atlas_grand_trips_migrate_2026_09_mediterranean_nordic_uk_cluster2_destination_notes_v1';
 const RB_MIGRATE_FLAG_2026_09_DETERMINISTIC_SEED_IDS = 'atlas_grand_trips_migrate_2026_09_deterministic_seed_ids_v1';
 const RB_BLOCK_COLORS =['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point

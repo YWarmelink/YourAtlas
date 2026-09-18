@@ -12,6 +12,13 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batches 141-146 — Mediterranean/Nordic/UK cluster round 2
+  (2026-09-18)** — 43 fresh destinations plus 1 reuse entry, closing out 12 routes entirely:
+  Athens + Day Trips, Cyprus, Istanbul (both routes), Turkey + Greece: Aegean Coast &
+  Dodecanese, Svalbard, Stockholm (both routes), Sweden Roadtrip, Copenhagen, South Finland,
+  Outer Hebrides, London (`rbMigrateMediterraneanNordicUkCluster2DestinationNotes()`).
+  App-wide total: 3744 destination-slots filled across 426 routes. 603/741 signatures done.
+
 - **Per-destination notes, batches 137-140 — East Europe cluster (2026-09-18)** — 18 fresh
   destinations plus 3 reuse-under-new-name-string entries, closing out 10 routes entirely:
   Croatia Coastal Roadtrip, Serbia, Serbia Roadtrip, Bulgaria + Romania: Black Sea Coast,
