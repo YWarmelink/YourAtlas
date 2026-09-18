@@ -12496,6 +12496,57 @@ function rbMigrateWestEuropeSmallRoutesClusterDestinationNotes() {
 }
 
 /**
+ * Batches 137-140 (2026-09-18) -- East Europe cluster -- closes out Croatia Coastal Roadtrip,
+ * Serbia, Serbia Roadtrip, Bulgaria + Romania: Black Sea Coast, Moldova, Moldova + Transnistria,
+ * Budapest + Eger, Hungary + Slovenia + Croatia, South Poland, and Poland: North to South
+ * entirely. 18 fresh destinations plus 3 reuse of already-written canonical notes under new
+ * name-string variants (Rovinj, Zakopane, Wrocław). Same generic name-matching migration pattern
+ * as the other batches.
+ */
+function rbMigrateEastEuropeClusterDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_EAST_EUROPE_CLUSTER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_EAST_EUROPE_CLUSTER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Krka National Park / Šibenik': "Krka NP centers on a series of travertine waterfalls and swimmable pools along the Krka river (swimming at the main Skradinski Buk falls has been restricted in recent years to reduce erosion — check current rules); Šibenik nearby has a UNESCO-listed Renaissance cathedral and a hilltop fortress used as a Game of Thrones filming location for Braavos.",
+    'Šarganska Osmica (Mokra Gora)': "A narrow-gauge heritage railway looping through a tight figure-eight of tunnels and switchbacks in the Mokra Gora mountains, built in the early 20th century and now run purely as a scenic tourist train; the ride takes a couple of hours through forested valleys and viaducts.",
+    'Drvengrad (Mećavnik)': "A traditional-style wooden village built by Serbian filmmaker Emir Kusturica as a film set and retreat, now a small open-air museum/hotel complex; it hosts an annual film festival (Küstendorf) each January.",
+    'Subotica': "A Hungarian-influenced town near the Serbia-Hungary border, known for its Art Nouveau/Hungarian Secessionist architecture, especially the ornate yellow City Hall; also close to Lake Palić, a small resort lake just outside town.",
+    'Mokra Gora / Tara National Park': "Mokra Gora is the mountain region around the Šarganska Osmica railway; Tara National Park nearby is known for dense pine forest and dramatic canyon viewpoints over the Drina river, including the famous \"House on the Drina\" rock-perched cabin near Bajina Bašta.",
+    'Varna': "Bulgaria's main Black Sea port city and summer resort hub, with a compact old town, a large seaside park (Sea Garden), and the Varna Archaeological Museum holding the world's oldest known worked gold (from a 4,000+ BC necropolis).",
+    'Golden Sands': "One of Bulgaria's largest and most developed Black Sea beach resorts, a long sandy stretch lined with hotels just north of Varna; backed by Golden Sands Nature Park, with hiking trails and a monastery a short walk inland.",
+    'Sunny Beach': "Bulgaria's biggest and busiest Black Sea resort strip, known for a long beach, a dense concentration of nightlife, and budget-friendly package-holiday prices; the historic old town of Nessebar sits right at its southern end for a quieter contrast.",
+    'Cricova wine cellar': "One of two vast underground wine-cellar networks near Chișinău, with tunnels running many kilometers through former limestone quarries; visits are guided-tour-only and must be booked in advance directly through the winery.",
+    'Mileștii Mici wine cellar': "Holds the Guinness World Record for the largest wine collection on Earth, held across over 200km of underground tunnel galleries; like Cricova nearby, visits are guided-tour-only and must be booked a few days ahead directly through the winery.",
+    'Comrat (Gagauzia)': "The capital of Gagauzia, an autonomous Turkic-speaking, Orthodox Christian region within Moldova with its own distinct culture and flag; mainly of interest for that cultural curiosity rather than specific sights, with a small regional history museum in town.",
+    'Tiraspol (Transnistria, day trip only)': "The capital of Transnistria, a breakaway pro-Russian territory not internationally recognized as independent from Moldova; still visibly Soviet in character, with Lenin statues, hammer-and-sickle emblems, and a rouble-based currency accepted nowhere else — only day-trip visits are realistic, with passport checks at the border.",
+    'Bender / Bendery (Transnistria, day trip only)': "A Transnistrian city built around the Bender Fortress, an Ottoman-era stronghold on the Dniester river; like Tiraspol, only sensible as a closely-timed day trip given the territory's unrecognized status and border formalities.",
+    'Széchenyi Thermal Baths': "One of Europe's largest thermal bath complexes, with ornate Neo-Baroque outdoor pools fed by natural hot springs; a popular local tradition is playing chess on floating boards while soaking, especially among older regulars.",
+    'Szentendre (day trip)': "A small riverside town near Budapest with a Mediterranean feel thanks to its history as a refuge for Serbian and Greek merchant communities; its narrow lanes are now filled with galleries, museums (including an open-air folk architecture museum, Skanzen) and craft shops.",
+    'Eger / Valley of the Beautiful Women wine cellars': "Eger is known for its Baroque old town and a hilltop castle that famously withstood an Ottoman siege in 1552; just outside town, the \"Valley of the Beautiful Women\" is a cluster of wine cellars dug into a hillside, best known for the dark red Egri Bikavér (\"Bull's Blood\") wine.",
+    'Lake Balaton / Tihany': "Central Europe's largest lake, a major Hungarian summer resort area; Tihany, a peninsula jutting into the lake, is known for its lavender fields, a Benedictine abbey with sweeping lake views, and being one of the loudest-echo spots in Europe.",
+    'Rovinj (optional coastal extension)': "Car-free Istrian old town on a small peninsula with pastel houses and the hilltop St. Euphemia church; park outside the center and climb the church bell tower for the view over the rooftops to the sea.",
+    'Zakopane / Tatra National Park': "Poland's main mountain resort town in the Tatra range, known as the \"winter capital of Poland\"; Krupówki street is the lively pedestrian core, and a cable car up Gubałówka or Kasprowy Wierch gives panoramic Tatra views without a full hike.",
+    'Wrocław (optional finale)': "Beyond the market square, Ostrów Tumski (Cathedral Island) is worth walking at dusk when its gas lamps are lit by hand; the city's 600+ scattered gnome statues make for a fun, low-effort scavenger hunt between sights.",
+    'Gdańsk / Hel Peninsula': "Gdańsk's old town is a reconstructed Hanseatic port city with colorful merchant facades along Long Market street, plus the Museum of the Second World War marking where WWII began at nearby Westerplatte; the Hel Peninsula is a narrow 35km sand-spit nearby, reachable by ferry, known for beaches and a seal sanctuary.",
+    'Malbork Castle': "The largest castle in the world by land area, built by the Teutonic Knights as their order's headquarters; its scale is best appreciated from across the Nogat river, and the interior includes a still-functioning medieval refectory and chapel.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Two of batch 2's standalone routes were flagged as too exposed to their long-haul flight time
  * relative to trip length — Jordanië (8d, connecting flight) and Nieuw-Zeeland Zuidereiland (21d,
  * but 27-38h with multiple stops). Adds +2 days to each as a recovery/margin buffer, matching the
@@ -18383,7 +18434,7 @@ function rbBuildCroatiaCoastalRoadtripRoute() {
       code: 'HR', name: 'Croatia', days: 9, budget: 1215, lat: 44.0000, lng: 16.0000,
       destinations: [
         { name: 'Zadar', lat: 44.1194, lng: 15.2314, notes: "The Sea Organ (wave-powered pipes built into the waterfront steps) and the adjacent Sun Salutation light installation make the sunset promenade the actual destination here — reportedly the sunset Hitchcock once called the world's most beautiful. Time the visit for sunset; the light show and organ sound together are the point." },
-        { name: 'Krka National Park / Šibenik', lat: 43.8097, lng: 15.9633 },
+        { name: 'Krka National Park / Šibenik', lat: 43.8097, lng: 15.9633 , notes: 'Krka NP centers on a series of travertine waterfalls and swimmable pools along the Krka river (swimming at the main Skradinski Buk falls has been restricted in recent years to reduce erosion — check current rules); Šibenik nearby has a UNESCO-listed Renaissance cathedral and a hilltop fortress used as a Game of Thrones filming location for Braavos.' },
         { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402, notes: "The 4th-century Roman emperor's retirement palace isn't a ruin behind a fence — it's a living neighborhood, with Split's actual old town built directly into and around its walls, colonnaded Peristyle square, and the octagonal Cathedral of St. Domnius (once Diocletian's own mausoleum). Duck into the palace's atmospheric basement halls (substructures) — used as a Game of Thrones filming location — and climb the cathedral's bell tower for a rooftop view over the old town and harbor." },
         { name: 'Hvar Town', lat: 43.1729, lng: 16.4413 , notes: 'A glamorous harbor town known for lavender fields, upscale yachting/nightlife, and the 16th-century Fortica fortress on the hill above; climb up to the fortress for the best view over the harbor and the Pakleni Islands just offshore.' },
         { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944, notes: "Its walled marble streets (the Stradun) and 2km of intact medieval ramparts overlooking the Adriatic are the draw, along with the baroque St. Blaise's Church and Rector's Palace; Game of Thrones fans will recognize it as King's Landing. Walk the city walls right at opening (around 8am) to beat both the midday heat and the cruise-ship crowds that flood the old town by late morning." },
@@ -19072,8 +19123,8 @@ function rbBuildSerbiaRoute() {
         { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 , notes: 'The fortress park sits right where the Sava meets the Danube — walk to the ledge near the Pobednik monument for the best river-confluence view, ideally about an hour before sunset when it\'s free and uncrowded.' },
         { name: 'Novi Sad', lat: 45.2671, lng: 19.8335, notes: "Petrovaradin Fortress (\"Gibraltar on the Danube\") dominates the skyline and is worth the climb for the river/old-town view. Note: EXIT Festival, long associated with this fortress, has moved to a global-tour format and its return to Novi Sad is unconfirmed (not held there in 2026) — don't plan the visit around it." },
         { name: 'Zlatibor', lat: 43.7286, lng: 19.7089 , notes: 'The mountain resort itself is low-key (lake, kajmak/pršuta tastings); the real highlight is a half-day trip to the Šargan Eight heritage narrow-gauge railway nearby — book ahead (train runs only late March-October, 4 departures/day, tickets ~1,500 RSD) since it can sell out in season.' },
-        { name: 'Šarganska Osmica (Mokra Gora)', lat: 43.7397, lng: 19.5289 },
-        { name: 'Drvengrad (Mećavnik)', lat: 43.7150, lng: 19.5169 },
+        { name: 'Šarganska Osmica (Mokra Gora)', lat: 43.7397, lng: 19.5289 , notes: 'A narrow-gauge heritage railway looping through a tight figure-eight of tunnels and switchbacks in the Mokra Gora mountains, built in the early 20th century and now run purely as a scenic tourist train; the ride takes a couple of hours through forested valleys and viaducts.' },
+        { name: 'Drvengrad (Mećavnik)', lat: 43.7150, lng: 19.5169 , notes: 'A traditional-style wooden village built by Serbian filmmaker Emir Kusturica as a film set and retreat, now a small open-air museum/hotel complex; it hosts an annual film festival (Küstendorf) each January.' },
       ],
       notes: "Belgrade (2 days) — Novi Sad (1 day) — Zlatibor (2 days, including a ride on the narrow-gauge Šarganska Osmica heritage train and a stop at Emir Kusturica's Drvengrad/Mećavnik village) — back to Belgrade. Budget ~€35-45/day. Season: May-June/September; winter has its own charm for the snow around Zlatibor. Web check (2026-08): make sure your passport/ID is valid for at least 3 months beyond your exit date.",
       transport_to_next: 'End of this route — fly home from Belgrade.',
@@ -19094,9 +19145,9 @@ function rbBuildSerbiaRoadtripRoute() {
       destinations: [
         { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 , notes: 'The fortress park sits right where the Sava meets the Danube — walk to the ledge near the Pobednik monument for the best river-confluence view, ideally about an hour before sunset when it\'s free and uncrowded.' },
         { name: 'Novi Sad', lat: 45.2671, lng: 19.8335, notes: "Petrovaradin Fortress (\"Gibraltar on the Danube\") dominates the skyline and is worth the climb for the river/old-town view. Note: EXIT Festival, long associated with this fortress, has moved to a global-tour format and its return to Novi Sad is unconfirmed (not held there in 2026) — don't plan the visit around it." },
-        { name: 'Subotica', lat: 46.1008, lng: 19.6650 },
+        { name: 'Subotica', lat: 46.1008, lng: 19.6650 , notes: 'A Hungarian-influenced town near the Serbia-Hungary border, known for its Art Nouveau/Hungarian Secessionist architecture, especially the ornate yellow City Hall; also close to Lake Palić, a small resort lake just outside town.' },
         { name: 'Zlatibor', lat: 43.7286, lng: 19.7089 , notes: 'The mountain resort itself is low-key (lake, kajmak/pršuta tastings); the real highlight is a half-day trip to the Šargan Eight heritage narrow-gauge railway nearby — book ahead (train runs only late March-October, 4 departures/day, tickets ~1,500 RSD) since it can sell out in season.' },
-        { name: 'Mokra Gora / Tara National Park', lat: 43.8833, lng: 19.3667 },
+        { name: 'Mokra Gora / Tara National Park', lat: 43.8833, lng: 19.3667 , notes: 'Mokra Gora is the mountain region around the Šarganska Osmica railway; Tara National Park nearby is known for dense pine forest and dramatic canyon viewpoints over the Drina river, including the famous "House on the Drina" rock-perched cabin near Bajina Bašta.' },
       ],
       notes: "Belgrade (2 days) — Novi Sad — Subotica (1 day, Austro-Hungarian architecture near the Hungarian border) — Zlatibor (2 days) — Mokra Gora/Tara National Park (2 days) — back to Belgrade. Budget ~€35-45/day (rental car extra). Season: late April-June or September-early October for the best road conditions and light. Web check (2026-08): summer wildfires can occasionally close roads in this region — check conditions before setting out in July-August.",
       transport_to_next: 'End of this route — fly home from Belgrade.',
@@ -19760,9 +19811,9 @@ function rbBuildBulgariaRomaniaBlackSeaCoastRoute() {
       destinations: [
         { name: 'Sofia', lat: 42.6977, lng: 23.3219 , notes: 'Bulgarian capital centered on the gold-domed Alexander Nevski Cathedral and a compact old town mixing Roman ruins (the Serdika complex), the St. George Rotunda, and Ottoman-era mosques within walking distance of each other.' },
         { name: 'Plovdiv', lat: 42.1354, lng: 24.7453 , notes: 'One of Europe\'s oldest continuously inhabited cities, with a cobbled old town of Ottoman-era houses and a still-functioning 2nd-century Roman theatre used for concerts; the Kapana creative district next door is worth an evening for food and bars.' },
-        { name: 'Varna', lat: 43.2141, lng: 27.9147 },
-        { name: 'Golden Sands', lat: 43.2833, lng: 28.0333 },
-        { name: 'Sunny Beach', lat: 42.6833, lng: 27.7167 },
+        { name: 'Varna', lat: 43.2141, lng: 27.9147 , notes: 'Bulgaria\'s main Black Sea port city and summer resort hub, with a compact old town, a large seaside park (Sea Garden), and the Varna Archaeological Museum holding the world\'s oldest known worked gold (from a 4,000+ BC necropolis).' },
+        { name: 'Golden Sands', lat: 43.2833, lng: 28.0333 , notes: 'One of Bulgaria\'s largest and most developed Black Sea beach resorts, a long sandy stretch lined with hotels just north of Varna; backed by Golden Sands Nature Park, with hiking trails and a monastery a short walk inland.' },
+        { name: 'Sunny Beach', lat: 42.6833, lng: 27.7167 , notes: 'Bulgaria\'s biggest and busiest Black Sea resort strip, known for a long beach, a dense concentration of nightlife, and budget-friendly package-holiday prices; the historic old town of Nessebar sits right at its southern end for a quieter contrast.' },
       ],
       notes: "Sofia (2 days) — Plovdiv (1 day) — Varna and the Black Sea coast (2-3 days, Golden Sands/Sunny Beach). Budget ~€68/day (coastal towns are pricier in high season). Season: the coast is best in June or September, July-August is warmest but busiest and most expensive. Deliberately Black Sea/Sofia-heavy, starting in Bulgaria — a different angle on the same two countries as the 'Romania + Bulgaria: Transylvania Focus' route (which starts in Romania and leans Transylvania). Web check (2026-08): coastal resorts peak in price July-August, book ahead.",
       transport_to_next: "Cross the border at Ruse — no standard checks since Romania became fully Schengen (including land borders) on 1 January 2025.",
@@ -19821,10 +19872,10 @@ function rbBuildMoldovaRoute() {
       code: 'MD', name: 'Moldova', days: 5, budget: 200, lat: 47.0105, lng: 28.8638,
       destinations: [
         { name: 'Chișinău', lat: 47.0105, lng: 28.8638 , notes: 'Moldova\'s low-key capital, mainly a base for the country\'s wine-cellar day trips, with the Triumphal Arch and Nativity Cathedral as the main central sights.' },
-        { name: 'Cricova wine cellar', lat: 47.2333, lng: 28.8500 },
-        { name: 'Mileștii Mici wine cellar', lat: 46.9333, lng: 28.8333 },
+        { name: 'Cricova wine cellar', lat: 47.2333, lng: 28.8500 , notes: 'One of two vast underground wine-cellar networks near Chișinău, with tunnels running many kilometers through former limestone quarries; visits are guided-tour-only and must be booked in advance directly through the winery.' },
+        { name: 'Mileștii Mici wine cellar', lat: 46.9333, lng: 28.8333 , notes: 'Holds the Guinness World Record for the largest wine collection on Earth, held across over 200km of underground tunnel galleries; like Cricova nearby, visits are guided-tour-only and must be booked a few days ahead directly through the winery.' },
         { name: 'Orheiul Vechi', lat: 47.3833, lng: 28.9333 , notes: 'Historic complex with a cave monastery carved into limestone cliffs above a bend in the Răut river, near Chișinău; allocate a half day to see the cliffside cave church plus the archaeological site on top, and wear decent shoes for the climb down to the cave.' },
-        { name: 'Comrat (Gagauzia)', lat: 46.3000, lng: 28.6500 },
+        { name: 'Comrat (Gagauzia)', lat: 46.3000, lng: 28.6500 , notes: 'The capital of Gagauzia, an autonomous Turkic-speaking, Orthodox Christian region within Moldova with its own distinct culture and flag; mainly of interest for that cultural curiosity rather than specific sights, with a small regional history museum in town.' },
       ],
       notes: "Chișinău (2 days) — a day trip to the Cricova or Mileștii Mici wine cellars — Orheiul Vechi (1 day) — optionally Gagauzia/Comrat as a 5th day. Budget ~€35-45/day. Season: May-June or September-October (wine harvest). Web check (2026-08): the combined Cricova+Mileștii Mici tour starts around $230 (pricey — consider a standalone Cricova tour instead, ~$95-110); Orheiul Vechi entry is 20 MDL, no fixed opening hours. Dutch travel advisory for Moldova is yellow (last updated 21 May 2026), ordinary caution advised.",
       transport_to_next: 'End of this route — fly home from Chișinău.',
@@ -19846,8 +19897,8 @@ function rbBuildMoldovaTransnistriaRoute() {
         { name: 'Chișinău', lat: 47.0105, lng: 28.8638 , notes: 'Moldova\'s low-key capital, mainly a base for the country\'s wine-cellar day trips, with the Triumphal Arch and Nativity Cathedral as the main central sights.' },
         { name: 'Cricova / Mileștii Mici wine cellars', lat: 47.2333, lng: 28.8500 , notes: 'Vast underground tunnel networks (Mileștii Mici holds the Guinness record for the world\'s largest wine collection, over 200km of galleries); you cannot just show up — a guided tour must be booked in advance (ideally a couple of days ahead) directly through the winery.' },
         { name: 'Orheiul Vechi', lat: 47.3833, lng: 28.9333 , notes: 'Historic complex with a cave monastery carved into limestone cliffs above a bend in the Răut river, near Chișinău; allocate a half day to see the cliffside cave church plus the archaeological site on top, and wear decent shoes for the climb down to the cave.' },
-        { name: 'Tiraspol (Transnistria, day trip only)', lat: 46.8403, lng: 29.6433 },
-        { name: 'Bender / Bendery (Transnistria, day trip only)', lat: 46.8333, lng: 29.4667 },
+        { name: 'Tiraspol (Transnistria, day trip only)', lat: 46.8403, lng: 29.6433 , notes: 'The capital of Transnistria, a breakaway pro-Russian territory not internationally recognized as independent from Moldova; still visibly Soviet in character, with Lenin statues, hammer-and-sickle emblems, and a rouble-based currency accepted nowhere else — only day-trip visits are realistic, with passport checks at the border.' },
+        { name: 'Bender / Bendery (Transnistria, day trip only)', lat: 46.8333, lng: 29.4667 , notes: 'A Transnistrian city built around the Bender Fortress, an Ottoman-era stronghold on the Dniester river; like Tiraspol, only sensible as a closely-timed day trip given the territory\'s unrecognized status and border formalities.' },
       ],
       notes: "Chișinău (2 days) — a day trip to Cricova/Mileștii Mici — Orheiul Vechi (1 day) — Tiraspol and Bender/Bendery as a DAY TRIP FROM CHIȘINĂU, with NO overnight stay — buffer/return (1 day). Budget: the Moldova portion runs ~€35-45/day; Transnistria itself is very cheap (its own PMR ruble, limited exchangeability) — budget roughly €15-20 for the day trip itself. Season: May-June/September, same as the Moldova-only version. ⚠️ SAFETY — a core point, not a routine 'this is fine': the Dutch Ministry of Foreign Affairs (nederlandwereldwijd.nl) gives Transnistria its own, much stricter travel advisory than the rest of Moldova — RED (updated 21 May 2026, valid as of 13 August 2026): 'do not travel here under any circumstances, too dangerous' — the embassy cannot assist there. Reason: Transnistria's unilaterally declared independence (Moldovan authorities have no actual authority there), continued Russian troop presence, and heightened tension from the Russia-Ukraine war (Transnistria borders Ukraine). Under a red advisory, many Dutch travel insurers adjust coverage or exclude risks — check in advance, or you may effectively be uninsured. Practically: no visa is needed, but a migration card is required at the border (no passport stamp, valid up to 45 days); a formal OVIR registration requirement supposedly applies for stays over 24 hours, but sources are inconsistent on whether it's still enforced since a 2018 relaxation — verify locally, don't assume it either way. The border is currently (August 2026) open to day-trippers, but this can change without notice given the war context. CONCRETE ADVICE: keep this to a short, organized day trip from Chișinău with no independent overnight stay in Tiraspol, check your travel insurance in advance, or consider substituting the Moldova-only route above instead if this risk level doesn't fit your goals for the trip.",
       transport_to_next: 'End of this route — fly home from Chișinău.',
@@ -19955,7 +20006,7 @@ function rbBuildBudapestRoute() {
       destinations: [
         { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396, notes: "Buda Castle Hill combines the former royal palace with Fisherman's Bastion and Matthias Church, and it's the classic vantage point for the Danube/Pest skyline and Parliament building across the river. Time it for sunset for the best light on that view, and take the Castle Hill Funicular up rather than the steep walk." },
         { name: 'Hungarian Parliament Building / Pest riverside', lat: 47.5076, lng: 19.0458 },
-        { name: 'Széchenyi Thermal Baths', lat: 47.5186, lng: 19.0821 },
+        { name: 'Széchenyi Thermal Baths', lat: 47.5186, lng: 19.0821 , notes: 'One of Europe\'s largest thermal bath complexes, with ornate Neo-Baroque outdoor pools fed by natural hot springs; a popular local tradition is playing chess on floating boards while soaking, especially among older regulars.' },
         { name: 'Ruin bar district (Kazinczy utca)', lat: 47.4973, lng: 19.0662 },
       ],
       notes: "Buda Castle district (1 day) — Pest and the Parliament (1 day) — Széchenyi Thermal Baths plus the ruin-bar district (1 day). Budget ~€65/day. Season: April-June or September-October are best, or December for the Christmas market (cold). Web check (2026-08): Gellért Baths has been closed since 1 October 2025 and isn't expected to reopen until around 2028 — use Széchenyi instead (admission roughly €13-35). Also keep an eye on escalating demonstrations in central Budapest, and note that LGBTQ+ gatherings/marches have been banned since March 2025 — check planned events in advance if that's relevant to your dates.",
@@ -19977,9 +20028,9 @@ function rbBuildBudapestEgerRoute() {
       destinations: [
         { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396, notes: "Buda Castle Hill combines the former royal palace with Fisherman's Bastion and Matthias Church, and it's the classic vantage point for the Danube/Pest skyline and Parliament building across the river. Time it for sunset for the best light on that view, and take the Castle Hill Funicular up rather than the steep walk." },
         { name: 'Hungarian Parliament Building', lat: 47.5076, lng: 19.0458 , notes: 'Budapest\'s riverside neo-Gothic landmark and the largest building in Hungary; the interior (including the Crown Jewels room) is only seen on a guided tour with timed tickets, and the best exterior photo is from across the Danube on the Buda side, especially once it\'s lit up after dark.' },
-        { name: 'Széchenyi Thermal Baths', lat: 47.5186, lng: 19.0821 },
-        { name: 'Szentendre (day trip)', lat: 47.6698, lng: 19.0714 },
-        { name: "Eger / Valley of the Beautiful Women wine cellars", lat: 47.9025, lng: 20.3772 },
+        { name: 'Széchenyi Thermal Baths', lat: 47.5186, lng: 19.0821 , notes: 'One of Europe\'s largest thermal bath complexes, with ornate Neo-Baroque outdoor pools fed by natural hot springs; a popular local tradition is playing chess on floating boards while soaking, especially among older regulars.' },
+        { name: 'Szentendre (day trip)', lat: 47.6698, lng: 19.0714 , notes: 'A small riverside town near Budapest with a Mediterranean feel thanks to its history as a refuge for Serbian and Greek merchant communities; its narrow lanes are now filled with galleries, museums (including an open-air folk architecture museum, Skanzen) and craft shops.' },
+        { name: "Eger / Valley of the Beautiful Women wine cellars", lat: 47.9025, lng: 20.3772 , notes: 'Eger is known for its Baroque old town and a hilltop castle that famously withstood an Ottoman siege in 1552; just outside town, the "Valley of the Beautiful Women" is a cluster of wine cellars dug into a hillside, best known for the dark red Egri Bikavér ("Bull\'s Blood") wine.' },
       ],
       notes: "Budapest (3 days: the Castle district, Parliament, a thermal bath) — Szentendre as a day trip — Eger (1-2 days) for its wine region. Budget ~€60/day. Season: April-June or September-October. Web check (2026-08): the Budapest-Eger train takes about 2 hours, and cheap, casual wine tastings are easy to arrange on the spot along Eger's Valley of the Beautiful Women cellar row. As throughout Hungary, keep an eye on demonstrations in central Budapest and check for any LGBTQ+ event restrictions in advance (banned since March 2025) if relevant to your dates.",
       transport_to_next: 'End of this route — fly home from Budapest.',
@@ -20001,7 +20052,7 @@ function rbBuildHungaryRoadtripRoute() {
         { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396, notes: "Buda Castle Hill combines the former royal palace with Fisherman's Bastion and Matthias Church, and it's the classic vantage point for the Danube/Pest skyline and Parliament building across the river. Time it for sunset for the best light on that view, and take the Castle Hill Funicular up rather than the steep walk." },
         { name: 'Eger', lat: 47.9025, lng: 20.3772 },
         { name: 'Tokaj wine region', lat: 48.1214, lng: 21.4094 },
-        { name: 'Lake Balaton / Tihany', lat: 46.9122, lng: 17.8908 },
+        { name: 'Lake Balaton / Tihany', lat: 46.9122, lng: 17.8908 , notes: 'Central Europe\'s largest lake, a major Hungarian summer resort area; Tihany, a peninsula jutting into the lake, is known for its lavender fields, a Benedictine abbey with sweeping lake views, and being one of the loudest-echo spots in Europe.' },
       ],
       notes: "Budapest (2 days) — Eger (1 day) — Tokaj (1 day) — Lake Balaton/Tihany (1-2 days). Budget ~€60/day (rental car budgeted separately). Season: May-September, though Balaton gets busy with Hungarian holidaymakers in summer. As throughout Hungary, keep an eye on demonstrations in central Budapest and any LGBTQ+ event restrictions (banned since March 2025).",
       transport_to_next: 'End of this route — fly home from Budapest.',
@@ -20021,7 +20072,7 @@ function rbBuildHungarySloveniaCroatiaRoute() {
       code: 'HU', name: 'Hungary', days: 3, budget: 180, lat: 47.4960, lng: 19.0396,
       destinations: [
         { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396, notes: "Buda Castle Hill combines the former royal palace with Fisherman's Bastion and Matthias Church, and it's the classic vantage point for the Danube/Pest skyline and Parliament building across the river. Time it for sunset for the best light on that view, and take the Castle Hill Funicular up rather than the steep walk." },
-        { name: 'Lake Balaton / Tihany', lat: 46.9122, lng: 17.8908 },
+        { name: 'Lake Balaton / Tihany', lat: 46.9122, lng: 17.8908 , notes: 'Central Europe\'s largest lake, a major Hungarian summer resort area; Tihany, a peninsula jutting into the lake, is known for its lavender fields, a Benedictine abbey with sweeping lake views, and being one of the loudest-echo spots in Europe.' },
       ],
       notes: "Budapest (2 days) — Lake Balaton (1 day) on the way south. Budget ~€60/day. Hungary is fully Schengen with zero border friction toward Slovakia, Austria, Croatia, Slovenia or Romania.",
       transport_to_next: 'Cross into Slovenia — a fully Schengen border, no checks.',
@@ -20040,7 +20091,7 @@ function rbBuildHungarySloveniaCroatiaRoute() {
       destinations: [
         { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820, notes: "16 turquoise terraced lakes connected by waterfalls and wooden boardwalks, with a boat crossing Kozjak Lake as the scenic centerpiece. Pick route C or K (covers both Upper and Lower Lakes, not just one) and start right at opening for boardwalk photos without crowds." },
         { name: 'Zagreb', lat: 45.8150, lng: 15.9819, notes: "The Upper Town's colorful-tiled St. Mark's Church and the Dolac market are the highlights, linked to the Lower Town by the world's shortest funicular (under a minute). A free walking tour is an efficient way to cover both halves in a day." },
-        { name: 'Rovinj (optional coastal extension)', lat: 45.0811, lng: 13.6387 },
+        { name: 'Rovinj (optional coastal extension)', lat: 45.0811, lng: 13.6387 , notes: 'Car-free Istrian old town on a small peninsula with pastel houses and the hilltop St. Euphemia church; park outside the center and climb the church bell tower for the view over the rooftops to the sea.' },
       ],
       notes: "Plitvice Lakes (1 day) — Zagreb (2 days), with Rovinj on the Istrian coast as an optional extension if time allows — best avoided in the July-August peak, when the coast gets noticeably pricier and busier. Budget ~€90/day for the Zagreb/Plitvice core. Web check (2026-08): book Plitvice entry online ahead of time; one-way rental-car returns between countries are expensive, so plan to hand the car back in the same country you picked it up.",
       transport_to_next: 'End of this route — fly home from Zagreb.',
@@ -20389,8 +20440,8 @@ function rbBuildSouthPolandRoute() {
         { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 , notes: 'Poland\'s former royal capital, centered on the vast medieval Rynek Główny square (Europe\'s largest medieval town square) with the Renaissance Cloth Hall in its middle and Wawel Castle on a hill above the Vistula river; St. Mary\'s Basilica\'s trumpet call (a broken-off bugle note, played every hour from the tower) commemorates a 13th-century Mongol invasion.' },
         { name: 'Wieliczka Salt Mine', lat: 49.9830, lng: 20.0533 , notes: 'A working salt mine for over 700 years, with an underground world of chapels, statues and even a chandelier carved entirely from rock salt (the deepest tourist route reaches roughly 135m); the highlight is St. Kinga\'s Chapel, a full underground church carved by miners.' },
         { name: 'Auschwitz-Birkenau', lat: 50.0359, lng: 19.1783 , notes: 'The largest Nazi concentration and extermination camp, preserved as a memorial and museum; entry is free but requires a booked timed-entry slot (often with a mandatory guided tour in peak season) — book well in advance, and allow at least 3-4 hours to see both the Auschwitz I and Birkenau sites.' },
-        { name: 'Zakopane / Tatra National Park', lat: 49.2992, lng: 19.9496 },
-        { name: 'Wrocław (optional finale)', lat: 51.1079, lng: 17.0385 },
+        { name: 'Zakopane / Tatra National Park', lat: 49.2992, lng: 19.9496 , notes: 'Poland\'s main mountain resort town in the Tatra range, known as the "winter capital of Poland"; Krupówki street is the lively pedestrian core, and a cable car up Gubałówka or Kasprowy Wierch gives panoramic Tatra views without a full hike.' },
+        { name: 'Wrocław (optional finale)', lat: 51.1079, lng: 17.0385 , notes: 'Beyond the market square, Ostrów Tumski (Cathedral Island) is worth walking at dusk when its gas lamps are lit by hand; the city\'s 600+ scattered gnome statues make for a fun, low-effort scavenger hunt between sights.' },
       ],
       notes: "Krakow (3 days) — the Wieliczka salt mine (day trip) — Auschwitz (day trip) — Zakopane/Tatra (2-3 days) — optionally Wrocław to finish (2 days), a broad cultural round rather than one single focus. Budget ~€65-75/day. Season: May-June or September. Web check (2026-08): the Wieliczka Tourist Route runs about 134-156 PLN (~€31-36) depending on language, booked via bilety.kopalnia.pl — slots fill up 3-5 days ahead in high season. Book the Auschwitz reservation separately; there is no combo ticket with Wieliczka.",
       transport_to_next: 'End of this route — fly home from Wrocław, or from Krakow if skipping the Wrocław extension.',
@@ -20433,8 +20484,8 @@ function rbBuildPolandNorthToSouthRoute() {
     {
       code: 'PL', name: 'Poland', days: 12, budget: 780, lat: 54.3520, lng: 18.6466,
       destinations: [
-        { name: 'Gdańsk / Hel Peninsula', lat: 54.6084, lng: 18.8006 },
-        { name: 'Malbork Castle', lat: 54.0400, lng: 19.0274 },
+        { name: 'Gdańsk / Hel Peninsula', lat: 54.6084, lng: 18.8006 , notes: 'Gdańsk\'s old town is a reconstructed Hanseatic port city with colorful merchant facades along Long Market street, plus the Museum of the Second World War marking where WWII began at nearby Westerplatte; the Hel Peninsula is a narrow 35km sand-spit nearby, reachable by ferry, known for beaches and a seal sanctuary.' },
+        { name: 'Malbork Castle', lat: 54.0400, lng: 19.0274 , notes: 'The largest castle in the world by land area, built by the Teutonic Knights as their order\'s headquarters; its scale is best appreciated from across the Nogat river, and the interior includes a still-functioning medieval refectory and chapel.' },
         { name: 'Warsaw', lat: 52.2297, lng: 21.0122 , notes: 'Poland\'s capital, almost entirely rebuilt after being deliberately razed in WWII — its meticulously reconstructed Old Town (UNESCO-listed specifically for the quality of that postwar rebuild) looks centuries older than it is; the POLIN Museum of the History of Polish Jews is the standout modern addition.' },
         { name: 'Wrocław', lat: 51.1079, lng: 17.0385, notes: "Beyond the market square, Ostrów Tumski (Cathedral Island) is worth walking at dusk when its gas lamps are lit by hand; the city's 600+ scattered gnome statues make for a fun, low-effort scavenger hunt between sights." },
         { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 , notes: 'Poland\'s former royal capital, centered on the vast medieval Rynek Główny square (Europe\'s largest medieval town square) with the Renaissance Cloth Hall in its middle and Wawel Castle on a hill above the Vistula river; St. Mary\'s Basilica\'s trumpet call (a broken-off bugle note, played every hour from the tower) commemorates a 13th-century Mongol invasion.' },
@@ -22428,7 +22479,7 @@ function rbBuildBalticsPolandRoute() {
       destinations: [
         { name: 'Warsaw', lat: 52.2297, lng: 21.0122 , notes: 'Poland\'s capital, almost entirely rebuilt after being deliberately razed in WWII — its meticulously reconstructed Old Town (UNESCO-listed specifically for the quality of that postwar rebuild) looks centuries older than it is; the POLIN Museum of the History of Polish Jews is the standout modern addition.' },
         { name: 'Masurian Lakes (Giżycko)', lat: 54.0367, lng: 21.7644 },
-        { name: 'Gdańsk / Hel Peninsula', lat: 54.6084, lng: 18.8006 },
+        { name: 'Gdańsk / Hel Peninsula', lat: 54.6084, lng: 18.8006 , notes: 'Gdańsk\'s old town is a reconstructed Hanseatic port city with colorful merchant facades along Long Market street, plus the Museum of the Second World War marking where WWII began at nearby Westerplatte; the Hel Peninsula is a narrow 35km sand-spit nearby, reachable by ferry, known for beaches and a seal sanctuary.' },
       ],
       notes: "3-5 days extending south from the Suwałki corridor into either Warsaw, or the Masurian Lakes and Gdańsk — pick one branch depending on available days and interest (lakes/coast vs. the capital). Budget ~€80-100/day. Season: May-September. Warsaw/Gdańsk coordinates reused from the Poland Roadtrip and Poland: North to South routes (batch 9c) for consistency. General note: Poland's travel advisory has been green since 5 March 2026; some border crossings with Belarus/Ukraine/Kaliningrad remain closed or restricted, not relevant to this route.",
       transport_to_next: 'End of this route — fly home from Warsaw or Gdańsk depending on which branch was taken.',

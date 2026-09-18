@@ -12,6 +12,13 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batches 137-140 — East Europe cluster (2026-09-18)** — 18 fresh
+  destinations plus 3 reuse-under-new-name-string entries, closing out 10 routes entirely:
+  Croatia Coastal Roadtrip, Serbia, Serbia Roadtrip, Bulgaria + Romania: Black Sea Coast,
+  Moldova, Moldova + Transnistria, Budapest + Eger, Hungary + Slovenia + Croatia, South Poland,
+  Poland: North to South (`rbMigrateEastEuropeClusterDestinationNotes()`).
+  App-wide total: 3682 destination-slots filled across 417 routes. 588/741 signatures done.
+
 - **Per-destination notes, batches 131-136 — West Europe small-routes cluster (2026-09-18)** —
   39 fresh destinations plus 5 reuse-under-new-name-string entries, closing out 14 routes
   entirely: Belgium: Bruges + Ghent + Antwerp + Ardennes, Romantic Road, German Alpine Road,

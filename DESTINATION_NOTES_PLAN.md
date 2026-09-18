@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 577 / 741 signatures.**
+- **Done so far: 588 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -269,7 +269,7 @@ Sorted alphabetically by country code.
 - [x] **BE** (3 dest): Bruges, Ghent, Antwerp — routes: Belgium: Bruges + Ghent + Antwerp + Ardennes (5 days) 🍺
 - [x] **BE** (2 dest): Dinant, La Roche-en-Ardenne — routes: Belgium: Bruges + Ghent + Antwerp + Ardennes (5 days) 🍺
 - [x] **BG** (3 dest): Sofia, Rila Monastery, Plovdiv — routes: Bulgaria + Greece: Sofia to Meteora (12 days) ⛰️
-- [ ] **BG** (5 dest): Sofia, Plovdiv, Varna, Golden Sands, Sunny Beach — routes: Bulgaria + Romania: Black Sea Coast (9 days) 🌊
+- [x] **BG** (5 dest): Sofia, Plovdiv, Varna, Golden Sands, Sunny Beach — routes: Bulgaria + Romania: Black Sea Coast (9 days) 🌊
 - [x] **BG** (5 dest): Sofia, Plovdiv, Rila Monastery, Melnik, Rhodope Mountains — routes: Bulgaria Roadtrip (9 days) 🚗
 - [x] **BG** (3 dest): Veliko Tarnovo, Sofia, Rila Monastery — routes: Romania + Bulgaria: Transylvania Focus (12 days) 🏰
 - [x] **BG** (3 dest): Sofia, Plovdiv (Old Town / Roman Theatre), Rila Monastery — routes: Sofia + Plovdiv (6 days) 🏛️
@@ -467,24 +467,24 @@ Sorted alphabetically by country code.
 - [x] **HR** (2 dest): Plitvice, Zagreb — routes: Central European Grand Roadtrip 🚗
 - [x] **HR** (6 dest): Zagreb, Plitvice Lakes National Park, Zadar, Split (Diocletian's Palace) + islands, Hvar Town, Dubrovnik Old Town — routes: Complete Croatia (12 days) 🇭🇷
 - [x] **HR** (1 dest): Split (Diocletian's Palace) — routes: Croatia + Bosnia via Split (7-10 days) 🌉
-- [ ] **HR** (5 dest): Zadar, Krka National Park / Šibenik, Split (Diocletian's Palace), Hvar Town, Dubrovnik Old Town — routes: Croatia Coastal Roadtrip (9 days) 🛣️
+- [x] **HR** (5 dest): Zadar, Krka National Park / Šibenik, Split (Diocletian's Palace), Hvar Town, Dubrovnik Old Town — routes: Croatia Coastal Roadtrip (9 days) 🛣️
 - [x] **HR** (5 dest): Zagreb, Plitvice Lakes National Park, Zadar, Split (Diocletian's Palace), Dubrovnik Old Town — routes: Croatia North to South (9 days) 🧭
 - [x] **HR** (5 dest): Dubrovnik Old Town, Lokrum Island, Elafiti Islands (Lopud), Cavtat, Trsteno Arboretum — routes: Dubrovnik + Surroundings (5 days) 🏛️
 - [x] **HR** (3 dest): Zagreb, Plitvice Lakes National Park, Zadar / Split (choose one) — routes: Grand Balkan Roadtrip (14 days) 🏔️
 - [x] **HR** (2 dest): Istria (Rovinj/Pula), Plitvice Lakes National Park — routes: Grand European Roadtrip (14-21 days) 🪣
-- [ ] **HR** (3 dest): Plitvice Lakes National Park, Zagreb, Rovinj (optional coastal extension) — routes: Hungary + Slovenia + Croatia (9 days) 🧭
+- [x] **HR** (3 dest): Plitvice Lakes National Park, Zagreb, Rovinj (optional coastal extension) — routes: Hungary + Slovenia + Croatia (9 days) 🧭
 - [x] **HR** (5 dest): Pula (Arena), Rovinj, Poreč, Motovun, Grožnjan — routes: Istria (6 days) 🍇
 - [ ] **HR** (3 dest): Zagreb, Plitvice Lakes National Park, Rastoke (optional) — routes: Plitvice + Zagreb (6 days) 🏞️
 - [x] **HR** (3 dest): Zagreb, Plitvice Lakes National Park, Split (Diocletian's Palace) — routes: Slovenia + Croatia + Bosnia (10-14 days) 🗺️
 - [x] **HR** (2 dest): Zagreb, Plitvice Lakes National Park — routes: Slovenia + Northern Croatia (9 days) 🌲
 - [ ] **HR** (4 dest): Split (Diocletian's Palace), Hvar Town, Brač / Zlatni Rat, Vis (optional) — routes: Split + Islands (6 days) ⛵
 - [ ] **HU** (4 dest): Buda Castle District, Hungarian Parliament Building / Pest riverside, Széchenyi Thermal Baths, Ruin bar district (Kazinczy utca) — routes: Budapest (4 days) 🛁
-- [ ] **HU** (5 dest): Buda Castle District, Hungarian Parliament Building, Széchenyi Thermal Baths, Szentendre (day trip), Eger / Valley of the Beautiful Women wine cellars — routes: Budapest + Eger (5 days) 🍷
+- [x] **HU** (5 dest): Buda Castle District, Hungarian Parliament Building, Széchenyi Thermal Baths, Szentendre (day trip), Eger / Valley of the Beautiful Women wine cellars — routes: Budapest + Eger (5 days) 🍷
 - [x] **HU** (1 dest): Buda Castle District — routes: Central Europe Roadtrip (14 days) 🚂
 - [x] **HU** (2 dest): Budapest, thermal baths — routes: Central European Grand Roadtrip 🚗
 - [x] **HU** (1 dest): Budapest — routes: Grand European Roadtrip (14-21 days) 🪣
 - [x] **HU** (2 dest): Buda Castle District, Hungarian Parliament Building — routes: Hungary + Austria + Slovenia (7-10 days) 🚆
-- [ ] **HU** (2 dest): Buda Castle District, Lake Balaton / Tihany — routes: Hungary + Slovenia + Croatia (9 days) 🧭
+- [x] **HU** (2 dest): Buda Castle District, Lake Balaton / Tihany — routes: Hungary + Slovenia + Croatia (9 days) 🧭
 - [ ] **HU** (4 dest): Buda Castle District, Eger, Tokaj wine region, Lake Balaton / Tihany — routes: Hungary Roadtrip (6 days) 🚗
 - [ ] **HU** (2 dest): Buda Castle District, Eger — routes: Slovakia + Hungary (9 days) 🚆
 - [ ] **IE** (4 dest): Trinity College / Book of Kells, Guinness Storehouse, Temple Bar, Wicklow Mountains / Glendalough (day trip) — routes: Dublin (3-4 days) 🍺
@@ -601,9 +601,9 @@ Sorted alphabetically by country code.
 - [x] **MC** (3 dest): Monte Carlo Casino Square, Prince's Palace, Port Hercule — routes: Monaco + Côte d'Azur (4 days) 🎰
 - [x] **MC** (1 dest): Monte Carlo / Monaco-Ville — routes: Monaco + Nice + Provence (5 days) 🍇
 - [x] **MC** (6 dest): Casino Square, Prince's Palace (changing of the guard, 11:55), Monaco-Ville old town, Oceanographic Museum, Port Hercule, Larvotto beach — routes: Monaco: Monte Carlo (2 days) 🎲
-- [ ] **MD** (5 dest): Chișinău, Cricova wine cellar, Mileștii Mici wine cellar, Orheiul Vechi, Comrat (Gagauzia) — routes: Moldova (5 days) 🍷
+- [x] **MD** (5 dest): Chișinău, Cricova wine cellar, Mileștii Mici wine cellar, Orheiul Vechi, Comrat (Gagauzia) — routes: Moldova (5 days) 🍷
 - [x] **MD** (2 dest): Chișinău, Orheiul Vechi — routes: Moldova + Romania (9 days) 🍷
-- [ ] **MD** (5 dest): Chișinău, Cricova / Mileștii Mici wine cellars, Orheiul Vechi, Tiraspol (Transnistria, day trip only), Bender / Bendery (Transnistria, day trip only) — routes: Moldova + Transnistria (6 days) 🍇
+- [x] **MD** (5 dest): Chișinău, Cricova / Mileștii Mici wine cellars, Orheiul Vechi, Tiraspol (Transnistria, day trip only), Bender / Bendery (Transnistria, day trip only) — routes: Moldova + Transnistria (6 days) 🍇
 - [x] **MD** (3 dest): Chișinău, Cricova / Mileștii Mici wine cellars, Orheiul Vechi — routes: Romania + Moldova: Extended (12 days) 🍷
 - [x] **ME** (1 dest): Kotor Old Town + Bay of Kotor — routes: Bosnia + Croatia + Montenegro (12 days) 🗺️
 - [x] **ME** (1 dest): Žabljak / Durmitor National Park — routes: Kosovo + Montenegro + Albania (9 days) 🗻
@@ -656,10 +656,10 @@ Sorted alphabetically by country code.
 - [ ] **PL** (3 dest): Krakow Old Town, Zakopane, Morskie Oko / Tatra National Park — routes: Krakow + Tatra (6 days) ⛰️
 - [ ] **PL** (3 dest): Krakow Old Town, Zakopane, Tatra National Park — routes: Poland + Slovakia + Hungary (10-14 days) 🥾
 - [x] **PL** (6 dest): Krakow Old Town, Wieliczka Salt Mine, Auschwitz-Birkenau, Zakopane, Wrocław, Warsaw — routes: Poland Roadtrip (9 days) 🚗
-- [ ] **PL** (5 dest): Gdańsk / Hel Peninsula, Malbork Castle, Warsaw, Wrocław, Krakow Old Town — routes: Poland: North to South (12 days) ⚓
+- [x] **PL** (5 dest): Gdańsk / Hel Peninsula, Malbork Castle, Warsaw, Wrocław, Krakow Old Town — routes: Poland: North to South (12 days) ⚓
 - [ ] **PL** (2 dest): Wrocław, Krakow (Main Square / Old Town) — routes: Prague + Poland (9 days) 🚂
 - [ ] **PL** (2 dest): Zakopane, Krakow (Main Square / Old Town) — routes: Slovakia + Poland (9 days) 🥾
-- [ ] **PL** (5 dest): Krakow Old Town, Wieliczka Salt Mine, Auschwitz-Birkenau, Zakopane / Tatra National Park, Wrocław (optional finale) — routes: South Poland (9 days) 🧭
+- [x] **PL** (5 dest): Krakow Old Town, Wieliczka Salt Mine, Auschwitz-Birkenau, Zakopane / Tatra National Park, Wrocław (optional finale) — routes: South Poland (9 days) 🧭
 - [x] **PT** (9 dest): Faro (Ria Formosa), Lagos (Ponta da Piedade), Praia Dona Ana, Sagres / Cabo de São Vicente, Portimão, Carvoeiro, Benagil (sea cave), Silves (castle), Tavira — routes: Algarve (6 days) 🏖️
 - [x] **PT** (3 dest): Horta (Faial, whaling heritage), Madalena (Pico ferry port), Pico volcano climb (optional) — routes: Azores Island Hopping (10-14 days) 🏝️
 - [x] **PT** (8 dest): Coimbra (University + Biblioteca Joanina), Manteigas (base), Seia (alternative base), Torre (highest point of mainland Portugal), Sabugueiro (highest village), Poço do Inferno waterfall, Linhares da Beira, Piódão — routes: Central Portugal: Coimbra + Serra da Estrela (6 days) 📚
@@ -690,10 +690,10 @@ Sorted alphabetically by country code.
 - [x] **RS** (1 dest): Belgrade (Kalemegdan) — routes: Balkan Roadtrip: Serbia + North Macedonia + Albania + Kosovo (14 days) 🔄
 - [ ] **RS** (4 dest): Belgrade (Kalemegdan), Belgrade (Skadarlija), Novi Sad + Petrovaradin Fortress, Fruška Gora monasteries (Krušedol) — routes: Belgrade + Surroundings (5 days) 🏛️
 - [x] **RS** (3 dest): Belgrade, Tara National Park (day trip from Belgrade, round-trip), Novi Sad — routes: Central European Grand Roadtrip 🚗
-- [ ] **RS** (5 dest): Belgrade (Kalemegdan), Novi Sad, Zlatibor, Šarganska Osmica (Mokra Gora), Drvengrad (Mećavnik) — routes: Serbia (6 days) 🚂
+- [x] **RS** (5 dest): Belgrade (Kalemegdan), Novi Sad, Zlatibor, Šarganska Osmica (Mokra Gora), Drvengrad (Mećavnik) — routes: Serbia (6 days) 🚂
 - [x] **RS** (3 dest): Belgrade (Kalemegdan), Zlatibor, Tara Canyon / Drina rafting (Perućac) — routes: Serbia + Bosnia (9 days) 🛶
 - [x] **RS** (2 dest): Belgrade (Kalemegdan), Zlatibor — routes: Serbia + Montenegro + Bosnia (12 days) 🏔️
-- [ ] **RS** (5 dest): Belgrade (Kalemegdan), Novi Sad, Subotica, Zlatibor, Mokra Gora / Tara National Park — routes: Serbia Roadtrip (9 days) 🚙
+- [x] **RS** (5 dest): Belgrade (Kalemegdan), Novi Sad, Subotica, Zlatibor, Mokra Gora / Tara National Park — routes: Serbia Roadtrip (9 days) 🚙
 - [ ] **SC** (5 dest): Victoria & Sainte Anne Marine Park, Mahé, Morne Seychellois National Park, Mahé, Praslin (Vallée de Mai, Anse Lazio), Curieuse Island, La Digue (Anse Source d'Argent) — routes: Seychelles 🌺
 - [x] **SE** (4 dest): Malmö, Lund, Ystad, Kivik — routes: Denmark + South Sweden (9 days) 🌉
 - [ ] **SE** (2 dest): Malmö, Gothenburg — routes: Denmark + Sweden + Norway Overland (12 days) 🌉
@@ -780,16 +780,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Guyana 🦦 | 5/5 | 0 |
 | France Roadtrip: Paris to the Côte d'Azur (12 days) 🚗 | 5/5 | 0 |
 | Campania + Puglia (9 days) 🧭 | 5/8 | 0 |
-| Croatia Coastal Roadtrip (9 days) 🛣️ | 5/5 | 0 |
-| Hungary + Slovenia + Croatia (9 days) 🧭 | 5/7 | 0 |
-| Serbia (6 days) 🚂 | 5/5 | 0 |
-| Serbia Roadtrip (9 days) 🚙 | 5/5 | 0 |
-| Bulgaria + Romania: Black Sea Coast (9 days) 🌊 | 5/6 | 0 |
-| Moldova (5 days) 🍷 | 5/5 | 0 |
-| Moldova + Transnistria (6 days) 🍇 | 5/5 | 0 |
-| Budapest + Eger (5 days) 🍷 | 5/5 | 0 |
-| South Poland (9 days) 🧭 | 5/5 | 0 |
-| Poland: North to South (12 days) ⚓ | 5/5 | 0 |
 | Athens + Day Trips (6 days) 🏺 | 5/5 | 0 |
 | Cyprus (6 days) 🏝️ | 5/5 | 0 |
 | Istanbul (4 days) 🕌 | 5/5 | 0 |
@@ -808,6 +798,16 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Latvia (5-7 days) 🌲 | 5/5 | 0 |
 | Lithuania (5-7 days) 🌊 | 5/5 | 0 |
 | Lanzarote + Fuerteventura (5-7 days) 🏝️ | 5/5 | 0 |
-| ... 89 more routes with open destinations ... | | |
+| Sardinia Roadtrip (7-10 days) 🏝️ | 5/6 | 0 |
+| Rhodes (5-7 days) 🏝️ | 5/5 | 0 |
+| Crete Roadtrip (7-10 days) 🏝️ | 5/8 | 0 |
+| Central Europe Roadtrip (14 days) 🚂 | 5/9 | 0 |
+| Poland + Slovakia + Hungary (10-14 days) 🥾 | 5/7 | 0 |
+| Ardennes (3 days) 🦌 | 4/4 | 0 |
+| Luxembourg (4 days) 🪨 | 4/4 | 0 |
+| Belgian Coast + Bruges + Ghent (4 days) 🚲 | 4/4 | 0 |
+| Bavaria: Munich + Alps (5 days) 🥨 | 4/4 | 0 |
+| Black Forest (6 days) 🕰️ | 4/4 | 0 |
+| ... 79 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).
