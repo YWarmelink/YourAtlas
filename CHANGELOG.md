@@ -12,6 +12,26 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batches 170-177 — Europe tail cluster 6, project completion
+  (2026-09-18)** — 46 fresh destinations plus 14 reuse entries, closing out the final 34 routes
+  in the queue: Hamburg, Dresden + Saxon Switzerland, Salzburg + Berchtesgaden + Hallstatt,
+  Austrian Alps: Zell am See-Kaprun, French Alps: Écrins, Northern Italy Roadtrip, Sicily (9
+  days), Liechtenstein + Swiss Alps, Vatican City Day Visit, Plitvice + Zagreb, Albania + North
+  Macedonia, Serbia + Bosnia, Skopje + Ohrid, Prague + Bohemia, Czechia + Austria, Moravia,
+  Krakow (both routes), Athens, Cyprus + Greece, Istanbul + Thrace, Istanbul + Lesbos, Bodrum +
+  Aegean Coast, Helsinki, Finnish Lapland, Åland, Baltics + Poland, Ibiza, Sicily West, Sardinia
+  North, Sardinia South, Corfu, Jersey + Guernsey, Northern Portugal + Galicia, Alpine Roadtrip,
+  and Kosovo + Montenegro (`rbMigrateEuropeTailCluster6DestinationNotes()`). Also picked up one
+  leftover destination missed earlier in Dolomites & North Italy — "Last Supper" (Milan) — now
+  filled directly in that same migration function.
+  **This brings the per-destination-notes project (started 2026-09-16) to functional
+  completion: 739/741 signatures done (99.7%), 4007/4009 destination-slots filled (99.95%),
+  452/452 routes have at least one filled note.** The only 2 remaining destination-slots are
+  both literally named "Historic centre" in Dolomites & North Italy 🚡 (Turin's and San
+  Marino's entries) — two different real places sharing an identical generic string, which a
+  shared exact-string-matching migration key can't safely disambiguate; deliberately left
+  unfilled rather than write a wrong or overly generic note.
+
 - **Per-destination notes, batches 166-169 — Solo-nation cluster 1 (2026-09-18)** — 41 fresh
   destinations researched, closing out 9 routes entirely: Malta & Italy leftover (final
   destination — Gozo's Ġgantija temples), ABC Islands (Aruba leftovers), South Korea, Maldives,

@@ -260,6 +260,7 @@ const RB_MIGRATE_FLAG_2026_09_MIXED_EUROPE_CLUSTER3_DESTINATION_NOTES = 'atlas_g
 const RB_MIGRATE_FLAG_2026_09_ALPINE_ADRIATIC_CLUSTER4_DESTINATION_NOTES = 'atlas_grand_trips_migrate_2026_09_alpine_adriatic_cluster4_destination_notes_v1';
 const RB_MIGRATE_FLAG_2026_09_EUROPE_MIXED_CLUSTER5_DESTINATION_NOTES = 'atlas_grand_trips_migrate_2026_09_europe_mixed_cluster5_destination_notes_v1';
 const RB_MIGRATE_FLAG_2026_09_SOLO_NATIONS_CLUSTER1_DESTINATION_NOTES = 'atlas_grand_trips_migrate_2026_09_solo_nations_cluster1_destination_notes_v1';
+const RB_MIGRATE_FLAG_2026_09_EUROPE_TAIL_CLUSTER6_DESTINATION_NOTES = 'atlas_grand_trips_migrate_2026_09_europe_tail_cluster6_destination_notes_v1';
 const RB_MIGRATE_FLAG_2026_09_DETERMINISTIC_SEED_IDS = 'atlas_grand_trips_migrate_2026_09_deterministic_seed_ids_v1';
 const RB_BLOCK_COLORS =['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point

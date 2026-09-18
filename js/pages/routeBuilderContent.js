@@ -12934,6 +12934,113 @@ function rbMigrateSoloNationsCluster1DestinationNotes() {
 }
 
 /**
+ * Batches 170-176 (2026-09-18) -- Europe tail cluster 6 -- closes out Hamburg, Dresden + Saxon
+ * Switzerland, Salzburg + Berchtesgaden + Hallstatt, Austrian Alps: Zell am See-Kaprun, French
+ * Alps: Écrins, Northern Italy Roadtrip, Sicily (9 days), Liechtenstein + Swiss Alps, Vatican
+ * City Day Visit, Plitvice + Zagreb, Albania + North Macedonia, Serbia + Bosnia, Skopje + Ohrid,
+ * Prague + Bohemia, Czechia + Austria, Moravia: Brno + Wine Region, Krakow (both routes),
+ * Athens, Cyprus + Greece, Istanbul + Thrace, Istanbul + Lesbos, Bodrum + Aegean Coast,
+ * Helsinki, Finnish Lapland, Åland, Baltics + Poland, Ibiza, Sicily West, Sardinia North,
+ * Sardinia South, Corfu, Jersey + Guernsey, Northern Portugal + Galicia, the Alpine Roadtrip, and
+ * Kosovo + Montenegro entirely. 45 fresh destinations plus 14 reuse of already-written canonical
+ * notes under new name-string variants (Hallstatt, Briançon, Verona, Piazza San Marco, Blagaj
+ * Tekija, Karlovy Vary, Vienna, Bodrum, Chia, Zermatt, Interlaken, Gallipoli, etc). This batch
+ * brings the per-destination-notes project to functional completion: only Dolomites & North
+ * Italy's 2 destinations both literally named "Historic centre" (Turin and San Marino, two
+ * different real places sharing an identical generic string) remain unfilled, deliberately
+ * skipped since a shared exact-string key can't safely hold two different places' content — see
+ * CHANGELOG.md and this workflow's project memory for the full reasoning. Same generic
+ * name-matching migration pattern as the other batches.
+ */
+function rbMigrateEuropeTailCluster6DestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_EUROPE_TAIL_CLUSTER6_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_EUROPE_TAIL_CLUSTER6_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Hamburg (Speicherstadt/HafenCity)': "Hamburg's UNESCO-listed Speicherstadt is the world's largest warehouse district built on wooden piles, now home to the Miniatur Wunderland model railway (one of the world's largest) and the Elbphilharmonie concert hall's striking glass-wave roof rising from an old warehouse base; HafenCity around it is a newer waterfront development built on reclaimed port land.",
+    'Lübeck (optional day trip)': "A former leading city of the Hanseatic League, with a UNESCO-listed brick-Gothic old town on an island encircled by the Trave river; the twin-towered Holstentor gate is the city's iconic symbol, and it's also the historic home of marzipan production.",
+    'Dresden (Altstadt, Frauenkirche, Zwinger)': "Dresden's Altstadt was almost entirely destroyed in WWII firebombing and painstakingly rebuilt; the Frauenkirche, reduced to rubble, wasn't fully reconstructed until 2005, while the Baroque Zwinger palace complex survived to house major porcelain and old-masters art collections.",
+    'Bastei Bridge / Rathen (Saxon Switzerland NP)': "A sandstone bridge spanning dramatic rock pinnacles in Saxon Switzerland National Park, giving sweeping views over the Elbe valley below; Rathen is the small riverside village serving as the main access point for the bridge and surrounding hiking trails.",
+    'Hallstatt': "One of Austria's most photographed villages, squeezed onto a narrow lakeside shelf beneath cliffs in the Salzkammergut; go before 9am or after 4pm to beat the day-tripper crowds, since a timed-entry system now limits visitor numbers to the village center.",
+    'Zell am See (lake — swimming, SUP, 12km lake loop)': "A lakeside resort town in the Austrian Alps, with a 12km paved path circling the lake for walking or cycling and clear water for swimming and stand-up paddleboarding in summer; also a ski base in winter, giving it a genuine year-round tourism season.",
+    'Kaprun': "A village adjoining Zell am See, mainly the gateway for the Kitzsteinhorn glacier cable car; also home to the Kaprun reservoir dams, popular for a scenic high-altitude hike between the two lakes.",
+    'Kitzsteinhorn glacier (Gipfelwelt 3000, 3,203m)': "A glaciated peak reached by cable car up to the Gipfelwelt 3000 viewing platform, one of the few spots in Austria offering snow and glacier scenery even in summer; a suspension bridge and panorama trail at the top add short additional walks.",
+    'Briançon (gateway)': "The highest fortified town in Europe, its star-shaped Vauban ramparts and hilltop Cité Vauban old town are UNESCO-listed as part of France's network of Vauban fortifications; walk the old town's covered stepped alley (the Grande Gargouille) and climb up to Fort des Salettes above it for the valley view.",
+    'Vallouise': "The gentler of the two main Écrins bases, a village offering easier day hikes into the national park's glaciers and 4000m peaks without the technical mountaineering required further up the valley at La Bérarde.",
+    'La Bérarde': "Reached via a narrow dead-end valley road, this is the Écrins massif's main trailhead for serious mountaineering routes up toward Barre des Écrins and the surrounding glaciated peaks.",
+    'Verona': "The Roman Arena hosts an open-air opera season roughly June-September (book ahead if visiting in that window) and is otherwise open for daytime visits year-round; Casa di Giulietta (Juliet's balcony) and the Piazza delle Erbe old-town market square are the other quick highlights within easy walking distance of each other.",
+    'Venice — Piazza San Marco': "St Mark's Basilica and the Doge's Palace anchor the square; the basilica itself is free to enter, but a skip-the-line booking avoids the worst of the queue.",
+    "Venice — Doge's Palace / Basilica San Marco": "St Mark's Basilica and the Doge's Palace anchor the square; the basilica itself is free to enter, but a skip-the-line booking avoids the worst of the queue.",
+    'Noto': "Considered Sicily's finest example of Sicilian Baroque architecture, entirely rebuilt in a unified honey-colored stone style after a 1693 earthquake destroyed the original town; the annual Infiorata festival each May covers the main street in elaborate flower-petal artwork.",
+    'Walensee / Sargans': "Walensee is a turquoise Alpine lake between steep mountain walls, popular for swimming and watersports in summer; Sargans nearby is a small town with a hilltop castle marking the crossroads of Switzerland, Liechtenstein and Austria.",
+    'Appenzell': "A traditionally rural Swiss canton known for its colorfully painted wooden houses, cheese-making culture, and a still-active open-air Landsgemeinde (voting assembly) tradition in the neighboring half-canton; a scenic base for hikes into the surrounding Alpstein range.",
+    'Berggasthaus Aescher (via cable car from Wasserauen)': "A historic guesthouse built directly into a cliff face in the Alpstein massif, one of Switzerland's most photographed mountain huts; reached by cable car from Wasserauen to Ebenalp followed by a short walk through a cave passage.",
+    'Sistine Chapel': "Michelangelo's ceiling fresco (including the famous Creation of Adam) and his later Last Judgment on the altar wall are the highlights of this Vatican Museums finale, also the site where the College of Cardinals meets to elect each new pope; photography and talking are officially prohibited inside, though enforcement varies.",
+    'Rastoke (optional)': "A small hamlet of old wooden watermills built directly over a series of small waterfalls where the Slunjčica river meets the Korana, near Plitvice; a quieter, much smaller-scale echo of Plitvice's cascades, worth a quick stop on the way in or out.",
+    'Mavrovo National Park (optional)': "North Macedonia's largest national park, centered on Lake Mavrovo (partly artificial) and the country's main ski resort; also home to several historic Orthodox monasteries and dense pine forest popular for hiking.",
+    'Blagaj (Tekija)': "A 16th-century Dervish (Sufi) monastery built directly into a cliff face at the source of the Buna River, one of Europe's strongest karst springs; the tekija's cool interior and the emerald spring water beneath the cliff make it a striking stop, and boat rides upstream to the cave mouth are available in season.",
+    'Sveti Naum': "A medieval Orthodox monastery on the southern shore of Lake Ohrid, right at the border with Albania, built around freshwater springs that feed directly into the lake; small wooden boats ferry visitors over the crystal-clear spring pools beside the monastery.",
+    'Karlovy Vary (optional stopover)': "A spa town built around naturally hot mineral springs, historically visited by figures like Goethe and Beethoven; the local Becherovka herbal liqueur is sold everywhere, and it's also known as the venue for an annual international film festival.",
+    'Linz': "Austria's third-largest city, on the Danube; the Ars Electronica Center covers digital art and technology, and the city's modern art museum (Lentos) sits right on the riverfront — a less touristy, more contemporary-focused stop than Vienna or Salzburg.",
+    'Salzkammergut (Hallstatt)': "One of Austria's most photographed villages, squeezed onto a narrow lakeside shelf beneath cliffs in the Salzkammergut; go before 9am or after 4pm to beat the day-tripper crowds, since a timed-entry system now limits visitor numbers to the village center.",
+    'Vienna': "The Innere Stadt (St. Stephen's Cathedral, Hofburg) is compact and walkable, while Schönbrunn Palace — the Habsburgs' summer residence — is a separate half-day trip across town for the palace rooms and the sprawling gardens/Gloriette viewpoint. Book Schönbrunn's timed-entry ticket online in advance (it regularly sells out same-day in high season); the gardens themselves are free to enter even without a palace ticket.",
+    'Mikulov wine region': "A Moravian wine town beneath a hilltop chateau, near the Austrian border; the surrounding rolling vineyard hills are dotted with wine cellars offering tastings, and Pálava Hills nature reserve nearby has short scenic hikes above the vines.",
+    'Znojmo wine region': "Known for producing some of Moravia's driest white wines and for a historic underground tunnel network beneath the old town, originally dug for wine storage and as a refuge during sieges; Znojmo pickled gherkins are also a well-known regional export.",
+    'Old Town / Main Square': "Anchored by the vast Rynek Główny, Europe's largest medieval town square, with the Renaissance Cloth Hall running through its middle and St. Mary's Basilica's hourly trumpet call sounding from its tower.",
+    'Wawel Castle': "The former royal residence of Polish kings on a hill above the Vistula river, combining a Gothic cathedral (where most Polish monarchs are buried) with Renaissance courtyards; local legend holds a dragon once lived in the caves beneath the hill, now a small tourist attraction (Dragon's Den) with a fire-breathing statue at the exit.",
+    'Kazimierz (Jewish Quarter)': "Krakow's historic Jewish quarter, with several surviving synagogues and a Sunday flea market on Plac Nowy; also the district where much of Steven Spielberg's \"Schindler's List\" was filmed, and home to a lively bar scene in restored old buildings.",
+    'Morskie Oko / Tatra National Park': "Poland's largest and most famous mountain lake, a glacial tarn ringed by high Tatra peaks; reached by a popular, mostly flat paved trail from the Palenica Białczańska car park (roughly 9km each way, or a horse-cart/bike option partway).",
+    'Acropolis Museum': "A modern glass-and-concrete museum at the foot of the Acropolis, purpose-built with a top-floor gallery matching the Parthenon's exact dimensions and orientation, displaying original sculptures alongside plaster casts of pieces still held in London's British Museum (the Elgin Marbles dispute).",
+    'Aegina (day trip)': "The closest of the Saronic Gulf islands to Athens, reachable by a roughly hour-long ferry; known for pistachio farming and the well-preserved Temple of Aphaia, one of the few ancient Greek temples that has survived close to fully intact.",
+    'Santorini (optional continuation)': "A crescent-shaped volcanic island formed by a massive Bronze Age eruption, with whitewashed, blue-domed villages (Oia, Fira) perched along the caldera rim; go to Oia specifically for the famous sunset, though it draws large crowds for exactly that reason.",
+    'Edirne (Selimiye Mosque)': "A former Ottoman capital near the Bulgarian and Greek borders, home to the Selimiye Mosque, widely considered the masterpiece of star architect Mimar Sinan and a UNESCO World Heritage Site; also known for an annual oil-wrestling festival (Kırkpınar), one of the world's oldest continuously held sporting events.",
+    'Gallipoli Peninsula': "The WWI battlefield peninsula where Allied (notably Australian and New Zealand — ANZAC) and Ottoman forces fought an 8-month campaign with massive casualties on both sides; Anzac Cove's small landing beach and the Lone Pine cemetery/memorial are the most visited sites, with an April 25 Anzac Day dawn service drawing large crowds annually.",
+    'Ayvalık': "A Turkish Aegean coastal town with a well-preserved old Greek quarter (many former Ottoman Greek residents left after the 1923 population exchange), olive groves, and easy ferry access to the nearby Greek island of Lesbos.",
+    'Lesbos / Mytilini': "Greece's third-largest island, known for olive oil and ouzo production, hot springs, and a wealth of Byzantine and Ottoman-era architecture in its capital, Mytilini; also historically significant as the birthplace of the ancient poet Sappho.",
+    'Bodrum (castle & marina)': "A whitewashed resort town built around a marina and the Bodrum Castle (built by the Knights Hospitaller, also housing an underwater archaeology museum); known for its nightlife and as a base for Aegean sailing trips on traditional gulet boats.",
+    'Yalıkavak': "An upmarket marina town on the Bodrum peninsula, home to a large modern yacht marina (Yalıkavak Marina) and a restored old bazaar; quieter and more polished than central Bodrum, popular with the yachting crowd.",
+    'Design District': "A neighborhood covering roughly 25 city blocks packed with design studios, boutiques, galleries and museums, reflecting Finland's strong reputation in furniture and product design (Alvar Aalto, Marimekko, Iittala); a good area for browsing rather than a single must-see sight.",
+    'Levi (Kittilä)': "Finnish Lapland's largest and busiest ski resort, with a fell (low, rounded Arctic mountain) at its center offering both downhill skiing in winter and hiking in summer; also a popular base for aurora-viewing tours and husky/reindeer sledding.",
+    'Ylläs (Äkäslompolo)': "A quieter, more low-key Lapland ski area than Levi, spread across seven interconnected fells; Äkäslompolo is the small village base, with cross-country ski trails and access to Pallas-Yllästunturi National Park.",
+    'Mariehamn': "The capital of Åland, a Swedish-speaking autonomous region of Finland; the harbor holds the four-masted sailing ship Pommern, preserved as a museum ship, one of the last surviving windjammers of its type.",
+    'Sund (Kastelholm Castle)': "Home to Kastelholm, a medieval castle that was Åland's administrative center for centuries; the adjacent open-air museum (Jan Karlsgården) recreates a traditional Åland farming village.",
+    'Masurian Lakes (Giżycko)': "Poland's largest lake district, a maze of over 2,000 lakes connected by canals, popular for sailing and canoeing; Giżycko is the main lakeside town, home to a still-functioning 19th-century rotating swing bridge.",
+    'Sant Joan de Labritja': "A quiet inland municipality in northern Ibiza, covering the island's least-developed area; a good base for exploring the calmer north-coast beaches away from Ibiza Town's nightlife scene.",
+    'Portinatx': "A family-oriented resort area on Ibiza's northern tip, with several small sheltered coves rather than one long beach; notably quieter and less party-focused than the south of the island.",
+    'Monreale': "A hill town just outside Palermo, home to a Norman-era cathedral whose interior is covered almost entirely in gold Byzantine mosaics depicting biblical scenes — among the most extensive mosaic cycles in the world; the adjoining cloister's carved columns are worth the extra look.",
+    'Segesta (Doric temple)': "An unfinished ancient Doric temple standing alone on a hillside, never completed and lacking a roof or interior walls, yet remarkably well-preserved; a separate ancient theater on a hill above offers sweeping views toward the coast.",
+    'Budelli (Spiaggia Rosa)': "A small uninhabited island in the La Maddalena archipelago, famous for Spiaggia Rosa, a pink-tinted sand beach colored by crushed coral and shell fragments; landing and swimming on the beach itself is now banned to protect it, so it's typically viewed from a boat.",
+    'Poetto beach': "Cagliari's main city beach, a roughly 8km stretch of fine white sand backed by the Sella del Diavolo promontory; popular with locals as much as tourists, with beach clubs and bars lining the promenade.",
+    'Nora ruins': "A Phoenician-Roman archaeological site on a small peninsula south of Cagliari, with a partially submerged Roman mosaic-floored theater and bathhouse still visible; some ruins now sit partly underwater due to rising sea levels since ancient times.",
+    'Chia beaches': "A stretch of dune-backed white-sand beaches on Sardinia's south coast, with a lagoon behind the dunes home to flamingos; less developed than Sardinia's northern resort coast.",
+    'Corfu Town (Venetian old town)': "A UNESCO-listed old town shaped by centuries of Venetian rule, with narrow Italian-style lanes (kantounia), two Venetian fortresses flanking the town, and a cricket pitch — a lasting quirk from the subsequent period of British rule.",
+    'Paleokastritsa': "A scenic bay on Corfu's west coast with turquoise water framed by cliffs and a clifftop monastery; boat trips from here visit sea caves and grottoes along the coastline.",
+    'Sidari (north coast)': "A resort town on Corfu's north coast known for the Canal d'Amour, a set of sandstone rock formations and narrow channels carved by erosion, tied to a local legend about couples who swim through them together.",
+    'St. Helier': "Jersey's capital and main town, with a harbor and a tidal causeway leading out to Elizabeth Castle, a fortress that's only reachable on foot at low tide (an amphibious vehicle runs at high tide).",
+    'Mont Orgueil Castle': "A medieval castle towering over the harbor town of Gorey on Jersey's east coast, built to defend against French attack and in near-continuous use for defense purposes for over 800 years.",
+    'Pontevedra / Combarro (Rías Baixas day trip)': "Pontevedra's compact old town is largely pedestrianized and considered one of the most walkable small cities in Spain; nearby Combarro is a fishing village known for its rows of hórreos (traditional raised stone granaries) lining the waterfront.",
+    'Zermatt (car-free, Matterhorn)': "Beyond the car-free logistics, the town's Bahnhofstrasse and the view of the Matterhorn framed above the church of St. Mauritius are the classic Zermatt shots. For the postcard view without a big hike, ride the Gornergrat railway or walk up to the small chapel/lake viewpoints just above town.",
+    'Interlaken (alternative base)': "Sitting between Lake Thun and Lake Brienz, Interlaken itself is mainly a logistics and adventure-sports base (paragliding, canyoning) rather than a sight in its own right — treat it as the region's hub, not a destination to linger in.",
+    'Peja': "Home to the Patriarchate of Peć, a UNESCO-listed medieval Serbian Orthodox monastery compound at the mouth of the Rugova Gorge; bring ID, as the monastery has restricted, guarded access.",
+    'Rugova Gorge': "A dramatic canyon road cutting into the mountains west of Peja, popular for rafting, hiking and via ferrata routes; also the gateway toward the Accursed Mountains (Bjeshkët e Nemuna) straddling the Kosovo-Montenegro-Albania border.",
+    'Last Supper': "Leonardo da Vinci's mural in the refectory of Santa Maria delle Grazie; viewing is by timed 15-minute slots only, and tickets (released in blocks months ahead) routinely sell out — book as early as possible, or via a guided tour that holds its own allocated slots.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Two of batch 2's standalone routes were flagged as too exposed to their long-haul flight time
  * relative to trip length — Jordanië (8d, connecting flight) and Nieuw-Zeeland Zuidereiland (21d,
  * but 27-38h with multiple stops). Adds +2 days to each as a recovery/margin buffer, matching the
@@ -15562,8 +15669,8 @@ function rbBuildHamburgRoute() {
     {
       code: 'DE', name: 'Germany', days: 4, budget: 380, lat: 53.5511, lng: 9.9937,
       destinations: [
-        { name: 'Hamburg (Speicherstadt/HafenCity)', lat: 53.5511, lng: 9.9937 },
-        { name: 'Lübeck (optional day trip)', lat: 53.8655, lng: 10.6866 },
+        { name: 'Hamburg (Speicherstadt/HafenCity)', lat: 53.5511, lng: 9.9937 , notes: 'Hamburg\'s UNESCO-listed Speicherstadt is the world\'s largest warehouse district built on wooden piles, now home to the Miniatur Wunderland model railway (one of the world\'s largest) and the Elbphilharmonie concert hall\'s striking glass-wave roof rising from an old warehouse base; HafenCity around it is a newer waterfront development built on reclaimed port land.' },
+        { name: 'Lübeck (optional day trip)', lat: 53.8655, lng: 10.6866 , notes: 'A former leading city of the Hanseatic League, with a UNESCO-listed brick-Gothic old town on an island encircled by the Trave river; the twin-towered Holstentor gate is the city\'s iconic symbol, and it\'s also the historic home of marzipan production.' },
       ],
       notes: "Speicherstadt/HafenCity, Elbphilharmonie (Plaza free but timed-entry — free same-day tickets or €3 online up to 18 weeks ahead), Reeperbahn/St. Pauli, Miniatur Wunderland (new Asia section in 2026, book timed entry ahead — on weekends/holidays without a booking, waits can run up to 2h), plus the Fischmarkt (Sunday morning) or a half-day in Lübeck (45 min by train, genuine Hanseatic-league atmosphere). No direct train from the Netherlands (change at Osnabrück, ~5-5h16, from €38-40) or own car (~460km/4.5h, toll-free). Budget ~€85-110/day p.p. Season: May-September, May/September best balance of price and crowds.",
       transport_to_next: 'End of this route — train back via Osnabrück or drive back to the Netherlands.',
@@ -15601,8 +15708,8 @@ function rbBuildDresdenSaxonSwitzerlandRoute() {
     {
       code: 'DE', name: 'Germany', days: 4, budget: 320, lat: 51.0504, lng: 13.7373,
       destinations: [
-        { name: 'Dresden (Altstadt, Frauenkirche, Zwinger)', lat: 51.0504, lng: 13.7373 },
-        { name: 'Bastei Bridge / Rathen (Saxon Switzerland NP)', lat: 50.9683, lng: 14.0453 },
+        { name: 'Dresden (Altstadt, Frauenkirche, Zwinger)', lat: 51.0504, lng: 13.7373 , notes: 'Dresden\'s Altstadt was almost entirely destroyed in WWII firebombing and painstakingly rebuilt; the Frauenkirche, reduced to rubble, wasn\'t fully reconstructed until 2005, while the Baroque Zwinger palace complex survived to house major porcelain and old-masters art collections.' },
+        { name: 'Bastei Bridge / Rathen (Saxon Switzerland NP)', lat: 50.9683, lng: 14.0453 , notes: 'A sandstone bridge spanning dramatic rock pinnacles in Saxon Switzerland National Park, giving sweeping views over the Elbe valley below; Rathen is the small riverside village serving as the main access point for the bridge and surrounding hiking trails.' },
       ],
       notes: "Dresden (1.5-2d: Altstadt, Frauenkirche, Zwinger) — Saxon Switzerland National Park (2d: Bastei Bridge, hiking). Far from the Netherlands — ICE via Berlin ~8-10h (consider an overnight stop in Berlin) or own car ~734km/6h30 (also needed to reach the hiking trailheads). Budget ~€75-95/day p.p. in Dresden, slightly lower near the park. Season: spring or September (fewer crowds/insects); avoid winter (ice on the sandstone steps). Frauenkirche fully restored (2005), dome climb €12 (only sold on-site, not online). The Bastei Bridge itself is open, but the adjacent Felsenburg Neurathen ruin has been closed since September 2023 (rock stability, no confirmed 2026 reopening) — approach via the hiking path from Rathen rather than the bus/car-park side, and go early in the day (1.5 million visitors/year); check the National Park's 'closed paths' page beforehand.",
       transport_to_next: 'End of this route — ICE via Berlin or drive back to the Netherlands.',
@@ -15840,7 +15947,7 @@ function rbBuildSalzburgBerchtesgadenHallstattRoute() {
     {
       code: 'AT', name: 'Austria', days: 2, budget: 230, lat: 47.5622, lng: 13.6493,
       destinations: [
-        { name: 'Hallstatt', lat: 47.5622, lng: 13.6493 },
+        { name: 'Hallstatt', lat: 47.5622, lng: 13.6493 , notes: 'One of Austria\'s most photographed villages, squeezed onto a narrow lakeside shelf beneath cliffs in the Salzkammergut; go before 9am or after 4pm to beat the day-tripper crowds, since a timed-entry system now limits visitor numbers to the village center.' },
       ],
       notes: "Hallstatt as the closing stop. Skywalk/salt mine cable car ~€29 p.p. — reopening 1 September 2026 after works, so check the dates if travelling earlier in the season.",
       transport_to_next: 'End of this route — drive back to the Netherlands via Salzburg.',
@@ -15859,9 +15966,9 @@ function rbBuildZellAmSeeKaprunPinzgauRoute() {
     {
       code: 'AT', name: 'Austria', days: 6, budget: 672, lat: 47.3239, lng: 12.7957,
       destinations: [
-        { name: 'Zell am See (lake — swimming, SUP, 12km lake loop)', lat: 47.3239, lng: 12.7957 },
-        { name: 'Kaprun', lat: 47.2708, lng: 12.7563 },
-        { name: 'Kitzsteinhorn glacier (Gipfelwelt 3000, 3,203m)', lat: 47.2461, lng: 12.6889 },
+        { name: 'Zell am See (lake — swimming, SUP, 12km lake loop)', lat: 47.3239, lng: 12.7957 , notes: 'A lakeside resort town in the Austrian Alps, with a 12km paved path circling the lake for walking or cycling and clear water for swimming and stand-up paddleboarding in summer; also a ski base in winter, giving it a genuine year-round tourism season.' },
+        { name: 'Kaprun', lat: 47.2708, lng: 12.7563 , notes: 'A village adjoining Zell am See, mainly the gateway for the Kitzsteinhorn glacier cable car; also home to the Kaprun reservoir dams, popular for a scenic high-altitude hike between the two lakes.' },
+        { name: 'Kitzsteinhorn glacier (Gipfelwelt 3000, 3,203m)', lat: 47.2461, lng: 12.6889 , notes: 'A glaciated peak reached by cable car up to the Gipfelwelt 3000 viewing platform, one of the few spots in Austria offering snow and glacier scenery even in summer; a suspension bridge and panorama trail at the top add short additional walks.' },
       ],
       notes: "The concrete region chosen for this originally vague 'Austrian Alps' item: Pinzgau, specifically Zell am See-Kaprun — a lakes-and-glacier region south of Salzburg, deliberately distinct from Salzkammergut (the previous route above), Tyrol (the next route below) and Grossglockner+Tyrol (below that), to avoid overlap between all four Austria trips. Base at Zell am See (lake swimming/SUP, 12km lake loop) with day trips into Kaprun and up the Kitzsteinhorn glacier (year-round hiking/skiing, the 'Gipfelwelt 3000' summit platform). Budget ~€95-130/day p.p. — the Kitzsteinhorn cable car return (~€50-55 p.p.) is the single biggest cost item. Season: June-September.",
       transport_to_next: 'End of this route — drive back to the Netherlands via Salzburg.',
@@ -16379,9 +16486,9 @@ function rbBuildFrenchAlpsEcrinsRoute() {
     {
       code: 'FR', name: 'France', days: 6, budget: 510, lat: 44.9, lng: 6.35,
       destinations: [
-        { name: 'Briançon (gateway)', lat: 44.8992, lng: 6.6367 },
-        { name: 'Vallouise', lat: 44.8383, lng: 6.4794 },
-        { name: 'La Bérarde', lat: 44.9386, lng: 6.2967 },
+        { name: 'Briançon (gateway)', lat: 44.8992, lng: 6.6367 , notes: 'The highest fortified town in Europe, its star-shaped Vauban ramparts and hilltop Cité Vauban old town are UNESCO-listed as part of France\'s network of Vauban fortifications; walk the old town\'s covered stepped alley (the Grande Gargouille) and climb up to Fort des Salettes above it for the valley view.' },
+        { name: 'Vallouise', lat: 44.8383, lng: 6.4794 , notes: 'The gentler of the two main Écrins bases, a village offering easier day hikes into the national park\'s glaciers and 4000m peaks without the technical mountaineering required further up the valley at La Bérarde.' },
+        { name: 'La Bérarde', lat: 44.9386, lng: 6.2967 , notes: 'Reached via a narrow dead-end valley road, this is the Écrins massif\'s main trailhead for serious mountaineering routes up toward Barre des Écrins and the surrounding glaciated peaks.' },
       ],
       notes: "Deliberately Écrins National Park (Vallouise/La Bérarde area) rather than Chamonix. Chamonix is excellent but sits right against the Swiss border/Geneva — high overlap risk with the Switzerland-Alps routes already in this project, and it's also the most touristy/developed valley in the French Alps (ski infrastructure everywhere, no national park). Écrins is genuinely wilder (30x the area of the Chamonix valley, 1,000+ km of trails, real glaciers), cheaper, and clearly distinct from a Switzerland trip. Budget ~€75-95/day (gîte/B&B €55-70, food €25-35, few paid activities — no entrance fee, unlike Chamonix's Aiguille du Midi at ~€120-150+/day). Season: July-August (the only reliable window for high-altitude trails). NL-Grenoble/Écrins access ~950-970km/10.5-11h, tolls ~€80-100 one way. ⚠️ Weak public transport to the trailheads (own car is a real advantage here), mountain hut/gîte bookings fill up fast in summer.",
       transport_to_next: 'End of this route — drive back to the Netherlands.',
@@ -16837,7 +16944,7 @@ function rbBuildNorthernItalyRoadtripRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 130, lat: 45.4384, lng: 10.9916,
       destinations: [
-        { name: 'Verona', lat: 45.4384, lng: 10.9916 },
+        { name: 'Verona', lat: 45.4384, lng: 10.9916 , notes: 'The Roman Arena hosts an open-air opera season roughly June-September (book ahead if visiting in that window) and is otherwise open for daytime visits year-round; Casa di Giulietta (Juliet\'s balcony) and the Piazza delle Erbe old-town market square are the other quick highlights within easy walking distance of each other.' },
       ],
       notes: 'Verona (1 day). ⚠️ Milan\'s Area C environmental zone applies if driving into the centre.',
       transport_to_next: 'Drive to the Dolomites via Bolzano.',
@@ -16854,8 +16961,8 @@ function rbBuildNorthernItalyRoadtripRoute() {
     {
       code: 'IT', name: 'Italy', days: 3, budget: 390, lat: 45.4408, lng: 12.3155,
       destinations: [
-        { name: 'Venice — Piazza San Marco', lat: 45.4340, lng: 12.3390 },
-        { name: 'Venice — Doge\'s Palace / Basilica San Marco', lat: 45.4340, lng: 12.3390 },
+        { name: 'Venice — Piazza San Marco', lat: 45.4340, lng: 12.3390 , notes: 'St Mark\'s Basilica and the Doge\'s Palace anchor the square; the basilica itself is free to enter, but a skip-the-line booking avoids the worst of the queue.' },
+        { name: 'Venice — Doge\'s Palace / Basilica San Marco', lat: 45.4340, lng: 12.3390 , notes: 'St Mark\'s Basilica and the Doge\'s Palace anchor the square; the basilica itself is free to enter, but a skip-the-line booking avoids the worst of the queue.' },
       ],
       notes: "Venice (2-3 days) to close the trip. ⚠️ Book a time slot ahead in summer for the Doge's Palace/Basilica San Marco.",
       transport_to_next: 'End of this route — direct return flight Venice to Amsterdam.',
@@ -16958,7 +17065,7 @@ function rbBuildSicilyNineDaysRoute() {
       destinations: [
         { name: 'Ragusa', lat: 36.9269, lng: 14.7255 , notes: 'Split between modern Ragusa Superiore and the Baroque old town Ragusa Ibla below it (Montalbano filming locations, Duomo di San Giorgio); park up top and walk down, allow 2-3 hours, best light at sunset from the Belvedere.' },
         { name: 'Modica', lat: 36.8467, lng: 14.7692 , notes: 'A Baroque hill town famous for cold-processed "Aztec-method" chocolate that stays grainy rather than glossy; taste it at Antica Dolceria Bonajuto (Italy\'s oldest chocolate shop, since 1880) and see the San Giorgio staircase church.' },
-        { name: 'Noto', lat: 36.8917, lng: 15.0703 },
+        { name: 'Noto', lat: 36.8917, lng: 15.0703 , notes: 'Considered Sicily\'s finest example of Sicilian Baroque architecture, entirely rebuilt in a unified honey-colored stone style after a 1693 earthquake destroyed the original town; the annual Infiorata festival each May covers the main street in elaborate flower-petal artwork.' },
       ],
       notes: 'Val di Noto — Ragusa/Modica/Noto (1-2 days).',
       transport_to_next: 'Drive to Syracuse.',
@@ -17415,9 +17522,9 @@ function rbBuildLiechtensteinSwissAlpsRoute() {
     {
       code: 'CH', name: 'Switzerland', days: 2, budget: 400, lat: 47.0333, lng: 9.4333,
       destinations: [
-        { name: 'Walensee / Sargans', lat: 47.0333, lng: 9.4333 },
-        { name: 'Appenzell', lat: 47.3313, lng: 9.4092 },
-        { name: 'Berggasthaus Aescher (via cable car from Wasserauen)', lat: 47.2749, lng: 9.4139 },
+        { name: 'Walensee / Sargans', lat: 47.0333, lng: 9.4333 , notes: 'Walensee is a turquoise Alpine lake between steep mountain walls, popular for swimming and watersports in summer; Sargans nearby is a small town with a hilltop castle marking the crossroads of Switzerland, Liechtenstein and Austria.' },
+        { name: 'Appenzell', lat: 47.3313, lng: 9.4092 , notes: 'A traditionally rural Swiss canton known for its colorfully painted wooden houses, cheese-making culture, and a still-active open-air Landsgemeinde (voting assembly) tradition in the neighboring half-canton; a scenic base for hikes into the surrounding Alpstein range.' },
+        { name: 'Berggasthaus Aescher (via cable car from Wasserauen)', lat: 47.2749, lng: 9.4139 , notes: 'A historic guesthouse built directly into a cliff face in the Alpstein massif, one of Switzerland\'s most photographed mountain huts; reached by cable car from Wasserauen to Ebenalp followed by a short walk through a cave passage.' },
       ],
       notes: "A 1-2 day Swiss Alps loop: Walensee/Sargans, Appenzell, or the cliffside Berggasthaus Aescher reached by cable car from Wasserauen. Season: June-September for hiking/scenic drives, December-March for skiing in Malbun (back on the Liechtenstein side). Budget ~CHF180-220/day, same range as the Liechtenstein leg. ⚠️ Swiss vignette CHF40 (valid Dec 2025-Jan 2027) needed for self-driving in Switzerland; Liechtenstein and (for this route) no other border charges road tolls.",
       transport_to_next: 'End of this route — drive or fly back to Amsterdam via Zürich.',
@@ -17770,7 +17877,7 @@ function rbBuildVaticanDayVisitRoute() {
       destinations: [
         { name: "St. Peter's Basilica", lat: 41.9022, lng: 12.4533 , notes: 'The world\'s largest church, with Michelangelo\'s Pietà inside and Bernini\'s baldachin over the altar. Entry is free but the security line gets very long by mid-morning — arrive before 8am, and book a timed slot if you want to climb the dome.' },
         { name: 'Vatican Museums', lat: 41.9065, lng: 12.4536, notes: "Miles of galleries culminating in the Sistine Chapel's ceiling — worth 3-4 hours, not a quick pass-through. Skip the last Sunday of the month (free entry, but walk-in only, with 60-90 min queues forming before opening) and go on a paid timed slot instead." },
-        { name: 'Sistine Chapel', lat: 41.9065, lng: 12.4536 },
+        { name: 'Sistine Chapel', lat: 41.9065, lng: 12.4536 , notes: 'Michelangelo\'s ceiling fresco (including the famous Creation of Adam) and his later Last Judgment on the altar wall are the highlights of this Vatican Museums finale, also the site where the College of Cardinals meets to elect each new pope; photography and talking are officially prohibited inside, though enforcement varies.' },
       ],
       notes: "Confirmed, not disputed: Vatican City has no hotels or airport of its own (a ~44-hectare enclave inside Rome) — every Vatican visit is logistically always a day trip within a Rome stay, however it's labelled. So this stays a day-visit component of a Rome trip rather than a standalone destination card — see Rome + Vatican City In-Depth (4 days) ⛪ above for the concrete way to fill that day. Budget ~€130-150/day, the same general Rome rate; a Vatican-focused day without the extra Scavi/dome-climb/Gardens add-ons doesn't carry the extra ~€60-90 that route calls out.",
       transport_to_next: "End of this day — back into the wider Rome stay it's part of.",
@@ -18778,7 +18885,7 @@ function rbBuildPlitviceZagrebRoute() {
       destinations: [
         { name: 'Zagreb', lat: 45.8150, lng: 15.9819, notes: "The Upper Town's colorful-tiled St. Mark's Church and the Dolac market are the highlights, linked to the Lower Town by the world's shortest funicular (under a minute). A free walking tour is an efficient way to cover both halves in a day." },
         { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820, notes: "16 turquoise terraced lakes connected by waterfalls and wooden boardwalks, with a boat crossing Kozjak Lake as the scenic centerpiece. Pick route C or K (covers both Upper and Lower Lakes, not just one) and start right at opening for boardwalk photos without crowds." },
-        { name: 'Rastoke (optional)', lat: 45.1097, lng: 15.5822 },
+        { name: 'Rastoke (optional)', lat: 45.1097, lng: 15.5822 , notes: 'A small hamlet of old wooden watermills built directly over a series of small waterfalls where the Slunjčica river meets the Korana, near Plitvice; a quieter, much smaller-scale echo of Plitvice\'s cascades, worth a quick stop on the way in or out.' },
       ],
       notes: "Zagreb (2-3 days) — Plitvice Lakes (2 days, staying overnight near the park) — optionally the village of Rastoke on the way. Budget: Zagreb ~€80-120/day, Plitvice days run higher because of the park entry fee. Season: April-May/September-October for the best colors and fewer crowds. Web check (2026-08): peak-season entry (1 June-30 September) is €40, shoulder season (Apr/May/Oct) €23.50, winter roughly €10 (ticket office closes 16:00). 2026 enforces a strict hourly capacity cap (max 300 people per entrance) — early-summer slots are already selling out online weeks ahead, so booking ahead is now mandatory, not optional.",
       transport_to_next: 'End of this route — fly home from Zagreb.',
@@ -19442,7 +19549,7 @@ function rbBuildAlbaniaNorthMacedoniaRoute() {
       destinations: [
         { name: 'Ohrid', lat: 41.1231, lng: 20.8016 , notes: 'UNESCO lake town where the postcard shot is the Church of Sveti Jovan at Kaneo, perched on a cliff over the water, plus the old town\'s Samuil\'s Fortress walls. Swim at the small Kaneo beach right below the church, and if you have a half day, take a boat down the lake to St. Naum Monastery near the springs.' },
         { name: 'Skopje', lat: 41.9973, lng: 21.4280 , notes: 'An odd but memorable mix of the Ottoman-era Old Bazaar (real, lived-in) right next to the grandiose, statue-heavy "Skopje 2014" government quarter and giant Alexander/Warrior statue on the main square. Walk up to Kale Fortress for a free skyline view, and if time allows, Matka Canyon just outside town is a better half-day nature stop than anything in the city center.' },
-        { name: 'Mavrovo National Park (optional)', lat: 41.6667, lng: 20.7500 },
+        { name: 'Mavrovo National Park (optional)', lat: 41.6667, lng: 20.7500 , notes: 'North Macedonia\'s largest national park, centered on Lake Mavrovo (partly artificial) and the country\'s main ski resort; also home to several historic Orthodox monasteries and dense pine forest popular for hiking.' },
       ],
       notes: "Ohrid (4 days, its lake is at its most swimmable in July-August, though that's also the busiest window) — Skopje (3 days) — optionally Mavrovo National Park (1 day). Budget ~€40/day. Season: May-June/September for a quieter trip. Web check (2026-08): North Macedonia bans photographing military objects — a fine or even a prison sentence of up to 3 years is on the books for this, so be careful around any installations.",
       transport_to_next: 'End of this route — fly home from Skopje (or Ohrid, seasonal routes permitting).',
@@ -19565,7 +19672,7 @@ function rbBuildSerbiaBosniaRoute() {
       destinations: [
         { name: 'Sarajevo (Baščaršija)', lat: 43.8563, lng: 18.4131, notes: "The Ottoman-era bazaar quarter is where Sarajevo's \"meeting of civilizations\" is most literal — mosques, an Orthodox church, a Catholic cathedral and a synagogue all sit within a few minutes' walk of the Sebilj fountain. Grab a Bosnian coffee in a copper dzezva at one of the quarter's cafes and sit for a while rather than rushing through — it's meant to be sipped slowly over 30-45 minutes." },
         { name: 'Mostar', lat: 43.3438, lng: 17.8078 , notes: 'The 16th-century Stari Most (Old Bridge) and its Ottoman old town are the draw, plus the local divers who leap ~24m from the bridge for tip money. Arrive before 9am for bridge photos without crowds, or midday/afternoon when there are enough tourists around for the divers to actually jump.' },
-        { name: 'Blagaj (Tekija)', lat: 43.2489, lng: 17.8942 },
+        { name: 'Blagaj (Tekija)', lat: 43.2489, lng: 17.8942 , notes: 'A 16th-century Dervish (Sufi) monastery built directly into a cliff face at the source of the Buna River, one of Europe\'s strongest karst springs; the tekija\'s cool interior and the emerald spring water beneath the cliff make it a striking stop, and boat rides upstream to the cave mouth are available in season.' },
       ],
       notes: "Sarajevo (2 days) — Mostar and the Blagaj Tekija (2 days). Budget ~€30-40/day.",
       transport_to_next: 'End of this route — fly home from Sarajevo.',
@@ -19625,7 +19732,7 @@ function rbBuildSkopjeOhridRoute() {
       destinations: [
         { name: 'Skopje', lat: 41.9973, lng: 21.4280 , notes: 'An odd but memorable mix of the Ottoman-era Old Bazaar (real, lived-in) right next to the grandiose, statue-heavy "Skopje 2014" government quarter and giant Alexander/Warrior statue on the main square. Walk up to Kale Fortress for a free skyline view, and if time allows, Matka Canyon just outside town is a better half-day nature stop than anything in the city center.' },
         { name: 'Ohrid', lat: 41.1231, lng: 20.8016 , notes: 'UNESCO lake town where the postcard shot is the Church of Sveti Jovan at Kaneo, perched on a cliff over the water, plus the old town\'s Samuil\'s Fortress walls. Swim at the small Kaneo beach right below the church, and if you have a half day, take a boat down the lake to St. Naum Monastery near the springs.' },
-        { name: 'Sveti Naum', lat: 40.9086, lng: 20.7222 },
+        { name: 'Sveti Naum', lat: 40.9086, lng: 20.7222 , notes: 'A medieval Orthodox monastery on the southern shore of Lake Ohrid, right at the border with Albania, built around freshwater springs that feed directly into the lake; small wooden boats ferry visitors over the crystal-clear spring pools beside the monastery.' },
       ],
       notes: "Skopje (2 days) — Ohrid (2-3 days), including the Sveti Naum monastery and a swim in Lake Ohrid. Budget ~€35-45/day (hostels €15-25, Ohrid National Park entry €3-5). Season: May-June/September for the best price-weather-quiet balance; July-August has the warmest lake water but is busiest and priciest, winter is cheapest. Web check (2026-08): as elsewhere in the country, avoid photographing military objects — fines or prison sentences of up to 3 years are on the books for this.",
       transport_to_next: 'End of this route — fly home from Skopje (or Ohrid, seasonal routes permitting).',
@@ -19805,8 +19912,8 @@ function rbBuildKosovoMontenegroRoute() {
     {
       code: 'XK', name: 'Kosovo', days: 4, budget: 120, lat: 42.6500, lng: 20.2500,
       destinations: [
-        { name: 'Peja', lat: 42.6591, lng: 20.2883 },
-        { name: 'Rugova Gorge', lat: 42.6167, lng: 20.1667 },
+        { name: 'Peja', lat: 42.6591, lng: 20.2883 , notes: 'Home to the Patriarchate of Peć, a UNESCO-listed medieval Serbian Orthodox monastery compound at the mouth of the Rugova Gorge; bring ID, as the monastery has restricted, guarded access.' },
+        { name: 'Rugova Gorge', lat: 42.6167, lng: 20.1667 , notes: 'A dramatic canyon road cutting into the mountains west of Peja, popular for rafting, hiking and via ferrata routes; also the gateway toward the Accursed Mountains (Bjeshkët e Nemuna) straddling the Kosovo-Montenegro-Albania border.' },
       ],
       notes: "Peja (2 days) — the Rugova Gorge (2 days). Budget ~€25-35/day. Leaves Kosovo towards Montenegro, never towards Serbia — see the standalone Kosovo route's notes for why.",
       transport_to_next: "Overland via the Plav/Gusinje border crossing into Montenegro.",
@@ -20520,7 +20627,7 @@ function rbBuildPragueBohemiaRoute() {
       code: 'CZ', name: 'Czechia', days: 5, budget: 410, lat: 50.0875, lng: 14.4213,
       destinations: [
         { name: 'Staré Město / Prague Castle', lat: 50.0875, lng: 14.4213, notes: "Staré Město's Old Town Square (Astronomical Clock, Týn Church) and Charles Bridge sit right below Prague Castle's hilltop complex (St. Vitus Cathedral, Golden Lane) — the largest ancient castle complex in the world by area. Go to the Castle first thing at opening (9am) before tour buses arrive, and catch the Astronomical Clock's hourly show from the square rather than pressing right up against it, since the actual figures are underwhelming up close." },
-        { name: 'Karlovy Vary (optional stopover)', lat: 50.2306, lng: 12.8722 },
+        { name: 'Karlovy Vary (optional stopover)', lat: 50.2306, lng: 12.8722 , notes: 'A spa town built around naturally hot mineral springs, historically visited by figures like Goethe and Beethoven; the local Becherovka herbal liqueur is sold everywhere, and it\'s also known as the venue for an annual international film festival.' },
         { name: 'Český Krumlov', lat: 48.8127, lng: 14.3175, notes: "Its Vltava-river-bend old town and colorfully painted castle tower are the draw; it's overrun with day-trip buses from Prague around midday, so an early-morning visit or an overnight stay is the difference between a quiet town and a crowded one." },
       ],
       notes: "Prague (3 days) — Český Krumlov (1-2 days, staying overnight rather than rushing a day trip) — optionally Karlovy Vary as a stopover. Budget ~€82/day on average (Prague runs pricier, Krumlov/Karlovy Vary about 10-15% cheaper). Season: May-June or September; Krumlov's historic center is only quiet after 17:00 once the day-trippers have left. Web check (2026-08): the RegioJet train/bus between Prague and Krumlov (~3 hours) is a solid alternative to renting a car. Dutch travel advisory for Czechia is green (last updated 16 March 2026) — watch for pickpockets around Charles Bridge/the Old Town Square in Prague.",
@@ -20571,9 +20678,9 @@ function rbBuildCzechiaAustriaRoute() {
     {
       code: 'AT', name: 'Austria', days: 4, budget: 460, lat: 48.2082, lng: 16.3738,
       destinations: [
-        { name: 'Linz', lat: 48.3069, lng: 14.2858 },
-        { name: 'Salzkammergut (Hallstatt)', lat: 47.5622, lng: 13.6493 },
-        { name: 'Vienna', lat: 48.2082, lng: 16.3738 },
+        { name: 'Linz', lat: 48.3069, lng: 14.2858 , notes: 'Austria\'s third-largest city, on the Danube; the Ars Electronica Center covers digital art and technology, and the city\'s modern art museum (Lentos) sits right on the riverfront — a less touristy, more contemporary-focused stop than Vienna or Salzburg.' },
+        { name: 'Salzkammergut (Hallstatt)', lat: 47.5622, lng: 13.6493 , notes: 'One of Austria\'s most photographed villages, squeezed onto a narrow lakeside shelf beneath cliffs in the Salzkammergut; go before 9am or after 4pm to beat the day-tripper crowds, since a timed-entry system now limits visitor numbers to the village center.' },
+        { name: 'Vienna', lat: 48.2082, lng: 16.3738 , notes: 'The Innere Stadt (St. Stephen\'s Cathedral, Hofburg) is compact and walkable, while Schönbrunn Palace — the Habsburgs\' summer residence — is a separate half-day trip across town for the palace rooms and the sprawling gardens/Gloriette viewpoint. Book Schönbrunn\'s timed-entry ticket online in advance (it regularly sells out same-day in high season); the gardens themselves are free to enter even without a palace ticket.' },
       ],
       notes: "Linz and the Salzkammergut lake district (1 day) — Vienna (3 days). Budget: Czechia ran ~€82/day, Austria runs noticeably higher at ~€100-130/day (used €115/day here). Season: May-June or September. Web check (2026-08): Vienna's museums often require an online timed-entry ticket booked ahead.",
       transport_to_next: 'End of this route — fly home from Vienna.',
@@ -20621,8 +20728,8 @@ function rbBuildMoraviaBrnoWineRegionRoute() {
       code: 'CZ', name: 'Czechia', days: 5, budget: 360, lat: 49.1951, lng: 16.6068,
       destinations: [
         { name: 'Brno', lat: 49.1951, lng: 16.6068, notes: "Villa Tugendhat, Mies van der Rohe's UNESCO-listed modernist house, is the city's real highlight beyond the old town; tours sell out within hours of release (release is ~2 months ahead, so book online as early as possible)." },
-        { name: 'Mikulov wine region', lat: 48.8064, lng: 16.6367 },
-        { name: 'Znojmo wine region', lat: 48.8555, lng: 16.0488 },
+        { name: 'Mikulov wine region', lat: 48.8064, lng: 16.6367 , notes: 'A Moravian wine town beneath a hilltop chateau, near the Austrian border; the surrounding rolling vineyard hills are dotted with wine cellars offering tastings, and Pálava Hills nature reserve nearby has short scenic hikes above the vines.' },
+        { name: 'Znojmo wine region', lat: 48.8555, lng: 16.0488 , notes: 'Known for producing some of Moravia\'s driest white wines and for a historic underground tunnel network beneath the old town, originally dug for wine storage and as a refuge during sieges; Znojmo pickled gherkins are also a well-known regional export.' },
       ],
       notes: "Brno, the capital of Moravia (2 days) — the Mikulov/Znojmo wine region (2-3 days, cycling among the vineyards). Budget ~€72/day (cheaper than Prague). Season: best in late August-September for the grape harvest, young Burčák wine, and the 'zarážení hory' harvest festivals — the Znojmo Wine Festival falls in the 2nd week of September, the Mikulov Vintage Festival in the 1st week of September. May-June works as a quieter alternative outside harvest season. Web check (2026-08): bike rental and wine-route infrastructure are often only staffed in season; book wine tastings ahead during harvest weekends, since they get busy and fill up.",
       transport_to_next: 'End of this route — fly home from Brno or Vienna.',
@@ -20762,9 +20869,9 @@ function rbBuildKrakowRoute() {
     {
       code: 'PL', name: 'Poland', days: 4, budget: 260, lat: 50.0614, lng: 19.9366,
       destinations: [
-        { name: 'Old Town / Main Square', lat: 50.0614, lng: 19.9366 },
-        { name: 'Wawel Castle', lat: 50.0544, lng: 19.9354 },
-        { name: 'Kazimierz (Jewish Quarter)', lat: 50.0492, lng: 19.9450 },
+        { name: 'Old Town / Main Square', lat: 50.0614, lng: 19.9366 , notes: 'Anchored by the vast Rynek Główny, Europe\'s largest medieval town square, with the Renaissance Cloth Hall running through its middle and St. Mary\'s Basilica\'s hourly trumpet call sounding from its tower.' },
+        { name: 'Wawel Castle', lat: 50.0544, lng: 19.9354 , notes: 'The former royal residence of Polish kings on a hill above the Vistula river, combining a Gothic cathedral (where most Polish monarchs are buried) with Renaissance courtyards; local legend holds a dragon once lived in the caves beneath the hill, now a small tourist attraction (Dragon\'s Den) with a fire-breathing statue at the exit.' },
+        { name: 'Kazimierz (Jewish Quarter)', lat: 50.0492, lng: 19.9450 , notes: 'Krakow\'s historic Jewish quarter, with several surviving synagogues and a Sunday flea market on Plac Nowy; also the district where much of Steven Spielberg\'s "Schindler\'s List" was filmed, and home to a lively bar scene in restored old buildings.' },
       ],
       notes: "Old Town and the Main Square, Wawel Castle, and Kazimierz (the Jewish Quarter, worth an evening among its bars). Budget ~€60-70/day. Season: May-June or September are best; July-August is hot and crowded. Web check (2026-08): individual parts of Wawel (the cathedral, the state rooms) each need a separate timed-entry ticket and sell out in high season.",
       transport_to_next: 'End of this route — fly home from Krakow.',
@@ -20805,7 +20912,7 @@ function rbBuildKrakowTatraRoute() {
       destinations: [
         { name: 'Krakow Old Town', lat: 50.0614, lng: 19.9366 , notes: 'Poland\'s former royal capital, centered on the vast medieval Rynek Główny square (Europe\'s largest medieval town square) with the Renaissance Cloth Hall in its middle and Wawel Castle on a hill above the Vistula river; St. Mary\'s Basilica\'s trumpet call (a broken-off bugle note, played every hour from the tower) commemorates a 13th-century Mongol invasion.' },
         { name: 'Zakopane', lat: 49.2992, lng: 19.9496 , notes: 'Poland\'s main mountain resort town in the Tatra range, known as the "winter capital of Poland"; Krupówki street is the lively pedestrian core, and a cable car up Gubałówka or Kasprowy Wierch gives panoramic Tatra views without a full hike.' },
-        { name: 'Morskie Oko / Tatra National Park', lat: 49.1997, lng: 20.0669 },
+        { name: 'Morskie Oko / Tatra National Park', lat: 49.1997, lng: 20.0669 , notes: 'Poland\'s largest and most famous mountain lake, a glacial tarn ringed by high Tatra peaks; reached by a popular, mostly flat paved trail from the Palenica Białczańska car park (roughly 9km each way, or a horse-cart/bike option partway).' },
       ],
       notes: "Krakow (2-3 days) — Zakopane (3-4 days) — a day trip to Morskie Oko/Tatra National Park, mountains taking priority over history on this one. Budget ~€65-80/day (mountain chalets run a bit pricier on weekends). Season: peak June-September; May-June and September-October are quieter and still good walking weather. Web check (2026-08): Tatra National Park entry runs about 9-10 PLN/day; the Morskie Oko trail (8km, paved) is walk/horse-carriage/bike only — no cars — and the Palenica Białczańska parking lot fills fast on weekends.",
       transport_to_next: 'End of this route — fly home from Krakow.',
@@ -20917,7 +21024,7 @@ function rbBuildAthensRoute() {
       code: 'GR', name: 'Greece', days: 4, budget: 320, lat: 37.9838, lng: 23.7275,
       destinations: [
         { name: 'Acropolis & Plaka/Monastiraki', lat: 37.9715, lng: 23.7267 , notes: 'The Acropolis hilltop citadel holds the Parthenon and other classical monuments, best visited right at opening to beat both heat and crowds; Plaka below is the old town\'s maze of neoclassical lanes and tavernas, while neighboring Monastiraki has the flea market and Ancient Agora ruins at its edge.' },
-        { name: 'Acropolis Museum', lat: 37.9686, lng: 23.7285 },
+        { name: 'Acropolis Museum', lat: 37.9686, lng: 23.7285 , notes: 'A modern glass-and-concrete museum at the foot of the Acropolis, purpose-built with a top-floor gallery matching the Parthenon\'s exact dimensions and orientation, displaying original sculptures alongside plaster casts of pieces still held in London\'s British Museum (the Elgin Marbles dispute).' },
         { name: 'Cape Sounion (Temple of Poseidon)', lat: 37.6505, lng: 24.0247 , notes: 'A dramatic clifftop Temple of Poseidon at the southern tip of the Attica peninsula, roughly an hour from Athens; sunset is the classic time to visit, when the marble columns glow gold against the sea.' },
       ],
       notes: "Acropolis, Plaka and Monastiraki (2 days) plus the Acropolis Museum, then a day trip to Cape Sounion and the Temple of Poseidon (1 day). Budget ~€70-90/day (private hostel room or budget hotel ~€45-55, food €20-30, extras €10-15). Season: April-June or September-October are best (less heat and fewer crowds), summer can hit 40°C. Web check (2026-08): the Acropolis now requires a mandatory timed-entry ticket booked in advance via hhticket.gr — €30 in summer (Apr-Oct) / €15 in winter, capped at 20,000 visitors/day, already selling out 5-7 days ahead in June-August (morning and late-afternoon slots go first); last entry 19:00, closes 19:30, free for EU citizens under 25. Travel advisory: yellow since 4 August 2026 for wildfires (70+ burning simultaneously at the August 2026 peak, including the Athens region) — can cause road closures or poor air quality and the situation can shift quickly in heat/wind; re-check just before travel, no overall negative advisory otherwise.",
@@ -21143,8 +21250,8 @@ function rbBuildCyprusGreeceRoute() {
       code: 'GR', name: 'Greece', days: 4, budget: 500, lat: 37.9838, lng: 23.7275,
       destinations: [
         { name: 'Athens', lat: 37.9838, lng: 23.7275 , notes: 'The Acropolis and Parthenon, the Plaka old town below it, and the Acropolis Museum are the core of the city; buy the Acropolis combo ticket online and go right at the 8am opening to beat both heat and tour-bus crowds.' },
-        { name: 'Aegina (day trip)', lat: 37.7460, lng: 23.4283 },
-        { name: 'Santorini (optional continuation)', lat: 36.4167, lng: 25.4325 },
+        { name: 'Aegina (day trip)', lat: 37.7460, lng: 23.4283 , notes: 'The closest of the Saronic Gulf islands to Athens, reachable by a roughly hour-long ferry; known for pistachio farming and the well-preserved Temple of Aphaia, one of the few ancient Greek temples that has survived close to fully intact.' },
+        { name: 'Santorini (optional continuation)', lat: 36.4167, lng: 25.4325 , notes: 'A crescent-shaped volcanic island formed by a massive Bronze Age eruption, with whitewashed, blue-domed villages (Oia, Fira) perched along the caldera rim; go to Oia specifically for the famous sunset, though it draws large crowds for exactly that reason.' },
       ],
       notes: "Athens (3-4 days, Acropolis/Plaka/Monastiraki) plus a day trip to Aegina, or continuing on to Santorini instead. Budget: Greece ~€100-150/day. Acropolis needs its mandatory hhticket.gr timed-entry booking — see the standalone Athens trip for the full details. Travel advisory: yellow since 4 August 2026 for wildfires — re-check shortly before travel.",
       transport_to_next: 'End of this route — fly home from Athens.',
@@ -21187,8 +21294,8 @@ function rbBuildIstanbulThraceRoute() {
       code: 'TR', name: 'Turkey', days: 6, budget: 420, lat: 41.0082, lng: 28.9784,
       destinations: [
         { name: 'Istanbul (Sultanahmet)', lat: 41.0086, lng: 28.9802 , notes: 'Istanbul\'s old city core, where the Byzantine-turned-Ottoman Hagia Sophia (a mosque again since 2020) faces the Blue Mosque across a shared square; go right at opening to see Hagia Sophia\'s interior mosaics and dome before tour groups fill the space.' },
-        { name: 'Edirne (Selimiye Mosque)', lat: 41.6771, lng: 26.5557 },
-        { name: 'Gallipoli Peninsula', lat: 40.1867, lng: 26.3536 },
+        { name: 'Edirne (Selimiye Mosque)', lat: 41.6771, lng: 26.5557 , notes: 'A former Ottoman capital near the Bulgarian and Greek borders, home to the Selimiye Mosque, widely considered the masterpiece of star architect Mimar Sinan and a UNESCO World Heritage Site; also known for an annual oil-wrestling festival (Kırkpınar), one of the world\'s oldest continuously held sporting events.' },
+        { name: 'Gallipoli Peninsula', lat: 40.1867, lng: 26.3536 , notes: 'The WWI battlefield peninsula where Allied (notably Australian and New Zealand — ANZAC) and Ottoman forces fought an 8-month campaign with massive casualties on both sides; Anzac Cove\'s small landing beach and the Lone Pine cemetery/memorial are the most visited sites, with an April 25 Anzac Day dawn service drawing large crowds annually.' },
       ],
       notes: "Istanbul (4 days) plus a day trip to Edirne (the Selimiye Mosque, Ottoman-era) and optionally the Gallipoli Peninsula (Gallipoli itself already sits in European Turkey/Thrace). Budget ~€65-75/day (cheaper outside Istanbul). Season: spring/autumn; Edirne is quiet year-round with few tourists. Web check (2026-08): Edirne is about 2.5-3 hours from Istanbul's Otogar bus terminal, one-way ~€10-15, the Selimiye Mosque is free. Note: the Gallipoli Peninsula is technically already European Turkey, but Troy sits on the Asian side — for a purely Thrace-focused trip Troy doesn't need to be included. Visa (visa-exempt, max 90/180 days), travel advisory (yellow) and earthquake/lira notes: see the standalone Istanbul trip.",
       transport_to_next: 'End of this route — fly home from Istanbul.',
@@ -21231,7 +21338,7 @@ function rbBuildIstanbulLesbosRoute() {
       code: 'TR', name: 'Turkey', days: 6, budget: 450, lat: 41.0082, lng: 28.9784,
       destinations: [
         { name: 'Istanbul (Sultanahmet)', lat: 41.0086, lng: 28.9802 , notes: 'Istanbul\'s old city core, where the Byzantine-turned-Ottoman Hagia Sophia (a mosque again since 2020) faces the Blue Mosque across a shared square; go right at opening to see Hagia Sophia\'s interior mosaics and dome before tour groups fill the space.' },
-        { name: 'Ayvalık', lat: 39.3186, lng: 26.6947 },
+        { name: 'Ayvalık', lat: 39.3186, lng: 26.6947 , notes: 'A Turkish Aegean coastal town with a well-preserved old Greek quarter (many former Ottoman Greek residents left after the 1923 population exchange), olive groves, and easy ferry access to the nearby Greek island of Lesbos.' },
       ],
       notes: "Istanbul (5 days) then a bus or flight to Ayvalık (1 day) for a short ferry crossing to Lesbos/Mytilini. Istanbul-based, a single island hop — unlike the longer Aegean-coast-to-islands combo below. Budget ~€70-85/day. Season: the ferry runs June-September daily, far fewer sailings off-season — plan the island hop for summer. Web check (2026-08): the Ayvalık-Lesbos ferry costs ~€20-35 one-way, a 40-minute to 1-hour crossing, mainly a summer service (June-September daily). Visa (visa-exempt, max 90/180 days), travel advisory (yellow) and earthquake/lira notes: see the standalone Istanbul trip.",
       transport_to_next: 'Ferry Ayvalık-Lesbos/Mytilini (~40 min-1h, mainly June-September).',
@@ -21239,7 +21346,7 @@ function rbBuildIstanbulLesbosRoute() {
     {
       code: 'GR', name: 'Greece', days: 3, budget: 255, lat: 39.1061, lng: 26.5544,
       destinations: [
-        { name: 'Lesbos / Mytilini', lat: 39.1061, lng: 26.5544 },
+        { name: 'Lesbos / Mytilini', lat: 39.1061, lng: 26.5544 , notes: 'Greece\'s third-largest island, known for olive oil and ouzo production, hot springs, and a wealth of Byzantine and Ottoman-era architecture in its capital, Mytilini; also historically significant as the birthplace of the ancient poet Sappho.' },
       ],
       notes: "Lesbos/Mytilini (2-3 days), then back via Istanbul. Budget slightly higher than on the Turkish mainland. Web check (2026-08): the Greek island leg is Schengen, so there's a passport check at the crossing (no separate visa needed for Dutch travelers).",
       transport_to_next: 'End of this route — back via Istanbul to fly home.',
@@ -21310,8 +21417,8 @@ function rbBuildBodrumAegeanCoastRoute() {
     {
       code: 'TR', name: 'Turkey', days: 6, budget: 570, lat: 37.0344, lng: 27.4305,
       destinations: [
-        { name: 'Bodrum (castle & marina)', lat: 37.0344, lng: 27.4305 },
-        { name: 'Yalıkavak', lat: 37.1053, lng: 27.2733 },
+        { name: 'Bodrum (castle & marina)', lat: 37.0344, lng: 27.4305 , notes: 'A whitewashed resort town built around a marina and the Bodrum Castle (built by the Knights Hospitaller, also housing an underwater archaeology museum); known for its nightlife and as a base for Aegean sailing trips on traditional gulet boats.' },
+        { name: 'Yalıkavak', lat: 37.1053, lng: 27.2733 , notes: 'An upmarket marina town on the Bodrum peninsula, home to a large modern yacht marina (Yalıkavak Marina) and a restored old bazaar; quieter and more polished than central Bodrum, popular with the yachting crowd.' },
       ],
       notes: "Beach and nightlife focus, unlike Izmir's history focus above. Bodrum (3-4 days: the castle, the marina, the Bar Street/Gümbet beach clubs, the Halikarnas open-air club) plus the Yalıkavak marina and a ferry day trip to Kos. Budget ~€90-105/day (Bodrum runs pricier than Izmir, nightlife and beach clubs push the price up, especially July-August). Season: June-September for beach/nightlife (the town's population swells from 35k to 300k+ in July); May/September are a quieter, cheaper alternative. Web check (2026-08): the Bodrum-Kos ferry costs ~€20-35 one-way (€35-60 return), a 20-30 minute catamaran crossing, 3-6x/day June-September, far fewer sailings off-season — book ahead in high season. Visa (visa-exempt, max 90/180 days), travel advisory (yellow) and earthquake/lira notes: see the standalone Istanbul trip.",
       transport_to_next: 'End of this route — fly home from Bodrum.',
@@ -21845,7 +21952,7 @@ function rbBuildHelsinkiRoute() {
       destinations: [
         { name: 'Helsinki (Senate Square)', lat: 60.1699, lng: 24.9384, notes: "Engel's neoclassical ensemble around the square is capped by Helsinki Cathedral's dramatic white staircase, the city's most photographed viewpoint; climb the steps for the view back over the square, best in the low afternoon light." },
         { name: 'Suomenlinna', lat: 60.1454, lng: 24.9880, notes: "This UNESCO sea fortress spread across six islands mixes original 18th-century bastions with museums (the WWII submarine Vesikko is the standout) and is where locals go to picnic on the ramparts; the public ferry from Market Square is covered by a normal Helsinki AB transit ticket, and it's worth a half day, not a quick stop." },
-        { name: 'Design District', lat: 60.1636, lng: 24.9402 },
+        { name: 'Design District', lat: 60.1636, lng: 24.9402 , notes: 'A neighborhood covering roughly 25 city blocks packed with design studios, boutiques, galleries and museums, reflecting Finland\'s strong reputation in furniture and product design (Alvar Aalto, Marimekko, Iittala); a good area for browsing rather than a single must-see sight.' },
       ],
       notes: "The city itself, the Suomenlinna sea fortress island, and the Design District. Budget ~€70-85/day. Season: May-September for light and terraces, or December for the Christmas market — winter is dark but atmospheric. Web check (2026-08): the Helsinki Card's price rose from 2025 to 2026, so check current rates before assuming it pays off; the Suomenlinna ferry is included in the HSL transit ticket, so no separate boat fare is needed.",
       transport_to_next: 'End of this route — fly home from Helsinki.',
@@ -21910,8 +22017,8 @@ function rbBuildFinnishLaplandRoute() {
       code: 'FI', name: 'Finland', days: 9, budget: 1080, lat: 66.5433, lng: 25.8464,
       destinations: [
         { name: 'Rovaniemi (Santa Claus Village)', lat: 66.5636, lng: 25.8471 , notes: 'Marketed as the official hometown of Santa Claus, straddling the Arctic Circle line (marked underfoot at the village); a popular year-round Christmas-themed stop, with reindeer and husky sledding available seasonally and genuine aurora-viewing chances in winter.' },
-        { name: 'Levi (Kittilä)', lat: 67.8049, lng: 24.8090 },
-        { name: 'Ylläs (Äkäslompolo)', lat: 67.5667, lng: 24.2333 },
+        { name: 'Levi (Kittilä)', lat: 67.8049, lng: 24.8090 , notes: 'Finnish Lapland\'s largest and busiest ski resort, with a fell (low, rounded Arctic mountain) at its center offering both downhill skiing in winter and hiking in summer; also a popular base for aurora-viewing tours and husky/reindeer sledding.' },
+        { name: 'Ylläs (Äkäslompolo)', lat: 67.5667, lng: 24.2333 , notes: 'A quieter, more low-key Lapland ski area than Levi, spread across seven interconnected fells; Äkäslompolo is the small village base, with cross-country ski trails and access to Pallas-Yllästunturi National Park.' },
       ],
       notes: "Rovaniemi and the Santa Claus Village, plus Levi or Ylläs for aurora hunting or skiing. Budget ~€100-140/day — husky tours, snowmobiling and aurora tours are pricey add-ons, €80-150 per activity. Season: December-March for northern lights and snow, or June-July for the midnight sun; the mid-December Christmas period brings peak prices at Santa Claus Village. Web check (2026-08): Levi/Ylläs lift passes and accommodation during the February winter school holidays are much pricier — book well ahead of that window.",
       transport_to_next: 'End of this route — fly home from Rovaniemi (or from Kittilä if flying out from the Levi/Ylläs side).',
@@ -21952,8 +22059,8 @@ function rbBuildAlandRoute() {
     {
       code: 'FI', name: 'Finland', days: 5, budget: 410, lat: 60.0973, lng: 19.9348,
       destinations: [
-        { name: 'Mariehamn', lat: 60.0973, lng: 19.9348 },
-        { name: 'Sund (Kastelholm Castle)', lat: 60.1922, lng: 20.0244 },
+        { name: 'Mariehamn', lat: 60.0973, lng: 19.9348 , notes: 'The capital of Åland, a Swedish-speaking autonomous region of Finland; the harbor holds the four-masted sailing ship Pommern, preserved as a museum ship, one of the last surviving windjammers of its type.' },
+        { name: 'Sund (Kastelholm Castle)', lat: 60.1922, lng: 20.0244 , notes: 'Home to Kastelholm, a medieval castle that was Åland\'s administrative center for centuries; the adjacent open-air museum (Jan Karlsgården) recreates a traditional Åland farming village.' },
       ],
       notes: "Mariehamn plus cycling between the islands. Budget ~€75-90/day. Season: June-August, for cycling weather and more frequent ferry services. Web check (2026-08): Åland is Finnish/EU customs territory but excluded from the EU VAT/excise zone (a 'third territory' for indirect tax under the Åland Protocol) — duty-free sales onboard the ferries remain possible as a result, and this stays unchanged EU law in 2026. Swedish is the everyday language, but the currency is the euro, not Swedish kronor, since this is Finnish territory. Viking Line and Tallink Silja both run daily Stockholm-Mariehamn sailings (~5.5h on the direct route), plus a longer Helsinki/Turku-Mariehamn-Stockholm line.",
       transport_to_next: 'End of this route — ferry onward to Stockholm, or back to Helsinki/Turku, depending on which way you started.',
@@ -22865,7 +22972,7 @@ function rbBuildBalticsPolandRoute() {
       code: 'PL', name: 'Poland', days: 4, budget: 360, lat: 52.2297, lng: 21.0122,
       destinations: [
         { name: 'Warsaw', lat: 52.2297, lng: 21.0122 , notes: 'Poland\'s capital, almost entirely rebuilt after being deliberately razed in WWII — its meticulously reconstructed Old Town (UNESCO-listed specifically for the quality of that postwar rebuild) looks centuries older than it is; the POLIN Museum of the History of Polish Jews is the standout modern addition.' },
-        { name: 'Masurian Lakes (Giżycko)', lat: 54.0367, lng: 21.7644 },
+        { name: 'Masurian Lakes (Giżycko)', lat: 54.0367, lng: 21.7644 , notes: 'Poland\'s largest lake district, a maze of over 2,000 lakes connected by canals, popular for sailing and canoeing; Giżycko is the main lakeside town, home to a still-functioning 19th-century rotating swing bridge.' },
         { name: 'Gdańsk / Hel Peninsula', lat: 54.6084, lng: 18.8006 , notes: 'Gdańsk\'s old town is a reconstructed Hanseatic port city with colorful merchant facades along Long Market street, plus the Museum of the Second World War marking where WWII began at nearby Westerplatte; the Hel Peninsula is a narrow 35km sand-spit nearby, reachable by ferry, known for beaches and a seal sanctuary.' },
       ],
       notes: "3-5 days extending south from the Suwałki corridor into either Warsaw, or the Masurian Lakes and Gdańsk — pick one branch depending on available days and interest (lakes/coast vs. the capital). Budget ~€80-100/day. Season: May-September. Warsaw/Gdańsk coordinates reused from the Poland Roadtrip and Poland: North to South routes (batch 9c) for consistency. General note: Poland's travel advisory has been green since 5 March 2026; some border crossings with Belarus/Ukraine/Kaliningrad remain closed or restricted, not relevant to this route.",
@@ -23268,8 +23375,8 @@ function rbBuildIbizaRoute() {
       code: 'ES', name: 'Spain', days: 5, budget: 500, lat: 38.9800, lng: 1.4800,
       destinations: [
         { name: 'Ibiza Town / Dalt Vila (UNESCO old town)', lat: 38.9067, lng: 1.4327, notes: "The walled old town's 16th-century Renaissance fortifications (UNESCO-listed) enclose steep, whitewashed lanes climbing to a hilltop cathedral with sweeping harbor views. Walk the ramparts near sunset for the best light and cooler temperatures; the cobbled climbs are steep, so wear proper shoes." },
-        { name: 'Sant Joan de Labritja', lat: 39.0765, lng: 1.5150 },
-        { name: 'Portinatx', lat: 39.1102, lng: 1.5347 },
+        { name: 'Sant Joan de Labritja', lat: 39.0765, lng: 1.5150 , notes: 'A quiet inland municipality in northern Ibiza, covering the island\'s least-developed area; a good base for exploring the calmer north-coast beaches away from Ibiza Town\'s nightlife scene.' },
+        { name: 'Portinatx', lat: 39.1102, lng: 1.5347 , notes: 'A family-oriented resort area on Ibiza\'s northern tip, with several small sheltered coves rather than one long beach; notably quieter and less party-focused than the south of the island.' },
       ],
       notes: "Entry: direct flights from the Netherlands (Transavia, easyJet) run seasonally, mainly summer. 2 days in Ibiza Town and the UNESCO-listed Dalt Vila old town, then 2-3 days on the quieter north coast around Sant Joan de Labritja/Portinatx — skipping the nightlife scene keeps the budget down. Budget ~€90-120/day; clubs and beach clubs drive the price up, the north is noticeably cheaper. Season: June or September (May is still a bit cool); July-August is very busy and expensive. Web check (2026-08): the Balearic eco-tax applies (see general note below); 2025-2026 overtourism protest sentiment is live here, expect full bars and waits at peak times in high season.",
       transport_to_next: 'End of this route — fly home from Ibiza.',
@@ -23423,7 +23530,7 @@ function rbBuildSicilyWestRoute() {
       code: 'IT', name: 'Italy', days: 2, budget: 110, lat: 38.1157, lng: 13.3613,
       destinations: [
         { name: 'Palermo', lat: 38.1157, lng: 13.3613 },
-        { name: 'Monreale', lat: 38.0819, lng: 13.2896 },
+        { name: 'Monreale', lat: 38.0819, lng: 13.2896 , notes: 'A hill town just outside Palermo, home to a Norman-era cathedral whose interior is covered almost entirely in gold Byzantine mosaics depicting biblical scenes — among the most extensive mosaic cycles in the world; the adjoining cloister\'s carved columns are worth the extra look.' },
       ],
       notes: "Entry: direct flight Amsterdam-Palermo (Transavia only, roughly 3x/week — book early). Palermo plus a day trip to Monreale's cathedral (2 days). Budget ~€50-65/day average across the route, cheaper than the east-coast/Aeolian legs (used here at ~€55/day).",
       transport_to_next: 'Drive west to Trapani/Erice.',
@@ -23440,7 +23547,7 @@ function rbBuildSicilyWestRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 55, lat: 37.9411, lng: 12.8375,
       destinations: [
-        { name: 'Segesta (Doric temple)', lat: 37.9411, lng: 12.8375 },
+        { name: 'Segesta (Doric temple)', lat: 37.9411, lng: 12.8375 , notes: 'An unfinished ancient Doric temple standing alone on a hillside, never completed and lacking a roof or interior walls, yet remarkably well-preserved; a separate ancient theater on a hill above offers sweeping views toward the coast.' },
       ],
       notes: "Segesta as a day trip (its Doric temple and theater). ⚠️ Web check (2026-08): no special permits needed for this side of the island, but Segesta's and Erice's opening hours are seasonal and noticeably shorter outside the main season — check the current 2026 hours before planning the day.",
       transport_to_next: 'End of this route — return flight from Palermo to Amsterdam.',
@@ -23476,7 +23583,7 @@ function rbBuildSardiniaNorthRoute() {
       code: 'IT', name: 'Italy', days: 2, budget: 160, lat: 41.2145, lng: 9.4052,
       destinations: [
         { name: 'La Maddalena archipelago', lat: 41.2145, lng: 9.4052 , notes: 'A cluster of granite islands off Sardinia\'s northern tip, protected as a national park; boat tours from Palau or La Maddalena town visit the archipelago\'s turquoise coves, including the pink-sand Budelli beach (now off-limits to swimmers to protect it).' },
-        { name: 'Budelli (Spiaggia Rosa)', lat: 41.2064, lng: 9.3733 },
+        { name: 'Budelli (Spiaggia Rosa)', lat: 41.2064, lng: 9.3733 , notes: 'A small uninhabited island in the La Maddalena archipelago, famous for Spiaggia Rosa, a pink-tinted sand beach colored by crushed coral and shell fragments; landing and swimming on the beach itself is now banned to protect it, so it\'s typically viewed from a boat.' },
       ],
       notes: "A boat trip through the La Maddalena archipelago (1-2 days). ⚠️ Web check (2026-08): book archipelago boat tickets ahead in high season, they sell out. Some beaches are permit-only, and Budelli's Spiaggia Rosa is explicitly forbidden to set foot on (look, don't land) — an active, enforced protection rule, not a soft suggestion.",
       transport_to_next: 'End of this route — back to Olbia for the return flight to Amsterdam.',
@@ -23503,8 +23610,8 @@ function rbBuildSardiniaSouthRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 55, lat: 39.2039, lng: 9.1583,
       destinations: [
-        { name: 'Poetto beach', lat: 39.2039, lng: 9.1583 },
-        { name: 'Nora ruins', lat: 38.9897, lng: 9.0186 },
+        { name: 'Poetto beach', lat: 39.2039, lng: 9.1583 , notes: 'Cagliari\'s main city beach, a roughly 8km stretch of fine white sand backed by the Sella del Diavolo promontory; popular with locals as much as tourists, with beach clubs and bars lining the promenade.' },
+        { name: 'Nora ruins', lat: 38.9897, lng: 9.0186 , notes: 'A Phoenician-Roman archaeological site on a small peninsula south of Cagliari, with a partially submerged Roman mosaic-floored theater and bathhouse still visible; some ruins now sit partly underwater due to rising sea levels since ancient times.' },
       ],
       notes: "Poetto beach plus a day trip to the Nora ruins. ⚠️ Web check (2026-08): Nora's opening hours are seasonal — check ahead rather than assuming a fixed schedule. Season: May-June or September.",
       transport_to_next: 'Drive on to the Chia beaches.',
@@ -23512,7 +23619,7 @@ function rbBuildSardiniaSouthRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 130, lat: 38.8886, lng: 8.8425,
       destinations: [
-        { name: 'Chia beaches', lat: 38.8886, lng: 8.8425 },
+        { name: 'Chia beaches', lat: 38.8886, lng: 8.8425 , notes: 'A stretch of dune-backed white-sand beaches on Sardinia\'s south coast, with a lagoon behind the dunes home to flamingos; less developed than Sardinia\'s northern resort coast.' },
       ],
       notes: 'The Chia beaches (2 days, optional/extendable) to close the trip.',
       transport_to_next: 'End of this route — return flight from Cagliari to Amsterdam.',
@@ -23689,7 +23796,7 @@ function rbBuildCorfuRoute() {
     {
       code: 'GR', name: 'Greece', days: 2, budget: 130, lat: 39.6243, lng: 19.9217,
       destinations: [
-        { name: 'Corfu Town (Venetian old town)', lat: 39.6243, lng: 19.9217 },
+        { name: 'Corfu Town (Venetian old town)', lat: 39.6243, lng: 19.9217 , notes: 'A UNESCO-listed old town shaped by centuries of Venetian rule, with narrow Italian-style lanes (kantounia), two Venetian fortresses flanking the town, and a cricket pitch — a lasting quirk from the subsequent period of British rule.' },
       ],
       notes: "Entry: direct flight Amsterdam-Corfu (TUI fly, seasonal, roughly April-October). Corfu Town's Venetian old town (2 days). Budget ~€55-70/day average across the route (used here at ~€60-65/day). Season: May-October, peak July-August busiest and priciest. ⚠️⚠️ Web check (2026-08): confirmed wildfire evacuation (~2,400 people) in mid-August 2026, fire reported \"under control\" as of 7 August 2026 — re-check the situation right before departure, this is an active-incident note, not a resolved one. Travel advisory: yellow since 4 August 2026 for wildfires (nationwide), though Corfu itself isn't individually named on the Dutch government's travel-advisory site.",
       transport_to_next: 'Short drive north along the coast to Paleokastritsa.',
@@ -23697,7 +23804,7 @@ function rbBuildCorfuRoute() {
     {
       code: 'GR', name: 'Greece', days: 2, budget: 130, lat: 39.6698, lng: 19.7847,
       destinations: [
-        { name: 'Paleokastritsa', lat: 39.6698, lng: 19.7847 },
+        { name: 'Paleokastritsa', lat: 39.6698, lng: 19.7847 , notes: 'A scenic bay on Corfu\'s west coast with turquoise water framed by cliffs and a clifftop monastery; boat trips from here visit sea caves and grottoes along the coastline.' },
       ],
       notes: 'Paleokastritsa (1-2 days) — the monastery on the headland, coves, and boat trips to the sea caves.',
       transport_to_next: 'Drive further north to Sidari.',
@@ -23705,7 +23812,7 @@ function rbBuildCorfuRoute() {
     {
       code: 'GR', name: 'Greece', days: 2, budget: 120, lat: 39.7897, lng: 19.9106,
       destinations: [
-        { name: 'Sidari (north coast)', lat: 39.7897, lng: 19.9106 },
+        { name: 'Sidari (north coast)', lat: 39.7897, lng: 19.9106 , notes: 'A resort town on Corfu\'s north coast known for the Canal d\'Amour, a set of sandstone rock formations and narrow channels carved by erosion, tied to a local legend about couples who swim through them together.' },
       ],
       notes: 'Sidari and the north coast (2 days), including the Canal d\'Amour rock formations, to close the trip.',
       transport_to_next: 'End of this route — return flight from Corfu to Amsterdam.',
@@ -23963,8 +24070,8 @@ function rbBuildChannelIslandsRoute() {
     {
       code: 'JE', name: 'Jersey', days: 3, budget: 345, lat: 49.1805, lng: -2.1049,
       destinations: [
-        { name: 'St. Helier', lat: 49.1858, lng: -2.1041 },
-        { name: 'Mont Orgueil Castle', lat: 49.1857, lng: -2.0173 },
+        { name: 'St. Helier', lat: 49.1858, lng: -2.1041 , notes: 'Jersey\'s capital and main town, with a harbor and a tidal causeway leading out to Elizabeth Castle, a fortress that\'s only reachable on foot at low tide (an amphibious vehicle runs at high tide).' },
+        { name: 'Mont Orgueil Castle', lat: 49.1857, lng: -2.0173 , notes: 'A medieval castle towering over the harbor town of Gorey on Jersey\'s east coast, built to defend against French attack and in near-continuous use for defense purposes for over 800 years.' },
         { name: 'Jersey War Tunnels (WWII)', lat: 49.1958, lng: -2.1206, notes: "The specific draw beyond the general occupation history is the underground hospital wing built with forced labour; allow a genuine 1.5-2 hours since the self-guided route runs deep underground and doesn't loop back quickly." },
       ],
       notes: "St. Helier and Mont Orgueil Castle, plus the Jersey War Tunnels (WWII). Budget ~€100-130/day, used here at ~€115/day. Web check (2026-08): the Jersey ferry route now runs via DFDS Seaways (Condor Ferries, the old brand, stopped operating 28 March 2025). KLM flies a seasonal direct Amsterdam-Jersey route — Guernsey itself has no direct NL flight.",
@@ -24041,7 +24148,7 @@ function rbBuildNorthernPortugalGaliciaRoute() {
       code: 'ES', name: 'Spain', days: 4, budget: 320, lat: 42.7000, lng: -8.7000,
       destinations: [
         { name: 'Santiago de Compostela (Praza do Obradoiro)', lat: 42.8805, lng: -8.5456 , notes: 'The Camino\'s finish line and the cathedral\'s grand baroque facade square. Enter through the Arco do Pazo for the classic first reveal of the square and cathedral, and book the rooftop "Catedral" tour in advance if you want the terrace views over the old town.' },
-        { name: 'Pontevedra / Combarro (Rías Baixas day trip)', lat: 42.4300, lng: -8.6444 },
+        { name: 'Pontevedra / Combarro (Rías Baixas day trip)', lat: 42.4300, lng: -8.6444 , notes: 'Pontevedra\'s compact old town is largely pedestrianized and considered one of the most walkable small cities in Spain; nearby Combarro is a fishing village known for its rows of hórreos (traditional raised stone granaries) lining the waterfront.' },
         { name: 'Cíes Islands (optional)', lat: 42.2378, lng: -8.8994 , notes: 'A protected archipelago off Vigo with turquoise water and white-sand beaches often ranked among Europe\'s best; you must get a free daily-entry permit (around 1,800-2,200 visitors/day) via autorizacionillasatlanticas.xunta.gal before booking the ferry, and permits open up to 90 days ahead and sell out fast in summer.' },
       ],
       notes: "Santiago de Compostela (2 days: the cathedral, Praza do Obradoiro) — a Rías Baixas day trip (Pontevedra, Combarro) — optionally the Cíes Islands ferry if time allows (book ahead, there's a daily visitor cap in high season). Budget ~€75-85/day, used here at ~€80/day. Season: June-September — Galicia is Atlantic/rainy outside summer.",
@@ -24917,8 +25024,8 @@ function rbBuildAlpineRoadtripFiveCountriesRoute() {
     {
       code: 'CH', name: 'Switzerland', days: 3, budget: 450, lat: 46.0207, lng: 7.7491,
       destinations: [
-        { name: 'Zermatt (car-free, Matterhorn)', lat: 46.0207, lng: 7.7491 },
-        { name: 'Interlaken (alternative base)', lat: 46.6863, lng: 7.8632 },
+        { name: 'Zermatt (car-free, Matterhorn)', lat: 46.0207, lng: 7.7491 , notes: 'Beyond the car-free logistics, the town\'s Bahnhofstrasse and the view of the Matterhorn framed above the church of St. Mauritius are the classic Zermatt shots. For the postcard view without a big hike, ride the Gornergrat railway or walk up to the small chapel/lake viewpoints just above town.' },
+        { name: 'Interlaken (alternative base)', lat: 46.6863, lng: 7.8632 , notes: 'Sitting between Lake Thun and Lake Brienz, Interlaken itself is mainly a logistics and adventure-sports base (paragliding, canyoning) rather than a sight in its own right — treat it as the region\'s hub, not a destination to linger in.' },
       ],
       notes: "Zermatt or Interlaken (3 days, either/or — same pattern as the Pilatus/Rigi either-or choice in Zurich + Lucerne + Surroundings (5 days) ⛴️ above) — same content as Swiss Alps: Zermatt / Matterhorn (6 days) 🗻 (rbBuildZermattMatterhornRoute) or Interlaken + Lauterbrunnen + Grindelwald (6 days) 🪂 (rbBuildInterlakenLauterbrunnenGrindelwaldRoute), whichever is picked. Budget ~€120-160/day p.p. — one of Switzerland's priciest legs either way.",
       transport_to_next: 'Drive to Innsbruck, Austria via the Arlberg Pass (Arlbergpass, ~250km/3h from Zermatt or ~200km/2h30 from Interlaken) — the pass has a year-round road tunnel alternative (Arlbergtunnel) so this crossing works outside the pure summer window too, unlike several other passes in this batch.',
@@ -25272,7 +25379,7 @@ function rbBuildBalkanRoadtripSerbiaNMacedoniaAlbaniaKosovoRoute() {
       code: 'MK', name: 'North Macedonia', days: 3, budget: 120, lat: 41.1231, lng: 20.8016,
       destinations: [
         { name: 'Ohrid', lat: 41.1231, lng: 20.8016 , notes: 'UNESCO lake town where the postcard shot is the Church of Sveti Jovan at Kaneo, perched on a cliff over the water, plus the old town\'s Samuil\'s Fortress walls. Swim at the small Kaneo beach right below the church, and if you have a half day, take a boat down the lake to St. Naum Monastery near the springs.' },
-        { name: 'Sveti Naum', lat: 40.9086, lng: 20.7222 },
+        { name: 'Sveti Naum', lat: 40.9086, lng: 20.7222 , notes: 'A medieval Orthodox monastery on the southern shore of Lake Ohrid, right at the border with Albania, built around freshwater springs that feed directly into the lake; small wooden boats ferry visitors over the crystal-clear spring pools beside the monastery.' },
       ],
       notes: "Ohrid (2-3 days), including the Sveti Naum monastery and a swim in Lake Ohrid. Budget ~€40/day.",
       transport_to_next: "Cross-border bus/rental car to Tirana via the Kapshticë/Qafë Thanë crossing — a much more direct route into Albania than backtracking via Skopje.",
@@ -25346,7 +25453,7 @@ function rbBuildSouthernEuropeHighlightsRoadtripRoute() {
       code: 'GR', name: 'Greece', days: 3, budget: 240, lat: 37.9838, lng: 23.7275,
       destinations: [
         { name: 'Acropolis & Plaka/Monastiraki', lat: 37.9715, lng: 23.7267 , notes: 'The Acropolis hilltop citadel holds the Parthenon and other classical monuments, best visited right at opening to beat both heat and crowds; Plaka below is the old town\'s maze of neoclassical lanes and tavernas, while neighboring Monastiraki has the flea market and Ancient Agora ruins at its edge.' },
-        { name: 'Acropolis Museum', lat: 37.9686, lng: 23.7285 },
+        { name: 'Acropolis Museum', lat: 37.9686, lng: 23.7285 , notes: 'A modern glass-and-concrete museum at the foot of the Acropolis, purpose-built with a top-floor gallery matching the Parthenon\'s exact dimensions and orientation, displaying original sculptures alongside plaster casts of pieces still held in London\'s British Museum (the Elgin Marbles dispute).' },
       ],
       notes: "Acropolis, Plaka and Monastiraki (3 days) — same content as Athens (4 days) 🏛️ (rbBuildAthensRoute), one day shorter and without the Cape Sounion day trip here. Budget ~€80/day. Travel advisory: yellow since 4 August 2026 for wildfires (same nationwide Greece advisory as the standalone Athens route). Web check (2026-09): the acute multi-fatality emergency (Crete evacuations, an Athens-area helicopter crash) was late July-early August and has since eased — 2026's total burned area nationally is actually 37% below the 20-year average — but a fresh extreme fire-danger spell is forecast across Greece for 3-9 September 2026 (i.e. right now); not an active emergency, but check the daily fire-risk map before any hikes/rural drives and re-check shortly before travel.",
       transport_to_next: 'Optional (only at the full 14 days): ferry or short flight from Athens/Piraeus to Santorini.',
