@@ -12775,6 +12775,97 @@ function rbMigrateAlpineAdriaticCluster4DestinationNotes() {
 }
 
 /**
+ * Batches 159-165 (2026-09-18) -- Europe mixed cluster round 5 -- closes out Belgrade +
+ * Surroundings, Bucharest + Transylvania, Budapest, Hungary Roadtrip, Prague, Czechia Roadtrip,
+ * Bratislava + High Tatras, Slovakia, Slovakia + Poland, Slovakia + Hungary, Izmir + Aegean
+ * Coast: Ephesus & Çeşme, Sweden + Norway, Copenhagen + Zealand, Denmark, Denmark + Sweden +
+ * Norway Overland, Helsinki + Lake District, Finland Roadtrip, Faroe Islands, Dublin, West
+ * Ireland, Edinburgh, Estonia, São Miguel, Gran Canaria (both routes), Menorca, and Sicily +
+ * Aeolian Islands entirely. 46 fresh destinations plus 5 reuse of already-written canonical
+ * notes under new name-string variants (Hungarian Parliament Building, Eger, Krakow Old Town,
+ * Poprad/Tatranská Lomnica, Flåm). Same generic name-matching migration pattern as the other
+ * batches.
+ */
+function rbMigrateEuropeMixedCluster5DestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_EUROPE_MIXED_CLUSTER5_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_EUROPE_MIXED_CLUSTER5_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Belgrade (Skadarlija)': "Belgrade's bohemian old quarter, a cobbled street lined with traditional taverns (kafanas) serving Serbian food alongside live folk music; historically the gathering place for the city's writers and artists, comparable to Paris's Montmartre.",
+    'Novi Sad + Petrovaradin Fortress': "Serbia's second city, dominated by the massive Petrovaradin Fortress across the Danube, nicknamed \"Gibraltar on the Danube\"; the fortress grounds host the EXIT music festival each July, one of Europe's largest.",
+    'Fruška Gora monasteries (Krušedol)': "A forested national park hill range near Novi Sad holding 16 Serbian Orthodox monasteries, sometimes called the \"Serbian Holy Mountain\"; Krušedol, founded in the early 16th century, is one of the best-preserved and most visited.",
+    'Bucharest (Old Town / Palace of the Parliament, "Ceaușescu\'s Palace")': "Bucharest's old town (Lipscani) is a dense grid of bars and belle-époque buildings; the Palace of the Parliament, built under dictator Nicolae Ceaușescu, is the world's heaviest building and second-largest administrative building after the Pentagon — guided tours cover only a small fraction of its thousand-plus rooms.",
+    'Hungarian Parliament Building / Pest riverside': "Budapest's riverside neo-Gothic landmark and the largest building in Hungary; the interior (including the Crown Jewels room) is only seen on a guided tour with timed tickets, and the best exterior photo is from across the Danube on the Buda side, especially once it's lit up after dark.",
+    'Ruin bar district (Kazinczy utca)': "Budapest's nightlife district built around \"ruin bars\" — abandoned buildings and courtyards in the old Jewish Quarter converted into bars with mismatched, salvaged decor; Szimpla Kert, the original and most famous, helped start the trend in the early 2000s.",
+    'Eger': "Eger is known for its Baroque old town and a hilltop castle that famously withstood an Ottoman siege in 1552; just outside town, the \"Valley of the Beautiful Women\" is a cluster of wine cellars dug into a hillside, best known for the dark red Egri Bikavér (\"Bull's Blood\") wine.",
+    'Tokaj wine region': "Hungary's most famous wine region, historically prized for Tokaji Aszú, a sweet botrytized dessert wine once served to European royalty; small family-run cellars throughout the town of Tokaj offer tastings, often in centuries-old volcanic-tuff cellars.",
+    'Staré Město (Old Town Square)': "Prague's medieval old town square, centered on the 15th-century Astronomical Clock, which draws crowds on the hour for its mechanical apostle procession; the Gothic spires of Týn Church rise behind it.",
+    'Malá Strana': "Prague's \"Lesser Town\" beneath the castle, a quieter district of Baroque palaces, embassies and the John Lennon Wall — a colorful graffiti wall that's been continuously repainted with Lennon-inspired art and peace messages since the 1980s.",
+    'Prague Castle': "The largest ancient castle complex in the world by area, still the official seat of the Czech president; St. Vitus Cathedral inside took nearly 600 years to complete and holds the Bohemian crown jewels.",
+    'Vyšehrad': "A fortified hilltop south of the city center, older than Prague Castle in local legend, with a cemetery holding the graves of prominent Czechs including composer Antonín Dvořák; far quieter than the main castle, with good skyline views over the Vltava.",
+    'Karlovy Vary': "A spa town built around naturally hot mineral springs, historically visited by figures like Goethe and Beethoven; the local Becherovka herbal liqueur is sold everywhere, and it's also known as the venue for an annual international film festival.",
+    'Brno / Moravia wine region': "Czechia's second city and the gateway to Moravia's wine country; Brno's Špilberk Castle looms over the city, and the surrounding Moravian countryside is dotted with small wine cellars and vineyard villages quite different in style from Bohemia's beer culture.",
+    'Poprad / Tatranská Lomnica': "Poprad is the main gateway town to the Slovak side of the High Tatras; Tatranská Lomnica nearby has a cable car climbing to Lomnický štít, the second-highest peak in the range, for high-altitude views without a full mountaineering ascent.",
+    'Štrbské Pleso / Hrebienok': "Štrbské Pleso is a glacial lake resort at the base of the High Tatras, a popular hiking trailhead; Hrebienok, reached by funicular from Starý Smokovec, is another common starting point for trails including the Cold/Hot waterfall loop.",
+    'Lomnický Štít cable car (optional)': "A cable car climbing to Lomnický štít, the second-highest peak in the Slovak High Tatras, with a short additional cable car section for the final steep stretch; capacity is limited and tickets often need booking a day or more ahead in season.",
+    'Banská Štiavnica': "A UNESCO-listed former silver and gold mining town in central Slovakia, with a well-preserved historic center and two castles (Old and New); mining innovations developed here, including early water-management systems, were exported across Europe.",
+    'High Tatras (Štrbské Pleso)': "Slovakia's highest and most dramatic mountain range; Štrbské Pleso, a glacial lake resort at its base, is the most popular trailhead for day hikes into the peaks.",
+    'Košice': "Slovakia's second city, with a compact historic center anchored by St. Elisabeth Cathedral, the easternmost Gothic cathedral in Europe; also known for a singing fountain in the main square and as a gateway to eastern Slovakia.",
+    'Krakow (Main Square / Old Town)': "Poland's former royal capital, centered on the vast medieval Rynek Główny square (Europe's largest medieval town square) with the Renaissance Cloth Hall in its middle and Wawel Castle on a hill above the Vistula river; St. Mary's Basilica's trumpet call (a broken-off bugle note, played every hour from the tower) commemorates a 13th-century Mongol invasion.",
+    'Győr (day trip)': "A Hungarian city midway between Vienna and Budapest, with a well-preserved Baroque old town where three rivers meet; less touristy than either capital, making it a relaxed break on longer overland routes.",
+    'Selçuk': "The small town adjoining ancient Ephesus, also home to the ruins of the Temple of Artemis (once a Wonder of the Ancient World, now largely reduced to a single reconstructed column) and the Basilica of St. John, believed built over the apostle's tomb.",
+    'Çeşme': "A resort town on Turkey's Aegean coast known for its castle, thermal springs, and windsurfing conditions; also a ferry gateway to the Greek island of Chios, just a few kilometers offshore.",
+    'Riksgränsen (border crossing)': "A remote ski resort straddling the Swedish-Norwegian border above the Arctic Circle, known for a long ski season extending into midsummer thanks to reliable snow and near-24-hour daylight; mainly a through-point on the drive between Kiruna and Narvik.",
+    'Møns Klint': "Denmark's most dramatic natural landscape, a series of white chalk cliffs rising up to 128m over the Baltic Sea, formed from the same chalk deposits as England's White Cliffs of Dover; a steep staircase (about 500 steps) leads down to the beach below.",
+    'Odense (H.C. Andersen House)': "The birthplace of fairy-tale author Hans Christian Andersen, with a dedicated museum covering his life and work built around his childhood home; Denmark's third-largest city otherwise centers on a walkable, canal-crossed old town.",
+    'LEGO House (Billund)': "An interactive experience center in LEGO's hometown (distinct from the separate Legoland theme park nearby), built around giant LEGO-brick structures including a tree with 6.3 million bricks; aimed at both kids and adult fans of the brand's design history.",
+    'Aarhus (ARoS Art Museum)': "Denmark's second city, home to the ARoS Art Museum topped by \"Your Rainbow Panorama,\" a circular rooftop walkway of colored glass giving a 360-degree tinted view over the city.",
+    'Flåm (optional day trip, 14-day version)': "The Flåm Railway (Flåmsbana) is one of the world's steepest standard-gauge railways, dropping 866m over 20km with a scheduled photo-stop at Kjosfossen waterfall. Book seats ahead in peak summer and sit on the right side going down from Myrdal to Flåm for the best waterfall/valley views.",
+    'Lahti': "A Finnish lake-district city known as a winter sports hub, having hosted the Nordic Ski World Championships multiple times; its ski jump towers are visible across much of the city and double as a summer viewing platform.",
+    'Savonlinna (Olavinlinna Castle)': "A lakeside town built around Olavinlinna, a well-preserved 15th-century castle on a small island, which hosts an internationally known opera festival each July; the town sits amid Finland's Lake Saimaa district.",
+    'Lake Saimaa': "Finland's largest lake and one of the largest in Europe, a sprawling maze of islands and channels; also home to the Saimaa ringed seal, one of the world's most endangered seal species, found nowhere else.",
+    'Turku': "Finland's oldest city and former capital, at the mouth of the Aura river; beyond Turku Castle and Cathedral, the riverside is lined with museum ships and a lively summer café/boat-restaurant scene.",
+    'Rovaniemi (Santa Claus Village)': "Marketed as the official hometown of Santa Claus, straddling the Arctic Circle line (marked underfoot at the village); a popular year-round Christmas-themed stop, with reindeer and husky sledding available seasonally and genuine aurora-viewing chances in winter.",
+    'Múlafossur / Gásadalur': "One of the Faroe Islands' most photographed sights: a waterfall dropping directly off a cliff into the sea beside the tiny village of Gásadalur, which was only connected to the rest of the islands by a road tunnel in 2004 — before that, reachable only on foot over the mountains or by helicopter.",
+    'Trinity College / Book of Kells': "Ireland's oldest university, home to the Book of Kells, an elaborately illuminated 9th-century gospel manuscript displayed in the Old Library, whose Long Room — lined with 200,000 antique books beneath a barrel-vaulted ceiling — is often the more memorable part of the visit.",
+    'Guinness Storehouse': "A multi-floor visitor experience built around Guinness's original brewery site, tracing the beer's history and brewing process, topped by the Gravity Bar with a 360-degree view over Dublin — where every ticket includes a pint.",
+    'Temple Bar': "Dublin's best-known nightlife district, a cluster of pubs and cobbled lanes on the south bank of the Liffey; touristy and pricier than elsewhere in the city, but still the classic first stop for live traditional Irish music.",
+    'Wicklow Mountains / Glendalough (day trip)': "A mountainous day-trip area just south of Dublin; Glendalough is a monastic settlement founded in the 6th century, set beside two lakes in a glacial valley, with a well-preserved round tower among its ruins.",
+    'Connemara National Park / Kylemore Abbey (day trip)': "Connemara's park protects a landscape of bog, heath and the Twelve Bens mountain range; nearby Kylemore Abbey, a 19th-century Gothic Revival castle turned Benedictine convent, sits dramatically beside a lake at the base of the mountains.",
+    'Cliffs of Moher / Doolin': "Ireland's most-visited natural attraction, sea cliffs rising up to 214m above the Atlantic; Doolin nearby is a small village known as a traditional Irish music hub and the main ferry departure point for the Aran Islands.",
+    'Aran Islands (optional)': "Three islands off County Galway (Inishmore the largest and most visited) where Irish is still the everyday language for many residents; Inishmore's Dún Aonghasa, a prehistoric stone fort perched right on a sheer cliff edge, is the standout sight.",
+    'Old Town / Royal Mile': "Edinburgh's medieval spine, running from the castle down to Holyrood Palace, lined with closes (narrow alleys) leading to hidden courtyards; especially lively each August during the Fringe Festival, the world's largest arts festival.",
+    'Edinburgh Castle': "A fortress perched on an extinct volcanic plug dominating the city skyline, home to the Scottish Crown Jewels and the Stone of Scone, used in British monarch coronations; the One O'Clock Gun still fires daily except Sundays, a tradition dating to 1861.",
+    "Arthur's Seat": "An extinct volcano rising above the city, with an accessible summit hike (roughly 1-2 hours round trip) giving panoramic views over Edinburgh and out to the Firth of Forth; one of the best free things to do in the city.",
+    'Stirling Castle (day trip)': "A royal castle strategically overlooking the historic route between Highlands and Lowlands, site of key battles including Bannockburn nearby; often paired with the National Wallace Monument tower, visible from the castle grounds, commemorating William Wallace.",
+    'Muhu-Virtsu ferry link': "The ferry crossing linking mainland Estonia (Virtsu) to Muhu island, the gateway to Saaremaa; a short, frequent crossing rather than a destination itself, but the standard route out to Estonia's western islands.",
+    'Lagoa do Fogo': "One of São Miguel's crater lakes, ringed by a nature reserve with strict access rules protecting the surrounding heathland; the viewpoint above the lake is one of the Azores' most photographed spots, though the lake itself is often shrouded in cloud.",
+    'Maspalomas dunes': "A stretch of Saharan-style sand dunes on Gran Canaria's south coast, protected as a nature reserve, with an adjoining palm oasis and lighthouse; camel rides across the dunes are a popular, if touristy, way to see them.",
+    'Tejeda': "A mountain village near Gran Canaria's geographic center, overlooked by Roque Nublo and Roque Bentayga, two dramatic volcanic rock formations; known for producing bienmesabe, a local almond-based dessert.",
+    'Mahón (Camí de Cavalls coastal path)': "Menorca's capital, built around one of the Mediterranean's largest natural harbors; the Camí de Cavalls is a historic horse-patrol path circling the entire island's coastline, now open to hikers and cyclists in sections.",
+    'Cala Macarelleta': "A small, sheltered cove reached only on foot from its larger neighbor Cala Macarella, with turquoise water backed by pine-covered cliffs; arrive early, as its small size means it fills up quickly in summer.",
+    'Cala Turqueta': "A crescent white-sand beach on Menorca's south coast, backed by pine forest, with shallow, calm turquoise water reflecting its name; a short walk from the parking area, with capacity limits enforced in peak season.",
+    'Milazzo (ferry port)': "A Sicilian port town, mainly the departure point for ferries and hydrofoils to the Aeolian Islands; its own old town and hilltop castle are worth a stop while waiting for a connection.",
+    'Lipari': "The largest and most developed of the Aeolian Islands, with a hilltop citadel holding an archaeological museum covering the islands' volcanic and settlement history back to prehistoric times; pumice quarrying was historically a major local industry.",
+    'Vulcano (mud baths)': "The Aeolian island closest to Sicily, known for sulfurous mud pools said to have therapeutic properties (expect a strong smell) and a moderate hike up to its still-active crater rim for views across the archipelago.",
+    'Stromboli': "One of the world's most continuously active volcanoes, erupting in small, predictable bursts roughly every 10-20 minutes for millennia — visible after dark on evening boat trips offshore, or from a guided hike partway up the slope.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Two of batch 2's standalone routes were flagged as too exposed to their long-haul flight time
  * relative to trip length — Jordanië (8d, connecting flight) and Nieuw-Zeeland Zuidereiland (21d,
  * but 27-38h with multiple stops). Adds +2 days to each as a recovery/margin buffer, matching the
@@ -19327,9 +19418,9 @@ function rbBuildBelgradeSurroundingsRoute() {
       code: 'RS', name: 'Serbia', days: 5, budget: 200, lat: 44.8225, lng: 20.4506,
       destinations: [
         { name: 'Belgrade (Kalemegdan)', lat: 44.8225, lng: 20.4506 , notes: 'The fortress park sits right where the Sava meets the Danube — walk to the ledge near the Pobednik monument for the best river-confluence view, ideally about an hour before sunset when it\'s free and uncrowded.' },
-        { name: 'Belgrade (Skadarlija)', lat: 44.8186, lng: 20.4658 },
-        { name: 'Novi Sad + Petrovaradin Fortress', lat: 45.2519, lng: 19.8600 },
-        { name: 'Fruška Gora monasteries (Krušedol)', lat: 45.1614, lng: 19.8331 },
+        { name: 'Belgrade (Skadarlija)', lat: 44.8186, lng: 20.4658 , notes: 'Belgrade\'s bohemian old quarter, a cobbled street lined with traditional taverns (kafanas) serving Serbian food alongside live folk music; historically the gathering place for the city\'s writers and artists, comparable to Paris\'s Montmartre.' },
+        { name: 'Novi Sad + Petrovaradin Fortress', lat: 45.2519, lng: 19.8600 , notes: 'Serbia\'s second city, dominated by the massive Petrovaradin Fortress across the Danube, nicknamed "Gibraltar on the Danube"; the fortress grounds host the EXIT music festival each July, one of Europe\'s largest.' },
+        { name: 'Fruška Gora monasteries (Krušedol)', lat: 45.1614, lng: 19.8331 , notes: 'A forested national park hill range near Novi Sad holding 16 Serbian Orthodox monasteries, sometimes called the "Serbian Holy Mountain"; Krušedol, founded in the early 16th century, is one of the best-preserved and most visited.' },
       ],
       notes: "Belgrade (2-3 days, the Kalemegdan fortress and the bohemian Skadarlija quarter) — Novi Sad and Petrovaradin Fortress (1 day) — the Fruška Gora monasteries as a day trip. Budget ~€35-45/day. Season: May-June/September — summer gets hot, but the city itself stays easily doable. Web check (2026-08): Belgrade's public transport has been free since 1 January 2025; there's an ongoing student protest movement centered on Belgrade and Novi Sad's city centers (running since late 2024, with tear gas reported as recently as May 2026) — check current protest locations before setting out. Photographing government or military buildings is illegal here.",
       transport_to_next: 'End of this route — fly home from Belgrade.',
@@ -19817,7 +19908,7 @@ function rbBuildBucharestTransylvaniaRoute() {
     {
       code: 'RO', name: 'Romania', days: 5, budget: 400, lat: 44.4268, lng: 26.1025,
       destinations: [
-        { name: 'Bucharest (Old Town / Palace of the Parliament, "Ceaușescu\'s Palace")', lat: 44.4268, lng: 26.1025 },
+        { name: 'Bucharest (Old Town / Palace of the Parliament, "Ceaușescu\'s Palace")', lat: 44.4268, lng: 26.1025 , notes: 'Bucharest\'s old town (Lipscani) is a dense grid of bars and belle-époque buildings; the Palace of the Parliament, built under dictator Nicolae Ceaușescu, is the world\'s heaviest building and second-largest administrative building after the Pentagon — guided tours cover only a small fraction of its thousand-plus rooms.' },
         { name: 'Brașov', lat: 45.6427, lng: 25.5887 , notes: 'Medieval old town centered on Council Square and the Gothic Black Church, with a cable car up Tampa mountain for a skyline view over the rooftops.' },
         { name: 'Bran Castle', lat: 45.5149, lng: 25.3673 , notes: 'White turreted castle on a rock, marketed as "Dracula\'s Castle" though the real link is thin (Vlad the Impaler likely never stayed here); go right at opening (8am) or late afternoon to beat the tour-bus crowds that peak midday.' },
         { name: 'Peleș Castle (Sinaia)', lat: 45.3597, lng: 25.5406 , notes: 'Lavishly decorated Neo-Renaissance royal castle built for King Carol I, with rooms covered in carved wood, stained glass and armor; the interior is only seen on a timed guided tour with limited daily slots, so buy tickets online or arrive early in high season.' },
@@ -20233,9 +20324,9 @@ function rbBuildBudapestRoute() {
       code: 'HU', name: 'Hungary', days: 4, budget: 260, lat: 47.4960, lng: 19.0396,
       destinations: [
         { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396, notes: "Buda Castle Hill combines the former royal palace with Fisherman's Bastion and Matthias Church, and it's the classic vantage point for the Danube/Pest skyline and Parliament building across the river. Time it for sunset for the best light on that view, and take the Castle Hill Funicular up rather than the steep walk." },
-        { name: 'Hungarian Parliament Building / Pest riverside', lat: 47.5076, lng: 19.0458 },
+        { name: 'Hungarian Parliament Building / Pest riverside', lat: 47.5076, lng: 19.0458 , notes: 'Budapest\'s riverside neo-Gothic landmark and the largest building in Hungary; the interior (including the Crown Jewels room) is only seen on a guided tour with timed tickets, and the best exterior photo is from across the Danube on the Buda side, especially once it\'s lit up after dark.' },
         { name: 'Széchenyi Thermal Baths', lat: 47.5186, lng: 19.0821 , notes: 'One of Europe\'s largest thermal bath complexes, with ornate Neo-Baroque outdoor pools fed by natural hot springs; a popular local tradition is playing chess on floating boards while soaking, especially among older regulars.' },
-        { name: 'Ruin bar district (Kazinczy utca)', lat: 47.4973, lng: 19.0662 },
+        { name: 'Ruin bar district (Kazinczy utca)', lat: 47.4973, lng: 19.0662 , notes: 'Budapest\'s nightlife district built around "ruin bars" — abandoned buildings and courtyards in the old Jewish Quarter converted into bars with mismatched, salvaged decor; Szimpla Kert, the original and most famous, helped start the trend in the early 2000s.' },
       ],
       notes: "Buda Castle district (1 day) — Pest and the Parliament (1 day) — Széchenyi Thermal Baths plus the ruin-bar district (1 day). Budget ~€65/day. Season: April-June or September-October are best, or December for the Christmas market (cold). Web check (2026-08): Gellért Baths has been closed since 1 October 2025 and isn't expected to reopen until around 2028 — use Széchenyi instead (admission roughly €13-35). Also keep an eye on escalating demonstrations in central Budapest, and note that LGBTQ+ gatherings/marches have been banned since March 2025 — check planned events in advance if that's relevant to your dates.",
       transport_to_next: 'End of this route — fly home from Budapest.',
@@ -20278,8 +20369,8 @@ function rbBuildHungaryRoadtripRoute() {
       code: 'HU', name: 'Hungary', days: 6, budget: 360, lat: 47.4960, lng: 19.0396,
       destinations: [
         { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396, notes: "Buda Castle Hill combines the former royal palace with Fisherman's Bastion and Matthias Church, and it's the classic vantage point for the Danube/Pest skyline and Parliament building across the river. Time it for sunset for the best light on that view, and take the Castle Hill Funicular up rather than the steep walk." },
-        { name: 'Eger', lat: 47.9025, lng: 20.3772 },
-        { name: 'Tokaj wine region', lat: 48.1214, lng: 21.4094 },
+        { name: 'Eger', lat: 47.9025, lng: 20.3772 , notes: 'Eger is known for its Baroque old town and a hilltop castle that famously withstood an Ottoman siege in 1552; just outside town, the "Valley of the Beautiful Women" is a cluster of wine cellars dug into a hillside, best known for the dark red Egri Bikavér ("Bull\'s Blood") wine.' },
+        { name: 'Tokaj wine region', lat: 48.1214, lng: 21.4094 , notes: 'Hungary\'s most famous wine region, historically prized for Tokaji Aszú, a sweet botrytized dessert wine once served to European royalty; small family-run cellars throughout the town of Tokaj offer tastings, often in centuries-old volcanic-tuff cellars.' },
         { name: 'Lake Balaton / Tihany', lat: 46.9122, lng: 17.8908 , notes: 'Central Europe\'s largest lake, a major Hungarian summer resort area; Tihany, a peninsula jutting into the lake, is known for its lavender fields, a Benedictine abbey with sweeping lake views, and being one of the loudest-echo spots in Europe.' },
       ],
       notes: "Budapest (2 days) — Eger (1 day) — Tokaj (1 day) — Lake Balaton/Tihany (1-2 days). Budget ~€60/day (rental car budgeted separately). Season: May-September, though Balaton gets busy with Hungarian holidaymakers in summer. As throughout Hungary, keep an eye on demonstrations in central Budapest and any LGBTQ+ event restrictions (banned since March 2025).",
@@ -20338,10 +20429,10 @@ function rbBuildPragueRoute() {
     {
       code: 'CZ', name: 'Czechia', days: 4, budget: 360, lat: 50.0875, lng: 14.4213,
       destinations: [
-        { name: 'Staré Město (Old Town Square)', lat: 50.0875, lng: 14.4213 },
-        { name: 'Malá Strana', lat: 50.0865, lng: 14.4051 },
-        { name: 'Prague Castle', lat: 50.0909, lng: 14.4016 },
-        { name: 'Vyšehrad', lat: 50.0653, lng: 14.4206 },
+        { name: 'Staré Město (Old Town Square)', lat: 50.0875, lng: 14.4213 , notes: 'Prague\'s medieval old town square, centered on the 15th-century Astronomical Clock, which draws crowds on the hour for its mechanical apostle procession; the Gothic spires of Týn Church rise behind it.' },
+        { name: 'Malá Strana', lat: 50.0865, lng: 14.4051 , notes: 'Prague\'s "Lesser Town" beneath the castle, a quieter district of Baroque palaces, embassies and the John Lennon Wall — a colorful graffiti wall that\'s been continuously repainted with Lennon-inspired art and peace messages since the 1980s.' },
+        { name: 'Prague Castle', lat: 50.0909, lng: 14.4016 , notes: 'The largest ancient castle complex in the world by area, still the official seat of the Czech president; St. Vitus Cathedral inside took nearly 600 years to complete and holds the Bohemian crown jewels.' },
+        { name: 'Vyšehrad', lat: 50.0653, lng: 14.4206 , notes: 'A fortified hilltop south of the city center, older than Prague Castle in local legend, with a cemetery holding the graves of prominent Czechs including composer Antonín Dvořák; far quieter than the main castle, with good skyline views over the Vltava.' },
       ],
       notes: "Staré Město and the Old Town Square (1 day) — Malá Strana (1 day) — Prague Castle (1 day) — Vyšehrad as a quieter alternative away from the crowds (1 day). Budget ~€90/day (3-star hotel, restaurants, tram/metro). Season: May-June or September-October are best; summer is hot and overcrowded, December has an atmospheric but cold Christmas market. Web check (2026-08): the Castle's basic ticket is 450 CZK (~€18), with the tower and cathedral together adding +200 CZK; check hrad.cz's 'archive of closures' page, since some gardens/galleries close on rotating days for events. Dutch travel advisory for Czechia is green (last updated 16 March 2026) — watch for pickpockets around Charles Bridge and the Old Town Square.",
       transport_to_next: 'End of this route — fly home from Prague.',
@@ -20382,9 +20473,9 @@ function rbBuildCzechiaRoadtripRoute() {
       code: 'CZ', name: 'Czechia', days: 6, budget: 468, lat: 50.0875, lng: 14.4213,
       destinations: [
         { name: 'Prague', lat: 50.0875, lng: 14.4213, notes: "Prague Castle complex and Charles Bridge are the anchors, but both are swamped by tour groups from mid-morning; cross the bridge and enter the castle grounds right at opening to see them uncrowded." },
-        { name: 'Karlovy Vary', lat: 50.2306, lng: 12.8722 },
+        { name: 'Karlovy Vary', lat: 50.2306, lng: 12.8722 , notes: 'A spa town built around naturally hot mineral springs, historically visited by figures like Goethe and Beethoven; the local Becherovka herbal liqueur is sold everywhere, and it\'s also known as the venue for an annual international film festival.' },
         { name: 'Český Krumlov', lat: 48.8127, lng: 14.3175, notes: "Its Vltava-river-bend old town and colorfully painted castle tower are the draw; it's overrun with day-trip buses from Prague around midday, so an early-morning visit or an overnight stay is the difference between a quiet town and a crowded one." },
-        { name: 'Brno / Moravia wine region', lat: 49.1951, lng: 16.6068 },
+        { name: 'Brno / Moravia wine region', lat: 49.1951, lng: 16.6068 , notes: 'Czechia\'s second city and the gateway to Moravia\'s wine country; Brno\'s Špilberk Castle looms over the city, and the surrounding Moravian countryside is dotted with small wine cellars and vineyard villages quite different in style from Bohemia\'s beer culture.' },
       ],
       notes: "Prague (2 days) — Karlovy Vary (1 day) — Český Krumlov (2 days) — Brno and a Moravian wine tasting (1-2 days). Budget ~€78/day including a rental car (~€35-45/day on its own). Season: May-June or September for the best weather and fewest crowds. Web check (2026-08): a dálniční známka (highway toll sticker) is mandatory — check whether the rental company includes it; parking in historic town centers is limited.",
       transport_to_next: 'End of this route — fly home from Prague or Brno.',
@@ -20442,7 +20533,7 @@ function rbBuildPraguePolandRoute() {
       code: 'PL', name: 'Poland', days: 6, budget: 390, lat: 51.1079, lng: 17.0385,
       destinations: [
         { name: 'Wrocław', lat: 51.1079, lng: 17.0385, notes: "Beyond the market square, Ostrów Tumski (Cathedral Island) is worth walking at dusk when its gas lamps are lit by hand; the city's 600+ scattered gnome statues make for a fun, low-effort scavenger hunt between sights." },
-        { name: 'Krakow (Main Square / Old Town)', lat: 50.0614, lng: 19.9366 },
+        { name: 'Krakow (Main Square / Old Town)', lat: 50.0614, lng: 19.9366 , notes: 'Poland\'s former royal capital, centered on the vast medieval Rynek Główny square (Europe\'s largest medieval town square) with the Renaissance Cloth Hall in its middle and Wawel Castle on a hill above the Vistula river; St. Mary\'s Basilica\'s trumpet call (a broken-off bugle note, played every hour from the tower) commemorates a 13th-century Mongol invasion.' },
       ],
       notes: "Wrocław (2 days) — Krakow (3-4 days). Budget ~€60-70/day (used €65/day here). Season: May-June or September.",
       transport_to_next: 'End of this route — fly home from Krakow.',
@@ -20502,9 +20593,9 @@ function rbBuildBratislavaHighTatrasRoute() {
       code: 'SK', name: 'Slovakia', days: 5, budget: 275, lat: 48.1486, lng: 17.1077,
       destinations: [
         { name: 'Bratislava', lat: 48.1486, lng: 17.1077, notes: "Compact walkable Old Town plus the hilltop Bratislava Castle overlooking the Danube; the UFO Bridge's observation deck gives the best skyline view and doubles as a sunset spot." },
-        { name: 'Poprad / Tatranská Lomnica', lat: 49.1660, lng: 20.2870 },
-        { name: 'Štrbské Pleso / Hrebienok', lat: 49.1225, lng: 20.0631 },
-        { name: 'Lomnický Štít cable car (optional)', lat: 49.1958, lng: 20.2131 },
+        { name: 'Poprad / Tatranská Lomnica', lat: 49.1660, lng: 20.2870 , notes: 'Poprad is the main gateway town to the Slovak side of the High Tatras; Tatranská Lomnica nearby has a cable car climbing to Lomnický štít, the second-highest peak in the range, for high-altitude views without a full mountaineering ascent.' },
+        { name: 'Štrbské Pleso / Hrebienok', lat: 49.1225, lng: 20.0631 , notes: 'Štrbské Pleso is a glacial lake resort at the base of the High Tatras, a popular hiking trailhead; Hrebienok, reached by funicular from Starý Smokovec, is another common starting point for trails including the Cold/Hot waterfall loop.' },
+        { name: 'Lomnický Štít cable car (optional)', lat: 49.1958, lng: 20.2131 , notes: 'A cable car climbing to Lomnický štít, the second-highest peak in the Slovak High Tatras, with a short additional cable car section for the final steep stretch; capacity is limited and tickets often need booking a day or more ahead in season.' },
       ],
       notes: "Bratislava (2 days) — train out to Poprad/Tatranská Lomnica (2-3 days) — walking between Štrbské Pleso and Hrebienok. Budget ~€50-60/day (a chalet meal runs about €7, a beer about €2.50; the Lomnický Štít cable car is an optional add-on at ~€89, on the pricey side). Season: June-September for hiking, December-March for winter sports (avalanche risk — stay on the marked trails). Slovakia is fully Schengen with zero border friction toward Hungary/Poland/Austria/Czechia. Web check (2026-08): pre-book the Lomnický Štít cable car through the Gopass.travel app — it sells out fast.",
       transport_to_next: 'End of this route — fly home from Bratislava, or via Vienna (about an hour away by bus).',
@@ -20524,9 +20615,9 @@ function rbBuildSlovakiaRoute() {
       code: 'SK', name: 'Slovakia', days: 6, budget: 312, lat: 48.1486, lng: 17.1077,
       destinations: [
         { name: 'Bratislava', lat: 48.1486, lng: 17.1077, notes: "Compact walkable Old Town plus the hilltop Bratislava Castle overlooking the Danube; the UFO Bridge's observation deck gives the best skyline view and doubles as a sunset spot." },
-        { name: 'Banská Štiavnica', lat: 48.4587, lng: 18.8973 },
-        { name: 'High Tatras (Štrbské Pleso)', lat: 49.1225, lng: 20.0631 },
-        { name: 'Košice', lat: 48.7164, lng: 21.2611 },
+        { name: 'Banská Štiavnica', lat: 48.4587, lng: 18.8973 , notes: 'A UNESCO-listed former silver and gold mining town in central Slovakia, with a well-preserved historic center and two castles (Old and New); mining innovations developed here, including early water-management systems, were exported across Europe.' },
+        { name: 'High Tatras (Štrbské Pleso)', lat: 49.1225, lng: 20.0631 , notes: 'Slovakia\'s highest and most dramatic mountain range; Štrbské Pleso, a glacial lake resort at its base, is the most popular trailhead for day hikes into the peaks.' },
+        { name: 'Košice', lat: 48.7164, lng: 21.2611 , notes: 'Slovakia\'s second city, with a compact historic center anchored by St. Elisabeth Cathedral, the easternmost Gothic cathedral in Europe; also known for a singing fountain in the main square and as a gateway to eastern Slovakia.' },
       ],
       notes: "Bratislava (2 days) — the historic silver-mining town of Banská Štiavnica (1 day) — the High Tatras (2 days) — Košice (1-2 days). Budget ~€50-55/day (used €52/day here). Season: June-September. Slovakia is fully Schengen with zero border friction toward Hungary/Poland/Austria/Czechia.",
       transport_to_next: 'End of this route — fly home from Košice, or loop back to Bratislava.',
@@ -20546,7 +20637,7 @@ function rbBuildSlovakiaPolandRoute() {
       code: 'SK', name: 'Slovakia', days: 4, budget: 220, lat: 48.1486, lng: 17.1077,
       destinations: [
         { name: 'Bratislava', lat: 48.1486, lng: 17.1077, notes: "Compact walkable Old Town plus the hilltop Bratislava Castle overlooking the Danube; the UFO Bridge's observation deck gives the best skyline view and doubles as a sunset spot." },
-        { name: 'High Tatras (Štrbské Pleso)', lat: 49.1225, lng: 20.0631 },
+        { name: 'High Tatras (Štrbské Pleso)', lat: 49.1225, lng: 20.0631 , notes: 'Slovakia\'s highest and most dramatic mountain range; Štrbské Pleso, a glacial lake resort at its base, is the most popular trailhead for day hikes into the peaks.' },
       ],
       notes: "Bratislava (2 days) — the High Tatras (2 days). Budget ~€55/day. Slovakia is fully Schengen with zero border friction toward Poland.",
       transport_to_next: 'Cross into Poland at the Slovakia-Poland mountain border — fully Schengen, no border checks.',
@@ -20555,7 +20646,7 @@ function rbBuildSlovakiaPolandRoute() {
       code: 'PL', name: 'Poland', days: 5, budget: 300, lat: 49.2992, lng: 19.9496,
       destinations: [
         { name: 'Zakopane', lat: 49.2992, lng: 19.9496 , notes: 'Poland\'s main mountain resort town in the Tatra range, known as the "winter capital of Poland"; Krupówki street is the lively pedestrian core, and a cable car up Gubałówka or Kasprowy Wierch gives panoramic Tatra views without a full hike.' },
-        { name: 'Krakow (Main Square / Old Town)', lat: 50.0614, lng: 19.9366 },
+        { name: 'Krakow (Main Square / Old Town)', lat: 50.0614, lng: 19.9366 , notes: 'Poland\'s former royal capital, centered on the vast medieval Rynek Główny square (Europe\'s largest medieval town square) with the Renaissance Cloth Hall in its middle and Wawel Castle on a hill above the Vistula river; St. Mary\'s Basilica\'s trumpet call (a broken-off bugle note, played every hour from the tower) commemorates a 13th-century Mongol invasion.' },
       ],
       notes: "Zakopane (2 days) — Krakow (2-3 days). Budget ~€60/day. Season: June-September (Morskie Oko and the surrounding trails look their best then, but are also at their busiest). Web check (2026-08): the Krakow-Zakopane bus costs about €4.50 one-way, with no border control anywhere on the route.",
       transport_to_next: 'End of this route — fly home from Krakow.',
@@ -20575,7 +20666,7 @@ function rbBuildSlovakiaHungaryRoute() {
       code: 'SK', name: 'Slovakia', days: 3, budget: 180, lat: 48.1486, lng: 17.1077,
       destinations: [
         { name: 'Bratislava', lat: 48.1486, lng: 17.1077, notes: "Compact walkable Old Town plus the hilltop Bratislava Castle overlooking the Danube; the UFO Bridge's observation deck gives the best skyline view and doubles as a sunset spot." },
-        { name: 'Győr (day trip)', lat: 47.6875, lng: 17.6504 },
+        { name: 'Győr (day trip)', lat: 47.6875, lng: 17.6504 , notes: 'A Hungarian city midway between Vienna and Budapest, with a well-preserved Baroque old town where three rivers meet; less touristy than either capital, making it a relaxed break on longer overland routes.' },
       ],
       notes: "Bratislava (2 days), with Győr across the border in Hungary as a day trip. Budget ~€55-65/day (used €60/day here). Slovakia is fully Schengen with zero border friction toward Hungary.",
       transport_to_next: 'Train onward to Budapest — a Schengen border with no checks; the Bratislava-Budapest train runs every 2 hours and takes about 2h25 (web check 2026-08).',
@@ -20584,7 +20675,7 @@ function rbBuildSlovakiaHungaryRoute() {
       code: 'HU', name: 'Hungary', days: 6, budget: 360, lat: 47.4960, lng: 19.0396,
       destinations: [
         { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396, notes: "Buda Castle Hill combines the former royal palace with Fisherman's Bastion and Matthias Church, and it's the classic vantage point for the Danube/Pest skyline and Parliament building across the river. Time it for sunset for the best light on that view, and take the Castle Hill Funicular up rather than the steep walk." },
-        { name: 'Eger', lat: 47.9025, lng: 20.3772 },
+        { name: 'Eger', lat: 47.9025, lng: 20.3772 , notes: 'Eger is known for its Baroque old town and a hilltop castle that famously withstood an Ottoman siege in 1552; just outside town, the "Valley of the Beautiful Women" is a cluster of wine cellars dug into a hillside, best known for the dark red Egri Bikavér ("Bull\'s Blood") wine.' },
       ],
       notes: "Budapest (3 days) — Eger and its wine cellars (1-2 days). Budget ~€55-65/day (used €60/day here). Season: May-September. As throughout Hungary, keep an eye on demonstrations in central Budapest.",
       transport_to_next: 'End of this route — fly home from Budapest.',
@@ -21130,9 +21221,9 @@ function rbBuildIzmirAegeanCoastRoute() {
       code: 'TR', name: 'Turkey', days: 5, budget: 350, lat: 38.4237, lng: 27.1428,
       destinations: [
         { name: 'Izmir', lat: 38.4237, lng: 27.1428 , notes: 'Turkey\'s third-largest city and a major Aegean port, with a long seafront promenade (Kordon) and the ancient Agora ruins in its center; mainly used as a gateway to Ephesus and the surrounding coast rather than a long stop itself.' },
-        { name: 'Selçuk', lat: 37.9500, lng: 27.3667 },
+        { name: 'Selçuk', lat: 37.9500, lng: 27.3667 , notes: 'The small town adjoining ancient Ephesus, also home to the ruins of the Temple of Artemis (once a Wonder of the Ancient World, now largely reduced to a single reconstructed column) and the Basilica of St. John, believed built over the apostle\'s tomb.' },
         { name: 'Ephesus', lat: 37.9410, lng: 27.3417 },
-        { name: 'Çeşme', lat: 38.3225, lng: 26.3033 },
+        { name: 'Çeşme', lat: 38.3225, lng: 26.3033 , notes: 'A resort town on Turkey\'s Aegean coast known for its castle, thermal springs, and windsurfing conditions; also a ferry gateway to the Greek island of Chios, just a few kilometers offshore.' },
       ],
       notes: "History-heavy, unlike Bodrum's beach/nightlife focus below. Izmir (2 days, the city and ancient Smyrna) plus a day trip to Ephesus from Selçuk/Kuşadası, then Çeşme (2 days, a quiet seaside town, optionally a ferry trip to Chios). Budget ~€65-75/day (Izmir is the cheapest of the coastal options). Season: April-June or September-October (Ephesus gets very hot in summer with little shade among the ruins — go early). Web check (2026-08): 2026 Ephesus entry is €40 (including the now-mandatory new 'Ephesus Experience' museum), the Terrace Houses cost an extra €15; in summer (3 June-1 October) there's an evening opening Wed-Sat until 23:00, but after 18:45 only the lower level is accessible and the Terrace Houses are already closed by then. The Çeşme-Chios ferry runs ~€25-30 one-way, 20-30 minutes, year-round but with more frequency in summer. Visa (visa-exempt, max 90/180 days), travel advisory (yellow) and earthquake/lira notes: see the standalone Istanbul trip.",
       transport_to_next: 'End of this route — fly home from Izmir.',
@@ -21486,7 +21577,7 @@ function rbBuildSwedenNorwayRoute() {
         { name: 'Stockholm', lat: 59.3251, lng: 18.0711 , notes: 'Sweden\'s capital, spread across 14 islands connected by bridges; Gamla Stan\'s medieval old town, the Vasa Museum\'s preserved 17th-century warship, and the green island of Djurgården are the essential first stops.' },
         { name: 'Kiruna', lat: 67.8558, lng: 20.2253, notes: "Sweden's northernmost town is being physically relocated a few kilometres east because the LKAB iron-ore mine beneath it is causing ground subsidence — an unusual \"moving city\" story worth a stop in itself, alongside the mine itself. LKAB's underground mine tours are popular and capacity-limited, so book ahead rather than assuming a same-day slot." },
         { name: 'Abisko', lat: 68.3540, lng: 18.7885 , notes: 'One of the best spots in the world for aurora viewing, thanks to a specific dry microclimate ("the blue hole") that keeps skies clearer than surrounding areas even when it\'s cloudy elsewhere in the region.' },
-        { name: 'Riksgränsen (border crossing)', lat: 68.4297, lng: 18.1200 },
+        { name: 'Riksgränsen (border crossing)', lat: 68.4297, lng: 18.1200 , notes: 'A remote ski resort straddling the Swedish-Norwegian border above the Arctic Circle, known for a long ski season extending into midsummer thanks to reliable snow and near-24-hour daylight; mainly a through-point on the drive between Kiruna and Narvik.' },
       ],
       notes: "Stockholm, then north by train to Swedish Lapland — Kiruna and Abisko — up to the Riksgränsen border crossing. Budget ~€110/day for this leg; the Norwegian leg below runs pricier. Season: June-August for the midnight sun and 15-20°C; avoid October-April for a roadtrip (ice and polar night make the Riksgränsen-Narvik stretch impractical). Web check (2026-08): Norwegian tolls run via AutoPASS; Lofoten ferry services are seasonal; ask the rental company in advance about cross-border rules if picking up the car in Sweden.",
       transport_to_next: 'Train or rental car over the Riksgränsen border crossing into Norway, on to Narvik.',
@@ -21611,7 +21702,7 @@ function rbBuildCopenhagenZealandRoute() {
         { name: 'Copenhagen (Nyhavn)', lat: 55.6790, lng: 12.5910, notes: "The candy-colored 17th-century gabled houses along the canal were once a rough sailors' quarter where Hans Christian Andersen lived at three different addresses; go right at opening or after dinner to see it without the tour-group crush, and pick up a canal boat tour departing from the harbor itself." },
         { name: 'Roskilde (Viking Ship Museum)', lat: 55.6415, lng: 12.0803 , notes: 'Houses five excavated 11th-century Viking ships (the Skuldelev wrecks) plus a working boatyard where reconstructions are built by hand. Allow 1.5-2 hours; in summer you can go out on the fjord aboard one of the reconstructed longships.' },
         { name: 'Louisiana Museum (Humlebæk)', lat: 55.9625, lng: 12.5385 , notes: 'Renowned modern/contemporary art museum whose real draw is the building itself — galleries woven into a sculpture park overlooking the Øresund. Give it half a day, and pair it with Kronborg Castle in Helsingør on the same train-line day trip from Copenhagen.' },
-        { name: 'Møns Klint', lat: 54.9506, lng: 12.5382 },
+        { name: 'Møns Klint', lat: 54.9506, lng: 12.5382 , notes: 'Denmark\'s most dramatic natural landscape, a series of white chalk cliffs rising up to 128m over the Baltic Sea, formed from the same chalk deposits as England\'s White Cliffs of Dover; a steep staircase (about 500 steps) leads down to the beach below.' },
       ],
       notes: "Copenhagen itself (2-3 days), then day trips: Roskilde's Viking Ship Museum by train, the Louisiana Museum of Modern Art in Humlebæk, and Møns Klint's chalk cliffs (needs a rental car, ~2h drive each way). Budget ~€100-130/day, plus €40-60 on the rental-car day. Web check (2026-08): Møns Klint is barely reachable by public transport, so the rental car for that day isn't optional; its visitor center and the stairs down to the beach can have seasonal maintenance closures — check before relying on the full route being open.",
       transport_to_next: 'End of this route — fly home from Copenhagen.',
@@ -21631,9 +21722,9 @@ function rbBuildDenmarkRoute() {
       code: 'DK', name: 'Denmark', days: 6, budget: 690, lat: 55.6761, lng: 12.5683,
       destinations: [
         { name: 'Copenhagen (Nyhavn)', lat: 55.6790, lng: 12.5910, notes: "The candy-colored 17th-century gabled houses along the canal were once a rough sailors' quarter where Hans Christian Andersen lived at three different addresses; go right at opening or after dinner to see it without the tour-group crush, and pick up a canal boat tour departing from the harbor itself." },
-        { name: 'Odense (H.C. Andersen House)', lat: 55.3959, lng: 10.3883 },
-        { name: 'LEGO House (Billund)', lat: 55.7308, lng: 9.1256 },
-        { name: 'Aarhus (ARoS Art Museum)', lat: 56.1496, lng: 10.2134 },
+        { name: 'Odense (H.C. Andersen House)', lat: 55.3959, lng: 10.3883 , notes: 'The birthplace of fairy-tale author Hans Christian Andersen, with a dedicated museum covering his life and work built around his childhood home; Denmark\'s third-largest city otherwise centers on a walkable, canal-crossed old town.' },
+        { name: 'LEGO House (Billund)', lat: 55.7308, lng: 9.1256 , notes: 'An interactive experience center in LEGO\'s hometown (distinct from the separate Legoland theme park nearby), built around giant LEGO-brick structures including a tree with 6.3 million bricks; aimed at both kids and adult fans of the brand\'s design history.' },
+        { name: 'Aarhus (ARoS Art Museum)', lat: 56.1496, lng: 10.2134 , notes: 'Denmark\'s second city, home to the ARoS Art Museum topped by "Your Rainbow Panorama," a circular rooftop walkway of colored glass giving a 360-degree tinted view over the city.' },
       ],
       notes: "The differentiator versus the shorter Copenhagen routes above: the whole country, including Jutland. Copenhagen (2-3 days), then Odense (H.C. Andersen's birthplace), the LEGO House in Billund, and optionally Aarhus (the ARoS art museum). Budget ~€100-130/day. Web check (2026-08): there's no direct train from Copenhagen to Billund — plan a Flixbus or a train+bus combination instead; the LEGO House uses timed-slot tickets, so book ahead rather than assuming walk-up entry.",
       transport_to_next: 'End of this route — fly home from Copenhagen, or from Billund Airport if the schedule works out better from there.',
@@ -21706,9 +21797,9 @@ function rbBuildHelsinkiLakeDistrictRoute() {
       code: 'FI', name: 'Finland', days: 6, budget: 525, lat: 60.1699, lng: 24.9384,
       destinations: [
         { name: 'Helsinki (Senate Square)', lat: 60.1699, lng: 24.9384, notes: "Engel's neoclassical ensemble around the square is capped by Helsinki Cathedral's dramatic white staircase, the city's most photographed viewpoint; climb the steps for the view back over the square, best in the low afternoon light." },
-        { name: 'Lahti', lat: 60.9827, lng: 25.6612 },
-        { name: 'Savonlinna (Olavinlinna Castle)', lat: 61.8681, lng: 28.8783 },
-        { name: 'Lake Saimaa', lat: 61.6167, lng: 28.3833 },
+        { name: 'Lahti', lat: 60.9827, lng: 25.6612 , notes: 'A Finnish lake-district city known as a winter sports hub, having hosted the Nordic Ski World Championships multiple times; its ski jump towers are visible across much of the city and double as a summer viewing platform.' },
+        { name: 'Savonlinna (Olavinlinna Castle)', lat: 61.8681, lng: 28.8783 , notes: 'A lakeside town built around Olavinlinna, a well-preserved 15th-century castle on a small island, which hosts an internationally known opera festival each July; the town sits amid Finland\'s Lake Saimaa district.' },
+        { name: 'Lake Saimaa', lat: 61.6167, lng: 28.3833 , notes: 'Finland\'s largest lake and one of the largest in Europe, a sprawling maze of islands and channels; also home to the Saimaa ringed seal, one of the world\'s most endangered seal species, found nowhere else.' },
       ],
       notes: "The differentiator versus Helsinki alone: adds Lahti/Savonlinna and Lake Saimaa. Helsinki, then Lahti/Savonlinna, Lake Saimaa, sauna and kayaking. Budget ~€80-95/day — the rental car or train plus lake activities push this above a plain city trip. Season: June-August is best for swimming and the white nights; Savonlinna's Olavinlinna Castle hosts an opera festival in July, when prices run higher. Web check (2026-08): VR train connections to the smaller lake-district towns are limited, so a rental car is often needed to actually reach Lake Saimaa's more remote spots.",
       transport_to_next: 'End of this route — fly home from Helsinki.',
@@ -21750,7 +21841,7 @@ function rbBuildFinnishLaplandRoute() {
     {
       code: 'FI', name: 'Finland', days: 9, budget: 1080, lat: 66.5433, lng: 25.8464,
       destinations: [
-        { name: 'Rovaniemi (Santa Claus Village)', lat: 66.5636, lng: 25.8471 },
+        { name: 'Rovaniemi (Santa Claus Village)', lat: 66.5636, lng: 25.8471 , notes: 'Marketed as the official hometown of Santa Claus, straddling the Arctic Circle line (marked underfoot at the village); a popular year-round Christmas-themed stop, with reindeer and husky sledding available seasonally and genuine aurora-viewing chances in winter.' },
         { name: 'Levi (Kittilä)', lat: 67.8049, lng: 24.8090 },
         { name: 'Ylläs (Äkäslompolo)', lat: 67.5667, lng: 24.2333 },
       ],
@@ -21772,9 +21863,9 @@ function rbBuildFinlandRoadtripRoute() {
       code: 'FI', name: 'Finland', days: 12, budget: 1110, lat: 60.1699, lng: 24.9384,
       destinations: [
         { name: 'Helsinki (Senate Square)', lat: 60.1699, lng: 24.9384, notes: "Engel's neoclassical ensemble around the square is capped by Helsinki Cathedral's dramatic white staircase, the city's most photographed viewpoint; climb the steps for the view back over the square, best in the low afternoon light." },
-        { name: 'Turku', lat: 60.4518, lng: 22.2666 },
+        { name: 'Turku', lat: 60.4518, lng: 22.2666 , notes: 'Finland\'s oldest city and former capital, at the mouth of the Aura river; beyond Turku Castle and Cathedral, the riverside is lined with museum ships and a lively summer café/boat-restaurant scene.' },
         { name: 'Tampere', lat: 61.4978, lng: 23.7610 , notes: 'Finland\'s third-largest city, built between two lakes and shaped by its industrial-era textile mills, several now converted into museums, shops and event spaces (the Finlayson and Tampella complexes); also home to the Moomin Museum, one of the world\'s few dedicated to the Moomin characters created by Finnish author Tove Jansson.' },
-        { name: 'Rovaniemi (Santa Claus Village)', lat: 66.5636, lng: 25.8471 },
+        { name: 'Rovaniemi (Santa Claus Village)', lat: 66.5636, lng: 25.8471 , notes: 'Marketed as the official hometown of Santa Claus, straddling the Arctic Circle line (marked underfoot at the village); a popular year-round Christmas-themed stop, with reindeer and husky sledding available seasonally and genuine aurora-viewing chances in winter.' },
       ],
       notes: "Helsinki, through South Finland, up into a Lapland loop — Helsinki-Turku-Tampere-Rovaniemi. Budget ~€85-100/day on average (car/fuel plus a mix of city and nature). Season: June-August, to cover the whole route without snow problems on the roads up north. Web check (2026-08): the distances are long (Helsinki-Rovaniemi is roughly 830km) — consider the VR night train with car transport instead of driving the whole way yourself.",
       transport_to_next: 'End of this route — fly home from Rovaniemi, or take the VR night train (with the car) back to Helsinki before flying home.',
@@ -21840,7 +21931,7 @@ function rbBuildFaroeIslandsShortRoute() {
       code: 'FO', name: 'Faroe Islands', days: 6, budget: 660, lat: 62.0079, lng: -6.7716,
       destinations: [
         { name: 'Tórshavn', lat: 62.0079, lng: -6.7716, notes: "The Faroese capital is compact enough to see on foot in half a day, centered on Tinganes, the turf-roofed peninsula that has hosted the islands' parliament since Viking times." },
-        { name: 'Múlafossur / Gásadalur', lat: 62.1064, lng: -7.6153 },
+        { name: 'Múlafossur / Gásadalur', lat: 62.1064, lng: -7.6153 , notes: 'One of the Faroe Islands\' most photographed sights: a waterfall dropping directly off a cliff into the sea beside the tiny village of Gásadalur, which was only connected to the rest of the islands by a road tunnel in 2004 — before that, reachable only on foot over the mountains or by helicopter.' },
         { name: 'Saksun', lat: 62.2872, lng: -7.2119, notes: "Tiny hamlet around a turf-roofed church overlooking Pollurin, a tidal lagoon that was once a harbor before a storm sealed it off with sand. The final approach crosses private farmland, so park at the village and be prepared for a posted access/parking fee." },
         { name: 'Vestmanna bird cliffs boat tour', lat: 62.1546, lng: -7.1698 , notes: 'Sheer sea cliffs and sea caves reachable only by boat, with puffins nesting roughly April-August. Book the ~2hr boat tour in advance in summer and pick a calm-sea day — it\'s cancelled in rough weather.' },
       ],
@@ -22057,10 +22148,10 @@ function rbBuildDublinRoute() {
     {
       code: 'IE', name: 'Ireland', days: 4, budget: 352, lat: 53.3498, lng: -6.2603,
       destinations: [
-        { name: 'Trinity College / Book of Kells', lat: 53.3438, lng: -6.2546 },
-        { name: 'Guinness Storehouse', lat: 53.3419, lng: -6.2867 },
-        { name: 'Temple Bar', lat: 53.3453, lng: -6.2635 },
-        { name: 'Wicklow Mountains / Glendalough (day trip)', lat: 53.0092, lng: -6.3283 },
+        { name: 'Trinity College / Book of Kells', lat: 53.3438, lng: -6.2546 , notes: 'Ireland\'s oldest university, home to the Book of Kells, an elaborately illuminated 9th-century gospel manuscript displayed in the Old Library, whose Long Room — lined with 200,000 antique books beneath a barrel-vaulted ceiling — is often the more memorable part of the visit.' },
+        { name: 'Guinness Storehouse', lat: 53.3419, lng: -6.2867 , notes: 'A multi-floor visitor experience built around Guinness\'s original brewery site, tracing the beer\'s history and brewing process, topped by the Gravity Bar with a 360-degree view over Dublin — where every ticket includes a pint.' },
+        { name: 'Temple Bar', lat: 53.3453, lng: -6.2635 , notes: 'Dublin\'s best-known nightlife district, a cluster of pubs and cobbled lanes on the south bank of the Liffey; touristy and pricier than elsewhere in the city, but still the classic first stop for live traditional Irish music.' },
+        { name: 'Wicklow Mountains / Glendalough (day trip)', lat: 53.0092, lng: -6.3283 , notes: 'A mountainous day-trip area just south of Dublin; Glendalough is a monastic settlement founded in the 6th century, set beside two lakes in a glacial valley, with a well-preserved round tower among its ruins.' },
       ],
       notes: "Trinity College and the Book of Kells (2 days), the Guinness Storehouse, Temple Bar, and a day trip to the Wicklow Mountains/Glendalough. Budget ~€80-95/day. Season: year-round, May-September for the best weather; expect extra crowds and security in Dublin in the second half of 2026 due to Ireland's EU Council presidency (July-December 2026). Web check (2026-08): the Book of Kells needs a pre-booked timed-entry ticket (€21.50-25 pp) — the Long Room is currently partly empty due to restoration work, open until 2027. The Guinness Storehouse should also be pre-booked (~€30-45).",
       transport_to_next: 'End of this route — fly home from Dublin.',
@@ -22080,9 +22171,9 @@ function rbBuildWestIrelandRoute() {
       code: 'IE', name: 'Ireland', days: 6, budget: 468, lat: 53.2707, lng: -9.0568,
       destinations: [
         { name: 'Galway', lat: 53.2707, lng: -9.0568, notes: "A compact, walkable small city built around the Latin Quarter's live trad-music pubs and the Galway Bay waterfront — better explored on foot than by car, and a natural base for day trips into Connemara or out to the Aran Islands." },
-        { name: 'Connemara National Park / Kylemore Abbey (day trip)', lat: 53.5478, lng: -9.8180 },
-        { name: 'Cliffs of Moher / Doolin', lat: 52.9715, lng: -9.4309 },
-        { name: 'Aran Islands (optional)', lat: 53.1224, lng: -9.6717 },
+        { name: 'Connemara National Park / Kylemore Abbey (day trip)', lat: 53.5478, lng: -9.8180 , notes: 'Connemara\'s park protects a landscape of bog, heath and the Twelve Bens mountain range; nearby Kylemore Abbey, a 19th-century Gothic Revival castle turned Benedictine convent, sits dramatically beside a lake at the base of the mountains.' },
+        { name: 'Cliffs of Moher / Doolin', lat: 52.9715, lng: -9.4309 , notes: 'Ireland\'s most-visited natural attraction, sea cliffs rising up to 214m above the Atlantic; Doolin nearby is a small village known as a traditional Irish music hub and the main ferry departure point for the Aran Islands.' },
+        { name: 'Aran Islands (optional)', lat: 53.1224, lng: -9.6717 , notes: 'Three islands off County Galway (Inishmore the largest and most visited) where Irish is still the everyday language for many residents; Inishmore\'s Dún Aonghasa, a prehistoric stone fort perched right on a sheer cliff edge, is the standout sight.' },
       ],
       notes: "Galway (2 days), a day trip to Connemara National Park/Kylemore Abbey, then the Cliffs of Moher/Doolin (2-3 days) with an optional Aran Islands add-on — deliberately compact, just Galway/Connemara/the Cliffs, unlike the broader roadtrip items below that also cover the east coast/Ring of Kerry. Budget ~€70-85/day including a rental car. Season: May-June/September optimal. Web check (2026-08): the Cliffs of Moher visitor centre runs ~€10-12 pp including parking, but there's a free walking route from Doolin/Liscannor that stays outside the paid centre.",
       transport_to_next: 'End of this route — fly home from Shannon or drive back to Dublin.',
@@ -22176,10 +22267,10 @@ function rbBuildEdinburghRoute() {
     {
       code: 'GB', name: 'United Kingdom', days: 4, budget: 360, lat: 55.9533, lng: -3.1883,
       destinations: [
-        { name: 'Old Town / Royal Mile', lat: 55.9500, lng: -3.1900 },
-        { name: 'Edinburgh Castle', lat: 55.9486, lng: -3.1999 },
-        { name: "Arthur's Seat", lat: 55.9445, lng: -3.1615 },
-        { name: 'Stirling Castle (day trip)', lat: 56.1233, lng: -3.9475 },
+        { name: 'Old Town / Royal Mile', lat: 55.9500, lng: -3.1900 , notes: 'Edinburgh\'s medieval spine, running from the castle down to Holyrood Palace, lined with closes (narrow alleys) leading to hidden courtyards; especially lively each August during the Fringe Festival, the world\'s largest arts festival.' },
+        { name: 'Edinburgh Castle', lat: 55.9486, lng: -3.1999 , notes: 'A fortress perched on an extinct volcanic plug dominating the city skyline, home to the Scottish Crown Jewels and the Stone of Scone, used in British monarch coronations; the One O\'Clock Gun still fires daily except Sundays, a tradition dating to 1861.' },
+        { name: "Arthur's Seat", lat: 55.9445, lng: -3.1615 , notes: 'An extinct volcano rising above the city, with an accessible summit hike (roughly 1-2 hours round trip) giving panoramic views over Edinburgh and out to the Firth of Forth; one of the best free things to do in the city.' },
+        { name: 'Stirling Castle (day trip)', lat: 56.1233, lng: -3.9475 , notes: 'A royal castle strategically overlooking the historic route between Highlands and Lowlands, site of key battles including Bannockburn nearby; often paired with the National Wallace Monument tower, visible from the castle grounds, commemorating William Wallace.' },
       ],
       notes: "Old Town/the Royal Mile, Edinburgh Castle, a walk up Arthur's Seat, and a day trip to Stirling Castle or Loch Lomond. Budget ~€80-100/day. Season: May-September for the best weather; August is the Edinburgh Fringe Festival — dorm prices then run €35-55/night, book well ahead. Web check (2026-08): the Edinburgh Castle online ticket is £19.50 (~€22), cheaper than at the gate, and often sells out in summer — booking online is strongly recommended.",
       transport_to_next: 'End of this route — fly home from Edinburgh.',
@@ -22540,7 +22631,7 @@ function rbBuildEstoniaRoute() {
         { name: 'Tallinn (Old Town)', lat: 59.4370, lng: 24.7454, notes: "Beyond the main squares, climb Toompea Hill to the Kohtuotsa or Patkuli viewing platforms for the classic skyline shot over the medieval spires and city walls." },
         { name: 'Lahemaa National Park', lat: 59.4711, lng: 25.9106 , notes: 'Estonia\'s largest national park, a mix of bog, forest and coastline dotted with former Soviet-era border-guard watchtowers and old manor estates like Palmse and Sagadi; the Viru Bog boardwalk trail is the easiest short walk for a taste of the raised-bog landscape.' },
         { name: 'Kuressaare Castle (Saaremaa)', lat: 58.2481, lng: 22.4886 , notes: 'A remarkably intact 14th-century Livonian Order stone fortress on Saaremaa island, surrounded by a moat and star-shaped bastions; the car ferry from the mainland (book ahead in summer) is itself part of the trip out to Estonia\'s largest island.' },
-        { name: 'Muhu-Virtsu ferry link', lat: 58.5667, lng: 23.5167 },
+        { name: 'Muhu-Virtsu ferry link', lat: 58.5667, lng: 23.5167 , notes: 'The ferry crossing linking mainland Estonia (Virtsu) to Muhu island, the gateway to Saaremaa; a short, frequent crossing rather than a destination itself, but the standard route out to Estonia\'s western islands.' },
       ],
       notes: "Entry: fly into Tallinn from Amsterdam (direct or one-stop, airBaltic/Ryanair/Finnair depending on season). Tallinn's Old Town (2-3 days), then either Lahemaa National Park (1 day, forests and bog coastline east of Tallinn) or Saaremaa (2 days, Kuressaare Castle, reached via the Virtsu-Muhu ferry and the Muhu causeway) — pick one depending on available days. Budget ~€70-90/day. Season: May-September is best; Saaremaa/Muhu is strongly seasonal, with many restaurants and a more limited ferry schedule outside summer. New for 2026: Finnair is launching a Helsinki-Kuressaare route. Web check (2026-08): book car-ferry spots for the Tallinn-Saaremaa crossing well ahead for July/August. The Narva-Russia border crossing has been closed to vehicles since February 2024, extended through at least 31 August 2026 — not relevant unless considering Narva as a day trip (the town itself is safe and within Schengen). General safety note: watch for pickpocketing in Tallinn, Russian-plated vehicles are not allowed, and there is an LGBTIQ+ discrimination risk outside Tallinn/Tartu.",
       transport_to_next: 'End of this route — fly home from Tallinn.',
@@ -22800,7 +22891,7 @@ function rbBuildSaoMiguelRoute() {
         { name: 'Ponta Delgada (town, harbour)', lat: 37.7412, lng: -25.6756, notes: "The main town's charm is compact and walkable: the black-and-white basalt \"calçada\" streets, the 18th-century Portas da Cidade (city gates) marking the old harbour entrance, and the São Francisco convent/church cluster. Half a day covers the historic core on foot; most whale-watching boats and airport transfers also originate here, so it doubles as your logistics base rather than a standalone sight." },
         { name: 'Sete Cidades (crater lakes)', lat: 37.8656, lng: -25.7847, notes: "A single volcanic caldera holding two adjacent lakes of strikingly different color (the \"blue\" and \"green\" lakes), best appreciated from above rather than lakeside. Go to the Vista do Rei viewpoint in the morning before clouds roll in, since the caldera fills with mist by early afternoon on many days." },
         { name: 'Furnas (thermal springs, cozido)', lat: 37.7847, lng: -25.3208, notes: "Known for its hot springs and for cozido das Furnas, a meat-and-vegetable stew slow-cooked for hours in pots buried in the geothermally heated ground, traditionally ordered ahead so it's ready at lunchtime. Pair it with a soak in Terra Nostra Park's iron-orange thermal pool, which stains light swimwear so bring a dark/old suit." },
-        { name: 'Lagoa do Fogo', lat: 37.7683, lng: -25.4667 },
+        { name: 'Lagoa do Fogo', lat: 37.7683, lng: -25.4667 , notes: 'One of São Miguel\'s crater lakes, ringed by a nature reserve with strict access rules protecting the surrounding heathland; the viewpoint above the lake is one of the Azores\' most photographed spots, though the lake itself is often shrouded in cloud.' },
       ],
       notes: "Entry: Transavia flies direct seasonally from Amsterdam to Ponta Delgada; off-season needs a Lisbon connection on TAP. 2 days in Ponta Delgada town and harbour, 1-2 days at the Sete Cidades crater lakes, 2 days at Furnas for the thermal springs and cozido (a stew traditionally cooked underground in volcanic heat) — optionally add Lagoa do Fogo. A rental car is usually needed. Budget ~€75-90/day, a bit higher than mainland Portugal given the remote location. Season: May-September for the best weather, though the Azores stay changeable year-round — always pack rain gear; June-September for whale/dolphin watching. Web check (2026-08): book a rental car well ahead (limited supply, fills up fast in summer); reserve the Furnas cozido lunch ahead.",
       transport_to_next: 'End of this route — fly home from Ponta Delgada.',
@@ -22928,9 +23019,9 @@ function rbBuildGranCanariaRoute() {
       code: 'ES', name: 'Spain', days: 6, budget: 360, lat: 28.0083, lng: -15.5817,
       destinations: [
         { name: 'Las Palmas de Gran Canaria', lat: 28.1235, lng: -15.4366 , notes: 'Playa de Las Canteras is a genuinely excellent urban beach (one of Europe\'s best), right in the city — walk the promenade toward sunset. Vegueta old town is the separate, worthwhile half-day for the cathedral and Casa de Colón.' },
-        { name: 'Maspalomas dunes', lat: 27.7606, lng: -15.5875 },
+        { name: 'Maspalomas dunes', lat: 27.7606, lng: -15.5875 , notes: 'A stretch of Saharan-style sand dunes on Gran Canaria\'s south coast, protected as a nature reserve, with an adjoining palm oasis and lighthouse; camel rides across the dunes are a popular, if touristy, way to see them.' },
         { name: 'Roque Nublo', lat: 27.9600, lng: -15.5719 , notes: 'The iconic volcanic monolith and symbol of Gran Canaria, set in the mountainous interior. It\'s a straightforward ~1hr-each-way walk from the La Goriona parking area; go early morning both for cooler temps and because clouds frequently move in by midday and obscure the rock.' },
-        { name: 'Tejeda', lat: 27.9908, lng: -15.6144 },
+        { name: 'Tejeda', lat: 27.9908, lng: -15.6144 , notes: 'A mountain village near Gran Canaria\'s geographic center, overlooked by Roque Nublo and Roque Bentayga, two dramatic volcanic rock formations; known for producing bienmesabe, a local almond-based dessert.' },
       ],
       notes: "Entry: easyJet and Transavia fly direct from Amsterdam/Rotterdam to Gran Canaria; TUI fly runs winter-sun charters. 2 days in Las Palmas, 2 days on the Maspalomas dunes in the south, then 1-2 days up in the mountainous interior around Roque Nublo and Tejeda. Budget ~€50-70/day. Season: good year-round; the mountains are most pleasant October-April. Web check (2026-08): no permits needed anywhere on this route; the Roque Nublo parking area fills up early on weekends, so start early; the Maspalomas dunes are a protected nature reserve — stay on the marked paths. Same IGIC-vs-mainland-IVA price advantage on electronics/alcohol/tobacco/perfume as elsewhere in the Canaries (~7% vs 21%). Ongoing peaceful overtourism protests (\"Canarias tiene un límite\") since April 2024, continuing into 2025 — no direct safety concern, respectful behavior advised.",
       transport_to_next: 'End of this route — fly home from Gran Canaria.',
@@ -23012,7 +23103,7 @@ function rbBuildGranCanariaTenerifeRoute() {
       code: 'ES', name: 'Spain', days: 4, budget: 260, lat: 28.0083, lng: -15.5817,
       destinations: [
         { name: 'Las Palmas de Gran Canaria', lat: 28.1235, lng: -15.4366 , notes: 'Playa de Las Canteras is a genuinely excellent urban beach (one of Europe\'s best), right in the city — walk the promenade toward sunset. Vegueta old town is the separate, worthwhile half-day for the cathedral and Casa de Colón.' },
-        { name: 'Maspalomas dunes', lat: 27.7606, lng: -15.5875 },
+        { name: 'Maspalomas dunes', lat: 27.7606, lng: -15.5875 , notes: 'A stretch of Saharan-style sand dunes on Gran Canaria\'s south coast, protected as a nature reserve, with an adjoining palm oasis and lighthouse; camel rides across the dunes are a popular, if touristy, way to see them.' },
       ],
       notes: "Entry: easyJet and Transavia fly direct from Amsterdam/Rotterdam to Gran Canaria. 4-5 days: Las Palmas plus the Maspalomas dunes. Budget ~€55-75/day.",
       transport_to_next: "Ferry Las Palmas-Santa Cruz de Tenerife (~2-2.5h, Fred Olsen Express/Naviera Armas) or a Binter Canarias flight (~35 min) — the flight is often similarly priced and much faster. Web check (2026-08): compare both before booking.",
@@ -23086,10 +23177,10 @@ function rbBuildMenorcaRoute() {
     {
       code: 'ES', name: 'Spain', days: 5, budget: 400, lat: 39.9496, lng: 4.0523,
       destinations: [
-        { name: 'Mahón (Camí de Cavalls coastal path)', lat: 39.8885, lng: 4.2658 },
+        { name: 'Mahón (Camí de Cavalls coastal path)', lat: 39.8885, lng: 4.2658 , notes: 'Menorca\'s capital, built around one of the Mediterranean\'s largest natural harbors; the Camí de Cavalls is a historic horse-patrol path circling the entire island\'s coastline, now open to hikers and cyclists in sections.' },
         { name: 'Ciutadella', lat: 40.0000, lng: 3.8388, notes: "Menorca's former capital has an elegant, arcaded old-town street (Ses Voltes) wrapped around a small working fishing harbor lined with restaurants - more intimate and less built-up than Mahón. If visiting in late June, the Sant Joan festival's horse-rearing ritual takes over the old town; book accommodation months ahead if timing overlaps." },
-        { name: 'Cala Macarelleta', lat: 39.9394, lng: 3.8763 },
-        { name: 'Cala Turqueta', lat: 39.9330, lng: 3.8397 },
+        { name: 'Cala Macarelleta', lat: 39.9394, lng: 3.8763 , notes: 'A small, sheltered cove reached only on foot from its larger neighbor Cala Macarella, with turquoise water backed by pine-covered cliffs; arrive early, as its small size means it fills up quickly in summer.' },
+        { name: 'Cala Turqueta', lat: 39.9330, lng: 3.8397 , notes: 'A crescent white-sand beach on Menorca\'s south coast, backed by pine forest, with shallow, calm turquoise water reflecting its name; a short walk from the parking area, with capacity limits enforced in peak season.' },
       ],
       notes: "Entry: direct flights from the Netherlands to Mahón (MAH) are limited/seasonal, so a connection via Palma or Barcelona is often needed — check both options. 2 days in Mahón including a stretch of the Camí de Cavalls coastal path, 2 days in Ciutadella, plus a beach day at Cala Macarelleta/Cala Turqueta. A rental car is worth it — Menorca is quieter and less built-up than Ibiza/Mallorca, and the beaches are spread out. Budget ~€70-90/day. Season: May-June or September combine calm and good weather best; July-August is expensive and Ciutadella's harbour area gets crowded. Web check (2026-08): the Balearic eco-tax applies (see general note below).",
       transport_to_next: 'End of this route — fly home, likely via Palma or Barcelona.',
@@ -23372,8 +23463,8 @@ function rbBuildSicilyAeolianIslandsRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 70, lat: 38.2205, lng: 15.2406,
       destinations: [
-        { name: 'Milazzo (ferry port)', lat: 38.2205, lng: 15.2406 },
-        { name: 'Lipari', lat: 38.4667, lng: 14.9500 },
+        { name: 'Milazzo (ferry port)', lat: 38.2205, lng: 15.2406 , notes: 'A Sicilian port town, mainly the departure point for ferries and hydrofoils to the Aeolian Islands; its own old town and hilltop castle are worth a stop while waiting for a connection.' },
+        { name: 'Lipari', lat: 38.4667, lng: 14.9500 , notes: 'The largest and most developed of the Aeolian Islands, with a hilltop citadel holding an archaeological museum covering the islands\' volcanic and settlement history back to prehistoric times; pumice quarrying was historically a major local industry.' },
       ],
       notes: "Entry: fly into Catania (direct AMS-Catania, Transavia/Ryanair/KLM, ~2h50-3h20) then drive to the ferry port of Milazzo for the crossing to the Aeolian Islands. Lipari (1 day). Budget ~€65-85/day average across the route — the ferry costs and the guided Stromboli tour push this above the other short Sicily/Sardinia trips in this batch (used here at ~€70-85/day). ⚠️ Web check (2026-08): no cars or scooters may be taken on the ferry to the islands May-October for non-residents, and there's no Cinque-Terre-style permit/cap system on the ferries themselves.",
       transport_to_next: 'Short inter-island ferry hop to Vulcano.',
@@ -23381,7 +23472,7 @@ function rbBuildSicilyAeolianIslandsRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 75, lat: 38.4048, lng: 14.9622,
       destinations: [
-        { name: 'Vulcano (mud baths)', lat: 38.4048, lng: 14.9622 },
+        { name: 'Vulcano (mud baths)', lat: 38.4048, lng: 14.9622 , notes: 'The Aeolian island closest to Sicily, known for sulfurous mud pools said to have therapeutic properties (expect a strong smell) and a moderate hike up to its still-active crater rim for views across the archipelago.' },
       ],
       notes: 'Vulcano and its mud baths (1 day). Season: May-September; the smaller inter-island ferries to Alicudi, Filicudi and Panarea run a limited or no service November-March, so this route only really works in the warmer half of the year.',
       transport_to_next: 'Ferry on to Stromboli.',
@@ -23389,7 +23480,7 @@ function rbBuildSicilyAeolianIslandsRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 170, lat: 38.7891, lng: 15.2133,
       destinations: [
-        { name: 'Stromboli', lat: 38.7891, lng: 15.2133 },
+        { name: 'Stromboli', lat: 38.7891, lng: 15.2133 , notes: 'One of the world\'s most continuously active volcanoes, erupting in small, predictable bursts roughly every 10-20 minutes for millennia — visible after dark on evening boat trips offshore, or from a guided hike partway up the slope.' },
       ],
       notes: "Stromboli, including its evening crater trek (2 days, allowing for the guided hike plus a buffer for sailing/weather). ⚠️⚠️ Web check (2026-08): the crater hike is only permitted with a licensed guide (e.g. Magmatrek) — this is not optional. Current alert level is yellow (2/4), and the exclusion zone around the crater changes with ongoing activity — check daily via Protezione Civile rather than relying on a fixed map. This sits inside the same volcanic-risk note that Italy's official (green) travel advisory calls out by name for Etna and Stromboli specifically — check Protezione Civile before travel, not just the general country advisory.",
       transport_to_next: 'End of this route — ferry back to Milazzo, then return flight from Catania to Amsterdam.',
@@ -24953,7 +25044,7 @@ function rbBuildDenmarkSwedenNorwayOverlandRoute() {
       code: 'NO', name: 'Norway', days: 4, budget: 600, lat: 59.9139, lng: 10.7522,
       destinations: [
         { name: 'Oslo (Karl Johans gate)', lat: 59.9139, lng: 10.7522 , notes: 'Oslo\'s main boulevard, running from the Royal Palace down to the central train station past the Parliament building; a straightforward walking spine linking most of the city\'s central sights.' },
-        { name: 'Flåm (optional day trip, 14-day version)', lat: 60.8617, lng: 7.1136 },
+        { name: 'Flåm (optional day trip, 14-day version)', lat: 60.8617, lng: 7.1136 , notes: 'The Flåm Railway (Flåmsbana) is one of the world\'s steepest standard-gauge railways, dropping 866m over 20km with a scheduled photo-stop at Kjosfossen waterfall. Book seats ahead in peak summer and sit on the right side going down from Myrdal to Flåm for the best waterfall/valley views.' },
       ],
       notes: "Oslo (4 days) — same content as Oslo (5 days) 🏛️ (rbBuildOsloRoute), one day shorter here. With the full 14 days (the top of this route's 10-14 day range) there's room for an optional Flåm day trip (a long day, or better an overnight) before flying home. Budget ~€150/day.",
       transport_to_next: 'End of this route — fly home from Oslo.',

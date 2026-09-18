@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 653 / 741 signatures.**
+- **Done so far: 685 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -305,9 +305,9 @@ Sorted alphabetically by country code.
 - [x] **CZ** (3 dest): Prague, Český Krumlov, Bohemian Paradise (Turnov) — routes: Central European Grand Roadtrip 🚗
 - [x] **CZ** (2 dest): Prague, Český Krumlov — routes: Czechia + Austria (9 days) 🏔️
 - [x] **CZ** (2 dest): Staré Město / Prague Castle, Český Krumlov — routes: Czechia + Austria + Hungary (10-14 days) 🏛️
-- [ ] **CZ** (4 dest): Prague, Karlovy Vary, Český Krumlov, Brno / Moravia wine region — routes: Czechia Roadtrip (6 days) 🛣️
+- [x] **CZ** (4 dest): Prague, Karlovy Vary, Český Krumlov, Brno / Moravia wine region — routes: Czechia Roadtrip (6 days) 🛣️
 - [ ] **CZ** (3 dest): Brno, Mikulov wine region, Znojmo wine region — routes: Moravia: Brno + Wine Region (5 days) 🍇
-- [ ] **CZ** (4 dest): Staré Město (Old Town Square), Malá Strana, Prague Castle, Vyšehrad — routes: Prague (4 days) 🏰
+- [x] **CZ** (4 dest): Staré Město (Old Town Square), Malá Strana, Prague Castle, Vyšehrad — routes: Prague (4 days) 🏰
 - [ ] **CZ** (3 dest): Staré Město / Prague Castle, Karlovy Vary (optional stopover), Český Krumlov — routes: Prague + Bohemia (5 days) 🏘️
 - [x] **DE** (4 dest): Munich, Garmisch-Partenkirchen, Füssen, Hohenschwangau (Neuschwanstein) — routes: Bavaria + Alps + Berchtesgaden (6 days) ⛰️
 - [x] **DE** (4 dest): Munich (Marienplatz, Englischer Garten, Deutsches Museum), Garmisch-Partenkirchen, Füssen, Hohenschwangau (Neuschwanstein) — routes: Bavaria: Munich + Alps (5 days) 🥨
@@ -328,14 +328,14 @@ Sorted alphabetically by country code.
 - [x] **DE** (3 dest): Cochem, Bernkastel-Kues, Trier — routes: Rhine + Moselle (5 days) 🚤
 - [x] **DE** (5 dest): Würzburg, Rothenburg ob der Tauber, Nördlingen, Augsburg, Füssen — routes: Romantic Road (6 days) 🏰
 - [x] **DK** (5 dest): Nyhavn, Tivoli Gardens, Strøget, Christiania, Rosenborg Castle — routes: Copenhagen (4 days) 🧜‍♀️
-- [ ] **DK** (4 dest): Copenhagen (Nyhavn), Roskilde (Viking Ship Museum), Louisiana Museum (Humlebæk), Møns Klint — routes: Copenhagen + Zealand (5 days) 🖼️
-- [ ] **DK** (4 dest): Copenhagen (Nyhavn), Odense (H.C. Andersen House), LEGO House (Billund), Aarhus (ARoS Art Museum) — routes: Denmark (6 days) 🧱
+- [x] **DK** (4 dest): Copenhagen (Nyhavn), Roskilde (Viking Ship Museum), Louisiana Museum (Humlebæk), Møns Klint — routes: Copenhagen + Zealand (5 days) 🖼️
+- [x] **DK** (4 dest): Copenhagen (Nyhavn), Odense (H.C. Andersen House), LEGO House (Billund), Aarhus (ARoS Art Museum) — routes: Denmark (6 days) 🧱
 - [x] **DK** (3 dest): Copenhagen (Nyhavn), Roskilde (Viking Ship Museum), Louisiana Museum (Humlebæk) — routes: Denmark + South Sweden (9 days) 🌉
 - [x] **DK** (2 dest): Copenhagen (Nyhavn), Tivoli Gardens — routes: Denmark + Sweden + Norway Overland (12 days) 🌉
 - [x] **DK** (4 dest): Nyhavn, Tivoli Gardens, Christiania, Torvehallerne — routes: Nordic Arctic Expedition ❄️
 - [x] **DK** (1 dest): Copenhagen (Nyhavn) — routes: Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️
 - [x] **EE** (3 dest): Tallinn (Old Town), Lahemaa National Park, Kuressaare Castle (Saaremaa) — routes: Baltic States Roadtrip (10-14 days) 🚗
-- [ ] **EE** (4 dest): Tallinn (Old Town), Lahemaa National Park, Kuressaare Castle (Saaremaa), Muhu-Virtsu ferry link — routes: Estonia (5-7 days) 🏰
+- [x] **EE** (4 dest): Tallinn (Old Town), Lahemaa National Park, Kuressaare Castle (Saaremaa), Muhu-Virtsu ferry link — routes: Estonia (5-7 days) 🏰
 - [x] **ES** (7 dest): Málaga (fly in), Ronda, Cádiz, Jerez de la Frontera, Seville, Córdoba, Granada — routes: Andalusia Roadtrip (9 days) 🚗
 - [x] **ES** (2 dest): Seville (Alcázar & Cathedral), Granada (Alhambra) — routes: Andalusia: Seville + Granada (5 days) 🏰
 - [x] **ES** (7 dest): La Seu d'Urgell (cathedral), Cerdanya / Puigcerdà, Vielha (Val d'Aran), Port de la Bonaigua (pass), Boí (Aigüestortes NP shuttle), Espot (Aigüestortes NP shuttle), Ripoll — routes: Andorra + Spanish Pyrenees: Grand Circuit (9 days) 🏔️
@@ -350,14 +350,14 @@ Sorted alphabetically by country code.
 - [x] **ES** (3 dest): Torla, Ordesa y Monte Perdido National Park, Aínsa (optional) — routes: French + Spanish Pyrenees (9 days) 🥖
 - [x] **ES** (7 dest): Santiago de Compostela (Praza do Obradoiro), Pontevedra (Rías Baixas), Combarro, O Grove, Vigo, Cíes Islands, A Coruña (optional) — routes: Galicia: Santiago de Compostela + Coast (6 days) 🐚
 - [x] **ES** (5 dest): Málaga (fly in), Marbella / Puerto Banús, Estepona, La Línea de la Concepción, Ronda (optional, added at 4 days) — routes: Gibraltar + Andalusia: Costa del Sol (4 days) 🐒
-- [ ] **ES** (4 dest): Las Palmas de Gran Canaria, Maspalomas dunes, Roque Nublo, Tejeda — routes: Gran Canaria (5-7 days) 🏝️
-- [ ] **ES** (2 dest): Las Palmas de Gran Canaria, Maspalomas dunes — routes: Gran Canaria + Tenerife (7-10 days) 🏝️
+- [x] **ES** (4 dest): Las Palmas de Gran Canaria, Maspalomas dunes, Roque Nublo, Tejeda — routes: Gran Canaria (5-7 days) 🏝️
+- [x] **ES** (2 dest): Las Palmas de Gran Canaria, Maspalomas dunes — routes: Gran Canaria + Tenerife (7-10 days) 🏝️
 - [ ] **ES** (3 dest): Ibiza Town / Dalt Vila (UNESCO old town), Sant Joan de Labritja, Portinatx — routes: Ibiza (4-5 days) 🏝️
 - [x] **ES** (3 dest): Timanfaya National Park (Islote de Hilario), Arrecife, Costa Teguise — routes: Lanzarote + Fuerteventura (5-7 days) 🏝️
 - [x] **ES** (2 dest): Corralejo, El Cotillo — routes: Lanzarote + Fuerteventura (5-7 days) 🏝️
 - [x] **ES** (6 dest): Madrid (Prado Museum), Retiro Park, Puerta del Sol, Gran Vía, Toledo (day trip), Segovia (day trip) — routes: Madrid (4 days) 🖼️
 - [x] **ES** (5 dest): Palma (base), Valldemossa, Deià, Sóller, Cap de Formentor — routes: Mallorca: Serra de Tramuntana Loop (6 days) 🏔️
-- [ ] **ES** (4 dest): Mahón (Camí de Cavalls coastal path), Ciutadella, Cala Macarelleta, Cala Turqueta — routes: Menorca (4-5 days) 🏝️
+- [x] **ES** (4 dest): Mahón (Camí de Cavalls coastal path), Ciutadella, Cala Macarelleta, Cala Turqueta — routes: Menorca (4-5 days) 🏝️
 - [ ] **ES** (3 dest): Santiago de Compostela (Praza do Obradoiro), Pontevedra / Combarro (Rías Baixas day trip), Cíes Islands (optional) — routes: Northern Portugal + Galicia (7-10 days) 🌊
 - [x] **ES** (11 dest): San Sebastián, Bilbao, Santander, Santillana del Mar, Comillas, Picos de Europa (Potes), Fuente Dé (cable car), Oviedo, Gijón, Santiago de Compostela, Cíes Islands (optional) — routes: Northern Spain Roadtrip (12 days) 🛣️
 - [x] **ES** (6 dest): San Sebastián, Vitoria-Gasteiz, Elciego (Rioja Alavesa), Haro (Rioja Alavesa), Pamplona, Bilbao — routes: Northern Spain: Basque Interior + Rioja (9 days) 🍷
@@ -370,14 +370,14 @@ Sorted alphabetically by country code.
 - [x] **ES** (3 dest): Santa Cruz de Tenerife, Teide National Park, Los Cristianos — routes: Tenerife + La Gomera (7-10 days) 🏝️
 - [x] **ES** (4 dest): San Sebastián de la Gomera, Garajonay National Park, Valle Gran Rey, Agulo — routes: Tenerife + La Gomera (7-10 days) 🏝️
 - [x] **ES** (6 dest): Valencia (Ciutat Vella), City of Arts and Sciences, Albufera, Alicante (Castillo de Santa Bárbara), Peñíscola (optional, north of Valencia), Calpe (optional) — routes: Valencia + Costa Blanca (6 days) 🎆
-- [ ] **FI** (4 dest): Helsinki (Senate Square), Turku, Tampere, Rovaniemi (Santa Claus Village) — routes: Finland Roadtrip (12 days) 🛣️
+- [x] **FI** (4 dest): Helsinki (Senate Square), Turku, Tampere, Rovaniemi (Santa Claus Village) — routes: Finland Roadtrip (12 days) 🛣️
 - [ ] **FI** (3 dest): Rovaniemi (Santa Claus Village), Levi (Kittilä), Ylläs (Äkäslompolo) — routes: Finnish Lapland (9 days) 🎅
 - [ ] **FI** (3 dest): Helsinki (Senate Square), Suomenlinna, Design District — routes: Helsinki (4 days) 🏛️
-- [ ] **FI** (4 dest): Helsinki (Senate Square), Lahti, Savonlinna (Olavinlinna Castle), Lake Saimaa — routes: Helsinki + Lake District (6 days) 🛶
+- [x] **FI** (4 dest): Helsinki (Senate Square), Lahti, Savonlinna (Olavinlinna Castle), Lake Saimaa — routes: Helsinki + Lake District (6 days) 🛶
 - [x] **FI** (2 dest): Helsinki (Senate Square), Suomenlinna — routes: Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️
 - [x] **FI** (5 dest): Helsinki (Senate Square), Turku Castle, Turku Cathedral, Porvoo, Tampere — routes: South Finland (9 days) 🧭
 - [ ] **FI** (2 dest): Mariehamn, Sund (Kastelholm Castle) — routes: Åland (5 days) 🚲
-- [ ] **FO** (4 dest): Tórshavn, Múlafossur / Gásadalur, Saksun, Vestmanna bird cliffs boat tour — routes: Faroe Islands (6 days) 🐦
+- [x] **FO** (4 dest): Tórshavn, Múlafossur / Gásadalur, Saksun, Vestmanna bird cliffs boat tour — routes: Faroe Islands (6 days) 🐦
 - [x] **FO** (2 dest): Tórshavn, Vestmanna bird cliffs boat tour — routes: Faroe Islands + Iceland (9 days) ⛴️
 - [x] **FO** (5 dest): Tórshavn, Saksun, Gjógv, Vestmanna Cliffs, Trælanípa & Lake Sørvágsvatn hike — routes: Nordic Arctic Expedition ❄️
 - [x] **FR** (1 dest): Chamonix (Mont Blanc) — routes: Alpine Roadtrip (14 days) 🏕️
@@ -419,7 +419,7 @@ Sorted alphabetically by country code.
 - [x] **FR** (2 dest): Arles, Camargue / Saintes-Maries-de-la-Mer — routes: South of France: Provence to Côte d'Azur (9 days) 🕶️
 - [x] **FR** (2 dest): Antibes or Villefranche-sur-Mer (base — more authentic/less party-resort than Cannes), Nice (city anchor) — routes: South of France: Provence to Côte d'Azur (9 days) 🕶️
 - [x] **GB** (6 dest): Bath (Roman Baths), Bourton-on-the-Water, Bibury, Stonehenge, Bristol (optional add-on), Cornwall coast (optional extension) — routes: Cotswolds + Bath + Southwest England (5-7 days) 🛁
-- [ ] **GB** (4 dest): Old Town / Royal Mile, Edinburgh Castle, Arthur's Seat, Stirling Castle (day trip) — routes: Edinburgh (3-4 days) 🏰
+- [x] **GB** (4 dest): Old Town / Royal Mile, Edinburgh Castle, Arthur's Seat, Stirling Castle (day trip) — routes: Edinburgh (3-4 days) 🏰
 - [x] **GB** (6 dest): London (British Museum), Bath (Roman Baths), Bourton-on-the-Water (Cotswolds), Snowdon / Yr Wyddfa (Snowdonia), Conwy Castle, Holyhead (ferry port) — routes: England + Wales + Northern Ireland Roadtrip (10-14 days) 🛣️
 - [x] **GB** (4 dest): Giant's Causeway, Carrick-a-Rede Rope Bridge, Antrim Coast / Causeway Coastal Route, Belfast (Titanic Belfast) — routes: England + Wales + Northern Ireland Roadtrip (10-14 days) 🛣️
 - [x] **GB** (9 dest): Inverness, Loch Ness, Glencoe, Fort William, Skye Bridge, Portree, Old Man of Storr, Quiraing, Fairy Pools — routes: Highlands + Isle of Skye (7-10 days) 🏔️
@@ -478,19 +478,19 @@ Sorted alphabetically by country code.
 - [x] **HR** (3 dest): Zagreb, Plitvice Lakes National Park, Split (Diocletian's Palace) — routes: Slovenia + Croatia + Bosnia (10-14 days) 🗺️
 - [x] **HR** (2 dest): Zagreb, Plitvice Lakes National Park — routes: Slovenia + Northern Croatia (9 days) 🌲
 - [x] **HR** (4 dest): Split (Diocletian's Palace), Hvar Town, Brač / Zlatni Rat, Vis (optional) — routes: Split + Islands (6 days) ⛵
-- [ ] **HU** (4 dest): Buda Castle District, Hungarian Parliament Building / Pest riverside, Széchenyi Thermal Baths, Ruin bar district (Kazinczy utca) — routes: Budapest (4 days) 🛁
+- [x] **HU** (4 dest): Buda Castle District, Hungarian Parliament Building / Pest riverside, Széchenyi Thermal Baths, Ruin bar district (Kazinczy utca) — routes: Budapest (4 days) 🛁
 - [x] **HU** (5 dest): Buda Castle District, Hungarian Parliament Building, Széchenyi Thermal Baths, Szentendre (day trip), Eger / Valley of the Beautiful Women wine cellars — routes: Budapest + Eger (5 days) 🍷
 - [x] **HU** (1 dest): Buda Castle District — routes: Central Europe Roadtrip (14 days) 🚂
 - [x] **HU** (2 dest): Budapest, thermal baths — routes: Central European Grand Roadtrip 🚗
 - [x] **HU** (1 dest): Budapest — routes: Grand European Roadtrip (14-21 days) 🪣
 - [x] **HU** (2 dest): Buda Castle District, Hungarian Parliament Building — routes: Hungary + Austria + Slovenia (7-10 days) 🚆
 - [x] **HU** (2 dest): Buda Castle District, Lake Balaton / Tihany — routes: Hungary + Slovenia + Croatia (9 days) 🧭
-- [ ] **HU** (4 dest): Buda Castle District, Eger, Tokaj wine region, Lake Balaton / Tihany — routes: Hungary Roadtrip (6 days) 🚗
-- [ ] **HU** (2 dest): Buda Castle District, Eger — routes: Slovakia + Hungary (9 days) 🚆
-- [ ] **IE** (4 dest): Trinity College / Book of Kells, Guinness Storehouse, Temple Bar, Wicklow Mountains / Glendalough (day trip) — routes: Dublin (3-4 days) 🍺
+- [x] **HU** (4 dest): Buda Castle District, Eger, Tokaj wine region, Lake Balaton / Tihany — routes: Hungary Roadtrip (6 days) 🚗
+- [x] **HU** (2 dest): Buda Castle District, Eger — routes: Slovakia + Hungary (9 days) 🚆
+- [x] **IE** (4 dest): Trinity College / Book of Kells, Guinness Storehouse, Temple Bar, Wicklow Mountains / Glendalough (day trip) — routes: Dublin (3-4 days) 🍺
 - [x] **IE** (8 dest): Dublin, Wicklow, Kilkenny, Cork / Kinsale, Kerry, Cliffs of Moher / Connemara, Sligo / Donegal, Belfast / Giant's Causeway (optional side trip) — routes: Ireland Complete (10-14 days) 🌈
 - [x] **IE** (5 dest): Dublin, Kilkenny, Cork / Kinsale, Ring of Kerry, Galway — routes: Ireland Roadtrip (7-10 days) 🚗
-- [ ] **IE** (4 dest): Galway, Connemara National Park / Kylemore Abbey (day trip), Cliffs of Moher / Doolin, Aran Islands (optional) — routes: West Ireland (5-7 days) 🌊
+- [x] **IE** (4 dest): Galway, Connemara National Park / Kylemore Abbey (day trip), Cliffs of Moher / Doolin, Aran Islands (optional) — routes: West Ireland (5-7 days) 🌊
 - [x] **IE** (8 dest): Donegal, Sligo, Mayo / Achill Island, Connemara, Galway, Cliffs of Moher (Clare), Dingle Peninsula / Ring of Kerry, Cork / Kinsale — routes: Wild Atlantic Way (7-10 days) 🌅
 - [x] **IM** (5 dest): Douglas, TT Grandstand & Museum, TT Mountain Road (Snaefell), Snaefell Mountain Railway, Manx Electric Railway — routes: Isle of Man (3-4 days) 🏝️
 - [x] **IM** (2 dest): Castletown (Castle Rushen), Peel Castle — routes: Isle of Man (3-4 days) 🏝️
@@ -564,9 +564,9 @@ Sorted alphabetically by country code.
 - [x] **IT** (1 dest): Cefalù — routes: Sicily (9 days) 🍋
 - [ ] **IT** (3 dest): Ragusa, Modica, Noto — routes: Sicily (9 days) 🍋
 - [x] **IT** (1 dest): Syracuse — routes: Sicily (9 days) 🍋
-- [ ] **IT** (2 dest): Milazzo (ferry port), Lipari — routes: Sicily + Aeolian Islands (3-4 days) 🏝️
-- [ ] **IT** (1 dest): Vulcano (mud baths) — routes: Sicily + Aeolian Islands (3-4 days) 🏝️
-- [ ] **IT** (1 dest): Stromboli — routes: Sicily + Aeolian Islands (3-4 days) 🏝️
+- [x] **IT** (2 dest): Milazzo (ferry port), Lipari — routes: Sicily + Aeolian Islands (3-4 days) 🏝️
+- [x] **IT** (1 dest): Vulcano (mud baths) — routes: Sicily + Aeolian Islands (3-4 days) 🏝️
+- [x] **IT** (1 dest): Stromboli — routes: Sicily + Aeolian Islands (3-4 days) 🏝️
 - [x] **IT** (8 dest): Catania, Mount Etna, Taormina, Syracuse / Ortigia, Modica, Ragusa, Agrigento (Valle dei Templi), Palermo (optional) — routes: Sicily + Malta (9 days) 🌋
 - [x] **IT** (1 dest): Naples/Salerno — routes: Sicily + Southern Italy (12 days) 🍊
 - [x] **IT** (1 dest): Tropea — routes: Sicily + Southern Italy (12 days) 🍊
@@ -633,7 +633,7 @@ Sorted alphabetically by country code.
 - [x] **NL** (2 dest): Maastricht (Vrijthof, Sint-Pietersberg caves), Valkenburg (Fluweelengrot cave) — routes: South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️
 - [x] **NO** (7 dest): Bergen (Bryggen), Fløyen, Ulriken, Flåm (Flåm Railway), Nærøyfjord, Voss, Hardangerfjord / Eidfjord (optional extension) — routes: Bergen + Fjords (6 days) ⛴️
 - [x] **NO** (6 dest): Bergen, Sognefjord (Nærøyfjord/Flåm), Nordfjord / Stryn, Geirangerfjord, Atlantic Ocean Road (Atlanterhavsveien), Ålesund — routes: Bergen + Ålesund (12 days) 🛣️
-- [ ] **NO** (2 dest): Oslo (Karl Johans gate), Flåm (optional day trip, 14-day version) — routes: Denmark + Sweden + Norway Overland (12 days) 🌉
+- [x] **NO** (2 dest): Oslo (Karl Johans gate), Flåm (optional day trip, 14-day version) — routes: Denmark + Sweden + Norway Overland (12 days) 🌉
 - [x] **NO** (6 dest): Bergen, Sognefjord / Nærøyfjord, Nordfjord (Olden), Geirangerfjord, Trolltunga (optional detour), Preikestolen (optional detour) — routes: Fjord Norway (9 days) 🏔️
 - [x] **NO** (4 dest): Oslo (Karl Johans gate), Bergen (Bryggen), Sognefjord / Nærøyfjord, Flåm (Flåm Railway) — routes: Norway + Sweden: Fjords & Capitals (12 days) ⛴️
 - [x] **NO** (7 dest): Oslo, Bergen, Sognefjord / Nærøyfjord, Geirangerfjord, Ålesund, Trondheim, Rondane / Femundsmarka National Park — routes: Norway Roadtrip (12 days) 🚙
@@ -657,8 +657,8 @@ Sorted alphabetically by country code.
 - [x] **PL** (3 dest): Krakow Old Town, Zakopane, Tatra National Park — routes: Poland + Slovakia + Hungary (10-14 days) 🥾
 - [x] **PL** (6 dest): Krakow Old Town, Wieliczka Salt Mine, Auschwitz-Birkenau, Zakopane, Wrocław, Warsaw — routes: Poland Roadtrip (9 days) 🚗
 - [x] **PL** (5 dest): Gdańsk / Hel Peninsula, Malbork Castle, Warsaw, Wrocław, Krakow Old Town — routes: Poland: North to South (12 days) ⚓
-- [ ] **PL** (2 dest): Wrocław, Krakow (Main Square / Old Town) — routes: Prague + Poland (9 days) 🚂
-- [ ] **PL** (2 dest): Zakopane, Krakow (Main Square / Old Town) — routes: Slovakia + Poland (9 days) 🥾
+- [x] **PL** (2 dest): Wrocław, Krakow (Main Square / Old Town) — routes: Prague + Poland (9 days) 🚂
+- [x] **PL** (2 dest): Zakopane, Krakow (Main Square / Old Town) — routes: Slovakia + Poland (9 days) 🥾
 - [x] **PL** (5 dest): Krakow Old Town, Wieliczka Salt Mine, Auschwitz-Birkenau, Zakopane / Tatra National Park, Wrocław (optional finale) — routes: South Poland (9 days) 🧭
 - [x] **PT** (9 dest): Faro (Ria Formosa), Lagos (Ponta da Piedade), Praia Dona Ana, Sagres / Cabo de São Vicente, Portimão, Carvoeiro, Benagil (sea cave), Silves (castle), Tavira — routes: Algarve (6 days) 🏖️
 - [x] **PT** (3 dest): Horta (Faial, whaling heritage), Madalena (Pico ferry port), Pico volcano climb (optional) — routes: Azores Island Hopping (10-14 days) 🏝️
@@ -676,9 +676,9 @@ Sorted alphabetically by country code.
 - [x] **PT** (11 dest): Porto, Pinhão (Douro Valley, lighter stop), Coimbra, Serra da Estrela (Torre), Sabugueiro, Óbidos, Nazaré, Lisbon (Baixa), Sintra (Palace of Pena), Évora (Roman Temple + Chapel of Bones), Algarve / Lagos — routes: Portugal Roadtrip (12 days) 🗺️
 - [x] **PT** (7 dest): Porto, Coimbra (brief stop), Nazaré, Óbidos, Lisbon (Baixa), Sintra (Palace of Pena), Algarve / Lagos — routes: Portugal: North to South (9 days) 🧭
 - [x] **PT** (3 dest): Lisbon (Baixa), Alfama, Belém Tower — routes: Southern Europe Highlights Roadtrip (14 days) 🎯
-- [ ] **PT** (4 dest): Ponta Delgada (town, harbour), Sete Cidades (crater lakes), Furnas (thermal springs, cozido), Lagoa do Fogo — routes: São Miguel (Azores) (5-7 days) 🏝️
+- [x] **PT** (4 dest): Ponta Delgada (town, harbour), Sete Cidades (crater lakes), Furnas (thermal springs, cozido), Lagoa do Fogo — routes: São Miguel (Azores) (5-7 days) 🏝️
 - [ ] **PW** (5 dest): Koror, Rock Islands Southern Lagoon & Jellyfish Lake, Blue Corner (dive site), Peleliu Island (WWII battle sites), Ngardmau Waterfall, Babeldaob — routes: Palau 🦈
-- [ ] **RO** (4 dest): Bucharest (Old Town / Palace of the Parliament, "Ceaușescu's Palace"), Brașov, Bran Castle, Peleș Castle (Sinaia) — routes: Bucharest + Transylvania (5 days) 🏰
+- [x] **RO** (4 dest): Bucharest (Old Town / Palace of the Parliament, "Ceaușescu's Palace"), Brașov, Bran Castle, Peleș Castle (Sinaia) — routes: Bucharest + Transylvania (5 days) 🏰
 - [x] **RO** (1 dest): Bucharest — routes: Bulgaria + Romania: Black Sea Coast (9 days) 🌊
 - [x] **RO** (3 dest): Iași, Sighișoara, Brașov — routes: Moldova + Romania (9 days) 🍷
 - [x] **RO** (5 dest): Bucharest, Brașov, Bran Castle, Peleș Castle (Sinaia), Sighișoara — routes: Romania + Bulgaria: Transylvania Focus (12 days) 🏰
@@ -688,7 +688,7 @@ Sorted alphabetically by country code.
 - [x] **RO** (5 dest): Brașov, Bran Castle, Peleș Castle (Sinaia), Sighișoara, Sibiu — routes: Transylvania (6 days) 🦇
 - [x] **RO** (8 dest): Brașov, Bran Castle, Peleș Castle (Sinaia), Sighișoara, Sibiu, Bucegi Mountains, Piatra Craiului National Park, Transfăgărășan Highway (Bâlea Lake) — routes: Transylvania + Carpathian Mountains (9 days) 🏔️
 - [x] **RS** (1 dest): Belgrade (Kalemegdan) — routes: Balkan Roadtrip: Serbia + North Macedonia + Albania + Kosovo (14 days) 🔄
-- [ ] **RS** (4 dest): Belgrade (Kalemegdan), Belgrade (Skadarlija), Novi Sad + Petrovaradin Fortress, Fruška Gora monasteries (Krušedol) — routes: Belgrade + Surroundings (5 days) 🏛️
+- [x] **RS** (4 dest): Belgrade (Kalemegdan), Belgrade (Skadarlija), Novi Sad + Petrovaradin Fortress, Fruška Gora monasteries (Krušedol) — routes: Belgrade + Surroundings (5 days) 🏛️
 - [x] **RS** (3 dest): Belgrade, Tara National Park (day trip from Belgrade, round-trip), Novi Sad — routes: Central European Grand Roadtrip 🚗
 - [x] **RS** (5 dest): Belgrade (Kalemegdan), Novi Sad, Zlatibor, Šarganska Osmica (Mokra Gora), Drvengrad (Mećavnik) — routes: Serbia (6 days) 🚂
 - [x] **RS** (3 dest): Belgrade (Kalemegdan), Zlatibor, Tara Canyon / Drina rafting (Perućac) — routes: Serbia + Bosnia (9 days) 🛶
@@ -702,7 +702,7 @@ Sorted alphabetically by country code.
 - [x] **SE** (6 dest): Malmö, Lund, Ystad, Kivik, Ale's Stones (Kåseberga), Stenshuvud National Park — routes: South Sweden (Skåne) (9 days) 🪨
 - [x] **SE** (5 dest): Gamla Stan, Södermalm, Vasa Museum, Skansen, Djurgården — routes: Stockholm (4 days) 🏰
 - [x] **SE** (5 dest): Stockholm (Gamla Stan), Uppsala Cathedral, Gamla Uppsala, Sigtuna, Stockholm archipelago (Vaxholm) — routes: Stockholm + Surroundings (6 days) 🚢
-- [ ] **SE** (4 dest): Stockholm, Kiruna, Abisko, Riksgränsen (border crossing) — routes: Sweden + Norway (12 days) 🌉
+- [x] **SE** (4 dest): Stockholm, Kiruna, Abisko, Riksgränsen (border crossing) — routes: Sweden + Norway (12 days) 🌉
 - [x] **SE** (5 dest): Stockholm, Göta Canal / Vadstena, Gothenburg, Malmö / Skåne, Småland (Glasriket, Kosta) — routes: Sweden Roadtrip (9 days) 🚗
 - [x] **SE** (5 dest): Kiruna, Icehotel (Jukkasjärvi), Abisko, Aurora Sky Station, Kungsleden day hike — routes: Swedish Lapland (Kiruna + Abisko) (6 days) 🦌
 - [x] **SE** (6 dest): Kiruna, Icehotel (Jukkasjärvi), Abisko, Aurora Sky Station, Nikkaluokta (optional day trip), Kebnekaise — routes: Swedish Lapland + Northern Lights (9 days) 💫
@@ -719,13 +719,13 @@ Sorted alphabetically by country code.
 - [x] **SI** (6 dest): Ljubljana, Bled, Bohinj, Vršič Pass, Bovec / Soča Valley, Kranjska Gora — routes: Slovenia Alpine Loop (6 days) 🏔️
 - [x] **SI** (4 dest): Ljubljana, Bled / Bohinj, Vršič Pass / Soča Valley, Piran — routes: Slovenia Roadtrip (9 days) 🗺️
 - [x] **SJ** (3 dest): Longyearbyen, Svalbard Museum, Pyramiden (day trip by boat) — routes: Nordic Arctic Expedition ❄️
-- [ ] **SK** (4 dest): Bratislava, Poprad / Tatranská Lomnica, Štrbské Pleso / Hrebienok, Lomnický Štít cable car (optional) — routes: Bratislava + High Tatras (5 days) 🏔️
+- [x] **SK** (4 dest): Bratislava, Poprad / Tatranská Lomnica, Štrbské Pleso / Hrebienok, Lomnický Štít cable car (optional) — routes: Bratislava + High Tatras (5 days) 🏔️
 - [x] **SK** (1 dest): Bratislava — routes: Central Europe Roadtrip (14 days) 🚂
 - [x] **SK** (4 dest): Bratislava, High Tatras, Slovenský Raj, Spiš Castle — routes: Central European Grand Roadtrip 🚗
 - [x] **SK** (2 dest): Poprad / Tatranská Lomnica (Slovak High Tatras), Bratislava — routes: Poland + Slovakia + Hungary (10-14 days) 🥾
-- [ ] **SK** (4 dest): Bratislava, Banská Štiavnica, High Tatras (Štrbské Pleso), Košice — routes: Slovakia (6 days) 🏰
-- [ ] **SK** (2 dest): Bratislava, Győr (day trip) — routes: Slovakia + Hungary (9 days) 🚆
-- [ ] **SK** (2 dest): Bratislava, High Tatras (Štrbské Pleso) — routes: Slovakia + Poland (9 days) 🥾
+- [x] **SK** (4 dest): Bratislava, Banská Štiavnica, High Tatras (Štrbské Pleso), Košice — routes: Slovakia (6 days) 🏰
+- [x] **SK** (2 dest): Bratislava, Győr (day trip) — routes: Slovakia + Hungary (9 days) 🚆
+- [x] **SK** (2 dest): Bratislava, High Tatras (Štrbské Pleso) — routes: Slovakia + Poland (9 days) 🥾
 - [x] **SM** (1 dest): Historic center — routes: Central European Grand Roadtrip 🚗
 - [ ] **SM** (1 dest): Historic centre — routes: Dolomites & North Italy 🚡
 - [x] **SM** (4 dest): San Marino old town, City walls, Rocca Guaita (main tower), Torre Cesta (second tower) — routes: San Marino: Day Visit (1 day) 🛡️
@@ -734,7 +734,7 @@ Sorted alphabetically by country code.
 - [x] **TR** (5 dest): Istanbul (Sultanahmet), Gallipoli: Anzac Cove & Lone Pine, Çanakkale, Troy, Bursa (optional) — routes: Istanbul + Gallipoli & Troy (9 days) ⚔️
 - [ ] **TR** (2 dest): Istanbul (Sultanahmet), Ayvalık — routes: Istanbul + Lesbos (Greek Islands) (9 days) 🛳️
 - [ ] **TR** (3 dest): Istanbul (Sultanahmet), Edirne (Selimiye Mosque), Gallipoli Peninsula — routes: Istanbul + Thrace (6 days) 🌉
-- [ ] **TR** (4 dest): Izmir, Selçuk, Ephesus, Çeşme — routes: Izmir + Aegean Coast: Ephesus & Çeşme (5 days) 📜
+- [x] **TR** (4 dest): Izmir, Selçuk, Ephesus, Çeşme — routes: Izmir + Aegean Coast: Ephesus & Çeşme (5 days) 📜
 - [x] **TR** (3 dest): Izmir, Kuşadası & Ephesus, Bodrum — routes: Turkey + Greece: Aegean Coast & Dodecanese (12 days) 🌊
 - [x] **US** (4 dest): South Beach (Art Deco District), Little Havana, Wynwood Walls, Coral Gables & Coconut Grove — routes: Florida 🐊
 - [x] **US** (3 dest): Anhinga Trail, Guided airboat tour, Flamingo — routes: Florida 🐊
@@ -778,36 +778,36 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Palau 🦈 | 5/5 | 0 |
 | Uruguay 🧉 | 5/5 | 0 |
 | Guyana 🦦 | 5/5 | 0 |
-| Belgrade + Surroundings (5 days) 🏛️ | 4/4 | 0 |
-| Bucharest + Transylvania (5 days) 🏰 | 4/4 | 0 |
-| Budapest (4 days) 🛁 | 4/4 | 0 |
-| Hungary Roadtrip (6 days) 🚗 | 4/4 | 0 |
-| Prague (4 days) 🏰 | 4/4 | 0 |
-| Czechia Roadtrip (6 days) 🛣️ | 4/4 | 0 |
-| Bratislava + High Tatras (5 days) 🏔️ | 4/4 | 0 |
-| Slovakia (6 days) 🏰 | 4/4 | 0 |
-| Slovakia + Poland (9 days) 🥾 | 4/4 | 0 |
-| Slovakia + Hungary (9 days) 🚆 | 4/4 | 0 |
-| Izmir + Aegean Coast: Ephesus & Çeşme (5 days) 📜 | 4/4 | 0 |
-| Sweden + Norway (12 days) 🌉 | 4/6 | 0 |
-| Copenhagen + Zealand (5 days) 🖼️ | 4/4 | 0 |
-| Denmark (6 days) 🧱 | 4/4 | 0 |
-| Helsinki + Lake District (6 days) 🛶 | 4/4 | 0 |
-| Finland Roadtrip (12 days) 🛣️ | 4/4 | 0 |
-| Faroe Islands (6 days) 🐦 | 4/4 | 0 |
-| Dublin (3-4 days) 🍺 | 4/4 | 0 |
-| West Ireland (5-7 days) 🌊 | 4/4 | 0 |
-| Edinburgh (3-4 days) 🏰 | 4/4 | 0 |
-| Estonia (5-7 days) 🏰 | 4/4 | 0 |
-| São Miguel (Azores) (5-7 days) 🏝️ | 4/4 | 0 |
-| Gran Canaria (5-7 days) 🏝️ | 4/4 | 0 |
-| Menorca (4-5 days) 🏝️ | 4/4 | 0 |
-| Sicily + Aeolian Islands (3-4 days) 🏝️ | 4/4 | 0 |
 | Liechtenstein + Swiss Alps (3 days) 🏔️ | 3/4 | 0 |
 | Austrian Alps: Zell am See-Kaprun / Pinzgau (6 days) 🚠 | 3/3 | 0 |
 | French Alps: Écrins National Park (6 days) 🐐 | 3/3 | 0 |
 | Northern Italy Roadtrip (9 days) 🚙 | 3/8 | 0 |
 | Sicily (9 days) 🍋 | 3/9 | 0 |
-| ... 36 more routes with open destinations ... | | |
+| Vatican City Day Visit within a Rome Stay (1 day) 🕊️ | 3/3 | 0 |
+| Plitvice + Zagreb (6 days) 🏞️ | 3/3 | 0 |
+| Albania + North Macedonia (12 days) 🏞️ | 3/6 | 0 |
+| Serbia + Bosnia (9 days) 🛶 | 3/6 | 0 |
+| Skopje + Ohrid (5 days) 🌅 | 3/3 | 0 |
+| Prague + Bohemia (5 days) 🏘️ | 3/3 | 0 |
+| Czechia + Austria (9 days) 🏔️ | 3/5 | 0 |
+| Moravia: Brno + Wine Region (5 days) 🍇 | 3/3 | 0 |
+| Krakow (4 days) 🏛️ | 3/3 | 0 |
+| Krakow + Tatra (6 days) ⛰️ | 3/3 | 0 |
+| Athens (4 days) 🏛️ | 3/3 | 0 |
+| Cyprus + Greece (9 days) ✈️ | 3/5 | 0 |
+| Istanbul + Thrace (6 days) 🌉 | 3/3 | 0 |
+| Istanbul + Lesbos (Greek Islands) (9 days) 🛳️ | 3/3 | 0 |
+| Helsinki (4 days) 🏛️ | 3/3 | 0 |
+| Finnish Lapland (9 days) 🎅 | 3/3 | 0 |
+| Baltics + Poland (10-14 days) 🇵🇱 | 3/6 | 0 |
+| Ibiza (4-5 days) 🏝️ | 3/3 | 0 |
+| Sicily West (4-5 days) 🏝️ | 3/5 | 0 |
+| Sardinia South (4-5 days) 🏝️ | 3/4 | 0 |
+| Corfu (5-7 days) 🏝️ | 3/3 | 0 |
+| Jersey + Guernsey (Channel Islands) (4-5 days) 🏝️ | 3/4 | 0 |
+| Northern Portugal + Galicia (7-10 days) 🌊 | 3/9 | 0 |
+| Southern Europe Highlights Roadtrip (14 days) 🎯 | 2/12 | 0 |
+| Hamburg (4 days) ⚓ | 2/2 | 0 |
+| ... 8 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

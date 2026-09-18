@@ -12,6 +12,16 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batches 159-165 — Europe mixed cluster round 5 (2026-09-18)** — 46
+  fresh destinations plus 5 reuse entries, closing out 26 routes entirely: Belgrade +
+  Surroundings, Bucharest + Transylvania, Budapest, Hungary Roadtrip, Prague, Czechia Roadtrip,
+  Bratislava + High Tatras, Slovakia, Slovakia + Poland, Slovakia + Hungary, Izmir + Aegean
+  Coast: Ephesus & Çeşme, Sweden + Norway, Copenhagen + Zealand, Denmark, Denmark + Sweden +
+  Norway Overland, Helsinki + Lake District, Finland Roadtrip, Faroe Islands, Dublin, West
+  Ireland, Edinburgh, Estonia, São Miguel, Gran Canaria (both routes), Menorca, Sicily + Aeolian
+  Islands (`rbMigrateEuropeMixedCluster5DestinationNotes()`).
+  App-wide total: 3897 destination-slots filled across 437 routes. 685/741 signatures done.
+
 - **Per-destination notes, batches 153-158 — Alpine/Adriatic cluster round 4 (2026-09-18)** — 40
   fresh destinations plus 6 reuse/combo entries, closing out 18 routes entirely: Ardennes,
   Luxembourg, Belgian Coast + Bruges + Ghent, Bavaria: Munich + Alps, Black Forest, Salzburg +
