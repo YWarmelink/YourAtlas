@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 539 / 741 signatures.**
+- **Done so far: 548 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -258,9 +258,9 @@ Sorted alphabetically by country code.
 - [ ] **AT** (4 dest): Salzburg (Getreidegasse, Hohensalzburg Fortress, Mozart sites), Werfen (Hohenwerfen Castle & Eisriesenwelt ice caves), Wolfgangsee / St. Wolfgang, Untersberg cable car — routes: Salzburg + Surroundings (4 days) 🎻
 - [ ] **AT** (4 dest): Innsbruck, Seefeld, Achensee, Zillertal / Mayrhofen (Olperer suspension bridge) — routes: Tyrol (6 days) 🌉
 - [ ] **AW** (5 dest): Eagle Beach, Arikok National Park & the Natural Pool (Conchi), Baby Beach & San Nicolas, California Lighthouse, Oranjestad — routes: ABC Islands 🦩
-- [ ] **BA** (6 dest): Sarajevo, Mostar (Stari Most), Kravice Waterfalls, Blagaj Tekija, Konjic (Tito's Bunker / ARK D-0), Jajce (waterfalls) — routes: Bosnia Roadtrip (6 days) 🚗
-- [ ] **BA** (4 dest): Mostar (Stari Most), Kravice Waterfalls, Blagaj Tekija, Sarajevo (Baščaršija) — routes: Croatia + Bosnia via Split (7-10 days) 🌉
-- [ ] **BA** (6 dest): Sarajevo (Baščaršija), Tunnel of Hope (Butmir), Trebević cable car, Mostar (Stari Most), Kravice Waterfalls, Blagaj Tekija — routes: Sarajevo + Mostar (5 days) 🌉
+- [x] **BA** (6 dest): Sarajevo, Mostar (Stari Most), Kravice Waterfalls, Blagaj Tekija, Konjic (Tito's Bunker / ARK D-0), Jajce (waterfalls) — routes: Bosnia Roadtrip (6 days) 🚗
+- [x] **BA** (4 dest): Mostar (Stari Most), Kravice Waterfalls, Blagaj Tekija, Sarajevo (Baščaršija) — routes: Croatia + Bosnia via Split (7-10 days) 🌉
+- [x] **BA** (6 dest): Sarajevo (Baščaršija), Tunnel of Hope (Butmir), Trebević cable car, Mostar (Stari Most), Kravice Waterfalls, Blagaj Tekija — routes: Sarajevo + Mostar (5 days) 🌉
 - [ ] **BA** (3 dest): Sarajevo (Baščaršija), Mostar, Blagaj (Tekija) — routes: Serbia + Bosnia (9 days) 🛶
 - [x] **BA** (3 dest): Tara Canyon / Drina rafting (Perućac), Sarajevo (Baščaršija), Mostar — routes: Serbia + Montenegro + Bosnia (12 days) 🏔️
 - [x] **BA** (2 dest): Mostar (Stari Most), Sarajevo (Baščaršija) — routes: Slovenia + Croatia + Bosnia (10-14 days) 🗺️
@@ -465,7 +465,7 @@ Sorted alphabetically by country code.
 - [x] **HR** (6 dest): Rovinj, Pula (Arena), Zadar, Split (Diocletian's Palace), Hvar Town, Dubrovnik Old Town — routes: Adriatic Roadtrip (14 days) 🌊
 - [x] **HR** (1 dest): Zadar — routes: Austria + Slovenia + Croatia (10-14 days) 🚙
 - [x] **HR** (2 dest): Plitvice, Zagreb — routes: Central European Grand Roadtrip 🚗
-- [ ] **HR** (6 dest): Zagreb, Plitvice Lakes National Park, Zadar, Split (Diocletian's Palace) + islands, Hvar Town, Dubrovnik Old Town — routes: Complete Croatia (12 days) 🇭🇷
+- [x] **HR** (6 dest): Zagreb, Plitvice Lakes National Park, Zadar, Split (Diocletian's Palace) + islands, Hvar Town, Dubrovnik Old Town — routes: Complete Croatia (12 days) 🇭🇷
 - [x] **HR** (1 dest): Split (Diocletian's Palace) — routes: Croatia + Bosnia via Split (7-10 days) 🌉
 - [ ] **HR** (5 dest): Zadar, Krka National Park / Šibenik, Split (Diocletian's Palace), Hvar Town, Dubrovnik Old Town — routes: Croatia Coastal Roadtrip (9 days) 🛣️
 - [x] **HR** (5 dest): Zagreb, Plitvice Lakes National Park, Zadar, Split (Diocletian's Palace), Dubrovnik Old Town — routes: Croatia North to South (9 days) 🧭
@@ -579,7 +579,7 @@ Sorted alphabetically by country code.
 - [ ] **IT** (2 dest): Palermo, Monreale — routes: Sicily West (4-5 days) 🏝️
 - [x] **IT** (2 dest): Trapani, Erice — routes: Sicily West (4-5 days) 🏝️
 - [ ] **IT** (1 dest): Segesta (Doric temple) — routes: Sicily West (4-5 days) 🏝️
-- [ ] **IT** (3 dest): Trieste, Venice (Piazza San Marco), Friuli (Udine, alternative) — routes: Slovenia + Italy (9 days) 🍝
+- [x] **IT** (3 dest): Trieste, Venice (Piazza San Marco), Friuli (Udine, alternative) — routes: Slovenia + Italy (9 days) 🍝
 - [ ] **IT** (2 dest): Tirano, Valtellina / Lake Como — routes: Switzerland + Northern Italy (9 days) 🚞
 - [ ] **IT** (1 dest): Florence (hub) — routes: Tuscany (6 days) 🍇
 - [ ] **IT** (3 dest): Montalcino (base, wine country), Pienza, Montepulciano — routes: Tuscany (6 days) 🍇
@@ -608,7 +608,7 @@ Sorted alphabetically by country code.
 - [x] **ME** (1 dest): Kotor Old Town + Bay of Kotor — routes: Bosnia + Croatia + Montenegro (12 days) 🗺️
 - [x] **ME** (1 dest): Žabljak / Durmitor National Park — routes: Kosovo + Montenegro + Albania (9 days) 🗻
 - [ ] **ME** (4 dest): Kotor Old Town, Perast, Herceg Novi, Tivat — routes: Kotor + Bay of Kotor (5 days) ⚓
-- [ ] **ME** (6 dest): Kotor Old Town, Budva, Lovćen National Park, Njeguši, Žabljak / Durmitor National Park, Ostrog Monastery — routes: Montenegro (6 days) 🏔️
+- [x] **ME** (6 dest): Kotor Old Town, Budva, Lovćen National Park, Njeguši, Žabljak / Durmitor National Park, Ostrog Monastery — routes: Montenegro (6 days) 🏔️
 - [x] **ME** (1 dest): Kotor Old Town — routes: Montenegro + Bosnia (9 days) 🕊️
 - [ ] **ME** (4 dest): Kotor Old Town, Perast, Budva, Herceg Novi — routes: Montenegro + Croatia (9 days) ⛵
 - [x] **ME** (7 dest): Podgorica, Ostrog Monastery, Žabljak / Durmitor (Black Lake), Kolašin, Kotor Old Town, Perast, Budva — routes: Montenegro Roadtrip (9 days) 🚙
@@ -707,7 +707,7 @@ Sorted alphabetically by country code.
 - [ ] **SE** (5 dest): Kiruna, Icehotel (Jukkasjärvi), Abisko, Aurora Sky Station, Kungsleden day hike — routes: Swedish Lapland (Kiruna + Abisko) (6 days) 🦌
 - [ ] **SE** (6 dest): Kiruna, Icehotel (Jukkasjärvi), Abisko, Aurora Sky Station, Nikkaluokta (optional day trip), Kebnekaise — routes: Swedish Lapland + Northern Lights (9 days) 💫
 - [x] **SI** (2 dest): Ljubljana, Piran — routes: Adriatic Roadtrip (14 days) 🌊
-- [ ] **SI** (3 dest): Kranjska Gora, Vršič Pass, Bled — routes: Alpine Roadtrip (14 days) 🏕️
+- [x] **SI** (3 dest): Kranjska Gora, Vršič Pass, Bled — routes: Alpine Roadtrip (14 days) 🏕️
 - [x] **SI** (3 dest): Bled, Bohinj, Ljubljana (optional) — routes: Austria + Slovenia (9 days) 🏝️
 - [x] **SI** (5 dest): Bled, Bohinj, Soča Valley, Triglav NP, caves (Postojna/Škocjan) — routes: Central European Grand Roadtrip 🚗
 - [x] **SI** (3 dest): Bled, Bohinj, Ljubljana — routes: Germany + Austria + Slovenia (10-14 days) 🥨
@@ -715,8 +715,8 @@ Sorted alphabetically by country code.
 - [x] **SI** (2 dest): Trieste (Italy, waypoint), Ljubljana — routes: Italy + Slovenia + Croatia (10-14 days) ⛵
 - [ ] **SI** (5 dest): Kranjska Gora, Vršič Pass, Bovec, Kobarid, Tolmin Gorge — routes: Julian Alps + Soča Valley (6 days) 🚣
 - [ ] **SI** (4 dest): Ljubljana, Bled, Vintgar Gorge, Bohinj (optional day trip) — routes: Ljubljana + Lake Bled (5 days) 🏰
-- [ ] **SI** (3 dest): Ljubljana, Bled, Piran / Slovenian coast — routes: Slovenia + Italy (9 days) 🍝
-- [ ] **SI** (6 dest): Ljubljana, Bled, Bohinj, Vršič Pass, Bovec / Soča Valley, Kranjska Gora — routes: Slovenia Alpine Loop (6 days) 🏔️
+- [x] **SI** (3 dest): Ljubljana, Bled, Piran / Slovenian coast — routes: Slovenia + Italy (9 days) 🍝
+- [x] **SI** (6 dest): Ljubljana, Bled, Bohinj, Vršič Pass, Bovec / Soča Valley, Kranjska Gora — routes: Slovenia Alpine Loop (6 days) 🏔️
 - [ ] **SI** (4 dest): Ljubljana, Bled / Bohinj, Vršič Pass / Soča Valley, Piran — routes: Slovenia Roadtrip (9 days) 🗺️
 - [x] **SJ** (3 dest): Longyearbyen, Svalbard Museum, Pyramiden (day trip by boat) — routes: Nordic Arctic Expedition ❄️
 - [ ] **SK** (4 dest): Bratislava, Poprad / Tatranská Lomnica, Štrbské Pleso / Hrebienok, Lomnický Štít cable car (optional) — routes: Bratislava + High Tatras (5 days) 🏔️
@@ -769,12 +769,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
 | Dolomites & North Italy 🚡 | 8/24 | 0 |
-| Complete Croatia (12 days) 🇭🇷 | 6/6 | 0 |
-| Slovenia Alpine Loop (6 days) 🏔️ | 6/6 | 0 |
-| Slovenia + Italy (9 days) 🍝 | 6/6 | 0 |
-| Sarajevo + Mostar (5 days) 🌉 | 6/6 | 0 |
-| Bosnia Roadtrip (6 days) 🚗 | 6/6 | 0 |
-| Montenegro (6 days) 🏔️ | 6/6 | 0 |
 | Poland Roadtrip (9 days) 🚗 | 6/6 | 0 |
 | Oslo (5 days) 🏛️ | 6/6 | 0 |
 | South Sweden (Skåne) (9 days) 🪨 | 6/6 | 0 |
@@ -808,6 +802,12 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Mallorca: Serra de Tramuntana Loop (6 days) 🏔️ | 5/5 | 0 |
 | Dubrovnik + Surroundings (5 days) 🏛️ | 5/5 | 0 |
 | Istria (6 days) 🍇 | 5/5 | 0 |
-| ... 121 more routes with open destinations ... | | |
+| Croatia Coastal Roadtrip (9 days) 🛣️ | 5/5 | 0 |
+| Julian Alps + Soča Valley (6 days) 🚣 | 5/5 | 0 |
+| Hungary + Slovenia + Croatia (9 days) 🧭 | 5/7 | 0 |
+| Serbia (6 days) 🚂 | 5/5 | 0 |
+| Serbia Roadtrip (9 days) 🚙 | 5/5 | 0 |
+| Bulgaria + Romania: Black Sea Coast (9 days) 🌊 | 5/6 | 0 |
+| ... 114 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

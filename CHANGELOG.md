@@ -12,6 +12,17 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batches 123-125 — Balkan/Alpine cluster leftovers (2026-09-18)** — 14
+  fresh destinations researched, closing out 6 routes entirely: Complete Croatia, Slovenia
+  Alpine Loop, Slovenia + Italy, Sarajevo + Mostar, Bosnia Roadtrip, Montenegro
+  (`rbMigrateBalkanAlpineClusterDestinationNotes()`):
+  - Batch 123: Split (Diocletian's Palace) + islands, Vršič Pass, Kranjska Gora, Piran/
+    Slovenian coast, Trieste, Friuli (Udine)
+  - Batch 124: Tunnel of Hope, Trebević cable car, Kravice Waterfalls, Blagaj Tekija (shared
+    between Sarajevo + Mostar and Bosnia Roadtrip), Konjic's Tito's Bunker, Jajce waterfalls
+  - Batch 125: Lovćen National Park, Njeguši
+  App-wide total: 3547 destination-slots filled across 408 routes. 548/741 signatures done.
+
 - **Per-destination notes, batches 120-122 — Normandy + French Atlantic Coast, Northern Italy
   lakes cluster leftovers, Spain + Andorra cluster (2026-09-18)** — 35 destinations researched
   (fresh, plus 2 Verona reuse under new name-string variants), closing out 8 routes entirely:

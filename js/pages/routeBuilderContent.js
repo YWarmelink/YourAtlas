@@ -12306,6 +12306,48 @@ function rbMigrateSpainAndorraClusterDestinationNotes() {
 }
 
 /**
+ * Batches 123-125 (2026-09-18) -- Balkan/Alpine cluster leftovers -- closes out Complete Croatia,
+ * Slovenia Alpine Loop, Slovenia + Italy, Sarajevo + Mostar, Bosnia Roadtrip, and Montenegro
+ * entirely. 14 fresh destinations researched (Kravice Waterfalls and Blagaj Tekija shared
+ * between the two Bosnia routes). Same generic name-matching migration pattern as the other
+ * batches.
+ */
+function rbMigrateBalkanAlpineClusterDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_BALKAN_ALPINE_CLUSTER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_BALKAN_ALPINE_CLUSTER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    "Split (Diocletian's Palace) + islands": "The 4th-century Roman emperor's retirement palace isn't a ruin behind a fence — it's a living neighborhood, with Split's old town built directly into its walls, the colonnaded Peristyle square, and the octagonal Cathedral of St. Domnius; ferries from the harbor run out to Hvar, Brač and Vis for an island day trip, with Brač's Zlatni Rat beach the easiest to reach and back in a day.",
+    'Vršič Pass': "Slovenia's highest mountain pass, with 50 numbered hairpin bends (24 up the northern side alone), linking the Soča Valley to the Sava valley through the Julian Alps; open only roughly late May through October/November depending on snow, and the pass-top viewpoint over the switchbacks below is the classic photo stop.",
+    'Kranjska Gora': "Slovenia's main ski resort town, tucked at the base of the Julian Alps near the Austrian and Italian borders; in summer it's the trailhead for hikes into the Alps and the start of the Vršič Pass road, with the nearby Lake Jasna's turquoise water and horse statues a popular quick stop.",
+    'Piran / Slovenian coast': "Slovenia's only real coastal stretch, centered on Piran's compact Venetian-Gothic old town around Tartini Square; climb the town walls above it for a view over the terracotta rooftops to the Adriatic, and stop at the nearby Sečovlje salt pans, still harvested by hand using centuries-old methods.",
+    'Trieste': "An Italian port city with a strong Austro-Hungarian imperial character (it was the Habsburg Empire's main seaport), centered on the grand Piazza dell'Unità d'Italia facing the sea; its historic café culture (Caffè San Marco, Caffè Tommaseo) reflects a long literary history tied to writers like James Joyce.",
+    'Friuli (Udine, alternative)': "Udine is the main town of Friuli, a lesser-visited wine region in Italy's northeast; its Venetian-Gothic old town centers on a hilltop castle and the Loggia del Lionello, and the region is known for its crisp white wines (Friulano, Ribolla Gialla) at far fewer tourist prices than nearby Veneto.",
+    'Tunnel of Hope (Butmir)': "A hand-dug tunnel under Sarajevo Airport that was the besieged city's only link to the outside world during the 1992-95 siege, used to smuggle in food, weapons and supplies; a short preserved section is open as a small museum near the original Butmir house entrance.",
+    'Trebević cable car': "Rebuilt in 2018 after the original line (destroyed in the war) sat unused for over two decades, it climbs from Sarajevo's old town to Mount Trebević; at the top, the abandoned, graffiti-covered 1984 Winter Olympics bobsled track is the main draw for a walk along its crumbling concrete curves.",
+    'Kravice Waterfalls': "A horseshoe-shaped waterfall on the Trebižat River near Ljubuški, often compared to a smaller Plitvice; swimming in the pool below the falls is allowed and popular in summer, when it gets busy by midday.",
+    'Blagaj Tekija': "A 16th-century Dervish (Sufi) monastery built directly into a cliff face at the source of the Buna River, one of Europe's strongest karst springs; the tekija's cool interior and the emerald spring water beneath the cliff make it a striking stop, and boat rides upstream to the cave mouth are available in season.",
+    "Konjic (Tito's Bunker / ARK D-0)": "A massive Cold War-era nuclear bunker built secretly for Yugoslav leadership (including Tito), hidden inside a mountain near Konjic and kept classified until 2015; guided tours through its blast doors and preserved rooms are the only way to see the interior.",
+    'Jajce (waterfalls)': "A small Bosnian town built around a dramatic waterfall that drops right in the middle of it, plus a medieval old town where Bosnia's last king was crowned; the nearby Pliva Lakes and their wooden watermills are a short, worthwhile add-on.",
+    'Lovćen National Park': "A small but dramatic national park centered on Mount Lovćen, reached by a winding road with 25 hairpin turns up from the Bay of Kotor; the mausoleum of Montenegrin ruler-poet Njegoš sits near the summit, reachable by a 461-step staircase, with panoramic views over most of the country on a clear day.",
+    'Njeguši': "A small mountain village on the road up to Lovćen, famous as the birthplace of the Petrović-Njegoš dynasty and for two specific foods sold at roadside stalls: njeguški sir (a smoked cheese) and njeguška pršuta (a smoked ham) — a classic stop to try both on the way up or down the pass.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Two of batch 2's standalone routes were flagged as too exposed to their long-haul flight time
  * relative to trip length — Jordanië (8d, connecting flight) and Nieuw-Zeeland Zuidereiland (21d,
  * but 27-38h with multiple stops). Adds +2 days to each as a recovery/margin buffer, matching the
@@ -18218,7 +18260,7 @@ function rbBuildCompleteCroatiaRoute() {
         { name: 'Zagreb', lat: 45.8150, lng: 15.9819, notes: "The Upper Town's colorful-tiled St. Mark's Church and the Dolac market are the highlights, linked to the Lower Town by the world's shortest funicular (under a minute). A free walking tour is an efficient way to cover both halves in a day." },
         { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820, notes: "16 turquoise terraced lakes connected by waterfalls and wooden boardwalks, with a boat crossing Kozjak Lake as the scenic centerpiece. Pick route C or K (covers both Upper and Lower Lakes, not just one) and start right at opening for boardwalk photos without crowds." },
         { name: 'Zadar', lat: 44.1194, lng: 15.2314, notes: "The Sea Organ (wave-powered pipes built into the waterfront steps) and the adjacent Sun Salutation light installation make the sunset promenade the actual destination here — reportedly the sunset Hitchcock once called the world's most beautiful. Time the visit for sunset; the light show and organ sound together are the point." },
-        { name: "Split (Diocletian's Palace) + islands", lat: 43.5081, lng: 16.4402 },
+        { name: "Split (Diocletian's Palace) + islands", lat: 43.5081, lng: 16.4402 , notes: 'The 4th-century Roman emperor\'s retirement palace isn\'t a ruin behind a fence — it\'s a living neighborhood, with Split\'s old town built directly into its walls, the colonnaded Peristyle square, and the octagonal Cathedral of St. Domnius; ferries from the harbor run out to Hvar, Brač and Vis for an island day trip, with Brač\'s Zlatni Rat beach the easiest to reach and back in a day.' },
         { name: 'Hvar Town', lat: 43.1729, lng: 16.4413 , notes: 'A glamorous harbor town known for lavender fields, upscale yachting/nightlife, and the 16th-century Fortica fortress on the hill above; climb up to the fortress for the best view over the harbor and the Pakleni Islands just offshore.' },
         { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944, notes: "Its walled marble streets (the Stradun) and 2km of intact medieval ramparts overlooking the Adriatic are the draw, along with the baroque St. Blaise's Church and Rector's Palace; Game of Thrones fans will recognize it as King's Landing. Walk the city walls right at opening (around 8am) to beat both the midday heat and the cruise-ship crowds that flood the old town by late morning." },
       ],
@@ -18264,9 +18306,9 @@ function rbBuildSloveniaAlpineLoopRoute() {
         { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, notes: "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river." },
         { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
         { name: 'Bohinj', lat: 46.2833, lng: 13.9333, notes: "Slovenia's larger, quieter alpine lake south of Bled — glacial, ringed by forested peaks, with far fewer crowds than Bled. Ride the Vogel cable car above the lake for a panoramic view, or use it as the trailhead for the Savica waterfall hike." },
-        { name: 'Vršič Pass', lat: 46.4331, lng: 13.7478 },
+        { name: 'Vršič Pass', lat: 46.4331, lng: 13.7478 , notes: 'Slovenia\'s highest mountain pass, with 50 numbered hairpin bends (24 up the northern side alone), linking the Soča Valley to the Sava valley through the Julian Alps; open only roughly late May through October/November depending on snow, and the pass-top viewpoint over the switchbacks below is the classic photo stop.' },
         { name: 'Bovec / Soča Valley', lat: 46.3297, lng: 13.5522 , notes: 'An adventure-sports base in Slovenia\'s Julian Alps along the vivid turquoise Soča river, popular for whitewater rafting and kayaking and as a hiking gateway; the river\'s striking color comes from glacial rock flour and is most vivid during early-summer snowmelt.' },
-        { name: 'Kranjska Gora', lat: 46.4858, lng: 13.7861 },
+        { name: 'Kranjska Gora', lat: 46.4858, lng: 13.7861 , notes: 'Slovenia\'s main ski resort town, tucked at the base of the Julian Alps near the Austrian and Italian borders; in summer it\'s the trailhead for hikes into the Alps and the start of the Vršič Pass road, with the nearby Lake Jasna\'s turquoise water and horse statues a popular quick stop.' },
       ],
       notes: "Ljubljana (1 day) — Bled (2 days) — Bohinj (1 day) — over the Vršič Pass to Bovec/the Soča Valley (2 days) — back via Kranjska Gora. Budget €100-140/day, plus activities (rafting/canyoning €50-80 pp extra). Season: only June-September is reliably driveable — the pass closes in winter for snow/avalanche risk. Web check (2026-08): a new 2026 traffic regime on the Vršič Pass — no parking at the top through 31 August, with a free shuttle bus running Kranjska Gora-Bovec (26 June-31 August, 20 trips/day); driving the pass yourself remains possible, just park lower down.",
       transport_to_next: 'End of this route — fly home from Ljubljana.',
@@ -18285,8 +18327,8 @@ function rbBuildJulianAlpsSocaValleyRoute() {
     {
       code: 'SI', name: 'Slovenia', days: 6, budget: 720, lat: 46.4858, lng: 13.7861,
       destinations: [
-        { name: 'Kranjska Gora', lat: 46.4858, lng: 13.7861 },
-        { name: 'Vršič Pass', lat: 46.4331, lng: 13.7478 },
+        { name: 'Kranjska Gora', lat: 46.4858, lng: 13.7861 , notes: 'Slovenia\'s main ski resort town, tucked at the base of the Julian Alps near the Austrian and Italian borders; in summer it\'s the trailhead for hikes into the Alps and the start of the Vršič Pass road, with the nearby Lake Jasna\'s turquoise water and horse statues a popular quick stop.' },
+        { name: 'Vršič Pass', lat: 46.4331, lng: 13.7478 , notes: 'Slovenia\'s highest mountain pass, with 50 numbered hairpin bends (24 up the northern side alone), linking the Soča Valley to the Sava valley through the Julian Alps; open only roughly late May through October/November depending on snow, and the pass-top viewpoint over the switchbacks below is the classic photo stop.' },
         { name: 'Bovec', lat: 46.3297, lng: 13.5522 },
         { name: 'Kobarid', lat: 46.2467, lng: 13.5789 },
         { name: 'Tolmin Gorge', lat: 46.2030, lng: 13.7595 },
@@ -18361,7 +18403,7 @@ function rbBuildSloveniaItalyRoute() {
       destinations: [
         { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, notes: "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river." },
         { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
-        { name: 'Piran / Slovenian coast', lat: 45.5285, lng: 13.5686 },
+        { name: 'Piran / Slovenian coast', lat: 45.5285, lng: 13.5686 , notes: 'Slovenia\'s only real coastal stretch, centered on Piran\'s compact Venetian-Gothic old town around Tartini Square; climb the town walls above it for a view over the terracotta rooftops to the Adriatic, and stop at the nearby Sečovlje salt pans, still harvested by hand using centuries-old methods.' },
       ],
       notes: "Ljubljana (2 days) — Bled (1-2 days) — Piran/the Slovenian coast (1-2 days). Budget ~€100-130/day. Season: May-June/September, avoid the August crowds in Venice further along this route.",
       transport_to_next: 'Car, short overland hop from Piran to Trieste, Italy — Schengen-Schengen, no border control or lost time.',
@@ -18369,9 +18411,9 @@ function rbBuildSloveniaItalyRoute() {
     {
       code: 'IT', name: 'Italy', days: 4, budget: 640, lat: 45.6495, lng: 13.7768,
       destinations: [
-        { name: 'Trieste', lat: 45.6495, lng: 13.7768 },
+        { name: 'Trieste', lat: 45.6495, lng: 13.7768 , notes: 'An Italian port city with a strong Austro-Hungarian imperial character (it was the Habsburg Empire\'s main seaport), centered on the grand Piazza dell\'Unità d\'Italia facing the sea; its historic café culture (Caffè San Marco, Caffè Tommaseo) reflects a long literary history tied to writers like James Joyce.' },
         { name: 'Venice (Piazza San Marco)', lat: 45.4408, lng: 12.3155 , notes: 'St Mark\'s Basilica and the Doge\'s Palace anchor the square; the basilica itself is free to enter, but a skip-the-line booking avoids the worst of the queue.' },
-        { name: 'Friuli (Udine, alternative)', lat: 46.0693, lng: 13.2346 },
+        { name: 'Friuli (Udine, alternative)', lat: 46.0693, lng: 13.2346 , notes: 'Udine is the main town of Friuli, a lesser-visited wine region in Italy\'s northeast; its Venetian-Gothic old town centers on a hilltop castle and the Loggia del Lionello, and the region is known for its crisp white wines (Friulano, Ribolla Gialla) at far fewer tourist prices than nearby Veneto.' },
       ],
       notes: "Trieste (1 day) — Venice or Friuli (2 days). Budget ~€130-180/day (Venice pricier). Web check (2026-08): Slovenia-Italy is Schengen-Schengen, so no border control or lost time; Venice has had a day-tripper entry fee (contributo di accesso) since 2024 on certain peak days — check the current 2026 calendar in advance if adding a Venice day trip.",
       transport_to_next: 'End of this route — fly home from Venice (or Trieste).',
@@ -18413,11 +18455,11 @@ function rbBuildSarajevoMostarRoute() {
       code: 'BA', name: 'Bosnia and Herzegovina', days: 5, budget: 250, lat: 43.8563, lng: 18.4131,
       destinations: [
         { name: 'Sarajevo (Baščaršija)', lat: 43.8563, lng: 18.4131, notes: "The Ottoman-era bazaar quarter is where Sarajevo's \"meeting of civilizations\" is most literal — mosques, an Orthodox church, a Catholic cathedral and a synagogue all sit within a few minutes' walk of the Sebilj fountain. Grab a Bosnian coffee in a copper dzezva at one of the quarter's cafes and sit for a while rather than rushing through — it's meant to be sipped slowly over 30-45 minutes." },
-        { name: 'Tunnel of Hope (Butmir)', lat: 43.8194, lng: 18.3319 },
-        { name: 'Trebević cable car', lat: 43.8347, lng: 18.4444 },
+        { name: 'Tunnel of Hope (Butmir)', lat: 43.8194, lng: 18.3319 , notes: 'A hand-dug tunnel under Sarajevo Airport that was the besieged city\'s only link to the outside world during the 1992-95 siege, used to smuggle in food, weapons and supplies; a short preserved section is open as a small museum near the original Butmir house entrance.' },
+        { name: 'Trebević cable car', lat: 43.8347, lng: 18.4444 , notes: 'Rebuilt in 2018 after the original line (destroyed in the war) sat unused for over two decades, it climbs from Sarajevo\'s old town to Mount Trebević; at the top, the abandoned, graffiti-covered 1984 Winter Olympics bobsled track is the main draw for a walk along its crumbling concrete curves.' },
         { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078, notes: "The rebuilt Ottoman-era stone bridge (destroyed in the 1993 war, restored and UNESCO-listed) is the whole reason to stop, with the Old Bridge's steep arch and turquoise Neretva River below it framed by the old bazaar quarter on both banks. Local divers still jump from the bridge year-round (roughly 11:00-15:00, May-October) for tips (€2-5 per spectator is customary) — worth timing your visit around midday to catch one." },
-        { name: 'Kravice Waterfalls', lat: 43.1225, lng: 17.6725 },
-        { name: 'Blagaj Tekija', lat: 43.2489, lng: 17.8942 },
+        { name: 'Kravice Waterfalls', lat: 43.1225, lng: 17.6725 , notes: 'A horseshoe-shaped waterfall on the Trebižat River near Ljubuški, often compared to a smaller Plitvice; swimming in the pool below the falls is allowed and popular in summer, when it gets busy by midday.' },
+        { name: 'Blagaj Tekija', lat: 43.2489, lng: 17.8942 , notes: 'A 16th-century Dervish (Sufi) monastery built directly into a cliff face at the source of the Buna River, one of Europe\'s strongest karst springs; the tekija\'s cool interior and the emerald spring water beneath the cliff make it a striking stop, and boat rides upstream to the cave mouth are available in season.' },
       ],
       notes: "Sarajevo (2-3 days: Baščaršija's old bazaar, the Tunnel of Hope siege museum, the Trebević cable car up the hillside) — Mostar (2 days: the Stari Most bridge, a day trip out to the Kravice Waterfalls and Blagaj Tekija). Budget ~€45-55/day. Season: May-June/September — July-August is hot, but the Kravice water itself sits at a swimmable 19-20°C then, so it's not a bad tradeoff. Web check (2026-08): the Tunnel of Hope charges 20 BAM (~€10.50), cash only (KM, no cards); Kravice is €10 (includes Koćuša and the Humac Monastery), open 7am-10pm June-September; the Sarajevo-Mostar bus is roughly €10 and takes 2.5-3 hours.",
       transport_to_next: 'End of this route — fly home from Sarajevo (or a connecting bus back from Mostar).',
@@ -18438,10 +18480,10 @@ function rbBuildBosniaRoadtripRoute() {
       destinations: [
         { name: 'Sarajevo', lat: 43.8563, lng: 18.4131, notes: "Its Baščaršija old bazaar is the atmospheric core (Ottoman architecture, coppersmith alleys, the Sebilj fountain), but the city's real distinguishing story is the 1990s siege — the Tunnel of Hope (Tunel spasa) museum, built around the actual tunnel used to smuggle supplies under the airport during the siege, is a short taxi/tram ride from downtown and shouldn't be treated as optional. Book the Tunnel of Hope visit ahead in peak season (May-October) — it can sell out, entry is about 20 BAM (~€10.50), open daily roughly 9:00-17:00." },
         { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078, notes: "The rebuilt Ottoman-era stone bridge (destroyed in the 1993 war, restored and UNESCO-listed) is the whole reason to stop, with the Old Bridge's steep arch and turquoise Neretva River below it framed by the old bazaar quarter on both banks. Local divers still jump from the bridge year-round (roughly 11:00-15:00, May-October) for tips (€2-5 per spectator is customary) — worth timing your visit around midday to catch one." },
-        { name: 'Kravice Waterfalls', lat: 43.1225, lng: 17.6725 },
-        { name: 'Blagaj Tekija', lat: 43.2489, lng: 17.8942 },
-        { name: "Konjic (Tito's Bunker / ARK D-0)", lat: 43.6531, lng: 17.9614 },
-        { name: 'Jajce (waterfalls)', lat: 44.3411, lng: 17.2694 },
+        { name: 'Kravice Waterfalls', lat: 43.1225, lng: 17.6725 , notes: 'A horseshoe-shaped waterfall on the Trebižat River near Ljubuški, often compared to a smaller Plitvice; swimming in the pool below the falls is allowed and popular in summer, when it gets busy by midday.' },
+        { name: 'Blagaj Tekija', lat: 43.2489, lng: 17.8942 , notes: 'A 16th-century Dervish (Sufi) monastery built directly into a cliff face at the source of the Buna River, one of Europe\'s strongest karst springs; the tekija\'s cool interior and the emerald spring water beneath the cliff make it a striking stop, and boat rides upstream to the cave mouth are available in season.' },
+        { name: "Konjic (Tito's Bunker / ARK D-0)", lat: 43.6531, lng: 17.9614 , notes: 'A massive Cold War-era nuclear bunker built secretly for Yugoslav leadership (including Tito), hidden inside a mountain near Konjic and kept classified until 2015; guided tours through its blast doors and preserved rooms are the only way to see the interior.' },
+        { name: 'Jajce (waterfalls)', lat: 44.3411, lng: 17.2694 , notes: 'A small Bosnian town built around a dramatic waterfall that drops right in the middle of it, plus a medieval old town where Bosnia\'s last king was crowned; the nearby Pliva Lakes and their wooden watermills are a short, worthwhile add-on.' },
       ],
       notes: "Sarajevo (2 days) — Mostar (2 days, with Kravice and Blagaj) — Konjic (Tito's Cold War bunker, ARK D-0) — Jajce (the in-town waterfalls). Budget ~€40-50/day including the rental car (~€25-35/day on its own). Season: May-June/September. Web check (2026-08): no green card is needed for the rental car within Bosnia itself; spring and autumn flooding can occasionally block roads, so build in some slack.",
       transport_to_next: 'End of this route — fly home from Sarajevo.',
@@ -18556,8 +18598,8 @@ function rbBuildMontenegroRoute() {
       destinations: [
         { name: 'Kotor Old Town', lat: 42.4247, lng: 18.7712, notes: "Beyond the Venetian-walled old town itself, the real highlight is climbing the fortifications up to St. John's (San Giovanni) Fortress for a view over the bay and the town's terracotta roofs. It's a steep ~1,350-step climb (roughly 1-1.5 hours round trip) — start at first light or late afternoon to avoid both the midday heat and the crowds that arrive once cruise ships dock." },
         { name: 'Budva', lat: 42.2911, lng: 18.8400, notes: "Its small walled old town is pleasant but modest compared to Kotor or Dubrovnik — Budva's real appeal is as a base for the beach-resort coastline around it, especially the postcard view of the Sveti Stefan islet just south of town. Don't spend more than a couple of hours in the old town itself; head to the Sveti Stefan viewpoint (free, no need to enter the resort) for the classic photo." },
-        { name: 'Lovćen National Park', lat: 42.3939, lng: 18.8300 },
-        { name: 'Njeguši', lat: 42.4106, lng: 18.8494 },
+        { name: 'Lovćen National Park', lat: 42.3939, lng: 18.8300 , notes: 'A small but dramatic national park centered on Mount Lovćen, reached by a winding road with 25 hairpin turns up from the Bay of Kotor; the mausoleum of Montenegrin ruler-poet Njegoš sits near the summit, reachable by a 461-step staircase, with panoramic views over most of the country on a clear day.' },
+        { name: 'Njeguši', lat: 42.4106, lng: 18.8494 , notes: 'A small mountain village on the road up to Lovćen, famous as the birthplace of the Petrović-Njegoš dynasty and for two specific foods sold at roadside stalls: njeguški sir (a smoked cheese) and njeguška pršuta (a smoked ham) — a classic stop to try both on the way up or down the pass.' },
         { name: 'Žabljak / Durmitor National Park', lat: 43.1550, lng: 19.1225 , notes: 'Durmitor has 48 peaks over 2000m; the easy Black Lake (Crno Jezero) loop trail (~1.5hr, flat) is the must-do, and Ćurevac viewpoint is the easily-missed extra if you have another hour — it gives a full panorama over the Tara Canyon.' },
         { name: 'Ostrog Monastery', lat: 42.7758, lng: 18.9967 , notes: 'A Serbian Orthodox monastery built directly into a sheer cliff face, one of the Balkans\' most-visited pilgrimage sites. Dress modestly (shoulders/knees covered), expect crowds of pilgrims especially on weekends, and park at the lower monastery to walk or shuttle up the steep road — allow 1.5-2 hours.' },
       ],
@@ -23593,8 +23635,8 @@ function rbBuildCroatiaBosniaSplitRoute() {
       code: 'BA', name: 'Bosnia and Herzegovina', days: 6, budget: 300, lat: 43.8563, lng: 18.4131,
       destinations: [
         { name: 'Mostar (Stari Most)', lat: 43.3438, lng: 17.8078, notes: "The rebuilt Ottoman-era stone bridge (destroyed in the 1993 war, restored and UNESCO-listed) is the whole reason to stop, with the Old Bridge's steep arch and turquoise Neretva River below it framed by the old bazaar quarter on both banks. Local divers still jump from the bridge year-round (roughly 11:00-15:00, May-October) for tips (€2-5 per spectator is customary) — worth timing your visit around midday to catch one." },
-        { name: 'Kravice Waterfalls', lat: 43.1225, lng: 17.6725 },
-        { name: 'Blagaj Tekija', lat: 43.2489, lng: 17.8942 },
+        { name: 'Kravice Waterfalls', lat: 43.1225, lng: 17.6725 , notes: 'A horseshoe-shaped waterfall on the Trebižat River near Ljubuški, often compared to a smaller Plitvice; swimming in the pool below the falls is allowed and popular in summer, when it gets busy by midday.' },
+        { name: 'Blagaj Tekija', lat: 43.2489, lng: 17.8942 , notes: 'A 16th-century Dervish (Sufi) monastery built directly into a cliff face at the source of the Buna River, one of Europe\'s strongest karst springs; the tekija\'s cool interior and the emerald spring water beneath the cliff make it a striking stop, and boat rides upstream to the cave mouth are available in season.' },
         { name: 'Sarajevo (Baščaršija)', lat: 43.8563, lng: 18.4131, notes: "The Ottoman-era bazaar quarter is where Sarajevo's \"meeting of civilizations\" is most literal — mosques, an Orthodox church, a Catholic cathedral and a synagogue all sit within a few minutes' walk of the Sebilj fountain. Grab a Bosnian coffee in a copper dzezva at one of the quarter's cafes and sit for a while rather than rushing through — it's meant to be sipped slowly over 30-45 minutes." },
       ],
       notes: "Mostar (2 days: Stari Most, a day trip out to the Kravice Waterfalls and Blagaj Tekija) — Sarajevo (2-3 days: Baščaršija, the Tunnel of Hope, the Trebević cable car). Budget ~€50/day. Season: May-June or September.",
@@ -24315,8 +24357,8 @@ function rbBuildAlpineRoadtripFiveCountriesRoute() {
     {
       code: 'SI', name: 'Slovenia', days: 3, budget: 330, lat: 46.4858, lng: 13.7861,
       destinations: [
-        { name: 'Kranjska Gora', lat: 46.4858, lng: 13.7861 },
-        { name: 'Vršič Pass', lat: 46.4331, lng: 13.7478 },
+        { name: 'Kranjska Gora', lat: 46.4858, lng: 13.7861 , notes: 'Slovenia\'s main ski resort town, tucked at the base of the Julian Alps near the Austrian and Italian borders; in summer it\'s the trailhead for hikes into the Alps and the start of the Vršič Pass road, with the nearby Lake Jasna\'s turquoise water and horse statues a popular quick stop.' },
+        { name: 'Vršič Pass', lat: 46.4331, lng: 13.7478 , notes: 'Slovenia\'s highest mountain pass, with 50 numbered hairpin bends (24 up the northern side alone), linking the Soča Valley to the Sava valley through the Julian Alps; open only roughly late May through October/November depending on snow, and the pass-top viewpoint over the switchbacks below is the classic photo stop.' },
         { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
       ],
       notes: "The Julian Alps and Bled (2-3 days), closing the trip — same content as Julian Alps + Soča Valley (6 days) 🚣 (rbBuildJulianAlpsSocaValleyRoute)/Slovenia Alpine Loop (6 days) 🏔️ above (Kranjska Gora, the Vršič Pass 2026 traffic regime, Bled). Budget ~€110-130/day p.p. Season: June-September only — the Vršič Pass is closed in winter for snow/avalanche risk. Web check (2026-09): a new traffic-management regime took effect 15 June 2026 for the whole 1 June-30 Sept tourist season (free shuttle bus + barrier monitoring) — private cars/motorbikes/bicycles still cross free and unrestricted, the only change is no parking right at the summit (use the designated areas near the Russian Chapel/Erjavčeva koča instead).",
