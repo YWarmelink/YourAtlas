@@ -30,6 +30,22 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   already present in the existing data, no change needed to how batches insert notes or build
   their migration functions.
 
+- **Per-destination notes, batches 93-97 — Andorra-Ariège/Denmark-Sweden/Tenerife-Gomera/Isle of
+  Man/Norway leftovers (2026-09-18)** — 19 destinations researched, plus 2 Norway leftovers
+  (a combo note and a reuse) closing out South & Central Norway.
+  - Batch 93: Andorra + French Pyrenees: Ariège extras — Pas de la Casa, Ax-les-Thermes, Foix,
+    Tarascon-sur-Ariège, Grotte de Niaux (`rbMigrateAndorraAriegeExtrasDestinationNotes()`)
+  - Batch 94: Denmark + South Sweden extras — Roskilde, Louisiana Museum, Malmö, Lund, Ystad,
+    Kivik (`rbMigrateDenmarkSwedenExtrasDestinationNotes()`)
+  - Batch 95: Tenerife + La Gomera extras — Los Cristianos, San Sebastián de la Gomera,
+    Garajonay NP, Valle Gran Rey, Agulo (`rbMigrateTenerifeGomeraExtrasDestinationNotes()`)
+  - Batch 96: Isle of Man extras — TT Grandstand & Museum, Castletown/Castle Rushen, Peel
+    Castle (`rbMigrateIsleOfManExtrasDestinationNotes()`)
+  - Batch 97: South & Central Norway leftovers — a "Sognefjord / Geirangerfjord" combo note
+    built from the Nærøyfjord + Geirangerfjord notes, plus "Trondheim (optional)" reusing the
+    bare Trondheim note (`rbMigrateNorwayLeftoversDestinationNotes()`)
+  App-wide total: 3353 destination-slots filled across 394 routes. 475/741 signatures done.
+
 - **Per-destination notes, batch 92 — Norway cluster (2026-09-18)** — a very high-leverage
   batch spanning Bergen + Fjords, South Norway, Fjord Norway, Norway Roadtrip, Bergen + Ålesund,
   South & Central Norway: 20 canonical topics researched in one pass, applied to 26 name-string

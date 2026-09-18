@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 466 / 741 signatures.**
+- **Done so far: 475 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -230,7 +230,7 @@ Sorted by how many routes reuse them — highest leverage first.
 Sorted alphabetically by country code.
 
 - [ ] **AD** (6 dest): Andorra la Vella (Casa de la Vall), Escaldes-Engordany (Caldea spa), Ordino (Museu Casa d'Areny-Plandolit), Canillo (Roc del Quer viewpoint), Sant Joan de Caselles, Encamp (optional) — routes: Andorra (4 days) 🏔️
-- [ ] **AD** (3 dest): Andorra la Vella (Casa de la Vall), Ordino, Pas de la Casa — routes: Andorra + French Pyrenees: Ariège (6 days) ♨️
+- [x] **AD** (3 dest): Andorra la Vella (Casa de la Vall), Ordino, Pas de la Casa — routes: Andorra + French Pyrenees: Ariège (6 days) ♨️
 - [x] **AD** (3 dest): Andorra la Vella (Casa de la Vall), Ordino, Vall del Madriu-Perafita-Claror (hike) — routes: Andorra + Spanish Pyrenees: Grand Circuit (9 days) 🏔️
 - [ ] **AE** (5 dest): Dubai, Abu Dhabi, Al Ain, Liwa Oasis / Empty Quarter, Fujairah / East Coast — routes: United Arab Emirates 🏙️
 - [x] **AL** (3 dest): Tirana, Berat, Korçë — routes: Albania + North Macedonia (12 days) 🏞️
@@ -330,7 +330,7 @@ Sorted alphabetically by country code.
 - [ ] **DK** (5 dest): Nyhavn, Tivoli Gardens, Strøget, Christiania, Rosenborg Castle — routes: Copenhagen (4 days) 🧜‍♀️
 - [ ] **DK** (4 dest): Copenhagen (Nyhavn), Roskilde (Viking Ship Museum), Louisiana Museum (Humlebæk), Møns Klint — routes: Copenhagen + Zealand (5 days) 🖼️
 - [ ] **DK** (4 dest): Copenhagen (Nyhavn), Odense (H.C. Andersen House), LEGO House (Billund), Aarhus (ARoS Art Museum) — routes: Denmark (6 days) 🧱
-- [ ] **DK** (3 dest): Copenhagen (Nyhavn), Roskilde (Viking Ship Museum), Louisiana Museum (Humlebæk) — routes: Denmark + South Sweden (9 days) 🌉
+- [x] **DK** (3 dest): Copenhagen (Nyhavn), Roskilde (Viking Ship Museum), Louisiana Museum (Humlebæk) — routes: Denmark + South Sweden (9 days) 🌉
 - [x] **DK** (2 dest): Copenhagen (Nyhavn), Tivoli Gardens — routes: Denmark + Sweden + Norway Overland (12 days) 🌉
 - [x] **DK** (4 dest): Nyhavn, Tivoli Gardens, Christiania, Torvehallerne — routes: Nordic Arctic Expedition ❄️
 - [x] **DK** (1 dest): Copenhagen (Nyhavn) — routes: Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️
@@ -367,8 +367,8 @@ Sorted alphabetically by country code.
 - [x] **ES** (8 dest): Barcelona, Tarragona, Valencia, Alicante (Costa Blanca), Murcia, Almería coast, Málaga / Costa del Sol, Granada (optional inland detour) — routes: Spain: East to South (12 days) 🌅
 - [x] **ES** (8 dest): San Sebastián / Bilbao, Vitoria-Gasteiz, Burgos (cathedral), Madrid, Toledo (day trip), Segovia (day trip), Ávila (optional), Salamanca (optional) — routes: Spain: North to Central (12 days) 🚉
 - [ ] **ES** (6 dest): Santa Cruz de Tenerife, La Laguna (UNESCO old town), Teide National Park, Anaga Rural Park (Cruz del Carmen), Costa Adeje, Los Cristianos — routes: Tenerife (5-7 days) 🏝️
-- [ ] **ES** (3 dest): Santa Cruz de Tenerife, Teide National Park, Los Cristianos — routes: Tenerife + La Gomera (7-10 days) 🏝️
-- [ ] **ES** (4 dest): San Sebastián de la Gomera, Garajonay National Park, Valle Gran Rey, Agulo — routes: Tenerife + La Gomera (7-10 days) 🏝️
+- [x] **ES** (3 dest): Santa Cruz de Tenerife, Teide National Park, Los Cristianos — routes: Tenerife + La Gomera (7-10 days) 🏝️
+- [x] **ES** (4 dest): San Sebastián de la Gomera, Garajonay National Park, Valle Gran Rey, Agulo — routes: Tenerife + La Gomera (7-10 days) 🏝️
 - [ ] **ES** (6 dest): Valencia (Ciutat Vella), City of Arts and Sciences, Albufera, Alicante (Castillo de Santa Bárbara), Peñíscola (optional, north of Valencia), Calpe (optional) — routes: Valencia + Costa Blanca (6 days) 🎆
 - [ ] **FI** (4 dest): Helsinki (Senate Square), Turku, Tampere, Rovaniemi (Santa Claus Village) — routes: Finland Roadtrip (12 days) 🛣️
 - [ ] **FI** (3 dest): Rovaniemi (Santa Claus Village), Levi (Kittilä), Ylläs (Äkäslompolo) — routes: Finnish Lapland (9 days) 🎅
@@ -382,7 +382,7 @@ Sorted alphabetically by country code.
 - [x] **FO** (5 dest): Tórshavn, Saksun, Gjógv, Vestmanna Cliffs, Trælanípa & Lake Sørvágsvatn hike — routes: Nordic Arctic Expedition ❄️
 - [x] **FR** (1 dest): Chamonix (Mont Blanc) — routes: Alpine Roadtrip (14 days) 🏕️
 - [x] **FR** (8 dest): Strasbourg (Petite France, cathedral + astronomical clock), Colmar (base — old town, Little Venice, Unterlinden), Riquewihr, Ribeauvillé, Kaysersberg, Haut-Koenigsbourg Castle (detour), Eguisheim (early, before the tour buses), Turckheim — routes: Alsace (4 days) 🥐
-- [ ] **FR** (4 dest): Ax-les-Thermes (thermal baths), Foix (medieval castle), Tarascon-sur-Ariège, Grotte de Niaux (prehistoric cave) — routes: Andorra + French Pyrenees: Ariège (6 days) ♨️
+- [x] **FR** (4 dest): Ax-les-Thermes (thermal baths), Foix (medieval castle), Tarascon-sur-Ariège, Grotte de Niaux (prehistoric cave) — routes: Andorra + French Pyrenees: Ariège (6 days) ♨️
 - [ ] **FR** (5 dest): Saint-Malo (ramparts), Dinan (medieval old town), Côte de Granit Rose / Ploumanac'h coastal path, Île de Bréhat, Cap Fréhel — routes: Brittany: Saint-Malo, Dinan & Pink Granite Coast (5 days) 🦞
 - [x] **FR** (3 dest): Strasbourg, Colmar, Alsace villages — routes: Central European Grand Roadtrip 🚗
 - [x] **FR** (4 dest): Bastia or Calvi (entry), Corte, Porto-Vecchio / Col de Bavella, Bonifacio — routes: Corsica + Sardinia: Full Island Loop (12 days) 🌊
@@ -492,8 +492,8 @@ Sorted alphabetically by country code.
 - [x] **IE** (5 dest): Dublin, Kilkenny, Cork / Kinsale, Ring of Kerry, Galway — routes: Ireland Roadtrip (7-10 days) 🚗
 - [ ] **IE** (4 dest): Galway, Connemara National Park / Kylemore Abbey (day trip), Cliffs of Moher / Doolin, Aran Islands (optional) — routes: West Ireland (5-7 days) 🌊
 - [x] **IE** (8 dest): Donegal, Sligo, Mayo / Achill Island, Connemara, Galway, Cliffs of Moher (Clare), Dingle Peninsula / Ring of Kerry, Cork / Kinsale — routes: Wild Atlantic Way (7-10 days) 🌅
-- [ ] **IM** (5 dest): Douglas, TT Grandstand & Museum, TT Mountain Road (Snaefell), Snaefell Mountain Railway, Manx Electric Railway — routes: Isle of Man (3-4 days) 🏝️
-- [ ] **IM** (2 dest): Castletown (Castle Rushen), Peel Castle — routes: Isle of Man (3-4 days) 🏝️
+- [x] **IM** (5 dest): Douglas, TT Grandstand & Museum, TT Mountain Road (Snaefell), Snaefell Mountain Railway, Manx Electric Railway — routes: Isle of Man (3-4 days) 🏝️
+- [x] **IM** (2 dest): Castletown (Castle Rushen), Peel Castle — routes: Isle of Man (3-4 days) 🏝️
 - [x] **IS** (9 dest): Reykjavík, Vík í Mýrdal, Jökulsárlón Glacier Lagoon, Egilsstaðir / Seyðisfjörður, Mývatn / Akureyri / Húsavík, Westfjords (Ísafjörður), Dynjandi waterfall, Landmannalaugar (highland alternative), Þórsmörk (highland alternative) — routes: Iceland Extended (14 days) 🗺️
 - [x] **IS** (9 dest): Reykjavík, Vík í Mýrdal, Jökulsárlón Glacier Lagoon, Höfn, Egilsstaðir, Seyðisfjörður, Mývatn, Akureyri, Húsavík — routes: Iceland Ring Road (12 days) 🛣️
 - [x] **IS** (8 dest): Reykjavík, Golden Circle (Þingvellir/Geysir/Gullfoss), Seljalandsfoss, Skógafoss, Reynisfjara black beach / Vík í Mýrdal, Jökulsárlón Glacier Lagoon, Diamond Beach, Höfn — routes: Iceland South Coast (9 days) 🧊
@@ -638,7 +638,7 @@ Sorted alphabetically by country code.
 - [ ] **NO** (4 dest): Oslo (Karl Johans gate), Bergen (Bryggen), Sognefjord / Nærøyfjord, Flåm (Flåm Railway) — routes: Norway + Sweden: Fjords & Capitals (12 days) ⛴️
 - [x] **NO** (7 dest): Oslo, Bergen, Sognefjord / Nærøyfjord, Geirangerfjord, Ålesund, Trondheim, Rondane / Femundsmarka National Park — routes: Norway Roadtrip (12 days) 🚙
 - [ ] **NO** (6 dest): Oslo (Karl Johans gate), Vigeland Park, Viking Ship Museum & Fram Museum (Bygdøy), Munch Museum, Hovedøya (Oslofjord islands day trip), Fredrikstad (alternative day trip) — routes: Oslo (5 days) 🏛️
-- [ ] **NO** (7 dest): Oslo, Rjukan / Telemark, Kristiansand (Sørlandet coast), Bergen, Sognefjord / Geirangerfjord, Ålesund, Trondheim (optional) — routes: South & Central Norway (14 days) 🗺️
+- [x] **NO** (7 dest): Oslo, Rjukan / Telemark, Kristiansand (Sørlandet coast), Bergen, Sognefjord / Geirangerfjord, Ålesund, Trondheim (optional) — routes: South & Central Norway (14 days) 🗺️
 - [x] **NO** (5 dest): Oslo, Rjukan, Telemark Canal boat (Dalen), Kristiansand, Mandal — routes: South Norway (9 days) 🏞️
 - [ ] **NO** (5 dest): Longyearbyen, Svalbard Museum, Nordpolet, Isfjorden boat tour (summer), Pyramiden (summer boat destination) — routes: Svalbard (Longyearbyen) (6 days) 🌌
 - [x] **NO** (2 dest): Narvik, Lofoten (Svolvær) — routes: Sweden + Norway (12 days) 🌉
@@ -695,7 +695,7 @@ Sorted alphabetically by country code.
 - [x] **RS** (2 dest): Belgrade (Kalemegdan), Zlatibor — routes: Serbia + Montenegro + Bosnia (12 days) 🏔️
 - [ ] **RS** (5 dest): Belgrade (Kalemegdan), Novi Sad, Subotica, Zlatibor, Mokra Gora / Tara National Park — routes: Serbia Roadtrip (9 days) 🚙
 - [ ] **SC** (5 dest): Victoria & Sainte Anne Marine Park, Mahé, Morne Seychellois National Park, Mahé, Praslin (Vallée de Mai, Anse Lazio), Curieuse Island, La Digue (Anse Source d'Argent) — routes: Seychelles 🌺
-- [ ] **SE** (4 dest): Malmö, Lund, Ystad, Kivik — routes: Denmark + South Sweden (9 days) 🌉
+- [x] **SE** (4 dest): Malmö, Lund, Ystad, Kivik — routes: Denmark + South Sweden (9 days) 🌉
 - [ ] **SE** (2 dest): Malmö, Gothenburg — routes: Denmark + Sweden + Norway Overland (12 days) 🌉
 - [x] **SE** (1 dest): Stockholm (Gamla Stan) — routes: Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️
 - [ ] **SE** (2 dest): Gothenburg (transit stop), Stockholm (Gamla Stan) — routes: Norway + Sweden: Fjords & Capitals (12 days) ⛴️
@@ -781,11 +781,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | French Alps + Provence (9 days) 🛤️ | 7/7 | 0 |
 | Campania: Naples + Amalfi Coast (6 days) 🌊 | 7/7 | 0 |
 | Asturias + Cantabria (6 days) 🌲 | 7/7 | 0 |
-| Andorra + French Pyrenees: Ariège (6 days) ♨️ | 7/7 | 0 |
-| South & Central Norway (14 days) 🗺️ | 7/7 | 0 |
-| Denmark + South Sweden (9 days) 🌉 | 7/7 | 0 |
-| Tenerife + La Gomera (7-10 days) 🏝️ | 7/7 | 0 |
-| Isle of Man (3-4 days) 🏝️ | 7/7 | 0 |
 | Portugal + Spain Roadtrip (14 days) 🚗 | 7/10 | 0 |
 | French + Spanish Pyrenees (9 days) 🥖 | 7/7 | 0 |
 | Sri Lanka 🐆 | 6/6 | 0 |
@@ -808,6 +803,11 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Sarajevo + Mostar (5 days) 🌉 | 6/6 | 0 |
 | Bosnia Roadtrip (6 days) 🚗 | 6/6 | 0 |
 | Montenegro (6 days) 🏔️ | 6/6 | 0 |
-| ... 160 more routes with open destinations ... | | |
+| Poland Roadtrip (9 days) 🚗 | 6/6 | 0 |
+| Oslo (5 days) 🏛️ | 6/6 | 0 |
+| South Sweden (Skåne) (9 days) 🪨 | 6/6 | 0 |
+| Swedish Lapland + Northern Lights (9 days) 💫 | 6/6 | 0 |
+| Orkney + Shetland (5-7 days) ⚓ | 6/6 | 0 |
+| ... 155 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

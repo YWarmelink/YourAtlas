@@ -11353,6 +11353,158 @@ function rbMigrateNorwayClusterDestinationNotes() {
 }
 
 /**
+ * Batch 93 (2026-09-18) -- Andorra + French Pyrenees: Ariège extras -- 5 destinations
+ * researched (Andorra la Vella/Ordino already had notes). Same generic name-matching
+ * migration pattern as the other batches.
+ */
+function rbMigrateAndorraAriegeExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_ANDORRA_ARIEGE_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_ANDORRA_ARIEGE_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Pas de la Casa': "High-altitude Andorran border resort whose main draw is duty-free shopping (alcohol, tobacco, electronics) alongside the Grandvalira ski slopes; cross early on weekend mornings, as the Envalira tunnel/border can queue badly with day-trippers.",
+    'Ax-les-Thermes (thermal baths)': "Pyrenees spa town built on natural hot springs; skip the paid spas and just try the free public hot-water foot basins (Bassin des Ladres) in the town centre, no booking needed.",
+    'Foix (medieval castle)': "Dramatic three-towered medieval castle perched on a rock right above the town; climb the towers for valley views and check the small archaeology exhibits inside — about an hour is enough.",
+    'Tarascon-sur-Ariège': "Small town that's the practical base/gateway for several prehistoric painted caves nearby (Niaux, Grotte de la Vache, Parc Pyrénéen de l'Art Préhistorique); use it to organize cave visits rather than as a destination in itself.",
+    'Grotte de Niaux (prehistoric cave)': "One of the few caves in France where you see genuine, un-retouched Magdalenian paintings of bison and horses (Salon Noir), not a replica. Reservation is mandatory and often needed weeks to months ahead in July-August (only 2-10 tours/day); the guided visit runs about 1h45 and the cave stays cold year-round, so bring a jacket.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 94 (2026-09-18) -- Denmark + South Sweden extras -- 6 destinations researched
+ * (Copenhagen (Nyhavn) already had a note). Same generic name-matching migration pattern as
+ * the other batches.
+ */
+function rbMigrateDenmarkSwedenExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_DENMARK_SWEDEN_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_DENMARK_SWEDEN_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Roskilde (Viking Ship Museum)': "Houses five excavated 11th-century Viking ships (the Skuldelev wrecks) plus a working boatyard where reconstructions are built by hand. Allow 1.5-2 hours; in summer you can go out on the fjord aboard one of the reconstructed longships.",
+    'Louisiana Museum (Humlebæk)': "Renowned modern/contemporary art museum whose real draw is the building itself — galleries woven into a sculpture park overlooking the Øresund. Give it half a day, and pair it with Kronborg Castle in Helsingør on the same train-line day trip from Copenhagen.",
+    'Malmö': "Sweden's third city, joined to Copenhagen by the Öresund Bridge, known for the Turning Torso skyscraper and the Lilla Torg old-town square. Easiest as a train day trip from Copenhagen Central (about 35 minutes), no car needed.",
+    'Lund': "Small university city centered on a Romanesque cathedral with a 15th-century astronomical clock (Horologium mirabile). Time your visit for the mechanical show — weekdays at 12:00 and 15:00, Sundays at 13:00.",
+    'Ystad': "Well-preserved half-timbered old town on the Swedish coast, familiar as the setting of the Wallander detective novels/TV series. Just wander the cobbled lanes, or follow a self-guided Wallander sites walk; it's also the ferry town for Bornholm.",
+    'Kivik': "Small coastal village in Österlen known for apple orchards and the Bronze Age Kiviksgraven burial cairn, whose central chamber has carved stone slabs. Visit in spring for blossom season, and pay the small entry fee to get inside the cairn and see the carvings up close.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 95 (2026-09-18) -- Tenerife + La Gomera extras -- 5 destinations researched (Santa
+ * Cruz de Tenerife/Teide National Park already had notes). Same generic name-matching
+ * migration pattern as the other batches.
+ */
+function rbMigrateTenerifeGomeraExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_TENERIFE_GOMERA_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_TENERIFE_GOMERA_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Los Cristianos': "Tenerife's south-coast resort town, mainly useful as the ferry departure point for La Gomera. Book the Fred Olsen/Naviera Armas ferry ahead in high season; the crossing to San Sebastián takes about 50 minutes.",
+    'San Sebastián de la Gomera': "La Gomera's small capital, where Columbus made his last provisioning stop in 1492/1493 before the Atlantic crossing. See the Casa de Colón and Torre del Conde — the town is compact enough to cover in an hour or two before heading inland.",
+    'Garajonay National Park': "UNESCO-listed ancient laurisilva (laurel forest) covering La Gomera's misty interior. Go early morning when the mist filters through the trees, and hike out to the Alto de Garajonay viewpoint for a panoramic view on clear days.",
+    'Valle Gran Rey': "Steep, palm-lined valley on La Gomera's west coast with a laid-back, semi-alternative scene and good hiking. Time it for sunset at a viewpoint like La Merica or Mirador de Igualero, popular with paragliders too.",
+    'Agulo': "Small village on a black-sand coastal terrace below sheer cliffs, facing Tenerife's Teide across the strait. Shoot it from above at the Mirador de Abrante skywalk (glass-floor platform) for the classic view over the village and coast.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 96 (2026-09-18) -- Isle of Man extras -- 3 destinations researched (Douglas, TT
+ * Mountain Road, Snaefell Mountain Railway and Manx Electric Railway already had notes). Same
+ * generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateIsleOfManExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_ISLE_OF_MAN_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_ISLE_OF_MAN_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'TT Grandstand & Museum': "The grandstand and former TT museum for the Isle of Man TT motorcycle races. Note the dedicated TT exhibition has moved into the Manx Museum's TT Gallery in Douglas (open daily, standard museum hours); the grandstand itself has limited/charged opening outside race weeks, so it's most worth visiting during TT or Manx GP fortnight.",
+    'Castletown (Castle Rushen)': "The Isle of Man's former capital, centered on an exceptionally well-preserved 13th-century medieval castle. Climb the tower for harbour views and pair it with the small Nautical Museum nearby; 1-1.5 hours covers it.",
+    'Peel Castle': "Ruined castle on the tidal islet of St Patrick's Isle just off Peel's harbour. Check tide times for the causeway/access, and combine it with Peel's House of Manannan museum and its kipper smokehouses while in town.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 97 (2026-09-18) -- South & Central Norway leftovers -- "Sognefjord / Geirangerfjord"
+ * built by combining the Nærøyfjord and Geirangerfjord notes, plus "Trondheim (optional)"
+ * reusing the existing bare Trondheim note (same real places, different exact strings). Same
+ * generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateNorwayLeftoversDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_NORWAY_LEFTOVERS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_NORWAY_LEFTOVERS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Sognefjord / Geirangerfjord': 'Sognefjord, Norway\'s longest fjord, branches into the narrow Nærøyfjord (the classic "Norway in a Nutshell" boat leg from Flåm) before this route continues north to Geirangerfjord — Norway\'s most iconic fjord, with the Seven Sisters and Bridal Veil waterfalls dropping straight into the water. Time the Geiranger cruise or Ørnesvingen viewpoint for early morning to beat the cruise-ship crowds.',
+    'Trondheim (optional)': "Trondheim's centerpiece is Nidaros Cathedral, Scandinavia's largest medieval building and the traditional coronation/burial church of Norwegian kings. Don't skip the colorful old riverside warehouses (bryggene) along the Nidelva just below the Old Town Bridge — easily missed if you only visit the cathedral.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -16948,7 +17100,7 @@ function rbBuildAndorraFrenchPyreneesAriegeRoute() {
       destinations: [
         { name: 'Andorra la Vella (Casa de la Vall)', lat: 42.5063, lng: 1.5218 , notes: 'A 16th-century stone building that served as Andorra\'s parliament until 2011, now a small museum; visits are by free guided tour only with limited daily slots, so book/reserve ahead rather than just showing up.' },
         { name: 'Ordino', lat: 42.5551, lng: 1.5332 , notes: 'A quieter mountain village of stone houses (Areny-Plandolit manor house museum) — a calmer alternative base to Andorra la Vella\'s shopping strip.' },
-        { name: 'Pas de la Casa', lat: 42.5427, lng: 1.7339 },
+        { name: 'Pas de la Casa', lat: 42.5427, lng: 1.7339 , notes: 'High-altitude Andorran border resort whose main draw is duty-free shopping (alcohol, tobacco, electronics) alongside the Grandvalira ski slopes; cross early on weekend mornings, as the Envalira tunnel/border can queue badly with day-trippers.' },
       ],
       notes: "Andorra la Vella and Ordino, then east via Pas de la Casa toward the French border. Entry options: fly AMS-Barcelona or AMS-Girona and drive in (see the standalone Andorra (4 days) route for the details), or fly KLM's direct AMS-Toulouse route, rent a car there and drive the whole loop without touching Spain at all. A rental car is essential either way. Budget ~€120-125/day for these Andorra-town days (no hostel scene here).",
       transport_to_next: "Drive to Ax-les-Thermes, France via Pas de la Casa and the Port d'Envalira pass (or the year-round Envalira tunnel) — a short overland hop, no border formalities within Schengen.",
@@ -16956,10 +17108,10 @@ function rbBuildAndorraFrenchPyreneesAriegeRoute() {
     {
       code: 'FR', name: 'France', days: 3, budget: 255, lat: 42.8461, lng: 1.6008,
       destinations: [
-        { name: 'Ax-les-Thermes (thermal baths)', lat: 42.7211, lng: 1.8367 },
-        { name: 'Foix (medieval castle)', lat: 42.9639, lng: 1.6053 },
-        { name: 'Tarascon-sur-Ariège', lat: 42.8461, lng: 1.6008 },
-        { name: 'Grotte de Niaux (prehistoric cave)', lat: 42.7947, lng: 1.6067 },
+        { name: 'Ax-les-Thermes (thermal baths)', lat: 42.7211, lng: 1.8367 , notes: 'Pyrenees spa town built on natural hot springs; skip the paid spas and just try the free public hot-water foot basins (Bassin des Ladres) in the town centre, no booking needed.' },
+        { name: 'Foix (medieval castle)', lat: 42.9639, lng: 1.6053 , notes: 'Dramatic three-towered medieval castle perched on a rock right above the town; climb the towers for valley views and check the small archaeology exhibits inside — about an hour is enough.' },
+        { name: 'Tarascon-sur-Ariège', lat: 42.8461, lng: 1.6008 , notes: 'Small town that\'s the practical base/gateway for several prehistoric painted caves nearby (Niaux, Grotte de la Vache, Parc Pyrénéen de l\'Art Préhistorique); use it to organize cave visits rather than as a destination in itself.' },
+        { name: 'Grotte de Niaux (prehistoric cave)', lat: 42.7947, lng: 1.6067 , notes: 'One of the few caves in France where you see genuine, un-retouched Magdalenian paintings of bison and horses (Salon Noir), not a replica. Reservation is mandatory and often needed weeks to months ahead in July-August (only 2-10 tours/day); the guided visit runs about 1h45 and the cave stays cold year-round, so bring a jacket.' },
       ],
       notes: "Restructured as the French/Ariège side of the old combined Andorra+Pyrenees idea: Ax-les-Thermes (thermal baths, ~45 min from the border) — Foix (medieval castle) — Tarascon-sur-Ariège (the Grotte de Niaux prehistoric cave). Ends back toward Andorra, or continue on to Toulouse for the flight home. Budget ~€85-90/day (rural French pension €70-90, food €30-35, the Ax spa €25-40 — cheaper than staying in Andorra town, though the spa visit keeps it from dropping further). Season: June-September — the high Port d'Envalira pass realistically runs open June-October, with the year-round Envalira tunnel as a fallback outside that window. Web check (2026-08): watch for 2026 reports of occasional closures on the French N20 near the border (rockfall) — check the current status close to your travel date.",
       transport_to_next: 'End of this route — drive back toward Andorra, or on to Toulouse for the flight home.',
@@ -20010,9 +20162,9 @@ function rbBuildSouthCentralNorwayRoute() {
         { name: 'Rjukan / Telemark', lat: 59.8794, lng: 8.5921 , notes: 'Rjukan sits so deep in its valley that it gets zero direct winter sunlight for about 6 months, which is why the town built "Solspeilet," sun-tracking mirrors on the mountainside that reflect light onto the market square in winter. It\'s also the WWII heavy-water-sabotage site — visit the Vemork industrial museum (Norsk Industriarbeidermuseum) and allow half a day including the approach drive.' },
         { name: 'Kristiansand (Sørlandet coast)', lat: 58.1467, lng: 7.9956 , notes: 'Kristiansand is Sørlandet\'s main city, with the old wooden-house quarter Posebyen and the Kristiansand Dyrepark (zoo/amusement park), Norway\'s most-visited attraction outside Oslo. Posebyen is a free hour\'s wander; the Dyrepark needs a half-day and suits families with kids specifically.' },
         { name: 'Bergen', lat: 60.3959, lng: 5.3245 , notes: 'Bergen\'s core draw is the UNESCO-listed Bryggen wharf: rows of colorful wooden Hanseatic trading houses right next to the Fisketorget fish market. Go early morning before cruise-ship crowds hit, and walk into the narrow alleys ("boder") between the houses, which most people passing by on the waterfront skip.' },
-        { name: 'Sognefjord / Geirangerfjord', lat: 60.8666, lng: 6.8666 },
+        { name: 'Sognefjord / Geirangerfjord', lat: 60.8666, lng: 6.8666 , notes: 'Sognefjord, Norway\'s longest fjord, branches into the narrow Nærøyfjord (the classic "Norway in a Nutshell" boat leg from Flåm) before this route continues north to Geirangerfjord — Norway\'s most iconic fjord, with the Seven Sisters and Bridal Veil waterfalls dropping straight into the water. Time the Geiranger cruise or Ørnesvingen viewpoint for early morning to beat the cruise-ship crowds.' },
         { name: 'Ålesund', lat: 62.4722, lng: 6.1549 , notes: 'Ålesund\'s center was entirely rebuilt in Art Nouveau (Jugendstil) style after an 1904 fire, giving it a uniquely uniform early-1900s townscape along the water and canals. Climb the roughly 400 steps to the Aksla viewpoint (Fjellstua) above downtown for the classic panorama over the islands.' },
-        { name: 'Trondheim (optional)', lat: 63.4305, lng: 10.3951 },
+        { name: 'Trondheim (optional)', lat: 63.4305, lng: 10.3951 , notes: 'Trondheim\'s centerpiece is Nidaros Cathedral, Scandinavia\'s largest medieval building and the traditional coronation/burial church of Norwegian kings. Don\'t skip the colorful old riverside warehouses (bryggene) along the Nidelva just below the Old Town Bridge — easily missed if you only visit the cathedral.' },
       ],
       notes: "The longest and most complete of the Norway routes: Oslo plus Telemark and the Sørlandet coast, then Bergen, the Sognefjord/Geirangerfjord fjords, Ålesund, and optionally on to Trondheim, with a return flight from Trondheim or Oslo. Budget ~€140-160/day averaged over the whole trip. Season: June to mid-September — the only one of these routes reaching Trondheim, so it needs a slightly wider window for the mountain passes. Web check (2026-08): the same Geiranger zero-emission rule and Preikestolen/Trolltunga crowding notes apply as on the shorter fjord routes above; consider the Dovrebanen train Trondheim-Oslo as the way back instead of flying. Travel advisory and entry details: see the Oslo (5 days) route above.",
       transport_to_next: 'End of this route — fly home from Trondheim or Oslo, or take the Dovrebanen train back to Oslo.',
@@ -20100,10 +20252,10 @@ function rbBuildSouthSwedenSkaneRoute() {
     {
       code: 'SE', name: 'Sweden', days: 9, budget: 855, lat: 55.6050, lng: 13.0038,
       destinations: [
-        { name: 'Malmö', lat: 55.6050, lng: 13.0038 },
-        { name: 'Lund', lat: 55.7047, lng: 13.1910 },
-        { name: 'Ystad', lat: 55.4295, lng: 13.8204 },
-        { name: 'Kivik', lat: 55.6817, lng: 14.2434 },
+        { name: 'Malmö', lat: 55.6050, lng: 13.0038 , notes: 'Sweden\'s third city, joined to Copenhagen by the Öresund Bridge, known for the Turning Torso skyscraper and the Lilla Torg old-town square. Easiest as a train day trip from Copenhagen Central (about 35 minutes), no car needed.' },
+        { name: 'Lund', lat: 55.7047, lng: 13.1910 , notes: 'Small university city centered on a Romanesque cathedral with a 15th-century astronomical clock (Horologium mirabile). Time your visit for the mechanical show — weekdays at 12:00 and 15:00, Sundays at 13:00.' },
+        { name: 'Ystad', lat: 55.4295, lng: 13.8204 , notes: 'Well-preserved half-timbered old town on the Swedish coast, familiar as the setting of the Wallander detective novels/TV series. Just wander the cobbled lanes, or follow a self-guided Wallander sites walk; it\'s also the ferry town for Bornholm.' },
+        { name: 'Kivik', lat: 55.6817, lng: 14.2434 , notes: 'Small coastal village in Österlen known for apple orchards and the Bronze Age Kiviksgraven burial cairn, whose central chamber has carved stone slabs. Visit in spring for blossom season, and pay the small entry fee to get inside the cairn and see the carvings up close.' },
         { name: "Ale's Stones (Kåseberga)", lat: 55.4667, lng: 14.2333 },
         { name: 'Stenshuvud National Park', lat: 55.5167, lng: 14.2667 },
       ],
@@ -20273,8 +20425,8 @@ function rbBuildCopenhagenZealandRoute() {
       code: 'DK', name: 'Denmark', days: 5, budget: 575, lat: 55.6761, lng: 12.5683,
       destinations: [
         { name: 'Copenhagen (Nyhavn)', lat: 55.6790, lng: 12.5910, notes: "The candy-colored 17th-century gabled houses along the canal were once a rough sailors' quarter where Hans Christian Andersen lived at three different addresses; go right at opening or after dinner to see it without the tour-group crush, and pick up a canal boat tour departing from the harbor itself." },
-        { name: 'Roskilde (Viking Ship Museum)', lat: 55.6415, lng: 12.0803 },
-        { name: 'Louisiana Museum (Humlebæk)', lat: 55.9625, lng: 12.5385 },
+        { name: 'Roskilde (Viking Ship Museum)', lat: 55.6415, lng: 12.0803 , notes: 'Houses five excavated 11th-century Viking ships (the Skuldelev wrecks) plus a working boatyard where reconstructions are built by hand. Allow 1.5-2 hours; in summer you can go out on the fjord aboard one of the reconstructed longships.' },
+        { name: 'Louisiana Museum (Humlebæk)', lat: 55.9625, lng: 12.5385 , notes: 'Renowned modern/contemporary art museum whose real draw is the building itself — galleries woven into a sculpture park overlooking the Øresund. Give it half a day, and pair it with Kronborg Castle in Helsingør on the same train-line day trip from Copenhagen.' },
         { name: 'Møns Klint', lat: 54.9506, lng: 12.5382 },
       ],
       notes: "Copenhagen itself (2-3 days), then day trips: Roskilde's Viking Ship Museum by train, the Louisiana Museum of Modern Art in Humlebæk, and Møns Klint's chalk cliffs (needs a rental car, ~2h drive each way). Budget ~€100-130/day, plus €40-60 on the rental-car day. Web check (2026-08): Møns Klint is barely reachable by public transport, so the rental car for that day isn't optional; its visitor center and the stairs down to the beach can have seasonal maintenance closures — check before relying on the full route being open.",
@@ -20317,8 +20469,8 @@ function rbBuildDenmarkSouthSwedenRoute() {
       code: 'DK', name: 'Denmark', days: 5, budget: 575, lat: 55.6761, lng: 12.5683,
       destinations: [
         { name: 'Copenhagen (Nyhavn)', lat: 55.6790, lng: 12.5910, notes: "The candy-colored 17th-century gabled houses along the canal were once a rough sailors' quarter where Hans Christian Andersen lived at three different addresses; go right at opening or after dinner to see it without the tour-group crush, and pick up a canal boat tour departing from the harbor itself." },
-        { name: 'Roskilde (Viking Ship Museum)', lat: 55.6415, lng: 12.0803 },
-        { name: 'Louisiana Museum (Humlebæk)', lat: 55.9625, lng: 12.5385 },
+        { name: 'Roskilde (Viking Ship Museum)', lat: 55.6415, lng: 12.0803 , notes: 'Houses five excavated 11th-century Viking ships (the Skuldelev wrecks) plus a working boatyard where reconstructions are built by hand. Allow 1.5-2 hours; in summer you can go out on the fjord aboard one of the reconstructed longships.' },
+        { name: 'Louisiana Museum (Humlebæk)', lat: 55.9625, lng: 12.5385 , notes: 'Renowned modern/contemporary art museum whose real draw is the building itself — galleries woven into a sculpture park overlooking the Øresund. Give it half a day, and pair it with Kronborg Castle in Helsingør on the same train-line day trip from Copenhagen.' },
       ],
       notes: "Copenhagen (2-3 days) plus Zealand day trips (Roskilde's Viking Ship Museum, the Louisiana Museum). Budget ~€100-130/day.",
       transport_to_next: 'The Öresund Bridge/train to Malmö (about 35 minutes), on into the Skåne region.',
@@ -20326,10 +20478,10 @@ function rbBuildDenmarkSouthSwedenRoute() {
     {
       code: 'SE', name: 'Sweden', days: 4, budget: 460, lat: 55.6050, lng: 13.0038,
       destinations: [
-        { name: 'Malmö', lat: 55.6050, lng: 13.0038 },
-        { name: 'Lund', lat: 55.7047, lng: 13.1910 },
-        { name: 'Ystad', lat: 55.4295, lng: 13.8204 },
-        { name: 'Kivik', lat: 55.6817, lng: 14.2434 },
+        { name: 'Malmö', lat: 55.6050, lng: 13.0038 , notes: 'Sweden\'s third city, joined to Copenhagen by the Öresund Bridge, known for the Turning Torso skyscraper and the Lilla Torg old-town square. Easiest as a train day trip from Copenhagen Central (about 35 minutes), no car needed.' },
+        { name: 'Lund', lat: 55.7047, lng: 13.1910 , notes: 'Small university city centered on a Romanesque cathedral with a 15th-century astronomical clock (Horologium mirabile). Time your visit for the mechanical show — weekdays at 12:00 and 15:00, Sundays at 13:00.' },
+        { name: 'Ystad', lat: 55.4295, lng: 13.8204 , notes: 'Well-preserved half-timbered old town on the Swedish coast, familiar as the setting of the Wallander detective novels/TV series. Just wander the cobbled lanes, or follow a self-guided Wallander sites walk; it\'s also the ferry town for Bornholm.' },
+        { name: 'Kivik', lat: 55.6817, lng: 14.2434 , notes: 'Small coastal village in Österlen known for apple orchards and the Bronze Age Kiviksgraven burial cairn, whose central chamber has carved stone slabs. Visit in spring for blossom season, and pay the small entry fee to get inside the cairn and see the carvings up close.' },
       ],
       notes: "Skåne (Lund, Ystad, Kivik/Österlen, 3-4 days) — same Malmö/Lund/Ystad/Kivik coordinates as the standalone South Sweden (Skåne) (9 days) 🪨 route above, since this covers the same region. Budget ~€100-130/day. Web check (2026-08): check just before departure whether Sweden's temporary ID checks on the Öresund crossing are currently active — these have been extended repeatedly since 2015, same caveat as noted on the Stockholm/Skåne routes above.",
       transport_to_next: 'End of this route — fly home from Malmö or Copenhagen.',
@@ -21572,7 +21724,7 @@ function rbBuildTenerifeRoute() {
         { name: 'Teide National Park', lat: 28.2723, lng: -16.6417 , notes: 'Spain\'s highest peak (3,715m) with a genuinely otherworldly volcanic landscape; the cable car takes you most of the way up. If you want the actual summit, you need a separate free National Park permit booked online in advance (slots release Mondays 7am Canary time, up to ~56 days ahead) — the cable car ticket alone does not include summit access. Go early for clearer skies before afternoon cloud rolls in.' },
         { name: 'Anaga Rural Park (Cruz del Carmen)', lat: 28.5477, lng: -16.2135 },
         { name: 'Costa Adeje', lat: 28.0994, lng: -16.7357 },
-        { name: 'Los Cristianos', lat: 28.0525, lng: -16.7192 },
+        { name: 'Los Cristianos', lat: 28.0525, lng: -16.7192 , notes: 'Tenerife\'s south-coast resort town, mainly useful as the ferry departure point for La Gomera. Book the Fred Olsen/Naviera Armas ferry ahead in high season; the crossing to San Sebastián takes about 50 minutes.' },
       ],
       notes: "Entry: easyJet and Transavia fly direct from Amsterdam/Rotterdam to Tenerife South, plus winter-sun charters on TUI fly. 1-2 days in Santa Cruz and the UNESCO-listed university town of La Laguna next door, 1 day up at Teide National Park, 1-2 days walking in the Anaga mountains in the northeast, then 2 days winding down on the south coast around Costa Adeje/Los Cristianos. A rental car is worth it for Anaga's winding roads. Budget ~€55-75/day. Season: good year-round; October-May is nicest for hiking. Web check (2026-08): the Teide cable car is roughly €40 return, weather-dependent and worth booking ahead; a free permit is mandatory for the final 200m to the summit (capped at ~200 visitors/day, apply well ahead via reservasparquesnacionales.es) — without it you still reach the upper cable-car station at 3,555m, which is impressive on its own. The Canaries are EU/Schengen but sit outside the EU VAT zone, running their own IGIC system (general rate ~7% vs mainland Spain's 21% IVA) — noticeably cheaper on electronics, alcohol, tobacco and perfume, island-wide, not just at the airport. Since April 2024 there have been ongoing peaceful overtourism protests (\"Canarias tiene un límite\") against housing shortage/hotel construction, continuing into 2025 — no direct safety concern for visitors, but respectful behavior is advised given growing local sentiment.",
       transport_to_next: 'End of this route — fly home from Tenerife South or Tenerife North.',
@@ -21645,7 +21797,7 @@ function rbBuildTenerifeLaGomeraRoute() {
       destinations: [
         { name: 'Santa Cruz de Tenerife', lat: 28.4636, lng: -16.2518 , notes: 'The city itself (Calatrava\'s Auditorio de Tenerife, Plaza de España) doesn\'t need more than a few hours. The easily-missed highlight nearby is Anaga Rural Park — dramatic laurel-forest ridges and coastal cliffs a short drive away — worth carving out time for rather than skipping.' },
         { name: 'Teide National Park', lat: 28.2723, lng: -16.6417 , notes: 'Spain\'s highest peak (3,715m) with a genuinely otherworldly volcanic landscape; the cable car takes you most of the way up. If you want the actual summit, you need a separate free National Park permit booked online in advance (slots release Mondays 7am Canary time, up to ~56 days ahead) — the cable car ticket alone does not include summit access. Go early for clearer skies before afternoon cloud rolls in.' },
-        { name: 'Los Cristianos', lat: 28.0525, lng: -16.7192 },
+        { name: 'Los Cristianos', lat: 28.0525, lng: -16.7192 , notes: 'Tenerife\'s south-coast resort town, mainly useful as the ferry departure point for La Gomera. Book the Fred Olsen/Naviera Armas ferry ahead in high season; the crossing to San Sebastián takes about 50 minutes.' },
       ],
       notes: "Entry: easyJet and Transavia fly direct from Amsterdam/Rotterdam to Tenerife South. 4-5 days on Tenerife in short form: Santa Cruz, Teide National Park, and the south-coast base at Los Cristianos (departure point for La Gomera). Budget ~€50-70/day. Web check (2026-08): the Teide cable car is ~€40 return, weather-dependent, book ahead; a free permit is mandatory for the last 200m to the summit (max ~200/day, apply via reservasparquesnacionales.es well ahead) — without it you still reach the 3,555m upper station.",
       transport_to_next: "Ferry Los Cristianos-San Sebastián de la Gomera (~50 min, several times a day, Fred Olsen Express/Naviera Armas).",
@@ -21653,10 +21805,10 @@ function rbBuildTenerifeLaGomeraRoute() {
     {
       code: 'ES', name: 'Spain', days: 4, budget: 240, lat: 28.1167, lng: -17.2333,
       destinations: [
-        { name: 'San Sebastián de la Gomera', lat: 28.0916, lng: -17.1133 },
-        { name: 'Garajonay National Park', lat: 28.1247, lng: -17.2379 },
-        { name: 'Valle Gran Rey', lat: 28.0989, lng: -17.3106 },
-        { name: 'Agulo', lat: 28.1858, lng: -17.2004 },
+        { name: 'San Sebastián de la Gomera', lat: 28.0916, lng: -17.1133 , notes: 'La Gomera\'s small capital, where Columbus made his last provisioning stop in 1492/1493 before the Atlantic crossing. See the Casa de Colón and Torre del Conde — the town is compact enough to cover in an hour or two before heading inland.' },
+        { name: 'Garajonay National Park', lat: 28.1247, lng: -17.2379 , notes: 'UNESCO-listed ancient laurisilva (laurel forest) covering La Gomera\'s misty interior. Go early morning when the mist filters through the trees, and hike out to the Alto de Garajonay viewpoint for a panoramic view on clear days.' },
+        { name: 'Valle Gran Rey', lat: 28.0989, lng: -17.3106 , notes: 'Steep, palm-lined valley on La Gomera\'s west coast with a laid-back, semi-alternative scene and good hiking. Time it for sunset at a viewpoint like La Merica or Mirador de Igualero, popular with paragliders too.' },
+        { name: 'Agulo', lat: 28.1858, lng: -17.2004 , notes: 'Small village on a black-sand coastal terrace below sheer cliffs, facing Tenerife\'s Teide across the strait. Shoot it from above at the Mirador de Abrante skywalk (glass-floor platform) for the classic view over the village and coast.' },
       ],
       notes: "2 days in Garajonay National Park and 1-2 days around Valle Gran Rey/Agulo. Budget ~€50-70/day. Season: good year-round — the laurisilva (laurel) forest stays foggy-green all year, a welcome contrast when it's hot down on the coast. Web check (2026-08): Garajonay has been a UNESCO World Heritage site since 1986 (40km², 18 marked trails), no permit needed, but check for summer fire-risk closures. Silbo Gomero, the whistled language, has been UNESCO intangible heritage since 2009 — restaurant demonstrations for tourists aren't guaranteed daily, so check with the tourist office ahead. Same Teide-permit caveat as the Tenerife leg above.",
       transport_to_next: 'End of this route — ferry back to Los Cristianos and fly home from Tenerife South.',
@@ -22490,7 +22642,7 @@ function rbBuildIsleOfManRoute() {
       code: 'IM', name: 'Isle of Man', days: 2, budget: 200, lat: 54.1509, lng: -4.4815,
       destinations: [
         { name: 'Douglas', lat: 54.1509, lng: -4.4815, notes: "Isle of Man's capital, with vintage horse-drawn trams running the length of the promenade and the Manx Museum for context on the island's Norse/Celtic history and TT heritage. The horse trams are seasonal (roughly spring-autumn) rather than year-round." },
-        { name: 'TT Grandstand & Museum', lat: 54.1523, lng: -4.4749 },
+        { name: 'TT Grandstand & Museum', lat: 54.1523, lng: -4.4749 , notes: 'The grandstand and former TT museum for the Isle of Man TT motorcycle races. Note the dedicated TT exhibition has moved into the Manx Museum\'s TT Gallery in Douglas (open daily, standard museum hours); the grandstand itself has limited/charged opening outside race weeks, so it\'s most worth visiting during TT or Manx GP fortnight.' },
         { name: 'TT Mountain Road (Snaefell)', lat: 54.2585, lng: -4.3947, notes: "Outside TT/Manx Grand Prix race weeks the Mountain Road is an ordinary public road with no speed limit for cars in places — driving it yourself (in your hired local car per the block note) past Snaefell's lower slopes is the main appeal, not just watching racing. Note this is genuinely time-sensitive: the road closes to normal traffic entirely during TT fortnight (early June) and the Manx Grand Prix (late August), so check the calendar against your visit dates." },
         { name: 'Snaefell Mountain Railway', lat: 54.2136, lng: -4.3970, notes: "An electric mountain railway from Laxey up to the summit of Snaefell, the island's only peak over 2,000ft — on a genuinely clear day you can reportedly see all \"Seven Kingdoms\" (England, Scotland, Ireland, Wales, Man, sea, and sky). Also seasonal (roughly spring-autumn) — worth pairing with the Manx Electric Railway from Laxey since they share that station, and go on a forecast-clear day since the summit view is the entire point." },
         { name: 'Manx Electric Railway', lat: 54.1747, lng: -4.4629, notes: "A heritage tramway (opened 1893, one of the oldest of its kind still running) linking Douglas to Ramsey via Laxey, giving a scenic, slow-paced look at the island's east coast without driving. Runs a seasonal timetable (roughly spring to autumn), not year-round, so check dates before building a day around it." },
@@ -22501,8 +22653,8 @@ function rbBuildIsleOfManRoute() {
     {
       code: 'IM', name: 'Isle of Man', days: 2, budget: 200, lat: 54.0743, lng: -4.6555,
       destinations: [
-        { name: 'Castletown (Castle Rushen)', lat: 54.0743, lng: -4.6555 },
-        { name: 'Peel Castle', lat: 54.2231, lng: -4.6959 },
+        { name: 'Castletown (Castle Rushen)', lat: 54.0743, lng: -4.6555 , notes: 'The Isle of Man\'s former capital, centered on an exceptionally well-preserved 13th-century medieval castle. Climb the tower for harbour views and pair it with the small Nautical Museum nearby; 1-1.5 hours covers it.' },
+        { name: 'Peel Castle', lat: 54.2231, lng: -4.6959 , notes: 'Ruined castle on the tidal islet of St Patrick\'s Isle just off Peel\'s harbour. Check tide times for the causeway/access, and combine it with Peel\'s House of Manannan museum and its kipper smokehouses while in town.' },
       ],
       notes: 'Castletown\'s Castle Rushen and Peel on the west coast (1-2 days) — the island\'s other historic castles, away from Douglas. Budget ~€90-115/day, used here at ~€100/day.',
       transport_to_next: 'End of this route — Steam Packet ferry back to Heysham/Liverpool, or flight from Douglas via the UK to Amsterdam.',
@@ -23607,7 +23759,7 @@ function rbBuildDenmarkSwedenNorwayOverlandRoute() {
     {
       code: 'SE', name: 'Sweden', days: 5, budget: 500, lat: 56.6500, lng: 12.5000,
       destinations: [
-        { name: 'Malmö', lat: 55.6050, lng: 13.0038 },
+        { name: 'Malmö', lat: 55.6050, lng: 13.0038 , notes: 'Sweden\'s third city, joined to Copenhagen by the Öresund Bridge, known for the Turning Torso skyscraper and the Lilla Torg old-town square. Easiest as a train day trip from Copenhagen Central (about 35 minutes), no car needed.' },
         { name: 'Gothenburg', lat: 57.7089, lng: 11.9746 },
       ],
       notes: "Malmö (2 days, same Öresund-crossing content as Denmark + South Sweden (9 days) 🌉's Skåne leg), then north along the coast to Gothenburg (3 days). Budget ~€100/day. Season: June-August.",
