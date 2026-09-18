@@ -30,6 +30,25 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   already present in the existing data, no change needed to how batches insert notes or build
   their migration functions.
 
+- **Per-destination notes, batches 47-50 — Iberia/Rome cascade cleanup (2026-09-18)** — while
+  checking the plan's next queue items, found that Northern Spain Roadtrip, Lisbon + Sintra,
+  Northern Portugal: Minho and Rome (4 days) had all been partially filled already by earlier
+  batches' cascades, but under *different exact name strings* (e.g. "San Sebastián" vs. "San
+  Sebastián (La Concha, optional extension)", "Porto" vs. "Porto (Ribeira)") — since the
+  name-matching migration keys on the exact string, each variant needs its own entry even for the
+  identical real place. Reused existing note text verbatim for 9 bare/short-name variants
+  (no fresh research needed) and researched 16 genuinely new destinations:
+  - Batch 47: Northern Spain Roadtrip extras — Comillas, Cíes Islands, plus the bare-name Spain
+    variants (`rbMigrateNorthernSpainRoadtripExtrasDestinationNotes()`)
+  - Batch 48: Lisbon + Sintra extras — Castelo de São Jorge, Jerónimos Monastery, Quinta da
+    Regaleira, Cascais, Cabo da Roca, Monserrate (`rbMigrateLisbonSintraExtrasDestinationNotes()`)
+  - Batch 49: Northern Portugal: Minho extras — Ponte de Lima, plus the bare-name Porto/
+    Guimarães/Braga variants (`rbMigrateMinhoExtrasDestinationNotes()`)
+  - Batch 50: Rome (4 days) extras — Palatine Hill, St. Peter's Basilica, Trevi Fountain, Piazza
+    Navona, Spanish Steps, Borghese Gallery, Trastevere/Ostia Antica (Colosseum/Forum/Pantheon/
+    Vatican Museums already had notes) (`rbMigrateRomeExtrasDestinationNotes()`)
+  App-wide total: 2846 destination-slots filled across 349 routes. 359/741 signatures done.
+
 - **Per-destination notes, batch 46 — Porto + Northern Spain (10-14 days) (2026-09-18)** — an
   open-jaw Iberian north-coast crossing (Porto in, Bilbao out), 14 destinations. Plan showed 0
   leverage but the real-world reuse was high: Porto (Ribeira) alone confirmed touching 5 routes

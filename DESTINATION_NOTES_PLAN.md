@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 355 / 741 signatures.**
+- **Done so far: 359 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -359,7 +359,7 @@ Sorted alphabetically by country code.
 - [ ] **ES** (5 dest): Palma (base), Valldemossa, Deià, Sóller, Cap de Formentor — routes: Mallorca: Serra de Tramuntana Loop (6 days) 🏔️
 - [ ] **ES** (4 dest): Mahón (Camí de Cavalls coastal path), Ciutadella, Cala Macarelleta, Cala Turqueta — routes: Menorca (4-5 days) 🏝️
 - [ ] **ES** (3 dest): Santiago de Compostela (Praza do Obradoiro), Pontevedra / Combarro (Rías Baixas day trip), Cíes Islands (optional) — routes: Northern Portugal + Galicia (7-10 days) 🌊
-- [ ] **ES** (11 dest): San Sebastián, Bilbao, Santander, Santillana del Mar, Comillas, Picos de Europa (Potes), Fuente Dé (cable car), Oviedo, Gijón, Santiago de Compostela, Cíes Islands (optional) — routes: Northern Spain Roadtrip (12 days) 🛣️
+- [x] **ES** (11 dest): San Sebastián, Bilbao, Santander, Santillana del Mar, Comillas, Picos de Europa (Potes), Fuente Dé (cable car), Oviedo, Gijón, Santiago de Compostela, Cíes Islands (optional) — routes: Northern Spain Roadtrip (12 days) 🛣️
 - [ ] **ES** (6 dest): San Sebastián, Vitoria-Gasteiz, Elciego (Rioja Alavesa), Haro (Rioja Alavesa), Pamplona, Bilbao — routes: Northern Spain: Basque Interior + Rioja (9 days) 🍷
 - [x] **ES** (9 dest): Santiago de Compostela (Praza do Obradoiro), Oviedo (Asturias), Gijón (Asturias), Picos de Europa (Potes), Fuente Dé (cable car), Santander (Magdalena Peninsula), Santillana del Mar, Bilbao (Guggenheim Museum), San Sebastián (La Concha, optional extension) — routes: Porto + Northern Spain (10-14 days) 🏔️
 - [ ] **ES** (2 dest): Seville (Alcázar & Cathedral), Madrid (Prado Museum) — routes: Portugal + Spain: Porto to Madrid (12 days) 🚆
@@ -542,7 +542,7 @@ Sorted alphabetically by country code.
 - [ ] **IT** (3 dest): Alberobello (trulli), Locorotondo, Ostuni — routes: Puglia (6 days) 🏘️
 - [ ] **IT** (1 dest): Lecce (second base) — routes: Puglia (6 days) 🏘️
 - [ ] **IT** (1 dest): Otranto / Salento coast — routes: Puglia (6 days) 🏘️
-- [ ] **IT** (11 dest): Colosseum, Roman Forum, Palatine Hill, Vatican Museums, St. Peter's Basilica, Pantheon, Trevi Fountain, Piazza Navona, Spanish Steps, Borghese Gallery & Gardens (optional day 4), Trastevere / Ostia Antica day trip (optional day 4 alternative) — routes: Rome (4 days) 🏛️
+- [x] **IT** (11 dest): Colosseum, Roman Forum, Palatine Hill, Vatican Museums, St. Peter's Basilica, Pantheon, Trevi Fountain, Piazza Navona, Spanish Steps, Borghese Gallery & Gardens (optional day 4), Trastevere / Ostia Antica day trip (optional day 4 alternative) — routes: Rome (4 days) 🏛️
 - [x] **IT** (3 dest): Colosseum & Roman Forum, Vatican Museums, Pantheon & Trevi Fountain — routes: Rome + Tuscany (9 days) 🍝
 - [x] **IT** (5 dest): Orvieto (waypoint), Pienza, Montepulciano, Montalcino, San Quirico d'Orcia — routes: Rome + Tuscany (9 days) 🍝
 - [ ] **IT** (8 dest): Colosseum, Roman Forum, Trastevere, Pantheon, Vatican Necropolis / Scavi excavation tour, Vatican Museums & Sistine Chapel, St. Peter's Basilica dome climb, Vatican Gardens tour (optional) — routes: Rome + Vatican City In-Depth (4 days) ⛪
@@ -663,10 +663,10 @@ Sorted alphabetically by country code.
 - [ ] **PT** (9 dest): Faro (Ria Formosa), Lagos (Ponta da Piedade), Praia Dona Ana, Sagres / Cabo de São Vicente, Portimão, Carvoeiro, Benagil (sea cave), Silves (castle), Tavira — routes: Algarve (6 days) 🏖️
 - [x] **PT** (3 dest): Horta (Faial, whaling heritage), Madalena (Pico ferry port), Pico volcano climb (optional) — routes: Azores Island Hopping (10-14 days) 🏝️
 - [ ] **PT** (8 dest): Coimbra (University + Biblioteca Joanina), Manteigas (base), Seia (alternative base), Torre (highest point of mainland Portugal), Sabugueiro (highest village), Poço do Inferno waterfall, Linhares da Beira, Piódão — routes: Central Portugal: Coimbra + Serra da Estrela (6 days) 📚
-- [ ] **PT** (10 dest): Lisbon (Baixa), Alfama, Castelo de São Jorge, Belém Tower, Jerónimos Monastery, Sintra (Palace of Pena), Quinta da Regaleira, Cascais, Cabo da Roca, Monserrate (optional) — routes: Lisbon + Sintra (5 days) 🏰
+- [x] **PT** (10 dest): Lisbon (Baixa), Alfama, Castelo de São Jorge, Belém Tower, Jerónimos Monastery, Sintra (Palace of Pena), Quinta da Regaleira, Cascais, Cabo da Roca, Monserrate (optional) — routes: Lisbon + Sintra (5 days) 🏰
 - [x] **PT** (1 dest): Vila Baleira / Porto Santo golden beach — routes: Madeira + Porto Santo (7-10 days) 🏝️
 - [ ] **PT** (6 dest): Porto (Ribeira), Vila Nova de Gaia (port wine cellars), Pinhão (Douro day trip), Guimarães (Paço dos Duques, day trip), Braga (Bom Jesus do Monte, day trip), Viana do Castelo (Santa Luzia viewpoint) — routes: Northern Portugal + Galicia (7-10 days) 🌊
-- [ ] **PT** (5 dest): Porto, Guimarães (Paço dos Duques), Braga (Bom Jesus do Monte), Viana do Castelo (Santa Luzia viewpoint), Ponte de Lima (optional) — routes: Northern Portugal: Minho (6 days) 🌿
+- [x] **PT** (5 dest): Porto, Guimarães (Paço dos Duques), Braga (Bom Jesus do Monte), Viana do Castelo (Santa Luzia viewpoint), Ponte de Lima (optional) — routes: Northern Portugal: Minho (6 days) 🌿
 - [ ] **PT** (9 dest): Porto (Ribeira), Dom Luís I Bridge, Sé do Porto (cathedral), Livraria Lello, Vila Nova de Gaia (port wine cellars), Pinhão (Douro day trip), Foz do Douro, Matosinhos, Serralves — routes: Porto (4 days) 🌉
 - [ ] **PT** (7 dest): Porto (Vila Nova de Gaia), Pinhão (Douro Valley, 2-3 nights), São Leonardo da Galafura viewpoint, Peso da Régua, Lisbon (Baixa), Bucelas (optional wine detour), Colares (optional wine detour, near Sintra) — routes: Porto + Douro + Lisbon (9 days) 🍷
 - [x] **PT** (5 dest): Porto (Ribeira), Vila Nova de Gaia (port wine cellars), Guimarães (Paço dos Duques, day trip), Braga (Bom Jesus do Monte, day trip), Viana do Castelo (Santa Luzia viewpoint) — routes: Porto + Northern Spain (10-14 days) 🏔️
@@ -772,13 +772,10 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | US Southwest 🏜️ | 12/12 | 0 |
 | Florida 🐊 | 12/12 | 0 |
 | Hawaii 🐢 | 11/11 | 0 |
-| Rome (4 days) 🏛️ | 11/11 | 0 |
 | Sicily + Malta (9 days) 🌋 | 11/11 | 0 |
-| Northern Spain Roadtrip (12 days) 🛣️ | 11/11 | 0 |
 | Portugal Roadtrip (12 days) 🗺️ | 11/11 | 0 |
 | Corsica Roadtrip: Full Island Loop (9 days) 🚙 | 10/10 | 0 |
 | Corsica + South of France (9 days) 🛳️ | 10/10 | 0 |
-| Lisbon + Sintra (5 days) 🏰 | 10/10 | 0 |
 | Athens + Peloponnese: Extended (12 days) 👑 | 10/10 | 0 |
 | England + Wales + Northern Ireland Roadtrip (10-14 days) 🛣️ | 10/10 | 0 |
 | Andorra + Spanish Pyrenees: Grand Circuit (9 days) 🏔️ | 10/10 | 0 |
@@ -808,6 +805,9 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Spain: East to South (12 days) 🌅 | 8/8 | 0 |
 | Central Portugal: Coimbra + Serra da Estrela (6 days) 📚 | 8/8 | 0 |
 | Transylvania + Carpathian Mountains (9 days) 🏔️ | 8/8 | 0 |
-| ... 230 more routes with open destinations ... | | |
+| Romania: Extended (12 days) 🏰 | 8/8 | 0 |
+| Romania + Bulgaria: Transylvania Focus (12 days) 🏰 | 8/8 | 0 |
+| Romania + Moldova: Extended (12 days) 🍷 | 8/8 | 0 |
+| ... 226 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

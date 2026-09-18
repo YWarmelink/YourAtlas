@@ -9739,6 +9739,141 @@ function rbMigratePortoNorthernSpainDestinationNotes() {
 }
 
 /**
+ * Batch 47 (2026-09-18) -- Northern Spain Roadtrip (12 days) extras -- Comillas and Cíes Islands
+ * newly researched, plus the bare-name variants of San Sebastián/Bilbao/Santander/Oviedo/Gijón/
+ * Santiago de Compostela (this route uses plain names, distinct exact strings from the
+ * parenthetical versions already noted in batch 46 -- reused that same content here rather than
+ * re-researching, since it's the identical real place). Same generic name-matching migration
+ * pattern as the other batches.
+ */
+function rbMigrateNorthernSpainRoadtripExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_NORTHERN_SPAIN_ROADTRIP_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_NORTHERN_SPAIN_ROADTRIP_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Comillas': "A small Cantabrian town whose real draw is Gaudí's El Capricho villa (whimsical sunflower-tiled tower) plus the neighboring Palacio de Sobrellano; allow about 1 hour, guided English tours run at 12:30 and 16:30 and it's worth booking ahead since it's a popular stop.",
+    'Cíes Islands (optional)': "A protected archipelago off Vigo with turquoise water and white-sand beaches often ranked among Europe's best; you must get a free daily-entry permit (around 1,800-2,200 visitors/day) via autorizacionillasatlanticas.xunta.gal before booking the ferry, and permits open up to 90 days ahead and sell out fast in summer.",
+    'San Sebastián': "Shell-shaped urban bay often ranked among Europe's best city beaches, backed by Belle Époque architecture. Walk the promenade at sunset and ride the funicular up Monte Igueldo for the view over the bay, then do a pintxos crawl through the Parte Vieja.",
+    'Bilbao': 'Gehry\'s titanium-clad Guggenheim building is as much the draw as what\'s inside, along with Koons\' giant flower "Puppy" out front. Book timed entry online to skip the queue, and return after dark to see the building lit and reflected in the river.',
+    'Santander': "Royal summer palace (Palacio de la Magdalena) sitting on a green peninsula park between two city beaches, with a small seal/sea-lion pool near the palace. Walk or cycle the peninsula loop and stay for sunset over the bay.",
+    'Oviedo': "Compact, elegant old town plus Santa María del Naranco, a rare pre-Romanesque royal hall from the 9th century up on a hillside just outside the center. Reserve half a day for the old town and end at a chigre (cider house) to see sidra poured from height in the traditional escanciado style.",
+    'Gijón': 'Working port city with the atmospheric Cimadevilla fishing quarter and Chillida\'s monumental "Elogio del Horizonte" sculpture overlooking the Cantabrian Sea. Walk the San Lorenzo beach promenade out to the sculpture for sunset.',
+    'Santiago de Compostela': 'The Camino\'s finish line and the cathedral\'s grand baroque facade square (Praza do Obradoiro). Enter through the Arco do Pazo for the classic first reveal of the square and cathedral, and book the rooftop "Catedral" tour in advance if you want the terrace views over the old town.',
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 48 (2026-09-18) -- Lisbon + Sintra (5 days) extras -- 6 destinations researched
+ * (Lisbon Baixa/Alfama/Belém Tower/Sintra Palace of Pena already had notes). Same generic
+ * name-matching migration pattern as the other batches.
+ */
+function rbMigrateLisbonSintraExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_LISBON_SINTRA_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_LISBON_SINTRA_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Castelo de São Jorge': "A hilltop Moorish castle whose real appeal is the panoramic view over Alfama's rooftops and the Tagus, plus peacocks roaming the ramparts; go late afternoon for the best light and thinner crowds, and buy the ticket online to skip the entrance line.",
+    'Jerónimos Monastery': "The Manueline-style monastery next to Belém Tower, holding Vasco da Gama's tomb and an intricately carved cloister; buy a combined ticket online with Belém Tower and arrive right at opening to beat the tour-bus crowds.",
+    'Quinta da Regaleira': 'An eccentric Romantic-era estate whose famous "Initiation Well" spiral staircase and underground tunnels are the actual highlight, not the palace itself; allow 2 hours, book a timed skip-line ticket online since it sells out on peak days.',
+    'Cascais': "A former fishing village turned upscale beach resort near Lisbon, worth it for its marina/old town and the dramatic sea-blowhole Boca do Inferno just outside town; easy 40-minute train from Cais do Sodré, and renting a bike for the coastal path to Guincho beach is the best use of an afternoon.",
+    'Cabo da Roca': "Continental Europe's westernmost point, with sheer Atlantic cliffs and a lighthouse; just a 20-30 minute stop, easily combined with Sintra on bus 403 between Sintra and Cascais.",
+    'Monserrate (optional)': "A lesser-visited Romantic-era palace with an exceptional botanical garden (huge fern valleys, exotic trees), a good escape from Pena Palace's crowds; allow 1.5 hours and go if you want gardens over palace interiors.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 49 (2026-09-18) -- Northern Portugal: Minho (6 days) extras -- Ponte de Lima newly
+ * researched, plus the bare-name variants of Porto/Guimarães (Paço dos Duques)/Braga (Bom Jesus
+ * do Monte) (this route uses plain/shorter names, distinct exact strings from the "(Ribeira)"/
+ * "(day trip)" versions already noted in batch 46 -- reused that content here rather than
+ * re-researching, since it's the identical real place). Same generic name-matching migration
+ * pattern as the other batches.
+ */
+function rbMigrateMinhoExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_MINHO_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_MINHO_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Ponte de Lima (optional)': "Portugal's oldest chartered town, centered on a Roman/medieval bridge over the Lima river and a riverside promenade; if your dates align, visiting on the Feira Quinzenal (a biweekly market held every second Monday on the riverbank, running since medieval times) is the single best reason to time a visit here.",
+    'Porto': "Porto's riverside old quarter — tiered, colorful facades along the Douro, narrow medieval lanes behind. Walk (or wait for a tram) across the upper deck of the Dom Luís I bridge to Gaia for the classic elevated view back over the Ribeira, best at golden hour.",
+    'Guimarães (Paço dos Duques)': 'Considered the "birthplace of Portugal" — the 15th-century Ducal Palace and the adjoining hilltop castle where the first king was reputedly born. A half day covers palace, castle and the medieval old town; fast train from Porto is about an hour.',
+    'Braga (Bom Jesus do Monte)': "Baroque pilgrimage sanctuary on a wooded hill, famous for its zigzagging Via Sacra staircase lined with allegorical fountains. Climb the stairs (about 20 min) or ride the 1882 water-counterweight funicular — one of the oldest of its kind still running — then add Braga's old town center to fill the day.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 50 (2026-09-18) -- Rome (4 days) extras -- 7 destinations researched (Colosseum, Roman
+ * Forum, Pantheon and Vatican Museums already had notes from earlier batches). Same generic
+ * name-matching migration pattern as the other batches.
+ */
+function rbMigrateRomeExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_ROME_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_ROME_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Palatine Hill': "The ruins of the imperial palaces (Domus Augustana) overlooking the Circus Maximus, with the Farnese Gardens on top — quieter than the Forum right next to it and often overlooked by visitors rushing to the Colosseum. Included in the same combo ticket as Colosseum/Forum; go late afternoon for the best light and fewer crowds.",
+    "St. Peter's Basilica": "The world's largest church, with Michelangelo's Pietà inside and Bernini's baldachin over the altar. Entry is free but the security line gets very long by mid-morning — arrive before 8am, and book a timed slot if you want to climb the dome.",
+    'Trevi Fountain': "The Baroque fountain famous for the coin-toss tradition guaranteeing a return to Rome. It's unfenced and open 24/7, so visit before 8am or late at night to see it without the wall-to-wall daytime crowds.",
+    'Piazza Navona': "A grand Baroque square built on the footprint of Domitian's ancient stadium (hence the oval shape), centered on Bernini's Fountain of the Four Rivers. Best visited in the evening when street artists and cafe life fill the square.",
+    'Spanish Steps': "An 18th-century monumental staircase leading up to the Trinità dei Monti church, with a view back down Via dei Condotti. Sitting on the steps has been banned and fined since a 2019 restoration, so treat it as a viewpoint/photo stop rather than a hangout spot.",
+    'Borghese Gallery & Gardens (optional day 4)': "Rome's best small art museum — Bernini sculptures (Apollo and Daphne, Rape of Proserpina) and Caravaggio paintings — set inside the Villa Borghese park. Entry is by mandatory timed reservation only, in strict 2-hour visit slots, and it sells out days to weeks ahead, so book before the trip.",
+    'Trastevere / Ostia Antica day trip (optional day 4 alternative)': "Trastevere is Rome's bohemian, cobblestoned neighborhood best for an evening wander and dinner rather than sightseeing; Ostia Antica is a well-preserved Roman port town (better preserved and far less crowded than Pompeii) reachable by the Roma-Lido regional train from Piramide station in about 30 minutes — allocate a half day if choosing the ruins over Trastevere's nightlife.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -13488,15 +13623,15 @@ function rbBuildRomeCityBreakRoute() {
       destinations: [
         { name: 'Colosseum', lat: 41.8902, lng: 12.4922 },
         { name: 'Roman Forum', lat: 41.8925, lng: 12.4853 },
-        { name: 'Palatine Hill', lat: 41.8888, lng: 12.4870 },
+        { name: 'Palatine Hill', lat: 41.8888, lng: 12.4870 , notes: 'The ruins of the imperial palaces (Domus Augustana) overlooking the Circus Maximus, with the Farnese Gardens on top — quieter than the Forum right next to it and often overlooked by visitors rushing to the Colosseum. Included in the same combo ticket as Colosseum/Forum; go late afternoon for the best light and fewer crowds.' },
         { name: "Vatican Museums", lat: 41.9065, lng: 12.4536, notes: "Miles of galleries culminating in the Sistine Chapel's ceiling — worth 3-4 hours, not a quick pass-through. Skip the last Sunday of the month (free entry, but walk-in only, with 60-90 min queues forming before opening) and go on a paid timed slot instead." },
-        { name: "St. Peter's Basilica", lat: 41.9022, lng: 12.4533 },
+        { name: "St. Peter's Basilica", lat: 41.9022, lng: 12.4533 , notes: 'The world\'s largest church, with Michelangelo\'s Pietà inside and Bernini\'s baldachin over the altar. Entry is free but the security line gets very long by mid-morning — arrive before 8am, and book a timed slot if you want to climb the dome.' },
         { name: 'Pantheon', lat: 41.8986, lng: 12.4769 },
-        { name: 'Trevi Fountain', lat: 41.9009, lng: 12.4833 },
-        { name: 'Piazza Navona', lat: 41.8992, lng: 12.4731 },
-        { name: 'Spanish Steps', lat: 41.9058, lng: 12.4823 },
-        { name: 'Borghese Gallery & Gardens (optional day 4)', lat: 41.9142, lng: 12.4922 },
-        { name: 'Trastevere / Ostia Antica day trip (optional day 4 alternative)', lat: 41.8898, lng: 12.4692 },
+        { name: 'Trevi Fountain', lat: 41.9009, lng: 12.4833 , notes: 'The Baroque fountain famous for the coin-toss tradition guaranteeing a return to Rome. It\'s unfenced and open 24/7, so visit before 8am or late at night to see it without the wall-to-wall daytime crowds.' },
+        { name: 'Piazza Navona', lat: 41.8992, lng: 12.4731 , notes: 'A grand Baroque square built on the footprint of Domitian\'s ancient stadium (hence the oval shape), centered on Bernini\'s Fountain of the Four Rivers. Best visited in the evening when street artists and cafe life fill the square.' },
+        { name: 'Spanish Steps', lat: 41.9058, lng: 12.4823 , notes: 'An 18th-century monumental staircase leading up to the Trinità dei Monti church, with a view back down Via dei Condotti. Sitting on the steps has been banned and fined since a 2019 restoration, so treat it as a viewpoint/photo stop rather than a hangout spot.' },
+        { name: 'Borghese Gallery & Gardens (optional day 4)', lat: 41.9142, lng: 12.4922 , notes: 'Rome\'s best small art museum — Bernini sculptures (Apollo and Daphne, Rape of Proserpina) and Caravaggio paintings — set inside the Villa Borghese park. Entry is by mandatory timed reservation only, in strict 2-hour visit slots, and it sells out days to weeks ahead, so book before the trip.' },
+        { name: 'Trastevere / Ostia Antica day trip (optional day 4 alternative)', lat: 41.8898, lng: 12.4692 , notes: 'Trastevere is Rome\'s bohemian, cobblestoned neighborhood best for an evening wander and dinner rather than sightseeing; Ostia Antica is a well-preserved Roman port town (better preserved and far less crowded than Pompeii) reachable by the Roma-Lido regional train from Piramide station in about 30 minutes — allocate a half day if choosing the ruins over Trastevere\'s nightlife.' },
       ],
       notes: "A pure city trip, no day trips needed at this length. Day 1: Colosseum/Forum/Palatine Hill. Day 2: Vatican Museums + St. Peter's — deliberately a separate day from the Colosseum, doing both together is too much in one day. Day 3: Pantheon, Trevi Fountain, Piazza Navona, Spanish Steps. Day 4 (optional): Borghese Gallery & Gardens, or Trastevere plus an Ostia Antica day trip. Direct AMS-FCO (KLM/Transavia/ITA, ~2h10, 47 flights/week) — no sensible self-drive option at this distance. Budget ~€130/day (3-star for 2, €130-190/night ≈€65-95pp, food €40-55, public transport/Roma Pass €15-20). Season: April-June or September-October; avoid August (32-38°C, many local businesses closed for Ferragosto). ⚠️ Colosseum tickets only release ~30 days ahead — count back from that release date, not your departure date; a combined ticket (Colosseum+Forum+Palatine+Vatican+Sistine Chapel+St. Peter's, valid 3 days) is up to 20% cheaper than separate tickets.",
       transport_to_next: 'End of this route — direct return flight Rome (Fiumicino) to Amsterdam.',
@@ -14659,7 +14794,7 @@ function rbBuildVaticanDayVisitRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 140, lat: 41.9022, lng: 12.4533,
       destinations: [
-        { name: "St. Peter's Basilica", lat: 41.9022, lng: 12.4533 },
+        { name: "St. Peter's Basilica", lat: 41.9022, lng: 12.4533 , notes: 'The world\'s largest church, with Michelangelo\'s Pietà inside and Bernini\'s baldachin over the altar. Entry is free but the security line gets very long by mid-morning — arrive before 8am, and book a timed slot if you want to climb the dome.' },
         { name: 'Vatican Museums', lat: 41.9065, lng: 12.4536, notes: "Miles of galleries culminating in the Sistine Chapel's ceiling — worth 3-4 hours, not a quick pass-through. Skip the last Sunday of the month (free entry, but walk-in only, with 60-90 min queues forming before opening) and go on a paid timed slot instead." },
         { name: 'Sistine Chapel', lat: 41.9065, lng: 12.4536 },
       ],
@@ -15071,12 +15206,12 @@ function rbBuildNorthernSpainBasqueRiojaRoute() {
     {
       code: 'ES', name: 'Spain', days: 9, budget: 900, lat: 42.8467, lng: -2.6716,
       destinations: [
-        { name: 'San Sebastián', lat: 43.3183, lng: -1.9812 },
+        { name: 'San Sebastián', lat: 43.3183, lng: -1.9812 , notes: 'Shell-shaped urban bay often ranked among Europe\'s best city beaches, backed by Belle Époque architecture. Walk the promenade at sunset and ride the funicular up Monte Igueldo for the view over the bay, then do a pintxos crawl through the Parte Vieja.' },
         { name: 'Vitoria-Gasteiz', lat: 42.8467, lng: -2.6716 },
         { name: 'Elciego (Rioja Alavesa)', lat: 42.4256, lng: -2.5936 },
         { name: 'Haro (Rioja Alavesa)', lat: 42.5763, lng: -2.8467 },
         { name: 'Pamplona', lat: 42.8125, lng: -1.6458 },
-        { name: 'Bilbao', lat: 43.2630, lng: -2.9350 },
+        { name: 'Bilbao', lat: 43.2630, lng: -2.9350 , notes: 'Gehry\'s titanium-clad Guggenheim building is as much the draw as what\'s inside, along with Koons\' giant flower "Puppy" out front. Book timed entry online to skip the queue, and return after dark to see the building lit and reflected in the river.' },
       ],
       notes: "Restructured around the Basque interior and wine country, with no overlap now with the coast (see Basque Country: San Sebastián + Bilbao above) or Cantabria/Asturias/Galicia (see the standalone items further down): San Sebastián → Vitoria-Gasteiz → the Rioja Alavesa wine region (Elciego/Haro) → Pamplona → back to Bilbao. Entry: direct AMS-Bilbao, rental car for the inland loop. Budget ~€100/day. Season: May-September (Rioja's grape harvest is in September, a nice bonus for a wine-focused trip).",
       transport_to_next: 'End of this route — fly back AMS-Bilbao direct.',
@@ -15121,17 +15256,17 @@ function rbBuildNorthernSpainRoadtripRoute() {
     {
       code: 'ES', name: 'Spain', days: 12, budget: 1080, lat: 43.2000, lng: -5.5000,
       destinations: [
-        { name: 'San Sebastián', lat: 43.3183, lng: -1.9812 },
-        { name: 'Bilbao', lat: 43.2630, lng: -2.9350 },
-        { name: 'Santander', lat: 43.4623, lng: -3.8099 },
+        { name: 'San Sebastián', lat: 43.3183, lng: -1.9812 , notes: 'Shell-shaped urban bay often ranked among Europe\'s best city beaches, backed by Belle Époque architecture. Walk the promenade at sunset and ride the funicular up Monte Igueldo for the view over the bay, then do a pintxos crawl through the Parte Vieja.' },
+        { name: 'Bilbao', lat: 43.2630, lng: -2.9350 , notes: 'Gehry\'s titanium-clad Guggenheim building is as much the draw as what\'s inside, along with Koons\' giant flower "Puppy" out front. Book timed entry online to skip the queue, and return after dark to see the building lit and reflected in the river.' },
+        { name: 'Santander', lat: 43.4623, lng: -3.8099 , notes: 'Royal summer palace (Palacio de la Magdalena) sitting on a green peninsula park between two city beaches, with a small seal/sea-lion pool near the palace. Walk or cycle the peninsula loop and stay for sunset over the bay.' },
         { name: 'Santillana del Mar', lat: 43.3897, lng: -4.1097 , notes: 'Exceptionally well-preserved medieval stone village, often used as the base for visiting Altamira — original cave access is essentially closed to casual visitors, so the standard museum ticket includes the Neocueva, a full-scale faithful replica, not the real cave. Walk the cobbled center early morning before the day-tripper coach groups arrive.' },
-        { name: 'Comillas', lat: 43.3856, lng: -4.2919 },
+        { name: 'Comillas', lat: 43.3856, lng: -4.2919 , notes: 'A small Cantabrian town whose real draw is Gaudí\'s El Capricho villa (whimsical sunflower-tiled tower) plus the neighboring Palacio de Sobrellano; allow about 1 hour, guided English tours run at 12:30 and 16:30 and it\'s worth booking ahead since it\'s a popular stop.' },
         { name: 'Picos de Europa (Potes)', lat: 43.1553, lng: -4.6236 , notes: 'Medieval stone-bridge town in the Liébana valley, the practical gateway to the Picos massif and the Monasterio de Santo Toribio (said to hold the largest surviving fragment of the True Cross). Base here for the Fuente Dé cable car and try the local orujo liqueur; Monday is the traditional market day if your dates line up.' },
         { name: 'Fuente Dé (cable car)', lat: 43.1439, lng: -4.8142 , notes: 'One of Europe\'s steepest cable cars, climbing almost 800m vertically in under 4 minutes to the Áliva plateau below Peña Vieja. Book your timed ticket online in advance — on sunny weekends the queue builds fast and arriving before 9am is the reliable way to avoid a long wait; it\'s also closed roughly mid-January to mid-February each year.' },
-        { name: 'Oviedo', lat: 43.3619, lng: -5.8494 },
-        { name: 'Gijón', lat: 43.5322, lng: -5.6611 },
-        { name: 'Santiago de Compostela', lat: 42.8805, lng: -8.5456 },
-        { name: 'Cíes Islands (optional)', lat: 42.2378, lng: -8.8994 },
+        { name: 'Oviedo', lat: 43.3619, lng: -5.8494 , notes: 'Compact, elegant old town plus Santa María del Naranco, a rare pre-Romanesque royal hall from the 9th century up on a hillside just outside the center. Reserve half a day for the old town and end at a chigre (cider house) to see sidra poured from height in the traditional escanciado style.' },
+        { name: 'Gijón', lat: 43.5322, lng: -5.6611 , notes: 'Working port city with the atmospheric Cimadevilla fishing quarter and Chillida\'s monumental "Elogio del Horizonte" sculpture overlooking the Cantabrian Sea. Walk the San Lorenzo beach promenade out to the sculpture for sunset.' },
+        { name: 'Santiago de Compostela', lat: 42.8805, lng: -8.5456 , notes: 'The Camino\'s finish line and the cathedral\'s grand baroque facade square (Praza do Obradoiro). Enter through the Arco do Pazo for the classic first reveal of the square and cathedral, and book the rooftop "Catedral" tour in advance if you want the terrace views over the old town.' },
+        { name: 'Cíes Islands (optional)', lat: 42.2378, lng: -8.8994 , notes: 'A protected archipelago off Vigo with turquoise water and white-sand beaches often ranked among Europe\'s best; you must get a free daily-entry permit (around 1,800-2,200 visitors/day) via autorizacionillasatlanticas.xunta.gal before booking the ferry, and permits open up to 90 days ahead and sell out fast in summer.' },
       ],
       notes: "Restructured as the connector trip for a full north-coast crossing: San Sebastián → Bilbao → Santander → Santillana del Mar/Comillas → Picos de Europa (Potes, Fuente Dé cable car) → Oviedo/Gijón (Asturias) → Santiago de Compostela → optionally the Rías Baixas/Cíes Islands. Deliberately strings the three shorter standalone trips (Basque Country, Asturias+Cantabria, Galicia) together for anyone with 2 weeks, instead of repeating one of them. Entry: open-jaw AMS-Bilbao in, AMS-Santiago de Compostela out — KLM has flown a seasonal direct AMS-Santiago route since 30 May 2026 (6x/week), and Vueling since 16 June 2026 too; check whether this new 2026 route is still on the schedule for your own dates. Budget ~€90/day. Season: June-September (conveniently lines up with the Santiago flight's seasonal window). Web check (2026-08): a one-way rental car drop-off from Bilbao to Santiago carries a return/repositioning fee.",
       transport_to_next: 'End of this route — fly home from Santiago de Compostela (seasonal direct AMS-Santiago, or via Madrid year-round on Iberia).',
@@ -15232,8 +15367,8 @@ function rbBuildAsturiasCantabriaRoute() {
         { name: 'Comillas (El Capricho)', lat: 43.3856, lng: -4.2919 },
         { name: 'Picos de Europa (Potes)', lat: 43.1553, lng: -4.6236 , notes: 'Medieval stone-bridge town in the Liébana valley, the practical gateway to the Picos massif and the Monasterio de Santo Toribio (said to hold the largest surviving fragment of the True Cross). Base here for the Fuente Dé cable car and try the local orujo liqueur; Monday is the traditional market day if your dates line up.' },
         { name: 'Fuente Dé (cable car)', lat: 43.1439, lng: -4.8142 , notes: 'One of Europe\'s steepest cable cars, climbing almost 800m vertically in under 4 minutes to the Áliva plateau below Peña Vieja. Book your timed ticket online in advance — on sunny weekends the queue builds fast and arriving before 9am is the reliable way to avoid a long wait; it\'s also closed roughly mid-January to mid-February each year.' },
-        { name: 'Oviedo', lat: 43.3619, lng: -5.8494 },
-        { name: 'Gijón', lat: 43.5322, lng: -5.6611 },
+        { name: 'Oviedo', lat: 43.3619, lng: -5.8494 , notes: 'Compact, elegant old town plus Santa María del Naranco, a rare pre-Romanesque royal hall from the 9th century up on a hillside just outside the center. Reserve half a day for the old town and end at a chigre (cider house) to see sidra poured from height in the traditional escanciado style.' },
+        { name: 'Gijón', lat: 43.5322, lng: -5.6611 , notes: 'Working port city with the atmospheric Cimadevilla fishing quarter and Chillida\'s monumental "Elogio del Horizonte" sculpture overlooking the Cantabrian Sea. Walk the San Lorenzo beach promenade out to the sculpture for sunset.' },
       ],
       notes: "Santander (1-2 days: the Magdalena Peninsula, the old town) → Santillana del Mar (a medieval village, with the Altamira cave museum nearby) → Comillas (Gaudí's El Capricho) → the Picos de Europa (based in Potes, with the Fuente Dé cable car) → Oviedo/Gijón (Asturias) as a finale. There's no direct AMS-Santander flight (connect via Barcelona or Madrid); the best option is a direct AMS-Bilbao flight (much more frequent) and driving east, or a direct AMS-Asturias/Oviedo flight (KLM only, ~2h15, ~6 flights/week) and driving west. Budget ~€80/day. Season: June-September — this is 'Green Spain', cooler and rainier than the south year-round, which is actually pleasant in summer while the rest of Spain scorches. Web check (2026-08): a rental car is essential (public transport is thin around the Picos de Europa and coastal villages); the Fuente Dé cable car has capacity limits and long waits in August — go early in the morning.",
       transport_to_next: 'End of this route — drive back to Bilbao or Asturias airport for the flight home.',
@@ -15399,14 +15534,14 @@ function rbBuildLisbonSintraRoute() {
       destinations: [
         { name: 'Lisbon (Baixa)', lat: 38.7107, lng: -9.1366, notes: "The flat neoclassical grid rebuilt after the 1755 earthquake, centered on riverside Praça do Comércio and Rossio square — it's the hub connecting Alfama and Bairro Alto, not a destination in itself. Ride the Elevador de Santa Justa or walk up to a miradouro rather than staying on the flat grid, since Baixa is the least distinctive part of central Lisbon by design." },
         { name: 'Alfama', lat: 38.7139, lng: -9.1301, notes: "Lisbon's oldest neighborhood, the only district to largely survive the 1755 earthquake — a maze of narrow medieval alleys below São Jorge Castle and the historic home of Fado. Go early morning to see it before tour groups arrive, or catch a live Fado set in one of the small tascas in the evening." },
-        { name: 'Castelo de São Jorge', lat: 38.7139, lng: -9.1335 },
+        { name: 'Castelo de São Jorge', lat: 38.7139, lng: -9.1335 , notes: 'A hilltop Moorish castle whose real appeal is the panoramic view over Alfama\'s rooftops and the Tagus, plus peacocks roaming the ramparts; go late afternoon for the best light and thinner crowds, and buy the ticket online to skip the entrance line.' },
         { name: 'Belém Tower', lat: 38.6916, lng: -9.2160, notes: "A 16th-century fortified Manueline tower marking the Tagus's edge, built to guard the harbor during the Age of Discoveries and paired with nearby Jerónimos Monastery. Its narrow spiral staircase limits how many people can be inside at once, so queues build fast — buy a timed ticket online or arrive right at opening." },
-        { name: 'Jerónimos Monastery', lat: 38.6979, lng: -9.2068 },
+        { name: 'Jerónimos Monastery', lat: 38.6979, lng: -9.2068 , notes: 'The Manueline-style monastery next to Belém Tower, holding Vasco da Gama\'s tomb and an intricately carved cloister; buy a combined ticket online with Belém Tower and arrive right at opening to beat the tour-bus crowds.' },
         { name: 'Sintra (Palace of Pena)', lat: 38.7876, lng: -9.3905, notes: "A candy-colored Romanticist palace atop a forested hilltop, mixing Gothic, Islamic and Manueline styles at the whim of King Ferdinand II — the standout of Sintra's several palaces. Book a timed-entry ticket online and arrive by 8-9am opening, since day-tripping tour buses from Lisbon fill the site and the shuttle/entrance queues get very long by mid-morning." },
-        { name: 'Quinta da Regaleira', lat: 38.7969, lng: -9.3969 },
-        { name: 'Cascais', lat: 38.6979, lng: -9.4215 },
-        { name: 'Cabo da Roca', lat: 38.7811, lng: -9.4986 },
-        { name: 'Monserrate (optional)', lat: 38.7908, lng: -9.4193 },
+        { name: 'Quinta da Regaleira', lat: 38.7969, lng: -9.3969 , notes: 'An eccentric Romantic-era estate whose famous "Initiation Well" spiral staircase and underground tunnels are the actual highlight, not the palace itself; allow 2 hours, book a timed skip-line ticket online since it sells out on peak days.' },
+        { name: 'Cascais', lat: 38.6979, lng: -9.4215 , notes: 'A former fishing village turned upscale beach resort near Lisbon, worth it for its marina/old town and the dramatic sea-blowhole Boca do Inferno just outside town; easy 40-minute train from Cais do Sodré, and renting a bike for the coastal path to Guincho beach is the best use of an afternoon.' },
+        { name: 'Cabo da Roca', lat: 38.7811, lng: -9.4986 , notes: 'Continental Europe\'s westernmost point, with sheer Atlantic cliffs and a lighthouse; just a 20-30 minute stop, easily combined with Sintra on bus 403 between Sintra and Cascais.' },
+        { name: 'Monserrate (optional)', lat: 38.7908, lng: -9.4193 , notes: 'A lesser-visited Romantic-era palace with an exceptional botanical garden (huge fern valleys, exotic trees), a good escape from Pena Palace\'s crowds; allow 1.5 hours and go if you want gardens over palace interiors.' },
       ],
       notes: "Baixa/Alfama/Castelo de São Jorge (day 1) — Belém (day 2) — a full day in Sintra: the Palace of Pena plus Quinta da Regaleira (day 3) — Cascais/Estoril or Monserrate + Cabo da Roca (day 4) — a buffer day/fado evening (day 5). Entry: direct AMS-Lisbon (TAP/KLM/Transavia/easyJet, ~2h55); the red metro line into the centre (~20-25 min). Budget ~€90-105/day. Season: April-June/September-October ideal; July-August very hot, Sintra gets overcrowded. Web check (2026-08): Lisbon's tourist tax is €4 pp/night (max 7 nights); new 'containment zones' (December 2025) restrict whole-apartment Airbnbs in Alfama, Bairro Alto, Príncipe Real, Avenida da Liberdade, Santos and the historic centre — check the current impact and book early. The Palace of Pena requires a pre-booked 30-minute timed slot with no grace period — miss it and there is no access to the interior (the gardens stay open); budget ~30 extra minutes for the bus/traffic from Sintra station.",
       transport_to_next: 'End of this route — fly back AMS-Lisbon direct.',
@@ -15425,11 +15560,11 @@ function rbBuildNorthernPortugalMinhoRoute() {
     {
       code: 'PT', name: 'Portugal', days: 6, budget: 450, lat: 41.4419, lng: -8.2918,
       destinations: [
-        { name: 'Porto', lat: 41.1405, lng: -8.6118 },
-        { name: 'Guimarães (Paço dos Duques)', lat: 41.4419, lng: -8.2918 },
-        { name: 'Braga (Bom Jesus do Monte)', lat: 41.5519, lng: -8.3789 },
+        { name: 'Porto', lat: 41.1405, lng: -8.6118 , notes: 'Porto\'s riverside old quarter — tiered, colorful facades along the Douro, narrow medieval lanes behind. Walk (or wait for a tram) across the upper deck of the Dom Luís I bridge to Gaia for the classic elevated view back over the Ribeira, best at golden hour.' },
+        { name: 'Guimarães (Paço dos Duques)', lat: 41.4419, lng: -8.2918 , notes: 'Considered the "birthplace of Portugal" — the 15th-century Ducal Palace and the adjoining hilltop castle where the first king was reputedly born. A half day covers palace, castle and the medieval old town; fast train from Porto is about an hour.' },
+        { name: 'Braga (Bom Jesus do Monte)', lat: 41.5519, lng: -8.3789 , notes: 'Baroque pilgrimage sanctuary on a wooded hill, famous for its zigzagging Via Sacra staircase lined with allegorical fountains. Climb the stairs (about 20 min) or ride the 1882 water-counterweight funicular — one of the oldest of its kind still running — then add Braga\'s old town center to fill the day.' },
         { name: 'Viana do Castelo (Santa Luzia viewpoint)', lat: 41.6932, lng: -8.8327 , notes: 'Hilltop basilica with a sweeping panorama over the Lima river estuary and Atlantic coastline. Take the funicular up (or the 20-min walk) and go late afternoon when the light hits the river mouth.' },
-        { name: 'Ponte de Lima (optional)', lat: 41.7700, lng: -8.5833 },
+        { name: 'Ponte de Lima (optional)', lat: 41.7700, lng: -8.5833 , notes: 'Portugal\'s oldest chartered town, centered on a Roman/medieval bridge over the Lima river and a riverside promenade; if your dates align, visiting on the Feira Quinzenal (a biweekly market held every second Monday on the riverbank, running since medieval times) is the single best reason to time a visit here.' },
       ],
       notes: "Restructured around heritage and coast (Minho), deliberately without a Douro side trip (see Porto + Douro + Lisbon below for that): Porto (2 days) — Guimarães (the birthplace of Portugal, ~45 min) — Braga (Bom Jesus do Monte, ~50 min) — Viana do Castelo (coast, the Santa Luzia viewpoint) — optionally Ponte de Lima (Portugal's oldest town) — back to Porto. Entry: direct AMS-Porto; train for Porto-Braga-Guimarães, a rental car for Viana do Castelo/Ponte de Lima/rural Minho. Budget ~€70-85/day (Portugal's cheapest region). Season: April-October; Minho is Portugal's greenest and wettest region — check autumn/winter rainfall.",
       transport_to_next: 'End of this route — fly back AMS-Porto direct.',
@@ -15475,7 +15610,7 @@ function rbBuildPortugalNorthToSouthRoute() {
     {
       code: 'PT', name: 'Portugal', days: 9, budget: 810, lat: 39.9000, lng: -8.7000,
       destinations: [
-        { name: 'Porto', lat: 41.1405, lng: -8.6118 },
+        { name: 'Porto', lat: 41.1405, lng: -8.6118 , notes: 'Porto\'s riverside old quarter — tiered, colorful facades along the Douro, narrow medieval lanes behind. Walk (or wait for a tram) across the upper deck of the Dom Luís I bridge to Gaia for the classic elevated view back over the Ribeira, best at golden hour.' },
         { name: 'Coimbra (brief stop)', lat: 40.2076, lng: -8.4257 },
         { name: 'Nazaré', lat: 39.6014, lng: -9.0714 },
         { name: 'Óbidos', lat: 39.3604, lng: -9.1571 },
@@ -15525,7 +15660,7 @@ function rbBuildPortugalRoadtripRoute() {
     {
       code: 'PT', name: 'Portugal', days: 12, budget: 1080, lat: 39.5000, lng: -8.2000,
       destinations: [
-        { name: 'Porto', lat: 41.1405, lng: -8.6118 },
+        { name: 'Porto', lat: 41.1405, lng: -8.6118 , notes: 'Porto\'s riverside old quarter — tiered, colorful facades along the Douro, narrow medieval lanes behind. Walk (or wait for a tram) across the upper deck of the Dom Luís I bridge to Gaia for the classic elevated view back over the Ribeira, best at golden hour.' },
         { name: 'Pinhão (Douro Valley, lighter stop)', lat: 41.1897, lng: -7.5461 },
         { name: 'Coimbra', lat: 40.2076, lng: -8.4257 },
         { name: 'Serra da Estrela (Torre)', lat: 40.3320, lng: -7.6108 },
@@ -20933,7 +21068,7 @@ function rbBuildNorthernPortugalGaliciaRoute() {
       destinations: [
         { name: 'Santiago de Compostela (Praza do Obradoiro)', lat: 42.8805, lng: -8.5456 , notes: 'The Camino\'s finish line and the cathedral\'s grand baroque facade square. Enter through the Arco do Pazo for the classic first reveal of the square and cathedral, and book the rooftop "Catedral" tour in advance if you want the terrace views over the old town.' },
         { name: 'Pontevedra / Combarro (Rías Baixas day trip)', lat: 42.4300, lng: -8.6444 },
-        { name: 'Cíes Islands (optional)', lat: 42.2378, lng: -8.8994 },
+        { name: 'Cíes Islands (optional)', lat: 42.2378, lng: -8.8994 , notes: 'A protected archipelago off Vigo with turquoise water and white-sand beaches often ranked among Europe\'s best; you must get a free daily-entry permit (around 1,800-2,200 visitors/day) via autorizacionillasatlanticas.xunta.gal before booking the ferry, and permits open up to 90 days ahead and sell out fast in summer.' },
       ],
       notes: "Santiago de Compostela (2 days: the cathedral, Praza do Obradoiro) — a Rías Baixas day trip (Pontevedra, Combarro) — optionally the Cíes Islands ferry if time allows (book ahead, there's a daily visitor cap in high season). Budget ~€75-85/day, used here at ~€80/day. Season: June-September — Galicia is Atlantic/rainy outside summer.",
       transport_to_next: 'End of this route — fly home from Santiago de Compostela (seasonal direct AMS-Santiago on KLM/Vueling, or via Madrid year-round on Iberia), or back through Porto if reversed.',
