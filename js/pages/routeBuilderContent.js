@@ -11294,6 +11294,65 @@ function rbMigrateCyprusRoadtripExtrasDestinationNotes() {
 }
 
 /**
+ * Batch 92 (2026-09-18) -- Norway cluster (Bergen + Fjords, South Norway, Fjord Norway, Norway
+ * Roadtrip, Bergen + Ålesund, South & Central Norway) -- very high leverage, 20 canonical
+ * topics researched in one pass, applied to 26 name-string variants (Bergen/Nærøyfjord/Rjukan/
+ * Kristiansand/Nordfjord each recur under multiple sibling-route name strings for the same real
+ * place). Same generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateNorwayClusterDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_NORWAY_CLUSTER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_NORWAY_CLUSTER_DESTINATION_NOTES, '1');
+
+  const bergenNote = "Bergen's core draw is the UNESCO-listed Bryggen wharf: rows of colorful wooden Hanseatic trading houses right next to the Fisketorget fish market. Go early morning before cruise-ship crowds hit, and walk into the narrow alleys (\"boder\") between the houses, which most people passing by on the waterfront skip.";
+  const naeroyfjordNote = "Sognefjord (Norway's longest, 205km) branches into the narrow, cliff-walled Nærøyfjord, the scenic centerpiece of the \"Norway in a Nutshell\" boat leg between Flåm and Gudvangen. Where possible pick the smaller electric boat (Future of the Fjords / Vision of the Fjords) over the standard ferry, and stay on the open top deck for photos even if it's cold.";
+  const rjukanNote = "Rjukan sits so deep in its valley that it gets zero direct winter sunlight for about 6 months, which is why the town built \"Solspeilet,\" sun-tracking mirrors on the mountainside that reflect light onto the market square in winter. It's also the WWII heavy-water-sabotage site — visit the Vemork industrial museum (Norsk Industriarbeidermuseum) and allow half a day including the approach drive.";
+  const kristiansandNote = "Kristiansand is Sørlandet's main city, with the old wooden-house quarter Posebyen and the Kristiansand Dyrepark (zoo/amusement park), Norway's most-visited attraction outside Oslo. Posebyen is a free hour's wander; the Dyrepark needs a half-day and suits families with kids specifically.";
+  const nordfjordNote = "Nordfjord/Olden is the gateway to the Jostedalsbreen glacier via the Briksdalsbreen glacier arm, reached by a valley walk (or shuttle \"troll car\"). The glacier has retreated significantly in recent years, changing how far the walk to the ice actually is — check the current trail/distance locally rather than assuming an old route.";
+  const notesByName = {
+    'Bergen (Bryggen)': bergenNote,
+    'Bergen': bergenNote,
+    'Fløyen': "Fløyen is Bergen's easy, family-friendly viewpoint, reached by the Fløibanen funicular, with short forest trails and a troll-themed play area at the top. Buy tickets online or arrive right at opening — the ticket line can run 30-45 minutes in summer.",
+    'Ulriken': 'Ulriken, Bergen\'s highest peak (643m), has its own cable car (Ulriksbanen) and gives a more open, panoramic view than Fløyen. Take the cable car up and hike the "Vidden" trail down to Fløyen (about 5-6 hours) if you want a proper hike between the two viewpoints.',
+    'Flåm (Flåm Railway)': "The Flåm Railway (Flåmsbana) is one of the world's steepest standard-gauge railways, dropping 866m over 20km with a scheduled photo-stop at Kjosfossen waterfall. Book seats ahead in peak summer and sit on the right side going down from Myrdal to Flåm for the best waterfall/valley views.",
+    'Nærøyfjord': naeroyfjordNote,
+    'Sognefjord / Nærøyfjord': naeroyfjordNote,
+    'Sognefjord (Nærøyfjord/Flåm)': naeroyfjordNote,
+    'Voss': "Voss is Norway's adventure-sports hub — skydiving, paragliding, whitewater rafting, and the Ekstremsportveko festival — set on a lake between mountains, on the Bergen-fjords rail line. Without a booked activity it's just a convenient stop; budget at most a couple of hours.",
+    'Hardangerfjord / Eidfjord (optional extension)': "Hardangerfjord is known for fruit orchards (blossom best in May) and Vøringsfossen waterfall near Eidfjord, one of Norway's most-visited natural sights with a roughly 180m drop. The newer viewing platforms/bridge give an easy non-hike view — allow 1-2 hours.",
+    'Oslo': 'Oslo\'s easiest big free highlight is Vigeland Sculpture Park (open-air, always accessible), paired with the modern waterfront around the Opera House. Skip the Viking Ship Museum for now — it\'s closed for rebuilding as the "Museum of the Viking Age" and not due to reopen until November 2027 — so don\'t plan a visit around it.',
+    'Rjukan': rjukanNote,
+    'Rjukan / Telemark': rjukanNote,
+    'Telemark Canal boat (Dalen)': "The Telemark Canal is a century-old lock system between Skien and Dalen, sailed by vintage wooden boats like M/S Victoria (1882). These historic boats only run on a set summer schedule (roughly June-August), so check the specific sailing dates before building a stop around it.",
+    'Kristiansand': kristiansandNote,
+    'Kristiansand (Sørlandet coast)': kristiansandNote,
+    'Mandal': "Mandal has Sjøsanden, Norway's longest sandy beach (roughly 800m-1km), plus a well-preserved old wooden town center. Avoid July weekends if you can — both the beach and the town's narrow streets get packed with Norwegian domestic holidaymakers.",
+    'Nordfjord (Olden)': nordfjordNote,
+    'Nordfjord / Stryn': nordfjordNote,
+    'Geirangerfjord': 'Geirangerfjord is Norway\'s most iconic fjord, a narrow UNESCO corridor with the Seven Sisters and Bridal Veil waterfalls dropping straight into the water. Time the fjord cruise or the Ørnesvingen ("Eagle Road") viewpoint for early morning — Geiranger is a major cruise-ship port and gets very crowded by midday.',
+    'Trolltunga (optional detour)': "Trolltunga is a flat rock tongue jutting horizontally over Lake Ringedalsvatnet — one of Norway's most photographed hikes, but a strenuous 27km round trip taking 10-12 hours. Start by 6-7am, bring real gear even in summer, and consider the paid shuttle from Odda to the Skjeggedal trailhead to save about 1.5 hours and avoid the parking crunch.",
+    'Preikestolen (optional detour)': "Preikestolen is a flat cliff plateau 604m above Lysefjorden, reached by a moderate but busy ~8km round-trip hike (4-5 hours). Start before 8-9am in summer to beat both the tour-bus crowds and the packed trailhead parking at Preikestolen Fjellstue.",
+    'Ålesund': "Ålesund's center was entirely rebuilt in Art Nouveau (Jugendstil) style after an 1904 fire, giving it a uniquely uniform early-1900s townscape along the water and canals. Climb the roughly 400 steps to the Aksla viewpoint (Fjellstua) above downtown for the classic panorama over the islands.",
+    'Trondheim': "Trondheim's centerpiece is Nidaros Cathedral, Scandinavia's largest medieval building and the traditional coronation/burial church of Norwegian kings. Don't skip the colorful old riverside warehouses (bryggene) along the Nidelva just below the Old Town Bridge — easily missed if you only visit the cathedral.",
+    'Rondane / Femundsmarka National Park': "Rondane, Norway's oldest national park, has rounded peaks (said to have inspired Ibsen's Peer Gynt) and reindeer herds, while Femundsmarka is a quieter forest-and-lakes wilderness bordering Sweden. Both need at least a full day of hiking or canoeing rather than a drive-by stop — pick Rondane for peaks/reindeer, Femundsmarka for remote canoeing and fewer people.",
+    'Atlantic Ocean Road (Atlanterhavsveien)': "The Atlantic Ocean Road (Atlanterhavsvegen) is an 8km stretch hopping across small islands via eight bridges, most famously the curving Storseisundet Bridge exposed directly to the open sea. Visiting in rough weather/high swell gives the most dramatic waves-over-the-road photos; stop at the Myrbærholm bridge viewpoint for the classic wide shot of Storseisundet Bridge.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -19826,13 +19885,13 @@ function rbBuildBergenFjordsRoute() {
     {
       code: 'NO', name: 'Norway', days: 6, budget: 870, lat: 60.3959, lng: 5.3245,
       destinations: [
-        { name: 'Bergen (Bryggen)', lat: 60.3959, lng: 5.3245 },
-        { name: 'Fløyen', lat: 60.3975, lng: 5.3401 },
-        { name: 'Ulriken', lat: 60.3736, lng: 5.3597 },
-        { name: 'Flåm (Flåm Railway)', lat: 60.8617, lng: 7.1136 },
-        { name: 'Nærøyfjord', lat: 60.8666, lng: 6.8666 },
-        { name: 'Voss', lat: 60.6293, lng: 6.4152 },
-        { name: 'Hardangerfjord / Eidfjord (optional extension)', lat: 60.4679, lng: 7.0708 },
+        { name: 'Bergen (Bryggen)', lat: 60.3959, lng: 5.3245 , notes: 'Bergen\'s core draw is the UNESCO-listed Bryggen wharf: rows of colorful wooden Hanseatic trading houses right next to the Fisketorget fish market. Go early morning before cruise-ship crowds hit, and walk into the narrow alleys ("boder") between the houses, which most people passing by on the waterfront skip.' },
+        { name: 'Fløyen', lat: 60.3975, lng: 5.3401 , notes: 'Fløyen is Bergen\'s easy, family-friendly viewpoint, reached by the Fløibanen funicular, with short forest trails and a troll-themed play area at the top. Buy tickets online or arrive right at opening — the ticket line can run 30-45 minutes in summer.' },
+        { name: 'Ulriken', lat: 60.3736, lng: 5.3597 , notes: 'Ulriken, Bergen\'s highest peak (643m), has its own cable car (Ulriksbanen) and gives a more open, panoramic view than Fløyen. Take the cable car up and hike the "Vidden" trail down to Fløyen (about 5-6 hours) if you want a proper hike between the two viewpoints.' },
+        { name: 'Flåm (Flåm Railway)', lat: 60.8617, lng: 7.1136 , notes: 'The Flåm Railway (Flåmsbana) is one of the world\'s steepest standard-gauge railways, dropping 866m over 20km with a scheduled photo-stop at Kjosfossen waterfall. Book seats ahead in peak summer and sit on the right side going down from Myrdal to Flåm for the best waterfall/valley views.' },
+        { name: 'Nærøyfjord', lat: 60.8666, lng: 6.8666 , notes: 'Sognefjord (Norway\'s longest, 205km) branches into the narrow, cliff-walled Nærøyfjord, the scenic centerpiece of the "Norway in a Nutshell" boat leg between Flåm and Gudvangen. Where possible pick the smaller electric boat (Future of the Fjords / Vision of the Fjords) over the standard ferry, and stay on the open top deck for photos even if it\'s cold.' },
+        { name: 'Voss', lat: 60.6293, lng: 6.4152 , notes: 'Voss is Norway\'s adventure-sports hub — skydiving, paragliding, whitewater rafting, and the Ekstremsportveko festival — set on a lake between mountains, on the Bergen-fjords rail line. Without a booked activity it\'s just a convenient stop; budget at most a couple of hours.' },
+        { name: 'Hardangerfjord / Eidfjord (optional extension)', lat: 60.4679, lng: 7.0708 , notes: 'Hardangerfjord is known for fruit orchards (blossom best in May) and Vøringsfossen waterfall near Eidfjord, one of Norway\'s most-visited natural sights with a roughly 180m drop. The newer viewing platforms/bridge give an easy non-hike view — allow 1-2 hours.' },
       ],
       notes: "Bergen (2-3 days): Bryggen's old wharf houses, plus the Fløyen and Ulriken viewpoints, then the classic 'Norway in a Nutshell' day trip — the Flåm Railway, a Nærøyfjord cruise, and Voss — with an optional extension into the Hardangerfjord. Budget ~€130-160/day; the Flåm Railway and fjord cruise are the expensive part of this trip. Season: June-September for the driest weather and the full timetable of services. Web check (2026-08): the Flåm Railway now costs about 570 NOK one-way / 850 NOK return (2026 prices, 30% off with a Eurail/Interrail pass) — noticeably pricier than a few years back, so book online ahead given the demand. Travel advisory and entry details: see the Oslo (5 days) route above.",
       transport_to_next: 'End of this route — fly home from Bergen.',
@@ -19851,11 +19910,11 @@ function rbBuildSouthNorwayRoute() {
     {
       code: 'NO', name: 'Norway', days: 9, budget: 1215, lat: 59.9139, lng: 10.7522,
       destinations: [
-        { name: 'Oslo', lat: 59.9139, lng: 10.7522 },
-        { name: 'Rjukan', lat: 59.8794, lng: 8.5921 },
-        { name: 'Telemark Canal boat (Dalen)', lat: 59.4386, lng: 8.0000 },
-        { name: 'Kristiansand', lat: 58.1467, lng: 7.9956 },
-        { name: 'Mandal', lat: 58.0296, lng: 7.4593 },
+        { name: 'Oslo', lat: 59.9139, lng: 10.7522 , notes: 'Oslo\'s easiest big free highlight is Vigeland Sculpture Park (open-air, always accessible), paired with the modern waterfront around the Opera House. Skip the Viking Ship Museum for now — it\'s closed for rebuilding as the "Museum of the Viking Age" and not due to reopen until November 2027 — so don\'t plan a visit around it.' },
+        { name: 'Rjukan', lat: 59.8794, lng: 8.5921 , notes: 'Rjukan sits so deep in its valley that it gets zero direct winter sunlight for about 6 months, which is why the town built "Solspeilet," sun-tracking mirrors on the mountainside that reflect light onto the market square in winter. It\'s also the WWII heavy-water-sabotage site — visit the Vemork industrial museum (Norsk Industriarbeidermuseum) and allow half a day including the approach drive.' },
+        { name: 'Telemark Canal boat (Dalen)', lat: 59.4386, lng: 8.0000 , notes: 'The Telemark Canal is a century-old lock system between Skien and Dalen, sailed by vintage wooden boats like M/S Victoria (1882). These historic boats only run on a set summer schedule (roughly June-August), so check the specific sailing dates before building a stop around it.' },
+        { name: 'Kristiansand', lat: 58.1467, lng: 7.9956 , notes: 'Kristiansand is Sørlandet\'s main city, with the old wooden-house quarter Posebyen and the Kristiansand Dyrepark (zoo/amusement park), Norway\'s most-visited attraction outside Oslo. Posebyen is a free hour\'s wander; the Dyrepark needs a half-day and suits families with kids specifically.' },
+        { name: 'Mandal', lat: 58.0296, lng: 7.4593 , notes: 'Mandal has Sjøsanden, Norway\'s longest sandy beach (roughly 800m-1km), plus a well-preserved old wooden town center. Avoid July weekends if you can — both the beach and the town\'s narrow streets get packed with Norwegian domestic holidaymakers.' },
       ],
       notes: "Oslo (2-3 days) then west into Telemark — Rjukan and a boat trip on the Telemark Canal — before the Sørlandet coast towns of Kristiansand and Mandal, then back. Deliberately fjord-free, leaning into culture and the southern coastline instead of the fjord routes below. Budget ~€120-150/day including a shared rental car. Season: June-August, when the coastal towns are liveliest and the Telemark Canal boat mainly runs. Web check (2026-08): the Telemark Canal boat has a limited summer schedule — book ahead. Travel advisory and entry details: see the Oslo (5 days) route above.",
       transport_to_next: 'End of this route — back to Oslo to fly home.',
@@ -19874,12 +19933,12 @@ function rbBuildFjordNorwayRoute() {
     {
       code: 'NO', name: 'Norway', days: 9, budget: 1395, lat: 60.3959, lng: 5.3245,
       destinations: [
-        { name: 'Bergen', lat: 60.3959, lng: 5.3245 },
-        { name: 'Sognefjord / Nærøyfjord', lat: 60.8666, lng: 6.8666 },
-        { name: 'Nordfjord (Olden)', lat: 61.8394, lng: 6.7961 },
-        { name: 'Geirangerfjord', lat: 62.1004, lng: 7.2062 },
-        { name: 'Trolltunga (optional detour)', lat: 60.1242, lng: 6.7401 },
-        { name: 'Preikestolen (optional detour)', lat: 58.9866, lng: 6.1900 },
+        { name: 'Bergen', lat: 60.3959, lng: 5.3245 , notes: 'Bergen\'s core draw is the UNESCO-listed Bryggen wharf: rows of colorful wooden Hanseatic trading houses right next to the Fisketorget fish market. Go early morning before cruise-ship crowds hit, and walk into the narrow alleys ("boder") between the houses, which most people passing by on the waterfront skip.' },
+        { name: 'Sognefjord / Nærøyfjord', lat: 60.8666, lng: 6.8666 , notes: 'Sognefjord (Norway\'s longest, 205km) branches into the narrow, cliff-walled Nærøyfjord, the scenic centerpiece of the "Norway in a Nutshell" boat leg between Flåm and Gudvangen. Where possible pick the smaller electric boat (Future of the Fjords / Vision of the Fjords) over the standard ferry, and stay on the open top deck for photos even if it\'s cold.' },
+        { name: 'Nordfjord (Olden)', lat: 61.8394, lng: 6.7961 , notes: 'Nordfjord/Olden is the gateway to the Jostedalsbreen glacier via the Briksdalsbreen glacier arm, reached by a valley walk (or shuttle "troll car"). The glacier has retreated significantly in recent years, changing how far the walk to the ice actually is — check the current trail/distance locally rather than assuming an old route.' },
+        { name: 'Geirangerfjord', lat: 62.1004, lng: 7.2062 , notes: 'Geirangerfjord is Norway\'s most iconic fjord, a narrow UNESCO corridor with the Seven Sisters and Bridal Veil waterfalls dropping straight into the water. Time the fjord cruise or the Ørnesvingen ("Eagle Road") viewpoint for early morning — Geiranger is a major cruise-ship port and gets very crowded by midday.' },
+        { name: 'Trolltunga (optional detour)', lat: 60.1242, lng: 6.7401 , notes: 'Trolltunga is a flat rock tongue jutting horizontally over Lake Ringedalsvatnet — one of Norway\'s most photographed hikes, but a strenuous 27km round trip taking 10-12 hours. Start by 6-7am, bring real gear even in summer, and consider the paid shuttle from Odda to the Skjeggedal trailhead to save about 1.5 hours and avoid the parking crunch.' },
+        { name: 'Preikestolen (optional detour)', lat: 58.9866, lng: 6.1900 , notes: 'Preikestolen is a flat cliff plateau 604m above Lysefjorden, reached by a moderate but busy ~8km round-trip hike (4-5 hours). Start before 8-9am in summer to beat both the tour-bus crowds and the packed trailhead parking at Preikestolen Fjellstue.' },
       ],
       notes: "Bergen, then the Sognefjord/Nærøyfjord, on to the Nordfjord and Geirangerfjord, with Trolltunga or Preikestolen as an optional day-hike detour — the purest fjord-focused route of the bunch, unlike South Norway above. Budget ~€140-170/day (rental car plus fjord cruises plus tolls/ferries). Season: mid-June to mid-September; mountain passes like Gaularfjellet are typically open May-October, snow-dependent. Web check (2026-08): since 1 January 2026, Geirangerfjord and Nærøyfjord enforce a zero-emission rule for passenger ships under 10,000 GT (larger cruise ships get until 2032) — small fjord cruises/ferries are typically already electric/hybrid and keep running, but check per operator. Preikestolen: P1 parking runs about 250 NOK/day, the Stavanger shuttle bus must be pre-booked online (not sold on board), and it's busiest 8:00-16:00 June-August. Trolltunga needs no permit, but parking costs 330/550/770 NOK for 1/2/3 days, with 1-2 hour queues at the rock itself in July-August — late June or early September is quieter with still-good conditions. Travel advisory and entry details: see the Oslo (5 days) route above.",
       transport_to_next: 'End of this route — fly home from Bergen or Ålesund, whichever connects best.',
@@ -19898,13 +19957,13 @@ function rbBuildNorwayRoadtripRoute() {
     {
       code: 'NO', name: 'Norway', days: 12, budget: 1800, lat: 59.9139, lng: 10.7522,
       destinations: [
-        { name: 'Oslo', lat: 59.9139, lng: 10.7522 },
-        { name: 'Bergen', lat: 60.3959, lng: 5.3245 },
-        { name: 'Sognefjord / Nærøyfjord', lat: 60.8666, lng: 6.8666 },
-        { name: 'Geirangerfjord', lat: 62.1004, lng: 7.2062 },
-        { name: 'Ålesund', lat: 62.4722, lng: 6.1549 },
-        { name: 'Trondheim', lat: 63.4305, lng: 10.3951 },
-        { name: 'Rondane / Femundsmarka National Park', lat: 61.6167, lng: 9.7833 },
+        { name: 'Oslo', lat: 59.9139, lng: 10.7522 , notes: 'Oslo\'s easiest big free highlight is Vigeland Sculpture Park (open-air, always accessible), paired with the modern waterfront around the Opera House. Skip the Viking Ship Museum for now — it\'s closed for rebuilding as the "Museum of the Viking Age" and not due to reopen until November 2027 — so don\'t plan a visit around it.' },
+        { name: 'Bergen', lat: 60.3959, lng: 5.3245 , notes: 'Bergen\'s core draw is the UNESCO-listed Bryggen wharf: rows of colorful wooden Hanseatic trading houses right next to the Fisketorget fish market. Go early morning before cruise-ship crowds hit, and walk into the narrow alleys ("boder") between the houses, which most people passing by on the waterfront skip.' },
+        { name: 'Sognefjord / Nærøyfjord', lat: 60.8666, lng: 6.8666 , notes: 'Sognefjord (Norway\'s longest, 205km) branches into the narrow, cliff-walled Nærøyfjord, the scenic centerpiece of the "Norway in a Nutshell" boat leg between Flåm and Gudvangen. Where possible pick the smaller electric boat (Future of the Fjords / Vision of the Fjords) over the standard ferry, and stay on the open top deck for photos even if it\'s cold.' },
+        { name: 'Geirangerfjord', lat: 62.1004, lng: 7.2062 , notes: 'Geirangerfjord is Norway\'s most iconic fjord, a narrow UNESCO corridor with the Seven Sisters and Bridal Veil waterfalls dropping straight into the water. Time the fjord cruise or the Ørnesvingen ("Eagle Road") viewpoint for early morning — Geiranger is a major cruise-ship port and gets very crowded by midday.' },
+        { name: 'Ålesund', lat: 62.4722, lng: 6.1549 , notes: 'Ålesund\'s center was entirely rebuilt in Art Nouveau (Jugendstil) style after an 1904 fire, giving it a uniquely uniform early-1900s townscape along the water and canals. Climb the roughly 400 steps to the Aksla viewpoint (Fjellstua) above downtown for the classic panorama over the islands.' },
+        { name: 'Trondheim', lat: 63.4305, lng: 10.3951 , notes: 'Trondheim\'s centerpiece is Nidaros Cathedral, Scandinavia\'s largest medieval building and the traditional coronation/burial church of Norwegian kings. Don\'t skip the colorful old riverside warehouses (bryggene) along the Nidelva just below the Old Town Bridge — easily missed if you only visit the cathedral.' },
+        { name: 'Rondane / Femundsmarka National Park', lat: 61.6167, lng: 9.7833 , notes: 'Rondane, Norway\'s oldest national park, has rounded peaks (said to have inspired Ibsen\'s Peer Gynt) and reindeer herds, while Femundsmarka is a quieter forest-and-lakes wilderness bordering Sweden. Both need at least a full day of hiking or canoeing rather than a drive-by stop — pick Rondane for peaks/reindeer, Femundsmarka for remote canoeing and fewer people.' },
       ],
       notes: "The broadest self-drive loop of the Norway routes: Oslo, Bergen, the Sognefjord, Geiranger, Ålesund, Trondheim, and Rondane/Femundsmarka national park, back to Oslo. Budget ~€140-160/day (shared rental car, tolls, ferries, fuel). Season: mid-June to mid-September for the mountain passes to be fully open. Web check (2026-08): mountain passes like Trollstigen and Sognefjellet are typically open mid-May to mid-October, weather-dependent year to year — check current opening dates at vegvesen.no just before departure. Travel advisory and entry details: see the Oslo (5 days) route above.",
       transport_to_next: 'End of this route — back to Oslo to fly home.',
@@ -19923,12 +19982,12 @@ function rbBuildBergenAlesundRoute() {
     {
       code: 'NO', name: 'Norway', days: 12, budget: 1920, lat: 60.3959, lng: 5.3245,
       destinations: [
-        { name: 'Bergen', lat: 60.3959, lng: 5.3245 },
-        { name: 'Sognefjord (Nærøyfjord/Flåm)', lat: 60.8666, lng: 6.8666 },
-        { name: 'Nordfjord / Stryn', lat: 61.9086, lng: 6.7186 },
-        { name: 'Geirangerfjord', lat: 62.1004, lng: 7.2062 },
-        { name: 'Atlantic Ocean Road (Atlanterhavsveien)', lat: 63.0206, lng: 7.3654 },
-        { name: 'Ålesund', lat: 62.4722, lng: 6.1549 },
+        { name: 'Bergen', lat: 60.3959, lng: 5.3245 , notes: 'Bergen\'s core draw is the UNESCO-listed Bryggen wharf: rows of colorful wooden Hanseatic trading houses right next to the Fisketorget fish market. Go early morning before cruise-ship crowds hit, and walk into the narrow alleys ("boder") between the houses, which most people passing by on the waterfront skip.' },
+        { name: 'Sognefjord (Nærøyfjord/Flåm)', lat: 60.8666, lng: 6.8666 , notes: 'Sognefjord (Norway\'s longest, 205km) branches into the narrow, cliff-walled Nærøyfjord, the scenic centerpiece of the "Norway in a Nutshell" boat leg between Flåm and Gudvangen. Where possible pick the smaller electric boat (Future of the Fjords / Vision of the Fjords) over the standard ferry, and stay on the open top deck for photos even if it\'s cold.' },
+        { name: 'Nordfjord / Stryn', lat: 61.9086, lng: 6.7186 , notes: 'Nordfjord/Olden is the gateway to the Jostedalsbreen glacier via the Briksdalsbreen glacier arm, reached by a valley walk (or shuttle "troll car"). The glacier has retreated significantly in recent years, changing how far the walk to the ice actually is — check the current trail/distance locally rather than assuming an old route.' },
+        { name: 'Geirangerfjord', lat: 62.1004, lng: 7.2062 , notes: 'Geirangerfjord is Norway\'s most iconic fjord, a narrow UNESCO corridor with the Seven Sisters and Bridal Veil waterfalls dropping straight into the water. Time the fjord cruise or the Ørnesvingen ("Eagle Road") viewpoint for early morning — Geiranger is a major cruise-ship port and gets very crowded by midday.' },
+        { name: 'Atlantic Ocean Road (Atlanterhavsveien)', lat: 63.0206, lng: 7.3654 , notes: 'The Atlantic Ocean Road (Atlanterhavsvegen) is an 8km stretch hopping across small islands via eight bridges, most famously the curving Storseisundet Bridge exposed directly to the open sea. Visiting in rough weather/high swell gives the most dramatic waves-over-the-road photos; stop at the Myrbærholm bridge viewpoint for the classic wide shot of Storseisundet Bridge.' },
+        { name: 'Ålesund', lat: 62.4722, lng: 6.1549 , notes: 'Ålesund\'s center was entirely rebuilt in Art Nouveau (Jugendstil) style after an 1904 fire, giving it a uniquely uniform early-1900s townscape along the water and canals. Climb the roughly 400 steps to the Aksla viewpoint (Fjellstua) above downtown for the classic panorama over the islands.' },
       ],
       notes: "A one-way coastal route: Bergen, the Sognefjord (Nærøyfjord/Flåm), the Nordfjord/Stryn, Geirangerfjord, the Atlantic Ocean Road (Atlanterhavsveien), ending in Ålesund with a return flight from there or Molde — a one-way rental car drop-off, so watch for the fee, unlike the round-trip Norway Roadtrip above. Budget ~€150-170/day (one-way rental car costs more, plus fjord ferries). Season: June-September; the Trollstigen/Geiranger-Ålesund stretch is snow-dependent, typically open roughly May-October. Web check (2026-08): a one-way Bergen-Ålesund rental car often carries a substantial drop-off fee — compare providers in advance; the same Geiranger zero-emission rule applies as on the Fjord Norway route above. Travel advisory and entry details: see the Oslo (5 days) route above.",
       transport_to_next: 'End of this route — fly home from Ålesund or Molde.',
@@ -19947,12 +20006,12 @@ function rbBuildSouthCentralNorwayRoute() {
     {
       code: 'NO', name: 'Norway', days: 14, budget: 2100, lat: 59.9139, lng: 10.7522,
       destinations: [
-        { name: 'Oslo', lat: 59.9139, lng: 10.7522 },
-        { name: 'Rjukan / Telemark', lat: 59.8794, lng: 8.5921 },
-        { name: 'Kristiansand (Sørlandet coast)', lat: 58.1467, lng: 7.9956 },
-        { name: 'Bergen', lat: 60.3959, lng: 5.3245 },
+        { name: 'Oslo', lat: 59.9139, lng: 10.7522 , notes: 'Oslo\'s easiest big free highlight is Vigeland Sculpture Park (open-air, always accessible), paired with the modern waterfront around the Opera House. Skip the Viking Ship Museum for now — it\'s closed for rebuilding as the "Museum of the Viking Age" and not due to reopen until November 2027 — so don\'t plan a visit around it.' },
+        { name: 'Rjukan / Telemark', lat: 59.8794, lng: 8.5921 , notes: 'Rjukan sits so deep in its valley that it gets zero direct winter sunlight for about 6 months, which is why the town built "Solspeilet," sun-tracking mirrors on the mountainside that reflect light onto the market square in winter. It\'s also the WWII heavy-water-sabotage site — visit the Vemork industrial museum (Norsk Industriarbeidermuseum) and allow half a day including the approach drive.' },
+        { name: 'Kristiansand (Sørlandet coast)', lat: 58.1467, lng: 7.9956 , notes: 'Kristiansand is Sørlandet\'s main city, with the old wooden-house quarter Posebyen and the Kristiansand Dyrepark (zoo/amusement park), Norway\'s most-visited attraction outside Oslo. Posebyen is a free hour\'s wander; the Dyrepark needs a half-day and suits families with kids specifically.' },
+        { name: 'Bergen', lat: 60.3959, lng: 5.3245 , notes: 'Bergen\'s core draw is the UNESCO-listed Bryggen wharf: rows of colorful wooden Hanseatic trading houses right next to the Fisketorget fish market. Go early morning before cruise-ship crowds hit, and walk into the narrow alleys ("boder") between the houses, which most people passing by on the waterfront skip.' },
         { name: 'Sognefjord / Geirangerfjord', lat: 60.8666, lng: 6.8666 },
-        { name: 'Ålesund', lat: 62.4722, lng: 6.1549 },
+        { name: 'Ålesund', lat: 62.4722, lng: 6.1549 , notes: 'Ålesund\'s center was entirely rebuilt in Art Nouveau (Jugendstil) style after an 1904 fire, giving it a uniquely uniform early-1900s townscape along the water and canals. Climb the roughly 400 steps to the Aksla viewpoint (Fjellstua) above downtown for the classic panorama over the islands.' },
         { name: 'Trondheim (optional)', lat: 63.4305, lng: 10.3951 },
       ],
       notes: "The longest and most complete of the Norway routes: Oslo plus Telemark and the Sørlandet coast, then Bergen, the Sognefjord/Geirangerfjord fjords, Ålesund, and optionally on to Trondheim, with a return flight from Trondheim or Oslo. Budget ~€140-160/day averaged over the whole trip. Season: June to mid-September — the only one of these routes reaching Trondheim, so it needs a slightly wider window for the mountain passes. Web check (2026-08): the same Geiranger zero-emission rule and Preikestolen/Trolltunga crowding notes apply as on the shorter fjord routes above; consider the Dovrebanen train Trondheim-Oslo as the way back instead of flying. Travel advisory and entry details: see the Oslo (5 days) route above.",
@@ -23509,9 +23568,9 @@ function rbBuildNorwaySwedenFjordsCapitalsRoute() {
       code: 'NO', name: 'Norway', days: 7, budget: 980, lat: 60.0000, lng: 8.0000,
       destinations: [
         { name: 'Oslo (Karl Johans gate)', lat: 59.9139, lng: 10.7522 },
-        { name: 'Bergen (Bryggen)', lat: 60.3959, lng: 5.3245 },
-        { name: 'Sognefjord / Nærøyfjord', lat: 60.8666, lng: 6.8666 },
-        { name: 'Flåm (Flåm Railway)', lat: 60.8617, lng: 7.1136 },
+        { name: 'Bergen (Bryggen)', lat: 60.3959, lng: 5.3245 , notes: 'Bergen\'s core draw is the UNESCO-listed Bryggen wharf: rows of colorful wooden Hanseatic trading houses right next to the Fisketorget fish market. Go early morning before cruise-ship crowds hit, and walk into the narrow alleys ("boder") between the houses, which most people passing by on the waterfront skip.' },
+        { name: 'Sognefjord / Nærøyfjord', lat: 60.8666, lng: 6.8666 , notes: 'Sognefjord (Norway\'s longest, 205km) branches into the narrow, cliff-walled Nærøyfjord, the scenic centerpiece of the "Norway in a Nutshell" boat leg between Flåm and Gudvangen. Where possible pick the smaller electric boat (Future of the Fjords / Vision of the Fjords) over the standard ferry, and stay on the open top deck for photos even if it\'s cold.' },
+        { name: 'Flåm (Flåm Railway)', lat: 60.8617, lng: 7.1136 , notes: 'The Flåm Railway (Flåmsbana) is one of the world\'s steepest standard-gauge railways, dropping 866m over 20km with a scheduled photo-stop at Kjosfossen waterfall. Book seats ahead in peak summer and sit on the right side going down from Myrdal to Flåm for the best waterfall/valley views.' },
       ],
       notes: "Oslo (3 days: Vigeland Park, the Viking Ship/Fram museums) — by train to Bergen, then the classic Sognefjord/Nærøyfjord and Flåm Railway circuit (4 days) — same fjord content as Bergen + Fjords (6 days) ⛴️ (rbBuildBergenFjordsRoute). Budget ~€140/day — Norway dominates this route's overall cost. Season: June-August for the full fjord-tour timetable and the midnight-sun window. Web check (2026-08): the Bergen Railway (Oslo-Bergen, ~6h30, one of Europe's most scenic train rides) needs booking ahead in summer — tickets release 90 days out and the cheapest fares sell first, book 6-8 weeks ahead for July; the Flåm Railway costs roughly 510 NOK one-way/730 NOK return in high season (2026 prices, corrected 2026-09 — originally overstated at 570/850 NOK).",
       transport_to_next: 'Train back to Oslo, then onward by train to Gothenburg, Sweden (Oslo-Gothenburg, ~4h) — a Nordic Passport Union crossing, no border control.',

@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 461 / 741 signatures.**
+- **Done so far: 466 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -631,15 +631,15 @@ Sorted alphabetically by country code.
 - [x] **MY** (3 dest): Semporna, Mabul Island, Sipadan (diving, permit required) — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
 - [x] **MY** (2 dest): Kota Kinabalu (departure buffer), Mari Mari Cultural Village (optional) — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
 - [x] **NL** (2 dest): Maastricht (Vrijthof, Sint-Pietersberg caves), Valkenburg (Fluweelengrot cave) — routes: South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️
-- [ ] **NO** (7 dest): Bergen (Bryggen), Fløyen, Ulriken, Flåm (Flåm Railway), Nærøyfjord, Voss, Hardangerfjord / Eidfjord (optional extension) — routes: Bergen + Fjords (6 days) ⛴️
-- [ ] **NO** (6 dest): Bergen, Sognefjord (Nærøyfjord/Flåm), Nordfjord / Stryn, Geirangerfjord, Atlantic Ocean Road (Atlanterhavsveien), Ålesund — routes: Bergen + Ålesund (12 days) 🛣️
+- [x] **NO** (7 dest): Bergen (Bryggen), Fløyen, Ulriken, Flåm (Flåm Railway), Nærøyfjord, Voss, Hardangerfjord / Eidfjord (optional extension) — routes: Bergen + Fjords (6 days) ⛴️
+- [x] **NO** (6 dest): Bergen, Sognefjord (Nærøyfjord/Flåm), Nordfjord / Stryn, Geirangerfjord, Atlantic Ocean Road (Atlanterhavsveien), Ålesund — routes: Bergen + Ålesund (12 days) 🛣️
 - [ ] **NO** (2 dest): Oslo (Karl Johans gate), Flåm (optional day trip, 14-day version) — routes: Denmark + Sweden + Norway Overland (12 days) 🌉
-- [ ] **NO** (6 dest): Bergen, Sognefjord / Nærøyfjord, Nordfjord (Olden), Geirangerfjord, Trolltunga (optional detour), Preikestolen (optional detour) — routes: Fjord Norway (9 days) 🏔️
+- [x] **NO** (6 dest): Bergen, Sognefjord / Nærøyfjord, Nordfjord (Olden), Geirangerfjord, Trolltunga (optional detour), Preikestolen (optional detour) — routes: Fjord Norway (9 days) 🏔️
 - [ ] **NO** (4 dest): Oslo (Karl Johans gate), Bergen (Bryggen), Sognefjord / Nærøyfjord, Flåm (Flåm Railway) — routes: Norway + Sweden: Fjords & Capitals (12 days) ⛴️
-- [ ] **NO** (7 dest): Oslo, Bergen, Sognefjord / Nærøyfjord, Geirangerfjord, Ålesund, Trondheim, Rondane / Femundsmarka National Park — routes: Norway Roadtrip (12 days) 🚙
+- [x] **NO** (7 dest): Oslo, Bergen, Sognefjord / Nærøyfjord, Geirangerfjord, Ålesund, Trondheim, Rondane / Femundsmarka National Park — routes: Norway Roadtrip (12 days) 🚙
 - [ ] **NO** (6 dest): Oslo (Karl Johans gate), Vigeland Park, Viking Ship Museum & Fram Museum (Bygdøy), Munch Museum, Hovedøya (Oslofjord islands day trip), Fredrikstad (alternative day trip) — routes: Oslo (5 days) 🏛️
 - [ ] **NO** (7 dest): Oslo, Rjukan / Telemark, Kristiansand (Sørlandet coast), Bergen, Sognefjord / Geirangerfjord, Ålesund, Trondheim (optional) — routes: South & Central Norway (14 days) 🗺️
-- [ ] **NO** (5 dest): Oslo, Rjukan, Telemark Canal boat (Dalen), Kristiansand, Mandal — routes: South Norway (9 days) 🏞️
+- [x] **NO** (5 dest): Oslo, Rjukan, Telemark Canal boat (Dalen), Kristiansand, Mandal — routes: South Norway (9 days) 🏞️
 - [ ] **NO** (5 dest): Longyearbyen, Svalbard Museum, Nordpolet, Isfjorden boat tour (summer), Pyramiden (summer boat destination) — routes: Svalbard (Longyearbyen) (6 days) 🌌
 - [x] **NO** (2 dest): Narvik, Lofoten (Svolvær) — routes: Sweden + Norway (12 days) 🌉
 - [x] **PE** (1 dest): Lima (arrival, transit only) — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
@@ -782,8 +782,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Campania: Naples + Amalfi Coast (6 days) 🌊 | 7/7 | 0 |
 | Asturias + Cantabria (6 days) 🌲 | 7/7 | 0 |
 | Andorra + French Pyrenees: Ariège (6 days) ♨️ | 7/7 | 0 |
-| Bergen + Fjords (6 days) ⛴️ | 7/7 | 0 |
-| Norway Roadtrip (12 days) 🚙 | 7/7 | 0 |
 | South & Central Norway (14 days) 🗺️ | 7/7 | 0 |
 | Denmark + South Sweden (9 days) 🌉 | 7/7 | 0 |
 | Tenerife + La Gomera (7-10 days) 🏝️ | 7/7 | 0 |
@@ -808,6 +806,8 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Slovenia Alpine Loop (6 days) 🏔️ | 6/6 | 0 |
 | Slovenia + Italy (9 days) 🍝 | 6/6 | 0 |
 | Sarajevo + Mostar (5 days) 🌉 | 6/6 | 0 |
-| ... 165 more routes with open destinations ... | | |
+| Bosnia Roadtrip (6 days) 🚗 | 6/6 | 0 |
+| Montenegro (6 days) 🏔️ | 6/6 | 0 |
+| ... 160 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

@@ -30,6 +30,15 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   already present in the existing data, no change needed to how batches insert notes or build
   their migration functions.
 
+- **Per-destination notes, batch 92 — Norway cluster (2026-09-18)** — a very high-leverage
+  batch spanning Bergen + Fjords, South Norway, Fjord Norway, Norway Roadtrip, Bergen + Ålesund,
+  South & Central Norway: 20 canonical topics researched in one pass, applied to 26 name-string
+  variants since Bergen, Nærøyfjord, Rjukan, Kristiansand and Nordfjord each recur under
+  multiple sibling-route strings for the same real place (39 total insertions once cascaded —
+  Bergen alone hit 4 routes, Oslo/Ålesund/Geirangerfjord/Sognefjord-Nærøyfjord 3 each).
+  `rbMigrateNorwayClusterDestinationNotes()`. App-wide total: 3324 destination-slots filled
+  across 393 routes. 466/741 signatures done.
+
 - **Per-destination notes, batches 88-91 — Spain North/East, Montenegro, Cyprus (2026-09-18)**
   — 22 destinations researched, plus 4 name-variant reuses/combos.
   - Batch 88: Spain: North to Central extras — Vitoria-Gasteiz, Burgos, Madrid, Toledo, Segovia,
