@@ -30,6 +30,20 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   already present in the existing data, no change needed to how batches insert notes or build
   their migration functions.
 
+- **Per-destination notes, batches 98-101 — Asturias+Cantabria leftover, French+Spanish
+  Pyrenees, Sri Lanka, Papua New Guinea (2026-09-18)** — 19 destinations researched, plus 1
+  reuse closing out Asturias + Cantabria entirely.
+  - Batch 98: Asturias + Cantabria leftover — "Comillas (El Capricho)" reusing the bare
+    "Comillas" note (`rbMigrateAsturiasCantabriaLeftoverDestinationNotes()`)
+  - Batch 99: French + Spanish Pyrenees (fresh region) — Lourdes, Cauterets, Gavarnie, Brèche
+    de Roland, Torla, Ordesa y Monte Perdido NP, Aínsa
+    (`rbMigrateFrenchSpanishPyreneesDestinationNotes()`)
+  - Batch 100: Sri Lanka (fresh region) — Colombo, Sigiriya, Kandy, Ella, Yala National Park,
+    Mirissa/Galle (`rbMigrateSriLankaDestinationNotes()`)
+  - Batch 101: Papua New Guinea (fresh region) — Port Moresby, Tufi, Alotau/Milne Bay, Sepik
+    River, Rabaul/Kokopo, Goroka (`rbMigratePapuaNewGuineaDestinationNotes()`)
+  App-wide total: 3373 destination-slots filled across 397 routes. 480/741 signatures done.
+
 - **Per-destination notes, batches 93-97 — Andorra-Ariège/Denmark-Sweden/Tenerife-Gomera/Isle of
   Man/Norway leftovers (2026-09-18)** — 19 destinations researched, plus 2 Norway leftovers
   (a combo note and a reuse) closing out South & Central Norway.

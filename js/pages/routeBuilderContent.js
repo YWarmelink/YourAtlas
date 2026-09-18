@@ -11505,6 +11505,128 @@ function rbMigrateNorwayLeftoversDestinationNotes() {
 }
 
 /**
+ * Batch 98 (2026-09-18) -- Asturias + Cantabria leftover -- "Comillas (El Capricho)" reuses
+ * the existing bare "Comillas" note (same real place, different exact string). Same generic
+ * name-matching migration pattern as the other batches.
+ */
+function rbMigrateAsturiasCantabriaLeftoverDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_ASTURIAS_CANTABRIA_LEFTOVER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_ASTURIAS_CANTABRIA_LEFTOVER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Comillas (El Capricho)': "A small Cantabrian town whose real draw is Gaudí's El Capricho villa (whimsical sunflower-tiled tower) plus the neighboring Palacio de Sobrellano; allow about 1 hour, guided English tours run at 12:30 and 16:30 and it's worth booking ahead since it's a popular stop.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 99 (2026-09-18) -- French + Spanish Pyrenees (fresh region) -- 7 destinations
+ * researched in a single pass. Same generic name-matching migration pattern as the other
+ * batches.
+ */
+function rbMigrateFrenchSpanishPyreneesDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_FRENCH_SPANISH_PYRENEES_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_FRENCH_SPANISH_PYRENEES_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    "Lourdes (arrival)": "France's top Catholic pilgrimage site, centered on the Grotto of Massabielle where the Marian apparitions occurred; go early morning or catch the evening torchlight Marian procession to avoid the midday tour-bus crush at the grotto.",
+    "Cauterets (Pont d'Espagne)": "Small spa town serving as gateway to the Pont d'Espagne waterfall confluence and the cable car up to Lac de Gaube; ride the télécabine from Pont d'Espagne to skip most of the walk-in crowds and see the glacial lake in half a day.",
+    'Gavarnie (Cirque de Gavarnie)': "UNESCO-listed natural amphitheater with mainland France's highest waterfall (~422m) framed by sheer limestone cliffs; walk or hire a mule from the village (1.5-2h each way) and go early morning for the best light and to beat day-trippers.",
+    'Brèche de Roland': "A dramatic 40m-wide natural gap sliced through the ridge above Gavarnie, a serious full-day hiking objective with scrambling near the top; only feasible June-September (snow-free) — start at dawn from Gavarnie or the Sarradets refuge.",
+    'Torla': "Gateway village to Ordesa NP; during peak season (mid-June to mid-September 2026, confirmed as June 19-Sept 20) private cars are banned from the valley, so park in Torla and take the mandatory shuttle bus to Pradera de Ordesa.",
+    'Ordesa y Monte Perdido National Park': 'A Pyrenean "Grand Canyon" of limestone cliffs and waterfalls; the classic day hike is the Cola de Caballo waterfall loop from Pradera de Ordesa (5-6h round trip) — go on the first shuttle buses since July/August departures fill up fast.',
+    'Aínsa (optional)': "Well-preserved medieval hilltop village with an arcaded stone Plaza Mayor and hilltop castle; allow 1-2 hours, park below and walk up, and time it for golden hour when the stone square glows.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 100 (2026-09-18) -- Sri Lanka (fresh region) -- 6 destinations researched in a single
+ * pass. Same generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateSriLankaDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_SRI_LANKA_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_SRI_LANKA_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Colombo': "Sri Lanka's capital, mostly a transit/gateway city with little to detain travelers; if you have a half day, Galle Face Green and Pettah market cover it — don't plan more than one night unless flight timing forces it.",
+    'Sigiriya': "UNESCO-listed 5th-century rock fortress/palace ruin with frescoes and a mirror wall, rising sheer from the jungle; climb right at opening (~7am) to beat the heat and crowds on the exposed metal staircases — foreigner entry is roughly USD 30-35, allow 2-3 hours.",
+    'Kandy': "Sri Lanka's hill-country cultural capital, home to the Temple of the Sacred Tooth Relic; time your visit around a puja offering ceremony (roughly 6:30am, 10:30am, or 6:30pm) to see the relic-chamber ritual, and dress with shoulders/knees covered.",
+    'Ella': "Small hill-country town amid tea plantations, known for the Nine Arch Bridge and easy scenic hikes; visit the bridge early morning for a chance to see a train cross with fewer crowds, and do the short Little Adam's Peak walk (1-1.5h round trip) at sunrise or sunset.",
+    'Yala National Park': "Sri Lanka's premier safari park with one of the world's highest leopard densities; note that Yala's most popular Blocks 1 & 2 are closed annually for wildlife recovery — in 2026 they're shut Sept 14-Oct 15, so during that window book a drive into Blocks 3-6 instead, and go on an early-morning game drive since leopard sightings drop off by mid-morning regardless.",
+    'Mirissa / Galle': "A south-coast pairing of Mirissa (whale-watching harbor, best Dec-Apr for blue whales) and Galle's Dutch colonial fort (ramparts, lighthouse, old town); take an early boat (~6:30am) with a smaller operator to avoid the crowded tourist boats, and walk Galle's ramparts at sunset.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 101 (2026-09-18) -- Papua New Guinea (fresh region) -- 6 destinations researched in a
+ * single pass. Same generic name-matching migration pattern as the other batches.
+ */
+function rbMigratePapuaNewGuineaDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_PAPUA_NEW_GUINEA_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_PAPUA_NEW_GUINEA_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Port Moresby': "PNG's capital and main gateway, largely a transit stop with little to see; if stuck overnight, the National Museum & Art Gallery or Parliament Haus are the main options — don't plan extra time here otherwise.",
+    'Tufi (fjords, diving)': "Remote fjord region with pristine, rarely-dived coral reefs; only reachable by small plane from Port Moresby, and diving runs through the one lodge (Tufi Resort), so book the dive package well in advance.",
+    'Alotau / Milne Bay (diving)': "Coastal region combining WWII history with reef and wreck diving; most diving here is liveaboard-based (e.g. MV FeBrina) departing from Alotau — book far ahead as capacity is very limited.",
+    'Sepik River (Wewak) — spirit houses, canoe villages': 'PNG\'s major river culture region, famous for elaborately carved "haus tambaran" spirit houses and canoe-village life; best explored via a multi-day canoe/riverboat trip from Wewak or Angoram booked through a specialist PNG operator, since independent travel here is very hard — try to time it around a village ceremony if possible.',
+    'Rabaul / Kokopo, East New Britain — volcanoes, WWII wrecks': "Region dominated by active volcanoes (Tavurvur) and extensive WWII wrecks and tunnels; Tavurvur is currently at low/quiet activity so the summit approach is generally accessible (confirm locally before climbing), and the Japanese WWII barge tunnels at Kokopo are the easily-missed highlight.",
+    'Goroka, Eastern Highlands': 'PNG highlands town famous for the annual "Goroka Show" singsing festival drawing 100+ tribes; the 2026 show runs Sept 18-20 (its 70th edition) — it\'s PNG\'s biggest tourist draw, so flights and rooms need booking months ahead.',
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -12771,12 +12893,12 @@ function rbBuildSriLankaRoute() {
   const lk = () => ({
     code: 'LK', name: 'Sri Lanka', days: 15, budget: 675, lat: 6.9271, lng: 79.8612,
     destinations: [
-      { name: 'Colombo', lat: 6.9271, lng: 79.8612 },
-      { name: 'Sigiriya', lat: 7.9570, lng: 80.7603 },
-      { name: 'Kandy', lat: 7.2906, lng: 80.6337 },
-      { name: 'Ella', lat: 6.8667, lng: 81.0466 },
-      { name: 'Yala National Park', lat: 6.3735, lng: 81.5061 },
-      { name: 'Mirissa / Galle', lat: 5.9483, lng: 80.4589 },
+      { name: 'Colombo', lat: 6.9271, lng: 79.8612 , notes: 'Sri Lanka\'s capital, mostly a transit/gateway city with little to detain travelers; if you have a half day, Galle Face Green and Pettah market cover it — don\'t plan more than one night unless flight timing forces it.' },
+      { name: 'Sigiriya', lat: 7.9570, lng: 80.7603 , notes: 'UNESCO-listed 5th-century rock fortress/palace ruin with frescoes and a mirror wall, rising sheer from the jungle; climb right at opening (~7am) to beat the heat and crowds on the exposed metal staircases — foreigner entry is roughly USD 30-35, allow 2-3 hours.' },
+      { name: 'Kandy', lat: 7.2906, lng: 80.6337 , notes: 'Sri Lanka\'s hill-country cultural capital, home to the Temple of the Sacred Tooth Relic; time your visit around a puja offering ceremony (roughly 6:30am, 10:30am, or 6:30pm) to see the relic-chamber ritual, and dress with shoulders/knees covered.' },
+      { name: 'Ella', lat: 6.8667, lng: 81.0466 , notes: 'Small hill-country town amid tea plantations, known for the Nine Arch Bridge and easy scenic hikes; visit the bridge early morning for a chance to see a train cross with fewer crowds, and do the short Little Adam\'s Peak walk (1-1.5h round trip) at sunrise or sunset.' },
+      { name: 'Yala National Park', lat: 6.3735, lng: 81.5061 , notes: 'Sri Lanka\'s premier safari park with one of the world\'s highest leopard densities; note that Yala\'s most popular Blocks 1 & 2 are closed annually for wildlife recovery — in 2026 they\'re shut Sept 14-Oct 15, so during that window book a drive into Blocks 3-6 instead, and go on an early-morning game drive since leopard sightings drop off by mid-morning regardless.' },
+      { name: 'Mirissa / Galle', lat: 5.9483, lng: 80.4589 , notes: 'A south-coast pairing of Mirissa (whale-watching harbor, best Dec-Apr for blue whales) and Galle\'s Dutch colonial fort (ramparts, lighthouse, old town); take an early boat (~6:30am) with a smaller operator to avoid the crowded tourist boats, and walk Galle\'s ramparts at sunset.' },
     ],
     notes: "Ancient rock fortresses (Sigiriya), misty tea-country trains (Kandy-Ella), leopard safaris (Yala) and a palm-fringed south coast (Mirissa/Galle) in one island loop. Kandy-Ella is the classic scenic train leg — reserved seats sell out within minutes of the 30-day booking window opening, book the moment it opens; the Nanu Oya-Badulla section only reopened June 2026 after cyclone damage, confirm current status before relying on it. Yala safari entry + jeep runs roughly €85-90/person all-in. Dutch travel advisory (2026-09 snapshot): yellow nationwide — flagged risks include landmines in the North/East (Trincomalee, Batticaloa, Ampara, north of the A12 — outside this route), nationwide terrorism risk, high traffic-fatality risk, monsoon flooding and an active dengue outbreak; check nederlandwereldwijd.nl before departure. Visa: as of 25 May 2026 Dutch passport holders get a free 30-day double-entry tourist ETA (eta.gov.lk) — this policy has changed repeatedly, re-verify before booking.",
   });
@@ -12997,12 +13119,12 @@ function rbBuildPapuaNewGuineaRoute() {
   const pg = () => ({
     code: 'PG', name: 'Papua New Guinea', days: 13, budget: 1170, lat: -9.4438, lng: 147.1803,
     destinations: [
-      { name: 'Port Moresby', lat: -9.4438, lng: 147.1803 },
-      { name: 'Tufi (fjords, diving)', lat: -9.08, lng: 149.32 },
-      { name: 'Alotau / Milne Bay (diving)', lat: -10.32, lng: 150.45 },
-      { name: 'Sepik River (Wewak) — spirit houses, canoe villages', lat: -3.57, lng: 143.63 },
-      { name: 'Rabaul / Kokopo, East New Britain — volcanoes, WWII wrecks', lat: -4.20, lng: 152.17 },
-      { name: 'Goroka, Eastern Highlands', lat: -6.08, lng: 145.39 },
+      { name: 'Port Moresby', lat: -9.4438, lng: 147.1803 , notes: 'PNG\'s capital and main gateway, largely a transit stop with little to see; if stuck overnight, the National Museum & Art Gallery or Parliament Haus are the main options — don\'t plan extra time here otherwise.' },
+      { name: 'Tufi (fjords, diving)', lat: -9.08, lng: 149.32 , notes: 'Remote fjord region with pristine, rarely-dived coral reefs; only reachable by small plane from Port Moresby, and diving runs through the one lodge (Tufi Resort), so book the dive package well in advance.' },
+      { name: 'Alotau / Milne Bay (diving)', lat: -10.32, lng: 150.45 , notes: 'Coastal region combining WWII history with reef and wreck diving; most diving here is liveaboard-based (e.g. MV FeBrina) departing from Alotau — book far ahead as capacity is very limited.' },
+      { name: 'Sepik River (Wewak) — spirit houses, canoe villages', lat: -3.57, lng: 143.63 , notes: 'PNG\'s major river culture region, famous for elaborately carved "haus tambaran" spirit houses and canoe-village life; best explored via a multi-day canoe/riverboat trip from Wewak or Angoram booked through a specialist PNG operator, since independent travel here is very hard — try to time it around a village ceremony if possible.' },
+      { name: 'Rabaul / Kokopo, East New Britain — volcanoes, WWII wrecks', lat: -4.20, lng: 152.17 , notes: 'Region dominated by active volcanoes (Tavurvur) and extensive WWII wrecks and tunnels; Tavurvur is currently at low/quiet activity so the summit approach is generally accessible (confirm locally before climbing), and the Japanese WWII barge tunnels at Kokopo are the easily-missed highlight.' },
+      { name: 'Goroka, Eastern Highlands', lat: -6.08, lng: 145.39 , notes: 'PNG highlands town famous for the annual "Goroka Show" singsing festival drawing 100+ tribes; the 2026 show runs Sept 18-20 (its 70th edition) — it\'s PNG\'s biggest tourist draw, so flights and rooms need booking months ahead.' },
     ],
     notes: "Sepik River spirit houses, Tufi's fjord-diving, and Rabaul's smoking volcanoes — PNG's rugged edge, deliberately routed around the highlands' real risk zones (see the route-level note on why Mount Hagen/Tari were left out entirely, not just flagged). Domestic flights are close to mandatory here — roads barely connect regions — budget roughly €140-200 each for the Port Moresby-Lae/Goroka/Wewak legs, separate from the daily rate. Highlands/village visits are usually guided (vehicle+guide+village fee bundled, ~€95-235/day); Sepik River canoe/village-stay trips run as multi-day boat charters (~€140-280/day). Goroka Show (around Independence Day/September) is a safer yellow-zone alternative to the orange-zone Mount Hagen Show for the 'cultural festival' draw. Dutch travel advisory (2026-09 snapshot, tiered): RED for Bougainville Island/the Panguna mine area (do not travel, entry prohibited by local authorities) — not part of this route; ORANGE for Enga, Hela, Southern Highlands and Mount Hagen/Western Highlands provinces (only essential travel — deliberately excluded from this itinerary, including Mount Hagen and Tari/Hela despite being classic highlands highlights); YELLOW for the rest of the country, including every stop actually on this route (Port Moresby, Tufi, Milne Bay, Sepik, Rabaul/Kokopo, Goroka). Also flagged: maritime piracy, natural disasters (cyclones, earthquakes, active volcanoes, tsunamis), unexploded WWII ordnance, and weak infrastructure/emergency services.",
   });
@@ -16995,7 +17117,7 @@ function rbBuildAsturiasCantabriaRoute() {
       destinations: [
         { name: 'Santander (Magdalena Peninsula)', lat: 43.4623, lng: -3.8099 , notes: 'Royal summer palace (Palacio de la Magdalena) sitting on a green peninsula park between two city beaches, with a small seal/sea-lion pool near the palace. Walk or cycle the peninsula loop and stay for sunset over the bay.' },
         { name: 'Santillana del Mar', lat: 43.3897, lng: -4.1097 , notes: 'Exceptionally well-preserved medieval stone village, often used as the base for visiting Altamira — original cave access is essentially closed to casual visitors, so the standard museum ticket includes the Neocueva, a full-scale faithful replica, not the real cave. Walk the cobbled center early morning before the day-tripper coach groups arrive.' },
-        { name: 'Comillas (El Capricho)', lat: 43.3856, lng: -4.2919 },
+        { name: 'Comillas (El Capricho)', lat: 43.3856, lng: -4.2919 , notes: 'A small Cantabrian town whose real draw is Gaudí\'s El Capricho villa (whimsical sunflower-tiled tower) plus the neighboring Palacio de Sobrellano; allow about 1 hour, guided English tours run at 12:30 and 16:30 and it\'s worth booking ahead since it\'s a popular stop.' },
         { name: 'Picos de Europa (Potes)', lat: 43.1553, lng: -4.6236 , notes: 'Medieval stone-bridge town in the Liébana valley, the practical gateway to the Picos massif and the Monasterio de Santo Toribio (said to hold the largest surviving fragment of the True Cross). Base here for the Fuente Dé cable car and try the local orujo liqueur; Monday is the traditional market day if your dates line up.' },
         { name: 'Fuente Dé (cable car)', lat: 43.1439, lng: -4.8142 , notes: 'One of Europe\'s steepest cable cars, climbing almost 800m vertically in under 4 minutes to the Áliva plateau below Peña Vieja. Book your timed ticket online in advance — on sunny weekends the queue builds fast and arriving before 9am is the reliable way to avoid a long wait; it\'s also closed roughly mid-January to mid-February each year.' },
         { name: 'Oviedo', lat: 43.3619, lng: -5.8494 , notes: 'Compact, elegant old town plus Santa María del Naranco, a rare pre-Romanesque royal hall from the 9th century up on a hillside just outside the center. Reserve half a day for the old town and end at a chigre (cider house) to see sidra poured from height in the traditional escanciado style.' },
@@ -23656,10 +23778,10 @@ function rbBuildFrenchSpanishPyreneesRoute() {
     {
       code: 'FR', name: 'France', days: 5, budget: 500, lat: 42.8853, lng: -0.1147,
       destinations: [
-        { name: 'Lourdes (arrival)', lat: 43.0961, lng: -0.0450 },
-        { name: "Cauterets (Pont d'Espagne)", lat: 42.8853, lng: -0.1147 },
-        { name: 'Gavarnie (Cirque de Gavarnie)', lat: 42.6928, lng: -0.0092 },
-        { name: 'Brèche de Roland', lat: 42.6875, lng: -0.0122 },
+        { name: 'Lourdes (arrival)', lat: 43.0961, lng: -0.0450 , notes: 'France\'s top Catholic pilgrimage site, centered on the Grotto of Massabielle where the Marian apparitions occurred; go early morning or catch the evening torchlight Marian procession to avoid the midday tour-bus crush at the grotto.' },
+        { name: "Cauterets (Pont d'Espagne)", lat: 42.8853, lng: -0.1147 , notes: 'Small spa town serving as gateway to the Pont d\'Espagne waterfall confluence and the cable car up to Lac de Gaube; ride the télécabine from Pont d\'Espagne to skip most of the walk-in crowds and see the glacial lake in half a day.' },
+        { name: 'Gavarnie (Cirque de Gavarnie)', lat: 42.6928, lng: -0.0092 , notes: 'UNESCO-listed natural amphitheater with mainland France\'s highest waterfall (~422m) framed by sheer limestone cliffs; walk or hire a mule from the village (1.5-2h each way) and go early morning for the best light and to beat day-trippers.' },
+        { name: 'Brèche de Roland', lat: 42.6875, lng: -0.0122 , notes: 'A dramatic 40m-wide natural gap sliced through the ridge above Gavarnie, a serious full-day hiking objective with scrambling near the top; only feasible June-September (snow-free) — start at dawn from Gavarnie or the Sarradets refuge.' },
       ],
       notes: "Lourdes (arrival) — Cauterets (2 days, the Pont d'Espagne) — Gavarnie (2 days, the Cirque de Gavarnie and, for fitter hikers, the Brèche de Roland). Entry: fly into Toulouse or Lourdes-Tarbes-Pyrénées airport, rental car for the whole trip. Budget ~€90-110/day. Season: strictly July-September, same hard boundary as the mountain-pass crossing into Spain below. Travel advisory (2026-09): France is code yellow, not green — an elevated terrorism alert level in place since March 2024 (not new, just worth noting since Spain and every other country on this route's siblings sit at green) — stay alert in cities/crowded places and expect the possibility of ID/passport spot checks.",
       transport_to_next: "Drive over the Port de Boucharo/Puerto de Bujaruelo pass (2,270m) — the only direct road/hiking connection between the French and Spanish halves of the same Mont Perdu/Monte Perdido UNESCO World Heritage massif; narrow and single-lane, open only roughly July-September. Outside that window there is no direct crossing here at all — the only option is the long detour via Jaca/Pau (+3h).",
@@ -23667,9 +23789,9 @@ function rbBuildFrenchSpanishPyreneesRoute() {
     {
       code: 'ES', name: 'Spain', days: 4, budget: 340, lat: 42.6167, lng: -0.1167,
       destinations: [
-        { name: 'Torla', lat: 42.6167, lng: -0.1167 },
-        { name: 'Ordesa y Monte Perdido National Park', lat: 42.6497, lng: -0.0400 },
-        { name: 'Aínsa (optional)', lat: 42.4167, lng: 0.1333 },
+        { name: 'Torla', lat: 42.6167, lng: -0.1167 , notes: 'Gateway village to Ordesa NP; during peak season (mid-June to mid-September 2026, confirmed as June 19-Sept 20) private cars are banned from the valley, so park in Torla and take the mandatory shuttle bus to Pradera de Ordesa.' },
+        { name: 'Ordesa y Monte Perdido National Park', lat: 42.6497, lng: -0.0400 , notes: 'A Pyrenean "Grand Canyon" of limestone cliffs and waterfalls; the classic day hike is the Cola de Caballo waterfall loop from Pradera de Ordesa (5-6h round trip) — go on the first shuttle buses since July/August departures fill up fast.' },
+        { name: 'Aínsa (optional)', lat: 42.4167, lng: 0.1333 , notes: 'Well-preserved medieval hilltop village with an arcaded stone Plaza Mayor and hilltop castle; allow 1-2 hours, park below and walk up, and time it for golden hour when the stone square glows.' },
       ],
       notes: "Torla and Ordesa y Monte Perdido National Park (3 days), plus an optional stop in Aínsa on the way out. Budget ~€75-95/day. Web check (2026-08): Schengen-to-Schengen zero friction crossing into Spain here — no passport/customs formalities at all — but check with the rental-car company in advance whether the mountain/gravel roads on both sides of the pass are actually covered by the insurance/rental agreement, since some contracts exclude unpaved high-altitude roads.",
       transport_to_next: 'End of this route — drive to Zaragoza or back to Toulouse for the flight home, depending on the inbound routing.',

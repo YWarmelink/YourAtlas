@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 475 / 741 signatures.**
+- **Done so far: 480 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -339,7 +339,7 @@ Sorted alphabetically by country code.
 - [x] **ES** (7 dest): Málaga (fly in), Ronda, Cádiz, Jerez de la Frontera, Seville, Córdoba, Granada — routes: Andalusia Roadtrip (9 days) 🚗
 - [x] **ES** (2 dest): Seville (Alcázar & Cathedral), Granada (Alhambra) — routes: Andalusia: Seville + Granada (5 days) 🏰
 - [x] **ES** (7 dest): La Seu d'Urgell (cathedral), Cerdanya / Puigcerdà, Vielha (Val d'Aran), Port de la Bonaigua (pass), Boí (Aigüestortes NP shuttle), Espot (Aigüestortes NP shuttle), Ripoll — routes: Andorra + Spanish Pyrenees: Grand Circuit (9 days) 🏔️
-- [ ] **ES** (7 dest): Santander (Magdalena Peninsula), Santillana del Mar, Comillas (El Capricho), Picos de Europa (Potes), Fuente Dé (cable car), Oviedo, Gijón — routes: Asturias + Cantabria (6 days) 🌲
+- [x] **ES** (7 dest): Santander (Magdalena Peninsula), Santillana del Mar, Comillas (El Capricho), Picos de Europa (Potes), Fuente Dé (cable car), Oviedo, Gijón — routes: Asturias + Cantabria (6 days) 🌲
 - [x] **ES** (1 dest): Ibiza Town / Dalt Vila (UNESCO old town) — routes: Balearic Islands (7-10 days) 🏝️
 - [ ] **ES** (5 dest): Barcelona (Gothic Quarter / Barri Gòtic), Sagrada Família, Park Güell, Barceloneta Beach, Montjuïc — routes: Barcelona (4 days) 🎨
 - [ ] **ES** (5 dest): San Sebastián (La Concha), Bilbao (Guggenheim Museum), Hondarribia, Getaria, Zarautz — routes: Basque Country: San Sebastián + Bilbao (6 days) 🐟
@@ -347,7 +347,7 @@ Sorted alphabetically by country code.
 - [x] **ES** (2 dest): Timanfaya National Park (Islote de Hilario), Arrecife — routes: Canary Islands (10-14 days) 🏝️
 - [x] **ES** (1 dest): Corralejo — routes: Canary Islands (10-14 days) 🏝️
 - [x] **ES** (8 dest): Barcelona, Girona, Costa Brava (Tossa de Mar), Ribes de Freser (Cremallera departure), Vall de Núria, Cerdanya / Puigcerdà, Aigüestortes i Estany de Sant Maurici NP (optional), La Garrotxa Volcanic Zone — routes: Catalonia + Pyrenees (9 days) ⛰️
-- [ ] **ES** (3 dest): Torla, Ordesa y Monte Perdido National Park, Aínsa (optional) — routes: French + Spanish Pyrenees (9 days) 🥖
+- [x] **ES** (3 dest): Torla, Ordesa y Monte Perdido National Park, Aínsa (optional) — routes: French + Spanish Pyrenees (9 days) 🥖
 - [x] **ES** (7 dest): Santiago de Compostela (Praza do Obradoiro), Pontevedra (Rías Baixas), Combarro, O Grove, Vigo, Cíes Islands, A Coruña (optional) — routes: Galicia: Santiago de Compostela + Coast (6 days) 🐚
 - [x] **ES** (5 dest): Málaga (fly in), Marbella / Puerto Banús, Estepona, La Línea de la Concepción, Ronda (optional, added at 4 days) — routes: Gibraltar + Andalusia: Costa del Sol (4 days) 🐒
 - [ ] **ES** (4 dest): Las Palmas de Gran Canaria, Maspalomas dunes, Roque Nublo, Tejeda — routes: Gran Canaria (5-7 days) 🏝️
@@ -397,7 +397,7 @@ Sorted alphabetically by country code.
 - [ ] **FR** (1 dest): Lyon (Vieux Lyon, Presqu'île, traboules) — routes: France Roadtrip: Paris to the Côte d'Azur (12 days) 🚗
 - [ ] **FR** (1 dest): Avignon (Palais des Papes) — routes: France Roadtrip: Paris to the Côte d'Azur (12 days) 🚗
 - [ ] **FR** (1 dest): Nice (Promenade des Anglais) — routes: France Roadtrip: Paris to the Côte d'Azur (12 days) 🚗
-- [ ] **FR** (4 dest): Lourdes (arrival), Cauterets (Pont d'Espagne), Gavarnie (Cirque de Gavarnie), Brèche de Roland — routes: French + Spanish Pyrenees (9 days) 🥖
+- [x] **FR** (4 dest): Lourdes (arrival), Cauterets (Pont d'Espagne), Gavarnie (Cirque de Gavarnie), Brèche de Roland — routes: French + Spanish Pyrenees (9 days) 🥖
 - [ ] **FR** (4 dest): Briançon, Gap, Embrun, Écrins (Vallouise/La Bérarde) — routes: French Alps + Provence (9 days) 🛤️
 - [ ] **FR** (3 dest): Sisteron (Route Napoléon waypoint), Avignon, Luberon — routes: French Alps + Provence (9 days) 🛤️
 - [ ] **FR** (3 dest): Briançon (gateway), Vallouise, La Bérarde — routes: French Alps: Écrins National Park (6 days) 🐐
@@ -590,7 +590,7 @@ Sorted alphabetically by country code.
 - [ ] **KR** (5 dest): Seoul, DMZ / Imjingak, Gyeongju, Busan, Jeju Island — routes: South Korea 🏯
 - [ ] **LI** (3 dest): Vaduz, Malbun, Triesenberg — routes: Liechtenstein + Austria + Switzerland (5 days) 🚞
 - [ ] **LI** (5 dest): Vaduz old town (Städtle pedestrian area), Vaduz Castle viewpoint, Kunstmuseum Liechtenstein, Liechtenstein Center, Malbun (day trip) — routes: Liechtenstein: Vaduz (2 days) 🏰
-- [ ] **LK** (6 dest): Colombo, Sigiriya, Kandy, Ella, Yala National Park, Mirissa / Galle — routes: Sri Lanka 🐆
+- [x] **LK** (6 dest): Colombo, Sigiriya, Kandy, Ella, Yala National Park, Mirissa / Galle — routes: Sri Lanka 🐆
 - [ ] **LT** (3 dest): Vilnius (Old Town), Trakai Castle (day trip), Curonian Spit / Nida — routes: Baltic States Roadtrip (10-14 days) 🚗
 - [ ] **LT** (5 dest): Vilnius (Old Town), Trakai Castle, Kaunas, Klaipėda (Smiltynė ferry), Curonian Spit / Nida — routes: Lithuania (5-7 days) 🌊
 - [ ] **LU** (4 dest): Luxembourg City (Bock Casemates), Berdorf, Echternach, Vianden — routes: Luxembourg (4 days) 🪨
@@ -647,7 +647,7 @@ Sorted alphabetically by country code.
 - [x] **PE** (3 dest): Pisac (market), Ollantaytambo, Chinchero / Moray / Salineras — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
 - [x] **PE** (2 dest): Machu Picchu, Aguas Calientes — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
 - [x] **PE** (2 dest): Uros floating islands, Taquile Island — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
-- [ ] **PG** (6 dest): Port Moresby, Tufi (fjords, diving), Alotau / Milne Bay (diving), Sepik River (Wewak) — spirit houses, canoe villages, Rabaul / Kokopo, East New Britain — volcanoes, WWII wrecks, Goroka, Eastern Highlands — routes: Papua New Guinea 🎭
+- [x] **PG** (6 dest): Port Moresby, Tufi (fjords, diving), Alotau / Milne Bay (diving), Sepik River (Wewak) — spirit houses, canoe villages, Rabaul / Kokopo, East New Britain — volcanoes, WWII wrecks, Goroka, Eastern Highlands — routes: Papua New Guinea 🎭
 - [ ] **PL** (3 dest): Warsaw, Masurian Lakes (Giżycko), Gdańsk / Hel Peninsula — routes: Baltics + Poland (10-14 days) 🇵🇱
 - [ ] **PL** (2 dest): Krakow Old Town, Auschwitz-Birkenau (day trip) — routes: Central Europe Roadtrip (14 days) 🚂
 - [x] **PL** (2 dest): Wrocław, Sudetes (optional) — routes: Central European Grand Roadtrip 🚗
@@ -780,11 +780,7 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Loire Valley Castles (6 days) 🗝️ | 7/7 | 0 |
 | French Alps + Provence (9 days) 🛤️ | 7/7 | 0 |
 | Campania: Naples + Amalfi Coast (6 days) 🌊 | 7/7 | 0 |
-| Asturias + Cantabria (6 days) 🌲 | 7/7 | 0 |
 | Portugal + Spain Roadtrip (14 days) 🚗 | 7/10 | 0 |
-| French + Spanish Pyrenees (9 days) 🥖 | 7/7 | 0 |
-| Sri Lanka 🐆 | 6/6 | 0 |
-| Papua New Guinea 🎭 | 6/6 | 0 |
 | Austria Alpine Roadtrip (9 days) 🗺️ | 6/7 | 0 |
 | Austria + Slovenia (9 days) 🏝️ | 6/6 | 0 |
 | Normandy (5 days) 🪖 | 6/6 | 0 |
@@ -808,6 +804,10 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | South Sweden (Skåne) (9 days) 🪨 | 6/6 | 0 |
 | Swedish Lapland + Northern Lights (9 days) 💫 | 6/6 | 0 |
 | Orkney + Shetland (5-7 days) ⚓ | 6/6 | 0 |
-| ... 155 more routes with open destinations ... | | |
+| Cotswolds + Bath + Southwest England (5-7 days) 🛁 | 6/6 | 0 |
+| Tenerife (5-7 days) 🏝️ | 6/6 | 0 |
+| Ionian Islands (5-7 days) 🏝️ | 6/6 | 0 |
+| Norway + Sweden: Fjords & Capitals (12 days) ⛴️ | 6/6 | 0 |
+| ... 151 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).
