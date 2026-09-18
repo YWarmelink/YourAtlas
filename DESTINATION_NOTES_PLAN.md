@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 504 / 741 signatures.**
+- **Done so far: 512 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -398,8 +398,8 @@ Sorted alphabetically by country code.
 - [ ] **FR** (1 dest): Avignon (Palais des Papes) — routes: France Roadtrip: Paris to the Côte d'Azur (12 days) 🚗
 - [ ] **FR** (1 dest): Nice (Promenade des Anglais) — routes: France Roadtrip: Paris to the Côte d'Azur (12 days) 🚗
 - [x] **FR** (4 dest): Lourdes (arrival), Cauterets (Pont d'Espagne), Gavarnie (Cirque de Gavarnie), Brèche de Roland — routes: French + Spanish Pyrenees (9 days) 🥖
-- [ ] **FR** (4 dest): Briançon, Gap, Embrun, Écrins (Vallouise/La Bérarde) — routes: French Alps + Provence (9 days) 🛤️
-- [ ] **FR** (3 dest): Sisteron (Route Napoléon waypoint), Avignon, Luberon — routes: French Alps + Provence (9 days) 🛤️
+- [x] **FR** (4 dest): Briançon, Gap, Embrun, Écrins (Vallouise/La Bérarde) — routes: French Alps + Provence (9 days) 🛤️
+- [x] **FR** (3 dest): Sisteron (Route Napoléon waypoint), Avignon, Luberon — routes: French Alps + Provence (9 days) 🛤️
 - [ ] **FR** (3 dest): Briançon (gateway), Vallouise, La Bérarde — routes: French Alps: Écrins National Park (6 days) 🐐
 - [ ] **FR** (1 dest): La Rochelle — routes: French Atlantic Coast: La Rochelle to Biarritz (12 days) 🏄
 - [ ] **FR** (1 dest): Bordeaux — routes: French Atlantic Coast: La Rochelle to Biarritz (12 days) 🏄
@@ -412,7 +412,7 @@ Sorted alphabetically by country code.
 - [x] **FR** (4 dest): Avignon (base), Aix-en-Provence, Les Baux-de-Provence (optional), Rhône wine region (optional) — routes: Monaco + Nice + Provence (5 days) 🍇
 - [x] **FR** (1 dest): Nice (overnight base) — routes: Monaco: Monte Carlo (2 days) 🎲
 - [ ] **FR** (6 dest): Honfleur, Bayeux, Omaha Beach, Pointe du Hoc, Normandy American Cemetery, Colleville-sur-Mer, Mont Saint-Michel — routes: Normandy (5 days) 🪖
-- [ ] **FR** (7 dest): Île de la Cité, Le Marais (quieter, "real culture" district), Louvre, Tuileries, Eiffel Tower / Trocadéro, Musée Rodin (7th arr., quiet garden, less touristy than the classics), Montmartre — routes: Paris (4 days) 🗼
+- [x] **FR** (7 dest): Île de la Cité, Le Marais (quieter, "real culture" district), Louvre, Tuileries, Eiffel Tower / Trocadéro, Musée Rodin (7th arr., quiet garden, less touristy than the classics), Montmartre — routes: Paris (4 days) 🗼
 - [x] **FR** (5 dest): Avignon (base) — Palais des Papes, Pont du Gard (nearby), Gordes (Luberon loop), Roussillon (Luberon loop), Ménerbes (Luberon loop) — routes: Provence (6 days) 🌻
 - [x] **FR** (3 dest): Les Baux-de-Provence + Carrières des Lumières, Arles (base, Roman sites), Camargue day trip (Saintes-Maries-de-la-Mer) — routes: Provence (6 days) 🌻
 - [x] **FR** (2 dest): Avignon area (base), Luberon/Gordes day trip — routes: South of France: Provence to Côte d'Azur (9 days) 🕶️
@@ -462,7 +462,7 @@ Sorted alphabetically by country code.
 - [ ] **GR** (2 dest): Acropolis & Plaka/Monastiraki, Acropolis Museum — routes: Southern Europe Highlights Roadtrip (14 days) 🎯
 - [ ] **GR** (2 dest): Rhodes, Kos — routes: Turkey + Greece: Aegean Coast & Dodecanese (12 days) 🌊
 - [ ] **GY** (5 dest): Georgetown (Stabroek Market, seawall), Kaieteur Falls, Iwokrama River Lodge, Atta Rainforest Lodge (canopy walkway), Rupununi Savannah / Karanambu Lodge — routes: Guyana 🦦
-- [ ] **HR** (6 dest): Rovinj, Pula (Arena), Zadar, Split (Diocletian's Palace), Hvar Town, Dubrovnik Old Town — routes: Adriatic Roadtrip (14 days) 🌊
+- [x] **HR** (6 dest): Rovinj, Pula (Arena), Zadar, Split (Diocletian's Palace), Hvar Town, Dubrovnik Old Town — routes: Adriatic Roadtrip (14 days) 🌊
 - [x] **HR** (1 dest): Zadar — routes: Austria + Slovenia + Croatia (10-14 days) 🚙
 - [x] **HR** (2 dest): Plitvice, Zagreb — routes: Central European Grand Roadtrip 🚗
 - [ ] **HR** (6 dest): Zagreb, Plitvice Lakes National Park, Zadar, Split (Diocletian's Palace) + islands, Hvar Town, Dubrovnik Old Town — routes: Complete Croatia (12 days) 🇭🇷
@@ -706,7 +706,7 @@ Sorted alphabetically by country code.
 - [ ] **SE** (5 dest): Stockholm, Göta Canal / Vadstena, Gothenburg, Malmö / Skåne, Småland (Glasriket, Kosta) — routes: Sweden Roadtrip (9 days) 🚗
 - [ ] **SE** (5 dest): Kiruna, Icehotel (Jukkasjärvi), Abisko, Aurora Sky Station, Kungsleden day hike — routes: Swedish Lapland (Kiruna + Abisko) (6 days) 🦌
 - [ ] **SE** (6 dest): Kiruna, Icehotel (Jukkasjärvi), Abisko, Aurora Sky Station, Nikkaluokta (optional day trip), Kebnekaise — routes: Swedish Lapland + Northern Lights (9 days) 💫
-- [ ] **SI** (2 dest): Ljubljana, Piran — routes: Adriatic Roadtrip (14 days) 🌊
+- [x] **SI** (2 dest): Ljubljana, Piran — routes: Adriatic Roadtrip (14 days) 🌊
 - [ ] **SI** (3 dest): Kranjska Gora, Vršič Pass, Bled — routes: Alpine Roadtrip (14 days) 🏕️
 - [ ] **SI** (3 dest): Bled, Bohinj, Ljubljana (optional) — routes: Austria + Slovenia (9 days) 🏝️
 - [x] **SI** (5 dest): Bled, Bohinj, Soča Valley, Triglav NP, caves (Postojna/Škocjan) — routes: Central European Grand Roadtrip 🚗
@@ -753,9 +753,9 @@ Sorted alphabetically by country code.
 - [x] **US** (1 dest): 17-mile scenic loop — routes: US Southwest 🏜️
 - [x] **US** (2 dest): Rim Trail, Bright Angel Trailhead — routes: US Southwest 🏜️
 - [x] **US** (2 dest): Cathedral Rock, Red Rock State Park — routes: US Southwest 🏜️
-- [ ] **US** (2 dest): Downtown Anchorage, Earthquake Park — routes: Western Canada: Rockies & Vancouver 🏔️
-- [ ] **US** (3 dest): Denali Visitor Center, Savage River, Kantishna / Wonder Lake (shuttle bus) — routes: Western Canada: Rockies & Vancouver 🏔️
-- [ ] **US** (2 dest): Kenai Fjords National Park (glacier and wildlife boat tour), Exit Glacier — routes: Western Canada: Rockies & Vancouver 🏔️
+- [x] **US** (2 dest): Downtown Anchorage, Earthquake Park — routes: Western Canada: Rockies & Vancouver 🏔️
+- [x] **US** (3 dest): Denali Visitor Center, Savage River, Kantishna / Wonder Lake (shuttle bus) — routes: Western Canada: Rockies & Vancouver 🏔️
+- [x] **US** (2 dest): Kenai Fjords National Park (glacier and wildlife boat tour), Exit Glacier — routes: Western Canada: Rockies & Vancouver 🏔️
 - [ ] **UY** (5 dest): Montevideo (Ciudad Vieja, Mercado del Puerto), Colonia del Sacramento (UNESCO old town), Punta del Este, Cabo Polonio (off-grid, 4x4-only), Punta del Diablo (incl. Santa Teresa National Park) — routes: Uruguay 🧉
 - [x] **XK** (1 dest): Prizren — routes: Balkan Roadtrip: Serbia + North Macedonia + Albania + Kosovo (14 days) 🔄
 - [x] **XK** (4 dest): Pristina, Prizren (Sinan Pasha Mosque, Liga House), Peja / Rugova Gorge, Visoki Dečani / Peć Patriarchate — routes: Kosovo (5 days) 🕍
@@ -769,10 +769,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
 | Dolomites & North Italy 🚡 | 8/24 | 0 |
-| Adriatic Roadtrip (14 days) 🌊 | 8/11 | 0 |
-| Western Canada: Rockies & Vancouver 🏔️ | 7/18 | 0 |
-| Paris (4 days) 🗼 | 7/7 | 0 |
-| French Alps + Provence (9 days) 🛤️ | 7/7 | 0 |
 | Austria Alpine Roadtrip (9 days) 🗺️ | 6/7 | 0 |
 | Austria + Slovenia (9 days) 🏝️ | 6/6 | 0 |
 | Normandy (5 days) 🪖 | 6/6 | 0 |
@@ -808,6 +804,10 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Palau 🦈 | 5/5 | 0 |
 | Uruguay 🧉 | 5/5 | 0 |
 | Guyana 🦦 | 5/5 | 0 |
-| ... 140 more routes with open destinations ... | | |
+| Belgium: Bruges + Ghent + Antwerp + Ardennes (5 days) 🍺 | 5/5 | 0 |
+| Romantic Road (6 days) 🏰 | 5/5 | 0 |
+| German Alpine Road / Deutsche Alpenstraße (9 days) 🏞️ | 5/5 | 0 |
+| Salzburg + Grossglockner + Tyrol (6 days) 🏔️ | 5/5 | 0 |
+| ... 136 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

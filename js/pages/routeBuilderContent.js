@@ -12017,6 +12017,133 @@ function rbMigrateVeniceDolomitesLeftoverDestinationNotes() {
 }
 
 /**
+ * Batch 111 (2026-09-18) -- Adriatic Roadtrip (14 days) leftovers -- 2 fresh destinations
+ * (Piran, Hvar Town); the route's other 9 destinations already had notes from earlier batches,
+ * the plan's "8/11 remaining" count was the usual signature-grouping over-count. Closes this
+ * route out entirely. Same generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateAdriaticRoadtripLeftoverDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_ADRIATIC_ROADTRIP_LEFTOVER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_ADRIATIC_ROADTRIP_LEFTOVER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Piran': "Slovenia's only real coastal town, with a compact Venetian-Gothic old town centered on Tartini Square; climb up to the town walls above it for a view over the terracotta rooftops to the Adriatic, and stop at the nearby Sečovlje salt pans, still harvested by hand using centuries-old methods.",
+    'Hvar Town': "A glamorous harbor town known for lavender fields, upscale yachting/nightlife, and the 16th-century Fortica fortress on the hill above; climb up to the fortress for the best view over the harbor and the Pakleni Islands just offshore.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 112 (2026-09-18) -- Paris (4 days) -- 7 destinations researched (fresh). Closes this
+ * route out entirely. Same generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateParisDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_PARIS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_PARIS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Île de la Cité': "The island at Paris's historic core, home to Notre-Dame (reopened Dec 2024 after the 2019 fire, now fully restored) and the stained-glass Sainte-Chapelle; book Sainte-Chapelle's timed entry ahead, since it's a small space with limited daily capacity.",
+    'Le Marais (quieter, "real culture" district)': "A former royal/aristocratic quarter turned into Paris's trendiest neighborhood, mixing historic Place des Vosges with independent galleries, vintage shops and the city's main LGBTQ+ nightlife strip; the Musée Picasso and the Jewish quarter (rue des Rosiers) are the specific anchors worth seeking out.",
+    'Louvre': "The world's largest and most-visited art museum, home to the Mona Lisa and Venus de Milo; book a timed-entry ticket online in advance and enter via the lesser-known Carrousel du Louvre underground entrance to skip the pyramid's often-long line.",
+    'Tuileries': "The formal garden linking the Louvre to Place de la Concorde, laid out in the classic French symmetrical style with fountains, statues and a couple of small museums (Orangerie, Jeu de Paume) tucked into its corners; a good walkable link between the Louvre and the Champs-Élysées.",
+    'Eiffel Tower / Trocadéro': "The Trocadéro esplanade across the Seine gives the classic full-tower photo, especially at sunset or after dark when the tower's lights sparkle on the hour; book summit or second-floor tickets online well ahead, since walk-up lines can run hours in high season.",
+    'Musée Rodin (7th arr., quiet garden, less touristy than the classics)': "Rodin's former townhouse and its rose garden, dotted with bronze casts of The Thinker and The Gates of Hell, make for a far calmer museum visit than the Louvre or Musée d'Orsay; the garden-only ticket is cheap and worth it even without going inside.",
+    'Montmartre': "The hilltop artists' quarter topped by the white-domed Sacré-Cœur basilica, with sweeping views over Paris from the front steps; wander past Place du Tertre's portrait painters early morning before the tour groups arrive, and note the area still has genuine (if touristy) steep, cobbled backstreets beyond the main square.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 113 (2026-09-18) -- French Alps + Provence (9 days) -- 7 destinations researched
+ * (fresh). Closes this route out entirely. Same generic name-matching migration pattern as the
+ * other batches.
+ */
+function rbMigrateFrenchAlpsProvenceDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_FRENCH_ALPS_PROVENCE_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_FRENCH_ALPS_PROVENCE_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Briançon': "The highest fortified town in Europe, its star-shaped Vauban ramparts and hilltop Cité Vauban old town are UNESCO-listed as part of France's network of Vauban fortifications; walk the old town's covered stepped alley (the Grande Gargouille) and climb up to Fort des Salettes above it for the valley view.",
+    'Gap': "Mainly a logistics stop and regional hub for the Écrins/Route Napoléon rather than a sightseeing destination in its own right — a place to restock or overnight, not linger in.",
+    'Embrun': "A hilltop town over the turquoise Lac de Serre-Ponçon, France's largest artificial reservoir; the Real cathedral's Lombard-Romanesque facade is the one specific sight, and the lake itself is the actual draw for a swim or watersports stop.",
+    'Écrins (Vallouise/La Bérarde)': "A high-alpine national park of glaciers and 4000m peaks (Barre des Écrins); La Bérarde, reached via a narrow dead-end valley road, is the main trailhead for serious mountaineering routes, while Vallouise is the gentler base for day hikes into the same massif.",
+    'Sisteron (Route Napoléon waypoint)': "Nicknamed the \"Gateway to Provence\", its 13th-century citadel perches directly above a dramatic gorge where the Durance river cuts through the Alps' last foothills; the citadel walk gives the best view down over the town and the gorge.",
+    'Avignon': "A walled Provençal city centered on the Palais des Papes, the largest Gothic palace in Europe, plus the half-collapsed Pont Saint-Bénézet on the Rhône; book Palais des Papes tickets online to skip the queue and get the combo ticket that includes the bridge.",
+    'Luberon': "A cluster of hilltop stone villages (Gordes, Roussillon, Ménerbes, Bonnieux) scattered through lavender and vineyard country; Roussillon's ochre-colored cliffs and Gordes' tiered postcard view (best from the D15 roadside viewpoint below town) are the two standout stops — pick 2-3 villages rather than trying to fit them all into one day.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 114 (2026-09-18) -- Western Canada: Rockies & Vancouver leftovers (Alaska leg:
+ * Anchorage, Denali, Kenai Fjords) -- 7 destinations researched (fresh). Closes this route out
+ * entirely. Same generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateWesternCanadaAlaskaLeftoverDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_WESTERN_CANADA_ALASKA_LEFTOVER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_WESTERN_CANADA_ALASKA_LEFTOVER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Downtown Anchorage': "Alaska's largest city works mainly as a logistics base rather than a sight in itself; the Ship Creek salmon run right downtown (peak runs June-August) is the one easy free stop, and the Anchorage Museum or Alaska Native Heritage Center are the specific indoor options if time allows.",
+    'Earthquake Park': "A quiet memorial park marking the ground that liquefied and slid during the 1964 Good Friday earthquake, the second-most powerful ever recorded; a short easy walking trail loops through birch forest with occasional Cook Inlet and Denali views on a clear day, but the site itself is more reflective than visually dramatic.",
+    'Denali Visitor Center': "The starting point for Denali National Park; private cars are only allowed the first 15 miles of the park road, so seeing further into the park (Denali itself is often cloud-covered — only visible about 30% of summer days) requires booking one of the park's shuttle or tour buses in advance.",
+    'Savage River': "The furthest point reachable by private car in Denali National Park, with an easy, flat 2-mile loop trail along the river canyon; a good short stop if not booking a deeper shuttle bus into the park.",
+    'Kantishna / Wonder Lake (shuttle bus)': "The end of the Denali park road, reachable only by a long shuttle or tour bus ride (7+ hours round trip); Wonder Lake is the classic spot for a mirror reflection shot of Denali's summit on the rare clear day, and Kantishna itself is a former gold-mining settlement with a few remote lodges.",
+    'Kenai Fjords National Park (glacier and wildlife boat tour)': "Best experienced by boat tour out of Seward — glacier calving, plus reliable sightings of orcas, sea lions and puffins along the way; the park's interior is otherwise almost entirely inaccessible except by boat or small plane.",
+    'Exit Glacier': "The one part of Kenai Fjords reachable by road, with a short, easy trail leading right up to the glacier's face; roadside signs mark past ice extents along the walk, tracking the glacier's rapid retreat over the past century.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Two of batch 2's standalone routes were flagged as too exposed to their long-haul flight time
  * relative to trip length — Jordanië (8d, connecting flight) and Nieuw-Zeeland Zuidereiland (21d,
  * but 27-38h with multiple stops). Adds +2 days to each as a recovery/margin buffer, matching the
@@ -14323,8 +14450,8 @@ function rbApplyAlaskaExtension(route) {
     rbBuildBlock('US', 'United States', {
       region_id: alaskaRegion.id, days: 2, budget: 320, lat: 61.2181, lng: -149.9003,
       destinations: [
-        { name: 'Downtown Anchorage', lat: 61.2181, lng: -149.9003 },
-        { name: 'Earthquake Park', lat: 61.1953, lng: -149.9727 },
+        { name: 'Downtown Anchorage', lat: 61.2181, lng: -149.9003 , notes: 'Alaska\'s largest city works mainly as a logistics base rather than a sight in itself; the Ship Creek salmon run right downtown (peak runs June-August) is the one easy free stop, and the Anchorage Museum or Alaska Native Heritage Center are the specific indoor options if time allows.' },
+        { name: 'Earthquake Park', lat: 61.1953, lng: -149.9727 , notes: 'A quiet memorial park marking the ground that liquefied and slid during the 1964 Good Friday earthquake, the second-most powerful ever recorded; a short easy walking trail loops through birch forest with occasional Cook Inlet and Denali views on a clear day, but the site itself is more reflective than visually dramatic.' },
       ],
       notes: 'Arrival/logistics — pick up rental car or connect to the Alaska Railroad.',
       transport_to_next: 'Alaska Railroad Denali Star (~8 hours, only mid-May-mid-September) or car via the Parks Highway to Denali National Park.',
@@ -14332,9 +14459,9 @@ function rbApplyAlaskaExtension(route) {
     rbBuildBlock('US', 'United States', {
       region_id: alaskaRegion.id, days: 4, budget: 640, lat: 63.1148, lng: -151.1926,
       destinations: [
-        { name: 'Denali Visitor Center', lat: 63.1717, lng: -150.9317 },
-        { name: 'Savage River', lat: 63.4478, lng: -149.7856 },
-        { name: 'Kantishna / Wonder Lake (shuttle bus)', lat: 63.4872, lng: -150.9067 },
+        { name: 'Denali Visitor Center', lat: 63.1717, lng: -150.9317 , notes: 'The starting point for Denali National Park; private cars are only allowed the first 15 miles of the park road, so seeing further into the park (Denali itself is often cloud-covered — only visible about 30% of summer days) requires booking one of the park\'s shuttle or tour buses in advance.' },
+        { name: 'Savage River', lat: 63.4478, lng: -149.7856 , notes: 'The furthest point reachable by private car in Denali National Park, with an easy, flat 2-mile loop trail along the river canyon; a good short stop if not booking a deeper shuttle bus into the park.' },
+        { name: 'Kantishna / Wonder Lake (shuttle bus)', lat: 63.4872, lng: -150.9067 , notes: 'The end of the Denali park road, reachable only by a long shuttle or tour bus ride (7+ hours round trip); Wonder Lake is the classic spot for a mirror reflection shot of Denali\'s summit on the rare clear day, and Kantishna itself is a former gold-mining settlement with a few remote lodges.' },
       ],
       notes: "Private cars aren't allowed past mile 15 — a shuttle/tour bus is mandatory for the park interior, book well in advance (only available mid-May-mid-September). Bears along the way: bear spray within reach, hike in groups, store food properly.",
       transport_to_next: 'Car or train back to Anchorage (~4.5 hours), then onward to Seward (~2.5 hours) — or the seasonal Coastal Classic train direct (~4 hours total).',
@@ -14342,8 +14469,8 @@ function rbApplyAlaskaExtension(route) {
     rbBuildBlock('US', 'United States', {
       region_id: alaskaRegion.id, days: 4, budget: 640, lat: 60.1042, lng: -149.4422,
       destinations: [
-        { name: 'Kenai Fjords National Park (glacier and wildlife boat tour)', lat: 59.9229, lng: -149.6503 },
-        { name: 'Exit Glacier', lat: 60.1875, lng: -149.6294 },
+        { name: 'Kenai Fjords National Park (glacier and wildlife boat tour)', lat: 59.9229, lng: -149.6503 , notes: 'Best experienced by boat tour out of Seward — glacier calving, plus reliable sightings of orcas, sea lions and puffins along the way; the park\'s interior is otherwise almost entirely inaccessible except by boat or small plane.' },
+        { name: 'Exit Glacier', lat: 60.1875, lng: -149.6294 , notes: 'The one part of Kenai Fjords reachable by road, with a short, easy trail leading right up to the glacier\'s face; roadside signs mark past ice extents along the walk, tracking the glacier\'s rapid retreat over the past century.' },
       ],
       notes: 'Glacier terrain only guided (real crevasse risks). Travel insurance with explicit evacuation coverage is not overkill here — rescues can cost tens of thousands of dollars and often fall outside a standard policy.',
       transport_to_next: 'End of this route — car/train back to Anchorage (~2.5 hours), then return flight to Amsterdam (via Seattle/Vancouver, no direct connection from Anchorage).',
@@ -15325,13 +15452,13 @@ function rbBuildParisRoute() {
     {
       code: 'FR', name: 'France', days: 4, budget: 440, lat: 48.8566, lng: 2.3522,
       destinations: [
-        { name: 'Île de la Cité', lat: 48.8554, lng: 2.3469 },
-        { name: 'Le Marais (quieter, "real culture" district)', lat: 48.8575, lng: 2.3600 },
-        { name: 'Louvre', lat: 48.8606, lng: 2.3376 },
-        { name: 'Tuileries', lat: 48.8634, lng: 2.3275 },
-        { name: 'Eiffel Tower / Trocadéro', lat: 48.8584, lng: 2.2945 },
-        { name: 'Musée Rodin (7th arr., quiet garden, less touristy than the classics)', lat: 48.8555, lng: 2.3153 },
-        { name: 'Montmartre', lat: 48.8867, lng: 2.3431 },
+        { name: 'Île de la Cité', lat: 48.8554, lng: 2.3469 , notes: 'The island at Paris\'s historic core, home to Notre-Dame (reopened Dec 2024 after the 2019 fire, now fully restored) and the stained-glass Sainte-Chapelle; book Sainte-Chapelle\'s timed entry ahead, since it\'s a small space with limited daily capacity.' },
+        { name: 'Le Marais (quieter, "real culture" district)', lat: 48.8575, lng: 2.3600 , notes: 'A former royal/aristocratic quarter turned into Paris\'s trendiest neighborhood, mixing historic Place des Vosges with independent galleries, vintage shops and the city\'s main LGBTQ+ nightlife strip; the Musée Picasso and the Jewish quarter (rue des Rosiers) are the specific anchors worth seeking out.' },
+        { name: 'Louvre', lat: 48.8606, lng: 2.3376 , notes: 'The world\'s largest and most-visited art museum, home to the Mona Lisa and Venus de Milo; book a timed-entry ticket online in advance and enter via the lesser-known Carrousel du Louvre underground entrance to skip the pyramid\'s often-long line.' },
+        { name: 'Tuileries', lat: 48.8634, lng: 2.3275 , notes: 'The formal garden linking the Louvre to Place de la Concorde, laid out in the classic French symmetrical style with fountains, statues and a couple of small museums (Orangerie, Jeu de Paume) tucked into its corners; a good walkable link between the Louvre and the Champs-Élysées.' },
+        { name: 'Eiffel Tower / Trocadéro', lat: 48.8584, lng: 2.2945 , notes: 'The Trocadéro esplanade across the Seine gives the classic full-tower photo, especially at sunset or after dark when the tower\'s lights sparkle on the hour; book summit or second-floor tickets online well ahead, since walk-up lines can run hours in high season.' },
+        { name: 'Musée Rodin (7th arr., quiet garden, less touristy than the classics)', lat: 48.8555, lng: 2.3153 , notes: 'Rodin\'s former townhouse and its rose garden, dotted with bronze casts of The Thinker and The Gates of Hell, make for a far calmer museum visit than the Louvre or Musée d\'Orsay; the garden-only ticket is cheap and worth it even without going inside.' },
+        { name: 'Montmartre', lat: 48.8867, lng: 2.3431 , notes: 'The hilltop artists\' quarter topped by the white-domed Sacré-Cœur basilica, with sweeping views over Paris from the front steps; wander past Place du Tertre\'s portrait painters early morning before the tour groups arrive, and note the area still has genuine (if touristy) steep, cobbled backstreets beyond the main square.' },
       ],
       notes: "Île de la Cité + Le Marais (quieter, a 'real culture' district) — Louvre + Tuileries — Eiffel Tower/Trocadéro + Musée Rodin (7th arrondissement, a quiet garden, less touristy than the classic sights) — Montmartre. Thalys/Eurostar Amsterdam-Paris Nord ~3h, from €35 (often €55-135) — the train clearly wins here, driving/parking is impractical for museum-hopping (car ~500km/5h+, tolls ~€15-20 one way). Budget ~€90-130/day hotel + €45-60 food + €25-40 activities/public transport. Season: end of April-June or Sept-Oct. Louvre €22-32, in 2026 likely mostly time-slot reservation only; Eiffel Tower €14.80-36.70 (the stairs also require mandatory reservation from 29 Sept 2026); Notre-Dame free entry (bell towers +€16); Museum Pass (€105/4d) only pays off with 4+ paid sites.",
       transport_to_next: 'End of this route — Thalys/Eurostar back to Amsterdam.',
@@ -15521,10 +15648,10 @@ function rbBuildFrenchAlpsProvenceRoute() {
     {
       code: 'FR', name: 'France', days: 5, budget: 485, lat: 44.5594, lng: 6.0783,
       destinations: [
-        { name: 'Briançon', lat: 44.8992, lng: 6.6367 },
-        { name: 'Gap', lat: 44.5594, lng: 6.0783 },
-        { name: 'Embrun', lat: 44.5644, lng: 6.4956 },
-        { name: 'Écrins (Vallouise/La Bérarde)', lat: 44.9, lng: 6.35 },
+        { name: 'Briançon', lat: 44.8992, lng: 6.6367 , notes: 'The highest fortified town in Europe, its star-shaped Vauban ramparts and hilltop Cité Vauban old town are UNESCO-listed as part of France\'s network of Vauban fortifications; walk the old town\'s covered stepped alley (the Grande Gargouille) and climb up to Fort des Salettes above it for the valley view.' },
+        { name: 'Gap', lat: 44.5594, lng: 6.0783 , notes: 'Mainly a logistics stop and regional hub for the Écrins/Route Napoléon rather than a sightseeing destination in its own right — a place to restock or overnight, not linger in.' },
+        { name: 'Embrun', lat: 44.5644, lng: 6.4956 , notes: 'A hilltop town over the turquoise Lac de Serre-Ponçon, France\'s largest artificial reservoir; the Real cathedral\'s Lombard-Romanesque facade is the one specific sight, and the lake itself is the actual draw for a swim or watersports stop.' },
+        { name: 'Écrins (Vallouise/La Bérarde)', lat: 44.9, lng: 6.35 , notes: 'A high-alpine national park of glaciers and 4000m peaks (Barre des Écrins); La Bérarde, reached via a narrow dead-end valley road, is the main trailhead for serious mountaineering routes, while Vallouise is the gentler base for day hikes into the same massif.' },
       ],
       notes: "Écrins deliberately fits better with Provence than Annecy would — Annecy sits near the Swiss border, naturally belongs with Chamonix/Geneva, and pulls the trip far north (Annecy-Avignon is still 338km/~3h09, but getting there from the Netherlands is a near-Nice-length detour with little added value). Écrins (Briançon/Gap/Embrun area) sits directly on the Route Napoléon (N85, Gap-Sisteron), a scenic, largely toll-free mountain road that runs straight into Provence — geographically 'on the way', not a detour. NL-Écrins area (Gap/Embrun) ~950-1,000km/9.5-10h. Budget ~€85-110/day in the Alps.",
       transport_to_next: 'Drive south via the scenic, largely toll-free Route Napoléon (N85, Gap-Sisteron) into Provence, ~230km/3h to Avignon.',
@@ -15532,9 +15659,9 @@ function rbBuildFrenchAlpsProvenceRoute() {
     {
       code: 'FR', name: 'France', days: 4, budget: 420, lat: 43.9493, lng: 4.8055,
       destinations: [
-        { name: 'Sisteron (Route Napoléon waypoint)', lat: 44.1936, lng: 5.9472 },
-        { name: 'Avignon', lat: 43.9493, lng: 4.8055 },
-        { name: 'Luberon', lat: 43.9114, lng: 5.2003 },
+        { name: 'Sisteron (Route Napoléon waypoint)', lat: 44.1936, lng: 5.9472 , notes: 'Nicknamed the \'Gateway to Provence\', its 13th-century citadel perches directly above a dramatic gorge where the Durance river cuts through the Alps\' last foothills; the citadel walk gives the best view down over the town and the gorge.' },
+        { name: 'Avignon', lat: 43.9493, lng: 4.8055 , notes: 'A walled Provençal city centered on the Palais des Papes, the largest Gothic palace in Europe, plus the half-collapsed Pont Saint-Bénézet on the Rhône; book Palais des Papes tickets online to skip the queue and get the combo ticket that includes the bridge.' },
+        { name: 'Luberon', lat: 43.9114, lng: 5.2003 , notes: 'A cluster of hilltop stone villages (Gordes, Roussillon, Ménerbes, Bonnieux) scattered through lavender and vineyard country; Roussillon\'s ochre-colored cliffs and Gordes\' tiered postcard view (best from the D15 roadside viewpoint below town) are the two standout stops — pick 2-3 villages rather than trying to fit them all into one day.' },
       ],
       notes: "Provence via the Route Napoléon: Sisteron, then Avignon and the Luberon. Budget ~€90-120/day in Provence. Season: June-early September (mountain passes/trails open, Provence not yet scorching). ⚠️ Toll lower than a pure autoroute trip (the Alps leg mostly uses toll-free national roads) — budget a **total of ~€180-220**.",
       transport_to_next: 'End of this route — drive back to the Netherlands.',
@@ -17838,7 +17965,7 @@ function rbBuildSplitIslandsRoute() {
       code: 'HR', name: 'Croatia', days: 6, budget: 810, lat: 43.5081, lng: 16.4402,
       destinations: [
         { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402, notes: "The 4th-century Roman emperor's retirement palace isn't a ruin behind a fence — it's a living neighborhood, with Split's actual old town built directly into and around its walls, colonnaded Peristyle square, and the octagonal Cathedral of St. Domnius (once Diocletian's own mausoleum). Duck into the palace's atmospheric basement halls (substructures) — used as a Game of Thrones filming location — and climb the cathedral's bell tower for a rooftop view over the old town and harbor." },
-        { name: 'Hvar Town', lat: 43.1729, lng: 16.4413 },
+        { name: 'Hvar Town', lat: 43.1729, lng: 16.4413 , notes: 'A glamorous harbor town known for lavender fields, upscale yachting/nightlife, and the 16th-century Fortica fortress on the hill above; climb up to the fortress for the best view over the harbor and the Pakleni Islands just offshore.' },
         { name: 'Brač / Zlatni Rat', lat: 43.2564, lng: 16.6386 },
         { name: 'Vis (optional)', lat: 43.0611, lng: 16.1811 },
       ],
@@ -17906,7 +18033,7 @@ function rbBuildCroatiaCoastalRoadtripRoute() {
         { name: 'Zadar', lat: 44.1194, lng: 15.2314, notes: "The Sea Organ (wave-powered pipes built into the waterfront steps) and the adjacent Sun Salutation light installation make the sunset promenade the actual destination here — reportedly the sunset Hitchcock once called the world's most beautiful. Time the visit for sunset; the light show and organ sound together are the point." },
         { name: 'Krka National Park / Šibenik', lat: 43.8097, lng: 15.9633 },
         { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402, notes: "The 4th-century Roman emperor's retirement palace isn't a ruin behind a fence — it's a living neighborhood, with Split's actual old town built directly into and around its walls, colonnaded Peristyle square, and the octagonal Cathedral of St. Domnius (once Diocletian's own mausoleum). Duck into the palace's atmospheric basement halls (substructures) — used as a Game of Thrones filming location — and climb the cathedral's bell tower for a rooftop view over the old town and harbor." },
-        { name: 'Hvar Town', lat: 43.1729, lng: 16.4413 },
+        { name: 'Hvar Town', lat: 43.1729, lng: 16.4413 , notes: 'A glamorous harbor town known for lavender fields, upscale yachting/nightlife, and the 16th-century Fortica fortress on the hill above; climb up to the fortress for the best view over the harbor and the Pakleni Islands just offshore.' },
         { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944, notes: "Its walled marble streets (the Stradun) and 2km of intact medieval ramparts overlooking the Adriatic are the draw, along with the baroque St. Blaise's Church and Rector's Palace; Game of Thrones fans will recognize it as King's Landing. Walk the city walls right at opening (around 8am) to beat both the midday heat and the cruise-ship crowds that flood the old town by late morning." },
       ],
       notes: "Zadar (1-2 days) — Krka National Park/Šibenik (1 day) — Split (2 days) — Hvar (1-2 days) — Dubrovnik (2-3 days), all along the coastal D8. Budget ~€110-160/day. Season: May-June/September for a quiet coast road without traffic. Web check (2026-08): if you take the old coastal road through Neum (Bosnian territory) instead of the Pelješac bridge — wait times 10-30 min, up to 60 min on July-August weekends, a passport is required (an ID card is not enough for Bosnia), and rental-car insurance often adds a €10-15/day surcharge for Bosnia coverage.",
@@ -17930,7 +18057,7 @@ function rbBuildCompleteCroatiaRoute() {
         { name: 'Plitvice Lakes National Park', lat: 44.8654, lng: 15.5820, notes: "16 turquoise terraced lakes connected by waterfalls and wooden boardwalks, with a boat crossing Kozjak Lake as the scenic centerpiece. Pick route C or K (covers both Upper and Lower Lakes, not just one) and start right at opening for boardwalk photos without crowds." },
         { name: 'Zadar', lat: 44.1194, lng: 15.2314, notes: "The Sea Organ (wave-powered pipes built into the waterfront steps) and the adjacent Sun Salutation light installation make the sunset promenade the actual destination here — reportedly the sunset Hitchcock once called the world's most beautiful. Time the visit for sunset; the light show and organ sound together are the point." },
         { name: "Split (Diocletian's Palace) + islands", lat: 43.5081, lng: 16.4402 },
-        { name: 'Hvar Town', lat: 43.1729, lng: 16.4413 },
+        { name: 'Hvar Town', lat: 43.1729, lng: 16.4413 , notes: 'A glamorous harbor town known for lavender fields, upscale yachting/nightlife, and the 16th-century Fortica fortress on the hill above; climb up to the fortress for the best view over the harbor and the Pakleni Islands just offshore.' },
         { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944, notes: "Its walled marble streets (the Stradun) and 2km of intact medieval ramparts overlooking the Adriatic are the draw, along with the baroque St. Blaise's Church and Rector's Palace; Game of Thrones fans will recognize it as King's Landing. Walk the city walls right at opening (around 8am) to beat both the midday heat and the cruise-ship crowds that flood the old town by late morning." },
       ],
       notes: "Zagreb (2 days) — Plitvice (2 days) — Zadar (1-2 days) — Split + islands (3 days) — Hvar (2 days) — Dubrovnik (3 days). Budget averages ~€110-150/day across the whole trip. Season: late May-June or September for the full route without a heat/crowd peak. Web check (2026-08): book Plitvice tickets well ahead (hourly slots) and take the Pelješac bridge for the fast run south.",
@@ -18022,7 +18149,7 @@ function rbBuildSloveniaRoadtripRoute() {
         { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, notes: "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river." },
         { name: 'Bled / Bohinj', lat: 46.3683, lng: 14.1146 },
         { name: 'Vršič Pass / Soča Valley', lat: 46.3297, lng: 13.5522 },
-        { name: 'Piran', lat: 45.5285, lng: 13.5686 },
+        { name: 'Piran', lat: 45.5285, lng: 13.5686 , notes: 'Slovenia\'s only real coastal town, with a compact Venetian-Gothic old town centered on Tartini Square; climb up to the town walls above it for a view over the terracotta rooftops to the Adriatic, and stop at the nearby Sečovlje salt pans, still harvested by hand using centuries-old methods.' },
       ],
       notes: "Ljubljana (2 days) — Bled/Bohinj (2 days) — Vršič/Soča Valley (2-3 days) — Piran/the coast (1-2 days) — back to Ljubljana. Budget ~€100-140/day on average. Season: June-September because of the mountain pass, May/October works for the non-Alpine part. Web check (2026-08): check the 2026 Vršič Pass traffic regime beforehand (see Slovenia Alpine Loop above); the coastal stretch around Piran is compact, with no border delay inside Slovenia itself.",
       transport_to_next: 'End of this route — fly home from Ljubljana.',
@@ -23483,7 +23610,7 @@ function rbBuildAdriaticRoadtripRoute() {
       code: 'SI', name: 'Slovenia', days: 2, budget: 220, lat: 45.7900, lng: 14.0400,
       destinations: [
         { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, notes: "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river." },
-        { name: 'Piran', lat: 45.5285, lng: 13.5686 },
+        { name: 'Piran', lat: 45.5285, lng: 13.5686 , notes: 'Slovenia\'s only real coastal town, with a compact Venetian-Gothic old town centered on Tartini Square; climb up to the town walls above it for a view over the terracotta rooftops to the Adriatic, and stop at the nearby Sečovlje salt pans, still harvested by hand using centuries-old methods.' },
       ],
       notes: "Ljubljana (1 day) — Piran on the Slovenian coast (1 day). Budget ~€110/day. This is the coast-only counterpart to Grand Balkan Roadtrip (14 days) 🏔️ elsewhere in this same sub-batch — explicitly skips Sarajevo/Bosnia's interior.",
       transport_to_next: 'Car, short overland hop from Piran into Croatian Istria — Schengen-internal since Croatia joined Schengen on 1 January 2023, zero checks or delay.',
@@ -23495,7 +23622,7 @@ function rbBuildAdriaticRoadtripRoute() {
         { name: 'Pula (Arena)', lat: 44.8737, lng: 13.8467 , notes: 'One of the best-preserved Roman amphitheaters in the world, still used for concerts; check the events calendar before visiting since summer concert setup can restrict daytime access, and go in the morning to avoid both heat and tour groups.' },
         { name: 'Zadar', lat: 44.1194, lng: 15.2314, notes: "The Sea Organ (wave-powered pipes built into the waterfront steps) and the adjacent Sun Salutation light installation make the sunset promenade the actual destination here — reportedly the sunset Hitchcock once called the world's most beautiful. Time the visit for sunset; the light show and organ sound together are the point." },
         { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402, notes: "The 4th-century Roman emperor's retirement palace isn't a ruin behind a fence — it's a living neighborhood, with Split's actual old town built directly into and around its walls, colonnaded Peristyle square, and the octagonal Cathedral of St. Domnius (once Diocletian's own mausoleum). Duck into the palace's atmospheric basement halls (substructures) — used as a Game of Thrones filming location — and climb the cathedral's bell tower for a rooftop view over the old town and harbor." },
-        { name: 'Hvar Town', lat: 43.1729, lng: 16.4413 },
+        { name: 'Hvar Town', lat: 43.1729, lng: 16.4413 , notes: 'A glamorous harbor town known for lavender fields, upscale yachting/nightlife, and the 16th-century Fortica fortress on the hill above; climb up to the fortress for the best view over the harbor and the Pakleni Islands just offshore.' },
         { name: 'Dubrovnik Old Town', lat: 42.6507, lng: 18.0944, notes: "Its walled marble streets (the Stradun) and 2km of intact medieval ramparts overlooking the Adriatic are the draw, along with the baroque St. Blaise's Church and Rector's Palace; Game of Thrones fans will recognize it as King's Landing. Walk the city walls right at opening (around 8am) to beat both the midday heat and the cruise-ship crowds that flood the old town by late morning." },
       ],
       notes: "Rovinj/Pula in Istria (2 days) — Zadar/Split/Hvar down the coast (3-4 days, pick a subset rather than all three) — Dubrovnik (2 days), reached via the Pelješac bridge rather than the old Neum detour through Bosnia, so this route never touches Bosnian territory. Budget ~€130/day average (Dubrovnik and Hvar pull this up). Season: May-June or September, avoid July-August.",

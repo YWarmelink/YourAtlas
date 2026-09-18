@@ -12,6 +12,21 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batches 111-114 — Adriatic Roadtrip leftovers, Paris, French Alps +
+  Provence, Western Canada: Rockies & Vancouver leftovers (Alaska leg) (2026-09-18)** — 23
+  destinations researched, closing out 4 routes entirely.
+  - Batch 111: Adriatic Roadtrip leftovers — Piran, Hvar Town (the route's other 9 destinations
+    already had notes; the plan's "8/11 remaining" was the usual signature-grouping over-count)
+    (`rbMigrateAdriaticRoadtripLeftoverDestinationNotes()`)
+  - Batch 112: Paris (fresh) — Île de la Cité, Le Marais, Louvre, Tuileries, Eiffel
+    Tower/Trocadéro, Musée Rodin, Montmartre (`rbMigrateParisDestinationNotes()`)
+  - Batch 113: French Alps + Provence (fresh) — Briançon, Gap, Embrun, Écrins
+    (Vallouise/La Bérarde), Sisteron, Avignon, Luberon (`rbMigrateFrenchAlpsProvenceDestinationNotes()`)
+  - Batch 114: Western Canada leftovers, Alaska leg (fresh) — Downtown Anchorage, Earthquake
+    Park, Denali Visitor Center, Savage River, Kantishna/Wonder Lake, Kenai Fjords NP, Exit
+    Glacier (`rbMigrateWesternCanadaAlaskaLeftoverDestinationNotes()`)
+  App-wide total: 3468 destination-slots filled across 405 routes. 512/741 signatures done.
+
 - **Per-destination notes, batches 106-110 — Rhine + Moselle cluster, Grand European Roadtrip
   leftovers, Baltic States Roadtrip, Florence + Tuscany, Venice + Dolomites leftovers
   (2026-09-18)** — 20 destinations researched, plus name-variant reuse closing out 5 routes
