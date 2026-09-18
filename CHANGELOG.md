@@ -30,6 +30,20 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   already present in the existing data, no change needed to how batches insert notes or build
   their migration functions.
 
+- **Per-destination notes, batches 84-87 — Galicia/Gibraltar/Alsace/Puglia (2026-09-18)** — 26
+  destinations researched, plus 2 name-variant reuses.
+  - Batch 84: Galicia: Santiago de Compostela + Coast extras — Pontevedra, Combarro, O Grove,
+    Vigo, A Coruña, plus bare "Cíes Islands" reusing the "(optional)" variant note
+    (`rbMigrateGaliciaExtrasDestinationNotes()`)
+  - Batch 85: Gibraltar + Andalusia: Costa del Sol extras — Marbella/Puerto Banús, Estepona, La
+    Línea de la Concepción, Rock of Gibraltar, St Michael's Cave, plus a Ronda name variant
+    (`rbMigrateGibraltarAndalusiaExtrasDestinationNotes()`)
+  - Batch 86: Alsace extras — Strasbourg, Colmar, Riquewihr, Ribeauvillé, Kaysersberg,
+    Haut-Koenigsbourg Castle, Eguisheim, Turckheim (`rbMigrateAlsaceExtrasDestinationNotes()`)
+  - Batch 87: Puglia extras — Bari, Polignano a Mare, Monopoli, Alberobello, Locorotondo,
+    Ostuni, Lecce, Otranto/Salento coast (`rbMigratePugliaExtrasDestinationNotes()`)
+  App-wide total: 3252 destination-slots filled across 384 routes. 456/741 signatures done.
+
 - **Per-destination notes, batches 80-83 — Monaco/Andalusia/Catalonia/England-Wales-NI extras
   (2026-09-18)** — 21 destinations researched, plus 7 name-variant reuses.
   - Batch 80: Monaco: Monte Carlo (2 days) extras — Oceanographic Museum, Larvotto beach, plus

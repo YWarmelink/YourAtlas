@@ -11029,6 +11029,139 @@ function rbMigrateEnglandWalesNIExtrasDestinationNotes() {
 }
 
 /**
+ * Batch 84 (2026-09-18) -- Galicia: Santiago de Compostela + Coast extras -- 5 newly
+ * researched, plus bare "Cíes Islands" reusing the existing "(optional)" variant note (same
+ * real place, different exact string). Same generic name-matching migration pattern as the
+ * other batches.
+ */
+function rbMigrateGaliciaExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_GALICIA_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_GALICIA_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Pontevedra (Rías Baixas)': "A traffic-free old town of granite arcades and plazas, the natural base for day trips into the Rías Baixas inlets rather than a sight in itself; 2-3 hours covers the historic center.",
+    'Combarro': "A tiny fishing village where rows of stone hórreos and cruceiros sit right at the water's edge, some almost lapped by the tide; walk the shoreline path at low tide for the classic view and photos.",
+    'O Grove': "A peninsula seafood town built on mussel and oyster farming, with a lively marisquería scene and views of the bateas (mussel rafts) in the ría; go for a seafood lunch here rather than sightseeing, and pair with a walk out to A Toxa island next door.",
+    'Vigo': "Galicia's biggest city and a working fishing port with a lively old town (Casco Vello) full of oyster stalls; it's also the ferry departure point for the Cíes Islands, so book the Cíes ferry/visitor permit online in advance if adding that side trip in summer.",
+    'A Coruña (optional)': "Known for the Tower of Hercules, a still-functioning Roman-era lighthouse (UNESCO-listed), and for the Marina's rows of white-glazed galerías (glassed balconies); climb the tower for coastal views and allow about 2 hours for both sights.",
+    'Cíes Islands': "A protected archipelago off Vigo with turquoise water and white-sand beaches often ranked among Europe's best; you must get a free daily-entry permit (around 1,800-2,200 visitors/day) via autorizacionillasatlanticas.xunta.gal before booking the ferry, and permits open up to 90 days ahead and sell out fast in summer.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 85 (2026-09-18) -- Gibraltar + Andalusia: Costa del Sol extras -- 5 newly researched,
+ * plus a "Ronda (optional, added at 4 days)" name variant reusing the existing bare Ronda note.
+ * Same generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateGibraltarAndalusiaExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_GIBRALTAR_ANDALUSIA_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_GIBRALTAR_ANDALUSIA_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Marbella / Puerto Banús': "An upscale resort strip: Marbella's old town has a pretty Plaza de los Naranjos, while Puerto Banús next door is a glitzy marina lined with superyachts and designer boutiques; go to Puerto Banús in early evening for yacht-watching without the midday heat.",
+    'Estepona': 'A quieter, flower-draped old town known for its "Calle Real" and Plaza de las Flores, plus an open-air mural museum scattered through the streets; wander the old town in late afternoon light for the best photos of the flower pots and murals.',
+    'La Línea de la Concepción': "The Spanish border town right at Gibraltar's frontier, mainly useful as a place to park and walk across; park here (Gibraltar itself has very limited/expensive parking) and cross the border on foot, which also lets you watch planes land right over the road on the runway crossing.",
+    'Rock of Gibraltar': "A limestone monolith you ride a cable car up for views across the Strait to Africa, with wild Barbary macaques roaming the upper station and nature reserve trails; book the cable car/Nature Reserve combined ticket ahead in peak season and go early to avoid both crowds and the macaques' aggressive food-snatching hours.",
+    'St Michael’s Cave': 'A large limestone cave inside the Rock whose main chamber, "Cathedral Cave," is used as a concert and events venue; it\'s included in the Nature Reserve ticket (no separate ticket needed), and 20-30 minutes is enough unless there\'s a scheduled event.',
+    'Ronda (optional, added at 4 days)': "Split by the deep El Tajo gorge, the Puente Nuevo bridge is the icon, but the most-missed part is walking down into the gorge (or to the bridge's interpretation centre inside the bridge itself) to see it from below/the side rather than just from the main street above.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 86 (2026-09-18) -- Alsace extras -- 8 destinations, a fully independent solo route
+ * researched in a single pass. Same generic name-matching migration pattern as the other
+ * batches.
+ */
+function rbMigrateAlsaceExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_ALSACE_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_ALSACE_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Strasbourg (Petite France, cathedral + astronomical clock)': "Alsace's capital, centered on the half-timbered canal district of Petite France and the Gothic Notre-Dame cathedral; time your cathedral visit for around 12:30pm to catch the astronomical clock's daily figures show.",
+    'Colmar (base — old town, Little Venice, Unterlinden)': 'A picture-postcard old town with the canal-side "Little Venice" quarter and the Unterlinden Museum, home to the Issenheim Altarpiece; walk Little Venice early morning before the day-trip crowds and tour boats arrive.',
+    'Riquewihr': "A completely walled, flower-covered medieval wine village along one main cobbled street; arrive before 10am or after 5pm, since the single main street gets very congested with tour groups midday.",
+    'Ribeauvillé': "A wine village overlooked by three hilltop castle ruins (Saint-Ulrich, Girsberg, Haut-Ribeaupierre); the hike up to Saint-Ulrich castle takes about 1-1.5 hours round trip and gives the best views over the vineyards.",
+    'Kaysersberg': "A wine village with a fortified medieval bridge and the house/museum where Albert Schweitzer was born; it's less crowded than Riquewihr, so it's a good lunch stop, and the Schweitzer museum only takes about 30 minutes.",
+    'Haut-Koenigsbourg Castle (detour)': "A heavily restored medieval hilltop castle with sweeping views over the Alsace plain to the Vosges and Black Forest; allocate about 1.5-2 hours, and book a timed entry slot online in summer to skip the ticket queue.",
+    'Eguisheim (early, before the tour buses)': "A circular, concentric medieval village of colorful houses wrapped around a central core; go first thing in the morning, as its compact single ring-road layout gets overwhelmed by tour buses by mid-morning.",
+    'Turckheim': "A small fortified wine village known for its nightly traditional town-crier (guet) walk through the streets in period costume; time your visit to the evening (roughly May-October) to catch this free walk, otherwise it's a quick 30-45 minute stop.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 87 (2026-09-18) -- Puglia extras -- 8 destinations, a fully independent solo route
+ * researched in a single pass (also shared with the Campania + Puglia combo route). Same
+ * generic name-matching migration pattern as the other batches.
+ */
+function rbMigratePugliaExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_PUGLIA_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_PUGLIA_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Bari': 'Puglia\'s capital, with an old town (Bari Vecchia) of narrow alleys where women hand-roll orecchiette pasta on tables right in their doorways; head to Via Arco Basso ("Strada delle Orecchiette") in the morning to see the pasta-making and buy a bag straight from the makers.',
+    'Polignano a Mare': "A town built directly on a cliff over the sea, famous as a Red Bull Cliff Diving World Series venue at the Lama Monachile cove below the bridge; visit the cove early morning for the classic photo before the crowds, and try a gelato at the well-known Bar Michele di Pasquale.",
+    'Monopoli': "A quieter coastal old town with a small castle (Castello di Carlo V) and pocket beaches tucked among the rocks near the harbor; good for an evening stroll and sunset at the old port, with fewer crowds than its Puglia neighbors.",
+    'Alberobello (trulli)': "Famous for its dense cluster of trulli, whitewashed conical-roofed stone houses, concentrated in the Rione Monti and Aia Piccola quarters; go early morning to see them before both the heat and the day-trip coach crowds hit Rione Monti.",
+    'Locorotondo': "A hill town whose streets form a distinctive circular ring of whitewashed houses; the Villa Comunale gardens give a good panoramic viewpoint, and it's known for a crisp local white wine worth trying at a local bar.",
+    'Ostuni': 'Puglia\'s "White City," a whitewashed hilltop town with a Gothic-Romanesque cathedral at its highest point; visit in late afternoon/evening when the light on the white walls is best and the alleys are cooler.',
+    'Lecce (second base)': 'Called the "Florence of the South" for its ornate Baroque architecture carved in local soft limestone, especially the Basilica di Santa Croce facade; allow a half day, and see the Roman amphitheater in Piazza Sant\'Oronzo, partly excavated right in the town center.',
+    'Otranto / Salento coast': "Puglia's easternmost town, with a fortified castle and a historic cathedral with a huge medieval mosaic floor; pair the town with a stop at nearby Baia dei Turchi for the turquoise water the Salento coast is known for.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -14397,14 +14530,14 @@ function rbBuildAlsaceRoute() {
     {
       code: 'FR', name: 'France', days: 4, budget: 500, lat: 48.0794, lng: 7.3585,
       destinations: [
-        { name: 'Strasbourg (Petite France, cathedral + astronomical clock)', lat: 48.5734, lng: 7.7521 },
-        { name: 'Colmar (base — old town, Little Venice, Unterlinden)', lat: 48.0794, lng: 7.3585 },
-        { name: 'Riquewihr', lat: 48.1667, lng: 7.2971 },
-        { name: 'Ribeauvillé', lat: 48.1961, lng: 7.3282 },
-        { name: 'Kaysersberg', lat: 48.1391, lng: 7.2664 },
-        { name: 'Haut-Koenigsbourg Castle (detour)', lat: 48.2495, lng: 7.3444 },
-        { name: 'Eguisheim (early, before the tour buses)', lat: 48.0448, lng: 7.3081 },
-        { name: 'Turckheim', lat: 48.0847, lng: 7.2778 },
+        { name: 'Strasbourg (Petite France, cathedral + astronomical clock)', lat: 48.5734, lng: 7.7521 , notes: 'Alsace\'s capital, centered on the half-timbered canal district of Petite France and the Gothic Notre-Dame cathedral; time your cathedral visit for around 12:30pm to catch the astronomical clock\'s daily figures show.' },
+        { name: 'Colmar (base — old town, Little Venice, Unterlinden)', lat: 48.0794, lng: 7.3585 , notes: 'A picture-postcard old town with the canal-side "Little Venice" quarter and the Unterlinden Museum, home to the Issenheim Altarpiece; walk Little Venice early morning before the day-trip crowds and tour boats arrive.' },
+        { name: 'Riquewihr', lat: 48.1667, lng: 7.2971 , notes: 'A completely walled, flower-covered medieval wine village along one main cobbled street; arrive before 10am or after 5pm, since the single main street gets very congested with tour groups midday.' },
+        { name: 'Ribeauvillé', lat: 48.1961, lng: 7.3282 , notes: 'A wine village overlooked by three hilltop castle ruins (Saint-Ulrich, Girsberg, Haut-Ribeaupierre); the hike up to Saint-Ulrich castle takes about 1-1.5 hours round trip and gives the best views over the vineyards.' },
+        { name: 'Kaysersberg', lat: 48.1391, lng: 7.2664 , notes: 'A wine village with a fortified medieval bridge and the house/museum where Albert Schweitzer was born; it\'s less crowded than Riquewihr, so it\'s a good lunch stop, and the Schweitzer museum only takes about 30 minutes.' },
+        { name: 'Haut-Koenigsbourg Castle (detour)', lat: 48.2495, lng: 7.3444 , notes: 'A heavily restored medieval hilltop castle with sweeping views over the Alsace plain to the Vosges and Black Forest; allocate about 1.5-2 hours, and book a timed entry slot online in summer to skip the ticket queue.' },
+        { name: 'Eguisheim (early, before the tour buses)', lat: 48.0448, lng: 7.3081 , notes: 'A circular, concentric medieval village of colorful houses wrapped around a central core; go first thing in the morning, as its compact single ring-road layout gets overwhelmed by tour buses by mid-morning.' },
+        { name: 'Turckheim', lat: 48.0847, lng: 7.2778 , notes: 'A small fortified wine village known for its nightly traditional town-crier (guet) walk through the streets in period costume; time your visit to the evening (roughly May-October) to catch this free walk, otherwise it\'s a quick 30-45 minute stop.' },
       ],
       notes: "Strasbourg (Petite France, cathedral + astronomical clock, Maison Kammerzell, Palais Rohan) — Colmar as a base (old town, Little Venice, Unterlinden) — the quieter, underrated wine villages Riquewihr/Hunawihr/Ribeauvillé/Kaysersberg, plus a detour to Haut-Koenigsbourg Castle — Eguisheim early (to beat the tour buses) and Turckheim. Own car, Amsterdam-Strasbourg ~600km/5.5-6h, fully toll-free (via the German Autobahn, and the A35 into Strasbourg is also toll-free) — the train exists but is 8h+ with transfers and impractical locally since the villages aren't on the rail line. Budget ~€100-150/day for 2 people for lodging + €45-60/day food + €15-35 tastings/activities. Season: half September-half October (wine harvest) or May-June. Astronomical clock €3, cathedral tower €8, Haut-Koenigsbourg ~€10; parking in the villages is limited/paid — park outside Riquewihr's walls rather than trying to drive in.",
       transport_to_next: 'End of this route — drive back to the Netherlands, fully toll-free via the German Autobahn.',
@@ -15454,7 +15587,7 @@ function rbBuildPugliaRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 110, lat: 41.1171, lng: 16.8719,
       destinations: [
-        { name: 'Bari', lat: 41.1171, lng: 16.8719 },
+        { name: 'Bari', lat: 41.1171, lng: 16.8719 , notes: 'Puglia\'s capital, with an old town (Bari Vecchia) of narrow alleys where women hand-roll orecchiette pasta on tables right in their doorways; head to Via Arco Basso ("Strada delle Orecchiette") in the morning to see the pasta-making and buy a bag straight from the makers.' },
       ],
       notes: 'Bari (1 day). Direct AMS-Bari (Transavia only, ~9x/week, ~2.5h) — in and out of the same airport, no open-jaw needed. Rental car needed (the trulli countryside and small coastal towns are poorly served by public transport). Budget ~€110/day (Puglia is noticeably cheaper than Amalfi/Tuscany/the north).',
       transport_to_next: 'Drive to Polignano a Mare/Monopoli.',
@@ -15462,8 +15595,8 @@ function rbBuildPugliaRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 110, lat: 40.9959, lng: 17.2199,
       destinations: [
-        { name: 'Polignano a Mare', lat: 40.9959, lng: 17.2199 },
-        { name: 'Monopoli', lat: 40.9515, lng: 17.3013 },
+        { name: 'Polignano a Mare', lat: 40.9959, lng: 17.2199 , notes: 'A town built directly on a cliff over the sea, famous as a Red Bull Cliff Diving World Series venue at the Lama Monachile cove below the bridge; visit the cove early morning for the classic photo before the crowds, and try a gelato at the well-known Bar Michele di Pasquale.' },
+        { name: 'Monopoli', lat: 40.9515, lng: 17.3013 , notes: 'A quieter coastal old town with a small castle (Castello di Carlo V) and pocket beaches tucked among the rocks near the harbor; good for an evening stroll and sunset at the old port, with fewer crowds than its Puglia neighbors.' },
       ],
       notes: 'Polignano a Mare/Monopoli (1 day).',
       transport_to_next: "Drive into the Valle d'Itria.",
@@ -15471,9 +15604,9 @@ function rbBuildPugliaRoute() {
     {
       code: 'IT', name: 'Italy', days: 2, budget: 220, lat: 40.7844, lng: 17.2378,
       destinations: [
-        { name: 'Alberobello (trulli)', lat: 40.7844, lng: 17.2378 },
-        { name: 'Locorotondo', lat: 40.7594, lng: 17.3306 },
-        { name: 'Ostuni', lat: 40.7285, lng: 17.5786 },
+        { name: 'Alberobello (trulli)', lat: 40.7844, lng: 17.2378 , notes: 'Famous for its dense cluster of trulli, whitewashed conical-roofed stone houses, concentrated in the Rione Monti and Aia Piccola quarters; go early morning to see them before both the heat and the day-trip coach crowds hit Rione Monti.' },
+        { name: 'Locorotondo', lat: 40.7594, lng: 17.3306 , notes: 'A hill town whose streets form a distinctive circular ring of whitewashed houses; the Villa Comunale gardens give a good panoramic viewpoint, and it\'s known for a crisp local white wine worth trying at a local bar.' },
+        { name: 'Ostuni', lat: 40.7285, lng: 17.5786 , notes: 'Puglia\'s "White City," a whitewashed hilltop town with a Gothic-Romanesque cathedral at its highest point; visit in late afternoon/evening when the light on the white walls is best and the alleys are cooler.' },
       ],
       notes: "Valle d'Itria: Alberobello/Locorotondo/Ostuni (2 days, one base). Season: May-June or September; July-August is hot and very busy with Italian domestic tourism, especially around Ferragosto (15 August) — book well ahead if travelling then. ⚠️ Alberobello's trulli centre gets touristy around midday — go early or late.",
       transport_to_next: 'Drive to Lecce.',
@@ -15481,7 +15614,7 @@ function rbBuildPugliaRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 110, lat: 40.3515, lng: 18.1750,
       destinations: [
-        { name: 'Lecce (second base)', lat: 40.3515, lng: 18.1750 },
+        { name: 'Lecce (second base)', lat: 40.3515, lng: 18.1750 , notes: 'Called the "Florence of the South" for its ornate Baroque architecture carved in local soft limestone, especially the Basilica di Santa Croce facade; allow a half day, and see the Roman amphitheater in Piazza Sant\'Oronzo, partly excavated right in the town center.' },
       ],
       notes: "Lecce (1 night at this trip length — a second, 7-day version adds a second Lecce night). Same €110/day budget throughout.",
       transport_to_next: 'Drive to Otranto/the Salento coast.',
@@ -15489,7 +15622,7 @@ function rbBuildPugliaRoute() {
     {
       code: 'IT', name: 'Italy', days: 1, budget: 110, lat: 40.1455, lng: 18.4901,
       destinations: [
-        { name: 'Otranto / Salento coast', lat: 40.1455, lng: 18.4901 },
+        { name: 'Otranto / Salento coast', lat: 40.1455, lng: 18.4901 , notes: 'Puglia\'s easternmost town, with a fortified castle and a historic cathedral with a huge medieval mosaic floor; pair the town with a stop at nearby Baia dei Turchi for the turquoise water the Salento coast is known for.' },
       ],
       notes: 'Otranto/Salento coast (1 day), then back to Bari. Little hassle with reservation systems, unlike Rome/Pompeii.',
       transport_to_next: 'End of this route — drive back to Bari for the direct return flight to Amsterdam.',
@@ -15535,7 +15668,7 @@ function rbBuildCampaniaPugliaRoute() {
       code: 'IT', name: 'Italy', days: 2, budget: 250, lat: 40.7844, lng: 17.2378,
       destinations: [
         { name: 'Alberobello', lat: 40.7844, lng: 17.2378 },
-        { name: 'Ostuni', lat: 40.7285, lng: 17.5786 },
+        { name: 'Ostuni', lat: 40.7285, lng: 17.5786 , notes: 'Puglia\'s "White City," a whitewashed hilltop town with a Gothic-Romanesque cathedral at its highest point; visit in late afternoon/evening when the light on the white walls is best and the alleys are cooler.' },
       ],
       notes: "Valle d'Itria (Alberobello/Ostuni, 2 days). Season: late May-June or September (avoids both Amalfi's peak-season plate rules and Puglia's Ferragosto crowds).",
       transport_to_next: 'Drive to Lecce/Salento.',
@@ -16493,12 +16626,12 @@ function rbBuildGaliciaSantiagoRoute() {
       code: 'ES', name: 'Spain', days: 6, budget: 480, lat: 42.8805, lng: -8.5456,
       destinations: [
         { name: 'Santiago de Compostela (Praza do Obradoiro)', lat: 42.8805, lng: -8.5456 , notes: 'The Camino\'s finish line and the cathedral\'s grand baroque facade square. Enter through the Arco do Pazo for the classic first reveal of the square and cathedral, and book the rooftop "Catedral" tour in advance if you want the terrace views over the old town.' },
-        { name: 'Pontevedra (Rías Baixas)', lat: 42.4300, lng: -8.6444 },
-        { name: 'Combarro', lat: 42.4297, lng: -8.6858 },
-        { name: 'O Grove', lat: 42.4897, lng: -8.8756 },
-        { name: 'Vigo', lat: 42.2406, lng: -8.7207 },
-        { name: 'Cíes Islands', lat: 42.2378, lng: -8.8994 },
-        { name: 'A Coruña (optional)', lat: 43.3623, lng: -8.4115 },
+        { name: 'Pontevedra (Rías Baixas)', lat: 42.4300, lng: -8.6444 , notes: 'A traffic-free old town of granite arcades and plazas, the natural base for day trips into the Rías Baixas inlets rather than a sight in itself; 2-3 hours covers the historic center.' },
+        { name: 'Combarro', lat: 42.4297, lng: -8.6858 , notes: 'A tiny fishing village where rows of stone hórreos and cruceiros sit right at the water\'s edge, some almost lapped by the tide; walk the shoreline path at low tide for the classic view and photos.' },
+        { name: 'O Grove', lat: 42.4897, lng: -8.8756 , notes: 'A peninsula seafood town built on mussel and oyster farming, with a lively marisquería scene and views of the bateas (mussel rafts) in the ría; go for a seafood lunch here rather than sightseeing, and pair with a walk out to A Toxa island next door.' },
+        { name: 'Vigo', lat: 42.2406, lng: -8.7207 , notes: 'Galicia\'s biggest city and a working fishing port with a lively old town (Casco Vello) full of oyster stalls; it\'s also the ferry departure point for the Cíes Islands, so book the Cíes ferry/visitor permit online in advance if adding that side trip in summer.' },
+        { name: 'Cíes Islands', lat: 42.2378, lng: -8.8994 , notes: 'A protected archipelago off Vigo with turquoise water and white-sand beaches often ranked among Europe\'s best; you must get a free daily-entry permit (around 1,800-2,200 visitors/day) via autorizacionillasatlanticas.xunta.gal before booking the ferry, and permits open up to 90 days ahead and sell out fast in summer.' },
+        { name: 'A Coruña (optional)', lat: 43.3623, lng: -8.4115 , notes: 'Known for the Tower of Hercules, a still-functioning Roman-era lighthouse (UNESCO-listed), and for the Marina\'s rows of white-glazed galerías (glassed balconies); climb the tower for coastal views and allow about 2 hours for both sights.' },
       ],
       notes: "Santiago de Compostela (1-2 days: Praza do Obradoiro, the cathedral) → a Rías Baixas day trip (Pontevedra, Combarro, O Grove) → Vigo → the Cíes Islands ferry (book ahead in season, there's a visitor cap) → optionally A Coruña/Costa da Morte if using the full 6 days. New for 2026: direct seasonal flights AMS-Santiago — KLM from 30 May 2026 (6x/week), Vueling from 16 June 2026; Iberia flies year-round with a connection via Madrid. Budget ~€80/day (Galicia is one of the cheaper Spanish regions, with excellent seafood at a reasonable price). Season: June-September — Galicia is Atlantic/rainy outside summer, and the new direct flights are seasonal-summer anyway. Web check (2026-08): check whether the new KLM/Vueling Santiago route is still on the schedule for your own dates (brand new for 2026); the Cíes Islands ferry has a daily visitor cap in high season — book ahead in July-August.",
       transport_to_next: 'End of this route — fly home from Santiago de Compostela (seasonal direct AMS-Santiago, or via Madrid on Iberia).',
@@ -16543,10 +16676,10 @@ function rbBuildGibraltarAndalusiaRoute() {
       code: 'ES', name: 'Spain', days: 3, budget: 300, lat: 36.6000, lng: -4.8000,
       destinations: [
         { name: 'Málaga (fly in)', lat: 36.7213, lng: -4.4214 , notes: 'Picasso\'s birthplace (Museo Picasso in the old town) sits beneath the Moorish Alcazaba fortress, which has a Roman theatre at its base and connects up to the Gibralfaro castle for city views.' },
-        { name: 'Marbella / Puerto Banús', lat: 36.5099, lng: -4.8858 },
-        { name: 'Estepona', lat: 36.4285, lng: -5.1451 },
-        { name: 'La Línea de la Concepción', lat: 36.1667, lng: -5.3500 },
-        { name: 'Ronda (optional, added at 4 days)', lat: 36.7466, lng: -5.1652 },
+        { name: 'Marbella / Puerto Banús', lat: 36.5099, lng: -4.8858 , notes: 'An upscale resort strip: Marbella\'s old town has a pretty Plaza de los Naranjos, while Puerto Banús next door is a glitzy marina lined with superyachts and designer boutiques; go to Puerto Banús in early evening for yacht-watching without the midday heat.' },
+        { name: 'Estepona', lat: 36.4285, lng: -5.1451 , notes: 'A quieter, flower-draped old town known for its "Calle Real" and Plaza de las Flores, plus an open-air mural museum scattered through the streets; wander the old town in late afternoon light for the best photos of the flower pots and murals.' },
+        { name: 'La Línea de la Concepción', lat: 36.1667, lng: -5.3500 , notes: 'The Spanish border town right at Gibraltar\'s frontier, mainly useful as a place to park and walk across; park here (Gibraltar itself has very limited/expensive parking) and cross the border on foot, which also lets you watch planes land right over the road on the runway crossing.' },
+        { name: 'Ronda (optional, added at 4 days)', lat: 36.7466, lng: -5.1652 , notes: 'Split by the deep El Tajo gorge, the Puente Nuevo bridge is the icon, but the most-missed part is walking down into the gorge (or to the bridge\'s interpretation centre inside the bridge itself) to see it from below/the side rather than just from the main street above.' },
       ],
       notes: "Deliberately just the Costa del Sol/Gibraltar corner, not Seville or Granada: Málaga (fly in, 1 day) → Marbella/Puerto Banús (1 day) → Estepona → La Línea de la Concepción → Gibraltar (day trip or 1 night) → back to Málaga; at 4 days add Ronda (~1h45 from Marbella) as a mountain excursion. Entry: direct AMS-Málaga, then drive Málaga→border (~132km, ~1h30-1h45 via the toll road or ~2h+ on the free route). Budget ~€100/day (Marbella/Puerto Banús is also one of Andalusia's pricier spots). Season: doable year-round on the coast (milder than inland) but April-June/September-October is best; avoid July-August for value.",
       transport_to_next: "Park on the Spanish side in La Línea de la Concepción and walk across the border into Gibraltar instead of driving in — avoids the traffic jams at the crossing.",
@@ -16554,8 +16687,8 @@ function rbBuildGibraltarAndalusiaRoute() {
     {
       code: 'GI', name: 'Gibraltar', days: 1, budget: 100, lat: 36.1408, lng: -5.3536,
       destinations: [
-        { name: 'Rock of Gibraltar', lat: 36.1408, lng: -5.3536 },
-        { name: 'St Michael’s Cave', lat: 36.1359, lng: -5.3453 },
+        { name: 'Rock of Gibraltar', lat: 36.1408, lng: -5.3536 , notes: 'A limestone monolith you ride a cable car up for views across the Strait to Africa, with wild Barbary macaques roaming the upper station and nature reserve trails; book the cable car/Nature Reserve combined ticket ahead in peak season and go early to avoid both crowds and the macaques\' aggressive food-snatching hours.' },
+        { name: 'St Michael’s Cave', lat: 36.1359, lng: -5.3453 , notes: 'A large limestone cave inside the Rock whose main chamber, "Cathedral Cave," is used as a concert and events venue; it\'s included in the Nature Reserve ticket (no separate ticket needed), and 20-30 minutes is enough unless there\'s a scheduled event.' },
       ],
       notes: "The Rock of Gibraltar (cable car, Barbary macaques) and St Michael's Cave. Budget here runs higher than the Spanish side — Gibraltar uses GBP and is noticeably pricier than Spain for food and drink. Web check (2026-08): Gibraltar joined Schengen on 15 July 2026 — the land border from Spain now has no passport/customs control for most travellers, though queues can still occur at the old border post (check frontierqueue.gi ahead of time); flights into Gibraltar Airport now do the Schengen check in the terminal instead. Dutch travellers can normally enter with just an ID card, but bringing a passport along is still the safer default.",
       transport_to_next: 'End of this route — walk back across the border to La Línea and drive back to Málaga (~132km) for the flight home.',
