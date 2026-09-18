@@ -10647,6 +10647,111 @@ function rbMigrateNorthernGreeceClusterDestinationNotes() {
 }
 
 /**
+ * Batch 73 (2026-09-18) -- Romania cluster (Transylvania + Carpathian Mountains, Romania
+ * Roadtrip, Romania: Extended, Romania + Bulgaria: Transylvania Focus, Romania + Moldova:
+ * Extended) -- very high leverage, 11 destinations researched. Same generic name-matching
+ * migration pattern as the other batches.
+ */
+function rbMigrateRomaniaClusterDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_ROMANIA_CLUSTER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_ROMANIA_CLUSTER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Brașov': "Medieval old town centered on Council Square and the Gothic Black Church, with a cable car up Tampa mountain for a skyline view over the rooftops.",
+    'Bran Castle': 'White turreted castle on a rock, marketed as "Dracula\'s Castle" though the real link is thin (Vlad the Impaler likely never stayed here); go right at opening (8am) or late afternoon to beat the tour-bus crowds that peak midday.',
+    'Peleș Castle (Sinaia)': "Lavishly decorated Neo-Renaissance royal castle built for King Carol I, with rooms covered in carved wood, stained glass and armor; the interior is only seen on a timed guided tour with limited daily slots, so buy tickets online or arrive early in high season.",
+    'Sighișoara': "Intact fortified Saxon citadel with the Clock Tower and covered wooden staircase, plus the house where Vlad the Impaler was born; small enough to see on foot in half a day, and the Clock Tower climb gives the best view over the colored rooftops.",
+    'Sibiu': 'Saxon old town famous for the "eyes" (dormer windows) watching over Piața Mare and the wrought-iron Bridge of Lies; climb the Council Tower (Turnul Sfatului) for the best rooftop panorama.',
+    'Bucegi Mountains': "Carpathian massif with the Babele rock formations and the Sphinx, reachable by cable car from Bușteni instead of the long hike up; weather turns fast at altitude, so check forecasts and bring layers even in summer.",
+    'Piatra Craiului National Park': "Dramatic limestone ridge popular with hikers and climbers, accessed via the Zărnești gorge; the full ridge traverse is a serious full-day hike with real exposure, not a casual walk.",
+    'Transfăgărășan Highway (Bâlea Lake)': "Romania's high mountain pass over the Carpathians ending at the glacial Bâlea Lake, reachable by cable car from Bâlea Cascadă; the high section is snowbound and closed roughly late October to June (in 2026 it reopened June 12), so confirm it's open before planning a summer/early-autumn crossing.",
+    'Bucharest': "Capital mixing Belle Époque boulevards (Calea Victoriei, the Athenaeum) with the communist-era Palace of Parliament, the world's heaviest building; book a Palace of Parliament tour in advance and bring ID, as walk-up access is limited.",
+    'Maramureș wooden churches (Bârsana area)': "Cluster of UNESCO-listed wooden Orthodox churches with tall shingled steeples (Bârsana monastery, Ieud, Desești); the churches are spread across small villages, so it's a rental-car day, not a single stop.",
+    'Danube Delta (Tulcea)': "Europe's largest river delta, a wetland maze of channels and reed beds that's one of the continent's top birdwatching spots; a single day-boat trip from Tulcea only skims it, so allocate at least one overnight in the delta and go in spring for peak migration.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 74 (2026-09-18) -- Bulgaria cluster (Sofia + Rila Monastery, Sofia + Plovdiv, Bulgaria
+ * Roadtrip, Romania + Bulgaria: Transylvania Focus) -- 7 destinations researched (Sofia and
+ * Plovdiv each get a name-variant reuse -- same real place, different exact strings). Same
+ * generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateBulgariaClusterDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_BULGARIA_CLUSTER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_BULGARIA_CLUSTER_DESTINATION_NOTES, '1');
+
+  const sofiaNote = "Bulgarian capital centered on the gold-domed Alexander Nevski Cathedral and a compact old town mixing Roman ruins (the Serdika complex), the St. George Rotunda, and Ottoman-era mosques within walking distance of each other.";
+  const plovdivNote = "One of Europe's oldest continuously inhabited cities, with a cobbled old town of Ottoman-era houses and a still-functioning 2nd-century Roman theatre used for concerts; the Kapana creative district next door is worth an evening for food and bars.";
+  const notesByName = {
+    'Sofia': sofiaNote,
+    'Sofia (Alexander Nevski Cathedral)': sofiaNote,
+    'Vitosha Mountain': "Mountain rising right at Sofia's southern edge, popular for an easy hiking or skiing day trip via the Simeonovo gondola; the Boyana waterfall and Cherni Vrah peak are the two highlights most visitors miss if they don't go beyond the ski-lift area.",
+    'Rila Monastery': "Bulgaria's most revered monastery, famous for its striped Renaissance-era arcades and vivid frescoes, tucked in a valley in the Rila mountains; it's about a 2-hour drive from Sofia and gets swarmed by tour buses around midday, so aim for early morning.",
+    'Veliko Tarnovo': "Bulgaria's medieval capital, built around the Tsarevets fortress ruins on a hilltop looped by the Yantra river gorge; a sound-and-light show is still staged there in 2026, but only on holidays/special occasions (not nightly), so check the schedule before counting on it.",
+    'Plovdiv': plovdivNote,
+    'Plovdiv (Old Town / Roman Theatre)': plovdivNote,
+    'Melnik': "Bulgaria's smallest town, wedged among eroded sandstone pyramid formations, known for traditional wine cellars carved into the sandstone; pair it with a stop at nearby Rozhen Monastery and try the local Melnik wine straight from a cellar (mehana).",
+    'Rhodope Mountains': "Mountain range in southern Bulgaria dotted with traditional stone-and-wood villages (Kovachevitsa, Leshten) and nature sites like the Trigrad Gorge and Yagodina cave; pick one or two villages plus a natural feature rather than trying to cover the whole range in a day.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 75 (2026-09-18) -- Moldova cluster (Romania + Moldova: Extended and siblings) -- 4
+ * destinations researched. Same generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateMoldovaClusterDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_MOLDOVA_CLUSTER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_MOLDOVA_CLUSTER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Iași': "Romania's former princely capital, known for its ornate Orthodox churches (especially the Three Hierarchs Church with its all-over stone-carved facade) and the vast Neo-Gothic Palace of Culture, which alone houses four museums worth a couple of hours.",
+    'Chișinău': "Moldova's low-key capital, mainly a base for the country's wine-cellar day trips, with the Triumphal Arch and Nativity Cathedral as the main central sights.",
+    'Cricova / Mileștii Mici wine cellars': "Vast underground tunnel networks (Mileștii Mici holds the Guinness record for the world's largest wine collection, over 200km of galleries); you cannot just show up — a guided tour must be booked in advance (ideally a couple of days ahead) directly through the winery.",
+    'Orheiul Vechi': "Historic complex with a cave monastery carved into limestone cliffs above a bend in the Răut river, near Chișinău; allocate a half day to see the cliffside cave church plus the archaeological site on top, and wear decent shoes for the climb down to the cave.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -17776,9 +17881,9 @@ function rbBuildBucharestTransylvaniaRoute() {
       code: 'RO', name: 'Romania', days: 5, budget: 400, lat: 44.4268, lng: 26.1025,
       destinations: [
         { name: 'Bucharest (Old Town / Palace of the Parliament, "Ceaușescu\'s Palace")', lat: 44.4268, lng: 26.1025 },
-        { name: 'Brașov', lat: 45.6427, lng: 25.5887 },
-        { name: 'Bran Castle', lat: 45.5149, lng: 25.3673 },
-        { name: 'Peleș Castle (Sinaia)', lat: 45.3597, lng: 25.5406 },
+        { name: 'Brașov', lat: 45.6427, lng: 25.5887 , notes: 'Medieval old town centered on Council Square and the Gothic Black Church, with a cable car up Tampa mountain for a skyline view over the rooftops.' },
+        { name: 'Bran Castle', lat: 45.5149, lng: 25.3673 , notes: 'White turreted castle on a rock, marketed as "Dracula\'s Castle" though the real link is thin (Vlad the Impaler likely never stayed here); go right at opening (8am) or late afternoon to beat the tour-bus crowds that peak midday.' },
+        { name: 'Peleș Castle (Sinaia)', lat: 45.3597, lng: 25.5406 , notes: 'Lavishly decorated Neo-Renaissance royal castle built for King Carol I, with rooms covered in carved wood, stained glass and armor; the interior is only seen on a timed guided tour with limited daily slots, so buy tickets online or arrive early in high season.' },
       ],
       notes: "Bucharest (2 days, Old Town and the Palace of the Parliament, still popularly called Ceaușescu's Palace) — Brașov (2 days) with a day trip to Bran Castle and Peleș Castle — optionally back via Sinaia. Budget ~€75-85/day (Bucharest costs a bit more than the countryside). Season: May-September, September is best (fewer tourists, still warm). Web check (2026-08): Bran Castle open Mon 12:00-18:00, Tue-Sun 9:00-18:00, tickets ~€28-35; Peleș Castle Wed 10:00-17:00, Thu-Sun 9:15-17:00, closed Mon/Tue, ~€10 for adults — check the actual 2026 hours right before departure, they're seasonal.",
       transport_to_next: 'End of this route — fly home from Bucharest.',
@@ -17797,11 +17902,11 @@ function rbBuildTransylvaniaRoute() {
     {
       code: 'RO', name: 'Romania', days: 6, budget: 420, lat: 45.6427, lng: 25.5887,
       destinations: [
-        { name: 'Brașov', lat: 45.6427, lng: 25.5887 },
-        { name: 'Bran Castle', lat: 45.5149, lng: 25.3673 },
-        { name: 'Peleș Castle (Sinaia)', lat: 45.3597, lng: 25.5406 },
-        { name: 'Sighișoara', lat: 46.2197, lng: 24.7944 },
-        { name: 'Sibiu', lat: 45.7983, lng: 24.1256 },
+        { name: 'Brașov', lat: 45.6427, lng: 25.5887 , notes: 'Medieval old town centered on Council Square and the Gothic Black Church, with a cable car up Tampa mountain for a skyline view over the rooftops.' },
+        { name: 'Bran Castle', lat: 45.5149, lng: 25.3673 , notes: 'White turreted castle on a rock, marketed as "Dracula\'s Castle" though the real link is thin (Vlad the Impaler likely never stayed here); go right at opening (8am) or late afternoon to beat the tour-bus crowds that peak midday.' },
+        { name: 'Peleș Castle (Sinaia)', lat: 45.3597, lng: 25.5406 , notes: 'Lavishly decorated Neo-Renaissance royal castle built for King Carol I, with rooms covered in carved wood, stained glass and armor; the interior is only seen on a timed guided tour with limited daily slots, so buy tickets online or arrive early in high season.' },
+        { name: 'Sighișoara', lat: 46.2197, lng: 24.7944 , notes: 'Intact fortified Saxon citadel with the Clock Tower and covered wooden staircase, plus the house where Vlad the Impaler was born; small enough to see on foot in half a day, and the Clock Tower climb gives the best view over the colored rooftops.' },
+        { name: 'Sibiu', lat: 45.7983, lng: 24.1256 , notes: 'Saxon old town famous for the "eyes" (dormer windows) watching over Piața Mare and the wrought-iron Bridge of Lies; climb the Council Tower (Turnul Sfatului) for the best rooftop panorama.' },
       ],
       notes: "Brașov (2 days) — Bran/Peleș as a day trip — Sighișoara (2 days) — Sibiu (2 days). Budget ~€65-75/day (smaller towns are cheaper than Bucharest). Season: June-September; 24-26 July 2026 is the Sighișoara Medieval Festival (31st edition) — fun, but noticeably busier and pricier, book accommodation early if that date overlaps your trip. Web check (2026-08): same castles as above; Sibiu's Grand Square (Piața Mare) is free to walk around.",
       transport_to_next: 'End of this route — fly home from Bucharest or Sibiu (whichever has a convenient connection).',
@@ -17820,14 +17925,14 @@ function rbBuildTransylvaniaCarpathianMountainsRoute() {
     {
       code: 'RO', name: 'Romania', days: 9, budget: 585, lat: 45.6427, lng: 25.5887,
       destinations: [
-        { name: 'Brașov', lat: 45.6427, lng: 25.5887 },
-        { name: 'Bran Castle', lat: 45.5149, lng: 25.3673 },
-        { name: 'Peleș Castle (Sinaia)', lat: 45.3597, lng: 25.5406 },
-        { name: 'Sighișoara', lat: 46.2197, lng: 24.7944 },
-        { name: 'Sibiu', lat: 45.7983, lng: 24.1256 },
-        { name: 'Bucegi Mountains', lat: 45.4167, lng: 25.4667 },
-        { name: 'Piatra Craiului National Park', lat: 45.5000, lng: 25.2167 },
-        { name: 'Transfăgărășan Highway (Bâlea Lake)', lat: 45.6050, lng: 24.6167 },
+        { name: 'Brașov', lat: 45.6427, lng: 25.5887 , notes: 'Medieval old town centered on Council Square and the Gothic Black Church, with a cable car up Tampa mountain for a skyline view over the rooftops.' },
+        { name: 'Bran Castle', lat: 45.5149, lng: 25.3673 , notes: 'White turreted castle on a rock, marketed as "Dracula\'s Castle" though the real link is thin (Vlad the Impaler likely never stayed here); go right at opening (8am) or late afternoon to beat the tour-bus crowds that peak midday.' },
+        { name: 'Peleș Castle (Sinaia)', lat: 45.3597, lng: 25.5406 , notes: 'Lavishly decorated Neo-Renaissance royal castle built for King Carol I, with rooms covered in carved wood, stained glass and armor; the interior is only seen on a timed guided tour with limited daily slots, so buy tickets online or arrive early in high season.' },
+        { name: 'Sighișoara', lat: 46.2197, lng: 24.7944 , notes: 'Intact fortified Saxon citadel with the Clock Tower and covered wooden staircase, plus the house where Vlad the Impaler was born; small enough to see on foot in half a day, and the Clock Tower climb gives the best view over the colored rooftops.' },
+        { name: 'Sibiu', lat: 45.7983, lng: 24.1256 , notes: 'Saxon old town famous for the "eyes" (dormer windows) watching over Piața Mare and the wrought-iron Bridge of Lies; climb the Council Tower (Turnul Sfatului) for the best rooftop panorama.' },
+        { name: 'Bucegi Mountains', lat: 45.4167, lng: 25.4667 , notes: 'Carpathian massif with the Babele rock formations and the Sphinx, reachable by cable car from Bușteni instead of the long hike up; weather turns fast at altitude, so check forecasts and bring layers even in summer.' },
+        { name: 'Piatra Craiului National Park', lat: 45.5000, lng: 25.2167 , notes: 'Dramatic limestone ridge popular with hikers and climbers, accessed via the Zărnești gorge; the full ridge traverse is a serious full-day hike with real exposure, not a casual walk.' },
+        { name: 'Transfăgărășan Highway (Bâlea Lake)', lat: 45.6050, lng: 24.6167 , notes: 'Romania\'s high mountain pass over the Carpathians ending at the glacial Bâlea Lake, reachable by cable car from Bâlea Cascadă; the high section is snowbound and closed roughly late October to June (in 2026 it reopened June 12), so confirm it\'s open before planning a summer/early-autumn crossing.' },
       ],
       notes: "Brașov (2 days) — Bran/Peleș — Sighișoara (1 day) — Sibiu (1 day) — hiking and mountain huts in the Bucegi or Piatra Craiului mountains (2-3 days) — optionally the Transfăgărășan Highway as a day trip. Budget ~€60-70/day (huts/pensions are cheaper than hotels). Season: July-mid September for hiking (snow-free); the Transfăgărășan pass is open roughly July to end of October. Web check (2026-08): confirm hut opening dates and mountain-hut reservations in advance; bears are active in this area, store food properly.",
       transport_to_next: 'End of this route — fly home from Bucharest.',
@@ -17846,13 +17951,13 @@ function rbBuildRomaniaRoadtripRoute() {
     {
       code: 'RO', name: 'Romania', days: 9, budget: 765, lat: 44.4268, lng: 26.1025,
       destinations: [
-        { name: 'Bucharest', lat: 44.4268, lng: 26.1025 },
-        { name: 'Transfăgărășan Highway (Bâlea Lake)', lat: 45.6050, lng: 24.6167 },
-        { name: 'Sibiu', lat: 45.7983, lng: 24.1256 },
-        { name: 'Brașov', lat: 45.6427, lng: 25.5887 },
-        { name: 'Bran Castle', lat: 45.5149, lng: 25.3673 },
-        { name: 'Peleș Castle (Sinaia)', lat: 45.3597, lng: 25.5406 },
-        { name: 'Sighișoara', lat: 46.2197, lng: 24.7944 },
+        { name: 'Bucharest', lat: 44.4268, lng: 26.1025 , notes: 'Capital mixing Belle Époque boulevards (Calea Victoriei, the Athenaeum) with the communist-era Palace of Parliament, the world\'s heaviest building; book a Palace of Parliament tour in advance and bring ID, as walk-up access is limited.' },
+        { name: 'Transfăgărășan Highway (Bâlea Lake)', lat: 45.6050, lng: 24.6167 , notes: 'Romania\'s high mountain pass over the Carpathians ending at the glacial Bâlea Lake, reachable by cable car from Bâlea Cascadă; the high section is snowbound and closed roughly late October to June (in 2026 it reopened June 12), so confirm it\'s open before planning a summer/early-autumn crossing.' },
+        { name: 'Sibiu', lat: 45.7983, lng: 24.1256 , notes: 'Saxon old town famous for the "eyes" (dormer windows) watching over Piața Mare and the wrought-iron Bridge of Lies; climb the Council Tower (Turnul Sfatului) for the best rooftop panorama.' },
+        { name: 'Brașov', lat: 45.6427, lng: 25.5887 , notes: 'Medieval old town centered on Council Square and the Gothic Black Church, with a cable car up Tampa mountain for a skyline view over the rooftops.' },
+        { name: 'Bran Castle', lat: 45.5149, lng: 25.3673 , notes: 'White turreted castle on a rock, marketed as "Dracula\'s Castle" though the real link is thin (Vlad the Impaler likely never stayed here); go right at opening (8am) or late afternoon to beat the tour-bus crowds that peak midday.' },
+        { name: 'Peleș Castle (Sinaia)', lat: 45.3597, lng: 25.5406 , notes: 'Lavishly decorated Neo-Renaissance royal castle built for King Carol I, with rooms covered in carved wood, stained glass and armor; the interior is only seen on a timed guided tour with limited daily slots, so buy tickets online or arrive early in high season.' },
+        { name: 'Sighișoara', lat: 46.2197, lng: 24.7944 , notes: 'Intact fortified Saxon citadel with the Clock Tower and covered wooden staircase, plus the house where Vlad the Impaler was born; small enough to see on foot in half a day, and the Clock Tower climb gives the best view over the colored rooftops.' },
       ],
       notes: "Bucharest — the Transfăgărășan Highway north-south — Sibiu — Brașov/Bran/Peleș — Sighișoara — back via Brașov. Budget ~€80-95/day including a rental car (~€25-35/day) and fuel. Season: July-September (the Transfăgărășan is open roughly 1 July-end of October, weather-dependent, and can close on short notice). Web check (2026-08): check CNAIR's website right before departure for the current road status; don't drive outside towns at night (unlit roads, livestock crossing).",
       transport_to_next: 'End of this route — fly home from Bucharest.',
@@ -17871,14 +17976,14 @@ function rbBuildRomaniaExtendedRoute() {
     {
       code: 'RO', name: 'Romania', days: 12, budget: 900, lat: 44.4268, lng: 26.1025,
       destinations: [
-        { name: 'Bucharest', lat: 44.4268, lng: 26.1025 },
-        { name: 'Brașov', lat: 45.6427, lng: 25.5887 },
-        { name: 'Bran Castle', lat: 45.5149, lng: 25.3673 },
-        { name: 'Peleș Castle (Sinaia)', lat: 45.3597, lng: 25.5406 },
-        { name: 'Sighișoara', lat: 46.2197, lng: 24.7944 },
-        { name: 'Sibiu', lat: 45.7983, lng: 24.1256 },
-        { name: 'Maramureș wooden churches (Bârsana area)', lat: 47.7333, lng: 24.1000 },
-        { name: 'Danube Delta (Tulcea)', lat: 45.1667, lng: 28.8000 },
+        { name: 'Bucharest', lat: 44.4268, lng: 26.1025 , notes: 'Capital mixing Belle Époque boulevards (Calea Victoriei, the Athenaeum) with the communist-era Palace of Parliament, the world\'s heaviest building; book a Palace of Parliament tour in advance and bring ID, as walk-up access is limited.' },
+        { name: 'Brașov', lat: 45.6427, lng: 25.5887 , notes: 'Medieval old town centered on Council Square and the Gothic Black Church, with a cable car up Tampa mountain for a skyline view over the rooftops.' },
+        { name: 'Bran Castle', lat: 45.5149, lng: 25.3673 , notes: 'White turreted castle on a rock, marketed as "Dracula\'s Castle" though the real link is thin (Vlad the Impaler likely never stayed here); go right at opening (8am) or late afternoon to beat the tour-bus crowds that peak midday.' },
+        { name: 'Peleș Castle (Sinaia)', lat: 45.3597, lng: 25.5406 , notes: 'Lavishly decorated Neo-Renaissance royal castle built for King Carol I, with rooms covered in carved wood, stained glass and armor; the interior is only seen on a timed guided tour with limited daily slots, so buy tickets online or arrive early in high season.' },
+        { name: 'Sighișoara', lat: 46.2197, lng: 24.7944 , notes: 'Intact fortified Saxon citadel with the Clock Tower and covered wooden staircase, plus the house where Vlad the Impaler was born; small enough to see on foot in half a day, and the Clock Tower climb gives the best view over the colored rooftops.' },
+        { name: 'Sibiu', lat: 45.7983, lng: 24.1256 , notes: 'Saxon old town famous for the "eyes" (dormer windows) watching over Piața Mare and the wrought-iron Bridge of Lies; climb the Council Tower (Turnul Sfatului) for the best rooftop panorama.' },
+        { name: 'Maramureș wooden churches (Bârsana area)', lat: 47.7333, lng: 24.1000 , notes: 'Cluster of UNESCO-listed wooden Orthodox churches with tall shingled steeples (Bârsana monastery, Ieud, Desești); the churches are spread across small villages, so it\'s a rental-car day, not a single stop.' },
+        { name: 'Danube Delta (Tulcea)', lat: 45.1667, lng: 28.8000 , notes: 'Europe\'s largest river delta, a wetland maze of channels and reed beds that\'s one of the continent\'s top birdwatching spots; a single day-boat trip from Tulcea only skims it, so allocate at least one overnight in the delta and go in spring for peak migration.' },
       ],
       notes: "Bucharest (2 days) — Brașov/Bran/Peleș (3 days) — Sighișoara (2 days) — Sibiu (2 days) — Maramureș wooden churches (2 days) — optionally the Danube Delta (2 days, birdwatching, can be mosquito-heavy outside the main season). Budget ~€70-80/day. Season: May-September; the Danube Delta is best April-June/September (fewer mosquitoes, more birds). Web check (2026-08): transport around Maramureș is limited, a rental car is recommended; book Danube Delta boat tours in advance during high season. Dutch travel advisory for Romania is green (last updated 12 March 2026) — with one exception: the Galați-Black Sea border strip is rated yellow due to the Russia-Ukraine conflict (drone debris); the rest of the country, including the Delta itself, is green.",
       transport_to_next: 'End of this route — fly home from Bucharest.',
@@ -17897,11 +18002,11 @@ function rbBuildRomaniaBulgariaTransylvaniaFocusRoute() {
     {
       code: 'RO', name: 'Romania', days: 7, budget: 525, lat: 44.4268, lng: 26.1025,
       destinations: [
-        { name: 'Bucharest', lat: 44.4268, lng: 26.1025 },
-        { name: 'Brașov', lat: 45.6427, lng: 25.5887 },
-        { name: 'Bran Castle', lat: 45.5149, lng: 25.3673 },
-        { name: 'Peleș Castle (Sinaia)', lat: 45.3597, lng: 25.5406 },
-        { name: 'Sighișoara', lat: 46.2197, lng: 24.7944 },
+        { name: 'Bucharest', lat: 44.4268, lng: 26.1025 , notes: 'Capital mixing Belle Époque boulevards (Calea Victoriei, the Athenaeum) with the communist-era Palace of Parliament, the world\'s heaviest building; book a Palace of Parliament tour in advance and bring ID, as walk-up access is limited.' },
+        { name: 'Brașov', lat: 45.6427, lng: 25.5887 , notes: 'Medieval old town centered on Council Square and the Gothic Black Church, with a cable car up Tampa mountain for a skyline view over the rooftops.' },
+        { name: 'Bran Castle', lat: 45.5149, lng: 25.3673 , notes: 'White turreted castle on a rock, marketed as "Dracula\'s Castle" though the real link is thin (Vlad the Impaler likely never stayed here); go right at opening (8am) or late afternoon to beat the tour-bus crowds that peak midday.' },
+        { name: 'Peleș Castle (Sinaia)', lat: 45.3597, lng: 25.5406 , notes: 'Lavishly decorated Neo-Renaissance royal castle built for King Carol I, with rooms covered in carved wood, stained glass and armor; the interior is only seen on a timed guided tour with limited daily slots, so buy tickets online or arrive early in high season.' },
+        { name: 'Sighișoara', lat: 46.2197, lng: 24.7944 , notes: 'Intact fortified Saxon citadel with the Clock Tower and covered wooden staircase, plus the house where Vlad the Impaler was born; small enough to see on foot in half a day, and the Clock Tower climb gives the best view over the colored rooftops.' },
       ],
       notes: "Bucharest (2 days) — Brașov/Bran/Peleș/Sighișoara (5 days). Budget ~€75/day. Deliberately Transylvania-heavy, starting in Romania — a different angle on the same two countries as the 'Bulgaria + Romania: Black Sea Coast' route (which starts in Bulgaria and leans Black Sea/Sofia). Season: June-September.",
       transport_to_next: "Cross the border at Giurgiu-Ruse (the Friendship Bridge) — no standard checks since Romania became fully Schengen (including land borders) on 1 January 2025. Notify your rental car company in advance of crossing the border; a green card is required (~€60 extra plus possibly a €6/day surcharge).",
@@ -17909,9 +18014,9 @@ function rbBuildRomaniaBulgariaTransylvaniaFocusRoute() {
     {
       code: 'BG', name: 'Bulgaria', days: 5, budget: 340, lat: 42.6977, lng: 23.3219,
       destinations: [
-        { name: 'Veliko Tarnovo', lat: 43.0757, lng: 25.6172 },
-        { name: 'Sofia', lat: 42.6977, lng: 23.3219 },
-        { name: 'Rila Monastery', lat: 42.1333, lng: 23.3400 },
+        { name: 'Veliko Tarnovo', lat: 43.0757, lng: 25.6172 , notes: 'Bulgaria\'s medieval capital, built around the Tsarevets fortress ruins on a hilltop looped by the Yantra river gorge; a sound-and-light show is still staged there in 2026, but only on holidays/special occasions (not nightly), so check the schedule before counting on it.' },
+        { name: 'Sofia', lat: 42.6977, lng: 23.3219 , notes: 'Bulgarian capital centered on the gold-domed Alexander Nevski Cathedral and a compact old town mixing Roman ruins (the Serdika complex), the St. George Rotunda, and Ottoman-era mosques within walking distance of each other.' },
+        { name: 'Rila Monastery', lat: 42.1333, lng: 23.3400 , notes: 'Bulgaria\'s most revered monastery, famous for its striped Renaissance-era arcades and vivid frescoes, tucked in a valley in the Rila mountains; it\'s about a 2-hour drive from Sofia and gets swarmed by tour buses around midday, so aim for early morning.' },
       ],
       notes: "Veliko Tarnovo (2 days) — Sofia (2 days) — optionally the Rila Monastery as a day trip. Budget ~€68/day (Bulgaria runs a bit cheaper than Romania). Season: June-September.",
       transport_to_next: 'End of this route — fly home from Sofia.',
@@ -17930,9 +18035,9 @@ function rbBuildSofiaRilaMonasteryRoute() {
     {
       code: 'BG', name: 'Bulgaria', days: 5, budget: 300, lat: 42.6977, lng: 23.3219,
       destinations: [
-        { name: 'Sofia (Alexander Nevski Cathedral)', lat: 42.6977, lng: 23.3219 },
-        { name: 'Vitosha Mountain', lat: 42.5667, lng: 23.2833 },
-        { name: 'Rila Monastery', lat: 42.1333, lng: 23.3400 },
+        { name: 'Sofia (Alexander Nevski Cathedral)', lat: 42.6977, lng: 23.3219 , notes: 'Bulgarian capital centered on the gold-domed Alexander Nevski Cathedral and a compact old town mixing Roman ruins (the Serdika complex), the St. George Rotunda, and Ottoman-era mosques within walking distance of each other.' },
+        { name: 'Vitosha Mountain', lat: 42.5667, lng: 23.2833 , notes: 'Mountain rising right at Sofia\'s southern edge, popular for an easy hiking or skiing day trip via the Simeonovo gondola; the Boyana waterfall and Cherni Vrah peak are the two highlights most visitors miss if they don\'t go beyond the ski-lift area.' },
+        { name: 'Rila Monastery', lat: 42.1333, lng: 23.3400 , notes: 'Bulgaria\'s most revered monastery, famous for its striped Renaissance-era arcades and vivid frescoes, tucked in a valley in the Rila mountains; it\'s about a 2-hour drive from Sofia and gets swarmed by tour buses around midday, so aim for early morning.' },
       ],
       notes: "Sofia (3 days, Alexander Nevski Cathedral, Vitosha Mountain) — Rila Monastery as a day trip (2h drive). Budget ~€55-65/day. Season: May-September; the monastery is accessible year-round but the mountain road can be icy in winter. Web check (2026-08): the monastery complex and church are free, museums charge separately (~€12 combo ticket), grounds open roughly 7:00-20:00 (check current hours); clothing covering shoulders and knees is required. Dutch travel advisory for Bulgaria is green (last updated 29 April 2026), no exceptions. Bulgaria adopted the euro on 1 January 2026 (fixed rate 1 EUR = 1.95583 BGN) and it became the sole legal currency on 1 February 2026 — dual BGN/EUR pricing is still required until 8 August 2026, useful for spotting outdated BGN-only prices online.",
       transport_to_next: 'End of this route — fly home from Sofia.',
@@ -17951,9 +18056,9 @@ function rbBuildSofiaPlovdivRoute() {
     {
       code: 'BG', name: 'Bulgaria', days: 6, budget: 360, lat: 42.6977, lng: 23.3219,
       destinations: [
-        { name: 'Sofia', lat: 42.6977, lng: 23.3219 },
-        { name: 'Plovdiv (Old Town / Roman Theatre)', lat: 42.1354, lng: 24.7453 },
-        { name: 'Rila Monastery', lat: 42.1333, lng: 23.3400 },
+        { name: 'Sofia', lat: 42.6977, lng: 23.3219 , notes: 'Bulgarian capital centered on the gold-domed Alexander Nevski Cathedral and a compact old town mixing Roman ruins (the Serdika complex), the St. George Rotunda, and Ottoman-era mosques within walking distance of each other.' },
+        { name: 'Plovdiv (Old Town / Roman Theatre)', lat: 42.1354, lng: 24.7453 , notes: 'One of Europe\'s oldest continuously inhabited cities, with a cobbled old town of Ottoman-era houses and a still-functioning 2nd-century Roman theatre used for concerts; the Kapana creative district next door is worth an evening for food and bars.' },
+        { name: 'Rila Monastery', lat: 42.1333, lng: 23.3400 , notes: 'Bulgaria\'s most revered monastery, famous for its striped Renaissance-era arcades and vivid frescoes, tucked in a valley in the Rila mountains; it\'s about a 2-hour drive from Sofia and gets swarmed by tour buses around midday, so aim for early morning.' },
       ],
       notes: "Sofia (2 days) — Plovdiv (2 days, old town and the Roman theatre) — Rila Monastery as a day trip from Sofia. Budget ~€55-65/day. Season: May-June or September, mild and less crowded; Plovdiv gets hot in summer. Web check (2026-08): the Sofia-Plovdiv train takes about 2.5 hours, a fine alternative to a rental car.",
       transport_to_next: 'End of this route — fly home from Sofia.',
@@ -17972,11 +18077,11 @@ function rbBuildBulgariaRoadtripRoute() {
     {
       code: 'BG', name: 'Bulgaria', days: 9, budget: 675, lat: 42.6977, lng: 23.3219,
       destinations: [
-        { name: 'Sofia', lat: 42.6977, lng: 23.3219 },
-        { name: 'Plovdiv', lat: 42.1354, lng: 24.7453 },
-        { name: 'Rila Monastery', lat: 42.1333, lng: 23.3400 },
-        { name: 'Melnik', lat: 41.5333, lng: 23.3833 },
-        { name: 'Rhodope Mountains', lat: 41.6500, lng: 24.7500 },
+        { name: 'Sofia', lat: 42.6977, lng: 23.3219 , notes: 'Bulgarian capital centered on the gold-domed Alexander Nevski Cathedral and a compact old town mixing Roman ruins (the Serdika complex), the St. George Rotunda, and Ottoman-era mosques within walking distance of each other.' },
+        { name: 'Plovdiv', lat: 42.1354, lng: 24.7453 , notes: 'One of Europe\'s oldest continuously inhabited cities, with a cobbled old town of Ottoman-era houses and a still-functioning 2nd-century Roman theatre used for concerts; the Kapana creative district next door is worth an evening for food and bars.' },
+        { name: 'Rila Monastery', lat: 42.1333, lng: 23.3400 , notes: 'Bulgaria\'s most revered monastery, famous for its striped Renaissance-era arcades and vivid frescoes, tucked in a valley in the Rila mountains; it\'s about a 2-hour drive from Sofia and gets swarmed by tour buses around midday, so aim for early morning.' },
+        { name: 'Melnik', lat: 41.5333, lng: 23.3833 , notes: 'Bulgaria\'s smallest town, wedged among eroded sandstone pyramid formations, known for traditional wine cellars carved into the sandstone; pair it with a stop at nearby Rozhen Monastery and try the local Melnik wine straight from a cellar (mehana).' },
+        { name: 'Rhodope Mountains', lat: 41.6500, lng: 24.7500 , notes: 'Mountain range in southern Bulgaria dotted with traditional stone-and-wood villages (Kovachevitsa, Leshten) and nature sites like the Trigrad Gorge and Yagodina cave; pick one or two villages plus a natural feature rather than trying to cover the whole range in a day.' },
       ],
       notes: "Sofia (2 days) — Plovdiv (2 days) — the Rila/Melnik wine region (2 days) — the Rhodope Mountains (2 days) — back via Sofia. Budget ~€70-80/day including a rental car. Season: May-September, the Rhodopes are beautiful in early autumn. Web check (2026-08): Rhodope mountain roads are sometimes unpaved, check the local road status in advance; mobile signal can drop out on remote mountain roads.",
       transport_to_next: 'End of this route — fly home from Sofia.',
@@ -17995,8 +18100,8 @@ function rbBuildBulgariaRomaniaBlackSeaCoastRoute() {
     {
       code: 'BG', name: 'Bulgaria', days: 7, budget: 476, lat: 42.6977, lng: 23.3219,
       destinations: [
-        { name: 'Sofia', lat: 42.6977, lng: 23.3219 },
-        { name: 'Plovdiv', lat: 42.1354, lng: 24.7453 },
+        { name: 'Sofia', lat: 42.6977, lng: 23.3219 , notes: 'Bulgarian capital centered on the gold-domed Alexander Nevski Cathedral and a compact old town mixing Roman ruins (the Serdika complex), the St. George Rotunda, and Ottoman-era mosques within walking distance of each other.' },
+        { name: 'Plovdiv', lat: 42.1354, lng: 24.7453 , notes: 'One of Europe\'s oldest continuously inhabited cities, with a cobbled old town of Ottoman-era houses and a still-functioning 2nd-century Roman theatre used for concerts; the Kapana creative district next door is worth an evening for food and bars.' },
         { name: 'Varna', lat: 43.2141, lng: 27.9147 },
         { name: 'Golden Sands', lat: 43.2833, lng: 28.0333 },
         { name: 'Sunny Beach', lat: 42.6833, lng: 27.7167 },
@@ -18007,7 +18112,7 @@ function rbBuildBulgariaRomaniaBlackSeaCoastRoute() {
     {
       code: 'RO', name: 'Romania', days: 2, budget: 154, lat: 44.4268, lng: 26.1025,
       destinations: [
-        { name: 'Bucharest', lat: 44.4268, lng: 26.1025 },
+        { name: 'Bucharest', lat: 44.4268, lng: 26.1025 , notes: 'Capital mixing Belle Époque boulevards (Calea Victoriei, the Athenaeum) with the communist-era Palace of Parliament, the world\'s heaviest building; book a Palace of Parliament tour in advance and bring ID, as walk-up access is limited.' },
       ],
       notes: "Bucharest (2 days) as a closing stop. Budget ~€77/day.",
       transport_to_next: 'End of this route — fly home from Bucharest.',
@@ -18026,9 +18131,9 @@ function rbBuildBulgariaGreeceSofiaMeteoraRoute() {
     {
       code: 'BG', name: 'Bulgaria', days: 6, budget: 390, lat: 42.6977, lng: 23.3219,
       destinations: [
-        { name: 'Sofia', lat: 42.6977, lng: 23.3219 },
-        { name: 'Rila Monastery', lat: 42.1333, lng: 23.3400 },
-        { name: 'Plovdiv', lat: 42.1354, lng: 24.7453 },
+        { name: 'Sofia', lat: 42.6977, lng: 23.3219 , notes: 'Bulgarian capital centered on the gold-domed Alexander Nevski Cathedral and a compact old town mixing Roman ruins (the Serdika complex), the St. George Rotunda, and Ottoman-era mosques within walking distance of each other.' },
+        { name: 'Rila Monastery', lat: 42.1333, lng: 23.3400 , notes: 'Bulgaria\'s most revered monastery, famous for its striped Renaissance-era arcades and vivid frescoes, tucked in a valley in the Rila mountains; it\'s about a 2-hour drive from Sofia and gets swarmed by tour buses around midday, so aim for early morning.' },
+        { name: 'Plovdiv', lat: 42.1354, lng: 24.7453 , notes: 'One of Europe\'s oldest continuously inhabited cities, with a cobbled old town of Ottoman-era houses and a still-functioning 2nd-century Roman theatre used for concerts; the Kapana creative district next door is worth an evening for food and bars.' },
       ],
       notes: "Sofia (2 days) — the Rila Monastery as a day trip — Plovdiv (2 days) — travel day toward the border. Budget ~€65/day. Season: May-June or September.",
       transport_to_next: "Cross the border at Kulata — open, no Schengen-related delay.",
@@ -18057,10 +18162,10 @@ function rbBuildMoldovaRoute() {
     {
       code: 'MD', name: 'Moldova', days: 5, budget: 200, lat: 47.0105, lng: 28.8638,
       destinations: [
-        { name: 'Chișinău', lat: 47.0105, lng: 28.8638 },
+        { name: 'Chișinău', lat: 47.0105, lng: 28.8638 , notes: 'Moldova\'s low-key capital, mainly a base for the country\'s wine-cellar day trips, with the Triumphal Arch and Nativity Cathedral as the main central sights.' },
         { name: 'Cricova wine cellar', lat: 47.2333, lng: 28.8500 },
         { name: 'Mileștii Mici wine cellar', lat: 46.9333, lng: 28.8333 },
-        { name: 'Orheiul Vechi', lat: 47.3833, lng: 28.9333 },
+        { name: 'Orheiul Vechi', lat: 47.3833, lng: 28.9333 , notes: 'Historic complex with a cave monastery carved into limestone cliffs above a bend in the Răut river, near Chișinău; allocate a half day to see the cliffside cave church plus the archaeological site on top, and wear decent shoes for the climb down to the cave.' },
         { name: 'Comrat (Gagauzia)', lat: 46.3000, lng: 28.6500 },
       ],
       notes: "Chișinău (2 days) — a day trip to the Cricova or Mileștii Mici wine cellars — Orheiul Vechi (1 day) — optionally Gagauzia/Comrat as a 5th day. Budget ~€35-45/day. Season: May-June or September-October (wine harvest). Web check (2026-08): the combined Cricova+Mileștii Mici tour starts around $230 (pricey — consider a standalone Cricova tour instead, ~$95-110); Orheiul Vechi entry is 20 MDL, no fixed opening hours. Dutch travel advisory for Moldova is yellow (last updated 21 May 2026), ordinary caution advised.",
@@ -18080,9 +18185,9 @@ function rbBuildMoldovaTransnistriaRoute() {
     {
       code: 'MD', name: 'Moldova', days: 6, budget: 220, lat: 47.0105, lng: 28.8638,
       destinations: [
-        { name: 'Chișinău', lat: 47.0105, lng: 28.8638 },
-        { name: 'Cricova / Mileștii Mici wine cellars', lat: 47.2333, lng: 28.8500 },
-        { name: 'Orheiul Vechi', lat: 47.3833, lng: 28.9333 },
+        { name: 'Chișinău', lat: 47.0105, lng: 28.8638 , notes: 'Moldova\'s low-key capital, mainly a base for the country\'s wine-cellar day trips, with the Triumphal Arch and Nativity Cathedral as the main central sights.' },
+        { name: 'Cricova / Mileștii Mici wine cellars', lat: 47.2333, lng: 28.8500 , notes: 'Vast underground tunnel networks (Mileștii Mici holds the Guinness record for the world\'s largest wine collection, over 200km of galleries); you cannot just show up — a guided tour must be booked in advance (ideally a couple of days ahead) directly through the winery.' },
+        { name: 'Orheiul Vechi', lat: 47.3833, lng: 28.9333 , notes: 'Historic complex with a cave monastery carved into limestone cliffs above a bend in the Răut river, near Chișinău; allocate a half day to see the cliffside cave church plus the archaeological site on top, and wear decent shoes for the climb down to the cave.' },
         { name: 'Tiraspol (Transnistria, day trip only)', lat: 46.8403, lng: 29.6433 },
         { name: 'Bender / Bendery (Transnistria, day trip only)', lat: 46.8333, lng: 29.4667 },
       ],
@@ -18103,8 +18208,8 @@ function rbBuildMoldovaRomaniaRoute() {
     {
       code: 'MD', name: 'Moldova', days: 4, budget: 180, lat: 47.0105, lng: 28.8638,
       destinations: [
-        { name: 'Chișinău', lat: 47.0105, lng: 28.8638 },
-        { name: 'Orheiul Vechi', lat: 47.3833, lng: 28.9333 },
+        { name: 'Chișinău', lat: 47.0105, lng: 28.8638 , notes: 'Moldova\'s low-key capital, mainly a base for the country\'s wine-cellar day trips, with the Triumphal Arch and Nativity Cathedral as the main central sights.' },
+        { name: 'Orheiul Vechi', lat: 47.3833, lng: 28.9333 , notes: 'Historic complex with a cave monastery carved into limestone cliffs above a bend in the Răut river, near Chișinău; allocate a half day to see the cliffside cave church plus the archaeological site on top, and wear decent shoes for the climb down to the cave.' },
       ],
       notes: "Chișinău (2 days) — Orheiul Vechi as a day trip — buffer/travel day. Budget ~€45/day. Season: May-June or September.",
       transport_to_next: "Cross the border to Iași (~1.5h drive) — this is a full EU external border (passport control, no Schengen ease), expect wait time. The EU's Entry/Exit System (EES, fully operational since 10 April 2026) applies only to non-EU nationals — as a Dutch/EU citizen you aren't subject to it on the way back.",
@@ -18112,9 +18217,9 @@ function rbBuildMoldovaRomaniaRoute() {
     {
       code: 'RO', name: 'Romania', days: 5, budget: 250, lat: 47.1585, lng: 27.6014,
       destinations: [
-        { name: 'Iași', lat: 47.1585, lng: 27.6014 },
-        { name: 'Sighișoara', lat: 46.2197, lng: 24.7944 },
-        { name: 'Brașov', lat: 45.6427, lng: 25.5887 },
+        { name: 'Iași', lat: 47.1585, lng: 27.6014 , notes: 'Romania\'s former princely capital, known for its ornate Orthodox churches (especially the Three Hierarchs Church with its all-over stone-carved facade) and the vast Neo-Gothic Palace of Culture, which alone houses four museums worth a couple of hours.' },
+        { name: 'Sighișoara', lat: 46.2197, lng: 24.7944 , notes: 'Intact fortified Saxon citadel with the Clock Tower and covered wooden staircase, plus the house where Vlad the Impaler was born; small enough to see on foot in half a day, and the Clock Tower climb gives the best view over the colored rooftops.' },
+        { name: 'Brașov', lat: 45.6427, lng: 25.5887 , notes: 'Medieval old town centered on Council Square and the Gothic Black Church, with a cable car up Tampa mountain for a skyline view over the rooftops.' },
       ],
       notes: "Iași (1-2 days) — Sighișoara/Transylvania (2-3 days) — optionally Brașov. Budget ~€50/day. Season: May-June or September (autumn colours in Transylvania).",
       transport_to_next: 'End of this route — fly home from Bucharest or Sibiu.',
@@ -18133,11 +18238,11 @@ function rbBuildRomaniaMoldovaExtendedRoute() {
     {
       code: 'RO', name: 'Romania', days: 9, budget: 405, lat: 44.4268, lng: 26.1025,
       destinations: [
-        { name: 'Bucharest', lat: 44.4268, lng: 26.1025 },
-        { name: 'Brașov', lat: 45.6427, lng: 25.5887 },
-        { name: 'Sighișoara', lat: 46.2197, lng: 24.7944 },
-        { name: 'Sibiu', lat: 45.7983, lng: 24.1256 },
-        { name: 'Iași', lat: 47.1585, lng: 27.6014 },
+        { name: 'Bucharest', lat: 44.4268, lng: 26.1025 , notes: 'Capital mixing Belle Époque boulevards (Calea Victoriei, the Athenaeum) with the communist-era Palace of Parliament, the world\'s heaviest building; book a Palace of Parliament tour in advance and bring ID, as walk-up access is limited.' },
+        { name: 'Brașov', lat: 45.6427, lng: 25.5887 , notes: 'Medieval old town centered on Council Square and the Gothic Black Church, with a cable car up Tampa mountain for a skyline view over the rooftops.' },
+        { name: 'Sighișoara', lat: 46.2197, lng: 24.7944 , notes: 'Intact fortified Saxon citadel with the Clock Tower and covered wooden staircase, plus the house where Vlad the Impaler was born; small enough to see on foot in half a day, and the Clock Tower climb gives the best view over the colored rooftops.' },
+        { name: 'Sibiu', lat: 45.7983, lng: 24.1256 , notes: 'Saxon old town famous for the "eyes" (dormer windows) watching over Piața Mare and the wrought-iron Bridge of Lies; climb the Council Tower (Turnul Sfatului) for the best rooftop panorama.' },
+        { name: 'Iași', lat: 47.1585, lng: 27.6014 , notes: 'Romania\'s former princely capital, known for its ornate Orthodox churches (especially the Three Hierarchs Church with its all-over stone-carved facade) and the vast Neo-Gothic Palace of Culture, which alone houses four museums worth a couple of hours.' },
       ],
       notes: "Bucharest (2 days) — Brașov/Sighișoara/Sibiu (4-5 days) — Iași (1-2 days). Budget ~€45/day. Season: May-June/September. Web check (2026-08): bears are active in the Carpathians when camping/hiking around Brașov/Sibiu.",
       transport_to_next: "Cross the border toward Chișinău — this is a full EU external border (passport control, no Schengen ease), expect wait time. The EES (EU Entry/Exit System, fully operational since 10 April 2026) applies only to non-EU nationals — as a Dutch/EU citizen you aren't subject to it on the way back.",
@@ -18145,9 +18250,9 @@ function rbBuildRomaniaMoldovaExtendedRoute() {
     {
       code: 'MD', name: 'Moldova', days: 3, budget: 135, lat: 47.0105, lng: 28.8638,
       destinations: [
-        { name: 'Chișinău', lat: 47.0105, lng: 28.8638 },
-        { name: 'Cricova / Mileștii Mici wine cellars', lat: 47.2333, lng: 28.8500 },
-        { name: 'Orheiul Vechi', lat: 47.3833, lng: 28.9333 },
+        { name: 'Chișinău', lat: 47.0105, lng: 28.8638 , notes: 'Moldova\'s low-key capital, mainly a base for the country\'s wine-cellar day trips, with the Triumphal Arch and Nativity Cathedral as the main central sights.' },
+        { name: 'Cricova / Mileștii Mici wine cellars', lat: 47.2333, lng: 28.8500 , notes: 'Vast underground tunnel networks (Mileștii Mici holds the Guinness record for the world\'s largest wine collection, over 200km of galleries); you cannot just show up — a guided tour must be booked in advance (ideally a couple of days ahead) directly through the winery.' },
+        { name: 'Orheiul Vechi', lat: 47.3833, lng: 28.9333 , notes: 'Historic complex with a cave monastery carved into limestone cliffs above a bend in the Răut river, near Chișinău; allocate a half day to see the cliffside cave church plus the archaeological site on top, and wear decent shoes for the climb down to the cave.' },
       ],
       notes: "Chișinău (2 days) including a wine cellar visit — Orheiul Vechi (1 day). Budget ~€45/day.",
       transport_to_next: 'End of this route — fly home from Chișinău.',

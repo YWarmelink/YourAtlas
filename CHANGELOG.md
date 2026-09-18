@@ -30,6 +30,20 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   already present in the existing data, no change needed to how batches insert notes or build
   their migration functions.
 
+- **Per-destination notes, batches 73-75 — Romania/Bulgaria/Moldova clusters (2026-09-18)** — a
+  very high-leverage trio spanning many sibling routes (Transylvania + Carpathian Mountains,
+  Romania Roadtrip, Romania: Extended, Romania + Bulgaria: Transylvania Focus, Sofia + Rila
+  Monastery, Sofia + Plovdiv, Bulgaria Roadtrip, Romania + Moldova: Extended), 22 destinations
+  plus 2 name-variant reuses (Sofia, Plovdiv).
+  - Batch 73: Romania cluster — Brașov, Bran Castle, Peleș Castle, Sighișoara, Sibiu, Bucegi
+    Mountains, Piatra Craiului NP, Transfăgărășan Highway, Bucharest, Maramureș wooden churches,
+    Danube Delta (`rbMigrateRomaniaClusterDestinationNotes()`)
+  - Batch 74: Bulgaria cluster — Sofia, Vitosha Mountain, Rila Monastery, Veliko Tarnovo,
+    Plovdiv, Melnik, Rhodope Mountains (`rbMigrateBulgariaClusterDestinationNotes()`)
+  - Batch 75: Moldova cluster — Iași, Chișinău, Cricova/Mileștii Mici wine cellars, Orheiul
+    Vechi (`rbMigrateMoldovaClusterDestinationNotes()`)
+  App-wide total: 3148 destination-slots filled across 380 routes. 432/741 signatures done.
+
 - **Per-destination notes, batches 71-72 — Athens+Peloponnese / Northern Greece clusters
   (2026-09-18)** — a very high-leverage pair: Athens (6 routes, 2 name variants sharing one
   note), Meteora (5 routes), Delphi/Olympia (4 routes each). 18 destinations total.

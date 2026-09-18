@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 417 / 741 signatures.**
+- **Done so far: 432 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -268,12 +268,12 @@ Sorted alphabetically by country code.
 - [ ] **BE** (4 dest): Bruges, Ghent, De Haan, Ostend — routes: Belgian Coast + Bruges + Ghent (4 days) 🚲
 - [ ] **BE** (3 dest): Bruges, Ghent, Antwerp — routes: Belgium: Bruges + Ghent + Antwerp + Ardennes (5 days) 🍺
 - [ ] **BE** (2 dest): Dinant, La Roche-en-Ardenne — routes: Belgium: Bruges + Ghent + Antwerp + Ardennes (5 days) 🍺
-- [ ] **BG** (3 dest): Sofia, Rila Monastery, Plovdiv — routes: Bulgaria + Greece: Sofia to Meteora (12 days) ⛰️
+- [x] **BG** (3 dest): Sofia, Rila Monastery, Plovdiv — routes: Bulgaria + Greece: Sofia to Meteora (12 days) ⛰️
 - [ ] **BG** (5 dest): Sofia, Plovdiv, Varna, Golden Sands, Sunny Beach — routes: Bulgaria + Romania: Black Sea Coast (9 days) 🌊
-- [ ] **BG** (5 dest): Sofia, Plovdiv, Rila Monastery, Melnik, Rhodope Mountains — routes: Bulgaria Roadtrip (9 days) 🚗
-- [ ] **BG** (3 dest): Veliko Tarnovo, Sofia, Rila Monastery — routes: Romania + Bulgaria: Transylvania Focus (12 days) 🏰
-- [ ] **BG** (3 dest): Sofia, Plovdiv (Old Town / Roman Theatre), Rila Monastery — routes: Sofia + Plovdiv (6 days) 🏛️
-- [ ] **BG** (3 dest): Sofia (Alexander Nevski Cathedral), Vitosha Mountain, Rila Monastery — routes: Sofia + Rila Monastery (5 days) ⛪
+- [x] **BG** (5 dest): Sofia, Plovdiv, Rila Monastery, Melnik, Rhodope Mountains — routes: Bulgaria Roadtrip (9 days) 🚗
+- [x] **BG** (3 dest): Veliko Tarnovo, Sofia, Rila Monastery — routes: Romania + Bulgaria: Transylvania Focus (12 days) 🏰
+- [x] **BG** (3 dest): Sofia, Plovdiv (Old Town / Roman Theatre), Rila Monastery — routes: Sofia + Plovdiv (6 days) 🏛️
+- [x] **BG** (3 dest): Sofia (Alexander Nevski Cathedral), Vitosha Mountain, Rila Monastery — routes: Sofia + Rila Monastery (5 days) ⛪
 - [x] **BH** (3 dest): Qal'at al-Bahrain (Bahrain Fort), Bahrain National Museum, Al Fateh Grand Mosque — routes: Gulf States Trio 🛢️
 - [x] **BN** (3 dest): Bandar Seri Begawan, Kampong Ayer, Ulu Temburong NP (guided day tour) — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
 - [x] **BO** (2 dest): Copacabana, Isla del Sol (day trip) — routes: Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂
@@ -602,9 +602,9 @@ Sorted alphabetically by country code.
 - [x] **MC** (1 dest): Monte Carlo / Monaco-Ville — routes: Monaco + Nice + Provence (5 days) 🍇
 - [ ] **MC** (6 dest): Casino Square, Prince's Palace (changing of the guard, 11:55), Monaco-Ville old town, Oceanographic Museum, Port Hercule, Larvotto beach — routes: Monaco: Monte Carlo (2 days) 🎲
 - [ ] **MD** (5 dest): Chișinău, Cricova wine cellar, Mileștii Mici wine cellar, Orheiul Vechi, Comrat (Gagauzia) — routes: Moldova (5 days) 🍷
-- [ ] **MD** (2 dest): Chișinău, Orheiul Vechi — routes: Moldova + Romania (9 days) 🍷
+- [x] **MD** (2 dest): Chișinău, Orheiul Vechi — routes: Moldova + Romania (9 days) 🍷
 - [ ] **MD** (5 dest): Chișinău, Cricova / Mileștii Mici wine cellars, Orheiul Vechi, Tiraspol (Transnistria, day trip only), Bender / Bendery (Transnistria, day trip only) — routes: Moldova + Transnistria (6 days) 🍇
-- [ ] **MD** (3 dest): Chișinău, Cricova / Mileștii Mici wine cellars, Orheiul Vechi — routes: Romania + Moldova: Extended (12 days) 🍷
+- [x] **MD** (3 dest): Chișinău, Cricova / Mileștii Mici wine cellars, Orheiul Vechi — routes: Romania + Moldova: Extended (12 days) 🍷
 - [x] **ME** (1 dest): Kotor Old Town + Bay of Kotor — routes: Bosnia + Croatia + Montenegro (12 days) 🗺️
 - [x] **ME** (1 dest): Žabljak / Durmitor National Park — routes: Kosovo + Montenegro + Albania (9 days) 🗻
 - [ ] **ME** (4 dest): Kotor Old Town, Perast, Herceg Novi, Tivat — routes: Kotor + Bay of Kotor (5 days) ⚓
@@ -679,14 +679,14 @@ Sorted alphabetically by country code.
 - [ ] **PT** (4 dest): Ponta Delgada (town, harbour), Sete Cidades (crater lakes), Furnas (thermal springs, cozido), Lagoa do Fogo — routes: São Miguel (Azores) (5-7 days) 🏝️
 - [ ] **PW** (5 dest): Koror, Rock Islands Southern Lagoon & Jellyfish Lake, Blue Corner (dive site), Peleliu Island (WWII battle sites), Ngardmau Waterfall, Babeldaob — routes: Palau 🦈
 - [ ] **RO** (4 dest): Bucharest (Old Town / Palace of the Parliament, "Ceaușescu's Palace"), Brașov, Bran Castle, Peleș Castle (Sinaia) — routes: Bucharest + Transylvania (5 days) 🏰
-- [ ] **RO** (1 dest): Bucharest — routes: Bulgaria + Romania: Black Sea Coast (9 days) 🌊
-- [ ] **RO** (3 dest): Iași, Sighișoara, Brașov — routes: Moldova + Romania (9 days) 🍷
-- [ ] **RO** (5 dest): Bucharest, Brașov, Bran Castle, Peleș Castle (Sinaia), Sighișoara — routes: Romania + Bulgaria: Transylvania Focus (12 days) 🏰
-- [ ] **RO** (5 dest): Bucharest, Brașov, Sighișoara, Sibiu, Iași — routes: Romania + Moldova: Extended (12 days) 🍷
-- [ ] **RO** (7 dest): Bucharest, Transfăgărășan Highway (Bâlea Lake), Sibiu, Brașov, Bran Castle, Peleș Castle (Sinaia), Sighișoara — routes: Romania Roadtrip (9 days) 🚗
-- [ ] **RO** (8 dest): Bucharest, Brașov, Bran Castle, Peleș Castle (Sinaia), Sighișoara, Sibiu, Maramureș wooden churches (Bârsana area), Danube Delta (Tulcea) — routes: Romania: Extended (12 days) 🏰
-- [ ] **RO** (5 dest): Brașov, Bran Castle, Peleș Castle (Sinaia), Sighișoara, Sibiu — routes: Transylvania (6 days) 🦇
-- [ ] **RO** (8 dest): Brașov, Bran Castle, Peleș Castle (Sinaia), Sighișoara, Sibiu, Bucegi Mountains, Piatra Craiului National Park, Transfăgărășan Highway (Bâlea Lake) — routes: Transylvania + Carpathian Mountains (9 days) 🏔️
+- [x] **RO** (1 dest): Bucharest — routes: Bulgaria + Romania: Black Sea Coast (9 days) 🌊
+- [x] **RO** (3 dest): Iași, Sighișoara, Brașov — routes: Moldova + Romania (9 days) 🍷
+- [x] **RO** (5 dest): Bucharest, Brașov, Bran Castle, Peleș Castle (Sinaia), Sighișoara — routes: Romania + Bulgaria: Transylvania Focus (12 days) 🏰
+- [x] **RO** (5 dest): Bucharest, Brașov, Sighișoara, Sibiu, Iași — routes: Romania + Moldova: Extended (12 days) 🍷
+- [x] **RO** (7 dest): Bucharest, Transfăgărășan Highway (Bâlea Lake), Sibiu, Brașov, Bran Castle, Peleș Castle (Sinaia), Sighișoara — routes: Romania Roadtrip (9 days) 🚗
+- [x] **RO** (8 dest): Bucharest, Brașov, Bran Castle, Peleș Castle (Sinaia), Sighișoara, Sibiu, Maramureș wooden churches (Bârsana area), Danube Delta (Tulcea) — routes: Romania: Extended (12 days) 🏰
+- [x] **RO** (5 dest): Brașov, Bran Castle, Peleș Castle (Sinaia), Sighișoara, Sibiu — routes: Transylvania (6 days) 🦇
+- [x] **RO** (8 dest): Brașov, Bran Castle, Peleș Castle (Sinaia), Sighișoara, Sibiu, Bucegi Mountains, Piatra Craiului National Park, Transfăgărășan Highway (Bâlea Lake) — routes: Transylvania + Carpathian Mountains (9 days) 🏔️
 - [x] **RS** (1 dest): Belgrade (Kalemegdan) — routes: Balkan Roadtrip: Serbia + North Macedonia + Albania + Kosovo (14 days) 🔄
 - [ ] **RS** (4 dest): Belgrade (Kalemegdan), Belgrade (Skadarlija), Novi Sad + Petrovaradin Fortress, Fruška Gora monasteries (Krušedol) — routes: Belgrade + Surroundings (5 days) 🏛️
 - [x] **RS** (3 dest): Belgrade, Tara National Park (day trip from Belgrade, round-trip), Novi Sad — routes: Central European Grand Roadtrip 🚗
@@ -781,10 +781,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Catalonia + Pyrenees (9 days) ⛰️ | 8/8 | 0 |
 | Spain: North to Central (12 days) 🚉 | 8/8 | 0 |
 | Spain: East to South (12 days) 🌅 | 8/8 | 0 |
-| Transylvania + Carpathian Mountains (9 days) 🏔️ | 8/8 | 0 |
-| Romania: Extended (12 days) 🏰 | 8/8 | 0 |
-| Romania + Bulgaria: Transylvania Focus (12 days) 🏰 | 8/8 | 0 |
-| Romania + Moldova: Extended (12 days) 🍷 | 8/8 | 0 |
 | South Iceland (6 days) 🌊 | 8/8 | 0 |
 | Iceland South Coast (9 days) 🧊 | 8/8 | 0 |
 | Wild Atlantic Way (7-10 days) 🌅 | 8/8 | 0 |
@@ -803,11 +799,15 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Gibraltar + Andalusia: Costa del Sol (4 days) 🐒 | 7/7 | 0 |
 | Andorra + French Pyrenees: Ariège (6 days) ♨️ | 7/7 | 0 |
 | Montenegro Roadtrip (9 days) 🚙 | 7/7 | 0 |
-| Romania Roadtrip (9 days) 🚗 | 7/7 | 0 |
 | Cyprus Roadtrip including Northern Cyprus (9 days) 🚙 | 7/7 | 0 |
 | Bergen + Fjords (6 days) ⛴️ | 7/7 | 0 |
 | Norway Roadtrip (12 days) 🚙 | 7/7 | 0 |
 | South & Central Norway (14 days) 🗺️ | 7/7 | 0 |
-| ... 197 more routes with open destinations ... | | |
+| Denmark + South Sweden (9 days) 🌉 | 7/7 | 0 |
+| Tenerife + La Gomera (7-10 days) 🏝️ | 7/7 | 0 |
+| Isle of Man (3-4 days) 🏝️ | 7/7 | 0 |
+| Portugal + Spain Roadtrip (14 days) 🚗 | 7/10 | 0 |
+| French + Spanish Pyrenees (9 days) 🥖 | 7/7 | 0 |
+| ... 186 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).
