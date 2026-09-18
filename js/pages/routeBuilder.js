@@ -170,6 +170,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateMadeiraPortoSantoDestinationNotes();
   rbMigrateCanaryIslandsDestinationNotes();
   rbMigrateDelhiDestinationNote();
+  rbMigrateBavariaBerlinDresdenDestinationNotes();
+  rbMigrateKosovoAlbaniaDestinationNotes();
+  rbMigrateItalySloveniaCroatiaDestinationNotes();
+  rbMigrateLuxembourgBeneluxDestinationNotes();
+  rbMigrateSanMarinoEmiliaRomagnaDestinationNotes();
 
   // Must run after every migration above (needs route.name fully settled) and before the
   // Sheet merge below (needs route.id already deterministic) — see its own doc comment.

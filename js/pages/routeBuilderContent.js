@@ -9329,6 +9329,169 @@ function rbMigrateDelhiDestinationNote() {
 }
 
 /**
+ * Batch 36 (2026-09-18) -- Bavaria + Alps + Berchtesgaden (6 days) / Germany: Berlin + Dresden +
+ * Bavaria (9 days), sharing a Munich gateway -- 7 destinations, researched in a single pass
+ * (Garmisch-Partenkirchen and Dresden already had notes). Same generic name-matching migration
+ * pattern as the other batches.
+ */
+function rbMigrateBavariaBerlinDresdenDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_BAVARIA_BERLIN_DRESDEN_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_BAVARIA_BERLIN_DRESDEN_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Munich': "Marienplatz/Frauenkirche and the Residenz palace anchor the old town; skip the New Town Hall glockenspiel crowd and climb St. Peter's church tower instead for the best rooftop view over the square and the Alps on a clear day.",
+    'Füssen': "The Hohes Schloss old town and the Lechfall gorge waterfall just south of the center are worth an hour beyond being the Neuschwanstein access base; walk the riverside path to Lechfall in the early morning to have it to yourself.",
+    'Hohenschwangau (Neuschwanstein)': '"Mad" King Ludwig II\'s fairy-tale 19th-century castle that inspired Disney\'s — interior only seen on a timed guided tour, so book the slot online in advance; walk up to Marienbrücke bridge for the classic postcard view of the castle.',
+    'Berchtesgaden': "Alpine town best known as the access point for the Kehlsteinhaus (Eagle's Nest) and the Obersalzberg documentation center on WWII history; the Eagle's Nest is reachable only by special bus and only May-October, so book that slot early in the day.",
+    'Königssee': "Glacial lake with the onion-domed St. Bartholomä pilgrimage church backed by the Watzmann massif, reachable only by the electric passenger boats (no private motorboats allowed); take the first boat out to beat tour groups and midday queues at the dock.",
+    'Berlin': "East Side Gallery (Wall remnant) and Brandenburg Gate/Reichstag carry the Cold War/reunification story, with Museum Island's Pergamon for antiquities; the Reichstag dome visit is free but capacity-limited and must be booked online days ahead.",
+    'Bastei Bridge / Saxon Switzerland NP': "Sandstone cliff formations with a short 19th-century bridge spanning the gorge for a dramatic Elbe valley view; arrive at sunrise since it's a very short walk from parking and gets swarmed by Dresden day-tour buses by mid-morning.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 37 (2026-09-18) -- Kosovo + Albania (9 days) -- high-leverage batch, these names recur
+ * across ~9-10 other Balkan combo routes. Kukës flagged by the researcher as genuinely thin
+ * (a rebuilt reservoir-relocation town with no real sightseeing draw) -- given an honest note
+ * saying so rather than left blank, same precedent as the Delhi fix in batch 35. Same generic
+ * name-matching migration pattern as the other batches.
+ */
+function rbMigrateKosovoAlbaniaDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_KOSOVO_ALBANIA_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_KOSOVO_ALBANIA_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Peja / Rugova Gorge': "The Patriarchate of Peć, a UNESCO-listed medieval Serbian Orthodox monastery, sits right at the mouth of the dramatic Rugova Gorge canyon road; bring ID, as the monastery compound has restricted/guarded access.",
+    'Prizren': "Ottoman-era old town with the stone bridge, Sinan Pasha Mosque, and a hilltop Kalaja fortress; climb to the fortress near sunset for the best view over the town's minarets and river.",
+    'Kukës': "A modern town rebuilt after being relocated for the Fierza reservoir in the 1970s, so there's little historic core; most travelers only pass through as the crossroads into Albania, with views over Lake Fierza along the road being the main reason to slow down here.",
+    'Shkodër': "Rozafa Castle hilltop ruins overlooking the confluence of three rivers and Lake Shkodër; go for sunset, when the light over the lake and city from the ramparts is best.",
+    'Theth (Accursed Mountains)': "Remote Alpine valley of stone kulla towers, the highlight being the day-hike over to Valbonë through the Accursed Mountains; allocate a full day for the hike and note the access road is realistically only open/passable roughly June-October.",
+    'Theth': "Remote Alpine valley of stone kulla towers, the highlight being the day-hike over to Valbonë through the Accursed Mountains; allocate a full day for the hike and note the access road is realistically only open/passable roughly June-October.",
+    'Tirana': "Colorful communist-era apartment blocks and Bunk'Art (a converted Cold War bunker) tell the Hoxha-era story best; Bunk'Art 2 is central and walkable, but Bunk'Art 1 is out of town and needs a taxi or bus — check which one you're booking.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 38 (2026-09-18) -- Italy + Slovenia + Croatia (10-14 days), a Venice-to-Zagreb road trip
+ * -- 4 destinations (Piazza San Marco/Ljubljana/Bled/Plitvice/Zagreb already had notes). Same
+ * generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateItalySloveniaCroatiaDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_ITALY_SLOVENIA_CROATIA_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_ITALY_SLOVENIA_CROATIA_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Rialto Bridge': "Venice's iconic Grand Canal crossing with the adjoining Rialto Market; cross before 9am for photos without the day-tripper crush, and hit the market stalls in the same early slot.",
+    'Trieste (Italy, waypoint)': "Piazza Unità d'Italia — one of Europe's largest seafront squares — and the Habsburg-built Miramare Castle just outside town reflect the city's Austro-Hungarian past rather than typical Italian character; 2-3 hours covers the square and waterfront on the way through.",
+    'Rovinj': "Car-free Istrian old town on a small peninsula with pastel houses and the hilltop St. Euphemia church; park outside the center and climb the church bell tower for the view over the rooftops to the sea.",
+    'Pula (Arena)': "One of the best-preserved Roman amphitheaters in the world, still used for concerts; check the events calendar before visiting since summer concert setup can restrict daytime access, and go in the morning to avoid both heat and tour groups.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 39 (2026-09-18) -- Luxembourg + Ardennes (4 days) / South Netherlands + Belgian Ardennes
+ * + Luxembourg (5 days) -- 7 destinations, researched in a single pass (none had notes yet).
+ * Shared-signature batch: Bastogne/Vianden/Luxembourg City recur across both routes. Same generic
+ * name-matching migration pattern as the other batches.
+ */
+function rbMigrateLuxembourgBeneluxDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_LUXEMBOURG_BENELUX_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_LUXEMBOURG_BENELUX_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Bastogne': "Epicenter of the WWII Battle of the Bulge, with the Bastogne War Museum and the star-shaped Mardasson Memorial; the museum's multimedia tour runs long, so allocate a half day and get the combined ticket with the memorial.",
+    'Vianden': "One of the region's largest feudal castles, perched above the town; ride the chairlift (télésiège) across the valley for the classic castle-and-town photo, or visit the castle interior right at opening to beat tour groups.",
+    'Luxembourg City': "The Bock Casemates — a network of fortress tunnels carved into the rock — are the standout beyond the old town/Grund views; the ticket is cheap and the walk-through takes about an hour, best paired with the Chemin de la Corniche viewpoint.",
+    'Berdorf (Müllerthal day trip)': "Sandstone rock-formation hub and trailhead for the Müllerthal Trail's toughest route (ladders and narrow rock passages); wear proper shoes, this isn't a casual stroll.",
+    'Echternach (Müllerthal day trip)': "Luxembourg's oldest town, with a historic Abbey and a lake right at the edge of town; pair it with a Müllerthal hike finishing at the lake for a swim afterward.",
+    'Maastricht (Vrijthof, Sint-Pietersberg caves)': "Beyond the Vrijthof square, the Sint-Pietersberg marl caves (Grotten Noord/Zonneberg) are the specific highlight — access is by guided tour only, and weekend slots fill up, so book ahead.",
+    'Valkenburg (Fluweelengrot cave)': "The Fluweelengrot (\"velvet cave\") marl tunnels are the reason to stop here beyond the castle ruins; only visitable via guided tour, and the cave stays cool year-round so bring a layer.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 40 (2026-09-18) -- San Marino + Emilia-Romagna (4 days) -- 4 destinations (Bologna
+ * already had a note). Shared-signature batch: City of San Marino/Rocca Guaita recur in San
+ * Marino + Tuscany (5 days). Same generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateSanMarinoEmiliaRomagnaDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_SAN_MARINO_EMILIA_ROMAGNA_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_SAN_MARINO_EMILIA_ROMAGNA_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Ravenna (Byzantine mosaics)': "The 5th-6th century Byzantine mosaics inside the Basilica of San Vitale and the Mausoleum of Galla Placidia are the reason to come, some of the best-preserved anywhere; get the combined ticket covering all five monuments and treat San Vitale as the must-not-rush stop.",
+    'Rimini': "Roman-era Tiberius Bridge and Arch of Augustus sit in a walkable historic center that's distinct from (and quieter than) the beach resort strip; a half day covers the old town on its own.",
+    'City of San Marino (old town)': "Hilltop medieval capital with walls and sweeping Adriatic views; park at the base and take the funicular up, or arrive early to beat the day-trip crowds bussed in from the coast.",
+    'Rocca Guaita': "The oldest and most-visited of San Marino's three connected hilltop towers, with the best panoramic views of the three; go early or late in the day since it draws the bulk of the tour groups, and walk the connecting path to the other two towers if time allows.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -11811,7 +11974,7 @@ function rbBuildLuxembourgRoute() {
         { name: 'Luxembourg City (Bock Casemates)', lat: 49.6116, lng: 6.1319 },
         { name: 'Berdorf', lat: 49.8167, lng: 6.3500 },
         { name: 'Echternach', lat: 49.8114, lng: 6.4211 },
-        { name: 'Vianden', lat: 49.9350, lng: 6.2081 },
+        { name: 'Vianden', lat: 49.9350, lng: 6.2081 , notes: 'One of the region\'s largest feudal castles, perched above the town; ride the chairlift (télésiège) across the valley for the classic castle-and-town photo, or visit the castle interior right at opening to beat tour groups.' },
       ],
       notes: "Entry: own car from the Netherlands (~4h drive). Luxembourg City (Bock Casemates, open year-round, €11) — Müllerthal/'Luxembourg's Switzerland' (Berdorf/Echternach, the well-known rock-formation hiking trails) — Vianden (castle €11-13 + cable car). Season: April-October for hiking in Müllerthal. Budget ~€100-120/day — revised after a web check, €90-100 was too low: Luxembourg City is one of the pricier cities in the EU for food and accommodation. Web check (2026-08): the Vianden cable car is still running, but with seasonal gaps (e.g. 2025: 4 Apr-27 Jun and 1 Sep-12 Oct, not the whole summer) — check the current 2026 dates before relying on it.",
       transport_to_next: 'End of this route — drive back to the Netherlands (~4h).',
@@ -11830,7 +11993,7 @@ function rbBuildLuxembourgArdennesRoute() {
     {
       code: 'BE', name: 'Belgium', days: 1, budget: 70, lat: 50.0036, lng: 5.7167,
       destinations: [
-        { name: 'Bastogne', lat: 50.0036, lng: 5.7167 },
+        { name: 'Bastogne', lat: 50.0036, lng: 5.7167 , notes: 'Epicenter of the WWII Battle of the Bulge, with the Bastogne War Museum and the star-shaped Mardasson Memorial; the museum\'s multimedia tour runs long, so allocate a half day and get the combined ticket with the memorial.' },
       ],
       notes: "Deliberately a different Ardennes stop than the standalone Ardennes (3 days) 🦌 route, so the two don't overlap: Bastogne (WWII history, Bastogne War Museum, €22 p.p. + €7.50 parking). Own car, short distances (border region).",
       transport_to_next: 'Drive to Vianden, Luxembourg — short, overland, no border formalities (Schengen).',
@@ -11838,10 +12001,10 @@ function rbBuildLuxembourgArdennesRoute() {
     {
       code: 'LU', name: 'Luxembourg', days: 3, budget: 270, lat: 49.6116, lng: 6.1319,
       destinations: [
-        { name: 'Vianden', lat: 49.9350, lng: 6.2081 },
-        { name: 'Luxembourg City', lat: 49.6116, lng: 6.1319 },
-        { name: 'Berdorf (Müllerthal day trip)', lat: 49.8167, lng: 6.3500 },
-        { name: 'Echternach (Müllerthal day trip)', lat: 49.8114, lng: 6.4211 },
+        { name: 'Vianden', lat: 49.9350, lng: 6.2081 , notes: 'One of the region\'s largest feudal castles, perched above the town; ride the chairlift (télésiège) across the valley for the classic castle-and-town photo, or visit the castle interior right at opening to beat tour groups.' },
+        { name: 'Luxembourg City', lat: 49.6116, lng: 6.1319 , notes: 'The Bock Casemates — a network of fortress tunnels carved into the rock — are the standout beyond the old town/Grund views; the ticket is cheap and the walk-through takes about an hour, best paired with the Chemin de la Corniche viewpoint.' },
+        { name: 'Berdorf (Müllerthal day trip)', lat: 49.8167, lng: 6.3500 , notes: 'Sandstone rock-formation hub and trailhead for the Müllerthal Trail\'s toughest route (ladders and narrow rock passages); wear proper shoes, this isn\'t a casual stroll.' },
+        { name: 'Echternach (Müllerthal day trip)', lat: 49.8114, lng: 6.4211 , notes: 'Luxembourg\'s oldest town, with a historic Abbey and a lake right at the edge of town; pair it with a Müllerthal hike finishing at the lake for a swim afterward.' },
       ],
       notes: "Vianden (castle, same cable car caveat as the standalone Luxembourg (4 days) 🪨 route — seasonal gaps, check current dates) — Luxembourg City — Müllerthal day trip from the city (Berdorf/Echternach). Season: April-October.",
       transport_to_next: 'End of this route — drive back to the Netherlands via Belgium.',
@@ -11912,8 +12075,8 @@ function rbBuildSouthNetherlandsBelgianArdennesLuxembourgRoute() {
     {
       code: 'NL', name: 'Netherlands', days: 2, budget: 160, lat: 50.8514, lng: 5.6910,
       destinations: [
-        { name: 'Maastricht (Vrijthof, Sint-Pietersberg caves)', lat: 50.8514, lng: 5.6910 },
-        { name: 'Valkenburg (Fluweelengrot cave)', lat: 50.8642, lng: 5.8306 },
+        { name: 'Maastricht (Vrijthof, Sint-Pietersberg caves)', lat: 50.8514, lng: 5.6910 , notes: 'Beyond the Vrijthof square, the Sint-Pietersberg marl caves (Grotten Noord/Zonneberg) are the specific highlight — access is by guided tour only, and weekend slots fill up, so book ahead.' },
+        { name: 'Valkenburg (Fluweelengrot cave)', lat: 50.8642, lng: 5.8306 , notes: 'The Fluweelengrot ("velvet cave") marl tunnels are the reason to stop here beyond the castle ruins; only visitable via guided tour, and the cave stays cool year-round so bring a layer.' },
       ],
       notes: 'Maastricht (Vrijthof, Sint-Pietersberg caves, guided tours only, ~€9.95) — Valkenburg (Fluweelengrot cave, guided only, open 7 days a week + summer evening tours 18 July-22 August).',
       transport_to_next: 'Drive to Bastogne, Belgium — short, overland, no border formalities (Schengen).',
@@ -11921,7 +12084,7 @@ function rbBuildSouthNetherlandsBelgianArdennesLuxembourgRoute() {
     {
       code: 'BE', name: 'Belgium', days: 1, budget: 75, lat: 50.0036, lng: 5.7167,
       destinations: [
-        { name: 'Bastogne', lat: 50.0036, lng: 5.7167 },
+        { name: 'Bastogne', lat: 50.0036, lng: 5.7167 , notes: 'Epicenter of the WWII Battle of the Bulge, with the Bastogne War Museum and the star-shaped Mardasson Memorial; the museum\'s multimedia tour runs long, so allocate a half day and get the combined ticket with the memorial.' },
       ],
       notes: 'Bastogne (Ardennes, WWII history, Bastogne War Museum) — the same Ardennes stop as the Luxembourg + Ardennes (4 days) 🎖️ route above, deliberately different from the standalone Ardennes (3 days) 🦌 route.',
       transport_to_next: 'Drive to Vianden/Luxembourg City — short, overland, no border formalities (Schengen).',
@@ -11929,8 +12092,8 @@ function rbBuildSouthNetherlandsBelgianArdennesLuxembourgRoute() {
     {
       code: 'LU', name: 'Luxembourg', days: 2, budget: 190, lat: 49.6116, lng: 6.1319,
       destinations: [
-        { name: 'Vianden', lat: 49.9350, lng: 6.2081 },
-        { name: 'Luxembourg City', lat: 49.6116, lng: 6.1319 },
+        { name: 'Vianden', lat: 49.9350, lng: 6.2081 , notes: 'One of the region\'s largest feudal castles, perched above the town; ride the chairlift (télésiège) across the valley for the classic castle-and-town photo, or visit the castle interior right at opening to beat tour groups.' },
+        { name: 'Luxembourg City', lat: 49.6116, lng: 6.1319 , notes: 'The Bock Casemates — a network of fortress tunnels carved into the rock — are the standout beyond the old town/Grund views; the ticket is cheap and the walk-through takes about an hour, best paired with the Chemin de la Corniche viewpoint.' },
       ],
       notes: 'Vianden/Luxembourg City — same cable car caveat as the standalone Luxembourg (4 days) 🪨 route above (seasonal gaps, check current dates before relying on it).',
       transport_to_next: 'End of this route — drive back to the Netherlands. Own car throughout — everything within a few hours of each other, the shortest "international" trip of this whole batch.',
@@ -12063,7 +12226,7 @@ function rbBuildBerlinRoute() {
     {
       code: 'DE', name: 'Germany', days: 4, budget: 360, lat: 52.5200, lng: 13.4050,
       destinations: [
-        { name: 'Berlin', lat: 52.5200, lng: 13.4050 },
+        { name: 'Berlin', lat: 52.5200, lng: 13.4050 , notes: 'East Side Gallery (Wall remnant) and Brandenburg Gate/Reichstag carry the Cold War/reunification story, with Museum Island\'s Pergamon for antiquities; the Reichstag dome visit is free but capacity-limited and must be booked online days ahead.' },
       ],
       notes: "Brandenburg Gate/Reichstag (dome free, register online in advance) — Museum Island (day pass €24) — East Side Gallery (fully open) — Kreuzberg (Turkish market Tue/Fri) plus Mauerpark (Sunday flea market/karaoke) for the less-touristy side of the city. Direct ICE 6x/day, ~5h42, from €38 — clearly better than flying (door-to-door only marginally faster, and pricier) or driving (~6h, no real advantage). Budget ~€80-105/day p.p. — Berlin remains notably cheap for a capital. Season: May-September for the weather, but Christmas markets/winter also work well (less weather-dependent, lower hotel prices). Pergamon Museum closed for renovation until July 2027 (partly offset by the 'Das Panorama' exhibition, €14).",
       transport_to_next: 'End of this route — direct ICE back to the Netherlands.',
@@ -12104,8 +12267,8 @@ function rbBuildBavariaMunichAlpsRoute() {
       destinations: [
         { name: 'Munich (Marienplatz, Englischer Garten, Deutsches Museum)', lat: 48.1351, lng: 11.5820 },
         { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0956, notes: "Beyond being the Zugspitze gateway, the town's own highlight is the Partnachklamm gorge walk, a shaded ~1-hour loop through a carved rock canyon with waterfalls — an easy half-day add-on." },
-        { name: 'Füssen', lat: 47.5722, lng: 10.7017 },
-        { name: 'Hohenschwangau (Neuschwanstein)', lat: 47.5575, lng: 10.7397 },
+        { name: 'Füssen', lat: 47.5722, lng: 10.7017 , notes: 'The Hohes Schloss old town and the Lechfall gorge waterfall just south of the center are worth an hour beyond being the Neuschwanstein access base; walk the riverside path to Lechfall in the early morning to have it to yourself.' },
+        { name: 'Hohenschwangau (Neuschwanstein)', lat: 47.5575, lng: 10.7397 , notes: '"Mad" King Ludwig II\'s fairy-tale 19th-century castle that inspired Disney\'s — interior only seen on a timed guided tour, so book the slot online in advance; walk up to Marienbrücke bridge for the classic postcard view of the castle.' },
       ],
       notes: "Munich (2d: Marienplatz, Englischer Garten, Deutsches Museum) — Garmisch-Partenkirchen (~90km/1-1.5h) — Füssen/Hohenschwangau (~50 min further) — a straight southward line, no detour. Budget ~€90-130/day p.p. Season: May-September. Zugspitze cable car ~€62 p.p. return (full route) or €47 (Eibsee cable car only) — book online ahead on good-weather days/weekends. Neuschwanstein only with a mandatory timed guided tour (~€17.50-21 p.p.), book up to 8 weeks ahead and in practice necessary — 10:00-14:00 slots sell out fast in summer — the castle stays open during the multi-year restoration (until ~2029). Deutsches Museum: roughly half (mining hall, planetarium) closed until ~2028, but the open part (aviation/space/robotics) is still worth half a day. Parking near Hohenschwangau/Neuschwanstein ~€8/day, a real extra cost not folded into the daily budget.",
       transport_to_next: 'End of this route — drive back or fly out of Munich.',
@@ -12124,10 +12287,10 @@ function rbBuildBavariaAlpsBerchtesgadenRoute() {
     {
       code: 'DE', name: 'Germany', days: 4, budget: 400, lat: 48.1351, lng: 11.5820,
       destinations: [
-        { name: 'Munich', lat: 48.1351, lng: 11.5820 },
+        { name: 'Munich', lat: 48.1351, lng: 11.5820 , notes: 'Marienplatz/Frauenkirche and the Residenz palace anchor the old town; skip the New Town Hall glockenspiel crowd and climb St. Peter\'s church tower instead for the best rooftop view over the square and the Alps on a clear day.' },
         { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0956, notes: "Beyond being the Zugspitze gateway, the town's own highlight is the Partnachklamm gorge walk, a shaded ~1-hour loop through a carved rock canyon with waterfalls — an easy half-day add-on." },
-        { name: 'Füssen', lat: 47.5722, lng: 10.7017 },
-        { name: 'Hohenschwangau (Neuschwanstein)', lat: 47.5575, lng: 10.7397 },
+        { name: 'Füssen', lat: 47.5722, lng: 10.7017 , notes: 'The Hohes Schloss old town and the Lechfall gorge waterfall just south of the center are worth an hour beyond being the Neuschwanstein access base; walk the riverside path to Lechfall in the early morning to have it to yourself.' },
+        { name: 'Hohenschwangau (Neuschwanstein)', lat: 47.5575, lng: 10.7397 , notes: '"Mad" King Ludwig II\'s fairy-tale 19th-century castle that inspired Disney\'s — interior only seen on a timed guided tour, so book the slot online in advance; walk up to Marienbrücke bridge for the classic postcard view of the castle.' },
       ],
       notes: "Same route as the standalone Bavaria: Munich + Alps (5 days) 🥨, compressed to 4 days here to make room for the Berchtesgaden loop below — same Zugspitze cable car and Neuschwanstein timed-tour caveats apply (see that route's notes). Budget ~€95-110/day p.p. incl. the Berchtesgaden stay.",
       transport_to_next: 'Drive via the ring road around Munich/A8 toward Salzburg to Berchtesgaden (2h12-2h20/~200km from Garmisch/Füssen) — geographically the opposite direction, deliberately planned as the loop\'s closing leg, not a short detour.',
@@ -12135,8 +12298,8 @@ function rbBuildBavariaAlpsBerchtesgadenRoute() {
     {
       code: 'DE', name: 'Germany', days: 2, budget: 200, lat: 47.6303, lng: 13.0006,
       destinations: [
-        { name: 'Berchtesgaden', lat: 47.6303, lng: 13.0006 },
-        { name: 'Königssee', lat: 47.5586, lng: 12.9847 },
+        { name: 'Berchtesgaden', lat: 47.6303, lng: 13.0006 , notes: 'Alpine town best known as the access point for the Kehlsteinhaus (Eagle\'s Nest) and the Obersalzberg documentation center on WWII history; the Eagle\'s Nest is reachable only by special bus and only May-October, so book that slot early in the day.' },
+        { name: 'Königssee', lat: 47.5586, lng: 12.9847 , notes: 'Glacial lake with the onion-domed St. Bartholomä pilgrimage church backed by the Watzmann massif, reachable only by the electric passenger boats (no private motorboats allowed); take the first boat out to beat tour groups and midday queues at the dock.' },
       ],
       notes: "Berchtesgaden/Königssee as the loop's final stop. Königssee boat trip to St. Bartholomä ~€16.90 p.p. return (half route) or €29.80 (full route to Salet). Parking near Königssee ~€5-8/day, a real extra cost not folded into the daily budget.",
       transport_to_next: 'End of this route — drive back to the Netherlands via Munich/A8.',
@@ -12159,7 +12322,7 @@ function rbBuildRomanticRoadRoute() {
         { name: 'Rothenburg ob der Tauber', lat: 49.3757, lng: 10.1786 },
         { name: 'Nördlingen', lat: 48.8506, lng: 10.4886 },
         { name: 'Augsburg', lat: 48.3705, lng: 10.8978 },
-        { name: 'Füssen', lat: 47.5722, lng: 10.7017 },
+        { name: 'Füssen', lat: 47.5722, lng: 10.7017 , notes: 'The Hohes Schloss old town and the Lechfall gorge waterfall just south of the center are worth an hour beyond being the Neuschwanstein access base; walk the riverside path to Lechfall in the early morning to have it to yourself.' },
       ],
       notes: "The official signed 'Romantische Straße' route, confirmed: Würzburg — Rothenburg ob der Tauber — Nördlingen — Augsburg — Füssen (via Landsberg am Lech), 413km total, no backtracking. NL-Würzburg ~5h/550km. Budget ~€75-95/day p.p. in the smaller Franconian towns, rising to €110+ on the last day near Neuschwanstein (same timed-tour caveat as Bavaria: Munich + Alps (5 days) 🥨 if that detour is added). Season: late spring/early autumn (fewer crowds in Rothenburg) — late November-December for Rothenburg's Reiterlesmarkt (Christmas market) as a well-known alternative in a completely different season.",
       transport_to_next: 'End of this route — drive back to the Netherlands from Füssen, or continue into the Bavarian Alps.',
@@ -12200,7 +12363,7 @@ function rbBuildBerlinDresdenBavariaRoute() {
     {
       code: 'DE', name: 'Germany', days: 4, budget: 360, lat: 52.5200, lng: 13.4050,
       destinations: [
-        { name: 'Berlin', lat: 52.5200, lng: 13.4050 },
+        { name: 'Berlin', lat: 52.5200, lng: 13.4050 , notes: 'East Side Gallery (Wall remnant) and Brandenburg Gate/Reichstag carry the Cold War/reunification story, with Museum Island\'s Pergamon for antiquities; the Reichstag dome visit is free but capacity-limited and must be booked online days ahead.' },
       ],
       notes: "Same Berlin content as the standalone Berlin (4 days) 🐻 route (Brandenburg Gate/Reichstag, Museum Island, East Side Gallery, Kreuzberg/Mauerpark) — see that route's notes for ticket details. Direct ICE from the Netherlands.",
       transport_to_next: 'Train Berlin-Dresden, ~2h, short and easy — a same-day connection.',
@@ -12209,7 +12372,7 @@ function rbBuildBerlinDresdenBavariaRoute() {
       code: 'DE', name: 'Germany', days: 2, budget: 160, lat: 51.0504, lng: 13.7373,
       destinations: [
         { name: 'Dresden', lat: 51.0504, lng: 13.7373, notes: "The rebuilt Frauenkirche and the Zwinger Palace's Old Masters Gallery (Raphael's Sistine Madonna) are the must-sees beyond the old town walk; the Frauenkirche's dome gallery and evening organ recitals are easy to miss if you only see the exterior." },
-        { name: 'Bastei Bridge / Saxon Switzerland NP', lat: 50.9683, lng: 14.0453 },
+        { name: 'Bastei Bridge / Saxon Switzerland NP', lat: 50.9683, lng: 14.0453 , notes: 'Sandstone cliff formations with a short 19th-century bridge spanning the gorge for a dramatic Elbe valley view; arrive at sunrise since it\'s a very short walk from parking and gets swarmed by Dresden day-tour buses by mid-morning.' },
       ],
       notes: "Shortened to 2 days here from the standalone Dresden + Saxon Switzerland (4 days) 🧗 route — same Frauenkirche dome-climb and Bastei/Felsenburg Neurathen caveats apply (see that route's notes).",
       transport_to_next: 'Train (~4-4.5h) or a short flight Dresden-Munich — both realistically doable within a single day.',
@@ -12217,7 +12380,7 @@ function rbBuildBerlinDresdenBavariaRoute() {
     {
       code: 'DE', name: 'Germany', days: 3, budget: 315, lat: 48.1351, lng: 11.5820,
       destinations: [
-        { name: 'Munich', lat: 48.1351, lng: 11.5820 },
+        { name: 'Munich', lat: 48.1351, lng: 11.5820 , notes: 'Marienplatz/Frauenkirche and the Residenz palace anchor the old town; skip the New Town Hall glockenspiel crowd and climb St. Peter\'s church tower instead for the best rooftop view over the square and the Alps on a clear day.' },
         { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0956, notes: "Beyond being the Zugspitze gateway, the town's own highlight is the Partnachklamm gorge walk, a shaded ~1-hour loop through a carved rock canyon with waterfalls — an easy half-day add-on." },
         { name: 'Füssen / Hohenschwangau (Neuschwanstein)', lat: 47.5722, lng: 10.7017, notes: "Beyond the castle itself, the classic postcard view of Neuschwanstein is from Marienbrücke (Mary's Bridge) just above it — worth the short uphill walk, but the bridge is frequently closed for high wind, ice, or maintenance, so it's not a guaranteed stop." },
       ],
@@ -12239,10 +12402,10 @@ function rbBuildGermanAlpineRoadRoute() {
       code: 'DE', name: 'Germany', days: 9, budget: 890, lat: 47.5460, lng: 9.6832,
       destinations: [
         { name: 'Lindau (Lake Constance)', lat: 47.5460, lng: 9.6832 },
-        { name: 'Füssen', lat: 47.5722, lng: 10.7017 },
+        { name: 'Füssen', lat: 47.5722, lng: 10.7017 , notes: 'The Hohes Schloss old town and the Lechfall gorge waterfall just south of the center are worth an hour beyond being the Neuschwanstein access base; walk the riverside path to Lechfall in the early morning to have it to yourself.' },
         { name: 'Garmisch-Partenkirchen', lat: 47.4917, lng: 11.0956, notes: "Beyond being the Zugspitze gateway, the town's own highlight is the Partnachklamm gorge walk, a shaded ~1-hour loop through a carved rock canyon with waterfalls — an easy half-day add-on." },
         { name: 'Chiemsee / Prien am Chiemsee', lat: 47.8514, lng: 12.3450 },
-        { name: 'Berchtesgaden', lat: 47.6303, lng: 13.0006 },
+        { name: 'Berchtesgaden', lat: 47.6303, lng: 13.0006 , notes: 'Alpine town best known as the access point for the Kehlsteinhaus (Eagle\'s Nest) and the Obersalzberg documentation center on WWII history; the Eagle\'s Nest is reachable only by special bus and only May-October, so book that slot early in the day.' },
       ],
       notes: "Better framed as the official 'Deutsche Alpenstraße' (German Alpine Road) — a designated scenic route from Lindau to Königssee — rather than simply 'Bavaria again': Lindau (Lake Constance) — Füssen (~101km/1h19) — Garmisch-Partenkirchen (~51 min) — Chiemsee/Prien (~135km/1h41) — Berchtesgaden (~76km/1h01) — west to east, confirmed no backtracking. Budget ~€80-105/day p.p. on average (roughly 7 normal days at ~€90 plus two peak-cost days around €120-140), with two peak days: Neuschwanstein+Zugspitze (same caveats as Bavaria: Munich + Alps (5 days) 🥨), and Königssee (same boat-trip caveat as Bavaria + Alps + Berchtesgaden (6 days) ⛰️). Season: June-September for full access to mountain roads/cable cars/high-altitude trails. Zugspitze cable car fully closed 9-13, 16-20 and 23-26 November 2026 for maintenance (irrelevant for a summer trip). Parking near Hohenschwangau/Neuschwanstein (~€8/day) and Königssee (~€5-8/day) are real extra costs, not folded into the flat daily budget.",
       transport_to_next: 'End of this route — drive back to the Netherlands from Berchtesgaden.',
@@ -12312,8 +12475,8 @@ function rbBuildSalzburgBerchtesgadenHallstattRoute() {
     {
       code: 'DE', name: 'Germany', days: 1, budget: 115, lat: 47.6303, lng: 13.0006,
       destinations: [
-        { name: 'Berchtesgaden', lat: 47.6303, lng: 13.0006 },
-        { name: 'Königssee', lat: 47.5586, lng: 12.9847 },
+        { name: 'Berchtesgaden', lat: 47.6303, lng: 13.0006 , notes: 'Alpine town best known as the access point for the Kehlsteinhaus (Eagle\'s Nest) and the Obersalzberg documentation center on WWII history; the Eagle\'s Nest is reachable only by special bus and only May-October, so book that slot early in the day.' },
+        { name: 'Königssee', lat: 47.5586, lng: 12.9847 , notes: 'Glacial lake with the onion-domed St. Bartholomä pilgrimage church backed by the Watzmann massif, reachable only by the electric passenger boats (no private motorboats allowed); take the first boat out to beat tour groups and midday queues at the dock.' },
       ],
       notes: 'Berchtesgaden/Königssee — same boat-trip caveat as Bavaria + Alps + Berchtesgaden (6 days) ⛰️ above (Königssee boat to St. Bartholomä ~€16.90 p.p. return, or €29.80 to Salet).',
       transport_to_next: 'Drive to Hallstatt, Austria — ~76km/1h from Berchtesgaden. Not a perfectly straight line versus driving Salzburg-Hallstatt direct, but the detour is small (~20km extra) and the stop order holds up.',
@@ -13132,7 +13295,7 @@ function rbBuildVeniceDolomitesRoute() {
       code: 'IT', name: 'Italy', days: 2, budget: 280, lat: 45.4342, lng: 12.3388,
       destinations: [
         { name: 'Piazza San Marco', lat: 45.4342, lng: 12.3388, notes: "St Mark's Basilica and the Doge's Palace anchor the square; the basilica itself is free to enter, but a skip-the-line booking avoids the worst of the queue." },
-        { name: 'Rialto Bridge', lat: 45.4380, lng: 12.3358 },
+        { name: 'Rialto Bridge', lat: 45.4380, lng: 12.3358 , notes: 'Venice\'s iconic Grand Canal crossing with the adjoining Rialto Market; cross before 9am for photos without the day-tripper crush, and hit the market stalls in the same early slot.' },
         { name: 'Murano (half day)', lat: 45.4587, lng: 12.3538 },
         { name: 'Burano (half day)', lat: 45.4854, lng: 12.4166 },
       ],
@@ -14271,8 +14434,8 @@ function rbBuildSanMarinoEmiliaRomagnaRoute() {
       code: 'IT', name: 'Italy', days: 3, budget: 300, lat: 44.4949, lng: 11.3426,
       destinations: [
         { name: 'Bologna', lat: 44.4949, lng: 11.3426, notes: "The medieval Due Torri and UNESCO-listed porticoes anchor the old center, but the Torre degli Asinelli has been closed to climbers since October 2023 (structural stabilization work on the leaning Garisenda tower next to it, with estimates running to 2028) — climb the Torre dell'Orologio (Clock Tower) instead for a comparable view." },
-        { name: 'Ravenna (Byzantine mosaics)', lat: 44.4184, lng: 12.2035 },
-        { name: 'Rimini', lat: 44.0678, lng: 12.5695 },
+        { name: 'Ravenna (Byzantine mosaics)', lat: 44.4184, lng: 12.2035 , notes: 'The 5th-6th century Byzantine mosaics inside the Basilica of San Vitale and the Mausoleum of Galla Placidia are the reason to come, some of the best-preserved anywhere; get the combined ticket covering all five monuments and treat San Vitale as the must-not-rush stop.' },
+        { name: 'Rimini', lat: 44.0678, lng: 12.5695 , notes: 'Roman-era Tiberius Bridge and Arch of Augustus sit in a walkable historic center that\'s distinct from (and quieter than) the beach resort strip; a half day covers the old town on its own.' },
       ],
       notes: "Entry: direct flight to Bologna, then a self-drive loop: Bologna (1 day, food) → Ravenna (Byzantine mosaics, half-to-1 day) → Rimini (coast, half day) → San Marino (half-to-1 day, ~30 min from Rimini) → back to Bologna. Direct Amsterdam-Bologna flight (KLM, daily, ~1h45) — the best-connected option of this whole Emilia-Romagna/San Marino cluster (Rimini has no direct flight from Amsterdam, always a connection). Budget ~€90-110/day. Season: April-June or September-October; avoid August heat and Ferragosto crowds on the Adriatic coast. Rental car needed for the Ravenna-Rimini-San Marino leg.",
       transport_to_next: 'Short drive Rimini-San Marino (~30 min).',
@@ -14280,8 +14443,8 @@ function rbBuildSanMarinoEmiliaRomagnaRoute() {
     {
       code: 'SM', name: 'San Marino', days: 1, budget: 100, lat: 43.9364, lng: 12.4477,
       destinations: [
-        { name: 'City of San Marino (old town)', lat: 43.9364, lng: 12.4477 },
-        { name: 'Rocca Guaita', lat: 43.9377, lng: 12.4536 },
+        { name: 'City of San Marino (old town)', lat: 43.9364, lng: 12.4477 , notes: 'Hilltop medieval capital with walls and sweeping Adriatic views; park at the base and take the funicular up, or arrive early to beat the day-trip crowds bussed in from the coast.' },
+        { name: 'Rocca Guaita', lat: 43.9377, lng: 12.4536 , notes: 'The oldest and most-visited of San Marino\'s three connected hilltop towers, with the best panoramic views of the three; go early or late in the day since it draws the bulk of the tour groups, and walk the connecting path to the other two towers if time allows.' },
       ],
       notes: "Half-to-1 day for San Marino: the towers/museum add-on (~€10-15) plus parking. ⚠️ San Marino parking: €1.50/1h, €3/2h, €4.50/3-5h, €8/full day across 13 car parks (P1-P13; P6/P7 are the most convenient for the centre); euro currency, no real border control with Italy in practice (carry ID anyway).",
       transport_to_next: 'End of this route — drive back to Bologna (~1h45) for the flight home.',
@@ -14300,8 +14463,8 @@ function rbBuildSanMarinoTuscanyRoute() {
     {
       code: 'SM', name: 'San Marino', days: 1, budget: 100, lat: 43.9364, lng: 12.4477,
       destinations: [
-        { name: 'City of San Marino (old town)', lat: 43.9364, lng: 12.4477 },
-        { name: 'Rocca Guaita', lat: 43.9377, lng: 12.4536 },
+        { name: 'City of San Marino (old town)', lat: 43.9364, lng: 12.4477 , notes: 'Hilltop medieval capital with walls and sweeping Adriatic views; park at the base and take the funicular up, or arrive early to beat the day-trip crowds bussed in from the coast.' },
+        { name: 'Rocca Guaita', lat: 43.9377, lng: 12.4536 , notes: 'The oldest and most-visited of San Marino\'s three connected hilltop towers, with the best panoramic views of the three; go early or late in the day since it draws the bulk of the tour groups, and walk the connecting path to the other two towers if time allows.' },
       ],
       notes: "Reality check: San Marino-Florence is ~240-253km/2h20-2h40 driving — not a casual add-on, but workable as a one-way arc. Fly into Bologna, do San Marino/Emilia-Romagna first (1-1.5 days), same content as San Marino + Emilia-Romagna (4 days) 🍝 above.",
       transport_to_next: 'Drive south into Tuscany (~2h20-2h40 to the Florence area) — a deliberate one-way arc, not a round trip back through San Marino.',
@@ -15212,8 +15375,8 @@ function rbBuildIstriaRoute() {
     {
       code: 'HR', name: 'Croatia', days: 6, budget: 690, lat: 44.8737, lng: 13.8467,
       destinations: [
-        { name: 'Pula (Arena)', lat: 44.8737, lng: 13.8467 },
-        { name: 'Rovinj', lat: 45.0811, lng: 13.6387 },
+        { name: 'Pula (Arena)', lat: 44.8737, lng: 13.8467 , notes: 'One of the best-preserved Roman amphitheaters in the world, still used for concerts; check the events calendar before visiting since summer concert setup can restrict daytime access, and go in the morning to avoid both heat and tour groups.' },
+        { name: 'Rovinj', lat: 45.0811, lng: 13.6387 , notes: 'Car-free Istrian old town on a small peninsula with pastel houses and the hilltop St. Euphemia church; park outside the center and climb the church bell tower for the view over the rooftops to the sea.' },
         { name: 'Poreč', lat: 45.2269, lng: 13.5950 },
         { name: 'Motovun', lat: 45.3325, lng: 13.8347 },
         { name: 'Grožnjan', lat: 45.3833, lng: 13.7250 },
@@ -15810,7 +15973,7 @@ function rbBuildAlbaniaRoute() {
     {
       code: 'AL', name: 'Albania', days: 6, budget: 240, lat: 40.9000, lng: 19.8000,
       destinations: [
-        { name: 'Tirana', lat: 41.3275, lng: 19.8187 },
+        { name: 'Tirana', lat: 41.3275, lng: 19.8187 , notes: 'Colorful communist-era apartment blocks and Bunk\'Art (a converted Cold War bunker) tell the Hoxha-era story best; Bunk\'Art 2 is central and walkable, but Bunk\'Art 1 is out of town and needs a taxi or bus — check which one you\'re booking.' },
         { name: 'Berat', lat: 40.7058, lng: 19.9522 },
         { name: 'Dhermi', lat: 40.1461, lng: 19.6417 },
         { name: 'Himarë', lat: 40.1017, lng: 19.7444 },
@@ -15832,9 +15995,9 @@ function rbBuildAlbaniaRoadtripRoute() {
     {
       code: 'AL', name: 'Albania', days: 9, budget: 360, lat: 41.7000, lng: 19.7000,
       destinations: [
-        { name: 'Tirana', lat: 41.3275, lng: 19.8187 },
-        { name: 'Shkodër', lat: 42.0683, lng: 19.5126 },
-        { name: 'Theth', lat: 42.3961, lng: 19.7692 },
+        { name: 'Tirana', lat: 41.3275, lng: 19.8187 , notes: 'Colorful communist-era apartment blocks and Bunk\'Art (a converted Cold War bunker) tell the Hoxha-era story best; Bunk\'Art 2 is central and walkable, but Bunk\'Art 1 is out of town and needs a taxi or bus — check which one you\'re booking.' },
+        { name: 'Shkodër', lat: 42.0683, lng: 19.5126 , notes: 'Rozafa Castle hilltop ruins overlooking the confluence of three rivers and Lake Shkodër; go for sunset, when the light over the lake and city from the ramparts is best.' },
+        { name: 'Theth', lat: 42.3961, lng: 19.7692 , notes: 'Remote Alpine valley of stone kulla towers, the highlight being the day-hike over to Valbonë through the Accursed Mountains; allocate a full day for the hike and note the access road is realistically only open/passable roughly June-October.' },
         { name: 'Valbona', lat: 42.4644, lng: 19.8919 },
         { name: 'Berat', lat: 40.7058, lng: 19.9522 },
       ],
@@ -15880,7 +16043,7 @@ function rbBuildAlbaniaMontenegroRoute() {
     {
       code: 'AL', name: 'Albania', days: 7, budget: 315, lat: 40.6000, lng: 19.7000,
       destinations: [
-        { name: 'Tirana', lat: 41.3275, lng: 19.8187 },
+        { name: 'Tirana', lat: 41.3275, lng: 19.8187 , notes: 'Colorful communist-era apartment blocks and Bunk\'Art (a converted Cold War bunker) tell the Hoxha-era story best; Bunk\'Art 2 is central and walkable, but Bunk\'Art 1 is out of town and needs a taxi or bus — check which one you\'re booking.' },
         { name: 'Berat', lat: 40.7058, lng: 19.9522 },
         { name: 'Dhermi', lat: 40.1461, lng: 19.6417 },
         { name: 'Himarë', lat: 40.1017, lng: 19.7444 },
@@ -15911,7 +16074,7 @@ function rbBuildAlbaniaNorthMacedoniaRoute() {
     {
       code: 'AL', name: 'Albania', days: 4, budget: 160, lat: 41.0000, lng: 20.3000,
       destinations: [
-        { name: 'Tirana', lat: 41.3275, lng: 19.8187 },
+        { name: 'Tirana', lat: 41.3275, lng: 19.8187 , notes: 'Colorful communist-era apartment blocks and Bunk\'Art (a converted Cold War bunker) tell the Hoxha-era story best; Bunk\'Art 2 is central and walkable, but Bunk\'Art 1 is out of town and needs a taxi or bus — check which one you\'re booking.' },
         { name: 'Berat', lat: 40.7058, lng: 19.9522 },
         { name: 'Korçë', lat: 40.6186, lng: 20.7808 },
       ],
@@ -16156,7 +16319,7 @@ function rbBuildNorthMacedoniaAlbaniaRoute() {
     {
       code: 'AL', name: 'Albania', days: 4, budget: 120, lat: 41.0000, lng: 19.9000,
       destinations: [
-        { name: 'Tirana', lat: 41.3275, lng: 19.8187 },
+        { name: 'Tirana', lat: 41.3275, lng: 19.8187 , notes: 'Colorful communist-era apartment blocks and Bunk\'Art (a converted Cold War bunker) tell the Hoxha-era story best; Bunk\'Art 2 is central and walkable, but Bunk\'Art 1 is out of town and needs a taxi or bus — check which one you\'re booking.' },
         { name: 'Berat', lat: 40.7058, lng: 19.9522 },
       ],
       notes: "Tirana (2 days) — Berat (1-2 days, UNESCO-listed) — optionally continue on to Gjirokastër. Budget ~€25-35/day — Albania runs noticeably cheaper than North Macedonia.",
@@ -16206,7 +16369,7 @@ function rbBuildKosovoRoute() {
       destinations: [
         { name: 'Pristina', lat: 42.6629, lng: 21.1655 },
         { name: 'Prizren (Sinan Pasha Mosque, Liga House)', lat: 42.2139, lng: 20.7397 },
-        { name: 'Peja / Rugova Gorge', lat: 42.6591, lng: 20.2883 },
+        { name: 'Peja / Rugova Gorge', lat: 42.6591, lng: 20.2883 , notes: 'The Patriarchate of Peć, a UNESCO-listed medieval Serbian Orthodox monastery, sits right at the mouth of the dramatic Rugova Gorge canyon road; bring ID, as the monastery compound has restricted/guarded access.' },
         { name: 'Visoki Dečani / Peć Patriarchate', lat: 42.5486, lng: 20.1364 },
       ],
       notes: "Pristina (1-2 days) — Prizren (2 days, the Liga House and Sinan Pasha Mosque) — Peja and the Rugova Gorge (1-2 days, canyon hiking and a Via Ferrata). Budget ~€25-35/day — the cheapest Balkan country to travel in (hostels €7-15). Season: May-June/September; the Rugova Gorge activities (Via Ferrata, cable car) run best April-October. Web check (2026-08): since 15 March 2026, private-stay accommodation must be registered with the police within 3 days (hotels handle this automatically); visiting Visoki Dečani or the Peć Patriarchate requires surrendering your passport at the KFOR checkpoint, dressing modestly, and sometimes an escort. Northern Kosovo (North Mitrovica, Zvečan, Zubin Potok, Leposavić) carries an orange 'essential travel only' advisory over tensions around the Mitrovica bridge and an August 2026 KFOR transition — this route doesn't go there. Landmines remain in remote areas along the Kosovo-Albania border and on the Dulje Pass — stick to marked trails. Border-order note: Serbia does not recognize Kosovo's border crossings as official international border posts — if this trip is ever combined with Serbia, enter Serbia first (via Belgrade/Niš airport or a recognized land border) before crossing into Kosovo, since returning to Serbia from Kosovo without a prior Serbian entry stamp can lead to refusal. That's exactly why this route and its Kosovo-based siblings in this batch pair Kosovo only with North Macedonia, Albania or Montenegro, never with Serbia.",
@@ -16227,7 +16390,7 @@ function rbBuildKosovoNorthMacedoniaRoute() {
       code: 'XK', name: 'Kosovo', days: 3, budget: 90, lat: 42.4500, lng: 20.9500,
       destinations: [
         { name: 'Pristina', lat: 42.6629, lng: 21.1655 },
-        { name: 'Prizren', lat: 42.2139, lng: 20.7397 },
+        { name: 'Prizren', lat: 42.2139, lng: 20.7397 , notes: 'Ottoman-era old town with the stone bridge, Sinan Pasha Mosque, and a hilltop Kalaja fortress; climb to the fortress near sunset for the best view over the town\'s minarets and river.' },
       ],
       notes: "Pristina (1 day) — Prizren (2 days). Budget ~€25-35/day. This route deliberately leaves Kosovo via North Macedonia, never towards Serbia — see the standalone Kosovo route's notes for the border-order reasoning.",
       transport_to_next: "Overland to Skopje — a straightforward non-Schengen border crossing.",
@@ -16255,8 +16418,8 @@ function rbBuildKosovoAlbaniaRoute() {
     {
       code: 'XK', name: 'Kosovo', days: 4, budget: 120, lat: 42.4500, lng: 20.4500,
       destinations: [
-        { name: 'Peja / Rugova Gorge', lat: 42.6591, lng: 20.2883 },
-        { name: 'Prizren', lat: 42.2139, lng: 20.7397 },
+        { name: 'Peja / Rugova Gorge', lat: 42.6591, lng: 20.2883 , notes: 'The Patriarchate of Peć, a UNESCO-listed medieval Serbian Orthodox monastery, sits right at the mouth of the dramatic Rugova Gorge canyon road; bring ID, as the monastery compound has restricted/guarded access.' },
+        { name: 'Prizren', lat: 42.2139, lng: 20.7397 , notes: 'Ottoman-era old town with the stone bridge, Sinan Pasha Mosque, and a hilltop Kalaja fortress; climb to the fortress near sunset for the best view over the town\'s minarets and river.' },
       ],
       notes: "Peja and the Rugova Gorge (2 days) — Prizren (2 days). Budget ~€25-35/day. This route leaves Kosovo via Albania, never via Serbia — see the standalone Kosovo route's notes for why.",
       transport_to_next: "Overland via the Kukës border crossing.",
@@ -16264,10 +16427,10 @@ function rbBuildKosovoAlbaniaRoute() {
     {
       code: 'AL', name: 'Albania', days: 5, budget: 150, lat: 41.6000, lng: 19.9000,
       destinations: [
-        { name: 'Kukës', lat: 42.0778, lng: 20.4219 },
-        { name: 'Shkodër', lat: 42.0683, lng: 19.5126 },
-        { name: 'Theth (Accursed Mountains)', lat: 42.3961, lng: 19.7692 },
-        { name: 'Tirana', lat: 41.3275, lng: 19.8187 },
+        { name: 'Kukës', lat: 42.0778, lng: 20.4219 , notes: 'A modern town rebuilt after being relocated for the Fierza reservoir in the 1970s, so there\'s little historic core; most travelers only pass through as the crossroads into Albania, with views over Lake Fierza along the road being the main reason to slow down here.' },
+        { name: 'Shkodër', lat: 42.0683, lng: 19.5126 , notes: 'Rozafa Castle hilltop ruins overlooking the confluence of three rivers and Lake Shkodër; go for sunset, when the light over the lake and city from the ramparts is best.' },
+        { name: 'Theth (Accursed Mountains)', lat: 42.3961, lng: 19.7692 , notes: 'Remote Alpine valley of stone kulla towers, the highlight being the day-hike over to Valbonë through the Accursed Mountains; allocate a full day for the hike and note the access road is realistically only open/passable roughly June-October.' },
+        { name: 'Tirana', lat: 41.3275, lng: 19.8187 , notes: 'Colorful communist-era apartment blocks and Bunk\'Art (a converted Cold War bunker) tell the Hoxha-era story best; Bunk\'Art 2 is central and walkable, but Bunk\'Art 1 is out of town and needs a taxi or bus — check which one you\'re booking.' },
       ],
       notes: "Shkodër and the Accursed Mountains around Theth (2 days) — Tirana (3 days). Budget ~€25-35/day — similar cost level to Kosovo.",
       transport_to_next: 'End of this route — fly home from Tirana.',
@@ -16315,8 +16478,8 @@ function rbBuildKosovoMontenegroAlbaniaRoute() {
     {
       code: 'XK', name: 'Kosovo', days: 4, budget: 120, lat: 42.4500, lng: 20.4500,
       destinations: [
-        { name: 'Prizren', lat: 42.2139, lng: 20.7397 },
-        { name: 'Peja / Rugova Gorge', lat: 42.6591, lng: 20.2883 },
+        { name: 'Prizren', lat: 42.2139, lng: 20.7397 , notes: 'Ottoman-era old town with the stone bridge, Sinan Pasha Mosque, and a hilltop Kalaja fortress; climb to the fortress near sunset for the best view over the town\'s minarets and river.' },
+        { name: 'Peja / Rugova Gorge', lat: 42.6591, lng: 20.2883 , notes: 'The Patriarchate of Peć, a UNESCO-listed medieval Serbian Orthodox monastery, sits right at the mouth of the dramatic Rugova Gorge canyon road; bring ID, as the monastery compound has restricted/guarded access.' },
       ],
       notes: "Prizren (2 days) — Peja and the Rugova Gorge (2 days). Budget ~€25-35/day. Leaves Kosovo towards Montenegro, never towards Serbia — see the standalone Kosovo route's notes for why.",
       transport_to_next: "Overland via the Plav/Gusinje border crossing into Montenegro.",
@@ -16332,8 +16495,8 @@ function rbBuildKosovoMontenegroAlbaniaRoute() {
     {
       code: 'AL', name: 'Albania', days: 3, budget: 90, lat: 41.7000, lng: 19.6500,
       destinations: [
-        { name: 'Shkodër', lat: 42.0683, lng: 19.5126 },
-        { name: 'Tirana', lat: 41.3275, lng: 19.8187 },
+        { name: 'Shkodër', lat: 42.0683, lng: 19.5126 , notes: 'Rozafa Castle hilltop ruins overlooking the confluence of three rivers and Lake Shkodër; go for sunset, when the light over the lake and city from the ramparts is best.' },
+        { name: 'Tirana', lat: 41.3275, lng: 19.8187 , notes: 'Colorful communist-era apartment blocks and Bunk\'Art (a converted Cold War bunker) tell the Hoxha-era story best; Bunk\'Art 2 is central and walkable, but Bunk\'Art 1 is out of town and needs a taxi or bus — check which one you\'re booking.' },
       ],
       notes: "Shkodër (1-2 days) — Tirana (1-2 days). Budget ~€25-35/day.",
       transport_to_next: 'End of this route — fly home from Tirana.',
@@ -16353,7 +16516,7 @@ function rbBuildKosovoNorthMacedoniaAlbaniaRoute() {
       code: 'XK', name: 'Kosovo', days: 4, budget: 120, lat: 42.4500, lng: 20.9500,
       destinations: [
         { name: 'Pristina', lat: 42.6629, lng: 21.1655 },
-        { name: 'Prizren', lat: 42.2139, lng: 20.7397 },
+        { name: 'Prizren', lat: 42.2139, lng: 20.7397 , notes: 'Ottoman-era old town with the stone bridge, Sinan Pasha Mosque, and a hilltop Kalaja fortress; climb to the fortress near sunset for the best view over the town\'s minarets and river.' },
       ],
       notes: "Pristina (1-2 days) — Prizren (2 days). Budget ~€25-35/day. This route leaves Kosovo via North Macedonia, never towards Serbia — see the standalone Kosovo route's notes for why.",
       transport_to_next: "Overland to Skopje.",
@@ -16370,7 +16533,7 @@ function rbBuildKosovoNorthMacedoniaAlbaniaRoute() {
     {
       code: 'AL', name: 'Albania', days: 2, budget: 60, lat: 41.3275, lng: 19.8187,
       destinations: [
-        { name: 'Tirana', lat: 41.3275, lng: 19.8187 },
+        { name: 'Tirana', lat: 41.3275, lng: 19.8187 , notes: 'Colorful communist-era apartment blocks and Bunk\'Art (a converted Cold War bunker) tell the Hoxha-era story best; Bunk\'Art 2 is central and walkable, but Bunk\'Art 1 is out of town and needs a taxi or bus — check which one you\'re booking.' },
       ],
       notes: "Tirana (1-2 days). Budget ~€25-35/day.",
       transport_to_next: 'End of this route — fly home from Tirana.',
@@ -16390,8 +16553,8 @@ function rbBuildKosovoAlbaniaNorthMacedoniaRoute() {
       code: 'XK', name: 'Kosovo', days: 5, budget: 150, lat: 42.5000, lng: 20.7000,
       destinations: [
         { name: 'Pristina', lat: 42.6629, lng: 21.1655 },
-        { name: 'Peja / Rugova Gorge', lat: 42.6591, lng: 20.2883 },
-        { name: 'Prizren', lat: 42.2139, lng: 20.7397 },
+        { name: 'Peja / Rugova Gorge', lat: 42.6591, lng: 20.2883 , notes: 'The Patriarchate of Peć, a UNESCO-listed medieval Serbian Orthodox monastery, sits right at the mouth of the dramatic Rugova Gorge canyon road; bring ID, as the monastery compound has restricted/guarded access.' },
+        { name: 'Prizren', lat: 42.2139, lng: 20.7397 , notes: 'Ottoman-era old town with the stone bridge, Sinan Pasha Mosque, and a hilltop Kalaja fortress; climb to the fortress near sunset for the best view over the town\'s minarets and river.' },
       ],
       notes: "Pristina (1 day) — Peja and the Rugova Gorge (2 days) — Prizren (2 days). Budget ~€25-35/day. A fuller, slower-paced version of the 'Kosovo + North Macedonia + Albania (9 days)' route above, run in a different order and over 12 rather than 9 days. Leaves Kosovo via Albania, never towards Serbia — see the standalone Kosovo route's notes for why.",
       transport_to_next: "Overland via the Kukës border crossing.",
@@ -16399,9 +16562,9 @@ function rbBuildKosovoAlbaniaNorthMacedoniaRoute() {
     {
       code: 'AL', name: 'Albania', days: 4, budget: 120, lat: 41.6000, lng: 19.9000,
       destinations: [
-        { name: 'Kukës', lat: 42.0778, lng: 20.4219 },
-        { name: 'Shkodër', lat: 42.0683, lng: 19.5126 },
-        { name: 'Tirana', lat: 41.3275, lng: 19.8187 },
+        { name: 'Kukës', lat: 42.0778, lng: 20.4219 , notes: 'A modern town rebuilt after being relocated for the Fierza reservoir in the 1970s, so there\'s little historic core; most travelers only pass through as the crossroads into Albania, with views over Lake Fierza along the road being the main reason to slow down here.' },
+        { name: 'Shkodër', lat: 42.0683, lng: 19.5126 , notes: 'Rozafa Castle hilltop ruins overlooking the confluence of three rivers and Lake Shkodër; go for sunset, when the light over the lake and city from the ramparts is best.' },
+        { name: 'Tirana', lat: 41.3275, lng: 19.8187 , notes: 'Colorful communist-era apartment blocks and Bunk\'Art (a converted Cold War bunker) tell the Hoxha-era story best; Bunk\'Art 2 is central and walkable, but Bunk\'Art 1 is out of town and needs a taxi or bus — check which one you\'re booking.' },
         { name: 'Berat', lat: 40.7058, lng: 19.9522 },
       ],
       notes: "Kukës and Shkodër (2 days) — Tirana and Berat (2 days). Budget ~€25-35/day.",
@@ -20673,8 +20836,8 @@ function rbBuildSloveniaCroatiaCoastalRoute() {
     {
       code: 'HR', name: 'Croatia', days: 5, budget: 600, lat: 45.0000, lng: 13.7500,
       destinations: [
-        { name: 'Rovinj', lat: 45.0811, lng: 13.6387 },
-        { name: 'Pula (Arena)', lat: 44.8737, lng: 13.8467 },
+        { name: 'Rovinj', lat: 45.0811, lng: 13.6387 , notes: 'Car-free Istrian old town on a small peninsula with pastel houses and the hilltop St. Euphemia church; park outside the center and climb the church bell tower for the view over the rooftops to the sea.' },
+        { name: 'Pula (Arena)', lat: 44.8737, lng: 13.8467 , notes: 'One of the best-preserved Roman amphitheaters in the world, still used for concerts; check the events calendar before visiting since summer concert setup can restrict daytime access, and go in the morning to avoid both heat and tour groups.' },
       ],
       notes: "Rovinj (2-3 days) — Pula (2 days, the Roman amphitheater). Budget ~€120-130/day (coastal Istria is pricier than inland Croatia). Season: May-June/September, July-August is hot and full.",
       transport_to_next: 'End of this route — fly home from Pula, or via Zagreb with a connection.',
@@ -20889,8 +21052,8 @@ function rbBuildAdriaticRoadtripRoute() {
     {
       code: 'HR', name: 'Croatia', days: 8, budget: 1040, lat: 44.0000, lng: 16.0000,
       destinations: [
-        { name: 'Rovinj', lat: 45.0811, lng: 13.6387 },
-        { name: 'Pula (Arena)', lat: 44.8737, lng: 13.8467 },
+        { name: 'Rovinj', lat: 45.0811, lng: 13.6387 , notes: 'Car-free Istrian old town on a small peninsula with pastel houses and the hilltop St. Euphemia church; park outside the center and climb the church bell tower for the view over the rooftops to the sea.' },
+        { name: 'Pula (Arena)', lat: 44.8737, lng: 13.8467 , notes: 'One of the best-preserved Roman amphitheaters in the world, still used for concerts; check the events calendar before visiting since summer concert setup can restrict daytime access, and go in the morning to avoid both heat and tour groups.' },
         { name: 'Zadar', lat: 44.1194, lng: 15.2314, notes: "The Sea Organ (wave-powered pipes built into the waterfront steps) and the adjacent Sun Salutation light installation make the sunset promenade the actual destination here — reportedly the sunset Hitchcock once called the world's most beautiful. Time the visit for sunset; the light show and organ sound together are the point." },
         { name: "Split (Diocletian's Palace)", lat: 43.5081, lng: 16.4402, notes: "The 4th-century Roman emperor's retirement palace isn't a ruin behind a fence — it's a living neighborhood, with Split's actual old town built directly into and around its walls, colonnaded Peristyle square, and the octagonal Cathedral of St. Domnius (once Diocletian's own mausoleum). Duck into the palace's atmospheric basement halls (substructures) — used as a Game of Thrones filming location — and climb the cathedral's bell tower for a rooftop view over the old town and harbor." },
         { name: 'Hvar Town', lat: 43.1729, lng: 16.4413 },
@@ -21274,7 +21437,7 @@ function rbBuildItalySloveniaCroatiaRoute() {
       code: 'IT', name: 'Italy', days: 2, budget: 320, lat: 45.4408, lng: 12.3155,
       destinations: [
         { name: 'Piazza San Marco', lat: 45.4408, lng: 12.3155, notes: "St Mark's Basilica and the Doge's Palace anchor the square; the basilica itself is free to enter, but a skip-the-line booking avoids the worst of the queue." },
-        { name: 'Rialto Bridge', lat: 45.4380, lng: 12.3358 },
+        { name: 'Rialto Bridge', lat: 45.4380, lng: 12.3358 , notes: 'Venice\'s iconic Grand Canal crossing with the adjoining Rialto Market; cross before 9am for photos without the day-tripper crush, and hit the market stalls in the same early slot.' },
       ],
       notes: "Venice (2 days) as the opener — same San Marco/Rialto content and day-tripper-tax caveat as Venice + Dolomites (5 days) 🎭 above (waived by an overnight stay in the Venice municipality, so not applicable here). Web check (2026-09): the 2026 tax season (Fri/Sat/Sun, 3 April-26 July plus a few extra dates) has already ended; no 2027 calendar has been announced yet, pending the city's post-season review — check closer to any actual booking. Budget ~€100-120/day p.p. blended across this whole route (Venice itself runs pricier).",
       transport_to_next: 'Drive via Trieste to Ljubljana, Slovenia — Schengen-Schengen throughout, no border control or lost time.',
@@ -21282,7 +21445,7 @@ function rbBuildItalySloveniaCroatiaRoute() {
     {
       code: 'SI', name: 'Slovenia', days: 2, budget: 200, lat: 46.0569, lng: 14.5058,
       destinations: [
-        { name: 'Trieste (Italy, waypoint)', lat: 45.6495, lng: 13.7768 },
+        { name: 'Trieste (Italy, waypoint)', lat: 45.6495, lng: 13.7768 , notes: 'Piazza Unità d\'Italia — one of Europe\'s largest seafront squares — and the Habsburg-built Miramare Castle just outside town reflect the city\'s Austro-Hungarian past rather than typical Italian character; 2-3 hours covers the square and waterfront on the way through.' },
         { name: 'Ljubljana', lat: 46.0569, lng: 14.5058, notes: "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river." },
       ],
       notes: "Trieste as a waypoint, then Ljubljana (2 days) — same core content as Slovenia + Italy (9 days) 🍝 (rbBuildSloveniaItalyRoute) above, run in reverse (that route goes Slovenia→Trieste→Venice; this one goes Venice→Trieste→Slovenia).",
@@ -21299,8 +21462,8 @@ function rbBuildItalySloveniaCroatiaRoute() {
     {
       code: 'HR', name: 'Croatia', days: 3, budget: 390, lat: 45.0811, lng: 13.6387,
       destinations: [
-        { name: 'Rovinj', lat: 45.0811, lng: 13.6387 },
-        { name: 'Pula (Arena)', lat: 44.8737, lng: 13.8467 },
+        { name: 'Rovinj', lat: 45.0811, lng: 13.6387 , notes: 'Car-free Istrian old town on a small peninsula with pastel houses and the hilltop St. Euphemia church; park outside the center and climb the church bell tower for the view over the rooftops to the sea.' },
+        { name: 'Pula (Arena)', lat: 44.8737, lng: 13.8467 , notes: 'One of the best-preserved Roman amphitheaters in the world, still used for concerts; check the events calendar before visiting since summer concert setup can restrict daytime access, and go in the morning to avoid both heat and tour groups.' },
       ],
       notes: "Istria (Rovinj-Pula, 3 days) — same content as Istria (6 days) 🍇 (rbBuildIstriaRoute) above (Rovinj/Pula, the Rovinj-Pula bus/drive at ~1h/€5). Budget ~€90-150/day p.p. (Rovinj at the top end).",
       transport_to_next: 'Drive inland to Plitvice Lakes National Park.',
@@ -21761,7 +21924,7 @@ function rbBuildBalkanRoadtripSerbiaNMacedoniaAlbaniaKosovoRoute() {
     {
       code: 'AL', name: 'Albania', days: 3, budget: 90, lat: 41.3275, lng: 19.8187,
       destinations: [
-        { name: 'Tirana', lat: 41.3275, lng: 19.8187 },
+        { name: 'Tirana', lat: 41.3275, lng: 19.8187 , notes: 'Colorful communist-era apartment blocks and Bunk\'Art (a converted Cold War bunker) tell the Hoxha-era story best; Bunk\'Art 2 is central and walkable, but Bunk\'Art 1 is out of town and needs a taxi or bus — check which one you\'re booking.' },
         { name: 'Berat', lat: 40.7058, lng: 19.9522 },
       ],
       notes: "Tirana and Berat's UNESCO-listed old town (3 days). Budget ~€30/day.",
@@ -21770,7 +21933,7 @@ function rbBuildBalkanRoadtripSerbiaNMacedoniaAlbaniaKosovoRoute() {
     {
       code: 'XK', name: 'Kosovo', days: 2, budget: 60, lat: 42.2139, lng: 20.7397,
       destinations: [
-        { name: 'Prizren', lat: 42.2139, lng: 20.7397 },
+        { name: 'Prizren', lat: 42.2139, lng: 20.7397 , notes: 'Ottoman-era old town with the stone bridge, Sinan Pasha Mosque, and a hilltop Kalaja fortress; climb to the fortress near sunset for the best view over the town\'s minarets and river.' },
       ],
       notes: "Prizren (1-2 days). Budget ~€30/day. ⚠️⚠️ Web check (2026-08): the Serbia-Kosovo border crossing on the way back to Belgrade can give real administrative friction — Serbia does not recognize Kosovo's borders, and travelers who entered Kosovo from a country other than Serbia (as this route does, via Albania) have occasionally been challenged or refused entry into Serbia afterward, since Serbian officials can treat that as having entered Serbian territory through an unrecognized checkpoint. This is the same underlying issue already flagged in batch 8's Kosovo-Serbia border-sequence warning (see the standalone Kosovo route's notes) — check the current situation and carry documentation of the full itinerary before attempting this crossing; consider verifying with the Serbian embassy/consulate if in doubt. Travel advisory: overwhelmingly green across this route; northern Kosovo (Mitrovica area) is orange since the August 2026 KFOR tensions — Web check (2026-09): this is actively escalating, not settled (KFOR began withdrawing from its permanent Mitrovica Ibar bridge checkpoint from ~10 August 2026, and Serbian officials have since escalated rhetoric sharply through early September, appealing to the EU/NATO/US over the bridge — no reports yet of actual violence on the ground, but watch the news closer to departure), while the Pristina/Prizren corridor this route actually uses remains explicitly unaffected and rated safe. Serbia-Kosovo third-country-entry border friction (see below) also confirmed still real and current as of 2026.",
       transport_to_next: 'Overland back to Belgrade (the border crossing flagged above) to close the loop.',

@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 307 / 741 signatures.**
+- **Done so far: 325 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -123,7 +123,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **AU** (4 dest): Adelaide, Kangaroo Island, Barossa Valley, Flinders Ranges — routes: Oceania Grand Expedition 🌊, Temperate/Southern Australia 🍇
 - [x] **BA** (3 dest): Sarajevo (Baščaršija), Mostar (Stari Most), Trebinje — routes: Bosnia + Montenegro + Budva (7-10 days) ⛰️, Grand Balkan Roadtrip (14 days) 🏔️
 - [x] **BE** (2 dest): Bruges, Ghent — routes: British Isles & Celtic Coast Expedition 🍀, Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖
-- [ ] **BE** (1 dest): Bastogne — routes: Luxembourg + Ardennes (4 days) 🎖️, South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️
+- [x] **BE** (1 dest): Bastogne — routes: Luxembourg + Ardennes (4 days) 🎖️, South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️
 - [x] **BH** (4 dest): Qal'at al-Bahrain (Bahrain Fort), Bahrain National Museum, Al Fateh Grand Mosque, Tree of Life — routes: Egypt & Arabian Peninsula 🐪, Mediterranean Civilizations Expedition 🏛️
 - [x] **BJ** (3 dest): Abomey (royal palaces, UNESCO), Ouidah (Route des Esclaves, Door of No Return), Ganvié (stilt village on the lake) — routes: West & Central Africa Expedition 🌍, West Africa Overland 🥁
 - [x] **BN** (3 dest): Bandar Seri Begawan, Kampong Ayer, Ulu Temburong NP — routes: Eurasia Grand Tour 🌏, Southeast Asia Grand Loop 🛕
@@ -142,8 +142,8 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **CN** (6 dest): Xi'an, Chengdu, Zhangjiajie, Guilin/Yangshuo (Li River), Shanghai, Beijing — routes: East Asia & Pacific 🗻, Eurasia Grand Tour 🌏
 - [x] **CY** (3 dest): Paphos, Limassol, Nicosia — routes: Greece & Cyprus 🏺, Mediterranean Civilizations Expedition 🏛️
 - [x] **CZ** (1 dest): Prague — routes: Grand European Roadtrip (14-21 days) 🪣, Prague + Poland (9 days) 🚂
-- [ ] **DE** (1 dest): Berlin — routes: Berlin (4 days) 🐻, Germany: Berlin + Dresden + Bavaria (9 days) 🚂
-- [ ] **DE** (2 dest): Berchtesgaden, Königssee — routes: Bavaria + Alps + Berchtesgaden (6 days) ⛰️, Salzburg + Berchtesgaden + Hallstatt (5 days) 🛥️
+- [x] **DE** (1 dest): Berlin — routes: Berlin (4 days) 🐻, Germany: Berlin + Dresden + Bavaria (9 days) 🚂
+- [x] **DE** (2 dest): Berchtesgaden, Königssee — routes: Bavaria + Alps + Berchtesgaden (6 days) ⛰️, Salzburg + Berchtesgaden + Hallstatt (5 days) 🛥️
 - [x] **DE** (1 dest): Munich (Marienplatz, Englischer Garten) — routes: Germany + Austria + Italy (10-14 days) 🏔️, Germany + Austria + Slovenia (10-14 days) 🥨
 - [x] **EG** (6 dest): Cairo, Giza, Luxor, Karnak, Aswan, Abu Simbel — routes: Egypt & Arabian Peninsula 🐪, Mediterranean Civilizations Expedition 🏛️
 - [x] **ES** (2 dest): Santa Cruz de Tenerife, Teide National Park — routes: Canary Islands (10-14 days) 🏝️, Gran Canaria + Tenerife (7-10 days) 🏝️
@@ -169,7 +169,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **GR** (2 dest): Paros (Parikia), Naoussa — routes: Cyclades (5-7 days) 🏝️, Cyclades Island Hopping (7-10 days) 🏝️
 - [x] **HN** (6 dest): Puerto Cortés, Copán Ruinas, Lago de Yojoa, La Ceiba, Roatán, Tegucigalpa — routes: Central America Loop 🌋, Pan-American Grand Tour 🌎
 - [x] **HR** (1 dest): Dubrovnik Old Town — routes: Bosnia + Croatia (9 days) 🏛️, Montenegro + Croatia (9 days) ⛵
-- [ ] **HR** (2 dest): Rovinj, Pula (Arena) — routes: Italy + Slovenia + Croatia (10-14 days) ⛵, Slovenia + Croatian Istria (7-10 days) 🏖️
+- [x] **HR** (2 dest): Rovinj, Pula (Arena) — routes: Italy + Slovenia + Croatia (10-14 days) ⛵, Slovenia + Croatian Istria (7-10 days) 🏖️
 - [x] **HR** (1 dest): Zagreb — routes: Austria + Slovenia + Croatia (10-14 days) 🚙, Italy + Slovenia + Croatia (10-14 days) ⛵
 - [x] **HR** (1 dest): Plitvice Lakes National Park — routes: Austria + Slovenia + Croatia (10-14 days) 🚙, Italy + Slovenia + Croatia (10-14 days) ⛵
 - [x] **HU** (2 dest): Buda Castle District, Eger (optional extension) — routes: Czechia + Austria + Hungary (10-14 days) 🏛️, Poland + Slovakia + Hungary (10-14 days) 🥾
@@ -213,7 +213,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **SE** (3 dest): Kiruna, Sami culture (Jukkasjärvi), Abisko National Park — routes: Nordic Arctic Expedition ❄️, Scandinavia Overland 🚂
 - [x] **SG** (4 dest): Marina Bay, Chinatown, Sentosa, Gardens by the Bay — routes: Eurasia Grand Tour 🌏, Southeast Asia Grand Loop 🛕
 - [x] **SI** (1 dest): Bled — routes: Grand European Roadtrip (14-21 days) 🪣, Italy + Slovenia + Croatia (10-14 days) ⛵
-- [ ] **SM** (2 dest): City of San Marino (old town), Rocca Guaita — routes: San Marino + Emilia-Romagna (4 days) 🍝, San Marino + Tuscany (5 days) 🍷
+- [x] **SM** (2 dest): City of San Marino (old town), Rocca Guaita — routes: San Marino + Emilia-Romagna (4 days) 🍝, San Marino + Tuscany (5 days) 🍷
 - [x] **SV** (6 dest): San Salvador, Santa Ana, Cerro Verde & volcanoes, Ruta de las Flores (Juayúa, Ataco), El Tunco, Suchitoto — routes: Central America Loop 🌋, Pan-American Grand Tour 🌎
 - [x] **TG** (2 dest): Lomé, Togoville (Vodun culture, Lac Togo) — routes: West & Central Africa Expedition 🌍, West Africa Overland 🥁
 - [x] **TL** (5 dest): Dili, Atauro Island, Jaco Island (Nino Konis Santana NP), Baucau, Maubisse — routes: Eurasia Grand Tour 🌏, Southeast Asia Grand Loop 🛕
@@ -223,7 +223,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **UG** (6 dest): Bwindi Impenetrable Forest (gorillas), Queen Elizabeth NP, Kibale Forest, Murchison Falls, Kampala, Jinja — routes: Africa Grand Tour 🌍, East Africa Safari Classic 🦒
 - [x] **WS** (4 dest): Apia, To Sua Ocean Trench, Lalomanu (beach fales), Upolu — routes: Oceania Grand Expedition 🌊, Pacific Islands 🌺
 - [ ] **XK** (2 dest): Pristina, Prizren — routes: Kosovo + North Macedonia (6 days) 🚏, Kosovo + North Macedonia + Albania (9 days) 🎒
-- [ ] **XK** (2 dest): Peja / Rugova Gorge, Prizren — routes: Kosovo + Albania (9 days) 🏔️, Kosovo + Montenegro + Albania (9 days) 🗻
+- [x] **XK** (2 dest): Peja / Rugova Gorge, Prizren — routes: Kosovo + Albania (9 days) 🏔️, Kosovo + Montenegro + Albania (9 days) 🗻
 
 ## Solo signatures (one route each)
 
@@ -236,8 +236,8 @@ Sorted alphabetically by country code.
 - [x] **AL** (3 dest): Tirana, Berat, Korçë — routes: Albania + North Macedonia (12 days) 🏞️
 - [ ] **AL** (5 dest): Tirana, Shkodër, Theth, Valbona, Berat — routes: Albania Roadtrip (9 days) 🥾
 - [ ] **AL** (7 dest): Vlorë, Dhermi, Himarë, Porto Palermo, Saranda, Ksamil, Butrint — routes: Albanian Riviera (9 days) 🌊
-- [ ] **AL** (4 dest): Kukës, Shkodër, Theth (Accursed Mountains), Tirana — routes: Kosovo + Albania (9 days) 🏔️
-- [ ] **AL** (4 dest): Kukës, Shkodër, Tirana, Berat — routes: Kosovo + Albania + North Macedonia (12 days) 🧭
+- [x] **AL** (4 dest): Kukës, Shkodër, Theth (Accursed Mountains), Tirana — routes: Kosovo + Albania (9 days) 🏔️
+- [x] **AL** (4 dest): Kukës, Shkodër, Tirana, Berat — routes: Kosovo + Albania + North Macedonia (12 days) 🧭
 - [x] **AL** (2 dest): Shkodër, Tirana — routes: Kosovo + Montenegro + Albania (9 days) 🗻
 - [x] **AL** (1 dest): Tirana — routes: Kosovo + North Macedonia + Albania (9 days) 🎒
 - [ ] **AT** (3 dest): Salzburg or Grossglockner area, Klagenfurt, Wörthersee — routes: Austria + Slovenia (9 days) 🏝️
@@ -309,7 +309,7 @@ Sorted alphabetically by country code.
 - [ ] **CZ** (3 dest): Brno, Mikulov wine region, Znojmo wine region — routes: Moravia: Brno + Wine Region (5 days) 🍇
 - [ ] **CZ** (4 dest): Staré Město (Old Town Square), Malá Strana, Prague Castle, Vyšehrad — routes: Prague (4 days) 🏰
 - [ ] **CZ** (3 dest): Staré Město / Prague Castle, Karlovy Vary (optional stopover), Český Krumlov — routes: Prague + Bohemia (5 days) 🏘️
-- [ ] **DE** (4 dest): Munich, Garmisch-Partenkirchen, Füssen, Hohenschwangau (Neuschwanstein) — routes: Bavaria + Alps + Berchtesgaden (6 days) ⛰️
+- [x] **DE** (4 dest): Munich, Garmisch-Partenkirchen, Füssen, Hohenschwangau (Neuschwanstein) — routes: Bavaria + Alps + Berchtesgaden (6 days) ⛰️
 - [ ] **DE** (4 dest): Munich (Marienplatz, Englischer Garten, Deutsches Museum), Garmisch-Partenkirchen, Füssen, Hohenschwangau (Neuschwanstein) — routes: Bavaria: Munich + Alps (5 days) 🥨
 - [ ] **DE** (4 dest): Freiburg im Breisgau (base), Titisee, Triberg, Baden-Baden — routes: Black Forest (6 days) 🕰️
 - [ ] **DE** (3 dest): Brandenburg Gate, Museum Island, Berlin Wall Memorial — routes: Central Europe Roadtrip (14 days) 🚂
@@ -319,8 +319,8 @@ Sorted alphabetically by country code.
 - [ ] **DE** (2 dest): Dresden (Altstadt, Frauenkirche, Zwinger), Bastei Bridge / Rathen (Saxon Switzerland NP) — routes: Dresden + Saxon Switzerland (4 days) 🧗
 - [ ] **DE** (5 dest): Lindau (Lake Constance), Füssen, Garmisch-Partenkirchen, Chiemsee / Prien am Chiemsee, Berchtesgaden — routes: German Alpine Road / Deutsche Alpenstraße (9 days) 🏞️
 - [x] **DE** (2 dest): Garmisch-Partenkirchen, Füssen / Hohenschwangau (Neuschwanstein) — routes: Germany + Austria + Italy (10-14 days) 🏔️
-- [ ] **DE** (2 dest): Dresden, Bastei Bridge / Saxon Switzerland NP — routes: Germany: Berlin + Dresden + Bavaria (9 days) 🚂
-- [ ] **DE** (3 dest): Munich, Garmisch-Partenkirchen, Füssen / Hohenschwangau (Neuschwanstein) — routes: Germany: Berlin + Dresden + Bavaria (9 days) 🚂
+- [x] **DE** (2 dest): Dresden, Bastei Bridge / Saxon Switzerland NP — routes: Germany: Berlin + Dresden + Bavaria (9 days) 🚂
+- [x] **DE** (3 dest): Munich, Garmisch-Partenkirchen, Füssen / Hohenschwangau (Neuschwanstein) — routes: Germany: Berlin + Dresden + Bavaria (9 days) 🚂
 - [ ] **DE** (2 dest): Rüdesheim am Rhein / Loreley (Rhine Valley), Munich / Neuschwanstein (Bavaria) — routes: Grand European Roadtrip (14-21 days) 🪣
 - [ ] **DE** (2 dest): Hamburg (Speicherstadt/HafenCity), Lübeck (optional day trip) — routes: Hamburg (4 days) ⚓
 - [ ] **DE** (4 dest): Trier (Porta Nigra), Bernkastel-Kues, Cochem, Burg Eltz — routes: Moselle Valley (4 days) 🍇
@@ -519,7 +519,7 @@ Sorted alphabetically by country code.
 - [x] **IT** (3 dest): Bolzano, Val Gardena / Ortisei, Cortina d'Ampezzo — routes: Germany + Austria + Italy (10-14 days) 🏔️
 - [x] **IT** (2 dest): Lake Garda / Sirmione, Verona (Arena, old town) — routes: Germany + Austria + Italy (10-14 days) 🏔️
 - [ ] **IT** (2 dest): Dolomites (Cortina d'Ampezzo / Tre Cime), Venice (Piazza San Marco) — routes: Grand European Roadtrip (14-21 days) 🪣
-- [ ] **IT** (2 dest): Piazza San Marco, Rialto Bridge — routes: Italy + Slovenia + Croatia (10-14 days) ⛵
+- [x] **IT** (2 dest): Piazza San Marco, Rialto Bridge — routes: Italy + Slovenia + Croatia (10-14 days) ⛵
 - [x] **IT** (2 dest): Milan, Turin — routes: Italy Roadtrip (12 days) 🧀
 - [x] **IT** (3 dest): Parma, Modena, Bologna — routes: Italy Roadtrip (12 days) 🧀
 - [x] **IT** (3 dest): Perugia, Assisi, Orvieto — routes: Italy Roadtrip (12 days) 🧀
@@ -546,7 +546,7 @@ Sorted alphabetically by country code.
 - [x] **IT** (3 dest): Colosseum & Roman Forum, Vatican Museums, Pantheon & Trevi Fountain — routes: Rome + Tuscany (9 days) 🍝
 - [x] **IT** (5 dest): Orvieto (waypoint), Pienza, Montepulciano, Montalcino, San Quirico d'Orcia — routes: Rome + Tuscany (9 days) 🍝
 - [ ] **IT** (8 dest): Colosseum, Roman Forum, Trastevere, Pantheon, Vatican Necropolis / Scavi excavation tour, Vatican Museums & Sistine Chapel, St. Peter's Basilica dome climb, Vatican Gardens tour (optional) — routes: Rome + Vatican City In-Depth (4 days) ⛪
-- [ ] **IT** (3 dest): Bologna, Ravenna (Byzantine mosaics), Rimini — routes: San Marino + Emilia-Romagna (4 days) 🍝
+- [x] **IT** (3 dest): Bologna, Ravenna (Byzantine mosaics), Rimini — routes: San Marino + Emilia-Romagna (4 days) 🍝
 - [x] **IT** (3 dest): Siena, San Gimignano, Florence — routes: San Marino + Tuscany (5 days) 🍷
 - [ ] **IT** (2 dest): Olbia (in/out), Costa Smeralda / Porto Cervo — routes: Sardinia (9 days) ⛵
 - [ ] **IT** (2 dest): Cala Gonone, Golfo di Orosei — routes: Sardinia (9 days) ⛵
@@ -594,8 +594,8 @@ Sorted alphabetically by country code.
 - [ ] **LT** (3 dest): Vilnius (Old Town), Trakai Castle (day trip), Curonian Spit / Nida — routes: Baltic States Roadtrip (10-14 days) 🚗
 - [ ] **LT** (5 dest): Vilnius (Old Town), Trakai Castle, Kaunas, Klaipėda (Smiltynė ferry), Curonian Spit / Nida — routes: Lithuania (5-7 days) 🌊
 - [ ] **LU** (4 dest): Luxembourg City (Bock Casemates), Berdorf, Echternach, Vianden — routes: Luxembourg (4 days) 🪨
-- [ ] **LU** (4 dest): Vianden, Luxembourg City, Berdorf (Müllerthal day trip), Echternach (Müllerthal day trip) — routes: Luxembourg + Ardennes (4 days) 🎖️
-- [ ] **LU** (2 dest): Vianden, Luxembourg City — routes: South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️
+- [x] **LU** (4 dest): Vianden, Luxembourg City, Berdorf (Müllerthal day trip), Echternach (Müllerthal day trip) — routes: Luxembourg + Ardennes (4 days) 🎖️
+- [x] **LU** (2 dest): Vianden, Luxembourg City — routes: South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️
 - [ ] **LV** (3 dest): Riga (Old Town), Sigulda / Turaida Castle / Gauja NP, Rundāle Palace (day trip) — routes: Baltic States Roadtrip (10-14 days) 🚗
 - [ ] **LV** (5 dest): Riga (Old Town), Sigulda, Turaida Castle, Gauja National Park, Rundāle Palace — routes: Latvia (5-7 days) 🌲
 - [ ] **MC** (3 dest): Monte Carlo Casino Square, Prince's Palace, Port Hercule — routes: Monaco + Côte d'Azur (4 days) 🎰
@@ -630,7 +630,7 @@ Sorted alphabetically by country code.
 - [ ] **MY** (1 dest): Kinabatangan River wildlife cruises — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
 - [ ] **MY** (3 dest): Semporna, Mabul Island, Sipadan (diving, permit required) — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
 - [ ] **MY** (2 dest): Kota Kinabalu (departure buffer), Mari Mari Cultural Village (optional) — routes: Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧
-- [ ] **NL** (2 dest): Maastricht (Vrijthof, Sint-Pietersberg caves), Valkenburg (Fluweelengrot cave) — routes: South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️
+- [x] **NL** (2 dest): Maastricht (Vrijthof, Sint-Pietersberg caves), Valkenburg (Fluweelengrot cave) — routes: South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️
 - [ ] **NO** (7 dest): Bergen (Bryggen), Fløyen, Ulriken, Flåm (Flåm Railway), Nærøyfjord, Voss, Hardangerfjord / Eidfjord (optional extension) — routes: Bergen + Fjords (6 days) ⛴️
 - [ ] **NO** (6 dest): Bergen, Sognefjord (Nærøyfjord/Flåm), Nordfjord / Stryn, Geirangerfjord, Atlantic Ocean Road (Atlanterhavsveien), Ålesund — routes: Bergen + Ålesund (12 days) 🛣️
 - [ ] **NO** (2 dest): Oslo (Karl Johans gate), Flåm (optional day trip, 14-day version) — routes: Denmark + Sweden + Norway Overland (12 days) 🌉
@@ -712,7 +712,7 @@ Sorted alphabetically by country code.
 - [x] **SI** (5 dest): Bled, Bohinj, Soča Valley, Triglav NP, caves (Postojna/Škocjan) — routes: Central European Grand Roadtrip 🚗
 - [x] **SI** (3 dest): Bled, Bohinj, Ljubljana — routes: Germany + Austria + Slovenia (10-14 days) 🥨
 - [ ] **SI** (2 dest): Bovec / Soča Valley, Piran (coastal alternative) — routes: Germany + Austria + Slovenia (10-14 days) 🥨
-- [ ] **SI** (2 dest): Trieste (Italy, waypoint), Ljubljana — routes: Italy + Slovenia + Croatia (10-14 days) ⛵
+- [x] **SI** (2 dest): Trieste (Italy, waypoint), Ljubljana — routes: Italy + Slovenia + Croatia (10-14 days) ⛵
 - [ ] **SI** (5 dest): Kranjska Gora, Vršič Pass, Bovec, Kobarid, Tolmin Gorge — routes: Julian Alps + Soča Valley (6 days) 🚣
 - [ ] **SI** (4 dest): Ljubljana, Bled, Vintgar Gorge, Bohinj (optional day trip) — routes: Ljubljana + Lake Bled (5 days) 🏰
 - [ ] **SI** (3 dest): Ljubljana, Bled, Piran / Slovenian coast — routes: Slovenia + Italy (9 days) 🍝
@@ -757,7 +757,7 @@ Sorted alphabetically by country code.
 - [ ] **US** (3 dest): Denali Visitor Center, Savage River, Kantishna / Wonder Lake (shuttle bus) — routes: Western Canada: Rockies & Vancouver 🏔️
 - [ ] **US** (2 dest): Kenai Fjords National Park (glacier and wildlife boat tour), Exit Glacier — routes: Western Canada: Rockies & Vancouver 🏔️
 - [ ] **UY** (5 dest): Montevideo (Ciudad Vieja, Mercado del Puerto), Colonia del Sacramento (UNESCO old town), Punta del Este, Cabo Polonio (off-grid, 4x4-only), Punta del Diablo (incl. Santa Teresa National Park) — routes: Uruguay 🧉
-- [ ] **XK** (1 dest): Prizren — routes: Balkan Roadtrip: Serbia + North Macedonia + Albania + Kosovo (14 days) 🔄
+- [x] **XK** (1 dest): Prizren — routes: Balkan Roadtrip: Serbia + North Macedonia + Albania + Kosovo (14 days) 🔄
 - [ ] **XK** (4 dest): Pristina, Prizren (Sinan Pasha Mosque, Liga House), Peja / Rugova Gorge, Visoki Dečani / Peć Patriarchate — routes: Kosovo (5 days) 🕍
 - [ ] **XK** (3 dest): Pristina, Peja / Rugova Gorge, Prizren — routes: Kosovo + Albania + North Macedonia (12 days) 🧭
 - [ ] **XK** (2 dest): Peja, Rugova Gorge — routes: Kosovo + Montenegro (9 days) 🏞️
@@ -768,22 +768,10 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| Germany: Berlin + Dresden + Bavaria (9 days) 🚂 | 6/6 | 1 |
-| Bavaria + Alps + Berchtesgaden (6 days) ⛰️ | 6/6 | 1 |
-| Kosovo + Albania (9 days) 🏔️ | 6/6 | 1 |
-| Italy + Slovenia + Croatia (10-14 days) ⛵ | 6/9 | 1 |
-| South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️ | 5/5 | 1 |
-| Luxembourg + Ardennes (4 days) 🎖️ | 5/5 | 1 |
-| San Marino + Emilia-Romagna (4 days) 🍝 | 5/5 | 1 |
 | Albania + Montenegro (12 days) 🏝️ | 4/6 | 1 |
 | Albania (6 days) 🏖️ | 4/4 | 1 |
-| Salzburg + Berchtesgaden + Hallstatt (5 days) 🛥️ | 3/4 | 1 |
-| San Marino + Tuscany (5 days) 🍷 | 2/5 | 1 |
-| Slovenia + Croatian Istria (7-10 days) 🏖️ | 2/4 | 1 |
 | Kosovo + North Macedonia + Albania (9 days) 🎒 | 2/5 | 1 |
 | Kosovo + North Macedonia (6 days) 🚏 | 2/4 | 1 |
-| Kosovo + Montenegro + Albania (9 days) 🗻 | 2/5 | 1 |
-| Berlin (4 days) 🐻 | 1/1 | 1 |
 | Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂 | 19/19 | 0 |
 | Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧 | 19/19 | 0 |
 | Porto + Northern Spain (10-14 days) 🏔️ | 14/14 | 0 |
@@ -808,6 +796,18 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Algarve (6 days) 🏖️ | 9/9 | 0 |
 | Grand European Roadtrip (14-21 days) 🪣 | 9/12 | 0 |
 | Iceland Ring Road (12 days) 🛣️ | 9/9 | 0 |
-| ... 255 more routes with open destinations ... | | |
+| Iceland Extended (14 days) 🗺️ | 9/9 | 0 |
+| Highlands + Isle of Skye (7-10 days) 🏔️ | 9/9 | 0 |
+| Baltic States Roadtrip (10-14 days) 🚗 | 9/9 | 0 |
+| Northern Portugal + Galicia (7-10 days) 🌊 | 9/9 | 0 |
+| Dolomites & North Italy 🚡 | 8/24 | 0 |
+| Alsace (4 days) 🥐 | 8/8 | 0 |
+| Provence (6 days) 🌻 | 8/8 | 0 |
+| Florence + Tuscany (4 days) 🎨 | 8/8 | 0 |
+| Venice + Dolomites (5 days) 🎭 | 8/8 | 0 |
+| Sardinia (9 days) ⛵ | 8/8 | 0 |
+| Puglia (6 days) 🏘️ | 8/8 | 0 |
+| Monaco + Côte d'Azur (4 days) 🎰 | 8/8 | 0 |
+| ... 244 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

@@ -30,6 +30,37 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   already present in the existing data, no change needed to how batches insert notes or build
   their migration functions.
 
+- **Per-destination notes, batch 40 — San Marino + Emilia-Romagna (4 days) (2026-09-18)** — 4
+  destinations, researched in a single pass (Bologna already had a note). Shared-signature batch:
+  City of San Marino/Rocca Guaita recur in San Marino + Tuscany (5 days). Same generic
+  name-matching migration (`rbMigrateSanMarinoEmiliaRomagnaDestinationNotes()`). Surfaced a
+  Dutch-audit false positive worth noting alongside the existing "Grote"/"Kleine" ones: "Arch of
+  **Augustus**" matches the wordlist's Dutch word for the month (augustus) — not real Dutch text,
+  no fix needed. App-wide total: 2711 destination-slots filled across 339 routes. 325/741
+  signatures done.
+
+- **Per-destination notes, batch 39 — Luxembourg + Ardennes (4 days) / South Netherlands +
+  Belgian Ardennes + Luxembourg (5 days) (2026-09-18)** — 7 destinations, researched in a single
+  pass (none had notes yet). Shared-signature batch: Bastogne/Vianden/Luxembourg City recur across
+  both routes. Same generic name-matching migration (`rbMigrateLuxembourgBeneluxDestinationNotes()`).
+
+- **Per-destination notes, batch 38 — Italy + Slovenia + Croatia (10-14 days) (2026-09-18)** — a
+  Venice-to-Zagreb road trip, 4 destinations (Piazza San Marco/Ljubljana/Bled/Plitvice/Zagreb
+  already had notes). Same generic name-matching migration
+  (`rbMigrateItalySloveniaCroatiaDestinationNotes()`).
+
+- **Per-destination notes, batch 37 — Kosovo + Albania (9 days) (2026-09-18)** — high-leverage
+  batch, these names recur across roughly 9-10 other Balkan combo routes. Kukës flagged by the
+  researcher as genuinely thin (a modern town rebuilt after a 1970s reservoir relocation, no real
+  sightseeing draw) — given an honest note saying so rather than left blank, same precedent as the
+  Delhi fix in batch 35. Same generic name-matching migration
+  (`rbMigrateKosovoAlbaniaDestinationNotes()`).
+
+- **Per-destination notes, batch 36 — Bavaria + Alps + Berchtesgaden (6 days) / Germany: Berlin +
+  Dresden + Bavaria (9 days) (2026-09-18)** — 7 destinations sharing a Munich gateway, researched
+  in a single pass (Garmisch-Partenkirchen and Dresden already had notes). Same generic
+  name-matching migration (`rbMigrateBavariaBerlinDresdenDestinationNotes()`).
+
 - **Per-destination notes, batch 35 — Delhi (2026-09-18)** — at Youri's explicit request, gave
   Delhi its own real sightseeing note (Humayun's Tomb + Lodi Gardens, Delhi Metro tip) instead of
   leaving it deliberately blank. This was a conscious reversal of the batch-19 decision to skip
