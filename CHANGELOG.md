@@ -30,6 +30,20 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   already present in the existing data, no change needed to how batches insert notes or build
   their migration functions.
 
+- **Per-destination notes, batches 88-91 — Spain North/East, Montenegro, Cyprus (2026-09-18)**
+  — 22 destinations researched, plus 4 name-variant reuses/combos.
+  - Batch 88: Spain: North to Central extras — Vitoria-Gasteiz, Burgos, Madrid, Toledo, Segovia,
+    Ávila, Salamanca, plus a "San Sebastián / Bilbao" combo built from the two individual notes
+    (`rbMigrateSpainNorthCentralExtrasDestinationNotes()`)
+  - Batch 89: Spain: East to South extras — Tarragona, Valencia, Alicante, Murcia, Almería
+    coast, plus Málaga/Granada name variants (`rbMigrateSpainEastSouthExtrasDestinationNotes()`)
+  - Batch 90: Montenegro Roadtrip extras — Podgorica, Ostrog Monastery, Kolašin, plus a
+    Žabljak/Durmitor name variant (`rbMigrateMontenegroRoadtripExtrasDestinationNotes()`)
+  - Batch 91: Cyprus Roadtrip including Northern Cyprus (fresh region) — Larnaca, Nicosia/Ledra
+    Street, North Nicosia, Troodos wine villages, Paphos/Akamas/Blue Lagoon, Limassol/Kourion/
+    Aphrodite's Rock, Ayia Napa/Protaras (`rbMigrateCyprusRoadtripExtrasDestinationNotes()`)
+  App-wide total: 3285 destination-slots filled across 387 routes. 461/741 signatures done.
+
 - **Per-destination notes, batches 84-87 — Galicia/Gibraltar/Alsace/Puglia (2026-09-18)** — 26
   destinations researched, plus 2 name-variant reuses.
   - Batch 84: Galicia: Santiago de Compostela + Coast extras — Pontevedra, Combarro, O Grove,

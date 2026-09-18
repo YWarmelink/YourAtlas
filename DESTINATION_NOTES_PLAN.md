@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 456 / 741 signatures.**
+- **Done so far: 461 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -298,8 +298,8 @@ Sorted alphabetically by country code.
 - [x] **CH** (1 dest): Graubünden / Chur — routes: Switzerland Alpine Roadtrip (9 days) 🛣️
 - [ ] **CH** (4 dest): Zurich (old town, lake, Uetliberg hike), Lucerne (Chapel Bridge, lake, old town), Pilatus (Golden Round Trip), Rigi (alternative) — routes: Zurich + Lucerne + Surroundings (5 days) ⛴️
 - [ ] **CY** (5 dest): Larnaca, Nicosia / Ledra Street, Troodos Mountains, Paphos & Aphrodite's Rock, Limassol — routes: Cyprus (6 days) 🏝️
-- [ ] **CY** (2 dest): Larnaca, Paphos — routes: Cyprus + Greece (9 days) ✈️
-- [ ] **CY** (7 dest): Larnaca, Nicosia / Ledra Street, North Nicosia (Lefkoşa), Troodos wine villages, Paphos, Akamas/Avakas Gorge & Blue Lagoon, Limassol, Kourion & Aphrodite's Rock, Ayia Napa / Protaras — routes: Cyprus Roadtrip including Northern Cyprus (9 days) 🚙
+- [x] **CY** (2 dest): Larnaca, Paphos — routes: Cyprus + Greece (9 days) ✈️
+- [x] **CY** (7 dest): Larnaca, Nicosia / Ledra Street, North Nicosia (Lefkoşa), Troodos wine villages, Paphos, Akamas/Avakas Gorge & Blue Lagoon, Limassol, Kourion & Aphrodite's Rock, Ayia Napa / Protaras — routes: Cyprus Roadtrip including Northern Cyprus (9 days) 🚙
 - [x] **CZ** (1 dest): Staré Město / Prague Castle — routes: Central Europe Roadtrip (14 days) 🚂
 - [x] **CZ** (2 dest): Brno, Špilberk Castle — routes: Central European Grand Roadtrip 🚗
 - [x] **CZ** (3 dest): Prague, Český Krumlov, Bohemian Paradise (Turnov) — routes: Central European Grand Roadtrip 🚗
@@ -364,8 +364,8 @@ Sorted alphabetically by country code.
 - [x] **ES** (9 dest): Santiago de Compostela (Praza do Obradoiro), Oviedo (Asturias), Gijón (Asturias), Picos de Europa (Potes), Fuente Dé (cable car), Santander (Magdalena Peninsula), Santillana del Mar, Bilbao (Guggenheim Museum), San Sebastián (La Concha, optional extension) — routes: Porto + Northern Spain (10-14 days) 🏔️
 - [ ] **ES** (2 dest): Seville (Alcázar & Cathedral), Madrid (Prado Museum) — routes: Portugal + Spain: Porto to Madrid (12 days) 🚆
 - [x] **ES** (1 dest): Seville (Alcázar & Cathedral) — routes: Southern Europe Highlights Roadtrip (14 days) 🎯
-- [ ] **ES** (8 dest): Barcelona, Tarragona, Valencia, Alicante (Costa Blanca), Murcia, Almería coast, Málaga / Costa del Sol, Granada (optional inland detour) — routes: Spain: East to South (12 days) 🌅
-- [ ] **ES** (8 dest): San Sebastián / Bilbao, Vitoria-Gasteiz, Burgos (cathedral), Madrid, Toledo (day trip), Segovia (day trip), Ávila (optional), Salamanca (optional) — routes: Spain: North to Central (12 days) 🚉
+- [x] **ES** (8 dest): Barcelona, Tarragona, Valencia, Alicante (Costa Blanca), Murcia, Almería coast, Málaga / Costa del Sol, Granada (optional inland detour) — routes: Spain: East to South (12 days) 🌅
+- [x] **ES** (8 dest): San Sebastián / Bilbao, Vitoria-Gasteiz, Burgos (cathedral), Madrid, Toledo (day trip), Segovia (day trip), Ávila (optional), Salamanca (optional) — routes: Spain: North to Central (12 days) 🚉
 - [ ] **ES** (6 dest): Santa Cruz de Tenerife, La Laguna (UNESCO old town), Teide National Park, Anaga Rural Park (Cruz del Carmen), Costa Adeje, Los Cristianos — routes: Tenerife (5-7 days) 🏝️
 - [ ] **ES** (3 dest): Santa Cruz de Tenerife, Teide National Park, Los Cristianos — routes: Tenerife + La Gomera (7-10 days) 🏝️
 - [ ] **ES** (4 dest): San Sebastián de la Gomera, Garajonay National Park, Valle Gran Rey, Agulo — routes: Tenerife + La Gomera (7-10 days) 🏝️
@@ -611,7 +611,7 @@ Sorted alphabetically by country code.
 - [ ] **ME** (6 dest): Kotor Old Town, Budva, Lovćen National Park, Njeguši, Žabljak / Durmitor National Park, Ostrog Monastery — routes: Montenegro (6 days) 🏔️
 - [x] **ME** (1 dest): Kotor Old Town — routes: Montenegro + Bosnia (9 days) 🕊️
 - [ ] **ME** (4 dest): Kotor Old Town, Perast, Budva, Herceg Novi — routes: Montenegro + Croatia (9 days) ⛵
-- [ ] **ME** (7 dest): Podgorica, Ostrog Monastery, Žabljak / Durmitor (Black Lake), Kolašin, Kotor Old Town, Perast, Budva — routes: Montenegro Roadtrip (9 days) 🚙
+- [x] **ME** (7 dest): Podgorica, Ostrog Monastery, Žabljak / Durmitor (Black Lake), Kolašin, Kotor Old Town, Perast, Budva — routes: Montenegro Roadtrip (9 days) 🚙
 - [ ] **MK** (3 dest): Ohrid, Skopje, Mavrovo National Park (optional) — routes: Albania + North Macedonia (12 days) 🏞️
 - [x] **MK** (1 dest): Skopje — routes: Balkan Roadtrip: Serbia + North Macedonia + Albania + Kosovo (14 days) 🔄
 - [ ] **MK** (2 dest): Ohrid, Sveti Naum — routes: Balkan Roadtrip: Serbia + North Macedonia + Albania + Kosovo (14 days) 🔄
@@ -774,8 +774,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Dolomites & North Italy 🚡 | 8/24 | 0 |
 | Florence + Tuscany (4 days) 🎨 | 8/8 | 0 |
 | Venice + Dolomites (5 days) 🎭 | 8/8 | 0 |
-| Spain: North to Central (12 days) 🚉 | 8/8 | 0 |
-| Spain: East to South (12 days) 🌅 | 8/8 | 0 |
 | Adriatic Roadtrip (14 days) 🌊 | 8/11 | 0 |
 | Western Canada: Rockies & Vancouver 🏔️ | 7/18 | 0 |
 | Paris (4 days) 🗼 | 7/7 | 0 |
@@ -784,8 +782,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Campania: Naples + Amalfi Coast (6 days) 🌊 | 7/7 | 0 |
 | Asturias + Cantabria (6 days) 🌲 | 7/7 | 0 |
 | Andorra + French Pyrenees: Ariège (6 days) ♨️ | 7/7 | 0 |
-| Montenegro Roadtrip (9 days) 🚙 | 7/7 | 0 |
-| Cyprus Roadtrip including Northern Cyprus (9 days) 🚙 | 7/7 | 0 |
 | Bergen + Fjords (6 days) ⛴️ | 7/7 | 0 |
 | Norway Roadtrip (12 days) 🚙 | 7/7 | 0 |
 | South & Central Norway (14 days) 🗺️ | 7/7 | 0 |
@@ -808,6 +804,10 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Valencia + Costa Blanca (6 days) 🎆 | 6/6 | 0 |
 | Northern Spain: Basque Interior + Rioja (9 days) 🍷 | 6/6 | 0 |
 | Andorra (4 days) 🏔️ | 6/6 | 0 |
-| ... 169 more routes with open destinations ... | | |
+| Complete Croatia (12 days) 🇭🇷 | 6/6 | 0 |
+| Slovenia Alpine Loop (6 days) 🏔️ | 6/6 | 0 |
+| Slovenia + Italy (9 days) 🍝 | 6/6 | 0 |
+| Sarajevo + Mostar (5 days) 🌉 | 6/6 | 0 |
+| ... 165 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

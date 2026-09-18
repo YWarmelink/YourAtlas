@@ -11162,6 +11162,138 @@ function rbMigratePugliaExtrasDestinationNotes() {
 }
 
 /**
+ * Batch 88 (2026-09-18) -- Spain: North to Central extras -- 7 newly researched, plus "San
+ * Sebastián / Bilbao" built by combining the two individual city notes (same real places,
+ * different exact string). Same generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateSpainNorthCentralExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_SPAIN_NORTH_CENTRAL_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_SPAIN_NORTH_CENTRAL_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Vitoria-Gasteiz': 'Basque Country\'s official capital with a walled medieval old town (almond-shaped Casco Medieval); take the "Abierta por Obras" guided tour inside Santa María Cathedral, which lets you see the ongoing restoration/archaeology up close — a half-day is enough, and it\'s far less crowded than Bilbao or San Sebastián.',
+    'Burgos (cathedral)': "A Gothic UNESCO cathedral on the Camino de Santiago holding El Cid's tomb at the transept crossing; go right at opening to beat tour groups and allow 1.5-2 hours, since the interior is dense with side chapels (the Escalera Dorada and Capilla del Condestable are easy to rush past).",
+    'Madrid': "Spain's capital, anchored by the Prado (Velázquez, Goya, Bosch), Retiro park, and Plaza Mayor as the historic core; the Prado is free the last two opening hours daily, so plan the museum for late afternoon and give the center a full day or two.",
+    'Toledo (day trip)': "A hilltop former capital where a mosque-turned-church, synagogues, and a Gothic cathedral sit within a few blocks of each other; arrive on an early train from Madrid (under 1 hour) before the day-trip buses land midday, and don't skip Santo Tomé for El Greco's Burial of the Count of Orgaz.",
+    'Segovia (day trip)': "Known for its intact Roman aqueduct running through the town center and the turret-heavy Alcázar that reportedly inspired Disney's castle; a fast train from Madrid takes about 30 minutes, so it's an easy half-day — climb the Alcázar's tower for the view and try cochinillo (roast suckling pig) for lunch.",
+    'Ávila (optional)': "One of Spain's best-preserved fully walled medieval towns, with nearly 2.5km of intact ramparts. Walk the paid wall-top section near the cathedral end for the best views; a few hours covers it.",
+    'Salamanca (optional)': "A university city known for ornate Plateresque carving on the University facade and one of Spain's finest Plaza Mayors. Look for the small carved frog on the University facade (a students'-luck tradition); the Plaza Mayor is worth seeing lit up at night, so an overnight beats a pure day trip.",
+    'San Sebastián / Bilbao': "San Sebastián's shell-shaped urban bay (walk the promenade at sunset, a pintxos crawl through the Parte Vieja) paired with Bilbao's Gehry-designed Guggenheim Museum (book timed entry online, return after dark to see it lit up).",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 89 (2026-09-18) -- Spain: East to South extras -- 5 newly researched, plus "Málaga /
+ * Costa del Sol" and "Granada (optional inland detour)" reusing existing notes for the same
+ * real places under different exact strings. Same generic name-matching migration pattern as
+ * the other batches.
+ */
+function rbMigrateSpainEastSouthExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_SPAIN_EAST_SOUTH_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_SPAIN_EAST_SOUTH_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Tarragona': "A Catalan coastal city with the best-preserved Roman remains in Spain, including an amphitheater built directly above the sea and the Pont del Diable aqueduct outside town. Time the amphitheater visit for late afternoon/sunset when the light over the water is best; half a day covers the main sites.",
+    'Valencia': "Spain's third city, home to Calatrava's City of Arts and Sciences complex and the birthplace of paella. Eat paella at lunch (the traditional time, rarely served for dinner locally), and book Oceanogràfic tickets ahead if visiting — it's Europe's largest aquarium and sells out summer slots.",
+    'Alicante (Costa Blanca)': "A Mediterranean port city topped by the hilltop Santa Bárbara Castle overlooking Playa del Postiguet. Take the free elevator up to the castle from the beach side (accessed via a tunnel near Playa del Postiguet) instead of the steep walk up.",
+    'Murcia': "A less-touristed regional capital known for its Baroque cathedral facade and the surrounding huerta (fruit/vegetable growing region) that drives its food scene. Climb the cathedral's bell tower for rooftop views, and expect a genuinely local tapas scene with little tourist infrastructure.",
+    'Almería coast': "Spain's driest region, with the desert landscape of Tabernas used as the filming backdrop for spaghetti westerns (A Fistful of Dollars, etc.). Visit one of the old film sets (Oasys/Fort Bravo or Western Leone) still open as a walkable attraction, or just drive the Cabo de Gata-Níjar coastline for empty beaches; allocate a full day.",
+    'Málaga / Costa del Sol': "Picasso's birthplace (Museo Picasso in the old town) sits beneath the Moorish Alcazaba fortress, which has a Roman theatre at its base and connects up to the Gibralfaro castle for city views.",
+    'Granada (optional inland detour)': "Book Alhambra tickets weeks ahead online (official site) — the Nasrid Palaces section has a timed-entry slot and sells out fast, especially the Comares Palace/Court of the Lions.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 90 (2026-09-18) -- Montenegro Roadtrip extras -- 3 newly researched, plus "Žabljak /
+ * Durmitor (Black Lake)" reusing the existing "Žabljak / Durmitor National Park" note (same
+ * real place, different exact string). Same generic name-matching migration pattern as the
+ * other batches.
+ */
+function rbMigrateMontenegroRoadtripExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_MONTENEGRO_ROADTRIP_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_MONTENEGRO_ROADTRIP_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Podgorica': "Montenegro's low-key capital, functioning mostly as a transit/airport hub with little historic center left (Stara Varoš is a small remnant). A few hours is enough — treat it as a stopover before/after flights rather than a destination.",
+    'Ostrog Monastery': "A Serbian Orthodox monastery built directly into a sheer cliff face, one of the Balkans' most-visited pilgrimage sites. Dress modestly (shoulders/knees covered), expect crowds of pilgrims especially on weekends, and park at the lower monastery to walk or shuttle up the steep road — allow 1.5-2 hours.",
+    'Kolašin': "A small mountain town in central Montenegro serving as the main gateway to Biogradska Gora National Park. Don't skip the easy ~2-hour loop trail around Biogradsko Lake, ringed by one of Europe's last old-growth forests; the town itself is just a base, not a sight.",
+    'Žabljak / Durmitor (Black Lake)': "Durmitor has 48 peaks over 2000m; the easy Black Lake (Crno Jezero) loop trail (~1.5hr, flat) is the must-do, and Ćurevac viewpoint is the easily-missed extra if you have another hour — it gives a full panorama over the Tara Canyon.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 91 (2026-09-18) -- Cyprus Roadtrip including Northern Cyprus extras -- 7 destinations,
+ * a fresh solo region researched in a single pass. Same generic name-matching migration
+ * pattern as the other batches.
+ */
+function rbMigrateCyprusRoadtripExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_CYPRUS_ROADTRIP_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_CYPRUS_ROADTRIP_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Larnaca': "Cyprus's main airport gateway city, built around the palm-lined Finikoudes seafront promenade. It's mostly a stopover rather than a destination — pair it with the nearby Salt Lake (flamingos in winter) and Ayios Lazaros church if you have a spare hour.",
+    'Nicosia / Ledra Street': "Cyprus's divided capital, with a pedestrian checkpoint on Ledra Street crossing into the Turkish-controlled north. Bring your passport for the crossing (it's quick, no visa needed for EU/most nationalities); allow an hour or two for the old town and Cyprus Museum on the south side.",
+    'North Nicosia (Lefkoşa)': "The Turkish-Cypriot half of the divided capital, centered on the Büyük Han caravanserai and the Selimiye Mosque (a former Gothic cathedral). Half a day covers it; euros are widely accepted alongside Turkish lira, so no need to change money first.",
+    'Troodos wine villages': "A mountain range of traditional wine villages and UNESCO-listed Byzantine painted churches (Asinou is the standout). Taste Commandaria, Cyprus's sweet fortified wine, at a village winery, and budget a full day given the narrow mountain roads between stops.",
+    'Paphos, Akamas/Avakas Gorge & Blue Lagoon': "A coastal city with the Tombs of the Kings, plus the dramatic Avakas Gorge hike and the turquoise Blue Lagoon on the Akamas Peninsula. Wear sturdy shoes for the gorge (it can be impassable after heavy rain) and reach the Blue Lagoon by boat tour from Latchi rather than the rough dirt track to avoid the crowded parking and 4x4-only road.",
+    "Limassol, Kourion & Aphrodite's Rock": "Cyprus's second city near the ancient Greco-Roman theatre at Kourion (still used for performances, sea views from the seats) and Petra tou Romiou, the sea rock tied to Aphrodite's mythical birth. Time Aphrodite's Rock for sunset, the classic photo; half a day covers both sites plus Limassol's old town/marina.",
+    'Ayia Napa / Protaras': "Cyprus's main beach resort strip on the southeast coast. Nissi Beach in Ayia Napa is lively but packed and party-oriented in summer, while Protaras's Fig Tree Bay is quieter and more family-friendly — either way, stop at Cape Greco's sea caves and cliffs nearby on the way.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -16359,8 +16491,8 @@ function rbBuildMadridRoute() {
         { name: 'Retiro Park', lat: 40.4153, lng: -3.6844 },
         { name: 'Puerta del Sol', lat: 40.4169, lng: -3.7035 },
         { name: 'Gran Vía', lat: 40.4200, lng: -3.7025 },
-        { name: 'Toledo (day trip)', lat: 39.8628, lng: -4.0273 },
-        { name: 'Segovia (day trip)', lat: 40.9429, lng: -4.1088 },
+        { name: 'Toledo (day trip)', lat: 39.8628, lng: -4.0273 , notes: 'A hilltop former capital where a mosque-turned-church, synagogues, and a Gothic cathedral sit within a few blocks of each other; arrive on an early train from Madrid (under 1 hour) before the day-trip buses land midday, and don\'t skip Santo Tomé for El Greco\'s Burial of the Count of Orgaz.' },
+        { name: 'Segovia (day trip)', lat: 40.9429, lng: -4.1088 , notes: 'Known for its intact Roman aqueduct running through the town center and the turret-heavy Alcázar that reportedly inspired Disney\'s castle; a fast train from Madrid takes about 30 minutes, so it\'s an easy half-day — climb the Alcázar\'s tower for the view and try cochinillo (roast suckling pig) for lunch.' },
       ],
       notes: "Entry: direct AMS-MAD (KLM/Iberia/Air Europa, ~2h30-45, 70+ flights/week). The city itself (Prado/Retiro/Puerta del Sol/Gran Vía) fills 2-3 days, plus a day trip to Toledo or Segovia by AVE high-speed train (30-90 min, easy to do independently). Season: April-June or September-November; Madrid is landlocked with no sea breeze and can get very hot in summer too — avoid July-August if possible. Budget ~€100/day. Web check (2026-08): the Segovia AVE from Chamartín station takes ~30 min and costs €12-14; the Paseo del Arte combined ticket (~€32, covering the Prado, Reina Sofía and Thyssen-Bornemisza, a 20% discount) is worth it. Madrid has less booking pressure than Barcelona or Granada, but still reserve Toledo/Segovia train tickets a few days ahead in high season.",
       transport_to_next: 'End of this route — fly back AMS-MAD direct.',
@@ -16495,7 +16627,7 @@ function rbBuildNorthernSpainBasqueRiojaRoute() {
       code: 'ES', name: 'Spain', days: 9, budget: 900, lat: 42.8467, lng: -2.6716,
       destinations: [
         { name: 'San Sebastián', lat: 43.3183, lng: -1.9812 , notes: 'Shell-shaped urban bay often ranked among Europe\'s best city beaches, backed by Belle Époque architecture. Walk the promenade at sunset and ride the funicular up Monte Igueldo for the view over the bay, then do a pintxos crawl through the Parte Vieja.' },
-        { name: 'Vitoria-Gasteiz', lat: 42.8467, lng: -2.6716 },
+        { name: 'Vitoria-Gasteiz', lat: 42.8467, lng: -2.6716 , notes: 'Basque Country\'s official capital with a walled medieval old town (almond-shaped Casco Medieval); take the "Abierta por Obras" guided tour inside Santa María Cathedral, which lets you see the ongoing restoration/archaeology up close — a half-day is enough, and it\'s far less crowded than Bilbao or San Sebastián.' },
         { name: 'Elciego (Rioja Alavesa)', lat: 42.4256, lng: -2.5936 },
         { name: 'Haro (Rioja Alavesa)', lat: 42.5763, lng: -2.8467 },
         { name: 'Pamplona', lat: 42.8125, lng: -1.6458 },
@@ -16573,14 +16705,14 @@ function rbBuildSpainNorthToCentralRoute() {
     {
       code: 'ES', name: 'Spain', days: 12, budget: 1140, lat: 41.6000, lng: -3.7000,
       destinations: [
-        { name: 'San Sebastián / Bilbao', lat: 43.2630, lng: -2.9350 },
-        { name: 'Vitoria-Gasteiz', lat: 42.8467, lng: -2.6716 },
-        { name: 'Burgos (cathedral)', lat: 42.3439, lng: -3.6969 },
-        { name: 'Madrid', lat: 40.4168, lng: -3.7038 },
-        { name: 'Toledo (day trip)', lat: 39.8628, lng: -4.0273 },
-        { name: 'Segovia (day trip)', lat: 40.9429, lng: -4.1088 },
-        { name: 'Ávila (optional)', lat: 40.6566, lng: -4.6818 },
-        { name: 'Salamanca (optional)', lat: 40.9701, lng: -5.6635 },
+        { name: 'San Sebastián / Bilbao', lat: 43.2630, lng: -2.9350 , notes: 'San Sebastián\'s shell-shaped urban bay (walk the promenade at sunset, a pintxos crawl through the Parte Vieja) paired with Bilbao\'s Gehry-designed Guggenheim Museum (book timed entry online, return after dark to see it lit up).' },
+        { name: 'Vitoria-Gasteiz', lat: 42.8467, lng: -2.6716 , notes: 'Basque Country\'s official capital with a walled medieval old town (almond-shaped Casco Medieval); take the "Abierta por Obras" guided tour inside Santa María Cathedral, which lets you see the ongoing restoration/archaeology up close — a half-day is enough, and it\'s far less crowded than Bilbao or San Sebastián.' },
+        { name: 'Burgos (cathedral)', lat: 42.3439, lng: -3.6969 , notes: 'A Gothic UNESCO cathedral on the Camino de Santiago holding El Cid\'s tomb at the transept crossing; go right at opening to beat tour groups and allow 1.5-2 hours, since the interior is dense with side chapels (the Escalera Dorada and Capilla del Condestable are easy to rush past).' },
+        { name: 'Madrid', lat: 40.4168, lng: -3.7038 , notes: 'Spain\'s capital, anchored by the Prado (Velázquez, Goya, Bosch), Retiro park, and Plaza Mayor as the historic core; the Prado is free the last two opening hours daily, so plan the museum for late afternoon and give the center a full day or two.' },
+        { name: 'Toledo (day trip)', lat: 39.8628, lng: -4.0273 , notes: 'A hilltop former capital where a mosque-turned-church, synagogues, and a Gothic cathedral sit within a few blocks of each other; arrive on an early train from Madrid (under 1 hour) before the day-trip buses land midday, and don\'t skip Santo Tomé for El Greco\'s Burial of the Count of Orgaz.' },
+        { name: 'Segovia (day trip)', lat: 40.9429, lng: -4.1088 , notes: 'Known for its intact Roman aqueduct running through the town center and the turret-heavy Alcázar that reportedly inspired Disney\'s castle; a fast train from Madrid takes about 30 minutes, so it\'s an easy half-day — climb the Alcázar\'s tower for the view and try cochinillo (roast suckling pig) for lunch.' },
+        { name: 'Ávila (optional)', lat: 40.6566, lng: -4.6818 , notes: 'One of Spain\'s best-preserved fully walled medieval towns, with nearly 2.5km of intact ramparts. Walk the paid wall-top section near the cathedral end for the best views; a few hours covers it.' },
+        { name: 'Salamanca (optional)', lat: 40.9701, lng: -5.6635 , notes: 'A university city known for ornate Plateresque carving on the University facade and one of Spain\'s finest Plaza Mayors. Look for the small carved frog on the University facade (a students\'-luck tradition); the Plaza Mayor is worth seeing lit up at night, so an overnight beats a pure day trip.' },
       ],
       notes: "San Sebastián/Bilbao → Vitoria-Gasteiz → Burgos (cathedral) → Madrid (3-4 days, including Toledo/Segovia day trips as in the standalone Madrid trip above) → optionally Ávila or Salamanca before the flight home. Deliberately linear (north → inland → Madrid), with no return to the coast — that would overlap with the previous trip's coastal loop. Entry: open-jaw AMS-Bilbao in, AMS-Madrid out (or reversed), both well connected with direct flights. Budget ~€95/day. Season: May-June or September; the Meseta (Burgos and the interior) is cold in winter and hot in high summer (drier than Andalusia, less extreme).",
       transport_to_next: 'End of this route — fly home from Madrid (or Bilbao if reversed).',
@@ -16600,13 +16732,13 @@ function rbBuildSpainEastToSouthRoute() {
       code: 'ES', name: 'Spain', days: 12, budget: 1080, lat: 39.0000, lng: -1.5000,
       destinations: [
         { name: 'Barcelona', lat: 41.3851, lng: 2.1734 , notes: 'This route\'s arrival point, built around Gaudí\'s Modernista landmarks (Sagrada Família, Park Güell, Casa Batlló) and the medieval Gothic Quarter; book Sagrada Família and Park Güell tickets online well ahead since both routinely sell out same-day.' },
-        { name: 'Tarragona', lat: 41.1189, lng: 1.2445 },
-        { name: 'Valencia', lat: 39.4699, lng: -0.3763 },
-        { name: 'Alicante (Costa Blanca)', lat: 38.3452, lng: -0.4810 },
-        { name: 'Murcia', lat: 37.9922, lng: -1.1307 },
-        { name: 'Almería coast', lat: 36.8381, lng: -2.4597 },
-        { name: 'Málaga / Costa del Sol', lat: 36.7213, lng: -4.4214 },
-        { name: 'Granada (optional inland detour)', lat: 37.1773, lng: -3.5986 },
+        { name: 'Tarragona', lat: 41.1189, lng: 1.2445 , notes: 'A Catalan coastal city with the best-preserved Roman remains in Spain, including an amphitheater built directly above the sea and the Pont del Diable aqueduct outside town. Time the amphitheater visit for late afternoon/sunset when the light over the water is best; half a day covers the main sites.' },
+        { name: 'Valencia', lat: 39.4699, lng: -0.3763 , notes: 'Spain\'s third city, home to Calatrava\'s City of Arts and Sciences complex and the birthplace of paella. Eat paella at lunch (the traditional time, rarely served for dinner locally), and book Oceanogràfic tickets ahead if visiting — it\'s Europe\'s largest aquarium and sells out summer slots.' },
+        { name: 'Alicante (Costa Blanca)', lat: 38.3452, lng: -0.4810 , notes: 'A Mediterranean port city topped by the hilltop Santa Bárbara Castle overlooking Playa del Postiguet. Take the free elevator up to the castle from the beach side (accessed via a tunnel near Playa del Postiguet) instead of the steep walk up.' },
+        { name: 'Murcia', lat: 37.9922, lng: -1.1307 , notes: 'A less-touristed regional capital known for its Baroque cathedral facade and the surrounding huerta (fruit/vegetable growing region) that drives its food scene. Climb the cathedral\'s bell tower for rooftop views, and expect a genuinely local tapas scene with little tourist infrastructure.' },
+        { name: 'Almería coast', lat: 36.8381, lng: -2.4597 , notes: 'Spain\'s driest region, with the desert landscape of Tabernas used as the filming backdrop for spaghetti westerns (A Fistful of Dollars, etc.). Visit one of the old film sets (Oasys/Fort Bravo or Western Leone) still open as a walkable attraction, or just drive the Cabo de Gata-Níjar coastline for empty beaches; allocate a full day.' },
+        { name: 'Málaga / Costa del Sol', lat: 36.7213, lng: -4.4214 , notes: 'Picasso\'s birthplace (Museo Picasso in the old town) sits beneath the Moorish Alcazaba fortress, which has a Roman theatre at its base and connects up to the Gibralfaro castle for city views.' },
+        { name: 'Granada (optional inland detour)', lat: 37.1773, lng: -3.5986 , notes: 'Book Alhambra tickets weeks ahead online (official site) — the Nasrid Palaces section has a timed-entry slot and sells out fast, especially the Comares Palace/Court of the Lions.' },
       ],
       notes: "Barcelona (1-2 days) → Tarragona → Valencia (2 days) → Alicante (Costa Blanca) → the Murcia region → the Almería coast → Málaga/Costa del Sol, optionally finishing with an inland Granada detour. Deliberately stays coastal/lowland — as soon as this reaches inland into the Pyrenees or deep Andalusia it overlaps with Catalonia + Pyrenees above and the Andalusia Roadtrip. Entry: open-jaw AMS-Barcelona in, AMS-Málaga out, rental car for the coastal legs (the AP-7 is almost entirely toll-free — Barcelona-Alicante, ~525km/5h, is fully free; only a short toll stretch south of Cartagena towards Almería, ~€6). Budget ~€90/day. Season: May-June or September-October; the southern half (Almería/Costa del Sol) gets very hot and busy in July-August.",
       transport_to_next: 'End of this route — fly home from Málaga.',
@@ -17501,7 +17633,7 @@ function rbBuildMontenegroRoute() {
         { name: 'Lovćen National Park', lat: 42.3939, lng: 18.8300 },
         { name: 'Njeguši', lat: 42.4106, lng: 18.8494 },
         { name: 'Žabljak / Durmitor National Park', lat: 43.1550, lng: 19.1225 , notes: 'Durmitor has 48 peaks over 2000m; the easy Black Lake (Crno Jezero) loop trail (~1.5hr, flat) is the must-do, and Ćurevac viewpoint is the easily-missed extra if you have another hour — it gives a full panorama over the Tara Canyon.' },
-        { name: 'Ostrog Monastery', lat: 42.7758, lng: 18.9967 },
+        { name: 'Ostrog Monastery', lat: 42.7758, lng: 18.9967 , notes: 'A Serbian Orthodox monastery built directly into a sheer cliff face, one of the Balkans\' most-visited pilgrimage sites. Dress modestly (shoulders/knees covered), expect crowds of pilgrims especially on weekends, and park at the lower monastery to walk or shuttle up the steep road — allow 1.5-2 hours.' },
       ],
       notes: "Kotor (2 days) — Budva (1-2 days) — Lovćen National Park and the village of Njeguši as a day trip — Žabljak/Durmitor (2 days) — Ostrog Monastery on the way back. Budget ~€45-55/day. Season: June/September for the coast, July-September for Durmitor. Web check (2026-08): national-park entry is €5/day per person, or a €13.50 season pass covering all 5 parks — buy it in Žabljak itself, not at the gate; under-15s go free.",
       transport_to_next: 'End of this route — fly home from Podgorica or Tivat.',
@@ -17520,10 +17652,10 @@ function rbBuildMontenegroRoadtripRoute() {
     {
       code: 'ME', name: 'Montenegro', days: 9, budget: 495, lat: 42.8000, lng: 19.2000,
       destinations: [
-        { name: 'Podgorica', lat: 42.4304, lng: 19.2594 },
-        { name: 'Ostrog Monastery', lat: 42.7758, lng: 18.9967 },
-        { name: 'Žabljak / Durmitor (Black Lake)', lat: 43.1394, lng: 19.0692 },
-        { name: 'Kolašin', lat: 42.8236, lng: 19.5181 },
+        { name: 'Podgorica', lat: 42.4304, lng: 19.2594 , notes: 'Montenegro\'s low-key capital, functioning mostly as a transit/airport hub with little historic center left (Stara Varoš is a small remnant). A few hours is enough — treat it as a stopover before/after flights rather than a destination.' },
+        { name: 'Ostrog Monastery', lat: 42.7758, lng: 18.9967 , notes: 'A Serbian Orthodox monastery built directly into a sheer cliff face, one of the Balkans\' most-visited pilgrimage sites. Dress modestly (shoulders/knees covered), expect crowds of pilgrims especially on weekends, and park at the lower monastery to walk or shuttle up the steep road — allow 1.5-2 hours.' },
+        { name: 'Žabljak / Durmitor (Black Lake)', lat: 43.1394, lng: 19.0692 , notes: 'Durmitor has 48 peaks over 2000m; the easy Black Lake (Crno Jezero) loop trail (~1.5hr, flat) is the must-do, and Ćurevac viewpoint is the easily-missed extra if you have another hour — it gives a full panorama over the Tara Canyon.' },
+        { name: 'Kolašin', lat: 42.8236, lng: 19.5181 , notes: 'A small mountain town in central Montenegro serving as the main gateway to Biogradska Gora National Park. Don\'t skip the easy ~2-hour loop trail around Biogradsko Lake, ringed by one of Europe\'s last old-growth forests; the town itself is just a base, not a sight.' },
         { name: 'Kotor Old Town', lat: 42.4247, lng: 18.7712, notes: "Beyond the Venetian-walled old town itself, the real highlight is climbing the fortifications up to St. John's (San Giovanni) Fortress for a view over the bay and the town's terracotta roofs. It's a steep ~1,350-step climb (roughly 1-1.5 hours round trip) — start at first light or late afternoon to avoid both the midday heat and the crowds that arrive once cruise ships dock." },
         { name: 'Perast', lat: 42.4875, lng: 18.7089 },
         { name: 'Budva', lat: 42.2911, lng: 18.8400, notes: "Its small walled old town is pleasant but modest compared to Kotor or Dubrovnik — Budva's real appeal is as a base for the beach-resort coastline around it, especially the postcard view of the Sveti Stefan islet just south of town. Don't spend more than a couple of hours in the old town itself; head to the Sveti Stefan viewpoint (free, no need to enter the resort) for the classic photo." },
@@ -19399,8 +19531,8 @@ function rbBuildCyprusClassicRoute() {
     {
       code: 'CY', name: 'Cyprus', days: 6, budget: 750, lat: 34.9167, lng: 33.6333,
       destinations: [
-        { name: 'Larnaca', lat: 34.9167, lng: 33.6333 },
-        { name: 'Nicosia / Ledra Street', lat: 35.1706, lng: 33.3656 },
+        { name: 'Larnaca', lat: 34.9167, lng: 33.6333 , notes: 'Cyprus\'s main airport gateway city, built around the palm-lined Finikoudes seafront promenade. It\'s mostly a stopover rather than a destination — pair it with the nearby Salt Lake (flamingos in winter) and Ayios Lazaros church if you have a spare hour.' },
+        { name: 'Nicosia / Ledra Street', lat: 35.1706, lng: 33.3656 , notes: 'Cyprus\'s divided capital, with a pedestrian checkpoint on Ledra Street crossing into the Turkish-controlled north. Bring your passport for the crossing (it\'s quick, no visa needed for EU/most nationalities); allow an hour or two for the old town and Cyprus Museum on the south side.' },
         { name: 'Troodos Mountains', lat: 34.9186, lng: 32.8595 },
         { name: "Paphos & Aphrodite's Rock", lat: 34.7720, lng: 32.4297 },
         { name: 'Limassol', lat: 34.7071, lng: 33.0226 },
@@ -19422,13 +19554,13 @@ function rbBuildCyprusNorthernRoadtripRoute() {
     {
       code: 'CY', name: 'Cyprus', days: 9, budget: 1125, lat: 34.9167, lng: 33.6333,
       destinations: [
-        { name: 'Larnaca', lat: 34.9167, lng: 33.6333 },
-        { name: 'Nicosia / Ledra Street', lat: 35.1706, lng: 33.3656 },
-        { name: 'North Nicosia (Lefkoşa)', lat: 35.1875, lng: 33.3853 },
-        { name: 'Troodos wine villages', lat: 34.9186, lng: 32.8595 },
-        { name: 'Paphos, Akamas/Avakas Gorge & Blue Lagoon', lat: 34.7720, lng: 32.4297 },
-        { name: "Limassol, Kourion & Aphrodite's Rock", lat: 34.7071, lng: 33.0226 },
-        { name: 'Ayia Napa / Protaras', lat: 34.9885, lng: 34.0086 },
+        { name: 'Larnaca', lat: 34.9167, lng: 33.6333 , notes: 'Cyprus\'s main airport gateway city, built around the palm-lined Finikoudes seafront promenade. It\'s mostly a stopover rather than a destination — pair it with the nearby Salt Lake (flamingos in winter) and Ayios Lazaros church if you have a spare hour.' },
+        { name: 'Nicosia / Ledra Street', lat: 35.1706, lng: 33.3656 , notes: 'Cyprus\'s divided capital, with a pedestrian checkpoint on Ledra Street crossing into the Turkish-controlled north. Bring your passport for the crossing (it\'s quick, no visa needed for EU/most nationalities); allow an hour or two for the old town and Cyprus Museum on the south side.' },
+        { name: 'North Nicosia (Lefkoşa)', lat: 35.1875, lng: 33.3853 , notes: 'The Turkish-Cypriot half of the divided capital, centered on the Büyük Han caravanserai and the Selimiye Mosque (a former Gothic cathedral). Half a day covers it; euros are widely accepted alongside Turkish lira, so no need to change money first.' },
+        { name: 'Troodos wine villages', lat: 34.9186, lng: 32.8595 , notes: 'A mountain range of traditional wine villages and UNESCO-listed Byzantine painted churches (Asinou is the standout). Taste Commandaria, Cyprus\'s sweet fortified wine, at a village winery, and budget a full day given the narrow mountain roads between stops.' },
+        { name: 'Paphos, Akamas/Avakas Gorge & Blue Lagoon', lat: 34.7720, lng: 32.4297 , notes: 'A coastal city with the Tombs of the Kings, plus the dramatic Avakas Gorge hike and the turquoise Blue Lagoon on the Akamas Peninsula. Wear sturdy shoes for the gorge (it can be impassable after heavy rain) and reach the Blue Lagoon by boat tour from Latchi rather than the rough dirt track to avoid the crowded parking and 4x4-only road.' },
+        { name: "Limassol, Kourion & Aphrodite's Rock", lat: 34.7071, lng: 33.0226 , notes: 'Cyprus\'s second city near the ancient Greco-Roman theatre at Kourion (still used for performances, sea views from the seats) and Petra tou Romiou, the sea rock tied to Aphrodite\'s mythical birth. Time Aphrodite\'s Rock for sunset, the classic photo; half a day covers both sites plus Limassol\'s old town/marina.' },
+        { name: 'Ayia Napa / Protaras', lat: 34.9885, lng: 34.0086 , notes: 'Cyprus\'s main beach resort strip on the southeast coast. Nissi Beach in Ayia Napa is lively but packed and party-oriented in summer, while Protaras\'s Fig Tree Bay is quieter and more family-friendly — either way, stop at Cape Greco\'s sea caves and cliffs nearby on the way.' },
       ],
       notes: "Larnaca (1 day) — Nicosia plus a crossing of the Green Line into North Nicosia (1 day) — Troodos wine villages (1-2 days) — Paphos including the Akamas Peninsula/Avakas Gorge and the Blue Lagoon (2 days) — Limassol plus Kourion and Aphrodite's Rock (2 days) — Ayia Napa/Protaras back to Larnaca (1-2 days). Budget ~€110-140/day including the rental car. Season: April-June or September-October. Web check (2026-08) — Northern Cyprus nuance: crossing at official checkpoints is normal and permitted for tourists (Ledra Street in Nicosia is pedestrian-only; cars can only cross at the Metehan checkpoint). Most Republic-of-Cyprus car rental companies forbid taking their car into the North — check with the rental company first. If it is permitted, mandatory Turkish border insurance is needed (~€20, covers 3 days of third-party liability, does not cover damage to your own rental car). The Netherlands does not recognize Northern Cyprus as a state; entering via the North (e.g. Ercan Airport) is considered illegal entry by the Republic of Cyprus authorities, and consular assistance there is limited. Stay out of military zones and the buffer zone outside official checkpoints — fines or imprisonment are possible. Cyprus itself is EU but not Schengen — passport/ID check on entry, no visa needed for Dutch/EU citizens.",
       transport_to_next: 'End of this route — back to Larnaca to fly home.',
@@ -19447,7 +19579,7 @@ function rbBuildCyprusGreeceRoute() {
     {
       code: 'CY', name: 'Cyprus', days: 5, budget: 625, lat: 34.9167, lng: 33.6333,
       destinations: [
-        { name: 'Larnaca', lat: 34.9167, lng: 33.6333 },
+        { name: 'Larnaca', lat: 34.9167, lng: 33.6333 , notes: 'Cyprus\'s main airport gateway city, built around the palm-lined Finikoudes seafront promenade. It\'s mostly a stopover rather than a destination — pair it with the nearby Salt Lake (flamingos in winter) and Ayios Lazaros church if you have a spare hour.' },
         { name: 'Paphos', lat: 34.7720, lng: 32.4297 },
       ],
       notes: "No shared border, so this is really a flight combo: roughly 4-5 days in Cyprus (Larnaca/Paphos) plus a direct flight Larnaca-Athens (Aegean/Cyprus Airways/Sky Express/Wizz Air, ~1h40, from ~€120 return, several flights daily) plus 3-5 days in Athens or on an island (e.g. Athens plus a day trip to Aegina, or continuing on to Santorini). Budget: Cyprus ~€110-140/day. Season: April-June or September-October for both. Web check (2026-08): book this flight separately from any main flight from the Netherlands, and check baggage rules between the two airlines (they can differ). Cyprus is EU but not Schengen — passport/ID check on entry, no visa needed for Dutch/EU citizens.",
