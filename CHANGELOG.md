@@ -30,6 +30,22 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   already present in the existing data, no change needed to how batches insert notes or build
   their migration functions.
 
+- **Per-destination notes, batches 80-83 — Monaco/Andalusia/Catalonia/England-Wales-NI extras
+  (2026-09-18)** — 21 destinations researched, plus 7 name-variant reuses.
+  - Batch 80: Monaco: Monte Carlo (2 days) extras — Oceanographic Museum, Larvotto beach, plus
+    4 Nice/Monaco name variants reusing existing notes
+    (`rbMigrateMonacoMonteCarloExtrasDestinationNotes()`)
+  - Batch 81: Andalusia Roadtrip extras — Málaga, Ronda, Cádiz, Jerez de la Frontera, plus bare
+    Seville/Córdoba/Granada reusing the parenthetical-name notes
+    (`rbMigrateAndalusiaRoadtripExtrasDestinationNotes()`)
+  - Batch 82: Catalonia + Pyrenees extras — Barcelona, Girona, Costa Brava, Ribes de
+    Freser/Vall de Núria (Cremallera railway), Aigüestortes NP, La Garrotxa Volcanic Zone
+    (`rbMigrateCataloniaPyreneesExtrasDestinationNotes()`)
+  - Batch 83: England + Wales + Northern Ireland Roadtrip extras — London (British Museum),
+    Bath, Bourton-on-the-Water, Snowdon, Holyhead, Carrick-a-Rede Rope Bridge, Antrim Coast,
+    Belfast (`rbMigrateEnglandWalesNIExtrasDestinationNotes()`)
+  App-wide total: 3223 destination-slots filled across 382 routes. 447/741 signatures done.
+
 - **Per-destination notes, batches 76-79 — Scotland/Iceland/Ireland clusters (2026-09-18)** — 27
   destinations researched across two parallel sub-batches, plus 6 name-variant reuses.
   - Batch 76: Scotland cluster (Scottish Highlands, Highlands + Isle of Skye, Scotland Roadtrip,

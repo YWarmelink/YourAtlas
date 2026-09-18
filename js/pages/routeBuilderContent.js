@@ -2694,7 +2694,7 @@ function rbBuildIberiaMaghrebRoute() {
             { name: 'Málaga', lat: 36.7213, lng: -4.4214 },
             { name: 'Granada (Alhambra)', lat: 37.1760, lng: -3.5883 },
             { name: 'Córdoba (Mezquita)', lat: 37.8789, lng: -4.7794 },
-            { name: 'Seville', lat: 37.3891, lng: -5.9845 },
+            { name: 'Seville', lat: 37.3891, lng: -5.9845 , notes: 'The Real Alcázar is a still-functioning royal palace showcasing Mudéjar architecture (and a Game of Thrones filming location); the adjoining Cathedral is the world\'s largest Gothic church, topped by the Giralda tower. Book Alcázar tickets online for a specific time slot well ahead — it sells out, especially in summer — and climb the Giralda via its internal ramps (built for mounted access, not stairs) for city views.' },
           ],
           notes: 'Entry: flight Amsterdam-Málaga (±2h50, from ±€90-180 return, best period September). Price indication from 2026-08 web research, a snapshot. Opening leg: Moorish and Roman history in Andalusia, from the Alhambra in Granada to the Mezquita in Córdoba. Historic old towns as a calm start. Hidden gem: Ronda, with its gorge bridge, as a stop between Málaga and Seville.',
           transport_to_next: 'Ferry Tarifa/Algeciras-Tangier (35-90 minutes, several sailings a day) — shortest and cheapest crossing to Africa, no flight needed',
@@ -10898,6 +10898,137 @@ function rbMigrateIrelandCombosDestinationNotes() {
 }
 
 /**
+ * Batch 80 (2026-09-18) -- Monaco: Monte Carlo (2 days) extras -- 2 newly researched, plus 4
+ * name variants reusing existing Nice/Monaco note text (same real places, different exact
+ * strings). Same generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateMonacoMonteCarloExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_MONACO_MONTE_CARLO_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_MONACO_MONTE_CARLO_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Oceanographic Museum': "Perched on the clifftop of the Rock, founded by Prince Albert I and later run by Jacques Cousteau, with a shark lagoon and a rooftop terrace giving a free sea view even without visiting the aquarium itself.",
+    'Larvotto beach': "Monaco's only real public sand beach, split into free sections at either end and paid beach-club sections in the middle, with breakwaters that keep the water calm for swimming.",
+    'Nice (overnight base)': "The Riviera's main city — Promenade des Anglais, Vieux Nice, and the Colline du Château viewpoint; hit the Cours Saleya market in the old town in the morning before it closes.",
+    'Casino Square': "The Casino de Monte-Carlo and Place du Casino, Monaco's belle-époque centerpiece with luxury cars parked out front; the atrium/exterior is free to see and best photographed before mid-morning tour groups arrive, while the gaming rooms require ID, a fee, and no shorts/sneakers after 2pm.",
+    "Prince's Palace (changing of the guard, 11:55)": "Monaco's royal residence atop the Rock, with a changing-of-the-guard ceremony every day at 11:55am; arrive by 11:40 to get a spot near the palace gates, and note the State Apartments are only open to visitors roughly April through October.",
+    'Monaco-Ville old town': "The old town on the Rock, separate from the casino district, holding the Cathedral (Grace Kelly's tomb), the Oceanographic Museum, and ramparts with harbor views; visit the Oceanographic Museum first thing before tour buses arrive, and allow 2-3 hours to also walk the ramparts.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 81 (2026-09-18) -- Andalusia Roadtrip extras -- 4 newly researched, plus bare
+ * Seville/Córdoba/Granada reusing the existing parenthetical-name notes (same real places,
+ * different exact strings). Same generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateAndalusiaRoadtripExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_ANDALUSIA_ROADTRIP_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_ANDALUSIA_ROADTRIP_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Málaga (fly in)': "Picasso's birthplace (Museo Picasso in the old town) sits beneath the Moorish Alcazaba fortress, which has a Roman theatre at its base and connects up to the Gibralfaro castle for city views.",
+    'Ronda': "Split by the deep El Tajo gorge, the Puente Nuevo bridge is the icon, but the most-missed part is walking down into the gorge (or to the bridge's interpretation centre inside the bridge itself) to see it from below/the side rather than just from the main street above.",
+    'Cádiz': "One of Western Europe's oldest cities, a dense old-town peninsula of plazas and markets; climb Torre Tavira for the camera-obscura view over the rooftops, and time a visit around the Mercado Central for tapas.",
+    'Jerez de la Frontera': "Home of sherry wine (bodegas like González Byass/Tío Pepe) and Andalusian horse and flamenco culture; the Real Escuela Andaluza equestrian shows run on a fixed weekly schedule (typically Tue/Thu), so check ahead if you want to see one, and book a bodega tour in advance.",
+    'Seville': "The Real Alcázar is a still-functioning royal palace showcasing Mudéjar architecture (and a Game of Thrones filming location); the adjoining Cathedral is the world's largest Gothic church, topped by the Giralda tower. Book Alcázar tickets online for a specific time slot well ahead — it sells out, especially in summer — and climb the Giralda via its internal ramps (built for mounted access, not stairs) for city views.",
+    'Córdoba': "The building's core feature is the forest of striped red-and-white double arches, with a 16th-century Renaissance cathedral built directly into the middle of the former mosque.",
+    'Granada': "Book Alhambra tickets weeks ahead online (official site) — the Nasrid Palaces section has a timed-entry slot and sells out fast, especially the Comares Palace/Court of the Lions.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 82 (2026-09-18) -- Catalonia + Pyrenees extras -- 7 destinations researched. Same
+ * generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateCataloniaPyreneesExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_CATALONIA_PYRENEES_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_CATALONIA_PYRENEES_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Barcelona': "This route's arrival point, built around Gaudí's Modernista landmarks (Sagrada Família, Park Güell, Casa Batlló) and the medieval Gothic Quarter; book Sagrada Família and Park Güell tickets online well ahead since both routinely sell out same-day.",
+    'Girona': "A well-preserved medieval old town with the colorful Onyar riverside houses, a Jewish quarter, and steps used as a Game of Thrones filming location; walk the free city walls (Passeig de la Muralla) for the best overview.",
+    'Costa Brava (Tossa de Mar)': "A walled medieval old town (Vila Vella) sitting on a headland above the beach, with a lighthouse viewpoint at its tip; the walk around the walls takes about an hour and looks best around sunset.",
+    'Ribes de Freser (Cremallera departure)': "The base town for the Cremallera rack railway up to Vall de Núria; buy tickets in advance in summer/high season, as both the train and the limited parking near the station fill up.",
+    'Vall de Núria': "A high alpine sanctuary valley in the Catalan Pyrenees with a lake and hiking trails, reachable only by the Cremallera rack railway since there's no road in; allow half a day, as the train ride itself is about 45 minutes each way.",
+    'Aigüestortes i Estany de Sant Maurici NP (optional)': "A Pyrenees national park of over 200 glacial lakes and valleys where private cars are banned from the core zone; use the park's 4x4 taxi shuttle from the entrance village to reach trailheads quickly rather than walking in on the access track.",
+    'La Garrotxa Volcanic Zone': "A dormant volcanic landscape of around 40 old craters around the medieval town of Santa Pau; the classic 2-3 hour loop links Santa Pau, the Croscat volcano (the largest, exposed cone), and the Fageda d'en Jordà beech forest.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 83 (2026-09-18) -- England + Wales + Northern Ireland Roadtrip extras -- 8
+ * destinations researched (Conwy Castle and bare Giant's Causeway already had notes). Same
+ * generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateEnglandWalesNIExtrasDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_ENGLAND_WALES_NI_EXTRAS_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_ENGLAND_WALES_NI_EXTRAS_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'London (British Museum)': "Free entry to one of the world's great collections, including the Rosetta Stone and an extensive Egyptian mummies gallery; book a free timed-entry slot online ahead and arrive right at opening (10am) to beat the crowds, and allow at least half a day.",
+    'Bath (Roman Baths)': "A well-preserved ancient Roman bathing complex fed by natural hot springs, set within Bath's wider Georgian architecture (Royal Crescent, Pulteney Bridge); buy timed tickets online in advance to skip the queue.",
+    'Bourton-on-the-Water (Cotswolds)': "A Cotswolds village where the River Windrush runs through the center crossed by several low stone footbridges; it's a popular midday tour-bus stop, so an early morning visit avoids the crowds and an hour is enough to see it.",
+    'Snowdon / Yr Wyddfa (Snowdonia)': "Wales's highest mountain (1,085m), with the Snowdon Mountain Railway running to the summit; book railway tickets well ahead for summer as they sell out, or if hiking, the Llanberis Path is the easiest route at around 6 hours round trip.",
+    'Holyhead (ferry port)': "Mostly just a transit point for the Ireland ferry with little to see in the town itself; if there's time, the South Stack lighthouse cliffs just outside town are a worthwhile short detour.",
+    'Carrick-a-Rede Rope Bridge': "A rope bridge crossing to a small island with nesting seabird cliffs off the Antrim Coast; book timed tickets in advance for summer since they frequently sell out, and note the bridge can close in high wind.",
+    'Antrim Coast / Causeway Coastal Route': "Northern Ireland's dramatic coastal drive linking sights like the Giant's Causeway, Dunluce Castle, and Ballintoy; allocate a full day to the drive itself, not just the Giant's Causeway stop, for the smaller viewpoints along the way.",
+    'Belfast (Titanic Belfast)': "A Titanic-themed museum built on the original Harland & Wolff shipyard slipways where the ship was constructed; allow 2-2.5 hours and book online in advance for a guaranteed time slot in summer.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -11263,7 +11394,7 @@ function rbBuildSpainRoute() {
         { name: 'Málaga', lat: 36.7213, lng: -4.4214 },
         { name: 'Granada (Alhambra)', lat: 37.1760, lng: -3.5883 },
         { name: 'Córdoba (Mezquita)', lat: 37.8789, lng: -4.7794 },
-        { name: 'Seville', lat: 37.3891, lng: -5.9845 },
+        { name: 'Seville', lat: 37.3891, lng: -5.9845 , notes: 'The Real Alcázar is a still-functioning royal palace showcasing Mudéjar architecture (and a Game of Thrones filming location); the adjoining Cathedral is the world\'s largest Gothic church, topped by the Giralda tower. Book Alcázar tickets online for a specific time slot well ahead — it sells out, especially in summer — and climb the Giralda via its internal ramps (built for mounted access, not stairs) for city views.' },
       ],
       notes: "Entry: direct flight Amsterdam-Málaga (Transavia/Vueling/Ryanair/easyJet, ±2h55; from ±€90-230 return; best period January). Price indication from 2026-08 web research, a snapshot. Moorish and Roman history in Andalusia, from the Alhambra in Granada to the Mezquita in Córdoba. Historic old towns as a calm start to the rest of the trip. Hidden gem: Ronda, with its gorge bridge, as a stop between Málaga and Seville. Travel advisory: green. Visa: none, Schengen.",
       transport_to_next: 'End of this route — return flight from Málaga to Amsterdam.',
@@ -15611,7 +15742,7 @@ function rbBuildMonacoMonteCarloRoute() {
     {
       code: 'FR', name: 'France', days: 1, budget: 130, lat: 43.7102, lng: 7.2620,
       destinations: [
-        { name: 'Nice (overnight base)', lat: 43.7102, lng: 7.2620 },
+        { name: 'Nice (overnight base)', lat: 43.7102, lng: 7.2620 , notes: 'The Riviera\'s main city — Promenade des Anglais, Vieux Nice, and the Colline du Château viewpoint; hit the Cours Saleya market in the old town in the morning before it closes.' },
       ],
       notes: "Monaco works well as a standalone 1-day trip, but flying in and out from the Netherlands on the same day is too rushed given flight times — one night is the practical minimum. Overnighting in Nice (€100-160/night) and taking the train in is the sensible choice, since Monaco hotels run €250-350/night. Direct flight Amsterdam-Nice (~2h), then train Nice-Monaco (~37 min from Saint-Laurent-du-Var, up to ~1h from the airport with a change).",
       transport_to_next: 'Train Nice-Monaco.',
@@ -15619,12 +15750,12 @@ function rbBuildMonacoMonteCarloRoute() {
     {
       code: 'MC', name: 'Monaco', days: 1, budget: 75, lat: 43.7396, lng: 7.4275,
       destinations: [
-        { name: 'Casino Square', lat: 43.7396, lng: 7.4275 },
-        { name: "Prince's Palace (changing of the guard, 11:55)", lat: 43.7314, lng: 7.4197 },
-        { name: 'Monaco-Ville old town', lat: 43.7306, lng: 7.4222 },
-        { name: 'Oceanographic Museum', lat: 43.7317, lng: 7.4249 },
+        { name: 'Casino Square', lat: 43.7396, lng: 7.4275 , notes: 'The Casino de Monte-Carlo and Place du Casino, Monaco\'s belle-époque centerpiece with luxury cars parked out front; the atrium/exterior is free to see and best photographed before mid-morning tour groups arrive, while the gaming rooms require ID, a fee, and no shorts/sneakers after 2pm.' },
+        { name: "Prince's Palace (changing of the guard, 11:55)", lat: 43.7314, lng: 7.4197 , notes: 'Monaco\'s royal residence atop the Rock, with a changing-of-the-guard ceremony every day at 11:55am; arrive by 11:40 to get a spot near the palace gates, and note the State Apartments are only open to visitors roughly April through October.' },
+        { name: 'Monaco-Ville old town', lat: 43.7306, lng: 7.4222 , notes: 'The old town on the Rock, separate from the casino district, holding the Cathedral (Grace Kelly\'s tomb), the Oceanographic Museum, and ramparts with harbor views; visit the Oceanographic Museum first thing before tour buses arrive, and allow 2-3 hours to also walk the ramparts.' },
+        { name: 'Oceanographic Museum', lat: 43.7317, lng: 7.4249 , notes: 'Perched on the clifftop of the Rock, founded by Prince Albert I and later run by Jacques Cousteau, with a shark lagoon and a rooftop terrace giving a free sea view even without visiting the aquarium itself.' },
         { name: 'Port Hercule', lat: 43.7325, lng: 7.4276 , notes: 'Monaco\'s main harbor, packed with superyachts and doubling as the F1 Grand Prix start/finish straight in May; the best free overview is from the terraces near the Prince\'s Palace or the Fairmont hairpin above.' },
-        { name: 'Larvotto beach', lat: 43.7455, lng: 7.4342 },
+        { name: 'Larvotto beach', lat: 43.7455, lng: 7.4342 , notes: 'Monaco\'s only real public sand beach, split into free sections at either end and paid beach-club sections in the middle, with breakwaters that keep the water calm for swimming.' },
       ],
       notes: "Casino Square, the Prince's Palace plus the changing of the guard (11:55), the Monaco-Ville old town, the Oceanographic Museum, Port Hercule and Larvotto beach — several guidebooks deliberately structure Monaco as a one-day itinerary. Honest caveat: a second day mainly makes sense for a casino evening, beach relaxation, or a half-day trip to Èze/Villefranche — at which point it starts to look like the Côte d'Azur combo above. Budget ~€60-90/day excluding accommodation. Season: year-round, no strong seasonal dependency for this itinerary. ⚠️ Same casino rules as elsewhere (€20 entry, 18+, passport/ID required); the Prince's Palace interior is only open seasonally (typically April-October) — check the exact 2026 dates if that matters, otherwise the exterior plus the changing of the guard is visible year-round.",
       transport_to_next: 'End of this route — train back to Nice, direct flight home.',
@@ -16205,13 +16336,13 @@ function rbBuildAndalusiaRoadtripRoute() {
     {
       code: 'ES', name: 'Spain', days: 9, budget: 855, lat: 37.1000, lng: -4.7000,
       destinations: [
-        { name: 'Málaga (fly in)', lat: 36.7213, lng: -4.4214 },
-        { name: 'Ronda', lat: 36.7466, lng: -5.1652 },
-        { name: 'Cádiz', lat: 36.5297, lng: -6.2923 },
-        { name: 'Jerez de la Frontera', lat: 36.6850, lng: -6.1261 },
-        { name: 'Seville', lat: 37.3891, lng: -5.9845 },
-        { name: 'Córdoba', lat: 37.8882, lng: -4.7794 },
-        { name: 'Granada', lat: 37.1773, lng: -3.5986 },
+        { name: 'Málaga (fly in)', lat: 36.7213, lng: -4.4214 , notes: 'Picasso\'s birthplace (Museo Picasso in the old town) sits beneath the Moorish Alcazaba fortress, which has a Roman theatre at its base and connects up to the Gibralfaro castle for city views.' },
+        { name: 'Ronda', lat: 36.7466, lng: -5.1652 , notes: 'Split by the deep El Tajo gorge, the Puente Nuevo bridge is the icon, but the most-missed part is walking down into the gorge (or to the bridge\'s interpretation centre inside the bridge itself) to see it from below/the side rather than just from the main street above.' },
+        { name: 'Cádiz', lat: 36.5297, lng: -6.2923 , notes: 'One of Western Europe\'s oldest cities, a dense old-town peninsula of plazas and markets; climb Torre Tavira for the camera-obscura view over the rooftops, and time a visit around the Mercado Central for tapas.' },
+        { name: 'Jerez de la Frontera', lat: 36.6850, lng: -6.1261 , notes: 'Home of sherry wine (bodegas like González Byass/Tío Pepe) and Andalusian horse and flamenco culture; the Real Escuela Andaluza equestrian shows run on a fixed weekly schedule (typically Tue/Thu), so check ahead if you want to see one, and book a bodega tour in advance.' },
+        { name: 'Seville', lat: 37.3891, lng: -5.9845 , notes: 'The Real Alcázar is a still-functioning royal palace showcasing Mudéjar architecture (and a Game of Thrones filming location); the adjoining Cathedral is the world\'s largest Gothic church, topped by the Giralda tower. Book Alcázar tickets online for a specific time slot well ahead — it sells out, especially in summer — and climb the Giralda via its internal ramps (built for mounted access, not stairs) for city views.' },
+        { name: 'Córdoba', lat: 37.8882, lng: -4.7794 , notes: 'The building\'s core feature is the forest of striped red-and-white double arches, with a 16th-century Renaissance cathedral built directly into the middle of the former mosque.' },
+        { name: 'Granada', lat: 37.1773, lng: -3.5986 , notes: 'Book Alhambra tickets weeks ahead online (official site) — the Nasrid Palaces section has a timed-entry slot and sells out fast, especially the Comares Palace/Court of the Lions.' },
       ],
       notes: "Málaga (fly in) → Ronda → Cádiz/Jerez de la Frontera → Seville → Córdoba → Granada → back to Málaga. A circular route, ~1,040km, with no backtracking. Entry: direct AMS-Málaga (Transavia/easyJet/Vueling/KLM/Ryanair, ~3h, ~97 flights/week — the cheapest and best-connected Andalusian airport), rental car in Málaga for the whole loop. Budget ~€95/day + €30-40/day rental car. Season: April-June or September-November is essential — the same heat warning as the Seville+Granada trip above, amplified because a road trip means more time outdoors and driving during the day (Córdoba/Seville regularly hit 40°C+, with 2026 forecasts up to 47°C during heatwaves). Web check (2026-08): same Alhambra booking rule as above (2-3 months ahead); this loop is mostly toll-free (the AP-7 Costa del Sol stretch is free).",
       transport_to_next: 'End of this route — fly back AMS-Málaga direct.',
@@ -16254,14 +16385,14 @@ function rbBuildCataloniaPyreneesRoute() {
     {
       code: 'ES', name: 'Spain', days: 9, budget: 855, lat: 42.1000, lng: 1.8000,
       destinations: [
-        { name: 'Barcelona', lat: 41.3851, lng: 2.1734 },
-        { name: 'Girona', lat: 41.9794, lng: 2.8214 },
-        { name: 'Costa Brava (Tossa de Mar)', lat: 41.7196, lng: 2.9319 },
-        { name: 'Ribes de Freser (Cremallera departure)', lat: 42.3011, lng: 2.1697 },
-        { name: 'Vall de Núria', lat: 42.3986, lng: 2.1614 },
+        { name: 'Barcelona', lat: 41.3851, lng: 2.1734 , notes: 'This route\'s arrival point, built around Gaudí\'s Modernista landmarks (Sagrada Família, Park Güell, Casa Batlló) and the medieval Gothic Quarter; book Sagrada Família and Park Güell tickets online well ahead since both routinely sell out same-day.' },
+        { name: 'Girona', lat: 41.9794, lng: 2.8214 , notes: 'A well-preserved medieval old town with the colorful Onyar riverside houses, a Jewish quarter, and steps used as a Game of Thrones filming location; walk the free city walls (Passeig de la Muralla) for the best overview.' },
+        { name: 'Costa Brava (Tossa de Mar)', lat: 41.7196, lng: 2.9319 , notes: 'A walled medieval old town (Vila Vella) sitting on a headland above the beach, with a lighthouse viewpoint at its tip; the walk around the walls takes about an hour and looks best around sunset.' },
+        { name: 'Ribes de Freser (Cremallera departure)', lat: 42.3011, lng: 2.1697 , notes: 'The base town for the Cremallera rack railway up to Vall de Núria; buy tickets in advance in summer/high season, as both the train and the limited parking near the station fill up.' },
+        { name: 'Vall de Núria', lat: 42.3986, lng: 2.1614 , notes: 'A high alpine sanctuary valley in the Catalan Pyrenees with a lake and hiking trails, reachable only by the Cremallera rack railway since there\'s no road in; allow half a day, as the train ride itself is about 45 minutes each way.' },
         { name: 'Cerdanya / Puigcerdà', lat: 42.4331, lng: 1.9284 , notes: 'Catalonia\'s widest, sunniest Pyrenees plateau, centered on Puigcerdà\'s lake and bell tower; good lunch stop, with a lively market on Sundays.' },
-        { name: 'Aigüestortes i Estany de Sant Maurici NP (optional)', lat: 42.5745, lng: 0.9505 },
-        { name: 'La Garrotxa Volcanic Zone', lat: 42.1364, lng: 2.5647 },
+        { name: 'Aigüestortes i Estany de Sant Maurici NP (optional)', lat: 42.5745, lng: 0.9505 , notes: 'A Pyrenees national park of over 200 glacial lakes and valleys where private cars are banned from the core zone; use the park\'s 4x4 taxi shuttle from the entrance village to reach trailheads quickly rather than walking in on the access track.' },
+        { name: 'La Garrotxa Volcanic Zone', lat: 42.1364, lng: 2.5647 , notes: 'A dormant volcanic landscape of around 40 old craters around the medieval town of Santa Pau; the classic 2-3 hour loop links Santa Pau, the Croscat volcano (the largest, exposed cone), and the Fageda d\'en Jordà beech forest.' },
       ],
       notes: "Barcelona (1-2 days) → Girona (medieval old town) → a brief Costa Brava coastal stop → into the Pyrenees: Vall de Núria (via the Cremallera rack railway from Ribes de Freser) → Cerdanya/Puigcerdà → optionally Aigüestortes i Estany de Sant Maurici National Park → back via the La Garrotxa volcanic park. Deliberately inland/mountain-focused — don't let this turn into a full Costa Brava beach holiday, that would overlap with Spain: East to South (12 days) 🌅 below. Entry: direct AMS-Barcelona, rental car for the mountain legs. Budget ~€95/day. Season: June-September for hiking access (trails free of snow).",
       transport_to_next: 'End of this route — fly back AMS-Barcelona direct.',
@@ -16335,7 +16466,7 @@ function rbBuildSpainEastToSouthRoute() {
     {
       code: 'ES', name: 'Spain', days: 12, budget: 1080, lat: 39.0000, lng: -1.5000,
       destinations: [
-        { name: 'Barcelona', lat: 41.3851, lng: 2.1734 },
+        { name: 'Barcelona', lat: 41.3851, lng: 2.1734 , notes: 'This route\'s arrival point, built around Gaudí\'s Modernista landmarks (Sagrada Família, Park Güell, Casa Batlló) and the medieval Gothic Quarter; book Sagrada Família and Park Güell tickets online well ahead since both routinely sell out same-day.' },
         { name: 'Tarragona', lat: 41.1189, lng: 1.2445 },
         { name: 'Valencia', lat: 39.4699, lng: -0.3763 },
         { name: 'Alicante (Costa Blanca)', lat: 38.3452, lng: -0.4810 },
@@ -16411,7 +16542,7 @@ function rbBuildGibraltarAndalusiaRoute() {
     {
       code: 'ES', name: 'Spain', days: 3, budget: 300, lat: 36.6000, lng: -4.8000,
       destinations: [
-        { name: 'Málaga (fly in)', lat: 36.7213, lng: -4.4214 },
+        { name: 'Málaga (fly in)', lat: 36.7213, lng: -4.4214 , notes: 'Picasso\'s birthplace (Museo Picasso in the old town) sits beneath the Moorish Alcazaba fortress, which has a Roman theatre at its base and connects up to the Gibralfaro castle for city views.' },
         { name: 'Marbella / Puerto Banús', lat: 36.5099, lng: -4.8858 },
         { name: 'Estepona', lat: 36.4285, lng: -5.1451 },
         { name: 'La Línea de la Concepción', lat: 36.1667, lng: -5.3500 },
@@ -20624,7 +20755,7 @@ function rbBuildCotswoldsBathSouthwestEnglandRoute() {
     {
       code: 'GB', name: 'United Kingdom', days: 6, budget: 540, lat: 51.3811, lng: -2.3590,
       destinations: [
-        { name: 'Bath (Roman Baths)', lat: 51.3811, lng: -2.3590 },
+        { name: 'Bath (Roman Baths)', lat: 51.3811, lng: -2.3590 , notes: 'A well-preserved ancient Roman bathing complex fed by natural hot springs, set within Bath\'s wider Georgian architecture (Royal Crescent, Pulteney Bridge); buy timed tickets online in advance to skip the queue.' },
         { name: 'Bourton-on-the-Water', lat: 51.8767, lng: -1.7546 },
         { name: 'Bibury', lat: 51.8115, lng: -1.8371 },
         { name: 'Stonehenge', lat: 51.1789, lng: -1.8262, notes: "As a short drop-in stop, the standard visit is viewing the circle from the roped perimeter path, not walking among the stones. Book the timed-entry ticket online in advance (English Heritage/National Trust) — on-the-day availability is limited and car park access is tied to your slot time." },
@@ -20671,11 +20802,11 @@ function rbBuildNorthernIrelandRoute() {
     {
       code: 'GB', name: 'United Kingdom', days: 6, budget: 510, lat: 54.5973, lng: -5.9301,
       destinations: [
-        { name: 'Belfast (Titanic Belfast)', lat: 54.6079, lng: -5.9099 },
+        { name: 'Belfast (Titanic Belfast)', lat: 54.6079, lng: -5.9099 , notes: 'A Titanic-themed museum built on the original Harland & Wolff shipyard slipways where the ship was constructed; allow 2-2.5 hours and book online in advance for a guaranteed time slot in summer.' },
         { name: 'Belfast murals (Falls Road / Shankill Road)', lat: 54.5964, lng: -5.9450 },
         { name: "Giant's Causeway", lat: 55.2408, lng: -6.5116, notes: "The columns and coastal path are free and open to the public year-round — only the visitor centre car park/exhibition charges an entry fee — so it's worth skipping the centre and walking straight down if budget-conscious." },
-        { name: 'Carrick-a-Rede Rope Bridge', lat: 55.2396, lng: -6.3419 },
-        { name: 'Antrim Coast / Causeway Coastal Route', lat: 55.2000, lng: -6.3000 },
+        { name: 'Carrick-a-Rede Rope Bridge', lat: 55.2396, lng: -6.3419 , notes: 'A rope bridge crossing to a small island with nesting seabird cliffs off the Antrim Coast; book timed tickets in advance for summer since they frequently sell out, and note the bridge can close in high wind.' },
+        { name: 'Antrim Coast / Causeway Coastal Route', lat: 55.2000, lng: -6.3000 , notes: 'Northern Ireland\'s dramatic coastal drive linking sights like the Giant\'s Causeway, Dunluce Castle, and Ballintoy; allocate a full day to the drive itself, not just the Giant\'s Causeway stop, for the smaller viewpoints along the way.' },
       ],
       notes: "Entry: direct flight Amsterdam-Belfast (easyJet into Belfast International, KLM into Belfast City; ±1h28-1h40), then a rental car. Belfast (Titanic Belfast, the political murals), the Giant's Causeway, Carrick-a-Rede, and the Antrim Coast. Budget ~£60-80/day (~€70-94). Season: May-September, with nice autumn colours along the coast too. Web check (2026-08): Giant's Causeway entry is £9 (National Trust, includes parking) with a temporary VAT reduction in place until 1 September 2026 — the coastal path itself is free either way; a UK ETA is still required even when crossing into Northern Ireland via the Republic of Ireland border, since there's no checkpoint on the road itself. Exchange rate used: 1 GBP ≈ 1.17 EUR (August 2026).\n\nDistinct from the existing 'Scotland & Northern Ireland 🥃' route (split off from British Isles & Celtic Coast Expedition 🍀), whose second leg already covers Belfast and the Giant's Causeway as a compact 5-day tail end of a 27-day Scotland+NI route. This route is the shorter, standalone Trip Ideas version — Northern Ireland only, with more time and more stops (Carrick-a-Rede, the Belfast murals, the full Antrim Coast) than that leg alone gets — not a duplicate; 'Scotland & Northern Ireland 🥃' itself is untouched.",
       transport_to_next: "End of this route — return the car in Belfast, then fly home (easyJet from Belfast International, KLM from Belfast City).",
@@ -20694,12 +20825,12 @@ function rbBuildEnglandWalesNorthernIrelandRoadtripRoute() {
     {
       code: 'GB', name: 'United Kingdom', days: 8, budget: 720, lat: 51.5074, lng: -0.1278,
       destinations: [
-        { name: 'London (British Museum)', lat: 51.5194, lng: -0.1270 },
-        { name: 'Bath (Roman Baths)', lat: 51.3811, lng: -2.3590 },
-        { name: 'Bourton-on-the-Water (Cotswolds)', lat: 51.8767, lng: -1.7546 },
-        { name: 'Snowdon / Yr Wyddfa (Snowdonia)', lat: 53.0685, lng: -4.0763 },
+        { name: 'London (British Museum)', lat: 51.5194, lng: -0.1270 , notes: 'Free entry to one of the world\'s great collections, including the Rosetta Stone and an extensive Egyptian mummies gallery; book a free timed-entry slot online ahead and arrive right at opening (10am) to beat the crowds, and allow at least half a day.' },
+        { name: 'Bath (Roman Baths)', lat: 51.3811, lng: -2.3590 , notes: 'A well-preserved ancient Roman bathing complex fed by natural hot springs, set within Bath\'s wider Georgian architecture (Royal Crescent, Pulteney Bridge); buy timed tickets online in advance to skip the queue.' },
+        { name: 'Bourton-on-the-Water (Cotswolds)', lat: 51.8767, lng: -1.7546 , notes: 'A Cotswolds village where the River Windrush runs through the center crossed by several low stone footbridges; it\'s a popular midday tour-bus stop, so an early morning visit avoids the crowds and an hour is enough to see it.' },
+        { name: 'Snowdon / Yr Wyddfa (Snowdonia)', lat: 53.0685, lng: -4.0763 , notes: 'Wales\'s highest mountain (1,085m), with the Snowdon Mountain Railway running to the summit; book railway tickets well ahead for summer as they sell out, or if hiking, the Llanberis Path is the easiest route at around 6 hours round trip.' },
         { name: 'Conwy Castle', lat: 53.2799, lng: -3.8278, notes: "One of Edward I's \"Iron Ring\" castles and a UNESCO World Heritage Site, still with an intact town wall you can walk almost the full circuit of. Climb the castle's towers for a view over the estuary and the walled town together — better value than the castle interior alone." },
-        { name: 'Holyhead (ferry port)', lat: 53.3094, lng: -4.6367 },
+        { name: 'Holyhead (ferry port)', lat: 53.3094, lng: -4.6367 , notes: 'Mostly just a transit point for the Ireland ferry with little to see in the town itself; if there\'s time, the South Stack lighthouse cliffs just outside town are a worthwhile short detour.' },
       ],
       notes: "Entry: bring the own car from the Netherlands via the Hook of Holland-Harwich ferry (Stena Line, ~€66, 6.5-9.5h, 2x/day), landing directly in England. London, then the Cotswolds and Bath, then west into Wales (Snowdonia and the coast), finishing at Holyhead for the ferry on. Budget ~£65-85/day average (~€76-100). Web check (2026-08): one UK ETA (~€23, valid 2 years) covers the whole trip including Northern Ireland; driving is on the left throughout. Exchange rate used: 1 GBP ≈ 1.17 EUR (August 2026).\n\nDistinct from the existing 'England, Wales & Isle of Man 🎩' route (split off from British Isles & Celtic Coast Expedition 🍀), a 38-day version covering Kent/London/Cotswolds/Bath/the Jurassic Coast, then Cornwall, then Pembrokeshire/the Brecon Beacons/Snowdonia/Conwy, then the Lake District with an Isle of Man side trip, then Yorkshire/Northumberland — ending with a flight home from Newcastle, no Northern Ireland leg at all. This route is the shorter, realistic Trip Ideas version restricted to England + Wales + Northern Ireland (no Cornwall, Lake District, Isle of Man or Yorkshire/Northumberland), continuing on into Northern Ireland instead of finishing in the north of England. 'England, Wales & Isle of Man 🎩' itself is untouched.",
       transport_to_next: "Car to Holyhead, then the Holyhead-Dublin ferry (Stena Line/Irish Ferries, ~€27, 3-3.5h, up to 8x/day) landing in Dublin — a same-day transit only, with no stop in the Republic of Ireland, driving straight on to the Northern Ireland border and the Antrim Coast beyond it. (Dublin itself carries extra security in the second half of 2026 from Ireland's EU Council presidency, July-December 2026 — not relevant to a same-day drive-through.)",
@@ -20708,9 +20839,9 @@ function rbBuildEnglandWalesNorthernIrelandRoadtripRoute() {
       code: 'GB', name: 'United Kingdom', days: 4, budget: 340, lat: 54.5973, lng: -5.9301,
       destinations: [
         { name: "Giant's Causeway", lat: 55.2408, lng: -6.5116, notes: "The columns and coastal path are free and open to the public year-round — only the visitor centre car park/exhibition charges an entry fee — so it's worth skipping the centre and walking straight down if budget-conscious." },
-        { name: 'Carrick-a-Rede Rope Bridge', lat: 55.2396, lng: -6.3419 },
-        { name: 'Antrim Coast / Causeway Coastal Route', lat: 55.2000, lng: -6.3000 },
-        { name: 'Belfast (Titanic Belfast)', lat: 54.6079, lng: -5.9099 },
+        { name: 'Carrick-a-Rede Rope Bridge', lat: 55.2396, lng: -6.3419 , notes: 'A rope bridge crossing to a small island with nesting seabird cliffs off the Antrim Coast; book timed tickets in advance for summer since they frequently sell out, and note the bridge can close in high wind.' },
+        { name: 'Antrim Coast / Causeway Coastal Route', lat: 55.2000, lng: -6.3000 , notes: 'Northern Ireland\'s dramatic coastal drive linking sights like the Giant\'s Causeway, Dunluce Castle, and Ballintoy; allocate a full day to the drive itself, not just the Giant\'s Causeway stop, for the smaller viewpoints along the way.' },
+        { name: 'Belfast (Titanic Belfast)', lat: 54.6079, lng: -5.9099 , notes: 'A Titanic-themed museum built on the original Harland & Wolff shipyard slipways where the ship was constructed; allow 2-2.5 hours and book online in advance for a guaranteed time slot in summer.' },
       ],
       notes: "The Giant's Causeway, Carrick-a-Rede and the Antrim Coast, finishing back in Belfast. Budget ~£65-85/day average (~€76-100), in line with the rest of the trip. Web check (2026-08): Giant's Causeway entry is £9 (National Trust, includes parking) with a temporary VAT reduction in place until 1 September 2026; the same single UK ETA already covers this leg, no separate entry formality is needed crossing from the Republic of Ireland. This leg overlaps in content with the standalone 'Northern Ireland 🌉' route above and the Belfast/Giant's Causeway leg of 'Scotland & Northern Ireland 🥃' — both are left untouched; this is simply the tail end of one continuous England+Wales+Northern Ireland loop rather than a separate destination trip.",
       transport_to_next: 'End of this route — return the car in Belfast, then either fly home from Belfast or ferry back toward the Netherlands.',

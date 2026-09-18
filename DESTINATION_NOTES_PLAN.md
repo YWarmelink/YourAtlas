@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 441 / 741 signatures.**
+- **Done so far: 447 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -336,7 +336,7 @@ Sorted alphabetically by country code.
 - [x] **DK** (1 dest): Copenhagen (Nyhavn) — routes: Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️
 - [ ] **EE** (3 dest): Tallinn (Old Town), Lahemaa National Park, Kuressaare Castle (Saaremaa) — routes: Baltic States Roadtrip (10-14 days) 🚗
 - [ ] **EE** (4 dest): Tallinn (Old Town), Lahemaa National Park, Kuressaare Castle (Saaremaa), Muhu-Virtsu ferry link — routes: Estonia (5-7 days) 🏰
-- [ ] **ES** (7 dest): Málaga (fly in), Ronda, Cádiz, Jerez de la Frontera, Seville, Córdoba, Granada — routes: Andalusia Roadtrip (9 days) 🚗
+- [x] **ES** (7 dest): Málaga (fly in), Ronda, Cádiz, Jerez de la Frontera, Seville, Córdoba, Granada — routes: Andalusia Roadtrip (9 days) 🚗
 - [x] **ES** (2 dest): Seville (Alcázar & Cathedral), Granada (Alhambra) — routes: Andalusia: Seville + Granada (5 days) 🏰
 - [x] **ES** (7 dest): La Seu d'Urgell (cathedral), Cerdanya / Puigcerdà, Vielha (Val d'Aran), Port de la Bonaigua (pass), Boí (Aigüestortes NP shuttle), Espot (Aigüestortes NP shuttle), Ripoll — routes: Andorra + Spanish Pyrenees: Grand Circuit (9 days) 🏔️
 - [ ] **ES** (7 dest): Santander (Magdalena Peninsula), Santillana del Mar, Comillas (El Capricho), Picos de Europa (Potes), Fuente Dé (cable car), Oviedo, Gijón — routes: Asturias + Cantabria (6 days) 🌲
@@ -346,7 +346,7 @@ Sorted alphabetically by country code.
 - [x] **ES** (2 dest): Las Palmas de Gran Canaria, Roque Nublo — routes: Canary Islands (10-14 days) 🏝️
 - [x] **ES** (2 dest): Timanfaya National Park (Islote de Hilario), Arrecife — routes: Canary Islands (10-14 days) 🏝️
 - [x] **ES** (1 dest): Corralejo — routes: Canary Islands (10-14 days) 🏝️
-- [ ] **ES** (8 dest): Barcelona, Girona, Costa Brava (Tossa de Mar), Ribes de Freser (Cremallera departure), Vall de Núria, Cerdanya / Puigcerdà, Aigüestortes i Estany de Sant Maurici NP (optional), La Garrotxa Volcanic Zone — routes: Catalonia + Pyrenees (9 days) ⛰️
+- [x] **ES** (8 dest): Barcelona, Girona, Costa Brava (Tossa de Mar), Ribes de Freser (Cremallera departure), Vall de Núria, Cerdanya / Puigcerdà, Aigüestortes i Estany de Sant Maurici NP (optional), La Garrotxa Volcanic Zone — routes: Catalonia + Pyrenees (9 days) ⛰️
 - [ ] **ES** (3 dest): Torla, Ordesa y Monte Perdido National Park, Aínsa (optional) — routes: French + Spanish Pyrenees (9 days) 🥖
 - [ ] **ES** (7 dest): Santiago de Compostela (Praza do Obradoiro), Pontevedra (Rías Baixas), Combarro, O Grove, Vigo, Cíes Islands, A Coruña (optional) — routes: Galicia: Santiago de Compostela + Coast (6 days) 🐚
 - [ ] **ES** (5 dest): Málaga (fly in), Marbella / Puerto Banús, Estepona, La Línea de la Concepción, Ronda (optional, added at 4 days) — routes: Gibraltar + Andalusia: Costa del Sol (4 days) 🐒
@@ -410,7 +410,7 @@ Sorted alphabetically by country code.
 - [x] **FR** (5 dest): Nice (base), Èze, Villefranche-sur-Mer, Menton, Cannes (optional) — routes: Monaco + Côte d'Azur (4 days) 🎰
 - [x] **FR** (1 dest): Nice (base) — routes: Monaco + Nice + Provence (5 days) 🍇
 - [x] **FR** (4 dest): Avignon (base), Aix-en-Provence, Les Baux-de-Provence (optional), Rhône wine region (optional) — routes: Monaco + Nice + Provence (5 days) 🍇
-- [ ] **FR** (1 dest): Nice (overnight base) — routes: Monaco: Monte Carlo (2 days) 🎲
+- [x] **FR** (1 dest): Nice (overnight base) — routes: Monaco: Monte Carlo (2 days) 🎲
 - [ ] **FR** (6 dest): Honfleur, Bayeux, Omaha Beach, Pointe du Hoc, Normandy American Cemetery, Colleville-sur-Mer, Mont Saint-Michel — routes: Normandy (5 days) 🪖
 - [ ] **FR** (7 dest): Île de la Cité, Le Marais (quieter, "real culture" district), Louvre, Tuileries, Eiffel Tower / Trocadéro, Musée Rodin (7th arr., quiet garden, less touristy than the classics), Montmartre — routes: Paris (4 days) 🗼
 - [x] **FR** (5 dest): Avignon (base) — Palais des Papes, Pont du Gard (nearby), Gordes (Luberon loop), Roussillon (Luberon loop), Ménerbes (Luberon loop) — routes: Provence (6 days) 🌻
@@ -420,8 +420,8 @@ Sorted alphabetically by country code.
 - [ ] **FR** (2 dest): Antibes or Villefranche-sur-Mer (base — more authentic/less party-resort than Cannes), Nice (city anchor) — routes: South of France: Provence to Côte d'Azur (9 days) 🕶️
 - [ ] **GB** (6 dest): Bath (Roman Baths), Bourton-on-the-Water, Bibury, Stonehenge, Bristol (optional add-on), Cornwall coast (optional extension) — routes: Cotswolds + Bath + Southwest England (5-7 days) 🛁
 - [ ] **GB** (4 dest): Old Town / Royal Mile, Edinburgh Castle, Arthur's Seat, Stirling Castle (day trip) — routes: Edinburgh (3-4 days) 🏰
-- [ ] **GB** (6 dest): London (British Museum), Bath (Roman Baths), Bourton-on-the-Water (Cotswolds), Snowdon / Yr Wyddfa (Snowdonia), Conwy Castle, Holyhead (ferry port) — routes: England + Wales + Northern Ireland Roadtrip (10-14 days) 🛣️
-- [ ] **GB** (4 dest): Giant's Causeway, Carrick-a-Rede Rope Bridge, Antrim Coast / Causeway Coastal Route, Belfast (Titanic Belfast) — routes: England + Wales + Northern Ireland Roadtrip (10-14 days) 🛣️
+- [x] **GB** (6 dest): London (British Museum), Bath (Roman Baths), Bourton-on-the-Water (Cotswolds), Snowdon / Yr Wyddfa (Snowdonia), Conwy Castle, Holyhead (ferry port) — routes: England + Wales + Northern Ireland Roadtrip (10-14 days) 🛣️
+- [x] **GB** (4 dest): Giant's Causeway, Carrick-a-Rede Rope Bridge, Antrim Coast / Causeway Coastal Route, Belfast (Titanic Belfast) — routes: England + Wales + Northern Ireland Roadtrip (10-14 days) 🛣️
 - [x] **GB** (9 dest): Inverness, Loch Ness, Glencoe, Fort William, Skye Bridge, Portree, Old Man of Storr, Quiraing, Fairy Pools — routes: Highlands + Isle of Skye (7-10 days) 🏔️
 - [ ] **GB** (5 dest): British Museum, Tower of London, Camden Market, Westminster (Big Ben / Houses of Parliament), Greenwich (Royal Observatory / Cutty Sark) — routes: London (3-4 days) 🎡
 - [ ] **GB** (5 dest): Belfast (Titanic Belfast), Belfast murals (Falls Road / Shankill Road), Giant's Causeway, Carrick-a-Rede Rope Bridge, Antrim Coast / Causeway Coastal Route — routes: Northern Ireland (5-7 days) 🌉
@@ -600,7 +600,7 @@ Sorted alphabetically by country code.
 - [ ] **LV** (5 dest): Riga (Old Town), Sigulda, Turaida Castle, Gauja National Park, Rundāle Palace — routes: Latvia (5-7 days) 🌲
 - [x] **MC** (3 dest): Monte Carlo Casino Square, Prince's Palace, Port Hercule — routes: Monaco + Côte d'Azur (4 days) 🎰
 - [x] **MC** (1 dest): Monte Carlo / Monaco-Ville — routes: Monaco + Nice + Provence (5 days) 🍇
-- [ ] **MC** (6 dest): Casino Square, Prince's Palace (changing of the guard, 11:55), Monaco-Ville old town, Oceanographic Museum, Port Hercule, Larvotto beach — routes: Monaco: Monte Carlo (2 days) 🎲
+- [x] **MC** (6 dest): Casino Square, Prince's Palace (changing of the guard, 11:55), Monaco-Ville old town, Oceanographic Museum, Port Hercule, Larvotto beach — routes: Monaco: Monte Carlo (2 days) 🎲
 - [ ] **MD** (5 dest): Chișinău, Cricova wine cellar, Mileștii Mici wine cellar, Orheiul Vechi, Comrat (Gagauzia) — routes: Moldova (5 days) 🍷
 - [x] **MD** (2 dest): Chișinău, Orheiul Vechi — routes: Moldova + Romania (9 days) 🍷
 - [ ] **MD** (5 dest): Chișinău, Cricova / Mileștii Mici wine cellars, Orheiul Vechi, Tiraspol (Transnistria, day trip only), Bender / Bendery (Transnistria, day trip only) — routes: Moldova + Transnistria (6 days) 🍇
@@ -768,7 +768,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| England + Wales + Northern Ireland Roadtrip (10-14 days) 🛣️ | 10/10 | 0 |
 | Rhine + Moselle (5 days) 🚤 | 9/9 | 0 |
 | Grand European Roadtrip (14-21 days) 🪣 | 9/12 | 0 |
 | Baltic States Roadtrip (10-14 days) 🚗 | 9/9 | 0 |
@@ -777,7 +776,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Florence + Tuscany (4 days) 🎨 | 8/8 | 0 |
 | Venice + Dolomites (5 days) 🎭 | 8/8 | 0 |
 | Puglia (6 days) 🏘️ | 8/8 | 0 |
-| Catalonia + Pyrenees (9 days) ⛰️ | 8/8 | 0 |
 | Spain: North to Central (12 days) 🚉 | 8/8 | 0 |
 | Spain: East to South (12 days) 🌅 | 8/8 | 0 |
 | Adriatic Roadtrip (14 days) 🌊 | 8/11 | 0 |
@@ -786,8 +784,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Loire Valley Castles (6 days) 🗝️ | 7/7 | 0 |
 | French Alps + Provence (9 days) 🛤️ | 7/7 | 0 |
 | Campania: Naples + Amalfi Coast (6 days) 🌊 | 7/7 | 0 |
-| Monaco: Monte Carlo (2 days) 🎲 | 7/7 | 0 |
-| Andalusia Roadtrip (9 days) 🚗 | 7/7 | 0 |
 | Galicia: Santiago de Compostela + Coast (6 days) 🐚 | 7/7 | 0 |
 | Asturias + Cantabria (6 days) 🌲 | 7/7 | 0 |
 | Gibraltar + Andalusia: Costa del Sol (4 days) 🐒 | 7/7 | 0 |
@@ -808,6 +804,10 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Austria + Slovenia (9 days) 🏝️ | 6/6 | 0 |
 | Normandy (5 days) 🪖 | 6/6 | 0 |
 | South of France: Provence to Côte d'Azur (9 days) 🕶️ | 6/6 | 0 |
-| ... 177 more routes with open destinations ... | | |
+| French Atlantic Coast: La Rochelle to Biarritz (12 days) 🏄 | 6/6 | 0 |
+| Northern Italy (6 days) 🚤 | 6/7 | 0 |
+| Italy: North to Central (12 days) 🚄 | 6/9 | 0 |
+| Liechtenstein + Austria + Switzerland (5 days) 🚞 | 6/6 | 0 |
+| ... 173 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).
