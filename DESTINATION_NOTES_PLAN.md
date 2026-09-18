@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 512 / 741 signatures.**
+- **Done so far: 524 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -240,21 +240,21 @@ Sorted alphabetically by country code.
 - [x] **AL** (4 dest): Kukës, Shkodër, Tirana, Berat — routes: Kosovo + Albania + North Macedonia (12 days) 🧭
 - [x] **AL** (2 dest): Shkodër, Tirana — routes: Kosovo + Montenegro + Albania (9 days) 🗻
 - [x] **AL** (1 dest): Tirana — routes: Kosovo + North Macedonia + Albania (9 days) 🎒
-- [ ] **AT** (3 dest): Salzburg or Grossglockner area, Klagenfurt, Wörthersee — routes: Austria + Slovenia (9 days) 🏝️
-- [ ] **AT** (3 dest): Vorarlberg / Bregenzerwald, Damüls, Schwarzenberg — routes: Austria Alpine Roadtrip (9 days) 🗺️
-- [ ] **AT** (1 dest): Innsbruck / Tyrol — routes: Austria Alpine Roadtrip (9 days) 🗺️
+- [x] **AT** (3 dest): Salzburg or Grossglockner area, Klagenfurt, Wörthersee — routes: Austria + Slovenia (9 days) 🏝️
+- [x] **AT** (3 dest): Vorarlberg / Bregenzerwald, Damüls, Schwarzenberg — routes: Austria Alpine Roadtrip (9 days) 🗺️
+- [x] **AT** (1 dest): Innsbruck / Tyrol — routes: Austria Alpine Roadtrip (9 days) 🗺️
 - [x] **AT** (1 dest): Grossglockner High Alpine Road — routes: Austria Alpine Roadtrip (9 days) 🗺️
-- [ ] **AT** (2 dest): Salzkammergut lakes (Hallstatt / Wolfgangsee), Salzburg (closing stop) — routes: Austria Alpine Roadtrip (9 days) 🗺️
+- [x] **AT** (2 dest): Salzkammergut lakes (Hallstatt / Wolfgangsee), Salzburg (closing stop) — routes: Austria Alpine Roadtrip (9 days) 🗺️
 - [ ] **AT** (3 dest): Zell am See (lake — swimming, SUP, 12km lake loop), Kaprun, Kitzsteinhorn glacier (Gipfelwelt 3000, 3,203m) — routes: Austrian Alps: Zell am See-Kaprun / Pinzgau (6 days) 🚠
 - [x] **AT** (5 dest): Innsbruck/Tyrol, Salzburg, Berchtesgaden/Königssee, Salzkammergut, Grossglockner High Alpine Road — routes: Central European Grand Roadtrip 🚗
 - [ ] **AT** (3 dest): Linz, Salzkammergut (Hallstatt), Vienna — routes: Czechia + Austria (9 days) 🏔️
-- [ ] **AT** (1 dest): Salzburg (old town, Hohensalzburg Fortress) — routes: Germany + Austria + Slovenia (10-14 days) 🥨
+- [x] **AT** (1 dest): Salzburg (old town, Hohensalzburg Fortress) — routes: Germany + Austria + Slovenia (10-14 days) 🥨
 - [x] **AT** (2 dest): Salzburg, Innsbruck — routes: Grand European Roadtrip (14-21 days) 🪣
-- [ ] **AT** (3 dest): Feldkirch, Bregenz / Lake Constance (Bodensee), Innsbruck (optional) — routes: Liechtenstein + Austria + Switzerland (5 days) 🚞
+- [x] **AT** (3 dest): Feldkirch, Bregenz / Lake Constance (Bodensee), Innsbruck (optional) — routes: Liechtenstein + Austria + Switzerland (5 days) 🚞
 - [x] **AT** (1 dest): Salzburg — routes: Salzburg + Berchtesgaden + Hallstatt (5 days) 🛥️
 - [ ] **AT** (1 dest): Hallstatt — routes: Salzburg + Berchtesgaden + Hallstatt (5 days) 🛥️
-- [ ] **AT** (3 dest): Salzburg, Bruck an der Glocknerstraße, Grossglockner High Alpine Road — routes: Salzburg + Grossglockner + Tyrol (6 days) 🏔️
-- [ ] **AT** (2 dest): Lienz, Innsbruck / Tyrol — routes: Salzburg + Grossglockner + Tyrol (6 days) 🏔️
+- [x] **AT** (3 dest): Salzburg, Bruck an der Glocknerstraße, Grossglockner High Alpine Road — routes: Salzburg + Grossglockner + Tyrol (6 days) 🏔️
+- [x] **AT** (2 dest): Lienz, Innsbruck / Tyrol — routes: Salzburg + Grossglockner + Tyrol (6 days) 🏔️
 - [ ] **AT** (4 dest): Salzburg (Getreidegasse, Hohensalzburg Fortress, Mozart sites), Werfen (Hohenwerfen Castle & Eisriesenwelt ice caves), Wolfgangsee / St. Wolfgang, Untersberg cable car — routes: Salzburg + Surroundings (4 days) 🎻
 - [ ] **AT** (4 dest): Innsbruck, Seefeld, Achensee, Zillertal / Mayrhofen (Olperer suspension bridge) — routes: Tyrol (6 days) 🌉
 - [ ] **AW** (5 dest): Eagle Beach, Arikok National Park & the Natural Pool (Conchi), Baby Beach & San Nicolas, California Lighthouse, Oranjestad — routes: ABC Islands 🦩
@@ -483,7 +483,7 @@ Sorted alphabetically by country code.
 - [x] **HU** (1 dest): Buda Castle District — routes: Central Europe Roadtrip (14 days) 🚂
 - [x] **HU** (2 dest): Budapest, thermal baths — routes: Central European Grand Roadtrip 🚗
 - [x] **HU** (1 dest): Budapest — routes: Grand European Roadtrip (14-21 days) 🪣
-- [ ] **HU** (2 dest): Buda Castle District, Hungarian Parliament Building — routes: Hungary + Austria + Slovenia (7-10 days) 🚆
+- [x] **HU** (2 dest): Buda Castle District, Hungarian Parliament Building — routes: Hungary + Austria + Slovenia (7-10 days) 🚆
 - [ ] **HU** (2 dest): Buda Castle District, Lake Balaton / Tihany — routes: Hungary + Slovenia + Croatia (9 days) 🧭
 - [ ] **HU** (4 dest): Buda Castle District, Eger, Tokaj wine region, Lake Balaton / Tihany — routes: Hungary Roadtrip (6 days) 🚗
 - [ ] **HU** (2 dest): Buda Castle District, Eger — routes: Slovakia + Hungary (9 days) 🚆
@@ -588,7 +588,7 @@ Sorted alphabetically by country code.
 - [x] **IT** (4 dest): Cortina d'Ampezzo or Val Gardena (base), Tre Cime di Lavaredo area, Lago di Braies, Cinque Torri — routes: Venice + Dolomites (5 days) 🎭
 - [ ] **JE** (3 dest): St. Helier, Mont Orgueil Castle, Jersey War Tunnels (WWII) — routes: Jersey + Guernsey (Channel Islands) (4-5 days) 🏝️
 - [ ] **KR** (5 dest): Seoul, DMZ / Imjingak, Gyeongju, Busan, Jeju Island — routes: South Korea 🏯
-- [ ] **LI** (3 dest): Vaduz, Malbun, Triesenberg — routes: Liechtenstein + Austria + Switzerland (5 days) 🚞
+- [x] **LI** (3 dest): Vaduz, Malbun, Triesenberg — routes: Liechtenstein + Austria + Switzerland (5 days) 🚞
 - [ ] **LI** (5 dest): Vaduz old town (Städtle pedestrian area), Vaduz Castle viewpoint, Kunstmuseum Liechtenstein, Liechtenstein Center, Malbun (day trip) — routes: Liechtenstein: Vaduz (2 days) 🏰
 - [x] **LK** (6 dest): Colombo, Sigiriya, Kandy, Ella, Yala National Park, Mirissa / Galle — routes: Sri Lanka 🐆
 - [x] **LT** (3 dest): Vilnius (Old Town), Trakai Castle (day trip), Curonian Spit / Nida — routes: Baltic States Roadtrip (10-14 days) 🚗
@@ -708,10 +708,10 @@ Sorted alphabetically by country code.
 - [ ] **SE** (6 dest): Kiruna, Icehotel (Jukkasjärvi), Abisko, Aurora Sky Station, Nikkaluokta (optional day trip), Kebnekaise — routes: Swedish Lapland + Northern Lights (9 days) 💫
 - [x] **SI** (2 dest): Ljubljana, Piran — routes: Adriatic Roadtrip (14 days) 🌊
 - [ ] **SI** (3 dest): Kranjska Gora, Vršič Pass, Bled — routes: Alpine Roadtrip (14 days) 🏕️
-- [ ] **SI** (3 dest): Bled, Bohinj, Ljubljana (optional) — routes: Austria + Slovenia (9 days) 🏝️
+- [x] **SI** (3 dest): Bled, Bohinj, Ljubljana (optional) — routes: Austria + Slovenia (9 days) 🏝️
 - [x] **SI** (5 dest): Bled, Bohinj, Soča Valley, Triglav NP, caves (Postojna/Škocjan) — routes: Central European Grand Roadtrip 🚗
 - [x] **SI** (3 dest): Bled, Bohinj, Ljubljana — routes: Germany + Austria + Slovenia (10-14 days) 🥨
-- [ ] **SI** (2 dest): Bovec / Soča Valley, Piran (coastal alternative) — routes: Germany + Austria + Slovenia (10-14 days) 🥨
+- [x] **SI** (2 dest): Bovec / Soča Valley, Piran (coastal alternative) — routes: Germany + Austria + Slovenia (10-14 days) 🥨
 - [x] **SI** (2 dest): Trieste (Italy, waypoint), Ljubljana — routes: Italy + Slovenia + Croatia (10-14 days) ⛵
 - [ ] **SI** (5 dest): Kranjska Gora, Vršič Pass, Bovec, Kobarid, Tolmin Gorge — routes: Julian Alps + Soča Valley (6 days) 🚣
 - [ ] **SI** (4 dest): Ljubljana, Bled, Vintgar Gorge, Bohinj (optional day trip) — routes: Ljubljana + Lake Bled (5 days) 🏰
@@ -769,13 +769,10 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
 | Dolomites & North Italy 🚡 | 8/24 | 0 |
-| Austria Alpine Roadtrip (9 days) 🗺️ | 6/7 | 0 |
-| Austria + Slovenia (9 days) 🏝️ | 6/6 | 0 |
 | Normandy (5 days) 🪖 | 6/6 | 0 |
 | French Atlantic Coast: La Rochelle to Biarritz (12 days) 🏄 | 6/6 | 0 |
 | Northern Italy (6 days) 🚤 | 6/7 | 0 |
 | Italy: North to Central (12 days) 🚄 | 6/9 | 0 |
-| Liechtenstein + Austria + Switzerland (5 days) 🚞 | 6/6 | 0 |
 | Madrid (4 days) 🖼️ | 6/6 | 0 |
 | Valencia + Costa Blanca (6 days) 🎆 | 6/6 | 0 |
 | Northern Spain: Basque Interior + Rioja (9 days) 🍷 | 6/6 | 0 |
@@ -807,7 +804,10 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Belgium: Bruges + Ghent + Antwerp + Ardennes (5 days) 🍺 | 5/5 | 0 |
 | Romantic Road (6 days) 🏰 | 5/5 | 0 |
 | German Alpine Road / Deutsche Alpenstraße (9 days) 🏞️ | 5/5 | 0 |
-| Salzburg + Grossglockner + Tyrol (6 days) 🏔️ | 5/5 | 0 |
-| ... 136 more routes with open destinations ... | | |
+| Interlaken + Lauterbrunnen + Grindelwald (6 days) 🪂 | 5/6 | 0 |
+| Brittany: Saint-Malo, Dinan & Pink Granite Coast (5 days) 🦞 | 5/5 | 0 |
+| France Roadtrip: Paris to the Côte d'Azur (12 days) 🚗 | 5/5 | 0 |
+| Campania + Puglia (9 days) 🧭 | 5/8 | 0 |
+| ... 130 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

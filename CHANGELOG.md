@@ -12,6 +12,20 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Per-destination notes, batches 115-119 — Austria Alpine cluster (2026-09-18)** — 11 fresh
+  destinations plus 8 reuse-under-new-name-string entries, closing out Salzburg + Grossglockner
+  + Tyrol, Austria Alpine Roadtrip, Austria + Slovenia, and Liechtenstein + Austria + Switzerland
+  entirely, plus 4 bonus leftovers found in sibling routes (Hungary + Austria + Slovenia,
+  Germany + Austria + Slovenia) while researching this cluster
+  (`rbMigrateAustriaAlpineClusterDestinationNotes()`):
+  - Fresh: Bruck an der Glocknerstraße, Lienz, Vorarlberg/Bregenzerwald, Damüls, Schwarzenberg,
+    Salzkammergut lakes (Hallstatt/Wolfgangsee), Malbun, Triesenberg, Feldkirch,
+    Bregenz/Lake Constance, Bovec/Soča Valley, Hungarian Parliament Building
+  - Reuse (already-written canonical notes under new exact-string variants): Innsbruck/Tyrol,
+    Salzburg (×3 variants), Salzburg+Grossglockner combo, Ljubljana (optional), Innsbruck
+    (optional), Piran (coastal alternative)
+  App-wide total: 3490 destination-slots filled across 405 routes. 524/741 signatures done.
+
 - **Per-destination notes, batches 111-114 — Adriatic Roadtrip leftovers, Paris, French Alps +
   Provence, Western Canada: Rockies & Vancouver leftovers (Alaska leg) (2026-09-18)** — 23
   destinations researched, closing out 4 routes entirely.

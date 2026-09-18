@@ -12144,6 +12144,55 @@ function rbMigrateWesternCanadaAlaskaLeftoverDestinationNotes() {
 }
 
 /**
+ * Batches 115-119 (2026-09-18) -- Austria Alpine cluster leftovers -- closes out Salzburg +
+ * Grossglockner + Tyrol, Austria Alpine Roadtrip, Austria + Slovenia, and Liechtenstein +
+ * Austria + Switzerland entirely, plus 4 bonus leftovers found in sibling routes while
+ * researching this cluster (Hungary + Austria + Slovenia, Germany + Austria + Slovenia).
+ * 11 fresh destinations researched, the rest reuse of already-written canonical notes
+ * (Salzburg, Grossglockner, Ljubljana, Innsbruck/Tyrol, Piran) under new name-string variants.
+ * Same generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateAustriaAlpineClusterDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_AUSTRIA_ALPINE_CLUSTER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_AUSTRIA_ALPINE_CLUSTER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Bruck an der Glocknerstraße': "A small Alpine village at the northern start of the Grossglockner High Alpine Road; mainly a fuel/rest stop and gateway rather than a destination in its own right.",
+    'Lienz': "East Tyrol's main town, set beneath the Lienz Dolomites (the westernmost peaks of the Dolomites range); a compact old town with a lively main square, mostly used as a base or waypoint between Austria and Italy's Cortina d'Ampezzo.",
+    'Innsbruck / Tyrol': "The Nordkette cable car climbs directly from Innsbruck's medieval old town (Golden Roof) into high alpine terrain in under 20 minutes — genuine high-mountain scenery reachable without leaving the city.",
+    'Vorarlberg / Bregenzerwald': "A hilly farming region in Austria's westernmost state, known for cheese dairies, traditional shingle-clad farmhouses, and the signposted \"Bregenzerwald Cheese Road\" driving route linking small dairy villages.",
+    'Damüls': "One of the snowiest ski villages in the world (average roughly 9m of snowfall a year), a quiet, family-oriented resort in the Bregenzerwald without the party-town reputation of some bigger Austrian resorts.",
+    'Schwarzenberg': "A Bregenzerwald village known for its well-preserved shingled farmhouses around a small square, and as the childhood home region of painter Angelika Kauffmann — a small museum in the village is dedicated to her.",
+    'Salzkammergut lakes (Hallstatt / Wolfgangsee)': "Hallstatt, one of Austria's most photographed villages, is squeezed onto a narrow lakeside shelf beneath cliffs — go before 9am or after 4pm to beat the day-tripper crowds, since a timed-entry system now limits visitor numbers. Wolfgangsee nearby is a quieter alternative lake, home to the White Horse Inn made famous by an old Austrian operetta.",
+    'Salzburg (closing stop)': "Mozart's birthplace and several Sound of Music filming locations sit inside a compact old town dominated by the Hohensalzburg fortress above it; ride the funicular up for the view over the Salzach river.",
+    'Salzburg or Grossglockner area': "Either Salzburg — Mozart's birthplace, with its Hohensalzburg fortress and Sound of Music filming locations — or a stop on the Grossglockner High Alpine Road, the toll road climbing to nearly 2,500m past Austria's highest peak (typically open late April/May through November, weather-dependent); pick based on whether you want a city day or a mountain-driving day.",
+    'Ljubljana (optional)': "The compact riverside old town — Plečnik's Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river.",
+    'Malbun': "Liechtenstein's only ski resort, a small, low-key alpine village high in the mountains above Vaduz, reached by a winding road up from Triesenberg.",
+    'Triesenberg': "A hillside village settled centuries ago by Walser mountain farmers from Switzerland's Valais region, who still speak a distinct Walser German dialect here; the small heritage museum covers this history, and the village terrace gives a wide view down over the Rhine valley.",
+    'Feldkirch': "A well-preserved medieval old town in Austria's Vorarlberg, with arcaded streets and the Schattenburg castle on the hill above it; sits right at the border tri-point near Liechtenstein and Switzerland.",
+    'Bregenz / Lake Constance (Bodensee)': "Bregenz sits on the Austrian shore of Lake Constance (shared with Germany and Switzerland), known for its lakeside floating stage (Seebühne) used for the summer Bregenz Festival opera performances, and the Pfänder cable car above town for a panoramic view over the lake and all three countries.",
+    'Innsbruck (optional)': "The Nordkette cable car climbs directly from Innsbruck's medieval old town (Golden Roof) into high alpine terrain in under 20 minutes — genuine high-mountain scenery reachable without leaving the city.",
+    'Salzburg (old town, Hohensalzburg Fortress)': "Mozart's birthplace and several Sound of Music filming locations sit inside a compact old town dominated by the Hohensalzburg fortress above it; ride the funicular up for the view over the Salzach river.",
+    'Piran (coastal alternative)': "Slovenia's only real coastal town, with a compact Venetian-Gothic old town centered on Tartini Square; climb up to the town walls above it for a view over the terracotta rooftops to the Adriatic, and stop at the nearby Sečovlje salt pans, still harvested by hand using centuries-old methods.",
+    'Bovec / Soča Valley': "An adventure-sports base in Slovenia's Julian Alps along the vivid turquoise Soča river, popular for whitewater rafting and kayaking and as a hiking gateway; the river's striking color comes from glacial rock flour and is most vivid during early-summer snowmelt.",
+    'Hungarian Parliament Building': "Budapest's riverside neo-Gothic landmark and the largest building in Hungary; the interior (including the Crown Jewels room) is only seen on a guided tour with timed tickets, and the best exterior photo is from across the Danube on the Buda side, especially once it's lit up after dark.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Two of batch 2's standalone routes were flagged as too exposed to their long-haul flight time
  * relative to trip length — Jordanië (8d, connecting flight) and Nieuw-Zeeland Zuidereiland (21d,
  * but 27-38h with multiple stops). Adds +2 days to each as a recovery/margin buffer, matching the
@@ -15113,7 +15162,7 @@ function rbBuildSalzburgGrossglocknerTyrolRoute() {
       code: 'AT', name: 'Austria', days: 3, budget: 360, lat: 47.8095, lng: 13.0550,
       destinations: [
         { name: 'Salzburg', lat: 47.8095, lng: 13.0550, notes: "Mozart's birthplace and several Sound of Music filming locations sit inside a compact old town dominated by the Hohensalzburg fortress above it; ride the funicular up for the view over the Salzach river." },
-        { name: 'Bruck an der Glocknerstraße', lat: 47.2833, lng: 12.8333 },
+        { name: 'Bruck an der Glocknerstraße', lat: 47.2833, lng: 12.8333 , notes: 'A small Alpine village at the northern start of the Grossglockner High Alpine Road; mainly a fuel/rest stop and gateway rather than a destination in its own right.' },
         { name: 'Grossglockner High Alpine Road', lat: 47.1219, lng: 12.8264, notes: "This toll road climbs to nearly 2,500m past Austria's highest peak, ending at the Kaiser-Franz-Josefs-Höhe viewpoint over the retreating Pasterze glacier. It's typically only open late April/May through early November (weather-dependent on both ends), so check current status before routing through it outside summer." },
       ],
       notes: "Salzburg — Bruck an der Glocknerstraße (~1.5h) — the Grossglockner Hochalpenstraße itself (~1.5-2h driving, plan half a day with stops). Budget ~€100-140/day p.p. Season: the road is open early May-early November 2026. Apart from the vignette: a separate toll on the Grossglockner road, €46.50/car (day ticket, summer 2026) — buying online in advance at Heiligenblut saves a few euros (€42.50).",
@@ -15122,8 +15171,8 @@ function rbBuildSalzburgGrossglocknerTyrolRoute() {
     {
       code: 'AT', name: 'Austria', days: 3, budget: 360, lat: 47.2692, lng: 11.4041,
       destinations: [
-        { name: 'Lienz', lat: 46.8291, lng: 12.7684 },
-        { name: 'Innsbruck / Tyrol', lat: 47.2692, lng: 11.4041 },
+        { name: 'Lienz', lat: 46.8291, lng: 12.7684 , notes: 'East Tyrol\'s main town, set beneath the Lienz Dolomites (the westernmost peaks of the Dolomites range); a compact old town with a lively main square, mostly used as a base or waypoint between Austria and Italy\'s Cortina d\'Ampezzo.' },
+        { name: 'Innsbruck / Tyrol', lat: 47.2692, lng: 11.4041 , notes: 'The Nordkette cable car climbs directly from Innsbruck\'s medieval old town (Golden Roof) into high alpine terrain in under 20 minutes — genuine high-mountain scenery reachable without leaving the city.' },
       ],
       notes: "Lienz as the overnight break, then on to Innsbruck/Tyrol — same Innsbruck content as the standalone Tyrol (6 days) 🌉 route above (see that route's notes), compressed here to make room for the Grossglockner leg.",
       transport_to_next: 'End of this route — drive back to the Netherlands from Innsbruck.',
@@ -15142,9 +15191,9 @@ function rbBuildAustriaAlpineRoadtripRoute() {
     {
       code: 'AT', name: 'Austria', days: 3, budget: 360, lat: 47.2667, lng: 9.8667,
       destinations: [
-        { name: 'Vorarlberg / Bregenzerwald', lat: 47.2667, lng: 9.8667 },
-        { name: 'Damüls', lat: 47.2647, lng: 9.8869 },
-        { name: 'Schwarzenberg', lat: 47.3833, lng: 9.9000 },
+        { name: 'Vorarlberg / Bregenzerwald', lat: 47.2667, lng: 9.8667 , notes: 'A hilly farming region in Austria\'s westernmost state, known for cheese dairies, traditional shingle-clad farmhouses, and the signposted \'Bregenzerwald Cheese Road\' driving route linking small dairy villages.' },
+        { name: 'Damüls', lat: 47.2647, lng: 9.8869 , notes: 'One of the snowiest ski villages in the world (average roughly 9m of snowfall a year), a quiet, family-oriented resort in the Bregenzerwald without the party-town reputation of some bigger Austrian resorts.' },
+        { name: 'Schwarzenberg', lat: 47.3833, lng: 9.9000 , notes: 'A Bregenzerwald village known for its well-preserved shingled farmhouses around a small square, and as the childhood home region of painter Angelika Kauffmann — a small museum in the village is dedicated to her.' },
       ],
       notes: 'The far-western opener that distinguishes this route from the shorter Austria trips above: Vorarlberg/Bregenzerwald (Damüls, Schwarzenberg, cheese villages). Budget slightly higher here than the rest of the trip.',
       transport_to_next: 'Drive east into Tyrol toward Innsbruck.',
@@ -15152,7 +15201,7 @@ function rbBuildAustriaAlpineRoadtripRoute() {
     {
       code: 'AT', name: 'Austria', days: 2, budget: 210, lat: 47.2692, lng: 11.4041,
       destinations: [
-        { name: 'Innsbruck / Tyrol', lat: 47.2692, lng: 11.4041 },
+        { name: 'Innsbruck / Tyrol', lat: 47.2692, lng: 11.4041 , notes: 'The Nordkette cable car climbs directly from Innsbruck\'s medieval old town (Golden Roof) into high alpine terrain in under 20 minutes — genuine high-mountain scenery reachable without leaving the city.' },
       ],
       notes: 'Innsbruck/Tyrol as a shorter waypoint here than the standalone Tyrol (6 days) 🌉 route above — same city, compressed to fit this longer, single-corridor itinerary.',
       transport_to_next: 'Drive south to the Grossglockner High Alpine Road.',
@@ -15168,8 +15217,8 @@ function rbBuildAustriaAlpineRoadtripRoute() {
     {
       code: 'AT', name: 'Austria', days: 2, budget: 220, lat: 47.7136, lng: 13.6234,
       destinations: [
-        { name: 'Salzkammergut lakes (Hallstatt / Wolfgangsee)', lat: 47.7136, lng: 13.6234 },
-        { name: 'Salzburg (closing stop)', lat: 47.8095, lng: 13.0550 },
+        { name: 'Salzkammergut lakes (Hallstatt / Wolfgangsee)', lat: 47.7136, lng: 13.6234 , notes: 'Hallstatt, one of Austria\'s most photographed villages, is squeezed onto a narrow lakeside shelf beneath cliffs — go before 9am or after 4pm to beat the day-tripper crowds, since a timed-entry system now limits visitor numbers. Wolfgangsee nearby is a quieter alternative lake, home to the White Horse Inn made famous by an old Austrian operetta.' },
+        { name: 'Salzburg (closing stop)', lat: 47.8095, lng: 13.0550 , notes: 'Mozart\'s birthplace and several Sound of Music filming locations sit inside a compact old town dominated by the Hohensalzburg fortress above it; ride the funicular up for the view over the Salzach river.' },
       ],
       notes: 'Salzkammergut lakes (Hallstatt/Wolfgangsee) with Salzburg as the closing stop — the trip differs from the shorter routes above by adding far-western Vorarlberg and stringing everything into one continuous corridor instead of exploring a single region in depth.',
       transport_to_next: 'End of this route — drive back to the Netherlands from Salzburg.',
@@ -15188,7 +15237,7 @@ function rbBuildAustriaSloveniaRoute() {
     {
       code: 'AT', name: 'Austria', days: 5, budget: 560, lat: 46.6249, lng: 14.3050,
       destinations: [
-        { name: 'Salzburg or Grossglockner area', lat: 47.8095, lng: 13.0550 },
+        { name: 'Salzburg or Grossglockner area', lat: 47.8095, lng: 13.0550 , notes: 'Either Salzburg — Mozart\'s birthplace, with its Hohensalzburg fortress and Sound of Music filming locations — or a stop on the Grossglockner High Alpine Road, the toll road climbing to nearly 2,500m past Austria\'s highest peak (typically open late April/May through November, weather-dependent); pick based on whether you want a city day or a mountain-driving day.' },
         { name: 'Klagenfurt', lat: 46.6249, lng: 14.3050, notes: "Known for Minimundus, a park of 150+ miniature replicas of world landmarks, plus a compact pedestrian old town anchored by the Lindwurm dragon fountain. Visit Minimundus in the morning before tour groups arrive; the old town itself only takes an hour or two." },
         { name: 'Wörthersee', lat: 46.6167, lng: 14.1667, notes: "Austria's warmest alpine lake (spring-fed, often 26-28°C in summer), ringed by resort towns like Velden and Pörtschach with lakeside promenades and swimming spots. A roughly 50km path circles the whole lake if you want to see more than one town by bike." },
       ],
@@ -15200,7 +15249,7 @@ function rbBuildAustriaSloveniaRoute() {
       destinations: [
         { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
         { name: 'Bohinj', lat: 46.2833, lng: 13.9333, notes: "Slovenia's larger, quieter alpine lake south of Bled — glacial, ringed by forested peaks, with far fewer crowds than Bled. Ride the Vogel cable car above the lake for a panoramic view, or use it as the trailhead for the Savica waterfall hike." },
-        { name: 'Ljubljana (optional)', lat: 46.0569, lng: 14.5058 },
+        { name: 'Ljubljana (optional)', lat: 46.0569, lng: 14.5058 , notes: 'The compact riverside old town — Plečnik\'s Triple Bridge, the Dragon Bridge, and a hilltop castle — can be walked in half a day. Take the funicular (or hike) up to Ljubljana Castle around golden hour for the best view over the red rooftops and river.' },
       ],
       notes: "4 days in Slovenia's Julian Alps: Bled, Bohinj, with Ljubljana as an optional cheap, relaxed closer. Slovenia is generally cheaper than Austria overall, though Bled itself is a price outlier — staying 10-20 min outside Bled saves 30-40%. Season: June-September. Slovenia does not use the Austrian vignette — a separate e-vinjeta (toll sticker) is needed once driving Slovenian motorways.",
       transport_to_next: 'End of this route — drive back to the Netherlands via Austria.',
@@ -16647,8 +16696,8 @@ function rbBuildLiechtensteinAustriaSwitzerlandRoute() {
       code: 'LI', name: 'Liechtenstein', days: 2, budget: 380, lat: 47.1410, lng: 9.5209,
       destinations: [
         { name: 'Vaduz', lat: 47.1410, lng: 9.5209, notes: "The capital is a small, walkable strip beneath the reigning prince's hilltop castle, which is a private residence viewable only from outside; an hour covers the pedestrian center and the Kunstmuseum." },
-        { name: 'Malbun', lat: 47.0658, lng: 9.6086 },
-        { name: 'Triesenberg', lat: 47.1067, lng: 9.5289 },
+        { name: 'Malbun', lat: 47.0658, lng: 9.6086 , notes: 'Liechtenstein\'s only ski resort, a small, low-key alpine village high in the mountains above Vaduz, reached by a winding road up from Triesenberg.' },
+        { name: 'Triesenberg', lat: 47.1067, lng: 9.5289 , notes: 'A hillside village settled centuries ago by Walser mountain farmers from Switzerland\'s Valais region, who still speak a distinct Walser German dialect here; the small heritage museum covers this history, and the village terrace gives a wide view down over the Rhine valley.' },
       ],
       notes: "Entry: direct flight to Zürich or Innsbruck. A day in Vaduz, then a mountain day in Malbun/Triesenberg. The CH/AT/LI border triangle sits within about 30 minutes of Vaduz, so this loop is geographically easy to combine. Budget ~€160-200/day (a mix of expensive Switzerland-adjacent pricing and cheaper Austria). Self-driving the whole loop from the Netherlands takes ~9h.",
       transport_to_next: 'Short drive to Feldkirch/Bregenz (~30 min) — no real border controls in practice between CH/AT/LI, but carry ID/passport.',
@@ -16656,9 +16705,9 @@ function rbBuildLiechtensteinAustriaSwitzerlandRoute() {
     {
       code: 'AT', name: 'Austria', days: 3, budget: 540, lat: 47.2411, lng: 9.5981,
       destinations: [
-        { name: 'Feldkirch', lat: 47.2411, lng: 9.5981 },
-        { name: 'Bregenz / Lake Constance (Bodensee)', lat: 47.5031, lng: 9.7471 },
-        { name: 'Innsbruck (optional)', lat: 47.2692, lng: 11.4041 },
+        { name: 'Feldkirch', lat: 47.2411, lng: 9.5981 , notes: 'A well-preserved medieval old town in Austria\'s Vorarlberg, with arcaded streets and the Schattenburg castle on the hill above it; sits right at the border tri-point near Liechtenstein and Switzerland.' },
+        { name: 'Bregenz / Lake Constance (Bodensee)', lat: 47.5031, lng: 9.7471 , notes: 'Bregenz sits on the Austrian shore of Lake Constance (shared with Germany and Switzerland), known for its lakeside floating stage (Seebühne) used for the summer Bregenz Festival opera performances, and the Pfänder cable car above town for a panoramic view over the lake and all three countries.' },
+        { name: 'Innsbruck (optional)', lat: 47.2692, lng: 11.4041 , notes: 'The Nordkette cable car climbs directly from Innsbruck\'s medieval old town (Golden Roof) into high alpine terrain in under 20 minutes — genuine high-mountain scenery reachable without leaving the city.' },
       ],
       notes: "Feldkirch/Bregenz and Lake Constance, with an optional detour to Innsbruck. Open-jaw AMS-Zürich in, AMS-Innsbruck out (or the reverse) avoids backtracking. Budget ~€160-200/day, same range as the Liechtenstein leg. Season: May-September; winter only makes sense with a dedicated focus on Malbun/Austrian ski areas (budget accordingly for lift passes). ⚠️ A separate Austrian vignette is also needed (10-day version ~€10.90 in 2026) on top of the Swiss one if driving through both.",
       transport_to_next: 'End of this route — open-jaw flight home from Innsbruck (or drive back to Zürich and fly from there), avoiding backtracking.',
@@ -18103,7 +18152,7 @@ function rbBuildSloveniaAlpineLoopRoute() {
         { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
         { name: 'Bohinj', lat: 46.2833, lng: 13.9333, notes: "Slovenia's larger, quieter alpine lake south of Bled — glacial, ringed by forested peaks, with far fewer crowds than Bled. Ride the Vogel cable car above the lake for a panoramic view, or use it as the trailhead for the Savica waterfall hike." },
         { name: 'Vršič Pass', lat: 46.4331, lng: 13.7478 },
-        { name: 'Bovec / Soča Valley', lat: 46.3297, lng: 13.5522 },
+        { name: 'Bovec / Soča Valley', lat: 46.3297, lng: 13.5522 , notes: 'An adventure-sports base in Slovenia\'s Julian Alps along the vivid turquoise Soča river, popular for whitewater rafting and kayaking and as a hiking gateway; the river\'s striking color comes from glacial rock flour and is most vivid during early-summer snowmelt.' },
         { name: 'Kranjska Gora', lat: 46.4858, lng: 13.7861 },
       ],
       notes: "Ljubljana (1 day) — Bled (2 days) — Bohinj (1 day) — over the Vršič Pass to Bovec/the Soča Valley (2 days) — back via Kranjska Gora. Budget €100-140/day, plus activities (rafting/canyoning €50-80 pp extra). Season: only June-September is reliably driveable — the pass closes in winter for snow/avalanche risk. Web check (2026-08): a new 2026 traffic regime on the Vršič Pass — no parking at the top through 31 August, with a free shuttle bus running Kranjska Gora-Bovec (26 June-31 August, 20 trips/day); driving the pass yourself remains possible, just park lower down.",
@@ -19624,7 +19673,7 @@ function rbBuildBudapestEgerRoute() {
       code: 'HU', name: 'Hungary', days: 5, budget: 300, lat: 47.4960, lng: 19.0396,
       destinations: [
         { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396, notes: "Buda Castle Hill combines the former royal palace with Fisherman's Bastion and Matthias Church, and it's the classic vantage point for the Danube/Pest skyline and Parliament building across the river. Time it for sunset for the best light on that view, and take the Castle Hill Funicular up rather than the steep walk." },
-        { name: 'Hungarian Parliament Building', lat: 47.5076, lng: 19.0458 },
+        { name: 'Hungarian Parliament Building', lat: 47.5076, lng: 19.0458 , notes: 'Budapest\'s riverside neo-Gothic landmark and the largest building in Hungary; the interior (including the Crown Jewels room) is only seen on a guided tour with timed tickets, and the best exterior photo is from across the Danube on the Buda side, especially once it\'s lit up after dark.' },
         { name: 'Széchenyi Thermal Baths', lat: 47.5186, lng: 19.0821 },
         { name: 'Szentendre (day trip)', lat: 47.6698, lng: 19.0714 },
         { name: "Eger / Valley of the Beautiful Women wine cellars", lat: 47.9025, lng: 20.3772 },
@@ -23659,7 +23708,7 @@ function rbBuildHungaryAustriaSloveniaRoute() {
       code: 'HU', name: 'Hungary', days: 2, budget: 120, lat: 47.4960, lng: 19.0396,
       destinations: [
         { name: 'Buda Castle District', lat: 47.4960, lng: 19.0396, notes: "Buda Castle Hill combines the former royal palace with Fisherman's Bastion and Matthias Church, and it's the classic vantage point for the Danube/Pest skyline and Parliament building across the river. Time it for sunset for the best light on that view, and take the Castle Hill Funicular up rather than the steep walk." },
-        { name: 'Hungarian Parliament Building', lat: 47.5076, lng: 19.0458 },
+        { name: 'Hungarian Parliament Building', lat: 47.5076, lng: 19.0458 , notes: 'Budapest\'s riverside neo-Gothic landmark and the largest building in Hungary; the interior (including the Crown Jewels room) is only seen on a guided tour with timed tickets, and the best exterior photo is from across the Danube on the Buda side, especially once it\'s lit up after dark.' },
       ],
       notes: "Budapest (2 days): the Castle district and the Parliament/Pest riverside. Budget ~€55-65/day.",
       transport_to_next: 'Drive to Vienna, ~250km/2.5h — a fully Schengen border, no checks expected on this leg.',
@@ -23902,7 +23951,7 @@ function rbBuildGermanyAustriaSloveniaRoute() {
     {
       code: 'AT', name: 'Austria', days: 2, budget: 220, lat: 47.8095, lng: 13.0550,
       destinations: [
-        { name: 'Salzburg (old town, Hohensalzburg Fortress)', lat: 47.8095, lng: 13.0550 },
+        { name: 'Salzburg (old town, Hohensalzburg Fortress)', lat: 47.8095, lng: 13.0550 , notes: 'Mozart\'s birthplace and several Sound of Music filming locations sit inside a compact old town dominated by the Hohensalzburg fortress above it; ride the funicular up for the view over the Salzach river.' },
       ],
       notes: "Salzburg (2 days) — same old-town content as Salzburg + Surroundings (4 days) 🎻 above (see that route's notes). Budget ~€95-130/day p.p. Austrian 10-day vignette (€12.80/car) required.",
       transport_to_next: 'Drive south to Klagenfurt/Wörthersee (~200km/2h15).',
@@ -23929,8 +23978,8 @@ function rbBuildGermanyAustriaSloveniaRoute() {
     {
       code: 'SI', name: 'Slovenia', days: 2, budget: 220, lat: 46.3297, lng: 13.5522,
       destinations: [
-        { name: 'Bovec / Soča Valley', lat: 46.3297, lng: 13.5522 },
-        { name: 'Piran (coastal alternative)', lat: 45.5285, lng: 13.5686 },
+        { name: 'Bovec / Soča Valley', lat: 46.3297, lng: 13.5522 , notes: 'An adventure-sports base in Slovenia\'s Julian Alps along the vivid turquoise Soča river, popular for whitewater rafting and kayaking and as a hiking gateway; the river\'s striking color comes from glacial rock flour and is most vivid during early-summer snowmelt.' },
+        { name: 'Piran (coastal alternative)', lat: 45.5285, lng: 13.5686 , notes: 'Slovenia\'s only real coastal town, with a compact Venetian-Gothic old town centered on Tartini Square; climb up to the town walls above it for a view over the terracotta rooftops to the Adriatic, and stop at the nearby Sečovlje salt pans, still harvested by hand using centuries-old methods.' },
       ],
       notes: "Soča Valley or Piran (2 days) — the source frames this leg as an add-on only worth doing at the 14-day end of this route's range, dropped entirely for a tighter 10-day version. Soča Valley overlaps Slovenia Alpine Loop (6 days) 🏔️/Julian Alps + Soča Valley (6 days) 🚣 above (rafting/canyoning, the Vršič Pass traffic regime); Piran overlaps the coastal leg of Slovenia + Italy (9 days) 🍝/Slovenia Roadtrip (9 days) 🗺️ above. Budget ~€90-130/day p.p.",
       transport_to_next: 'End of this route — fly home from Ljubljana.',
