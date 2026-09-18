@@ -30,6 +30,20 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   already present in the existing data, no change needed to how batches insert notes or build
   their migration functions.
 
+- **Per-destination notes, batch 42 — North Macedonia + Kosovo + Greece cluster (2026-09-18)** —
+  Skopje, Ohrid, Bitola, Pelister National Park, Pristina, Thessaloniki, plus the "Prizren (Sinan
+  Pasha Mosque, Liga House)" and "Visoki Dečani / Peć Patriarchate" name variants — 8
+  destinations, very high leverage (Skopje/Ohrid recur across 9 routes each, Pristina across 4).
+  Same generic name-matching migration (`rbMigrateNorthMacedoniaKosovoGreeceDestinationNotes()`).
+  Together with batch 41, this fully closes out the entire Albania/Kosovo/North Macedonia/Greece
+  Balkan cluster — none of it remains in the plan's batch queue. App-wide total: 2733
+  destination-slots filled across 340 routes. 333/741 signatures done.
+
+- **Per-destination notes, batch 41 — rest of the Albania cluster (2026-09-18)** — Berat, the
+  Riviera towns (Vlorë, Dhermi, Himarë, Porto Palermo, Saranda, Ksamil, Butrint) and Valbona — 9
+  destinations, high leverage (Berat recurs across 6 Albania-themed routes). Same generic
+  name-matching migration (`rbMigrateAlbaniaClusterDestinationNotes()`).
+
 - **Per-destination notes, batch 40 — San Marino + Emilia-Romagna (4 days) (2026-09-18)** — 4
   destinations, researched in a single pass (Bologna already had a note). Shared-signature batch:
   City of San Marino/Rocca Guaita recur in San Marino + Tuscany (5 days). Same generic

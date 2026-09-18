@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 325 / 741 signatures.**
+- **Done so far: 333 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -111,7 +111,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **US** (3 dest): San Francisco (Golden Gate Bridge, Alcatraz, Mission District), Yosemite Valley, Sequoia & Kings Canyon National Parks — routes: California 🌲, North America Grand Traverse 🌎, US West Coast Roadtrip 🌉
 - [x] **VU** (4 dest): Port Vila, Mount Yasur (Tanna), SS President Coolidge wreck (Espiritu Santo), Blue Holes — routes: Fiji & Vanuatu 🐚, Oceania Grand Expedition 🌊, Pacific Islands 🌺
 - [x] **ZM** (4 dest): Lusaka, Lower Zambezi NP, Livingstone/Victoria Falls, South Luangwa NP — routes: Africa Grand Tour 🌍, Southern Africa Safari Loop 🦁, Zambia & Malawi 💦
-- [ ] **AL** (4 dest): Tirana, Berat, Dhermi, Himarë — routes: Albania (6 days) 🏖️, Albania + Montenegro (12 days) 🏝️
+- [x] **AL** (4 dest): Tirana, Berat, Dhermi, Himarë — routes: Albania (6 days) 🏖️, Albania + Montenegro (12 days) 🏝️
 - [x] **AL** (2 dest): Tirana, Berat — routes: Balkan Roadtrip: Serbia + North Macedonia + Albania + Kosovo (14 days) 🔄, North Macedonia + Albania (9 days) 🚌
 - [x] **AO** (5 dest): Lubango, Serra da Leba, Tundavala Gorge, Namibe Desert, Luanda — routes: Africa Grand Tour 🌍, Southern Africa Safari Loop 🦁
 - [x] **AQ** (7 dest): Expedition Cruise from Ushuaia, South Shetland Islands, Antarctic Peninsula, Glaciers & Icebergs, Penguin colonies, Whales, Return to Ushuaia — routes: Antarctica Cruise 🐧, Patagonia & Antarctica Expedition 🧊
@@ -222,7 +222,7 @@ Sorted by how many routes reuse them — highest leverage first.
 - [x] **TR** (6 dest): Istanbul, Troy, Pergamon, Ephesus, Pamukkale, Cappadocia — routes: Anatolia 🕌, Mediterranean Civilizations Expedition 🏛️
 - [x] **UG** (6 dest): Bwindi Impenetrable Forest (gorillas), Queen Elizabeth NP, Kibale Forest, Murchison Falls, Kampala, Jinja — routes: Africa Grand Tour 🌍, East Africa Safari Classic 🦒
 - [x] **WS** (4 dest): Apia, To Sua Ocean Trench, Lalomanu (beach fales), Upolu — routes: Oceania Grand Expedition 🌊, Pacific Islands 🌺
-- [ ] **XK** (2 dest): Pristina, Prizren — routes: Kosovo + North Macedonia (6 days) 🚏, Kosovo + North Macedonia + Albania (9 days) 🎒
+- [x] **XK** (2 dest): Pristina, Prizren — routes: Kosovo + North Macedonia (6 days) 🚏, Kosovo + North Macedonia + Albania (9 days) 🎒
 - [x] **XK** (2 dest): Peja / Rugova Gorge, Prizren — routes: Kosovo + Albania (9 days) 🏔️, Kosovo + Montenegro + Albania (9 days) 🗻
 
 ## Solo signatures (one route each)
@@ -234,8 +234,8 @@ Sorted alphabetically by country code.
 - [ ] **AD** (3 dest): Andorra la Vella (Casa de la Vall), Ordino, Vall del Madriu-Perafita-Claror (hike) — routes: Andorra + Spanish Pyrenees: Grand Circuit (9 days) 🏔️
 - [ ] **AE** (5 dest): Dubai, Abu Dhabi, Al Ain, Liwa Oasis / Empty Quarter, Fujairah / East Coast — routes: United Arab Emirates 🏙️
 - [x] **AL** (3 dest): Tirana, Berat, Korçë — routes: Albania + North Macedonia (12 days) 🏞️
-- [ ] **AL** (5 dest): Tirana, Shkodër, Theth, Valbona, Berat — routes: Albania Roadtrip (9 days) 🥾
-- [ ] **AL** (7 dest): Vlorë, Dhermi, Himarë, Porto Palermo, Saranda, Ksamil, Butrint — routes: Albanian Riviera (9 days) 🌊
+- [x] **AL** (5 dest): Tirana, Shkodër, Theth, Valbona, Berat — routes: Albania Roadtrip (9 days) 🥾
+- [x] **AL** (7 dest): Vlorë, Dhermi, Himarë, Porto Palermo, Saranda, Ksamil, Butrint — routes: Albanian Riviera (9 days) 🌊
 - [x] **AL** (4 dest): Kukës, Shkodër, Theth (Accursed Mountains), Tirana — routes: Kosovo + Albania (9 days) 🏔️
 - [x] **AL** (4 dest): Kukës, Shkodër, Tirana, Berat — routes: Kosovo + Albania + North Macedonia (12 days) 🧭
 - [x] **AL** (2 dest): Shkodër, Tirana — routes: Kosovo + Montenegro + Albania (9 days) 🗻
@@ -453,7 +453,7 @@ Sorted alphabetically by country code.
 - [ ] **GR** (3 dest): Argostoli (Kefalonia), Melissani Cave, Myrtos Beach — routes: Ionian Islands (5-7 days) 🏝️
 - [ ] **GR** (3 dest): Zakynthos Town, Navagio (Shipwreck Beach), Blue Caves — routes: Ionian Islands (5-7 days) 🏝️
 - [ ] **GR** (1 dest): Lesbos / Mytilini — routes: Istanbul + Lesbos (Greek Islands) (9 days) 🛳️
-- [ ] **GR** (1 dest): Thessaloniki — routes: North Macedonia + Greece (9 days) 🏛️
+- [x] **GR** (1 dest): Thessaloniki — routes: North Macedonia + Greece (9 days) 🏛️
 - [ ] **GR** (7 dest): Thessaloniki, Meteora, Kalabaka, Halkidiki, Vergina, Edessa, Mount Olympus / Litochoro — routes: Northern Greece (9 days) ⛰️
 - [ ] **GR** (8 dest): Athens (arrival), Nafplio, Mycenae, Epidaurus, Mystras, Sparta, Monemvasia, Corinth — routes: Peloponnese Loop (9 days) 🏟️
 - [ ] **GR** (2 dest): Rhodes Old Town, Palace of the Grand Master — routes: Rhodes (5-7 days) 🏝️
@@ -615,7 +615,7 @@ Sorted alphabetically by country code.
 - [ ] **MK** (3 dest): Ohrid, Skopje, Mavrovo National Park (optional) — routes: Albania + North Macedonia (12 days) 🏞️
 - [x] **MK** (1 dest): Skopje — routes: Balkan Roadtrip: Serbia + North Macedonia + Albania + Kosovo (14 days) 🔄
 - [ ] **MK** (2 dest): Ohrid, Sveti Naum — routes: Balkan Roadtrip: Serbia + North Macedonia + Albania + Kosovo (14 days) 🔄
-- [ ] **MK** (4 dest): Skopje, Ohrid, Bitola, Pelister National Park — routes: North Macedonia (6 days) ⛰️
+- [x] **MK** (4 dest): Skopje, Ohrid, Bitola, Pelister National Park — routes: North Macedonia (6 days) ⛰️
 - [ ] **MK** (3 dest): Skopje, Ohrid, Sveti Naum — routes: Skopje + Ohrid (5 days) 🌅
 - [ ] **MT** (5 dest): Valletta, Mdina, Gozo, Ġgantija-tempels, Hypogeum — routes: Malta & Italy 🏛️
 - [ ] **MT** (5 dest): Valletta & the Three Cities (Vittoriosa/Senglea/Cospicua), Mdina / Rabat, Marsaxlokk, Hagar Qim / Mnajdra temples, Blue Grotto — routes: Malta (4 days) 🌅
@@ -758,8 +758,8 @@ Sorted alphabetically by country code.
 - [ ] **US** (2 dest): Kenai Fjords National Park (glacier and wildlife boat tour), Exit Glacier — routes: Western Canada: Rockies & Vancouver 🏔️
 - [ ] **UY** (5 dest): Montevideo (Ciudad Vieja, Mercado del Puerto), Colonia del Sacramento (UNESCO old town), Punta del Este, Cabo Polonio (off-grid, 4x4-only), Punta del Diablo (incl. Santa Teresa National Park) — routes: Uruguay 🧉
 - [x] **XK** (1 dest): Prizren — routes: Balkan Roadtrip: Serbia + North Macedonia + Albania + Kosovo (14 days) 🔄
-- [ ] **XK** (4 dest): Pristina, Prizren (Sinan Pasha Mosque, Liga House), Peja / Rugova Gorge, Visoki Dečani / Peć Patriarchate — routes: Kosovo (5 days) 🕍
-- [ ] **XK** (3 dest): Pristina, Peja / Rugova Gorge, Prizren — routes: Kosovo + Albania + North Macedonia (12 days) 🧭
+- [x] **XK** (4 dest): Pristina, Prizren (Sinan Pasha Mosque, Liga House), Peja / Rugova Gorge, Visoki Dečani / Peć Patriarchate — routes: Kosovo (5 days) 🕍
+- [x] **XK** (3 dest): Pristina, Peja / Rugova Gorge, Prizren — routes: Kosovo + Albania + North Macedonia (12 days) 🧭
 - [ ] **XK** (2 dest): Peja, Rugova Gorge — routes: Kosovo + Montenegro (9 days) 🏞️
 
 ## Batch queue — what to do next
@@ -768,10 +768,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| Albania + Montenegro (12 days) 🏝️ | 4/6 | 1 |
-| Albania (6 days) 🏖️ | 4/4 | 1 |
-| Kosovo + North Macedonia + Albania (9 days) 🎒 | 2/5 | 1 |
-| Kosovo + North Macedonia (6 days) 🚏 | 2/4 | 1 |
 | Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂 | 19/19 | 0 |
 | Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧 | 19/19 | 0 |
 | Porto + Northern Spain (10-14 days) 🏔️ | 14/14 | 0 |
@@ -808,6 +804,10 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Sardinia (9 days) ⛵ | 8/8 | 0 |
 | Puglia (6 days) 🏘️ | 8/8 | 0 |
 | Monaco + Côte d'Azur (4 days) 🎰 | 8/8 | 0 |
-| ... 244 more routes with open destinations ... | | |
+| Rome + Vatican City In-Depth (4 days) ⛪ | 8/8 | 0 |
+| Malta + Gozo (6 days) ⛵ | 8/8 | 0 |
+| Malta + Gozo + Sicily (9 days) 🐚 | 8/8 | 0 |
+| Catalonia + Pyrenees (9 days) ⛰️ | 8/8 | 0 |
+| ... 234 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

@@ -9492,6 +9492,78 @@ function rbMigrateSanMarinoEmiliaRomagnaDestinationNotes() {
 }
 
 /**
+ * Batch 41 (2026-09-18) -- the rest of the Albania cluster (Berat, the Riviera towns Vlorë ->
+ * Dhermi -> Himarë -> Porto Palermo -> Saranda -> Ksamil -> Butrint, and Valbona) -- high
+ * leverage, these recur across ~6 Albania-themed routes. Same generic name-matching migration
+ * pattern as the other batches.
+ */
+function rbMigrateAlbaniaClusterDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_ALBANIA_CLUSTER_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_ALBANIA_CLUSTER_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Berat': 'UNESCO old town of Ottoman white houses stacked on the hillside, split into the Mangalem and Gorica quarters facing each other across the river, crowned by the still-inhabited Kalaja (castle) with Byzantine churches and the Onufri icon museum inside; go up to the castle late afternoon so you catch the "thousand windows" light on Mangalem from the walls.',
+    'Dhermi': "Riviera beach town whose real draw is Gjipe, a beach in a narrow limestone canyon just south, reachable by a 20-30 min hike down from the cliff-top or by boat; go early or take the hike rather than the boat taxis to avoid the midday crowd on the sand.",
+    'Himarë': "Riviera town used mainly as a base, with an old hilltop quarter (Himara Kalaja) above the modern seafront for a short walk and view; the town's own beach gets busy, so head a couple of km south to Livadhi beach for a quieter swim.",
+    'Vlorë': "Mostly a transit/gateway city rather than a sightseeing stop itself, best used as the jumping-off point for a boat trip to the Karaburun Peninsula-Sazan Island marine park or to the small lagoon islet monastery of Zvërnec just north; budget half a day if you want the boat trip, otherwise it's a pass-through.",
+    'Porto Palermo': "Ali Pasha's early-19th-century castle sits on its own small tidal islet in a sheltered bay between Qeparo and Himarë, with a swimmable cove right next to it. Entry costs ~300 ALL cash only, open daily roughly 9:00-18:00, and a visit (prison rooms, barracks, rooftop terrace with bay views) takes 30-45 minutes.",
+    'Saranda': "Mainly a base/promenade town for Ksamil and Butrint with views across to Corfu, not a sightseeing destination itself; the one thing worth the short detour is Lëkurësi Castle on the hill above town, best at sunset for the view over the bay.",
+    'Ksamil': "Famous for a string of tiny islands just offshore that you can wade or swim to in bright turquoise water; go early morning before the day-trip crowds and boat traffic from Saranda arrive, since the islands get packed by midday in season.",
+    'Butrint': "Layered Greek, Roman, Byzantine and Venetian ruins (theatre, baptistery mosaics, acropolis) inside a UNESCO-listed lagoon/wetland setting near the Greek border. Allow 1.5-2 hours and go early morning both for the heat and to beat the tour-bus groups that arrive from Saranda/Corfu.",
+    'Valbona': "Valbona Valley National Park at the far end of the classic Theth-Valbona mountain crossing, with dramatic peaks lining the valley; if hiking, the Theth-Valbona trail is a genuine 6-7 hour day (best done downhill toward Valbona), and if not hiking, check the seasonal Fierzë ferry/road connection since Valbona itself has little to do beyond the valley scenery.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 42 (2026-09-18) -- North Macedonia + Kosovo + Greece cluster (Skopje, Ohrid, Bitola,
+ * Pelister National Park, Pristina, Thessaloniki, plus the "Prizren (Sinan Pasha Mosque, Liga
+ * House)" and "Visoki Dečani / Peć Patriarchate" name variants) -- high leverage, Skopje/Ohrid/
+ * Pristina each recur across ~5-9 routes. Same generic name-matching migration pattern as the
+ * other batches.
+ */
+function rbMigrateNorthMacedoniaKosovoGreeceDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_NORTH_MACEDONIA_KOSOVO_GREECE_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_NORTH_MACEDONIA_KOSOVO_GREECE_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Skopje': 'An odd but memorable mix of the Ottoman-era Old Bazaar (real, lived-in) right next to the grandiose, statue-heavy "Skopje 2014" government quarter and giant Alexander/Warrior statue on the main square. Walk up to Kale Fortress for a free skyline view, and if time allows, Matka Canyon just outside town is a better half-day nature stop than anything in the city center.',
+    'Ohrid': "UNESCO lake town where the postcard shot is the Church of Sveti Jovan at Kaneo, perched on a cliff over the water, plus the old town's Samuil's Fortress walls. Swim at the small Kaneo beach right below the church, and if you have a half day, take a boat down the lake to St. Naum Monastery near the springs.",
+    'Bitola': "Ottoman/Habsburg-era pedestrian street Širok Sokak with consulate buildings and cafe life, paired with the ancient ruins of Heraclea Lyncestis (Roman theatre, well-preserved floor mosaics) just south of town. Combine both in one visit; the ruins alone need about an hour.",
+    'Pelister National Park': 'North Macedonia\'s oldest national park, known for endemic Molika pine forest and the two glacial "Pelister Eyes" lakes (Golemo/Malo Ezero). The lakes require a genuine multi-hour hike from villages like Magarevo or Rotino on a marked trail, not a quick roadside stop, so only add it if you have most of a day free.',
+    'Pristina': "Kosovo's capital and usual arrival point, light on classical sights but heavy on cafe/street energy along Nënë Tereza Boulevard, with the Newborn monument and Mother Teresa Cathedral as the two quick photo stops and the Kosovo Museum for context. Treat it as a half-day city rather than a monument checklist.",
+    'Thessaloniki': "Greece's second city, walkable waterfront with the White Tower, the Rotunda and several UNESCO-listed early Byzantine churches woven through downtown. Go up to Ano Poli (the old Ottoman-era hillside quarter and city walls) in late afternoon for the best views and the least touristy streets.",
+    'Prizren (Sinan Pasha Mosque, Liga House)': "Kosovo's most atmospheric old town: Ottoman stone bridge and bazaar beneath a hilltop fortress, the Sinan Pasha Mosque on the river, and the League of Prizren House museum covering the 1878 Kosovar-Albanian independence movement. Climb to the Kalaja fortress ruins above town for the best view over the old quarter, and budget time for the League of Prizren museum specifically for the history most visitors skip.",
+    'Visoki Dečani / Peć Patriarchate': "Two separate, still-active medieval Serbian Orthodox monasteries near Peja/Peć under KFOR protection — Dečani for its exceptional 14th-century frescoes, the Patriarchate of Peć as the historic seat of the Serbian Church — both genuinely worth the detour and distinct from the Peja/Rugova Gorge stop. At both, you must hand over your passport/ID to KFOR or police at the checkpoint to get a visitor pass (get it back on exit), dress modestly (shoulders/knees covered), and expect a no-photography rule right at the checkpoint/monastery approach.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -15974,9 +16046,9 @@ function rbBuildAlbaniaRoute() {
       code: 'AL', name: 'Albania', days: 6, budget: 240, lat: 40.9000, lng: 19.8000,
       destinations: [
         { name: 'Tirana', lat: 41.3275, lng: 19.8187 , notes: 'Colorful communist-era apartment blocks and Bunk\'Art (a converted Cold War bunker) tell the Hoxha-era story best; Bunk\'Art 2 is central and walkable, but Bunk\'Art 1 is out of town and needs a taxi or bus — check which one you\'re booking.' },
-        { name: 'Berat', lat: 40.7058, lng: 19.9522 },
-        { name: 'Dhermi', lat: 40.1461, lng: 19.6417 },
-        { name: 'Himarë', lat: 40.1017, lng: 19.7444 },
+        { name: 'Berat', lat: 40.7058, lng: 19.9522 , notes: 'UNESCO old town of Ottoman white houses stacked on the hillside, split into the Mangalem and Gorica quarters facing each other across the river, crowned by the still-inhabited Kalaja (castle) with Byzantine churches and the Onufri icon museum inside; go up to the castle late afternoon so you catch the "thousand windows" light on Mangalem from the walls.' },
+        { name: 'Dhermi', lat: 40.1461, lng: 19.6417 , notes: 'Riviera beach town whose real draw is Gjipe, a beach in a narrow limestone canyon just south, reachable by a 20-30 min hike down from the cliff-top or by boat; go early or take the hike rather than the boat taxis to avoid the midday crowd on the sand.' },
+        { name: 'Himarë', lat: 40.1017, lng: 19.7444 , notes: 'Riviera town used mainly as a base, with an old hilltop quarter (Himara Kalaja) above the modern seafront for a short walk and view; the town\'s own beach gets busy, so head a couple of km south to Livadhi beach for a quieter swim.' },
       ],
       notes: "Tirana (2 days) — Berat (1-2 days, the UNESCO-listed 'city of a thousand windows') — Dhermi/Himarë on the Riviera (2-3 days). Budget ~€35-45/day — Albania is the cheapest Balkan country to travel in. Season: May-June or early September. Web check (2026-08): a lot of Riviera infrastructure around Dhermi is closed outside June-September; the local currency is the Lek, and the euro exchange rate offered locally is often unfavorable, so change money carefully or pay in Lek where possible.",
       transport_to_next: 'End of this route — fly home from Tirana.',
@@ -15998,8 +16070,8 @@ function rbBuildAlbaniaRoadtripRoute() {
         { name: 'Tirana', lat: 41.3275, lng: 19.8187 , notes: 'Colorful communist-era apartment blocks and Bunk\'Art (a converted Cold War bunker) tell the Hoxha-era story best; Bunk\'Art 2 is central and walkable, but Bunk\'Art 1 is out of town and needs a taxi or bus — check which one you\'re booking.' },
         { name: 'Shkodër', lat: 42.0683, lng: 19.5126 , notes: 'Rozafa Castle hilltop ruins overlooking the confluence of three rivers and Lake Shkodër; go for sunset, when the light over the lake and city from the ramparts is best.' },
         { name: 'Theth', lat: 42.3961, lng: 19.7692 , notes: 'Remote Alpine valley of stone kulla towers, the highlight being the day-hike over to Valbonë through the Accursed Mountains; allocate a full day for the hike and note the access road is realistically only open/passable roughly June-October.' },
-        { name: 'Valbona', lat: 42.4644, lng: 19.8919 },
-        { name: 'Berat', lat: 40.7058, lng: 19.9522 },
+        { name: 'Valbona', lat: 42.4644, lng: 19.8919 , notes: 'Valbona Valley National Park at the far end of the classic Theth-Valbona mountain crossing, with dramatic peaks lining the valley; if hiking, the Theth-Valbona trail is a genuine 6-7 hour day (best done downhill toward Valbona), and if not hiking, check the seasonal Fierzë ferry/road connection since Valbona itself has little to do beyond the valley scenery.' },
+        { name: 'Berat', lat: 40.7058, lng: 19.9522 , notes: 'UNESCO old town of Ottoman white houses stacked on the hillside, split into the Mangalem and Gorica quarters facing each other across the river, crowned by the still-inhabited Kalaja (castle) with Byzantine churches and the Onufri icon museum inside; go up to the castle late afternoon so you catch the "thousand windows" light on Mangalem from the walls.' },
       ],
       notes: "Tirana (2 days) — Shkodër (1 day) — Theth (2 days) — the hike over to Valbona (1 day) — back down, or onward to Berat (3 days). Budget ~€35-45/day including the rental car. Season: the Theth-Valbona hike is only reliably passable from mid-June to the end of September — the road up to Theth itself only opens at the end of May, and the minibuses only run in high season. Web check (2026-08): the last stretch of road into Theth is partly unpaved — check the rental car insurance covers that before setting off.",
       transport_to_next: 'End of this route — fly home from Tirana.',
@@ -16018,13 +16090,13 @@ function rbBuildAlbanianRivieraRoute() {
     {
       code: 'AL', name: 'Albania', days: 9, budget: 360, lat: 40.1000, lng: 19.8000,
       destinations: [
-        { name: 'Vlorë', lat: 40.4667, lng: 19.4900 },
-        { name: 'Dhermi', lat: 40.1461, lng: 19.6417 },
-        { name: 'Himarë', lat: 40.1017, lng: 19.7444 },
-        { name: 'Porto Palermo', lat: 40.0389, lng: 19.7994 },
-        { name: 'Saranda', lat: 39.8756, lng: 20.0053 },
-        { name: 'Ksamil', lat: 39.7717, lng: 19.9967 },
-        { name: 'Butrint', lat: 39.7439, lng: 20.0225 },
+        { name: 'Vlorë', lat: 40.4667, lng: 19.4900 , notes: 'Mostly a transit/gateway city rather than a sightseeing stop itself, best used as the jumping-off point for a boat trip to the Karaburun Peninsula-Sazan Island marine park or to the small lagoon islet monastery of Zvërnec just north; budget half a day if you want the boat trip, otherwise it\'s a pass-through.' },
+        { name: 'Dhermi', lat: 40.1461, lng: 19.6417 , notes: 'Riviera beach town whose real draw is Gjipe, a beach in a narrow limestone canyon just south, reachable by a 20-30 min hike down from the cliff-top or by boat; go early or take the hike rather than the boat taxis to avoid the midday crowd on the sand.' },
+        { name: 'Himarë', lat: 40.1017, lng: 19.7444 , notes: 'Riviera town used mainly as a base, with an old hilltop quarter (Himara Kalaja) above the modern seafront for a short walk and view; the town\'s own beach gets busy, so head a couple of km south to Livadhi beach for a quieter swim.' },
+        { name: 'Porto Palermo', lat: 40.0389, lng: 19.7994 , notes: 'Ali Pasha\'s early-19th-century castle sits on its own small tidal islet in a sheltered bay between Qeparo and Himarë, with a swimmable cove right next to it. Entry costs ~300 ALL cash only, open daily roughly 9:00-18:00, and a visit (prison rooms, barracks, rooftop terrace with bay views) takes 30-45 minutes.' },
+        { name: 'Saranda', lat: 39.8756, lng: 20.0053 , notes: 'Mainly a base/promenade town for Ksamil and Butrint with views across to Corfu, not a sightseeing destination itself; the one thing worth the short detour is Lëkurësi Castle on the hill above town, best at sunset for the view over the bay.' },
+        { name: 'Ksamil', lat: 39.7717, lng: 19.9967 , notes: 'Famous for a string of tiny islands just offshore that you can wade or swim to in bright turquoise water; go early morning before the day-trip crowds and boat traffic from Saranda arrive, since the islands get packed by midday in season.' },
+        { name: 'Butrint', lat: 39.7439, lng: 20.0225 , notes: 'Layered Greek, Roman, Byzantine and Venetian ruins (theatre, baptistery mosaics, acropolis) inside a UNESCO-listed lagoon/wetland setting near the Greek border. Allow 1.5-2 hours and go early morning both for the heat and to beat the tour-bus groups that arrive from Saranda/Corfu.' },
       ],
       notes: "Vlorë (1 day) — Dhermi (2 days) — Himarë (2 days, with Porto Palermo as a day trip) — Saranda (2 days) — Ksamil + the Butrint ruins (2 days). Budget ~€35-50/day (higher in August). Season: early June or the first two weeks of September are ideal — mid-July to mid-August is packed and expensive. Web check (2026-08): Dhermi's infrastructure runs mostly on the summer season, so it's thin outside it; Saranda gets 300+ days of sunshine a year, which is part of why it's become the Riviera's main hub.",
       transport_to_next: 'End of this route — fly home from Tirana, or a shorter regional flight from Corfu/Kërkirë across the strait.',
@@ -16044,9 +16116,9 @@ function rbBuildAlbaniaMontenegroRoute() {
       code: 'AL', name: 'Albania', days: 7, budget: 315, lat: 40.6000, lng: 19.7000,
       destinations: [
         { name: 'Tirana', lat: 41.3275, lng: 19.8187 , notes: 'Colorful communist-era apartment blocks and Bunk\'Art (a converted Cold War bunker) tell the Hoxha-era story best; Bunk\'Art 2 is central and walkable, but Bunk\'Art 1 is out of town and needs a taxi or bus — check which one you\'re booking.' },
-        { name: 'Berat', lat: 40.7058, lng: 19.9522 },
-        { name: 'Dhermi', lat: 40.1461, lng: 19.6417 },
-        { name: 'Himarë', lat: 40.1017, lng: 19.7444 },
+        { name: 'Berat', lat: 40.7058, lng: 19.9522 , notes: 'UNESCO old town of Ottoman white houses stacked on the hillside, split into the Mangalem and Gorica quarters facing each other across the river, crowned by the still-inhabited Kalaja (castle) with Byzantine churches and the Onufri icon museum inside; go up to the castle late afternoon so you catch the "thousand windows" light on Mangalem from the walls.' },
+        { name: 'Dhermi', lat: 40.1461, lng: 19.6417 , notes: 'Riviera beach town whose real draw is Gjipe, a beach in a narrow limestone canyon just south, reachable by a 20-30 min hike down from the cliff-top or by boat; go early or take the hike rather than the boat taxis to avoid the midday crowd on the sand.' },
+        { name: 'Himarë', lat: 40.1017, lng: 19.7444 , notes: 'Riviera town used mainly as a base, with an old hilltop quarter (Himara Kalaja) above the modern seafront for a short walk and view; the town\'s own beach gets busy, so head a couple of km south to Livadhi beach for a quieter swim.' },
       ],
       notes: "Tirana (2 days) — Berat (1 day) — the Albanian Riviera (4 days). Budget ~€45/day. Season: May-June/September.",
       transport_to_next: "Overland via the Sukobin-Muriqan border crossing into Montenegro. Web check (2026-08): usually 10-45 minutes, but summer weekends can push that to 1.5-2 hours; the rental car needs a green card covering both Albania and Montenegro (arrange this in advance, it typically adds ~€30-50).",
@@ -16075,7 +16147,7 @@ function rbBuildAlbaniaNorthMacedoniaRoute() {
       code: 'AL', name: 'Albania', days: 4, budget: 160, lat: 41.0000, lng: 20.3000,
       destinations: [
         { name: 'Tirana', lat: 41.3275, lng: 19.8187 , notes: 'Colorful communist-era apartment blocks and Bunk\'Art (a converted Cold War bunker) tell the Hoxha-era story best; Bunk\'Art 2 is central and walkable, but Bunk\'Art 1 is out of town and needs a taxi or bus — check which one you\'re booking.' },
-        { name: 'Berat', lat: 40.7058, lng: 19.9522 },
+        { name: 'Berat', lat: 40.7058, lng: 19.9522 , notes: 'UNESCO old town of Ottoman white houses stacked on the hillside, split into the Mangalem and Gorica quarters facing each other across the river, crowned by the still-inhabited Kalaja (castle) with Byzantine churches and the Onufri icon museum inside; go up to the castle late afternoon so you catch the "thousand windows" light on Mangalem from the walls.' },
         { name: 'Korçë', lat: 40.6186, lng: 20.7808 },
       ],
       notes: "Tirana (2 days) — Berat (1 day) — Korçë (1 day). Budget ~€40/day.",
@@ -16084,8 +16156,8 @@ function rbBuildAlbaniaNorthMacedoniaRoute() {
     {
       code: 'MK', name: 'North Macedonia', days: 8, budget: 320, lat: 41.5000, lng: 21.0000,
       destinations: [
-        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 },
-        { name: 'Skopje', lat: 41.9973, lng: 21.4280 },
+        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 , notes: 'UNESCO lake town where the postcard shot is the Church of Sveti Jovan at Kaneo, perched on a cliff over the water, plus the old town\'s Samuil\'s Fortress walls. Swim at the small Kaneo beach right below the church, and if you have a half day, take a boat down the lake to St. Naum Monastery near the springs.' },
+        { name: 'Skopje', lat: 41.9973, lng: 21.4280 , notes: 'An odd but memorable mix of the Ottoman-era Old Bazaar (real, lived-in) right next to the grandiose, statue-heavy "Skopje 2014" government quarter and giant Alexander/Warrior statue on the main square. Walk up to Kale Fortress for a free skyline view, and if time allows, Matka Canyon just outside town is a better half-day nature stop than anything in the city center.' },
         { name: 'Mavrovo National Park (optional)', lat: 41.6667, lng: 20.7500 },
       ],
       notes: "Ohrid (4 days, its lake is at its most swimmable in July-August, though that's also the busiest window) — Skopje (3 days) — optionally Mavrovo National Park (1 day). Budget ~€40/day. Season: May-June/September for a quieter trip. Web check (2026-08): North Macedonia bans photographing military objects — a fine or even a prison sentence of up to 3 years is on the books for this, so be careful around any installations.",
@@ -16267,8 +16339,8 @@ function rbBuildSkopjeOhridRoute() {
     {
       code: 'MK', name: 'North Macedonia', days: 5, budget: 200, lat: 41.5000, lng: 21.1000,
       destinations: [
-        { name: 'Skopje', lat: 41.9973, lng: 21.4280 },
-        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 },
+        { name: 'Skopje', lat: 41.9973, lng: 21.4280 , notes: 'An odd but memorable mix of the Ottoman-era Old Bazaar (real, lived-in) right next to the grandiose, statue-heavy "Skopje 2014" government quarter and giant Alexander/Warrior statue on the main square. Walk up to Kale Fortress for a free skyline view, and if time allows, Matka Canyon just outside town is a better half-day nature stop than anything in the city center.' },
+        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 , notes: 'UNESCO lake town where the postcard shot is the Church of Sveti Jovan at Kaneo, perched on a cliff over the water, plus the old town\'s Samuil\'s Fortress walls. Swim at the small Kaneo beach right below the church, and if you have a half day, take a boat down the lake to St. Naum Monastery near the springs.' },
         { name: 'Sveti Naum', lat: 40.9086, lng: 20.7222 },
       ],
       notes: "Skopje (2 days) — Ohrid (2-3 days), including the Sveti Naum monastery and a swim in Lake Ohrid. Budget ~€35-45/day (hostels €15-25, Ohrid National Park entry €3-5). Season: May-June/September for the best price-weather-quiet balance; July-August has the warmest lake water but is busiest and priciest, winter is cheapest. Web check (2026-08): as elsewhere in the country, avoid photographing military objects — fines or prison sentences of up to 3 years are on the books for this.",
@@ -16288,10 +16360,10 @@ function rbBuildNorthMacedoniaRoute() {
     {
       code: 'MK', name: 'North Macedonia', days: 6, budget: 240, lat: 41.4000, lng: 21.1000,
       destinations: [
-        { name: 'Skopje', lat: 41.9973, lng: 21.4280 },
-        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 },
-        { name: 'Bitola', lat: 41.0297, lng: 21.3347 },
-        { name: 'Pelister National Park', lat: 41.0500, lng: 21.2167 },
+        { name: 'Skopje', lat: 41.9973, lng: 21.4280 , notes: 'An odd but memorable mix of the Ottoman-era Old Bazaar (real, lived-in) right next to the grandiose, statue-heavy "Skopje 2014" government quarter and giant Alexander/Warrior statue on the main square. Walk up to Kale Fortress for a free skyline view, and if time allows, Matka Canyon just outside town is a better half-day nature stop than anything in the city center.' },
+        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 , notes: 'UNESCO lake town where the postcard shot is the Church of Sveti Jovan at Kaneo, perched on a cliff over the water, plus the old town\'s Samuil\'s Fortress walls. Swim at the small Kaneo beach right below the church, and if you have a half day, take a boat down the lake to St. Naum Monastery near the springs.' },
+        { name: 'Bitola', lat: 41.0297, lng: 21.3347 , notes: 'Ottoman/Habsburg-era pedestrian street Širok Sokak with consulate buildings and cafe life, paired with the ancient ruins of Heraclea Lyncestis (Roman theatre, well-preserved floor mosaics) just south of town. Combine both in one visit; the ruins alone need about an hour.' },
+        { name: 'Pelister National Park', lat: 41.0500, lng: 21.2167 , notes: 'North Macedonia\'s oldest national park, known for endemic Molika pine forest and the two glacial "Pelister Eyes" lakes (Golemo/Malo Ezero). The lakes require a genuine multi-hour hike from villages like Magarevo or Rotino on a marked trail, not a quick roadside stop, so only add it if you have most of a day free.' },
       ],
       notes: "Skopje (2 days) — Ohrid (3 days) — Bitola and Pelister National Park (1-2 days). Budget ~€35-45/day. Season: May-June/September. Web check (2026-08): photographing military objects is illegal here (fine or up to 3 years in prison), and pickpocketing happens on busy tourist streets — the usual care applies.",
       transport_to_next: 'End of this route — fly home from Skopje.',
@@ -16310,8 +16382,8 @@ function rbBuildNorthMacedoniaAlbaniaRoute() {
     {
       code: 'MK', name: 'North Macedonia', days: 5, budget: 200, lat: 41.5000, lng: 20.9500,
       destinations: [
-        { name: 'Skopje', lat: 41.9973, lng: 21.4280 },
-        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 },
+        { name: 'Skopje', lat: 41.9973, lng: 21.4280 , notes: 'An odd but memorable mix of the Ottoman-era Old Bazaar (real, lived-in) right next to the grandiose, statue-heavy "Skopje 2014" government quarter and giant Alexander/Warrior statue on the main square. Walk up to Kale Fortress for a free skyline view, and if time allows, Matka Canyon just outside town is a better half-day nature stop than anything in the city center.' },
+        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 , notes: 'UNESCO lake town where the postcard shot is the Church of Sveti Jovan at Kaneo, perched on a cliff over the water, plus the old town\'s Samuil\'s Fortress walls. Swim at the small Kaneo beach right below the church, and if you have a half day, take a boat down the lake to St. Naum Monastery near the springs.' },
       ],
       notes: "Skopje (2 days) — Ohrid (2-3 days). Budget ~€35-45/day. Web check (2026-08): as elsewhere in the country, avoid photographing military objects — fines or prison sentences of up to 3 years apply.",
       transport_to_next: "Cross-border bus over to Tirana (~€9.50, 131 km). Web check (2026-08): a straightforward non-Schengen crossing.",
@@ -16320,7 +16392,7 @@ function rbBuildNorthMacedoniaAlbaniaRoute() {
       code: 'AL', name: 'Albania', days: 4, budget: 120, lat: 41.0000, lng: 19.9000,
       destinations: [
         { name: 'Tirana', lat: 41.3275, lng: 19.8187 , notes: 'Colorful communist-era apartment blocks and Bunk\'Art (a converted Cold War bunker) tell the Hoxha-era story best; Bunk\'Art 2 is central and walkable, but Bunk\'Art 1 is out of town and needs a taxi or bus — check which one you\'re booking.' },
-        { name: 'Berat', lat: 40.7058, lng: 19.9522 },
+        { name: 'Berat', lat: 40.7058, lng: 19.9522 , notes: 'UNESCO old town of Ottoman white houses stacked on the hillside, split into the Mangalem and Gorica quarters facing each other across the river, crowned by the still-inhabited Kalaja (castle) with Byzantine churches and the Onufri icon museum inside; go up to the castle late afternoon so you catch the "thousand windows" light on Mangalem from the walls.' },
       ],
       notes: "Tirana (2 days) — Berat (1-2 days, UNESCO-listed) — optionally continue on to Gjirokastër. Budget ~€25-35/day — Albania runs noticeably cheaper than North Macedonia.",
       transport_to_next: 'End of this route — fly home from Tirana.',
@@ -16339,8 +16411,8 @@ function rbBuildNorthMacedoniaGreeceRoute() {
     {
       code: 'MK', name: 'North Macedonia', days: 5, budget: 200, lat: 41.5000, lng: 20.9500,
       destinations: [
-        { name: 'Skopje', lat: 41.9973, lng: 21.4280 },
-        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 },
+        { name: 'Skopje', lat: 41.9973, lng: 21.4280 , notes: 'An odd but memorable mix of the Ottoman-era Old Bazaar (real, lived-in) right next to the grandiose, statue-heavy "Skopje 2014" government quarter and giant Alexander/Warrior statue on the main square. Walk up to Kale Fortress for a free skyline view, and if time allows, Matka Canyon just outside town is a better half-day nature stop than anything in the city center.' },
+        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 , notes: 'UNESCO lake town where the postcard shot is the Church of Sveti Jovan at Kaneo, perched on a cliff over the water, plus the old town\'s Samuil\'s Fortress walls. Swim at the small Kaneo beach right below the church, and if you have a half day, take a boat down the lake to St. Naum Monastery near the springs.' },
       ],
       notes: "Skopje (2 days) — Ohrid (2-3 days). Budget ~€35-45/day.",
       transport_to_next: "Rental car over the Bogorodica/Evzoni border crossing on the E75 (2.5-3 hours' drive). Web check (2026-08): leave Skopje before 08:00 for a smooth border crossing, and budget ~€5-8 in tolls between the border and Thessaloniki.",
@@ -16348,7 +16420,7 @@ function rbBuildNorthMacedoniaGreeceRoute() {
     {
       code: 'GR', name: 'Greece', days: 4, budget: 220, lat: 40.6401, lng: 22.9444,
       destinations: [
-        { name: 'Thessaloniki', lat: 40.6401, lng: 22.9444 },
+        { name: 'Thessaloniki', lat: 40.6401, lng: 22.9444 , notes: 'Greece\'s second city, walkable waterfront with the White Tower, the Rotunda and several UNESCO-listed early Byzantine churches woven through downtown. Go up to Ano Poli (the old Ottoman-era hillside quarter and city walls) in late afternoon for the best views and the least touristy streets.' },
       ],
       notes: "Thessaloniki (3-4 days). Budget ~€50-65/day — noticeably pricier than North Macedonia.",
       transport_to_next: 'End of this route — fly home from Thessaloniki.',
@@ -16367,10 +16439,10 @@ function rbBuildKosovoRoute() {
     {
       code: 'XK', name: 'Kosovo', days: 5, budget: 150, lat: 42.5500, lng: 20.6000,
       destinations: [
-        { name: 'Pristina', lat: 42.6629, lng: 21.1655 },
-        { name: 'Prizren (Sinan Pasha Mosque, Liga House)', lat: 42.2139, lng: 20.7397 },
+        { name: 'Pristina', lat: 42.6629, lng: 21.1655 , notes: 'Kosovo\'s capital and usual arrival point, light on classical sights but heavy on cafe/street energy along Nënë Tereza Boulevard, with the Newborn monument and Mother Teresa Cathedral as the two quick photo stops and the Kosovo Museum for context. Treat it as a half-day city rather than a monument checklist.' },
+        { name: 'Prizren (Sinan Pasha Mosque, Liga House)', lat: 42.2139, lng: 20.7397 , notes: 'Kosovo\'s most atmospheric old town: Ottoman stone bridge and bazaar beneath a hilltop fortress, the Sinan Pasha Mosque on the river, and the League of Prizren House museum covering the 1878 Kosovar-Albanian independence movement. Climb to the Kalaja fortress ruins above town for the best view over the old quarter, and budget time for the League of Prizren museum specifically for the history most visitors skip.' },
         { name: 'Peja / Rugova Gorge', lat: 42.6591, lng: 20.2883 , notes: 'The Patriarchate of Peć, a UNESCO-listed medieval Serbian Orthodox monastery, sits right at the mouth of the dramatic Rugova Gorge canyon road; bring ID, as the monastery compound has restricted/guarded access.' },
-        { name: 'Visoki Dečani / Peć Patriarchate', lat: 42.5486, lng: 20.1364 },
+        { name: 'Visoki Dečani / Peć Patriarchate', lat: 42.5486, lng: 20.1364 , notes: 'Two separate, still-active medieval Serbian Orthodox monasteries near Peja/Peć under KFOR protection — Dečani for its exceptional 14th-century frescoes, the Patriarchate of Peć as the historic seat of the Serbian Church — both genuinely worth the detour and distinct from the Peja/Rugova Gorge stop. At both, you must hand over your passport/ID to KFOR or police at the checkpoint to get a visitor pass (get it back on exit), dress modestly (shoulders/knees covered), and expect a no-photography rule right at the checkpoint/monastery approach.' },
       ],
       notes: "Pristina (1-2 days) — Prizren (2 days, the Liga House and Sinan Pasha Mosque) — Peja and the Rugova Gorge (1-2 days, canyon hiking and a Via Ferrata). Budget ~€25-35/day — the cheapest Balkan country to travel in (hostels €7-15). Season: May-June/September; the Rugova Gorge activities (Via Ferrata, cable car) run best April-October. Web check (2026-08): since 15 March 2026, private-stay accommodation must be registered with the police within 3 days (hotels handle this automatically); visiting Visoki Dečani or the Peć Patriarchate requires surrendering your passport at the KFOR checkpoint, dressing modestly, and sometimes an escort. Northern Kosovo (North Mitrovica, Zvečan, Zubin Potok, Leposavić) carries an orange 'essential travel only' advisory over tensions around the Mitrovica bridge and an August 2026 KFOR transition — this route doesn't go there. Landmines remain in remote areas along the Kosovo-Albania border and on the Dulje Pass — stick to marked trails. Border-order note: Serbia does not recognize Kosovo's border crossings as official international border posts — if this trip is ever combined with Serbia, enter Serbia first (via Belgrade/Niš airport or a recognized land border) before crossing into Kosovo, since returning to Serbia from Kosovo without a prior Serbian entry stamp can lead to refusal. That's exactly why this route and its Kosovo-based siblings in this batch pair Kosovo only with North Macedonia, Albania or Montenegro, never with Serbia.",
       transport_to_next: 'End of this route — fly home from Pristina.',
@@ -16389,7 +16461,7 @@ function rbBuildKosovoNorthMacedoniaRoute() {
     {
       code: 'XK', name: 'Kosovo', days: 3, budget: 90, lat: 42.4500, lng: 20.9500,
       destinations: [
-        { name: 'Pristina', lat: 42.6629, lng: 21.1655 },
+        { name: 'Pristina', lat: 42.6629, lng: 21.1655 , notes: 'Kosovo\'s capital and usual arrival point, light on classical sights but heavy on cafe/street energy along Nënë Tereza Boulevard, with the Newborn monument and Mother Teresa Cathedral as the two quick photo stops and the Kosovo Museum for context. Treat it as a half-day city rather than a monument checklist.' },
         { name: 'Prizren', lat: 42.2139, lng: 20.7397 , notes: 'Ottoman-era old town with the stone bridge, Sinan Pasha Mosque, and a hilltop Kalaja fortress; climb to the fortress near sunset for the best view over the town\'s minarets and river.' },
       ],
       notes: "Pristina (1 day) — Prizren (2 days). Budget ~€25-35/day. This route deliberately leaves Kosovo via North Macedonia, never towards Serbia — see the standalone Kosovo route's notes for the border-order reasoning.",
@@ -16398,8 +16470,8 @@ function rbBuildKosovoNorthMacedoniaRoute() {
     {
       code: 'MK', name: 'North Macedonia', days: 3, budget: 120, lat: 41.6000, lng: 21.1000,
       destinations: [
-        { name: 'Skopje', lat: 41.9973, lng: 21.4280 },
-        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 },
+        { name: 'Skopje', lat: 41.9973, lng: 21.4280 , notes: 'An odd but memorable mix of the Ottoman-era Old Bazaar (real, lived-in) right next to the grandiose, statue-heavy "Skopje 2014" government quarter and giant Alexander/Warrior statue on the main square. Walk up to Kale Fortress for a free skyline view, and if time allows, Matka Canyon just outside town is a better half-day nature stop than anything in the city center.' },
+        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 , notes: 'UNESCO lake town where the postcard shot is the Church of Sveti Jovan at Kaneo, perched on a cliff over the water, plus the old town\'s Samuil\'s Fortress walls. Swim at the small Kaneo beach right below the church, and if you have a half day, take a boat down the lake to St. Naum Monastery near the springs.' },
       ],
       notes: "Skopje (1 day) — Ohrid (2 days). Budget ~€35-45/day.",
       transport_to_next: 'End of this route — fly home from Skopje (or Ohrid).',
@@ -16515,7 +16587,7 @@ function rbBuildKosovoNorthMacedoniaAlbaniaRoute() {
     {
       code: 'XK', name: 'Kosovo', days: 4, budget: 120, lat: 42.4500, lng: 20.9500,
       destinations: [
-        { name: 'Pristina', lat: 42.6629, lng: 21.1655 },
+        { name: 'Pristina', lat: 42.6629, lng: 21.1655 , notes: 'Kosovo\'s capital and usual arrival point, light on classical sights but heavy on cafe/street energy along Nënë Tereza Boulevard, with the Newborn monument and Mother Teresa Cathedral as the two quick photo stops and the Kosovo Museum for context. Treat it as a half-day city rather than a monument checklist.' },
         { name: 'Prizren', lat: 42.2139, lng: 20.7397 , notes: 'Ottoman-era old town with the stone bridge, Sinan Pasha Mosque, and a hilltop Kalaja fortress; climb to the fortress near sunset for the best view over the town\'s minarets and river.' },
       ],
       notes: "Pristina (1-2 days) — Prizren (2 days). Budget ~€25-35/day. This route leaves Kosovo via North Macedonia, never towards Serbia — see the standalone Kosovo route's notes for why.",
@@ -16524,8 +16596,8 @@ function rbBuildKosovoNorthMacedoniaAlbaniaRoute() {
     {
       code: 'MK', name: 'North Macedonia', days: 3, budget: 120, lat: 41.6000, lng: 21.1000,
       destinations: [
-        { name: 'Skopje', lat: 41.9973, lng: 21.4280 },
-        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 },
+        { name: 'Skopje', lat: 41.9973, lng: 21.4280 , notes: 'An odd but memorable mix of the Ottoman-era Old Bazaar (real, lived-in) right next to the grandiose, statue-heavy "Skopje 2014" government quarter and giant Alexander/Warrior statue on the main square. Walk up to Kale Fortress for a free skyline view, and if time allows, Matka Canyon just outside town is a better half-day nature stop than anything in the city center.' },
+        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 , notes: 'UNESCO lake town where the postcard shot is the Church of Sveti Jovan at Kaneo, perched on a cliff over the water, plus the old town\'s Samuil\'s Fortress walls. Swim at the small Kaneo beach right below the church, and if you have a half day, take a boat down the lake to St. Naum Monastery near the springs.' },
       ],
       notes: "Skopje (1-2 days) — Ohrid (2 days). Budget ~€35-45/day.",
       transport_to_next: "Cross-border bus onward to Tirana.",
@@ -16552,7 +16624,7 @@ function rbBuildKosovoAlbaniaNorthMacedoniaRoute() {
     {
       code: 'XK', name: 'Kosovo', days: 5, budget: 150, lat: 42.5000, lng: 20.7000,
       destinations: [
-        { name: 'Pristina', lat: 42.6629, lng: 21.1655 },
+        { name: 'Pristina', lat: 42.6629, lng: 21.1655 , notes: 'Kosovo\'s capital and usual arrival point, light on classical sights but heavy on cafe/street energy along Nënë Tereza Boulevard, with the Newborn monument and Mother Teresa Cathedral as the two quick photo stops and the Kosovo Museum for context. Treat it as a half-day city rather than a monument checklist.' },
         { name: 'Peja / Rugova Gorge', lat: 42.6591, lng: 20.2883 , notes: 'The Patriarchate of Peć, a UNESCO-listed medieval Serbian Orthodox monastery, sits right at the mouth of the dramatic Rugova Gorge canyon road; bring ID, as the monastery compound has restricted/guarded access.' },
         { name: 'Prizren', lat: 42.2139, lng: 20.7397 , notes: 'Ottoman-era old town with the stone bridge, Sinan Pasha Mosque, and a hilltop Kalaja fortress; climb to the fortress near sunset for the best view over the town\'s minarets and river.' },
       ],
@@ -16565,7 +16637,7 @@ function rbBuildKosovoAlbaniaNorthMacedoniaRoute() {
         { name: 'Kukës', lat: 42.0778, lng: 20.4219 , notes: 'A modern town rebuilt after being relocated for the Fierza reservoir in the 1970s, so there\'s little historic core; most travelers only pass through as the crossroads into Albania, with views over Lake Fierza along the road being the main reason to slow down here.' },
         { name: 'Shkodër', lat: 42.0683, lng: 19.5126 , notes: 'Rozafa Castle hilltop ruins overlooking the confluence of three rivers and Lake Shkodër; go for sunset, when the light over the lake and city from the ramparts is best.' },
         { name: 'Tirana', lat: 41.3275, lng: 19.8187 , notes: 'Colorful communist-era apartment blocks and Bunk\'Art (a converted Cold War bunker) tell the Hoxha-era story best; Bunk\'Art 2 is central and walkable, but Bunk\'Art 1 is out of town and needs a taxi or bus — check which one you\'re booking.' },
-        { name: 'Berat', lat: 40.7058, lng: 19.9522 },
+        { name: 'Berat', lat: 40.7058, lng: 19.9522 , notes: 'UNESCO old town of Ottoman white houses stacked on the hillside, split into the Mangalem and Gorica quarters facing each other across the river, crowned by the still-inhabited Kalaja (castle) with Byzantine churches and the Onufri icon museum inside; go up to the castle late afternoon so you catch the "thousand windows" light on Mangalem from the walls.' },
       ],
       notes: "Kukës and Shkodër (2 days) — Tirana and Berat (2 days). Budget ~€25-35/day.",
       transport_to_next: "Overland/bus back east towards the North Macedonian border and Ohrid.",
@@ -16573,8 +16645,8 @@ function rbBuildKosovoAlbaniaNorthMacedoniaRoute() {
     {
       code: 'MK', name: 'North Macedonia', days: 3, budget: 120, lat: 41.6000, lng: 21.1000,
       destinations: [
-        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 },
-        { name: 'Skopje', lat: 41.9973, lng: 21.4280 },
+        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 , notes: 'UNESCO lake town where the postcard shot is the Church of Sveti Jovan at Kaneo, perched on a cliff over the water, plus the old town\'s Samuil\'s Fortress walls. Swim at the small Kaneo beach right below the church, and if you have a half day, take a boat down the lake to St. Naum Monastery near the springs.' },
+        { name: 'Skopje', lat: 41.9973, lng: 21.4280 , notes: 'An odd but memorable mix of the Ottoman-era Old Bazaar (real, lived-in) right next to the grandiose, statue-heavy "Skopje 2014" government quarter and giant Alexander/Warrior statue on the main square. Walk up to Kale Fortress for a free skyline view, and if time allows, Matka Canyon just outside town is a better half-day nature stop than anything in the city center.' },
       ],
       notes: "Ohrid (2 days) — Skopje (1-2 days). Budget ~€35-45/day. Season: this is a full itinerary, so plan early departures each day to stay on schedule.",
       transport_to_next: 'End of this route — fly home from Skopje.',
@@ -16881,7 +16953,7 @@ function rbBuildBulgariaGreeceSofiaMeteoraRoute() {
     {
       code: 'GR', name: 'Greece', days: 6, budget: 450, lat: 40.6401, lng: 22.9444,
       destinations: [
-        { name: 'Thessaloniki', lat: 40.6401, lng: 22.9444 },
+        { name: 'Thessaloniki', lat: 40.6401, lng: 22.9444 , notes: 'Greece\'s second city, walkable waterfront with the White Tower, the Rotunda and several UNESCO-listed early Byzantine churches woven through downtown. Go up to Ano Poli (the old Ottoman-era hillside quarter and city walls) in late afternoon for the best views and the least touristy streets.' },
         { name: 'Meteora', lat: 39.7217, lng: 21.6306 },
         { name: 'Kalabaka', lat: 39.7025, lng: 21.6280 },
       ],
@@ -17630,7 +17702,7 @@ function rbBuildNorthernGreeceRoute() {
     {
       code: 'GR', name: 'Greece', days: 9, budget: 675, lat: 40.6401, lng: 22.9444,
       destinations: [
-        { name: 'Thessaloniki', lat: 40.6401, lng: 22.9444 },
+        { name: 'Thessaloniki', lat: 40.6401, lng: 22.9444 , notes: 'Greece\'s second city, walkable waterfront with the White Tower, the Rotunda and several UNESCO-listed early Byzantine churches woven through downtown. Go up to Ano Poli (the old Ottoman-era hillside quarter and city walls) in late afternoon for the best views and the least touristy streets.' },
         { name: 'Meteora', lat: 39.7217, lng: 21.6306 },
         { name: 'Kalabaka', lat: 39.7025, lng: 21.6280 },
         { name: 'Halkidiki', lat: 40.0000, lng: 23.6000 },
@@ -21907,7 +21979,7 @@ function rbBuildBalkanRoadtripSerbiaNMacedoniaAlbaniaKosovoRoute() {
     {
       code: 'MK', name: 'North Macedonia', days: 2, budget: 80, lat: 41.9973, lng: 21.4280,
       destinations: [
-        { name: 'Skopje', lat: 41.9973, lng: 21.4280 },
+        { name: 'Skopje', lat: 41.9973, lng: 21.4280 , notes: 'An odd but memorable mix of the Ottoman-era Old Bazaar (real, lived-in) right next to the grandiose, statue-heavy "Skopje 2014" government quarter and giant Alexander/Warrior statue on the main square. Walk up to Kale Fortress for a free skyline view, and if time allows, Matka Canyon just outside town is a better half-day nature stop than anything in the city center.' },
       ],
       notes: "Skopje (2 days). Budget ~€40/day. Web check (2026-08): as elsewhere in the country, avoid photographing military objects — fines or prison sentences of up to 3 years apply.",
       transport_to_next: 'Overland to Ohrid.',
@@ -21915,7 +21987,7 @@ function rbBuildBalkanRoadtripSerbiaNMacedoniaAlbaniaKosovoRoute() {
     {
       code: 'MK', name: 'North Macedonia', days: 3, budget: 120, lat: 41.1231, lng: 20.8016,
       destinations: [
-        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 },
+        { name: 'Ohrid', lat: 41.1231, lng: 20.8016 , notes: 'UNESCO lake town where the postcard shot is the Church of Sveti Jovan at Kaneo, perched on a cliff over the water, plus the old town\'s Samuil\'s Fortress walls. Swim at the small Kaneo beach right below the church, and if you have a half day, take a boat down the lake to St. Naum Monastery near the springs.' },
         { name: 'Sveti Naum', lat: 40.9086, lng: 20.7222 },
       ],
       notes: "Ohrid (2-3 days), including the Sveti Naum monastery and a swim in Lake Ohrid. Budget ~€40/day.",
@@ -21925,7 +21997,7 @@ function rbBuildBalkanRoadtripSerbiaNMacedoniaAlbaniaKosovoRoute() {
       code: 'AL', name: 'Albania', days: 3, budget: 90, lat: 41.3275, lng: 19.8187,
       destinations: [
         { name: 'Tirana', lat: 41.3275, lng: 19.8187 , notes: 'Colorful communist-era apartment blocks and Bunk\'Art (a converted Cold War bunker) tell the Hoxha-era story best; Bunk\'Art 2 is central and walkable, but Bunk\'Art 1 is out of town and needs a taxi or bus — check which one you\'re booking.' },
-        { name: 'Berat', lat: 40.7058, lng: 19.9522 },
+        { name: 'Berat', lat: 40.7058, lng: 19.9522 , notes: 'UNESCO old town of Ottoman white houses stacked on the hillside, split into the Mangalem and Gorica quarters facing each other across the river, crowned by the still-inhabited Kalaja (castle) with Byzantine churches and the Onufri icon museum inside; go up to the castle late afternoon so you catch the "thousand windows" light on Mangalem from the walls.' },
       ],
       notes: "Tirana and Berat's UNESCO-listed old town (3 days). Budget ~€30/day.",
       transport_to_next: 'Overland to Prizren, Kosovo — a straightforward Albania-Kosovo border crossing.',
