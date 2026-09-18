@@ -9,7 +9,7 @@ See `.claude/agents/destination-notes-researcher.md` for what actually gets rese
 - **452 routes total**, 4008 destination-slots raw, but only **741 unique (country + destination-list) signatures = 2677 unique destinations** need real research — the rest is the same content reused across routes.
 - **209 shared signatures** (reused by 2+ routes, 828 destinations) — covering 537 route-instances. Do these first: one research pass, paste into every route listed.
 - **532 solo signatures** (used by exactly 1 route, 1849 destinations) — each needs its own dedicated batch.
-- **Done so far: 368 / 741 signatures.**
+- **Done so far: 385 / 741 signatures.**
 
 ## Shared signatures (do these first)
 
@@ -736,23 +736,23 @@ Sorted alphabetically by country code.
 - [ ] **TR** (3 dest): Istanbul (Sultanahmet), Edirne (Selimiye Mosque), Gallipoli Peninsula — routes: Istanbul + Thrace (6 days) 🌉
 - [ ] **TR** (4 dest): Izmir, Selçuk, Ephesus, Çeşme — routes: Izmir + Aegean Coast: Ephesus & Çeşme (5 days) 📜
 - [ ] **TR** (3 dest): Izmir, Kuşadası & Ephesus, Bodrum — routes: Turkey + Greece: Aegean Coast & Dodecanese (12 days) 🌊
-- [ ] **US** (4 dest): South Beach (Art Deco District), Little Havana, Wynwood Walls, Coral Gables & Coconut Grove — routes: Florida 🐊
-- [ ] **US** (3 dest): Anhinga Trail, Guided airboat tour, Flamingo — routes: Florida 🐊
-- [ ] **US** (2 dest): John Pennekamp Coral Reef State Park, Islamorada — routes: Florida 🐊
-- [ ] **US** (3 dest): Old Town Key West, Mallory Square (sunset), Hemingway House — routes: Florida 🐊
-- [ ] **US** (4 dest): Diamond Head, Waikiki, Koko Crater Trail, Chinatown Honolulu — routes: Hawaii 🐢
-- [ ] **US** (3 dest): Road to Hana, Haleakalā National Park, Lahaina — routes: Hawaii 🐢
-- [ ] **US** (4 dest): Waimea Canyon, Nā Pali Coast, Hanakāpī'ai Falls (day-hike), Kōke'e State Park — routes: Hawaii 🐢
-- [ ] **US** (4 dest): National Mall & Smithsonians, Lincoln Memorial, Capitol Hill, Georgetown — routes: US Northeast 🗽
-- [ ] **US** (3 dest): Independence Hall & Liberty Bell, Old City & Society Hill, Reading Terminal Market — routes: US Northeast 🗽
-- [ ] **US** (3 dest): Manhattan (Times Square, Central Park), MoMA / The Met, Brooklyn (Williamsburg, DUMBO) — routes: US Northeast 🗽
-- [ ] **US** (3 dest): Freedom Trail, Harvard & Cambridge, Fenway — routes: US Northeast 🗽
-- [ ] **US** (3 dest): Angels Landing, The Narrows, Emerald Pools — routes: US Southwest 🏜️
-- [ ] **US** (2 dest): Bryce Amphitheater, Navajo Loop / Queen's Garden Trail — routes: US Southwest 🏜️
-- [ ] **US** (2 dest): Antelope Canyon, Horseshoe Bend — routes: US Southwest 🏜️
-- [ ] **US** (1 dest): 17-mile scenic loop — routes: US Southwest 🏜️
-- [ ] **US** (2 dest): Rim Trail, Bright Angel Trailhead — routes: US Southwest 🏜️
-- [ ] **US** (2 dest): Cathedral Rock, Red Rock State Park — routes: US Southwest 🏜️
+- [x] **US** (4 dest): South Beach (Art Deco District), Little Havana, Wynwood Walls, Coral Gables & Coconut Grove — routes: Florida 🐊
+- [x] **US** (3 dest): Anhinga Trail, Guided airboat tour, Flamingo — routes: Florida 🐊
+- [x] **US** (2 dest): John Pennekamp Coral Reef State Park, Islamorada — routes: Florida 🐊
+- [x] **US** (3 dest): Old Town Key West, Mallory Square (sunset), Hemingway House — routes: Florida 🐊
+- [x] **US** (4 dest): Diamond Head, Waikiki, Koko Crater Trail, Chinatown Honolulu — routes: Hawaii 🐢
+- [x] **US** (3 dest): Road to Hana, Haleakalā National Park, Lahaina — routes: Hawaii 🐢
+- [x] **US** (4 dest): Waimea Canyon, Nā Pali Coast, Hanakāpī'ai Falls (day-hike), Kōke'e State Park — routes: Hawaii 🐢
+- [x] **US** (4 dest): National Mall & Smithsonians, Lincoln Memorial, Capitol Hill, Georgetown — routes: US Northeast 🗽
+- [x] **US** (3 dest): Independence Hall & Liberty Bell, Old City & Society Hill, Reading Terminal Market — routes: US Northeast 🗽
+- [x] **US** (3 dest): Manhattan (Times Square, Central Park), MoMA / The Met, Brooklyn (Williamsburg, DUMBO) — routes: US Northeast 🗽
+- [x] **US** (3 dest): Freedom Trail, Harvard & Cambridge, Fenway — routes: US Northeast 🗽
+- [x] **US** (3 dest): Angels Landing, The Narrows, Emerald Pools — routes: US Southwest 🏜️
+- [x] **US** (2 dest): Bryce Amphitheater, Navajo Loop / Queen's Garden Trail — routes: US Southwest 🏜️
+- [x] **US** (2 dest): Antelope Canyon, Horseshoe Bend — routes: US Southwest 🏜️
+- [x] **US** (1 dest): 17-mile scenic loop — routes: US Southwest 🏜️
+- [x] **US** (2 dest): Rim Trail, Bright Angel Trailhead — routes: US Southwest 🏜️
+- [x] **US** (2 dest): Cathedral Rock, Red Rock State Park — routes: US Southwest 🏜️
 - [ ] **US** (2 dest): Downtown Anchorage, Earthquake Park — routes: Western Canada: Rockies & Vancouver 🏔️
 - [ ] **US** (3 dest): Denali Visitor Center, Savage River, Kantishna / Wonder Lake (shuttle bus) — routes: Western Canada: Rockies & Vancouver 🏔️
 - [ ] **US** (2 dest): Kenai Fjords National Park (glacier and wildlife boat tour), Exit Glacier — routes: Western Canada: Rockies & Vancouver 🏔️
@@ -768,10 +768,6 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 
 | Route | Remaining / total destinations | Other routes that benefit (leverage) |
 |---|---|---|
-| US Northeast 🗽 | 13/13 | 0 |
-| US Southwest 🏜️ | 12/12 | 0 |
-| Florida 🐊 | 12/12 | 0 |
-| Hawaii 🐢 | 11/11 | 0 |
 | Sicily + Malta (9 days) 🌋 | 11/11 | 0 |
 | Corsica Roadtrip: Full Island Loop (9 days) 🚙 | 10/10 | 0 |
 | Corsica + South of France (9 days) 🛳️ | 10/10 | 0 |
@@ -808,6 +804,10 @@ Every route ranked by "leverage" (how many *other* routes share at least one of 
 | Wild Atlantic Way (7-10 days) 🌅 | 8/8 | 0 |
 | Ireland Complete (10-14 days) 🌈 | 8/8 | 0 |
 | Scotland Extended (10-14 days) 🏴 | 8/8 | 0 |
-| ... 219 more routes with open destinations ... | | |
+| Adriatic Roadtrip (14 days) 🌊 | 8/11 | 0 |
+| Western Canada: Rockies & Vancouver 🏔️ | 7/18 | 0 |
+| Paris (4 days) 🗼 | 7/7 | 0 |
+| Loire Valley Castles (6 days) 🗝️ | 7/7 | 0 |
+| ... 215 more routes with open destinations ... | | |
 
 Once every route above shows 0 leverage (i.e. nothing left is shared — only true solo routes remain), just work straight down the "Solo signatures" list above, in any convenient grouping (by continent works well, mirroring the existing `rbSeedStandaloneCountryRoutesBatch1-9` groupings).

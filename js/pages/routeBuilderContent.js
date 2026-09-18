@@ -10026,6 +10026,158 @@ function rbMigrateIcelandClusterDestinationNotes() {
 }
 
 /**
+ * Batch 55 (2026-09-18) -- US Northeast (Washington DC, Philadelphia, New York, Boston) -- 13
+ * destinations, a fully independent solo route researched in a single pass. Same generic
+ * name-matching migration pattern as the other batches.
+ */
+function rbMigrateUSNortheastDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_US_NORTHEAST_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_US_NORTHEAST_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'National Mall & Smithsonians': "Free world-class museums (Air & Space, Natural History, American History) line the Mall alongside the monuments; pick at most 2 per day. Air and Space and the African American History museum both require free timed-entry passes booked online in advance (Air & Space releases them in 6-week windows, plus a small same-day batch at 8:30am ET), so reserve those two ahead — the rest are walk-in.",
+    'Lincoln Memorial': 'Marble statue overlooking the Reflecting Pool, with the spot where MLK gave his "I Have a Dream" speech marked on the steps. Visit after dark — it\'s lit dramatically and far less crowded than daytime.',
+    'Capitol Hill': "Home of the US Capitol, with free interior tours covering its history and art. Book the tour weeks ahead through your senator/representative's office or the Capitol Visitor Center site — same-day slots are rare.",
+    'Georgetown': 'Historic riverside neighborhood — M Street\'s shops/restaurants and the "Exorcist steps" down to the C&O Canal towpath are the two things worth carving out time for. Walk the canal towpath or out to the Georgetown waterfront for a quieter view of the Potomac than the Mall offers.',
+    'Independence Hall & Liberty Bell': "Where the Declaration of Independence and Constitution were both debated and signed. Independence Hall entry is by free timed ticket only — reserve online same-day or in advance, especially in summer, or you won't get in.",
+    'Old City & Society Hill': "Cobblestone colonial-era streets; Elfreth's Alley (oldest continuously inhabited residential street in the US) is the highlight and easy to walk past since it's just a narrow gap between storefronts. Combine with the nearby Betsy Ross House.",
+    'Reading Terminal Market': "Historic 1893 indoor market mixing Amish produce stalls with Philly food stalls (Bassetts ice cream, DiNic's roast pork). Go on a weekday for lunch — the Amish stalls are closed Sundays.",
+    'Manhattan (Times Square, Central Park)': "Times Square for the neon/theater energy, Central Park for Bethesda Terrace and Strawberry Fields as the two standout stops inside it. Walk or bike the park's reservoir loop early morning before the crowds and horse carriages arrive.",
+    'MoMA / The Met': "MoMA holds modern icons (Starry Night, Les Demoiselles d'Avignon); the Met's collection is encyclopedic with a seasonal roof garden. Book timed tickets online in advance for both — the Met also has Friday evening hours that are notably quieter.",
+    'Brooklyn (Williamsburg, DUMBO)': "DUMBO for the Washington St./Water St. Manhattan Bridge photo spot and Brooklyn Bridge Park; Williamsburg for vintage shops, food halls, and rooftop bars with skyline views. Hit the DUMBO photo spot at sunrise — by mid-morning it's a line of tourists waiting to take the same shot.",
+    'Freedom Trail': "A 2.5-mile painted red-brick line connecting 16 Revolutionary-era sites (Paul Revere House, Old North Church, Faneuil Hall). Walkable self-guided in 2-3 hours; a guided walking tour adds context you'd otherwise miss at the less-obvious stops.",
+    'Harvard & Cambridge': "Harvard Yard and Harvard Square's bookstores/cafes are the draw. Free student-led campus tours run daily and are worth joining for the stories behind the buildings.",
+    'Fenway': "Fenway Park, the oldest ballpark still in use in MLB (opened 1912), famous for the Green Monster left-field wall. On non-game days book a stadium tour; if catching a game, Green Monster seats sell out fastest.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 56 (2026-09-18) -- US Southwest (Zion, Bryce, Antelope Canyon, Monument Valley, Grand
+ * Canyon, Sedona) -- 12 destinations, a fully independent solo route researched in a single
+ * pass. Same generic name-matching migration pattern as the other batches.
+ */
+function rbMigrateUSSouthwestDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_US_SOUTHWEST_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_US_SOUTHWEST_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Angels Landing': "Zion's signature chain-assisted scramble up a narrow fin to a 360-degree canyon view. A permit is required (lottery system): seasonal lotteries open months ahead on recreation.gov, but there's also a day-before lottery open 12:01am-3pm MT the day before your hike — use that if you didn't plan far ahead.",
+    'The Narrows': "Hiking upstream through the Virgin River between slot-canyon walls hundreds of feet tall, with no trail — you walk in the water. Rent neoprene socks/canyon shoes and a wooden staff at a Springdale outfitter, and check the flash-flood forecast at the visitor center before entering; the bottom-up route needs no permit.",
+    'Emerald Pools': "An easier trail to a series of pools and a waterfall you can walk behind at the lower pool. The Middle Emerald Pools section is currently closed indefinitely from landslide damage, so plan for the Lower Pool loop and check the NPS Zion alerts page for the latest access from the Grotto shuttle stop.",
+    'Bryce Amphitheater': "The classic view over Bryce's orange hoodoo forest from Sunset, Sunrise, and Inspiration Points. Walk the paved Rim Trail between the points instead of driving/shuttling — sunrise light on the hoodoos here is the single best photo window of the day.",
+    "Navajo Loop / Queen's Garden Trail": 'The combined loop drops you down among the hoodoos themselves, passing Thor\'s Hammer and the narrow "Wall Street" slot section — the only way to really appreciate the scale versus just viewing from the rim. Budget about 3 hours; the Wall Street section closes seasonally for ice/rockfall, so check current trail status before committing to that direction.',
+    'Antelope Canyon': "The wave-like sandstone slot canyon near Page made famous by light-beam photos. Entry is only possible with a booked Navajo-guide tour (no independent access) — book weeks ahead, and choose Lower Canyon over Upper for a cheaper, less crowded, less tour-bus-heavy experience.",
+    'Horseshoe Bend': "A sweeping horseshoe-shaped bend of the Colorado River seen from a clifftop overlook near Page. Go near sunset for the best light and cooler temps — it's a shadeless ~1.5-mile round-trip walk on sand from the (paid) parking lot.",
+    '17-mile scenic loop': "Monument Valley's dirt scenic drive past the Mittens and other iconic buttes. It's rough and dusty but drivable slowly in a regular car; go at sunrise or sunset for the best light on the rock, and hire a Navajo guide if you want access to backcountry spots off the public loop.",
+    'Rim Trail': "Grand Canyon South Rim's paved path connecting viewpoints like Mather Point and Yavapai Point. Use the free park shuttle to skip between viewpoint clusters rather than walking the whole trail, and time it for sunset at Yavapai Point.",
+    'Bright Angel Trailhead': "The historic trail dropping into the canyon from the South Rim, with the 1.5-Mile and 3-Mile Resthouses as realistic turnaround points for a day hike. Don't attempt the river and back in one day; start at first light in summer since there's little shade and it gets dangerously hot on the climb out.",
+    'Cathedral Rock': "Sedona's red-rock spire with a short, steep hike up slickrock to a saddle with a view over the Verde Valley. The small trailhead parking lot fills by mid-morning — arrive early or use the Sedona shuttle.",
+    'Red Rock State Park': "A quieter nature preserve along Oak Creek with easy trails and red-rock views, better for birdwatching than crowds. Time it for sunset at the Eagle's Nest overlook, and check for ranger-led nature walks.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 57 (2026-09-18) -- Hawaii (Oahu, Maui, Kauai) -- 11 destinations, a fully independent
+ * solo route researched in a single pass. Same generic name-matching migration pattern as the
+ * other batches.
+ */
+function rbMigrateHawaiiDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_HAWAII_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_HAWAII_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'Diamond Head': "Short but steep crater-rim trail (~1.6mi round trip) ending at a summit lookout with Waikiki and the ocean laid out below; timed-entry tickets must be booked online in advance, so grab an early-morning slot to beat both heat and crowds.",
+    'Waikiki': "Not just a beach — it's the calm, family-friendly swimming stretch backed by Kalakaua Ave's shopping/dining and framed by Diamond Head; go before 8am for open sand or return at sunset, since midday the beach gets narrow and packed.",
+    'Koko Crater Trail': "A brutal straight-up climb of ~1,048 old railway-tie steps rewarded with a 360° panorama over east Oahu's coastline; start at first light — there's zero shade and it gets dangerously hot by mid-morning, allow 1.5-2 hours round trip.",
+    'Chinatown Honolulu': "Historic wet markets (Oahu Market, Maunakea Marketplace) and lei shops mixed with a newer gallery/restaurant scene along Hotel Street; visit in the morning for the produce/fish markets, and stick to groups after dark since the area gets rough at night.",
+    'Road to Hana': "600+ curves and 59 one-lane bridges past standout stops like Twin Falls and Wailua Falls; leave by 7am to stay ahead of tour traffic and afternoon rain, and don't plan it as a same-day round trip if you also want real time in Hana town.",
+    'Haleakalā National Park': "A 10,000ft dormant volcano summit that sits above the cloud layer, best known for sunrise but equally striking at midday for the crater views; sunrise visits require a separate paid reservation booked well ahead online, and it's near-freezing at the top so bring real layers.",
+    'Lahaina': "Historic whaling-era town devastated by the August 2023 wildfire; Front Street reopened to vehicles on Aug 1, 2026 with businesses like Kimo's and ʻUlu o Lele Marketplace back open, but much of the district is still fenced off and rebuilding, so confirm current access before planning a stop.",
+    'Waimea Canyon': 'A 3,000ft-deep, layered red-rock canyon nicknamed the "Grand Canyon of the Pacific"; the light is best in early morning before afternoon clouds roll in — hit both the main Waimea Canyon and Puʻu o Kila lookouts.',
+    'Nā Pali Coast': "17 miles of sheer, green sea cliffs with no road access — seen by boat, helicopter, or the Kalalau Trail; boat tours run smoother in summer (May-Sept) when ocean swells are lower.",
+    "Hanakāpī'ai Falls (day-hike)": "A 300ft waterfall 2 miles inland from Hanakāpīʻai Beach, reached via the first, most scenic stretch of the Kalalau Trail; it's a strenuous 8-mile, 6-8hr round trip with a river crossing that turns dangerous after rain, and now requires a Hāʻena State Park entry/parking reservation booked through GoHaena.com exactly 30 days ahead (permits for anything past Mile 2 require the separate Nā Pali camping permit).",
+    "Kōke'e State Park": "The mountain park above Waimea Canyon with the Kalalau Lookout and trailheads like Awaʻawapuhi and the Alakaʻi Swamp boardwalk; pair it with a Waimea Canyon visit on the same drive, and check trail conditions at the Kōkeʻe museum since fog and cold roll in fast at 3,600ft.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
+ * Batch 58 (2026-09-18) -- Florida (Miami, the Everglades, the Florida Keys) -- 12
+ * destinations, a fully independent solo route researched in a single pass. Same generic
+ * name-matching migration pattern as the other batches.
+ */
+function rbMigrateFloridaDestinationNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_09_FLORIDA_DESTINATION_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_09_FLORIDA_DESTINATION_NOTES, '1');
+
+  const notesByName = {
+    'South Beach (Art Deco District)': "Rows of pastel 1930s Art Deco hotels along Ocean Drive and Collins Ave, some of the best-preserved of the style anywhere; walk it early morning for soft light and empty sidewalks before the beach crowds arrive.",
+    'Little Havana': "Calle Ocho's Cuban coffee windows, cigar-rollers, and Domino Park where locals play dominoes daily; visit Domino Park mid-afternoon to catch the regulars, or come on the last Friday of the month for the Viernes Culturales street festival.",
+    'Wynwood Walls': "An outdoor gallery of large-scale murals by international street artists in a compact walkable block; an hour is enough, and weekday mornings avoid the bar-crowd weekend rush.",
+    'Coral Gables & Coconut Grove': "Coral Gables' Venetian Pool (a historic coral-rock quarry pool) and Miracle Mile shopping, plus Coconut Grove's leafy waterfront streets; the Venetian Pool needs its own ticket and is closed Mondays, so check that before planning around it.",
+    'Anhinga Trail': "An easy 0.8-mile boardwalk over a slough where alligators, anhingas, and herons sit right next to the path — one of the most reliable close-up wildlife spots in the park; go early morning or late afternoon for the most activity, 30-45 minutes is enough.",
+    'Guided airboat tour': "Fast rides through sawgrass marsh for quick, close-up gator sightings; book with an operator just outside the park boundary (Tamiami Trail/Everglades City area) since airboats aren't permitted inside Everglades National Park itself.",
+    'Flamingo': "The remote southern outpost on Florida Bay with a marina and boat tours for spotting crocodiles and manatees; the Guy Bradley Visitor Center reopened after hurricane damage, but campground/marina facilities have had partial seasonal closures since — check current status before counting on services there.",
+    'John Pennekamp Coral Reef State Park': "America's first underwater park, with living reef snorkel/dive sites and the submerged bronze Christ of the Abyss statue; book the glass-bottom boat or snorkel tour ahead and go in the morning for calmer water and less boat traffic.",
+    'Islamorada': 'The "sportfishing capital of the world," built around backcountry flats and offshore charters; book a charter a day or two ahead in high season, and stop at Robbie\'s Marina to hand-feed the tarpon even if you\'re not fishing.',
+    'Old Town Key West': "The historic core around Duval Street, Bahama Village, and Conch-style houses; explore on foot or bike early morning before the Duval bar crowd and midday cruise-ship crowds take over.",
+    'Mallory Square (sunset)': "A nightly harborside gathering of street performers, vendors, and crowds celebrating sunset; arrive 45-60 minutes before sunset to get a viewing spot and catch the performers setting up.",
+    'Hemingway House': "Ernest Hemingway's 1930s home, with his writing studio and descendants of his famous six-toed cats roaming the grounds; arrive right at the 9am opening to beat tour groups and cruise-ship crowds — tours run every 30 minutes.",
+  };
+
+  let touched = false;
+  rbRoutes.forEach(route => {
+    (route.blocks || []).forEach(b => {
+      (b.destinations || []).forEach(d => {
+        if (notesByName[d.name] && !d.notes) {
+          d.notes = notesByName[d.name];
+          touched = true;
+        }
+      });
+    });
+  });
+  if (touched) rbSave();
+}
+
+/**
  * Batch 6 (2026-09-16) for the per-destination-notes workflow -- Oceania Grand Expedition (14
  * blocks, 60 destinations), researched as 3 parallel batches (Pacific Islands, Australia, New
  * Zealand). Same generic name-matching migration pattern as the other grand tours.
@@ -12180,10 +12332,10 @@ function rbBuildUSNortheastRoute() {
     {
       code: 'US', name: 'United States', days: 3, budget: 315, lat: 38.9072, lng: -77.0369,
       destinations: [
-        { name: 'National Mall & Smithsonians', lat: 38.8899, lng: -77.0091 },
-        { name: 'Lincoln Memorial', lat: 38.8893, lng: -77.0502 },
-        { name: 'Capitol Hill', lat: 38.8899, lng: -77.0091 },
-        { name: 'Georgetown', lat: 38.9097, lng: -77.0654 },
+        { name: 'National Mall & Smithsonians', lat: 38.8899, lng: -77.0091 , notes: 'Free world-class museums (Air & Space, Natural History, American History) line the Mall alongside the monuments; pick at most 2 per day. Air and Space and the African American History museum both require free timed-entry passes booked online in advance (Air & Space releases them in 6-week windows, plus a small same-day batch at 8:30am ET), so reserve those two ahead — the rest are walk-in.' },
+        { name: 'Lincoln Memorial', lat: 38.8893, lng: -77.0502 , notes: 'Marble statue overlooking the Reflecting Pool, with the spot where MLK gave his "I Have a Dream" speech marked on the steps. Visit after dark — it\'s lit dramatically and far less crowded than daytime.' },
+        { name: 'Capitol Hill', lat: 38.8899, lng: -77.0091 , notes: 'Home of the US Capitol, with free interior tours covering its history and art. Book the tour weeks ahead through your senator/representative\'s office or the Capitol Visitor Center site — same-day slots are rare.' },
+        { name: 'Georgetown', lat: 38.9097, lng: -77.0654 , notes: 'Historic riverside neighborhood — M Street\'s shops/restaurants and the "Exorcist steps" down to the C&O Canal towpath are the two things worth carving out time for. Walk the canal towpath or out to the Georgetown waterfront for a quieter view of the Potomac than the Mall offers.' },
       ],
       notes: "Entry: direct flight Amsterdam-Washington DC (KLM, ±8-9 hours; best period mid-September-late October). Price indication from 2026-08 web research, a snapshot. ESTA required (Web check 2026-09: now $40.27, up from $21 pre-2025 — apply well in advance, passport valid 6+ months; ESTA/visa-waiver travelers are exempt from the separate new $250 Visa Integrity Fee, that only applies to actual visa applicants. Note: US ESTA/visa forms now only accept M/F gender markers, relevant for some travelers). The Smithsonian museums and most monuments are free — deliberately a cheaper stop than the other three cities. Web check (2026-09): €90/day was slightly low for a Budget/Comfort-Backpacker blend even leaning on the free museums — bumped to ~€105/day.",
       transport_to_next: 'Train (Amtrak Northeast Regional), ≈2 hours to Philadelphia — book 2-4 weeks ahead and travel Tuesday-Thursday for the best "Saver" fares.',
@@ -12191,9 +12343,9 @@ function rbBuildUSNortheastRoute() {
     {
       code: 'US', name: 'United States', days: 2, budget: 190, lat: 39.9526, lng: -75.1652,
       destinations: [
-        { name: 'Independence Hall & Liberty Bell', lat: 39.9496, lng: -75.1503 },
-        { name: 'Old City & Society Hill', lat: 39.9476, lng: -75.1449 },
-        { name: 'Reading Terminal Market', lat: 39.9532, lng: -75.1590 },
+        { name: 'Independence Hall & Liberty Bell', lat: 39.9496, lng: -75.1503 , notes: 'Where the Declaration of Independence and Constitution were both debated and signed. Independence Hall entry is by free timed ticket only — reserve online same-day or in advance, especially in summer, or you won\'t get in.' },
+        { name: 'Old City & Society Hill', lat: 39.9476, lng: -75.1449 , notes: 'Cobblestone colonial-era streets; Elfreth\'s Alley (oldest continuously inhabited residential street in the US) is the highlight and easy to walk past since it\'s just a narrow gap between storefronts. Combine with the nearby Betsy Ross House.' },
+        { name: 'Reading Terminal Market', lat: 39.9532, lng: -75.1590 , notes: 'Historic 1893 indoor market mixing Amish produce stalls with Philly food stalls (Bassetts ice cream, DiNic\'s roast pork). Go on a weekday for lunch — the Amish stalls are closed Sundays.' },
       ],
       notes: 'Clearly cheaper than New York/Boston — stay around Center City/Old City/Society Hill in the evening, not in unfamiliar outer neighbourhoods.',
       transport_to_next: 'Train, ≈1.5 hours to New York.',
@@ -12201,9 +12353,9 @@ function rbBuildUSNortheastRoute() {
     {
       code: 'US', name: 'United States', days: 4, budget: 560, lat: 40.7128, lng: -74.0060,
       destinations: [
-        { name: 'Manhattan (Times Square, Central Park)', lat: 40.7580, lng: -73.9855 },
-        { name: 'MoMA / The Met', lat: 40.7794, lng: -73.9632 },
-        { name: 'Brooklyn (Williamsburg, DUMBO)', lat: 40.7081, lng: -73.9571 },
+        { name: 'Manhattan (Times Square, Central Park)', lat: 40.7580, lng: -73.9855 , notes: 'Times Square for the neon/theater energy, Central Park for Bethesda Terrace and Strawberry Fields as the two standout stops inside it. Walk or bike the park\'s reservoir loop early morning before the crowds and horse carriages arrive.' },
+        { name: 'MoMA / The Met', lat: 40.7794, lng: -73.9632 , notes: 'MoMA holds modern icons (Starry Night, Les Demoiselles d\'Avignon); the Met\'s collection is encyclopedic with a seasonal roof garden. Book timed tickets online in advance for both — the Met also has Friday evening hours that are notably quieter.' },
+        { name: 'Brooklyn (Williamsburg, DUMBO)', lat: 40.7081, lng: -73.9571 , notes: 'DUMBO for the Washington St./Water St. Manhattan Bridge photo spot and Brooklyn Bridge Park; Williamsburg for vintage shops, food halls, and rooftop bars with skyline views. Hit the DUMBO photo spot at sunrise — by mid-morning it\'s a line of tourists waiting to take the same shot.' },
       ],
       notes: 'The most expensive stop on the route — a private room/small Airbnb, not a dorm, still fits within the between-budget-and-comfort style.',
       transport_to_next: 'Train, ≈4 hours to Boston (or the direct DC-Boston route, ≈7.5-8 hours, if you had skipped Philadelphia/New York).',
@@ -12211,9 +12363,9 @@ function rbBuildUSNortheastRoute() {
     {
       code: 'US', name: 'United States', days: 3, budget: 375, lat: 42.3601, lng: -71.0589,
       destinations: [
-        { name: 'Freedom Trail', lat: 42.3601, lng: -71.0589 },
-        { name: 'Harvard & Cambridge', lat: 42.3770, lng: -71.1167 },
-        { name: 'Fenway', lat: 42.3467, lng: -71.0972 },
+        { name: 'Freedom Trail', lat: 42.3601, lng: -71.0589 , notes: 'A 2.5-mile painted red-brick line connecting 16 Revolutionary-era sites (Paul Revere House, Old North Church, Faneuil Hall). Walkable self-guided in 2-3 hours; a guided walking tour adds context you\'d otherwise miss at the less-obvious stops.' },
+        { name: 'Harvard & Cambridge', lat: 42.3770, lng: -71.1167 , notes: 'Harvard Yard and Harvard Square\'s bookstores/cafes are the draw. Free student-led campus tours run daily and are worth joining for the stories behind the buildings.' },
+        { name: 'Fenway', lat: 42.3467, lng: -71.0972 , notes: 'Fenway Park, the oldest ballpark still in use in MLB (opened 1912), famous for the Green Monster left-field wall. On non-game days book a stadium tour; if catching a game, Green Monster seats sell out fastest.' },
       ],
       notes: "Travel advisory: the US is still green (Web check 2026-09) — normal caution, no special restrictions. All four cities' safety improvement is confirmed and even stronger than assumed: NYC is on track for its safest year on record (violent crime down ~13%, murders 9.8% below the prior record low), Washington DC homicides down ~41-44% year-over-year in H1 2026, Philadelphia homicide down 54% in Q1 2026 vs. Q1 2025. Web check (2026-09): €115/day was slightly conservative for Boston specifically (pricier lodging than Philly/DC) — bumped to ~€125/day. Season note: early-to-mid October is also New England's peak leaf-peeping season, pushing Boston-area weekend lodging prices up — late September or the tail end of October can be cheaper than the fall-foliage peak weeks.",
       transport_to_next: 'End of this route — direct return flight from Boston to Amsterdam.',
@@ -12232,9 +12384,9 @@ function rbBuildUSSouthwestRoute() {
     {
       code: 'US', name: 'United States', days: 3, budget: 375, lat: 37.2982, lng: -113.0263,
       destinations: [
-        { name: 'Angels Landing', lat: 37.2690, lng: -112.9496 },
-        { name: 'The Narrows', lat: 37.2999, lng: -112.9484 },
-        { name: 'Emerald Pools', lat: 37.2586, lng: -112.9723 },
+        { name: 'Angels Landing', lat: 37.2690, lng: -112.9496 , notes: 'Zion\'s signature chain-assisted scramble up a narrow fin to a 360-degree canyon view. A permit is required (lottery system): seasonal lotteries open months ahead on recreation.gov, but there\'s also a day-before lottery open 12:01am-3pm MT the day before your hike — use that if you didn\'t plan far ahead.' },
+        { name: 'The Narrows', lat: 37.2999, lng: -112.9484 , notes: 'Hiking upstream through the Virgin River between slot-canyon walls hundreds of feet tall, with no trail — you walk in the water. Rent neoprene socks/canyon shoes and a wooden staff at a Springdale outfitter, and check the flash-flood forecast at the visitor center before entering; the bottom-up route needs no permit.' },
+        { name: 'Emerald Pools', lat: 37.2586, lng: -112.9723 , notes: 'An easier trail to a series of pools and a waterfall you can walk behind at the lower pool. The Middle Emerald Pools section is currently closed indefinitely from landslide damage, so plan for the Lower Pool loop and check the NPS Zion alerts page for the latest access from the Grotto shuttle stop.' },
       ],
       notes: "Entry: flight Amsterdam-Las Vegas (with a connection, usually via a US hub, ±13-15 hours; best period mid-September-mid-October). Price indication from 2026-08 web research, a snapshot. ESTA required (Web check 2026-09: now $40.27, up from $21 pre-2025). Pick up the rental car in Vegas — an overnight stay there is optional, not needed for the route itself. Daily budget confirmed reasonable (2026-09).",
       transport_to_next: 'Car, ≈1h50 to Bryce Canyon.',
@@ -12242,31 +12394,31 @@ function rbBuildUSSouthwestRoute() {
     {
       code: 'US', name: 'United States', days: 2, budget: 250, lat: 37.5930, lng: -112.1871,
       destinations: [
-        { name: 'Bryce Amphitheater', lat: 37.5930, lng: -112.1871 },
-        { name: "Navajo Loop / Queen's Garden Trail", lat: 37.6283, lng: -112.1660 },
+        { name: 'Bryce Amphitheater', lat: 37.5930, lng: -112.1871 , notes: 'The classic view over Bryce\'s orange hoodoo forest from Sunset, Sunrise, and Inspiration Points. Walk the paved Rim Trail between the points instead of driving/shuttling — sunrise light on the hoodoos here is the single best photo window of the day.' },
+        { name: "Navajo Loop / Queen's Garden Trail", lat: 37.6283, lng: -112.1660 , notes: 'The combined loop drops you down among the hoodoos themselves, passing Thor\'s Hammer and the narrow "Wall Street" slot section — the only way to really appreciate the scale versus just viewing from the rim. Budget about 3 hours; the Wall Street section closes seasonally for ice/rockfall, so check current trail status before committing to that direction.' },
       ],
       transport_to_next: 'Car, ≈3 hours to Page.',
     },
     {
       code: 'US', name: 'United States', days: 2, budget: 250, lat: 36.9147, lng: -111.4558,
       destinations: [
-        { name: 'Antelope Canyon', lat: 36.8619, lng: -111.4103 },
-        { name: 'Horseshoe Bend', lat: 36.8791, lng: -111.5104 },
+        { name: 'Antelope Canyon', lat: 36.8619, lng: -111.4103 , notes: 'The wave-like sandstone slot canyon near Page made famous by light-beam photos. Entry is only possible with a booked Navajo-guide tour (no independent access) — book weeks ahead, and choose Lower Canyon over Upper for a cheaper, less crowded, less tour-bus-heavy experience.' },
+        { name: 'Horseshoe Bend', lat: 36.8791, lng: -111.5104 , notes: 'A sweeping horseshoe-shaped bend of the Colorado River seen from a clifftop overlook near Page. Go near sunset for the best light and cooler temps — it\'s a shadeless ~1.5-mile round-trip walk on sand from the (paid) parking lot.' },
       ],
       notes: "Antelope Canyon can only be visited with a mandatory Navajo guide (since a 1997 flood) — budget ~$80 p.p. all-in with a licensed operator (Ken's Tours/Dixie Ellis'), a separate cost on top of the daily budget. Confirmed accurate (Web check 2026-09): both operators still price their standard tour at ~$80.50 p.p., permit/fees bundled in.",
       transport_to_next: 'Car, ≈2-2.5 hours to Monument Valley.',
     },
     {
       code: 'US', name: 'United States', days: 1, budget: 125, lat: 36.9989, lng: -110.1007,
-      destinations: [{ name: '17-mile scenic loop', lat: 36.9989, lng: -110.1007 }],
+      destinations: [{ name: '17-mile scenic loop', lat: 36.9989, lng: -110.1007 , notes: 'Monument Valley\'s dirt scenic drive past the Mittens and other iconic buttes. It\'s rough and dusty but drivable slowly in a regular car; go at sunrise or sunset for the best light on the rock, and hire a Navajo guide if you want access to backcountry spots off the public loop.' }],
       notes: "Navajo Nation entry fee — Web check (2026-09), correction: fees were raised 1 January 2026 but landed lower than previously listed, roughly $8-10 p.p. + $15/vehicle (was overstated at $15pp+$20/car); also the gate reportedly no longer reliably accepts cash and requires a card — bring a card as primary, cash as backup. Still not covered by the America the Beautiful pass (Navajo Nation explicitly doesn't accept NPS passes — this is tribal land, not an NPS park).",
       transport_to_next: 'Car (via Cameron), ≈2.5-3 hours to Grand Canyon South Rim.',
     },
     {
       code: 'US', name: 'United States', days: 2, budget: 250, lat: 36.0544, lng: -112.1401,
       destinations: [
-        { name: 'Rim Trail', lat: 36.0544, lng: -112.1401 },
-        { name: 'Bright Angel Trailhead', lat: 36.0572, lng: -112.1445 },
+        { name: 'Rim Trail', lat: 36.0544, lng: -112.1401 , notes: 'Grand Canyon South Rim\'s paved path connecting viewpoints like Mather Point and Yavapai Point. Use the free park shuttle to skip between viewpoint clusters rather than walking the whole trail, and time it for sunset at Yavapai Point.' },
+        { name: 'Bright Angel Trailhead', lat: 36.0572, lng: -112.1445 , notes: 'The historic trail dropping into the canyon from the South Rim, with the 1.5-Mile and 3-Mile Resthouses as realistic turnaround points for a day hike. Don\'t attempt the river and back in one day; start at first light in summer since there\'s little shade and it gets dangerously hot on the climb out.' },
       ],
       notes: "Web check (2026-09), significant correction: since 1 January 2026 all non-US-residents aged 16+ pay a new $100 p.p. surcharge on top of the standard $35/vehicle (7-day) entrance fee at Zion, Bryce AND Grand Canyon — without a pass, that's up to ~$405 in park fees alone across the three. The old ~€75 'America the Beautiful' annual pass is now the US-resident price ($80) only; non-residents need the new 'America the Beautiful Non-Resident Annual Pass' at $250 (~€230) instead, which covers the pass-holder's vehicle (all occupants) at every fee park AND waives the new $100 surcharge — still clearly worth buying for this route, just budget €230 rather than €75.",
       transport_to_next: 'Car, ≈3.5-4 hours to Sedona.',
@@ -12274,8 +12426,8 @@ function rbBuildUSSouthwestRoute() {
     {
       code: 'US', name: 'United States', days: 2, budget: 250, lat: 34.8697, lng: -111.7610,
       destinations: [
-        { name: 'Cathedral Rock', lat: 34.8214, lng: -111.7897 },
-        { name: 'Red Rock State Park', lat: 34.8236, lng: -111.8302 },
+        { name: 'Cathedral Rock', lat: 34.8214, lng: -111.7897 , notes: 'Sedona\'s red-rock spire with a short, steep hike up slickrock to a saddle with a view over the Verde Valley. The small trailhead parking lot fills by mid-morning — arrive early or use the Sedona shuttle.' },
+        { name: 'Red Rock State Park', lat: 34.8236, lng: -111.8302 , notes: 'A quieter nature preserve along Oak Creek with easy trails and red-rock views, better for birdwatching than crowds. Time it for sunset at the Eagle\'s Nest overlook, and check for ranger-led nature walks.' },
       ],
       notes: "Travel advisory: the US is still green (Web check 2026-09). Summer is dangerously hot here (Page/Monument Valley/the canyon floor regularly 38°C+) — hence the autumn season, not May-June; even mid-September can still hit high-30s°C at these low-elevation stops, so leaning toward a late-September start gives more safety margin than mid-September. Minor addition: a small Red Rock Pass ($5/day or $20/year) covers trailhead parking around Sedona, not previously listed.",
       transport_to_next: "End of this route — drive to Phoenix (≈2 hours), return the rental car (one-way drop-off fee — no fixed number exists, reports range from $0 on occasional relocation deals up to $200-600 depending on company/season/how far ahead it's booked; budget a placeholder ~$150-250 and shop multiple companies close to departure), return flight to Amsterdam.",
@@ -12294,10 +12446,10 @@ function rbBuildHawaiiRoute() {
     {
       code: 'US', name: 'United States', days: 4, budget: 640, lat: 21.3069, lng: -157.8583,
       destinations: [
-        { name: 'Diamond Head', lat: 21.2620, lng: -157.8053 },
-        { name: 'Waikiki', lat: 21.2793, lng: -157.8293 },
-        { name: 'Koko Crater Trail', lat: 21.2810, lng: -157.6987 },
-        { name: 'Chinatown Honolulu', lat: 21.3097, lng: -157.8626 },
+        { name: 'Diamond Head', lat: 21.2620, lng: -157.8053 , notes: 'Short but steep crater-rim trail (~1.6mi round trip) ending at a summit lookout with Waikiki and the ocean laid out below; timed-entry tickets must be booked online in advance, so grab an early-morning slot to beat both heat and crowds.' },
+        { name: 'Waikiki', lat: 21.2793, lng: -157.8293 , notes: 'Not just a beach — it\'s the calm, family-friendly swimming stretch backed by Kalakaua Ave\'s shopping/dining and framed by Diamond Head; go before 8am for open sand or return at sunset, since midday the beach gets narrow and packed.' },
+        { name: 'Koko Crater Trail', lat: 21.2810, lng: -157.6987 , notes: 'A brutal straight-up climb of ~1,048 old railway-tie steps rewarded with a 360° panorama over east Oahu\'s coastline; start at first light — there\'s zero shade and it gets dangerously hot by mid-morning, allow 1.5-2 hours round trip.' },
+        { name: 'Chinatown Honolulu', lat: 21.3097, lng: -157.8626 , notes: 'Historic wet markets (Oahu Market, Maunakea Marketplace) and lei shops mixed with a newer gallery/restaurant scene along Hotel Street; visit in the morning for the produce/fish markets, and stick to groups after dark since the area gets rough at night.' },
       ],
       notes: "Entry: flight Amsterdam-Honolulu (with a connection, usually via a US west-coast hub; ±18-20 hours total; best period April-May or September-October). Price indication from 2026-08 web research, a snapshot. Web check (2026-09): ESTA now costs ~$40 (up from $21, raised Sept 2025 plus a further Jan 2026 cost-of-living bump) — a per-person fixed cost, not part of the daily budget. Only island with a real public-transit alternative (TheBus) — a rental car is optional here, unlike Maui/Kauai. Daily budget confirmed reasonable for Budget/Comfort-Backpacker style (hostel dorms $60-80/night, meals $25-90/day).",
       transport_to_next: 'Flight Honolulu-Kahului (Maui), Hawaiian Airlines/Southwest, frequent, ±35-45 minutes.',
@@ -12305,9 +12457,9 @@ function rbBuildHawaiiRoute() {
     {
       code: 'US', name: 'United States', days: 5, budget: 800, lat: 20.7984, lng: -156.3319,
       destinations: [
-        { name: 'Road to Hana', lat: 20.7581, lng: -156.0356 },
-        { name: 'Haleakalā National Park', lat: 20.7204, lng: -156.1552 },
-        { name: 'Lahaina', lat: 20.8783, lng: -156.6825 },
+        { name: 'Road to Hana', lat: 20.7581, lng: -156.0356 , notes: '600+ curves and 59 one-lane bridges past standout stops like Twin Falls and Wailua Falls; leave by 7am to stay ahead of tour traffic and afternoon rain, and don\'t plan it as a same-day round trip if you also want real time in Hana town.' },
+        { name: 'Haleakalā National Park', lat: 20.7204, lng: -156.1552 , notes: 'A 10,000ft dormant volcano summit that sits above the cloud layer, best known for sunrise but equally striking at midday for the crater views; sunrise visits require a separate paid reservation booked well ahead online, and it\'s near-freezing at the top so bring real layers.' },
+        { name: 'Lahaina', lat: 20.8783, lng: -156.6825 , notes: 'Historic whaling-era town devastated by the August 2023 wildfire; Front Street reopened to vehicles on Aug 1, 2026 with businesses like Kimo\'s and ʻUlu o Lele Marketplace back open, but much of the district is still fenced off and rebuilding, so confirm current access before planning a stop.' },
       ],
       notes: "A rental car is needed here (Road to Hana). Web check (2026-09): Maui's 2026 rental-car scarcity is real but volatile, not a stable fact — repeated fleet recalls (Jeep Wrangler, Ford SUVs, Chrysler Pacifica, Chevy Malibu) spiked weekly rates to an all-time record ~$2,015 in February 2026, then eased back to ~$1,154 by March, swinging since. Book 6-8+ weeks ahead and recheck close to departure rather than trusting any single quoted price.",
       transport_to_next: 'Flight Kahului-Lihue (Kauai), ±30-40 minutes.',
@@ -12315,10 +12467,10 @@ function rbBuildHawaiiRoute() {
     {
       code: 'US', name: 'United States', days: 5, budget: 800, lat: 22.0964, lng: -159.5261,
       destinations: [
-        { name: 'Waimea Canyon', lat: 22.0808, lng: -159.6653 },
-        { name: 'Nā Pali Coast', lat: 22.1883, lng: -159.5896 },
-        { name: "Hanakāpī'ai Falls (day-hike)", lat: 22.2166, lng: -159.5921 },
-        { name: "Kōke'e State Park", lat: 22.1319, lng: -159.6394 },
+        { name: 'Waimea Canyon', lat: 22.0808, lng: -159.6653 , notes: 'A 3,000ft-deep, layered red-rock canyon nicknamed the "Grand Canyon of the Pacific"; the light is best in early morning before afternoon clouds roll in — hit both the main Waimea Canyon and Puʻu o Kila lookouts.' },
+        { name: 'Nā Pali Coast', lat: 22.1883, lng: -159.5896 , notes: '17 miles of sheer, green sea cliffs with no road access — seen by boat, helicopter, or the Kalalau Trail; boat tours run smoother in summer (May-Sept) when ocean swells are lower.' },
+        { name: "Hanakāpī'ai Falls (day-hike)", lat: 22.2166, lng: -159.5921 , notes: 'A 300ft waterfall 2 miles inland from Hanakāpīʻai Beach, reached via the first, most scenic stretch of the Kalalau Trail; it\'s a strenuous 8-mile, 6-8hr round trip with a river crossing that turns dangerous after rain, and now requires a Hāʻena State Park entry/parking reservation booked through GoHaena.com exactly 30 days ahead (permits for anything past Mile 2 require the separate Nā Pali camping permit).' },
+        { name: "Kōke'e State Park", lat: 22.1319, lng: -159.6394 , notes: 'The mountain park above Waimea Canyon with the Kalalau Lookout and trailheads like Awaʻawapuhi and the Alakaʻi Swamp boardwalk; pair it with a Waimea Canyon visit on the same drive, and check trail conditions at the Kōkeʻe museum since fog and cold roll in fast at 3,600ft.' },
       ],
       notes: "The strongest nature of the three islands — the same recall-driven rental-car volatility applies here too (rates have swung both up and down through 2026, book well ahead). ⚠️ The full Kalalau Trail (11 miles) is genuinely dangerous (18+ deaths excluding drownings) — this route only does the Hanakāpī'ai Falls day-hike (3.2km, no wilderness permit needed for that stretch), not the full trail. Web check (2026-09): Hāʻena State Park (the Kēʻē Beach trailhead) requires an advance parking or shuttle reservation via gohaena.com, bookable 1-30 days ahead — capped at 900 visitors/day, passes sell out within minutes to hours in peak season (May-September); check DLNR's live trail-status page shortly before departure too, since sections beyond the day-hike have had closures this year. Respectful tourism: real overtourism tension in Hawaii (pressure on water/land, sacred sites, plus Honolulu's Bill 47 phasing out vacation rentals from July 2026) — stay on marked trails, respect reservation limits, no uninvited detours to sacred sites.",
       transport_to_next: 'End of this route — return flight from Lihue via Honolulu to Amsterdam.',
@@ -12337,10 +12489,10 @@ function rbBuildFloridaRoute() {
     {
       code: 'US', name: 'United States', days: 3, budget: 450, lat: 25.7617, lng: -80.1918,
       destinations: [
-        { name: 'South Beach (Art Deco District)', lat: 25.7826, lng: -80.1341 },
-        { name: 'Little Havana', lat: 25.7658, lng: -80.2192 },
-        { name: 'Wynwood Walls', lat: 25.8010, lng: -80.1994 },
-        { name: 'Coral Gables & Coconut Grove', lat: 25.7215, lng: -80.2684 },
+        { name: 'South Beach (Art Deco District)', lat: 25.7826, lng: -80.1341 , notes: 'Rows of pastel 1930s Art Deco hotels along Ocean Drive and Collins Ave, some of the best-preserved of the style anywhere; walk it early morning for soft light and empty sidewalks before the beach crowds arrive.' },
+        { name: 'Little Havana', lat: 25.7658, lng: -80.2192 , notes: 'Calle Ocho\'s Cuban coffee windows, cigar-rollers, and Domino Park where locals play dominoes daily; visit Domino Park mid-afternoon to catch the regulars, or come on the last Friday of the month for the Viernes Culturales street festival.' },
+        { name: 'Wynwood Walls', lat: 25.8010, lng: -80.1994 , notes: 'An outdoor gallery of large-scale murals by international street artists in a compact walkable block; an hour is enough, and weekday mornings avoid the bar-crowd weekend rush.' },
+        { name: 'Coral Gables & Coconut Grove', lat: 25.7215, lng: -80.2684 , notes: 'Coral Gables\' Venetian Pool (a historic coral-rock quarry pool) and Miracle Mile shopping, plus Coconut Grove\'s leafy waterfront streets; the Venetian Pool needs its own ticket and is closed Mondays, so check that before planning around it.' },
       ],
       notes: "Entry: direct flight Amsterdam-Miami (KLM, ±9-10 hours; best period December-April, dry season). Price indication from 2026-08 web research, a snapshot. Web check (2026-09): ESTA now costs ~$40 (up from $21, raised Sept 2025 plus a further Jan 2026 cost-of-living bump) — a per-person fixed cost, not part of the daily budget. Stay around South Beach (5th-25th St)/Brickell/Coral Gables/Coconut Grove/Wynwood by day; be careful in Overtown/Liberty City/Little Haiti and in Little Havana beyond 8th St/22nd Ave, especially at night. Deliberately no Orlando/theme parks — $150-200+/day on tickets alone, and doesn't fit a travel style that favors nature/culture over generic tourist attractions. Daily budget confirmed reasonable for this style (budget travelers run $75-170/day; hostel dorms $30-65/night).",
       transport_to_next: 'Car, ≈45-90 minutes to the Everglades (Homestead/Flamingo side).',
@@ -12348,9 +12500,9 @@ function rbBuildFloridaRoute() {
     {
       code: 'US', name: 'United States', days: 2, budget: 200, lat: 25.3928, lng: -80.6371,
       destinations: [
-        { name: 'Anhinga Trail', lat: 25.3861, lng: -80.6114 },
-        { name: 'Guided airboat tour', lat: 25.7617, lng: -80.6081 },
-        { name: 'Flamingo', lat: 25.1398, lng: -80.9231 },
+        { name: 'Anhinga Trail', lat: 25.3861, lng: -80.6114 , notes: 'An easy 0.8-mile boardwalk over a slough where alligators, anhingas, and herons sit right next to the path — one of the most reliable close-up wildlife spots in the park; go early morning or late afternoon for the most activity, 30-45 minutes is enough.' },
+        { name: 'Guided airboat tour', lat: 25.7617, lng: -80.6081 , notes: 'Fast rides through sawgrass marsh for quick, close-up gator sightings; book with an operator just outside the park boundary (Tamiami Trail/Everglades City area) since airboats aren\'t permitted inside Everglades National Park itself.' },
+        { name: 'Flamingo', lat: 25.1398, lng: -80.9231 , notes: 'The remote southern outpost on Florida Bay with a marina and boat tours for spotting crocodiles and manatees; the Guy Bradley Visitor Center reopened after hurricane damage, but campground/marina facilities have had partial seasonal closures since — check current status before counting on services there.' },
       ],
       notes: "Alligator safety: stay at least 15m away, never feed them, and — Web check (2026-09) — avoid swimming/wading in any natural Florida waterway during the current drought, not just at dusk/dawn: 2026 has seen a real, confirmed spike in incidents (at least 4 attacks including one fatality between 21 June-3 July 2026 alone, drought pushing alligators toward populated areas statewide, all 67 counties) — still an active, current risk as of September 2026, not something that's eased. Choose a guided airboat/walking tour (Anhinga Trail) over wading independently through shallow water.",
       transport_to_next: 'Car, ≈1-1.5 hours to Key Largo.',
@@ -12358,8 +12510,8 @@ function rbBuildFloridaRoute() {
     {
       code: 'US', name: 'United States', days: 2, budget: 260, lat: 25.0865, lng: -80.4473,
       destinations: [
-        { name: 'John Pennekamp Coral Reef State Park', lat: 25.1276, lng: -80.4062 },
-        { name: 'Islamorada', lat: 24.9391, lng: -80.6276 },
+        { name: 'John Pennekamp Coral Reef State Park', lat: 25.1276, lng: -80.4062 , notes: 'America\'s first underwater park, with living reef snorkel/dive sites and the submerged bronze Christ of the Abyss statue; book the glass-bottom boat or snorkel tour ahead and go in the morning for calmer water and less boat traffic.' },
+        { name: 'Islamorada', lat: 24.9391, lng: -80.6276 , notes: 'The "sportfishing capital of the world," built around backcountry flats and offshore charters; book a charter a day or two ahead in high season, and stop at Robbie\'s Marina to hand-feed the tarpon even if you\'re not fishing.' },
       ],
       notes: 'Snorkeling/diving on the reef — reef-safe sunscreen (still a current Florida Keys ordinance), shuffle your feet through the sand (stingrays), don\'t touch the reef (fire coral, sea urchins).',
       transport_to_next: 'Car via the Overseas Highway (US-1), ≈2-2.5 hours to Key West (optional stop in Marathon at the Seven Mile Bridge).',
@@ -12367,9 +12519,9 @@ function rbBuildFloridaRoute() {
     {
       code: 'US', name: 'United States', days: 3, budget: 450, lat: 24.5551, lng: -81.7800,
       destinations: [
-        { name: 'Old Town Key West', lat: 24.5551, lng: -81.7800 },
-        { name: 'Mallory Square (sunset)', lat: 24.5610, lng: -81.8080 },
-        { name: 'Hemingway House', lat: 24.5545, lng: -81.8017 },
+        { name: 'Old Town Key West', lat: 24.5551, lng: -81.7800 , notes: 'The historic core around Duval Street, Bahama Village, and Conch-style houses; explore on foot or bike early morning before the Duval bar crowd and midday cruise-ship crowds take over.' },
+        { name: 'Mallory Square (sunset)', lat: 24.5610, lng: -81.8080 , notes: 'A nightly harborside gathering of street performers, vendors, and crowds celebrating sunset; arrive 45-60 minutes before sunset to get a viewing spot and catch the performers setting up.' },
+        { name: 'Hemingway House', lat: 24.5545, lng: -81.8017 , notes: 'Ernest Hemingway\'s 1930s home, with his writing studio and descendants of his famous six-toed cats roaming the grounds; arrive right at the 9am opening to beat tour groups and cruise-ship crowds — tours run every 30 minutes.' },
       ],
       notes: "The Overseas Highway crosses 42 bridges (incl. the Seven Mile Bridge) — an All-American Road, no toll on US-1 itself. Book travel insurance right after booking the trip, not right before departure: once a storm gets a name, insurers exclude it from policies bought afterward — confirmed (2026-09) still exactly how named-storm exclusions work. Old Town itself is easily walkable/bikeable, no car needed. Web check (2026-09): budget-style Key West typically runs €150-170/day rather than a flat €150 once lodging is booked late — treat €150/day as the floor of a realistic range, not a ceiling.",
       transport_to_next: "End of this route — drive back to Miami (≈3-4 hours) for a direct return flight to Amsterdam (Key West's own airport is small, almost always with a Miami connection).",

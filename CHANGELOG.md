@@ -30,6 +30,23 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
   already present in the existing data, no change needed to how batches insert notes or build
   their migration functions.
 
+- **Per-destination notes, batches 55-58 — US Northeast/Southwest, Hawaii, Florida (2026-09-18)**
+  — the destination-notes plan's high-leverage shared-signature routes are now exhausted; this
+  round moved into four fully independent solo US routes with zero cross-route overlap (confirmed
+  by grepping the destination names first), so no name-variant risk to check this time. 48
+  destinations researched across two parallel sub-batches (US Northeast+Southwest, Hawaii+Florida)
+  per the plan's own "split anything over ~40" guidance.
+  - Batch 55: US Northeast (DC/Philadelphia/NYC/Boston) — 13 destinations
+    (`rbMigrateUSNortheastDestinationNotes()`)
+  - Batch 56: US Southwest (Zion/Bryce/Antelope Canyon/Monument Valley/Grand Canyon/Sedona) — 12
+    destinations (`rbMigrateUSSouthwestDestinationNotes()`)
+  - Batch 57: Hawaii (Oahu/Maui/Kauai) — 11 destinations, including a note on Lahaina's ongoing
+    post-wildfire reopening status (`rbMigrateHawaiiDestinationNotes()`)
+  - Batch 58: Florida (Miami/Everglades/Keys) — 12 destinations
+    (`rbMigrateFloridaDestinationNotes()`)
+  This crosses the halfway mark: App-wide total: 2945 destination-slots filled across 353
+  routes. 385/741 signatures done (~52%).
+
 - **Per-destination notes, batches 51-54 — Porto/Algarve/Central Portugal/Iceland clusters
   (2026-09-18)** — applying the batch 47-50 lesson proactively this time (check sibling routes
   for name-variant duplicates *before* dispatching research, not after): checked the whole
