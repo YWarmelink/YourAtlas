@@ -389,6 +389,16 @@ function rbBuildGrandTripPayload(route) {
 }
 
 /**
+ * Routes that must never come back, filtered from both localStorage and the Sheet on every load.
+ * rbMigrateRemoveSimilarityReviewDuplicates() only matched the English names, so browsers still
+ * holding the pre-translation Dutch-named copies auto-pushed them into the Sheet (2026-10).
+ */
+const RB_REMOVED_ROUTE_IDS = new Set([
+  'gt_seed_faeroer', // Faeröer 🐑 — superseded by Faroe Islands (6 days) 🐦
+  'gt_seed_ijsland', // IJsland ❄️ — superseded by Iceland Ring Road (12 days) 🛣️
+]);
+
+/**
  * Copies lat/lng from each local route onto its Sheet version wherever the Sheet has none.
  * Routes synced before the Sheet had lat/lng columns came back coordinate-less and wiped
  * every map view on load. Coordinates aren't editable in the UI, so the local value is

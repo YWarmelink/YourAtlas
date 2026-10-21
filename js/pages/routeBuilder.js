@@ -267,13 +267,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Must run after every migration above (needs route.name fully settled) and before the
   // Sheet merge below (needs route.id already deterministic) — see its own doc comment.
   rbMigrateDeterministicSeedIds();
+  rbRoutes = rbRoutes.filter(r => !RB_REMOVED_ROUTE_IDS.has(r.id));
 
   // Sheet as source of truth once reachable, localStorage as offline fallback — same
   // resilience pattern map.js uses. A route already synced to the Sheet overrides its
   // seeded/migrated localStorage version; a route not yet in the Sheet (nothing's been
   // pushed there yet, or it's brand new) just stays as-is. See ROUTE_BUILDER_SYNC.md.
   try {
-    const sheetRoutes = await dataService.getGrandTripsFull();
+    const sheetRoutes = (await dataService.getGrandTripsFull()).filter(r => !RB_REMOVED_ROUTE_IDS.has(r.id));
     if (sheetRoutes.length) {
       const sheetIds = new Set(sheetRoutes.map(r => r.id));
       const localOnly = rbRoutes.filter(r => !sheetIds.has(r.id));
