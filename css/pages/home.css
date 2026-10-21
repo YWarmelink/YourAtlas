@@ -434,6 +434,12 @@
   color: var(--atlas-white);
 }
 
+.category-tile-count {
+  margin-top: var(--sp-1);
+  font-size: var(--fs-xs);
+  color: rgb(255 255 255 / 0.6);
+}
+
 /* === TRIP PLANNER BANNER === */
 .planner-section {
   background: var(--atlas-navy);

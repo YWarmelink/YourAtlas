@@ -1,6 +1,44 @@
 document.addEventListener('DOMContentLoaded', async () => {
-  await Promise.all([loadStats(), loadFeaturedTrips(), loadFutureTrips()]);
+  await Promise.all([loadStats(), loadFeaturedTrips(), loadFutureTrips(), loadTripTypes()]);
 });
+
+// Icon per trip type, matched by keyword; anything else gets the compass.
+const TRIP_TYPE_ICONS = [
+  ['city', '🏙️'], ['road', '🛣️'], ['ski', '⛷️'], ['backpack', '🎒'], ['holiday', '🏖️'],
+  ['beach', '🏖️'], ['family', '👨‍👩‍👧'], ['hik', '🥾'], ['food', '🍜'], ['cruise', '🚢'], ['work', '💼'],
+];
+
+/**
+ * "Trip Types" tiles, built from the Trips sheet's Type column with a count each — so there
+ * are never empty tiles and a new type shows up by itself. Each tile opens trips.html filtered
+ * on exactly that type. Status words that ended up in Type (Done/Planned/...) are skipped.
+ */
+async function loadTripTypes() {
+  const el = document.getElementById('tripTypesGrid');
+  if (!el) return;
+  try {
+    const trips = await dataService.getTrips();
+    const statuses = new Set(trips.map(t => (t.status || '').trim().toLowerCase()).filter(Boolean));
+    const counts = {};
+    trips.forEach(t => {
+      const type = (t.type || '').trim();
+      if (type && !statuses.has(type.toLowerCase())) counts[type] = (counts[type] || 0) + 1;
+    });
+    const types = Object.entries(counts).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+    if (!types.length) { el.innerHTML = emptyMsg('No trip types yet.'); return; }
+    el.innerHTML = types.map(([type, n]) => {
+      const icon = (TRIP_TYPE_ICONS.find(([k]) => type.toLowerCase().includes(k)) || [, '🧭'])[1];
+      return `
+        <a href="trips.html?type=${encodeURIComponent(type)}" class="category-tile">
+          <div class="category-tile-icon">${icon}</div>
+          <div class="category-tile-name">${escapeHTML(type)}</div>
+          <div class="category-tile-count">${n} trip${n !== 1 ? 's' : ''}</div>
+        </a>`;
+    }).join('');
+  } catch (e) {
+    console.error('[home] trip types failed', e);
+  }
+}
 
 async function loadStats() {
   const el = document.getElementById('statsStrip');

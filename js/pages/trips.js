@@ -10,11 +10,16 @@ document.addEventListener('DOMContentLoaded', async () => {
   try {
     allTrips = await dataService.getTrips();
     populateFilters();
-    const urlQ = new URLSearchParams(window.location.search).get('q');
+    const params = new URLSearchParams(window.location.search);
+    const urlQ = params.get('q');
     if (urlQ) {
       const searchEl = document.getElementById('searchInput');
       if (searchEl) searchEl.value = urlQ;
     }
+    // ?type=City%20Trip — from the home page's Trip Types tiles.
+    const urlType = params.get('type');
+    const typeEl = document.getElementById('filterType');
+    if (urlType && typeEl && [...typeEl.options].some(o => o.value === urlType)) typeEl.value = urlType;
     render();
   } catch (e) {
     grid.innerHTML = errorMsg('Could not load trips. Check your connection or data source.');
