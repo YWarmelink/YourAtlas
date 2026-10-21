@@ -92,7 +92,7 @@ async function loadFutureTrips() {
     el.innerHTML = future.map(t => {
       const p    = (t.priority || '').toLowerCase();
       const meta = PRIORITY_META[p];
-      const flag = getTripFlag(t);
+      const flag = tripFlagBadgeHTML(t);
       return `
         <div class="future-item">
           <div class="future-item-flag">${flag}</div>

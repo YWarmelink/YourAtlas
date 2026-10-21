@@ -138,7 +138,7 @@ function renderTimeline(trips) {
         ${byYear[year].map(t => {
           const sc  = statusClass(t.status);
           const sl  = statusLabel(t.status);
-          const flag = getTripFlag(t);
+          const flag = tripFlagBadgeHTML(t);
           const dates = [t.start_date && formatDateShort(t.start_date), t.end_date && formatDateShort(t.end_date)]
             .filter(Boolean).join(' – ');
           return `

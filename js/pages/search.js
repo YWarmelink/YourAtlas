@@ -100,7 +100,7 @@ async function buildSearchIndex() {
   trips.forEach(t => {
     entries.push({
       group: 'trips',
-      icon: getTripFlag(t),
+      icon: getTripIcon(t),
       title: t.trip_name || 'Untitled Trip',
       meta: [t.country_region, t.continent, t.status].filter(Boolean).join(' · '),
       snippet: searchSnippet(t.notes),

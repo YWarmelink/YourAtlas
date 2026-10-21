@@ -41,12 +41,48 @@ const DESTINATION_FLAGS = {
   'united arab emirates': '🇦🇪', 'dubai': '🇦🇪',
 };
 
-function getTripFlag(trip) {
-  const name = ((trip.trip_name || '') + ' ' + (trip.country_region || '')).toLowerCase();
+/**
+ * Every distinct country flag found in a trip's Country/Region + name, in the order they appear
+ * there. Country/Region comes first: it lists the countries cleanly in trip order, while names
+ * mix in cities ("Berlin + Calabria (Italy) + Hamburg").
+ */
+function getTripFlags(trip) {
+  const text = ((trip.country_region || '') + ' ' + (trip.trip_name || '')).toLowerCase();
+  const hits = [];
   for (const [key, flag] of Object.entries(DESTINATION_FLAGS)) {
-    if (name.includes(key)) return flag;
+    const idx = text.indexOf(key);
+    if (idx !== -1) hits.push({ idx, flag });
   }
-  return '✈️';
+  hits.sort((a, b) => a.idx - b.idx);
+  return [...new Set(hits.map(h => h.flag))];
+}
+
+/** 🌍 / 🌏 / 🌎 for the trip's continent — stands in for the flags of a 4+ country trip. */
+function continentGlobe(continent) {
+  const c = (continent || '').toLowerCase();
+  if (c.includes('asia') || c.includes('ocean') || c.includes('australia')) return '🌏';
+  if (c.includes('america') || c.includes('caribb')) return '🌎';
+  return '🌍';
+}
+
+/** Up to 3 countries: their flags side by side; 4+: the continent globe; none recognized: ✈️. */
+function getTripFlag(trip) {
+  const flags = getTripFlags(trip);
+  if (!flags.length) return '✈️';
+  return flags.length <= 3 ? flags.join('') : continentGlobe(trip.continent);
+}
+
+/** One symbol, for small icon slots (search results): the flag of a single-country trip, else the globe. */
+function getTripIcon(trip) {
+  const flags = getTripFlags(trip);
+  if (!flags.length) return '✈️';
+  return flags.length === 1 ? flags[0] : continentGlobe(trip.continent);
+}
+
+/** getTripFlag() plus a "10 countries" label when the globe stands in for 4+ flags. */
+function tripFlagBadgeHTML(trip) {
+  const n = getTripFlags(trip).length;
+  return n > 3 ? `${getTripFlag(trip)}<span class="trip-flag-count">${n} countries</span>` : getTripFlag(trip);
 }
 
 /**
@@ -181,7 +217,7 @@ function buildTripCard(trip) {
   const bannerClass = continentBannerClass(trip.continent);
   const sc = statusClass(trip.status);
   const sl = statusLabel(trip.status);
-  const flag = getTripFlag(trip);
+  const flag = tripFlagBadgeHTML(trip);
   const datesStr = [trip.start_date && formatDateShort(trip.start_date), trip.end_date && formatDateShort(trip.end_date)]
     .filter(Boolean).join(' – ');
 
