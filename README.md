@@ -625,3 +625,5 @@ Country-flag emoji on Windows are drawn with the self-hosted **Twemoji Country F
 (`fonts/`, from [country-flag-emoji-polyfill](https://github.com/talkjs/country-flag-emoji-polyfill)
 0.1.10, font file only). Flag artwork: [Twemoji](https://github.com/twitter/twemoji), CC-BY 4.0 —
 see `fonts/TwemojiCountryFlags-LICENSE.md`.
+The Scotland/England/Wales flags (`images/flags/`) are Twemoji SVGs from
+[jdecked/twemoji](https://github.com/jdecked/twemoji) 15.1.0, same CC-BY 4.0 license.

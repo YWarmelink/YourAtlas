@@ -79,10 +79,27 @@ function getTripIcon(trip) {
   return flags.length === 1 ? flags[0] : continentGlobe(trip.continent);
 }
 
-/** getTripFlag() plus a "10 countries" label when the globe stands in for 4+ flags. */
+// Scotland/England/Wales flags are emoji tag sequences that Windows can't draw (a plain black
+// flag shows instead) and the Twemoji Country Flags font doesn't cover — swapped for the
+// self-hosted Twemoji SVGs in images/flags/ wherever flags are rendered as HTML.
+const SUBDIVISION_FLAG_IMAGES = {
+  '🏴󠁧󠁢󠁳󠁣󠁴󠁿': { file: 'gb-sct', alt: 'Scotland' },
+  '🏴󠁧󠁢󠁥󠁮󠁧󠁿': { file: 'gb-eng', alt: 'England' },
+  '🏴󠁧󠁢󠁷󠁬󠁳󠁿': { file: 'gb-wls', alt: 'Wales' },
+};
+
+function flagHTML(flags) {
+  let html = flags;
+  for (const [emoji, { file, alt }] of Object.entries(SUBDIVISION_FLAG_IMAGES)) {
+    html = html.split(emoji).join(`<img class="flag-img" src="images/flags/${file}.svg" alt="${alt}">`);
+  }
+  return html;
+}
+
+/** getTripFlag() as HTML, plus a "10 countries" label when the globe stands in for 4+ flags. */
 function tripFlagBadgeHTML(trip) {
   const n = getTripFlags(trip).length;
-  return n > 3 ? `${getTripFlag(trip)}<span class="trip-flag-count">${n} countries</span>` : getTripFlag(trip);
+  return n > 3 ? `${getTripFlag(trip)}<span class="trip-flag-count">${n} countries</span>` : flagHTML(getTripFlag(trip));
 }
 
 /**
