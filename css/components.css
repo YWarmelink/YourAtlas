@@ -286,7 +286,9 @@
   overflow: hidden;
 }
 
-.trip-card-banner-img {
+/* Two classes on purpose: the continent classes below set the `background` shorthand, which
+   would otherwise reset size/position to auto / 0 0 and show only a cropped top-left corner. */
+.trip-card-banner.trip-card-banner-img {
   background-size: cover;
   background-position: center center;
   height: 200px;
