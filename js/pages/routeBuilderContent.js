@@ -2488,6 +2488,206 @@ function rbBuildSoutheastAsiaGrandLoopRoute() {
   });
 }
 
+// ---- East & Southeast Asia Grand Tour (2026-10) ----
+//
+// A standalone East + Southeast Asia version of Eurasia Grand Tour 🌏, at Youri's request: his own
+// country list and per-country durations (midpoints of his ranges), South Korea and East Timor
+// included, the order rebuilt for logistics + climate (Mongolia first — summer-only — then
+// southwards with the seasons). Per-country content is reused from Eurasia Grand Tour 🌏 via
+// rbContentFor() (verified identical to its fully-migrated live state, 2026-10), Korea from
+// South Korea 🏯, the Sarawak/Sabah blocks from Southeast Asia Grand Loop 🛕; budgets are those
+// routes' daily rates times the new day counts. Destinations added for the longer stays are new.
+// A new route, not a change to an existing one, so no migration — just its own seed flag. Its id
+// is set explicitly: rbMigrateDeterministicSeedIds() has already fired in existing browsers, so
+// the random seed id would otherwise never become deterministic (and duplicate via the Sheet).
+
+function rbSeedEastSoutheastAsiaGrandTour() {
+  if (localStorage.getItem(RB_SEED_FLAG_KEY_EAST_SE_ASIA_GRAND)) return;
+  localStorage.setItem(RB_SEED_FLAG_KEY_EAST_SE_ASIA_GRAND, '1');
+
+  const route = rbBuildEastSoutheastAsiaGrandTourRoute();
+  route.id = rbSeedRouteId(route.name);
+  if (!rbRoutes.some(r => r.id === route.id)) rbRoutes.push(route);
+  rbSave();
+}
+
+function rbBuildEastSoutheastAsiaGrandTourRoute() {
+  const eurasia = (code, name) => rbContentFor('Eurasia Grand Tour 🌏', code, name);
+  const asDest = d => ({ name: d.name, lat: d.lat ?? null, lng: d.lng ?? null, notes: d.notes || '' });
+  // Existing places by name from `source` (in the order given here), new places as full objects.
+  const pick = (source, items) => items.map(it => (typeof it === 'string' ? asDest(source.find(d => d.name === it) || { name: it }) : it));
+  const ea = code => eurasia(code, '').destinations;
+  const korea = rbBuildSouthKoreaRoute().blocks[0].destinations;
+  const [, sarawak, sabah] = rbBuildSoutheastAsiaGrandLoopRoute().blocks.filter(b => b.country_code === 'MY');
+
+  return rbBuildSeedRoute('East & Southeast Asia Grand Tour 🐉', [
+    { name: 'Mongolia & China', season: 'Mid-August–early October', budget: 3135, note: 'Mongolia only works in summer (ger camps close and nights freeze from mid-September), so it sets the start date; China follows in September, after the summer heat — the best month for most of the country.', countries: [
+      {
+        ...eurasia('MN', 'Mongolia'), days: 17, budget: 1105,
+        destinations: pick(ea('MN'), [
+          'Ulaanbaatar',
+          { name: 'Khövsgöl Lake', lat: 50.4386, lng: 100.16, notes: "Mongolia's deepest freshwater lake ('the Blue Pearl'), in the far north near the Russian border, ringed by larch forest and reindeer-herding Tsaatan communities; Khatgal at the southern tip is the base, reached by a domestic flight Ulaanbaatar–Mörön plus ~2h by road. Ger camps here start closing from mid-September — one more reason for an August start." },
+          'Kharkhorin', 'Gobi Desert', 'Terelj NP',
+        ]),
+        notes: "Entry: flight Amsterdam–Ulaanbaatar (Turkish Airlines via Istanbul, ±15-18 hours incl. stopover, estimated ±€700-900 return; best period mid-August). Price indication from 2026-10 web research, a snapshot. Visa: visa-free for Dutch citizens (30 days) under Mongolia's temporary exemption, currently only confirmed until 1 January 2027 — re-check before booking. 17 days instead of Eurasia's 10, adding Khövsgöl Lake; the domestic flight Ulaanbaatar–Mörön (~€150-250 return) is a separate cost. " + eurasia('MN', 'Mongolia').notes,
+        transport_to_next: "Trans-Mongolian train Ulaanbaatar–Beijing (K24, once a week — Thursdays in the June 2026 timetable, ~30 hours, hard sleeper ~CNY 1,000-1,500); a fixed weekday, so plan the end of the Mongolia leg around it. China needs a visa for this route's 35 days (see China).",
+      },
+      {
+        ...eurasia('CN', 'China'), days: 35, budget: 2030, lat: 39.9042, lng: 116.4074,
+        destinations: pick(ea('CN'), [
+          'Beijing',
+          { name: 'Pingyao', lat: 37.2006, lng: 112.1781, notes: "One of China's best-preserved Ming/Qing-era walled towns, with intact 6km city walls and the Rishengchang 'piaohao', considered China's first draft bank; an easy high-speed-rail stop between Beijing and Xi'an — stay one night to see the lanes lantern-lit after the day-trippers leave." },
+          "Xi'an", 'Chengdu', 'Zhangjiajie', 'Guilin/Yangshuo (Li River)',
+          { name: 'Huangshan', lat: 30.1333, lng: 118.1667, notes: "The granite peaks, twisted pines and 'sea of clouds' of the Yellow Mountain inspired centuries of Chinese ink painting; a night on the summit (pricey, book ahead) gives you sunrise over the cloud sea, and the UNESCO-listed Hui-style villages Hongcun and Xidi at the foot are worth a half-day." },
+          { name: 'Hangzhou', lat: 30.242, lng: 120.148, notes: "West Lake's willow-lined causeways, pagodas and the Longjing (Dragon Well) tea terraces in the hills just west of the lake make it the gentle counterpart to Shanghai, ~1 hour away by high-speed train; rent a bike for the Su and Bai causeways." },
+          'Shanghai',
+          { name: 'Qingdao', lat: 36.0671, lng: 120.3826, notes: 'A former German concession (1898-1914) with red-roofed colonial architecture, city beaches and the Tsingtao brewery museum; on this route mainly the stepping stone to Weihai (~1.5-2 hours by train) for the ferry to Korea.' },
+        ]),
+        notes: "Visa: China's visa-free entry for Dutch citizens is capped at 30 days (and currently only confirmed until 31 December 2026) — with 35 days in China this route needs a regular tourist (L) visa, or trim the leg to 30 days if the visa-free scheme is still running. Golden Week (1-7 October) overlaps the end of this leg (Hangzhou/Shanghai/Qingdao): book trains, the ferry and beds well ahead, or expect crowds and price peaks. Order reversed compared to Eurasia Grand Tour: in from Mongolia via Beijing, out via the Weihai ferry to Korea; 35 days instead of 28, adding Pingyao, Huangshan, Hangzhou and Qingdao. " + eurasia('CN', 'China').notes,
+        transport_to_next: 'High-speed train Qingdao–Weihai (~1.5-2 hours), then the Weidong ferry (New Golden Bridge VII) Weihai–Incheon, ~15 hours overnight, 3x per week — the Qingdao sailing was folded into Weihai in May 2026, so re-check the port and timetable closer to departure.',
+      },
+    ] },
+    { name: 'Korea & Japan', season: 'October–mid-November', budget: 5105, note: "Korea's crisp early-October weather, then Japan's autumn colour from the Alps down to Kyoto. Ferries link China, Korea and Japan, so this part needs no flights.", countries: [
+      {
+        code: 'KR', name: 'South Korea', days: 7, budget: 455, lat: 37.5665, lng: 126.978,
+        destinations: pick(korea, ['Seoul', 'DMZ / Imjingak', 'Gyeongju', 'Busan']),
+        notes: "A deliberately shorter, calmer stopover between China and Japan (~1 week). Entry by ferry into Incheon. KTX high-speed rail connects Seoul–Gyeongju–Busan; the DMZ can only be visited on an organized/guided tour from Seoul. Visa: visa-free 90 days for a Dutch passport; the K-ETA waiver for Dutch citizens is only confirmed through 31 December 2026 — re-check for 2027 (otherwise ~$10, apply 72h ahead). Daily rate reused from the standalone South Korea 🏯 route (~€65/day). Dutch travel advisory (2026-09 snapshot): red for the DMZ border strip itself (guided tours only), green for Seoul, Gyeongju and Busan.",
+        transport_to_next: 'Camellia Line overnight ferry Busan–Fukuoka (~11-12 hours, ~5x per week, from ~€45) — the faster JR Kyushu Queen Beetle hydrofoil was discontinued in December 2024.',
+      },
+      {
+        ...eurasia('JP', 'Japan'), days: 31, budget: 4650,
+        destinations: pick(ea('JP'), [
+          { name: 'Fukuoka', lat: 33.5902, lng: 130.4017, notes: "Kyushu's biggest city and the ferry port from Busan; known for its evening yatai food stalls along the Nakasu riverbank (Hakata tonkotsu ramen is the local signature) — an easy first stop to recover from the overnight ferry." },
+          'Hiroshima', 'Hakone/Fuji', 'Tokyo',
+          { name: 'Nikko', lat: 36.7199, lng: 139.6982, notes: 'The lavishly carved, gold-leafed Toshogu shrine complex (mausoleum of shogun Tokugawa Ieyasu) sits in cedar forest ~2 hours north of Tokyo; mid-to-late October is peak autumn colour around Lake Chuzenji and the Kegon Falls higher up — the main reason this leg is timed from mid-October.' },
+          { name: 'Takayama', lat: 36.1461, lng: 137.2522, notes: 'A mountain town in the Japanese Alps with a preserved Edo-period merchant quarter (Sanmachi Suji), morning markets and sake breweries; the Takayama Autumn Festival (9-10 October) falls just before this leg, so expect it quieter but still in full autumn colour.' },
+          { name: 'Shirakawa-go', lat: 36.2578, lng: 136.906, notes: "UNESCO-listed village of steep thatched 'gassho-zukuri' farmhouses, built to shed heavy Alpine snow; an easy bus stop between Takayama and Kanazawa — stay overnight in a farmhouse minshuku to see it after the tour buses leave." },
+          { name: 'Kanazawa', lat: 36.5613, lng: 136.6562, notes: 'Home to Kenroku-en, counted among Japan\'s three finest landscape gardens, plus well-preserved samurai (Nagamachi) and geisha (Higashi Chaya) districts and the Omicho seafood market; a calmer alternative to Kyoto\'s crowds, linked to Tokyo/Kyoto by the Hokuriku Shinkansen.' },
+          'Kyoto', 'Nara', 'Osaka',
+        ]),
+        notes: "Entry by ferry into Fukuoka (from Busan). 31 days instead of Eurasia's 18 — the extra time adds Fukuoka, Nikko and the Japanese Alps (Takayama, Shirakawa-go, Kanazawa). Order designed around the autumn colour: Nikko and the Alps in late October (peak), Kyoto/Nara/Osaka last in early-to-mid November (colour starting to turn). A JR Pass maxes out at 21 days and became much pricier in 2023 — a mix of regional passes and single tickets is usually cheaper for 31 days, compare before booking. Daily rate reused from Eurasia Grand Tour (~€150/day). No JESTA travel authorisation needed for this window (planned for 2028 at the earliest).",
+        transport_to_next: 'Flight Osaka (Kansai)–Taipei, ~2.5 hours, frequent budget flights; no visa needed for Taiwan.',
+      },
+    ] },
+    { name: 'Taiwan', season: 'Second half of November', budget: 1050, note: 'After the typhoon season — dry and mild in the south and centre of the island.', countries: [
+      {
+        ...eurasia('TW', 'Taiwan'), days: 14, budget: 1050,
+        destinations: pick(ea('TW'), [
+          'Taipei',
+          { name: 'Jiufen', lat: 25.1092, lng: 121.8449, notes: 'A hillside former gold-mining town north-east of Taipei with lantern-lit teahouse alleys and views over the Pacific; an easy day trip by bus, best late afternoon into evening — expect drizzle, since the north-east gets the winter monsoon\'s rain.' },
+          'Taroko Gorge', 'Sun Moon Lake',
+          { name: 'Alishan', lat: 23.51, lng: 120.802, notes: 'A forested mountain area known for sunrise over a sea of clouds, giant ancient cypress trees and high-mountain oolong tea; the historic Alishan Forest Railway climbs up from Chiayi (book ahead, it sells out).' },
+          'Tainan', 'Kenting',
+        ]),
+        notes: "14 days instead of Eurasia's 10 — adds Jiufen and Alishan. Late November: dry and mild in the south and centre; the north (Taipei/Jiufen) can be drizzly under the north-east monsoon. Taroko Gorge: parts of the gorge road and trails were closed after the April 2024 Hualien earthquake — check which sections have reopened before planning that day.",
+        transport_to_next: 'Bus Kenting–Kaohsiung (~2 hours), then a direct flight Kaohsiung–Hanoi (Vietnam Airlines/Vietjet, ~2h45, from ~€150). Vietnam: visa-free for 45 days for Dutch citizens (scheme runs until 14 August 2028).',
+      },
+    ] },
+    { name: 'Mainland Southeast Asia', season: 'Late November–mid-February', budget: 3530, note: 'Dry season across Vietnam, Cambodia, Laos and Thailand; overland via the Mekong boat crossing (Chau Doc–Phnom Penh), Stung Treng–Si Phan Don and the Huay Xai/Chiang Khong border. Myanmar deliberately left out, as in Eurasia Grand Tour.', countries: [
+      {
+        ...eurasia('VN', 'Vietnam'), days: 28, budget: 1235,
+        destinations: pick(ea('VN'), [
+          'Hanoi', 'Ha Giang Loop',
+          { name: 'Cao Bang (Ban Gioc Waterfall)', lat: 22.8546, lng: 106.7234, notes: 'Ban Gioc is a broad, multi-tiered waterfall right on the Chinese border, at its fullest just after the rainy season (into November); the karst valleys around Cao Bang are a quieter continuation of the Ha Giang Loop scenery, and some Ha Giang tours extend here.' },
+          'Ha Long Bay',
+          { name: 'Ninh Binh', lat: 20.2506, lng: 105.9745, notes: "Often called 'Ha Long Bay on land': rowing-boat trips through flooded karst caves at Trang An or Tam Coc, plus the Mua Cave viewpoint (500 steps) over the rice valleys; an easy base 2 hours south of Hanoi and the start of the train south." },
+          { name: 'Phong Nha', lat: 17.611, lng: 106.311, notes: "Phong Nha-Ke Bang NP has some of the world's largest caves; Phong Nha Cave (by boat) and Paradise Cave are open year-round, but the multi-day expedition caves (Hang En, Son Doong) only run roughly February-August — in December, stick to the showcase caves. Mid-December can still bring heavy rain or flooding here, the tail of the central-coast rainy season." },
+          'Ho Chi Minh City', 'Da Lat', 'Phu Quoc',
+          { name: 'Mekong Delta (Can Tho)', lat: 10.0452, lng: 105.7469, notes: "Can Tho is the delta's main city and the base for the early-morning Cai Rang floating market (go at dawn); bike or boat trips through the canal-side orchards fill the rest of a day." },
+          { name: 'Chau Doc', lat: 10.7, lng: 105.1167, notes: 'A small river town near the Cambodian border with floating fish farms, Cham villages and the Sam Mountain temples; mainly the departure point for the Mekong boat to Phnom Penh.' },
+        ]),
+        notes: "Entry by air from Taiwan (Kaohsiung–Hanoi). 28 days instead of Eurasia's 17 — adds Cao Bang/Ban Gioc, Ninh Binh, Phong Nha and the Mekong Delta; Hue, Hoi An and Da Nang deliberately stay cut (already visited). Order: the north first (Hanoi → Ha Giang Loop → Cao Bang → Ha Long Bay → Ninh Binh), train south to Phong Nha (Dong Hoi), a domestic flight Dong Hoi–Ho Chi Minh City, Da Lat and Phu Quoc as side trips from HCMC, then overland through the Mekong Delta to the boat border crossing. Late November-December: dry and cool in the north (Ha Long can be misty), the south's dry season starting. Extra costs (not in the daily budget): guide+motorbike for the Ha Giang Loop (~€35-45/day, usually 'easy rider' style rather than self-driving given the notorious mountain roads), domestic flights Dong Hoi–HCMC and to/from Phu Quoc (~€40-60 each). Visa: exempt for 45 days with a Dutch passport (until 14 August 2028).",
+        transport_to_next: 'Mekong boat Chau Doc–Phnom Penh (~5-6 hours) via the Vinh Xuong/Kaam Samnor river border — the scenic alternative to the Bavet/Moc Bai road crossing. Cambodia: visa on arrival or e-visa; check which is accepted at this crossing before departure.',
+      },
+      { ...eurasia('KH', 'Cambodia'), days: 11, budget: 480 },
+      {
+        ...eurasia('LA', 'Laos'), days: 14, budget: 615,
+        destinations: pick(ea('LA'), [
+          'Si Phan Don (4000 Islands)', 'Pakse', 'Vientiane', 'Vang Vieng', 'Luang Prabang',
+          { name: 'Nong Khiaw', lat: 20.5667, lng: 102.6167, notes: 'A riverside village on the Nam Ou, ringed by limestone peaks; the steep hike to the Pha Daeng viewpoint at sunrise (often above a sea of morning fog in January) is the highlight, with Muang Ngoi Neua a short boat ride further upriver. A 2-3 day side trip from Luang Prabang.' },
+        ]),
+        notes: "14 days instead of Eurasia's 12 — adds Nong Khiaw as a side trip north of Luang Prabang (back to Luang Prabang for the onward boat). January: dry, cool peak season — mornings in the north are cold, bring a warm layer. Visa: Lao e-visa or visa on arrival (~$40).",
+      },
+      {
+        ...eurasia('TH', 'Thailand'), days: 24, budget: 1200,
+        destinations: pick(ea('TH'), [
+          { name: 'Chiang Rai', lat: 19.9105, lng: 99.8406, notes: 'The natural first stop after the Laos border at Chiang Khong; the White Temple (Wat Rong Khun), Blue Temple and Baan Dam (Black House) are the three contemporary-art temple sights, all doable in a day, plus the Golden Triangle viewpoint where Thailand, Laos and Myanmar meet.' },
+          'Chiang Mai',
+          { name: 'Pai', lat: 19.3583, lng: 98.44, notes: 'A laid-back mountain town reached by a famous 762-curve road from Chiang Mai (motion-sickness pills recommended in the minivan); hot springs, Pai Canyon at sunset and waterfalls nearby. January mornings are cold and misty — and it is visited well before the burning-season haze of late February-April.' },
+          'Sukhothai', 'Ayutthaya', 'Bangkok',
+          { name: 'Khao Sok', lat: 8.9131, lng: 98.528, notes: 'Ancient rainforest among limestone karsts; the highlight is a night in the floating raft-houses on Cheow Lan Lake, with early-morning wildlife (gibbons, hornbills) and a jungle-cave hike. Sits conveniently between Bangkok/Surat Thani and the Andaman coast.' },
+          'Krabi/islands', 'Koh Lipe',
+        ]),
+        notes: "Entry from Laos at Chiang Khong (Huay Xai). 24 days instead of Eurasia's 18 — adds Chiang Rai, Pai and Khao Sok. Late January-February: dry season, ideal everywhere on this route, with the north visited before the February-April burning-season haze. Travel advisory (2026-07): yellow for the entire travel area, with red/orange border strips near Cambodia and at the far south/Myanmar border — not on this route. The visa-free stay may be shortened from 60 to 30 days (cabinet decision May 2026) — 24 days fits either way, but check the current rule before departure.",
+      },
+    ] },
+    { name: 'Malaysia, Borneo & the Philippines', season: 'Mid-February–March', budget: 2775, note: 'The Borneo Overland Trail (Sarawak → Brunei → Sabah) as the north-east monsoon fades, then the Philippines at the peak of their dry season, before the typhoons.', countries: [
+      {
+        ...eurasia('MY', 'Malaysia'), days: 7, budget: 350,
+        destinations: pick(ea('MY'), ['Langkawi', 'Penang', 'Cameron Highlands', 'Kuala Lumpur']),
+        notes: "7 days instead of Eurasia's 10 — Malacca dropped to keep Malaysia at ~3 weeks in total, Borneo included. Entry by speedboat from Koh Lipe into Langkawi.",
+      },
+      {
+        code: 'MY', name: 'Malaysia', days: 5, budget: 275, lat: sarawak.lat, lng: sarawak.lng,
+        destinations: sarawak.destinations.map(asDest),
+        notes: sarawak.notes + " 5 days instead of 6 (Malaysia's total kept at ~3 weeks).",
+        transport_to_next: sarawak.transport_to_next,
+      },
+      {
+        ...eurasia('BN', 'Brunei'), days: 4, budget: 480,
+        notes: "4 days instead of Eurasia's 2 — enough for Ulu Temburong as a full day trip plus the water village without rushing. " + eurasia('BN', 'Brunei').notes,
+      },
+      {
+        code: 'MY', name: 'Malaysia', days: 9, budget: 585, lat: sabah.lat, lng: sabah.lng,
+        destinations: sabah.destinations.map(asDest),
+        notes: sabah.notes + " 9 days instead of 11. ⚠️ Dutch travel advisory (2026-10 snapshot): orange for the islands off Sabah's east coast (Semporna, Mabul, Sipadan) because of kidnapping/piracy risk — check before keeping Semporna/Sipadan in; travel insurance may not cover an orange zone.",
+        transport_to_next: sabah.transport_to_next,
+      },
+      {
+        ...eurasia('PH', 'Philippines'), days: 24, budget: 1085,
+        destinations: pick(ea('PH'), [
+          'Manila', 'Banaue', 'El Nido', 'Coron', 'Siargao', 'Bohol',
+          { name: 'Moalboal', lat: 9.9397, lng: 123.3958, notes: "A small dive/snorkel town on Cebu's south-west coast, famous for its sardine run — millions of sardines in a swirling bait ball just off the beach, snorkelable without a boat — and sea turtles on the house reef; Kawasan Falls canyoneering is nearby." },
+          'Cebu',
+        ]),
+        notes: eurasia('PH', 'Philippines').notes + " 24 days instead of 21 — adds Moalboal. March: peak dry season, before the typhoon season. Travel advisory (2026-10 snapshot): yellow for everywhere on this route; red for western Mindanao/Sulu, which is not visited.",
+      },
+    ] },
+    { name: 'Indonesia & East Timor', season: 'April–late May', budget: 2605, note: 'The dry season starts in Nusa Tenggara (Lombok, Komodo, Flores) and East Timor; Sumatra and Sulawesi are wetter but workable.', countries: [
+      {
+        ...eurasia('ID', 'Indonesia'), days: 49, budget: 2205,
+        destinations: pick(ea('ID'), [
+          'Medan', 'Bukit Lawang', 'Berastagi', 'Lake Toba', 'Bukittinggi',
+          { name: 'Manado & Bunaken', lat: 1.623, lng: 124.76, notes: 'Manado is the gateway to Bunaken Marine Park, known for sheer coral walls dropping straight into deep water close to shore — some of Indonesia\'s best wall diving and snorkelling; stay on Bunaken island itself rather than in the city.' },
+          { name: 'Togean Islands', lat: -0.4, lng: 121.9, notes: 'A remote archipelago in the Gulf of Tomini with a stingless-jellyfish lake, coral reefs and Bajau sea-nomad villages; reached by boat from Ampana (speedboat ~1.5 hours to Wakai, or the slower Tuna Tomini ferry ~5 hours, 3x per week) — simple bungalows, limited electricity, keep buffer days around the boat schedule.' },
+          { name: 'Tana Toraja', lat: -2.97, lng: 119.9, notes: 'The Toraja highlands are known for elaborate funeral ceremonies (respectful visitors are generally welcome; most take place in the July-September dry season), boat-shaped tongkonan houses and cliff graves with wooden tau-tau effigies; Rantepao is the base, ~8-10 hours by bus from Makassar.' },
+          { name: 'Raja Ampat (optional — orange advisory)', lat: -0.43, lng: 130.82, notes: 'World-class coral reefs and karst islands in Southwest Papua; marine-park entry ~IDR 1,300,000 in total (~€75), homestays ~€15-30/night including meals, ferry Sorong–Waisai ~2 hours. ⚠️ The Dutch travel advisory for Southwest Papua was orange (2026-10 snapshot) — only include this stop if that has changed; otherwise spend these days on extra time in Bunaken/Togean or Flores.' },
+          'Lombok', 'Gili Islands', 'Komodo',
+          { name: 'Bajawa', lat: -8.7833, lng: 120.9833, notes: 'Highland town in central Flores and the base for traditional Ngada villages such as Bena, with megalithic stone altars and high-roofed clan houses under the Inerie volcano; the Malanage hot-spring river is nearby.' },
+          { name: 'Kelimutu', lat: -8.77, lng: 121.82, notes: 'A volcano with three crater lakes that change colour over time (turquoise to brown/black, from mineral reactions); walk up from the village of Moni for sunrise, when the lakes are clearest.' },
+          { name: 'Kupang', lat: -10.1772, lng: 123.607, notes: 'Capital of West Timor and the jumping-off point for East Timor; little to see itself, but the place to catch the onward flight to Dili (or to sort out the visa authorisation if crossing overland).' },
+        ]),
+        notes: "49 days (midpoint of Youri's 6-8 weeks) instead of Eurasia's 21, with the emphasis outside Java and Bali (both already visited, deliberately left out): Sumatra (as in Eurasia Grand Tour) → Sulawesi (Bunaken, Togean Islands, Tana Toraja) → optional Raja Ampat → Lombok/Gili → Komodo and overland across Flores → Kupang. Many domestic flights (Sumatra–Manado via Jakarta, Makassar–Sorong, Sorong/Makassar–Lombok, Ende/Maumere–Kupang, ~€40-100 each) are not in the daily budget; neither are the Komodo boat trip (organized tours $75-135/day, budget shared boats from ~$40-50/day), the Togean boats or Raja Ampat's park fees. Daily rate ~€45 (slightly above Eurasia's ~€42) for the remote eastern islands. Visa: visa on arrival for 30 days plus one 30-day extension (~€29, apply online at evisa.imigrasi.go.id ~14 days before expiry, with an in-person photo appointment) — 49 days needs that extension. April-May: dry season starting in Nusa Tenggara (Lombok, Komodo, Flores); Sumatra and Sulawesi get rain year-round, less from May. Mount Rinjani (Lombok) is an active volcano with no current eruption warning (2026-07) — check shortly before departure.",
+        transport_to_next: "Flight Kupang–Dili (~1 hour; entry by air is visa-free for Dutch citizens, up to 90 days). Overland by bus via the Mota'ain/Batugade border (~10-12 hours) is possible too, but then you need a Visa Application Authorisation from the East Timor consulate in Kupang first (~10 working days).",
+      },
+      {
+        ...eurasia('TL', 'East Timor'),
+        notes: eurasia('TL', 'East Timor').notes + ' Travel advisory (2026-10 snapshot): yellow. The dry season starts around May, so late May fits.',
+        transport_to_next: 'Direct flight Dili–Singapore (Aero Dili, since 2024) — final leg to the endpoint Singapore; via Denpasar/Bali as a fallback.',
+      },
+    ] },
+    { name: 'Singapore Finale', season: 'Late May', budget: 500, note: 'A compact city finale before the flight home.', countries: [
+      { ...eurasia('SG', 'Singapore'), days: 4, budget: 500 },
+    ] },
+  ], {
+    best_starting_month: 'August',
+    travel_style: 'Backpacker — overland wherever possible: the Trans-Mongolian train, ferries China→Korea→Japan, buses, trains and river boats across mainland Southeast Asia; flights only where there is no ground or sea link (Japan–Taiwan–Vietnam, Borneo–Philippines–Indonesia, the Indonesian island hops). Local guesthouses and hostels over international chains.',
+    climate_summary: "Recommended start: around 15 August 2027. Mongolia is the binding constraint — it is only good in summer (ger camps close and nights freeze from mid-September) — so the route starts there and then follows the good seasons southwards: China in September (after the summer heat; Golden Week, 1-7 October, falls at the very end), Korea in early October (Chuseok 2027 is 14-16 September, already over), Japan from mid-October to mid-November (autumn colour: Nikko and the Alps at their late-October peak, Kyoto starting to turn), Taiwan in late November (after the typhoons), Vietnam, Cambodia, Laos and Thailand from late November to mid-February (dry season), the Borneo Overland Trail in late February (monsoon fading), the Philippines in March (peak dry season, before the typhoons), Indonesia in April-May (dry season starting in Lombok/Komodo/Flores) and East Timor in late May, ending in Singapore around 30 May 2028. Weak spots: Phong Nha in mid-December (tail of the central-coast rains, expedition caves closed), some rain in Sumatra/Sulawesi in April, and Golden Week crowds at the end of the China leg.",
+    description: 'Nine and a half months through East and Southeast Asia — from the Mongolian steppe and the Trans-Mongolian railway via China, and by ferry through Korea to Japan, on to Taiwan, then overland through mainland Southeast Asia, across Borneo and the Philippines to the eastern islands of Indonesia and East Timor, ending in Singapore.',
+    notes: "New Grand Expedition (2026-10), built at Youri's request as an East + Southeast Asia version of Eurasia Grand Tour 🌏 — 15 countries, 290 days (~9.5 months), ground costs ≈€18,700 per person (≈€64/day on average); flights between legs and the extras listed per leg (Gobi jeep tour, Ha Giang Loop, Komodo/Togean/Raja Ampat boats, park fees) come on top. Days are the midpoints of Youri's own per-country ranges: Mongolia 2-3 weeks, China 5, South Korea ~1 (a deliberately calmer stopover), Japan 4-5, Taiwan 2, Vietnam 4, Cambodia 1-2, Laos 2, Thailand 3-4, the Philippines 3-4, Malaysia incl. Borneo 3, Brunei 3-4 days, Indonesia 6-8 (emphasis outside Java and Bali), Singapore 4 days as the final stop; East Timor (7 days, as in Eurasia) added on top. Per-country content, daily rates and verified notes are reused from Eurasia Grand Tour 🌏 (South Korea 🏯 for Korea, Southeast Asia Grand Loop 🛕 for the Borneo blocks) and scaled to the new day counts, with extra destinations where the stay is longer. Order rebuilt for logistics and climate: Mongolia first (summer-only), then overland and by sea through China, Korea and Japan, and southwards with the seasons. Research snapshot 2026-10 (visas, ferries, Dutch travel advisories) — ⚠️ re-check before booking: Mongolia's visa-free scheme is only confirmed until 1 January 2027, China's 30-day visa-free entry until 31 December 2026 (35 days in China needs a visa anyway), Korea's K-ETA waiver until 31 December 2026; orange advisories for Raja Ampat (Southwest Papua) and Sabah's east-coast islands (Semporna/Sipadan).",
+  });
+}
+
 // ---- Pan-American Grand Tour split (2026-07 modularization analysis, see ROUTE_BUILDER_MODULES.md) ----
 //
 // Pan-American Grand Tour 🌎 already excludes Patagonia/Antarctica/Northern Brazil/Suriname/the

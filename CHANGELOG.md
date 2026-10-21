@@ -12,6 +12,24 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **New Grand Expedition: East & Southeast Asia Grand Tour 🐉 (2026-10-21)** — Youri's own
+  East + Southeast Asia version of Eurasia Grand Tour: 15 countries (Mongolia, China, South
+  Korea, Japan, Taiwan, Vietnam, Cambodia, Laos, Thailand, Malaysia incl. Borneo, Brunei, the
+  Philippines, Indonesia, East Timor, Singapore), 290 days, ≈€18,700 ground costs. Days are the
+  midpoints of his per-country ranges; content/daily rates reused from Eurasia Grand Tour (source
+  verified identical to its live migrated state), South Korea 🏯 and Southeast Asia Grand Loop 🛕
+  (Borneo blocks), budgets = daily rate × new days; 29 new destinations (with coords + notes) for
+  the longer stays. Order rebuilt for logistics/climate: Mongolia first (summer-only), Trans-Mongolian
+  train, ferries Weihai–Incheon and Busan–Fukuoka, recommended start ~15 Aug 2027, ending in
+  Singapore ~30 May 2028. Research snapshot 2026-10 (visas, ferries, NL advisories) — still to
+  re-check before booking: Mongolia/China/Korea visa-waiver expiries (all only confirmed through
+  end-2026; China's 30-day cap means 35 days needs a visa anyway), orange advisories for Raja
+  Ampat (marked optional) and Sabah's east-coast islands. New seed flag only (no migration — new
+  route); id set to `rbSeedRouteId()` explicitly, because `rbMigrateDeterministicSeedIds()` has
+  already fired in existing browsers. Added to `RB_GRAND_EXPEDITION_NAMES`; `KR` added to
+  `RB_CONTINENT_BY_CODE` (was missing, affected the South Korea 🏯 route's grouping too). Tagged
+  in `TRIP_DATABASE.csv` (row 460; min/max 266/316 days from the low/high ends of Youri's ranges).
+
 - **Per-destination notes, batches 170-177 — Europe tail cluster 6, project completion
   (2026-09-18)** — 46 fresh destinations plus 14 reuse entries, closing out the final 34 routes
   in the queue: Hamburg, Dresden + Saxon Switzerland, Salzburg + Berchtesgaden + Hallstatt,

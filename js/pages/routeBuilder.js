@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbSeedEuropaComboAlpsRoutes();
   rbSeedEuropaComboNordicPyreneesRoutes();
   rbSeedEuropaComboGrandRoutes();
+  rbSeedEastSoutheastAsiaGrandTour();
   rbMigrateLonghaulBuffer();
   rbMigrateExpeditionRenames();
   rbMigrateExpeditionEmojiNames();

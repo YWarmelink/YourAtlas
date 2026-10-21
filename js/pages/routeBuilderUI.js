@@ -56,6 +56,7 @@ const RB_GRAND_EXPEDITION_NAMES = new Set([
   'North America Grand Traverse 🌎', 'Oceania Grand Expedition 🌊',
   'Caribbean & Amazon Expedition 🌴', 'West & Central Africa Expedition 🌍',
   'Central European Grand Roadtrip 🚗', 'British Isles & Celtic Coast Expedition 🍀',
+  'East & Southeast Asia Grand Tour 🐉',
 ]);
 
 // ISO alpha-2 code -> continent bucket, covering every country code used anywhere in this file.
@@ -73,7 +74,7 @@ const RB_CONTINENT_BY_CODE = {
   MY: 'asia', TR: 'asia', JO: 'asia', OM: 'asia', BH: 'asia', QA: 'asia', GE: 'asia', AM: 'asia',
   AZ: 'asia', KZ: 'asia', KG: 'asia', TJ: 'asia', UZ: 'asia', CN: 'asia', MN: 'asia', JP: 'asia',
   TW: 'asia', VN: 'asia', LA: 'asia', KH: 'asia', TH: 'asia', SG: 'asia', BN: 'asia', PH: 'asia',
-  ID: 'asia', TL: 'asia', IN: 'asia', NP: 'asia', BT: 'asia',
+  ID: 'asia', TL: 'asia', IN: 'asia', NP: 'asia', BT: 'asia', KR: 'asia',
   // Europe (incl. Cyprus — grouped with Greece/Italy in the Mediterranean expedition — and the
   // Nordic Arctic islands, which are politically Danish/Norwegian even where geographically remote)
   ES: 'europe', MT: 'europe', IT: 'europe', FR: 'europe', GR: 'europe', CY: 'europe', DE: 'europe',
