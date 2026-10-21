@@ -618,3 +618,10 @@ js/pages/               ← Per-page logic
 ## Repository
 
 [github.com/YWarmelink/YourAtlas](https://github.com/YWarmelink/YourAtlas)
+
+## Credits
+
+Country-flag emoji on Windows are drawn with the self-hosted **Twemoji Country Flags** font
+(`fonts/`, from [country-flag-emoji-polyfill](https://github.com/talkjs/country-flag-emoji-polyfill)
+0.1.10, font file only). Flag artwork: [Twemoji](https://github.com/twitter/twemoji), CC-BY 4.0 —
+see `fonts/TwemojiCountryFlags-LICENSE.md`.
