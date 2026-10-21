@@ -7,6 +7,14 @@ reference and because the client-side implementation still matches its shape clo
 **Not done**: the `BlockLibrary`/`BlockLibraryItems` tabs described further down (saved
 reusable country blocks) — those stay `localStorage`-only for now, not scheduled.
 
+**Coordinates added (2026-10-21):** `GrandTripBlocks` and `GrandTripDestinations` now have
+`lat`/`lng` columns (created automatically by the Apps Script on first write) — without them
+the load-time Sheet merge stripped every coordinate and blanked all Route Builder maps. Filled
+for all 453 built-in routes via `node scripts/backfill_notes_to_sheet.js --push` (which also
+backfilled the destination notes); a new `blocks_bulk_update` handler covers block anchors. The
+Sheet's Dutch locale publishes those numbers with a decimal comma — read them with
+`parseSheetNumber()`, never plain `parseFloat()`.
+
 **Prep done 2026-09-07, no Sheet access needed:** an "⬇️ Export JSON" button exists
 in the route list toolbar (`rbExportRoutesAsJSON()` in `js/pages/routeBuilderUI.js`) that
 copies every route + the Block Library to the clipboard, shaped 1:1 to match the sheet

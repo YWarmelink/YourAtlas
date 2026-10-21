@@ -12,6 +12,42 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Maps, Sheet parsing, Trips page and Home fixes (2026-10-21)** — one session, all
+  browser-verified against the live site (headless Chrome with local files swapped in):
+  - **Route Builder maps blank on every route** (`3a5478a`): the Sheet merge on load replaced
+    each route with its Sheet copy, and the GrandTrip* tabs had no `lat`/`lng`, so every
+    coordinate was stripped (Route Line/Detailed showed the "no coordinates yet" box, even in a
+    fresh browser). Client now pushes/reads `lat`/`lng`; `rbKeepLocalCoords()` keeps local coords
+    when the Sheet has none; Apps Script (`apps-script/`, now in the repo) adds the columns + a
+    `blocks_bulk_update` handler; `backfill_notes_to_sheet.js` backfilled 4,009 destinations +
+    1,070 blocks (this also restored the destination notes, which were empty in the Sheet).
+    Block Library save/insert no longer drops coordinates either.
+  - **Stale Dutch-named routes resurrected** (`ce65f7f`): `gt_seed_faeroer` / `gt_seed_ijsland`
+    (pre-translation copies of two routes the similarity review deleted) had been auto-pushed to
+    the Sheet. Deleted there, and `RB_REMOVED_ROUTE_IDS` filters them on every load.
+  - **Sheet numbers cut to whole degrees** (`7eebeeb`): the Dutch-locale Sheet publishes
+    "43,8563"; `parseFloat` read 43, so every Sheet coordinate was up to ~100 km off.
+    `parseSheetNumber()` fixes it — verified 1,087 blocks + 4,125 destinations exact.
+  - **Sheet dates read month-first** (`4b7c843`): "30-09-2026" became Invalid Date (finished trips
+    under "Upcoming", raw strings on cards) and "02-12-2026" became 12 Feb. `parseSheetDate()` /
+    `sheetDateToISO()` in `helpers.js`; also used by Route Builder's start date + calendar.
+    Timeline "Upcoming" now = not started yet.
+  - **Maps fit the route** (`4476271`, `7eebeeb`): trip maps and Route Builder's Route Line /
+    Detailed fit the route's own stops (home legs faint); stops on the same spot share a
+    "1 · 6" marker. Single-stop routes get a country-level view.
+  - **Overview details** (`a46d6cf`): per-country "▸ Details" (budget + destination notes) and
+    "Expand all" in Route Builder's Overview; region headers show season + note.
+  - **Trip card photos zoomed in** (`0df0c89`): continent gradient classes reset the banner's
+    `background-size`/`position` to auto / 0 0; the image rule now wins.
+  - **Flags** (`e9f9834`, `07efe1d`, `2e7f400`): ~60 countries added to `DESTINATION_FLAGS`
+    (Belgium, Luxembourg, Poland, …); self-hosted Twemoji Country Flags font so Windows shows
+    real flags instead of letter pairs (font only — the npm package's 0.1.2 JS, which `@0.1`
+    resolves to, contains a stray `alert(5)`); Scotland/England/Wales as Twemoji SVGs; multi-
+    country trips show up to 3 flags, 4+ a continent globe with "N countries".
+  - **Home "Travel Categories" → "Trip Types"** (`b565b2c`): the hard-coded tiles only ran a text
+    search (Culture/Nature/Beach/Adventure found 0 trips); tiles now come from the *Type* column
+    with counts and link to a preselected type filter.
+
 - **New Grand Expedition: East & Southeast Asia Grand Tour 🐉 (2026-10-21)** — Youri's own
   East + Southeast Asia version of Eurasia Grand Tour: 15 countries (Mongolia, China, South
   Korea, Japan, Taiwan, Vietnam, Cambodia, Laos, Thailand, Malaysia incl. Borneo, Brunei, the

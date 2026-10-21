@@ -16,6 +16,15 @@ A personal travel dashboard built with vanilla HTML, CSS and JavaScript. Part of
 | Map | [/map.html](https://ywarmelink.github.io/YourAtlas/map.html) |
 | Search | [/search.html](https://ywarmelink.github.io/YourAtlas/search.html) |
 
+- **Home** — stats strip, All Trips, On the Horizon, the Route Builder banner and **Trip Types**
+  (2026-10): one tile per value in the Trips sheet's *Type* column, with a count, linking to
+  `trips.html?type=<type>` (filter preselected). Replaced the old hard-coded "Travel Categories"
+  tiles, which only ran a text search and mostly found nothing.
+- **All Trips** — grid or timeline. Timeline groups by year; **Upcoming** = not started yet (or
+  no date). Flags (2026-10): up to 3 countries show all flags in *Country/Region* order, 4+ show
+  the continent globe with "N countries". Real flags on Windows via a self-hosted flag font;
+  Scotland/England/Wales via small SVGs (see Credits).
+
 ## Data
 
 Live data is pulled from a public Google Sheets spreadsheet (CSV). Fallback JSON files are in `data/youri/` when the sheet is unreachable.
@@ -65,13 +74,16 @@ trips that span months, not weeks. Lives at `route-builder.html`.
   month grids, colored by country.
 - **World map view**: highlights the route's countries on the same Leaflet world map
   `map.html` uses (shared lookup table in `js/utils/isoCountries.js`).
-- **Route-line map view**: a second map mode ("📍 Routelijn" next to "🌍 Landen")
+- **Route-line map view**: a second map mode ("📍 Route Line" next to "🌍 Countries")
   that draws the route as an actual ordered path — a dashed line connecting one anchor
   coordinate per leg, with a numbered, color-coded marker per stop, starting and ending
   at a fixed Utrecht/Netherlands home marker. See `rbRenderRouteLine()` in
-  `js/pages/routeBuilderUI.js`. A third mode ("🔍 Gedetailleerd") draws through every
-  per-destination coordinate instead of one anchor per leg — available for any route
-  once its destinations carry `lat`/`lng`. All 13 predefined expeditions now have this:
+  `js/pages/routeBuilderUI.js`. A third mode ("🔍 Detailed") draws through every
+  per-destination coordinate instead of one anchor per leg. Since 2026-10 the view fits the
+  route's own stops (the legs to/from home are drawn faint and usually run off-screen), and
+  legs sharing a spot share one "2 · 5" marker. Every built-in route (453) has coordinates
+  for both modes; they also round-trip through the Sheet (`lat`/`lng` columns) since
+  2026-10. Originally only the 13 predefined expeditions had this:
   Eurasia Grand Tour 🌏, Patagonia & Antarctica Expedition 🧊, India & Himalaya
   Expedition 🏔️, Nordic Arctic Expedition ❄️, Caribbean & Amazon Expedition 🌴, Central
   European Grand Roadtrip 🚗, British Isles & Celtic Coast Expedition 🍀, North America
@@ -529,27 +541,26 @@ loaded. Groups results by source, each result links straight to the right page (
 results deep-link via `route-builder.html?open=<id>`, opening that expedition's editor
 directly). See `js/pages/search.js`.
 
-## Trips route map (live for one trip, 2026-09)
+## Trips route map (live for two trips, 2026-10)
 
-Trips can show a "🔍 Gedetailleerd"-style route line too, same idea as Route Builder's — see
+Trips can show a "🔍 Detailed"-style route line too, same idea as Route Builder's — see
 [`TRIP_ROUTE_MAP.md`](TRIP_ROUTE_MAP.md) for the full plan. The map code (`js/utils/routeMap.js`,
-wired into `trip.html`/`js/pages/tripDetail.js`) is done and only shows up on a trip once it has
-≥2 destinations with coordinates.
+wired into `trip.html`/`js/pages/tripDetail.js`) only shows up on a trip once it has ≥2
+destinations with coordinates. The view fits the trip's own stops (faint legs to/from home), and
+stops on the same spot share one marker ("1 · 6" for a trip that starts and ends in Seoul).
 
-**First trip with real data: SEA2024 (Vietnam/Cambodia/Thailand)** — not South Korea as originally
-planned; Youri picked this one first since he had real, already-traveled stops to source
-coordinates for. 12 destinations filled in via a new `TripDestinations` Sheet tab, published as
-CSV and wired into `js/config/users.js`. Not yet visually confirmed in a browser (see
-`TRIP_ROUTE_MAP.md` for the code-level trace done instead) — check that before treating this as
-fully proven end-to-end.
+**Live, browser-verified (2026-10-21):** SEA2024 (Vietnam/Cambodia/Thailand, 12 stops) and
+SKR2026 (South Korea: Seoul → Sokcho → Gyeongju → Busan → Seogwipo → Seoul). Note the Sheet is
+published with a ~1-5 minute delay, and the site caches Sheet data for 5 minutes per tab — a new
+row can take a few minutes (or a fresh tab) to show up.
 
-**South Korea** still needs its own trip-detail adjustments sorted out first (exact details still
-TBD), then the same `TripDestinations` treatment. General recipe for any future trip:
+General recipe for any future trip:
 1. Add rows to the existing `TripDestinations` tab: `trip_id | order | country | country_code | name | lat | lng | notes`.
 2. Coordinates: right-click a spot in Google Maps → the lat/lng shows at the top of the context
    menu, click to copy. **Set the lat/lng columns to Format → Number → Plain text before pasting**
    — a Dutch-locale Sheet can otherwise silently mangle "21.0285" into "210.285" (period read as a
-   thousands separator).
+   thousands separator). A real number with a decimal comma ("21,0285") is fine: since 2026-10 the
+   site reads both (`parseSheetNumber()` in `js/data/dataService.js`).
 3. It publishes automatically alongside the rest of the workbook (same "publish entire document"
    setting already in place) — no separate publish step needed per new tab.
 
