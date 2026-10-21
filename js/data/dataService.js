@@ -7,6 +7,18 @@
  * Future: swap the _loadSource() internals without touching any page code.
  */
 
+/**
+ * Parses a number from a published-Sheet CSV cell. The Sheet uses a Dutch locale, so real
+ * numbers come out with a decimal comma ("43,8563") — plain parseFloat would silently cut
+ * that to 43, which put every map coordinate up to ~100 km off. Cells typed as text keep
+ * their dot ("37.5665") and parse as-is. Returns NaN for empty/non-numeric cells.
+ */
+function parseSheetNumber(v) {
+  if (typeof v === 'number') return v;
+  const s = String(v ?? '').trim();
+  return parseFloat(/^-?\d+,\d+$/.test(s) ? s.replace(',', '.') : s);
+}
+
 class DataCache {
   constructor(ttlMs = 5 * 60 * 1000) {
     this.ttl = ttlMs;
@@ -133,7 +145,7 @@ class DataService {
     const dests = await this._load('trip_destinations');
     const filtered = tripId === null ? dests : dests.filter(d => String(d.trip_id) === String(tripId));
     return filtered
-      .map(d => ({ ...d, lat: parseFloat(d.lat), lng: parseFloat(d.lng), order: parseInt(d.order, 10) || 0 }))
+      .map(d => ({ ...d, lat: parseSheetNumber(d.lat), lng: parseSheetNumber(d.lng), order: parseInt(d.order, 10) || 0 }))
       .sort((a, b) => a.order - b.order);
   }
 
@@ -231,10 +243,10 @@ class DataService {
       this.getGrandTrips(), this.getGrandTripRegions(), this.getGrandTripBlocks(), this.getGrandTripDestinations(),
     ]);
     const byOrder = (a, b) => (parseInt(a.order, 10) || 0) - (parseInt(b.order, 10) || 0);
-    const toNum = v => (v === '' || v === undefined || v === null) ? '' : parseFloat(v);
+    const toNum = v => (v === '' || v === undefined || v === null) ? '' : parseSheetNumber(v);
     // Coordinates must come back as real numbers or null — the map views skip anything that
     // isn't typeof 'number', and '' / NaN would silently hide a stop.
-    const toCoord = v => { const n = parseFloat(v); return Number.isFinite(n) ? n : null; };
+    const toCoord = v => { const n = parseSheetNumber(v); return Number.isFinite(n) ? n : null; };
 
     return trips.map(t => {
       const tripRegions = regions

@@ -94,6 +94,32 @@ function continentDotClass(continent) {
   return 'continent-dot-other';
 }
 
+/**
+ * Groups numbered map stops that sit on the same spot (e.g. a trip starting and ending in
+ * Seoul), so they can share one "1 · 6" marker instead of the later one hiding the earlier.
+ * `stops` is an ordered array of objects with numeric lat/lng; returns
+ * [{ lat, lng, entries: [{ stop, index }] }] in order of first appearance.
+ */
+function groupStopsByPlace(stops) {
+  const groups = new Map();
+  stops.forEach((stop, index) => {
+    const key = stop.lat.toFixed(4) + ',' + stop.lng.toFixed(4);
+    if (!groups.has(key)) groups.set(key, { lat: stop.lat, lng: stop.lng, entries: [] });
+    groups.get(key).entries.push({ stop, index });
+  });
+  return [...groups.values()];
+}
+
+/** Leaflet divIcon options for a numbered stop marker — a circle, widened to a pill for "1 · 6". */
+function stopMarkerIconOptions(className, label, color) {
+  const width = label.length > 2 ? 12 + label.length * 7 : 22;
+  return {
+    className,
+    html: `<span style="background:${color}${width > 22 ? `;width:${width}px` : ''}">${label}</span>`,
+    iconSize: [width, 22], iconAnchor: [width / 2, 11],
+  };
+}
+
 function itemTypeIcon(type) {
   const t = (type || '').toLowerCase();
   const icons = {

@@ -113,15 +113,15 @@ function atlasRenderRouteLine(map, mapDiv, geojson, stops, opts = {}) {
     .bindTooltip(opts.homeLabel || '🇳🇱 Utrecht — vertrek & aankomst')
     .addTo(layerGroup);
 
-  validStops.forEach((s, i) => {
-    const color = ATLAS_STOP_COLORS[i % ATLAS_STOP_COLORS.length];
-    const icon = L.divIcon({
-      className: 'atlas-map-stop-icon',
-      html: `<span style="background:${color}">${i + 1}</span>`,
-      iconSize: [22, 22], iconAnchor: [11, 11],
-    });
-    L.marker([s.lat, s.lng], { icon })
-      .bindTooltip(escapeHTML(s.label || ''))
+  groupStopsByPlace(validStops).forEach(group => {
+    const first = group.entries[0].index;
+    const color = ATLAS_STOP_COLORS[first % ATLAS_STOP_COLORS.length];
+    const label = group.entries.map(e => e.index + 1).join(' · ');
+    const tooltip = group.entries.length > 1
+      ? group.entries.map(e => `${e.index + 1}. ${escapeHTML(e.stop.label || '')}`).join('<br>')
+      : escapeHTML(group.entries[0].stop.label || '');
+    L.marker([group.lat, group.lng], { icon: L.divIcon(stopMarkerIconOptions('atlas-map-stop-icon', label, color)) })
+      .bindTooltip(tooltip)
       .addTo(layerGroup);
   });
 

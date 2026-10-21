@@ -1178,17 +1178,19 @@ function rbRenderRouteLine(route, geojson) {
     .bindTooltip('🇳🇱 Nederland — vertrek & aankomst')
     .addTo(layerGroup);
 
-  stops.forEach(({ block, index }, i) => {
-    const color = RB_BLOCK_COLORS[index % RB_BLOCK_COLORS.length];
-    const icon = L.divIcon({
-      className: 'rb-map-stop-icon',
-      html: `<span style="background:${color}">${i + 1}</span>`,
-      iconSize: [22, 22], iconAnchor: [11, 11],
-    });
-    const flag = rbFlagFor(block);
+  const stopLabel = block => {
     const days = parseInt(block.days) || 0;
-    L.marker([block.lat, block.lng], { icon })
-      .bindTooltip(`${flag} ${escapeHTML(block.country || '')}${days ? ` — ${days} dag${days !== 1 ? 'en' : ''}` : ''}`)
+    return `${rbFlagFor(block)} ${escapeHTML(block.country || '')}${days ? ` — ${days} dag${days !== 1 ? 'en' : ''}` : ''}`;
+  };
+  // Legs sharing an anchor point (e.g. a country visited twice) share one "2 · 5" marker.
+  groupStopsByPlace(stops.map(s => ({ ...s, lat: s.block.lat, lng: s.block.lng }))).forEach(group => {
+    const color = RB_BLOCK_COLORS[group.entries[0].stop.index % RB_BLOCK_COLORS.length];
+    const label = group.entries.map(e => e.index + 1).join(' · ');
+    const tooltip = group.entries.length > 1
+      ? group.entries.map(e => `${e.index + 1}. ${stopLabel(e.stop.block)}`).join('<br>')
+      : stopLabel(group.entries[0].stop.block);
+    L.marker([group.lat, group.lng], { icon: L.divIcon(stopMarkerIconOptions('rb-map-stop-icon', label, color)) })
+      .bindTooltip(tooltip)
       .addTo(layerGroup);
   });
 
