@@ -29,6 +29,13 @@ what's already in localStorage" section (below) originally flagged. Two pieces:
   Maldives, UAE, Seychelles, ABC Islands, Palau, Papua New Guinea, Uruguay, Guyana) — dry-run
   by default, `--push` to actually POST.
 
+**Apps Script source now lives in the repo (2026-09-28): `apps-script/Code.gs` +
+`apps-script/GrandTripSync.gs`** — these are the source of truth. Rebuilt from the client
+payload shapes because no copy existed outside Google (the "not checked into this repo" note
+further down is historical). To change the live script: paste each WHOLE file over its
+counterpart in the Apps Script editor (never a single function — that wipes the helpers), then
+Deploy → Manage deployments → edit → Version: New version (keeps the same `/exec` URL).
+
 **Note (2026-08): `js/pages/routeBuilder.js` is now 4 files** (`routeBuilderCore.js`,
 `routeBuilderContent.js`, `routeBuilderUI.js`, `routeBuilder.js` — see `CLAUDE.md`'s
 "Route Builder architecture"). This plan predates that split — file references below

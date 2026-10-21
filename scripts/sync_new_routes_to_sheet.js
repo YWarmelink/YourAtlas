@@ -46,6 +46,7 @@ function buildGrandTripPayload(route) {
   }));
   const destinations = (route.blocks || []).flatMap(b => (b.destinations || []).map((d, i) => ({
     destination_id: d.id, block_id: b.id, order: i, name: d.name, notes: d.notes || '',
+    country_code: b.country_code || '', country: b.country || '',
   })));
   return { grand_trip, regions, blocks, destinations };
 }

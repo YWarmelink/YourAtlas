@@ -232,6 +232,9 @@ class DataService {
     ]);
     const byOrder = (a, b) => (parseInt(a.order, 10) || 0) - (parseInt(b.order, 10) || 0);
     const toNum = v => (v === '' || v === undefined || v === null) ? '' : parseFloat(v);
+    // Coordinates must come back as real numbers or null — the map views skip anything that
+    // isn't typeof 'number', and '' / NaN would silently hide a stop.
+    const toCoord = v => { const n = parseFloat(v); return Number.isFinite(n) ? n : null; };
 
     return trips.map(t => {
       const tripRegions = regions
@@ -249,10 +252,11 @@ class DataService {
           id: b.block_id, country: b.country_name, country_code: b.country_code,
           region_id: b.region_id || '', days: b.days === '' ? '' : (parseInt(b.days, 10) || 0),
           budget: toNum(b.budget), notes: b.notes, transport_to_next: b.transport_to_next || '',
+          lat: toCoord(b.lat), lng: toCoord(b.lng),
           destinations: destinations
             .filter(d => d.block_id === b.block_id)
             .sort(byOrder)
-            .map(d => ({ id: d.destination_id, name: d.name, notes: d.notes || '' })),
+            .map(d => ({ id: d.destination_id, name: d.name, notes: d.notes || '', lat: toCoord(d.lat), lng: toCoord(d.lng) })),
         }));
 
       return {

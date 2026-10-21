@@ -376,13 +376,42 @@ function rbBuildGrandTripPayload(route) {
     block_id: b.id, grand_trip_id: route.id, region_id: b.region_id || '', order: i,
     country_code: b.country_code, country_name: b.country, days: b.days, budget: b.budget,
     notes: b.notes, transport_to_next: b.transport_to_next || '',
+    lat: b.lat ?? '', lng: b.lng ?? '',
   }));
 
   const destinations = (route.blocks || []).flatMap(b => (b.destinations || []).map((d, i) => ({
     destination_id: d.id, block_id: b.id, order: i, name: d.name, notes: d.notes || '',
+    country_code: b.country_code || '', country: b.country || '',
+    lat: d.lat ?? '', lng: d.lng ?? '',
   })));
 
   return { grand_trip, regions, blocks, destinations };
+}
+
+/**
+ * Copies lat/lng from each local route onto its Sheet version wherever the Sheet has none.
+ * Routes synced before the Sheet had lat/lng columns came back coordinate-less and wiped
+ * every map view on load. Coordinates aren't editable in the UI, so the local value is
+ * never stale. Blocks match by position + country_code, destinations by name within that
+ * block (block/destination ids differ per browser, see handleDestinationsBulkUpdate).
+ */
+function rbKeepLocalCoords(sheetRoutes, localRoutes) {
+  const hasCoord = o => typeof o.lat === 'number' && typeof o.lng === 'number';
+  const localById = new Map(localRoutes.map(r => [r.id, r]));
+  sheetRoutes.forEach(route => {
+    const local = localById.get(route.id);
+    if (!local) return;
+    (route.blocks || []).forEach((block, i) => {
+      const lb = (local.blocks || [])[i];
+      if (!lb || lb.country_code !== block.country_code) return;
+      if (!hasCoord(block) && hasCoord(lb)) { block.lat = lb.lat; block.lng = lb.lng; }
+      const localDests = new Map((lb.destinations || []).filter(hasCoord).map(d => [d.name, d]));
+      (block.destinations || []).forEach(d => {
+        const ld = localDests.get(d.name);
+        if (!hasCoord(d) && ld) { d.lat = ld.lat; d.lng = ld.lng; }
+      });
+    });
+  });
 }
 
 function rbPushGrandTripToSheet(route) {

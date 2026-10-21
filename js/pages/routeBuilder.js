@@ -277,6 +277,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (sheetRoutes.length) {
       const sheetIds = new Set(sheetRoutes.map(r => r.id));
       const localOnly = rbRoutes.filter(r => !sheetIds.has(r.id));
+      rbKeepLocalCoords(sheetRoutes, rbRoutes);
       rbRoutes = [...sheetRoutes, ...localOnly];
       rbSave();
 
