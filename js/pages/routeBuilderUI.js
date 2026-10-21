@@ -670,6 +670,21 @@ function rbRenderBlockRow(b, r, route) {
 
 // ---- overview mode: read-only trip-at-a-glance list (map lives in the HTML alongside it) ----
 
+// Block ids whose "Details" (budget + per-destination notes) are expanded in Overview. Kept
+// in memory only, so it survives re-renders and switching routes but not a page reload.
+const rbOverviewExpanded = new Set();
+
+function rbOverviewHasDetails(b) {
+  return (b.destinations || []).some(d => d.name && d.notes) || rbOverviewBudgetLine(b) !== '';
+}
+
+function rbOverviewBudgetLine(b) {
+  const budget = parseFloat(b.budget);
+  if (isNaN(budget)) return '';
+  const days = parseInt(b.days) || 0;
+  return `💶 €${Math.round(budget).toLocaleString('en')} total${days > 0 ? ` · ±€${Math.round(budget / days)}/day` : ''}`;
+}
+
 function rbRenderOverviewBlocks(route) {
   const container = document.getElementById('rbOverviewBlocks');
   if (!container) return;
@@ -686,7 +701,12 @@ function rbRenderOverviewBlocks(route) {
   const ranges = rbComputeRanges(route.blocks);
   route.regions = route.regions || [];
 
-  let html = '';
+  const expandable = route.blocks.filter(rbOverviewHasDetails);
+  const allOpen = expandable.length > 0 && expandable.every(b => rbOverviewExpanded.has(b.id));
+  let html = expandable.length ? `
+    <div class="rb-overview-toolbar">
+      <button class="btn btn-outline btn-sm" data-ov-action="toggle-all">${allOpen ? '▾ Collapse all' : '▸ Expand all'}</button>
+    </div>` : '';
   let i = 0;
   while (i < route.blocks.length) {
     const b = route.blocks[i];
@@ -702,8 +722,9 @@ function rbRenderOverviewBlocks(route) {
         <div class="rb-overview-region">
           <div class="rb-overview-region-header">
             <span class="rb-overview-region-name">${escapeHTML(region.name || 'Region')}</span>
-            <span class="rb-overview-region-stat">📅 ${totalDays} days</span>
+            <span class="rb-overview-region-stat">📅 ${totalDays} days${region.season ? ` · 🌤️ ${escapeHTML(region.season)}` : ''}</span>
           </div>
+          ${region.notes ? `<div class="rb-overview-region-note">${escapeHTML(region.notes)}</div>` : ''}
           ${groupBlocks.map((bl, k) => rbRenderOverviewBlockRow(bl, groupRanges[k], route)).join('')}
         </div>`;
       i = j;
@@ -723,6 +744,10 @@ function rbRenderOverviewBlockRow(b, r, route) {
   const name = b.country || 'Country';
   const rangeLabel = r.days > 0 ? `Day ${r.start}${r.end !== r.start ? '–' + r.end : ''} · ${r.days}d` : '—';
   const destNames = (b.destinations || []).map(d => d.name).filter(Boolean);
+  const hasDetails = rbOverviewHasDetails(b);
+  const open = hasDetails && rbOverviewExpanded.has(b.id);
+  const budgetLine = rbOverviewBudgetLine(b);
+  const destNotes = (b.destinations || []).filter(d => d.name && d.notes);
 
   return `
     <div class="rb-overview-block" style="--block-color:${color}">
@@ -730,11 +755,20 @@ function rbRenderOverviewBlockRow(b, r, route) {
       <div class="rb-overview-block-body">
         <div class="rb-overview-block-top">
           <span class="rb-overview-block-name">${escapeHTML(name)}</span>
-          <span class="rb-overview-block-range">${rangeLabel}</span>
+          <span class="rb-overview-block-meta">
+            <span class="rb-overview-block-range">${rangeLabel}</span>
+            ${hasDetails ? `<button class="rb-overview-details-btn" data-ov-action="toggle" data-block-id="${b.id}" aria-expanded="${open}">${open ? '▾' : '▸'} Details</button>` : ''}
+          </span>
         </div>
         ${destNames.length ? `<div class="rb-overview-block-dests">📍 ${destNames.map(n => escapeHTML(n)).join(' · ')}</div>` : ''}
         ${b.notes ? `<div class="rb-overview-block-note">${escapeHTML(b.notes)}</div>` : ''}
         ${b.transport_to_next ? `<div class="rb-overview-block-transport">→ ${escapeHTML(b.transport_to_next)}</div>` : ''}
+        ${open ? `
+          <div class="rb-overview-details">
+            ${budgetLine ? `<div class="rb-overview-details-budget">${budgetLine}</div>` : ''}
+            ${destNotes.map(d => `
+              <div class="rb-overview-dest-note"><span class="rb-overview-dest-name">${escapeHTML(d.name)}</span> — ${escapeHTML(d.notes)}</div>`).join('')}
+          </div>` : ''}
       </div>
     </div>`;
 }
@@ -1594,6 +1628,22 @@ function rbBindEvents() {
   document.getElementById('rbModeToggleBtn').addEventListener('click', () => {
     rbEditorMode = rbEditorMode === 'overview' ? 'edit' : 'overview';
     rbRenderEditor();
+  });
+
+  // Overview "Details" toggles — one delegated listener, since the list is re-rendered wholesale.
+  document.getElementById('rbOverviewBlocks').addEventListener('click', e => {
+    const btn = e.target.closest('[data-ov-action]');
+    const route = rbGetCurrent();
+    if (!btn || !route) return;
+    if (btn.dataset.ovAction === 'toggle') {
+      const id = btn.dataset.blockId;
+      if (rbOverviewExpanded.has(id)) rbOverviewExpanded.delete(id); else rbOverviewExpanded.add(id);
+    } else if (btn.dataset.ovAction === 'toggle-all') {
+      const ids = route.blocks.filter(rbOverviewHasDetails).map(b => b.id);
+      const allOpen = ids.every(id => rbOverviewExpanded.has(id));
+      ids.forEach(id => (allOpen ? rbOverviewExpanded.delete(id) : rbOverviewExpanded.add(id)));
+    }
+    rbRenderOverviewBlocks(route);
   });
 
   document.querySelectorAll('.rb-map-mode-btn').forEach(btn => {

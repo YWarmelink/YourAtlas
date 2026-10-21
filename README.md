@@ -58,7 +58,9 @@ trips that span months, not weeks. Lives at `route-builder.html`.
   text, grouped under any Regional Blocks) — instead of the full edit form. The
   "✎ Edit Route" button reveals the same form as before (all fields still fully
   editable there); a brand-new empty route opens straight into Edit since there's
-  nothing yet to show in an overview. See `CHANGELOG.md` for why.
+  nothing yet to show in an overview. See `CHANGELOG.md` for why. Since 2026-10 each
+  country has a "▸ Details" toggle (plus "Expand all" at the top) that reveals its budget
+  (total + per day) and every destination's own note; region headers show season + note.
 - **Calendar view**: set an optional start date to see the route laid out on real
   month grids, colored by country.
 - **World map view**: highlights the route's countries on the same Leaflet world map
