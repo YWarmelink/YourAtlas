@@ -1166,8 +1166,8 @@ function rbRenderRouteLine(route, geojson) {
   }).addTo(layerGroup);
 
   const stopLatlngs = stops.map(({ block }) => [block.lat, block.lng]);
-  const latlngs = [RB_HOME_LATLNG, ...stopLatlngs, RB_HOME_LATLNG];
-  L.polyline(latlngs, { color: '#0ea5e9', weight: 3, opacity: 0.85, dashArray: '6 8' }).addTo(layerGroup);
+  L.polyline(stopLatlngs, { color: '#0ea5e9', weight: 3, opacity: 0.85, dashArray: '6 8' }).addTo(layerGroup);
+  rbAddFaintHomeLegs(layerGroup, stopLatlngs, '#0ea5e9');
 
   const homeIcon = L.divIcon({
     className: 'rb-map-stop-icon rb-map-stop-icon--home',
@@ -1194,7 +1194,26 @@ function rbRenderRouteLine(route, geojson) {
 
   rbMiniMapLineLayer = layerGroup.addTo(rbMiniMap);
   rbMiniMap.setMaxZoom(9);
-  rbMiniMap.fitBounds(L.latLngBounds(latlngs), { padding: [30, 30] });
+  rbFitToStops(stopLatlngs);
+}
+
+/** Fits the map to the route's own stops; a single stop gets a country-level view instead of max zoom. */
+function rbFitToStops(latlngs) {
+  const bounds = L.latLngBounds(latlngs);
+  if (bounds.getNorthEast().equals(bounds.getSouthWest())) rbMiniMap.setView(latlngs[0], 5);
+  else rbMiniMap.fitBounds(bounds, { padding: [40, 40] });
+}
+
+/**
+ * The legs from home to the first stop and from the last stop back home, drawn faint — the
+ * view fits the route's own stops (not home), so these usually run off-screen; drawing them
+ * at full strength made every non-European route shrink to a corner of the map. Same
+ * treatment as the Trips map (atlasRenderRouteLine in js/utils/routeMap.js).
+ */
+function rbAddFaintHomeLegs(layerGroup, latlngs, color) {
+  [[RB_HOME_LATLNG, latlngs[0]], [latlngs[latlngs.length - 1], RB_HOME_LATLNG]].forEach(leg => {
+    L.polyline(leg, { color, weight: 2, opacity: 0.35, dashArray: '2 8' }).addTo(layerGroup);
+  });
 }
 
 /**
@@ -1239,8 +1258,8 @@ function rbRenderDetailedRouteLine(route, geojson) {
   }).addTo(layerGroup);
 
   const pointLatlngs = points.map(({ dest }) => [dest.lat, dest.lng]);
-  const latlngs = [RB_HOME_LATLNG, ...pointLatlngs, RB_HOME_LATLNG];
-  L.polyline(latlngs, { color: '#f97316', weight: 2, opacity: 0.85, dashArray: '4 6' }).addTo(layerGroup);
+  L.polyline(pointLatlngs, { color: '#f97316', weight: 2, opacity: 0.85, dashArray: '4 6' }).addTo(layerGroup);
+  rbAddFaintHomeLegs(layerGroup, pointLatlngs, '#f97316');
 
   const homeIcon = L.divIcon({
     className: 'rb-map-stop-icon rb-map-stop-icon--home',
@@ -1263,7 +1282,7 @@ function rbRenderDetailedRouteLine(route, geojson) {
 
   rbMiniMapDetailedLayer = layerGroup.addTo(rbMiniMap);
   rbMiniMap.setMaxZoom(12);
-  rbMiniMap.fitBounds(L.latLngBounds(latlngs), { padding: [30, 30] });
+  rbFitToStops(pointLatlngs);
 }
 
 // ---- shared helpers ----

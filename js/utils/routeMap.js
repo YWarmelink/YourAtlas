@@ -64,8 +64,8 @@ function atlasEnsureMiniMap(mapDiv) {
 
 /**
  * Draws a dashed line through `stops` ([{lat, lng, label}], already home-to-home excluded —
- * this function adds the Utrecht start/end itself) on `map`, with faint country outlines from
- * `geojson` underneath. Shows an empty-state message in `mapDiv` instead if fewer than 2 stops
+ * this function adds faint Utrecht start/end legs itself) on `map`, with faint country outlines
+ * from `geojson` underneath. The view is fitted to the stops only, not to home. Shows an empty-state message in `mapDiv` instead if fewer than 2 stops
  * have valid coordinates. Returns the layerGroup that was added to the map, or null.
  */
 function atlasRenderRouteLine(map, mapDiv, geojson, stops, opts = {}) {
@@ -89,13 +89,20 @@ function atlasRenderRouteLine(map, mapDiv, geojson, stops, opts = {}) {
   }).addTo(layerGroup);
 
   const stopLatLngs = validStops.map(s => [s.lat, s.lng]);
-  const latlngs = [ATLAS_HOME_LATLNG, ...stopLatLngs, ATLAS_HOME_LATLNG];
-  L.polyline(latlngs, {
+  L.polyline(stopLatLngs, {
     color: opts.lineColor || '#0ea5e9',
     weight: opts.lineWeight || 3,
     opacity: 0.85,
     dashArray: opts.dashArray || '6 8',
   }).addTo(layerGroup);
+  // The legs to and from home stay visible but faint — they usually run off-screen, since
+  // the view fits the trip's own stops (otherwise a trip in Asia shrinks to a corner of a
+  // Europe-to-Asia view).
+  [[ATLAS_HOME_LATLNG, stopLatLngs[0]], [stopLatLngs[stopLatLngs.length - 1], ATLAS_HOME_LATLNG]].forEach(leg => {
+    L.polyline(leg, {
+      color: opts.lineColor || '#0ea5e9', weight: 2, opacity: 0.35, dashArray: '2 8',
+    }).addTo(layerGroup);
+  });
 
   const homeIcon = L.divIcon({
     className: 'atlas-map-stop-icon atlas-map-stop-icon--home',
@@ -120,6 +127,6 @@ function atlasRenderRouteLine(map, mapDiv, geojson, stops, opts = {}) {
 
   layerGroup.addTo(map);
   map.setMaxZoom(9);
-  map.fitBounds(L.latLngBounds(latlngs), { padding: [30, 30] });
+  map.fitBounds(L.latLngBounds(stopLatLngs), { padding: [40, 40] });
   return layerGroup;
 }
