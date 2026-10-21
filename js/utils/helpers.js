@@ -34,17 +34,41 @@ function getTripFlag(trip) {
   return '✈️';
 }
 
+/**
+ * Parses a date from the Sheet (or a date input) into a local Date, or null. The Sheet writes
+ * dates day-first ("30-09-2026"); plain `new Date()` reads that month-first, so any day above
+ * 12 became Invalid Date and anything else landed in the wrong month. Also accepts ISO
+ * "2026-09-30" (date inputs, Route Builder) and "/" or "." separators.
+ */
+function parseSheetDate(str) {
+  if (!str) return null;
+  const s = String(str).trim();
+  let m = s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
+  if (m) return new Date(+m[1], +m[2] - 1, +m[3]);
+  m = s.match(/^(\d{1,2})[-/.](\d{1,2})[-/.](\d{4})$/);
+  if (m) return new Date(+m[3], +m[2] - 1, +m[1]);
+  const d = new Date(s);
+  return isNaN(d) ? null : d;
+}
+
+/** Sheet date → "YYYY-MM-DD" (what <input type="date"> needs), or the original string if unparseable. */
+function sheetDateToISO(str) {
+  const d = parseSheetDate(str);
+  if (!d) return str || '';
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
 function formatDate(str) {
   if (!str) return '';
-  const d = new Date(str);
-  if (isNaN(d)) return str;
+  const d = parseSheetDate(str);
+  if (!d) return str;
   return d.toLocaleDateString('nl-NL', { year: 'numeric', month: 'long', day: 'numeric' });
 }
 
 function formatDateShort(str) {
   if (!str) return '';
-  const d = new Date(str);
-  if (isNaN(d)) return str;
+  const d = parseSheetDate(str);
+  if (!d) return str;
   return d.toLocaleDateString('nl-NL', { year: 'numeric', month: 'short' });
 }
 

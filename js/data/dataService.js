@@ -272,7 +272,7 @@ class DataService {
         }));
 
       return {
-        id: t.grand_trip_id, name: t.name, status: t.status, start_date: t.start_date,
+        id: t.grand_trip_id, name: t.name, status: t.status, start_date: sheetDateToISO(t.start_date),
         description: t.description, travel_style: t.travel_style, climate_summary: t.climate_summary,
         best_starting_month: t.best_starting_month, notes: t.notes, created_at: t.created_at,
         regions: tripRegions, blocks: tripBlocks,

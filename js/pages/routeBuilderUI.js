@@ -502,7 +502,7 @@ function rbRenderEditor() {
   if (!route) { rbShowList(); return; }
 
   document.getElementById('rbNameInput').value = route.name || '';
-  document.getElementById('rbStartDateInput').value = route.start_date || '';
+  document.getElementById('rbStartDateInput').value = sheetDateToISO(route.start_date);
   document.getElementById('rbStatusInput').value = route.status || 'Idea';
   document.getElementById('rbTravelStyleInput').value = route.travel_style || '';
   document.getElementById('rbBestMonthInput').value = route.best_starting_month || '';
@@ -918,7 +918,8 @@ function rbRenderCalendar(route) {
   const panel = document.getElementById('rbCalendarPanel');
   if (!panel) return;
 
-  if (!route.start_date) {
+  const start = parseSheetDate(route.start_date);
+  if (!start) {
     panel.innerHTML = `<div class="empty-message" style="padding:2rem 1rem"><span class="empty-icon">📅</span><p>Set a start date above to see this route on a calendar.</p></div>`;
     return;
   }
@@ -937,7 +938,6 @@ function rbRenderCalendar(route) {
     for (let d = r.start; d <= r.end; d++) dayBlockIndex[d - 1] = i;
   });
 
-  const start = new Date(route.start_date + 'T00:00:00');
   const end = new Date(start);
   end.setDate(end.getDate() + totalDays - 1);
 

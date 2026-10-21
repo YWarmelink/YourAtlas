@@ -90,8 +90,9 @@ function render() {
   if (sort === 'name-az')    result.sort((a, b) => (a.trip_name || '').localeCompare(b.trip_name || ''));
   if (sort === 'name-za')    result.sort((a, b) => (b.trip_name || '').localeCompare(a.trip_name || ''));
   if (sort === 'duration')   result.sort((a, b) => (parseInt(b.duration_days) || 0) - (parseInt(a.duration_days) || 0));
-  if (sort === 'date-new')   result.sort((a, b) => new Date(b.start_date || 0) - new Date(a.start_date || 0));
-  if (sort === 'date-old')   result.sort((a, b) => new Date(a.start_date || 0) - new Date(b.start_date || 0));
+  const startTime = t => parseSheetDate(t.start_date)?.getTime() || 0;
+  if (sort === 'date-new')   result.sort((a, b) => startTime(b) - startTime(a));
+  if (sort === 'date-old')   result.sort((a, b) => startTime(a) - startTime(b));
 
   const grid  = document.getElementById('tripsGrid');
   const count = document.getElementById('tripsCount');
@@ -114,10 +115,9 @@ function renderTimeline(trips) {
   const byYear = {};
   trips.forEach(t => {
     let year = 'Upcoming';
-    if (t.start_date) {
-      const d = new Date(t.start_date);
-      if (!isNaN(d)) year = String(d.getFullYear());
-    }
+    // Upcoming = not started yet (or no date at all); everything else goes under its year.
+    const d = parseSheetDate(t.start_date);
+    if (d && d <= new Date()) year = String(d.getFullYear());
     if (!byYear[year]) byYear[year] = [];
     byYear[year].push(t);
   });
