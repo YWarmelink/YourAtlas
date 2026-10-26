@@ -20,8 +20,8 @@ free text in `notes` / `transport_to_next`, or isn't recorded at all:
 | Insurance, vaccinations, gear, home costs, buffer | nowhere |
 
 The East & Southeast Asia Grand Tour 🐉 shows how big the gap is: the app says **€18,700**, and
-the full-cost Excel model (`Downloads/Wereldreis_Oost-ZO-Azie_Begroting.xlsx`, built
-2026-10-26) comes to **≈€33,700** at the same travel style, of which ~€15,000 isn't in the app.
+the full-cost Excel model (`planning/Wereldreis_Oost-ZO-Azie_Begroting.xlsx`, built
+2026-10-26, prices researched 2026-10) comes to **≈€33,600** at the same travel style, of which ~€15,000 isn't in the app.
 That workbook is the working prototype for this plan: its tabs (Per land / Vervoer / Extra's /
 Vooraf & vast / Instellingen) map directly onto the data model below.
 
