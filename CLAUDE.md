@@ -73,8 +73,10 @@ short trip + a connecting flight) and **Nieuw-Zeeland Zuidereiland 🏔️** (21
 multiple stops, even though the trip itself is already reasonably long). Considered and left
 unchanged: Suriname 🛶 (11d, but a direct 9h20 flight, no connection dead-time), Vietnam 🛵/Cuba 🎷
 (17-18d with one connection each — long enough to absorb it), Namibië 🏜️ (20d despite no direct
-flight — already generous). Budget is a **daily rate**, not a trip total, so bumping `days` alone
-is correct — no budget math needed. Apply the same 2-day-buffer check to any future single-country
+flight — already generous). A block's `budget` is its **total** for the leg (daily rate × days —
+the UI shows "€X total · ±€Y/day" and sums blocks into the route total), so bumping `days` must
+scale `budget` at the same daily rate. (This doc used to say the opposite; 13 routes were bumped
+without it until the 2026-10 fix — see `CHANGELOG.md`.) Apply the same 2-day-buffer check to any future single-country
 route before shipping it, rather than always defaulting to leaving it as-is.
 
 ## Model selection for delegated subagents

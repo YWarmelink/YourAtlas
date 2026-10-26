@@ -7513,7 +7513,7 @@ function rbBuildVietnamRoute() {
 function rbBuildNewZealandSouthIslandRoute() {
   return rbBuildFlatSeedRoute('New Zealand South Island 🏔️', [
     {
-      code: 'NZ', name: 'New Zealand', days: 23, budget: 2268, lat: -45.0312, lng: 168.6626,
+      code: 'NZ', name: 'New Zealand', days: 23, budget: 2484, lat: -45.0312, lng: 168.6626,
       destinations: [
         { name: 'Christchurch', lat: -43.5321, lng: 172.6362 },
         { name: 'Franz Josef & Fox Glaciers', lat: -43.4667, lng: 170.1667 },
@@ -7531,7 +7531,7 @@ function rbBuildNewZealandSouthIslandRoute() {
     travel_style: 'Backpacking between budget and comfort — rental car, at least one Great Walk.',
     climate_summary: 'September-November is the New Zealand spring — stable weather, fewer crowds than the summer peak (December-February).',
     description: 'Milford Sound, glaciers, Queenstown and the Catlins — the South Island on its own.',
-    notes: "Split off from New Zealand 🥝 (itself already split off from Oceania Grand Expedition 🌊 — see ROUTE_BUILDER_MODULES.md) as part of this second batch of standalone countries (2026-08, Youri's own top-10 pick) — \"one of the most booked standalone trips worldwide\". Country and budget (daily rate) are carried over unchanged (incl. the 2026-08 route-logic fix for the Kaikoura/Abel Tasman order); days increased from 21 to 23 as a long-haul flight buffer (see CLAUDE.md). New Zealand 🥝 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
+    notes: "Split off from New Zealand 🥝 (itself already split off from Oceania Grand Expedition 🌊 — see ROUTE_BUILDER_MODULES.md) as part of this second batch of standalone countries (2026-08, Youri's own top-10 pick) — \"one of the most booked standalone trips worldwide\". Country and budget (daily rate) are carried over unchanged (incl. the 2026-08 route-logic fix for the Kaikoura/Abel Tasman order); days increased from 21 to 23 as a long-haul flight buffer, block budget scaled along at the same daily rate (2026-10 fix — it had been left at the old day count) (see CLAUDE.md). New Zealand 🥝 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
   });
 }
 
@@ -7630,7 +7630,7 @@ function rbBuildSicilyRoute() {
 
 function rbBuildJordanRoute() {
   const med = () => ({
-    code: 'JO', name: 'Jordan', days: 10, budget: 500, lat: 31.9454, lng: 35.9284,
+    code: 'JO', name: 'Jordan', days: 10, budget: 625, lat: 31.9454, lng: 35.9284,
     destinations: [
       { name: 'Amman', lat: 31.9454, lng: 35.9284, notes: "The Citadel (Jabal al-Qal'a) mixes the Temple of Hercules ruins with the Umayyad Palace and gives the best panoramic view over the 6,000-seat Roman Theatre below and downtown; pair it with an evening stroll on Rainbow Street (cafés, murals, rooftop shisha), which only really comes alive from late afternoon onward — budget a half-day for Citadel + Theatre and do Rainbow Street after dinner." },
       { name: 'Jerash', lat: 32.2811, lng: 35.8994, notes: 'Beyond the well-known Roman colonnades, the restored Hippodrome still hosts a live "Roman Army and Chariot Experience" show (gladiator fights, marching legionaries, a real chariot race) at 11:00 and 14:00 daily — worth timing your visit around one of these two slots since it\'s easy to miss if you just wander the ruins.' },
@@ -7651,7 +7651,7 @@ function rbBuildJordanRoute() {
     travel_style: 'Rental car or organized tour — Amman, Jerash, Petra, Wadi Rum and the Dead Sea.',
     climate_summary: 'December gives pleasant daytime temperatures, including for the hike to Petra\'s Treasury and for camping in Wadi Rum.',
     description: 'Petra, Wadi Rum and the Dead Sea — short and punchy, Petra alone carries the trip.',
-    notes: 'Split off from Egypt & Arabian Peninsula 🐪 (itself already split off from Mediterranean Civilizations Expedition 🏛️ — see ROUTE_BUILDER_MODULES.md) as part of this second batch of standalone countries (2026-08, Youri\'s own top-10 pick) — "Petra alone carries it". Country and daily budget are carried over unchanged; days increased from 8 to 10 as a long-haul flight buffer (see CLAUDE.md) — at 8 days this was also the shortest of this second batch, so a connecting flight took up relatively the largest share of the trip. Egypt & Arabian Peninsula 🐪 and Mediterranean Civilizations Expedition 🏛️ themselves continue to exist unchanged.',
+    notes: 'Split off from Egypt & Arabian Peninsula 🐪 (itself already split off from Mediterranean Civilizations Expedition 🏛️ — see ROUTE_BUILDER_MODULES.md) as part of this second batch of standalone countries (2026-08, Youri\'s own top-10 pick) — "Petra alone carries it". Country and daily budget are carried over unchanged; days increased from 8 to 10 as a long-haul flight buffer, block budget scaled along at the same daily rate (2026-10 fix — it had been left at the old day count) (see CLAUDE.md) — at 8 days this was also the shortest of this second batch, so a connecting flight took up relatively the largest share of the trip. Egypt & Arabian Peninsula 🐪 and Mediterranean Civilizations Expedition 🏛️ themselves continue to exist unchanged.',
   });
 }
 
@@ -13265,6 +13265,47 @@ function rbMigrateLonghaulBuffer() {
   if (touched) rbSave();
 }
 
+/**
+ * The +2-day long-haul buffer (rbMigrateLonghaulBuffer above, and the same bump baked into the
+ * later standalone batches) raised `days` but left `budget` alone, on the mistaken belief that
+ * `budget` is a daily rate. It is the block's TOTAL (the UI shows "€X total · ±€Y/day" and sums
+ * blocks into the route total), so these 13 blocks were under-budgeted by two days' worth.
+ * Scales each one at its own unchanged daily rate. Only patches a block that still has exactly
+ * the old budget at the new day count, so a hand-edited budget is left alone.
+ */
+function rbMigrateLonghaulBufferBudgets() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_10_LONGHAUL_BUFFER_BUDGETS)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_10_LONGHAUL_BUFFER_BUDGETS, '1');
+
+  let touched = false;
+  RB_LONGHAUL_BUFFER_BUDGET_FIXES.forEach(([routeName, code, days, oldBudget, newBudget]) => {
+    const route = rbRoutes.find(r => r.name === routeName);
+    if (!route) return;
+    const block = route.blocks.find(b => b.country_code === code && b.days === days && b.budget === oldBudget);
+    if (block) { block.budget = newBudget; touched = true; }
+  });
+
+  if (touched) rbSave();
+}
+
+// [route name, country code, days, old budget, new budget] — shared with
+// scripts/fix_longhaul_buffer_budgets_in_sheet.js, which applies the same fix to the Sheet.
+const RB_LONGHAUL_BUFFER_BUDGET_FIXES = [
+  ['Cairns & Great Barrier Reef 🐠', 'AU', 23, 2310, 2530],
+  ['Fiji 🌊', 'FJ', 16, 1050, 1200],
+  ['Fiji & Vanuatu 🐚', 'VU', 13, 1045, 1235],
+  ['Gabon 🏕️', 'GA', 11, 855, 1045],
+  ['Jordan 🏺', 'JO', 10, 500, 625],
+  ['Mauritius 🦤', 'MU', 9, 1000, 1286],
+  ['Mongolia 🦅', 'MN', 12, 650, 780],
+  ['New Zealand South Island 🏔️', 'NZ', 23, 2268, 2484],
+  ['New Zealand North Island 🌿', 'NZ', 16, 1120, 1280],
+  ['São Tomé & Príncipe 🍫', 'ST', 11, 653, 798],
+  ['Sydney/Byron & Great Ocean Road 🦘', 'AU', 14, 1050, 1225],
+  ['Tasmania 🐾', 'AU', 14, 1260, 1470],
+  ['Tunisia 🧿', 'TN', 8, 220, 293],
+];
+
 // ---- Standalone single-country routes, batch 3 (2026-08, Youri's second top-10) ----
 
 function rbSeedStandaloneCountryRoutesBatch3() {
@@ -13379,7 +13420,7 @@ function rbBuildCentralAsiaRoute() {
 function rbBuildCairnsGreatBarrierReefRoute() {
   return rbBuildFlatSeedRoute('Cairns & Great Barrier Reef 🐠', [
     {
-      code: 'AU', name: 'Australia', days: 23, budget: 2310, lat: -16.9203, lng: 145.771,
+      code: 'AU', name: 'Australia', days: 23, budget: 2530, lat: -16.9203, lng: 145.771,
       destinations: [
         { name: 'Cairns', lat: -16.9203, lng: 145.7710 },
         { name: 'Daintree Rainforest', lat: -16.1667, lng: 145.4167 },
@@ -13395,7 +13436,7 @@ function rbBuildCairnsGreatBarrierReefRoute() {
     travel_style: 'Backpacking between budget and comfort — boat trips for the Great Barrier Reef, camper/rental car for the coast.',
     climate_summary: 'June-August is dry season near Cairns — no jellyfish season (November-May).',
     description: 'Cairns, the Daintree Rainforest, the Great Barrier Reef, the Whitsundays and Fraser Island.',
-    notes: "Split off from Tropical/Outback Australia 🐊 (itself already split off from Oceania Grand Expedition 🌊 — see ROUTE_BUILDER_MODULES.md) as part of this third batch of standalone countries (2026-08, Youri's own second top-10 pick). Country and budget (daily rate) are carried over unchanged; days increased from 21 to 23 as a long-haul flight buffer (see CLAUDE.md). Tropical/Outback Australia 🐊 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
+    notes: "Split off from Tropical/Outback Australia 🐊 (itself already split off from Oceania Grand Expedition 🌊 — see ROUTE_BUILDER_MODULES.md) as part of this third batch of standalone countries (2026-08, Youri's own second top-10 pick). Country and budget (daily rate) are carried over unchanged; days increased from 21 to 23 as a long-haul flight buffer, block budget scaled along at the same daily rate (2026-10 fix — it had been left at the old day count) (see CLAUDE.md). Tropical/Outback Australia 🐊 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
   });
 }
 
@@ -13445,7 +13486,7 @@ function rbBuildJamaicaRoute() {
 function rbBuildFijiRoute() {
   return rbBuildFlatSeedRoute('Fiji 🌊', [
     {
-      code: 'FJ', name: 'Fiji', days: 16, budget: 1050, lat: -17.7765, lng: 177.4356,
+      code: 'FJ', name: 'Fiji', days: 16, budget: 1200, lat: -17.7765, lng: 177.4356,
       destinations: [
         { name: 'Nadi', lat: -17.7765, lng: 177.4356 },
         { name: 'Mamanuca Islands', lat: -17.6667, lng: 177.1000 },
@@ -13460,7 +13501,7 @@ function rbBuildFijiRoute() {
     travel_style: 'Backpacking between budget and comfort — boat pass (Yasawa Flyer) between the island groups.',
     climate_summary: 'May-June is the dry season across the whole Pacific, well before cyclone season (November-April).',
     description: 'Nadi, the Mamanuca and Yasawa Islands and Taveuni — classic Pacific island-hopping.',
-    notes: "Split off from Pacific Islands 🌺 (itself already split off from Oceania Grand Expedition 🌊 — see ROUTE_BUILDER_MODULES.md) as part of this third batch of standalone countries (2026-08, Youri's own second top-10 pick). Country and budget (daily rate) are carried over unchanged; days increased from 14 to 16 as a long-haul flight buffer (see CLAUDE.md). Pacific Islands 🌺 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
+    notes: "Split off from Pacific Islands 🌺 (itself already split off from Oceania Grand Expedition 🌊 — see ROUTE_BUILDER_MODULES.md) as part of this third batch of standalone countries (2026-08, Youri's own second top-10 pick). Country and budget (daily rate) are carried over unchanged; days increased from 14 to 16 as a long-haul flight buffer, block budget scaled along at the same daily rate (2026-10 fix — it had been left at the old day count) (see CLAUDE.md). Pacific Islands 🌺 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
   });
 }
 
@@ -13558,6 +13599,7 @@ function rbBuildMauritiusRoute() {
     {
       ...base,
       days: base.days + 2,
+      budget: Math.round(base.budget / base.days * (base.days + 2)),
       notes: 'Entry: flight Amsterdam-Mauritius, with a connection (no direct connection, e.g. via Paris/Dubai/Istanbul, ±13.5-17 hours incl. connection; from ±€600-1,500 return, July is the most expensive month; best period September). Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days compared to the original count (7→9) — a short trip (≤10 days) with a connecting flight justifies an arrival day with no plans. ' + (base.notes || ''),
       transport_to_next: 'End of this route — return flight from Mauritius to Amsterdam (1 connection, no direct connection).',
     },
@@ -13566,7 +13608,7 @@ function rbBuildMauritiusRoute() {
     travel_style: 'Rental car or organized day tours — the island is compact enough for day trips from one or two bases.',
     climate_summary: "September falls within the Mauritian dry season (May-November) — outside the cyclone season (November-April) and July's crowds/peak prices.",
     description: 'Beach and luxury on Mauritius: Port Louis, Grand Baie, Black River Gorges and Île aux Cerfs.',
-    notes: 'Split off from Africa Grand Tour 🌍 (via African Islands 🏝️, where this already stood as a separately bookable half of that block) as part of the fourth batch of standalone countries (2026-08) — Strong, "its own type of trip" per ROUTE_BUILDER_MODULES.md. Country and daily budget are carried over unchanged; days increased from 7 to 9 as a long-haul flight buffer (see CLAUDE.md). Africa Grand Tour 🌍 and African Islands 🏝️ themselves continue to exist unchanged.',
+    notes: 'Split off from Africa Grand Tour 🌍 (via African Islands 🏝️, where this already stood as a separately bookable half of that block) as part of the fourth batch of standalone countries (2026-08) — Strong, "its own type of trip" per ROUTE_BUILDER_MODULES.md. Country and daily budget are carried over unchanged; days increased from 7 to 9 as a long-haul flight buffer, block budget scaled along at the same daily rate (2026-10 fix — it had been left at the old day count) (see CLAUDE.md). Africa Grand Tour 🌍 and African Islands 🏝️ themselves continue to exist unchanged.',
   });
 }
 
@@ -13710,7 +13752,7 @@ function rbBuildZimbabweRoute() {
 function rbBuildSydneyGreatOceanRoadRoute() {
   return rbBuildFlatSeedRoute('Sydney/Byron & Great Ocean Road 🦘', [
     {
-      code: 'AU', name: 'Australia', days: 14, budget: 1050, lat: -33.8688, lng: 151.2093,
+      code: 'AU', name: 'Australia', days: 14, budget: 1225, lat: -33.8688, lng: 151.2093,
       destinations: [
         { name: 'Byron Bay', lat: -28.6474, lng: 153.6020 },
         { name: 'Sydney', lat: -33.8688, lng: 151.2093 },
@@ -13734,7 +13776,7 @@ function rbBuildSydneyGreatOceanRoadRoute() {
     travel_style: 'Backpacking between budget and comfort — rental car for the Great Ocean Road.',
     climate_summary: 'August-September is late winter/early spring in Southeast Australia — cooler than the summer peak but manageable, and outside both the northern cyclone and wildfire seasons (both November-April).',
     description: 'The east coast from Sydney to Melbourne and the Great Ocean Road.',
-    notes: "Split off from Temperate/Southern Australia 🍇 (itself already split off from Oceania Grand Expedition 🌊 — see ROUTE_BUILDER_MODULES.md) as part of the fourth batch of standalone countries (2026-08) — the Sydney/Byron and Great Ocean Road part of that block as its own, shorter trip, without Tasmania/Adelaide. Country and daily budgets are carried over unchanged; days of the first leg increased from 12 to 14 as a long-haul flight buffer (see CLAUDE.md). Temperate/Southern Australia 🍇 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
+    notes: "Split off from Temperate/Southern Australia 🍇 (itself already split off from Oceania Grand Expedition 🌊 — see ROUTE_BUILDER_MODULES.md) as part of the fourth batch of standalone countries (2026-08) — the Sydney/Byron and Great Ocean Road part of that block as its own, shorter trip, without Tasmania/Adelaide. Country and daily budgets are carried over unchanged; days of the first leg increased from 12 to 14 as a long-haul flight buffer, block budget scaled along at the same daily rate (2026-10 fix — it had been left at the old day count) (see CLAUDE.md). Temperate/Southern Australia 🍇 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
   });
 }
 
@@ -13775,6 +13817,7 @@ function rbBuildMongoliaRoute() {
     {
       ...base,
       days: base.days + 2,
+      budget: Math.round(base.budget / base.days * (base.days + 2)),
       notes: "Entry: flight Amsterdam-Ulaanbaatar, with a connection via Istanbul (Turkish Airlines) or Berlin (MIAT, seasonal) (±14-19 hours total; from ±€600-800 return; best period September). Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days compared to the original count (10→12) — a short trip (≤10 days) with a connecting flight justifies an arrival day with no programme. " + (base.notes || ''),
       transport_to_next: 'End of this route — return flight from Ulaanbaatar to Amsterdam (1 stopover).',
     },
@@ -13783,7 +13826,7 @@ function rbBuildMongoliaRoute() {
     travel_style: 'Organized jeep tour for the Gobi Desert leg, own transport/day trips elsewhere around Ulaanbaatar.',
     climate_summary: 'September avoids the July crowds of the Naadam festival and stays warm enough for both the steppe (Terelj) and the desert (Gobi).',
     description: 'Ulaanbaatar, Terelj National Park, Kharkhorin and a jeep trip through the Gobi Desert.',
-    notes: 'Split off from Eurasia Grand Tour 🌏 (via East Asia & Pacific 🗻) as part of this fifth batch of standalone countries (2026-08). Country and daily budget are carried over unchanged; days increased from 10 to 12 as a long-haul flight buffer (see CLAUDE.md). Eurasia Grand Tour 🌏 and East Asia & Pacific 🗻 themselves continue to exist unchanged.',
+    notes: 'Split off from Eurasia Grand Tour 🌏 (via East Asia & Pacific 🗻) as part of this fifth batch of standalone countries (2026-08). Country and daily budget are carried over unchanged; days increased from 10 to 12 as a long-haul flight buffer, block budget scaled along at the same daily rate (2026-10 fix — it had been left at the old day count) (see CLAUDE.md). Eurasia Grand Tour 🌏 and East Asia & Pacific 🗻 themselves continue to exist unchanged.',
   });
 }
 
@@ -13900,7 +13943,7 @@ function rbBuildGhanaRoute() {
 function rbBuildTasmaniaRoute() {
   return rbBuildFlatSeedRoute('Tasmania 🐾', [
     {
-      code: 'AU', name: 'Australia', days: 14, budget: 1260, lat: -42.8821, lng: 147.3272,
+      code: 'AU', name: 'Australia', days: 14, budget: 1470, lat: -42.8821, lng: 147.3272,
       destinations: [
         { name: 'Cradle Mountain', lat: -41.6833, lng: 145.9333 },
         { name: 'Wineglass Bay (Freycinet)', lat: -42.1500, lng: 148.3000 },
@@ -13915,14 +13958,14 @@ function rbBuildTasmaniaRoute() {
     travel_style: 'Rental car between the national parks, multi-day trekking on the Overland Track (permit required in advance).',
     climate_summary: 'November (or March) falls within the Overland Track season (October-May) with reasonably stable weather and fewer crowds than the January peak.',
     description: 'Cradle Mountain, Wineglass Bay, the Overland Track and Hobart.',
-    notes: "Split off from Temperate/Southern Australia 🍇 (itself already split off from Oceania Grand Expedition 🌊) as part of the fifth batch of standalone countries (2026-08) — the Tasmanian part of that block as its own, shorter trip, without Sydney/Byron/Great Ocean Road/Adelaide. Country and daily budget are carried over unchanged; days increased from 12 to 14 as a long-haul flight buffer (see CLAUDE.md). Temperate/Southern Australia 🍇 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
+    notes: "Split off from Temperate/Southern Australia 🍇 (itself already split off from Oceania Grand Expedition 🌊) as part of the fifth batch of standalone countries (2026-08) — the Tasmanian part of that block as its own, shorter trip, without Sydney/Byron/Great Ocean Road/Adelaide. Country and daily budget are carried over unchanged; days increased from 12 to 14 as a long-haul flight buffer, block budget scaled along at the same daily rate (2026-10 fix — it had been left at the old day count) (see CLAUDE.md). Temperate/Southern Australia 🍇 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
   });
 }
 
 function rbBuildNorthIslandRoute() {
   return rbBuildFlatSeedRoute('New Zealand North Island 🌿', [
     {
-      code: 'NZ', name: 'New Zealand', days: 16, budget: 1120, lat: -41.2865, lng: 174.7762,
+      code: 'NZ', name: 'New Zealand', days: 16, budget: 1280, lat: -41.2865, lng: 174.7762,
       destinations: [
         { name: 'Wellington', lat: -41.2865, lng: 174.7762 },
         { name: 'Tongariro Alpine Crossing', lat: -39.1333, lng: 175.6333 },
@@ -13939,14 +13982,14 @@ function rbBuildNorthIslandRoute() {
     travel_style: 'Rental car on the North Island.',
     climate_summary: 'November falls in the New Zealand spring/early summer — stable weather for the Tongariro Alpine Crossing, fewer crowds than the January peak.',
     description: 'Wellington, the Tongariro Alpine Crossing, Rotorua, Coromandel, Bay of Islands and Auckland.',
-    notes: 'Split off from New Zealand 🥝 (itself already split off from Oceania Grand Expedition 🌊) as part of the fifth batch of standalone countries (2026-08) — the North Island part of that route as its own, shorter trip, without the South Island (which already exists as its own "New Zealand South Island 🏔️" route, batch 2). Country and daily budget are carried over unchanged; days increased from 14 to 16 as a long-haul flight buffer (see CLAUDE.md). New Zealand 🥝 and Oceania Grand Expedition 🌊 themselves remain unchanged.',
+    notes: 'Split off from New Zealand 🥝 (itself already split off from Oceania Grand Expedition 🌊) as part of the fifth batch of standalone countries (2026-08) — the North Island part of that route as its own, shorter trip, without the South Island (which already exists as its own "New Zealand South Island 🏔️" route, batch 2). Country and daily budget are carried over unchanged; days increased from 14 to 16 as a long-haul flight buffer, block budget scaled along at the same daily rate (2026-10 fix — it had been left at the old day count) (see CLAUDE.md). New Zealand 🥝 and Oceania Grand Expedition 🌊 themselves remain unchanged.',
   });
 }
 
 function rbBuildFijiVanuatuRoute() {
   return rbBuildFlatSeedRoute('Fiji & Vanuatu 🐚', [
     {
-      code: 'VU', name: 'Vanuatu', days: 13, budget: 1045, lat: -17.7333, lng: 168.3273,
+      code: 'VU', name: 'Vanuatu', days: 13, budget: 1235, lat: -17.7333, lng: 168.3273,
       destinations: [
         { name: 'Port Vila', lat: -17.7333, lng: 168.3273 },
         { name: 'Mount Yasur (Tanna)', lat: -19.5236, lng: 169.4451 },
@@ -13972,7 +14015,7 @@ function rbBuildFijiVanuatuRoute() {
     travel_style: 'Flight Port Vila-Nadi between the two countries, boat pass (Yasawa Flyer) within Fiji.',
     climate_summary: 'May-June (or October) is dry season across the whole Pacific, well before cyclone season (November-April) and the July rush.',
     description: 'Port Vila and Mount Yasur in Vanuatu, followed by the Mamanuca and Yasawa Islands and Taveuni in Fiji.',
-    notes: "Split off from Pacific Islands 🌺 (itself already split off from Oceania Grand Expedition 🌊) as part of the fifth batch of standalone countries (2026-08) — the Vanuatu/Fiji double bill from that block, without Samoa/Tonga/Cook Islands. Countries and daily budgets are carried over unchanged; days of the Vanuatu leg increased from 11 to 13 as a long-haul flight buffer (see CLAUDE.md). Pacific Islands 🌺 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
+    notes: "Split off from Pacific Islands 🌺 (itself already split off from Oceania Grand Expedition 🌊) as part of the fifth batch of standalone countries (2026-08) — the Vanuatu/Fiji double bill from that block, without Samoa/Tonga/Cook Islands. Countries and daily budgets are carried over unchanged; days of the Vanuatu leg increased from 11 to 13 as a long-haul flight buffer, block budget scaled along at the same daily rate (2026-10 fix — it had been left at the old day count) (see CLAUDE.md). Pacific Islands 🌺 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
   });
 }
 
@@ -14300,7 +14343,7 @@ function rbBuildSenegambiaRoute() {
 function rbBuildGabonRoute() {
   return rbBuildFlatSeedRoute('Gabon 🏕️', [
     {
-      code: 'GA', name: 'Gabon', days: 11, budget: 855, lat: -1.95, lng: 9.7,
+      code: 'GA', name: 'Gabon', days: 11, budget: 1045, lat: -1.95, lng: 9.7,
       destinations: [
         { name: 'Loango National Park (surfing hippos, forest elephants on the beach)', lat: -2.3667, lng: 9.5667, notes: "Beyond the beach hippos/elephants, a boat safari up the Ngové/Echira rivers to Akaka camp (about 60km from the main Loango camps) gives close river-bank encounters with forest elephants and buffalo, plus a chance to snorkel alongside elephants in shallow water — an experience unique to Loango. Akaka closes in the rainy season, so this only works in the dry-season window (roughly June-August/September) already best for the route." },
         { name: 'Libreville', lat: 0.4162, lng: 9.4673, notes: "Mostly a gateway city, but the Arboretum de Sibang (170 tree species, a quiet rainforest patch inside the city) and L'Église Saint-Michel de Nkembo (31 hand-carved wooden columns depicting Bible scenes) are worth a half-day before heading on to the parks. Note the arboretum keeps limited weekday hours (Mon-Fri, roughly 9am-3pm) and needs someone on-site to unlock the gate." },
@@ -14314,14 +14357,14 @@ function rbBuildGabonRoute() {
     travel_style: 'Boat/pirogue and local transport, guide mandatory for Loango.',
     climate_summary: "June-September is Gabon's longer dry season — best accessibility for Loango and Pongara.",
     description: 'The surfing hippos and beach elephants of Loango National Park, Libreville and Pongara National Park.',
-    notes: 'Split off from West & Central Africa Expedition 🌍 (via Central Africa & Islands 🦛, where this was already the strong finale of the entire expedition) as part of the sixth batch of standalone countries (2026-08). Country and daily budget are carried over unchanged; days increased from 9 to 11 as a long-haul flight buffer (see CLAUDE.md). West & Central Africa Expedition 🌍 and Central Africa & Islands 🦛 themselves remain unchanged.',
+    notes: 'Split off from West & Central Africa Expedition 🌍 (via Central Africa & Islands 🦛, where this was already the strong finale of the entire expedition) as part of the sixth batch of standalone countries (2026-08). Country and daily budget are carried over unchanged; days increased from 9 to 11 as a long-haul flight buffer, block budget scaled along at the same daily rate (2026-10 fix — it had been left at the old day count) (see CLAUDE.md). West & Central Africa Expedition 🌍 and Central Africa & Islands 🦛 themselves remain unchanged.',
   });
 }
 
 function rbBuildSaoTomeRoute() {
   return rbBuildFlatSeedRoute('São Tomé & Príncipe 🍫', [
     {
-      code: 'ST', name: 'São Tomé and Príncipe', days: 11, budget: 653, lat: 0.3365, lng: 6.7273,
+      code: 'ST', name: 'São Tomé and Príncipe', days: 11, budget: 798, lat: 0.3365, lng: 6.7273,
       destinations: [
         { name: 'São Tomé (roças/plantations, rainforest)', lat: 0.3365, lng: 6.7273, notes: "Roça Agostinho Neto, once the country's largest cocoa plantation, is the most evocative of the island's decaying colonial-plantation architecture, and a guided hike inland into Obô Natural Park reaches Pico Cão Grande's dramatic volcanic spire. Allow a half-day for the roça, a full day if adding the rainforest hike." },
         { name: 'Príncipe (remote, less visited)', lat: 1.6167, lng: 7.4167, notes: "Far smaller and far less visited than São Tomé — reachable only by small plane, which naturally caps visitor numbers. Roça Sundy, now a boutique hotel, is where Arthur Eddington's 1919 eclipse observations confirmed Einstein's general relativity; worth the detour even for non-guests as a place to see, not just stay." },
@@ -14334,7 +14377,7 @@ function rbBuildSaoTomeRoute() {
     travel_style: 'Local transport/boat between São Tomé and Príncipe.',
     climate_summary: 'June-September is the dry "gravana" season — less rain than the rest of the year.',
     description: 'Portuguese colonial plantations and rainforest on São Tomé, followed by remote Príncipe.',
-    notes: 'Split off from West & Central Africa Expedition 🌍 (via Central Africa & Islands 🦛) as part of the sixth batch of standalone countries (2026-08). Country and daily budget are carried over unchanged; days increased from 9 to 11 as a long-haul flight buffer (see CLAUDE.md). West & Central Africa Expedition 🌍 and Central Africa & Islands 🦛 themselves remain unchanged.',
+    notes: 'Split off from West & Central Africa Expedition 🌍 (via Central Africa & Islands 🦛) as part of the sixth batch of standalone countries (2026-08). Country and daily budget are carried over unchanged; days increased from 9 to 11 as a long-haul flight buffer, block budget scaled along at the same daily rate (2026-10 fix — it had been left at the old day count) (see CLAUDE.md). West & Central Africa Expedition 🌍 and Central Africa & Islands 🦛 themselves remain unchanged.',
   });
 }
 
@@ -15093,7 +15136,7 @@ function rbBuildMaltaRoute() {
 function rbBuildTunisiaRoute() {
   return rbBuildFlatSeedRoute('Tunisia 🧿', [
     {
-      code: 'TN', name: 'Tunisia', days: 8, budget: 220, lat: 36.8065, lng: 10.1815,
+      code: 'TN', name: 'Tunisia', days: 8, budget: 293, lat: 36.8065, lng: 10.1815,
       destinations: [
         { name: 'Tunis', lat: 36.8065, lng: 10.1815 },
         { name: 'Carthage', lat: 36.8531, lng: 10.3236 },
@@ -15109,7 +15152,7 @@ function rbBuildTunisiaRoute() {
     travel_style: 'Train/bus between Tunis and the archaeological sites.',
     climate_summary: 'April-May (or October) avoids the summer heat, with still-pleasant weather for the Roman sites.',
     description: 'Tunis, Carthage, Roman Dougga, the amphitheater of El Jem and Sidi Bou Said.',
-    notes: 'Split off from Mediterranean Civilizations Expedition 🏛️ (via Iberia & Morocco/Tunisia 🏰) as part of the seventh combo batch (2026-08). Country, days and daily budget are carried over unchanged; days increased from 6 to 8 as a long-haul flight buffer (see CLAUDE.md). Mediterranean Civilizations Expedition 🏛️ and Iberia & Morocco/Tunisia 🏰 themselves continue to exist unchanged.',
+    notes: 'Split off from Mediterranean Civilizations Expedition 🏛️ (via Iberia & Morocco/Tunisia 🏰) as part of the seventh combo batch (2026-08). Country, days and daily budget are carried over unchanged; days increased from 6 to 8 as a long-haul flight buffer, block budget scaled along at the same daily rate (2026-10 fix — it had been left at the old day count) (see CLAUDE.md). Mediterranean Civilizations Expedition 🏛️ and Iberia & Morocco/Tunisia 🏰 themselves continue to exist unchanged.',
   });
 }
 

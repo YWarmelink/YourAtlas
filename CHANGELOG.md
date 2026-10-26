@@ -12,6 +12,24 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Long-haul buffer routes under-budgeted (2026-10-26)** — the +2-day long-haul flight buffer
+  (CLAUDE.md policy) raised `days` on 13 standalone routes but left `budget` unchanged, because
+  CLAUDE.md wrongly called `budget` a daily rate. It is the block's **total** (the UI shows
+  "€X total · ±€Y/day" and sums blocks into the route total), so each route was short by two days'
+  worth. Budgets scaled at their own unchanged daily rate: Cairns & Great Barrier Reef €2,310→2,530,
+  Fiji €1,050→1,200, Fiji & Vanuatu (Vanuatu leg) €1,045→1,235, Gabon €855→1,045, Jordan €500→625,
+  Mauritius €1,000→1,286, Mongolia €650→780, NZ South Island €2,268→2,484, NZ North Island
+  €1,120→1,280, São Tomé & Príncipe €653→798, Sydney/Byron & Great Ocean Road (first leg)
+  €1,050→1,225, Tasmania €1,260→1,470, Tunisia €220→293. Found by grepping for every "+2 days"
+  route plus a same-budget/different-days scan across all blocks; the five routes built directly
+  as "base + 2" (Maldives, Palau, Papua New Guinea, Seychelles, Uruguay) show no sign of the bug
+  and are unchanged. Source edits + `rbMigrateLonghaulBufferBudgets()` (patches only blocks
+  still at the old budget, verified on a fresh simulated browser and an old-state test) +
+  `scripts/fix_longhaul_buffer_budgets_in_sheet.js` for the Sheet (dry run verified against the
+  live Sheet, then pushed: all 13 read back at the new budget with coordinates, destination
+  notes and the updated route notes intact). CLAUDE.md corrected. Next workstream:
+  `ROUTE_BUILDER_BUDGET_PLAN.md` (full-cost budgets — transport, extras, flights).
+
 - **Maps, Sheet parsing, Trips page and Home fixes (2026-10-21)** — one session, all
   browser-verified against the live site (headless Chrome with local files swapped in):
   - **Route Builder maps blank on every route** (`3a5478a`): the Sheet merge on load replaced
