@@ -27,17 +27,17 @@
         rbExtra('Pamir shared 4x4 + driver (Khorog-Murghab area)', 250, 'transport'),
       ] },
       { code: 'UZ', transport: 280, local: 110, extras: [] },   // flight Tashkent-Xian (est); Afrosiyob trains + Urgench-Tashkent flight (est)
-      { code: 'CN', transport: 135, local: 320, extras: [       // Trans-Mongolian train Beijing-UB (est); local reused from pilot
+      { code: 'CN', transport: 135, local: 255, extras: [       // Trans-Mongolian train Beijing-UB (est); local reused from pilot  // local: pilot value scaled to this route's shorter stay (2026-10-27)
         rbExtra('Major entrance tickets (Great Wall, Terracotta Army, Zhangjiajie, Li River)', 150, 'park_fee'),
       ] },
-      { code: 'MN', transport: 350, local: 285, extras: [       // flight UB-Tokyo (KE/MIAT typical)
+      { code: 'MN', transport: 350, local: 170, extras: [       // flight UB-Tokyo (KE/MIAT typical)  // local: pilot value scaled to this route's shorter stay (2026-10-27)
         rbExtra('Gobi jeep tour (~6 days, shared 4x4, guide, ger camps)', 700, 'tour'),
       ] },
-      { code: 'JP', transport: 115, local: 370, extras: [       // pilot
+      { code: 'JP', transport: 115, local: 215, extras: [       // pilot  // local: pilot value scaled to this route's shorter stay (2026-10-27)
         rbExtra('One ryokan night with onsen + dinner (surcharge)', 80, 'tour'),
       ] },
-      { code: 'TW', transport: 115, local: 111, extras: [] },   // pilot
-      { code: 'VN', transport: 38, local: 210, extras: [        // pilot
+      { code: 'TW', transport: 115, local: 80,  extras: [] },   // pilot  // local: pilot value scaled to this route's shorter stay (2026-10-27)
+      { code: 'VN', transport: 38, local: 130, extras: [        // pilot  // local: pilot value scaled to this route's shorter stay (2026-10-27)
         rbExtra('Ha Giang Loop with an easy rider (4 days)', 230, 'tour'),
         rbExtra('Ha Long / Lan Ha Bay cruise (2 days, 1 night)', 160, 'tour'),
       ] },
@@ -46,10 +46,10 @@
         rbExtra('Angkor 3-day pass', 53, 'park_fee'),
         rbExtra('Tuk-tuk for Angkor (3 days)', 70, 'tour'),
       ] },
-      { code: 'LA', transport: 50, local: 85, extras: [         // pilot
+      { code: 'LA', transport: 50, local: 75, extras: [         // pilot  // local: pilot value scaled to this route's shorter stay (2026-10-27)
         rbExtra('E-visa / visa on arrival', 35, 'visa'),
       ] },
-      { code: 'TH', transport: 30, local: 170, extras: [] },    // speedboat Koh Lipe-Langkawi (est); local from pilot
+      { code: 'TH', transport: 30, local: 130, extras: [] },    // speedboat Koh Lipe-Langkawi (est); local from pilot  // local: pilot value scaled to this route's shorter stay (2026-10-27)
       { code: 'MY', transport: 50, local: 45, extras: [] },     // Peninsula (pilot)
       { code: 'MY', transport: 45, local: 0, extras: [] },      // Sarawak (pilot)
       { code: 'BN', transport: 30, local: 0, extras: [
@@ -60,7 +60,7 @@
         rbExtra('Mount Kinabalu climb (guide, permit, hut; notes EUR 250-350)', 300, 'tour', true),
         rbExtra('Sipadan diving (notes EUR 150-250/day)', 200, 'tour', true),
       ] },
-      { code: 'PH', transport: 200, local: 255, extras: [       // pilot
+      { code: 'PH', transport: 200, local: 225, extras: [       // pilot  // local: pilot value scaled to this route's shorter stay (2026-10-27)
         rbExtra('El Nido-Coron boat expedition', 265, 'tour'),
         rbExtra('Island-hopping tours (El Nido, Coron, Bohol)', 90, 'tour'),
         rbExtra('Diving course (Open Water) or fun dives', 350, 'tour', true),
@@ -473,10 +473,10 @@
     { code: 'CK', transport: 750, local: 205, extras: [    // Rarotonga-Auckland-Perth (est); local: Air Rarotonga Aitutaki return (est NZD 400)
       rbExtra('Aitutaki lagoon cruise incl. One Foot Island (est NZD 150)', 77, 'tour'),
     ] },
-    { code: 'AU', transport: 0, local: 0, extras: [        // Perth-Darwin by car (notes' main option), car returned in Darwin
-      rbExtra('Car: 4x4 21 days x 150 + fuel ~4,700 km + one-way fee Perth-Darwin ~1,000', 4630, 'transport'),
+    { code: 'AU', transport: 240, local: 0, extras: [      // flight Broome-Darwin (the notes' alternative, est AUD ~400); Youri 2026-10-27: compact car + flight instead of a 4x4 to Darwin
+      rbExtra('Car: compact 20 days x 55 + fuel ~3,050 km + one-way fee Perth-Broome ~250', 1662, 'transport'),
       rbExtra('Ningaloo whale shark swim (AUD ~450, est)', 275, 'tour'),
-      rbExtra('Bungle Bungles scenic flight (AUD ~400, est)', 240, 'tour'),
+      rbExtra('Bungle Bungles scenic flight from Broome (AUD ~1,000, est; no Kununurra on this variant)', 610, 'tour'),
       rbExtra('Rottnest Island ferry (est)', 73, 'tour'),
       rbExtra('Cable Beach camel ride (est)', 30, 'activity', true),
     ] },

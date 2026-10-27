@@ -32,3 +32,7 @@ Car fuel cost = km x 7 L/100 km / 100 x fuel_eur_per_l (i.e. km x 0.07 x fuel_eu
 Toll cost = km on toll motorway / 100 x toll_eur_per_100km, plus vignette_eur once per country, plus any special tolls listed in notes. Rental cost = days x rental_eur_per_day.
 
 Note: 2026 fuel prices are elevated (EU weighted petrol average rose ~28% since 23 Feb 2026). Refresh fuel before a final calculation.
+
+# flights_from_ams.csv
+
+Typical one-way economy fares between Amsterdam and a route's first/last airport, booked 2-3 months ahead (NOT promo "from €X" fares). One row per airport and direction (out = AMS→X, back = X→AMS). Added per Phase 4 batch; batch 1 (Grand Expeditions, 2026-10-27) researched via WebSearch, which mostly returns aggregator floors and return fares, so many rows are low confidence: re-check before a real booking.
