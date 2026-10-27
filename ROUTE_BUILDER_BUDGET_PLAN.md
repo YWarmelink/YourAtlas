@@ -220,11 +220,21 @@ Progress:
   - **Decided by Youri 2026-10-27:** he travels as a backpacker, so the own-room "Standard" reference
     is not his level, and the 316 "too low" blocks are mostly fine for him. Instead, three
     levels per country, so the app works for other travel styles too:
-    - [ ] **R2b research:** add `backpacker_eur_per_day` (dorm or cheapest private room, cheap local food,
+    - [x] **R2b research:** add `backpacker_eur_per_day` (dorm or cheapest private room, cheap local food,
       public transport, mostly free sights) and `comfort_eur_per_day` (3-4* hotel, sit-down
       restaurants, taxis, paid tours/sights) to `daily_rates_by_country.csv`, each with its own
       four-part split. The existing column stays as Standard. Name the countries that must be
       web-checked IN the brief (the R2 agents skipped searches until sent back). ~150-200k tokens.
+      **Done 2026-10-27** (243k tokens): backpacker + comfort columns (each with a four-part split) for all 175
+      rows of `daily_rates_by_country.csv`; 112 medium / 63 low confidence; the 42 must-search countries web-checked
+      (mostly Hostelz dorm budgets + 2026 cost guides, set leaner than Hostelz's nightlife allowance).
+      Backpacker ≈ 0.49× Standard (0.35-0.80), Comfort ≈ 1.67× (1.29-2.12). backpacker < standard < comfort holds on every row.
+      **Finding for R2c/R2d:** only **3 of 1,087 blocks** are below the backpacker level (−10%), and 35 are
+      more than 25% above Standard. So the current budgets mostly sit BETWEEN backpacker and Standard: they are not
+      backpacker level. Declaring the stored `budget` "backpacker" and multiplying by the country's
+      Standard/backpacker ratio (~2×) would therefore inflate the other tiers. Better for R2c: show the stored
+      budget as **"My plan"**, and compute Backpacker / Standard / Comfort as **absolute** reference
+      rates × days per block (variant chosen as in compare_daily_rates.js), not as ratios of the stored budget.
     - [ ] **R2c app:** the tier toggle uses each country's own ratios from the table instead of the
       global multipliers (fallback: the global ones for a country/variant without a row). Rename
       the tier "Budget" to "Backpacker". The stored block `budget` = **backpacker level** (Youri's
