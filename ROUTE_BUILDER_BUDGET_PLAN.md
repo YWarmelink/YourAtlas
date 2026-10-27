@@ -1,7 +1,8 @@
 # Route Builder — Full-Cost Budget Plan
 
-Status: **Phases 0-3 DONE (2026-10-27)**: data model + Sheet plumbing, UI, and the Asia Grand
-Tour pilot (live in the Sheet). Phase 4 (backfill all routes, in batches) next. Started after the long-haul buffer budget fix (see `CHANGELOG.md`).
+Status: **Phases 0-3 DONE, Phase 4 started (2026-10-27)**: data model + Sheet plumbing, UI,
+the Asia Grand Tour pilot (live in the Sheet). Phase 4 = backfill all routes in batches; method
+and progress under Phase 4 below. Started after the long-haul buffer budget fix (see `CHANGELOG.md`).
 
 ## Why
 
@@ -139,6 +140,47 @@ extras). Check that the app total matches the Excel's Basis column. Adjust the d
 where it doesn't fit before the bulk backfill starts.
 
 ### Phase 4 — Backfill all routes (batches)
+
+**Started 2026-10-27. Method decided with Youri: the most accurate source per cost, not one
+source for everything.** Amounts are per person, travelling solo (car costs are not split),
+one-way, 2026 prices, Standard level. Every batch follows these rules:
+
+| Cost | Source |
+|---|---|
+| Specific legs (ferry, night train, bus) | the route's own notes — researched for that exact leg |
+| Tours, park fees, boat trips | the route's own notes |
+| Visas (Dutch passport) | `VISA_VACCINATION_RESEARCH.md`, one value per country for every route |
+| Getting there & back (flights) | `data/cost_reference/flights_from_ams.csv`: typical one-way economy fare booked 2-3 months ahead — NOT the "from €X" promo fares in the notes (systematically too low). Airports are added as batches need them. |
+| Car: distance | the route's notes when they give km, otherwise calculated from the destination coordinates × a road factor |
+| Car: fuel, tolls/vignettes, rental | `data/cost_reference/car_costs_by_country.csv` (7 L/100 km × that country's fuel price) |
+
+Normalisation rules for prices taken from notes: a range → its midpoint; "from €X" with no upper
+bound → €X × 1.25 and flagged for review; other currencies → € at the rate recorded in the
+reference file; return prices → halved only when a one-way price isn't available.
+
+Car routes:
+- **Car already in the daily rate** (e.g. Sicily, "~€110/day, rental car + fuel included"): add
+  nothing for the car. Only 25 of 282 car routes state this either way, so each batch judges the
+  rest and lists its call per route for Youri to review. That's the main double-counting risk.
+- **Own car from NL**: "getting there / back" = the drive from and to NL (fuel + tolls). All
+  driving within the route = one `transport` extra ("Car: fuel ≈N km + tolls/vignettes") on the
+  first block. Legs between blocks get €0 unless they're a ferry/flight.
+- **Fly + rental car**: flights as usual. Rental + fuel (if not in the daily rate) = one `transport`
+  extra on the first block. The legs driven get €0.
+
+Order: reference tables first (car costs, then flight fares as needed), then the route batches:
+Grand Expeditions first, then standalone routes by family. Use `scripts/route_cost_inventory.js`
+to scope each batch (mode, getting-there text, the "car in budget" hint per route). Each batch:
+Sonnet extraction → an edit list for Youri → `RB_ROUTE_COSTS` entries →
+`scripts/push_route_costs_to_sheet.js` (needs Youri's OK) → progress line below.
+
+Progress:
+- [x] Code: "Getting there & back" label; `transport` extras count under Transport
+- [x] Inventory script (453 routes: 55 own car, 227 rental, 171 public transport)
+- [ ] R1a car costs, Europe · [ ] R1b car costs, rest of the world
+- [ ] Route batches (list added when the first one is scoped)
+
+Original plan:
 
 - Step 1: **extraction.** For the 798 blocks that already mention prices, convert the amounts
   in `notes` / `transport_to_next` into structured fields. Mechanical extraction with

@@ -381,7 +381,9 @@ const RB_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzfvEBxhAUEG
  *   extras                array   [{ label, cost, category, optional }], category from RB_EXTRA_CATEGORIES
  *   costs_checked         string  "YYYY-MM-DD" the cost fields were last verified
  * Route:
- *   flight_in_cost / flight_out_cost  number  flight from / back to NL
+ *   flight_in_cost / flight_out_cost  number  getting there from / back to NL, by whatever mode the
+ *                                 route uses (flight, train, or the own-car drive to the first stop) —
+ *                                 named after the common case, kept to avoid renaming Sheet columns
  *   trip_costs            object  per-route overrides for the computed trip-wide items,
  *                                 { insurance_per_month, buffer_pct }; null = global defaults
  *
@@ -469,6 +471,7 @@ function rbRouteCosts(route, tierKey = 'standard') {
       const c = rbCostNum(x.cost) || 0;
       if (x.optional) optional += c;
       else if (x.category === 'visa') visas += c;
+      else if (x.category === 'transport') transport += c;  // e.g. a route's whole-trip car costs
       else extras += c;
     });
     if (!rbBlockCostsComplete(b, i === blocks.length - 1)) incomplete++;

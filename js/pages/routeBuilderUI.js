@@ -702,7 +702,7 @@ const RB_EXTRA_CATEGORY_LABELS = {
 const RB_COST_ROW_LABELS = [
   ['ground', 'Daily costs', 'accommodation, food, local getting around, small activities'],
   ['transport', 'Transport', 'between countries + intercity within them'],
-  ['flights', 'Flights NL', 'there and back'],
+  ['flights', 'Getting there & back', 'flight, train or own car from NL'],
   ['extras', 'Tours & fees', 'tours, park fees, boat trips'],
   ['visas', 'Visas', ''],
   ['insurance', 'Travel insurance', 'long trips only, per month'],
