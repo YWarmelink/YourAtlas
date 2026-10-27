@@ -1,8 +1,7 @@
 # Route Builder — Full-Cost Budget Plan
 
-Status: **Phase 0 decided, Phase 1 code done (2026-10-27)** — waiting on the Apps Script
-redeploy + live round-trip test (`node scripts/verify_cost_fields_roundtrip.js --live`).
-Phase 2 (UI) next. Started after the long-haul buffer budget fix (see `CHANGELOG.md`).
+Status: **Phase 0 decided, Phase 1 DONE (2026-10-27)**: Apps Script redeployed, live
+round-trip test passed. Phase 2 (UI) next. Started after the long-haul buffer budget fix (see `CHANGELOG.md`).
 
 ## Why
 
@@ -67,8 +66,10 @@ instead of full-route upserts.
 - [x] Client read/write + Block Library copies
 - [x] Apps Script (`GrandTripSync.gs` + `Code.gs`)
 - [x] Offline round-trip test
-- [ ] Youri: paste both `.gs` files, redeploy as a new version
-- [ ] Live round-trip test (writes + deletes a hidden test route)
+- [x] Youri: paste both `.gs` files, redeploy as a new version
+- [x] Live round-trip test (writes + deletes a hidden test route): passed 2026-10-27, real
+  routes (455) and block coordinates (1,087) unchanged. The published CSV tabs refresh
+  independently, so a read can briefly show a half-updated route; the script polls through that.
 
 Original plan:
 
