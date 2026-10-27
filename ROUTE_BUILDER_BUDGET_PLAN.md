@@ -208,6 +208,11 @@ Progress:
   2. A script compares every block's budget/days with the table and flags > ±25% (fixed exceptions
      for expensive stretches: Antarctica, Patagonia, safaris, Bhutan SDF).
   3. Youri reviews the outliers → `rbMigrate*()` + Sheet push (scale `budget`, never `days`).
+  - Prep done 2026-10-27: `scripts/daily_rate_spread.js` → `planning/r2_daily_rates/current_spread.md`
+    (152 countries / 1,087 blocks: 119 already within 1.5× between routes, 22 at 1.5-2×, 11 at ≥2×,
+    e.g. MY, AR, IT, GR, CL, TR, US, ES, HR). Some spread is real (Patagonia vs northern Argentina,
+    Sabah vs Peninsular Malaysia, roadtrip rates incl. car), so the research table needs a region
+    column for those countries.
   - [ ] Standalone routes by family (after R2)
 
 Original plan:
