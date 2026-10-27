@@ -213,6 +213,10 @@ Progress:
     e.g. MY, AR, IT, GR, CL, TR, US, ES, HR). Some spread is real (Patagonia vs northern Argentina,
     Sabah vs Peninsular Malaysia, roadtrip rates incl. car), so the research table needs a region
     column for those countries.
+  - Research done 2026-10-27 (~264k tokens): `data/cost_reference/daily_rates_by_country.csv`
+    (152 countries + 23 variants), `scripts/compare_daily_rates.js`, review in
+    `planning/r2_daily_rates/REVIEW.md`: 714/1,087 blocks within ±25%; 316 below (+€97.5k if
+    raised), 57 above. **Waiting for Youri's decision (A/B/C in the review).**
   - [ ] Standalone routes by family (after R2)
 
 Original plan:

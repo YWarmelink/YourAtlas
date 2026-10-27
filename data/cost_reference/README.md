@@ -36,3 +36,7 @@ Note: 2026 fuel prices are elevated (EU weighted petrol average rose ~28% since 
 # flights_from_ams.csv
 
 Typical one-way economy fares between Amsterdam and a route's first/last airport, booked 2-3 months ahead (NOT promo "from €X" fares). One row per airport and direction (out = AMS→X, back = X→AMS). Added per Phase 4 batch; batch 1 (Grand Expeditions, 2026-10-27) researched via WebSearch, which mostly returns aggregator floors and return fares, so many rows are low confidence: re-check before a real booking.
+
+# daily_rates_by_country.csv
+
+R2 reference (2026-10-27): Standard ground cost per day for one solo traveller (own private room, local restaurants, city transport, typical sights), EXCLUDING intercity transport, car, multi-day tours/safaris, big park fees and visas. `standard_eur_per_day` = accommodation + food + local_transport + activities. `variant` rows (Patagonia, safari, big cities, ...) where a region is ≥40% apart. Researched by Sonnet agents from knowledge, then web-checked for ~60 high-impact countries (cost guides, Numbeo, budgetyourtrip; Booking room prices were mostly not retrievable): 0 high / medium / low confidence per row. Compare blocks with `node scripts/compare_daily_rates.js`.

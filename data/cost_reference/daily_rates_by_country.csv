@@ -1,0 +1,176 @@
+country_code,country,variant,standard_eur_per_day,accommodation,food,local_transport,activities,source,confidence,notes
+AD,Andorra,,125,75,30,8,12,Booking typical; lodging in Andorra la Vella/Ordino,medium,Mountain ski/hike country; French/Spanish price level
+AL,Albania,,46,24,12,4,6,Numbeo/Booking,medium,Tirana/Saranda/Berat; Sarande higher in summer
+AT,Austria,,120,70,25,7,18,"Web check Oct 2026: 2026 cost guides (budgetyourtrip, tourlane, amigosim, viatravelers) + prior knowledge",medium,"Vienna 2-3* ~75, Tirol higher; Vienna transport pass cheap"
+BA,Bosnia and Herzegovina,,50,28,11,3,8,Numbeo/Booking,medium,Sarajevo/Mostar
+BE,Belgium,,129,80,28,7,14,Numbeo/Booking,medium,Brussels/Bruges/Ghent private rooms pricey
+BG,Bulgaria,,55,32,13,3,7,Numbeo/Booking,medium,Sofia/Plovdiv/Black Sea
+CH,Switzerland,,192,115,40,12,25,"Web check Oct 2026: 2026 cost guides (budgetyourtrip, tourlane, amigosim, viatravelers) + prior knowledge",medium,Hostel private rooms ~100-130; very expensive throughout
+CY,Cyprus,,100,60,22,6,12,Booking,medium,Larnaca/Paphos/Nicosia
+CZ,Czechia,,89,55,18,4,12,Numbeo/Booking,medium,Prague higher than rest
+DE,Germany,,119,75,24,7,13,"Web check Oct 2026: 2026 cost guides (budgetyourtrip, tourlane, amigosim, viatravelers) + prior knowledge",medium,Berlin/Munich mix
+DK,Denmark,,161,100,34,9,18,"Web check Oct 2026: 2026 cost guides (budgetyourtrip, tourlane, amigosim, viatravelers) + prior knowledge",medium,Copenhagen hostels private rooms ~90
+EE,Estonia,,98,60,22,6,10,Numbeo/Booking,medium,Tallinn/Tartu
+ES,Spain,,107,65,24,6,12,"Web check Oct 2026: 2026 cost guides (budgetyourtrip, tourlane, amigosim, viatravelers) + prior knowledge",medium,Base is mix of cities and smaller towns
+FI,Finland,,130,80,28,7,15,Numbeo/Booking,medium,Helsinki; Lapland winter higher
+FO,Faroe Islands,,192,115,42,10,25,Guide to Faroe/Booking,low,Very limited accommodation; mostly knowledge
+FR,France,,125,75,28,8,14,"Web check Oct 2026: 2026 cost guides (budgetyourtrip, tourlane, amigosim, viatravelers) + prior knowledge",medium,Base excludes Paris/Riviera premium
+GB,United Kingdom,,143,90,28,9,16,"Web check Oct 2026: 2026 cost guides (budgetyourtrip, tourlane, amigosim, viatravelers) + prior knowledge",medium,London much higher; regional cities ~75 room
+GG,Guernsey,,163,105,34,8,16,Booking,low,"Small island, limited stock"
+GI,Gibraltar,,135,95,26,4,10,Booking,low,Limited hotels; day trips from Spain cheaper
+GR,Greece,,99,60,22,5,12,"Web check Oct 2026: 2026 cost guides (budgetyourtrip, tourlane, amigosim, viatravelers) + prior knowledge",medium,Athens/mainland mix
+HR,Croatia,,100,60,22,5,13,"Web check Oct 2026: 2026 cost guides (budgetyourtrip, tourlane, amigosim, viatravelers) + prior knowledge",medium,Off-coast/shoulder; summer coast see variant
+HU,Hungary,,79,50,16,4,9,Numbeo/Booking,medium,Budapest
+IE,Ireland,,158,105,30,9,14,"Web check Oct 2026: 2026 cost guides (budgetyourtrip, tourlane, amigosim, viatravelers) + prior knowledge",medium,"Dublin pricey; regional B&Bs; B&B EUR90-140, 3* EUR120-180 per room found, solo room raised"
+IM,Isle of Man,,142,95,28,7,12,Booking,low,Limited stock
+IS,Iceland,,192,120,42,10,20,"Web check Oct 2026: 2026 cost guides (budgetyourtrip, tourlane, amigosim, viatravelers) + prior knowledge",medium,Expensive throughout; excludes car/tours
+IT,Italy,,122,75,26,6,15,"Web check Oct 2026: 2026 cost guides (budgetyourtrip, tourlane, amigosim, viatravelers) + prior knowledge",medium,Mix of cities and smaller towns
+JE,Jersey,,166,110,34,8,14,Booking,low,Limited stock
+LI,Liechtenstein,,157,105,38,6,8,Booking,low,Tiny; often visited as day trip; Swiss price level
+LT,Lithuania,,81,50,18,4,9,Numbeo/Booking,medium,Vilnius/Kaunas
+LU,Luxembourg,,131,90,28,3,10,Numbeo/Booking,medium,Public transport free nationally; hotels pricey
+LV,Latvia,,81,50,18,4,9,Numbeo/Booking,medium,Riga
+MC,Monaco,,250,190,45,5,10,Booking,low,Extremely pricey; usually base in Nice/Menton adjacent which is cheaper
+MD,Moldova,,53,32,12,3,6,Numbeo/Booking,medium,Chisinau
+ME,Montenegro,,67,40,15,4,8,Numbeo/Booking,medium,Kotor higher in summer
+MK,North Macedonia,,46,26,11,3,6,Numbeo/Booking,medium,Skopje/Ohrid
+MT,Malta,,111,70,24,5,12,Numbeo/Booking,medium,Valletta/Sliema
+NL,Netherlands,,148,95,28,9,16,"Web check Oct 2026: 2026 cost guides (budgetyourtrip, tourlane, amigosim, viatravelers) + prior knowledge",medium,Amsterdam high; elsewhere lower
+NO,Norway,,170,100,38,12,20,"Web check Oct 2026: 2026 cost guides (budgetyourtrip, tourlane, amigosim, viatravelers) + prior knowledge",medium,"Expensive throughout; BYT mid-range ~USD131 pp incl hotel ~USD56 pp, so lowered"
+PL,Poland,,72,45,15,3,9,Numbeo/Booking,medium,Krakow/Warsaw/Gdansk
+PT,Portugal,,98,60,22,5,11,"Web check Oct 2026: 2026 cost guides (budgetyourtrip, tourlane, amigosim, viatravelers) + prior knowledge",medium,Lisbon/Porto higher
+RO,Romania,,63,38,14,3,8,Numbeo/Booking,medium,Bucharest/Transylvania
+RS,Serbia,,56,32,13,3,8,Numbeo/Booking,medium,Belgrade
+SE,Sweden,,139,85,30,9,15,"Web check Oct 2026: 2026 cost guides (budgetyourtrip, tourlane, amigosim, viatravelers) + prior knowledge",medium,Stockholm higher
+SI,Slovenia,,104,65,22,5,12,Numbeo/Booking,medium,Ljubljana/Bled
+SK,Slovakia,,71,45,15,3,8,Numbeo/Booking,medium,Bratislava/Kosice
+SM,San Marino,,107,70,25,4,8,Booking,low,Often stayed in nearby Rimini; limited stock
+XK,Kosovo,,43,26,10,2,5,Numbeo/Booking,medium,Pristina/Prizren
+IT,Italy,big city / peak coast,153,95,32,8,18,"Web check Oct 2026: 2026 cost guides (budgetyourtrip, tourlane, amigosim, viatravelers) + prior knowledge",medium,Roughly 30%+ above base; variant kept per brief hint
+HR,Croatia,peak coast (Jul-Aug),142,90,28,7,17,"Web check Oct 2026: 2026 cost guides (budgetyourtrip, tourlane, amigosim, viatravelers) + prior knowledge",medium,About 40%+ above shoulder base
+GR,Greece,Cyclades islands peak,148,95,30,8,15,"Web check Oct 2026: 2026 cost guides (budgetyourtrip, tourlane, amigosim, viatravelers) + prior knowledge",medium,Well above mainland base
+ES,Spain,big city / peak coast,131,80,28,7,16,"Web check Oct 2026: 2026 cost guides (budgetyourtrip, tourlane, amigosim, viatravelers) + prior knowledge",medium,~25% above base
+FR,France,Paris / Riviera,179,115,34,10,20,"Web check Oct 2026: 2026 cost guides (budgetyourtrip, tourlane, amigosim, viatravelers) + prior knowledge",medium,~45% above base
+AE,United Arab Emirates,,120,75,22,8,15,Numbeo AE 2026-10 inexpensive meal + local ticket (food/transport); room price from knowledge (budgetyourtrip blocked 403),medium,Dubai/Abu Dhabi 3* ~75; cheaper Sharjah/Ajman
+AM,Armenia,,55,30,15,3,7,knowledge + Numbeo,medium,Yerevan guesthouse private room
+AZ,Azerbaijan,,62,35,15,4,8,knowledge + Numbeo,medium,Baku pricier than regions
+BH,Bahrain,,109,70,22,7,10,knowledge + Numbeo,medium,Few budget rooms; taxis needed
+BN,Brunei,,102,70,18,6,8,knowledge,low,Few cheap beds; most sights free
+BT,Bhutan,,88,55,20,5,8,knowledge,medium,Excludes the USD 100/night SDF (~EUR 89) and mandatory guide/car; independent travel not allowed so see variant for realistic rate
+BT,Bhutan,tour package incl. SDF,225,150,35,25,15,knowledge + Bhutan tourism rules,medium,Realistic rate: 3* hotel + SDF USD 100 (~EUR 89) + mandatory guide/car in local transport; app median likely this package
+CN,China,,69,40,12,5,12,Numbeo CN 2026-10 inexpensive meal + local ticket (food/transport); room price from knowledge (budgetyourtrip blocked 403),medium,Tier-1 cities higher; smaller towns cheaper
+GE,Georgia,,63,35,17,3,8,knowledge + Numbeo,medium,Tbilisi/Batumi guesthouses
+ID,Indonesia,,51,28,10,5,8,Numbeo ID 2026-10 inexpensive meal + local ticket (food/transport); room price from knowledge (budgetyourtrip blocked 403),medium,Bali/Java mix; Bali pricier; excludes Komodo/volcano tours
+IN,India,,43,25,8,4,6,Numbeo IN 2026-10 inexpensive meal + local ticket (food/transport); room price from knowledge (budgetyourtrip blocked 403),medium,Private AC room 2-3*; Delhi/Mumbai higher
+JO,Jordan,,95,55,14,6,20,Numbeo JO 2026-10 inexpensive meal + local ticket (food/transport); room price from knowledge (budgetyourtrip blocked 403),medium,Petra/Jordan Pass averaged over days
+JP,Japan,,119,70,27,10,12,Numbeo JP 2026-10 inexpensive meal + local ticket (food/transport); room price from knowledge (budgetyourtrip blocked 403),medium,Business hotel single ~EUR 65-75; weak yen 2026; excludes JR pass
+KG,Kyrgyzstan,,48,28,12,3,5,knowledge,medium,Bishkek/Karakol guesthouses
+KH,Cambodia,,57,25,12,5,15,knowledge + budgetyourtrip,medium,Includes Angkor pass averaged
+KR,South Korea,,94,55,22,7,10,Numbeo KR 2026-10 inexpensive meal + local ticket (food/transport); room price from knowledge (budgetyourtrip blocked 403),medium,Seoul guesthouse/hotel private room
+KZ,Kazakhstan,,66,40,16,4,6,knowledge + Numbeo,medium,Almaty/Astana hotels
+LA,Laos,,46,22,11,5,8,knowledge + budgetyourtrip,medium,
+LK,Sri Lanka,,62,35,10,5,12,Numbeo LK 2026-10 inexpensive meal + local ticket (food/transport); room price from knowledge (budgetyourtrip blocked 403),medium,Post-2022 price levels
+MN,Mongolia,,64,35,15,6,8,knowledge,low,Ulaanbaatar-centered; ger camp touring excluded (multi-day tours)
+MV,Maldives,,130,80,25,10,15,"web search (maldives-magazine, 360degreeworld; guesthouse USD 90-130 double, resort entry USD 250-800 pp)",medium,Local island guesthouse; ferry transfers in local_transport
+MV,Maldives,resort island,640,450,100,60,30,"web search (maldives-magazine, 360degreeworld; guesthouse USD 90-130 double, resort entry USD 250-800 pp)",medium,Resort incl. half board food estimate; speedboat/seaplane transfers prorated
+MY,Malaysia,,50,30,10,4,6,Numbeo MY 2026-10 inexpensive meal + local ticket (food/transport); room price from knowledge (budgetyourtrip blocked 403),medium,Peninsula (KL/Penang/Melaka)
+MY,Malaysia,Borneo (Sabah/Sarawak),81,40,13,8,20,Numbeo MY 2026-10 inexpensive meal + local ticket (food/transport); room price from knowledge (budgetyourtrip blocked 403),medium,Higher lodging/transport and park fees; excludes Kinabatangan/Mulu multi-day tours
+NP,Nepal,,40,20,9,3,8,knowledge + budgetyourtrip,medium,Excludes treks with guides/permits
+OM,Oman,,103,65,18,10,10,knowledge + Numbeo,medium,Hotels pricey; taxis needed
+PH,Philippines,,54,28,11,5,10,Numbeo PH 2026-10 inexpensive meal + local ticket (food/transport); room price from knowledge (budgetyourtrip blocked 403),medium,Excludes island-hopping inter-island flights
+QA,Qatar,,128,85,25,8,10,knowledge + Numbeo,medium,Doha 3* priced high
+SG,Singapore,,141,95,25,6,15,Numbeo SG 2026-10 inexpensive meal + local ticket (food/transport); room price from knowledge (budgetyourtrip blocked 403),medium,Hostel private/budget hotel single
+TH,Thailand,,57,32,12,5,8,Numbeo TH 2026-10 inexpensive meal + local ticket (food/transport); room price from knowledge (budgetyourtrip blocked 403),medium,Bangkok/Chiang Mai/islands mix
+TJ,Tajikistan,,48,28,12,3,5,knowledge,low,Dushanbe/Khorog guesthouses
+TL,East Timor,,63,40,12,6,5,knowledge,low,Dili is expensive for the region
+TR,Turkey,,87,45,22,5,15,Numbeo TR 2026-10 inexpensive meal + local ticket (food/transport); room price from knowledge (budgetyourtrip blocked 403),medium,"Lira inflation: EUR prices rising; Istanbul/Cappadocia high, east cheaper"
+TW,Taiwan,,76,45,16,5,10,knowledge + Numbeo,medium,
+UZ,Uzbekistan,,51,28,12,3,8,knowledge + Numbeo,medium,Guesthouses in Samarkand/Bukhara/Khiva
+VN,Vietnam,,47,25,10,4,8,Numbeo VN 2026-10 inexpensive meal + local ticket (food/transport); room price from knowledge (budgetyourtrip blocked 403),medium,
+AO,Angola,,120,80,22,10,8,own knowledge (budgetyourtrip/Numbeo/Booking typical 2025-26),low,"Luanda very expensive (hotels 150+), provinces cheaper; expat price level"
+BJ,Benin,,48,28,9,5,6,own knowledge (budgetyourtrip/Numbeo/Booking typical 2025-26),low,Cotonou/Ouidah/Abomey guesthouses; zemidjan moto-taxis cheap
+BW,Botswana,,95,55,20,10,10,"budgetyourtrip.com (traveller-reported all-in averages, mid-range, April 2026) as cross-check + own knowledge of Booking/Numbeo guesthouse and meal prices",medium,"Towns (Gaborone/Maun/Kasane) only, no safari. App median likely includes safaris (web cross-check done, no change)"
+BW,Botswana,safari (lodge/tented camp + game drives + park fees),300,150,25,10,115,"budgetyourtrip.com (traveller-reported all-in averages, mid-range, April 2026) as cross-check + own knowledge of Booking/Numbeo guesthouse and meal prices",medium,TourRadar 2026 Botswana mobile camping from USD 3586/10d (~EUR 320/day) to 9d mixed ~USD 320/day incl. fees extra; BYT budget safari tours; solo budget-mid ~EUR 300
+CI,Ivory Coast,,59,35,12,6,6,own knowledge (budgetyourtrip/Numbeo/Booking typical 2025-26),low,"Abidjan pricey, interior cheaper"
+CM,Cameroon,,49,28,10,6,5,own knowledge (budgetyourtrip/Numbeo/Booking typical 2025-26),low,Douala/Yaounde hotels pricey for quality; moto-taxis cheap
+CV,Cape Verde,,70,45,14,4,7,own knowledge (budgetyourtrip/Numbeo/Booking typical 2025-26),medium,Guesthouse level; inter-island ferries/flights excluded
+EG,Egypt,,47,22,8,5,12,"budgetyourtrip.com (traveller-reported all-in averages, mid-range, April 2026) as cross-check + own knowledge of Booking/Numbeo guesthouse and meal prices",medium,"Post-devaluation cheap; sight entrance fees (Giza, Luxor) raise activities; Nile cruises excluded (web cross-check done, no change)"
+ET,Ethiopia,,45,25,8,4,8,own knowledge (budgetyourtrip/Numbeo/Booking typical 2025-26),medium,Addis/Lalibela/Gondar; birr devaluation made it cheap; foreigner sight fees high
+GA,Gabon,,125,80,25,12,8,own knowledge (budgetyourtrip/Numbeo/Booking typical 2025-26),low,"Very expensive for Africa, Libreville hotels; national park trips excluded"
+GH,Ghana,,58,35,11,6,6,own knowledge (budgetyourtrip/Numbeo/Booking typical 2025-26),medium,Accra/Kumasi/Cape Coast guesthouses
+GM,Gambia,,46,28,9,4,5,own knowledge (budgetyourtrip/Numbeo/Booking typical 2025-26),medium,Coastal Serrekunda/Kololi guesthouses; cheap eats
+KE,Kenya,,77,45,14,8,10,"budgetyourtrip.com (traveller-reported all-in averages, mid-range, April 2026) as cross-check + own knowledge of Booking/Numbeo guesthouse and meal prices",medium,"Nairobi/Mombasa/Diani towns, no safari. App median likely includes safaris (web cross-check done, no change)"
+KE,Kenya,safari (lodge/tented camp + game drives + park fees),215,120,10,5,80,"budgetyourtrip.com + tour operator rates, checked April 2026; part own estimate",medium,"Budget-mid tented camp full board, shared game drives, Mara/Amboseli fees dominate (web cross-check done, no change)"
+LS,Lesotho,,58,35,10,5,8,own knowledge (budgetyourtrip/Numbeo/Booking typical 2025-26),low,Maseru/Semonkong; pony trekking excluded
+MA,Morocco,,65,38,12,5,10,"budgetyourtrip.com (traveller-reported all-in averages, mid-range, April 2026) as cross-check + own knowledge of Booking/Numbeo guesthouse and meal prices",medium,BYT mid USD 88/pp (includes tours); riad/hotel solo room ~EUR 35-45
+MG,Madagascar,,52,28,10,6,8,own knowledge (budgetyourtrip/Numbeo/Booking typical 2025-26),low,Tana/Nosy Be/Ranomafana; park fees averaged; 4x4 and taxi-brousse excluded
+MU,Mauritius,,84,55,15,6,8,"budgetyourtrip.com (traveller-reported all-in averages, mid-range, April 2026) as cross-check + own knowledge of Booking/Numbeo guesthouse and meal prices",medium,"Guesthouse/budget hotel level, not resorts; buses cheap (web cross-check done, no change)"
+MW,Malawi,,53,30,10,5,8,own knowledge (budgetyourtrip/Numbeo/Booking typical 2025-26),low,Lilongwe/Lake Malawi guesthouses
+MW,Malawi,safari (lodge/tented camp + game drives + park fees),175,100,10,5,60,own knowledge (budgetyourtrip/Numbeo/Booking typical 2025-26),low,Liwonde/Majete lodge incl. boat/game drives
+MZ,Mozambique,,68,40,14,6,8,own knowledge (budgetyourtrip/Numbeo/Booking typical 2025-26),low,Maputo/Tofo/Vilankulos; diving excluded
+MZ,Mozambique,safari (lodge/tented camp + game drives + park fees),187,110,12,5,60,own knowledge (budgetyourtrip/Numbeo/Booking typical 2025-26),low,"Gorongosa-type camp, park fees; excl. flights"
+NA,Namibia,,88,50,18,8,12,"budgetyourtrip.com (traveller-reported all-in averages, mid-range, April 2026) as cross-check + own knowledge of Booking/Numbeo guesthouse and meal prices",medium,"Windhoek/Swakopmund/Luderitz guesthouses; car rental excluded. App median likely includes car/safari (web cross-check done, no change)"
+NA,Namibia,safari (lodge/tented camp + game drives + park fees),170,100,25,5,40,"budgetyourtrip.com (traveller-reported all-in averages, mid-range, April 2026) as cross-check + own knowledge of Booking/Numbeo guesthouse and meal prices",medium,Etosha Safari Camp ZAR 1980 pp sharing (~EUR 95); Gondwana Etosha Safari Lodge single N$3845 B&B (~EUR 190); Etosha Village USD 197; park fees + drives ~EUR 40
+RW,Rwanda,,85,55,14,6,10,"budgetyourtrip.com (traveller-reported all-in averages, mid-range, April 2026) as cross-check + own knowledge of Booking/Numbeo guesthouse and meal prices",medium,"Kigali/Musanze/Kibuye; moto-taxi cheap. Gorilla permit (USD 1500) EXCLUDED here (web cross-check done, no change)"
+RW,Rwanda,safari (lodge/tented camp + game drives + park fees),191,110,15,6,60,"budgetyourtrip.com + tour operator rates, checked April 2026; part own estimate",medium,"Akagera/Nyungwe lodge + fees; gorilla permit (USD 1500) NOT included, extra (web cross-check done, no change)"
+SC,Seychelles,,145,100,25,10,10,"budgetyourtrip.com (traveller-reported all-in averages, mid-range, April 2026) as cross-check + own knowledge of Booking/Numbeo guesthouse and meal prices",medium,"BYT budget USD 104-134, mid 236-306 per person; guesthouse solo room Mahe/Praslin ~EUR 90-110"
+SN,Senegal,,59,35,11,6,7,own knowledge (budgetyourtrip/Numbeo/Booking typical 2025-26),medium,Dakar/Saint-Louis/Saly guesthouses
+ST,Sao Tome and Principe,,63,40,12,5,6,own knowledge (budgetyourtrip/Numbeo/Booking typical 2025-26),low,Guesthouse level; few options
+SZ,Eswatini,,64,40,11,5,8,own knowledge (budgetyourtrip/Numbeo/Booking typical 2025-26),low,Mbabane/Ezulwini guesthouses; park fees modest
+TG,Togo,,42,25,8,4,5,own knowledge (budgetyourtrip/Numbeo/Booking typical 2025-26),low,Lome/Kpalime; cheap guesthouses
+TN,Tunisia,,48,28,9,3,8,own knowledge (budgetyourtrip/Numbeo/Booking typical 2025-26),medium,Tunis/Sousse/Djerba hotels; louage/train intercity excluded
+TZ,Tanzania,,79,45,14,8,12,"budgetyourtrip.com (traveller-reported all-in averages, mid-range, April 2026) as cross-check + own knowledge of Booking/Numbeo guesthouse and meal prices",medium,"Dar/Arusha/Zanzibar towns, no safari. App median likely includes safaris (web cross-check done, no change)"
+TZ,Tanzania,safari (lodge/tented camp + game drives + park fees),235,130,10,5,90,"budgetyourtrip.com (traveller-reported all-in averages, mid-range, April 2026) as cross-check + own knowledge of Booking/Numbeo guesthouse and meal prices",medium,Duma Explorer 2026: group camping safari USD 180-250 pp/day incl. fees; solo lodge supplement pushes mid-range to ~EUR 235
+UG,Uganda,,61,35,12,6,8,"budgetyourtrip.com (traveller-reported all-in averages, mid-range, April 2026) as cross-check + own knowledge of Booking/Numbeo guesthouse and meal prices",medium,"Kampala/Jinja/Entebbe; boda-boda cheap. Gorilla permit (USD 800) EXCLUDED (web cross-check done, no change)"
+UG,Uganda,safari (lodge/tented camp + game drives + park fees),187,100,12,5,70,"budgetyourtrip.com + tour operator rates, checked April 2026; part own estimate",medium,"Queen Elizabeth/Murchison lodge + fees; gorilla permit (USD 800) NOT included, extra (web cross-check done, no change)"
+ZA,South Africa,,89,50,17,10,12,"budgetyourtrip.com (traveller-reported all-in averages, mid-range, April 2026) as cross-check + own knowledge of Booking/Numbeo guesthouse and meal prices",medium,"Cape Town/Joburg/Garden Route guesthouses; Uber; car rental excluded (web cross-check done, no change)"
+ZA,South Africa,safari (lodge/tented camp + game drives + park fees),160,90,20,5,45,"budgetyourtrip.com + tour operator rates, checked April 2026; part own estimate",medium,"Kruger rest camps/budget lodges + SANParks fees and guided drives; private reserves much higher (web cross-check done, no change)"
+ZM,Zambia,,72,40,14,6,12,"budgetyourtrip.com (traveller-reported all-in averages, mid-range, April 2026) as cross-check + own knowledge of Booking/Numbeo guesthouse and meal prices",medium,"Lusaka/Livingstone; Victoria Falls entry averaged (web cross-check done, no change)"
+ZM,Zambia,safari (lodge/tented camp + game drives + park fees),230,130,15,5,80,"budgetyourtrip.com + tour operator rates, checked April 2026; part own estimate",medium,"South Luangwa budget-mid lodge incl. drives and fees (web cross-check done, no change)"
+ZW,Zimbabwe,,77,45,14,6,12,"budgetyourtrip.com (traveller-reported all-in averages, mid-range, April 2026) as cross-check + own knowledge of Booking/Numbeo guesthouse and meal prices",medium,"Harare/Bulawayo/Victoria Falls; USD economy; falls entry USD 50 (web cross-check done, no change)"
+ZW,Zimbabwe,safari (lodge/tented camp + game drives + park fees),210,120,15,5,70,"budgetyourtrip.com + tour operator rates, checked April 2026; part own estimate",medium,"Hwange/Mana Pools camps incl. drives and fees (web cross-check done, no change)"
+AR,Argentina,,82,45,20,5,12,"knowledge: blue/official peso converged, 2026 tourist prices",medium,BA + provincial mix; app median likely includes Patagonia/domestic costs
+AR,Argentina,Patagonia,138,75,30,8,25,2026 guides: Patagonia costs more than BA,medium,Tourist-town premium
+AW,Aruba,,153,100,30,8,15,budgetyourtrip + knowledge,medium,Guesthouse level; app median likely resort-level
+BO,Bolivia,,40,20,10,3,7,budgetyourtrip + Numbeo,medium,
+BQ,Bonaire,,160,100,35,10,15,knowledge,low,Guesthouse/studio; marine park tag amortised; no car
+BR,Brazil,,81,45,18,6,12,"budgetyourtrip (mid 97 USD/day, budget 37) + knowledge",medium,
+BZ,Belize,,113,70,20,8,15,budgetyourtrip,medium,Expensive for Central America
+CA,Canada,,197,120,45,12,20,"budgetyourtrip (avg 191 USD/day: hotel 181, meals 62 per person) adjusted to solo 2-3* room",medium,Mix of cities and towns; excludes car
+CL,Chile,,92,55,22,5,10,"budgetyourtrip (avg 123 USD/day, budget 48)",medium,Santiago + north/central mix
+CL,Chile,Patagonia,128,70,28,8,22,knowledge,medium,Puerto Natales/Punta Arenas; excludes park fees above 30 and treks
+CO,Colombia,,56,30,13,4,9,"budgetyourtrip (mid 65-67 USD/day, Medellin 36)",medium,
+CR,Costa Rica,,104,60,22,6,16,budgetyourtrip (152 USD/day avg inflated by tours) + guide estimates,medium,
+CU,Cuba,,57,30,15,6,6,"budgetyourtrip (48 USD/day, hotels 47) + Lonely Planet casa 30-50 USD double",medium,Informal exchange rate volatile; app median likely overstated
+CW,Curaçao,,143,90,30,8,15,knowledge,medium,
+DM,Dominica,,131,80,28,8,15,knowledge,low,
+EC,Ecuador,,54,30,12,3,9,budgetyourtrip + Numbeo,medium,
+EC,Ecuador,Galápagos,168,90,30,8,40,knowledge,medium,Excludes park fee 100 USD and cruises
+GD,Grenada,,128,80,28,8,12,knowledge,low,
+GP,Guadeloupe,,135,85,30,8,12,knowledge,low,Euro prices
+GT,Guatemala,,53,28,12,4,9,"budgetyourtrip (59 USD/day avg, budget 23)",medium,
+GY,Guyana,,91,55,18,8,10,knowledge,low,
+HN,Honduras,,50,28,11,3,8,budgetyourtrip,medium,
+JM,Jamaica,,120,70,25,10,15,"budgetyourtrip (142 USD/day avg, local transport 13)",medium,
+LC,Saint Lucia,,140,85,30,10,15,knowledge,low,
+MX,Mexico,,82,45,18,5,14,"budgetyourtrip (mid 145 USD/day, budget 52; CDMX 224)",medium,
+NI,Nicaragua,,47,25,11,3,8,budgetyourtrip,medium,
+PA,Panama,,83,50,18,5,10,budgetyourtrip,medium,
+PE,Peru,,60,30,13,4,13,"budgetyourtrip (77 USD/day avg, budget 28)",medium,Excludes Machu Picchu/treks
+SR,Suriname,,81,50,16,5,10,knowledge,low,
+SV,El Salvador,,53,30,12,3,8,budgetyourtrip,medium,
+US,United States,,168,100,38,10,20,budgetyourtrip secondary citations + avg hotel 162 USD; budget motel level,medium,Mixed cities/smaller towns; excludes car
+US,United States,big cities (NYC/SF),240,150,45,15,30,"budgetyourtrip NYC (hotel 350 avg, meals 87) + Savvy Backpacker budget hotel 150 USD",medium,43% above base
+UY,Uruguay,,98,55,25,6,12,budgetyourtrip + Numbeo,medium,
+AU,Australia,,165,100,35,10,20,"budgetyourtrip (184 USD/day: hotel 150, meals 61, transport 32)",medium,
+CK,Cook Islands,,133,85,28,6,14,knowledge,low,
+FJ,Fiji,,93,55,20,6,12,budgetyourtrip,medium,
+NZ,New Zealand,,143,85,30,8,20,budgetyourtrip (158 USD/day avg),medium,Excludes campervan/car
+PG,Papua New Guinea,,120,80,20,10,10,knowledge,low,Few budget rooms; high for region
+PW,Palau,,143,90,30,8,15,knowledge,low,
+TO,Tonga,,83,50,18,5,10,knowledge,low,
+VU,Vanuatu,,93,55,20,6,12,knowledge,low,
+WS,Samoa,,83,50,18,5,10,knowledge,low,
+GL,Greenland,,267,170,55,12,30,"budgetyourtrip (322 USD/day, budget 140; hotels 120-240 USD per other sources)",medium,Expensive towns; excludes flights/boats between towns
+SJ,Svalbard,,290,190,55,10,35,knowledge,low,Longyearbyen guesthouse; excludes guided tours
+AQ,Antarctica,,800,450,150,0,200,knowledge: budget 10-12 day expedition cruise about 8500-9500 EUR,low,"Whole cruise cost per day (berth, meals, landings); excludes flights to Ushuaia"
