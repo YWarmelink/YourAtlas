@@ -12,6 +12,26 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Full-cost budget, Phase 2: UI (2026-10-27)** — Route Builder now shows what a trip really
+  costs, not only the daily costs. Edit mode: per country, transport onward (labelled with the
+  next country), transport within the country, a "costs checked" date (set automatically when a
+  cost is edited) and an extras list (label / € / category / optional, plus a "No extras needed"
+  button that records `[]`, so "none" stays different from "not estimated"); per route, NL flights
+  in/out and insurance €/month + buffer % overrides. A cost panel under the summary breaks the
+  total into daily costs / transport / NL flights / tours & fees / visas / insurance / buffer,
+  shows the all-in €/day, lists optional extras separately (never in the total) and has a
+  Budget / Standard / Comfort switch (remembered per browser). Tiers are computed by
+  `rbRouteCosts()` (`routeBuilderCore.js`) with multipliers per cost type taken from the Asia
+  workbook's tier totals (`RB_COST_TIERS`); insurance defaults to €100/month only for trips over
+  60 days (`RB_TRIP_COST_DEFAULTS`). A status line says how many countries aren't costed yet,
+  whether the flights are missing, and flags transport costs priced to a country that is no
+  longer next after a reorder (also warned on the block itself). The summary tile and route
+  cards say "daily costs only" / "incomplete" / "all-in" next to the number. Region budgets
+  are now the computed sum of their countries; the old typed-in region budget field is gone
+  from the UI (the stored value is left alone, unused). Verified in Chrome on a local copy with
+  Sheet writes blocked (25 would-be pushes intercepted): editing, extras, the reorder warning,
+  tier switching, overview details, region sums, route cards and the Sheet payload; no console
+  errors. Narrow-screen layout has CSS rules but wasn't checked at phone width.
 - **Full-cost budget, Phase 1: data model + Sheet plumbing (2026-10-27)** — first step of
   `ROUTE_BUILDER_BUDGET_PLAN.md` (Phase 0 decisions: all five recommendations, lists stored as a
   JSON cell). New fields, empty = "not estimated yet" (kept distinct from 0): block

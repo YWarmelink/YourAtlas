@@ -1,7 +1,8 @@
 # Route Builder — Full-Cost Budget Plan
 
-Status: **Phase 0 decided, Phase 1 DONE (2026-10-27)**: Apps Script redeployed, live
-round-trip test passed. Phase 2 (UI) next. Started after the long-haul buffer budget fix (see `CHANGELOG.md`).
+Status: **Phases 0-2 DONE (2026-10-27)**: data model + Sheet plumbing (live round-trip
+passed) and the UI (browser-verified). Phase 3 (pilot: fill the Asia Grand Tour from the
+workbook) next. Started after the long-haul buffer budget fix (see `CHANGELOG.md`).
 
 ## Why
 
@@ -95,6 +96,14 @@ before any content is added.
   `scripts/fix_longhaul_buffer_budgets_in_sheet.js` does).
 
 ### Phase 2 — UI
+
+**Built 2026-10-27** (see `CHANGELOG.md`). Labels: the tiers are Budget / **Standard** / Comfort
+(Standard = the workbook's "Basis"). Optional extras are never in the total (the workbook's
+"Meenemen = Nee"); an optional item you do plan to do is entered as non-optional. A country
+counts as "costed" once onward transport (not needed on the last one), local transport and the
+extras list (each with a price) are filled in, 0 and "no extras" included.
+
+Original plan:
 
 - Block editor (`routeBuilderUI.js`): input fields for transport costs and an extras list (+
   add, optional checkbox).

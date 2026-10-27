@@ -394,11 +394,21 @@ function rbBuildRouteCard(route) {
           <span>🌍 ${countryCount} countr${countryCount !== 1 ? 'ies' : 'y'}</span>
           <span>📅 ${totalDays} days</span>
           <span>~${months} mo</span>
+          ${rbRouteCardBudgetHTML(route)}
         </div>
         ${tagsHTML}
       </div>
       <div class="route-card-open">Open →</div>
     </div>`;
+}
+
+/** All-in total at the chosen tier, or the daily-cost total while nothing else is estimated —
+ *  labelled, so a partial number never passes for a complete one. */
+function rbRouteCardBudgetHTML(route) {
+  const c = rbRouteCosts(route, rbCostTier);
+  if (!c.rows.ground && !c.hasCosts) return '';
+  const label = !c.hasCosts ? 'daily costs' : c.complete ? 'all-in' : 'incomplete';
+  return `<span title="${RB_COST_TIERS[rbCostTier].label} level">💶 ${rbEuro(c.hasCosts ? c.total : c.rows.ground)} <span class="route-card-budget-note">${label}</span></span>`;
 }
 
 /** Budget / Primary Trip Type / Best Time to Visit chips — the 3 taxonomy fields Youri picked to
@@ -509,6 +519,14 @@ function rbRenderEditor() {
   document.getElementById('rbDescriptionInput').value = route.description || '';
   document.getElementById('rbClimateInput').value = route.climate_summary || '';
   document.getElementById('rbRouteNotesInput').value = route.notes || '';
+  const tc = route.trip_costs || {};
+  document.getElementById('rbFlightInInput').value = route.flight_in_cost ?? '';
+  document.getElementById('rbFlightOutInput').value = route.flight_out_cost ?? '';
+  document.getElementById('rbInsuranceInput').value = tc.insurance_per_month ?? '';
+  document.getElementById('rbBufferInput').value = tc.buffer_pct ?? '';
+  document.getElementById('rbInsuranceInput').placeholder =
+    `auto: €${RB_TRIP_COST_DEFAULTS.insurance_per_month} over ${RB_TRIP_COST_DEFAULTS.insurance_min_days} days`;
+  document.getElementById('rbBufferInput').placeholder = `default ${RB_TRIP_COST_DEFAULTS.buffer_pct}`;
   document.title = `${route.name || 'Route Builder'} | Youri's Travel Atlas`;
 
   document.getElementById('rbEditorCard').dataset.rbMode = rbEditorMode;
@@ -584,8 +602,8 @@ function rbRenderRegionGroup(region, blocks, ranges, route) {
         <input type="text" class="rb-region-name-input" value="${escapeHTML(region.name)}" placeholder="Region name">
         <span class="rb-region-stat">🧱 ${blocks.length} countr${blocks.length === 1 ? 'y' : 'ies'}</span>
         <span class="rb-region-stat">📅 ${totalDays} days</span>
+        <span class="rb-region-stat" title="${RB_REGION_COST_TITLE}">💶 ${rbEuro(rbRegionCost(blocks))}</span>
         <input type="text" class="rb-input rb-input-sm rb-region-season" placeholder="Best season" value="${escapeHTML(region.season || '')}">
-        <input type="number" class="rb-input rb-input-sm rb-region-budget" placeholder="Budget est." value="${region.budget === '' || region.budget == null ? '' : region.budget}">
         <button class="rb-icon-btn rb-icon-btn-danger" data-action="delete-region" title="Delete region (countries stay, just ungrouped)">✕</button>
       </div>
       <input type="text" class="rb-input rb-region-notes" placeholder="Region notes… (optional)" value="${escapeHTML(region.notes || '')}">
@@ -640,6 +658,8 @@ function rbRenderBlockRow(b, r, route) {
           <input type="text" class="rb-input rb-input-transport" placeholder="e.g. flight, overnight bus, ferry…" value="${escapeHTML(b.transport_to_next || '')}">
         </div>
 
+        ${rbBlockCostsHTML(b, idx, route)}
+
         <div class="rb-destinations">
           <div class="rb-destinations-label">Destinations <span class="rb-optional">optional</span></div>
           <div class="rb-destination-list">
@@ -668,6 +688,141 @@ function rbRenderBlockRow(b, r, route) {
     </div>`;
 }
 
+// ---- full-cost budget (ROUTE_BUILDER_BUDGET_PLAN.md; math lives in rbRouteCosts(), Core) ----
+
+const RB_COST_TIER_KEY = 'atlas_rb_cost_tier';
+let rbCostTier = (() => {
+  try { const t = localStorage.getItem(RB_COST_TIER_KEY); return RB_COST_TIERS[t] ? t : 'standard'; } catch (_) { return 'standard'; }
+})();
+
+const RB_EXTRA_CATEGORY_LABELS = {
+  activity: 'Activity', tour: 'Tour', park_fee: 'Park fee', visa: 'Visa', transport: 'Transport', other: 'Other',
+};
+
+const RB_COST_ROW_LABELS = [
+  ['ground', 'Daily costs', 'accommodation, food, local getting around, small activities'],
+  ['transport', 'Transport', 'between countries + intercity within them'],
+  ['flights', 'Flights NL', 'there and back'],
+  ['extras', 'Tours & fees', 'tours, park fees, boat trips'],
+  ['visas', 'Visas', ''],
+  ['insurance', 'Travel insurance', 'long trips only, per month'],
+];
+
+const RB_REGION_COST_TITLE = 'Sum of this region’s countries: daily costs + transport + extras (Standard level, no NL flights/insurance/buffer)';
+
+const rbEuro = n => '€' + Math.round(n || 0).toLocaleString('nl-NL');
+
+/** A region's budget is the sum of its blocks (decision 5) — not the old free-typed region.budget. */
+function rbRegionCost(blocks) {
+  const c = rbRouteCosts({ blocks }, 'standard');
+  return c.rows.ground + c.rows.transport + c.rows.extras + c.rows.visas;
+}
+
+function rbCountryNameForCode(route, code) {
+  const b = (route.blocks || []).find(x => x.country_code === code);
+  return b ? b.country : code;
+}
+
+// Editing a cost counts as checking it; the date input can still be changed by hand.
+function rbStampCostsChecked(block) {
+  const d = new Date();
+  block.costs_checked = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
+function rbSyncCostsCheckedInput(row, block) {
+  const el = row.querySelector('.rb-cost-checked');
+  if (el && el !== document.activeElement) el.value = block.costs_checked || '';
+}
+
+function rbBlockCostsHTML(b, idx, route) {
+  const next = route.blocks[idx + 1];
+  const extras = Array.isArray(b.extras) ? b.extras : null;
+  const val = v => (v === '' || v == null) ? '' : v;
+  const stale = rbTransportCostStale(route.blocks, idx);
+  const categoryOptions = sel => RB_EXTRA_CATEGORIES.map(c =>
+    `<option value="${c}"${c === sel ? ' selected' : ''}>${RB_EXTRA_CATEGORY_LABELS[c]}</option>`).join('');
+
+  return `
+    <div class="rb-costs">
+      <div class="rb-costs-label">Costs outside the daily budget <span class="rb-optional">empty = not estimated yet, 0 = none</span></div>
+      <div class="rb-costs-grid">
+        ${next ? `
+          <div class="rb-field">
+            <label>Transport to ${escapeHTML(next.country || 'next')} (€)</label>
+            <input type="number" min="0" class="rb-input rb-input-sm rb-cost-transport" placeholder="?" value="${val(b.transport_cost)}">
+          </div>` : ''}
+        <div class="rb-field">
+          <label>Transport within country (€)</label>
+          <input type="number" min="0" class="rb-input rb-input-sm rb-cost-local" placeholder="?" value="${val(b.local_transport_cost)}">
+        </div>
+        <div class="rb-field">
+          <label>Costs checked</label>
+          <input type="date" class="rb-input rb-input-sm rb-cost-checked" value="${escapeHTML(b.costs_checked || '')}">
+        </div>
+      </div>
+      ${stale ? `<div class="rb-cost-warning">⚠️ This transport cost was priced to ${escapeHTML(rbCountryNameForCode(route, b.transport_cost_to))}, but the next country is now ${escapeHTML(next.country || '?')}. Check it and re-enter it.</div>` : ''}
+      <div class="rb-extra-list">
+        ${(extras || []).map((x, i) => `
+          <div class="rb-extra-row" data-extra-index="${i}">
+            <input type="text" class="rb-input rb-input-sm rb-extra-label" placeholder="e.g. Gobi jeep tour, park fee, e-visa" value="${escapeHTML(x.label || '')}">
+            <input type="number" min="0" class="rb-input rb-input-sm rb-extra-cost" placeholder="€" value="${val(x.cost)}">
+            <select class="rb-input rb-input-sm rb-extra-category">${categoryOptions(x.category || 'other')}</select>
+            <label class="rb-extra-optional" title="Optional extras are listed but not counted in the total"><input type="checkbox" class="rb-extra-opt"${x.optional ? ' checked' : ''}> optional</label>
+            <button class="rb-icon-btn rb-icon-btn-danger" data-action="remove-extra" title="Remove extra">✕</button>
+          </div>`).join('')}
+        ${extras && !extras.length ? '<div class="rb-costs-none">No extras for this country.</div>' : ''}
+      </div>
+      <div class="rb-extra-actions">
+        <button class="rb-destination-add" data-action="add-extra">+ Add tour / fee / visa</button>
+        ${extras ? '' : '<button class="rb-destination-add" data-action="no-extras">No extras needed</button>'}
+      </div>
+    </div>`;
+}
+
+function rbRenderCostPanel(route) {
+  const panel = document.getElementById('rbCostPanel');
+  if (!panel) return;
+  if (!route.blocks.length) { panel.innerHTML = ''; return; }
+  const c = rbRouteCosts(route, rbCostTier);
+
+  const tierButtons = Object.entries(RB_COST_TIERS).map(([key, t]) =>
+    `<button class="rb-map-mode-btn${key === rbCostTier ? ' is-active' : ''}" data-cost-tier="${key}">${t.label}</button>`).join('');
+  const rows = RB_COST_ROW_LABELS.map(([key, label, hint]) => `
+    <div class="rb-cost-row">
+      <span class="rb-cost-row-label">${label}${hint ? ` <span class="rb-cost-row-hint">${hint}</span>` : ''}</span>
+      <span class="rb-cost-row-value">${c.rows[key] ? rbEuro(c.rows[key]) : '—'}</span>
+    </div>`).join('');
+
+  const gaps = [];
+  if (c.incompleteBlocks) gaps.push(`${c.incompleteBlocks} of ${c.blockCount} countr${c.blockCount === 1 ? 'y' : 'ies'} not costed yet`);
+  if (c.flightsMissing) gaps.push('NL flights not estimated');
+  if (c.staleTransport) gaps.push(`${c.staleTransport} transport cost${c.staleTransport === 1 ? '' : 's'} priced to a different next country`);
+  const status = !c.hasCosts
+    ? `<div class="rb-cost-status is-partial">Only the daily costs are estimated for this route so far. Transport, flights, tours and visas aren't in this total yet.</div>`
+    : gaps.length
+      ? `<div class="rb-cost-status is-partial">⚠️ Incomplete: ${gaps.join(' · ')}. The real total will be higher.</div>`
+      : `<div class="rb-cost-status is-complete">✓ All costs estimated</div>`;
+
+  panel.innerHTML = `
+    <div class="rb-cost-head">
+      <span class="rb-cost-title">💶 Trip cost <span class="rb-cost-row-hint">per person</span></span>
+      <div class="rb-cost-tiers">${tierButtons}</div>
+    </div>
+    <div class="rb-cost-rows">
+      ${rows}
+      <div class="rb-cost-row">
+        <span class="rb-cost-row-label">Buffer <span class="rb-cost-row-hint">${c.bufferPct}% for the unexpected</span></span>
+        <span class="rb-cost-row-value">${rbEuro(c.buffer)}</span>
+      </div>
+      <div class="rb-cost-row rb-cost-total">
+        <span class="rb-cost-row-label">Total${c.days ? ` <span class="rb-cost-row-hint">${rbEuro(c.perDay)}/day all-in</span>` : ''}</span>
+        <span class="rb-cost-row-value">${rbEuro(c.total)}</span>
+      </div>
+      ${c.optional ? `<div class="rb-cost-row rb-cost-optional"><span class="rb-cost-row-label">Optional extras <span class="rb-cost-row-hint">not in the total</span></span><span class="rb-cost-row-value">+${rbEuro(c.optional)}</span></div>` : ''}
+    </div>
+    ${status}`;
+}
+
 // ---- overview mode: read-only trip-at-a-glance list (map lives in the HTML alongside it) ----
 
 // Block ids whose "Details" (budget + per-destination notes) are expanded in Overview. Kept
@@ -675,7 +830,22 @@ function rbRenderBlockRow(b, r, route) {
 const rbOverviewExpanded = new Set();
 
 function rbOverviewHasDetails(b) {
-  return (b.destinations || []).some(d => d.name && d.notes) || rbOverviewBudgetLine(b) !== '';
+  return (b.destinations || []).some(d => d.name && d.notes) || rbOverviewBudgetLine(b) !== ''
+    || rbCostNum(b.transport_cost) !== null || rbCostNum(b.local_transport_cost) !== null || (b.extras || []).length > 0;
+}
+
+/** Overview "Details" lines for the costs outside the daily budget (Standard level, as entered). */
+function rbOverviewCostLines(b, idx, route) {
+  const lines = [];
+  const next = route.blocks[idx + 1];
+  const transport = rbCostNum(b.transport_cost), local = rbCostNum(b.local_transport_cost);
+  if (next && transport !== null) lines.push(`🚌 To ${escapeHTML(next.country || 'next')}: ${rbEuro(transport)}`);
+  if (local) lines.push(`🚆 Within the country: ${rbEuro(local)}`);
+  (b.extras || []).forEach(x => lines.push(
+    `🎟️ ${escapeHTML(x.label || RB_EXTRA_CATEGORY_LABELS[x.category] || 'Extra')}: ${rbEuro(rbCostNum(x.cost))}${x.optional ? ' <span class="rb-cost-row-hint">(optional)</span>' : ''}`));
+  if (rbTransportCostStale(route.blocks, idx)) lines.push(`<span class="rb-cost-warning-inline">⚠️ Transport cost was priced to ${escapeHTML(rbCountryNameForCode(route, b.transport_cost_to))}, not ${escapeHTML(next.country || '?')}</span>`);
+  if (b.costs_checked && lines.length) lines.push(`<span class="rb-cost-row-hint">Costs checked ${escapeHTML(b.costs_checked)}</span>`);
+  return lines;
 }
 
 function rbOverviewBudgetLine(b) {
@@ -722,7 +892,7 @@ function rbRenderOverviewBlocks(route) {
         <div class="rb-overview-region">
           <div class="rb-overview-region-header">
             <span class="rb-overview-region-name">${escapeHTML(region.name || 'Region')}</span>
-            <span class="rb-overview-region-stat">📅 ${totalDays} days${region.season ? ` · 🌤️ ${escapeHTML(region.season)}` : ''}</span>
+            <span class="rb-overview-region-stat">📅 ${totalDays} days · <span title="${RB_REGION_COST_TITLE}">💶 ${rbEuro(rbRegionCost(groupBlocks))}</span>${region.season ? ` · 🌤️ ${escapeHTML(region.season)}` : ''}</span>
           </div>
           ${region.notes ? `<div class="rb-overview-region-note">${escapeHTML(region.notes)}</div>` : ''}
           ${groupBlocks.map((bl, k) => rbRenderOverviewBlockRow(bl, groupRanges[k], route)).join('')}
@@ -748,6 +918,7 @@ function rbRenderOverviewBlockRow(b, r, route) {
   const open = hasDetails && rbOverviewExpanded.has(b.id);
   const budgetLine = rbOverviewBudgetLine(b);
   const destNotes = (b.destinations || []).filter(d => d.name && d.notes);
+  const costLines = open ? rbOverviewCostLines(b, idx, route) : [];
 
   return `
     <div class="rb-overview-block" style="--block-color:${color}">
@@ -766,6 +937,7 @@ function rbRenderOverviewBlockRow(b, r, route) {
         ${open ? `
           <div class="rb-overview-details">
             ${budgetLine ? `<div class="rb-overview-details-budget">${budgetLine}</div>` : ''}
+            ${costLines.map(l => `<div class="rb-overview-cost-line">${l}</div>`).join('')}
             ${destNotes.map(d => `
               <div class="rb-overview-dest-note"><span class="rb-overview-dest-name">${escapeHTML(d.name)}</span> — ${escapeHTML(d.notes)}</div>`).join('')}
           </div>` : ''}
@@ -800,8 +972,9 @@ function rbRefreshDerived(route) {
 
   const totalDays = rbTotalDays(route);
   const countries = new Set(route.blocks.map(b => (b.country || '').trim().toLowerCase()).filter(Boolean)).size;
-  const budgets = route.blocks.map(b => b.budget).filter(v => v !== '' && v != null && !isNaN(v));
-  const totalBudget = budgets.length ? budgets.reduce((s, v) => s + parseFloat(v), 0) : null;
+  const hasGround = route.blocks.some(b => rbCostNum(b.budget) !== null);
+  const costs = rbRouteCosts(route, rbCostTier);
+  const budgetLabel = !costs.hasCosts ? 'daily costs only' : costs.complete ? 'all-in' : 'all-in, incomplete';
 
   const summary = document.getElementById('rbSummary');
   if (summary) {
@@ -819,10 +992,11 @@ function rbRefreshDerived(route) {
         <div class="overview-item-value">${countries}</div>
       </div>
       <div class="overview-item">
-        <div class="overview-item-label">Budget</div>
-        <div class="overview-item-value">${totalBudget !== null ? formatBudget(totalBudget) : '—'}</div>
+        <div class="overview-item-label">Budget · ${budgetLabel}</div>
+        <div class="overview-item-value">${hasGround || costs.hasCosts ? rbEuro(costs.hasCosts ? costs.total : costs.rows.ground) : '—'}</div>
       </div>`;
   }
+  rbRenderCostPanel(route);
 
   rbRenderCalendarIfVisible(route);
   rbRenderMapIfVisible(route);
@@ -1628,6 +1802,34 @@ function rbBindEvents() {
   document.getElementById('rbStartDateInput').addEventListener('input', handleStartDateChange);
   document.getElementById('rbStartDateInput').addEventListener('change', handleStartDateChange);
 
+  // Route-level costs. Empty stays '' (not estimated), never 0.
+  const costNumber = el => el.value === '' ? '' : parseFloat(el.value);
+  const handleRouteCostChange = () => {
+    const route = rbGetCurrent();
+    if (!route) return;
+    route.flight_in_cost = costNumber(document.getElementById('rbFlightInInput'));
+    route.flight_out_cost = costNumber(document.getElementById('rbFlightOutInput'));
+    const insurance = costNumber(document.getElementById('rbInsuranceInput'));
+    const buffer = costNumber(document.getElementById('rbBufferInput'));
+    route.trip_costs = insurance === '' && buffer === '' ? null : {
+      ...(insurance === '' ? {} : { insurance_per_month: insurance }),
+      ...(buffer === '' ? {} : { buffer_pct: buffer }),
+    };
+    rbSave(route.id);
+    rbRefreshDerived(route);
+  };
+  ['rbFlightInInput', 'rbFlightOutInput', 'rbInsuranceInput', 'rbBufferInput'].forEach(id =>
+    document.getElementById(id).addEventListener('input', handleRouteCostChange));
+
+  document.getElementById('rbCostPanel').addEventListener('click', e => {
+    const btn = e.target.closest('[data-cost-tier]');
+    const route = rbGetCurrent();
+    if (!btn || !route) return;
+    rbCostTier = btn.dataset.costTier;
+    try { localStorage.setItem(RB_COST_TIER_KEY, rbCostTier); } catch (_) {}
+    rbRefreshDerived(route);
+  });
+
   document.getElementById('toggleCalendarBtn').addEventListener('click', e => {
     const panel = document.getElementById('rbCalendarPanel');
     const route = rbGetCurrent();
@@ -1707,9 +1909,38 @@ function rbBindEvents() {
         return;
       }
 
+      const extraRow = e.target.closest('.rb-extra-row');
+      if (extraRow) {
+        const extra = (block.extras || [])[parseInt(extraRow.dataset.extraIndex, 10)];
+        if (!extra) return;
+        const cl = e.target.classList;
+        if (cl.contains('rb-extra-label')) extra.label = e.target.value;
+        else if (cl.contains('rb-extra-cost')) extra.cost = e.target.value === '' ? '' : parseFloat(e.target.value);
+        else if (cl.contains('rb-extra-category')) extra.category = e.target.value;
+        else if (cl.contains('rb-extra-opt')) extra.optional = e.target.checked;
+        else return;
+        rbStampCostsChecked(block);
+        rbSyncCostsCheckedInput(row, block);
+        rbSave(route.id);
+        rbRefreshDerived(route);
+        return;
+      }
+
       if (e.target.classList.contains('rb-input-country')) {
         block.country_code = e.target.value;
         block.country = e.target.selectedOptions[0]?.textContent || '';
+        // The previous block's "Transport to X" label and stale-price warning depend on this.
+        if (e.type === 'change') { rbSave(route.id); rbRenderEditor(); return; }
+      } else if (e.target.classList.contains('rb-cost-transport')) {
+        block.transport_cost = e.target.value === '' ? '' : parseFloat(e.target.value);
+        const next = route.blocks[route.blocks.indexOf(block) + 1];
+        block.transport_cost_to = block.transport_cost === '' ? '' : (next?.country_code || '');
+        rbStampCostsChecked(block);
+      } else if (e.target.classList.contains('rb-cost-local')) {
+        block.local_transport_cost = e.target.value === '' ? '' : parseFloat(e.target.value);
+        rbStampCostsChecked(block);
+      } else if (e.target.classList.contains('rb-cost-checked')) {
+        block.costs_checked = e.target.value;
       } else if (e.target.classList.contains('rb-input-days')) {
         block.days = e.target.value === '' ? '' : (parseInt(e.target.value) || 0);
       } else if (e.target.classList.contains('rb-input-budget')) {
@@ -1722,6 +1953,7 @@ function rbBindEvents() {
         return;
       }
 
+      rbSyncCostsCheckedInput(row, block);
       rbSave(route.id);
       rbRefreshDerived(route);
       return;
@@ -1734,7 +1966,6 @@ function rbBindEvents() {
 
       if (e.target.classList.contains('rb-region-name-input')) region.name = e.target.value;
       else if (e.target.classList.contains('rb-region-season')) region.season = e.target.value;
-      else if (e.target.classList.contains('rb-region-budget')) region.budget = e.target.value === '' ? '' : parseFloat(e.target.value);
       else if (e.target.classList.contains('rb-region-notes')) region.notes = e.target.value;
       else return;
 
@@ -1806,6 +2037,16 @@ function rbBindEvents() {
     } else if (action === 'add-destination') {
       route.blocks[idx].destinations = route.blocks[idx].destinations || [];
       route.blocks[idx].destinations.push({ id: rbNewDestId(), name: '', notes: '' });
+    } else if (action === 'add-extra') {
+      route.blocks[idx].extras = Array.isArray(route.blocks[idx].extras) ? route.blocks[idx].extras : [];
+      route.blocks[idx].extras.push({ label: '', cost: '', category: 'tour', optional: false });
+    } else if (action === 'remove-extra') {
+      const i = parseInt(btn.closest('.rb-extra-row').dataset.extraIndex, 10);
+      route.blocks[idx].extras.splice(i, 1);  // last one removed → [] = "estimated, none"
+      rbStampCostsChecked(route.blocks[idx]);
+    } else if (action === 'no-extras') {
+      route.blocks[idx].extras = [];
+      rbStampCostsChecked(route.blocks[idx]);
     } else if (action === 'remove-destination') {
       const destRow = btn.closest('.rb-destination-row');
       const destId = destRow && destRow.dataset.destId;

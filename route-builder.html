@@ -70,6 +70,8 @@
 
             <div class="rb-summary" id="rbSummary"></div>
 
+            <div class="rb-cost-panel" id="rbCostPanel"></div>
+
             <div class="rb-timeline-bar" id="rbTimelineBar"></div>
 
             <!-- OVERVIEW: read-only trip-at-a-glance, shown by default when opening a route -->
@@ -130,6 +132,27 @@
                   <div class="rb-field">
                     <label>Notes <span class="rb-optional">optional</span></label>
                     <textarea class="rb-input" id="rbRouteNotesInput" placeholder="Overall notes for this expedition"></textarea>
+                  </div>
+                </div>
+                <div class="rb-cost-inputs">
+                  <div class="rb-costs-label">Trip-wide costs <span class="rb-optional">empty = not estimated yet</span></div>
+                  <div class="rb-details-grid rb-details-grid-4">
+                    <div class="rb-field">
+                      <label>Flight from NL (€)</label>
+                      <input type="number" min="0" class="rb-input" id="rbFlightInInput" placeholder="?">
+                    </div>
+                    <div class="rb-field">
+                      <label>Flight back to NL (€)</label>
+                      <input type="number" min="0" class="rb-input" id="rbFlightOutInput" placeholder="?">
+                    </div>
+                    <div class="rb-field">
+                      <label>Insurance €/month</label>
+                      <input type="number" min="0" class="rb-input" id="rbInsuranceInput">
+                    </div>
+                    <div class="rb-field">
+                      <label>Buffer %</label>
+                      <input type="number" min="0" class="rb-input" id="rbBufferInput">
+                    </div>
                   </div>
                 </div>
               </div>

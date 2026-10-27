@@ -413,6 +413,93 @@ function rbCopyBlockCosts(b) {
   return out;
 }
 
+/**
+ * Budget tiers are computed, never stored: every stored amount is the middle ("Standard") level,
+ * and the other two apply a multiplier per cost type. The multipliers are the tier totals per
+ * cost type from the Asia budget workbook (planning/Wereldreis_Oost-ZO-Azie_Begroting.xlsx, where
+ * Standard is called "Basis"), e.g. ground costs €12.7k / €19.4k / €32.7k → 0.65 / 1 / 1.7.
+ */
+const RB_COST_TIERS = {
+  budget:   { label: 'Budget',   ground: 0.65, transport: 0.75, flights: 0.8, extras: 0.7, visas: 0.9, insurance: 0.7 },
+  standard: { label: 'Standard', ground: 1,    transport: 1,    flights: 1,   extras: 1,   visas: 1,   insurance: 1 },
+  comfort:  { label: 'Comfort',  ground: 1.7,  transport: 1.5,  flights: 1.4, extras: 1.6, visas: 1.3, insurance: 1.5 },
+};
+
+// Trip-wide estimates, overridable per route via route.trip_costs. Insurance only counts for trips
+// longer than a regular annual travel policy covers (Dutch policies: 60-180 days per trip) — a
+// shorter trip needs no separate policy. Set insurance_per_month on a route to force it.
+const RB_TRIP_COST_DEFAULTS = { insurance_per_month: 100, insurance_min_days: 60, buffer_pct: 10 };
+
+const rbCostNum = v => (v === '' || v === null || v === undefined || isNaN(v)) ? null : Number(v);
+
+/** A block counts as costed once transport onward (not needed on the last block), local transport
+ *  and the extras list (each with a price) have all been estimated — 0 / [] count, empty doesn't. */
+function rbBlockCostsComplete(b, isLast) {
+  return (isLast || rbCostNum(b.transport_cost) !== null)
+    && rbCostNum(b.local_transport_cost) !== null
+    && Array.isArray(b.extras) && b.extras.every(x => rbCostNum(x.cost) !== null);
+}
+
+/** transport_cost was priced to a country that's no longer the next block (route reordered). */
+function rbTransportCostStale(blocks, i) {
+  const b = blocks[i], next = blocks[i + 1];
+  return !!(next && b.transport_cost_to && rbCostNum(b.transport_cost) !== null && next.country_code !== b.transport_cost_to);
+}
+
+/**
+ * Full-cost breakdown of a route at one tier. `rows` are already multiplied by the tier;
+ * `optional` sums extras marked optional, which are never in the total (the workbook's
+ * "Meenemen = Nee"). `hasCosts` is false while nothing beyond the ground budget has been
+ * entered — callers then show the ground total alone rather than a mostly-empty "all-in" one.
+ */
+function rbRouteCosts(route, tierKey = 'standard') {
+  const t = RB_COST_TIERS[tierKey] || RB_COST_TIERS.standard;
+  const blocks = route.blocks || [];
+  const days = blocks.reduce((s, b) => s + (parseInt(b.days) || 0), 0);
+  let ground = 0, transport = 0, extras = 0, visas = 0, optional = 0, incomplete = 0, stale = 0, hasCosts = false;
+
+  blocks.forEach((b, i) => {
+    ground += rbCostNum(b.budget) || 0;
+    transport += (rbCostNum(b.transport_cost) || 0) + (rbCostNum(b.local_transport_cost) || 0);
+    (b.extras || []).forEach(x => {
+      const c = rbCostNum(x.cost) || 0;
+      if (x.optional) optional += c;
+      else if (x.category === 'visa') visas += c;
+      else extras += c;
+    });
+    if (!rbBlockCostsComplete(b, i === blocks.length - 1)) incomplete++;
+    if (rbTransportCostStale(blocks, i)) stale++;
+    if (rbCostNum(b.transport_cost) !== null || rbCostNum(b.local_transport_cost) !== null || Array.isArray(b.extras)) hasCosts = true;
+  });
+
+  const flightIn = rbCostNum(route.flight_in_cost), flightOut = rbCostNum(route.flight_out_cost);
+  if (flightIn !== null || flightOut !== null) hasCosts = true;
+  const tc = route.trip_costs || {};
+  const perMonth = rbCostNum(tc.insurance_per_month) ??
+    (days > RB_TRIP_COST_DEFAULTS.insurance_min_days ? RB_TRIP_COST_DEFAULTS.insurance_per_month : 0);
+  const bufferPct = rbCostNum(tc.buffer_pct) ?? RB_TRIP_COST_DEFAULTS.buffer_pct;
+
+  const rows = {
+    ground: ground * t.ground,
+    transport: transport * t.transport,
+    flights: ((flightIn || 0) + (flightOut || 0)) * t.flights,
+    extras: extras * t.extras,
+    visas: visas * t.visas,
+    insurance: Math.ceil(days / 30.4) * perMonth * t.insurance,
+  };
+  const subtotal = Object.values(rows).reduce((s, v) => s + v, 0);
+  const buffer = subtotal * bufferPct / 100;
+  const total = subtotal + buffer;
+
+  return {
+    tier: tierKey, days, rows, subtotal, bufferPct, buffer, total,
+    perDay: days ? total / days : 0, optional: optional * t.extras,
+    blockCount: blocks.length, incompleteBlocks: incomplete, staleTransport: stale,
+    flightsMissing: flightIn === null || flightOut === null, hasCosts,
+    complete: incomplete === 0 && stale === 0 && flightIn !== null && flightOut !== null,
+  };
+}
+
 function rbBuildGrandTripPayload(route) {
   const grand_trip = {
     grand_trip_id: route.id, name: route.name, status: route.status, start_date: route.start_date,
