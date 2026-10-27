@@ -194,7 +194,17 @@ Progress:
     **waiting for Youri's review**: `planning/budget_batch1/REVIEW.md` (+ `costs_batch1.js`,
     `flights_batch1.csv`). After review: entries → `RB_ROUTE_COSTS`, fares → `data/cost_reference/
     flights_from_ams.csv`, dry run, `--push` with Youri's OK.
-  - [ ] Standalone routes by family
+- [ ] **R2 daily-rate check** (after batch 1 is applied, before the standalone batches; agreed with
+  Youri 2026-10-27). Ground budgets are ~70% of the all-in total, and the ~440 standalone routes
+  reuse their parent's rates, so check them once per country, not per route:
+  1. `data/cost_reference/daily_rates_by_country.csv`: Standard €/day per country (accommodation +
+     food + city transport + typical activities), with a fixed written rule for what is in/out
+     (car, park fees, intercity transport), using batch 1's review calls as the definition. Sonnet +
+     WebSearch, 4-5 batches, ~250-350k tokens.
+  2. A script compares every block's budget/days with the table and flags > ±25% (fixed exceptions
+     for expensive stretches: Antarctica, Patagonia, safaris, Bhutan SDF).
+  3. Youri reviews the outliers → `rbMigrate*()` + Sheet push (scale `budget`, never `days`).
+  - [ ] Standalone routes by family (after R2)
 
 Original plan:
 
