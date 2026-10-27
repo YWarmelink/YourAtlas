@@ -235,7 +235,7 @@ Progress:
       Standard/backpacker ratio (~2×) would therefore inflate the other tiers. Better for R2c: show the stored
       budget as **"My plan"**, and compute Backpacker / Standard / Comfort as **absolute** reference
       rates × days per block (variant chosen as in compare_daily_rates.js), not as ratios of the stored budget.
-    - [ ] **R2c app:** the tier toggle uses each country's own ratios from the table instead of the
+    - [ ] **R2c app** (NEXT; the approach was updated by the finding above: "My plan" + absolute reference tiers; the original text follows): the tier toggle uses each country's own ratios from the table instead of the
       global multipliers (fallback: the global ones for a country/variant without a row). Rename
       the tier "Budget" to "Backpacker". The stored block `budget` = **backpacker level** (Youri's
       planning level). Label it as such in the UI, and document it in `RB_BLOCK_COST_FIELDS` and
