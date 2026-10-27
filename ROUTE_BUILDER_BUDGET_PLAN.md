@@ -190,14 +190,14 @@ Progress:
   barred from MZ (partly ZW), car-with-driver countries (AO/MG/ET/RW/EG/LK).
 - [x] Inventory fix: "NOT included" was matching "included" (3 routes misflagged)
 - [ ] Route batches
-  - [ ] **Batch 1: the 13 Grand Expeditions** (174 blocks), extracted 2026-10-27, 596k tokens,
+  - [x] **Batch 1: the 13 Grand Expeditions** (174 blocks), extracted 2026-10-27, 596k tokens,
     reviewed by Youri (`planning/budget_batch1/REVIEW.md`): Oceania compact car Perth-Broome + flight
     Broome-Darwin instead of a 4x4 to Darwin; ZA/LS/SZ car stays "in the rate" until R2; Eurasia's
     reused pilot `local` values scaled down to its shorter stays; North America's flights stay
     separate fields and its block budgets stay as they are (the "budgets include flights" note
     refers to the old region budgets; block 1 would drop to €71/day incl. a car otherwise). In
     `RB_ROUTE_COSTS`, fares in `data/cost_reference/flights_from_ams.csv`, dry run clean (174
-    blocks, 13 routes). Sheet push: waiting for Youri's OK.
+    blocks, 13 routes). **Pushed to the Sheet 2026-10-27 (Youri's OK), verified.**
 - [ ] **R2 daily-rate check** (after batch 1 is applied, before the standalone batches; agreed with
   Youri 2026-10-27). Ground budgets are ~70% of the all-in total, and the ~440 standalone routes
   reuse their parent's rates, so check them once per country, not per route:
