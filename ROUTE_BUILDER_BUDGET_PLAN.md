@@ -216,8 +216,25 @@ Progress:
   - Research done 2026-10-27 (~264k tokens): `data/cost_reference/daily_rates_by_country.csv`
     (152 countries + 23 variants), `scripts/compare_daily_rates.js`, review in
     `planning/r2_daily_rates/REVIEW.md`: 714/1,087 blocks within ±25%; 316 below (+€97.5k if
-    raised), 57 above. **Waiting for Youri's decision (A/B/C in the review).**
-  - [ ] Standalone routes by family (after R2)
+    raised), 57 above.
+  - **Decided by Youri 2026-10-27:** he travels as a backpacker, so the own-room "Standard" reference
+    is not his level, and the 316 "too low" blocks are mostly fine for him. Instead, three
+    levels per country, so the app works for other travel styles too:
+    - [ ] **R2b research:** add `backpacker_eur_per_day` (dorm or cheapest private room, cheap local food,
+      public transport, mostly free sights) and `comfort_eur_per_day` (3-4* hotel, sit-down
+      restaurants, taxis, paid tours/sights) to `daily_rates_by_country.csv`, each with its own
+      four-part split. The existing column stays as Standard. Name the countries that must be
+      web-checked IN the brief (the R2 agents skipped searches until sent back). ~150-200k tokens.
+    - [ ] **R2c app:** the tier toggle uses each country's own ratios from the table instead of the
+      global multipliers (fallback: the global ones for a country/variant without a row). Rename
+      the tier "Budget" to "Backpacker". The stored block `budget` = **backpacker level** (Youri's
+      planning level). Label it as such in the UI, and document it in `RB_BLOCK_COST_FIELDS` and
+      CLAUDE.md.
+    - [ ] **R2d corrections:** re-run `compare_daily_rates.js` against the backpacker column. Raise
+      blocks that are below backpacker level; review blocks far above Standard (safari days, Borneo,
+      resorts). Youri reviews the list, then a migration + Sheet push (`budget` only, never `days`).
+    - Then the standalone route batches, which automatically fit all three levels.
+  - [ ] Standalone routes by family (after R2b-R2d)
 
 Original plan:
 
