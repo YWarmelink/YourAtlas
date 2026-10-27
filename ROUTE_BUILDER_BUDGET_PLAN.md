@@ -177,7 +177,14 @@ Sonnet extraction → an edit list for Youri → `RB_ROUTE_COSTS` entries →
 Progress:
 - [x] Code: "Getting there & back" label; `transport` extras count under Transport
 - [x] Inventory script (453 routes: 55 own car, 227 rental, 171 public transport)
-- [ ] R1a car costs, Europe · [ ] R1b car costs, rest of the world
+- [x] Distance fallback: `scripts/route_distances.js` (coordinates × road factor 1.3; Central
+  European Grand Roadtrip 8,660 km vs 9,050 km in its notes, -4%)
+- [x] R1a car costs, Europe (48 countries, 2026-10-27, ~85k tokens): fuel from the EU Oil
+  Bulletin / GlobalPetrolPrices (high confidence for EU countries); vignettes sourced.
+  **Rental €/day and per-100 km toll rates are calibrated estimates, not quotes**, and 17 small or
+  non-EU countries are low confidence. A later spot-check of rental prices in the most-used car
+  countries (IT, FR, ES, HR, SI, AT) would tighten the fly + rental routes.
+- [ ] R1b car costs, rest of the world (~37 countries: US, AU, NZ, CA, ZA, NA, BW, …)
 - [ ] Route batches (list added when the first one is scoped)
 
 Original plan:
