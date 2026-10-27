@@ -362,11 +362,63 @@ const RB_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzfvEBxhAUEG
  * single-route push below and the bulk "Export JSON" button in routeBuilderUI.js, so the
  * field mapping only lives in one place.
  */
+/**
+ * Full-cost budget fields (ROUTE_BUILDER_BUDGET_PLAN.md). A block's `budget` stays the ground
+ * cost (daily rate × days); these hold everything the daily rate doesn't cover.
+ *
+ * Empty means "not estimated yet" and is kept distinct from 0 ("estimated, costs nothing"):
+ * numbers are '' when empty, lists/objects are null.
+ *
+ * Block:
+ *   transport_cost        number  getting from this block to the next one
+ *   transport_cost_to     string  country_code of the block transport_cost was priced to, so a
+ *                                 reordered route can flag a cost that no longer matches
+ *   local_transport_cost  number  intercity travel within the country (domestic flights, long trains)
+ *   extras                array   [{ label, cost, category, optional }], category from RB_EXTRA_CATEGORIES
+ *   costs_checked         string  "YYYY-MM-DD" the cost fields were last verified
+ * Route:
+ *   flight_in_cost / flight_out_cost  number  flight from / back to NL
+ *   trip_costs            object  per-route overrides for the computed trip-wide items,
+ *                                 { insurance_per_month, buffer_pct }; null = global defaults
+ *
+ * The Sheet stores lists/objects as a JSON string in one cell (read back via parseSheetJSON()).
+ */
+const RB_BLOCK_COST_FIELDS = ['transport_cost', 'transport_cost_to', 'local_transport_cost', 'extras', 'costs_checked'];
+const RB_ROUTE_COST_FIELDS = ['flight_in_cost', 'flight_out_cost', 'trip_costs'];
+const RB_EXTRA_CATEGORIES = ['activity', 'tour', 'park_fee', 'visa', 'transport', 'other'];
+
+const rbSheetJSON = v => (v === null || v === undefined || v === '') ? '' : JSON.stringify(v);
+
+// Sheet row values for a block's / route's cost fields (shared by the upsert payload and the
+// bulk-update scripts, so the two can't drift).
+function rbBlockCostCells(b) {
+  return {
+    transport_cost: b.transport_cost ?? '', transport_cost_to: b.transport_cost_to || '',
+    local_transport_cost: b.local_transport_cost ?? '', extras: rbSheetJSON(b.extras),
+    costs_checked: b.costs_checked || '',
+  };
+}
+
+function rbRouteCostCells(route) {
+  return {
+    flight_in_cost: route.flight_in_cost ?? '', flight_out_cost: route.flight_out_cost ?? '',
+    trip_costs: rbSheetJSON(route.trip_costs),
+  };
+}
+
+// Deep copy of a block's cost fields, for the Block Library save/insert copies.
+function rbCopyBlockCosts(b) {
+  const out = {};
+  RB_BLOCK_COST_FIELDS.forEach(f => { if (b[f] !== undefined) out[f] = b[f] && typeof b[f] === 'object' ? JSON.parse(JSON.stringify(b[f])) : b[f]; });
+  return out;
+}
+
 function rbBuildGrandTripPayload(route) {
   const grand_trip = {
     grand_trip_id: route.id, name: route.name, status: route.status, start_date: route.start_date,
     description: route.description, travel_style: route.travel_style, climate_summary: route.climate_summary,
     best_starting_month: route.best_starting_month, notes: route.notes, created_at: route.created_at,
+    ...rbRouteCostCells(route),
   };
 
   const regions = (route.regions || []).map((reg, i) => ({
@@ -379,6 +431,7 @@ function rbBuildGrandTripPayload(route) {
     country_code: b.country_code, country_name: b.country, days: b.days, budget: b.budget,
     notes: b.notes, transport_to_next: b.transport_to_next || '',
     lat: b.lat ?? '', lng: b.lng ?? '',
+    ...rbBlockCostCells(b),
   }));
 
   const destinations = (route.blocks || []).flatMap(b => (b.destinations || []).map((d, i) => ({
@@ -398,6 +451,7 @@ function rbBuildGrandTripPayload(route) {
 const RB_REMOVED_ROUTE_IDS = new Set([
   'gt_seed_faeroer', // Faeröer 🐑 — superseded by Faroe Islands (6 days) 🐦
   'gt_seed_ijsland', // IJsland ❄️ — superseded by Iceland Ring Road (12 days) 🛣️
+  'gt_test_cost_roundtrip', // scripts/verify_cost_fields_roundtrip.js --live test route, never shown
 ]);
 
 /**

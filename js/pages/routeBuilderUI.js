@@ -1348,7 +1348,7 @@ function rbBuildRoutesExport() {
   const blockLibraryItems = rbLibrary.flatMap(l => (l.blocks || []).map((b, i) => ({
     item_id: `${l.id}_${i}`, library_id: l.id, order: i,
     country_code: b.country_code, country_name: b.country, days: b.days, budget: b.budget,
-    notes: b.notes, transport_to_next: b.transport_to_next || '',
+    notes: b.notes, transport_to_next: b.transport_to_next || '', ...rbBlockCostCells(b),
     destinations: (b.destinations || []).map(d => ({ name: d.name, notes: d.notes || '' })),
   })));
 
@@ -1514,7 +1514,7 @@ function rbBindEvents() {
     if (!name) return;
     const blocks = route.blocks.map(b => ({
       country: b.country, country_code: b.country_code, days: b.days, budget: b.budget, notes: b.notes,
-      transport_to_next: b.transport_to_next, lat: b.lat ?? null, lng: b.lng ?? null,
+      transport_to_next: b.transport_to_next, lat: b.lat ?? null, lng: b.lng ?? null, ...rbCopyBlockCosts(b),
       destinations: (b.destinations || []).map(d => ({ name: d.name, notes: d.notes, lat: d.lat ?? null, lng: d.lng ?? null })),
     }));
     rbLibrary.unshift({ id: rbNewLibId(), name, blocks, created_at: new Date().toISOString() });
@@ -1532,7 +1532,7 @@ function rbBindEvents() {
     const copies = item.blocks.map(b => ({
       id: rbNewBlockId(), country: b.country, country_code: b.country_code,
       days: b.days, budget: b.budget, notes: b.notes, transport_to_next: b.transport_to_next || '',
-      lat: b.lat ?? null, lng: b.lng ?? null,
+      lat: b.lat ?? null, lng: b.lng ?? null, ...rbCopyBlockCosts(b),
       destinations: (b.destinations || []).map(d => ({ id: rbNewDestId(), name: d.name, notes: d.notes || '', lat: d.lat ?? null, lng: d.lng ?? null })),
     }));
     route.blocks.push(...copies);

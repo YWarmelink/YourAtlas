@@ -21,35 +21,24 @@
  */
 
 const { execSync } = require('child_process');
+const fs = require('fs');
 const path = require('path');
+const vm = require('vm');
 
 const REPO_ROOT = path.join(__dirname, '..');
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzfvEBxhAUEGfxXU-jRvdE5R1oBNXWPJzP27l20-VPwZlTdij1UeoG4BrkRoi9TWT9p/exec';
 const GRAND_TRIPS_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSOk8DnxhAXV3yw9ZuegXNLcvQebAUFdz4mXcE8hjUqPBhlAFkSZ5uf9kSWufmRmOpsocPPbmHQGrvf/pub?gid=132975394&single=true&output=csv';
 
-// Mirrors rbBuildGrandTripPayload() in js/pages/routeBuilderCore.js field-for-field — keep the
-// two in sync if that function's shape ever changes.
-function buildGrandTripPayload(route) {
-  const grand_trip = {
-    grand_trip_id: route.id, name: route.name, status: route.status, start_date: route.start_date,
-    description: route.description, travel_style: route.travel_style, climate_summary: route.climate_summary,
-    best_starting_month: route.best_starting_month, notes: route.notes, created_at: route.created_at,
-  };
-  const regions = (route.regions || []).map((reg, i) => ({
-    region_id: reg.id, grand_trip_id: route.id, order: i, name: reg.name,
-    season: reg.season, budget: reg.budget, notes: reg.notes, collapsed: !!reg.collapsed,
-  }));
-  const blocks = (route.blocks || []).map((b, i) => ({
-    block_id: b.id, grand_trip_id: route.id, region_id: b.region_id || '', order: i,
-    country_code: b.country_code, country_name: b.country, days: b.days, budget: b.budget,
-    notes: b.notes, transport_to_next: b.transport_to_next || '',
-  }));
-  const destinations = (route.blocks || []).flatMap(b => (b.destinations || []).map((d, i) => ({
-    destination_id: d.id, block_id: b.id, order: i, name: d.name, notes: d.notes || '',
-    country_code: b.country_code || '', country: b.country || '',
-  })));
-  return { grand_trip, regions, blocks, destinations };
+// Uses the app's own rbBuildGrandTripPayload() (js/pages/routeBuilderCore.js) instead of a copy
+// — a hand-kept copy here silently missed lat/lng and would have missed every later field too.
+function loadPayloadBuilder() {
+  const sandbox = { console, localStorage: { getItem: () => null, setItem: () => {} } };
+  vm.createContext(sandbox);
+  vm.runInContext(fs.readFileSync(path.join(REPO_ROOT, 'js/pages/routeBuilderCore.js'), 'utf8'), sandbox,
+    { filename: 'routeBuilderCore.js' });
+  return route => vm.runInContext('rbBuildGrandTripPayload', sandbox)(route);
 }
+const buildGrandTripPayload = loadPayloadBuilder();
 
 // A real CSV parser is needed here, not a naive line-split: several routes' notes/description
 // fields contain embedded newlines inside quoted values (multi-paragraph notes), which a plain

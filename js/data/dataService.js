@@ -19,6 +19,20 @@ function parseSheetNumber(v) {
   return parseFloat(/^-?\d+,\d+$/.test(s) ? s.replace(',', '.') : s);
 }
 
+/**
+ * Parses a JSON value stored as text in one Sheet cell (Route Builder's cost lists/objects).
+ * Returns null for an empty cell ("not estimated yet") or text that isn't valid JSON — the
+ * latter is logged, since it means the cell was hand-edited into something unreadable.
+ */
+function parseSheetJSON(v) {
+  const s = String(v ?? '').trim();
+  if (!s) return null;
+  try { return JSON.parse(s); } catch (_) {
+    console.warn('[DataService] unreadable JSON cell:', s.slice(0, 80));
+    return null;
+  }
+}
+
 class DataCache {
   constructor(ttlMs = 5 * 60 * 1000) {
     this.ttl = ttlMs;
@@ -265,6 +279,10 @@ class DataService {
           region_id: b.region_id || '', days: b.days === '' ? '' : (parseInt(b.days, 10) || 0),
           budget: toNum(b.budget), notes: b.notes, transport_to_next: b.transport_to_next || '',
           lat: toCoord(b.lat), lng: toCoord(b.lng),
+          // Full-cost budget fields (see RB_BLOCK_COST_FIELDS in routeBuilderCore.js)
+          transport_cost: toNum(b.transport_cost), transport_cost_to: b.transport_cost_to || '',
+          local_transport_cost: toNum(b.local_transport_cost), extras: parseSheetJSON(b.extras),
+          costs_checked: b.costs_checked ? sheetDateToISO(b.costs_checked) : '',
           destinations: destinations
             .filter(d => d.block_id === b.block_id)
             .sort(byOrder)
@@ -275,6 +293,8 @@ class DataService {
         id: t.grand_trip_id, name: t.name, status: t.status, start_date: sheetDateToISO(t.start_date),
         description: t.description, travel_style: t.travel_style, climate_summary: t.climate_summary,
         best_starting_month: t.best_starting_month, notes: t.notes, created_at: t.created_at,
+        flight_in_cost: toNum(t.flight_in_cost), flight_out_cost: toNum(t.flight_out_cost),
+        trip_costs: parseSheetJSON(t.trip_costs),
         regions: tripRegions, blocks: tripBlocks,
       };
     });

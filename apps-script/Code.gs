@@ -14,7 +14,8 @@
  *   { type: 'grand_trip_delete', grand_trip_id }
  *   { type: 'grand_trip_bulk_import', grandTrips, grandTripRegions, grandTripBlocks, grandTripDestinations }
  *   { type: 'destinations_bulk_update', updates: [{ grand_trip_id, block_order, name, notes, country_code, country, lat?, lng? }] }
- *   { type: 'blocks_bulk_update', updates: [{ grand_trip_id, block_order, lat, lng }] }
+ *   { type: 'blocks_bulk_update', updates: [{ grand_trip_id, block_order, lat?, lng?, <block cost fields>? }] }
+ *   { type: 'grand_trips_bulk_update', updates: [{ grand_trip_id, flight_in_cost?, flight_out_cost?, trip_costs? }] }
  */
 
 function doPost(e) {
@@ -32,6 +33,7 @@ function doPost(e) {
       case 'grand_trip_bulk_import':   return _text(handleGrandTripBulkImport(data));
       case 'destinations_bulk_update': return _text(handleDestinationsBulkUpdate(data));
       case 'blocks_bulk_update':       return _text(handleBlocksBulkUpdate(data));
+      case 'grand_trips_bulk_update':  return _text(handleGrandTripsBulkUpdate(data));
       case undefined:
       case 'country_status':           return _text(handleCountryStatusUpdate(data));
       default:                         return _text('error: unknown type ' + data.type);

@@ -12,6 +12,23 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Full-cost budget, Phase 1: data model + Sheet plumbing (2026-10-27)** — first step of
+  `ROUTE_BUILDER_BUDGET_PLAN.md` (Phase 0 decisions: all five recommendations, lists stored as a
+  JSON cell). New fields, empty = "not estimated yet" (kept distinct from 0): block
+  `transport_cost`, `transport_cost_to`, `local_transport_cost`, `extras` (JSON list),
+  `costs_checked`; route `flight_in_cost`, `flight_out_cost`, `trip_costs` (JSON object). Defined
+  once in `routeBuilderCore.js` (`RB_BLOCK_COST_FIELDS`, `rbBlockCostCells()`/`rbRouteCostCells()`),
+  written by `rbBuildGrandTripPayload()`, read back by `getGrandTripsFull()` (new
+  `parseSheetJSON()`), carried through Block Library save/insert. Apps Script: the new columns are
+  created on first write (GrandTrips' own headers now get created *before* its row is built, or
+  the first upsert would drop them), `blocks_bulk_update` now patches any present cost field (not
+  only lat/lng), and a new `grand_trips_bulk_update` handles route-level costs — both for the
+  Phase 4 backfill, so no second redeploy. `scripts/sync_new_routes_to_sheet.js` now uses the
+  app's own payload builder; its hand-kept copy had silently been missing `lat`/`lng`.
+  `scripts/verify_cost_fields_roundtrip.js` checks the round-trip offline (Dutch-locale CSV
+  simulation, confirmed to fail on a broken reader) and, with `--live`, against the real Sheet
+  through a hidden test route (`gt_test_cost_roundtrip`, in `RB_REMOVED_ROUTE_IDS`). No UI and
+  no content yet.
 - **Long-haul buffer routes under-budgeted (2026-10-26)** — the +2-day long-haul flight buffer
   (CLAUDE.md policy) raised `days` on 13 standalone routes but left `budget` unchanged, because
   CLAUDE.md wrongly called `budget` a daily rate. It is the block's **total** (the UI shows

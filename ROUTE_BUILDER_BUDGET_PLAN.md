@@ -1,7 +1,8 @@
 # Route Builder — Full-Cost Budget Plan
 
-Status: **plan only, not started (2026-10-26).** Next workstream after the long-haul buffer
-budget fix (see `CHANGELOG.md`).
+Status: **Phase 0 decided, Phase 1 code done (2026-10-27)** — waiting on the Apps Script
+redeploy + live round-trip test (`node scripts/verify_cost_fields_roundtrip.js --live`).
+Phase 2 (UI) next. Started after the long-haul buffer budget fix (see `CHANGELOG.md`).
 
 ## Why
 
@@ -32,6 +33,9 @@ the sum of their blocks, 12 don't (all in North America Grand Traverse 🌎).
 
 ## Decisions to make first (Youri)
 
+**Decided 2026-10-27: all five recommendations below, and lists/objects stored as a JSON string
+in one cell (no extra tab).**
+
 1. **Extras itemized or as a single number per block?** Itemized (`[{label, cost, category,
    optional}]`) is what the Excel uses and makes optional items toggleable. A single
    `extras_cost` + the existing notes text is much cheaper to backfill for 1,087 blocks.
@@ -52,6 +56,21 @@ the sum of their blocks, 12 don't (all in North America Grand Traverse 🌎).
 ## Phases
 
 ### Phase 1 — Data model + Sheet plumbing (no UI, no content)
+
+**Built 2026-10-27** (see `CHANGELOG.md`). Final field names: block `transport_cost`,
+`transport_cost_to`, `local_transport_cost`, `extras`, `costs_checked`; route `flight_in_cost`,
+`flight_out_cost`, `trip_costs` (`{ insurance_per_month, buffer_pct }`) — documented at
+`RB_BLOCK_COST_FIELDS` in `routeBuilderCore.js`. Visas go into `extras` with category `visa`.
+Tier multipliers and the computed region budget (decisions 2 + 5) are calculations, so they
+land in Phase 2. Phase 4 can patch fields with `blocks_bulk_update` / `grand_trips_bulk_update`
+instead of full-route upserts.
+- [x] Client read/write + Block Library copies
+- [x] Apps Script (`GrandTripSync.gs` + `Code.gs`)
+- [x] Offline round-trip test
+- [ ] Youri: paste both `.gs` files, redeploy as a new version
+- [ ] Live round-trip test (writes + deletes a hidden test route)
+
+Original plan:
 
 The Sheet is the source of truth on load, and any field missing from the GrandTrip* tabs is
 **wiped** (the lat/lng incident, see CLAUDE.md gotchas). So the plumbing has to land in full

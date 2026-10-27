@@ -7,12 +7,17 @@
  *
  * Called from doPost in Code.gs (which holds the script lock). Tabs:
  *   GrandTrips             grand_trip_id | name | status | start_date | description | travel_style |
- *                          climate_summary | best_starting_month | notes | created_at
+ *                          climate_summary | best_starting_month | notes | created_at |
+ *                          flight_in_cost | flight_out_cost | trip_costs
  *   GrandTripRegions       region_id | grand_trip_id | order | name | season | budget | notes | collapsed
  *   GrandTripBlocks        block_id | grand_trip_id | region_id | order | country_code | country_name |
- *                          days | budget | notes | transport_to_next | lat | lng
+ *                          days | budget | notes | transport_to_next | lat | lng |
+ *                          transport_cost | transport_cost_to | local_transport_cost | extras | costs_checked
  *   GrandTripDestinations  destination_id | block_id | order | name | notes | country_code | country |
  *                          lat | lng
+ *
+ * The cost columns (2026-10, ROUTE_BUILDER_BUDGET_PLAN.md) hold numbers, except trip_costs and
+ * extras, which are a JSON string in one cell. Empty = "not estimated yet", not 0.
  *
  * Every read/write goes by header name, so column order in the Sheet doesn't matter.
  * Missing headers that a handler needs (e.g. country_code/country) are appended automatically.
@@ -53,11 +58,13 @@ function _ensureHeaders(sheet, needed) {
 // Columns added after the original 2026-09-11 migration — created on first write if missing,
 // otherwise _rowFromObject would silently drop them (it only writes existing headers).
 const GT_EXTRA_HEADERS = {
-  blocks: ['lat', 'lng'],
+  trips: ['flight_in_cost', 'flight_out_cost', 'trip_costs'],
+  blocks: ['lat', 'lng', 'transport_cost', 'transport_cost_to', 'local_transport_cost', 'extras', 'costs_checked'],
   destinations: ['notes', 'country_code', 'country', 'lat', 'lng'],
 };
 
 function _ensureExtraHeaders() {
+  _ensureHeaders(_sheet(GT_TABS.trips), GT_EXTRA_HEADERS.trips);
   _ensureHeaders(_sheet(GT_TABS.blocks), GT_EXTRA_HEADERS.blocks);
   _ensureHeaders(_sheet(GT_TABS.destinations), GT_EXTRA_HEADERS.destinations);
 }
@@ -142,6 +149,8 @@ function handleGrandTripUpsert(data) {
   if (!trip || !trip.grand_trip_id) return 'error: missing grand_trip.grand_trip_id';
   const id = String(trip.grand_trip_id);
 
+  // Before the GrandTrips header row is read, or its new cost columns get dropped on first write.
+  _ensureExtraHeaders();
   const tripsSheet = _sheet(GT_TABS.trips);
   const headers = _headers(tripsSheet);
   const idCol = headers.indexOf('grand_trip_id');
@@ -157,7 +166,6 @@ function handleGrandTripUpsert(data) {
   if (rowNum === -1) tripsSheet.appendRow(row);
   else tripsSheet.getRange(rowNum, 1, 1, headers.length).setValues([row]);
 
-  _ensureExtraHeaders();
   _deleteTripChildren(id);
   const r = _appendObjectRows(_sheet(GT_TABS.regions), data.regions);
   const b = _appendObjectRows(_sheet(GT_TABS.blocks), data.blocks);
@@ -295,9 +303,53 @@ function handleDestinationsBulkUpdate(data) {
 }
 
 /**
- * `blocks_bulk_update`: set lat/lng on EXISTING GrandTripBlocks rows. Never creates or deletes
- * rows. Matches on (grand_trip_id, order) for the same reason handleDestinationsBulkUpdate
- * does — block_id isn't stable across seed runs.
+ * Writes `updates` onto EXISTING rows of `sheet`. `keyOf(row)` / `updateKey(u)` build the match
+ * key; of the `allowed` fields, only those actually present on an update are written, so a
+ * partial update (e.g. only lat/lng) leaves every other column alone. Never creates or deletes
+ * rows. A key that resolves to 0 or 2+ rows is reported back, never guessed at.
+ */
+function _bulkUpdateRows(sheet, headers, allowed, updates, keyOf, updateKey, describe) {
+  const last = sheet.getLastRow();
+  if (last < 2) return { updated: 0, unresolved: updates.map(u => describe(u, 'no row')) };
+  const values = sheet.getRange(2, 1, last - 1, headers.length).getValues();
+  const rowsByKey = {};
+  values.forEach((r, i) => { const k = keyOf(r); (rowsByKey[k] = rowsByKey[k] || []).push(i); });
+
+  let updated = 0;
+  const unresolved = [];
+  const touched = new Set();
+  updates.forEach(u => {
+    const matches = rowsByKey[updateKey(u)] || [];
+    if (matches.length !== 1) {
+      unresolved.push(describe(u, matches.length ? 'ambiguous (' + matches.length + ' rows)' : 'no row'));
+      return;
+    }
+    allowed.forEach(f => {
+      if (!(f in u)) return;
+      const c = headers.indexOf(f);
+      values[matches[0]][c] = _cell(u[f]);
+      touched.add(c);
+    });
+    updated++;
+  });
+
+  // Write only the touched columns back, one setValues each.
+  touched.forEach(c => {
+    sheet.getRange(2, c + 1, values.length, 1).setValues(values.map(r => [_cell(r[c])]));
+  });
+  return { updated: updated, unresolved: unresolved };
+}
+
+function _bulkResult(res) {
+  return 'updated: ' + res.updated + ', unresolved: ' + res.unresolved.length +
+    (res.unresolved.length ? ' ' + JSON.stringify(res.unresolved) : '');
+}
+
+/**
+ * `blocks_bulk_update`: set lat/lng and/or the cost columns on EXISTING GrandTripBlocks rows
+ * (any field in GT_EXTRA_HEADERS.blocks). Matches on (grand_trip_id, order) for the same reason
+ * handleDestinationsBulkUpdate does — block_id isn't stable across seed runs. Values are written
+ * as given, so `extras` must arrive JSON-encoded (rbBlockCostCells() in routeBuilderCore.js).
  *
  * Response text: "updated: N, unresolved: M" (+ JSON array of unresolved items when M > 0).
  */
@@ -309,35 +361,26 @@ function handleBlocksBulkUpdate(data) {
   const headers = _ensureHeaders(sheet, GT_EXTRA_HEADERS.blocks);
   const cTrip = headers.indexOf('grand_trip_id');
   const cOrder = headers.indexOf('order');
-  const cLat = headers.indexOf('lat');
-  const cLng = headers.indexOf('lng');
-  const last = sheet.getLastRow();
-  if (last < 2) return 'updated: 0, unresolved: ' + updates.length;
-  const values = sheet.getRange(2, 1, last - 1, headers.length).getValues();
-  const rowsByKey = {};
-  values.forEach((r, i) => {
-    const key = String(r[cTrip]) + '|' + String(Number(r[cOrder]));
-    (rowsByKey[key] = rowsByKey[key] || []).push(i);
-  });
+  return _bulkResult(_bulkUpdateRows(sheet, headers, GT_EXTRA_HEADERS.blocks, updates,
+    r => String(r[cTrip]) + '|' + String(Number(r[cOrder])),
+    u => String(u.grand_trip_id) + '|' + String(Number(u.block_order)),
+    (u, reason) => ({ grand_trip_id: u.grand_trip_id, block_order: u.block_order, reason: reason })));
+}
 
-  let updated = 0;
-  const unresolved = [];
-  updates.forEach(u => {
-    const matches = rowsByKey[String(u.grand_trip_id) + '|' + String(Number(u.block_order))] || [];
-    if (matches.length !== 1) {
-      unresolved.push({ grand_trip_id: u.grand_trip_id, block_order: u.block_order,
-        reason: matches.length ? 'ambiguous (' + matches.length + ' rows)' : 'no block' });
-      return;
-    }
-    values[matches[0]][cLat] = _cell(u.lat);
-    values[matches[0]][cLng] = _cell(u.lng);
-    updated++;
-  });
+/**
+ * `grand_trips_bulk_update`: set the route-level cost columns (GT_EXTRA_HEADERS.trips) on
+ * EXISTING GrandTrips rows, matched on grand_trip_id. `trip_costs` must arrive JSON-encoded
+ * (rbRouteCostCells() in routeBuilderCore.js). Response text: same format as blocks_bulk_update.
+ */
+function handleGrandTripsBulkUpdate(data) {
+  const updates = data.updates || [];
+  if (!updates.length) return 'updated: 0, unresolved: 0';
 
-  [cLat, cLng].forEach(c => {
-    sheet.getRange(2, c + 1, values.length, 1).setValues(values.map(r => [_cell(r[c])]));
-  });
-
-  return 'updated: ' + updated + ', unresolved: ' + unresolved.length +
-    (unresolved.length ? ' ' + JSON.stringify(unresolved) : '');
+  const sheet = _sheet(GT_TABS.trips);
+  const headers = _ensureHeaders(sheet, GT_EXTRA_HEADERS.trips);
+  const cId = headers.indexOf('grand_trip_id');
+  return _bulkResult(_bulkUpdateRows(sheet, headers, GT_EXTRA_HEADERS.trips, updates,
+    r => String(r[cId]),
+    u => String(u.grand_trip_id),
+    (u, reason) => ({ grand_trip_id: u.grand_trip_id, reason: reason })));
 }
