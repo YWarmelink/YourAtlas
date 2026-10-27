@@ -184,8 +184,17 @@ Progress:
   **Rental €/day and per-100 km toll rates are calibrated estimates, not quotes**, and 17 small or
   non-EU countries are low confidence. A later spot-check of rental prices in the most-used car
   countries (IT, FR, ES, HR, SI, AT) would tighten the fly + rental routes.
-- [ ] R1b car costs, rest of the world (~37 countries: US, AU, NZ, CA, ZA, NA, BW, …)
-- [ ] Route batches (list added when the first one is scoped)
+- [x] R1b car costs, rest of the world (37 countries, 2026-10-27, 69k tokens): 0 high / 15 medium /
+  22 low confidence. Rental €/day are knowledge-based estimates (4x4 safari countries ±30%). The
+  notes carry the rules that matter: southern-African cross-border letters + one-way fees, rentals
+  barred from MZ (partly ZW), car-with-driver countries (AO/MG/ET/RW/EG/LK).
+- [x] Inventory fix: "NOT included" was matching "included" (3 routes misflagged)
+- [ ] Route batches
+  - [ ] **Batch 1: the 13 Grand Expeditions** (174 blocks), extracted 2026-10-27, 596k tokens,
+    **waiting for Youri's review**: `planning/budget_batch1/REVIEW.md` (+ `costs_batch1.js`,
+    `flights_batch1.csv`). After review: entries → `RB_ROUTE_COSTS`, fares → `data/cost_reference/
+    flights_from_ams.csv`, dry run, `--push` with Youri's OK.
+  - [ ] Standalone routes by family
 
 Original plan:
 

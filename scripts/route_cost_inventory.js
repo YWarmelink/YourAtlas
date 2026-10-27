@@ -25,7 +25,7 @@ const REPO_ROOT = path.join(__dirname, '..');
 const OWN_CAR = /own car|your own car|drive (down )?from (the )?netherlands|by car from (the )?netherlands|driving from (the )?netherlands/i;
 const RENTAL = /rental car|rent(ed|ing)? a car|car rental|hire car|car hire|campervan|motorhome|4x4 rental|self-drive/i;
 const INCLUDED = /(?:(?:budget|daily rate|per day|\/day)[^.¶]{0,80}(?:incl\w*|including)[^.¶]{0,40}(?:car|fuel|petrol|rental))|(?:(?:car|fuel|petrol|rental)[^.¶]{0,60}(?:included|in the daily|in the budget))/i;
-const EXCLUDED = /(?:car|fuel|petrol|rental|toll)[^.¶]{0,60}(?:not included|not in the (?:daily )?budget|excluded|on top|separate cost)/i;
+const EXCLUDED = /(?:car|fuel|petrol|rental|toll)[^.¶]{0,120}(?:NOT included|not included|not in the (?:daily )?budget|excluded|on top|separate cost)/i;
 
 function snippet(text, re) {
   const m = re.exec(text);
@@ -53,8 +53,8 @@ function main() {
     const last = blocks[blocks.length - 1] || {};
     let carInBudget = 'n/a', carEvidence = '';
     if (mode !== 'public') {
-      if (INCLUDED.test(text)) { carInBudget = 'included'; carEvidence = snippet(text, INCLUDED); }
-      else if (EXCLUDED.test(text)) { carInBudget = 'excluded'; carEvidence = snippet(text, EXCLUDED); }
+      if (EXCLUDED.test(text)) { carInBudget = 'excluded'; carEvidence = snippet(text, EXCLUDED); }
+      else if (INCLUDED.test(text)) { carInBudget = 'included'; carEvidence = snippet(text, INCLUDED); }
       else carInBudget = 'unknown';
       new Set(blocks.map(b => b.country_code)).forEach(c => { carCountries[c] = (carCountries[c] || 0) + 1; });
     }

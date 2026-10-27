@@ -1,0 +1,23 @@
+airport_code,city,country_code,direction,eur_one_way,airline_or_routing,source,date_checked,confidence,notes
+SJJ,Sarajevo,BA,out,230,Air Serbia/Lufthansa via BEG/FRA,Expedia/Travelocity/Air Serbia pages (USD 145-255 floors; EUR 134 promo ignored),2026-10-27,medium,typical major-carrier fare
+DEL,Delhi,IN,out,650,connecting (Gulf/Air India); KLM nonstop EUR 850+,KLM page EUR 842+ / Expedia USD 459-906,2026-10-27,low,sources spread widely
+PBH,Paro,BT,back,900,Paro-Delhi/Bangkok (Drukair) + long haul to AMS,Trip.com AMS-PBH ~EUR 1350 floor; estimated as 2 tickets ~EUR 200+700,2026-10-27,low,est
+PMC,Puerto Montt,CL,out,800,via Santiago (LATAM/KLM/Iberia),Skyscanner return from EUR 841 -> one-way estimate,2026-10-27,low,no one-way price found
+USH,Ushuaia,AR,back,1100,via Buenos Aires,Expedia one-way floors USD 1595-1682 vs 2-ticket build ~EUR 900,2026-10-27,low,estimate between floor and 2-ticket build
+SIN,Singapore,SG,back,470,reuse pilot,pilot RB_ROUTE_COSTS,2026-10-27,medium,
+MEX,Mexico City,MX,out,550,KLM direct / Aeromexico,Expedia/Omio/Monde du Voyage snapshots ($600-700; KLM EUR 596 one date),2026-10-27,medium,
+GIG,Rio de Janeiro,BR,back,650,Air France/KLM direct or LATAM/TAP via hub,Farecompare avg $706; one-way $815-1100,2026-10-27,low,One-way fares inconsistent between sources
+HAV,Havana,CU,out,520,Connection (Air Europa/Air France/Turkish),Farecompare avg one-way $561,2026-10-27,medium,No nonstop from AMS
+FOR,Fortaleza,BR,back,480,TAP/Air France/GOL via hub,Travelocity/Farecompare one-way ~$510,2026-10-27,medium,
+VXE,Sao Vicente (Cape Verde),CV,out,250,TAP via Lisbon,TAP round trips EUR 326-375 halved plus one-way premium,2026-10-27,low,Estimated from round trips; Sal (SID) cheaper but this route starts on Sao Vicente
+LBV,Libreville,GA,back,700,Turkish/Royal Air Maroc/Air France via hub,Travelocity one-way ~$771,2026-10-27,medium,
+CPT,Cape Town,ZA,out,620,KLM/Air France/Qatar via hub (1 stop),"WebSearch 2026-10-27: Farecompare avg one-way ~USD 800; Kayak low USD 351",2026-10-27,medium,"typical fare 2-3 months ahead, not the promo low"
+CAI,Cairo,EG,back,230,EgyptAir/Aegean/KLM,"WebSearch 2026-10-27: Aegean EUR 209-260; Expedia/Travelocity USD 259-323",2026-10-27,medium,
+AGP,Malaga,ES,out,110,KLM/easyJet/Transavia/Vueling,"WebSearch 2026-10-27: easyJet USD 87; KLM USD 180; lows USD 46-50",2026-10-27,medium,"direct ~3h; typical between budget and KLM"
+DOH,Doha,QA,back,420,Qatar Airways direct / Pegasus 1-stop,"WebSearch 2026-10-27: Farecompare avg USD 385-391; Qatar nonstop up to USD 1059",2026-10-27,low,"wide spread; picked between average and direct fares"
+HEL,Helsinki,FI,out,150,KLM/Finnair/airBaltic direct,WebSearch 2026-10-27 (Kayak/Ratepunk/airBaltic),2026-10-27,medium,Typical USD 150-250; airBaltic ~EUR 90-105 promo ignored
+JAV,Ilulissat,GL,back,650,Air Greenland/Icelandair via Reykjavik (ILU-KEF ~500 + KEF-AMS ~150),WebSearch 2026-10-27 (Kupi/RatePunk/Trip.com),2026-10-27,low,No through fare found; ILU-KEF one-way USD 660-1650 in snapshots; sum is my estimate
+YHZ,Halifax,CA,out,400,Connection (WestJet/Air Canada/KLM-linked),WebSearch 2026-10-27 (Orbitz/Expedia/Kayak),2026-10-27,low,Aggregators USD 200-275 promo vs USD 500+ typical; 400 is a judgment between
+SFO,San Francisco,US,back,380,KLM/United direct,WebSearch 2026-10-27 (Farecompare/Kayak/Travelocity),2026-10-27,medium,Average one-way USD 448 (about EUR 400); USD 400-450 typical; October cheapest month
+VLI,Port Vila,VU,out,1500,Via Singapore/Sydney/Nadi (no direct),WebSearch 2026-10-27 (Expedia/Trip.com),2026-10-27,low,Aggregators USD 1230-3100 one way; judgment mid-low
+AKL,Auckland,NZ,back,1100,Via Asia/Gulf 1 stop,WebSearch 2026-10-27 (Kayak/Cheapflights/Farecompare),2026-10-27,low,Sources one way USD 740-2370; typical about 1000-1700

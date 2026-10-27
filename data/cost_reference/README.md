@@ -1,6 +1,6 @@
 # car_costs_by_country.csv
 
-Reference table for uniform car-cost calculation of road trips. One row per country (48), values in EUR, researched 2026-10-27.
+Reference table for uniform car-cost calculation of road trips. One row per country (85: 48 European + 37 non-European), values in EUR, researched 2026-10-27.
 
 ## Columns
 - country_code, country: ISO code and name.
@@ -18,8 +18,11 @@ Reference table for uniform car-cost calculation of road trips. One row per coun
 - Non-EU fuel: GlobalPetrolPrices.com (2026-10-19), USD/litre converted to EUR at 1.1188 USD per EUR. Cross-check: its Italy figure matches the Oil Bulletin.
 - Vignettes: autovig.eu vignette index (verified 10-16 Oct 2026), e-autopalyamatrica.hu, fuel-prices.eu (Austria). Distance toll rates per 100 km and many tunnel/bridge prices are estimates from general knowledge (no source gave per-km rates).
 
+- Non-European rows (added 2026-10-27): fuel from GlobalPetrolPrices.com regional list (2026-10-19; country/price pairing matched by list order so treat as approximate; US/CA/AU/NZ national-average sources AAA/NRCan not checked). GL/VU/TO/WS/CK fuel are estimates (not listed). Tolls, border fees and cross-border letter fees are general-knowledge estimates; rental was NOT price-checked with live quotes (operator-level knowledge of Bushlore/Asco/Britz-style rates).
+- 4x4 convention: for safari/self-drive countries (BW NA ZW ZM MZ MW TZ KE UG RW MG ET AO LS) rental_eur_per_day is an equipped 4x4 (rooftop tent) or 4x4 with driver where self-drive is not normal (see notes), not a Golf-class compact. Elsewhere compact car. Peak season 2-3 week rental.
+
 ## Currency rates (ECB reference rates, 2026-10-26, per 1 EUR)
-USD 1.1188, GBP 0.8382, CHF 0.9243, NOK 10.4545, SEK 11.1385, DKK 7.4747, ISK 136.40, PLN 4.4038, CZK 24.369, HUF 367.45, RON 5.3473, TRY 55.6746.
+USD 1.1188, GBP 0.8382, CHF 0.9243, NOK 10.4545, SEK 11.1385, DKK 7.4747, ISK 136.40, PLN 4.4038, CZK 24.369, HUF 367.45, RON 5.3473, TRY 55.6746. Non-European rows used only USD (1.1188); local-currency amounts in notes (ZAR NAD BWP AUD NZD CAD etc) are approximate and unconverted.
 - BGN: Bulgaria adopted the euro on 2026-01-01 (legacy peg 1.95583).
 - BAM: fixed peg 1.95583 per EUR.
 - RSD, MKD, ALL: not fetched; no conversion needed because fuel was taken from USD prices. Use current central-bank rates if needed.
