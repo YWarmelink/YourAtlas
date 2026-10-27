@@ -269,6 +269,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Must run after every migration above (needs route.name fully settled) and before the
   // Sheet merge below (needs route.id already deterministic) — see its own doc comment.
   rbMigrateDeterministicSeedIds();
+  // After the ids are deterministic: both look routes up by id.
+  rbMigrateKupangDiliOverland();
+  rbMigrateApplyRouteCosts();
   rbRoutes = rbRoutes.filter(r => !RB_REMOVED_ROUTE_IDS.has(r.id));
 
   // Sheet as source of truth once reachable, localStorage as offline fallback — same

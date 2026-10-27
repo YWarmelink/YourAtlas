@@ -264,6 +264,10 @@ const RB_MIGRATE_FLAG_2026_09_SOLO_NATIONS_CLUSTER1_DESTINATION_NOTES = 'atlas_g
 const RB_MIGRATE_FLAG_2026_09_EUROPE_TAIL_CLUSTER6_DESTINATION_NOTES = 'atlas_grand_trips_migrate_2026_09_europe_tail_cluster6_destination_notes_v1';
 const RB_MIGRATE_FLAG_2026_09_DETERMINISTIC_SEED_IDS = 'atlas_grand_trips_migrate_2026_09_deterministic_seed_ids_v1';
 const RB_MIGRATE_FLAG_2026_10_LONGHAUL_BUFFER_BUDGETS = 'atlas_grand_trips_migrate_2026_10_longhaul_buffer_budgets_v1';
+const RB_MIGRATE_FLAG_2026_10_KUPANG_DILI = 'atlas_grand_trips_migrate_2026_10_kupang_dili_v1';
+// Route ids whose RB_ROUTE_COSTS entry rbMigrateApplyRouteCosts() has already applied (a list, so
+// each later backfill batch still applies once to its own routes).
+const RB_ROUTE_COSTS_APPLIED_KEY = 'atlas_grand_trips_route_costs_applied_v1';
 const RB_BLOCK_COLORS =['#0ea5e9', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#6366f1', '#f97316', '#14b8a6'];
 const RB_HOME_LATLNG = [52.0907, 5.1214]; // Utrecht, NL — every expedition's implicit start/end point
 const RB_WORLD_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';

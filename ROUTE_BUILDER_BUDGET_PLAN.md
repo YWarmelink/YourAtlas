@@ -1,8 +1,7 @@
 # Route Builder — Full-Cost Budget Plan
 
-Status: **Phases 0-2 DONE (2026-10-27)**: data model + Sheet plumbing (live round-trip
-passed) and the UI (browser-verified). Phase 3 (pilot: fill the Asia Grand Tour from the
-workbook) next. Started after the long-haul buffer budget fix (see `CHANGELOG.md`).
+Status: **Phases 0-3 DONE (2026-10-27)**: data model + Sheet plumbing, UI, and the Asia Grand
+Tour pilot (live in the Sheet). Phase 4 (backfill all routes, in batches) next. Started after the long-haul buffer budget fix (see `CHANGELOG.md`).
 
 ## Why
 
@@ -118,6 +117,22 @@ Original plan:
   the 2026-10-21 fixes).
 
 ### Phase 3 — Pilot: East & Southeast Asia Grand Tour 🐉
+
+**Done 2026-10-27** (see `CHANGELOG.md`). Standard €30,789 vs the workbook's Basis €33,556; the
+€2,767 gap is exactly the items the app leaves out by design (+4% price factor, vaccinations/
+gear/SIM, bank fees). The tier multipliers land close to the workbook's per-line tiers (Budget
+€20,929, Comfort €50,432 here). The data model needed no changes. Lessons for Phase 4:
+- Add a batch as entries in `RB_ROUTE_COSTS` (block order + country code per entry), run
+  `node scripts/push_route_costs_to_sheet.js` (dry run), then `--push`. The migration picks up
+  new route ids by itself; no new flag per batch.
+- The published CSV can flip between old and new versions for a few minutes after a write, so
+  only trust a check that has settled (the push script polls).
+- A full-route upsert (`grand_trip`) rebuilds the route from whatever the CSV shows. Never run
+  one on a route whose cost push isn't visible yet, or it blanks the costs.
+- The workbook's "optional but included" items (Huangshan summit night, ryokan) are entered as
+  non-optional; "optional" in the app means "not in the total".
+
+Original plan:
 
 Fill one route completely from the Excel prototype (Vervoer + Extra's tabs, 33 legs, 27
 extras). Check that the app total matches the Excel's Basis column. Adjust the data model

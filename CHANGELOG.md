@@ -12,6 +12,27 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Full-cost budget, Phase 3: pilot on East & Southeast Asia Grand Tour 🐉 (2026-10-27)** — the
+  route now carries every cost from its budget workbook (`planning/Wereldreis_Oost-ZO-Azie_Begroting.xlsx`,
+  "Basis" column, before its +4% 2027 factor): 16 onward transport legs, local transport for all
+  17 countries, 28 extras (5 visas, 4 optional), NL flights €560 + €470. One addition: East
+  Timor's overland visa authorisation + USD 30 border fee (~€28), missing from the workbook.
+  Standard total **€30,789** (€106/day all-in; Budget €20,929, Comfort €50,432), up from €18,700
+  daily costs only. The workbook's Basis total of €33,556 is €2,767 higher, entirely explained by what
+  the app deliberately leaves out: its +4% price factor (~€1,075), vaccinations/gear/SIM/documents
+  beyond insurance (€1,340, decision 4) and bank fees (€376), less the €28 visa it lacked.
+  Also fixed the Kupang→Dili leg: it said "Flight Kupang–Dili", but no direct flight is scheduled
+  in 2026 — now the overland bus via Mota'ain with the visa authorisation explained, plus the
+  Kupang destination note (`RB_KUPANG_DILI_FIX`, `rbMigrateKupangDiliOverland()`,
+  `scripts/fix_kupang_dili_in_sheet.js`). New reusable backfill mechanism for Phase 4: cost data
+  per route id in `RB_ROUTE_COSTS`, applied by `rbApplyRouteCosts()` to still-empty fields only
+  (hand edits win; a block whose country no longer matches is skipped), through
+  `rbMigrateApplyRouteCosts()` (localStorage, once per route id) and
+  `scripts/push_route_costs_to_sheet.js` (Sheet, bulk updates of the cost columns only, then
+  polls until a second pass finds nothing left). Tested on a fresh simulated browser and an
+  old-state browser (old text, no costs, one hand-entered cost: kept). Pushed and verified live:
+  totals match, all 455 routes / 1,087 block coordinates and the route's 116 destination notes
+  and coordinates intact.
 - **Full-cost budget, Phase 2: UI (2026-10-27)** — Route Builder now shows what a trip really
   costs, not only the daily costs. Edit mode: per country, transport onward (labelled with the
   next country), transport within the country, a "costs checked" date (set automatically when a

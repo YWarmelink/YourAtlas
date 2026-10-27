@@ -2665,10 +2665,10 @@ function rbBuildEastSoutheastAsiaGrandTourRoute() {
           'Lombok', 'Gili Islands', 'Komodo',
           { name: 'Bajawa', lat: -8.7833, lng: 120.9833, notes: 'Highland town in central Flores and the base for traditional Ngada villages such as Bena, with megalithic stone altars and high-roofed clan houses under the Inerie volcano; the Malanage hot-spring river is nearby.' },
           { name: 'Kelimutu', lat: -8.77, lng: 121.82, notes: 'A volcano with three crater lakes that change colour over time (turquoise to brown/black, from mineral reactions); walk up from the village of Moni for sunrise, when the lakes are clearest.' },
-          { name: 'Kupang', lat: -10.1772, lng: 123.607, notes: 'Capital of West Timor and the jumping-off point for East Timor; little to see itself, but the place to catch the onward flight to Dili (or to sort out the visa authorisation if crossing overland).' },
+          { name: 'Kupang', lat: -10.1772, lng: 123.607, notes: 'Capital of West Timor and the jumping-off point for the overland crossing to Dili (no direct Kupang–Dili flights in 2026); little to see itself. Have the East Timor visa authorisation sorted before you get here (see the transport note).' },
         ]),
         notes: "49 days (midpoint of Youri's 6-8 weeks) instead of Eurasia's 21, with the emphasis outside Java and Bali (both already visited, deliberately left out): Sumatra (as in Eurasia Grand Tour) → Sulawesi (Bunaken, Togean Islands, Tana Toraja) → optional Raja Ampat → Lombok/Gili → Komodo and overland across Flores → Kupang. Many domestic flights (Sumatra–Manado via Jakarta, Makassar–Sorong, Sorong/Makassar–Lombok, Ende/Maumere–Kupang, ~€40-100 each) are not in the daily budget; neither are the Komodo boat trip (organized tours $75-135/day, budget shared boats from ~$40-50/day), the Togean boats or Raja Ampat's park fees. Daily rate ~€45 (slightly above Eurasia's ~€42) for the remote eastern islands. Visa: visa on arrival for 30 days plus one 30-day extension (~€29, apply online at evisa.imigrasi.go.id ~14 days before expiry, with an in-person photo appointment) — 49 days needs that extension. April-May: dry season starting in Nusa Tenggara (Lombok, Komodo, Flores); Sumatra and Sulawesi get rain year-round, less from May. Mount Rinjani (Lombok) is an active volcano with no current eruption warning (2026-07) — check shortly before departure.",
-        transport_to_next: "Flight Kupang–Dili (~1 hour; entry by air is visa-free for Dutch citizens, up to 90 days). Overland by bus via the Mota'ain/Batugade border (~10-12 hours) is possible too, but then you need a Visa Application Authorisation from the East Timor consulate in Kupang first (~10 working days).",
+        transport_to_next: "Bus overland Kupang–Atambua–Dili via the Mota'ain/Batugade border (~10-12 hours, ~€35) — no direct Kupang–Dili flights are scheduled in 2026, so this is the main option. Overland entry needs a Visa Application Authorisation before the border: apply online or at the East Timor consulate in Kupang or Denpasar, allowing up to ~10 working days (so well before reaching Kupang), then pay USD 30 at the border. The alternative is flying in via Denpasar (Bali); entry by air is visa-free for Dutch citizens (up to 90 days).",
       },
       {
         ...eurasia('TL', 'East Timor'),
@@ -26543,4 +26543,177 @@ function rbSeedTripsSheetWishlistReplacements() {
     rbBuildMalaysiaBorneoBruneiRoute(),
   );
   rbSave();
+}
+
+// ---- Kupang–Dili correction (2026-10) ----
+//
+// East & Southeast Asia Grand Tour 🐉 said "Flight Kupang–Dili", but no direct flight is scheduled
+// in 2026 (the route's budget workbook already prices the overland bus). Patches only the exact
+// old texts, so a hand-edited version is left alone. Shared with
+// scripts/fix_kupang_dili_in_sheet.js, which applies the same fix to the Sheet.
+const RB_KUPANG_DILI_FIX = {
+  routeId: 'gt_seed_east-southeast-asia-grand-tour', code: 'ID', destination: 'Kupang',
+  oldTransport: "Flight Kupang–Dili (~1 hour; entry by air is visa-free for Dutch citizens, up to 90 days). Overland by bus via the Mota'ain/Batugade border (~10-12 hours) is possible too, but then you need a Visa Application Authorisation from the East Timor consulate in Kupang first (~10 working days).",
+  newTransport: "Bus overland Kupang–Atambua–Dili via the Mota'ain/Batugade border (~10-12 hours, ~€35) — no direct Kupang–Dili flights are scheduled in 2026, so this is the main option. Overland entry needs a Visa Application Authorisation before the border: apply online or at the East Timor consulate in Kupang or Denpasar, allowing up to ~10 working days (so well before reaching Kupang), then pay USD 30 at the border. The alternative is flying in via Denpasar (Bali); entry by air is visa-free for Dutch citizens (up to 90 days).",
+  oldNote: "Capital of West Timor and the jumping-off point for East Timor; little to see itself, but the place to catch the onward flight to Dili (or to sort out the visa authorisation if crossing overland).",
+  newNote: "Capital of West Timor and the jumping-off point for the overland crossing to Dili (no direct Kupang–Dili flights in 2026); little to see itself. Have the East Timor visa authorisation sorted before you get here (see the transport note).",
+};
+
+/** Applies RB_KUPANG_DILI_FIX to one route object; returns true when something changed. */
+function rbApplyKupangDiliFix(route) {
+  const f = RB_KUPANG_DILI_FIX;
+  const block = (route.blocks || []).find(b => b.country_code === f.code && b.transport_to_next === f.oldTransport);
+  let changed = false;
+  if (block) { block.transport_to_next = f.newTransport; changed = true; }
+  (route.blocks || []).forEach(b => (b.destinations || []).forEach(d => {
+    if (d.name === f.destination && d.notes === f.oldNote) { d.notes = f.newNote; changed = true; }
+  }));
+  return changed;
+}
+
+function rbMigrateKupangDiliOverland() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_10_KUPANG_DILI)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_10_KUPANG_DILI, '1');
+  const route = rbRoutes.find(r => r.id === RB_KUPANG_DILI_FIX.routeId);
+  if (route && rbApplyKupangDiliFix(route)) rbSave();
+}
+
+// ---- Full-cost budget data (ROUTE_BUILDER_BUDGET_PLAN.md, Phase 3+) ----
+//
+// The costs outside a block's daily budget (see RB_BLOCK_COST_FIELDS in routeBuilderCore.js), per
+// route id. Amounts are per person, Standard level, 2026 prices. `blocks` lists every block in
+// route order with the country_code it must match — a block that no longer matches (reordered or
+// replaced by hand) is skipped, never patched wrongly. `transport` is to the next block (omit on
+// the last one), `local` is intercity travel within the country.
+//
+// Applied only to fields that are still empty, so anything already entered by hand wins:
+// rbMigrateApplyRouteCosts() for localStorage (once per route id), and
+// scripts/push_route_costs_to_sheet.js for the Sheet, which is what a browser actually loads.
+const rbExtra = (label, cost, category, optional = false) => ({ label, cost, category, optional });
+
+const RB_ROUTE_COSTS = {
+  // Pilot (2026-10): planning/Wereldreis_Oost-ZO-Azie_Begroting.xlsx, "Basis" column of its Vervoer
+  // and Extra's tabs (prices researched 2026-10, before its +4% 2027 price factor). Optional extras
+  // = the workbook's "Meenemen: Nee". One addition: East Timor's overland visa authorisation +
+  // USD 30 border fee, missing from the workbook.
+  'gt_seed_east-southeast-asia-grand-tour': {
+    checked: '2026-10-26',
+    flight_in_cost: 560,   // Amsterdam–Ulaanbaatar one way (Turkish via Istanbul)
+    flight_out_cost: 470,  // Singapore–Amsterdam one way
+    blocks: [
+      { code: 'MN', transport: 160, local: 285, extras: [
+        rbExtra('Gobi jeep tour (~6 days, shared 4x4, guide, ger camps)', 700, 'tour'),
+      ] },
+      { code: 'CN', transport: 130, local: 320, extras: [
+        rbExtra('Tourist visa (L) incl. service fee', 150, 'visa'),
+        rbExtra('Major entrance tickets (Great Wall, Terracotta Army, Zhangjiajie, Huangshan + cable car, Li River)', 200, 'park_fee'),
+        rbExtra('Night on the Huangshan summit (surcharge)', 60, 'tour'),
+      ] },
+      { code: 'KR', transport: 75, local: 57, extras: [
+        rbExtra('DMZ tour from Seoul', 45, 'tour'),
+      ] },
+      { code: 'JP', transport: 115, local: 370, extras: [
+        rbExtra('One ryokan night with onsen + dinner (surcharge)', 80, 'tour'),
+      ] },
+      { code: 'TW', transport: 115, local: 111, extras: [] },
+      { code: 'VN', transport: 38, local: 210, extras: [
+        rbExtra('Ha Giang Loop with an easy rider (4 days)', 230, 'tour'),
+        rbExtra('Ha Long / Lan Ha Bay cruise (2 days, 1 night)', 160, 'tour'),
+      ] },
+      { code: 'KH', transport: 20, local: 45, extras: [
+        rbExtra('E-visa', 30, 'visa'),
+        rbExtra('Angkor 3-day pass', 53, 'park_fee'),
+        rbExtra('Tuk-tuk for Angkor (3 days)', 70, 'tour'),
+      ] },
+      { code: 'LA', transport: 50, local: 85, extras: [
+        rbExtra('E-visa / visa on arrival', 35, 'visa'),
+      ] },
+      { code: 'TH', transport: 35, local: 170, extras: [
+        rbExtra('Khao Sok raft-house tour (2 days, 1 night)', 95, 'tour'),
+      ] },
+      { code: 'MY', transport: 50, local: 45, extras: [] },  // Peninsula
+      { code: 'MY', transport: 45, local: 0, extras: [] },   // Sarawak
+      { code: 'BN', transport: 30, local: 0, extras: [
+        rbExtra('Ulu Temburong NP (mandatory guided tour)', 120, 'tour'),
+      ] },
+      { code: 'MY', transport: 100, local: 60, extras: [     // Sabah
+        rbExtra('Kinabatangan River tour (2 days, 1 night)', 150, 'tour'),
+        rbExtra('Mount Kinabalu climb (2 days: permit, guide, hut)', 600, 'tour', true),
+      ] },
+      { code: 'PH', transport: 200, local: 255, extras: [
+        rbExtra('El Nido–Coron boat expedition', 265, 'tour'),
+        rbExtra('Island-hopping tours (El Nido, Coron, Bohol)', 90, 'tour'),
+        rbExtra('Diving course (Open Water) or fun dives', 350, 'tour', true),
+      ] },
+      { code: 'ID', transport: 35, local: 545, extras: [
+        rbExtra('E-visa on arrival + extension (49 days)', 53, 'visa'),
+        rbExtra('Bukit Lawang jungle trek (2 days)', 120, 'tour'),
+        rbExtra('Bunaken park fee + snorkelling trips', 50, 'park_fee'),
+        rbExtra('Togean Islands boats', 60, 'tour'),
+        rbExtra('Komodo boat trip (2D1N–3D2N)', 200, 'tour'),
+        rbExtra('Raja Ampat (park fee + flights + homestay surcharge)', 450, 'tour', true),
+        rbExtra('Rinjani trek (Lombok)', 200, 'tour', true),
+      ] },
+      { code: 'TL', transport: 330, local: 30, extras: [
+        rbExtra('Visa Application Authorisation (overland entry) + USD 30 border fee', 28, 'visa'),
+        rbExtra('Getting to Jaco Island (bus + boat, or shared 4x4)', 100, 'tour'),
+      ] },
+      { code: 'SG', local: 0, extras: [] },
+    ],
+  },
+};
+
+/**
+ * Fills a route's still-empty cost fields from one RB_ROUTE_COSTS entry. Mutates `route`; returns
+ * { changedBlocks: [block index, ...], changedRoute: bool, skipped: [description, ...] }.
+ */
+function rbApplyRouteCosts(route, data) {
+  const empty = v => v === '' || v === null || v === undefined;
+  const result = { changedBlocks: [], changedRoute: false, skipped: [] };
+  const blocks = route.blocks || [];
+  if (blocks.length !== data.blocks.length) {
+    result.skipped.push(`block count ${blocks.length} ≠ ${data.blocks.length} in the cost data`);
+  }
+
+  data.blocks.forEach((entry, i) => {
+    const b = blocks[i];
+    if (!b || b.country_code !== entry.code) {
+      result.skipped.push(`block ${i}: expected ${entry.code}, found ${b ? b.country_code : 'nothing'}`);
+      return;
+    }
+    let changed = false;
+    const next = blocks[i + 1];
+    if ('transport' in entry && next && empty(b.transport_cost)) {
+      b.transport_cost = entry.transport;
+      b.transport_cost_to = next.country_code;
+      changed = true;
+    }
+    if ('local' in entry && empty(b.local_transport_cost)) { b.local_transport_cost = entry.local; changed = true; }
+    if (entry.extras && !Array.isArray(b.extras)) { b.extras = entry.extras.map(x => ({ ...x })); changed = true; }
+    if (changed) {
+      if (!b.costs_checked) b.costs_checked = data.checked;
+      result.changedBlocks.push(i);
+    }
+  });
+
+  ['flight_in_cost', 'flight_out_cost'].forEach(f => {
+    if (f in data && empty(route[f])) { route[f] = data[f]; result.changedRoute = true; }
+  });
+  return result;
+}
+
+function rbMigrateApplyRouteCosts() {
+  let applied;
+  try { applied = new Set(JSON.parse(localStorage.getItem(RB_ROUTE_COSTS_APPLIED_KEY) || '[]')); } catch (_) { applied = new Set(); }
+  let touched = false;
+  Object.keys(RB_ROUTE_COSTS).forEach(id => {
+    if (applied.has(id)) return;
+    applied.add(id);
+    const route = rbRoutes.find(r => r.id === id);
+    if (!route) return;
+    const res = rbApplyRouteCosts(route, RB_ROUTE_COSTS[id]);
+    if (res.changedBlocks.length || res.changedRoute) touched = true;
+  });
+  localStorage.setItem(RB_ROUTE_COSTS_APPLIED_KEY, JSON.stringify([...applied]));
+  if (touched) rbSave();
 }
