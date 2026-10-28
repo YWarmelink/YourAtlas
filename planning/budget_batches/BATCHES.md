@@ -16,14 +16,14 @@ Made 2026-10-28 for the 439 routes not yet in `RB_ROUTE_COSTS` (batch 1 = the 13
 | 10 | Alps & Germany (2/2) | 15 | 25 | 12 | ~143k (real ≈105k: agent 92k) | done 2026-10-28, in the Sheet (4 in parallel) |
 | 11 | Adriatic & Western Balkans (1/3) | 20 | 38 | 19 | ~190k (real ≈125k: agent 113k) | done 2026-10-28, in the Sheet (4 in parallel) |
 | 12 | Adriatic & Western Balkans (2/3) | 19 | 40 | 15 | ~192k (real ≈135k: agent 122k) | done 2026-10-28, in the Sheet (4 in parallel) |
-| 13 | Adriatic & Western Balkans (3/3) | 17 | 35 | 15 | ~174k | |
-| 14 | Greece, Cyprus & Turkey | 19 | 39 | 12 | ~190k | |
-| 15 | Central & Eastern Europe (1/2) | 22 | 39 | 13 | ~199k | |
-| 16 | Central & Eastern Europe (2/2) | 22 | 32 | 12 | ~181k | |
-| 17 | Nordics (1/2) | 21 | 23 | 14 | ~156k | |
-| 18 | Nordics (2/2) | 16 | 27 | 8 | ~147k | |
-| 19 | British Isles | 23 | 38 | 21 | ~199k | |
-| 20 | Mediterranean, Eurasia & Europe-Asia | 20 | 67 | 6 | ~185k | |
+| 13 | Adriatic & Western Balkans (3/3) | 17 | 35 | 15 | ~174k (real ≈125k: agent 113k) | done 2026-10-28, in the Sheet (8 in parallel) |
+| 14 | Greece, Cyprus & Turkey | 19 | 39 | 12 | ~190k (real ≈130k: agent 116k) | done 2026-10-28, in the Sheet (8 in parallel) |
+| 15 | Central & Eastern Europe (1/2) | 22 | 39 | 13 | ~199k (real ≈120k: agent 107k) | done 2026-10-28, in the Sheet (8 in parallel) |
+| 16 | Central & Eastern Europe (2/2) | 22 | 32 | 12 | ~181k (real ≈135k: agent 125k) | done 2026-10-28, in the Sheet (8 in parallel) |
+| 17 | Nordics (1/2) | 21 | 23 | 14 | ~156k (real ≈125k: agent 110k) | done 2026-10-28, in the Sheet (8 in parallel) |
+| 18 | Nordics (2/2) | 16 | 27 | 8 | ~147k (real ≈130k: agent 119k) | done 2026-10-28, in the Sheet (8 in parallel) |
+| 19 | British Isles | 23 | 38 | 21 | ~199k (real ≈145k: agent 132k) | done 2026-10-28, in the Sheet (8 in parallel) |
+| 20 | Mediterranean, Eurasia & Europe-Asia | 20 | 67 | 6 | ~185k (real ≈165k: agent 153k) | done 2026-10-28, in the Sheet (8 in parallel) |
 | 21 | Asia & Himalaya | 25 | 43 | 3 | ~200k | |
 | 22 | Africa | 25 | 44 | 9 | ~182k | |
 | 23 | Caribbean, Amazon & Pan-American | 22 | 46 | 1 | ~176k | |
@@ -32,6 +32,22 @@ Made 2026-10-28 for the 439 routes not yet in `RB_ROUTE_COSTS` (batch 1 = the 13
 | 26 | South America, Patagonia & West/Central Africa | 10 | 32 | 0 | ~137k | |
 
 Total ≈ 4236k tokens over 25 batches. Route lists per batch are in `batches.json`.
+
+## Where we are / how to continue (updated 2026-10-28)
+
+**Done: batches 1-20** (all costs in `RB_ROUTE_COSTS` in `js/pages/routeBuilderContent.js` + live in the Sheet). **Next: batches 21-26** (≈119 routes: Asia, Africa, Americas, Oceania). Real cost ≈ 110-165k per batch (agent ≈ 90-150k + ~10-20k orchestration); running them in parallel (up to 8 tested fine) saves time, not tokens. Youri said he wants to run the rest later; ask how many at once.
+
+Per round:
+1. `node scripts/budget_batch_input.js N` for each batch (writes `planning/budget_batchN/input.json`; it carries `carInDailyRate` and `inDailyRate`, the R2d "already in the rate" reasons).
+2. One **Sonnet** `general-purpose` agent per batch, in the background: "Work in the repo …. Follow planning/budget_batches/AGENT_BRIEF.md exactly, with N = <n> (<group>). Today is <date>. Other agents price batches … at the same time: write ONLY into planning/budget_batch<n>/."
+3. Check each result: the scratch check (apply each entry with `rbApplyRouteCosts`, total with `rbRouteCosts(route, 'mine')`, block count + codes must match input.json). Also check **every R2d "keep" block** (from `planning/budget_r2d/decisions.json`, call `keep`): nothing may be added for what its reason says is in the rate (ferries, domestic flights, 4x4/car, tours). Batches 14/17/20 needed manual fixes for that.
+4. Small route-text errors from the REVIEW.md files (contradictory endings, stale operators, a wrong pass/road) are fixed **without asking** (Youri, 2026-10-28), then reported. Add them as a new `RB_BATCH…_TEXT_FIXES` list + `rbFix…RouteTexts()` + `rbMigrate…RouteFixes()` (flag in Core, call in `routeBuilder.js` after the last one) using `rbApplyBlockTextFixes()`; edit the source text too; add an entry to `scripts/fix_route_texts_in_sheet.js` and run it (`<key>`, then `<key> --push`, re-check until DONE). Watch apostrophes inside single-quoted JS strings.
+5. Merge the new fares: each `flights_batchN.csv` into `data/cost_reference/flights_from_ams.csv` (one row per airport+direction, existing rows win, medium over low confidence; normalise `in`/`out` to `out`/`back` if an agent used those).
+6. Insert each `costs_batchN.js` before the closing `};` of `RB_ROUTE_COSTS`, `node --check`, `node scripts/simulate_route_builder.js` (must exit 0).
+7. Show Youri the review (totals, the calls that matter, text fixes made, real tokens per batch) → on his OK: `node scripts/push_route_costs_to_sheet.js` (dry run: the route/block counts must equal the batches) then `--push` (it verifies; the published CSV can flip-flop for a few minutes, re-check until 0 updates).
+8. Update this table (real tokens, status) + `CHANGELOG.md` (text fixes), commit (message via a file: `git commit -F`, PowerShell mangles quotes), push.
+
+After batch 26: Phase 4 is complete; the rest of Phase 5 (export button) in `ROUTE_BUILDER_BUDGET_PLAN.md` is optional.
 
 ## Batch 2: Italy, San Marino & Malta (1/3)
 

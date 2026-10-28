@@ -1,0 +1,16 @@
+airport_code,city,country_code,direction,eur_one_way,airline_or_routing,source,date_checked,confidence,notes
+KIV,Chisinau,MD,out,130,Fly One/Austrian/Lufthansa/LOT/Tarom (mostly 1 stop),WebSearch 2026-10-28 (Skyscanner floor EUR 87; Expedia EUR 107; Kayak USD 112-126),2026-10-28,medium,typical above floors
+KIV,Chisinau,MD,back,120,same,WebSearch 2026-10-28 (Expedia USD 130 floor),2026-10-28,low,est
+TLL,Tallinn,EE,out,130,airBaltic/KLM/LOT direct or 1 stop,WebSearch 2026-10-28 (Skyscanner floor EUR 66; Expedia USD 167; Kayak USD 150),2026-10-28,medium,
+WAW,Warsaw,PL,back,100,KLM/LOT direct,WebSearch 2026-10-28 (Expedia EUR 98 floor; Ratepunk USD 135-237),2026-10-28,medium,
+GDN,Gdansk,PL,out,110,Wizz/Ryanair/KLM-LOT,est (no search),2026-10-28,low,
+KRK,Krakow,PL,out,120,easyJet/Ryanair/LOT/KLM,WebSearch 2026-10-28 (Trip.com USD 110 floor; Expedia GBP 94; Ratepunk USD 226-340),2026-10-28,medium,
+KRK,Krakow,PL,back,110,same,est from out fare,2026-10-28,low,
+PRG,Prague,CZ,out,100,easyJet/KLM direct,WebSearch 2026-10-28 (Trip.com EUR 74 floor; Skyscanner EUR 97; avg EUR 105),2026-10-28,medium,
+WRO,Wroclaw,PL,back,120,1 stop or Ryanair/Wizz seasonal,est (no search),2026-10-28,low,
+BUD,Budapest,HU,back,100,KLM/Wizz/Transavia,WebSearch 2026-10-28 (Expedia USD 83-103; Kayak GBP 93),2026-10-28,medium,
+OTP,Bucharest,RO,out,130,KLM/Tarom/Lufthansa/Wizz,WebSearch 2026-10-28 (Tarom USD 144; Lufthansa USD 191; Expedia USD 160; Kayak EUR 113),2026-10-28,medium,
+OTP,Bucharest,RO,back,120,same,est from out fare,2026-10-28,low,
+SOF,Sofia,BG,back,130,Bulgaria Air direct or 1 stop,WebSearch 2026-10-28 (Skyscanner floor EUR 59; Expedia USD 95-115; Kayak USD 67),2026-10-28,low,floors only; typical estimated
+BTS,Bratislava,SK,out,140,1 stop (no nonstop from AMS),WebSearch 2026-10-28 (Kayak USD 158 cheapest / typical 125-215; Skyscanner EUR 69-143),2026-10-28,low,
+BTS,Bratislava,SK,back,130,1 stop,WebSearch 2026-10-28 (Skyscanner EUR 119 / USD 77 floors),2026-10-28,low,est

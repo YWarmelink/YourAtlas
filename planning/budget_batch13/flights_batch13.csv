@@ -1,0 +1,2 @@
+airport_code,city,country_code,direction,eur_one_way,airline_or_routing,source,date_checked,confidence,notes
+BUD,Budapest,HU,out,120,KLM nonstop / easyJet / Air Serbia 1 stop,WebSearch 2026-10-28 (Kayak EUR 131 KLM nonstop; Cheapflights Air Serbia USD 146 / KLM USD 172; Trip.com from USD 105),2026-10-28,medium,typical nonstop fare; promo floors ignored

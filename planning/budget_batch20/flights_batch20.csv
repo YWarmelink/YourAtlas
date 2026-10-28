@@ -1,0 +1,17 @@
+airport_code,city,country_code,direction,eur_one_way,airline_or_routing,source,date_checked,confidence,notes
+ATH,Athens,GR,out,140,KLM/Aegean/Transavia direct,WebSearch 2026-10-28 (Aegean EUR 129-189; Kayak GBP 80-105 floors),2026-10-28,medium,
+ATH,Athens,GR,back,130,Aegean/Transavia/KLM direct,WebSearch 2026-10-28 (Farecompare USD 158; Ratepunk),2026-10-28,medium,
+IST,Istanbul,TR,out,150,Turkish/KLM/Pegasus direct,WebSearch 2026-10-28 (Kayak USD 134; Air Serbia from EUR 134; Travelocity USD 148),2026-10-28,medium,
+IST,Istanbul,TR,back,140,Turkish/KLM/Pegasus direct,estimate from out fare,2026-10-28,medium,est
+TUN,Tunis,TN,out,200,connecting (Lufthansa/Air France/Brussels),WebSearch 2026-10-28 (Expedia USD 204; Kayak typical USD 188-315; no nonstop),2026-10-28,medium,
+TUN,Tunis,TN,back,190,connecting,estimate from out fare,2026-10-28,low,est
+XIY,Xi'an,CN,out,500,connecting (Beijing/Shanghai/Gulf),WebSearch 2026-10-28 (Expedia USD 401-465; ebookers EUR 593-699),2026-10-28,medium,
+XIY,Xi'an,CN,back,400,connecting,WebSearch 2026-10-28 (Expedia USD 300; Travelocity USD 301 floors; typical higher),2026-10-28,low,
+HAN,Hanoi,VN,out,520,connecting (1 stop; EVA/Gulf/Asia),WebSearch 2026-10-28 (Kayak USD 390; Expedia USD 440 floors),2026-10-28,medium,
+CAI,Cairo,EG,out,180,KLM direct/Transavia,WebSearch 2026-10-28 (Expedia USD 116-123; Kayak GBP 166 floors),2026-10-28,medium,
+TPE,Taipei,TW,back,450,EVA/China Airlines direct or 1 stop,WebSearch 2026-10-28 (Skyscanner EUR 279; Orbitz USD 342 floors; typical higher),2026-10-28,low,est
+TAS,Tashkent,UZ,back,320,Turkish/Qatar 1 stop (no nonstop),WebSearch 2026-10-28 (Expedia USD 335; Skyscanner EUR 198-493),2026-10-28,low,
+MRS,Marseille,FR,back,120,Transavia/KLM/Air France,estimate (no search),2026-10-28,low,est
+LCA,Larnaca,CY,back,170,Transavia/Aegean/Ryanair direct or 1 stop,estimate (no search),2026-10-28,low,est
+ADB,Izmir,TR,out,170,Transavia/Pegasus/KLM,estimate (no search),2026-10-28,low,est
+RHO,Rhodes,GR,back,170,Transavia/seasonal charters or via Athens,estimate (no search),2026-10-28,low,est

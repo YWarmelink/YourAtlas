@@ -1,0 +1,1370 @@
+{
+ "batch": 17,
+ "group": "Nordics",
+ "routes": [
+  {
+   "id": "gt_seed_copenhagen-4-days",
+   "name": "Copenhagen (4 days) 🧜‍♀️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "City trip on foot/metro/bike.",
+   "description": "Nyhavn, Tivoli Gardens, Strøget, Christiania, and Rosenborg Castle.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 11b (Northern Europe: Denmark + Finland) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_copenhagen-4-days",
+    "name": "Copenhagen (4 days) 🧜‍♀️",
+    "stops": 5,
+    "km_in_route": 10,
+    "km_from_nl": 820,
+    "km_back_to_nl": 820,
+    "km_by_country": {
+     "DK": 10
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "DK",
+     "country": "Denmark",
+     "days": 4,
+     "budget": 384,
+     "dailyRate": 96,
+     "carInDailyRate": false,
+     "notes": "The colorful Nyhavn harbor, Tivoli Gardens, the Strøget shopping street, the freetown of Christiania, and Rosenborg Castle. Budget ~€110-140/day. Season: May-September; Tivoli Gardens closes during the shoulder season (roughly early January to late March) — check the 2026 calendar for its exact reopening date before planning a winter or early-spring trip. Web check (2026-08): work out whether a Copenhagen Card actually pays for itself against current 2026 museum/attraction prices before buying one — it depends heavily on how many paid sights you'll realistically fit into 4 days.",
+     "transport_to_next": "End of this route — fly home from Copenhagen.",
+     "destinations": [
+      {
+       "name": "Nyhavn",
+       "lat": 55.679,
+       "lng": 12.591
+      },
+      {
+       "name": "Tivoli Gardens",
+       "lat": 55.6736,
+       "lng": 12.5681
+      },
+      {
+       "name": "Strøget",
+       "lat": 55.6787,
+       "lng": 12.5751
+      },
+      {
+       "name": "Christiania",
+       "lat": 55.6736,
+       "lng": 12.5992
+      },
+      {
+       "name": "Rosenborg Castle",
+       "lat": 55.6857,
+       "lng": 12.5775
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_copenhagen-zealand-5-days",
+   "name": "Copenhagen + Zealand (5 days) 🖼️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Copenhagen on foot/metro, day trips by train (Roskilde, Louisiana) and rental car (Møns Klint).",
+   "description": "Copenhagen plus day trips to Roskilde's Viking Ship Museum, the Louisiana Museum, and the chalk cliffs of Møns Klint.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 11b (Northern Europe: Denmark + Finland) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_copenhagen-zealand-5-days",
+    "name": "Copenhagen + Zealand (5 days) 🖼️",
+    "stops": 4,
+    "km_in_route": 250,
+    "km_from_nl": 820,
+    "km_back_to_nl": 760,
+    "km_by_country": {
+     "DK": 250
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "DK",
+     "country": "Denmark",
+     "days": 5,
+     "budget": 480,
+     "dailyRate": 96,
+     "carInDailyRate": false,
+     "notes": "Copenhagen itself (2-3 days), then day trips: Roskilde's Viking Ship Museum by train, the Louisiana Museum of Modern Art in Humlebæk, and Møns Klint's chalk cliffs (needs a rental car, ~2h drive each way). Budget ~€100-130/day, plus €40-60 on the rental-car day. Web check (2026-08): Møns Klint is barely reachable by public transport, so the rental car for that day isn't optional; its visitor center and the stairs down to the beach can have seasonal maintenance closures — check before relying on the full route being open.",
+     "transport_to_next": "End of this route — fly home from Copenhagen.",
+     "destinations": [
+      {
+       "name": "Copenhagen (Nyhavn)",
+       "lat": 55.679,
+       "lng": 12.591
+      },
+      {
+       "name": "Roskilde (Viking Ship Museum)",
+       "lat": 55.6415,
+       "lng": 12.0803
+      },
+      {
+       "name": "Louisiana Museum (Humlebæk)",
+       "lat": 55.9625,
+       "lng": 12.5385
+      },
+      {
+       "name": "Møns Klint",
+       "lat": 54.9506,
+       "lng": 12.5382
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_denmark-6-days",
+   "name": "Denmark (6 days) 🧱",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Train/bus between Copenhagen, Odense and Jutland; Flixbus or train+bus for Copenhagen-Billund.",
+   "description": "Copenhagen, Odense, the LEGO House in Billund, and optionally Aarhus — the whole country including Jutland.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 11b (Northern Europe: Denmark + Finland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — the whole-country differentiator versus the shorter Copenhagen-only routes above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_denmark-6-days",
+    "name": "Denmark (6 days) 🧱",
+    "stops": 4,
+    "km_in_route": 410,
+    "km_from_nl": 820,
+    "km_back_to_nl": 730,
+    "km_by_country": {
+     "DK": 410
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "DK",
+     "country": "Denmark",
+     "days": 6,
+     "budget": 576,
+     "dailyRate": 96,
+     "carInDailyRate": false,
+     "notes": "The differentiator versus the shorter Copenhagen routes above: the whole country, including Jutland. Copenhagen (2-3 days), then Odense (H.C. Andersen's birthplace), the LEGO House in Billund, and optionally Aarhus (the ARoS art museum). Budget ~€100-130/day. Web check (2026-08): there's no direct train from Copenhagen to Billund — plan a Flixbus or a train+bus combination instead; the LEGO House uses timed-slot tickets, so book ahead rather than assuming walk-up entry.",
+     "transport_to_next": "End of this route — fly home from Copenhagen, or from Billund Airport if the schedule works out better from there.",
+     "destinations": [
+      {
+       "name": "Copenhagen (Nyhavn)",
+       "lat": 55.679,
+       "lng": 12.591
+      },
+      {
+       "name": "Odense (H.C. Andersen House)",
+       "lat": 55.3959,
+       "lng": 10.3883
+      },
+      {
+       "name": "LEGO House (Billund)",
+       "lat": 55.7308,
+       "lng": 9.1256
+      },
+      {
+       "name": "Aarhus (ARoS Art Museum)",
+       "lat": 56.1496,
+       "lng": 10.2134
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_denmark-south-sweden-9-days",
+   "name": "Denmark + South Sweden (9 days) 🌉",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Copenhagen on foot/train, Öresund Bridge crossing, rental car around Skåne.",
+   "description": "Copenhagen and Zealand day trips, the Öresund Bridge to Malmö, and the Skåne region (Lund, Ystad, Kivik/Österlen).",
+   "notes": "Built (2026-08) as part of Phase 2 batch 11b (Northern Europe: Denmark + Finland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a two-country route (Denmark + Sweden) reusing the exact Skåne coordinates from batch 11a's standalone South Sweden (Skåne) (9 days) 🪨 route. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_denmark-south-sweden-9-days",
+    "name": "Denmark + South Sweden (9 days) 🌉",
+    "stops": 7,
+    "km_in_route": 300,
+    "km_from_nl": 820,
+    "km_back_to_nl": 930,
+    "km_by_country": {
+     "DK": 100,
+     "SE": 200
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "DK",
+     "country": "Denmark",
+     "days": 5,
+     "budget": 480,
+     "dailyRate": 96,
+     "carInDailyRate": false,
+     "notes": "Copenhagen (2-3 days) plus Zealand day trips (Roskilde's Viking Ship Museum, the Louisiana Museum). Budget ~€100-130/day.",
+     "transport_to_next": "The Öresund Bridge/train to Malmö (about 35 minutes), on into the Skåne region.",
+     "destinations": [
+      {
+       "name": "Copenhagen (Nyhavn)",
+       "lat": 55.679,
+       "lng": 12.591
+      },
+      {
+       "name": "Roskilde (Viking Ship Museum)",
+       "lat": 55.6415,
+       "lng": 12.0803
+      },
+      {
+       "name": "Louisiana Museum (Humlebæk)",
+       "lat": 55.9625,
+       "lng": 12.5385
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "SE",
+     "country": "Sweden",
+     "days": 4,
+     "budget": 340,
+     "dailyRate": 85,
+     "carInDailyRate": false,
+     "notes": "Skåne (Lund, Ystad, Kivik/Österlen, 3-4 days) — same Malmö/Lund/Ystad/Kivik coordinates as the standalone South Sweden (Skåne) (9 days) 🪨 route above, since this covers the same region. Budget ~€100-130/day. Web check (2026-08): check just before departure whether Sweden's temporary ID checks on the Öresund crossing are currently active — these have been extended repeatedly since 2015, same caveat as noted on the Stockholm/Skåne routes above.",
+     "transport_to_next": "End of this route — fly home from Malmö or Copenhagen.",
+     "destinations": [
+      {
+       "name": "Malmö",
+       "lat": 55.605,
+       "lng": 13.0038
+      },
+      {
+       "name": "Lund",
+       "lat": 55.7047,
+       "lng": 13.191
+      },
+      {
+       "name": "Ystad",
+       "lat": 55.4295,
+       "lng": 13.8204
+      },
+      {
+       "name": "Kivik",
+       "lat": 55.6817,
+       "lng": 14.2434
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_aland-5-days",
+   "name": "Åland (5 days) 🚲",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Ferry in, cycling between the islands.",
+   "description": "Mariehamn and cycling around the Åland archipelago.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 11b (Northern Europe: Denmark + Finland) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_aland-5-days",
+    "name": "Åland (5 days) 🚲",
+    "stops": 2,
+    "km_in_route": 20,
+    "km_from_nl": 1660,
+    "km_back_to_nl": 1670,
+    "km_by_country": {
+     "FI": 20
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "FI",
+     "country": "Finland",
+     "days": 5,
+     "budget": 410,
+     "dailyRate": 82,
+     "carInDailyRate": false,
+     "notes": "Mariehamn plus cycling between the islands. Budget ~€75-90/day. Season: June-August, for cycling weather and more frequent ferry services. Web check (2026-08): Åland is Finnish/EU customs territory but excluded from the EU VAT/excise zone (a 'third territory' for indirect tax under the Åland Protocol) — duty-free sales onboard the ferries remain possible as a result, and this stays unchanged EU law in 2026. Swedish is the everyday language, but the currency is the euro, not Swedish kronor, since this is Finnish territory. Viking Line and Tallink Silja both run daily Stockholm-Mariehamn sailings (~5.5h on the direct route), plus a longer Helsinki/Turku-Mariehamn-Stockholm line.",
+     "transport_to_next": "End of this route — ferry onward to Stockholm, or back to Helsinki/Turku, depending on which way you started.",
+     "destinations": [
+      {
+       "name": "Mariehamn",
+       "lat": 60.0973,
+       "lng": 19.9348
+      },
+      {
+       "name": "Sund (Kastelholm Castle)",
+       "lat": 60.1922,
+       "lng": 20.0244
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_finland-roadtrip-12-days",
+   "name": "Finland Roadtrip (12 days) 🛣️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Self-drive roadtrip, or the VR night train with car transport for the long Helsinki-Rovaniemi stretch.",
+   "description": "Helsinki, Turku, Tampere and a loop up to Rovaniemi and Lapland.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 11b (Northern Europe: Denmark + Finland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — the full South Finland-to-Lapland roadtrip version, distinct from the shorter South Finland and Finnish Lapland routes above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_finland-roadtrip-12-days",
+    "name": "Finland Roadtrip (12 days) 🛣️",
+    "stops": 4,
+    "km_in_route": 1120,
+    "km_from_nl": 1970,
+    "km_back_to_nl": 2560,
+    "km_by_country": {
+     "FI": 1120
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "FI",
+     "country": "Finland",
+     "days": 12,
+     "budget": 960,
+     "dailyRate": 80,
+     "carInDailyRate": false,
+     "notes": "Helsinki, through South Finland, up into a Lapland loop — Helsinki-Turku-Tampere-Rovaniemi. Budget ~€85-100/day on average (car/fuel plus a mix of city and nature). Season: June-August, to cover the whole route without snow problems on the roads up north. Web check (2026-08): the distances are long (Helsinki-Rovaniemi is roughly 830km) — consider the VR night train with car transport instead of driving the whole way yourself.",
+     "transport_to_next": "End of this route — fly home from Rovaniemi, or take the VR night train (with the car) back to Helsinki before flying home.",
+     "destinations": [
+      {
+       "name": "Helsinki (Senate Square)",
+       "lat": 60.1699,
+       "lng": 24.9384
+      },
+      {
+       "name": "Turku",
+       "lat": 60.4518,
+       "lng": 22.2666
+      },
+      {
+       "name": "Tampere",
+       "lat": 61.4978,
+       "lng": 23.761
+      },
+      {
+       "name": "Rovaniemi (Santa Claus Village)",
+       "lat": 66.5636,
+       "lng": 25.8471
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_finnish-lapland-9-days",
+   "name": "Finnish Lapland (9 days) 🎅",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Based in Rovaniemi, then Levi or Ylläs — rental car or transfer between them.",
+   "description": "Rovaniemi and the Santa Claus Village, plus Levi or Ylläs for aurora hunting, husky tours or skiing.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 11b (Northern Europe: Denmark + Finland) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_finnish-lapland-9-days",
+    "name": "Finnish Lapland (9 days) 🎅",
+    "stops": 3,
+    "km_in_route": 240,
+    "km_from_nl": 2560,
+    "km_back_to_nl": 2610,
+    "km_by_country": {
+     "FI": 240
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "FI",
+     "country": "Finland",
+     "days": 9,
+     "budget": 720,
+     "dailyRate": 80,
+     "carInDailyRate": false,
+     "notes": "Rovaniemi and the Santa Claus Village, plus Levi or Ylläs for aurora hunting or skiing. Budget ~€100-140/day — husky tours, snowmobiling and aurora tours are pricey add-ons, €80-150 per activity. Season: December-March for northern lights and snow, or June-July for the midnight sun; the mid-December Christmas period brings peak prices at Santa Claus Village. Web check (2026-08): Levi/Ylläs lift passes and accommodation during the February winter school holidays are much pricier — book well ahead of that window.",
+     "transport_to_next": "End of this route — fly home from Rovaniemi (or from Kittilä if flying out from the Levi/Ylläs side).",
+     "destinations": [
+      {
+       "name": "Rovaniemi (Santa Claus Village)",
+       "lat": 66.5636,
+       "lng": 25.8471
+      },
+      {
+       "name": "Levi (Kittilä)",
+       "lat": 67.8049,
+       "lng": 24.809
+      },
+      {
+       "name": "Ylläs (Äkäslompolo)",
+       "lat": 67.5667,
+       "lng": 24.2333
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_helsinki-4-days",
+   "name": "Helsinki (4 days) 🏛️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "City trip on foot/tram, plus the HSL-included ferry to Suomenlinna.",
+   "description": "Helsinki itself, the Suomenlinna sea fortress, and the Design District.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 11b (Northern Europe: Denmark + Finland) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_helsinki-4-days",
+    "name": "Helsinki (4 days) 🏛️",
+    "stops": 3,
+    "km_in_route": 10,
+    "km_from_nl": 1970,
+    "km_back_to_nl": 1970,
+    "km_by_country": {
+     "FI": 10
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "FI",
+     "country": "Finland",
+     "days": 4,
+     "budget": 310,
+     "dailyRate": 78,
+     "carInDailyRate": false,
+     "notes": "The city itself, the Suomenlinna sea fortress island, and the Design District. Budget ~€70-85/day. Season: May-September for light and terraces, or December for the Christmas market — winter is dark but atmospheric. Web check (2026-08): the Helsinki Card's price rose from 2025 to 2026, so check current rates before assuming it pays off; the Suomenlinna ferry is included in the HSL transit ticket, so no separate boat fare is needed.",
+     "transport_to_next": "End of this route — fly home from Helsinki.",
+     "destinations": [
+      {
+       "name": "Helsinki (Senate Square)",
+       "lat": 60.1699,
+       "lng": 24.9384
+      },
+      {
+       "name": "Suomenlinna",
+       "lat": 60.1454,
+       "lng": 24.988
+      },
+      {
+       "name": "Design District",
+       "lat": 60.1636,
+       "lng": 24.9402
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_helsinki-lake-district-6-days",
+   "name": "Helsinki + Lake District (6 days) 🛶",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Helsinki on foot/tram, then train or rental car out to the lake district.",
+   "description": "Helsinki plus Lahti/Savonlinna and Lake Saimaa, with sauna and kayaking.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 11b (Northern Europe: Denmark + Finland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — the lake-district differentiator versus the plain Helsinki route above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_helsinki-lake-district-6-days",
+    "name": "Helsinki + Lake District (6 days) 🛶",
+    "stops": 4,
+    "km_in_route": 430,
+    "km_from_nl": 1970,
+    "km_back_to_nl": 2280,
+    "km_by_country": {
+     "FI": 430
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "FI",
+     "country": "Finland",
+     "days": 6,
+     "budget": 525,
+     "dailyRate": 88,
+     "carInDailyRate": false,
+     "notes": "The differentiator versus Helsinki alone: adds Lahti/Savonlinna and Lake Saimaa. Helsinki, then Lahti/Savonlinna, Lake Saimaa, sauna and kayaking. Budget ~€80-95/day — the rental car or train plus lake activities push this above a plain city trip. Season: June-August is best for swimming and the white nights; Savonlinna's Olavinlinna Castle hosts an opera festival in July, when prices run higher. Web check (2026-08): VR train connections to the smaller lake-district towns are limited, so a rental car is often needed to actually reach Lake Saimaa's more remote spots.",
+     "transport_to_next": "End of this route — fly home from Helsinki.",
+     "destinations": [
+      {
+       "name": "Helsinki (Senate Square)",
+       "lat": 60.1699,
+       "lng": 24.9384
+      },
+      {
+       "name": "Lahti",
+       "lat": 60.9827,
+       "lng": 25.6612
+      },
+      {
+       "name": "Savonlinna (Olavinlinna Castle)",
+       "lat": 61.8681,
+       "lng": 28.8783
+      },
+      {
+       "name": "Lake Saimaa",
+       "lat": 61.6167,
+       "lng": 28.3833
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_south-finland-9-days",
+   "name": "South Finland (9 days) 🧭",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Train between Helsinki, Turku, Porvoo and Tampere.",
+   "description": "Helsinki, Turku (castle and cathedral), Porvoo, and optionally Tampere.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 11b (Northern Europe: Denmark + Finland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — the broader-geographic-scope differentiator versus the Helsinki-only routes above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_south-finland-9-days",
+    "name": "South Finland (9 days) 🧭",
+    "stops": 5,
+    "km_in_route": 650,
+    "km_from_nl": 1970,
+    "km_back_to_nl": 1990,
+    "km_by_country": {
+     "FI": 650
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "FI",
+     "country": "Finland",
+     "days": 9,
+     "budget": 765,
+     "dailyRate": 85,
+     "carInDailyRate": false,
+     "notes": "The differentiator versus the shorter Helsinki routes above: a wider geographic scope — Helsinki, Turku, Porvoo and optionally Tampere, 3-4 cities instead of just one. Budget ~€80-90/day. Season: May-September. Web check (2026-08): Porvoo's old town is free to visit; Turku Castle and Turku Cathedral entry runs roughly €10-14 each.",
+     "transport_to_next": "End of this route — fly home from Helsinki.",
+     "destinations": [
+      {
+       "name": "Helsinki (Senate Square)",
+       "lat": 60.1699,
+       "lng": 24.9384
+      },
+      {
+       "name": "Turku Castle",
+       "lat": 60.4472,
+       "lng": 22.2333
+      },
+      {
+       "name": "Turku Cathedral",
+       "lat": 60.4512,
+       "lng": 22.2745
+      },
+      {
+       "name": "Porvoo",
+       "lat": 60.3932,
+       "lng": 25.6645
+      },
+      {
+       "name": "Tampere",
+       "lat": 61.4978,
+       "lng": 23.761
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_faroe-islands-6-days",
+   "name": "Faroe Islands (6 days) 🐦",
+   "mode": "own_car",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car around Tórshavn and the villages, plus a Vestmanna bird-cliffs boat tour.",
+   "description": "Tórshavn, Múlafossur/Gásadalur, Saksun, and the Vestmanna bird-cliffs boat tour.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 11c (Northern Europe: Faroe Islands + Iceland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 11/21. A deliberately short, realistic 'Trip Ideas' route distinct from the existing standalone 'Faroe Islands 🐑' route (split off from Nordic Arctic Expedition ❄️, the longer epic version); named/emoji'd differently (🐦 vs 🐑) to avoid confusion, and 'Faroe Islands 🐑' itself is left untouched. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_faroe-islands-6-days",
+    "name": "Faroe Islands (6 days) 🐦",
+    "stops": 4,
+    "km_in_route": 120,
+    "km_from_nl": 1710,
+    "km_back_to_nl": 1740,
+    "km_by_country": {
+     "FO": 120
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "FO",
+     "country": "Faroe Islands",
+     "days": 6,
+     "budget": 660,
+     "dailyRate": 110,
+     "carInDailyRate": false,
+     "notes": "Tórshavn (2 days) plus Múlafossur/Gásadalur, Saksun, and the Vestmanna bird-cliffs boat tour. Budget ~€100-120/day — the Faroes are expensive, Scandinavian-level food/accommodation prices, and a rental car is practically essential. Season: May-September, since the Vestmanna boat tours generally only run in this window. Web check (2026-08): Atlantic Airways flies from Copenhagen at least 2x/day, up to 4x/day in summer (June-August), and even more in July 2026 (111 vs. 100 flights in July 2025) — but Vágar Airport is notorious for fog and wind, delays/cancellations are real, so build in buffer time. The Smyril Line ferry Hirtshals-Tórshavn runs 2x/week, ~30-38h, from ~€150 (an alternative if flights are disrupted, or if bringing your own car). The Trælanípa hike has real wind danger (>15 m/s) on the unprotected cliff edge, and fog can remove the view entirely — check weather.fo locally beforehand. The Faroe Islands are in the Nordic Passport Union but NOT in the EU/Schengen — a Dutch traveler needs their actual passport (not an ID card, since it's outside Schengen); occasional passport checks are possible despite the flight feeling like a Danish domestic hop. General travel advisory (2026-08 web check): Denmark, which the Faroes fall under, is green (as of 08-05-2026), with no separate note for the Faroes themselves.\n\nDistinct from the existing 'Faroe Islands 🐑' route (split off from Nordic Arctic Expedition ❄️), which is the longer, epic expedition version. This one is deliberately the realistic, shorter 'Trip Ideas' version of the same destination — a different kind of trip (short holiday vs. epic), not a duplicate.",
+     "transport_to_next": "End of this route — fly home via Copenhagen (Atlantic Airways), or take the Smyril Line ferry back to Hirtshals if timing allows.",
+     "destinations": [
+      {
+       "name": "Tórshavn",
+       "lat": 62.0079,
+       "lng": -6.7716
+      },
+      {
+       "name": "Múlafossur / Gásadalur",
+       "lat": 62.1064,
+       "lng": -7.6153
+      },
+      {
+       "name": "Saksun",
+       "lat": 62.2872,
+       "lng": -7.2119
+      },
+      {
+       "name": "Vestmanna bird cliffs boat tour",
+       "lat": 62.1546,
+       "lng": -7.1698
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_greenland",
+   "name": "Greenland 🧊",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Domestic flights between towns (Air Greenland, near-monopoly) — a structural cost, not an incident.",
+   "description": "Inuit culture, the Icefjord and the icebergs of Disko Bay near Ilulissat.",
+   "notes": "Split off from Nordic Arctic Expedition ❄️ as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Country, days and budget are carried over unchanged. Nordic Arctic Expedition ❄️ itself remains unchanged as a separate, full expedition.",
+   "distance": {
+    "id": "gt_seed_greenland",
+    "name": "Greenland 🧊",
+    "stops": 6,
+    "km_in_route": 990,
+    "km_from_nl": 4490,
+    "km_back_to_nl": 4420,
+    "km_by_country": {
+     "GL": 990
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GL",
+     "country": "Greenland",
+     "days": 10,
+     "budget": 3725,
+     "dailyRate": 373,
+     "carInDailyRate": false,
+     "notes": "Entry: flight Amsterdam-Reykjavik-Nuuk (±7-8h incl. connection, no direct flight, from ±€900-1,400 return, best period July-August). Price indication from 2026-08 web research, a snapshot. Price verified (2026-07), tight but workable — domestic flights between towns (Air Greenland, near-monopoly) are a structural cost, not an incidental one, including the Nuuk-Ilulissat flight itself (no road connection between Greenlandic towns). Not EU/Schengen (though part of the Kingdom of Denmark) — passport check on arrival/departure, EHIC not valid. Route logic (2026-08, search-confirmed): entry/exit corrected — entry is Nuuk (year-round direct flight from Reykjavik), exit is Ilulissat (seasonal direct flight back, no more detour via Nuuk).",
+     "transport_to_next": "End of this route — flight Ilulissat-Reykjavik (seasonal direct, June-September) or Ilulissat-Copenhagen (year-round direct from late October 2026, Air Greenland), then a connecting flight home to the Netherlands (Reykjavik-Amsterdam with Icelandair/Transavia, or Copenhagen-Amsterdam with KLM/Transavia) — ±8-10h total incl. connection, from ±€600-950 return for this last leg. Price indication from 2026-08 web research, a snapshot.",
+     "destinations": [
+      {
+       "name": "Nuuk",
+       "lat": 64.1836,
+       "lng": -51.7214
+      },
+      {
+       "name": "Inuit culture (Nuuk)",
+       "lat": 64.1836,
+       "lng": -51.7214
+      },
+      {
+       "name": "Ilulissat",
+       "lat": 69.2198,
+       "lng": -51.1
+      },
+      {
+       "name": "Icefjord (Ilulissat Icefjord)",
+       "lat": 69.1833,
+       "lng": -51.05
+      },
+      {
+       "name": "Disko Bay",
+       "lat": 69.25,
+       "lng": -53
+      },
+      {
+       "name": "Boat trips (e.g. Eqi Glacier)",
+       "lat": 69.8167,
+       "lng": -50.3167
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_faroe-islands-iceland-9-days",
+   "name": "Faroe Islands + Iceland (9 days) ⛴️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Smyril Line MS Norröna ferry between the two islands (or separate flights via Copenhagen), rental car on each island.",
+   "description": "The Faroe Islands (Tórshavn, Vestmanna bird cliffs) combined with Iceland (Reykjavík, the Golden Circle, the Blue Lagoon) via the Smyril Line ferry.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 11c (Northern Europe: Faroe Islands + Iceland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 11/21. Deliberately the short, practical combination of both islands, distinct from the aspirational 'Nordic Arctic Expedition ❄️' epic (which also includes both as separate legs) — not a duplicate. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_faroe-islands-iceland-9-days",
+    "name": "Faroe Islands + Iceland (9 days) ⛴️",
+    "stops": 7,
+    "km_in_route": 1320,
+    "km_from_nl": 1710,
+    "km_back_to_nl": 2680,
+    "km_by_country": {
+     "FO": 30,
+     "IS": 1280
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "FO",
+     "country": "Faroe Islands",
+     "days": 3,
+     "budget": 360,
+     "dailyRate": 120,
+     "carInDailyRate": false,
+     "notes": "Tórshavn plus the Vestmanna bird-cliffs boat tour, kept short since this is the combined trip with Iceland below. Budget ~€110-130/day overall for the whole trip (Iceland runs pricier than the Faroes). Practical connection: the Smyril Line MS Norröna combines both legs in one crossing (a weekly Faroe-Iceland sailing) with a required minimum stay of 1 week Iceland + 3 days-1 week Faroe Islands, from ~€810 (25% deposit) — note that strict minimum adds up to about 10 days, slightly more than this 9-day version, so treat this as a compressed take on the Norröna combo or plan on flying the two legs separately instead (no direct Atlantic Airways FAE-Reykjavík route was found, most likely via Copenhagen). Season: June-August for the most favorable Norröna sailing schedule.",
+     "transport_to_next": "Smyril Line MS Norröna ferry crossing to Iceland (the weekly Faroe-Iceland leg) — or fly separately via Copenhagen if the ferry minimum-stay/schedule doesn't fit.",
+     "destinations": [
+      {
+       "name": "Tórshavn",
+       "lat": 62.0079,
+       "lng": -6.7716
+      },
+      {
+       "name": "Vestmanna bird cliffs boat tour",
+       "lat": 62.1546,
+       "lng": -7.1698
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IS",
+     "country": "Iceland",
+     "days": 6,
+     "budget": 720,
+     "dailyRate": 120,
+     "carInDailyRate": false,
+     "notes": "Reykjavík plus the Golden Circle (Þingvellir, Geysir, Gullfoss) and the Blue Lagoon, on the Iceland side of the combined trip. Web check (2026-08): this is deliberately the short-holiday version alongside the aspirational 'Nordic Arctic Expedition' epic in the Route Builder — not a duplicate, but a shorter, practical combination of the two islands. See the Reykjavík + Golden Circle (5 days) route below for the full Reykjanes Peninsula volcanic-activity safety note and Schengen entry details, both of which apply here too.",
+     "transport_to_next": "End of this route — fly home from Keflavík (Reykjavík-Amsterdam with KLM/Icelandair/Transavia).",
+     "destinations": [
+      {
+       "name": "Reykjavík",
+       "lat": 64.1466,
+       "lng": -21.9426
+      },
+      {
+       "name": "Þingvellir",
+       "lat": 64.2559,
+       "lng": -21.1295
+      },
+      {
+       "name": "Geysir",
+       "lat": 64.3104,
+       "lng": -20.3024
+      },
+      {
+       "name": "Gullfoss",
+       "lat": 64.3271,
+       "lng": -20.1199
+      },
+      {
+       "name": "Blue Lagoon",
+       "lat": 63.8804,
+       "lng": -22.4495
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_iceland-extended-14-days",
+   "name": "Iceland Extended (14 days) 🗺️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Full self-drive Ring Road plus either a Westfjords extension (2WD) or a highland 4x4 tour (Landmannalaugar/Þórsmörk).",
+   "description": "The full Ring Road plus either the remote Westfjords (Dynjandi waterfall) or a 4x4 highland tour (Landmannalaugar/Þórsmörk).",
+   "notes": "Built (2026-08) as part of Phase 2 batch 11c (Northern Europe: Faroe Islands + Iceland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 11/21. The deepest of the Iceland routes in this batch, adding a Westfjords or highland branch onto the Ring Road above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_iceland-extended-14-days",
+    "name": "Iceland Extended (14 days) 🗺️",
+    "stops": 9,
+    "km_in_route": 1620,
+    "km_from_nl": 2670,
+    "km_back_to_nl": 2500,
+    "km_by_country": {
+     "IS": 1620
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IS",
+     "country": "Iceland",
+     "days": 14,
+     "budget": 1610,
+     "dailyRate": 115,
+     "carInDailyRate": false,
+     "notes": "The full Ring Road (as above) plus an extra branch: either the Westfjords (remote, dramatic fjords, the Dynjandi waterfall) or a highland tour (e.g. Landmannalaugar/Þórsmörk via an F-road, 4x4 required) — the differentiator here is that extra depth, not just more days on the same route. Budget ~€130-160/day (the highland tour needs a 4x4 rental, pricier than 2WD; the Westfjords option means more fuel/distance and fewer amenities). Season: the highland option is only feasible roughly mid-June-early September (F-roads only open then, varies year to year — check vegagerdin.is/umferdin.is); the Westfjords are accessible all summer, though some mountain passes have winter closures. Web check (2026-08): the highland route requires mandatory 4x4 plus river fords, NOT covered by a standard 2WD rental — check opening dates right before departure. The Westfjords option stays on paved/2WD-suitable main roads throughout. See the Reykjavík + Golden Circle (5 days) route above for the Reykjanes Peninsula volcanic-activity safety note and Schengen entry details.",
+     "transport_to_next": "End of this route — fly home from Keflavík.",
+     "destinations": [
+      {
+       "name": "Reykjavík",
+       "lat": 64.1466,
+       "lng": -21.9426
+      },
+      {
+       "name": "Vík í Mýrdal",
+       "lat": 63.4186,
+       "lng": -19.006
+      },
+      {
+       "name": "Jökulsárlón Glacier Lagoon",
+       "lat": 64.0784,
+       "lng": -16.23
+      },
+      {
+       "name": "Egilsstaðir / Seyðisfjörður",
+       "lat": 65.2669,
+       "lng": -14.3948
+      },
+      {
+       "name": "Mývatn / Akureyri / Húsavík",
+       "lat": 65.6,
+       "lng": -17
+      },
+      {
+       "name": "Westfjords (Ísafjörður)",
+       "lat": 66.0748,
+       "lng": -23.1339
+      },
+      {
+       "name": "Dynjandi waterfall",
+       "lat": 65.7333,
+       "lng": -23.1833
+      },
+      {
+       "name": "Landmannalaugar (highland alternative)",
+       "lat": 63.9938,
+       "lng": -19.0619
+      },
+      {
+       "name": "Þórsmörk (highland alternative)",
+       "lat": 63.6833,
+       "lng": -19.5333
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_iceland-ring-road-12-days",
+   "name": "Iceland Ring Road (12 days) 🛣️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Full self-drive Ring Road loop, rental car for the whole trip.",
+   "description": "The complete Route 1 Ring Road loop: the South Coast, Jökulsárlón, the East Fjords, North Iceland, and back via the west.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 11c (Northern Europe: Faroe Islands + Iceland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 11/21. A deliberately shorter, realistic 'Trip Ideas' route distinct from the existing standalone 'Iceland ❄️' route (split off from Nordic Arctic Expedition ❄️, the longer epic version); named/emoji'd differently (🛣️ vs ❄️) to avoid confusion, and 'Iceland ❄️' itself is left untouched. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_iceland-ring-road-12-days",
+    "name": "Iceland Ring Road (12 days) 🛣️",
+    "stops": 9,
+    "km_in_route": 990,
+    "km_from_nl": 2670,
+    "km_back_to_nl": 2590,
+    "km_by_country": {
+     "IS": 990
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IS",
+     "country": "Iceland",
+     "days": 12,
+     "budget": 1560,
+     "dailyRate": 130,
+     "carInDailyRate": false,
+     "notes": "The complete Route 1 loop (1,332 km): Reykjavík → the South Coast/Jökulsárlón → the East Fjords (Egilsstaðir/Seyðisfjörður) → North Iceland (Mývatn, Akureyri, Húsavík whale watching) → back via the west — the differentiator against the routes above is the full circle, not just the south coast. Budget ~€115-140/day (a rental car is essential, most days self-catering or a guesthouse). Season: June-mid September is optimal (all roads open, lowest risk of snowfall). Web check (2026-08): Route 1 itself stays 2WD/paved, no F-roads needed for the ring road; some unpaved side roads do exist to attractions off the main route (e.g. parts of Snæfellsnes, if added). Check umferdin.is for current road conditions just before departure, especially outside peak summer. See the Reykjavík + Golden Circle (5 days) route above for the Reykjanes Peninsula volcanic-activity safety note and Schengen entry details.\n\nDistinct from the existing standalone 'Iceland ❄️' route (split off from Nordic Arctic Expedition ❄️), which is the longer, epic expedition version. This one is deliberately the realistic, shorter 'Trip Ideas' Ring Road version — a different kind of trip (holiday vs. epic), not a duplicate.",
+     "transport_to_next": "End of this route — fly home from Keflavík, or continue on to the Iceland Extended route below for the Westfjords or Highlands.",
+     "destinations": [
+      {
+       "name": "Reykjavík",
+       "lat": 64.1466,
+       "lng": -21.9426
+      },
+      {
+       "name": "Vík í Mýrdal",
+       "lat": 63.4186,
+       "lng": -19.006
+      },
+      {
+       "name": "Jökulsárlón Glacier Lagoon",
+       "lat": 64.0784,
+       "lng": -16.23
+      },
+      {
+       "name": "Höfn",
+       "lat": 64.2539,
+       "lng": -15.2082
+      },
+      {
+       "name": "Egilsstaðir",
+       "lat": 65.2669,
+       "lng": -14.3948
+      },
+      {
+       "name": "Seyðisfjörður",
+       "lat": 65.2646,
+       "lng": -13.9552
+      },
+      {
+       "name": "Mývatn",
+       "lat": 65.6,
+       "lng": -17
+      },
+      {
+       "name": "Akureyri",
+       "lat": 65.6835,
+       "lng": -18.0878
+      },
+      {
+       "name": "Húsavík",
+       "lat": 66.0449,
+       "lng": -17.3389
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_iceland-south-coast-9-days",
+   "name": "Iceland South Coast (9 days) 🧊",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car, the South Coast extended past Vík to Jökulsárlón, Diamond Beach and Höfn.",
+   "description": "Reykjavík, the Golden Circle, the South Coast to Vík, Jökulsárlón Glacier Lagoon, Diamond Beach and Höfn.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 11c (Northern Europe: Faroe Islands + Iceland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 11/21. Differentiator: continues past Vík to Jökulsárlón/Höfn, unlike the shorter South Iceland route above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_iceland-south-coast-9-days",
+    "name": "Iceland South Coast (9 days) 🧊",
+    "stops": 8,
+    "km_in_route": 560,
+    "km_from_nl": 2670,
+    "km_back_to_nl": 2320,
+    "km_by_country": {
+     "IS": 560
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IS",
+     "country": "Iceland",
+     "days": 9,
+     "budget": 1170,
+     "dailyRate": 130,
+     "carInDailyRate": false,
+     "notes": "The same as South Iceland above, but continuing on past Vík to the Jökulsárlón glacier lagoon, Diamond Beach, and Höfn (2-3 extra days) — the differentiator here is pushing on past Vík instead of stopping there. Optionally an ice cave tour in winter (November-March, guided only). Budget ~€120-145/day. Season: June-September for driving comfort; winter (November-March) specifically for the ice caves at Vatnajökull (guided tours only, weather-dependent). Web check (2026-08): Route 1 as far as Höfn is fully paved, no 4x4 needed; always book ice cave tours with a local guide — they require one regardless of experience. See the Reykjavík + Golden Circle (5 days) route above for the Reykjanes Peninsula volcanic-activity safety note and Schengen entry details.",
+     "transport_to_next": "End of this route — back to Reykjavík/Keflavík to fly home, or continue on to the full Iceland Ring Road route below.",
+     "destinations": [
+      {
+       "name": "Reykjavík",
+       "lat": 64.1466,
+       "lng": -21.9426
+      },
+      {
+       "name": "Golden Circle (Þingvellir/Geysir/Gullfoss)",
+       "lat": 64.3104,
+       "lng": -20.3024
+      },
+      {
+       "name": "Seljalandsfoss",
+       "lat": 63.6156,
+       "lng": -19.9886
+      },
+      {
+       "name": "Skógafoss",
+       "lat": 63.5321,
+       "lng": -19.5116
+      },
+      {
+       "name": "Reynisfjara black beach / Vík í Mýrdal",
+       "lat": 63.4045,
+       "lng": -19.0424
+      },
+      {
+       "name": "Jökulsárlón Glacier Lagoon",
+       "lat": 64.0784,
+       "lng": -16.23
+      },
+      {
+       "name": "Diamond Beach",
+       "lat": 64.0446,
+       "lng": -16.1793
+      },
+      {
+       "name": "Höfn",
+       "lat": 64.2539,
+       "lng": -15.2082
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_reykjavik-golden-circle-5-days",
+   "name": "Reykjavík + Golden Circle (5 days) 🌋",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Based in Reykjavík, a Golden Circle day tour and a Blue Lagoon day via Keflavík.",
+   "description": "Reykjavík, the Golden Circle (Þingvellir, Geysir, Gullfoss), and the Blue Lagoon.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 11c (Northern Europe: Faroe Islands + Iceland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 11/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_reykjavik-golden-circle-5-days",
+    "name": "Reykjavík + Golden Circle (5 days) 🌋",
+    "stops": 5,
+    "km_in_route": 280,
+    "km_from_nl": 2670,
+    "km_back_to_nl": 2680,
+    "km_by_country": {
+     "IS": 280
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IS",
+     "country": "Iceland",
+     "days": 5,
+     "budget": 575,
+     "dailyRate": 115,
+     "carInDailyRate": false,
+     "notes": "Reykjavík (2 days, city and harbor) plus a Golden Circle day tour (Þingvellir, Geysir, Gullfoss, 1 day), the Blue Lagoon via Keflavík (1 day), and a buffer day. Budget ~€130-160/day (budget-comfort accommodation plus a rental car/day tour and meals — Iceland is expensive). Season: year-round; summer (June-August) for long days, winter (October-March) for northern lights, but with shorter daylight hours and icy roads. Web check (2026-08): the Blue Lagoon requires mandatory advance booking, no walk-ins, indicative price from ~€65-75 (Comfort tier) — the exact 2026 price isn't confirmed with certainty, so verify just before booking. The drive to the Blue Lagoon passes through the Reykjanes Peninsula (see the safety note below); the Golden Circle itself (Þingvellir/Geysir/Gullfoss) lies outside that area, unaffected.\n\nIceland safety note (2026-08 web check, currently active — travel advisory last changed 21-04-2026, valid through 14-08-2026): yellow for the Reykjanes Peninsula specifically, due to ongoing volcanic activity near Grindavík — the risk of a new eruption remains. Green for the rest of Iceland. No active eruption since September 2025; Grindavík itself has reopened but remains vulnerable (fresh lava, gas risk, sirens possible) — check safetravel.is/eruption-in-reykjanes/ just before travel. Keflavík Airport and the Reykjavík-Keflavík road function normally. Schengen — a Dutch passport is visa-free, no ETA needed, standard Schengen entry.",
+     "transport_to_next": "End of this route — fly home from Keflavík.",
+     "destinations": [
+      {
+       "name": "Reykjavík",
+       "lat": 64.1466,
+       "lng": -21.9426
+      },
+      {
+       "name": "Þingvellir",
+       "lat": 64.2559,
+       "lng": -21.1295
+      },
+      {
+       "name": "Geysir",
+       "lat": 64.3104,
+       "lng": -20.3024
+      },
+      {
+       "name": "Gullfoss",
+       "lat": 64.3271,
+       "lng": -20.1199
+      },
+      {
+       "name": "Blue Lagoon",
+       "lat": 63.8804,
+       "lng": -22.4495
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_south-iceland-6-days",
+   "name": "South Iceland (6 days) 🌊",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car, Reykjavík and the Golden Circle plus a South Coast drive as far as Vík.",
+   "description": "Reykjavík, the Golden Circle, and the South Coast to Vík (Seljalandsfoss, Skógafoss, Reynisfjara black beach).",
+   "notes": "Built (2026-08) as part of Phase 2 batch 11c (Northern Europe: Faroe Islands + Iceland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 11/21. Differentiator: ends at Vík, unlike the Iceland South Coast and Ring Road routes below which continue further. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_south-iceland-6-days",
+    "name": "South Iceland (6 days) 🌊",
+    "stops": 8,
+    "km_in_route": 290,
+    "km_from_nl": 2670,
+    "km_back_to_nl": 2450,
+    "km_by_country": {
+     "IS": 290
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IS",
+     "country": "Iceland",
+     "days": 6,
+     "budget": 690,
+     "dailyRate": 115,
+     "carInDailyRate": false,
+     "notes": "Reykjavík (1-2 days) plus the Golden Circle (1 day) and the South Coast as far as Vík (Seljalandsfoss, Skógafoss, Reynisfjara black beach, 2-3 days), then back to Reykjavík — the differentiator against the routes below is stopping at Vík, not continuing further. Budget ~€120-150/day. Season: May-September for the best road conditions. Web check (2026-08): Route 1 as far as Vík is fully paved/2WD, no F-roads needed, and no volcanic impact on this stretch. Reynisfjara: watch for 'sneaker waves' (dangerous surprise waves) — a year-round warning. See the Reykjavík + Golden Circle (5 days) route above for the Reykjanes Peninsula volcanic-activity safety note and Schengen entry details.",
+     "transport_to_next": "End of this route — back to Reykjavík/Keflavík to fly home, or continue on to the Iceland South Coast route below for Jökulsárlón and Höfn.",
+     "destinations": [
+      {
+       "name": "Reykjavík",
+       "lat": 64.1466,
+       "lng": -21.9426
+      },
+      {
+       "name": "Þingvellir",
+       "lat": 64.2559,
+       "lng": -21.1295
+      },
+      {
+       "name": "Geysir",
+       "lat": 64.3104,
+       "lng": -20.3024
+      },
+      {
+       "name": "Gullfoss",
+       "lat": 64.3271,
+       "lng": -20.1199
+      },
+      {
+       "name": "Seljalandsfoss",
+       "lat": 63.6156,
+       "lng": -19.9886
+      },
+      {
+       "name": "Skógafoss",
+       "lat": 63.5321,
+       "lng": -19.5116
+      },
+      {
+       "name": "Reynisfjara black beach",
+       "lat": 63.4045,
+       "lng": -19.0424
+      },
+      {
+       "name": "Vík í Mýrdal",
+       "lat": 63.4186,
+       "lng": -19.006
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_bergen-alesund-12-days",
+   "name": "Bergen + Ålesund (12 days) 🛣️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "One-way rental car, ending in Ålesund; check the drop-off fee before booking.",
+   "description": "A one-way coastal drive from Bergen via the Sognefjord and Geirangerfjord to Ålesund, including the Atlantic Ocean Road.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 11a (Northern Europe: Norway + Sweden) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a one-way coastal variant of the round-trip Norway Roadtrip route above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_bergen-alesund-12-days",
+    "name": "Bergen + Ålesund (12 days) 🛣️",
+    "stops": 6,
+    "km_in_route": 570,
+    "km_from_nl": 1200,
+    "km_back_to_nl": 1500,
+    "km_by_country": {
+     "NO": 570
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "NO",
+     "country": "Norway",
+     "days": 12,
+     "budget": 1320,
+     "dailyRate": 110,
+     "carInDailyRate": false,
+     "notes": "A one-way coastal route: Bergen, the Sognefjord (Nærøyfjord/Flåm), the Nordfjord/Stryn, Geirangerfjord, the Atlantic Ocean Road (Atlanterhavsveien), ending in Ålesund with a return flight from there or Molde — a one-way rental car drop-off, so watch for the fee, unlike the round-trip Norway Roadtrip above. Budget ~€150-170/day (one-way rental car costs more, plus fjord ferries). Season: June-September; the Trollstigen/Geiranger-Ålesund stretch is snow-dependent, typically open roughly May-October. Web check (2026-08): a one-way Bergen-Ålesund rental car often carries a substantial drop-off fee — compare providers in advance; the same Geiranger zero-emission rule applies as on the Fjord Norway route above. Travel advisory and entry details: see the Oslo (5 days) route above.",
+     "transport_to_next": "End of this route — fly home from Ålesund or Molde.",
+     "destinations": [
+      {
+       "name": "Bergen",
+       "lat": 60.3959,
+       "lng": 5.3245
+      },
+      {
+       "name": "Sognefjord (Nærøyfjord/Flåm)",
+       "lat": 60.8666,
+       "lng": 6.8666
+      },
+      {
+       "name": "Nordfjord / Stryn",
+       "lat": 61.9086,
+       "lng": 6.7186
+      },
+      {
+       "name": "Geirangerfjord",
+       "lat": 62.1004,
+       "lng": 7.2062
+      },
+      {
+       "name": "Atlantic Ocean Road (Atlanterhavsveien)",
+       "lat": 63.0206,
+       "lng": 7.3654
+      },
+      {
+       "name": "Ålesund",
+       "lat": 62.4722,
+       "lng": 6.1549
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_bergen-fjords-6-days",
+   "name": "Bergen + Fjords (6 days) ⛴️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Bergen on foot/funicular, then a guided rail+boat+bus day trip for the fjords.",
+   "description": "Bergen's Bryggen and viewpoints, plus the Flåm Railway and a Nærøyfjord cruise.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 11a (Northern Europe: Norway + Sweden) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_bergen-fjords-6-days",
+    "name": "Bergen + Fjords (6 days) ⛴️",
+    "stops": 7,
+    "km_in_route": 260,
+    "km_from_nl": 1200,
+    "km_back_to_nl": 1220,
+    "km_by_country": {
+     "NO": 260
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "NO",
+     "country": "Norway",
+     "days": 6,
+     "budget": 660,
+     "dailyRate": 110,
+     "carInDailyRate": false,
+     "notes": "Bergen (2-3 days): Bryggen's old wharf houses, plus the Fløyen and Ulriken viewpoints, then the classic 'Norway in a Nutshell' day trip — the Flåm Railway, a Nærøyfjord cruise, and Voss — with an optional extension into the Hardangerfjord. Budget ~€130-160/day; the Flåm Railway and fjord cruise are the expensive part of this trip. Season: June-September for the driest weather and the full timetable of services. Web check (2026-08): the Flåm Railway now costs about 570 NOK one-way / 850 NOK return (2026 prices, 30% off with a Eurail/Interrail pass) — noticeably pricier than a few years back, so book online ahead given the demand. Travel advisory and entry details: see the Oslo (5 days) route above.",
+     "transport_to_next": "End of this route — fly home from Bergen.",
+     "destinations": [
+      {
+       "name": "Bergen (Bryggen)",
+       "lat": 60.3959,
+       "lng": 5.3245
+      },
+      {
+       "name": "Fløyen",
+       "lat": 60.3975,
+       "lng": 5.3401
+      },
+      {
+       "name": "Ulriken",
+       "lat": 60.3736,
+       "lng": 5.3597
+      },
+      {
+       "name": "Flåm (Flåm Railway)",
+       "lat": 60.8617,
+       "lng": 7.1136
+      },
+      {
+       "name": "Nærøyfjord",
+       "lat": 60.8666,
+       "lng": 6.8666
+      },
+      {
+       "name": "Voss",
+       "lat": 60.6293,
+       "lng": 6.4152
+      },
+      {
+       "name": "Hardangerfjord / Eidfjord (optional extension)",
+       "lat": 60.4679,
+       "lng": 7.0708
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_fjord-norway-9-days",
+   "name": "Fjord Norway (9 days) 🏔️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car looping the Bergen-Geiranger fjord corridor.",
+   "description": "Bergen, the Sognefjord/Nærøyfjord, the Nordfjord, and Geirangerfjord, with Trolltunga or Preikestolen as an optional detour.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 11a (Northern Europe: Norway + Sweden) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a pure-fjords counterpart to the fjord-free South Norway route above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_fjord-norway-9-days",
+    "name": "Fjord Norway (9 days) 🏔️",
+    "stops": 6,
+    "km_in_route": 770,
+    "km_from_nl": 1200,
+    "km_back_to_nl": 1000,
+    "km_by_country": {
+     "NO": 770
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "NO",
+     "country": "Norway",
+     "days": 9,
+     "budget": 990,
+     "dailyRate": 110,
+     "carInDailyRate": false,
+     "notes": "Bergen, then the Sognefjord/Nærøyfjord, on to the Nordfjord and Geirangerfjord, with Trolltunga or Preikestolen as an optional day-hike detour — the purest fjord-focused route of the bunch, unlike South Norway above. Budget ~€140-170/day (rental car plus fjord cruises plus tolls/ferries). Season: mid-June to mid-September; mountain passes like Gaularfjellet are typically open May-October, snow-dependent. Web check (2026-08): since 1 January 2026, Geirangerfjord and Nærøyfjord enforce a zero-emission rule for passenger ships under 10,000 GT (larger cruise ships get until 2032) — small fjord cruises/ferries are typically already electric/hybrid and keep running, but check per operator. Preikestolen: P1 parking runs about 250 NOK/day, the Stavanger shuttle bus must be pre-booked online (not sold on board), and it's busiest 8:00-16:00 June-August. Trolltunga needs no permit, but parking costs 330/550/770 NOK for 1/2/3 days, with 1-2 hour queues at the rock itself in July-August — late June or early September is quieter with still-good conditions. Travel advisory and entry details: see the Oslo (5 days) route above.",
+     "transport_to_next": "End of this route — fly home from Bergen or Ålesund, whichever connects best.",
+     "destinations": [
+      {
+       "name": "Bergen",
+       "lat": 60.3959,
+       "lng": 5.3245
+      },
+      {
+       "name": "Sognefjord / Nærøyfjord",
+       "lat": 60.8666,
+       "lng": 6.8666
+      },
+      {
+       "name": "Nordfjord (Olden)",
+       "lat": 61.8394,
+       "lng": 6.7961
+      },
+      {
+       "name": "Geirangerfjord",
+       "lat": 62.1004,
+       "lng": 7.2062
+      },
+      {
+       "name": "Trolltunga (optional detour)",
+       "lat": 60.1242,
+       "lng": 6.7401
+      },
+      {
+       "name": "Preikestolen (optional detour)",
+       "lat": 58.9866,
+       "lng": 6.19
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

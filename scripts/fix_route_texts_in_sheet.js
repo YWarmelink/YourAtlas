@@ -31,6 +31,9 @@ const FIXES = {
   78: { fn: 'rbFixBatch78RouteTexts', ids: ['gt_seed_alpine-roadtrip-14-days', 'gt_seed_france-roadtrip-paris-to-the-cote-dazur-12-days'] },
   912: { fn: 'rbFixBatch912RouteTexts', ids: ['gt_seed_switzerland-alpine-roadtrip-9-days', 'gt_seed_switzerland-northern-italy-9-days',
                                              'gt_seed_austria-slovenia-croatia-10-14-days'] },
+  1320: { fn: 'rbFixBatch1320RouteTexts', ids: ['gt_seed_germany-austria-slovenia-10-14-days', 'gt_seed_scandinavia-overland',
+                                               'gt_seed_channel-islands-brittany-normandyopal-coast-belgium',
+                                               'gt_seed_british-isles-celtic-coast-expedition', 'gt_seed_west-eurasia-overland'] },
 };
 
 function loadApp() {

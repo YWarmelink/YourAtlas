@@ -2309,7 +2309,7 @@ function rbBuildBritishIslesExpeditionRoute() {
             { name: 'German occupation bunkers (WWII)', lat: 49.4326, lng: -2.5350, notes: "Guernsey's clifftops still hold intact German gun emplacements and bunkers (e.g. around Pleinmont and Fort Hommet) that are free to walk into, unlike the curated museum experience of Jersey's War Tunnels — most sit right on the coastal path, so they're easy to fold into a walk rather than needing a dedicated visit." },
           ],
           notes: 'A small island with its own, lesser-known WWII history: the Channel Islands were the only British soil occupied by Germany — an interesting contrast with Normandy\'s liberation story further along the route. Price correction (2026-07): €90→€130/day. The \'tax haven\' image turns out in practice to mainly involve high living costs for local residents, not tourist prices — Guernsey is even slightly cheaper than Jersey for food/groceries. Travel advisory: falls under the UK ETA scheme (see the Isle of Man note), otherwise green/low risk.',
-          transport_to_next: 'Ferry to Jersey (Condor Ferries, inter-island, short).',
+          transport_to_next: 'Ferry to Jersey (DFDS, successor to Condor since March 2025, inter-island, short).',
         },
         {
           code: 'JE', name: 'Jersey', days: 3, budget: 405, lat: 49.1805, lng: -2.1049,
@@ -2320,7 +2320,7 @@ function rbBuildBritishIslesExpeditionRoute() {
             { name: 'Jersey War Tunnels (WWII)', lat: 49.1958, lng: -2.1206, notes: "The specific draw beyond the general occupation history is the underground hospital wing built with forced labour; allow a genuine 1.5-2 hours since the self-guided route runs deep underground and doesn't loop back quickly." },
           ],
           notes: 'The largest and most touristy of the two islands — the best beaches in the Channel Islands, plus the same occupation history as Guernsey via the War Tunnels. Price correction (2026-07): €90→€135/day — Jersey is the pricier of the two Channel Islands, especially for food/restaurants (~14% above UK prices, ~6% above Guernsey); accommodation peaks in July with hotels averaging around £226/night (cheaper guesthouses from ~£60-90 remain available). Jersey War Tunnels entry ~£21 (~€25) separate from the daily budget. The Guernsey-Jersey crossing (Condor Ferries/Manche Îles Express) has limited frequency — check the current sailing days when planning, this may dictate the order/an extra overnight stay.',
-          transport_to_next: 'Ferry Jersey-Saint-Malo (Condor Ferries, ≈1h25 fast ferry) — weather-dependent, keep a buffer day.',
+          transport_to_next: 'Ferry Jersey-Saint-Malo (DFDS, successor to Condor since March 2025, ≈1h25 fast ferry) — weather-dependent, keep a buffer day.',
         },
         {
           code: 'FR', name: 'France', days: 10, budget: 1200, lat: 48.6493, lng: -2.0257,
@@ -2386,7 +2386,7 @@ function rbBuildBritishIslesExpeditionRoute() {
     description: "A big loop by car from the Netherlands to the British Isles and back via the French and Belgian coast: spectacular coastlines, mountains, islands, Celtic culture, castles and historic towns through England, Wales, Isle of Man, Scotland, Northern Ireland, Ireland, the Channel Islands, Brittany, Normandy and Belgium. Sixteen legs across five regions follow one big loop back to the starting point.",
     climate_summary: "Recommended start: early June. A September start would push the most weather-dependent legs (Wild Atlantic Way, Channel Islands, Brittany/Normandy) into November-January — the wettest, darkest period of the year, on exactly the sections that depend on dry weather and good light (Normandy gets on average only 1.5-2 hours of sun a day in November-December). With a June start, the trip crosses Scotland before the midge peak of July-August (May/early June/September are noticeably quieter for midges than high season), Ireland falls in August (drier than autumn, though slightly wetter than the May-July peak), and the Channel Islands/Brittany/Normandy reach their last good autumn window in September, just before French coastal weather turns. The trip therefore ends in late September in Belgium, well ahead of the wet Northern French autumn.",
     notes: "Designed in a Q&A session with Claude (2026-07), based on an extensive ChatGPT brainstorm Youri brought in. Ferry and climate research (via web search) confirmed that Youri's route was already largely correct; the two corrections and the Isle of Man decision are documented in the function docstring above. Days are the 'ideal' pace estimate — Youri's own instruction was 'can be long, as long as it doesn't feel too short anywhere', so it was deliberately not rounded towards the minimum. Per-country budgets are the Realistic daily rate (€90/day per person) times the number of days, deliberately the same level as the rest of Youri's trips.\n\n" +
-      "Ferry table (car, one-way, car+2p; researched 2026-07, not yet checked against current prices): Calais/Dunkirk-Dover (P&O/DFDS/Irish Ferries, 1.5-2h, €60-150) as the recommended start rather than IJmuiden-Newcastle (arrives in Northeast England, misses the whole of Southern England); Heysham-Douglas (Isle of Man Steam Packet, ≈3h45, €150-250, but here as a foot passenger so much cheaper); Cairnryan-Belfast (Stena Line, ≈2h15, €150-250); Rosslare-Fishguard/Pembroke (Stena Line/Irish Ferries, ≈3h15-4h, €150-250); Poole/Portsmouth-Guernsey (Condor Ferries, 3-10h, €150-400, weather-dependent — schedule buffer days); Guernsey/Jersey-Saint-Malo (Condor Ferries, ≈1.5-2h, €100-200).\n\n" +
+      "Ferry table (car, one-way, car+2p; researched 2026-07, not yet checked against current prices): Calais/Dunkirk-Dover (P&O/DFDS/Irish Ferries, 1.5-2h, €60-150) as the recommended start rather than IJmuiden-Newcastle (arrives in Northeast England, misses the whole of Southern England); Heysham-Douglas (Isle of Man Steam Packet, ≈3h45, €150-250, but here as a foot passenger so much cheaper); Cairnryan-Belfast (Stena Line, ≈2h15, €150-250); Rosslare-Fishguard/Pembroke (Stena Line/Irish Ferries, ≈3h15-4h, €150-250); Poole/Portsmouth-Guernsey (DFDS, successor to Condor since March 2025, 3-10h, €150-400, weather-dependent — schedule buffer days); Guernsey/Jersey-Saint-Malo (DFDS, successor to Condor since March 2025, ≈1.5-2h, €100-200).\n\n" +
       "Car costs (shared per car, NOT included in the per-country amounts above): fuel/toll/parking over ≈9,000-10,000 km estimated at €2,800-3,200; five car ferries (all except Isle of Man, which goes as a foot passenger) plus the local day's car hire on Isle of Man for the TT Mountain Road together ≈€1,400-1,600 — total ≈€4,200-4,800 per car, regardless of group size. Note (2026-07): UK fuel prices are currently clearly above Dutch pump prices (~€1.73/L petrol, ~€1.89/L diesel) — for long drives (especially the Scottish Highlands/NC500) the upper end of this range may be more realistic than the middle.\n\n" +
       "Prices/visa/travel-advisory verification (2026-07, thirteenth and last route of this verification round): all 15 legs checked via web research against current prices (between budget and comfort backpacker), border rules and Dutch government travel advisories. The flat €90/day turned out — as with Central European Grand Roadtrip back then — to be on the low side for almost every leg: only Wales and the Opal Coast/Lille were already close to accurate, the remaining 13 legs got a correction, mostly between +11% and +39%. Biggest increases: Cornwall (€90→€125/day, summer peak), Ireland (both legs, €90→€115-125/day, Ireland is now the second most expensive EU country), the Channel Islands (Guernsey €90→€130, Jersey €90→€135) and the Scottish Highlands/Skye leg (€90→€114/day average, with Skye itself around €150/day). New total ground cost: €13,245 (was €10,350), 115 days unchanged. ⚠️ Important new finding: since 2 April 2025 a UK ETA has been mandatory for Dutch/EU travellers (~€23 p.p. since the increase on 8 April 2026) — this applies to the entire United Kingdom visit at once; the later crossings to Isle of Man/Jersey/Guernsey have fallen under the same ETA since 23 April 2026 (no separate application/cost). Also found: the Bayeux Tapestry is closed for renovation until an estimated October 2027 (see the Bayeux leg for the alternative), and the Edinburgh Fringe Festival (7-31 August 2026) can make the Scotland leg substantially more expensive if the concrete planning puts the Edinburgh nights in that period. Details and other findings (Twelfth of July parade in Northern Ireland, Ring of Kerry driving direction, various parking/entry costs) are in each leg's own notes.\n\n" +
       "Total: 86 days minimum / 115 days ideal (~3.8 months), €13,195 ground costs per person solo (after the 2026-07 verification and the 2026-08 route-logic fix below, was €13,245) + ≈€4,200-4,800 car costs per car. With 2-3 people (shared rooms) the per-person amounts are proportionally lower than above, same ratio as before. Ferry times/prices and the UK ETA costs haven't all been checked against a concrete booking date yet — treat this as a thoroughly verified concept, not yet a bookable plan.\n\n" +
@@ -3227,13 +3227,17 @@ function rbSeedNordicArcticSplitExpeditions() {
   rbSave();
 }
 
+const RB_SCANDINAVIA_OVERLAND_END = 'End of this route — short flight Honningsvåg (HVG, 31 km from Nordkapp) to Tromsø (Widerøe, ~1h05), avoiding the ~540 km drive back, then fly home from Tromsø. Svalbard add-on: Tromsø-Longyearbyen is the only realistic connection (Alta has no LYR flight).';
+
 function rbBuildScandinaviaOverlandRoute() {
   const arctic = (code, name) => rbContentFor('Nordic Arctic Expedition ❄️', code, name);
   return rbBuildSeedRoute('Scandinavia Overland 🚂', [
     {
       name: 'Scandinavia', season: 'June', budget: 4400,
       note: 'Lapland and Norwegian fjords/islands by train and bus — the only genuinely overland-connected part of the original Nordic Arctic Expedition.',
-      countries: [{ ...arctic('FI', 'Finland'), notes: "Entry: flight Amsterdam-Helsinki (±2h50, from ±€150-280 return, best period June), from there onward to Rovaniemi. Price indication from 2026-08 web research, a snapshot. " + (arctic('FI', 'Finland').notes || '') }, arctic('SE', 'Sweden'), arctic('NO', 'Norway')],
+      countries: [{ ...arctic('FI', 'Finland'), notes: "Entry: flight Amsterdam-Helsinki (±2h50, from ±€150-280 return, best period June), from there onward to Rovaniemi. Price indication from 2026-08 web research, a snapshot. " + (arctic('FI', 'Finland').notes || '') }, arctic('SE', 'Sweden'),
+        // The expedition continues to Svalbard; this route ends at the North Cape (RB_SCANDINAVIA_OVERLAND_END, 2026-10-28).
+        { ...arctic('NO', 'Norway'), transport_to_next: RB_SCANDINAVIA_OVERLAND_END }],
     },
   ], {
     best_starting_month: 'June',
@@ -15017,7 +15021,7 @@ function rbBuildChannelIslandsBrittanyRoute() {
         { name: 'German occupation bunkers (WWII)', lat: 49.4326, lng: -2.5350, notes: "Guernsey's clifftops still hold intact German gun emplacements and bunkers (e.g. around Pleinmont and Fort Hommet) that are free to walk into, unlike the curated museum experience of Jersey's War Tunnels — most sit right on the coastal path, so they're easy to fold into a walk rather than needing a dedicated visit." },
       ],
       notes: "Entry: flight Amsterdam-Guernsey, with a connection (no direct link — e.g. via London Gatwick with easyJet then Aurigny, or via Southampton, ±3h15 total; from ±€145 return; best period May/September). Price indication from 2026-08 web research, a snapshot. No car needed on Guernsey/Jersey themselves — hire a car only on arrival on the French mainland (Saint-Malo). A small island with its own, lesser-known WWII history. Price correction (2026-07): €90→€130/day. UK ETA mandatory (~€23 p.p., also covers Guernsey since 23 April 2026).",
-      transport_to_next: 'Ferry to Jersey (Condor Ferries, inter-island, short).',
+      transport_to_next: 'Ferry to Jersey (DFDS, successor to Condor since March 2025, inter-island, short).',
     },
     {
       code: 'JE', name: 'Jersey', days: 3, budget: 405, lat: 49.1805, lng: -2.1049,
@@ -15028,7 +15032,7 @@ function rbBuildChannelIslandsBrittanyRoute() {
         { name: 'Jersey War Tunnels (WWII)', lat: 49.1958, lng: -2.1206, notes: "The specific draw beyond the general occupation history is the underground hospital wing built with forced labour; allow a genuine 1.5-2 hours since the self-guided route runs deep underground and doesn't loop back quickly." },
       ],
       notes: 'The largest and most touristy of the two islands — the best beaches in the Channel Islands. Price correction (2026-07): €90→€135/day.',
-      transport_to_next: 'Ferry Jersey-Saint-Malo (Condor Ferries, ≈1h25 fast ferry) — weather-dependent, keep a buffer day. Hire the car here for the rest of the route.',
+      transport_to_next: 'Ferry Jersey-Saint-Malo (DFDS, successor to Condor since March 2025, ≈1h25 fast ferry) — weather-dependent, keep a buffer day. Hire the car here for the rest of the route.',
     },
     {
       code: 'FR', name: 'France', days: 10, budget: 1200, lat: 48.6493, lng: -2.0257,
@@ -25076,7 +25080,7 @@ function rbBuildGermanyAustriaSloveniaRoute() {
         { name: 'Piran (coastal alternative)', lat: 45.5285, lng: 13.5686 , notes: 'Slovenia\'s only real coastal town, with a compact Venetian-Gothic old town centered on Tartini Square; climb up to the town walls above it for a view over the terracotta rooftops to the Adriatic, and stop at the nearby Sečovlje salt pans, still harvested by hand using centuries-old methods.' },
       ],
       notes: "Soča Valley or Piran (2 days) — the source frames this leg as an add-on only worth doing at the 14-day end of this route's range, dropped entirely for a tighter 10-day version. Soča Valley overlaps Slovenia Alpine Loop (6 days) 🏔️/Julian Alps + Soča Valley (6 days) 🚣 above (rafting/canyoning, the Vršič Pass traffic regime); Piran overlaps the coastal leg of Slovenia + Italy (9 days) 🍝/Slovenia Roadtrip (9 days) 🗺️ above. Budget ~€90-130/day p.p.",
-      transport_to_next: 'End of this route — fly home from Ljubljana.',
+      transport_to_next: 'End of this route — drive home from Ljubljana (~1,100 km via Salzburg and Munich, best split over 2 days).',
     },
   ], {
     best_starting_month: 'July',
@@ -29468,6 +29472,1925 @@ const RB_ROUTE_COSTS = {
       ],
     },
 
+
+  // ---- Phase 4 batch 13: Adriatic & Western Balkans 3/3, extracted 2026-10-28, approved by Youri (planning/budget_batch13/REVIEW.md) ----
+  // Fares: flights_from_ams.csv + flights_batch13.csv. Car: data/cost_reference/car_costs_by_country.csv (7 L/100 km).
+
+    'gt_seed_serbia-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Belgrade (flights_from_ams.csv BEG out)
+      flight_out_cost: 130,  // Belgrade-AMS (flights_from_ams.csv BEG back)
+      blocks: [
+        { code: 'RS', local: 35, extras: [] },  // public transport (no car in text): Belgrade-Novi Sad train ~5, Novi Sad-Zlatibor bus ~14, Zlatibor/Mokra Gora hop ~3, Zlatibor-Belgrade bus ~11, airport bus ~2 (est)
+      ],
+    },
+
+    'gt_seed_serbia-bosnia-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Belgrade (flights_from_ams.csv)
+      flight_out_cost: 220,  // Sarajevo-AMS (flights_from_ams.csv SJJ back)
+      blocks: [
+        { code: 'RS', transport: 30, local: 16, extras: [   // transport: rafting operator transfer Tara-Sarajevo (est); local: Belgrade-Zlatibor bus ~11 + Zlatibor-Perucac ~5 (est)
+          rbExtra('Tara/Drina rafting, 1 day (notes: ~€60/day; stop is 2 days, only one rafting day assumed)', 60, 'tour'),
+        ] },
+        { code: 'BA', local: 10, extras: [] },        // Sarajevo-Mostar train/bus ~8, Mostar-Blagaj ~2 (est)
+      ],
+    },
+
+    'gt_seed_serbia-roadtrip-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Belgrade (flights_from_ams.csv)
+      flight_out_cost: 130,  // Belgrade-AMS (flights_from_ams.csv)
+      blocks: [
+        { code: 'RS', local: 0, extras: [
+          rbExtra('Car: rental 7 days (from Belgrade after the city days) × €35 + fuel ≈600 km + tolls (60% of km × €4/100 km)', 334, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_germany-austria-slovenia-10-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 127,   // own car NL-Munich ≈830 km × 0.07 × €2.179 (DE, no tolls)
+      flight_out_cost: 220,  // own car Slovenia-NL ≈1240 km: fuel ≈179 (SI 100/AT 300/DE 840 km) + Karawanken 9 + Tauern/Katschberg 22.5 + AT 1-day vignette 9.60 (est)
+      blocks: [
+        { code: 'DE', transport: 0, local: 0, extras: [
+          rbExtra('Car: own car fuel ≈720 km (AT 370, SI 340) + A10 Tauern/Katschberg 22.5 + Karawanken 9 + AT 10-day vignette 12.80 + SI e-vignette 16', 149, 'transport'),
+        ] },
+        { code: 'AT', transport: 0, local: 0, extras: [] },
+        { code: 'AT', transport: 0, local: 0, extras: [] },
+        { code: 'SI', transport: 0, local: 0, extras: [] },
+        { code: 'SI', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_hungary-austria-slovenia-7-10-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Budapest (flights_batch13.csv, WebSearch 2026-10-28)
+      flight_out_cost: 120,  // Ljubljana-AMS (flights_from_ams.csv LJU back)
+      blocks: [
+        { code: 'HU', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 7 days (from Budapest after 2 city days) × €35 + one-way cross-border drop Ljubljana ≈€100 (est) + fuel ≈630 km (notes 250 + 380) + HU vignette 15.10 + AT 12.80 + SI 16', 468, 'transport'),
+        ] },
+        { code: 'AT', transport: 0, local: 0, extras: [] },
+        { code: 'SI', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_julian-alps-soca-valley-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Ljubljana (flights_from_ams.csv)
+      flight_out_cost: 120,  // Ljubljana-AMS (flights_from_ams.csv)
+      blocks: [
+        { code: 'SI', local: 0, extras: [
+          rbExtra('Car: rental 6 days × €45 + fuel ≈250 km (60 in route + airport legs, est) + SI e-vignette 16', 317, 'transport'),
+          rbExtra('Vogel cable car (notes: €20-25 return, midpoint)', 22.5, 'activity'),
+          rbExtra('Rafting/canyoning, 1 activity (notes: €50-80 per activity, midpoint)', 65, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_ljubljana-lake-bled-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Ljubljana (flights_from_ams.csv)
+      flight_out_cost: 120,  // Ljubljana-AMS (flights_from_ams.csv)
+      blocks: [
+        { code: 'SI', local: 16, extras: [   // public transport (no car in text): Ljubljana-Bled bus ~8 + airport bus ~4 each way (est)
+          rbExtra('Pletna boat to Bled island (notes: €20 return, cash)', 20, 'activity'),
+          rbExtra('Bled Castle (notes: €19)', 19, 'activity'),
+          rbExtra('Vintgar Gorge (notes: €15)', 15, 'park_fee'),
+        ] },
+      ],
+    },
+
+    'gt_seed_slovenia-croatia-bosnia-10-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Ljubljana (flights_from_ams.csv)
+      flight_out_cost: 110,  // Dubrovnik-AMS (flights_from_ams.csv DBV back)
+      blocks: [
+        { code: 'SI', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 10 days (from Ljubljana after the city days) × €45 + one-way drop Dubrovnik and Bosnia cross-border fee ≈€170 (est) + fuel ≈1160 km (860 + Sarajevo-Dubrovnik ≈300) + tolls (SI vignette 16; 60% of HR km × €7.5/100; 60% of BA km × €4/100)', 821, 'transport'),
+        ] },
+        { code: 'HR', transport: 0, local: 0, extras: [] },
+        { code: 'BA', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_slovenia-italy-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Ljubljana (flights_from_ams.csv)
+      flight_out_cost: 80,   // Venice-AMS (flights_from_ams.csv VCE back)
+      blocks: [
+        { code: 'SI', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 7 days (from Ljubljana after 2 city days) × €45 + one-way drop Venice ≈€80 (est) + fuel ≈500 km + tolls (SI vignette 16; 60% of IT km × €8/100)', 493, 'transport'),
+        ] },
+        { code: 'IT', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_slovenia-northern-croatia-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Ljubljana (flights_from_ams.csv)
+      flight_out_cost: 140,  // Zagreb-AMS (flights_from_ams.csv ZAG back)
+      blocks: [
+        { code: 'SI', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 7 days (from Ljubljana after 2 city days) × €45 + one-way drop Zagreb ≈€80 (est) + fuel ≈410 km + tolls (SI vignette 16; 60% of HR km × €7.5/100)', 478, 'transport'),
+        ] },
+        { code: 'HR', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_slovenia-alpine-loop-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Ljubljana (flights_from_ams.csv)
+      flight_out_cost: 120,  // Ljubljana-AMS (flights_from_ams.csv)
+      blocks: [
+        { code: 'SI', local: 0, extras: [
+          rbExtra('Car: rental 5 days (after the Ljubljana day) × €45 + fuel ≈300 km (loop + airport legs, est) + SI e-vignette 16', 278, 'transport'),
+          rbExtra('Rafting/canyoning, 1 activity (notes: €50-80 per activity, midpoint)', 65, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_slovenia-roadtrip-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Ljubljana (flights_from_ams.csv)
+      flight_out_cost: 120,  // Ljubljana-AMS (flights_from_ams.csv)
+      blocks: [
+        { code: 'SI', local: 0, extras: [
+          rbExtra('Car: rental 7 days (after 2 city days) × €45 + fuel ≈450 km (loop incl. coast, est) + SI e-vignette 16', 386, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_kosovo-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Pristina (flights_from_ams.csv)
+      flight_out_cost: 110,  // Pristina-AMS (flights_from_ams.csv)
+      blocks: [
+        { code: 'XK', local: 22, extras: [] },  // public transport (no car in text): Pristina-Prizren bus ~4.5, Prizren-Peja ~8, Peja-Pristina ~5, airport bus ~3 (est); notes name no tour prices
+      ],
+    },
+
+    'gt_seed_kosovo-albania-north-macedonia-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Pristina (flights_from_ams.csv)
+      flight_out_cost: 130,  // Skopje-AMS (flights_from_ams.csv SKP back)
+      blocks: [
+        { code: 'XK', transport: 8, local: 17, extras: [] },   // Prizren-Kukes minibus ~8 (est); Pristina-Peja 4.5, Peja-Prizren 8, airport bus 3 (est)
+        { code: 'AL', transport: 16, local: 23, extras: [] },  // Tirana-Ohrid bus ~16 (est); Kukes-Shkoder ~10, Shkoder-Tirana ~5, Tirana-Berat ~6, return/airport ~2 (est)
+        { code: 'MK', local: 14, extras: [] },                 // Ohrid-Skopje bus ~9 + Skopje airport shuttle ~5 (est)
+      ],
+    },
+
+    'gt_seed_kosovo-montenegro-albania-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Pristina (flights_from_ams.csv)
+      flight_out_cost: 100,  // Tirana-AMS (flights_from_ams.csv TIA back)
+      blocks: [
+        { code: 'XK', transport: 35, local: 13, extras: [] },  // Peja-Plav/Gusinje-Zabljak shared taxi/minibus chain (est, low confidence); Prizren-Peja ~8 + airport bus ~5 (est)
+        { code: 'ME', transport: 18, local: 0, extras: [] },   // Zabljak-Podgorica bus ~10 + Podgorica-Shkoder ~8 (est)
+        { code: 'AL', local: 8, extras: [] },                  // Shkoder-Tirana ~5 + airport bus ~3 (est)
+      ],
+    },
+
+    'gt_seed_kosovo-north-macedonia-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Pristina (flights_from_ams.csv)
+      flight_out_cost: 130,  // Skopje-AMS (flights_from_ams.csv)
+      blocks: [
+        { code: 'XK', transport: 8, local: 8, extras: [] },  // Prizren-Skopje bus ~8; Pristina-Prizren ~4.5 + airport bus ~3 (est)
+        { code: 'MK', local: 22, extras: [] },               // Skopje-Ohrid-Skopje bus 2 × ~9 + airport shuttle ~4 (est)
+      ],
+    },
+
+    'gt_seed_kosovo-north-macedonia-albania-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Pristina (flights_from_ams.csv)
+      flight_out_cost: 100,  // Tirana-AMS (flights_from_ams.csv)
+      blocks: [
+        { code: 'XK', transport: 8, local: 8, extras: [] },   // Pristina/Prizren-Skopje bus ~8; Pristina-Prizren ~4.5 + airport bus ~3 (est)
+        { code: 'MK', transport: 16, local: 9, extras: [] },  // Ohrid-Tirana bus ~16; Skopje-Ohrid bus ~9 (est)
+        { code: 'AL', local: 3, extras: [] },                 // Tirana airport bus (est)
+      ],
+    },
+
+
+  // ---- Phase 4 batch 14: Greece, Cyprus & Turkey, extracted 2026-10-28, approved by Youri (planning/budget_batch14/REVIEW.md) ----
+  // Fares: flights_from_ams.csv + flights_batch14.csv (new rows are estimates, no WebSearch). Car: data/cost_reference/car_costs_by_country.csv (7 L/100 km).
+  // GR fuel 2.191, toll 6.5/100km, rental 45/day; CY fuel 1.76, rental 35/day, no tolls.
+
+    'gt_seed_cyprus-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 170,   // AMS-Larnaca one way (Transavia/Aegean/easyJet typical; est)
+      flight_out_cost: 150,  // Larnaca-AMS one way (est)
+      blocks: [
+        { code: 'CY', local: 0, extras: [
+          rbExtra('Car: rental 6 days × €35 + fuel ≈240 km (no tolls)', 240, 'transport'),   // 210 + 240×0.07×1.76 = 29.6
+        ] },
+      ],
+    },
+
+    'gt_seed_cyprus-greece-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 170,   // AMS-Larnaca (est)
+      flight_out_cost: 110,  // Athens-AMS one way (est)
+      blocks: [
+        { code: 'CY', transport: 75, local: 12, extras: [] },   // flight Larnaca-Athens: notes "from ~€120 return" × 1.25 / 2 = 75 (flagged, "from" price); local: Larnaca-Paphos intercity bus ~€12 (est)
+        { code: 'GR', local: 34, extras: [                      // Athens-Aegina ferry day trip ~€17 each way (est)
+          rbExtra('Acropolis timed-entry ticket (hhticket.gr, Apr-Oct)', 30, 'activity'),   // notes (Athens route): €30 summer
+        ] },
+      ],
+    },
+
+    'gt_seed_cyprus-roadtrip-including-northern-cyprus-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 170,   // AMS-Larnaca (est)
+      flight_out_cost: 150,  // Larnaca-AMS (est)
+      blocks: [
+        { code: 'CY', local: 0, extras: [] },   // carInDailyRate true: car adds nothing. North-Cyprus insurance (~€20) only if rental firm allows the car across: not added
+      ],
+    },
+
+    'gt_seed_athens-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Athens one way (Transavia/Aegean/KLM typical; est)
+      flight_out_cost: 110,  // Athens-AMS (est)
+      blocks: [
+        { code: 'GR', local: 14, extras: [                 // Cape Sounion KTEL bus ~€7 each way (est)
+          rbExtra('Acropolis timed-entry ticket (hhticket.gr, Apr-Oct)', 30, 'activity'),   // notes: €30 summer
+        ] },
+      ],
+    },
+
+    'gt_seed_athens-day-trips-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Athens (est)
+      flight_out_cost: 110,  // Athens-AMS (est)
+      blocks: [
+        { code: 'GR', local: 0, extras: [
+          rbExtra('Car: rental 3 days (Sounion, Delphi, Nafplio/Mycenae/Epidaurus) × €45 + fuel ≈410 km + tolls (60% × €6.5/100 km)', 214, 'transport'),   // 135 + 62.9 + 16
+          rbExtra('Acropolis timed-entry ticket (hhticket.gr, Apr-Oct)', 30, 'activity'),   // notes (standalone Athens): €30
+          rbExtra('Delphi site+museum combo', 12, 'activity'),                               // notes ~€12 summer
+          rbExtra('Mycenae/Epidaurus combo', 20, 'activity'),                                // notes ~€20 summer
+        ] },
+      ],
+    },
+
+    'gt_seed_athens-peloponnese-extended-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Athens (est)
+      flight_out_cost: 110,  // Athens-AMS (est)
+      blocks: [
+        { code: 'GR', local: 0, extras: [
+          rbExtra('Car: rental 9 days (after 3 Athens days) × €45 + fuel ≈710 km + tolls (60% × €6.5/100 km)', 542, 'transport'),   // 405 + 108.9 + 27.7
+          rbExtra('Acropolis timed-entry ticket (hhticket.gr, Apr-Oct)', 30, 'activity'),   // notes (standalone Athens): €30
+          rbExtra('Olympia site+museum combo', 20, 'activity'),                              // notes ~€20 summer
+        ] },
+      ],
+    },
+
+    'gt_seed_corfu-5-7-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-Corfu one way (TUI fly direct, seasonal; typical, est)
+      flight_out_cost: 140,  // Corfu-AMS (est)
+      blocks: [
+        { code: 'GR', transport: 0, local: 0, extras: [] },
+        { code: 'GR', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 4 days (from leaving Corfu Town) × €45 + fuel ≈40 km (input distance) (no tolls)', 186, 'transport'),   // 180 + 6.1
+        ] },
+        { code: 'GR', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_crete-roadtrip-7-10-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-Chania one way (seasonal direct, typical; est)
+      flight_out_cost: 140,  // Chania-AMS (est)
+      blocks: [
+        { code: 'GR', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 9 days × €45 + fuel ≈310 km + tolls (60% × €6.5/100 km; Chania-Heraklion road plazas)', 465, 'transport'),   // 405 + 47.5 + 12.1; no drop fee (fly home from Chania)
+        ] },
+        { code: 'GR', transport: 0, local: 0, extras: [] },
+        { code: 'GR', transport: 0, local: 0, extras: [] },
+        { code: 'GR', transport: 0, local: 0, extras: [] },
+        { code: 'GR', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_cyclades-5-7-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 170,   // AMS-Santorini one way (seasonal direct/one-stop, typical; est)
+      flight_out_cost: 110,  // Athens-AMS (est)
+      blocks: [
+        { code: 'GR', transport: 38, local: 0, extras: [] },   // ferry Santorini-Naxos ~€38 (est)
+        { code: 'GR', transport: 15, local: 0, extras: [] },   // ferry Naxos-Paros ~€15 (est)
+        { code: 'GR', local: 40, extras: [] },                 // ferry Paros-Piraeus ~€40 (est) to fly home from Athens
+      ],
+    },
+
+    'gt_seed_cyclades-island-hopping-7-10-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 170,   // AMS-Santorini (est)
+      flight_out_cost: 110,  // Athens-AMS (est)
+      blocks: [
+        { code: 'GR', transport: 20, local: 0, extras: [] },   // ferry Santorini-Ios ~€20 (est)
+        { code: 'GR', transport: 20, local: 0, extras: [] },   // ferry Ios-Naxos ~€20 (est)
+        { code: 'GR', transport: 15, local: 0, extras: [] },   // ferry Naxos-Paros ~€15 (est)
+        { code: 'GR', transport: 40, local: 0, extras: [] },   // ferry Paros-Milos ~€40 (est)
+        { code: 'GR', local: 45, extras: [] },                 // ferry Milos-Piraeus conventional ~€45 (est) to fly home from Athens
+      ],
+    },
+
+    'gt_seed_greece-roadtrip-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Athens (est)
+      flight_out_cost: 110,  // Athens-AMS (est)
+      blocks: [
+        { code: 'GR', local: 0, extras: [          // carInDailyRate true: car adds nothing
+          rbExtra('Acropolis timed-entry ticket (hhticket.gr, Apr-Oct)', 30, 'activity'),   // notes (standalone Athens): €30
+        ] },
+      ],
+    },
+
+    'gt_seed_greek-islands-paros-naxos-santorini-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Athens (est)
+      flight_out_cost: 110,  // Athens-AMS (est)
+      blocks: [
+        { code: 'GR', local: 0, extras: [] },     // ferries + the hop back to Athens are IN the daily rate: R2d kept this block's €125/day for that reason (orchestrator call, 2026-10-28; the agent had €165 here)
+      ],
+    },
+
+    'gt_seed_ionian-islands-5-7-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 170,   // AMS-Kefalonia one way (seasonal charter/low-cost; est)
+      flight_out_cost: 150,  // Zakynthos-AMS one way (seasonal direct; est)
+      blocks: [
+        { code: 'GR', transport: 15, local: 0, extras: [   // foot-passenger ferry Kefalonia-Zakynthos ~€15 (est); a separate car is rented on each island
+          rbExtra('Car: rental 6 days (3 per island, separate rentals) × €45 + fuel ≈180 km (no tolls)', 298, 'transport'),   // 270 + 27.6
+        ] },
+        { code: 'GR', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_northern-greece-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-Thessaloniki one way (est)
+      flight_out_cost: 140,  // Thessaloniki-AMS (flights_from_ams.csv SKG back)
+      blocks: [
+        { code: 'GR', local: 0, extras: [
+          rbExtra('Car: rental 7 days (after 2 Thessaloniki days) × €45 + fuel ≈750 km + tolls (60% × €6.5/100 km; Egnatia)', 459, 'transport'),   // 315 + 115 + 29.3
+          rbExtra('Meteora monasteries, 3 × €3', 9, 'activity'),   // notes ~€3 per monastery; 3 visited assumed
+        ] },
+      ],
+    },
+
+    'gt_seed_peloponnese-loop-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Athens (est)
+      flight_out_cost: 110,  // Athens-AMS (est)
+      blocks: [
+        { code: 'GR', local: 0, extras: [
+          rbExtra('Car: rental 7 days (after 2 Athens days) × €45 + fuel ≈580 km + tolls (60% × €6.5/100 km)', 427, 'transport'),   // 315 + 88.9 + 22.6
+          rbExtra('Mystras site ticket', 16, 'activity'),                                  // notes €12-20 midpoint
+          rbExtra('Epidaurus festival ticket', 33, 'activity', true),                      // notes €10-55 midpoint; optional
+        ] },
+      ],
+    },
+
+    'gt_seed_rhodes-5-7-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 180,   // AMS-Rhodes one way (easyJet/Transavia/TUI direct, seasonal; est)
+      flight_out_cost: 170,  // Rhodes-AMS (est)
+      blocks: [
+        { code: 'GR', transport: 0, local: 0, extras: [
+          rbExtra('Palace of the Grand Master ticket', 20, 'activity'),   // notes: €20
+        ] },
+        { code: 'GR', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 4 days (from leaving Rhodes Old Town) × €45 + fuel ≈110 km (no tolls)', 197, 'transport'),   // 180 + 16.9
+        ] },
+        { code: 'GR', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_southern-europe-highlights-roadtrip-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Lisbon one way (flights_from_ams.csv)
+      flight_out_cost: 150,  // Santorini-AMS one way (seasonal direct/one-stop; est)
+      blocks: [
+        { code: 'PT', transport: 30, local: 0, extras: [] },   // ALSA bus Lisbon-Seville ~€30 (est)
+        { code: 'ES', transport: 100, local: 0, extras: [] },  // flight Seville-Rome with connection (est)
+        { code: 'IT', transport: 80, local: 0, extras: [] },   // flight Rome-Athens (est)
+        { code: 'GR', transport: 70, local: 0, extras: [      // Athens-Santorini flight/hs ferry ~€70 (est), optional leg
+          rbExtra('Acropolis timed-entry ticket (hhticket.gr, Apr-Oct)', 30, 'activity'),   // notes (standalone Athens): €30
+        ] },
+        { code: 'GR', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_istanbul-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Istanbul one way (KLM/Turkish/Pegasus; est)
+      flight_out_cost: 130,  // Istanbul-AMS (est)
+      blocks: [
+        { code: 'TR', local: 0, extras: [
+          rbExtra('Hagia Sophia upper gallery', 25, 'activity'),                   // notes: €25
+          rbExtra('Topkapi Palace + Harem + Hagia Irene combo', 55, 'activity'),   // notes: €55
+        ] },
+      ],
+    },
+
+    'gt_seed_istanbul-thrace-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Istanbul (est)
+      flight_out_cost: 130,  // Istanbul-AMS (est)
+      blocks: [
+        { code: 'TR', local: 25, extras: [] },   // Edirne day trip bus return: notes one-way €10-15 → 12.5 × 2
+      ],
+    },
+
+
+  // ---- Phase 4 batch 15: Central & Eastern Europe 1/2, extracted 2026-10-28, approved by Youri (planning/budget_batch15/REVIEW.md) ----
+  // NOT yet in RB_ROUTE_COSTS: waiting for Youri's review (REVIEW.md). Entries go in as-is once approved/edited.
+  // Fares: flights_from_ams.csv + flights_batch15.csv. Car: data/cost_reference/car_costs_by_country.csv (7 L/100 km). All EU/Schengen: no visas.
+
+    'gt_seed_bulgaria-greece-sofia-to-meteora-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Sofia one way (Skyscanner floor USD 98, Expedia USD 150-169, Lufthansa USD 198; typical between)
+      flight_out_cost: 140,  // Thessaloniki-AMS (flights_from_ams.csv)
+      blocks: [
+        { code: 'BG', transport: 25, local: 20, extras: [] },   // Plovdiv-Thessaloniki via Kulata bus (est 25); local: Sofia-Plovdiv bus/train ~8 + Rila Monastery day-trip bus ~12 (est)
+        { code: 'GR', local: 30, extras: [] },                  // Thessaloniki-Kalabaka-Thessaloniki train ~15 each way (est, notes: optionally back via Thessaloniki)
+      ],
+    },
+
+    'gt_seed_bulgaria-romania-black-sea-coast-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Sofia (as above)
+      flight_out_cost: 130,  // Bucharest-AMS one way (est, Wizz/Tarom/KLM typical)
+      blocks: [
+        { code: 'BG', transport: 28, local: 34, extras: [] },   // Varna-Bucharest bus via Ruse ~28 (est); local: Sofia-Plovdiv ~8, Plovdiv-Varna bus ~22, Varna-Golden Sands/Sunny Beach ~4 (est)
+        { code: 'RO', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_bulgaria-roadtrip-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Sofia
+      flight_out_cost: 130,  // Sofia-AMS (est, mirror of out)
+      blocks: [
+        { code: 'BG', local: 0, extras: [] },                   // carInDailyRate true: car already in the budget, nothing added
+      ],
+    },
+
+    'gt_seed_sofia-plovdiv-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,
+      flight_out_cost: 130,
+      blocks: [
+        { code: 'BG', local: 28, extras: [                       // Sofia-Plovdiv-Sofia train 2 x ~8 (est) + Rila bus return ~12 (est); route text says train, not car
+          rbExtra('Rila Monastery museums combo ticket (notes ~€12)', 12, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_sofia-rila-monastery-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,
+      flight_out_cost: 130,
+      blocks: [
+        { code: 'BG', local: 0, extras: [
+          rbExtra('Car: rental 1 day (Rila day trip) × €30 + fuel ≈160 km + 1-day vignette €5.30 (could be a ~€12 bus instead)', 53, 'transport'),
+          rbExtra('Rila Monastery museums combo ticket (notes ~€12)', 12, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_central-europe-roadtrip-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,   // AMS-Berlin one way (est, easyJet/KLM/Eurowings typical)
+      flight_out_cost: 100,  // Budapest-AMS one way (est from out fare; Expedia USD 91 floor)
+      blocks: [
+        { code: 'DE', transport: 30, local: 0, extras: [] },     // Berlin-Prague train/bus (est)
+        { code: 'CZ', transport: 30, local: 0, extras: [] },     // Prague-Krakow RegioJet/Flix (est)
+        { code: 'PL', transport: 35, local: 10, extras: [] },    // Krakow-Bratislava bus/train (est); local: Krakow-Auschwitz bus return ~10 (est)
+        { code: 'SK', transport: 14, local: 0, extras: [] },     // Bratislava-Vienna train (est)
+        { code: 'AT', transport: 25, local: 0, extras: [] },     // Vienna-Budapest Railjet advance fare (est)
+        { code: 'HU', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_czechia-austria-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,   // AMS-Prague one way (Trip.com easyJet EUR 74, Skyscanner EUR 97, KLM 102-149; typical)
+      flight_out_cost: 110,  // Vienna-AMS (est, Austrian/KLM/Transavia)
+      blocks: [
+        { code: 'CZ', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 5 days (pickup leaving Prague, drop Vienna) × €35 + one-way cross-border drop ≈€100 (est) + fuel ≈660 km (CZ 180, AT 480) + vignettes CZ 9.44 + AT 12.80', 382, 'transport'),
+        ] },
+        { code: 'AT', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_czechia-austria-hungary-10-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,   // AMS-Prague
+      flight_out_cost: 100,  // Budapest-AMS
+      blocks: [
+        { code: 'CZ', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 3 days (Krumlov leg, Prague to Vienna) × €35 + one-way cross-border drop ≈€100 (est) + fuel ≈400 km + vignettes CZ 9.44 + AT 12.80', 279, 'transport'),
+        ] },
+        { code: 'AT', transport: 25, local: 0, extras: [] },     // Vienna-Budapest train (est)
+        { code: 'HU', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_czechia-roadtrip-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,
+      flight_out_cost: 100,  // Prague-AMS
+      blocks: [
+        { code: 'CZ', local: 0, extras: [] },                    // carInDailyRate true: nothing added
+      ],
+    },
+
+    'gt_seed_moravia-brno-wine-region-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,   // AMS-Prague
+      flight_out_cost: 100,
+      blocks: [
+        { code: 'CZ', local: 20, extras: [                       // Prague-Brno-Prague RegioJet train/bus 2 x ~10 (est)
+          rbExtra('Car: rental 3 days (Brno base, wine region) × €35 + fuel ≈110 km + 1-day vignette €9.44 (bike alternative)', 129, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_prague-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,
+      flight_out_cost: 100,
+      blocks: [
+        { code: 'CZ', local: 0, extras: [
+          rbExtra('Prague Castle basic ticket 450 CZK (notes ~€18)', 18, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_prague-bohemia-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,
+      flight_out_cost: 100,
+      blocks: [
+        { code: 'CZ', local: 24, extras: [] },                    // Prague-Cesky Krumlov-Prague RegioJet ~12 each way (est); Karlovy Vary stopover left out (optional)
+      ],
+    },
+
+    'gt_seed_baltic-states-roadtrip-10-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Tallinn one way (Skyscanner EUR 66 floor, Expedia USD 167, Kayak USD 150, LOT USD 234; typical)
+      flight_out_cost: 130,  // Vilnius-AMS (est)
+      blocks: [
+        { code: 'EE', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 11 days (from day 3 after Tallinn) × €35 + one-way drop Tallinn-Vilnius ≈€100 (est) + Virtsu-Kuivastu car ferry both ways ≈€48 (est) + fuel ≈1460 km (EE 400, LV 420, LT 640), no tolls', 732, 'transport'),
+        ] },
+        { code: 'LV', transport: 0, local: 0, extras: [] },
+        { code: 'LT', local: 0, extras: [
+          rbExtra('Neringa/Nida car eco-toll: €50 (20 Jun-20 Aug) or €10 otherwise, midpoint (notes)', 30, 'park_fee'),
+        ] },
+      ],
+    },
+
+    'gt_seed_estonia-5-7-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Tallinn
+      flight_out_cost: 130,  // Tallinn-AMS
+      blocks: [
+        { code: 'EE', local: 36, extras: [] },                   // Tallinn-Kuressaare Lux Express bus incl. ferry ~18 each way (est); public, no car
+      ],
+    },
+
+    'gt_seed_tallinn-riga-vilnius-7-10-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Tallinn
+      flight_out_cost: 130,  // Vilnius-AMS
+      blocks: [
+        { code: 'EE', transport: 18, local: 0, extras: [] },     // Lux Express Tallinn-Riga (notes: $11-60 per leg; est 18)
+        { code: 'LV', transport: 18, local: 0, extras: [] },     // Lux Express Riga-Vilnius (est 18)
+        { code: 'LT', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_budapest-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Budapest (Skyscanner EUR 87 floor, Expedia USD 167, Lufthansa USD 193; typical)
+      flight_out_cost: 100,  // Budapest-AMS (Expedia USD 91 floor; est)
+      blocks: [
+        { code: 'HU', local: 0, extras: [
+          rbExtra('Szechenyi Thermal Baths admission (notes ~€13-35, midpoint)', 24, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_budapest-eger-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,
+      flight_out_cost: 100,
+      blocks: [
+        { code: 'HU', local: 22, extras: [] },                   // Budapest-Eger-Budapest train ~9 each way (est) + Szentendre HEV return ~4
+      ],
+    },
+
+    'gt_seed_hungary-slovenia-croatia-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Budapest
+      flight_out_cost: 140,  // Zagreb-AMS (flights_from_ams.csv)
+      blocks: [
+        { code: 'HU', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 7 days (from day 3 after Budapest) × €35 + one-way drop Budapest-Zagreb ≈€120 (est) + fuel ≈1230 km (HU 140, SI 420, HR 670) + tolls HR 60% × €7.5/100 km + vignettes SI €16, HU €15.10', 580, 'transport'),
+        ] },
+        { code: 'SI', transport: 0, local: 0, extras: [] },
+        { code: 'HR', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_hungary-roadtrip-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,
+      flight_out_cost: 100,
+      blocks: [
+        { code: 'HU', local: 0, extras: [
+          rbExtra('Car: rental 4 days (from day 3 after Budapest) × €35 + fuel ≈630 km + HU vignette €15.10', 233, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_slovakia-hungary-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Bratislava one way (est, few direct flights; Vienna/Budapest alternative)
+      flight_out_cost: 100,  // Budapest-AMS
+      blocks: [
+        { code: 'SK', transport: 15, local: 14, extras: [] },    // Bratislava-Budapest train (notes: every 2h, 2h25; est 15); local: Gyor day-trip train return (est)
+        { code: 'HU', local: 18, extras: [] },                   // Budapest-Eger-Budapest train ~9 each way (est)
+      ],
+    },
+
+    'gt_seed_lithuania-5-7-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Vilnius one way (est, airBaltic/Ryanair/Wizz)
+      flight_out_cost: 130,
+      blocks: [
+        { code: 'LT', local: 59, extras: [                       // Trakai ~5 return, Vilnius-Kaunas ~8, Kaunas-Klaipeda ~14, Klaipeda-Nida incl. passenger ferry ~7, Nida-Vilnius bus ~25 (all est)
+          rbExtra('Trakai Castle ticket (notes €12 May-Sep)', 12, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_latvia-5-7-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Riga one way (est)
+      flight_out_cost: 120,
+      blocks: [
+        { code: 'LV', local: 17, extras: [                       // Riga-Sigulda train ~2.5 x2, Riga-Rundale bus ~5 x2, Turaida local ~2 (est); public, no car
+          rbExtra('Rundale Palace + garden combined ticket (notes €17)', 17, 'activity'),
+          rbExtra('Sigulda cable car / bobsled (notes ~€9-14, 2021 prices, midpoint)', 12, 'activity'),
+        ] },
+      ],
+    },
+
+
+  // ---- Phase 4 batch 16: Central & Eastern Europe 2/2, extracted 2026-10-28, approved by Youri (planning/budget_batch16/REVIEW.md) ----
+  // NOT yet in RB_ROUTE_COSTS: waiting for Youri's review. Fares: flights_from_ams.csv + flights_batch16.csv.
+  // Car: data/cost_reference/car_costs_by_country.csv (7 L/100 km). Public-transport prices are estimates ("est") unless the notes name them.
+
+    'gt_seed_moldova-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Chisinau one way (Skyscanner floor 87, Expedia 107, Kayak USD 112-126; typical above floors; WebSearch 2026-10-28)
+      flight_out_cost: 120,  // Chisinau-AMS one way (Expedia USD 130; est)
+      blocks: [
+        { code: 'MD', local: 10, extras: [   // marshrutka Chisinau-Orheiul Vechi return, Cricova/Comrat minibus hops (est)
+          rbExtra('Cricova standalone wine cellar tour (notes: ~$95-110, midpoint $102 ≈ €94)', 94, 'tour'),
+          rbExtra('Orheiul Vechi entry (notes: 20 MDL)', 1, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_moldova-transnistria-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // as Moldova 5 days
+      flight_out_cost: 120,
+      blocks: [
+        { code: 'MD', local: 10, extras: [] },   // marshrutka to Orheiul Vechi, Tiraspol/Bender day trip bus ~€5 return (est); Transnistria day-trip cost (notes €15-20) assumed already in the €220 ground budget
+      ],
+    },
+
+    'gt_seed_baltics-poland-10-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Tallinn one way (airBaltic/KLM; Skyscanner floor 66, Expedia USD 167, Kayak USD 150; typical above floor)
+      flight_out_cost: 100,  // Warsaw-AMS one way (KLM/LOT; Expedia EUR 98 floor, Ratepunk USD 135-237; est)
+      blocks: [
+        { code: 'EE', transport: 15, local: 0, extras: [] },  // Lux Express Tallinn-Riga ~€15 (est)
+        { code: 'LV', transport: 15, local: 0, extras: [] },  // Lux Express Riga-Vilnius ~€15 (est)
+        { code: 'LT', transport: 25, local: 0, extras: [] },  // bus Vilnius-Warsaw (Lux Express/FlixBus, ~€25 est); no car: notes say capitals by bus, car only "or train"
+        { code: 'PL', local: 15, extras: [] },               // Warsaw-Masurian Lakes-Gdansk trains/buses (est; 0 if Warsaw only)
+      ],
+    },
+
+    'gt_seed_krakow-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Krakow one way (Trip.com USD 110 floor, Expedia GBP 94, Ratepunk USD 226-340; typical)
+      flight_out_cost: 110,  // Krakow-AMS one way (est from out fare)
+      blocks: [
+        { code: 'PL', local: 0, extras: [] },   // everything walkable
+      ],
+    },
+
+    'gt_seed_krakow-auschwitz-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // as Krakow 4 days
+      flight_out_cost: 110,
+      blocks: [
+        { code: 'PL', local: 7, extras: [   // bus Krakow-Oswiecim ~€3.5 each way (est)
+          rbExtra('Auschwitz-Birkenau English guided tour 3.5h (notes: ~150 PLN ≈ €35)', 35, 'tour'),
+        ] },
+      ],
+    },
+
+    'gt_seed_krakow-tatra-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,
+      flight_out_cost: 110,
+      blocks: [
+        { code: 'PL', local: 15, extras: [   // Krakow-Zakopane bus €4.50 x2 (from Slovakia-Poland notes) + Zakopane-Morskie Oko minibus ~€3 x2 (est)
+          rbExtra('Tatra National Park entry, 1 day (notes: 9-10 PLN/day ≈ €2)', 2, 'park_fee'),
+        ] },
+      ],
+    },
+
+    'gt_seed_poland-slovakia-hungary-10-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Krakow
+      flight_out_cost: 100,  // Budapest-AMS one way (Expedia USD 83-103, Kayak GBP 93; est)
+      blocks: [
+        { code: 'PL', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 7 days (Krakow after the city days, drop Budapest) × €33 + one-way cross-border drop ≈€150 (est, flagged) + fuel ≈840 km + vignettes SK €8.10 + HU €15.10 + PL tolls ≈€5', 514, 'transport'),
+        ] },
+        { code: 'SK', transport: 0, local: 0, extras: [] },
+        { code: 'HU', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_poland-roadtrip-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Krakow
+      flight_out_cost: 100,  // Warsaw-AMS
+      blocks: [
+        { code: 'PL', local: 0, extras: [] },   // carInDailyRate true (€585 = €65/day incl. rental car): nothing added for the car
+      ],
+    },
+
+    'gt_seed_poland-north-to-south-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Gdansk one way (Ryanair/Wizz/KLM-LOT; est, no search)
+      flight_out_cost: 110,  // Krakow-AMS
+      blocks: [
+        { code: 'PL', local: 75, extras: [] },   // by train, not car (notes: "train is a good alternative"): Gdansk-Warsaw ~€25, Warsaw-Wroclaw ~€20, Wroclaw-Krakow ~€15, Malbork/Hel day trips ~€15 (est)
+      ],
+    },
+
+    'gt_seed_prague-poland-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,   // AMS-Prague one way (easyJet EUR 74 floor, Skyscanner 97, Trip.com avg 105)
+      flight_out_cost: 110,  // Krakow-AMS
+      blocks: [
+        { code: 'CZ', transport: 20, local: 0, extras: [] },  // Prague-Wroclaw train/bus (RegioJet/FlixBus ~€15-25, est)
+        { code: 'PL', local: 15, extras: [] },                // Wroclaw-Krakow train ~€15 (est)
+      ],
+    },
+
+    'gt_seed_slovakia-poland-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Bratislava one way, connecting (Kayak USD 158 cheapest, typical 125-215; est)
+      flight_out_cost: 110,  // Krakow-AMS
+      blocks: [
+        { code: 'SK', transport: 12, local: 20, extras: [] },  // Tatras -> Zakopane bus ~€12 (est); local: train Bratislava-Poprad ~€17 + Tatra tram/rack rail ~€3 (est)
+        { code: 'PL', local: 10, extras: [] },                 // Zakopane-Krakow bus €4.50 (notes) + Morskie Oko/local hops (est)
+      ],
+    },
+
+    'gt_seed_south-poland-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Krakow
+      flight_out_cost: 120,  // Wroclaw-AMS (route ends at optional Wroclaw; est)
+      blocks: [
+        { code: 'PL', local: 33, extras: [   // Wieliczka bus 2, Auschwitz bus 7, Zakopane bus 9 return, Krakow-Wroclaw train 15 (est)
+          rbExtra('Wieliczka Salt Mine tourist route (notes: 134-156 PLN ≈ €31-36, midpoint)', 34, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_bucharest-transylvania-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Bucharest one way (Tarom USD 144, Lufthansa USD 191, Expedia USD 160, Kayak EUR 113; typical)
+      flight_out_cost: 120,
+      blocks: [
+        { code: 'RO', local: 30, extras: [   // train Bucharest-Brasov ~€11 x2 (est) + bus Brasov-Bran / train Sinaia ~€8 (est); no car (notes: train/bus OR car)
+          rbExtra('Bran Castle ticket (notes: ~€28-35, midpoint)', 32, 'activity'),
+          rbExtra('Peles Castle ticket (notes: ~€10)', 10, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_moldova-romania-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Chisinau
+      flight_out_cost: 120,  // Bucharest-AMS
+      blocks: [
+        { code: 'MD', transport: 15, local: 6, extras: [      // bus Chisinau-Iasi ~€15 (est); marshrutka to Orheiul Vechi return (est)
+          rbExtra('Orheiul Vechi entry (notes: 20 MDL)', 1, 'activity'),
+        ] },
+        { code: 'RO', local: 40, extras: [] },  // trains Iasi-Sighisoara ~€20, Sighisoara-Brasov ~€6, Brasov-Bucharest ~€11 (est)
+      ],
+    },
+
+    'gt_seed_romania-bulgaria-transylvania-focus-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Bucharest
+      flight_out_cost: 130,  // Sofia-AMS one way (Expedia USD 95-115, Skyscanner floor 59, mostly connecting; est)
+      blocks: [
+        { code: 'RO', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 10 days (Bucharest days excluded) × €33 + one-way drop Bucharest->Sofia ≈€150 (est, flagged) + green card ≈€60 (notes) + fuel ≈1180 km + vignettes RO €4.11 + BG €5.30', 692, 'transport'),
+        ] },
+        { code: 'BG', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_romania-moldova-extended-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Bucharest
+      flight_out_cost: 120,  // Chisinau-AMS
+      blocks: [
+        { code: 'RO', transport: 15, local: 60, extras: [] },   // bus Iasi-Chisinau ~€15 (est); trains Bucharest-Brasov 11, Brasov-Sighisoara 9, Sighisoara-Sibiu 8, Sibiu-Iasi long train/bus ~€30 (est)
+        { code: 'MD', local: 6, extras: [
+          rbExtra('Orheiul Vechi entry (notes: 20 MDL)', 1, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_romania-roadtrip-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,
+      flight_out_cost: 120,
+      blocks: [
+        { code: 'RO', local: 0, extras: [] },   // carInDailyRate true (€765 = €85/day incl. rental + fuel): nothing added for the car
+      ],
+    },
+
+    'gt_seed_romania-extended-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,
+      flight_out_cost: 120,
+      blocks: [
+        { code: 'RO', local: 0, extras: [
+          rbExtra('Car: rental 10 days (Bucharest days excluded; notes recommend a car for Maramures) × €33 + fuel ≈1350 km + Rovinieta €4.11', 513, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_transylvania-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,
+      flight_out_cost: 120,
+      blocks: [
+        { code: 'RO', local: 53, extras: [] },   // trains/buses Bucharest-Brasov 11, Bran/Peles day trip 10, Brasov-Sighisoara 9, Sighisoara-Sibiu 8, Sibiu-Bucharest bus 15 (est); no car (notes)
+      ],
+    },
+
+    'gt_seed_transylvania-carpathian-mountains-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,
+      flight_out_cost: 120,
+      blocks: [
+        { code: 'RO', local: 65, extras: [] },   // as Transylvania 6 days (53) + bus to Zarnesti/Bucegi trailheads ~€12 (est); no car: Transfagarasan only optional/"useful" (notes)
+      ],
+    },
+
+    'gt_seed_bratislava-high-tatras-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Bratislava connecting (Kayak USD 158 cheapest, typical USD 125-215; est)
+      flight_out_cost: 130,  // Bratislava-AMS (est)
+      blocks: [
+        { code: 'SK', local: 40, extras: [   // train Bratislava-Poprad ~€17 each way + Tatra tram/rack rail ~€6 (est)
+          rbExtra('Lomnicky stit cable car (notes: ~€89, optional)', 89, 'activity', true),
+        ] },
+      ],
+    },
+
+    'gt_seed_slovakia-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,
+      flight_out_cost: 130,   // loop back to Bratislava (no AMS flights from Kosice assumed)
+      blocks: [
+        { code: 'SK', local: 55, extras: [] },  // Bratislava-Banska Stiavnica ~€12, ->Poprad ~€14, ->Kosice ~€10, Kosice-Bratislava ~€20 (est); no car (train/rental both named; train picked)
+      ],
+    },
+
+
+  // ---- Phase 4 batch 17: Nordics 1/2, extracted 2026-10-28, approved by Youri (planning/budget_batch17/REVIEW.md) ----
+  // Fares: flights_from_ams.csv + flights_batch17.csv (no WebSearch this run: all new fares are estimates). Car: data/cost_reference/car_costs_by_country.csv (7 L/100 km). NOK at ~11.5/EUR.
+
+    'gt_seed_copenhagen-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 90,    // AMS-CPH one way (KLM/SAS/Transavia/easyJet typical 70-110; est)
+      flight_out_cost: 90,   // CPH-AMS (same; est)
+      blocks: [
+        { code: 'DK', local: 0, extras: [] },   // on foot/metro/bike; Copenhagen Card not priced in notes
+      ],
+    },
+
+    'gt_seed_copenhagen-zealand-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 90,    // AMS-CPH (as above)
+      flight_out_cost: 90,
+      blocks: [
+        { code: 'DK', local: 38, extras: [   // train returns Roskilde ~21 + Humlebaek ~17 (DSB zone fares, est)
+          rbExtra('Car: rental 1 day (Møns Klint day trip) × €55 + fuel ≈250 km (km_in_route)', 101, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_denmark-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 90,
+      flight_out_cost: 90,   // fly home from Copenhagen (notes alternative: Billund)
+      blocks: [
+        { code: 'DK', local: 93, extras: [] },  // CPH-Odense train ~25 + Odense-Billund train/bus ~20 + Billund-Aarhus bus ~13 + Aarhus-CPH train ~35 (DSB/Flixbus, est)
+      ],
+    },
+
+    'gt_seed_denmark-south-sweden-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 90,
+      flight_out_cost: 90,   // fly home from Copenhagen (train from Malmö)
+      blocks: [
+        { code: 'DK', transport: 13, local: 38, extras: [] },   // Öresund train CPH-Malmö ~13 (est); local = Roskilde + Humlebaek train returns (est)
+        { code: 'SE', local: 13, extras: [    // Öresund train Malmö-CPH airport ~13 (est)
+          rbExtra('Car: rental 4 days (Skåne, picked up in Malmö) × €55 + fuel ≈200 km (SE share of km_in_route); no Öresund bridge toll', 243, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_aland-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 135,   // AMS-Stockholm ARN ~100 (est) + Viking Line/Tallink ferry Stockholm-Mariehamn foot passenger ~35 (est)
+      flight_out_cost: 135,  // same way back (notes: ferry onward to Stockholm)
+      blocks: [
+        { code: 'FI', local: 0, extras: [] },  // cycling; bike hire assumed in the ground budget
+      ],
+    },
+
+    'gt_seed_finland-roadtrip-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-HEL (flights_from_ams.csv)
+      flight_out_cost: 190,  // Rovaniemi-AMS one way, usually 1 stop via HEL/CPH (est)
+      blocks: [
+        { code: 'FI', local: 0, extras: [
+          rbExtra('Car: rental 10 days (Turku onward, not the 2 Helsinki days) × €55 + fuel ≈1120 km + one-way drop Rovaniemi ≈€120 (est); no tolls', 852, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_finnish-lapland-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 190,   // AMS-Rovaniemi one way (est; Transavia seasonal direct, else 1 stop)
+      flight_out_cost: 190,
+      blocks: [
+        { code: 'FI', local: 0, extras: [
+          rbExtra('Car: rental 6 days (Rovaniemi-Levi/Ylläs-back, winter tyres in rate) × €55 + fuel ≈240 km (km_in_route, likely low)', 369, 'transport'),
+          rbExtra('One husky/aurora/snowmobile activity (notes: €80-150 each, midpoint)', 115, 'tour', true),
+        ] },
+      ],
+    },
+
+    'gt_seed_helsinki-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-HEL (flights_from_ams.csv)
+      flight_out_cost: 150,  // HEL-AMS (est = out)
+      blocks: [
+        { code: 'FI', local: 0, extras: [] },  // Suomenlinna ferry included in HSL ticket (notes)
+      ],
+    },
+
+    'gt_seed_helsinki-lake-district-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,
+      flight_out_cost: 150,
+      blocks: [
+        { code: 'FI', local: 0, extras: [
+          rbExtra('Car: rental 4 days (after 2 Helsinki days) × €55 + fuel ≈430 km (km_in_route); returns to Helsinki, no drop fee', 290, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_south-finland-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,
+      flight_out_cost: 150,
+      blocks: [
+        { code: 'FI', local: 66, extras: [   // VR/bus: Helsinki-Porvoo return ~14, Helsinki-Turku ~18, Turku-Tampere ~16, Tampere-Helsinki ~18 (est)
+          rbExtra('Turku Castle entry (notes: €10-14, midpoint)', 12, 'activity'),
+          rbExtra('Turku Cathedral entry (notes: €10-14, midpoint)', 12, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_faroe-islands-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 280,   // AMS-Vágar via CPH (AMS-CPH ~90 + Atlantic Airways CPH-FAE ~190; est, low)
+      flight_out_cost: 280,
+      blocks: [
+        { code: 'FO', local: 0, extras: [
+          rbExtra('Car: rental 5 days × €110 (FO file rate, highest in Europe) + fuel ≈120 km + sub-sea tunnel tolls ≈€27 (est)', 594, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_greenland': {
+      checked: '2026-10-28',
+      flight_in_cost: 575,   // AMS-KEF-Nuuk: notes ±€900-1,400 return, midpoint 1,150 halved (no one-way given)
+      flight_out_cost: 650,  // Ilulissat-AMS: reused flights_from_ams.csv row JAV back (notes imply ~390: see REVIEW)
+      blocks: [
+        { code: 'GL', local: 0, extras: [] },    // Air Greenland domestic flights are IN the daily rate (R2d kept this block for that; orchestrator call 2026-10-28, the agent had €300); boat trips (Eqi) have no price in notes
+      ],
+    },
+
+    'gt_seed_faroe-islands-iceland-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 280,   // AMS-Vágar via CPH (est, as Faroe 6 days)
+      flight_out_cost: 120,  // KEF-AMS (flights_batch17.csv, est)
+      blocks: [
+        { code: 'FO', transport: 270, local: 0, extras: [   // FAE-CPH-KEF flights ~270 (est, low): Norröna combo needs ~10 days and lands in Seyðisfjörður, so flights priced
+          rbExtra('Car: Faroe rental 2 days × €110 + fuel ≈30 km', 224, 'transport'),
+        ] },
+        { code: 'IS', local: 27, extras: [   // Flybus KEF-Reykjavik one way (est)
+          rbExtra('Car: Iceland rental 4 days × €80 + fuel ≈300 km (Golden Circle + Blue Lagoon; km_in_route 1280 includes the FO-IS leg)', 363, 'transport'),
+          rbExtra('Blue Lagoon entry (sibling route notes: from €65-75, midpoint 70 × 1.25, flagged "from")', 88, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_iceland-extended-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-KEF one way (est)
+      flight_out_cost: 120,
+      blocks: [
+        { code: 'IS', local: 0, extras: [
+          rbExtra('Car: rental 13 days × €80 (2WD, Westfjords option) + fuel ≈2300 km (Ring Road 1,332 + Westfjords ≈900 + airport) + Vaðlaheiði tunnel ≈€10 (est)', 1377, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_iceland-ring-road-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,
+      flight_out_cost: 120,
+      blocks: [
+        { code: 'IS', local: 0, extras: [
+          rbExtra('Car: rental 11 days × €80 + fuel ≈1400 km (notes: Ring Road 1,332 km + airport) + Vaðlaheiði tunnel ≈€10 (est)', 1089, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_iceland-south-coast-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,
+      flight_out_cost: 120,
+      blocks: [
+        { code: 'IS', local: 27, extras: [   // Flybus KEF-Reykjavik one way (est)
+          rbExtra('Car: rental 7 days × €80 + fuel ≈1100 km (Golden Circle 230 + Reykjavík-Höfn 457 out and back; km_in_route 560 is one-way)', 716, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_reykjavik-golden-circle-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,
+      flight_out_cost: 120,
+      blocks: [
+        { code: 'IS', local: 27, extras: [   // Flybus KEF-Reykjavik one way (est)
+          rbExtra('Car: rental 3 days × €80 + fuel ≈280 km (km_in_route)', 280, 'transport'),
+          rbExtra('Blue Lagoon entry (notes: from €65-75, midpoint 70 × 1.25, flagged "from")', 88, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_south-iceland-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,
+      flight_out_cost: 120,
+      blocks: [
+        { code: 'IS', local: 27, extras: [   // Flybus KEF-Reykjavik one way (est)
+          rbExtra('Car: rental 4 days × €80 + fuel ≈560 km (Golden Circle loop 230 + Reykjavík-Vík and back 330; km_in_route 290 is one-way)', 400, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_bergen-alesund-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-BGO one way (KLM/SAS/Norwegian typical; est)
+      flight_out_cost: 130,  // Ålesund-AMS one way (est)
+      blocks: [
+        { code: 'NO', local: 0, extras: [
+          rbExtra('Car: rental 10 days (after 2 Bergen days) × €75 + one-way drop Bergen-Ålesund ≈€200 (est) + fuel ≈900 km (incl. Atlantic Ocean Road; km_in_route 570 too low) + AutoPASS tolls and ≈3 car ferries ≈€150 (est)', 1276, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_bergen-fjords-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,
+      flight_out_cost: 120,
+      blocks: [
+        { code: 'NO', local: 110, extras: [   // Bergen-Voss train ~18, Voss-Gudvangen bus ~14, Nærøyfjord cruise Gudvangen-Flåm ~50, Myrdal-Bergen train ~28 (est)
+          rbExtra('Flåm Railway one way (notes: NOK 570 at 11.5 NOK/EUR)', 50, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_fjord-norway-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,
+      flight_out_cost: 130,  // fly home from Ålesund (notes: Bergen or Ålesund)
+      blocks: [
+        { code: 'NO', local: 0, extras: [
+          rbExtra('Car: rental 8 days (after 1 Bergen day) × €75 + one-way drop Bergen-Ålesund ≈€200 (est) + fuel ≈770 km (km_in_route) + AutoPASS tolls and car ferries ≈€120 (est)', 1070, 'transport'),
+          rbExtra('Trolltunga parking 1 day (notes: NOK 330)', 29, 'park_fee', true),
+          rbExtra('Preikestolen P1 parking (notes: NOK 250/day)', 22, 'park_fee', true),
+        ] },
+      ],
+    },
+
+
+  // ---- Phase 4 batch 18: Nordics (2/2), extracted 2026-10-28, approved by Youri (planning/budget_batch18/REVIEW.md) ----
+  // NOT yet in RB_ROUTE_COSTS: waiting for Youri's review. NOK ~11.7/EUR. Fares: flights_from_ams.csv + flights_batch18.csv.
+  // Car: data/cost_reference/car_costs_by_country.csv (7 L/100 km). Visas: none (Schengen; Svalbard visa-free).
+
+    'gt_seed_norway-sweden-fjords-capitals-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-Oslo one way (Kayak 132-154, airBaltic from 177; WebSearch 2026-10-28)
+      flight_out_cost: 110,  // Stockholm-AMS one way (Expedia from 108, KLM/Norwegian; est)
+      blocks: [
+        // transport: Flam/Myrdal-Oslo train ~50 (est) + Oslo-Gothenburg train/bus ~45 (est, advance).
+        // local: Oslo-Bergen train ~60 (advance fare, est) + Bergen-Voss-Gudvangen-Flam bus/Naeroyfjord boat ~80 (est)
+        { code: 'NO', transport: 95, local: 140, extras: [
+          rbExtra('Flam Railway Flam-Myrdal one way (notes: 510 NOK high season)', 44, 'transport'),
+        ] },
+        { code: 'SE', local: 35, extras: [] },                       // Gothenburg-Stockholm train ~35 (SJ advance, est)
+      ],
+    },
+
+    'gt_seed_norway-roadtrip-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-Oslo (as above)
+      flight_out_cost: 130,  // Oslo-AMS one way (airBaltic from 117, typical higher; est)
+      blocks: [
+        { code: 'NO', local: 0, extras: [
+          rbExtra('Car: rental 12 days × €75 (whole trip per notes) + fuel ≈1370 km + AutoPASS tolls & fjord ferries ≈€180 (est; Geiranger-Hellesylt etc)', 1348, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_oslo-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-Oslo (as above)
+      flight_out_cost: 130,  // Oslo-AMS (as above)
+      blocks: [
+        { code: 'NO', local: 0, extras: [] },                        // notes: no car needed, city + day trip by ferry/train (in the ground budget)
+      ],
+    },
+
+    'gt_seed_scandinavia-overland': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-Helsinki one way (flights_from_ams.csv HEL)
+      flight_out_cost: 160,  // Tromso-AMS one way (Expedia floors USD 50-65, ratepunk median ~USD 188; typical est)
+      blocks: [
+        // transport: Rovaniemi-Kiruna bus/train via Tornio-Haparanda-Boden (8-9.5h, est)
+        // local: Helsinki-Rovaniemi train ~45 + Rovaniemi-Inari bus ~45 + Inari-Rovaniemi bus ~45 (VR/Lapin Linjat, est)
+        { code: 'FI', transport: 70, local: 135, extras: [] },
+        { code: 'SE', transport: 35, local: 0, extras: [] },         // Kiruna-Narvik train (est ~SEK 400)
+        // Narvik-Svolvaer bus 35 + Svolvaer-Senja bus/ferry 70 + Senja-Tromso bus 30 + Tromso-Alta-Nordkapp bus 130 (55+75) + Honningsvag-Tromso flight (Wideroe) 150 (all est)
+        { code: 'NO', local: 415, extras: [] },
+      ],
+    },
+
+    'gt_seed_south-central-norway-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-Oslo (as above)
+      flight_out_cost: 130,  // Oslo-AMS (as above)
+      blocks: [
+        { code: 'NO', local: 0, extras: [
+          rbExtra('Car: rental 12 days × €75 (Oslo days without car) + fuel ≈1470 km (input estimate; real loop likely longer) + AutoPASS tolls & ferries ≈€200 (est)', 1387, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_south-norway-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-Oslo (as above)
+      flight_out_cost: 130,  // Oslo-AMS (as above)
+      blocks: [
+        { code: 'NO', local: 0, extras: [] },                        // carInDailyRate true: no car added
+      ],
+    },
+
+    'gt_seed_svalbard-longyearbyen-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 290,   // AMS-Oslo ~150 + Oslo-Longyearbyen ~140 (Expedia from USD 78-133, SAS from USD 159; est, low confidence)
+      flight_out_cost: 290,  // Longyearbyen-Oslo-AMS (mirror; est)
+      blocks: [
+        { code: 'NO', local: 0, extras: [
+          rbExtra('Longyearbyen day tours: 2 × 2250 NOK (notes: 1500-3000 NOK/day, 2024-25 level; ground budget is only ~€110/day)', 385, 'tour'),
+        ] },
+      ],
+    },
+
+    'gt_seed_denmark-sweden-norway-overland-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 90,    // AMS-Copenhagen one way (Expedia/Momondo USD 82-98; easyJet/Norwegian; est)
+      flight_out_cost: 130,  // Oslo-AMS (as above)
+      blocks: [
+        { code: 'DK', transport: 12, local: 0, extras: [] },        // Copenhagen-Malmo train over the Oresund (~DKK 90, est)
+        { code: 'SE', transport: 40, local: 35, extras: [] },       // transport Gothenburg-Oslo train/bus ~40 (est); local Malmo-Gothenburg train ~35 (advance, est)
+        { code: 'NO', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_northern-europe-baltic-ferry-roadtrip-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 90,    // AMS-Copenhagen (as above)
+      flight_out_cost: 150,  // Vilnius-AMS one way (airBaltic direct; sources USD 95-230, median ~USD 206; est)
+      blocks: [
+        { code: 'DK', transport: 50, local: 0, extras: [] },        // Copenhagen-Malmo-Stockholm trains (~SEK 450-600 advance, est)
+        { code: 'SE', transport: 80, local: 0, extras: [] },        // overnight ferry Stockholm-Helsinki, 2-berth cabin per person (Viking/Tallink, est)
+        { code: 'FI', transport: 30, local: 0, extras: [] },        // Helsinki-Tallinn ferry (est ~25-40)
+        { code: 'EE', transport: 15, local: 0, extras: [] },        // Lux Express Tallinn-Riga (est 10-20)
+        { code: 'LV', transport: 12, local: 0, extras: [] },        // Lux Express Riga-Vilnius (est)
+        { code: 'LT', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_south-sweden-skane-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 103,   // AMS-Copenhagen ~90 + Kastrup-Malmo train ~13 (no real AMS-Malmo flights; est)
+      flight_out_cost: 103,  // mirror
+      blocks: [
+        // local: Malmo-Lund-Malmo train (Skanetrafiken, est)
+        { code: 'SE', local: 10, extras: [
+          rbExtra('Car: rental 6 days × €55 (Malmo + Lund days without car) + fuel ≈300 km (own estimate, input says 180) at 1.64 €/l; no tolls', 364, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_stockholm-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Stockholm (Expedia from 108, Skyscanner 57 floor, KLM higher; est typical)
+      flight_out_cost: 110,
+      blocks: [
+        { code: 'SE', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_stockholm-surroundings-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Stockholm (as above)
+      flight_out_cost: 110,
+      blocks: [
+        // local: Uppsala return train ~22 + Sigtuna commuter train/bus ~8 (SJ/SL, est)
+        { code: 'SE', local: 30, extras: [
+          rbExtra('Stockholm archipelago boat day (Vaxholm) (notes: €30-50 on archipelago-boat days)', 40, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_sweden-norway-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Stockholm (as above)
+      flight_out_cost: 250,  // Evenes (Narvik/Harstad)-Oslo-AMS one way (est, low confidence; no usable fare found)
+      blocks: [
+        // local: Stockholm-Kiruna night train ~85 (SJ advance, est)
+        { code: 'SE', transport: 0, local: 85, extras: [
+          rbExtra('Car: from Kiruna, rental 7 days × €65 (SE 55/NO 75 avg) + cross-border one-way drop at Evenes ≈€150 (est) + fuel ≈780 km (Kiruna-Abisko-Narvik-Lofoten-Evenes) + AutoPASS ≈€25', 750, 'transport'),
+        ] },
+        { code: 'NO', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_sweden-roadtrip-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Stockholm (as above)
+      flight_out_cost: 110,
+      blocks: [
+        { code: 'SE', local: 0, extras: [] },                        // carInDailyRate true: no car added
+      ],
+    },
+
+    'gt_seed_swedish-lapland-kiruna-abisko-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 200,   // AMS-Kiruna one way via Stockholm (SAS GBP 141-162 / USD 188-224; WebSearch 2026-10-28)
+      flight_out_cost: 200,  // Kiruna-AMS (mirror)
+      blocks: [
+        { code: 'SE', local: 24, extras: [] },                       // Kiruna-Abisko-Kiruna train/bus 2 x ~12 (est)
+      ],
+    },
+
+    'gt_seed_swedish-lapland-northern-lights-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 200,   // AMS-Kiruna (as above)
+      flight_out_cost: 200,
+      blocks: [
+        // local: Kiruna-Abisko-Kiruna train/bus 2 x ~12 (est)
+        { code: 'SE', local: 24, extras: [
+          rbExtra('Dog sledding / snowmobile excursion #1 (notes: €150-250 each, midpoint)', 200, 'tour'),
+          rbExtra('Excursion #2 (snowmobile or dog sledding; notes: €150-250 each, midpoint)', 200, 'tour'),
+        ] },
+      ],
+    },
+
+
+  // ---- Phase 4 batch 19: British Isles (UK, Ireland, Crown Dependencies), extracted 2026-10-28, approved by Youri (planning/budget_batch19/REVIEW.md) ----
+  // NOT yet in RB_ROUTE_COSTS: waiting for Youri's review. Fares: flights_batch19.csv. Car: data/cost_reference/car_costs_by_country.csv (7 L/100 km).
+  // Fuel/km: GB 0.146, IE 0.138, FR 0.156, BE 0.139, IM 0.147. £1 = €1.17 (as in the notes). UK ETA ~£20 = €23 (VISA_VACCINATION_RESEARCH.md), once per route, covers UK+IM+JE+GG.
+
+    'gt_seed_channel-islands-brittany-normandyopal-coast-belgium': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-Guernsey, 1 stop via London/Southampton (notes: from ~€145 return; typical one-way est)
+      flight_out_cost: 0,    // one-way rental drop in Amsterdam: the car drives home, fuel+drop fee are in the Car extra
+      blocks: [
+        { code: 'GG', transport: 35, local: 0, extras: [       // Guernsey-Jersey inter-island ferry (est)
+          rbExtra('UK ETA (Dutch passport, ~£20, valid 2 years, covers Guernsey/Jersey too)', 23, 'visa'),
+        ] },
+        { code: 'JE', transport: 55, local: 0, extras: [] },   // Jersey-Saint-Malo fast ferry, foot passenger (est)
+        { code: 'FR', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 23 days (Saint-Malo to Amsterdam drop) × €48 + one-way cross-border drop ≈€200 (est) + fuel ≈1,660 km FR + 340 km BE/NL + tolls (60% of FR km × €9/100 km)', 1700, 'transport'),
+        ] },
+        { code: 'FR', transport: 0, local: 0, extras: [] },
+        { code: 'FR', transport: 0, local: 0, extras: [] },
+        { code: 'BE', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_cotswolds-bath-southwest-england-5-7-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,   // AMS-Bristol (easyJet/KLM, est; London ≈ same)
+      flight_out_cost: 100,  // Bristol-AMS (est)
+      blocks: [
+        { code: 'GB', local: 0, extras: [
+          rbExtra('UK ETA (Dutch passport, ~£20, valid 2 years)', 23, 'visa'),
+          rbExtra('Car: rental 6 days × €50 + fuel ≈590 km (round trip from Bristol, no drop fee)', 386, 'transport'),
+          rbExtra('Roman Baths timed entry ~£28 (notes)', 33, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_edinburgh-3-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Edinburgh (WebSearch 2026-10-28: floors €90-92, typical higher)
+      flight_out_cost: 110,
+      blocks: [
+        { code: 'GB', local: 10, extras: [                      // Stirling train return day trip (est)
+          rbExtra('UK ETA (Dutch passport, ~£20, valid 2 years)', 23, 'visa'),
+          rbExtra('Edinburgh Castle online ticket £19.50 (notes ~€22)', 22, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_england-wales-northern-ireland-roadtrip-10-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 136,   // own car: fuel NL→Hook of Holland ≈10 + Stena HoH-Harwich €66 (notes) + car supplement ≈60 (est, flagged)
+      flight_out_cost: 335,  // own car home: Belfast-Cairnryan ferry with car ≈100 (est) + ≈680 km Cairnryan-Harwich fuel ≈99 + Harwich-HoH €66 + car ≈60 + NL fuel ≈10
+      blocks: [
+        { code: 'GB', transport: 0, local: 0, extras: [
+          rbExtra('UK ETA (Dutch passport, ~£20, valid 2 years, also covers Northern Ireland)', 23, 'visa'),
+          rbExtra('Car (own): fuel ≈1,100 km GB + ≈170 km IE transit + Holyhead-Dublin ferry with car ≈€97 (€27 notes + ≈70 car, est) + IE/Dublin tolls ≈€15 (est)', 296, 'transport'),
+        ] },
+        { code: 'GB', local: 0, extras: [
+          rbExtra("Giant's Causeway entry £9 incl. parking (notes)", 11, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_england-wales-isle-of-man': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,   // AMS-London (notes from ~€70-85; typical est)
+      flight_out_cost: 85,   // Newcastle-AMS (notes from ~€30-90)
+      blocks: [
+        { code: 'GB', transport: 0, local: 0, extras: [
+          rbExtra('UK ETA (Dutch passport, ~£20, valid 2 years, covers Isle of Man)', 23, 'visa'),
+          rbExtra('Car: rental 35 days (from day 3, after London) × €50 + one-way drop Newcastle ≈€100 (est) + fuel ≈2,490 km (no tolls)', 2214, 'transport'),
+        ] },
+        { code: 'GB', transport: 0, local: 0, extras: [] },
+        { code: 'GB', transport: 0, local: 0, extras: [] },
+        { code: 'GB', transport: 45, local: 0, extras: [] },   // Heysham-Douglas foot passenger (est)
+        { code: 'IM', transport: 45, local: 0, extras: [] },   // Douglas-Heysham foot passenger (est)
+        { code: 'GB', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_highlands-isle-of-skye-7-10-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-Inverness (WebSearch 2026-10-28: GBP 111-153; direct KLM/BA)
+      flight_out_cost: 150,
+      blocks: [
+        { code: 'GB', local: 0, extras: [
+          rbExtra('UK ETA (Dutch passport, ~£20, valid 2 years)', 23, 'visa'),
+          rbExtra('Car: rental 9 days × €50 + fuel ≈650 km (my estimate, calc 370 km too low; round trip Inverness, no drop fee; Skye Bridge free)', 545, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_london-3-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,   // AMS-London (WebSearch 2026-10-28: $75-110 budget carriers; typical)
+      flight_out_cost: 100,
+      blocks: [
+        { code: 'GB', local: 0, extras: [
+          rbExtra('UK ETA (Dutch passport, ~£20, valid 2 years)', 23, 'visa'),
+        ] },
+      ],
+    },
+
+    'gt_seed_northern-ireland-5-7-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,   // AMS-Belfast (easyJet/KLM, est)
+      flight_out_cost: 100,
+      blocks: [
+        { code: 'GB', local: 0, extras: [
+          rbExtra('UK ETA (Dutch passport, ~£20, valid 2 years)', 23, 'visa'),
+          rbExtra('Car: rental 6 days × €50 + fuel ≈130 km (calc; no drop fee, returned in Belfast)', 319, 'transport'),
+          rbExtra("Giant's Causeway entry £9 incl. parking (notes)", 11, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_orkney-shetland-5-7-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Aberdeen direct (KLM, est)
+      flight_out_cost: 230,  // Lerwick/Kirkwall-AMS via Aberdeen/Edinburgh: Loganair ≈110 + AMS ≈120 (est, low confidence)
+      blocks: [
+        { code: 'GB', local: 95, extras: [                      // NorthLink Aberdeen-Kirkwall foot ≈50 + Kirkwall-Lerwick ≈45 (est, notes give no price)
+          rbExtra('UK ETA (Dutch passport, ~£20, valid 2 years)', 23, 'visa'),
+          rbExtra('Car: local rental on the islands 5 days × €50 + fuel ≈300 km (est; no car on the ferry)', 294, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_outer-hebrides-lewis-harris-5-7-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-Inverness
+      flight_out_cost: 150,  // Inverness-AMS (car returns by Stornoway-Ullapool)
+      blocks: [
+        { code: 'GB', local: 0, extras: [
+          rbExtra('UK ETA (Dutch passport, ~£20, valid 2 years)', 23, 'visa'),
+          rbExtra('Car: rental 6 days × €50 + fuel ≈450 km (my estimate, calc 150 too low) + CalMac Uig-Tarbert with car ≈€80 (est) + Stornoway-Ullapool with car ≈€110 (est)', 556, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_scotland-northern-ireland': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Edinburgh
+      flight_out_cost: 100,  // Belfast-AMS (notes from ~€22-60; typical est)
+      blocks: [
+        { code: 'GB', transport: 0, local: 0, extras: [
+          rbExtra('UK ETA (Dutch passport, ~£20, valid 2 years, covers Northern Ireland)', 23, 'visa'),
+          rbExtra('Car: rental 24 days (from day 4, after Edinburgh) × €50 + Cairnryan-Belfast ferry with car ≈€130 (est) + one-way drop Belfast ≈€100 (est) + fuel ≈1,210 km (calc)', 1607, 'transport'),
+        ] },
+        { code: 'GB', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_scotland-extended-10-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Edinburgh
+      flight_out_cost: 110,  // Edinburgh-AMS (loop ends in Edinburgh)
+      blocks: [
+        { code: 'GB', local: 0, extras: [
+          rbExtra('UK ETA (Dutch passport, ~£20, valid 2 years)', 23, 'visa'),
+          rbExtra('Car: rental 12 days × €50 + fuel ≈1,600 km (NC500 = 516 miles/830 km per notes + Edinburgh-Inverness + Skye/Glencoe; no drop fee)', 834, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_scotland-roadtrip-7-10-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,
+      flight_out_cost: 110,
+      blocks: [
+        { code: 'GB', local: 0, extras: [
+          rbExtra('UK ETA (Dutch passport, ~£20, valid 2 years)', 23, 'visa'),
+          rbExtra('Car: rental 8 days × €50 + fuel ≈800 km (my estimate, calc 430 too low; loop back to Edinburgh, no drop fee)', 517, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_scottish-highlands-5-7-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-Inverness
+      flight_out_cost: 150,
+      blocks: [
+        { code: 'GB', local: 0, extras: [
+          rbExtra('UK ETA (Dutch passport, ~£20, valid 2 years)', 23, 'visa'),
+          rbExtra('Car: rental 6 days × €50 + fuel ≈500 km (my estimate, calc 270 too low; loop from Inverness)', 373, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_wales-snowdonia-coast-5-7-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,   // AMS-Manchester (KLM/easyJet, est)
+      flight_out_cost: 100,
+      blocks: [
+        { code: 'GB', local: 0, extras: [
+          rbExtra('UK ETA (Dutch passport, ~£20, valid 2 years)', 23, 'visa'),
+          rbExtra('Car: rental 6 days × €50 + fuel ≈800 km (Manchester-Snowdonia-Pembrokeshire-back; my estimate, calc 320 too low)', 417, 'transport'),
+          rbExtra('Snowdon Mountain Railway return ticket £45-62 midpoint (notes; no one-way price, not halved)', 63, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_dublin-3-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 90,    // AMS-Dublin (WebSearch 2026-10-28: lows €58, typical higher)
+      flight_out_cost: 90,
+      blocks: [
+        { code: 'IE', local: 25, extras: [                      // Wicklow/Glendalough day-trip bus return (est)
+          rbExtra('Book of Kells timed entry €21.50-25 midpoint (notes)', 23, 'activity'),
+          rbExtra('Guinness Storehouse €30-45 midpoint (notes)', 38, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_ireland': {
+      checked: '2026-10-28',
+      flight_in_cost: 90,    // AMS-Dublin
+      flight_out_cost: 100,  // Cork-AMS (KLM direct, notes from ~€40-70; typical est)
+      blocks: [
+        { code: 'IE', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 22 days × €50 + one-way drop Cork ≈€80 (est) + fuel ≈1,700 km (my estimate, calc 840 too low) + tolls ≈€25 (est)', 1440, 'transport'),
+        ] },
+        { code: 'IE', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_ireland-complete-10-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 90,
+      flight_out_cost: 90,   // Dublin-AMS (loop returns to Dublin)
+      blocks: [
+        { code: 'IE', local: 0, extras: [
+          rbExtra('Car: rental 12 days × €50 + fuel ≈1,600 km (my estimate, calc 1,030 too low; loop back to Dublin) + tolls ≈€25 (est)', 846, 'transport'),
+          rbExtra('UK ETA for the optional Northern Ireland side trip (~£20)', 23, 'visa', true),
+        ] },
+      ],
+    },
+
+    'gt_seed_ireland-roadtrip-7-10-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 90,    // AMS-Dublin
+      flight_out_cost: 100,  // Shannon-AMS (est)
+      blocks: [
+        { code: 'IE', local: 0, extras: [
+          rbExtra('Car: rental 9 days × €50 + one-way drop Shannon ≈€60 (est) + fuel ≈1,000 km (my estimate, calc 650 too low) + tolls ≈€15 (est)', 663, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_west-ireland-5-7-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,   // AMS-Shannon (est)
+      flight_out_cost: 100,
+      blocks: [
+        { code: 'IE', local: 0, extras: [
+          rbExtra('Car: rental 6 days × €50 + fuel ≈400 km (Shannon-Galway-Connemara-Cliffs; my estimate, calc 200 too low; no drop fee)', 355, 'transport'),
+          rbExtra('Cliffs of Moher visitor centre €10-12 midpoint incl. parking (notes)', 11, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_wild-atlantic-way-7-10-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 90,    // AMS-Dublin (then drive to Donegal)
+      flight_out_cost: 100,  // Cork-AMS
+      blocks: [
+        { code: 'IE', local: 0, extras: [
+          rbExtra('Car: rental 9 days × €50 + one-way drop Cork ≈€80 (est) + fuel ≈1,500 km (incl. Dublin-Donegal ≈270 km; my estimate, calc 700 too low) + tolls ≈€20 (est)', 757, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_isle-of-man-3-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 170,   // AMS-Douglas via Manchester/London (AMS-MAN ≈100 + MAN-IOM ≈70, est)
+      flight_out_cost: 170,
+      blocks: [
+        { code: 'IM', transport: 0, local: 0, extras: [
+          rbExtra('UK ETA (Dutch passport, ~£20, valid 2 years, covers Isle of Man)', 23, 'visa'),
+          rbExtra('Car: local rental 4 days × €60 + fuel ≈80 km', 252, 'transport'),
+        ] },
+        { code: 'IM', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_jersey-guernsey-channel-islands-4-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-Guernsey, 1 stop via UK (est)
+      flight_out_cost: 130,  // Jersey-AMS KLM seasonal direct (est)
+      blocks: [
+        { code: 'GG', transport: 60, local: 0, extras: [         // Aurigny inter-island flight ~20 min (est)
+          rbExtra('UK ETA (Dutch passport, ~£20, valid 2 years, covers Jersey/Guernsey)', 23, 'visa'),
+        ] },
+        { code: 'JE', local: 0, extras: [] },
+      ],
+    },
+
+
+  // ---- Phase 4 batch 20: Mediterranean, Eurasia & Europe-Asia, extracted 2026-10-28, approved by Youri (planning/budget_batch20/REVIEW.md) ----
+  // Fares: flights_from_ams.csv + flights_batch20.csv. Car: data/cost_reference/car_costs_by_country.csv (7 L/100 km).
+  // Local/transport figures are estimates at Youri's level (buses, trains, shared taxis); "(est)" = no source found.
+
+    'gt_seed_balkan': {
+      checked: '2026-10-28',
+      flight_in_cost: 230,   // AMS-Sarajevo one way (flights_from_ams SJJ out)
+      flight_out_cost: 130,  // Skopje-AMS one way (flights_from_ams SKP back)
+      blocks: [
+        { code: 'BA', transport: 25, local: 25, extras: [] },   // bus Mostar/Sarajevo-Dubrovnik ~20-30 (est); Sarajevo-Mostar bus/train ~10 + Trebinje/Blagaj hops (est)
+        { code: 'HR', transport: 15, local: 0, extras: [] },    // bus Dubrovnik-Kotor ~12-17 (est)
+        { code: 'ME', transport: 22, local: 25, extras: [] },   // Kotor-Tirana/Shkoder bus ~22 (est); Kotor-Perast-Budva ~6 + Kotor-Zabljak (Durmitor) ~15 (est)
+        { code: 'AL', transport: 12, local: 45, extras: [] },   // Korce-Ohrid bus ~12 (est); Shkoder-Tirana-Berat-Gjirokaster-Sarande-Korce buses (est)
+        { code: 'MK', local: 20, extras: [] },                  // Ohrid-Bitola-Skopje buses (est)
+      ],
+    },
+
+    'gt_seed_east-asia-pacific': {
+      checked: '2026-10-28',
+      flight_in_cost: 500,   // AMS-Xi'an one way (WebSearch 2026-10-28: Expedia USD 401-465, ebookers EUR 593-699 floors; typical ~500)
+      flight_out_cost: 450,  // Taipei-AMS one way (WebSearch 2026-10-28: Skyscanner EUR 279, Orbitz USD 342 floors; typical 450, est)
+      blocks: [
+        { code: 'CN', transport: 220, local: 280, extras: [] },  // Trans-Mongolian Beijing-Ulaanbaatar 2nd class ~200-250 (est); Xi'an-Chengdu-Zhangjiajie-Guilin-Shanghai-Beijing HSR/trains (est)
+        { code: 'MN', transport: 400, local: 0, extras: [        // flight Ulaanbaatar-Tokyo via Beijing/Seoul ~400 (est)
+          rbExtra('Gobi Desert jeep tour: shared 4x4 + driver + guide + ger camps, 5 days (est) × USD 100/day (midpoint of 80-120)', 447, 'tour'),
+        ] },
+        { code: 'JP', transport: 130, local: 200, extras: [] },  // flight Osaka-Taipei LCC ~130 (est); Tokyo-Hakone-Kyoto-Osaka-Hiroshima-Osaka mix of shinkansen/night bus, no JR pass (est)
+        { code: 'TW', local: 110, extras: [] },                  // Taipei-Taroko-Sun Moon Lake-Tainan-Kenting-Taipei trains/HSR/buses (est)
+      ],
+    },
+
+    'gt_seed_egypt-arabian-peninsula': {
+      checked: '2026-10-28',
+      flight_in_cost: 180,   // AMS-Cairo one way (WebSearch 2026-10-28: Expedia USD 116-123, Kayak GBP 166 floors; KLM direct typical ~180)
+      flight_out_cost: 420,  // Doha-AMS one way (flights_from_ams DOH back)
+      blocks: [
+        { code: 'EG', transport: 84, local: 90, extras: [        // bus Cairo-Nuweiba ~12 + fast ferry Nuweiba-Aqaba ~USD 80 (est); Cairo-Luxor-Aswan trains ~33, Abu Simbel minibus ~15, Aswan-Cairo ~40 (est)
+          rbExtra('Egypt e-visa (USD 25-45, midpoint 35)', 31, 'visa'),
+        ] },
+        { code: 'JO', transport: 160, local: 80, extras: [       // flight Amman-Muscat ~160 (est); Amman-Jerash-Petra-Wadi Rum-Aqaba-Amman buses/shared taxis (est)
+          rbExtra('Jordan Pass 55 JOD (notes 50-60; also waives the 40 JOD visa fee)', 69, 'visa'),
+        ] },
+        { code: 'OM', transport: 170, local: 0, extras: [        // flight Muscat-Manama ~170 (est)
+          rbExtra('Oman e-visa (OMR ~20, est)', 48, 'visa'),
+          // 4x4 rental/tour for Jebel Shams/Wahiba is IN the daily rate (R2d kept this block for that; orchestrator call 2026-10-28, the agent had a €264 car extra)
+        ] },
+        { code: 'BH', transport: 100, local: 0, extras: [        // flight Manama-Doha ~100 (est)
+          rbExtra('Bahrain e-visa (BD ~9.5)', 22, 'visa'),
+        ] },
+        { code: 'QA', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_iberia-moroccotunisia': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Malaga one way (flights_from_ams AGP out)
+      flight_out_cost: 190,  // Tunis-AMS one way (WebSearch 2026-10-28: Expedia USD 204/GBP 96, Kayak typical USD 188-315; no nonstop)
+      blocks: [
+        { code: 'ES', transport: 40, local: 70, extras: [] },   // ferry Tarifa-Tangier ~40 (FRS typical); Malaga-Granada-Cordoba-Seville trains/buses + Seville-Tarifa bus (est)
+        { code: 'MA', transport: 170, local: 55, extras: [] },  // flight Casablanca-Tunis ~170 (est, low confidence; Marrakech has no direct); Tangier-Chefchaouen-Fes-Volubilis-Marrakech bus/train (est)
+        { code: 'TN', local: 25, extras: [] },                  // Tunis-Dougga-El Jem louages/train (est)
+      ],
+    },
+
+    'gt_seed_spain': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Malaga (AGP out)
+      flight_out_cost: 110,  // Malaga-AMS (AGP back)
+      blocks: [
+        { code: 'ES', local: 65, extras: [] },                  // Malaga-Granada-Cordoba-Seville-Malaga buses/trains (est)
+      ],
+    },
+
+    'gt_seed_corsica-southern-france': {
+      checked: '2026-10-28',
+      flight_in_cost: 200,   // AMS-Figari (FSC out)
+      flight_out_cost: 120,  // Marseille-AMS one way (est: Transavia/KLM direct; no search)
+      blocks: [
+        { code: 'FR', transport: 55, local: 35, extras: [] },   // ferry Ajaccio/Bastia-Marseille reclining seat ~55 (est); Bonifacio-Ajaccio bus ~25 + Bavella hops (est)
+        { code: 'FR', local: 45, extras: [] },                  // Marseille-Arles-Nimes-Pont du Gard-Marseille trains/bus (est)
+      ],
+    },
+
+    'gt_seed_greece-crete': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Athens one way (WebSearch 2026-10-28: Aegean from EUR 129-189, Kayak GBP 80-105 floors; typical 140)
+      flight_out_cost: 130,  // Athens-AMS (WebSearch 2026-10-28; Heraklion-Athens leg is in the last block's local)
+      blocks: [
+        { code: 'GR', transport: 45, local: 0, extras: [        // flight Athens-Heraklion ~45 (est; return EUR 60-90 in notes)
+          rbExtra('Car: rental 8 days (mainland only: Peloponnese-Olympia-Delphi-Meteora-Athens) × €45 + fuel ≈1200 km + tolls (60% × €6.5/100 km)', 591, 'transport'),
+        ] },
+        { code: 'GR', local: 95, extras: [] },                  // Crete KTEL buses + Agia Roumeli-Sfakion boat ~50 (est); flight Heraklion-Athens ~45 (est)
+      ],
+    },
+
+    'gt_seed_greece-cyprus': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Athens
+      flight_out_cost: 170,  // Larnaca-AMS one way (est, no search)
+      blocks: [
+        { code: 'GR', transport: 45, local: 140, extras: [] },  // night ferry Piraeus-Heraklion deck/seat ~45 (est); mainland buses Athens-Nafplio-Olympia-Delphi-Meteora-Athens (est)
+        { code: 'GR', transport: 110, local: 50, extras: [] },  // flight Heraklion-Larnaca via Athens ~110 (est, low); Crete buses + Samaria boat (est)
+        { code: 'CY', local: 25, extras: [] },                  // Cyprus intercity buses ~3-6 each (est)
+      ],
+    },
+
+    'gt_seed_malta-italy': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Malta (MLA out)
+      flight_out_cost: 120,  // Cagliari-AMS (CAG back)
+      blocks: [
+        { code: 'MT', transport: 60, local: 5, extras: [] },    // ferry Valletta-Pozzallo (Virtu) ~60 (est); Gozo ferry ~5 (est)
+        { code: 'IT', transport: 50, local: 75, extras: [] },   // Messina strait foot ferry ~4 + train Reggio-Naples ~45 (est); Sicily buses/trains Palermo-Cefalu-Agrigento-Syracuse-Taormina-Etna (est)
+        { code: 'IT', transport: 30, local: 10, extras: [] },   // HSR Naples-Rome advance ~30 (est); Circumvesuviana Pompeii/Herculaneum
+        { code: 'IT', transport: 60, local: 0, extras: [] },    // flight Rome-Cagliari ~60 (est)
+        { code: 'IT', local: 45, extras: [] },                  // Cagliari-Su Nuraxi bus + Cagliari-Olbia/Costa Smeralda train/bus (est)
+      ],
+    },
+
+    'gt_seed_rome-surroundings': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Naples (NAP out)
+      flight_out_cost: 100,  // Rome-AMS (FCO back)
+      blocks: [
+        { code: 'IT', transport: 30, local: 10, extras: [] },   // HSR Naples-Rome ~30 (est); Circumvesuviana
+        { code: 'IT', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_sardinia': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Cagliari (CAG out)
+      flight_out_cost: 120,  // Cagliari-AMS (CAG back)
+      blocks: [
+        { code: 'IT', local: 0, extras: [
+          rbExtra('Car: rental 5 days × €45 + fuel ≈620 km (Cagliari-Su Nuraxi-Costa Smeralda and back) + no tolls (SS131 free)', 312, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_sicily': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Palermo (PMO out)
+      flight_out_cost: 140,  // Catania-AMS (CTA back; route ends on the east coast)
+      blocks: [
+        { code: 'IT', local: 0, extras: [
+          rbExtra('Car: rental 8 days × €45 + fuel ≈700 km + tolls (60% × €8/100 km) + one-way drop Palermo-Catania ≈€60 (est)', 553, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_malta': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Malta (MLA out)
+      flight_out_cost: 120,  // Malta-AMS (MLA back)
+      blocks: [
+        { code: 'MT', local: 5, extras: [] },                   // Gozo ferry ~5 (est); buses per the notes (bus/car), no car added
+      ],
+    },
+
+    'gt_seed_southeast-asia-grand-loop': {
+      checked: '2026-10-28',
+      flight_in_cost: 520,   // AMS-Hanoi one way (WebSearch 2026-10-28: Kayak USD 390, Expedia USD 440 floors; typical 520)
+      flight_out_cost: 470,  // Singapore-AMS (SIN back, reuse)
+      blocks: [
+        { code: 'VN', transport: 15, local: 175, extras: [      // bus/boat HCMC-Phnom Penh ~15 (est); Hanoi-Ha Giang/Ha Long buses, flights Hanoi-HCMC ~50 (notes 40-60), HCMC-Phu Quoc return ~70, Da Lat buses (est)
+          rbExtra('Ha Giang Loop guide + motorbike 3 days (est) × €40 (notes 35-45)', 120, 'tour'),
+        ] },
+        { code: 'KH', transport: 9, local: 70, extras: [        // bus Stung Treng-Don Kralor-Si Phan Don ~9 (est); Phnom Penh-Koh Rong-Battambang-Siem Reap-Stung Treng (est)
+          rbExtra('Angkor Wat 3-day ticket USD 62', 55, 'park_fee'),
+          rbExtra('Cambodia e-visa USD 36', 32, 'visa'),
+        ] },
+        { code: 'LA', transport: 30, local: 45, extras: [       // Mekong slow boat/bus Luang Prabang-Huay Xai ~30 (est); Si Phan Don-Pakse-Vientiane-Vang Vieng-Luang Prabang (est)
+          rbExtra('Laos e-visa USD 35', 31, 'visa'),
+        ] },
+        { code: 'TH', transport: 30, local: 100, extras: [] },  // speedboat Koh Lipe-Langkawi ~30 (est); Chiang Mai-Sukhothai-Ayutthaya-Bangkok, flight Bangkok-Krabi, Krabi-Lipe (est)
+        { code: 'MY', transport: 40, local: 40, extras: [] },   // flight KL-Kuching ~40 (est); Langkawi-Penang ferry + buses (est)
+        { code: 'MY', transport: 12, local: 105, extras: [] },  // bus Miri-Bandar Seri Begawan ~12 (est); Bako, Kuching-Miri bus, Miri-Mulu return flights ~70 (est)
+        { code: 'BN', transport: 20, local: 0, extras: [        // Sipitang Express MYR 100
+          rbExtra('Ulu Temburong NP mandatory guided day (BND 140-180, notes ~€115-150, midpoint)', 132, 'tour'),
+        ] },
+        { code: 'MY', transport: 90, local: 55, extras: [       // flight Kota Kinabalu-Manila ~90 (est); KK-Sepilok-Kinabatangan-Semporna-KK (est)
+          rbExtra('Mount Kinabalu climb (guide + permit, notes €250-350 all-in, midpoint)', 300, 'activity'),
+          rbExtra('Sipadan diving 2 days (est) × €200 (notes 150-250/day)', 400, 'activity'),
+        ] },
+        { code: 'PH', transport: 180, local: 280, extras: [     // Cebu-Medan via KL/Singapore/Jakarta ~180 (est, low); Banaue night buses, flights Manila-El Nido/Coron-Siargao/Cebu (est)
+          rbExtra('El Nido-Coron multi-day boat expedition (notes €160-220, midpoint)', 190, 'tour'),
+        ] },
+        { code: 'ID', transport: 20, local: 310, extras: [      // bus Kupang-Dili ~20 (est); Sumatra buses, flight Padang-Lombok via Jakarta ~120, Lombok-Labuan Bajo ~70, Komodo-Kupang ~60 (est)
+          rbExtra('Komodo shared boat trip 3 days (est) × USD 45 (notes 40-50/day budget option)', 121, 'tour'),
+          rbExtra('Indonesia e-VOA (IDR 500,000)', 29, 'visa'),
+        ] },
+        { code: 'TL', transport: 280, local: 20, extras: [      // flight Dili-Singapore via Denpasar/Jakarta ~280 (est, low); Dili-Baucau-Maubisse buses (est)
+          rbExtra('Jaco Island 4x4 + driver 1 day (notes USD 85-150, midpoint 118)', 105, 'tour'),
+        ] },
+        { code: 'SG', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_tunisia': {
+      checked: '2026-10-28',
+      flight_in_cost: 200,   // AMS-Tunis one way (WebSearch 2026-10-28; typical with connection)
+      flight_out_cost: 190,  // Tunis-AMS
+      blocks: [
+        { code: 'TN', local: 26, extras: [] },                  // louages/train Tunis-Dougga-El Jem-Tunis (est)
+      ],
+    },
+
+    'gt_seed_anatolia': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-Istanbul one way (WebSearch 2026-10-28: Kayak USD 134, Air Serbia from EUR 134; typical 150)
+      flight_out_cost: 140,  // Istanbul-AMS
+      blocks: [
+        { code: 'TR', local: 115, extras: [] },                 // buses Istanbul-Canakkale-Bergama-Selcuk-Pamukkale-Cappadocia ~70 (est) + domestic flight Cappadocia-Istanbul ~45 (est)
+      ],
+    },
+
+    'gt_seed_istanbul-gallipoli-troy-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-Istanbul
+      flight_out_cost: 140,  // Istanbul-AMS
+      blocks: [
+        { code: 'TR', local: 0, extras: [
+          rbExtra('2-day Istanbul-Gallipoli-Troy tour all-in (notes €150-250, midpoint)', 200, 'tour'),
+          rbExtra('Troy entry (notes €15-20, midpoint)', 18, 'park_fee'),
+        ] },
+      ],
+    },
+
+    'gt_seed_istanbul-lesbos-greek-islands-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-Istanbul
+      flight_out_cost: 140,  // Istanbul-AMS
+      blocks: [
+        { code: 'TR', transport: 28, local: 22, extras: [] },   // ferry Ayvalik-Lesbos (notes €20-35, midpoint); bus Istanbul-Ayvalik ~22 (est)
+        { code: 'GR', local: 50, extras: [] },                  // return Lesbos-Ayvalik ferry ~28 + bus Ayvalik-Istanbul ~22 (est) to fly home
+      ],
+    },
+
+    'gt_seed_turkey-greece-aegean-coast-dodecanese-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 170,   // AMS-Izmir one way (est, no search)
+      flight_out_cost: 170,  // Rhodes-AMS one way (est, seasonal; low confidence)
+      blocks: [
+        { code: 'TR', transport: 28, local: 20, extras: [       // ferry Bodrum-Kos (notes €20-35, midpoint); Izmir-Selcuk-Bodrum buses (est)
+          rbExtra('Ephesus entry 2026 (incl. Ephesus Experience museum)', 40, 'park_fee'),
+          rbExtra('Terrace Houses, Ephesus', 15, 'park_fee'),
+        ] },
+        { code: 'GR', local: 40, extras: [] },                  // Kos-Rhodes ferry ~40 (est)
+      ],
+    },
+
+    'gt_seed_west-eurasia-overland': {
+      checked: '2026-10-28',
+      flight_in_cost: 230,   // AMS-Sarajevo (SJJ out)
+      flight_out_cost: 320,  // Tashkent-AMS one way (WebSearch 2026-10-28: Expedia USD 335, Skyscanner EUR 198-493; no nonstop; typical 320)
+      blocks: [
+        { code: 'BA', transport: 25, local: 25, extras: [] },   // as Balkan
+        { code: 'HR', transport: 15, local: 0, extras: [] },
+        { code: 'ME', transport: 22, local: 25, extras: [] },
+        { code: 'AL', transport: 12, local: 45, extras: [] },
+        { code: 'MK', transport: 90, local: 20, extras: [] },   // flight Skopje-Istanbul ~90 (est)
+        { code: 'TR', transport: 25, local: 110, extras: [] },  // bus/train Kars/Trabzon-Tbilisi ~25 (est); Istanbul-Ephesus-Pamukkale-Antalya-Cappadocia-Ankara buses + night train Ankara-Kars (est)
+        { code: 'GE', transport: 25, local: 65, extras: [] },   // Batumi-Tbilisi ~10 + marshrutka Tbilisi-Yerevan ~15 (est); Kazbegi/Sighnaghi/Kutaisi + Mestia marshrutka ~€17 each way (notes)
+        { code: 'AM', transport: 45, local: 40, extras: [] },   // Yerevan-Tbilisi ~15 + Tbilisi-Baku bus ~30 (est); Khor Virap/Tatev/Sevan/Dilijan (est)
+        { code: 'AZ', transport: 170, local: 25, extras: [     // flight Baku-Almaty ~170 (est, low); Gobustan/Sheki/Qabala (est)
+          rbExtra('Azerbaijan e-visa USD 23', 21, 'visa'),
+        ] },
+        { code: 'KZ', transport: 10, local: 50, extras: [] },   // shared taxi Almaty-Bishkek ~10 (est); Charyn tour-share, Almaty-Turkistan-Shymkent-Almaty (est)
+        { code: 'KG', transport: 60, local: 60, extras: [] },   // shared jeep Osh-Khorog ~60 (est); Bishkek-Karakol, Song-Kul 4x4 share, Song-Kul-Osh (est)
+        { code: 'TJ', transport: 21, local: 60, extras: [      // shared taxi Dushanbe-Samarkand ~21 (est); Khorog-Dushanbe shared taxi + Iskanderkul (est)
+          rbExtra('Pamir 4x4 + driver Khorog-Murghab-Khorog 3 days, shared by 3 (notes USD 150-400/day, midpoint 275; est)', 246, 'tour'),
+          rbExtra('GBAO permit USD 20', 18, 'visa'),
+        ] },
+        { code: 'UZ', local: 75, extras: [] },                  // Samarkand-Bukhara-Khiva train/taxi ~22 + flight Urgench-Tashkent ~55 (est)
+      ],
+    },
+
 };
 
 /**
@@ -29994,7 +31917,7 @@ function rbApplyBlockTextFixes(route, fixes) {
   let changed = false;
   fixes.forEach(([id, i, from, to, field = 'notes']) => {
     const blk = route.id === id && (i === null ? route : (route.blocks || [])[i]);
-    if (blk && (blk[field] || '').includes(from)) { blk[field] = blk[field].replace(from, to); changed = true; }
+    if (blk && (blk[field] || '').includes(from)) { blk[field] = blk[field].split(from).join(to); changed = true; }
   });
   return changed;
 }
@@ -30094,5 +32017,42 @@ function rbMigrateBatch912RouteFixes() {
   localStorage.setItem(RB_MIGRATE_FLAG_2026_10_BATCH912_ROUTE_FIXES, '1');
   let touched = false;
   rbRoutes.forEach(r => { if (rbFixBatch912RouteTexts(r)) touched = true; });
+  if (touched) rbSave();
+}
+
+// ---- Route-text fixes found by Phase 4 batches 13-20 (2026-10-28) ----
+//  - Germany + Austria + Slovenia (10-14 days) 🥨: an own-car route that ended "fly home from Ljubljana".
+//  - Scandinavia Overland 🚂: its last leg still described the expedition's onward flight to Svalbard.
+//  - The Channel Islands ferries (2 routes + the expedition's ferry table) still named Condor Ferries,
+//    which stopped on 28 March 2025; DFDS runs them now.
+//  - West Eurasia Overland 🐫: ends in Uzbekistan but its last leg described the Eurasia Grand Tour's
+//    onward flight Tashkent-Xi'an.
+const RB_CONDOR = ['(Condor Ferries, ', '(DFDS, successor to Condor since March 2025, '];
+const RB_BATCH1320_TEXT_FIXES = [
+  ['gt_seed_germany-austria-slovenia-10-14-days', 4, 'End of this route — fly home from Ljubljana.',
+    'End of this route — drive home from Ljubljana (~1,100 km via Salzburg and Munich, best split over 2 days).', 'transport_to_next'],
+  ['gt_seed_scandinavia-overland', 2,
+    'Short flight Honningsvåg (HVG, 31 km from Nordkapp) to Tromsø (Widerøe, ~1h05) — avoids the ~540 km drive back — followed by a connecting flight Tromsø-Longyearbyen (the only realistic connection to Svalbard, Alta has no LYR flight).',
+    RB_SCANDINAVIA_OVERLAND_END, 'transport_to_next'],
+  ['gt_seed_channel-islands-brittany-normandyopal-coast-belgium', 0, ...RB_CONDOR, 'transport_to_next'],
+  ['gt_seed_channel-islands-brittany-normandyopal-coast-belgium', 1, ...RB_CONDOR, 'transport_to_next'],
+  ['gt_seed_british-isles-celtic-coast-expedition', 10, ...RB_CONDOR, 'transport_to_next'],
+  ['gt_seed_british-isles-celtic-coast-expedition', 11, ...RB_CONDOR, 'transport_to_next'],
+  ['gt_seed_british-isles-celtic-coast-expedition', null, ...RB_CONDOR],
+  ['gt_seed_west-eurasia-overland', 12,
+    "Flight Tashkent-Xi'an, direct connection (China Eastern/Loong Air, ~6x/week) — replaces the old Ürümqi flight now that Xinjiang is no longer on the route",
+    "End of this route — fly home from Tashkent (1 stop). Continuing into China instead (as in Eurasia Grand Tour 🌏): direct flight Tashkent-Xi'an (China Eastern/Loong Air, ~6x/week)",
+    'transport_to_next'],
+];
+
+function rbFixBatch1320RouteTexts(route) {
+  return rbApplyBlockTextFixes(route, RB_BATCH1320_TEXT_FIXES);
+}
+
+function rbMigrateBatch1320RouteFixes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_10_BATCH1320_ROUTE_FIXES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_10_BATCH1320_ROUTE_FIXES, '1');
+  let touched = false;
+  rbRoutes.forEach(r => { if (rbFixBatch1320RouteTexts(r)) touched = true; });
   if (touched) rbSave();
 }

@@ -1,0 +1,16 @@
+airport_code,city,country_code,direction,eur_one_way,airline_or_routing,source,date_checked,confidence,notes
+CPH,Copenhagen,DK,out,90,KLM/SAS/Transavia/easyJet direct,estimate (no search),2026-10-28,medium,typical 70-110 booked 2-3 months ahead
+CPH,Copenhagen,DK,back,90,KLM/SAS/Transavia/easyJet direct,estimate (no search),2026-10-28,medium,typical 70-110
+HEL,Helsinki,FI,back,150,KLM/Finnair direct,mirror of HEL out row,2026-10-28,medium,assumed equal to out
+ARN,Stockholm Arlanda,SE,out,100,KLM/SAS/Norwegian direct,estimate (no search),2026-10-28,medium,used for Aland (ferry added separately)
+ARN,Stockholm Arlanda,SE,back,100,KLM/SAS/Norwegian direct,estimate (no search),2026-10-28,medium,used for Aland
+RVN,Rovaniemi,FI,out,190,Transavia seasonal direct / 1 stop via HEL or CPH,estimate (no search),2026-10-28,low,
+RVN,Rovaniemi,FI,back,190,Transavia seasonal direct / 1 stop via HEL or CPH,estimate (no search),2026-10-28,low,
+FAE,Faroe Islands (Vagar),FO,out,280,AMS-CPH ~90 + Atlantic Airways CPH-FAE ~190,estimate (no search),2026-10-28,low,
+FAE,Faroe Islands (Vagar),FO,back,280,Atlantic Airways FAE-CPH + CPH-AMS,estimate (no search),2026-10-28,low,
+GOH,Nuuk,GL,out,575,AMS-KEF-Nuuk (Icelandair/Air Greenland),route notes EUR 900-1400 return midpoint halved,2026-10-28,low,no one-way price available
+KEF,Reykjavik Keflavik,IS,out,120,Icelandair/Transavia/easyJet direct,estimate (no search),2026-10-28,medium,
+KEF,Reykjavik Keflavik,IS,back,120,Icelandair/Transavia/easyJet direct,estimate (no search),2026-10-28,medium,
+BGO,Bergen,NO,out,120,KLM/SAS/Norwegian direct,estimate (no search),2026-10-28,medium,
+BGO,Bergen,NO,back,120,KLM/SAS/Norwegian direct,estimate (no search),2026-10-28,medium,
+AES,Alesund,NO,back,130,KLM/SAS/Norwegian (direct or via OSL/BGO),estimate (no search),2026-10-28,low,

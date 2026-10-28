@@ -1,0 +1,1544 @@
+{
+ "batch": 14,
+ "group": "Greece, Cyprus & Turkey",
+ "routes": [
+  {
+   "id": "gt_seed_cyprus-6-days",
+   "name": "Cyprus (6 days) 🏝️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car from Larnaca.",
+   "description": "Larnaca, Nicosia, the Troodos Mountains, Paphos and Limassol.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a distinct, longer itinerary from the existing standalone 'Cyprus 🕊️' route (which covers Paphos/Limassol/Nicosia only, split off from Mediterranean Civilizations Expedition 🏛️); named/renamed to avoid confusion between the two. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_cyprus-6-days",
+    "name": "Cyprus (6 days) 🏝️",
+    "stops": 5,
+    "km_in_route": 240,
+    "km_from_nl": 3840,
+    "km_back_to_nl": 3820,
+    "km_by_country": {
+     "CY": 240
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "CY",
+     "country": "Cyprus",
+     "days": 6,
+     "budget": 390,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "Larnaca (1 day) — Nicosia including the Ledra Street crossing point (1 day) — the Troodos Mountains (1 day) — Paphos including Aphrodite's Rock (2 days) — Limassol (1 day). Budget ~€110-140/day. Season: April-June or September-October (July-August runs 35°C+). Web check (2026-08): Cyprus is EU but not Schengen — a passport/ID check on entry, no visa needed for Dutch/EU citizens; a rental car is needed, public transport outside the cities is limited.",
+     "transport_to_next": "End of this route — fly home from Larnaca.",
+     "destinations": [
+      {
+       "name": "Larnaca",
+       "lat": 34.9167,
+       "lng": 33.6333
+      },
+      {
+       "name": "Nicosia / Ledra Street",
+       "lat": 35.1706,
+       "lng": 33.3656
+      },
+      {
+       "name": "Troodos Mountains",
+       "lat": 34.9186,
+       "lng": 32.8595
+      },
+      {
+       "name": "Paphos & Aphrodite's Rock",
+       "lat": 34.772,
+       "lng": 32.4297
+      },
+      {
+       "name": "Limassol",
+       "lat": 34.7071,
+       "lng": 33.0226
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_cyprus-greece-9-days",
+   "name": "Cyprus + Greece (9 days) ✈️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Flight combo — Cyprus first, then a separate direct flight onward to Athens (or an island).",
+   "description": "Cyprus (Larnaca/Paphos) combined with Athens or a Greek island via a direct Larnaca-Athens flight.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_cyprus-greece-9-days",
+    "name": "Cyprus + Greece (9 days) ✈️",
+    "stops": 5,
+    "km_in_route": 1610,
+    "km_from_nl": 3840,
+    "km_back_to_nl": 3070,
+    "km_by_country": {
+     "CY": 140,
+     "GR": 1460
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "CY",
+     "country": "Cyprus",
+     "days": 5,
+     "budget": 325,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "No shared border, so this is really a flight combo: roughly 4-5 days in Cyprus (Larnaca/Paphos) plus a direct flight Larnaca-Athens (Aegean/Cyprus Airways/Sky Express/Wizz Air, ~1h40, from ~€120 return, several flights daily) plus 3-5 days in Athens or on an island (e.g. Athens plus a day trip to Aegina, or continuing on to Santorini). Budget: Cyprus ~€110-140/day. Season: April-June or September-October for both. Web check (2026-08): book this flight separately from any main flight from the Netherlands, and check baggage rules between the two airlines (they can differ). Cyprus is EU but not Schengen — passport/ID check on entry, no visa needed for Dutch/EU citizens.",
+     "transport_to_next": "Direct flight Larnaca-Athens (~1h40, several airlines/daily departures).",
+     "destinations": [
+      {
+       "name": "Larnaca",
+       "lat": 34.9167,
+       "lng": 33.6333
+      },
+      {
+       "name": "Paphos",
+       "lat": 34.772,
+       "lng": 32.4297
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 4,
+     "budget": 264,
+     "dailyRate": 66,
+     "carInDailyRate": false,
+     "notes": "Athens (3-4 days, Acropolis/Plaka/Monastiraki) plus a day trip to Aegina, or continuing on to Santorini instead. Budget: Greece ~€100-150/day. Acropolis needs its mandatory hhticket.gr timed-entry booking — see the standalone Athens trip for the full details. Travel advisory: yellow since 4 August 2026 for wildfires — re-check shortly before travel.",
+     "transport_to_next": "End of this route — fly home from Athens.",
+     "destinations": [
+      {
+       "name": "Athens",
+       "lat": 37.9838,
+       "lng": 23.7275
+      },
+      {
+       "name": "Aegina (day trip)",
+       "lat": 37.746,
+       "lng": 23.4283
+      },
+      {
+       "name": "Santorini (optional continuation)",
+       "lat": 36.4167,
+       "lng": 25.4325
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_cyprus-roadtrip-including-northern-cyprus-9-days",
+   "name": "Cyprus Roadtrip including Northern Cyprus (9 days) 🚙",
+   "mode": "rental",
+   "carInBudgetWording": "included",
+   "carEvidence": "k (2 days) — Ayia Napa/Protaras back to Larnaca (1-2 days). Budget ~€110-140/day including the rental car. Season: April-June or September-October. Web check (2026-0",
+   "travel_style": "Rental car for the whole loop, starting and ending in Larnaca; the Green Line crossing on foot at Ledra Street.",
+   "description": "A full Cyprus roadtrip including a crossing into Northern Cyprus at Nicosia.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_cyprus-roadtrip-including-northern-cyprus-9-days",
+    "name": "Cyprus Roadtrip including Northern Cyprus (9 days) 🚙",
+    "stops": 7,
+    "km_in_route": 380,
+    "km_from_nl": 3840,
+    "km_back_to_nl": 3860,
+    "km_by_country": {
+     "CY": 380
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "CY",
+     "country": "Cyprus",
+     "days": 9,
+     "budget": 1125,
+     "dailyRate": 125,
+     "carInDailyRate": true,
+     "notes": "Larnaca (1 day) — Nicosia plus a crossing of the Green Line into North Nicosia (1 day) — Troodos wine villages (1-2 days) — Paphos including the Akamas Peninsula/Avakas Gorge and the Blue Lagoon (2 days) — Limassol plus Kourion and Aphrodite's Rock (2 days) — Ayia Napa/Protaras back to Larnaca (1-2 days). Budget ~€110-140/day including the rental car. Season: April-June or September-October. Web check (2026-08) — Northern Cyprus nuance: crossing at official checkpoints is normal and permitted for tourists (Ledra Street in Nicosia is pedestrian-only; cars can only cross at the Metehan checkpoint). Most Republic-of-Cyprus car rental companies forbid taking their car into the North — check with the rental company first. If it is permitted, mandatory Turkish border insurance is needed (~€20, covers 3 days of third-party liability, does not cover damage to your own rental car). The Netherlands does not recognize Northern Cyprus as a state; entering via the North (e.g. Ercan Airport) is considered illegal entry by the Republic of Cyprus authorities, and consular assistance there is limited. Stay out of military zones and the buffer zone outside official checkpoints — fines or imprisonment are possible. Cyprus itself is EU but not Schengen — passport/ID check on entry, no visa needed for Dutch/EU citizens.",
+     "transport_to_next": "End of this route — back to Larnaca to fly home.",
+     "destinations": [
+      {
+       "name": "Larnaca",
+       "lat": 34.9167,
+       "lng": 33.6333
+      },
+      {
+       "name": "Nicosia / Ledra Street",
+       "lat": 35.1706,
+       "lng": 33.3656
+      },
+      {
+       "name": "North Nicosia (Lefkoşa)",
+       "lat": 35.1875,
+       "lng": 33.3853
+      },
+      {
+       "name": "Troodos wine villages",
+       "lat": 34.9186,
+       "lng": 32.8595
+      },
+      {
+       "name": "Paphos, Akamas/Avakas Gorge & Blue Lagoon",
+       "lat": 34.772,
+       "lng": 32.4297
+      },
+      {
+       "name": "Limassol, Kourion & Aphrodite's Rock",
+       "lat": 34.7071,
+       "lng": 33.0226
+      },
+      {
+       "name": "Ayia Napa / Protaras",
+       "lat": 34.9885,
+       "lng": 34.0086
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_athens-4-days",
+   "name": "Athens (4 days) 🏛️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "City trip based in Athens, metro/on foot plus one day-trip bus or tour to Sounion.",
+   "description": "Acropolis, Plaka, Monastiraki and a day trip to Cape Sounion.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_athens-4-days",
+    "name": "Athens (4 days) 🏛️",
+    "stops": 3,
+    "km_in_route": 60,
+    "km_from_nl": 2770,
+    "km_back_to_nl": 2830,
+    "km_by_country": {
+     "GR": 60
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 4,
+     "budget": 256,
+     "dailyRate": 64,
+     "carInDailyRate": false,
+     "notes": "Acropolis, Plaka and Monastiraki (2 days) plus the Acropolis Museum, then a day trip to Cape Sounion and the Temple of Poseidon (1 day). Budget ~€70-90/day (private hostel room or budget hotel ~€45-55, food €20-30, extras €10-15). Season: April-June or September-October are best (less heat and fewer crowds), summer can hit 40°C. Web check (2026-08): the Acropolis now requires a mandatory timed-entry ticket booked in advance via hhticket.gr — €30 in summer (Apr-Oct) / €15 in winter, capped at 20,000 visitors/day, already selling out 5-7 days ahead in June-August (morning and late-afternoon slots go first); last entry 19:00, closes 19:30, free for EU citizens under 25. Travel advisory: yellow since 4 August 2026 for wildfires (70+ burning simultaneously at the August 2026 peak, including the Athens region) — can cause road closures or poor air quality and the situation can shift quickly in heat/wind; re-check just before travel, no overall negative advisory otherwise.",
+     "transport_to_next": "End of this route — fly home from Athens.",
+     "destinations": [
+      {
+       "name": "Acropolis & Plaka/Monastiraki",
+       "lat": 37.9715,
+       "lng": 23.7267
+      },
+      {
+       "name": "Acropolis Museum",
+       "lat": 37.9686,
+       "lng": 23.7285
+      },
+      {
+       "name": "Cape Sounion (Temple of Poseidon)",
+       "lat": 37.6505,
+       "lng": 24.0247
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_athens-day-trips-6-days",
+   "name": "Athens + Day Trips (6 days) 🏺",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "City trip based in Athens, day-trip buses/tours/rental car for Sounion, Delphi and the Argolid.",
+   "description": "Athens plus day trips to Cape Sounion, Delphi, and Nafplio/Mycenae/Epidaurus.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_athens-day-trips-6-days",
+    "name": "Athens + Day Trips (6 days) 🏺",
+    "stops": 5,
+    "km_in_route": 410,
+    "km_from_nl": 2770,
+    "km_back_to_nl": 2760,
+    "km_by_country": {
+     "GR": 410
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 6,
+     "budget": 384,
+     "dailyRate": 64,
+     "carInDailyRate": false,
+     "notes": "Athens (3 days, Acropolis/Plaka/Monastiraki) plus day trips: Cape Sounion, Delphi (a long one — 3.5-4 hours each way, consider one overnight in Delphi or nearby Arachova instead of a rushed there-and-back), and Nafplio/Mycenae/Epidaurus as a single day trip. Stays Athens-based throughout, unlike the looping Peloponnese trip below — no change of base. Budget ~€75-95/day. Season: same as the standalone Athens trip. Web check (2026-08): the Delphi site+museum combo ticket runs ~€12 in summer / €6 in winter; the Mycenae/Epidaurus combo is ~€20 summer / €10 winter, free for EU visitors under 25 and 50% off for EU seniors 65+ (Oct-May). Acropolis still needs its mandatory hhticket.gr timed-entry booking — see the standalone Athens trip for the full details. Travel advisory: yellow since 4 August 2026 for wildfires — re-check shortly before travel, especially April-October.",
+     "transport_to_next": "End of this route — fly home from Athens.",
+     "destinations": [
+      {
+       "name": "Acropolis & Plaka/Monastiraki",
+       "lat": 37.9715,
+       "lng": 23.7267
+      },
+      {
+       "name": "Cape Sounion (Temple of Poseidon)",
+       "lat": 37.6505,
+       "lng": 24.0247
+      },
+      {
+       "name": "Delphi",
+       "lat": 38.4824,
+       "lng": 22.501
+      },
+      {
+       "name": "Arachova",
+       "lat": 38.4794,
+       "lng": 22.5883
+      },
+      {
+       "name": "Nafplio / Mycenae / Epidaurus",
+       "lat": 37.5673,
+       "lng": 22.8078
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_athens-peloponnese-extended-12-days",
+   "name": "Athens + Peloponnese: Extended (12 days) 👑",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car for the whole loop, starting and ending in Athens.",
+   "description": "An extended Peloponnese loop from Athens, adding Monemvasia, the Mani and Olympia.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_athens-peloponnese-extended-12-days",
+    "name": "Athens + Peloponnese: Extended (12 days) 👑",
+    "stops": 10,
+    "km_in_route": 710,
+    "km_from_nl": 2770,
+    "km_back_to_nl": 2610,
+    "km_by_country": {
+     "GR": 710
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 12,
+     "budget": 768,
+     "dailyRate": 64,
+     "carInDailyRate": false,
+     "notes": "A longer, more elaborate loop with more stops than the standalone Peloponnese Loop above — Monemvasia, the Mani and Olympia, instead of the Athens day trips of the 'Athens + Day Trips' version. Athens (3 days) — Nafplio (2 days) — Mycenae/Epidaurus (day trip) — Mystras/Sparta (2 days) — Monemvasia (2 days) — Kalamata/Mani (2 days) — Olympia (1-2 days) — back via Patras/Corinth. Budget ~€75-95/day. Season: same as the other Greece routes. Web check (2026-08): the Olympia site+museum combo runs ~€20 in summer / €10 in winter; the Mani roads are narrow and slow, plan extra travel time. Acropolis needs its mandatory hhticket.gr timed-entry booking — see the standalone Athens trip. Travel advisory: yellow since 4 August 2026 for wildfires — re-check shortly before travel.",
+     "transport_to_next": "End of this route — fly home from Athens.",
+     "destinations": [
+      {
+       "name": "Athens",
+       "lat": 37.9838,
+       "lng": 23.7275
+      },
+      {
+       "name": "Nafplio",
+       "lat": 37.5673,
+       "lng": 22.8078
+      },
+      {
+       "name": "Mycenae",
+       "lat": 37.7304,
+       "lng": 22.7558
+      },
+      {
+       "name": "Epidaurus",
+       "lat": 37.596,
+       "lng": 23.0778
+      },
+      {
+       "name": "Mystras",
+       "lat": 37.0708,
+       "lng": 22.3663
+      },
+      {
+       "name": "Sparta",
+       "lat": 37.0733,
+       "lng": 22.4297
+      },
+      {
+       "name": "Monemvasia",
+       "lat": 36.6874,
+       "lng": 23.0533
+      },
+      {
+       "name": "Kalamata / Mani (Areopoli)",
+       "lat": 37.0389,
+       "lng": 22.1142
+      },
+      {
+       "name": "Olympia",
+       "lat": 37.6383,
+       "lng": 21.63
+      },
+      {
+       "name": "Patras",
+       "lat": 38.2466,
+       "lng": 21.7346
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_corfu-5-7-days",
+   "name": "Corfu (5-7 days) 🏝️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Single-island stay, rental car useful but not essential — Corfu Town, Paleokastritsa, Sidari/the north coast.",
+   "description": "Corfu Town's Venetian old town, Paleokastritsa, and Sidari/the north coast.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14d/21 (Islands: Greek islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. No pre-existing Route Builder route covers Corfu as a standalone single-island trip — the existing Greece-related routes (Greece & Crete 🫒, Greek Islands: Paros, Naxos & Santorini (9 days) 🏖️, Greece Roadtrip, the Northern Greece/North Macedonia/Bulgaria combos, and the Turkey + Greece Aegean/Dodecanese route) don't reach Corfu at all. Genuinely new ground for Route Builder, not a granular slice of an existing route. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_corfu-5-7-days",
+    "name": "Corfu (5-7 days) 🏝️",
+    "stops": 3,
+    "km_in_route": 40,
+    "km_from_nl": 2330,
+    "km_back_to_nl": 2310,
+    "km_by_country": {
+     "GR": 40
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 2,
+     "budget": 130,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flight Amsterdam-Corfu (TUI fly, seasonal, roughly April-October). Corfu Town's Venetian old town (2 days). Budget ~€55-70/day average across the route (used here at ~€60-65/day). Season: May-October, peak July-August busiest and priciest. ⚠️⚠️ Web check (2026-08): confirmed wildfire evacuation (~2,400 people) in mid-August 2026, fire reported \"under control\" as of 7 August 2026 — re-check the situation right before departure, this is an active-incident note, not a resolved one. Travel advisory: yellow since 4 August 2026 for wildfires (nationwide), though Corfu itself isn't individually named on the Dutch government's travel-advisory site.",
+     "transport_to_next": "Short drive north along the coast to Paleokastritsa.",
+     "destinations": [
+      {
+       "name": "Corfu Town (Venetian old town)",
+       "lat": 39.6243,
+       "lng": 19.9217
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 2,
+     "budget": 130,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "Paleokastritsa (1-2 days) — the monastery on the headland, coves, and boat trips to the sea caves.",
+     "transport_to_next": "Drive further north to Sidari.",
+     "destinations": [
+      {
+       "name": "Paleokastritsa",
+       "lat": 39.6698,
+       "lng": 19.7847
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 2,
+     "budget": 120,
+     "dailyRate": 60,
+     "carInDailyRate": false,
+     "notes": "Sidari and the north coast (2 days), including the Canal d'Amour rock formations, to close the trip.",
+     "transport_to_next": "End of this route — return flight from Corfu to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Sidari (north coast)",
+       "lat": 39.7897,
+       "lng": 19.9106
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_crete-roadtrip-7-10-days",
+   "name": "Crete Roadtrip (7-10 days) 🏝️",
+   "mode": "rental",
+   "carInBudgetWording": "included",
+   "carEvidence": "hole loop. Chania's old town and Venetian harbour (2 days). Budget ~€60-75/day including the rental car (used here at ~€65-70/day). Season: April-October. ⚠️⚠️ Not",
+   "travel_style": "Rental car essential for the full Crete loop — Chania, Rethymno, Heraklion/Knossos, the south coast (Matala/Plakias), optionally the Samaria Gorge.",
+   "description": "A full Crete roadtrip: Chania, Rethymno, Heraklion/Knossos, the south coast (Matala/Plakias), and optionally the Samaria Gorge.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14d/21 (Islands: Greek islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️ Real overlap, explicitly flagged: Route Builder already has Crete content bundled inside 'Greece & Crete 🫒' (Mediterranean Civilizations Expedition split, 19 days total — 12 days mainland Greece plus 7 days Crete covering Heraklion, Knossos, Chania and the Samaria Gorge). Even though EUROPA_TRIP_IDEAS.md's own intro note for this section claims Crete 'never got its own item' in its own batch 10 section, that claim doesn't account for this pre-existing route, which does already cover Crete substantially — just bundled with 12 days of mainland Greece, not as a standalone Crete-only trip. Built anyway per the source list since this is a standalone Crete-only trip (Chania, Rethymno, Heraklion/Knossos, Matala/Plakias, optional Samaria Gorge), not a Greece+Crete combo — flagged for review, not merged. Deliberately given a distinct function name (rbBuildCreteRoadtripRoute) rather than reusing rbBuildGreeceCreteRoute, per this project's established collision-resolution pattern (see Svalbard (Longyearbyen) (6 days) 🌌 vs. the pre-existing Svalbard 🐻‍❄️, or Sardinia Roadtrip (7-10 days) 🏝️ vs. Sardinia (9 days) ⛵, for the precedent). The pre-existing Greece & Crete 🫒 route itself is untouched, not renamed, not modified. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_crete-roadtrip-7-10-days",
+    "name": "Crete Roadtrip (7-10 days) 🏝️",
+    "stops": 8,
+    "km_in_route": 310,
+    "km_from_nl": 3080,
+    "km_back_to_nl": 3100,
+    "km_by_country": {
+     "GR": 310
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 2,
+     "budget": 140,
+     "dailyRate": 70,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flight Amsterdam-Chania or Amsterdam-Heraklion (seasonal, various carriers). Rental car essential for the whole loop. Chania's old town and Venetian harbour (2 days). Budget ~€60-75/day including the rental car (used here at ~€65-70/day). Season: April-October. ⚠️⚠️ Note: Route Builder already has Crete content bundled inside 'Greece & Crete 🫒' (Mediterranean Civilizations) — built anyway per the source list since this is a standalone Crete-only trip, not a Greece+Crete combo; flagged for review, not merged. See this route's overall notes below for the full detail on the overlap.",
+     "transport_to_next": "Short drive east along the coast to Rethymno.",
+     "destinations": [
+      {
+       "name": "Chania Old Town",
+       "lat": 35.5138,
+       "lng": 24.018
+      },
+      {
+       "name": "Chania Venetian Harbour",
+       "lat": 35.5158,
+       "lng": 24.0203
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 1,
+     "budget": 70,
+     "dailyRate": 70,
+     "carInDailyRate": false,
+     "notes": "Rethymno's old town (1 day) — a quieter stop on the drive between Chania and Heraklion.",
+     "transport_to_next": "Drive on east to Heraklion and Knossos.",
+     "destinations": [
+      {
+       "name": "Rethymno Old Town",
+       "lat": 35.3667,
+       "lng": 24.4833
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 2,
+     "budget": 140,
+     "dailyRate": 70,
+     "carInDailyRate": false,
+     "notes": "Heraklion and the Minoan palace of Knossos (2 days) — the same sites the mainland-plus-Crete route above also covers, but as part of a standalone Crete-only loop here.",
+     "transport_to_next": "Drive south to the Libyan Sea coast (Matala/Plakias).",
+     "destinations": [
+      {
+       "name": "Heraklion",
+       "lat": 35.3387,
+       "lng": 25.1442
+      },
+      {
+       "name": "Knossos",
+       "lat": 35.2977,
+       "lng": 25.1628
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 2,
+     "budget": 140,
+     "dailyRate": 70,
+     "carInDailyRate": false,
+     "notes": "The south coast on the Libyan Sea — Matala (former hippie caves) and Plakias (2 days). ⚠️⚠️ Web check (2026-08): Crete had confirmed evacuations on 30 July 2026, with large fires destroying farmland and olive groves — one of the season's hardest-hit areas alongside Corfu. Possible road closures; re-check the situation right before departure, this is an active-incident note, not a resolved one.",
+     "transport_to_next": "Optional inland detour to the Samaria Gorge before closing the loop.",
+     "destinations": [
+      {
+       "name": "Matala",
+       "lat": 34.9967,
+       "lng": 24.75
+      },
+      {
+       "name": "Plakias",
+       "lat": 35.19,
+       "lng": 24.4067
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 2,
+     "budget": 140,
+     "dailyRate": 70,
+     "carInDailyRate": false,
+     "notes": "Optional extension: a hike through the Samaria Gorge (2 days, allowing for an early start and the return transfer). Typically open mid-May-October, weather-dependent.",
+     "transport_to_next": "End of this route — return flight from Chania or Heraklion to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Samaria Gorge",
+       "lat": 35.3167,
+       "lng": 23.95
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_cyclades-5-7-days",
+   "name": "Cyclades (5-7 days) 🏝️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Ferry-hopping through the Cyclades — Santorini, Naxos, Paros.",
+   "description": "Island-hopping through the Cyclades: Santorini, Naxos and Paros.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14d/21 (Islands: Greek islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️ Real overlap: Route Builder already has 'Greek Islands: Paros, Naxos & Santorini (9 days) 🏖️' (built in batch 10/21, Athens + the same three islands, 9 days at ~€125/day). Built anyway per the source list since EUROPA_TRIP_IDEAS.md carries this as its own separate 5-7 day item — flagged here for review, not merged. The difference is this route drops the Athens leg and runs shorter (5-7 vs. 9 days) at a lower daily budget, but the three islands themselves are identical. Deliberately given a distinct function name rather than reusing rbBuildGreekIslandsParosNaxosSantoriniRoute, per this project's established collision-resolution pattern (see Svalbard (Longyearbyen) (6 days) 🌌 vs. the pre-existing Svalbard 🐻‍❄️ for the precedent). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_cyclades-5-7-days",
+    "name": "Cyclades (5-7 days) 🏝️",
+    "stops": 6,
+    "km_in_route": 140,
+    "km_from_nl": 3070,
+    "km_back_to_nl": 2970,
+    "km_by_country": {
+     "GR": 140
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 2,
+     "budget": 150,
+     "dailyRate": 75,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flight Amsterdam-Santorini (seasonal) or via a connection through Athens. Santorini (2-3 days) — Fira and Oia's caldera views. Budget ~€60-75/day average across the route, Santorini pricier than Naxos/Paros (used here at ~€70-75/day). Season: May-September, peak July-August; June/September better for heat and crowds. ⚠️ Web check (2026-08): Santorini's cruise-passenger cap of 8,000/day (since 2025) is enforced more strictly in 2026 — now calculated on 100% ship capacity instead of 80% — plus a €20 peak-season (April-October) per-person fee for disembarking cruise passengers. Travel advisory: yellow since 4 August 2026 for wildfires (nationwide); Santorini itself isn't individually named.",
+     "transport_to_next": "Ferry to Naxos.",
+     "destinations": [
+      {
+       "name": "Santorini (Fira)",
+       "lat": 36.4167,
+       "lng": 25.4325
+      },
+      {
+       "name": "Oia",
+       "lat": 36.4614,
+       "lng": 25.3753
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 2,
+     "budget": 130,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "Naxos (2 days) — Chora and the Portara, plus the island's beaches, noticeably calmer and cheaper than Santorini.",
+     "transport_to_next": "Ferry to Paros.",
+     "destinations": [
+      {
+       "name": "Naxos (Chora)",
+       "lat": 37.1055,
+       "lng": 25.3764
+      },
+      {
+       "name": "Portara",
+       "lat": 37.1122,
+       "lng": 25.3742
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 2,
+     "budget": 130,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "Paros (2 days) — Parikia and Naoussa. ⚠️⚠️ Web check (2026-08): Paros had a wildfire in late July 2026 (~250 hectares, evacuations) — a short incident, reported under control by mid-August 2026, but the Meltemi wind raises fire risk across the Cyclades generally, so re-check the situation right before departure.",
+     "transport_to_next": "End of this route — ferry back to Santorini/Athens (Piraeus), then flight to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Paros (Parikia)",
+       "lat": 37.0844,
+       "lng": 25.1489
+      },
+      {
+       "name": "Naoussa",
+       "lat": 37.1256,
+       "lng": 25.2367
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_cyclades-island-hopping-7-10-days",
+   "name": "Cyclades Island Hopping (7-10 days) 🏝️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Ferry-hopping through the Cyclades, adding the more remote/quieter islands — Santorini, Ios, Naxos, Paros, and Milos or Folegandros.",
+   "description": "Island-hopping through the Cyclades with a quieter twist: Santorini, Ios, Naxos, Paros, and Milos or Folegandros.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14d/21 (Islands: Greek islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️ Partial overlap, explicitly flagged: Route Builder already has 'Greek Islands: Paros, Naxos & Santorini (9 days) 🏖️' (batch 10/21) and, from this same batch, Cyclades (5-7 days) 🏝️ above — both share the Santorini/Naxos/Paros core. This route differs by adding Ios and Milos/Folegandros (deliberately more remote/off-the-beaten-path islands, per EUROPA_TRIP_IDEAS.md's own differentiator note) and dropping Athens — a genuinely different itinerary shape, not a silent duplicate, hence flagged rather than merged. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_cyclades-island-hopping-7-10-days",
+    "name": "Cyclades Island Hopping (7-10 days) 🏝️",
+    "stops": 10,
+    "km_in_route": 260,
+    "km_from_nl": 3070,
+    "km_back_to_nl": 2970,
+    "km_by_country": {
+     "GR": 260
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 2,
+     "budget": 150,
+     "dailyRate": 75,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flight Amsterdam-Santorini (seasonal) or via a connection through Athens. Santorini (2 days) to start — same cruise-cap and pricing notes as the shorter Cyclades route apply here too. Budget ~€55-70/day average across the route, Milos/Folegandros noticeably cheaper than Santorini (used here at ~€70-75/day on Santorini, tapering down later in the route). Season: May-September, peak July-August. ⚠️ Web check (2026-08): Santorini's cruise-passenger cap of 8,000/day (since 2025) is enforced more strictly in 2026 (now calculated on 100% ship capacity instead of 80%), plus a €20 peak-season (April-October) per-person fee for disembarking cruise passengers.",
+     "transport_to_next": "Ferry to Ios.",
+     "destinations": [
+      {
+       "name": "Santorini (Fira)",
+       "lat": 36.4167,
+       "lng": 25.4325
+      },
+      {
+       "name": "Oia",
+       "lat": 36.4614,
+       "lng": 25.3753
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 2,
+     "budget": 130,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "Ios (1-2 days) — quieter and more laid-back than Santorini.",
+     "transport_to_next": "Ferry to Naxos.",
+     "destinations": [
+      {
+       "name": "Ios (Chora)",
+       "lat": 36.7167,
+       "lng": 25.2833
+      },
+      {
+       "name": "Mylopotas Beach",
+       "lat": 36.7,
+       "lng": 25.2833
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 2,
+     "budget": 130,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "Naxos (2 days) — the same stop as on the shorter Cyclades route above.",
+     "transport_to_next": "Ferry to Paros.",
+     "destinations": [
+      {
+       "name": "Naxos (Chora)",
+       "lat": 37.1055,
+       "lng": 25.3764
+      },
+      {
+       "name": "Portara",
+       "lat": 37.1122,
+       "lng": 25.3742
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 1,
+     "budget": 65,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "Paros (1-2 days). ⚠️⚠️ Web check (2026-08): the same Paros wildfire incident noted on the shorter Cyclades route applies here too — a late-July 2026 fire (~250 hectares, evacuations), reported under control by mid-August 2026, with the Meltemi wind keeping fire risk elevated across the Cyclades generally; re-check right before departure.",
+     "transport_to_next": "Ferry on to Milos (or Folegandros as an alternative).",
+     "destinations": [
+      {
+       "name": "Paros (Parikia)",
+       "lat": 37.0844,
+       "lng": 25.1489
+      },
+      {
+       "name": "Naoussa",
+       "lat": 37.1256,
+       "lng": 25.2367
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 2,
+     "budget": 140,
+     "dailyRate": 70,
+     "carInDailyRate": false,
+     "notes": "Milos (2 days) — or Folegandros (Chora, 36.6167/24.9167) as an alternative — both more remote and quieter than the main Santorini-Naxos-Paros route, and cheaper than Santorini. ⚠️ Web check (2026-08): ferry connections to Milos/Folegandros are less frequent than the main Cyclades route — check the schedule ahead of time.",
+     "transport_to_next": "End of this route — ferry back via Santorini/Piraeus, then flight from Athens to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Adamas (Milos)",
+       "lat": 36.7275,
+       "lng": 24.4306
+      },
+      {
+       "name": "Sarakiniko Beach",
+       "lat": 36.7128,
+       "lng": 24.465
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_greece-roadtrip-12-days",
+   "name": "Greece Roadtrip (12 days) 🚗",
+   "mode": "rental",
+   "carInBudgetWording": "included",
+   "carEvidence": "mpia (3-4 days) — back to Athens, by rental car throughout. Budget ~€90-140/day including the rental car. Season: April-June or September-October (the interior gets",
+   "travel_style": "Rental car for the whole loop, starting and ending in Athens.",
+   "description": "A rental-car loop through Athens, Meteora, Delphi and the Peloponnese.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_greece-roadtrip-12-days",
+    "name": "Greece Roadtrip (12 days) 🚗",
+    "stops": 6,
+    "km_in_route": 840,
+    "km_from_nl": 2770,
+    "km_back_to_nl": 2670,
+    "km_by_country": {
+     "GR": 840
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 12,
+     "budget": 1380,
+     "dailyRate": 115,
+     "carInDailyRate": true,
+     "notes": "Athens (2 days) — Meteora (2 days) — Delphi (1 day) — the Peloponnese: Nafplio/Mycenae/Olympia (3-4 days) — back to Athens, by rental car throughout. Budget ~€90-140/day including the rental car. Season: April-June or September-October (the interior gets very hot in summer). Web check (2026-08): each Meteora monastery has its own rotating closing day; check rental car insurance and toll roads in advance; parking in central Athens is difficult. Acropolis needs its mandatory hhticket.gr timed-entry booking — see the standalone Athens trip for the full details. Travel advisory: yellow since 4 August 2026 for wildfires — re-check shortly before travel, especially April-October.",
+     "transport_to_next": "End of this route — fly home from Athens.",
+     "destinations": [
+      {
+       "name": "Athens",
+       "lat": 37.9838,
+       "lng": 23.7275
+      },
+      {
+       "name": "Meteora",
+       "lat": 39.7217,
+       "lng": 21.6306
+      },
+      {
+       "name": "Delphi",
+       "lat": 38.4824,
+       "lng": 22.501
+      },
+      {
+       "name": "Nafplio",
+       "lat": 37.5673,
+       "lng": 22.8078
+      },
+      {
+       "name": "Mycenae",
+       "lat": 37.7304,
+       "lng": 22.7558
+      },
+      {
+       "name": "Olympia",
+       "lat": 37.6383,
+       "lng": 21.63
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_greek-islands-paros-naxos-santorini-9-days",
+   "name": "Greek Islands: Paros, Naxos & Santorini (9 days) 🏖️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Fly into Athens, island-hop by ferry, fly or ferry home via Athens.",
+   "description": "Island-hopping through the Cyclades: Paros, Naxos and Santorini.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_greek-islands-paros-naxos-santorini-9-days",
+    "name": "Greek Islands: Paros, Naxos & Santorini (9 days) 🏖️",
+    "stops": 4,
+    "km_in_route": 330,
+    "km_from_nl": 2770,
+    "km_back_to_nl": 3070,
+    "km_by_country": {
+     "GR": 330
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 9,
+     "budget": 1125,
+     "dailyRate": 125,
+     "carInDailyRate": false,
+     "notes": "Athens (1 day) then ferry to Paros (3 nights) — Naxos (3 nights) — Santorini (2 nights) — flight or ferry back to Athens. Budget ~€100-150/day including ferries (€20-70 per leg). Season: June to mid-September (July-August busy and expensive; May/September quieter and cheaper). Web check (2026-08): Naxos-Paros is 25-50 minutes (up to 10x/day); Paros-Santorini 1h30-5h40; Naxos-Santorini 1-3h — the final 2026 sailing schedules are only confirmed in spring, so check ferryhopper.com shortly before departure; the meltemi wind can cancel summer ferries, so book flexibly or early in high season. Travel advisory: yellow since 4 August 2026 for wildfires (including Crete, though not on this itinerary) — re-check shortly before travel.",
+     "transport_to_next": "End of this route — flight or ferry back to Athens to fly home.",
+     "destinations": [
+      {
+       "name": "Athens",
+       "lat": 37.9838,
+       "lng": 23.7275
+      },
+      {
+       "name": "Paros (Parikia)",
+       "lat": 37.0844,
+       "lng": 25.1489
+      },
+      {
+       "name": "Naxos (Chora)",
+       "lat": 37.1055,
+       "lng": 25.3764
+      },
+      {
+       "name": "Santorini (Fira)",
+       "lat": 36.4167,
+       "lng": 25.4325
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_ionian-islands-5-7-days",
+   "name": "Ionian Islands (5-7 days) 🏝️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Mainland ferry from Kyllini (Peloponnese) links the two islands — no Corfu connection, no rental car strictly required but useful on each island.",
+   "description": "Kefalonia (Melissani Cave, Myrtos Beach) and Zakynthos (Navagio/Shipwreck Beach, Blue Caves), linked via the mainland rather than through Corfu.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14d/21 (Islands: Greek islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. No pre-existing Route Builder route covers Kefalonia or Zakynthos at all, standalone or otherwise. Genuinely new ground for Route Builder. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_ionian-islands-5-7-days",
+    "name": "Ionian Islands (5-7 days) 🏝️",
+    "stops": 6,
+    "km_in_route": 180,
+    "km_from_nl": 2540,
+    "km_back_to_nl": 2590,
+    "km_by_country": {
+     "GR": 180
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 3,
+     "budget": 195,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "Entry: flight to Kefalonia (seasonal charter/low-cost carriers from Amsterdam in summer) or a mainland ferry from Kyllini (Peloponnese) — deliberately no Corfu link on this route, see below. Kefalonia (3 days): the Melissani Cave and Myrtos Beach. Budget ~€55-70/day average across the route (used here at ~€65/day). Season: May-October. Route note: this deliberately excludes Corfu — there's currently no direct Corfu-Zakynthos ferry, and the full island chain Corfu-Paxos-Lefkada-Meganisi-Ithaca-Kefalonia-Zakynthos takes 12-13 hours of sailing time, not realistic within a 5-7 day trip; both islands here are reachable via the mainland ferry from Kyllini instead, no Corfu connection needed. ⚠️ Web check (2026-08): Kefalonia was not named in the wildfire sources consulted as of August 2026 — less acute than Corfu/Crete/Paros this season, though the general yellow Greece-wide wildfire advisory (since 4 August 2026) still applies.",
+     "transport_to_next": "Ferry from Kefalonia (or via the mainland at Kyllini, Peloponnese) to Zakynthos.",
+     "destinations": [
+      {
+       "name": "Argostoli (Kefalonia)",
+       "lat": 38.1756,
+       "lng": 20.4881
+      },
+      {
+       "name": "Melissani Cave",
+       "lat": 38.2531,
+       "lng": 20.6167
+      },
+      {
+       "name": "Myrtos Beach",
+       "lat": 38.3167,
+       "lng": 20.4333
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 3,
+     "budget": 195,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "Zakynthos (3 days): Navagio/Shipwreck Beach and the Blue Caves. Same wildfire-advisory note as Kefalonia above — neither island was named in the sources consulted as of August 2026.",
+     "transport_to_next": "End of this route — mainland ferry back via Kyllini, or a flight from Zakynthos to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Zakynthos Town",
+       "lat": 37.787,
+       "lng": 20.8995
+      },
+      {
+       "name": "Navagio (Shipwreck Beach)",
+       "lat": 37.8595,
+       "lng": 20.6247
+      },
+      {
+       "name": "Blue Caves",
+       "lat": 37.9128,
+       "lng": 20.7261
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_northern-greece-9-days",
+   "name": "Northern Greece (9 days) ⛰️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car recommended, fly into and home from Thessaloniki.",
+   "description": "Thessaloniki, the monasteries of Meteora, and the Halkidiki beaches.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_northern-greece-9-days",
+    "name": "Northern Greece (9 days) ⛰️",
+    "stops": 7,
+    "km_in_route": 750,
+    "km_from_nl": 2420,
+    "km_back_to_nl": 2450,
+    "km_by_country": {
+     "GR": 750
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 9,
+     "budget": 576,
+     "dailyRate": 64,
+     "carInDailyRate": false,
+     "notes": "Thessaloniki (2-3 days) — Meteora/Kalabaka (2 days) — Halkidiki beaches (2-3 days), with Vergina, Edessa and Mount Olympus as options. Budget ~€65-85/day (cheaper than Athens or the islands), a car is recommended. Season: May-June or September are best; Halkidiki gets busier and pricier in July-August. Web check (2026-08): each Meteora monastery has its own rotating closing day — check per monastery in advance — plus a dress code (shoulders and knees covered), entry ~€3 per monastery, sometimes cash-only. Travel advisory: yellow since 4 August 2026 for wildfires, situation can shift fast in heat/wind — re-check shortly before travel.",
+     "transport_to_next": "End of this route — fly home from Thessaloniki.",
+     "destinations": [
+      {
+       "name": "Thessaloniki",
+       "lat": 40.6401,
+       "lng": 22.9444
+      },
+      {
+       "name": "Meteora",
+       "lat": 39.7217,
+       "lng": 21.6306
+      },
+      {
+       "name": "Kalabaka",
+       "lat": 39.7025,
+       "lng": 21.628
+      },
+      {
+       "name": "Halkidiki",
+       "lat": 40,
+       "lng": 23.6
+      },
+      {
+       "name": "Vergina",
+       "lat": 40.4667,
+       "lng": 22.3167
+      },
+      {
+       "name": "Edessa",
+       "lat": 40.7994,
+       "lng": 22.0475
+      },
+      {
+       "name": "Mount Olympus / Litochoro",
+       "lat": 40.0925,
+       "lng": 22.4989
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_peloponnese-loop-9-days",
+   "name": "Peloponnese Loop (9 days) 🏟️",
+   "mode": "rental",
+   "carInBudgetWording": "excluded",
+   "carEvidence": "ia (1-2 days) — back via Corinth. Budget ~€70-90/day plus a rental car/fuel at ~€25-35/day on top. Season: April-June or September-October; note the Epidauru",
+   "travel_style": "Rental car for the whole loop, starting and ending in Athens.",
+   "description": "A real driving loop through the Peloponnese: Nafplio, Mycenae, Epidaurus, Mystras and Monemvasia.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_peloponnese-loop-9-days",
+    "name": "Peloponnese Loop (9 days) 🏟️",
+    "stops": 8,
+    "km_in_route": 580,
+    "km_from_nl": 2770,
+    "km_back_to_nl": 2720,
+    "km_by_country": {
+     "GR": 580
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 9,
+     "budget": 576,
+     "dailyRate": 64,
+     "carInDailyRate": false,
+     "notes": "A genuine loop, not an Athens base: Athens (1-2 days on arrival) — Nafplio (2 days) — Mycenae/Epidaurus (day trip) — Mystras/Sparta (2 days) — optionally Monemvasia (1-2 days) — back via Corinth. Budget ~€70-90/day plus a rental car/fuel at ~€25-35/day on top. Season: April-June or September-October; note the Epidaurus summer festival (20 June-29 August 2026) can bring crowds and higher prices to the region. Web check (2026-08): Mystras tickets run €12-20 (check hhticket.gr in advance), festival tickets separately €10-55, and the mountain roads near Mystras are narrow. Travel advisory: yellow since 4 August 2026 for wildfires — re-check shortly before travel, especially April-October.",
+     "transport_to_next": "End of this route — back to Athens to fly home.",
+     "destinations": [
+      {
+       "name": "Athens (arrival)",
+       "lat": 37.9838,
+       "lng": 23.7275
+      },
+      {
+       "name": "Nafplio",
+       "lat": 37.5673,
+       "lng": 22.8078
+      },
+      {
+       "name": "Mycenae",
+       "lat": 37.7304,
+       "lng": 22.7558
+      },
+      {
+       "name": "Epidaurus",
+       "lat": 37.596,
+       "lng": 23.0778
+      },
+      {
+       "name": "Mystras",
+       "lat": 37.0708,
+       "lng": 22.3663
+      },
+      {
+       "name": "Sparta",
+       "lat": 37.0733,
+       "lng": 22.4297
+      },
+      {
+       "name": "Monemvasia",
+       "lat": 36.6874,
+       "lng": 23.0533
+      },
+      {
+       "name": "Corinth",
+       "lat": 37.9407,
+       "lng": 22.9337
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_rhodes-5-7-days",
+   "name": "Rhodes (5-7 days) 🏝️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Single-island stay, rental car useful for Lindos/Prasonisi — Rhodes Old Town, Lindos, Prasonisi.",
+   "description": "Rhodes Old Town and the Palace of the Grand Master, Lindos and its Acropolis, and Prasonisi.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14d/21 (Islands: Greek islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. No pre-existing Route Builder route covers Rhodes as a standalone single-island trip — Rhodes only otherwise appears bundled into the Turkey + Greece Aegean/Dodecanese route (a ferry-hop combo with the Turkish coast, Kos and Rhodes together), a different scope entirely. Genuinely new ground for Route Builder as a standalone destination, not a granular slice of an existing route. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_rhodes-5-7-days",
+    "name": "Rhodes (5-7 days) 🏝️",
+    "stops": 5,
+    "km_in_route": 110,
+    "km_from_nl": 3270,
+    "km_back_to_nl": 3290,
+    "km_by_country": {
+     "GR": 110
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 2,
+     "budget": 130,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flight Amsterdam-Rhodes (easyJet, Transavia and TUI all fly direct in summer, mostly seasonal). Rhodes Old Town (2 days), including the Palace of the Grand Master. Budget ~€55-70/day average across the route (used here at ~€60-65/day). Season: May-October. ⚠️ Web check (2026-08): the Palace of the Grand Master runs a summer schedule (1 April-31 October) daily 08:00-20:00 and a winter schedule (1 November-31 March) Wed-Mon 08:30-15:30, closed Tuesday; ticket price revised since April 2025 to €20. No active wildfire/evacuation reported on Rhodes as of 7 August 2026 — relatively calm compared to Crete/Corfu this season, though the general yellow Greece-wide wildfire advisory (since 4 August 2026) still applies.",
+     "transport_to_next": "Short drive south down the coast to Lindos.",
+     "destinations": [
+      {
+       "name": "Rhodes Old Town",
+       "lat": 36.4341,
+       "lng": 28.2176
+      },
+      {
+       "name": "Palace of the Grand Master",
+       "lat": 36.4436,
+       "lng": 28.2258
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 2,
+     "budget": 130,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "Lindos and its hilltop Acropolis of Lindos (2 days), overlooking the town's bay.",
+     "transport_to_next": "Drive on to the island's southern tip, Prasonisi.",
+     "destinations": [
+      {
+       "name": "Lindos",
+       "lat": 36.0917,
+       "lng": 28.0864
+      },
+      {
+       "name": "Acropolis of Lindos",
+       "lat": 36.0906,
+       "lng": 28.0906
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 2,
+     "budget": 120,
+     "dailyRate": 60,
+     "carInDailyRate": false,
+     "notes": "Prasonisi (1-2 days) — a windsurfing/kitesurfing point at the island's southern tip, where the Aegean and Mediterranean meet, to close the trip.",
+     "transport_to_next": "End of this route — return flight from Rhodes to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Prasonisi (windsurfing point)",
+       "lat": 35.8833,
+       "lng": 27.7333
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_southern-europe-highlights-roadtrip-14-days",
+   "name": "Southern Europe Highlights Roadtrip (14 days) 🎯",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Explicitly not a real roadtrip despite the name (kept from the source list's own title) — overland/train for Lisbon-Seville, then flights (or a long ferry) for both Seville-Rome and Rome-Athens, since Italy and Greece share no land border with Iberia or with each other in any practical sense.",
+   "description": "A compressed 'greatest hits' sampler across four countries: Lisbon, Seville, Rome and Athens (with an optional Santorini extension) — explicitly a highlights reel, not a deep-dive trip.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 15f (Grand European combinations — Grand/South cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. The source material is explicit that this is NOT a real roadtrip: Italy and Greece have no land border, only a flight or a 15-20 hour Ancona/Bari-Patras ferry connects them, which is exactly why 14 days doesn't allow for real depth here — the source flags 21+ days as more realistic for genuine depth, this route stays at 14 as literally specified. Real overlap, explicitly flagged: directly reuses content from four existing standalone routes — Lisbon + Sintra (5 days) 🏰 (rbBuildLisbonSintraRoute, Sintra day dropped here), Andalusia: Seville + Granada (5 days) 🏰 (rbBuildAndalusiaSevilleGranadaRoute) / Andalusia Roadtrip (9 days) 🚗 (rbBuildAndalusiaRoadtripRoute) (Seville portion only, Granada/Córdoba/Ronda dropped here), Rome & Surroundings 🍕 (rbBuildRomeRoute, Rome-only portion, Naples/Pompeii/Herculaneum dropped here), and Athens (4 days) 🏛️ (rbBuildAthensRoute, Cape Sounion day trip dropped here) plus its optional Santorini extension reusing Cyclades (5-7 days) 🏝️ (rbBuildCycladesRoute)'s Santorini content at a higher, unblended daily rate (see that leg's own note). Kept as a distinct route, not merged — this is a genuinely different trip shape (a fast four-country/five-stop sampler) from any of the single-country/single-region routes it draws from. Logged in ROUTE_SIMILARITY_REVIEW.md per project policy. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_southern-europe-highlights-roadtrip-14-days",
+    "name": "Southern Europe Highlights Roadtrip (14 days) 🎯",
+    "stops": 12,
+    "km_in_route": 4260,
+    "km_from_nl": 2410,
+    "km_back_to_nl": 3060,
+    "km_by_country": {
+     "PT": 10,
+     "ES": 410,
+     "IT": 2160,
+     "GR": 1680
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PT",
+     "country": "Portugal",
+     "days": 3,
+     "budget": 186,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Lisbon's Baixa, Alfama and Belém (3 days) — same content as Lisbon + Sintra (5 days) 🏰 (rbBuildLisbonSintraRoute), compressed and without the Sintra day trip to fit this route's much wider scope. Budget ~€98/day (reused from that route's per-day rate). Entry: direct AMS-Lisbon.",
+     "transport_to_next": "Overland (train/bus) to Seville — no direct train, a bus (ALSA, ~6-7h) or a rental car via Extremadura; fully Schengen-internal, no border checks.",
+     "destinations": [
+      {
+       "name": "Lisbon (Baixa)",
+       "lat": 38.7107,
+       "lng": -9.1366
+      },
+      {
+       "name": "Alfama",
+       "lat": 38.7139,
+       "lng": -9.1301
+      },
+      {
+       "name": "Belém Tower",
+       "lat": 38.6916,
+       "lng": -9.216
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 3,
+     "budget": 183,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Seville's Alcázar and Cathedral (3 days) — the same Andalusian capital covered (alongside Granada) by Andalusia: Seville + Granada (5 days) 🏰 (rbBuildAndalusiaSevilleGranadaRoute) and (alongside the rest of the region) by Andalusia Roadtrip (9 days) 🚗 (rbBuildAndalusiaRoadtripRoute) — this route deliberately stops at Seville alone, no Granada/Córdoba/Ronda loop, to leave room for Italy and Greece. Budget ~€90/day.",
+     "transport_to_next": "Flight to Rome — this is the crux of why 14 days doesn't really work for this route: Italy and Greece have no land border with Iberia, and Seville-Rome has no direct flight either (a connection is typical, e.g. via Madrid/Lisbon/Barcelona).",
+     "destinations": [
+      {
+       "name": "Seville (Alcázar & Cathedral)",
+       "lat": 37.3839,
+       "lng": -5.9903
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 3,
+     "budget": 219,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "The heart of the Roman Empire (3 days) — same content as Rome & Surroundings 🍕 (rbBuildRomeRoute)'s Rome leg, without that route's Naples/Pompeii/Herculaneum days. Budget ~€100/day (reused from that route's Rome-leg rate).",
+     "transport_to_next": "Flight to Athens, or the slower alternative: an overnight ferry Ancona/Bari-Patras (15-20 hours) — Italy and Greece share no land border, this is the route's second and final flight-or-long-ferry gap.",
+     "destinations": [
+      {
+       "name": "Colosseum",
+       "lat": 41.8902,
+       "lng": 12.4922
+      },
+      {
+       "name": "Roman Forum",
+       "lat": 41.8925,
+       "lng": 12.4853
+      },
+      {
+       "name": "Pantheon",
+       "lat": 41.8986,
+       "lng": 12.4769
+      },
+      {
+       "name": "Vatican",
+       "lat": 41.9029,
+       "lng": 12.4534
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 3,
+     "budget": 192,
+     "dailyRate": 64,
+     "carInDailyRate": false,
+     "notes": "Acropolis, Plaka and Monastiraki (3 days) — same content as Athens (4 days) 🏛️ (rbBuildAthensRoute), one day shorter and without the Cape Sounion day trip here. Budget ~€80/day. Travel advisory: yellow since 4 August 2026 for wildfires (same nationwide Greece advisory as the standalone Athens route). Web check (2026-09): the acute multi-fatality emergency (Crete evacuations, an Athens-area helicopter crash) was late July-early August and has since eased — 2026's total burned area nationally is actually 37% below the 20-year average — but a fresh extreme fire-danger spell is forecast across Greece for 3-9 September 2026 (i.e. right now); not an active emergency, but check the daily fire-risk map before any hikes/rural drives and re-check shortly before travel.",
+     "transport_to_next": "Optional (only at the full 14 days): ferry or short flight from Athens/Piraeus to Santorini.",
+     "destinations": [
+      {
+       "name": "Acropolis & Plaka/Monastiraki",
+       "lat": 37.9715,
+       "lng": 23.7267
+      },
+      {
+       "name": "Acropolis Museum",
+       "lat": 37.9686,
+       "lng": 23.7285
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 2,
+     "budget": 140,
+     "dailyRate": 70,
+     "carInDailyRate": false,
+     "notes": "Optional Santorini extension (2 days, only fits at the full 14 days) — Fira and Oia's caldera views. Budget ~€160/day — standalone Santorini runs well above the ~€70-75/day used for it inside the cheaper multi-island Cyclades routes elsewhere in this repo (e.g. Cyclades (5-7 days) 🏝️, rbBuildCycladesRoute), since there's no cheaper island here to blend the average down. ⚠️ Web check (2026-08): Santorini's cruise-passenger cap (8,000/day since 2025, now calculated on 100% ship capacity) plus a €20 peak-season per-person disembarkation fee, same as noted on the existing Cyclades routes.",
+     "transport_to_next": "End of this route — fly home from Santorini or Athens.",
+     "destinations": [
+      {
+       "name": "Santorini (Fira)",
+       "lat": 36.4167,
+       "lng": 25.4325
+      },
+      {
+       "name": "Oia",
+       "lat": 36.4614,
+       "lng": 25.3753
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_istanbul-4-days",
+   "name": "Istanbul (4 days) 🕌",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "City trip based in Sultanahmet, on foot/metro plus one Bosphorus cruise day trip.",
+   "description": "Sultanahmet, the Grand Bazaar/Galata, and a Bosphorus cruise.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_istanbul-4-days",
+    "name": "Istanbul (4 days) 🕌",
+    "stops": 5,
+    "km_in_route": 10,
+    "km_from_nl": 2840,
+    "km_back_to_nl": 2840,
+    "km_by_country": {
+     "TR": 10
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "TR",
+     "country": "Turkey",
+     "days": 4,
+     "budget": 204,
+     "dailyRate": 51,
+     "carInDailyRate": false,
+     "notes": "Sultanahmet (Hagia Sophia, the Blue Mosque, Topkapi Palace) plus the Grand Bazaar/Galata and a Bosphorus cruise day trip. Budget ~€70-80/day (boutique 3-star, limited taxis, good meals). Season: April-May or September-October (mild, less crowded); winter is cheapest but wet/cold, July-August is hot and packed. Web check (2026-08): Hagia Sophia is a functioning mosque — tourists only get access to the upper gallery, €25 entry (the Istanbul Museum Pass does NOT cover this), it closes 5x/day for ~30-45 minutes at prayer times, with an extra-long Friday afternoon closure (~12:00-14:30) — plan around it. The Blue Mosque is free, also has prayer-time closures, and a dress code (shoulders/knees covered, headscarf for women — free loan available). Topkapi Palace is €55 for the palace+Harem+Hagia Irene combo; the Museum Pass covers only the main palace, not the Harem or Hagia Irene. Visa: Dutch passport holders are visa-exempt for Turkey, max 90 days within 180 days, passport valid at least 6 months beyond the return date. Travel advisory: yellow (elevated terrorism risk, pickpocketing at the Grand Bazaar). Earthquake risk: Istanbul sits near the North Anatolian Fault, geologists warn of an expected major earthquake (M7-7.6) in the Marmara region — a standard awareness point, not a travel deterrent. The Turkish lira has depreciated significantly — think in euros, not outdated TRY prices still floating online.",
+     "transport_to_next": "End of this route — fly home from Istanbul.",
+     "destinations": [
+      {
+       "name": "Sultanahmet & Hagia Sophia",
+       "lat": 41.0086,
+       "lng": 28.9802
+      },
+      {
+       "name": "Blue Mosque",
+       "lat": 41.0054,
+       "lng": 28.9768
+      },
+      {
+       "name": "Topkapi Palace",
+       "lat": 41.0115,
+       "lng": 28.9834
+      },
+      {
+       "name": "Grand Bazaar",
+       "lat": 41.0106,
+       "lng": 28.9681
+      },
+      {
+       "name": "Galata Tower",
+       "lat": 41.0256,
+       "lng": 28.9744
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_istanbul-thrace-6-days",
+   "name": "Istanbul + Thrace (6 days) 🌉",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Based in Istanbul, bus day trip to Edirne, optional side trip to the Gallipoli Peninsula.",
+   "description": "Istanbul plus European Turkey/Thrace: Edirne and the Gallipoli Peninsula.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_istanbul-thrace-6-days",
+    "name": "Istanbul + Thrace (6 days) 🌉",
+    "stops": 3,
+    "km_in_route": 500,
+    "km_from_nl": 2840,
+    "km_back_to_nl": 2720,
+    "km_by_country": {
+     "TR": 500
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "TR",
+     "country": "Turkey",
+     "days": 6,
+     "budget": 306,
+     "dailyRate": 51,
+     "carInDailyRate": false,
+     "notes": "Istanbul (4 days) plus a day trip to Edirne (the Selimiye Mosque, Ottoman-era) and optionally the Gallipoli Peninsula (Gallipoli itself already sits in European Turkey/Thrace). Budget ~€65-75/day (cheaper outside Istanbul). Season: spring/autumn; Edirne is quiet year-round with few tourists. Web check (2026-08): Edirne is about 2.5-3 hours from Istanbul's Otogar bus terminal, one-way ~€10-15, the Selimiye Mosque is free. Note: the Gallipoli Peninsula is technically already European Turkey, but Troy sits on the Asian side — for a purely Thrace-focused trip Troy doesn't need to be included. Visa (visa-exempt, max 90/180 days), travel advisory (yellow) and earthquake/lira notes: see the standalone Istanbul trip.",
+     "transport_to_next": "End of this route — fly home from Istanbul.",
+     "destinations": [
+      {
+       "name": "Istanbul (Sultanahmet)",
+       "lat": 41.0086,
+       "lng": 28.9802
+      },
+      {
+       "name": "Edirne (Selimiye Mosque)",
+       "lat": 41.6771,
+       "lng": 26.5557
+      },
+      {
+       "name": "Gallipoli Peninsula",
+       "lat": 40.1867,
+       "lng": 26.3536
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

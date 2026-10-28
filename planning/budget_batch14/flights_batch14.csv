@@ -1,0 +1,18 @@
+airport_code,city,country_code,direction,eur_one_way,airline_or_routing,source,date_checked,confidence,notes
+ATH,Athens,GR,out,120,Transavia/Aegean/KLM direct,estimate (no search),2026-10-28,low,typical 2-3 months ahead
+ATH,Athens,GR,back,110,Transavia/Aegean/KLM direct,estimate (no search),2026-10-28,low,typical
+LCA,Larnaca,CY,out,170,Transavia/Aegean/easyJet direct or via ATH,estimate (no search),2026-10-28,low,typical
+LCA,Larnaca,CY,back,150,Transavia/Aegean/easyJet,estimate (no search),2026-10-28,low,typical
+CFU,Corfu,GR,out,150,TUI fly direct seasonal,estimate (no search),2026-10-28,low,typical
+CFU,Corfu,GR,back,140,TUI fly direct seasonal,estimate (no search),2026-10-28,low,typical
+CHQ,Chania,GR,out,150,seasonal direct,estimate (no search),2026-10-28,low,typical
+CHQ,Chania,GR,back,140,seasonal direct,estimate (no search),2026-10-28,low,typical
+JTR,Santorini,GR,out,170,seasonal direct/one-stop via ATH,estimate (no search),2026-10-28,low,typical
+JTR,Santorini,GR,back,150,seasonal direct/one-stop via ATH,estimate (no search),2026-10-28,low,typical
+EFL,Kefalonia,GR,out,170,seasonal charter/low-cost,estimate (no search),2026-10-28,low,typical
+ZTH,Zakynthos,GR,back,150,seasonal direct,estimate (no search),2026-10-28,low,typical
+SKG,Thessaloniki,GR,out,150,Aegean/Transavia,estimate (no search),2026-10-28,low,mirror of SKG back 140
+RHO,Rhodes,GR,out,180,easyJet/Transavia/TUI direct seasonal,estimate (no search),2026-10-28,low,typical
+RHO,Rhodes,GR,back,170,easyJet/Transavia/TUI direct seasonal,estimate (no search),2026-10-28,low,typical
+IST,Istanbul,TR,out,130,KLM/Turkish/Pegasus direct,estimate (no search),2026-10-28,low,typical
+IST,Istanbul,TR,back,130,KLM/Turkish/Pegasus direct,estimate (no search),2026-10-28,low,typical

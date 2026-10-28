@@ -44,6 +44,8 @@ accommodation, food, city transport, small activities) is ALREADY set: never cha
   extra only if the notes give a price. When `carInDailyRate` is true: add NOTHING for that car.
   `carInDailyRate` is the ONLY test: a notes text like "~€40/day including the rental car" is older
   than the R2d budgets (lowered to Youri's style), so with the flag false the car IS added.
+- A block's `inDailyRate` (when set) says what R2d kept inside its daily budget, e.g. "ferries
+  between the islands in the rate" or "domestic flights in the rate": add NOTHING for those.
 - Directions in flights_batchN.csv: exactly `out` (AMS→destination) and `back` (destination→AMS).
   `data/cost_reference/flights_from_ams.csv` is read-only (the orchestrator merges your rows); reuse
   any airport row already in it without searching. Other agents may run batches at the same time.

@@ -1,0 +1,1988 @@
+{
+ "batch": 19,
+ "group": "British Isles",
+ "routes": [
+  {
+   "id": "gt_seed_channel-islands-brittany-normandyopal-coast-belgium",
+   "name": "Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖",
+   "mode": "own_car",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Flying to Guernsey, no car needed on the islands themselves, rental car from Saint-Malo to Amsterdam (one-way drop-off).",
+   "description": "Guernsey and Jersey, followed by the Breton coast, Normandy, the Opal Coast and Belgium.",
+   "notes": "Split off from British Isles & Celtic Coast Expedition 🍀 as part of the seventh combo batch (2026-08) — listed together in ROUTE_BUILDER_MODULES.md as \"Channel Islands, Brittany & Normandy/Opal Coast & Belgium\" (28d, Medium). Countries, days and budgets are reused unchanged; entry is now a flight to Guernsey instead of the own car from the Netherlands, and the end uses a one-way rental-car drop-off in Amsterdam instead of driving back (more practical for a standalone route that isn't already travelling with its own car). British Isles & Celtic Coast Expedition 🍀 itself remains unchanged.",
+   "distance": {
+    "id": "gt_seed_channel-islands-brittany-normandyopal-coast-belgium",
+    "name": "Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖",
+    "stops": 27,
+    "km_in_route": 1890,
+    "km_from_nl": 800,
+    "km_back_to_nl": 200,
+    "km_by_country": {
+     "GG": 10,
+     "JE": 90,
+     "FR": 1660,
+     "BE": 140
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GG",
+     "country": "Guernsey",
+     "days": 2,
+     "budget": 218,
+     "dailyRate": 109,
+     "carInDailyRate": false,
+     "notes": "Entry: flight Amsterdam-Guernsey, with a connection (no direct link — e.g. via London Gatwick with easyJet then Aurigny, or via Southampton, ±3h15 total; from ±€145 return; best period May/September). Price indication from 2026-08 web research, a snapshot. No car needed on Guernsey/Jersey themselves — hire a car only on arrival on the French mainland (Saint-Malo). A small island with its own, lesser-known WWII history. Price correction (2026-07): €90→€130/day. UK ETA mandatory (~€23 p.p., also covers Guernsey since 23 April 2026).",
+     "transport_to_next": "Ferry to Jersey (Condor Ferries, inter-island, short).",
+     "destinations": [
+      {
+       "name": "St Peter Port",
+       "lat": 49.4551,
+       "lng": -2.5359
+      },
+      {
+       "name": "coastal walks",
+       "lat": 49.47,
+       "lng": -2.58
+      },
+      {
+       "name": "German occupation bunkers (WWII)",
+       "lat": 49.4326,
+       "lng": -2.535
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "JE",
+     "country": "Jersey",
+     "days": 3,
+     "budget": 327,
+     "dailyRate": 109,
+     "carInDailyRate": false,
+     "notes": "The largest and most touristy of the two islands — the best beaches in the Channel Islands. Price correction (2026-07): €90→€135/day.",
+     "transport_to_next": "Ferry Jersey-Saint-Malo (Condor Ferries, ≈1h25 fast ferry) — weather-dependent, keep a buffer day. Hire the car here for the rest of the route.",
+     "destinations": [
+      {
+       "name": "coast",
+       "lat": 49.19,
+       "lng": -2.13
+      },
+      {
+       "name": "cliffs",
+       "lat": 49.1667,
+       "lng": -2.0333
+      },
+      {
+       "name": "beaches",
+       "lat": 49.19,
+       "lng": -2.22
+      },
+      {
+       "name": "Jersey War Tunnels (WWII)",
+       "lat": 49.1958,
+       "lng": -2.1206
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "FR",
+     "country": "France",
+     "days": 10,
+     "budget": 720,
+     "dailyRate": 72,
+     "carInDailyRate": false,
+     "notes": "The longest, most varied coastline of the whole route — eight standalone highlights in ten days. Carnac's megaliths are older than Stonehenge. Price correction (2026-07): €90→€120/day.",
+     "transport_to_next": "Car, ≈240 km to Mont Saint-Michel/Normandy.",
+     "destinations": [
+      {
+       "name": "Saint-Malo",
+       "lat": 48.6493,
+       "lng": -2.0257
+      },
+      {
+       "name": "Dinan",
+       "lat": 48.4535,
+       "lng": -2.0453
+      },
+      {
+       "name": "Cap Fréhel",
+       "lat": 48.6836,
+       "lng": -2.3247
+      },
+      {
+       "name": "Côte de Granit Rose",
+       "lat": 48.8339,
+       "lng": -3.5772
+      },
+      {
+       "name": "Quimper",
+       "lat": 47.996,
+       "lng": -4.0977
+      },
+      {
+       "name": "Pointe du Raz",
+       "lat": 48.0397,
+       "lng": -4.7331
+      },
+      {
+       "name": "Carnac (megaliths)",
+       "lat": 47.5834,
+       "lng": -3.0797
+      },
+      {
+       "name": "Quiberon",
+       "lat": 47.4844,
+       "lng": -3.1204
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "FR",
+     "country": "France",
+     "days": 7,
+     "budget": 504,
+     "dailyRate": 72,
+     "carInDailyRate": false,
+     "notes": "Mont Saint-Michel and the D-Day beaches each deserve a full day. Price correction (2026-07): €90→€110/day. The Bayeux Tapestry is closed for renovation until around October 2027 — two temporary exhibitions remain open.",
+     "transport_to_next": "Car along the coast to the Opal Coast, ≈350 km.",
+     "destinations": [
+      {
+       "name": "Mont Saint-Michel ⭐",
+       "lat": 48.6361,
+       "lng": -1.5115
+      },
+      {
+       "name": "Bayeux (temporary exhibitions)",
+       "lat": 49.2764,
+       "lng": -0.7025
+      },
+      {
+       "name": "Omaha Beach",
+       "lat": 49.3697,
+       "lng": -0.856
+      },
+      {
+       "name": "Pointe du Hoc",
+       "lat": 49.3958,
+       "lng": -0.9897
+      },
+      {
+       "name": "Honfleur",
+       "lat": 49.4189,
+       "lng": 0.2333
+      },
+      {
+       "name": "Étretat",
+       "lat": 49.7075,
+       "lng": 0.2036
+      },
+      {
+       "name": "Rouen",
+       "lat": 49.4431,
+       "lng": 1.0993
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "FR",
+     "country": "France",
+     "days": 3,
+     "budget": 216,
+     "dailyRate": 72,
+     "carInDailyRate": false,
+     "notes": "A short, beautiful coastal walk along the Opal Coast's chalk cliffs, followed by a brief city stop in Lille. Price nearly confirmed (2026-07): €90→€95/day.",
+     "transport_to_next": "Car, ≈110 km to Ghent.",
+     "destinations": [
+      {
+       "name": "Cap Blanc-Nez",
+       "lat": 50.9236,
+       "lng": 1.71
+      },
+      {
+       "name": "Cap Gris-Nez",
+       "lat": 50.8564,
+       "lng": 1.5872
+      },
+      {
+       "name": "Lille",
+       "lat": 50.6292,
+       "lng": 3.0573
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "country_code": "BE",
+     "country": "Belgium",
+     "days": 3,
+     "budget": 243,
+     "dailyRate": 81,
+     "carInDailyRate": false,
+     "notes": "Two historic cities that each deserve at least a day and a half. Price correction (2026-07): €90→€130/day.",
+     "transport_to_next": "End of this route — most European rental companies allow the car to be dropped off cross-border in Amsterdam (one-way drop-off); for this final ≈150 km that's simpler than booking a flight/train the other way for such a short stretch.",
+     "destinations": [
+      {
+       "name": "Bruges",
+       "lat": 51.2093,
+       "lng": 3.2247
+      },
+      {
+       "name": "Ghent",
+       "lat": 51.0543,
+       "lng": 3.7174
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_cotswolds-bath-southwest-england-5-7-days",
+   "name": "Cotswolds + Bath + Southwest England (5-7 days) 🛁",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car around Bath, the Cotswolds and Stonehenge, with Bristol/Cornwall left as an optional add-on.",
+   "description": "Bath's Roman Baths, the Cotswolds villages (Bourton-on-the-Water, Bibury), Stonehenge, and an optional Bristol or Cornwall coast extension.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 12b (British Isles: England + Wales + Northern Ireland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 12/21. A compact Bath/Cotswolds-focused trip, deliberately narrower than the England + Wales + Northern Ireland Roadtrip below, which also passes through Bath/the Cotswolds but continues on into Wales and Northern Ireland. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_cotswolds-bath-southwest-england-5-7-days",
+    "name": "Cotswolds + Bath + Southwest England (5-7 days) 🛁",
+    "stops": 6,
+    "km_in_route": 590,
+    "km_from_nl": 680,
+    "km_back_to_nl": 1000,
+    "km_by_country": {
+     "GB": 590
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GB",
+     "country": "United Kingdom",
+     "days": 6,
+     "budget": 540,
+     "dailyRate": 90,
+     "carInDailyRate": false,
+     "notes": "Entry: fly into London or Bristol, then a rental car (public transport is limited around the Cotswolds villages). Bath's Roman Baths, the Cotswolds villages of Bourton-on-the-Water and Bibury, Stonehenge, with Bristol or a Cornwall coast add-on left optional. Budget ~£65-85/day (~€76-100). Season: May-September overall, though the Cotswolds themselves are also lovely in spring/autumn. Web check (2026-08): the Roman Baths run timed-entry, ~£28; Stonehenge (English Heritage) should be booked ahead of arrival. Exchange rate used: 1 GBP ≈ 1.17 EUR (August 2026).",
+     "transport_to_next": "End of this route — fly home from Bristol or London.",
+     "destinations": [
+      {
+       "name": "Bath (Roman Baths)",
+       "lat": 51.3811,
+       "lng": -2.359
+      },
+      {
+       "name": "Bourton-on-the-Water",
+       "lat": 51.8767,
+       "lng": -1.7546
+      },
+      {
+       "name": "Bibury",
+       "lat": 51.8115,
+       "lng": -1.8371
+      },
+      {
+       "name": "Stonehenge",
+       "lat": 51.1789,
+       "lng": -1.8262
+      },
+      {
+       "name": "Bristol (optional add-on)",
+       "lat": 51.4545,
+       "lng": -2.5879
+      },
+      {
+       "name": "Cornwall coast (optional extension)",
+       "lat": 50.211,
+       "lng": -5.48
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_edinburgh-3-4-days",
+   "name": "Edinburgh (3-4 days) 🏰",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "City trip on foot, one day-trip tour to Stirling Castle or Loch Lomond.",
+   "description": "Old Town/the Royal Mile, Edinburgh Castle, Arthur's Seat, and a day trip to Stirling Castle or Loch Lomond.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 12a (Ireland + Scotland) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_edinburgh-3-4-days",
+    "name": "Edinburgh (3-4 days) 🏰",
+    "stops": 4,
+    "km_in_route": 70,
+    "km_from_nl": 900,
+    "km_back_to_nl": 960,
+    "km_by_country": {
+     "GB": 70
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GB",
+     "country": "United Kingdom",
+     "days": 4,
+     "budget": 360,
+     "dailyRate": 90,
+     "carInDailyRate": false,
+     "notes": "Old Town/the Royal Mile, Edinburgh Castle, a walk up Arthur's Seat, and a day trip to Stirling Castle or Loch Lomond. Budget ~€80-100/day. Season: May-September for the best weather; August is the Edinburgh Fringe Festival — dorm prices then run €35-55/night, book well ahead. Web check (2026-08): the Edinburgh Castle online ticket is £19.50 (~€22), cheaper than at the gate, and often sells out in summer — booking online is strongly recommended.",
+     "transport_to_next": "End of this route — fly home from Edinburgh.",
+     "destinations": [
+      {
+       "name": "Old Town / Royal Mile",
+       "lat": 55.95,
+       "lng": -3.19
+      },
+      {
+       "name": "Edinburgh Castle",
+       "lat": 55.9486,
+       "lng": -3.1999
+      },
+      {
+       "name": "Arthur's Seat",
+       "lat": 55.9445,
+       "lng": -3.1615
+      },
+      {
+       "name": "Stirling Castle (day trip)",
+       "lat": 56.1233,
+       "lng": -3.9475
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_england-wales-northern-ireland-roadtrip-10-14-days",
+   "name": "England + Wales + Northern Ireland Roadtrip (10-14 days) 🛣️",
+   "mode": "own_car",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Self-drive with the own car from the Netherlands (Hook of Holland-Harwich ferry) — a genuine England + Wales + Northern Ireland loop, using the Holyhead-Dublin ferry purely as a transit link with no stop in the Republic of Ireland.",
+   "description": "London, the Cotswolds and Bath, Wales (Snowdonia and the coast), then via the Holyhead-Dublin ferry (transit only) to the Antrim Coast, the Giant's Causeway and Belfast.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 12b (British Isles: England + Wales + Northern Ireland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 12/21. Modeled as two GB blocks (England+Wales, then Northern Ireland) rather than three, since the Holyhead-Dublin ferry only transits through Dublin (Republic of Ireland) en route to the Northern Ireland border by road, with no actual stop there — no IE block is added. See the collision notes on the first block (vs. 'England, Wales & Isle of Man 🎩') and the second block (vs. 'Northern Ireland 🌉' and 'Scotland & Northern Ireland 🥃') above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_england-wales-northern-ireland-roadtrip-10-14-days",
+    "name": "England + Wales + Northern Ireland Roadtrip (10-14 days) 🛣️",
+    "stops": 10,
+    "km_in_route": 1100,
+    "km_from_nl": 480,
+    "km_back_to_nl": 1020,
+    "km_by_country": {
+     "GB": 1100
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GB",
+     "country": "United Kingdom",
+     "days": 8,
+     "budget": 720,
+     "dailyRate": 90,
+     "carInDailyRate": false,
+     "notes": "Entry: bring the own car from the Netherlands via the Hook of Holland-Harwich ferry (Stena Line, ~€66, 6.5-9.5h, 2x/day), landing directly in England. London, then the Cotswolds and Bath, then west into Wales (Snowdonia and the coast), finishing at Holyhead for the ferry on. Budget ~£65-85/day average (~€76-100). Web check (2026-08): one UK ETA (~€23, valid 2 years) covers the whole trip including Northern Ireland; driving is on the left throughout. Exchange rate used: 1 GBP ≈ 1.17 EUR (August 2026).\n\nDistinct from the existing 'England, Wales & Isle of Man 🎩' route (split off from British Isles & Celtic Coast Expedition 🍀), a 38-day version covering Kent/London/Cotswolds/Bath/the Jurassic Coast, then Cornwall, then Pembrokeshire/the Brecon Beacons/Snowdonia/Conwy, then the Lake District with an Isle of Man side trip, then Yorkshire/Northumberland — ending with a flight home from Newcastle, no Northern Ireland leg at all. This route is the shorter, realistic Trip Ideas version restricted to England + Wales + Northern Ireland (no Cornwall, Lake District, Isle of Man or Yorkshire/Northumberland), continuing on into Northern Ireland instead of finishing in the north of England. 'England, Wales & Isle of Man 🎩' itself is untouched.",
+     "transport_to_next": "Car to Holyhead, then the Holyhead-Dublin ferry (Stena Line/Irish Ferries, ~€27, 3-3.5h, up to 8x/day) landing in Dublin — a same-day transit only, with no stop in the Republic of Ireland, driving straight on to the Northern Ireland border and the Antrim Coast beyond it. (Dublin itself carries extra security in the second half of 2026 from Ireland's EU Council presidency, July-December 2026 — not relevant to a same-day drive-through.)",
+     "destinations": [
+      {
+       "name": "London (British Museum)",
+       "lat": 51.5194,
+       "lng": -0.127
+      },
+      {
+       "name": "Bath (Roman Baths)",
+       "lat": 51.3811,
+       "lng": -2.359
+      },
+      {
+       "name": "Bourton-on-the-Water (Cotswolds)",
+       "lat": 51.8767,
+       "lng": -1.7546
+      },
+      {
+       "name": "Snowdon / Yr Wyddfa (Snowdonia)",
+       "lat": 53.0685,
+       "lng": -4.0763
+      },
+      {
+       "name": "Conwy Castle",
+       "lat": 53.2799,
+       "lng": -3.8278
+      },
+      {
+       "name": "Holyhead (ferry port)",
+       "lat": 53.3094,
+       "lng": -4.6367
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "GB",
+     "country": "United Kingdom",
+     "days": 4,
+     "budget": 340,
+     "dailyRate": 85,
+     "carInDailyRate": false,
+     "notes": "The Giant's Causeway, Carrick-a-Rede and the Antrim Coast, finishing back in Belfast. Budget ~£65-85/day average (~€76-100), in line with the rest of the trip. Web check (2026-08): Giant's Causeway entry is £9 (National Trust, includes parking) with a temporary VAT reduction in place until 1 September 2026; the same single UK ETA already covers this leg, no separate entry formality is needed crossing from the Republic of Ireland. This leg overlaps in content with the standalone 'Northern Ireland 🌉' route above and the Belfast/Giant's Causeway leg of 'Scotland & Northern Ireland 🥃' — both are left untouched; this is simply the tail end of one continuous England+Wales+Northern Ireland loop rather than a separate destination trip.",
+     "transport_to_next": "End of this route — return the car in Belfast, then either fly home from Belfast or ferry back toward the Netherlands.",
+     "destinations": [
+      {
+       "name": "Giant's Causeway",
+       "lat": 55.2408,
+       "lng": -6.5116
+      },
+      {
+       "name": "Carrick-a-Rede Rope Bridge",
+       "lat": 55.2396,
+       "lng": -6.3419
+      },
+      {
+       "name": "Antrim Coast / Causeway Coastal Route",
+       "lat": 55.2,
+       "lng": -6.3
+      },
+      {
+       "name": "Belfast (Titanic Belfast)",
+       "lat": 54.6079,
+       "lng": -5.9099
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_england-wales-isle-of-man",
+   "name": "England, Wales & Isle of Man 🎩",
+   "mode": "own_car",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Flying + local rental car (instead of the own car from the Netherlands) — otherwise identical to the car loop: relaxed driving, nature and culture over box-ticking.",
+   "description": "Kent, London, the Cotswolds, Cornwall, Wales, the Lake District, Isle of Man and Yorkshire/Northumberland.",
+   "notes": "Split off from British Isles & Celtic Coast Expedition 🍀 as part of the seventh combo batch (2026-08) — already listed in ROUTE_BUILDER_MODULES.md as a \"Strong\" fly-in candidate (38d), unlike Central European Grand Roadtrip 🚗 which the document explicitly advises against splitting. Countries, days and budgets (the per-person daily rate) are reused unchanged; the car-loop logistics (ferries, internal drives) stay the same, only entry/exit is now flight+rental car instead of the own car from the Netherlands. British Isles & Celtic Coast Expedition 🍀 itself remains unchanged as a separate, full expedition.",
+   "distance": {
+    "id": "gt_seed_england-wales-isle-of-man",
+    "name": "England, Wales & Isle of Man 🎩",
+    "stops": 28,
+    "km_in_route": 2690,
+    "km_from_nl": 370,
+    "km_back_to_nl": 770,
+    "km_by_country": {
+     "GB": 2490,
+     "IM": 200
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GB",
+     "country": "United Kingdom",
+     "days": 10,
+     "budget": 830,
+     "dailyRate": 83,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flight Amsterdam-London (KLM/easyJet/British Airways, ±1h15-1h30; from ±€70-85 one-way; best period January-February/November). Price indication from 2026-08 web research, a snapshot. Hire a car on arrival in London rather than bringing the own car from the Netherlands on the Calais-Dover ferry (this route is split off from the car-loop expedition). A broad opener with plenty of different moods: the chalk cliffs and cathedral of Kent, a brief urban introduction to London, the traditional villages of the Cotswolds, the Roman baths of Bath and the coastal geology of the Jurassic Coast. Stonehenge is deliberately included as a short stop. Price correction (2026-07): €90→€116/day average. UK ETA mandatory (~€23 p.p., also covers Isle of Man/Jersey/Guernsey since 23 April 2026). Travel advisory: green.",
+     "transport_to_next": "Car, ≈450 km to Cornwall via the A30 — no toll along the way.",
+     "destinations": [
+      {
+       "name": "Dover (White Cliffs)",
+       "lat": 51.1279,
+       "lng": 1.3134
+      },
+      {
+       "name": "Canterbury",
+       "lat": 51.2802,
+       "lng": 1.0789
+      },
+      {
+       "name": "Londen",
+       "lat": 51.5074,
+       "lng": -0.1278
+      },
+      {
+       "name": "Cotswolds",
+       "lat": 51.883,
+       "lng": -1.8433
+      },
+      {
+       "name": "Bath",
+       "lat": 51.3811,
+       "lng": -2.359
+      },
+      {
+       "name": "Stonehenge",
+       "lat": 51.1789,
+       "lng": -1.8262
+      },
+      {
+       "name": "Jurassic Coast",
+       "lat": 50.6167,
+       "lng": -2.4667
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "GB",
+     "country": "United Kingdom",
+     "days": 7,
+     "budget": 581,
+     "dailyRate": 83,
+     "carInDailyRate": false,
+     "notes": "Rugged coastline and narrow roads that eat up time — the South West Coast Path deserves several full walking days. St Michael's Mount is tide-dependent; Tintagel carries the Arthurian legend. Price correction (2026-07): €90→€125/day.",
+     "transport_to_next": "Car, ≈300 km to Wales via Bristol/the Severn crossing.",
+     "destinations": [
+      {
+       "name": "St Ives",
+       "lat": 50.211,
+       "lng": -5.48
+      },
+      {
+       "name": "Land's End",
+       "lat": 50.0657,
+       "lng": -5.7139
+      },
+      {
+       "name": "St Michael's Mount",
+       "lat": 50.118,
+       "lng": -5.4767
+      },
+      {
+       "name": "Tintagel Castle",
+       "lat": 50.668,
+       "lng": -4.759
+      },
+      {
+       "name": "South West Coast Path",
+       "lat": 50.0453,
+       "lng": -5.6497
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "GB",
+     "country": "United Kingdom",
+     "days": 8,
+     "budget": 664,
+     "dailyRate": 83,
+     "carInDailyRate": false,
+     "notes": "Snowdonia alone deserves 2-3 days for proper walks; the Brecon Beacons and the Pembrokeshire coast are each worth a day of their own. Price nearly confirmed (2026-07): €90→€100/day.",
+     "transport_to_next": "Car, ≈250 km to the Lake District via Chester and the M6.",
+     "destinations": [
+      {
+       "name": "Pembrokeshire Coast Path",
+       "lat": 51.6214,
+       "lng": -5.0246
+      },
+      {
+       "name": "Brecon Beacons/Bannau Brycheiniog",
+       "lat": 51.8836,
+       "lng": -3.436
+      },
+      {
+       "name": "Snowdonia/Eryri",
+       "lat": 53.0685,
+       "lng": -4.0763
+      },
+      {
+       "name": "Conwy Castle",
+       "lat": 53.2799,
+       "lng": -3.8278
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "GB",
+     "country": "United Kingdom",
+     "days": 4,
+     "budget": 332,
+     "dailyRate": 83,
+     "carInDailyRate": false,
+     "notes": "The Lake District (hiking) alone calls for 3-4 days. Price correction (2026-07): €90→€107/day.",
+     "transport_to_next": "Car to Heysham (≈55 km), then the Heysham-Douglas ferry (Isle of Man Steam Packet, ≈3h45, ~2x/day year-round) as a foot passenger.",
+     "destinations": [
+      {
+       "name": "Windermere",
+       "lat": 54.372,
+       "lng": -2.908
+      },
+      {
+       "name": "Scafell Pike",
+       "lat": 54.4544,
+       "lng": -3.21
+      },
+      {
+       "name": "Keswick",
+       "lat": 54.6013,
+       "lng": -3.1352
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "IM",
+     "country": "Isle of Man",
+     "days": 4,
+     "budget": 352,
+     "dailyRate": 88,
+     "carInDailyRate": false,
+     "notes": "A small island with its own identity. One day of hiring a local car specifically to drive the TT Mountain Road; the rest of the island is excellently covered by bus and the historic railways. Price correction (2026-07): €90→€100/day base plus ~€85 for the one-day local car hire. Falls under the same UK ETA as the mainland.",
+     "transport_to_next": "Ferry back Douglas-Heysham (foot passenger), pick the car back up, then ≈80 km to the Yorkshire Dales.",
+     "destinations": [
+      {
+       "name": "Douglas",
+       "lat": 54.1509,
+       "lng": -4.4815
+      },
+      {
+       "name": "Peel",
+       "lat": 54.2231,
+       "lng": -4.6959
+      },
+      {
+       "name": "TT Mountain Road (Snaefell)",
+       "lat": 54.2585,
+       "lng": -4.3947
+      },
+      {
+       "name": "Manx Electric Railway",
+       "lat": 54.1747,
+       "lng": -4.4629
+      },
+      {
+       "name": "Snaefell Mountain Railway",
+       "lat": 54.2136,
+       "lng": -4.397
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "country_code": "GB",
+     "country": "United Kingdom",
+     "days": 5,
+     "budget": 415,
+     "dailyRate": 83,
+     "carInDailyRate": false,
+     "notes": "York is a fully-fledged historic city, not a stopover; Northumberland/Bamburgh as a quiet, less touristy coastal finish. Price correction (2026-07): €90→€107/day.",
+     "transport_to_next": "End of this route — car back to Newcastle (≈75 km from Bamburgh), return the car, then direct flight Newcastle-Amsterdam (KLM/easyJet, ±1h15-1h25; from ±€30-90; best period January).",
+     "destinations": [
+      {
+       "name": "Yorkshire Dales",
+       "lat": 54.2361,
+       "lng": -2.15
+      },
+      {
+       "name": "York",
+       "lat": 53.96,
+       "lng": -1.0873
+      },
+      {
+       "name": "Northumberland",
+       "lat": 55.2833,
+       "lng": -2.0167
+      },
+      {
+       "name": "Bamburgh Castle",
+       "lat": 55.6088,
+       "lng": -1.7086
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_highlands-isle-of-skye-7-10-days",
+   "name": "Highlands + Isle of Skye (7-10 days) 🏔️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car loop, mainland Highlands plus a Skye Bridge crossing to the island.",
+   "description": "Inverness, Loch Ness, Glencoe, Fort William, and Skye (Portree, Old Man of Storr, Quiraing, Fairy Pools) via the Skye Bridge.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 12a (Ireland + Scotland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — adds Skye onto the mainland Scottish Highlands route above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_highlands-isle-of-skye-7-10-days",
+    "name": "Highlands + Isle of Skye (7-10 days) 🏔️",
+    "stops": 9,
+    "km_in_route": 370,
+    "km_from_nl": 1100,
+    "km_back_to_nl": 1210,
+    "km_by_country": {
+     "GB": 370
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GB",
+     "country": "United Kingdom",
+     "days": 9,
+     "budget": 855,
+     "dailyRate": 95,
+     "carInDailyRate": false,
+     "notes": "As the Highlands route above, plus crossing the Skye Bridge (free since December 2004, no ferry needed) to Portree, Old Man of Storr, Quiraing, and the Fairy Pools. Budget ~€85-105/day — Skye itself runs a little pricier, with less accommodation on offer. Season: May/September; July-August makes Portree overcrowded. Web check (2026-08): no ferry or permit is needed for Skye itself thanks to the bridge, but expect crowding and parking pressure at the hotspots — arriving early in the day helps.",
+     "transport_to_next": "End of this route — fly home from Inverness.",
+     "destinations": [
+      {
+       "name": "Inverness",
+       "lat": 57.4778,
+       "lng": -4.2247
+      },
+      {
+       "name": "Loch Ness",
+       "lat": 57.3241,
+       "lng": -4.4407
+      },
+      {
+       "name": "Glencoe",
+       "lat": 56.6836,
+       "lng": -5.103
+      },
+      {
+       "name": "Fort William",
+       "lat": 56.8198,
+       "lng": -5.1052
+      },
+      {
+       "name": "Skye Bridge",
+       "lat": 57.2667,
+       "lng": -5.7333
+      },
+      {
+       "name": "Portree",
+       "lat": 57.4128,
+       "lng": -6.1943
+      },
+      {
+       "name": "Old Man of Storr",
+       "lat": 57.5074,
+       "lng": -6.1826
+      },
+      {
+       "name": "Quiraing",
+       "lat": 57.6444,
+       "lng": -6.2725
+      },
+      {
+       "name": "Fairy Pools",
+       "lat": 57.2456,
+       "lng": -6.2597
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_london-3-4-days",
+   "name": "London (3-4 days) 🎡",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "City trip entirely on foot and public transport (Oyster/contactless) — no rental car needed.",
+   "description": "British Museum, Tower of London, Camden, Westminster and Greenwich.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 12b (British Isles: England + Wales + Northern Ireland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 12/21. A compact London-only city break, deliberately narrower than the England + Wales + Northern Ireland Roadtrip below, which also opens in London but continues on. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_london-3-4-days",
+    "name": "London (3-4 days) 🎡",
+    "stops": 5,
+    "km_in_route": 30,
+    "km_from_nl": 480,
+    "km_back_to_nl": 470,
+    "km_by_country": {
+     "GB": 30
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GB",
+     "country": "United Kingdom",
+     "days": 4,
+     "budget": 380,
+     "dailyRate": 95,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flight Amsterdam-London (KLM/easyJet/British Airways, ±1h15-1h30). A compact city break: the British Museum, the Tower of London, a look at Camden, the Westminster landmarks, and a day out to Greenwich. Budget ~£75-90/day (~€88-105). Season: year-round, May-September is prettiest. Web check (2026-08): the UK ETA is mandatory in advance (~€23, valid 2 years, also covers Northern Ireland/Isle of Man/Jersey/Guernsey); many of London's major museums (including the British Museum) are free to enter; Oyster or a contactless card covers the Underground/buses/DLR. Travel advisory: green, though the UK carries a 'severe' (4/5) terrorism threat level — routine city-break precautions, nothing route-specific. Exchange rate used: 1 GBP ≈ 1.17 EUR (August 2026).",
+     "transport_to_next": "End of this route — fly home from London.",
+     "destinations": [
+      {
+       "name": "British Museum",
+       "lat": 51.5194,
+       "lng": -0.127
+      },
+      {
+       "name": "Tower of London",
+       "lat": 51.5081,
+       "lng": -0.0759
+      },
+      {
+       "name": "Camden Market",
+       "lat": 51.539,
+       "lng": -0.1426
+      },
+      {
+       "name": "Westminster (Big Ben / Houses of Parliament)",
+       "lat": 51.4995,
+       "lng": -0.1248
+      },
+      {
+       "name": "Greenwich (Royal Observatory / Cutty Sark)",
+       "lat": 51.4769,
+       "lng": -0.0005
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_northern-ireland-5-7-days",
+   "name": "Northern Ireland (5-7 days) 🌉",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car around Belfast and the Antrim Coast.",
+   "description": "Belfast (Titanic Belfast, murals), the Giant's Causeway, Carrick-a-Rede, and the Antrim Coast.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 12b (British Isles: England + Wales + Northern Ireland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 12/21. Deliberately distinguished from the existing 'Scotland & Northern Ireland 🥃' route's Belfast/Giant's Causeway leg (see the collision note in this route's own notes above) with a distinct name and no shared function; that route is left untouched. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_northern-ireland-5-7-days",
+    "name": "Northern Ireland (5-7 days) 🌉",
+    "stops": 5,
+    "km_in_route": 130,
+    "km_from_nl": 1020,
+    "km_back_to_nl": 1080,
+    "km_by_country": {
+     "GB": 130
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GB",
+     "country": "United Kingdom",
+     "days": 6,
+     "budget": 510,
+     "dailyRate": 85,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flight Amsterdam-Belfast (easyJet into Belfast International, KLM into Belfast City; ±1h28-1h40), then a rental car. Belfast (Titanic Belfast, the political murals), the Giant's Causeway, Carrick-a-Rede, and the Antrim Coast. Budget ~£60-80/day (~€70-94). Season: May-September, with nice autumn colours along the coast too. Web check (2026-08): Giant's Causeway entry is £9 (National Trust, includes parking) with a temporary VAT reduction in place until 1 September 2026 — the coastal path itself is free either way; a UK ETA is still required even when crossing into Northern Ireland via the Republic of Ireland border, since there's no checkpoint on the road itself. Exchange rate used: 1 GBP ≈ 1.17 EUR (August 2026).\n\nDistinct from the existing 'Scotland & Northern Ireland 🥃' route (split off from British Isles & Celtic Coast Expedition 🍀), whose second leg already covers Belfast and the Giant's Causeway as a compact 5-day tail end of a 27-day Scotland+NI route. This route is the shorter, standalone Trip Ideas version — Northern Ireland only, with more time and more stops (Carrick-a-Rede, the Belfast murals, the full Antrim Coast) than that leg alone gets — not a duplicate; 'Scotland & Northern Ireland 🥃' itself is untouched.",
+     "transport_to_next": "End of this route — return the car in Belfast, then fly home (easyJet from Belfast International, KLM from Belfast City).",
+     "destinations": [
+      {
+       "name": "Belfast (Titanic Belfast)",
+       "lat": 54.6079,
+       "lng": -5.9099
+      },
+      {
+       "name": "Belfast murals (Falls Road / Shankill Road)",
+       "lat": 54.5964,
+       "lng": -5.945
+      },
+      {
+       "name": "Giant's Causeway",
+       "lat": 55.2408,
+       "lng": -6.5116
+      },
+      {
+       "name": "Carrick-a-Rede Rope Bridge",
+       "lat": 55.2396,
+       "lng": -6.3419
+      },
+      {
+       "name": "Antrim Coast / Causeway Coastal Route",
+       "lat": 55.2,
+       "lng": -6.3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_orkney-shetland-5-7-days",
+   "name": "Orkney + Shetland (5-7 days) ⚓",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Ferry-based island-hopping (NorthLink or Pentland Ferries) plus a rental car on each island.",
+   "description": "Kirkwall on Orkney (Skara Brae, Ring of Brodgar) and Lerwick on Shetland (Jarlshof, puffins).",
+   "notes": "Built (2026-08) as part of Phase 2 batch 12a (Ireland + Scotland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — new addition to the Trip Ideas document as of its third 2026-08 supplement. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_orkney-shetland-5-7-days",
+    "name": "Orkney + Shetland (5-7 days) ⚓",
+    "stops": 6,
+    "km_in_route": 580,
+    "km_from_nl": 950,
+    "km_back_to_nl": 1240,
+    "km_by_country": {
+     "GB": 580
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GB",
+     "country": "United Kingdom",
+     "days": 6,
+     "budget": 498,
+     "dailyRate": 83,
+     "carInDailyRate": false,
+     "notes": "Aberdeen (or Scrabster/Gills Bay) to Kirkwall on Orkney (Skara Brae, the Ring of Brodgar), then on by ferry to Lerwick on Shetland (Jarlshof, puffins). Budget ~€90-110/day — ferry crossings and island prices run higher than the mainland. Season: May-August for birds/daylight, with Shetland's 'simmer dim' (near-endless summer twilight) in June. Web check (2026-08): NorthLink ferries sail Aberdeen-Kirkwall/Lerwick, a cabin is recommended for the overnight crossing; Pentland Ferries' Gills Bay-St Margaret's Hope crossing (~1h15) is a separate, often cheaper/faster Orkney-only alternative. Peak island ferry fares were abolished for residents from 24 March 2026 — not for tourists.",
+     "transport_to_next": "End of this route — fly home from Kirkwall or Lerwick, or ferry back to Aberdeen.",
+     "destinations": [
+      {
+       "name": "Aberdeen (or Scrabster / Gills Bay)",
+       "lat": 57.1497,
+       "lng": -2.0943
+      },
+      {
+       "name": "Kirkwall",
+       "lat": 58.9808,
+       "lng": -2.96
+      },
+      {
+       "name": "Skara Brae",
+       "lat": 59.0489,
+       "lng": -3.3397
+      },
+      {
+       "name": "Ring of Brodgar",
+       "lat": 59.0006,
+       "lng": -3.2286
+      },
+      {
+       "name": "Lerwick",
+       "lat": 60.1547,
+       "lng": -1.1494
+      },
+      {
+       "name": "Jarlshof",
+       "lat": 59.8794,
+       "lng": -1.2986
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_outer-hebrides-lewis-harris-5-7-days",
+   "name": "Outer Hebrides (Lewis + Harris) (5-7 days) 🏖️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car via Skye plus a CalMac ferry crossing to the Outer Hebrides.",
+   "description": "Skye (Uig) to Harris by ferry, Luskentyre beach, the Callanish Standing Stones on Lewis, and a return via Stornoway or Ullapool.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 12a (Ireland + Scotland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — new addition to the Trip Ideas document as of its third 2026-08 supplement. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_outer-hebrides-lewis-harris-5-7-days",
+    "name": "Outer Hebrides (Lewis + Harris) (5-7 days) 🏖️",
+    "stops": 5,
+    "km_in_route": 150,
+    "km_from_nl": 1240,
+    "km_back_to_nl": 1300,
+    "km_by_country": {
+     "GB": 150
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GB",
+     "country": "United Kingdom",
+     "days": 6,
+     "budget": 558,
+     "dailyRate": 93,
+     "carInDailyRate": false,
+     "notes": "From the Highlands via Skye (Uig), a CalMac ferry crossing Uig-Tarbert (Harris, ~1h40), then Luskentyre beach and the Callanish Standing Stones (Lewis), returning either via Stornoway-Ullapool or the same ferry. Budget ~€85-100/day. Season: May-September, with changeable weather throughout. Web check (2026-08): CalMac ferry tickets are sailing-specific (a fixed date and time, even for foot passengers) — book early in summer, since vehicle spots are scarce; check calmac.co.uk for current fares.",
+     "transport_to_next": "End of this route — fly home from Stornoway or Inverness.",
+     "destinations": [
+      {
+       "name": "Highlands to Skye (Uig)",
+       "lat": 57.5926,
+       "lng": -6.3719
+      },
+      {
+       "name": "Tarbert (Harris, CalMac ferry from Uig)",
+       "lat": 57.8965,
+       "lng": -6.7967
+      },
+      {
+       "name": "Luskentyre beach",
+       "lat": 57.9167,
+       "lng": -7.0833
+      },
+      {
+       "name": "Callanish Standing Stones (Lewis)",
+       "lat": 58.1972,
+       "lng": -6.745
+      },
+      {
+       "name": "Stornoway (return via Ullapool)",
+       "lat": 58.209,
+       "lng": -6.3874
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_scotland-northern-ireland",
+   "name": "Scotland & Northern Ireland 🥃",
+   "mode": "own_car",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Flying + local rental car — otherwise identical to the car loop.",
+   "description": "Edinburgh, the Scottish Highlands and Isle of Skye, followed by Belfast and the Giant's Causeway.",
+   "notes": "Split off from British Isles & Celtic Coast Expedition 🍀 as part of the seventh combo batch (2026-08) — already listed in ROUTE_BUILDER_MODULES.md as a \"Strong\" fly-in candidate (27d). Countries, days and budgets are reused unchanged; only entry/exit is now flight+rental car. British Isles & Celtic Coast Expedition 🍀 itself remains unchanged.",
+   "distance": {
+    "id": "gt_seed_scotland-northern-ireland",
+    "name": "Scotland & Northern Ireland 🥃",
+    "stops": 12,
+    "km_in_route": 1210,
+    "km_from_nl": 900,
+    "km_back_to_nl": 1080,
+    "km_by_country": {
+     "GB": 1210
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GB",
+     "country": "United Kingdom",
+     "days": 22,
+     "budget": 1826,
+     "dailyRate": 83,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flight Amsterdam-Edinburgh (KLM/easyJet, ±1h25-1h40; from ±€65 one-way; best period January, though late June-early July is better for this route in terms of midges/weather). Price indication from 2026-08 web research, a snapshot. Hire a car on arrival rather than bringing the own car from the Netherlands. The highlight of the entire expedition — Isle of Skye deliberately gets 4-5 days. Travel here early in the summer: the Scottish midges only peak in July-August. ⚠️ Price correction (2026-07): €90→€114/day average — Skye itself is structurally higher (~€150/day). ⚠️ Edinburgh Fringe Festival (7-31 August 2026) triples prices in the city. UK ETA mandatory (~€23 p.p.).",
+     "transport_to_next": "Ferry Cairnryan-Belfast (Stena Line, ≈2h15, ~6x/day).",
+     "destinations": [
+      {
+       "name": "Edinburgh",
+       "lat": 55.9533,
+       "lng": -3.1883
+      },
+      {
+       "name": "Cairngorms National Park",
+       "lat": 57.0833,
+       "lng": -3.6667
+      },
+      {
+       "name": "Glencoe",
+       "lat": 56.6836,
+       "lng": -5.103
+      },
+      {
+       "name": "Glenfinnan Viaduct",
+       "lat": 56.8764,
+       "lng": -5.4297
+      },
+      {
+       "name": "Isle of Skye ⭐ (Old Man of Storr, Fairy Pools, Quiraing)",
+       "lat": 57.4128,
+       "lng": -6.1943
+      },
+      {
+       "name": "Applecross Pass",
+       "lat": 57.4358,
+       "lng": -5.6414
+      },
+      {
+       "name": "North Coast 500 (gedeeltelijk, tot Ullapool)",
+       "lat": 57.8951,
+       "lng": -5.1626
+      },
+      {
+       "name": "Loch Ness/Inverness",
+       "lat": 57.4778,
+       "lng": -4.2247
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "GB",
+     "country": "United Kingdom",
+     "days": 5,
+     "budget": 415,
+     "dailyRate": 83,
+     "carInDailyRate": false,
+     "notes": "Compact but with several unique stops close together: the basalt columns of the Giant's Causeway, the coastal road there, and the Dark Hedges as a quick photo stop. Price correction (2026-07): €90→€102/day. Travel advisory: Northern Ireland actually scores slightly lower on the terrorism threat level than Great Britain.",
+     "transport_to_next": "End of this route — return the car in Belfast, then direct flight Belfast-Amsterdam (easyJet from Belfast International, KLM from Belfast City; ±1h28-1h40; from ±€22-60; best period January/November).",
+     "destinations": [
+      {
+       "name": "Belfast",
+       "lat": 54.5973,
+       "lng": -5.9301
+      },
+      {
+       "name": "Giant's Causeway",
+       "lat": 55.2408,
+       "lng": -6.5116
+      },
+      {
+       "name": "Causeway Coastal Route",
+       "lat": 55.2,
+       "lng": -6.3
+      },
+      {
+       "name": "Dark Hedges",
+       "lat": 55.1725,
+       "lng": -6.3345
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_scotland-extended-10-14-days",
+   "name": "Scotland Extended (10-14 days) 🏴",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car/campervan, Edinburgh plus the full NC500 loop, Skye and Glencoe.",
+   "description": "Edinburgh, the full North Coast 500 (Inverness loop), the Isle of Skye, and Glencoe.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 12a (Ireland + Scotland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a deliberately shorter, realistic 'Trip Ideas' Scotland-only loop distinct from the existing standalone 'Scotland & Northern Ireland 🥃' route (split off from British Isles & Celtic Coast Expedition 🍀, which also includes a Northern Ireland leg and only a partial NC500); named/emoji'd differently (🏴 vs 🥃) to avoid confusion, and 'Scotland & Northern Ireland 🥃' itself is left untouched. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_scotland-extended-10-14-days",
+    "name": "Scotland Extended (10-14 days) 🏴",
+    "stops": 8,
+    "km_in_route": 1050,
+    "km_from_nl": 900,
+    "km_back_to_nl": 1090,
+    "km_by_country": {
+     "GB": 1050
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GB",
+     "country": "United Kingdom",
+     "days": 12,
+     "budget": 1020,
+     "dailyRate": 85,
+     "carInDailyRate": false,
+     "notes": "The longest, most complete version, combining everything including the full North Coast 500: Edinburgh plus the full NC500 (the Inverness loop, 516 miles), Skye, and Glencoe. Budget ~€75-95/day — a longer trip pulls the average down thanks to campervan/self-catering days. Season: May/September strongly recommended — July/August bring overcrowded accommodation plus midges; keep at least 7 days for the NC500 itself. Web check (2026-08): book NC500 accommodation months ahead in high season; the driving direction (clockwise vs. counterclockwise) determines whether the Bealach na Bà comes right at the start of the route or near the end.\n\nDistinct from the existing 'Scotland & Northern Ireland 🥃' route (split off from British Isles & Celtic Coast Expedition 🍀), which is a 27-day version (22 days in Scotland: Edinburgh/Cairngorms/Glencoe/Glenfinnan/Skye/Applecross/NC500-partial-to-Ullapool/Loch Ness, plus 5 days in Belfast/the Giant's Causeway). This route is the shorter, realistic Trip Ideas version — Scotland only, no Northern Ireland leg, and the full NC500 loop rather than a partial one — not a duplicate; 'Scotland & Northern Ireland 🥃' itself is untouched.",
+     "transport_to_next": "End of this route — fly home from Inverness or Edinburgh.",
+     "destinations": [
+      {
+       "name": "Edinburgh",
+       "lat": 55.9533,
+       "lng": -3.1883
+      },
+      {
+       "name": "Inverness (NC500 start/end)",
+       "lat": 57.4778,
+       "lng": -4.2247
+      },
+      {
+       "name": "John o' Groats",
+       "lat": 58.6373,
+       "lng": -3.0699
+      },
+      {
+       "name": "Durness",
+       "lat": 58.5661,
+       "lng": -4.75
+      },
+      {
+       "name": "Applecross Pass / Bealach na Bà",
+       "lat": 57.4358,
+       "lng": -5.6414
+      },
+      {
+       "name": "Ullapool",
+       "lat": 57.8951,
+       "lng": -5.1626
+      },
+      {
+       "name": "Isle of Skye (Portree)",
+       "lat": 57.4128,
+       "lng": -6.1943
+      },
+      {
+       "name": "Glencoe",
+       "lat": 56.6836,
+       "lng": -5.103
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_scotland-roadtrip-7-10-days",
+   "name": "Scotland Roadtrip (7-10 days) 🚙",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car loop, lowlands and Highlands combined, no islands.",
+   "description": "Edinburgh, Stirling, Glencoe, Fort William, Inverness, and the Cairngorms/Perthshire.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 12a (Ireland + Scotland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a lowlands+Highlands loop without Skye, differentiated against the Highlands + Isle of Skye route above and the fuller Scotland Extended route below. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_scotland-roadtrip-7-10-days",
+    "name": "Scotland Roadtrip (7-10 days) 🚙",
+    "stops": 6,
+    "km_in_route": 430,
+    "km_from_nl": 900,
+    "km_back_to_nl": 1020,
+    "km_by_country": {
+     "GB": 430
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GB",
+     "country": "United Kingdom",
+     "days": 9,
+     "budget": 810,
+     "dailyRate": 90,
+     "carInDailyRate": false,
+     "notes": "A broader loop that also takes in the lowlands — no Skye, but Highlands and lowlands combined: Edinburgh, Stirling, Glencoe, Fort William, Inverness, and back via the Cairngorms/Perthshire. Budget ~€80-100/day. Season: May-September. Web check (2026-08): picking up the rental car in Edinburgh is cheaper than in the Highlands — check for a one-way drop-off fee if planning to end the loop elsewhere.",
+     "transport_to_next": "End of this route — fly home from Edinburgh.",
+     "destinations": [
+      {
+       "name": "Edinburgh",
+       "lat": 55.9533,
+       "lng": -3.1883
+      },
+      {
+       "name": "Stirling",
+       "lat": 56.1233,
+       "lng": -3.9475
+      },
+      {
+       "name": "Glencoe",
+       "lat": 56.6836,
+       "lng": -5.103
+      },
+      {
+       "name": "Fort William",
+       "lat": 56.8198,
+       "lng": -5.1052
+      },
+      {
+       "name": "Inverness",
+       "lat": 57.4778,
+       "lng": -4.2247
+      },
+      {
+       "name": "Cairngorms National Park / Perthshire",
+       "lat": 56.7833,
+       "lng": -3.9333
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_scottish-highlands-5-7-days",
+   "name": "Scottish Highlands (5-7 days) 🦌",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car loop around the Highlands mainland, no islands.",
+   "description": "Inverness, Loch Ness/Urquhart Castle, Glencoe, Fort William/Ben Nevis, and the Cairngorms.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 12a (Ireland + Scotland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — mainland only, differentiated against the Highlands + Isle of Skye route below which adds the island. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_scottish-highlands-5-7-days",
+    "name": "Scottish Highlands (5-7 days) 🦌",
+    "stops": 5,
+    "km_in_route": 270,
+    "km_from_nl": 1100,
+    "km_back_to_nl": 1030,
+    "km_by_country": {
+     "GB": 270
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GB",
+     "country": "United Kingdom",
+     "days": 6,
+     "budget": 528,
+     "dailyRate": 88,
+     "carInDailyRate": false,
+     "notes": "The mainland only, no Isle of Skye (unlike the route below): Inverness, Loch Ness/Urquhart Castle, Glencoe, Fort William/Ben Nevis, and back via the Cairngorms. Budget ~€80-95/day (shared rental car, a B&B/hostel mix). Season: May/September ideal; midges are a real nuisance on the west coast June-August. Web check (2026-08): Urquhart Castle requires a mandatory pre-booked timed slot plus a parking spot online (Historic Environment Scotland) — the separate 'Loch Ness Centre' is an unrelated private museum, not the castle ticket.",
+     "transport_to_next": "End of this route — fly home from Inverness or Edinburgh.",
+     "destinations": [
+      {
+       "name": "Inverness",
+       "lat": 57.4778,
+       "lng": -4.2247
+      },
+      {
+       "name": "Loch Ness / Urquhart Castle",
+       "lat": 57.3241,
+       "lng": -4.4407
+      },
+      {
+       "name": "Glencoe",
+       "lat": 56.6836,
+       "lng": -5.103
+      },
+      {
+       "name": "Fort William / Ben Nevis",
+       "lat": 56.8198,
+       "lng": -5.1052
+      },
+      {
+       "name": "Cairngorms National Park",
+       "lat": 57.0833,
+       "lng": -3.6667
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_wales-snowdonia-coast-5-7-days",
+   "name": "Wales (Snowdonia + Coast) (5-7 days) 🐉",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car around Snowdonia and the coast, with the Snowdon Mountain Railway as a highlight.",
+   "description": "Snowdonia/Yr Wyddfa (Snowdon Mountain Railway), Conwy and Caernarfon castles, and the Pembrokeshire coast.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 12b (British Isles: England + Wales + Northern Ireland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 12/21. A Wales-only trip, deliberately narrower than the England + Wales + Northern Ireland Roadtrip below, which also covers Snowdonia/the Welsh coast but continues on to Northern Ireland via the Holyhead-Dublin ferry. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_wales-snowdonia-coast-5-7-days",
+    "name": "Wales (Snowdonia + Coast) (5-7 days) 🐉",
+    "stops": 5,
+    "km_in_route": 320,
+    "km_from_nl": 820,
+    "km_back_to_nl": 910,
+    "km_by_country": {
+     "GB": 320
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GB",
+     "country": "United Kingdom",
+     "days": 6,
+     "budget": 510,
+     "dailyRate": 85,
+     "carInDailyRate": false,
+     "notes": "Entry: fly Amsterdam-Manchester (KLM/easyJet, ±1h15), then a rental car (public transport is limited around Snowdonia). Snowdonia/Yr Wyddfa, ideally including the Snowdon Mountain Railway from Llanberis, the castles at Conwy and Caernarfon, and the Pembrokeshire coast further south. Budget ~£60-80/day (~€70-94). Season: the Snowdon Mountain Railway (diesel) runs late March-25 October 2026 and is closed in winter (ice) — May-September is the best window. Web check (2026-08): return train tickets run ~£45-62, book ahead in summer; the Holyhead-Dublin ferry (~€27, 3-3.5h, up to 8x/day) exists as a transit option onward, e.g. into the roadtrip version below. Exchange rate used: 1 GBP ≈ 1.17 EUR (August 2026).",
+     "transport_to_next": "End of this route — fly home from Manchester or Liverpool.",
+     "destinations": [
+      {
+       "name": "Snowdon / Yr Wyddfa summit",
+       "lat": 53.0685,
+       "lng": -4.0763
+      },
+      {
+       "name": "Llanberis (Snowdon Mountain Railway)",
+       "lat": 53.1198,
+       "lng": -4.1258
+      },
+      {
+       "name": "Conwy Castle",
+       "lat": 53.2799,
+       "lng": -3.8278
+      },
+      {
+       "name": "Caernarfon Castle",
+       "lat": 53.139,
+       "lng": -4.2758
+      },
+      {
+       "name": "Pembrokeshire Coast Path",
+       "lat": 51.6214,
+       "lng": -5.0246
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_dublin-3-4-days",
+   "name": "Dublin (3-4 days) 🍺",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "City trip on foot/tram, one day-trip tour to the Wicklow Mountains.",
+   "description": "Trinity College and the Book of Kells, the Guinness Storehouse, Temple Bar, and a day trip to the Wicklow Mountains/Glendalough.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 12a (Ireland + Scotland) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_dublin-3-4-days",
+    "name": "Dublin (3-4 days) 🍺",
+    "stops": 4,
+    "km_in_route": 50,
+    "km_from_nl": 1010,
+    "km_back_to_nl": 1010,
+    "km_by_country": {
+     "IE": 50
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IE",
+     "country": "Ireland",
+     "days": 4,
+     "budget": 352,
+     "dailyRate": 88,
+     "carInDailyRate": false,
+     "notes": "Trinity College and the Book of Kells (2 days), the Guinness Storehouse, Temple Bar, and a day trip to the Wicklow Mountains/Glendalough. Budget ~€80-95/day. Season: year-round, May-September for the best weather; expect extra crowds and security in Dublin in the second half of 2026 due to Ireland's EU Council presidency (July-December 2026). Web check (2026-08): the Book of Kells needs a pre-booked timed-entry ticket (€21.50-25 pp) — the Long Room is currently partly empty due to restoration work, open until 2027. The Guinness Storehouse should also be pre-booked (~€30-45).",
+     "transport_to_next": "End of this route — fly home from Dublin.",
+     "destinations": [
+      {
+       "name": "Trinity College / Book of Kells",
+       "lat": 53.3438,
+       "lng": -6.2546
+      },
+      {
+       "name": "Guinness Storehouse",
+       "lat": 53.3419,
+       "lng": -6.2867
+      },
+      {
+       "name": "Temple Bar",
+       "lat": 53.3453,
+       "lng": -6.2635
+      },
+      {
+       "name": "Wicklow Mountains / Glendalough (day trip)",
+       "lat": 53.0092,
+       "lng": -6.3283
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_ireland",
+   "name": "Ireland ☘️",
+   "mode": "own_car",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Flying + local rental car — otherwise identical to the car loop.",
+   "description": "Donegal, Connemara, the Wild Atlantic Way and the Dingle Peninsula, followed by the Ring of Kerry, Killarney, Cork and Kilkenny.",
+   "notes": "Split off from British Isles & Celtic Coast Expedition 🍀 as part of the seventh combo batch (2026-08) — already listed in ROUTE_BUILDER_MODULES.md as a \"Strong\" fly-in candidate (22d), \"arguably the most-booked standalone European road trip there is\". Countries, days and budgets are reused unchanged; only entry (Dublin instead of straight to Donegal) and exit (flight from Cork instead of the Rosslare ferry to the Channel Islands) have been adjusted, since this route now stands apart from the Channel Islands continuation. British Isles & Celtic Coast Expedition 🍀 itself remains unchanged.",
+   "distance": {
+    "id": "gt_seed_ireland",
+    "name": "Ireland ☘️",
+    "stops": 10,
+    "km_in_route": 840,
+    "km_from_nl": 1200,
+    "km_back_to_nl": 1090,
+    "km_by_country": {
+     "IE": 840
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IE",
+     "country": "Ireland",
+     "days": 11,
+     "budget": 1001,
+     "dailyRate": 91,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flight Amsterdam-Dublin (KLM/Aer Lingus/Ryanair, ±1h30-1h47; from ±€40-90 one-way; best period January-February for price). Price indication from 2026-08 web research, a snapshot. Hire a car in Dublin and drive first to Donegal (a deliberate northward start, so the rest of the route can run south towards Rosslare/Cork) instead of the own car from the Netherlands. The core of the Ireland experience. Price correction (2026-07): €90→€115/day — Ireland is currently the second most expensive EU country. Travel advisory: green.",
+     "transport_to_next": "Car south to Kerry, ≈180 km.",
+     "destinations": [
+      {
+       "name": "Donegal",
+       "lat": 54.6538,
+       "lng": -8.1096
+      },
+      {
+       "name": "Connemara",
+       "lat": 53.49,
+       "lng": -9.75
+      },
+      {
+       "name": "Galway",
+       "lat": 53.2707,
+       "lng": -9.0568
+      },
+      {
+       "name": "Cliffs of Moher",
+       "lat": 52.9715,
+       "lng": -9.4309
+      },
+      {
+       "name": "Wild Atlantic Way",
+       "lat": 52.5,
+       "lng": -9.9
+      },
+      {
+       "name": "Dingle Peninsula",
+       "lat": 52.1409,
+       "lng": -10.27
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IE",
+     "country": "Ireland",
+     "days": 11,
+     "budget": 1001,
+     "dailyRate": 91,
+     "carInDailyRate": false,
+     "notes": "Ring of Kerry and Killarney National Park need time for the many viewpoints; Cork and Kilkenny as historic towns. Price correction (2026-07): €90→€125/day average. Practical tip: drive the Ring of Kerry clockwise or leave early to avoid the tour buses.",
+     "transport_to_next": "End of this route — car back to Cork (≈50 km from Kilkenny), return the car, then direct flight Cork-Amsterdam (KLM, ±1h40-1h50; from ±€40-70; best period outside the summer peak).",
+     "destinations": [
+      {
+       "name": "Ring of Kerry",
+       "lat": 51.8333,
+       "lng": -10
+      },
+      {
+       "name": "Killarney National Park",
+       "lat": 52.0599,
+       "lng": -9.5044
+      },
+      {
+       "name": "Cork",
+       "lat": 51.8985,
+       "lng": -8.4756
+      },
+      {
+       "name": "Kilkenny",
+       "lat": 52.6541,
+       "lng": -7.2448
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_ireland-complete-10-14-days",
+   "name": "Ireland Complete (10-14 days) 🌈",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car, the full-country loop with an optional Northern Ireland side trip.",
+   "description": "Dublin, Wicklow, Kilkenny, Cork/Kinsale, Kerry, the Cliffs of Moher/Connemara, Sligo/Donegal, and an optional Belfast/Giant's Causeway side trip.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 12a (Ireland + Scotland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a deliberately shorter, realistic 'Trip Ideas' full-Ireland loop distinct from the existing standalone 'Ireland ☘️' route (split off from British Isles & Celtic Coast Expedition 🍀); named/emoji'd differently (🌈 vs ☘️) to avoid confusion, and 'Ireland ☘️' itself is left untouched. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_ireland-complete-10-14-days",
+    "name": "Ireland Complete (10-14 days) 🌈",
+    "stops": 8,
+    "km_in_route": 1030,
+    "km_from_nl": 1010,
+    "km_back_to_nl": 1020,
+    "km_by_country": {
+     "IE": 1030
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IE",
+     "country": "Ireland",
+     "days": 12,
+     "budget": 1020,
+     "dailyRate": 85,
+     "carInDailyRate": false,
+     "notes": "The longest, most complete version — east, west, south and north-west in one trip: Dublin, Wicklow, Kilkenny, Cork/Kinsale, Kerry, the Cliffs of Moher/Connemara, and Sligo/Donegal, with an optional side trip to Belfast/the Giant's Causeway. Budget ~€75-95/day. Web check (2026-08): a side trip into Northern Ireland still needs the UK ETA (mandatory since 2 April 2025 for Dutch passport holders, fee ~€23-24 since 8 April 2026, valid 2 years or until the passport expires, multiple entry) even though there's no border checkpoint on the road.\n\nDistinct from the existing 'Ireland ☘️' route (split off from British Isles & Celtic Coast Expedition 🍀), which is a 22-day version built the same way (Donegal/Connemara/Galway/Cliffs of Moher/Wild Atlantic Way/Dingle, then Ring of Kerry/Killarney/Cork/Kilkenny) but without Dublin, Wicklow, Sligo or the Belfast side trip. This is the shorter, realistic Trip Ideas version of a full-Ireland loop, not a duplicate — 'Ireland ☘️' itself is untouched.",
+     "transport_to_next": "End of this route — fly home from Dublin or Cork.",
+     "destinations": [
+      {
+       "name": "Dublin",
+       "lat": 53.3498,
+       "lng": -6.2603
+      },
+      {
+       "name": "Wicklow",
+       "lat": 53.0092,
+       "lng": -6.3283
+      },
+      {
+       "name": "Kilkenny",
+       "lat": 52.6541,
+       "lng": -7.2448
+      },
+      {
+       "name": "Cork / Kinsale",
+       "lat": 51.8985,
+       "lng": -8.4756
+      },
+      {
+       "name": "Kerry",
+       "lat": 51.8333,
+       "lng": -10
+      },
+      {
+       "name": "Cliffs of Moher / Connemara",
+       "lat": 52.9715,
+       "lng": -9.4309
+      },
+      {
+       "name": "Sligo / Donegal",
+       "lat": 54.2697,
+       "lng": -8.4694
+      },
+      {
+       "name": "Belfast / Giant's Causeway (optional side trip)",
+       "lat": 54.5973,
+       "lng": -5.9301
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_ireland-roadtrip-7-10-days",
+   "name": "Ireland Roadtrip (7-10 days) 🚗",
+   "mode": "rental",
+   "carInBudgetWording": "included",
+   "carEvidence": "e the pure west-coast focus of the Wild Atlantic Way below. Budget ~€75-90/day including a rental car. Season: May-September. Web check (2026-08): Ireland drives",
+   "travel_style": "Rental car loop, east/south/west combined.",
+   "description": "Dublin, Kilkenny, Cork/Kinsale, the Ring of Kerry, and Galway.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 12a (Ireland + Scotland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a broader east+south+west loop, differentiated against the pure west-coast Wild Atlantic Way route below. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_ireland-roadtrip-7-10-days",
+    "name": "Ireland Roadtrip (7-10 days) 🚗",
+    "stops": 5,
+    "km_in_route": 650,
+    "km_from_nl": 1010,
+    "km_back_to_nl": 1250,
+    "km_by_country": {
+     "IE": 650
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IE",
+     "country": "Ireland",
+     "days": 9,
+     "budget": 747,
+     "dailyRate": 83,
+     "carInDailyRate": false,
+     "notes": "Dublin, Kilkenny, Cork/Kinsale, the Ring of Kerry, and Galway — a broader loop that also takes in the east and south, unlike the pure west-coast focus of the Wild Atlantic Way below. Budget ~€75-90/day including a rental car. Season: May-September. Web check (2026-08): Ireland drives on the left — arrange CDW insurance for the rental car; on the Ring of Kerry (N71) leave early in the day to stay ahead of the tour-bus crowds.",
+     "transport_to_next": "End of this route — fly home from Shannon or Dublin.",
+     "destinations": [
+      {
+       "name": "Dublin",
+       "lat": 53.3498,
+       "lng": -6.2603
+      },
+      {
+       "name": "Kilkenny",
+       "lat": 52.6541,
+       "lng": -7.2448
+      },
+      {
+       "name": "Cork / Kinsale",
+       "lat": 51.8985,
+       "lng": -8.4756
+      },
+      {
+       "name": "Ring of Kerry",
+       "lat": 51.8333,
+       "lng": -10
+      },
+      {
+       "name": "Galway",
+       "lat": 53.2707,
+       "lng": -9.0568
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_west-ireland-5-7-days",
+   "name": "West Ireland (5-7 days) 🌊",
+   "mode": "rental",
+   "carInBudgetWording": "included",
+   "carEvidence": "p items below that also cover the east coast/Ring of Kerry. Budget ~€70-85/day including a rental car. Season: May-June/September optimal. Web check (2026-08): t",
+   "travel_style": "Rental car around Galway, Connemara and the Clare coast.",
+   "description": "Galway, Connemara National Park/Kylemore Abbey, the Cliffs of Moher/Doolin, and an optional trip to the Aran Islands.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 12a (Ireland + Scotland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — deliberately compact (Galway/Connemara/Cliffs of Moher only), unlike the broader Ireland Roadtrip/Ireland Complete routes below which also cover the east and south. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_west-ireland-5-7-days",
+    "name": "West Ireland (5-7 days) 🌊",
+    "stops": 4,
+    "km_in_route": 200,
+    "km_from_nl": 1250,
+    "km_back_to_nl": 1300,
+    "km_by_country": {
+     "IE": 200
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IE",
+     "country": "Ireland",
+     "days": 6,
+     "budget": 468,
+     "dailyRate": 78,
+     "carInDailyRate": false,
+     "notes": "Galway (2 days), a day trip to Connemara National Park/Kylemore Abbey, then the Cliffs of Moher/Doolin (2-3 days) with an optional Aran Islands add-on — deliberately compact, just Galway/Connemara/the Cliffs, unlike the broader roadtrip items below that also cover the east coast/Ring of Kerry. Budget ~€70-85/day including a rental car. Season: May-June/September optimal. Web check (2026-08): the Cliffs of Moher visitor centre runs ~€10-12 pp including parking, but there's a free walking route from Doolin/Liscannor that stays outside the paid centre.",
+     "transport_to_next": "End of this route — fly home from Shannon or drive back to Dublin.",
+     "destinations": [
+      {
+       "name": "Galway",
+       "lat": 53.2707,
+       "lng": -9.0568
+      },
+      {
+       "name": "Connemara National Park / Kylemore Abbey (day trip)",
+       "lat": 53.5478,
+       "lng": -9.818
+      },
+      {
+       "name": "Cliffs of Moher / Doolin",
+       "lat": 52.9715,
+       "lng": -9.4309
+      },
+      {
+       "name": "Aran Islands (optional)",
+       "lat": 53.1224,
+       "lng": -9.6717
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_wild-atlantic-way-7-10-days",
+   "name": "Wild Atlantic Way (7-10 days) 🌅",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car, the full west-coast Wild Atlantic Way route.",
+   "description": "The full Wild Atlantic Way: Donegal, Sligo, Mayo/Achill, Connemara, Galway, Clare, Kerry, and Cork/Kinsale.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 12a (Ireland + Scotland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — the pure west-coast counterpart to the broader Ireland Roadtrip route above, no east/south-east leg. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_wild-atlantic-way-7-10-days",
+    "name": "Wild Atlantic Way (7-10 days) 🌅",
+    "stops": 8,
+    "km_in_route": 700,
+    "km_from_nl": 1200,
+    "km_back_to_nl": 1210,
+    "km_by_country": {
+     "IE": 700
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IE",
+     "country": "Ireland",
+     "days": 9,
+     "budget": 747,
+     "dailyRate": 83,
+     "carInDailyRate": false,
+     "notes": "The full coastal route end-to-end, purely the west coast, no east or south-east detour: Donegal, Sligo, Mayo/Achill, Connemara, Galway, Clare, Kerry (Dingle/Ring of Kerry), and Cork/Kinsale. Budget ~€75-90/day. Season: May/June/September are best, July-August the busiest and most expensive, winter closes some attractions. Web check (2026-08): long distances and narrow roads throughout, with sparse fuel stations along the way — fill up in good time.",
+     "transport_to_next": "End of this route — fly home from Cork or Shannon.",
+     "destinations": [
+      {
+       "name": "Donegal",
+       "lat": 54.6538,
+       "lng": -8.1096
+      },
+      {
+       "name": "Sligo",
+       "lat": 54.2697,
+       "lng": -8.4694
+      },
+      {
+       "name": "Mayo / Achill Island",
+       "lat": 53.9575,
+       "lng": -10.053
+      },
+      {
+       "name": "Connemara",
+       "lat": 53.5478,
+       "lng": -9.818
+      },
+      {
+       "name": "Galway",
+       "lat": 53.2707,
+       "lng": -9.0568
+      },
+      {
+       "name": "Cliffs of Moher (Clare)",
+       "lat": 52.9715,
+       "lng": -9.4309
+      },
+      {
+       "name": "Dingle Peninsula / Ring of Kerry",
+       "lat": 52.1409,
+       "lng": -10.27
+      },
+      {
+       "name": "Cork / Kinsale",
+       "lat": 51.8985,
+       "lng": -8.4756
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_isle-of-man-3-4-days",
+   "name": "Isle of Man (3-4 days) 🏝️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "A small island covered by local car hire for a day (TT Mountain Road) plus bus and the historic railways for the rest — Douglas, Castletown, Peel, Snaefell.",
+   "description": "A fuller standalone Isle of Man trip: Douglas (incl. TT museum), Castletown, Peel, and the Snaefell Mountain Railway.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14e/21 (Islands: Channel Islands + Isle of Man) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 14/21 (30/30 items). ⚠️ Real overlap, explicitly flagged: Route Builder already has an Isle of Man leg inside 'England, Wales & Isle of Man 🎩' (British Isles & Celtic Coast Expedition split, per batch 12b's findings — its Lake District+Isle of Man leg). That existing leg (rbBuildEnglandWalesIoMRoute, 4 days) is actually fairly substantial already — Douglas, Peel, the TT Mountain Road/Snaefell, and both the Manx Electric Railway and Snaefell Mountain Railway — not a brief stopover, but it omits Castletown/Castle Rushen entirely, and it remains just one leg inside a much bigger 38-day England/Wales/Isle of Man tour rather than a standalone island-only trip. Built anyway per the source list since this is a fuller standalone Isle of Man trip (Douglas, Castletown, Peel, Snaefell) — flagged for review, not merged. Deliberately given a distinct function name (rbBuildIsleOfManRoute) rather than reusing rbBuildEnglandWalesIoMRoute, per this project's established collision-resolution pattern. The pre-existing England, Wales & Isle of Man 🎩 route itself is untouched, not renamed, not modified. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_isle-of-man-3-4-days",
+    "name": "Isle of Man (3-4 days) 🏝️",
+    "stops": 7,
+    "km_in_route": 80,
+    "km_from_nl": 880,
+    "km_back_to_nl": 900,
+    "km_by_country": {
+     "IM": 80
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IM",
+     "country": "Isle of Man",
+     "days": 2,
+     "budget": 200,
+     "dailyRate": 100,
+     "carInDailyRate": false,
+     "notes": "Entry: no direct connection from the Netherlands — via the UK: fly Liverpool/Manchester/Gatwick, or the Steam Packet ferry Douglas-Heysham (year-round)/Douglas-Liverpool (seasonal, March-November). Douglas as the capital (2 days), including the TT museum, plus the TT Mountain Road up Snaefell and the historic Manx Electric/Snaefell Mountain Railways. Budget ~€90-115/day (UK-level prices, limited budget options — used here at ~€100/day). Season: May-September. ⚠️ Watch out for the TT Races (late May/early June): huge crowds and high prices — book well ahead or avoid those specific weeks. UK ETA mandatory (£20, valid 2 years or until passport expiry) — since 23 April 2026 covers the UK + Jersey + Guernsey + Isle of Man together, no separate application per island needed. ⚠️⚠️ Note: Route Builder already has an Isle of Man leg inside 'England, Wales & Isle of Man 🎩' (British Isles & Celtic Coast Expedition split) — built anyway per the source list since this is a fuller standalone Isle of Man trip; flagged for review, not merged. See this route's overall notes below for the full detail on the overlap.",
+     "transport_to_next": "Short drive south to Castletown, then on to Peel on the west coast.",
+     "destinations": [
+      {
+       "name": "Douglas",
+       "lat": 54.1509,
+       "lng": -4.4815
+      },
+      {
+       "name": "TT Grandstand & Museum",
+       "lat": 54.1523,
+       "lng": -4.4749
+      },
+      {
+       "name": "TT Mountain Road (Snaefell)",
+       "lat": 54.2585,
+       "lng": -4.3947
+      },
+      {
+       "name": "Snaefell Mountain Railway",
+       "lat": 54.2136,
+       "lng": -4.397
+      },
+      {
+       "name": "Manx Electric Railway",
+       "lat": 54.1747,
+       "lng": -4.4629
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IM",
+     "country": "Isle of Man",
+     "days": 2,
+     "budget": 200,
+     "dailyRate": 100,
+     "carInDailyRate": false,
+     "notes": "Castletown's Castle Rushen and Peel on the west coast (1-2 days) — the island's other historic castles, away from Douglas. Budget ~€90-115/day, used here at ~€100/day.",
+     "transport_to_next": "End of this route — Steam Packet ferry back to Heysham/Liverpool, or flight from Douglas via the UK to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Castletown (Castle Rushen)",
+       "lat": 54.0743,
+       "lng": -4.6555
+      },
+      {
+       "name": "Peel Castle",
+       "lat": 54.2231,
+       "lng": -4.6959
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_jersey-guernsey-channel-islands-4-5-days",
+   "name": "Jersey + Guernsey (Channel Islands) (4-5 days) 🏝️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Island-hopping between the two main Channel Islands by Aurigny inter-island flight or ferry — no rental car strictly needed, most sights reachable on foot/bus/bike.",
+   "description": "A standalone Channel Islands-only trip: Guernsey (St Peter Port) and Jersey (St. Helier, Mont Orgueil Castle, Jersey War Tunnels).",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14e/21 (Islands: Channel Islands + Isle of Man) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 14/21 (30/30 items). ⚠️ Real overlap, explicitly flagged: Route Builder already has Guernsey+Jersey content bundled inside 'Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖' (British Isles & Celtic Coast Expedition split, 28 days total) — its first two legs already cover Guernsey (2 days, St Peter Port) and Jersey (3 days, incl. Jersey War Tunnels) almost exactly as this route does, before continuing on to Brittany/Normandy/Opal Coast/Belgium. Built anyway per the source list since this is a standalone islands-only trip, not a bigger Brittany/Normandy/Belgium combo — flagged for review, not merged. Deliberately given a distinct function name (rbBuildChannelIslandsRoute) rather than reusing rbBuildChannelIslandsBrittanyRoute, per this project's established collision-resolution pattern (see Crete Roadtrip (7-10 days) 🏝️ vs. the pre-existing Greece & Crete 🫒 for the precedent). The pre-existing Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖 route itself is untouched, not renamed, not modified, and still references the old Condor Ferries branding in its own notes (pre-2025 sourcing) — this new route uses the corrected 2026 DFDS Seaways/Brittany Ferries information instead, since it's being written fresh. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_jersey-guernsey-channel-islands-4-5-days",
+    "name": "Jersey + Guernsey (Channel Islands) (4-5 days) 🏝️",
+    "stops": 4,
+    "km_in_route": 70,
+    "km_from_nl": 800,
+    "km_back_to_nl": 780,
+    "km_by_country": {
+     "JE": 70
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GG",
+     "country": "Guernsey",
+     "days": 2,
+     "budget": 230,
+     "dailyRate": 115,
+     "carInDailyRate": false,
+     "notes": "Entry: no direct flight from the Netherlands — routed via Southampton/Gatwick (Aurigny hub) or via Jersey. Guernsey has its own currency, pegged 1:1 to the British pound. Budget ~€100-130/day (the Channel Islands are expensive, comparable to South England price levels — used here at ~€115/day). Season: May-September, mild climate but no guarantee of sun. Web check (2026-08): Condor Ferries stopped operating under that brand name on 28 March 2025 — the Guernsey ferry route now runs via Brittany Ferries; older guidebooks still mentioning \"Condor\" are outdated. UK ETA mandatory (£20, valid 2 years or until passport expiry) — since 23 April 2026 this single ETA also covers Jersey and Isle of Man, so a combined UK+Channel Islands+Isle of Man trip needs only one ETA. UK travel advisory: green (28-05-2026), explicitly naming Jersey/Guernsey re: the ETA requirement. ⚠️⚠️ Note: Route Builder already has Guernsey+Jersey content bundled inside 'Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖' (British Isles & Celtic Coast Expedition) — built anyway per the source list since this is a standalone islands-only trip, not a bigger Brittany/Normandy/Belgium combo; flagged for review, not merged. See this route's overall notes below for the full detail on the overlap.",
+     "transport_to_next": "Aurigny inter-island flight (~20 min) or ferry to Jersey.",
+     "destinations": [
+      {
+       "name": "St Peter Port",
+       "lat": 49.4551,
+       "lng": -2.5359
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "JE",
+     "country": "Jersey",
+     "days": 3,
+     "budget": 345,
+     "dailyRate": 115,
+     "carInDailyRate": false,
+     "notes": "St. Helier and Mont Orgueil Castle, plus the Jersey War Tunnels (WWII). Budget ~€100-130/day, used here at ~€115/day. Web check (2026-08): the Jersey ferry route now runs via DFDS Seaways (Condor Ferries, the old brand, stopped operating 28 March 2025). KLM flies a seasonal direct Amsterdam-Jersey route — Guernsey itself has no direct NL flight.",
+     "transport_to_next": "End of this route — seasonal direct KLM flight Jersey-Amsterdam, or via the UK.",
+     "destinations": [
+      {
+       "name": "St. Helier",
+       "lat": 49.1858,
+       "lng": -2.1041
+      },
+      {
+       "name": "Mont Orgueil Castle",
+       "lat": 49.1857,
+       "lng": -2.0173
+      },
+      {
+       "name": "Jersey War Tunnels (WWII)",
+       "lat": 49.1958,
+       "lng": -2.1206
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+airport_code,city,country_code,direction,eur_one_way,airline_or_routing,source,date_checked,confidence,notes
+LHR,London,GB,out,100,KLM/BA/easyJet direct,WebSearch 2026-10-28 (Expedia/Kayak $73-110 budget one-way),2026-10-28,medium,typical not promo
+LHR,London,GB,back,100,KLM/BA/easyJet direct,reuse out fare,2026-10-28,medium,
+BRS,Bristol,GB,out,100,easyJet/KLM,estimate (London benchmark),2026-10-28,low,est
+BRS,Bristol,GB,back,100,easyJet/KLM,estimate,2026-10-28,low,est
+EDI,Edinburgh,GB,out,110,KLM/easyJet direct,WebSearch 2026-10-28 (Expedia $90 / Kayak EUR 92 floors),2026-10-28,medium,typical above floors
+EDI,Edinburgh,GB,back,110,KLM/easyJet direct,reuse out fare,2026-10-28,medium,
+INV,Inverness,GB,out,150,KLM/BA direct,WebSearch 2026-10-28 (Kayak GBP 111; Omio GBP 153-171),2026-10-28,medium,
+INV,Inverness,GB,back,150,KLM/BA direct,WebSearch 2026-10-28 (Skyscanner EUR 167),2026-10-28,medium,
+BFS,Belfast,GB,out,100,easyJet (BFS) / KLM (BHD) direct,estimate,2026-10-28,low,est
+BFS,Belfast,GB,back,100,easyJet/KLM direct,estimate,2026-10-28,low,est
+ABZ,Aberdeen,GB,out,130,KLM direct,estimate,2026-10-28,low,est
+LSI,Lerwick/Kirkwall,GB,back,230,Loganair to ABZ/EDI + onward to AMS,estimate (two tickets),2026-10-28,low,est
+MAN,Manchester,GB,out,100,KLM/easyJet direct,estimate,2026-10-28,low,est
+MAN,Manchester,GB,back,100,KLM/easyJet direct,estimate,2026-10-28,low,est
+NCL,Newcastle,GB,back,85,KLM/easyJet direct,notes from ~EUR 30-90; typical est,2026-10-28,low,est
+DUB,Dublin,IE,out,90,KLM/Aer Lingus/Ryanair direct,WebSearch 2026-10-28 (Kayak EUR 58 low; typical higher),2026-10-28,medium,
+DUB,Dublin,IE,back,90,KLM/Aer Lingus/Ryanair direct,reuse out fare,2026-10-28,medium,
+ORK,Cork,IE,back,100,KLM direct,notes from ~EUR 40-70; typical est,2026-10-28,low,est
+SNN,Shannon,IE,out,100,Ryanair/Aer Lingus direct,estimate,2026-10-28,low,est
+SNN,Shannon,IE,back,100,Ryanair/Aer Lingus direct,estimate,2026-10-28,low,est
+GCI,Guernsey,GG,out,150,1 stop via London/Southampton (Aurigny),notes from ~EUR 145 return -> one-way est,2026-10-28,low,est
+JER,Jersey,JE,back,130,KLM seasonal direct,estimate,2026-10-28,low,est
+IOM,Douglas,IM,out,170,AMS-MAN/LGW + Loganair/easyJet to IOM,estimate (two tickets),2026-10-28,low,est
+IOM,Douglas,IM,back,170,via MAN/LGW,estimate,2026-10-28,low,est

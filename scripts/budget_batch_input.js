@@ -42,7 +42,9 @@ const routes = batch.routes.map(({ id }) => {
       const d = ref && decisions[[b.country_code, parseInt(b.days), parseFloat(b.budget), ref.variant || 'base'].join('|')];
       return {
         index: i, country_code: b.country_code, country: b.country, days: b.days, budget: b.budget,
-        dailyRate: Math.round(b.budget / b.days), carInDailyRate: !!(d && d.call === 'keep' && /\bcar\b/i.test(d.why)),
+        dailyRate: Math.round(b.budget / b.days), carInDailyRate: !!(d && d.call === 'keep' && /\bcar\b|4x4|rental/i.test(d.why)),
+        // What else R2d said is in the rate (ferries, domestic flights, tours): don't price it again.
+        inDailyRate: d && d.call === 'keep' ? d.why : null,
         notes: b.notes, transport_to_next: b.transport_to_next,
         destinations: (b.destinations || []).map(x => ({ name: x.name, lat: x.lat, lng: x.lng })),
       };

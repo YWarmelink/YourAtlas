@@ -12,6 +12,10 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Phase 4 batches 13-20 in (2026-10-28)**: 160 routes / 300 blocks priced by 8 parallel agents (Western Balkans, Greece/Cyprus/Turkey, Central & Eastern Europe, Nordics, British Isles, Eurasia). Batches 1-20 are now done; 21-26 remain (see `planning/budget_batches/BATCHES.md`, "Where we are / how to continue").
+  - Route-text fixes: **Germany + Austria + Slovenia** (own car, now drives home instead of "fly home from Ljubljana"). **Scandinavia Overland** (its last leg still described the expedition's onward flight to Svalbard; it now ends with a flight home from Tromsø, Svalbard as an add-on, via `RB_SCANDINAVIA_OVERLAND_END`). **Condor Ferries → DFDS** (Condor stopped 28 March 2025) in Channel Islands, Brittany & Normandy, and in the British Isles & Celtic Coast Expedition's legs and ferry table. **West Eurasia Overland** (ends in Uzbekistan; the last leg described the onward flight Tashkent-Xi'an, now "fly home from Tashkent"). `rbFixBatch1320RouteTexts()` / `rbMigrateBatch1320RouteFixes()`, Sheet: `scripts/fix_route_texts_in_sheet.js 1320`. `rbApplyBlockTextFixes()` now replaces every occurrence (the expedition notes named Condor twice).
+  - Double counts removed where R2d kept a budget because something was already in the rate: Greek Islands Paros/Naxos/Santorini ferries (€165), Greenland domestic flight (€300), Oman 4x4 (€264). `scripts/budget_batch_input.js` now passes those reasons to the agents (`inDailyRate`, and `carInDailyRate` also matches "4x4"/"rental"), and `AGENT_BRIEF.md` says not to price them again.
+
 - **Route-text fixes from Phase 4 batches 9-12 (2026-10-28)**:
   - **Switzerland Alpine Roadtrip (9 days) 🛣️**: Andermatt → Zermatt said "over the Simplon into Ticino". It is the Furka Pass into the Valais.
   - **Switzerland + Northern Italy (9 days) 🚞**: Tirano → Lugano said "over the Gotthard". It goes along Lake Como via Menaggio-Porlezza.

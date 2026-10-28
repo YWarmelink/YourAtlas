@@ -1,0 +1,1332 @@
+{
+ "batch": 13,
+ "group": "Adriatic & Western Balkans",
+ "routes": [
+  {
+   "id": "gt_seed_serbia-6-days",
+   "name": "Serbia (6 days) 🚂",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into Belgrade, rental car/bus onward to Novi Sad and Zlatibor.",
+   "description": "Belgrade and Novi Sad, then Zlatibor for the Šarganska Osmica heritage train and the Drvengrad film village.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 8c (Balkan-cluster: Serbia + North Macedonia + Kosovo) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 8/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_serbia-6-days",
+    "name": "Serbia (6 days) 🚂",
+    "stops": 5,
+    "km_in_route": 340,
+    "km_from_nl": 1800,
+    "km_back_to_nl": 1840,
+    "km_by_country": {
+     "RS": 340
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "RS",
+     "country": "Serbia",
+     "days": 6,
+     "budget": 240,
+     "dailyRate": 40,
+     "carInDailyRate": false,
+     "notes": "Belgrade (2 days) — Novi Sad (1 day) — Zlatibor (2 days, including a ride on the narrow-gauge Šarganska Osmica heritage train and a stop at Emir Kusturica's Drvengrad/Mećavnik village) — back to Belgrade. Budget ~€35-45/day. Season: May-June/September; winter has its own charm for the snow around Zlatibor. Web check (2026-08): make sure your passport/ID is valid for at least 3 months beyond your exit date.",
+     "transport_to_next": "End of this route — fly home from Belgrade.",
+     "destinations": [
+      {
+       "name": "Belgrade (Kalemegdan)",
+       "lat": 44.8225,
+       "lng": 20.4506
+      },
+      {
+       "name": "Novi Sad",
+       "lat": 45.2671,
+       "lng": 19.8335
+      },
+      {
+       "name": "Zlatibor",
+       "lat": 43.7286,
+       "lng": 19.7089
+      },
+      {
+       "name": "Šarganska Osmica (Mokra Gora)",
+       "lat": 43.7397,
+       "lng": 19.5289
+      },
+      {
+       "name": "Drvengrad (Mećavnik)",
+       "lat": 43.715,
+       "lng": 19.5169
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_serbia-bosnia-9-days",
+   "name": "Serbia + Bosnia (9 days) 🛶",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into Belgrade, fly home from Sarajevo (or reversed); rental car/rafting-operator transfer for the middle stretch.",
+   "description": "Belgrade and Zlatibor in Serbia, a Tara Canyon/Drina river rafting stop, then Sarajevo, Mostar and Blagaj in Bosnia and Herzegovina.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 8c (Balkan-cluster: Serbia + North Macedonia + Kosovo) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 8/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_serbia-bosnia-9-days",
+    "name": "Serbia + Bosnia (9 days) 🛶",
+    "stops": 6,
+    "km_in_route": 440,
+    "km_from_nl": 1800,
+    "km_back_to_nl": 1780,
+    "km_by_country": {
+     "RS": 220,
+     "BA": 220
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "RS",
+     "country": "Serbia",
+     "days": 5,
+     "budget": 200,
+     "dailyRate": 40,
+     "carInDailyRate": false,
+     "notes": "Belgrade (2 days) — Zlatibor (1 day) — the Tara Canyon/Drina river rafting put-in near Perućac (2 days; the rafting itself runs ~€60/day on top of the base budget). Budget ~€35-45/day. Season: May-June/September; the rafting season itself runs April-October. Web check (2026-08): Tara rafting centers offer pickup from both Sarajevo and Mostar, which makes the onward hop into Bosnia straightforward to arrange.",
+     "transport_to_next": "Overland into Bosnia and Herzegovina towards Sarajevo, often via the rafting operator's own transfer or a rental car — a well-worn route with no particular border complications.",
+     "destinations": [
+      {
+       "name": "Belgrade (Kalemegdan)",
+       "lat": 44.8225,
+       "lng": 20.4506
+      },
+      {
+       "name": "Zlatibor",
+       "lat": 43.7286,
+       "lng": 19.7089
+      },
+      {
+       "name": "Tara Canyon / Drina rafting (Perućac)",
+       "lat": 43.9711,
+       "lng": 19.4142
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "BA",
+     "country": "Bosnia and Herzegovina",
+     "days": 4,
+     "budget": 140,
+     "dailyRate": 35,
+     "carInDailyRate": false,
+     "notes": "Sarajevo (2 days) — Mostar and the Blagaj Tekija (2 days). Budget ~€30-40/day.",
+     "transport_to_next": "End of this route — fly home from Sarajevo.",
+     "destinations": [
+      {
+       "name": "Sarajevo (Baščaršija)",
+       "lat": 43.8563,
+       "lng": 18.4131
+      },
+      {
+       "name": "Mostar",
+       "lat": 43.3438,
+       "lng": 17.8078
+      },
+      {
+       "name": "Blagaj (Tekija)",
+       "lat": 43.2489,
+       "lng": 17.8942
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_serbia-roadtrip-9-days",
+   "name": "Serbia Roadtrip (9 days) 🚙",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into Belgrade, rental car for the full loop north to Subotica and south to Zlatibor/Tara.",
+   "description": "A Serbia road trip: Belgrade, Novi Sad, Subotica in the north, then Zlatibor and Mokra Gora/Tara National Park in the southwest.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 8c (Balkan-cluster: Serbia + North Macedonia + Kosovo) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 8/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_serbia-roadtrip-9-days",
+    "name": "Serbia Roadtrip (9 days) 🚙",
+    "stops": 5,
+    "km_in_route": 600,
+    "km_from_nl": 1800,
+    "km_back_to_nl": 1810,
+    "km_by_country": {
+     "RS": 600
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "RS",
+     "country": "Serbia",
+     "days": 9,
+     "budget": 360,
+     "dailyRate": 40,
+     "carInDailyRate": false,
+     "notes": "Belgrade (2 days) — Novi Sad — Subotica (1 day, Austro-Hungarian architecture near the Hungarian border) — Zlatibor (2 days) — Mokra Gora/Tara National Park (2 days) — back to Belgrade. Budget ~€35-45/day (rental car extra). Season: late April-June or September-early October for the best road conditions and light. Web check (2026-08): summer wildfires can occasionally close roads in this region — check conditions before setting out in July-August.",
+     "transport_to_next": "End of this route — fly home from Belgrade.",
+     "destinations": [
+      {
+       "name": "Belgrade (Kalemegdan)",
+       "lat": 44.8225,
+       "lng": 20.4506
+      },
+      {
+       "name": "Novi Sad",
+       "lat": 45.2671,
+       "lng": 19.8335
+      },
+      {
+       "name": "Subotica",
+       "lat": 46.1008,
+       "lng": 19.665
+      },
+      {
+       "name": "Zlatibor",
+       "lat": 43.7286,
+       "lng": 19.7089
+      },
+      {
+       "name": "Mokra Gora / Tara National Park",
+       "lat": 43.8833,
+       "lng": 19.3667
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_germany-austria-slovenia-10-14-days",
+   "name": "Germany + Austria + Slovenia (10-14 days) 🥨",
+   "mode": "own_car",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Own car throughout — Munich to Salzburg to Klagenfurt/Wörthersee, a short hop to Bled, then west to the Soča Valley or south to Piran.",
+   "description": "Munich, Salzburg, Klagenfurt/Wörthersee, Ljubljana/Bled/Bohinj, and (at 14 days) the Soča Valley or the Slovenian coast at Piran.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 15d (Grand European combinations — Alps/Italy cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️⚠️ Real overlap, explicitly flagged: this route extends the exact same Austria+Slovenia core as Austria + Slovenia (9 days) 🏝️ (rbBuildAustriaSloveniaRoute, Phase 2 batch 3) and this same sub-batch's own sibling Austria + Slovenia via Grossglockner (7-10 days) 🏔️ (rbBuildAustriaSloveniaGrossglocknerRoute, batch 15c) — same Salzburg/Klagenfurt/Wörthersee→Bled/Bohinj/Ljubljana backbone, here with Munich prepended and a Soča Valley/Piran tail appended. Per this project's collision-resolution policy (never merge/delete — Youri's 2026-08-21 instruction), kept as a distinct route with its own function name. Also reuses content from Bavaria: Munich + Alps (5 days) 🥨 (Munich), Salzburg + Surroundings (4 days) 🎻 (Salzburg), and Slovenia Alpine Loop (6 days) 🏔️/Julian Alps + Soča Valley (6 days) 🚣/Slovenia + Italy (9 days) 🍝 (the Soča/Piran tail) — all flagged in ROUTE_SIMILARITY_REVIEW.md. Not yet checked against Route Builder-level price research beyond the vignette checks folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_germany-austria-slovenia-10-14-days",
+    "name": "Germany + Austria + Slovenia (10-14 days) 🥨",
+    "stops": 9,
+    "km_in_route": 720,
+    "km_from_nl": 830,
+    "km_back_to_nl": 1240,
+    "km_by_country": {
+     "AT": 370,
+     "SI": 340
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "DE",
+     "country": "Germany",
+     "days": 2,
+     "budget": 144,
+     "dailyRate": 72,
+     "carInDailyRate": false,
+     "notes": "Munich (2-3 days) as the opener — same content as Bavaria: Munich + Alps (5 days) 🥨's Munich stop. Budget ~€90-115/day p.p.",
+     "transport_to_next": "Drive to Salzburg, Austria (~145km/1h30) — a Schengen border, no checks.",
+     "destinations": [
+      {
+       "name": "Munich (Marienplatz, Englischer Garten)",
+       "lat": 48.1351,
+       "lng": 11.582
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "AT",
+     "country": "Austria",
+     "days": 2,
+     "budget": 148,
+     "dailyRate": 74,
+     "carInDailyRate": false,
+     "notes": "Salzburg (2 days) — same old-town content as Salzburg + Surroundings (4 days) 🎻 above (see that route's notes). Budget ~€95-130/day p.p. Austrian 10-day vignette (€12.80/car) required.",
+     "transport_to_next": "Drive south to Klagenfurt/Wörthersee (~200km/2h15).",
+     "destinations": [
+      {
+       "name": "Salzburg (old town, Hohensalzburg Fortress)",
+       "lat": 47.8095,
+       "lng": 13.055
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "AT",
+     "country": "Austria",
+     "days": 2,
+     "budget": 148,
+     "dailyRate": 74,
+     "carInDailyRate": false,
+     "notes": "Klagenfurt/Wörthersee (Carinthia, 2 days) — same content as the Austria leg of Austria + Slovenia (9 days) 🏝️ (rbBuildAustriaSloveniaRoute) and this same sub-batch's sibling Austria + Slovenia via Grossglockner (7-10 days) 🏔️ (rbBuildAustriaSloveniaGrossglocknerRoute, batch 15c). Budget ~€95-130/day p.p.",
+     "transport_to_next": "Drive to Bled, Slovenia — only ~79km/50min from Klagenfurt, genuinely no detour.",
+     "destinations": [
+      {
+       "name": "Klagenfurt",
+       "lat": 46.6249,
+       "lng": 14.305
+      },
+      {
+       "name": "Wörthersee",
+       "lat": 46.6167,
+       "lng": 14.1667
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "SI",
+     "country": "Slovenia",
+     "days": 4,
+     "budget": 248,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Ljubljana, Bled and Bohinj (3-4 days) — same Julian Alps content as Austria + Slovenia (9 days) 🏝️ and Austria + Slovenia via Grossglockner (7-10 days) 🏔️ above. Budget ~€90-130/day p.p. — Bled itself is a price outlier within that range. Season: June-September. Slovenia does not use the Austrian vignette — a separate e-vinjeta (toll sticker) is needed once driving Slovenian motorways.",
+     "transport_to_next": "Drive west to the Soča Valley via Kranjska Gora/the Vršič Pass, or south to Piran on the coast (either/or, see this route's notes below).",
+     "destinations": [
+      {
+       "name": "Bled",
+       "lat": 46.3683,
+       "lng": 14.1146
+      },
+      {
+       "name": "Bohinj",
+       "lat": 46.2833,
+       "lng": 13.9333
+      },
+      {
+       "name": "Ljubljana",
+       "lat": 46.0569,
+       "lng": 14.5058
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "SI",
+     "country": "Slovenia",
+     "days": 2,
+     "budget": 124,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Soča Valley or Piran (2 days) — the source frames this leg as an add-on only worth doing at the 14-day end of this route's range, dropped entirely for a tighter 10-day version. Soča Valley overlaps Slovenia Alpine Loop (6 days) 🏔️/Julian Alps + Soča Valley (6 days) 🚣 above (rafting/canyoning, the Vršič Pass traffic regime); Piran overlaps the coastal leg of Slovenia + Italy (9 days) 🍝/Slovenia Roadtrip (9 days) 🗺️ above. Budget ~€90-130/day p.p.",
+     "transport_to_next": "End of this route — fly home from Ljubljana.",
+     "destinations": [
+      {
+       "name": "Bovec / Soča Valley",
+       "lat": 46.3297,
+       "lng": 13.5522
+      },
+      {
+       "name": "Piran (coastal alternative)",
+       "lat": 45.5285,
+       "lng": 13.5686
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_hungary-austria-slovenia-7-10-days",
+   "name": "Hungary + Austria + Slovenia (7-10 days) 🚆",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into Budapest, rental car through Vienna to Ljubljana/Bled, fly home from Ljubljana (or reversed).",
+   "description": "Budapest, then west to Vienna, then south into Slovenia for Ljubljana and Lake Bled.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 15c (Grand European combinations — Central Europe cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Partial overlap flagged: shares its Bled/Julian-Alps content with Austria + Slovenia (9 days) 🏝️ (rbBuildAustriaSloveniaRoute) and this same batch's Austria + Slovenia via Grossglockner (7-10 days) 🏔️ (rbBuildAustriaSloveniaGrossglocknerRoute) — but this route's Austria leg is Vienna, not Salzburg/Klagenfurt/Grossglockner, so the Austria content itself is genuinely different, only the Slovenia tail overlaps. Also checked against Hungary + Slovenia + Croatia (9 days) 🧭 (rbBuildHungarySloveniaCroatiaRoute): confirmed genuinely different — that route continues into Croatia (Plitvice/Zagreb) instead of Austria, no meaningful overlap. Kept as a distinct route; logged in ROUTE_SIMILARITY_REVIEW.md. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_hungary-austria-slovenia-7-10-days",
+    "name": "Hungary + Austria + Slovenia (7-10 days) 🚆",
+    "stops": 5,
+    "km_in_route": 700,
+    "km_from_nl": 1460,
+    "km_back_to_nl": 1180,
+    "km_by_country": {
+     "HU": 0,
+     "AT": 280,
+     "SI": 420
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "HU",
+     "country": "Hungary",
+     "days": 2,
+     "budget": 96,
+     "dailyRate": 48,
+     "carInDailyRate": false,
+     "notes": "Budapest (2 days): the Castle district and the Parliament/Pest riverside. Budget ~€55-65/day.",
+     "transport_to_next": "Drive to Vienna, ~250km/2.5h — a fully Schengen border, no checks expected on this leg.",
+     "destinations": [
+      {
+       "name": "Buda Castle District",
+       "lat": 47.496,
+       "lng": 19.0396
+      },
+      {
+       "name": "Hungarian Parliament Building",
+       "lat": 47.5076,
+       "lng": 19.0458
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "AT",
+     "country": "Austria",
+     "days": 3,
+     "budget": 222,
+     "dailyRate": 74,
+     "carInDailyRate": false,
+     "notes": "Vienna (2-3 days). Budget ~€95-130/day p.p. Web check (2026-09): confirmed — Austria's border-control regime is an official, named extension that DOES cover Hungary and Slovenia too (alongside Czechia/Slovakia), currently running through at least 15 September 2026 (a 3-month extension from an earlier 15 June 2026 deadline; in place since 2015, repeatedly re-extended, likely to be extended again around that date). Practical effect: ad-hoc document checks at motorway lay-bys, rail crossings and cross-border buses, typically adding 15-45 minutes — not a closed border. Recheck close to departure given the pattern of rolling extensions.",
+     "transport_to_next": "Drive to Ljubljana/Bled, ~380km/4h via Graz-Maribor or via Klagenfurt.",
+     "destinations": [
+      {
+       "name": "Vienna (old town, Schönbrunn)",
+       "lat": 48.2082,
+       "lng": 16.3738
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "SI",
+     "country": "Slovenia",
+     "days": 4,
+     "budget": 248,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Ljubljana and Lake Bled (3-4 days). Budget ~€90-110/day p.p. — Bled itself runs pricier than the Ljubljana average. Season: May-June or September.",
+     "transport_to_next": "End of this route — fly home from Ljubljana.",
+     "destinations": [
+      {
+       "name": "Ljubljana",
+       "lat": 46.0569,
+       "lng": 14.5058
+      },
+      {
+       "name": "Bled",
+       "lat": 46.3683,
+       "lng": 14.1146
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_julian-alps-soca-valley-6-days",
+   "name": "Julian Alps + Soča Valley (6 days) 🚣",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into Ljubljana, rental car for the Julian Alps and Soča Valley.",
+   "description": "Kranjska Gora, the Vršič Pass, Bovec's rafting and canyoning, Kobarid's WWI history and the Tolmin Gorge.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 8a (Balkan-cluster: Croatia + Slovenia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately distinct from Slovenia Alpine Loop (6 days) 🏔️ above: this one skips Ljubljana/Bled entirely and stays focused on the Julian Alps/Soča Valley itself, adding Kobarid and the Tolmin Gorge that the loop route doesn't reach. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_julian-alps-soca-valley-6-days",
+    "name": "Julian Alps + Soča Valley (6 days) 🚣",
+    "stops": 5,
+    "km_in_route": 60,
+    "km_from_nl": 1150,
+    "km_back_to_nl": 1180,
+    "km_by_country": {
+     "SI": 60
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "SI",
+     "country": "Slovenia",
+     "days": 6,
+     "budget": 372,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Kranjska Gora (1-2 days) — over the Vršič Pass to Bovec (2 days, rafting/canyoning) — Kobarid (1 day, WWI history) — Tolmin Gorge (1 day). Budget €100-140/day as a base, with adventure activities adding €50-80 pp per activity. Season: June-September — the pass and high mountains are often closed/snowed in outside that window. Web check (2026-08): Triglav NP itself is free to enter without a permit, though paid parking and specific attractions apply (e.g. the Vogel cable car, €20-25 return); see the Vršič Pass traffic regime above for the 2026 details.",
+     "transport_to_next": "End of this route — fly home from Ljubljana.",
+     "destinations": [
+      {
+       "name": "Kranjska Gora",
+       "lat": 46.4858,
+       "lng": 13.7861
+      },
+      {
+       "name": "Vršič Pass",
+       "lat": 46.4331,
+       "lng": 13.7478
+      },
+      {
+       "name": "Bovec",
+       "lat": 46.3297,
+       "lng": 13.5522
+      },
+      {
+       "name": "Kobarid",
+       "lat": 46.2467,
+       "lng": 13.5789
+      },
+      {
+       "name": "Tolmin Gorge",
+       "lat": 46.203,
+       "lng": 13.7595
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_ljubljana-lake-bled-5-days",
+   "name": "Ljubljana + Lake Bled (5 days) 🏰",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into Ljubljana, rental car or bus for the short hop to Bled.",
+   "description": "Ljubljana's old town and Lake Bled — the pletna boat to the island, Bled Castle, Vintgar Gorge and an optional Bohinj day trip.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 8a (Balkan-cluster: Croatia + Slovenia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_ljubljana-lake-bled-5-days",
+    "name": "Ljubljana + Lake Bled (5 days) 🏰",
+    "stops": 4,
+    "km_in_route": 80,
+    "km_from_nl": 1240,
+    "km_back_to_nl": 1180,
+    "km_by_country": {
+     "SI": 80
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "SI",
+     "country": "Slovenia",
+     "days": 5,
+     "budget": 310,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Ljubljana (2 days) — Bled (2 days) — optionally Bohinj as a day trip (1 day). Budget: Ljubljana ~€100/day, Bled ~€120-140/day (pricier because of the attractions). Season: May-June/September, summer is very busy at the lake. Web check (2026-08): the pletna boat to the island costs €20 return (cash only), Bled Castle €19, Vintgar Gorge €15 (timed slot — book ahead, especially in July-August).",
+     "transport_to_next": "End of this route — fly home from Ljubljana.",
+     "destinations": [
+      {
+       "name": "Ljubljana",
+       "lat": 46.0569,
+       "lng": 14.5058
+      },
+      {
+       "name": "Bled",
+       "lat": 46.3683,
+       "lng": 14.1146
+      },
+      {
+       "name": "Vintgar Gorge",
+       "lat": 46.3764,
+       "lng": 14.0964
+      },
+      {
+       "name": "Bohinj (optional day trip)",
+       "lat": 46.2833,
+       "lng": 13.9333
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_slovenia-croatia-bosnia-10-14-days",
+   "name": "Slovenia + Croatia + Bosnia (10-14 days) 🗺️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into Ljubljana, fly home from Split/Dubrovnik (or reversed), rental car throughout.",
+   "description": "Ljubljana and Lake Bled in Slovenia, Zagreb, Plitvice Lakes and Split in Croatia, and Mostar and Sarajevo in Bosnia and Herzegovina, returning via the Pelješac bridge.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 15b (Balkan combinations) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️ Real overlap, explicitly flagged: the Slovenia+Zagreb/Plitvice opening is essentially the same as the existing Slovenia + Northern Croatia (9 days) 🌲 (rbBuildSloveniaNorthernCroatiaRoute), extended here with a Split stop and a full Bosnia leg (Mostar+Sarajevo) instead of ending at Plitvice. Also shares Croatia+Bosnia content with Bosnia + Croatia (9 days) 🏛️ (rbBuildBosniaCroatiaRoute) and Croatia + Bosnia via Split (7-10 days) 🌉 (rbBuildCroatiaBosniaSplitRoute, built earlier in this same sub-batch 15b — see that route's own notes for the Split-anchor detail, not repeated here). Kept as a distinct 3-country route, not merged. Logged in ROUTE_SIMILARITY_REVIEW.md per project policy. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_slovenia-croatia-bosnia-10-14-days",
+    "name": "Slovenia + Croatia + Bosnia (10-14 days) 🗺️",
+    "stops": 7,
+    "km_in_route": 860,
+    "km_from_nl": 1240,
+    "km_back_to_nl": 1750,
+    "km_by_country": {
+     "SI": 60,
+     "HR": 560,
+     "BA": 240
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "SI",
+     "country": "Slovenia",
+     "days": 4,
+     "budget": 248,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Ljubljana (2 days) — Bled (2 days). Budget ~€100/day. Season: May-June or September.",
+     "transport_to_next": "Car, overland hop to Zagreb, Croatia — Schengen-internal since 1 January 2023, zero checks or delay.",
+     "destinations": [
+      {
+       "name": "Ljubljana",
+       "lat": 46.0569,
+       "lng": 14.5058
+      },
+      {
+       "name": "Bled",
+       "lat": 46.3683,
+       "lng": 14.1146
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "HR",
+     "country": "Croatia",
+     "days": 4,
+     "budget": 320,
+     "dailyRate": 80,
+     "carInDailyRate": false,
+     "notes": "Zagreb (1 day) — Plitvice Lakes (1-2 days, book the hourly-capacity-capped entry ahead) — Split (2 days, Diocletian's Palace). Budget ~€130/day (Split pulls the average up versus Zagreb/Plitvice). Web check (2026-08): 2026 enforces a strict hourly capacity cap at Plitvice (max 300 people per entrance) — book ahead.",
+     "transport_to_next": "Overland into Bosnia and Herzegovina towards Mostar — a non-Schengen EES external border, roughly 3-6 minutes per person for the biometric check when the lane is moving — total wait can still stretch much longer at busy crossings/times (Web check 2026-09); passport required.",
+     "destinations": [
+      {
+       "name": "Zagreb",
+       "lat": 45.815,
+       "lng": 15.9819
+      },
+      {
+       "name": "Plitvice Lakes National Park",
+       "lat": 44.8654,
+       "lng": 15.582
+      },
+      {
+       "name": "Split (Diocletian's Palace)",
+       "lat": 43.5081,
+       "lng": 16.4402
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "BA",
+     "country": "Bosnia and Herzegovina",
+     "days": 4,
+     "budget": 144,
+     "dailyRate": 36,
+     "carInDailyRate": false,
+     "notes": "Mostar (2 days: Stari Most, a day trip to Kravice/Blagaj) — Sarajevo (2 days: Baščaršija, the Tunnel of Hope). Budget ~€50/day. Season: May-June or September. Web check (2026-08): the return leg crosses back into Croatia via the Pelješac bridge (open since July 2022) rather than the old Neum detour, to fly home from Split or Dubrovnik — the same EES registration applies on the way back out.",
+     "transport_to_next": "End of this route — back via the Pelješac bridge to fly home from Split or Dubrovnik. Web check (2026-09): the bridge has a maintenance/renovation window scheduled October 2026-May 2027 (single-lane/reduced-speed sections, no full closure) — expect possible delays if travelling then.",
+     "destinations": [
+      {
+       "name": "Mostar (Stari Most)",
+       "lat": 43.3438,
+       "lng": 17.8078
+      },
+      {
+       "name": "Sarajevo (Baščaršija)",
+       "lat": 43.8563,
+       "lng": 18.4131
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_slovenia-italy-9-days",
+   "name": "Slovenia + Italy (9 days) 🍝",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into Ljubljana, fly home from Venice/Trieste (or reversed), rental car throughout.",
+   "description": "Slovenia's Ljubljana, Lake Bled and the Piran coast, continuing overland into Italy for Trieste and Venice or Friuli.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 8a (Balkan-cluster: Croatia + Slovenia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_slovenia-italy-9-days",
+    "name": "Slovenia + Italy (9 days) 🍝",
+    "stops": 6,
+    "km_in_route": 500,
+    "km_from_nl": 1240,
+    "km_back_to_nl": 1160,
+    "km_by_country": {
+     "SI": 190,
+     "IT": 310
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "SI",
+     "country": "Slovenia",
+     "days": 5,
+     "budget": 310,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Ljubljana (2 days) — Bled (1-2 days) — Piran/the Slovenian coast (1-2 days). Budget ~€100-130/day. Season: May-June/September, avoid the August crowds in Venice further along this route.",
+     "transport_to_next": "Car, short overland hop from Piran to Trieste, Italy — Schengen-Schengen, no border control or lost time.",
+     "destinations": [
+      {
+       "name": "Ljubljana",
+       "lat": 46.0569,
+       "lng": 14.5058
+      },
+      {
+       "name": "Bled",
+       "lat": 46.3683,
+       "lng": 14.1146
+      },
+      {
+       "name": "Piran / Slovenian coast",
+       "lat": 45.5285,
+       "lng": 13.5686
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 4,
+     "budget": 364,
+     "dailyRate": 91,
+     "carInDailyRate": false,
+     "notes": "Trieste (1 day) — Venice or Friuli (2 days). Budget ~€130-180/day (Venice pricier). Web check (2026-08): Slovenia-Italy is Schengen-Schengen, so no border control or lost time; Venice has had a day-tripper entry fee (contributo di accesso) since 2024 on certain peak days — check the current 2026 calendar in advance if adding a Venice day trip.",
+     "transport_to_next": "End of this route — fly home from Venice (or Trieste).",
+     "destinations": [
+      {
+       "name": "Trieste",
+       "lat": 45.6495,
+       "lng": 13.7768
+      },
+      {
+       "name": "Venice (Piazza San Marco)",
+       "lat": 45.4408,
+       "lng": 12.3155
+      },
+      {
+       "name": "Friuli (Udine, alternative)",
+       "lat": 46.0693,
+       "lng": 13.2346
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_slovenia-northern-croatia-9-days",
+   "name": "Slovenia + Northern Croatia (9 days) 🌲",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into Ljubljana, fly home from Zagreb (or reversed), rental car throughout.",
+   "description": "Slovenia's Ljubljana and Lake Bled, continuing overland into northern Croatia for Zagreb and Plitvice Lakes.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 8a (Balkan-cluster: Croatia + Slovenia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_slovenia-northern-croatia-9-days",
+    "name": "Slovenia + Northern Croatia (9 days) 🌲",
+    "stops": 4,
+    "km_in_route": 410,
+    "km_from_nl": 1240,
+    "km_back_to_nl": 1440,
+    "km_by_country": {
+     "SI": 60,
+     "HR": 350
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "SI",
+     "country": "Slovenia",
+     "days": 5,
+     "budget": 310,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Ljubljana (2 days) — Bled (2 days), plus a travel day. Budget ~€100-130/day. Season: May-June/September ideal for both halves of this trip.",
+     "transport_to_next": "Car, short overland hop to Zagreb, Croatia — a Schengen-internal border with zero checks or delay since Croatia joined Schengen on 1 January 2023 (an older assumption of border delay here is outdated).",
+     "destinations": [
+      {
+       "name": "Ljubljana",
+       "lat": 46.0569,
+       "lng": 14.5058
+      },
+      {
+       "name": "Bled",
+       "lat": 46.3683,
+       "lng": 14.1146
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "HR",
+     "country": "Croatia",
+     "days": 4,
+     "budget": 252,
+     "dailyRate": 63,
+     "carInDailyRate": false,
+     "notes": "Zagreb (2 days) — Plitvice Lakes (2 days). Budget ~€80-120/day. Web check (2026-08): 2026 enforces a strict hourly capacity cap at Plitvice (max 300 people per entrance) — book ahead, see Plitvice + Zagreb (6 days) 🏞️ above for the current entry fees.",
+     "transport_to_next": "End of this route — fly home from Zagreb.",
+     "destinations": [
+      {
+       "name": "Zagreb",
+       "lat": 45.815,
+       "lng": 15.9819
+      },
+      {
+       "name": "Plitvice Lakes National Park",
+       "lat": 44.8654,
+       "lng": 15.582
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_slovenia-alpine-loop-6-days",
+   "name": "Slovenia Alpine Loop (6 days) 🏔️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into Ljubljana, rental car for the full alpine loop.",
+   "description": "A Slovenian alpine loop: Ljubljana, Bled, Bohinj, the Vršič Pass and the Soča Valley around Bovec, back via Kranjska Gora.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 8a (Balkan-cluster: Croatia + Slovenia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_slovenia-alpine-loop-6-days",
+    "name": "Slovenia Alpine Loop (6 days) 🏔️",
+    "stops": 6,
+    "km_in_route": 170,
+    "km_from_nl": 1240,
+    "km_back_to_nl": 1150,
+    "km_by_country": {
+     "SI": 170
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "SI",
+     "country": "Slovenia",
+     "days": 6,
+     "budget": 372,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Ljubljana (1 day) — Bled (2 days) — Bohinj (1 day) — over the Vršič Pass to Bovec/the Soča Valley (2 days) — back via Kranjska Gora. Budget €100-140/day, plus activities (rafting/canyoning €50-80 pp extra). Season: only June-September is reliably driveable — the pass closes in winter for snow/avalanche risk. Web check (2026-08): a new 2026 traffic regime on the Vršič Pass — no parking at the top through 31 August, with a free shuttle bus running Kranjska Gora-Bovec (26 June-31 August, 20 trips/day); driving the pass yourself remains possible, just park lower down.",
+     "transport_to_next": "End of this route — fly home from Ljubljana.",
+     "destinations": [
+      {
+       "name": "Ljubljana",
+       "lat": 46.0569,
+       "lng": 14.5058
+      },
+      {
+       "name": "Bled",
+       "lat": 46.3683,
+       "lng": 14.1146
+      },
+      {
+       "name": "Bohinj",
+       "lat": 46.2833,
+       "lng": 13.9333
+      },
+      {
+       "name": "Vršič Pass",
+       "lat": 46.4331,
+       "lng": 13.7478
+      },
+      {
+       "name": "Bovec / Soča Valley",
+       "lat": 46.3297,
+       "lng": 13.5522
+      },
+      {
+       "name": "Kranjska Gora",
+       "lat": 46.4858,
+       "lng": 13.7861
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_slovenia-roadtrip-9-days",
+   "name": "Slovenia Roadtrip (9 days) 🗺️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into Ljubljana, rental car for the full country loop.",
+   "description": "A full Slovenia loop: Ljubljana, Bled/Bohinj, the Vršič Pass/Soča Valley, and the coast at Piran.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 8a (Balkan-cluster: Croatia + Slovenia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_slovenia-roadtrip-9-days",
+    "name": "Slovenia Roadtrip (9 days) 🗺️",
+    "stops": 4,
+    "km_in_route": 230,
+    "km_from_nl": 1240,
+    "km_back_to_nl": 1240,
+    "km_by_country": {
+     "SI": 230
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "SI",
+     "country": "Slovenia",
+     "days": 9,
+     "budget": 558,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Ljubljana (2 days) — Bled/Bohinj (2 days) — Vršič/Soča Valley (2-3 days) — Piran/the coast (1-2 days) — back to Ljubljana. Budget ~€100-140/day on average. Season: June-September because of the mountain pass, May/October works for the non-Alpine part. Web check (2026-08): check the 2026 Vršič Pass traffic regime beforehand (see Slovenia Alpine Loop above); the coastal stretch around Piran is compact, with no border delay inside Slovenia itself.",
+     "transport_to_next": "End of this route — fly home from Ljubljana.",
+     "destinations": [
+      {
+       "name": "Ljubljana",
+       "lat": 46.0569,
+       "lng": 14.5058
+      },
+      {
+       "name": "Bled / Bohinj",
+       "lat": 46.3683,
+       "lng": 14.1146
+      },
+      {
+       "name": "Vršič Pass / Soča Valley",
+       "lat": 46.3297,
+       "lng": 13.5522
+      },
+      {
+       "name": "Piran",
+       "lat": 45.5285,
+       "lng": 13.5686
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_kosovo-5-days",
+   "name": "Kosovo (5 days) 🕍",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into Pristina, bus/rental car for Prizren and Peja/Rugova.",
+   "description": "Pristina, Prizren's old town and Sinan Pasha Mosque, and the Rugova Gorge above Peja.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 8c (Balkan-cluster: Serbia + North Macedonia + Kosovo) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 8/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_kosovo-5-days",
+    "name": "Kosovo (5 days) 🕍",
+    "stops": 4,
+    "km_in_route": 180,
+    "km_from_nl": 2070,
+    "km_back_to_nl": 2010,
+    "km_by_country": {
+     "XK": 180
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "XK",
+     "country": "Kosovo",
+     "days": 5,
+     "budget": 150,
+     "dailyRate": 30,
+     "carInDailyRate": false,
+     "notes": "Pristina (1-2 days) — Prizren (2 days, the Liga House and Sinan Pasha Mosque) — Peja and the Rugova Gorge (1-2 days, canyon hiking and a Via Ferrata). Budget ~€25-35/day — the cheapest Balkan country to travel in (hostels €7-15). Season: May-June/September; the Rugova Gorge activities (Via Ferrata, cable car) run best April-October. Web check (2026-08): since 15 March 2026, private-stay accommodation must be registered with the police within 3 days (hotels handle this automatically); visiting Visoki Dečani or the Peć Patriarchate requires surrendering your passport at the KFOR checkpoint, dressing modestly, and sometimes an escort. Northern Kosovo (North Mitrovica, Zvečan, Zubin Potok, Leposavić) carries an orange 'essential travel only' advisory over tensions around the Mitrovica bridge and an August 2026 KFOR transition — this route doesn't go there. Landmines remain in remote areas along the Kosovo-Albania border and on the Dulje Pass — stick to marked trails. Border-order note: Serbia does not recognize Kosovo's border crossings as official international border posts — if this trip is ever combined with Serbia, enter Serbia first (via Belgrade/Niš airport or a recognized land border) before crossing into Kosovo, since returning to Serbia from Kosovo without a prior Serbian entry stamp can lead to refusal. That's exactly why this route and its Kosovo-based siblings in this batch pair Kosovo only with North Macedonia, Albania or Montenegro, never with Serbia.",
+     "transport_to_next": "End of this route — fly home from Pristina.",
+     "destinations": [
+      {
+       "name": "Pristina",
+       "lat": 42.6629,
+       "lng": 21.1655
+      },
+      {
+       "name": "Prizren (Sinan Pasha Mosque, Liga House)",
+       "lat": 42.2139,
+       "lng": 20.7397
+      },
+      {
+       "name": "Peja / Rugova Gorge",
+       "lat": 42.6591,
+       "lng": 20.2883
+      },
+      {
+       "name": "Visoki Dečani / Peć Patriarchate",
+       "lat": 42.5486,
+       "lng": 20.1364
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_kosovo-albania-north-macedonia-12-days",
+   "name": "Kosovo + Albania + North Macedonia (12 days) 🧭",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into Pristina, fly home from Skopje (or reversed), bus/rental car overland throughout.",
+   "description": "A slower, 12-day loop through Kosovo (Pristina, Peja/Rugova Gorge, Prizren), Albania (Kukës, Shkodër, Tirana, Berat) and North Macedonia (Ohrid, Skopje) — the same three countries as the 'Kosovo + North Macedonia + Albania (9 days)' route, reordered and re-paced for a longer trip.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 8c (Balkan-cluster: Serbia + North Macedonia + Kosovo) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 8/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_kosovo-albania-north-macedonia-12-days",
+    "name": "Kosovo + Albania + North Macedonia (12 days) 🧭",
+    "stops": 9,
+    "km_in_route": 770,
+    "km_from_nl": 2070,
+    "km_back_to_nl": 2160,
+    "km_by_country": {
+     "XK": 170,
+     "AL": 340,
+     "MK": 250
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "XK",
+     "country": "Kosovo",
+     "days": 5,
+     "budget": 150,
+     "dailyRate": 30,
+     "carInDailyRate": false,
+     "notes": "Pristina (1 day) — Peja and the Rugova Gorge (2 days) — Prizren (2 days). Budget ~€25-35/day. A fuller, slower-paced version of the 'Kosovo + North Macedonia + Albania (9 days)' route above, run in a different order and over 12 rather than 9 days. Leaves Kosovo via Albania, never towards Serbia — see the standalone Kosovo route's notes for why.",
+     "transport_to_next": "Overland via the Kukës border crossing.",
+     "destinations": [
+      {
+       "name": "Pristina",
+       "lat": 42.6629,
+       "lng": 21.1655
+      },
+      {
+       "name": "Peja / Rugova Gorge",
+       "lat": 42.6591,
+       "lng": 20.2883
+      },
+      {
+       "name": "Prizren",
+       "lat": 42.2139,
+       "lng": 20.7397
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "AL",
+     "country": "Albania",
+     "days": 4,
+     "budget": 120,
+     "dailyRate": 30,
+     "carInDailyRate": false,
+     "notes": "Kukës and Shkodër (2 days) — Tirana and Berat (2 days). Budget ~€25-35/day.",
+     "transport_to_next": "Overland/bus back east towards the North Macedonian border and Ohrid.",
+     "destinations": [
+      {
+       "name": "Kukës",
+       "lat": 42.0778,
+       "lng": 20.4219
+      },
+      {
+       "name": "Shkodër",
+       "lat": 42.0683,
+       "lng": 19.5126
+      },
+      {
+       "name": "Tirana",
+       "lat": 41.3275,
+       "lng": 19.8187
+      },
+      {
+       "name": "Berat",
+       "lat": 40.7058,
+       "lng": 19.9522
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "MK",
+     "country": "North Macedonia",
+     "days": 3,
+     "budget": 99,
+     "dailyRate": 33,
+     "carInDailyRate": false,
+     "notes": "Ohrid (2 days) — Skopje (1-2 days). Budget ~€35-45/day. Season: this is a full itinerary, so plan early departures each day to stay on schedule.",
+     "transport_to_next": "End of this route — fly home from Skopje.",
+     "destinations": [
+      {
+       "name": "Ohrid",
+       "lat": 41.1231,
+       "lng": 20.8016
+      },
+      {
+       "name": "Skopje",
+       "lat": 41.9973,
+       "lng": 21.428
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_kosovo-montenegro-albania-9-days",
+   "name": "Kosovo + Montenegro + Albania (9 days) 🗻",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into Pristina, fly home from Tirana (or reversed), bus/rental car overland throughout.",
+   "description": "Prizren and Peja/Rugova Gorge in Kosovo, Durmitor National Park in Montenegro, then Shkodër and Tirana in Albania.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 8c (Balkan-cluster: Serbia + North Macedonia + Kosovo) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 8/21. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_kosovo-montenegro-albania-9-days",
+    "name": "Kosovo + Montenegro + Albania (9 days) 🗻",
+    "stops": 5,
+    "km_in_route": 500,
+    "km_from_nl": 2090,
+    "km_back_to_nl": 2120,
+    "km_by_country": {
+     "XK": 80,
+     "ME": 140,
+     "AL": 270
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "XK",
+     "country": "Kosovo",
+     "days": 4,
+     "budget": 120,
+     "dailyRate": 30,
+     "carInDailyRate": false,
+     "notes": "Prizren (2 days) — Peja and the Rugova Gorge (2 days). Budget ~€25-35/day. Leaves Kosovo towards Montenegro, never towards Serbia — see the standalone Kosovo route's notes for why.",
+     "transport_to_next": "Overland via the Plav/Gusinje border crossing into Montenegro.",
+     "destinations": [
+      {
+       "name": "Prizren",
+       "lat": 42.2139,
+       "lng": 20.7397
+      },
+      {
+       "name": "Peja / Rugova Gorge",
+       "lat": 42.6591,
+       "lng": 20.2883
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "ME",
+     "country": "Montenegro",
+     "days": 2,
+     "budget": 100,
+     "dailyRate": 50,
+     "carInDailyRate": false,
+     "notes": "Durmitor National Park (2 days). Budget ~€45-60/day, pricier in July-August.",
+     "transport_to_next": "Overland towards the Albanian border and Shkodër.",
+     "destinations": [
+      {
+       "name": "Žabljak / Durmitor National Park",
+       "lat": 43.1547,
+       "lng": 19.1225
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "AL",
+     "country": "Albania",
+     "days": 3,
+     "budget": 90,
+     "dailyRate": 30,
+     "carInDailyRate": false,
+     "notes": "Shkodër (1-2 days) — Tirana (1-2 days). Budget ~€25-35/day.",
+     "transport_to_next": "End of this route — fly home from Tirana.",
+     "destinations": [
+      {
+       "name": "Shkodër",
+       "lat": 42.0683,
+       "lng": 19.5126
+      },
+      {
+       "name": "Tirana",
+       "lat": 41.3275,
+       "lng": 19.8187
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_kosovo-north-macedonia-6-days",
+   "name": "Kosovo + North Macedonia (6 days) 🚏",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Fly into Pristina, fly home from Skopje (or reversed), bus overland for the border hop.",
+   "description": "Pristina and Prizren in Kosovo, continuing overland into North Macedonia for Skopje and Ohrid.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 8c (Balkan-cluster: Serbia + North Macedonia + Kosovo) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 8/21. The day split compresses the source's looser ranges to fit the stated 6-day total. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_kosovo-north-macedonia-6-days",
+    "name": "Kosovo + North Macedonia (6 days) 🚏",
+    "stops": 4,
+    "km_in_route": 300,
+    "km_from_nl": 2070,
+    "km_back_to_nl": 2210,
+    "km_by_country": {
+     "XK": 80,
+     "MK": 220
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "XK",
+     "country": "Kosovo",
+     "days": 3,
+     "budget": 90,
+     "dailyRate": 30,
+     "carInDailyRate": false,
+     "notes": "Pristina (1 day) — Prizren (2 days). Budget ~€25-35/day. This route deliberately leaves Kosovo via North Macedonia, never towards Serbia — see the standalone Kosovo route's notes for the border-order reasoning.",
+     "transport_to_next": "Overland to Skopje — a straightforward non-Schengen border crossing.",
+     "destinations": [
+      {
+       "name": "Pristina",
+       "lat": 42.6629,
+       "lng": 21.1655
+      },
+      {
+       "name": "Prizren",
+       "lat": 42.2139,
+       "lng": 20.7397
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "MK",
+     "country": "North Macedonia",
+     "days": 3,
+     "budget": 99,
+     "dailyRate": 33,
+     "carInDailyRate": false,
+     "notes": "Skopje (1 day) — Ohrid (2 days). Budget ~€35-45/day.",
+     "transport_to_next": "End of this route — fly home from Skopje (or Ohrid).",
+     "destinations": [
+      {
+       "name": "Skopje",
+       "lat": 41.9973,
+       "lng": 21.428
+      },
+      {
+       "name": "Ohrid",
+       "lat": 41.1231,
+       "lng": 20.8016
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_kosovo-north-macedonia-albania-9-days",
+   "name": "Kosovo + North Macedonia + Albania (9 days) 🎒",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Fly into Pristina, fly home from Tirana (or reversed), bus overland throughout.",
+   "description": "Pristina and Prizren in Kosovo, Skopje and Ohrid in North Macedonia, finishing in Tirana, Albania.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 8c (Balkan-cluster: Serbia + North Macedonia + Kosovo) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 8/21. Deliberately distinct from the 'Kosovo + Albania + North Macedonia (12 days)' route below — same three countries, but a shorter, differently-ordered itinerary. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_kosovo-north-macedonia-albania-9-days",
+    "name": "Kosovo + North Macedonia + Albania (9 days) 🎒",
+    "stops": 5,
+    "km_in_route": 410,
+    "km_from_nl": 2070,
+    "km_back_to_nl": 2120,
+    "km_by_country": {
+     "XK": 80,
+     "MK": 220,
+     "AL": 110
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "XK",
+     "country": "Kosovo",
+     "days": 4,
+     "budget": 120,
+     "dailyRate": 30,
+     "carInDailyRate": false,
+     "notes": "Pristina (1-2 days) — Prizren (2 days). Budget ~€25-35/day. This route leaves Kosovo via North Macedonia, never towards Serbia — see the standalone Kosovo route's notes for why.",
+     "transport_to_next": "Overland to Skopje.",
+     "destinations": [
+      {
+       "name": "Pristina",
+       "lat": 42.6629,
+       "lng": 21.1655
+      },
+      {
+       "name": "Prizren",
+       "lat": 42.2139,
+       "lng": 20.7397
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "MK",
+     "country": "North Macedonia",
+     "days": 3,
+     "budget": 99,
+     "dailyRate": 33,
+     "carInDailyRate": false,
+     "notes": "Skopje (1-2 days) — Ohrid (2 days). Budget ~€35-45/day.",
+     "transport_to_next": "Cross-border bus onward to Tirana.",
+     "destinations": [
+      {
+       "name": "Skopje",
+       "lat": 41.9973,
+       "lng": 21.428
+      },
+      {
+       "name": "Ohrid",
+       "lat": 41.1231,
+       "lng": 20.8016
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "AL",
+     "country": "Albania",
+     "days": 2,
+     "budget": 60,
+     "dailyRate": 30,
+     "carInDailyRate": false,
+     "notes": "Tirana (1-2 days). Budget ~€25-35/day.",
+     "transport_to_next": "End of this route — fly home from Tirana.",
+     "destinations": [
+      {
+       "name": "Tirana",
+       "lat": 41.3275,
+       "lng": 19.8187
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

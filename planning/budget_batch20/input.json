@@ -1,0 +1,2845 @@
+{
+ "batch": 20,
+ "group": "Mediterranean, Eurasia & Europe-Asia",
+ "routes": [
+  {
+   "id": "gt_seed_balkan",
+   "name": "Balkan 🐺",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Bus overland between the five countries — all straightforward border crossings.",
+   "description": "Sarajevo and Mostar in Bosnia, Dubrovnik in Croatia, Kotor and Durmitor NP in Montenegro, Tirana and Gjirokastër in Albania, and Ohrid/Skopje in North Macedonia.",
+   "notes": "Split off from Eurasia Grand Tour 🌏 (via West Eurasia Overland 🐫, where this already stood as its own \"Strong\" block in ROUTE_BUILDER_MODULES.md — \"already a classic standalone backpacking route\") as part of the seventh combo batch (2026-08). Countries, days and budgets are carried over unchanged (current route data: 35d, not the 45d from the older 2026-07 analysis — the Eurasia route has had a route-logic overhaul since then). Eurasia Grand Tour 🌏 and West Eurasia Overland 🐫 themselves continue to exist unchanged.",
+   "distance": {
+    "id": "gt_seed_balkan",
+    "name": "Balkan 🐺",
+    "stops": 18,
+    "km_in_route": 1380,
+    "km_from_nl": 1750,
+    "km_back_to_nl": 2160,
+    "km_by_country": {
+     "BA": 210,
+     "HR": 30,
+     "ME": 250,
+     "AL": 630,
+     "MK": 270
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "BA",
+     "country": "Bosnia and Herzegovina",
+     "days": 7,
+     "budget": 252,
+     "dailyRate": 36,
+     "carInDailyRate": false,
+     "notes": "Entry: flight Amsterdam-Sarajevo, with a connection (e.g. via Vienna/Frankfurt/Zagreb, ±7 hours total; from ±€125-330 return; best period April-May/September-October). Price indication from 2026-08 web research, a snapshot. ",
+     "transport_to_next": "Bus overland (Mostar/Sarajevo to Dubrovnik or Split), direct border crossing, no visa needed",
+     "destinations": [
+      {
+       "name": "Sarajevo",
+       "lat": 43.8563,
+       "lng": 18.4131
+      },
+      {
+       "name": "Mostar",
+       "lat": 43.3438,
+       "lng": 17.8078
+      },
+      {
+       "name": "Blagaj",
+       "lat": 43.2489,
+       "lng": 17.8942
+      },
+      {
+       "name": "Trebinje",
+       "lat": 42.7106,
+       "lng": 18.3438
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "HR",
+     "country": "Croatia",
+     "days": 4,
+     "budget": 252,
+     "dailyRate": 63,
+     "carInDailyRate": false,
+     "notes": "Deliberately limited to Dubrovnik (2026-08) — Split, Hvar, Plitvice Lakes and Zagreb already visited before. This also resolves a routing mismatch: Zagreb was well out of the way for the connecting bus to Kotor.",
+     "transport_to_next": "Bus along the coast Dubrovnik-Kotor, short border crossing, possible crowds in high season",
+     "destinations": [
+      {
+       "name": "Dubrovnik",
+       "lat": 42.6507,
+       "lng": 18.0944
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "ME",
+     "country": "Montenegro",
+     "days": 7,
+     "budget": 315,
+     "dailyRate": 45,
+     "carInDailyRate": false,
+     "notes": "",
+     "transport_to_next": "Bus Kotor/Podgorica to Tirana or Shkodër, overland, easy border crossing",
+     "destinations": [
+      {
+       "name": "Kotor",
+       "lat": 42.4247,
+       "lng": 18.7712
+      },
+      {
+       "name": "Perast",
+       "lat": 42.4875,
+       "lng": 18.7089
+      },
+      {
+       "name": "Budva",
+       "lat": 42.2911,
+       "lng": 18.84
+      },
+      {
+       "name": "Durmitor NP",
+       "lat": 43.1461,
+       "lng": 19.0413
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "AL",
+     "country": "Albania",
+     "days": 10,
+     "budget": 350,
+     "dailyRate": 35,
+     "carInDailyRate": false,
+     "notes": "",
+     "transport_to_next": "Bus Korçë-Ohrid via the border crossing at Kapshticë/Qafë Thanë, overland, short ride — a much more direct crossing than going back via Tirana",
+     "destinations": [
+      {
+       "name": "Shkodër",
+       "lat": 42.0683,
+       "lng": 19.5126
+      },
+      {
+       "name": "Tirana",
+       "lat": 41.3275,
+       "lng": 19.8187
+      },
+      {
+       "name": "Berat",
+       "lat": 40.7058,
+       "lng": 19.9522
+      },
+      {
+       "name": "Gjirokastër",
+       "lat": 40.0758,
+       "lng": 20.1389
+      },
+      {
+       "name": "Sarandë",
+       "lat": 39.8756,
+       "lng": 20.0053
+      },
+      {
+       "name": "Korçë",
+       "lat": 40.6186,
+       "lng": 20.7808
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "MK",
+     "country": "North Macedonia",
+     "days": 7,
+     "budget": 259,
+     "dailyRate": 37,
+     "carInDailyRate": false,
+     "notes": "",
+     "transport_to_next": "End of this route — flight from Skopje to Amsterdam (1 stopover, e.g. via Vienna/Zagreb).",
+     "destinations": [
+      {
+       "name": "Ohrid",
+       "lat": 41.1231,
+       "lng": 20.8016
+      },
+      {
+       "name": "Bitola",
+       "lat": 41.0297,
+       "lng": 21.3347
+      },
+      {
+       "name": "Skopje",
+       "lat": 41.9973,
+       "lng": 21.428
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_east-asia-pacific",
+   "name": "East Asia & Pacific 🗻",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker — overland via the Trans-Mongolian train between China and Mongolia; onward from Mongolia only by plane (no overland route to Japan or Taiwan possible). Local guesthouses and hostels over international chains.",
+   "description": "From China's Silk Road cities via Mongolia's Gobi Desert to Japan and Taiwan.",
+   "notes": "Split off from Eurasia Grand Tour 🌏 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days, budgets and order are reused unchanged from Eurasia Grand Tour 🌏 (including all per-country price/visa/travel-advisory verifications); only the expedition boundary is new. Continuation of West Eurasia Overland 🐫; itself followed by Southeast Asia Grand Loop 🛕. Eurasia Grand Tour 🌏 itself remains unchanged as a separate, full expedition.",
+   "distance": {
+    "id": "gt_seed_east-asia-pacific",
+    "name": "East Asia & Pacific 🗻",
+    "stops": 21,
+    "km_in_route": 15290,
+    "km_from_nl": 10280,
+    "km_back_to_nl": 12610,
+    "km_by_country": {
+     "CN": 5240,
+     "MN": 2590,
+     "JP": 4990,
+     "TW": 2470
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "CN",
+     "country": "China",
+     "days": 28,
+     "budget": 1176,
+     "dailyRate": 42,
+     "carInDailyRate": false,
+     "notes": "Entry: flight Amsterdam-Xi'an (±14-16 hours, 1 stopover, usually via Beijing/Shanghai/Xiamen; from ±€580-800 return; best period September). Price indication from 2026-08 web research, a snapshot. Xinjiang (Ürümqi/Kashgar) deliberately cut (2026-08) due to the socio-political situation in the Uyghur region. Replaced by Zhangjiajie and Guilin/Yangshuo, two of China's best-known natural landscapes, alongside the already-planned highlights Xi'an (Terracotta Army) and Chengdu (pandas).",
+     "transport_to_next": "Train Beijing-Ulaanbaatar (Trans-Mongolian route), overland, visa needed for Mongolia",
+     "destinations": [
+      {
+       "name": "Xi'an",
+       "lat": 34.3416,
+       "lng": 108.9398
+      },
+      {
+       "name": "Chengdu",
+       "lat": 30.5728,
+       "lng": 104.0668
+      },
+      {
+       "name": "Zhangjiajie",
+       "lat": 29.117,
+       "lng": 110.4794
+      },
+      {
+       "name": "Guilin/Yangshuo (Li River)",
+       "lat": 25.2736,
+       "lng": 110.29
+      },
+      {
+       "name": "Shanghai",
+       "lat": 31.2304,
+       "lng": 121.4737
+      },
+      {
+       "name": "Beijing",
+       "lat": 39.9042,
+       "lng": 116.4074
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "MN",
+     "country": "Mongolia",
+     "days": 10,
+     "budget": 370,
+     "dailyRate": 37,
+     "carInDailyRate": false,
+     "notes": "The Gobi Desert leg requires an organized jeep tour (shared 4x4 + driver + guide + ger camps) — budget $80-120 per day p.p. for those specific days, a separate cost on top of the rest of the trip. Free travel within 100 km of the Russian/Chinese border is not allowed without permission — check that the tour operator accounts for this, especially in the southern Gobi close to the Chinese border.",
+     "transport_to_next": "Flight Ulaanbaatar-Tokyo (via Beijing/Seoul, no direct flight and no overland route possible)",
+     "destinations": [
+      {
+       "name": "Ulaanbaatar",
+       "lat": 47.8864,
+       "lng": 106.9057
+      },
+      {
+       "name": "Terelj NP",
+       "lat": 47.9714,
+       "lng": 107.4756
+      },
+      {
+       "name": "Kharkhorin",
+       "lat": 47.1975,
+       "lng": 102.8317
+      },
+      {
+       "name": "Gobi Desert",
+       "lat": 43.5711,
+       "lng": 104.4256
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "JP",
+     "country": "Japan",
+     "days": 18,
+     "budget": 1314,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "",
+     "transport_to_next": "Flight Osaka/Tokyo-Taipei, short flight, no visa needed for Taiwan",
+     "destinations": [
+      {
+       "name": "Tokyo",
+       "lat": 35.6762,
+       "lng": 139.6503
+      },
+      {
+       "name": "Hakone/Fuji",
+       "lat": 35.2323,
+       "lng": 139.1069
+      },
+      {
+       "name": "Kyoto",
+       "lat": 35.0116,
+       "lng": 135.7681
+      },
+      {
+       "name": "Nara",
+       "lat": 34.6851,
+       "lng": 135.8048
+      },
+      {
+       "name": "Osaka",
+       "lat": 34.6937,
+       "lng": 135.5023
+      },
+      {
+       "name": "Hiroshima",
+       "lat": 34.3853,
+       "lng": 132.4553
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "TW",
+     "country": "Taiwan",
+     "days": 10,
+     "budget": 480,
+     "dailyRate": 48,
+     "carInDailyRate": false,
+     "notes": "",
+     "transport_to_next": "HSR (high-speed rail) Kaohsiung-Taipei back (~2h) from Kenting, then flight Taipei-Hanoi, no direct ferry/overland route available",
+     "destinations": [
+      {
+       "name": "Taipei",
+       "lat": 25.033,
+       "lng": 121.5654
+      },
+      {
+       "name": "Taroko Gorge",
+       "lat": 24.1588,
+       "lng": 121.6222
+      },
+      {
+       "name": "Sun Moon Lake",
+       "lat": 23.8618,
+       "lng": 120.9155
+      },
+      {
+       "name": "Tainan",
+       "lat": 22.9997,
+       "lng": 120.227
+      },
+      {
+       "name": "Kenting",
+       "lat": 21.9447,
+       "lng": 120.7969
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_egypt-arabian-peninsula",
+   "name": "Egypt & Arabian Peninsula 🐪",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Backpacker — ferry Egypt-Jordan, flights between Jordan/Oman/Bahrain/Qatar (no practical overland route).",
+   "description": "From ancient Egypt via the Nabataean trade routes of Jordan to the Arab trading world of Oman, Bahrain and Qatar.",
+   "notes": "Split off from Mediterranean Civilizations Expedition 🏛️ as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days, budgets and order are carried over unchanged (including all 2026-07 travel-advisory flags on Jordan/Oman/Bahrain/Qatar — see the country notes). This puts Egypt in two separate Route Builder expeditions — also in Africa Grand Tour 🌍's 'Horn of Africa & Egypt' leg — exactly the 'block reappears in multiple expeditions' pattern from the modularization analysis. Qatar is thematically the exception to the rest of this route (purely modern, no ancient history) and the first candidate to drop if the trip needs to get shorter — see the original route notes. Follows Anatolia 🕌. Mediterranean Civilizations Expedition 🏛️ itself remains unchanged as a separate, full expedition.\n\nRoute-logic revision (2026-08): two previously-unstated return trips now made explicit — Abu Simbel-Cairo-Nuweiba (Egypt→Jordan ferry) and Wahiba Sands-Muscat (Oman→Bahrain flight). Jordan's Dead Sea position verified, already optimal. Coordinates per destination added. See Mediterranean Civilizations Expedition 🏛️'s own notes for the full writeup.",
+   "distance": {
+    "id": "gt_seed_egypt-arabian-peninsula",
+    "name": "Egypt & Arabian Peninsula 🐪",
+    "stops": 20,
+    "km_in_route": 8450,
+    "km_from_nl": 4230,
+    "km_back_to_nl": 6350,
+    "km_by_country": {
+     "EG": 1210,
+     "JO": 2230,
+     "OM": 3590,
+     "BH": 1270,
+     "QA": 150
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "EG",
+     "country": "Egypt",
+     "days": 14,
+     "budget": 490,
+     "dailyRate": 35,
+     "carInDailyRate": false,
+     "notes": "Entry: direct KLM flight Amsterdam-Cairo (±4h30, from ±€200-320 return, best period December). Price indication from 2026-08 web research, a snapshot. Ancient Egyptian civilization in its entirety: pyramids (Giza), temples (Karnak, Abu Simbel) and the Nile as the connecting thread. Hidden gem: the Siwa Oasis, far from the usual route but worth the detour. Travel advisory (2026-07): yellow for Cairo/Giza/Luxor/Aswan/Abu Simbel — fine to visit; only (North) Sinai outside this route is orange/red. Route-logic fix (2026-08): the return trip Abu Simbel-Cairo-Nuweiba (previously unstated) is now made explicit. See Mediterranean Civilizations Expedition 🏛️'s own notes for the full writeup.",
+     "transport_to_next": "Back to Cairo (Aswan/Abu Simbel-Cairo, ≈850 km), then bus/car Cairo-Nuweiba (≈450 km, ≈7h), then ferry Nuweiba-Aqaba (alternative: direct flight Cairo-Amman) — shortest route to Jordan without flying via the Gulf",
+     "destinations": [
+      {
+       "name": "Cairo",
+       "lat": 30.0444,
+       "lng": 31.2357
+      },
+      {
+       "name": "Giza",
+       "lat": 29.9765,
+       "lng": 31.1313
+      },
+      {
+       "name": "Luxor",
+       "lat": 25.6872,
+       "lng": 32.6396
+      },
+      {
+       "name": "Karnak",
+       "lat": 25.7188,
+       "lng": 32.6573
+      },
+      {
+       "name": "Aswan",
+       "lat": 24.0889,
+       "lng": 32.8998
+      },
+      {
+       "name": "Abu Simbel",
+       "lat": 22.3372,
+       "lng": 31.6258
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "JO",
+     "country": "Jordan",
+     "days": 8,
+     "budget": 500,
+     "dailyRate": 63,
+     "carInDailyRate": false,
+     "notes": "Nabataean trade routes (Petra), Roman history (Jerash) and the Wadi Rum desert. December gives pleasant daytime temperatures for the hike to the Treasury and for camping in Wadi Rum. Practical tip: the Jordan Pass (~50-60 JOD, buy online well in advance) bundles entry to Petra/Jerash/Wadi Rum/40 other sites and waives the separate 40 JOD visa fee for a stay of 3+ nights. ⚠️ Travel advisory (July 2026): orange for the whole of Jordan (normally only the border area with Syria/Iraq) due to the regional Iran-Israel/US conflict — check nederlandwereldwijd.nl shortly before departure, this may have changed again by then.",
+     "transport_to_next": "Flight Amman-Muscat — no overland route, traveling via Saudi Arabia is impractical visa-wise",
+     "destinations": [
+      {
+       "name": "Amman",
+       "lat": 31.9454,
+       "lng": 35.9284
+      },
+      {
+       "name": "Jerash",
+       "lat": 32.2811,
+       "lng": 35.8994
+      },
+      {
+       "name": "Petra",
+       "lat": 30.3285,
+       "lng": 35.4444
+      },
+      {
+       "name": "Wadi Rum",
+       "lat": 29.5766,
+       "lng": 35.4206
+      },
+      {
+       "name": "Dead Sea",
+       "lat": 31.559,
+       "lng": 35.4732
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "OM",
+     "country": "Oman",
+     "days": 7,
+     "budget": 770,
+     "dailyRate": 110,
+     "carInDailyRate": false,
+     "notes": "Arabian trade routes, forts (Nizwa) and both mountains (Jebel Shams, the \"Grand Canyon of Arabia\") and desert (Wahiba Sands) within short reach of each other. Hidden gem: Bahla Fort and the centuries-old falaj irrigation channels near Nizwa (both UNESCO). Price check (2026-07): Jebel Shams and Wahiba Sands can't be done by public transport — a rental car (4x4) or tour is mandatory here. ⚠️ Travel advisory (July 2026): orange for Musandam/Duqm/Salalah/Sohar, but yellow — this whole leg — for Muscat/Nizwa/Jebel Shams/Wahiba Sands. Check nederlandwereldwijd.nl shortly before departure, the situation is volatile.",
+     "transport_to_next": "Back to Muscat (≈200 km/≈3h from Wahiba Sands — route-logic fix 2026-08, search-confirmed: this was previously unstated), then flight Muscat-Manama — short Gulf flight",
+     "destinations": [
+      {
+       "name": "Muscat",
+       "lat": 23.588,
+       "lng": 58.3829
+      },
+      {
+       "name": "Nizwa",
+       "lat": 22.9333,
+       "lng": 57.5333
+      },
+      {
+       "name": "Jebel Shams",
+       "lat": 23.2394,
+       "lng": 57.2661
+      },
+      {
+       "name": "Wahiba Sands",
+       "lat": 22.0667,
+       "lng": 58.5
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "BH",
+     "country": "Bahrain",
+     "days": 3,
+     "budget": 177,
+     "dailyRate": 59,
+     "carInDailyRate": false,
+     "notes": "Qal'at al-Bahrain (UNESCO) was the capital of the Dilmun civilization, a Bronze Age trading civilization that was already trading between Mesopotamia and the Indus Valley around 2000 BCE. The Tree of Life, a centuries-old tree that survives inexplicably in the middle of the desert, as a natural curiosity. ⚠️ Travel advisory (July 2026): RED — do not travel. Iran is carrying out attacks on military targets in Bahrain, with warnings of possible attacks in central Manama; no Dutch embassy in Bahrain (nearest: Kuwait). Right now a hard no-go, not a budget/planning issue — check nederlandwereldwijd.nl shortly before departure.",
+     "transport_to_next": "Flight Manama-Doha — short Gulf flight",
+     "destinations": [
+      {
+       "name": "Qal'at al-Bahrain (Bahrain Fort)",
+       "lat": 26.2333,
+       "lng": 50.5217
+      },
+      {
+       "name": "Bahrain National Museum",
+       "lat": 26.2367,
+       "lng": 50.5936
+      },
+      {
+       "name": "Al Fateh Grand Mosque",
+       "lat": 26.2361,
+       "lng": 50.5464
+      },
+      {
+       "name": "Tree of Life",
+       "lat": 25.9167,
+       "lng": 50.5833
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "QA",
+     "country": "Qatar",
+     "days": 3,
+     "budget": 210,
+     "dailyRate": 70,
+     "carInDailyRate": false,
+     "notes": "⚠️ Travel advisory (July 2026): orange — Qatar has been hit by Iranian missiles/drones aimed at American targets. Travel is only recommended if necessary. Check nederlandwereldwijd.nl shortly before departure, the situation may have changed again by then. Deliberately modern and contemporary as a finale: Islamic architecture (Museum of Islamic Art) as a contrast with the thousands of years of history earlier in the trip.",
+     "transport_to_next": "End of the expedition — return flight from Doha (Hamad International Airport) to the Netherlands",
+     "destinations": [
+      {
+       "name": "Doha",
+       "lat": 25.2854,
+       "lng": 51.531
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_iberia-moroccotunisia",
+   "name": "Iberia & Morocco/Tunisia 🏰",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker — hostels with the occasional hotel, ferry Spain-Morocco, flight Morocco-Tunisia (closed Algerian border).",
+   "description": "From Moorish Spain via Berber culture in Morocco to Punic/Roman Tunisia.",
+   "notes": "Split off from Mediterranean Civilizations Expedition 🏛️ as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days, budgets and order are carried over unchanged (including the 2026-07 price/visa/travel-advisory verification). Followed by: Malta & Italy 🏛️. Mediterranean Civilizations Expedition 🏛️ itself remains unchanged as a separate, full expedition.\n\nRoute-logic revision (2026-08): Spain and Morocco verified, already optimal — no change needed. Coordinates per destination added. See Mediterranean Civilizations Expedition 🏛️'s own notes.",
+   "distance": {
+    "id": "gt_seed_iberia-moroccotunisia",
+    "name": "Iberia & Morocco/Tunisia 🏰",
+    "stops": 14,
+    "km_in_route": 4400,
+    "km_from_nl": 2430,
+    "km_back_to_nl": 2260,
+    "km_by_country": {
+     "ES": 440,
+     "MA": 1040,
+     "TN": 2920
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 10,
+     "budget": 600,
+     "dailyRate": 60,
+     "carInDailyRate": false,
+     "notes": "Entry: flight Amsterdam-Málaga (±2h50, from ±€90-180 return, best period September). Price indication from 2026-08 web research, a snapshot. Opening leg: Moorish and Roman history in Andalusia, from the Alhambra in Granada to the Mezquita in Córdoba. Historic old towns as a calm start. Hidden gem: Ronda, with its gorge bridge, as a stop between Málaga and Seville.",
+     "transport_to_next": "Ferry Tarifa/Algeciras-Tangier (35-90 minutes, several sailings a day) — shortest and cheapest crossing to Africa, no flight needed",
+     "destinations": [
+      {
+       "name": "Málaga",
+       "lat": 36.7213,
+       "lng": -4.4214
+      },
+      {
+       "name": "Granada (Alhambra)",
+       "lat": 37.176,
+       "lng": -3.5883
+      },
+      {
+       "name": "Córdoba (Mezquita)",
+       "lat": 37.8789,
+       "lng": -4.7794
+      },
+      {
+       "name": "Seville",
+       "lat": 37.3891,
+       "lng": -5.9845
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "MA",
+     "country": "Morocco",
+     "days": 10,
+     "budget": 450,
+     "dailyRate": 45,
+     "carInDailyRate": false,
+     "notes": "Berber culture, Islamic history and Roman remains (Volubilis) side by side. The medinas of Fes and Marrakech and the blue city of Chefchaouen as highlights; trains between the main cities are good and cheap.",
+     "transport_to_next": "Flight Marrakech/Casablanca-Tunis — no practical overland or ferry route due to the closed border with Algeria",
+     "destinations": [
+      {
+       "name": "Tangier",
+       "lat": 35.7595,
+       "lng": -5.834
+      },
+      {
+       "name": "Chefchaouen",
+       "lat": 35.1688,
+       "lng": -5.2636
+      },
+      {
+       "name": "Fes",
+       "lat": 34.0181,
+       "lng": -5.0078
+      },
+      {
+       "name": "Volubilis",
+       "lat": 34.0742,
+       "lng": -5.5548
+      },
+      {
+       "name": "Marrakech",
+       "lat": 31.6295,
+       "lng": -7.9811
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "TN",
+     "country": "Tunisia",
+     "days": 6,
+     "budget": 220,
+     "dailyRate": 37,
+     "carInDailyRate": false,
+     "notes": "Carthaginian civilization (Carthage) and Roman North Africa (Dougga, the amphitheater of El Jem, bigger than the one in Rome itself) close together; Sidi Bou Said as a quiet, picturesque village amid the history.",
+     "transport_to_next": "End of this route — flight home from Tunis (or flight Tunis-Malta to continue on to Malta & Italy 🏛️)",
+     "destinations": [
+      {
+       "name": "Tunis",
+       "lat": 36.8065,
+       "lng": 10.1815
+      },
+      {
+       "name": "Carthage",
+       "lat": 36.8531,
+       "lng": 10.3236
+      },
+      {
+       "name": "Dougga",
+       "lat": 36.4225,
+       "lng": 9.2189
+      },
+      {
+       "name": "El Jem",
+       "lat": 35.2967,
+       "lng": 10.705
+      },
+      {
+       "name": "Sidi Bou Said",
+       "lat": 36.8703,
+       "lng": 10.3417
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_spain",
+   "name": "Spain 💃",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Trains and buses between the cities — Andalusia has a good intercity network.",
+   "description": "Moorish Spain and Roman history in Andalusia: Seville, Córdoba, Granada and Málaga.",
+   "notes": "Split off from Mediterranean Civilizations Expedition 🏛️ (via Iberia & Morocco/Tunisia 🏰, where this was already the opening leg) as part of the fourth batch of standalone countries (2026-08) — one of the most-booked destinations worldwide. Country, days and budget are carried over unchanged. Mediterranean Civilizations Expedition 🏛️ and Iberia & Morocco/Tunisia 🏰 themselves continue to exist unchanged.",
+   "distance": {
+    "id": "gt_seed_spain",
+    "name": "Spain 💃",
+    "stops": 4,
+    "km_in_route": 440,
+    "km_from_nl": 2430,
+    "km_back_to_nl": 2410,
+    "km_by_country": {
+     "ES": 440
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 10,
+     "budget": 600,
+     "dailyRate": 60,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flight Amsterdam-Málaga (Transavia/Vueling/Ryanair/easyJet, ±2h55; from ±€90-230 return; best period January). Price indication from 2026-08 web research, a snapshot. Moorish and Roman history in Andalusia, from the Alhambra in Granada to the Mezquita in Córdoba. Historic old towns as a calm start to the rest of the trip. Hidden gem: Ronda, with its gorge bridge, as a stop between Málaga and Seville. Travel advisory: green. Visa: none, Schengen.",
+     "transport_to_next": "End of this route — return flight from Málaga to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Málaga",
+       "lat": 36.7213,
+       "lng": -4.4214
+      },
+      {
+       "name": "Granada (Alhambra)",
+       "lat": 37.176,
+       "lng": -3.5883
+      },
+      {
+       "name": "Córdoba (Mezquita)",
+       "lat": 37.8789,
+       "lng": -4.7794
+      },
+      {
+       "name": "Seville",
+       "lat": 37.3891,
+       "lng": -5.9845
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_corsica-southern-france",
+   "name": "Corsica & Southern France ⛵",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker — overnight ferry Corsica-mainland.",
+   "description": "Two French legs connecting Bonifacio's cliffs and the Gallo-Roman monuments of Provence.",
+   "notes": "Split off from Mediterranean Civilizations Expedition 🏛️ as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days and budgets are carried over unchanged. This is the shortest of the six split-off blocks (11 days) — exactly vacation length, fine to book as a standalone Trip rather than a Route Builder expedition. Follows Malta & Italy 🏛️. Mediterranean Civilizations Expedition 🏛️ itself remains unchanged as a separate, full expedition.\n\nRoute-logic revision (2026-08): no errors found, no change needed. Coordinates per destination added. See Mediterranean Civilizations Expedition 🏛️'s own notes.",
+   "distance": {
+    "id": "gt_seed_corsica-southern-france",
+    "name": "Corsica & Southern France ⛵",
+    "stops": 7,
+    "km_in_route": 760,
+    "km_from_nl": 1600,
+    "km_back_to_nl": 1180,
+    "km_by_country": {
+     "FR": 760
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "FR",
+     "country": "France",
+     "days": 5,
+     "budget": 360,
+     "dailyRate": 72,
+     "carInDailyRate": false,
+     "notes": "Entry: flight Amsterdam-Figari/Ajaccio (±4-5h incl. stopover, no direct flight, from ±€150-280 return, best period November). Price indication from 2026-08 web research, a snapshot. Mediterranean nature at its best: the limestone cliffs of Bonifacio, the granite needles of Bavella. French and Italian influences intermingle here. Hidden gem: the Scandola Nature Reserve, only accessible by boat.",
+     "transport_to_next": "Ferry Ajaccio/Bastia-Marseille or Toulon (Corsica Ferries/La Méridionale, about 6-10 hours, often an overnight boat)",
+     "destinations": [
+      {
+       "name": "Bonifacio",
+       "lat": 41.3869,
+       "lng": 9.1595
+      },
+      {
+       "name": "Ajaccio",
+       "lat": 41.9192,
+       "lng": 8.7386
+      },
+      {
+       "name": "Bavella",
+       "lat": 41.7833,
+       "lng": 9.2167
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "FR",
+     "country": "France",
+     "days": 6,
+     "budget": 432,
+     "dailyRate": 72,
+     "carInDailyRate": false,
+     "notes": "Gallo-Roman history (the aqueduct of the Pont du Gard, the arenas of Arles and Nîmes) in a Provençal atmosphere. Hidden gem: the Camargue near Arles, with wild horses and flamingos, as a nature break.",
+     "transport_to_next": "End of this route — flight home from Marseille (or flight Marseille-Athens to continue on to Greece & Cyprus 🏺)",
+     "destinations": [
+      {
+       "name": "Marseille",
+       "lat": 43.2965,
+       "lng": 5.3698
+      },
+      {
+       "name": "Arles",
+       "lat": 43.6767,
+       "lng": 4.6278
+      },
+      {
+       "name": "Nîmes",
+       "lat": 43.8367,
+       "lng": 4.3601
+      },
+      {
+       "name": "Pont du Gard",
+       "lat": 43.9474,
+       "lng": 4.535
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_greece-crete",
+   "name": "Greece & Crete 🫒",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Public transport/rental car on the mainland, short flight to Crete.",
+   "description": "Greek antiquity on the mainland (Athens, Delphi, Olympia, Meteora) and the Minoan civilization of Crete.",
+   "notes": "Split off from Mediterranean Civilizations Expedition 🏛️ (via Greece & Cyprus 🏺, where this was already the first two legs, \"Strong\" per ROUTE_BUILDER_MODULES.md) as part of the fourth batch of standalone countries (2026-08) — Cyprus deliberately left out (too short, 5 days, to sell as a standalone destination). Country, days and budget are carried over unchanged. Mediterranean Civilizations Expedition 🏛️ and Greece & Cyprus 🏺 themselves continue to exist unchanged.",
+   "distance": {
+    "id": "gt_seed_greece-crete",
+    "name": "Greece & Crete 🫒",
+    "stops": 9,
+    "km_in_route": 1540,
+    "km_from_nl": 2770,
+    "km_back_to_nl": 3100,
+    "km_by_country": {
+     "GR": 1540
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 12,
+     "budget": 840,
+     "dailyRate": 70,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flight Amsterdam-Athens (KLM/Aegean/Transavia, ±3h15-3h35; from ±€140-220 return; best period November). Price indication from 2026-08 web research, a snapshot. Greek antiquity, philosophy, democracy and mythology at the key locations themselves: the Acropolis, the oracle of Delphi, the original Olympic Games in Olympia. Hidden gem: Monemvasia and Nafplio on the Peloponnese, much quieter than Athens. ⚠️ Travel advisory: yellow (updated August 4, 2026, wildfires) — check the local situation shortly before/during the trip, especially around heat/wind. Visa: none, Schengen.",
+     "transport_to_next": "Short flight Athens-Heraklion (±55 min, from ±€60-90 return) — faster than the night ferry (7h50-12h) and more logical with only 7 days on Crete.",
+     "destinations": [
+      {
+       "name": "Athens",
+       "lat": 37.9838,
+       "lng": 23.7275
+      },
+      {
+       "name": "Peloponnese",
+       "lat": 37.5685,
+       "lng": 22.8072
+      },
+      {
+       "name": "Olympia",
+       "lat": 37.6384,
+       "lng": 21.63
+      },
+      {
+       "name": "Delphi",
+       "lat": 38.4824,
+       "lng": 22.501
+      },
+      {
+       "name": "Meteora",
+       "lat": 39.7217,
+       "lng": 21.6306
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 7,
+     "budget": 450,
+     "dailyRate": 64,
+     "carInDailyRate": false,
+     "notes": "The Minoan civilization (Knossos) as the oldest layer of Greek history, followed by island culture in Chania and a solid hike through the Samaria Gorge. Hidden gem: the pink sand beach of Elafonisi, in the far west of the island.",
+     "transport_to_next": "End of this route — flight Heraklion-Athens, then return flight to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Heraklion",
+       "lat": 35.3387,
+       "lng": 25.1442
+      },
+      {
+       "name": "Knossos",
+       "lat": 35.2977,
+       "lng": 25.1628
+      },
+      {
+       "name": "Chania",
+       "lat": 35.5138,
+       "lng": 24.018
+      },
+      {
+       "name": "Samaria Gorge",
+       "lat": 35.3167,
+       "lng": 23.95
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_greece-cyprus",
+   "name": "Greece & Cyprus 🏺",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker — night ferry Piraeus-Heraklion, flight Crete-Cyprus (no reliable ferry connection).",
+   "description": "From Greek antiquity on the mainland via the Minoan civilization of Crete to the Greek-Roman-Byzantine layer of Cyprus.",
+   "notes": "Split off from Mediterranean Civilizations Expedition 🏛️ as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days and budgets are carried over unchanged. Follows Corsica & Southern France ⛵; itself followed by Anatolia 🕌. Mediterranean Civilizations Expedition 🏛️ itself remains unchanged as a separate, full expedition.\n\nRoute-logic revision (2026-08): mainland Greece reversed (Peloponnese/Olympia before Delphi/Meteora) to avoid a triple north-south detour — the Piraeus ferry sits right next to Athens, not the Peloponnese. Coordinates per destination added. See Mediterranean Civilizations Expedition 🏛️'s own notes for the full writeup.",
+   "distance": {
+    "id": "gt_seed_greece-cyprus",
+    "name": "Greece & Cyprus 🏺",
+    "stops": 12,
+    "km_in_route": 2700,
+    "km_from_nl": 2770,
+    "km_back_to_nl": 3790,
+    "km_by_country": {
+     "GR": 1540,
+     "CY": 1160
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 12,
+     "budget": 840,
+     "dailyRate": 70,
+     "carInDailyRate": false,
+     "notes": "Entry: flight Amsterdam-Athens (±3h20, from ±€90-160 return, best period November). Price indication from 2026-08 web research, a snapshot. Greek antiquity, philosophy, democracy and mythology at the key locations themselves: the Acropolis, the oracle of Delphi, the original Olympic Games in Olympia. Hidden gem: Monemvasia and Nafplio on the Peloponnese, much quieter than Athens. Route-logic fix (2026-08, search-confirmed): order reversed — Athens→Delphi→Olympia→Meteora→Peloponnese switched back and forth between north (Delphi/Meteora) and south (Olympia/Peloponnese), while Piraeus (the ferry port to Crete) sits right next to Athens, not the Peloponnese. Now Athens→Peloponnese/Olympia (south, one loop)→Delphi→Meteora (north, one loop, ending with the return trip to Piraeus/Athens for the ferry) — only one return trip instead of two.",
+     "transport_to_next": "Car/bus back to Piraeus/Athens from Meteora (≈350 km), then night ferry Piraeus-Heraklion (about 7-9 hours) to Crete",
+     "destinations": [
+      {
+       "name": "Athens",
+       "lat": 37.9838,
+       "lng": 23.7275
+      },
+      {
+       "name": "Peloponnese",
+       "lat": 37.5685,
+       "lng": 22.8072
+      },
+      {
+       "name": "Olympia",
+       "lat": 37.6384,
+       "lng": 21.63
+      },
+      {
+       "name": "Delphi",
+       "lat": 38.4824,
+       "lng": 22.501
+      },
+      {
+       "name": "Meteora",
+       "lat": 39.7217,
+       "lng": 21.6306
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 7,
+     "budget": 450,
+     "dailyRate": 64,
+     "carInDailyRate": false,
+     "notes": "The Minoan civilization (Knossos) as the oldest layer of Greek history, followed by island culture in Chania and a solid hike through the Samaria Gorge. Hidden gem: the pink sand beach of Elafonisi, in the far west of the island.",
+     "transport_to_next": "Flight Heraklion-Larnaca (usually with a stopover in Athens) — no reliable direct ferry connection",
+     "destinations": [
+      {
+       "name": "Heraklion",
+       "lat": 35.3387,
+       "lng": 25.1442
+      },
+      {
+       "name": "Knossos",
+       "lat": 35.2977,
+       "lng": 25.1628
+      },
+      {
+       "name": "Chania",
+       "lat": 35.5138,
+       "lng": 24.018
+      },
+      {
+       "name": "Samaria Gorge",
+       "lat": 35.3167,
+       "lng": 23.95
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "CY",
+     "country": "Cyprus",
+     "days": 5,
+     "budget": 325,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "Greek, Roman and Byzantine layers on one island: the mosaics of Paphos (UNESCO), the Roman theater of Kourion near Limassol as a hidden gem, and the divided capital Nicosia.",
+     "transport_to_next": "End of this route — flight home from Larnaca (or flight Larnaca-Istanbul to continue on to Anatolia 🕌)",
+     "destinations": [
+      {
+       "name": "Paphos",
+       "lat": 34.772,
+       "lng": 32.4297
+      },
+      {
+       "name": "Limassol",
+       "lat": 34.7071,
+       "lng": 33.0226
+      },
+      {
+       "name": "Nicosia",
+       "lat": 35.1856,
+       "lng": 33.3823
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_malta-italy",
+   "name": "Malta & Italy 🏛️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker — hostels with the occasional hotel, ferries between Malta/Sicily/Sardinia, train Naples-Rome, flight or night ferry Rome-Sardinia.",
+   "description": "From temples older than the pyramids on Malta via Magna Graecia and Roman southern Italy to the heart of the Roman Empire, with Sardinia as a unique finale.",
+   "notes": "Split off from Mediterranean Civilizations Expedition 🏛️ as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days, budgets and order are carried over unchanged. Follows Iberia & Morocco/Tunisia 🏰; itself followed by Corsica & Southern France ⛵. Mediterranean Civilizations Expedition 🏛️ itself remains unchanged as a separate, full expedition.\n\nRoute-logic revision (2026-08): Sicily's order reversed (Agrigento before Syracuse/Taormina instead of after) to avoid a ≈195 km detour; Sardinia-Corsica transition verified, already optimal. Coordinates per destination added. See Mediterranean Civilizations Expedition 🏛️'s own notes for the full writeup.",
+   "distance": {
+    "id": "gt_seed_malta-italy",
+    "name": "Malta & Italy 🏛️",
+    "stops": 22,
+    "km_in_route": 2620,
+    "km_from_nl": 2530,
+    "km_back_to_nl": 1640,
+    "km_by_country": {
+     "MT": 80,
+     "IT": 2540
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "MT",
+     "country": "Malta",
+     "days": 5,
+     "budget": 305,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Entry: flight Amsterdam-Malta/Luqa (±3h20, from ±€120-250 return, best period October). Price indication from 2026-08 web research, a snapshot. The Ġgantija temples and the Hypogeum are older than the pyramids of Giza — among the oldest free-standing structures in the world. Alongside that, the Knights of Malta in Valletta and Mdina, with a quieter Gozo as a counterpart.",
+     "transport_to_next": "Ferry Valletta-Pozzallo or Valletta-Catania (Virtu Ferries, 1.5-3 hours) to Sicily",
+     "destinations": [
+      {
+       "name": "Valletta",
+       "lat": 35.8989,
+       "lng": 14.5146
+      },
+      {
+       "name": "Mdina",
+       "lat": 35.8869,
+       "lng": 14.4031
+      },
+      {
+       "name": "Gozo",
+       "lat": 36.0443,
+       "lng": 14.244
+      },
+      {
+       "name": "Ġgantija-tempels",
+       "lat": 36.0453,
+       "lng": 14.2686
+      },
+      {
+       "name": "Hypogeum",
+       "lat": 35.8703,
+       "lng": 14.5027
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 10,
+     "budget": 650,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "Magna Graecia (Agrigento, Syracuse), Roman, Norman and Arab influences mixed together on one island, with Etna as a natural change of pace. Hidden gem: the fishing village of Marzamemi, much quieter than Taormina.",
+     "transport_to_next": "Ferry across the Strait of Messina (Messina-Villa San Giovanni, 20-30 minutes) to the mainland, then onward to Naples",
+     "destinations": [
+      {
+       "name": "Palermo",
+       "lat": 38.1157,
+       "lng": 13.3613
+      },
+      {
+       "name": "Cefalù",
+       "lat": 38.0387,
+       "lng": 14.0231
+      },
+      {
+       "name": "Agrigento (Valle dei Templi)",
+       "lat": 37.2903,
+       "lng": 13.5928
+      },
+      {
+       "name": "Syracuse",
+       "lat": 37.0755,
+       "lng": 15.2866
+      },
+      {
+       "name": "Taormina",
+       "lat": 37.8516,
+       "lng": 15.2853
+      },
+      {
+       "name": "Etna",
+       "lat": 37.751,
+       "lng": 14.9934
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 6,
+     "budget": 450,
+     "dailyRate": 75,
+     "carInDailyRate": false,
+     "notes": "Roman history frozen in reality: Pompeii and Herculaneum, both destroyed and preserved by Vesuvius. Naples itself as a lively, chaotic counterpoint.",
+     "transport_to_next": "Train Naples-Rome (high-speed train, about 1 hour 10 minutes)",
+     "destinations": [
+      {
+       "name": "Reggio Calabria",
+       "lat": 38.1113,
+       "lng": 15.6619
+      },
+      {
+       "name": "Naples",
+       "lat": 40.8518,
+       "lng": 14.2681
+      },
+      {
+       "name": "Pompeii",
+       "lat": 40.7461,
+       "lng": 14.4989
+      },
+      {
+       "name": "Herculaneum",
+       "lat": 40.8058,
+       "lng": 14.3486
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 7,
+     "budget": 511,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "The heart of the Roman Empire and the classical history that the whole expedition keeps coming back to — Roman influences also turn up in Spain, Tunisia, Turkey, Egypt and Jordan.",
+     "transport_to_next": "Flight Rome-Cagliari, or night ferry Civitavecchia-Olbia/Cagliari (about 7-8 hours) for those who prefer the boat over flying",
+     "destinations": [
+      {
+       "name": "Colosseum",
+       "lat": 41.8902,
+       "lng": 12.4922
+      },
+      {
+       "name": "Roman Forum",
+       "lat": 41.8925,
+       "lng": 12.4853
+      },
+      {
+       "name": "Pantheon",
+       "lat": 41.8986,
+       "lng": 12.4769
+      },
+      {
+       "name": "Vatican",
+       "lat": 41.9029,
+       "lng": 12.4534
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 6,
+     "budget": 438,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "The Nuraghe civilization (Su Nuraxi, UNESCO) is unique to Sardinia and older than the Roman presence on the island. Costa Smeralda for the coast, the quieter Costa Verde as a less touristy alternative.",
+     "transport_to_next": "End of this route — flight home from Cagliari/Olbia (or ferry Santa Teresa Gallura-Bonifacio to continue on to Corsica & Southern France ⛵)",
+     "destinations": [
+      {
+       "name": "Cagliari",
+       "lat": 39.2238,
+       "lng": 9.1217
+      },
+      {
+       "name": "Su Nuraxi",
+       "lat": 39.7167,
+       "lng": 8.9833
+      },
+      {
+       "name": "Costa Smeralda",
+       "lat": 41.1333,
+       "lng": 9.5167
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_rome-surroundings",
+   "name": "Rome & Surroundings 🍕",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Train between Naples and Rome, otherwise on foot/public transport within both cities.",
+   "description": "Naples, Pompeii and Herculaneum, followed by the heart of the Roman Empire: Colosseum, Roman Forum, Pantheon and the Vatican.",
+   "notes": "Split off from Mediterranean Civilizations Expedition 🏛️ (via Malta & Italy 🏛️) as part of the fifth batch of standalone countries (2026-08) — already mentioned in ROUTE_BUILDER_MODULES.md as a vacation-scale option (\"Rome & surroundings, 13d\"). Country, days and budget are carried over unchanged. Mediterranean Civilizations Expedition 🏛️ and Malta & Italy 🏛️ themselves continue to exist unchanged.",
+   "distance": {
+    "id": "gt_seed_rome-surroundings",
+    "name": "Rome & Surroundings 🍕",
+    "stops": 8,
+    "km_in_route": 730,
+    "km_from_nl": 2280,
+    "km_back_to_nl": 1640,
+    "km_by_country": {
+     "IT": 730
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 6,
+     "budget": 450,
+     "dailyRate": 75,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flight Amsterdam-Naples (Transavia/KLM/easyJet, ±2h30; from ±€160-280 return; best period March, avoid August for both price and heat/crowds). Price indication from 2026-08 web research, a snapshot. Roman history frozen in reality: Pompeii and Herculaneum, both destroyed and preserved by Vesuvius. Naples itself as a lively, chaotic counterpoint. Travel advisory: green. Visa: none, Schengen.",
+     "transport_to_next": "Train Naples-Rome (high-speed train, about 1 hour 10 minutes).",
+     "destinations": [
+      {
+       "name": "Reggio Calabria",
+       "lat": 38.1113,
+       "lng": 15.6619
+      },
+      {
+       "name": "Naples",
+       "lat": 40.8518,
+       "lng": 14.2681
+      },
+      {
+       "name": "Pompeii",
+       "lat": 40.7461,
+       "lng": 14.4989
+      },
+      {
+       "name": "Herculaneum",
+       "lat": 40.8058,
+       "lng": 14.3486
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 7,
+     "budget": 511,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "The heart of the Roman Empire. Rome has kept drawing above-average numbers of visitors since the 2025 Jubilee Year (spillover effect into 2026) — book major sites (Vatican Museums, Colosseum) well in advance.",
+     "transport_to_next": "End of this route — direct return flight from Rome (Fiumicino) to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Colosseum",
+       "lat": 41.8902,
+       "lng": 12.4922
+      },
+      {
+       "name": "Roman Forum",
+       "lat": 41.8925,
+       "lng": 12.4853
+      },
+      {
+       "name": "Pantheon",
+       "lat": 41.8986,
+       "lng": 12.4769
+      },
+      {
+       "name": "Vatican",
+       "lat": 41.9029,
+       "lng": 12.4534
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_sardinia",
+   "name": "Sardinia 🗿",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car — most highlights are spread across the island.",
+   "description": "Cagliari, the Nuraghe civilization of Su Nuraxi and the Costa Smeralda.",
+   "notes": "Split off from Mediterranean Civilizations Expedition 🏛️ (via Malta & Italy 🏛️) as part of the sixth batch of standalone countries (2026-08) — short (6d) but with its own unique identity apart from the rest of Italy. Country, days and budget are carried over unchanged. Mediterranean Civilizations Expedition 🏛️ and Malta & Italy 🏛️ themselves continue to exist unchanged.",
+   "distance": {
+    "id": "gt_seed_sardinia",
+    "name": "Sardinia 🗿",
+    "stops": 3,
+    "km_in_route": 290,
+    "km_from_nl": 1900,
+    "km_back_to_nl": 1640,
+    "km_by_country": {
+     "IT": 290
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 6,
+     "budget": 438,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flight Amsterdam-Cagliari (Transavia/KLM, ±2h20-2h40; from ±€120-200 return; best period May) — deliberately chosen over a flight via Rome/Milan, since that adds a stopover with no benefit. Price indication from 2026-08 web research, a snapshot. The Nuraghe civilization (Su Nuraxi, UNESCO) is unique to Sardinia and older than the Roman presence on the island. Costa Smeralda for the coast, the quieter Costa Verde as a less touristy alternative. Travel advisory: green. Visa: none, Schengen.",
+     "transport_to_next": "End of this route — direct return flight from Cagliari to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Cagliari",
+       "lat": 39.2238,
+       "lng": 9.1217
+      },
+      {
+       "name": "Su Nuraxi",
+       "lat": 39.7167,
+       "lng": 8.9833
+      },
+      {
+       "name": "Costa Smeralda",
+       "lat": 41.1333,
+       "lng": 9.5167
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_sicily",
+   "name": "Sicily 🌋",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car — drive the island from Palermo via the south coast to the east coast.",
+   "description": "Palermo, Agrigento, Syracuse, Taormina and Etna.",
+   "notes": "Split off from Malta & Italy 🏛️ (itself already split off from Mediterranean Civilizations Expedition 🏛️ — see ROUTE_BUILDER_MODULES.md) as part of this second batch of standalone countries (2026-08, Youri's own top-10 pick). Country, days and budget are carried over unchanged. Malta & Italy 🏛️ and Mediterranean Civilizations Expedition 🏛️ themselves continue to exist unchanged.",
+   "distance": {
+    "id": "gt_seed_sicily",
+    "name": "Sicily 🌋",
+    "stops": 6,
+    "km_in_route": 540,
+    "km_from_nl": 2180,
+    "km_back_to_nl": 2300,
+    "km_by_country": {
+     "IT": 540
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 10,
+     "budget": 650,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flight Amsterdam-Palermo (Transavia/easyJet, ±3 hours; from ±€90-280 return; best period October). Price indication from 2026-08 web research, a snapshot. Magna Graecia (Agrigento, Syracuse), Roman, Norman and Arab influences mixed together on one island, with Etna as a natural change of pace. Hidden gem: the fishing village of Marzamemi, much quieter than Taormina.",
+     "transport_to_next": "End of this route — return flight from Palermo or Catania to Amsterdam (Transavia/easyJet, direct).",
+     "destinations": [
+      {
+       "name": "Palermo",
+       "lat": 38.1157,
+       "lng": 13.3613
+      },
+      {
+       "name": "Cefalù",
+       "lat": 38.0387,
+       "lng": 14.0231
+      },
+      {
+       "name": "Agrigento (Valle dei Templi)",
+       "lat": 37.2903,
+       "lng": 13.5928
+      },
+      {
+       "name": "Syracuse",
+       "lat": 37.0755,
+       "lng": 15.2866
+      },
+      {
+       "name": "Taormina",
+       "lat": 37.8516,
+       "lng": 15.2853
+      },
+      {
+       "name": "Etna",
+       "lat": 37.751,
+       "lng": 14.9934
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_malta",
+   "name": "Malta ⚔️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Bus/rental car — the island is compact enough for day trips from Valletta.",
+   "description": "The Order of the Knights in Valletta and Mdina, and the prehistoric temples of Gozo.",
+   "notes": "Split off from Mediterranean Civilizations Expedition 🏛️ (via Malta & Italy 🏛️) as part of the seventh combo batch (2026-08) — short (5d) but with temples older than the pyramids, its own unique identity apart from the rest of Italy. Country, days and budget are carried over unchanged. Mediterranean Civilizations Expedition 🏛️ and Malta & Italy 🏛️ themselves continue to exist unchanged.",
+   "distance": {
+    "id": "gt_seed_malta",
+    "name": "Malta ⚔️",
+    "stops": 5,
+    "km_in_route": 80,
+    "km_from_nl": 2530,
+    "km_back_to_nl": 2530,
+    "km_by_country": {
+     "MT": 80
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "MT",
+     "country": "Malta",
+     "days": 5,
+     "budget": 305,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flight Amsterdam-Malta (KLM/Malta Airlines/easyJet, ±3h05; from ±€100-250 return; best period May/September-October). Price indication from 2026-08 web research, a snapshot. The Ġgantija temples and the Hypogeum are older than the pyramids of Giza. Alongside that, the Knights of Malta in Valletta and Mdina, with a quieter Gozo as a counterpart. Travel advisory: green. Visa: none, Schengen.",
+     "transport_to_next": "End of this route — direct return flight from Malta to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Valletta",
+       "lat": 35.8989,
+       "lng": 14.5146
+      },
+      {
+       "name": "Mdina",
+       "lat": 35.8869,
+       "lng": 14.4031
+      },
+      {
+       "name": "Gozo",
+       "lat": 36.0443,
+       "lng": 14.244
+      },
+      {
+       "name": "Ġgantija temples",
+       "lat": 36.0453,
+       "lng": 14.2686
+      },
+      {
+       "name": "Hypogeum",
+       "lat": 35.8703,
+       "lng": 14.5027
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_southeast-asia-grand-loop",
+   "name": "Southeast Asia Grand Loop 🛕",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker — overland on the mainland (bus, train), flights for the island hops in maritime Southeast Asia and to Singapore. Local guesthouses and hostels over international chains.",
+   "description": "A big loop through Southeast Asia: mainland, islands, and a compact city finale in Singapore.",
+   "notes": "Split off from Eurasia Grand Tour 🌏 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days, budgets and order are reused unchanged from Eurasia Grand Tour 🌏 (including all per-country price/visa/travel-advisory verifications, such as the current Cambodia-Thailand border closure at Poipet — see Cambodia's own note); only the expedition boundary is new. Continuation of East Asia & Pacific 🗻. Eurasia Grand Tour 🌏 itself remains unchanged as a separate, full expedition.",
+   "distance": {
+    "id": "gt_seed_southeast-asia-grand-loop",
+    "name": "Southeast Asia Grand Loop 🛕",
+    "stops": 63,
+    "km_in_route": 28390,
+    "km_from_nl": 11540,
+    "km_back_to_nl": 13640,
+    "km_by_country": {
+     "VN": 3140,
+     "KH": 1260,
+     "LA": 1120,
+     "TH": 2310,
+     "MY": 3710,
+     "BN": 190,
+     "PH": 4190,
+     "ID": 7620,
+     "TL": 1370,
+     "SG": 3480
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "VN",
+     "country": "Vietnam",
+     "days": 17,
+     "budget": 544,
+     "dailyRate": 32,
+     "carInDailyRate": false,
+     "notes": "Entry: flight Amsterdam-Hanoi (±15-17 hours, usually 1 stopover; from ±€630-720 return; best period December). Price indication from 2026-08 web research, a snapshot. Revised (2026-08): Hue, Hoi An and Da Nang deliberately cut (already visited); Ha Giang Loop added as a highlight from Hanoi. Domestic flight Hanoi-Ho Chi Minh City (~2h, frequent and cheap) replaces the coastal route. Da Lat and Phu Quoc are side trips from HCMC. Extra costs (not in the daily budget): guide+motorbike for the Ha Giang Loop (~€35-45/day, usually 'easy rider' style rather than self-driving given the notorious mountain roads), domestic flight Hanoi-HCMC (~€40-60).",
+     "transport_to_next": "Bus/boat across the Mekong Delta from Ho Chi Minh City to Phnom Penh, border crossing Bavet/Moc Bai, overland — one of the region's classic backpacker border crossings",
+     "destinations": [
+      {
+       "name": "Hanoi",
+       "lat": 21.0285,
+       "lng": 105.8542
+      },
+      {
+       "name": "Ha Giang Loop",
+       "lat": 22.8256,
+       "lng": 104.9784
+      },
+      {
+       "name": "Ha Long Bay",
+       "lat": 20.9101,
+       "lng": 107.1839
+      },
+      {
+       "name": "Ho Chi Minh City",
+       "lat": 10.8231,
+       "lng": 106.6297
+      },
+      {
+       "name": "Da Lat",
+       "lat": 11.9404,
+       "lng": 108.4583
+      },
+      {
+       "name": "Phu Quoc",
+       "lat": 10.227,
+       "lng": 103.967
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "KH",
+     "country": "Cambodia",
+     "days": 12,
+     "budget": 525,
+     "dailyRate": 44,
+     "carInDailyRate": false,
+     "notes": "Revised (2026-08): entry now from Ho Chi Minh City (Mekong Delta route) instead of from Thailand, so the old Poipet border warning no longer applies here. Travel advisory (updated 2026-08): yellow for the entire country; the border crossing to Laos at Stung Treng carries no elevated risk. Angkor Wat entry (3-day ticket ~$62) is a separate cost, not just food/accommodation/local transport.",
+     "transport_to_next": "Bus from Stung Treng to the border crossing at Dom Kralor/Voen Kham (new Chinese-built bridge, no boat needed anymore), then onward to Si Phan Don, Laos",
+     "destinations": [
+      {
+       "name": "Phnom Penh",
+       "lat": 11.5564,
+       "lng": 104.9282
+      },
+      {
+       "name": "Koh Rong",
+       "lat": 10.7,
+       "lng": 103.2
+      },
+      {
+       "name": "Battambang",
+       "lat": 13.0957,
+       "lng": 103.2022
+      },
+      {
+       "name": "Siem Reap",
+       "lat": 13.3671,
+       "lng": 103.8448
+      },
+      {
+       "name": "Angkor Wat",
+       "lat": 13.4125,
+       "lng": 103.867
+      },
+      {
+       "name": "Stung Treng",
+       "lat": 13.5259,
+       "lng": 105.9683
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "LA",
+     "country": "Laos",
+     "days": 12,
+     "budget": 384,
+     "dailyRate": 32,
+     "carInDailyRate": false,
+     "notes": "",
+     "transport_to_next": "Boat down the Mekong (2 days, overnight stay in Pak Beng) or bus from Luang Prabang to Huay Xai, then crossing the border to Chiang Khong, Thailand",
+     "destinations": [
+      {
+       "name": "Si Phan Don (4000 Islands)",
+       "lat": 13.9667,
+       "lng": 105.9333
+      },
+      {
+       "name": "Pakse",
+       "lat": 15.1202,
+       "lng": 105.7989
+      },
+      {
+       "name": "Vientiane",
+       "lat": 17.9757,
+       "lng": 102.6331
+      },
+      {
+       "name": "Vang Vieng",
+       "lat": 18.9241,
+       "lng": 102.4432
+      },
+      {
+       "name": "Luang Prabang",
+       "lat": 19.8845,
+       "lng": 102.1348
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "TH",
+     "country": "Thailand",
+     "days": 18,
+     "budget": 684,
+     "dailyRate": 38,
+     "carInDailyRate": false,
+     "notes": "Revised (2026-08): entry now from Laos in the north (Chiang Khong), so Chiang Mai is now the first stop instead of Bangkok. Travel advisory (2026-07): yellow for the entire travel area, with red/orange border strips near Cambodia and at the far south/Myanmar border — not relevant to this route. Visa-free stay may be shortened from 60 to 30 days (cabinet decision May 2026, not yet published) — check the current duration shortly before departure.",
+     "transport_to_next": "Speedboat Koh Lipe (Thailand) to Langkawi (Malaysia), ~90 minutes, international sea border crossing (Bundhaya Speed Boat) — only mid-October through May, outside that season only indirectly via Satun",
+     "destinations": [
+      {
+       "name": "Chiang Mai",
+       "lat": 18.7883,
+       "lng": 98.9853
+      },
+      {
+       "name": "Sukhothai",
+       "lat": 17.0067,
+       "lng": 99.8264
+      },
+      {
+       "name": "Ayutthaya",
+       "lat": 14.3532,
+       "lng": 100.568
+      },
+      {
+       "name": "Bangkok",
+       "lat": 13.7563,
+       "lng": 100.5018
+      },
+      {
+       "name": "Krabi/islands",
+       "lat": 8.0863,
+       "lng": 98.9063
+      },
+      {
+       "name": "Koh Lipe",
+       "lat": 6.4794,
+       "lng": 99.3006
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "MY",
+     "country": "Malaysia",
+     "days": 10,
+     "budget": 330,
+     "dailyRate": 33,
+     "carInDailyRate": false,
+     "notes": "",
+     "transport_to_next": "Flight Kuala Lumpur-Kuching (Sarawak) — the continuation of Malaysia is on Borneo, see the separate Sarawak/Sabah block later in the route",
+     "destinations": [
+      {
+       "name": "Langkawi",
+       "lat": 6.35,
+       "lng": 99.8
+      },
+      {
+       "name": "Penang",
+       "lat": 5.4141,
+       "lng": 100.3288
+      },
+      {
+       "name": "Cameron Highlands",
+       "lat": 4.47,
+       "lng": 101.38
+      },
+      {
+       "name": "Malacca",
+       "lat": 2.1896,
+       "lng": 102.2501
+      },
+      {
+       "name": "Kuala Lumpur",
+       "lat": 3.139,
+       "lng": 101.6869
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "country_code": "MY",
+     "country": "Malaysia",
+     "days": 6,
+     "budget": 330,
+     "dailyRate": 55,
+     "carInDailyRate": false,
+     "notes": "Sarawak leg of the Borneo Overland Trail (2026-08) — continuation of the peninsular block above, with Brunei as a stopover en route to Sabah.",
+     "transport_to_next": "Bus to Miri, then overland across the border to Bandar Seri Begawan, Brunei",
+     "destinations": [
+      {
+       "name": "Kuching",
+       "lat": 1.5533,
+       "lng": 110.3592
+      },
+      {
+       "name": "Bako National Park",
+       "lat": 1.7167,
+       "lng": 110.4667
+      },
+      {
+       "name": "Mulu Caves (Gunung Mulu NP)",
+       "lat": 4.0428,
+       "lng": 114.8144
+      }
+     ]
+    },
+    {
+     "index": 6,
+     "country_code": "BN",
+     "country": "Brunei",
+     "days": 2,
+     "budget": 106,
+     "dailyRate": 53,
+     "carInDailyRate": false,
+     "notes": "Ulu Temburong NP can only be visited with a mandatory guide/tour (no independent visits allowed) — budget ~BND 140-180 (~€115-150) for that day including boat, guide, entrance fee and lunch, a separate cost.",
+     "transport_to_next": "Bus (Sipitang Express, 1x/day, ~8.5h, MYR 100) or ferry via Labuan to Kota Kinabalu, Sabah — now embedded in the Borneo Overland Trail between Sarawak and Sabah instead of a separate flight from KL",
+     "destinations": [
+      {
+       "name": "Bandar Seri Begawan",
+       "lat": 4.9031,
+       "lng": 114.9398
+      },
+      {
+       "name": "Kampong Ayer",
+       "lat": 4.8875,
+       "lng": 114.9425
+      },
+      {
+       "name": "Ulu Temburong NP",
+       "lat": 4.5333,
+       "lng": 115.1667
+      }
+     ]
+    },
+    {
+     "index": 7,
+     "country_code": "MY",
+     "country": "Malaysia",
+     "days": 11,
+     "budget": 539,
+     "dailyRate": 49,
+     "carInDailyRate": false,
+     "notes": "Sabah leg of the Borneo Overland Trail. Extra costs (not in the daily budget): Mount Kinabalu climb (mandatory guide+permit, ~€250-350 all-in), Sipadan diving (limited permits, ~€150-250/day).",
+     "transport_to_next": "Flight Kota Kinabalu-Manila (AirAsia, ~4x/week, direct connection, ~2h)",
+     "destinations": [
+      {
+       "name": "Kota Kinabalu",
+       "lat": 5.9788,
+       "lng": 116.0753
+      },
+      {
+       "name": "Mount Kinabalu",
+       "lat": 6.0754,
+       "lng": 116.558
+      },
+      {
+       "name": "Sepilok Orang-oetan Centre",
+       "lat": 5.8742,
+       "lng": 117.9478
+      },
+      {
+       "name": "Kinabatangan River",
+       "lat": 5.5,
+       "lng": 118.3667
+      },
+      {
+       "name": "Semporna/Sipadan",
+       "lat": 4.4816,
+       "lng": 118.612
+      }
+     ]
+    },
+    {
+     "index": 8,
+     "country_code": "PH",
+     "country": "Philippines",
+     "days": 21,
+     "budget": 756,
+     "dailyRate": 36,
+     "carInDailyRate": false,
+     "notes": "Revised (2026-08): a round trip instead of a fixed base in Manila. Multi-day boat expedition El Nido-Coron (e.g. Tao Philippines style) added — extra cost ~€160-220 all-in, on top of the daily budget. Cebu is the natural endpoint: all flights between Coron/Siargao/Bohol run via Cebu or Manila anyway.",
+     "transport_to_next": "Flight Cebu-Medan (Sumatra), with a stopover in Kuala Lumpur/Singapore/Jakarta — no direct connection",
+     "destinations": [
+      {
+       "name": "Manila",
+       "lat": 14.5995,
+       "lng": 120.9842
+      },
+      {
+       "name": "Banaue",
+       "lat": 16.9166,
+       "lng": 121.0562
+      },
+      {
+       "name": "El Nido",
+       "lat": 11.1949,
+       "lng": 119.4079
+      },
+      {
+       "name": "Coron",
+       "lat": 12.0083,
+       "lng": 120.2036
+      },
+      {
+       "name": "Siargao",
+       "lat": 9.7897,
+       "lng": 126.1578
+      },
+      {
+       "name": "Bohol",
+       "lat": 9.6474,
+       "lng": 123.8536
+      },
+      {
+       "name": "Cebu",
+       "lat": 10.3157,
+       "lng": 123.8854
+      }
+     ]
+    },
+    {
+     "index": 9,
+     "country_code": "ID",
+     "country": "Indonesia",
+     "days": 21,
+     "budget": 714,
+     "dailyRate": 34,
+     "carInDailyRate": false,
+     "notes": "Revised (2026-08): Java and Bali deliberately cut (already visited), Sumatra added (Bukit Lawang orangutans, Lake Toba, Minangkabau culture in Bukittinggi). Flight Sumatra-Lombok involves a stopover (probably Jakarta), no direct connection. Komodo (boat trips) remains the pricier outlier: organized tours $75-135/day, budget shared speedboat/multi-day boat trips from ~$40-50/day — separate budget on top of the rest of the route. Mount Rinjani (Lombok) is an active volcano with no current eruption warning (2026-07) — check shortly before departure.",
+     "transport_to_next": "Bus overland via the Mota'ain/Batugade border crossing (from Kupang, West Timor) to Dili, East Timor — or a short flight Kupang-Dili",
+     "destinations": [
+      {
+       "name": "Medan",
+       "lat": 3.5952,
+       "lng": 98.6722
+      },
+      {
+       "name": "Bukit Lawang",
+       "lat": 3.5556,
+       "lng": 98.1258
+      },
+      {
+       "name": "Berastagi",
+       "lat": 3.1958,
+       "lng": 98.5117
+      },
+      {
+       "name": "Lake Toba",
+       "lat": 2.6667,
+       "lng": 98.9333
+      },
+      {
+       "name": "Bukittinggi",
+       "lat": -0.3056,
+       "lng": 100.3692
+      },
+      {
+       "name": "Lombok",
+       "lat": -8.5833,
+       "lng": 116.1167
+      },
+      {
+       "name": "Gili Islands",
+       "lat": -8.35,
+       "lng": 116.0417
+      },
+      {
+       "name": "Komodo",
+       "lat": -8.49,
+       "lng": 119.88
+      }
+     ]
+    },
+    {
+     "index": 10,
+     "country_code": "TL",
+     "country": "East Timor",
+     "days": 7,
+     "budget": 280,
+     "dailyRate": 40,
+     "carInDailyRate": false,
+     "notes": "Limited healthcare infrastructure (hospitals may require upfront cash payment, serious cases require medical evacuation to Bali/Darwin, no Dutch embassy on the ground) — good travel insurance is extra important here. Avoid driving at night outside Dili. Jaco Island is only reachable with a 4x4+driver ($85-150/day) — share the cost with others if possible, a separate cost on top of the rest of the route.",
+     "transport_to_next": "Flight Dili-Singapore (usually with a stopover in Denpasar/Bali or Jakarta, no direct connection) — final leg to the endpoint Singapore",
+     "destinations": [
+      {
+       "name": "Dili",
+       "lat": -8.5586,
+       "lng": 125.5736
+      },
+      {
+       "name": "Atauro Island",
+       "lat": -8.25,
+       "lng": 125.5833
+      },
+      {
+       "name": "Jaco Island (Nino Konis Santana NP)",
+       "lat": -8.4333,
+       "lng": 127.3333
+      },
+      {
+       "name": "Baucau",
+       "lat": -8.4667,
+       "lng": 126.4667
+      },
+      {
+       "name": "Maubisse",
+       "lat": -8.9167,
+       "lng": 125.6167
+      }
+     ]
+    },
+    {
+     "index": 11,
+     "country_code": "SG",
+     "country": "Singapore",
+     "days": 3,
+     "budget": 213,
+     "dailyRate": 71,
+     "carInDailyRate": false,
+     "notes": "",
+     "transport_to_next": "End of the expedition — flight back from Singapore (Changi) to the Netherlands",
+     "destinations": [
+      {
+       "name": "Marina Bay",
+       "lat": 1.2838,
+       "lng": 103.8591
+      },
+      {
+       "name": "Chinatown",
+       "lat": 1.282,
+       "lng": 103.844
+      },
+      {
+       "name": "Sentosa",
+       "lat": 1.2494,
+       "lng": 103.8303
+      },
+      {
+       "name": "Gardens by the Bay",
+       "lat": 1.2816,
+       "lng": 103.8636
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_tunisia",
+   "name": "Tunisia 🧿",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Train/bus between Tunis and the archaeological sites.",
+   "description": "Tunis, Carthage, Roman Dougga, the amphitheater of El Jem and Sidi Bou Said.",
+   "notes": "Split off from Mediterranean Civilizations Expedition 🏛️ (via Iberia & Morocco/Tunisia 🏰) as part of the seventh combo batch (2026-08). Country, days and daily budget are carried over unchanged; days increased from 6 to 8 as a long-haul flight buffer, block budget scaled along at the same daily rate (2026-10 fix — it had been left at the old day count) (see CLAUDE.md). Mediterranean Civilizations Expedition 🏛️ and Iberia & Morocco/Tunisia 🏰 themselves continue to exist unchanged.",
+   "distance": {
+    "id": "gt_seed_tunisia",
+    "name": "Tunisia 🧿",
+    "stops": 5,
+    "km_in_route": 630,
+    "km_from_nl": 2270,
+    "km_back_to_nl": 2260,
+    "km_by_country": {
+     "TN": 630
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "TN",
+     "country": "Tunisia",
+     "days": 8,
+     "budget": 293,
+     "dailyRate": 37,
+     "carInDailyRate": false,
+     "notes": "Entry: flight Amsterdam-Tunis, with a stopover (e.g. via Paris/Brussels/Frankfurt/Rome, no direct connection, ±6h50-7 hours total; from ±€140-350 return; best period April-May/October). Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days compared to the original count (6→8) — a short trip (≤10 days) with a connecting flight justifies an arrival day with no plans. Carthaginian civilization and Roman North Africa (Dougga, the amphitheater of El Jem, bigger than the one in Rome itself) close together; Sidi Bou Said as a quiet, picturesque village. Travel advisory: yellow for the north/center (this route) — red/orange only far in the south near the Libyan border and Kasserine, not on this route.",
+     "transport_to_next": "End of this route — return flight from Tunis to Amsterdam (1 stopover).",
+     "destinations": [
+      {
+       "name": "Tunis",
+       "lat": 36.8065,
+       "lng": 10.1815
+      },
+      {
+       "name": "Carthage",
+       "lat": 36.8531,
+       "lng": 10.3236
+      },
+      {
+       "name": "Dougga",
+       "lat": 36.4225,
+       "lng": 9.2189
+      },
+      {
+       "name": "El Jem",
+       "lat": 35.2967,
+       "lng": 10.705
+      },
+      {
+       "name": "Sidi Bou Said",
+       "lat": 36.8703,
+       "lng": 10.3417
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_anatolia",
+   "name": "Anatolia 🕌",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker — domestic buses/flights across Turkey.",
+   "description": "Byzantium, the Ottoman Empire and the Roman cities of the Aegean coast, with Cappadocia as a bridge.",
+   "notes": "Split off from Mediterranean Civilizations Expedition 🏛️ as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Country, days and budget are carried over unchanged (20 days, after the 2026-07 time check that raised this from 14 to 20 days). Follows Greece & Cyprus 🏺. Mediterranean Civilizations Expedition 🏛️ itself remains unchanged as a separate, full expedition.\n\nRoute-logic revision (2026-08): domestic return flight Kayseri/Nevşehir-Istanbul added before the flight to Cairo (previously unstated). Coordinates per destination added. See Mediterranean Civilizations Expedition 🏛️'s own notes for the full writeup.",
+   "distance": {
+    "id": "gt_seed_anatolia",
+    "name": "Anatolia 🕌",
+    "stops": 6,
+    "km_in_route": 1530,
+    "km_from_nl": 2840,
+    "km_back_to_nl": 3550,
+    "km_by_country": {
+     "TR": 1530
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "TR",
+     "country": "Turkey",
+     "days": 20,
+     "budget": 1020,
+     "dailyRate": 51,
+     "carInDailyRate": false,
+     "notes": "Entry: flight Amsterdam-Istanbul (±3h30, from ±€130-250 return, best period December). Price indication from 2026-08 web research, a snapshot. Byzantine and Ottoman history in Istanbul, Roman cities (Ephesus, Pergamon) and ancient Anatolian civilizations (Troy) all in one line, with the rock formations of Cappadocia and the limestone terraces of Pamukkale as natural highlights. Hidden gem: Assos and Aphrodisias, much quieter than Ephesus but just as impressive. Route-logic fix (2026-08): the leg ends in Cappadocia (≈730 km from Istanbul) — a domestic return flight to Istanbul is needed before departure (no direct Cappadocia-Cairo connection exists). See Mediterranean Civilizations Expedition 🏛️'s own notes for the full writeup.",
+     "transport_to_next": "End of this route — domestic flight Kayseri/Nevşehir-Istanbul, then flight home from Istanbul (or flight Istanbul-Cairo to continue on to Egypt & Arabian Peninsula 🐪)",
+     "destinations": [
+      {
+       "name": "Istanbul",
+       "lat": 41.0082,
+       "lng": 28.9784
+      },
+      {
+       "name": "Troy",
+       "lat": 39.9575,
+       "lng": 26.2389
+      },
+      {
+       "name": "Pergamon",
+       "lat": 39.1319,
+       "lng": 27.1836
+      },
+      {
+       "name": "Ephesus",
+       "lat": 37.9412,
+       "lng": 27.3641
+      },
+      {
+       "name": "Pamukkale",
+       "lat": 37.9142,
+       "lng": 29.1187
+      },
+      {
+       "name": "Cappadocia",
+       "lat": 38.6431,
+       "lng": 34.8283
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_istanbul-gallipoli-troy-9-days",
+   "name": "Istanbul + Gallipoli & Troy (9 days) ⚔️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Based in Istanbul, a 2-day organized tour (bus+hotel+guides) to Gallipoli and Troy via Çanakkale.",
+   "description": "Istanbul plus the Gallipoli battlefields and Troy via Çanakkale.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_istanbul-gallipoli-troy-9-days",
+    "name": "Istanbul + Gallipoli & Troy (9 days) ⚔️",
+    "stops": 5,
+    "km_in_route": 680,
+    "km_from_nl": 2840,
+    "km_back_to_nl": 2930,
+    "km_by_country": {
+     "TR": 680
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "TR",
+     "country": "Turkey",
+     "days": 9,
+     "budget": 459,
+     "dailyRate": 51,
+     "carInDailyRate": false,
+     "notes": "Istanbul (4-5 days) plus a 2-day tour of Gallipoli (Anzac Cove, Lone Pine) and Troy via Çanakkale (overnight there), with Bursa as an optional add-on. Budget ~€75-85/day including the tour. Season: spring/autumn are most pleasant for walking the battlefields (less heat). Web check (2026-08): 2-day Istanbul-Gallipoli-Troy tours run ~€150-250 per person all-in (bus, Çanakkale hotel, guides) — a single-day trip is possible but is a very long ride, 2 days is recommended. Troy entry is separately ~€15-20. Visa (visa-exempt, max 90/180 days), travel advisory (yellow) and earthquake/lira notes: see the standalone Istanbul trip.",
+     "transport_to_next": "End of this route — fly home from Istanbul.",
+     "destinations": [
+      {
+       "name": "Istanbul (Sultanahmet)",
+       "lat": 41.0086,
+       "lng": 28.9802
+      },
+      {
+       "name": "Gallipoli: Anzac Cove & Lone Pine",
+       "lat": 40.2508,
+       "lng": 26.2822
+      },
+      {
+       "name": "Çanakkale",
+       "lat": 40.1553,
+       "lng": 26.4142
+      },
+      {
+       "name": "Troy",
+       "lat": 39.9575,
+       "lng": 26.2389
+      },
+      {
+       "name": "Bursa (optional)",
+       "lat": 40.1826,
+       "lng": 29.0665
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_istanbul-lesbos-greek-islands-9-days",
+   "name": "Istanbul + Lesbos (Greek Islands) (9 days) 🛳️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Based in Istanbul, a single summer-only ferry hop to Lesbos and back.",
+   "description": "Istanbul plus a ferry hop to the Greek island of Lesbos via Ayvalık.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a two-country route (Turkey + Greece). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_istanbul-lesbos-greek-islands-9-days",
+    "name": "Istanbul + Lesbos (Greek Islands) (9 days) 🛳️",
+    "stops": 3,
+    "km_in_route": 390,
+    "km_from_nl": 2840,
+    "km_back_to_nl": 2850,
+    "km_by_country": {
+     "TR": 350,
+     "GR": 30
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "TR",
+     "country": "Turkey",
+     "days": 6,
+     "budget": 306,
+     "dailyRate": 51,
+     "carInDailyRate": false,
+     "notes": "Istanbul (5 days) then a bus or flight to Ayvalık (1 day) for a short ferry crossing to Lesbos/Mytilini. Istanbul-based, a single island hop — unlike the longer Aegean-coast-to-islands combo below. Budget ~€70-85/day. Season: the ferry runs June-September daily, far fewer sailings off-season — plan the island hop for summer. Web check (2026-08): the Ayvalık-Lesbos ferry costs ~€20-35 one-way, a 40-minute to 1-hour crossing, mainly a summer service (June-September daily). Visa (visa-exempt, max 90/180 days), travel advisory (yellow) and earthquake/lira notes: see the standalone Istanbul trip.",
+     "transport_to_next": "Ferry Ayvalık-Lesbos/Mytilini (~40 min-1h, mainly June-September).",
+     "destinations": [
+      {
+       "name": "Istanbul (Sultanahmet)",
+       "lat": 41.0086,
+       "lng": 28.9802
+      },
+      {
+       "name": "Ayvalık",
+       "lat": 39.3186,
+       "lng": 26.6947
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 3,
+     "budget": 192,
+     "dailyRate": 64,
+     "carInDailyRate": false,
+     "notes": "Lesbos/Mytilini (2-3 days), then back via Istanbul. Budget slightly higher than on the Turkish mainland. Web check (2026-08): the Greek island leg is Schengen, so there's a passport check at the crossing (no separate visa needed for Dutch travelers).",
+     "transport_to_next": "End of this route — back via Istanbul to fly home.",
+     "destinations": [
+      {
+       "name": "Lesbos / Mytilini",
+       "lat": 39.1061,
+       "lng": 26.5544
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_turkey-greece-aegean-coast-dodecanese-12-days",
+   "name": "Turkey + Greece: Aegean Coast & Dodecanese (12 days) 🌊",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Turkish Aegean coast by rental car/bus, then island-hopping the Dodecanese by ferry.",
+   "description": "Izmir, Kuşadası/Ephesus and Bodrum on the Turkish coast, then a ferry-hop through the Dodecanese.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a two-country route (Turkey + Greece), no Istanbul (see the Istanbul + Lesbos route above for that shorter island-hop variant). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_turkey-greece-aegean-coast-dodecanese-12-days",
+    "name": "Turkey + Greece: Aegean Coast & Dodecanese (12 days) 🌊",
+    "stops": 5,
+    "km_in_route": 460,
+    "km_from_nl": 2970,
+    "km_back_to_nl": 3150,
+    "km_by_country": {
+     "TR": 200,
+     "GR": 250
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "TR",
+     "country": "Turkey",
+     "days": 6,
+     "budget": 306,
+     "dailyRate": 51,
+     "carInDailyRate": false,
+     "notes": "Izmir/Kuşadası (Ephesus), then on to Bodrum — no Istanbul on this route, unlike the routes above. Budget ~€75-90/day on average (the Turkish coast is cheaper, the Greek islands pricier). Season: strictly June-September — outside that window almost all the ferry routes disappear (off-season sometimes only 3x/week instead of daily). Web check (2026-08): Bodrum-Kos is ~20-30 minutes by catamaran, €20-35 one-way, 3-6x/day in summer; Marmaris-Rhodes is ~1 hour, €45-62 (pricier), daily in summer — book well ahead in July-August given the crowds. 2026 Ephesus entry is €40 (including the now-mandatory new 'Ephesus Experience' museum), Terrace Houses an extra €15. Visa (visa-exempt, max 90/180 days), travel advisory (yellow) and earthquake/lira notes: see the standalone Istanbul trip.",
+     "transport_to_next": "Ferry Bodrum-Kos or Marmaris-Rhodes (mainly June-September, book ahead in July-August).",
+     "destinations": [
+      {
+       "name": "Izmir",
+       "lat": 38.4237,
+       "lng": 27.1428
+      },
+      {
+       "name": "Kuşadası & Ephesus",
+       "lat": 37.941,
+       "lng": 27.3417
+      },
+      {
+       "name": "Bodrum",
+       "lat": 37.0344,
+       "lng": 27.4305
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 6,
+     "budget": 384,
+     "dailyRate": 64,
+     "carInDailyRate": false,
+     "notes": "Ferry-hop the Dodecanese (2-3 islands, e.g. Kos and Rhodes) before heading back via Bodrum/Izmir. Budget noticeably higher than the Turkish coast. Season: same strict June-September window as the Turkish leg — outside it, ferry frequency drops sharply.",
+     "transport_to_next": "End of this route — fly home from Rhodes or Kos.",
+     "destinations": [
+      {
+       "name": "Rhodes",
+       "lat": 36.4341,
+       "lng": 28.2176
+      },
+      {
+       "name": "Kos",
+       "lat": 36.8933,
+       "lng": 27.2881
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_west-eurasia-overland",
+   "name": "West Eurasia Overland 🐫",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker — overland where possible (bus, train, marshrutka/shared taxi), flight only where no practical ground route exists (Baku–Almaty). Local guesthouses and hostels over international chains.",
+   "description": "Overland through the western part of Eurasia — from the Balkans via Turkey and the Caucasus to the Central Asian 'Stans'.",
+   "notes": "Split off from Eurasia Grand Tour 🌏 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md) — the original expedition already flagged this exact split itself as an option. Countries, days, budgets and order are reused unchanged from Eurasia Grand Tour 🌏 (including all per-country price/visa/travel-advisory verifications); only the expedition boundary is new. Continuation of this route: East Asia & Pacific 🗻. Eurasia Grand Tour 🌏 itself remains unchanged as a separate, full expedition.",
+   "distance": {
+    "id": "gt_seed_west-eurasia-overland",
+    "name": "West Eurasia Overland 🐫",
+    "stops": 58,
+    "km_in_route": 18060,
+    "km_from_nl": 1750,
+    "km_back_to_nl": 6330,
+    "km_by_country": {
+     "BA": 210,
+     "HR": 30,
+     "ME": 250,
+     "AL": 630,
+     "MK": 270,
+     "TR": 3700,
+     "GE": 1300,
+     "AM": 880,
+     "AZ": 990,
+     "KZ": 4680,
+     "KG": 1620,
+     "TJ": 1500,
+     "UZ": 2000
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "BA",
+     "country": "Bosnia and Herzegovina",
+     "days": 7,
+     "budget": 252,
+     "dailyRate": 36,
+     "carInDailyRate": false,
+     "notes": "Entry: flight Amsterdam-Sarajevo (±5-6 hours, usually 1 stopover via Vienna/Munich; from ±€200-350 return; best period April). Price indication from 2026-08 web research, a snapshot.",
+     "transport_to_next": "Bus overland (Mostar/Sarajevo to Dubrovnik or Split), direct border crossing, no visa needed",
+     "destinations": [
+      {
+       "name": "Sarajevo",
+       "lat": 43.8563,
+       "lng": 18.4131
+      },
+      {
+       "name": "Mostar",
+       "lat": 43.3438,
+       "lng": 17.8078
+      },
+      {
+       "name": "Blagaj",
+       "lat": 43.2489,
+       "lng": 17.8942
+      },
+      {
+       "name": "Trebinje",
+       "lat": 42.7106,
+       "lng": 18.3438
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "HR",
+     "country": "Croatia",
+     "days": 4,
+     "budget": 252,
+     "dailyRate": 63,
+     "carInDailyRate": false,
+     "notes": "Deliberately limited to Dubrovnik (2026-08) — Split, Hvar, Plitvice Lakes and Zagreb already visited before. This also resolves a routing mismatch: Zagreb was well out of the way for the connecting bus to Kotor.",
+     "transport_to_next": "Bus along the coast Dubrovnik-Kotor, short border crossing, possible crowds in high season",
+     "destinations": [
+      {
+       "name": "Dubrovnik",
+       "lat": 42.6507,
+       "lng": 18.0944
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "ME",
+     "country": "Montenegro",
+     "days": 7,
+     "budget": 315,
+     "dailyRate": 45,
+     "carInDailyRate": false,
+     "notes": "",
+     "transport_to_next": "Bus Kotor/Podgorica to Tirana or Shkodër, overland, easy border crossing",
+     "destinations": [
+      {
+       "name": "Kotor",
+       "lat": 42.4247,
+       "lng": 18.7712
+      },
+      {
+       "name": "Perast",
+       "lat": 42.4875,
+       "lng": 18.7089
+      },
+      {
+       "name": "Budva",
+       "lat": 42.2911,
+       "lng": 18.84
+      },
+      {
+       "name": "Durmitor NP",
+       "lat": 43.1461,
+       "lng": 19.0413
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "AL",
+     "country": "Albania",
+     "days": 10,
+     "budget": 350,
+     "dailyRate": 35,
+     "carInDailyRate": false,
+     "notes": "",
+     "transport_to_next": "Bus Korçë-Ohrid via the border crossing at Kapshticë/Qafë Thanë, overland, short ride — a much more direct crossing than going back via Tirana",
+     "destinations": [
+      {
+       "name": "Shkodër",
+       "lat": 42.0683,
+       "lng": 19.5126
+      },
+      {
+       "name": "Tirana",
+       "lat": 41.3275,
+       "lng": 19.8187
+      },
+      {
+       "name": "Berat",
+       "lat": 40.7058,
+       "lng": 19.9522
+      },
+      {
+       "name": "Gjirokastër",
+       "lat": 40.0758,
+       "lng": 20.1389
+      },
+      {
+       "name": "Sarandë",
+       "lat": 39.8756,
+       "lng": 20.0053
+      },
+      {
+       "name": "Korçë",
+       "lat": 40.6186,
+       "lng": 20.7808
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "MK",
+     "country": "North Macedonia",
+     "days": 7,
+     "budget": 259,
+     "dailyRate": 37,
+     "carInDailyRate": false,
+     "notes": "",
+     "transport_to_next": "Flight Skopje-Istanbul (a bus via Bulgaria/Greece would take >20 hours, a flight is more realistic)",
+     "destinations": [
+      {
+       "name": "Ohrid",
+       "lat": 41.1231,
+       "lng": 20.8016
+      },
+      {
+       "name": "Bitola",
+       "lat": 41.0297,
+       "lng": 21.3347
+      },
+      {
+       "name": "Skopje",
+       "lat": 41.9973,
+       "lng": 21.428
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "country_code": "TR",
+     "country": "Turkey",
+     "days": 24,
+     "budget": 1300,
+     "dailyRate": 54,
+     "carInDailyRate": false,
+     "notes": "",
+     "transport_to_next": "Bus or train from Kars/Trabzon to Tbilisi, border crossing at Posof/Sarpi, no visa needed for Georgia",
+     "destinations": [
+      {
+       "name": "Istanbul",
+       "lat": 41.0082,
+       "lng": 28.9784
+      },
+      {
+       "name": "Ephesus",
+       "lat": 37.941,
+       "lng": 27.3417
+      },
+      {
+       "name": "Pamukkale",
+       "lat": 37.92,
+       "lng": 29.12
+      },
+      {
+       "name": "Antalya",
+       "lat": 36.8969,
+       "lng": 30.7133
+      },
+      {
+       "name": "Cappadocia",
+       "lat": 38.6431,
+       "lng": 34.8289
+      },
+      {
+       "name": "Ankara",
+       "lat": 39.9334,
+       "lng": 32.8597
+      },
+      {
+       "name": "Kars/Trabzon",
+       "lat": 40.6013,
+       "lng": 43.0975
+      }
+     ]
+    },
+    {
+     "index": 6,
+     "country_code": "GE",
+     "country": "Georgia",
+     "days": 13,
+     "budget": 494,
+     "dailyRate": 38,
+     "carInDailyRate": false,
+     "notes": "Mestia/Svaneti sits above the rest of the route price-wise (guesthouse with half-board plus a pricier marshrutka to/from Mestia, ~€17) — the daily budget only works as a trip-wide average combined with the cheaper days elsewhere (Tbilisi/Kutaisi/Batumi/Sighnaghi, realistically €35-45/day).",
+     "transport_to_next": "Back to Tbilisi (train or marshrutka from Batumi, ~5-6h, busy but good connection), then marshrutka Tbilisi-Yerevan, overland, easy border crossing, no visa needed",
+     "destinations": [
+      {
+       "name": "Tbilisi",
+       "lat": 41.7151,
+       "lng": 44.8271
+      },
+      {
+       "name": "Kazbegi",
+       "lat": 42.6572,
+       "lng": 44.6461
+      },
+      {
+       "name": "Sighnaghi",
+       "lat": 41.6206,
+       "lng": 45.9184
+      },
+      {
+       "name": "Kutaisi",
+       "lat": 42.2679,
+       "lng": 42.6946
+      },
+      {
+       "name": "Mestia (Svaneti)",
+       "lat": 43.0454,
+       "lng": 42.7276
+      },
+      {
+       "name": "Batumi",
+       "lat": 41.6168,
+       "lng": 41.6367
+      }
+     ]
+    },
+    {
+     "index": 7,
+     "country_code": "AM",
+     "country": "Armenia",
+     "days": 8,
+     "budget": 296,
+     "dailyRate": 37,
+     "carInDailyRate": false,
+     "notes": "Stay away from the border strip with Azerbaijan: roads H53/H26 near Ijevan, the M14 along the northeastern shore of Lake Sevan, and the M2 Yeraskh-Zangakatun/Yeraskh-Noravank (landmines) are orange/red (2026-07). Tatev (via Goris/Kapan) lies close to the Syunik border region — the standard route is reported as open/safe, stay on the usual tourist route.",
+     "transport_to_next": "No direct border (closed due to conflict) — travel back via Georgia (Tbilisi) to Baku, overland plus a short flight or bus",
+     "destinations": [
+      {
+       "name": "Yerevan",
+       "lat": 40.1792,
+       "lng": 44.4991
+      },
+      {
+       "name": "Khor Virap",
+       "lat": 39.8817,
+       "lng": 44.4453
+      },
+      {
+       "name": "Tatev",
+       "lat": 39.3789,
+       "lng": 46.2506
+      },
+      {
+       "name": "Lake Sevan",
+       "lat": 40.3667,
+       "lng": 45.3333
+      },
+      {
+       "name": "Dilijan",
+       "lat": 40.7431,
+       "lng": 44.865
+      }
+     ]
+    },
+    {
+     "index": 8,
+     "country_code": "AZ",
+     "country": "Azerbaijan",
+     "days": 7,
+     "budget": 266,
+     "dailyRate": 38,
+     "carInDailyRate": false,
+     "notes": "",
+     "transport_to_next": "Back to Baku (bus/shared taxi from Qabala/Sheki, ~3h), then flight Baku-Almaty (the ferry across the Caspian Sea Baku-Aktau has no fixed schedule and is unreliable)",
+     "destinations": [
+      {
+       "name": "Baku",
+       "lat": 40.4093,
+       "lng": 49.8671
+      },
+      {
+       "name": "Gobustan",
+       "lat": 40.1064,
+       "lng": 49.3969
+      },
+      {
+       "name": "Sheki",
+       "lat": 41.197,
+       "lng": 47.1706
+      },
+      {
+       "name": "Qabala",
+       "lat": 40.98,
+       "lng": 47.85
+      }
+     ]
+    },
+    {
+     "index": 9,
+     "country_code": "KZ",
+     "country": "Kazakhstan",
+     "days": 8,
+     "budget": 328,
+     "dailyRate": 41,
+     "carInDailyRate": false,
+     "notes": "Nur-Sultan/Astana deliberately cut (2026-08) — it was an isolated 1200 km detour too far out of the route; the rest of Kazakhstan now forms one continuous southern loop, no more backtracking needed.",
+     "transport_to_next": "Bus or shared taxi Almaty-Bishkek, overland, busy but easy border crossing",
+     "destinations": [
+      {
+       "name": "Almaty",
+       "lat": 43.2567,
+       "lng": 76.9286
+      },
+      {
+       "name": "Charyn Canyon",
+       "lat": 43.35,
+       "lng": 79.0667
+      },
+      {
+       "name": "Turkistan",
+       "lat": 43.2975,
+       "lng": 68.2517
+      },
+      {
+       "name": "Shymkent",
+       "lat": 42.3417,
+       "lng": 69.5901
+      }
+     ]
+    },
+    {
+     "index": 10,
+     "country_code": "KG",
+     "country": "Kyrgyzstan",
+     "days": 12,
+     "budget": 384,
+     "dailyRate": 32,
+     "carInDailyRate": false,
+     "notes": "",
+     "transport_to_next": "Shared jeep over the Pamir Highway Osh-Khorog, overland, rough terrain, GBAO permit/visa needed for Tajikistan",
+     "destinations": [
+      {
+       "name": "Bishkek",
+       "lat": 42.8746,
+       "lng": 74.5698
+      },
+      {
+       "name": "Issyk-Kul",
+       "lat": 42.65,
+       "lng": 77.0833
+      },
+      {
+       "name": "Karakol",
+       "lat": 42.4907,
+       "lng": 78.3936
+      },
+      {
+       "name": "Song-Kul",
+       "lat": 41.8333,
+       "lng": 75.1333
+      },
+      {
+       "name": "Osh",
+       "lat": 40.5283,
+       "lng": 72.7985
+      }
+     ]
+    },
+    {
+     "index": 11,
+     "country_code": "TJ",
+     "country": "Tajikistan",
+     "days": 14,
+     "budget": 448,
+     "dailyRate": 32,
+     "carInDailyRate": false,
+     "notes": "The GBAO permit for the Pamir Highway can be added directly to the e-visa application (tick the box, +/-$20, total +/-$70). The Pamir jeep/driver (Khorog-Murghab area) is a separate, real cost on top of the daily budget: private 4x4+driver $150-400/day (often shared), shared taxi from ~$30-40 p.p. — arrange this through a local guesthouse/CBT/PECTA in Khorog. Khorog/GBAO has had periods of unrest in the past (most recently 2022) — check the current situation shortly before departure.",
+     "transport_to_next": "Bus or shared taxi Dushanbe-Samarkand, overland, border crossing can be time-consuming",
+     "destinations": [
+      {
+       "name": "Khorog",
+       "lat": 37.4913,
+       "lng": 71.5551
+      },
+      {
+       "name": "Pamir Highway",
+       "lat": 37.8944,
+       "lng": 73.0139
+      },
+      {
+       "name": "Murghab",
+       "lat": 38.1706,
+       "lng": 74.0114
+      },
+      {
+       "name": "Iskanderkul",
+       "lat": 39.0736,
+       "lng": 68.3667
+      },
+      {
+       "name": "Dushanbe",
+       "lat": 38.5598,
+       "lng": 68.787
+      }
+     ]
+    },
+    {
+     "index": 12,
+     "country_code": "UZ",
+     "country": "Uzbekistan",
+     "days": 11,
+     "budget": 385,
+     "dailyRate": 35,
+     "carInDailyRate": false,
+     "notes": "A domestic flight Urgench (Khiva)-Tashkent is needed to keep this compact (~1.5h) — the road Khiva-Tashkent is >30 hours and not realistic.",
+     "transport_to_next": "Flight Tashkent-Xi'an, direct connection (China Eastern/Loong Air, ~6x/week) — replaces the old Ürümqi flight now that Xinjiang is no longer on the route",
+     "destinations": [
+      {
+       "name": "Samarkand",
+       "lat": 39.627,
+       "lng": 66.9749
+      },
+      {
+       "name": "Bukhara",
+       "lat": 39.7747,
+       "lng": 64.4286
+      },
+      {
+       "name": "Khiva",
+       "lat": 41.3775,
+       "lng": 60.3639
+      },
+      {
+       "name": "Tashkent",
+       "lat": 41.2995,
+       "lng": 69.2401
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

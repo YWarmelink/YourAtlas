@@ -1,0 +1,1565 @@
+{
+ "batch": 15,
+ "group": "Central & Eastern Europe",
+ "routes": [
+  {
+   "id": "gt_seed_bulgaria-greece-sofia-to-meteora-12-days",
+   "name": "Bulgaria + Greece: Sofia to Meteora (12 days) ⛰️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Fly into Sofia, overland via Kulata, fly home from Thessaloniki.",
+   "description": "Sofia and Plovdiv, then a border crossing into Greece for Thessaloniki and the monasteries of Meteora.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 9a (Central/Eastern Europe: Romania + Bulgaria + Moldova) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_bulgaria-greece-sofia-to-meteora-12-days",
+    "name": "Bulgaria + Greece: Sofia to Meteora (12 days) ⛰️",
+    "stops": 6,
+    "km_in_route": 720,
+    "km_from_nl": 2230,
+    "km_back_to_nl": 2430,
+    "km_by_country": {
+     "BG": 230,
+     "GR": 490
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "BG",
+     "country": "Bulgaria",
+     "days": 6,
+     "budget": 222,
+     "dailyRate": 37,
+     "carInDailyRate": false,
+     "notes": "Sofia (2 days) — the Rila Monastery as a day trip — Plovdiv (2 days) — travel day toward the border. Budget ~€65/day. Season: May-June or September.",
+     "transport_to_next": "Cross the border at Kulata — open, no Schengen-related delay.",
+     "destinations": [
+      {
+       "name": "Sofia",
+       "lat": 42.6977,
+       "lng": 23.3219
+      },
+      {
+       "name": "Rila Monastery",
+       "lat": 42.1333,
+       "lng": 23.34
+      },
+      {
+       "name": "Plovdiv",
+       "lat": 42.1354,
+       "lng": 24.7453
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "GR",
+     "country": "Greece",
+     "days": 6,
+     "budget": 384,
+     "dailyRate": 64,
+     "carInDailyRate": false,
+     "notes": "Thessaloniki (2 days) — Meteora (2 days, day trip or overnight in Kalabaka) — optionally back via Thessaloniki. Budget ~€75/day (Greece runs pricier on average than Bulgaria). Season: May-June or September; Meteora is very hot and crowded with tour buses in July-August. Web check (2026-08): each Meteora monastery has its own rotating closing day and a dress code — check per monastery which day it's closed.",
+     "transport_to_next": "End of this route — fly home from Thessaloniki.",
+     "destinations": [
+      {
+       "name": "Thessaloniki",
+       "lat": 40.6401,
+       "lng": 22.9444
+      },
+      {
+       "name": "Meteora",
+       "lat": 39.7217,
+       "lng": 21.6306
+      },
+      {
+       "name": "Kalabaka",
+       "lat": 39.7025,
+       "lng": 21.628
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_bulgaria-romania-black-sea-coast-9-days",
+   "name": "Bulgaria + Romania: Black Sea Coast (9 days) 🌊",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Fly into Sofia, overland to the Black Sea coast, cross into Romania at Ruse, fly home from Bucharest.",
+   "description": "Bulgaria's Black Sea coast (Varna, Golden Sands, Sunny Beach) bookended by Sofia/Plovdiv and a closing stop in Bucharest.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 9a (Central/Eastern Europe: Romania + Bulgaria + Moldova) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_bulgaria-romania-black-sea-coast-9-days",
+    "name": "Bulgaria + Romania: Black Sea Coast (9 days) 🌊",
+    "stops": 6,
+    "km_in_route": 960,
+    "km_from_nl": 2230,
+    "km_back_to_nl": 2290,
+    "km_by_country": {
+     "BG": 650,
+     "RO": 300
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "BG",
+     "country": "Bulgaria",
+     "days": 7,
+     "budget": 259,
+     "dailyRate": 37,
+     "carInDailyRate": false,
+     "notes": "Sofia (2 days) — Plovdiv (1 day) — Varna and the Black Sea coast (2-3 days, Golden Sands/Sunny Beach). Budget ~€68/day (coastal towns are pricier in high season). Season: the coast is best in June or September, July-August is warmest but busiest and most expensive. Deliberately Black Sea/Sofia-heavy, starting in Bulgaria — a different angle on the same two countries as the 'Romania + Bulgaria: Transylvania Focus' route (which starts in Romania and leans Transylvania). Web check (2026-08): coastal resorts peak in price July-August, book ahead.",
+     "transport_to_next": "Cross the border at Ruse — no standard checks since Romania became fully Schengen (including land borders) on 1 January 2025.",
+     "destinations": [
+      {
+       "name": "Sofia",
+       "lat": 42.6977,
+       "lng": 23.3219
+      },
+      {
+       "name": "Plovdiv",
+       "lat": 42.1354,
+       "lng": 24.7453
+      },
+      {
+       "name": "Varna",
+       "lat": 43.2141,
+       "lng": 27.9147
+      },
+      {
+       "name": "Golden Sands",
+       "lat": 43.2833,
+       "lng": 28.0333
+      },
+      {
+       "name": "Sunny Beach",
+       "lat": 42.6833,
+       "lng": 27.7167
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "RO",
+     "country": "Romania",
+     "days": 2,
+     "budget": 78,
+     "dailyRate": 39,
+     "carInDailyRate": false,
+     "notes": "Bucharest (2 days) as a closing stop. Budget ~€77/day.",
+     "transport_to_next": "End of this route — fly home from Bucharest.",
+     "destinations": [
+      {
+       "name": "Bucharest",
+       "lat": 44.4268,
+       "lng": 26.1025
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_bulgaria-roadtrip-9-days",
+   "name": "Bulgaria Roadtrip (9 days) 🚗",
+   "mode": "rental",
+   "carInBudgetWording": "included",
+   "carEvidence": "(2 days) — the Rhodope Mountains (2 days) — back via Sofia. Budget ~€70-80/day including a rental car. Season: May-September, the Rhodopes are beautiful in early",
+   "travel_style": "Rental car loop out of Sofia through Plovdiv, the Melnik wine region and the Rhodope Mountains.",
+   "description": "A self-drive loop covering Sofia, Plovdiv, the Melnik wine region and the Rhodope Mountains.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 9a (Central/Eastern Europe: Romania + Bulgaria + Moldova) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_bulgaria-roadtrip-9-days",
+    "name": "Bulgaria Roadtrip (9 days) 🚗",
+    "stops": 5,
+    "km_in_route": 560,
+    "km_from_nl": 2230,
+    "km_back_to_nl": 2440,
+    "km_by_country": {
+     "BG": 560
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "BG",
+     "country": "Bulgaria",
+     "days": 9,
+     "budget": 675,
+     "dailyRate": 75,
+     "carInDailyRate": true,
+     "notes": "Sofia (2 days) — Plovdiv (2 days) — the Rila/Melnik wine region (2 days) — the Rhodope Mountains (2 days) — back via Sofia. Budget ~€70-80/day including a rental car. Season: May-September, the Rhodopes are beautiful in early autumn. Web check (2026-08): Rhodope mountain roads are sometimes unpaved, check the local road status in advance; mobile signal can drop out on remote mountain roads.",
+     "transport_to_next": "End of this route — fly home from Sofia.",
+     "destinations": [
+      {
+       "name": "Sofia",
+       "lat": 42.6977,
+       "lng": 23.3219
+      },
+      {
+       "name": "Plovdiv",
+       "lat": 42.1354,
+       "lng": 24.7453
+      },
+      {
+       "name": "Rila Monastery",
+       "lat": 42.1333,
+       "lng": 23.34
+      },
+      {
+       "name": "Melnik",
+       "lat": 41.5333,
+       "lng": 23.3833
+      },
+      {
+       "name": "Rhodope Mountains",
+       "lat": 41.65,
+       "lng": 24.75
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_sofia-plovdiv-6-days",
+   "name": "Sofia + Plovdiv (6 days) 🏛️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into/home from Sofia, train to Plovdiv and back, Rila Monastery day trip.",
+   "description": "Sofia and Plovdiv's old towns paired with an optional Rila Monastery day trip, easily doable by train.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 9a (Central/Eastern Europe: Romania + Bulgaria + Moldova) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_sofia-plovdiv-6-days",
+    "name": "Sofia + Plovdiv (6 days) 🏛️",
+    "stops": 3,
+    "km_in_route": 320,
+    "km_from_nl": 2230,
+    "km_back_to_nl": 2290,
+    "km_by_country": {
+     "BG": 320
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "BG",
+     "country": "Bulgaria",
+     "days": 6,
+     "budget": 222,
+     "dailyRate": 37,
+     "carInDailyRate": false,
+     "notes": "Sofia (2 days) — Plovdiv (2 days, old town and the Roman theatre) — Rila Monastery as a day trip from Sofia. Budget ~€55-65/day. Season: May-June or September, mild and less crowded; Plovdiv gets hot in summer. Web check (2026-08): the Sofia-Plovdiv train takes about 2.5 hours, a fine alternative to a rental car.",
+     "transport_to_next": "End of this route — fly home from Sofia.",
+     "destinations": [
+      {
+       "name": "Sofia",
+       "lat": 42.6977,
+       "lng": 23.3219
+      },
+      {
+       "name": "Plovdiv (Old Town / Roman Theatre)",
+       "lat": 42.1354,
+       "lng": 24.7453
+      },
+      {
+       "name": "Rila Monastery",
+       "lat": 42.1333,
+       "lng": 23.34
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_sofia-rila-monastery-5-days",
+   "name": "Sofia + Rila Monastery (5 days) ⛪",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into/home from Sofia, day trip to Rila by rental car or organized tour.",
+   "description": "A short Sofia city break with Alexander Nevski Cathedral, Vitosha Mountain, and a day trip out to the Rila Monastery.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 9a (Central/Eastern Europe: Romania + Bulgaria + Moldova) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_sofia-rila-monastery-5-days",
+    "name": "Sofia + Rila Monastery (5 days) ⛪",
+    "stops": 3,
+    "km_in_route": 80,
+    "km_from_nl": 2230,
+    "km_back_to_nl": 2290,
+    "km_by_country": {
+     "BG": 80
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "BG",
+     "country": "Bulgaria",
+     "days": 5,
+     "budget": 185,
+     "dailyRate": 37,
+     "carInDailyRate": false,
+     "notes": "Sofia (3 days, Alexander Nevski Cathedral, Vitosha Mountain) — Rila Monastery as a day trip (2h drive). Budget ~€55-65/day. Season: May-September; the monastery is accessible year-round but the mountain road can be icy in winter. Web check (2026-08): the monastery complex and church are free, museums charge separately (~€12 combo ticket), grounds open roughly 7:00-20:00 (check current hours); clothing covering shoulders and knees is required. Dutch travel advisory for Bulgaria is green (last updated 29 April 2026), no exceptions. Bulgaria adopted the euro on 1 January 2026 (fixed rate 1 EUR = 1.95583 BGN) and it became the sole legal currency on 1 February 2026 — dual BGN/EUR pricing is still required until 8 August 2026, useful for spotting outdated BGN-only prices online.",
+     "transport_to_next": "End of this route — fly home from Sofia.",
+     "destinations": [
+      {
+       "name": "Sofia (Alexander Nevski Cathedral)",
+       "lat": 42.6977,
+       "lng": 23.3219
+      },
+      {
+       "name": "Vitosha Mountain",
+       "lat": 42.5667,
+       "lng": 23.2833
+      },
+      {
+       "name": "Rila Monastery",
+       "lat": 42.1333,
+       "lng": 23.34
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_central-europe-roadtrip-14-days",
+   "name": "Central Europe Roadtrip (14 days) 🚂",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Train throughout (a rental car works as a fallback/local option) — Berlin, Prague, Krakow, Bratislava, Vienna and Budapest are all well connected by rail. Fly into Berlin, fly home from Budapest.",
+   "description": "A six-country capital-hopping loop by train: Berlin, Prague, Krakow (with an Auschwitz-Birkenau day trip), Bratislava, Vienna and Budapest.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 15c (Grand European combinations — Central Europe cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Budget note: the source material gives one flat ~€70-85/day estimate for the whole trip, but per-country rates verified elsewhere in this repo vary well outside that band (Austria/Vienna in particular runs ~€100-130/day in every other Austria route built so far) — the per-country budgets above use those more realistic verified rates rather than a flat number, which pulls the trip's true daily average above the source's own ~€70-85 estimate; flagged here rather than silently smoothed over. All six countries are Schengen/EU with no border control between them, but three use their own currency (CZK/PLN/HUF) alongside three euro countries (DE/SK/AT). ⚠️⚠️ Real overlap with a much bigger existing route, explicitly flagged: despite the near-identical expected function name, this is NOT the same as Central European Grand Roadtrip 🚗 (rbBuildCentralEuropeRoadtripRoute) — that existing function is the flagship Grand Expedition (45-70 days, 14 countries: France/Germany/Switzerland/Liechtenstein/Austria/Italy/San Marino/Slovenia/Croatia/Serbia/Hungary/Slovakia/Czechia/Poland), whose Alpine Countries/Balkans/Central Europe regions do cover the same six-country core (Germany/Czechia/Poland/Slovakia/Austria/Hungary) as this route. Same relationship pattern as Isle of Man (3-4 days) 🏝️ vs England, Wales & Isle of Man 🎩 (rbBuildIsleOfManRoute vs rbBuildEnglandWalesIoMRoute) — a realistic standalone 2-week trip vs. a leg buried inside a month-plus expedition. Genuinely different in practice, not just in length: this route adds Berlin (which the Grand Roadtrip never visits at all — it goes Alsace→Alpine Countries→Dolomites/Northern Italy first instead), its Austria leg is specifically Vienna (the Grand Roadtrip's Austria leg is Innsbruck/Salzburg/Grossglockner — no Vienna at all), and even where countries overlap the order/cities differ (the Grand Roadtrip's 'Central Europe' region runs Slovakia→Czechia(Brno/Prague)→Poland(Wrocław)→Germany(Dresden), the reverse direction and different cities from this route's Berlin→Prague→Krakow→Bratislava→Vienna→Budapest). Given a deliberately distinct function name (rbBuildCentralEuropeRoadtripFourteenDaysRoute) per this project's established collision-resolution pattern. The pre-existing Central European Grand Roadtrip 🚗 itself is untouched, not renamed, not modified. Logged in ROUTE_SIMILARITY_REVIEW.md. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_central-europe-roadtrip-14-days",
+    "name": "Central Europe Roadtrip (14 days) 🚂",
+    "stops": 9,
+    "km_in_route": 1640,
+    "km_from_nl": 730,
+    "km_back_to_nl": 1460,
+    "km_by_country": {
+     "DE": 0,
+     "CZ": 370,
+     "PL": 580,
+     "SK": 340,
+     "AT": 70,
+     "HU": 280
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "DE",
+     "country": "Germany",
+     "days": 2,
+     "budget": 144,
+     "dailyRate": 72,
+     "carInDailyRate": false,
+     "notes": "Berlin (2 days) as the opener. Budget ~€80-95/day.",
+     "transport_to_next": "Train or drive to Prague — a fully Schengen border, no checks.",
+     "destinations": [
+      {
+       "name": "Brandenburg Gate",
+       "lat": 52.5163,
+       "lng": 13.3777
+      },
+      {
+       "name": "Museum Island",
+       "lat": 52.5169,
+       "lng": 13.4014
+      },
+      {
+       "name": "Berlin Wall Memorial",
+       "lat": 52.535,
+       "lng": 13.39
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "CZ",
+     "country": "Czechia",
+     "days": 3,
+     "budget": 165,
+     "dailyRate": 55,
+     "carInDailyRate": false,
+     "notes": "Prague (3 days). Budget ~€75-90/day.",
+     "transport_to_next": "Train or drive to Krakow — a fully Schengen border, no checks.",
+     "destinations": [
+      {
+       "name": "Staré Město / Prague Castle",
+       "lat": 50.0875,
+       "lng": 14.4213
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "PL",
+     "country": "Poland",
+     "days": 2,
+     "budget": 90,
+     "dailyRate": 45,
+     "carInDailyRate": false,
+     "notes": "Krakow (2-3 days), including a half-day Auschwitz-Birkenau trip. Budget ~€60-75/day. Web check (2026-08): since March 2026 Auschwitz-Birkenau can only be booked online (visit.auschwitz.org) — book at least 2-4 weeks ahead.",
+     "transport_to_next": "Train or drive to Bratislava — a fully Schengen border, no checks.",
+     "destinations": [
+      {
+       "name": "Krakow Old Town",
+       "lat": 50.0614,
+       "lng": 19.9366
+      },
+      {
+       "name": "Auschwitz-Birkenau (day trip)",
+       "lat": 50.0359,
+       "lng": 19.1783
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "SK",
+     "country": "Slovakia",
+     "days": 1,
+     "budget": 45,
+     "dailyRate": 45,
+     "carInDailyRate": false,
+     "notes": "Bratislava (1-2 days). Budget ~€50-60/day.",
+     "transport_to_next": "Train or drive to Vienna, about an hour — Schengen, but Web check (2026-09): this specific Bratislava-Vienna corridor IS affected by Austria's ongoing border-control regime (running through at least 15 September 2026, likely re-extended) — expect the same 15-45 min ad-hoc document checks as elsewhere on that regime, not a formality-free crossing.",
+     "destinations": [
+      {
+       "name": "Bratislava",
+       "lat": 48.1486,
+       "lng": 17.1077
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "AT",
+     "country": "Austria",
+     "days": 3,
+     "budget": 222,
+     "dailyRate": 74,
+     "carInDailyRate": false,
+     "notes": "Vienna (2-3 days). Budget ~€100-130/day p.p. — noticeably above this route's own flat source-level daily-budget estimate, see the route notes below.",
+     "transport_to_next": "Train onward to Budapest, about 2.5 hours.",
+     "destinations": [
+      {
+       "name": "Vienna (old town, Schönbrunn)",
+       "lat": 48.2082,
+       "lng": 16.3738
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "country_code": "HU",
+     "country": "Hungary",
+     "days": 3,
+     "budget": 144,
+     "dailyRate": 48,
+     "carInDailyRate": false,
+     "notes": "Budapest (3 days), the trip's departure point. Budget ~€55-65/day.",
+     "transport_to_next": "End of this route — fly home from Budapest.",
+     "destinations": [
+      {
+       "name": "Buda Castle District",
+       "lat": 47.496,
+       "lng": 19.0396
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_czechia-austria-9-days",
+   "name": "Czechia + Austria (9 days) 🏔️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into Prague, rental car throughout, fly home from Vienna.",
+   "description": "Prague and Český Krumlov, then across the border into Austria for the Salzkammergut lakes and Vienna.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 9b (Central/Eastern Europe: Hungary + Czechia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_czechia-austria-9-days",
+    "name": "Czechia + Austria (9 days) 🏔️",
+    "stops": 5,
+    "km_in_route": 660,
+    "km_from_nl": 890,
+    "km_back_to_nl": 1180,
+    "km_by_country": {
+     "CZ": 180,
+     "AT": 480
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "CZ",
+     "country": "Czechia",
+     "days": 5,
+     "budget": 275,
+     "dailyRate": 55,
+     "carInDailyRate": false,
+     "notes": "Prague (2-3 days) — Český Krumlov (1-2 days). Budget ~€82/day.",
+     "transport_to_next": "Cross into Austria — a Schengen border, but Austria has extended its border controls with Czechia through at least 15 June 2026 (possibly further): expect spot ID checks, no visa needed, but keep your passport/ID on you. A separate Austrian highway vignette is required in addition to the Czech dálniční známka.",
+     "destinations": [
+      {
+       "name": "Prague",
+       "lat": 50.0875,
+       "lng": 14.4213
+      },
+      {
+       "name": "Český Krumlov",
+       "lat": 48.8127,
+       "lng": 14.3175
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "AT",
+     "country": "Austria",
+     "days": 4,
+     "budget": 296,
+     "dailyRate": 74,
+     "carInDailyRate": false,
+     "notes": "Linz and the Salzkammergut lake district (1 day) — Vienna (3 days). Budget: Czechia ran ~€82/day, Austria runs noticeably higher at ~€100-130/day (used €115/day here). Season: May-June or September. Web check (2026-08): Vienna's museums often require an online timed-entry ticket booked ahead.",
+     "transport_to_next": "End of this route — fly home from Vienna.",
+     "destinations": [
+      {
+       "name": "Linz",
+       "lat": 48.3069,
+       "lng": 14.2858
+      },
+      {
+       "name": "Salzkammergut (Hallstatt)",
+       "lat": 47.5622,
+       "lng": 13.6493
+      },
+      {
+       "name": "Vienna",
+       "lat": 48.2082,
+       "lng": 16.3738
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_czechia-austria-hungary-10-14-days",
+   "name": "Czechia + Austria + Hungary (10-14 days) 🏛️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into Prague, rental car/train through Vienna, train onward (~2.5h) to Budapest, fly home from Budapest.",
+   "description": "Prague and Český Krumlov, across into Austria for Vienna, then on to Budapest with an optional Eger wine detour.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 15c (Grand European combinations — Central Europe cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️ Real overlap, explicitly flagged: this route is essentially Czechia + Austria (9 days) 🏔️ (rbBuildCzechiaAustriaRoute, batch 9b — same Prague/Český Krumlov/Vienna backbone) with a Budapest(+optional Eger) leg appended. Also reuses content close to Prague + Bohemia (5 days) 🏘️ (rbBuildPragueBohemiaRoute) on the Czechia side and Budapest + Eger (5 days) 🍷 (rbBuildBudapestEgerRoute) on the optional Hungary extension. Kept as a distinct route, not merged. Logged in ROUTE_SIMILARITY_REVIEW.md. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_czechia-austria-hungary-10-14-days",
+    "name": "Czechia + Austria + Hungary (10-14 days) 🏛️",
+    "stops": 5,
+    "km_in_route": 820,
+    "km_from_nl": 890,
+    "km_back_to_nl": 1540,
+    "km_by_country": {
+     "CZ": 180,
+     "AT": 220,
+     "HU": 420
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "CZ",
+     "country": "Czechia",
+     "days": 5,
+     "budget": 275,
+     "dailyRate": 55,
+     "carInDailyRate": false,
+     "notes": "Prague (3 days) — Český Krumlov (1-2 days). Budget ~€75-90/day.",
+     "transport_to_next": "Cross into Austria — a Schengen border, but Austria's border-control regime with Czechia is still active as of 2026-09 (extended a further three months to at least 15 September 2026, from an earlier 15 June 2026 deadline; running since 2015, repeatedly re-extended, likely again around that date): expect spot ID checks, no visa needed. A separate Austrian highway vignette is required in addition to the Czech dálniční známka.",
+     "destinations": [
+      {
+       "name": "Staré Město / Prague Castle",
+       "lat": 50.0875,
+       "lng": 14.4213
+      },
+      {
+       "name": "Český Krumlov",
+       "lat": 48.8127,
+       "lng": 14.3175
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "AT",
+     "country": "Austria",
+     "days": 3,
+     "budget": 222,
+     "dailyRate": 74,
+     "carInDailyRate": false,
+     "notes": "Vienna (3 days). Budget ~€100-130/day p.p. Web check (2026-09): confirmed — Austria's border-control regime does cover Hungary too, not just Czechia/Slovakia, adding ad-hoc document checks (15-45 min) at motorway lay-bys/rail crossings/cross-border buses rather than a closed border. Recheck close to departure given the rolling-extension pattern.",
+     "transport_to_next": "Train onward to Budapest, about 2.5 hours — a fully Schengen border.",
+     "destinations": [
+      {
+       "name": "Vienna (old town, Schönbrunn)",
+       "lat": 48.2082,
+       "lng": 16.3738
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "HU",
+     "country": "Hungary",
+     "days": 4,
+     "budget": 192,
+     "dailyRate": 48,
+     "carInDailyRate": false,
+     "notes": "Budapest (3-4 days), with Eger as an optional 1-2 day wine-region extension if time allows. Budget ~€55-65/day. Season: May-June or September.",
+     "transport_to_next": "End of this route — fly home from Budapest.",
+     "destinations": [
+      {
+       "name": "Buda Castle District",
+       "lat": 47.496,
+       "lng": 19.0396
+      },
+      {
+       "name": "Eger (optional extension)",
+       "lat": 47.9025,
+       "lng": 20.3772
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_czechia-roadtrip-6-days",
+   "name": "Czechia Roadtrip (6 days) 🛣️",
+   "mode": "rental",
+   "carInBudgetWording": "included",
+   "carEvidence": "lov (2 days) — Brno and a Moravian wine tasting (1-2 days). Budget ~€78/day including a rental car (~€35-45/day on its own). Season: May-June or September for",
+   "travel_style": "Fly into Prague, rental car for the whole loop, fly home from Prague or Brno.",
+   "description": "A self-drive loop: Prague, the spa town of Karlovy Vary, Český Krumlov, and a Moravian wine stop in Brno.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 9b (Central/Eastern Europe: Hungary + Czechia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_czechia-roadtrip-6-days",
+    "name": "Czechia Roadtrip (6 days) 🛣️",
+    "stops": 4,
+    "km_in_route": 610,
+    "km_from_nl": 890,
+    "km_back_to_nl": 1130,
+    "km_by_country": {
+     "CZ": 610
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "CZ",
+     "country": "Czechia",
+     "days": 6,
+     "budget": 468,
+     "dailyRate": 78,
+     "carInDailyRate": true,
+     "notes": "Prague (2 days) — Karlovy Vary (1 day) — Český Krumlov (2 days) — Brno and a Moravian wine tasting (1-2 days). Budget ~€78/day including a rental car (~€35-45/day on its own). Season: May-June or September for the best weather and fewest crowds. Web check (2026-08): a dálniční známka (highway toll sticker) is mandatory — check whether the rental company includes it; parking in historic town centers is limited.",
+     "transport_to_next": "End of this route — fly home from Prague or Brno.",
+     "destinations": [
+      {
+       "name": "Prague",
+       "lat": 50.0875,
+       "lng": 14.4213
+      },
+      {
+       "name": "Karlovy Vary",
+       "lat": 50.2306,
+       "lng": 12.8722
+      },
+      {
+       "name": "Český Krumlov",
+       "lat": 48.8127,
+       "lng": 14.3175
+      },
+      {
+       "name": "Brno / Moravia wine region",
+       "lat": 49.1951,
+       "lng": 16.6068
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_moravia-brno-wine-region-5-days",
+   "name": "Moravia: Brno + Wine Region (5 days) 🍇",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into Prague or Vienna, rental car (or bike once in Moravia) for the wine region.",
+   "description": "Brno's Moravian capital paired with the vineyard-covered Mikulov and Znojmo wine region, best timed for the late-summer grape harvest.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 9b (Central/Eastern Europe: Hungary + Czechia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_moravia-brno-wine-region-5-days",
+    "name": "Moravia: Brno + Wine Region (5 days) 🍇",
+    "stops": 3,
+    "km_in_route": 110,
+    "km_from_nl": 1130,
+    "km_back_to_nl": 1110,
+    "km_by_country": {
+     "CZ": 110
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "CZ",
+     "country": "Czechia",
+     "days": 5,
+     "budget": 275,
+     "dailyRate": 55,
+     "carInDailyRate": false,
+     "notes": "Brno, the capital of Moravia (2 days) — the Mikulov/Znojmo wine region (2-3 days, cycling among the vineyards). Budget ~€72/day (cheaper than Prague). Season: best in late August-September for the grape harvest, young Burčák wine, and the 'zarážení hory' harvest festivals — the Znojmo Wine Festival falls in the 2nd week of September, the Mikulov Vintage Festival in the 1st week of September. May-June works as a quieter alternative outside harvest season. Web check (2026-08): bike rental and wine-route infrastructure are often only staffed in season; book wine tastings ahead during harvest weekends, since they get busy and fill up.",
+     "transport_to_next": "End of this route — fly home from Brno or Vienna.",
+     "destinations": [
+      {
+       "name": "Brno",
+       "lat": 49.1951,
+       "lng": 16.6068
+      },
+      {
+       "name": "Mikulov wine region",
+       "lat": 48.8064,
+       "lng": 16.6367
+      },
+      {
+       "name": "Znojmo wine region",
+       "lat": 48.8555,
+       "lng": 16.0488
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_prague-4-days",
+   "name": "Prague (4 days) 🏰",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Fly into/home from Prague, everything walkable or a short tram/metro ride.",
+   "description": "Prague's core sights — Staré Město, Malá Strana, Prague Castle — with quiet Vyšehrad as an escape from the crowds.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 9b (Central/Eastern Europe: Hungary + Czechia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_prague-4-days",
+    "name": "Prague (4 days) 🏰",
+    "stops": 4,
+    "km_in_route": 10,
+    "km_from_nl": 890,
+    "km_back_to_nl": 890,
+    "km_by_country": {
+     "CZ": 10
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "CZ",
+     "country": "Czechia",
+     "days": 4,
+     "budget": 220,
+     "dailyRate": 55,
+     "carInDailyRate": false,
+     "notes": "Staré Město and the Old Town Square (1 day) — Malá Strana (1 day) — Prague Castle (1 day) — Vyšehrad as a quieter alternative away from the crowds (1 day). Budget ~€90/day (3-star hotel, restaurants, tram/metro). Season: May-June or September-October are best; summer is hot and overcrowded, December has an atmospheric but cold Christmas market. Web check (2026-08): the Castle's basic ticket is 450 CZK (~€18), with the tower and cathedral together adding +200 CZK; check hrad.cz's 'archive of closures' page, since some gardens/galleries close on rotating days for events. Dutch travel advisory for Czechia is green (last updated 16 March 2026) — watch for pickpockets around Charles Bridge and the Old Town Square.",
+     "transport_to_next": "End of this route — fly home from Prague.",
+     "destinations": [
+      {
+       "name": "Staré Město (Old Town Square)",
+       "lat": 50.0875,
+       "lng": 14.4213
+      },
+      {
+       "name": "Malá Strana",
+       "lat": 50.0865,
+       "lng": 14.4051
+      },
+      {
+       "name": "Prague Castle",
+       "lat": 50.0909,
+       "lng": 14.4016
+      },
+      {
+       "name": "Vyšehrad",
+       "lat": 50.0653,
+       "lng": 14.4206
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_prague-bohemia-5-days",
+   "name": "Prague + Bohemia (5 days) 🏘️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into/home from Prague; train/bus or rental car out to Bohemia.",
+   "description": "Prague plus an overnight stay in fairy-tale Český Krumlov, with Karlovy Vary as an optional spa-town stopover.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 9b (Central/Eastern Europe: Hungary + Czechia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_prague-bohemia-5-days",
+    "name": "Prague + Bohemia (5 days) 🏘️",
+    "stops": 3,
+    "km_in_route": 390,
+    "km_from_nl": 890,
+    "km_back_to_nl": 970,
+    "km_by_country": {
+     "CZ": 390
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "CZ",
+     "country": "Czechia",
+     "days": 5,
+     "budget": 275,
+     "dailyRate": 55,
+     "carInDailyRate": false,
+     "notes": "Prague (3 days) — Český Krumlov (1-2 days, staying overnight rather than rushing a day trip) — optionally Karlovy Vary as a stopover. Budget ~€82/day on average (Prague runs pricier, Krumlov/Karlovy Vary about 10-15% cheaper). Season: May-June or September; Krumlov's historic center is only quiet after 17:00 once the day-trippers have left. Web check (2026-08): the RegioJet train/bus between Prague and Krumlov (~3 hours) is a solid alternative to renting a car. Dutch travel advisory for Czechia is green (last updated 16 March 2026) — watch for pickpockets around Charles Bridge/the Old Town Square in Prague.",
+     "transport_to_next": "End of this route — fly home from Prague.",
+     "destinations": [
+      {
+       "name": "Staré Město / Prague Castle",
+       "lat": 50.0875,
+       "lng": 14.4213
+      },
+      {
+       "name": "Karlovy Vary (optional stopover)",
+       "lat": 50.2306,
+       "lng": 12.8722
+      },
+      {
+       "name": "Český Krumlov",
+       "lat": 48.8127,
+       "lng": 14.3175
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_baltic-states-roadtrip-10-14-days",
+   "name": "Baltic States Roadtrip (10-14 days) 🚗",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Self-drive rental-car loop through all three Baltic states, taking in smaller regions (Sigulda, the Curonian Spit, Saaremaa) rather than just the capitals.",
+   "description": "A self-drive loop: Tallinn, Lahemaa and Saaremaa in Estonia; Riga, Sigulda/Gauja NP and Rundāle Palace in Latvia; Vilnius, Trakai and the Curonian Spit in Lithuania.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 13/21 (Baltic States: Estonia + Latvia + Lithuania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Differentiator vs. 'Tallinn + Riga + Vilnius' above: a genuine self-drive loop through smaller regions rather than an extended capitals trip. No pre-existing Route Builder expedition covers this combination, so no collision check was needed beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_baltic-states-roadtrip-10-14-days",
+    "name": "Baltic States Roadtrip (10-14 days) 🚗",
+    "stops": 9,
+    "km_in_route": 1450,
+    "km_from_nl": 1910,
+    "km_back_to_nl": 1430,
+    "km_by_country": {
+     "EE": 400,
+     "LV": 420,
+     "LT": 640
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "EE",
+     "country": "Estonia",
+     "days": 5,
+     "budget": 290,
+     "dailyRate": 58,
+     "carInDailyRate": false,
+     "notes": "Entry: fly into Tallinn from Amsterdam, pick up a rental car. Tallinn (2 days), Lahemaa National Park (1 day), Saaremaa (2 days). Budget ~€70-90/day (book the rental car early for summer). Season: May-September. Web check (2026-08): book the Tallinn-Saaremaa car ferry well ahead for high season.",
+     "transport_to_next": "Drive south from Saaremaa/Muhu to Riga — all EU/Schengen, no border controls.",
+     "destinations": [
+      {
+       "name": "Tallinn (Old Town)",
+       "lat": 59.437,
+       "lng": 24.7454
+      },
+      {
+       "name": "Lahemaa National Park",
+       "lat": 59.4711,
+       "lng": 25.9106
+      },
+      {
+       "name": "Kuressaare Castle (Saaremaa)",
+       "lat": 58.2481,
+       "lng": 22.4886
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "LV",
+     "country": "Latvia",
+     "days": 4,
+     "budget": 192,
+     "dailyRate": 48,
+     "carInDailyRate": false,
+     "notes": "Riga (2 days), then Sigulda/Turaida Castle/Gauja National Park (2 days) plus a day trip to Rundāle Palace. Budget ~€70-90/day.",
+     "transport_to_next": "Drive south from Riga/Sigulda to Vilnius — all EU/Schengen, no border controls.",
+     "destinations": [
+      {
+       "name": "Riga (Old Town)",
+       "lat": 56.9496,
+       "lng": 24.1052
+      },
+      {
+       "name": "Sigulda / Turaida Castle / Gauja NP",
+       "lat": 57.1536,
+       "lng": 24.8592
+      },
+      {
+       "name": "Rundāle Palace (day trip)",
+       "lat": 56.4149,
+       "lng": 24.0128
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "LT",
+     "country": "Lithuania",
+     "days": 4,
+     "budget": 192,
+     "dailyRate": 48,
+     "carInDailyRate": false,
+     "notes": "Vilnius (2 days) with a day trip to Trakai Castle, then the Curonian Spit/Nida (2 days). Budget ~€70-90/day. Web check (2026-08): the Curonian Spit's Neringa/Nida car eco-toll applies here — €50 (20 June-20 August) or €10 the rest of the year, electric cars free outside peak season. General note: all three Baltic states are EU/Schengen with no internal border controls between them.",
+     "transport_to_next": "End of this route — fly home from Vilnius (or Kaunas, if flight availability is better).",
+     "destinations": [
+      {
+       "name": "Vilnius (Old Town)",
+       "lat": 54.6872,
+       "lng": 25.2797
+      },
+      {
+       "name": "Trakai Castle (day trip)",
+       "lat": 54.6551,
+       "lng": 24.9339
+      },
+      {
+       "name": "Curonian Spit / Nida",
+       "lat": 55.3033,
+       "lng": 21.0058
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_estonia-5-7-days",
+   "name": "Estonia (5-7 days) 🏰",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Tallinn as a base, with either a national-park day trip or a longer island trip to Saaremaa via ferry.",
+   "description": "Tallinn's Old Town plus either Lahemaa National Park or Saaremaa/Kuressaare Castle.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 13/21 (Baltic States: Estonia + Latvia + Lithuania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. No pre-existing Route Builder expedition covers Estonia, so no collision check was needed beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_estonia-5-7-days",
+    "name": "Estonia (5-7 days) 🏰",
+    "stops": 4,
+    "km_in_route": 490,
+    "km_from_nl": 1910,
+    "km_back_to_nl": 1770,
+    "km_by_country": {
+     "EE": 490
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "EE",
+     "country": "Estonia",
+     "days": 6,
+     "budget": 348,
+     "dailyRate": 58,
+     "carInDailyRate": false,
+     "notes": "Entry: fly into Tallinn from Amsterdam (direct or one-stop, airBaltic/Ryanair/Finnair depending on season). Tallinn's Old Town (2-3 days), then either Lahemaa National Park (1 day, forests and bog coastline east of Tallinn) or Saaremaa (2 days, Kuressaare Castle, reached via the Virtsu-Muhu ferry and the Muhu causeway) — pick one depending on available days. Budget ~€70-90/day. Season: May-September is best; Saaremaa/Muhu is strongly seasonal, with many restaurants and a more limited ferry schedule outside summer. New for 2026: Finnair is launching a Helsinki-Kuressaare route. Web check (2026-08): book car-ferry spots for the Tallinn-Saaremaa crossing well ahead for July/August. The Narva-Russia border crossing has been closed to vehicles since February 2024, extended through at least 31 August 2026 — not relevant unless considering Narva as a day trip (the town itself is safe and within Schengen). General safety note: watch for pickpocketing in Tallinn, Russian-plated vehicles are not allowed, and there is an LGBTIQ+ discrimination risk outside Tallinn/Tartu.",
+     "transport_to_next": "End of this route — fly home from Tallinn.",
+     "destinations": [
+      {
+       "name": "Tallinn (Old Town)",
+       "lat": 59.437,
+       "lng": 24.7454
+      },
+      {
+       "name": "Lahemaa National Park",
+       "lat": 59.4711,
+       "lng": 25.9106
+      },
+      {
+       "name": "Kuressaare Castle (Saaremaa)",
+       "lat": 58.2481,
+       "lng": 22.4886
+      },
+      {
+       "name": "Muhu-Virtsu ferry link",
+       "lat": 58.5667,
+       "lng": 23.5167
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_tallinn-riga-vilnius-7-10-days",
+   "name": "Tallinn + Riga + Vilnius (7-10 days) 🚌",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Pure capital hop by bus — Tallinn, then Riga, then Vilnius — with no detours to the countryside or islands.",
+   "description": "A capital-city bus tour: Tallinn, Riga, and Vilnius, connected by Lux Express coaches.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 13/21 (Baltic States: Estonia + Latvia + Lithuania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Differentiator vs. the standalone Estonia/Latvia/Lithuania and Baltic States Roadtrip routes above: this is deliberately just the three capitals by bus, no countryside or island legs. No pre-existing Route Builder expedition covers this combination, so no collision check was needed beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_tallinn-riga-vilnius-7-10-days",
+    "name": "Tallinn + Riga + Vilnius (7-10 days) 🚌",
+    "stops": 3,
+    "km_in_route": 700,
+    "km_from_nl": 1910,
+    "km_back_to_nl": 1770,
+    "km_by_country": {
+     "LV": 360,
+     "LT": 340
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "EE",
+     "country": "Estonia",
+     "days": 3,
+     "budget": 174,
+     "dailyRate": 58,
+     "carInDailyRate": false,
+     "notes": "Entry: fly into Tallinn from Amsterdam. Pure capital-hop, no detours to the countryside or islands — 3 days in Tallinn's Old Town. Budget ~€80-100/day (cities run a little more expensive than the countryside legs). Season: May-September. General safety note: watch for pickpocketing in Tallinn.",
+     "transport_to_next": "Bus with Lux Express (~3h40) from Tallinn to Riga — no border formalities, both EU/Schengen.",
+     "destinations": [
+      {
+       "name": "Tallinn (Old Town)",
+       "lat": 59.437,
+       "lng": 24.7454
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "LV",
+     "country": "Latvia",
+     "days": 3,
+     "budget": 144,
+     "dailyRate": 48,
+     "carInDailyRate": false,
+     "notes": "3 days in Riga's Old Town. Budget ~€80-100/day. Season: May-September.",
+     "transport_to_next": "Bus with Lux Express (~5h10) from Riga to Vilnius — no border formalities, both EU/Schengen.",
+     "destinations": [
+      {
+       "name": "Riga (Old Town)",
+       "lat": 56.9496,
+       "lng": 24.1052
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "LT",
+     "country": "Lithuania",
+     "days": 3,
+     "budget": 144,
+     "dailyRate": 48,
+     "carInDailyRate": false,
+     "notes": "3 days in Vilnius's Old Town. Budget ~€80-100/day. Web check (2026-08): the Rail Baltica high-speed line is not yet operational (target 2030, with the Latvian section possibly not until 2035), so this route travels entirely by bus (Lux Express/Ecolines, not train) — book ahead in high season, prices roughly $11-60 per leg.",
+     "transport_to_next": "End of this route — fly home from Vilnius.",
+     "destinations": [
+      {
+       "name": "Vilnius (Old Town)",
+       "lat": 54.6872,
+       "lng": 25.2797
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_budapest-4-days",
+   "name": "Budapest (4 days) 🛁",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Fly into/home from Budapest, everything walkable or a short tram/metro ride.",
+   "description": "A compact Budapest city break: the Buda Castle district, Pest's Parliament, and Széchenyi's thermal waters plus the ruin-bar scene.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 9b (Central/Eastern Europe: Hungary + Czechia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_budapest-4-days",
+    "name": "Budapest (4 days) 🛁",
+    "stops": 4,
+    "km_in_route": 10,
+    "km_from_nl": 1460,
+    "km_back_to_nl": 1460,
+    "km_by_country": {
+     "HU": 10
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "HU",
+     "country": "Hungary",
+     "days": 4,
+     "budget": 192,
+     "dailyRate": 48,
+     "carInDailyRate": false,
+     "notes": "Buda Castle district (1 day) — Pest and the Parliament (1 day) — Széchenyi Thermal Baths plus the ruin-bar district (1 day). Budget ~€65/day. Season: April-June or September-October are best, or December for the Christmas market (cold). Web check (2026-08): Gellért Baths has been closed since 1 October 2025 and isn't expected to reopen until around 2028 — use Széchenyi instead (admission roughly €13-35). Also keep an eye on escalating demonstrations in central Budapest, and note that LGBTQ+ gatherings/marches have been banned since March 2025 — check planned events in advance if that's relevant to your dates.",
+     "transport_to_next": "End of this route — fly home from Budapest.",
+     "destinations": [
+      {
+       "name": "Buda Castle District",
+       "lat": 47.496,
+       "lng": 19.0396
+      },
+      {
+       "name": "Hungarian Parliament Building / Pest riverside",
+       "lat": 47.5076,
+       "lng": 19.0458
+      },
+      {
+       "name": "Széchenyi Thermal Baths",
+       "lat": 47.5186,
+       "lng": 19.0821
+      },
+      {
+       "name": "Ruin bar district (Kazinczy utca)",
+       "lat": 47.4973,
+       "lng": 19.0662
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_budapest-eger-5-days",
+   "name": "Budapest + Eger (5 days) 🍷",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Fly into/home from Budapest, train out to Eger and back, Szentendre as a day trip.",
+   "description": "Budapest's highlights plus a side trip to the riverside artists' town of Szentendre and the wine cellars of Eger.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 9b (Central/Eastern Europe: Hungary + Czechia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_budapest-eger-5-days",
+    "name": "Budapest + Eger (5 days) 🍷",
+    "stops": 5,
+    "km_in_route": 160,
+    "km_from_nl": 1460,
+    "km_back_to_nl": 1540,
+    "km_by_country": {
+     "HU": 160
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "HU",
+     "country": "Hungary",
+     "days": 5,
+     "budget": 240,
+     "dailyRate": 48,
+     "carInDailyRate": false,
+     "notes": "Budapest (3 days: the Castle district, Parliament, a thermal bath) — Szentendre as a day trip — Eger (1-2 days) for its wine region. Budget ~€60/day. Season: April-June or September-October. Web check (2026-08): the Budapest-Eger train takes about 2 hours, and cheap, casual wine tastings are easy to arrange on the spot along Eger's Valley of the Beautiful Women cellar row. As throughout Hungary, keep an eye on demonstrations in central Budapest and check for any LGBTQ+ event restrictions in advance (banned since March 2025) if relevant to your dates.",
+     "transport_to_next": "End of this route — fly home from Budapest.",
+     "destinations": [
+      {
+       "name": "Buda Castle District",
+       "lat": 47.496,
+       "lng": 19.0396
+      },
+      {
+       "name": "Hungarian Parliament Building",
+       "lat": 47.5076,
+       "lng": 19.0458
+      },
+      {
+       "name": "Széchenyi Thermal Baths",
+       "lat": 47.5186,
+       "lng": 19.0821
+      },
+      {
+       "name": "Szentendre (day trip)",
+       "lat": 47.6698,
+       "lng": 19.0714
+      },
+      {
+       "name": "Eger / Valley of the Beautiful Women wine cellars",
+       "lat": 47.9025,
+       "lng": 20.3772
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_hungary-slovenia-croatia-9-days",
+   "name": "Hungary + Slovenia + Croatia (9 days) 🧭",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into Budapest, rental car the whole way, fly home from Zagreb (or reversed).",
+   "description": "Budapest and Lake Balaton, then west into Slovenia for Ljubljana and Lake Bled, and south into Croatia for Plitvice and Zagreb, with an optional Istrian coast extension to Rovinj.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 9b (Central/Eastern Europe: Hungary + Czechia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Slovenia/Croatia coordinates reused from the Ljubljana + Lake Bled and Plitvice + Zagreb standalone routes (batch 8a) rather than re-derived. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_hungary-slovenia-croatia-9-days",
+    "name": "Hungary + Slovenia + Croatia (9 days) 🧭",
+    "stops": 7,
+    "km_in_route": 1230,
+    "km_from_nl": 1460,
+    "km_back_to_nl": 1300,
+    "km_by_country": {
+     "HU": 140,
+     "SI": 420,
+     "HR": 670
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "HU",
+     "country": "Hungary",
+     "days": 3,
+     "budget": 144,
+     "dailyRate": 48,
+     "carInDailyRate": false,
+     "notes": "Budapest (2 days) — Lake Balaton (1 day) on the way south. Budget ~€60/day. Hungary is fully Schengen with zero border friction toward Slovakia, Austria, Croatia, Slovenia or Romania.",
+     "transport_to_next": "Cross into Slovenia — a fully Schengen border, no checks.",
+     "destinations": [
+      {
+       "name": "Buda Castle District",
+       "lat": 47.496,
+       "lng": 19.0396
+      },
+      {
+       "name": "Lake Balaton / Tihany",
+       "lat": 46.9122,
+       "lng": 17.8908
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "SI",
+     "country": "Slovenia",
+     "days": 3,
+     "budget": 186,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Ljubljana (1 day) — Lake Bled (2 days: the pletna boat to the island, Bled Castle). Budget ~€100/day — pricier than the Hungary leg because of Bled's lakeside attractions.",
+     "transport_to_next": "Cross into Croatia — a fully Schengen border, no checks; book Plitvice Lakes tickets online ahead of time, and note the hourly capacity cap.",
+     "destinations": [
+      {
+       "name": "Ljubljana",
+       "lat": 46.0569,
+       "lng": 14.5058
+      },
+      {
+       "name": "Bled",
+       "lat": 46.3683,
+       "lng": 14.1146
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "HR",
+     "country": "Croatia",
+     "days": 3,
+     "budget": 189,
+     "dailyRate": 63,
+     "carInDailyRate": false,
+     "notes": "Plitvice Lakes (1 day) — Zagreb (2 days), with Rovinj on the Istrian coast as an optional extension if time allows — best avoided in the July-August peak, when the coast gets noticeably pricier and busier. Budget ~€90/day for the Zagreb/Plitvice core. Web check (2026-08): book Plitvice entry online ahead of time; one-way rental-car returns between countries are expensive, so plan to hand the car back in the same country you picked it up.",
+     "transport_to_next": "End of this route — fly home from Zagreb.",
+     "destinations": [
+      {
+       "name": "Plitvice Lakes National Park",
+       "lat": 44.8654,
+       "lng": 15.582
+      },
+      {
+       "name": "Zagreb",
+       "lat": 45.815,
+       "lng": 15.9819
+      },
+      {
+       "name": "Rovinj (optional coastal extension)",
+       "lat": 45.0811,
+       "lng": 13.6387
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_hungary-roadtrip-6-days",
+   "name": "Hungary Roadtrip (6 days) 🚗",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into/home from Budapest, rental car for the whole loop.",
+   "description": "A self-drive loop through Hungary's wine country — Eger and Tokaj — finishing at Lake Balaton and the village of Tihany.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 9b (Central/Eastern Europe: Hungary + Czechia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_hungary-roadtrip-6-days",
+    "name": "Hungary Roadtrip (6 days) 🚗",
+    "stops": 4,
+    "km_in_route": 630,
+    "km_from_nl": 1460,
+    "km_back_to_nl": 1410,
+    "km_by_country": {
+     "HU": 630
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "HU",
+     "country": "Hungary",
+     "days": 6,
+     "budget": 288,
+     "dailyRate": 48,
+     "carInDailyRate": false,
+     "notes": "Budapest (2 days) — Eger (1 day) — Tokaj (1 day) — Lake Balaton/Tihany (1-2 days). Budget ~€60/day (rental car budgeted separately). Season: May-September, though Balaton gets busy with Hungarian holidaymakers in summer. As throughout Hungary, keep an eye on demonstrations in central Budapest and any LGBTQ+ event restrictions (banned since March 2025).",
+     "transport_to_next": "End of this route — fly home from Budapest.",
+     "destinations": [
+      {
+       "name": "Buda Castle District",
+       "lat": 47.496,
+       "lng": 19.0396
+      },
+      {
+       "name": "Eger",
+       "lat": 47.9025,
+       "lng": 20.3772
+      },
+      {
+       "name": "Tokaj wine region",
+       "lat": 48.1214,
+       "lng": 21.4094
+      },
+      {
+       "name": "Lake Balaton / Tihany",
+       "lat": 46.9122,
+       "lng": 17.8908
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_slovakia-hungary-9-days",
+   "name": "Slovakia + Hungary (9 days) 🚆",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Fly into Bratislava, train throughout (Győr as a day trip, then on to Budapest and Eger), fly home from Budapest.",
+   "description": "Bratislava with a Győr day trip, then east by train into Hungary for Budapest and the Eger wine region.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 9c (Central/Eastern Europe: Slovakia + Poland) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this batch closes out batch 9/21. Budapest/Eger coordinates reused from the Budapest + Eger route (batch 9b) for consistency. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_slovakia-hungary-9-days",
+    "name": "Slovakia + Hungary (9 days) 🚆",
+    "stops": 4,
+    "km_in_route": 370,
+    "km_from_nl": 1250,
+    "km_back_to_nl": 1540,
+    "km_by_country": {
+     "SK": 80,
+     "HU": 280
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "SK",
+     "country": "Slovakia",
+     "days": 3,
+     "budget": 135,
+     "dailyRate": 45,
+     "carInDailyRate": false,
+     "notes": "Bratislava (2 days), with Győr across the border in Hungary as a day trip. Budget ~€55-65/day (used €60/day here). Slovakia is fully Schengen with zero border friction toward Hungary.",
+     "transport_to_next": "Train onward to Budapest — a Schengen border with no checks; the Bratislava-Budapest train runs every 2 hours and takes about 2h25 (web check 2026-08).",
+     "destinations": [
+      {
+       "name": "Bratislava",
+       "lat": 48.1486,
+       "lng": 17.1077
+      },
+      {
+       "name": "Győr (day trip)",
+       "lat": 47.6875,
+       "lng": 17.6504
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "HU",
+     "country": "Hungary",
+     "days": 6,
+     "budget": 288,
+     "dailyRate": 48,
+     "carInDailyRate": false,
+     "notes": "Budapest (3 days) — Eger and its wine cellars (1-2 days). Budget ~€55-65/day (used €60/day here). Season: May-September. As throughout Hungary, keep an eye on demonstrations in central Budapest.",
+     "transport_to_next": "End of this route — fly home from Budapest.",
+     "destinations": [
+      {
+       "name": "Buda Castle District",
+       "lat": 47.496,
+       "lng": 19.0396
+      },
+      {
+       "name": "Eger",
+       "lat": 47.9025,
+       "lng": 20.3772
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_lithuania-5-7-days",
+   "name": "Lithuania (5-7 days) 🌊",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Vilnius as a base, with day trips to Trakai and Kaunas, then a car or bus trip out to the Curonian Spit via the Klaipėda ferry.",
+   "description": "Vilnius's Old Town, Trakai Castle, Kaunas, and the Curonian Spit/Nida.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 13/21 (Baltic States: Estonia + Latvia + Lithuania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. No pre-existing Route Builder expedition covers Lithuania, so no collision check was needed beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_lithuania-5-7-days",
+    "name": "Lithuania (5-7 days) 🌊",
+    "stops": 5,
+    "km_in_route": 440,
+    "km_from_nl": 1770,
+    "km_back_to_nl": 1430,
+    "km_by_country": {
+     "LT": 440
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "LT",
+     "country": "Lithuania",
+     "days": 6,
+     "budget": 288,
+     "dailyRate": 48,
+     "carInDailyRate": false,
+     "notes": "Entry: fly into Vilnius from Amsterdam (direct or one-stop, airBaltic/Ryanair/Wizz Air depending on season). Vilnius's Old Town (2-3 days), a day trip to Trakai Castle, Kaunas (1 day), then the Curonian Spit/Nida (2 days) via the Klaipėda-Smiltynė ferry. Budget ~€70-90/day. Season: May-September; the dunes at Nida are at their best in summer. Web check (2026-08): the Trakai Castle ticket is €12 (May-Sep) / €10 (Oct-Apr); the Klaipėda-Smiltynė car ferry is €23.20 return (2026); there's an extra eco-toll for cars in Neringa/Nida — €50 (20 June-20 August) or €10 the rest of the year, with electric cars free outside peak season. General safety note: there is an LGBTIQ+ discrimination risk outside Vilnius, similar to the other Baltic capitals.",
+     "transport_to_next": "End of this route — fly home from Vilnius.",
+     "destinations": [
+      {
+       "name": "Vilnius (Old Town)",
+       "lat": 54.6872,
+       "lng": 25.2797
+      },
+      {
+       "name": "Trakai Castle",
+       "lat": 54.6551,
+       "lng": 24.9339
+      },
+      {
+       "name": "Kaunas",
+       "lat": 54.8985,
+       "lng": 23.9036
+      },
+      {
+       "name": "Klaipėda (Smiltynė ferry)",
+       "lat": 55.7033,
+       "lng": 21.1443
+      },
+      {
+       "name": "Curonian Spit / Nida",
+       "lat": 55.3033,
+       "lng": 21.0058
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_latvia-5-7-days",
+   "name": "Latvia (5-7 days) 🌲",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Riga as a base, with a rental car or day tours out to Sigulda/Gauja National Park and Rundāle Palace.",
+   "description": "Riga's Old Town, Sigulda/Turaida Castle/Gauja National Park, and Rundāle Palace.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 13/21 (Baltic States: Estonia + Latvia + Lithuania) converting EUROPA_TRIP_IDEAS.md into Route Builder content. No pre-existing Route Builder expedition covers Latvia, so no collision check was needed beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_latvia-5-7-days",
+    "name": "Latvia (5-7 days) 🌲",
+    "stops": 5,
+    "km_in_route": 200,
+    "km_from_nl": 1730,
+    "km_back_to_nl": 1710,
+    "km_by_country": {
+     "LV": 200
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "LV",
+     "country": "Latvia",
+     "days": 6,
+     "budget": 288,
+     "dailyRate": 48,
+     "carInDailyRate": false,
+     "notes": "Entry: fly into Riga from Amsterdam (direct or one-stop, airBaltic/Ryanair/Wizz Air depending on season). Riga's Old Town (2-3 days), then Sigulda/Turaida Castle/Gauja National Park — the so-called 'Latvian Switzerland' (2 days) — plus a day trip to Rundāle Palace. Budget ~€70-90/day. Season: May-September. Rundāle Palace is open Wednesday-Sunday (closed Monday/Tuesday), summer hours 10:00-17:00 (the garden until 20:00 on weekends), winter hours 10:00-16:00. Web check (2026-08): Rundāle 2026 prices are roughly €12 for the palace / €6 for the garden / €17 combined — check rundale.net for the current rate. Sigulda's cable car and summer bobsled last-confirmed prices (~€9-14) date from 2021 — check on-site, likely higher by now. General safety note: Latvia's border strip with Belarus is orange (essential travel only) and there is an LGBTIQ+ discrimination risk outside the capital — neither is relevant to this route's itinerary.",
+     "transport_to_next": "End of this route — fly home from Riga.",
+     "destinations": [
+      {
+       "name": "Riga (Old Town)",
+       "lat": 56.9496,
+       "lng": 24.1052
+      },
+      {
+       "name": "Sigulda",
+       "lat": 57.1536,
+       "lng": 24.8592
+      },
+      {
+       "name": "Turaida Castle",
+       "lat": 57.1719,
+       "lng": 24.8494
+      },
+      {
+       "name": "Gauja National Park",
+       "lat": 57.1667,
+       "lng": 24.86
+      },
+      {
+       "name": "Rundāle Palace",
+       "lat": 56.4149,
+       "lng": 24.0128
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

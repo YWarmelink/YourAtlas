@@ -119,3 +119,102 @@ SKP,Skopje,MK,back,130,same,estimate from out fare (Expedia USD 60 floor ignored
 BEG,Belgrade,RS,back,130,same,estimate from out fare (batch 12),2026-10-28,low,est
 PRN,Pristina,XK,back,110,same,estimate from out fare (batch 12),2026-10-28,low,est
 SKG,Thessaloniki,GR,back,140,Aegean/Transavia/airBaltic,WebSearch 2026-10-28 (Aegean EUR 122-159+; airBaltic EUR 240; Omio GBP 140),2026-10-28,medium,
+BUD,Budapest,HU,out,120,KLM nonstop / easyJet / Air Serbia 1 stop,WebSearch 2026-10-28 (Kayak EUR 131 KLM nonstop; Cheapflights Air Serbia USD 146 / KLM USD 172; Trip.com from USD 105),2026-10-28,medium,typical nonstop fare; promo floors ignored
+ATH,Athens,GR,out,140,KLM/Aegean/Transavia direct,WebSearch 2026-10-28 (Aegean EUR 129-189; Kayak GBP 80-105 floors),2026-10-28,medium,
+ATH,Athens,GR,back,130,Aegean/Transavia/KLM direct,WebSearch 2026-10-28 (Farecompare USD 158; Ratepunk),2026-10-28,medium,
+LCA,Larnaca,CY,out,170,Transavia/Aegean/easyJet direct or via ATH,estimate (no search),2026-10-28,low,typical
+LCA,Larnaca,CY,back,150,Transavia/Aegean/easyJet,estimate (no search),2026-10-28,low,typical
+CFU,Corfu,GR,out,150,TUI fly direct seasonal,estimate (no search),2026-10-28,low,typical
+CFU,Corfu,GR,back,140,TUI fly direct seasonal,estimate (no search),2026-10-28,low,typical
+CHQ,Chania,GR,out,150,seasonal direct,estimate (no search),2026-10-28,low,typical
+CHQ,Chania,GR,back,140,seasonal direct,estimate (no search),2026-10-28,low,typical
+JTR,Santorini,GR,out,170,seasonal direct/one-stop via ATH,estimate (no search),2026-10-28,low,typical
+JTR,Santorini,GR,back,150,seasonal direct/one-stop via ATH,estimate (no search),2026-10-28,low,typical
+EFL,Kefalonia,GR,out,170,seasonal charter/low-cost,estimate (no search),2026-10-28,low,typical
+ZTH,Zakynthos,GR,back,150,seasonal direct,estimate (no search),2026-10-28,low,typical
+SKG,Thessaloniki,GR,out,150,Aegean/Transavia,estimate (no search),2026-10-28,low,mirror of SKG back 140
+RHO,Rhodes,GR,out,180,easyJet/Transavia/TUI direct seasonal,estimate (no search),2026-10-28,low,typical
+RHO,Rhodes,GR,back,170,easyJet/Transavia/TUI direct seasonal,estimate (no search),2026-10-28,low,typical
+IST,Istanbul,TR,out,150,Turkish/KLM/Pegasus direct,WebSearch 2026-10-28 (Kayak USD 134; Air Serbia from EUR 134; Travelocity USD 148),2026-10-28,medium,
+IST,Istanbul,TR,back,140,Turkish/KLM/Pegasus direct,estimate from out fare,2026-10-28,medium,est
+SOF,Sofia,BG,out,130,Bulgaria Air direct / Lufthansa-KLM 1 stop,WebSearch 2026-10-28 (Skyscanner USD 98 floor; Expedia USD 150-169; Lufthansa USD 198),2026-10-28,medium,typical above floors
+SOF,Sofia,BG,back,130,Bulgaria Air direct / 1 stop,est mirror of out (Expedia USD 95 floor),2026-10-28,low,est
+OTP,Bucharest,RO,back,130,Tarom/KLM/Wizz,est (no search),2026-10-28,low,est
+BER,Berlin,DE,out,100,easyJet/KLM/Eurowings,est (no search),2026-10-28,low,est
+BUD,Budapest,HU,back,100,Wizz/Transavia/KLM direct,WebSearch 2026-10-28 (Expedia USD 91 floor),2026-10-28,medium,
+PRG,Prague,CZ,out,100,easyJet/KLM/Transavia direct,WebSearch 2026-10-28 (Trip.com EUR 74-149; Skyscanner EUR 97; Expedia EUR 89),2026-10-28,medium,typical above floors
+PRG,Prague,CZ,back,100,easyJet/KLM direct,est mirror of out,2026-10-28,medium,
+VIE,Vienna,AT,back,110,Austrian/KLM/Transavia,est (no search),2026-10-28,low,est
+TLL,Tallinn,EE,out,140,airBaltic direct / LOT / 1 stop,WebSearch 2026-10-28 (Skyscanner EUR 66 floor; Expedia USD 167; Kayak USD 150; LOT USD 234),2026-10-28,medium,typical above floors
+TLL,Tallinn,EE,back,130,airBaltic direct / 1 stop,est from out fare,2026-10-28,low,est
+VNO,Vilnius,LT,out,140,airBaltic/Ryanair/Wizz,est from Tallinn fare,2026-10-28,low,est
+VNO,Vilnius,LT,back,130,airBaltic/Ryanair/Wizz,est from Tallinn fare,2026-10-28,low,est
+RIX,Riga,LV,out,130,airBaltic direct/Ryanair,est from Tallinn fare,2026-10-28,low,est
+RIX,Riga,LV,back,120,airBaltic direct/Ryanair,est from Tallinn fare,2026-10-28,low,est
+BTS,Bratislava,SK,out,120,Ryanair/1 stop (few direct),est (Vienna/Budapest alternative),2026-10-28,low,est
+KIV,Chisinau,MD,out,130,Fly One/Austrian/Lufthansa/LOT/Tarom (mostly 1 stop),WebSearch 2026-10-28 (Skyscanner floor EUR 87; Expedia EUR 107; Kayak USD 112-126),2026-10-28,medium,typical above floors
+KIV,Chisinau,MD,back,120,same,WebSearch 2026-10-28 (Expedia USD 130 floor),2026-10-28,low,est
+WAW,Warsaw,PL,back,100,KLM/LOT direct,WebSearch 2026-10-28 (Expedia EUR 98 floor; Ratepunk USD 135-237),2026-10-28,medium,
+GDN,Gdansk,PL,out,110,Wizz/Ryanair/KLM-LOT,est (no search),2026-10-28,low,
+KRK,Krakow,PL,out,120,easyJet/Ryanair/LOT/KLM,WebSearch 2026-10-28 (Trip.com USD 110 floor; Expedia GBP 94; Ratepunk USD 226-340),2026-10-28,medium,
+KRK,Krakow,PL,back,110,same,est from out fare,2026-10-28,low,
+WRO,Wroclaw,PL,back,120,1 stop or Ryanair/Wizz seasonal,est (no search),2026-10-28,low,
+OTP,Bucharest,RO,out,130,KLM/Tarom/Lufthansa/Wizz,WebSearch 2026-10-28 (Tarom USD 144; Lufthansa USD 191; Expedia USD 160; Kayak EUR 113),2026-10-28,medium,
+BTS,Bratislava,SK,back,130,1 stop,WebSearch 2026-10-28 (Skyscanner EUR 119 / USD 77 floors),2026-10-28,low,est
+CPH,Copenhagen,DK,out,90,KLM/SAS/Transavia/easyJet direct,estimate (no search),2026-10-28,medium,typical 70-110 booked 2-3 months ahead
+CPH,Copenhagen,DK,back,90,KLM/SAS/Transavia/easyJet direct,estimate (no search),2026-10-28,medium,typical 70-110
+HEL,Helsinki,FI,back,150,KLM/Finnair direct,mirror of HEL out row,2026-10-28,medium,assumed equal to out
+ARN,Stockholm Arlanda,SE,out,100,KLM/SAS/Norwegian direct,estimate (no search),2026-10-28,medium,used for Aland (ferry added separately)
+ARN,Stockholm Arlanda,SE,back,100,KLM/SAS/Norwegian direct,estimate (no search),2026-10-28,medium,used for Aland
+RVN,Rovaniemi,FI,out,190,Transavia seasonal direct / 1 stop via HEL or CPH,estimate (no search),2026-10-28,low,
+RVN,Rovaniemi,FI,back,190,Transavia seasonal direct / 1 stop via HEL or CPH,estimate (no search),2026-10-28,low,
+FAE,Faroe Islands (Vagar),FO,out,280,AMS-CPH ~90 + Atlantic Airways CPH-FAE ~190,estimate (no search),2026-10-28,low,
+FAE,Faroe Islands (Vagar),FO,back,280,Atlantic Airways FAE-CPH + CPH-AMS,estimate (no search),2026-10-28,low,
+GOH,Nuuk,GL,out,575,AMS-KEF-Nuuk (Icelandair/Air Greenland),route notes EUR 900-1400 return midpoint halved,2026-10-28,low,no one-way price available
+KEF,Reykjavik Keflavik,IS,out,120,Icelandair/Transavia/easyJet direct,estimate (no search),2026-10-28,medium,
+KEF,Reykjavik Keflavik,IS,back,120,Icelandair/Transavia/easyJet direct,estimate (no search),2026-10-28,medium,
+BGO,Bergen,NO,out,120,KLM/SAS/Norwegian direct,estimate (no search),2026-10-28,medium,
+BGO,Bergen,NO,back,120,KLM/SAS/Norwegian direct,estimate (no search),2026-10-28,medium,
+AES,Alesund,NO,back,130,KLM/SAS/Norwegian (direct or via OSL/BGO),estimate (no search),2026-10-28,low,
+OSL,Oslo,NO,out,150,KLM/SAS/Norwegian direct,Kayak EUR 132-154 / airBaltic from EUR 177 (WebSearch 2026-10-28),2026-10-28,medium,typical advance fare
+OSL,Oslo,NO,back,130,KLM/SAS/Norwegian direct,airBaltic from EUR 117 / Kayak (WebSearch 2026-10-28),2026-10-28,medium,typical higher than promo
+KRN,Kiruna,SE,out,200,SAS via Stockholm,Omio GBP 141-162 / Expedia USD 188-224 (WebSearch 2026-10-28),2026-10-28,medium,one stop
+KRN,Kiruna,SE,back,200,SAS via Stockholm,mirror of out,2026-10-28,medium,est
+LYR,Longyearbyen,NO,out,290,via Oslo (SAS/Norwegian),AMS-OSL ~150 + OSL-LYR ~140 (Expedia from USD 78-133; SAS USD 159),2026-10-28,low,two tickets estimated
+LYR,Longyearbyen,NO,back,290,via Oslo (SAS/Norwegian),mirror of out,2026-10-28,low,est
+EVE,Evenes (Narvik/Harstad),NO,back,250,via Oslo (SAS/Norwegian),no usable fare found,2026-10-28,low,est
+TOS,Tromso,NO,back,160,SAS/KLM direct or via Oslo,Expedia floors USD 50-65 / ratepunk median USD 188 (WebSearch 2026-10-28),2026-10-28,low,typical higher than floor
+LHR,London,GB,out,100,KLM/BA/easyJet direct,WebSearch 2026-10-28 (Expedia/Kayak $73-110 budget one-way),2026-10-28,medium,typical not promo
+LHR,London,GB,back,100,KLM/BA/easyJet direct,reuse out fare,2026-10-28,medium,
+BRS,Bristol,GB,out,100,easyJet/KLM,estimate (London benchmark),2026-10-28,low,est
+BRS,Bristol,GB,back,100,easyJet/KLM,estimate,2026-10-28,low,est
+EDI,Edinburgh,GB,out,110,KLM/easyJet direct,WebSearch 2026-10-28 (Expedia $90 / Kayak EUR 92 floors),2026-10-28,medium,typical above floors
+EDI,Edinburgh,GB,back,110,KLM/easyJet direct,reuse out fare,2026-10-28,medium,
+INV,Inverness,GB,out,150,KLM/BA direct,WebSearch 2026-10-28 (Kayak GBP 111; Omio GBP 153-171),2026-10-28,medium,
+INV,Inverness,GB,back,150,KLM/BA direct,WebSearch 2026-10-28 (Skyscanner EUR 167),2026-10-28,medium,
+BFS,Belfast,GB,out,100,easyJet (BFS) / KLM (BHD) direct,estimate,2026-10-28,low,est
+BFS,Belfast,GB,back,100,easyJet/KLM direct,estimate,2026-10-28,low,est
+ABZ,Aberdeen,GB,out,130,KLM direct,estimate,2026-10-28,low,est
+LSI,Lerwick/Kirkwall,GB,back,230,Loganair to ABZ/EDI + onward to AMS,estimate (two tickets),2026-10-28,low,est
+MAN,Manchester,GB,out,100,KLM/easyJet direct,estimate,2026-10-28,low,est
+MAN,Manchester,GB,back,100,KLM/easyJet direct,estimate,2026-10-28,low,est
+NCL,Newcastle,GB,back,85,KLM/easyJet direct,notes from ~EUR 30-90; typical est,2026-10-28,low,est
+DUB,Dublin,IE,out,90,KLM/Aer Lingus/Ryanair direct,WebSearch 2026-10-28 (Kayak EUR 58 low; typical higher),2026-10-28,medium,
+DUB,Dublin,IE,back,90,KLM/Aer Lingus/Ryanair direct,reuse out fare,2026-10-28,medium,
+ORK,Cork,IE,back,100,KLM direct,notes from ~EUR 40-70; typical est,2026-10-28,low,est
+SNN,Shannon,IE,out,100,Ryanair/Aer Lingus direct,estimate,2026-10-28,low,est
+SNN,Shannon,IE,back,100,Ryanair/Aer Lingus direct,estimate,2026-10-28,low,est
+GCI,Guernsey,GG,out,150,1 stop via London/Southampton (Aurigny),notes from ~EUR 145 return -> one-way est,2026-10-28,low,est
+JER,Jersey,JE,back,130,KLM seasonal direct,estimate,2026-10-28,low,est
+IOM,Douglas,IM,out,170,AMS-MAN/LGW + Loganair/easyJet to IOM,estimate (two tickets),2026-10-28,low,est
+IOM,Douglas,IM,back,170,via MAN/LGW,estimate,2026-10-28,low,est
+TUN,Tunis,TN,out,200,connecting (Lufthansa/Air France/Brussels),WebSearch 2026-10-28 (Expedia USD 204; Kayak typical USD 188-315; no nonstop),2026-10-28,medium,
+TUN,Tunis,TN,back,190,connecting,estimate from out fare,2026-10-28,low,est
+XIY,Xi'an,CN,out,500,connecting (Beijing/Shanghai/Gulf),WebSearch 2026-10-28 (Expedia USD 401-465; ebookers EUR 593-699),2026-10-28,medium,
+XIY,Xi'an,CN,back,400,connecting,WebSearch 2026-10-28 (Expedia USD 300; Travelocity USD 301 floors; typical higher),2026-10-28,low,
+HAN,Hanoi,VN,out,520,connecting (1 stop; EVA/Gulf/Asia),WebSearch 2026-10-28 (Kayak USD 390; Expedia USD 440 floors),2026-10-28,medium,
+CAI,Cairo,EG,out,180,KLM direct/Transavia,WebSearch 2026-10-28 (Expedia USD 116-123; Kayak GBP 166 floors),2026-10-28,medium,
+TPE,Taipei,TW,back,450,EVA/China Airlines direct or 1 stop,WebSearch 2026-10-28 (Skyscanner EUR 279; Orbitz USD 342 floors; typical higher),2026-10-28,low,est
+TAS,Tashkent,UZ,back,320,Turkish/Qatar 1 stop (no nonstop),WebSearch 2026-10-28 (Expedia USD 335; Skyscanner EUR 198-493),2026-10-28,low,
+MRS,Marseille,FR,back,120,Transavia/KLM/Air France,estimate (no search),2026-10-28,low,est
+ADB,Izmir,TR,out,170,Transavia/Pegasus/KLM,estimate (no search),2026-10-28,low,est

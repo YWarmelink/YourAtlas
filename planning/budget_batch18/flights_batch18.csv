@@ -1,0 +1,13 @@
+airport_code,city,country_code,direction,eur_one_way,airline_or_routing,source,date_checked,confidence,notes
+OSL,Oslo,NO,out,150,KLM/SAS/Norwegian direct,Kayak EUR 132-154 / airBaltic from EUR 177 (WebSearch 2026-10-28),2026-10-28,medium,typical advance fare
+OSL,Oslo,NO,back,130,KLM/SAS/Norwegian direct,airBaltic from EUR 117 / Kayak (WebSearch 2026-10-28),2026-10-28,medium,typical higher than promo
+ARN,Stockholm,SE,out,110,KLM/SAS/Norwegian direct,Expedia from EUR 108 / Skyscanner floor 57 (WebSearch 2026-10-28),2026-10-28,medium,floors ignored
+ARN,Stockholm,SE,back,110,KLM/SAS/Norwegian direct,mirror of out,2026-10-28,medium,est
+CPH,Copenhagen,DK,out,90,easyJet/SAS/KLM direct,Expedia/Momondo USD 82-98 (WebSearch 2026-10-28),2026-10-28,medium,typical
+KRN,Kiruna,SE,out,200,SAS via Stockholm,Omio GBP 141-162 / Expedia USD 188-224 (WebSearch 2026-10-28),2026-10-28,medium,one stop
+KRN,Kiruna,SE,back,200,SAS via Stockholm,mirror of out,2026-10-28,medium,est
+LYR,Longyearbyen,NO,out,290,via Oslo (SAS/Norwegian),AMS-OSL ~150 + OSL-LYR ~140 (Expedia from USD 78-133; SAS USD 159),2026-10-28,low,two tickets estimated
+LYR,Longyearbyen,NO,back,290,via Oslo (SAS/Norwegian),mirror of out,2026-10-28,low,est
+EVE,Evenes (Narvik/Harstad),NO,back,250,via Oslo (SAS/Norwegian),no usable fare found,2026-10-28,low,est
+TOS,Tromso,NO,back,160,SAS/KLM direct or via Oslo,Expedia floors USD 50-65 / ratepunk median USD 188 (WebSearch 2026-10-28),2026-10-28,low,typical higher than floor
+VNO,Vilnius,LT,back,150,airBaltic direct / Wizz,sources USD 95-230 median ~206 (WebSearch 2026-10-28),2026-10-28,low,wide spread

@@ -1,0 +1,18 @@
+airport_code,city,country_code,direction,eur_one_way,airline_or_routing,source,date_checked,confidence,notes
+SOF,Sofia,BG,out,130,Bulgaria Air direct / Lufthansa-KLM 1 stop,WebSearch 2026-10-28 (Skyscanner USD 98 floor; Expedia USD 150-169; Lufthansa USD 198),2026-10-28,medium,typical above floors
+SOF,Sofia,BG,back,130,Bulgaria Air direct / 1 stop,est mirror of out (Expedia USD 95 floor),2026-10-28,low,est
+SKG,Thessaloniki,GR,out,140,Aegean/Transavia/airBaltic,est mirror of back fare in flights_from_ams.csv,2026-10-28,low,est
+OTP,Bucharest,RO,back,130,Tarom/KLM/Wizz,est (no search),2026-10-28,low,est
+BER,Berlin,DE,out,100,easyJet/KLM/Eurowings,est (no search),2026-10-28,low,est
+BUD,Budapest,HU,out,110,Wizz/Transavia/KLM direct,WebSearch 2026-10-28 (Skyscanner EUR 87 floor; Expedia USD 167; Lufthansa USD 193),2026-10-28,medium,typical above floors
+BUD,Budapest,HU,back,100,Wizz/Transavia/KLM direct,WebSearch 2026-10-28 (Expedia USD 91 floor),2026-10-28,medium,
+PRG,Prague,CZ,out,100,easyJet/KLM/Transavia direct,WebSearch 2026-10-28 (Trip.com EUR 74-149; Skyscanner EUR 97; Expedia EUR 89),2026-10-28,medium,typical above floors
+PRG,Prague,CZ,back,100,easyJet/KLM direct,est mirror of out,2026-10-28,medium,
+VIE,Vienna,AT,back,110,Austrian/KLM/Transavia,est (no search),2026-10-28,low,est
+TLL,Tallinn,EE,out,140,airBaltic direct / LOT / 1 stop,WebSearch 2026-10-28 (Skyscanner EUR 66 floor; Expedia USD 167; Kayak USD 150; LOT USD 234),2026-10-28,medium,typical above floors
+TLL,Tallinn,EE,back,130,airBaltic direct / 1 stop,est from out fare,2026-10-28,low,est
+VNO,Vilnius,LT,out,140,airBaltic/Ryanair/Wizz,est from Tallinn fare,2026-10-28,low,est
+VNO,Vilnius,LT,back,130,airBaltic/Ryanair/Wizz,est from Tallinn fare,2026-10-28,low,est
+RIX,Riga,LV,out,130,airBaltic direct/Ryanair,est from Tallinn fare,2026-10-28,low,est
+RIX,Riga,LV,back,120,airBaltic direct/Ryanair,est from Tallinn fare,2026-10-28,low,est
+BTS,Bratislava,SK,out,120,Ryanair/1 stop (few direct),est (Vienna/Budapest alternative),2026-10-28,low,est
