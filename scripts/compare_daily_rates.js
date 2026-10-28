@@ -4,14 +4,16 @@
  * TRUE live state via simulate_route_builder.js) with data/cost_reference/daily_rates_by_country.csv
  * and lists the blocks that are more than ±THRESHOLD off.
  *
- * A country can have variant rows (Patagonia, safari, ...). A block is compared with the row closest
- * to its own rate, and the report says which one, so a "too high" block that matches a variant reads
- * as fine. Routes whose text says the car is in the daily rate are marked, since the reference table
+ * A country can have variant rows (Patagonia, safari, ...). A block is compared with the row the app
+ * picks (rbDailyRateRow() in routeBuilderCore.js: place variants by destination names, the others
+ * by the closest rate), and the report says which one, so a "too high" block that matches a variant
+ * reads as fine. Routes whose text says the car is in the daily rate are marked, since the reference table
  * never includes a car.
  *
  * Usage: node scripts/compare_daily_rates.js [--threshold 0.25] [--json]
  */
 const { execSync } = require('child_process');
+const vm = require('vm');
 const fs = require('fs');
 const path = require('path');
 
@@ -34,9 +36,14 @@ function parseCsv(text) {
   return body.map(r => Object.fromEntries(head.map((h, i) => [h, r[i]])));
 }
 
-const ref = {};
+const confidence = {};
 parseCsv(fs.readFileSync(path.join(REPO_ROOT, 'data/cost_reference/daily_rates_by_country.csv'), 'utf8'))
-  .forEach(r => (ref[r.country_code] = ref[r.country_code] || []).push({ variant: r.variant || 'base', rate: +r.standard_eur_per_day, confidence: r.confidence }));
+  .forEach(r => (confidence[`${r.country_code}|${r.variant}`] = r.confidence));
+const app = { console, localStorage: { getItem: () => null, setItem: () => {} } };
+vm.createContext(app);
+for (const f of ['js/data/dailyRatesReference.js', 'js/pages/routeBuilderCore.js']) {
+  vm.runInContext(fs.readFileSync(path.join(REPO_ROOT, f), 'utf8'), app, { filename: f });
+}
 
 const inv = JSON.parse(execSync('node scripts/route_cost_inventory.js', { cwd: REPO_ROOT, maxBuffer: 1024 * 1024 * 50 }).toString('utf8'));
 const carIncluded = new Set(inv.routes.filter(r => r.carInBudget === 'included').map(r => r.id));
@@ -46,11 +53,11 @@ const flagged = [], missing = new Set(); let checked = 0;
 routes.forEach(r => (r.blocks || []).forEach((b, i) => {
   const d = parseInt(b.days), bud = parseFloat(b.budget);
   if (!d || !bud) return;
-  const rows = ref[b.country_code];
-  if (!rows) { missing.add(b.country_code); return; }
+  const row = app.rbDailyRateRow(b);
+  if (!row) { missing.add(b.country_code); return; }
   checked++;
   const rate = bud / d;
-  const best = rows.reduce((a, x) => Math.abs(x.rate - rate) < Math.abs(a.rate - rate) ? x : a);
+  const best = { variant: row.variant || 'base', rate: Math.round(row.standard), confidence: confidence[`${b.country_code}|${row.variant}`] || 'blend' };
   const diff = rate / best.rate - 1;
   if (Math.abs(diff) > THRESHOLD) {
     flagged.push({ route: r.name, routeId: r.id, block: i, code: b.country_code, days: d, budget: bud, rate: Math.round(rate),

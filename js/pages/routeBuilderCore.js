@@ -429,25 +429,66 @@ function rbCopyBlockCosts(b) {
  * The other cost types (transport, flights, extras, ...) have no reference table yet and always
  * use the multipliers: the tier totals per cost type from the Asia budget workbook
  * (planning/Wereldreis_Oost-ZO-Azie_Begroting.xlsx, Standard = "Basis"), e.g. ground
- * €12.7k / €19.4k / €32.7k → 0.65 / 1 / 1.7.
+ * €12.7k / €19.4k / €32.7k → 0.65 / 1 / 1.7. Exceptions (R2d, 2026-10-28): a visa costs the same
+ * at every level, and a backpacker books the same economy flight (no promo-fare discount).
  */
 const RB_COST_TIERS = {
   mine:       { label: 'My plan',    ref: null,         ground: 1,    transport: 1,    flights: 1,   extras: 1,   visas: 1,   insurance: 1 },
-  backpacker: { label: 'Backpacker', ref: 'backpacker', ground: 0.65, transport: 0.75, flights: 0.8, extras: 0.7, visas: 0.9, insurance: 0.7 },
+  backpacker: { label: 'Backpacker', ref: 'backpacker', ground: 0.65, transport: 0.75, flights: 1,   extras: 0.7, visas: 1,   insurance: 0.7 },
   standard:   { label: 'Standard',   ref: 'standard',   ground: 1,    transport: 1,    flights: 1,   extras: 1,   visas: 1,   insurance: 1 },
-  comfort:    { label: 'Comfort',    ref: 'comfort',    ground: 1.7,  transport: 1.5,  flights: 1.4, extras: 1.6, visas: 1.3, insurance: 1.5 },
+  comfort:    { label: 'Comfort',    ref: 'comfort',    ground: 1.7,  transport: 1.5,  flights: 1.4, extras: 1.6, visas: 1,   insurance: 1.5 },
 };
 
-/** The reference row for a block: of the country's rows (base + variants like safari/Patagonia),
- *  the one whose standard rate is closest to the block's own daily rate — the same pick as
- *  scripts/compare_daily_rates.js. A block without a budget gets the base row. Null = no row. */
+// Variants that are a PLACE, recognised from the block's destination names rather than its rate.
+// The block gets a blend by the share of its destinations in that place: Kenya with 3 of 6 stops in
+// game parks is half safari, half base rate; a block with none never gets the variant (a Chile
+// block without Patagonia stops can't drift into the Patagonia row because its budget is high).
+// Gorilla/chimp trekking parks aren't in the safari list: their permits are separate extras.
+const RB_DAILY_RATE_PLACE_VARIANTS = {
+  'Borneo (Sabah/Sarawak)': /Borneo|Sabah|Sarawak|Kuching|Kinabalu|Mulu|Kinabatangan|Sepilok|Semporna|Sipadan|Bako|Miri|Sandakan|Danum/i,
+  'Patagonia': /Patagoni|Torres del Paine|Puerto Natales|Punta Arenas|El Calafate|El Chalt[eé]n|Fitz ?Roy|Perito Moreno|Ushuaia|Tierra del Fuego|Carretera Austral|Coyhaique|Ays[eé]n|Pumal[ií]n|Queulat|Cerro Castillo|R[ií]o Tranquilo|Marble Caves|Futaleuf[uú]|Caleta Tortel|Cochrane|Puerto Madryn|Pen[ií]nsula Vald[eé]s/i,
+  'Galápagos': /Gal[aá]pagos|Isabela|San Crist[oó]bal Island|Santa Cruz Island|Puerto Ayora/i,
+  'Cyclades islands peak': /Cyclades|Santorini|Mykonos|Naxos|Paros|Milos|\bIos\b|Folegandros|Sifnos|Tinos|Syros|Amorgos/i,
+  'safari (lodge/tented camp + game drives + park fees)': /safari|game drive|Maa?sai Mara|Amboseli|Tsavo|Samburu|Lake Nakuru|Ol Pejeta|Serengeti|Ngorongoro|Tarangire|Lake Manyara|Ruaha|Selous|Nyerere|Kruger|Sabi Sand|Hluhluwe|iMfolozi|Pilanesberg|Addo|Madikwe|Etosha|Chobe|Okavango|Moremi|Savuti|Makgadikgadi|Kalahari|Nxai|Hwange|Mana Pools|Matobo|Gonarezhou|Luangwa|Lower Zambezi|Kafue|Liuwa|Liwonde|Majete|Nyika|Gorongosa|Niassa|Akagera|Queen Elizabeth|Murchison|Kidepo|Lake Mburo/i,
+};
+
+/** The reference row for a block. Place variants (above): a blend of the base and variant row by
+ *  the share of the block's destinations in that place. Otherwise, of the base row and the other
+ *  variants (big city, peak coast, ...), the one whose standard rate is closest to the block's own
+ *  daily rate. A block without a budget gets the base row. Null = no row for the country.
+ *  scripts/compare_daily_rates.js and scripts/r2d_style_budgets.js use this same pick. */
 function rbDailyRateRow(b) {
   const rows = typeof RB_DAILY_RATES !== 'undefined' ? RB_DAILY_RATES[b.country_code] : null;
   if (!rows || !rows.length) return null;
+  const pool = rows.filter(x => !RB_DAILY_RATE_PLACE_VARIANTS[x.variant]);
+  const base = pool.find(x => !x.variant) || pool[0] || rows[0];
+  const names = (b.destinations || []).map(d => d && d.name).filter(Boolean);
+  let place = null, share = 0;
+  rows.forEach(x => {
+    const re = RB_DAILY_RATE_PLACE_VARIANTS[x.variant];
+    const w = re && names.length ? names.filter(n => re.test(n)).length / names.length : 0;
+    if (w > share) { place = x; share = w; }
+  });
+  if (place) {
+    if (share === 1) return place;
+    const mix = k => base[k] + (place[k] - base[k]) * share;
+    return { variant: `${Math.round(share * 100)}% ${place.variant}`, backpacker: mix('backpacker'), standard: mix('standard'), comfort: mix('comfort') };
+  }
   const days = parseInt(b.days) || 0, budget = rbCostNum(b.budget);
-  if (!days || budget === null) return rows.find(x => !x.variant) || rows[0];
+  if (!days || budget === null || pool.length < 2) return base;
   const rate = budget / days;
-  return rows.reduce((a, x) => Math.abs(x.standard - rate) < Math.abs(a.standard - rate) ? x : a);
+  return pool.reduce((a, x) => Math.abs(x.standard - rate) < Math.abs(a.standard - rate) ? x : a);
+}
+
+/**
+ * Youri's own travel style as a daily rate ("My plan", decided 2026-10-28): mostly dorms, now and
+ * then a private room, more often where rooms are cheap. So backpacker + a share of the step up to
+ * standard: 40% in cheap countries (standard < €60/day), 30% in the middle, 20% in expensive ones
+ * (> €100/day). The target a block's `budget` / days should sit near; new routes are priced at it.
+ */
+function rbMyStyleDailyRate(row) {
+  const share = row.standard < 60 ? 0.4 : row.standard <= 100 ? 0.3 : 0.2;
+  return row.backpacker + share * (row.standard - row.backpacker);
 }
 
 // Trip-wide estimates, overridable per route via route.trip_costs. Insurance only counts for trips

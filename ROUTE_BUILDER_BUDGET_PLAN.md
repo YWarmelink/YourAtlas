@@ -244,7 +244,18 @@ Progress:
       the tier "Budget" to "Backpacker". The stored block `budget` = **backpacker level** (Youri's
       planning level). Label it as such in the UI, and document it in `RB_BLOCK_COST_FIELDS` and
       CLAUDE.md.
-    - [ ] **R2d corrections** (NEXT): re-run `compare_daily_rates.js` against the backpacker column. Raise
+    - [ ] **R2d: budgets → Youri's style** (IN PROGRESS 2026-10-28). Youri chose his own style
+      over "between backpacker and standard": mostly dorms, sometimes a private room, more often in
+      cheap countries → `rbMyStyleDailyRate()` = backpacker + 40/30/20% of the step to standard
+      (standard < €60 / €60-100 / > €100). `scripts/r2d_style_budgets.js` sorts all 1,087 blocks:
+      222 keep (±15%), 676 auto, 189 review (119 unique, Claude's first-pass calls in
+      `planning/budget_r2d/decisions.json`, list in `planning/budget_r2d/REVIEW.md`: 40 keep, 2 own,
+      77 ok). Result: ground €703k → €554k (-21%); Asia pilot My plan €30,789 → €23,945. Also: place
+      variants (Borneo, Patagonia, Galápagos, Cyclades, safari parks) now blend by destination
+      share, visas ×1 at every tier, backpacker flights ×1. Next: Youri reviews → `rbMigrate*()`
+      (budget only, guarded on the old value) → Sheet push with OK. "keep" car-in-rate blocks drop
+      later when the standalone batches move the car to an extra.
+      Original R2d text: re-run `compare_daily_rates.js` against the backpacker column. Raise
       blocks that are below backpacker level; review blocks far above Standard (safari days, Borneo,
       resorts). Youri reviews the list, then a migration + Sheet push (`budget` only, never `days`).
     - Then the standalone route batches, which automatically fit all three levels.

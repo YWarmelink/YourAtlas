@@ -1,0 +1,478 @@
+{
+ "JP|18|2700|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "BN|2|240|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "MY|11|715|Borneo (Sabah/Sarawak)": {
+  "call": "ok",
+  "why": ""
+ },
+ "EC|24|1650|17% Galápagos": {
+  "call": "keep",
+  "why": "Galápagos park fee + boat/land tour are in this rate"
+ },
+ "ZA|24|2300|29% safari (lodge/tented camp + game drives + park fees)": {
+  "call": "keep",
+  "why": "Kruger/Addo levies + the rental car are in the rate (batch 1)"
+ },
+ "LS|6|350|base": {
+  "call": "keep",
+  "why": "ZA rental car in the rate (batch 1)"
+ },
+ "SZ|5|325|base": {
+  "call": "keep",
+  "why": "ZA rental car in the rate (batch 1)"
+ },
+ "MZ|20|1560|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "BW|16|2800|80% safari (lodge/tented camp + game drives + park fees)": {
+  "call": "keep",
+  "why": "safari variant would RAISE it; keep the researched €175"
+ },
+ "NA|20|4000|17% safari (lodge/tented camp + game drives + park fees)": {
+  "call": "keep",
+  "why": "4x4 rental (+ visa) in the rate"
+ },
+ "AO|11|1700|base": {
+  "call": "keep",
+  "why": "rental car/driver for the south is in the rate"
+ },
+ "MW|14|875|20% safari (lodge/tented camp + game drives + park fees)": {
+  "call": "ok",
+  "why": ""
+ },
+ "MG|24|1650|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "MU|7|1000|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "TZ|24|3100|43% safari (lodge/tented camp + game drives + park fees)": {
+  "call": "ok",
+  "why": ""
+ },
+ "RW|10|2470|base": {
+  "call": "keep",
+  "why": "gorilla permit ($1,500) is in the rate"
+ },
+ "UG|18|2400|33% safari (lodge/tented camp + game drives + park fees)": {
+  "call": "keep",
+  "why": "gorilla + chimp permits are in the rate"
+ },
+ "KE|18|2350|50% safari (lodge/tented camp + game drives + park fees)": {
+  "call": "ok",
+  "why": ""
+ },
+ "ET|20|1750|base": {
+  "call": 45,
+  "why": "standard level: Ethiopia tourist-circuit prices; Danakil/flights/Simien already separate"
+ },
+ "EG|21|1365|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "MT|5|375|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "IT|7|700|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "IT|6|600|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "FR|5|475|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "FR|6|600|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "CY|5|400|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "TR|20|850|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "EG|14|784|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "OM|7|770|base": {
+  "call": "keep",
+  "why": "4x4 rental/tour for Jebel Shams/Wahiba is in the rate"
+ },
+ "BH|3|300|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "QA|3|315|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "FO|7|1675|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "IS|14|2800|base": {
+  "call": "keep",
+  "why": "rental car in the rate"
+ },
+ "GL|10|3725|base": {
+  "call": "keep",
+  "why": "domestic flights (Air Greenland) are in the rate"
+ },
+ "CL|15|2000|67% Patagonia": {
+  "call": "ok",
+  "why": ""
+ },
+ "AR|10|1320|80% Patagonia": {
+  "call": "ok",
+  "why": ""
+ },
+ "CL|9|1200|Patagonia": {
+  "call": "ok",
+  "why": ""
+ },
+ "AR|8|1055|67% Patagonia": {
+  "call": "ok",
+  "why": ""
+ },
+ "AQ|11|9500|base": {
+  "call": "keep",
+  "why": "the Antarctica cruise IS this rate"
+ },
+ "NP|21|1260|base": {
+  "call": "keep",
+  "why": "mandatory trekking guide + porter in the rate"
+ },
+ "BT|8|2275|tour package incl. SDF": {
+  "call": "ok",
+  "why": ""
+ },
+ "CA|8|1200|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "CA|10|1675|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "CA|17|3400|base": {
+  "call": "keep",
+  "why": "rental car 2 is in the rate (drop fee only as extra)"
+ },
+ "CA|5|875|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "US|15|3000|base": {
+  "call": "keep",
+  "why": "rental car 3 is in the rate (drop fee only as extra)"
+ },
+ "US|14|2675|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "VU|11|1045|base": {
+  "call": "keep",
+  "why": "domestic flights to Tanna/Santo + Yasur tour in the rate"
+ },
+ "CK|7|665|base": {
+  "call": "keep",
+  "why": "Aitutaki flight + lagoon cruise in the rate"
+ },
+ "NZ|21|2268|base": {
+  "call": "keep",
+  "why": "Milford cruise, glacier activities, Great Walk huts in the rate"
+ },
+ "JM|12|1080|base": {
+  "call": 65,
+  "why": "a bit above style: guesthouses + entrance fees are pricier than the reference"
+ },
+ "CV|13|780|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "GH|15|713|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "GA|9|855|base": {
+  "call": "keep",
+  "why": "Loango guide/park fees/charter logistics in the rate"
+ },
+ "IT|3|435|big city / peak coast": {
+  "call": "ok",
+  "why": ""
+ },
+ "IT|2|320|big city / peak coast": {
+  "call": "ok",
+  "why": ""
+ },
+ "HR|3|255|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "HU|3|270|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "CZ|5|650|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "IM|4|480|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "IE|11|1325|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "FR|10|1200|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "FR|7|770|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "BE|3|390|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "MU|9|1286|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "GA|11|1045|base": {
+  "call": "keep",
+  "why": "Loango guide/park fees/charter logistics in the rate"
+ },
+ "MY|1|65|Borneo (Sabah/Sarawak)": {
+  "call": "ok",
+  "why": ""
+ },
+ "MY|3|580|50% Borneo (Sabah/Sarawak)": {
+  "call": "keep",
+  "why": "the Kinabalu climb package IS this rate"
+ },
+ "MY|2|130|33% Borneo (Sabah/Sarawak)": {
+  "call": "ok",
+  "why": ""
+ },
+ "MY|3|210|Borneo (Sabah/Sarawak)": {
+  "call": "keep",
+  "why": "riverside lodge package (meals + cruises) in the rate"
+ },
+ "MY|4|280|67% Borneo (Sabah/Sarawak)": {
+  "call": "ok",
+  "why": ""
+ },
+ "MY|2|130|50% Borneo (Sabah/Sarawak)": {
+  "call": "ok",
+  "why": ""
+ },
+ "IT|2|280|big city / peak coast": {
+  "call": "ok",
+  "why": ""
+ },
+ "IT|3|420|big city / peak coast": {
+  "call": "ok",
+  "why": ""
+ },
+ "IT|1|140|big city / peak coast": {
+  "call": "ok",
+  "why": ""
+ },
+ "IT|2|220|base": {
+  "call": "keep",
+  "why": "rental car + fuel in the rate"
+ },
+ "IT|1|110|base": {
+  "call": "keep",
+  "why": "rental car + fuel in the rate"
+ },
+ "AT|3|540|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "FR|3|435|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "FR|6|840|base": {
+  "call": "keep",
+  "why": "shared rental car in the rate"
+ },
+ "FR|9|1305|base": {
+  "call": "keep",
+  "why": "rental car + fuel in the rate"
+ },
+ "FR|3|465|Paris / Riviera": {
+  "call": "ok",
+  "why": ""
+ },
+ "IT|4|635|big city / peak coast": {
+  "call": "ok",
+  "why": ""
+ },
+ "IT|7|1050|big city / peak coast": {
+  "call": "keep",
+  "why": "rental car + fuel in the rate"
+ },
+ "MT|2|210|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "IT|5|750|big city / peak coast": {
+  "call": "keep",
+  "why": "rental car + fuel in the rate"
+ },
+ "MT|4|420|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "HR|5|875|peak coast (Jul-Aug)": {
+  "call": "ok",
+  "why": ""
+ },
+ "HR|6|810|peak coast (Jul-Aug)": {
+  "call": "ok",
+  "why": ""
+ },
+ "HR|9|1215|peak coast (Jul-Aug)": {
+  "call": "ok",
+  "why": ""
+ },
+ "HR|12|1560|peak coast (Jul-Aug)": {
+  "call": "ok",
+  "why": ""
+ },
+ "IT|4|640|big city / peak coast": {
+  "call": "ok",
+  "why": ""
+ },
+ "BA|6|270|base": {
+  "call": "keep",
+  "why": "rental car in the rate"
+ },
+ "HR|2|300|peak coast (Jul-Aug)": {
+  "call": "ok",
+  "why": ""
+ },
+ "HR|3|450|peak coast (Jul-Aug)": {
+  "call": "ok",
+  "why": ""
+ },
+ "ME|9|495|base": {
+  "call": "keep",
+  "why": "rental car in the rate"
+ },
+ "HR|4|600|peak coast (Jul-Aug)": {
+  "call": "ok",
+  "why": ""
+ },
+ "RO|5|400|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "RO|9|765|base": {
+  "call": "keep",
+  "why": "rental car + fuel in the rate"
+ },
+ "BG|9|675|base": {
+  "call": "keep",
+  "why": "rental car in the rate"
+ },
+ "CZ|6|468|base": {
+  "call": "keep",
+  "why": "rental car in the rate"
+ },
+ "PL|9|585|base": {
+  "call": "keep",
+  "why": "rental car in the rate"
+ },
+ "GR|9|1125|75% Cyclades islands peak": {
+  "call": "keep",
+  "why": "ferries between the islands in the rate"
+ },
+ "GR|12|1380|base": {
+  "call": "keep",
+  "why": "rental car in the rate"
+ },
+ "CY|9|1125|base": {
+  "call": "keep",
+  "why": "rental car in the rate"
+ },
+ "GR|4|500|33% Cyclades islands peak": {
+  "call": "ok",
+  "why": ""
+ },
+ "NO|9|1215|base": {
+  "call": "keep",
+  "why": "shared rental car in the rate"
+ },
+ "SE|9|945|base": {
+  "call": "keep",
+  "why": "rental car in the rate"
+ },
+ "GR|2|110|50% Cyclades islands peak": {
+  "call": "ok",
+  "why": ""
+ },
+ "HR|3|420|peak coast (Jul-Aug)": {
+  "call": "ok",
+  "why": ""
+ },
+ "HR|4|520|peak coast (Jul-Aug)": {
+  "call": "ok",
+  "why": ""
+ },
+ "HR|5|700|peak coast (Jul-Aug)": {
+  "call": "ok",
+  "why": ""
+ },
+ "HR|8|1040|peak coast (Jul-Aug)": {
+  "call": "ok",
+  "why": ""
+ },
+ "HR|2|260|peak coast (Jul-Aug)": {
+  "call": "ok",
+  "why": ""
+ },
+ "HR|3|390|peak coast (Jul-Aug)": {
+  "call": "ok",
+  "why": ""
+ },
+ "GR|2|320|50% Cyclades islands peak": {
+  "call": "ok",
+  "why": ""
+ },
+ "JP|31|4650|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "BN|4|480|base": {
+  "call": "ok",
+  "why": ""
+ },
+ "MY|9|585|Borneo (Sabah/Sarawak)": {
+  "call": "ok",
+  "why": ""
+ }
+}
