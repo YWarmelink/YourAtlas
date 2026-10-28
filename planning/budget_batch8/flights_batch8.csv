@@ -1,0 +1,3 @@
+airport_code,city,country_code,direction,eur_one_way,airline_or_routing,source,date_checked,confidence,notes
+NCE,Nice,FR,out,110,easyJet/Transavia/KLM/Air France direct,WebSearch 2026-10-28 (Expedia US USD 98+/CA 128+; RatePunk USD 139 Feb snapshot; typical between floors and KLM),2026-10-28,medium,
+NCE,Nice,FR,back,90,easyJet/Transavia/KLM/Air France direct,WebSearch 2026-10-28 (Expedia UK GBP 43+; Kayak USD 47; Expedia US easyJet USD 58 floors; typical higher),2026-10-28,medium,

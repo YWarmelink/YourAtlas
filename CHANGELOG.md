@@ -12,6 +12,11 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Route-text fixes from Phase 4 batches 7+8 (2026-10-28)**: two own-car routes ended with a flight home.
+  - **Alpine Roadtrip (14 days) 🏕️**: "fly home from Ljubljana" → drive home from Bled (~1,150 km).
+  - **France Roadtrip: Paris to the Côte d'Azur (12 days) 🚗**: "drop the rental off in Nice and fly back" (in `travel_style`, the last leg's notes and its transport) → drive back to the Netherlands (~1,200 km, optionally via the Route Napoléon).
+  - `rbFixBatch78RouteTexts()` / `rbMigrateBatch78RouteFixes()`. `rbApplyBlockTextFixes()` now takes block index `null` for a route-level field. Sheet: `scripts/fix_route_texts_in_sheet.js 78`, verified live.
+
 - **Route-text fixes from Phase 4 batches 5+6 (2026-10-28)**:
   - **Canary Islands (10-14 days) 🏝️**: the Tenerife leg's transport now names the next island (Binter flight to Gran Canaria). The batch 5 review reported a block shift, but that was a misread: the order Tenerife → Gran Canaria → Lanzarote → Fuerteventura was already right.
   - **Tenerife + La Gomera (7-10 days) 🏝️**: removed the repeated Teide-permit caveat from the La Gomera leg (it only applies on Tenerife).

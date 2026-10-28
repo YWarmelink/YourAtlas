@@ -1,0 +1,1139 @@
+{
+ "batch": 7,
+ "group": "France & Benelux",
+ "routes": [
+  {
+   "id": "gt_seed_ardennes-3-days",
+   "name": "Ardennes (3 days) 🦌",
+   "mode": "own_car",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Own car from the Netherlands throughout.",
+   "description": "La Roche-en-Ardenne's castle ruin and canoeing, Han-sur-Lesse's caves and wildlife park, Coo's waterfalls and cable car, and an optional stop in Durbuy.",
+   "notes": "Built (2026-08) as the pilot batch of Phase 2 converting EUROPA_TRIP_IDEAS.md's 319 markdown trip ideas into real Route Builder content — chosen as the smallest cluster (this Benelux batch of six) to calibrate real token cost before planning the remaining ~20 batches. Uses La Roche-en-Ardenne/Han-sur-Lesse/Coo as its Ardennes stop, deliberately different from Bastogne, used instead in the Luxembourg + Ardennes (4 days) 🎖️ and South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️ routes below, so none of these three overlap. Not yet checked against Route Builder-level price research (no flight/visa check needed here, everything is by own car within Schengen) — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_ardennes-3-days",
+    "name": "Ardennes (3 days) 🦌",
+    "stops": 4,
+    "km_in_route": 160,
+    "km_from_nl": 280,
+    "km_back_to_nl": 250,
+    "km_by_country": {
+     "BE": 160
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "BE",
+     "country": "Belgium",
+     "days": 3,
+     "budget": 264,
+     "dailyRate": 88,
+     "carInDailyRate": false,
+     "notes": "Entry: own car from the Netherlands (~2.5-3h drive). Base in La Roche-en-Ardenne (castle ruin, canoeing on the Ourthe), with a day trip to Han-sur-Lesse (caves + wildlife park), then Coo (waterfalls, cable car) and an optional stop in Durbuy ('the world's smallest city'). Season: April-October for canoeing/hiking. Budget ~€80-95/day (B&B/hotel + food + activities) — revised after a web check, €70-80 was slightly too low once a Han-sur-Lesse day is factored in. Web check (2026-08): the Han-sur-Lesse caves + wildlife park combo ticket is €41.50 p.p. — a separate cost, not included in the daily budget; the park closes from 12 November and has shorter opening hours outside peak season (sometimes only 10:00-15:00). The Coo cable car sits within Plopsaland Ardennes, which is NOT open every day outside school holidays (2026: daily open 4-19 April, 25 April-10 May, 28 May-31 August, 17 October-8 November) — check the calendar, don't assume 'April-October = always open'.",
+     "transport_to_next": "End of this route — drive back to the Netherlands (~2.5-3h).",
+     "destinations": [
+      {
+       "name": "La Roche-en-Ardenne",
+       "lat": 50.1833,
+       "lng": 5.5833
+      },
+      {
+       "name": "Han-sur-Lesse",
+       "lat": 50.1167,
+       "lng": 5.2
+      },
+      {
+       "name": "Coo",
+       "lat": 50.3833,
+       "lng": 5.9167
+      },
+      {
+       "name": "Durbuy",
+       "lat": 50.3522,
+       "lng": 5.4536
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_belgian-coast-bruges-ghent-4-days",
+   "name": "Belgian Coast + Bruges + Ghent (4 days) 🚲",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Car or train — all three destinations are well connected by train.",
+   "description": "Bruges' canals and Belfry, Ghent's Gravensteen castle and Graslei, and the Belgian coast at De Haan/Ostend.",
+   "notes": "Built (2026-08) as part of the Benelux pilot batch of Phase 2 converting EUROPA_TRIP_IDEAS.md into Route Builder content (see the Ardennes (3 days) 🦌 route's notes for batch context). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_belgian-coast-bruges-ghent-4-days",
+    "name": "Belgian Coast + Bruges + Ghent (4 days) 🚲",
+    "stops": 4,
+    "km_in_route": 130,
+    "km_from_nl": 210,
+    "km_back_to_nl": 230,
+    "km_by_country": {
+     "BE": 130
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "BE",
+     "country": "Belgium",
+     "days": 4,
+     "budget": 324,
+     "dailyRate": 81,
+     "carInDailyRate": false,
+     "notes": "Bruges (canals, Belfry) — Ghent (Gravensteen castle, Graslei) — Belgian coast (De Haan/Ostend, seafront and beach). Car or train — all three are well reachable by train. Budget ~€90-100/day, confirmed via web check, nothing noteworthy found. Season: year-round for the cities, May-September nicer for the coast.",
+     "transport_to_next": "End of this route.",
+     "destinations": [
+      {
+       "name": "Bruges",
+       "lat": 51.2093,
+       "lng": 3.2247
+      },
+      {
+       "name": "Ghent",
+       "lat": 51.0543,
+       "lng": 3.7174
+      },
+      {
+       "name": "De Haan",
+       "lat": 51.2704,
+       "lng": 3.0361
+      },
+      {
+       "name": "Ostend",
+       "lat": 51.2154,
+       "lng": 2.9286
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_belgium-bruges-ghent-antwerp-ardennes-5-days",
+   "name": "Belgium: Bruges + Ghent + Antwerp + Ardennes (5 days) 🍺",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Train for the cities, car needed for the Ardennes leg.",
+   "description": "Bruges, Ghent and Antwerp's historic centers, paired with Dinant or La Roche-en-Ardenne as a nature counterpart.",
+   "notes": "Built (2026-08) as part of the Benelux pilot batch of Phase 2 converting EUROPA_TRIP_IDEAS.md into Route Builder content (see the Ardennes (3 days) 🦌 route's notes for batch context). 'Dinant or La Roche-en-Ardenne' is an either/or choice for the 1-2 day nature leg in the source material, not both combined — both are listed as destination options here. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_belgium-bruges-ghent-antwerp-ardennes-5-days",
+    "name": "Belgium: Bruges + Ghent + Antwerp + Ardennes (5 days) 🍺",
+    "stops": 5,
+    "km_in_route": 330,
+    "km_from_nl": 210,
+    "km_back_to_nl": 280,
+    "km_by_country": {
+     "BE": 330
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "BE",
+     "country": "Belgium",
+     "days": 3,
+     "budget": 243,
+     "dailyRate": 81,
+     "carInDailyRate": false,
+     "notes": "Bruges — Ghent — Antwerp (Cathedral: nave/interior open, but the tower has been under long-term restoration since 2019 and the status of a scaffolding-free view in 2026 is unconfirmed; MAS building/rooftop free, exhibitions ~€12 separately). Train for the cities. Budget ~€90-100/day in the cities, confirmed via web check.",
+     "transport_to_next": "A car is needed from here — drive to Dinant or La Roche-en-Ardenne for the Ardennes leg.",
+     "destinations": [
+      {
+       "name": "Bruges",
+       "lat": 51.2093,
+       "lng": 3.2247
+      },
+      {
+       "name": "Ghent",
+       "lat": 51.0543,
+       "lng": 3.7174
+      },
+      {
+       "name": "Antwerp",
+       "lat": 51.2194,
+       "lng": 4.4025
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "BE",
+     "country": "Belgium",
+     "days": 2,
+     "budget": 150,
+     "dailyRate": 75,
+     "carInDailyRate": false,
+     "notes": "Dinant OR La Roche-en-Ardenne (an either/or choice, not both combined) for 1-2 days of nature as a counterpart to the cities. Budget lower than the city leg. Season: possible year-round overall, April-October better for this Ardennes part.",
+     "transport_to_next": "End of this route — drive back to the Netherlands.",
+     "destinations": [
+      {
+       "name": "Dinant",
+       "lat": 50.2603,
+       "lng": 4.9106
+      },
+      {
+       "name": "La Roche-en-Ardenne",
+       "lat": 50.1833,
+       "lng": 5.5833
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_alpine-roadtrip-14-days",
+   "name": "Alpine Roadtrip (14 days) 🏕️",
+   "mode": "own_car",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Own car throughout, one continuous corridor with no backtracking — Chamonix, over to Zermatt/Interlaken, over the Arlberg Pass to Innsbruck, over the Brenner Pass to the Dolomites, then east to the Julian Alps/Bled.",
+   "description": "A pure five-country mountain corridor: Chamonix (France), Zermatt/Interlaken (Switzerland) via the Arlberg Pass to Innsbruck (Austria), the Dolomites/Cortina (Italy), and the Julian Alps/Bled (Slovenia).",
+   "notes": "Built (2026-08) as part of Phase 2 batch 15d (Grand European combinations — Alps/Italy cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately a different scope from this same sub-batch's France + Switzerland + Italy (10-14 days) 🗻 route above per the source's own framing — this one is a pure mountain-country corridor with no Milan/Geneva/lakes detour, extended instead into Austria and Slovenia for a full five-country Alpine sweep. ⚠️⚠️ Substantial internal overlap with three of this same sub-batch's own siblings, called out explicitly here rather than logged as separate ROUTE_SIMILARITY_REVIEW.md entries (same-batch internal overlap, not a cross-batch collision, per this project's established convention): shares its Chamonix content with France + Switzerland + Italy (10-14 days) 🗻 above, its Innsbruck content with Germany + Austria + Italy (10-14 days) 🏔️ above (reached via the Arlberg Pass here instead of via Germany/the Fernpass there), its Dolomites/Cortina content with that same route's Dolomites leg, and its Julian Alps/Bled content with Germany + Austria + Slovenia (10-14 days) 🥨 above's Slovenia leg. Also reuses pre-existing content from Swiss Alps: Zermatt / Matterhorn (6 days) 🗻/Interlaken + Lauterbrunnen + Grindelwald (6 days) 🪂 (the Switzerland leg, either/or), Dolomites (6 days) ⛰️ (the Dolomites leg) and Julian Alps + Soča Valley (6 days) 🚣/Slovenia Alpine Loop (6 days) 🏔️ (the Slovenia leg) — all pre-existing cross-batch overlaps flagged in ROUTE_SIMILARITY_REVIEW.md; only the same-batch internal overlap is kept here in this route's own notes instead. Also checked against Switzerland Alpine Roadtrip (9 days) 🛣️ (rbBuildSwitzerlandAlpineRoadtripRoute) and Austria Alpine Roadtrip (9 days) 🗺️ (rbBuildAustriaAlpineRoadtripRoute): confirmed genuinely different in scope — both are single-country pass-hopping loops that stay within their own country, while this route is a cross-border five-country single corridor with no return loop. Not yet checked against Route Builder-level price research beyond the vignette/pass checks folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_alpine-roadtrip-14-days",
+    "name": "Alpine Roadtrip (14 days) 🏕️",
+    "stops": 9,
+    "km_in_route": 890,
+    "km_from_nl": 910,
+    "km_back_to_nl": 1180,
+    "km_by_country": {
+     "CH": 190,
+     "AT": 360,
+     "IT": 150,
+     "SI": 190
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "FR",
+     "country": "France",
+     "days": 3,
+     "budget": 216,
+     "dailyRate": 72,
+     "carInDailyRate": false,
+     "notes": "Chamonix (2-3 days) — same content as this sub-batch's sibling France + Switzerland + Italy (10-14 days) 🗻 route above (see that route's notes on Chamonix being a genuine content gap, not a duplicate of the Écrins-focused French Alps route). Budget ~€100-130/day p.p.",
+     "transport_to_next": "Drive to Zermatt or Interlaken, Switzerland (~180-250km depending on which — both routes cross into Switzerland via Martigny).",
+     "destinations": [
+      {
+       "name": "Chamonix (Mont Blanc)",
+       "lat": 45.9237,
+       "lng": 6.8694
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "CH",
+     "country": "Switzerland",
+     "days": 3,
+     "budget": 354,
+     "dailyRate": 118,
+     "carInDailyRate": false,
+     "notes": "Zermatt or Interlaken (3 days, either/or — same pattern as the Pilatus/Rigi either-or choice in Zurich + Lucerne + Surroundings (5 days) ⛴️ above) — same content as Swiss Alps: Zermatt / Matterhorn (6 days) 🗻 (rbBuildZermattMatterhornRoute) or Interlaken + Lauterbrunnen + Grindelwald (6 days) 🪂 (rbBuildInterlakenLauterbrunnenGrindelwaldRoute), whichever is picked. Budget ~€120-160/day p.p. — one of Switzerland's priciest legs either way.",
+     "transport_to_next": "Drive to Innsbruck, Austria via the Arlberg Pass (Arlbergpass, ~250km/3h from Zermatt or ~200km/2h30 from Interlaken) — the pass has a year-round road tunnel alternative (Arlbergtunnel) so this crossing works outside the pure summer window too, unlike several other passes in this batch.",
+     "destinations": [
+      {
+       "name": "Zermatt (car-free, Matterhorn)",
+       "lat": 46.0207,
+       "lng": 7.7491
+      },
+      {
+       "name": "Interlaken (alternative base)",
+       "lat": 46.6863,
+       "lng": 7.8632
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "AT",
+     "country": "Austria",
+     "days": 2,
+     "budget": 148,
+     "dailyRate": 74,
+     "carInDailyRate": false,
+     "notes": "Innsbruck (2 days) — same shorter, transit-oriented Innsbruck stop as this sub-batch's sibling Germany + Austria + Italy (10-14 days) 🏔️ route above, reached here via the Arlberg Pass instead of via Germany/the Fernpass. Budget ~€90-125/day p.p. Austrian 10-day vignette (€12.80/car) required.",
+     "transport_to_next": "Drive over the Brenner Pass into Italy (open year-round via the tunnel and motorway) toward the Dolomites/Cortina.",
+     "destinations": [
+      {
+       "name": "Innsbruck (old town, Golden Roof)",
+       "lat": 47.2692,
+       "lng": 11.4041
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 3,
+     "budget": 219,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Dolomites/Cortina (3 days) — same content as Dolomites (6 days) ⛰️ (rbBuildDolomitesDeepRoute)'s Cortina base and this sub-batch's sibling Germany + Austria + Italy (10-14 days) 🏔️ route's Dolomites leg above. Budget ~€105-140/day p.p. Season: June-September — a hard boundary for lift/trail access.",
+     "transport_to_next": "Drive east to the Julian Alps, Slovenia (~200km/2h30-3h via Tarvisio) — a Schengen border, no checks.",
+     "destinations": [
+      {
+       "name": "Cortina d'Ampezzo",
+       "lat": 46.5369,
+       "lng": 12.1357
+      },
+      {
+       "name": "Tre Cime di Lavaredo",
+       "lat": 46.6198,
+       "lng": 12.3032
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "SI",
+     "country": "Slovenia",
+     "days": 3,
+     "budget": 186,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "The Julian Alps and Bled (2-3 days), closing the trip — same content as Julian Alps + Soča Valley (6 days) 🚣 (rbBuildJulianAlpsSocaValleyRoute)/Slovenia Alpine Loop (6 days) 🏔️ above (Kranjska Gora, the Vršič Pass 2026 traffic regime, Bled). Budget ~€110-130/day p.p. Season: June-September only — the Vršič Pass is closed in winter for snow/avalanche risk. Web check (2026-09): a new traffic-management regime took effect 15 June 2026 for the whole 1 June-30 Sept tourist season (free shuttle bus + barrier monitoring) — private cars/motorbikes/bicycles still cross free and unrestricted, the only change is no parking right at the summit (use the designated areas near the Russian Chapel/Erjavčeva koča instead).",
+     "transport_to_next": "End of this route — fly home from Ljubljana.",
+     "destinations": [
+      {
+       "name": "Kranjska Gora",
+       "lat": 46.4858,
+       "lng": 13.7861
+      },
+      {
+       "name": "Vršič Pass",
+       "lat": 46.4331,
+       "lng": 13.7478
+      },
+      {
+       "name": "Bled",
+       "lat": 46.3683,
+       "lng": 14.1146
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_alsace-4-days",
+   "name": "Alsace (4 days) 🥐",
+   "mode": "own_car",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Own car from the Netherlands throughout — fully toll-free both ways (German Autobahn, then the toll-free A35 into Strasbourg).",
+   "description": "Strasbourg, Colmar as a base for the Alsace wine villages (Riquewihr, Ribeauvillé, Kaysersberg), a detour to Haut-Koenigsbourg Castle, and Eguisheim and Turckheim.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 4 (France), converting EUROPA_TRIP_IDEAS.md's 319 markdown trip ideas into Route Builder content — following the same pattern as batches 1-3 (Benelux, Germany, Austria+Switzerland). Source explicitly flags this as France's one toll-free route in the batch (via the German Autobahn), unlike most of the others below. Not yet checked against Route Builder-level price research beyond the ticket/toll checks folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_alsace-4-days",
+    "name": "Alsace (4 days) 🥐",
+    "stops": 8,
+    "km_in_route": 160,
+    "km_from_nl": 560,
+    "km_back_to_nl": 610,
+    "km_by_country": {
+     "FR": 160
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "FR",
+     "country": "France",
+     "days": 4,
+     "budget": 288,
+     "dailyRate": 72,
+     "carInDailyRate": false,
+     "notes": "Strasbourg (Petite France, cathedral + astronomical clock, Maison Kammerzell, Palais Rohan) — Colmar as a base (old town, Little Venice, Unterlinden) — the quieter, underrated wine villages Riquewihr/Hunawihr/Ribeauvillé/Kaysersberg, plus a detour to Haut-Koenigsbourg Castle — Eguisheim early (to beat the tour buses) and Turckheim. Own car, Amsterdam-Strasbourg ~600km/5.5-6h, fully toll-free (via the German Autobahn, and the A35 into Strasbourg is also toll-free) — the train exists but is 8h+ with transfers and impractical locally since the villages aren't on the rail line. Budget ~€100-150/day for 2 people for lodging + €45-60/day food + €15-35 tastings/activities. Season: half September-half October (wine harvest) or May-June. Astronomical clock €3, cathedral tower €8, Haut-Koenigsbourg ~€10; parking in the villages is limited/paid — park outside Riquewihr's walls rather than trying to drive in.",
+     "transport_to_next": "End of this route — drive back to the Netherlands, fully toll-free via the German Autobahn.",
+     "destinations": [
+      {
+       "name": "Strasbourg (Petite France, cathedral + astronomical clock)",
+       "lat": 48.5734,
+       "lng": 7.7521
+      },
+      {
+       "name": "Colmar (base — old town, Little Venice, Unterlinden)",
+       "lat": 48.0794,
+       "lng": 7.3585
+      },
+      {
+       "name": "Riquewihr",
+       "lat": 48.1667,
+       "lng": 7.2971
+      },
+      {
+       "name": "Ribeauvillé",
+       "lat": 48.1961,
+       "lng": 7.3282
+      },
+      {
+       "name": "Kaysersberg",
+       "lat": 48.1391,
+       "lng": 7.2664
+      },
+      {
+       "name": "Haut-Koenigsbourg Castle (detour)",
+       "lat": 48.2495,
+       "lng": 7.3444
+      },
+      {
+       "name": "Eguisheim (early, before the tour buses)",
+       "lat": 48.0448,
+       "lng": 7.3081
+      },
+      {
+       "name": "Turckheim",
+       "lat": 48.0847,
+       "lng": 7.2778
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_brittany-saint-malo-dinan-pink-granite-coast-5-days",
+   "name": "Brittany: Saint-Malo, Dinan & Pink Granite Coast (5 days) 🦞",
+   "mode": "own_car",
+   "carInBudgetWording": "excluded",
+   "carEvidence": " for batch context. Deliberately limited to north Brittany (Carnac/Quiberon excluded — too much drive time for a 5-day trip); the existing Chann",
+   "travel_style": "Own car from the Netherlands throughout — no useful NL ferry exists (Brittany Ferries only sails from UK ports).",
+   "description": "Saint-Malo's ramparts, medieval Dinan, the Côte de Granit Rose/Ploumanac'h coastal path, and Île de Bréhat or Cap Fréhel.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 4 (France) — see the Alsace (4 days) 🥐 route's notes for batch context. Deliberately limited to north Brittany (Carnac/Quiberon excluded — too much drive time for a 5-day trip); the existing Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖 route's 10-day Brittany leg does cover Carnac/Quiberon/Pointe du Raz further south as part of a much longer coastal sweep, so the two routes are deliberately different in scope rather than duplicates. Not yet checked against Route Builder-level price research beyond the toll/activity checks folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_brittany-saint-malo-dinan-pink-granite-coast-5-days",
+    "name": "Brittany: Saint-Malo, Dinan & Pink Granite Coast (5 days) 🦞",
+    "stops": 5,
+    "km_in_route": 290,
+    "km_from_nl": 830,
+    "km_back_to_nl": 840,
+    "km_by_country": {
+     "FR": 290
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "FR",
+     "country": "France",
+     "days": 5,
+     "budget": 360,
+     "dailyRate": 72,
+     "carInDailyRate": false,
+     "notes": "Deliberately north Brittany only: Saint-Malo-Dinan is 33km/35min and Saint-Malo-Côte de Granit Rose 163km/~2h — everything stays close together. Adding Carnac/Quiberon (south) costs 2.5-2.8h per drive, which would eat roughly 2 of the 5 days on driving alone — not worth it for this length of trip. Route: Saint-Malo (ramparts, free) — a full day in Saint-Malo (Île du Grand Bé at low tide, check the tide tables) — Dinan (medieval old town) — Côte de Granit Rose/Ploumanac'h coastal path — Île de Bréhat or Cap Fréhel, then the drive home. Amsterdam-Saint-Malo 838km/7h48, tolls ~€25-35 — there's no useful NL ferry (Brittany Ferries only sails from UK ports), so it's a drive. Budget ~€70-100pp/day lodging + €35-45 food (seafood platter €30-45) + €15-25 activities/parking. Season: May-June or September (easier tides, fewer crowds). ⚠️ Bréhat/Sept-Îles boat trips €15-25pp, budget separately.",
+     "transport_to_next": "End of this route — drive back to the Netherlands.",
+     "destinations": [
+      {
+       "name": "Saint-Malo (ramparts)",
+       "lat": 48.6493,
+       "lng": -2.0257
+      },
+      {
+       "name": "Dinan (medieval old town)",
+       "lat": 48.4535,
+       "lng": -2.0453
+      },
+      {
+       "name": "Côte de Granit Rose / Ploumanac'h coastal path",
+       "lat": 48.8236,
+       "lng": -3.4739
+      },
+      {
+       "name": "Île de Bréhat",
+       "lat": 48.8404,
+       "lng": -2.9877
+      },
+      {
+       "name": "Cap Fréhel",
+       "lat": 48.6836,
+       "lng": -2.3247
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_corsica-sardinia-full-island-loop-12-days",
+   "name": "Corsica + Sardinia: Full Island Loop (12 days) 🌊",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Connecting flight into Bastia or Calvi, rental car throughout, a ferry crossing to Sardinia, direct flight home from Cagliari.",
+   "description": "A full Corsica island loop followed by a fuller Sardinia loop (north coast, Costa Smeralda, and central/west Sardinia including Alghero and Bosa), flying home from Cagliari.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately covers more of both islands than Corsica + Sardinia: South Corsica & North Sardinia (5 days) 🏝️ above, and resolves that shorter route's Olbia seasonality issue by exiting via Cagliari instead. Not yet checked against Route Builder-level price research beyond the ferry-schedule/flight notes folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_corsica-sardinia-full-island-loop-12-days",
+    "name": "Corsica + Sardinia: Full Island Loop (12 days) 🌊",
+    "stops": 9,
+    "km_in_route": 610,
+    "km_from_nl": 1420,
+    "km_back_to_nl": 1900,
+    "km_by_country": {
+     "FR": 200,
+     "IT": 400
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "FR",
+     "country": "France",
+     "days": 6,
+     "budget": 432,
+     "dailyRate": 72,
+     "carInDailyRate": false,
+     "notes": "Not a slower version of the same loop — deliberately covers more of both islands. A full Corsica loop first (as in Corsica Roadtrip: Full Island Loop (9 days) 🚙 above), flying in via Bastia or Calvi (northern Corsica) and driving south to Bonifacio. Budget ~€120-130/day averaged across both islands.",
+     "transport_to_next": "Ferry Bonifacio-Santa Teresa Gallura (~50 min) — the same crossing's seasonal window (16 Jan-31 Oct 2026) still applies.",
+     "destinations": [
+      {
+       "name": "Bastia or Calvi (entry)",
+       "lat": 42.6979,
+       "lng": 9.4508
+      },
+      {
+       "name": "Corte",
+       "lat": 42.3062,
+       "lng": 9.1499
+      },
+      {
+       "name": "Porto-Vecchio / Col de Bavella",
+       "lat": 41.591,
+       "lng": 9.2795
+      },
+      {
+       "name": "Bonifacio",
+       "lat": 41.387,
+       "lng": 9.1595
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 6,
+     "budget": 438,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "A fuller Sardinia loop via the same Bonifacio-Santa Teresa ferry: the north coast and Costa Smeralda, plus central/west Sardinia (Alghero, Bosa, optionally Cagliari in the south). Fly home from Cagliari (KLM direct from Amsterdam, year-round, 7x/week) instead of the seasonal Olbia route — this also removes the shorter variant's seasonal restriction. Budget ~€120-130/day, same range as the Corsica leg. Season: May-June or September; the Bonifacio-Santa Teresa ferry's window (16 Jan-31 Oct 2026) still applies.",
+     "transport_to_next": "End of this route — direct flight home from Cagliari (KLM, year-round, 7x/week).",
+     "destinations": [
+      {
+       "name": "Santa Teresa Gallura",
+       "lat": 41.2372,
+       "lng": 9.1908
+      },
+      {
+       "name": "Costa Smeralda / Palau",
+       "lat": 41.1772,
+       "lng": 9.3833
+      },
+      {
+       "name": "Alghero",
+       "lat": 40.5586,
+       "lng": 8.3197
+      },
+      {
+       "name": "Bosa",
+       "lat": 40.2986,
+       "lng": 8.5
+      },
+      {
+       "name": "Cagliari (optional, exit)",
+       "lat": 39.2238,
+       "lng": 9.1217
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_corsica-south-of-france-9-days",
+   "name": "Corsica + South of France (9 days) 🛳️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Direct flight to Nice, ferry to Corsica, rental car in Corsica, fly home from a Corsican airport.",
+   "description": "Côte d'Azur/Provence time (Nice, Antibes, Cannes, optionally Marseille), a ferry crossing to Corsica, then a Corsica tour with a direct flight home from a Corsican airport.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately distinct from the pre-existing Corsica & Southern France ⛵ route (a Mediterranean Civilizations Expedition 🏛️ split-off pairing Bonifacio/Ajaccio/Bavella with Marseille/Arles/Nîmes/Pont du Gard as a one-way, no-return-flight itinerary) — this is a newer, shorter round-trip version built directly from the source material with a different day split and an explicit ferry-not-flight Corsica crossing. Per this project's overlap-is-fine convention, both continue to exist unchanged. Not yet checked against Route Builder-level price research beyond the ferry-schedule note folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_corsica-south-of-france-9-days",
+    "name": "Corsica + South of France (9 days) 🛳️",
+    "stops": 10,
+    "km_in_route": 1010,
+    "km_from_nl": 1230,
+    "km_back_to_nl": 1510,
+    "km_by_country": {
+     "FR": 1010
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "FR",
+     "country": "France",
+     "days": 3,
+     "budget": 300,
+     "dailyRate": 100,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flight to Nice (from Amsterdam/Eindhoven). Days on the Côte d'Azur/Provence coast (Nice, Antibes, Cannes, optionally Marseille) before the ferry to Corsica. Budget ~€150-160/day for this mainland leg.",
+     "transport_to_next": "Overnight ferry from Nice (Corsica Ferries) or Toulon/Marseille (Corsica Linea/La Méridionale) to Corsica — Nice is the fastest mainland ferry port (~8-10h, often overnight) and pairs best with Côte d'Azur time; Marseille takes longer (~11-14h).",
+     "destinations": [
+      {
+       "name": "Nice",
+       "lat": 43.7102,
+       "lng": 7.262
+      },
+      {
+       "name": "Antibes",
+       "lat": 43.5808,
+       "lng": 7.1239
+      },
+      {
+       "name": "Cannes",
+       "lat": 43.5528,
+       "lng": 7.0174
+      },
+      {
+       "name": "Marseille (optional)",
+       "lat": 43.2965,
+       "lng": 5.3698
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "FR",
+     "country": "France",
+     "days": 6,
+     "budget": 432,
+     "dailyRate": 72,
+     "carInDailyRate": false,
+     "notes": "A real routed trip, not a bolt-on: touring Corsica by rental car after the ferry, then flying straight home from a Corsican airport (Bastia/Figari/Ajaccio, with a connection) — no return ferry-plus-drive needed. Budget ~€140/day for Corsica. Season: May-June or September. ⚠️ Ferry frequency drops sharply outside April-October, and some Nice-Corsica sailings are purely seasonal (summer only) — book 3+ months ahead for summer.",
+     "transport_to_next": "End of this route — direct flight home from a Corsican airport, no return ferry needed.",
+     "destinations": [
+      {
+       "name": "Bastia",
+       "lat": 42.6979,
+       "lng": 9.4508
+      },
+      {
+       "name": "Calvi",
+       "lat": 42.5677,
+       "lng": 8.7573
+      },
+      {
+       "name": "Corte",
+       "lat": 42.3062,
+       "lng": 9.1499
+      },
+      {
+       "name": "Porto-Vecchio / Col de Bavella",
+       "lat": 41.591,
+       "lng": 9.2795
+      },
+      {
+       "name": "Bonifacio",
+       "lat": 41.387,
+       "lng": 9.1595
+      },
+      {
+       "name": "Ajaccio",
+       "lat": 41.9192,
+       "lng": 8.7386
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_corsica-roadtrip-full-island-loop-9-days",
+   "name": "Corsica Roadtrip: Full Island Loop (9 days) 🚙",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Connecting flight into Bastia or Calvi, rental car for the full island loop, flying out from the other airport.",
+   "description": "The full Corsica island loop: Calvi, Cap Corse, Saint-Florent and the Désert des Agriates, Bastia, Corte, the east coast, Porto-Vecchio/Col de Bavella, Bonifacio, Ajaccio/the Golfe de Valinco, and the Piana calanques/Scandola.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately the fuller counterpart to Corsica: South Loop (6 days) 🏖️ above, and the France mainland+Corsica leg reused (with the same overlap-is-fine convention) by Corsica + South of France (9 days) 🛳️ and both Corsica + Sardinia routes below. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_corsica-roadtrip-full-island-loop-9-days",
+    "name": "Corsica Roadtrip: Full Island Loop (9 days) 🚙",
+    "stops": 10,
+    "km_in_route": 460,
+    "km_from_nl": 1420,
+    "km_back_to_nl": 1460,
+    "km_by_country": {
+     "FR": 460
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "FR",
+     "country": "France",
+     "days": 9,
+     "budget": 1305,
+     "dailyRate": 145,
+     "carInDailyRate": true,
+     "notes": "Explicitly the full island loop, not just the shorter southern trip extended: Calvi → Cap Corse/Saint-Florent/Désert des Agriates → Bastia → Corte (interior, mountains) → east coast → Porto-Vecchio/Bavella → Bonifacio → Ajaccio/the Golfe → Piana calanques/Scandola → back to Calvi/Bastia. Covers the north (Cap Corse), the interior (Corte) and the south (Bonifacio) — regions the shorter trip skips. Open-jaw Bastia in/Ajaccio out (or the reverse) avoids backtracking. Rental car required throughout. Budget ~€140-150/day (slightly higher from more driving/fuel). Season: same as the shorter trip, the shoulder season matters even more here given the longer duration and more time on busy coastal roads in August.",
+     "transport_to_next": "End of this route — open-jaw flight home from Bastia or Calvi (arriving into the other), no direct flight from the Netherlands.",
+     "destinations": [
+      {
+       "name": "Calvi",
+       "lat": 42.5677,
+       "lng": 8.7573
+      },
+      {
+       "name": "Cap Corse / Nonza",
+       "lat": 42.7889,
+       "lng": 9.3417
+      },
+      {
+       "name": "Saint-Florent / Désert des Agriates",
+       "lat": 42.6789,
+       "lng": 9.2989
+      },
+      {
+       "name": "Bastia",
+       "lat": 42.6979,
+       "lng": 9.4508
+      },
+      {
+       "name": "Corte",
+       "lat": 42.3062,
+       "lng": 9.1499
+      },
+      {
+       "name": "East coast (Aléria)",
+       "lat": 42.1058,
+       "lng": 9.5108
+      },
+      {
+       "name": "Porto-Vecchio / Col de Bavella",
+       "lat": 41.591,
+       "lng": 9.2795
+      },
+      {
+       "name": "Bonifacio",
+       "lat": 41.387,
+       "lng": 9.1595
+      },
+      {
+       "name": "Ajaccio / Golfe de Valinco",
+       "lat": 41.9192,
+       "lng": 8.7386
+      },
+      {
+       "name": "Piana calanques / Scandola",
+       "lat": 42.2405,
+       "lng": 8.6339
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_corsica-south-loop-6-days",
+   "name": "Corsica: South Loop (6 days) 🏖️",
+   "mode": "rental",
+   "carInBudgetWording": "included",
+   "carEvidence": "practice (very limited public transport outside the coast). Budget ~€140/day (including a shared rental car). Season: May-June or September; avoid August (crowds/price",
+   "travel_style": "Connecting flight to Figari or Ajaccio, rental car for the whole loop.",
+   "description": "A compact southern Corsica loop: Ajaccio, the Golfe de Valinco, Bonifacio, and Porto-Vecchio/Col de Bavella.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. General Corsica budget note (webcheck 2026-08): realistically between €83/day (budget) and €199/day (mid-range) — €140-150/day is the right choice across this and the other Corsica routes below for Youri's between-budget-and-comfort profile. Deliberately shorter and more compact than Corsica Roadtrip: Full Island Loop (9 days) 🚙 below, which covers the north and interior this one skips. Not yet checked against Route Builder-level price research beyond the parking/Scandola notes folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_corsica-south-loop-6-days",
+    "name": "Corsica: South Loop (6 days) 🏖️",
+    "stops": 5,
+    "km_in_route": 150,
+    "km_from_nl": 1510,
+    "km_back_to_nl": 1540,
+    "km_by_country": {
+     "FR": 150
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "FR",
+     "country": "France",
+     "days": 6,
+     "budget": 840,
+     "dailyRate": 140,
+     "carInDailyRate": true,
+     "notes": "Deliberately a single region, not a full island loop — there's too little time for that given the driving distances. Best compact loop: Ajaccio → Golfe de Valinco → Bonifacio → Porto-Vecchio/Col de Bavella → back to Ajaccio (southern Corsica). Connecting flight to Figari (closest to Bonifacio/the south) or Ajaccio — no direct flight from the Netherlands to Corsica itself. Rental car is required in practice (very limited public transport outside the coast). Budget ~€140/day (including a shared rental car). Season: May-June or September; avoid August (crowds/prices). ⚠️ Bonifacio: park in the official car parks (P3/P5/Valli plus shuttle) outside the citadel, don't drive in; parking charges apply from the spring school holidays through All Saints' Day (~1 Nov) — check exact 2026 dates. The Scandola Nature Reserve (boat-only access) has tightening rules (250m distance from nesting zones, partly restricted anchoring) — check current access rules before booking a boat trip.",
+     "transport_to_next": "End of this route — connecting flight home via Figari or Ajaccio.",
+     "destinations": [
+      {
+       "name": "Ajaccio",
+       "lat": 41.9192,
+       "lng": 8.7386
+      },
+      {
+       "name": "Golfe de Valinco / Propriano",
+       "lat": 41.6769,
+       "lng": 8.9058
+      },
+      {
+       "name": "Bonifacio",
+       "lat": 41.387,
+       "lng": 9.1595
+      },
+      {
+       "name": "Porto-Vecchio",
+       "lat": 41.591,
+       "lng": 9.2795
+      },
+      {
+       "name": "Col de Bavella",
+       "lat": 41.7906,
+       "lng": 9.2183
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_france-roadtrip-paris-to-the-cote-dazur-12-days",
+   "name": "France Roadtrip: Paris to the Côte d'Azur (12 days) 🚗",
+   "mode": "own_car",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Own car from the Netherlands to Paris, then a straight southward drive on the Burgundy-Rhône spine to the Côte d'Azur; drop the rental off in Nice and fly back.",
+   "description": "The recommended spine: Paris → Burgundy (Beaune) → the Rhône Valley (Lyon) → Provence/Côte d'Azur (Avignon, Nice).",
+   "notes": "Built (2026-08) as part of Phase 2 batch 4 (France) — see the Alsace (4 days) 🥐 route's notes for batch context. Deliberately uses the Burgundy-Rhône spine rather than a Loire→Dordogne→Provence routing: Sarlat (Dordogne)→Avignon is at best 5h17 via the toll route (Toulouse-Narbonne-Montpellier) or 8h+ via the free Massif Central route — a Loire/Dordogne leg would first pull the trip westward, forcing a real backtrack eastward afterwards. The Burgundy-Rhône spine instead flows straight south (Paris→Beaune→Lyon→Avignon→Nice) with no reversal of direction. Shares Paris content with the standalone Paris (4 days) 🗼 route and Provence/Côte d'Azur content with Provence (6 days) 🌻 and South of France: Provence to Côte d'Azur (9 days) 🕶️ above — per this project's overlap-is-fine convention, built independently. Not yet checked against Route Builder-level price research beyond the toll checks folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_france-roadtrip-paris-to-the-cote-dazur-12-days",
+    "name": "France Roadtrip: Paris to the Côte d'Azur (12 days) 🚗",
+    "stops": 5,
+    "km_in_route": 1060,
+    "km_from_nl": 530,
+    "km_back_to_nl": 1230,
+    "km_by_country": {
+     "FR": 1060
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "FR",
+     "country": "France",
+     "days": 3,
+     "budget": 216,
+     "dailyRate": 72,
+     "carInDailyRate": false,
+     "notes": "Paris, compressed to 3 days here — same highlights as the standalone Paris (4 days) 🗼 route above (Île de la Cité/Le Marais, Louvre, Eiffel Tower/Trocadéro, Montmartre). Budget ~€80-100/day.",
+     "transport_to_next": "Drive to Beaune, Burgundy (~3h).",
+     "destinations": [
+      {
+       "name": "Paris",
+       "lat": 48.8566,
+       "lng": 2.3522
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "FR",
+     "country": "France",
+     "days": 2,
+     "budget": 144,
+     "dailyRate": 72,
+     "carInDailyRate": false,
+     "notes": "Beaune, the wine capital of Burgundy — Hospices de Beaune and cellar tastings. Budget ~€80-100/day.",
+     "transport_to_next": "Drive to Lyon (~1h30).",
+     "destinations": [
+      {
+       "name": "Beaune (Burgundy) — Hospices de Beaune, wine tasting",
+       "lat": 47.0244,
+       "lng": 4.8397
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "FR",
+     "country": "France",
+     "days": 2,
+     "budget": 144,
+     "dailyRate": 72,
+     "carInDailyRate": false,
+     "notes": "Lyon — Vieux Lyon, the Presqu'île, and the traboules (hidden passageways). Budget ~€80-100/day.",
+     "transport_to_next": "Drive to Avignon (~2.5h).",
+     "destinations": [
+      {
+       "name": "Lyon (Vieux Lyon, Presqu'île, traboules)",
+       "lat": 45.764,
+       "lng": 4.8357
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "FR",
+     "country": "France",
+     "days": 2,
+     "budget": 144,
+     "dailyRate": 72,
+     "carInDailyRate": false,
+     "notes": "Avignon — the Palais des Papes. Budget ~€100-140/day at this point in the route.",
+     "transport_to_next": "Drive to Nice (~2.5h).",
+     "destinations": [
+      {
+       "name": "Avignon (Palais des Papes)",
+       "lat": 43.9493,
+       "lng": 4.8055
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "FR",
+     "country": "France",
+     "days": 3,
+     "budget": 216,
+     "dailyRate": 72,
+     "carInDailyRate": false,
+     "notes": "Nice and the Côte d'Azur to close the trip. Budget ~€100-140/day. ⚠️ This Paris-Nice spine is a heavy toll-road stretch (A6/A7/A8) — budget ~€150-180 one way, so a **total of ~€250-300** including the NL-Paris leg. Recommended: drop the rental car off in Nice and fly back to Amsterdam rather than driving the same stretch in reverse.",
+     "transport_to_next": "End of this route — drop the rental car off in Nice and fly back to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Nice (Promenade des Anglais)",
+       "lat": 43.7102,
+       "lng": 7.262
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_french-spanish-pyrenees-9-days",
+   "name": "French + Spanish Pyrenees (9 days) 🥖",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car throughout; the France-Spain link (Port de Boucharo/Puerto de Bujaruelo) is a narrow mountain pass only open in summer.",
+   "description": "Lourdes, Cauterets and the Cirque de Gavarnie in the French Pyrenees, over the Port de Boucharo/Puerto de Bujaruelo pass into Ordesa y Monte Perdido National Park on the Spanish side.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 15e (Grand European combinations — Pyrenees/Nordic cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Checked against Andorra + French Pyrenees: Ariège (6 days) ♨️ (rbBuildAndorraFrenchPyreneesAriegeRoute) — genuinely different, that route is Andorra-anchored and covers the Ariège's thermal baths/caves (Ax-les-Thermes/Foix/Grotte de Niaux), no Andorra or Gavarnie/Ordesa content here at all. Also checked against Catalonia + Pyrenees (9 days) ⛰️ (rbBuildCataloniaPyreneesRoute) — genuinely different, that route stays in Catalonia (Barcelona/Girona/Vall de Núria/Cerdanya), well east of this route's Gavarnie/Ordesa corridor. No pre-existing Route Builder expedition covers the Gavarnie/Ordesa y Monte Perdido corridor specifically — a genuine content gap being filled, not a duplicate. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_french-spanish-pyrenees-9-days",
+    "name": "French + Spanish Pyrenees (9 days) 🥖",
+    "stops": 7,
+    "km_in_route": 130,
+    "km_from_nl": 1390,
+    "km_back_to_nl": 1480,
+    "km_by_country": {
+     "FR": 60,
+     "ES": 60
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "FR",
+     "country": "France",
+     "days": 5,
+     "budget": 360,
+     "dailyRate": 72,
+     "carInDailyRate": false,
+     "notes": "Lourdes (arrival) — Cauterets (2 days, the Pont d'Espagne) — Gavarnie (2 days, the Cirque de Gavarnie and, for fitter hikers, the Brèche de Roland). Entry: fly into Toulouse or Lourdes-Tarbes-Pyrénées airport, rental car for the whole trip. Budget ~€90-110/day. Season: strictly July-September, same hard boundary as the mountain-pass crossing into Spain below. Travel advisory (2026-09): France is code yellow, not green — an elevated terrorism alert level in place since March 2024 (not new, just worth noting since Spain and every other country on this route's siblings sit at green) — stay alert in cities/crowded places and expect the possibility of ID/passport spot checks.",
+     "transport_to_next": "Drive over the Port de Boucharo/Puerto de Bujaruelo pass (2,270m) — the only direct road/hiking connection between the French and Spanish halves of the same Mont Perdu/Monte Perdido UNESCO World Heritage massif; narrow and single-lane, open only roughly July-September. Outside that window there is no direct crossing here at all — the only option is the long detour via Jaca/Pau (+3h).",
+     "destinations": [
+      {
+       "name": "Lourdes (arrival)",
+       "lat": 43.0961,
+       "lng": -0.045
+      },
+      {
+       "name": "Cauterets (Pont d'Espagne)",
+       "lat": 42.8853,
+       "lng": -0.1147
+      },
+      {
+       "name": "Gavarnie (Cirque de Gavarnie)",
+       "lat": 42.6928,
+       "lng": -0.0092
+      },
+      {
+       "name": "Brèche de Roland",
+       "lat": 42.6875,
+       "lng": -0.0122
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 4,
+     "budget": 244,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Torla and Ordesa y Monte Perdido National Park (3 days), plus an optional stop in Aínsa on the way out. Budget ~€75-95/day. Web check (2026-08): Schengen-to-Schengen zero friction crossing into Spain here — no passport/customs formalities at all — but check with the rental-car company in advance whether the mountain/gravel roads on both sides of the pass are actually covered by the insurance/rental agreement, since some contracts exclude unpaved high-altitude roads.",
+     "transport_to_next": "End of this route — drive to Zaragoza or back to Toulouse for the flight home, depending on the inbound routing.",
+     "destinations": [
+      {
+       "name": "Torla",
+       "lat": 42.6167,
+       "lng": -0.1167
+      },
+      {
+       "name": "Ordesa y Monte Perdido National Park",
+       "lat": 42.6497,
+       "lng": -0.04
+      },
+      {
+       "name": "Aínsa (optional)",
+       "lat": 42.4167,
+       "lng": 0.1333
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_french-alps-provence-9-days",
+   "name": "French Alps + Provence (9 days) 🛤️",
+   "mode": "own_car",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Own car from the Netherlands throughout — the Écrins-to-Provence leg follows the scenic Route Napoléon (N85), largely toll-free.",
+   "description": "Écrins National Park (Briançon/Gap/Embrun) via the Route Napoléon into Provence (Sisteron, Avignon, the Luberon).",
+   "notes": "Built (2026-08) as part of Phase 2 batch 4 (France) — see the Alsace (4 days) 🥐 route's notes for batch context. Extends the standalone French Alps: Écrins National Park (6 days) 🐐 route above south into Provence, and shares Avignon/Luberon ground with Provence (6 days) 🌻 and South of France: Provence to Côte d'Azur (9 days) 🕶️ — per this project's overlap-is-fine convention, built independently rather than merged; see each route's own notes for the specific relationship. Not yet checked against Route Builder-level price research beyond the toll checks folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_french-alps-provence-9-days",
+    "name": "French Alps + Provence (9 days) 🛤️",
+    "stops": 7,
+    "km_in_route": 440,
+    "km_from_nl": 1050,
+    "km_back_to_nl": 1180,
+    "km_by_country": {
+     "FR": 440
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "FR",
+     "country": "France",
+     "days": 5,
+     "budget": 360,
+     "dailyRate": 72,
+     "carInDailyRate": false,
+     "notes": "Écrins deliberately fits better with Provence than Annecy would — Annecy sits near the Swiss border, naturally belongs with Chamonix/Geneva, and pulls the trip far north (Annecy-Avignon is still 338km/~3h09, but getting there from the Netherlands is a near-Nice-length detour with little added value). Écrins (Briançon/Gap/Embrun area) sits directly on the Route Napoléon (N85, Gap-Sisteron), a scenic, largely toll-free mountain road that runs straight into Provence — geographically 'on the way', not a detour. NL-Écrins area (Gap/Embrun) ~950-1,000km/9.5-10h. Budget ~€85-110/day in the Alps.",
+     "transport_to_next": "Drive south via the scenic, largely toll-free Route Napoléon (N85, Gap-Sisteron) into Provence, ~230km/3h to Avignon.",
+     "destinations": [
+      {
+       "name": "Briançon",
+       "lat": 44.8992,
+       "lng": 6.6367
+      },
+      {
+       "name": "Gap",
+       "lat": 44.5594,
+       "lng": 6.0783
+      },
+      {
+       "name": "Embrun",
+       "lat": 44.5644,
+       "lng": 6.4956
+      },
+      {
+       "name": "Écrins (Vallouise/La Bérarde)",
+       "lat": 44.9,
+       "lng": 6.35
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "FR",
+     "country": "France",
+     "days": 4,
+     "budget": 288,
+     "dailyRate": 72,
+     "carInDailyRate": false,
+     "notes": "Provence via the Route Napoléon: Sisteron, then Avignon and the Luberon. Budget ~€90-120/day in Provence. Season: June-early September (mountain passes/trails open, Provence not yet scorching). ⚠️ Toll lower than a pure autoroute trip (the Alps leg mostly uses toll-free national roads) — budget a **total of ~€180-220**.",
+     "transport_to_next": "End of this route — drive back to the Netherlands.",
+     "destinations": [
+      {
+       "name": "Sisteron (Route Napoléon waypoint)",
+       "lat": 44.1936,
+       "lng": 5.9472
+      },
+      {
+       "name": "Avignon",
+       "lat": 43.9493,
+       "lng": 4.8055
+      },
+      {
+       "name": "Luberon",
+       "lat": 43.9114,
+       "lng": 5.2003
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_french-alps-ecrins-national-park-6-days",
+   "name": "French Alps: Écrins National Park (6 days) 🐐",
+   "mode": "own_car",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Own car from the Netherlands throughout — weak public transport to the trailheads.",
+   "description": "Écrins National Park's Vallouise/La Bérarde area — real glaciers, 1,000+ km of trails, and none of Chamonix's crowds or ski infrastructure.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 4 (France) — see the Alsace (4 days) 🥐 route's notes for batch context. Deliberately Écrins over Chamonix per the source's reasoning above (overlap avoidance with the existing Swiss Alps routes, plus Écrins being wilder/cheaper/more distinct). Also revisited at a larger scale by French Alps + Provence (9 days) 🛤️ below, which extends this same Écrins base (via Briançon/Gap/Embrun) south into Provence along the Route Napoléon — per this project's overlap-is-fine convention, built independently. Not yet checked against Route Builder-level price research beyond the toll checks folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_french-alps-ecrins-national-park-6-days",
+    "name": "French Alps: Écrins National Park (6 days) 🐐",
+    "stops": 3,
+    "km_in_route": 40,
+    "km_from_nl": 1050,
+    "km_back_to_nl": 1040,
+    "km_by_country": {
+     "FR": 40
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "FR",
+     "country": "France",
+     "days": 6,
+     "budget": 432,
+     "dailyRate": 72,
+     "carInDailyRate": false,
+     "notes": "Deliberately Écrins National Park (Vallouise/La Bérarde area) rather than Chamonix. Chamonix is excellent but sits right against the Swiss border/Geneva — high overlap risk with the Switzerland-Alps routes already in this project, and it's also the most touristy/developed valley in the French Alps (ski infrastructure everywhere, no national park). Écrins is genuinely wilder (30x the area of the Chamonix valley, 1,000+ km of trails, real glaciers), cheaper, and clearly distinct from a Switzerland trip. Budget ~€75-95/day (gîte/B&B €55-70, food €25-35, few paid activities — no entrance fee, unlike Chamonix's Aiguille du Midi at ~€120-150+/day). Season: July-August (the only reliable window for high-altitude trails). NL-Grenoble/Écrins access ~950-970km/10.5-11h, tolls ~€80-100 one way. ⚠️ Weak public transport to the trailheads (own car is a real advantage here), mountain hut/gîte bookings fill up fast in summer.",
+     "transport_to_next": "End of this route — drive back to the Netherlands.",
+     "destinations": [
+      {
+       "name": "Briançon (gateway)",
+       "lat": 44.8992,
+       "lng": 6.6367
+      },
+      {
+       "name": "Vallouise",
+       "lat": 44.8383,
+       "lng": 6.4794
+      },
+      {
+       "name": "La Bérarde",
+       "lat": 44.9386,
+       "lng": 6.2967
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

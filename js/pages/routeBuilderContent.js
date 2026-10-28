@@ -16854,12 +16854,12 @@ function rbBuildFranceRoadtripParisCoteAzurRoute() {
       destinations: [
         { name: 'Nice (Promenade des Anglais)', lat: 43.7102, lng: 7.2620 , notes: 'The Riviera\'s main city — Promenade des Anglais, Vieux Nice, and the Colline du Château viewpoint; hit the Cours Saleya market in the old town in the morning before it closes.' },
       ],
-      notes: "Nice and the Côte d'Azur to close the trip. Budget ~€100-140/day. ⚠️ This Paris-Nice spine is a heavy toll-road stretch (A6/A7/A8) — budget ~€150-180 one way, so a **total of ~€250-300** including the NL-Paris leg. Recommended: drop the rental car off in Nice and fly back to Amsterdam rather than driving the same stretch in reverse.",
-      transport_to_next: 'End of this route — drop the rental car off in Nice and fly back to Amsterdam.',
+      notes: "Nice and the Côte d'Azur to close the trip. Budget ~€100-140/day. ⚠️ This Paris-Nice spine is a heavy toll-road stretch (A6/A7/A8) — budget ~€150-180 one way, so a **total of ~€250-300** including the NL-Paris leg. With your own car you drive back: ~1,200 km, best split over 2 days; a return via Grenoble and the Route Napoléon avoids repeating the same stretch.",
+      transport_to_next: 'End of this route — drive back to the Netherlands (~1,200 km, best split over 2 days).',
     },
   ], {
     best_starting_month: 'May',
-    travel_style: 'Own car from the Netherlands to Paris, then a straight southward drive on the Burgundy-Rhône spine to the Côte d\'Azur; drop the rental off in Nice and fly back.',
+    travel_style: 'Own car from the Netherlands to Paris, then a straight southward drive on the Burgundy-Rhône spine to the Côte d\'Azur, and the same car back home.',
     climate_summary: 'End of May-June or September.',
     description: "The recommended spine: Paris → Burgundy (Beaune) → the Rhône Valley (Lyon) → Provence/Côte d'Azur (Avignon, Nice).",
     notes: "Built (2026-08) as part of Phase 2 batch 4 (France) — see the Alsace (4 days) 🥐 route's notes for batch context. Deliberately uses the Burgundy-Rhône spine rather than a Loire→Dordogne→Provence routing: Sarlat (Dordogne)→Avignon is at best 5h17 via the toll route (Toulouse-Narbonne-Montpellier) or 8h+ via the free Massif Central route — a Loire/Dordogne leg would first pull the trip westward, forcing a real backtrack eastward afterwards. The Burgundy-Rhône spine instead flows straight south (Paris→Beaune→Lyon→Avignon→Nice) with no reversal of direction. Shares Paris content with the standalone Paris (4 days) 🗼 route and Provence/Côte d'Azur content with Provence (6 days) 🌻 and South of France: Provence to Côte d'Azur (9 days) 🕶️ above — per this project's overlap-is-fine convention, built independently. Not yet checked against Route Builder-level price research beyond the toll checks folded in above — treat as a first concept, not a bookable plan.",
@@ -25301,7 +25301,7 @@ function rbBuildAlpineRoadtripFiveCountriesRoute() {
         { name: 'Bled', lat: 46.3683, lng: 14.1146, notes: "The postcard shot is the tiny island church reached only by traditional wooden pletna boats, with Bled Castle on the cliff above. Ring the church's \"wishing bell\" for luck, and go early morning or evening for still water and fewer boats in the frame." },
       ],
       notes: "The Julian Alps and Bled (2-3 days), closing the trip — same content as Julian Alps + Soča Valley (6 days) 🚣 (rbBuildJulianAlpsSocaValleyRoute)/Slovenia Alpine Loop (6 days) 🏔️ above (Kranjska Gora, the Vršič Pass 2026 traffic regime, Bled). Budget ~€110-130/day p.p. Season: June-September only — the Vršič Pass is closed in winter for snow/avalanche risk. Web check (2026-09): a new traffic-management regime took effect 15 June 2026 for the whole 1 June-30 Sept tourist season (free shuttle bus + barrier monitoring) — private cars/motorbikes/bicycles still cross free and unrestricted, the only change is no parking right at the summit (use the designated areas near the Russian Chapel/Erjavčeva koča instead).",
-      transport_to_next: 'End of this route — fly home from Ljubljana.',
+      transport_to_next: 'End of this route — drive home from Bled (~1,150 km via Salzburg and Munich, best split over 2 days; an Austrian and a Slovenian vignette are needed anyway for the route).',
     },
   ], {
     best_starting_month: 'July',
@@ -28268,6 +28268,356 @@ const RB_ROUTE_COSTS = {
       ],
     },
 
+
+  // ---- Phase 4 batch 7: France & Benelux 1/2, extracted 2026-10-28, approved by Youri (planning/budget_batch7/REVIEW.md) ----
+  // Fares: flights_from_ams.csv + flights_batch7.csv. Car: data/cost_reference/car_costs_by_country.csv (7 L/100 km).
+  // Own-car drives NL<->route are in flight_in_cost/flight_out_cost = fuel (km x 0.07 x ~EUR 2.2/l blended NL/BE/DE/LU/FR) + French tolls.
+
+    'gt_seed_ardennes-3-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 43,    // own car NL-La Roche 280 km x 0.07 x ~2.2; no tolls (BE/NL/LU free)
+      flight_out_cost: 39,   // own car back 250 km
+      blocks: [
+        { code: 'BE', local: 0, extras: [
+          rbExtra('Car: own car, fuel ≈160 km in Ardennes (BE 1.989 €/l), no tolls', 22, 'transport'),
+          rbExtra('Han-sur-Lesse caves + wildlife park combo ticket (notes: €41.50 p.p., outside daily budget)', 42, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_belgian-coast-bruges-ghent-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 40,    // train NL-Bruges (NS/Eurostar Amsterdam-Brussels ~30 + SNCB ~10-15; est)
+      flight_out_cost: 40,   // train back (same; est)
+      blocks: [
+        { code: 'BE', local: 25, extras: [] },   // SNCB trains Bruges-Ghent-De Haan/Ostend hops, ~4 x €6-8 (est)
+      ],
+    },
+
+    'gt_seed_belgium-bruges-ghent-antwerp-ardennes-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 40,    // train NL-Bruges (est as coast route); notes: train for the cities
+      flight_out_cost: 43,   // drive back NL from Ardennes in the rental, 280 km x 0.07 x ~2.2 (rental fuel)
+      blocks: [
+        { code: 'BE', transport: 0, local: 20, extras: [   // SNCB Bruges-Ghent-Antwerp ~3 hops x €6-8 (est)
+          rbExtra('Car: rental 2 days (Antwerp -> Dinant/La Roche -> NL) × €50 + fuel ≈190 km Antwerp-Ardennes + one-way drop in NL ≈€60 (est)', 186, 'transport'),
+          rbExtra('MAS Antwerp exhibitions (notes: ~€12)', 12, 'activity', true),
+        ] },
+        { code: 'BE', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_alpine-roadtrip-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 219,   // own car NL-Chamonix 910 km: fuel ≈134 + French tolls ≈85 (Metz-Dijon-A40; est)
+      flight_out_cost: 194,  // own car Ljubljana-NL 1180 km: fuel ≈170 + Karawanken 9 + Tauern 15 (route text says "fly home from Ljubljana": modelled as drive, see REVIEW)
+      blocks: [
+        { code: 'FR', transport: 0, local: 0, extras: [
+          rbExtra('Car: own car fuel ≈890 km (CH 190 km, AT 360, IT 150, SI 190 ≈ €121) + CH vignette 43.28 + AT 10-day vignette 12.80 + Arlberg 13 + Brenner A13 12.50 + IT autostrada ≈7 (60% × 150 km × €8/100) + SI 7-day vignette 16', 226, 'transport'),
+        ] },
+        { code: 'CH', transport: 0, local: 0, extras: [] },
+        { code: 'AT', transport: 0, local: 0, extras: [] },
+        { code: 'IT', transport: 0, local: 0, extras: [] },
+        { code: 'SI', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_alsace-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 86,    // own car NL-Strasbourg 560 km, fully toll-free (notes)
+      flight_out_cost: 94,   // own car Colmar-NL 610 km, toll-free
+      blocks: [
+        { code: 'FR', local: 0, extras: [
+          rbExtra('Car: own car fuel ≈160 km (FR 2.229 €/l), no tolls', 25, 'transport'),
+          rbExtra('Strasbourg astronomical clock (notes: €3)', 3, 'activity'),
+          rbExtra('Strasbourg cathedral tower (notes: €8)', 8, 'activity'),
+          rbExtra('Haut-Koenigsbourg Castle (notes: ~€10)', 10, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_brittany-saint-malo-dinan-pink-granite-coast-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 158,   // own car NL-Saint-Malo 830 km: fuel ≈128 + tolls ≈30 (notes €25-35)
+      flight_out_cost: 159,  // own car back 840 km: fuel ≈129 + tolls ≈30
+      blocks: [
+        { code: 'FR', local: 0, extras: [
+          rbExtra('Car: own car fuel ≈290 km (FR 2.229 €/l), no tolls (Brittany expressways free)', 45, 'transport'),
+          rbExtra('Île de Bréhat / Sept-Îles boat trip (notes: €15-25 p.p.; "Bréhat or Cap Fréhel")', 20, 'tour', true),
+        ] },
+      ],
+    },
+
+    'gt_seed_corsica-sardinia-full-island-loop-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 220,   // AMS-Bastia one way, connecting (WebSearch 2026-10-28; Ebookers floor €202; est)
+      flight_out_cost: 120,  // Cagliari-AMS (flights_from_ams.csv, CAG back)
+      blocks: [
+        { code: 'FR', transport: 40, local: 0, extras: [      // Bonifacio-Santa Teresa foot ferry (as batch 2: Directferries avg €37, AFerry €43-84)
+          rbExtra('Car: Corsica rental 6 days × €48 + fuel ≈300 km (my est; input 200 km is straight-line) (no tolls)', 335, 'transport'),
+        ] },
+        { code: 'IT', local: 0, extras: [
+          rbExtra('Car: Sardinia rental 6 days × €45 + fuel ≈400 km + one-way drop Santa Teresa-Cagliari ≈€60 (est)', 386, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_corsica-south-of-france-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Nice one way (easyJet/KLM; Expedia USD 98 floor; WebSearch 2026-10-28; typical above floor)
+      flight_out_cost: 200,  // Figari-AMS one way, 1 stop (reuse FSC out fare as back est; see flights_batch7.csv)
+      blocks: [
+        { code: 'FR', transport: 45, local: 10, extras: [] },   // overnight ferry Nice-Bastia foot passenger (Omio/AFerry €23-48 typical; est); TER Nice-Antibes-Cannes ~€4 hops (est)
+        { code: 'FR', local: 0, extras: [
+          rbExtra('Car: Corsica rental 6 days × €48 + fuel ≈300 km + one-way drop Bastia-Figari ≈€60 (est), no tolls', 395, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_corsica-roadtrip-full-island-loop-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 220,   // AMS-Bastia one way (see batch 7 CSV)
+      flight_out_cost: 210,  // Ajaccio-AMS one way, connecting (Expedia USD 243 / Skyscanner; est)
+      blocks: [
+        { code: 'FR', local: 0, extras: [] },               // car is in the daily rate (carInDailyRate true): nothing added
+      ],
+    },
+
+    'gt_seed_corsica-south-loop-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 200,   // AMS-Figari (flights_from_ams.csv, FSC out)
+      flight_out_cost: 200,  // Figari-AMS, same as out (est; flights_batch7.csv)
+      blocks: [
+        { code: 'FR', local: 0, extras: [] },               // car in daily rate: nothing added
+      ],
+    },
+
+    'gt_seed_france-roadtrip-paris-to-the-cote-dazur-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 117,   // own car NL-Paris 530 km: fuel ≈82 + tolls ≈35 (A1/A2 north of Paris; BE free)
+      flight_out_cost: 296,  // own car Nice-NL 1230 km: fuel ≈191 + tolls ≈105 (est; route text says "fly back": modelled as drive, see REVIEW)
+      blocks: [
+        { code: 'FR', transport: 0, local: 0, extras: [
+          rbExtra('Car: own car Paris-Nice fuel ≈1060 km (FR 2.229 €/l ≈165) + A6/A7/A8 tolls ≈100 (my est; notes say 150-180)', 265, 'transport'),
+        ] },
+        { code: 'FR', transport: 0, local: 0, extras: [] },
+        { code: 'FR', transport: 0, local: 0, extras: [] },
+        { code: 'FR', transport: 0, local: 0, extras: [] },
+        { code: 'FR', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_french-spanish-pyrenees-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-Toulouse (flights_from_ams.csv, TLS out)
+      flight_out_cost: 150,  // Toulouse-AMS (TLS back)
+      blocks: [
+        { code: 'FR', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 9 days × €48 + fuel ≈610 km (TLS-Lourdes 160, loop 120, Torla-TLS 330 via Somport) + tolls A64 Toulouse-Tarbes/Pau ≈€30 (est), returned at Toulouse (no drop fee)', 550, 'transport'),
+        ] },
+        { code: 'ES', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_french-alps-provence-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 252,   // own car NL-Briançon/Gap 1050 km: fuel ≈162 + tolls ≈90 (notes: total tolls €180-220)
+      flight_out_cost: 292,  // own car Avignon-NL 1180 km: fuel ≈182 + tolls ≈110
+      blocks: [
+        { code: 'FR', transport: 0, local: 0, extras: [
+          rbExtra('Car: own car fuel ≈440 km (FR 2.229 €/l), Alps/Route Napoléon toll-free', 69, 'transport'),
+        ] },
+        { code: 'FR', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_french-alps-ecrins-national-park-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 252,   // own car NL-Briançon 1050 km: fuel ≈162 + tolls ≈90 (notes €80-100 one way)
+      flight_out_cost: 250,  // own car back 1040 km: fuel ≈160 + tolls ≈90
+      blocks: [
+        { code: 'FR', local: 0, extras: [
+          rbExtra('Car: own car fuel ≈40 km local valleys (FR 2.229 €/l)', 6, 'transport'),
+        ] },
+      ],
+    },
+
+
+  // ---- Phase 4 batch 8: France & Benelux 2/2, extracted 2026-10-28, approved by Youri (planning/budget_batch8/REVIEW.md) ----
+  // Car: data/cost_reference/car_costs_by_country.csv (7 L/100 km; FR 2.229, BE 1.989, NL 2.391, LU 1.788 EUR/l; FR toll 60% of km x 9/100 km; BE/LU/NL free).
+  // Own-car NL legs: NL 80 km + BE 190 km (Antwerp/Brussels/Lille corridor) then the remaining km in the destination country (est splits).
+  // Fares: flights_from_ams.csv + flights_batch8.csv.
+
+    'gt_seed_french-atlantic-coast-la-rochelle-to-biarritz-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 187,   // own car NL-La Rochelle ~970 km (notes): fuel ~149 (NL80/BE190/FR700) + FR tolls 700x60%x9/100=38
+      flight_out_cost: 281,  // Biarritz-NL ~1420 km (input; fuel ~219 NL80/BE190/FR1150 + tolls 62). Notes say ~250-300 TOTAL tolls round trip; formula gives ~125 (see REVIEW)
+      blocks: [
+        { code: 'FR', transport: 0, local: 0, extras: [
+          rbExtra('Car: fuel ≈460 km in route + tolls (60% of km × €9/100 km), own car', 97, 'transport'),
+        ] },
+        { code: 'FR', transport: 0, local: 0, extras: [
+          rbExtra('Bordeaux garage parking 3 days × ~€25 (notes €20-30/day; est)', 75, 'other'),
+        ] },
+        { code: 'FR', transport: 0, local: 0, extras: [] },
+        { code: 'FR', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_loire-valley-castles-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 146,   // own car NL-Amboise ~620 km (notes 590-650): fuel ~94 + tolls ~52 (notes €45-60 one way, midpoint)
+      flight_out_cost: 151,  // Blois-NL ~650 km est: fuel ~99 + tolls ~52 (same notes figure)
+      blocks: [
+        { code: 'FR', transport: 0, local: 0, extras: [
+          rbExtra('Car: fuel ≈230 km in route + tolls (60% of km × €9/100 km), own car', 48, 'transport'),
+          rbExtra('Castle entries, 3-4 castles (notes €50-70 pp, midpoint)', 60, 'activity'),
+        ] },
+        { code: 'FR', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_monaco-cote-dazur-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Nice one way (WebSearch 2026-10-28; typical between budget floors and KLM)
+      flight_out_cost: 90,   // Nice-AMS one way (WebSearch 2026-10-28)
+      blocks: [
+        { code: 'FR', transport: 6, local: 15, extras: [] },   // train Nice-Monaco €4-8 (notes, midpoint); local: coastal train/bus day trips Eze/Villefranche/Menton/Cannes (est)
+        { code: 'MC', local: 6, extras: [                      // train back Monaco-Nice (same price)
+          rbExtra('Casino de Monte-Carlo entry (18+, ID)', 20, 'activity'),
+          rbExtra('Oceanographic Museum (~€10 per notes, check 2026 price)', 10, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_monaco-nice-provence-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Nice
+      flight_out_cost: 90,   // Nice-AMS (route returns to Nice)
+      blocks: [
+        { code: 'FR', transport: 6, local: 0, extras: [] },     // train Nice-Monaco (~€4-8, as in the 4-day route)
+        { code: 'MC', transport: 0, local: 6, extras: [         // train back Monaco-Nice
+          rbExtra('Car: rental 3 days (Provence days 3-5, pickup Nice) × €48 + fuel ≈500 km + tolls (60% of km × €9/100 km); returns to Nice, no drop fee', 249, 'transport'),
+          rbExtra('Casino de Monte-Carlo entry (18+, ID)', 20, 'activity'),
+          rbExtra('Oceanographic Museum (~€10 per notes, check 2026 price)', 10, 'activity'),
+        ] },
+        { code: 'FR', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_monaco-monte-carlo-2-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Nice
+      flight_out_cost: 90,   // Nice-AMS
+      blocks: [
+        { code: 'FR', transport: 6, local: 0, extras: [] },     // train Nice-Monaco (€4-8 per sister routes)
+        { code: 'MC', local: 6, extras: [                       // train back to Nice
+          rbExtra('Casino de Monte-Carlo entry (18+, ID)', 20, 'activity'),
+          rbExtra('Oceanographic Museum (~€10 per sister route notes)', 10, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_normandy-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 152,   // own car NL-Honfleur ~700 km (notes: Amsterdam-Bayeux ~697): fuel ~107 + tolls ~45 (notes €35-55 one way)
+      flight_out_cost: 180,  // Mont-Saint-Michel-NL ~880 km est (not in notes; input says 790): fuel ~135 + tolls ~45 (est same as in)
+      blocks: [
+        { code: 'FR', local: 0, extras: [
+          rbExtra('Car: fuel ≈260 km in route + tolls (60% of km × €9/100 km), own car', 55, 'transport'),
+          rbExtra('Guided D-Day tour (notes €93 half-day / €168 full day, midpoint; tour is redundant with own car, see REVIEW)', 131, 'tour'),
+          rbExtra('Mont Saint-Michel parking (notes €6.80-9.80, midpoint)', 8, 'park_fee'),
+          rbExtra('Mont Saint-Michel abbey entry (notes €13-16, midpoint)', 15, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_paris-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 80,    // train AMS-Paris Nord one way (notes: from €35, often €55-135; typical booked ahead ~80, est)
+      flight_out_cost: 80,   // train Paris-AMS (same)
+      blocks: [
+        { code: 'FR', local: 0, extras: [
+          rbExtra('Louvre (notes €22-32, midpoint)', 27, 'activity'),
+          rbExtra('Eiffel Tower (notes €14.80-36.70, midpoint)', 26, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_provence-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 248,   // own car NL-Avignon ~1090 km (notes): fuel ~168 (NL80/BE190/FR820) + tolls ~80 (notes €70-90 one way)
+      flight_out_cost: 267,  // Arles-NL ~1180 km est: fuel ~182 + tolls ~85
+      blocks: [
+        { code: 'FR', transport: 0, local: 0, extras: [
+          rbExtra('Car: fuel ≈220 km in route + tolls (60% of km × €9/100 km), own car', 46, 'transport'),
+          rbExtra('Hill-village parking (Gordes €4/day + Les Baux ~€5 first hour/meter, notes)', 9, 'other'),
+        ] },
+        { code: 'FR', local: 0, extras: [
+          rbExtra('Carrières des Lumières (notes €16-17, midpoint)', 17, 'activity'),
+          rbExtra('Camargue boat/horseback trip (notes €25-40, midpoint)', 33, 'tour'),
+        ] },
+      ],
+    },
+
+    'gt_seed_south-of-france-provence-to-cote-dazur-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 277,   // own car NL-Avignon ~1150 km (notes): fuel ~177 + tolls ~100 (notes €90-110)
+      flight_out_cost: 346,  // Nice-NL ~1410 km est: fuel ~218 + tolls ~128 (Nice-Avignon 27.5 + Avignon-NL 100, notes)
+      blocks: [
+        { code: 'FR', transport: 0, local: 0, extras: [
+          rbExtra('Car: fuel ≈460 km in route + A8 tolls Avignon-Nice ~€27.5 (notes €25-30), own car', 100, 'transport'),
+        ] },
+        { code: 'FR', transport: 0, local: 0, extras: [] },
+        { code: 'FR', local: 0, extras: [
+          rbExtra('Nice city-centre garage parking 3 days × ~€29.5 (notes €24-35/day; est)', 89, 'other'),
+        ] },
+      ],
+    },
+
+    'gt_seed_luxembourg-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 53,    // own car NL-Luxembourg ~370 km (input; NL100/BE180/LU90), fuel only (BE/LU free)
+      flight_out_cost: 47,   // Luxembourg-NL ~330 km (input), fuel only
+      blocks: [
+        { code: 'LU', local: 0, extras: [
+          rbExtra('Car: fuel ≈70 km in route, own car', 9, 'transport'),
+          rbExtra('Bock Casemates (notes €11)', 11, 'activity'),
+          rbExtra('Vianden castle (notes €11-13, midpoint)', 12, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_luxembourg-ardennes-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 46,    // own car NL-Bastogne ~310 km (input), fuel only
+      flight_out_cost: 51,   // Vianden-NL ~350 km via Belgium (input), fuel only
+      blocks: [
+        { code: 'BE', transport: 0, local: 0, extras: [
+          rbExtra('Car: fuel ≈140 km in route, own car', 18, 'transport'),
+          rbExtra('Bastogne War Museum (notes €22)', 22, 'activity'),
+          rbExtra('Bastogne parking (notes €7.50)', 8, 'park_fee'),
+        ] },
+        { code: 'LU', local: 0, extras: [
+          rbExtra('Vianden castle (notes €11-13 on sister route, midpoint)', 12, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_south-netherlands-belgian-ardennes-luxembourg-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 32,    // own car NL-Maastricht ~190 km (input), fuel only
+      flight_out_cost: 54,   // Vianden-NL ~370 km (input), fuel only
+      blocks: [
+        { code: 'NL', transport: 0, local: 0, extras: [
+          rbExtra('Car: fuel ≈230 km in route (NL/BE/LU), own car', 30, 'transport'),
+          rbExtra('Sint-Pietersberg caves guided tour (notes ~€9.95)', 10, 'tour'),
+        ] },
+        { code: 'BE', transport: 0, local: 0, extras: [] },
+        { code: 'LU', local: 0, extras: [] },
+      ],
+    },
+
 };
 
 /**
@@ -28789,10 +29139,11 @@ const RB_BATCH4_TEXT_FIXES = [
   ['gt_seed_san-marino-day-visit-1-day', 0, '(bus €7 round trip or', '(bus ~€14 round trip or'],
 ];
 
+// A block index of null targets a route-level field (e.g. travel_style) instead of a block.
 function rbApplyBlockTextFixes(route, fixes) {
   let changed = false;
   fixes.forEach(([id, i, from, to, field = 'notes']) => {
-    const blk = route.id === id && (route.blocks || [])[i];
+    const blk = route.id === id && (i === null ? route : (route.blocks || [])[i]);
     if (blk && (blk[field] || '').includes(from)) { blk[field] = blk[field].replace(from, to); changed = true; }
   });
   return changed;
@@ -28834,5 +29185,36 @@ function rbMigrateBatch56RouteFixes() {
   localStorage.setItem(RB_MIGRATE_FLAG_2026_10_BATCH56_ROUTE_FIXES, '1');
   let touched = false;
   rbRoutes.forEach(r => { if (rbFixBatch56RouteTexts(r)) touched = true; });
+  if (touched) rbSave();
+}
+
+// ---- Route-text fixes found by Phase 4 batches 7+8 (2026-10-28) ----
+// Both routes are own car, but their endings said to fly home.
+//  - Alpine Roadtrip (14 days) 🏕️: "fly home from Ljubljana" → drive home from Bled.
+//  - France Roadtrip: Paris to the Côte d'Azur (12 days) 🚗: "drop the rental off in Nice and fly
+//    back" → drive back to the Netherlands.
+const RB_BATCH78_TEXT_FIXES = [
+  ['gt_seed_alpine-roadtrip-14-days', 4, 'End of this route — fly home from Ljubljana.',
+    'End of this route — drive home from Bled (~1,150 km via Salzburg and Munich, best split over 2 days; an Austrian and a Slovenian vignette are needed anyway for the route).',
+    'transport_to_next'],
+  ['gt_seed_france-roadtrip-paris-to-the-cote-dazur-12-days', 4,
+    ' Recommended: drop the rental car off in Nice and fly back to Amsterdam rather than driving the same stretch in reverse.',
+    ' With your own car you drive back: ~1,200 km, best split over 2 days; a return via Grenoble and the Route Napoléon avoids repeating the same stretch.'],
+  ['gt_seed_france-roadtrip-paris-to-the-cote-dazur-12-days', 4,
+    'End of this route — drop the rental car off in Nice and fly back to Amsterdam.',
+    'End of this route — drive back to the Netherlands (~1,200 km, best split over 2 days).', 'transport_to_next'],
+  ['gt_seed_france-roadtrip-paris-to-the-cote-dazur-12-days', null,
+    "; drop the rental off in Nice and fly back.", ', and the same car back home.', 'travel_style'],
+];
+
+function rbFixBatch78RouteTexts(route) {
+  return rbApplyBlockTextFixes(route, RB_BATCH78_TEXT_FIXES);
+}
+
+function rbMigrateBatch78RouteFixes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_10_BATCH78_ROUTE_FIXES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_10_BATCH78_ROUTE_FIXES, '1');
+  let touched = false;
+  rbRoutes.forEach(r => { if (rbFixBatch78RouteTexts(r)) touched = true; });
   if (touched) rbSave();
 }

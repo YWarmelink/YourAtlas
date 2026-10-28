@@ -1,0 +1,5 @@
+airport_code,city,country_code,direction,eur_one_way,airline_or_routing,source,date_checked,confidence,notes
+NCE,Nice,FR,out,110,easyJet/KLM/Transavia direct,WebSearch 2026-10-28 (Expedia USD 98 floor; Avionero USD 73-92; Cheapflights $35 promo ignored),2026-10-28,medium,typical above floors
+BIA,Bastia,FR,out,220,connecting (Air France/KLM via hub) or seasonal direct,WebSearch 2026-10-28 (Ebookers EUR 202 floor; Lufthansa return from 254),2026-10-28,low,
+AJA,Ajaccio,FR,back,210,1-2 stops (Air France via Paris),WebSearch 2026-10-28 (Expedia USD 243 floor; Skyscanner no direct),2026-10-28,low,
+FSC,Figari,FR,back,200,1 stop via Paris/Geneva/Basel,reuse FSC out fare (batch 2; no separate search),2026-10-28,low,est

@@ -86,3 +86,8 @@ FNC,Funchal,PT,back,120,easyJet/Transavia direct,estimate from out fare (batch 6
 AGP,Malaga,ES,back,110,KLM/easyJet/Transavia/Vueling,reuse AGP out fare (flights_from_ams.csv; batch 6),2026-10-28,medium,est
 HOR,Horta (Faial Azores),PT,back,200,SATA Horta-Lisbon + Lisbon-AMS,estimate: HOR-LIS ~EUR 90 + LIS-AMS ~EUR 105 (no through fare searched),2026-10-28,low,est
 TER,Terceira (Azores),PT,back,200,SATA via Lisbon or via Ponta Delgada,estimate: TER-LIS/PDL ~EUR 80-90 + onward to AMS (no through fare searched),2026-10-28,low,est
+NCE,Nice,FR,out,110,easyJet/KLM/Transavia direct,WebSearch 2026-10-28 (Expedia USD 98 floor; Avionero USD 73-92; Cheapflights $35 promo ignored),2026-10-28,medium,typical above floors
+BIA,Bastia,FR,out,220,connecting (Air France/KLM via hub) or seasonal direct,WebSearch 2026-10-28 (Ebookers EUR 202 floor; Lufthansa return from 254),2026-10-28,low,
+AJA,Ajaccio,FR,back,210,1-2 stops (Air France via Paris),WebSearch 2026-10-28 (Expedia USD 243 floor; Skyscanner no direct),2026-10-28,low,
+FSC,Figari,FR,back,200,1 stop via Paris/Geneva/Basel,reuse FSC out fare (batch 2; no separate search),2026-10-28,low,est
+NCE,Nice,FR,back,90,easyJet/Transavia/KLM/Air France direct,WebSearch 2026-10-28 (Expedia UK GBP 43+; Kayak USD 47; Expedia US easyJet USD 58 floors; typical higher),2026-10-28,medium,
