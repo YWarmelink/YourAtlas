@@ -346,8 +346,9 @@ function _bulkResult(res) {
 }
 
 /**
- * `blocks_bulk_update`: set lat/lng and/or the cost columns on EXISTING GrandTripBlocks rows
- * (any field in GT_EXTRA_HEADERS.blocks). Matches on (grand_trip_id, order) for the same reason
+ * `blocks_bulk_update`: set lat/lng, `budget` and/or the cost columns on EXISTING GrandTripBlocks
+ * rows (any field in GT_EXTRA_HEADERS.blocks, plus `budget`: a core column, so it's never added as
+ * an extra header, only allowed here — used by scripts/fix_style_budgets_in_sheet.js). Matches on (grand_trip_id, order) for the same reason
  * handleDestinationsBulkUpdate does — block_id isn't stable across seed runs. Values are written
  * as given, so `extras` must arrive JSON-encoded (rbBlockCostCells() in routeBuilderCore.js).
  *
@@ -361,7 +362,7 @@ function handleBlocksBulkUpdate(data) {
   const headers = _ensureHeaders(sheet, GT_EXTRA_HEADERS.blocks);
   const cTrip = headers.indexOf('grand_trip_id');
   const cOrder = headers.indexOf('order');
-  return _bulkResult(_bulkUpdateRows(sheet, headers, GT_EXTRA_HEADERS.blocks, updates,
+  return _bulkResult(_bulkUpdateRows(sheet, headers, GT_EXTRA_HEADERS.blocks.concat(['budget']), updates,
     r => String(r[cTrip]) + '|' + String(Number(r[cOrder])),
     u => String(u.grand_trip_id) + '|' + String(Number(u.block_order)),
     (u, reason) => ({ grand_trip_id: u.grand_trip_id, block_order: u.block_order, reason: reason })));

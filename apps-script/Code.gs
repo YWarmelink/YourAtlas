@@ -14,7 +14,7 @@
  *   { type: 'grand_trip_delete', grand_trip_id }
  *   { type: 'grand_trip_bulk_import', grandTrips, grandTripRegions, grandTripBlocks, grandTripDestinations }
  *   { type: 'destinations_bulk_update', updates: [{ grand_trip_id, block_order, name, notes, country_code, country, lat?, lng? }] }
- *   { type: 'blocks_bulk_update', updates: [{ grand_trip_id, block_order, lat?, lng?, <block cost fields>? }] }
+ *   { type: 'blocks_bulk_update', updates: [{ grand_trip_id, block_order, lat?, lng?, budget?, <block cost fields>? }] }
  *   { type: 'grand_trips_bulk_update', updates: [{ grand_trip_id, flight_in_cost?, flight_out_cost?, trip_costs? }] }
  */
 

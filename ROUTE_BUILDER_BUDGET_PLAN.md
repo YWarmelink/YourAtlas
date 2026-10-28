@@ -255,6 +255,12 @@ Progress:
       share, visas ×1 at every tier, backpacker flights ×1. Next: Youri reviews → `rbMigrate*()`
       (budget only, guarded on the old value) → Sheet push with OK. "keep" car-in-rate blocks drop
       later when the standalone batches move the car to an extra.
+      **Steps 1-3 done 2026-10-28** (Youri accepted the first-pass calls): `rbMigrateStyleBudgets()` +
+      `RB_STYLE_BUDGET_FIXES` (799 blocks, 353 routes, guarded on the old value); fresh-browser replay:
+      exactly those 799 budgets changed, nothing else, tiers monotonic on all 453 routes.
+      `scripts/fix_style_budgets_in_sheet.js` dry run: 799 to change, 0 skipped. Writes only the
+      `budget` cell via `blocks_bulk_update`, which needs the Apps Script redeploy that allows
+      `budget` there. Next: redeploy (Youri) → `--push` with OK → CHANGELOG.
       Original R2d text: re-run `compare_daily_rates.js` against the backpacker column. Raise
       blocks that are below backpacker level; review blocks far above Standard (safari days, Borneo,
       resorts). Youri reviews the list, then a migration + Sheet push (`budget` only, never `days`).

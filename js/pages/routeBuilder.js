@@ -272,6 +272,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // After the ids are deterministic: both look routes up by id.
   rbMigrateKupangDiliOverland();
   rbMigrateApplyRouteCosts();
+  rbMigrateStyleBudgets();
   rbRoutes = rbRoutes.filter(r => !RB_REMOVED_ROUTE_IDS.has(r.id));
 
   // Sheet as source of truth once reachable, localStorage as offline fallback — same
