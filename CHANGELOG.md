@@ -12,6 +12,29 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Full-cost budget, R2d: block budgets moved to Youri's own style (2026-10-28)**. R2c showed that
+  "My plan" sat close to Standard (median 75% of the way from backpacker), while Youri travels
+  mostly in dorms, with a private room now and then, more often in cheap countries. The new rule is
+  `rbMyStyleDailyRate()` (Core) = backpacker + 40% / 30% / 20% of the step up to standard
+  (standard < €60 / €60-100 / > €100 a day). `scripts/r2d_style_budgets.js` sorted all 1,087 blocks:
+  222 already within ±15%, 676 plain blocks to the style rate (47 of them UP), and 189 for review.
+  The review rows were 119 unique blocks; Claude's calls, accepted by Youri, are in
+  `planning/budget_r2d/decisions.json`:
+  40 keep, where the rate holds something the reference doesn't cover (a rental car, gorilla
+  permits, the Antarctica cruise, the Kinabalu package, Greenland/Vanuatu domestic flights, island
+  ferries); 2 own amounts (Ethiopia €45, Jamaica €65); 77 to the style rate. The result is 799
+  budgets in 353 routes: ground costs €703k → €554k (−21%), and the East & Southeast Asia Grand Tour 🐉
+  My plan €30,789 → **€23,945**. `days` were never touched.
+  Applied by `rbMigrateStyleBudgets()` (guarded on the old value) and pushed to the Sheet with
+  `scripts/fix_style_budgets_in_sheet.js`, which writes only the budget cell through
+  `blocks_bulk_update`; the Apps Script was redeployed to allow `budget` there. Verified live:
+  all 1,087 budgets as expected; days, cost fields and coordinates unchanged; tiers monotonic.
+  Also: place variants (Borneo, Patagonia, Galápagos, Cyclades, safari parks) now blend by the
+  share of a block's destinations; visas are ×1 at every tier and backpacker flights ×1.
+  **Still open:** rental-car routes whose text doesn't say whether the car is in the rate were
+  lowered too, so the car must come back as an extra in the standalone batches. The "keep" car
+  blocks drop once their car becomes an extra.
+
 - **Full-cost budget, R2c: "My plan" + absolute reference tiers (2026-10-28)** — the cost panel's
   tiers are now **My plan / Backpacker / Standard / Comfort** (default My plan; "Budget" renamed
   "Backpacker"). My plan = the stored amounts as-is (R2 showed they sit between backpacker and

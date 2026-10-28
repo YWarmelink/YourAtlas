@@ -244,7 +244,7 @@ Progress:
       the tier "Budget" to "Backpacker". The stored block `budget` = **backpacker level** (Youri's
       planning level). Label it as such in the UI, and document it in `RB_BLOCK_COST_FIELDS` and
       CLAUDE.md.
-    - [ ] **R2d: budgets → Youri's style** (IN PROGRESS 2026-10-28). Youri chose his own style
+    - [x] **R2d: budgets → Youri's style**: **DONE 2026-10-28, live in the Sheet and verified.** Youri chose his own style
       over "between backpacker and standard": mostly dorms, sometimes a private room, more often in
       cheap countries → `rbMyStyleDailyRate()` = backpacker + 40/30/20% of the step to standard
       (standard < €60 / €60-100 / > €100). `scripts/r2d_style_budgets.js` sorts all 1,087 blocks:
@@ -260,7 +260,9 @@ Progress:
       exactly those 799 budgets changed, nothing else, tiers monotonic on all 453 routes.
       `scripts/fix_style_budgets_in_sheet.js` dry run: 799 to change, 0 skipped. Writes only the
       `budget` cell via `blocks_bulk_update`, which needs the Apps Script redeploy that allows
-      `budget` there. Next: redeploy (Youri) → `--push` with OK → CHANGELOG.
+      `budget` there. Redeployed by Youri, pushed with his OK (799 updated, 0 unresolved), verified live.
+      **Next: the standalone route batches by family**. Each one adds the car as a `transport` extra
+      wherever the rate no longer holds it.
       Original R2d text: re-run `compare_daily_rates.js` against the backpacker column. Raise
       blocks that are below backpacker level; review blocks far above Standard (safari days, Borneo,
       resorts). Youri reviews the list, then a migration + Sheet push (`budget` only, never `days`).
