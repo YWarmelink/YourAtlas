@@ -1,0 +1,1253 @@
+{
+ "batch": 4,
+ "group": "Italy, San Marino & Malta",
+ "routes": [
+  {
+   "id": "gt_seed_sicily-9-days",
+   "name": "Sicily (9 days) 🍋",
+   "mode": "rental",
+   "carInBudgetWording": "included",
+   "carEvidence": "r are poorly served by public transport). Budget ~€110/day (rental car + fuel included). ¶ Drive to Cefalù. ¶ Cefalù (1 day). ¶ Drive to Agrigento",
+   "travel_style": "Open-jaw AMS-Palermo in, AMS-Catania out — rental car essential for the whole loop.",
+   "description": "Palermo, Cefalù, Agrigento (Valle dei Templi), the Val di Noto (Ragusa, Modica, Noto), Syracuse, and Etna/Taormina — west to south to east, no backtrack.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. The pre-existing Sicily 🌋 route covers a near-identical Palermo→Cefalù→Agrigento→Syracuse→Taormina/Etna loop over 10 days with a single Palermo entry/exit — this 9-day version additionally covers the Val di Noto (Ragusa/Modica/Noto), which the pre-existing route skips, and assumes an open-jaw Palermo-in/Catania-out flight instead of a round trip through one airport. Also distinguished from Sicily + Southern Italy (12 days) 🍊 below per the source's own framing — that route is a genuinely different, mainland-inclusive itinerary (Calabria + Matera), not just 'more Sicily days'. Not yet checked against Route Builder-level price research beyond the drop-off-fee check folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_sicily-9-days",
+    "name": "Sicily (9 days) 🍋",
+    "stops": 9,
+    "km_in_route": 560,
+    "km_from_nl": 2180,
+    "km_back_to_nl": 2300,
+    "km_by_country": {
+     "IT": 560
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 220,
+     "dailyRate": 110,
+     "carInDailyRate": true,
+     "notes": "West→south→east, no backtrack; shorten Val di Noto/Agrigento if doing this at 7 days. Palermo (2 days). Open-jaw AMS-Palermo in/AMS-Catania out recommended — direct AMS-Catania (Transavia/Ryanair/KLM, ~2h50-3h20, well served) or direct AMS-Palermo (Transavia only, ~3x/week, book early). Rental car essential (Agrigento, Val di Noto and the interior are poorly served by public transport). Budget ~€110/day (rental car + fuel included).",
+     "transport_to_next": "Drive to Cefalù.",
+     "destinations": [
+      {
+       "name": "Palermo",
+       "lat": 38.1157,
+       "lng": 13.3613
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 110,
+     "dailyRate": 110,
+     "carInDailyRate": true,
+     "notes": "Cefalù (1 day).",
+     "transport_to_next": "Drive to Agrigento.",
+     "destinations": [
+      {
+       "name": "Cefalù",
+       "lat": 38.0387,
+       "lng": 14.0231
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 110,
+     "dailyRate": 110,
+     "carInDailyRate": true,
+     "notes": "Agrigento/Valle dei Templi (1-2 days). Season: May-June or September-early October; July-August is very hot, especially in the inland stone towns (Agrigento, Val di Noto).",
+     "transport_to_next": "Drive to the Val di Noto.",
+     "destinations": [
+      {
+       "name": "Agrigento — Valle dei Templi",
+       "lat": 37.2903,
+       "lng": 13.5928
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 220,
+     "dailyRate": 110,
+     "carInDailyRate": true,
+     "notes": "Val di Noto — Ragusa/Modica/Noto (1-2 days).",
+     "transport_to_next": "Drive to Syracuse.",
+     "destinations": [
+      {
+       "name": "Ragusa",
+       "lat": 36.9269,
+       "lng": 14.7255
+      },
+      {
+       "name": "Modica",
+       "lat": 36.8467,
+       "lng": 14.7692
+      },
+      {
+       "name": "Noto",
+       "lat": 36.8917,
+       "lng": 15.0703
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 110,
+     "dailyRate": 110,
+     "carInDailyRate": true,
+     "notes": "Syracuse (1-2 days).",
+     "transport_to_next": "Drive to Etna/Taormina.",
+     "destinations": [
+      {
+       "name": "Syracuse",
+       "lat": 37.0755,
+       "lng": 15.2866
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 220,
+     "dailyRate": 110,
+     "carInDailyRate": true,
+     "notes": "Etna/Taormina (2 days), closing the loop at Catania. ⚠️ A one-off rental-car drop-off fee applies for Palermo→Catania; Etna's summit above a certain altitude is only accessible with a guide and depends on current volcanic activity — check this close to your travel date, it changes.",
+     "transport_to_next": "End of this route — direct return flight Catania to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Mount Etna",
+       "lat": 37.751,
+       "lng": 14.9934
+      },
+      {
+       "name": "Taormina",
+       "lat": 37.8516,
+       "lng": 15.2853
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_sicily-aeolian-islands-3-4-days",
+   "name": "Sicily + Aeolian Islands (3-4 days) 🏝️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Ferry-hopping between the Aeolian Islands from Milazzo — no rental car needed once on the islands, but one is useful for the Catania-Milazzo transfer.",
+   "description": "Milazzo, Lipari, Vulcano and its mud baths, and a guided evening crater trek on Stromboli.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14c/21 (Islands: Sicily + Sardinia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. No pre-existing Route Builder route reaches the Aeolian Islands at all — the existing Sicily-based routes (Sicily 🌋, Sicily (9 days) 🍋, Sicily + Southern Italy 🍊, Sicily + Malta 🌋, Malta + Gozo + Sicily 🐚) all stay on mainland Sicily. Genuinely new ground for Route Builder, not a granular slice of an existing route. Not yet checked against Route Builder-level price research beyond the ferry/permit/volcanic-safety notes folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_sicily-aeolian-islands-3-4-days",
+    "name": "Sicily + Aeolian Islands (3-4 days) 🏝️",
+    "stops": 4,
+    "km_in_route": 120,
+    "km_from_nl": 2250,
+    "km_back_to_nl": 2170,
+    "km_by_country": {
+     "IT": 120
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 70,
+     "dailyRate": 70,
+     "carInDailyRate": false,
+     "notes": "Entry: fly into Catania (direct AMS-Catania, Transavia/Ryanair/KLM, ~2h50-3h20) then drive to the ferry port of Milazzo for the crossing to the Aeolian Islands. Lipari (1 day). Budget ~€65-85/day average across the route — the ferry costs and the guided Stromboli tour push this above the other short Sicily/Sardinia trips in this batch (used here at ~€70-85/day). ⚠️ Web check (2026-08): no cars or scooters may be taken on the ferry to the islands May-October for non-residents, and there's no Cinque-Terre-style permit/cap system on the ferries themselves.",
+     "transport_to_next": "Short inter-island ferry hop to Vulcano.",
+     "destinations": [
+      {
+       "name": "Milazzo (ferry port)",
+       "lat": 38.2205,
+       "lng": 15.2406
+      },
+      {
+       "name": "Lipari",
+       "lat": 38.4667,
+       "lng": 14.95
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 75,
+     "dailyRate": 75,
+     "carInDailyRate": false,
+     "notes": "Vulcano and its mud baths (1 day). Season: May-September; the smaller inter-island ferries to Alicudi, Filicudi and Panarea run a limited or no service November-March, so this route only really works in the warmer half of the year.",
+     "transport_to_next": "Ferry on to Stromboli.",
+     "destinations": [
+      {
+       "name": "Vulcano (mud baths)",
+       "lat": 38.4048,
+       "lng": 14.9622
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Stromboli, including its evening crater trek (2 days, allowing for the guided hike plus a buffer for sailing/weather). ⚠️⚠️ Web check (2026-08): the crater hike is only permitted with a licensed guide (e.g. Magmatrek) — this is not optional. Current alert level is yellow (2/4), and the exclusion zone around the crater changes with ongoing activity — check daily via Protezione Civile rather than relying on a fixed map. This sits inside the same volcanic-risk note that Italy's official (green) travel advisory calls out by name for Etna and Stromboli specifically — check Protezione Civile before travel, not just the general country advisory.",
+     "transport_to_next": "End of this route — ferry back to Milazzo, then return flight from Catania to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Stromboli",
+       "lat": 38.7891,
+       "lng": 15.2133
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_sicily-malta-9-days",
+   "name": "Sicily + Malta (9 days) 🌋",
+   "mode": "rental",
+   "carInBudgetWording": "included",
+   "carEvidence": "ed to get between Sicily's smaller towns. Budget ~€150/day (rental car and fuel included). Season: April-June or September-early November for Sicily",
+   "travel_style": "Rental car in Sicily throughout; a direct Ryanair flight (or the Virtu Ferries ferry) across to Malta.",
+   "description": "A Sicily-heavy loop (Catania, Etna, Taormina, Syracuse, Val di Noto, Agrigento, optionally Palermo) crossing to a shorter Malta stay (Valletta, the Three Cities, the southern temples, Marsaxlokk).",
+   "notes": "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Confirmed distinction from Malta + Gozo + Sicily (9 days) 🐚 below: this one keeps Sicily's full itinerary (including Agrigento/Palermo) and skips Gozo entirely; the other shortens Sicily to make room for Gozo instead — both are kept deliberately different rather than reading as near-duplicates. Not yet checked against Route Builder-level price research beyond the Ryanair/ferry crossing notes folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_sicily-malta-9-days",
+    "name": "Sicily + Malta (9 days) 🌋",
+    "stops": 11,
+    "km_in_route": 890,
+    "km_from_nl": 2340,
+    "km_back_to_nl": 2540,
+    "km_by_country": {
+     "IT": 530,
+     "MT": 360
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 7,
+     "budget": 1050,
+     "dailyRate": 150,
+     "carInDailyRate": true,
+     "notes": "Sicily-heavy, deliberately no Gozo (see Malta + Gozo + Sicily (9 days) 🐚 below for that distinction): Catania → Etna → Taormina → Syracuse/Ortigia → Val di Noto (Modica, Ragusa) → Agrigento (Valle dei Templi) → optionally Palermo → crossing to Malta. Rental car needed to get between Sicily's smaller towns. Budget ~€150/day (rental car and fuel included). Season: April-June or September-early November for Sicily (July-August hot/busy/expensive); overlaps well with Malta's own good season.",
+     "transport_to_next": "Direct Ryanair flight Malta-Catania (~50 min, from ~€18-35, up to 18x/week) — much simpler than the ferry (Virtu Ferries Pozzallo-Valletta, ~1h45, year-round, up to 3x/day, €37-111, as an alternative).",
+     "destinations": [
+      {
+       "name": "Catania",
+       "lat": 37.5079,
+       "lng": 15.083
+      },
+      {
+       "name": "Mount Etna",
+       "lat": 37.751,
+       "lng": 14.9934
+      },
+      {
+       "name": "Taormina",
+       "lat": 37.8527,
+       "lng": 15.2853
+      },
+      {
+       "name": "Syracuse / Ortigia",
+       "lat": 37.0587,
+       "lng": 15.2874
+      },
+      {
+       "name": "Modica",
+       "lat": 36.8477,
+       "lng": 14.7546
+      },
+      {
+       "name": "Ragusa",
+       "lat": 36.9256,
+       "lng": 14.7297
+      },
+      {
+       "name": "Agrigento (Valle dei Templi)",
+       "lat": 37.2903,
+       "lng": 13.5865
+      },
+      {
+       "name": "Palermo (optional)",
+       "lat": 38.1157,
+       "lng": 13.3613
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "MT",
+     "country": "Malta",
+     "days": 2,
+     "budget": 122,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "2-3 days on Malta: Valletta, the Three Cities, the southern coast temples, Marsaxlokk. Budget ~€100-110/day.",
+     "transport_to_next": "End of this route — direct flight home from Malta.",
+     "destinations": [
+      {
+       "name": "Valletta",
+       "lat": 35.8989,
+       "lng": 14.5146
+      },
+      {
+       "name": "Three Cities",
+       "lat": 35.8886,
+       "lng": 14.5228
+      },
+      {
+       "name": "Marsaxlokk",
+       "lat": 35.8419,
+       "lng": 14.5453
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_sicily-southern-italy-12-days",
+   "name": "Sicily + Southern Italy (12 days) 🍊",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Open-jaw AMS-Naples in, AMS-Palermo or Catania out — rental car for the whole trip, including the Villa San Giovanni-Messina car ferry.",
+   "description": "Naples/Salerno, Matera, Tropea/the Calabrian coast, a ferry to Sicily, Taormina/Etna, Syracuse/Val di Noto, Agrigento, and Palermo/Cefalù.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. The pre-existing Sicily 🌋 route and this batch's own Sicily (9 days) 🍋 route above both cover the same Sicilian loop (Palermo→Cefalù→Agrigento→Syracuse→Taormina/Etna) — this route's distinguishing angle, stated explicitly in the source, is keeping Calabria and Matera on the mainland rather than adding more Sicily time, via the Villa San Giovanni-Messina car ferry. Not yet checked against Route Builder-level price research beyond the bridge-construction/ferry checks folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_sicily-southern-italy-12-days",
+    "name": "Sicily + Southern Italy (12 days) 🍊",
+    "stops": 12,
+    "km_in_route": 1190,
+    "km_from_nl": 1910,
+    "km_back_to_nl": 2220,
+    "km_by_country": {
+     "IT": 1190
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 73,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Only genuinely distinct from Sicily-alone by keeping Calabria+Matera on the mainland, not just 'more Sicily days'. Naples/Salerno (1 day). Open-jaw AMS-Naples in, AMS-Palermo or Catania out (both direct). Rental car for the whole trip. Budget ~€130/day.",
+     "transport_to_next": "Drive to Matera.",
+     "destinations": [
+      {
+       "name": "Naples/Salerno",
+       "lat": 40.6824,
+       "lng": 14.7681
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Matera (2 days).",
+     "transport_to_next": "Drive to Tropea/the Calabrian coast.",
+     "destinations": [
+      {
+       "name": "Matera",
+       "lat": 40.6664,
+       "lng": 16.6043
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Tropea/Calabrian coast (2 days). Season: May-June or September (Calabria and Sicily both very hot July-August; Matera is also hot in the daytime, though its cave dwellings stay cooler).",
+     "transport_to_next": "Ferry Villa San Giovanni↔Messina (~20 min, 2-3x/hour, 24/7, no reservation needed, pay/book on arrival).",
+     "destinations": [
+      {
+       "name": "Tropea",
+       "lat": 38.6759,
+       "lng": 15.8988
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Taormina/Etna (2 days). ⚠️ Construction on the Strait of Messina bridge starts in 2026 (road/rail work from May 2026, tunnels/interchanges from September 2026) — shouldn't affect the ferry crossing itself, but expect possible construction traffic/diversions around Villa San Giovanni and Messina — check current roadworks before driving this route in 2026.",
+     "transport_to_next": "Drive to Syracuse/the Val di Noto.",
+     "destinations": [
+      {
+       "name": "Villa San Giovanni (ferry crossing)",
+       "lat": 38.2167,
+       "lng": 15.6333
+      },
+      {
+       "name": "Messina (ferry crossing)",
+       "lat": 38.1938,
+       "lng": 15.554
+      },
+      {
+       "name": "Taormina",
+       "lat": 37.8516,
+       "lng": 15.2853
+      },
+      {
+       "name": "Etna",
+       "lat": 37.751,
+       "lng": 14.9934
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Syracuse/Val di Noto (2 days).",
+     "transport_to_next": "Drive to Agrigento.",
+     "destinations": [
+      {
+       "name": "Syracuse",
+       "lat": 37.0755,
+       "lng": 15.2866
+      },
+      {
+       "name": "Noto (Val di Noto)",
+       "lat": 36.8917,
+       "lng": 15.0703
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 73,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Agrigento (1-2 days).",
+     "transport_to_next": "Drive to Palermo/Cefalù.",
+     "destinations": [
+      {
+       "name": "Agrigento",
+       "lat": 37.2903,
+       "lng": 13.5928
+      }
+     ]
+    },
+    {
+     "index": 6,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Palermo/Cefalù (2 days) to close the trip.",
+     "transport_to_next": "End of this route — direct return flight from Palermo or Catania to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Palermo",
+       "lat": 38.1157,
+       "lng": 13.3613
+      },
+      {
+       "name": "Cefalù",
+       "lat": 38.0387,
+       "lng": 14.0231
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_sicily-east-4-5-days",
+   "name": "Sicily East (4-5 days) 🏝️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car, staying entirely on the east coast — Catania, Taormina/Etna, Syracuse/Ortigia, no crossing to the west of the island.",
+   "description": "Catania, Taormina and Etna, and Syracuse/Ortigia — a compact east-coast-only Sicily trip.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14c/21 (Islands: Sicily + Sardinia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately narrower than the pre-existing Sicily 🌋 (10d, Palermo-based, full west-to-east loop), Sicily (9 days) 🍋 (9d, open-jaw Palermo-Catania loop incl. the Val di Noto) and the Sicily + Malta/Malta + Gozo + Sicily routes (which also start from Catania but continue to Malta) — this one stays on the east coast only, no Palermo/Agrigento/west side, matching EUROPA_TRIP_IDEAS.md's own framing that these 7 items are more granular regional slices, not a repeat of the full-island content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_sicily-east-4-5-days",
+    "name": "Sicily East (4-5 days) 🏝️",
+    "stops": 4,
+    "km_in_route": 190,
+    "km_from_nl": 2340,
+    "km_back_to_nl": 2400,
+    "km_by_country": {
+     "IT": 190
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flight Amsterdam-Catania (Transavia/Ryanair/KLM, ~2h50-3h20, well served). Catania itself (2 days) as the base for this east-coast-only loop. Budget ~€55-70/day average across the route (used here at ~€60/day). Season: April-June or September-October; high summer is very hot.",
+     "transport_to_next": "Short drive up the coast to Taormina, with Etna inland.",
+     "destinations": [
+      {
+       "name": "Catania",
+       "lat": 37.5079,
+       "lng": 15.083
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Taormina and Etna (2 days). ⚠️ Web check (2026-08): above a certain altitude, Etna's crater zone is only reachable by cable car plus a mandatory licensed guide (roughly the 2,900m+ zone), and current volcanic activity can close specific trails or the cable car itself — check just before going. Catania airport has occasionally had to close temporarily during an active eruption, so build a little slack around this leg if flying in/out of Catania.",
+     "transport_to_next": "Drive south down the coast to Syracuse.",
+     "destinations": [
+      {
+       "name": "Taormina",
+       "lat": 37.8516,
+       "lng": 15.2853
+      },
+      {
+       "name": "Mount Etna",
+       "lat": 37.751,
+       "lng": 14.9934
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 73,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Syracuse and the Ortigia old town (1-2 days) to close the loop.",
+     "transport_to_next": "End of this route — return flight from Catania to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Syracuse / Ortigia",
+       "lat": 37.0755,
+       "lng": 15.2866
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_sicily-roadtrip-7-10-days",
+   "name": "Sicily Roadtrip (7-10 days) 🏝️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Open-jaw AMS-Palermo in, AMS-Catania out — rental car essential for the whole loop.",
+   "description": "A full Sicily loop: Palermo, Trapani/Erice/Segesta, Agrigento (Valle dei Templi), Etna/Taormina, and Syracuse/Ortigia.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14c/21 (Islands: Sicily + Sardinia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. EUROPA_TRIP_IDEAS.md also has this as a separate item; Route Builder already has a very similar 9-day loop in 'Sicily (9 days) 🍋' — built anyway per the source list, flagged here for review, not merged. The overlap is real: both run a roughly 9-day open-jaw Palermo-to-Catania loop touching almost the same stops (Palermo, Trapani/Erice/Segesta or Cefalù, Agrigento, Etna/Taormina, Syracuse). The main difference is this route swaps the existing route's Cefalù and Val di Noto (Ragusa/Modica/Noto) stops for Trapani/Erice/Segesta on the west side instead — same rough shape and length, different specific stops, hence the explicit flag rather than a silent duplicate. Deliberately given a distinct function name rather than reusing rbBuildSicilyNineDaysRoute, per this project's established collision-resolution pattern (see Svalbard (Longyearbyen) (6 days) 🌌 vs. the pre-existing Svalbard 🐻‍❄️ for the precedent). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_sicily-roadtrip-7-10-days",
+    "name": "Sicily Roadtrip (7-10 days) 🏝️",
+    "stops": 8,
+    "km_in_route": 580,
+    "km_from_nl": 2180,
+    "km_back_to_nl": 2400,
+    "km_by_country": {
+     "IT": 580
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Entry: open-jaw AMS-Palermo in, AMS-Catania out (Palermo direct via Transavia only, ~3x/week; Catania direct and well served via Transavia/Ryanair/KLM). Palermo (2 days) to start. Rental car essential for the whole loop. Budget ~€55-75/day average across the route (used here at ~€55-70/day depending on the leg).",
+     "transport_to_next": "Drive west to Trapani/Erice/Segesta.",
+     "destinations": [
+      {
+       "name": "Palermo",
+       "lat": 38.1157,
+       "lng": 13.3613
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Trapani, Erice and a Segesta day trip (2 days).",
+     "transport_to_next": "Drive south to Agrigento.",
+     "destinations": [
+      {
+       "name": "Trapani",
+       "lat": 38.0176,
+       "lng": 12.5365
+      },
+      {
+       "name": "Erice",
+       "lat": 38.0387,
+       "lng": 12.5865
+      },
+      {
+       "name": "Segesta",
+       "lat": 37.9411,
+       "lng": 12.8375
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 73,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Agrigento/Valle dei Templi (1 day). ⚠️ Web check (2026-08): book Valle dei Templi tickets online ahead of time — it gets busy.",
+     "transport_to_next": "Drive east to Etna/Taormina.",
+     "destinations": [
+      {
+       "name": "Agrigento — Valle dei Templi",
+       "lat": 37.2903,
+       "lng": 13.5928
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 140,
+     "dailyRate": 70,
+     "carInDailyRate": false,
+     "notes": "Etna/Taormina (2 days). ⚠️ Web check (2026-08): Etna's crater zone above a certain altitude requires a licensed guide — the same access rule as on the Sicily East route above.",
+     "transport_to_next": "Drive south to Syracuse.",
+     "destinations": [
+      {
+       "name": "Mount Etna",
+       "lat": 37.751,
+       "lng": 14.9934
+      },
+      {
+       "name": "Taormina",
+       "lat": 37.8516,
+       "lng": 15.2853
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 130,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "Syracuse and the Ortigia old town (2 days) to close the loop.",
+     "transport_to_next": "End of this route — return flight from Catania to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Syracuse / Ortigia",
+       "lat": 37.0755,
+       "lng": 15.2866
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_sicily-west-4-5-days",
+   "name": "Sicily West (4-5 days) 🏝️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car, staying entirely on Sicily's west side — Palermo/Monreale, Trapani/Erice, Segesta.",
+   "description": "Palermo and Monreale, Trapani and Erice, and a Segesta day trip — a compact west-Sicily-only trip.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14c/21 (Islands: Sicily + Sardinia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Distinct from the pre-existing Sicily 🌋 and Sicily (9 days) 🍋 routes (both of which pass through Palermo but continue on to Agrigento/Syracuse/Taormina/Etna) — this one is deliberately confined to the west side only (Palermo/Monreale, Trapani/Erice, Segesta), per EUROPA_TRIP_IDEAS.md's own framing that these 7 items are more granular regional slices. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_sicily-west-4-5-days",
+    "name": "Sicily West (4-5 days) 🏝️",
+    "stops": 5,
+    "km_in_route": 130,
+    "km_from_nl": 2180,
+    "km_back_to_nl": 2190,
+    "km_by_country": {
+     "IT": 130
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flight Amsterdam-Palermo (Transavia only, roughly 3x/week — book early). Palermo plus a day trip to Monreale's cathedral (2 days). Budget ~€50-65/day average across the route, cheaper than the east-coast/Aeolian legs (used here at ~€55/day).",
+     "transport_to_next": "Drive west to Trapani/Erice.",
+     "destinations": [
+      {
+       "name": "Palermo",
+       "lat": 38.1157,
+       "lng": 13.3613
+      },
+      {
+       "name": "Monreale",
+       "lat": 38.0819,
+       "lng": 13.2896
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Trapani and the hilltop town of Erice (2 days). Season: April-June or September-October.",
+     "transport_to_next": "Short drive to Segesta for a day trip, then back toward Palermo.",
+     "destinations": [
+      {
+       "name": "Trapani",
+       "lat": 38.0176,
+       "lng": 12.5365
+      },
+      {
+       "name": "Erice",
+       "lat": 38.0387,
+       "lng": 12.5865
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 73,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Segesta as a day trip (its Doric temple and theater). ⚠️ Web check (2026-08): no special permits needed for this side of the island, but Segesta's and Erice's opening hours are seasonal and noticeably shorter outside the main season — check the current 2026 hours before planning the day.",
+     "transport_to_next": "End of this route — return flight from Palermo to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Segesta (Doric temple)",
+       "lat": 37.9411,
+       "lng": 12.8375
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_tuscany-6-days",
+   "name": "Tuscany (6 days) 🍇",
+   "mode": "own_car",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Direct flight Amsterdam-Florence, rental car for the whole week — Florence hub, then Siena, the Val d'Orcia loop, and San Gimignano/Volterra.",
+   "description": "Florence, Siena, the Val d'Orcia loop (Montalcino, Pienza, Montepulciano), and San Gimignano and Volterra.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. A slower, deeper version of the Tuscany day trip inside Florence + Tuscany (4 days) 🎨 above — this route gives Siena, the Val d'Orcia and San Gimignano/Volterra their own overnight stays instead of a single rushed day, and adds Val d'Orcia and Volterra which the shorter trip skips. Also revisited at greater length by Rome + Tuscany (9 days) 🍝 below, which connects much of this same Tuscany ground to a Rome leg. Not yet checked against Route Builder-level price research beyond the parking checks folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_tuscany-6-days",
+    "name": "Tuscany (6 days) 🍇",
+    "stops": 7,
+    "km_in_route": 260,
+    "km_from_nl": 1340,
+    "km_back_to_nl": 1370,
+    "km_by_country": {
+     "IT": 260
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Florence as a hub (1-2 nights). Direct AMS-FLR (~2h), rental car in Florence for the whole week — self-driving from the Netherlands (~12h/1384km) is too much for this trip length. Budget ~€125/day (agriturismo/B&B for 2, €90-130/night ≈€45-65pp, plus rental car €35-45/day/2 people, plus food €40-50).",
+     "transport_to_next": "Drive to Siena (~1h15).",
+     "destinations": [
+      {
+       "name": "Florence (hub)",
+       "lat": 43.7696,
+       "lng": 11.2558
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 73,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Siena (1 night). Same budget/rental-car logic as the Florence leg above.",
+     "transport_to_next": "Drive into the Val d'Orcia loop.",
+     "destinations": [
+      {
+       "name": "Siena",
+       "lat": 43.3188,
+       "lng": 11.3308
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Val d'Orcia loop (2 nights, base Pienza/Montalcino, wine country): Montalcino, Pienza, Montepulciano. Season: April-May or September-October; avoid July-August (heat); September is wine-harvest season — beautiful but busier/pricier around Chianti/Montalcino.",
+     "transport_to_next": "Drive to San Gimignano/Volterra.",
+     "destinations": [
+      {
+       "name": "Montalcino (base, wine country)",
+       "lat": 43.0567,
+       "lng": 11.49
+      },
+      {
+       "name": "Pienza",
+       "lat": 43.0778,
+       "lng": 11.6789
+      },
+      {
+       "name": "Montepulciano",
+       "lat": 43.0938,
+       "lng": 11.7864
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 73,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "San Gimignano and Volterra (1-2 nights), then back to Florence. Deliberately no Cinque Terre on this route — different region (Liguria), a full day of driving there and back, not worth it. ⚠️ Park outside the walls at San Gimignano/Volterra — both are pedestrian zones inside.",
+     "transport_to_next": "End of this route — drive back to Florence and fly home, or continue self-driving back to the Netherlands.",
+     "destinations": [
+      {
+       "name": "San Gimignano",
+       "lat": 43.4674,
+       "lng": 11.0431
+      },
+      {
+       "name": "Volterra",
+       "lat": 43.4013,
+       "lng": 10.8608
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_vatican-city-day-visit-within-a-rome-stay-1-day",
+   "name": "Vatican City Day Visit within a Rome Stay (1 day) 🕊️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "On foot/public transport within Rome — no car needed.",
+   "description": "A single Vatican-focused day (St. Peter's Basilica, the Vatican Museums and the Sistine Chapel) as a component of a wider Rome stay, not a standalone trip.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Judgment call: coded IT rather than VA, for the same reason as Rome + Vatican City In-Depth (4 days) ⛪ above — Vatican City itself has no lodging/airport, so this always nests inside an Italy-coded Rome stay. Kept as its own route (rather than folded into an existing Rome route) because TRIP_DATABASE.csv tracks it as a distinct trip idea (a single standalone Vatican day, without the Necropolis/dome-climb/Gardens extras the in-depth version above adds) — per this project's overlap-is-fine convention. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_vatican-city-day-visit-within-a-rome-stay-1-day",
+    "name": "Vatican City Day Visit within a Rome Stay (1 day) 🕊️",
+    "stops": 3,
+    "km_in_route": 0,
+    "km_from_nl": 1640,
+    "km_back_to_nl": 1640,
+    "km_by_country": {
+     "IT": 0
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 91,
+     "dailyRate": 91,
+     "carInDailyRate": false,
+     "notes": "Confirmed, not disputed: Vatican City has no hotels or airport of its own (a ~44-hectare enclave inside Rome) — every Vatican visit is logistically always a day trip within a Rome stay, however it's labelled. So this stays a day-visit component of a Rome trip rather than a standalone destination card — see Rome + Vatican City In-Depth (4 days) ⛪ above for the concrete way to fill that day. Budget ~€130-150/day, the same general Rome rate; a Vatican-focused day without the extra Scavi/dome-climb/Gardens add-ons doesn't carry the extra ~€60-90 that route calls out.",
+     "transport_to_next": "End of this day — back into the wider Rome stay it's part of.",
+     "destinations": [
+      {
+       "name": "St. Peter's Basilica",
+       "lat": 41.9022,
+       "lng": 12.4533
+      },
+      {
+       "name": "Vatican Museums",
+       "lat": 41.9065,
+       "lng": 12.4536
+      },
+      {
+       "name": "Sistine Chapel",
+       "lat": 41.9065,
+       "lng": 12.4536
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_venice-dolomites-5-days",
+   "name": "Venice + Dolomites (5 days) 🎭",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Direct flight Amsterdam-Venice, rental car for the Dolomites leg, then back to Venice for the flight home.",
+   "description": "Venice (San Marco, Rialto, Murano/Burano) and Cortina d'Ampezzo or Val Gardena (Tre Cime, Lago di Braies, Cinque Torri).",
+   "notes": "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. The pre-existing Dolomites & North Italy 🚡 route also combines Venice with the Dolomites (Tre Cime, Lago di Braies, Seceda, Val Gardena), but only as the entry/exit legs of a much broader 19-day fly-into-Venice loop that continues on to Milan, Turin, the Cinque Terre, Tuscany and San Marino — this standalone route is a tight 5-day Venice+Dolomites-only trip with none of that extra ground. Deliberately shallower than the standalone Dolomites (6 days) ⛰️ route below, which the source explicitly frames as going deeper into the valleys (Alta Badia, Pusteria) than this shorter combo trip can. Not yet checked against Route Builder-level price research beyond the tax/ticket checks folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_venice-dolomites-5-days",
+    "name": "Venice + Dolomites (5 days) 🎭",
+    "stops": 8,
+    "km_in_route": 230,
+    "km_from_nl": 1180,
+    "km_back_to_nl": 1030,
+    "km_by_country": {
+     "IT": 230
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 182,
+     "dailyRate": 91,
+     "carInDailyRate": false,
+     "notes": "1-2 nights in Venice: San Marco, the Rialto, a half day on Murano/Burano. Direct AMS-VCE (KLM/easyJet, ~2h, 110 flights/week) — Marco Polo airport has no direct train, take a bus/taxi to Mestre then the train, or the Alilaguna boat straight into the city. Budget ~€140/day in Venice. Season: early June or September — a compromise between open cable cars (which only open late May/June) and fewer Venice crowds. ⚠️ Venice's day-tripper tax is back for 2026: €5pp if paid ≥4 days ahead, €10 if paid late/on the spot, on ~60 days between 3 April-26 July 2026 (Fri-Sun, 8:30-16:00) — waived by an overnight stay within the Venice municipality (including Mestre/Lido), so normally not applicable on this trip, but check when booking.",
+     "transport_to_next": "Rental car, ~150km/2h15 to Cortina d'Ampezzo or Val Gardena.",
+     "destinations": [
+      {
+       "name": "Piazza San Marco",
+       "lat": 45.4342,
+       "lng": 12.3388
+      },
+      {
+       "name": "Rialto Bridge",
+       "lat": 45.438,
+       "lng": 12.3358
+      },
+      {
+       "name": "Murano (half day)",
+       "lat": 45.4587,
+       "lng": 12.3538
+      },
+      {
+       "name": "Burano (half day)",
+       "lat": 45.4854,
+       "lng": 12.4166
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 3,
+     "budget": 219,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "2-3 nights in the Dolomites (Cortina d'Ampezzo or Val Gardena): the Tre Cime area, Lago di Braies, Cinque Torri — then back to Venice for the flight home. Budget ~€105/day in the Dolomites. Dolomites cable cars are seasonal (late May-early October, varies per lift) — check the specific lift. Book Tre Cime/Lago di Braies parking ahead in season. ⚠️ Dolomites-Venice cable cars aside, this leg's own cable cars won't be open before late May.",
+     "transport_to_next": "End of this route — drive back to Venice (VCE) for the direct return flight to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Cortina d'Ampezzo or Val Gardena (base)",
+       "lat": 46.5369,
+       "lng": 12.1357
+      },
+      {
+       "name": "Tre Cime di Lavaredo area",
+       "lat": 46.6198,
+       "lng": 12.3032
+      },
+      {
+       "name": "Lago di Braies",
+       "lat": 46.6958,
+       "lng": 12.0858
+      },
+      {
+       "name": "Cinque Torri",
+       "lat": 46.5333,
+       "lng": 12.0333
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_malta-4-days",
+   "name": "Malta (4 days) 🌅",
+   "mode": "rental",
+   "carInBudgetWording": "excluded",
+   "carEvidence": "Direct flight from the Netherlands, rental car or bus — Gozo deliberately not included at this length. ¶ Valletta and the Three Cities, Mdina/Raba",
+   "travel_style": "Direct flight from the Netherlands, rental car or bus — Gozo deliberately not included at this length.",
+   "description": "Valletta and the Three Cities, Mdina/Rabat, Marsaxlokk, the Hagar Qim/Mnajdra temples and the Blue Grotto — a mainland-only, city/history-focused Malta trip.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Distinct from the pre-existing Malta ⚔️ route (a Mediterranean Civilizations Expedition 🏛️ split-off at 5 days/€375, pairing Valletta/Mdina with Gozo and the Hypogeum) — this newer version deliberately keeps to the mainland only and skips Gozo at this length, matching Malta + Gozo (6 days) ⛵ below for the version that adds it. Per this project's overlap-is-fine convention, both continue to exist unchanged. Not yet checked against Route Builder-level price research beyond the Hypogeum booking note folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_malta-4-days",
+    "name": "Malta (4 days) 🌅",
+    "stops": 5,
+    "km_in_route": 50,
+    "km_from_nl": 2530,
+    "km_back_to_nl": 2540,
+    "km_by_country": {
+     "MT": 50
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "MT",
+     "country": "Malta",
+     "days": 4,
+     "budget": 244,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Valletta plus the Three Cities (Vittoriosa/Senglea/Cospicua) → Mdina/Rabat → Marsaxlokk (fishing village) → the Hagar Qim/Mnajdra temples (south) → the Blue Grotto. Gozo deliberately skipped — not enough time to do it justice alongside the mainland in under 4 days. Direct flights from the Netherlands: Eindhoven-Malta (Ryanair/Wizz Air/Transavia/KM Malta Airlines, ~2h50) and Amsterdam-Malta (KM Malta Airlines/easyJet, ~3h10) — a well-served route, no connection needed. Budget ~€100-110/day. Season: any shoulder season works well for this city/history-focused trip, even winter is fine (few boat-dependent activities). ⚠️ The Hal Saflieni Hypogeum (a prehistoric must-see) has no walk-in access — book tickets 2-3 months ahead, especially May-September; book this at the same time as the flight if it's on the list.",
+     "transport_to_next": "End of this route — direct flight home from Malta.",
+     "destinations": [
+      {
+       "name": "Valletta & the Three Cities (Vittoriosa/Senglea/Cospicua)",
+       "lat": 35.8989,
+       "lng": 14.5146
+      },
+      {
+       "name": "Mdina / Rabat",
+       "lat": 35.8869,
+       "lng": 14.4033
+      },
+      {
+       "name": "Marsaxlokk",
+       "lat": 35.8419,
+       "lng": 14.5453
+      },
+      {
+       "name": "Hagar Qim / Mnajdra temples",
+       "lat": 35.8256,
+       "lng": 14.4408
+      },
+      {
+       "name": "Blue Grotto",
+       "lat": 35.8236,
+       "lng": 14.4536
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_malta-gozo-6-days",
+   "name": "Malta + Gozo (6 days) ⛵",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Direct flight from the Netherlands, rental car on the mainland, the Cirkewwa-Mgarr ferry to/from Gozo.",
+   "description": "Mainland Malta (Valletta, Mdina, the southern temples, Marsaxlokk) plus Gozo (the Cittadella, Ramla Bay, Dwejra, Xlendi) via the Cirkewwa-Mgarr ferry.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. The Gozo-inclusive counterpart to Malta (4 days) 🌅 above, which skips Gozo deliberately for time. Kept as a single Malta-coded block (rather than splitting mainland/Gozo into two blocks) since both are the same country and the ferry crossing is short/frequent, unlike this batch's genuine multi-country routes. ⚠️ Flag for a human: the Blue Lagoon/Comino timed-slot booking system noted above is a relatively new (2025) rule worth re-verifying closer to any actual booking. Not yet checked against Route Builder-level price research beyond that note — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_malta-gozo-6-days",
+    "name": "Malta + Gozo (6 days) ⛵",
+    "stops": 8,
+    "km_in_route": 100,
+    "km_from_nl": 2530,
+    "km_back_to_nl": 2500,
+    "km_by_country": {
+     "MT": 100
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "MT",
+     "country": "Malta",
+     "days": 6,
+     "budget": 366,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "3 days on mainland Malta (Valletta, Mdina, the southern coast temples, Marsaxlokk) plus 2-3 days on Gozo (the Cittadella in Victoria/Rabat, Ramla Bay, Dwejra/the former Azure Window site, Xlendi) via the Cirkewwa-Mgarr ferry (24/7, year-round, no booking needed). Budget ~€100-110/day (Gozo a little cheaper/quieter than the mainland). Season: April-June or September-October is best; avoid winter for the swim/beach focus (Ramla Bay, the Blue Lagoon en route). ⚠️ Blue Lagoon/Comino: since May 2025 (still in force for 2026), a free timed slot via blcomino.com is required for anyone landing (3 slots/day, max 4,000 visitors) — anyone arriving by private boat and staying on the water doesn't need this, but anyone landing does — book ahead.",
+     "transport_to_next": "End of this route — direct flight home from Malta.",
+     "destinations": [
+      {
+       "name": "Valletta",
+       "lat": 35.8989,
+       "lng": 14.5146
+      },
+      {
+       "name": "Mdina",
+       "lat": 35.8869,
+       "lng": 14.4033
+      },
+      {
+       "name": "Southern coast temples (Hagar Qim)",
+       "lat": 35.8256,
+       "lng": 14.4408
+      },
+      {
+       "name": "Marsaxlokk",
+       "lat": 35.8419,
+       "lng": 14.5453
+      },
+      {
+       "name": "Cittadella, Victoria (Gozo)",
+       "lat": 36.0448,
+       "lng": 14.24
+      },
+      {
+       "name": "Ramla Bay (Gozo)",
+       "lat": 36.0672,
+       "lng": 14.2789
+      },
+      {
+       "name": "Dwejra / former Azure Window site (Gozo)",
+       "lat": 36.0578,
+       "lng": 14.1917
+      },
+      {
+       "name": "Xlendi (Gozo)",
+       "lat": 36.0272,
+       "lng": 14.2069
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_san-marino-day-visit-1-day",
+   "name": "San Marino: Day Visit (1 day) 🛡️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Bus (Bonelli Bus from Rimini) or rental car — best paired with a Rimini/Riccione coastal stay rather than flown to on its own.",
+   "description": "A half-to-full day in San Marino: the old town, the city walls, and 1-2 of the three towers, best added onto a stay elsewhere on the Adriatic coast.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a standalone San Marino-only version added alongside the existing Emilia-Romagna/Tuscany combos above, at Youri's request, carrying over the source's own explicit caveat that it fits best as an add-on rather than a fly-in-fly-out trip. San Marino uses the euro and has no real border control with Italy in practice. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_san-marino-day-visit-1-day",
+    "name": "San Marino: Day Visit (1 day) 🛡️",
+    "stops": 4,
+    "km_in_route": 0,
+    "km_from_nl": 1370,
+    "km_back_to_nl": 1370,
+    "km_by_country": {
+     "SM": 0
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "SM",
+     "country": "San Marino",
+     "days": 1,
+     "budget": 70,
+     "dailyRate": 70,
+     "carInDailyRate": false,
+     "notes": "Half a day (4-6h) covers the highlights (old town, city walls, 1-2 of the three towers — Rocca Guaita is the main tower, Torre Cesta the second, Montale isn't accessible); a full day isn't a stretch either, leaving room for museums (the Museum of Ancient Weapons, the Basilica) and a quieter sunset from the walls. Honest caveat: flying from the Netherlands purely for San Marino is a lot of travel overhead for half a day — this works best as an add-on day from an Adriatic coast stay (Rimini/Riccione) or the Emilia-Romagna trip above, not as a standalone fly-in-fly-out trip. Access: Rimini (RMI) is the closest airport, no direct flight from the Netherlands (always 1+ connection); from Rimini station the Bonelli Bus runs straight to San Marino (~1h, ~€7 one-way). Budget ~€40-60 for the day itself (bus €7 round trip or a car plus parking ~€8/day, a tower ticket ~€10-15, lunch €20-25) — cheap once you're there, the flight/connection dominates the cost on a genuine one-off trip.",
+     "transport_to_next": "End of this day — best treated as an add-on from an Adriatic coast stay or the Emilia-Romagna route above, not as its own fly-in-fly-out trip.",
+     "destinations": [
+      {
+       "name": "San Marino old town",
+       "lat": 43.9364,
+       "lng": 12.4477
+      },
+      {
+       "name": "City walls",
+       "lat": 43.937,
+       "lng": 12.45
+      },
+      {
+       "name": "Rocca Guaita (main tower)",
+       "lat": 43.9377,
+       "lng": 12.4536
+      },
+      {
+       "name": "Torre Cesta (second tower)",
+       "lat": 43.9394,
+       "lng": 12.4552
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

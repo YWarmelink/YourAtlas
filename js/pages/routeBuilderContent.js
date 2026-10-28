@@ -18207,7 +18207,7 @@ function rbBuildSanMarinoDayVisitRoute() {
         { name: 'Rocca Guaita (main tower)', lat: 43.9377, lng: 12.4536 , notes: 'The oldest and largest of San Marino\'s three towers, dating to the 11th century, once used as a prison; the climb up gives the best panoramic view over the country and the Adriatic coast on a clear day.' },
         { name: 'Torre Cesta (second tower)', lat: 43.9394, lng: 12.4552 , notes: 'The second of San Marino\'s three towers, built atop the highest point of Monte Titano; houses a small museum of antique weapons and is connected to Rocca Guaita by a scenic walking path along the ridge.' },
       ],
-      notes: "Half a day (4-6h) covers the highlights (old town, city walls, 1-2 of the three towers — Rocca Guaita is the main tower, Torre Cesta the second, Montale isn't accessible); a full day isn't a stretch either, leaving room for museums (the Museum of Ancient Weapons, the Basilica) and a quieter sunset from the walls. Honest caveat: flying from the Netherlands purely for San Marino is a lot of travel overhead for half a day — this works best as an add-on day from an Adriatic coast stay (Rimini/Riccione) or the Emilia-Romagna trip above, not as a standalone fly-in-fly-out trip. Access: Rimini (RMI) is the closest airport, no direct flight from the Netherlands (always 1+ connection); from Rimini station the Bonelli Bus runs straight to San Marino (~1h, ~€7 one-way). Budget ~€40-60 for the day itself (bus €7 round trip or a car plus parking ~€8/day, a tower ticket ~€10-15, lunch €20-25) — cheap once you're there, the flight/connection dominates the cost on a genuine one-off trip.",
+      notes: "Half a day (4-6h) covers the highlights (old town, city walls, 1-2 of the three towers — Rocca Guaita is the main tower, Torre Cesta the second, Montale isn't accessible); a full day isn't a stretch either, leaving room for museums (the Museum of Ancient Weapons, the Basilica) and a quieter sunset from the walls. Honest caveat: flying from the Netherlands purely for San Marino is a lot of travel overhead for half a day — this works best as an add-on day from an Adriatic coast stay (Rimini/Riccione) or the Emilia-Romagna trip above, not as a standalone fly-in-fly-out trip. Access: Rimini (RMI) is the closest airport, no direct flight from the Netherlands (always 1+ connection); from Rimini station the Bonelli Bus runs straight to San Marino (~1h, ~€7 one-way). Budget ~€40-60 for the day itself (bus ~€14 round trip or a car plus parking ~€8/day, a tower ticket ~€10-15, lunch €20-25) — cheap once you're there, the flight/connection dominates the cost on a genuine one-off trip.",
       transport_to_next: "End of this day — best treated as an add-on from an Adriatic coast stay or the Emilia-Romagna route above, not as its own fly-in-fly-out trip.",
     },
   ], {
@@ -18282,7 +18282,7 @@ function rbBuildSicilyMaltaRoute() {
         { name: 'Agrigento (Valle dei Templi)', lat: 37.2903, lng: 13.5865 },
         { name: 'Palermo (optional)', lat: 38.1157, lng: 13.3613 , notes: 'Norman-Arab UNESCO architecture (Palatine Chapel) plus the Ballaro/Vucciria street markets for arancine and panelle; go hungry in the late afternoon/evening when Vucciria turns into an open-air food scene.' },
       ],
-      notes: "Sicily-heavy, deliberately no Gozo (see Malta + Gozo + Sicily (9 days) 🐚 below for that distinction): Catania → Etna → Taormina → Syracuse/Ortigia → Val di Noto (Modica, Ragusa) → Agrigento (Valle dei Templi) → optionally Palermo → crossing to Malta. Rental car needed to get between Sicily's smaller towns. Budget ~€150/day (rental car and fuel included). Season: April-June or September-early November for Sicily (July-August hot/busy/expensive); overlaps well with Malta's own good season.",
+      notes: "Sicily-heavy, deliberately no Gozo (see Malta + Gozo + Sicily (9 days) 🐚 below for that distinction): Catania → Etna → Taormina → Syracuse/Ortigia → Val di Noto (Modica, Ragusa) → Agrigento (Valle dei Templi) → optionally Palermo → back to Catania to return the car (Agrigento-Catania ~165 km/~2h, Palermo-Catania ~210 km/~2h30) → flight to Malta. Rental car needed to get between Sicily's smaller towns. Budget ~€150/day (rental car and fuel included). Season: April-June or September-early November for Sicily (July-August hot/busy/expensive); overlaps well with Malta's own good season.",
       transport_to_next: 'Direct Ryanair flight Malta-Catania (~50 min, from ~€18-35, up to 18x/week) — much simpler than the ferry (Virtu Ferries Pozzallo-Valletta, ~1h45, year-round, up to 3x/day, €37-111, as an alternative).',
     },
     {
@@ -27590,6 +27590,166 @@ const RB_ROUTE_COSTS = {
     ],
   },
 
+  // ---- Phase 4 batch 4: Italy, San Marino & Malta part 3/3, extracted 2026-10-28, approved by Youri (planning/budget_batch4/REVIEW.md) ----
+  // Fares: flights_from_ams.csv + flights_batch4.csv. Car: data/cost_reference/car_costs_by_country.csv (7 L/100 km, IT 2.016 EUR/l, EUR 45/day, tolls 8/100 km on ~60% of km).
+
+    'gt_seed_sicily-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Palermo one way (flights_batch4.csv; open-jaw per notes)
+      flight_out_cost: 140,  // Catania-AMS one way (reuse CTA)
+      blocks: [
+        { code: 'IT', transport: 0, local: 0, extras: [] },  // car in the daily rate (~EUR 110/day incl. rental + fuel): nothing added
+        { code: 'IT', transport: 0, local: 0, extras: [] },
+        { code: 'IT', transport: 0, local: 0, extras: [] },
+        { code: 'IT', transport: 0, local: 0, extras: [] },
+        { code: 'IT', transport: 0, local: 0, extras: [] },
+        { code: 'IT', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_sicily-aeolian-islands-3-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Catania (reuse CTA)
+      flight_out_cost: 140,  // Catania-AMS (reuse CTA, est)
+      blocks: [
+        { code: 'IT', transport: 6, local: 30, extras: [] },   // local: bus Catania airport-Milazzo ~14 (est, no car: notes say cars not allowed on islands) + hydrofoil Milazzo-Lipari ~16 (est); transport: Lipari-Vulcano ~6 (est)
+        { code: 'IT', transport: 18, local: 0, extras: [] },   // Vulcano-Stromboli hydrofoil ~18 (est)
+        { code: 'IT', local: 42, extras: [] },                 // Stromboli-Milazzo hydrofoil ~28 (est) + bus Milazzo-Catania airport ~14 (est). Mandatory Stromboli guide not priced: notes name no price and say it is inside the daily budget
+      ],
+    },
+
+    'gt_seed_sicily-malta-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Catania (reuse CTA)
+      flight_out_cost: 120,  // Malta-AMS (reuse MLA)
+      blocks: [
+        { code: 'IT', transport: 55, local: 0, extras: [] },   // flight Catania-Malta: notes say Ryanair EUR 18-35 promo; batch 2's typical estimate EUR 55 reused (est). Car in the daily rate: nothing added
+        { code: 'MT', local: 0, extras: [] },                  // Malta by bus, in the daily budget
+      ],
+    },
+
+    'gt_seed_sicily-southern-italy-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Naples (reuse NAP)
+      flight_out_cost: 120,  // Palermo-AMS (flights_batch4.csv; route ends Palermo/Cefalu)
+      blocks: [
+        { code: 'IT', transport: 0, local: 0, extras: [         // Naples/Salerno day 1 without a car
+          rbExtra('Car: rental 11 days (from day 2, Naples to Palermo) × €45 + one-way drop Naples→Palermo ≈€100 (est, mainland-to-island, flagged) + Villa San Giovanni-Messina car ferry ≈€35 (est) + fuel ≈1190 km + tolls (60% of km × €8/100 km)', 855, 'transport'),
+        ] },
+        { code: 'IT', transport: 0, local: 0, extras: [] },
+        { code: 'IT', transport: 0, local: 0, extras: [] },
+        { code: 'IT', transport: 0, local: 0, extras: [] },
+        { code: 'IT', transport: 0, local: 0, extras: [] },
+        { code: 'IT', transport: 0, local: 0, extras: [] },
+        { code: 'IT', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_sicily-east-4-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Catania
+      flight_out_cost: 140,  // Catania-AMS (est)
+      blocks: [
+        { code: 'IT', transport: 0, local: 0, extras: [         // Catania days 1-2 on foot/bus, car from leaving Catania
+          rbExtra('Car: rental 3 days (Taormina/Etna/Syracuse loop, back to Catania airport) × €45 + fuel ≈250 km (190 route + Syracuse-airport return) + tolls (60% of km × €8/100 km)', 182, 'transport'),
+        ] },
+        { code: 'IT', transport: 0, local: 0, extras: [] },
+        { code: 'IT', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_sicily-roadtrip-7-10-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Palermo
+      flight_out_cost: 140,  // Catania-AMS
+      blocks: [
+        { code: 'IT', transport: 0, local: 0, extras: [         // Palermo 2 days without a car (ZTL)
+          rbExtra('Car: rental 7 days (after Palermo, loop to Catania) × €45 + one-way drop Palermo→Catania ≈€60 (est, flagged) + fuel ≈580 km + tolls (60% of km × €8/100 km)', 485, 'transport'),
+        ] },
+        { code: 'IT', transport: 0, local: 0, extras: [] },
+        { code: 'IT', transport: 0, local: 0, extras: [] },
+        { code: 'IT', transport: 0, local: 0, extras: [] },
+        { code: 'IT', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_sicily-west-4-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Palermo
+      flight_out_cost: 120,  // Palermo-AMS
+      blocks: [
+        { code: 'IT', transport: 0, local: 0, extras: [         // Palermo/Monreale by bus, car from leaving Palermo
+          rbExtra('Car: rental 3 days (Trapani/Erice/Segesta, back to Palermo airport) × €45 + fuel ≈200 km (130 route + return to airport) + tolls (60% of km × €8/100 km)', 173, 'transport'),
+        ] },
+        { code: 'IT', transport: 0, local: 0, extras: [] },
+        { code: 'IT', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_tuscany-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Florence
+      flight_out_cost: 130,  // Florence-AMS
+      blocks: [
+        { code: 'IT', transport: 0, local: 0, extras: [         // notes: fly AMS-FLR + rental car "for the whole week" (not a drive from NL)
+          rbExtra('Car: rental 6 days (whole stay per notes, Florence pickup/drop) × €45 + fuel ≈260 km + tolls (60% of km × €8/100 km)', 319, 'transport'),
+        ] },
+        { code: 'IT', transport: 0, local: 0, extras: [] },
+        { code: 'IT', transport: 0, local: 0, extras: [] },
+        { code: 'IT', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_vatican-city-day-visit-within-a-rome-stay-1-day': {
+      checked: '2026-10-28',
+      flight_in_cost: 0,     // add-on day inside a Rome stay (notes): the flight belongs to the Rome route
+      flight_out_cost: 0,    // same
+      blocks: [
+        { code: 'IT', local: 0, extras: [] },                  // metro/bus in the daily budget; Scavi/dome add-ons (~60-90) explicitly NOT part of this day
+      ],
+    },
+
+    'gt_seed_venice-dolomites-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 90,    // AMS-Venice (flights_batch4.csv, est from back fare)
+      flight_out_cost: 80,   // Venice-AMS
+      blocks: [
+        { code: 'IT', transport: 0, local: 0, extras: [         // Venice 2 days without a car
+          rbExtra('Car: rental 3 days (Venice→Dolomites→Venice airport) × €45 + fuel ≈380 km (notes: ~150 km each way + local) + tolls (60% of km × €8/100 km)', 207, 'transport'),
+        ] },
+        { code: 'IT', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_malta-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Malta (flights_batch4.csv)
+      flight_out_cost: 120,  // Malta-AMS (reuse MLA)
+      blocks: [
+        { code: 'MT', local: 0, extras: [] },                  // notes mention no car: island by bus, in the daily budget; Hypogeum ticket has no price in notes
+      ],
+    },
+
+    'gt_seed_malta-gozo-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Malta
+      flight_out_cost: 120,  // Malta-AMS
+      blocks: [
+        { code: 'MT', local: 0, extras: [
+          rbExtra('Gozo ferry Cirkewwa-Mgarr (foot passenger return ≈€5, est: Gozo Channel ~4.65)', 5, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_san-marino-day-visit-1-day': {
+      checked: '2026-10-28',
+      flight_in_cost: 0,     // add-on day from an Adriatic coast stay (notes): flight belongs to that stay
+      flight_out_cost: 0,    // same
+      blocks: [
+        { code: 'SM', local: 0, extras: [] },                  // notes: Rimini bus ~EUR 7, tower ~10-15, lunch are inside the stated ~EUR 40-60 day budget
+      ],
+    },
+
 };
 
 /**
@@ -28057,7 +28217,7 @@ const RB_SAN_MARINO_TUSCANY_BOLOGNA_BLOCK = {
  * Fixes two route texts that didn't add up (Phase 4 batch 3 review). Mutates `route`, returns
  * true when it changed something; each fix only applies while the old shape is still there, so a
  * hand edit is left alone. Used by rbMigrateBatch3RouteFixes() (localStorage) and
- * scripts/fix_batch3_routes_in_sheet.js (Sheet), so the two can't drift.
+ * scripts/fix_route_texts_in_sheet.js (Sheet), so the two can't drift.
  *  - Northern Italy Roadtrip (9 days) 🚙: its blocks summed to 11 days → Milan 2→1, Venice 3→2
  *    (both within the notes' "1-2" / "2-3 days"), budgets at the same €73/day; and a stale
  *    "(10-day version)" note prefix removed.
@@ -28095,5 +28255,37 @@ function rbMigrateBatch3RouteFixes() {
   localStorage.setItem(RB_MIGRATE_FLAG_2026_10_BATCH3_ROUTE_FIXES, '1');
   let touched = false;
   rbRoutes.forEach(r => { if (rbFixBatch3RouteTexts(r)) touched = true; });
+  if (touched) rbSave();
+}
+
+// ---- Route-text fixes found by Phase 4 batch 4 (2026-10-28, Youri asked to fix them) ----
+
+// [route id, block index, old text, new text]: a block's notes text is swapped only while the old
+// text is still in it, so a hand edit is left alone.
+//  - Sicily + Malta (9 days) 🌋: the loop ended in the west (Agrigento/Palermo) but flies to Malta
+//    from Catania, so it now drives back to Catania (where the rental car is returned).
+//  - San Marino: Day Visit (1 day) 🛡️: the same bus was "~€7 one-way" and "€7 round trip".
+const RB_BATCH4_TEXT_FIXES = [
+  ['gt_seed_sicily-malta-9-days', 0, '→ optionally Palermo → crossing to Malta.',
+    '→ optionally Palermo → back to Catania to return the car (Agrigento-Catania ~165 km/~2h, Palermo-Catania ~210 km/~2h30) → flight to Malta.'],
+  ['gt_seed_san-marino-day-visit-1-day', 0, '(bus €7 round trip or', '(bus ~€14 round trip or'],
+];
+
+/** Applies RB_BATCH4_TEXT_FIXES to `route`; true when it changed something. Shared by
+ *  rbMigrateBatch4RouteFixes() (localStorage) and scripts/fix_route_texts_in_sheet.js (Sheet). */
+function rbFixBatch4RouteTexts(route) {
+  let changed = false;
+  RB_BATCH4_TEXT_FIXES.forEach(([id, i, from, to]) => {
+    const blk = route.id === id && (route.blocks || [])[i];
+    if (blk && (blk.notes || '').includes(from)) { blk.notes = blk.notes.replace(from, to); changed = true; }
+  });
+  return changed;
+}
+
+function rbMigrateBatch4RouteFixes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_10_BATCH4_ROUTE_FIXES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_10_BATCH4_ROUTE_FIXES, '1');
+  let touched = false;
+  rbRoutes.forEach(r => { if (rbFixBatch4RouteTexts(r)) touched = true; });
   if (touched) rbSave();
 }

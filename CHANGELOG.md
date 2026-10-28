@@ -12,10 +12,15 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Route-text fixes from Phase 4 batch 4 (2026-10-28)**:
+  - **Sicily + Malta (9 days) 🌋**: the Sicily loop ended in the west (Agrigento, optionally Palermo) but flies to Malta from Catania. It now drives back to Catania to return the car before the flight.
+  - **San Marino: Day Visit (1 day) 🛡️**: the same bus was "~€7 one-way" and "€7 round trip". The round trip now reads ~€14.
+  - `rbFixBatch4RouteTexts()` (`RB_BATCH4_TEXT_FIXES`, which swaps a notes text only while the old text is still there) is shared by `rbMigrateBatch4RouteFixes()` and `scripts/fix_route_texts_in_sheet.js 4`. That is the batch 3 script, renamed and now with one entry per batch. Verified live.
+
 - **Route-text fixes from Phase 4 batch 3 (2026-10-28)**:
   - **Northern Italy Roadtrip (9 days) 🚙**: its blocks summed to 11 days. It is back to 9: Milan 2→1 and Venice 3→2, both within the notes' own "1-2" / "2-3 days", with budgets at the same €73/day. The stale "(10-day version)" note prefix is gone.
   - **San Marino + Tuscany (5 days) 🍷**: the Bologna arrival day now has its own block (1 day, €73), and Tuscany goes 4→3 days. The car costs count 4 rental days plus the Bologna-San Marino drive.
-  - `rbFixBatch3RouteTexts()` is shared by `rbMigrateBatch3RouteFixes()` and `scripts/fix_batch3_routes_in_sheet.js` (full-route upsert, run before the cost push), and the result is verified live.
+  - `rbFixBatch3RouteTexts()` is shared by `rbMigrateBatch3RouteFixes()` and `scripts/fix_route_texts_in_sheet.js` (full-route upsert, run before the cost push), and the result is verified live.
 
 - **Full-cost budget, R2d: block budgets moved to Youri's own style (2026-10-28)**. R2c showed that
   "My plan" sat close to Standard (median 75% of the way from backpacker), while Youri travels

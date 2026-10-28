@@ -1,0 +1,6 @@
+airport_code,city,country_code,direction,eur_one_way,airline_or_routing,source,date_checked,confidence,notes
+PMO,Palermo,IT,out,120,Transavia direct (~3x/week) / ITA / 1 stop,WebSearch 2026-10-28 (Skyscanner floor EUR 73; Expedia USD 116+; Kayak typical GBP 127-193),2026-10-28,medium,typical above floor
+PMO,Palermo,IT,back,120,easyJet/ITA/Transavia,WebSearch 2026-10-28 (Skyscanner EUR 32 floor; Ratepunk median USD 135; Omio GBP 68-262),2026-10-28,medium,
+MLA,Malta,MT,out,120,KM Malta/easyJet/Transavia direct,WebSearch 2026-10-28 (Skyscanner EUR 67 floor; KM Malta from EUR 153-174; Trip.com USD 76),2026-10-28,medium,same as back fare
+VCE,Venice,IT,out,90,easyJet/KLM/Transavia,estimate from back fare (batch 4; no separate search),2026-10-28,low,est
+CTA,Catania,IT,back,140,KLM/Transavia/ITA,reuse out fare (batch 4),2026-10-28,low,est
