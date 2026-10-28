@@ -266,6 +266,7 @@ const RB_MIGRATE_FLAG_2026_09_DETERMINISTIC_SEED_IDS = 'atlas_grand_trips_migrat
 const RB_MIGRATE_FLAG_2026_10_LONGHAUL_BUFFER_BUDGETS = 'atlas_grand_trips_migrate_2026_10_longhaul_buffer_budgets_v1';
 const RB_MIGRATE_FLAG_2026_10_KUPANG_DILI = 'atlas_grand_trips_migrate_2026_10_kupang_dili_v1';
 const RB_MIGRATE_FLAG_2026_10_STYLE_BUDGETS = 'atlas_grand_trips_migrate_2026_10_style_budgets_v1';
+const RB_MIGRATE_FLAG_2026_10_BATCH3_ROUTE_FIXES = 'atlas_grand_trips_migrate_2026_10_batch3_route_fixes_v1';
 // Route ids whose RB_ROUTE_COSTS entry rbMigrateApplyRouteCosts() has already applied (a list, so
 // each later backfill batch still applies once to its own routes).
 const RB_ROUTE_COSTS_APPLIED_KEY = 'atlas_grand_trips_route_costs_applied_v1';

@@ -6,7 +6,7 @@ Made 2026-10-28 for the 439 routes not yet in `RB_ROUTE_COSTS` (batch 1 = the 13
 |---|---|---|---|---|---|---|
 | 1 | Grand Expeditions | 13 | 174 | – | 596k (real) | done 2026-10-27 |
 | 2 | Italy, San Marino & Malta (1/3) | 11 | 44 | 11 | ~178k (real ≈165k: agent 123k) | done 2026-10-28, in the Sheet |
-| 3 | Italy, San Marino & Malta (2/3) | 12 | 41 | 11 | ~174k | |
+| 3 | Italy, San Marino & Malta (2/3) | 12 | 41 | 11 | ~174k (real ≈145k: agent 95k + 2 route-text fixes) | done 2026-10-28, in the Sheet |
 | 4 | Italy, San Marino & Malta (3/3) | 13 | 39 | 12 | ~172k | |
 | 5 | Iberia (1/2) | 24 | 36 | 14 | ~197k | |
 | 6 | Iberia (2/2) | 22 | 31 | 16 | ~179k | |

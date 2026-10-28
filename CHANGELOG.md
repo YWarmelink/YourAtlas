@@ -12,6 +12,11 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Route-text fixes from Phase 4 batch 3 (2026-10-28)**:
+  - **Northern Italy Roadtrip (9 days) 🚙**: its blocks summed to 11 days. It is back to 9: Milan 2→1 and Venice 3→2, both within the notes' own "1-2" / "2-3 days", with budgets at the same €73/day. The stale "(10-day version)" note prefix is gone.
+  - **San Marino + Tuscany (5 days) 🍷**: the Bologna arrival day now has its own block (1 day, €73), and Tuscany goes 4→3 days. The car costs count 4 rental days plus the Bologna-San Marino drive.
+  - `rbFixBatch3RouteTexts()` is shared by `rbMigrateBatch3RouteFixes()` and `scripts/fix_batch3_routes_in_sheet.js` (full-route upsert, run before the cost push), and the result is verified live.
+
 - **Full-cost budget, R2d: block budgets moved to Youri's own style (2026-10-28)**. R2c showed that
   "My plan" sat close to Standard (median 75% of the way from backpacker), while Youri travels
   mostly in dorms, with a private room now and then, more often in cheap countries. The new rule is

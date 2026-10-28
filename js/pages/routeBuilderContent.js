@@ -17161,7 +17161,8 @@ function rbBuildNorthernItalyLakesRoute() {
 function rbBuildNorthernItalyRoadtripRoute() {
   return rbBuildFlatSeedRoute('Northern Italy Roadtrip (9 days) 🚙', [
     {
-      code: 'IT', name: 'Italy', days: 2, budget: 260, lat: 45.4642, lng: 9.1900,
+      // days/budget: rbFixBatch3RouteTexts() (2026-10-28) — the blocks summed to 11 days; budget at the R2d style rate
+      code: 'IT', name: 'Italy', days: 1, budget: 73, lat: 45.4642, lng: 9.1900,
       destinations: [
         { name: 'Milan', lat: 45.4642, lng: 9.1900, notes: "The Duomo's rooftop terraces and the Navigli canal district are the standouts beyond the obvious sights; Leonardo's Last Supper (Cenacolo Vinciano) requires booking 3-4 months ahead, since tickets for each quarterly release window sell out within minutes of going live." },
       ],
@@ -17198,11 +17199,11 @@ function rbBuildNorthernItalyRoadtripRoute() {
         { name: 'Bolzano', lat: 46.4983, lng: 11.3548, notes: "Its must-see is the South Tyrol Museum of Archaeology, home to Ötzi the Iceman, the 5,300-year-old mummy found in the nearby Alps — a genuinely unique sight, not just a transit stop; allow about an hour for the exhibit." },
         { name: 'Lago di Braies', lat: 46.6958, lng: 12.0858, notes: "The postcard turquoise lake with wooden rowboats is one of the most photographed spots in the Dolomites. From July 1-Sept 15, the valley road is closed to unbooked cars 9am-4pm — you must pre-book parking online at pragsparking.com or arrive before 9am/after 4pm." },
       ],
-      notes: '(10-day version) Dolomites via Bolzano/Lago di Braies (2 days). West→east, no zigzag. Season: May-June or September; Dolomites passes are only fully open/warm June-September, avoid August. ⚠️ Mountain roads outside June-September can need winter tyres — check this for shoulder-season travel.',
+      notes: 'Dolomites via Bolzano/Lago di Braies (2 days). West→east, no zigzag. Season: May-June or September; Dolomites passes are only fully open/warm June-September, avoid August. ⚠️ Mountain roads outside June-September can need winter tyres — check this for shoulder-season travel.',
       transport_to_next: 'Train (Verona-Venice, direct) or drive on to Venice.',
     },
     {
-      code: 'IT', name: 'Italy', days: 3, budget: 390, lat: 45.4408, lng: 12.3155,
+      code: 'IT', name: 'Italy', days: 2, budget: 146, lat: 45.4408, lng: 12.3155,  // days/budget: rbFixBatch3RouteTexts() (2026-10-28)
       destinations: [
         { name: 'Venice — Piazza San Marco', lat: 45.4340, lng: 12.3390 , notes: 'St Mark\'s Basilica and the Doge\'s Palace anchor the square; the basilica itself is free to enter, but a skip-the-line booking avoids the worst of the queue.' },
         { name: 'Venice — Doge\'s Palace / Basilica San Marco', lat: 45.4340, lng: 12.3390 , notes: 'St Mark\'s Basilica and the Doge\'s Palace anchor the square; the basilica itself is free to enter, but a skip-the-line booking avoids the worst of the queue.' },
@@ -18166,6 +18167,7 @@ function rbBuildSanMarinoEmiliaRomagnaRoute() {
 
 function rbBuildSanMarinoTuscanyRoute() {
   return rbBuildFlatSeedRoute('San Marino + Tuscany (5 days) 🍷', [
+    RB_SAN_MARINO_TUSCANY_BOLOGNA_BLOCK,
     {
       code: 'SM', name: 'San Marino', days: 1, budget: 100, lat: 43.9364, lng: 12.4477,
       destinations: [
@@ -18176,7 +18178,8 @@ function rbBuildSanMarinoTuscanyRoute() {
       transport_to_next: 'Drive south into Tuscany (~2h20-2h40 to the Florence area) — a deliberate one-way arc, not a round trip back through San Marino.',
     },
     {
-      code: 'IT', name: 'Italy', days: 4, budget: 460, lat: 43.3188, lng: 11.3308,
+      // days/budget: rbFixBatch3RouteTexts() (2026-10-28) — one day moved to the new Bologna block; budget at the R2d style rate
+      code: 'IT', name: 'Italy', days: 3, budget: 219, lat: 43.3188, lng: 11.3308,
       destinations: [
         { name: 'Siena', lat: 43.3188, lng: 11.3308, notes: "The shell-shaped Piazza del Campo hosts the Palio horse race twice a year (July 2 and Aug 16); climbing the Torre del Mangia gives the best rooftop view over the square." },
         { name: 'San Gimignano', lat: 43.4674, lng: 11.0431, notes: "Its skyline of medieval stone towers (nicknamed \"Medieval Manhattan\") is best appreciated from just outside the walls around sunset, once the day-trip buses thin out." },
@@ -27415,6 +27418,178 @@ const RB_ROUTE_COSTS = {
     ],
   },
 
+  // ---- Phase 4 batch 3: Italy, San Marino & Malta part 2/3, extracted 2026-10-28, approved by Youri (planning/budget_batch3/REVIEW.md) ----
+// Fares: data/cost_reference/flights_from_ams.csv + planning/budget_batch2/flights_batch2.csv + flights_batch3.csv.
+// Car: car_costs_by_country.csv IT: 7 L/100 km x 2.016 = 0.141 EUR/km fuel; tolls 60% of km x 8/100 km = 0.048 EUR/km; rental 45/day.
+
+  'gt_seed_northern-italy-6-days': {
+    checked: '2026-10-28',
+    flight_in_cost: 100,   // AMS-Milan Malpensa (batch 2 fare)
+    flight_out_cost: 100,  // Malpensa-AMS (reuse out fare; est)
+    blocks: [
+      { code: 'IT', transport: 0, local: 0, extras: [         // Milan day 1, car picked up when leaving
+        rbExtra('Car: rental 5 days (after the Milan day) × €45 + fuel/tolls ≈300 km (0.189/km); notes say rental is on top of the daily budget', 282, 'transport'),
+      ] },
+      { code: 'IT', transport: 0, local: 0, extras: [] },
+      { code: 'IT', transport: 0, local: 0, extras: [] },
+      { code: 'IT', local: 0, extras: [] },
+    ],
+  },
+
+  'gt_seed_northern-italy-roadtrip-9-days': {
+    checked: '2026-10-28',
+    flight_in_cost: 100,   // AMS-Milan Malpensa (batch 2)
+    flight_out_cost: 80,   // Venice-AMS: easyJet/KLM typical (WebSearch 2026-10-28; floors EUR 31-33, USD 54-100)
+    blocks: [
+      { code: 'IT', transport: 0, local: 0, extras: [         // Milan 2d, car from Como onward
+        rbExtra('Car: rental 6 days (Como to Venice, dropped at Venice) × €45 + one-way drop ≈€60 (est, flagged) + fuel/tolls ≈690 km (0.189/km)', 460, 'transport'),
+      ] },
+      { code: 'IT', transport: 0, local: 0, extras: [] },
+      { code: 'IT', transport: 0, local: 0, extras: [] },
+      { code: 'IT', transport: 0, local: 0, extras: [] },
+      { code: 'IT', transport: 0, local: 0, extras: [] },     // car drives to Venice, dropped at Mestre
+      { code: 'IT', local: 0, extras: [] },
+    ],
+  },
+
+  'gt_seed_puglia-6-days': {
+    checked: '2026-10-28',
+    flight_in_cost: 110,   // AMS-Bari: Skyscanner floor 80, Expedia USD 103, typical higher (WebSearch 2026-10-28; est)
+    flight_out_cost: 90,   // Bari-AMS (batch 2 fare)
+    blocks: [
+      { code: 'IT', transport: 0, local: 0, extras: [
+        rbExtra('Car: rental 5 days (after the Bari day) × €45 + fuel/tolls ≈250 km (0.189/km; Puglia roads mostly free, so slightly high)', 272, 'transport'),
+      ] },
+      { code: 'IT', transport: 0, local: 0, extras: [] },
+      { code: 'IT', transport: 0, local: 0, extras: [] },
+      { code: 'IT', transport: 0, local: 0, extras: [] },
+      { code: 'IT', local: 0, extras: [] },
+    ],
+  },
+
+  'gt_seed_rome-4-days': {
+    checked: '2026-10-28',
+    flight_in_cost: 110,   // AMS-Rome FCO: Expedia EUR 129 / USD 119-141 / Kayak GBP 116 (WebSearch 2026-10-28)
+    flight_out_cost: 100,  // FCO-AMS (batch 2 fare)
+    blocks: [
+      { code: 'IT', local: 0, extras: [] },                    // city trip, no car (notes), no priced extras
+    ],
+  },
+
+  'gt_seed_rome-tuscany-9-days': {
+    checked: '2026-10-28',
+    flight_in_cost: 110,   // AMS-Rome FCO (see rome-4-days)
+    flight_out_cost: 100,  // Rome FCO-AMS (notes: fly home via Rome)
+    blocks: [
+      { code: 'IT', transport: 0, local: 0, extras: [         // Rome 3d no car; car picked up after Rome
+        rbExtra('Car: rental 6 days (after Rome, dropped in Florence) × €45 + one-way drop ≈€50 (est, flagged) + fuel/tolls ≈430 km (0.189/km)', 401, 'transport'),
+      ] },
+      { code: 'IT', transport: 0, local: 0, extras: [] },
+      { code: 'IT', transport: 0, local: 0, extras: [] },
+      { code: 'IT', transport: 0, local: 0, extras: [] },
+      { code: 'IT', local: 45, extras: [] },                   // Florence-Rome Fiumicino train home ≈€30 + Leonardo Express €14 (est)
+    ],
+  },
+
+  'gt_seed_rome-vatican-city-in-depth-4-days': {
+    checked: '2026-10-28',
+    flight_in_cost: 110,   // AMS-Rome FCO
+    flight_out_cost: 100,  // FCO-AMS
+    blocks: [
+      { code: 'IT', local: 0, extras: [
+        rbExtra('Vatican day: Necropolis/Scavi + Vatican Museums + dome climb', 75, 'tour'),   // notes: "extra ~€60-90 for the three extras together", midpoint
+        rbExtra('Vatican Gardens guided tour (optional)', 36, 'tour', true),                  // notes: €32-40, midpoint
+      ] },
+    ],
+  },
+
+  'gt_seed_san-marino-emilia-romagna-4-days': {
+    checked: '2026-10-28',
+    flight_in_cost: 120,   // AMS-Bologna: Expedia EUR 136 / USD 135 floors, KLM USD 201 (WebSearch 2026-10-28)
+    flight_out_cost: 120,  // Bologna-AMS (est, same as in; Lufthansa USD 143)
+    blocks: [
+      { code: 'IT', transport: 0, local: 0, extras: [
+        rbExtra('Car: rental 3 days (after the Bologna day) × €45 + fuel/tolls ≈150 km IT (0.189/km) + ≈20 km SM fuel', 166, 'transport'),
+      ] },
+      { code: 'SM', local: 0, extras: [
+        rbExtra('San Marino towers/museum add-on', 12.5, 'activity'),   // notes ~€10-15, midpoint
+        rbExtra('San Marino parking', 6, 'other'),                      // notes: €4.50 (3-5h) to €8 (full day); half-to-1 day, midpoint
+      ] },
+    ],
+  },
+
+  'gt_seed_san-marino-tuscany-5-days': {
+    checked: '2026-10-28',
+    flight_in_cost: 120,   // AMS-Bologna (see above)
+    flight_out_cost: 130,  // Florence-AMS (batch 2 fare; open-jaw)
+    blocks: [
+      { code: 'IT', transport: 0, local: 0, extras: [         // Bologna day without car; rental picked up when leaving
+        rbExtra('Car: rental 4 days (Bologna to Florence) × €45 + one-way drop ≈€100 (notes €50-150, midpoint) + fuel/tolls ≈365 km incl. Bologna-San Marino (0.189/km)', 349, 'transport'),
+      ] },
+      { code: 'SM', transport: 0, local: 0, extras: [] },
+      { code: 'IT', local: 0, extras: [] },
+    ],
+  },
+
+  'gt_seed_sardinia-9-days': {
+    checked: '2026-10-28',
+    flight_in_cost: 130,   // AMS-Olbia (reuse back fare; seasonal; est)
+    flight_out_cost: 130,  // Olbia-AMS (batch 2 fare)
+    blocks: [
+      { code: 'IT', transport: 0, local: 0, extras: [
+        rbExtra('Car: rental 9 days × €45 + fuel ≈550 km (Sardinia has almost no tolls, so none added)', 483, 'transport'),
+      ] },
+      { code: 'IT', transport: 0, local: 0, extras: [] },
+      { code: 'IT', transport: 0, local: 0, extras: [] },
+      { code: 'IT', local: 0, extras: [] },
+    ],
+  },
+
+  'gt_seed_sardinia-north-4-5-days': {
+    checked: '2026-10-28',
+    flight_in_cost: 130,   // AMS-Olbia (see above)
+    flight_out_cost: 130,  // Olbia-AMS (batch 2)
+    blocks: [
+      { code: 'IT', transport: 0, local: 0, extras: [
+        rbExtra('Car: rental 5 days × €45 + fuel ≈120 km (est; straight-line 50 km too low: Olbia-Palau-Costa Smeralda and back)', 242, 'transport'),
+      ] },
+      { code: 'IT', transport: 16, local: 0, extras: [] },    // Palau-La Maddalena foot ferry, there and back (WebSearch Ferryscanner: EUR 8-10.50 each way, est 8)
+      { code: 'IT', local: 0, extras: [
+        rbExtra('La Maddalena archipelago boat trip', 55, 'tour'),   // notes name no price; typical day tour ~€50-60 (est)
+      ] },
+    ],
+  },
+
+  'gt_seed_sardinia-roadtrip-7-10-days': {
+    checked: '2026-10-28',
+    flight_in_cost: 130,   // AMS-Cagliari: Skyscanner floor 88, Expedia USD 133-149, mostly connecting (WebSearch 2026-10-28)
+    flight_out_cost: 130,  // Olbia-AMS (batch 2); route ends in Olbia
+    blocks: [
+      { code: 'IT', transport: 0, local: 0, extras: [         // Cagliari 2d without car
+        rbExtra('Car: rental 7 days (after Cagliari) × €45 + one-way drop Cagliari→Olbia ≈€60 (est, flagged) + fuel ≈470 km (no Sardinian tolls)', 441, 'transport'),
+      ] },
+      { code: 'IT', transport: 0, local: 0, extras: [] },
+      { code: 'IT', transport: 0, local: 0, extras: [] },
+      { code: 'IT', transport: 16, local: 0, extras: [] },    // Palau-La Maddalena foot ferry both ways (est 8 each)
+      { code: 'IT', local: 0, extras: [
+        rbExtra('La Maddalena archipelago boat trip', 55, 'tour'),   // est (see sardinia-north)
+      ] },
+    ],
+  },
+
+  'gt_seed_sardinia-south-4-5-days': {
+    checked: '2026-10-28',
+    flight_in_cost: 130,   // AMS-Cagliari
+    flight_out_cost: 120,  // Cagliari-AMS (est, slightly below out)
+    blocks: [
+      { code: 'IT', transport: 0, local: 0, extras: [         // Cagliari 2d on foot, car after
+        rbExtra('Car: rental 3 days (after Cagliari) × €45 + fuel ≈110 km (est; Nora, Chia, back)', 151, 'transport'),
+      ] },
+      { code: 'IT', transport: 0, local: 0, extras: [] },
+      { code: 'IT', local: 0, extras: [] },
+    ],
+  },
+
 };
 
 /**
@@ -27863,3 +28038,62 @@ const RB_STYLE_BUDGET_FIXES = {
   "gt_seed_western-canada-rockies-vancouver": [[1, 'CA', 5, 875, 475], [2, 'US', 2, 320, 204], [3, 'US', 4, 640, 408], [4, 'US', 4, 640, 408]],
   "gt_seed_zambia-malawi": [[1, 'MW', 14, 875, 756]],
 };
+
+
+// ---- Route-text fixes found by Phase 4 batch 3 (2026-10-28, Youri asked to fix them) ----
+
+// The Bologna arrival day of San Marino + Tuscany (5 days) 🍷: the route flies into Bologna and the
+// SM block's own notes describe "San Marino/Emilia-Romagna first", but the day had no block.
+const RB_SAN_MARINO_TUSCANY_BOLOGNA_BLOCK = {
+  code: 'IT', name: 'Italy', days: 1, budget: 73, lat: 44.4949, lng: 11.3426,
+  destinations: [
+    { name: 'Bologna', lat: 44.4949, lng: 11.3426, notes: "Arrival day: the arcaded old centre (Piazza Maggiore, the Two Towers, the Quadrilatero food market streets) is compact enough for one walking day. Booked Asinelli tower slots sell out, so reserve ahead; no car needed in the ZTL centre, pick the rental up when leaving." },
+  ],
+  notes: 'Fly into Bologna, one day in the city before picking up the rental car for the San Marino/Tuscany arc (budget at the style rate, 2026-10).',
+  transport_to_next: 'Drive to San Marino (~135 km, ~1h45) with the rental car picked up when leaving Bologna.',
+};
+
+/**
+ * Fixes two route texts that didn't add up (Phase 4 batch 3 review). Mutates `route`, returns
+ * true when it changed something; each fix only applies while the old shape is still there, so a
+ * hand edit is left alone. Used by rbMigrateBatch3RouteFixes() (localStorage) and
+ * scripts/fix_batch3_routes_in_sheet.js (Sheet), so the two can't drift.
+ *  - Northern Italy Roadtrip (9 days) 🚙: its blocks summed to 11 days → Milan 2→1, Venice 3→2
+ *    (both within the notes' "1-2" / "2-3 days"), budgets at the same €73/day; and a stale
+ *    "(10-day version)" note prefix removed.
+ *  - San Marino + Tuscany (5 days) 🍷: the Bologna day gets its own block, Tuscany 4→3 days.
+ */
+function rbFixBatch3RouteTexts(route) {
+  let changed = false;
+  const b = route.blocks || [];
+  if (route.id === 'gt_seed_northern-italy-roadtrip-9-days') {
+    const patch = (blk, days, oldBudget, newBudget) => {
+      if (blk && blk.country_code === 'IT' && Number(blk.days) === days && Number(blk.budget) === oldBudget) {
+        blk.days = days - 1; blk.budget = newBudget; changed = true;
+      }
+    };
+    patch(b[0], 2, 146, 73);
+    patch(b[5], 3, 219, 146);
+    b.forEach(blk => {
+      if ((blk.notes || '').startsWith('(10-day version) ')) { blk.notes = blk.notes.slice('(10-day version) '.length); changed = true; }
+    });
+  }
+  if (route.id === 'gt_seed_san-marino-tuscany-5-days' && b.length === 2 && b[0].country_code === 'SM' &&
+      b[1].country_code === 'IT' && Number(b[1].days) === 4 && Number(b[1].budget) === 292) {
+    b[1].days = 3; b[1].budget = 219;
+    const c = RB_SAN_MARINO_TUSCANY_BOLOGNA_BLOCK;
+    const blk = rbBuildBlock(c.code, c.name, rbSeedBlockOpts(c));
+    blk.region_id = b[0].region_id || null;
+    b.unshift(blk);
+    changed = true;
+  }
+  return changed;
+}
+
+function rbMigrateBatch3RouteFixes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_10_BATCH3_ROUTE_FIXES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_10_BATCH3_ROUTE_FIXES, '1');
+  let touched = false;
+  rbRoutes.forEach(r => { if (rbFixBatch3RouteTexts(r)) touched = true; });
+  if (touched) rbSave();
+}

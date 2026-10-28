@@ -34,3 +34,12 @@ MXP,Milan Malpensa,IT,out,100,easyJet/KLM,WebSearch 2026-10-28 (Skyscanner EUR 6
 FCO,Rome Fiumicino,IT,back,100,ITA/KLM/Transavia,WebSearch 2026-10-28 (Expedia EUR 78 / USD 83-92 floors),2026-10-28,medium,
 CTA,Catania,IT,out,140,KLM/Transavia/ITA,WebSearch 2026-10-28 (Expedia USD 109-190),2026-10-28,medium,
 MLA,Malta,MT,back,120,KM Malta/easyJet/Transavia,WebSearch 2026-10-28 (KM Malta EUR 87-113; Skyscanner EUR 47 floor),2026-10-28,medium,
+CAG,Cagliari,IT,out,130,Transavia/KLM direct (seasonal) or 1 stop,WebSearch 2026-10-28 (Skyscanner floor EUR 88; Expedia USD 133-149; Ratepunk median USD 324 mostly connecting),2026-10-28,low,typical above floors
+CAG,Cagliari,IT,back,120,Transavia/KLM or 1 stop,estimate from out fare (no separate search),2026-10-28,low,est
+BLQ,Bologna,IT,out,120,KLM/ITA/Vueling/Lufthansa,WebSearch 2026-10-28 (Expedia EUR 136 / USD 135 floor; KLM USD 201),2026-10-28,medium,
+BLQ,Bologna,IT,back,120,KLM/ITA/Vueling/Lufthansa,estimate from out fare (Lufthansa USD 143),2026-10-28,low,est
+VCE,Venice,IT,back,80,easyJet/KLM/Transavia,WebSearch 2026-10-28 (Skyscanner EUR 31-104; Expedia USD 49-54; Trip.com typical USD 81),2026-10-28,medium,typical above promo floors
+FCO,Rome Fiumicino,IT,out,110,ITA/KLM/Transavia/easyJet direct,WebSearch 2026-10-28 (Expedia EUR 129 / USD 119; Travelocity USD 141; Kayak GBP 116),2026-10-28,medium,
+BRI,Bari,IT,out,110,Transavia direct or 1 stop,WebSearch 2026-10-28 (Skyscanner floor EUR 80; Expedia USD 103),2026-10-28,low,typical above floor
+OLB,Olbia,IT,out,130,easyJet/Transavia direct (seasonal),reuse back fare (batch 2),2026-10-28,low,est
+MXP,Milan Malpensa,IT,back,100,easyJet/KLM,reuse out fare (batch 2),2026-10-28,medium,est
