@@ -1,0 +1,1387 @@
+{
+ "batch": 2,
+ "group": "Italy, San Marino & Malta",
+ "routes": [
+  {
+   "id": "gt_seed_campania-puglia-9-days",
+   "name": "Campania + Puglia (9 days) 🧭",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Open-jaw AMS-Naples in, AMS-Bari out — boat/bus for the Amalfi stretch, rental car afterward, matching the west→east sweep.",
+   "description": "Naples/Pompeii, Sorrento/the Amalfi Coast, Matera, the Valle d'Itria (Alberobello, Ostuni), and Lecce/Salento.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. The source explicitly flags this as heavily overlapping Campania: Naples + Amalfi Coast (6 days) 🌊 and Puglia (6 days) 🏘️ combined, with Matera as the only genuinely unique addition — carried into this route's own notes above exactly as the source frames it, matching its own explicit overlap callout (the one exception in this batch where the overlap is deliberately accepted as 'combine the two standalone trips' rather than a distinct angle). Not yet checked against Route Builder-level price research beyond the plate-rule/time-slot checks folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_campania-puglia-9-days",
+    "name": "Campania + Puglia (9 days) 🧭",
+    "stops": 8,
+    "km_in_route": 490,
+    "km_from_nl": 1860,
+    "km_back_to_nl": 2130,
+    "km_by_country": {
+     "IT": 490
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "r2d": "changed to the style rate (was €125/day)",
+     "carInDailyRate": false,
+     "notes": "Naples/Pompeii (2 days). Open-jaw AMS-Naples in, AMS-Bari out (both direct) — fits nicely with the west→east sweep. Budget ~€125/day.",
+     "transport_to_next": "Circumvesuviana/rental car to Sorrento and the Amalfi Coast.",
+     "destinations": [
+      {
+       "name": "Naples",
+       "lat": 40.8518,
+       "lng": 14.2681
+      },
+      {
+       "name": "Pompeii",
+       "lat": 40.7461,
+       "lng": 14.4989
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 3,
+     "budget": 219,
+     "dailyRate": 73,
+     "r2d": "changed to the style rate (was €125/day)",
+     "carInDailyRate": false,
+     "notes": "Sorrento/Amalfi Coast (2-3 days, boat/bus — the same caution as the standalone Campania route above). Rental car picked up after the Amalfi stretch (or leave it altogether and use boat/bus just for Positano/Amalfi, as in the standalone Campania route).",
+     "transport_to_next": "Drive to Matera (~2h from the Salerno/Amalfi side).",
+     "destinations": [
+      {
+       "name": "Sorrento",
+       "lat": 40.6263,
+       "lng": 14.3757
+      },
+      {
+       "name": "Amalfi Coast (Positano)",
+       "lat": 40.628,
+       "lng": 14.4849
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 73,
+     "dailyRate": 73,
+     "r2d": "changed to the style rate (was €125/day)",
+     "carInDailyRate": false,
+     "notes": "Matera (1-2 days, a natural stopover, ~2h from the Salerno/Amalfi side) — the one genuinely unique addition per the source.",
+     "transport_to_next": "Drive to the Valle d'Itria.",
+     "destinations": [
+      {
+       "name": "Matera",
+       "lat": 40.6664,
+       "lng": 16.6043
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "r2d": "changed to the style rate (was €125/day)",
+     "carInDailyRate": false,
+     "notes": "Valle d'Itria (Alberobello/Ostuni, 2 days). Season: late May-June or September (avoids both Amalfi's peak-season plate rules and Puglia's Ferragosto crowds).",
+     "transport_to_next": "Drive to Lecce/Salento.",
+     "destinations": [
+      {
+       "name": "Alberobello",
+       "lat": 40.7844,
+       "lng": 17.2378
+      },
+      {
+       "name": "Ostuni",
+       "lat": 40.7285,
+       "lng": 17.5786
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 73,
+     "dailyRate": 73,
+     "r2d": "changed to the style rate (was €125/day)",
+     "carInDailyRate": false,
+     "notes": "Lecce/Salento (1-2 days) to close the trip. ⚠️ Same Pompeii and Amalfi plate/ZTL rules as the standalone Campania route apply to the first half; Matera's cave churches (Casa Grotta, Cripta del Peccato Originale) have their own smaller time-slot/guide rules — check the current 2026 requirements close to your travel date, these change more often than the rules at the major sites. Overlap note: this route heavily overlaps Campania: Naples + Amalfi Coast (6 days) 🌊 plus Puglia (6 days) 🏘️ combined — Matera is the only genuinely unique addition. Treat this as the 'highlights, less time per place' version, not something to do again after the two standalone trips.",
+     "transport_to_next": "End of this route — direct return flight Bari to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Lecce / Salento",
+       "lat": 40.3515,
+       "lng": 18.175
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_campania-naples-amalfi-coast-6-days",
+   "name": "Campania: Naples + Amalfi Coast (6 days) 🌊",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Direct flight Amsterdam-Naples — Circumvesuviana train, SITA buses and seasonal ferries throughout, no rental car recommended.",
+   "description": "Naples (with a Pompeii day trip), Sorrento as a base for the Amalfi Coast (Positano, Amalfi, Ravello) by bus/boat, and a Capri day trip.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. Shares Naples/Amalfi ground with Italy Roadtrip (12 days) 🧀 above and Campania + Puglia (9 days) 🧭 below — the latter explicitly frames itself as combining this route with Puglia (6 days) 🏘️, with Matera as the only genuinely unique addition; see that route's own notes for the source's explicit overlap callout. Not yet checked against Route Builder-level price research beyond the ticket/plate-rule checks folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_campania-naples-amalfi-coast-6-days",
+    "name": "Campania: Naples + Amalfi Coast (6 days) 🌊",
+    "stops": 7,
+    "km_in_route": 120,
+    "km_from_nl": 1860,
+    "km_back_to_nl": 1900,
+    "km_by_country": {
+     "IT": 120
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "r2d": "changed to the style rate (was €125/day)",
+     "carInDailyRate": false,
+     "notes": "Naples (2 days, including a Pompeii day trip). Direct AMS-Naples (easyJet/Transavia/ITA, ~2-2.5h). No rental car recommended — use the Circumvesuviana train (Naples-Pompeii-Sorrento), SITA buses and seasonal ferries (Sorrento-Positano-Amalfi-Capri) instead of self-driving the narrow, busy SS163, especially given the restrictions below. Budget ~€125/day (Capri/Amalfi are pricey, Naples itself is cheaper). ⚠️ (check yearly) Pompeii 2026 requires a mandatory timed-entry ticket, linked to name/ID, max 20,000/day, book ≥1 week ahead (morning slots sell out weeks ahead in high season).",
+     "transport_to_next": "Circumvesuviana train to Sorrento.",
+     "destinations": [
+      {
+       "name": "Naples",
+       "lat": 40.8518,
+       "lng": 14.2681
+      },
+      {
+       "name": "Pompeii (day trip)",
+       "lat": 40.7461,
+       "lng": 14.4989
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 3,
+     "budget": 219,
+     "dailyRate": 73,
+     "r2d": "changed to the style rate (was €125/day)",
+     "carInDailyRate": false,
+     "notes": "Sorrento as a base (2-3 days), with the Amalfi Coast (Positano/Amalfi/Ravello) by bus/boat, not self-driving (2 days). Season: late May-June or September; July-August is very busy/hot and the restrictions below apply daily then; ferries are seasonal (~May-September) — check the current schedule. ⚠️ The Amalfi Coast's odd/even-license-plate rule applies 10:00-18:00 daily late June-early September plus Easter/25 April, weekends June-July & October (scooters exempt, guests with a hotel reservation may drive on their check-in/check-out day regardless of plate); Positano closes the centre to private vehicles 6:30-24:00 in high summer.",
+     "transport_to_next": "Ferry to Capri (day trip).",
+     "destinations": [
+      {
+       "name": "Sorrento (base)",
+       "lat": 40.6263,
+       "lng": 14.3757
+      },
+      {
+       "name": "Positano",
+       "lat": 40.628,
+       "lng": 14.4849
+      },
+      {
+       "name": "Amalfi",
+       "lat": 40.634,
+       "lng": 14.6027
+      },
+      {
+       "name": "Ravello",
+       "lat": 40.6492,
+       "lng": 14.6114
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 73,
+     "dailyRate": 73,
+     "r2d": "changed to the style rate (was €125/day)",
+     "carInDailyRate": false,
+     "notes": "Capri day trip (1 day) to close the trip.",
+     "transport_to_next": "End of this route — direct return flight Naples to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Capri (day trip)",
+       "lat": 40.5532,
+       "lng": 14.2229
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_corsica-sardinia-south-corsica-north-sardinia-5-days",
+   "name": "Corsica + Sardinia: South Corsica & North Sardinia (5 days) 🏝️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Connecting flight to Figari, rental car plus a short ferry crossing to Sardinia, fly home from Olbia.",
+   "description": "Southern Corsica (Figari/Bonifacio) linked by a short ferry crossing to northern Sardinia (Santa Teresa Gallura, Palau, the La Maddalena archipelago).",
+   "notes": "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. The shorter, seasonally-constrained counterpart to Corsica + Sardinia: Full Island Loop (12 days) 🌊 below, which resolves the Olbia seasonality issue by flying home from Cagliari instead. ⚠️ Flag for a human: the Olbia flight and Bonifacio-Santa Teresa ferry seasonal windows above are exactly the kind of detail that can shift year to year — re-check before booking. Not yet checked against Route Builder-level price research beyond those schedule notes — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_corsica-sardinia-south-corsica-north-sardinia-5-days",
+    "name": "Corsica + Sardinia: South Corsica & North Sardinia (5 days) 🏝️",
+    "stops": 4,
+    "km_in_route": 50,
+    "km_from_nl": 1600,
+    "km_back_to_nl": 1630,
+    "km_by_country": {
+     "IT": 50
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "FR",
+     "country": "France",
+     "days": 2,
+     "budget": 144,
+     "dailyRate": 72,
+     "r2d": "changed to the style rate (was €140/day)",
+     "carInDailyRate": false,
+     "notes": "Deliberately just the southern tip of Corsica plus northern Sardinia — too short for more: connecting flight to Figari/Bonifacio for 2 days of southern Corsica. Budget ~€140/day.",
+     "transport_to_next": "Ferry Bonifacio-Santa Teresa Gallura (~50 min, very frequent in season).",
+     "destinations": [
+      {
+       "name": "Figari / Bonifacio",
+       "lat": 41.387,
+       "lng": 9.1595
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 3,
+     "budget": 219,
+     "dailyRate": 73,
+     "r2d": "changed to the style rate (was €105/day)",
+     "carInDailyRate": false,
+     "notes": "2-3 days of northern Sardinia: Santa Teresa Gallura, Palau, the La Maddalena archipelago. Fly home from Olbia. Budget ~€100-110/day. Season: in practice only May-October given the ferry/flight restrictions below, and specifically August-October for an easy direct flight home. ⚠️ The Bonifacio-Santa Teresa ferry (Ichnusa/Moby Lines) only runs 16 January-31 October 2026 (no winter service); direct Amsterdam/Eindhoven-Olbia flights are seasonal in 2026 (August-October only) — outside that window, fly via Rome/Milan instead, or return via Nice.",
+     "transport_to_next": "End of this route — fly home from Olbia (seasonal, August-October) or via Rome/Milan outside that window.",
+     "destinations": [
+      {
+       "name": "Santa Teresa Gallura",
+       "lat": 41.2372,
+       "lng": 9.1908
+      },
+      {
+       "name": "Palau",
+       "lat": 41.1772,
+       "lng": 9.3833
+      },
+      {
+       "name": "La Maddalena archipelago",
+       "lat": 41.2167,
+       "lng": 9.4
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_dolomites-6-days",
+   "name": "Dolomites (6 days) ⛰️",
+   "mode": "own_car",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into Innsbruck (Pusteria/north side) or Verona/Venice (Cortina/south side), rental car for the whole trip — two dedicated bases, no city or Venice leg.",
+   "description": "Ortisei/Val Gardena (Alpe di Siusi, Seceda, Passo Gardena, Vallunga) and, via Passo Valparola/Falzarego, Cortina d'Ampezzo (Tre Cime, Cadini di Misurina, Lago di Braies, Cinque Torri, Passo Giau).",
+   "notes": "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. The pre-existing Dolomites & North Italy 🚡 route also passes through the Dolomites (Tre Cime, Lago di Braies, Seceda, Val Gardena) but only as one 6-day leg inside a much broader 19-day fly-into-Venice loop that continues to Milan, Turin, the Cinque Terre, Tuscany, San Marino and Venice — this standalone route instead spends the full 6 days across two dedicated Dolomites bases and reaches valleys (Alta Badia, Pusteria) that pre-existing route's single Cortina-area leg doesn't cover. Deliberately deeper/narrower than Venice + Dolomites (5 days) 🎭 above per the source's own framing (no city/Venice, goes further into the valleys). Not yet checked against Route Builder-level price research beyond the lift/parking checks folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_dolomites-6-days",
+    "name": "Dolomites (6 days) ⛰️",
+    "stops": 13,
+    "km_in_route": 160,
+    "km_from_nl": 1010,
+    "km_back_to_nl": 1040,
+    "km_by_country": {
+     "IT": 160
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 3,
+     "budget": 219,
+     "dailyRate": 73,
+     "r2d": "changed to the style rate (was €110/day)",
+     "carInDailyRate": false,
+     "notes": "Two bases. Base one: Ortisei/Val Gardena (3 nights) — Alpe di Siusi, Seceda, Passo Gardena, Vallunga. Deliberately no city/Venice on this route — this goes deeper into the valleys (Alta Badia, Pusteria) than the shorter Venice + Dolomites (5 days) 🎭 combo above can. No direct flight to the Dolomites themselves; best gateways are Innsbruck (Transavia direct from AMS, ~1h35, but seasonal Thu/Sun — check the current schedule) for Pusteria/the north side, or Verona/Venice for Cortina/the south side. Self-driving from the Netherlands (~12-13h via Germany-Austria-Brenner Pass) is only worthwhile as a stopover trip, otherwise fly + rent locally. Budget ~€110/day (Cortina pricier/chicer than Val Gardena) plus rental car €35-45/day plus lift passes €10-25/day.",
+     "transport_to_next": "Drive via Passo Valparola/Falzarego to Cortina d'Ampezzo.",
+     "destinations": [
+      {
+       "name": "Ortisei / Val Gardena (base)",
+       "lat": 46.5765,
+       "lng": 11.675
+      },
+      {
+       "name": "Alpe di Siusi",
+       "lat": 46.548,
+       "lng": 11.6167
+      },
+      {
+       "name": "Seceda",
+       "lat": 46.5936,
+       "lng": 11.6683
+      },
+      {
+       "name": "Passo Gardena",
+       "lat": 46.5478,
+       "lng": 11.7756
+      },
+      {
+       "name": "Vallunga",
+       "lat": 46.5975,
+       "lng": 11.7211
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 3,
+     "budget": 219,
+     "dailyRate": 73,
+     "r2d": "changed to the style rate (was €110/day)",
+     "carInDailyRate": false,
+     "notes": "Base two: Cortina d'Ampezzo (3-4 nights) — Tre Cime di Lavaredo, Cadini di Misurina, Lago di Braies, Cinque Torri, Passo Giau. Season: June-September — a hard boundary, not a soft preference: outside this window most lifts/trails are snowed in. Exact 2026 opening dates differ per valley and year (e.g. Val Gardena 6 June-11 October 2026, Cortina's lifts staggered from late May) — check close to departure. ⚠️ Book Tre Cime/Lago di Braies parking ahead in season (daily vehicle limit); afternoon thunderstorms are normal even in summer — hike in the mornings.",
+     "transport_to_next": "End of this route — drive back to Innsbruck or Verona/Venice for the flight home.",
+     "destinations": [
+      {
+       "name": "Passo Valparola",
+       "lat": 46.5928,
+       "lng": 11.9331
+      },
+      {
+       "name": "Passo Falzarego",
+       "lat": 46.5486,
+       "lng": 12.025
+      },
+      {
+       "name": "Cortina d'Ampezzo (base)",
+       "lat": 46.5369,
+       "lng": 12.1357
+      },
+      {
+       "name": "Tre Cime di Lavaredo",
+       "lat": 46.6198,
+       "lng": 12.3032
+      },
+      {
+       "name": "Cadini di Misurina",
+       "lat": 46.6167,
+       "lng": 12.2667
+      },
+      {
+       "name": "Lago di Braies",
+       "lat": 46.6958,
+       "lng": 12.0858
+      },
+      {
+       "name": "Cinque Torri",
+       "lat": 46.5333,
+       "lng": 12.0333
+      },
+      {
+       "name": "Passo Giau",
+       "lat": 46.4864,
+       "lng": 12.0472
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_florence-tuscany-4-days",
+   "name": "Florence + Tuscany (4 days) 🎨",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Direct flight Amsterdam-Florence — Florence as a fixed base with one day-trip day (self-drive rental or guided tour).",
+   "description": "Florence (Uffizi, Duomo, Ponte Vecchio, Palazzo Vecchio) plus one full Tuscany day trip: Siena, Chianti, San Gimignano and Pisa.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. Deliberately a short, single-base city trip with one day-trip day — the standalone Tuscany (6 days) 🍇 route below covers much the same towns (Siena, San Gimignano) at a far more relaxed pace with overnight stays in each, rather than a single rushed day trip; that route also adds Val d'Orcia and Volterra which this shorter trip skips entirely. Not yet checked against Route Builder-level price research beyond the ticket checks folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_florence-tuscany-4-days",
+    "name": "Florence + Tuscany (4 days) 🎨",
+    "stops": 8,
+    "km_in_route": 200,
+    "km_from_nl": 1340,
+    "km_back_to_nl": 1310,
+    "km_by_country": {
+     "IT": 200
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 4,
+     "budget": 292,
+     "dailyRate": 73,
+     "r2d": "changed to the style rate (was €120/day)",
+     "carInDailyRate": false,
+     "notes": "Florence as a fixed base, no overnight changes. Days 1-2: the city (Uffizi, Duomo dome climb, Ponte Vecchio, Palazzo Vecchio). Day 3(-4): one full Tuscany day trip, Siena → Chianti (wine tasting) → San Gimignano → Pisa, either self-driven (one day's rental car — more flexible/cheaper for 2+ people) or a guided day tour. Direct AMS-FLR (KLM only, ~2h, 4x/day). Budget ~€120/day plus a one-off €20-30 for the rental car/day tour. Season: April-May or September-October; July-August is hot (30-35°C) and busy. ⚠️ Book the Uffizi and Accademia weeks ahead; the Duomo dome climb has its own time slot separate from the free cathedral entry and fills up faster than the rest of the sights — book that first.",
+     "transport_to_next": "End of this route — direct return flight Florence to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Florence — Uffizi Gallery",
+       "lat": 43.7687,
+       "lng": 11.256
+      },
+      {
+       "name": "Florence — Duomo (dome climb)",
+       "lat": 43.7731,
+       "lng": 11.256
+      },
+      {
+       "name": "Florence — Ponte Vecchio",
+       "lat": 43.768,
+       "lng": 11.2531
+      },
+      {
+       "name": "Florence — Palazzo Vecchio",
+       "lat": 43.7696,
+       "lng": 11.2558
+      },
+      {
+       "name": "Siena (day trip)",
+       "lat": 43.3188,
+       "lng": 11.3308
+      },
+      {
+       "name": "Chianti wine tasting (day trip)",
+       "lat": 43.5,
+       "lng": 11.3
+      },
+      {
+       "name": "San Gimignano (day trip)",
+       "lat": 43.4674,
+       "lng": 11.0431
+      },
+      {
+       "name": "Pisa (day trip)",
+       "lat": 43.7228,
+       "lng": 10.3966
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_france-switzerland-italy-10-14-days",
+   "name": "France + Switzerland + Italy (10-14 days) 🗻",
+   "mode": "own_car",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Own car throughout — Chamonix, over to Geneva, on to Zermatt (park at Täsch, car-free into the resort), over the Simplon Pass to Lake Como, ending in Milan.",
+   "description": "Chamonix and Mont Blanc, Geneva, Zermatt and the Matterhorn, Lake Como, and Milan.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 15d (Grand European combinations — Alps/Italy cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Budget note: Switzerland's two legs (Geneva, Zermatt) pull the trip's blended average sharply above the France/Italy legs' own rates, matching the source's own '~€120-150/day, Switzerland drives it up hard' framing. ⚠️ Real overlap, explicitly flagged: this route's Zermatt leg directly reuses Swiss Alps: Zermatt / Matterhorn (6 days) 🗻 (rbBuildZermattMatterhornRoute)'s content, and its Lake Como leg reuses Northern Italy (6 days) 🚤/Northern Italy Roadtrip (9 days) 🚙's content. Also checked against Switzerland + Northern Italy (9 days) 🚞 (rbBuildSwitzerlandNorthernItalyRoute): confirmed genuinely different — that route reaches Italy via the Bernina Express from Graubünden/St. Moritz into Valtellina, a completely different Swiss region/pass and a different stretch of northern Italy from this route's Geneva→Zermatt→Simplon Pass→Lake Como corridor, despite both ending up in Lake Como territory. Also checked against Switzerland Alpine Roadtrip (9 days) 🛣️ (rbBuildSwitzerlandAlpineRoadtripRoute), which also visits Zermatt (compressed) as one stop among six passes/regions — that route never reaches France or Italy's lakes, so the overlap is limited to the Zermatt stop alone. No pre-existing standalone Chamonix route exists in this repo (French Alps: Écrins National Park (6 days) 🐐 explicitly avoided Chamonix, see that route's own notes) — this is a genuine content gap being filled here, not a duplicate. All cross-batch overlaps flagged in ROUTE_SIMILARITY_REVIEW.md. Not yet checked against Route Builder-level price research beyond the toll/insurance checks folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_france-switzerland-italy-10-14-days",
+    "name": "France + Switzerland + Italy (10-14 days) 🗻",
+    "stops": 9,
+    "km_in_route": 520,
+    "km_from_nl": 910,
+    "km_back_to_nl": 1030,
+    "km_by_country": {
+     "FR": 10,
+     "CH": 270,
+     "IT": 250
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "FR",
+     "country": "France",
+     "days": 3,
+     "budget": 216,
+     "dailyRate": 72,
+     "r2d": "changed to the style rate (was €125/day)",
+     "carInDailyRate": false,
+     "notes": "Chamonix/Mont Blanc (3 days) — the first standalone Chamonix content built in this repo: French Alps: Écrins National Park (6 days) 🐐 above explicitly chose Écrins over Chamonix specifically to avoid overlap with the Switzerland-Alps routes, so this is a genuine gap being filled, not a duplicate. Budget ~€100-130/day p.p. — the Aiguille du Midi cable car (~€75-80 p.p. return) is a real optional-splurge cost, not folded into the daily rate. Season: June-September.",
+     "transport_to_next": "Drive to Geneva, Switzerland (~90km/1h15) — a Schengen border, no checks, but Switzerland is outside the EU customs union (occasional spot checks).",
+     "destinations": [
+      {
+       "name": "Chamonix (Mont Blanc)",
+       "lat": 45.9237,
+       "lng": 6.8694
+      },
+      {
+       "name": "Aiguille du Midi cable car",
+       "lat": 45.8786,
+       "lng": 6.8873
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "CH",
+     "country": "Switzerland",
+     "days": 1,
+     "budget": 118,
+     "dailyRate": 118,
+     "r2d": "changed to the style rate (was €150/day)",
+     "carInDailyRate": false,
+     "notes": "Geneva (1 day) as a short waypoint. Budget ~€120-150/day p.p. — Switzerland pulls the trip's blended average up noticeably (see this route's overall budget note below). Currency note: Switzerland uses CHF, not the euro.",
+     "transport_to_next": "Drive to Täsch/Zermatt (~180km/2h30).",
+     "destinations": [
+      {
+       "name": "Geneva (old town, lake)",
+       "lat": 46.2044,
+       "lng": 6.1432
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "CH",
+     "country": "Switzerland",
+     "days": 3,
+     "budget": 354,
+     "dailyRate": 118,
+     "r2d": "changed to the style rate (was €150/day)",
+     "carInDailyRate": false,
+     "notes": "Zermatt/Matterhorn (3 days) — same car-free-Zermatt/Täsch-parking content as Swiss Alps: Zermatt / Matterhorn (6 days) 🗻 (rbBuildZermattMatterhornRoute) above, compressed here to fit this longer multi-country itinerary (see that route's notes for the Gornergrat/Matterhorn Glacier Paradise ticket caveats). Budget ~€130-170/day p.p. — one of the priciest legs in this batch.",
+     "transport_to_next": "Drive south over the Simplon Pass (open year-round, no seasonal closure) into Italy — a Schengen border, no checks, but a passport/ID should still be carried.",
+     "destinations": [
+      {
+       "name": "Täsch (parking)",
+       "lat": 46.0489,
+       "lng": 7.771
+      },
+      {
+       "name": "Zermatt (car-free)",
+       "lat": 46.0207,
+       "lng": 7.7491
+      },
+      {
+       "name": "Matterhorn / Mattertal",
+       "lat": 45.9763,
+       "lng": 7.6586
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 3,
+     "budget": 219,
+     "dailyRate": 73,
+     "r2d": "changed to the style rate (was €110/day)",
+     "carInDailyRate": false,
+     "notes": "Lake Como (3 days, ferry-hopping Bellagio/Varenna) — same content as the Lake Como leg of Northern Italy (6 days) 🚤 (rbBuildNorthernItalyLakesRoute)/Northern Italy Roadtrip (9 days) 🚙 (rbBuildNorthernItalyRoadtripRoute) above. Noticeably cheaper than the Swiss legs, ~€90-115/day p.p. Italy uses toll autostrade, not a vignette — budget an extra ~€20-40 in tolls; check that a rental car's insurance covers Italy if it isn't your own vehicle.",
+     "transport_to_next": "Drive to Milan (~75km/1h).",
+     "destinations": [
+      {
+       "name": "Lake Como / Bellagio",
+       "lat": 45.986,
+       "lng": 9.2578
+      },
+      {
+       "name": "Varenna",
+       "lat": 46.0139,
+       "lng": 9.2856
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "r2d": "changed to the style rate (was €125/day)",
+     "carInDailyRate": false,
+     "notes": "Milan (1-2 days) as the trip's departure point — same content as the Milan legs of Northern Italy (6 days) 🚤/Northern Italy Roadtrip (9 days) 🚙 and Dolomites & North Italy 🚡 (rbBuildDolomitesNorthItalyRoute) above. Budget ~€105-140/day p.p.",
+     "transport_to_next": "End of this route — direct return flight Milan to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Milan (Duomo, Galleria)",
+       "lat": 45.4642,
+       "lng": 9.19
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_germany-austria-italy-10-14-days",
+   "name": "Germany + Austria + Italy (10-14 days) 🏔️",
+   "mode": "own_car",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Own car throughout — Munich south to Garmisch/Füssen, over the Fernpass to Innsbruck, over the Brenner Pass into the Dolomites, then Lake Garda/Verona to close.",
+   "description": "Munich, Garmisch-Partenkirchen and Füssen/Neuschwanstein, Innsbruck, the Dolomites (Val Gardena/Cortina) via the Brenner Pass, and Lake Garda/Verona.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 15d (Grand European combinations — Alps/Italy cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️⚠️ Real overlap, explicitly flagged: this route's Alsace-free path (Munich→Garmisch/Füssen→Innsbruck→Dolomites) closely tracks the transition between the Central European Grand Roadtrip 🚗 (rbBuildCentralEuropeRoadtripRoute)'s 'Alpine Countries' and 'Dolomites & Northern Italy' regions — but that flagship 45-70 day/14-country expedition additionally routes through France/Switzerland/Liechtenstein first and covers the fuller Salzburg/Berchtesgaden/Salzkammergut/Grossglockner side of Austria (not just Innsbruck), then continues from the Dolomites on to Milan/Turin/the Cinque Terre/Tuscany/San Marino/Venice — this standalone route is a tight DE-AT-IT-only 12-day trip with none of that extra ground, closer in spirit to Isle of Man (3-4 days) 🏝️ vs England, Wales & Isle of Man 🎩's realistic-trip-vs-expedition-leg relationship. Also reuses content from Bavaria: Munich + Alps (5 days) 🥨 (Munich/Garmisch/Füssen), Tyrol (6 days) 🌉 (Innsbruck, though this route's Innsbruck stop is much shorter), Dolomites (6 days) ⛰️/Dolomites & North Italy 🚡/Venice + Dolomites (5 days) 🎭 (the Dolomites leg) and Northern Italy (6 days) 🚤/Northern Italy Roadtrip (9 days) 🚙 (the Lake Garda/Verona closer) — all flagged in ROUTE_SIMILARITY_REVIEW.md. Not yet checked against Route Builder-level price research beyond the vignette/toll checks folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_germany-austria-italy-10-14-days",
+    "name": "Germany + Austria + Italy (10-14 days) 🏔️",
+    "stops": 9,
+    "km_in_route": 670,
+    "km_from_nl": 830,
+    "km_back_to_nl": 1110,
+    "km_by_country": {
+     "DE": 140,
+     "AT": 80,
+     "IT": 450
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "DE",
+     "country": "Germany",
+     "days": 2,
+     "budget": 144,
+     "dailyRate": 72,
+     "r2d": "changed to the style rate (was €110/day)",
+     "carInDailyRate": false,
+     "notes": "Munich (2-3 days) as the opener — same content as Bavaria: Munich + Alps (5 days) 🥨's Munich stop (see that route's notes for Deutsches Museum/ticket detail). Budget ~€90-130/day p.p.",
+     "transport_to_next": "Drive south (~90km/1-1.5h) to Garmisch-Partenkirchen/Füssen.",
+     "destinations": [
+      {
+       "name": "Munich (Marienplatz, Englischer Garten)",
+       "lat": 48.1351,
+       "lng": 11.582
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "DE",
+     "country": "Germany",
+     "days": 2,
+     "budget": 144,
+     "dailyRate": 72,
+     "r2d": "changed to the style rate (was €110/day)",
+     "carInDailyRate": false,
+     "notes": "Garmisch-Partenkirchen and Füssen/Hohenschwangau (1-2 days) — same Zugspitze cable car and Neuschwanstein mandatory-timed-tour caveats as Bavaria: Munich + Alps (5 days) 🥨 (see that route's notes: book Neuschwanstein up to 8 weeks ahead, castle open during restoration until ~2029). Budget ~€90-130/day p.p.",
+     "transport_to_next": "Drive to Innsbruck via the Fernpass (~1h15-1h30) — a Schengen border, no checks.",
+     "destinations": [
+      {
+       "name": "Garmisch-Partenkirchen",
+       "lat": 47.4917,
+       "lng": 11.0956
+      },
+      {
+       "name": "Füssen / Hohenschwangau (Neuschwanstein)",
+       "lat": 47.5722,
+       "lng": 10.7017
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "AT",
+     "country": "Austria",
+     "days": 2,
+     "budget": 148,
+     "dailyRate": 74,
+     "r2d": "changed to the style rate (was €110/day)",
+     "carInDailyRate": false,
+     "notes": "Innsbruck (2 days) — a shorter, transit-oriented stop than the standalone Tyrol (6 days) 🌉 route above (that route builds a full 6-day loop out of Innsbruck via Seefeld/Achensee/Zillertal; this one just covers the old town before continuing south). Budget ~€90-125/day p.p. Austrian 10-day vignette (€12.80/car) required.",
+     "transport_to_next": "Drive over the Brenner Pass (Brennerpass/Passo del Brennero) into Italy — open year-round via both the tunnel and the motorway (no seasonal closure, unlike the high alpine passes elsewhere in this batch), a Schengen border with no checks. A separate Italian autostrada toll applies (per-kilometre) in addition to the Austrian vignette already paid for the Innsbruck leg.",
+     "destinations": [
+      {
+       "name": "Innsbruck (old town, Golden Roof)",
+       "lat": 47.2692,
+       "lng": 11.4041
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 4,
+     "budget": 292,
+     "dailyRate": 73,
+     "r2d": "changed to the style rate (was €120/day)",
+     "carInDailyRate": false,
+     "notes": "Bolzano as the gateway, then Val Gardena or Cortina d'Ampezzo (3-4 days) — same Dolomites content as Dolomites (6 days) ⛰️ (rbBuildDolomitesDeepRoute) and the Dolomites opening leg of Dolomites & North Italy 🚡 (rbBuildDolomitesNorthItalyRoute)/Venice + Dolomites (5 days) 🎭 (rbBuildVeniceDolomitesRoute) above — see those routes' notes for lift-season and parking-cap detail (Tre Cime/Lago di Braies book ahead in season). Budget ~€105-140/day p.p. Season: June-September (lifts fully open).",
+     "transport_to_next": "Drive south (~150km/2h) to Lake Garda/Verona, or continue to Venice instead (either/or, see this route's notes below).",
+     "destinations": [
+      {
+       "name": "Bolzano",
+       "lat": 46.4983,
+       "lng": 11.3548
+      },
+      {
+       "name": "Val Gardena / Ortisei",
+       "lat": 46.5765,
+       "lng": 11.675
+      },
+      {
+       "name": "Cortina d'Ampezzo",
+       "lat": 46.5369,
+       "lng": 12.1357
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "r2d": "changed to the style rate (was €115/day)",
+     "carInDailyRate": false,
+     "notes": "Lake Garda/Verona chosen here as the concrete closing stop rather than Venice — same Sirmione/Desenzano/Verona content as the Lake Garda/Verona legs of Northern Italy (6 days) 🚤 (rbBuildNorthernItalyLakesRoute) and Northern Italy Roadtrip (9 days) 🚙 (rbBuildNorthernItalyRoadtripRoute) above — see those routes' notes for the Milan Area C/Arena-ticket caveats. Deliberately not Venice: Venice is already the closing stop of three other Dolomites-adjacent routes in this repo (Dolomites & North Italy 🚡, Venice + Dolomites (5 days) 🎭, Northern Italy Roadtrip (9 days) 🚙) — picking Lake Garda/Verona instead avoids piling a fourth near-identical Dolomites→Venice tail onto the list. Budget ~€105-140/day p.p., Venice would run noticeably higher per those other routes' own price checks.",
+     "transport_to_next": "End of this route — drive back to Munich or fly home from Verona/Venice.",
+     "destinations": [
+      {
+       "name": "Lake Garda / Sirmione",
+       "lat": 45.4933,
+       "lng": 10.6089
+      },
+      {
+       "name": "Verona (Arena, old town)",
+       "lat": 45.4384,
+       "lng": 10.9916
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_grand-european-roadtrip-14-21-days",
+   "name": "Grand European Roadtrip (14-21 days) 🪣",
+   "mode": "own_car",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Own car for the whole loop (a rental works too) — no single month suits all 8-9 countries equally, May-June/September is the least-bad compromise. Nadrukkelijk aspirational/bucket-list, not a bookable plan, per the source list's own framing — the widest and last, most all-encompassing trip in the entire EUROPA_TRIP_IDEAS.md document.",
+   "description": "An aspirational 'greatest hits of Central Europe' bucket-list loop: the Rhine Valley and Bavaria, Salzburg and Innsbruck, Interlaken, the Dolomites and Venice, Lake Bled, Istria/Plitvice/the Croatian coast (with an optional Kotor, Montenegro extension), Budapest and Prague.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 15f (Grand European combinations — Grand/South cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content — this is the LAST item of the entire Phase 2 workstream (all 319 EUROPA_TRIP_IDEAS.md items now built). The source is explicit that this is a bucket-list/aspirational trip, not a bookable plan: ~2 days average per country at the 21-day end is a 'tasted it' tour, not the deeper travel style Youri favors elsewhere in this document — realistically this would want 5-6+ weeks to do properly, which is exactly what the two routes below already do.\n\n⚠️⚠️ MAJOR real overlap, explicitly and carefully flagged per this batch's collision-check instructions — this route's relationship to TWO existing routes needs to be read together, not separately:\n\n(1) Central European Grand Roadtrip 🚗 (rbBuildCentralEuropeRoadtripRoute) — the pre-Phase-2 flagship Grand Expedition (45-70 days, 14 countries: France/Germany/Switzerland/Liechtenstein/Austria/Italy/San Marino/Slovenia/Croatia/Serbia/Hungary/Slovakia/Czechia/Poland). This new route's own country list (Germany/Austria/Switzerland/Italy/Slovenia/Croatia/optional Montenegro/Hungary/Czechia) is almost a direct SUBSET of the flagship's 14 countries — missing only France/Liechtenstein/San Marino/Serbia/Slovakia/Poland from that list, and adding only Montenegro (as an explicitly optional, uncounted extension) that the flagship doesn't have. Where the two overlap, the flagship gives every region dramatically more time: its 'Alpine Countries' region alone (France/Germany/Switzerland/Liechtenstein/Austria) runs 18 days vs. this route's 6 days covering the DE/AT/CH portion; its 'Dolomites & Northern Italy' region runs 20 days (also covering Milan/Turin/Cinque Terre/Tuscany/San Marino, none of which this route touches) vs. this route's 3 days for just the Dolomites/Venice; its 'Balkans' region (Slovenia/Croatia/Serbia/Hungary) runs 16 days vs. this route's 4 days for Slovenia/Croatia/Hungary combined (this route swaps in optional Montenegro instead of Serbia); its 'Central Europe' region includes Czechia at 6 days (split Brno+Prague) vs. this route's 1 day.\n\n(2) Central Europe Roadtrip (14 days) 🚂 (rbBuildCentralEuropeRoadtripFourteenDaysRoute, built earlier in this same overall workstream as batch 15c's own compressed subset of the same flagship) — the most directly comparable sibling, since both routes are deliberately compressed 14-day subsets of the identical 45-70 day flagship, just carved out along different country lines: that route's subset is France(none actually, it drops France)/Germany(Berlin)/Czechia/Poland/Slovakia/Hungary/Austria(Vienna) — a purely Central/Eastern European capital-hopping loop by train, explicitly built around Berlin+Prague+Krakow+Bratislava+Vienna+Budapest, none of which (except Prague/Budapest) appear on this route at all. This route's own subset instead runs Germany(Rhine+Bavaria, not Berlin)/Austria(Salzburg+Innsbruck, not Vienna)/Switzerland/Italy/Slovenia/Croatia(+optional Montenegro)/Hungary/Czechia — the Alpine-and-Adriatic half of the flagship that batch 15c's route deliberately left untouched. Together the two 14-day routes cover almost the full flagship between them, split along a Central/Eastern-Europe-by-train axis (batch 15c) vs. an Alpine/Adriatic-by-car axis (this route) — genuinely complementary rather than duplicates of each other, even though both are 'compressed flagship subset' routes by construction. The only cities both routes share are Prague and Budapest, each given radically different amounts of time (2 days each in batch 15c's route vs. 1 day each here).\n\nSame relationship pattern as Isle of Man (3-4 days) 🏝️ vs. England, Wales & Isle of Man 🎩 (rbBuildIsleOfManRoute vs. rbBuildEnglandWalesIoMRoute) and as batch 15c's own Central Europe Roadtrip vs. the flagship (see that route's notes) — a realistic-length standalone trip vs. a leg buried inside a month-plus expedition, except pushed to an even more extreme compression ratio here (14-21 days standing in for 45-70). Deliberately given a distinct function name (rbBuildGrandEuropeanRoadtripFourteenToTwentyOneDaysRoute) that doesn't collide with either rbBuildCentralEuropeRoadtripRoute or rbBuildCentralEuropeRoadtripFourteenDaysRoute. All three routes (this one, the flagship, and batch 15c's route) continue to exist unchanged, none renamed, none merged. Also touches this same sub-batch's own Balkan Roadtrip item on the optional-Montenegro/Croatia-coast content only lightly (different country combination overall). Flagged prominently in ROUTE_SIMILARITY_REVIEW.md per project policy — this is very likely the strongest 3-way overlap case in the entire Phase 2 workstream given how directly it maps onto the flagship's own country list. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan; days/budgets above are the 14-day base case, with Montenegro as an explicitly uncounted optional extension towards the 21-day end of the range.",
+   "distance": {
+    "id": "gt_seed_grand-european-roadtrip-14-21-days",
+    "name": "Grand European Roadtrip (14-21 days) 🪣",
+    "stops": 12,
+    "km_in_route": 3450,
+    "km_from_nl": 400,
+    "km_back_to_nl": 890,
+    "km_by_country": {
+     "DE": 440,
+     "AT": 330,
+     "CH": 360,
+     "IT": 610,
+     "SI": 230,
+     "HR": 390,
+     "HU": 510,
+     "CZ": 580
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "DE",
+     "country": "Germany",
+     "days": 2,
+     "budget": 144,
+     "dailyRate": 72,
+     "r2d": "changed to the style rate (was €110/day)",
+     "carInDailyRate": false,
+     "notes": "A deliberately compressed opener (2-3 days) squeezing both the Rhine Valley and Bavaria into one stop — a real taste, not a proper visit of either (the flagship Central European Grand Roadtrip 🚗 below gives Bavaria/Neuschwanstein 4 full days on its own). Budget ~€110/day. ⚠️ Web check (2026-09): even tighter than it looks — Rüdesheim to Füssen is ~500-550km/5-5.5h, then a further 2.5-3h on to Salzburg, and Neuschwanstein tickets are timed-entry, routinely selling out weeks to ~2-3 months ahead in the May-September season (same-day tickets often gone by 8am). Realistically this 2-day leg means an exterior/Marienbrücke stop at most, no time for the castle interior tour unless booked well ahead — flagged as a route-logic tension, not silently smoothed over.",
+     "transport_to_next": "Drive south to Salzburg — a Schengen border, no checks.",
+     "destinations": [
+      {
+       "name": "Rüdesheim am Rhein / Loreley (Rhine Valley)",
+       "lat": 49.9786,
+       "lng": 7.9047
+      },
+      {
+       "name": "Munich / Neuschwanstein (Bavaria)",
+       "lat": 48.1351,
+       "lng": 11.582
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "AT",
+     "country": "Austria",
+     "days": 2,
+     "budget": 148,
+     "dailyRate": 74,
+     "r2d": "changed to the style rate (was €115/day)",
+     "carInDailyRate": false,
+     "notes": "Salzburg and Innsbruck (2 days) — both cities get a full standalone visit elsewhere in this repo; here it's one day each. Budget ~€115/day. Austrian 10-day vignette required.",
+     "transport_to_next": "Drive over the Arlberg Pass towards Interlaken, Switzerland — Web check (2026-09): the Arlberg Pass itself (St. Anton-Bludenz) is entirely within Austria, not the Swiss border; using the Arlberg road tunnel (S16) instead adds a separate €13 section toll not covered by the vignette. The actual Swiss border crossing comes further along (e.g. near Feldkirch/St. Margrethen) — Schengen, no checks, that's where the Swiss vignette (CHF ~40, annual-only, no short-stay option) is needed.",
+     "destinations": [
+      {
+       "name": "Salzburg",
+       "lat": 47.8095,
+       "lng": 13.055
+      },
+      {
+       "name": "Innsbruck",
+       "lat": 47.2692,
+       "lng": 11.4041
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "CH",
+     "country": "Switzerland",
+     "days": 2,
+     "budget": 236,
+     "dailyRate": 118,
+     "r2d": "changed to the style rate (was €150/day)",
+     "carInDailyRate": false,
+     "notes": "Interlaken (2 days) — a fraction of the 5-6 days the Bernese Oberland deserves (see the flagship route below, or Interlaken + Lauterbrunnen + Grindelwald (6 days) 🪂). Budget ~€150/day — Switzerland pulls this route's blended average up sharply, same finding as every other route in this repo that touches it.",
+     "transport_to_next": "Drive over the Alps into Italy towards the Dolomites/Venice — a Schengen border, no checks, Italian autostrada toll applies.",
+     "destinations": [
+      {
+       "name": "Interlaken / Lauterbrunnen",
+       "lat": 46.6863,
+       "lng": 7.8632
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 3,
+     "budget": 219,
+     "dailyRate": 73,
+     "r2d": "changed to the style rate (was €130/day)",
+     "carInDailyRate": false,
+     "notes": "The Dolomites and Venice (3 days) — squeezed into a single stop where the flagship route below gives them roughly 8 combined days. Budget ~€130/day.",
+     "transport_to_next": "Drive to Bled via Trieste-Ljubljana — Web check (2026-09): Italy has its own separate border-check regime with Slovenia (Fernetti, Gorizia-Nova Gorica crossings), extended through 18 December 2026 for terrorism/migration-smuggling concerns and Winter Olympics/Paralympics security — random spot checks only, typically 15-40 min, not a closed border. Slovenian e-vinjeta needed (fully digital since Dec 2021, plate-based; 7-day tier ~€16 covers this route's 1-day Slovenia leg).",
+     "destinations": [
+      {
+       "name": "Dolomites (Cortina d'Ampezzo / Tre Cime)",
+       "lat": 46.6198,
+       "lng": 12.3032
+      },
+      {
+       "name": "Venice (Piazza San Marco)",
+       "lat": 45.4408,
+       "lng": 12.3155
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "SI",
+     "country": "Slovenia",
+     "days": 1,
+     "budget": 62,
+     "dailyRate": 62,
+     "r2d": "changed to the style rate (was €100/day)",
+     "carInDailyRate": false,
+     "notes": "Bled (1-2 days) — a single-day taste of a lake that deserves several (see Grand Balkan Roadtrip (14 days) 🏔️ or the flagship route below, both of which give Bled/the Julian Alps multiple days). Budget ~€100/day.",
+     "transport_to_next": "Drive into Croatia towards Istria/Plitvice/the coast — Schengen-internal, zero checks today. Web check (2026-09), minor precision: Croatia joined Schengen 1 January 2023, but Slovenia separately reinstated its own temporary controls on this border from 21 October 2023, only lifting them again on 11 June 2026 — so \"zero checks since 2023\" wasn't continuously true; it's accurate again now (Sept 2026).",
+     "destinations": [
+      {
+       "name": "Bled",
+       "lat": 46.3683,
+       "lng": 14.1146
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "country_code": "HR",
+     "country": "Croatia",
+     "days": 2,
+     "budget": 126,
+     "dailyRate": 63,
+     "r2d": "changed to the style rate (was €110/day)",
+     "carInDailyRate": false,
+     "notes": "Istria, Plitvice and a taste of the coast (2 days) — deliberately picks a slice rather than a full Croatia loop, unlike this same document's own dedicated Croatia routes. Budget ~€110/day. Optional (only realistic at the 21-day end of this range, not counted in this route's own day/budget totals): extend to Kotor, Montenegro (1-2 days, ~€45-60/day) via the Karasovići EES crossing — a real non-Schengen/non-EU border with a genuine passport check, the only one on this whole route.",
+     "transport_to_next": "Drive north to Budapest via Zagreb — a Schengen border, no checks.",
+     "destinations": [
+      {
+       "name": "Istria (Rovinj/Pula)",
+       "lat": 45.0811,
+       "lng": 13.6387
+      },
+      {
+       "name": "Plitvice Lakes National Park",
+       "lat": 44.8654,
+       "lng": 15.582
+      }
+     ]
+    },
+    {
+     "index": 6,
+     "country_code": "HU",
+     "country": "Hungary",
+     "days": 1,
+     "budget": 48,
+     "dailyRate": 48,
+     "r2d": "changed to the style rate (was €60/day)",
+     "carInDailyRate": false,
+     "notes": "Budapest (2 days at the source's own count, compressed to 1 here to keep the 14-day total honest) — same city covered far more thoroughly by Central Europe Roadtrip (14 days) 🚂 (rbBuildCentralEuropeRoadtripFourteenDaysRoute) below. Budget ~€60/day.",
+     "transport_to_next": "Drive or train to Prague — a Schengen border, no checks.",
+     "destinations": [
+      {
+       "name": "Budapest",
+       "lat": 47.4979,
+       "lng": 19.0402
+      }
+     ]
+    },
+    {
+     "index": 7,
+     "country_code": "CZ",
+     "country": "Czechia",
+     "days": 1,
+     "budget": 55,
+     "dailyRate": 55,
+     "r2d": "changed to the style rate (was €85/day)",
+     "carInDailyRate": false,
+     "notes": "Prague (2 days at the source's own count, compressed to 1 here for the same reason as Budapest above) — same closing city as Central Europe Roadtrip (14 days) 🚂 below. Budget ~€85/day.",
+     "transport_to_next": "End of this route — fly home from Prague, or drive back to the Netherlands.",
+     "destinations": [
+      {
+       "name": "Prague",
+       "lat": 50.0755,
+       "lng": 14.4378
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_italy-roadtrip-12-days",
+   "name": "Italy Roadtrip (12 days) 🧀",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Open-jaw AMS-Milan in, AMS-Naples out — rental car for the entire trip.",
+   "description": "Milan/Turin, the Emilia-Romagna food route (Parma, Modena, Bologna), Umbria (Perugia, Assisi, Orvieto), Rome, Naples/Pompeii, and the Amalfi Coast/Sorrento.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. Deliberately a different angle from Italy: North to Central (12 days) 🚄 above per the source's own framing — car-only, rural/food-focused, skipping Tuscany's big names entirely rather than another train-friendly big-cities sweep. Shares Amalfi Coast/Naples ground with Campania: Naples + Amalfi Coast (6 days) 🌊 and Campania + Puglia (9 days) 🧭 below — per this project's overlap-is-fine convention, built independently. Not yet checked against Route Builder-level price research beyond the toll figures folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_italy-roadtrip-12-days",
+    "name": "Italy Roadtrip (12 days) 🧀",
+    "stops": 13,
+    "km_in_route": 1320,
+    "km_from_nl": 1030,
+    "km_back_to_nl": 1890,
+    "km_by_country": {
+     "IT": 1320
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 182,
+     "dailyRate": 91,
+     "r2d": "changed by review call (ok)",
+     "carInDailyRate": false,
+     "notes": "Deliberately a different angle from Italy: North to Central (12 days) 🚄 above — car-only, rural/food-focused, skips Tuscany's big names entirely: Milan/Turin (2 days). Open-jaw AMS-Milan in, AMS-Naples out (both direct). Rental car for the whole trip. Budget ~€140/day (the Amalfi stretch plus rental car/tolls pull the average up) — toll costs Milan-Rome ≈€44.50, Rome-Naples ≈€13.50 (2026 rates; autostrada tariffs rose ~1.5% in January 2026).",
+     "transport_to_next": "Drive to Emilia-Romagna (Parma).",
+     "destinations": [
+      {
+       "name": "Milan",
+       "lat": 45.4642,
+       "lng": 9.19
+      },
+      {
+       "name": "Turin",
+       "lat": 45.0703,
+       "lng": 7.6869
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 182,
+     "dailyRate": 91,
+     "r2d": "changed by review call (ok)",
+     "carInDailyRate": false,
+     "notes": "Emilia-Romagna food route: Parma, Modena, Bologna (2 days).",
+     "transport_to_next": "Drive south to Umbria (Perugia).",
+     "destinations": [
+      {
+       "name": "Parma",
+       "lat": 44.8015,
+       "lng": 10.3279
+      },
+      {
+       "name": "Modena",
+       "lat": 44.6471,
+       "lng": 10.9252
+      },
+      {
+       "name": "Bologna",
+       "lat": 44.4949,
+       "lng": 11.3426
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 182,
+     "dailyRate": 91,
+     "r2d": "changed by review call (ok)",
+     "carInDailyRate": false,
+     "notes": "Umbria: Perugia, Assisi, Orvieto (2-3 days).",
+     "transport_to_next": "Drive to Rome via the A1 autostrada.",
+     "destinations": [
+      {
+       "name": "Perugia",
+       "lat": 43.1122,
+       "lng": 12.3888
+      },
+      {
+       "name": "Assisi",
+       "lat": 43.0707,
+       "lng": 12.6196
+      },
+      {
+       "name": "Orvieto",
+       "lat": 42.7186,
+       "lng": 12.1128
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 182,
+     "dailyRate": 91,
+     "r2d": "changed by review call (ok)",
+     "carInDailyRate": false,
+     "notes": "Rome (2-3 days).",
+     "transport_to_next": "Drive to Naples/Pompeii.",
+     "destinations": [
+      {
+       "name": "Rome",
+       "lat": 41.9028,
+       "lng": 12.4964
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 182,
+     "dailyRate": 91,
+     "r2d": "changed by review call (ok)",
+     "carInDailyRate": false,
+     "notes": "Naples/Pompeii (2 days).",
+     "transport_to_next": "Drive to the Amalfi Coast/Sorrento.",
+     "destinations": [
+      {
+       "name": "Naples",
+       "lat": 40.8518,
+       "lng": 14.2681
+      },
+      {
+       "name": "Pompeii",
+       "lat": 40.7461,
+       "lng": 14.4989
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 182,
+     "dailyRate": 91,
+     "r2d": "changed by review call (ok)",
+     "carInDailyRate": false,
+     "notes": "Amalfi Coast/Sorrento (2-3 days) to close the trip. Season: May-June or September-early October. ⚠️ The Amalfi Coast stretch has the same odd/even-license-plate and ZTL restrictions as the Campania routes below — check the exact 2026 calendar ahead, especially on a summer-weekend arrival.",
+     "transport_to_next": "End of this route — direct return flight Naples to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Amalfi Coast",
+       "lat": 40.634,
+       "lng": 14.6027
+      },
+      {
+       "name": "Sorrento",
+       "lat": 40.6263,
+       "lng": 14.3757
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_italy-north-to-central-12-days",
+   "name": "Italy: North to Central (12 days) 🚄",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Open-jaw AMS-Milan in, AMS-Rome out — rental car for the lakes leg, high-speed train (Milan-Bologna-Florence-Rome line) for the rest.",
+   "description": "Milan/Lake Como/Lake Garda, Verona, Bologna, Florence, Siena/Val d'Orcia, and Rome — a linear sweep with no backtrack.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. Deliberately a different angle from Italy Roadtrip (12 days) 🧀 below per the source's own framing — this route is the train-friendly, big-names/high-speed-rail sweep, while that one is car-only and rural/food-focused, skipping Tuscany's big names entirely. Shares lakes ground with Northern Italy Roadtrip (9 days) 🚙 above (which continues east to the Dolomites/Venice instead of south to Rome) and Tuscany/Rome ground with several other routes in this batch — per this project's overlap-is-fine convention, built independently. Not yet checked against Route Builder-level price research beyond the toll estimate folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_italy-north-to-central-12-days",
+    "name": "Italy: North to Central (12 days) 🚄",
+    "stops": 9,
+    "km_in_route": 820,
+    "km_from_nl": 1030,
+    "km_back_to_nl": 1640,
+    "km_by_country": {
+     "IT": 820
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 4,
+     "budget": 292,
+     "dailyRate": 73,
+     "r2d": "changed to the style rate (was €130/day)",
+     "carInDailyRate": false,
+     "notes": "The classic big-names sweep, linear, no backtrack — mostly along the Milan-Bologna-Florence-Rome high-speed rail line (a real alternative to the car here, except for the lakes/Dolomites stretch). Milan/Lake Como/Lake Garda (3-4 days), then on via Verona. Open-jaw AMS-Milan in, AMS-Rome out (both direct, frequent). Budget ~€130/day. Italian autostrade charge distance-based tolls, roughly €9/100km — Milan-Rome alone is about €44.50 one way if driving the full spine rather than switching to the train.",
+     "transport_to_next": "Drive or take the high-speed train via Verona to Bologna (~1h).",
+     "destinations": [
+      {
+       "name": "Milan",
+       "lat": 45.4642,
+       "lng": 9.19
+      },
+      {
+       "name": "Lake Como / Bellagio",
+       "lat": 45.986,
+       "lng": 9.2578
+      },
+      {
+       "name": "Lake Garda / Sirmione",
+       "lat": 45.4933,
+       "lng": 10.6089
+      },
+      {
+       "name": "Verona (waypoint)",
+       "lat": 45.4384,
+       "lng": 10.9916
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 73,
+     "dailyRate": 73,
+     "r2d": "changed to the style rate (was €130/day)",
+     "carInDailyRate": false,
+     "notes": "Bologna (1 day).",
+     "transport_to_next": "High-speed train to Florence (~35 min).",
+     "destinations": [
+      {
+       "name": "Bologna",
+       "lat": 44.4949,
+       "lng": 11.3426
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "r2d": "changed to the style rate (was €130/day)",
+     "carInDailyRate": false,
+     "notes": "Florence (2-3 days).",
+     "transport_to_next": "Drive or train to Siena/Val d'Orcia.",
+     "destinations": [
+      {
+       "name": "Florence",
+       "lat": 43.7696,
+       "lng": 11.2558
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "r2d": "changed to the style rate (was €130/day)",
+     "carInDailyRate": false,
+     "notes": "Siena/Val d'Orcia (2 days). Season: May-June or September; avoid August.",
+     "transport_to_next": "High-speed train to Rome (~1h30).",
+     "destinations": [
+      {
+       "name": "Siena",
+       "lat": 43.3188,
+       "lng": 11.3308
+      },
+      {
+       "name": "Val d'Orcia (Pienza)",
+       "lat": 43.0778,
+       "lng": 11.6789
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 3,
+     "budget": 219,
+     "dailyRate": 73,
+     "r2d": "changed to the style rate (was €130/day)",
+     "carInDailyRate": false,
+     "notes": "Rome (3 days) to close the trip.",
+     "transport_to_next": "End of this route — direct return flight Rome (Fiumicino) to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Rome",
+       "lat": 41.9028,
+       "lng": 12.4964
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_malta-gozo-sicily-9-days",
+   "name": "Malta + Gozo + Sicily (9 days) 🐚",
+   "mode": "rental",
+   "carInBudgetWording": "included",
+   "carEvidence": "e time) to make room for Gozo afterwards. Budget ~€150/day (rental car and fuel included). ¶ Direct Ryanair flight Malta-Catania (~50 min) or the Vi",
+   "travel_style": "Rental car in Sicily; a direct Ryanair flight or the Virtu Ferries ferry across to Malta; the Cirkewwa-Mgarr ferry to Gozo.",
+   "description": "A shortened Sicily loop (Catania, Etna, Taormina, Syracuse) making room for Malta mainland plus Gozo via the Cirkewwa-Mgarr ferry.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately kept distinct from Sicily + Malta (9 days) 🌋 above per the source's own explicit framing — same Sicily core, shortened to add Gozo, rather than a near-duplicate. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_malta-gozo-sicily-9-days",
+    "name": "Malta + Gozo + Sicily (9 days) 🐚",
+    "stops": 8,
+    "km_in_route": 430,
+    "km_from_nl": 2340,
+    "km_back_to_nl": 2500,
+    "km_by_country": {
+     "IT": 190,
+     "MT": 240
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 5,
+     "budget": 750,
+     "dailyRate": 150,
+     "r2d": "kept as is (review call: rental car + fuel in the rate)",
+     "carInDailyRate": true,
+     "notes": "Confirmed: the only real difference from Sicily + Malta (9 days) 🌋 above is Gozo. The same Sicily core, but shortened (Catania → Etna → Taormina → Syracuse, with Agrigento/Palermo dropped to make time) to make room for Gozo afterwards. Budget ~€150/day (rental car and fuel included).",
+     "transport_to_next": "Direct Ryanair flight Malta-Catania (~50 min) or the Virtu Ferries Pozzallo-Valletta ferry (~1h45) — either crossing works.",
+     "destinations": [
+      {
+       "name": "Catania",
+       "lat": 37.5079,
+       "lng": 15.083
+      },
+      {
+       "name": "Mount Etna",
+       "lat": 37.751,
+       "lng": 14.9934
+      },
+      {
+       "name": "Taormina",
+       "lat": 37.8527,
+       "lng": 15.2853
+      },
+      {
+       "name": "Syracuse / Ortigia",
+       "lat": 37.0587,
+       "lng": 15.2874
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "MT",
+     "country": "Malta",
+     "days": 4,
+     "budget": 244,
+     "dailyRate": 61,
+     "r2d": "changed by review call (ok)",
+     "carInDailyRate": false,
+     "notes": "Malta mainland (2 days: Valletta plus surroundings) then Gozo (1-2 days) via the Cirkewwa-Mgarr ferry. Treat this explicitly as 'Sicily shortened to make room for Gozo' against the previous route's 'Sicily in full, Gozo skipped' — otherwise the two read as near-duplicates. Budget ~€115-125/day averaged across this leg. Season: same as Sicily + Malta (9 days) 🌋 above.",
+     "transport_to_next": "End of this route — the Cirkewwa-Mgarr ferry to/from Gozo is folded into the Malta days above; direct flight home from Malta.",
+     "destinations": [
+      {
+       "name": "Valletta",
+       "lat": 35.8989,
+       "lng": 14.5146
+      },
+      {
+       "name": "Three Cities",
+       "lat": 35.8886,
+       "lng": 14.5228
+      },
+      {
+       "name": "Cittadella, Victoria (Gozo)",
+       "lat": 36.0448,
+       "lng": 14.24
+      },
+      {
+       "name": "Ramla Bay (Gozo)",
+       "lat": 36.0672,
+       "lng": 14.2789
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

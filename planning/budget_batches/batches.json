@@ -1,0 +1,3739 @@
+[
+ {
+  "batch": 2,
+  "group": "Italy, San Marino & Malta",
+  "part": 1,
+  "parts": 3,
+  "estTokens": 178000,
+  "routes": [
+   {
+    "id": "gt_seed_campania-puglia-9-days",
+    "name": "Campania + Puglia (9 days) 🧭",
+    "mode": "rental",
+    "blocks": 5,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_campania-naples-amalfi-coast-6-days",
+    "name": "Campania: Naples + Amalfi Coast (6 days) 🌊",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_corsica-sardinia-south-corsica-north-sardinia-5-days",
+    "name": "Corsica + Sardinia: South Corsica & North Sardinia (5 days) 🏝️",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_dolomites-6-days",
+    "name": "Dolomites (6 days) ⛰️",
+    "mode": "own_car",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_florence-tuscany-4-days",
+    "name": "Florence + Tuscany (4 days) 🎨",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_france-switzerland-italy-10-14-days",
+    "name": "France + Switzerland + Italy (10-14 days) 🗻",
+    "mode": "own_car",
+    "blocks": 5,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_germany-austria-italy-10-14-days",
+    "name": "Germany + Austria + Italy (10-14 days) 🏔️",
+    "mode": "own_car",
+    "blocks": 5,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_grand-european-roadtrip-14-21-days",
+    "name": "Grand European Roadtrip (14-21 days) 🪣",
+    "mode": "own_car",
+    "blocks": 8,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_italy-roadtrip-12-days",
+    "name": "Italy Roadtrip (12 days) 🧀",
+    "mode": "rental",
+    "blocks": 6,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_italy-north-to-central-12-days",
+    "name": "Italy: North to Central (12 days) 🚄",
+    "mode": "rental",
+    "blocks": 5,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_malta-gozo-sicily-9-days",
+    "name": "Malta + Gozo + Sicily (9 days) 🐚",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   }
+  ]
+ },
+ {
+  "batch": 3,
+  "group": "Italy, San Marino & Malta",
+  "part": 2,
+  "parts": 3,
+  "estTokens": 173500,
+  "routes": [
+   {
+    "id": "gt_seed_northern-italy-6-days",
+    "name": "Northern Italy (6 days) 🚤",
+    "mode": "own_car",
+    "blocks": 4,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_northern-italy-roadtrip-9-days",
+    "name": "Northern Italy Roadtrip (9 days) 🚙",
+    "mode": "rental",
+    "blocks": 6,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_puglia-6-days",
+    "name": "Puglia (6 days) 🏘️",
+    "mode": "rental",
+    "blocks": 5,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_rome-4-days",
+    "name": "Rome (4 days) 🏛️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_rome-tuscany-9-days",
+    "name": "Rome + Tuscany (9 days) 🍝",
+    "mode": "rental",
+    "blocks": 5,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_rome-vatican-city-in-depth-4-days",
+    "name": "Rome + Vatican City In-Depth (4 days) ⛪",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_san-marino-emilia-romagna-4-days",
+    "name": "San Marino + Emilia-Romagna (4 days) 🍝",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_san-marino-tuscany-5-days",
+    "name": "San Marino + Tuscany (5 days) 🍷",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_sardinia-9-days",
+    "name": "Sardinia (9 days) ⛵",
+    "mode": "rental",
+    "blocks": 4,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_sardinia-north-4-5-days",
+    "name": "Sardinia North (4-5 days) 🏝️",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_sardinia-roadtrip-7-10-days",
+    "name": "Sardinia Roadtrip (7-10 days) 🏝️",
+    "mode": "rental",
+    "blocks": 5,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_sardinia-south-4-5-days",
+    "name": "Sardinia South (4-5 days) 🏝️",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   }
+  ]
+ },
+ {
+  "batch": 4,
+  "group": "Italy, San Marino & Malta",
+  "part": 3,
+  "parts": 3,
+  "estTokens": 171500,
+  "routes": [
+   {
+    "id": "gt_seed_sicily-9-days",
+    "name": "Sicily (9 days) 🍋",
+    "mode": "rental",
+    "blocks": 6,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_sicily-aeolian-islands-3-4-days",
+    "name": "Sicily + Aeolian Islands (3-4 days) 🏝️",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_sicily-malta-9-days",
+    "name": "Sicily + Malta (9 days) 🌋",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_sicily-southern-italy-12-days",
+    "name": "Sicily + Southern Italy (12 days) 🍊",
+    "mode": "rental",
+    "blocks": 7,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_sicily-east-4-5-days",
+    "name": "Sicily East (4-5 days) 🏝️",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_sicily-roadtrip-7-10-days",
+    "name": "Sicily Roadtrip (7-10 days) 🏝️",
+    "mode": "rental",
+    "blocks": 5,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_sicily-west-4-5-days",
+    "name": "Sicily West (4-5 days) 🏝️",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_tuscany-6-days",
+    "name": "Tuscany (6 days) 🍇",
+    "mode": "own_car",
+    "blocks": 4,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_vatican-city-day-visit-within-a-rome-stay-1-day",
+    "name": "Vatican City Day Visit within a Rome Stay (1 day) 🕊️",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_venice-dolomites-5-days",
+    "name": "Venice + Dolomites (5 days) 🎭",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_malta-4-days",
+    "name": "Malta (4 days) 🌅",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "MT"
+   },
+   {
+    "id": "gt_seed_malta-gozo-6-days",
+    "name": "Malta + Gozo (6 days) ⛵",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "MT"
+   },
+   {
+    "id": "gt_seed_san-marino-day-visit-1-day",
+    "name": "San Marino: Day Visit (1 day) 🛡️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "SM"
+   }
+  ]
+ },
+ {
+  "batch": 5,
+  "group": "Iberia",
+  "part": 1,
+  "parts": 2,
+  "estTokens": 197000,
+  "routes": [
+   {
+    "id": "gt_seed_andorra-4-days",
+    "name": "Andorra (4 days) 🏔️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "AD"
+   },
+   {
+    "id": "gt_seed_andorra-french-pyrenees-ariege-6-days",
+    "name": "Andorra + French Pyrenees: Ariège (6 days) ♨️",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "AD"
+   },
+   {
+    "id": "gt_seed_andalusia-roadtrip-9-days",
+    "name": "Andalusia Roadtrip (9 days) 🚗",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_andalusia-seville-granada-5-days",
+    "name": "Andalusia: Seville + Granada (5 days) 🏰",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_andorra-spanish-pyrenees-grand-circuit-9-days",
+    "name": "Andorra + Spanish Pyrenees: Grand Circuit (9 days) 🏔️",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_asturias-cantabria-6-days",
+    "name": "Asturias + Cantabria (6 days) 🌲",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_balearic-islands-7-10-days",
+    "name": "Balearic Islands (7-10 days) 🏝️",
+    "mode": "public",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_barcelona-4-days",
+    "name": "Barcelona (4 days) 🎨",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_basque-country-san-sebastian-bilbao-6-days",
+    "name": "Basque Country: San Sebastián + Bilbao (6 days) 🐟",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_canary-islands-10-14-days",
+    "name": "Canary Islands (10-14 days) 🏝️",
+    "mode": "public",
+    "blocks": 4,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_catalonia-pyrenees-9-days",
+    "name": "Catalonia + Pyrenees (9 days) ⛰️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_galicia-santiago-de-compostela-coast-6-days",
+    "name": "Galicia: Santiago de Compostela + Coast (6 days) 🐚",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_gibraltar-andalusia-costa-del-sol-4-days",
+    "name": "Gibraltar + Andalusia: Costa del Sol (4 days) 🐒",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_gran-canaria-5-7-days",
+    "name": "Gran Canaria (5-7 days) 🏝️",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_gran-canaria-tenerife-7-10-days",
+    "name": "Gran Canaria + Tenerife (7-10 days) 🏝️",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_ibiza-4-5-days",
+    "name": "Ibiza (4-5 days) 🏝️",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_lanzarote-fuerteventura-5-7-days",
+    "name": "Lanzarote + Fuerteventura (5-7 days) 🏝️",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_madrid-4-days",
+    "name": "Madrid (4 days) 🖼️",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_mallorca-menorca-7-10-days",
+    "name": "Mallorca + Menorca (7-10 days) 🏝️",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_mallorca-serra-de-tramuntana-loop-6-days",
+    "name": "Mallorca: Serra de Tramuntana Loop (6 days) 🏔️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_menorca-4-5-days",
+    "name": "Menorca (4-5 days) 🏝️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_northern-spain-roadtrip-12-days",
+    "name": "Northern Spain Roadtrip (12 days) 🛣️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_northern-spain-basque-interior-rioja-9-days",
+    "name": "Northern Spain: Basque Interior + Rioja (9 days) 🍷",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_porto-northern-spain-10-14-days",
+    "name": "Porto + Northern Spain (10-14 days) 🏔️",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   }
+  ]
+ },
+ {
+  "batch": 6,
+  "group": "Iberia",
+  "part": 2,
+  "parts": 2,
+  "estTokens": 178500,
+  "routes": [
+   {
+    "id": "gt_seed_spain-east-to-south-12-days",
+    "name": "Spain: East to South (12 days) 🌅",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_spain-north-to-central-12-days",
+    "name": "Spain: North to Central (12 days) 🚉",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_tenerife-5-7-days",
+    "name": "Tenerife (5-7 days) 🏝️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_tenerife-la-gomera-7-10-days",
+    "name": "Tenerife + La Gomera (7-10 days) 🏝️",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_valencia-costa-blanca-6-days",
+    "name": "Valencia + Costa Blanca (6 days) 🎆",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_algarve-6-days",
+    "name": "Algarve (6 days) 🏖️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "PT"
+   },
+   {
+    "id": "gt_seed_azores-island-hopping-10-14-days",
+    "name": "Azores Island Hopping (10-14 days) 🏝️",
+    "mode": "public",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "PT"
+   },
+   {
+    "id": "gt_seed_azores-sao-miguel-terceira-7-10-days",
+    "name": "Azores: São Miguel + Terceira (7-10 days) 🏝️",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "PT"
+   },
+   {
+    "id": "gt_seed_central-portugal-coimbra-serra-da-estrela-6-days",
+    "name": "Central Portugal: Coimbra + Serra da Estrela (6 days) 📚",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "PT"
+   },
+   {
+    "id": "gt_seed_lisbon-sintra-5-days",
+    "name": "Lisbon + Sintra (5 days) 🏰",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "PT"
+   },
+   {
+    "id": "gt_seed_madeira-5-7-days",
+    "name": "Madeira (5-7 days) 🏝️",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "PT"
+   },
+   {
+    "id": "gt_seed_madeira-porto-santo-7-10-days",
+    "name": "Madeira + Porto Santo (7-10 days) 🏝️",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "PT"
+   },
+   {
+    "id": "gt_seed_northern-portugal-galicia-7-10-days",
+    "name": "Northern Portugal + Galicia (7-10 days) 🌊",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "PT"
+   },
+   {
+    "id": "gt_seed_northern-portugal-minho-6-days",
+    "name": "Northern Portugal: Minho (6 days) 🌿",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "PT"
+   },
+   {
+    "id": "gt_seed_porto-4-days",
+    "name": "Porto (4 days) 🌉",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "PT"
+   },
+   {
+    "id": "gt_seed_porto-douro-lisbon-9-days",
+    "name": "Porto + Douro + Lisbon (9 days) 🍷",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "PT"
+   },
+   {
+    "id": "gt_seed_portugal-andalusia-10-14-days",
+    "name": "Portugal + Andalusia (10-14 days) 🕌",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "PT"
+   },
+   {
+    "id": "gt_seed_portugal-spain-roadtrip-14-days",
+    "name": "Portugal + Spain Roadtrip (14 days) 🚗",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "PT"
+   },
+   {
+    "id": "gt_seed_portugal-spain-porto-to-madrid-12-days",
+    "name": "Portugal + Spain: Porto to Madrid (12 days) 🚆",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "PT"
+   },
+   {
+    "id": "gt_seed_portugal-roadtrip-12-days",
+    "name": "Portugal Roadtrip (12 days) 🗺️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "PT"
+   },
+   {
+    "id": "gt_seed_portugal-north-to-south-9-days",
+    "name": "Portugal: North to South (9 days) 🧭",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "PT"
+   },
+   {
+    "id": "gt_seed_sao-miguel-azores-5-7-days",
+    "name": "São Miguel (Azores) (5-7 days) 🏝️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "PT"
+   }
+  ]
+ },
+ {
+  "batch": 7,
+  "group": "France & Benelux",
+  "part": 1,
+  "parts": 2,
+  "estTokens": 144500,
+  "routes": [
+   {
+    "id": "gt_seed_ardennes-3-days",
+    "name": "Ardennes (3 days) 🦌",
+    "mode": "own_car",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "BE"
+   },
+   {
+    "id": "gt_seed_belgian-coast-bruges-ghent-4-days",
+    "name": "Belgian Coast + Bruges + Ghent (4 days) 🚲",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "BE"
+   },
+   {
+    "id": "gt_seed_belgium-bruges-ghent-antwerp-ardennes-5-days",
+    "name": "Belgium: Bruges + Ghent + Antwerp + Ardennes (5 days) 🍺",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "BE"
+   },
+   {
+    "id": "gt_seed_alpine-roadtrip-14-days",
+    "name": "Alpine Roadtrip (14 days) 🏕️",
+    "mode": "own_car",
+    "blocks": 5,
+    "sharedWithBatch1": 0,
+    "country": "FR"
+   },
+   {
+    "id": "gt_seed_alsace-4-days",
+    "name": "Alsace (4 days) 🥐",
+    "mode": "own_car",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "FR"
+   },
+   {
+    "id": "gt_seed_brittany-saint-malo-dinan-pink-granite-coast-5-days",
+    "name": "Brittany: Saint-Malo, Dinan & Pink Granite Coast (5 days) 🦞",
+    "mode": "own_car",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "FR"
+   },
+   {
+    "id": "gt_seed_corsica-sardinia-full-island-loop-12-days",
+    "name": "Corsica + Sardinia: Full Island Loop (12 days) 🌊",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "FR"
+   },
+   {
+    "id": "gt_seed_corsica-south-of-france-9-days",
+    "name": "Corsica + South of France (9 days) 🛳️",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "FR"
+   },
+   {
+    "id": "gt_seed_corsica-roadtrip-full-island-loop-9-days",
+    "name": "Corsica Roadtrip: Full Island Loop (9 days) 🚙",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "FR"
+   },
+   {
+    "id": "gt_seed_corsica-south-loop-6-days",
+    "name": "Corsica: South Loop (6 days) 🏖️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "FR"
+   },
+   {
+    "id": "gt_seed_france-roadtrip-paris-to-the-cote-dazur-12-days",
+    "name": "France Roadtrip: Paris to the Côte d'Azur (12 days) 🚗",
+    "mode": "own_car",
+    "blocks": 5,
+    "sharedWithBatch1": 0,
+    "country": "FR"
+   },
+   {
+    "id": "gt_seed_french-spanish-pyrenees-9-days",
+    "name": "French + Spanish Pyrenees (9 days) 🥖",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "FR"
+   },
+   {
+    "id": "gt_seed_french-alps-provence-9-days",
+    "name": "French Alps + Provence (9 days) 🛤️",
+    "mode": "own_car",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "FR"
+   },
+   {
+    "id": "gt_seed_french-alps-ecrins-national-park-6-days",
+    "name": "French Alps: Écrins National Park (6 days) 🐐",
+    "mode": "own_car",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "FR"
+   }
+  ]
+ },
+ {
+  "batch": 8,
+  "group": "France & Benelux",
+  "part": 2,
+  "parts": 2,
+  "estTokens": 136000,
+  "routes": [
+   {
+    "id": "gt_seed_french-atlantic-coast-la-rochelle-to-biarritz-12-days",
+    "name": "French Atlantic Coast: La Rochelle to Biarritz (12 days) 🏄",
+    "mode": "own_car",
+    "blocks": 4,
+    "sharedWithBatch1": 0,
+    "country": "FR"
+   },
+   {
+    "id": "gt_seed_loire-valley-castles-6-days",
+    "name": "Loire Valley Castles (6 days) 🗝️",
+    "mode": "own_car",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "FR"
+   },
+   {
+    "id": "gt_seed_monaco-cote-dazur-4-days",
+    "name": "Monaco + Côte d'Azur (4 days) 🎰",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "FR"
+   },
+   {
+    "id": "gt_seed_monaco-nice-provence-5-days",
+    "name": "Monaco + Nice + Provence (5 days) 🍇",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "FR"
+   },
+   {
+    "id": "gt_seed_monaco-monte-carlo-2-days",
+    "name": "Monaco: Monte Carlo (2 days) 🎲",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "FR"
+   },
+   {
+    "id": "gt_seed_normandy-5-days",
+    "name": "Normandy (5 days) 🪖",
+    "mode": "own_car",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "FR"
+   },
+   {
+    "id": "gt_seed_paris-4-days",
+    "name": "Paris (4 days) 🗼",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "FR"
+   },
+   {
+    "id": "gt_seed_provence-6-days",
+    "name": "Provence (6 days) 🌻",
+    "mode": "own_car",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "FR"
+   },
+   {
+    "id": "gt_seed_south-of-france-provence-to-cote-dazur-9-days",
+    "name": "South of France: Provence to Côte d'Azur (9 days) 🕶️",
+    "mode": "own_car",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "FR"
+   },
+   {
+    "id": "gt_seed_luxembourg-4-days",
+    "name": "Luxembourg (4 days) 🪨",
+    "mode": "own_car",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "LU"
+   },
+   {
+    "id": "gt_seed_luxembourg-ardennes-4-days",
+    "name": "Luxembourg + Ardennes (4 days) 🎖️",
+    "mode": "own_car",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "LU"
+   },
+   {
+    "id": "gt_seed_south-netherlands-belgian-ardennes-luxembourg-5-days",
+    "name": "South Netherlands + Belgian Ardennes + Luxembourg (5 days) 🕳️",
+    "mode": "own_car",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "NL"
+   }
+  ]
+ },
+ {
+  "batch": 9,
+  "group": "Alps & Germany",
+  "part": 1,
+  "parts": 2,
+  "estTokens": 151500,
+  "routes": [
+   {
+    "id": "gt_seed_austria-slovenia-9-days",
+    "name": "Austria + Slovenia (9 days) 🏝️",
+    "mode": "own_car",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "AT"
+   },
+   {
+    "id": "gt_seed_austria-alpine-roadtrip-9-days",
+    "name": "Austria Alpine Roadtrip (9 days) 🗺️",
+    "mode": "own_car",
+    "blocks": 4,
+    "sharedWithBatch1": 0,
+    "country": "AT"
+   },
+   {
+    "id": "gt_seed_austrian-alps-zell-am-see-kaprun-pinzgau-6-days",
+    "name": "Austrian Alps: Zell am See-Kaprun / Pinzgau (6 days) 🚠",
+    "mode": "own_car",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "AT"
+   },
+   {
+    "id": "gt_seed_liechtenstein-austria-switzerland-5-days",
+    "name": "Liechtenstein + Austria + Switzerland (5 days) 🚞",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "AT"
+   },
+   {
+    "id": "gt_seed_salzburg-berchtesgaden-hallstatt-5-days",
+    "name": "Salzburg + Berchtesgaden + Hallstatt (5 days) 🛥️",
+    "mode": "own_car",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "AT"
+   },
+   {
+    "id": "gt_seed_salzburg-grossglockner-tyrol-6-days",
+    "name": "Salzburg + Grossglockner + Tyrol (6 days) 🏔️",
+    "mode": "own_car",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "AT"
+   },
+   {
+    "id": "gt_seed_salzburg-surroundings-4-days",
+    "name": "Salzburg + Surroundings (4 days) 🎻",
+    "mode": "own_car",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "AT"
+   },
+   {
+    "id": "gt_seed_tyrol-6-days",
+    "name": "Tyrol (6 days) 🌉",
+    "mode": "own_car",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "AT"
+   },
+   {
+    "id": "gt_seed_interlaken-lauterbrunnen-grindelwald-6-days",
+    "name": "Interlaken + Lauterbrunnen + Grindelwald (6 days) 🪂",
+    "mode": "own_car",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "CH"
+   },
+   {
+    "id": "gt_seed_liechtenstein-swiss-alps-3-days",
+    "name": "Liechtenstein + Swiss Alps (3 days) 🏔️",
+    "mode": "own_car",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "CH"
+   },
+   {
+    "id": "gt_seed_swiss-alps-zermatt-matterhorn-6-days",
+    "name": "Swiss Alps: Zermatt / Matterhorn (6 days) 🗻",
+    "mode": "own_car",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "CH"
+   },
+   {
+    "id": "gt_seed_switzerland-northern-italy-9-days",
+    "name": "Switzerland + Northern Italy (9 days) 🚞",
+    "mode": "own_car",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "CH"
+   },
+   {
+    "id": "gt_seed_switzerland-alpine-roadtrip-9-days",
+    "name": "Switzerland Alpine Roadtrip (9 days) 🛣️",
+    "mode": "own_car",
+    "blocks": 6,
+    "sharedWithBatch1": 0,
+    "country": "CH"
+   }
+  ]
+ },
+ {
+  "batch": 10,
+  "group": "Alps & Germany",
+  "part": 2,
+  "parts": 2,
+  "estTokens": 142500,
+  "routes": [
+   {
+    "id": "gt_seed_zurich-lucerne-surroundings-5-days",
+    "name": "Zurich + Lucerne + Surroundings (5 days) ⛴️",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "CH"
+   },
+   {
+    "id": "gt_seed_bavaria-alps-berchtesgaden-6-days",
+    "name": "Bavaria + Alps + Berchtesgaden (6 days) ⛰️",
+    "mode": "own_car",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "DE"
+   },
+   {
+    "id": "gt_seed_bavaria-munich-alps-5-days",
+    "name": "Bavaria: Munich + Alps (5 days) 🥨",
+    "mode": "own_car",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "DE"
+   },
+   {
+    "id": "gt_seed_berlin-4-days",
+    "name": "Berlin (4 days) 🐻",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "DE"
+   },
+   {
+    "id": "gt_seed_black-forest-6-days",
+    "name": "Black Forest (6 days) 🕰️",
+    "mode": "own_car",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "DE"
+   },
+   {
+    "id": "gt_seed_cologne-bonn-rhine-4-days",
+    "name": "Cologne + Bonn + Rhine (4 days) 🛳️",
+    "mode": "own_car",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "DE"
+   },
+   {
+    "id": "gt_seed_dresden-saxon-switzerland-4-days",
+    "name": "Dresden + Saxon Switzerland (4 days) 🧗",
+    "mode": "own_car",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "DE"
+   },
+   {
+    "id": "gt_seed_german-alpine-road-deutsche-alpenstrae-9-days",
+    "name": "German Alpine Road / Deutsche Alpenstraße (9 days) 🏞️",
+    "mode": "own_car",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "DE"
+   },
+   {
+    "id": "gt_seed_germany-berlin-dresden-bavaria-9-days",
+    "name": "Germany: Berlin + Dresden + Bavaria (9 days) 🚂",
+    "mode": "public",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "DE"
+   },
+   {
+    "id": "gt_seed_hamburg-4-days",
+    "name": "Hamburg (4 days) ⚓",
+    "mode": "own_car",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "DE"
+   },
+   {
+    "id": "gt_seed_moselle-valley-4-days",
+    "name": "Moselle Valley (4 days) 🍇",
+    "mode": "own_car",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "DE"
+   },
+   {
+    "id": "gt_seed_rhine-moselle-5-days",
+    "name": "Rhine + Moselle (5 days) 🚤",
+    "mode": "own_car",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "DE"
+   },
+   {
+    "id": "gt_seed_romantic-road-6-days",
+    "name": "Romantic Road (6 days) 🏰",
+    "mode": "own_car",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "DE"
+   },
+   {
+    "id": "gt_seed_dolomites-north-italy",
+    "name": "Dolomites & North Italy 🚡",
+    "mode": "own_car",
+    "blocks": 7,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_liechtenstein-vaduz-2-days",
+    "name": "Liechtenstein: Vaduz (2 days) 🏰",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "LI"
+   }
+  ]
+ },
+ {
+  "batch": 11,
+  "group": "Adriatic & Western Balkans",
+  "part": 1,
+  "parts": 3,
+  "estTokens": 190000,
+  "routes": [
+   {
+    "id": "gt_seed_albania-6-days",
+    "name": "Albania (6 days) 🏖️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "AL"
+   },
+   {
+    "id": "gt_seed_albania-montenegro-12-days",
+    "name": "Albania + Montenegro (12 days) 🏝️",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "AL"
+   },
+   {
+    "id": "gt_seed_albania-roadtrip-9-days",
+    "name": "Albania Roadtrip (9 days) 🥾",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "AL"
+   },
+   {
+    "id": "gt_seed_albanian-riviera-9-days",
+    "name": "Albanian Riviera (9 days) 🌊",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "AL"
+   },
+   {
+    "id": "gt_seed_kosovo-albania-9-days",
+    "name": "Kosovo + Albania (9 days) 🏔️",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "AL"
+   },
+   {
+    "id": "gt_seed_bosnia-croatia-9-days",
+    "name": "Bosnia + Croatia (9 days) 🏛️",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "BA"
+   },
+   {
+    "id": "gt_seed_bosnia-croatia-montenegro-12-days",
+    "name": "Bosnia + Croatia + Montenegro (12 days) 🗺️",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "BA"
+   },
+   {
+    "id": "gt_seed_bosnia-montenegro-budva-7-10-days",
+    "name": "Bosnia + Montenegro + Budva (7-10 days) ⛰️",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "BA"
+   },
+   {
+    "id": "gt_seed_bosnia-roadtrip-6-days",
+    "name": "Bosnia Roadtrip (6 days) 🚗",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "BA"
+   },
+   {
+    "id": "gt_seed_croatia-bosnia-via-split-7-10-days",
+    "name": "Croatia + Bosnia via Split (7-10 days) 🌉",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "BA"
+   },
+   {
+    "id": "gt_seed_montenegro-bosnia-9-days",
+    "name": "Montenegro + Bosnia (9 days) 🕊️",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "BA"
+   },
+   {
+    "id": "gt_seed_sarajevo-mostar-5-days",
+    "name": "Sarajevo + Mostar (5 days) 🌉",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "BA"
+   },
+   {
+    "id": "gt_seed_serbia-montenegro-bosnia-12-days",
+    "name": "Serbia + Montenegro + Bosnia (12 days) 🏔️",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "BA"
+   },
+   {
+    "id": "gt_seed_adriatic-roadtrip-14-days",
+    "name": "Adriatic Roadtrip (14 days) 🌊",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "HR"
+   },
+   {
+    "id": "gt_seed_austria-slovenia-croatia-10-14-days",
+    "name": "Austria + Slovenia + Croatia (10-14 days) 🚙",
+    "mode": "own_car",
+    "blocks": 5,
+    "sharedWithBatch1": 0,
+    "country": "HR"
+   },
+   {
+    "id": "gt_seed_complete-croatia-12-days",
+    "name": "Complete Croatia (12 days) 🇭🇷",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "HR"
+   },
+   {
+    "id": "gt_seed_croatia-montenegro-bosnia-12-days",
+    "name": "Croatia + Montenegro + Bosnia (12 days) 🧭",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "HR"
+   },
+   {
+    "id": "gt_seed_croatia-coastal-roadtrip-9-days",
+    "name": "Croatia Coastal Roadtrip (9 days) 🛣️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "HR"
+   },
+   {
+    "id": "gt_seed_croatia-north-to-south-9-days",
+    "name": "Croatia North to South (9 days) 🧭",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "HR"
+   },
+   {
+    "id": "gt_seed_dubrovnik-surroundings-5-days",
+    "name": "Dubrovnik + Surroundings (5 days) 🏛️",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "HR"
+   }
+  ]
+ },
+ {
+  "batch": 12,
+  "group": "Adriatic & Western Balkans",
+  "part": 2,
+  "parts": 3,
+  "estTokens": 192000,
+  "routes": [
+   {
+    "id": "gt_seed_grand-balkan-roadtrip-14-days",
+    "name": "Grand Balkan Roadtrip (14 days) 🏔️",
+    "mode": "rental",
+    "blocks": 4,
+    "sharedWithBatch1": 0,
+    "country": "HR"
+   },
+   {
+    "id": "gt_seed_istria-6-days",
+    "name": "Istria (6 days) 🍇",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "HR"
+   },
+   {
+    "id": "gt_seed_italy-slovenia-croatia-10-14-days",
+    "name": "Italy + Slovenia + Croatia (10-14 days) ⛵",
+    "mode": "own_car",
+    "blocks": 6,
+    "sharedWithBatch1": 0,
+    "country": "HR"
+   },
+   {
+    "id": "gt_seed_plitvice-zagreb-6-days",
+    "name": "Plitvice + Zagreb (6 days) 🏞️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "HR"
+   },
+   {
+    "id": "gt_seed_slovenia-croatia-montenegro-coast-10-14-days",
+    "name": "Slovenia + Croatia + Montenegro Coast (10-14 days) ⛵",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "HR"
+   },
+   {
+    "id": "gt_seed_slovenia-croatian-istria-7-10-days",
+    "name": "Slovenia + Croatian Istria (7-10 days) 🏖️",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "HR"
+   },
+   {
+    "id": "gt_seed_split-islands-6-days",
+    "name": "Split + Islands (6 days) ⛵",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "HR"
+   },
+   {
+    "id": "gt_seed_kosovo-montenegro-9-days",
+    "name": "Kosovo + Montenegro (9 days) 🏞️",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "ME"
+   },
+   {
+    "id": "gt_seed_kotor-bay-of-kotor-5-days",
+    "name": "Kotor + Bay of Kotor (5 days) ⚓",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ME"
+   },
+   {
+    "id": "gt_seed_montenegro-6-days",
+    "name": "Montenegro (6 days) 🏔️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ME"
+   },
+   {
+    "id": "gt_seed_montenegro-croatia-9-days",
+    "name": "Montenegro + Croatia (9 days) ⛵",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "ME"
+   },
+   {
+    "id": "gt_seed_montenegro-roadtrip-9-days",
+    "name": "Montenegro Roadtrip (9 days) 🚙",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ME"
+   },
+   {
+    "id": "gt_seed_albania-north-macedonia-12-days",
+    "name": "Albania + North Macedonia (12 days) 🏞️",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "MK"
+   },
+   {
+    "id": "gt_seed_balkan-roadtrip-serbia-north-macedonia-albania-kosovo-14-day",
+    "name": "Balkan Roadtrip: Serbia + North Macedonia + Albania + Kosovo (14 days) 🔄",
+    "mode": "rental",
+    "blocks": 6,
+    "sharedWithBatch1": 0,
+    "country": "MK"
+   },
+   {
+    "id": "gt_seed_north-macedonia-6-days",
+    "name": "North Macedonia (6 days) ⛰️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "MK"
+   },
+   {
+    "id": "gt_seed_north-macedonia-albania-9-days",
+    "name": "North Macedonia + Albania (9 days) 🚌",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "MK"
+   },
+   {
+    "id": "gt_seed_north-macedonia-greece-9-days",
+    "name": "North Macedonia + Greece (9 days) 🏛️",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "MK"
+   },
+   {
+    "id": "gt_seed_skopje-ohrid-5-days",
+    "name": "Skopje + Ohrid (5 days) 🌅",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "MK"
+   },
+   {
+    "id": "gt_seed_belgrade-surroundings-5-days",
+    "name": "Belgrade + Surroundings (5 days) 🏛️",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "RS"
+   }
+  ]
+ },
+ {
+  "batch": 13,
+  "group": "Adriatic & Western Balkans",
+  "part": 3,
+  "parts": 3,
+  "estTokens": 173500,
+  "routes": [
+   {
+    "id": "gt_seed_serbia-6-days",
+    "name": "Serbia (6 days) 🚂",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "RS"
+   },
+   {
+    "id": "gt_seed_serbia-bosnia-9-days",
+    "name": "Serbia + Bosnia (9 days) 🛶",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "RS"
+   },
+   {
+    "id": "gt_seed_serbia-roadtrip-9-days",
+    "name": "Serbia Roadtrip (9 days) 🚙",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "RS"
+   },
+   {
+    "id": "gt_seed_germany-austria-slovenia-10-14-days",
+    "name": "Germany + Austria + Slovenia (10-14 days) 🥨",
+    "mode": "own_car",
+    "blocks": 5,
+    "sharedWithBatch1": 0,
+    "country": "SI"
+   },
+   {
+    "id": "gt_seed_hungary-austria-slovenia-7-10-days",
+    "name": "Hungary + Austria + Slovenia (7-10 days) 🚆",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "SI"
+   },
+   {
+    "id": "gt_seed_julian-alps-soca-valley-6-days",
+    "name": "Julian Alps + Soča Valley (6 days) 🚣",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "SI"
+   },
+   {
+    "id": "gt_seed_ljubljana-lake-bled-5-days",
+    "name": "Ljubljana + Lake Bled (5 days) 🏰",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "SI"
+   },
+   {
+    "id": "gt_seed_slovenia-croatia-bosnia-10-14-days",
+    "name": "Slovenia + Croatia + Bosnia (10-14 days) 🗺️",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "SI"
+   },
+   {
+    "id": "gt_seed_slovenia-italy-9-days",
+    "name": "Slovenia + Italy (9 days) 🍝",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "SI"
+   },
+   {
+    "id": "gt_seed_slovenia-northern-croatia-9-days",
+    "name": "Slovenia + Northern Croatia (9 days) 🌲",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "SI"
+   },
+   {
+    "id": "gt_seed_slovenia-alpine-loop-6-days",
+    "name": "Slovenia Alpine Loop (6 days) 🏔️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "SI"
+   },
+   {
+    "id": "gt_seed_slovenia-roadtrip-9-days",
+    "name": "Slovenia Roadtrip (9 days) 🗺️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "SI"
+   },
+   {
+    "id": "gt_seed_kosovo-5-days",
+    "name": "Kosovo (5 days) 🕍",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "XK"
+   },
+   {
+    "id": "gt_seed_kosovo-albania-north-macedonia-12-days",
+    "name": "Kosovo + Albania + North Macedonia (12 days) 🧭",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "XK"
+   },
+   {
+    "id": "gt_seed_kosovo-montenegro-albania-9-days",
+    "name": "Kosovo + Montenegro + Albania (9 days) 🗻",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "XK"
+   },
+   {
+    "id": "gt_seed_kosovo-north-macedonia-6-days",
+    "name": "Kosovo + North Macedonia (6 days) 🚏",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "XK"
+   },
+   {
+    "id": "gt_seed_kosovo-north-macedonia-albania-9-days",
+    "name": "Kosovo + North Macedonia + Albania (9 days) 🎒",
+    "mode": "public",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "XK"
+   }
+  ]
+ },
+ {
+  "batch": 14,
+  "group": "Greece, Cyprus & Turkey",
+  "part": 1,
+  "parts": 1,
+  "estTokens": 189500,
+  "routes": [
+   {
+    "id": "gt_seed_cyprus-6-days",
+    "name": "Cyprus (6 days) 🏝️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "CY"
+   },
+   {
+    "id": "gt_seed_cyprus-greece-9-days",
+    "name": "Cyprus + Greece (9 days) ✈️",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "CY"
+   },
+   {
+    "id": "gt_seed_cyprus-roadtrip-including-northern-cyprus-9-days",
+    "name": "Cyprus Roadtrip including Northern Cyprus (9 days) 🚙",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "CY"
+   },
+   {
+    "id": "gt_seed_athens-4-days",
+    "name": "Athens (4 days) 🏛️",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "GR"
+   },
+   {
+    "id": "gt_seed_athens-day-trips-6-days",
+    "name": "Athens + Day Trips (6 days) 🏺",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "GR"
+   },
+   {
+    "id": "gt_seed_athens-peloponnese-extended-12-days",
+    "name": "Athens + Peloponnese: Extended (12 days) 👑",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "GR"
+   },
+   {
+    "id": "gt_seed_corfu-5-7-days",
+    "name": "Corfu (5-7 days) 🏝️",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "GR"
+   },
+   {
+    "id": "gt_seed_crete-roadtrip-7-10-days",
+    "name": "Crete Roadtrip (7-10 days) 🏝️",
+    "mode": "rental",
+    "blocks": 5,
+    "sharedWithBatch1": 0,
+    "country": "GR"
+   },
+   {
+    "id": "gt_seed_cyclades-5-7-days",
+    "name": "Cyclades (5-7 days) 🏝️",
+    "mode": "public",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "GR"
+   },
+   {
+    "id": "gt_seed_cyclades-island-hopping-7-10-days",
+    "name": "Cyclades Island Hopping (7-10 days) 🏝️",
+    "mode": "public",
+    "blocks": 5,
+    "sharedWithBatch1": 0,
+    "country": "GR"
+   },
+   {
+    "id": "gt_seed_greece-roadtrip-12-days",
+    "name": "Greece Roadtrip (12 days) 🚗",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "GR"
+   },
+   {
+    "id": "gt_seed_greek-islands-paros-naxos-santorini-9-days",
+    "name": "Greek Islands: Paros, Naxos & Santorini (9 days) 🏖️",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "GR"
+   },
+   {
+    "id": "gt_seed_ionian-islands-5-7-days",
+    "name": "Ionian Islands (5-7 days) 🏝️",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "GR"
+   },
+   {
+    "id": "gt_seed_northern-greece-9-days",
+    "name": "Northern Greece (9 days) ⛰️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "GR"
+   },
+   {
+    "id": "gt_seed_peloponnese-loop-9-days",
+    "name": "Peloponnese Loop (9 days) 🏟️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "GR"
+   },
+   {
+    "id": "gt_seed_rhodes-5-7-days",
+    "name": "Rhodes (5-7 days) 🏝️",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "GR"
+   },
+   {
+    "id": "gt_seed_southern-europe-highlights-roadtrip-14-days",
+    "name": "Southern Europe Highlights Roadtrip (14 days) 🎯",
+    "mode": "rental",
+    "blocks": 5,
+    "sharedWithBatch1": 0,
+    "country": "GR"
+   },
+   {
+    "id": "gt_seed_istanbul-4-days",
+    "name": "Istanbul (4 days) 🕌",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "TR"
+   },
+   {
+    "id": "gt_seed_istanbul-thrace-6-days",
+    "name": "Istanbul + Thrace (6 days) 🌉",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "TR"
+   }
+  ]
+ },
+ {
+  "batch": 15,
+  "group": "Central & Eastern Europe",
+  "part": 1,
+  "parts": 2,
+  "estTokens": 198500,
+  "routes": [
+   {
+    "id": "gt_seed_bulgaria-greece-sofia-to-meteora-12-days",
+    "name": "Bulgaria + Greece: Sofia to Meteora (12 days) ⛰️",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "BG"
+   },
+   {
+    "id": "gt_seed_bulgaria-romania-black-sea-coast-9-days",
+    "name": "Bulgaria + Romania: Black Sea Coast (9 days) 🌊",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "BG"
+   },
+   {
+    "id": "gt_seed_bulgaria-roadtrip-9-days",
+    "name": "Bulgaria Roadtrip (9 days) 🚗",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "BG"
+   },
+   {
+    "id": "gt_seed_sofia-plovdiv-6-days",
+    "name": "Sofia + Plovdiv (6 days) 🏛️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "BG"
+   },
+   {
+    "id": "gt_seed_sofia-rila-monastery-5-days",
+    "name": "Sofia + Rila Monastery (5 days) ⛪",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "BG"
+   },
+   {
+    "id": "gt_seed_central-europe-roadtrip-14-days",
+    "name": "Central Europe Roadtrip (14 days) 🚂",
+    "mode": "rental",
+    "blocks": 6,
+    "sharedWithBatch1": 0,
+    "country": "CZ"
+   },
+   {
+    "id": "gt_seed_czechia-austria-9-days",
+    "name": "Czechia + Austria (9 days) 🏔️",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "CZ"
+   },
+   {
+    "id": "gt_seed_czechia-austria-hungary-10-14-days",
+    "name": "Czechia + Austria + Hungary (10-14 days) 🏛️",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "CZ"
+   },
+   {
+    "id": "gt_seed_czechia-roadtrip-6-days",
+    "name": "Czechia Roadtrip (6 days) 🛣️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "CZ"
+   },
+   {
+    "id": "gt_seed_moravia-brno-wine-region-5-days",
+    "name": "Moravia: Brno + Wine Region (5 days) 🍇",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "CZ"
+   },
+   {
+    "id": "gt_seed_prague-4-days",
+    "name": "Prague (4 days) 🏰",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "CZ"
+   },
+   {
+    "id": "gt_seed_prague-bohemia-5-days",
+    "name": "Prague + Bohemia (5 days) 🏘️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "CZ"
+   },
+   {
+    "id": "gt_seed_baltic-states-roadtrip-10-14-days",
+    "name": "Baltic States Roadtrip (10-14 days) 🚗",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "EE"
+   },
+   {
+    "id": "gt_seed_estonia-5-7-days",
+    "name": "Estonia (5-7 days) 🏰",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "EE"
+   },
+   {
+    "id": "gt_seed_tallinn-riga-vilnius-7-10-days",
+    "name": "Tallinn + Riga + Vilnius (7-10 days) 🚌",
+    "mode": "public",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "EE"
+   },
+   {
+    "id": "gt_seed_budapest-4-days",
+    "name": "Budapest (4 days) 🛁",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "HU"
+   },
+   {
+    "id": "gt_seed_budapest-eger-5-days",
+    "name": "Budapest + Eger (5 days) 🍷",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "HU"
+   },
+   {
+    "id": "gt_seed_hungary-slovenia-croatia-9-days",
+    "name": "Hungary + Slovenia + Croatia (9 days) 🧭",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "HU"
+   },
+   {
+    "id": "gt_seed_hungary-roadtrip-6-days",
+    "name": "Hungary Roadtrip (6 days) 🚗",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "HU"
+   },
+   {
+    "id": "gt_seed_slovakia-hungary-9-days",
+    "name": "Slovakia + Hungary (9 days) 🚆",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "HU"
+   },
+   {
+    "id": "gt_seed_lithuania-5-7-days",
+    "name": "Lithuania (5-7 days) 🌊",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "LT"
+   },
+   {
+    "id": "gt_seed_latvia-5-7-days",
+    "name": "Latvia (5-7 days) 🌲",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "LV"
+   }
+  ]
+ },
+ {
+  "batch": 16,
+  "group": "Central & Eastern Europe",
+  "part": 2,
+  "parts": 2,
+  "estTokens": 181000,
+  "routes": [
+   {
+    "id": "gt_seed_moldova-5-days",
+    "name": "Moldova (5 days) 🍷",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "MD"
+   },
+   {
+    "id": "gt_seed_moldova-transnistria-6-days",
+    "name": "Moldova + Transnistria (6 days) 🍇",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "MD"
+   },
+   {
+    "id": "gt_seed_baltics-poland-10-14-days",
+    "name": "Baltics + Poland (10-14 days) 🇵🇱",
+    "mode": "rental",
+    "blocks": 4,
+    "sharedWithBatch1": 0,
+    "country": "PL"
+   },
+   {
+    "id": "gt_seed_krakow-4-days",
+    "name": "Krakow (4 days) 🏛️",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "PL"
+   },
+   {
+    "id": "gt_seed_krakow-auschwitz-5-days",
+    "name": "Krakow + Auschwitz (5 days) 🕯️",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "PL"
+   },
+   {
+    "id": "gt_seed_krakow-tatra-6-days",
+    "name": "Krakow + Tatra (6 days) ⛰️",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "PL"
+   },
+   {
+    "id": "gt_seed_poland-slovakia-hungary-10-14-days",
+    "name": "Poland + Slovakia + Hungary (10-14 days) 🥾",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "PL"
+   },
+   {
+    "id": "gt_seed_poland-roadtrip-9-days",
+    "name": "Poland Roadtrip (9 days) 🚗",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "PL"
+   },
+   {
+    "id": "gt_seed_poland-north-to-south-12-days",
+    "name": "Poland: North to South (12 days) ⚓",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "PL"
+   },
+   {
+    "id": "gt_seed_prague-poland-9-days",
+    "name": "Prague + Poland (9 days) 🚂",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "PL"
+   },
+   {
+    "id": "gt_seed_slovakia-poland-9-days",
+    "name": "Slovakia + Poland (9 days) 🥾",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "PL"
+   },
+   {
+    "id": "gt_seed_south-poland-9-days",
+    "name": "South Poland (9 days) 🧭",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "PL"
+   },
+   {
+    "id": "gt_seed_bucharest-transylvania-5-days",
+    "name": "Bucharest + Transylvania (5 days) 🏰",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "RO"
+   },
+   {
+    "id": "gt_seed_moldova-romania-9-days",
+    "name": "Moldova + Romania (9 days) 🍷",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "RO"
+   },
+   {
+    "id": "gt_seed_romania-bulgaria-transylvania-focus-12-days",
+    "name": "Romania + Bulgaria: Transylvania Focus (12 days) 🏰",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "RO"
+   },
+   {
+    "id": "gt_seed_romania-moldova-extended-12-days",
+    "name": "Romania + Moldova: Extended (12 days) 🍷",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "RO"
+   },
+   {
+    "id": "gt_seed_romania-roadtrip-9-days",
+    "name": "Romania Roadtrip (9 days) 🚗",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "RO"
+   },
+   {
+    "id": "gt_seed_romania-extended-12-days",
+    "name": "Romania: Extended (12 days) 🏰",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "RO"
+   },
+   {
+    "id": "gt_seed_transylvania-6-days",
+    "name": "Transylvania (6 days) 🦇",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "RO"
+   },
+   {
+    "id": "gt_seed_transylvania-carpathian-mountains-9-days",
+    "name": "Transylvania + Carpathian Mountains (9 days) 🏔️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "RO"
+   },
+   {
+    "id": "gt_seed_bratislava-high-tatras-5-days",
+    "name": "Bratislava + High Tatras (5 days) 🏔️",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "SK"
+   },
+   {
+    "id": "gt_seed_slovakia-6-days",
+    "name": "Slovakia (6 days) 🏰",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "SK"
+   }
+  ]
+ },
+ {
+  "batch": 17,
+  "group": "Nordics",
+  "part": 1,
+  "parts": 2,
+  "estTokens": 155500,
+  "routes": [
+   {
+    "id": "gt_seed_copenhagen-4-days",
+    "name": "Copenhagen (4 days) 🧜‍♀️",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "DK"
+   },
+   {
+    "id": "gt_seed_copenhagen-zealand-5-days",
+    "name": "Copenhagen + Zealand (5 days) 🖼️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "DK"
+   },
+   {
+    "id": "gt_seed_denmark-6-days",
+    "name": "Denmark (6 days) 🧱",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "DK"
+   },
+   {
+    "id": "gt_seed_denmark-south-sweden-9-days",
+    "name": "Denmark + South Sweden (9 days) 🌉",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "DK"
+   },
+   {
+    "id": "gt_seed_aland-5-days",
+    "name": "Åland (5 days) 🚲",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "FI"
+   },
+   {
+    "id": "gt_seed_finland-roadtrip-12-days",
+    "name": "Finland Roadtrip (12 days) 🛣️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "FI"
+   },
+   {
+    "id": "gt_seed_finnish-lapland-9-days",
+    "name": "Finnish Lapland (9 days) 🎅",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "FI"
+   },
+   {
+    "id": "gt_seed_helsinki-4-days",
+    "name": "Helsinki (4 days) 🏛️",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "FI"
+   },
+   {
+    "id": "gt_seed_helsinki-lake-district-6-days",
+    "name": "Helsinki + Lake District (6 days) 🛶",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "FI"
+   },
+   {
+    "id": "gt_seed_south-finland-9-days",
+    "name": "South Finland (9 days) 🧭",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "FI"
+   },
+   {
+    "id": "gt_seed_faroe-islands-6-days",
+    "name": "Faroe Islands (6 days) 🐦",
+    "mode": "own_car",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "FO"
+   },
+   {
+    "id": "gt_seed_greenland",
+    "name": "Greenland 🧊",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "GL"
+   },
+   {
+    "id": "gt_seed_faroe-islands-iceland-9-days",
+    "name": "Faroe Islands + Iceland (9 days) ⛴️",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "IS"
+   },
+   {
+    "id": "gt_seed_iceland-extended-14-days",
+    "name": "Iceland Extended (14 days) 🗺️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "IS"
+   },
+   {
+    "id": "gt_seed_iceland-ring-road-12-days",
+    "name": "Iceland Ring Road (12 days) 🛣️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "IS"
+   },
+   {
+    "id": "gt_seed_iceland-south-coast-9-days",
+    "name": "Iceland South Coast (9 days) 🧊",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "IS"
+   },
+   {
+    "id": "gt_seed_reykjavik-golden-circle-5-days",
+    "name": "Reykjavík + Golden Circle (5 days) 🌋",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "IS"
+   },
+   {
+    "id": "gt_seed_south-iceland-6-days",
+    "name": "South Iceland (6 days) 🌊",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "IS"
+   },
+   {
+    "id": "gt_seed_bergen-alesund-12-days",
+    "name": "Bergen + Ålesund (12 days) 🛣️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "NO"
+   },
+   {
+    "id": "gt_seed_bergen-fjords-6-days",
+    "name": "Bergen + Fjords (6 days) ⛴️",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "NO"
+   },
+   {
+    "id": "gt_seed_fjord-norway-9-days",
+    "name": "Fjord Norway (9 days) 🏔️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "NO"
+   }
+  ]
+ },
+ {
+  "batch": 18,
+  "group": "Nordics",
+  "part": 2,
+  "parts": 2,
+  "estTokens": 146500,
+  "routes": [
+   {
+    "id": "gt_seed_norway-sweden-fjords-capitals-12-days",
+    "name": "Norway + Sweden: Fjords & Capitals (12 days) ⛴️",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "NO"
+   },
+   {
+    "id": "gt_seed_norway-roadtrip-12-days",
+    "name": "Norway Roadtrip (12 days) 🚙",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "NO"
+   },
+   {
+    "id": "gt_seed_oslo-5-days",
+    "name": "Oslo (5 days) 🏛️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "NO"
+   },
+   {
+    "id": "gt_seed_scandinavia-overland",
+    "name": "Scandinavia Overland 🚂",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 2,
+    "country": "NO"
+   },
+   {
+    "id": "gt_seed_south-central-norway-14-days",
+    "name": "South & Central Norway (14 days) 🗺️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "NO"
+   },
+   {
+    "id": "gt_seed_south-norway-9-days",
+    "name": "South Norway (9 days) 🏞️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "NO"
+   },
+   {
+    "id": "gt_seed_svalbard-longyearbyen-6-days",
+    "name": "Svalbard (Longyearbyen) (6 days) 🌌",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "NO"
+   },
+   {
+    "id": "gt_seed_denmark-sweden-norway-overland-12-days",
+    "name": "Denmark + Sweden + Norway Overland (12 days) 🌉",
+    "mode": "public",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "SE"
+   },
+   {
+    "id": "gt_seed_northern-europe-baltic-ferry-roadtrip-14-days",
+    "name": "Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️",
+    "mode": "public",
+    "blocks": 6,
+    "sharedWithBatch1": 0,
+    "country": "SE"
+   },
+   {
+    "id": "gt_seed_south-sweden-skane-9-days",
+    "name": "South Sweden (Skåne) (9 days) 🪨",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "SE"
+   },
+   {
+    "id": "gt_seed_stockholm-4-days",
+    "name": "Stockholm (4 days) 🏰",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "SE"
+   },
+   {
+    "id": "gt_seed_stockholm-surroundings-6-days",
+    "name": "Stockholm + Surroundings (6 days) 🚢",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "SE"
+   },
+   {
+    "id": "gt_seed_sweden-norway-12-days",
+    "name": "Sweden + Norway (12 days) 🌉",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "SE"
+   },
+   {
+    "id": "gt_seed_sweden-roadtrip-9-days",
+    "name": "Sweden Roadtrip (9 days) 🚗",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "SE"
+   },
+   {
+    "id": "gt_seed_swedish-lapland-kiruna-abisko-6-days",
+    "name": "Swedish Lapland (Kiruna + Abisko) (6 days) 🦌",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "SE"
+   },
+   {
+    "id": "gt_seed_swedish-lapland-northern-lights-9-days",
+    "name": "Swedish Lapland + Northern Lights (9 days) 💫",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "SE"
+   }
+  ]
+ },
+ {
+  "batch": 19,
+  "group": "British Isles",
+  "part": 1,
+  "parts": 1,
+  "estTokens": 199000,
+  "routes": [
+   {
+    "id": "gt_seed_channel-islands-brittany-normandyopal-coast-belgium",
+    "name": "Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖",
+    "mode": "own_car",
+    "blocks": 6,
+    "sharedWithBatch1": 0,
+    "country": "FR"
+   },
+   {
+    "id": "gt_seed_cotswolds-bath-southwest-england-5-7-days",
+    "name": "Cotswolds + Bath + Southwest England (5-7 days) 🛁",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "GB"
+   },
+   {
+    "id": "gt_seed_edinburgh-3-4-days",
+    "name": "Edinburgh (3-4 days) 🏰",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "GB"
+   },
+   {
+    "id": "gt_seed_england-wales-northern-ireland-roadtrip-10-14-days",
+    "name": "England + Wales + Northern Ireland Roadtrip (10-14 days) 🛣️",
+    "mode": "own_car",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "GB"
+   },
+   {
+    "id": "gt_seed_england-wales-isle-of-man",
+    "name": "England, Wales & Isle of Man 🎩",
+    "mode": "own_car",
+    "blocks": 6,
+    "sharedWithBatch1": 0,
+    "country": "GB"
+   },
+   {
+    "id": "gt_seed_highlands-isle-of-skye-7-10-days",
+    "name": "Highlands + Isle of Skye (7-10 days) 🏔️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "GB"
+   },
+   {
+    "id": "gt_seed_london-3-4-days",
+    "name": "London (3-4 days) 🎡",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "GB"
+   },
+   {
+    "id": "gt_seed_northern-ireland-5-7-days",
+    "name": "Northern Ireland (5-7 days) 🌉",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "GB"
+   },
+   {
+    "id": "gt_seed_orkney-shetland-5-7-days",
+    "name": "Orkney + Shetland (5-7 days) ⚓",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "GB"
+   },
+   {
+    "id": "gt_seed_outer-hebrides-lewis-harris-5-7-days",
+    "name": "Outer Hebrides (Lewis + Harris) (5-7 days) 🏖️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "GB"
+   },
+   {
+    "id": "gt_seed_scotland-northern-ireland",
+    "name": "Scotland & Northern Ireland 🥃",
+    "mode": "own_car",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "GB"
+   },
+   {
+    "id": "gt_seed_scotland-extended-10-14-days",
+    "name": "Scotland Extended (10-14 days) 🏴",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "GB"
+   },
+   {
+    "id": "gt_seed_scotland-roadtrip-7-10-days",
+    "name": "Scotland Roadtrip (7-10 days) 🚙",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "GB"
+   },
+   {
+    "id": "gt_seed_scottish-highlands-5-7-days",
+    "name": "Scottish Highlands (5-7 days) 🦌",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "GB"
+   },
+   {
+    "id": "gt_seed_wales-snowdonia-coast-5-7-days",
+    "name": "Wales (Snowdonia + Coast) (5-7 days) 🐉",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "GB"
+   },
+   {
+    "id": "gt_seed_dublin-3-4-days",
+    "name": "Dublin (3-4 days) 🍺",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "IE"
+   },
+   {
+    "id": "gt_seed_ireland",
+    "name": "Ireland ☘️",
+    "mode": "own_car",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "IE"
+   },
+   {
+    "id": "gt_seed_ireland-complete-10-14-days",
+    "name": "Ireland Complete (10-14 days) 🌈",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "IE"
+   },
+   {
+    "id": "gt_seed_ireland-roadtrip-7-10-days",
+    "name": "Ireland Roadtrip (7-10 days) 🚗",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "IE"
+   },
+   {
+    "id": "gt_seed_west-ireland-5-7-days",
+    "name": "West Ireland (5-7 days) 🌊",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "IE"
+   },
+   {
+    "id": "gt_seed_wild-atlantic-way-7-10-days",
+    "name": "Wild Atlantic Way (7-10 days) 🌅",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "IE"
+   },
+   {
+    "id": "gt_seed_isle-of-man-3-4-days",
+    "name": "Isle of Man (3-4 days) 🏝️",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "IM"
+   },
+   {
+    "id": "gt_seed_jersey-guernsey-channel-islands-4-5-days",
+    "name": "Jersey + Guernsey (Channel Islands) (4-5 days) 🏝️",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "JE"
+   }
+  ]
+ },
+ {
+  "batch": 20,
+  "group": "Mediterranean, Eurasia & Europe-Asia",
+  "part": 1,
+  "parts": 1,
+  "estTokens": 184500,
+  "routes": [
+   {
+    "id": "gt_seed_balkan",
+    "name": "Balkan 🐺",
+    "mode": "public",
+    "blocks": 5,
+    "sharedWithBatch1": 4,
+    "country": "AL"
+   },
+   {
+    "id": "gt_seed_east-asia-pacific",
+    "name": "East Asia & Pacific 🗻",
+    "mode": "public",
+    "blocks": 4,
+    "sharedWithBatch1": 3,
+    "country": "CN"
+   },
+   {
+    "id": "gt_seed_egypt-arabian-peninsula",
+    "name": "Egypt & Arabian Peninsula 🐪",
+    "mode": "rental",
+    "blocks": 5,
+    "sharedWithBatch1": 0,
+    "country": "EG"
+   },
+   {
+    "id": "gt_seed_iberia-moroccotunisia",
+    "name": "Iberia & Morocco/Tunisia 🏰",
+    "mode": "public",
+    "blocks": 3,
+    "sharedWithBatch1": 2,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_spain",
+    "name": "Spain 💃",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ES"
+   },
+   {
+    "id": "gt_seed_corsica-southern-france",
+    "name": "Corsica & Southern France ⛵",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 1,
+    "country": "FR"
+   },
+   {
+    "id": "gt_seed_greece-crete",
+    "name": "Greece & Crete 🫒",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 1,
+    "country": "GR"
+   },
+   {
+    "id": "gt_seed_greece-cyprus",
+    "name": "Greece & Cyprus 🏺",
+    "mode": "public",
+    "blocks": 3,
+    "sharedWithBatch1": 2,
+    "country": "GR"
+   },
+   {
+    "id": "gt_seed_malta-italy",
+    "name": "Malta & Italy 🏛️",
+    "mode": "public",
+    "blocks": 5,
+    "sharedWithBatch1": 3,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_rome-surroundings",
+    "name": "Rome & Surroundings 🍕",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_sardinia",
+    "name": "Sardinia 🗿",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_sicily",
+    "name": "Sicily 🌋",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "IT"
+   },
+   {
+    "id": "gt_seed_malta",
+    "name": "Malta ⚔️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "MT"
+   },
+   {
+    "id": "gt_seed_southeast-asia-grand-loop",
+    "name": "Southeast Asia Grand Loop 🛕",
+    "mode": "public",
+    "blocks": 12,
+    "sharedWithBatch1": 11,
+    "country": "MY"
+   },
+   {
+    "id": "gt_seed_tunisia",
+    "name": "Tunisia 🧿",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "TN"
+   },
+   {
+    "id": "gt_seed_anatolia",
+    "name": "Anatolia 🕌",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "TR"
+   },
+   {
+    "id": "gt_seed_istanbul-gallipoli-troy-9-days",
+    "name": "Istanbul + Gallipoli & Troy (9 days) ⚔️",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "TR"
+   },
+   {
+    "id": "gt_seed_istanbul-lesbos-greek-islands-9-days",
+    "name": "Istanbul + Lesbos (Greek Islands) (9 days) 🛳️",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "TR"
+   },
+   {
+    "id": "gt_seed_turkey-greece-aegean-coast-dodecanese-12-days",
+    "name": "Turkey + Greece: Aegean Coast & Dodecanese (12 days) 🌊",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "TR"
+   },
+   {
+    "id": "gt_seed_west-eurasia-overland",
+    "name": "West Eurasia Overland 🐫",
+    "mode": "public",
+    "blocks": 13,
+    "sharedWithBatch1": 12,
+    "country": "TR"
+   }
+  ]
+ },
+ {
+  "batch": 21,
+  "group": "Asia & Himalaya",
+  "part": 1,
+  "parts": 1,
+  "estTokens": 199500,
+  "routes": [
+   {
+    "id": "gt_seed_united-arab-emirates",
+    "name": "United Arab Emirates 🏙️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "AE"
+   },
+   {
+    "id": "gt_seed_bhutan",
+    "name": "Bhutan 🐉",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "BT"
+   },
+   {
+    "id": "gt_seed_caucasus",
+    "name": "Caucasus 🍷",
+    "mode": "public",
+    "blocks": 3,
+    "sharedWithBatch1": 2,
+    "country": "GE"
+   },
+   {
+    "id": "gt_seed_north-india",
+    "name": "North India 🕌",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "IN"
+   },
+   {
+    "id": "gt_seed_jordan",
+    "name": "Jordan 🏺",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "JO"
+   },
+   {
+    "id": "gt_seed_japan-taiwan",
+    "name": "Japan & Taiwan 🗻",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 1,
+    "country": "JP"
+   },
+   {
+    "id": "gt_seed_kazakhstan-kyrgyzstan",
+    "name": "Kazakhstan & Kyrgyzstan ⛺",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 1,
+    "country": "KG"
+   },
+   {
+    "id": "gt_seed_kyrgyzstan",
+    "name": "Kyrgyzstan 🐴",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "KG"
+   },
+   {
+    "id": "gt_seed_south-korea",
+    "name": "South Korea 🏯",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "KR"
+   },
+   {
+    "id": "gt_seed_sri-lanka",
+    "name": "Sri Lanka 🐆",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "LK"
+   },
+   {
+    "id": "gt_seed_mongolia",
+    "name": "Mongolia 🦅",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "MN"
+   },
+   {
+    "id": "gt_seed_maldives",
+    "name": "Maldives 🏝️",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "MV"
+   },
+   {
+    "id": "gt_seed_malaysia-borneo-brunei-jungle-wildlife-21-days",
+    "name": "Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧",
+    "mode": "public",
+    "blocks": 8,
+    "sharedWithBatch1": 0,
+    "country": "MY"
+   },
+   {
+    "id": "gt_seed_malaysia",
+    "name": "Malaysia 🦋",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "MY"
+   },
+   {
+    "id": "gt_seed_nepal",
+    "name": "Nepal 🏔️",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "NP"
+   },
+   {
+    "id": "gt_seed_gulf-states-trio",
+    "name": "Gulf States Trio 🛢️",
+    "mode": "public",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "OM"
+   },
+   {
+    "id": "gt_seed_philippines",
+    "name": "Philippines 🏖️",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "PH"
+   },
+   {
+    "id": "gt_seed_thailand",
+    "name": "Thailand 🛕",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "TH"
+   },
+   {
+    "id": "gt_seed_central-asia",
+    "name": "Central Asia 🐎",
+    "mode": "public",
+    "blocks": 4,
+    "sharedWithBatch1": 3,
+    "country": "TJ"
+   },
+   {
+    "id": "gt_seed_uzbekistan-tajikistan",
+    "name": "Uzbekistan & Tajikistan 🌄",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 1,
+    "country": "TJ"
+   },
+   {
+    "id": "gt_seed_bodrum-aegean-coast-6-days",
+    "name": "Bodrum + Aegean Coast (6 days) 🏰",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "TR"
+   },
+   {
+    "id": "gt_seed_izmir-aegean-coast-ephesus-cesme-5-days",
+    "name": "Izmir + Aegean Coast: Ephesus & Çeşme (5 days) 📜",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "TR"
+   },
+   {
+    "id": "gt_seed_uzbekistan",
+    "name": "Uzbekistan 🐪",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "UZ"
+   },
+   {
+    "id": "gt_seed_vietnam-cambodia",
+    "name": "Vietnam & Cambodia 🛺",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 1,
+    "country": "VN"
+   },
+   {
+    "id": "gt_seed_vietnam",
+    "name": "Vietnam 🛵",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "VN"
+   }
+  ]
+ },
+ {
+  "batch": 22,
+  "group": "Africa",
+  "part": 1,
+  "parts": 1,
+  "estTokens": 182000,
+  "routes": [
+   {
+    "id": "gt_seed_botswana",
+    "name": "Botswana 🐘",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "BW"
+   },
+   {
+    "id": "gt_seed_cape-verde",
+    "name": "Cape Verde 🎶",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "CV"
+   },
+   {
+    "id": "gt_seed_egypt",
+    "name": "Egypt 🏺",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "EG"
+   },
+   {
+    "id": "gt_seed_horn-of-africa-egypt",
+    "name": "Horn of Africa & Egypt 🏺",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 1,
+    "country": "EG"
+   },
+   {
+    "id": "gt_seed_ethiopia",
+    "name": "Ethiopia ⛪",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ET"
+   },
+   {
+    "id": "gt_seed_gabon",
+    "name": "Gabon 🏕️",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "GA"
+   },
+   {
+    "id": "gt_seed_ghana",
+    "name": "Ghana 🥥",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "GH"
+   },
+   {
+    "id": "gt_seed_kenya",
+    "name": "Kenya 🦒",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "KE"
+   },
+   {
+    "id": "gt_seed_morocco",
+    "name": "Morocco 🕌",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "MA"
+   },
+   {
+    "id": "gt_seed_african-islands",
+    "name": "African Islands 🏝️",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 1,
+    "country": "MG"
+   },
+   {
+    "id": "gt_seed_madagascar",
+    "name": "Madagascar 🦎",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "MG"
+   },
+   {
+    "id": "gt_seed_mauritius",
+    "name": "Mauritius 🦤",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "MU"
+   },
+   {
+    "id": "gt_seed_mozambique",
+    "name": "Mozambique 🐋",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "MZ"
+   },
+   {
+    "id": "gt_seed_victoria-falls-kalahari-loop",
+    "name": "Victoria Falls & Kalahari Loop 🦏",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 2,
+    "country": "MZ"
+   },
+   {
+    "id": "gt_seed_namibia",
+    "name": "Namibia 🏜️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "NA"
+   },
+   {
+    "id": "gt_seed_rwanda",
+    "name": "Rwanda 🦍",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "RW"
+   },
+   {
+    "id": "gt_seed_seychelles",
+    "name": "Seychelles 🌺",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "SC"
+   },
+   {
+    "id": "gt_seed_sao-tome-principe",
+    "name": "São Tomé & Príncipe 🍫",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ST"
+   },
+   {
+    "id": "gt_seed_east-africa-safari-classic",
+    "name": "East Africa Safari Classic 🦒",
+    "mode": "public",
+    "blocks": 4,
+    "sharedWithBatch1": 3,
+    "country": "TZ"
+   },
+   {
+    "id": "gt_seed_tanzania",
+    "name": "Tanzania 🦁",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "TZ"
+   },
+   {
+    "id": "gt_seed_south-africa-mountain-kingdoms",
+    "name": "South Africa & Mountain Kingdoms 👑",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 2,
+    "country": "ZA"
+   },
+   {
+    "id": "gt_seed_south-africa",
+    "name": "South Africa 🦓",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ZA"
+   },
+   {
+    "id": "gt_seed_southern-africa-safari-loop",
+    "name": "Southern Africa Safari Loop 🦁",
+    "mode": "rental",
+    "blocks": 10,
+    "sharedWithBatch1": 9,
+    "country": "ZA"
+   },
+   {
+    "id": "gt_seed_zambia-malawi",
+    "name": "Zambia & Malawi 💦",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 1,
+    "country": "ZM"
+   },
+   {
+    "id": "gt_seed_zimbabwe",
+    "name": "Zimbabwe 🐆",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "ZW"
+   }
+  ]
+ },
+ {
+  "batch": 23,
+  "group": "Caribbean, Amazon & Pan-American",
+  "part": 1,
+  "parts": 1,
+  "estTokens": 176000,
+  "routes": [
+   {
+    "id": "gt_seed_bolivia",
+    "name": "Bolivia 🧂",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "BO"
+   },
+   {
+    "id": "gt_seed_northern-brazil",
+    "name": "Northern Brazil 🪁",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "BR"
+   },
+   {
+    "id": "gt_seed_southern-cone-brazil-finale",
+    "name": "Southern Cone & Brazil Finale 🧉",
+    "mode": "public",
+    "blocks": 3,
+    "sharedWithBatch1": 2,
+    "country": "BR"
+   },
+   {
+    "id": "gt_seed_suriname-northern-brazil",
+    "name": "Suriname & Northern Brazil 🌴",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 1,
+    "country": "BR"
+   },
+   {
+    "id": "gt_seed_andes-grand-traverse",
+    "name": "Andes Grand Traverse 🦙",
+    "mode": "public",
+    "blocks": 4,
+    "sharedWithBatch1": 3,
+    "country": "CO"
+   },
+   {
+    "id": "gt_seed_colombia",
+    "name": "Colombia ☕",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "CO"
+   },
+   {
+    "id": "gt_seed_central-america-loop",
+    "name": "Central America Loop 🌋",
+    "mode": "public",
+    "blocks": 7,
+    "sharedWithBatch1": 6,
+    "country": "CR"
+   },
+   {
+    "id": "gt_seed_costa-rica",
+    "name": "Costa Rica 🦥",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "CR"
+   },
+   {
+    "id": "gt_seed_caribbean-islands-hop",
+    "name": "Caribbean Islands Hop 🏝️",
+    "mode": "public",
+    "blocks": 8,
+    "sharedWithBatch1": 7,
+    "country": "CU"
+   },
+   {
+    "id": "gt_seed_cuba",
+    "name": "Cuba 🎷",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "CU"
+   },
+   {
+    "id": "gt_seed_abc-islands",
+    "name": "ABC Islands 🦩",
+    "mode": "public",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "CW"
+   },
+   {
+    "id": "gt_seed_curacao-bonaire",
+    "name": "Curaçao & Bonaire 🤿",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 1,
+    "country": "CW"
+   },
+   {
+    "id": "gt_seed_guadeloupe-dominica",
+    "name": "Guadeloupe & Dominica 🍃",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "DM"
+   },
+   {
+    "id": "gt_seed_ecuador",
+    "name": "Ecuador 🐢",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "EC"
+   },
+   {
+    "id": "gt_seed_guatemala",
+    "name": "Guatemala 🦜",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "GT"
+   },
+   {
+    "id": "gt_seed_jamaica",
+    "name": "Jamaica 🎵",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "JM"
+   },
+   {
+    "id": "gt_seed_saint-lucia-grenada",
+    "name": "Saint Lucia & Grenada 🌰",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "LC"
+   },
+   {
+    "id": "gt_seed_mexico",
+    "name": "Mexico 🌵",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "MX"
+   },
+   {
+    "id": "gt_seed_nicaragua",
+    "name": "Nicaragua 🌅",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "NI"
+   },
+   {
+    "id": "gt_seed_panama",
+    "name": "Panama 🚢",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "PA"
+   },
+   {
+    "id": "gt_seed_peru",
+    "name": "Peru 🦙",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "PE"
+   },
+   {
+    "id": "gt_seed_suriname",
+    "name": "Suriname 🛶",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "SR"
+   }
+  ]
+ },
+ {
+  "batch": 24,
+  "group": "North America & Oceania",
+  "part": 1,
+  "parts": 2,
+  "estTokens": 135500,
+  "routes": [
+   {
+    "id": "gt_seed_cairns-great-barrier-reef",
+    "name": "Cairns & Great Barrier Reef 🐠",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "AU"
+   },
+   {
+    "id": "gt_seed_sydneybyron-great-ocean-road",
+    "name": "Sydney/Byron & Great Ocean Road 🦘",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "AU"
+   },
+   {
+    "id": "gt_seed_tasmania",
+    "name": "Tasmania 🐾",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "AU"
+   },
+   {
+    "id": "gt_seed_temperatesouthern-australia",
+    "name": "Temperate/Southern Australia 🍇",
+    "mode": "rental",
+    "blocks": 4,
+    "sharedWithBatch1": 0,
+    "country": "AU"
+   },
+   {
+    "id": "gt_seed_tropicaloutback-australia",
+    "name": "Tropical/Outback Australia 🐊",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "AU"
+   },
+   {
+    "id": "gt_seed_eastern-canada",
+    "name": "Eastern Canada 🍁",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 2,
+    "country": "CA"
+   },
+   {
+    "id": "gt_seed_western-canada-rockies-vancouver",
+    "name": "Western Canada: Rockies & Vancouver 🏔️",
+    "mode": "rental",
+    "blocks": 5,
+    "sharedWithBatch1": 1,
+    "country": "CA"
+   },
+   {
+    "id": "gt_seed_fiji-vanuatu",
+    "name": "Fiji & Vanuatu 🐚",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "FJ"
+   },
+   {
+    "id": "gt_seed_fiji",
+    "name": "Fiji 🌊",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "FJ"
+   },
+   {
+    "id": "gt_seed_pacific-islands",
+    "name": "Pacific Islands 🌺",
+    "mode": "public",
+    "blocks": 5,
+    "sharedWithBatch1": 0,
+    "country": "FJ"
+   },
+   {
+    "id": "gt_seed_new-zealand",
+    "name": "New Zealand 🥝",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 1,
+    "country": "NZ"
+   },
+   {
+    "id": "gt_seed_new-zealand-north-island",
+    "name": "New Zealand North Island 🌿",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "NZ"
+   }
+  ]
+ },
+ {
+  "batch": 25,
+  "group": "North America & Oceania",
+  "part": 2,
+  "parts": 2,
+  "estTokens": 123000,
+  "routes": [
+   {
+    "id": "gt_seed_new-zealand-south-island",
+    "name": "New Zealand South Island 🏔️",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "NZ"
+   },
+   {
+    "id": "gt_seed_papua-new-guinea",
+    "name": "Papua New Guinea 🎭",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "PG"
+   },
+   {
+    "id": "gt_seed_palau",
+    "name": "Palau 🦈",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "PW"
+   },
+   {
+    "id": "gt_seed_california",
+    "name": "California 🌲",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "US"
+   },
+   {
+    "id": "gt_seed_florida",
+    "name": "Florida 🐊",
+    "mode": "rental",
+    "blocks": 4,
+    "sharedWithBatch1": 0,
+    "country": "US"
+   },
+   {
+    "id": "gt_seed_hawaii",
+    "name": "Hawaii 🐢",
+    "mode": "rental",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "US"
+   },
+   {
+    "id": "gt_seed_pacific-northwest",
+    "name": "Pacific Northwest 🦫",
+    "mode": "rental",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "US"
+   },
+   {
+    "id": "gt_seed_us-northeast",
+    "name": "US Northeast 🗽",
+    "mode": "rental",
+    "blocks": 4,
+    "sharedWithBatch1": 0,
+    "country": "US"
+   },
+   {
+    "id": "gt_seed_us-southwest",
+    "name": "US Southwest 🏜️",
+    "mode": "rental",
+    "blocks": 6,
+    "sharedWithBatch1": 0,
+    "country": "US"
+   },
+   {
+    "id": "gt_seed_us-west-coast-roadtrip",
+    "name": "US West Coast Roadtrip 🌉",
+    "mode": "rental",
+    "blocks": 2,
+    "sharedWithBatch1": 1,
+    "country": "US"
+   }
+  ]
+ },
+ {
+  "batch": 26,
+  "group": "South America, Patagonia & West/Central Africa",
+  "part": 1,
+  "parts": 1,
+  "estTokens": 137000,
+  "routes": [
+   {
+    "id": "gt_seed_antarctica-cruise",
+    "name": "Antarctica Cruise 🐧",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "AQ"
+   },
+   {
+    "id": "gt_seed_argentine-patagonia",
+    "name": "Argentine Patagonia 🥩",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "AR"
+   },
+   {
+    "id": "gt_seed_chilean-patagonia",
+    "name": "Chilean Patagonia 🥾",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "CL"
+   },
+   {
+    "id": "gt_seed_patagonia-overland",
+    "name": "Patagonia Overland 🏔️",
+    "mode": "public",
+    "blocks": 4,
+    "sharedWithBatch1": 3,
+    "country": "CL"
+   },
+   {
+    "id": "gt_seed_west-africa-overland",
+    "name": "West Africa Overland 🥁",
+    "mode": "public",
+    "blocks": 7,
+    "sharedWithBatch1": 1,
+    "country": "GH"
+   },
+   {
+    "id": "gt_seed_guyana",
+    "name": "Guyana 🦦",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "GY"
+   },
+   {
+    "id": "gt_seed_peru-bolivia-andes-salt-flats-20-days",
+    "name": "Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂",
+    "mode": "public",
+    "blocks": 9,
+    "sharedWithBatch1": 0,
+    "country": "PE"
+   },
+   {
+    "id": "gt_seed_senegambia",
+    "name": "Senegambia 🦩",
+    "mode": "public",
+    "blocks": 2,
+    "sharedWithBatch1": 0,
+    "country": "SN"
+   },
+   {
+    "id": "gt_seed_central-africa-islands",
+    "name": "Central Africa & Islands 🦛",
+    "mode": "public",
+    "blocks": 3,
+    "sharedWithBatch1": 0,
+    "country": "ST"
+   },
+   {
+    "id": "gt_seed_uruguay",
+    "name": "Uruguay 🧉",
+    "mode": "public",
+    "blocks": 1,
+    "sharedWithBatch1": 0,
+    "country": "UY"
+   }
+  ]
+ }
+]

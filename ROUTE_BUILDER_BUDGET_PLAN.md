@@ -267,7 +267,7 @@ Progress:
       blocks that are below backpacker level; review blocks far above Standard (safari days, Borneo,
       resorts). Youri reviews the list, then a migration + Sheet push (`budget` only, never `days`).
     - Then the standalone route batches, which automatically fit all three levels.
-  - [ ] Standalone routes by family (after R2b-R2d)
+  - [ ] Standalone routes by family (after R2b-R2d): split 2026-10-28 into **batches 2-26 of ~200k tokens each** (`planning/budget_batches/BATCHES.md`), and Youri says go per batch. Batch 2 (Italy 1/3) started 2026-10-28.
 
 Original plan:
 
