@@ -1,0 +1,2 @@
+airport_code,city,country_code,direction,eur_one_way,airline_or_routing,source,date_checked,confidence,notes
+ZRH,Zurich,CH,out,130,KLM/Swiss direct,"WebSearch 2026-10-28 (ZRH-AMS floors USD 81-141, nonstop typical USD 150-300; AMS-ZRH Swiss ~USD 168; est)",2026-10-28,medium,

@@ -12,6 +12,13 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Route-text fixes from Phase 4 batches 9-12 (2026-10-28)**:
+  - **Switzerland Alpine Roadtrip (9 days) 🛣️**: Andermatt → Zermatt said "over the Simplon into Ticino". It is the Furka Pass into the Valais.
+  - **Switzerland + Northern Italy (9 days) 🚞**: Tirano → Lugano said "over the Gotthard". It goes along Lake Como via Menaggio-Porlezza.
+  - **Austria + Slovenia + Croatia (10-14 days) 🚙**: an own-car route that ended "fly home from Zadar". It now drives back (~1,450 km).
+  - `rbFixBatch912RouteTexts()` / `rbMigrateBatch912RouteFixes()`, Sheet: `scripts/fix_route_texts_in_sheet.js 912`, verified live.
+  - Cost call: **Albania Roadtrip** got its rental car added (€263). The notes' "€35-45/day including the rental car" predates R2d, and €40/day is only €5 above the style rate. `AGENT_BRIEF.md` now says `carInDailyRate` is the only test.
+
 - **Route-text fixes from Phase 4 batches 7+8 (2026-10-28)**: two own-car routes ended with a flight home.
   - **Alpine Roadtrip (14 days) 🏕️**: "fly home from Ljubljana" → drive home from Bled (~1,150 km).
   - **France Roadtrip: Paris to the Côte d'Azur (12 days) 🚗**: "drop the rental off in Nice and fly back" (in `travel_style`, the last leg's notes and its transport) → drive back to the Netherlands (~1,200 km, optionally via the Route Napoléon).

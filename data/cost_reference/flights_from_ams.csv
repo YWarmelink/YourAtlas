@@ -91,3 +91,31 @@ BIA,Bastia,FR,out,220,connecting (Air France/KLM via hub) or seasonal direct,Web
 AJA,Ajaccio,FR,back,210,1-2 stops (Air France via Paris),WebSearch 2026-10-28 (Expedia USD 243 floor; Skyscanner no direct),2026-10-28,low,
 FSC,Figari,FR,back,200,1 stop via Paris/Geneva/Basel,reuse FSC out fare (batch 2; no separate search),2026-10-28,low,est
 NCE,Nice,FR,back,90,easyJet/Transavia/KLM/Air France direct,WebSearch 2026-10-28 (Expedia UK GBP 43+; Kayak USD 47; Expedia US easyJet USD 58 floors; typical higher),2026-10-28,medium,
+ZRH,Zurich,CH,out,130,KLM/Swiss direct,"WebSearch 2026-10-28 (ZRH-AMS floors USD 81-141, nonstop typical USD 150-300; AMS-ZRH Swiss ~USD 168; est)",2026-10-28,medium,
+ZRH,Zurich,CH,back,140,SWISS/KLM direct,estimate from out fare (no separate search),2026-10-28
+MUC,Munich,DE,back,120,Lufthansa/KLM direct,"WebSearch 2026-10-28 (Expedia USD 121 / GBP 89 floors; Ratepunk median USD 199)",2026-10-28
+TIA,Tirana,AL,out,110,Transavia/Ryanair/Air Serbia,WebSearch 2026-10-28 (Expedia EUR 89 floor),2026-10-28,medium,
+TIA,Tirana,AL,back,100,Air Serbia/Transavia/Ryanair,WebSearch 2026-10-28 (Air Serbia EUR 70 floor),2026-10-28,medium,
+DBV,Dubrovnik,HR,out,120,KLM direct/easyJet,WebSearch 2026-10-28 (aggregator USD 109 / GBP 91 floors),2026-10-28,medium,
+DBV,Dubrovnik,HR,back,110,KLM direct/easyJet,est from out,2026-10-28,low,
+SPU,Split,HR,out,110,easyJet/Transavia/Croatia Airlines,WebSearch 2026-10-28 (USD 97-99 floors),2026-10-28,medium,
+SPU,Split,HR,back,100,easyJet/Transavia,est from out,2026-10-28,low,
+ZAG,Zagreb,HR,out,140,KLM/Croatia Airlines direct,WebSearch 2026-10-28 (EUR 147-148 floors; typical similar),2026-10-28,medium,
+SJJ,Sarajevo,BA,back,220,Air Serbia/Lufthansa via hub,est mirror of out 230,2026-10-28,low,
+TGD,Podgorica,ME,out,140,Air Serbia nonstop or 1 stop (Austrian/Lufthansa/Aegean),WebSearch 2026-10-28 (Skyscanner EUR 104; Expedia UK GBP 138; Expedia US USD 183; ebookers EUR 167),2026-10-28,medium,
+TGD,Podgorica (or Tivat),ME,back,150,1 stop or seasonal direct,est,2026-10-28,low,
+PRN,Pristina,XK,out,140,Wizz/Eurowings/Swiss,est,2026-10-28,low,
+BEG,Belgrade,RS,out,140,Air Serbia nonstop (also KLM/Transavia),WebSearch 2026-10-28 (Kayak IE typical EUR 149-195; Kayak USD 138-158; Expedia USD 168),2026-10-28,medium,
+LJU,Ljubljana,SI,out,130,Transavia/Air France 1 stop,est,2026-10-28,low,
+ZAD,Zadar,HR,out,130,Transavia/Ryanair seasonal,est,2026-10-28,low,
+LJU,Ljubljana,SI,back,120,same,estimate from out fare (batch 12; no separate search),2026-10-28,low,est
+ZAG,Zagreb,HR,back,140,same,estimate from out fare (batch 12),2026-10-28,low,est
+PUY,Pula,HR,out,120,Connecting (Lufthansa group/Croatia/Air Serbia) or seasonal easyJet,WebSearch 2026-10-28 (Expedia USD 103-125; Travelocity USD 106),2026-10-28,low,seasonal; typical above floors
+PUY,Pula,HR,back,110,same,WebSearch 2026-10-28 (Expedia USD 107; Skyscanner EUR 81 floor),2026-10-28,low,
+TIV,Tivat,ME,out,170,1 stop (Air Serbia/Turkish/Air France) or seasonal Transavia,WebSearch 2026-10-28 (Expedia IE EUR 145; Expedia US USD 197-203; Skyscanner EUR 200),2026-10-28,low,
+TIV,Tivat,ME,back,160,same,WebSearch 2026-10-28 (Expedia SG SGD 228 floor ~EUR 150),2026-10-28,low,
+SKP,Skopje,MK,out,140,1 stop (Air Serbia/Austrian/Lufthansa/Transavia seasonal),WebSearch 2026-10-28 (ebookers EUR 122; Expedia USD 181; Kayak USD 116),2026-10-28,medium,no nonstop
+SKP,Skopje,MK,back,130,same,estimate from out fare (Expedia USD 60 floor ignored),2026-10-28,low,est
+BEG,Belgrade,RS,back,130,same,estimate from out fare (batch 12),2026-10-28,low,est
+PRN,Pristina,XK,back,110,same,estimate from out fare (batch 12),2026-10-28,low,est
+SKG,Thessaloniki,GR,back,140,Aegean/Transavia/airBaltic,WebSearch 2026-10-28 (Aegean EUR 122-159+; airBaltic EUR 240; Omio GBP 140),2026-10-28,medium,

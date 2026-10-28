@@ -16463,7 +16463,7 @@ function rbBuildSwitzerlandAlpineRoadtripRoute() {
         { name: 'Grimsel Pass', lat: 46.5717, lng: 8.3550, notes: "A stark, almost lunar granite landscape dotted with turquoise hydroelectric reservoirs (Grimselsee, Räterichsbodensee) rather than the glacier views of its neighbours. The lakeside Grimsel Hospiz is worth a short stop for the view alone." },
       ],
       notes: 'Andermatt as the base for three legendary mountain passes: the Sustenpass (seasonal, 2026 open from 12 June), the Furka Pass (reopened 29 May 2026) and the Grimsel Pass (reopened 14 May 2026) — all seasonal, check current-year opening dates before relying on this route outside summer.',
-      transport_to_next: 'Drive over the Simplon Pass (open year-round, no seasonal closure) into Ticino.',
+      transport_to_next: 'Drive over the Furka Pass (seasonal; the Furka car train Realp-Oberwald is the year-round alternative) into the Valais, on to Täsch for Zermatt.',
     },
     {
       code: 'CH', name: 'Switzerland', days: 2, budget: 300, lat: 46.0207, lng: 7.7491,
@@ -16516,7 +16516,7 @@ function rbBuildSwitzerlandNorthernItalyRoute() {
         { name: 'Valtellina / Lake Como', lat: 45.8081, lng: 9.0852 , notes: 'Valtellina is an Italian Alpine wine valley known for Nebbiolo-based reds; the route continues to Lake Como\'s northern reaches, connecting the Bernina Express journey to Italy\'s lake district.' },
       ],
       notes: 'Tirano — Valtellina/Lake Como. Noticeably cheaper than the Swiss legs, ~€70-100/day p.p. Italy uses toll motorways (autostrade), not a vignette — budget an extra ~€20-40 in tolls for this stretch; check that a rental car\'s insurance covers Italy if it is not your own vehicle.',
-      transport_to_next: 'Drive back north over the Gotthard toward Ticino/Lugano, Switzerland.',
+      transport_to_next: 'Drive along Lake Como and over to Lugano via Menaggio-Porlezza (~2h from Tirano), back into Switzerland.',
     },
     {
       code: 'CH', name: 'Switzerland', days: 3, budget: 420, lat: 46.0037, lng: 8.9511,
@@ -25129,7 +25129,7 @@ function rbBuildAustriaSloveniaCroatiaRoute() {
         { name: 'Zadar', lat: 44.1194, lng: 15.2314, notes: "The Sea Organ (wave-powered pipes built into the waterfront steps) and the adjacent Sun Salutation light installation make the sunset promenade the actual destination here — reportedly the sunset Hitchcock once called the world's most beautiful. Time the visit for sunset; the light show and organ sound together are the point." },
       ],
       notes: "Zadar chosen here as the concrete '14-day-only' coastal add-on rather than Istria — same content as the Zadar leg of Croatia North to South (9 days) 🧭/Croatia Coastal Roadtrip (9 days) 🛣️ above. Zadar deliberately picked over Istria specifically to avoid duplicating this same sub-batch's sibling Italy + Slovenia + Croatia (10-14 days) route below, which already covers Istria/Rovinj-Pula in depth. Budget ~€80-150/day p.p. (coast pricier than inland). Season: May-June/September (June-September if combining with the coast/Alps as here).",
-      transport_to_next: 'End of this route — fly home from Zadar or Zagreb.',
+      transport_to_next: 'End of this route — drive back to the Netherlands (~1,450 km via Ljubljana and Austria, best split over 2 days).',
     },
   ], {
     best_starting_month: 'June',
@@ -28618,6 +28618,856 @@ const RB_ROUTE_COSTS = {
       ],
     },
 
+
+  // ---- Phase 4 batch 9: Alps & Germany 1/2, extracted 2026-10-28, approved by Youri (planning/budget_batch9/REVIEW.md) ----
+  // Fares: flights_from_ams.csv (INN) + flights_batch9.csv (ZRH). Car: data/cost_reference/car_costs_by_country.csv (7 L/100 km).
+  // Own-car drive NL<->route = fuel (km x 0.07 x price per country, DE 2.179 / AT 1.817 / CH 2.33 / SI 1.751 / LI 2.10) + section tolls on the way. Vignettes are counted once in the in-route "Car:" extra.
+  // CHF -> EUR x1.082 (CH vignette CHF40 = EUR43.28).
+
+    'gt_seed_austria-slovenia-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 144,   // own car NL->Salzburg ~960 km: DE ~850 km x0.07x2.179 = 130 + AT ~110 km x0.07x1.817 = 14 (est split)
+      flight_out_cost: 210,  // own car Bled->NL ~1240 km: SI 60 + AT 380 + DE 800 km fuel = 178; Karawanken 9 + Tauern 15 + Katschberg 7.50 tolls
+      blocks: [
+        { code: 'AT', transport: 0, local: 0, extras: [
+          rbExtra('Car: fuel ≈350 km (AT 220, SI 120) = 43 + tolls: A10 Tauern 15 + Katschberg 7.50, Karawanken 9, AT 10-day vignette 12.80, SI e-vignette 16 (own car)', 103, 'transport'),
+        ] },
+        { code: 'SI', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_austria-alpine-roadtrip-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 125,   // own car NL->Vorarlberg ~830 km: DE ~780 x0.07x2.179 = 119 + AT ~50 km = 6 (est split)
+      flight_out_cost: 144,  // own car Salzburg->NL ~960 km: DE ~880 = 134 + AT ~80 = 10
+      blocks: [
+        { code: 'AT', transport: 0, local: 0, extras: [
+          rbExtra('Car: fuel ≈480 km AT = 61 + Arlberg tunnel 13 + AT 10-day vignette 12.80 (own car)', 87, 'transport'),
+        ] },
+        { code: 'AT', transport: 0, local: 0, extras: [] },
+        { code: 'AT', transport: 0, local: 0, extras: [
+          rbExtra('Grossglockner High Alpine Road toll, car day ticket (route notes €46.50)', 46.5, 'park_fee'),
+        ] },
+        { code: 'AT', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_austrian-alps-zell-am-see-kaprun-pinzgau-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 149,   // own car NL->Zell am See ~990 km: DE ~900 x0.07x2.179 = 137 + AT ~90 km = 11
+      flight_out_cost: 149,  // same back
+      blocks: [
+        { code: 'AT', local: 0, extras: [
+          rbExtra('Car: fuel ≈20 km AT = 2.50 + AT 10-day vignette 12.80 (own car)', 15, 'transport'),
+          rbExtra('Kitzsteinhorn cable car return (route notes ~€50-55, midpoint)', 52.5, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_liechtenstein-austria-switzerland-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Zurich one way (KLM/Swiss direct; WebSearch 2026-10-28: floors $103-141, nonstop typical higher; est)
+      flight_out_cost: 100,  // Innsbruck-AMS one way (flights_from_ams.csv, Transavia seasonal)
+      blocks: [
+        { code: 'LI', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 5 days (Zurich pickup -> Innsbruck drop) × €70 = 350 + one-way cross-border drop ≈€120 (est) + fuel ≈370 km (Zurich-Vaduz ~120 CH, LI 20, AT 230) = 52 + CH vignette 43.28 + AT 10-day vignette 12.80 + Arlberg tunnel 13', 591, 'transport'),
+        ] },
+        { code: 'AT', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_salzburg-berchtesgaden-hallstatt-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 144,   // own car NL->Salzburg ~960 km: DE ~850 = 130 + AT ~110 = 14
+      flight_out_cost: 155,  // own car Hallstatt->NL ~1030 km: AT ~100 + DE ~930 km fuel
+      blocks: [
+        { code: 'AT', transport: 0, local: 0, extras: [
+          rbExtra('Car: fuel ≈100 km (AT 60, DE 40) = 14 + AT 10-day vignette 12.80 (own car)', 27, 'transport'),
+        ] },
+        { code: 'DE', transport: 0, local: 0, extras: [
+          rbExtra('Königssee boat to St. Bartholomä, return (route notes €16.90; the round trip is the only way, so not halved)', 16.9, 'tour'),
+        ] },
+        { code: 'AT', local: 0, extras: [
+          rbExtra('Hallstatt Skywalk / salt mine cable car (route notes ~€29)', 29, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_salzburg-grossglockner-tyrol-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 144,   // own car NL->Salzburg ~960 km: DE ~850 = 130 + AT ~110 = 14
+      flight_out_cost: 137,  // own car Innsbruck->NL ~910 km: DE ~850 = 130 + AT ~60 = 8
+      blocks: [
+        { code: 'AT', transport: 0, local: 0, extras: [
+          rbExtra('Car: fuel ≈290 km AT = 37 + Felbertauern toll 13.50 + AT 10-day vignette 12.80 (own car)', 63, 'transport'),
+          rbExtra('Grossglockner High Alpine Road toll, car day ticket (route notes €46.50)', 46.5, 'park_fee'),
+        ] },
+        { code: 'AT', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_salzburg-surroundings-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 144,   // own car NL->Salzburg ~960 km: DE ~850 = 130 + AT ~110 = 14
+      flight_out_cost: 145,  // own car Salzburg->NL ~970 km: DE ~880 = 134 + AT ~90 = 11
+      blocks: [
+        { code: 'AT', local: 0, extras: [
+          rbExtra('Car: fuel ≈140 km AT = 18 + AT 10-day vignette 12.80 (own car)', 31, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_tyrol-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 137,   // own car NL->Innsbruck ~910 km: DE ~850 = 130 + AT ~60 = 8
+      flight_out_cost: 143,  // own car Innsbruck->NL ~950 km: DE ~880 = 134 + AT ~70 = 9
+      blocks: [
+        { code: 'AT', local: 0, extras: [
+          rbExtra('Car: fuel ≈120 km AT = 15 + AT 10-day vignette 12.80 (own car)', 28, 'transport'),
+          rbExtra('Zillertal / Olperer suspension bridge cable car (notes: €15-30 each, midpoint)', 22.5, 'activity'),
+          rbExtra('Achensee boat trip (notes: €15-30 each, midpoint)', 22.5, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_interlaken-lauterbrunnen-grindelwald-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 127,   // own car NL->Interlaken ~820 km: DE ~620 x0.07x2.179 = 95 + CH ~200 km x0.07x2.33 = 33 (est split)
+      flight_out_cost: 128,  // same back, ~830 km
+      blocks: [
+        { code: 'CH', transport: 0, local: 0, extras: [
+          rbExtra('Car: fuel ≈50 km CH = 8 + CH vignette CHF40 = 43.28 (own car)', 51, 'transport'),
+        ] },
+        { code: 'CH', transport: 0, local: 0, extras: [] },
+        { code: 'CH', local: 0, extras: [
+          rbExtra('Jungfraujoch return Interlaken-Jungfraujoch CHF261.20 + CHF10 seat reservation = €293 (notes call it skippable; return fare, no one-way price)', 293, 'tour', true),
+        ] },
+      ],
+    },
+
+    'gt_seed_liechtenstein-swiss-alps-3-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 128,   // own car NL->Vaduz ~830 km: DE ~720 = 110 + CH ~110 = 18
+      flight_out_cost: 123,  // own car ~800 km: DE ~750 = 114 + CH ~50 = 8
+      blocks: [
+        { code: 'LI', transport: 0, local: 0, extras: [
+          rbExtra('Car: fuel ≈70 km CH = 11 + CH vignette CHF40 = 43.28 (own car)', 55, 'transport'),
+        ] },
+        { code: 'CH', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_swiss-alps-zermatt-matterhorn-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 141,   // own car NL->Taesch ~910 km: DE ~690 = 105 + CH ~220 = 36 (est split)
+      flight_out_cost: 140,  // ~900 km back
+      blocks: [
+        { code: 'CH', local: 0, extras: [
+          rbExtra('Car: fuel ≈50 km CH = 8 + CH vignette CHF40 = 43.28 (own car)', 51, 'transport'),
+          rbExtra('Täsch parking 6 days × CHF15 (notes CHF13.50-16.50/day, midpoint) × 1.082', 97, 'other'),
+          rbExtra('Gornergrat cogwheel railway return (notes CHF80-96, midpoint CHF88; notes say pick one of Gornergrat / Glacier Paradise)', 95, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_switzerland-northern-italy-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 133,   // own car NL->Chur ~860 km: DE ~680 = 104 + CH ~180 = 29 (est split)
+      flight_out_cost: 147,  // own car Ticino->NL ~950 km: CH ~160 = 26 + DE ~790 = 121
+      blocks: [
+        { code: 'CH', transport: 36, local: 0, extras: [   // regional train St. Moritz-Tirano ~CHF33 (est; the notes name no price)
+          rbExtra('Car: fuel ≈270 km (CH 90, IT 180) = 40 + Italian autostrada tolls 60% × 180 km × €8/100 km = 9 + CH vignette CHF40 = 43.28 (own car)', 92, 'transport'),
+        ] },
+        { code: 'IT', transport: 0, local: 0, extras: [] },
+        { code: 'CH', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_switzerland-alpine-roadtrip-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 116,   // own car NL->Zurich ~750 km: DE ~630 = 96 + CH ~120 = 20 (est split)
+      flight_out_cost: 133,  // own car Chur->NL ~860 km: CH ~150 = 25 + DE ~710 = 108
+      blocks: [
+        { code: 'CH', transport: 0, local: 0, extras: [
+          rbExtra('Car: fuel ≈520 km CH = 85 + CH vignette CHF40 = 43.28 (own car)', 128, 'transport'),
+        ] },
+        { code: 'CH', transport: 0, local: 0, extras: [] },
+        { code: 'CH', transport: 0, local: 0, extras: [] },
+        { code: 'CH', transport: 0, local: 0, extras: [] },
+        { code: 'CH', transport: 0, local: 0, extras: [] },
+        { code: 'CH', local: 0, extras: [] },
+      ],
+    },
+
+
+  // ---- Phase 4 batch 10: Alps & Germany 2/2, extracted 2026-10-28, approved by Youri (planning/budget_batch10/REVIEW.md) ----
+  // Fares: flights_from_ams.csv + flights_batch10.csv. Car: data/cost_reference/car_costs_by_country.csv (7 L/100 km; DE fuel 2.179 = 0.1525 EUR/km, DE motorways free).
+  // Own car from NL: flight_in/out = the drive (fuel only, DE-only routes, no vignette).
+
+    'gt_seed_zurich-lucerne-surroundings-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Zurich one way (SWISS/KLM direct; WebSearch 2026-10-28: Kayak EUR 142, Farecompare avg USD 144, Omio floor EUR 101)
+      flight_out_cost: 140,  // Zurich-AMS one way (same fare level, est from out)
+      blocks: [
+        { code: 'CH', local: 60, extras: [    // Zurich-Lucerne train ~CHF 27 (est) + Lucerne-Zurich airport ~CHF 27 (est); Zurich airport-city covered by city transport in daily budget
+          rbExtra('Pilatus Golden Round Trip (CHF 119.80, notes ~EUR 125; Rigi is the cheaper alternative, pick one)', 125, 'tour'),
+        ] },
+      ],
+    },
+
+    'gt_seed_bavaria-alps-berchtesgaden-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 127,   // own car NL->Munich ~830 km x 0.07 x 2.179 (DE, no tolls)
+      flight_out_cost: 149,  // Berchtesgaden->NL ~980 km x 0.07 x 2.179
+      blocks: [
+        { code: 'DE', transport: 0, local: 0, extras: [
+          rbExtra('Car: fuel ≈380 km in route (Munich-Garmisch-Fussen-Berchtesgaden loop) x 0.07 x 2.179; no tolls in DE', 58, 'transport'),
+          rbExtra('Zugspitze cable car, full route (EUR 62 return; Eibsee-only EUR 47)', 62, 'activity'),   // notes (a return trip by nature)
+          rbExtra('Neuschwanstein timed guided tour (EUR 17.50-21 midpoint)', 19, 'tour'),                  // notes
+          rbExtra('Parking Hohenschwangau/Neuschwanstein ~EUR 8/day x 1 day', 8, 'park_fee'),               // notes
+        ] },
+        { code: 'DE', local: 0, extras: [
+          rbExtra('Konigssee boat to St. Bartholoma (EUR 16.90 return; full route to Salet EUR 29.80)', 17, 'activity'),   // notes
+          rbExtra('Parking near Konigssee EUR 5-8/day (midpoint 6.5) x 2 days', 13, 'park_fee'),             // notes
+        ] },
+      ],
+    },
+
+    'gt_seed_bavaria-munich-alps-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 127,   // own car NL->Munich ~830 km fuel
+      flight_out_cost: 128,  // Munich->NL ~840 km fuel
+      blocks: [
+        { code: 'DE', local: 0, extras: [
+          rbExtra('Car: fuel ≈150 km in route (Munich-Garmisch-Fussen) x 0.07 x 2.179; no tolls in DE', 23, 'transport'),
+          rbExtra('Zugspitze cable car, full route (EUR 62 return; Eibsee-only EUR 47)', 62, 'activity'),   // notes
+          rbExtra('Neuschwanstein timed guided tour (EUR 17.50-21 midpoint)', 19, 'tour'),                  // notes
+          rbExtra('Parking Hohenschwangau/Neuschwanstein ~EUR 8/day x 1 day', 8, 'park_fee'),               // notes
+        ] },
+      ],
+    },
+
+    'gt_seed_berlin-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 60,    // direct ICE NL-Berlin, typical advance fare (notes "from EUR 38" is the promo floor; est typical, low confidence)
+      flight_out_cost: 60,   // ICE Berlin-NL, same
+      blocks: [
+        { code: 'DE', local: 0, extras: [
+          rbExtra('Museum Island day pass', 24, 'activity'),   // notes
+        ] },
+      ],
+    },
+
+    'gt_seed_black-forest-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 98,    // own car NL->Freiburg ~640 km fuel
+      flight_out_cost: 85,   // Baden-Baden->NL ~560 km fuel
+      blocks: [
+        { code: 'DE', local: 0, extras: [
+          rbExtra('Car: fuel ≈160 km in route (Freiburg-Titisee-Triberg-Baden-Baden) x 0.07 x 2.179; no tolls in DE', 24, 'transport'),
+          rbExtra('Baden-Baden spa: Caracalla (EUR 21 2h-35 day pass, midpoint 28; Friedrichsbad EUR 36 is the alternative)', 28, 'activity'),   // notes, choice of two
+        ] },
+      ],
+    },
+
+    'gt_seed_cologne-bonn-rhine-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 35,    // own car NL->Cologne ~230 km fuel (no toll, per notes)
+      flight_out_cost: 56,   // Loreley/Rudesheim->NL ~370 km fuel
+      blocks: [
+        { code: 'DE', local: 0, extras: [
+          rbExtra('Car: fuel ≈200 km in route (Cologne-Bonn-Middle Rhine) x 0.07 x 2.179; no tolls in DE', 31, 'transport'),
+        ] },   // cathedral ticket, KD cruise, parking: notes give no price, not added
+      ],
+    },
+
+    'gt_seed_dresden-saxon-switzerland-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 121,   // own car NL->Dresden ~790 km fuel
+      flight_out_cost: 125,  // Dresden->NL ~820 km fuel
+      blocks: [
+        { code: 'DE', local: 0, extras: [
+          rbExtra('Car: fuel ≈30 km in route (Dresden-Saxon Switzerland trailheads) x 0.07 x 2.179; no tolls in DE', 5, 'transport'),
+          rbExtra('Frauenkirche dome climb', 12, 'activity'),   // notes
+        ] },
+      ],
+    },
+
+    'gt_seed_german-alpine-road-deutsche-alpenstrae-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 119,   // own car NL->Lindau ~780 km fuel
+      flight_out_cost: 149,  // Berchtesgaden->NL ~980 km fuel
+      blocks: [
+        { code: 'DE', local: 0, extras: [
+          rbExtra('Car: fuel ≈340 km in route (Lindau-Fussen-Garmisch-Chiemsee-Berchtesgaden) x 0.07 x 2.179; no tolls in DE', 52, 'transport'),
+          rbExtra('Zugspitze cable car, full route (price from the Bavaria routes notes)', 62, 'activity'),
+          rbExtra('Neuschwanstein timed guided tour (EUR 17.50-21 midpoint, from the Bavaria routes notes)', 19, 'tour'),
+          rbExtra('Konigssee boat to St. Bartholoma (EUR 16.90 return, from the Bavaria routes notes)', 17, 'activity'),
+          rbExtra('Parking Hohenschwangau/Neuschwanstein ~EUR 8/day x 1 day', 8, 'park_fee'),   // notes
+          rbExtra('Parking Konigssee EUR 5-8/day (midpoint 6.5) x 1 day', 7, 'park_fee'),        // notes
+        ] },
+      ],
+    },
+
+    'gt_seed_germany-berlin-dresden-bavaria-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 60,    // direct ICE NL-Berlin typical advance fare (est)
+      flight_out_cost: 120,  // Munich-AMS one way (WebSearch 2026-10-28: Expedia USD 121 / GBP 89 floors, Ratepunk median USD 199; typical ~120)
+      blocks: [
+        { code: 'DE', transport: 25, local: 0, extras: [   // ICE Berlin-Dresden ~2h, ~EUR 25 advance (est)
+          rbExtra('Museum Island day pass (Berlin)', 24, 'activity'),   // notes (Berlin route)
+        ] },
+        { code: 'DE', transport: 45, local: 0, extras: [   // Dresden-Munich train 4-4.5h, ~EUR 45 advance (est)
+          rbExtra('Frauenkirche dome climb', 12, 'activity'),   // notes (Dresden route)
+        ] },
+        { code: 'DE', local: 40, extras: [   // Munich-Garmisch + Munich-Fussen regional trains (est)
+          rbExtra('Neuschwanstein timed guided tour (EUR 17.50-21 midpoint)', 19, 'tour'),
+          rbExtra('Zugspitze cable car, full route (EUR 62; notes say skip if time is tight)', 62, 'activity', true),
+        ] },
+      ],
+    },
+
+    'gt_seed_hamburg-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 72,    // own car NL->Hamburg ~470 km fuel
+      flight_out_cost: 84,   // Hamburg->NL ~550 km fuel
+      blocks: [
+        { code: 'DE', local: 0, extras: [
+          rbExtra('Car: fuel ≈70 km in route x 0.07 x 2.179; no tolls in DE', 11, 'transport'),
+        ] },   // Elbphilharmonie plaza free/EUR 3, Miniatur Wunderland: no price in notes
+      ],
+    },
+
+    'gt_seed_moselle-valley-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 55,    // own car NL->Trier ~360 km fuel
+      flight_out_cost: 53,   // Burg Eltz/Cochem->NL ~350 km fuel
+      blocks: [
+        { code: 'DE', local: 0, extras: [
+          rbExtra('Car: fuel ≈100 km in route (Trier-Bernkastel-Cochem-Burg Eltz) x 0.07 x 2.179; no tolls in DE', 15, 'transport'),
+          rbExtra('Burg Eltz: parking EUR 4/car + shuttle EUR 2 p.p. (cash)', 6, 'park_fee'),   // notes
+        ] },
+      ],
+    },
+
+    'gt_seed_rhine-moselle-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 35,    // own car NL->Cologne ~230 km fuel
+      flight_out_cost: 55,   // Trier->NL ~360 km fuel
+      blocks: [
+        { code: 'DE', transport: 0, local: 0, extras: [
+          rbExtra('Car: fuel ≈360 km in route (Cologne-Rhine-Koblenz-Moselle-Trier) x 0.07 x 2.179; no tolls in DE', 55, 'transport'),
+        ] },
+        { code: 'DE', local: 0, extras: [] },   // Burg Eltz costs only "if that detour is added": not added
+      ],
+    },
+
+    'gt_seed_romantic-road-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 84,    // own car NL->Wurzburg ~550 km fuel
+      flight_out_cost: 127,  // Fussen->NL ~830 km fuel
+      blocks: [
+        { code: 'DE', local: 0, extras: [
+          rbExtra('Car: fuel ≈340 km in route (Wurzburg-Rothenburg-Nordlingen-Augsburg-Fussen) x 0.07 x 2.179; no tolls in DE', 52, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_dolomites-north-italy': {
+      checked: '2026-10-28',
+      flight_in_cost: 90,    // AMS-Venice one way (flights_from_ams.csv, VCE out)
+      flight_out_cost: 80,   // Venice-AMS one way (flights_from_ams.csv, VCE back)
+      blocks: [
+        { code: 'IT', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 17 days (Venice airport pickup, dropped on arrival in Venice, no drop fee) × €45 + fuel ≈1580 km (notes: 150+410+140+260+140+180+300) × 0.07 × 2.016 + tolls (60% of km × €8/100 km)', 1064, 'transport'),
+        ] },
+        { code: 'IT', transport: 0, local: 0, extras: [] },
+        { code: 'IT', transport: 0, local: 0, extras: [] },
+        { code: 'IT', transport: 0, local: 0, extras: [] },
+        { code: 'IT', transport: 0, local: 0, extras: [] },
+        { code: 'SM', transport: 0, local: 0, extras: [] },
+        { code: 'IT', local: 0, extras: [] },   // Venice car-free; car already returned
+      ],
+    },
+
+    'gt_seed_liechtenstein-vaduz-2-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Zurich one way (WebSearch 2026-10-28, see Zurich route)
+      flight_out_cost: 140,  // Zurich-AMS one way
+      blocks: [
+        { code: 'LI', local: 85, extras: [   // 2 x (train Zurich-Sargans ~CHF 33 = EUR 35 + LIEmobil bus ~CHF 7 = EUR 7.5) (notes + est)
+          rbExtra('Passport stamp souvenir (CHF 3)', 3, 'other'),   // notes
+        ] },
+      ],
+    },
+
+
+  // ---- Phase 4 batch 11: Adriatic & Western Balkans 1/2, extracted 2026-10-28, approved by Youri (planning/budget_batch11/REVIEW.md) ----
+  // NOT yet in RB_ROUTE_COSTS: waiting for Youri's review. Fares: flights_from_ams.csv + flights_batch11.csv (4 airports searched, rest est).
+  // Car: data/cost_reference/car_costs_by_country.csv (7 L/100 km, 60% of km on motorway for distance-toll countries). Visas: none (AL/BA/RS/XK/ME visa-free for Dutch).
+
+    'gt_seed_albania-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Tirana one way (Transavia/Ryanair/Air Serbia; Expedia EUR 89 floor, typical ~110)
+      flight_out_cost: 100,  // Tirana-AMS one way (Air Serbia EUR 70 floor, typical ~100)
+      blocks: [
+        { code: 'AL', local: 30, extras: [] },  // no car: buses Tirana-Berat ~5, Berat-Vlore-Dhermi ~10, Himare-Tirana ~14 (est)
+      ],
+    },
+
+    'gt_seed_albania-montenegro-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Tirana (as above)
+      flight_out_cost: 150,  // Podgorica/Tivat-AMS one way (est, 1 stop or seasonal direct; low confidence)
+      blocks: [
+        { code: 'AL', transport: 0, local: 0, extras: [   // car drives it
+          rbExtra('Car: rental 10 days (from leaving Tirana) × €36 (AL 33/ME 40) + fuel ≈560 km + tolls (ME 60% of km × €5/100 km) + one-way cross-border drop AL→ME ≈€100 (est)', 547, 'transport'),
+          rbExtra('Car: green card Albania + Montenegro (notes: ~€30-50, midpoint)', 40, 'other'),
+        ] },
+        { code: 'ME', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_albania-roadtrip-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Tirana
+      flight_out_cost: 100,  // Tirana-AMS
+      blocks: [
+        { code: 'AL', local: 0, extras: [   // €40/day is only ~€5 above the R2d style rate (€35), so the car is NOT in it (orchestrator call, 2026-10-28)
+          rbExtra('Car: rental 6 days × €33 + fuel ≈440 km (0.147/km); no tolls', 263, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_albanian-riviera-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Tirana
+      flight_out_cost: 100,  // Tirana-AMS
+      blocks: [
+        { code: 'AL', local: 40, extras: [] },  // no car: bus Tirana-Vlore ~8, coast hops Vlore-Dhermi-Himare-Saranda-Ksamil ~11, Saranda-Tirana ~18 (est)
+      ],
+    },
+
+    'gt_seed_kosovo-albania-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Pristina one way (est; Wizz/Eurowings/Swiss typical, low confidence)
+      flight_out_cost: 100,  // Tirana-AMS
+      blocks: [
+        { code: 'XK', transport: 12, local: 13, extras: [] },  // bus Prizren-Kukes/Shkoder ~12 (est); PRN-Peja ~6 + Peja-Prizren ~7 (est)
+        { code: 'AL', local: 45, extras: [] },                 // Kukes-Shkoder ~10, Shkoder-Theth minibus return ~30, Shkoder-Tirana ~5 (est)
+      ],
+    },
+
+    'gt_seed_bosnia-croatia-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Dubrovnik one way (KLM/easyJet direct, aggregator floors ~100-110)
+      flight_out_cost: 110,  // Dubrovnik-AMS one way (est)
+      blocks: [
+        { code: 'HR', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 7 days (after 2 days Dubrovnik) × €48 + fuel ≈530 km (own loop estimate, input said 370) + tolls (BA 60% × €4/100 km)', 414, 'transport'),
+        ] },
+        { code: 'BA', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_bosnia-croatia-montenegro-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Dubrovnik (route says Split/Dubrovnik; Dubrovnik assumed)
+      flight_out_cost: 150,  // Podgorica/Tivat-AMS (est)
+      blocks: [
+        { code: 'HR', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 9 days (from leaving Dubrovnik) × €45 + fuel ≈640 km + tolls (HR/BA/ME distance tolls, 60% of km) + one-way drop HR→ME ≈€100 (est)', 605, 'transport'),
+        ] },
+        { code: 'BA', transport: 0, local: 0, extras: [] },
+        { code: 'ME', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_bosnia-montenegro-budva-7-10-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 230,   // AMS-Sarajevo (flights_from_ams.csv)
+      flight_out_cost: 150,  // Podgorica/Tivat-AMS (est)
+      blocks: [
+        { code: 'BA', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 7 days (after 2 days Sarajevo) × €39 + fuel ≈310 km + tolls (60% of km) + one-way drop BA→ME ≈€100 (est)', 420, 'transport'),
+        ] },
+        { code: 'ME', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_bosnia-roadtrip-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 230,   // AMS-Sarajevo
+      flight_out_cost: 220,  // Sarajevo-AMS (est, mirror of out)
+      blocks: [
+        { code: 'BA', local: 0, extras: [] },  // car in daily rate (notes: "~€40-50/day including the rental car"), nothing added
+      ],
+    },
+
+    'gt_seed_croatia-bosnia-via-split-7-10-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Split one way (easyJet/Transavia, Expedia ~EUR 90 floor)
+      flight_out_cost: 100,  // Split-AMS one way (est)
+      blocks: [
+        { code: 'HR', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 6 days (after 3 days Split) × €48 + fuel ≈850 km (own loop estimate, input said 310) + tolls (HR/BA 60% of km)', 418, 'transport'),
+        ] },
+        { code: 'BA', local: 0, extras: [
+          rbExtra('Car: Bosnia rental insurance surcharge (notes: €10-15/day, midpoint) × 6 days', 75, 'other'),
+        ] },
+      ],
+    },
+
+    'gt_seed_montenegro-bosnia-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-Podgorica/Tivat (est)
+      flight_out_cost: 220,  // Sarajevo-AMS (est)
+      blocks: [
+        { code: 'ME', transport: 0, local: 5, extras: [   // local: Tivat/Podgorica airport bus to Kotor (est)
+          rbExtra('Car: rental 4 days (leave Kotor, drop on arriving Sarajevo; no car needed there) × €39 + fuel ≈330 km + tolls + one-way drop ME→BA ≈€100 (est)', 306, 'transport'),
+        ] },
+        { code: 'BA', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_sarajevo-mostar-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 230,   // AMS-Sarajevo
+      flight_out_cost: 220,  // Sarajevo-AMS (est)
+      blocks: [
+        { code: 'BA', local: 20, extras: [   // no car: notes give bus Sarajevo-Mostar ~€10, x2 (back to the airport)
+          rbExtra('Tunnel of Hope (20 BAM, notes)', 10.5, 'activity'),
+          rbExtra('Kravice Waterfalls entry (notes)', 10, 'park_fee'),
+        ] },
+      ],
+    },
+
+    'gt_seed_serbia-montenegro-bosnia-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Belgrade one way (est; KLM/Transavia/Air Serbia)
+      flight_out_cost: 150,  // Podgorica/Tivat-AMS (est)
+      blocks: [
+        { code: 'RS', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 10 days (from leaving Belgrade) × €38 + fuel ≈700 km + tolls (60% of km) + one-way drop RS→ME ≈€120 (est)', 608, 'transport'),
+        ] },
+        { code: 'BA', transport: 0, local: 0, extras: [
+          rbExtra('Tara/Drina rafting (notes: ~€60/day, 1 day assumed)', 60, 'tour'),
+        ] },
+        { code: 'ME', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_adriatic-roadtrip-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Ljubljana (est; Transavia/Air France, low confidence)
+      flight_out_cost: 150,  // Podgorica/Tivat-AMS (est)
+      blocks: [
+        { code: 'SI', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 13 days (from day 2) × €47 + fuel ≈1250 km (own estimate, input said 920) + SI vignette €16 + tolls (HR/ME 60% of km) + one-way drop SI→ME ≈€120 (est)', 954, 'transport'),
+        ] },
+        { code: 'HR', transport: 0, local: 0, extras: [] },
+        { code: 'ME', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_austria-slovenia-croatia-10-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 195,   // OWN CAR NL-Klagenfurt ≈1170 km: fuel ≈167 (NL/DE/AT) + AT vignette 12.80 + Tauern/Katschberg ≈15 (DE free)
+      flight_out_cost: 267,  // OWN CAR Zadar-NL ≈1510 km: fuel ≈209 + HR tolls 16 + SI vignette 16 (est, second one) + AT vignette 12.80 + Karawanken/Tauern ≈13
+      blocks: [
+        { code: 'AT', transport: 0, local: 0, extras: [
+          rbExtra('Car: fuel ≈620 km in route + SI e-vignette €16 + Karawanken tunnel ≈€9 (est) + HR tolls (60% of 460 km × €7.5/100 km)', 124, 'transport'),
+        ] },
+        { code: 'SI', transport: 0, local: 0, extras: [] },
+        { code: 'HR', transport: 0, local: 0, extras: [] },
+        { code: 'HR', transport: 0, local: 0, extras: [
+          rbExtra('Plitvice Lakes entry (notes: peak season €40)', 40, 'park_fee'),
+        ] },
+        { code: 'HR', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_complete-croatia-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Zagreb one way (Skyscanner/Expedia EUR 147-148 floor; KLM/Croatia Airlines)
+      flight_out_cost: 110,  // Dubrovnik-AMS (est)
+      blocks: [
+        { code: 'HR', local: 35, extras: [   // local: Split-Hvar catamaran return ~2 × 17 (est)
+          rbExtra('Car: rental 8 days (Plitvice to Dubrovnik) × €48 + fuel ≈650 km + tolls (60% × €7.5/100 km) + one-way domestic drop ≈€80 (est)', 575, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_croatia-montenegro-bosnia-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Split
+      flight_out_cost: 220,  // Sarajevo-AMS (est)
+      blocks: [
+        { code: 'HR', transport: 0, local: 20, extras: [   // local: Split-Dubrovnik bus ~€20 (est)
+          rbExtra('Car: rental 7 days (from leaving Dubrovnik, drop on arriving Sarajevo) × €42 + fuel ≈600 km + tolls + one-way cross-border drop HR→BA ≈€100 (est)', 489, 'transport'),
+        ] },
+        { code: 'ME', transport: 0, local: 0, extras: [] },
+        { code: 'BA', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_croatia-coastal-roadtrip-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Zadar one way (est; Transavia/Ryanair seasonal)
+      flight_out_cost: 110,  // Dubrovnik-AMS (est)
+      blocks: [
+        { code: 'HR', local: 35, extras: [   // local: Split-Hvar ferry return ~2 × 17 (est)
+          rbExtra('Car: rental 6 days (day 3 Krka to Dubrovnik) × €48 + fuel ≈390 km + tolls (60% × €7.5/100 km) + one-way domestic drop ≈€80 (est)', 435, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_croatia-north-to-south-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Zagreb
+      flight_out_cost: 110,  // Dubrovnik-AMS (est)
+      blocks: [
+        { code: 'HR', local: 0, extras: [
+          rbExtra('Car: rental 6 days (Plitvice to Dubrovnik) × €48 + fuel ≈630 km + tolls (60% × €7.5/100 km) + one-way domestic drop ≈€80 (est)', 476, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_dubrovnik-surroundings-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Dubrovnik
+      flight_out_cost: 110,  // Dubrovnik-AMS (est)
+      blocks: [
+        { code: 'HR', local: 8, extras: [] },  // bus to Cavtat/Trsteno day trip (est); boat/ticket prices not named in notes
+      ],
+    },
+
+
+  // ---- Phase 4 batch 12: Adriatic & Western Balkans 2/2, extracted 2026-10-28, approved by Youri (planning/budget_batch12/REVIEW.md) ----
+  // Fares: flights_from_ams.csv + flights_batch12.csv. Car: data/cost_reference/car_costs_by_country.csv (7 L/100 km).
+  // Non-EU Balkan countries (AL, BA, ME, MK, RS, XK) are visa-free for a Dutch passport (VISA_VACCINATION_RESEARCH.md): no visa extras.
+
+    'gt_seed_grand-balkan-roadtrip-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Ljubljana one way (flights_batch12.csv)
+      flight_out_cost: 160,  // Tivat-AMS one way (flights_batch12.csv)
+      blocks: [
+        { code: 'SI', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 10 days (from Bled, day 3) × €45 + one-way international drop SI→ME ≈€250 (est, many firms ban BA/ME) + fuel ≈1160 km + tolls (SI vignette 16, 60% of km × toll/100 km in HR/BA/ME)', 896, 'transport'),
+        ] },
+        { code: 'HR', transport: 0, local: 0, extras: [] },
+        { code: 'BA', transport: 0, local: 0, extras: [] },
+        { code: 'ME', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_istria-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Pula one way
+      flight_out_cost: 110,  // Pula-AMS one way
+      blocks: [
+        { code: 'HR', local: 0, extras: [
+          rbExtra('Car: rental 4 days (Rovinj/Poreč/hill towns) × €48 + fuel ≈250 km (loop from/to Pula, own estimate; input said 100) + tolls (60% × €7.5/100 km); returned at Pula airport, no drop fee', 235, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_italy-slovenia-croatia-10-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 90,    // AMS-Venice one way (CSV)
+      flight_out_cost: 140,  // Zagreb-AMS one way (flights_batch12.csv)
+      blocks: [
+        { code: 'IT', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 10 days (from Venice, day 3, to Zagreb) × €45 + one-way international drop IT→HR ≈€120 (est) + fuel ≈850 km + tolls (SI vignette 16, HR 60% × €7.5/100 km, Venice-Trieste ≈7 est)', 724, 'transport'),
+        ] },
+        { code: 'SI', transport: 0, local: 0, extras: [] },
+        { code: 'SI', transport: 0, local: 0, extras: [] },
+        { code: 'HR', transport: 0, local: 0, extras: [] },
+        { code: 'HR', transport: 0, local: 0, extras: [] },
+        { code: 'HR', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_plitvice-zagreb-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-Zagreb one way
+      flight_out_cost: 140,  // Zagreb-AMS one way
+      blocks: [
+        { code: 'HR', local: 0, extras: [
+          rbExtra('Car: rental 3 days (Zagreb-Plitvice-Zagreb, Rastoke) × €48 + fuel ≈300 km (Zagreb-Plitvice ~130 km each way) + tolls (60% × €7.5/100 km)', 195, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_slovenia-croatia-montenegro-coast-10-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Ljubljana
+      flight_out_cost: 160,  // Tivat-AMS
+      blocks: [
+        { code: 'SI', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 8 days (from Bled, day 3, to Kotor) × €45 + one-way international drop SI→ME ≈€200 (est) + fuel ≈850 km + tolls (SI vignette 16, 60% of km × toll/100 km in HR/ME)', 717, 'transport'),
+        ] },
+        { code: 'HR', transport: 0, local: 0, extras: [] },
+        { code: 'ME', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_slovenia-croatian-istria-7-10-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Ljubljana
+      flight_out_cost: 110,  // Pula-AMS
+      blocks: [
+        { code: 'SI', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 7 days (from Bled, day 3, to Pula) × €45 + one-way international drop SI→HR ≈€100 (est) + fuel ≈340 km (own road estimate; input said 290) + tolls (SI vignette 16, HR 60% × €7.5/100 km)', 480, 'transport'),
+        ] },
+        { code: 'HR', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_split-islands-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,   // AMS-Split
+      flight_out_cost: 100,  // Split-AMS
+      blocks: [
+        { code: 'HR', local: 38, extras: [] },  // catamaran Split-Hvar 15.5 (notes €6-25 midpoint) + Hvar-Bol ≈12 (est) + Brač-Split ferry ≈10 (est); optional Vis not priced (notes give no price)
+      ],
+    },
+
+    'gt_seed_kosovo-montenegro-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Pristina
+      flight_out_cost: 160,  // Tivat-AMS
+      blocks: [
+        { code: 'XK', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 8 days × €33 + one-way international drop XK→ME ≈€100 (est, cross-border insurance incl.) + fuel ≈540 km (own road estimate; input said 260) + tolls (ME 60% × €5/100 km, small XK toll est)', 449, 'transport'),
+        ] },
+        { code: 'ME', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_kotor-bay-of-kotor-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 170,   // AMS-Tivat
+      flight_out_cost: 160,  // Tivat-AMS
+      blocks: [
+        { code: 'ME', local: 15, extras: [  // Tivat airport-Kotor bus + Kotor-Perast / Herceg Novi buses (est)
+          rbExtra('Kotor city walls ticket', 11.5, 'activity'),  // notes: €8-15 midpoint
+        ] },
+      ],
+    },
+
+    'gt_seed_montenegro-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Podgorica
+      flight_out_cost: 130,  // Podgorica-AMS
+      blocks: [
+        { code: 'ME', local: 0, extras: [
+          rbExtra('Car: rental 5 days × €40 + fuel ≈480 km (Kotor/Budva/Lovćen/Durmitor/Ostrog loop from Podgorica, own estimate; input said 210) + tolls (60% × €5/100 km); returned at Podgorica, no drop fee', 276, 'transport'),
+          rbExtra('National park season pass (5 parks; Durmitor + Lovćen)', 13.5, 'park_fee'),  // notes: €5/day or €13.50 pass
+        ] },
+      ],
+    },
+
+    'gt_seed_montenegro-croatia-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Dubrovnik
+      flight_out_cost: 160,  // Tivat-AMS
+      blocks: [
+        { code: 'HR', transport: 20, local: 0, extras: [] },  // Dubrovnik-Kotor bus (est ~€15-25); no car priced (see REVIEW)
+        { code: 'ME', local: 12, extras: [] },                // Kotor-Perast/Budva/Herceg Novi buses + Tivat airport bus (est)
+      ],
+    },
+
+    'gt_seed_montenegro-roadtrip-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Podgorica
+      flight_out_cost: 130,  // Podgorica-AMS
+      blocks: [
+        { code: 'ME', local: 0, extras: [] },  // car already in the daily rate (~€50-60/day incl. rental car): nothing added
+      ],
+    },
+
+    'gt_seed_albania-north-macedonia-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Tirana
+      flight_out_cost: 130,  // Skopje-AMS
+      blocks: [
+        { code: 'AL', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 7 days (from Tirana after 2 city days, to Skopje) × €33 + one-way international drop AL→MK ≈€150 (est) + fuel ≈480 km + tolls (MK 60% × €3.5/100 km)', 447, 'transport'),
+        ] },
+        { code: 'MK', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_balkan-roadtrip-serbia-north-macedonia-albania-kosovo-14-day': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Belgrade
+      flight_out_cost: 130,  // Belgrade-AMS
+      blocks: [
+        { code: 'RS', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 10 days (from Belgrade day 4 back to Belgrade) × €35 + cross-border permits/insurance for 4 countries ≈€60 (est) + fuel ≈1420 km + tolls (60% × toll/100 km in MK/RS/XK)', 607, 'transport'),
+        ] },
+        { code: 'MK', transport: 0, local: 0, extras: [] },
+        { code: 'MK', transport: 0, local: 0, extras: [] },
+        { code: 'AL', transport: 0, local: 0, extras: [] },
+        { code: 'XK', transport: 0, local: 0, extras: [] },
+        { code: 'RS', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_north-macedonia-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Skopje
+      flight_out_cost: 130,  // Skopje-AMS
+      blocks: [
+        { code: 'MK', local: 0, extras: [
+          rbExtra('Car: rental 4 days (Skopje-Ohrid-Bitola-Skopje) × €30 + fuel ≈410 km (own road estimate; input said 220) + tolls (60% × €3.5/100 km)', 173, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_north-macedonia-albania-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Skopje
+      flight_out_cost: 110,  // Tirana-AMS
+      blocks: [
+        { code: 'MK', transport: 9.5, local: 10, extras: [] },  // transport: Skopje/Ohrid-Tirana bus €9.50 (notes); local: Skopje-Ohrid bus (est)
+        { code: 'AL', local: 10, extras: [] },                  // Tirana-Berat return bus (est)
+      ],
+    },
+
+    'gt_seed_north-macedonia-greece-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Skopje
+      flight_out_cost: 140,  // Thessaloniki-AMS
+      blocks: [
+        { code: 'MK', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 3 days (Skopje-Ohrid-Thessaloniki) × €30 + one-way international drop MK→GR ≈€120 (est) + fuel ≈380 km + tolls (MK 60% × €3.5/100 km; GR ≈€6.5 per notes €5-8)', 272, 'transport'),
+        ] },
+        { code: 'GR', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_skopje-ohrid-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Skopje
+      flight_out_cost: 130,  // Skopje-AMS
+      blocks: [
+        { code: 'MK', local: 0, extras: [
+          rbExtra('Car: rental 3 days (Skopje-Ohrid-Skopje, Sveti Naum) × €30 + fuel ≈370 km (return trip counted; input said 180) + tolls (60% × €3.5/100 km)', 138, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_belgrade-surroundings-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Belgrade
+      flight_out_cost: 130,  // Belgrade-AMS
+      blocks: [
+        { code: 'RS', local: 8, extras: [] },  // Belgrade-Novi Sad train/bus return ≈8 (est; city transport free); Fruška Gora day trip within daily budget
+      ],
+    },
+
 };
 
 /**
@@ -29216,5 +30066,33 @@ function rbMigrateBatch78RouteFixes() {
   localStorage.setItem(RB_MIGRATE_FLAG_2026_10_BATCH78_ROUTE_FIXES, '1');
   let touched = false;
   rbRoutes.forEach(r => { if (rbFixBatch78RouteTexts(r)) touched = true; });
+  if (touched) rbSave();
+}
+
+// ---- Route-text fixes found by Phase 4 batches 9-12 (2026-10-28) ----
+//  - Switzerland Alpine Roadtrip (9 days) 🛣️: Andermatt → Zermatt said "over the Simplon into
+//    Ticino"; that leg is the Furka Pass into the Valais (the Simplon comes on the next leg).
+//  - Switzerland + Northern Italy (9 days) 🚞: Tirano → Lugano said "over the Gotthard"; it's via
+//    Lake Como (Menaggio-Porlezza).
+//  - Austria + Slovenia + Croatia (10-14 days) 🚙: an own-car route ending "fly home from Zadar".
+const RB_BATCH912_TEXT_FIXES = [
+  ['gt_seed_switzerland-alpine-roadtrip-9-days', 2, 'Drive over the Simplon Pass (open year-round, no seasonal closure) into Ticino.',
+    'Drive over the Furka Pass (seasonal; the Furka car train Realp-Oberwald is the year-round alternative) into the Valais, on to Täsch for Zermatt.',
+    'transport_to_next'],
+  ['gt_seed_switzerland-northern-italy-9-days', 1, 'Drive back north over the Gotthard toward Ticino/Lugano, Switzerland.',
+    'Drive along Lake Como and over to Lugano via Menaggio-Porlezza (~2h from Tirano), back into Switzerland.', 'transport_to_next'],
+  ['gt_seed_austria-slovenia-croatia-10-14-days', 4, 'End of this route — fly home from Zadar or Zagreb.',
+    'End of this route — drive back to the Netherlands (~1,450 km via Ljubljana and Austria, best split over 2 days).', 'transport_to_next'],
+];
+
+function rbFixBatch912RouteTexts(route) {
+  return rbApplyBlockTextFixes(route, RB_BATCH912_TEXT_FIXES);
+}
+
+function rbMigrateBatch912RouteFixes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_10_BATCH912_ROUTE_FIXES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_10_BATCH912_ROUTE_FIXES, '1');
+  let touched = false;
+  rbRoutes.forEach(r => { if (rbFixBatch912RouteTexts(r)) touched = true; });
   if (touched) rbSave();
 }

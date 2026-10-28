@@ -12,10 +12,10 @@ Made 2026-10-28 for the 439 routes not yet in `RB_ROUTE_COSTS` (batch 1 = the 13
 | 6 | Iberia (2/2) | 22 | 31 | 16 | ~179k (real ≈160k: agent 129k) | done 2026-10-28, in the Sheet (run in parallel with 5) |
 | 7 | France & Benelux (1/2) | 14 | 27 | 12 | ~145k (real ≈135k: agent 113k) | done 2026-10-28, in the Sheet (run in parallel with 8) |
 | 8 | France & Benelux (2/2) | 12 | 26 | 9 | ~136k (real ≈110k: agent 93k) | done 2026-10-28, in the Sheet (run in parallel with 7) |
-| 9 | Alps & Germany (1/2) | 13 | 31 | 13 | ~152k | |
-| 10 | Alps & Germany (2/2) | 15 | 25 | 12 | ~143k | |
-| 11 | Adriatic & Western Balkans (1/3) | 20 | 38 | 19 | ~190k | |
-| 12 | Adriatic & Western Balkans (2/3) | 19 | 40 | 15 | ~192k | |
+| 9 | Alps & Germany (1/2) | 13 | 31 | 13 | ~152k (real ≈105k: agent 94k) | done 2026-10-28, in the Sheet (4 in parallel) |
+| 10 | Alps & Germany (2/2) | 15 | 25 | 12 | ~143k (real ≈105k: agent 92k) | done 2026-10-28, in the Sheet (4 in parallel) |
+| 11 | Adriatic & Western Balkans (1/3) | 20 | 38 | 19 | ~190k (real ≈125k: agent 113k) | done 2026-10-28, in the Sheet (4 in parallel) |
+| 12 | Adriatic & Western Balkans (2/3) | 19 | 40 | 15 | ~192k (real ≈135k: agent 122k) | done 2026-10-28, in the Sheet (4 in parallel) |
 | 13 | Adriatic & Western Balkans (3/3) | 17 | 35 | 15 | ~174k | |
 | 14 | Greece, Cyprus & Turkey | 19 | 39 | 12 | ~190k | |
 | 15 | Central & Eastern Europe (1/2) | 22 | 39 | 13 | ~199k | |

@@ -1,0 +1,4 @@
+airport_code,city,country_code,direction,eur_one_way,airline_or_routing,source,date_checked
+ZRH,Zurich,CH,out,140,SWISS/KLM direct,"WebSearch 2026-10-28 (Kayak EUR 142; Farecompare avg USD 144; Omio floor EUR 101)",2026-10-28
+ZRH,Zurich,CH,back,140,SWISS/KLM direct,estimate from out fare (no separate search),2026-10-28
+MUC,Munich,DE,back,120,Lufthansa/KLM direct,"WebSearch 2026-10-28 (Expedia USD 121 / GBP 89 floors; Ratepunk median USD 199)",2026-10-28

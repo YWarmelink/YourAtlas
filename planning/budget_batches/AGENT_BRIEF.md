@@ -42,6 +42,11 @@ accommodation, food, city transport, small activities) is ALREADY set: never cha
   once) + a one-way drop fee only if the route ends elsewhere (estimate, flag it). Rental days =
   the days the notes say a car is needed; state your call per route. City parking as an `other`
   extra only if the notes give a price. When `carInDailyRate` is true: add NOTHING for that car.
+  `carInDailyRate` is the ONLY test: a notes text like "~€40/day including the rental car" is older
+  than the R2d budgets (lowered to Youri's style), so with the flag false the car IS added.
+- Directions in flights_batchN.csv: exactly `out` (AMS→destination) and `back` (destination→AMS).
+  `data/cost_reference/flights_from_ams.csv` is read-only (the orchestrator merges your rows); reuse
+  any airport row already in it without searching. Other agents may run batches at the same time.
 - Visas: Schengen/EU countries need none for a Dutch passport; elsewhere use VISA_VACCINATION_RESEARCH.md.
 - `checked: '<today's date>'`.
 

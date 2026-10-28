@@ -29,6 +29,8 @@ const FIXES = {
   4: { fn: 'rbFixBatch4RouteTexts', ids: ['gt_seed_sicily-malta-9-days', 'gt_seed_san-marino-day-visit-1-day'] },
   56: { fn: 'rbFixBatch56RouteTexts', ids: ['gt_seed_canary-islands-10-14-days', 'gt_seed_tenerife-la-gomera-7-10-days'] },
   78: { fn: 'rbFixBatch78RouteTexts', ids: ['gt_seed_alpine-roadtrip-14-days', 'gt_seed_france-roadtrip-paris-to-the-cote-dazur-12-days'] },
+  912: { fn: 'rbFixBatch912RouteTexts', ids: ['gt_seed_switzerland-alpine-roadtrip-9-days', 'gt_seed_switzerland-northern-italy-9-days',
+                                             'gt_seed_austria-slovenia-croatia-10-14-days'] },
 };
 
 function loadApp() {

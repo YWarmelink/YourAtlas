@@ -270,6 +270,7 @@ const RB_MIGRATE_FLAG_2026_10_BATCH3_ROUTE_FIXES = 'atlas_grand_trips_migrate_20
 const RB_MIGRATE_FLAG_2026_10_BATCH4_ROUTE_FIXES = 'atlas_grand_trips_migrate_2026_10_batch4_route_fixes_v1';
 const RB_MIGRATE_FLAG_2026_10_BATCH56_ROUTE_FIXES = 'atlas_grand_trips_migrate_2026_10_batch56_route_fixes_v1';
 const RB_MIGRATE_FLAG_2026_10_BATCH78_ROUTE_FIXES = 'atlas_grand_trips_migrate_2026_10_batch78_route_fixes_v1';
+const RB_MIGRATE_FLAG_2026_10_BATCH912_ROUTE_FIXES = 'atlas_grand_trips_migrate_2026_10_batch912_route_fixes_v1';
 // Route ids whose RB_ROUTE_COSTS entry rbMigrateApplyRouteCosts() has already applied (a list, so
 // each later backfill batch still applies once to its own routes).
 const RB_ROUTE_COSTS_APPLIED_KEY = 'atlas_grand_trips_route_costs_applied_v1';
