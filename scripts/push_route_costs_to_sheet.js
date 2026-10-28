@@ -54,9 +54,9 @@ async function plan(onlyRoute) {
       const cells = app.rbRouteCostCells(route);
       routeUpdates.push({ grand_trip_id: id, flight_in_cost: cells.flight_in_cost, flight_out_cost: cells.flight_out_cost });
     }
-    const total = Math.round(app.rbRouteCosts(route, 'standard').total);
+    const total = Math.round(app.rbRouteCosts(route, 'mine').total);
     report.push(`  ${res.changedBlocks.length || res.changedRoute ? 'FILL' : 'DONE'}     ${route.name}: ` +
-      `${res.changedBlocks.length} block(s)${res.changedRoute ? ' + flights' : ''} → Standard total €${total}`);
+      `${res.changedBlocks.length} block(s)${res.changedRoute ? ' + flights' : ''} → My plan total €${total}`);
     res.skipped.forEach(s => report.push(`           skipped ${s}`));
   }
   return { blockUpdates, routeUpdates, report };

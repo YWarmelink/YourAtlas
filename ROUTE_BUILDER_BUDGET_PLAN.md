@@ -143,7 +143,7 @@ where it doesn't fit before the bulk backfill starts.
 
 **Started 2026-10-27. Method decided with Youri: the most accurate source per cost, not one
 source for everything.** Amounts are per person, travelling solo (car costs are not split),
-one-way, 2026 prices, Standard level. Every batch follows these rules:
+one-way, 2026 prices, at Youri's own level ("My plan" since R2c). Every batch follows these rules:
 
 | Cost | Source |
 |---|---|
@@ -235,12 +235,16 @@ Progress:
       Standard/backpacker ratio (~2×) would therefore inflate the other tiers. Better for R2c: show the stored
       budget as **"My plan"**, and compute Backpacker / Standard / Comfort as **absolute** reference
       rates × days per block (variant chosen as in compare_daily_rates.js), not as ratios of the stored budget.
-    - [ ] **R2c app** (NEXT; the approach was updated by the finding above: "My plan" + absolute reference tiers; the original text follows): the tier toggle uses each country's own ratios from the table instead of the
+    - [x] **R2c app**: **Done 2026-10-28** (see CHANGELOG). Tiers My plan / Backpacker / Standard / Comfort;
+      reference tiers = rate × days per block via the generated `js/data/dailyRatesReference.js`
+      (`scripts/build_daily_rates_reference.js`); the other cost types keep the global multipliers.
+      453 routes: monotonic everywhere; 100 plans above their Standard reference, 5 below Backpacker
+      (R2d input). Phase 5's skill + agent part was done with it. Original text (superseded): the tier toggle uses each country's own ratios from the table instead of the
       global multipliers (fallback: the global ones for a country/variant without a row). Rename
       the tier "Budget" to "Backpacker". The stored block `budget` = **backpacker level** (Youri's
       planning level). Label it as such in the UI, and document it in `RB_BLOCK_COST_FIELDS` and
       CLAUDE.md.
-    - [ ] **R2d corrections:** re-run `compare_daily_rates.js` against the backpacker column. Raise
+    - [ ] **R2d corrections** (NEXT): re-run `compare_daily_rates.js` against the backpacker column. Raise
       blocks that are below backpacker level; review blocks far above Standard (safari days, Borneo,
       resorts). Youri reviews the list, then a migration + Sheet push (`budget` only, never `days`).
     - Then the standalone route batches, which automatically fit all three levels.
@@ -262,9 +266,10 @@ Original plan:
 
 ### Phase 5 — Docs and tooling
 
-- `route-builder-content` skill + `route-price-checker` agent: new routes must fill the new
-  fields (no more "separate cost" left only in text).
-- CLAUDE.md: describe the cost model in one paragraph (what's in the daily rate, what isn't).
+- [x] `route-builder-content` skill + `route-price-checker` agent: new routes must fill the new
+  fields (no more "separate cost" left only in text). Done 2026-10-28 with R2c.
+- [x] CLAUDE.md: describe the cost model in one paragraph (what's in the daily rate, what isn't).
+  Done 2026-10-28 ("Route Builder cost model and budget levels").
 - Optional: an "Export budget" button that produces the same per-country/transport/extras
   breakdown as CSV, as the successor to the hand-built Excel.
 

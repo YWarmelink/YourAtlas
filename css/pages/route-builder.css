@@ -1295,8 +1295,10 @@
 }
 
 .rb-cost-title { font-weight: var(--fw-bold); color: var(--atlas-text); }
-.rb-cost-tiers { display: flex; gap: var(--sp-2); }
+.rb-cost-tiers { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
 .rb-cost-tiers .rb-map-mode-btn { padding: var(--sp-1) var(--sp-3); font-size: var(--fs-xs); }
+
+.rb-cost-tier-hint { margin: calc(-1 * var(--sp-2)) 0 var(--sp-3); font-size: var(--fs-xs); color: var(--atlas-text-muted); line-height: 1.5; }
 
 .rb-cost-rows { display: flex; flex-direction: column; }
 

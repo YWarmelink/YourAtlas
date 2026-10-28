@@ -79,6 +79,19 @@ scale `budget` at the same daily rate. (This doc used to say the opposite; 13 ro
 without it until the 2026-10 fix — see `CHANGELOG.md`.) Apply the same 2-day-buffer check to any future single-country
 route before shipping it, rather than always defaulting to leaving it as-is.
 
+## Route Builder cost model and budget levels
+
+A block's `budget` is its **ground cost** (accommodation + food + local getting around + small
+activities, daily rate × days) at **Youri's own planning level**, shown as **"My plan"**. Everything
+else lives in structured fields, never only in `notes`: `transport_cost` (+ `transport_cost_to`),
+`local_transport_cost` and `extras` per block, `flight_in_cost`/`flight_out_cost` per route
+(`RB_BLOCK_COST_FIELDS`/`RB_ROUTE_COST_FIELDS` in Core; see `ROUTE_BUILDER_BUDGET_PLAN.md`).
+**Backpacker / Standard / Comfort are computed, never stored**: daily costs = the country's rate in
+`data/cost_reference/daily_rates_by_country.csv` × days (read via the generated
+`js/data/dailyRatesReference.js`; re-run `node scripts/build_daily_rates_reference.js` after editing
+the CSV), the other cost types scaled by `RB_COST_TIERS` multipliers. So never store a reference
+level in `budget`, and a country new to Route Builder needs a row in that CSV too.
+
 ## Model selection for delegated subagents
 
 This governs which model to pass when *delegating* work to a subagent (the Agent/Task tool's

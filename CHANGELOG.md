@@ -12,6 +12,22 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Full-cost budget, R2c: "My plan" + absolute reference tiers (2026-10-28)** — the cost panel's
+  tiers are now **My plan / Backpacker / Standard / Comfort** (default My plan; "Budget" renamed
+  "Backpacker"). My plan = the stored amounts as-is (R2 showed they sit between backpacker and
+  standard, so they can't be called either). The three reference tiers compute daily costs as the
+  country's rate from `data/cost_reference/daily_rates_by_country.csv` × days per block (via the
+  generated `js/data/dailyRatesReference.js`, `scripts/build_daily_rates_reference.js`), the same
+  variant pick as `compare_daily_rates.js`; no ratio of the stored budget anymore. Transport,
+  flights, extras, visas and insurance keep the global multipliers (no reference table yet);
+  a country without a rate row falls back to budget × multiplier (0 blocks today). Region sums
+  and the Sheet push report now use My plan. Checked on all 453 live routes: backpacker < standard
+  < comfort everywhere. East & Southeast Asia Grand Tour 🐉: My plan **€30,789** (= the old
+  "Standard" from Phase 3), Backpacker €17,195, Standard €31,259, Comfort €55,562. 100 routes'
+  plan is above their Standard reference and 5 below Backpacker: input for R2d. Also: the
+  `route-price-checker` agent and `route-builder-content` skill now deliver/store the structured
+  cost fields for new routes (Phase 5, part 1).
+
 - **Full-cost budget, Phase 3: pilot on East & Southeast Asia Grand Tour 🐉 (2026-10-27)** — the
   route now carries every cost from its budget workbook (`planning/Wereldreis_Oost-ZO-Azie_Begroting.xlsx`,
   "Basis" column, before its +4% 2027 factor): 16 onward transport legs, local transport for all

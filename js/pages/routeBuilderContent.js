@@ -26581,7 +26581,7 @@ function rbMigrateKupangDiliOverland() {
 // ---- Full-cost budget data (ROUTE_BUILDER_BUDGET_PLAN.md, Phase 3+) ----
 //
 // The costs outside a block's daily budget (see RB_BLOCK_COST_FIELDS in routeBuilderCore.js), per
-// route id. Amounts are per person, Standard level, 2026 prices. `blocks` lists every block in
+// route id. Amounts are per person, "My plan" level (Youri's own, see RB_COST_TIERS), 2026 prices. `blocks` lists every block in
 // route order with the country_code it must match — a block that no longer matches (reordered or
 // replaced by hand) is skipped, never patched wrongly. `transport` is to the next block (omit on
 // the last one), `local` is intercity travel within the country.

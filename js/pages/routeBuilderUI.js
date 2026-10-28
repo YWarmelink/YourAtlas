@@ -692,11 +692,20 @@ function rbRenderBlockRow(b, r, route) {
 
 const RB_COST_TIER_KEY = 'atlas_rb_cost_tier';
 let rbCostTier = (() => {
-  try { const t = localStorage.getItem(RB_COST_TIER_KEY); return RB_COST_TIERS[t] ? t : 'standard'; } catch (_) { return 'standard'; }
+  try { const t = localStorage.getItem(RB_COST_TIER_KEY); return RB_COST_TIERS[t] ? t : 'mine'; } catch (_) { return 'mine'; }
 })();
 
 const RB_EXTRA_CATEGORY_LABELS = {
   activity: 'Activity', tour: 'Tour', park_fee: 'Park fee', visa: 'Visa', transport: 'Transport', other: 'Other',
+};
+
+// What each tier means, shown under the tier buttons — so a reference level is never mistaken
+// for the route's own plan.
+const RB_COST_TIER_HINTS = {
+  mine: 'Your own planned budget per country, as stored on the route.',
+  backpacker: 'Reference: dorm beds or the cheapest room, cheap eats, public transport.',
+  standard: 'Reference: simple hotels or a private room, mostly local restaurants.',
+  comfort: 'Reference: 3-4★ hotels, sit-down meals, taxis and paid tours.',
 };
 
 const RB_COST_ROW_LABELS = [
@@ -708,13 +717,13 @@ const RB_COST_ROW_LABELS = [
   ['insurance', 'Travel insurance', 'long trips only, per month'],
 ];
 
-const RB_REGION_COST_TITLE = 'Sum of this region’s countries: daily costs + transport + extras (Standard level, no NL flights/insurance/buffer)';
+const RB_REGION_COST_TITLE = 'Sum of this region’s countries: daily costs + transport + extras (My plan level, no NL flights/insurance/buffer)';
 
 const rbEuro = n => '€' + Math.round(n || 0).toLocaleString('nl-NL');
 
 /** A region's budget is the sum of its blocks (decision 5) — not the old free-typed region.budget. */
 function rbRegionCost(blocks) {
-  const c = rbRouteCosts({ blocks }, 'standard');
+  const c = rbRouteCosts({ blocks }, 'mine');
   return c.rows.ground + c.rows.transport + c.rows.extras + c.rows.visas;
 }
 
@@ -797,6 +806,10 @@ function rbRenderCostPanel(route) {
   if (c.incompleteBlocks) gaps.push(`${c.incompleteBlocks} of ${c.blockCount} countr${c.blockCount === 1 ? 'y' : 'ies'} not costed yet`);
   if (c.flightsMissing) gaps.push('NL flights not estimated');
   if (c.staleTransport) gaps.push(`${c.staleTransport} transport cost${c.staleTransport === 1 ? '' : 's'} priced to a different next country`);
+  const tierHint = RB_COST_TIER_HINTS[rbCostTier] + (RB_COST_TIERS[rbCostTier].ref
+    ? ` Daily costs = the country's reference rate × days; the other costs are scaled from your plan.${c.fallbackBlocks
+      ? ` ${c.fallbackBlocks} countr${c.fallbackBlocks === 1 ? 'y has' : 'ies have'} no reference rate yet and ${c.fallbackBlocks === 1 ? 'is' : 'are'} scaled from your plan too.` : ''}`
+    : '');
   const status = !c.hasCosts
     ? `<div class="rb-cost-status is-partial">Only the daily costs are estimated for this route so far. Transport, flights, tours and visas aren't in this total yet.</div>`
     : gaps.length
@@ -808,6 +821,7 @@ function rbRenderCostPanel(route) {
       <span class="rb-cost-title">💶 Trip cost <span class="rb-cost-row-hint">per person</span></span>
       <div class="rb-cost-tiers">${tierButtons}</div>
     </div>
+    <div class="rb-cost-tier-hint">${tierHint}</div>
     <div class="rb-cost-rows">
       ${rows}
       <div class="rb-cost-row">

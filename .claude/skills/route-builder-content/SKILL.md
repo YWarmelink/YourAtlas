@@ -32,14 +32,31 @@ Write the migration even if you're not sure the route has seeded anywhere yet �
 ## Verifying real-world data
 
 When adding a route or correcting an existing one's costs/practicalities, research — don't guess:
-- Per-country daily cost, calibrated to Youri's own travel style (between Budget and Comfort Backpacker, not the bare-minimum floor)
+- Per-country daily cost, calibrated to Youri's own travel style (between Budget and Comfort Backpacker, not the bare-minimum floor). This is the **"My plan"** level stored in `budget`; never store a Backpacker/Standard/Comfort figure there, the app computes those (see CLAUDE.md's "Route Builder cost model")
 - Visa requirements for a Dutch passport
 - Current Dutch government travel advisory (nederlandwereldwijd.nl) — flag anything orange/red directly in that country's block `notes`, dated, and note it may already be stale by the time it's read
-- Anything a flat day-rate misses (mandatory guided tours, permits, inter-island flights) — call these out as separate `notes`, don't fold them silently into the daily rate
+- Anything a flat day-rate misses (transport between and within countries, flights from NL, mandatory guided tours, permits, visas, a rental car): store it in the **structured cost fields**, not only in `notes`, and don't fold it into the daily rate (see "Storing costs" below)
+
+## Storing costs
+
+Ask the `route-price-checker` agent for the numbers; its report is laid out for this.
+- `budget` = My plan daily rate × days. Changing `days` later means scaling `budget` with it.
+- Everything else goes in an `RB_ROUTE_COSTS` entry in `routeBuilderContent.js`, keyed by route id,
+  one entry per block in route order with its `code` (`transport`, `local`, `extras` via
+  `rbExtra(label, cost, category, optional)`), plus `flight_in_cost`/`flight_out_cost` and `checked`.
+  `rbMigrateApplyRouteCosts()` picks up a new route id by itself (no new flag) and fills only
+  empty fields. Prose in `notes` may still explain a cost, but the number must be in a field.
+- Then `node scripts/push_route_costs_to_sheet.js` (dry run) and, **only with Youri's OK**, `--push`.
+  The Sheet is what a browser loads; a cost that's only in the source never shows up.
+- A country new to Route Builder (no row in `data/cost_reference/daily_rates_by_country.csv`) gets
+  a row there too (the agent reports it), then `node scripts/build_daily_rates_reference.js`.
+  Without it the reference tiers fall back to a rough multiplier of the plan.
+- A new fare from Amsterdam goes into `data/cost_reference/flights_from_ams.csv`.
+- After the push, check the route's cost panel: My plan should say "✓ All costs estimated".
 
 ## Structure conventions
 
-- Country blocks: country, days, budget, notes, "Transport to next"
+- Country blocks: country, days, budget, notes, "Transport to next", plus the cost fields above (`transport_cost`, `transport_cost_to`, `local_transport_cost`, `extras`, `costs_checked`)
 - Regional Blocks group a contiguous run of legs — only holds together while contiguous; moving one country out of the middle splits the region into two
 - Destinations: free-form places/notes per block, separate from the country-level note
 - Route-level fields: Status, Travel Style, Best Starting Month, Description, Climate Summary, notes

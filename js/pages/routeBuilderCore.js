@@ -368,7 +368,8 @@ const RB_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzfvEBxhAUEG
  */
 /**
  * Full-cost budget fields (ROUTE_BUILDER_BUDGET_PLAN.md). A block's `budget` stays the ground
- * cost (daily rate × days); these hold everything the daily rate doesn't cover.
+ * cost (daily rate × days) at Youri's own planning level — the "My plan" tier, NOT a reference
+ * level (see RB_COST_TIERS); these hold everything the daily rate doesn't cover, also at "My plan".
  *
  * Empty means "not estimated yet" and is kept distinct from 0 ("estimated, costs nothing"):
  * numbers are '' when empty, lists/objects are null.
@@ -420,16 +421,34 @@ function rbCopyBlockCosts(b) {
 }
 
 /**
- * Budget tiers are computed, never stored: every stored amount is the middle ("Standard") level,
- * and the other two apply a multiplier per cost type. The multipliers are the tier totals per
- * cost type from the Asia budget workbook (planning/Wereldreis_Oost-ZO-Azie_Begroting.xlsx, where
- * Standard is called "Basis"), e.g. ground costs €12.7k / €19.4k / €32.7k → 0.65 / 1 / 1.7.
+ * Budget tiers are computed, never stored. "My plan" is the stored amounts as-is (Youri's own
+ * planning level, which R2 found sits between backpacker and standard). The three reference tiers
+ * compute ground costs absolutely, as the country's reference rate (RB_DAILY_RATES, generated from
+ * data/cost_reference/daily_rates_by_country.csv) × days, not as a ratio of the stored budget.
+ * `ref` names the rate column; a block without a reference row falls back to budget × `ground`.
+ * The other cost types (transport, flights, extras, ...) have no reference table yet and always
+ * use the multipliers: the tier totals per cost type from the Asia budget workbook
+ * (planning/Wereldreis_Oost-ZO-Azie_Begroting.xlsx, Standard = "Basis"), e.g. ground
+ * €12.7k / €19.4k / €32.7k → 0.65 / 1 / 1.7.
  */
 const RB_COST_TIERS = {
-  budget:   { label: 'Budget',   ground: 0.65, transport: 0.75, flights: 0.8, extras: 0.7, visas: 0.9, insurance: 0.7 },
-  standard: { label: 'Standard', ground: 1,    transport: 1,    flights: 1,   extras: 1,   visas: 1,   insurance: 1 },
-  comfort:  { label: 'Comfort',  ground: 1.7,  transport: 1.5,  flights: 1.4, extras: 1.6, visas: 1.3, insurance: 1.5 },
+  mine:       { label: 'My plan',    ref: null,         ground: 1,    transport: 1,    flights: 1,   extras: 1,   visas: 1,   insurance: 1 },
+  backpacker: { label: 'Backpacker', ref: 'backpacker', ground: 0.65, transport: 0.75, flights: 0.8, extras: 0.7, visas: 0.9, insurance: 0.7 },
+  standard:   { label: 'Standard',   ref: 'standard',   ground: 1,    transport: 1,    flights: 1,   extras: 1,   visas: 1,   insurance: 1 },
+  comfort:    { label: 'Comfort',    ref: 'comfort',    ground: 1.7,  transport: 1.5,  flights: 1.4, extras: 1.6, visas: 1.3, insurance: 1.5 },
 };
+
+/** The reference row for a block: of the country's rows (base + variants like safari/Patagonia),
+ *  the one whose standard rate is closest to the block's own daily rate — the same pick as
+ *  scripts/compare_daily_rates.js. A block without a budget gets the base row. Null = no row. */
+function rbDailyRateRow(b) {
+  const rows = typeof RB_DAILY_RATES !== 'undefined' ? RB_DAILY_RATES[b.country_code] : null;
+  if (!rows || !rows.length) return null;
+  const days = parseInt(b.days) || 0, budget = rbCostNum(b.budget);
+  if (!days || budget === null) return rows.find(x => !x.variant) || rows[0];
+  const rate = budget / days;
+  return rows.reduce((a, x) => Math.abs(x.standard - rate) < Math.abs(a.standard - rate) ? x : a);
+}
 
 // Trip-wide estimates, overridable per route via route.trip_costs. Insurance only counts for trips
 // longer than a regular annual travel policy covers (Dutch policies: 60-180 days per trip) — a
@@ -453,19 +472,27 @@ function rbTransportCostStale(blocks, i) {
 }
 
 /**
- * Full-cost breakdown of a route at one tier. `rows` are already multiplied by the tier;
- * `optional` sums extras marked optional, which are never in the total (the workbook's
- * "Meenemen = Nee"). `hasCosts` is false while nothing beyond the ground budget has been
- * entered — callers then show the ground total alone rather than a mostly-empty "all-in" one.
+ * Full-cost breakdown of a route at one tier. `rows` are already at that tier (ground costs
+ * already include the tier: reference rate × days, see RB_COST_TIERS); `optional` sums extras
+ * marked optional, which are never in the total (the workbook's "Meenemen = Nee"). `hasCosts` is
+ * false while nothing beyond the ground budget has been entered — callers then show the ground
+ * total alone rather than a mostly-empty "all-in" one. `fallbackBlocks` counts blocks a reference
+ * tier had to estimate from the stored budget (no reference row for the country).
  */
-function rbRouteCosts(route, tierKey = 'standard') {
-  const t = RB_COST_TIERS[tierKey] || RB_COST_TIERS.standard;
+function rbRouteCosts(route, tierKey = 'mine') {
+  const t = RB_COST_TIERS[tierKey] || RB_COST_TIERS.mine;
   const blocks = route.blocks || [];
   const days = blocks.reduce((s, b) => s + (parseInt(b.days) || 0), 0);
-  let ground = 0, transport = 0, extras = 0, visas = 0, optional = 0, incomplete = 0, stale = 0, hasCosts = false;
+  let ground = 0, transport = 0, extras = 0, visas = 0, optional = 0, incomplete = 0, stale = 0, fallback = 0, hasCosts = false;
 
   blocks.forEach((b, i) => {
-    ground += rbCostNum(b.budget) || 0;
+    const refRow = t.ref ? rbDailyRateRow(b) : null;
+    const blockDays = parseInt(b.days) || 0;
+    if (refRow && blockDays) ground += refRow[t.ref] * blockDays;
+    else {
+      if (t.ref && rbCostNum(b.budget)) fallback++;
+      ground += (rbCostNum(b.budget) || 0) * t.ground;
+    }
     transport += (rbCostNum(b.transport_cost) || 0) + (rbCostNum(b.local_transport_cost) || 0);
     (b.extras || []).forEach(x => {
       const c = rbCostNum(x.cost) || 0;
@@ -487,7 +514,7 @@ function rbRouteCosts(route, tierKey = 'standard') {
   const bufferPct = rbCostNum(tc.buffer_pct) ?? RB_TRIP_COST_DEFAULTS.buffer_pct;
 
   const rows = {
-    ground: ground * t.ground,
+    ground,
     transport: transport * t.transport,
     flights: ((flightIn || 0) + (flightOut || 0)) * t.flights,
     extras: extras * t.extras,
@@ -501,7 +528,7 @@ function rbRouteCosts(route, tierKey = 'standard') {
   return {
     tier: tierKey, days, rows, subtotal, bufferPct, buffer, total,
     perDay: days ? total / days : 0, optional: optional * t.extras,
-    blockCount: blocks.length, incompleteBlocks: incomplete, staleTransport: stale,
+    blockCount: blocks.length, incompleteBlocks: incomplete, staleTransport: stale, fallbackBlocks: fallback,
     flightsMissing: flightIn === null || flightOut === null, hasCosts,
     complete: incomplete === 0 && stale === 0 && flightIn !== null && flightOut !== null,
   };
