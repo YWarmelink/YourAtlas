@@ -1,0 +1,1247 @@
+{
+ "batch": 3,
+ "group": "Italy, San Marino & Malta",
+ "routes": [
+  {
+   "id": "gt_seed_northern-italy-6-days",
+   "name": "Northern Italy (6 days) 🚤",
+   "mode": "own_car",
+   "carInBudgetWording": "excluded",
+   "carEvidence": "g locally is more efficient for 5-7 days. Budget ~€125/day (rental car €35-45/day on top — the lakes are pricier than average Italy). ¶ Drive to Lak",
+   "travel_style": "Direct flight Amsterdam-Milan, rental car for the whole loop — Milan, Lake Como, Lake Garda, Verona, back to Milan.",
+   "description": "Milan, Lake Como (Bellagio, Varenna, Menaggio), Lake Garda (Sirmione, Desenzano), and Verona.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. Deliberately the flat, shorter sibling of Northern Italy Roadtrip (9 days) 🚙 below, which the source explicitly frames as the same lakes-and-cities loop extended on to the Dolomites and Venice. Not yet checked against Route Builder-level price research beyond the vignette checks folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_northern-italy-6-days",
+    "name": "Northern Italy (6 days) 🚤",
+    "stops": 7,
+    "km_in_route": 300,
+    "km_from_nl": 1030,
+    "km_back_to_nl": 1110,
+    "km_by_country": {
+     "IT": 300
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 73,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Milan (1-2 nights). Direct AMS-Milan (Malpensa/Linate, KLM/Transavia, frequent); self-driving from the Netherlands is possible (~1073km/11h) but flying + renting locally is more efficient for 5-7 days. Budget ~€125/day (rental car €35-45/day on top — the lakes are pricier than average Italy).",
+     "transport_to_next": "Drive to Lake Como.",
+     "destinations": [
+      {
+       "name": "Milan (Duomo, Galleria)",
+       "lat": 45.4642,
+       "lng": 9.19
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Lake Como (2-3 nights), ferry-hopping Bellagio/Varenna/Menaggio. Season: May or September; avoid July-August (heat/crowds, especially the Ferragosto peak 10-20 August: near-full occupancy on both lakes).",
+     "transport_to_next": "Drive to Lake Garda.",
+     "destinations": [
+      {
+       "name": "Bellagio",
+       "lat": 45.986,
+       "lng": 9.2578
+      },
+      {
+       "name": "Varenna",
+       "lat": 46.0139,
+       "lng": 9.2856
+      },
+      {
+       "name": "Menaggio",
+       "lat": 46.0167,
+       "lng": 9.2333
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Lake Garda (2 nights, Sirmione/Desenzano).",
+     "transport_to_next": "Drive to Verona (short hop).",
+     "destinations": [
+      {
+       "name": "Sirmione",
+       "lat": 45.4933,
+       "lng": 10.6089
+      },
+      {
+       "name": "Desenzano",
+       "lat": 45.4667,
+       "lng": 10.5333
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 73,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Verona (1 night, Arena/Juliet's balcony), then back to Milan. Deliberately a flat lakes-and-cities loop, no Dolomites/Venice on this route — that's the longer roadtrip version below. ⚠️ No entry/reservation hassle like Venice/Rome, but do book ferries and any Arena opera performances ahead; if self-driving via Germany/Austria, an Austrian vignette is needed (10-day version ~€12.80) — Switzerland only sells an annual vignette (~€43), less worthwhile for a one-off trip.",
+     "transport_to_next": "End of this route — drive back to Milan and fly home.",
+     "destinations": [
+      {
+       "name": "Verona (Arena, Juliet's balcony)",
+       "lat": 45.4384,
+       "lng": 10.9916
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_northern-italy-roadtrip-9-days",
+   "name": "Northern Italy Roadtrip (9 days) 🚙",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Open-jaw AMS-Milan in, AMS-Venice out — rental car for the lakes and Dolomites, train Verona-Venice.",
+   "description": "Milan, Lake Como, Lake Garda, Verona, the Dolomites via Bolzano/Lago di Braies, and Venice — west to east, no zigzag.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. The 'big sibling' of the standalone Northern Italy (6 days) 🚤 route above per the source's own framing — same lakes-and-cities loop, extended east to the Dolomites and Venice via an open-jaw flight rather than a round trip through Milan. Shares Dolomites ground with Dolomites (6 days) ⛰️ and Venice ground with Venice + Dolomites (5 days) 🎭 above, and lakes/Milan/Venice ground with the pre-existing Dolomites & North Italy 🚡 route (which is Cinque Terre/Turin/San Marino-focused rather than lakes-focused) — per this project's overlap-is-fine convention, built independently. Not yet checked against Route Builder-level price research beyond the vignette/toll checks folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_northern-italy-roadtrip-9-days",
+    "name": "Northern Italy Roadtrip (9 days) 🚙",
+    "stops": 8,
+    "km_in_route": 690,
+    "km_from_nl": 1030,
+    "km_back_to_nl": 1180,
+    "km_by_country": {
+     "IT": 690
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "The big sibling of Northern Italy (6 days) 🚤 above — now continuing on to the Dolomites and Venice. Milan (1-2 days). Open-jaw AMS-Milan in, AMS-Venice out (both direct, frequent) — no return-flight detour.",
+     "transport_to_next": "Drive to Lake Como/Bellagio.",
+     "destinations": [
+      {
+       "name": "Milan",
+       "lat": 45.4642,
+       "lng": 9.19
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 73,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Lake Como/Bellagio (1 day). Budget ~€130/day for this route overall.",
+     "transport_to_next": "Drive to Lake Garda/Sirmione.",
+     "destinations": [
+      {
+       "name": "Lake Como / Bellagio",
+       "lat": 45.986,
+       "lng": 9.2578
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Lake Garda/Sirmione (1-2 days).",
+     "transport_to_next": "Drive to Verona.",
+     "destinations": [
+      {
+       "name": "Lake Garda / Sirmione",
+       "lat": 45.4933,
+       "lng": 10.6089
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 73,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Verona (1 day). ⚠️ Milan's Area C environmental zone applies if driving into the centre.",
+     "transport_to_next": "Drive to the Dolomites via Bolzano.",
+     "destinations": [
+      {
+       "name": "Verona",
+       "lat": 45.4384,
+       "lng": 10.9916
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "(10-day version) Dolomites via Bolzano/Lago di Braies (2 days). West→east, no zigzag. Season: May-June or September; Dolomites passes are only fully open/warm June-September, avoid August. ⚠️ Mountain roads outside June-September can need winter tyres — check this for shoulder-season travel.",
+     "transport_to_next": "Train (Verona-Venice, direct) or drive on to Venice.",
+     "destinations": [
+      {
+       "name": "Bolzano",
+       "lat": 46.4983,
+       "lng": 11.3548
+      },
+      {
+       "name": "Lago di Braies",
+       "lat": 46.6958,
+       "lng": 12.0858
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 3,
+     "budget": 219,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Venice (2-3 days) to close the trip. ⚠️ Book a time slot ahead in summer for the Doge's Palace/Basilica San Marco.",
+     "transport_to_next": "End of this route — direct return flight Venice to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Venice — Piazza San Marco",
+       "lat": 45.434,
+       "lng": 12.339
+      },
+      {
+       "name": "Venice — Doge's Palace / Basilica San Marco",
+       "lat": 45.434,
+       "lng": 12.339
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_puglia-6-days",
+   "name": "Puglia (6 days) 🏘️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Direct flight Amsterdam-Bari, rental car for the whole loop — in and out of the same airport.",
+   "description": "Bari, Polignano a Mare/Monopoli, the Valle d'Itria (Alberobello, Locorotondo, Ostuni), Lecce, and Otranto/the Salento coast.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. The source's itinerary sums to 7 days at full length (a second Lecce night); this 6-day version compresses Lecce to a single night to match the CSV's recommended day count, matching the source's own pattern of noting where to shorten at the lower end of its day range (as with Sicily above). Explicitly the smaller half of Campania + Puglia (9 days) 🧭 below, which the source frames as combining this route with Campania: Naples + Amalfi Coast (6 days) 🌊, adding only Matera as new ground — see that route's own notes. Not yet checked against Route Builder-level price research beyond the notes folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_puglia-6-days",
+    "name": "Puglia (6 days) 🏘️",
+    "stops": 8,
+    "km_in_route": 250,
+    "km_from_nl": 1960,
+    "km_back_to_nl": 2180,
+    "km_by_country": {
+     "IT": 250
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 73,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Bari (1 day). Direct AMS-Bari (Transavia only, ~9x/week, ~2.5h) — in and out of the same airport, no open-jaw needed. Rental car needed (the trulli countryside and small coastal towns are poorly served by public transport). Budget ~€110/day (Puglia is noticeably cheaper than Amalfi/Tuscany/the north).",
+     "transport_to_next": "Drive to Polignano a Mare/Monopoli.",
+     "destinations": [
+      {
+       "name": "Bari",
+       "lat": 41.1171,
+       "lng": 16.8719
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 73,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Polignano a Mare/Monopoli (1 day).",
+     "transport_to_next": "Drive into the Valle d'Itria.",
+     "destinations": [
+      {
+       "name": "Polignano a Mare",
+       "lat": 40.9959,
+       "lng": 17.2199
+      },
+      {
+       "name": "Monopoli",
+       "lat": 40.9515,
+       "lng": 17.3013
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Valle d'Itria: Alberobello/Locorotondo/Ostuni (2 days, one base). Season: May-June or September; July-August is hot and very busy with Italian domestic tourism, especially around Ferragosto (15 August) — book well ahead if travelling then. ⚠️ Alberobello's trulli centre gets touristy around midday — go early or late.",
+     "transport_to_next": "Drive to Lecce.",
+     "destinations": [
+      {
+       "name": "Alberobello (trulli)",
+       "lat": 40.7844,
+       "lng": 17.2378
+      },
+      {
+       "name": "Locorotondo",
+       "lat": 40.7594,
+       "lng": 17.3306
+      },
+      {
+       "name": "Ostuni",
+       "lat": 40.7285,
+       "lng": 17.5786
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 73,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Lecce (1 night at this trip length — a second, 7-day version adds a second Lecce night). Same €110/day budget throughout.",
+     "transport_to_next": "Drive to Otranto/the Salento coast.",
+     "destinations": [
+      {
+       "name": "Lecce (second base)",
+       "lat": 40.3515,
+       "lng": 18.175
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 73,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Otranto/Salento coast (1 day), then back to Bari. Little hassle with reservation systems, unlike Rome/Pompeii.",
+     "transport_to_next": "End of this route — drive back to Bari for the direct return flight to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Otranto / Salento coast",
+       "lat": 40.1455,
+       "lng": 18.4901
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_rome-4-days",
+   "name": "Rome (4 days) 🏛️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Direct flight Amsterdam-Rome (Fiumicino) — on foot/public transport within the city, no car needed or useful.",
+   "description": "Colosseum, Roman Forum and Palatine Hill; the Vatican Museums and St. Peter's Basilica; the Pantheon, Trevi Fountain, Piazza Navona and Spanish Steps; and an optional fourth day at the Borghese Gallery or Trastevere/Ostia Antica.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 5 (Italy), converting EUROPA_TRIP_IDEAS.md's 319 markdown trip ideas into Route Builder content — following the same pattern as batches 1-4 (Benelux, Germany, Austria+Switzerland, France). Overlaps the pre-existing Rome & Surroundings 🍕 route (which pairs Rome with a 6-day Naples/Pompeii/Herculaneum leg over 13 days total) — this standalone route is deliberately a pure, shorter Rome-only city break with no Naples leg, matching this batch's Rome + Tuscany (9 days) 🍝 route below rather than that Naples combo. Also revisited at greater length by Rome + Tuscany (9 days) 🍝 below, which extends the same Rome days into a connected Tuscany continuation — per this project's overlap-is-fine convention, built independently. Not yet checked against Route Builder-level price research beyond the ticket checks folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_rome-4-days",
+    "name": "Rome (4 days) 🏛️",
+    "stops": 11,
+    "km_in_route": 20,
+    "km_from_nl": 1640,
+    "km_back_to_nl": 1640,
+    "km_by_country": {
+     "IT": 20
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 4,
+     "budget": 292,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "A pure city trip, no day trips needed at this length. Day 1: Colosseum/Forum/Palatine Hill. Day 2: Vatican Museums + St. Peter's — deliberately a separate day from the Colosseum, doing both together is too much in one day. Day 3: Pantheon, Trevi Fountain, Piazza Navona, Spanish Steps. Day 4 (optional): Borghese Gallery & Gardens, or Trastevere plus an Ostia Antica day trip. Direct AMS-FCO (KLM/Transavia/ITA, ~2h10, 47 flights/week) — no sensible self-drive option at this distance. Budget ~€130/day (3-star for 2, €130-190/night ≈€65-95pp, food €40-55, public transport/Roma Pass €15-20). Season: April-June or September-October; avoid August (32-38°C, many local businesses closed for Ferragosto). ⚠️ Colosseum tickets only release ~30 days ahead — count back from that release date, not your departure date; a combined ticket (Colosseum+Forum+Palatine+Vatican+Sistine Chapel+St. Peter's, valid 3 days) is up to 20% cheaper than separate tickets.",
+     "transport_to_next": "End of this route — direct return flight Rome (Fiumicino) to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Colosseum",
+       "lat": 41.8902,
+       "lng": 12.4922
+      },
+      {
+       "name": "Roman Forum",
+       "lat": 41.8925,
+       "lng": 12.4853
+      },
+      {
+       "name": "Palatine Hill",
+       "lat": 41.8888,
+       "lng": 12.487
+      },
+      {
+       "name": "Vatican Museums",
+       "lat": 41.9065,
+       "lng": 12.4536
+      },
+      {
+       "name": "St. Peter's Basilica",
+       "lat": 41.9022,
+       "lng": 12.4533
+      },
+      {
+       "name": "Pantheon",
+       "lat": 41.8986,
+       "lng": 12.4769
+      },
+      {
+       "name": "Trevi Fountain",
+       "lat": 41.9009,
+       "lng": 12.4833
+      },
+      {
+       "name": "Piazza Navona",
+       "lat": 41.8992,
+       "lng": 12.4731
+      },
+      {
+       "name": "Spanish Steps",
+       "lat": 41.9058,
+       "lng": 12.4823
+      },
+      {
+       "name": "Borghese Gallery & Gardens (optional day 4)",
+       "lat": 41.9142,
+       "lng": 12.4922
+      },
+      {
+       "name": "Trastevere / Ostia Antica day trip (optional day 4 alternative)",
+       "lat": 41.8898,
+       "lng": 12.4692
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_rome-tuscany-9-days",
+   "name": "Rome + Tuscany (9 days) 🍝",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Direct flight to Rome, no car in Rome itself (ZTL); rental car from Orvieto onward, dropped off in Florence; return flight routed via Rome.",
+   "description": "Rome, Orvieto, the Val d'Orcia (Pienza, Montepulciano, Montalcino, San Quirico d'Orcia), Siena, San Gimignano/Volterra, and Florence.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. Deliberately built as a genuinely connected combo per the source's own framing, not Rome (4 days) 🏛️ and Tuscany (6 days) 🍇 simply stitched together — this route also overlaps the pre-existing Rome & Surroundings 🍕 route (which instead pairs Rome with a Naples/Pompeii/Herculaneum leg, not Tuscany). Per this project's overlap-is-fine convention, built independently — see each route's own notes. Not yet checked against Route Builder-level price research beyond the ticket/ZTL checks folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_rome-tuscany-9-days",
+    "name": "Rome + Tuscany (9 days) 🍝",
+    "stops": 12,
+    "km_in_route": 430,
+    "km_from_nl": 1640,
+    "km_back_to_nl": 1340,
+    "km_by_country": {
+     "IT": 430
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 3,
+     "budget": 273,
+     "dailyRate": 91,
+     "carInDailyRate": false,
+     "notes": "A genuinely connected version of both regions together, not Rome-alone and Tuscany-alone simply glued end to end. Rome (3 days, no car needed). Direct AMS-Rome Fiumicino (~2h15, 314 flights/week); no direct NL flight to Pisa/Florence found, so plan on a return flight via Rome (train Florence-Rome ~1.5h) rather than an open-jaw out of Florence — check this when booking. Budget ~€140/day. ⚠️ Colosseum/Forum and the Vatican Museums require a pre-booked time slot — sold out weeks ahead in high season.",
+     "transport_to_next": "Drive north via Orvieto into the Val d'Orcia — rental car picked up only after Rome (Rome's ZTL makes a car useless there).",
+     "destinations": [
+      {
+       "name": "Colosseum & Roman Forum",
+       "lat": 41.8902,
+       "lng": 12.4922
+      },
+      {
+       "name": "Vatican Museums",
+       "lat": 41.9065,
+       "lng": 12.4536
+      },
+      {
+       "name": "Pantheon & Trevi Fountain",
+       "lat": 41.8986,
+       "lng": 12.4769
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 182,
+     "dailyRate": 91,
+     "carInDailyRate": false,
+     "notes": "Orvieto on the way up, then the Val d'Orcia (Pienza, Montepulciano, Montalcino, San Quirico d'Orcia, 2 days).",
+     "transport_to_next": "Drive to Siena.",
+     "destinations": [
+      {
+       "name": "Orvieto (waypoint)",
+       "lat": 42.7186,
+       "lng": 12.1128
+      },
+      {
+       "name": "Pienza",
+       "lat": 43.0778,
+       "lng": 11.6789
+      },
+      {
+       "name": "Montepulciano",
+       "lat": 43.0938,
+       "lng": 11.7864
+      },
+      {
+       "name": "Montalcino",
+       "lat": 43.0567,
+       "lng": 11.49
+      },
+      {
+       "name": "San Quirico d'Orcia",
+       "lat": 43.0578,
+       "lng": 11.6083
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 91,
+     "dailyRate": 91,
+     "carInDailyRate": false,
+     "notes": "Siena (1 day).",
+     "transport_to_next": "Drive to San Gimignano/Volterra.",
+     "destinations": [
+      {
+       "name": "Siena",
+       "lat": 43.3188,
+       "lng": 11.3308
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 91,
+     "dailyRate": 91,
+     "carInDailyRate": false,
+     "notes": "San Gimignano and Volterra (1 day).",
+     "transport_to_next": "Drive to Florence.",
+     "destinations": [
+      {
+       "name": "San Gimignano",
+       "lat": 43.4674,
+       "lng": 11.0431
+      },
+      {
+       "name": "Volterra",
+       "lat": 43.4013,
+       "lng": 10.8608
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 182,
+     "dailyRate": 91,
+     "carInDailyRate": false,
+     "notes": "Florence (2-3 days) to close the trip. Season: April-June or September-October; avoid August heat in both Rome and Tuscany. ⚠️ Florence/Siena/San Gimignano's old towns are ZTL — park outside the walls.",
+     "transport_to_next": "End of this route — return flight to Amsterdam via Rome (rental car dropped off in Florence).",
+     "destinations": [
+      {
+       "name": "Florence",
+       "lat": 43.7696,
+       "lng": 11.2558
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_rome-vatican-city-in-depth-4-days",
+   "name": "Rome + Vatican City In-Depth (4 days) ⛪",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Direct flight Amsterdam-Rome (Fiumicino) — on foot/public transport within the city, no car needed.",
+   "description": "General Rome sightseeing (Colosseum, Forum, Trastevere, Pantheon) plus a dedicated in-depth Vatican day: the Necropolis/Scavi excavation tour, the Vatican Museums and Sistine Chapel, the dome climb at St. Peter's, and an optional Vatican Gardens tour.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Judgment call: coded IT rather than VA — Vatican City has no hotels or airport of its own (a ~44-hectare enclave inside Rome), so it is always logistically a day within a Rome stay, matching TRIP_DATABASE.csv's own 'Countries: Italy' framing for this item and the next. Deliberately distinct from the pre-existing Italy-batch Rome (4 days) 🏛️ (which already includes standard Vatican Museums/St. Peter's visits) by adding the specific ticketed extras — Scavi tour, dome climb, Vatican Gardens — a first-time Rome visit usually skips. Also distinct from Vatican City Day Visit within a Rome Stay (1 day) 🕊️ below, which covers only the single Vatican day without the wider Rome sightseeing. Not yet checked against Route Builder-level price research beyond the ticket/restoration notes folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_rome-vatican-city-in-depth-4-days",
+    "name": "Rome + Vatican City In-Depth (4 days) ⛪",
+    "stops": 8,
+    "km_in_route": 10,
+    "km_from_nl": 1640,
+    "km_back_to_nl": 1640,
+    "km_by_country": {
+     "IT": 10
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 4,
+     "budget": 364,
+     "dailyRate": 91,
+     "carInDailyRate": false,
+     "notes": "The real distinction from a generic Rome trip (see the Italy batch's Rome (4 days) 🏛️ above — St. Peter's/the Sistine Chapel are already standard there): this books the Vatican-specific extras a rushed first-time Rome trip usually skips. Days 1-2: general Rome (Colosseum/Forum, Trastevere, Pantheon, food). Day 3: a dedicated Vatican day — morning Necropolis/Scavi tour (an excavated early-Christian burial ground under St. Peter's, separate from standard Vatican Museums tickets, guided-only, children under 10 not admitted, book months ahead) → Vatican Museums/Sistine Chapel (timed slot) → the dome climb at St. Peter's → optionally a Vatican Gardens tour (guided-only, no walk-up access, €32-40, books out 1-3 weeks ahead in the April-October season). Day 4: optional buffer/return day. Direct flight Amsterdam-Rome Fiumicino (KLM, ~2h13, very frequent). Budget ~€130-150/day generally, plus an extra ~€60-90 on the Vatican day for the three extras together. Season: April-June or September-October; avoid August heat. ⚠️ Sistine Chapel restoration work starts 1 February 2026 for ~3 months — it stays open/visitable, but expect partial scaffolding/adjusted viewing routes — check current status if travelling Feb-Apr 2026. Vatican Museums base ticket ~€17 plus booking fee; booking a timed slot ahead saves 1-2 hours of queueing in high season.",
+     "transport_to_next": "End of this route — direct return flight Rome (Fiumicino) to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Colosseum",
+       "lat": 41.8902,
+       "lng": 12.4922
+      },
+      {
+       "name": "Roman Forum",
+       "lat": 41.8925,
+       "lng": 12.4853
+      },
+      {
+       "name": "Trastevere",
+       "lat": 41.8896,
+       "lng": 12.4692
+      },
+      {
+       "name": "Pantheon",
+       "lat": 41.8986,
+       "lng": 12.4769
+      },
+      {
+       "name": "Vatican Necropolis / Scavi excavation tour",
+       "lat": 41.9022,
+       "lng": 12.4533
+      },
+      {
+       "name": "Vatican Museums & Sistine Chapel",
+       "lat": 41.9065,
+       "lng": 12.4536
+      },
+      {
+       "name": "St. Peter's Basilica dome climb",
+       "lat": 41.9022,
+       "lng": 12.4533
+      },
+      {
+       "name": "Vatican Gardens tour (optional)",
+       "lat": 41.9029,
+       "lng": 12.4494
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_san-marino-emilia-romagna-4-days",
+   "name": "San Marino + Emilia-Romagna (4 days) 🍝",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Direct flight Amsterdam-Bologna, self-drive loop for the rest.",
+   "description": "A self-drive loop through Emilia-Romagna — Bologna, the Byzantine mosaics of Ravenna, and Rimini — with a half-to-1 day add-on in San Marino.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. San Marino gets its own ISO code (SM) block here since it's a genuine second country crossed on this loop, distinct from San Marino: Day Visit (1 day) 🛡️ below which explicitly frames the same towers/old-town visit as an add-on day rather than part of a multi-day itinerary. Not yet checked against Route Builder-level price research beyond the parking notes folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_san-marino-emilia-romagna-4-days",
+    "name": "San Marino + Emilia-Romagna (4 days) 🍝",
+    "stops": 5,
+    "km_in_route": 180,
+    "km_from_nl": 1250,
+    "km_back_to_nl": 1370,
+    "km_by_country": {
+     "IT": 150,
+     "SM": 20
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 3,
+     "budget": 219,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flight to Bologna, then a self-drive loop: Bologna (1 day, food) → Ravenna (Byzantine mosaics, half-to-1 day) → Rimini (coast, half day) → San Marino (half-to-1 day, ~30 min from Rimini) → back to Bologna. Direct Amsterdam-Bologna flight (KLM, daily, ~1h45) — the best-connected option of this whole Emilia-Romagna/San Marino cluster (Rimini has no direct flight from Amsterdam, always a connection). Budget ~€90-110/day. Season: April-June or September-October; avoid August heat and Ferragosto crowds on the Adriatic coast. Rental car needed for the Ravenna-Rimini-San Marino leg.",
+     "transport_to_next": "Short drive Rimini-San Marino (~30 min).",
+     "destinations": [
+      {
+       "name": "Bologna",
+       "lat": 44.4949,
+       "lng": 11.3426
+      },
+      {
+       "name": "Ravenna (Byzantine mosaics)",
+       "lat": 44.4184,
+       "lng": 12.2035
+      },
+      {
+       "name": "Rimini",
+       "lat": 44.0678,
+       "lng": 12.5695
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "SM",
+     "country": "San Marino",
+     "days": 1,
+     "budget": 70,
+     "dailyRate": 70,
+     "carInDailyRate": false,
+     "notes": "Half-to-1 day for San Marino: the towers/museum add-on (~€10-15) plus parking. ⚠️ San Marino parking: €1.50/1h, €3/2h, €4.50/3-5h, €8/full day across 13 car parks (P1-P13; P6/P7 are the most convenient for the centre); euro currency, no real border control with Italy in practice (carry ID anyway).",
+     "transport_to_next": "End of this route — drive back to Bologna (~1h45) for the flight home.",
+     "destinations": [
+      {
+       "name": "City of San Marino (old town)",
+       "lat": 43.9364,
+       "lng": 12.4477
+      },
+      {
+       "name": "Rocca Guaita",
+       "lat": 43.9377,
+       "lng": 12.4536
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_san-marino-tuscany-5-days",
+   "name": "San Marino + Tuscany (5 days) 🍷",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Direct flight Amsterdam-Bologna, self-drive one-way arc into Tuscany, fly home from Florence/Pisa (open-jaw).",
+   "description": "A one-way arc from San Marino/Emilia-Romagna south into Tuscany — San Gimignano, Siena, or Florence.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 6 (micro-states & small islands) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately a one-way continuation of San Marino + Emilia-Romagna (4 days) 🍝 above rather than a there-and-back trip, given the real ~2.5h driving distance the source flags. Not yet checked against Route Builder-level price research beyond the one-way rental car/ZTL notes folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_san-marino-tuscany-5-days",
+    "name": "San Marino + Tuscany (5 days) 🍷",
+    "stops": 5,
+    "km_in_route": 230,
+    "km_from_nl": 1370,
+    "km_back_to_nl": 1340,
+    "km_by_country": {
+     "SM": 0,
+     "IT": 230
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "SM",
+     "country": "San Marino",
+     "days": 1,
+     "budget": 70,
+     "dailyRate": 70,
+     "carInDailyRate": false,
+     "notes": "Reality check: San Marino-Florence is ~240-253km/2h20-2h40 driving — not a casual add-on, but workable as a one-way arc. Fly into Bologna, do San Marino/Emilia-Romagna first (1-1.5 days), same content as San Marino + Emilia-Romagna (4 days) 🍝 above.",
+     "transport_to_next": "Drive south into Tuscany (~2h20-2h40 to the Florence area) — a deliberate one-way arc, not a round trip back through San Marino.",
+     "destinations": [
+      {
+       "name": "City of San Marino (old town)",
+       "lat": 43.9364,
+       "lng": 12.4477
+      },
+      {
+       "name": "Rocca Guaita",
+       "lat": 43.9377,
+       "lng": 12.4536
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 4,
+     "budget": 292,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "The remaining 3-4 days into Tuscany: San Gimignano, Siena, or Florence. Open-jaw Amsterdam-Bologna in, Amsterdam-Florence/Pisa out is recommended to avoid driving the route twice — check at booking whether the direct Florence/Pisa route still exists (not confirmed in this research, but seen before). Budget ~€100-130/day averaged, plus a possible one-way rental car drop-off fee (€50-150, check ahead). Season: late April-June or September; avoid July-August, especially inland Tuscany. ⚠️ Same San Marino parking notes as above; Tuscan hill towns (Siena, San Gimignano) often have ZTL restrictions in their old centres — park outside and walk in.",
+     "transport_to_next": "End of this route — fly home from Florence or Pisa (check at booking if the direct route still exists), or open-jaw back through Bologna to avoid driving the route twice.",
+     "destinations": [
+      {
+       "name": "Siena",
+       "lat": 43.3188,
+       "lng": 11.3308
+      },
+      {
+       "name": "San Gimignano",
+       "lat": 43.4674,
+       "lng": 11.0431
+      },
+      {
+       "name": "Florence",
+       "lat": 43.7696,
+       "lng": 11.2558
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_sardinia-9-days",
+   "name": "Sardinia (9 days) ⛵",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Direct flight Amsterdam-Olbia, rental car essential for the whole loop.",
+   "description": "A loop from Olbia: Costa Smeralda/Porto Cervo, Cala Gonone/Golfo di Orosei, Barumini (Su Nuraxi) and Cagliari, Oristano, and Alghero.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 5 (Italy) — see the Rome (4 days) 🏛️ route's notes for batch context. The pre-existing Sardinia 🗿 route covers a single 6-day Cagliari-area stay (Cagliari, Su Nuraxi, Costa Smeralda) — this 9-day version instead runs a full Olbia in/out island loop, adding Cala Gonone/Golfo di Orosei, Oristano and Alghero, which the pre-existing route doesn't reach. Not yet checked against Route Builder-level price research beyond the ferry/flight checks folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_sardinia-9-days",
+    "name": "Sardinia (9 days) ⛵",
+    "stops": 8,
+    "km_in_route": 550,
+    "km_from_nl": 1670,
+    "km_back_to_nl": 1700,
+    "km_by_country": {
+     "IT": 550
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Olbia in/out (the simplest option given the limited seasonal flight routes) — a loop: Olbia → Costa Smeralda/Porto Cervo (2 days). Direct AMS-Olbia (easyJet/Transavia, 12x/week, but seasonal April-September); Cagliari only via KLM, seasonal July-October, 4x/week; Alghero also seasonal — check the current schedule. Self-driving + ferry from the Netherlands (Civitavecchia/Genoa/Livorno→Olbia, 5-11h crossing) is impractical for a short trip — flying is the realistic choice. Rental car essential. Budget ~€120/day (Costa Smeralda in August is clearly above this average).",
+     "transport_to_next": "Drive down the east coast to Cala Gonone.",
+     "destinations": [
+      {
+       "name": "Olbia (in/out)",
+       "lat": 40.9236,
+       "lng": 9.498
+      },
+      {
+       "name": "Costa Smeralda / Porto Cervo",
+       "lat": 41.1333,
+       "lng": 9.5333
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Cala Gonone/Golfo di Orosei (2 days).",
+     "transport_to_next": "Drive inland to Barumini, then on to Cagliari.",
+     "destinations": [
+      {
+       "name": "Cala Gonone",
+       "lat": 40.2833,
+       "lng": 9.6333
+      },
+      {
+       "name": "Golfo di Orosei",
+       "lat": 40.25,
+       "lng": 9.65
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 3,
+     "budget": 219,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Barumini (Su Nuraxi, UNESCO) plus Cagliari (2-3 days). Season: June or September; July-August very expensive/busy, especially on the Costa Smeralda.",
+     "transport_to_next": "Drive up the west coast via Oristano to Alghero.",
+     "destinations": [
+      {
+       "name": "Barumini — Su Nuraxi (UNESCO)",
+       "lat": 39.7167,
+       "lng": 8.9833
+      },
+      {
+       "name": "Cagliari",
+       "lat": 39.2238,
+       "lng": 9.1217
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "West coast via Oristano to Alghero (2 days), then back to Olbia. ⚠️ If self-driving with a car ferry, book the vehicle deck 3-4+ months ahead for August (spaces fill up, peak-day one-way fares can exceed €300); flight routes are seasonal — check the current schedule before booking.",
+     "transport_to_next": "End of this route — drive back to Olbia for the direct return flight to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Oristano (waypoint)",
+       "lat": 39.9036,
+       "lng": 8.5919
+      },
+      {
+       "name": "Alghero",
+       "lat": 40.5589,
+       "lng": 8.3181
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_sardinia-north-4-5-days",
+   "name": "Sardinia North (4-5 days) 🏝️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Direct flight into Olbia, short drives plus an archipelago boat trip — no rental car strictly required but useful for the Costa Smeralda leg.",
+   "description": "Olbia, the Costa Smeralda/Porto Cervo, and a boat trip through the La Maddalena archipelago.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14c/21 (Islands: Sicily + Sardinia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. The pre-existing Sardinia 🗿 (6d, Cagliari-based) and Sardinia (9 days) ⛵ (a full Olbia-in/out island loop) both touch the Costa Smeralda in passing, but neither dedicates a whole short trip to the north coast plus the La Maddalena archipelago the way this one does — per EUROPA_TRIP_IDEAS.md's own framing, a more granular regional slice, not a repeat. Not yet checked against Route Builder-level price research beyond the archipelago-ticket/permit notes folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_sardinia-north-4-5-days",
+    "name": "Sardinia North (4-5 days) 🏝️",
+    "stops": 4,
+    "km_in_route": 50,
+    "km_from_nl": 1670,
+    "km_back_to_nl": 1630,
+    "km_by_country": {
+     "IT": 50
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 70,
+     "dailyRate": 70,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flight Amsterdam-Olbia (easyJet/Transavia, seasonal — mainly April-September, check the current schedule). Olbia itself as the arrival point (1 day). Budget ~€70-90/day average across the route — Costa Smeralda runs well above the rest of Sardinia (used here at ~€70-90/day depending on the leg).",
+     "transport_to_next": "Short drive to the Costa Smeralda.",
+     "destinations": [
+      {
+       "name": "Olbia",
+       "lat": 40.9236,
+       "lng": 9.498
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "The Costa Smeralda / Porto Cervo (2 days) — the priciest stretch of this route. Season: June or September; July-August is extremely busy and expensive.",
+     "transport_to_next": "Boat crossing to the La Maddalena archipelago.",
+     "destinations": [
+      {
+       "name": "Costa Smeralda / Porto Cervo",
+       "lat": 41.1333,
+       "lng": 9.5333
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 160,
+     "dailyRate": 80,
+     "carInDailyRate": false,
+     "notes": "A boat trip through the La Maddalena archipelago (1-2 days). ⚠️ Web check (2026-08): book archipelago boat tickets ahead in high season, they sell out. Some beaches are permit-only, and Budelli's Spiaggia Rosa is explicitly forbidden to set foot on (look, don't land) — an active, enforced protection rule, not a soft suggestion.",
+     "transport_to_next": "End of this route — back to Olbia for the return flight to Amsterdam.",
+     "destinations": [
+      {
+       "name": "La Maddalena archipelago",
+       "lat": 41.2145,
+       "lng": 9.4052
+      },
+      {
+       "name": "Budelli (Spiaggia Rosa)",
+       "lat": 41.2064,
+       "lng": 9.3733
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_sardinia-roadtrip-7-10-days",
+   "name": "Sardinia Roadtrip (7-10 days) 🏝️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car essential for the full island loop — Cagliari, Chia, the Barbagia interior, Costa Smeralda/Olbia, and La Maddalena.",
+   "description": "A full Sardinia loop: Cagliari, Chia, the Barbagia interior, the Costa Smeralda/Olbia, and La Maddalena.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14c/21 (Islands: Sicily + Sardinia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. EUROPA_TRIP_IDEAS.md also has this as a separate item; Route Builder already has a very similar 9-day loop in 'Sardinia (9 days) ⛵' — built anyway per the source list, flagged here for review, not merged. The overlap is real: both run a roughly 9-day full-island loop touching Cagliari, the Costa Smeralda/Olbia and La Maddalena. The difference is this route adds the Barbagia interior and Chia (which the existing 9-day route doesn't reach) while dropping Cala Gonone/Golfo di Orosei, Oristano and Alghero (which the existing route does cover) — different specific stops, same rough shape and length, hence the explicit flag rather than a silent duplicate. Deliberately given a distinct function name rather than reusing rbBuildSardiniaNineDaysRoute, per this project's established collision-resolution pattern (see Svalbard (Longyearbyen) (6 days) 🌌 vs. the pre-existing Svalbard 🐻‍❄️ for the precedent). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_sardinia-roadtrip-7-10-days",
+    "name": "Sardinia Roadtrip (7-10 days) 🏝️",
+    "stops": 6,
+    "km_in_route": 470,
+    "km_from_nl": 1900,
+    "km_back_to_nl": 1630,
+    "km_by_country": {
+     "IT": 470
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 130,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flight Amsterdam-Cagliari (Transavia/KLM, ~2h20-2h40). Cagliari (2 days) to start. Rental car essential for the whole loop. Budget ~€65-80/day average across the route (used here at ~€60-90/day depending on the leg — the interior is cheaper, the Costa Smeralda pricier).",
+     "transport_to_next": "Short drive to the south coast/Chia.",
+     "destinations": [
+      {
+       "name": "Cagliari",
+       "lat": 39.2238,
+       "lng": 9.1217
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 70,
+     "dailyRate": 70,
+     "carInDailyRate": false,
+     "notes": "The south coast around Chia (1 day). Season: May-June or September, avoiding the August crowds on the coastal roads.",
+     "transport_to_next": "Drive inland to the Barbagia.",
+     "destinations": [
+      {
+       "name": "Chia (south coast)",
+       "lat": 38.8886,
+       "lng": 8.8425
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "The Barbagia interior (1-2 days), Sardinia's least touristy, cheapest stretch. ⚠️ Web check (2026-08): the inland mountain roads here are narrow and slow — plan extra driving time, don't assume coastal-road speeds.",
+     "transport_to_next": "Drive north to the Costa Smeralda/Olbia.",
+     "destinations": [
+      {
+       "name": "Barbagia (interior, Orgosolo area)",
+       "lat": 40.2853,
+       "lng": 9.3922
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Costa Smeralda/Olbia (2 days) — the priciest stretch. ⚠️ Web check (2026-08): coastal parking is scarce and expensive here in high season.",
+     "transport_to_next": "Boat crossing to the La Maddalena archipelago.",
+     "destinations": [
+      {
+       "name": "Costa Smeralda / Porto Cervo",
+       "lat": 41.1333,
+       "lng": 9.5333
+      },
+      {
+       "name": "Olbia",
+       "lat": 40.9236,
+       "lng": 9.498
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 150,
+     "dailyRate": 75,
+     "carInDailyRate": false,
+     "notes": "La Maddalena (1-2 days) to close the loop — see the Sardinia North route above for the same archipelago-ticket/Budelli-permit notes, which apply equally here.",
+     "transport_to_next": "End of this route — back to Olbia (or Cagliari, if returning open-jaw) for the return flight to Amsterdam.",
+     "destinations": [
+      {
+       "name": "La Maddalena archipelago",
+       "lat": 41.2145,
+       "lng": 9.4052
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_sardinia-south-4-5-days",
+   "name": "Sardinia South (4-5 days) 🏝️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Direct flight into Cagliari, short drives around the south coast — a rental car is useful but this stays compact enough to manage without one for the Cagliari/Poetto stretch.",
+   "description": "Cagliari, Poetto beach and the Nora ruins, and the Chia beaches — the cheapest of the short Sicily/Sardinia trips in this batch.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14c/21 (Islands: Sicily + Sardinia) converting EUROPA_TRIP_IDEAS.md into Route Builder content. The pre-existing Sardinia 🗿 route also starts from Cagliari but continues on to Su Nuraxi/Costa Smeralda across the whole island; this one instead stays purely in the Cagliari area (Poetto, Nora, Chia) per EUROPA_TRIP_IDEAS.md's own framing that these 7 items are more granular regional slices, not a repeat. Not yet checked against Route Builder-level price research beyond the Nora opening-hours note folded in above — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_sardinia-south-4-5-days",
+    "name": "Sardinia South (4-5 days) 🏝️",
+    "stops": 4,
+    "km_in_route": 60,
+    "km_from_nl": 1900,
+    "km_back_to_nl": 1940,
+    "km_by_country": {
+     "IT": 60
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 146,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flight Amsterdam-Cagliari (Transavia/KLM, ~2h20-2h40). Cagliari itself (2 days) — the cheapest of the four Sicily/Sardinia short trips in this batch. Budget ~€55-70/day average across the route (used here at ~€55-65/day).",
+     "transport_to_next": "Short drive/day trip to Poetto beach and the Nora ruins.",
+     "destinations": [
+      {
+       "name": "Cagliari",
+       "lat": 39.2238,
+       "lng": 9.1217
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 1,
+     "budget": 73,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "notes": "Poetto beach plus a day trip to the Nora ruins. ⚠️ Web check (2026-08): Nora's opening hours are seasonal — check ahead rather than assuming a fixed schedule. Season: May-June or September.",
+     "transport_to_next": "Drive on to the Chia beaches.",
+     "destinations": [
+      {
+       "name": "Poetto beach",
+       "lat": 39.2039,
+       "lng": 9.1583
+      },
+      {
+       "name": "Nora ruins",
+       "lat": 38.9897,
+       "lng": 9.0186
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "IT",
+     "country": "Italy",
+     "days": 2,
+     "budget": 130,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "The Chia beaches (2 days, optional/extendable) to close the trip.",
+     "transport_to_next": "End of this route — return flight from Cagliari to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Chia beaches",
+       "lat": 38.8886,
+       "lng": 8.8425
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
