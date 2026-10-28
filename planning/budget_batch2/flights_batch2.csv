@@ -1,0 +1,14 @@
+airport_code,city,country_code,direction,eur_one_way,airline_or_routing,source,date_checked,confidence,notes
+NAP,Naples,IT,out,110,easyJet/Transavia/ITA direct,WebSearch 2026-10-28 (Skyscanner/Expedia floors EUR 62-90; same-day much higher),2026-10-28,medium,typical not promo
+NAP,Naples,IT,back,100,easyJet/Transavia/ITA direct,WebSearch 2026-10-28 (Expedia USD 53+ floor),2026-10-28,medium,
+BRI,Bari,IT,back,90,Transavia/ITA direct or 1 stop,WebSearch 2026-10-28 (Expedia USD 64-72 floor; Ratepunk median USD 76; mostly connecting),2026-10-28,low,estimate above floors
+FSC,Figari,FR,out,200,1 stop via Paris/Geneva/Basel,WebSearch 2026-10-28 (Farecompare avg USD 167; Expedia USD 208; Skyscanner USD 291),2026-10-28,low,no nonstop
+OLB,Olbia,IT,back,130,easyJet/Transavia direct (Aug-Oct seasonal),WebSearch 2026-10-28 (Omio GBP 119-160),2026-10-28,low,
+INN,Innsbruck,AT,out,120,Transavia direct (seasonal Thu/Sun),WebSearch 2026-10-28 (Skyscanner floor EUR 84; Expedia GBP 73-125+),2026-10-28,low,
+INN,Innsbruck,AT,back,100,Transavia direct (seasonal),WebSearch 2026-10-28 (Expedia USD 74 floor),2026-10-28,low,
+FLR,Florence,IT,out,140,KLM/ITA/Vueling,WebSearch 2026-10-28 (floors USD 136-168),2026-10-28,medium,
+FLR,Florence,IT,back,130,KLM/ITA/Vueling,WebSearch 2026-10-28 (Expedia USD 88 floor),2026-10-28,low,
+MXP,Milan Malpensa,IT,out,100,easyJet/KLM,WebSearch 2026-10-28 (Skyscanner EUR 63 floor; Expedia USD 90),2026-10-28,medium,
+FCO,Rome Fiumicino,IT,back,100,ITA/KLM/Transavia,WebSearch 2026-10-28 (Expedia EUR 78 / USD 83-92 floors),2026-10-28,medium,
+CTA,Catania,IT,out,140,KLM/Transavia/ITA,WebSearch 2026-10-28 (Expedia USD 109-190),2026-10-28,medium,
+MLA,Malta,MT,back,120,KM Malta/easyJet/Transavia,WebSearch 2026-10-28 (KM Malta EUR 87-113; Skyscanner EUR 47 floor),2026-10-28,medium,
