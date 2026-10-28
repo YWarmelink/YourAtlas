@@ -1,0 +1,1749 @@
+{
+ "batch": 6,
+ "group": "Iberia",
+ "routes": [
+  {
+   "id": "gt_seed_spain-east-to-south-12-days",
+   "name": "Spain: East to South (12 days) 🌅",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Open-jaw flight (Barcelona in, Málaga out), rental car for the coastal sweep.",
+   "description": "A Mediterranean coastal sweep from Barcelona to Málaga, via Valencia, Alicante, the Murcia region and the Almería coast.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately coastal/lowland so it complements rather than repeats Catalonia + Pyrenees (9 days) ⛰️ and Andalusia Roadtrip (9 days) 🚗 above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_spain-east-to-south-12-days",
+    "name": "Spain: East to South (12 days) 🌅",
+    "stops": 8,
+    "km_in_route": 1230,
+    "km_from_nl": 1570,
+    "km_back_to_nl": 2330,
+    "km_by_country": {
+     "ES": 1230
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 12,
+     "budget": 732,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Barcelona (1-2 days) → Tarragona → Valencia (2 days) → Alicante (Costa Blanca) → the Murcia region → the Almería coast → Málaga/Costa del Sol, optionally finishing with an inland Granada detour. Deliberately stays coastal/lowland — as soon as this reaches inland into the Pyrenees or deep Andalusia it overlaps with Catalonia + Pyrenees above and the Andalusia Roadtrip. Entry: open-jaw AMS-Barcelona in, AMS-Málaga out, rental car for the coastal legs (the AP-7 is almost entirely toll-free — Barcelona-Alicante, ~525km/5h, is fully free; only a short toll stretch south of Cartagena towards Almería, ~€6). Budget ~€90/day. Season: May-June or September-October; the southern half (Almería/Costa del Sol) gets very hot and busy in July-August.",
+     "transport_to_next": "End of this route — fly home from Málaga.",
+     "destinations": [
+      {
+       "name": "Barcelona",
+       "lat": 41.3851,
+       "lng": 2.1734
+      },
+      {
+       "name": "Tarragona",
+       "lat": 41.1189,
+       "lng": 1.2445
+      },
+      {
+       "name": "Valencia",
+       "lat": 39.4699,
+       "lng": -0.3763
+      },
+      {
+       "name": "Alicante (Costa Blanca)",
+       "lat": 38.3452,
+       "lng": -0.481
+      },
+      {
+       "name": "Murcia",
+       "lat": 37.9922,
+       "lng": -1.1307
+      },
+      {
+       "name": "Almería coast",
+       "lat": 36.8381,
+       "lng": -2.4597
+      },
+      {
+       "name": "Málaga / Costa del Sol",
+       "lat": 36.7213,
+       "lng": -4.4214
+      },
+      {
+       "name": "Granada (optional inland detour)",
+       "lat": 37.1773,
+       "lng": -3.5986
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_spain-north-to-central-12-days",
+   "name": "Spain: North to Central (12 days) 🚉",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Open-jaw flight (Bilbao in, Madrid out, or reversed), rental car/train for the inland transect.",
+   "description": "A linear north-to-inland transect: the Basque coast, Vitoria-Gasteiz, Burgos, Madrid and optionally Ávila or Salamanca.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately linear with no return to the coast, so it complements rather than repeats Northern Spain Roadtrip (12 days) 🛣️ above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_spain-north-to-central-12-days",
+    "name": "Spain: North to Central (12 days) 🚉",
+    "stops": 8,
+    "km_in_route": 910,
+    "km_from_nl": 1500,
+    "km_back_to_nl": 1930,
+    "km_by_country": {
+     "ES": 910
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 12,
+     "budget": 732,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "San Sebastián/Bilbao → Vitoria-Gasteiz → Burgos (cathedral) → Madrid (3-4 days, including Toledo/Segovia day trips as in the standalone Madrid trip above) → optionally Ávila or Salamanca before the flight home. Deliberately linear (north → inland → Madrid), with no return to the coast — that would overlap with the previous trip's coastal loop. Entry: open-jaw AMS-Bilbao in, AMS-Madrid out (or reversed), both well connected with direct flights. Budget ~€95/day. Season: May-June or September; the Meseta (Burgos and the interior) is cold in winter and hot in high summer (drier than Andalusia, less extreme).",
+     "transport_to_next": "End of this route — fly home from Madrid (or Bilbao if reversed).",
+     "destinations": [
+      {
+       "name": "San Sebastián / Bilbao",
+       "lat": 43.263,
+       "lng": -2.935
+      },
+      {
+       "name": "Vitoria-Gasteiz",
+       "lat": 42.8467,
+       "lng": -2.6716
+      },
+      {
+       "name": "Burgos (cathedral)",
+       "lat": 42.3439,
+       "lng": -3.6969
+      },
+      {
+       "name": "Madrid",
+       "lat": 40.4168,
+       "lng": -3.7038
+      },
+      {
+       "name": "Toledo (day trip)",
+       "lat": 39.8628,
+       "lng": -4.0273
+      },
+      {
+       "name": "Segovia (day trip)",
+       "lat": 40.9429,
+       "lng": -4.1088
+      },
+      {
+       "name": "Ávila (optional)",
+       "lat": 40.6566,
+       "lng": -4.6818
+      },
+      {
+       "name": "Salamanca (optional)",
+       "lat": 40.9701,
+       "lng": -5.6635
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_tenerife-5-7-days",
+   "name": "Tenerife (5-7 days) 🏝️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Santa Cruz/La Laguna city time, a Teide day, Anaga hiking, and a south-coast beach base.",
+   "description": "Santa Cruz and La Laguna, Teide National Park, Anaga's laurel-forest trails, and the Costa Adeje/Los Cristianos beach coast.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14b/21 (Islands: Canary Islands + Balearics) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Single-block route — the differentiator vs. the multi-island Tenerife combos below. No pre-existing Route Builder expedition covers Tenerife, so no collision beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_tenerife-5-7-days",
+    "name": "Tenerife (5-7 days) 🏝️",
+    "stops": 6,
+    "km_in_route": 230,
+    "km_from_nl": 4120,
+    "km_back_to_nl": 4200,
+    "km_by_country": {
+     "ES": 230
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 6,
+     "budget": 390,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "Entry: easyJet and Transavia fly direct from Amsterdam/Rotterdam to Tenerife South, plus winter-sun charters on TUI fly. 1-2 days in Santa Cruz and the UNESCO-listed university town of La Laguna next door, 1 day up at Teide National Park, 1-2 days walking in the Anaga mountains in the northeast, then 2 days winding down on the south coast around Costa Adeje/Los Cristianos. A rental car is worth it for Anaga's winding roads. Budget ~€55-75/day. Season: good year-round; October-May is nicest for hiking. Web check (2026-08): the Teide cable car is roughly €40 return, weather-dependent and worth booking ahead; a free permit is mandatory for the final 200m to the summit (capped at ~200 visitors/day, apply well ahead via reservasparquesnacionales.es) — without it you still reach the upper cable-car station at 3,555m, which is impressive on its own. The Canaries are EU/Schengen but sit outside the EU VAT zone, running their own IGIC system (general rate ~7% vs mainland Spain's 21% IVA) — noticeably cheaper on electronics, alcohol, tobacco and perfume, island-wide, not just at the airport. Since April 2024 there have been ongoing peaceful overtourism protests (\"Canarias tiene un límite\") against housing shortage/hotel construction, continuing into 2025 — no direct safety concern for visitors, but respectful behavior is advised given growing local sentiment.",
+     "transport_to_next": "End of this route — fly home from Tenerife South or Tenerife North.",
+     "destinations": [
+      {
+       "name": "Santa Cruz de Tenerife",
+       "lat": 28.4636,
+       "lng": -16.2518
+      },
+      {
+       "name": "La Laguna (UNESCO old town)",
+       "lat": 28.4874,
+       "lng": -16.3159
+      },
+      {
+       "name": "Teide National Park",
+       "lat": 28.2723,
+       "lng": -16.6417
+      },
+      {
+       "name": "Anaga Rural Park (Cruz del Carmen)",
+       "lat": 28.5477,
+       "lng": -16.2135
+      },
+      {
+       "name": "Costa Adeje",
+       "lat": 28.0994,
+       "lng": -16.7357
+      },
+      {
+       "name": "Los Cristianos",
+       "lat": 28.0525,
+       "lng": -16.7192
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_tenerife-la-gomera-7-10-days",
+   "name": "Tenerife + La Gomera (7-10 days) 🏝️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "A shortened Tenerife base plus a ferry to La Gomera for Garajonay and the west-coast valleys.",
+   "description": "Tenerife's Santa Cruz/Teide/Los Cristianos, then a ferry to La Gomera for Garajonay National Park and Valle Gran Rey/Agulo.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14b/21 (Islands: Canary Islands + Balearics) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Modeled as two Spain blocks (Tenerife, then La Gomera) linked by the Los Cristianos-San Sebastián ferry. Tenerife coordinates reused unchanged from the standalone Tenerife route above for consistency. No pre-existing Route Builder expedition covers this combination, so no collision beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_tenerife-la-gomera-7-10-days",
+    "name": "Tenerife + La Gomera (7-10 days) 🏝️",
+    "stops": 7,
+    "km_in_route": 190,
+    "km_from_nl": 4120,
+    "km_back_to_nl": 4210,
+    "km_by_country": {
+     "ES": 190
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 5,
+     "budget": 300,
+     "dailyRate": 60,
+     "carInDailyRate": false,
+     "notes": "Entry: easyJet and Transavia fly direct from Amsterdam/Rotterdam to Tenerife South. 4-5 days on Tenerife in short form: Santa Cruz, Teide National Park, and the south-coast base at Los Cristianos (departure point for La Gomera). Budget ~€50-70/day. Web check (2026-08): the Teide cable car is ~€40 return, weather-dependent, book ahead; a free permit is mandatory for the last 200m to the summit (max ~200/day, apply via reservasparquesnacionales.es well ahead) — without it you still reach the 3,555m upper station.",
+     "transport_to_next": "Ferry Los Cristianos-San Sebastián de la Gomera (~50 min, several times a day, Fred Olsen Express/Naviera Armas).",
+     "destinations": [
+      {
+       "name": "Santa Cruz de Tenerife",
+       "lat": 28.4636,
+       "lng": -16.2518
+      },
+      {
+       "name": "Teide National Park",
+       "lat": 28.2723,
+       "lng": -16.6417
+      },
+      {
+       "name": "Los Cristianos",
+       "lat": 28.0525,
+       "lng": -16.7192
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 4,
+     "budget": 240,
+     "dailyRate": 60,
+     "carInDailyRate": false,
+     "notes": "2 days in Garajonay National Park and 1-2 days around Valle Gran Rey/Agulo. Budget ~€50-70/day. Season: good year-round — the laurisilva (laurel) forest stays foggy-green all year, a welcome contrast when it's hot down on the coast. Web check (2026-08): Garajonay has been a UNESCO World Heritage site since 1986 (40km², 18 marked trails), no permit needed, but check for summer fire-risk closures. Silbo Gomero, the whistled language, has been UNESCO intangible heritage since 2009 — restaurant demonstrations for tourists aren't guaranteed daily, so check with the tourist office ahead. Same Teide-permit caveat as the Tenerife leg above.",
+     "transport_to_next": "End of this route — ferry back to Los Cristianos and fly home from Tenerife South.",
+     "destinations": [
+      {
+       "name": "San Sebastián de la Gomera",
+       "lat": 28.0916,
+       "lng": -17.1133
+      },
+      {
+       "name": "Garajonay National Park",
+       "lat": 28.1247,
+       "lng": -17.2379
+      },
+      {
+       "name": "Valle Gran Rey",
+       "lat": 28.0989,
+       "lng": -17.3106
+      },
+      {
+       "name": "Agulo",
+       "lat": 28.1858,
+       "lng": -17.2004
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_valencia-costa-blanca-6-days",
+   "name": "Valencia + Costa Blanca (6 days) 🎆",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Direct flight, rental car recommended for the Costa Blanca stretch.",
+   "description": "Valencia's Ciutat Vella and City of Arts and Sciences, then south along the Costa Blanca to Alicante, with an optional Peñíscola or Calpe/Dénia detour.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_valencia-costa-blanca-6-days",
+    "name": "Valencia + Costa Blanca (6 days) 🎆",
+    "stops": 6,
+    "km_in_route": 720,
+    "km_from_nl": 1900,
+    "km_back_to_nl": 2010,
+    "km_by_country": {
+     "ES": 720
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 6,
+     "budget": 366,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Valencia city (2-3 days: Ciutat Vella, the City of Arts and Sciences, Albufera) then south along the Costa Blanca to Alicante (Castillo de Santa Bárbara) — optionally add Peñíscola (castle, to the north — better done on the way down if arriving from above) or Calpe/Dénia. Entry: direct AMS-VLC (KLM/Vueling/Transavia/easyJet, ~2h28, ~175 flights/week). Budget ~€90/day. Season: March is spectacular but chaotic (Las Fallas, mid-March, a UNESCO-listed festival with huge crowds and fireworks every night) — otherwise April-June or September-October is ideal, July-August is hot and busy on the coast. Web check (2026-08): book months ahead if visiting during Las Fallas.",
+     "transport_to_next": "End of this route — fly back AMS-VLC direct.",
+     "destinations": [
+      {
+       "name": "Valencia (Ciutat Vella)",
+       "lat": 39.4756,
+       "lng": -0.3757
+      },
+      {
+       "name": "City of Arts and Sciences",
+       "lat": 39.4544,
+       "lng": -0.3517
+      },
+      {
+       "name": "Albufera",
+       "lat": 39.3167,
+       "lng": -0.35
+      },
+      {
+       "name": "Alicante (Castillo de Santa Bárbara)",
+       "lat": 38.3472,
+       "lng": -0.4795
+      },
+      {
+       "name": "Peñíscola (optional, north of Valencia)",
+       "lat": 40.3597,
+       "lng": 0.4053
+      },
+      {
+       "name": "Calpe (optional)",
+       "lat": 38.6447,
+       "lng": 0.0713
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_algarve-6-days",
+   "name": "Algarve (6 days) 🏖️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Direct flight into Faro (or Eindhoven-Faro), rental car strongly recommended.",
+   "description": "A loop around the Algarve from Faro: Lagos' Ponta da Piedade, Sagres, Portimão/Carvoeiro/Benagil, Silves and Tavira.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7b (Iberia: Andorra + Portugal) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_algarve-6-days",
+    "name": "Algarve (6 days) 🏖️",
+    "stops": 9,
+    "km_in_route": 300,
+    "km_from_nl": 2550,
+    "km_back_to_nl": 2520,
+    "km_by_country": {
+     "PT": 300
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PT",
+     "country": "Portugal",
+     "days": 6,
+     "budget": 372,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Faro (Ria Formosa) — Lagos (Ponta da Piedade, Praia Dona Ana) — Sagres/Cabo de São Vicente — Portimão/Carvoeiro/Benagil (boat trip) — Silves — Tavira — back to Faro. Faro sits roughly central, so a west-then-east loop from there makes sense with no zigzagging. Entry: direct AMS-Faro (Transavia ~13/week plus seasonal easyJet ~7/week in summer) or direct Eindhoven-Faro (Transavia/Ryanair, ~14/week — less well-known but a good alternative); a rental car is strongly recommended. Budget ~€85-100/day. Season: May-June or September for the best price/crowd balance (hotel prices ~30-40% below the July-August peak, the sea already warm). Web check (2026-08): the Algarve's tourist tax is small and varies by municipality, roughly €1-2/night; the Benagil cave is now visited almost exclusively by boat/kayak tour (unguided swimming access is limited) — book an official tour ahead in high season.",
+     "transport_to_next": "End of this route — fly back AMS-Faro (or Eindhoven-Faro) direct.",
+     "destinations": [
+      {
+       "name": "Faro (Ria Formosa)",
+       "lat": 37.0194,
+       "lng": -7.9304
+      },
+      {
+       "name": "Lagos (Ponta da Piedade)",
+       "lat": 37.0836,
+       "lng": -8.6698
+      },
+      {
+       "name": "Praia Dona Ana",
+       "lat": 37.0906,
+       "lng": -8.6689
+      },
+      {
+       "name": "Sagres / Cabo de São Vicente",
+       "lat": 37.0206,
+       "lng": -8.9773
+      },
+      {
+       "name": "Portimão",
+       "lat": 37.1393,
+       "lng": -8.5378
+      },
+      {
+       "name": "Carvoeiro",
+       "lat": 37.0968,
+       "lng": -8.4747
+      },
+      {
+       "name": "Benagil (sea cave)",
+       "lat": 37.0889,
+       "lng": -8.4271
+      },
+      {
+       "name": "Silves (castle)",
+       "lat": 37.1889,
+       "lng": -8.4386
+      },
+      {
+       "name": "Tavira",
+       "lat": 37.1258,
+       "lng": -7.6486
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_azores-island-hopping-10-14-days",
+   "name": "Azores Island Hopping (10-14 days) 🏝️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Three-island Azores hop: São Miguel, Terceira, then Faial/Pico by domestic flight and short ferry.",
+   "description": "São Miguel, Terceira, and Faial/Pico (Horta's whaling heritage, an optional Pico climb, a short Faial-Pico ferry).",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14a/21 (Islands: Madeira + Azores) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Modeled as three Portugal blocks (São Miguel, Terceira, Faial/Pico). São Miguel and Terceira coordinates reused unchanged from the other Azores routes in this batch for consistency; Faial/Pico coordinates are new to this repo. Domestic flight/ferry costs across the islands (~€150-250 total) are called out in the São Miguel leg's notes rather than folded into the per-day budget, mirroring how the Central European Grand Roadtrip keeps car costs out of its per-country budget. No pre-existing Route Builder expedition covers the Azores, so no collision beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_azores-island-hopping-10-14-days",
+    "name": "Azores Island Hopping (10-14 days) 🏝️",
+    "stops": 8,
+    "km_in_route": 530,
+    "km_from_nl": 3730,
+    "km_back_to_nl": 3890,
+    "km_by_country": {
+     "PT": 530
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PT",
+     "country": "Portugal",
+     "days": 5,
+     "budget": 310,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Entry: Transavia flies direct seasonally from Amsterdam to Ponta Delgada; off-season needs a Lisbon connection on TAP. 4-5 days: Ponta Delgada, the Sete Cidades crater lakes and Furnas. Budget ~€80-95/day, plus 2-3 domestic flights/ferries across this route (reckon on €150-250 extra total, not folded into this per-day figure). Season: June-September is optimal for both weather and the whale-watching season.",
+     "transport_to_next": "Azores Airlines domestic flight Ponta Delgada-Terceira (~45 min). Web check (2026-08): book early — schedules are limited and sensitive to weather (fog) cancellations; multi-island tickets need advance booking given limited capacity.",
+     "destinations": [
+      {
+       "name": "Ponta Delgada (town, harbour)",
+       "lat": 37.7412,
+       "lng": -25.6756
+      },
+      {
+       "name": "Sete Cidades (crater lakes)",
+       "lat": 37.8656,
+       "lng": -25.7847
+      },
+      {
+       "name": "Furnas (thermal springs, cozido)",
+       "lat": 37.7847,
+       "lng": -25.3208
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "PT",
+     "country": "Portugal",
+     "days": 3,
+     "budget": 186,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "3 days on Terceira: Angra do Heroísmo's UNESCO old town and the Algar do Carvão lava cave. Budget ~€80-95/day.",
+     "transport_to_next": "Domestic flight or short ferry on to Faial. Web check (2026-08): book multi-island tickets ahead due to limited capacity.",
+     "destinations": [
+      {
+       "name": "Angra do Heroísmo (UNESCO old town)",
+       "lat": 38.6559,
+       "lng": -27.2158
+      },
+      {
+       "name": "Algar do Carvão (lava cave)",
+       "lat": 38.7328,
+       "lng": -27.2166
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "PT",
+     "country": "Portugal",
+     "days": 4,
+     "budget": 248,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "3-4 days across Faial and Pico, the westernmost group in this route: Horta's whaling heritage in Faial, a short ~30-minute ferry to Pico instead of flying, and an optional climb of the Pico volcano. Budget ~€80-95/day. Web check (2026-08): climbing Pico needs an advance online reservation plus a guide/permit through Parque Natural do Pico.",
+     "transport_to_next": "End of this route — fly home via Ponta Delgada or Lisbon.",
+     "destinations": [
+      {
+       "name": "Horta (Faial, whaling heritage)",
+       "lat": 38.5347,
+       "lng": -28.6328
+      },
+      {
+       "name": "Madalena (Pico ferry port)",
+       "lat": 38.5372,
+       "lng": -28.5297
+      },
+      {
+       "name": "Pico volcano climb (optional)",
+       "lat": 38.4667,
+       "lng": -28.3978
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_azores-sao-miguel-terceira-7-10-days",
+   "name": "Azores: São Miguel + Terceira (7-10 days) 🏝️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "São Miguel core plus a domestic flight extension to Terceira.",
+   "description": "São Miguel (Ponta Delgada, Sete Cidades, Furnas) plus Terceira (Angra do Heroísmo, Algar do Carvão) via a domestic flight.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14a/21 (Islands: Madeira + Azores) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Modeled as two Portugal blocks (São Miguel, then Terceira) since Terceira is a genuinely separate leg reached by domestic flight. São Miguel coordinates reused unchanged from the standalone São Miguel route (batch 14a) for consistency. No pre-existing Route Builder expedition covers this Azores combination, so no collision beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_azores-sao-miguel-terceira-7-10-days",
+    "name": "Azores: São Miguel + Terceira (7-10 days) 🏝️",
+    "stops": 5,
+    "km_in_route": 340,
+    "km_from_nl": 3730,
+    "km_back_to_nl": 3760,
+    "km_by_country": {
+     "PT": 340
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PT",
+     "country": "Portugal",
+     "days": 5,
+     "budget": 310,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Entry: Transavia flies direct seasonally from Amsterdam to Ponta Delgada; off-season needs a Lisbon connection on TAP. 4-5 days: Ponta Delgada, the Sete Cidades crater lakes and Furnas (thermal springs, cozido). Budget ~€75-90/day. Season: May-September for the best weather; the Azores stay changeable year-round, so pack rain gear. Web check (2026-08): book a rental car well ahead (limited supply, fills up fast in summer); reserve the Furnas cozido lunch ahead.",
+     "transport_to_next": "Azores Airlines domestic flight Ponta Delgada-Terceira (~45 min). Web check (2026-08): book early — schedules are limited and sensitive to weather (fog) cancellations.",
+     "destinations": [
+      {
+       "name": "Ponta Delgada (town, harbour)",
+       "lat": 37.7412,
+       "lng": -25.6756
+      },
+      {
+       "name": "Sete Cidades (crater lakes)",
+       "lat": 37.8656,
+       "lng": -25.7847
+      },
+      {
+       "name": "Furnas (thermal springs, cozido)",
+       "lat": 37.7847,
+       "lng": -25.3208
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "PT",
+     "country": "Portugal",
+     "days": 4,
+     "budget": 248,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "3-4 days on Terceira: Angra do Heroísmo's UNESCO-listed old town and the Algar do Carvão volcanic lava cave. Budget ~€75-90/day, plus the domestic flight (~€60-100 one-way, strongly seasonal). Season: May-September; Terceira's Sanjoaninas festival (late June) can push up prices and crowds.",
+     "transport_to_next": "End of this route — fly home via Ponta Delgada or Lisbon.",
+     "destinations": [
+      {
+       "name": "Angra do Heroísmo (UNESCO old town)",
+       "lat": 38.6559,
+       "lng": -27.2158
+      },
+      {
+       "name": "Algar do Carvão (lava cave)",
+       "lat": 38.7328,
+       "lng": -27.2166
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_central-portugal-coimbra-serra-da-estrela-6-days",
+   "name": "Central Portugal: Coimbra + Serra da Estrela (6 days) 📚",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into Porto or Lisbon, then a rental car — essential for the Serra da Estrela's mountain roads.",
+   "description": "Coimbra's university and Biblioteca Joanina, and the Serra da Estrela: the Torre, Sabugueiro, the Zêzere valley and historic villages.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7b (Iberia: Andorra + Portugal) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Positioned as the explicit connecting middle leg for Portugal: North to South (9 days) 🧭 and Portugal Roadtrip (12 days) 🗺️ above, which both point here rather than giving Coimbra/Serra da Estrela real time themselves. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_central-portugal-coimbra-serra-da-estrela-6-days",
+    "name": "Central Portugal: Coimbra + Serra da Estrela (6 days) 📚",
+    "stops": 8,
+    "km_in_route": 190,
+    "km_from_nl": 2180,
+    "km_back_to_nl": 2140,
+    "km_by_country": {
+     "PT": 190
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PT",
+     "country": "Portugal",
+     "days": 6,
+     "budget": 372,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Positioned as the connecting middle leg between the Porto/north cluster and the Algarve/south cluster (see Portugal: North to South and Portugal Roadtrip above, which both explicitly point here): Coimbra (2 days: the University/Biblioteca Joanina, the old town, Fado de Coimbra) — the Serra da Estrela National Park, based in Manteigas or Seia (3-4 days): Torre (mainland Portugal's highest point), Sabugueiro (the highest village, ~1h30 from Coimbra), the Zêzere glacial valley, the Poço do Inferno waterfall, and 1-2 historic 'Aldeias Históricas' (e.g. Linhares da Beira, Piódão). No airport with a direct NL flight nearby — fly into Porto or Lisbon (both ~2h drive to Coimbra) and rent a car; the mountain section needs a car (very limited/seasonal public transport into the park). Coimbra itself is reachable by train from Porto/Lisbon (~1-1.5h). Budget ~€65-80/day (the cheapest Portugal item here — rural pension/agroturismo €45-60, food €20-25). Season: late May-June or September (clear hiking weather, no snow on the mountain roads); winter brings real snow to the Torre (Portugal's only ski area) — a different, colder trip, otherwise best avoided. Web check (2026-08): the Biblioteca Joanina has a daily visitor cap/timed slot — book ahead in high season.",
+     "transport_to_next": "End of this route — drive back to Porto or Lisbon for the flight home.",
+     "destinations": [
+      {
+       "name": "Coimbra (University + Biblioteca Joanina)",
+       "lat": 40.2076,
+       "lng": -8.4257
+      },
+      {
+       "name": "Manteigas (base)",
+       "lat": 40.3958,
+       "lng": -7.5406
+      },
+      {
+       "name": "Seia (alternative base)",
+       "lat": 40.4189,
+       "lng": -7.7028
+      },
+      {
+       "name": "Torre (highest point of mainland Portugal)",
+       "lat": 40.332,
+       "lng": -7.6108
+      },
+      {
+       "name": "Sabugueiro (highest village)",
+       "lat": 40.3625,
+       "lng": -7.6069
+      },
+      {
+       "name": "Poço do Inferno waterfall",
+       "lat": 40.3477,
+       "lng": -7.5765
+      },
+      {
+       "name": "Linhares da Beira",
+       "lat": 40.4014,
+       "lng": -7.5033
+      },
+      {
+       "name": "Piódão",
+       "lat": 40.2039,
+       "lng": -7.7228
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_lisbon-sintra-5-days",
+   "name": "Lisbon + Sintra (5 days) 🏰",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Direct flight, city-based with day trips to Sintra and Cascais/Cabo da Roca.",
+   "description": "Lisbon's Baixa, Alfama and Belém, and a full day in Sintra: the Palace of Pena, Quinta da Regaleira, Cascais and Cabo da Roca.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7b (Iberia: Andorra + Portugal) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_lisbon-sintra-5-days",
+    "name": "Lisbon + Sintra (5 days) 🏰",
+    "stops": 10,
+    "km_in_route": 80,
+    "km_from_nl": 2410,
+    "km_back_to_nl": 2410,
+    "km_by_country": {
+     "PT": 80
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PT",
+     "country": "Portugal",
+     "days": 5,
+     "budget": 310,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Baixa/Alfama/Castelo de São Jorge (day 1) — Belém (day 2) — a full day in Sintra: the Palace of Pena plus Quinta da Regaleira (day 3) — Cascais/Estoril or Monserrate + Cabo da Roca (day 4) — a buffer day/fado evening (day 5). Entry: direct AMS-Lisbon (TAP/KLM/Transavia/easyJet, ~2h55); the red metro line into the centre (~20-25 min). Budget ~€90-105/day. Season: April-June/September-October ideal; July-August very hot, Sintra gets overcrowded. Web check (2026-08): Lisbon's tourist tax is €4 pp/night (max 7 nights); new 'containment zones' (December 2025) restrict whole-apartment Airbnbs in Alfama, Bairro Alto, Príncipe Real, Avenida da Liberdade, Santos and the historic centre — check the current impact and book early. The Palace of Pena requires a pre-booked 30-minute timed slot with no grace period — miss it and there is no access to the interior (the gardens stay open); budget ~30 extra minutes for the bus/traffic from Sintra station.",
+     "transport_to_next": "End of this route — fly back AMS-Lisbon direct.",
+     "destinations": [
+      {
+       "name": "Lisbon (Baixa)",
+       "lat": 38.7107,
+       "lng": -9.1366
+      },
+      {
+       "name": "Alfama",
+       "lat": 38.7139,
+       "lng": -9.1301
+      },
+      {
+       "name": "Castelo de São Jorge",
+       "lat": 38.7139,
+       "lng": -9.1335
+      },
+      {
+       "name": "Belém Tower",
+       "lat": 38.6916,
+       "lng": -9.216
+      },
+      {
+       "name": "Jerónimos Monastery",
+       "lat": 38.6979,
+       "lng": -9.2068
+      },
+      {
+       "name": "Sintra (Palace of Pena)",
+       "lat": 38.7876,
+       "lng": -9.3905
+      },
+      {
+       "name": "Quinta da Regaleira",
+       "lat": 38.7969,
+       "lng": -9.3969
+      },
+      {
+       "name": "Cascais",
+       "lat": 38.6979,
+       "lng": -9.4215
+      },
+      {
+       "name": "Cabo da Roca",
+       "lat": 38.7811,
+       "lng": -9.4986
+      },
+      {
+       "name": "Monserrate (optional)",
+       "lat": 38.7908,
+       "lng": -9.4193
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_madeira-5-7-days",
+   "name": "Madeira (5-7 days) 🏝️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Funchal city time plus a rental-car loop of the north coast and one levada hike.",
+   "description": "Funchal (Monte cable car, market, old town), a north-coast rental-car loop (Porto Moniz, Seixal, São Vicente), and a levada walk.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14a/21 (Islands: Madeira + Azores) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Single-block route — Madeira is one Portuguese archipelago, no repeating-country structure needed. No pre-existing Route Builder expedition covers Madeira, so no collision beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_madeira-5-7-days",
+    "name": "Madeira (5-7 days) 🏝️",
+    "stops": 6,
+    "km_in_route": 80,
+    "km_from_nl": 3640,
+    "km_back_to_nl": 3640,
+    "km_by_country": {
+     "PT": 80
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PT",
+     "country": "Portugal",
+     "days": 6,
+     "budget": 372,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Entry: easyJet and Transavia fly direct year-round from Amsterdam to Funchal; TUI fly seasonally. 2-3 days based in Funchal (the Monte cable car and toboggan run, Mercado dos Lavradores, the old town), then a rental-car loop of the north coast (Porto Moniz's natural lava pools, Seixal, São Vicente) plus one levada walk (25 Fontes or Caldeirão Verde). A Dutch driving license is valid (EU/Schengen). Season: mild year-round (18-25°C); best April-June or September-October; avoid August for wildfire risk (historically elevated, including the 2016 fires). Budget ~€70-85/day. Web check (2026-08): the Monte cable car is roughly €12.50 one-way/€19 return (verify the current price); levada walks can be temporarily closed after rain — check a local hiking app before setting out.",
+     "transport_to_next": "End of this route — fly home from Funchal.",
+     "destinations": [
+      {
+       "name": "Funchal (old town, Mercado dos Lavradores)",
+       "lat": 32.6474,
+       "lng": -16.9068
+      },
+      {
+       "name": "Monte (cable car, Monte Palace Gardens)",
+       "lat": 32.6801,
+       "lng": -16.9054
+      },
+      {
+       "name": "Porto Moniz (natural lava pools)",
+       "lat": 32.8607,
+       "lng": -17.1706
+      },
+      {
+       "name": "Seixal",
+       "lat": 32.8283,
+       "lng": -17.05
+      },
+      {
+       "name": "São Vicente",
+       "lat": 32.7986,
+       "lng": -17.0486
+      },
+      {
+       "name": "25 Fontes / Caldeirão Verde levada walk",
+       "lat": 32.7681,
+       "lng": -17.1364
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_madeira-porto-santo-7-10-days",
+   "name": "Madeira + Porto Santo (7-10 days) 🏝️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Madeira core (Funchal + north coast + levada) extended with a Porto Santo beach add-on.",
+   "description": "Madeira's Funchal/north-coast/levada core, plus Porto Santo's golden beach via ferry (seasonal) or short flight.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14a/21 (Islands: Madeira + Azores) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Modeled as two Portugal blocks (Madeira, then Porto Santo) since Porto Santo is a genuinely separate leg reached by ferry/flight, mirroring how other expeditions split a repeating country into multiple blocks (e.g. the Central European Grand Roadtrip's Germany/Italy/Czechia legs). Funchal/north-coast coordinates reused unchanged from the standalone Madeira route (batch 14a) for consistency. No pre-existing Route Builder expedition covers Madeira/Porto Santo, so no collision beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_madeira-porto-santo-7-10-days",
+    "name": "Madeira + Porto Santo (7-10 days) 🏝️",
+    "stops": 7,
+    "km_in_route": 180,
+    "km_from_nl": 3640,
+    "km_back_to_nl": 3550,
+    "km_by_country": {
+     "PT": 180
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PT",
+     "country": "Portugal",
+     "days": 6,
+     "budget": 372,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Entry: easyJet and Transavia fly direct year-round from Amsterdam to Funchal; TUI fly seasonally. Same Madeira core as the standalone Madeira route: Funchal (Monte cable car/toboggan, Mercado dos Lavradores, old town) plus a rental-car loop of the north coast (Porto Moniz, Seixal, São Vicente) and a levada walk. A Dutch driving license is valid (EU/Schengen). Season: mild year-round (18-25°C); best April-June or September-October; avoid August (wildfire risk). Budget ~€70-85/day. Web check (2026-08): the Monte cable car is roughly €12.50 one-way/€19 return (verify the current price); levadas can close temporarily after rain.",
+     "transport_to_next": "Ferry Lobo Marinho from Funchal to Porto Santo (~2h15) — usually only runs May-October; a short regional-carrier flight (~15-20 min) is the reliable year-round/off-season alternative. Web check (2026-08): confirm the current ferry schedule before relying on it.",
+     "destinations": [
+      {
+       "name": "Funchal (old town, Mercado dos Lavradores)",
+       "lat": 32.6474,
+       "lng": -16.9068
+      },
+      {
+       "name": "Monte (cable car, Monte Palace Gardens)",
+       "lat": 32.6801,
+       "lng": -16.9054
+      },
+      {
+       "name": "Porto Moniz (natural lava pools)",
+       "lat": 32.8607,
+       "lng": -17.1706
+      },
+      {
+       "name": "Seixal",
+       "lat": 32.8283,
+       "lng": -17.05
+      },
+      {
+       "name": "São Vicente",
+       "lat": 32.7986,
+       "lng": -17.0486
+      },
+      {
+       "name": "25 Fontes / Caldeirão Verde levada walk",
+       "lat": 32.7681,
+       "lng": -17.1364
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "PT",
+     "country": "Portugal",
+     "days": 3,
+     "budget": 186,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "2-3 days on Porto Santo for its golden sand beach and a quieter pace than Madeira. Budget ~€70-90/day, slightly higher than Madeira due to import costs and less restaurant competition.",
+     "transport_to_next": "End of this route — return to Funchal (ferry or short flight) and fly home.",
+     "destinations": [
+      {
+       "name": "Vila Baleira / Porto Santo golden beach",
+       "lat": 33.0642,
+       "lng": -16.3439
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_northern-portugal-galicia-7-10-days",
+   "name": "Northern Portugal + Galicia (7-10 days) 🌊",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car throughout — needed for the Guimarães/Braga day trips, Viana do Castelo, and the overland crossing into Galicia.",
+   "description": "Porto's Ribeira and Douro, Guimarães/Braga day trips and Viana do Castelo's coast, crossing overland into Galicia for Santiago de Compostela and the Rías Baixas.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 15a (Iberia combinations) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Both Portugal and Spain are Schengen-internal here — no border control, no EES, on this route. ⚠️ Real overlap, explicitly flagged: on the Portugal side, the Porto/Guimarães/Braga/Viana do Castelo content closely tracks Northern Portugal: Minho (6 days) 🌿 (rbBuildNorthernPortugalMinhoRoute) — that existing route loops back to Porto instead of continuing overland into Galicia. On the Spain side, the Santiago/Rías Baixas/Cíes content closely tracks Galicia: Santiago de Compostela + Coast (6 days) 🐚 (rbBuildGaliciaSantiagoRoute). This new route is essentially those two existing standalone trips joined end-to-end via the Valença-Tui border crossing, not a genuinely new itinerary — logged in ROUTE_SIMILARITY_REVIEW.md per project policy; kept as a distinct route, not merged. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_northern-portugal-galicia-7-10-days",
+    "name": "Northern Portugal + Galicia (7-10 days) 🌊",
+    "stops": 9,
+    "km_in_route": 560,
+    "km_from_nl": 2080,
+    "km_back_to_nl": 1980,
+    "km_by_country": {
+     "PT": 280,
+     "ES": 280
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PT",
+     "country": "Portugal",
+     "days": 5,
+     "budget": 310,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Porto (2-3 days: Ribeira, Vila Nova de Gaia's port wine cellars, a Douro day trip to Pinhão) — Guimarães and Braga as day trips from Porto — Viana do Castelo on the coast, closest to the Spanish border. Entry: direct AMS-Porto (KLM/Transavia). Budget ~€75-85/day, used here at ~€80/day. Season: June-September.",
+     "transport_to_next": "Cross into Spain at the Valença (Portugal)-Tui (Spain) bridge over the Minho river — no border control, fully Schengen-internal, no EES — then on to Santiago de Compostela (~130km/1h45).",
+     "destinations": [
+      {
+       "name": "Porto (Ribeira)",
+       "lat": 41.1405,
+       "lng": -8.6118
+      },
+      {
+       "name": "Vila Nova de Gaia (port wine cellars)",
+       "lat": 41.1333,
+       "lng": -8.6111
+      },
+      {
+       "name": "Pinhão (Douro day trip)",
+       "lat": 41.1897,
+       "lng": -7.5461
+      },
+      {
+       "name": "Guimarães (Paço dos Duques, day trip)",
+       "lat": 41.4419,
+       "lng": -8.2918
+      },
+      {
+       "name": "Braga (Bom Jesus do Monte, day trip)",
+       "lat": 41.5519,
+       "lng": -8.3789
+      },
+      {
+       "name": "Viana do Castelo (Santa Luzia viewpoint)",
+       "lat": 41.6932,
+       "lng": -8.8327
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 4,
+     "budget": 244,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Santiago de Compostela (2 days: the cathedral, Praza do Obradoiro) — a Rías Baixas day trip (Pontevedra, Combarro) — optionally the Cíes Islands ferry if time allows (book ahead, there's a daily visitor cap in high season). Budget ~€75-85/day, used here at ~€80/day. Season: June-September — Galicia is Atlantic/rainy outside summer.",
+     "transport_to_next": "End of this route — fly home from Santiago de Compostela (seasonal direct AMS-Santiago on KLM/Vueling, or via Madrid year-round on Iberia), or back through Porto if reversed.",
+     "destinations": [
+      {
+       "name": "Santiago de Compostela (Praza do Obradoiro)",
+       "lat": 42.8805,
+       "lng": -8.5456
+      },
+      {
+       "name": "Pontevedra / Combarro (Rías Baixas day trip)",
+       "lat": 42.43,
+       "lng": -8.6444
+      },
+      {
+       "name": "Cíes Islands (optional)",
+       "lat": 42.2378,
+       "lng": -8.8994
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_northern-portugal-minho-6-days",
+   "name": "Northern Portugal: Minho (6 days) 🌿",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Direct flight into Porto; train for the city legs, rental car for rural Minho.",
+   "description": "Guimarães, the birthplace of Portugal, Braga's Bom Jesus do Monte, Viana do Castelo's coast and Ponte de Lima, based from Porto.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7b (Iberia: Andorra + Portugal) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately skips the Douro so it doesn't overlap with Porto + Douro + Lisbon (9 days) 🍷 below. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_northern-portugal-minho-6-days",
+    "name": "Northern Portugal: Minho (6 days) 🌿",
+    "stops": 5,
+    "km_in_route": 160,
+    "km_from_nl": 2080,
+    "km_back_to_nl": 2010,
+    "km_by_country": {
+     "PT": 160
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PT",
+     "country": "Portugal",
+     "days": 6,
+     "budget": 372,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Restructured around heritage and coast (Minho), deliberately without a Douro side trip (see Porto + Douro + Lisbon below for that): Porto (2 days) — Guimarães (the birthplace of Portugal, ~45 min) — Braga (Bom Jesus do Monte, ~50 min) — Viana do Castelo (coast, the Santa Luzia viewpoint) — optionally Ponte de Lima (Portugal's oldest town) — back to Porto. Entry: direct AMS-Porto; train for Porto-Braga-Guimarães, a rental car for Viana do Castelo/Ponte de Lima/rural Minho. Budget ~€70-85/day (Portugal's cheapest region). Season: April-October; Minho is Portugal's greenest and wettest region — check autumn/winter rainfall.",
+     "transport_to_next": "End of this route — fly back AMS-Porto direct.",
+     "destinations": [
+      {
+       "name": "Porto",
+       "lat": 41.1405,
+       "lng": -8.6118
+      },
+      {
+       "name": "Guimarães (Paço dos Duques)",
+       "lat": 41.4419,
+       "lng": -8.2918
+      },
+      {
+       "name": "Braga (Bom Jesus do Monte)",
+       "lat": 41.5519,
+       "lng": -8.3789
+      },
+      {
+       "name": "Viana do Castelo (Santa Luzia viewpoint)",
+       "lat": 41.6932,
+       "lng": -8.8327
+      },
+      {
+       "name": "Ponte de Lima (optional)",
+       "lat": 41.77,
+       "lng": -8.5833
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_porto-4-days",
+   "name": "Porto (4 days) 🌉",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Direct flight, city-based throughout with one Douro/heritage day trip by train.",
+   "description": "Porto's Ribeira, Dom Luís I Bridge and Livraria Lello, Vila Nova de Gaia's port wine cellars, a Douro day trip, and Foz do Douro/Matosinhos seafood.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7b (Iberia: Andorra + Portugal) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_porto-4-days",
+    "name": "Porto (4 days) 🌉",
+    "stops": 9,
+    "km_in_route": 250,
+    "km_from_nl": 2080,
+    "km_back_to_nl": 2080,
+    "km_by_country": {
+     "PT": 250
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PT",
+     "country": "Portugal",
+     "days": 4,
+     "budget": 248,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Ribeira, the Dom Luís I Bridge and Sé Cathedral, plus Livraria Lello (day 1) — Vila Nova de Gaia's port wine cellars and a river cruise (day 2) — a Douro day trip by train to Pinhão or Régua, or to Guimarães/Braga instead (day 3) — Foz do Douro/Matosinhos for seafood plus Serralves (day 4). Entry: direct AMS-Porto (KLM/Transavia, ~2h45, ~20-23 flights/week); metro line E from the airport into the centre (~35-45 min). Budget ~€80-90/day. Season: April-June or September-October; July-August is hot and busy, winter is mild but wetter than the south. Web check (2026-08): Porto's tourist tax is €3 pp/night (max 7 nights); Livraria Lello requires a pre-purchased timed-slot ticket — walk-ins are often sold out; historic-centre Airbnb supply is regulated, book early.",
+     "transport_to_next": "End of this route — fly back AMS-Porto direct.",
+     "destinations": [
+      {
+       "name": "Porto (Ribeira)",
+       "lat": 41.1405,
+       "lng": -8.6118
+      },
+      {
+       "name": "Dom Luís I Bridge",
+       "lat": 41.1394,
+       "lng": -8.6089
+      },
+      {
+       "name": "Sé do Porto (cathedral)",
+       "lat": 41.1436,
+       "lng": -8.6109
+      },
+      {
+       "name": "Livraria Lello",
+       "lat": 41.1467,
+       "lng": -8.6146
+      },
+      {
+       "name": "Vila Nova de Gaia (port wine cellars)",
+       "lat": 41.1333,
+       "lng": -8.6111
+      },
+      {
+       "name": "Pinhão (Douro day trip)",
+       "lat": 41.1897,
+       "lng": -7.5461
+      },
+      {
+       "name": "Foz do Douro",
+       "lat": 41.1494,
+       "lng": -8.6789
+      },
+      {
+       "name": "Matosinhos",
+       "lat": 41.1815,
+       "lng": -8.6893
+      },
+      {
+       "name": "Serralves",
+       "lat": 41.1596,
+       "lng": -8.6644
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_porto-douro-lisbon-9-days",
+   "name": "Porto + Douro + Lisbon (9 days) 🍷",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Open-jaw flight (Porto in, Lisbon out, or reversed), scenic train or rental car for the Douro leg.",
+   "description": "Porto's port wine cellars, 2-3 nights in the Douro Valley at Pinhão, and Lisbon, with optional Bucelas/Colares wine detours near Sintra.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7b (Iberia: Andorra + Portugal) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Requires at least 2 nights genuinely sleeping in the Douro itself so it doesn't overlap with Northern Portugal: Minho (6 days) 🌿 or Portugal: North to South (9 days) 🧭 above, which only day-trip the region. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_porto-douro-lisbon-9-days",
+    "name": "Porto + Douro + Lisbon (9 days) 🍷",
+    "stops": 7,
+    "km_in_route": 600,
+    "km_from_nl": 2080,
+    "km_back_to_nl": 2410,
+    "km_by_country": {
+     "PT": 600
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PT",
+     "country": "Portugal",
+     "days": 9,
+     "budget": 558,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Restructured around the wine-region angle: Porto (2-3 days, Vila Nova de Gaia's port wine cellars) — the Douro Valley, 2-3 nights actually staying in Pinhão (quinta visits, a river cruise, the São Leonardo da Galafura viewpoint) — Lisbon (2-3 days, optionally adding the Bucelas/Colares wine regions near Sintra). Rule to stay distinctive: at least 2 nights genuinely sleeping in the Douro itself, not a Porto day trip — otherwise this overlaps with Northern Portugal: Minho above and Portugal: North to South above, which only pass through/day-trip the region. Open-jaw Porto in/Lisbon out; the Douro by scenic train (budget option) or car (for several out-of-the-way quintas) from Porto; the Porto-Lisbon Alfa Pendular fast train (~3h) as an alternative to driving/tolls/parking. Budget ~€95-110/day (quinta visits/tastings at €30-60 per experience push this above Northern Portugal's budget). Season: May-June (green, quiet) or September-October (harvest, atmospheric, but book quintas early); avoid high summer — the Douro interior gets noticeably hotter than the coast (up to the high 30s°C).",
+     "transport_to_next": "End of this route — fly home from Lisbon (or Porto if reversed).",
+     "destinations": [
+      {
+       "name": "Porto (Vila Nova de Gaia)",
+       "lat": 41.1333,
+       "lng": -8.6111
+      },
+      {
+       "name": "Pinhão (Douro Valley, 2-3 nights)",
+       "lat": 41.1897,
+       "lng": -7.5461
+      },
+      {
+       "name": "São Leonardo da Galafura viewpoint",
+       "lat": 41.1584,
+       "lng": -7.6229
+      },
+      {
+       "name": "Peso da Régua",
+       "lat": 41.1621,
+       "lng": -7.7871
+      },
+      {
+       "name": "Lisbon (Baixa)",
+       "lat": 38.7107,
+       "lng": -9.1366
+      },
+      {
+       "name": "Bucelas (optional wine detour)",
+       "lat": 38.9167,
+       "lng": -9.1167
+      },
+      {
+       "name": "Colares (optional wine detour, near Sintra)",
+       "lat": 38.8,
+       "lng": -9.4453
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_portugal-andalusia-10-14-days",
+   "name": "Portugal + Andalusia (10-14 days) 🕌",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Open-jaw flight (Lisbon in, Granada/Málaga out), rental car for the Algarve and Andalusia legs, train usable for Seville-Córdoba-Granada.",
+   "description": "Lisbon and Sintra, the Algarve, then overland into Andalusia for Seville, Córdoba and Granada.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 15a (Iberia combinations) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Both Portugal and Spain are Schengen-internal here — no border control, no EES. ⚠️ Real overlap, explicitly flagged: this route combines three existing standalone trips end-to-end via the Ayamonte-Huelva border crossing rather than being a genuinely new itinerary — Lisbon + Sintra (5 days) 🏰 (rbBuildLisbonSintraRoute), Algarve (6 days) 🏖️ (rbBuildAlgarveRoute), and the Seville/Córdoba/Granada content shared with both Andalusia: Seville + Granada (5 days) 🏰 (rbBuildAndalusiaSevilleGranadaRoute, which omits Córdoba) and the Seville-Córdoba-Granada leg of Andalusia Roadtrip (9 days) 🚗 (rbBuildAndalusiaRoadtripRoute). Also adjacent to Portugal: North to South (9 days) 🧭 (rbBuildPortugalNorthToSouthRoute), which covers the same Lisbon+Sintra+Algarve portion but stays Portugal-only. Logged in ROUTE_SIMILARITY_REVIEW.md per project policy; kept as a distinct route, not merged. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_portugal-andalusia-10-14-days",
+    "name": "Portugal + Andalusia (10-14 days) 🕌",
+    "stops": 10,
+    "km_in_route": 1140,
+    "km_from_nl": 2410,
+    "km_back_to_nl": 2330,
+    "km_by_country": {
+     "PT": 460,
+     "ES": 670
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PT",
+     "country": "Portugal",
+     "days": 7,
+     "budget": 434,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Lisbon + Sintra (3-4 days: Baixa/Alfama, Belém, a full day in Sintra at the Palace of Pena) — south to the Algarve (3 days: Faro, Lagos' Ponta da Piedade, Sagres/Cabo de São Vicente). Entry: direct AMS-Lisbon. Budget ~€85-95/day, used here at ~€90/day. Season: April-June or September-October; avoid July-August.",
+     "transport_to_next": "Cross into Spain at the Ayamonte (Portugal)-Huelva (Spain) bridge over the Guadiana river — no border control, fully Schengen-internal — then on to Seville (~1h15).",
+     "destinations": [
+      {
+       "name": "Lisbon (Baixa)",
+       "lat": 38.7107,
+       "lng": -9.1366
+      },
+      {
+       "name": "Alfama",
+       "lat": 38.7139,
+       "lng": -9.1301
+      },
+      {
+       "name": "Belém Tower",
+       "lat": 38.6916,
+       "lng": -9.216
+      },
+      {
+       "name": "Sintra (Palace of Pena)",
+       "lat": 38.7876,
+       "lng": -9.3905
+      },
+      {
+       "name": "Faro (Ria Formosa)",
+       "lat": 37.0194,
+       "lng": -7.9304
+      },
+      {
+       "name": "Lagos (Ponta da Piedade)",
+       "lat": 37.0836,
+       "lng": -8.6698
+      },
+      {
+       "name": "Sagres / Cabo de São Vicente",
+       "lat": 37.0206,
+       "lng": -8.9773
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 5,
+     "budget": 305,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Seville (2 days: the Alcázar, the Cathedral) → Córdoba (1-2 days: the Mezquita) → Granada (2 days: the Alhambra). Budget ~€85-95/day, used here at ~€90/day. Season: April-June or September-October — avoid July-August, when inland Andalusia regularly hits 40°C+. Web check (2026-08): Alhambra tickets need to be booked 2-3 months ahead — they sell out weeks to months in advance even outside peak season, with no reliable walk-up availability.",
+     "transport_to_next": "End of this route — fly home from Granada or Málaga (the nearest well-connected airport), or via Madrid/Barcelona depending on the return routing.",
+     "destinations": [
+      {
+       "name": "Seville (Alcázar & Cathedral)",
+       "lat": 37.3839,
+       "lng": -5.9903
+      },
+      {
+       "name": "Córdoba (Mezquita)",
+       "lat": 37.8882,
+       "lng": -4.7794
+      },
+      {
+       "name": "Granada (Alhambra)",
+       "lat": 37.1773,
+       "lng": -3.5986
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_portugal-spain-roadtrip-14-days",
+   "name": "Portugal + Spain Roadtrip (14 days) 🚗",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Open-jaw flight (Porto in, Granada/Málaga out), rental car for the whole loop.",
+   "description": "The broadest Iberia combination in this batch: Porto, the Douro, Coimbra, Lisbon + Sintra and the Algarve, then overland into Andalusia for Seville, Córdoba and Granada.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 15a (Iberia combinations) converting EUROPA_TRIP_IDEAS.md into Route Builder content — the broadest of the four combination routes in this sub-batch, combining north AND south. ⚠️ Same-batch internal overlap, explicitly flagged (not a separate ROUTE_SIMILARITY_REVIEW.md pairing, per project policy — these were all built together in batch 15a): this route's Portugal content overlaps Northern Portugal + Galicia (7-10 days) 🌊 (rbBuildNorthernPortugalGaliciaRoute)'s Porto portion, and its Lisbon/Sintra/Algarve/Seville/Córdoba/Granada content is essentially the same as Portugal + Andalusia (10-14 days) 🕌 (rbBuildPortugalAndalusiaRoute) above, just with Porto/Douro/Coimbra prepended. ⚠️ Also real overlap with pre-existing routes, logged in ROUTE_SIMILARITY_REVIEW.md: Portugal Roadtrip (12 days) 🗺️ (rbBuildPortugalRoadtripRoute) shares the same Porto→Douro→Coimbra→Lisbon+Sintra→Algarve backbone (that route additionally covers the Serra da Estrela and Évora/Alentejo, which this one omits in favour of continuing into Spain), and Andalusia Roadtrip (9 days) 🚗 (rbBuildAndalusiaRoadtripRoute) shares the Seville/Córdoba/Granada portion. ⚠️ Sibling-batch flag (factual only, not yet built): a second, more linear Portugal+Spain combination route — 'Porto to Madrid' (Porto→Lisbon→Algarve→Seville→Madrid, no Córdoba/Granada detour) — is planned for sibling sub-batch 15e later in this same Phase 2 batch 15; worth cross-checking the two once that lands, since both are 'Portugal + Spain' combos but with different endpoints and different southern-Spain depth. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_portugal-spain-roadtrip-14-days",
+    "name": "Portugal + Spain Roadtrip (14 days) 🚗",
+    "stops": 10,
+    "km_in_route": 1580,
+    "km_from_nl": 2080,
+    "km_back_to_nl": 2330,
+    "km_by_country": {
+     "PT": 940,
+     "ES": 640
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PT",
+     "country": "Portugal",
+     "days": 9,
+     "budget": 558,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "The broadest version of this batch's Portugal content: Porto (2 days) — the Douro Valley (1 day, Pinhão) — Coimbra (1 day) — Lisbon + Sintra (3 days) — the Algarve (2 days, compressed compared to the standalone 6-day Algarve trip, to fit the wider Iberian loop within 14 days total). Entry: open-jaw Porto in / Granada or Málaga out. Budget ~€85-95/day, used here at ~€90/day. Season: April-June or September-October.",
+     "transport_to_next": "Cross into Spain at the Ayamonte (Portugal)-Huelva (Spain) bridge over the Guadiana river — no border control, fully Schengen-internal — then on to Seville (~1h15).",
+     "destinations": [
+      {
+       "name": "Porto (Ribeira)",
+       "lat": 41.1405,
+       "lng": -8.6118
+      },
+      {
+       "name": "Pinhão (Douro Valley)",
+       "lat": 41.1897,
+       "lng": -7.5461
+      },
+      {
+       "name": "Coimbra (University)",
+       "lat": 40.2076,
+       "lng": -8.4257
+      },
+      {
+       "name": "Lisbon (Baixa)",
+       "lat": 38.7107,
+       "lng": -9.1366
+      },
+      {
+       "name": "Sintra (Palace of Pena)",
+       "lat": 38.7876,
+       "lng": -9.3905
+      },
+      {
+       "name": "Faro (Ria Formosa)",
+       "lat": 37.0194,
+       "lng": -7.9304
+      },
+      {
+       "name": "Lagos (Ponta da Piedade)",
+       "lat": 37.0836,
+       "lng": -8.6698
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 5,
+     "budget": 305,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Seville (2 days) → Córdoba (1 day) → Granada (2 days). Same Andalusian heat warning and Alhambra 2-3 month booking rule as the shorter Portugal + Andalusia item in this same batch. Budget ~€85-95/day, used here at ~€90/day. Season: April-June or September-October. ⚠️ Web check (2026-08): 14 days across 6+ regions (Porto, the Douro, Coimbra, Lisbon/Sintra, the Algarve, Seville, Córdoba, Granada) is ambitious — treat this as a checklist to trim down to 5-6 real stops rather than a literal itinerary, echoing the identical pace warning already logged on Portugal Roadtrip (12 days) 🗺️ above for the Portugal-only version.",
+     "transport_to_next": "End of this route — fly home from Granada or Málaga (the nearest well-connected airport), or via Madrid/Barcelona depending on the return routing.",
+     "destinations": [
+      {
+       "name": "Seville (Alcázar & Cathedral)",
+       "lat": 37.3839,
+       "lng": -5.9903
+      },
+      {
+       "name": "Córdoba (Mezquita)",
+       "lat": 37.8882,
+       "lng": -4.7794
+      },
+      {
+       "name": "Granada (Alhambra)",
+       "lat": 37.1773,
+       "lng": -3.5986
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_portugal-spain-porto-to-madrid-12-days",
+   "name": "Portugal + Spain: Porto to Madrid (12 days) 🚆",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Open-jaw flight (Porto in, Madrid out), rental car or a mix of rental car/AVE train for the Seville-Madrid leg.",
+   "description": "A linear sweep from Porto through Lisbon/Sintra and the Algarve, into Spain via Seville, ending in Madrid — no backtracking.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 15e (Grand European combinations — Pyrenees/Nordic cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. This is the more linear 'Porto to Madrid' combination explicitly flagged as incoming by Portugal + Spain Roadtrip (14 days) 🚗 (rbBuildPortugalSpainRoadtripRoute, batch 15a)'s own notes. Cross-referenced as instructed: that sibling route runs Porto→Douro→Coimbra→Lisbon→Algarve→Seville→Córdoba→Granada and loops back through Andalusia, while this route stays strictly linear (no Douro/Coimbra detour, no Córdoba/Granada loop) and ends in Madrid instead — genuinely different endpoints and different southern-Spain depth, real overlap only on the shared Porto→Lisbon→Algarve→Seville backbone. Also checked against Portugal Roadtrip (12 days) 🗺️ (rbBuildPortugalRoadtripRoute) — that route stays entirely within Portugal (adds the Serra da Estrela and Évora/Alentejo, never crosses into Spain) — genuinely different scope, not a duplicate. Also checked against Spain 💃 (rbBuildSpainRoute, Málaga/Granada/Córdoba/Seville, no Madrid or Porto) and Madrid (4 days) 🖼️ (rbBuildMadridRoute, Madrid + Toledo/Segovia day trips) — both genuinely different, no Porto/Lisbon/Algarve content in either. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_portugal-spain-porto-to-madrid-12-days",
+    "name": "Portugal + Spain: Porto to Madrid (12 days) 🚆",
+    "stops": 6,
+    "km_in_route": 1460,
+    "km_from_nl": 2080,
+    "km_back_to_nl": 1900,
+    "km_by_country": {
+     "PT": 640,
+     "ES": 820
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PT",
+     "country": "Portugal",
+     "days": 8,
+     "budget": 496,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Porto (2 days) — Lisbon + Sintra (3 days) — the Algarve/Lagos (3 days) — a purely linear sweep with no backtracking, deliberately without the Douro/Coimbra/Évora detours of the fuller Portugal Roadtrip (12 days) 🗺️ route or the Córdoba/Granada loop of the broader Portugal + Spain Roadtrip (14 days) 🚗 route (see this route's own notes below for both). Entry: open-jaw AMS-Porto in, ending overland in Madrid for the flight home. Budget ~€90-100/day. Season: April-June or September-October — July-August is too hot in the Algarve and gets extreme further along the route in Seville.",
+     "transport_to_next": "Drive or bus from the Algarve to Seville, Spain (~2h30-3h) — a Schengen border, no formalities.",
+     "destinations": [
+      {
+       "name": "Porto (Ribeira)",
+       "lat": 41.1405,
+       "lng": -8.6118
+      },
+      {
+       "name": "Lisbon (Baixa)",
+       "lat": 38.7107,
+       "lng": -9.1366
+      },
+      {
+       "name": "Sintra (Palace of Pena)",
+       "lat": 38.7876,
+       "lng": -9.3905
+      },
+      {
+       "name": "Algarve / Lagos",
+       "lat": 37.1021,
+       "lng": -8.6743
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 4,
+     "budget": 244,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Seville (2 days, the Alcázar and Cathedral) — Madrid (2 days, the Prado, departure) — deliberately no Córdoba/Granada detour here, unlike the sibling route named above. Budget ~€90-100/day. Madrid-Seville by AVE high-speed train (~2h30) is a realistic alternative to driving the whole leg, if the rental car is dropped off in Seville.",
+     "transport_to_next": "End of this route — fly home from Madrid.",
+     "destinations": [
+      {
+       "name": "Seville (Alcázar & Cathedral)",
+       "lat": 37.3839,
+       "lng": -5.9903
+      },
+      {
+       "name": "Madrid (Prado Museum)",
+       "lat": 40.4138,
+       "lng": -3.6921
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_portugal-roadtrip-12-days",
+   "name": "Portugal Roadtrip (12 days) 🗺️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Open-jaw flight (Porto in, Algarve out, or reversed), rental car for the whole loop.",
+   "description": "A full Portugal loop: Porto, the Douro Valley, Coimbra, the Serra da Estrela, Óbidos/Nazaré, Lisbon + Sintra, Évora/Alentejo and the Algarve.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7b (Iberia: Andorra + Portugal) converting EUROPA_TRIP_IDEAS.md into Route Builder content. The fuller, slower counterpart to Portugal: North to South (9 days) 🧭 above — differs specifically at Coimbra, giving it and the Serra da Estrela/Alentejo real time of their own instead of a brief stop. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_portugal-roadtrip-12-days",
+    "name": "Portugal Roadtrip (12 days) 🗺️",
+    "stops": 11,
+    "km_in_route": 1200,
+    "km_from_nl": 2080,
+    "km_back_to_nl": 2580,
+    "km_by_country": {
+     "PT": 1200
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PT",
+     "country": "Portugal",
+     "days": 12,
+     "budget": 744,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Restructured as the full country loop, deliberately including Central Portugal and the Alentejo: Porto (2 days) — the Douro Valley (1-2 days, lighter than the dedicated wine-region trip above) — Coimbra (1-2 days) — the Serra da Estrela (1-2 days: Torre, Sabugueiro, the Zêzere glacial valley, historic villages) — Óbidos/Nazaré (1 day) — Lisbon + Sintra (2-3 days) — Évora/Alentejo (1-2 days: Roman ruins, the Chapel of Bones) — the Algarve (2-3 days). Open-jaw Porto in/Faro out (or reversed), a rental car for the whole loop — essential outside the Porto-Lisbon-Algarve rail corridor (Serra da Estrela, Alentejo). Same toll notes as Portugal: North to South above. Budget ~€85-95/day on average (more days average out the pricier Lisbon/Algarve/Douro days against the cheaper interior/Alentejo). Season: April-June or September-early October — the Serra da Estrela can hold snow/cold at altitude into May and turns cold again from November; the Alentejo interior regularly tops 35°C in July-August. ⚠️ Pace warning: 12-14 days across 7 regions is ambitious — pick 5-6 stops rather than literally everything, or this turns into a rushed one-night-everywhere trip. This item differs from Portugal: North to South specifically at Coimbra: that item treats it as a brief stop, this one gives Coimbra + the Serra da Estrela + the Alentejo real time of their own.",
+     "transport_to_next": "End of this route — fly home from the Algarve (or Porto if reversed).",
+     "destinations": [
+      {
+       "name": "Porto",
+       "lat": 41.1405,
+       "lng": -8.6118
+      },
+      {
+       "name": "Pinhão (Douro Valley, lighter stop)",
+       "lat": 41.1897,
+       "lng": -7.5461
+      },
+      {
+       "name": "Coimbra",
+       "lat": 40.2076,
+       "lng": -8.4257
+      },
+      {
+       "name": "Serra da Estrela (Torre)",
+       "lat": 40.332,
+       "lng": -7.6108
+      },
+      {
+       "name": "Sabugueiro",
+       "lat": 40.3625,
+       "lng": -7.6069
+      },
+      {
+       "name": "Óbidos",
+       "lat": 39.3604,
+       "lng": -9.1571
+      },
+      {
+       "name": "Nazaré",
+       "lat": 39.6014,
+       "lng": -9.0714
+      },
+      {
+       "name": "Lisbon (Baixa)",
+       "lat": 38.7107,
+       "lng": -9.1366
+      },
+      {
+       "name": "Sintra (Palace of Pena)",
+       "lat": 38.7876,
+       "lng": -9.3905
+      },
+      {
+       "name": "Évora (Roman Temple + Chapel of Bones)",
+       "lat": 38.5714,
+       "lng": -7.9086
+      },
+      {
+       "name": "Algarve / Lagos",
+       "lat": 37.1021,
+       "lng": -8.6743
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_portugal-north-to-south-9-days",
+   "name": "Portugal: North to South (9 days) 🧭",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Open-jaw flight (Porto in, Algarve out, or reversed), rental car throughout.",
+   "description": "A fast north-to-south sweep: Porto, a brief Coimbra stop, Nazaré/Óbidos, Lisbon + Sintra, and the Algarve.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7b (Iberia: Andorra + Portugal) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately treats Coimbra as brief so it complements rather than repeats Central Portugal: Coimbra + Serra da Estrela (6 days) 📚 below, and stays a leaner sweep than Portugal Roadtrip (12 days) 🗺️ and Porto + Douro + Lisbon (9 days) 🍷 also below. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_portugal-north-to-south-9-days",
+    "name": "Portugal: North to South (9 days) 🧭",
+    "stops": 7,
+    "km_in_route": 670,
+    "km_from_nl": 2080,
+    "km_back_to_nl": 2580,
+    "km_by_country": {
+     "PT": 670
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PT",
+     "country": "Portugal",
+     "days": 9,
+     "budget": 558,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Restructured as the fast sweep, deliberately treating Coimbra as a brief stop only (see Central Portugal below for the fuller version): Porto (2 days) — Coimbra (1 day, brief) — Nazaré/Óbidos (1 day) — Lisbon + Sintra (2-3 days) — the Algarve/Lagos (2 days). Open-jaw Porto in/Faro out (or reversed) — expect a one-way rental-car drop fee; driving straight Porto-Faro takes ~5h/560km via the A1/A2 with no stops. Budget ~€85-95/day. Season: April-June or September-October — balances the cooler north against the warm-but-not-scorching south. Web check (2026-08): the A1 Lisbon-Porto toll is ~€22-25 one-way (class 1); the previously electronic-toll-only SCUT motorways (A22 Algarve, A23, A24, and since January 2026 also A25) are now free — a real relief for the southern leg.",
+     "transport_to_next": "End of this route — fly home from the Algarve (or Porto if reversed).",
+     "destinations": [
+      {
+       "name": "Porto",
+       "lat": 41.1405,
+       "lng": -8.6118
+      },
+      {
+       "name": "Coimbra (brief stop)",
+       "lat": 40.2076,
+       "lng": -8.4257
+      },
+      {
+       "name": "Nazaré",
+       "lat": 39.6014,
+       "lng": -9.0714
+      },
+      {
+       "name": "Óbidos",
+       "lat": 39.3604,
+       "lng": -9.1571
+      },
+      {
+       "name": "Lisbon (Baixa)",
+       "lat": 38.7107,
+       "lng": -9.1366
+      },
+      {
+       "name": "Sintra (Palace of Pena)",
+       "lat": 38.7876,
+       "lng": -9.3905
+      },
+      {
+       "name": "Algarve / Lagos",
+       "lat": 37.1021,
+       "lng": -8.6743
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_sao-miguel-azores-5-7-days",
+   "name": "São Miguel (Azores) (5-7 days) 🏝️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Single-island Azores trip based around Ponta Delgada, the Sete Cidades crater lakes and Furnas.",
+   "description": "Ponta Delgada, the Sete Cidades crater lakes, Furnas thermal springs/cozido, and optionally Lagoa do Fogo.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14a/21 (Islands: Madeira + Azores) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Single-block route — single-island focus, the differentiator vs. the broader multi-island Azores routes below. No pre-existing Route Builder expedition covers the Azores, so no collision beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_sao-miguel-azores-5-7-days",
+    "name": "São Miguel (Azores) (5-7 days) 🏝️",
+    "stops": 4,
+    "km_in_route": 90,
+    "km_from_nl": 3730,
+    "km_back_to_nl": 3710,
+    "km_by_country": {
+     "PT": 90
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PT",
+     "country": "Portugal",
+     "days": 6,
+     "budget": 372,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "Entry: Transavia flies direct seasonally from Amsterdam to Ponta Delgada; off-season needs a Lisbon connection on TAP. 2 days in Ponta Delgada town and harbour, 1-2 days at the Sete Cidades crater lakes, 2 days at Furnas for the thermal springs and cozido (a stew traditionally cooked underground in volcanic heat) — optionally add Lagoa do Fogo. A rental car is usually needed. Budget ~€75-90/day, a bit higher than mainland Portugal given the remote location. Season: May-September for the best weather, though the Azores stay changeable year-round — always pack rain gear; June-September for whale/dolphin watching. Web check (2026-08): book a rental car well ahead (limited supply, fills up fast in summer); reserve the Furnas cozido lunch ahead.",
+     "transport_to_next": "End of this route — fly home from Ponta Delgada.",
+     "destinations": [
+      {
+       "name": "Ponta Delgada (town, harbour)",
+       "lat": 37.7412,
+       "lng": -25.6756
+      },
+      {
+       "name": "Sete Cidades (crater lakes)",
+       "lat": 37.8656,
+       "lng": -25.7847
+      },
+      {
+       "name": "Furnas (thermal springs, cozido)",
+       "lat": 37.7847,
+       "lng": -25.3208
+      },
+      {
+       "name": "Lagoa do Fogo",
+       "lat": 37.7683,
+       "lng": -25.4667
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

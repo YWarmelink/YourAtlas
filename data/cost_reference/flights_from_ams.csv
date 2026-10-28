@@ -48,3 +48,41 @@ PMO,Palermo,IT,back,120,easyJet/ITA/Transavia,WebSearch 2026-10-28 (Skyscanner E
 MLA,Malta,MT,out,120,KM Malta/easyJet/Transavia direct,WebSearch 2026-10-28 (Skyscanner EUR 67 floor; KM Malta from EUR 153-174; Trip.com USD 76),2026-10-28,medium,same as back fare
 VCE,Venice,IT,out,90,easyJet/KLM/Transavia,estimate from back fare (batch 4; no separate search),2026-10-28,low,est
 CTA,Catania,IT,back,140,KLM/Transavia/ITA,reuse out fare (batch 4),2026-10-28,low,est
+BCN,Barcelona,ES,out,110,KLM/Vueling/Transavia/easyJet direct,"WebSearch 2026-10-28: Expedia/Kayak floors EUR 80-85; typical between budget and KLM",2026-10-28,medium,
+BCN,Barcelona,ES,back,110,same,same as in,2026-10-28,medium,
+TLS,Toulouse,FR,out,150,KLM direct / connecting,"WebSearch 2026-10-28: Expedia IE EUR 129 floor; Omio GBP 203-269",2026-10-28,medium,
+TLS,Toulouse,FR,back,150,same,same as in,2026-10-28,medium,
+BIO,Bilbao,ES,out,110,Vueling/KLM direct,"WebSearch 2026-10-28: Skyscanner EUR 75; Kayak USD 84; Expedia USD 126",2026-10-28,medium,
+BIO,Bilbao,ES,back,110,same,same as in,2026-10-28,medium,
+SCQ,Santiago de Compostela,ES,out,140,KLM/Vueling seasonal direct; Iberia via MAD,"WebSearch 2026-10-28: Expedia USD 150, Kayak USD 128, Omio GBP 101",2026-10-28,low,seasonal route
+SCQ,Santiago de Compostela,ES,back,130,KLM/Vueling (seasonal direct) or via hub,WebSearch 2026-10-28 (Travelocity USD 127; Farecompare avg USD 141; Omio GBP 108),2026-10-28,medium,
+OVD,Oviedo/Asturias,ES,back,140,Vueling/KLM,"WebSearch 2026-10-28: Expedia USD 127, eDreams USD 104",2026-10-28,low,
+PMI,Palma de Mallorca,ES,out,115,Transavia/easyJet direct,"WebSearch 2026-10-28: Travelocity USD 85-88 floors; easyJet EUR 146-164 for specific dates",2026-10-28,medium,
+PMI,Palma de Mallorca,ES,back,115,same,same as in,2026-10-28,medium,
+MAH,Menorca,ES,out,140,Transavia seasonal direct,"WebSearch 2026-10-28: Momondo EUR 140-149",2026-10-28,low,limited off-season
+MAH,Menorca,ES,back,140,same,same as in,2026-10-28,low,
+IBZ,Ibiza,ES,out,110,easyJet/Transavia/Vueling seasonal,"WebSearch 2026-10-28: Kayak EUR 82, Expedia USD 86",2026-10-28,medium,
+IBZ,Ibiza,ES,back,110,same,same as in,2026-10-28,medium,
+MAD,Madrid,ES,out,130,KLM/Iberia/Air Europa/easyJet,"WebSearch 2026-10-28: Expedia IE EUR 107-111; Orbitz USD 112",2026-10-28,medium,
+MAD,Madrid,ES,back,130,same,same as in,2026-10-28,medium,
+TFS,Tenerife South,ES,out,120,Transavia/easyJet/TUI direct,"WebSearch 2026-10-28: Expedia USD 92-94, Kayak USD 83",2026-10-28,medium,
+TFS,Tenerife South,ES,back,120,same,same as in,2026-10-28,medium,
+LPA,Gran Canaria,ES,out,120,Transavia/easyJet direct,"WebSearch 2026-10-28: Expedia USD 92-97, Kayak USD 91",2026-10-28,medium,
+LPA,Gran Canaria,ES,back,120,same,same as in,2026-10-28,medium,
+ACE,Lanzarote,ES,out,120,Transavia/easyJet/TUI direct,"WebSearch 2026-10-28: ebookers EUR 82, Skyscanner EUR 134",2026-10-28,medium,
+FUE,Fuerteventura,ES,back,120,Transavia/easyJet/TUI,not searched: estimated from other Canary fares,2026-10-28,low,
+OPO,Porto,PT,out,105,Transavia/TAP direct,"WebSearch 2026-10-28: Expedia IE EUR 83, Skyscanner floor EUR 69",2026-10-28,medium,
+VLC,Valencia,ES,out,100,KLM/Vueling/Transavia/easyJet direct,WebSearch 2026-10-28 (Kupi USD 72; Expedia USD 76-86),2026-10-28,medium,typical above floors
+VLC,Valencia,ES,back,90,KLM/Vueling/Transavia/easyJet direct,estimate from out fare (Ratepunk median USD 58 for this direction),2026-10-28,low,est
+FAO,Faro,PT,out,120,Transavia/easyJet direct,WebSearch 2026-10-28 (Ratepunk return median USD 235; Lufthansa USD 197-254),2026-10-28,low,one-way estimated from return median
+FAO,Faro,PT,back,110,Transavia/easyJet direct,estimate (Expedia floor USD 51),2026-10-28,low,est
+PDL,Ponta Delgada,PT,out,150,Transavia direct (seasonal) / TAP via Lisbon,WebSearch 2026-10-28 (Kayak EUR 99 floor; Expedia USD 143; Travelocity USD 208),2026-10-28,low,floor-heavy; off-season via Lisbon higher
+PDL,Ponta Delgada,PT,back,140,Transavia direct (seasonal) / TAP via Lisbon,WebSearch 2026-10-28 (Expedia USD 112 floor),2026-10-28,low,
+OPO,Porto,PT,back,120,Transavia/KLM direct,WebSearch 2026-10-28 (Ratepunk lowest EUR 125 Transavia),2026-10-28,medium,
+LIS,Lisbon,PT,out,110,TAP/KLM/Transavia/easyJet direct,WebSearch 2026-10-28 (Skyscanner EUR 73 floor; Expedia USD 105 from; lastminute GBP 91),2026-10-28,medium,typical above floors
+LIS,Lisbon,PT,back,105,TAP/KLM/Transavia/easyJet direct,estimate from out fare (batch 6),2026-10-28,low,est
+FNC,Funchal,PT,out,130,easyJet/Transavia direct,WebSearch 2026-10-28 (Trip.com USD 102; Orbitz USD 103; ebookers EUR 104 floors),2026-10-28,medium,typical above floors
+FNC,Funchal,PT,back,120,easyJet/Transavia direct,estimate from out fare (batch 6),2026-10-28,low,est
+AGP,Malaga,ES,back,110,KLM/easyJet/Transavia/Vueling,reuse AGP out fare (flights_from_ams.csv; batch 6),2026-10-28,medium,est
+HOR,Horta (Faial Azores),PT,back,200,SATA Horta-Lisbon + Lisbon-AMS,estimate: HOR-LIS ~EUR 90 + LIS-AMS ~EUR 105 (no through fare searched),2026-10-28,low,est
+TER,Terceira (Azores),PT,back,200,SATA via Lisbon or via Ponta Delgada,estimate: TER-LIS/PDL ~EUR 80-90 + onward to AMS (no through fare searched),2026-10-28,low,est

@@ -1,0 +1,1795 @@
+{
+ "batch": 5,
+ "group": "Iberia",
+ "routes": [
+  {
+   "id": "gt_seed_andorra-4-days",
+   "name": "Andorra (4 days) 🏔️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into Barcelona (or Girona), then bus or rental car into Andorra — no airport of its own.",
+   "description": "Andorra la Vella's Casa de la Vall and Caldea spa, Ordino's Casa d'Areny-Plandolit museum, and Canillo's Roc del Quer viewpoint and Sant Joan de Caselles.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7b (Iberia: Andorra + Portugal) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_andorra-4-days",
+    "name": "Andorra (4 days) 🏔️",
+    "stops": 6,
+    "km_in_route": 20,
+    "km_from_nl": 1430,
+    "km_back_to_nl": 1420,
+    "km_by_country": {
+     "AD": 20
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "AD",
+     "country": "Andorra",
+     "days": 4,
+     "budget": 300,
+     "dailyRate": 75,
+     "carInDailyRate": false,
+     "notes": "Andorra la Vella (Casa de la Vall, the Caldea spa, the main shopping street) — Ordino (Museu Casa d'Areny-Plandolit) — Canillo (the Roc del Quer viewpoint, Sant Joan de Caselles) — optionally Encamp. Andorra has no airport of its own — fly AMS-Barcelona (daily KLM/Transavia/Vueling, the most reliable option), then bus (Alsa/Novatel, ~3h) or rental car (~2h15, ~200km); Girona is closer (~1.5h) but has only ~2 direct Transavia flights/week from AMS, making it less practical. Driving the whole way from the Netherlands (~1,360km/13h40) is too far for a long weekend. Budget ~€110-130/day (Andorra is pricier than Portugal, with few hostels). Season: May-June or September for hiking weather without full ski-season prices; the high trails (Vall del Madriu) can hold snow into June. Web check (2026-08): Andorra's general VAT (IGI) is only 4.5% — it applies automatically to everyone at every shop, no separate tax-free form needed — a real saving on electronics/perfume/alcohol/ski gear (10-25%). Bring your passport — spot checks at the French/Spanish border do happen.",
+     "transport_to_next": "End of this route — bus or rental car back to Barcelona or Girona for the flight home.",
+     "destinations": [
+      {
+       "name": "Andorra la Vella (Casa de la Vall)",
+       "lat": 42.5063,
+       "lng": 1.5218
+      },
+      {
+       "name": "Escaldes-Engordany (Caldea spa)",
+       "lat": 42.5106,
+       "lng": 1.5394
+      },
+      {
+       "name": "Ordino (Museu Casa d'Areny-Plandolit)",
+       "lat": 42.5551,
+       "lng": 1.5332
+      },
+      {
+       "name": "Canillo (Roc del Quer viewpoint)",
+       "lat": 42.5691,
+       "lng": 1.5975
+      },
+      {
+       "name": "Sant Joan de Caselles",
+       "lat": 42.5735,
+       "lng": 1.6027
+      },
+      {
+       "name": "Encamp (optional)",
+       "lat": 42.5359,
+       "lng": 1.5809
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_andorra-french-pyrenees-ariege-6-days",
+   "name": "Andorra + French Pyrenees: Ariège (6 days) ♨️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car throughout — either fly into Toulouse and drive the whole loop, or fly into Barcelona/Girona as with the standalone Andorra trip.",
+   "description": "Andorra la Vella and Ordino, then the French Ariège side: Ax-les-Thermes' thermal baths, Foix's medieval castle and the Grotte de Niaux prehistoric cave.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7b (Iberia: Andorra + Portugal) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Split into a French/Ariège side and a Spanish/Catalan side (see Andorra + Spanish Pyrenees (9 days) 🥾 below) rather than the same region driven more slowly — two genuinely different areas (thermal baths/caves vs. high mountains/national park). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_andorra-french-pyrenees-ariege-6-days",
+    "name": "Andorra + French Pyrenees: Ariège (6 days) ♨️",
+    "stops": 7,
+    "km_in_route": 120,
+    "km_from_nl": 1430,
+    "km_back_to_nl": 1390,
+    "km_by_country": {
+     "AD": 30,
+     "FR": 100
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "AD",
+     "country": "Andorra",
+     "days": 3,
+     "budget": 225,
+     "dailyRate": 75,
+     "carInDailyRate": false,
+     "notes": "Andorra la Vella and Ordino, then east via Pas de la Casa toward the French border. Entry options: fly AMS-Barcelona or AMS-Girona and drive in (see the standalone Andorra (4 days) route for the details), or fly KLM's direct AMS-Toulouse route, rent a car there and drive the whole loop without touching Spain at all. A rental car is essential either way. Budget ~€120-125/day for these Andorra-town days (no hostel scene here).",
+     "transport_to_next": "Drive to Ax-les-Thermes, France via Pas de la Casa and the Port d'Envalira pass (or the year-round Envalira tunnel) — a short overland hop, no border formalities within Schengen.",
+     "destinations": [
+      {
+       "name": "Andorra la Vella (Casa de la Vall)",
+       "lat": 42.5063,
+       "lng": 1.5218
+      },
+      {
+       "name": "Ordino",
+       "lat": 42.5551,
+       "lng": 1.5332
+      },
+      {
+       "name": "Pas de la Casa",
+       "lat": 42.5427,
+       "lng": 1.7339
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "FR",
+     "country": "France",
+     "days": 3,
+     "budget": 216,
+     "dailyRate": 72,
+     "carInDailyRate": false,
+     "notes": "Restructured as the French/Ariège side of the old combined Andorra+Pyrenees idea: Ax-les-Thermes (thermal baths, ~45 min from the border) — Foix (medieval castle) — Tarascon-sur-Ariège (the Grotte de Niaux prehistoric cave). Ends back toward Andorra, or continue on to Toulouse for the flight home. Budget ~€85-90/day (rural French pension €70-90, food €30-35, the Ax spa €25-40 — cheaper than staying in Andorra town, though the spa visit keeps it from dropping further). Season: June-September — the high Port d'Envalira pass realistically runs open June-October, with the year-round Envalira tunnel as a fallback outside that window. Web check (2026-08): watch for 2026 reports of occasional closures on the French N20 near the border (rockfall) — check the current status close to your travel date.",
+     "transport_to_next": "End of this route — drive back toward Andorra, or on to Toulouse for the flight home.",
+     "destinations": [
+      {
+       "name": "Ax-les-Thermes (thermal baths)",
+       "lat": 42.7211,
+       "lng": 1.8367
+      },
+      {
+       "name": "Foix (medieval castle)",
+       "lat": 42.9639,
+       "lng": 1.6053
+      },
+      {
+       "name": "Tarascon-sur-Ariège",
+       "lat": 42.8461,
+       "lng": 1.6008
+      },
+      {
+       "name": "Grotte de Niaux (prehistoric cave)",
+       "lat": 42.7947,
+       "lng": 1.6067
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_andalusia-roadtrip-9-days",
+   "name": "Andalusia Roadtrip (9 days) 🚗",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Direct flight into Málaga, rental car for the full circular loop.",
+   "description": "A circular Andalusia road trip: Málaga, Ronda, Cádiz, Jerez de la Frontera, Seville, Córdoba and Granada.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_andalusia-roadtrip-9-days",
+    "name": "Andalusia Roadtrip (9 days) 🚗",
+    "stops": 7,
+    "km_in_route": 680,
+    "km_from_nl": 2430,
+    "km_back_to_nl": 2330,
+    "km_by_country": {
+     "ES": 680
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 9,
+     "budget": 549,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Málaga (fly in) → Ronda → Cádiz/Jerez de la Frontera → Seville → Córdoba → Granada → back to Málaga. A circular route, ~1,040km, with no backtracking. Entry: direct AMS-Málaga (Transavia/easyJet/Vueling/KLM/Ryanair, ~3h, ~97 flights/week — the cheapest and best-connected Andalusian airport), rental car in Málaga for the whole loop. Budget ~€95/day + €30-40/day rental car. Season: April-June or September-November is essential — the same heat warning as the Seville+Granada trip above, amplified because a road trip means more time outdoors and driving during the day (Córdoba/Seville regularly hit 40°C+, with 2026 forecasts up to 47°C during heatwaves). Web check (2026-08): same Alhambra booking rule as above (2-3 months ahead); this loop is mostly toll-free (the AP-7 Costa del Sol stretch is free).",
+     "transport_to_next": "End of this route — fly back AMS-Málaga direct.",
+     "destinations": [
+      {
+       "name": "Málaga (fly in)",
+       "lat": 36.7213,
+       "lng": -4.4214
+      },
+      {
+       "name": "Ronda",
+       "lat": 36.7466,
+       "lng": -5.1652
+      },
+      {
+       "name": "Cádiz",
+       "lat": 36.5297,
+       "lng": -6.2923
+      },
+      {
+       "name": "Jerez de la Frontera",
+       "lat": 36.685,
+       "lng": -6.1261
+      },
+      {
+       "name": "Seville",
+       "lat": 37.3891,
+       "lng": -5.9845
+      },
+      {
+       "name": "Córdoba",
+       "lat": 37.8882,
+       "lng": -4.7794
+      },
+      {
+       "name": "Granada",
+       "lat": 37.1773,
+       "lng": -3.5986
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_andalusia-seville-granada-5-days",
+   "name": "Andalusia: Seville + Granada (5 days) 🏰",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Flight in, train between the two cities (Seville-Granada ~3h).",
+   "description": "Seville's Alcázar and Cathedral, and Granada's Alhambra — Andalusia's two great Moorish capitals.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_andalusia-seville-granada-5-days",
+    "name": "Andalusia: Seville + Granada (5 days) 🏰",
+    "stops": 2,
+    "km_in_route": 280,
+    "km_from_nl": 2410,
+    "km_back_to_nl": 2330,
+    "km_by_country": {
+     "ES": 280
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 5,
+     "budget": 305,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Just the two capitals, Seville and Granada — no wider Andalusia loop here (see the Andalusia Roadtrip below for that). Entry: fly to Málaga or Seville (no direct NL flight found to Seville or Granada themselves — check seasonal routes) or connect via Madrid/Barcelona; train Seville-Granada ~3h. Season: March-May or October-November — avoid July-August, when inland Andalusia regularly hits 40°C+ and Córdoba/Seville/Granada/Jaén rank among Europe's hottest cities (2026 already saw orange heat alerts). Budget ~€85/day. Web check (2026-08): Alhambra tickets need to be booked 2-3 months ahead — they sell out weeks to months in advance even outside peak season (tour groups and school trips fill much of the allocation), there's no reliable walk-up/box-office availability.",
+     "transport_to_next": "End of this route — fly home from Málaga, Seville or via Madrid/Barcelona depending on the inbound routing.",
+     "destinations": [
+      {
+       "name": "Seville (Alcázar & Cathedral)",
+       "lat": 37.3839,
+       "lng": -5.9903
+      },
+      {
+       "name": "Granada (Alhambra)",
+       "lat": 37.1761,
+       "lng": -3.5881
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_andorra-spanish-pyrenees-grand-circuit-9-days",
+   "name": "Andorra + Spanish Pyrenees: Grand Circuit (9 days) 🏔️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into Barcelona or Girona, rental car for the whole loop — public transport is thin in these valleys.",
+   "description": "Andorra's Vall del Madriu, then the Spanish/Catalan Pyrenees: La Seu d'Urgell, Cerdanya/Puigcerdà, Vielha/Val d'Aran and Aigüestortes i Estany de Sant Maurici National Park, looping back via Ripoll.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 15e (Grand European combinations — Pyrenees/Nordic cluster) converting EUROPA_TRIP_IDEAS.md into Route Builder content. ⚠️⚠️ Near-total overlap, explicitly flagged as the closest pair in this whole sub-batch (same relationship pattern as Austria + Slovenia via Grossglockner (7-10 days) 🏔️ vs. Austria + Slovenia (9 days) 🏝️ in batch 15c): this route's stops, day split (3 Andorra + 6 Spain) and even the ~€100-105/day trip-wide budget are essentially identical to the pre-existing Andorra + Spanish Pyrenees (9 days) 🥾 (rbBuildAndorraSpanishPyreneesRoute, batch 7b) — the source document appears to record the same underlying trip idea twice, once in its Iberia section and again in its 'Grote Europese combinaties' (Grand European combinations) section. Kept as a distinct route per project policy, not merged/deleted — given a deliberately distinct function name and title ('Grand Circuit'). The one genuine addition here versus the older route: a corrected Andorra Schengen/EU-status note — Andorra is neither an EU nor a Schengen member, it just has a de facto open border with occasional spot passport checks; the older route's transport note simply said 'no formalities within Schengen', which is imprecise for a country that isn't actually in Schengen. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_andorra-spanish-pyrenees-grand-circuit-9-days",
+    "name": "Andorra + Spanish Pyrenees: Grand Circuit (9 days) 🏔️",
+    "stops": 10,
+    "km_in_route": 430,
+    "km_from_nl": 1430,
+    "km_back_to_nl": 1460,
+    "km_by_country": {
+     "AD": 20,
+     "ES": 410
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "AD",
+     "country": "Andorra",
+     "days": 3,
+     "budget": 225,
+     "dailyRate": 75,
+     "carInDailyRate": false,
+     "notes": "Andorra la Vella, Ordino, and a hike into the Vall del Madriu-Perafita-Claror (Andorra's only UNESCO World Heritage site). Entry: fly AMS-Barcelona or AMS-Girona, rental car for the whole loop — public transport is thin in these valleys. Budget ~€120-125/day. Web check (2026-08): Andorra is neither an EU nor a Schengen member, but runs a de facto open border with both France and Spain — no fixed control posts on the small mountain roads, though random/spot passport checks do happen occasionally; carry an EU ID card or passport for the whole route, not just this leg.",
+     "transport_to_next": "Drive to La Seu d'Urgell, Spain — a short overland hop, in practice frictionless, though technically an EU/Schengen-adjacent crossing given Andorra's status (see the webcheck note above).",
+     "destinations": [
+      {
+       "name": "Andorra la Vella (Casa de la Vall)",
+       "lat": 42.5063,
+       "lng": 1.5218
+      },
+      {
+       "name": "Ordino",
+       "lat": 42.5551,
+       "lng": 1.5332
+      },
+      {
+       "name": "Vall del Madriu-Perafita-Claror (hike)",
+       "lat": 42.4926,
+       "lng": 1.5665
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 6,
+     "budget": 366,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "La Seu d'Urgell (cathedral town) — the Cerdanya/Puigcerdà valley — Vielha/Val d'Aran via the Port de la Bonaigua pass — Aigüestortes i Estany de Sant Maurici National Park (from Boí or Espot) — back via Ripoll toward Barcelona/Girona. Rental car for the whole loop. Budget ~€90/day (pulled up to a ~€100-105/day trip-wide average once combined with the pricier Andorra leg). Season: June-September — a summer-only route in practice. Web check (2026-08): Aigüestortes NP bans private vehicles inside the park — a mandatory taxi/4x4 shuttle from Boí or Espot, book ahead in July-August; the Port de la Bonaigua closes with snow roughly November-April.",
+     "transport_to_next": "End of this route — drive to Barcelona or Girona for the flight home.",
+     "destinations": [
+      {
+       "name": "La Seu d'Urgell (cathedral)",
+       "lat": 42.3585,
+       "lng": 1.4614
+      },
+      {
+       "name": "Cerdanya / Puigcerdà",
+       "lat": 42.4331,
+       "lng": 1.9284
+      },
+      {
+       "name": "Vielha (Val d'Aran)",
+       "lat": 42.7027,
+       "lng": 0.7966
+      },
+      {
+       "name": "Port de la Bonaigua (pass)",
+       "lat": 42.7228,
+       "lng": 0.986
+      },
+      {
+       "name": "Boí (Aigüestortes NP shuttle)",
+       "lat": 42.52,
+       "lng": 0.8375
+      },
+      {
+       "name": "Espot (Aigüestortes NP shuttle)",
+       "lat": 42.5766,
+       "lng": 0.9591
+      },
+      {
+       "name": "Ripoll",
+       "lat": 42.1997,
+       "lng": 2.1904
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_asturias-cantabria-6-days",
+   "name": "Asturias + Cantabria (6 days) 🌲",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Fly into Bilbao or Asturias/Oviedo, rental car essential throughout.",
+   "description": "Cantabria and Asturias: Santander, Santillana del Mar, Comillas' El Capricho, the Picos de Europa and Oviedo/Gijón.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_asturias-cantabria-6-days",
+    "name": "Asturias + Cantabria (6 days) 🌲",
+    "stops": 7,
+    "km_in_route": 270,
+    "km_from_nl": 1520,
+    "km_back_to_nl": 1620,
+    "km_by_country": {
+     "ES": 270
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 6,
+     "budget": 366,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Santander (1-2 days: the Magdalena Peninsula, the old town) → Santillana del Mar (a medieval village, with the Altamira cave museum nearby) → Comillas (Gaudí's El Capricho) → the Picos de Europa (based in Potes, with the Fuente Dé cable car) → Oviedo/Gijón (Asturias) as a finale. There's no direct AMS-Santander flight (connect via Barcelona or Madrid); the best option is a direct AMS-Bilbao flight (much more frequent) and driving east, or a direct AMS-Asturias/Oviedo flight (KLM only, ~2h15, ~6 flights/week) and driving west. Budget ~€80/day. Season: June-September — this is 'Green Spain', cooler and rainier than the south year-round, which is actually pleasant in summer while the rest of Spain scorches. Web check (2026-08): a rental car is essential (public transport is thin around the Picos de Europa and coastal villages); the Fuente Dé cable car has capacity limits and long waits in August — go early in the morning.",
+     "transport_to_next": "End of this route — drive back to Bilbao or Asturias airport for the flight home.",
+     "destinations": [
+      {
+       "name": "Santander (Magdalena Peninsula)",
+       "lat": 43.4623,
+       "lng": -3.8099
+      },
+      {
+       "name": "Santillana del Mar",
+       "lat": 43.3897,
+       "lng": -4.1097
+      },
+      {
+       "name": "Comillas (El Capricho)",
+       "lat": 43.3856,
+       "lng": -4.2919
+      },
+      {
+       "name": "Picos de Europa (Potes)",
+       "lat": 43.1553,
+       "lng": -4.6236
+      },
+      {
+       "name": "Fuente Dé (cable car)",
+       "lat": 43.1439,
+       "lng": -4.8142
+      },
+      {
+       "name": "Oviedo",
+       "lat": 43.3619,
+       "lng": -5.8494
+      },
+      {
+       "name": "Gijón",
+       "lat": 43.5322,
+       "lng": -5.6611
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_balearic-islands-7-10-days",
+   "name": "Balearic Islands (7-10 days) 🏝️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "The broadest multi-island version — Mallorca, Menorca and Ibiza, with an optional Formentera day trip.",
+   "description": "Mallorca's Serra de Tramuntana, Menorca's Ciutadella/Mahón, and Ibiza Town/Dalt Vila, with an optional Formentera day trip.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14b/21 (Islands: Canary Islands + Balearics) converting EUROPA_TRIP_IDEAS.md into Route Builder content. The differentiator vs. the combos above — widest multi-island version, incl. optional Formentera (modeled as a day-trip note on the Ibiza leg rather than its own block, since the Dutch source treats it as an optional add-on, not a dedicated multi-day leg). Modeled as three Spain blocks (Mallorca, Menorca, Ibiza); Mallorca coordinates reused from batch 7a's standalone Serra de Tramuntana route, Menorca/Ibiza coordinates reused from the standalone routes above, all for consistency. No pre-existing Route Builder expedition covers this combination, so no collision beyond confirming the route name is unused. Eco-tax applies separately per island. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_balearic-islands-7-10-days",
+    "name": "Balearic Islands (7-10 days) 🏝️",
+    "stops": 7,
+    "km_in_route": 560,
+    "km_from_nl": 1830,
+    "km_back_to_nl": 1940,
+    "km_by_country": {
+     "ES": 560
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 3,
+     "budget": 183,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Entry: direct AMS-PMI (Transavia, ~2h25, frequent). 3 days based in Palma for a shortened Serra de Tramuntana taste (Valldemossa, Deià, Sóller). Budget ~€85-110/day average across this route, plus inter-island ferries/flights (booked and planned separately, not folded into the per-day figure).",
+     "transport_to_next": "Ferry Palma-Ciutadella or Palma-Mahón. Web check (2026-08): check the current Mallorca-Menorca ferry frequency outside high season.",
+     "destinations": [
+      {
+       "name": "Palma (base)",
+       "lat": 39.5696,
+       "lng": 2.6502
+      },
+      {
+       "name": "Valldemossa",
+       "lat": 39.7098,
+       "lng": 2.6228
+      },
+      {
+       "name": "Deià",
+       "lat": 39.7481,
+       "lng": 2.6478
+      },
+      {
+       "name": "Sóller",
+       "lat": 39.7662,
+       "lng": 2.7147
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 3,
+     "budget": 183,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "2-3 days between Ciutadella and Mahón on Menorca. Budget ~€85-110/day average.",
+     "transport_to_next": "Ferry or short flight on to Ibiza (multiple operators, varies by route).",
+     "destinations": [
+      {
+       "name": "Ciutadella",
+       "lat": 40,
+       "lng": 3.8388
+      },
+      {
+       "name": "Mahón",
+       "lat": 39.8885,
+       "lng": 4.2658
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 2,
+     "budget": 122,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "2 days in Ibiza Town/Dalt Vila, with an optional Formentera day trip by ferry from Ibiza (~30 min, frequent, roughly €40-60 return) if there's a spare day. Budget ~€85-110/day average. Season: May-June or September. Web check (2026-08): eco-tax applies per island — plan and book the multiple inter-island ferries/flights ahead; check the current visitor-cap discussion for updates, no hard legal limit yet as of 2026 but growing political pressure. Large-scale overtourism protests hit Mallorca/Ibiza in summer 2025 and again in July 2026 (~30,000 demonstrators in Palma specifically), against a record 19 million Balearic visitors in 2025 — expect crowding/irritation in hotspots July-August and occasional demonstrations/traffic disruption, especially around Palma.",
+     "transport_to_next": "End of this route — fly home from Ibiza, or back via Palma.",
+     "destinations": [
+      {
+       "name": "Ibiza Town / Dalt Vila (UNESCO old town)",
+       "lat": 38.9067,
+       "lng": 1.4327
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_barcelona-4-days",
+   "name": "Barcelona (4 days) 🎨",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Direct flight, city-based throughout — no rental car needed.",
+   "description": "Gaudí's Barcelona: the Gothic Quarter, Sagrada Família, Park Güell, Barceloneta beach and Montjuïc, all within the city itself.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_barcelona-4-days",
+    "name": "Barcelona (4 days) 🎨",
+    "stops": 5,
+    "km_in_route": 20,
+    "km_from_nl": 1570,
+    "km_back_to_nl": 1580,
+    "km_by_country": {
+     "ES": 20
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 4,
+     "budget": 244,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Entry: direct AMS-BCN (KLM/Vueling/Transavia, ~2h10, up to 370 flights/week in high season). No day trips needed — the Gothic Quarter, Sagrada Família, Park Güell, Barceloneta beach and Montjuïc fill the city itself. Season: April-June or September-October; avoid August. Budget ~€115/day. Web check (2026-08): 2026 is Gaudí's centenary year (100 years since his death, June 1926) — the Sagrada Família's central tower is expected to be completed around then, so extra crowds and higher prices especially around June; normally book 2-3 weeks ahead, in 2026 better 1-2 months ahead, and book Park Güell 1-2 months ahead too. Barcelona's tourist tax doubled as of 1 April 2026 (regional €0.80-4.50/night + a municipal surcharge of €5/night, up to ~€12/night at 5-star hotels) — check the current rate before budgeting.",
+     "transport_to_next": "End of this route — fly back AMS-BCN direct.",
+     "destinations": [
+      {
+       "name": "Barcelona (Gothic Quarter / Barri Gòtic)",
+       "lat": 41.3833,
+       "lng": 2.1761
+      },
+      {
+       "name": "Sagrada Família",
+       "lat": 41.4036,
+       "lng": 2.1744
+      },
+      {
+       "name": "Park Güell",
+       "lat": 41.4145,
+       "lng": 2.1527
+      },
+      {
+       "name": "Barceloneta Beach",
+       "lat": 41.3784,
+       "lng": 2.1925
+      },
+      {
+       "name": "Montjuïc",
+       "lat": 41.3641,
+       "lng": 2.1652
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_basque-country-san-sebastian-bilbao-6-days",
+   "name": "Basque Country: San Sebastián + Bilbao (6 days) 🐟",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Direct flight into Bilbao, short drives/buses along the coast.",
+   "description": "San Sebastián's La Concha, Bilbao's Guggenheim, and the coastal towns of Hondarribia, Getaria and Zarautz.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately coast-only so it doesn't overlap with Northern Spain: Basque Interior + Rioja (9 days) 🍷 below, which covers the inland Basque Country instead. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_basque-country-san-sebastian-bilbao-6-days",
+    "name": "Basque Country: San Sebastián + Bilbao (6 days) 🐟",
+    "stops": 5,
+    "km_in_route": 270,
+    "km_from_nl": 1440,
+    "km_back_to_nl": 1460,
+    "km_by_country": {
+     "ES": 270
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 6,
+     "budget": 366,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "San Sebastián + Bilbao (Guggenheim) plus short coastal towns (Hondarribia, Getaria/Zarautz) — deliberately coast/Basque-only, no La Rioja or Pamplona (that's the longer Northern Spain version further down). Entry: direct AMS-Bilbao (KLM/Vueling, ~2h15, 21 KLM flights/week); San Sebastián has no daily direct AMS flight, so fly into Bilbao and drive/bus ~1h. Budget ~€105/day (pintxo culture and a high Michelin-star density push food costs up). Season: June-September works really well here (cooler Atlantic climate) — a solid summer alternative to the hot south. Web check (2026-08): San Sebastián books up fast in July-August (Semana Grande, mid-August).",
+     "transport_to_next": "End of this route — fly back AMS-Bilbao direct.",
+     "destinations": [
+      {
+       "name": "San Sebastián (La Concha)",
+       "lat": 43.3183,
+       "lng": -1.9812
+      },
+      {
+       "name": "Bilbao (Guggenheim Museum)",
+       "lat": 43.263,
+       "lng": -2.935
+      },
+      {
+       "name": "Hondarribia",
+       "lat": 43.3822,
+       "lng": -1.7967
+      },
+      {
+       "name": "Getaria",
+       "lat": 43.305,
+       "lng": -2.2
+      },
+      {
+       "name": "Zarautz",
+       "lat": 43.2833,
+       "lng": -2.1667
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_canary-islands-10-14-days",
+   "name": "Canary Islands (10-14 days) 🏝️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "A four-island hop — Tenerife, Gran Canaria, Lanzarote, Fuerteventura — by short inter-island flight and one ferry.",
+   "description": "Tenerife (Teide), Gran Canaria (Roque Nublo), Lanzarote (Timanfaya) and Fuerteventura (Corralejo), linked by Binter Canarias flights and a short ferry.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14b/21 (Islands: Canary Islands + Balearics) converting EUROPA_TRIP_IDEAS.md into Route Builder content. The differentiator vs. the two-island combos above — combines all four main Canary Islands, mirroring the Dutch source's 4d→3d→3d→3d split. Modeled as four Spain blocks; Tenerife/Gran Canaria/Lanzarote/Fuerteventura coordinates reused unchanged from the standalone/two-island routes above for consistency. No pre-existing Route Builder expedition covers this combination, so no collision beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_canary-islands-10-14-days",
+    "name": "Canary Islands (10-14 days) 🏝️",
+    "stops": 7,
+    "km_in_route": 590,
+    "km_from_nl": 4120,
+    "km_back_to_nl": 3940,
+    "km_by_country": {
+     "ES": 590
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 4,
+     "budget": 260,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "Entry: easyJet and Transavia fly direct from Amsterdam/Rotterdam to Tenerife South; TUI fly runs winter-sun charters. 4 days: Santa Cruz and Teide National Park. Budget ~€55-75/day average across this route, plus inter-island transport (see below). Web check (2026-08): Teide cable car ~€40 return, weather-dependent, book ahead; free summit permit mandatory for the last 200m (max ~200/day via reservasparquesnacionales.es) — book weeks ahead in high season, it sells out.",
+     "transport_to_next": "Binter Canarias flies between all the Canary Islands (~30-45 min each hop). Web check (2026-08): book ahead in high season.",
+     "destinations": [
+      {
+       "name": "Santa Cruz de Tenerife",
+       "lat": 28.4636,
+       "lng": -16.2518
+      },
+      {
+       "name": "Teide National Park",
+       "lat": 28.2723,
+       "lng": -16.6417
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 3,
+     "budget": 195,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "3 days: Las Palmas and the Roque Nublo/Tejeda highlands. Budget ~€55-75/day.",
+     "transport_to_next": "Binter Canarias flight on to Lanzarote (~40 min).",
+     "destinations": [
+      {
+       "name": "Las Palmas de Gran Canaria",
+       "lat": 28.1235,
+       "lng": -15.4366
+      },
+      {
+       "name": "Roque Nublo",
+       "lat": 27.96,
+       "lng": -15.5719
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 3,
+     "budget": 195,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "3 days: Timanfaya National Park and Arrecife. Budget ~€55-75/day. Web check (2026-08): Timanfaya only via the mandatory \"Ruta de los Volcanes\" bus tour, no free wandering; book the tour ahead in high season, it sells out weeks in advance.",
+     "transport_to_next": "Fred Olsen Express or Naviera Armas ferry Playa Blanca-Corralejo (~25 min, frequent).",
+     "destinations": [
+      {
+       "name": "Timanfaya National Park (Islote de Hilario)",
+       "lat": 28.9967,
+       "lng": -13.7167
+      },
+      {
+       "name": "Arrecife",
+       "lat": 28.963,
+       "lng": -13.5477
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 3,
+     "budget": 195,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "3 days around Corralejo on Fuerteventura. Budget ~€55-75/day. Season: October-May for hiking, June-September fine for beach time. Web check (2026-08): build in at least 1 buffer day somewhere across the crossings for weather delays (cable car/ferries); book the Teide permit and Timanfaya tour well ahead, both sell out weeks in advance in high season. Same Canaries-wide IGIC price advantage on electronics/alcohol/tobacco/perfume throughout this route. Ongoing peaceful overtourism protests (\"Canarias tiene un límite\") since April 2024, continuing into 2025 — no direct safety concern, respectful behavior advised.",
+     "transport_to_next": "End of this route — fly home from Fuerteventura, or back via Gran Canaria/Tenerife.",
+     "destinations": [
+      {
+       "name": "Corralejo",
+       "lat": 28.7343,
+       "lng": -13.8672
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_catalonia-pyrenees-9-days",
+   "name": "Catalonia + Pyrenees (9 days) ⛰️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Direct flight into Barcelona, rental car for the mountain legs.",
+   "description": "Barcelona and Girona, a brief Costa Brava stop, then into the Pyrenees via the Vall de Núria Cremallera railway, Cerdanya and the La Garrotxa volcanic park.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately mountain/inland-focused, not a Costa Brava beach trip, to avoid overlapping with Spain: East to South (12 days) 🌅 below. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_catalonia-pyrenees-9-days",
+    "name": "Catalonia + Pyrenees (9 days) ⛰️",
+    "stops": 8,
+    "km_in_route": 600,
+    "km_from_nl": 1570,
+    "km_back_to_nl": 1460,
+    "km_by_country": {
+     "ES": 600
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 9,
+     "budget": 549,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Barcelona (1-2 days) → Girona (medieval old town) → a brief Costa Brava coastal stop → into the Pyrenees: Vall de Núria (via the Cremallera rack railway from Ribes de Freser) → Cerdanya/Puigcerdà → optionally Aigüestortes i Estany de Sant Maurici National Park → back via the La Garrotxa volcanic park. Deliberately inland/mountain-focused — don't let this turn into a full Costa Brava beach holiday, that would overlap with Spain: East to South (12 days) 🌅 below. Entry: direct AMS-Barcelona, rental car for the mountain legs. Budget ~€95/day. Season: June-September for hiking access (trails free of snow).",
+     "transport_to_next": "End of this route — fly back AMS-Barcelona direct.",
+     "destinations": [
+      {
+       "name": "Barcelona",
+       "lat": 41.3851,
+       "lng": 2.1734
+      },
+      {
+       "name": "Girona",
+       "lat": 41.9794,
+       "lng": 2.8214
+      },
+      {
+       "name": "Costa Brava (Tossa de Mar)",
+       "lat": 41.7196,
+       "lng": 2.9319
+      },
+      {
+       "name": "Ribes de Freser (Cremallera departure)",
+       "lat": 42.3011,
+       "lng": 2.1697
+      },
+      {
+       "name": "Vall de Núria",
+       "lat": 42.3986,
+       "lng": 2.1614
+      },
+      {
+       "name": "Cerdanya / Puigcerdà",
+       "lat": 42.4331,
+       "lng": 1.9284
+      },
+      {
+       "name": "Aigüestortes i Estany de Sant Maurici NP (optional)",
+       "lat": 42.5745,
+       "lng": 0.9505
+      },
+      {
+       "name": "La Garrotxa Volcanic Zone",
+       "lat": 42.1364,
+       "lng": 2.5647
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_galicia-santiago-de-compostela-coast-6-days",
+   "name": "Galicia: Santiago de Compostela + Coast (6 days) 🐚",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Direct (seasonal) flight into Santiago de Compostela, short drives/ferry for the coast.",
+   "description": "Santiago de Compostela's cathedral, the Rías Baixas (Pontevedra, Combarro, O Grove), Vigo and the Cíes Islands.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. New for 2026: uses the brand-new seasonal direct AMS-Santiago flights (KLM from 30 May 2026, Vueling from 16 June 2026) — worth re-checking against the live schedule closer to booking. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_galicia-santiago-de-compostela-coast-6-days",
+    "name": "Galicia: Santiago de Compostela + Coast (6 days) 🐚",
+    "stops": 7,
+    "km_in_route": 320,
+    "km_from_nl": 1880,
+    "km_back_to_nl": 1820,
+    "km_by_country": {
+     "ES": 320
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 6,
+     "budget": 366,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Santiago de Compostela (1-2 days: Praza do Obradoiro, the cathedral) → a Rías Baixas day trip (Pontevedra, Combarro, O Grove) → Vigo → the Cíes Islands ferry (book ahead in season, there's a visitor cap) → optionally A Coruña/Costa da Morte if using the full 6 days. New for 2026: direct seasonal flights AMS-Santiago — KLM from 30 May 2026 (6x/week), Vueling from 16 June 2026; Iberia flies year-round with a connection via Madrid. Budget ~€80/day (Galicia is one of the cheaper Spanish regions, with excellent seafood at a reasonable price). Season: June-September — Galicia is Atlantic/rainy outside summer, and the new direct flights are seasonal-summer anyway. Web check (2026-08): check whether the new KLM/Vueling Santiago route is still on the schedule for your own dates (brand new for 2026); the Cíes Islands ferry has a daily visitor cap in high season — book ahead in July-August.",
+     "transport_to_next": "End of this route — fly home from Santiago de Compostela (seasonal direct AMS-Santiago, or via Madrid on Iberia).",
+     "destinations": [
+      {
+       "name": "Santiago de Compostela (Praza do Obradoiro)",
+       "lat": 42.8805,
+       "lng": -8.5456
+      },
+      {
+       "name": "Pontevedra (Rías Baixas)",
+       "lat": 42.43,
+       "lng": -8.6444
+      },
+      {
+       "name": "Combarro",
+       "lat": 42.4297,
+       "lng": -8.6858
+      },
+      {
+       "name": "O Grove",
+       "lat": 42.4897,
+       "lng": -8.8756
+      },
+      {
+       "name": "Vigo",
+       "lat": 42.2406,
+       "lng": -8.7207
+      },
+      {
+       "name": "Cíes Islands",
+       "lat": 42.2378,
+       "lng": -8.8994
+      },
+      {
+       "name": "A Coruña (optional)",
+       "lat": 43.3623,
+       "lng": -8.4115
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_gibraltar-andalusia-costa-del-sol-4-days",
+   "name": "Gibraltar + Andalusia: Costa del Sol (4 days) 🐒",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Direct flight into Málaga, rental car, walk-across border crossing to Gibraltar.",
+   "description": "The Costa del Sol and Gibraltar: Málaga, Marbella/Puerto Banús, Estepona, a walk-across border crossing to the Rock of Gibraltar, and optionally Ronda.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Two-block route (ES + GI) since Gibraltar is a separate territory/currency from Spain, even though the border is now mostly controls-free post-Schengen (15 July 2026). Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_gibraltar-andalusia-costa-del-sol-4-days",
+    "name": "Gibraltar + Andalusia: Costa del Sol (4 days) 🐒",
+    "stops": 7,
+    "km_in_route": 320,
+    "km_from_nl": 2430,
+    "km_back_to_nl": 2540,
+    "km_by_country": {
+     "ES": 230,
+     "GI": 90
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 3,
+     "budget": 183,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Deliberately just the Costa del Sol/Gibraltar corner, not Seville or Granada: Málaga (fly in, 1 day) → Marbella/Puerto Banús (1 day) → Estepona → La Línea de la Concepción → Gibraltar (day trip or 1 night) → back to Málaga; at 4 days add Ronda (~1h45 from Marbella) as a mountain excursion. Entry: direct AMS-Málaga, then drive Málaga→border (~132km, ~1h30-1h45 via the toll road or ~2h+ on the free route). Budget ~€100/day (Marbella/Puerto Banús is also one of Andalusia's pricier spots). Season: doable year-round on the coast (milder than inland) but April-June/September-October is best; avoid July-August for value.",
+     "transport_to_next": "Park on the Spanish side in La Línea de la Concepción and walk across the border into Gibraltar instead of driving in — avoids the traffic jams at the crossing.",
+     "destinations": [
+      {
+       "name": "Málaga (fly in)",
+       "lat": 36.7213,
+       "lng": -4.4214
+      },
+      {
+       "name": "Marbella / Puerto Banús",
+       "lat": 36.5099,
+       "lng": -4.8858
+      },
+      {
+       "name": "Estepona",
+       "lat": 36.4285,
+       "lng": -5.1451
+      },
+      {
+       "name": "La Línea de la Concepción",
+       "lat": 36.1667,
+       "lng": -5.35
+      },
+      {
+       "name": "Ronda (optional, added at 4 days)",
+       "lat": 36.7466,
+       "lng": -5.1652
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "GI",
+     "country": "Gibraltar",
+     "days": 1,
+     "budget": 85,
+     "dailyRate": 85,
+     "carInDailyRate": false,
+     "notes": "The Rock of Gibraltar (cable car, Barbary macaques) and St Michael's Cave. Budget here runs higher than the Spanish side — Gibraltar uses GBP and is noticeably pricier than Spain for food and drink. Web check (2026-08): Gibraltar joined Schengen on 15 July 2026 — the land border from Spain now has no passport/customs control for most travellers, though queues can still occur at the old border post (check frontierqueue.gi ahead of time); flights into Gibraltar Airport now do the Schengen check in the terminal instead. Dutch travellers can normally enter with just an ID card, but bringing a passport along is still the safer default.",
+     "transport_to_next": "End of this route — walk back across the border to La Línea and drive back to Málaga (~132km) for the flight home.",
+     "destinations": [
+      {
+       "name": "Rock of Gibraltar",
+       "lat": 36.1408,
+       "lng": -5.3536
+      },
+      {
+       "name": "St Michael’s Cave",
+       "lat": 36.1359,
+       "lng": -5.3453
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_gran-canaria-5-7-days",
+   "name": "Gran Canaria (5-7 days) 🏝️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Las Palmas city time, the Maspalomas dunes, and the mountainous interior around Roque Nublo/Tejeda.",
+   "description": "Las Palmas, the Maspalomas dunes, and the interior highlands around Roque Nublo and Tejeda.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14b/21 (Islands: Canary Islands + Balearics) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Single-block route — the differentiator vs. the multi-island Gran Canaria combos below. No pre-existing Route Builder expedition covers Gran Canaria, so no collision beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_gran-canaria-5-7-days",
+    "name": "Gran Canaria (5-7 days) 🏝️",
+    "stops": 4,
+    "km_in_route": 90,
+    "km_from_nl": 4110,
+    "km_back_to_nl": 4140,
+    "km_by_country": {
+     "ES": 90
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 6,
+     "budget": 360,
+     "dailyRate": 60,
+     "carInDailyRate": false,
+     "notes": "Entry: easyJet and Transavia fly direct from Amsterdam/Rotterdam to Gran Canaria; TUI fly runs winter-sun charters. 2 days in Las Palmas, 2 days on the Maspalomas dunes in the south, then 1-2 days up in the mountainous interior around Roque Nublo and Tejeda. Budget ~€50-70/day. Season: good year-round; the mountains are most pleasant October-April. Web check (2026-08): no permits needed anywhere on this route; the Roque Nublo parking area fills up early on weekends, so start early; the Maspalomas dunes are a protected nature reserve — stay on the marked paths. Same IGIC-vs-mainland-IVA price advantage on electronics/alcohol/tobacco/perfume as elsewhere in the Canaries (~7% vs 21%). Ongoing peaceful overtourism protests (\"Canarias tiene un límite\") since April 2024, continuing into 2025 — no direct safety concern, respectful behavior advised.",
+     "transport_to_next": "End of this route — fly home from Gran Canaria.",
+     "destinations": [
+      {
+       "name": "Las Palmas de Gran Canaria",
+       "lat": 28.1235,
+       "lng": -15.4366
+      },
+      {
+       "name": "Maspalomas dunes",
+       "lat": 27.7606,
+       "lng": -15.5875
+      },
+      {
+       "name": "Roque Nublo",
+       "lat": 27.96,
+       "lng": -15.5719
+      },
+      {
+       "name": "Tejeda",
+       "lat": 27.9908,
+       "lng": -15.6144
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_gran-canaria-tenerife-7-10-days",
+   "name": "Gran Canaria + Tenerife (7-10 days) 🏝️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Gran Canaria (Las Palmas, Maspalomas) then Tenerife (Santa Cruz, Teide) via inter-island ferry or short flight.",
+   "description": "Las Palmas and the Maspalomas dunes on Gran Canaria, then Santa Cruz and Teide National Park on Tenerife.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14b/21 (Islands: Canary Islands + Balearics) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Modeled as two Spain blocks. Gran Canaria and Tenerife coordinates reused unchanged from the standalone routes above for consistency. No pre-existing Route Builder expedition covers this combination, so no collision beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_gran-canaria-tenerife-7-10-days",
+    "name": "Gran Canaria + Tenerife (7-10 days) 🏝️",
+    "stops": 4,
+    "km_in_route": 240,
+    "km_from_nl": 4110,
+    "km_back_to_nl": 4160,
+    "km_by_country": {
+     "ES": 240
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 4,
+     "budget": 260,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "Entry: easyJet and Transavia fly direct from Amsterdam/Rotterdam to Gran Canaria. 4-5 days: Las Palmas plus the Maspalomas dunes. Budget ~€55-75/day.",
+     "transport_to_next": "Ferry Las Palmas-Santa Cruz de Tenerife (~2-2.5h, Fred Olsen Express/Naviera Armas) or a Binter Canarias flight (~35 min) — the flight is often similarly priced and much faster. Web check (2026-08): compare both before booking.",
+     "destinations": [
+      {
+       "name": "Las Palmas de Gran Canaria",
+       "lat": 28.1235,
+       "lng": -15.4366
+      },
+      {
+       "name": "Maspalomas dunes",
+       "lat": 27.7606,
+       "lng": -15.5875
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 4,
+     "budget": 260,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "notes": "4-5 days on Tenerife: Santa Cruz and Teide National Park. Budget ~€55-75/day. Web check (2026-08): same Teide cable-car/summit-permit caveat as the standalone Tenerife route (~€40 return cable car, weather-dependent; free summit permit via reservasparquesnacionales.es, apply well ahead).",
+     "transport_to_next": "End of this route — fly home from Tenerife South or Tenerife North.",
+     "destinations": [
+      {
+       "name": "Santa Cruz de Tenerife",
+       "lat": 28.4636,
+       "lng": -16.2518
+      },
+      {
+       "name": "Teide National Park",
+       "lat": 28.2723,
+       "lng": -16.6417
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_ibiza-4-5-days",
+   "name": "Ibiza (4-5 days) 🏝️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Ibiza Town/Dalt Vila plus a quieter north-coast base, nightlife optional.",
+   "description": "Ibiza Town's Dalt Vila old town and the quieter north coast around Sant Joan de Labritja/Portinatx.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14b/21 (Islands: Canary Islands + Balearics) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Single-block route — the differentiator vs. the Balearic Islands combo below. No pre-existing Route Builder expedition covers Ibiza, so no collision beyond confirming the route name is unused. Balearic eco-tax (ITS) 2026: €0.25-€4 pp/night depending on accommodation category and season, +10% VAT, 75% discount November-April, 50% discount from the 9th night, under-16s free. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_ibiza-4-5-days",
+    "name": "Ibiza (4-5 days) 🏝️",
+    "stops": 3,
+    "km_in_route": 30,
+    "km_from_nl": 1940,
+    "km_back_to_nl": 1910,
+    "km_by_country": {
+     "ES": 30
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 5,
+     "budget": 305,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flights from the Netherlands (Transavia, easyJet) run seasonally, mainly summer. 2 days in Ibiza Town and the UNESCO-listed Dalt Vila old town, then 2-3 days on the quieter north coast around Sant Joan de Labritja/Portinatx — skipping the nightlife scene keeps the budget down. Budget ~€90-120/day; clubs and beach clubs drive the price up, the north is noticeably cheaper. Season: June or September (May is still a bit cool); July-August is very busy and expensive. Web check (2026-08): the Balearic eco-tax applies (see general note below); 2025-2026 overtourism protest sentiment is live here, expect full bars and waits at peak times in high season.",
+     "transport_to_next": "End of this route — fly home from Ibiza.",
+     "destinations": [
+      {
+       "name": "Ibiza Town / Dalt Vila (UNESCO old town)",
+       "lat": 38.9067,
+       "lng": 1.4327
+      },
+      {
+       "name": "Sant Joan de Labritja",
+       "lat": 39.0765,
+       "lng": 1.515
+      },
+      {
+       "name": "Portinatx",
+       "lat": 39.1102,
+       "lng": 1.5347
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_lanzarote-fuerteventura-5-7-days",
+   "name": "Lanzarote + Fuerteventura (5-7 days) 🏝️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Lanzarote's volcanic Timanfaya plus the east coast, a short ferry, then Fuerteventura's Corralejo/El Cotillo coast.",
+   "description": "Timanfaya National Park, Arrecife/Costa Teguise, a short inter-island ferry, and Corralejo/El Cotillo on Fuerteventura.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14b/21 (Islands: Canary Islands + Balearics) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Modeled as two Spain blocks (Lanzarote, then Fuerteventura) linked by the short Playa Blanca-Corralejo ferry. No pre-existing Route Builder expedition covers Lanzarote or Fuerteventura, so no collision beyond confirming the route name is unused. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_lanzarote-fuerteventura-5-7-days",
+    "name": "Lanzarote + Fuerteventura (5-7 days) 🏝️",
+    "stops": 5,
+    "km_in_route": 110,
+    "km_from_nl": 3900,
+    "km_back_to_nl": 3960,
+    "km_by_country": {
+     "ES": 110
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 3,
+     "budget": 165,
+     "dailyRate": 55,
+     "carInDailyRate": false,
+     "notes": "Entry: easyJet and Transavia fly direct from Amsterdam/Rotterdam to Lanzarote; TUI fly runs winter-sun charters. 1 day at Timanfaya, then 1-2 days around Arrecife and Costa Teguise. Budget ~€50-65/day. Web check (2026-08): Timanfaya can only be seen via the mandatory \"Ruta de los Volcanes\" bus tour — free wandering isn't allowed — and its two hiking trails require a guide plus an advance reservation. Camel rides are bookable separately near the park entrance; animal-welfare concerns around them are a live debate, worth knowing about before booking. Same Canaries-wide IGIC price advantage on electronics/alcohol/tobacco/perfume as elsewhere in this archipelago.",
+     "transport_to_next": "Ferry Playa Blanca-Corralejo (~25 min, frequent). Web check (2026-08): confirm the current timetable before relying on it.",
+     "destinations": [
+      {
+       "name": "Timanfaya National Park (Islote de Hilario)",
+       "lat": 28.9967,
+       "lng": -13.7167
+      },
+      {
+       "name": "Arrecife",
+       "lat": 28.963,
+       "lng": -13.5477
+      },
+      {
+       "name": "Costa Teguise",
+       "lat": 28.993,
+       "lng": -13.4881
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 3,
+     "budget": 165,
+     "dailyRate": 55,
+     "carInDailyRate": false,
+     "notes": "2-3 days on Fuerteventura around Corralejo and El Cotillo. Budget ~€50-65/day. Season: good year-round; October-April brings the best consistent wind for surfing/kitesurfing. Web check (2026-08): ongoing peaceful overtourism protests (\"Canarias tiene un límite\") across the Canaries since April 2024, continuing into 2025 — no direct safety concern, respectful behavior advised.",
+     "transport_to_next": "End of this route — fly home from Fuerteventura, or back via Lanzarote.",
+     "destinations": [
+      {
+       "name": "Corralejo",
+       "lat": 28.7343,
+       "lng": -13.8672
+      },
+      {
+       "name": "El Cotillo",
+       "lat": 28.6841,
+       "lng": -14.0086
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_madrid-4-days",
+   "name": "Madrid (4 days) 🖼️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Direct flight, city-based with an independent AVE day trip.",
+   "description": "Madrid's Prado, Retiro Park, Puerta del Sol and Gran Vía, plus an AVE day trip to Toledo or Segovia.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_madrid-4-days",
+    "name": "Madrid (4 days) 🖼️",
+    "stops": 6,
+    "km_in_route": 250,
+    "km_from_nl": 1900,
+    "km_back_to_nl": 1850,
+    "km_by_country": {
+     "ES": 250
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 4,
+     "budget": 244,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Entry: direct AMS-MAD (KLM/Iberia/Air Europa, ~2h30-45, 70+ flights/week). The city itself (Prado/Retiro/Puerta del Sol/Gran Vía) fills 2-3 days, plus a day trip to Toledo or Segovia by AVE high-speed train (30-90 min, easy to do independently). Season: April-June or September-November; Madrid is landlocked with no sea breeze and can get very hot in summer too — avoid July-August if possible. Budget ~€100/day. Web check (2026-08): the Segovia AVE from Chamartín station takes ~30 min and costs €12-14; the Paseo del Arte combined ticket (~€32, covering the Prado, Reina Sofía and Thyssen-Bornemisza, a 20% discount) is worth it. Madrid has less booking pressure than Barcelona or Granada, but still reserve Toledo/Segovia train tickets a few days ahead in high season.",
+     "transport_to_next": "End of this route — fly back AMS-MAD direct.",
+     "destinations": [
+      {
+       "name": "Madrid (Prado Museum)",
+       "lat": 40.4138,
+       "lng": -3.6921
+      },
+      {
+       "name": "Retiro Park",
+       "lat": 40.4153,
+       "lng": -3.6844
+      },
+      {
+       "name": "Puerta del Sol",
+       "lat": 40.4169,
+       "lng": -3.7035
+      },
+      {
+       "name": "Gran Vía",
+       "lat": 40.42,
+       "lng": -3.7025
+      },
+      {
+       "name": "Toledo (day trip)",
+       "lat": 39.8628,
+       "lng": -4.0273
+      },
+      {
+       "name": "Segovia (day trip)",
+       "lat": 40.9429,
+       "lng": -4.1088
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_mallorca-menorca-7-10-days",
+   "name": "Mallorca + Menorca (7-10 days) 🏝️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "A Palma-based Serra de Tramuntana loop, then a ferry to Menorca for Ciutadella and Mahón.",
+   "description": "Palma and the Serra de Tramuntana (Valldemossa, Deià, Sóller), then a ferry to Menorca's Ciutadella and Mahón.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14b/21 (Islands: Canary Islands + Balearics) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Modeled as two Spain blocks. Palma/Serra de Tramuntana coordinates reused unchanged from batch 7a's standalone 'Mallorca: Serra de Tramuntana Loop' route (a different, mainland-Iberia-batch route, not a duplicate of this one) for consistency; Menorca coordinates reused from the standalone Menorca route above. No pre-existing Route Builder expedition covers this Mallorca+Menorca combination, so no collision beyond confirming the route name is unused. Eco-tax applies separately per island (doubled vs. a single-island trip), called out in the Menorca leg's notes. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_mallorca-menorca-7-10-days",
+    "name": "Mallorca + Menorca (7-10 days) 🏝️",
+    "stops": 6,
+    "km_in_route": 210,
+    "km_from_nl": 1830,
+    "km_back_to_nl": 1770,
+    "km_by_country": {
+     "ES": 210
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 4,
+     "budget": 244,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Entry: direct AMS-PMI (Transavia, ~2h25, frequent). 3-4 days based in Palma for a Serra de Tramuntana loop — Valldemossa, Deià, Sóller (worth doing a leg on the antique wooden train). A rental car helps on the mountain roads. Budget ~€80-100/day average across this route.",
+     "transport_to_next": "Ferry Palma-Ciutadella or Palma-Mahón (several hours, varies by operator/route). Web check (2026-08): check the current Mallorca-Menorca ferry frequency outside high season — it runs noticeably less often.",
+     "destinations": [
+      {
+       "name": "Palma (base)",
+       "lat": 39.5696,
+       "lng": 2.6502
+      },
+      {
+       "name": "Valldemossa",
+       "lat": 39.7098,
+       "lng": 2.6228
+      },
+      {
+       "name": "Deià",
+       "lat": 39.7481,
+       "lng": 2.6478
+      },
+      {
+       "name": "Sóller",
+       "lat": 39.7662,
+       "lng": 2.7147
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 4,
+     "budget": 244,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "3-4 days between Ciutadella and Mahón on Menorca. Budget ~€80-100/day average. Season: May-June or September, doing the Tramuntana walking outside the summer heat. Web check (2026-08): the Balearic eco-tax applies separately on each island (see general note below); Palma is the epicenter of the 2026 overtourism protests specifically, expect occasional demonstrations/traffic disruption there.",
+     "transport_to_next": "End of this route — fly home, likely via Palma.",
+     "destinations": [
+      {
+       "name": "Ciutadella",
+       "lat": 40,
+       "lng": 3.8388
+      },
+      {
+       "name": "Mahón",
+       "lat": 39.8885,
+       "lng": 4.2658
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_mallorca-serra-de-tramuntana-loop-6-days",
+   "name": "Mallorca: Serra de Tramuntana Loop (6 days) 🏔️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Direct flight, rental car for the mountain roads.",
+   "description": "A Serra de Tramuntana loop from Palma: Valldemossa, Deià, Sóller (with the antique wooden train) and Cap de Formentor.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_mallorca-serra-de-tramuntana-loop-6-days",
+    "name": "Mallorca: Serra de Tramuntana Loop (6 days) 🏔️",
+    "stops": 5,
+    "km_in_route": 100,
+    "km_from_nl": 1830,
+    "km_back_to_nl": 1760,
+    "km_by_country": {
+     "ES": 100
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 6,
+     "budget": 366,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Palma as a base for a Serra de Tramuntana loop: Valldemossa → Deià → Sóller (do at least one leg on the antique wooden train between Palma and Sóller) → Cap de Formentor in the north → an optional east-coast beach day to close it out. Entry: direct AMS-PMI (Transavia, ~2h25, ~30 flights/week); a rental car is recommended for the mountain roads. Budget ~€105/day (rental car +€25-35/day). Season: May-June or September; July-August is very busy and expensive. Web check (2026-08): the Balearic eco-tax (ITS) runs €1.10-4.40 pp/night in high season (1 May-31 October) depending on accommodation category, and €0.28-1.10 in low season — charged separately at check-in/check-out, often not folded into the booking price.",
+     "transport_to_next": "End of this route — fly back AMS-PMI direct.",
+     "destinations": [
+      {
+       "name": "Palma (base)",
+       "lat": 39.5696,
+       "lng": 2.6502
+      },
+      {
+       "name": "Valldemossa",
+       "lat": 39.7098,
+       "lng": 2.6228
+      },
+      {
+       "name": "Deià",
+       "lat": 39.7481,
+       "lng": 2.6478
+      },
+      {
+       "name": "Sóller",
+       "lat": 39.7662,
+       "lng": 2.7147
+      },
+      {
+       "name": "Cap de Formentor",
+       "lat": 39.9583,
+       "lng": 3.2078
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_menorca-4-5-days",
+   "name": "Menorca (4-5 days) 🏝️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Mahón and a Camí de Cavalls stretch, Ciutadella, and the southwest's turquoise coves.",
+   "description": "Mahón (with a Camí de Cavalls walk), Ciutadella, and the coves of Cala Macarelleta/Cala Turqueta.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 14b/21 (Islands: Canary Islands + Balearics) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Single-block route — the differentiator vs. the Mallorca+Menorca and Balearic Islands combos below. No pre-existing Route Builder expedition covers Menorca, so no collision beyond confirming the route name is unused. Balearic eco-tax (ITS) 2026: €0.25-€4 pp/night depending on accommodation category and season, +10% VAT, 75% discount November-April, 50% discount from the 9th night, under-16s free. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_menorca-4-5-days",
+    "name": "Menorca (4-5 days) 🏝️",
+    "stops": 4,
+    "km_in_route": 60,
+    "km_from_nl": 1770,
+    "km_back_to_nl": 1760,
+    "km_by_country": {
+     "ES": 60
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 5,
+     "budget": 305,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Entry: direct flights from the Netherlands to Mahón (MAH) are limited/seasonal, so a connection via Palma or Barcelona is often needed — check both options. 2 days in Mahón including a stretch of the Camí de Cavalls coastal path, 2 days in Ciutadella, plus a beach day at Cala Macarelleta/Cala Turqueta. A rental car is worth it — Menorca is quieter and less built-up than Ibiza/Mallorca, and the beaches are spread out. Budget ~€70-90/day. Season: May-June or September combine calm and good weather best; July-August is expensive and Ciutadella's harbour area gets crowded. Web check (2026-08): the Balearic eco-tax applies (see general note below).",
+     "transport_to_next": "End of this route — fly home, likely via Palma or Barcelona.",
+     "destinations": [
+      {
+       "name": "Mahón (Camí de Cavalls coastal path)",
+       "lat": 39.8885,
+       "lng": 4.2658
+      },
+      {
+       "name": "Ciutadella",
+       "lat": 40,
+       "lng": 3.8388
+      },
+      {
+       "name": "Cala Macarelleta",
+       "lat": 39.9394,
+       "lng": 3.8763
+      },
+      {
+       "name": "Cala Turqueta",
+       "lat": 39.933,
+       "lng": 3.8397
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_northern-spain-roadtrip-12-days",
+   "name": "Northern Spain Roadtrip (12 days) 🛣️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Open-jaw flight (Bilbao in, Santiago de Compostela out), rental car throughout.",
+   "description": "A full north-coast connector: the Basque coast, Cantabria, the Picos de Europa, Asturias and Galicia, ending in Santiago de Compostela.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Strings together the standalone Basque Country, Asturias+Cantabria and Galicia trips rather than repeating one of them for travellers with the full 12 days. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_northern-spain-roadtrip-12-days",
+    "name": "Northern Spain Roadtrip (12 days) 🛣️",
+    "stops": 11,
+    "km_in_route": 880,
+    "km_from_nl": 1440,
+    "km_back_to_nl": 1980,
+    "km_by_country": {
+     "ES": 880
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 12,
+     "budget": 732,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Restructured as the connector trip for a full north-coast crossing: San Sebastián → Bilbao → Santander → Santillana del Mar/Comillas → Picos de Europa (Potes, Fuente Dé cable car) → Oviedo/Gijón (Asturias) → Santiago de Compostela → optionally the Rías Baixas/Cíes Islands. Deliberately strings the three shorter standalone trips (Basque Country, Asturias+Cantabria, Galicia) together for anyone with 2 weeks, instead of repeating one of them. Entry: open-jaw AMS-Bilbao in, AMS-Santiago de Compostela out — KLM has flown a seasonal direct AMS-Santiago route since 30 May 2026 (6x/week), and Vueling since 16 June 2026 too; check whether this new 2026 route is still on the schedule for your own dates. Budget ~€90/day. Season: June-September (conveniently lines up with the Santiago flight's seasonal window). Web check (2026-08): a one-way rental car drop-off from Bilbao to Santiago carries a return/repositioning fee.",
+     "transport_to_next": "End of this route — fly home from Santiago de Compostela (seasonal direct AMS-Santiago, or via Madrid year-round on Iberia).",
+     "destinations": [
+      {
+       "name": "San Sebastián",
+       "lat": 43.3183,
+       "lng": -1.9812
+      },
+      {
+       "name": "Bilbao",
+       "lat": 43.263,
+       "lng": -2.935
+      },
+      {
+       "name": "Santander",
+       "lat": 43.4623,
+       "lng": -3.8099
+      },
+      {
+       "name": "Santillana del Mar",
+       "lat": 43.3897,
+       "lng": -4.1097
+      },
+      {
+       "name": "Comillas",
+       "lat": 43.3856,
+       "lng": -4.2919
+      },
+      {
+       "name": "Picos de Europa (Potes)",
+       "lat": 43.1553,
+       "lng": -4.6236
+      },
+      {
+       "name": "Fuente Dé (cable car)",
+       "lat": 43.1439,
+       "lng": -4.8142
+      },
+      {
+       "name": "Oviedo",
+       "lat": 43.3619,
+       "lng": -5.8494
+      },
+      {
+       "name": "Gijón",
+       "lat": 43.5322,
+       "lng": -5.6611
+      },
+      {
+       "name": "Santiago de Compostela",
+       "lat": 42.8805,
+       "lng": -8.5456
+      },
+      {
+       "name": "Cíes Islands (optional)",
+       "lat": 42.2378,
+       "lng": -8.8994
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_northern-spain-basque-interior-rioja-9-days",
+   "name": "Northern Spain: Basque Interior + Rioja (9 days) 🍷",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Direct flight into Bilbao, rental car for the inland loop.",
+   "description": "The inland Basque Country and Rioja Alavesa wine region: San Sebastián, Vitoria-Gasteiz, Elciego/Haro and Pamplona.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 7a (Iberia: Spain) converting EUROPA_TRIP_IDEAS.md into Route Builder content. Deliberately inland-only so it doesn't repeat Basque Country: San Sebastián + Bilbao (6 days) 🐟 above. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_northern-spain-basque-interior-rioja-9-days",
+    "name": "Northern Spain: Basque Interior + Rioja (9 days) 🍷",
+    "stops": 6,
+    "km_in_route": 480,
+    "km_from_nl": 1440,
+    "km_back_to_nl": 1500,
+    "km_by_country": {
+     "ES": 480
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 9,
+     "budget": 549,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Restructured around the Basque interior and wine country, with no overlap now with the coast (see Basque Country: San Sebastián + Bilbao above) or Cantabria/Asturias/Galicia (see the standalone items further down): San Sebastián → Vitoria-Gasteiz → the Rioja Alavesa wine region (Elciego/Haro) → Pamplona → back to Bilbao. Entry: direct AMS-Bilbao, rental car for the inland loop. Budget ~€100/day. Season: May-September (Rioja's grape harvest is in September, a nice bonus for a wine-focused trip).",
+     "transport_to_next": "End of this route — fly back AMS-Bilbao direct.",
+     "destinations": [
+      {
+       "name": "San Sebastián",
+       "lat": 43.3183,
+       "lng": -1.9812
+      },
+      {
+       "name": "Vitoria-Gasteiz",
+       "lat": 42.8467,
+       "lng": -2.6716
+      },
+      {
+       "name": "Elciego (Rioja Alavesa)",
+       "lat": 42.4256,
+       "lng": -2.5936
+      },
+      {
+       "name": "Haro (Rioja Alavesa)",
+       "lat": 42.5763,
+       "lng": -2.8467
+      },
+      {
+       "name": "Pamplona",
+       "lat": 42.8125,
+       "lng": -1.6458
+      },
+      {
+       "name": "Bilbao",
+       "lat": 43.263,
+       "lng": -2.935
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_porto-northern-spain-10-14-days",
+   "name": "Porto + Northern Spain (10-14 days) 🏔️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Open-jaw flight (Porto in, Bilbao out), rental car for the entire overland crossing.",
+   "description": "An extended Iberian north-coast crossing: Porto and the Minho, then overland across Galicia, Asturias, Cantabria and the Basque Country to Bilbao (optionally San Sebastián).",
+   "notes": "Built (2026-08) as part of Phase 2 batch 15a (Iberia combinations) converting EUROPA_TRIP_IDEAS.md into Route Builder content. This item extends Northern Portugal + Galicia (7-10 days) 🌊 (rbBuildNorthernPortugalGaliciaRoute, built earlier in this same sub-batch) eastward with the rest of the Spanish north coast — see that route's own notes for the Portugal/Galicia overlap detail, not repeated here. ⚠️ Real overlap, explicitly flagged: the Spain-side stops (Santiago → Asturias/Picos de Europa → Santander/Santillana del Mar → Bilbao) are near-identical to Northern Spain Roadtrip (12 days) 🛣️ (rbBuildNorthernSpainRoadtripRoute) — same regions, essentially the same itinerary run in reverse (that route starts at San Sebastián/Bilbao and ends at Santiago; this one starts at Porto and ends at Bilbao). Also overlaps Asturias + Cantabria (6 days) 🌲 (rbBuildAsturiasCantabriaRoute) on the Asturias/Picos/Santander portion, and Porto (4 days) 🌉/Northern Portugal: Minho (6 days) 🌿 on the Portugal portion. Logged in ROUTE_SIMILARITY_REVIEW.md per project policy; kept as a distinct route, not merged, since the Porto-in/Bilbao-out open-jaw framing is a genuinely different trip shape from the existing all-Spain loop. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_porto-northern-spain-10-14-days",
+    "name": "Porto + Northern Spain (10-14 days) 🏔️",
+    "stops": 14,
+    "km_in_route": 1140,
+    "km_from_nl": 2080,
+    "km_back_to_nl": 1440,
+    "km_by_country": {
+     "PT": 130,
+     "ES": 1010
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PT",
+     "country": "Portugal",
+     "days": 4,
+     "budget": 248,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "notes": "The Portugal lead-in for the wider crossing below: Porto (2 days: Ribeira, Vila Nova de Gaia) — Guimarães/Braga day trips — Viana do Castelo on the coast, closest to the Spanish border. Entry: open-jaw AMS-Porto in / AMS-Bilbao out. Budget ~€80-90/day, used here at ~€85/day. Season: June-September.",
+     "transport_to_next": "Cross into Spain at the Valença (Portugal)-Tui (Spain) bridge over the Minho river — no border control, fully Schengen-internal — then on to Santiago de Compostela (~130km/1h45).",
+     "destinations": [
+      {
+       "name": "Porto (Ribeira)",
+       "lat": 41.1405,
+       "lng": -8.6118
+      },
+      {
+       "name": "Vila Nova de Gaia (port wine cellars)",
+       "lat": 41.1333,
+       "lng": -8.6111
+      },
+      {
+       "name": "Guimarães (Paço dos Duques, day trip)",
+       "lat": 41.4419,
+       "lng": -8.2918
+      },
+      {
+       "name": "Braga (Bom Jesus do Monte, day trip)",
+       "lat": 41.5519,
+       "lng": -8.3789
+      },
+      {
+       "name": "Viana do Castelo (Santa Luzia viewpoint)",
+       "lat": 41.6932,
+       "lng": -8.8327
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "ES",
+     "country": "Spain",
+     "days": 8,
+     "budget": 488,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "notes": "Santiago de Compostela (2 days) → Oviedo/Gijón, Asturias (2 days) → the Picos de Europa, based in Potes with the Fuente Dé cable car (1-2 days) → Santander/Santillana del Mar, Cantabria (1-2 days) → Bilbao, optionally extending to San Sebastián (1-2 days) as the closing leg. A rental car is essential throughout this leg (public transport is thin around the Picos de Europa and coastal villages). Budget ~€80-90/day, used here at ~€85/day. Season: June-September. Web check (2026-08): this is an open-jaw trip — Porto in, Bilbao out — so a one-way rental car carries a return/repositioning drop fee; price that in before booking, and compare it against picking the car up fresh at the Spanish border (e.g. in Santiago or Bilbao) instead of driving one car the whole way.",
+     "transport_to_next": "End of this route — fly home from Bilbao (or San Sebastián if extending that far), open-jaw ticket with Porto as the inbound leg.",
+     "destinations": [
+      {
+       "name": "Santiago de Compostela (Praza do Obradoiro)",
+       "lat": 42.8805,
+       "lng": -8.5456
+      },
+      {
+       "name": "Oviedo (Asturias)",
+       "lat": 43.3619,
+       "lng": -5.8494
+      },
+      {
+       "name": "Gijón (Asturias)",
+       "lat": 43.5322,
+       "lng": -5.6611
+      },
+      {
+       "name": "Picos de Europa (Potes)",
+       "lat": 43.1553,
+       "lng": -4.6236
+      },
+      {
+       "name": "Fuente Dé (cable car)",
+       "lat": 43.1439,
+       "lng": -4.8142
+      },
+      {
+       "name": "Santander (Magdalena Peninsula)",
+       "lat": 43.4623,
+       "lng": -3.8099
+      },
+      {
+       "name": "Santillana del Mar",
+       "lat": 43.3897,
+       "lng": -4.1097
+      },
+      {
+       "name": "Bilbao (Guggenheim Museum)",
+       "lat": 43.263,
+       "lng": -2.935
+      },
+      {
+       "name": "San Sebastián (La Concha, optional extension)",
+       "lat": 43.3183,
+       "lng": -1.9812
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

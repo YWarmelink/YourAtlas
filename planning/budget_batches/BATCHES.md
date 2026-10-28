@@ -8,8 +8,8 @@ Made 2026-10-28 for the 439 routes not yet in `RB_ROUTE_COSTS` (batch 1 = the 13
 | 2 | Italy, San Marino & Malta (1/3) | 11 | 44 | 11 | ~178k (real ≈165k: agent 123k) | done 2026-10-28, in the Sheet |
 | 3 | Italy, San Marino & Malta (2/3) | 12 | 41 | 11 | ~174k (real ≈145k: agent 95k + 2 route-text fixes) | done 2026-10-28, in the Sheet |
 | 4 | Italy, San Marino & Malta (3/3) | 13 | 39 | 12 | ~172k (real ≈120k: agent 90k + 2 route-text fixes) | done 2026-10-28, in the Sheet |
-| 5 | Iberia (1/2) | 24 | 36 | 14 | ~197k | running (in parallel with 6) |
-| 6 | Iberia (2/2) | 22 | 31 | 16 | ~179k | running (in parallel with 5) |
+| 5 | Iberia (1/2) | 24 | 36 | 14 | ~197k (real ≈165k: agent 131k) | done 2026-10-28, in the Sheet (run in parallel with 6) |
+| 6 | Iberia (2/2) | 22 | 31 | 16 | ~179k (real ≈160k: agent 129k) | done 2026-10-28, in the Sheet (run in parallel with 5) |
 | 7 | France & Benelux (1/2) | 14 | 27 | 12 | ~145k | |
 | 8 | France & Benelux (2/2) | 12 | 26 | 9 | ~136k | |
 | 9 | Alps & Germany (1/2) | 13 | 31 | 13 | ~152k | |

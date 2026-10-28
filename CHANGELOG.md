@@ -12,6 +12,11 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Route-text fixes from Phase 4 batches 5+6 (2026-10-28)**:
+  - **Canary Islands (10-14 days) 🏝️**: the Tenerife leg's transport now names the next island (Binter flight to Gran Canaria). The batch 5 review reported a block shift, but that was a misread: the order Tenerife → Gran Canaria → Lanzarote → Fuerteventura was already right.
+  - **Tenerife + La Gomera (7-10 days) 🏝️**: removed the repeated Teide-permit caveat from the La Gomera leg (it only applies on Tenerife).
+  - `rbFixBatch56RouteTexts()` / `rbMigrateBatch56RouteFixes()` reuse the new `rbApplyBlockTextFixes()` (which batch 4's fix now uses too, and which can target any block text field). Sheet: `scripts/fix_route_texts_in_sheet.js 56`, verified live.
+
 - **Route-text fixes from Phase 4 batch 4 (2026-10-28)**:
   - **Sicily + Malta (9 days) 🌋**: the Sicily loop ended in the west (Agrigento, optionally Palermo) but flies to Malta from Catania. It now drives back to Catania to return the car before the flight.
   - **San Marino: Day Visit (1 day) 🛡️**: the same bus was "~€7 one-way" and "€7 round trip". The round trip now reads ~€14.

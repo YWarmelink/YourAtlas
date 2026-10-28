@@ -23506,7 +23506,7 @@ function rbBuildTenerifeLaGomeraRoute() {
         { name: 'Valle Gran Rey', lat: 28.0989, lng: -17.3106 , notes: 'Steep, palm-lined valley on La Gomera\'s west coast with a laid-back, semi-alternative scene and good hiking. Time it for sunset at a viewpoint like La Merica or Mirador de Igualero, popular with paragliders too.' },
         { name: 'Agulo', lat: 28.1858, lng: -17.2004 , notes: 'Small village on a black-sand coastal terrace below sheer cliffs, facing Tenerife\'s Teide across the strait. Shoot it from above at the Mirador de Abrante skywalk (glass-floor platform) for the classic view over the village and coast.' },
       ],
-      notes: "2 days in Garajonay National Park and 1-2 days around Valle Gran Rey/Agulo. Budget ~€50-70/day. Season: good year-round — the laurisilva (laurel) forest stays foggy-green all year, a welcome contrast when it's hot down on the coast. Web check (2026-08): Garajonay has been a UNESCO World Heritage site since 1986 (40km², 18 marked trails), no permit needed, but check for summer fire-risk closures. Silbo Gomero, the whistled language, has been UNESCO intangible heritage since 2009 — restaurant demonstrations for tourists aren't guaranteed daily, so check with the tourist office ahead. Same Teide-permit caveat as the Tenerife leg above.",
+      notes: "2 days in Garajonay National Park and 1-2 days around Valle Gran Rey/Agulo. Budget ~€50-70/day. Season: good year-round — the laurisilva (laurel) forest stays foggy-green all year, a welcome contrast when it's hot down on the coast. Web check (2026-08): Garajonay has been a UNESCO World Heritage site since 1986 (40km², 18 marked trails), no permit needed, but check for summer fire-risk closures. Silbo Gomero, the whistled language, has been UNESCO intangible heritage since 2009 — restaurant demonstrations for tourists aren't guaranteed daily, so check with the tourist office ahead.",
       transport_to_next: 'End of this route — ferry back to Los Cristianos and fly home from Tenerife South.',
     },
   ], {
@@ -23556,7 +23556,7 @@ function rbBuildCanaryIslandsRoute() {
         { name: 'Teide National Park', lat: 28.2723, lng: -16.6417 , notes: 'Spain\'s highest peak (3,715m) with a genuinely otherworldly volcanic landscape; the cable car takes you most of the way up. If you want the actual summit, you need a separate free National Park permit booked online in advance (slots release Mondays 7am Canary time, up to ~56 days ahead) — the cable car ticket alone does not include summit access. Go early for clearer skies before afternoon cloud rolls in.' },
       ],
       notes: "Entry: easyJet and Transavia fly direct from Amsterdam/Rotterdam to Tenerife South; TUI fly runs winter-sun charters. 4 days: Santa Cruz and Teide National Park. Budget ~€55-75/day average across this route, plus inter-island transport (see below). Web check (2026-08): Teide cable car ~€40 return, weather-dependent, book ahead; free summit permit mandatory for the last 200m (max ~200/day via reservasparquesnacionales.es) — book weeks ahead in high season, it sells out.",
-      transport_to_next: "Binter Canarias flies between all the Canary Islands (~30-45 min each hop). Web check (2026-08): book ahead in high season.",
+      transport_to_next: "Binter Canarias flight on to Gran Canaria (~30 min); Binter flies between all the Canary Islands (~30-45 min each hop). Web check (2026-08): book ahead in high season.",
     },
     {
       code: 'ES', name: 'Spain', days: 3, budget: 195, lat: 28.0083, lng: -15.5817,
@@ -27750,6 +27750,524 @@ const RB_ROUTE_COSTS = {
       ],
     },
 
+
+  // ---- Phase 4 batch 5: Iberia 1/2 (Spain, Andorra, Gibraltar), extracted 2026-10-28, approved by Youri (planning/budget_batch5/REVIEW.md) ----
+  // NOT yet in RB_ROUTE_COSTS: waiting for Youri's review. Fares: flights_from_ams.csv + flights_batch5.csv.
+  // Car: data/cost_reference/car_costs_by_country.csv (7 L/100 km; ES fuel 1.78, rental 40/day, tolls 9/100 km; FR 2.229/48/9; AD 1.60).
+
+    'gt_seed_andorra-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Barcelona one way (see flights_batch5.csv)
+      flight_out_cost: 110,  // Barcelona-AMS one way (same)
+      blocks: [
+        { code: 'AD', local: 66, extras: [] },  // Alsa/Novatel bus BCN-Andorra ~33 each way (est); NO car: 4 days in a tiny country, notes list bus as an option
+      ],
+    },
+
+    'gt_seed_andorra-french-pyrenees-ariege-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-Toulouse one way (KLM direct; Expedia IE EUR 129 floor, Omio GBP 203-269; typical ~150)
+      flight_out_cost: 150,  // Toulouse-AMS one way (same)
+      blocks: [
+        { code: 'AD', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 6 days (Toulouse pickup/return) × €48 + fuel ≈450 km (TLS-Andorra-Ax loop-TLS; 420 km FR × €2.229, 30 km AD × €1.60) + tolls A66/Envalira tunnel ≈€15 (est)', 372, 'transport'),
+        ] },
+        { code: 'FR', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_andalusia-roadtrip-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Malaga one way (flights_from_ams.csv)
+      flight_out_cost: 110,  // Malaga-AMS one way (same)
+      blocks: [
+        { code: 'ES', local: 0, extras: [
+          rbExtra('Car: rental 9 days × €40 + fuel ≈1,040 km (notes, circular loop) × 0.07 × €1.78 + tolls €0 (notes: mostly toll-free)', 490, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_andalusia-seville-granada-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Malaga one way (Seville has no direct NL flight per notes)
+      flight_out_cost: 110,  // Malaga-AMS one way
+      blocks: [
+        { code: 'ES', local: 62, extras: [] },  // Malaga-Seville train ~25 + Seville-Granada bus ~25 + Granada-Malaga bus ~12 (est)
+      ],
+    },
+
+    'gt_seed_andorra-spanish-pyrenees-grand-circuit-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Barcelona one way
+      flight_out_cost: 110,  // Barcelona-AMS one way
+      blocks: [
+        { code: 'AD', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 9 days (Barcelona) × €40 + fuel ≈900 km (BCN-Andorra-La Seu-Cerdanya-Vielha-Aiguestortes-Ripoll-BCN, own estimate; input km 430 is straight-line) × 0.07 × €1.78 + Cadi tunnel/AP tolls ≈€25 (est)', 497, 'transport'),
+        ] },
+        { code: 'ES', local: 0, extras: [
+          rbExtra('Aiguestortes taxi/4x4 shuttle from Boi or Espot (mandatory; price not in notes, est €8 each way pp)', 16, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_asturias-cantabria-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Bilbao one way
+      flight_out_cost: 140,  // Oviedo/Asturias-AMS one way (KLM/Vueling; Expedia floor USD 127, typical higher)
+      blocks: [
+        { code: 'ES', local: 0, extras: [
+          rbExtra('Car: rental 6 days × €40 + one-way drop Bilbao→Oviedo ≈€60 (est) + fuel ≈400 km (Bilbao-Santander-Picos-Oviedo) + tolls ≈€5 (est)', 355, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_balearic-islands-7-10-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 115,   // AMS-Palma one way
+      flight_out_cost: 110,  // Ibiza-AMS one way
+      blocks: [
+        { code: 'ES', transport: 50, local: 0, extras: [] },  // ferry Palma-Ciutadella/Mahon (est ~€50)
+        { code: 'ES', transport: 70, local: 0, extras: [] },  // Menorca-Ibiza: no direct ferry; Vueling/Binter flight (est)
+        { code: 'ES', local: 0, extras: [
+          rbExtra('Formentera day trip by ferry from Ibiza (notes: ~€40-60 return)', 50, 'tour', true),
+        ] },
+      ],
+    },
+
+    'gt_seed_barcelona-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Barcelona one way
+      flight_out_cost: 110,
+      blocks: [
+        { code: 'ES', local: 0, extras: [] },  // city-only, notes: no car needed (keyword mode "rental" is wrong)
+      ],
+    },
+
+    'gt_seed_basque-country-san-sebastian-bilbao-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Bilbao one way
+      flight_out_cost: 110,
+      blocks: [
+        { code: 'ES', local: 30, extras: [] },  // buses Bilbao-San Sebastian ~10 each way + coastal bus hops (Hondarribia, Getaria) ≈10 (est)
+      ],
+    },
+
+    'gt_seed_canary-islands-10-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Tenerife South one way
+      flight_out_cost: 120,  // Fuerteventura-AMS one way (est from Canary fares; not searched)
+      blocks: [
+        { code: 'ES', transport: 45, local: 10, extras: [   // Binter Tenerife-Gran Canaria (est ~45; order is TF,GC,ACE,FUE)
+          rbExtra('Teide cable car (notes: ~€40 return; kept whole, you ride up and down)', 40, 'activity'),
+        ] },
+        { code: 'ES', transport: 55, local: 10, extras: [] },  // Binter Gran Canaria-Lanzarote (est)
+        { code: 'ES', transport: 27, local: 5, extras: [] },   // ferry Playa Blanca-Corralejo foot passenger (est)
+        { code: 'ES', local: 5, extras: [] },
+      ],
+    },
+
+    'gt_seed_catalonia-pyrenees-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Barcelona one way
+      flight_out_cost: 110,
+      blocks: [
+        { code: 'ES', local: 0, extras: [
+          rbExtra('Car: rental 7 of 9 days (after 2 Barcelona city days) × €40 + fuel ≈600 km × 0.07 × €1.78 + tolls (60% of km × €9/100 km)', 387, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_galicia-santiago-de-compostela-coast-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Santiago de Compostela one way (seasonal direct; Expedia USD 128-150 floors, typical higher)
+      flight_out_cost: 140,
+      blocks: [
+        { code: 'ES', local: 45, extras: [] },  // buses Santiago-Pontevedra/O Grove/Vigo (+A Coruña) (est); Cies ferry not priced in notes
+      ],
+    },
+
+    'gt_seed_gibraltar-andalusia-costa-del-sol-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Malaga one way
+      flight_out_cost: 110,
+      blocks: [
+        { code: 'ES', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 4 days × €40 + fuel ≈400 km (Malaga-La Linea 132 km each way + Marbella/Ronda) × 0.07 × €1.78 + AP-7 tolls ≈€15 (est)', 225, 'transport'),
+        ] },
+        { code: 'GI', local: 0, extras: [] },  // on foot; car stays in La Linea
+      ],
+    },
+
+    'gt_seed_gran-canaria-5-7-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Gran Canaria one way
+      flight_out_cost: 120,
+      blocks: [
+        { code: 'ES', local: 20, extras: [] },  // guagua Las Palmas-Maspalomas-Tejeda (est)
+      ],
+    },
+
+    'gt_seed_gran-canaria-tenerife-7-10-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Gran Canaria one way
+      flight_out_cost: 120,  // Tenerife South-AMS one way
+      blocks: [
+        { code: 'ES', transport: 45, local: 10, extras: [] },  // Binter flight (or Fred Olsen ferry ~50) (est)
+        { code: 'ES', local: 10, extras: [
+          rbExtra('Teide cable car (notes: ~€40 return; kept whole)', 40, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_ibiza-4-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Ibiza one way (seasonal)
+      flight_out_cost: 110,
+      blocks: [
+        { code: 'ES', local: 10, extras: [] },  // bus Ibiza Town-Sant Joan/Portinatx (est)
+      ],
+    },
+
+    'gt_seed_lanzarote-fuerteventura-5-7-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Lanzarote one way
+      flight_out_cost: 120,  // Fuerteventura-AMS one way (est)
+      blocks: [
+        { code: 'ES', transport: 27, local: 5, extras: [] },  // ferry Playa Blanca-Corralejo foot passenger (est); Timanfaya tour not priced in notes
+        { code: 'ES', local: 5, extras: [] },
+      ],
+    },
+
+    'gt_seed_madrid-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Madrid one way
+      flight_out_cost: 130,
+      blocks: [
+        { code: 'ES', local: 26, extras: [          // AVE Segovia €12-14 (notes, midpoint 13) × there and back
+          rbExtra('Paseo del Arte combined ticket (Prado, Reina Sofia, Thyssen; notes ~€32)', 32, 'activity'),
+        ] },
+      ],
+    },
+
+    'gt_seed_mallorca-menorca-7-10-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 115,   // AMS-Palma one way
+      flight_out_cost: 140,  // Menorca-AMS direct (seasonal, Transavia; Momondo EUR 140-149)
+      blocks: [
+        { code: 'ES', transport: 50, local: 0, extras: [   // ferry Palma-Ciutadella (est ~€50)
+          rbExtra('Car: Mallorca rental 4 days × €40 + fuel ≈150 km (Tramuntana loop) × 0.07 × €1.78', 179, 'transport'),
+        ] },
+        { code: 'ES', local: 20, extras: [] },  // buses Mahon-Ciutadella etc. (est); no Menorca car priced (notes mention car for Mallorca only)
+      ],
+    },
+
+    'gt_seed_mallorca-serra-de-tramuntana-loop-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 115,   // AMS-Palma one way
+      flight_out_cost: 115,
+      blocks: [
+        { code: 'ES', local: 0, extras: [
+          rbExtra('Car: rental 6 days × €40 + fuel ≈300 km (Tramuntana, Formentor, east coast; input 100 km is straight-line) × 0.07 × €1.78', 277, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_menorca-4-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 140,   // AMS-Menorca (direct seasonal, or via Palma/BCN; Momondo EUR 140-149)
+      flight_out_cost: 140,
+      blocks: [
+        { code: 'ES', local: 0, extras: [
+          rbExtra('Car: rental 5 days × €40 (island rentals often pricier, est) + fuel ≈150 km × 0.07 × €1.78', 219, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_northern-spain-roadtrip-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Bilbao one way
+      flight_out_cost: 140,  // Santiago de Compostela-AMS one way
+      blocks: [
+        { code: 'ES', local: 0, extras: [
+          rbExtra('Car: rental 12 days × €40 + one-way drop Bilbao→Santiago ≈€100 (est, notes confirm a fee) + fuel ≈1,050 km (880 km input + San Sebastian detour) × 0.07 × €1.78 + AP-8/AP-1 tolls ≈€20 (est)', 731, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_northern-spain-basque-interior-rioja-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Bilbao one way
+      flight_out_cost: 110,
+      blocks: [
+        { code: 'ES', local: 0, extras: [
+          rbExtra('Car: rental 9 days × €40 + fuel ≈600 km (480 km input + Bilbao-San Sebastian leg) × 0.07 × €1.78 + AP-8/AP-68/AP-15 tolls ≈€25 (est)', 460, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_porto-northern-spain-10-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 105,   // AMS-Porto one way (Expedia IE EUR 83, Skyscanner floor EUR 69, typical higher)
+      flight_out_cost: 110,  // Bilbao-AMS one way
+      blocks: [
+        { code: 'PT', transport: 25, local: 20, extras: [] },  // Porto-Santiago bus ~€25 (est) instead of a cross-border car; local: Porto-Guimaraes/Braga/Viana trains+buses (est)
+        { code: 'ES', local: 0, extras: [
+          rbExtra('Car: rental 8 days from Santiago × €40 + one-way drop Santiago→Bilbao ≈€100 (est) + fuel ≈1,010 km (input) × 0.07 × €1.78 + tolls ≈€20 (est)', 566, 'transport'),
+        ] },
+      ],
+    },
+
+
+  // ---- Phase 4 batch 6: Iberia 2/2 (Spain/Portugal/islands), extracted 2026-10-28, approved by Youri (planning/budget_batch6/REVIEW.md) ----
+  // Fares: data/cost_reference/flights_from_ams.csv + planning/budget_batch6/flights_batch6.csv. Car: data/cost_reference/car_costs_by_country.csv
+  // (7 L/100 km: ES 1.78 EUR/l = 0.125/km, PT 2.099 EUR/l = 0.147/km; rental EUR 40/day both; tolls: PT A1 Porto-Lisbon ~24, A2 Lisbon-Algarve ~22, A22 ~5-10; Spanish autovias mostly free).
+
+    'gt_seed_spain-east-to-south-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Barcelona one way (flights_batch6.csv)
+      flight_out_cost: 110,  // Malaga-AMS one way (flights_from_ams.csv AGP out, reused)
+      blocks: [
+        { code: 'ES', local: 0, extras: [
+          rbExtra('Car: rental 10 days (from Tarragona, Barcelona days car-free) × €40 + one-way drop Malaga ≈€100 (est) + fuel ≈1230 km × 0.125 + tolls ≈€6 (AP-7 free, notes: short stretch S of Cartagena)', 659, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_spain-north-to-central-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Bilbao one way (flights_batch6.csv)
+      flight_out_cost: 110,  // Madrid-AMS one way (flights_batch6.csv)
+      blocks: [
+        { code: 'ES', local: 70, extras: [] },  // no car in the notes (train emoji, linear route): public transport, est: San Sebastian-Vitoria bus ~10, Vitoria-Burgos bus ~13, Burgos-Madrid train/bus ~22, Toledo + Segovia day trips by train ~26
+      ],
+    },
+
+    'gt_seed_tenerife-5-7-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Tenerife South one way (flights_batch6.csv)
+      flight_out_cost: 120,  // Tenerife South-AMS one way (flights_batch6.csv)
+      blocks: [
+        { code: 'ES', local: 0, extras: [
+          rbExtra('Car: rental 4 days (Anaga + Teide days) × €40 + fuel ≈230 km × 0.125 (no tolls)', 189, 'transport'),
+          rbExtra('Teide cable car (return)', 40, 'activity'),  // notes: ~€40 return; summit permit free
+        ] },
+      ],
+    },
+
+    'gt_seed_tenerife-la-gomera-7-10-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Tenerife South (as above)
+      flight_out_cost: 120,  // Tenerife South-AMS (as above)
+      blocks: [
+        { code: 'ES', transport: 38, local: 30, extras: [  // ferry Los Cristianos-San Sebastian ~38 (Fred Olsen/Armas, est, no price in notes); Titsa buses airport/Santa Cruz/Teide (est)
+          rbExtra('Teide cable car (return)', 40, 'activity'),  // notes ~€40 return
+        ] },
+        { code: 'ES', local: 63, extras: [] },  // return ferry San Sebastian-Los Cristianos ~38 (est) + La Gomera buses to Valle Gran Rey/Agulo ~25 (est)
+      ],
+    },
+
+    'gt_seed_valencia-costa-blanca-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,   // AMS-Valencia one way (flights_batch6.csv)
+      flight_out_cost: 90,   // Valencia-AMS one way (flights_batch6.csv)
+      blocks: [
+        { code: 'ES', local: 0, extras: [
+          rbExtra('Car: rental 4 days (after Valencia city days) × €40 + fuel ≈720 km × 0.125 + tolls ≈€10 (AP-7 Valencia-Alicante largely free, est); loop back to Valencia, no drop fee', 260, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_algarve-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 120,   // AMS-Faro one way (flights_batch6.csv)
+      flight_out_cost: 110,  // Faro-AMS one way (flights_batch6.csv)
+      blocks: [
+        { code: 'PT', local: 0, extras: [
+          rbExtra('Car: rental 5 days × €40 + fuel ≈300 km × 0.147 + A22 tolls ≈€8 (est)', 252, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_azores-island-hopping-10-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-Ponta Delgada one way (flights_batch6.csv)
+      flight_out_cost: 200,  // Horta-Lisbon-AMS (HOR-LIS ~90 + LIS-AMS ~105; est, low confidence)
+      blocks: [
+        { code: 'PT', transport: 80, local: 30, extras: [] },  // Azores Airlines PDL-Terceira (notes ~60-100 -> 80); Sao Miguel buses/shuttles Furnas + Sete Cidades (est)
+        { code: 'PT', transport: 80, local: 10, extras: [] },  // Terceira-Faial inter-island flight (notes' 150-250 total for 2-3 hops -> 80 each); Terceira local bus (est)
+        { code: 'PT', local: 12, extras: [] },                  // Faial-Pico ferry return ~12 (est). Pico climb needs guide/permit, price not in notes: not added
+      ],
+    },
+
+    'gt_seed_azores-sao-miguel-terceira-7-10-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-Ponta Delgada one way (flights_batch6.csv)
+      flight_out_cost: 200,  // Terceira-Lisbon-AMS or via Ponta Delgada (domestic ~80 + AMS ~140; est, low)
+      blocks: [
+        { code: 'PT', transport: 80, local: 0, extras: [   // PDL-Terceira flight (notes ~60-100 -> 80)
+          rbExtra('Car: rental 4 days Sao Miguel + 3 days Terceira (2 rentals) × €40 + fuel ≈340 km × 0.147 (no tolls)', 330, 'transport'),
+        ] },
+        { code: 'PT', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_central-portugal-coimbra-serra-da-estrela-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,   // AMS-Porto one way (flights_batch6.csv)
+      flight_out_cost: 120,  // Porto-AMS one way (flights_batch6.csv)
+      blocks: [
+        { code: 'PT', local: 0, extras: [
+          rbExtra('Car: rental 6 days × €40 + fuel ≈430 km (190 in route + Porto-Coimbra and back) × 0.147 + A1 tolls Porto-Coimbra both ways ≈€22 (est)', 325, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_lisbon-sintra-5-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Lisbon one way (flights_batch6.csv)
+      flight_out_cost: 105,  // Lisbon-AMS one way (flights_batch6.csv)
+      blocks: [
+        { code: 'PT', local: 20, extras: [] },  // trains Sintra + Cascais return ~2.4/2.3 each way, Sintra/Cabo da Roca buses (est)
+      ],
+    },
+
+    'gt_seed_madeira-5-7-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Funchal one way (flights_batch6.csv)
+      flight_out_cost: 120,  // Funchal-AMS one way (flights_batch6.csv)
+      blocks: [
+        { code: 'PT', local: 0, extras: [
+          rbExtra('Car: rental 3 days (north-coast loop) × €40 + fuel ≈170 km × 0.147 (loop estimated; notes name the loop, input km 80 too low) + tolls ~0', 145, 'transport'),
+          rbExtra('Monte cable car (return)', 19, 'activity'),  // notes: €12.50 one-way / €19 return
+        ] },
+      ],
+    },
+
+    'gt_seed_madeira-porto-santo-7-10-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 130,   // AMS-Funchal (as above)
+      flight_out_cost: 120,  // Funchal-AMS (as above)
+      blocks: [
+        { code: 'PT', transport: 30, local: 0, extras: [   // Lobo Marinho ferry Funchal-Porto Santo ~30 one way (est; notes give no price)
+          rbExtra('Car: rental 3 days (north-coast loop) × €40 + fuel ≈170 km × 0.147', 145, 'transport'),
+          rbExtra('Monte cable car (return)', 19, 'activity'),  // notes: €12.50 one-way / €19 return
+        ] },
+        { code: 'PT', local: 30, extras: [] },  // return ferry Porto Santo-Funchal ~30 (est)
+      ],
+    },
+
+    'gt_seed_northern-portugal-galicia-7-10-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,   // AMS-Porto one way (flights_batch6.csv)
+      flight_out_cost: 130,  // Santiago de Compostela-AMS one way (flights_batch6.csv)
+      blocks: [
+        { code: 'PT', transport: 0, local: 38, extras: [   // trains Porto-Guimaraes/Braga return ~13 + Douro train to Pinhao return ~25 (est)
+          rbExtra('Car: rental 6 days (after Porto days) × €40 + one-way drop Santiago (cross-border) ≈€90 (est) + fuel 280 km PT × 0.147 + 280 km ES × 0.125 + tolls ≈€28 (A28/A3 + AP-9, est)', 434, 'transport'),
+        ] },
+        { code: 'ES', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_northern-portugal-minho-6-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,   // AMS-Porto one way (flights_batch6.csv)
+      flight_out_cost: 120,  // Porto-AMS one way (flights_batch6.csv)
+      blocks: [
+        { code: 'PT', local: 17, extras: [   // trains Porto-Guimaraes + Porto-Braga ~3.25 each way (est)
+          rbExtra('Car: rental 3 days (Viana do Castelo / Ponte de Lima / Minho) × €40 + fuel ≈160 km × 0.147 + A28 tolls ≈€8 (est)', 152, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_porto-4-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,   // AMS-Porto one way (flights_batch6.csv)
+      flight_out_cost: 120,  // Porto-AMS one way (flights_batch6.csv)
+      blocks: [
+        { code: 'PT', local: 25, extras: [] },  // Douro day trip by train Porto-Pinhao/Regua return (est ~25)
+      ],
+    },
+
+    'gt_seed_porto-douro-lisbon-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,   // AMS-Porto one way (flights_batch6.csv)
+      flight_out_cost: 105,  // Lisbon-AMS one way (flights_batch6.csv)
+      blocks: [
+        { code: 'PT', local: 0, extras: [
+          rbExtra('Car: rental 4 days (Porto-Douro-Lisbon) × €40 + one-way drop Lisbon ≈€60 (est) + fuel ≈600 km × 0.147 + tolls ≈€25 (A4/A25/A1, est)', 333, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_portugal-andalusia-10-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 110,   // AMS-Lisbon one way (flights_batch6.csv)
+      flight_out_cost: 110,  // Malaga-AMS one way (AGP; Granada is ~1h30 from Malaga; flights_batch6.csv back row)
+      blocks: [
+        { code: 'PT', transport: 0, local: 10, extras: [   // Lisbon-Sintra trains (est)
+          rbExtra('Car: rental 8 days (from Lisbon to the Algarve onwards) × €40 + one-way drop Malaga/Granada (cross-border) ≈€120 (est) + fuel 460 km PT × 0.147 + 670 km ES × 0.125 + tolls ≈€40 (A2/A22 + A-49, est; Spanish autovias free)', 631, 'transport'),
+        ] },
+        { code: 'ES', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_portugal-spain-roadtrip-14-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,   // AMS-Porto one way (flights_batch6.csv)
+      flight_out_cost: 110,  // Malaga-AMS one way (AGP)
+      blocks: [
+        { code: 'PT', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 12 days (after 2 Porto days) × €40 + one-way drop Malaga/Granada (cross-border) ≈€120 (est) + fuel 940 km PT × 0.147 + 640 km ES × 0.125 + tolls ≈€75 (A1/A2/A22 + A-49, est)', 893, 'transport'),
+        ] },
+        { code: 'ES', local: 0, extras: [] },
+      ],
+    },
+
+    'gt_seed_portugal-spain-porto-to-madrid-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,   // AMS-Porto one way (flights_batch6.csv)
+      flight_out_cost: 110,  // Madrid-AMS one way (flights_batch6.csv)
+      blocks: [
+        { code: 'PT', transport: 0, local: 0, extras: [
+          rbExtra('Car: rental 8 days (Porto to Seville, car dropped in Seville) × €40 + one-way drop Seville (cross-border) ≈€120 (est) + fuel 640 km PT × 0.147 + 220 km ES × 0.125 + tolls ≈€64 (A1/A2/A22 + A-49, est)', 625, 'transport'),
+        ] },
+        { code: 'ES', local: 40, extras: [] },  // AVE Seville-Madrid ~40 booked ahead (est; notes: ~2h30, realistic alternative)
+      ],
+    },
+
+    'gt_seed_portugal-roadtrip-12-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,   // AMS-Porto one way (flights_batch6.csv)
+      flight_out_cost: 110,  // Faro-AMS one way (flights_batch6.csv)
+      blocks: [
+        { code: 'PT', local: 0, extras: [
+          rbExtra('Car: rental 11 days × €40 + one-way drop Faro ≈€70 (est) + fuel ≈1200 km × 0.147 + tolls ≈€66 (A1/A2/A22 etc, est)', 752, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_portugal-north-to-south-9-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 100,   // AMS-Porto one way (flights_batch6.csv)
+      flight_out_cost: 110,  // Faro-AMS one way (flights_batch6.csv)
+      blocks: [
+        { code: 'PT', local: 0, extras: [
+          rbExtra('Car: rental 7 days (after 2 Porto days) × €40 + one-way drop Faro ≈€70 (est) + fuel ≈670 km × 0.147 + tolls ≈€46 (A1 ~€24 per notes + A2 ~€22, est)', 494, 'transport'),
+        ] },
+      ],
+    },
+
+    'gt_seed_sao-miguel-azores-5-7-days': {
+      checked: '2026-10-28',
+      flight_in_cost: 150,   // AMS-Ponta Delgada one way (flights_batch6.csv)
+      flight_out_cost: 140,  // Ponta Delgada-AMS one way (flights_batch6.csv)
+      blocks: [
+        { code: 'PT', local: 0, extras: [
+          rbExtra('Car: rental 4 days (Sete Cidades / Furnas / Lagoa do Fogo) × €40 + fuel ≈150 km × 0.147 (input km 90 too low for round trips from the base; no tolls)', 182, 'transport'),
+        ] },
+      ],
+    },
+
 };
 
 /**
@@ -28260,8 +28778,8 @@ function rbMigrateBatch3RouteFixes() {
 
 // ---- Route-text fixes found by Phase 4 batch 4 (2026-10-28, Youri asked to fix them) ----
 
-// [route id, block index, old text, new text]: a block's notes text is swapped only while the old
-// text is still in it, so a hand edit is left alone.
+// [route id, block index, old text, new text, field = 'notes']: a block's text is swapped only while
+// the old text is still in it, so a hand edit is left alone.
 //  - Sicily + Malta (9 days) 🌋: the loop ended in the west (Agrigento/Palermo) but flies to Malta
 //    from Catania, so it now drives back to Catania (where the rental car is returned).
 //  - San Marino: Day Visit (1 day) 🛡️: the same bus was "~€7 one-way" and "€7 round trip".
@@ -28271,15 +28789,19 @@ const RB_BATCH4_TEXT_FIXES = [
   ['gt_seed_san-marino-day-visit-1-day', 0, '(bus €7 round trip or', '(bus ~€14 round trip or'],
 ];
 
+function rbApplyBlockTextFixes(route, fixes) {
+  let changed = false;
+  fixes.forEach(([id, i, from, to, field = 'notes']) => {
+    const blk = route.id === id && (route.blocks || [])[i];
+    if (blk && (blk[field] || '').includes(from)) { blk[field] = blk[field].replace(from, to); changed = true; }
+  });
+  return changed;
+}
+
 /** Applies RB_BATCH4_TEXT_FIXES to `route`; true when it changed something. Shared by
  *  rbMigrateBatch4RouteFixes() (localStorage) and scripts/fix_route_texts_in_sheet.js (Sheet). */
 function rbFixBatch4RouteTexts(route) {
-  let changed = false;
-  RB_BATCH4_TEXT_FIXES.forEach(([id, i, from, to]) => {
-    const blk = route.id === id && (route.blocks || [])[i];
-    if (blk && (blk.notes || '').includes(from)) { blk.notes = blk.notes.replace(from, to); changed = true; }
-  });
-  return changed;
+  return rbApplyBlockTextFixes(route, RB_BATCH4_TEXT_FIXES);
 }
 
 function rbMigrateBatch4RouteFixes() {
@@ -28287,5 +28809,30 @@ function rbMigrateBatch4RouteFixes() {
   localStorage.setItem(RB_MIGRATE_FLAG_2026_10_BATCH4_ROUTE_FIXES, '1');
   let touched = false;
   rbRoutes.forEach(r => { if (rbFixBatch4RouteTexts(r)) touched = true; });
+  if (touched) rbSave();
+}
+
+// ---- Route-text fixes found by Phase 4 batches 5+6 (2026-10-28, Youri asked to fix them) ----
+//  - Canary Islands (10-14 days) 🏝️: the Tenerife leg's transport didn't name the next island.
+//  - Tenerife + La Gomera (7-10 days) 🏝️: the La Gomera leg repeated the Teide-permit caveat,
+//    which only applies on Tenerife.
+const RB_BATCH56_TEXT_FIXES = [
+  ['gt_seed_canary-islands-10-14-days', 0, 'Binter Canarias flies between all the Canary Islands (~30-45 min each hop).',
+    'Binter Canarias flight on to Gran Canaria (~30 min); Binter flies between all the Canary Islands (~30-45 min each hop).',
+    'transport_to_next'],
+  ['gt_seed_tenerife-la-gomera-7-10-days', 1, ' Same Teide-permit caveat as the Tenerife leg above.', ''],
+];
+
+/** Applies RB_BATCH56_TEXT_FIXES; shared by rbMigrateBatch56RouteFixes() and
+ *  scripts/fix_route_texts_in_sheet.js 56. */
+function rbFixBatch56RouteTexts(route) {
+  return rbApplyBlockTextFixes(route, RB_BATCH56_TEXT_FIXES);
+}
+
+function rbMigrateBatch56RouteFixes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_10_BATCH56_ROUTE_FIXES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_10_BATCH56_ROUTE_FIXES, '1');
+  let touched = false;
+  rbRoutes.forEach(r => { if (rbFixBatch56RouteTexts(r)) touched = true; });
   if (touched) rbSave();
 }

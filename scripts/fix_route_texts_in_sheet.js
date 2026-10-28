@@ -7,6 +7,8 @@
  *    9 days, and San Marino + Tuscany (5 days) 🍷's new Bologna block.
  *  - batch 4 (2026-10-28): rbFixBatch4RouteTexts() — notes text of Sicily + Malta (9 days) 🌋 and
  *    San Marino: Day Visit (1 day) 🛡️.
+ *  - batches 5+6 (2026-10-28): rbFixBatch56RouteTexts() — Canary Islands (10-14 days) 🏝️ and
+ *    Tenerife + La Gomera (7-10 days) 🏝️.
  *
  * Reads the live routes through the app's own dataService.getGrandTripsFull(), runs the app's own
  * fix function on them (a no-op once applied or when hand-edited), and upserts each changed route
@@ -25,6 +27,7 @@ const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzfvEBxhAUEGfxX
 const FIXES = {
   3: { fn: 'rbFixBatch3RouteTexts', ids: ['gt_seed_northern-italy-roadtrip-9-days', 'gt_seed_san-marino-tuscany-5-days'] },
   4: { fn: 'rbFixBatch4RouteTexts', ids: ['gt_seed_sicily-malta-9-days', 'gt_seed_san-marino-day-visit-1-day'] },
+  56: { fn: 'rbFixBatch56RouteTexts', ids: ['gt_seed_canary-islands-10-14-days', 'gt_seed_tenerife-la-gomera-7-10-days'] },
 };
 
 function loadApp() {
