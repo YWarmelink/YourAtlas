@@ -1,0 +1,276 @@
+[
+ {
+  "id": "L121",
+  "leg": "AMS-Curacao KLM direct",
+  "airport_code": "CUR",
+  "direction": "out",
+  "eur_one_way": 470,
+  "routing": "KLM direct",
+  "confidence": "low",
+  "sources": [
+   "https://www.farecompare.com/flights/Amsterdam-AMS/Curacao-CUR/market.html"
+  ],
+  "note": "avg one-way ~$408, cheapest months Sep/May; December is peak so ~+25%"
+ },
+ {
+  "id": "L122",
+  "leg": "Krabi/Phuket-Bangkok ~35",
+  "airport_code": "HKT",
+  "direction": "back",
+  "eur_one_way": 430,
+  "routing": "Phuket/Krabi-BKK budget domestic (~35) + BKK-AMS",
+  "confidence": "low",
+  "sources": [
+   "https://au.trip.com/flights/bangkok-to-amsterdam/airfares-bkk-ams"
+  ],
+  "note": "BKK-AMS cheapest one-way ~AU$483 (~EUR280) is a floor; Dec peak ~EUR395 + ~35 domestic"
+ },
+ {
+  "id": "L123",
+  "leg": "AMS-Managua via Panama City",
+  "airport_code": "MGA",
+  "direction": "out",
+  "eur_one_way": 450,
+  "routing": "Copa/other via Panama or US hub",
+  "confidence": "low",
+  "sources": [
+   "https://www.edreams.net/us/flights/amsterdam-managua/AMS/MGA/"
+  ],
+  "note": "return ~USD750-1190; one-way taken ~60%; Sept is low season"
+ },
+ {
+  "id": "L124",
+  "leg": "gt_seed_nicaragua flight_out_cost",
+  "airport_code": "MGA",
+  "direction": "back",
+  "eur_one_way": 450,
+  "routing": "Managua-AMS via hub",
+  "confidence": "low",
+  "sources": [
+   "https://www.edreams.net/us/flights/amsterdam-managua/AMS/MGA/"
+  ],
+  "note": "no one-way quote; derived from AMS-MGA return range"
+ },
+ {
+  "id": "L125",
+  "leg": "Ulaanbaatar-AMS",
+  "airport_code": "ULN",
+  "direction": "back",
+  "eur_one_way": 400,
+  "routing": "1 stop (KLM/Turkish)",
+  "confidence": "low",
+  "sources": [
+   "https://kiwi.com/en/cheap-flights/ulaanbaatar-mongolia/amsterdam-netherlands"
+  ],
+  "note": "Kiwi one-stop from ~GBP336 (~EUR385) for May; Sept shoulder"
+ },
+ {
+  "id": "L126",
+  "leg": "KL-AMS",
+  "airport_code": "KUL",
+  "direction": "back",
+  "eur_one_way": 400,
+  "routing": "Nonstop (MH/KLM) or 1 stop Gulf hub",
+  "confidence": "low",
+  "sources": [
+   "https://www.expedia.com/lp/flights/kul/ams/kuala-lumpur-to-amsterdam",
+   "https://www.kayak.com/flight-routes/Kuala-Lumpur-Intl-KUL/Amsterdam-Schiphol-AMS",
+   "https://expedia.co.uk/lp/flights/kul/ams/kuala-lumpur-to-amsterdam"
+  ],
+  "note": "[re-check r2] One-way floors $321-336 (Kayak/Expedia, ~EUR 290-300), GBP 231; Cheapflights $393; several sources flag August as busy/expensive so lifted ~30% above floor."
+ },
+ {
+  "id": "L127",
+  "leg": "Kathmandu-AMS",
+  "airport_code": "KTM",
+  "direction": "back",
+  "eur_one_way": 470,
+  "routing": "1 stop via Gulf/Istanbul",
+  "confidence": "medium",
+  "sources": [
+   "https://www.booking.com/flights/route/city-to-city/np-kathmandu-to-nl-amsterdam.html",
+   "https://au.trip.com/flights/amsterdam-to-kathmandu/airfares-ams-ktm"
+  ],
+  "note": "one-way ~USD550 (Booking) and ~AU$816 (Trip) = ~EUR480-490; Nov is peak trekking season"
+ },
+ {
+  "id": "L128",
+  "leg": "Accra-AMS direct KLM",
+  "airport_code": "ACC",
+  "direction": "back",
+  "eur_one_way": 430,
+  "routing": "KLM direct",
+  "confidence": "low",
+  "sources": [
+   "https://expedia.co.uk/lp/flights/acc/ams/accra-to-amsterdam",
+   "https://www.ebookers.fi/en/lp/flights/280/178229/accra-to-amsterdam"
+  ],
+  "note": "from GBP334 (~EUR385) / EUR452 lowest one-way (older); March shoulder"
+ },
+ {
+  "id": "L129",
+  "leg": "AMS-Pointe-a-Pitre via Paris",
+  "airport_code": "PTP",
+  "direction": "out",
+  "eur_one_way": 420,
+  "routing": "via Paris",
+  "confidence": "low",
+  "sources": [
+   "https://www.skyscanner.ie/routes/ams/ptp/amsterdam-schiphol-to-pointe-a-pitre.html",
+   "https://www.kiwi.com/en/cheap-flights/amsterdam-netherlands/pointe-a-pitre-guadeloupe-france"
+  ],
+  "note": "return ~EUR553 estimate, Kiwi from GBP429; Feb is high season, kept near current"
+ },
+ {
+  "id": "L130",
+  "leg": "AMS-Washington Dulles",
+  "airport_code": "IAD",
+  "direction": "out",
+  "eur_one_way": 400,
+  "routing": "KLM/United nonstop",
+  "confidence": "medium",
+  "sources": [
+   "https://www.kayak.com/flight-routes/Amsterdam-Schiphol-AMS/Washington-Dulles-Intl-IAD",
+   "https://www.skyscanner.ie/routes/ams/iad/amsterdam-schiphol-to-washington-dulles.html",
+   "https://expedia.com/lp/flights/ams/iad/amsterdam-to-washington"
+  ],
+  "note": "[re-check r2] One-way: Kayak $344, Skyscanner 320 EUR, Expedia from $532; Momondo Sept average ~$576, Kayak notes April cheapest. September shoulder; ~EUR 400 lower-middle."
+ },
+ {
+  "id": "L131",
+  "leg": "Toronto-AMS",
+  "airport_code": "YYZ",
+  "direction": "back",
+  "eur_one_way": 380,
+  "routing": "direct",
+  "confidence": "low",
+  "sources": [
+   "https://www.klm.ca/en-ca/flights"
+  ],
+  "note": "KLM return from ~CAD822 (~EUR520) off-peak; one-way ~65% plus June peak"
+ },
+ {
+  "id": "L132",
+  "leg": "AMS-Miami",
+  "airport_code": "MIA",
+  "direction": "out",
+  "eur_one_way": 430,
+  "routing": "KLM direct",
+  "confidence": "low",
+  "sources": [
+   "https://www.klm.com/en-us/flights-from-miami-to-dresden"
+  ],
+  "note": "only return quotes (MIA return ~USD985); one-way ~55-60%; January mid-season"
+ },
+ {
+  "id": "L133",
+  "leg": "Boston-AMS",
+  "airport_code": "BOS",
+  "direction": "back",
+  "eur_one_way": 390,
+  "routing": "direct",
+  "confidence": "low",
+  "sources": [
+   "https://www.klm.com/en-us/flights-from-tampa-to-dresden"
+  ],
+  "note": "KLM BOS return from USD725-798; one-way ~60%"
+ },
+ {
+  "id": "L134",
+  "leg": "Miami-AMS",
+  "airport_code": "MIA",
+  "direction": "back",
+  "eur_one_way": 300,
+  "routing": "Nonstop KLM/Delta/American (or 1 stop)",
+  "confidence": "medium",
+  "sources": [
+   "https://www.kayak.com/flight-routes/Miami-MIA/Amsterdam-Schiphol-AMS",
+   "https://expedia.com/lp/flights/mia/ams/miami-to-amsterdam",
+   "https://www.skyscanner.ie/routes/mia/ams/miami-international-to-amsterdam-schiphol.html"
+  ],
+  "note": "[re-check r2] One-way: Kayak $318, Expedia from $335, Skyscanner IE low EUR 242, RatePunk $328 (May); Skyscanner names January the cheapest month. ~EUR 300."
+ },
+ {
+  "id": "L135",
+  "leg": "Dushanbe-AMS",
+  "airport_code": "DYU",
+  "direction": "back",
+  "eur_one_way": 380,
+  "routing": "2 stops via Istanbul",
+  "confidence": "low",
+  "sources": [
+   "https://www.kiwi.com/en/cheap-flights/amsterdam-netherlands/dushanbe-tajikistan/"
+  ],
+  "note": "Kiwi two-stop from ~GBP295 (~EUR340) for August; June slightly higher"
+ },
+ {
+  "id": "L136",
+  "leg": "AMS-Dakar",
+  "airport_code": "DKR",
+  "direction": "out",
+  "eur_one_way": 380,
+  "routing": "direct/1 stop",
+  "confidence": "low",
+  "sources": [
+   "https://flytap.com/en-nl/flights/africa"
+  ],
+  "note": "TAP lists AMS-Dakar one-way \"from 275\" (currency unclear, promo floor); December peak"
+ },
+ {
+  "id": "L137",
+  "leg": "AMS-Bishkek",
+  "airport_code": "FRU",
+  "direction": "out",
+  "eur_one_way": 300,
+  "routing": "1 stop via Istanbul (Pegasus/Turkish/AJet)",
+  "confidence": "low",
+  "sources": [
+   "https://nl.trip.com/flights/amsterdam-to-bishkek/airfares-ams-fru/",
+   "https://www.obilet.com/en/flight-ticket/amsterdam-bishkek",
+   "https://www.farecompare.com/flights/Amsterdam-AMS/Bishkek-FRU/market.html"
+  ],
+  "note": "[re-check r2] Trip.com cheapest one-way EUR 155 (floor, September off-season), Obilet mid-Sept 2026 lowest EUR 329, FareCompare avg one-way $202, Pegasus $342. ~EUR 300 lower-middle."
+ },
+ {
+  "id": "L138",
+  "leg": "Banjul-AMS",
+  "airport_code": "BJL",
+  "direction": "back",
+  "eur_one_way": 330,
+  "routing": "winter charter TUI/Corendon",
+  "confidence": "low",
+  "sources": [
+   "https://www.farecompare.com/flights/Banjul-BJL/Amsterdam-AMS/market.html"
+  ],
+  "note": "avg one-way ~USD292, deals ~USD402; December peak so upper side"
+ },
+ {
+  "id": "L139",
+  "leg": "Dubai-AMS direct",
+  "airport_code": "DXB",
+  "direction": "back",
+  "eur_one_way": 260,
+  "routing": "KLM or Emirates nonstop",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/lp/flights/dxb/ams/dubai-to-amsterdam",
+   "https://avionero.com/Dubai-Amsterdam.DXB-AMS",
+   "https://www.ratepunk.com/flights-from-to/dxb/ams/cheap-flights-from-dubai-to-amsterdam"
+  ],
+  "note": "[re-check r2] One-way from $206 / GBP 199 (Expedia), Avionero January one-way ~$263 (~EUR 235), Ratepunk Jan median $411 (trip type unclear); January usually cheapest month. ~EUR 260 nonstop."
+ },
+ {
+  "id": "L140",
+  "leg": "Baku-AMS",
+  "airport_code": "BAK",
+  "direction": "back",
+  "eur_one_way": 250,
+  "routing": "1 stop via Istanbul",
+  "confidence": "low",
+  "sources": [
+   "https://www.expedia.com/lp/flights/bak/ams/baku-to-amsterdam",
+   "https://www.kupi.com/en/flights/from-amsterdam/to-baku"
+  ],
+  "note": "one-way from USD106 / ~USD183 typical; June summer peak, taken ~EUR250"
+ }
+]

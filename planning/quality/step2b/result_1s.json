@@ -1,0 +1,312 @@
+[
+ {
+  "id": "L1",
+  "leg": "Ushuaia-AMS",
+  "airport_code": "USH",
+  "direction": "back",
+  "eur_one_way": 1100,
+  "routing": "Aerolineas USH-AEP + KLM/Air Europa/ITA via EZE or MAD (2 stops)",
+  "confidence": "low",
+  "sources": [
+   "https://uk.trip.com/flights/airport-ush-ams",
+   "https://www.expedia.co.uk/lp/flights/ams/ush/amsterdam-to-ushuaia",
+   "https://www.expedia.com/lp/flight-routes/aerolineas-argentinas-from-schiphol-to-malvinas-argentinas-intl/ar/ams/ush"
+  ],
+  "note": "Trip.com one-way USH-AMS ~GBP 830 (June, 41h 2 stops); Expedia UK AMS-USH one-way from GBP 844; Expedia US from $1,595 (~EUR 1,425, floor). December is Ushuaia peak (cruise season) ~EUR 1,150, November shoulder ~1,050 (<15% apart, so one value). No month-specific quote found."
+ },
+ {
+  "id": "L2",
+  "leg": "AMS-Christchurch",
+  "airport_code": "CHC",
+  "direction": "out",
+  "eur_one_way": 950,
+  "routing": "1-2 stops via Singapore/Gulf/Asia (Emirates, Singapore Airlines, Qatar)",
+  "confidence": "low",
+  "sources": [
+   "https://www.expedia.com/cn/lp/flights/ams/chc/amsterdam-to-christchurch",
+   "https://www.nz.kayak.com/flight-routes/Christchurch-CHC/Amsterdam-Schiphol-AMS",
+   "https://www.booking.com/flights/route/city-to-city/nz-christchurch-to-nl-amsterdam.html?aid=349895"
+  ],
+  "note": "Expedia one-way from $724 (~EUR 650, floor); Kayak typical one-way $1,325-1,757 with cheapest $987; Booking.com CHC-AMS Sept one-way $823-895. September is shoulder (not NZ peak); no AMS-CHC September one-way quote found. Lower-middle of range."
+ },
+ {
+  "id": "L3",
+  "leg": "Cairns-AMS",
+  "airport_code": "CNS",
+  "direction": "back",
+  "eur_one_way": 750,
+  "routing": "2 stops via Singapore/Gulf/Sydney",
+  "confidence": "medium",
+  "sources": [
+   "https://momondo.com.au/flights/cairns/amsterdam",
+   "https://www.cheapflights.com.au/flights-to-Amsterdam/Cairns",
+   "https://www.kayak.com.au/flight-routes/Cairns-CNS/Amsterdam-Schiphol-AMS",
+   "https://www.trip.com/flights/cairns-to-amsterdam/airfares-cns-ams/"
+  ],
+  "note": "One-way quotes: Kayak AU$764 (~EUR 460, March floor), momondo AU$938, Cheapflights from AU$953, Trip.com US$1,025. Cheapflights monthly avg June AU$1,964 vs July AU$2,225 (+13%): July (European summer) slightly dearer, June ~EUR 700, July ~800, under the 15% threshold so a single value. Seasonal: mild."
+ },
+ {
+  "id": "L4",
+  "leg": "Nadi-AMS",
+  "airport_code": "NAN",
+  "direction": "back",
+  "eur_one_way": 780,
+  "routing": "Fiji Airways NAN-LAX/SIN/HKG + onward, 2 stops",
+  "confidence": "medium",
+  "sources": [
+   "https://expedia.com/lp/flights/nan/ams/nadi-to-amsterdam",
+   "https://www.kiwi.com/en/cheap-flights/nadi-fiji/amsterdam-netherlands/",
+   "https://www.ratepunk.com/flights-from-to/fj/ams/cheap-flights-from-fiji-to-amsterdam-airport-schiphol"
+  ],
+  "note": "Expedia one-way from $778 (~EUR 695) and names May among the cheaper months; Kiwi May one-way ~GBP 763 (2-3 stops); Ratepunk Fiji Airways via LAX ~$927. May is shoulder; lower-middle ~EUR 780."
+ },
+ {
+  "id": "L5",
+  "leg": "La Paz-AMS",
+  "airport_code": "LPB",
+  "direction": "back",
+  "eur_one_way": 780,
+  "routing": "Avianca/Iberia/Air Europa via Bogota/Madrid/Lima, 1 stop (~26h)",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/lp/flights/6053938/6055842/la-paz-to-texel-island",
+   "https://www.ratepunk.com/flights-from-to/LPB/AMS/cheap-flights-from-la-paz-to-amsterdam",
+   "https://www.skyscanner.co.in/routes/lpb/ams/la-paz-to-amsterdam-schiphol.html"
+  ],
+  "note": "Expedia one-way from $904 (~EUR 810); Booking/eDreams late Nov one-way ~$731-738; Ratepunk median $669 in Nov (cheapest month, lower June-Nov). May/June is shoulder; not peak for Bolivia-to-Europe. ~EUR 780."
+ },
+ {
+  "id": "L6",
+  "leg": "AMS-Puerto Montt",
+  "airport_code": "PMC",
+  "direction": "out",
+  "eur_one_way": 680,
+  "routing": "KLM/Iberia/LATAM AMS-SCL + LATAM/Sky SCL-PMC (~1h45 domestic)",
+  "confidence": "low",
+  "sources": [
+   "https://www.expedia.co.uk/lp/flights/ams/scl/amsterdam-to-santiago",
+   "https://expedia.com/lp/flights/pmc/scl/puerto-montt-to-santiago",
+   "https://www.skyscanner.ie/routes/ams/pmc/amsterdam-schiphol-to-puerto-montt.html"
+  ],
+  "note": "No direct AMS-PMC one-way quote. AMS-SCL one-way from GBP 476 / EUR 528 (Kayak), Expedia says Nov is the cheapest month; Kupi avg ~$790 in Nov. Domestic SCL-PMC from ~$34-60. Skyscanner AMS-PMC best return EUR 841 (Nov usually cheapest). Derived: ~EUR 600 + ~70."
+ },
+ {
+  "id": "L7",
+  "leg": "Maun-AMS via Johannesburg",
+  "airport_code": "MUB",
+  "direction": "back",
+  "eur_one_way": 850,
+  "routing": "Airlink/Air Botswana MUB-JNB + KLM JNB-AMS",
+  "confidence": "medium",
+  "sources": [
+   "https://www.travelocity.com/lp/flight-routes/airlink-from-maun-to-or-tambo-intl/4z/mub/jnb",
+   "https://www.monde-du-voyage.com/en/netherlands/flight/departure-south-africa/klm/",
+   "https://www.klm.nl/en-nl/flights-from-amsterdam-to-johannesburg",
+   "https://www.kiwi.com/en/cheap-flights/maun-botswana/amsterdam-netherlands"
+  ],
+  "note": "MUB-JNB Airlink one-way ~$270 (EUR 245); KLM JNB-AMS one-way $676 for 24 July (~EUR 600), $772 typical; Kiwi MUB-AMS from GBP 422 (Nov, floor). July is Botswana + European peak: ~EUR 850; May shoulder: ~EUR 700 (18% lower, so by_month). May figure is an estimate.",
+  "by_month": {
+   "July": 850,
+   "May": 700
+  }
+ },
+ {
+  "id": "L8",
+  "leg": "AMS-Paramaribo KLM direct",
+  "airport_code": "PBM",
+  "direction": "out",
+  "eur_one_way": 720,
+  "routing": "KLM direct (KL713) or Surinam Airways direct",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/lp/flights/ams/pbm/amsterdam-to-paramaribo",
+   "https://www.cheaptickets.nl/route/amsterdam/paramaribo",
+   "https://www.travelocity.com/lp/flight-routes/klm-from-schiphol-to-johan-adolf-pengel-intl/kl/ams/pbm"
+  ],
+  "note": "Expedia one-way from $772 (~EUR 690) and names February the cheapest month; cheaptickets.nl avg one-way ~EUR 744 (Surinam Airways cheapest); Travelocity KLM one-way $1,130 (~EUR 1,010). Feb is low season, avoid Carnival-week peak. ~EUR 720."
+ },
+ {
+  "id": "L9",
+  "leg": "Rarotonga-AMS",
+  "airport_code": "RAR",
+  "direction": "back",
+  "eur_one_way": 1100,
+  "routing": "Air NZ RAR-AKL + onward to Europe (or via LAX), 2-3 stops",
+  "confidence": "low",
+  "sources": [
+   "https://id.trip.com/flights/cheap-flights-to-netherlands-43/rar-to-nl",
+   "https://www.trip.com/flights/rarotonga-to-frankfurt/airfares-rar-fra/",
+   "https://www.farecompare.com/flights/Amsterdam-AMS/Rarotonga-RAR/market.html"
+  ],
+  "note": "Trip.com RAR-Europe (FRA) one-way from $973 (~EUR 870), typical Air NZ 2-stop itinerary ~$2,480; Farecompare avg AMS-RAR one-way ~$946; Rome2rio $1,100-4,100. June is Rarotonga dry/low season but European summer demand. ~EUR 1,100 (lower than current 1,400). Indirect, no June quote."
+ },
+ {
+  "id": "L10",
+  "leg": "AMS-Antananarivo 1 stop",
+  "airport_code": "TNR",
+  "direction": "out",
+  "eur_one_way": 680,
+  "routing": "1 stop via Addis (Ethiopian), Nairobi (Kenya Airways), Istanbul, Paris or Gulf",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/lp/flight-routes/ethiopian-airlines-from-schiphol-to-ivato-intl/et/ams/tnr",
+   "https://www.travelocity.com/lp/flights/ams/tnr/amsterdam-to-antananarivo",
+   "https://www.monde-du-voyage.com/en/madagascar/vol/depart-pays-bas/depart-amsterdam"
+  ],
+  "note": "One-way: Ethiopian from $642 (~EUR 575), Travelocity $648, Kenya Airways $644-874, ITA $690, Emirates $975, Turkish $1,031, KLM $1,105-1,222. Expedia says Feb/April are cheaper months; October is shoulder. Lower-middle ~EUR 680."
+ },
+ {
+  "id": "L11",
+  "leg": "AMS-Wellington",
+  "airport_code": "WLG",
+  "direction": "out",
+  "eur_one_way": 950,
+  "routing": "2-3 stops via Singapore/Gulf/Australia",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/lp/flights/ams/wlg/amsterdam-to-wellington",
+   "https://www.travelocity.com/lp/flights/ams/wlg/schiphol-to-wellington-intl",
+   "https://www.nz.kayak.com/flight-routes/Amsterdam-Schiphol-AMS/Wellington-WLG"
+  ],
+  "note": "One-way: Expedia from $960 (~EUR 860), Travelocity $1,019, Kayak cheapest $1,584 (June, 3 stops); Ratepunk WLG-AMS Nov median $916 (cheapest month). November is low season in Europe, early NZ summer. ~EUR 950."
+ },
+ {
+  "id": "L12",
+  "leg": "AMS-Kilimanjaro direct KLM",
+  "airport_code": "JRO",
+  "direction": "out",
+  "eur_one_way": 700,
+  "routing": "KLM direct (~8h40)",
+  "confidence": "low",
+  "sources": [
+   "https://www.klm.nl/en-nl/flights-from-amsterdam-to-kilimanjaro-jro",
+   "https://www.cheaptickets.nl/route/kilimanjaro/amsterdam",
+   "https://www.expedia.com/lp/flight-routes/klm-from-schiphol-to-kilimanjaro-intl/kl/ams/jro"
+  ],
+  "note": "KLM return from EUR 915-959 (48h snapshot); Expedia one-way KLM $1,289 (~EUR 1,150, seems high); cheaptickets cheapest return EUR 575 (Nov, JRO-AMS). Several sites call November one of the cheaper months (short-rains low season). One-way ~EUR 700 held; no solid one-way quote."
+ },
+ {
+  "id": "L13",
+  "leg": "Lilongwe-AMS 1 connection",
+  "airport_code": "LLW",
+  "direction": "back",
+  "eur_one_way": 650,
+  "routing": "Ethiopian via Addis or Kenya Airways via Nairobi, 1 connection",
+  "confidence": "medium",
+  "sources": [
+   "https://www.booking.com/flights/route/city-to-city/mw-lilongwe-to-nl-amsterdam.html?aid=898224",
+   "https://www.travelocity.com/lp/flight-routes/ethiopian-airlines-from-kamuzu-intl-to-schiphol/et/llw/ams",
+   "https://www.expedia.com/es/lp/vuelos/ams/llw/amsterdam-a-lilongwe"
+  ],
+  "note": "Booking.com LLW-AMS one-way ~$712-716 for 20-22 Oct (dates may be 2025); Travelocity Ethiopian one-way $807; Trip.com low ~$611-710; Expedia AMS-LLW from $640. October is the cheapest month on Skyscanner and Monde du Voyage. ~EUR 650."
+ },
+ {
+  "id": "L14",
+  "leg": "Grenada-AMS 1 stop",
+  "airport_code": "GND",
+  "direction": "back",
+  "eur_one_way": 750,
+  "routing": "1 stop (Air Canada/BA/Virgin via Toronto, London, Miami etc.)",
+  "confidence": "low",
+  "sources": [
+   "https://www.farecompare.com/flights/Grenada-GND/Amsterdam-AMS/market.html",
+   "https://www.monde-du-voyage.com/en/grenada/flight-st-georges/departure-amsterdam/",
+   "https://nz.trip.com/flights/grenada-to-amsterdam/airfares-gnd-ams"
+  ],
+  "note": "Farecompare avg one-way ~$687 (~EUR 610), return from $917 (October cheapest); Monde du Voyage return EUR 809 for 27 Dec-12 Jan. December use returns around Christmas/New Year (14-day trip): peak ~EUR 750; February Caribbean high season but calmer ~EUR 650 (15% apart). No month-specific one-way quote found.",
+  "by_month": {
+   "December": 750,
+   "February": 650
+  }
+ },
+ {
+  "id": "L15",
+  "leg": "AMS-Hobart",
+  "airport_code": "HBA",
+  "direction": "out",
+  "eur_one_way": 900,
+  "routing": "2 stops via Singapore/Gulf + Sydney/Melbourne",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/lp/flights/ams/hba/amsterdam-to-hobart",
+   "https://www.farecompare.com/flights/Amsterdam-AMS/Hobart-HBA/market.html",
+   "https://www.skyscanner.com.au/routes/ams/hba/amsterdam-schiphol-to-hobart.html"
+  ],
+  "note": "Expedia one-way from $893 (~EUR 800); Farecompare one-way from $1,285 (late Aug/Sept, ~EUR 1,150); Cheapflights 2025 from $1,316 (AUD?). Skyscanner/Farecompare say September cheapest, nothing says November is dear. Lower-middle ~EUR 900."
+ },
+ {
+  "id": "L16",
+  "leg": "Hobart-AMS",
+  "airport_code": "HBA",
+  "direction": "back",
+  "eur_one_way": 850,
+  "routing": "2 stops via Sydney/Melbourne + Singapore/Gulf",
+  "confidence": "low",
+  "sources": [
+   "https://www.expedia.com/es/lp/vuelos/hba/ams/hobart-a-amsterdam",
+   "https://uk.trip.com/flights/hobart-to-amsterdam/airfares-hba-ams",
+   "https://momondo.com.au/flights/hobart/amsterdam"
+  ],
+  "note": "Expedia one-way from $717 (separate tickets, ~EUR 640); Trip.com one-way GBP 360-945 (2 stops); momondo SQ from A$1,975, Qantas A$2,262 (one-way or return unclear). Skyscanner: July cheapest, September per Expedia; November not named. ~EUR 850."
+ },
+ {
+  "id": "L17",
+  "leg": "Christchurch-AMS",
+  "airport_code": "CHC",
+  "direction": "back",
+  "eur_one_way": 880,
+  "routing": "1-2 stops via Singapore/Gulf/Asia",
+  "confidence": "low",
+  "sources": [
+   "https://www.booking.com/flights/route/city-to-city/nz-christchurch-to-nl-amsterdam.html?aid=349895",
+   "https://www.nz.kayak.com/flight-routes/Christchurch-CHC/Amsterdam-Schiphol-AMS",
+   "https://www.cheapflights.co.nz/flights/Christchurch-CHC/Amsterdam-AMS.EK.ksp"
+  ],
+  "note": "Booking.com CHC-AMS Sept one-way $827-895 (EUR 740-800); Kayak cheapest $987 (April), typical one-way $1,325-1,757; Cheapflights NZ avg one-way $1,028 (March, stale). Sept departure is shoulder season. ~EUR 880."
+ },
+ {
+  "id": "L18",
+  "leg": "AMS-Ushuaia",
+  "airport_code": "USH",
+  "direction": "out",
+  "eur_one_way": 1150,
+  "routing": "KLM/Air Europa/ITA to EZE or MAD + Aerolineas EZE/AEP-USH domestic",
+  "confidence": "low",
+  "sources": [
+   "https://www.expedia.co.uk/lp/flights/ams/ush/amsterdam-to-ushuaia",
+   "https://www.expedia.com/lp/flight-routes/aerolineas-argentinas-from-schiphol-to-malvinas-argentinas-intl/ar/ams/ush",
+   "https://kupi.com/en/flights/from-buenos-aires/to-ushuaia"
+  ],
+  "note": "Expedia UK one-way from GBP 844, Aerolineas from GBP 851 (~EUR 980); Expedia US from $1,595-1,682 (~EUR 1,425-1,500). December is peak (Antarctic cruise season): ~EUR 1,150. Domestic EZE/AEP-USH alone ~$90-140. No December-specific one-way quote."
+ },
+ {
+  "id": "L19",
+  "leg": "AMS-Cairns",
+  "airport_code": "CNS",
+  "direction": "out",
+  "eur_one_way": 800,
+  "routing": "2 stops via Singapore/Gulf/Sydney",
+  "confidence": "low",
+  "sources": [
+   "https://nz.trip.com/flights/amsterdam-to-cairns/airfares-ams-cns",
+   "https://www.skyscanner.co.in/routes/ams/cns/amsterdam-schiphol-to-cairns.html",
+   "https://www.expedia.com/lp/flights/cns/ams/cairns-to-amsterdam"
+  ],
+  "note": "Trip.com NZ one-way from EUR 661 (May cheapest); Skyscanner cheapest month Aug/Sept; Cairns-AMS comparables one-way AU$764-953 and US$1,025. June is European summer start, dearer than the shoulder floor. ~EUR 800. No June one-way quote for AMS-CNS."
+ },
+ {
+  "id": "L20",
+  "leg": "Curacao-AMS 420",
+  "airport_code": "CUR",
+  "direction": "back",
+  "eur_one_way": 525,
+  "routing": "KLM/TUI/Corendon direct CUR-AMS (~EUR 430) + Bonaire-Curacao hop (EUR 95, assumed, not searched)",
+  "confidence": "low",
+  "sources": [
+   "https://www.ratepunk.com/flights-from-to/CUR/AMS/cheap-flights-from-willemstad-to-amsterdam",
+   "https://www.trip.com/flights/curacao-to-amsterdam/airfares-cur-ams/",
+   "https://www.cheapflights.com/flights-to-amsterdam/curacao"
+  ],
+  "note": "Ratepunk median $501 in Dec (cheapest month); Trip.com Dec avg one-way $324 (Corendon direct $357); Cheapflights Dec cheapest, from $411; Expedia GBP 279. CUR-AMS ~EUR 430 in December, plus the Bonaire hop (EUR 95 kept from the original note). Peak return weeks around Christmas/New Year can cost more."
+ }
+]

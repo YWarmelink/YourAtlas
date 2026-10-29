@@ -1,0 +1,280 @@
+[
+ {
+  "id": "L81",
+  "leg": "AMS-Kigali direct KLM",
+  "airport_code": "KGL",
+  "direction": "out",
+  "eur_one_way": 560,
+  "routing": "KLM direct AMS-KGL",
+  "confidence": "low",
+  "sources": [
+   "https://www.farecompare.com/flights/Amsterdam-AMS/Kigali-KGL/market.html",
+   "https://expedia.ie/lp/flights/ams/kgl/amsterdam-to-kigali"
+  ],
+  "note": "Aggregators show one-way from ~EUR 445-452 (mostly Ethiopian/connecting); Farecompare avg one-way ~$915; Nov cited as cheapest month. KLM direct priced above floor."
+ },
+ {
+  "id": "L82",
+  "leg": "Havana-AMS",
+  "airport_code": "HAV",
+  "direction": "back",
+  "eur_one_way": 570,
+  "routing": "Connecting via Madrid/Paris/Panama etc (no direct)",
+  "confidence": "low",
+  "sources": [
+   "https://www.farecompare.com/flights/Havana-HAV/Amsterdam-AMS/market.html"
+  ],
+  "note": "Farecompare avg one-way HAV-AMS ~$643 (~EUR 575); Dec is peak, no month-specific quote."
+ },
+ {
+  "id": "L83",
+  "leg": "Quito-AMS",
+  "airport_code": "UIO",
+  "direction": "back",
+  "eur_one_way": 470,
+  "routing": "1 stop via Madrid/Bogota/KLM",
+  "confidence": "medium",
+  "sources": [
+   "https://www.skyscanner.ie/routes/uio/ams/quito-to-amsterdam-schiphol.html",
+   "https://www.expedia.com/es/lp/vuelos/uio/ams/quito-a-amsterdam",
+   "https://www.kayak.com/flight-routes/Quito-Mariscal-Sucr-UIO/Amsterdam-Schiphol-AMS"
+  ],
+  "note": "[re-check r2] One-way lows: Skyscanner EUR 418, Expedia $427 (~EUR 380), Kayak $551 one-way for a 17 Mar departure (~EUR 490), Trip.com NZD 743; March named a cheap month. ~EUR 470."
+ },
+ {
+  "id": "L84",
+  "leg": "AMS-St Lucia",
+  "airport_code": "UVF",
+  "direction": "out",
+  "eur_one_way": 650,
+  "routing": "1-2 stops via London/US/Paris",
+  "confidence": "low",
+  "sources": [
+   "https://www.skyscanner.ie/routes/ams/uvf/amsterdam-schiphol-to-st-lucia-hewanorra.html",
+   "https://www.travelocity.com/lp/flights/uvf/ams/hewanorra-intl-to-schiphol",
+   "https://www.booking.com/flights/route/to-country/nl/lc.en-gb.html"
+  ],
+  "note": "[re-check r2] No one-way AMS-UVF quote found. Return low 720 EUR (Skyscanner), UVF-AMS one-way from $723 (Travelocity), Booking.com avg return GBP 1,699; December is peak so estimated one-way ~60% of a ~EUR 1,100 return."
+ },
+ {
+  "id": "L85",
+  "leg": "AMS-Lima KLM direct",
+  "airport_code": "LIM",
+  "direction": "out",
+  "eur_one_way": 530,
+  "routing": "KLM direct AMS-LIM",
+  "confidence": "medium",
+  "sources": [
+   "https://expedia.ie/lp/flights/ams/lim/amsterdam-to-lima",
+   "https://www.skyscanner.ie/routes/ams/lim/amsterdam-schiphol-to-lima.html"
+  ],
+  "note": "Expedia one-way from EUR 505; returns EUR 726-771 (Skyscanner/Expedia); April shoulder season."
+ },
+ {
+  "id": "L86",
+  "leg": "Cebu-Manila ~45",
+  "airport_code": "CEB",
+  "direction": "back",
+  "eur_one_way": 525,
+  "routing": "Cebu-Manila domestic (~45) + Manila-AMS (~480)",
+  "confidence": "low",
+  "sources": [
+   "https://www.secretflying.com/posts/south-east-asia-to-amsterdam-netherlands-for-only-173-usd-one-way/"
+  ],
+  "note": "Domestic hop kept at ~45; MNL-AMS one-way deals seen at $173 (2023 promo), typical Feb (dry-season peak) ~EUR 480."
+ },
+ {
+  "id": "L87",
+  "leg": "Male-AMS",
+  "airport_code": "MLE",
+  "direction": "back",
+  "eur_one_way": 520,
+  "routing": "1 stop via Gulf/Colombo/Istanbul",
+  "confidence": "low",
+  "sources": [
+   "https://uk.trip.com/flights/male-to-amsterdam/airfares-mle-ams"
+  ],
+  "note": "Only a Trip.com reverse-direction snippet (~$1,079 lowest, unclear if return); Feb is peak Maldives season; estimate."
+ },
+ {
+  "id": "L88",
+  "leg": "AMS-Kathmandu",
+  "airport_code": "KTM",
+  "direction": "out",
+  "eur_one_way": 520,
+  "routing": "1 stop via Gulf/Istanbul/Delhi",
+  "confidence": "low",
+  "sources": [
+   "https://www.expedia.ie/lp/flights/ams/ktm/amsterdam-to-kathmandu",
+   "https://www.omio.com/flights/amsterdam/kathmandu",
+   "https://www.expedia.com/lp/flight-routes/air-india-from-schiphol-to-tribhuvan-intl/ai/ams/ktm"
+  ],
+  "note": "[re-check r2] One-way floors EUR 449 (Expedia IE), ~$480 (Omio), Air India from $602; Emirates $961-972. November is Nepal peak season, so typical set above floor. No Nov-dated quote."
+ },
+ {
+  "id": "L89",
+  "leg": "AMS-Manila",
+  "airport_code": "MNL",
+  "direction": "out",
+  "eur_one_way": 520,
+  "routing": "KLM direct/1 stop",
+  "confidence": "low",
+  "sources": [
+   "https://expedia.com.hk/en/lp/flights/ams/mnl/amsterdam-to-manila"
+  ],
+  "note": "Expedia/Cheapflights one-way from low-EUR 300s (some stale); typical Feb peak-season fare higher."
+ },
+ {
+  "id": "L90",
+  "leg": "HCMC-AMS",
+  "airport_code": "SGN",
+  "direction": "back",
+  "eur_one_way": 470,
+  "routing": "1 stop (Gulf/Istanbul/Asia hub)",
+  "confidence": "low",
+  "sources": [
+   "https://www.secretflying.com/posts/south-east-asia-to-amsterdam-netherlands-for-only-173-usd-one-way/"
+  ],
+  "note": "SGN-AMS one-way $203 promo (Dec 2023); typical Dec peak higher."
+ },
+ {
+  "id": "L91",
+  "leg": "AMS-Nairobi direct KLM",
+  "airport_code": "NBO",
+  "direction": "out",
+  "eur_one_way": 490,
+  "routing": "KLM direct AMS-NBO",
+  "confidence": "medium",
+  "sources": [
+   "https://www.klm.nl/en-nl/flights-from-amsterdam-to-nairobi",
+   "https://expedia.co.uk/lp/flights/ams/nbo/amsterdam-to-nairobi"
+  ],
+  "note": "Expedia one-way from ~GBP 353 (all airlines); Skyscanner cheapest ~A$471; KLM site from EUR 729 (unclear return); Nov shoulder."
+ },
+ {
+  "id": "L92",
+  "leg": "AMS-Belem via Lisbon",
+  "airport_code": "BEL",
+  "direction": "out",
+  "eur_one_way": 620,
+  "routing": "TAP via Lisbon",
+  "confidence": "low",
+  "sources": [
+   "https://www.expedia.com/lp/flights/ams/bel/amsterdam-to-belem",
+   "https://www.flytap.com/en_nl/flights-from-netherlands-to-belem",
+   "https://www.skyscanner.ie/routes/ams/bel/amsterdam-schiphol-to-belem.html"
+  ],
+  "note": "[re-check r2] Expedia one-way from $656 (~EUR 585); TAP returns from EUR 709-899 (May/Sept/Oct dates), Skyscanner return 711 EUR. TAP gave no one-way; April not specifically priced."
+ },
+ {
+  "id": "L93",
+  "leg": "Guatemala City-AMS",
+  "airport_code": "GUA",
+  "direction": "back",
+  "eur_one_way": 470,
+  "routing": "1 stop (Madrid/Houston/Mexico/US)",
+  "confidence": "low",
+  "sources": [
+   "https://www.secretflying.com/?p=155446"
+  ],
+  "note": "Only 2019 Secret Flying deals (~EUR 380 return); estimate for typical one-way."
+ },
+ {
+  "id": "L94",
+  "leg": "AMS-Kingston with stopover",
+  "airport_code": "KIN",
+  "direction": "out",
+  "eur_one_way": 600,
+  "routing": "1 stop (BA/Virgin via London, Air Canada, US carriers)",
+  "confidence": "low",
+  "sources": [
+   "https://www.skyscanner.com/routes/ams/kin/amsterdam-schiphol-to-kingston-norman-manley.html",
+   "https://www.farecompare.com/flights/Amsterdam-AMS/Kingston-KIN/market.html",
+   "https://www.trabber.es/en/flights-amsterdam-kingston-ams-kin/"
+  ],
+  "note": "[re-check r2] Skyscanner headline $480, FareCompare avg one-way $577 (~EUR 515), Kiwi GBP 449; sources say December is the highest-fare month. No direct one-way quote, took ~EUR 600."
+ },
+ {
+  "id": "L95",
+  "leg": "gt_seed_peru flight_out_cost",
+  "airport_code": "LIM",
+  "direction": "back",
+  "eur_one_way": 500,
+  "routing": "KLM direct LIM-AMS",
+  "confidence": "low",
+  "sources": [
+   "https://trabber.de/en/flights-lima-amsterdam-lim-ams",
+   "https://expedia.ie/lp/flights/ams/lim/amsterdam-to-lima"
+  ],
+  "note": "Expedia one-way from EUR 505 AMS-LIM; Trabber LIM-AMS return from EUR 1,017; May shoulder."
+ },
+ {
+  "id": "L96",
+  "leg": "AMS-Douala",
+  "airport_code": "DLA",
+  "direction": "out",
+  "eur_one_way": 480,
+  "routing": "1 stop via Paris/Brussels/Casablanca/Cairo",
+  "confidence": "medium",
+  "sources": [
+   "https://www.skyscanner.ie/routes/ams/dla/amsterdam-schiphol-to-douala.html",
+   "https://expedia.ie/lp/flights/ams/dla/amsterdam-to-douala"
+  ],
+  "note": "Skyscanner best one-way EUR 374 (return from 790), Expedia one-way from EUR 441; lower-middle taken for Jan."
+ },
+ {
+  "id": "L97",
+  "leg": "Kota Kinabalu-KL ~52",
+  "airport_code": "BKI",
+  "direction": "back",
+  "eur_one_way": 480,
+  "routing": "Kota Kinabalu-KL domestic (~52) + KL-AMS (~430)",
+  "confidence": "low",
+  "sources": [
+   "https://www.secretflying.com/posts/south-east-asia-to-amsterdam-netherlands-for-only-173-usd-one-way/"
+  ],
+  "note": "KL-AMS one-way $186 promo (2023); typical April ~EUR 430; domestic hop kept at ~52."
+ },
+ {
+  "id": "L98",
+  "leg": "Colombo-AMS",
+  "airport_code": "CMB",
+  "direction": "back",
+  "eur_one_way": 470,
+  "routing": "1 stop (Gulf/Istanbul)",
+  "confidence": "low",
+  "sources": [
+   "https://www.airindia.com/en-de/book-flights/amsterdam-to-colombo-flights",
+   "https://expedia.co.in/lp/flights/ams/cmb/amsterdam-to-colombo"
+  ],
+  "note": "AMS-CMB one-way seen from ~EUR 350 (Expedia) and EUR 455 (Air India); Feb peak, reverse direction assumed similar."
+ },
+ {
+  "id": "L99",
+  "leg": "Kigali-AMS direct KLM",
+  "airport_code": "KGL",
+  "direction": "back",
+  "eur_one_way": 520,
+  "routing": "KLM direct KGL-AMS",
+  "confidence": "low",
+  "sources": [
+   "https://www.farecompare.com/flights/Amsterdam-AMS/Kigali-KGL/market.html"
+  ],
+  "note": "Same airport as L81 reversed; Rwanda one-way fares ~EUR 450+ cheapest, KLM direct higher; Nov."
+ },
+ {
+  "id": "L100",
+  "leg": "AMS-San Jose KLM direct",
+  "airport_code": "SJO",
+  "direction": "out",
+  "eur_one_way": 600,
+  "routing": "KLM nonstop",
+  "confidence": "medium",
+  "sources": [
+   "https://www.monde-du-voyage.com/en/costa-rica/flight/departure-pays-bas/departure-amsterdam/klm",
+   "https://www.expedia.com/lp/flights/ams/sjo/amsterdam-to-san-jose",
+   "https://www.trabber.es/en/flights-amsterdam-san-jose-ams-sjo"
+  ],
+  "note": "[re-check r2] KLM direct one-way seen at EUR 751 (monde-du-voyage), Expedia any-airline one-way from $588 (~EUR 525), Trabber January fare 683 EUR (Condor). Jan is high season; lower-middle ~EUR 600."
+ }
+]

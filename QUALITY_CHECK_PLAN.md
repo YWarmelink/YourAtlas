@@ -194,3 +194,11 @@ session and put non-web work at the end of a session, not the start.
 6. ~~No-web work~~ **DONE 2026-10-29**: My-plan line on 202 notes (108 routes, live), British Isles €21 = fuel home (audit tuned),
    Export budget CSV button (Phase 5; clicked in the browser on Eurasia Grand Tour, works).
 7. **Close-out:** re-run `node scripts/quality_audit.js`, update CHANGELOG + this plan, mark the quality check done.
+
+### Close-out (2026-10-29): ALL DONE
+Items 1-5 and 7 above done in one session (Youri asked for everything at once): 2b-3r…2b-9 + a re-check round for weak legs
+(r2a/r2b) + season re-check of 2b-1/2b-2 (1s/2s), the 4 unclear statements (`qualityc`), visa prices (no change needed).
+All live in the Sheet. Final audit: 116 findings (B5 estimated fares 0; remaining = info/low: B1/B3 fare outliers that are
+explained, C2 low dated-but-still-true facts, 1 C3 place-name). Agent tokens: 3r 59k, 4 66k, 5 65k, 6 78k, 7 63k, 8+9 69k,
+statements 52k, r2a 131k, r2b 100k, 1s 131k, 2s 121k = ~935k. Fare quality caveat: most sources were aggregator snapshots,
+so many fares are low confidence; a further check is only worth it just before booking a specific trip.

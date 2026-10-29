@@ -23,6 +23,8 @@ const RANK = { unverified: 0, low: 1, medium: 2, high: 3 };
 
 const input = JSON.parse(fs.readFileSync(path.join(DIR, `input_${N}.json`), 'utf8'));
 const result = JSON.parse(fs.readFileSync(path.join(DIR, `result_${N}.json`), 'utf8'));
+// a fare with no source behind it is an estimate replacing an estimate: treat it as unverified
+result.forEach(r => { if (!(r.sources || []).length || r.eur_one_way == null) r.confidence = 'unverified'; });
 
 // --- route corrections ---
 let src = fs.readFileSync(CONTENT, 'utf8');

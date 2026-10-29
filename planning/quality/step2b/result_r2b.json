@@ -1,0 +1,285 @@
+[
+ {
+  "id": "L141",
+  "leg": "AMS-Tbilisi",
+  "airport_code": "TBS",
+  "direction": "out",
+  "eur_one_way": 170,
+  "routing": "direct Transavia or 1-stop Turkish/Pegasus/LOT",
+  "confidence": "low",
+  "sources": [
+   "https://skyscanner.ie/routes/ams/tbs/amsterdam-schiphol-to-tbilisi.html",
+   "https://nz.trip.com/flights/amsterdam-to-tbilisi/airfares-ams-tbs",
+   "https://www.expedia.com/lp/flights/ams/tbs/amsterdam-to-tbilisi"
+  ],
+  "note": "Floors EUR 94 (Skyscanner), Expedia from $112-120; June is peak season per Trip.com so lower-middle ~EUR 170; current 260 looks high.",
+  "batch": "8"
+ },
+ {
+  "id": "L142",
+  "leg": "AMS-Amman",
+  "airport_code": "AMM",
+  "direction": "out",
+  "eur_one_way": 210,
+  "routing": "1-stop (Royal Jordanian/Transavia/Turkish)",
+  "confidence": "low",
+  "sources": [
+   "https://www.skyscanner.ie/routes/ams/amm/amsterdam-schiphol-to-amman-queen-alia.html",
+   "https://www.kupi.com/en/flights/from-amsterdam/to-amman"
+  ],
+  "note": "Skyscanner listing EUR 203, other pages $246-294 one-way; December called cheapest month for the route but includes Christmas period.",
+  "batch": "8"
+ },
+ {
+  "id": "L144",
+  "leg": "Amman-AMS",
+  "airport_code": "AMM",
+  "direction": "back",
+  "eur_one_way": 170,
+  "routing": "Royal Jordanian/Transavia direct or 1-stop",
+  "confidence": "low",
+  "sources": [
+   "https://www.orbitz.com/lp/flights/375/178229/amman-to-amsterdam",
+   "https://expedia.com.sg/lp/flights/375/5355/amman-to-volendam"
+  ],
+  "note": "Orbitz one-way from $162, Expedia SG from S$159 (~EUR 105), Expedia IE EUR 261 listing; wide spread, lower-middle ~EUR 170.",
+  "batch": "8"
+ },
+ {
+  "id": "L145",
+  "leg": "Praia-AMS via Lisbon",
+  "airport_code": "RAI",
+  "direction": "back",
+  "eur_one_way": 330,
+  "routing": "TAP via Lisbon",
+  "confidence": "low",
+  "sources": [
+   "https://www.flytap.com/en_cv/flights-from-cape-verde-to-netherlands",
+   "https://www.skyscanner.co.in/routes/rai/ams/praia-to-amsterdam-schiphol.html",
+   "https://au.trip.com/flights/praia-to-amsterdam/airfares-rai-ams/"
+  ],
+  "note": "TAP only shows returns (EUR 556-725) so one-way ~55-60% = ~EUR 330-400; Skyscanner cheapest ~INR 17,590 (~EUR 185), Travelocity from $465, Trip.com from AU$406. December is peak (diaspora); current 240 looks low.",
+  "batch": "8"
+ },
+ {
+  "id": "L146",
+  "leg": "AMS-Figari",
+  "airport_code": "FSC",
+  "direction": "out",
+  "eur_one_way": 200,
+  "routing": "1 stop via Paris/Geneva/Basel etc (Ryanair/easyJet/Air Corsica combos)",
+  "confidence": "medium",
+  "sources": [
+   "https://www.farecompare.com/flights/Amsterdam-AMS/Figari-FSC/market.html",
+   "https://www.kayak.fr/vols/Amsterdam-Schiphol-AMS/Figari-Sud-Corse-FSC",
+   "https://www.expedia.com/lp/flights/ams/fsc/amsterdam-to-figari"
+  ],
+  "note": "Kayak EUR 196 (31 Aug dep), Expedia from $208, Skyscanner $291, Farecompare avg $167; September is cheapest month. 200 confirmed.",
+  "batch": "8"
+ },
+ {
+  "id": "L149",
+  "leg": "Izmir-AMS",
+  "airport_code": "ADB",
+  "direction": "back",
+  "eur_one_way": 110,
+  "routing": "SunExpress/TUI/Pegasus direct or 1-stop",
+  "confidence": "low",
+  "sources": [
+   "https://www.skyscanner.ie/routes/adb/ams/izmir-to-amsterdam-schiphol.html",
+   "https://expedia.com/lp/flights/ams/adb/amsterdam-to-izmir"
+  ],
+  "note": "Skyscanner ADB-AMS floor EUR 65, AMS-ADB one-way from $125; no April-specific quote; lower-middle ~EUR 110.",
+  "batch": "8"
+ },
+ {
+  "id": "L150",
+  "leg": "AMS-Florence",
+  "airport_code": "FLR",
+  "direction": "out",
+  "eur_one_way": 130,
+  "routing": "KLM direct (also Transavia/ITA)",
+  "confidence": "medium",
+  "sources": [
+   "https://momondo.com/flights/amsterdam/florence",
+   "https://uk.trip.com/flights/amsterdam-to-florence/airfares-ams-flr",
+   "https://www.expedia.com/es/lp/vuelos/ams/flr/amsterdam-a-florencia"
+  ],
+  "note": "Momondo $126 best recent, Expedia $140, Trip.com floor GBP 81, May KLM direct; lower-middle ~EUR 130.",
+  "batch": "8"
+ },
+ {
+  "id": "L152",
+  "leg": "Olbia-AMS direct",
+  "airport_code": "OLB",
+  "direction": "back",
+  "eur_one_way": 110,
+  "routing": "easyJet/Transavia direct (seasonal)",
+  "confidence": "low",
+  "sources": [
+   "https://www.omio.co.uk/flights/amsterdam/olbia",
+   "https://www.expedia.com/lp/flight-routes/easyjet-from-schiphol-to-costa-smeralda/u2/ams/olb",
+   "https://www.travelocity.com/es/lp/vuelos/olb/ams/olbia-a-amsterdam"
+  ],
+  "note": "Omio from GBP 80, Expedia easyJet AMS-OLB one-way from $111, September round trips $227-250; September cheapest month. ~EUR 110.",
+  "batch": "8"
+ },
+ {
+  "id": "L153",
+  "leg": "Florence-AMS",
+  "airport_code": "FLR",
+  "direction": "back",
+  "eur_one_way": 115,
+  "routing": "KLM/Transavia direct",
+  "confidence": "low",
+  "sources": [
+   "https://www.travelocity.com/lp/flight-routes/klm-from-peretola-to-schiphol/kl/flr/ams",
+   "https://www.expedia.co.uk/lp/flights/flr/ams/florence-to-amsterdam",
+   "https://www.lastminute.com/flights/r_florence--amsterdam"
+  ],
+  "note": "Expedia floors $88/GBP 68, Travelocity KLM from $135, lastminute Transavia GBP 137; ~EUR 115.",
+  "batch": "8"
+ },
+ {
+  "id": "L155",
+  "leg": "AMS-Zurich",
+  "airport_code": "ZRH",
+  "direction": "out",
+  "eur_one_way": 135,
+  "routing": "KLM or Swiss direct",
+  "confidence": "medium",
+  "sources": [
+   "https://kayak.co.uk/flight-routes/Amsterdam-Schiphol-AMS/Zurich-ZRH",
+   "https://expedia.ie/lp/flights/ams/zrh/amsterdam-to-zurich",
+   "https://kupi.com/en/flights/from-amsterdam/to-zurich"
+  ],
+  "note": "Kayak UK GBP 92-122 one-way (14 May dep), Expedia IE from EUR 148, Kupi avg $130-185; May is a pricier month. ~EUR 135.",
+  "batch": "8"
+ },
+ {
+  "id": "L156",
+  "leg": "AMS-Innsbruck",
+  "airport_code": "INN",
+  "direction": "out",
+  "eur_one_way": 150,
+  "routing": "Transavia direct (seasonal), or 1-stop",
+  "confidence": "low",
+  "sources": [
+   "https://www.kupi.com/en/flights/from-amsterdam/to-innsbruck",
+   "https://www.expedia.co.uk/lp/flights/ams/inn/amsterdam-to-innsbruck",
+   "https://www.skyscanner.ie/routes/ams/inn/amsterdam-schiphol-to-innsbruck.html"
+  ],
+  "note": "Expedia UK typical GBP 125-406, floor $105/GBP 73, Skyscanner EUR 145 listing; July high season so above the old 120.",
+  "batch": "8"
+ },
+ {
+  "id": "L157",
+  "leg": "Malta-AMS",
+  "airport_code": "MLA",
+  "direction": "back",
+  "eur_one_way": 115,
+  "routing": "KM Malta/easyJet direct",
+  "confidence": "medium",
+  "sources": [
+   "https://www.kmmaltairlines.com/en/flights-to-netherlands",
+   "https://www.travelocity.com/lp/flight-routes/air-malta-from-malta-intl-to-schiphol/km/mla/ams"
+  ],
+  "note": "KM Malta site: one-way from EUR 112 for late-May departures (dated); Travelocity from $130; June-July from EUR 87.",
+  "batch": "8"
+ },
+ {
+  "id": "L158",
+  "leg": "Bologna-AMS",
+  "airport_code": "BLQ",
+  "direction": "back",
+  "eur_one_way": 105,
+  "routing": "KLM/Ryanair direct",
+  "confidence": "low",
+  "sources": [
+   "https://www.kayak.com/flight-routes/Bologna-Guglielmo-Marconi-BLQ/Amsterdam-Schiphol-AMS",
+   "https://www.skyscanner.ie/routes/blq/ams/bologna-international-to-amsterdam-schiphol.html",
+   "https://www.ratepunk.com/flights-from-to/blq/ams/cheap-flights-from-bologna-to-amsterdam"
+  ],
+  "note": "Floors $64 / EUR 62, KLM nonstop around GBP 124 for May on the AMS-BLQ side, median ~$183 (unclear if return); ~EUR 105.",
+  "batch": "8"
+ },
+ {
+  "id": "L159",
+  "leg": "Cagliari-AMS",
+  "airport_code": "CAG",
+  "direction": "back",
+  "eur_one_way": 150,
+  "routing": "1 stop (easyJet/Vueling) or KLM nonstop",
+  "confidence": "low",
+  "sources": [
+   "https://us.trip.com/flights/airport-cag-ams",
+   "https://uk.trip.com/flights/amsterdam-to-cagliari/airfares-ams-cag",
+   "https://kupi.com/en/flights/from-cagliari/to-amsterdam"
+  ],
+  "note": "Trip.com May: Vueling 1-stop $192, KLM nonstop $279, easyJet 1-stop GBP 139 (AMS-CAG), Ryanair $58 with long connection; Kupi says May is high. ~EUR 150.",
+  "batch": "8"
+ },
+ {
+  "id": "L163",
+  "leg": "Innsbruck-AMS",
+  "airport_code": "INN",
+  "direction": "back",
+  "eur_one_way": 100,
+  "routing": "Transavia direct",
+  "confidence": "low",
+  "sources": [
+   "https://expedia.com/lp/flights/inn/ams/innsbruck-to-amsterdam",
+   "https://www.expedia.co.in/lp/flights/inn/ams/innsbruck-to-amsterdam",
+   "https://kupi.com/en/flights/from-innsbruck/to-amsterdam"
+  ],
+  "note": "Expedia from EUR 59 / $74 floors; AMS-INN side ~$105 floor; July is high so ~EUR 100.",
+  "batch": "9"
+ },
+ {
+  "id": "L164",
+  "leg": "AMS-Milan Malpensa",
+  "airport_code": "MXP",
+  "direction": "out",
+  "eur_one_way": 100,
+  "routing": "easyJet direct",
+  "confidence": "medium",
+  "sources": [
+   "https://www.kayak.com/flight-routes/Amsterdam-Schiphol-AMS/Milan-Malpensa-MXP",
+   "https://www.skyscanner.ie/routes/ams/mxp/amsterdam-schiphol-to-milan-malpensa.html",
+   "https://au.trip.com/flights/amsterdam-to-milan/airfares-ams-mil"
+  ],
+  "note": "Kayak $99 (19 May dep), Skyscanner EUR 96, Trip.com easyJet May ~EUR 104-124 pairs; 100 confirmed.",
+  "batch": "9"
+ },
+ {
+  "id": "L165",
+  "leg": "Rome FCO-AMS",
+  "airport_code": "FCO",
+  "direction": "back",
+  "eur_one_way": 110,
+  "routing": "ITA/Vueling/KLM direct",
+  "confidence": "low",
+  "sources": [
+   "https://expedia.com/lp/flights/fco/ams/rome-to-amsterdam",
+   "https://www.kayak.com/flight-routes/Amsterdam-Schiphol-AMS/Rome-ROM",
+   "https://travelocity.com/lp/flight-routes/ita-airways-from-schiphol-to-fiumicino-leonardo-da-vinci-intl/az/ams/fco"
+  ],
+  "note": "Expedia floor $82, ITA AMS-FCO $138, Vueling ~$170-224 on May dates; ~EUR 110.",
+  "batch": "9"
+ },
+ {
+  "id": "L166",
+  "leg": "Malpensa-AMS",
+  "airport_code": "MXP",
+  "direction": "back",
+  "eur_one_way": 85,
+  "routing": "easyJet/KLM direct",
+  "confidence": "low",
+  "sources": [
+   "https://www.expedia.com/es/lp/vuelos/mxp/ams/milan-a-amsterdam",
+   "https://www.skyscanner.com.sg/routes/mxp/ams/milan-malpensa-to-amsterdam-schiphol.html"
+  ],
+  "note": "Expedia from EUR 38/$38 floor, return from $127-144; no May one-way; ~EUR 85.",
+  "batch": "9"
+ }
+]

@@ -61,6 +61,8 @@ const FIXES = {
   quality: { fn: 'rbFixQuality202610Route', idsFn: 'rbQuality202610RouteIds' },
   // quality check option D 2026-10-29: 2e budgets, leftover costs/extras/texts
   qualityb: { fn: 'rbFixQuality202610bRoute', idsFn: 'rbQuality202610bRouteIds' },
+  // quality check 2026-10-29: the unclear statements, web-checked
+  qualityc: { fn: 'rbFixQuality202610cRoute', idsFn: 'rbQuality202610cRouteIds' },
   // quality check 2b: web-verified flight fares
   fares: { fn: 'rbFixQuality2bFares', idsFn: 'rbQuality2bFareRouteIds' },
   // My-plan clarification line on notes quoting standard €/day: applies by rule, so it scans every route

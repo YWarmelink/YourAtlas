@@ -1,0 +1,101 @@
+[
+ {
+  "id": "L161",
+  "leg": "Marrakech-AMS direct Transavia/easyJet",
+  "airport_code": "RAK",
+  "direction": "back",
+  "eur_one_way": 100,
+  "routing": "RAK-AMS direct Transavia/easyJet",
+  "confidence": "medium",
+  "sources": [
+   "https://expedia.com/lp/flights/rak/ams/marrakech-to-amsterdam"
+  ],
+  "note": "Expedia one-way from $79, Omio EUR 83 (floors); typical ~100; Sept shoulder."
+ },
+ {
+  "id": "L162",
+  "leg": "AMS-Bari: Skyscanner floor 80",
+  "airport_code": "BRI",
+  "direction": "out",
+  "eur_one_way": 110,
+  "routing": "AMS-BRI direct/1 stop",
+  "confidence": "low",
+  "sources": [
+   "https://www.skyscanner.com/routes/ams/it/favicon.ico",
+   "https://kayak.co.uk/flight-routes/Amsterdam-Schiphol-AMS/Italy-IT0"
+  ],
+  "note": "Skyscanner one-way $132 (2024), Kayak RT GBP 160 direct; existing floors 80-103; ~110."
+ },
+ {
+  "id": "L163",
+  "leg": "Innsbruck-AMS",
+  "airport_code": "INN",
+  "direction": "back",
+  "eur_one_way": 100,
+  "routing": "Transavia direct",
+  "confidence": "low",
+  "sources": [
+   "https://expedia.com/lp/flights/inn/ams/innsbruck-to-amsterdam",
+   "https://www.expedia.co.in/lp/flights/inn/ams/innsbruck-to-amsterdam",
+   "https://kupi.com/en/flights/from-innsbruck/to-amsterdam"
+  ],
+  "note": "[re-check r2] Expedia from EUR 59 / $74 floors; AMS-INN side ~$105 floor; July is high so ~EUR 100."
+ },
+ {
+  "id": "L164",
+  "leg": "AMS-Milan Malpensa",
+  "airport_code": "MXP",
+  "direction": "out",
+  "eur_one_way": 100,
+  "routing": "easyJet direct",
+  "confidence": "medium",
+  "sources": [
+   "https://www.kayak.com/flight-routes/Amsterdam-Schiphol-AMS/Milan-Malpensa-MXP",
+   "https://www.skyscanner.ie/routes/ams/mxp/amsterdam-schiphol-to-milan-malpensa.html",
+   "https://au.trip.com/flights/amsterdam-to-milan/airfares-ams-mil"
+  ],
+  "note": "[re-check r2] Kayak $99 (19 May dep), Skyscanner EUR 96, Trip.com easyJet May ~EUR 104-124 pairs; 100 confirmed."
+ },
+ {
+  "id": "L165",
+  "leg": "Rome FCO-AMS",
+  "airport_code": "FCO",
+  "direction": "back",
+  "eur_one_way": 110,
+  "routing": "ITA/Vueling/KLM direct",
+  "confidence": "low",
+  "sources": [
+   "https://expedia.com/lp/flights/fco/ams/rome-to-amsterdam",
+   "https://www.kayak.com/flight-routes/Amsterdam-Schiphol-AMS/Rome-ROM",
+   "https://travelocity.com/lp/flight-routes/ita-airways-from-schiphol-to-fiumicino-leonardo-da-vinci-intl/az/ams/fco"
+  ],
+  "note": "[re-check r2] Expedia floor $82, ITA AMS-FCO $138, Vueling ~$170-224 on May dates; ~EUR 110."
+ },
+ {
+  "id": "L166",
+  "leg": "Malpensa-AMS",
+  "airport_code": "MXP",
+  "direction": "back",
+  "eur_one_way": 85,
+  "routing": "easyJet/KLM direct",
+  "confidence": "low",
+  "sources": [
+   "https://www.expedia.com/es/lp/vuelos/mxp/ams/milan-a-amsterdam",
+   "https://www.skyscanner.com.sg/routes/mxp/ams/milan-malpensa-to-amsterdam-schiphol.html"
+  ],
+  "note": "[re-check r2] Expedia from EUR 38/$38 floor, return from $127-144; no May one-way; ~EUR 85."
+ },
+ {
+  "id": "L167",
+  "leg": "Bari-AMS",
+  "airport_code": "BRI",
+  "direction": "back",
+  "eur_one_way": 95,
+  "routing": "BRI-AMS direct",
+  "confidence": "low",
+  "sources": [
+   "https://kayak.co.uk/flight-routes/Amsterdam-Schiphol-AMS/Italy-IT0"
+  ],
+  "note": "Kayak RT GBP 160 direct => one-way ~EUR 95; same as out-ish."
+ }
+]

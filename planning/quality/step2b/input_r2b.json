@@ -1,0 +1,326 @@
+[
+ {
+  "id": "L141",
+  "leg": "AMS-Tbilisi",
+  "eur_total": 260,
+  "uses": [
+   {
+    "route_id": "gt_seed_caucasus",
+    "route": "Caucasus 🍷",
+    "field": "flight_in_cost",
+    "cost": 260,
+    "note": "AMS-Tbilisi one way, 1 stop (notes EUR 250-400 return; est)",
+    "best_starting_month": "June",
+    "route_days": 28,
+    "travel_month": "June"
+   }
+  ],
+  "batch": "8"
+ },
+ {
+  "id": "L142",
+  "leg": "AMS-Amman",
+  "eur_total": 260,
+  "uses": [
+   {
+    "route_id": "gt_seed_jordan",
+    "route": "Jordan 🏺",
+    "field": "flight_in_cost",
+    "cost": 260,
+    "note": "AMS-Amman one way, 1 stop (notes EUR 300-700 return; est)",
+    "best_starting_month": "December",
+    "route_days": 10,
+    "travel_month": "December"
+   }
+  ],
+  "batch": "8"
+ },
+ {
+  "id": "L144",
+  "leg": "Amman-AMS",
+  "eur_total": 240,
+  "uses": [
+   {
+    "route_id": "gt_seed_jordan",
+    "route": "Jordan 🏺",
+    "field": "flight_out_cost",
+    "cost": 240,
+    "note": "Amman-AMS (est)",
+    "best_starting_month": "December",
+    "route_days": 10,
+    "travel_month": "December"
+   }
+  ],
+  "batch": "8"
+ },
+ {
+  "id": "L145",
+  "leg": "Praia-AMS via Lisbon",
+  "eur_total": 240,
+  "uses": [
+   {
+    "route_id": "gt_seed_cape-verde",
+    "route": "Cape Verde 🎶",
+    "field": "flight_out_cost",
+    "cost": 240,
+    "note": "Praia-AMS via Lisbon (TAP ~€240; est)",
+    "best_starting_month": "December",
+    "route_days": 13,
+    "travel_month": "December"
+   }
+  ],
+  "batch": "8"
+ },
+ {
+  "id": "L146",
+  "leg": "AMS-Figari",
+  "eur_total": 200,
+  "uses": [
+   {
+    "route_id": "gt_seed_corsica-sardinia-south-corsica-north-sardinia-5-days",
+    "route": "Corsica + Sardinia: South Corsica & North Sardinia (5 days) 🏝️",
+    "field": "flight_in_cost",
+    "cost": 200,
+    "note": "AMS-Figari one-way, 1 stop via Paris/Geneva/Basel (Farecompare avg USD 167, floors USD 208-290; est)",
+    "best_starting_month": "September",
+    "route_days": 5,
+    "travel_month": "September"
+   }
+  ],
+  "batch": "8"
+ },
+ {
+  "id": "L149",
+  "leg": "Izmir-AMS",
+  "eur_total": 160,
+  "uses": [
+   {
+    "route_id": "gt_seed_izmir-aegean-coast-ephesus-cesme-5-days",
+    "route": "Izmir + Aegean Coast: Ephesus & Çeşme (5 days) 📜",
+    "field": "flight_out_cost",
+    "cost": 160,
+    "note": "Izmir-AMS (est from out fare)",
+    "best_starting_month": "April",
+    "route_days": 5,
+    "travel_month": "April"
+   }
+  ],
+  "batch": "8"
+ },
+ {
+  "id": "L150",
+  "leg": "AMS-Florence",
+  "eur_total": 140,
+  "uses": [
+   {
+    "route_id": "gt_seed_florence-tuscany-4-days",
+    "route": "Florence + Tuscany (4 days) 🎨",
+    "field": "flight_in_cost",
+    "cost": 140,
+    "note": "AMS-Florence one way (KLM/ITA/Vueling; Expedia/Skyscanner floors USD 136-168; est)",
+    "best_starting_month": "May",
+    "route_days": 4,
+    "travel_month": "May"
+   }
+  ],
+  "batch": "8"
+ },
+ {
+  "id": "L152",
+  "leg": "Olbia-AMS direct",
+  "eur_total": 130,
+  "uses": [
+   {
+    "route_id": "gt_seed_corsica-sardinia-south-corsica-north-sardinia-5-days",
+    "route": "Corsica + Sardinia: South Corsica & North Sardinia (5 days) 🏝️",
+    "field": "flight_out_cost",
+    "cost": 130,
+    "note": "Olbia-AMS direct, seasonal Aug-Oct (Omio easyJet GBP 119 / Transavia GBP 160; est)",
+    "best_starting_month": "September",
+    "route_days": 5,
+    "travel_month": "September"
+   }
+  ],
+  "batch": "8"
+ },
+ {
+  "id": "L153",
+  "leg": "Florence-AMS",
+  "eur_total": 130,
+  "uses": [
+   {
+    "route_id": "gt_seed_florence-tuscany-4-days",
+    "route": "Florence + Tuscany (4 days) 🎨",
+    "field": "flight_out_cost",
+    "cost": 130,
+    "note": "Florence-AMS one way (est)",
+    "best_starting_month": "May",
+    "route_days": 4,
+    "travel_month": "May"
+   }
+  ],
+  "batch": "8"
+ },
+ {
+  "id": "L155",
+  "leg": "AMS-Zurich",
+  "eur_total": 130,
+  "uses": [
+   {
+    "route_id": "gt_seed_sardinia-south-4-5-days",
+    "route": "Sardinia South (4-5 days) 🏝️",
+    "field": "flight_in_cost",
+    "cost": 130,
+    "note": "AMS-Zurich one way (KLM/Swiss direct; WebSearch 2026-10-28: floors $103-141, nonstop typical higher; est)",
+    "best_starting_month": "May",
+    "route_days": 5,
+    "travel_month": "May"
+   }
+  ],
+  "batch": "8"
+ },
+ {
+  "id": "L156",
+  "leg": "AMS-Innsbruck",
+  "eur_total": 120,
+  "uses": [
+   {
+    "route_id": "gt_seed_dolomites-6-days",
+    "route": "Dolomites (6 days) ⛰️",
+    "field": "flight_in_cost",
+    "cost": 120,
+    "note": "AMS-Innsbruck one way (Transavia direct, seasonal; Skyscanner floor €84, typical higher; est)",
+    "best_starting_month": "July",
+    "route_days": 6,
+    "travel_month": "July"
+   }
+  ],
+  "batch": "8"
+ },
+ {
+  "id": "L157",
+  "leg": "Malta-AMS",
+  "eur_total": 120,
+  "uses": [
+   {
+    "route_id": "gt_seed_malta-gozo-sicily-9-days",
+    "route": "Malta + Gozo + Sicily (9 days) 🐚",
+    "field": "flight_out_cost",
+    "cost": 120,
+    "note": "Malta-AMS one way (KM Malta €87-113 floors, typical higher; est)",
+    "best_starting_month": "May",
+    "route_days": 9,
+    "travel_month": "May"
+   }
+  ],
+  "batch": "8"
+ },
+ {
+  "id": "L158",
+  "leg": "Bologna-AMS",
+  "eur_total": 120,
+  "uses": [
+   {
+    "route_id": "gt_seed_san-marino-emilia-romagna-4-days",
+    "route": "San Marino + Emilia-Romagna (4 days) 🍝",
+    "field": "flight_out_cost",
+    "cost": 120,
+    "note": "Bologna-AMS (est, same as in; Lufthansa USD 143)",
+    "best_starting_month": "May",
+    "route_days": 4,
+    "travel_month": "May"
+   }
+  ],
+  "batch": "8"
+ },
+ {
+  "id": "L159",
+  "leg": "Cagliari-AMS",
+  "eur_total": 120,
+  "uses": [
+   {
+    "route_id": "gt_seed_sardinia-south-4-5-days",
+    "route": "Sardinia South (4-5 days) 🏝️",
+    "field": "flight_out_cost",
+    "cost": 120,
+    "note": "Cagliari-AMS (est, slightly below out)",
+    "best_starting_month": "May",
+    "route_days": 5,
+    "travel_month": "May"
+   }
+  ],
+  "batch": "8"
+ },
+ {
+  "id": "L163",
+  "leg": "Innsbruck-AMS",
+  "eur_total": 100,
+  "uses": [
+   {
+    "route_id": "gt_seed_dolomites-6-days",
+    "route": "Dolomites (6 days) ⛰️",
+    "field": "flight_out_cost",
+    "cost": 100,
+    "note": "Innsbruck-AMS one way (Expedia floor USD 74; est)",
+    "best_starting_month": "July",
+    "route_days": 6,
+    "travel_month": "July"
+   }
+  ],
+  "batch": "9"
+ },
+ {
+  "id": "L164",
+  "leg": "AMS-Milan Malpensa",
+  "eur_total": 100,
+  "uses": [
+   {
+    "route_id": "gt_seed_italy-roadtrip-12-days",
+    "route": "Italy Roadtrip (12 days) 🧀",
+    "field": "flight_in_cost",
+    "cost": 100,
+    "note": "AMS-Milan Malpensa one way (easyJet/KLM; Skyscanner floor €63; est)",
+    "best_starting_month": "May",
+    "route_days": 12,
+    "travel_month": "May"
+   }
+  ],
+  "batch": "9"
+ },
+ {
+  "id": "L165",
+  "leg": "Rome FCO-AMS",
+  "eur_total": 100,
+  "uses": [
+   {
+    "route_id": "gt_seed_italy-north-to-central-12-days",
+    "route": "Italy: North to Central (12 days) 🚄",
+    "field": "flight_out_cost",
+    "cost": 100,
+    "note": "Rome FCO-AMS one way (Expedia €78 floor; est)",
+    "best_starting_month": "May",
+    "route_days": 12,
+    "travel_month": "May"
+   }
+  ],
+  "batch": "9"
+ },
+ {
+  "id": "L166",
+  "leg": "Malpensa-AMS",
+  "eur_total": 100,
+  "uses": [
+   {
+    "route_id": "gt_seed_northern-italy-6-days",
+    "route": "Northern Italy (6 days) 🚤",
+    "field": "flight_out_cost",
+    "cost": 100,
+    "note": "Malpensa-AMS (reuse out fare; est)",
+    "best_starting_month": "May",
+    "route_days": 6,
+    "travel_month": "May"
+   }
+  ],
+  "batch": "9"
+ }
+]

@@ -183,7 +183,10 @@ function checkVisas(routes) {
       }
     }
   }
+  // web-checked 2026-10 (planning/quality/statements): the price gaps are different visa types, not errors
+  const EXPLAINED = { ID: 'VOA IDR 500k ≈ €29; €53 = VOA + 30-day extension', IN: 'e-Visa 30 days USD 25 ≈ €22 vs 1 year USD 40 ≈ €36' };
   for (const [cc, list] of Object.entries(byCountry)) {
+    if (EXPLAINED[cc]) continue;
     const costs = [...new Set(list.map(x => Math.round(x.cost)))].sort((a, b) => a - b);
     if (costs.length > 1 && costs[costs.length - 1] - costs[0] > 10) {
       add('B4', 'medium', null, null, `${cc}: visa priced differently across ${list.length} routes: €${costs.join(' / €')}`,
@@ -201,6 +204,17 @@ function checkEstimatedFares(routes) {
   const byId = Object.fromEntries(routes.map(r => [r.id, r]));
   let id = null, total = 0;
   const list = [];
+  // fares the step 2b web check verified (sourced, any confidence) are no longer estimates, even when unchanged
+  const dir = path.join(REPO_ROOT, 'planning/quality/step2b'), verified = new Set();
+  for (const f of fs.existsSync(dir) ? fs.readdirSync(dir) : []) {
+    const m = f.match(/^result_(\w+)\.json$/);
+    if (!m || !fs.existsSync(path.join(dir, `input_${m[1]}.json`))) continue;
+    const input = JSON.parse(fs.readFileSync(path.join(dir, `input_${m[1]}.json`), 'utf8'));
+    for (const r of JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'))) {
+      if (r.confidence === 'unverified' || r.eur_one_way == null || !(r.sources || []).length) continue;
+      ((input.find(l => l.id === r.id) || {}).uses || []).forEach(u => verified.add(`${u.route_id}|${u.field}`));
+    }
+  }
   for (const line of body.split(/\r?\n/)) {
     const m = line.match(/^\s{2}'([^']+)': \{/);
     if (m) { id = m[1]; continue; }
@@ -208,7 +222,7 @@ function checkEstimatedFares(routes) {
     if (!f || !id) continue;
     const comment = (f[3] || '').toLowerCase();
     const est = /\best\b|estimate|low confidence|\blow\b|guess|rough/.test(comment) || !comment;
-    if (!est) continue;
+    if (!est || verified.has(`${id}|${f[1]}`)) continue;
     const route = byId[id];
     // the live value can differ from RB_ROUTE_COSTS when the Sheet/route already had a value
     const live = route ? num(route[f[1]]) : null;

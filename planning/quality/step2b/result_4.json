@@ -1,0 +1,287 @@
+[
+ {
+  "id": "L61",
+  "leg": "Victoria Falls-AMS via Addis",
+  "airport_code": "VFA",
+  "direction": "back",
+  "eur_one_way": 650,
+  "routing": "Fly Livingstone/VFA-ADD-AMS (Ethiopian)",
+  "confidence": "low",
+  "sources": [
+   "https://www.farecompare.com/flights/Amsterdam-AMS/Victoria_Falls-VFA/market.html"
+  ],
+  "note": "Only AMS-VFA return fares found (from ~$1,037-1,346); one-way ~60% of return, July is peak safari season."
+ },
+ {
+  "id": "L62",
+  "leg": "AMS-La Paz",
+  "airport_code": "LPB",
+  "direction": "out",
+  "eur_one_way": 680,
+  "routing": "AMS-LPB via Madrid/Bogota/Lima",
+  "confidence": "low",
+  "sources": [
+   "https://www.expedia.com/lp/flights/lim/lap/lima-to-la-paz"
+  ],
+  "note": "No direct quote; Lima-La Paz ~$194 one-way and AMS-LIM one-way ~550-600 imply ~650-700 combined."
+ },
+ {
+  "id": "L63",
+  "leg": "KLM Georgetown-AMS nonstop",
+  "airport_code": "GEO",
+  "direction": "back",
+  "eur_one_way": 620,
+  "routing": "KLM nonstop GEO-AMS (or 1-stop via Paramaribo/Caribbean/US)",
+  "confidence": "low",
+  "sources": [
+   "https://www.expedia.com/lp/flights/geo/ams/georgetown-to-amsterdam",
+   "https://www.skyscanner.ie/routes/geo/ams/georgetown-to-amsterdam-schiphol.html",
+   "https://www.ratepunk.com/flights-from-to/AMS/GEO/cheap-flights-from-amsterdam-to-georgetown"
+  ],
+  "note": "[re-check r2] Expedia one-way from $541-627 (~EUR 480-560) in recent-week snapshots, Skyscanner IE low 453 EUR; floors only, thin route (1-4 flights/week), Feb is dry-season peak so typical set above floor."
+ },
+ {
+  "id": "L64",
+  "leg": "AMS-Almaty",
+  "airport_code": "ALA",
+  "direction": "out",
+  "eur_one_way": 340,
+  "routing": "AMS-IST-ALA Turkish (or Air Astana/via hub)",
+  "confidence": "low",
+  "sources": [
+   "https://www.turkishairlines.com/en-nl/flights-from-amsterdam-to-almaty",
+   "https://www.skyscanner.co.za/routes/ams/ala/amsterdam-schiphol-to-almaty.html"
+  ],
+  "note": "Turkish return from ~EUR393 (Jan), Skyscanner lowest one-way ~EUR360; June summer demand a bit higher."
+ },
+ {
+  "id": "L65",
+  "leg": "Mahé-AMS 1 stop",
+  "airport_code": "SEZ",
+  "direction": "back",
+  "eur_one_way": 520,
+  "routing": "1 stop via Gulf hub (Emirates/Qatar/Etihad) or Nairobi",
+  "confidence": "low",
+  "sources": [
+   "https://au.trip.com/flights/mahe-island-to-amsterdam/airfares-sez-ams",
+   "https://www.farecompare.com/flights/Amsterdam-AMS/Mahe_Island-SEZ/market.html",
+   "https://ebookers.fi/en/lp/flights/178229/3127/amsterdam-to-mahe-island"
+  ],
+  "note": "[re-check r2] Trip.com cheapest SEZ-AMS one-way AU$809 (~EUR 480); AMS-SEZ one-way avg $536 (FareCompare), recent low EUR 471 (ebookers FI). April is shoulder season, no April-dated quote."
+ },
+ {
+  "id": "L66",
+  "leg": "Johannesburg-AMS direct KLM",
+  "airport_code": "JNB",
+  "direction": "back",
+  "eur_one_way": 420,
+  "routing": "KLM nonstop JNB-AMS",
+  "confidence": "medium",
+  "sources": [
+   "https://momondo.com/flights/or-tambo-intl-airport/amsterdam"
+  ],
+  "note": "Momondo best one-way recent $430 (~EUR385); June adds a modest seasonal premium."
+ },
+ {
+  "id": "L67",
+  "leg": "AMS-Las Vegas",
+  "airport_code": "LAS",
+  "direction": "out",
+  "eur_one_way": 420,
+  "routing": "KLM/Delta nonstop or 1-stop AMS-LAS",
+  "confidence": "medium",
+  "sources": [
+   "https://www.skyscanner.ie/routes/ams/las/amsterdam-schiphol-to-las-vegas-harry-reid-international.html",
+   "https://www.momondo.com/flights/amsterdam/las-vegas"
+  ],
+  "note": "One-way aggregator minima EUR318-496; September is the cheapest month on the route."
+ },
+ {
+  "id": "L68",
+  "leg": "Phoenix-AMS",
+  "airport_code": "PHX",
+  "direction": "back",
+  "eur_one_way": 430,
+  "routing": "1 stop (US hub or Atlantic carrier connection)",
+  "confidence": "low",
+  "sources": [
+   "https://www.ratepunk.com/flights-from-to/PHX/AMS/cheap-flights-from-phoenix-to-amsterdam",
+   "https://www.expedia.com/lp/flights/phx/ams/phoenix-to-amsterdam",
+   "https://www.skyscanner.com/routes/phx/ams/phoenix-sky-harbor-to-amsterdam-schiphol.html"
+  ],
+  "note": "[re-check r2] One-way floors $266-290 (Skyscanner/Expedia), RatePunk August median one-way $457 (~EUR 410) but recent median $980 (inflated); no dated Sept quote, took lower-middle ~$480."
+ },
+ {
+  "id": "L69",
+  "leg": "AMS-Montevideo",
+  "airport_code": "MVD",
+  "direction": "out",
+  "eur_one_way": 600,
+  "routing": "AMS-MVD via Madrid/Sao Paulo/Buenos Aires",
+  "confidence": "low",
+  "sources": [
+   "https://www.klm.nl/en-nl/flights-from-amsterdam-to-montevideo"
+  ],
+  "note": "KLM page shows from EUR982 (return-style); one-way ~60%. November shoulder season."
+ },
+ {
+  "id": "L70",
+  "leg": "AMS-São Tomé via Lisbon TAP",
+  "airport_code": "TMS",
+  "direction": "out",
+  "eur_one_way": 800,
+  "routing": "TAP via Lisbon",
+  "confidence": "low",
+  "sources": [
+   "https://www.expedia.com/lp/flights/ams/tms/amsterdam-to-sao-tome-island",
+   "https://www.expedia.com/lp/flights/1115/3486/eindhoven-to-sao-tome-island",
+   "https://www.flytap.com/nl_nl/vluchten-vanaf-nederland-naar-sao-tome"
+  ],
+  "note": "[re-check r2] Expedia one-way from $839-997 (~EUR 750-890), TAP return from 1,150 EUR; no June-dated one-way. Expedia says June is a cheaper month for TAP. Thin route."
+ },
+ {
+  "id": "L71",
+  "leg": "São Tomé-AMS via Lisbon",
+  "airport_code": "TMS",
+  "direction": "back",
+  "eur_one_way": 650,
+  "routing": "TAP via Lisbon",
+  "confidence": "low",
+  "sources": [
+   "https://ae.trip.com/flights/sao-tome-island-to-amsterdam/airfares-tms-ams",
+   "https://au.trip.com/flights/cheap-flights-to-netherlands-43/tms-to-nl",
+   "https://www.expedia.com/lp/flights/ams/tms/amsterdam-to-sao-tome-island"
+  ],
+  "note": "[re-check r2] Trip.com cheapest TMS-AMS one-way AED 1,974-2,733 (~EUR 490-680), AU$1,151 (~EUR 690); mirrored AMS-TMS Expedia from ~EUR 750-890. No dated June quote."
+ },
+ {
+  "id": "L72",
+  "leg": "Cotonou-AMS",
+  "airport_code": "COO",
+  "direction": "back",
+  "eur_one_way": 650,
+  "routing": "1 stop via hub (Air France/Royal Air Maroc/Turkish/Brussels)",
+  "confidence": "low",
+  "sources": [
+   "https://au.trip.com/flights/cotonou-to-amsterdam/airfares-coo-ams",
+   "https://www.expedia.com/lp/flights/1115/898/eindhoven-to-cotonou",
+   "https://ebookers.fi/en/lp/flights/178229/898/amsterdam-to-cotonou"
+  ],
+  "note": "[re-check r2] Trip.com cheapest COO-AMS one-way AU$950 (~EUR 540), flags January as peak; AMS-COO one-way floors $597-611 / EUR 590, majors $900-1,200. Typical set above floor for peak January."
+ },
+ {
+  "id": "L73",
+  "leg": "AMS-Lima",
+  "airport_code": "LIM",
+  "direction": "out",
+  "eur_one_way": 580,
+  "routing": "AMS-LIM 1 stop (Iberia/Air Europa/KLM)",
+  "confidence": "low",
+  "sources": [
+   "https://www.expedia.com.sg/lp/flights/ams/lim/amsterdam-to-lima",
+   "https://www.ebookers.ch/fr/lp/vol/178229/178277/de-amsterdam-a-lima"
+  ],
+  "note": "One-way snippets: S$831 (~EUR570), CHF613 (~EUR650); AA return EUR961 (Dec). Lower-middle taken; June fairly high season."
+ },
+ {
+  "id": "L74",
+  "leg": "AMS-Male",
+  "airport_code": "MLE",
+  "direction": "out",
+  "eur_one_way": 450,
+  "routing": "AMS-Gulf hub/IST-MLE (Etihad/Turkish/Qatar)",
+  "confidence": "medium",
+  "sources": [
+   "https://www.travelocity.com/lp/flight-routes/etihad-airways-from-schiphol-to-male-intl/ey/ams/mle"
+  ],
+  "note": "Etihad one-way from $406 (~EUR362); Feb is Maldives peak so lower-middle ~450."
+ },
+ {
+  "id": "L75",
+  "leg": "Phnom Penh-AMS",
+  "airport_code": "PNH",
+  "direction": "back",
+  "eur_one_way": 450,
+  "routing": "1-2 stops (Gulf/Asian hub)",
+  "confidence": "low",
+  "sources": [
+   "https://www.booking.com/flights/route/city-to-city/kh-phnom-penh-to-nl-amsterdam.html?aid=905341",
+   "https://expedia.com.sg/lp/flights/pnh/ams/phnom-penh-to-amsterdam",
+   "https://www.travelocity.com/es/lp/flight-routes/korean-air-from-phnom-penh-intl-to-schiphol/ke/pnh/ams"
+  ],
+  "note": "[re-check r2] Booking.com one-way economy $424-427 (~EUR 380) mid-Nov dates, Expedia SG from S$440, Korean Air one-way $908; September is low season, no Sept-dated quote."
+ },
+ {
+  "id": "L76",
+  "leg": "AMS-Santiago",
+  "airport_code": "SCL",
+  "direction": "out",
+  "eur_one_way": 650,
+  "routing": "KLM AMS-SCL via hub + LATAM/Sky SCL-CJC",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/es/lp/vuelos/ams/scl/amsterdam-a-santiago",
+   "https://ebookers.fi/en/lp/flights/178229/178306/amsterdam-to-santiago"
+  ],
+  "note": "AMS-SCL one-way snippets EUR470-750 (Expedia $530, Ebookers 620-750); ~EUR590 plus ~EUR60 domestic hop to Calama."
+ },
+ {
+  "id": "L77",
+  "leg": "AMS-Quito via Madrid",
+  "airport_code": "UIO",
+  "direction": "out",
+  "eur_one_way": 500,
+  "routing": "1 stop via Madrid (Iberia/Air Europa) or KLM",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/lp/flights/ams/uio/amsterdam-to-quito",
+   "https://momondo.co.uk/flights/amsterdam/quito",
+   "https://www.hopegoo.com/en-us/hot-flights/routes/airfares-ams-uio/"
+  ],
+  "note": "[re-check r2] Several one-way floors agree: Expedia $474-541, momondo GBP 407 (24 Apr one-way; Iberia/Air Europa 1-stop ~GBP 670 other dates), Hopegoo $509; March low season. Lower-middle ~EUR 500."
+ },
+ {
+  "id": "L78",
+  "leg": "Montevideo-AMS",
+  "airport_code": "MVD",
+  "direction": "back",
+  "eur_one_way": 500,
+  "routing": "1 stop via Madrid (Iberia/Air Europa)",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/lp/flights/mvd/ams/montevideo-to-amsterdam",
+   "https://www.kayak.com/flight-routes/Montevideo-Carrasco-MVD/Amsterdam-Schiphol-AMS",
+   "https://us.jetcost.com/en/flights/montevideo/amsterdam-schiphol/MVD-AMS"
+  ],
+  "note": "[re-check r2] Expedia one-way from $512, Kayak Air Europa one-way $508 1-stop (typical $455-490), FareCompare avg $655, Jetcost $740; November named cheapest month by several. ~EUR 500."
+ },
+ {
+  "id": "L79",
+  "leg": "AMS-Colombo",
+  "airport_code": "CMB",
+  "direction": "out",
+  "eur_one_way": 400,
+  "routing": "AMS-Gulf hub/IST-CMB",
+  "confidence": "medium",
+  "sources": [
+   "https://www.airindia.com/en/book-flights/amsterdam-to-colombo-flights",
+   "https://www.skyscanner.ie/routes/ams/cmba/amsterdam-schiphol-to-colombo.html"
+  ],
+  "note": "One-way snippets EUR230-531 (Air India from EUR325/Skyscanner EUR230-531); Feb peak so ~400."
+ },
+ {
+  "id": "L80",
+  "leg": "AMS-Muscat",
+  "airport_code": "MCT",
+  "direction": "out",
+  "eur_one_way": 400,
+  "routing": "KLM nonstop (or 1-stop Gulf carriers)",
+  "confidence": "low",
+  "sources": [
+   "https://expedia.ie/lp/flights/ams/mct/amsterdam-to-muscat",
+   "https://www.kupi.com/en/flights/from-amsterdam/to-muscat",
+   "https://www.klm.nl/en-nl/flights-from-amsterdam-to-muscat"
+  ],
+  "note": "[re-check r2] Expedia one-way from EUR 319, Kupi November average ~$460 (~EUR 410); KLM site shows 1,189 EUR (July, likely return). Oman Air MCT-AMS one-way $322-347 as mirror. KLM nonstop in Nov likely EUR 350-450."
+ }
+]

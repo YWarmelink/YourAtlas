@@ -33863,6 +33863,46 @@ const RB_QUALITY_2B_FARES = [
   ["gt_seed_african-islands", 'flight_out_cost', 600, 410],  // Mauritius-AMS (medium, 2b-3)
   ["gt_seed_mauritius", 'flight_in_cost', 600, 380],  // AMS-Mauritius 1 stop (medium, 2b-3)
   ["gt_seed_mauritius", 'flight_out_cost', 600, 410],  // Mauritius-AMS 1 stop (medium, 2b-3)
+  ["gt_seed_south-africa-mountain-kingdoms", 'flight_out_cost', 680, 540],  // Manzini-AMS (medium, 2b-3r)
+  ["gt_seed_north-india", 'flight_out_cost', 605, 360],  // Varanasi-Delhi-AMS (medium, 2b-3r)
+  ["gt_seed_seychelles", 'flight_in_cost', 600, 500],  // AMS-Mahe (medium, 2b-3r)
+  ["gt_seed_tanzania", 'flight_out_cost', 600, 400],  // Dar es Salaam-AMS (medium, 2b-3r)
+  ["gt_seed_florida", 'flight_out_cost', 360, 440],  // Miami-AMS (low, 2b-7)
+  ["gt_seed_south-africa", 'flight_out_cost', 560, 420],  // Johannesburg-AMS direct KLM (medium, 2b-4)
+  ["gt_seed_us-southwest", 'flight_in_cost', 560, 420],  // AMS-Las Vegas (medium, 2b-4)
+  ["gt_seed_us-southwest", 'flight_out_cost', 560, 430],  // Phoenix-AMS (low, 2b-4)
+  ["gt_seed_sao-tome-principe", 'flight_in_cost', 550, 800],  // AMS-São Tomé via Lisbon TAP (low, 2b-4)
+  ["gt_seed_sao-tome-principe", 'flight_out_cost', 550, 650],  // São Tomé-AMS via Lisbon (low, 2b-4)
+  ["gt_seed_west-africa-overland", 'flight_out_cost', 550, 650],  // Cotonou-AMS (low, 2b-4)
+  ["gt_seed_southern-cone-brazil-finale", 'flight_in_cost', 520, 650],  // AMS-Santiago (medium, 2b-4)
+  ["gt_seed_sri-lanka", 'flight_in_cost', 500, 400],  // AMS-Colombo (medium, 2b-4)
+  ["gt_seed_gulf-states-trio", 'flight_in_cost', 500, 400],  // AMS-Muscat (low, 2b-4)
+  ["gt_seed_saint-lucia-grenada", 'flight_in_cost', 500, 650],  // AMS-St Lucia (low, 2b-5)
+  ["gt_seed_northern-brazil", 'flight_in_cost', 480, 620],  // AMS-Belem via Lisbon (low, 2b-5)
+  ["gt_seed_jamaica", 'flight_in_cost', 480, 600],  // AMS-Kingston with stopover (low, 2b-5)
+  ["gt_seed_costa-rica", 'flight_in_cost', 470, 600],  // AMS-San Jose KLM direct (medium, 2b-5)
+  ["gt_seed_jamaica", 'flight_out_cost', 460, 575],  // Kingston-AMS (medium, 2b-6)
+  ["gt_seed_south-korea", 'flight_out_cost', 450, 320],  // Seoul-AMS (medium, 2b-6)
+  ["gt_seed_mongolia", 'flight_in_cost', 450, 520],  // AMS-Ulaanbaatar (medium, 2b-6)
+  ["gt_seed_ghana", 'flight_in_cost', 450, 380],  // AMS-Accra direct KLM (medium, 2b-6)
+  ["gt_seed_costa-rica", 'flight_out_cost', 450, 560],  // San Jose-AMS (medium, 2b-6)
+  ["gt_seed_abc-islands", 'flight_in_cost', 450, 600],  // AMS-Aruba KLM direct (low, 2b-6)
+  ["gt_seed_mexico", 'flight_out_cost', 450, 370],  // Cancun-AMS (medium, 2b-6)
+  ["gt_seed_caucasus", 'flight_in_cost', 260, 170],  // AMS-Tbilisi (low, 2b-8)
+  ["gt_seed_jordan", 'flight_in_cost', 260, 210],  // AMS-Amman (low, 2b-8)
+  ["gt_seed_jordan", 'flight_out_cost', 240, 170],  // Amman-AMS (low, 2b-8)
+  ["gt_seed_cape-verde", 'flight_out_cost', 240, 330],  // Praia-AMS via Lisbon (low, 2b-8)
+  ["gt_seed_izmir-aegean-coast-ephesus-cesme-5-days", 'flight_out_cost', 160, 110],  // Izmir-AMS (low, 2b-8)
+  ["gt_seed_corsica-sardinia-south-corsica-north-sardinia-5-days", 'flight_out_cost', 130, 110],  // Olbia-AMS direct (low, 2b-8)
+  ["gt_seed_dolomites-6-days", 'flight_in_cost', 120, 150],  // AMS-Innsbruck (low, 2b-8)
+  ["gt_seed_sardinia-south-4-5-days", 'flight_out_cost', 120, 150],  // Cagliari-AMS (low, 2b-8)
+  ["gt_seed_morocco", 'flight_out_cost', 120, 100],  // Marrakech-AMS direct Transavia/easyJet (medium, 2b-9)
+  ["gt_seed_pacific-islands", 'flight_out_cost', 1400, 1100],  // Rarotonga-AMS (low, 2b-1s)
+  ["gt_seed_saint-lucia-grenada", 'flight_out_cost', 600, 750],  // Grenada-AMS 1 stop (low, 2b-1s)
+  ["gt_seed_central-america-loop", 'flight_in_cost', 600, 720],  // AMS-Guatemala City (low, 2b-2s)
+  ["gt_seed_papua-new-guinea", 'flight_out_cost', 950, 800],  // Port Moresby-AMS (low, 2b-2s)
+  ["gt_seed_pacific-northwest", 'flight_in_cost', 500, 600],  // AMS-Seattle (low, 2b-2s)
+  ["gt_seed_us-west-coast-roadtrip", 'flight_in_cost', 500, 600],  // AMS-Seattle (low, 2b-2s)
   // step2b:end
 ];
 
@@ -33887,6 +33927,40 @@ function rbMigrateQuality2bFares() {
   localStorage.setItem(key, '1');
   let touched = false;
   rbRoutes.forEach(r => { if (rbFixQuality2bFares(r)) touched = true; });
+  if (touched) rbSave();
+}
+
+// ---- Quality check (2026-10-29): the unclear statements, web-checked (planning/quality/statements) ----
+// Öresund ID checks, the UK ETA for Jersey/Guernsey/Isle of Man and the Indonesia/India visa prices were confirmed;
+// Lima's new terminal opened in June 2025 (not 2026) and the Thailand-Cambodia closure got a fresh date.
+const RB_QUALITY_2026_10C_TEXT_FIXES = [
+  ['gt_seed_peru-bolivia-andes-salt-flats-20-days', 0, "Lima's Jorge Chávez airport, single-terminal since June 2026), but Lima itself is skippable as a destination: it's currently under a local state of emergency for rising violent crime",
+    "Lima's Jorge Chávez airport, whose new single terminal opened in June 2025; Cusco's new Chinchero airport isn't expected before 2027-2028), but Lima itself is skippable as a destination: it has been under repeated local states of emergency for violent crime since 2025 (check whether one is in force before travel)"],
+  ['gt_seed_eurasia-grand-tour', null, '(ceasefire since late 2025, the border itself remains closed)',
+    '(ceasefire since late 2025, the border itself remains closed; web check 2026-10: land crossings still suspended per the UK FCDO update of 28 September 2026)'],
+  ['gt_seed_peru-bolivia-andes-salt-flats-20-days', 0, "Lima's Jorge Chávez airport, whose new single terminal opened in June 2025; Cusco's new Chinchero airport isn't expected before 2027-2028)",
+    "Lima's Jorge Chávez airport, whose new single terminal opened in June 2025; Cusco's new Chinchero airport isn't expected before 2027 or 2028; web check 2026-10)"],
+  ['gt_seed_denmark-south-sweden-9-days', 1, "Web check (2026-08): check just before departure whether Sweden's temporary ID checks on the Öresund crossing are currently active — these have been extended repeatedly since 2015",
+    "Web check (2026-10): Sweden's internal border controls (incl. ID checks on the Öresund crossing) currently run until 11 November 2026 and have been renewed in 6-month steps since 2015 — check just before departure whether they're still active"],
+  ['gt_seed_jersey-guernsey-channel-islands-4-5-days', 0, 'so a combined UK+Channel Islands+Isle of Man trip needs only one ETA.',
+    'so a combined UK+Channel Islands+Isle of Man trip needs only one ETA (web check 2026-10: confirmed; the £20 fee applies since 8 April 2026).'],
+  ['gt_seed_isle-of-man-3-4-days', 0, 'no separate application per island needed.',
+    'no separate application per island needed (web check 2026-10: confirmed; the £20 fee applies since 8 April 2026).'],
+];
+
+function rbFixQuality202610cRoute(route) {
+  return rbApplyBlockTextFixes(route, RB_QUALITY_2026_10C_TEXT_FIXES);
+}
+
+function rbQuality202610cRouteIds() {
+  return [...new Set(RB_QUALITY_2026_10C_TEXT_FIXES.map(x => x[0]))];
+}
+
+function rbMigrateQuality202610cFixes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_10_QUALITY_FIXES_C)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_10_QUALITY_FIXES_C, '1');
+  let touched = false;
+  rbRoutes.forEach(r => { if (rbFixQuality202610cRoute(r)) touched = true; });
   if (touched) rbSave();
 }
 

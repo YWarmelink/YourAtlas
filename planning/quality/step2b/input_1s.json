@@ -1,0 +1,492 @@
+[
+ {
+  "id": "L1",
+  "leg": "Ushuaia-AMS",
+  "eur_total": 3300,
+  "uses": [
+   {
+    "route_id": "gt_seed_antarctica-cruise",
+    "route": "Antarctica Cruise 🐧",
+    "field": "flight_out_cost",
+    "cost": 1100,
+    "note": "Ushuaia-AMS one way via Buenos Aires (flights_from_ams.csv USH back, low)",
+    "best_starting_month": "December",
+    "route_days": 11,
+    "travel_month": "December"
+   },
+   {
+    "route_id": "gt_seed_argentine-patagonia",
+    "route": "Argentine Patagonia 🥩",
+    "field": "flight_out_cost",
+    "cost": 1100,
+    "note": "Ushuaia-AMS (flights_from_ams.csv USH back, low)",
+    "best_starting_month": "November",
+    "route_days": 18,
+    "travel_month": "November"
+   },
+   {
+    "route_id": "gt_seed_patagonia-overland",
+    "route": "Patagonia Overland 🏔️",
+    "field": "flight_out_cost",
+    "cost": 1100,
+    "note": "Ushuaia-AMS (flights_from_ams.csv USH back, low)",
+    "best_starting_month": "November",
+    "route_days": 42,
+    "travel_month": "December"
+   }
+  ]
+ },
+ {
+  "id": "L2",
+  "leg": "AMS-Christchurch",
+  "eur_total": 1800,
+  "uses": [
+   {
+    "route_id": "gt_seed_new-zealand",
+    "route": "New Zealand 🥝",
+    "field": "flight_in_cost",
+    "cost": 900,
+    "note": "AMS-Christchurch one way, 2+ stops (notes: return EUR 1,300-2,000; est)",
+    "best_starting_month": "September",
+    "route_days": 35,
+    "travel_month": "September"
+   },
+   {
+    "route_id": "gt_seed_new-zealand-south-island",
+    "route": "New Zealand South Island 🏔️",
+    "field": "flight_in_cost",
+    "cost": 900,
+    "note": "AMS-Christchurch one way, 1-2 stops via Asia/Gulf/US (est from AKL back 1100 in reference file; notes: return ",
+    "best_starting_month": "September",
+    "route_days": 23,
+    "travel_month": "September"
+   }
+  ]
+ },
+ {
+  "id": "L3",
+  "leg": "Cairns-AMS",
+  "eur_total": 1500,
+  "uses": [
+   {
+    "route_id": "gt_seed_cairns-great-barrier-reef",
+    "route": "Cairns & Great Barrier Reef 🐠",
+    "field": "flight_out_cost",
+    "cost": 750,
+    "note": "Cairns-AMS one way (same, est)",
+    "best_starting_month": "June",
+    "route_days": 23,
+    "travel_month": "June"
+   },
+   {
+    "route_id": "gt_seed_tropicaloutback-australia",
+    "route": "Tropical/Outback Australia 🐊",
+    "field": "flight_out_cost",
+    "cost": 750,
+    "note": "Cairns-AMS one way (est)",
+    "best_starting_month": "June",
+    "route_days": 56,
+    "travel_month": "July"
+   }
+  ]
+ },
+ {
+  "id": "L4",
+  "leg": "Nadi-AMS",
+  "eur_total": 1500,
+  "uses": [
+   {
+    "route_id": "gt_seed_fiji-vanuatu",
+    "route": "Fiji & Vanuatu 🐚",
+    "field": "flight_out_cost",
+    "cost": 750,
+    "note": "Nadi-AMS one way, multiple stops (notes: return EUR 1,150-1,500 ending in Fiji; est)",
+    "best_starting_month": "May",
+    "route_days": 27,
+    "travel_month": "May"
+   },
+   {
+    "route_id": "gt_seed_fiji",
+    "route": "Fiji 🌊",
+    "field": "flight_out_cost",
+    "cost": 750,
+    "note": "Nadi-AMS one way (est)",
+    "best_starting_month": "May",
+    "route_days": 16,
+    "travel_month": "May"
+   }
+  ]
+ },
+ {
+  "id": "L5",
+  "leg": "La Paz-AMS",
+  "eur_total": 2400,
+  "uses": [
+   {
+    "route_id": "gt_seed_peru-bolivia-andes-salt-flats-20-days",
+    "route": "Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂",
+    "field": "flight_out_cost",
+    "cost": 800,
+    "note": "La Paz-AMS one way with a connection (est, La Paz pricier than Lima)",
+    "best_starting_month": "June",
+    "route_days": 20,
+    "travel_month": "June"
+   },
+   {
+    "route_id": "gt_seed_bolivia",
+    "route": "Bolivia 🧂",
+    "field": "flight_out_cost",
+    "cost": 800,
+    "note": "La Paz-AMS one way (est, low)",
+    "best_starting_month": "June",
+    "route_days": 17,
+    "travel_month": "June"
+   },
+   {
+    "route_id": "gt_seed_andes-grand-traverse",
+    "route": "Andes Grand Traverse 🦙",
+    "field": "flight_out_cost",
+    "cost": 800,
+    "note": "La Paz-AMS (est, low); route ends in Bolivia, Potosi-La Paz night bus is in BO local",
+    "best_starting_month": "February",
+    "route_days": 111,
+    "travel_month": "May"
+   }
+  ]
+ },
+ {
+  "id": "L6",
+  "leg": "AMS-Puerto Montt",
+  "eur_total": 1600,
+  "uses": [
+   {
+    "route_id": "gt_seed_chilean-patagonia",
+    "route": "Chilean Patagonia 🥾",
+    "field": "flight_in_cost",
+    "cost": 800,
+    "note": "AMS-Puerto Montt one way via Santiago (flights_from_ams.csv PMC out, low)",
+    "best_starting_month": "November",
+    "route_days": 24,
+    "travel_month": "November"
+   },
+   {
+    "route_id": "gt_seed_patagonia-overland",
+    "route": "Patagonia Overland 🏔️",
+    "field": "flight_in_cost",
+    "cost": 800,
+    "note": "AMS-Puerto Montt one way via Santiago (flights_from_ams.csv PMC out, low)",
+    "best_starting_month": "November",
+    "route_days": 42,
+    "travel_month": "November"
+   }
+  ]
+ },
+ {
+  "id": "L7",
+  "leg": "Maun-AMS via Johannesburg",
+  "eur_total": 1500,
+  "uses": [
+   {
+    "route_id": "gt_seed_botswana",
+    "route": "Botswana 🐘",
+    "field": "flight_out_cost",
+    "cost": 750,
+    "note": "Maun-AMS via Johannesburg (Maun-JNB ~€170 + KLM JNB-AMS ~€580; est)",
+    "best_starting_month": "July",
+    "route_days": 16,
+    "travel_month": "July"
+   },
+   {
+    "route_id": "gt_seed_victoria-falls-kalahari-loop",
+    "route": "Victoria Falls & Kalahari Loop 🦏",
+    "field": "flight_out_cost",
+    "cost": 750,
+    "note": "Maun-AMS via Johannesburg (est)",
+    "best_starting_month": "April",
+    "route_days": 50,
+    "travel_month": "May"
+   }
+  ]
+ },
+ {
+  "id": "L8",
+  "leg": "AMS-Paramaribo KLM direct",
+  "eur_total": 1500,
+  "uses": [
+   {
+    "route_id": "gt_seed_suriname-northern-brazil",
+    "route": "Suriname & Northern Brazil 🌴",
+    "field": "flight_in_cost",
+    "cost": 750,
+    "note": "AMS-Paramaribo KLM direct; notes 1100-1800 return (est)",
+    "best_starting_month": "February",
+    "route_days": 25,
+    "travel_month": "February"
+   },
+   {
+    "route_id": "gt_seed_suriname",
+    "route": "Suriname 🛶",
+    "field": "flight_in_cost",
+    "cost": 750,
+    "note": "AMS-Paramaribo KLM direct; notes 1100-1800 return (est)",
+    "best_starting_month": "February",
+    "route_days": 11,
+    "travel_month": "February"
+   }
+  ]
+ },
+ {
+  "id": "L9",
+  "leg": "Rarotonga-AMS",
+  "eur_total": 1400,
+  "uses": [
+   {
+    "route_id": "gt_seed_pacific-islands",
+    "route": "Pacific Islands 🌺",
+    "field": "flight_out_cost",
+    "cost": 1400,
+    "note": "Rarotonga-AMS one way via Auckland/Los Angeles, multiple stops (est)",
+    "best_starting_month": "May",
+    "route_days": 49,
+    "travel_month": "June"
+   }
+  ]
+ },
+ {
+  "id": "L10",
+  "leg": "AMS-Antananarivo 1 stop",
+  "eur_total": 1300,
+  "uses": [
+   {
+    "route_id": "gt_seed_african-islands",
+    "route": "African Islands 🏝️",
+    "field": "flight_in_cost",
+    "cost": 650,
+    "note": "AMS-Antananarivo 1 stop (notes return ±€650-1,100; est)",
+    "best_starting_month": "October",
+    "route_days": 31,
+    "travel_month": "October"
+   },
+   {
+    "route_id": "gt_seed_madagascar",
+    "route": "Madagascar 🦎",
+    "field": "flight_in_cost",
+    "cost": 650,
+    "note": "AMS-Antananarivo 1 stop (est)",
+    "best_starting_month": "October",
+    "route_days": 24,
+    "travel_month": "October"
+   }
+  ]
+ },
+ {
+  "id": "L11",
+  "leg": "AMS-Wellington",
+  "eur_total": 900,
+  "uses": [
+   {
+    "route_id": "gt_seed_new-zealand-north-island",
+    "route": "New Zealand North Island 🌿",
+    "field": "flight_in_cost",
+    "cost": 900,
+    "note": "AMS-Wellington one way, 2-3 stops (notes: return EUR 1,400-1,800; est)",
+    "best_starting_month": "November",
+    "route_days": 16,
+    "travel_month": "November"
+   }
+  ]
+ },
+ {
+  "id": "L12",
+  "leg": "AMS-Kilimanjaro direct KLM",
+  "eur_total": 1400,
+  "uses": [
+   {
+    "route_id": "gt_seed_east-africa-safari-classic",
+    "route": "East Africa Safari Classic 🦒",
+    "field": "flight_in_cost",
+    "cost": 700,
+    "note": "AMS-Kilimanjaro direct KLM (notes return ±€1,050-1,500; est)",
+    "best_starting_month": "November",
+    "route_days": 70,
+    "travel_month": "November"
+   },
+   {
+    "route_id": "gt_seed_tanzania",
+    "route": "Tanzania 🦁",
+    "field": "flight_in_cost",
+    "cost": 700,
+    "note": "AMS-Kilimanjaro direct KLM (est)",
+    "best_starting_month": "November",
+    "route_days": 24,
+    "travel_month": "November"
+   }
+  ]
+ },
+ {
+  "id": "L13",
+  "leg": "Lilongwe-AMS 1 connection",
+  "eur_total": 1200,
+  "uses": [
+   {
+    "route_id": "gt_seed_southern-africa-safari-loop",
+    "route": "Southern Africa Safari Loop 🦁",
+    "field": "flight_out_cost",
+    "cost": 600,
+    "note": "Lilongwe-AMS 1 connection (notes return €600-1,250; est)",
+    "best_starting_month": "June",
+    "route_days": 146,
+    "travel_month": "October"
+   },
+   {
+    "route_id": "gt_seed_zambia-malawi",
+    "route": "Zambia & Malawi 💦",
+    "field": "flight_out_cost",
+    "cost": 600,
+    "note": "Lilongwe-AMS 1 connection (est)",
+    "best_starting_month": "September",
+    "route_days": 30,
+    "travel_month": "October"
+   }
+  ]
+ },
+ {
+  "id": "L14",
+  "leg": "Grenada-AMS 1 stop",
+  "eur_total": 1200,
+  "uses": [
+   {
+    "route_id": "gt_seed_caribbean-islands-hop",
+    "route": "Caribbean Islands Hop 🏝️",
+    "field": "flight_out_cost",
+    "cost": 600,
+    "note": "Grenada-AMS 1 stop (est, low)",
+    "best_starting_month": "December",
+    "route_days": 72,
+    "travel_month": "February"
+   },
+   {
+    "route_id": "gt_seed_saint-lucia-grenada",
+    "route": "Saint Lucia & Grenada 🌰",
+    "field": "flight_out_cost",
+    "cost": 600,
+    "note": "Grenada-AMS 1 stop (est, low)",
+    "best_starting_month": "December",
+    "route_days": 14,
+    "travel_month": "December"
+   }
+  ]
+ },
+ {
+  "id": "L15",
+  "leg": "AMS-Hobart",
+  "eur_total": 800,
+  "uses": [
+   {
+    "route_id": "gt_seed_tasmania",
+    "route": "Tasmania 🐾",
+    "field": "flight_in_cost",
+    "cost": 800,
+    "note": "AMS-Hobart one way, 2 stops (notes: return EUR 1,300-1,800; est)",
+    "best_starting_month": "November",
+    "route_days": 14,
+    "travel_month": "November"
+   }
+  ]
+ },
+ {
+  "id": "L16",
+  "leg": "Hobart-AMS",
+  "eur_total": 750,
+  "uses": [
+   {
+    "route_id": "gt_seed_tasmania",
+    "route": "Tasmania 🐾",
+    "field": "flight_out_cost",
+    "cost": 750,
+    "note": "Hobart-AMS one way (est)",
+    "best_starting_month": "November",
+    "route_days": 14,
+    "travel_month": "November"
+   }
+  ]
+ },
+ {
+  "id": "L17",
+  "leg": "Christchurch-AMS",
+  "eur_total": 800,
+  "uses": [
+   {
+    "route_id": "gt_seed_new-zealand-south-island",
+    "route": "New Zealand South Island 🏔️",
+    "field": "flight_out_cost",
+    "cost": 800,
+    "note": "Christchurch-AMS one way (est, same logic; low confidence)",
+    "best_starting_month": "September",
+    "route_days": 23,
+    "travel_month": "September"
+   }
+  ]
+ },
+ {
+  "id": "L18",
+  "leg": "AMS-Ushuaia",
+  "eur_total": 1100,
+  "uses": [
+   {
+    "route_id": "gt_seed_antarctica-cruise",
+    "route": "Antarctica Cruise 🐧",
+    "field": "flight_in_cost",
+    "cost": 1100,
+    "note": "AMS-Ushuaia one way via Buenos Aires + domestic leg (mirror of USH back; est, December high season)",
+    "best_starting_month": "December",
+    "route_days": 11,
+    "travel_month": "December"
+   }
+  ]
+ },
+ {
+  "id": "L19",
+  "leg": "AMS-Cairns",
+  "eur_total": 850,
+  "uses": [
+   {
+    "route_id": "gt_seed_cairns-great-barrier-reef",
+    "route": "Cairns & Great Barrier Reef 🐠",
+    "field": "flight_in_cost",
+    "cost": 850,
+    "note": "AMS-Cairns one way, 2+ stops (notes: return EUR 1,600-2,500 -> half of midpoint; est)",
+    "best_starting_month": "June",
+    "route_days": 23,
+    "travel_month": "June"
+   }
+  ]
+ },
+ {
+  "id": "L20",
+  "leg": "Curacao-AMS 420",
+  "eur_total": 1030,
+  "uses": [
+   {
+    "route_id": "gt_seed_abc-islands",
+    "route": "ABC Islands 🦩",
+    "field": "flight_out_cost",
+    "cost": 515,
+    "note": "Curacao-AMS 420 (est) + Bonaire-Curacao hop 95 (route text: fly back via Curacao)",
+    "best_starting_month": "December",
+    "route_days": 18,
+    "travel_month": "December"
+   },
+   {
+    "route_id": "gt_seed_curacao-bonaire",
+    "route": "Curaçao & Bonaire 🤿",
+    "field": "flight_out_cost",
+    "cost": 515,
+    "note": "Curacao-AMS 420 (est) + Bonaire-Curacao hop 95",
+    "best_starting_month": "December",
+    "route_days": 13,
+    "travel_month": "December"
+   }
+  ]
+ }
+]

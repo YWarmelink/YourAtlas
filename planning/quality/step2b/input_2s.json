@@ -1,0 +1,372 @@
+[
+ {
+  "id": "L21",
+  "leg": "AMS-Port Moresby",
+  "eur_total": 1000,
+  "uses": [
+   {
+    "route_id": "gt_seed_papua-new-guinea",
+    "route": "Papua New Guinea 🎭",
+    "field": "flight_in_cost",
+    "cost": 1000,
+    "note": "AMS-Port Moresby one way, 2 stops via Singapore/Australia (est; notes: return EUR 1470-2020; low confidence)",
+    "best_starting_month": "July",
+    "route_days": 13,
+    "travel_month": "July"
+   }
+  ]
+ },
+ {
+  "id": "L22",
+  "leg": "AMS-El Calafate",
+  "eur_total": 1000,
+  "uses": [
+   {
+    "route_id": "gt_seed_argentine-patagonia",
+    "route": "Argentine Patagonia 🥩",
+    "field": "flight_in_cost",
+    "cost": 1000,
+    "note": "AMS-El Calafate one way via Buenos Aires + domestic (notes: return EUR 1,200-1,800; est)",
+    "best_starting_month": "November",
+    "route_days": 18,
+    "travel_month": "November"
+   }
+  ]
+ },
+ {
+  "id": "L23",
+  "leg": "AMS-Guatemala City",
+  "eur_total": 1200,
+  "uses": [
+   {
+    "route_id": "gt_seed_central-america-loop",
+    "route": "Central America Loop 🌋",
+    "field": "flight_in_cost",
+    "cost": 600,
+    "note": "AMS-Guatemala City, 1-2 stops; notes 600-900 return (est, low)",
+    "best_starting_month": "December",
+    "route_days": 101,
+    "travel_month": "December"
+   },
+   {
+    "route_id": "gt_seed_guatemala",
+    "route": "Guatemala 🦜",
+    "field": "flight_in_cost",
+    "cost": 600,
+    "note": "AMS-Guatemala City, stopover; notes 700-1300 return (est)",
+    "best_starting_month": "October",
+    "route_days": 16,
+    "travel_month": "October"
+   }
+  ]
+ },
+ {
+  "id": "L24",
+  "leg": "AMS-Nadi",
+  "eur_total": 800,
+  "uses": [
+   {
+    "route_id": "gt_seed_fiji",
+    "route": "Fiji 🌊",
+    "field": "flight_in_cost",
+    "cost": 800,
+    "note": "AMS-Nadi one way (est)",
+    "best_starting_month": "May",
+    "route_days": 16,
+    "travel_month": "May"
+   }
+  ]
+ },
+ {
+  "id": "L25",
+  "leg": "Port Moresby-AMS",
+  "eur_total": 950,
+  "uses": [
+   {
+    "route_id": "gt_seed_papua-new-guinea",
+    "route": "Papua New Guinea 🎭",
+    "field": "flight_out_cost",
+    "cost": 950,
+    "note": "Port Moresby-AMS one way (est)",
+    "best_starting_month": "July",
+    "route_days": 13,
+    "travel_month": "July"
+   }
+  ]
+ },
+ {
+  "id": "L26",
+  "leg": "AMS-Paro",
+  "eur_total": 900,
+  "uses": [
+   {
+    "route_id": "gt_seed_bhutan",
+    "route": "Bhutan 🐉",
+    "field": "flight_in_cost",
+    "cost": 900,
+    "note": "AMS-Paro one way via Delhi/Bangkok (Trip.com ~EUR 1350 return floor; est as 2 tickets, low)",
+    "best_starting_month": "December",
+    "route_days": 8,
+    "travel_month": "December"
+   }
+  ]
+ },
+ {
+  "id": "L27",
+  "leg": "AMS-Sydney",
+  "eur_total": 650,
+  "uses": [
+   {
+    "route_id": "gt_seed_sydneybyron-great-ocean-road",
+    "route": "Sydney/Byron & Great Ocean Road 🦘",
+    "field": "flight_in_cost",
+    "cost": 650,
+    "note": "AMS-Sydney one way, 1 stop (notes: return EUR 1,100-1,900; est)",
+    "best_starting_month": "August",
+    "route_days": 24,
+    "travel_month": "August"
+   }
+  ]
+ },
+ {
+  "id": "L28",
+  "leg": "AMS-Koror",
+  "eur_total": 900,
+  "uses": [
+   {
+    "route_id": "gt_seed_palau",
+    "route": "Palau 🦈",
+    "field": "flight_in_cost",
+    "cost": 900,
+    "note": "AMS-Koror one way, 2 stops via Manila/Seoul/Taipei (est; notes: return EUR 1300-1750; includes the USD 100 Pri",
+    "best_starting_month": "December",
+    "route_days": 10,
+    "travel_month": "December"
+   }
+  ]
+ },
+ {
+  "id": "L29",
+  "leg": "Punta Arenas-AMS",
+  "eur_total": 900,
+  "uses": [
+   {
+    "route_id": "gt_seed_chilean-patagonia",
+    "route": "Chilean Patagonia 🥾",
+    "field": "flight_out_cost",
+    "cost": 900,
+    "note": "Punta Arenas-AMS one way via Santiago (flights_batch26.csv PUQ back, est)",
+    "best_starting_month": "November",
+    "route_days": 24,
+    "travel_month": "November"
+   }
+  ]
+ },
+ {
+  "id": "L30",
+  "leg": "Nairobi-AMS direct KLM",
+  "eur_total": 900,
+  "uses": [
+   {
+    "route_id": "gt_seed_kenya",
+    "route": "Kenya 🦒",
+    "field": "flight_out_cost",
+    "cost": 450,
+    "note": "Nairobi-AMS direct KLM (est)",
+    "best_starting_month": "November",
+    "route_days": 18,
+    "travel_month": "November"
+   },
+   {
+    "route_id": "gt_seed_east-africa-safari-classic",
+    "route": "East Africa Safari Classic 🦒",
+    "field": "flight_out_cost",
+    "cost": 450,
+    "note": "Nairobi-AMS direct KLM (est)",
+    "best_starting_month": "November",
+    "route_days": 70,
+    "travel_month": "January"
+   }
+  ]
+ },
+ {
+  "id": "L31",
+  "leg": "Melbourne-AMS",
+  "eur_total": 600,
+  "uses": [
+   {
+    "route_id": "gt_seed_sydneybyron-great-ocean-road",
+    "route": "Sydney/Byron & Great Ocean Road 🦘",
+    "field": "flight_out_cost",
+    "cost": 600,
+    "note": "Melbourne-AMS one way, 1 stop (est)",
+    "best_starting_month": "August",
+    "route_days": 24,
+    "travel_month": "August"
+   }
+  ]
+ },
+ {
+  "id": "L32",
+  "leg": "Adelaide-AMS",
+  "eur_total": 600,
+  "uses": [
+   {
+    "route_id": "gt_seed_temperatesouthern-australia",
+    "route": "Temperate/Southern Australia 🍇",
+    "field": "flight_out_cost",
+    "cost": 600,
+    "note": "Adelaide-AMS one way, 1 stop (est)",
+    "best_starting_month": "August",
+    "route_days": 43,
+    "travel_month": "September"
+   }
+  ]
+ },
+ {
+  "id": "L33",
+  "leg": "Koror-AMS",
+  "eur_total": 850,
+  "uses": [
+   {
+    "route_id": "gt_seed_palau",
+    "route": "Palau 🦈",
+    "field": "flight_out_cost",
+    "cost": 850,
+    "note": "Koror-AMS one way (est)",
+    "best_starting_month": "December",
+    "route_days": 10,
+    "travel_month": "December"
+   }
+  ]
+ },
+ {
+  "id": "L34",
+  "leg": "AMS-Seattle",
+  "eur_total": 1000,
+  "uses": [
+   {
+    "route_id": "gt_seed_pacific-northwest",
+    "route": "Pacific Northwest 🦫",
+    "field": "flight_in_cost",
+    "cost": 500,
+    "note": "AMS-Seattle one way, KLM direct (est; notes: return EUR 880-1,090)",
+    "best_starting_month": "July",
+    "route_days": 15,
+    "travel_month": "July"
+   },
+   {
+    "route_id": "gt_seed_us-west-coast-roadtrip",
+    "route": "US West Coast Roadtrip 🌉",
+    "field": "flight_in_cost",
+    "cost": 500,
+    "note": "AMS-Seattle one way, KLM direct (est)",
+    "best_starting_month": "July",
+    "route_days": 29,
+    "travel_month": "July"
+   }
+  ]
+ },
+ {
+  "id": "L35",
+  "leg": "AMS-Kasane",
+  "eur_total": 800,
+  "uses": [
+   {
+    "route_id": "gt_seed_botswana",
+    "route": "Botswana 🐘",
+    "field": "flight_in_cost",
+    "cost": 800,
+    "note": "AMS-Kasane one way via Johannesburg (notes return ±€900-1,300; typical one-way; est)",
+    "best_starting_month": "July",
+    "route_days": 16,
+    "travel_month": "July"
+   }
+  ]
+ },
+ {
+  "id": "L36",
+  "leg": "AMS-Perth",
+  "eur_total": 600,
+  "uses": [
+   {
+    "route_id": "gt_seed_tropicaloutback-australia",
+    "route": "Tropical/Outback Australia 🐊",
+    "field": "flight_in_cost",
+    "cost": 600,
+    "note": "AMS-Perth one way, 1 stop (notes: return EUR 910-1,500; est)",
+    "best_starting_month": "June",
+    "route_days": 56,
+    "travel_month": "June"
+   }
+  ]
+ },
+ {
+  "id": "L37",
+  "leg": "Lihue-AMS",
+  "eur_total": 650,
+  "uses": [
+   {
+    "route_id": "gt_seed_hawaii",
+    "route": "Hawaii 🐢",
+    "field": "flight_out_cost",
+    "cost": 650,
+    "note": "Lihue-AMS one way via Honolulu/US hub (est)",
+    "best_starting_month": "April",
+    "route_days": 14,
+    "travel_month": "April"
+   }
+  ]
+ },
+ {
+  "id": "L38",
+  "leg": "AMS-Honolulu",
+  "eur_total": 750,
+  "uses": [
+   {
+    "route_id": "gt_seed_hawaii",
+    "route": "Hawaii 🐢",
+    "field": "flight_in_cost",
+    "cost": 750,
+    "note": "AMS-Honolulu one way, 1 stop via US hub (est; typical return ~EUR 1,300-1,500; low confidence)",
+    "best_starting_month": "April",
+    "route_days": 14,
+    "travel_month": "April"
+   }
+  ]
+ },
+ {
+  "id": "L39",
+  "leg": "AMS-Libreville",
+  "eur_total": 700,
+  "uses": [
+   {
+    "route_id": "gt_seed_gabon",
+    "route": "Gabon 🏕️",
+    "field": "flight_in_cost",
+    "cost": 700,
+    "note": "AMS-Libreville (reuse LBV back 700; est)",
+    "best_starting_month": "June",
+    "route_days": 11,
+    "travel_month": "June"
+   }
+  ]
+ },
+ {
+  "id": "L40",
+  "leg": "gt_seed_suriname flight_out_cost",
+  "eur_total": 700,
+  "uses": [
+   {
+    "route_id": "gt_seed_suriname",
+    "route": "Suriname 🛶",
+    "field": "flight_out_cost",
+    "cost": 700,
+    "note": "",
+    "best_starting_month": "February",
+    "route_days": 11,
+    "travel_month": "February"
+   }
+  ]
+ }
+]

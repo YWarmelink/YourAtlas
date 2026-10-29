@@ -1,0 +1,289 @@
+[
+ {
+  "id": "L101",
+  "leg": "AMS-Cartagena 1 stop",
+  "airport_code": "CTG",
+  "direction": "out",
+  "eur_one_way": 430,
+  "routing": "1 stop (KLM/Iberia/Air Europa via MAD/BOG/PTY)",
+  "confidence": "low",
+  "sources": [
+   "https://www.expedia.com/lp/flights/ams/bog/amsterdam-to-bogota"
+  ],
+  "note": "No Cartagena-specific quote; AMS-BOG one-way from ~$441-477 (EUR 395-425), February is cheapest month; Cartagena 1-stop assumed ~EUR 430."
+ },
+ {
+  "id": "L102",
+  "leg": "AMS-Cartagena",
+  "airport_code": "CTG",
+  "direction": "out",
+  "eur_one_way": 430,
+  "routing": "1 stop (as L101)",
+  "confidence": "low",
+  "sources": [
+   "https://www.expedia.com/lp/flights/ams/bog/amsterdam-to-bogota"
+  ],
+  "note": "Same airport/direction as L101; derived from AMS-BOG one-way quotes."
+ },
+ {
+  "id": "L103",
+  "leg": "Kingston-AMS",
+  "airport_code": "KIN",
+  "direction": "back",
+  "eur_one_way": 575,
+  "routing": "1 stop (Virgin/BA via London, Air Canada, US carriers)",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/lp/flights/kin/ams/kingston-to-amsterdam",
+   "https://www.expedia.co.uk/lp/flights/kin/ams/kingston-to-amsterdam",
+   "https://www.cheapflights.com/flights-to-amsterdam/kingston"
+  ],
+  "note": "[re-check r2] One-way quotes: Expedia $525 and GBP 561, Travelocity $655, Cheapflights $646 (United), FareCompare avg $588. December departures from Jamaica are peak; ~EUR 575."
+ },
+ {
+  "id": "L104",
+  "leg": "Seoul-AMS",
+  "airport_code": "ICN",
+  "direction": "back",
+  "eur_one_way": 320,
+  "routing": "KLM/Korean direct or 1-stop",
+  "confidence": "medium",
+  "sources": [
+   "https://www.kupi.com/routes/SEL/AMS",
+   "https://www.booking.com/flights/route/city-to-city/kr-seoul-to-nl-amsterdam.html"
+  ],
+  "note": "One-way ~$250-320 (EUR 225-285) for October; took a typical rather than floor fare. Current 450 looks too high."
+ },
+ {
+  "id": "L105",
+  "leg": "AMS-Ulaanbaatar",
+  "airport_code": "ULN",
+  "direction": "out",
+  "eur_one_way": 520,
+  "routing": "1 stop (Istanbul/Seoul etc.)",
+  "confidence": "medium",
+  "sources": [
+   "https://www.travelocity.com/es/lp/vuelos/ams/ubn/amsterdam-a-ulan-bator",
+   "https://www.skyscanner.com.au/routes/ams/ubn/amsterdam-schiphol-to-chinggis-khaan.html"
+  ],
+  "note": "One-way from $513 (Travelocity) / $670 lowest seen (Skyscanner) = EUR 460-600; September is peak Mongolia season."
+ },
+ {
+  "id": "L106",
+  "leg": "AMS-Kuala Lumpur",
+  "airport_code": "KUL",
+  "direction": "out",
+  "eur_one_way": 390,
+  "routing": "KLM direct or 1-stop",
+  "confidence": "medium",
+  "sources": [
+   "https://www.kayak.com/flight-routes/Kuala-Lumpur-Intl-KUL/Amsterdam-Schiphol-AMS",
+   "https://www.orbitz.com/lp/flights/180008/178229/kuala-lumpur-to-amsterdam"
+  ],
+  "note": "One-way lows $321-393 (EUR 290-350); KLM direct and April high season push typical to ~390. Seasonal sources conflict."
+ },
+ {
+  "id": "L107",
+  "leg": "AMS-KL",
+  "airport_code": "KUL",
+  "direction": "out",
+  "eur_one_way": 390,
+  "routing": "KLM direct or 1-stop",
+  "confidence": "medium",
+  "sources": [
+   "https://www.kayak.com/flight-routes/Kuala-Lumpur-Intl-KUL/Amsterdam-Schiphol-AMS"
+  ],
+  "note": "Same airport/direction as L106; August called low season by Kayak UK, kept same fare."
+ },
+ {
+  "id": "L108",
+  "leg": "AMS-Addis Ababa direct Ethiopian",
+  "airport_code": "ADD",
+  "direction": "out",
+  "eur_one_way": 385,
+  "routing": "Ethiopian direct",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/lp/flights/ams/add/amsterdam-to-addis-ababa",
+   "https://www.momondo.co.uk/flights/amsterdam/addis-ababa"
+  ],
+  "note": "One-way $413-422 / EUR 389 / GBP 354 across 4 sources (~EUR 370-410); February named cheapest. Same fare as L109 (same airport/direction)."
+ },
+ {
+  "id": "L109",
+  "leg": "AMS-Addis Ababa",
+  "airport_code": "ADD",
+  "direction": "out",
+  "eur_one_way": 385,
+  "routing": "Ethiopian direct or 1-stop",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/lp/flights/ams/add/amsterdam-to-addis-ababa",
+   "https://www.kayak.com/flight-routes/Amsterdam-Schiphol-AMS/Addis-Ababa-Bole-ADD"
+  ],
+  "note": "Same as L108; September slightly pricier than Feb, folded into one fare."
+ },
+ {
+  "id": "L110",
+  "leg": "Addis Ababa-AMS",
+  "airport_code": "ADD",
+  "direction": "back",
+  "eur_one_way": 390,
+  "routing": "Ethiopian direct or 1-stop",
+  "confidence": "low",
+  "sources": [
+   "https://www.expedia.com/lp/flights/ams/add/amsterdam-to-addis-ababa"
+  ],
+  "note": "Reverse direction: Expedia shows from $323; assumed similar to outbound typical ~EUR 390."
+ },
+ {
+  "id": "L111",
+  "leg": "AMS-Accra direct KLM",
+  "airport_code": "ACC",
+  "direction": "out",
+  "eur_one_way": 380,
+  "routing": "KLM direct",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/lp/flights/ams/acc/amsterdam-to-accra",
+   "https://skyscanner.com/routes/ams/acc/amsterdam-schiphol-to-accra.html"
+  ],
+  "note": "One-way from $324-354 (EUR 290-315); March is cheapest month, KLM direct typical a bit above floor."
+ },
+ {
+  "id": "L112",
+  "leg": "Bogota-AMS",
+  "airport_code": "BOG",
+  "direction": "back",
+  "eur_one_way": 400,
+  "routing": "KLM/Air France/Iberia direct or 1-stop",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/lp/flights/bog/ams/bogota-to-amsterdam",
+   "https://www.kayak.co.uk/flight-routes/Amsterdam-Schiphol-AMS/Bogota-El-Dorado-BOG"
+  ],
+  "note": "Expedia from $415 (EUR 370); typical a bit higher."
+ },
+ {
+  "id": "L113",
+  "leg": "Panama City-AMS KLM direct",
+  "airport_code": "PTY",
+  "direction": "back",
+  "eur_one_way": 440,
+  "routing": "KLM direct",
+  "confidence": "medium",
+  "sources": [
+   "https://expedia.com/lp/flights/ams/pty/amsterdam-to-panama-city",
+   "https://expedia.co.uk/lp/flights/ams/pty/amsterdam-to-panama-city"
+  ],
+  "by_month": {
+   "March": 420,
+   "August": 470
+  },
+  "note": "AMS-PTY one-way from $438 / GBP 330 / EUR 378 (EUR 340-390); reverse assumed similar. March ~420, August ~470; same airport/direction as L118 so same fare."
+ },
+ {
+  "id": "L114",
+  "leg": "San Jose-AMS",
+  "airport_code": "SJO",
+  "direction": "back",
+  "eur_one_way": 560,
+  "routing": "1-2 stops (MIA/MAD/ATL etc.)",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/lp/flights/sjo/ams/san-jose-to-amsterdam",
+   "https://expedia.co.uk/lp/flights/sjo/ams/san-jose-to-amsterdam"
+  ],
+  "note": "One-way from $562 / GBP 458 (EUR 500-520); Momondo $738; January is high season."
+ },
+ {
+  "id": "L115",
+  "leg": "AMS-Aruba KLM direct",
+  "airport_code": "AUA",
+  "direction": "out",
+  "eur_one_way": 600,
+  "routing": "KLM nonstop",
+  "confidence": "low",
+  "sources": [
+   "https://www.trip.com/flights/amsterdam-to-aruba/airfares-ams-aua/",
+   "https://www.klm.nl/en-nl/flights-from-amsterdam-to-oranjestad-aruba",
+   "https://www.omio.com/flights/amsterdam/aruba-jt72f"
+  ],
+  "note": "[re-check r2] Trip.com KLM nonstop one-way from $385 (June), Omio KLM one-way $890 on one day, Kiwi from $280; KLM returns from EUR 692-742. December is high season, so ~EUR 600 for KLM nonstop; no Dec-dated one-way."
+ },
+ {
+  "id": "L116",
+  "leg": "Cancun-AMS",
+  "airport_code": "CUN",
+  "direction": "back",
+  "eur_one_way": 370,
+  "routing": "1 stop (MAD/MEX/ATL) or KLM direct",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/es/lp/vuelos/cun/ams/cancun-a-amsterdam",
+   "https://www.orbitz.com/lp/flights/179995/178229/cancun-to-amsterdam"
+  ],
+  "note": "One-way $371-421 across 3 sources (EUR 330-375); November is shoulder season."
+ },
+ {
+  "id": "L117",
+  "leg": "AMS-Panama City KLM direct",
+  "airport_code": "PTY",
+  "direction": "out",
+  "eur_one_way": 440,
+  "routing": "KLM direct",
+  "confidence": "medium",
+  "sources": [
+   "https://expedia.com/lp/flights/ams/pty/amsterdam-to-panama-city"
+  ],
+  "by_month": {
+   "August": 470
+  },
+  "note": "Floor $438 (EUR 390); August summer ~470, typical ~440. Same airport pair as L113/L118 in the opposite direction."
+ },
+ {
+  "id": "L118",
+  "leg": "Panama flight_out_cost (PTY-AMS)",
+  "airport_code": "PTY",
+  "direction": "back",
+  "eur_one_way": 440,
+  "routing": "KLM direct",
+  "confidence": "medium",
+  "sources": [
+   "https://expedia.com/lp/flights/ams/pty/amsterdam-to-panama-city"
+  ],
+  "by_month": {
+   "March": 420,
+   "August": 470
+  },
+  "note": "Input had no note; assumed Panama City-AMS like L113 (same fare). August ~470, March ~420."
+ },
+ {
+  "id": "L119",
+  "leg": "AMS-Calgary",
+  "airport_code": "YYC",
+  "direction": "out",
+  "eur_one_way": 420,
+  "routing": "1 stop (KLM/Air Canada/WestJet via YUL/YYZ/LHR)",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/lp/flights/ams/yyc/amsterdam-to-calgary",
+   "https://www.cheapflights.co.uk/flights/Calgary/Amsterdam/"
+  ],
+  "note": "One-way from $349 (EUR 310) / GBP 415 (EUR 480) / CA$456-492 (EUR 290-320); June named cheapest month; ~EUR 420 typical."
+ },
+ {
+  "id": "L120",
+  "leg": "AMS-San Francisco",
+  "airport_code": "SFO",
+  "direction": "out",
+  "eur_one_way": 510,
+  "routing": "KLM/United direct or 1 stop",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/es/lp/vuelos/ams/sfo/amsterdam-a-san-francisco",
+   "https://www.orbitz.com/lp/flights/178229/178305/amsterdam-to-san-francisco"
+  ],
+  "note": "One-way from $491 (EUR 440) generic; July is peak so ~EUR 510. SFO-AMS from $350."
+ }
+]

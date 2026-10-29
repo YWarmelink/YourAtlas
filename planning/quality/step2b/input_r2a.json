@@ -1,0 +1,416 @@
+[
+ {
+  "id": "L63",
+  "leg": "KLM Georgetown-AMS nonstop",
+  "eur_total": 600,
+  "uses": [
+   {
+    "route_id": "gt_seed_guyana",
+    "route": "Guyana 🦦",
+    "field": "flight_out_cost",
+    "cost": 600,
+    "note": "KLM Georgetown-AMS nonstop one way (est)",
+    "best_starting_month": "February",
+    "route_days": 9,
+    "travel_month": "February"
+   }
+  ],
+  "batch": "4"
+ },
+ {
+  "id": "L65",
+  "leg": "Mahé-AMS 1 stop",
+  "eur_total": 580,
+  "uses": [
+   {
+    "route_id": "gt_seed_seychelles",
+    "route": "Seychelles 🌺",
+    "field": "flight_out_cost",
+    "cost": 580,
+    "note": "Mahé-AMS 1 stop (est)",
+    "best_starting_month": "April",
+    "route_days": 11,
+    "travel_month": "April"
+   }
+  ],
+  "batch": "4"
+ },
+ {
+  "id": "L68",
+  "leg": "Phoenix-AMS",
+  "eur_total": 560,
+  "uses": [
+   {
+    "route_id": "gt_seed_us-southwest",
+    "route": "US Southwest 🏜️",
+    "field": "flight_out_cost",
+    "cost": 560,
+    "note": "Phoenix-AMS one way, 1 stop (est)",
+    "best_starting_month": "September",
+    "route_days": 12,
+    "travel_month": "September"
+   }
+  ],
+  "batch": "4"
+ },
+ {
+  "id": "L70",
+  "leg": "AMS-São Tomé via Lisbon TAP",
+  "eur_total": 550,
+  "uses": [
+   {
+    "route_id": "gt_seed_sao-tome-principe",
+    "route": "São Tomé & Príncipe 🍫",
+    "field": "flight_in_cost",
+    "cost": 550,
+    "note": "AMS-São Tomé via Lisbon TAP (notes return ±€700-2,500; est)",
+    "best_starting_month": "June",
+    "route_days": 11,
+    "travel_month": "June"
+   }
+  ],
+  "batch": "4"
+ },
+ {
+  "id": "L71",
+  "leg": "São Tomé-AMS via Lisbon",
+  "eur_total": 550,
+  "uses": [
+   {
+    "route_id": "gt_seed_sao-tome-principe",
+    "route": "São Tomé & Príncipe 🍫",
+    "field": "flight_out_cost",
+    "cost": 550,
+    "note": "São Tomé-AMS via Lisbon (est)",
+    "best_starting_month": "June",
+    "route_days": 11,
+    "travel_month": "June"
+   }
+  ],
+  "batch": "4"
+ },
+ {
+  "id": "L72",
+  "leg": "Cotonou-AMS",
+  "eur_total": 550,
+  "uses": [
+   {
+    "route_id": "gt_seed_west-africa-overland",
+    "route": "West Africa Overland 🥁",
+    "field": "flight_out_cost",
+    "cost": 550,
+    "note": "Cotonou-AMS one way via hub (flights_batch26.csv COO back, est)",
+    "best_starting_month": "November",
+    "route_days": 67,
+    "travel_month": "January"
+   }
+  ],
+  "batch": "4"
+ },
+ {
+  "id": "L75",
+  "leg": "Phnom Penh-AMS",
+  "eur_total": 520,
+  "uses": [
+   {
+    "route_id": "gt_seed_vietnam-cambodia",
+    "route": "Vietnam & Cambodia 🛺",
+    "field": "flight_out_cost",
+    "cost": 520,
+    "note": "Phnom Penh-AMS, 1-2 stops (est; low)",
+    "best_starting_month": "September",
+    "route_days": 29,
+    "travel_month": "September"
+   }
+  ],
+  "batch": "4"
+ },
+ {
+  "id": "L77",
+  "leg": "AMS-Quito via Madrid",
+  "eur_total": 520,
+  "uses": [
+   {
+    "route_id": "gt_seed_ecuador",
+    "route": "Ecuador 🐢",
+    "field": "flight_in_cost",
+    "cost": 520,
+    "note": "AMS-Quito via Madrid; notes 800-1000 return (est)",
+    "best_starting_month": "March",
+    "route_days": 24,
+    "travel_month": "March"
+   }
+  ],
+  "batch": "4"
+ },
+ {
+  "id": "L78",
+  "leg": "Montevideo-AMS",
+  "eur_total": 520,
+  "uses": [
+   {
+    "route_id": "gt_seed_uruguay",
+    "route": "Uruguay 🧉",
+    "field": "flight_out_cost",
+    "cost": 520,
+    "note": "Montevideo-AMS one way (est)",
+    "best_starting_month": "November",
+    "route_days": 10,
+    "travel_month": "November"
+   }
+  ],
+  "batch": "4"
+ },
+ {
+  "id": "L80",
+  "leg": "AMS-Muscat",
+  "eur_total": 500,
+  "uses": [
+   {
+    "route_id": "gt_seed_gulf-states-trio",
+    "route": "Gulf States Trio 🛢️",
+    "field": "flight_in_cost",
+    "cost": 500,
+    "note": "AMS-Muscat one way KLM direct (notes EUR 1190-1300 return, raised by regional tensions; est, low)",
+    "best_starting_month": "November",
+    "route_days": 13,
+    "travel_month": "November"
+   }
+  ],
+  "batch": "4"
+ },
+ {
+  "id": "L83",
+  "leg": "Quito-AMS",
+  "eur_total": 500,
+  "uses": [
+   {
+    "route_id": "gt_seed_ecuador",
+    "route": "Ecuador 🐢",
+    "field": "flight_out_cost",
+    "cost": 500,
+    "note": "Quito-AMS (est)",
+    "best_starting_month": "March",
+    "route_days": 24,
+    "travel_month": "March"
+   }
+  ],
+  "batch": "5"
+ },
+ {
+  "id": "L84",
+  "leg": "AMS-St Lucia",
+  "eur_total": 500,
+  "uses": [
+   {
+    "route_id": "gt_seed_saint-lucia-grenada",
+    "route": "Saint Lucia & Grenada 🌰",
+    "field": "flight_in_cost",
+    "cost": 500,
+    "note": "AMS-St Lucia (UVF) via US; notes 700-1000 return (est, low)",
+    "best_starting_month": "December",
+    "route_days": 14,
+    "travel_month": "December"
+   }
+  ],
+  "batch": "5"
+ },
+ {
+  "id": "L88",
+  "leg": "AMS-Kathmandu",
+  "eur_total": 480,
+  "uses": [
+   {
+    "route_id": "gt_seed_nepal",
+    "route": "Nepal 🏔️",
+    "field": "flight_in_cost",
+    "cost": 480,
+    "note": "AMS-Kathmandu one way, 1 stop (notes EUR 550-950 return, Nov peak; est)",
+    "best_starting_month": "November",
+    "route_days": 21,
+    "travel_month": "November"
+   }
+  ],
+  "batch": "5"
+ },
+ {
+  "id": "L92",
+  "leg": "AMS-Belem via Lisbon",
+  "eur_total": 480,
+  "uses": [
+   {
+    "route_id": "gt_seed_northern-brazil",
+    "route": "Northern Brazil 🪁",
+    "field": "flight_in_cost",
+    "cost": 480,
+    "note": "AMS-Belem via Lisbon (TAP); notes 650-950 return (est, low)",
+    "best_starting_month": "April",
+    "route_days": 14,
+    "travel_month": "April"
+   }
+  ],
+  "batch": "5"
+ },
+ {
+  "id": "L94",
+  "leg": "AMS-Kingston with stopover",
+  "eur_total": 480,
+  "uses": [
+   {
+    "route_id": "gt_seed_jamaica",
+    "route": "Jamaica 🎵",
+    "field": "flight_in_cost",
+    "cost": 480,
+    "note": "AMS-Kingston with stopover; notes 750-900 return (est)",
+    "best_starting_month": "December",
+    "route_days": 12,
+    "travel_month": "December"
+   }
+  ],
+  "batch": "5"
+ },
+ {
+  "id": "L100",
+  "leg": "AMS-San Jose KLM direct",
+  "eur_total": 470,
+  "uses": [
+   {
+    "route_id": "gt_seed_costa-rica",
+    "route": "Costa Rica 🦥",
+    "field": "flight_in_cost",
+    "cost": 470,
+    "note": "AMS-San Jose KLM direct; notes 730-850 return (est)",
+    "best_starting_month": "January",
+    "route_days": 21,
+    "travel_month": "January"
+   }
+  ],
+  "batch": "5"
+ },
+ {
+  "id": "L103",
+  "leg": "Kingston-AMS",
+  "eur_total": 460,
+  "uses": [
+   {
+    "route_id": "gt_seed_jamaica",
+    "route": "Jamaica 🎵",
+    "field": "flight_out_cost",
+    "cost": 460,
+    "note": "Kingston-AMS (est)",
+    "best_starting_month": "December",
+    "route_days": 12,
+    "travel_month": "December"
+   }
+  ],
+  "batch": "6"
+ },
+ {
+  "id": "L115",
+  "leg": "AMS-Aruba KLM direct",
+  "eur_total": 450,
+  "uses": [
+   {
+    "route_id": "gt_seed_abc-islands",
+    "route": "ABC Islands 🦩",
+    "field": "flight_in_cost",
+    "cost": 450,
+    "note": "AMS-Aruba KLM direct; notes 740-820 return (est)",
+    "best_starting_month": "December",
+    "route_days": 18,
+    "travel_month": "December"
+   }
+  ],
+  "batch": "6"
+ },
+ {
+  "id": "L126",
+  "leg": "KL-AMS",
+  "eur_total": 420,
+  "uses": [
+   {
+    "route_id": "gt_seed_malaysia",
+    "route": "Malaysia 🦋",
+    "field": "flight_out_cost",
+    "cost": 420,
+    "note": "KL-AMS (est)",
+    "best_starting_month": "August",
+    "route_days": 10,
+    "travel_month": "August"
+   }
+  ],
+  "batch": "7"
+ },
+ {
+  "id": "L130",
+  "leg": "AMS-Washington Dulles",
+  "eur_total": 400,
+  "uses": [
+   {
+    "route_id": "gt_seed_us-northeast",
+    "route": "US Northeast 🗽",
+    "field": "flight_in_cost",
+    "cost": 400,
+    "note": "AMS-Washington Dulles one way, KLM direct (est; typical return ~EUR 750-850)",
+    "best_starting_month": "September",
+    "route_days": 12,
+    "travel_month": "September"
+   }
+  ],
+  "batch": "7"
+ },
+ {
+  "id": "L134",
+  "leg": "Miami-AMS",
+  "eur_total": 360,
+  "uses": [
+   {
+    "route_id": "gt_seed_florida",
+    "route": "Florida 🐊",
+    "field": "flight_out_cost",
+    "cost": 360,
+    "note": "Miami-AMS one way (est)",
+    "best_starting_month": "January",
+    "route_days": 10,
+    "travel_month": "January"
+   }
+  ],
+  "batch": "7"
+ },
+ {
+  "id": "L137",
+  "leg": "AMS-Bishkek",
+  "eur_total": 330,
+  "uses": [
+   {
+    "route_id": "gt_seed_kyrgyzstan",
+    "route": "Kyrgyzstan 🐴",
+    "field": "flight_in_cost",
+    "cost": 330,
+    "note": "AMS-Bishkek one way via Istanbul (notes EUR 450-700 return; est)",
+    "best_starting_month": "September",
+    "route_days": 12,
+    "travel_month": "September"
+   }
+  ],
+  "batch": "7"
+ },
+ {
+  "id": "L139",
+  "leg": "Dubai-AMS direct",
+  "eur_total": 280,
+  "uses": [
+   {
+    "route_id": "gt_seed_united-arab-emirates",
+    "route": "United Arab Emirates 🏙️",
+    "field": "flight_out_cost",
+    "cost": 280,
+    "note": "Dubai-AMS direct (est from out fare)",
+    "best_starting_month": "January",
+    "route_days": 9,
+    "travel_month": "January"
+   }
+  ],
+  "batch": "7"
+ }
+]
