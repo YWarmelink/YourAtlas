@@ -1,0 +1,100 @@
+[
+ {
+  "id": "L161",
+  "leg": "Marrakech-AMS direct Transavia/easyJet",
+  "eur_total": 120,
+  "uses": [
+   {
+    "route_id": "gt_seed_morocco",
+    "route": "Morocco 🕌",
+    "field": "flight_out_cost",
+    "cost": 120,
+    "note": "Marrakech-AMS direct Transavia/easyJet (notes return ±€100-280; est)"
+   }
+  ]
+ },
+ {
+  "id": "L162",
+  "leg": "AMS-Bari: Skyscanner floor 80",
+  "eur_total": 110,
+  "uses": [
+   {
+    "route_id": "gt_seed_puglia-6-days",
+    "route": "Puglia (6 days) 🏘️",
+    "field": "flight_in_cost",
+    "cost": 110,
+    "note": "AMS-Bari: Skyscanner floor 80, Expedia USD 103, typical higher (WebSearch 2026-10-28; est)"
+   }
+  ]
+ },
+ {
+  "id": "L163",
+  "leg": "Innsbruck-AMS",
+  "eur_total": 100,
+  "uses": [
+   {
+    "route_id": "gt_seed_dolomites-6-days",
+    "route": "Dolomites (6 days) ⛰️",
+    "field": "flight_out_cost",
+    "cost": 100,
+    "note": "Innsbruck-AMS one way (Expedia floor USD 74; est)"
+   }
+  ]
+ },
+ {
+  "id": "L164",
+  "leg": "AMS-Milan Malpensa",
+  "eur_total": 100,
+  "uses": [
+   {
+    "route_id": "gt_seed_italy-roadtrip-12-days",
+    "route": "Italy Roadtrip (12 days) 🧀",
+    "field": "flight_in_cost",
+    "cost": 100,
+    "note": "AMS-Milan Malpensa one way (easyJet/KLM; Skyscanner floor €63; est)"
+   }
+  ]
+ },
+ {
+  "id": "L165",
+  "leg": "Rome FCO-AMS",
+  "eur_total": 100,
+  "uses": [
+   {
+    "route_id": "gt_seed_italy-north-to-central-12-days",
+    "route": "Italy: North to Central (12 days) 🚄",
+    "field": "flight_out_cost",
+    "cost": 100,
+    "note": "Rome FCO-AMS one way (Expedia €78 floor; est)"
+   }
+  ]
+ },
+ {
+  "id": "L166",
+  "leg": "Malpensa-AMS",
+  "eur_total": 100,
+  "uses": [
+   {
+    "route_id": "gt_seed_northern-italy-6-days",
+    "route": "Northern Italy (6 days) 🚤",
+    "field": "flight_out_cost",
+    "cost": 100,
+    "note": "Malpensa-AMS (reuse out fare; est)"
+   }
+  ]
+ },
+ {
+  "id": "L167",
+  "leg": "Bari-AMS",
+  "eur_total": 90,
+  "uses": [
+   {
+    "route_id": "gt_seed_campania-puglia-9-days",
+    "route": "Campania + Puglia (9 days) 🧭",
+    "field": "flight_out_cost",
+    "cost": 90,
+    "note": "Bari-AMS one way (Expedia/Ratepunk USD 64-76 floors, typical higher; est)"
+   }
+  ]
+ }
+]

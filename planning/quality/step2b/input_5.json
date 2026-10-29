@@ -1,0 +1,282 @@
+[
+ {
+  "id": "L81",
+  "leg": "AMS-Kigali direct KLM",
+  "eur_total": 500,
+  "uses": [
+   {
+    "route_id": "gt_seed_rwanda",
+    "route": "Rwanda 🦍",
+    "field": "flight_in_cost",
+    "cost": 500,
+    "note": "AMS-Kigali direct KLM (notes return ±€800-1,000; est)"
+   }
+  ]
+ },
+ {
+  "id": "L82",
+  "leg": "Havana-AMS",
+  "eur_total": 500,
+  "uses": [
+   {
+    "route_id": "gt_seed_cuba",
+    "route": "Cuba 🎷",
+    "field": "flight_out_cost",
+    "cost": 500,
+    "note": "Havana-AMS (est)"
+   }
+  ]
+ },
+ {
+  "id": "L83",
+  "leg": "Quito-AMS",
+  "eur_total": 500,
+  "uses": [
+   {
+    "route_id": "gt_seed_ecuador",
+    "route": "Ecuador 🐢",
+    "field": "flight_out_cost",
+    "cost": 500,
+    "note": "Quito-AMS (est)"
+   }
+  ]
+ },
+ {
+  "id": "L84",
+  "leg": "AMS-St Lucia",
+  "eur_total": 500,
+  "uses": [
+   {
+    "route_id": "gt_seed_saint-lucia-grenada",
+    "route": "Saint Lucia & Grenada 🌰",
+    "field": "flight_in_cost",
+    "cost": 500,
+    "note": "AMS-St Lucia (UVF) via US; notes 700-1000 return (est, low)"
+   }
+  ]
+ },
+ {
+  "id": "L85",
+  "leg": "AMS-Lima KLM direct",
+  "eur_total": 500,
+  "uses": [
+   {
+    "route_id": "gt_seed_peru",
+    "route": "Peru 🦙",
+    "field": "flight_in_cost",
+    "cost": 500,
+    "note": "AMS-Lima KLM direct; notes 800-950 return (est)"
+   }
+  ]
+ },
+ {
+  "id": "L86",
+  "leg": "Cebu-Manila ~45",
+  "eur_total": 495,
+  "uses": [
+   {
+    "route_id": "gt_seed_philippines",
+    "route": "Philippines 🏖️",
+    "field": "flight_out_cost",
+    "cost": 495,
+    "note": "Cebu-Manila ~45 (est) + Manila-AMS 450 (est)"
+   }
+  ]
+ },
+ {
+  "id": "L87",
+  "leg": "Male-AMS",
+  "eur_total": 480,
+  "uses": [
+   {
+    "route_id": "gt_seed_maldives",
+    "route": "Maldives 🏝️",
+    "field": "flight_out_cost",
+    "cost": 480,
+    "note": "Male-AMS (est)"
+   }
+  ]
+ },
+ {
+  "id": "L88",
+  "leg": "AMS-Kathmandu",
+  "eur_total": 480,
+  "uses": [
+   {
+    "route_id": "gt_seed_nepal",
+    "route": "Nepal 🏔️",
+    "field": "flight_in_cost",
+    "cost": 480,
+    "note": "AMS-Kathmandu one way, 1 stop (notes EUR 550-950 return, Nov peak; est)"
+   }
+  ]
+ },
+ {
+  "id": "L89",
+  "leg": "AMS-Manila",
+  "eur_total": 480,
+  "uses": [
+   {
+    "route_id": "gt_seed_philippines",
+    "route": "Philippines 🏖️",
+    "field": "flight_in_cost",
+    "cost": 480,
+    "note": "AMS-Manila one way KLM direct (notes EUR 700-900 return; est)"
+   }
+  ]
+ },
+ {
+  "id": "L90",
+  "leg": "HCMC-AMS",
+  "eur_total": 480,
+  "uses": [
+   {
+    "route_id": "gt_seed_vietnam",
+    "route": "Vietnam 🛵",
+    "field": "flight_out_cost",
+    "cost": 480,
+    "note": "HCMC-AMS, 1 stop (est; low)"
+   }
+  ]
+ },
+ {
+  "id": "L91",
+  "leg": "AMS-Nairobi direct KLM",
+  "eur_total": 480,
+  "uses": [
+   {
+    "route_id": "gt_seed_kenya",
+    "route": "Kenya 🦒",
+    "field": "flight_in_cost",
+    "cost": 480,
+    "note": "AMS-Nairobi direct KLM (notes return ±€700-1,100; est)"
+   }
+  ]
+ },
+ {
+  "id": "L92",
+  "leg": "AMS-Belem via Lisbon",
+  "eur_total": 480,
+  "uses": [
+   {
+    "route_id": "gt_seed_northern-brazil",
+    "route": "Northern Brazil 🪁",
+    "field": "flight_in_cost",
+    "cost": 480,
+    "note": "AMS-Belem via Lisbon (TAP); notes 650-950 return (est, low)"
+   }
+  ]
+ },
+ {
+  "id": "L93",
+  "leg": "Guatemala City-AMS",
+  "eur_total": 480,
+  "uses": [
+   {
+    "route_id": "gt_seed_guatemala",
+    "route": "Guatemala 🦜",
+    "field": "flight_out_cost",
+    "cost": 480,
+    "note": "Guatemala City-AMS (est)"
+   }
+  ]
+ },
+ {
+  "id": "L94",
+  "leg": "AMS-Kingston with stopover",
+  "eur_total": 480,
+  "uses": [
+   {
+    "route_id": "gt_seed_jamaica",
+    "route": "Jamaica 🎵",
+    "field": "flight_in_cost",
+    "cost": 480,
+    "note": "AMS-Kingston with stopover; notes 750-900 return (est)"
+   }
+  ]
+ },
+ {
+  "id": "L95",
+  "leg": "gt_seed_peru flight_out_cost",
+  "eur_total": 480,
+  "uses": [
+   {
+    "route_id": "gt_seed_peru",
+    "route": "Peru 🦙",
+    "field": "flight_out_cost",
+    "cost": 480,
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "L96",
+  "leg": "AMS-Douala",
+  "eur_total": 480,
+  "uses": [
+   {
+    "route_id": "gt_seed_central-africa-islands",
+    "route": "Central Africa & Islands 🦛",
+    "field": "flight_in_cost",
+    "cost": 480,
+    "note": "AMS-Douala one way via Paris/Brussels (notes: return EUR 700-1,150; est)"
+   }
+  ]
+ },
+ {
+  "id": "L97",
+  "leg": "Kota Kinabalu-KL ~52",
+  "eur_total": 472,
+  "uses": [
+   {
+    "route_id": "gt_seed_malaysia-borneo-brunei-jungle-wildlife-21-days",
+    "route": "Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧",
+    "field": "flight_out_cost",
+    "cost": 472,
+    "note": "Kota Kinabalu-KL ~52 (notes EUR 35-70) + KL-AMS 420 (est)"
+   }
+  ]
+ },
+ {
+  "id": "L98",
+  "leg": "Colombo-AMS",
+  "eur_total": 470,
+  "uses": [
+   {
+    "route_id": "gt_seed_sri-lanka",
+    "route": "Sri Lanka 🐆",
+    "field": "flight_out_cost",
+    "cost": 470,
+    "note": "Colombo-AMS (est)"
+   }
+  ]
+ },
+ {
+  "id": "L99",
+  "leg": "Kigali-AMS direct KLM",
+  "eur_total": 470,
+  "uses": [
+   {
+    "route_id": "gt_seed_rwanda",
+    "route": "Rwanda 🦍",
+    "field": "flight_out_cost",
+    "cost": 470,
+    "note": "Kigali-AMS direct KLM (est)"
+   }
+  ]
+ },
+ {
+  "id": "L100",
+  "leg": "AMS-San Jose KLM direct",
+  "eur_total": 470,
+  "uses": [
+   {
+    "route_id": "gt_seed_costa-rica",
+    "route": "Costa Rica 🦥",
+    "field": "flight_in_cost",
+    "cost": 470,
+    "note": "AMS-San Jose KLM direct; notes 730-850 return (est)"
+   }
+  ]
+ }
+]

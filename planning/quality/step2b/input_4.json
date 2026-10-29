@@ -1,0 +1,289 @@
+[
+ {
+  "id": "L61",
+  "leg": "Victoria Falls-AMS via Addis",
+  "eur_total": 600,
+  "uses": [
+   {
+    "route_id": "gt_seed_zimbabwe",
+    "route": "Zimbabwe 🐆",
+    "field": "flight_out_cost",
+    "cost": 600,
+    "note": "Victoria Falls-AMS via Addis (est)"
+   }
+  ]
+ },
+ {
+  "id": "L62",
+  "leg": "AMS-La Paz",
+  "eur_total": 600,
+  "uses": [
+   {
+    "route_id": "gt_seed_bolivia",
+    "route": "Bolivia 🧂",
+    "field": "flight_in_cost",
+    "cost": 600,
+    "note": "AMS-La Paz one way via Madrid/Bogota (notes: 700-1300 return; est, low)"
+   }
+  ]
+ },
+ {
+  "id": "L63",
+  "leg": "KLM Georgetown-AMS nonstop",
+  "eur_total": 600,
+  "uses": [
+   {
+    "route_id": "gt_seed_guyana",
+    "route": "Guyana 🦦",
+    "field": "flight_out_cost",
+    "cost": 600,
+    "note": "KLM Georgetown-AMS nonstop one way (est)"
+   }
+  ]
+ },
+ {
+  "id": "L64",
+  "leg": "AMS-Almaty",
+  "eur_total": 600,
+  "uses": [
+   {
+    "route_id": "gt_seed_kazakhstan-kyrgyzstan",
+    "route": "Kazakhstan & Kyrgyzstan ⛺",
+    "field": "flight_in_cost",
+    "cost": 300,
+    "note": "AMS-Almaty one way via Istanbul (notes EUR 250-650 return; est)"
+   },
+   {
+    "route_id": "gt_seed_central-asia",
+    "route": "Central Asia 🐎",
+    "field": "flight_in_cost",
+    "cost": 300,
+    "note": "AMS-Almaty one way via Istanbul (est)"
+   }
+  ]
+ },
+ {
+  "id": "L65",
+  "leg": "Mahé-AMS 1 stop",
+  "eur_total": 580,
+  "uses": [
+   {
+    "route_id": "gt_seed_seychelles",
+    "route": "Seychelles 🌺",
+    "field": "flight_out_cost",
+    "cost": 580,
+    "note": "Mahé-AMS 1 stop (est)"
+   }
+  ]
+ },
+ {
+  "id": "L66",
+  "leg": "Johannesburg-AMS direct KLM",
+  "eur_total": 560,
+  "uses": [
+   {
+    "route_id": "gt_seed_south-africa",
+    "route": "South Africa 🦓",
+    "field": "flight_out_cost",
+    "cost": 560,
+    "note": "Johannesburg-AMS direct KLM (notes: back via CT or JNB; route ends near JNB; est)"
+   }
+  ]
+ },
+ {
+  "id": "L67",
+  "leg": "AMS-Las Vegas",
+  "eur_total": 560,
+  "uses": [
+   {
+    "route_id": "gt_seed_us-southwest",
+    "route": "US Southwest 🏜️",
+    "field": "flight_in_cost",
+    "cost": 560,
+    "note": "AMS-Las Vegas one way, 1 stop (est; notes: connecting, 13-15 h)"
+   }
+  ]
+ },
+ {
+  "id": "L68",
+  "leg": "Phoenix-AMS",
+  "eur_total": 560,
+  "uses": [
+   {
+    "route_id": "gt_seed_us-southwest",
+    "route": "US Southwest 🏜️",
+    "field": "flight_out_cost",
+    "cost": 560,
+    "note": "Phoenix-AMS one way, 1 stop (est)"
+   }
+  ]
+ },
+ {
+  "id": "L69",
+  "leg": "AMS-Montevideo",
+  "eur_total": 560,
+  "uses": [
+   {
+    "route_id": "gt_seed_uruguay",
+    "route": "Uruguay 🧉",
+    "field": "flight_in_cost",
+    "cost": 560,
+    "note": "AMS-Montevideo one way, one stop (notes: return EUR 850-1,100; est)"
+   }
+  ]
+ },
+ {
+  "id": "L70",
+  "leg": "AMS-São Tomé via Lisbon TAP",
+  "eur_total": 550,
+  "uses": [
+   {
+    "route_id": "gt_seed_sao-tome-principe",
+    "route": "São Tomé & Príncipe 🍫",
+    "field": "flight_in_cost",
+    "cost": 550,
+    "note": "AMS-São Tomé via Lisbon TAP (notes return ±€700-2,500; est)"
+   }
+  ]
+ },
+ {
+  "id": "L71",
+  "leg": "São Tomé-AMS via Lisbon",
+  "eur_total": 550,
+  "uses": [
+   {
+    "route_id": "gt_seed_sao-tome-principe",
+    "route": "São Tomé & Príncipe 🍫",
+    "field": "flight_out_cost",
+    "cost": 550,
+    "note": "São Tomé-AMS via Lisbon (est)"
+   }
+  ]
+ },
+ {
+  "id": "L72",
+  "leg": "Cotonou-AMS",
+  "eur_total": 550,
+  "uses": [
+   {
+    "route_id": "gt_seed_west-africa-overland",
+    "route": "West Africa Overland 🥁",
+    "field": "flight_out_cost",
+    "cost": 550,
+    "note": "Cotonou-AMS one way via hub (flights_batch26.csv COO back, est)"
+   }
+  ]
+ },
+ {
+  "id": "L73",
+  "leg": "AMS-Lima",
+  "eur_total": 550,
+  "uses": [
+   {
+    "route_id": "gt_seed_peru-bolivia-andes-salt-flats-20-days",
+    "route": "Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂",
+    "field": "flight_in_cost",
+    "cost": 550,
+    "note": "AMS-Lima one way with a connection (notes: return EUR 800-950; est)"
+   }
+  ]
+ },
+ {
+  "id": "L74",
+  "leg": "AMS-Male",
+  "eur_total": 520,
+  "uses": [
+   {
+    "route_id": "gt_seed_maldives",
+    "route": "Maldives 🏝️",
+    "field": "flight_in_cost",
+    "cost": 520,
+    "note": "AMS-Male one way, 1 stop via Gulf hub (est; low)"
+   }
+  ]
+ },
+ {
+  "id": "L75",
+  "leg": "Phnom Penh-AMS",
+  "eur_total": 520,
+  "uses": [
+   {
+    "route_id": "gt_seed_vietnam-cambodia",
+    "route": "Vietnam & Cambodia 🛺",
+    "field": "flight_out_cost",
+    "cost": 520,
+    "note": "Phnom Penh-AMS, 1-2 stops (est; low)"
+   }
+  ]
+ },
+ {
+  "id": "L76",
+  "leg": "AMS-Santiago",
+  "eur_total": 520,
+  "uses": [
+   {
+    "route_id": "gt_seed_southern-cone-brazil-finale",
+    "route": "Southern Cone & Brazil Finale 🧉",
+    "field": "flight_in_cost",
+    "cost": 520,
+    "note": "AMS-Santiago (KLM) + domestic to Calama; notes 800-900 return incl. domestic (est, low)"
+   }
+  ]
+ },
+ {
+  "id": "L77",
+  "leg": "AMS-Quito via Madrid",
+  "eur_total": 520,
+  "uses": [
+   {
+    "route_id": "gt_seed_ecuador",
+    "route": "Ecuador 🐢",
+    "field": "flight_in_cost",
+    "cost": 520,
+    "note": "AMS-Quito via Madrid; notes 800-1000 return (est)"
+   }
+  ]
+ },
+ {
+  "id": "L78",
+  "leg": "Montevideo-AMS",
+  "eur_total": 520,
+  "uses": [
+   {
+    "route_id": "gt_seed_uruguay",
+    "route": "Uruguay 🧉",
+    "field": "flight_out_cost",
+    "cost": 520,
+    "note": "Montevideo-AMS one way (est)"
+   }
+  ]
+ },
+ {
+  "id": "L79",
+  "leg": "AMS-Colombo",
+  "eur_total": 500,
+  "uses": [
+   {
+    "route_id": "gt_seed_sri-lanka",
+    "route": "Sri Lanka 🐆",
+    "field": "flight_in_cost",
+    "cost": 500,
+    "note": "AMS-Colombo one way, 1 stop via Gulf hub (est; low)"
+   }
+  ]
+ },
+ {
+  "id": "L80",
+  "leg": "AMS-Muscat",
+  "eur_total": 500,
+  "uses": [
+   {
+    "route_id": "gt_seed_gulf-states-trio",
+    "route": "Gulf States Trio 🛢️",
+    "field": "flight_in_cost",
+    "cost": 500,
+    "note": "AMS-Muscat one way KLM direct (notes EUR 1190-1300 return, raised by regional tensions; est, low)"
+   }
+  ]
+ }
+]

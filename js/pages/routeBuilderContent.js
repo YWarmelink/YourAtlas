@@ -33824,3 +33824,35 @@ function rbMigrateQuality202610bFixes() {
   rbRoutes.forEach(r => { if (rbFixQuality202610bRoute(r)) touched = true; });
   if (touched) rbSave();
 }
+
+// ---- Quality check 2b (2026-10-29): web-verified flight fares (planning/quality/step2b) ----
+// [route id, field, old cost, new cost], only where the verified fare differs >15% from the estimate.
+// Filled per batch by scripts/apply_step2b_fares.js (between the markers); guarded by the old value.
+const RB_QUALITY_2B_FARES = [
+  // step2b:start
+  // step2b:end
+];
+
+/** Applies RB_QUALITY_2B_FARES to one route; true when it changed something. Shared by
+ *  rbMigrateQuality2bFares() (localStorage) and scripts/fix_route_texts_in_sheet.js fares (Sheet). */
+function rbFixQuality2bFares(route) {
+  let changed = false;
+  RB_QUALITY_2B_FARES.forEach(([id, field, from, to]) => {
+    if (route.id === id && Number(route[field]) === from) { route[field] = to; changed = true; }
+  });
+  return changed;
+}
+
+function rbQuality2bFareRouteIds() {
+  return [...new Set(RB_QUALITY_2B_FARES.map(x => x[0]))];
+}
+
+// Versioned per batch: each applied batch bumps the key so already-migrated browsers pick up the new rows.
+function rbMigrateQuality2bFares() {
+  const key = RB_MIGRATE_FLAG_2026_10_QUALITY_2B_FARES + ':' + RB_QUALITY_2B_FARES.length;
+  if (localStorage.getItem(key)) return;
+  localStorage.setItem(key, '1');
+  let touched = false;
+  rbRoutes.forEach(r => { if (rbFixQuality2bFares(r)) touched = true; });
+  if (touched) rbSave();
+}

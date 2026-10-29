@@ -140,3 +140,13 @@ Agent tokens: 2e round 1 324,965 + round 2 533,788 + BG/BJ re-check 59,015 + lef
 Still open: S1 (Öresund ID checks), S3/S4 (UK ETA start date for Jersey/IoM), S5 (Lima: emergency + single terminal; Cusco
 "no direct international flight" looks doubtful): the agent's web-search budget ran out, so unchecked. Moldova + Transnistria (red
 advice) = Youri's call. **NEXT: 2b (estimated fares) — only on Youri's go.**
+
+**2b — fare batches (one agent at a time, Youri confirms each):** `planning/quality/step2b/` → `BRIEF.md`, `batches.json`
+(9 batches of ~20 legs, highest € first: 30.0k / 17.3k / 12.6k / 11.0k / 9.7k / 9.0k / 7.6k / 3.3k / 0.7k), `input_N.json`.
+Per batch: agent writes `result_N.json` → `node scripts/apply_step2b_fares.js N` (dry) → `--write` (adds rows to
+`RB_QUALITY_2B_FARES` for moves >15% + updates flights_from_ams.csv) → simulate → `fix_route_texts_in_sheet.js fares --push`
+→ commit + push. Resume = first batch without a result file.
+
+| Batch | € weight | Status | Agent tokens |
+|---|---|---|---|
+| 2b-1 | 30,040 | running | |

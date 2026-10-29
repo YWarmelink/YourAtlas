@@ -1,0 +1,282 @@
+[
+ {
+  "id": "L121",
+  "leg": "AMS-Curacao KLM direct",
+  "eur_total": 440,
+  "uses": [
+   {
+    "route_id": "gt_seed_curacao-bonaire",
+    "route": "Curaçao & Bonaire 🤿",
+    "field": "flight_in_cost",
+    "cost": 440,
+    "note": "AMS-Curacao KLM direct; notes 650-750 return (est)"
+   }
+  ]
+ },
+ {
+  "id": "L122",
+  "leg": "Krabi/Phuket-Bangkok ~35",
+  "eur_total": 435,
+  "uses": [
+   {
+    "route_id": "gt_seed_thailand",
+    "route": "Thailand 🛕",
+    "field": "flight_out_cost",
+    "cost": 435,
+    "note": "Krabi/Phuket-Bangkok ~35 (est) + Bangkok-AMS 400 (est)"
+   }
+  ]
+ },
+ {
+  "id": "L123",
+  "leg": "AMS-Managua via Panama City",
+  "eur_total": 430,
+  "uses": [
+   {
+    "route_id": "gt_seed_nicaragua",
+    "route": "Nicaragua 🌅",
+    "field": "flight_in_cost",
+    "cost": 430,
+    "note": "AMS-Managua via Panama City (Copa); notes 520-900 return (est)"
+   }
+  ]
+ },
+ {
+  "id": "L124",
+  "leg": "gt_seed_nicaragua flight_out_cost",
+  "eur_total": 430,
+  "uses": [
+   {
+    "route_id": "gt_seed_nicaragua",
+    "route": "Nicaragua 🌅",
+    "field": "flight_out_cost",
+    "cost": 430,
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "L125",
+  "leg": "Ulaanbaatar-AMS",
+  "eur_total": 420,
+  "uses": [
+   {
+    "route_id": "gt_seed_mongolia",
+    "route": "Mongolia 🦅",
+    "field": "flight_out_cost",
+    "cost": 420,
+    "note": "Ulaanbaatar-AMS (est)"
+   }
+  ]
+ },
+ {
+  "id": "L126",
+  "leg": "KL-AMS",
+  "eur_total": 420,
+  "uses": [
+   {
+    "route_id": "gt_seed_malaysia",
+    "route": "Malaysia 🦋",
+    "field": "flight_out_cost",
+    "cost": 420,
+    "note": "KL-AMS (est)"
+   }
+  ]
+ },
+ {
+  "id": "L127",
+  "leg": "Kathmandu-AMS",
+  "eur_total": 420,
+  "uses": [
+   {
+    "route_id": "gt_seed_nepal",
+    "route": "Nepal 🏔️",
+    "field": "flight_out_cost",
+    "cost": 420,
+    "note": "Kathmandu-AMS (est)"
+   }
+  ]
+ },
+ {
+  "id": "L128",
+  "leg": "Accra-AMS direct KLM",
+  "eur_total": 420,
+  "uses": [
+   {
+    "route_id": "gt_seed_ghana",
+    "route": "Ghana 🥥",
+    "field": "flight_out_cost",
+    "cost": 420,
+    "note": "Accra-AMS direct KLM (est)"
+   }
+  ]
+ },
+ {
+  "id": "L129",
+  "leg": "AMS-Pointe-a-Pitre via Paris",
+  "eur_total": 420,
+  "uses": [
+   {
+    "route_id": "gt_seed_guadeloupe-dominica",
+    "route": "Guadeloupe & Dominica 🍃",
+    "field": "flight_in_cost",
+    "cost": 420,
+    "note": "AMS-Pointe-a-Pitre via Paris; notes 650-1700 return (est)"
+   }
+  ]
+ },
+ {
+  "id": "L130",
+  "leg": "AMS-Washington Dulles",
+  "eur_total": 400,
+  "uses": [
+   {
+    "route_id": "gt_seed_us-northeast",
+    "route": "US Northeast 🗽",
+    "field": "flight_in_cost",
+    "cost": 400,
+    "note": "AMS-Washington Dulles one way, KLM direct (est; typical return ~EUR 750-850)"
+   }
+  ]
+ },
+ {
+  "id": "L131",
+  "leg": "Toronto-AMS",
+  "eur_total": 380,
+  "uses": [
+   {
+    "route_id": "gt_seed_eastern-canada",
+    "route": "Eastern Canada 🍁",
+    "field": "flight_out_cost",
+    "cost": 380,
+    "note": "Toronto-AMS one way, direct (est)"
+   }
+  ]
+ },
+ {
+  "id": "L132",
+  "leg": "AMS-Miami",
+  "eur_total": 380,
+  "uses": [
+   {
+    "route_id": "gt_seed_florida",
+    "route": "Florida 🐊",
+    "field": "flight_in_cost",
+    "cost": 380,
+    "note": "AMS-Miami one way, KLM direct (est; typical return ~EUR 750)"
+   }
+  ]
+ },
+ {
+  "id": "L133",
+  "leg": "Boston-AMS",
+  "eur_total": 380,
+  "uses": [
+   {
+    "route_id": "gt_seed_us-northeast",
+    "route": "US Northeast 🗽",
+    "field": "flight_out_cost",
+    "cost": 380,
+    "note": "Boston-AMS one way, direct (est)"
+   }
+  ]
+ },
+ {
+  "id": "L134",
+  "leg": "Miami-AMS",
+  "eur_total": 360,
+  "uses": [
+   {
+    "route_id": "gt_seed_florida",
+    "route": "Florida 🐊",
+    "field": "flight_out_cost",
+    "cost": 360,
+    "note": "Miami-AMS one way (est)"
+   }
+  ]
+ },
+ {
+  "id": "L135",
+  "leg": "Dushanbe-AMS",
+  "eur_total": 350,
+  "uses": [
+   {
+    "route_id": "gt_seed_uzbekistan-tajikistan",
+    "route": "Uzbekistan & Tajikistan 🌄",
+    "field": "flight_out_cost",
+    "cost": 350,
+    "note": "Dushanbe-AMS one way via Istanbul (est)"
+   }
+  ]
+ },
+ {
+  "id": "L136",
+  "leg": "AMS-Dakar",
+  "eur_total": 350,
+  "uses": [
+   {
+    "route_id": "gt_seed_senegambia",
+    "route": "Senegambia 🦩",
+    "field": "flight_in_cost",
+    "cost": 350,
+    "note": "AMS-Dakar one way (notes: return EUR 500-900; est)"
+   }
+  ]
+ },
+ {
+  "id": "L137",
+  "leg": "AMS-Bishkek",
+  "eur_total": 330,
+  "uses": [
+   {
+    "route_id": "gt_seed_kyrgyzstan",
+    "route": "Kyrgyzstan 🐴",
+    "field": "flight_in_cost",
+    "cost": 330,
+    "note": "AMS-Bishkek one way via Istanbul (notes EUR 450-700 return; est)"
+   }
+  ]
+ },
+ {
+  "id": "L138",
+  "leg": "Banjul-AMS",
+  "eur_total": 320,
+  "uses": [
+   {
+    "route_id": "gt_seed_senegambia",
+    "route": "Senegambia 🦩",
+    "field": "flight_out_cost",
+    "cost": 320,
+    "note": "Banjul-AMS one way, winter TUI fly/Corendon (est)"
+   }
+  ]
+ },
+ {
+  "id": "L139",
+  "leg": "Dubai-AMS direct",
+  "eur_total": 280,
+  "uses": [
+   {
+    "route_id": "gt_seed_united-arab-emirates",
+    "route": "United Arab Emirates 🏙️",
+    "field": "flight_out_cost",
+    "cost": 280,
+    "note": "Dubai-AMS direct (est from out fare)"
+   }
+  ]
+ },
+ {
+  "id": "L140",
+  "leg": "Baku-AMS",
+  "eur_total": 280,
+  "uses": [
+   {
+    "route_id": "gt_seed_caucasus",
+    "route": "Caucasus 🍷",
+    "field": "flight_out_cost",
+    "cost": 280,
+    "note": "Baku-AMS one way, 1 stop (est)"
+   }
+  ]
+ }
+]

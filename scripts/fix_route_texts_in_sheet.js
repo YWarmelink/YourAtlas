@@ -61,6 +61,8 @@ const FIXES = {
   quality: { fn: 'rbFixQuality202610Route', idsFn: 'rbQuality202610RouteIds' },
   // quality check option D 2026-10-29: 2e budgets, leftover costs/extras/texts
   qualityb: { fn: 'rbFixQuality202610bRoute', idsFn: 'rbQuality202610bRouteIds' },
+  // quality check 2b: web-verified flight fares
+  fares: { fn: 'rbFixQuality2bFares', idsFn: 'rbQuality2bFareRouteIds' },
 };
 
 function loadApp() {

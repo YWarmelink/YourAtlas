@@ -275,6 +275,7 @@ const RB_MIGRATE_FLAG_2026_10_BATCH1320_ROUTE_FIXES = 'atlas_grand_trips_migrate
 const RB_MIGRATE_FLAG_2026_10_BATCH2126_ROUTE_FIXES = 'atlas_grand_trips_migrate_2026_10_batch2126_route_fixes_v1';
 const RB_MIGRATE_FLAG_2026_10_QUALITY_FIXES = 'atlas_grand_trips_migrate_2026_10_quality_fixes_v1';
 const RB_MIGRATE_FLAG_2026_10_QUALITY_FIXES_B = 'atlas_grand_trips_migrate_2026_10_quality_fixes_b_v1';
+const RB_MIGRATE_FLAG_2026_10_QUALITY_2B_FARES = 'atlas_grand_trips_migrate_2026_10_quality_2b_fares_v1';
 // Route ids whose RB_ROUTE_COSTS entry rbMigrateApplyRouteCosts() has already applied (a list, so
 // each later backfill batch still applies once to its own routes).
 const RB_ROUTE_COSTS_APPLIED_KEY = 'atlas_grand_trips_route_costs_applied_v1';
@@ -624,6 +625,7 @@ const RB_REMOVED_ROUTE_IDS = new Set([
   'gt_seed_faeroer', // Faeröer 🐑 — superseded by Faroe Islands (6 days) 🐦
   'gt_seed_ijsland', // IJsland ❄️ — superseded by Iceland Ring Road (12 days) 🛣️
   'gt_test_cost_roundtrip', // scripts/verify_cost_fields_roundtrip.js --live test route, never shown
+  'gt_seed_moldova-transnistria-6-days', // Moldova + Transnistria (6 days) 🍇 — Transnistria red in the Dutch advice; Youri dropped it 2026-10-29, Moldova (5 days) 🍷 covers the rest
 ]);
 
 /**

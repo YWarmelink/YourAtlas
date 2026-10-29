@@ -1,0 +1,56 @@
+[
+ {
+  "batch": 1,
+  "legs": 20,
+  "eur": 30040,
+  "status": "todo"
+ },
+ {
+  "batch": 2,
+  "legs": 20,
+  "eur": 17340,
+  "status": "todo"
+ },
+ {
+  "batch": 3,
+  "legs": 20,
+  "eur": 12555,
+  "status": "todo"
+ },
+ {
+  "batch": 4,
+  "legs": 20,
+  "eur": 11020,
+  "status": "todo"
+ },
+ {
+  "batch": 5,
+  "legs": 20,
+  "eur": 9677,
+  "status": "todo"
+ },
+ {
+  "batch": 6,
+  "legs": 20,
+  "eur": 9030,
+  "status": "todo"
+ },
+ {
+  "batch": 7,
+  "legs": 20,
+  "eur": 7645,
+  "status": "todo"
+ },
+ {
+  "batch": 8,
+  "legs": 20,
+  "eur": 3340,
+  "status": "todo"
+ },
+ {
+  "batch": 9,
+  "legs": 7,
+  "eur": 720,
+  "status": "todo"
+ }
+]

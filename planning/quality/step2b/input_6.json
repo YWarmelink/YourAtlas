@@ -1,0 +1,282 @@
+[
+ {
+  "id": "L101",
+  "leg": "AMS-Cartagena 1 stop",
+  "eur_total": 460,
+  "uses": [
+   {
+    "route_id": "gt_seed_andes-grand-traverse",
+    "route": "Andes Grand Traverse 🦙",
+    "field": "flight_in_cost",
+    "cost": 460,
+    "note": "AMS-Cartagena 1 stop; notes 650-900 return (est, low)"
+   }
+  ]
+ },
+ {
+  "id": "L102",
+  "leg": "AMS-Cartagena",
+  "eur_total": 460,
+  "uses": [
+   {
+    "route_id": "gt_seed_colombia",
+    "route": "Colombia ☕",
+    "field": "flight_in_cost",
+    "cost": 460,
+    "note": "AMS-Cartagena (as Andes; est, low)"
+   }
+  ]
+ },
+ {
+  "id": "L103",
+  "leg": "Kingston-AMS",
+  "eur_total": 460,
+  "uses": [
+   {
+    "route_id": "gt_seed_jamaica",
+    "route": "Jamaica 🎵",
+    "field": "flight_out_cost",
+    "cost": 460,
+    "note": "Kingston-AMS (est)"
+   }
+  ]
+ },
+ {
+  "id": "L104",
+  "leg": "Seoul-AMS",
+  "eur_total": 450,
+  "uses": [
+   {
+    "route_id": "gt_seed_south-korea",
+    "route": "South Korea 🏯",
+    "field": "flight_out_cost",
+    "cost": 450,
+    "note": "Seoul-AMS (Skyscanner EUR 426 floor; est)"
+   }
+  ]
+ },
+ {
+  "id": "L105",
+  "leg": "AMS-Ulaanbaatar",
+  "eur_total": 450,
+  "uses": [
+   {
+    "route_id": "gt_seed_mongolia",
+    "route": "Mongolia 🦅",
+    "field": "flight_in_cost",
+    "cost": 450,
+    "note": "AMS-Ulaanbaatar one way via Istanbul (notes EUR 600-800 return; est)"
+   }
+  ]
+ },
+ {
+  "id": "L106",
+  "leg": "AMS-Kuala Lumpur",
+  "eur_total": 450,
+  "uses": [
+   {
+    "route_id": "gt_seed_malaysia-borneo-brunei-jungle-wildlife-21-days",
+    "route": "Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧",
+    "field": "flight_in_cost",
+    "cost": 450,
+    "note": "AMS-Kuala Lumpur one way KLM direct (notes EUR 650-950 return; est)"
+   }
+  ]
+ },
+ {
+  "id": "L107",
+  "leg": "AMS-KL",
+  "eur_total": 450,
+  "uses": [
+   {
+    "route_id": "gt_seed_malaysia",
+    "route": "Malaysia 🦋",
+    "field": "flight_in_cost",
+    "cost": 450,
+    "note": "AMS-KL one way KLM direct (est)"
+   }
+  ]
+ },
+ {
+  "id": "L108",
+  "leg": "AMS-Addis Ababa direct Ethiopian",
+  "eur_total": 450,
+  "uses": [
+   {
+    "route_id": "gt_seed_horn-of-africa-egypt",
+    "route": "Horn of Africa & Egypt 🏺",
+    "field": "flight_in_cost",
+    "cost": 450,
+    "note": "AMS-Addis Ababa direct Ethiopian (notes return ±€500-700; typical one-way; est)"
+   }
+  ]
+ },
+ {
+  "id": "L109",
+  "leg": "AMS-Addis Ababa",
+  "eur_total": 450,
+  "uses": [
+   {
+    "route_id": "gt_seed_ethiopia",
+    "route": "Ethiopia ⛪",
+    "field": "flight_in_cost",
+    "cost": 450,
+    "note": "AMS-Addis Ababa one way with a connection (notes return ±€700-900; est)"
+   }
+  ]
+ },
+ {
+  "id": "L110",
+  "leg": "Addis Ababa-AMS",
+  "eur_total": 450,
+  "uses": [
+   {
+    "route_id": "gt_seed_ethiopia",
+    "route": "Ethiopia ⛪",
+    "field": "flight_out_cost",
+    "cost": 450,
+    "note": "Addis Ababa-AMS one way, 1 connection (est)"
+   }
+  ]
+ },
+ {
+  "id": "L111",
+  "leg": "AMS-Accra direct KLM",
+  "eur_total": 450,
+  "uses": [
+   {
+    "route_id": "gt_seed_ghana",
+    "route": "Ghana 🥥",
+    "field": "flight_in_cost",
+    "cost": 450,
+    "note": "AMS-Accra direct KLM (notes return ±€700-1,100; typical one-way; est)"
+   }
+  ]
+ },
+ {
+  "id": "L112",
+  "leg": "Bogota-AMS",
+  "eur_total": 450,
+  "uses": [
+   {
+    "route_id": "gt_seed_colombia",
+    "route": "Colombia ☕",
+    "field": "flight_out_cost",
+    "cost": 450,
+    "note": "Bogota-AMS one way (est, low)"
+   }
+  ]
+ },
+ {
+  "id": "L113",
+  "leg": "Panama City-AMS KLM direct",
+  "eur_total": 450,
+  "uses": [
+   {
+    "route_id": "gt_seed_central-america-loop",
+    "route": "Central America Loop 🌋",
+    "field": "flight_out_cost",
+    "cost": 450,
+    "note": "Panama City-AMS KLM direct (est). Route ends Panama City, NOT the San Blas sailboat to Cartagena in the last b"
+   }
+  ]
+ },
+ {
+  "id": "L114",
+  "leg": "San Jose-AMS",
+  "eur_total": 450,
+  "uses": [
+   {
+    "route_id": "gt_seed_costa-rica",
+    "route": "Costa Rica 🦥",
+    "field": "flight_out_cost",
+    "cost": 450,
+    "note": "San Jose-AMS (est)"
+   }
+  ]
+ },
+ {
+  "id": "L115",
+  "leg": "AMS-Aruba KLM direct",
+  "eur_total": 450,
+  "uses": [
+   {
+    "route_id": "gt_seed_abc-islands",
+    "route": "ABC Islands 🦩",
+    "field": "flight_in_cost",
+    "cost": 450,
+    "note": "AMS-Aruba KLM direct; notes 740-820 return (est)"
+   }
+  ]
+ },
+ {
+  "id": "L116",
+  "leg": "Cancun-AMS",
+  "eur_total": 450,
+  "uses": [
+   {
+    "route_id": "gt_seed_mexico",
+    "route": "Mexico 🌵",
+    "field": "flight_out_cost",
+    "cost": 450,
+    "note": "Cancun-AMS (est); route ends Bacalar, bus to Cancun in local"
+   }
+  ]
+ },
+ {
+  "id": "L117",
+  "leg": "AMS-Panama City KLM direct",
+  "eur_total": 450,
+  "uses": [
+   {
+    "route_id": "gt_seed_panama",
+    "route": "Panama 🚢",
+    "field": "flight_in_cost",
+    "cost": 450,
+    "note": "AMS-Panama City KLM direct; notes 700-900 return (est)"
+   }
+  ]
+ },
+ {
+  "id": "L118",
+  "leg": "gt_seed_panama flight_out_cost",
+  "eur_total": 450,
+  "uses": [
+   {
+    "route_id": "gt_seed_panama",
+    "route": "Panama 🚢",
+    "field": "flight_out_cost",
+    "cost": 450,
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "L119",
+  "leg": "AMS-Calgary",
+  "eur_total": 450,
+  "uses": [
+   {
+    "route_id": "gt_seed_western-canada-rockies-vancouver",
+    "route": "Western Canada: Rockies & Vancouver 🏔️",
+    "field": "flight_in_cost",
+    "cost": 450,
+    "note": "AMS-Calgary one way, 1 stop (notes: return EUR 650-950; est)"
+   }
+  ]
+ },
+ {
+  "id": "L120",
+  "leg": "AMS-San Francisco",
+  "eur_total": 450,
+  "uses": [
+   {
+    "route_id": "gt_seed_california",
+    "route": "California 🌲",
+    "field": "flight_in_cost",
+    "cost": 450,
+    "note": "AMS-San Francisco one way, KLM/United direct (est from SFO back 380; summer out higher)"
+   }
+  ]
+ }
+]

@@ -1,0 +1,303 @@
+[
+ {
+  "id": "L21",
+  "leg": "AMS-Port Moresby",
+  "eur_total": 1000,
+  "uses": [
+   {
+    "route_id": "gt_seed_papua-new-guinea",
+    "route": "Papua New Guinea 🎭",
+    "field": "flight_in_cost",
+    "cost": 1000,
+    "note": "AMS-Port Moresby one way, 2 stops via Singapore/Australia (est; notes: return EUR 1470-2020; low confidence)"
+   }
+  ]
+ },
+ {
+  "id": "L22",
+  "leg": "AMS-El Calafate",
+  "eur_total": 1000,
+  "uses": [
+   {
+    "route_id": "gt_seed_argentine-patagonia",
+    "route": "Argentine Patagonia 🥩",
+    "field": "flight_in_cost",
+    "cost": 1000,
+    "note": "AMS-El Calafate one way via Buenos Aires + domestic (notes: return EUR 1,200-1,800; est)"
+   }
+  ]
+ },
+ {
+  "id": "L23",
+  "leg": "AMS-Guatemala City",
+  "eur_total": 1000,
+  "uses": [
+   {
+    "route_id": "gt_seed_central-america-loop",
+    "route": "Central America Loop 🌋",
+    "field": "flight_in_cost",
+    "cost": 500,
+    "note": "AMS-Guatemala City, 1-2 stops; notes 600-900 return (est, low)"
+   },
+   {
+    "route_id": "gt_seed_guatemala",
+    "route": "Guatemala 🦜",
+    "field": "flight_in_cost",
+    "cost": 500,
+    "note": "AMS-Guatemala City, stopover; notes 700-1300 return (est)"
+   }
+  ]
+ },
+ {
+  "id": "L24",
+  "leg": "AMS-Nadi",
+  "eur_total": 950,
+  "uses": [
+   {
+    "route_id": "gt_seed_fiji",
+    "route": "Fiji 🌊",
+    "field": "flight_in_cost",
+    "cost": 950,
+    "note": "AMS-Nadi one way (est)"
+   }
+  ]
+ },
+ {
+  "id": "L25",
+  "leg": "Port Moresby-AMS",
+  "eur_total": 950,
+  "uses": [
+   {
+    "route_id": "gt_seed_papua-new-guinea",
+    "route": "Papua New Guinea 🎭",
+    "field": "flight_out_cost",
+    "cost": 950,
+    "note": "Port Moresby-AMS one way (est)"
+   }
+  ]
+ },
+ {
+  "id": "L26",
+  "leg": "AMS-Paro",
+  "eur_total": 900,
+  "uses": [
+   {
+    "route_id": "gt_seed_bhutan",
+    "route": "Bhutan 🐉",
+    "field": "flight_in_cost",
+    "cost": 900,
+    "note": "AMS-Paro one way via Delhi/Bangkok (Trip.com ~EUR 1350 return floor; est as 2 tickets, low)"
+   }
+  ]
+ },
+ {
+  "id": "L27",
+  "leg": "AMS-Sydney",
+  "eur_total": 900,
+  "uses": [
+   {
+    "route_id": "gt_seed_sydneybyron-great-ocean-road",
+    "route": "Sydney/Byron & Great Ocean Road 🦘",
+    "field": "flight_in_cost",
+    "cost": 900,
+    "note": "AMS-Sydney one way, 1 stop (notes: return EUR 1,100-1,900; est)"
+   }
+  ]
+ },
+ {
+  "id": "L28",
+  "leg": "AMS-Koror",
+  "eur_total": 900,
+  "uses": [
+   {
+    "route_id": "gt_seed_palau",
+    "route": "Palau 🦈",
+    "field": "flight_in_cost",
+    "cost": 900,
+    "note": "AMS-Koror one way, 2 stops via Manila/Seoul/Taipei (est; notes: return EUR 1300-1750; includes the USD 100 Pri"
+   }
+  ]
+ },
+ {
+  "id": "L29",
+  "leg": "Punta Arenas-AMS",
+  "eur_total": 900,
+  "uses": [
+   {
+    "route_id": "gt_seed_chilean-patagonia",
+    "route": "Chilean Patagonia 🥾",
+    "field": "flight_out_cost",
+    "cost": 900,
+    "note": "Punta Arenas-AMS one way via Santiago (flights_batch26.csv PUQ back, est)"
+   }
+  ]
+ },
+ {
+  "id": "L30",
+  "leg": "Nairobi-AMS direct KLM",
+  "eur_total": 900,
+  "uses": [
+   {
+    "route_id": "gt_seed_kenya",
+    "route": "Kenya 🦒",
+    "field": "flight_out_cost",
+    "cost": 450,
+    "note": "Nairobi-AMS direct KLM (est)"
+   },
+   {
+    "route_id": "gt_seed_east-africa-safari-classic",
+    "route": "East Africa Safari Classic 🦒",
+    "field": "flight_out_cost",
+    "cost": 450,
+    "note": "Nairobi-AMS direct KLM (est)"
+   }
+  ]
+ },
+ {
+  "id": "L31",
+  "leg": "Melbourne-AMS",
+  "eur_total": 850,
+  "uses": [
+   {
+    "route_id": "gt_seed_sydneybyron-great-ocean-road",
+    "route": "Sydney/Byron & Great Ocean Road 🦘",
+    "field": "flight_out_cost",
+    "cost": 850,
+    "note": "Melbourne-AMS one way, 1 stop (est)"
+   }
+  ]
+ },
+ {
+  "id": "L32",
+  "leg": "Adelaide-AMS",
+  "eur_total": 850,
+  "uses": [
+   {
+    "route_id": "gt_seed_temperatesouthern-australia",
+    "route": "Temperate/Southern Australia 🍇",
+    "field": "flight_out_cost",
+    "cost": 850,
+    "note": "Adelaide-AMS one way, 1 stop (est)"
+   }
+  ]
+ },
+ {
+  "id": "L33",
+  "leg": "Koror-AMS",
+  "eur_total": 850,
+  "uses": [
+   {
+    "route_id": "gt_seed_palau",
+    "route": "Palau 🦈",
+    "field": "flight_out_cost",
+    "cost": 850,
+    "note": "Koror-AMS one way (est)"
+   }
+  ]
+ },
+ {
+  "id": "L34",
+  "leg": "AMS-Seattle",
+  "eur_total": 840,
+  "uses": [
+   {
+    "route_id": "gt_seed_pacific-northwest",
+    "route": "Pacific Northwest 🦫",
+    "field": "flight_in_cost",
+    "cost": 420,
+    "note": "AMS-Seattle one way, KLM direct (est; notes: return EUR 880-1,090)"
+   },
+   {
+    "route_id": "gt_seed_us-west-coast-roadtrip",
+    "route": "US West Coast Roadtrip 🌉",
+    "field": "flight_in_cost",
+    "cost": 420,
+    "note": "AMS-Seattle one way, KLM direct (est)"
+   }
+  ]
+ },
+ {
+  "id": "L35",
+  "leg": "AMS-Kasane",
+  "eur_total": 800,
+  "uses": [
+   {
+    "route_id": "gt_seed_botswana",
+    "route": "Botswana 🐘",
+    "field": "flight_in_cost",
+    "cost": 800,
+    "note": "AMS-Kasane one way via Johannesburg (notes return ±€900-1,300; typical one-way; est)"
+   }
+  ]
+ },
+ {
+  "id": "L36",
+  "leg": "AMS-Perth",
+  "eur_total": 800,
+  "uses": [
+   {
+    "route_id": "gt_seed_tropicaloutback-australia",
+    "route": "Tropical/Outback Australia 🐊",
+    "field": "flight_in_cost",
+    "cost": 800,
+    "note": "AMS-Perth one way, 1 stop (notes: return EUR 910-1,500; est)"
+   }
+  ]
+ },
+ {
+  "id": "L37",
+  "leg": "Lihue-AMS",
+  "eur_total": 800,
+  "uses": [
+   {
+    "route_id": "gt_seed_hawaii",
+    "route": "Hawaii 🐢",
+    "field": "flight_out_cost",
+    "cost": 800,
+    "note": "Lihue-AMS one way via Honolulu/US hub (est)"
+   }
+  ]
+ },
+ {
+  "id": "L38",
+  "leg": "AMS-Honolulu",
+  "eur_total": 750,
+  "uses": [
+   {
+    "route_id": "gt_seed_hawaii",
+    "route": "Hawaii 🐢",
+    "field": "flight_in_cost",
+    "cost": 750,
+    "note": "AMS-Honolulu one way, 1 stop via US hub (est; typical return ~EUR 1,300-1,500; low confidence)"
+   }
+  ]
+ },
+ {
+  "id": "L39",
+  "leg": "AMS-Libreville",
+  "eur_total": 700,
+  "uses": [
+   {
+    "route_id": "gt_seed_gabon",
+    "route": "Gabon 🏕️",
+    "field": "flight_in_cost",
+    "cost": 700,
+    "note": "AMS-Libreville (reuse LBV back 700; est)"
+   }
+  ]
+ },
+ {
+  "id": "L40",
+  "leg": "gt_seed_suriname flight_out_cost",
+  "eur_total": 700,
+  "uses": [
+   {
+    "route_id": "gt_seed_suriname",
+    "route": "Suriname 🛶",
+    "field": "flight_out_cost",
+    "cost": 700,
+    "note": ""
+   }
+  ]
+ }
+]
