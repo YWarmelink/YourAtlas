@@ -12,23 +12,11 @@
    }
   },
   "sheet": {
-   "sheetRoutes": 455,
-   "counts": {
-    "notes (leading quote)": 3,
-    "only in Sheet": 2
-   }
+   "sheetRoutes": 453,
+   "counts": {}
   }
  },
  "findings": [
-  {
-   "check": "A1",
-   "severity": "medium",
-   "route_id": "gt_seed_east-asia-pacific",
-   "route": "East Asia & Pacific 🗻",
-   "block": 3,
-   "message": "last block's transport doesn't end the route",
-   "text": "HSR (high-speed rail) Kaohsiung-Taipei back (~2h) from Kenting, then flight Taipei-Hanoi, no direct ferry/overland route available"
-  },
   {
    "check": "B1",
    "severity": "info",
@@ -409,37 +397,6 @@
   {
    "check": "B4",
    "severity": "medium",
-   "route_id": "gt_seed_sao-tome-principe",
-   "route": "São Tomé & Príncipe 🍫",
-   "block": 0,
-   "message": "ST: visa file says \"e-visa (exemption if holding a valid multi-entry Schengen visa/residen\" but the route has no visa extra"
-  },
-  {
-   "check": "B4",
-   "severity": "medium",
-   "route_id": "gt_seed_sri-lanka",
-   "route": "Sri Lanka 🐆",
-   "block": 0,
-   "message": "LK: visa file says \"e-visa/ETA\" but the route has no visa extra"
-  },
-  {
-   "check": "B4",
-   "severity": "medium",
-   "route_id": null,
-   "route": null,
-   "block": null,
-   "message": "TJ: visa priced differently across 4 routes: €18 / €63",
-   "country": "TJ",
-   "routes": [
-    "Eurasia Grand Tour 🌏 €18",
-    "West Eurasia Overland 🐫 €18",
-    "Central Asia 🐎 €63",
-    "Uzbekistan & Tajikistan 🌄 €63"
-   ]
-  },
-  {
-   "check": "B4",
-   "severity": "medium",
    "route_id": null,
    "route": null,
    "block": null,
@@ -457,67 +414,11 @@
    "route_id": null,
    "route": null,
    "block": null,
-   "message": "ZW: visa priced differently across 4 routes: €27 / €38",
-   "country": "ZW",
-   "routes": [
-    "Africa Grand Tour 🌍 €38",
-    "Southern Africa Safari Loop 🦁 €27",
-    "Zimbabwe 🐆 €27",
-    "Victoria Falls & Kalahari Loop 🦏 €27"
-   ]
-  },
-  {
-   "check": "B4",
-   "severity": "medium",
-   "route_id": null,
-   "route": null,
-   "block": null,
    "message": "IN: visa priced differently across 2 routes: €22 / €36",
    "country": "IN",
    "routes": [
     "India & Himalaya Expedition 🏔️ €36",
     "North India 🕌 €22"
-   ]
-  },
-  {
-   "check": "B4",
-   "severity": "medium",
-   "route_id": null,
-   "route": null,
-   "block": null,
-   "message": "SR: visa priced differently across 3 routes: €25 / €36",
-   "country": "SR",
-   "routes": [
-    "Caribbean & Amazon Expedition 🌴 €36",
-    "Suriname & Northern Brazil 🌴 €25",
-    "Suriname 🛶 €25"
-   ]
-  },
-  {
-   "check": "B4",
-   "severity": "medium",
-   "route_id": null,
-   "route": null,
-   "block": null,
-   "message": "ST: visa priced differently across 2 routes: €40 / €75",
-   "country": "ST",
-   "routes": [
-    "West & Central Africa Expedition 🌍 €40",
-    "Central Africa & Islands 🦛 €75"
-   ]
-  },
-  {
-   "check": "B4",
-   "severity": "medium",
-   "route_id": null,
-   "route": null,
-   "block": null,
-   "message": "GA: visa priced differently across 3 routes: €90 / €115",
-   "country": "GA",
-   "routes": [
-    "West & Central Africa Expedition 🌍 €90",
-    "Central Africa & Islands 🦛 €115",
-    "Gabon 🏕️ €90"
    ]
   },
   {
@@ -2722,14 +2623,14 @@
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_pan-american-grand-tour",
    "route": "Pan-American Grand Tour 🌎",
    "block": 2,
-   "message": "#2 BZ: notes say €72/day, budget is €55/day",
+   "message": "#2 BZ: notes say €72/day, budget is €55/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 72,
    "rate": 55,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -2737,54 +2638,32 @@
    "route_id": "gt_seed_africa-grand-tour",
    "route": "Africa Grand Tour 🌍",
    "block": 3,
-   "message": "#3 MZ: notes say €78/day, budget is €46/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#3 MZ: notes say €78/day, budget is €46/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 78,
    "rate": 46,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
-   "route_id": "gt_seed_africa-grand-tour",
-   "route": "Africa Grand Tour 🌍",
-   "block": 4,
-   "message": "#4 ZW: notes say €22/day, budget is €91/day",
-   "quoted": 22,
-   "rate": 91,
-   "preR2d": false
-  },
-  {
-   "check": "C1",
-   "severity": "medium",
-   "route_id": "gt_seed_africa-grand-tour",
-   "route": "Africa Grand Tour 🌍",
-   "block": 9,
-   "message": "#9 MW: notes say €25/day, budget is €54/day",
-   "quoted": 25,
-   "rate": 54,
-   "preR2d": false
-  },
-  {
-   "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_africa-grand-tour",
    "route": "Africa Grand Tour 🌍",
    "block": 10,
-   "message": "#10 MG: notes say €69/day, budget is €37/day",
+   "message": "#10 MG: notes say €69/day, budget is €37/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 69,
    "rate": 37,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_africa-grand-tour",
    "route": "Africa Grand Tour 🌍",
    "block": 11,
-   "message": "#11 MU: notes say €143/day, budget is €57/day",
+   "message": "#11 MU: notes say €143/day, budget is €57/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 143,
    "rate": 57,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -2792,21 +2671,21 @@
    "route_id": "gt_seed_africa-grand-tour",
    "route": "Africa Grand Tour 🌍",
    "block": 15,
-   "message": "#15 KE: notes say €131/day, budget is €104/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#15 KE: notes say €131/day, budget is €104/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 131,
    "rate": 104,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_africa-grand-tour",
    "route": "Africa Grand Tour 🌍",
    "block": 17,
-   "message": "#17 EG: notes say €65/day, budget is €35/day",
+   "message": "#17 EG: notes say €65/day, budget is €35/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 65,
    "rate": 35,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -2814,7 +2693,7 @@
    "route_id": "gt_seed_oceania-grand-expedition",
    "route": "Oceania Grand Expedition 🌊",
    "block": 1,
-   "message": "#1 FJ: notes say €75/day, budget is €51/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 FJ: notes say €75/day, budget is €51/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 75,
    "rate": 51,
    "preR2d": true
@@ -2825,32 +2704,32 @@
    "route_id": "gt_seed_oceania-grand-expedition",
    "route": "Oceania Grand Expedition 🌊",
    "block": 2,
-   "message": "#2 TO: notes say €100/day, budget is €51/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#2 TO: notes say €100/day, budget is €51/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 100,
    "rate": 51,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_oceania-grand-expedition",
    "route": "Oceania Grand Expedition 🌊",
    "block": 5,
-   "message": "#5 AU: notes say €120/day, budget is €86/day",
+   "message": "#5 AU: notes say €120/day, budget is €86/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 120,
    "rate": 86,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_oceania-grand-expedition",
    "route": "Oceania Grand Expedition 🌊",
    "block": 7,
-   "message": "#7 AU: notes say €110/day, budget is €86/day",
+   "message": "#7 AU: notes say €110/day, budget is €86/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 110,
    "rate": 86,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -2858,7 +2737,7 @@
    "route_id": "gt_seed_caribbean-amazon-expedition",
    "route": "Caribbean & Amazon Expedition 🌴",
    "block": 1,
-   "message": "#1 JM: notes say €90/day, budget is €65/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 JM: notes say €90/day, budget is €65/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 90,
    "rate": 65,
    "preR2d": true
@@ -2869,7 +2748,7 @@
    "route_id": "gt_seed_central-european-grand-roadtrip",
    "route": "Central European Grand Roadtrip 🚗",
    "block": 2,
-   "message": "#2 CH: notes say €200/day, budget is €118/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#2 CH: notes say €200/day, budget is €118/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 200,
    "rate": 118,
    "preR2d": true
@@ -2880,7 +2759,7 @@
    "route_id": "gt_seed_central-european-grand-roadtrip",
    "route": "Central European Grand Roadtrip 🚗",
    "block": 3,
-   "message": "#3 LI: notes say €165/day, budget is €104/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#3 LI: notes say €165/day, budget is €104/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 165,
    "rate": 104,
    "preR2d": true
@@ -2891,7 +2770,7 @@
    "route_id": "gt_seed_central-european-grand-roadtrip",
    "route": "Central European Grand Roadtrip 🚗",
    "block": 7,
-   "message": "#7 IT: notes say €95/day, budget is €73/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#7 IT: notes say €95/day, budget is €73/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 95,
    "rate": 73,
    "preR2d": true
@@ -2902,21 +2781,21 @@
    "route_id": "gt_seed_central-european-grand-roadtrip",
    "route": "Central European Grand Roadtrip 🚗",
    "block": 8,
-   "message": "#8 IT: notes say €145/day, budget is €91/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#8 IT: notes say €145/day, budget is €91/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 145,
    "rate": 91,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_central-european-grand-roadtrip",
    "route": "Central European Grand Roadtrip 🚗",
    "block": 11,
-   "message": "#11 IT: notes say €160/day, budget is €91/day",
+   "message": "#11 IT: notes say €160/day, budget is €91/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 160,
    "rate": 91,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -2924,7 +2803,7 @@
    "route_id": "gt_seed_central-european-grand-roadtrip",
    "route": "Central European Grand Roadtrip 🚗",
    "block": 13,
-   "message": "#13 HR: notes say €85/day, budget is €63/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#13 HR: notes say €85/day, budget is €63/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 85,
    "rate": 63,
    "preR2d": true
@@ -2935,7 +2814,7 @@
    "route_id": "gt_seed_central-european-grand-roadtrip",
    "route": "Central European Grand Roadtrip 🚗",
    "block": 14,
-   "message": "#14 RS: notes say €60/day, budget is €39/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#14 RS: notes say €60/day, budget is €39/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 60,
    "rate": 39,
    "preR2d": true
@@ -2946,7 +2825,7 @@
    "route_id": "gt_seed_central-european-grand-roadtrip",
    "route": "Central European Grand Roadtrip 🚗",
    "block": 15,
-   "message": "#15 HU: notes say €90/day, budget is €48/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#15 HU: notes say €90/day, budget is €48/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 90,
    "rate": 48,
    "preR2d": true
@@ -2957,7 +2836,7 @@
    "route_id": "gt_seed_central-european-grand-roadtrip",
    "route": "Central European Grand Roadtrip 🚗",
    "block": 16,
-   "message": "#16 SK: notes say €80/day, budget is €45/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#16 SK: notes say €80/day, budget is €45/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 80,
    "rate": 45,
    "preR2d": true
@@ -2968,21 +2847,21 @@
    "route_id": "gt_seed_central-european-grand-roadtrip",
    "route": "Central European Grand Roadtrip 🚗",
    "block": 17,
-   "message": "#17 CZ: notes say €85/day, budget is €55/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#17 CZ: notes say €85/day, budget is €55/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 85,
    "rate": 55,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_central-european-grand-roadtrip",
    "route": "Central European Grand Roadtrip 🚗",
    "block": 18,
-   "message": "#18 CZ: notes say €130/day, budget is €55/day",
+   "message": "#18 CZ: notes say €130/day, budget is €55/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 130,
    "rate": 55,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -2990,7 +2869,7 @@
    "route_id": "gt_seed_central-european-grand-roadtrip",
    "route": "Central European Grand Roadtrip 🚗",
    "block": 19,
-   "message": "#19 PL: notes say €65/day, budget is €45/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#19 PL: notes say €65/day, budget is €45/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 65,
    "rate": 45,
    "preR2d": true
@@ -3001,21 +2880,21 @@
    "route_id": "gt_seed_central-european-grand-roadtrip",
    "route": "Central European Grand Roadtrip 🚗",
    "block": 20,
-   "message": "#20 DE: notes say €95/day, budget is €72/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#20 DE: notes say €95/day, budget is €72/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 95,
    "rate": 72,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_british-isles-celtic-coast-expedition",
    "route": "British Isles & Celtic Coast Expedition 🍀",
    "block": 0,
-   "message": "#0 GB: notes say €105/day, budget is €83/day",
+   "message": "#0 GB: notes say €105/day, budget is €83/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 105,
    "rate": 83,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -3023,32 +2902,32 @@
    "route_id": "gt_seed_british-isles-celtic-coast-expedition",
    "route": "British Isles & Celtic Coast Expedition 🍀",
    "block": 1,
-   "message": "#1 GB: notes say €125/day, budget is €83/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 GB: notes say €125/day, budget is €83/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 125,
    "rate": 83,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_british-isles-celtic-coast-expedition",
    "route": "British Isles & Celtic Coast Expedition 🍀",
    "block": 3,
-   "message": "#3 GB: notes say €107/day, budget is €83/day",
+   "message": "#3 GB: notes say €107/day, budget is €83/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 107,
    "rate": 83,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_british-isles-celtic-coast-expedition",
    "route": "British Isles & Celtic Coast Expedition 🍀",
    "block": 5,
-   "message": "#5 GB: notes say €107/day, budget is €83/day",
+   "message": "#5 GB: notes say €107/day, budget is €83/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 107,
    "rate": 83,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -3056,21 +2935,21 @@
    "route_id": "gt_seed_british-isles-celtic-coast-expedition",
    "route": "British Isles & Celtic Coast Expedition 🍀",
    "block": 6,
-   "message": "#6 GB: notes say €130/day, budget is €83/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#6 GB: notes say €130/day, budget is €83/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 130,
    "rate": 83,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_british-isles-celtic-coast-expedition",
    "route": "British Isles & Celtic Coast Expedition 🍀",
    "block": 8,
-   "message": "#8 IE: notes say €115/day, budget is €91/day",
+   "message": "#8 IE: notes say €115/day, budget is €91/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 115,
    "rate": 91,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -3078,7 +2957,7 @@
    "route_id": "gt_seed_british-isles-celtic-coast-expedition",
    "route": "British Isles & Celtic Coast Expedition 🍀",
    "block": 9,
-   "message": "#9 IE: notes say €125/day, budget is €91/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#9 IE: notes say €125/day, budget is €91/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 125,
    "rate": 91,
    "preR2d": true
@@ -3089,7 +2968,7 @@
    "route_id": "gt_seed_british-isles-celtic-coast-expedition",
    "route": "British Isles & Celtic Coast Expedition 🍀",
    "block": 12,
-   "message": "#12 FR: notes say €120/day, budget is €72/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#12 FR: notes say €120/day, budget is €72/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 120,
    "rate": 72,
    "preR2d": true
@@ -3100,7 +2979,7 @@
    "route_id": "gt_seed_british-isles-celtic-coast-expedition",
    "route": "British Isles & Celtic Coast Expedition 🍀",
    "block": 13,
-   "message": "#13 FR: notes say €110/day, budget is €72/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#13 FR: notes say €110/day, budget is €72/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 110,
    "rate": 72,
    "preR2d": true
@@ -3111,7 +2990,7 @@
    "route_id": "gt_seed_british-isles-celtic-coast-expedition",
    "route": "British Isles & Celtic Coast Expedition 🍀",
    "block": 14,
-   "message": "#14 FR: notes say €95/day, budget is €72/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#14 FR: notes say €95/day, budget is €72/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 95,
    "rate": 72,
    "preR2d": true
@@ -3122,21 +3001,21 @@
    "route_id": "gt_seed_british-isles-celtic-coast-expedition",
    "route": "British Isles & Celtic Coast Expedition 🍀",
    "block": 15,
-   "message": "#15 BE: notes say €130/day, budget is €81/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#15 BE: notes say €130/day, budget is €81/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 130,
    "rate": 81,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_central-america-loop",
    "route": "Central America Loop 🌋",
    "block": 1,
-   "message": "#1 BZ: notes say €72/day, budget is €55/day",
+   "message": "#1 BZ: notes say €72/day, budget is €55/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 72,
    "rate": 55,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -3144,7 +3023,7 @@
    "route_id": "gt_seed_southern-africa-safari-loop",
    "route": "Southern Africa Safari Loop 🦁",
    "block": 1,
-   "message": "#1 LS: notes say €58/day, budget is €41/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 LS: notes say €58/day, budget is €41/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 58,
    "rate": 41,
    "preR2d": true
@@ -3155,7 +3034,7 @@
    "route_id": "gt_seed_southern-africa-safari-loop",
    "route": "Southern Africa Safari Loop 🦁",
    "block": 2,
-   "message": "#2 SZ: notes say €65/day, budget is €42/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#2 SZ: notes say €65/day, budget is €42/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 65,
    "rate": 42,
    "preR2d": true
@@ -3166,54 +3045,32 @@
    "route_id": "gt_seed_southern-africa-safari-loop",
    "route": "Southern Africa Safari Loop 🦁",
    "block": 3,
-   "message": "#3 MZ: notes say €78/day, budget is €46/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#3 MZ: notes say €78/day, budget is €46/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 78,
    "rate": 46,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
-   "route_id": "gt_seed_southern-africa-safari-loop",
-   "route": "Southern Africa Safari Loop 🦁",
-   "block": 4,
-   "message": "#4 ZW: notes say €22/day, budget is €91/day",
-   "quoted": 22,
-   "rate": 91,
-   "preR2d": false
-  },
-  {
-   "check": "C1",
-   "severity": "medium",
-   "route_id": "gt_seed_southern-africa-safari-loop",
-   "route": "Southern Africa Safari Loop 🦁",
-   "block": 9,
-   "message": "#9 MW: notes say €25/day, budget is €54/day",
-   "quoted": 25,
-   "rate": 54,
-   "preR2d": false
-  },
-  {
-   "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_african-islands",
    "route": "African Islands 🏝️",
    "block": 0,
-   "message": "#0 MG: notes say €69/day, budget is €37/day",
+   "message": "#0 MG: notes say €69/day, budget is €37/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 69,
    "rate": 37,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_african-islands",
    "route": "African Islands 🏝️",
    "block": 1,
-   "message": "#1 MU: notes say €143/day, budget is €57/day",
+   "message": "#1 MU: notes say €143/day, budget is €57/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 143,
    "rate": 57,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -3221,21 +3078,21 @@
    "route_id": "gt_seed_east-africa-safari-classic",
    "route": "East Africa Safari Classic 🦒",
    "block": 3,
-   "message": "#3 KE: notes say €131/day, budget is €104/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#3 KE: notes say €131/day, budget is €104/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 131,
    "rate": 104,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_horn-of-africa-egypt",
    "route": "Horn of Africa & Egypt 🏺",
    "block": 1,
-   "message": "#1 EG: notes say €65/day, budget is €35/day",
+   "message": "#1 EG: notes say €65/day, budget is €35/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 65,
    "rate": 35,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -3243,7 +3100,7 @@
    "route_id": "gt_seed_pacific-islands",
    "route": "Pacific Islands 🌺",
    "block": 1,
-   "message": "#1 FJ: notes say €75/day, budget is €51/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 FJ: notes say €75/day, budget is €51/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 75,
    "rate": 51,
    "preR2d": true
@@ -3254,32 +3111,32 @@
    "route_id": "gt_seed_pacific-islands",
    "route": "Pacific Islands 🌺",
    "block": 2,
-   "message": "#2 TO: notes say €100/day, budget is €51/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#2 TO: notes say €100/day, budget is €51/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 100,
    "rate": 51,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_tropicaloutback-australia",
    "route": "Tropical/Outback Australia 🐊",
    "block": 0,
-   "message": "#0 AU: notes say €120/day, budget is €86/day",
+   "message": "#0 AU: notes say €120/day, budget is €86/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 120,
    "rate": 86,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_tropicaloutback-australia",
    "route": "Tropical/Outback Australia 🐊",
    "block": 2,
-   "message": "#2 AU: notes say €110/day, budget is €86/day",
+   "message": "#2 AU: notes say €110/day, budget is €86/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 110,
    "rate": 86,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -3287,7 +3144,7 @@
    "route_id": "gt_seed_new-zealand",
    "route": "New Zealand 🥝",
    "block": 0,
-   "message": "#0 NZ: notes say €108/day, budget is €81/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 NZ: notes say €108/day, budget is €81/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 108,
    "rate": 81,
    "preR2d": true
@@ -3298,21 +3155,21 @@
    "route_id": "gt_seed_caribbean-islands-hop",
    "route": "Caribbean Islands Hop 🏝️",
    "block": 1,
-   "message": "#1 JM: notes say €90/day, budget is €65/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 JM: notes say €90/day, budget is €65/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 90,
    "rate": 65,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_egypt",
    "route": "Egypt 🏺",
    "block": 0,
-   "message": "#0 EG: notes say €65/day, budget is €35/day",
+   "message": "#0 EG: notes say €65/day, budget is €35/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 65,
    "rate": 35,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -3320,7 +3177,7 @@
    "route_id": "gt_seed_kenya",
    "route": "Kenya 🦒",
    "block": 0,
-   "message": "#0 KE: notes say €131/day, budget is €104/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 KE: notes say €131/day, budget is €104/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 131,
    "rate": 104,
    "preR2d": true
@@ -3331,32 +3188,32 @@
    "route_id": "gt_seed_new-zealand-south-island",
    "route": "New Zealand South Island 🏔️",
    "block": 0,
-   "message": "#0 NZ: notes say €108/day, budget is €81/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 NZ: notes say €108/day, budget is €81/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 108,
    "rate": 81,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_madagascar",
    "route": "Madagascar 🦎",
    "block": 0,
-   "message": "#0 MG: notes say €69/day, budget is €37/day",
+   "message": "#0 MG: notes say €69/day, budget is €37/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 69,
    "rate": 37,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_cairns-great-barrier-reef",
    "route": "Cairns & Great Barrier Reef 🐠",
    "block": 0,
-   "message": "#0 AU: notes say €110/day, budget is €86/day",
+   "message": "#0 AU: notes say €110/day, budget is €86/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 110,
    "rate": 86,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -3364,7 +3221,7 @@
    "route_id": "gt_seed_jamaica",
    "route": "Jamaica 🎵",
    "block": 0,
-   "message": "#0 JM: notes say €90/day, budget is €65/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 JM: notes say €90/day, budget is €65/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 90,
    "rate": 65,
    "preR2d": true
@@ -3375,32 +3232,21 @@
    "route_id": "gt_seed_fiji",
    "route": "Fiji 🌊",
    "block": 0,
-   "message": "#0 FJ: notes say €75/day, budget is €51/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 FJ: notes say €75/day, budget is €51/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 75,
    "rate": 51,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_mauritius",
    "route": "Mauritius 🦤",
    "block": 0,
-   "message": "#0 MU: notes say €143/day, budget is €57/day",
+   "message": "#0 MU: notes say €143/day, budget is €57/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 143,
    "rate": 57,
-   "preR2d": false
-  },
-  {
-   "check": "C1",
-   "severity": "medium",
-   "route_id": "gt_seed_zimbabwe",
-   "route": "Zimbabwe 🐆",
-   "block": 0,
-   "message": "#0 ZW: notes say €22/day, budget is €91/day",
-   "quoted": 22,
-   "rate": 91,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -3408,7 +3254,7 @@
    "route_id": "gt_seed_fiji-vanuatu",
    "route": "Fiji & Vanuatu 🐚",
    "block": 0,
-   "message": "#0 VU: notes say €95/day, budget is €55/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 VU: notes say €95/day, budget is €55/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 95,
    "rate": 55,
    "preR2d": true
@@ -3419,7 +3265,7 @@
    "route_id": "gt_seed_fiji-vanuatu",
    "route": "Fiji & Vanuatu 🐚",
    "block": 1,
-   "message": "#1 FJ: notes say €75/day, budget is €51/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 FJ: notes say €75/day, budget is €51/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 75,
    "rate": 51,
    "preR2d": true
@@ -3430,21 +3276,10 @@
    "route_id": "gt_seed_mozambique",
    "route": "Mozambique 🐋",
    "block": 0,
-   "message": "#0 MZ: notes say €78/day, budget is €46/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 MZ: notes say €78/day, budget is €46/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 78,
    "rate": 46,
    "preR2d": true
-  },
-  {
-   "check": "C1",
-   "severity": "medium",
-   "route_id": "gt_seed_zambia-malawi",
-   "route": "Zambia & Malawi 💦",
-   "block": 1,
-   "message": "#1 MW: notes say €25/day, budget is €54/day",
-   "quoted": 25,
-   "rate": 54,
-   "preR2d": false
   },
   {
    "check": "C1",
@@ -3452,7 +3287,7 @@
    "route_id": "gt_seed_england-wales-isle-of-man",
    "route": "England, Wales & Isle of Man 🎩",
    "block": 0,
-   "message": "#0 GB: notes say €116/day, budget is €83/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 GB: notes say €116/day, budget is €83/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 116,
    "rate": 83,
    "preR2d": true
@@ -3463,32 +3298,32 @@
    "route_id": "gt_seed_england-wales-isle-of-man",
    "route": "England, Wales & Isle of Man 🎩",
    "block": 1,
-   "message": "#1 GB: notes say €125/day, budget is €83/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 GB: notes say €125/day, budget is €83/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 125,
    "rate": 83,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_england-wales-isle-of-man",
    "route": "England, Wales & Isle of Man 🎩",
    "block": 3,
-   "message": "#3 GB: notes say €107/day, budget is €83/day",
+   "message": "#3 GB: notes say €107/day, budget is €83/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 107,
    "rate": 83,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_england-wales-isle-of-man",
    "route": "England, Wales & Isle of Man 🎩",
    "block": 5,
-   "message": "#5 GB: notes say €107/day, budget is €83/day",
+   "message": "#5 GB: notes say €107/day, budget is €83/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 107,
    "rate": 83,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -3496,21 +3331,21 @@
    "route_id": "gt_seed_scotland-northern-ireland",
    "route": "Scotland & Northern Ireland 🥃",
    "block": 0,
-   "message": "#0 GB: notes say €150/day, budget is €83/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 GB: notes say €150/day, budget is €83/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 150,
    "rate": 83,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_ireland",
    "route": "Ireland ☘️",
    "block": 0,
-   "message": "#0 IE: notes say €115/day, budget is €91/day",
+   "message": "#0 IE: notes say €115/day, budget is €91/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 115,
    "rate": 91,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -3518,7 +3353,7 @@
    "route_id": "gt_seed_ireland",
    "route": "Ireland ☘️",
    "block": 1,
-   "message": "#1 IE: notes say €125/day, budget is €91/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 IE: notes say €125/day, budget is €91/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 125,
    "rate": 91,
    "preR2d": true
@@ -3529,7 +3364,7 @@
    "route_id": "gt_seed_channel-islands-brittany-normandyopal-coast-belgium",
    "route": "Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖",
    "block": 2,
-   "message": "#2 FR: notes say €120/day, budget is €72/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#2 FR: notes say €120/day, budget is €72/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 120,
    "rate": 72,
    "preR2d": true
@@ -3540,7 +3375,7 @@
    "route_id": "gt_seed_channel-islands-brittany-normandyopal-coast-belgium",
    "route": "Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖",
    "block": 3,
-   "message": "#3 FR: notes say €110/day, budget is €72/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#3 FR: notes say €110/day, budget is €72/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 110,
    "rate": 72,
    "preR2d": true
@@ -3551,7 +3386,7 @@
    "route_id": "gt_seed_channel-islands-brittany-normandyopal-coast-belgium",
    "route": "Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖",
    "block": 4,
-   "message": "#4 FR: notes say €95/day, budget is €72/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#4 FR: notes say €95/day, budget is €72/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 95,
    "rate": 72,
    "preR2d": true
@@ -3562,7 +3397,7 @@
    "route_id": "gt_seed_channel-islands-brittany-normandyopal-coast-belgium",
    "route": "Channel Islands, Brittany & Normandy/Opal Coast & Belgium 🥖",
    "block": 5,
-   "message": "#5 BE: notes say €130/day, budget is €81/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#5 BE: notes say €130/day, budget is €81/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 130,
    "rate": 81,
    "preR2d": true
@@ -3573,7 +3408,7 @@
    "route_id": "gt_seed_south-africa-mountain-kingdoms",
    "route": "South Africa & Mountain Kingdoms 👑",
    "block": 1,
-   "message": "#1 LS: notes say €58/day, budget is €41/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 LS: notes say €58/day, budget is €41/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 58,
    "rate": 41,
    "preR2d": true
@@ -3584,7 +3419,7 @@
    "route_id": "gt_seed_south-africa-mountain-kingdoms",
    "route": "South Africa & Mountain Kingdoms 👑",
    "block": 2,
-   "message": "#2 SZ: notes say €65/day, budget is €42/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#2 SZ: notes say €65/day, budget is €42/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 65,
    "rate": 42,
    "preR2d": true
@@ -3595,21 +3430,10 @@
    "route_id": "gt_seed_victoria-falls-kalahari-loop",
    "route": "Victoria Falls & Kalahari Loop 🦏",
    "block": 0,
-   "message": "#0 MZ: notes say €78/day, budget is €46/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 MZ: notes say €78/day, budget is €46/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 78,
    "rate": 46,
    "preR2d": true
-  },
-  {
-   "check": "C1",
-   "severity": "medium",
-   "route_id": "gt_seed_victoria-falls-kalahari-loop",
-   "route": "Victoria Falls & Kalahari Loop 🦏",
-   "block": 1,
-   "message": "#1 ZW: notes say €22/day, budget is €91/day",
-   "quoted": 22,
-   "rate": 91,
-   "preR2d": false
   },
   {
    "check": "C1",
@@ -3617,7 +3441,7 @@
    "route_id": "gt_seed_dolomites-north-italy",
    "route": "Dolomites & North Italy 🚡",
    "block": 2,
-   "message": "#2 IT: notes say €95/day, budget is €73/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#2 IT: notes say €95/day, budget is €73/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 95,
    "rate": 73,
    "preR2d": true
@@ -3628,21 +3452,21 @@
    "route_id": "gt_seed_dolomites-north-italy",
    "route": "Dolomites & North Italy 🚡",
    "block": 3,
-   "message": "#3 IT: notes say €145/day, budget is €91/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#3 IT: notes say €145/day, budget is €91/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 145,
    "rate": 91,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_dolomites-north-italy",
    "route": "Dolomites & North Italy 🚡",
    "block": 6,
-   "message": "#6 IT: notes say €160/day, budget is €91/day",
+   "message": "#6 IT: notes say €160/day, budget is €91/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 160,
    "rate": 91,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -3650,7 +3474,7 @@
    "route_id": "gt_seed_florida",
    "route": "Florida 🐊",
    "block": 3,
-   "message": "#3 US: notes say €150/day, budget is €102/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#3 US: notes say €150/day, budget is €102/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 150,
    "rate": 102,
    "preR2d": true
@@ -3661,7 +3485,7 @@
    "route_id": "gt_seed_malaysia-borneo-brunei-jungle-wildlife-21-days",
    "route": "Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧",
    "block": 0,
-   "message": "#0 MY: notes say €50/day, budget is €33/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 MY: notes say €50/day, budget is €33/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 50,
    "rate": 33,
    "preR2d": true
@@ -3672,7 +3496,7 @@
    "route_id": "gt_seed_malaysia-borneo-brunei-jungle-wildlife-21-days",
    "route": "Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧",
    "block": 1,
-   "message": "#1 BN: notes say €120/day, budget is €53/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 BN: notes say €120/day, budget is €53/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 120,
    "rate": 53,
    "preR2d": true
@@ -3683,7 +3507,7 @@
    "route_id": "gt_seed_malaysia-borneo-brunei-jungle-wildlife-21-days",
    "route": "Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧",
    "block": 2,
-   "message": "#2 MY: notes say €65/day, budget is €49/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#2 MY: notes say €65/day, budget is €49/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 65,
    "rate": 49,
    "preR2d": true
@@ -3694,7 +3518,7 @@
    "route_id": "gt_seed_malaysia-borneo-brunei-jungle-wildlife-21-days",
    "route": "Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧",
    "block": 4,
-   "message": "#4 MY: notes say €65/day, budget is €36/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#4 MY: notes say €65/day, budget is €36/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 65,
    "rate": 36,
    "preR2d": true
@@ -3705,7 +3529,7 @@
    "route_id": "gt_seed_malaysia-borneo-brunei-jungle-wildlife-21-days",
    "route": "Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧",
    "block": 6,
-   "message": "#6 MY: notes say €70/day, budget is €42/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#6 MY: notes say €70/day, budget is €42/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 70,
    "rate": 42,
    "preR2d": true
@@ -3716,7 +3540,7 @@
    "route_id": "gt_seed_malaysia-borneo-brunei-jungle-wildlife-21-days",
    "route": "Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧",
    "block": 7,
-   "message": "#7 MY: notes say €65/day, budget is €39/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#7 MY: notes say €65/day, budget is €39/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 65,
    "rate": 39,
    "preR2d": true
@@ -3727,7 +3551,7 @@
    "route_id": "gt_seed_rome-4-days",
    "route": "Rome (4 days) 🏛️",
    "block": 0,
-   "message": "#0 IT: notes say €130/day, budget is €73/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 IT: notes say €130/day, budget is €73/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 130,
    "rate": 73,
    "preR2d": true
@@ -3738,7 +3562,7 @@
    "route_id": "gt_seed_florence-tuscany-4-days",
    "route": "Florence + Tuscany (4 days) 🎨",
    "block": 0,
-   "message": "#0 IT: notes say €120/day, budget is €73/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 IT: notes say €120/day, budget is €73/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 120,
    "rate": 73,
    "preR2d": true
@@ -3749,7 +3573,7 @@
    "route_id": "gt_seed_venice-dolomites-5-days",
    "route": "Venice + Dolomites (5 days) 🎭",
    "block": 0,
-   "message": "#0 IT: notes say €140/day, budget is €91/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 IT: notes say €140/day, budget is €91/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 140,
    "rate": 91,
    "preR2d": true
@@ -3760,7 +3584,7 @@
    "route_id": "gt_seed_venice-dolomites-5-days",
    "route": "Venice + Dolomites (5 days) 🎭",
    "block": 1,
-   "message": "#1 IT: notes say €105/day, budget is €73/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 IT: notes say €105/day, budget is €73/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 105,
    "rate": 73,
    "preR2d": true
@@ -3771,7 +3595,7 @@
    "route_id": "gt_seed_tuscany-6-days",
    "route": "Tuscany (6 days) 🍇",
    "block": 0,
-   "message": "#0 IT: notes say €125/day, budget is €73/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 IT: notes say €125/day, budget is €73/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 125,
    "rate": 73,
    "preR2d": true
@@ -3782,7 +3606,7 @@
    "route_id": "gt_seed_dolomites-6-days",
    "route": "Dolomites (6 days) ⛰️",
    "block": 0,
-   "message": "#0 IT: notes say €110/day, budget is €73/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 IT: notes say €110/day, budget is €73/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 110,
    "rate": 73,
    "preR2d": true
@@ -3793,7 +3617,7 @@
    "route_id": "gt_seed_northern-italy-6-days",
    "route": "Northern Italy (6 days) 🚤",
    "block": 0,
-   "message": "#0 IT: notes say €125/day, budget is €73/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 IT: notes say €125/day, budget is €73/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 125,
    "rate": 73,
    "preR2d": true
@@ -3804,7 +3628,7 @@
    "route_id": "gt_seed_northern-italy-roadtrip-9-days",
    "route": "Northern Italy Roadtrip (9 days) 🚙",
    "block": 1,
-   "message": "#1 IT: notes say €130/day, budget is €73/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 IT: notes say €130/day, budget is €73/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 130,
    "rate": 73,
    "preR2d": true
@@ -3815,7 +3639,7 @@
    "route_id": "gt_seed_rome-tuscany-9-days",
    "route": "Rome + Tuscany (9 days) 🍝",
    "block": 0,
-   "message": "#0 IT: notes say €140/day, budget is €91/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 IT: notes say €140/day, budget is €91/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 140,
    "rate": 91,
    "preR2d": true
@@ -3826,7 +3650,7 @@
    "route_id": "gt_seed_sardinia-9-days",
    "route": "Sardinia (9 days) ⛵",
    "block": 0,
-   "message": "#0 IT: notes say €120/day, budget is €73/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 IT: notes say €120/day, budget is €73/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 120,
    "rate": 73,
    "preR2d": true
@@ -3837,7 +3661,7 @@
    "route_id": "gt_seed_italy-north-to-central-12-days",
    "route": "Italy: North to Central (12 days) 🚄",
    "block": 0,
-   "message": "#0 IT: notes say €130/day, budget is €73/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 IT: notes say €130/day, budget is €73/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 130,
    "rate": 73,
    "preR2d": true
@@ -3848,7 +3672,7 @@
    "route_id": "gt_seed_italy-roadtrip-12-days",
    "route": "Italy Roadtrip (12 days) 🧀",
    "block": 0,
-   "message": "#0 IT: notes say €140/day, budget is €91/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 IT: notes say €140/day, budget is €91/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 140,
    "rate": 91,
    "preR2d": true
@@ -3859,7 +3683,7 @@
    "route_id": "gt_seed_sicily-southern-italy-12-days",
    "route": "Sicily + Southern Italy (12 days) 🍊",
    "block": 0,
-   "message": "#0 IT: notes say €130/day, budget is €73/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 IT: notes say €130/day, budget is €73/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 130,
    "rate": 73,
    "preR2d": true
@@ -3870,7 +3694,7 @@
    "route_id": "gt_seed_campania-naples-amalfi-coast-6-days",
    "route": "Campania: Naples + Amalfi Coast (6 days) 🌊",
    "block": 0,
-   "message": "#0 IT: notes say €125/day, budget is €73/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 IT: notes say €125/day, budget is €73/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 125,
    "rate": 73,
    "preR2d": true
@@ -3881,7 +3705,7 @@
    "route_id": "gt_seed_puglia-6-days",
    "route": "Puglia (6 days) 🏘️",
    "block": 0,
-   "message": "#0 IT: notes say €110/day, budget is €73/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 IT: notes say €110/day, budget is €73/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 110,
    "rate": 73,
    "preR2d": true
@@ -3892,7 +3716,7 @@
    "route_id": "gt_seed_puglia-6-days",
    "route": "Puglia (6 days) 🏘️",
    "block": 3,
-   "message": "#3 IT: notes say €110/day, budget is €73/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#3 IT: notes say €110/day, budget is €73/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 110,
    "rate": 73,
    "preR2d": true
@@ -3903,7 +3727,7 @@
    "route_id": "gt_seed_campania-puglia-9-days",
    "route": "Campania + Puglia (9 days) 🧭",
    "block": 0,
-   "message": "#0 IT: notes say €125/day, budget is €73/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 IT: notes say €125/day, budget is €73/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 125,
    "rate": 73,
    "preR2d": true
@@ -3914,7 +3738,7 @@
    "route_id": "gt_seed_corsica-south-of-france-9-days",
    "route": "Corsica + South of France (9 days) 🛳️",
    "block": 1,
-   "message": "#1 FR: notes say €140/day, budget is €72/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 FR: notes say €140/day, budget is €72/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 140,
    "rate": 72,
    "preR2d": true
@@ -3925,7 +3749,7 @@
    "route_id": "gt_seed_corsica-sardinia-south-corsica-north-sardinia-5-days",
    "route": "Corsica + Sardinia: South Corsica & North Sardinia (5 days) 🏝️",
    "block": 0,
-   "message": "#0 FR: notes say €140/day, budget is €72/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 FR: notes say €140/day, budget is €72/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 140,
    "rate": 72,
    "preR2d": true
@@ -3936,7 +3760,7 @@
    "route_id": "gt_seed_barcelona-4-days",
    "route": "Barcelona (4 days) 🎨",
    "block": 0,
-   "message": "#0 ES: notes say €115/day, budget is €61/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 ES: notes say €115/day, budget is €61/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 115,
    "rate": 61,
    "preR2d": true
@@ -3947,7 +3771,7 @@
    "route_id": "gt_seed_madrid-4-days",
    "route": "Madrid (4 days) 🖼️",
    "block": 0,
-   "message": "#0 ES: notes say €100/day, budget is €61/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 ES: notes say €100/day, budget is €61/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 100,
    "rate": 61,
    "preR2d": true
@@ -3958,7 +3782,7 @@
    "route_id": "gt_seed_andalusia-seville-granada-5-days",
    "route": "Andalusia: Seville + Granada (5 days) 🏰",
    "block": 0,
-   "message": "#0 ES: notes say €85/day, budget is €61/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 ES: notes say €85/day, budget is €61/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 85,
    "rate": 61,
    "preR2d": true
@@ -3969,7 +3793,7 @@
    "route_id": "gt_seed_basque-country-san-sebastian-bilbao-6-days",
    "route": "Basque Country: San Sebastián + Bilbao (6 days) 🐟",
    "block": 0,
-   "message": "#0 ES: notes say €105/day, budget is €61/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 ES: notes say €105/day, budget is €61/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 105,
    "rate": 61,
    "preR2d": true
@@ -3980,7 +3804,7 @@
    "route_id": "gt_seed_mallorca-serra-de-tramuntana-loop-6-days",
    "route": "Mallorca: Serra de Tramuntana Loop (6 days) 🏔️",
    "block": 0,
-   "message": "#0 ES: notes say €105/day, budget is €61/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 ES: notes say €105/day, budget is €61/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 105,
    "rate": 61,
    "preR2d": true
@@ -3991,7 +3815,7 @@
    "route_id": "gt_seed_valencia-costa-blanca-6-days",
    "route": "Valencia + Costa Blanca (6 days) 🎆",
    "block": 0,
-   "message": "#0 ES: notes say €90/day, budget is €61/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 ES: notes say €90/day, budget is €61/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 90,
    "rate": 61,
    "preR2d": true
@@ -4002,7 +3826,7 @@
    "route_id": "gt_seed_andalusia-roadtrip-9-days",
    "route": "Andalusia Roadtrip (9 days) 🚗",
    "block": 0,
-   "message": "#0 ES: notes say €95/day, budget is €61/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 ES: notes say €95/day, budget is €61/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 95,
    "rate": 61,
    "preR2d": true
@@ -4013,7 +3837,7 @@
    "route_id": "gt_seed_northern-spain-basque-interior-rioja-9-days",
    "route": "Northern Spain: Basque Interior + Rioja (9 days) 🍷",
    "block": 0,
-   "message": "#0 ES: notes say €100/day, budget is €61/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 ES: notes say €100/day, budget is €61/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 100,
    "rate": 61,
    "preR2d": true
@@ -4024,7 +3848,7 @@
    "route_id": "gt_seed_catalonia-pyrenees-9-days",
    "route": "Catalonia + Pyrenees (9 days) ⛰️",
    "block": 0,
-   "message": "#0 ES: notes say €95/day, budget is €61/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 ES: notes say €95/day, budget is €61/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 95,
    "rate": 61,
    "preR2d": true
@@ -4035,7 +3859,7 @@
    "route_id": "gt_seed_northern-spain-roadtrip-12-days",
    "route": "Northern Spain Roadtrip (12 days) 🛣️",
    "block": 0,
-   "message": "#0 ES: notes say €90/day, budget is €61/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 ES: notes say €90/day, budget is €61/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 90,
    "rate": 61,
    "preR2d": true
@@ -4046,7 +3870,7 @@
    "route_id": "gt_seed_spain-north-to-central-12-days",
    "route": "Spain: North to Central (12 days) 🚉",
    "block": 0,
-   "message": "#0 ES: notes say €95/day, budget is €61/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 ES: notes say €95/day, budget is €61/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 95,
    "rate": 61,
    "preR2d": true
@@ -4057,32 +3881,32 @@
    "route_id": "gt_seed_spain-east-to-south-12-days",
    "route": "Spain: East to South (12 days) 🌅",
    "block": 0,
-   "message": "#0 ES: notes say €90/day, budget is €61/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 ES: notes say €90/day, budget is €61/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 90,
    "rate": 61,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_galicia-santiago-de-compostela-coast-6-days",
    "route": "Galicia: Santiago de Compostela + Coast (6 days) 🐚",
    "block": 0,
-   "message": "#0 ES: notes say €80/day, budget is €61/day",
+   "message": "#0 ES: notes say €80/day, budget is €61/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 80,
    "rate": 61,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_asturias-cantabria-6-days",
    "route": "Asturias + Cantabria (6 days) 🌲",
    "block": 0,
-   "message": "#0 ES: notes say €80/day, budget is €61/day",
+   "message": "#0 ES: notes say €80/day, budget is €61/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 80,
    "rate": 61,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -4090,7 +3914,7 @@
    "route_id": "gt_seed_gibraltar-andalusia-costa-del-sol-4-days",
    "route": "Gibraltar + Andalusia: Costa del Sol (4 days) 🐒",
    "block": 0,
-   "message": "#0 ES: notes say €100/day, budget is €61/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 ES: notes say €100/day, budget is €61/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 100,
    "rate": 61,
    "preR2d": true
@@ -4101,21 +3925,21 @@
    "route_id": "gt_seed_ljubljana-lake-bled-5-days",
    "route": "Ljubljana + Lake Bled (5 days) 🏰",
    "block": 0,
-   "message": "#0 SI: notes say €100/day, budget is €62/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 SI: notes say €100/day, budget is €62/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 100,
    "rate": 62,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_bosnia-croatia-9-days",
    "route": "Bosnia + Croatia (9 days) 🏛️",
    "block": 0,
-   "message": "#0 HR: notes say €150/day, budget is €80/day",
+   "message": "#0 HR: notes say €150/day, budget is €80/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 150,
    "rate": 80,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -4123,21 +3947,21 @@
    "route_id": "gt_seed_bosnia-croatia-9-days",
    "route": "Bosnia + Croatia (9 days) 🏛️",
    "block": 1,
-   "message": "#1 BA: notes say €50/day, budget is €36/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 BA: notes say €50/day, budget is €36/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 50,
    "rate": 36,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_bosnia-croatia-montenegro-12-days",
    "route": "Bosnia + Croatia + Montenegro (12 days) 🗺️",
    "block": 0,
-   "message": "#0 HR: notes say €150/day, budget is €80/day",
+   "message": "#0 HR: notes say €150/day, budget is €80/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 150,
    "rate": 80,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -4145,7 +3969,7 @@
    "route_id": "gt_seed_bosnia-croatia-montenegro-12-days",
    "route": "Bosnia + Croatia + Montenegro (12 days) 🗺️",
    "block": 1,
-   "message": "#1 BA: notes say €55/day, budget is €36/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 BA: notes say €55/day, budget is €36/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 55,
    "rate": 36,
    "preR2d": true
@@ -4156,7 +3980,7 @@
    "route_id": "gt_seed_bosnia-croatia-montenegro-12-days",
    "route": "Bosnia + Croatia + Montenegro (12 days) 🗺️",
    "block": 2,
-   "message": "#2 ME: notes say €60/day, budget is €45/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#2 ME: notes say €60/day, budget is €45/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 60,
    "rate": 45,
    "preR2d": true
@@ -4167,21 +3991,21 @@
    "route_id": "gt_seed_montenegro-bosnia-9-days",
    "route": "Montenegro + Bosnia (9 days) 🕊️",
    "block": 1,
-   "message": "#1 BA: notes say €50/day, budget is €36/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 BA: notes say €50/day, budget is €36/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 50,
    "rate": 36,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_montenegro-croatia-9-days",
    "route": "Montenegro + Croatia (9 days) ⛵",
    "block": 0,
-   "message": "#0 HR: notes say €150/day, budget is €80/day",
+   "message": "#0 HR: notes say €150/day, budget is €80/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 150,
    "rate": 80,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -4189,21 +4013,21 @@
    "route_id": "gt_seed_montenegro-croatia-9-days",
    "route": "Montenegro + Croatia (9 days) ⛵",
    "block": 1,
-   "message": "#1 ME: notes say €60/day, budget is €45/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 ME: notes say €60/day, budget is €45/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 60,
    "rate": 45,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_croatia-montenegro-bosnia-12-days",
    "route": "Croatia + Montenegro + Bosnia (12 days) 🧭",
    "block": 0,
-   "message": "#0 HR: notes say €150/day, budget is €80/day",
+   "message": "#0 HR: notes say €150/day, budget is €80/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 150,
    "rate": 80,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -4211,7 +4035,7 @@
    "route_id": "gt_seed_croatia-montenegro-bosnia-12-days",
    "route": "Croatia + Montenegro + Bosnia (12 days) 🧭",
    "block": 1,
-   "message": "#1 ME: notes say €60/day, budget is €45/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 ME: notes say €60/day, budget is €45/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 60,
    "rate": 45,
    "preR2d": true
@@ -4222,7 +4046,7 @@
    "route_id": "gt_seed_croatia-montenegro-bosnia-12-days",
    "route": "Croatia + Montenegro + Bosnia (12 days) 🧭",
    "block": 2,
-   "message": "#2 BA: notes say €50/day, budget is €36/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#2 BA: notes say €50/day, budget is €36/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 50,
    "rate": 36,
    "preR2d": true
@@ -4233,7 +4057,7 @@
    "route_id": "gt_seed_albania-montenegro-12-days",
    "route": "Albania + Montenegro (12 days) 🏝️",
    "block": 0,
-   "message": "#0 AL: notes say €45/day, budget is €35/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 AL: notes say €45/day, budget is €35/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 45,
    "rate": 35,
    "preR2d": true
@@ -4244,7 +4068,7 @@
    "route_id": "gt_seed_albania-montenegro-12-days",
    "route": "Albania + Montenegro (12 days) 🏝️",
    "block": 1,
-   "message": "#1 ME: notes say €60/day, budget is €45/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 ME: notes say €60/day, budget is €45/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 60,
    "rate": 45,
    "preR2d": true
@@ -4255,7 +4079,7 @@
    "route_id": "gt_seed_serbia-bosnia-9-days",
    "route": "Serbia + Bosnia (9 days) 🛶",
    "block": 0,
-   "message": "#0 RS: notes say €60/day, budget is €40/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 RS: notes say €60/day, budget is €40/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 60,
    "rate": 40,
    "preR2d": true
@@ -4266,7 +4090,7 @@
    "route_id": "gt_seed_serbia-montenegro-bosnia-12-days",
    "route": "Serbia + Montenegro + Bosnia (12 days) 🏔️",
    "block": 1,
-   "message": "#1 BA: notes say €60/day, budget is €40/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 BA: notes say €60/day, budget is €40/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 60,
    "rate": 40,
    "preR2d": true
@@ -4277,7 +4101,7 @@
    "route_id": "gt_seed_romania-bulgaria-transylvania-focus-12-days",
    "route": "Romania + Bulgaria: Transylvania Focus (12 days) 🏰",
    "block": 0,
-   "message": "#0 RO: notes say €75/day, budget is €39/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 RO: notes say €75/day, budget is €39/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 75,
    "rate": 39,
    "preR2d": true
@@ -4288,7 +4112,7 @@
    "route_id": "gt_seed_romania-bulgaria-transylvania-focus-12-days",
    "route": "Romania + Bulgaria: Transylvania Focus (12 days) 🏰",
    "block": 1,
-   "message": "#1 BG: notes say €68/day, budget is €37/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 BG: notes say €68/day, budget is €37/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 68,
    "rate": 37,
    "preR2d": true
@@ -4299,7 +4123,7 @@
    "route_id": "gt_seed_bulgaria-romania-black-sea-coast-9-days",
    "route": "Bulgaria + Romania: Black Sea Coast (9 days) 🌊",
    "block": 0,
-   "message": "#0 BG: notes say €68/day, budget is €37/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 BG: notes say €68/day, budget is €37/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 68,
    "rate": 37,
    "preR2d": true
@@ -4310,7 +4134,7 @@
    "route_id": "gt_seed_bulgaria-romania-black-sea-coast-9-days",
    "route": "Bulgaria + Romania: Black Sea Coast (9 days) 🌊",
    "block": 1,
-   "message": "#1 RO: notes say €77/day, budget is €39/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 RO: notes say €77/day, budget is €39/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 77,
    "rate": 39,
    "preR2d": true
@@ -4321,7 +4145,7 @@
    "route_id": "gt_seed_bulgaria-greece-sofia-to-meteora-12-days",
    "route": "Bulgaria + Greece: Sofia to Meteora (12 days) ⛰️",
    "block": 0,
-   "message": "#0 BG: notes say €65/day, budget is €37/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 BG: notes say €65/day, budget is €37/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 65,
    "rate": 37,
    "preR2d": true
@@ -4332,7 +4156,7 @@
    "route_id": "gt_seed_moldova-romania-9-days",
    "route": "Moldova + Romania (9 days) 🍷",
    "block": 1,
-   "message": "#1 RO: notes say €50/day, budget is €39/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 RO: notes say €50/day, budget is €39/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 50,
    "rate": 39,
    "preR2d": true
@@ -4343,7 +4167,7 @@
    "route_id": "gt_seed_budapest-4-days",
    "route": "Budapest (4 days) 🛁",
    "block": 0,
-   "message": "#0 HU: notes say €65/day, budget is €48/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 HU: notes say €65/day, budget is €48/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 65,
    "rate": 48,
    "preR2d": true
@@ -4354,7 +4178,7 @@
    "route_id": "gt_seed_hungary-slovenia-croatia-9-days",
    "route": "Hungary + Slovenia + Croatia (9 days) 🧭",
    "block": 1,
-   "message": "#1 SI: notes say €100/day, budget is €62/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 SI: notes say €100/day, budget is €62/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 100,
    "rate": 62,
    "preR2d": true
@@ -4365,7 +4189,7 @@
    "route_id": "gt_seed_hungary-slovenia-croatia-9-days",
    "route": "Hungary + Slovenia + Croatia (9 days) 🧭",
    "block": 2,
-   "message": "#2 HR: notes say €90/day, budget is €63/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#2 HR: notes say €90/day, budget is €63/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 90,
    "rate": 63,
    "preR2d": true
@@ -4376,7 +4200,7 @@
    "route_id": "gt_seed_prague-4-days",
    "route": "Prague (4 days) 🏰",
    "block": 0,
-   "message": "#0 CZ: notes say €90/day, budget is €55/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 CZ: notes say €90/day, budget is €55/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 90,
    "rate": 55,
    "preR2d": true
@@ -4387,7 +4211,7 @@
    "route_id": "gt_seed_prague-bohemia-5-days",
    "route": "Prague + Bohemia (5 days) 🏘️",
    "block": 0,
-   "message": "#0 CZ: notes say €82/day, budget is €55/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 CZ: notes say €82/day, budget is €55/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 82,
    "rate": 55,
    "preR2d": true
@@ -4398,7 +4222,7 @@
    "route_id": "gt_seed_czechia-austria-9-days",
    "route": "Czechia + Austria (9 days) 🏔️",
    "block": 0,
-   "message": "#0 CZ: notes say €82/day, budget is €55/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 CZ: notes say €82/day, budget is €55/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 82,
    "rate": 55,
    "preR2d": true
@@ -4409,7 +4233,7 @@
    "route_id": "gt_seed_czechia-austria-9-days",
    "route": "Czechia + Austria (9 days) 🏔️",
    "block": 1,
-   "message": "#1 AT: notes say €115/day, budget is €74/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 AT: notes say €115/day, budget is €74/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 115,
    "rate": 74,
    "preR2d": true
@@ -4420,7 +4244,7 @@
    "route_id": "gt_seed_prague-poland-9-days",
    "route": "Prague + Poland (9 days) 🚂",
    "block": 0,
-   "message": "#0 CZ: notes say €80/day, budget is €55/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 CZ: notes say €80/day, budget is €55/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 80,
    "rate": 55,
    "preR2d": true
@@ -4431,7 +4255,7 @@
    "route_id": "gt_seed_prague-poland-9-days",
    "route": "Prague + Poland (9 days) 🚂",
    "block": 1,
-   "message": "#1 PL: notes say €65/day, budget is €45/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 PL: notes say €65/day, budget is €45/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 65,
    "rate": 45,
    "preR2d": true
@@ -4442,7 +4266,7 @@
    "route_id": "gt_seed_moravia-brno-wine-region-5-days",
    "route": "Moravia: Brno + Wine Region (5 days) 🍇",
    "block": 0,
-   "message": "#0 CZ: notes say €72/day, budget is €55/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 CZ: notes say €72/day, budget is €55/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 72,
    "rate": 55,
    "preR2d": true
@@ -4453,7 +4277,7 @@
    "route_id": "gt_seed_slovakia-poland-9-days",
    "route": "Slovakia + Poland (9 days) 🥾",
    "block": 1,
-   "message": "#1 PL: notes say €60/day, budget is €45/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 PL: notes say €60/day, budget is €45/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 60,
    "rate": 45,
    "preR2d": true
@@ -4464,7 +4288,7 @@
    "route_id": "gt_seed_slovakia-hungary-9-days",
    "route": "Slovakia + Hungary (9 days) 🚆",
    "block": 0,
-   "message": "#0 SK: notes say €60/day, budget is €45/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 SK: notes say €60/day, budget is €45/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 60,
    "rate": 45,
    "preR2d": true
@@ -4475,7 +4299,7 @@
    "route_id": "gt_seed_krakow-auschwitz-5-days",
    "route": "Krakow + Auschwitz (5 days) 🕯️",
    "block": 0,
-   "message": "#0 PL: notes say €65/day, budget is €45/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 PL: notes say €65/day, budget is €45/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 65,
    "rate": 45,
    "preR2d": true
@@ -4486,7 +4310,7 @@
    "route_id": "gt_seed_sweden-norway-12-days",
    "route": "Sweden + Norway (12 days) 🌉",
    "block": 0,
-   "message": "#0 SE: notes say €110/day, budget is €85/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 SE: notes say €110/day, budget is €85/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 110,
    "rate": 85,
    "preR2d": true
@@ -4497,7 +4321,7 @@
    "route_id": "gt_seed_sweden-norway-12-days",
    "route": "Sweden + Norway (12 days) 🌉",
    "block": 1,
-   "message": "#1 NO: notes say €150/day, budget is €110/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 NO: notes say €150/day, budget is €110/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 150,
    "rate": 110,
    "preR2d": true
@@ -4508,21 +4332,21 @@
    "route_id": "gt_seed_northern-portugal-galicia-7-10-days",
    "route": "Northern Portugal + Galicia (7-10 days) 🌊",
    "block": 0,
-   "message": "#0 PT: notes say €80/day, budget is €62/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 PT: notes say €80/day, budget is €62/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 80,
    "rate": 62,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_northern-portugal-galicia-7-10-days",
    "route": "Northern Portugal + Galicia (7-10 days) 🌊",
    "block": 1,
-   "message": "#1 ES: notes say €80/day, budget is €61/day",
+   "message": "#1 ES: notes say €80/day, budget is €61/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 80,
    "rate": 61,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -4530,7 +4354,7 @@
    "route_id": "gt_seed_porto-northern-spain-10-14-days",
    "route": "Porto + Northern Spain (10-14 days) 🏔️",
    "block": 0,
-   "message": "#0 PT: notes say €85/day, budget is €62/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 PT: notes say €85/day, budget is €62/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 85,
    "rate": 62,
    "preR2d": true
@@ -4541,7 +4365,7 @@
    "route_id": "gt_seed_porto-northern-spain-10-14-days",
    "route": "Porto + Northern Spain (10-14 days) 🏔️",
    "block": 1,
-   "message": "#1 ES: notes say €85/day, budget is €61/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 ES: notes say €85/day, budget is €61/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 85,
    "rate": 61,
    "preR2d": true
@@ -4552,7 +4376,7 @@
    "route_id": "gt_seed_portugal-andalusia-10-14-days",
    "route": "Portugal + Andalusia (10-14 days) 🕌",
    "block": 0,
-   "message": "#0 PT: notes say €90/day, budget is €62/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 PT: notes say €90/day, budget is €62/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 90,
    "rate": 62,
    "preR2d": true
@@ -4563,7 +4387,7 @@
    "route_id": "gt_seed_portugal-andalusia-10-14-days",
    "route": "Portugal + Andalusia (10-14 days) 🕌",
    "block": 1,
-   "message": "#1 ES: notes say €90/day, budget is €61/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 ES: notes say €90/day, budget is €61/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 90,
    "rate": 61,
    "preR2d": true
@@ -4574,7 +4398,7 @@
    "route_id": "gt_seed_portugal-spain-roadtrip-14-days",
    "route": "Portugal + Spain Roadtrip (14 days) 🚗",
    "block": 0,
-   "message": "#0 PT: notes say €90/day, budget is €62/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 PT: notes say €90/day, budget is €62/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 90,
    "rate": 62,
    "preR2d": true
@@ -4585,7 +4409,7 @@
    "route_id": "gt_seed_portugal-spain-roadtrip-14-days",
    "route": "Portugal + Spain Roadtrip (14 days) 🚗",
    "block": 1,
-   "message": "#1 ES: notes say €90/day, budget is €61/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 ES: notes say €90/day, budget is €61/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 90,
    "rate": 61,
    "preR2d": true
@@ -4596,21 +4420,21 @@
    "route_id": "gt_seed_slovenia-croatian-istria-7-10-days",
    "route": "Slovenia + Croatian Istria (7-10 days) 🏖️",
    "block": 0,
-   "message": "#0 SI: notes say €100/day, budget is €62/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 SI: notes say €100/day, budget is €62/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 100,
    "rate": 62,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_croatia-bosnia-via-split-7-10-days",
    "route": "Croatia + Bosnia via Split (7-10 days) 🌉",
    "block": 0,
-   "message": "#0 HR: notes say €140/day, budget is €80/day",
+   "message": "#0 HR: notes say €140/day, budget is €80/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 140,
    "rate": 80,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -4618,7 +4442,7 @@
    "route_id": "gt_seed_croatia-bosnia-via-split-7-10-days",
    "route": "Croatia + Bosnia via Split (7-10 days) 🌉",
    "block": 1,
-   "message": "#1 BA: notes say €50/day, budget is €36/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 BA: notes say €50/day, budget is €36/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 50,
    "rate": 36,
    "preR2d": true
@@ -4629,7 +4453,7 @@
    "route_id": "gt_seed_bosnia-montenegro-budva-7-10-days",
    "route": "Bosnia + Montenegro + Budva (7-10 days) ⛰️",
    "block": 0,
-   "message": "#0 BA: notes say €50/day, budget is €36/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 BA: notes say €50/day, budget is €36/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 50,
    "rate": 36,
    "preR2d": true
@@ -4640,21 +4464,21 @@
    "route_id": "gt_seed_slovenia-croatia-bosnia-10-14-days",
    "route": "Slovenia + Croatia + Bosnia (10-14 days) 🗺️",
    "block": 0,
-   "message": "#0 SI: notes say €100/day, budget is €62/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 SI: notes say €100/day, budget is €62/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 100,
    "rate": 62,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_slovenia-croatia-bosnia-10-14-days",
    "route": "Slovenia + Croatia + Bosnia (10-14 days) 🗺️",
    "block": 1,
-   "message": "#1 HR: notes say €130/day, budget is €80/day",
+   "message": "#1 HR: notes say €130/day, budget is €80/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 130,
    "rate": 80,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -4662,7 +4486,7 @@
    "route_id": "gt_seed_slovenia-croatia-bosnia-10-14-days",
    "route": "Slovenia + Croatia + Bosnia (10-14 days) 🗺️",
    "block": 2,
-   "message": "#2 BA: notes say €50/day, budget is €36/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#2 BA: notes say €50/day, budget is €36/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 50,
    "rate": 36,
    "preR2d": true
@@ -4673,21 +4497,21 @@
    "route_id": "gt_seed_slovenia-croatia-montenegro-coast-10-14-days",
    "route": "Slovenia + Croatia + Montenegro Coast (10-14 days) ⛵",
    "block": 0,
-   "message": "#0 SI: notes say €100/day, budget is €62/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 SI: notes say €100/day, budget is €62/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 100,
    "rate": 62,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_slovenia-croatia-montenegro-coast-10-14-days",
    "route": "Slovenia + Croatia + Montenegro Coast (10-14 days) ⛵",
    "block": 1,
-   "message": "#1 HR: notes say €140/day, budget is €80/day",
+   "message": "#1 HR: notes say €140/day, budget is €80/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 140,
    "rate": 80,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -4695,7 +4519,7 @@
    "route_id": "gt_seed_slovenia-croatia-montenegro-coast-10-14-days",
    "route": "Slovenia + Croatia + Montenegro Coast (10-14 days) ⛵",
    "block": 2,
-   "message": "#2 ME: notes say €70/day, budget is €45/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#2 ME: notes say €70/day, budget is €45/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 70,
    "rate": 45,
    "preR2d": true
@@ -4706,7 +4530,7 @@
    "route_id": "gt_seed_grand-balkan-roadtrip-14-days",
    "route": "Grand Balkan Roadtrip (14 days) 🏔️",
    "block": 0,
-   "message": "#0 SI: notes say €100/day, budget is €62/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 SI: notes say €100/day, budget is €62/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 100,
    "rate": 62,
    "preR2d": true
@@ -4717,7 +4541,7 @@
    "route_id": "gt_seed_grand-balkan-roadtrip-14-days",
    "route": "Grand Balkan Roadtrip (14 days) 🏔️",
    "block": 1,
-   "message": "#1 HR: notes say €120/day, budget is €63/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 HR: notes say €120/day, budget is €63/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 120,
    "rate": 63,
    "preR2d": true
@@ -4728,7 +4552,7 @@
    "route_id": "gt_seed_grand-balkan-roadtrip-14-days",
    "route": "Grand Balkan Roadtrip (14 days) 🏔️",
    "block": 2,
-   "message": "#2 BA: notes say €50/day, budget is €36/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#2 BA: notes say €50/day, budget is €36/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 50,
    "rate": 36,
    "preR2d": true
@@ -4739,7 +4563,7 @@
    "route_id": "gt_seed_grand-balkan-roadtrip-14-days",
    "route": "Grand Balkan Roadtrip (14 days) 🏔️",
    "block": 3,
-   "message": "#3 ME: notes say €65/day, budget is €45/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#3 ME: notes say €65/day, budget is €45/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 65,
    "rate": 45,
    "preR2d": true
@@ -4750,32 +4574,32 @@
    "route_id": "gt_seed_adriatic-roadtrip-14-days",
    "route": "Adriatic Roadtrip (14 days) 🌊",
    "block": 0,
-   "message": "#0 SI: notes say €110/day, budget is €62/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 SI: notes say €110/day, budget is €62/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 110,
    "rate": 62,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_adriatic-roadtrip-14-days",
    "route": "Adriatic Roadtrip (14 days) 🌊",
    "block": 1,
-   "message": "#1 HR: notes say €130/day, budget is €80/day",
+   "message": "#1 HR: notes say €130/day, budget is €80/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 130,
    "rate": 80,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_adriatic-roadtrip-14-days",
    "route": "Adriatic Roadtrip (14 days) 🌊",
    "block": 2,
-   "message": "#2 ME: notes say €90/day, budget is €45/day",
+   "message": "#2 ME: notes say €90/day, budget is €45/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 90,
    "rate": 45,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -4783,7 +4607,7 @@
    "route_id": "gt_seed_andorra-spanish-pyrenees-grand-circuit-9-days",
    "route": "Andorra + Spanish Pyrenees: Grand Circuit (9 days) 🏔️",
    "block": 1,
-   "message": "#1 ES: notes say €90/day, budget is €61/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 ES: notes say €90/day, budget is €61/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 90,
    "rate": 61,
    "preR2d": true
@@ -4794,7 +4618,7 @@
    "route_id": "gt_seed_norway-sweden-fjords-capitals-12-days",
    "route": "Norway + Sweden: Fjords & Capitals (12 days) ⛴️",
    "block": 0,
-   "message": "#0 NO: notes say €140/day, budget is €110/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 NO: notes say €140/day, budget is €110/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 140,
    "rate": 110,
    "preR2d": true
@@ -4805,7 +4629,7 @@
    "route_id": "gt_seed_norway-sweden-fjords-capitals-12-days",
    "route": "Norway + Sweden: Fjords & Capitals (12 days) ⛴️",
    "block": 1,
-   "message": "#1 SE: notes say €110/day, budget is €85/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 SE: notes say €110/day, budget is €85/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 110,
    "rate": 85,
    "preR2d": true
@@ -4816,7 +4640,7 @@
    "route_id": "gt_seed_denmark-sweden-norway-overland-12-days",
    "route": "Denmark + Sweden + Norway Overland (12 days) 🌉",
    "block": 0,
-   "message": "#0 DK: notes say €125/day, budget is €96/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 DK: notes say €125/day, budget is €96/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 125,
    "rate": 96,
    "preR2d": true
@@ -4827,7 +4651,7 @@
    "route_id": "gt_seed_denmark-sweden-norway-overland-12-days",
    "route": "Denmark + Sweden + Norway Overland (12 days) 🌉",
    "block": 2,
-   "message": "#2 NO: notes say €150/day, budget is €110/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#2 NO: notes say €150/day, budget is €110/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 150,
    "rate": 110,
    "preR2d": true
@@ -4838,7 +4662,7 @@
    "route_id": "gt_seed_northern-europe-baltic-ferry-roadtrip-14-days",
    "route": "Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️",
    "block": 0,
-   "message": "#0 DK: notes say €125/day, budget is €96/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 DK: notes say €125/day, budget is €96/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 125,
    "rate": 96,
    "preR2d": true
@@ -4849,7 +4673,7 @@
    "route_id": "gt_seed_northern-europe-baltic-ferry-roadtrip-14-days",
    "route": "Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️",
    "block": 1,
-   "message": "#1 SE: notes say €110/day, budget is €85/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 SE: notes say €110/day, budget is €85/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 110,
    "rate": 85,
    "preR2d": true
@@ -4860,7 +4684,7 @@
    "route_id": "gt_seed_northern-europe-baltic-ferry-roadtrip-14-days",
    "route": "Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️",
    "block": 3,
-   "message": "#3 EE: notes say €90/day, budget is €58/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#3 EE: notes say €90/day, budget is €58/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 90,
    "rate": 58,
    "preR2d": true
@@ -4871,7 +4695,7 @@
    "route_id": "gt_seed_northern-europe-baltic-ferry-roadtrip-14-days",
    "route": "Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️",
    "block": 4,
-   "message": "#4 LV: notes say €90/day, budget is €48/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#4 LV: notes say €90/day, budget is €48/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 90,
    "rate": 48,
    "preR2d": true
@@ -4882,7 +4706,7 @@
    "route_id": "gt_seed_northern-europe-baltic-ferry-roadtrip-14-days",
    "route": "Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️",
    "block": 5,
-   "message": "#5 LT: notes say €90/day, budget is €48/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#5 LT: notes say €90/day, budget is €48/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 90,
    "rate": 48,
    "preR2d": true
@@ -4893,7 +4717,7 @@
    "route_id": "gt_seed_southern-europe-highlights-roadtrip-14-days",
    "route": "Southern Europe Highlights Roadtrip (14 days) 🎯",
    "block": 0,
-   "message": "#0 PT: notes say €98/day, budget is €62/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 PT: notes say €98/day, budget is €62/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 98,
    "rate": 62,
    "preR2d": true
@@ -4904,7 +4728,7 @@
    "route_id": "gt_seed_southern-europe-highlights-roadtrip-14-days",
    "route": "Southern Europe Highlights Roadtrip (14 days) 🎯",
    "block": 1,
-   "message": "#1 ES: notes say €90/day, budget is €61/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 ES: notes say €90/day, budget is €61/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 90,
    "rate": 61,
    "preR2d": true
@@ -4915,21 +4739,21 @@
    "route_id": "gt_seed_southern-europe-highlights-roadtrip-14-days",
    "route": "Southern Europe Highlights Roadtrip (14 days) 🎯",
    "block": 2,
-   "message": "#2 IT: notes say €100/day, budget is €73/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#2 IT: notes say €100/day, budget is €73/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 100,
    "rate": 73,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_southern-europe-highlights-roadtrip-14-days",
    "route": "Southern Europe Highlights Roadtrip (14 days) 🎯",
    "block": 4,
-   "message": "#4 GR: notes say €160/day, budget is €70/day",
+   "message": "#4 GR: notes say €160/day, budget is €70/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 160,
    "rate": 70,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C1",
@@ -4937,7 +4761,7 @@
    "route_id": "gt_seed_grand-european-roadtrip-14-21-days",
    "route": "Grand European Roadtrip (14-21 days) 🪣",
    "block": 0,
-   "message": "#0 DE: notes say €110/day, budget is €72/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#0 DE: notes say €110/day, budget is €72/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 110,
    "rate": 72,
    "preR2d": true
@@ -4948,7 +4772,7 @@
    "route_id": "gt_seed_grand-european-roadtrip-14-21-days",
    "route": "Grand European Roadtrip (14-21 days) 🪣",
    "block": 1,
-   "message": "#1 AT: notes say €115/day, budget is €74/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#1 AT: notes say €115/day, budget is €74/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 115,
    "rate": 74,
    "preR2d": true
@@ -4959,7 +4783,7 @@
    "route_id": "gt_seed_grand-european-roadtrip-14-21-days",
    "route": "Grand European Roadtrip (14-21 days) 🪣",
    "block": 2,
-   "message": "#2 CH: notes say €150/day, budget is €118/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#2 CH: notes say €150/day, budget is €118/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 150,
    "rate": 118,
    "preR2d": true
@@ -4970,7 +4794,7 @@
    "route_id": "gt_seed_grand-european-roadtrip-14-21-days",
    "route": "Grand European Roadtrip (14-21 days) 🪣",
    "block": 3,
-   "message": "#3 IT: notes say €130/day, budget is €73/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#3 IT: notes say €130/day, budget is €73/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 130,
    "rate": 73,
    "preR2d": true
@@ -4981,7 +4805,7 @@
    "route_id": "gt_seed_grand-european-roadtrip-14-21-days",
    "route": "Grand European Roadtrip (14-21 days) 🪣",
    "block": 4,
-   "message": "#4 SI: notes say €100/day, budget is €62/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#4 SI: notes say €100/day, budget is €62/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 100,
    "rate": 62,
    "preR2d": true
@@ -4992,7 +4816,7 @@
    "route_id": "gt_seed_grand-european-roadtrip-14-21-days",
    "route": "Grand European Roadtrip (14-21 days) 🪣",
    "block": 5,
-   "message": "#5 HR: notes say €110/day, budget is €63/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#5 HR: notes say €110/day, budget is €63/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 110,
    "rate": 63,
    "preR2d": true
@@ -5003,21 +4827,21 @@
    "route_id": "gt_seed_grand-european-roadtrip-14-21-days",
    "route": "Grand European Roadtrip (14-21 days) 🪣",
    "block": 7,
-   "message": "#7 CZ: notes say €85/day, budget is €55/day (the note quotes the standard level; budgets moved to \"My plan\" in R2d)",
+   "message": "#7 CZ: notes say €85/day, budget is €55/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 85,
    "rate": 55,
    "preR2d": true
   },
   {
    "check": "C1",
-   "severity": "medium",
+   "severity": "low",
    "route_id": "gt_seed_east-southeast-asia-grand-tour",
    "route": "East & Southeast Asia Grand Tour 🐉",
    "block": 3,
-   "message": "#3 JP: notes say €150/day, budget is €73/day",
+   "message": "#3 JP: notes say €150/day, budget is €73/day (the note quotes an older, higher level; budgets moved to \"My plan\" in R2d)",
    "quoted": 150,
    "rate": 73,
-   "preR2d": false
+   "preR2d": true
   },
   {
    "check": "C2",
@@ -5026,16 +4850,8 @@
    "route": "Eurasia Grand Tour 🌏",
    "block": null,
    "message": "notes: dated 2026-08, now past",
-   "text": "⚠️ Current situation Cambodia-Thailand border (July 2026): the land border crossing at Poipet is currently closed due to the border conflict between the two countries (ceasefire since late 2025, the border itself remains closed) — this route no longer uses that border (see the 2026-08 change below)."
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_eurasia-grand-tour",
-   "route": "Eurasia Grand Tour 🌏",
-   "block": 16,
-   "message": "destination \"Taroko Gorge\": dated 2024-04, now past",
-   "text": "Access is still only partial as of 2026 following the April 2024 earthquake: Shakadang Trail, Swallow Grotto, Tunnel of Nine Turns, and Zhuilu Old Road remain closed indefinitely, while Dekalun, Taibido, Xiangde Temple, and the Tianxiang area trails have reopened — check current trail status before "
+   "text": "Poipet) have been closed since June 2025 because of the border conflict between the two countries, with no reopening announced (ceasefire since late 2025, the border itself remains closed) — this route no longer uses that border (see the 2026-08 change below).",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5044,7 +4860,8 @@
    "route": "Africa Grand Tour 🌍",
    "block": null,
    "message": "notes: dated 2025-11, now past",
-   "text": "Two other route pieces deserve extra attention when actually booking: Rwanda's 'Lake Kivu' stop has been clarified to Kibuye/Karongi (not Rubavu/Gisenyi, which sits across from M23-held Goma and is orange), and Uganda's Queen Elizabeth NP/Bwindi corridor has a temporary DRC border closure (Ebola out"
+   "text": "Two other route pieces deserve extra attention when actually booking: Rwanda's 'Lake Kivu' stop has been clarified to Kibuye/Karongi (not Rubavu/Gisenyi, which sits across from M23-held Goma and is orange), and Uganda's Queen Elizabeth NP/Bwindi corridor has a temporary DRC border closure (Ebola outbreak) and an ADF-related attack on nearby towns (Nov 2025) — both discussed in their own country notes.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5053,7 +4870,8 @@
    "route": "Africa Grand Tour 🌍",
    "block": 5,
    "message": "notes: dated 2026-04, now past",
-   "text": "Chobe entrance fee raised to BWP 270/day (~€19) as of 1 April 2026."
+   "text": "Chobe entrance fee raised to BWP 270/day (~€19) as of 1 April 2026.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5062,7 +4880,8 @@
    "route": "Africa Grand Tour 🌍",
    "block": 6,
    "message": "notes: dated 2026-04, now past",
-   "text": "Park fees also increased: Etosha NAD 280 p.p. + NAD 60 vehicle (as of 1 April 2026), Sossusvlei/Namib-Naukluft NAD 150 + NAD 50, Fish River Canyon NAD 160 + NAD 50 + one-time hiking permit N$540."
+   "text": "Park fees also increased: Etosha NAD 280 p.p. + NAD 60 vehicle (as of 1 April 2026), Sossusvlei/Namib-Naukluft NAD 150 + NAD 50, Fish River Canyon NAD 160 + NAD 50 + one-time hiking permit N$540.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5071,25 +4890,8 @@
    "route": "Africa Grand Tour 🌍",
    "block": 13,
    "message": "notes: dated 2024-01, now past",
-   "text": "The Rwanda-Burundi border within the Nyungwe rainforest has also been closed since January 2024 (unrelated to the M23 conflict, not relevant to the planned route itself)."
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_africa-grand-tour",
-   "route": "Africa Grand Tour 🌍",
-   "block": 14,
-   "message": "notes: dated 2026-07, now past",
-   "text": "⚠️ Safety, Queen Elizabeth NP/Bwindi corridor: the DRC border has been closed since 27 May 2026 due to an Ebola outbreak (last patient discharged 16 July 2026, the 42-day clock is running); in addition, on 1 November 2025 ADF-affiliated groups carried out coordinated attacks on security posts in Kas"
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_africa-grand-tour",
-   "route": "Africa Grand Tour 🌍",
-   "block": 16,
-   "message": "notes: dated 2026-07, now past",
-   "text": "⚠️⚠️ IMPORTANT TRAVEL ADVISORY FINDING (2026-07): Lalibela, Gondar and the Simien Mountains all three lie in the Amhara region, which the Dutch travel advisory currently colors entirely RED ('do not travel') due to the escalating Fano militia-versus-government conflict (March-May 2026; roads to Bahi"
+   "text": "The Rwanda-Burundi border within the Nyungwe rainforest has also been closed since January 2024 (unrelated to the M23 conflict, not relevant to the planned route itself).",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5098,7 +4900,8 @@
    "route": "North America Grand Traverse 🌎",
    "block": 2,
    "message": "destination \"Mount Robson Provincial Park\": dated 2025-06, now past",
-   "text": "The multi-day Berg Lake Trail to its base reopened in June 2025 after 2021 flood damage and is fully running for 2026 — book campground reservations well ahead as they're released months in advance and fill fast; otherwise the highway viewpoint near the visitor centre gives a solid view without hiki"
+   "text": "The multi-day Berg Lake Trail to its base reopened in June 2025 after 2021 flood damage and is fully running for 2026 — book campground reservations well ahead as they're released months in advance and fill fast; otherwise the highway viewpoint near the visitor centre gives a solid view without hiking.",
+   "field": "destination \"Mount Robson Provincial Park\""
   },
   {
    "check": "C2",
@@ -5107,7 +4910,8 @@
    "route": "North America Grand Traverse 🌎",
    "block": 4,
    "message": "destination \"Olympic National Park (Hurricane Ridge & Hoh Rainforest)\": dated 2026-08, now past",
-   "text": "Hurricane Ridge's Day Lodge burned down in a 2023 fire and is still only in the design/rebuild phase — the road and viewpoint are open, but expect no visitor center and no potable water on the ridge through at least August 2026, so bring your own water."
+   "text": "Hurricane Ridge's Day Lodge burned down in a 2023 fire and is still only in the design/rebuild phase — the road and viewpoint are open, but expect no visitor center and no potable water on the ridge through at least August 2026, so bring your own water.",
+   "field": "destination \"Olympic National Park (Hurricane Ridge & Hoh Rainforest)\""
   },
   {
    "check": "C2",
@@ -5116,7 +4920,8 @@
    "route": "Oceania Grand Expedition 🌊",
    "block": 0,
    "message": "destination \"Port Vila\": dated 2024-12, now past",
-   "text": "The capital took serious damage in the magnitude 7.3 earthquake in December 2024, which cracked buildings including some embassies; check current status of any specific site before counting on it, though the main tourist areas have largely reopened."
+   "text": "The capital took serious damage in the magnitude 7.3 earthquake in December 2024, which cracked buildings including some embassies; check current status of any specific site before counting on it, though the main tourist areas have largely reopened.",
+   "field": "destination \"Port Vila\""
   },
   {
    "check": "C2",
@@ -5125,7 +4930,8 @@
    "route": "Oceania Grand Expedition 🌊",
    "block": 13,
    "message": "destination \"Coromandel\": dated 2026-01, now past",
-   "text": "Cathedral Cove's main track reopened in late January 2026 after repeated weather-driven closures, but it now closes automatically at short notice under an orange/red weather warning, so check DOC's status the day of; Hot Water Beach only works at low tide, when you can dig your own spa pool in the s"
+   "text": "Cathedral Cove's main track reopened in late January 2026 after repeated weather-driven closures, but it now closes automatically at short notice under an orange/red weather warning, so check DOC's status the day of; Hot Water Beach only works at low tide, when you can dig your own spa pool in the sand.",
+   "field": "destination \"Coromandel\""
   },
   {
    "check": "C2",
@@ -5134,16 +4940,8 @@
    "route": "Central European Grand Roadtrip 🚗",
    "block": 14,
    "message": "notes: dated 2026-07, now past",
-   "text": "⚠️ Travel advisory (2026-07, still current): there are regular demonstrations in Serbia, especially in Belgrade and Novi Sad (an ongoing protest movement since late 2024) — sometimes road blockades, occasional violence, factor in possible delays at road checks."
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_east-asia-pacific",
-   "route": "East Asia & Pacific 🗻",
-   "block": 3,
-   "message": "destination \"Taroko Gorge\": dated 2024-04, now past",
-   "text": "Access is still only partial as of 2026 following the April 2024 earthquake: Shakadang Trail, Swallow Grotto, Tunnel of Nine Turns, and Zhuilu Old Road remain closed indefinitely, while Dekalun, Taibido, Xiangde Temple, and the Tianxiang area trails have reopened — check current trail status before "
+   "text": "⚠️ Travel advisory (2026-07, still current): there are regular demonstrations in Serbia, especially in Belgrade and Novi Sad (an ongoing protest movement since late 2024) — sometimes road blockades, occasional violence, factor in possible delays at road checks.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5152,7 +4950,8 @@
    "route": "Southern Africa Safari Loop 🦁",
    "block": 5,
    "message": "notes: dated 2026-04, now past",
-   "text": "Chobe entrance fee raised to BWP 270/day (~€19) as of 1 April 2026."
+   "text": "Chobe entrance fee raised to BWP 270/day (~€19) as of 1 April 2026.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5161,7 +4960,8 @@
    "route": "Southern Africa Safari Loop 🦁",
    "block": 6,
    "message": "notes: dated 2026-04, now past",
-   "text": "Park fees also increased: Etosha NAD 280 p.p. + NAD 60 vehicle (as of 1 April 2026), Sossusvlei/Namib-Naukluft NAD 150 + NAD 50, Fish River Canyon NAD 160 + NAD 50 + one-time hiking permit N$540."
+   "text": "Park fees also increased: Etosha NAD 280 p.p. + NAD 60 vehicle (as of 1 April 2026), Sossusvlei/Namib-Naukluft NAD 150 + NAD 50, Fish River Canyon NAD 160 + NAD 50 + one-time hiking permit N$540.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5170,16 +4970,8 @@
    "route": "East Africa Safari Classic 🦒",
    "block": 1,
    "message": "notes: dated 2024-01, now past",
-   "text": "The Rwanda-Burundi border within the Nyungwe rainforest has also been closed since January 2024 (unrelated to the M23 conflict, not relevant to the planned route itself)."
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_east-africa-safari-classic",
-   "route": "East Africa Safari Classic 🦒",
-   "block": 2,
-   "message": "notes: dated 2026-07, now past",
-   "text": "⚠️ Safety, Queen Elizabeth NP/Bwindi corridor: the DRC border has been closed since 27 May 2026 due to an Ebola outbreak (last patient discharged 16 July 2026, the 42-day clock is running); in addition, on 1 November 2025 ADF-affiliated groups carried out coordinated attacks on security posts in Kas"
+   "text": "The Rwanda-Burundi border within the Nyungwe rainforest has also been closed since January 2024 (unrelated to the M23 conflict, not relevant to the planned route itself).",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5188,16 +4980,8 @@
    "route": "Horn of Africa & Egypt 🏺",
    "block": null,
    "message": "notes: dated 2026-07, now past",
-   "text": "⚠️ Ethiopia's Amhara region (Lalibela/Gondar/Simien) and the Danakil Depression were still red/orange on the Dutch travel advisory as of 2026-07 — see Ethiopia's own note, and check nederlandwereldwijd.nl shortly before an actual trip."
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_horn-of-africa-egypt",
-   "route": "Horn of Africa & Egypt 🏺",
-   "block": 0,
-   "message": "notes: dated 2026-07, now past",
-   "text": "⚠️⚠️ IMPORTANT TRAVEL ADVISORY FINDING (2026-07): Lalibela, Gondar and the Simien Mountains all three lie in the Amhara region, which the Dutch travel advisory currently colors entirely RED ('do not travel') due to the escalating Fano militia-versus-government conflict (March-May 2026; roads to Bahi"
+   "text": "⚠️ Ethiopia's Amhara region (Lalibela/Gondar/Simien) and the Danakil Depression were still red/orange on the Dutch travel advisory as of 2026-07 — see Ethiopia's own note, and check nederlandwereldwijd.nl shortly before an actual trip.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5206,7 +4990,8 @@
    "route": "Western Canada: Rockies & Vancouver 🏔️",
    "block": 0,
    "message": "destination \"Mount Robson Provincial Park\": dated 2025-06, now past",
-   "text": "The multi-day Berg Lake Trail to its base reopened in June 2025 after 2021 flood damage and is fully running for 2026 — book campground reservations well ahead as they're released months in advance and fill fast; otherwise the highway viewpoint near the visitor centre gives a solid view without hiki"
+   "text": "The multi-day Berg Lake Trail to its base reopened in June 2025 after 2021 flood damage and is fully running for 2026 — book campground reservations well ahead as they're released months in advance and fill fast; otherwise the highway viewpoint near the visitor centre gives a solid view without hiking.",
+   "field": "destination \"Mount Robson Provincial Park\""
   },
   {
    "check": "C2",
@@ -5215,7 +5000,8 @@
    "route": "US West Coast Roadtrip 🌉",
    "block": 0,
    "message": "destination \"Olympic National Park (Hurricane Ridge & Hoh Rainforest)\": dated 2026-08, now past",
-   "text": "Hurricane Ridge's Day Lodge burned down in a 2023 fire and is still only in the design/rebuild phase — the road and viewpoint are open, but expect no visitor center and no potable water on the ridge through at least August 2026, so bring your own water."
+   "text": "Hurricane Ridge's Day Lodge burned down in a 2023 fire and is still only in the design/rebuild phase — the road and viewpoint are open, but expect no visitor center and no potable water on the ridge through at least August 2026, so bring your own water.",
+   "field": "destination \"Olympic National Park (Hurricane Ridge & Hoh Rainforest)\""
   },
   {
    "check": "C2",
@@ -5224,7 +5010,8 @@
    "route": "Pacific Islands 🌺",
    "block": 0,
    "message": "destination \"Port Vila\": dated 2024-12, now past",
-   "text": "The capital took serious damage in the magnitude 7.3 earthquake in December 2024, which cracked buildings including some embassies; check current status of any specific site before counting on it, though the main tourist areas have largely reopened."
+   "text": "The capital took serious damage in the magnitude 7.3 earthquake in December 2024, which cracked buildings including some embassies; check current status of any specific site before counting on it, though the main tourist areas have largely reopened.",
+   "field": "destination \"Port Vila\""
   },
   {
    "check": "C2",
@@ -5233,7 +5020,8 @@
    "route": "New Zealand 🥝",
    "block": 1,
    "message": "destination \"Coromandel\": dated 2026-01, now past",
-   "text": "Cathedral Cove's main track reopened in late January 2026 after repeated weather-driven closures, but it now closes automatically at short notice under an orange/red weather warning, so check DOC's status the day of; Hot Water Beach only works at low tide, when you can dig your own spa pool in the s"
+   "text": "Cathedral Cove's main track reopened in late January 2026 after repeated weather-driven closures, but it now closes automatically at short notice under an orange/red weather warning, so check DOC's status the day of; Hot Water Beach only works at low tide, when you can dig your own spa pool in the sand.",
+   "field": "destination \"Coromandel\""
   },
   {
    "check": "C2",
@@ -5242,16 +5030,8 @@
    "route": "Namibia 🏜️",
    "block": 0,
    "message": "notes: dated 2026-04, now past",
-   "text": "Park fees also increased: Etosha NAD 280 p.p. + NAD 60 vehicle (as of 1 April 2026), Sossusvlei/Namib-Naukluft NAD 150 + NAD 50, Fish River Canyon NAD 160 + NAD 50 + one-time hiking permit N$540."
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_japan-taiwan",
-   "route": "Japan & Taiwan 🗻",
-   "block": 1,
-   "message": "destination \"Taroko Gorge\": dated 2024-04, now past",
-   "text": "Access is still only partial as of 2026 following the April 2024 earthquake: Shakadang Trail, Swallow Grotto, Tunnel of Nine Turns, and Zhuilu Old Road remain closed indefinitely, while Dekalun, Taibido, Xiangde Temple, and the Tianxiang area trails have reopened — check current trail status before "
+   "text": "Park fees also increased: Etosha NAD 280 p.p. + NAD 60 vehicle (as of 1 April 2026), Sossusvlei/Namib-Naukluft NAD 150 + NAD 50, Fish River Canyon NAD 160 + NAD 50 + one-time hiking permit N$540.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5260,7 +5040,8 @@
    "route": "New Zealand South Island 🏔️",
    "block": 0,
    "message": "notes: dated 2026-08, now past",
-   "text": "Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days versus the original count (21→23) — 27-38 hours of travel time with multiple connections is enough that an arrival day with no plans and a margin before the return flight are wiser here than planning straight through it."
+   "text": "Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days versus the original count (21→23) — 27-38 hours of travel time with multiple connections is enough that an arrival day with no plans and a margin before the return flight are wiser here than planning straight through it.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5269,7 +5050,8 @@
    "route": "Botswana 🐘",
    "block": 0,
    "message": "notes: dated 2026-04, now past",
-   "text": "Chobe entrance fee raised to BWP 270/day (~€19) as of 1 April 2026."
+   "text": "Chobe entrance fee raised to BWP 270/day (~€19) as of 1 April 2026.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5278,7 +5060,8 @@
    "route": "Rwanda 🦍",
    "block": 0,
    "message": "notes: dated 2024-01, now past",
-   "text": "The Rwanda-Burundi border within the Nyungwe rainforest has also been closed since January 2024 (unrelated to the M23 conflict, not relevant to the planned route itself)."
+   "text": "The Rwanda-Burundi border within the Nyungwe rainforest has also been closed since January 2024 (unrelated to the M23 conflict, not relevant to the planned route itself).",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5287,7 +5070,8 @@
    "route": "New Zealand North Island 🌿",
    "block": 0,
    "message": "destination \"Coromandel\": dated 2026-01, now past",
-   "text": "Cathedral Cove's main track reopened in late January 2026 after repeated weather-driven closures, but it now closes automatically at short notice under an orange/red weather warning, so check DOC's status the day of; Hot Water Beach only works at low tide, when you can dig your own spa pool in the s"
+   "text": "Cathedral Cove's main track reopened in late January 2026 after repeated weather-driven closures, but it now closes automatically at short notice under an orange/red weather warning, so check DOC's status the day of; Hot Water Beach only works at low tide, when you can dig your own spa pool in the sand.",
+   "field": "destination \"Coromandel\""
   },
   {
    "check": "C2",
@@ -5296,16 +5080,8 @@
    "route": "Fiji & Vanuatu 🐚",
    "block": 0,
    "message": "destination \"Port Vila\": dated 2024-12, now past",
-   "text": "The capital took serious damage in the magnitude 7.3 earthquake in December 2024, which cracked buildings including some embassies; check current status of any specific site before counting on it, though the main tourist areas have largely reopened."
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_ethiopia",
-   "route": "Ethiopia ⛪",
-   "block": 0,
-   "message": "notes: dated 2026-07, now past",
-   "text": "⚠️⚠️ IMPORTANT TRAVEL ADVISORY FINDING (2026-07): Lalibela, Gondar and the Simien Mountains all three lie in the Amhara region, which the Dutch travel advisory currently colors entirely RED ('do not travel') due to the escalating Fano militia-versus-government conflict (March-May 2026; roads to Bahi"
+   "text": "The capital took serious damage in the magnitude 7.3 earthquake in December 2024, which cracked buildings including some embassies; check current status of any specific site before counting on it, though the main tourist areas have largely reopened.",
+   "field": "destination \"Port Vila\""
   },
   {
    "check": "C2",
@@ -5314,7 +5090,8 @@
    "route": "Pacific Northwest 🦫",
    "block": 0,
    "message": "destination \"Olympic National Park (Hurricane Ridge & Hoh Rainforest)\": dated 2026-08, now past",
-   "text": "Hurricane Ridge's Day Lodge burned down in a 2023 fire and is still only in the design/rebuild phase — the road and viewpoint are open, but expect no visitor center and no potable water on the ridge through at least August 2026, so bring your own water."
+   "text": "Hurricane Ridge's Day Lodge burned down in a 2023 fire and is still only in the design/rebuild phase — the road and viewpoint are open, but expect no visitor center and no potable water on the ridge through at least August 2026, so bring your own water.",
+   "field": "destination \"Olympic National Park (Hurricane Ridge & Hoh Rainforest)\""
   },
   {
    "check": "C2",
@@ -5323,7 +5100,8 @@
    "route": "Sri Lanka 🐆",
    "block": 0,
    "message": "notes: dated 2026-06, now past",
-   "text": "Kandy-Ella is the classic scenic train leg — reserved seats sell out within minutes of the 30-day booking window opening, book the moment it opens; the Nanu Oya-Badulla section only reopened June 2026 after cyclone damage, confirm current status before relying on it."
+   "text": "Kandy-Ella is the classic scenic train leg — reserved seats sell out within minutes of the 30-day booking window opening, book the moment it opens; the Nanu Oya-Badulla section only reopened June 2026 after cyclone damage, confirm current status before relying on it.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5332,7 +5110,8 @@
    "route": "Sri Lanka 🐆",
    "block": 0,
    "message": "notes: dated 2026-05, now past",
-   "text": "Visa: as of 25 May 2026 Dutch passport holders get a free 30-day double-entry tourist ETA (eta.gov.lk) — this policy has changed repeatedly, re-verify before booking."
+   "text": "Visa: as of 25 May 2026 Dutch passport holders get a free 30-day double-entry tourist ETA (eta.gov.lk) — this policy has changed repeatedly, re-verify before booking.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5341,16 +5120,8 @@
    "route": "Victoria Falls & Kalahari Loop 🦏",
    "block": 2,
    "message": "notes: dated 2026-04, now past",
-   "text": "Chobe entrance fee raised to BWP 270/day (~€19) as of 1 April 2026."
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_hawaii",
-   "route": "Hawaii 🐢",
-   "block": null,
-   "message": "notes: dated 2026-09, now past",
-   "text": "Web check (2026-09): Kīlauea has been erupting intermittently since December 2024 in discrete episodes (each under 12 hours) separated by 2+ week pauses — currently paused (Episode 54 was 25 August 2026), Alert Level ADVISORY/Aviation color YELLOW, with USGS/HVO forecasting a possible Episode 55 win"
+   "text": "Chobe entrance fee raised to BWP 270/day (~€19) as of 1 April 2026.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5359,7 +5130,8 @@
    "route": "Hawaii 🐢",
    "block": 1,
    "message": "destination \"Lahaina\": dated 2023-08, now past",
-   "text": "Historic whaling-era town devastated by the August 2023 wildfire; Front Street reopened to vehicles on Aug 1, 2026 with businesses like Kimo's and ʻUlu o Lele Marketplace back open, but much of the district is still fenced off and rebuilding, so confirm current access before planning a stop."
+   "text": "Historic whaling-era town devastated by the August 2023 wildfire; Front Street reopened to vehicles on Aug 1, 2026 with businesses like Kimo's and ʻUlu o Lele Marketplace back open, but much of the district is still fenced off and rebuilding, so confirm current access before planning a stop.",
+   "field": "destination \"Lahaina\""
   },
   {
    "check": "C2",
@@ -5368,7 +5140,8 @@
    "route": "Florida 🐊",
    "block": null,
    "message": "climate_summary: dated 2026-09, now past",
-   "text": "Web check (2026-09): as of early September 2026 the NHC shows no active tropical threats to Florida and 2026 is tracking as a below-normal season overall (only two named storms plus one landfalling system, Edouard, in Louisiana/Texas — no hurricanes yet past the statistical Sept 10 peak); doesn't ch"
+   "text": "Web check (2026-09): as of early September 2026 the NHC shows no active tropical threats to Florida and 2026 is tracking as a below-normal season overall (only two named storms plus one landfalling system, Edouard, in Louisiana/Texas — no hurricanes yet past the statistical Sept 10 peak); doesn't change the Dec-April recommendation, just confirms nothing acute is happening right now.",
+   "field": "climate_summary"
   },
   {
    "check": "C2",
@@ -5377,7 +5150,8 @@
    "route": "Florida 🐊",
    "block": 1,
    "message": "notes: dated 2026-09, now past",
-   "text": "Alligator safety: stay at least 15m away, never feed them, and — Web check (2026-09) — avoid swimming/wading in any natural Florida waterway during the current drought, not just at dusk/dawn: 2026 has seen a real, confirmed spike in incidents (at least 4 attacks including one fatality between 21 Jun"
+   "text": "Alligator safety: stay at least 15m away, never feed them, and — Web check (2026-09) — avoid swimming/wading in any natural Florida waterway during the current drought, not just at dusk/dawn: 2026 has seen a real, confirmed spike in incidents (at least 4 attacks including one fatality between 21 June-3 July 2026 alone, drought pushing alligators toward populated areas statewide, all 67 counties) — still an active, current risk as of September 2026, not something that's eased.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5386,34 +5160,8 @@
    "route": "Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂",
    "block": 0,
    "message": "notes: dated 2026-06, now past",
-   "text": "Deliberately just an overnight transit here, not a sightseeing stop — there's no direct international flight into Cusco (all arrivals route through Lima's Jorge Chávez airport, single-terminal since June 2026), but Lima itself is skippable as a destination: it's currently under a local state of emer"
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_peru-bolivia-andes-salt-flats-20-days",
-   "route": "Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂",
-   "block": 6,
-   "message": "notes: dated 2026-09, now past",
-   "text": "⚠️ Web check (2026-09): Bolivia's state of emergency (declared 20 June 2026 against road blockades) is due to expire ~18-20 September 2026 — an extension is politically contested (needs two-thirds approval in the Plurinational Legislative Assembly, unions publicly oppose it) and genuinely unresolved"
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_dresden-saxon-switzerland-4-days",
-   "route": "Dresden + Saxon Switzerland (4 days) 🧗",
-   "block": 0,
-   "message": "notes: dated 2023-09, now past",
-   "text": "The Bastei Bridge itself is open, but the adjacent Felsenburg Neurathen ruin has been closed since September 2023 (rock stability, no confirmed 2026 reopening) — approach via the hiking path from Rathen rather than the bus/car-park side, and go early in the day (1.5 million visitors/year); check the"
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_salzburg-berchtesgaden-hallstatt-5-days",
-   "route": "Salzburg + Berchtesgaden + Hallstatt (5 days) 🛥️",
-   "block": 2,
-   "message": "notes: dated 2026-09, now past",
-   "text": "Skywalk/salt mine cable car ~€29 p.p. — reopening 1 September 2026 after works, so check the dates if travelling earlier in the season."
+   "text": "Deliberately just an overnight transit here, not a sightseeing stop — there's no direct international flight into Cusco (all arrivals route through Lima's Jorge Chávez airport, single-terminal since June 2026), but Lima itself is skippable as a destination: it's currently under a local state of emergency for rising violent crime (tourist zones Miraflores/San Isidro/Barranco are explicitly called low-risk even so, but there's no reason to linger).",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5422,7 +5170,8 @@
    "route": "Switzerland Alpine Roadtrip (9 days) 🛣️",
    "block": 2,
    "message": "notes: dated 2026-05, now past",
-   "text": "Andermatt as the base for three legendary mountain passes: the Sustenpass (seasonal, 2026 open from 12 June), the Furka Pass (reopened 29 May 2026) and the Grimsel Pass (reopened 14 May 2026) — all seasonal, check current-year opening dates before relying on this route outside summer."
+   "text": "Andermatt as the base for three legendary mountain passes: the Sustenpass (seasonal, 2026 open from 12 June), the Furka Pass (reopened 29 May 2026) and the Grimsel Pass (reopened 14 May 2026) — all seasonal, check current-year opening dates before relying on this route outside summer.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5431,7 +5180,8 @@
    "route": "Paris (4 days) 🗼",
    "block": 0,
    "message": "destination \"Île de la Cité\": dated 2024-12, now past",
-   "text": "The island at Paris's historic core, home to Notre-Dame (reopened Dec 2024 after the 2019 fire, now fully restored) and the stained-glass Sainte-Chapelle; book Sainte-Chapelle's timed entry ahead, since it's a small space with limited daily capacity."
+   "text": "The island at Paris's historic core, home to Notre-Dame (reopened Dec 2024 after the 2019 fire, now fully restored) and the stained-glass Sainte-Chapelle; book Sainte-Chapelle's timed entry ahead, since it's a small space with limited daily capacity.",
+   "field": "destination \"Île de la Cité\""
   },
   {
    "check": "C2",
@@ -5440,7 +5190,8 @@
    "route": "Italy: North to Central (12 days) 🚄",
    "block": 1,
    "message": "destination \"Bologna\": dated 2023-10, now past",
-   "text": "The medieval Due Torri and UNESCO-listed porticoes anchor the old center, but the Torre degli Asinelli has been closed to climbers since October 2023 (structural stabilization work on the leaning Garisenda tower next to it, with estimates running to 2028) — climb the Torre dell'Orologio (Clock Tower"
+   "text": "The medieval Due Torri and UNESCO-listed porticoes anchor the old center, but the Torre degli Asinelli has been closed to climbers since October 2023 (structural stabilization work on the leaning Garisenda tower next to it, with estimates running to 2028) — climb the Torre dell'Orologio (Clock Tower) instead for a comparable view.",
+   "field": "destination \"Bologna\""
   },
   {
    "check": "C2",
@@ -5449,7 +5200,8 @@
    "route": "Italy Roadtrip (12 days) 🧀",
    "block": 1,
    "message": "destination \"Bologna\": dated 2023-10, now past",
-   "text": "The medieval Due Torri and UNESCO-listed porticoes anchor the old center, but the Torre degli Asinelli has been closed to climbers since October 2023 (structural stabilization work on the leaning Garisenda tower next to it, with estimates running to 2028) — climb the Torre dell'Orologio (Clock Tower"
+   "text": "The medieval Due Torri and UNESCO-listed porticoes anchor the old center, but the Torre degli Asinelli has been closed to climbers since October 2023 (structural stabilization work on the leaning Garisenda tower next to it, with estimates running to 2028) — climb the Torre dell'Orologio (Clock Tower) instead for a comparable view.",
+   "field": "destination \"Bologna\""
   },
   {
    "check": "C2",
@@ -5458,7 +5210,8 @@
    "route": "Sicily + Southern Italy (12 days) 🍊",
    "block": 3,
    "message": "notes: dated 2026-09, now past",
-   "text": "⚠️ Construction on the Strait of Messina bridge starts in 2026 (road/rail work from May 2026, tunnels/interchanges from September 2026) — shouldn't affect the ferry crossing itself, but expect possible construction traffic/diversions around Villa San Giovanni and Messina — check current roadworks be"
+   "text": "⚠️ Construction on the Strait of Messina bridge starts in 2026 (road/rail work from May 2026, tunnels/interchanges from September 2026) — shouldn't affect the ferry crossing itself, but expect possible construction traffic/diversions around Villa San Giovanni and Messina — check current roadworks before driving this route in 2026.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5467,16 +5220,8 @@
    "route": "San Marino + Emilia-Romagna (4 days) 🍝",
    "block": 0,
    "message": "destination \"Bologna\": dated 2023-10, now past",
-   "text": "The medieval Due Torri and UNESCO-listed porticoes anchor the old center, but the Torre degli Asinelli has been closed to climbers since October 2023 (structural stabilization work on the leaning Garisenda tower next to it, with estimates running to 2028) — climb the Torre dell'Orologio (Clock Tower"
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_barcelona-4-days",
-   "route": "Barcelona (4 days) 🎨",
-   "block": 0,
-   "message": "notes: dated 2026-08, now past",
-   "text": "Web check (2026-08): 2026 is Gaudí's centenary year (100 years since his death, June 1926) — the Sagrada Família's central tower is expected to be completed around then, so extra crowds and higher prices especially around June; normally book 2-3 weeks ahead, in 2026 better 1-2 months ahead, and book"
+   "text": "The medieval Due Torri and UNESCO-listed porticoes anchor the old center, but the Torre degli Asinelli has been closed to climbers since October 2023 (structural stabilization work on the leaning Garisenda tower next to it, with estimates running to 2028) — climb the Torre dell'Orologio (Clock Tower) instead for a comparable view.",
+   "field": "destination \"Bologna\""
   },
   {
    "check": "C2",
@@ -5485,7 +5230,8 @@
    "route": "Barcelona (4 days) 🎨",
    "block": 0,
    "message": "notes: dated 2026-04, now past",
-   "text": "Barcelona's tourist tax doubled as of 1 April 2026 (regional €0.80-4.50/night + a municipal surcharge of €5/night, up to ~€12/night at 5-star hotels) — check the current rate before budgeting."
+   "text": "Barcelona's tourist tax doubled as of 1 April 2026 (regional €0.80-4.50/night + a municipal surcharge of €5/night, up to ~€12/night at 5-star hotels) — check the current rate before budgeting.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5494,7 +5240,8 @@
    "route": "Croatia Coastal Roadtrip (9 days) 🛣️",
    "block": 0,
    "message": "notes: dated 2026-08, now past",
-   "text": "Web check (2026-08): if you take the old coastal road through Neum (Bosnian territory) instead of the Pelješac bridge — wait times 10-30 min, up to 60 min on July-August weekends, a passport is required (an ID card is not enough for Bosnia), and rental-car insurance often adds a €10-15/day surcharge"
+   "text": "Web check (2026-08): if you take the old coastal road through Neum (Bosnian territory) instead of the Pelješac bridge — wait times 10-30 min, up to 60 min on July-August weekends, a passport is required (an ID card is not enough for Bosnia), and rental-car insurance often adds a €10-15/day surcharge for Bosnia coverage.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5503,7 +5250,8 @@
    "route": "Slovenia Alpine Loop (6 days) 🏔️",
    "block": 0,
    "message": "notes: dated 2026-08, now past",
-   "text": "Web check (2026-08): a new 2026 traffic regime on the Vršič Pass — no parking at the top through 31 August, with a free shuttle bus running Kranjska Gora-Bovec (26 June-31 August, 20 trips/day); driving the pass yourself remains possible, just park lower down."
+   "text": "Web check (2026-08): a new 2026 traffic regime on the Vršič Pass — no parking at the top through 31 August, with a free shuttle bus running Kranjska Gora-Bovec (26 June-31 August, 20 trips/day); driving the pass yourself remains possible, just park lower down.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5512,7 +5260,8 @@
    "route": "Albania (6 days) 🏖️",
    "block": 0,
    "message": "notes: dated 2026-08, now past",
-   "text": "Web check (2026-08): a lot of Riviera infrastructure around Dhermi is closed outside June-September; the local currency is the Lek, and the euro exchange rate offered locally is often unfavorable, so change money carefully or pay in Lek where possible."
+   "text": "Web check (2026-08): a lot of Riviera infrastructure around Dhermi is closed outside June-September; the local currency is the Lek, and the euro exchange rate offered locally is often unfavorable, so change money carefully or pay in Lek where possible.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5521,7 +5270,8 @@
    "route": "Belgrade + Surroundings (5 days) 🏛️",
    "block": 0,
    "message": "notes: dated 2026-08, now past",
-   "text": "Web check (2026-08): Belgrade's public transport has been free since 1 January 2025; there's an ongoing student protest movement centered on Belgrade and Novi Sad's city centers (running since late 2024, with tear gas reported as recently as May 2026) — check current protest locations before setting"
+   "text": "Web check (2026-08): Belgrade's public transport has been free since 1 January 2025; there's an ongoing student protest movement centered on Belgrade and Novi Sad's city centers (running since late 2024, with tear gas reported as recently as May 2026) — check current protest locations before setting out.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5530,16 +5280,8 @@
    "route": "Bucharest + Transylvania (5 days) 🏰",
    "block": 0,
    "message": "notes: dated 2026-08, now past",
-   "text": "Web check (2026-08): Bran Castle open Mon 12:00-18:00, Tue-Sun 9:00-18:00, tickets ~€28-35; Peleș Castle Wed 10:00-17:00, Thu-Sun 9:15-17:00, closed Mon/Tue, ~€10 for adults — check the actual 2026 hours right before departure, they're seasonal."
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_sofia-rila-monastery-5-days",
-   "route": "Sofia + Rila Monastery (5 days) ⛪",
-   "block": 0,
-   "message": "notes: dated 2026-08, now past",
-   "text": "Bulgaria adopted the euro on 1 January 2026 (fixed rate 1 EUR = 1.95583 BGN) and it became the sole legal currency on 1 February 2026 — dual BGN/EUR pricing is still required until 8 August 2026, useful for spotting outdated BGN-only prices online."
+   "text": "Web check (2026-08): Bran Castle open Mon 12:00-18:00, Tue-Sun 9:00-18:00, tickets ~€28-35; Peleș Castle Wed 10:00-17:00, Thu-Sun 9:15-17:00, closed Mon/Tue, ~€10 for adults — check the actual 2026 hours right before departure, they're seasonal.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5548,7 +5290,8 @@
    "route": "Bulgaria + Greece: Sofia to Meteora (12 days) ⛰️",
    "block": 1,
    "message": "notes: dated 2026-08, now past",
-   "text": "Web check (2026-08): each Meteora monastery has its own rotating closing day and a dress code — check per monastery which day it's closed."
+   "text": "Web check (2026-08): each Meteora monastery has its own rotating closing day and a dress code — check per monastery which day it's closed.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5557,25 +5300,8 @@
    "route": "Moldova + Transnistria (6 days) 🍇",
    "block": 0,
    "message": "notes: dated 2026-08, now past",
-   "text": "⚠️ SAFETY — a core point, not a routine 'this is fine': the Dutch Ministry of Foreign Affairs (nederlandwereldwijd.nl) gives Transnistria its own, much stricter travel advisory than the rest of Moldova — RED (updated 21 May 2026, valid as of 13 August 2026): 'do not travel here under any circumstanc"
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_moldova-transnistria-6-days",
-   "route": "Moldova + Transnistria (6 days) 🍇",
-   "block": 0,
-   "message": "notes: dated 2026-08, now past",
-   "text": "The border is currently (August 2026) open to day-trippers, but this can change without notice given the war context."
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_budapest-4-days",
-   "route": "Budapest (4 days) 🛁",
-   "block": 0,
-   "message": "notes: dated 2026-08, now past",
-   "text": "Web check (2026-08): Gellért Baths has been closed since 1 October 2025 and isn't expected to reopen until around 2028 — use Széchenyi instead (admission roughly €13-35)."
+   "text": "⚠️ SAFETY — a core point, not a routine 'this is fine': the Dutch Ministry of Foreign Affairs (nederlandwereldwijd.nl) gives Transnistria its own, much stricter travel advisory than the rest of Moldova — RED (updated 21 May 2026, valid as of 13 August 2026): 'do not travel here under any circumstances, too dangerous' — the embassy cannot assist there.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5584,7 +5310,8 @@
    "route": "Budapest (4 days) 🛁",
    "block": 0,
    "message": "notes: dated 2025-03, now past",
-   "text": "Also keep an eye on escalating demonstrations in central Budapest, and note that LGBTQ+ gatherings/marches have been banned since March 2025 — check planned events in advance if that's relevant to your dates."
+   "text": "Also keep an eye on escalating demonstrations in central Budapest, and note that LGBTQ+ gatherings/marches have been banned since March 2025 — check planned events in advance if that's relevant to your dates.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5593,7 +5320,8 @@
    "route": "Czechia + Austria (9 days) 🏔️",
    "block": 0,
    "message": "transport_to_next: dated 2026-06, now past",
-   "text": "Cross into Austria — a Schengen border, but Austria has extended its border controls with Czechia through at least 15 June 2026 (possibly further): expect spot ID checks, no visa needed, but keep your passport/ID on you."
+   "text": "Cross into Austria — a Schengen border, but Austria has extended its border controls with Czechia through at least 15 June 2026 (possibly further): expect spot ID checks, no visa needed, but keep your passport/ID on you.",
+   "field": "transport_to_next"
   },
   {
    "check": "C2",
@@ -5602,7 +5330,8 @@
    "route": "Prague + Poland (9 days) 🚂",
    "block": 0,
    "message": "transport_to_next: dated 2026-09, now past",
-   "text": "The Prague-Wrocław-Krakow train run is a solid alternative to driving. (If you instead routed via Germany, note Germany has separately extended its own land border controls with Czechia through 15 September 2026 — spot ID checks, no visa requirement.)"
+   "text": "The Prague-Wrocław-Krakow train run is a solid alternative to driving. (If you instead routed via Germany, note Germany has separately extended its own land border controls with Czechia through 15 September 2026 — spot ID checks, no visa requirement.)",
+   "field": "transport_to_next"
   },
   {
    "check": "C2",
@@ -5611,7 +5340,8 @@
    "route": "Bratislava + High Tatras (5 days) 🏔️",
    "block": 0,
    "message": "notes: dated 2026-08, now past",
-   "text": "Web check (2026-08): pre-book the Lomnický Štít cable car through the Gopass.travel app — it sells out fast."
+   "text": "Web check (2026-08): pre-book the Lomnický Štít cable car through the Gopass.travel app — it sells out fast.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5620,7 +5350,8 @@
    "route": "Poland Roadtrip (9 days) 🚗",
    "block": 0,
    "message": "notes: dated 2026-09, now past",
-   "text": "If routing via Germany instead, note Germany has extended its own land border controls with Poland through 15 September 2026 (spot ID checks)."
+   "text": "If routing via Germany instead, note Germany has extended its own land border controls with Poland through 15 September 2026 (spot ID checks).",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5629,25 +5360,8 @@
    "route": "Istanbul (4 days) 🕌",
    "block": 0,
    "message": "notes: dated 2026-08, now past",
-   "text": "Web check (2026-08): Hagia Sophia is a functioning mosque — tourists only get access to the upper gallery, €25 entry (the Istanbul Museum Pass does NOT cover this), it closes 5x/day for ~30-45 minutes at prayer times, with an extra-long Friday afternoon closure (~12:00-14:30) — plan around it."
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_izmir-aegean-coast-ephesus-cesme-5-days",
-   "route": "Izmir + Aegean Coast: Ephesus & Çeşme (5 days) 📜",
-   "block": 0,
-   "message": "notes: dated 2026-08, now past",
-   "text": "Web check (2026-08): 2026 Ephesus entry is €40 (including the now-mandatory new 'Ephesus Experience' museum), the Terrace Houses cost an extra €15; in summer (3 June-1 October) there's an evening opening Wed-Sat until 23:00, but after 18:45 only the lower level is accessible and the Terrace Houses a"
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_fjord-norway-9-days",
-   "route": "Fjord Norway (9 days) 🏔️",
-   "block": 0,
-   "message": "notes: dated 2026-08, now past",
-   "text": "Web check (2026-08): since 1 January 2026, Geirangerfjord and Nærøyfjord enforce a zero-emission rule for passenger ships under 10,000 GT (larger cruise ships get until 2032) — small fjord cruises/ferries are typically already electric/hybrid and keep running, but check per operator."
+   "text": "Web check (2026-08): Hagia Sophia is a functioning mosque — tourists only get access to the upper gallery, €25 entry (the Istanbul Museum Pass does NOT cover this), it closes 5x/day for ~30-45 minutes at prayer times, with an extra-long Friday afternoon closure (~12:00-14:30) — plan around it.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5656,7 +5370,8 @@
    "route": "Denmark + South Sweden (9 days) 🌉",
    "block": 1,
    "message": "notes: dated 2026-08, now past",
-   "text": "Web check (2026-08): check just before departure whether Sweden's temporary ID checks on the Öresund crossing are currently active — these have been extended repeatedly since 2015, same caveat as noted on the Stockholm/Skåne routes above."
+   "text": "Web check (2026-08): check just before departure whether Sweden's temporary ID checks on the Öresund crossing are currently active — these have been extended repeatedly since 2015, same caveat as noted on the Stockholm/Skåne routes above.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5665,16 +5380,8 @@
    "route": "Faroe Islands (6 days) 🐦",
    "block": 0,
    "message": "notes: dated 2026-08, now past",
-   "text": "General travel advisory (2026-08 web check): Denmark, which the Faroes fall under, is green (as of 08-05-2026), with no separate note for the Faroes themselves."
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_reykjavik-golden-circle-5-days",
-   "route": "Reykjavík + Golden Circle (5 days) 🌋",
-   "block": 0,
-   "message": "notes: dated 2026-08, now past",
-   "text": "Iceland safety note (2026-08 web check, currently active — travel advisory last changed 21-04-2026, valid through 14-08-2026): yellow for the Reykjanes Peninsula specifically, due to ongoing volcanic activity near Grindavík — the risk of a new eruption remains."
+   "text": "General travel advisory (2026-08 web check): Denmark, which the Faroes fall under, is green (as of 08-05-2026), with no separate note for the Faroes themselves.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5683,43 +5390,8 @@
    "route": "Reykjavík + Golden Circle (5 days) 🌋",
    "block": 0,
    "message": "notes: dated 2025-09, now past",
-   "text": "No active eruption since September 2025; Grindavík itself has reopened but remains vulnerable (fresh lava, gas risk, sirens possible) — check safetravel.is/eruption-in-reykjanes/ just before travel."
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_dublin-3-4-days",
-   "route": "Dublin (3-4 days) 🍺",
-   "block": 0,
-   "message": "notes: dated 2026-08, now past",
-   "text": "Web check (2026-08): the Book of Kells needs a pre-booked timed-entry ticket (€21.50-25 pp) — the Long Room is currently partly empty due to restoration work, open until 2027."
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_ireland-complete-10-14-days",
-   "route": "Ireland Complete (10-14 days) 🌈",
-   "block": 0,
-   "message": "notes: dated 2026-08, now past",
-   "text": "Web check (2026-08): a side trip into Northern Ireland still needs the UK ETA (mandatory since 2 April 2025 for Dutch passport holders, fee ~€23-24 since 8 April 2026, valid 2 years or until the passport expires, multiple entry) even though there's no border checkpoint on the road."
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_northern-ireland-5-7-days",
-   "route": "Northern Ireland (5-7 days) 🌉",
-   "block": 0,
-   "message": "notes: dated 2026-09, now past",
-   "text": "Web check (2026-08): Giant's Causeway entry is £9 (National Trust, includes parking) with a temporary VAT reduction in place until 1 September 2026 — the coastal path itself is free either way; a UK ETA is still required even when crossing into Northern Ireland via the Republic of Ireland border, si"
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_england-wales-northern-ireland-roadtrip-10-14-days",
-   "route": "England + Wales + Northern Ireland Roadtrip (10-14 days) 🛣️",
-   "block": 1,
-   "message": "notes: dated 2026-09, now past",
-   "text": "Web check (2026-08): Giant's Causeway entry is £9 (National Trust, includes parking) with a temporary VAT reduction in place until 1 September 2026; the same single UK ETA already covers this leg, no separate entry formality is needed crossing from the Republic of Ireland."
+   "text": "No active eruption since September 2025; Grindavík itself has reopened but remains vulnerable (fresh lava, gas risk, sirens possible) — check safetravel.is/eruption-in-reykjanes/ just before travel.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5728,7 +5400,8 @@
    "route": "Estonia (5-7 days) 🏰",
    "block": 0,
    "message": "notes: dated 2026-08, now past",
-   "text": "The Narva-Russia border crossing has been closed to vehicles since February 2024, extended through at least 31 August 2026 — not relevant unless considering Narva as a day trip (the town itself is safe and within Schengen)."
+   "text": "The Narva-Russia border crossing has been closed to vehicles since February 2024, extended through at least 31 August 2026 — not relevant unless considering Narva as a day trip (the town itself is safe and within Schengen).",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5737,16 +5410,8 @@
    "route": "Tallinn + Riga + Vilnius (7-10 days) 🚌",
    "block": 2,
    "message": "notes: dated 2026-08, now past",
-   "text": "Web check (2026-08): the Rail Baltica high-speed line is not yet operational (target 2030, with the Latvian section possibly not until 2035), so this route travels entirely by bus (Lux Express/Ecolines, not train) — book ahead in high season, prices roughly $11-60 per leg."
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_baltics-poland-10-14-days",
-   "route": "Baltics + Poland (10-14 days) 🇵🇱",
-   "block": 3,
-   "message": "notes: dated 2026-03, now past",
-   "text": "General note: Poland's travel advisory has been green since 5 March 2026; some border crossings with Belarus/Ukraine/Kaliningrad remain closed or restricted, not relevant to this route."
+   "text": "Web check (2026-08): the Rail Baltica high-speed line is not yet operational (target 2030, with the Latvian section possibly not until 2035), so this route travels entirely by bus (Lux Express/Ecolines, not train) — book ahead in high season, prices roughly $11-60 per leg.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5755,7 +5420,8 @@
    "route": "Madeira (5-7 days) 🏝️",
    "block": 0,
    "message": "notes: dated 2026-08, now past",
-   "text": "Web check (2026-08): the Monte cable car is roughly €12.50 one-way/€19 return (verify the current price); levada walks can be temporarily closed after rain — check a local hiking app before setting out."
+   "text": "Web check (2026-08): the Monte cable car is roughly €12.50 one-way/€19 return (verify the current price); levada walks can be temporarily closed after rain — check a local hiking app before setting out.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5764,7 +5430,8 @@
    "route": "Madeira + Porto Santo (7-10 days) 🏝️",
    "block": 0,
    "message": "notes: dated 2026-08, now past",
-   "text": "Web check (2026-08): the Monte cable car is roughly €12.50 one-way/€19 return (verify the current price); levadas can close temporarily after rain."
+   "text": "Web check (2026-08): the Monte cable car is roughly €12.50 one-way/€19 return (verify the current price); levadas can close temporarily after rain.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5773,7 +5440,8 @@
    "route": "Azores Island Hopping (10-14 days) 🏝️",
    "block": 2,
    "message": "notes: dated 2026-08, now past",
-   "text": "Web check (2026-08): climbing Pico needs an advance online reservation plus a guide/permit through Parque Natural do Pico."
+   "text": "Web check (2026-08): climbing Pico needs an advance online reservation plus a guide/permit through Parque Natural do Pico.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5782,7 +5450,8 @@
    "route": "Ibiza (4-5 days) 🏝️",
    "block": 0,
    "message": "notes: dated 2026-08, now past",
-   "text": "Web check (2026-08): the Balearic eco-tax applies (see general note below); 2025-2026 overtourism protest sentiment is live here, expect full bars and waits at peak times in high season."
+   "text": "Web check (2026-08): the Balearic eco-tax applies (see general note below); 2025-2026 overtourism protest sentiment is live here, expect full bars and waits at peak times in high season.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5791,7 +5460,8 @@
    "route": "Balearic Islands (7-10 days) 🏝️",
    "block": 2,
    "message": "notes: dated 2026-08, now past",
-   "text": "Web check (2026-08): eco-tax applies per island — plan and book the multiple inter-island ferries/flights ahead; check the current visitor-cap discussion for updates, no hard legal limit yet as of 2026 but growing political pressure."
+   "text": "Web check (2026-08): eco-tax applies per island — plan and book the multiple inter-island ferries/flights ahead; check the current visitor-cap discussion for updates, no hard legal limit yet as of 2026 but growing political pressure.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5800,7 +5470,8 @@
    "route": "Corfu (5-7 days) 🏝️",
    "block": 0,
    "message": "notes: dated 2026-08, now past",
-   "text": "⚠️⚠️ Web check (2026-08): confirmed wildfire evacuation (~2,400 people) in mid-August 2026, fire reported \"under control\" as of 7 August 2026 — re-check the situation right before departure, this is an active-incident note, not a resolved one."
+   "text": "⚠️⚠️ Web check (2026-08): confirmed wildfire evacuation (~2,400 people) in mid-August 2026, fire reported \"under control\" as of 7 August 2026 — re-check the situation right before departure, this is an active-incident note, not a resolved one.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5809,7 +5480,8 @@
    "route": "Rhodes (5-7 days) 🏝️",
    "block": 0,
    "message": "notes: dated 2026-08, now past",
-   "text": "⚠️ Web check (2026-08): the Palace of the Grand Master runs a summer schedule (1 April-31 October) daily 08:00-20:00 and a winter schedule (1 November-31 March) Wed-Mon 08:30-15:30, closed Tuesday; ticket price revised since April 2025 to €20."
+   "text": "⚠️ Web check (2026-08): the Palace of the Grand Master runs a summer schedule (1 April-31 October) daily 08:00-20:00 and a winter schedule (1 November-31 March) Wed-Mon 08:30-15:30, closed Tuesday; ticket price revised since April 2025 to €20.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5818,7 +5490,8 @@
    "route": "Rhodes (5-7 days) 🏝️",
    "block": 0,
    "message": "notes: dated 2026-08, now past",
-   "text": "No active wildfire/evacuation reported on Rhodes as of 7 August 2026 — relatively calm compared to Crete/Corfu this season, though the general yellow Greece-wide wildfire advisory (since 4 August 2026) still applies."
+   "text": "No active wildfire/evacuation reported on Rhodes as of 7 August 2026 — relatively calm compared to Crete/Corfu this season, though the general yellow Greece-wide wildfire advisory (since 4 August 2026) still applies.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5827,7 +5500,8 @@
    "route": "Ionian Islands (5-7 days) 🏝️",
    "block": 0,
    "message": "notes: dated 2026-08, now past",
-   "text": "⚠️ Web check (2026-08): Kefalonia was not named in the wildfire sources consulted as of August 2026 — less acute than Corfu/Crete/Paros this season, though the general yellow Greece-wide wildfire advisory (since 4 August 2026) still applies."
+   "text": "⚠️ Web check (2026-08): Kefalonia was not named in the wildfire sources consulted as of August 2026 — less acute than Corfu/Crete/Paros this season, though the general yellow Greece-wide wildfire advisory (since 4 August 2026) still applies.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5836,7 +5510,8 @@
    "route": "Ionian Islands (5-7 days) 🏝️",
    "block": 1,
    "message": "notes: dated 2026-08, now past",
-   "text": "Same wildfire-advisory note as Kefalonia above — neither island was named in the sources consulted as of August 2026."
+   "text": "Same wildfire-advisory note as Kefalonia above — neither island was named in the sources consulted as of August 2026.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5845,7 +5520,8 @@
    "route": "Jersey + Guernsey (Channel Islands) (4-5 days) 🏝️",
    "block": 0,
    "message": "notes: dated 2026-04, now past",
-   "text": "UK ETA mandatory (£20, valid 2 years or until passport expiry) — since 23 April 2026 this single ETA also covers Jersey and Isle of Man, so a combined UK+Channel Islands+Isle of Man trip needs only one ETA."
+   "text": "UK ETA mandatory (£20, valid 2 years or until passport expiry) — since 23 April 2026 this single ETA also covers Jersey and Isle of Man, so a combined UK+Channel Islands+Isle of Man trip needs only one ETA.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5854,7 +5530,8 @@
    "route": "Isle of Man (3-4 days) 🏝️",
    "block": 0,
    "message": "notes: dated 2026-04, now past",
-   "text": "UK ETA mandatory (£20, valid 2 years or until passport expiry) — since 23 April 2026 covers the UK + Jersey + Guernsey + Isle of Man together, no separate application per island needed."
+   "text": "UK ETA mandatory (£20, valid 2 years or until passport expiry) — since 23 April 2026 covers the UK + Jersey + Guernsey + Isle of Man together, no separate application per island needed.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5863,16 +5540,8 @@
    "route": "Bosnia + Montenegro + Budva (7-10 days) ⛰️",
    "block": 0,
    "message": "transport_to_next: dated 2026-09, now past",
-   "text": "Overland from Trebinje into Montenegro towards Kotor — a non-Schengen-to-non-Schengen border, no EES here, generally quiet (25-90 minutes typical as of 2026-09) though summer peak weekends can still run to several hours."
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_hungary-austria-slovenia-7-10-days",
-   "route": "Hungary + Austria + Slovenia (7-10 days) 🚆",
-   "block": 1,
-   "message": "notes: dated 2026-09, now past",
-   "text": "Web check (2026-09): confirmed — Austria's border-control regime is an official, named extension that DOES cover Hungary and Slovenia too (alongside Czechia/Slovakia), currently running through at least 15 September 2026 (a 3-month extension from an earlier 15 June 2026 deadline; in place since 2015"
+   "text": "Overland from Trebinje into Montenegro towards Kotor — a non-Schengen-to-non-Schengen border, no EES here, generally quiet (25-90 minutes typical as of 2026-09) though summer peak weekends can still run to several hours.",
+   "field": "transport_to_next"
   },
   {
    "check": "C2",
@@ -5881,7 +5550,8 @@
    "route": "Czechia + Austria + Hungary (10-14 days) 🏛️",
    "block": 0,
    "message": "transport_to_next: dated 2026-09, now past",
-   "text": "Cross into Austria — a Schengen border, but Austria's border-control regime with Czechia is still active as of 2026-09 (extended a further three months to at least 15 September 2026, from an earlier 15 June 2026 deadline; running since 2015, repeatedly re-extended, likely again around that date): ex"
+   "text": "Cross into Austria — a Schengen border, but Austria's border-control regime with Czechia is still active as of 2026-09 (extended a further three months to at least 15 September 2026, from an earlier 15 June 2026 deadline; running since 2015, repeatedly re-extended, likely again around that date): expect spot ID checks, no visa needed.",
+   "field": "transport_to_next"
   },
   {
    "check": "C2",
@@ -5890,7 +5560,8 @@
    "route": "Czechia + Austria + Hungary (10-14 days) 🏛️",
    "block": 1,
    "message": "notes: dated 2026-09, now past",
-   "text": "Web check (2026-09): confirmed — Austria's border-control regime does cover Hungary too, not just Czechia/Slovakia, adding ad-hoc document checks (15-45 min) at motorway lay-bys/rail crossings/cross-border buses rather than a closed border."
+   "text": "Web check (2026-09): confirmed — Austria's border-control regime does cover Hungary too, not just Czechia/Slovakia, adding ad-hoc document checks (15-45 min) at motorway lay-bys/rail crossings/cross-border buses rather than a closed border.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5899,16 +5570,8 @@
    "route": "Central Europe Roadtrip (14 days) 🚂",
    "block": 3,
    "message": "transport_to_next: dated 2026-09, now past",
-   "text": "Train or drive to Vienna, about an hour — Schengen, but Web check (2026-09): this specific Bratislava-Vienna corridor IS affected by Austria's ongoing border-control regime (running through at least 15 September 2026, likely re-extended) — expect the same 15-45 min ad-hoc document checks as elsewher"
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_northern-europe-baltic-ferry-roadtrip-14-days",
-   "route": "Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️",
-   "block": 0,
-   "message": "transport_to_next: dated 2026-09, now past",
-   "text": "Train to Stockholm, Sweden — Web check (2026-09), significant change: the direct SJ X2000 Copenhagen-Stockholm service has been suspended since 2024 (fleet/re-approval issues) and, as of Sept 2026, its restart keeps getting pushed back (mid-2025 → early 2026 → \"autumn 2026,\" still no confirmed date)"
+   "text": "Train or drive to Vienna, about an hour — Schengen, but Web check (2026-09): this specific Bratislava-Vienna corridor IS affected by Austria's ongoing border-control regime (running through at least 15 September 2026, likely re-extended) — expect the same 15-45 min ad-hoc document checks as elsewhere on that regime, not a formality-free crossing.",
+   "field": "transport_to_next"
   },
   {
    "check": "C2",
@@ -5917,7 +5580,8 @@
    "route": "Balkan Roadtrip: Serbia + North Macedonia + Albania + Kosovo (14 days) 🔄",
    "block": 4,
    "message": "notes: dated 2026-08, now past",
-   "text": "⚠️⚠️ Web check (2026-08): the Serbia-Kosovo border crossing on the way back to Belgrade can give real administrative friction — Serbia does not recognize Kosovo's borders, and travelers who entered Kosovo from a country other than Serbia (as this route does, via Albania) have occasionally been chall"
+   "text": "⚠️⚠️ Web check (2026-08): the Serbia-Kosovo border crossing on the way back to Belgrade can give real administrative friction — Serbia does not recognize Kosovo's borders, and travelers who entered Kosovo from a country other than Serbia (as this route does, via Albania) have occasionally been challenged or refused entry into Serbia afterward, since Serbian officials can treat that as having entered Serbian territory through an unrecognized checkpoint.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5926,7 +5590,8 @@
    "route": "Balkan Roadtrip: Serbia + North Macedonia + Albania + Kosovo (14 days) 🔄",
    "block": 4,
    "message": "notes: dated 2026-09, now past",
-   "text": "Travel advisory: overwhelmingly green across this route; northern Kosovo (Mitrovica area) is orange since the August 2026 KFOR tensions — Web check (2026-09): this is actively escalating, not settled (KFOR began withdrawing from its permanent Mitrovica Ibar bridge checkpoint from ~10 August 2026, an"
+   "text": "Travel advisory: overwhelmingly green across this route; northern Kosovo (Mitrovica area) is orange since the August 2026 KFOR tensions — Web check (2026-09): this is actively escalating, not settled (KFOR began withdrawing from its permanent Mitrovica Ibar bridge checkpoint from ~10 August 2026, and Serbian officials have since escalated rhetoric sharply through early September, appealing to the EU/NATO/US over the bridge — no reports yet of actual violence on the ground, but watch the news closer to departure), while the Pristina/Prizren corridor this route actually uses remains explicitly unaffected and rated safe.",
+   "field": "notes"
   },
   {
    "check": "C2",
@@ -5935,7 +5600,8 @@
    "route": "Grand European Roadtrip (14-21 days) 🪣",
    "block": 4,
    "message": "transport_to_next: dated 2026-09, now past",
-   "text": "Web check (2026-09), minor precision: Croatia joined Schengen 1 January 2023, but Slovenia separately reinstated its own temporary controls on this border from 21 October 2023, only lifting them again on 11 June 2026 — so \"zero checks since 2023\" wasn't continuously true; it's accurate again now (Se"
+   "text": "Web check (2026-09), minor precision: Croatia joined Schengen 1 January 2023, but Slovenia separately reinstated its own temporary controls on this border from 21 October 2023, only lifting them again on 11 June 2026 — so \"zero checks since 2023\" wasn't continuously true; it's accurate again now (Sept 2026).",
+   "field": "transport_to_next"
   },
   {
    "check": "C2",
@@ -5944,16 +5610,8 @@
    "route": "East & Southeast Asia Grand Tour 🐉",
    "block": 4,
    "message": "notes: dated 2024-04, now past",
-   "text": "Taroko Gorge: parts of the gorge road and trails were closed after the April 2024 Hualien earthquake — check which sections have reopened before planning that day."
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_east-southeast-asia-grand-tour",
-   "route": "East & Southeast Asia Grand Tour 🐉",
-   "block": 4,
-   "message": "destination \"Taroko Gorge\": dated 2024-04, now past",
-   "text": "Access is still only partial as of 2026 following the April 2024 earthquake: Shakadang Trail, Swallow Grotto, Tunnel of Nine Turns, and Zhuilu Old Road remain closed indefinitely, while Dekalun, Taibido, Xiangde Temple, and the Tianxiang area trails have reopened — check current trail status before "
+   "text": "Taroko Gorge: parts of the gorge road and trails were closed after the April 2024 Hualien earthquake — check which sections have reopened before planning that day.",
+   "field": "notes"
   },
   {
    "check": "C3",
@@ -5962,46 +5620,6 @@
    "route": null,
    "block": null,
    "message": "Dutch-text scan: no real hits (only known place-name false positives)"
-  },
-  {
-   "check": "D1",
-   "severity": "low",
-   "route_id": "gt_seed_caribbean-amazon-expedition",
-   "route": "Caribbean & Amazon Expedition 🌴",
-   "block": 5,
-   "message": "#5 DM notes: the Sheet dropped the leading quote (CSV round trip)"
-  },
-  {
-   "check": "D1",
-   "severity": "low",
-   "route_id": "gt_seed_caribbean-islands-hop",
-   "route": "Caribbean Islands Hop 🏝️",
-   "block": 5,
-   "message": "#5 DM notes: the Sheet dropped the leading quote (CSV round trip)"
-  },
-  {
-   "check": "D1",
-   "severity": "low",
-   "route_id": "gt_seed_guadeloupe-dominica",
-   "route": "Guadeloupe & Dominica 🍃",
-   "block": 1,
-   "message": "#1 DM notes: the Sheet dropped the leading quote (CSV round trip)"
-  },
-  {
-   "check": "D1",
-   "severity": "info",
-   "route_id": "gt_seed_faeroer",
-   "route": "Faeröer 🐑",
-   "block": null,
-   "message": "route exists only in the Sheet (hand-made or removed from code)"
-  },
-  {
-   "check": "D1",
-   "severity": "info",
-   "route_id": "gt_seed_ijsland",
-   "route": "IJsland ❄️",
-   "block": null,
-   "message": "route exists only in the Sheet (hand-made or removed from code)"
   }
  ]
 }

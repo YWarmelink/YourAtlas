@@ -1,0 +1,194 @@
+{
+ "stale": [
+  {
+   "id": "S1",
+   "text": "⚠️ Current situation Cambodia-Thailand border (July 2026): the land border crossing at Poipet is currently closed due to the border conflict between the two countries (ceasefire since late 2025, the border itself remains closed) — this route no longer uses that border (see the 2026-08 change below).",
+   "places": [
+    {
+     "route_id": "gt_seed_eurasia-grand-tour",
+     "route": "Eurasia Grand Tour 🌏",
+     "block": null,
+     "field": "notes"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Access is still only partial as of 2026 following the April 2024 earthquake: Shakadang Trail, Swallow Grotto, Tunnel of Nine Turns, and Zhuilu Old Road remain closed indefinitely, while Dekalun, Taibido, Xiangde Temple, and the Tianxiang area trails have reopened — check current trail status before building an itinerary around it.",
+   "places": [
+    {
+     "route_id": "gt_seed_eurasia-grand-tour",
+     "route": "Eurasia Grand Tour 🌏",
+     "block": 16,
+     "field": "destination \"Taroko Gorge\""
+    },
+    {
+     "route_id": "gt_seed_east-asia-pacific",
+     "route": "East Asia & Pacific 🗻",
+     "block": 3,
+     "field": "destination \"Taroko Gorge\""
+    },
+    {
+     "route_id": "gt_seed_japan-taiwan",
+     "route": "Japan & Taiwan 🗻",
+     "block": 1,
+     "field": "destination \"Taroko Gorge\""
+    },
+    {
+     "route_id": "gt_seed_east-southeast-asia-grand-tour",
+     "route": "East & Southeast Asia Grand Tour 🐉",
+     "block": 4,
+     "field": "destination \"Taroko Gorge\""
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "⚠️ Safety, Queen Elizabeth NP/Bwindi corridor: the DRC border has been closed since 27 May 2026 due to an Ebola outbreak (last patient discharged 16 July 2026, the 42-day clock is running); in addition, on 1 November 2025 ADF-affiliated groups carried out coordinated attacks on security posts in Kasese, Bundibugyo and Fort Portal — the same western Rwenzori corridor where QENP and Bwindi lie (the travel advisory already flags QENP separately too, because of the fatal attack on tourists there in 2023).",
+   "places": [
+    {
+     "route_id": "gt_seed_africa-grand-tour",
+     "route": "Africa Grand Tour 🌍",
+     "block": 14,
+     "field": "notes"
+    },
+    {
+     "route_id": "gt_seed_east-africa-safari-classic",
+     "route": "East Africa Safari Classic 🦒",
+     "block": 2,
+     "field": "notes"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "text": "⚠️⚠️ IMPORTANT TRAVEL ADVISORY FINDING (2026-07): Lalibela, Gondar and the Simien Mountains all three lie in the Amhara region, which the Dutch travel advisory currently colors entirely RED ('do not travel') due to the escalating Fano militia-versus-government conflict (March-May 2026; roads to Bahir Dar contested; aid workers abducted in North Gondar).",
+   "places": [
+    {
+     "route_id": "gt_seed_africa-grand-tour",
+     "route": "Africa Grand Tour 🌍",
+     "block": 16,
+     "field": "notes"
+    },
+    {
+     "route_id": "gt_seed_horn-of-africa-egypt",
+     "route": "Horn of Africa & Egypt 🏺",
+     "block": 0,
+     "field": "notes"
+    },
+    {
+     "route_id": "gt_seed_ethiopia",
+     "route": "Ethiopia ⛪",
+     "block": 0,
+     "field": "notes"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "text": "Web check (2026-09): Kīlauea has been erupting intermittently since December 2024 in discrete episodes (each under 12 hours) separated by 2+ week pauses — currently paused (Episode 54 was 25 August 2026), Alert Level ADVISORY/Aviation color YELLOW, with USGS/HVO forecasting a possible Episode 55 window of 7-12 September 2026; a recent tourist fatality near the park after ignoring safety barriers reinforces that any future Big Island addition would need a 'check HVO within days of departure, stay behind barriers' caveat. 14 days, €2,240 ground costs.",
+   "places": [
+    {
+     "route_id": "gt_seed_hawaii",
+     "route": "Hawaii 🐢",
+     "block": null,
+     "field": "notes"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "text": "Deliberately just an overnight transit here, not a sightseeing stop — there's no direct international flight into Cusco (all arrivals route through Lima's Jorge Chávez airport, single-terminal since June 2026), but Lima itself is skippable as a destination: it's currently under a local state of emergency for rising violent crime (tourist zones Miraflores/San Isidro/Barranco are explicitly called low-risk even so, but there's no reason to linger).",
+   "places": [
+    {
+     "route_id": "gt_seed_peru-bolivia-andes-salt-flats-20-days",
+     "route": "Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂",
+     "block": 0,
+     "field": "notes"
+    }
+   ]
+  },
+  {
+   "id": "S7",
+   "text": "⚠️ Web check (2026-09): Bolivia's state of emergency (declared 20 June 2026 against road blockades) is due to expire ~18-20 September 2026 — an extension is politically contested (needs two-thirds approval in the Plurinational Legislative Assembly, unions publicly oppose it) and genuinely unresolved as of this writing.",
+   "places": [
+    {
+     "route_id": "gt_seed_peru-bolivia-andes-salt-flats-20-days",
+     "route": "Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂",
+     "block": 6,
+     "field": "notes"
+    }
+   ]
+  }
+ ],
+ "visas": [
+  {
+   "message": "ST: visa file says \"e-visa (exemption if holding a valid multi-entry Schengen visa/residen\" but the route has no visa extra",
+   "routes": [
+    "São Tomé & Príncipe 🍫"
+   ]
+  },
+  {
+   "message": "LK: visa file says \"e-visa/ETA\" but the route has no visa extra",
+   "routes": [
+    "Sri Lanka 🐆"
+   ]
+  },
+  {
+   "message": "TJ: visa priced differently across 4 routes: €18 / €63",
+   "routes": [
+    "Eurasia Grand Tour 🌏 €18",
+    "West Eurasia Overland 🐫 €18",
+    "Central Asia 🐎 €63",
+    "Uzbekistan & Tajikistan 🌄 €63"
+   ]
+  },
+  {
+   "message": "ID: visa priced differently across 3 routes: €29 / €30 / €53",
+   "routes": [
+    "Eurasia Grand Tour 🌏 €30",
+    "Southeast Asia Grand Loop 🛕 €29",
+    "East & Southeast Asia Grand Tour 🐉 €53"
+   ]
+  },
+  {
+   "message": "ZW: visa priced differently across 4 routes: €27 / €38",
+   "routes": [
+    "Africa Grand Tour 🌍 €38",
+    "Southern Africa Safari Loop 🦁 €27",
+    "Zimbabwe 🐆 €27",
+    "Victoria Falls & Kalahari Loop 🦏 €27"
+   ]
+  },
+  {
+   "message": "IN: visa priced differently across 2 routes: €22 / €36",
+   "routes": [
+    "India & Himalaya Expedition 🏔️ €36",
+    "North India 🕌 €22"
+   ]
+  },
+  {
+   "message": "SR: visa priced differently across 3 routes: €25 / €36",
+   "routes": [
+    "Caribbean & Amazon Expedition 🌴 €36",
+    "Suriname & Northern Brazil 🌴 €25",
+    "Suriname 🛶 €25"
+   ]
+  },
+  {
+   "message": "ST: visa priced differently across 2 routes: €40 / €75",
+   "routes": [
+    "West & Central Africa Expedition 🌍 €40",
+    "Central Africa & Islands 🦛 €75"
+   ]
+  },
+  {
+   "message": "GA: visa priced differently across 3 routes: €90 / €115",
+   "routes": [
+    "West & Central Africa Expedition 🌍 €90",
+    "Central Africa & Islands 🦛 €115",
+    "Gabon 🏕️ €90"
+   ]
+  }
+ ]
+}

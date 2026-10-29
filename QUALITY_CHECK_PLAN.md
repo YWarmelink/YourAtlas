@@ -1,6 +1,6 @@
 # Route Builder — Quality Check Plan
 
-Status: **Step 1 DONE (2026-10-29), Step 2 waiting for Youri's OK.** Started right after Phase 4 of `ROUTE_BUILDER_BUDGET_PLAN.md`
+Status: **Step 1 DONE; Step 2a + 2c + 2d DONE in code (2026-10-29), Sheet push pending Youri's OK; 2b not started.** Started right after Phase 4 of `ROUTE_BUILDER_BUDGET_PLAN.md`
 completed (all 452 routes have full costs). Phase 4 showed why this is needed: the pricing agents spotted
 ~25 text inconsistencies as a side effect, used ~140 fares estimated without a web search, and found
 conflicts between sources (visa file vs route notes, stale €/day in notes).
@@ -86,3 +86,13 @@ Total Step 2 if all sub-steps run: roughly 1-1.2M tokens; 2a alone is cheap and 
   - **To verify in 2b:** 220 flight legs (€105k) still rest on estimates; `flights_from_ams.csv` has
     107 medium vs 255 low rows. Fixed directly: 2 CSV rows (ZRH/MUC back) were missing their confidence.
   - Real cost of Step 1: ≈90k tokens (no agents).
+- 2026-10-29: **Step 2a + 2c + 2d done in code** (Youri chose 2a, 2c, 2d; 2b only explained). One fix set,
+  `RB_QUALITY_2026_10_*` + `rbMigrateQuality202610Fixes()`, Sheet: `scripts/fix_route_texts_in_sheet.js quality` (41 routes):
+  - 2a: East Asia & Pacific ending (builder override `RB_EAST_ASIA_PACIFIC_END`), 3 Dominica notes no longer start with a quote.
+    C1 turned out to be explained (notes quote older/standard rates; budgets sit at the "My plan" rate of the right variant),
+    so the audit was tuned instead of rewording ~200 notes.
+  - 2c: 2 Sonnet agents, 39 web searches, ≈173k agent tokens. 27 statements: 13 changed, 9 still true (wording refreshed),
+    5 unclear (kept). 11 visa extras corrected (TJ, ZW, SR, GA, ST, LK); see VISA_VACCINATION_RESEARCH.md.
+  - 2d: Uzbekistan & Tajikistan and Southern Cone stop order, Thailand/Sydney/California/West Coast wording (migration only;
+    the shared source text is right for the expeditions).
+  - Faeröer 🐑 / IJsland ❄️: Sheet-only leftovers (already in RB_REMOVED_ROUTE_IDS); `scripts/delete_removed_routes_from_sheet.js`.

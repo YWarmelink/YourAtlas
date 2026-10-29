@@ -1,0 +1,244 @@
+{
+ "stale": [
+  {
+   "id": "S8",
+   "text": "The Bastei Bridge itself is open, but the adjacent Felsenburg Neurathen ruin has been closed since September 2023 (rock stability, no confirmed 2026 reopening) — approach via the hiking path from Rathen rather than the bus/car-park side, and go early in the day (1.5 million visitors/year); check the National Park's 'closed paths' page beforehand.",
+   "places": [
+    {
+     "route_id": "gt_seed_dresden-saxon-switzerland-4-days",
+     "route": "Dresden + Saxon Switzerland (4 days) 🧗",
+     "block": 0,
+     "field": "notes"
+    }
+   ]
+  },
+  {
+   "id": "S9",
+   "text": "Skywalk/salt mine cable car ~€29 p.p. — reopening 1 September 2026 after works, so check the dates if travelling earlier in the season.",
+   "places": [
+    {
+     "route_id": "gt_seed_salzburg-berchtesgaden-hallstatt-5-days",
+     "route": "Salzburg + Berchtesgaden + Hallstatt (5 days) 🛥️",
+     "block": 2,
+     "field": "notes"
+    }
+   ]
+  },
+  {
+   "id": "S10",
+   "text": "Web check (2026-08): 2026 is Gaudí's centenary year (100 years since his death, June 1926) — the Sagrada Família's central tower is expected to be completed around then, so extra crowds and higher prices especially around June; normally book 2-3 weeks ahead, in 2026 better 1-2 months ahead, and book Park Güell 1-2 months ahead too.",
+   "places": [
+    {
+     "route_id": "gt_seed_barcelona-4-days",
+     "route": "Barcelona (4 days) 🎨",
+     "block": 0,
+     "field": "notes"
+    }
+   ]
+  },
+  {
+   "id": "S11",
+   "text": "Bulgaria adopted the euro on 1 January 2026 (fixed rate 1 EUR = 1.95583 BGN) and it became the sole legal currency on 1 February 2026 — dual BGN/EUR pricing is still required until 8 August 2026, useful for spotting outdated BGN-only prices online.",
+   "places": [
+    {
+     "route_id": "gt_seed_sofia-rila-monastery-5-days",
+     "route": "Sofia + Rila Monastery (5 days) ⛪",
+     "block": 0,
+     "field": "notes"
+    }
+   ]
+  },
+  {
+   "id": "S12",
+   "text": "The border is currently (August 2026) open to day-trippers, but this can change without notice given the war context.",
+   "places": [
+    {
+     "route_id": "gt_seed_moldova-transnistria-6-days",
+     "route": "Moldova + Transnistria (6 days) 🍇",
+     "block": 0,
+     "field": "notes"
+    }
+   ]
+  },
+  {
+   "id": "S13",
+   "text": "Web check (2026-08): Gellért Baths has been closed since 1 October 2025 and isn't expected to reopen until around 2028 — use Széchenyi instead (admission roughly €13-35).",
+   "places": [
+    {
+     "route_id": "gt_seed_budapest-4-days",
+     "route": "Budapest (4 days) 🛁",
+     "block": 0,
+     "field": "notes"
+    }
+   ]
+  },
+  {
+   "id": "S14",
+   "text": "Web check (2026-08): 2026 Ephesus entry is €40 (including the now-mandatory new 'Ephesus Experience' museum), the Terrace Houses cost an extra €15; in summer (3 June-1 October) there's an evening opening Wed-Sat until 23:00, but after 18:45 only the lower level is accessible and the Terrace Houses are already closed by then.",
+   "places": [
+    {
+     "route_id": "gt_seed_izmir-aegean-coast-ephesus-cesme-5-days",
+     "route": "Izmir + Aegean Coast: Ephesus & Çeşme (5 days) 📜",
+     "block": 0,
+     "field": "notes"
+    }
+   ]
+  },
+  {
+   "id": "S15",
+   "text": "Web check (2026-08): since 1 January 2026, Geirangerfjord and Nærøyfjord enforce a zero-emission rule for passenger ships under 10,000 GT (larger cruise ships get until 2032) — small fjord cruises/ferries are typically already electric/hybrid and keep running, but check per operator.",
+   "places": [
+    {
+     "route_id": "gt_seed_fjord-norway-9-days",
+     "route": "Fjord Norway (9 days) 🏔️",
+     "block": 0,
+     "field": "notes"
+    }
+   ]
+  },
+  {
+   "id": "S16",
+   "text": "Web check (2026-08): check just before departure whether Sweden's temporary ID checks on the Öresund crossing are currently active — these have been extended repeatedly since 2015, same caveat as noted on the Stockholm/Skåne routes above.",
+   "places": [
+    {
+     "route_id": "gt_seed_denmark-south-sweden-9-days",
+     "route": "Denmark + South Sweden (9 days) 🌉",
+     "block": 1,
+     "field": "notes"
+    }
+   ]
+  },
+  {
+   "id": "S17",
+   "text": "Iceland safety note (2026-08 web check, currently active — travel advisory last changed 21-04-2026, valid through 14-08-2026): yellow for the Reykjanes Peninsula specifically, due to ongoing volcanic activity near Grindavík — the risk of a new eruption remains.",
+   "places": [
+    {
+     "route_id": "gt_seed_reykjavik-golden-circle-5-days",
+     "route": "Reykjavík + Golden Circle (5 days) 🌋",
+     "block": 0,
+     "field": "notes"
+    }
+   ]
+  },
+  {
+   "id": "S18",
+   "text": "Web check (2026-08): the Book of Kells needs a pre-booked timed-entry ticket (€21.50-25 pp) — the Long Room is currently partly empty due to restoration work, open until 2027.",
+   "places": [
+    {
+     "route_id": "gt_seed_dublin-3-4-days",
+     "route": "Dublin (3-4 days) 🍺",
+     "block": 0,
+     "field": "notes"
+    }
+   ]
+  },
+  {
+   "id": "S19",
+   "text": "Web check (2026-08): a side trip into Northern Ireland still needs the UK ETA (mandatory since 2 April 2025 for Dutch passport holders, fee ~€23-24 since 8 April 2026, valid 2 years or until the passport expires, multiple entry) even though there's no border checkpoint on the road.",
+   "places": [
+    {
+     "route_id": "gt_seed_ireland-complete-10-14-days",
+     "route": "Ireland Complete (10-14 days) 🌈",
+     "block": 0,
+     "field": "notes"
+    }
+   ]
+  },
+  {
+   "id": "S20",
+   "text": "Web check (2026-08): Giant's Causeway entry is £9 (National Trust, includes parking) with a temporary VAT reduction in place until 1 September 2026 — the coastal path itself is free either way; a UK ETA is still required even when crossing into Northern Ireland via the Republic of Ireland border, since there's no checkpoint on the road itself.",
+   "places": [
+    {
+     "route_id": "gt_seed_northern-ireland-5-7-days",
+     "route": "Northern Ireland (5-7 days) 🌉",
+     "block": 0,
+     "field": "notes"
+    }
+   ]
+  },
+  {
+   "id": "S21",
+   "text": "Web check (2026-08): Giant's Causeway entry is £9 (National Trust, includes parking) with a temporary VAT reduction in place until 1 September 2026; the same single UK ETA already covers this leg, no separate entry formality is needed crossing from the Republic of Ireland.",
+   "places": [
+    {
+     "route_id": "gt_seed_england-wales-northern-ireland-roadtrip-10-14-days",
+     "route": "England + Wales + Northern Ireland Roadtrip (10-14 days) 🛣️",
+     "block": 1,
+     "field": "notes"
+    }
+   ]
+  },
+  {
+   "id": "S22",
+   "text": "Web check (2026-08): the Rail Baltica high-speed line is not yet operational (target 2030, with the Latvian section possibly not until 2035), so this route travels entirely by bus (Lux Express/Ecolines, not train) — book ahead in high season, prices roughly $11-60 per leg.",
+   "places": [
+    {
+     "route_id": "gt_seed_tallinn-riga-vilnius-7-10-days",
+     "route": "Tallinn + Riga + Vilnius (7-10 days) 🚌",
+     "block": 2,
+     "field": "notes"
+    }
+   ]
+  },
+  {
+   "id": "S23",
+   "text": "General note: Poland's travel advisory has been green since 5 March 2026; some border crossings with Belarus/Ukraine/Kaliningrad remain closed or restricted, not relevant to this route.",
+   "places": [
+    {
+     "route_id": "gt_seed_baltics-poland-10-14-days",
+     "route": "Baltics + Poland (10-14 days) 🇵🇱",
+     "block": 3,
+     "field": "notes"
+    }
+   ]
+  },
+  {
+   "id": "S24",
+   "text": "UK ETA mandatory (£20, valid 2 years or until passport expiry) — since 23 April 2026 this single ETA also covers Jersey and Isle of Man, so a combined UK+Channel Islands+Isle of Man trip needs only one ETA.",
+   "places": [
+    {
+     "route_id": "gt_seed_jersey-guernsey-channel-islands-4-5-days",
+     "route": "Jersey + Guernsey (Channel Islands) (4-5 days) 🏝️",
+     "block": 0,
+     "field": "notes"
+    }
+   ]
+  },
+  {
+   "id": "S25",
+   "text": "UK ETA mandatory (£20, valid 2 years or until passport expiry) — since 23 April 2026 covers the UK + Jersey + Guernsey + Isle of Man together, no separate application per island needed.",
+   "places": [
+    {
+     "route_id": "gt_seed_isle-of-man-3-4-days",
+     "route": "Isle of Man (3-4 days) 🏝️",
+     "block": 0,
+     "field": "notes"
+    }
+   ]
+  },
+  {
+   "id": "S26",
+   "text": "Web check (2026-09): confirmed — Austria's border-control regime is an official, named extension that DOES cover Hungary and Slovenia too (alongside Czechia/Slovakia), currently running through at least 15 September 2026 (a 3-month extension from an earlier 15 June 2026 deadline; in place since 2015, repeatedly re-extended, likely to be extended again around that date).",
+   "places": [
+    {
+     "route_id": "gt_seed_hungary-austria-slovenia-7-10-days",
+     "route": "Hungary + Austria + Slovenia (7-10 days) 🚆",
+     "block": 1,
+     "field": "notes"
+    }
+   ]
+  },
+  {
+   "id": "S27",
+   "text": "Train to Stockholm, Sweden — Web check (2026-09), significant change: the direct SJ X2000 Copenhagen-Stockholm service has been suspended since 2024 (fleet/re-approval issues) and, as of Sept 2026, its restart keeps getting pushed back (mid-2025 → early 2026 → \"autumn 2026,\" still no confirmed date).",
+   "places": [
+    {
+     "route_id": "gt_seed_northern-europe-baltic-ferry-roadtrip-14-days",
+     "route": "Northern Europe Baltic Ferry Roadtrip (14 days) ⛴️",
+     "block": 0,
+     "field": "transport_to_next"
+    }
+   ]
+  }
+ ]
+}

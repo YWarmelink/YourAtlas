@@ -226,16 +226,23 @@ function checkNoteDailyRates(app, routes) {
     (r.blocks || []).forEach((b, i) => {
       const days = num(b.days), budget = num(b.budget);
       if (!days || budget === null || !b.notes) return;
-      const hits = [...b.notes.matchAll(/€\s?(\d{2,4})(?:\s?(?:\/|per)\s?day)/gi)].map(m => Number(m[1]));
+      // skip per-day park/entrance fees ("Hwange NP entrance ~€22/day"), they aren't a daily budget
+      const hits = [...b.notes.matchAll(/€\s?(\d{2,4})(?:\s?(?:\/|per)\s?day)/gi)]
+        .filter(m => !/(entrance|fee|park|permit|ticket|pass|NP)\W{0,3}~?$/i.test(b.notes.slice(Math.max(0, m.index - 25), m.index)))
+        .map(m => Number(m[1]));
       if (!hits.length) return;
       const quoted = hits[hits.length - 1];  // the last one is the correction ("€158→€175/day")
       const rate = budget / days;
       if (Math.abs(quoted - rate) / rate <= 0.25) return;
       const row = app.rbDailyRateRow(b);
-      const preR2d = row && Math.abs(quoted - row.standard) / row.standard <= 0.25;
+      // R2d moved budgets to "My plan" (rbMyStyleDailyRate); a note quoting a higher, older rate is then expected
+      // (any variant of the country counts: "peak coast" Croatia is priced at that variant's My plan rate)
+      const variants = vm.runInContext(`RB_DAILY_RATES[${JSON.stringify(b.country_code)}] || []`, app);
+      const preR2d = row && (Math.abs(quoted - row.standard) / row.standard <= 0.25 ||
+                             (quoted > rate && variants.some(v => Math.abs(rate - app.rbMyStyleDailyRate(v)) / app.rbMyStyleDailyRate(v) <= 0.25)));
       add('C1', preR2d ? 'low' : 'medium', r, i,
           `${blockLabel(b, i)}: notes say €${quoted}/day, budget is €${Math.round(rate)}/day` +
-          (preR2d ? ' (the note quotes the standard level; budgets moved to "My plan" in R2d)' : ''),
+          (preR2d ? ' (the note quotes an older, higher level; budgets moved to "My plan" in R2d)' : ''),
           { quoted, rate: Math.round(rate), preR2d });
     });
   }
@@ -262,7 +269,7 @@ function checkStaleDates(routes) {
         if (/^(⚠️\s*)?(Time check|Built \(|Update \(|Note \(|Route-logic|Verified|Five smaller fixes|Translated)/i.test(sentence.trim())) continue;
         // medium = looks forward in time (so may no longer hold); low = a dated fact that is probably still true
         add('C2', /until|expir|is running|reopening|will |expected|scheduled|planned to|currently|still (?:only )?(?:closed|partial)|remains? closed|closed indefinitely|state of emergency|no confirmed/i.test(sentence) ? 'medium' : 'low',
-            r, t.block, `${t.where}: dated ${latest}, now past`, { text: sentence.trim().slice(0, 300) });
+            r, t.block, `${t.where}: dated ${latest}, now past`, { text: sentence.trim(), field: t.where });
       }
     }
   }

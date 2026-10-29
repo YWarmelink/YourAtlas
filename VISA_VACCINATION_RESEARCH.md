@@ -440,3 +440,19 @@ requirements_checked_date), all currently empty.
 - Batch 11: North America 2 (11): HT, HN, JM, MX, NI, PA, KN, LC, VC, TT, US
 - Batch 12: South America (12): AR, BO, BR, CL, CO, EC, GY, PY, PE, SR, UY, VE
 - Batch 13: Oceania (13): AU, KI, MH, FM, NR, NZ, PW, PG, WS, SB, TO, TV, VU
+
+## Quality check corrections (2026-10-29)
+
+Re-checked by web search for a Dutch passport, tourism, 2-4 weeks (`planning/quality/step2c/REVIEW_world.md`).
+Mostly secondary sources; amounts are what the Route Builder visa extras now use.
+
+| country_code | finding | fee used |
+|---|---|---|
+| LK | free tourist ETA for NL (one of 40 countries) since 25 May 2026; still apply online before arrival | €0 |
+| TJ | visa-free for NL (30 days); only the GBAO permit for the Pamirs (~USD 20) | €18 |
+| ZW | single-entry visa on arrival/e-visa USD 30 (KAZA Univisa USD 50 if combined with Zambia) | €27 |
+| SR | visa-free, but a paid online entry fee | €25 |
+| GA | e-visa single entry €70 + €15 processing | €85 |
+| ST | e-visa ~USD 55 — low confidence, guides disagree (USD 55/120, €20-30); check evisa.smf.st | €47 |
+| IN | e-Tourist 30 days USD 25; the 1-year USD 40 option stays on routes longer than 30 days | €22 / €36 |
+| ID | e-VOA IDR 500,000 (~€26); a rise to IDR 750,000 was proposed (Aug 2026), not confirmed in force | €29-30 (€53 incl. extension for 49 days) |

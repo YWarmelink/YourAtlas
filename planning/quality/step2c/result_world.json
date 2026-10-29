@@ -1,0 +1,119 @@
+{
+  "stale": [
+    {
+      "id": "S1",
+      "verdict": "still-true",
+      "replacement": "⚠️ Current situation Cambodia-Thailand border (as of October 2026): the land border crossings (incl. Poipet) have been closed since June 2025 because of the border conflict between the two countries, with no reopening announced (ceasefire since late 2025, the border itself remains closed) — this route no longer uses that border (see the 2026-08 change below).",
+      "sources": ["https://english.cambodiadaily.com/news/border-vendors-relieved-by-partial-opening-22130/"],
+      "note": "Search found a 7 Oct 2026 travel guide citing UK FCDO 28 Sep 2026: land borders still suspended; no reopening found. Secondary sources only."
+    },
+    {
+      "id": "S2",
+      "verdict": "changed",
+      "replacement": "Access is still only partial as of October 2026 following the April 2024 earthquake: the park's ecological protection area trails reopened on 29 August 2026, but Zhuilu Old Road is reported as still closed with no reopening date, and the status of Shakadang Trail, Swallow Grotto and Tunnel of Nine Turns is unclear or only partly reopened (Tunnel of Nine Turns was announced to reopen later in 2026) — check hike.taiwan.gov.tw for current trail status before building an itinerary around it.",
+      "sources": ["https://hike.taiwan.gov.tw/en/", "https://www.taipeitimes.com/News/taiwan/archives/2026/03/06/2003853379", "https://discoverdiscomfort.com/your-ultimate-guide-to-taroko-national-park/"],
+      "note": "Official 28 Aug 2026 notice: protection-area trails reopen 29 Aug, Zhuilu later. Swallow Grotto/Shakadang sources conflict; I did not confirm individual Dekalun/Taibido/Xiangde/Tianxiang status, so dropped that list."
+    },
+    {
+      "id": "S3",
+      "verdict": "changed",
+      "replacement": "⚠️ Safety, Queen Elizabeth NP/Bwindi corridor: Uganda closed its DRC border on 27 May 2026 because of an Ebola outbreak in eastern Congo (I found no report of a reopening as of October 2026 — check before travel); in addition, on 1 November 2025 ADF-affiliated groups carried out coordinated attacks on security posts in Kasese, Bundibugyo and Fort Portal — the same western Rwenzori corridor where QENP and Bwindi lie (the travel advisory already flags QENP separately too, because of the fatal attack on tourists there in 2023).",
+      "sources": ["https://www.teleamazonas.com/actualidad/noticias/internacional/uganda-cierre-temporal-frontera-congo-epidemia-ebola/", "https://www.berliner-zeitung.de/article/reaktion-auf-steigende-ebola-zahlen-uganda-schraenkt-grenzverkehr-zur-dr-kongo-ein-10038831"],
+      "note": "Closure 27 May 2026 confirmed, no reopening found. The 16 July discharge / 42-day clock claim could not be re-verified and would have run out around late Aug, so removed as stale."
+    },
+    {
+      "id": "S4",
+      "verdict": "still-true",
+      "replacement": "⚠️⚠️ IMPORTANT TRAVEL ADVISORY FINDING (checked 2026-10): Lalibela, Gondar and the Simien Mountains all three lie in the Amhara region, which is still reported as 'do not travel' (the Dutch advisory colored it entirely RED in 2026-07; UK advice also reported as against all travel to Amhara) due to the escalating Fano militia-versus-government conflict (March-May 2026; roads to Bahir Dar contested; aid workers abducted in North Gondar) — check nederlandwereldwijd.nl right before booking.",
+      "sources": ["https://www.hostelworld.com/blog/africa/ethiopia/", "https://uk.trip.com/moments/gondar-19995/"],
+      "note": "Only secondary 2026 sources found, no official page retrieved; no sign of de-escalation. Hedged and pointed to the Dutch advisory."
+    },
+    {
+      "id": "S5",
+      "verdict": "changed",
+      "replacement": "Web check (2026-10): Kīlauea has been erupting intermittently since December 2024 in discrete episodes (each typically under 12 hours) separated by pauses of weeks — Episode 54 was 25 August 2026 and Episode 55 began on 17 October 2026 (fountains of ~700 ft from the north vent, lasting several hours); expect further episodes, so check the alert level on the HVO site; a recent tourist fatality near the park after ignoring safety barriers reinforces that any future Big Island addition would need a 'check HVO within days of departure, stay behind barriers' caveat. 14 days, €2,240 ground costs.",
+      "sources": ["https://www.usgs.gov/observatories/hvo/news/photo-video-chronology-kilauea-summit-episode-55-0", "https://www.aajtak.in/science/story/kilauea-unleashes-700-foot-lava-fountains-in-episode-55-dskc-2674052-2026-10-18"],
+      "note": "USGS chronology: Episode 55 began 3:19 am HST 17 Oct 2026. Alert level/colour not re-checked, so removed those specifics."
+    },
+    {
+      "id": "S6",
+      "verdict": "unclear",
+      "replacement": "Deliberately just an overnight transit here, not a sightseeing stop — there's no direct international flight into Cusco (all arrivals route through Lima's Jorge Chávez airport, single-terminal since June 2026), but Lima itself is skippable as a destination: it's currently under a local state of emergency for rising violent crime (tourist zones Miraflores/San Isidro/Barranco are explicitly called low-risk even so, but there's no reason to linger).",
+      "sources": ["https://www.bernama.com/en/news.php?id=2493547"],
+      "note": "Search only found the emergency extended through Dec 2025; no 2026 source for current status or the single-terminal claim. Kept original."
+    },
+    {
+      "id": "S7",
+      "verdict": "changed",
+      "replacement": "⚠️ Web check (2026-10): Bolivia's state of emergency (declared 20 June 2026 against road blockades) was extended by 90 days by the Legislative Assembly on 17 September 2026, so it should run until roughly mid-December 2026 — it allows military deployment and restricts demonstrations; I found no report of new blockades since, but check the situation before travel.",
+      "sources": ["https://www.thestar.com.my/news/world/2026/09/17/bolivia-extends-state-of-emergency-over-risks-of-new-blockades", "https://www.internazionale.it/ultime-notizie-reuters/2026/09/17/bolivia-extends-state-of-emergency-over-risks-of-new-blockades"],
+      "note": "Reuters 17 Sep 2026: 90-day extension. Exact end date computed approximately."
+    }
+  ],
+  "visas": [
+    {
+      "country": "ST",
+      "requirement": "e-visa (portal evisa.smf.st); Dutch-specific exemption unconfirmed",
+      "fee_eur": 47,
+      "includes": "e-visa about USD 55 (one guide verified 2026-04); other guides say USD 120 or EUR 20-30, so LOW confidence",
+      "sources": ["https://www.visaverge.com/questions/complete-guide-to-getting-a-visa-for-sao-tome-and-principe/", "https://evisaguides.pages.dev/en/destination/sao-tome"],
+      "note": "Route values were EUR 40 / EUR 75; neither confirmed. Verify on the official portal before final pricing."
+    },
+    {
+      "country": "LK",
+      "requirement": "free tourist ETA (online, before arrival)",
+      "fee_eur": 0,
+      "includes": "free 30-day double-entry ETA for Netherlands among 40 countries since 25 May 2026; extension beyond 30 days is paid",
+      "sources": ["https://loyaltylobby.com/2026/05/27/sri-lanka-now-offers-free-tourist-visas-etas-for-nationals-of-40-countries/", "https://www.adaderana.lk/news.php?nid=122919"],
+      "note": "Route should carry a visa extra of EUR 0 (ETA still required) or a note, not be left silent. Portal eta.gov.lk."
+    },
+    {
+      "country": "TJ",
+      "requirement": "visa-free up to 30 days; e-visa only for longer stays",
+      "fee_eur": 0,
+      "includes": "visa-free for Dutch (30 days, one source says 45); GBAO permit for the Pamirs about USD 20 (~EUR 17) via evisa.tj or OVIR; e-visa about USD 30 (~EUR 26) only if staying longer",
+      "sources": ["https://www.peninsulavisa.com/visa-requirements/netherlands-to-tajikistan", "https://evisas.io/visa-requirements/nl/tj.md", "https://tajemb-my.org/consular-section/visa-information/"],
+      "note": "EUR 18 routes probably = GBAO permit only; EUR 63 unexplained (maybe e-visa + permit + extras). Use 0, or 17 if the route enters the Pamirs. No official fee schedule retrieved."
+    },
+    {
+      "country": "ID",
+      "requirement": "e-VOA / visa on arrival",
+      "fee_eur": 26,
+      "includes": "IDR 500,000 (~USD 28-30) for 30 days, extendable once; a hike to IDR 750,000 e-VOA / 1,000,000 on arrival was proposed Aug 2026 but not confirmed in force",
+      "sources": ["https://blog.wego.com/indonesia-visa-on-arrival/", "https://visasnews.com/en/indonesia-immigration-plans-to-raise-visa-on-arrival-fees-for-voa-and-e-voa/"],
+      "note": "If the hike is in force the e-VOA is about EUR 38. Check evisa.imigrasi.go.id. EUR 53 route looks like two entries or the arrival rate."
+    },
+    {
+      "country": "ZW",
+      "requirement": "e-visa / visa on arrival, single entry 30 days",
+      "fee_eur": 26,
+      "includes": "single-entry USD 30 (reported via Zimbabwe embassy, Dutch-specific figure unconfirmed, range up to USD 55); KAZA Univisa USD 50 (~EUR 43) if combined with Zambia",
+      "sources": ["https://safarifind.com/blog/zimbabwe-visa-for-dutch-citizens-2026", "https://www.zambiatourism.com/updated-visa-fees-for-2026/"],
+      "note": "EUR 38 on the Africa Grand Tour is probably a different assumption (e.g. double entry); use 26 for a single entry and 43 for a KAZA Univisa. Portal evisa.gov.zw."
+    },
+    {
+      "country": "IN",
+      "requirement": "e-visa (e-Tourist 30 days)",
+      "fee_eur": 22,
+      "includes": "USD 25 (July-March; USD 10 in April-June) plus about 3% bank charge; official table for Dutch not retrieved",
+      "sources": ["https://goasia.cc/en/news/india-e-visa-tourist-options-fees-documents-2026", "https://visasnews.com/en/india-why-the-off-season-tourist-e-visa-rate-is-more-attractive-in-2026/"],
+      "note": "Matches the EUR 22 North India route; EUR 36 on the Himalaya route looks like the 1-year option (~USD 40). Portal indianvisaonline.gov.in."
+    },
+    {
+      "country": "SR",
+      "requirement": "visa-free for tourism, but paid online entry fee before arrival",
+      "fee_eur": 25,
+      "includes": "entry fee EUR/USD 25 paid online; a separate VFS service fee of about EUR 8 reported (unconfirmed)",
+      "sources": ["https://www.japi-airport.com/?p=8947", "https://visasnews.com/le-suriname-augmente-le-prix-du-droit-dentree-entry-fee/"],
+      "note": "Could not confirm against an official Suriname page. EUR 36 on the Caribbean & Amazon route may include the service fee or another country."
+    },
+    {
+      "country": "GA",
+      "requirement": "e-visa (portal evisa.dgdi.ga)",
+      "fee_eur": 85,
+      "includes": "single-entry e-visa EUR 70 + EUR 15 processing fee (1-3 months); multiple entry EUR 185 + 15",
+      "sources": ["https://www.legit.ng/people/1720369-gabon-publishes-evisa-fees-single-multiple-entry-travellers-mentions-stay-duration/", "https://visasnews.com/en/gabon-toward-a-fully-digital-e-visa-by-december-2025/"],
+      "note": "Neither EUR 90 nor EUR 115 confirmed; some aggregators claim visa-free for Dutch, which conflicts with other sources (treat as unreliable). Verify on the portal."
+    }
+  ]
+}

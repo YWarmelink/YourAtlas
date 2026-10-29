@@ -57,6 +57,8 @@ const FIXES = {
     'gt_seed_argentine-patagonia',
     'gt_seed_west-africa-overland',
   ] },
+  // quality check 2026-10: texts, destination order and visa extras; the id list lives in the app
+  quality: { fn: 'rbFixQuality202610Route', idsFn: 'rbQuality202610RouteIds' },
 };
 
 function loadApp() {
@@ -76,7 +78,7 @@ async function main() {
   const app = loadApp();
   const routes = await vm.runInContext('dataService.getGrandTripsFull()', app);
   const toPush = [];
-  for (const id of fix.ids) {
+  for (const id of fix.ids || app[fix.idsFn]()) {
     const route = routes.find(r => r.id === id);
     if (!route) { console.log(`  MISSING  ${id}`); continue; }
     const before = route.blocks.map(b => `${b.country_code}${b.days}d/€${b.budget}`).join(' ');
