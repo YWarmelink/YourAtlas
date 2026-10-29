@@ -133,3 +133,4 @@ Jersey/IoM), unpriced tours (Milford Sound, whale swims, DMZ, Wadi Rum, ...). Mo
 | 2e-7 | GD GP GT GY HN JM LC MX NI PA PE SR SV US US/big | done (14 confirmed, 1 adjusted: GT; 28 searches) | 107,756 |
 | 2e-8 | UY AU CK FJ NZ PG PW TO VU WS GL SJ AQ | done (10 confirmed, 3 adjusted: CK PW VU; 34 searches) | 116,963 |
 | 2e-4b | re-check of batch 4's 10 adjusted rows (CI CM CV GA GH GM LS MW/safari MZ MZ/safari) | done (8 confirmed = batch-4 proposals rejected, 2 adjusted: GH MZ/safari 215/430; 21 searches) | 95,064 |
+**2e status (2026-10-29):** all 9 batches done, 118 rows checked (95 confirmed, 23 adjusted), merged into the CSV + reference (`2e9af43`, local). Effect on My plan budgets (r2d_style_budgets.js --plan, diff before/after): only 15 blocks move >15%: BO 6, ST 3, BG 4, BJ 2 = +€1,327 total. NEXT: Youri's OK on those → migration + Sheet push. (34 older budget drifts were already in the plan before 2e; not part of this.)
