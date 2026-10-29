@@ -49,8 +49,12 @@ const PARTS = {
 };
 const KEYS = ['total', 'accommodation', 'food', 'local_transport', 'activities'];
 
-const results = fs.readdirSync(DIR).filter(f => /^result_\d+\.json$/.test(f)).sort()
-  .flatMap(f => JSON.parse(fs.readFileSync(path.join(DIR, f), 'utf8')).map(r => ({ ...r, file: f })));
+// result_4b.json etc. are re-checks: a later file's entry replaces an earlier one for the same row.
+const latest = new Map();
+fs.readdirSync(DIR).filter(f => /^result_\d+[a-z]?\.json$/.test(f)).sort()
+  .forEach(f => JSON.parse(fs.readFileSync(path.join(DIR, f), 'utf8'))
+    .forEach(r => latest.set(r.code + '|' + (r.variant || ''), { ...r, file: f })));
+const results = [...latest.values()];
 
 const counts = { adjusted: 0, confirmed: 0, unclear: 0, missing: 0, problems: 0 };
 for (const r of results) {

@@ -1,0 +1,500 @@
+[
+ {
+  "code": "GD",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 71,
+   "accommodation": 45,
+   "food": 18,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 128,
+   "accommodation": 80,
+   "food": 28,
+   "local_transport": 8,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 206,
+   "accommodation": 140,
+   "food": 38,
+   "local_transport": 10,
+   "activities": 18
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.thetripverdict.com/grenada-travel-costs",
+   "https://citycost.org/grenada/"
+  ],
+  "note": "Guesthouses $50-113, dorms scarce, meals $10-15, minibus $1-4, backpacker $80-120/day (USD, modelled); current within 15%"
+ },
+ {
+  "code": "GP",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 66,
+   "accommodation": 40,
+   "food": 18,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 135,
+   "accommodation": 85,
+   "food": 30,
+   "local_transport": 8,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 227,
+   "accommodation": 150,
+   "food": 45,
+   "local_transport": 12,
+   "activities": 20
+  },
+  "confidence": "low",
+  "sources": [
+   "https://lesdeuxpiedsdehors.com/en/budget-to-travel-to-guadeloupe/"
+  ],
+  "note": "Forum 2024-25: guesthouse EUR 45, EUR 50-75/day budget, bus EUR 2; calculators run high; current within 15%"
+ },
+ {
+  "code": "GT",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 27,
+   "accommodation": 9,
+   "food": 9,
+   "local_transport": 3,
+   "activities": 6
+  },
+  "standard": {
+   "total": 53,
+   "accommodation": 28,
+   "food": 12,
+   "local_transport": 4,
+   "activities": 9
+  },
+  "comfort": {
+   "total": 95,
+   "accommodation": 55,
+   "food": 20,
+   "local_transport": 8,
+   "activities": 12
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hostelz.com/backpacker-budget/guatemala",
+   "https://livinginguatemala.com/guides/guatemala-travel-budget-per-day/",
+   "https://www.jonnymelon.com/backpacking-guatemala/"
+  ],
+  "note": "Dorm median ~US$11 Antigua, $8-11 Atitlan/Flores (EUR 9-10); comedor/street meals Q30-40; sources put backpacker days at $30-45 (EUR 27-40) vs our 21; standard/comfort fine"
+ },
+ {
+  "code": "GY",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 50,
+   "accommodation": 30,
+   "food": 12,
+   "local_transport": 4,
+   "activities": 4
+  },
+  "standard": {
+   "total": 91,
+   "accommodation": 55,
+   "food": 18,
+   "local_transport": 8,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 167,
+   "accommodation": 110,
+   "food": 30,
+   "local_transport": 12,
+   "activities": 15
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.travelwithhello.com/blog/guyana-travel-budget-guide",
+   "https://www.amigosim.com/blog/what-does-a-trip-to-guyana-cost"
+  ],
+  "note": "Georgetown guesthouse $20-40, cook-shop meals $2-8/local $5-15, backpacker $40-60/day; interior pricier"
+ },
+ {
+  "code": "HN",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 24,
+   "accommodation": 10,
+   "food": 8,
+   "local_transport": 2,
+   "activities": 4
+  },
+  "standard": {
+   "total": 50,
+   "accommodation": 28,
+   "food": 11,
+   "local_transport": 3,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 84,
+   "accommodation": 50,
+   "food": 18,
+   "local_transport": 6,
+   "activities": 10
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hostelz.com/en/hostels-in/Honduras",
+   "https://latamtravellers.com/blogs/news/cheapest-central-american-country-2026"
+  ],
+  "note": "Dorm avg ~$10 (Bay Islands $10-15), backpacker day $25-45 (EUR 22-40); our 21 is at the low edge, nudged to 24 (within 15%, kept)"
+ },
+ {
+  "code": "JM",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 43,
+   "accommodation": 20,
+   "food": 12,
+   "local_transport": 5,
+   "activities": 6
+  },
+  "standard": {
+   "total": 120,
+   "accommodation": 70,
+   "food": 25,
+   "local_transport": 10,
+   "activities": 15
+  },
+  "comfort": {
+   "total": 186,
+   "accommodation": 120,
+   "food": 32,
+   "local_transport": 14,
+   "activities": 20
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hostelz.com/backpacker-budget/jamaica",
+   "https://www.jamaicaobserver.com/2026/07/15/taxi-fares-food-push-inflation-29-month-high/"
+  ],
+  "note": "Dorm ~$17, cookshop jerk $4-7, route taxi ~$2; hostelz model $82/day is social-backpacker; current within 15%"
+ },
+ {
+  "code": "LC",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 72,
+   "accommodation": 45,
+   "food": 18,
+   "local_transport": 4,
+   "activities": 5
+  },
+  "standard": {
+   "total": 140,
+   "accommodation": 85,
+   "food": 30,
+   "local_transport": 10,
+   "activities": 15
+  },
+  "comfort": {
+   "total": 222,
+   "accommodation": 150,
+   "food": 40,
+   "local_transport": 14,
+   "activities": 18
+  },
+  "confidence": "low",
+  "sources": [
+   "https://radicalstorage.com/travel/is-st-lucia-expensive/",
+   "https://www.hostelz.com/en/hostels/Saint-Lucia/Soufriere"
+  ],
+  "note": "Guesthouse $60-70, hostel/guesthouse from $50, grill plates $8-12, minibus $1-4; forum $95-115/day; current within 15%"
+ },
+ {
+  "code": "MX",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 32,
+   "accommodation": 14,
+   "food": 10,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 82,
+   "accommodation": 45,
+   "food": 18,
+   "local_transport": 5,
+   "activities": 14
+  },
+  "comfort": {
+   "total": 138,
+   "accommodation": 80,
+   "food": 28,
+   "local_transport": 10,
+   "activities": 20
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://simbye.com/blogs/blog/how-much-does-trip-to-mexico-cost-2026-budget-breakdown",
+   "https://www.bootsnall.com/data/cost-of-living/cost-of-living-mexico"
+  ],
+  "note": "Dorm $10-20 inland, $18-35 beach (avg ~EUR 14), street meals $2-6, guides $17-35 lean vs hostelz $70 modelled; current holds"
+ },
+ {
+  "code": "NI",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 21,
+   "accommodation": 8,
+   "food": 7,
+   "local_transport": 2,
+   "activities": 4
+  },
+  "standard": {
+   "total": 47,
+   "accommodation": 25,
+   "food": 11,
+   "local_transport": 3,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 79,
+   "accommodation": 45,
+   "food": 18,
+   "local_transport": 6,
+   "activities": 10
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://latamtravellers.com/blogs/news/cheapest-central-american-country-2026",
+   "https://www.budgetyourtrip.com/compare/san-juan-del-sur-vs-granada-3616726-3619136"
+  ],
+  "note": "Dorm $8-12, comedor $2-4, chicken bus $2-5, hostelz $34/day modelled, mid $40; current within 15%"
+ },
+ {
+  "code": "PA",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 31,
+   "accommodation": 14,
+   "food": 10,
+   "local_transport": 2,
+   "activities": 5
+  },
+  "standard": {
+   "total": 83,
+   "accommodation": 50,
+   "food": 18,
+   "local_transport": 5,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 135,
+   "accommodation": 85,
+   "food": 26,
+   "local_transport": 8,
+   "activities": 16
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.machupicchu.org/panama-city-budget-guide-2026-complete-cost-breakdown.htm",
+   "https://www.hostelz.com/en/backpacker-budget/panama"
+  ],
+  "note": "Dorm $10-20, fonda meal $2-8, mid-range sit-down $12-25, PC 3-star $80-140; hostelz $72 modelled; current within 15%"
+ },
+ {
+  "code": "PE",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 26,
+   "accommodation": 10,
+   "food": 8,
+   "local_transport": 2,
+   "activities": 6
+  },
+  "standard": {
+   "total": 60,
+   "accommodation": 30,
+   "food": 13,
+   "local_transport": 4,
+   "activities": 13
+  },
+  "comfort": {
+   "total": 99,
+   "accommodation": 55,
+   "food": 20,
+   "local_transport": 6,
+   "activities": 18
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hostelz.com/en/backpacker-budget/peru",
+   "https://www.bootsnall.com/data/cost-of-living/cost-of-living-peru",
+   "https://www.novo-monde.com/en/travel-budget-peru"
+  ],
+  "note": "Cusco dorm ~$12 early 2026, menu del dia $3-6, strict backpacker $25-40/day, mid-range $50-80; nudged bp to 26"
+ },
+ {
+  "code": "SR",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 42,
+   "accommodation": 25,
+   "food": 10,
+   "local_transport": 3,
+   "activities": 4
+  },
+  "standard": {
+   "total": 81,
+   "accommodation": 50,
+   "food": 16,
+   "local_transport": 5,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 138,
+   "accommodation": 90,
+   "food": 26,
+   "local_transport": 8,
+   "activities": 14
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.travelwithhello.com/blog/suriname-travel-budget-guide",
+   "https://www.hostelz.com/en/hostels-in/Suriname"
+  ],
+  "note": "Dorm $17-27 / guesthouse ~$30, roti $4-6, budget $55/day (EUR 40-55); current within 15%"
+ },
+ {
+  "code": "SV",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 26,
+   "accommodation": 12,
+   "food": 8,
+   "local_transport": 2,
+   "activities": 4
+  },
+  "standard": {
+   "total": 53,
+   "accommodation": 30,
+   "food": 12,
+   "local_transport": 3,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 91,
+   "accommodation": 55,
+   "food": 20,
+   "local_transport": 6,
+   "activities": 10
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hostelz.com/en/backpacker-budget/el-salvador",
+   "https://www.jetsetteralerts.com/cost-to-visit-el-salvador/"
+  ],
+  "note": "Dorm $10-12, hostel calc $36/day (modelled), hotels $35-40 near El Tunco, mid-range ~$70-110/day; current holds"
+ },
+ {
+  "code": "US",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 86,
+   "accommodation": 32,
+   "food": 24,
+   "local_transport": 12,
+   "activities": 18
+  },
+  "standard": {
+   "total": 168,
+   "accommodation": 100,
+   "food": 38,
+   "local_transport": 10,
+   "activities": 20
+  },
+  "comfort": {
+   "total": 298,
+   "accommodation": 190,
+   "food": 60,
+   "local_transport": 18,
+   "activities": 30
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hostelz.com/en/backpacker-budget/usa",
+   "https://www.pwc.com/us/en/industries/assets/pwc-2026-us-hospitality-directions-outlook-tables.pdf",
+   "https://hoodline.com/2026/01/fare-alert-nyc-subway-and-bus-prices-rise-to-3-as-mta-adjusts-budget-amid-inflation/"
+  ],
+  "note": "Dorm avg ~$30 (EUR 27), national ADR $164 (EUR 146), economy ~$95, $20 basic meal; budget $100-123/day, mid-range ~$325 (EUR 290) vs our comfort 298; base values hold"
+ },
+ {
+  "code": "US",
+  "variant": "big cities (NYC/SF)",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 105,
+   "accommodation": 45,
+   "food": 28,
+   "local_transport": 12,
+   "activities": 20
+  },
+  "standard": {
+   "total": 263,
+   "accommodation": 168,
+   "food": 50,
+   "local_transport": 15,
+   "activities": 30
+  },
+  "comfort": {
+   "total": 417,
+   "accommodation": 280,
+   "food": 75,
+   "local_transport": 22,
+   "activities": 40
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.machupicchu.org/new-york-city-budget-guide-2026-complete-cost-breakdown.htm",
+   "https://www.machupicchu.org/san-francisco-budget-guide-2026-complete-cost-breakdown.htm",
+   "https://www.jetsetteralerts.com/cost-to-visit-san-francisco/"
+  ],
+  "note": "SF/NYC dorm $50-90, budget day $80-165, NYC dinner ~$50, subway $3, 3-star $200-350; standard nudged to 263 (acc/food up); comfort 417 ok"
+ }
+]

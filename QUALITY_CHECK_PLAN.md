@@ -128,7 +128,8 @@ Jersey/IoM), unpriced tours (Milford Sound, whale swims, DMZ, Wadi Rum, ...). Mo
 | 2e-2 | JE LI LT LU LV MC MD MK MT NL PL RO RS SK SM | done (14 confirmed, 1 adjusted: MD; 15 searches) | 77,423 |
 | 2e-3 | XK AE BH BN BT BT/tour MN MV MV/resort OM QA TJ TL AO BJ | done (10 confirmed, 5 adjusted: BT/tour BJ BH XK MV/resort; 16 searches) | 79,467 |
 | 2e-4 | CI CM CV ET GA GH GM LS MG MU MW MW/safari MZ MZ/safari RW | done (5 confirmed, 10 adjusted, mostly aggregator sources; MZ/safari flagged; 12 searches) | 83,962 |
-| 2e-5 | RW/safari SC SN ST SZ TG TN UG/safari ZA/safari ZM ZM/safari ZW ZW/safari AR AR/Patagonia | todo | |
-| 2e-6 | AW BO BQ BR BZ CA CL CL/Patagonia CO CR CU CW DM EC EC/Galápagos | todo | |
-| 2e-7 | GD GP GT GY HN JM LC MX NI PA PE SR SV US US/big | todo | |
-| 2e-8 | UY AU CK FJ NZ PG PW TO VU WS GL SJ AQ | todo | |
+| 2e-5 | RW/safari SC SN ST SZ TG TN UG/safari ZA/safari ZM ZM/safari ZW ZW/safari AR AR/Patagonia | done (10 confirmed, 5 adjusted: ST ZM/safari ZW/safari TG SN, all low; 38 searches) | 112,962 |
+| 2e-6 | AW BO BQ BR BZ CA CL CL/Patagonia CO CR CU CW DM EC EC/Galápagos | done (13 confirmed, 2 adjusted: BO CU; 28 searches) | 101,043 |
+| 2e-7 | GD GP GT GY HN JM LC MX NI PA PE SR SV US US/big | done (14 confirmed, 1 adjusted: GT; 28 searches) | 107,756 |
+| 2e-8 | UY AU CK FJ NZ PG PW TO VU WS GL SJ AQ | done (10 confirmed, 3 adjusted: CK PW VU; 34 searches) | 116,963 |
+| 2e-4b | re-check of batch 4's 10 adjusted rows (CI CM CV GA GH GM LS MW/safari MZ MZ/safari) | done (8 confirmed = batch-4 proposals rejected, 2 adjusted: GH MZ/safari 215/430; 21 searches) | 95,064 |

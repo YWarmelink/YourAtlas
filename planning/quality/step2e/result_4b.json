@@ -1,0 +1,338 @@
+[
+ {
+  "code": "CI",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 30,
+   "accommodation": 15,
+   "food": 9,
+   "local_transport": 3,
+   "activities": 3
+  },
+  "standard": {
+   "total": 59,
+   "accommodation": 35,
+   "food": 12,
+   "local_transport": 6,
+   "activities": 6
+  },
+  "comfort": {
+   "total": 120,
+   "accommodation": 75,
+   "food": 25,
+   "local_transport": 12,
+   "activities": 8
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.numbeo.com/cost-of-living/in/Abidjan",
+   "https://www.hostelz.com/en/hostels/Ivory-Coast/Abidjan",
+   "https://www.hostelz.com/en/hostels/Ivory-Coast/Grand-Bassam"
+  ],
+  "note": "Observed: Abidjan local meal CFA 1,500-2,500 (EUR 2.5-4), dorms $4-6 (listed), private room Hostel Abidjan ~$38. Previous proposal (40/80/130) rests on modelled sites; DISAGREE, current values hold."
+ },
+ {
+  "code": "CM",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 26,
+   "accommodation": 13,
+   "food": 8,
+   "local_transport": 3,
+   "activities": 2
+  },
+  "standard": {
+   "total": 49,
+   "accommodation": 28,
+   "food": 10,
+   "local_transport": 6,
+   "activities": 5
+  },
+  "comfort": {
+   "total": 100,
+   "accommodation": 65,
+   "food": 20,
+   "local_transport": 10,
+   "activities": 5
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.mylifeelsewhere.com/cost-of-living/yaounde-c8256",
+   "https://explore.atmfeesaver.com/community/money-travel-in-africa-travel-budgets/cash-per-day-in-cameroon/"
+  ],
+  "note": "Aug-2025 traveller reports: Yaounde hostels $12-15, AC hotel $30-40, roadside meal $3-5, bush taxi $1-2; inexpensive meal XAF ~2,500-3,000; Douala business hotel $65. Previous proposal (32/62/105) partly follows pricey Douala; DISAGREE mostly, current holds."
+ },
+ {
+  "code": "CV",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 38,
+   "accommodation": 20,
+   "food": 11,
+   "local_transport": 3,
+   "activities": 4
+  },
+  "standard": {
+   "total": 70,
+   "accommodation": 45,
+   "food": 14,
+   "local_transport": 4,
+   "activities": 7
+  },
+  "comfort": {
+   "total": 135,
+   "accommodation": 90,
+   "food": 28,
+   "local_transport": 8,
+   "activities": 9
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.hostelz.com/en/hostels/Cape-Verde/Mindelo",
+   "https://www.hostelz.com/backpacker-budget/cape-verde"
+  ],
+  "note": "Mindelo dorm ~EUR 12 (Simabo extra bed EUR 12; hostelz avg $12); only modelled totals found for food/activities (hostelz $21 food is a model). Previous proposal inflates food/activities from modelled data; DISAGREE, current holds."
+ },
+ {
+  "code": "GA",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 66,
+   "accommodation": 40,
+   "food": 16,
+   "local_transport": 6,
+   "activities": 4
+  },
+  "standard": {
+   "total": 140,
+   "accommodation": 95,
+   "food": 25,
+   "local_transport": 12,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 250,
+   "accommodation": 170,
+   "food": 45,
+   "local_transport": 20,
+   "activities": 15
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hotelscombined.co.uk/Place/Libreville.htm",
+   "https://www.combien-coute.net/hotel2/gabon/libreville/",
+   "https://www.mylifeelsewhere.com/cost-of-living/libreville-c779"
+  ],
+  "note": "Libreville: cheapest room EUR 26-55, 1* min EUR 53, 2* EUR 73-157 (avg 108), 3* ~$80, 4* ~$162; basic meal ~EUR 16. Totals stay within 15% of current (66/140/250 vs 60/125/240). Previous proposal (85/150/260) too high at backpacker; PARTLY agree on std accommodation."
+ },
+ {
+  "code": "GH",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 35,
+   "accommodation": 15,
+   "food": 10,
+   "local_transport": 5,
+   "activities": 5
+  },
+  "standard": {
+   "total": 65,
+   "accommodation": 40,
+   "food": 12,
+   "local_transport": 6,
+   "activities": 7
+  },
+  "comfort": {
+   "total": 115,
+   "accommodation": 70,
+   "food": 24,
+   "local_transport": 12,
+   "activities": 9
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hostelz.com/en/backpacker-budget/ghana",
+   "https://www.tripbase.com/destinations/accra-ghana/budget/",
+   "https://exiap.co.uk/guides/spending-money-how-much-for-ghana"
+  ],
+  "note": "Dorms $12-18 (Accra), chop-bar meals $1-3 / sit-down $5-10, Aug-2025 traveller reports $40-45/day, mid-range Accra hotel ~$40, Cape Coast castle tour GHS 120-180. Small raise at backpacker only; previous proposal (40/90/150) relies on gotripzi; DISAGREE, std/comfort hold."
+ },
+ {
+  "code": "GM",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 24,
+   "accommodation": 11,
+   "food": 7,
+   "local_transport": 3,
+   "activities": 3
+  },
+  "standard": {
+   "total": 50,
+   "accommodation": 30,
+   "food": 11,
+   "local_transport": 4,
+   "activities": 5
+  },
+  "comfort": {
+   "total": 103,
+   "accommodation": 65,
+   "food": 20,
+   "local_transport": 8,
+   "activities": 10
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.booking.com/guest-house/city/gm/kololi.html",
+   "https://www.hotelscombined.ca/Place/Serrekunda.htm",
+   "https://www.travelwithhello.com/blog/gambia-3-day-itinerary"
+  ],
+  "note": "Kololi guesthouses $22-63 per room, hotels ~EUR 30+, forum budget $20-25/day, street food <$2, Kololi dinner ~$20. Previous proposal (30/62/110) from modelled sites; DISAGREE, current holds (std/comfort nudged within 15%)."
+ },
+ {
+  "code": "LS",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 31,
+   "accommodation": 16,
+   "food": 8,
+   "local_transport": 3,
+   "activities": 4
+  },
+  "standard": {
+   "total": 65,
+   "accommodation": 40,
+   "food": 12,
+   "local_transport": 5,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 125,
+   "accommodation": 80,
+   "food": 22,
+   "local_transport": 10,
+   "activities": 13
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.semonkonglodge.com/semonkong-lodge-accommodation-and-activity-rates/",
+   "https://www.mylifeelsewhere.com/cost-of-living/maseru-c1121",
+   "https://explore.atmfeesaver.com/community/money-travel-in-africa-travel-budgets/daily-travel-budget-for-lesotho/"
+  ],
+  "note": "Semonkong Lodge 2025-26: dorm LSL 330 (~EUR 17), camping LSL 180, en-suite B&B LSL 1,150; guesthouse ~LSL 500; Maseru hotels $107+; basic meal ~$9-11; traveller reports $35 bp, $60 mid. Previous proposal (32/75/125) std too high; PARTLY agree on comfort only, current holds."
+ },
+ {
+  "code": "MW",
+  "variant": "safari (lodge/tented camp + game drives + park fees)",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 125,
+   "accommodation": 50,
+   "food": 15,
+   "local_transport": 5,
+   "activities": 55
+  },
+  "standard": {
+   "total": 195,
+   "accommodation": 110,
+   "food": 20,
+   "local_transport": 5,
+   "activities": 60
+  },
+  "comfort": {
+   "total": 320,
+   "accommodation": 195,
+   "food": 35,
+   "local_transport": 5,
+   "activities": 85
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://safarifind.com/blog/malawi-safari-lodges-2026-luxury-vs-budget-under-300-night",
+   "https://www.safari.co.za/Malawi_Safari_Lodges-travel/pricing_safari-lodge-mvuu-camp-liwonde-park.html"
+  ],
+  "note": "Chimwala Bush Camp $200 pp all-in (1 activity), budget Liwonde camps $150-200, Mvuu $305-345 FB, Mkulumadzi $395-540; park fee $10-20 (one blog $82 unverified). Mid lodges (Chimwala-type, EUR ~180 + extras) ~195, so std/cf only slightly above current. Previous proposal (140/210/340) mostly too high at bp/std; roughly agree on comfort direction, but all within 15% of current+modest raise."
+ },
+ {
+  "code": "MZ",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 38,
+   "accommodation": 17,
+   "food": 12,
+   "local_transport": 4,
+   "activities": 5
+  },
+  "standard": {
+   "total": 72,
+   "accommodation": 40,
+   "food": 18,
+   "local_transport": 6,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 140,
+   "accommodation": 88,
+   "food": 28,
+   "local_transport": 10,
+   "activities": 14
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.neverendingfootsteps.com/cost-of-travel-mozambique-budget",
+   "https://www.mylifeelsewhere.com/cost-of-living/maputo-c1766",
+   "https://www.bootsnall.com/articles/indie-travel-in-mozambique-for-45-per-day.html"
+  ],
+  "note": "2024 blog receipts: dorms Maputo EUR 17, Tofo EUR 10, Vilankulo EUR 13.5; doubles EUR 27-41; Maputo basic meal ~MZN 600 (EUR 8). Previous proposal (46/95/150) too high; DISAGREE, current holds."
+ },
+ {
+  "code": "MZ",
+  "variant": "safari (lodge/tented camp + game drives + park fees)",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 133,
+   "accommodation": 50,
+   "food": 18,
+   "local_transport": 5,
+   "activities": 60
+  },
+  "standard": {
+   "total": 215,
+   "accommodation": 125,
+   "food": 25,
+   "local_transport": 5,
+   "activities": 60
+  },
+  "comfort": {
+   "total": 430,
+   "accommodation": 280,
+   "food": 45,
+   "local_transport": 5,
+   "activities": 100
+  },
+  "confidence": "low",
+  "sources": [
+   "https://gorongosa.org/wp-content/uploads/2025/02/2025-Montebelo-Gorongosa-Lodge-Safari-Rack-Rate.pdf",
+   "https://safarifind.com/blog/mozambique-national-park-fees-availability-2026"
+  ],
+  "note": "Montebelo Gorongosa rooms $143-461 per room (single, low-high season), Chitengo camping $25-35/tent + $20 park fee, 2 adults camping+fee+2 drives $274; Chicari/Muzimu $850-950 and Explore $550-975 are luxury rack rates and belong at or above comfort, not average. Averaging basic Chitengo/Montebelo/Maputo Reserve camps gives std ~215, comfort ~430. PARTLY disagree with previous proposal (380/700 too high; direction up is right)."
+ }
+]

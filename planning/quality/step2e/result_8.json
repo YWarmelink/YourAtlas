@@ -1,0 +1,445 @@
+[
+ {
+  "code": "UY",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 42,
+   "accommodation": 18,
+   "food": 16,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 102,
+   "accommodation": 58,
+   "food": 26,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 159,
+   "accommodation": 95,
+   "food": 38,
+   "local_transport": 10,
+   "activities": 16
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hostelz.com/en/hostels-in/Uruguay",
+   "https://expatistan.com/price/big-mac/montevideo/EUR",
+   "https://www.mylifeelsewhere.com/cost-of-living/montevideo-c3992"
+  ],
+  "note": "Hostelz dorm avg $20-23 Montevideo/Punta; basic meal ~$13-14 (Expatistan/mylifeelsewhere); hotels $70+; all levels within +-15%"
+ },
+ {
+  "code": "AU",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 66,
+   "accommodation": 26,
+   "food": 20,
+   "local_transport": 8,
+   "activities": 12
+  },
+  "standard": {
+   "total": 156,
+   "accommodation": 90,
+   "food": 36,
+   "local_transport": 10,
+   "activities": 20
+  },
+  "comfort": {
+   "total": 249,
+   "accommodation": 150,
+   "food": 55,
+   "local_transport": 16,
+   "activities": 28
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hostelz.com/en/backpacker-budget/australia",
+   "https://simbye.com/blogs/blog/australia-travel-cost-2026",
+   "https://www.hospitalitynet.org/news/4132894/may-events-lifted-adelaide-hotel-room-rates",
+   "https://www.costar.com/products/benchmark/resources/press-releases/australian-open-drove-melbourne-hotel-room-rates",
+   "https://blog.orbitremit.com/public-transport-australia-guide-2026/"
+  ],
+  "note": "Dorms AUD 27-50 (Hostelz, blog), cheap meal AUD15-25, mid-range hotel AUD100-180, ADR Adelaide 199/Melbourne 262 (all-hotel, so 3-4* comfort ~AUD250); Opal cap 19.30 Mon-Thu, myki 11; std/comfort accommodation trimmed slightly, totals within 15%"
+ },
+ {
+  "code": "CK",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 56,
+   "accommodation": 28,
+   "food": 18,
+   "local_transport": 4,
+   "activities": 6
+  },
+  "standard": {
+   "total": 120,
+   "accommodation": 70,
+   "food": 30,
+   "local_transport": 6,
+   "activities": 14
+  },
+  "comfort": {
+   "total": 218,
+   "accommodation": 150,
+   "food": 40,
+   "local_transport": 8,
+   "activities": 20
+  },
+  "confidence": "low",
+  "sources": [
+   "https://cookislandspocketguide.com/how-much-does-a-trip-to-rarotonga-the-cook-islands-cost",
+   "https://www.citizendailypost.com/faq/how-much-cash-should-i-take-to-rarotonga/",
+   "https://cookislandspocketguide.com/?p=261510",
+   "https://cookislandspocketguide.com/rarotonga-transport-guide-ways-to-get-to-around-rarotonga/"
+  ],
+  "note": "Dorms NZ$30-50 (~EUR16-26), backpacker budget NZ$90+/day (Citizen Daily Post Jul 2026), bus NZ$5, lunch NZ$15-35; self-contained NZ$99-165, guesthouses NZ$50-150; backpacker lowered"
+ },
+ {
+  "code": "FJ",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 35,
+   "accommodation": 14,
+   "food": 12,
+   "local_transport": 3,
+   "activities": 6
+  },
+  "standard": {
+   "total": 93,
+   "accommodation": 55,
+   "food": 20,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 154,
+   "accommodation": 100,
+   "food": 28,
+   "local_transport": 8,
+   "activities": 18
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://simbye.com/blogs/blog/fiji-travel-costs-2026-budget-guide-islands-resorts",
+   "https://www.hostelz.com/en/backpacker-budget/fiji",
+   "https://www.trip.com/guide/info/trip-to-fiji-cost.html"
+  ],
+  "note": "Nadi dorm $16-18 (~EUR15), guesthouse budget ~$45/day, hotels ~FJD150/night, meals $5-15 local / $10-20 restaurant"
+ },
+ {
+  "code": "NZ",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 69,
+   "accommodation": 30,
+   "food": 21,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "standard": {
+   "total": 143,
+   "accommodation": 85,
+   "food": 30,
+   "local_transport": 8,
+   "activities": 20
+  },
+  "comfort": {
+   "total": 230,
+   "accommodation": 140,
+   "food": 48,
+   "local_transport": 12,
+   "activities": 30
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://lifetimes.co.nz/blog/trip-planning/how-much-does-a-trip-to-new-zealand-really-cost-per-day-per-itinerary-breakdown",
+   "https://newzealandatoz.pages.dev/nz-accommodation-prices.html"
+  ],
+  "note": "Dorms NZ$35-60 (~EUR18-32), backpacker NZ$110-180/day, motels NZ$118-176 double, Queenstown motel NZ$149"
+ },
+ {
+  "code": "PG",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 68,
+   "accommodation": 45,
+   "food": 12,
+   "local_transport": 6,
+   "activities": 5
+  },
+  "standard": {
+   "total": 120,
+   "accommodation": 80,
+   "food": 20,
+   "local_transport": 10,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 196,
+   "accommodation": 140,
+   "food": 30,
+   "local_transport": 14,
+   "activities": 12
+  },
+  "confidence": "low",
+  "sources": [
+   "https://beyondthebucketlist.co/papua-new-guinea-for-budget-travelers/",
+   "https://exiap.co.uk/guides/spending-money-how-much-for-papua-new-guinea",
+   "https://www.whereandwhen.net/budget/papua-new-guinea/port-moresby/"
+  ],
+  "note": "Traveller reports $75-90/day (2024-25), local meal $5-8, restaurant $15-20, budget hotels $25-60, mid $60-150; no current guesthouse rates found, current values kept"
+ },
+ {
+  "code": "PW",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 91,
+   "accommodation": 65,
+   "food": 18,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 143,
+   "accommodation": 90,
+   "food": 30,
+   "local_transport": 8,
+   "activities": 15
+  },
+  "comfort": {
+   "total": 216,
+   "accommodation": 150,
+   "food": 38,
+   "local_transport": 8,
+   "activities": 20
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.hotelscombined.ae/Place/Koror.htm",
+   "https://www.booking.com/budget/city/pw/ngermid.html",
+   "https://championtraveler.com/price/cost-of-a-trip-to-koror-pw"
+  ],
+  "note": "No hostels; cheapest Koror rooms $65-106 (HotelsCombined Mar 2026 lowest $83, Shell Villa $65), avg hotel ~$104; travellers $90-110/day; backpacker accommodation raised"
+ },
+ {
+  "code": "TO",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 37,
+   "accommodation": 20,
+   "food": 10,
+   "local_transport": 3,
+   "activities": 4
+  },
+  "standard": {
+   "total": 83,
+   "accommodation": 50,
+   "food": 18,
+   "local_transport": 5,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 136,
+   "accommodation": 90,
+   "food": 26,
+   "local_transport": 6,
+   "activities": 14
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://tongapocketguide.com/what-is-the-cost-of-travelling-in-tonga",
+   "https://www.tripbase.com/destinations/tonga-tonga/budget/",
+   "https://www.neverendingfootsteps.com/tonga-travel-budget/"
+  ],
+  "note": "Dorm TOP25-80 (EUR9-30), guesthouse TOP70-140 shared bath, ensuite 150-300; lunch mains TOP13-40; TripBase backpacker ~$40/day"
+ },
+ {
+  "code": "VU",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 46,
+   "accommodation": 26,
+   "food": 12,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 93,
+   "accommodation": 55,
+   "food": 20,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 142,
+   "accommodation": 95,
+   "food": 26,
+   "local_transport": 6,
+   "activities": 15
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.hostelz.com/en/hostels-in/Vanuatu",
+   "https://www.travelocity.com/es/Vanuatu-Hostales.d192-aaHostales.Guia-Viajes-Alojamiento",
+   "https://championtraveler.com/price/cost-of-a-trip-to-port-vila-vu/"
+  ],
+  "note": "Observed dorm/budget beds $26-41 (Hostelz, Bluepango $33, Tropicana $36-41), Port Vila hotel avg ~$87; backpacker accommodation raised"
+ },
+ {
+  "code": "WS",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 37,
+   "accommodation": 20,
+   "food": 10,
+   "local_transport": 3,
+   "activities": 4
+  },
+  "standard": {
+   "total": 83,
+   "accommodation": 50,
+   "food": 18,
+   "local_transport": 5,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 134,
+   "accommodation": 90,
+   "food": 26,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.hostelworld.com/blog/oceania/samoa/",
+   "https://www.atlasandboots.com/?p=3051"
+  ],
+  "note": "Beach fale WS$70-150 incl. 2 meals (~EUR23-48), fale listings $37-59, Hostelworld WS$120-220/day all-in; Aggie Grey $132-147 is luxury, not pushed in"
+ },
+ {
+  "code": "GL",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 141,
+   "accommodation": 85,
+   "food": 40,
+   "local_transport": 6,
+   "activities": 10
+  },
+  "standard": {
+   "total": 277,
+   "accommodation": 170,
+   "food": 65,
+   "local_transport": 12,
+   "activities": 30
+  },
+  "comfort": {
+   "total": 374,
+   "accommodation": 230,
+   "food": 90,
+   "local_transport": 14,
+   "activities": 40
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://sisimiut.gl/guides/sisimiut-greenland-travel-essentials-2026-cost-climate-packing",
+   "https://www.jetsetteralerts.com/cost-to-visit-greenland-travel-budget-guide/",
+   "https://www.hotelscombined.co.uk/Place/Greenland.htm"
+  ],
+  "note": "Sisimiut dorm DKK400-600, private 800-1200, Nuuk guesthouse DKK600-800; budget meal DKK60-100, restaurant 200-350; self-cater DKK300-500/day, eating out 600-1000; food raised slightly"
+ },
+ {
+  "code": "SJ",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 160,
+   "accommodation": 110,
+   "food": 35,
+   "local_transport": 5,
+   "activities": 10
+  },
+  "standard": {
+   "total": 290,
+   "accommodation": 190,
+   "food": 55,
+   "local_transport": 10,
+   "activities": 35
+  },
+  "comfort": {
+   "total": 395,
+   "accommodation": 260,
+   "food": 75,
+   "local_transport": 10,
+   "activities": 50
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.expedia.com/Longyearbyen-Hotels-Cheap-Hotels.0-0-d2189-tCheapHotels.Travel-Guide-Filter-Hotels",
+   "https://www.whereandwhen.net/money/norway/longyearbyen/",
+   "https://www.earthtrekkers.com/svalbard-budget-how-much-does-it-cost-to-visit-svalbard/"
+  ],
+  "note": "Coal Miners Cabins ~$100-166, Funken $309, Svalbard Hotell $366+; lunch main ~NOK220, dinner EUR30-60; budget tier <=NOK1500/night; current values kept"
+ },
+ {
+  "code": "AQ",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 600,
+   "accommodation": 330,
+   "food": 110,
+   "local_transport": 0,
+   "activities": 160
+  },
+  "standard": {
+   "total": 800,
+   "accommodation": 450,
+   "food": 150,
+   "local_transport": 0,
+   "activities": 200
+  },
+  "comfort": {
+   "total": 1100,
+   "accommodation": 650,
+   "food": 220,
+   "local_transport": 0,
+   "activities": 230
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.patagonline.com/en/antarctica-trip-cost/",
+   "https://www.travelzoo.com/cruises/more/Save-4900-Antarctica-11-night-expedition-cruises-3265404/",
+   "https://www.tourradar.com/t/225921"
+  ],
+  "note": "11-day cruises: shared/small-ship ~$6,000-8,500 (~EUR490-690/day), HX $8,500-11,000, Swan Hellenic $9,650/9n, luxury EUR16k/15d (~EUR1,090/day); levels fit"
+ }
+]

@@ -1,0 +1,501 @@
+[
+ {
+  "code": "RW",
+  "variant": "safari (lodge/tented camp + game drives + park fees)",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 130,
+   "accommodation": 40,
+   "food": 15,
+   "local_transport": 5,
+   "activities": 70
+  },
+  "standard": {
+   "total": 191,
+   "accommodation": 110,
+   "food": 15,
+   "local_transport": 6,
+   "activities": 60
+  },
+  "comfort": {
+   "total": 340,
+   "accommodation": 210,
+   "food": 35,
+   "local_transport": 5,
+   "activities": 90
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.africanparks.org/sites/default/files/Akagera%20NP%20Pricing%202025.pdf",
+   "https://safarifind.com/blog/rwanda-national-park-fees-availability-2026"
+  ],
+  "note": "Akagera official fee USD 100/150/200 for 1/2/3 nights (~USD 70-100/day), camping from USD 25, lodges USD 100-300; current values in line"
+ },
+ {
+  "code": "SC",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 85,
+   "accommodation": 55,
+   "food": 18,
+   "local_transport": 6,
+   "activities": 6
+  },
+  "standard": {
+   "total": 145,
+   "accommodation": 100,
+   "food": 25,
+   "local_transport": 10,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 280,
+   "accommodation": 190,
+   "food": 50,
+   "local_transport": 20,
+   "activities": 20
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://islaguru.com/articles/seychelles-cost-travel-budget-guide",
+   "https://www.nomadicmatt.com/travel-blogs/visit-seychelles-budget/"
+  ],
+  "note": "Guesthouse doubles USD 90-200 (Booking-type snapshots), budget guides USD 100-160/day, bus SCR 6-10, meals SCR 130-400; current within range"
+ },
+ {
+  "code": "SN",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 30,
+   "accommodation": 14,
+   "food": 9,
+   "local_transport": 4,
+   "activities": 3
+  },
+  "standard": {
+   "total": 70,
+   "accommodation": 45,
+   "food": 12,
+   "local_transport": 6,
+   "activities": 7
+  },
+  "comfort": {
+   "total": 120,
+   "accommodation": 75,
+   "food": 26,
+   "local_transport": 12,
+   "activities": 7
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.hostelz.com/hostels/Senegal/dakar",
+   "https://hotel.routard.com/guest-house/city/sn/dakar.en-gb.html?aid=304142",
+   "https://www.kayak.com/Dakar-Hotels-Hotel-Saint-Louis-Sun-Dakar.3714019.ksp"
+  ],
+  "note": "Standard room: guesthouses from USD 46 (Routard), 3* Saint-Louis Sun USD 51-59, so std accommodation 35->45; dorm/private USD 4-18 supports bp"
+ },
+ {
+  "code": "ST",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 53,
+   "accommodation": 36,
+   "food": 10,
+   "local_transport": 4,
+   "activities": 3
+  },
+  "standard": {
+   "total": 78,
+   "accommodation": 50,
+   "food": 14,
+   "local_transport": 6,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 152,
+   "accommodation": 100,
+   "food": 28,
+   "local_transport": 12,
+   "activities": 12
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.booking.com/budget/city/st/sao-tome.html?aid=306597",
+   "https://www.travelocity.com/Sao-Tome-And-Principe-Guest-Houses.d156-aaGuestHouses.Travel-Guide-Accommodation"
+  ],
+  "note": "Cheapest Booking guesthouses USD 42-52/night (no hostels), Casa Cantagalo USD 53, eco-lodge USD 84-97, Pestana USD 203; old accommodation too low. Meals unverified"
+ },
+ {
+  "code": "SZ",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 31,
+   "accommodation": 13,
+   "food": 9,
+   "local_transport": 4,
+   "activities": 5
+  },
+  "standard": {
+   "total": 64,
+   "accommodation": 40,
+   "food": 11,
+   "local_transport": 5,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 125,
+   "accommodation": 80,
+   "food": 25,
+   "local_transport": 10,
+   "activities": 10
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hostelz.com/en/hostels-in/Eswatini",
+   "https://safarifind.com/blog/eswatini-safari-under-2-000-budget-lodges-park-fees-2026"
+  ],
+  "note": "Dorms USD 9-15 (Sondzela R165), budget lodges USD 26-50, Mlilwane conservation fee R90-95; bp slightly lower than before but within 15%"
+ },
+ {
+  "code": "TG",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 22,
+   "accommodation": 10,
+   "food": 7,
+   "local_transport": 3,
+   "activities": 2
+  },
+  "standard": {
+   "total": 49,
+   "accommodation": 32,
+   "food": 8,
+   "local_transport": 4,
+   "activities": 5
+  },
+  "comfort": {
+   "total": 100,
+   "accommodation": 65,
+   "food": 18,
+   "local_transport": 10,
+   "activities": 7
+  },
+  "confidence": "low",
+  "sources": [
+   "https://lookup.hotels.com/de1640202-at30/guest-houses-hotels-lome-togo",
+   "https://www.combien-coute.net/hotel_gite/togo/kpalime/",
+   "https://momondo.com/hotels/lome"
+  ],
+  "note": "Lome guesthouse/2.5* USD 35-37, Kpalime guesthouse EUR 30-39, 3* avg USD 45, 3.5* beachfront USD 94; std/comfort accommodation raised. Hostel USD 10-15 and meals USD 2-5 support bp"
+ },
+ {
+  "code": "TN",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 25,
+   "accommodation": 11,
+   "food": 8,
+   "local_transport": 2,
+   "activities": 4
+  },
+  "standard": {
+   "total": 48,
+   "accommodation": 28,
+   "food": 9,
+   "local_transport": 3,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 98,
+   "accommodation": 60,
+   "food": 20,
+   "local_transport": 8,
+   "activities": 10
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hostelz.com/en/hostels-in/Tunisia",
+   "https://www.hostelz.com/en/hostels/Tunisia/Tunis"
+  ],
+  "note": "Tunis dorm from 16 TND (~EUR 5), avg USD 7-11, private hostel rooms ~USD 33, budget hotel USD 24; current in line"
+ },
+ {
+  "code": "UG",
+  "variant": "safari (lodge/tented camp + game drives + park fees)",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 125,
+   "accommodation": 40,
+   "food": 15,
+   "local_transport": 5,
+   "activities": 65
+  },
+  "standard": {
+   "total": 187,
+   "accommodation": 100,
+   "food": 12,
+   "local_transport": 5,
+   "activities": 70
+  },
+  "comfort": {
+   "total": 330,
+   "accommodation": 200,
+   "food": 35,
+   "local_transport": 5,
+   "activities": 90
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://safarifind.com/blog/what-are-uganda-national-park-fees-in-2026",
+   "https://safarifind.com/blog/uganda-safari-cost-2026-budget-vs-luxury-by-operator"
+  ],
+  "note": "UWA fee USD 40-45/day (tariff to Jun 2026), budget lodges USD 50-100, budget safari USD 150-250/day incl. vehicle; std at low end but within tolerance, no change"
+ },
+ {
+  "code": "ZA",
+  "variant": "safari (lodge/tented camp + game drives + park fees)",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 100,
+   "accommodation": 30,
+   "food": 18,
+   "local_transport": 5,
+   "activities": 47
+  },
+  "standard": {
+   "total": 160,
+   "accommodation": 90,
+   "food": 20,
+   "local_transport": 5,
+   "activities": 45
+  },
+  "comfort": {
+   "total": 300,
+   "accommodation": 170,
+   "food": 40,
+   "local_transport": 5,
+   "activities": 85
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://krugerpark.co.za/Kruger_Park_Travel_Advisory-travel/conservation-fees.html",
+   "https://www.krugerpark.co.za/Kruger_National_Park_Lodging_&_Camping_Guide-travel/pricing_letaba-camp.html"
+  ],
+  "note": "Conservation fee R602/day (R692 from 1 Nov 2026 = ~EUR 33), campsite R410, bungalow R1539-2084 per unit; matches current"
+ },
+ {
+  "code": "ZM",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 38,
+   "accommodation": 15,
+   "food": 11,
+   "local_transport": 5,
+   "activities": 7
+  },
+  "standard": {
+   "total": 72,
+   "accommodation": 40,
+   "food": 14,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 145,
+   "accommodation": 90,
+   "food": 28,
+   "local_transport": 12,
+   "activities": 15
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.hostelz.com/en/backpacker-budget/zambia",
+   "https://www.zambiatourism.com/?p=28687"
+  ],
+  "note": "Hostelz: dorm USD 6-11, food USD 8, transport USD 5, activities USD 9 (modelled but with dorm prices); Falls entry USD 20-30; current in line"
+ },
+ {
+  "code": "ZM",
+  "variant": "safari (lodge/tented camp + game drives + park fees)",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 190,
+   "accommodation": 70,
+   "food": 20,
+   "local_transport": 5,
+   "activities": 95
+  },
+  "standard": {
+   "total": 280,
+   "accommodation": 170,
+   "food": 15,
+   "local_transport": 5,
+   "activities": 90
+  },
+  "comfort": {
+   "total": 420,
+   "accommodation": 250,
+   "food": 40,
+   "local_transport": 5,
+   "activities": 125
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.safaribookings.com/rates/t112582",
+   "https://safarifind.com/blog/south-luangwa-national-park-entry-fees-2027-safari-costs-packages",
+   "https://www.zambiatourism.com/park-entry-fees/"
+  ],
+  "note": "South Luangwa fee USD 25/day; budget camping tour USD 1117-1231 for 5 days (~EUR 200/day, group, incl. food); bush camps USD 250-350/night all-in; solo supplement high. bp/std raised, comfort unchanged"
+ },
+ {
+  "code": "ZW",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 40,
+   "accommodation": 16,
+   "food": 11,
+   "local_transport": 5,
+   "activities": 8
+  },
+  "standard": {
+   "total": 77,
+   "accommodation": 45,
+   "food": 14,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 150,
+   "accommodation": 95,
+   "food": 28,
+   "local_transport": 12,
+   "activities": 15
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.travelwithhello.com/blog/zimbabwe-travel-budget-guide",
+   "https://www.zambiatourism.com/updated-victoria-falls-entry-fees-for-zim-side/"
+  ],
+  "note": "Bulawayo dorms <USD 10, daily USD 25-35 (2025 forum), Vic Falls camping USD 20-30, falls entry USD 50-58; comfort accommodation maybe slightly low (Vic Falls 3-4* USD 120-200) but within 15%"
+ },
+ {
+  "code": "ZW",
+  "variant": "safari (lodge/tented camp + game drives + park fees)",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 150,
+   "accommodation": 45,
+   "food": 15,
+   "local_transport": 5,
+   "activities": 85
+  },
+  "standard": {
+   "total": 250,
+   "accommodation": 150,
+   "food": 15,
+   "local_transport": 5,
+   "activities": 80
+  },
+  "comfort": {
+   "total": 430,
+   "accommodation": 260,
+   "food": 40,
+   "local_transport": 5,
+   "activities": 125
+  },
+  "confidence": "low",
+  "sources": [
+   "https://safarifind.com/blog/zimbabwe-safari-cost-2026-daily-rates-by-park-season",
+   "https://safarifind.com/blog/what-are-zimbabwe-park-fees-availability-in-2026"
+  ],
+  "note": "Sources: Hwange USD 250-450/day (budget camps USD 325-450 peak), Mana Pools rustic USD 200-300, park fee USD 12-24; sources run peak/vendor-high so only std/comfort moved moderately"
+ },
+ {
+  "code": "AR",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 33,
+   "accommodation": 16,
+   "food": 10,
+   "local_transport": 3,
+   "activities": 4
+  },
+  "standard": {
+   "total": 89,
+   "accommodation": 52,
+   "food": 20,
+   "local_transport": 5,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 135,
+   "accommodation": 75,
+   "food": 32,
+   "local_transport": 10,
+   "activities": 18
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.bootsnall.com/data/cost-of-living/cost-of-living-argentina",
+   "https://www.hostelz.com/en/backpacker-budget/argentina/10-days"
+  ],
+  "note": "BA dorm USD 10-20, mid hotel USD 60-130, menu del dia ARS 6-15k, parrilla USD 15-30; std/comfort accommodation nudged up, all totals within 15%"
+ },
+ {
+  "code": "AR",
+  "variant": "Patagonia",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 62,
+   "accommodation": 30,
+   "food": 16,
+   "local_transport": 6,
+   "activities": 10
+  },
+  "standard": {
+   "total": 138,
+   "accommodation": 75,
+   "food": 30,
+   "local_transport": 8,
+   "activities": 25
+  },
+  "comfort": {
+   "total": 199,
+   "accommodation": 110,
+   "food": 45,
+   "local_transport": 14,
+   "activities": 30
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://latamtravellers.com/blogs/news/patagonia-travel-costs-2026-complete-budget-guide-for-argentina-chile",
+   "https://www.machupicchu.org/el-calafate-budget-guide-2026-complete-cost-breakdown.htm",
+   "https://www.iprofesional.com/turismo/454919-aumentan-las-entradas-a-parques-nacionales-cuanto-cuesta-ir-a-cataratas-glaciares-y-mas"
+  ],
+  "note": "Dorms USD 20-50 (avg ~33), budget day USD 58-85, mid-range USD 130-180, Los Glaciares fee ARS 45-50k (~USD 32-36); bp accommodation raised, totals within 15%"
+ }
+]

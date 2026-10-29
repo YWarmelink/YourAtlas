@@ -1,0 +1,497 @@
+[
+ {
+  "code": "AW",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 85,
+   "accommodation": 55,
+   "food": 20,
+   "local_transport": 5,
+   "activities": 5
+  },
+  "standard": {
+   "total": 153,
+   "accommodation": 100,
+   "food": 30,
+   "local_transport": 8,
+   "activities": 15
+  },
+  "comfort": {
+   "total": 242,
+   "accommodation": 160,
+   "food": 45,
+   "local_transport": 12,
+   "activities": 25
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.trip.com/guide/info/trip-to-aruba-cost.html",
+   "https://exiap.co.uk/guides/spending-money-how-much-for-aruba"
+  ],
+  "note": "Budget hotels $50-150/night, cheap meals $10-20, buses $1-3; sources thin/modelled, no hostel price found; current kept"
+ },
+ {
+  "code": "BO",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 23,
+   "accommodation": 7,
+   "food": 9,
+   "local_transport": 3,
+   "activities": 4
+  },
+  "standard": {
+   "total": 54,
+   "accommodation": 28,
+   "food": 14,
+   "local_transport": 4,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 92,
+   "accommodation": 50,
+   "food": 22,
+   "local_transport": 7,
+   "activities": 13
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.hostelz.com/en/backpacker-budget/bolivia",
+   "https://bushop.com/bolivia/guides/bolivia-travel-costs-how-much-money-do-you-really-need/"
+  ],
+  "note": "Dorm $7-8 (Hostelz La Paz/Sucre/Uyuni), almuerzo $2-4, bus $0.5-1; backpacker $25-50/day, budget hotels $8-20, mid hotels $35-100 -> current looked too low"
+ },
+ {
+  "code": "BQ",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 93,
+   "accommodation": 60,
+   "food": 22,
+   "local_transport": 3,
+   "activities": 8
+  },
+  "standard": {
+   "total": 160,
+   "accommodation": 100,
+   "food": 35,
+   "local_transport": 10,
+   "activities": 15
+  },
+  "comfort": {
+   "total": 257,
+   "accommodation": 170,
+   "food": 50,
+   "local_transport": 12,
+   "activities": 25
+  },
+  "confidence": "low",
+  "sources": [
+   "https://bonaire.com/en/blog/bonaire-vacation-cost-guide/",
+   "https://www.travelocity.com/Kralendijk-Guest-Houses.d8183-aaGuestHouses.Travel-Guide-Accommodation"
+  ],
+  "note": "bonaire.com: $50-75/day ultra-budget, studios $50-80; booking listings guesthouses/hotels $114-123; sources inconsistent, current within range"
+ },
+ {
+  "code": "BR",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 32,
+   "accommodation": 15,
+   "food": 10,
+   "local_transport": 3,
+   "activities": 4
+  },
+  "standard": {
+   "total": 81,
+   "accommodation": 45,
+   "food": 18,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 136,
+   "accommodation": 80,
+   "food": 28,
+   "local_transport": 10,
+   "activities": 18
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hostelz.com/en/backpacker-budget/brazil",
+   "https://toknowbrazil.pages.dev/budget"
+  ],
+  "note": "Dorm ~$12, Numbeo budget food ~$10/day, mid hotels R$300-600, 4* R$700-1500; consistent with current"
+ },
+ {
+  "code": "BZ",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 41,
+   "accommodation": 20,
+   "food": 12,
+   "local_transport": 3,
+   "activities": 6
+  },
+  "standard": {
+   "total": 113,
+   "accommodation": 70,
+   "food": 20,
+   "local_transport": 8,
+   "activities": 15
+  },
+  "comfort": {
+   "total": 170,
+   "accommodation": 110,
+   "food": 30,
+   "local_transport": 10,
+   "activities": 20
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hostelz.com/en/backpacker-budget/belize",
+   "https://radicalstorage.com/travel/is-belize-expensive/"
+  ],
+  "note": "Dorm $10-15 Caye Caulker/San Ignacio, 2026 guide budget ~$28 w/o tours up to ~$70 with activities; current in range"
+ },
+ {
+  "code": "CA",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 70,
+   "accommodation": 30,
+   "food": 20,
+   "local_transport": 8,
+   "activities": 12
+  },
+  "standard": {
+   "total": 197,
+   "accommodation": 120,
+   "food": 45,
+   "local_transport": 12,
+   "activities": 20
+  },
+  "comfort": {
+   "total": 298,
+   "accommodation": 190,
+   "food": 60,
+   "local_transport": 18,
+   "activities": 30
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hostelz.com/en/backpacker-budget/cities/toronto-canada",
+   "https://viatravelers.com/canada/"
+  ],
+  "note": "Dorm $27 Toronto / C$48 Montreal, hotel 3* C$120-200, mid C$220-380, meals C$30-70/day; current in range"
+ },
+ {
+  "code": "CL",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 37,
+   "accommodation": 17,
+   "food": 12,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 92,
+   "accommodation": 55,
+   "food": 22,
+   "local_transport": 5,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 166,
+   "accommodation": 100,
+   "food": 38,
+   "local_transport": 10,
+   "activities": 18
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hostelz.com/en/backpacker-budget/chile",
+   "https://latamtravellers.com/blogs/news/chile-trip-cost-2026-daily-budget-santiago-atacama-patagonia"
+  ],
+  "note": "Dorm ~$14, menu del dia CLP 7-16k, metro ~CLP 700-850; current in range"
+ },
+ {
+  "code": "CL",
+  "variant": "Patagonia",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 54,
+   "accommodation": 24,
+   "food": 15,
+   "local_transport": 5,
+   "activities": 10
+  },
+  "standard": {
+   "total": 128,
+   "accommodation": 70,
+   "food": 28,
+   "local_transport": 8,
+   "activities": 22
+  },
+  "comfort": {
+   "total": 199,
+   "accommodation": 110,
+   "food": 45,
+   "local_transport": 14,
+   "activities": 30
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.budgetyourtrip.com/chile/puerto-natales",
+   "https://www.combien-coute.net/hostel/chili/puerto-natales/"
+  ],
+  "note": "Puerto Natales meals breakfast $5-15/lunch $7-20/dinner $15-34, rooms for two ~EUR 43-259 peak-heavy; no clean dorm price, current kept"
+ },
+ {
+  "code": "CO",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 26,
+   "accommodation": 11,
+   "food": 8,
+   "local_transport": 3,
+   "activities": 4
+  },
+  "standard": {
+   "total": 56,
+   "accommodation": 30,
+   "food": 13,
+   "local_transport": 4,
+   "activities": 9
+  },
+  "comfort": {
+   "total": 104,
+   "accommodation": 60,
+   "food": 22,
+   "local_transport": 8,
+   "activities": 14
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://voyeglobal.com/colombia-travel-cost-guide/",
+   "https://latamtravellers.com/blogs/news/colombia-trip-cost-2026-daily-budget-bogota-medellin-cartagena"
+  ],
+  "note": "Dorm $8-15, budget $25-40/day, private rooms $25-45, mid hotels $60-100; current in range"
+ },
+ {
+  "code": "CR",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 42,
+   "accommodation": 18,
+   "food": 12,
+   "local_transport": 4,
+   "activities": 8
+  },
+  "standard": {
+   "total": 104,
+   "accommodation": 60,
+   "food": 22,
+   "local_transport": 6,
+   "activities": 16
+  },
+  "comfort": {
+   "total": 169,
+   "accommodation": 105,
+   "food": 32,
+   "local_transport": 10,
+   "activities": 22
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.bootsnall.com/data/cost-of-living/cost-of-living-costa-rica",
+   "https://drinkteatravel.com/guide-backpacking-in-costa-rica/"
+  ],
+  "note": "Dorm $15-22, casado $5-9, bus ~$2; backpacker $50-70/day incl. some tours (slightly above current but within tolerance)"
+ },
+ {
+  "code": "CU",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 28,
+   "accommodation": 15,
+   "food": 8,
+   "local_transport": 2,
+   "activities": 3
+  },
+  "standard": {
+   "total": 57,
+   "accommodation": 30,
+   "food": 15,
+   "local_transport": 6,
+   "activities": 6
+  },
+  "comfort": {
+   "total": 95,
+   "accommodation": 55,
+   "food": 22,
+   "local_transport": 8,
+   "activities": 10
+  },
+  "confidence": "low",
+  "sources": [
+   "https://au.trip.com/moments/trinity-1705591/",
+   "https://discover-cuba.pages.dev/blog/cuba-currency-guide-2026/"
+  ],
+  "note": "Casa $15-30 ($10-21 in CUP), paladar meal $6-12, budget $17-35/day, mid $40-80, comfort $100-150; backpacker lowered, std/comfort kept"
+ },
+ {
+  "code": "CW",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 83,
+   "accommodation": 55,
+   "food": 20,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 143,
+   "accommodation": 90,
+   "food": 30,
+   "local_transport": 8,
+   "activities": 15
+  },
+  "comfort": {
+   "total": 222,
+   "accommodation": 150,
+   "food": 42,
+   "local_transport": 10,
+   "activities": 20
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.jetsetteralerts.com/cost-to-visit-curacao/",
+   "https://esim.holafly.com/finance/cost-living-curacao/"
+  ],
+  "note": "Budget rooms $75-180 by season, meals $6-12/$8-16/$14-28, bus $1.1-2.5; no hostel data, current in range"
+ },
+ {
+  "code": "DM",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 71,
+   "accommodation": 45,
+   "food": 18,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 131,
+   "accommodation": 80,
+   "food": 28,
+   "local_transport": 8,
+   "activities": 15
+  },
+  "comfort": {
+   "total": 208,
+   "accommodation": 140,
+   "food": 38,
+   "local_transport": 10,
+   "activities": 20
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.hostelz.com/en/hostels/Dominica/Roseau",
+   "https://www.whereandwhen.net/budget/dominica/"
+  ],
+  "note": "Dorm from ~$5-12, rooms $60-90, minibus ~$2, dinner ~$18; sources thin, current kept"
+ },
+ {
+  "code": "EC",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 22,
+   "accommodation": 9,
+   "food": 7,
+   "local_transport": 2,
+   "activities": 4
+  },
+  "standard": {
+   "total": 54,
+   "accommodation": 30,
+   "food": 12,
+   "local_transport": 3,
+   "activities": 9
+  },
+  "comfort": {
+   "total": 90,
+   "accommodation": 50,
+   "food": 20,
+   "local_transport": 6,
+   "activities": 14
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hostelz.com/en/backpacker-budget/ecuador",
+   "https://www.gotripzi.com/destinations/quito-ec/cost"
+  ],
+  "note": "Dorm $6-8 (up to $12-18 in one source), $25-35/day backpacker, bus $0.35; current backpacker at low edge but kept"
+ },
+ {
+  "code": "EC",
+  "variant": "Galápagos",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 72,
+   "accommodation": 35,
+   "food": 18,
+   "local_transport": 4,
+   "activities": 15
+  },
+  "standard": {
+   "total": 168,
+   "accommodation": 90,
+   "food": 30,
+   "local_transport": 8,
+   "activities": 40
+  },
+  "comfort": {
+   "total": 262,
+   "accommodation": 160,
+   "food": 45,
+   "local_transport": 12,
+   "activities": 45
+  },
+  "confidence": "low",
+  "sources": [
+   "https://latamtravellers.com/blogs/news/ecuador-and-galapagos-trip-cost-2026-mainland-vs-islands-budget",
+   "https://yopki.com/guides/plan-a-trip-to-galapagos-islands/"
+  ],
+  "note": "Hostels $15-30, hotels $40-200, food $15-30/day, day tours $85-125, land-based $150-400/day with tours; current in range"
+ }
+]
