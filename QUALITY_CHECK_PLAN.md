@@ -1,6 +1,6 @@
 # Route Builder — Quality Check Plan
 
-Status: **Step 1 DONE; Step 2a + 2c + 2d DONE in code (2026-10-29), Sheet push pending Youri's OK; 2b not started.** Started right after Phase 4 of `ROUTE_BUILDER_BUDGET_PLAN.md`
+Status (2026-10-29, end of day): **Step 1, 2a, 2c, 2d, 2e + leftovers DONE and live; 2b at 3 of 9 batches.** See "Next steps" at the bottom. Started right after Phase 4 of `ROUTE_BUILDER_BUDGET_PLAN.md`
 completed (all 452 routes have full costs). Phase 4 showed why this is needed: the pricing agents spotted
 ~25 text inconsistencies as a side effect, used ~140 fares estimated without a web search, and found
 conflicts between sources (visa file vs route notes, stale €/day in notes).
@@ -152,8 +152,48 @@ Per batch: agent writes `result_N.json` → `node scripts/apply_step2b_fares.js 
 | 2b-1 | 30,040 | done: 16 fares in 13 routes changed (−€2,210; Oceania −25-30%, La Paz +€150-220, Kilimanjaro +€100), live + pushed | 89,207 |
 | 2b-2 | 17,340 | done: 10 fares in 9 routes changed (−€890; Australia −25-30%, Guatemala City + Seattle +€80-100), live + pushed | 88,128 |
 | 2b-3 | 12,555 | done: 4 fares in 3 routes changed (−€730; Mauritius −€190-220, Anchorage −€130), live + pushed. Web-search budget ran out: 6 legs unverified → `input_3r.json` (re-run first next session) | 79,261 |
+| 2b-3r | 6 legs of 2b-3 left unverified (Manzini, Ilulissat, Varanasi-Delhi, Mahé, Dar es Salaam, Lusaka) | todo | |
+| 2b-4 | 11,020 | todo | |
+| 2b-5 | 9,677 | todo | |
+| 2b-6 | 9,030 | todo | |
+| 2b-7 | 7,645 | todo | |
+| 2b-8 | 3,340 | todo | |
+| 2b-9 | 720 | todo | |
 
-**Resume 2b (next session):** the shared web-search budget (~200 calls/session) ran out during 2b-3. Next session: first
-`input_3r.json` (6 legs: Manzini, Ilulissat, Varanasi-Delhi, Mahé, Dar es Salaam, Lusaka; write `result_3r.json`, apply with
-`apply_step2b_fares.js 3r`), then batches 4-9 (seasonal brief). Optional at the end: season re-check of batches 1-2.
-Also still open: 4 unclear statements (Öresund, UK ETA Jersey/IoM ×2, Lima/Cusco).
+**Non-web work done 2026-10-29 (after 2b-3):**
+- Quality audit re-run: today's work broke nothing (A1 endings, A2 structure, B2 cost completeness, D1 Sheet parity all clean).
+  Fixed a false positive: `simulate_route_builder.js` and `quality_audit.js` now drop `RB_REMOVED_ROUTE_IDS` like the app does.
+  Fixed the one new C1 item (Bolivia Uyuni note still quoted €25/day; pushed via `qualityb`).
+- The "34 older budget drifts" were NOT drift: 33 were R2d's deliberate big-city / peak-coast / Paris-Riviera variant budgets
+  (IT €91, HR €80, FR €100 = the variants' My-plan rates) that `rbDailyRateRow()` re-matched to the base row because it
+  compared against the *standard* rate. Fixed: a budget that already equals a row's My-plan rate (±3%) now picks that row
+  (this also corrects the app's Backpacker/Standard/Comfort tiers for those blocks). The 34th (Ethiopia €45/day) is R2d's
+  own decision, re-keyed in `decisions.json`; `r2d_style_budgets.js` now treats a budget at its decided €/day as settled.
+  Result: `r2d_style_budgets.js --plan` = 0 auto changes, 0 undecided. No budgets changed.
+
+## Next steps (resume here)
+
+Rules that hold for all of it: one agent at a time, Youri confirms before each next batch; real tokens reported per batch;
+small text errors fixed directly and listed; Sheet pushes + git push after each finished batch.
+**Web-search limit:** about 200 searches per session, shared by all agents (it ran out in 2b-3). Plan ~3 web batches per
+session and put non-web work at the end of a session, not the start.
+
+1. **2b-3r** (web, ~30-40k): the 6 unverified legs in `planning/quality/step2b/input_3r.json`. Agent writes
+   `result_3r.json`; apply with `node scripts/apply_step2b_fares.js 3r` (dry) → `--write` → simulate →
+   `node scripts/fix_route_texts_in_sheet.js fares --push` → wait until it reads DONE → commit + push.
+2. **2b-4 … 2b-9** (web, ~80-90k each, season-specific brief): same recipe with N = 4..9. ~€41k of estimated fares left;
+   batches 8-9 are small (€3.3k / €0.7k) and could run as one agent.
+3. **4 unclear statements** (web, ~30k, can ride along with a 2b batch): Öresund ID checks (Denmark + South Sweden #1),
+   UK ETA start date covering Jersey/Isle of Man (Jersey + Guernsey #0, Isle of Man #0), Lima state of emergency +
+   single terminal + "no direct international flight into Cusco" (Peru + Bolivia #0). Input: the `unclear` entries in
+   `planning/quality/leftovers/result.json`; fixes go into a new text-fix list + `fix_route_texts_in_sheet.js`.
+   The Eurasia Grand Tour's "dated 2026-08" note (C2 medium) can go in the same agent.
+4. **Optional: season re-check of 2b-1 and 2b-2** (web, ~2 × 90k): those 40 legs were priced as year-round averages;
+   most routes start in shoulder season, so expect small moves.
+5. **Visa leftovers** (web, small): Indonesia priced €29 / €30 / €53 across 3 routes, India €22 / €36 across 2 (B4).
+6. **No-web work, for the end of a session:**
+   - Reword ~200 notes quoting the old standard €/day ("Price correction: €90→€116/day", C1 low) so they don't
+     contradict the "My plan" budget (scriptable: a regex pass + one fix list + Sheet push).
+   - British Isles & Celtic Coast "flight out €21" (B3): check whether that field holds a ferry/train cost.
+   - Phase 5 export button (ROUTE_BUILDER_BUDGET_PLAN.md), if still wanted.
+7. **Close-out:** re-run `node scripts/quality_audit.js`, update CHANGELOG + this plan, mark the quality check done.

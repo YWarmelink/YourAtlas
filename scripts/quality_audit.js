@@ -38,6 +38,8 @@ function loadApp() {
   vm.runInContext('rbRoutes = rbLoad(); rbLibrary = rbLoadLibrary();', sandbox);
   const re = /^\s*(rb(?:Seed|Migrate)[A-Za-z0-9]+)\(\);\s*$/gm;
   for (const m of read('js/pages/routeBuilder.js').matchAll(re)) vm.runInContext(`${m[1]}();`, sandbox);
+  // routeBuilder.js drops permanently removed routes inline, after the migrations
+  vm.runInContext('rbRoutes = rbRoutes.filter(r => !RB_REMOVED_ROUTE_IDS.has(r.id));', sandbox);
   return sandbox;
 }
 

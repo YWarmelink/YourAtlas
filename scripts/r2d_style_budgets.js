@@ -82,6 +82,9 @@ const DECISIONS = path.join(REPO_ROOT, 'planning/budget_r2d/decisions.json');
 const decisions = fs.existsSync(DECISIONS) ? JSON.parse(fs.readFileSync(DECISIONS, 'utf8')) : {};
 rows.forEach(x => {
   x.key = [x.code, x.days, x.budget, x.ref.variant].join('|');
+  // already at an own €/day decided in R2d (decisions keyed on the pre-R2d budget get re-keyed): settled
+  const own = decisions[x.key];
+  if (own && typeof own.call === 'number' && own.call * x.days === x.budget) x.group = 'keep';
   if (x.group === 'auto') x.finalBudget = x.newBudget;
   else if (x.group === 'review') {
     const d = decisions[x.key];

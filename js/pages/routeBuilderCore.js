@@ -465,7 +465,8 @@ const RB_DAILY_RATE_PLACE_VARIANTS = {
 
 /** The reference row for a block. Place variants (above): a blend of the base and variant row by
  *  the share of the block's destinations in that place. Otherwise, of the base row and the other
- *  variants (big city, peak coast, ...), the one whose standard rate is closest to the block's own
+ *  variants (big city, peak coast, ...), the one whose My-plan rate the budget already matches (±3%),
+ *  else the one whose standard rate is closest to the block's own
  *  daily rate. A block without a budget gets the base row. Null = no row for the country.
  *  scripts/compare_daily_rates.js and scripts/r2d_style_budgets.js use this same pick. */
 function rbDailyRateRow(b) {
@@ -488,6 +489,10 @@ function rbDailyRateRow(b) {
   const days = parseInt(b.days) || 0, budget = rbCostNum(b.budget);
   if (!days || budget === null || pool.length < 2) return base;
   const rate = budget / days;
+  // A budget already set to a row's My-plan rate (R2d moved big-city/peak-coast blocks to their
+  // variant's style rate) belongs to that row; without this, a re-run matched them to the base row.
+  const settled = pool.find(x => Math.abs(rbMyStyleDailyRate(x) - rate) <= 0.03 * rate);
+  if (settled) return settled;
   return pool.reduce((a, x) => Math.abs(x.standard - rate) < Math.abs(a.standard - rate) ? x : a);
 }
 

@@ -12,6 +12,8 @@ Three rounds of renames/overhauls, all applied retroactively by one-time migrati
 
 ## Recently fixed
 
+- **Variant pick + audit false positives (2026-10-29)**: `rbDailyRateRow()` now keeps a block whose budget already equals a row's My-plan rate (±3%) on that row. R2d had set big-city/peak-coast blocks (Italy €91, Croatia €80, France €100/day) to their variant's rate, and the re-run matched them back to the base row, so 33 blocks looked like drift and the app showed base-level tiers for them. Ethiopia's own €45/day decision re-keyed in `planning/budget_r2d/decisions.json`. `simulate_route_builder.js` and `quality_audit.js` now drop `RB_REMOVED_ROUTE_IDS` like the app. Bolivia Uyuni note no longer quotes the old €25/day. No budgets changed.
+
 - **Moldova + Transnistria (6 days) 🍇 removed (2026-10-29, Youri's call)**: Transnistria is red in the Dutch travel advice and without it the route duplicated Moldova (5 days) 🍷. Added to `RB_REMOVED_ROUTE_IDS`, deleted from the Sheet (`delete_removed_routes_from_sheet.js --push`), taxonomy row removed from `TRIP_DATABASE.csv`. Pan-American Iquique out-and-back kept.
 
 - **Quality check option D: 2e daily rates + Phase-4 leftovers (2026-10-29)**, live in the Sheet (25 routes): `RB_QUALITY_2026_10B_*` + `rbMigrateQuality202610bFixes()`, Sheet: `scripts/fix_route_texts_in_sheet.js qualityb`.

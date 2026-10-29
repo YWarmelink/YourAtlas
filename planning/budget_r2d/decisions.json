@@ -474,5 +474,9 @@
  "MY|9|585|Borneo (Sabah/Sarawak)": {
   "call": "ok",
   "why": ""
+ },
+ "ET|20|900|base": {
+  "call": 45,
+  "why": "standard level: Ethiopia tourist-circuit prices; Danakil/flights/Simien already separate"
  }
 }

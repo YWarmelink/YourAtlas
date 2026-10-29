@@ -33778,6 +33778,9 @@ const RB_QUALITY_2026_10B_EXTRAS_ADD = [
 const RB_QUALITY_2026_10B_TEXT_FIXES = [
   ['gt_seed_pan-american-grand-tour', 12, 'Overland bus via the Paso de Jama border crossing to Salta/Jujuy, Argentina.',
     'Antofagasta and Iquique are an out-and-back from San Pedro de Atacama: overnight bus Iquique → San Pedro (~7 hours), then the Paso de Jama overland bus to Salta/Jujuy, Argentina.', 'transport_to_next'],
+  // 2e raised Bolivia's rate: the Uyuni block's note still quoted the old ground budget
+  ['gt_seed_peru-bolivia-andes-salt-flats-20-days', 7, 'a separate cost on top of the ~€25/day ground budget.',
+    'a separate cost on top of the ground budget (~€35/day since the 2026-10 rate check).'],
   ["gt_seed_tallinn-riga-vilnius-7-10-days", 2, "Web check (2026-08): the Rail Baltica high-speed line is not yet operational (target 2030, with the Latvian section possibly not until 2035), so this route travels entirely by bus (Lux Express/Ecolines, not train) — book ahead in high season, prices roughly $11-60 per leg.",
     "Web check (2026-10): the Rail Baltica high-speed line is not yet operational (target Q4 2030, with the Latvian section possibly not until 2035), so this route travels entirely by bus (Lux Express/Ecolines, not train) — book ahead in high season, prices roughly $11-60 per leg."],
 ];

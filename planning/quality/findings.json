@@ -1,19 +1,21 @@
 {
  "date": "2026-10-29",
  "meta": {
-  "routes": 453,
-  "blocks": 1088,
+  "routes": 452,
+  "blocks": 1087,
   "fares": {
-   "estimatedTotal": 105327,
-   "estimatedCount": 220,
+   "estimatedTotal": 80977,
+   "estimatedCount": 190,
    "csvConfidence": {
-    "medium": 107,
-    "low": 255
+    "medium": 144,
+    "low": 218
    }
   },
   "sheet": {
-   "sheetRoutes": 453,
-   "counts": {}
+   "sheetRoutes": 452,
+   "counts": {
+    "notes": 1
+   }
   }
  },
  "findings": [
@@ -434,66 +436,6 @@
   {
    "check": "B5",
    "severity": "info",
-   "route_id": "gt_seed_new-zealand",
-   "route": "New Zealand 🥝",
-   "block": null,
-   "message": "flight_in_cost €1200 is an estimate: AMS-Christchurch one way, 2+ stops (notes: return EUR 1,300-2,000; est)",
-   "cost": 1200,
-   "field": "flight_in_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
-   "route_id": "gt_seed_new-zealand-north-island",
-   "route": "New Zealand North Island 🌿",
-   "block": null,
-   "message": "flight_in_cost €1200 is an estimate: AMS-Wellington one way, 2-3 stops (notes: return EUR 1,400-1,800; est)",
-   "cost": 1200,
-   "field": "flight_in_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
-   "route_id": "gt_seed_new-zealand-south-island",
-   "route": "New Zealand South Island 🏔️",
-   "block": null,
-   "message": "flight_in_cost €1150 is an estimate: AMS-Christchurch one way, 1-2 stops via Asia/Gulf/US (est from AKL back 1100 in reference file; notes: return ",
-   "cost": 1150,
-   "field": "flight_in_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
-   "route_id": "gt_seed_tasmania",
-   "route": "Tasmania 🐾",
-   "block": null,
-   "message": "flight_in_cost €1100 is an estimate: AMS-Hobart one way, 2 stops (notes: return EUR 1,300-1,800; est)",
-   "cost": 1100,
-   "field": "flight_in_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
-   "route_id": "gt_seed_tasmania",
-   "route": "Tasmania 🐾",
-   "block": null,
-   "message": "flight_out_cost €1100 is an estimate: Hobart-AMS one way (est)",
-   "cost": 1100,
-   "field": "flight_out_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
-   "route_id": "gt_seed_new-zealand-south-island",
-   "route": "New Zealand South Island 🏔️",
-   "block": null,
-   "message": "flight_out_cost €1100 is an estimate: Christchurch-AMS one way (est, same logic; low confidence)",
-   "cost": 1100,
-   "field": "flight_out_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
    "route_id": "gt_seed_antarctica-cruise",
    "route": "Antarctica Cruise 🐧",
    "block": null,
@@ -534,36 +476,6 @@
   {
    "check": "B5",
    "severity": "info",
-   "route_id": "gt_seed_cairns-great-barrier-reef",
-   "route": "Cairns & Great Barrier Reef 🐠",
-   "block": null,
-   "message": "flight_in_cost €1050 is an estimate: AMS-Cairns one way, 2+ stops (notes: return EUR 1,600-2,500 -> half of midpoint; est)",
-   "cost": 1050,
-   "field": "flight_in_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
-   "route_id": "gt_seed_cairns-great-barrier-reef",
-   "route": "Cairns & Great Barrier Reef 🐠",
-   "block": null,
-   "message": "flight_out_cost €1050 is an estimate: Cairns-AMS one way (same, est)",
-   "cost": 1050,
-   "field": "flight_out_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
-   "route_id": "gt_seed_tropicaloutback-australia",
-   "route": "Tropical/Outback Australia 🐊",
-   "block": null,
-   "message": "flight_out_cost €1050 is an estimate: Cairns-AMS one way (est)",
-   "cost": 1050,
-   "field": "flight_out_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
    "route_id": "gt_seed_papua-new-guinea",
    "route": "Papua New Guinea 🎭",
    "block": null,
@@ -584,36 +496,6 @@
   {
    "check": "B5",
    "severity": "info",
-   "route_id": "gt_seed_fiji-vanuatu",
-   "route": "Fiji & Vanuatu 🐚",
-   "block": null,
-   "message": "flight_out_cost €950 is an estimate: Nadi-AMS one way, multiple stops (notes: return EUR 1,150-1,500 ending in Fiji; est)",
-   "cost": 950,
-   "field": "flight_out_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
-   "route_id": "gt_seed_fiji",
-   "route": "Fiji 🌊",
-   "block": null,
-   "message": "flight_in_cost €950 is an estimate: AMS-Nadi one way (est)",
-   "cost": 950,
-   "field": "flight_in_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
-   "route_id": "gt_seed_fiji",
-   "route": "Fiji 🌊",
-   "block": null,
-   "message": "flight_out_cost €950 is an estimate: Nadi-AMS one way (est)",
-   "cost": 950,
-   "field": "flight_out_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
    "route_id": "gt_seed_papua-new-guinea",
    "route": "Papua New Guinea 🎭",
    "block": null,
@@ -628,16 +510,6 @@
    "route": "Bhutan 🐉",
    "block": null,
    "message": "flight_in_cost €900 is an estimate: AMS-Paro one way via Delhi/Bangkok (Trip.com ~EUR 1350 return floor; est as 2 tickets, low)",
-   "cost": 900,
-   "field": "flight_in_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
-   "route_id": "gt_seed_sydneybyron-great-ocean-road",
-   "route": "Sydney/Byron & Great Ocean Road 🦘",
-   "block": null,
-   "message": "flight_in_cost €900 is an estimate: AMS-Sydney one way, 1 stop (notes: return EUR 1,100-1,900; est)",
    "cost": 900,
    "field": "flight_in_cost"
   },
@@ -664,26 +536,6 @@
   {
    "check": "B5",
    "severity": "info",
-   "route_id": "gt_seed_sydneybyron-great-ocean-road",
-   "route": "Sydney/Byron & Great Ocean Road 🦘",
-   "block": null,
-   "message": "flight_out_cost €850 is an estimate: Melbourne-AMS one way, 1 stop (est)",
-   "cost": 850,
-   "field": "flight_out_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
-   "route_id": "gt_seed_temperatesouthern-australia",
-   "route": "Temperate/Southern Australia 🍇",
-   "block": null,
-   "message": "flight_out_cost €850 is an estimate: Adelaide-AMS one way, 1 stop (est)",
-   "cost": 850,
-   "field": "flight_out_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
    "route_id": "gt_seed_palau",
    "route": "Palau 🦈",
    "block": null,
@@ -700,26 +552,6 @@
    "message": "flight_in_cost €800 is an estimate: AMS-Kasane one way via Johannesburg (notes return ±€900-1,300; typical one-way; est)",
    "cost": 800,
    "field": "flight_in_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
-   "route_id": "gt_seed_tropicaloutback-australia",
-   "route": "Tropical/Outback Australia 🐊",
-   "block": null,
-   "message": "flight_in_cost €800 is an estimate: AMS-Perth one way, 1 stop (notes: return EUR 910-1,500; est)",
-   "cost": 800,
-   "field": "flight_in_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
-   "route_id": "gt_seed_hawaii",
-   "route": "Hawaii 🐢",
-   "block": null,
-   "message": "flight_out_cost €800 is an estimate: Lihue-AMS one way via Honolulu/US hub (est)",
-   "cost": 800,
-   "field": "flight_out_cost"
   },
   {
    "check": "B5",
@@ -894,32 +726,12 @@
   {
    "check": "B5",
    "severity": "info",
-   "route_id": "gt_seed_western-canada-rockies-vancouver",
-   "route": "Western Canada: Rockies & Vancouver 🏔️",
-   "block": null,
-   "message": "flight_out_cost €650 is an estimate: Anchorage-AMS one way via Seattle/Vancouver (est)",
-   "cost": 650,
-   "field": "flight_out_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
    "route_id": "gt_seed_guyana",
    "route": "Guyana 🦦",
    "block": null,
    "message": "flight_in_cost €650 is an estimate: KLM AMS-Georgetown one way (notes: return ~EUR 740-1,460; est)",
    "cost": 650,
    "field": "flight_in_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
-   "route_id": "gt_seed_peru-bolivia-andes-salt-flats-20-days",
-   "route": "Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂",
-   "block": null,
-   "message": "flight_out_cost €650 is an estimate: La Paz-AMS one way with a connection (est, La Paz pricier than Lima)",
-   "cost": 650,
-   "field": "flight_out_cost"
   },
   {
    "check": "B5",
@@ -939,36 +751,6 @@
    "block": null,
    "message": "flight_out_cost €605 is an estimate: Varanasi-Delhi ~55 (est, notes: flight ~1h20) + Delhi-AMS 550 (est from out fare / notes EUR 350-550 return)",
    "cost": 605,
-   "field": "flight_out_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
-   "route_id": "gt_seed_african-islands",
-   "route": "African Islands 🏝️",
-   "block": null,
-   "message": "flight_out_cost €600 is an estimate: Mauritius-AMS one way, 1 stop (notes return ±€600-1,500; est)",
-   "cost": 600,
-   "field": "flight_out_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
-   "route_id": "gt_seed_mauritius",
-   "route": "Mauritius 🦤",
-   "block": null,
-   "message": "flight_in_cost €600 is an estimate: AMS-Mauritius 1 stop (notes return ±€600-1,500; est)",
-   "cost": 600,
-   "field": "flight_in_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
-   "route_id": "gt_seed_mauritius",
-   "route": "Mauritius 🦤",
-   "block": null,
-   "message": "flight_out_cost €600 is an estimate: Mauritius-AMS 1 stop (est)",
-   "cost": 600,
    "field": "flight_out_cost"
   },
   {
@@ -998,26 +780,6 @@
    "route": "Seychelles 🌺",
    "block": null,
    "message": "flight_in_cost €600 is an estimate: AMS-Mahé 1 stop (notes return ±€680-900; est)",
-   "cost": 600,
-   "field": "flight_in_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
-   "route_id": "gt_seed_east-africa-safari-classic",
-   "route": "East Africa Safari Classic 🦒",
-   "block": null,
-   "message": "flight_in_cost €600 is an estimate: AMS-Kilimanjaro direct KLM (notes return ±€1,050-1,500; est)",
-   "cost": 600,
-   "field": "flight_in_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
-   "route_id": "gt_seed_tanzania",
-   "route": "Tanzania 🦁",
-   "block": null,
-   "message": "flight_in_cost €600 is an estimate: AMS-Kilimanjaro direct KLM (est)",
    "cost": 600,
    "field": "flight_in_cost"
   },
@@ -1118,26 +880,6 @@
    "route": "Seychelles 🌺",
    "block": null,
    "message": "flight_out_cost €580 is an estimate: Mahé-AMS 1 stop (est)",
-   "cost": 580,
-   "field": "flight_out_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
-   "route_id": "gt_seed_bolivia",
-   "route": "Bolivia 🧂",
-   "block": null,
-   "message": "flight_out_cost €580 is an estimate: La Paz-AMS one way (est, low)",
-   "cost": 580,
-   "field": "flight_out_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
-   "route_id": "gt_seed_andes-grand-traverse",
-   "route": "Andes Grand Traverse 🦙",
-   "block": null,
-   "message": "flight_out_cost €580 is an estimate: La Paz-AMS (est, low); route ends in Bolivia, Potosi-La Paz night bus is in BO local",
    "cost": 580,
    "field": "flight_out_cost"
   },
@@ -1324,16 +1066,6 @@
   {
    "check": "B5",
    "severity": "info",
-   "route_id": "gt_seed_central-america-loop",
-   "route": "Central America Loop 🌋",
-   "block": null,
-   "message": "flight_in_cost €500 is an estimate: AMS-Guatemala City, 1-2 stops; notes 600-900 return (est, low)",
-   "cost": 500,
-   "field": "flight_in_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
    "route_id": "gt_seed_cuba",
    "route": "Cuba 🎷",
    "block": null,
@@ -1350,16 +1082,6 @@
    "message": "flight_out_cost €500 is an estimate: Quito-AMS (est)",
    "cost": 500,
    "field": "flight_out_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
-   "route_id": "gt_seed_guatemala",
-   "route": "Guatemala 🦜",
-   "block": null,
-   "message": "flight_in_cost €500 is an estimate: AMS-Guatemala City, stopover; notes 700-1300 return (est)",
-   "cost": 500,
-   "field": "flight_in_cost"
   },
   {
    "check": "B5",
@@ -1838,26 +1560,6 @@
    "route": "Guadeloupe & Dominica 🍃",
    "block": null,
    "message": "flight_in_cost €420 is an estimate: AMS-Pointe-a-Pitre via Paris; notes 650-1700 return (est)",
-   "cost": 420,
-   "field": "flight_in_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
-   "route_id": "gt_seed_pacific-northwest",
-   "route": "Pacific Northwest 🦫",
-   "block": null,
-   "message": "flight_in_cost €420 is an estimate: AMS-Seattle one way, KLM direct (est; notes: return EUR 880-1,090)",
-   "cost": 420,
-   "field": "flight_in_cost"
-  },
-  {
-   "check": "B5",
-   "severity": "info",
-   "route_id": "gt_seed_us-west-coast-roadtrip",
-   "route": "US West Coast Roadtrip 🌉",
-   "block": null,
-   "message": "flight_in_cost €420 is an estimate: AMS-Seattle one way, KLM direct (est)",
    "cost": 420,
    "field": "flight_in_cost"
   },
@@ -5296,16 +4998,6 @@
   {
    "check": "C2",
    "severity": "low",
-   "route_id": "gt_seed_moldova-transnistria-6-days",
-   "route": "Moldova + Transnistria (6 days) 🍇",
-   "block": 0,
-   "message": "notes: dated 2026-08, now past",
-   "text": "⚠️ SAFETY — a core point, not a routine 'this is fine': the Dutch Ministry of Foreign Affairs (nederlandwereldwijd.nl) gives Transnistria its own, much stricter travel advisory than the rest of Moldova — RED (updated 21 May 2026, valid as of 13 August 2026): 'do not travel here under any circumstances, too dangerous' — the embassy cannot assist there.",
-   "field": "notes"
-  },
-  {
-   "check": "C2",
-   "severity": "low",
    "route_id": "gt_seed_budapest-4-days",
    "route": "Budapest (4 days) 🛁",
    "block": 0,
@@ -5401,16 +5093,6 @@
    "block": 0,
    "message": "notes: dated 2026-08, now past",
    "text": "The Narva-Russia border crossing has been closed to vehicles since February 2024, extended through at least 31 August 2026 — not relevant unless considering Narva as a day trip (the town itself is safe and within Schengen).",
-   "field": "notes"
-  },
-  {
-   "check": "C2",
-   "severity": "medium",
-   "route_id": "gt_seed_tallinn-riga-vilnius-7-10-days",
-   "route": "Tallinn + Riga + Vilnius (7-10 days) 🚌",
-   "block": 2,
-   "message": "notes: dated 2026-08, now past",
-   "text": "Web check (2026-08): the Rail Baltica high-speed line is not yet operational (target 2030, with the Latvian section possibly not until 2035), so this route travels entirely by bus (Lux Express/Ecolines, not train) — book ahead in high season, prices roughly $11-60 per leg.",
    "field": "notes"
   },
   {
@@ -5620,6 +5302,16 @@
    "route": null,
    "block": null,
    "message": "Dutch-text scan: no real hits (only known place-name false positives)"
+  },
+  {
+   "check": "D1",
+   "severity": "medium",
+   "route_id": "gt_seed_peru-bolivia-andes-salt-flats-20-days",
+   "route": "Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂",
+   "block": 7,
+   "message": "#7 BO notes differs",
+   "code": "The classic 3-day/2-night jeep tour: the train cemetery, the salt flats themselves, Incahuasi Island, and the colored lagoons and geysers of Eduardo Avaroa NP. ",
+   "sheet": "The classic 3-day/2-night jeep tour: the train cemetery, the salt flats themselves, Incahuasi Island, and the colored lagoons and geysers of Eduardo Avaroa NP. "
   }
  ]
 }

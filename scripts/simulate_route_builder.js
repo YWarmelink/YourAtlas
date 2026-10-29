@@ -85,6 +85,9 @@ function main() {
     }
   }
 
+  // routeBuilder.js drops permanently removed routes inline (not an rbMigrate* call), right after the
+  // migrations — mirror it, or a deleted route (e.g. Moldova + Transnistria) still shows up here.
+  vm.runInContext('rbRoutes = rbRoutes.filter(r => !RB_REMOVED_ROUTE_IDS.has(r.id));', sandbox);
   const finalRoutes = vm.runInContext('rbRoutes', sandbox);
   const pretty = process.argv.includes('--pretty');
   process.stdout.write(JSON.stringify(finalRoutes, null, pretty ? 2 : 0));
