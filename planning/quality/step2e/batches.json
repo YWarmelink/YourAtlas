@@ -1,0 +1,176 @@
+[
+ {
+  "batch": 1,
+  "count": 15,
+  "codes": [
+   "AD",
+   "BE",
+   "BG",
+   "CY",
+   "CZ",
+   "DK",
+   "EE",
+   "FI",
+   "FO",
+   "GG",
+   "GI",
+   "HU",
+   "IE",
+   "IM",
+   "IS"
+  ],
+  "status": "todo"
+ },
+ {
+  "batch": 2,
+  "count": 15,
+  "codes": [
+   "JE",
+   "LI",
+   "LT",
+   "LU",
+   "LV",
+   "MC",
+   "MD",
+   "MK",
+   "MT",
+   "NL",
+   "PL",
+   "RO",
+   "RS",
+   "SK",
+   "SM"
+  ],
+  "status": "todo"
+ },
+ {
+  "batch": 3,
+  "count": 15,
+  "codes": [
+   "XK",
+   "AE",
+   "BH",
+   "BN",
+   "BT",
+   "BT/tour",
+   "MN",
+   "MV",
+   "MV/resort",
+   "OM",
+   "QA",
+   "TJ",
+   "TL",
+   "AO",
+   "BJ"
+  ],
+  "status": "todo"
+ },
+ {
+  "batch": 4,
+  "count": 15,
+  "codes": [
+   "CI",
+   "CM",
+   "CV",
+   "ET",
+   "GA",
+   "GH",
+   "GM",
+   "LS",
+   "MG",
+   "MU",
+   "MW",
+   "MW/safari",
+   "MZ",
+   "MZ/safari",
+   "RW"
+  ],
+  "status": "todo"
+ },
+ {
+  "batch": 5,
+  "count": 15,
+  "codes": [
+   "RW/safari",
+   "SC",
+   "SN",
+   "ST",
+   "SZ",
+   "TG",
+   "TN",
+   "UG/safari",
+   "ZA/safari",
+   "ZM",
+   "ZM/safari",
+   "ZW",
+   "ZW/safari",
+   "AR",
+   "AR/Patagonia"
+  ],
+  "status": "todo"
+ },
+ {
+  "batch": 6,
+  "count": 15,
+  "codes": [
+   "AW",
+   "BO",
+   "BQ",
+   "BR",
+   "BZ",
+   "CA",
+   "CL",
+   "CL/Patagonia",
+   "CO",
+   "CR",
+   "CU",
+   "CW",
+   "DM",
+   "EC",
+   "EC/Galápagos"
+  ],
+  "status": "todo"
+ },
+ {
+  "batch": 7,
+  "count": 15,
+  "codes": [
+   "GD",
+   "GP",
+   "GT",
+   "GY",
+   "HN",
+   "JM",
+   "LC",
+   "MX",
+   "NI",
+   "PA",
+   "PE",
+   "SR",
+   "SV",
+   "US",
+   "US/big"
+  ],
+  "status": "todo"
+ },
+ {
+  "batch": 8,
+  "count": 13,
+  "codes": [
+   "UY",
+   "AU",
+   "CK",
+   "FJ",
+   "NZ",
+   "PG",
+   "PW",
+   "TO",
+   "VU",
+   "WS",
+   "GL",
+   "SJ",
+   "AQ"
+  ],
+  "status": "todo"
+ }
+]

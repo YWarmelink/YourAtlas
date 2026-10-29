@@ -1,0 +1,505 @@
+[
+ {
+  "code": "AD",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 62,
+   "accommodation": 32,
+   "food": 18,
+   "local_transport": 6,
+   "activities": 6
+  },
+  "standard": {
+   "total": 125,
+   "accommodation": 75,
+   "food": 30,
+   "local_transport": 8,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 180,
+   "accommodation": 110,
+   "food": 42,
+   "local_transport": 10,
+   "activities": 18
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.budgetyourtrip.com/andorra/trip-cost-AD",
+   "https://trek.zone/en/andorra/prices",
+   "https://www.hostelz.com/en/hostels-in/Andorra"
+  ],
+  "note": "Backpacker day EUR55-110 (BYT ~EUR83, trek.zone EUR54-63, traveller ~EUR60); dorms EUR15-45. Current 62 fits."
+ },
+ {
+  "code": "BE",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 78,
+   "accommodation": 36,
+   "food": 22,
+   "local_transport": 8,
+   "activities": 12
+  },
+  "standard": {
+   "total": 129,
+   "accommodation": 80,
+   "food": 28,
+   "local_transport": 7,
+   "activities": 14
+  },
+  "comfort": {
+   "total": 195,
+   "accommodation": 125,
+   "food": 42,
+   "local_transport": 10,
+   "activities": 18
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hostelz.com/en/backpacker-budget/belgium/1-month",
+   "https://viatravelers.com/belgium/"
+  ],
+  "note": "Hostelz model ~USD88/day (~EUR78); dorm EUR35-75 in cities, Brussels EUR36. Bp +13%, kept."
+ },
+ {
+  "code": "BG",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 36,
+   "accommodation": 13,
+   "food": 13,
+   "local_transport": 3,
+   "activities": 7
+  },
+  "standard": {
+   "total": 58,
+   "accommodation": 34,
+   "food": 15,
+   "local_transport": 3,
+   "activities": 6
+  },
+  "comfort": {
+   "total": 93,
+   "accommodation": 55,
+   "food": 22,
+   "local_transport": 6,
+   "activities": 10
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://gotripzi.com/destinations/sofia-bg/cost",
+   "https://www.hostelz.com/backpacker-budget/bulgaria",
+   "https://www.machupicchu.org/sofia-on-a-budget-2026-free-things-to-do-money-saving-tips.htm"
+  ],
+  "note": "Budget day USD35-53 (EUR31-47), dorm EUR10-15 (BGN20-30), Sofia prices rose with euro adoption 2026; bp 25 too low, std nudged up."
+ },
+ {
+  "code": "CY",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 62,
+   "accommodation": 28,
+   "food": 20,
+   "local_transport": 5,
+   "activities": 9
+  },
+  "standard": {
+   "total": 107,
+   "accommodation": 65,
+   "food": 24,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 164,
+   "accommodation": 100,
+   "food": 36,
+   "local_transport": 10,
+   "activities": 18
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hostelz.com/en/backpacker-budget/cyprus",
+   "https://www.machupicchu.org/cyprus-budget-guide-2026-ultimate-travel-cost-breakdown.htm",
+   "https://radicalstorage.com/travel/is-cyprus-expensive/"
+  ],
+  "note": "Hostelz model USD93 (~EUR83) incl. activities; guide EUR45-90 budget; dorm EUR15-38, budget guesthouse EUR30-45. Bp raised to 62 (midpoint)."
+ },
+ {
+  "code": "CZ",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 40,
+   "accommodation": 18,
+   "food": 13,
+   "local_transport": 3,
+   "activities": 6
+  },
+  "standard": {
+   "total": 89,
+   "accommodation": 55,
+   "food": 18,
+   "local_transport": 4,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 155,
+   "accommodation": 95,
+   "food": 34,
+   "local_transport": 8,
+   "activities": 18
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.helloprague.net/prague-on-a-budget/",
+   "https://www.hostelz.com/en/backpacker-budget/cities/prague-czech-republic"
+  ],
+  "note": "Prague budget day EUR35-50 (hostel, lunch menu, transport, one sight), dorm EUR15-22; Old Town pricier. Current 40 fits."
+ },
+ {
+  "code": "DK",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 80,
+   "accommodation": 38,
+   "food": 24,
+   "local_transport": 8,
+   "activities": 10
+  },
+  "standard": {
+   "total": 161,
+   "accommodation": 100,
+   "food": 34,
+   "local_transport": 9,
+   "activities": 18
+  },
+  "comfort": {
+   "total": 251,
+   "accommodation": 165,
+   "food": 52,
+   "local_transport": 12,
+   "activities": 22
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hostelz.com/backpacking-copenhagen-denmark-budget-travel-guide",
+   "https://viatravelers.com/budget/copenhagen/?format=markdown"
+  ],
+  "note": "Copenhagen budget EUR50-80 (600-800 DKK), dorm 150-250 DKK to EUR55, meal 250 DKK. Current 80 at upper end, fits."
+ },
+ {
+  "code": "EE",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 48,
+   "accommodation": 23,
+   "food": 15,
+   "local_transport": 4,
+   "activities": 6
+  },
+  "standard": {
+   "total": 98,
+   "accommodation": 60,
+   "food": 22,
+   "local_transport": 6,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 158,
+   "accommodation": 100,
+   "food": 35,
+   "local_transport": 8,
+   "activities": 15
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.amigosim.com/blog/how-much-money-do-i-need-to-travel-to-estonia",
+   "https://www.nomadotravel.app/en/guides/tallinn-on-a-budget",
+   "https://www.gotripzi.com/destinations/tallinn-ee/cost"
+  ],
+  "note": "Budget day EUR32-70 (mostly EUR45-50 incl. hostel), dorm EUR15-35, 24h transit pass EUR5.5. Bp 41 -> 48; std/comfort kept."
+ },
+ {
+  "code": "FI",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 67,
+   "accommodation": 33,
+   "food": 20,
+   "local_transport": 6,
+   "activities": 8
+  },
+  "standard": {
+   "total": 130,
+   "accommodation": 80,
+   "food": 28,
+   "local_transport": 7,
+   "activities": 15
+  },
+  "comfort": {
+   "total": 195,
+   "accommodation": 125,
+   "food": 42,
+   "local_transport": 10,
+   "activities": 18
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.machupicchu.org/finland-budget-guide-2026-complete-cost-breakdown.htm",
+   "https://www.hostelz.com/en/backpacker-budget/finland"
+  ],
+  "note": "Helsinki dorm EUR25-40, budget meal EUR10-20, realistic EUR60-100/day (one source EUR48-60, model ~EUR108). Current 67 fits."
+ },
+ {
+  "code": "FO",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 101,
+   "accommodation": 55,
+   "food": 28,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "standard": {
+   "total": 192,
+   "accommodation": 115,
+   "food": 42,
+   "local_transport": 10,
+   "activities": 25
+  },
+  "comfort": {
+   "total": 290,
+   "accommodation": 190,
+   "food": 60,
+   "local_transport": 12,
+   "activities": 28
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.lonelyplanet.com/articles/faroe-islands-on-a-budget",
+   "https://www.travelwithhello.com/blog/faroe-islands-travel-budget-guide"
+  ],
+  "note": "Solo hostel+bus 600-1000 DKK (EUR80-134)/day, hostel ~USD30, hike fees 150-200 DKK; sources scattered. Current 101 fits."
+ },
+ {
+  "code": "GG",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 85,
+   "accommodation": 50,
+   "food": 22,
+   "local_transport": 5,
+   "activities": 8
+  },
+  "standard": {
+   "total": 163,
+   "accommodation": 105,
+   "food": 34,
+   "local_transport": 8,
+   "activities": 16
+  },
+  "comfort": {
+   "total": 252,
+   "accommodation": 170,
+   "food": 50,
+   "local_transport": 10,
+   "activities": 22
+  },
+  "confidence": "low",
+  "sources": [
+   "https://travelcostcalculator.org/cost/guernsey",
+   "https://explore.atmfeesaver.com/community/money-travel-in-europe-travel-budgets/daily-travel-budget-for-guernsey/"
+  ],
+  "note": "Calculator budget USD88-264/day, hotels avg USD94 (2-3* USD109-132), cafe meal GBP10-15, bus GBP1.50. Few hostels, so bp 95 left; 85 found (-11%)."
+ },
+ {
+  "code": "GI",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 70,
+   "accommodation": 42,
+   "food": 18,
+   "local_transport": 3,
+   "activities": 7
+  },
+  "standard": {
+   "total": 160,
+   "accommodation": 120,
+   "food": 28,
+   "local_transport": 4,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 225,
+   "accommodation": 170,
+   "food": 38,
+   "local_transport": 4,
+   "activities": 13
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hostelz.com/en/hostels-in/Gibraltar",
+   "https://www.hotelscombined.ca/Place/Gibraltar.htm",
+   "https://www.travelocity.com/es/Gibraltar-Hoteles.d1325.Guia-Viajes-Hoteles"
+  ],
+  "note": "One hostel USD44-45 dorm (~EUR39); hotels avg USD176 (Jan) to 324 (Apr), cheapest ~EUR120; std/comfort rooms raised ~+19%/+16%. No meal data found."
+ },
+ {
+  "code": "HU",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 35,
+   "accommodation": 15,
+   "food": 11,
+   "local_transport": 3,
+   "activities": 6
+  },
+  "standard": {
+   "total": 79,
+   "accommodation": 50,
+   "food": 16,
+   "local_transport": 4,
+   "activities": 9
+  },
+  "comfort": {
+   "total": 124,
+   "accommodation": 80,
+   "food": 26,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "confidence": "high",
+  "sources": [
+   "https://www.budapest-trip.com/guides/budapest-daily-budget/",
+   "https://www.bootsnall.com/data/cost-of-living/cost-of-living-hungary",
+   "https://chasingwhereabouts.com/blog/budapest-cost-of-travel"
+  ],
+  "note": "Budapest backpacker EUR30-50/day, dorm EUR10-30, local meal EUR3-10, BKK ticket ~EUR1.4; mid-range EUR80-140. Current fits."
+ },
+ {
+  "code": "IE",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 80,
+   "accommodation": 40,
+   "food": 21,
+   "local_transport": 7,
+   "activities": 12
+  },
+  "standard": {
+   "total": 158,
+   "accommodation": 105,
+   "food": 30,
+   "local_transport": 9,
+   "activities": 14
+  },
+  "comfort": {
+   "total": 230,
+   "accommodation": 160,
+   "food": 40,
+   "local_transport": 12,
+   "activities": 18
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.hostelz.com/en/backpacker-budget/cities/dublin-ireland",
+   "https://www.trvlogue.com/en/clink-ilar-dublin-hostel"
+  ],
+  "note": "Hostelz Dublin ~USD78 (~EUR70); 4-bed dorm ~USD37 at Clink; city-centre peak prices much higher. Bp 80 (+8%), kept."
+ },
+ {
+  "code": "IM",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 74,
+   "accommodation": 40,
+   "food": 20,
+   "local_transport": 6,
+   "activities": 8
+  },
+  "standard": {
+   "total": 142,
+   "accommodation": 95,
+   "food": 28,
+   "local_transport": 7,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 201,
+   "accommodation": 138,
+   "food": 38,
+   "local_transport": 9,
+   "activities": 16
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.visitisleofman.com/accommodation/stay-somewhere-different/hostels",
+   "https://explore.atmfeesaver.com/community/money-travel-in-europe-travel-budgets/cash-per-day-in-isle-of-man",
+   "https://www.hotelscombined.co.uk/Place/Isle_of_Man.htm"
+  ],
+  "note": "Hostel GBP15-20, B&B GBP32-67 pp, hotel avg GBP98, food+bus GBP45-70/day (bus pass GBP19/3d). Current fits."
+ },
+ {
+  "code": "IS",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 102,
+   "accommodation": 46,
+   "food": 30,
+   "local_transport": 10,
+   "activities": 16
+  },
+  "standard": {
+   "total": 192,
+   "accommodation": 120,
+   "food": 42,
+   "local_transport": 10,
+   "activities": 20
+  },
+  "comfort": {
+   "total": 286,
+   "accommodation": 190,
+   "food": 58,
+   "local_transport": 12,
+   "activities": 26
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://isnet.is/guides/iceland-budget-realistic-2026-daily-cost",
+   "https://www.hostelz.com/en/backpacker-budget/iceland/2-weeks",
+   "https://www.hostelz.com/en/hostels-in/Iceland"
+  ],
+  "note": "Dorm 5,000-8,000 ISK (~EUR32-51, avg USD39), food ~USD30-60; hostel model USD131 (~EUR117, incl. activities). Bp 102 (+6%), kept."
+ }
+]

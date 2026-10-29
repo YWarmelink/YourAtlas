@@ -1,0 +1,437 @@
+[
+ {
+  "code": "XK",
+  "country": "Kosovo",
+  "variant": "",
+  "blocks": 8,
+  "backpacker": {
+   "total": 22,
+   "accommodation": 11,
+   "food": 8,
+   "local_transport": 1,
+   "activities": 2
+  },
+  "standard": {
+   "total": 43,
+   "accommodation": 26,
+   "food": 10,
+   "local_transport": 2,
+   "activities": 5
+  },
+  "comfort": {
+   "total": 69,
+   "accommodation": 40,
+   "food": 18,
+   "local_transport": 3,
+   "activities": 8
+  },
+  "notes": "Pristina/Prizren",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "AE",
+  "country": "United Arab Emirates",
+  "variant": "",
+  "blocks": 1,
+  "backpacker": {
+   "total": 52,
+   "accommodation": 30,
+   "food": 12,
+   "local_transport": 5,
+   "activities": 5
+  },
+  "standard": {
+   "total": 120,
+   "accommodation": 75,
+   "food": 22,
+   "local_transport": 8,
+   "activities": 15
+  },
+  "comfort": {
+   "total": 210,
+   "accommodation": 130,
+   "food": 40,
+   "local_transport": 15,
+   "activities": 25
+  },
+  "notes": "Dubai/Abu Dhabi 3* ~75; cheaper Sharjah/Ajman",
+  "levels_notes": "Dubai dorm ~28; Sharjah cheaper"
+ },
+ {
+  "code": "BH",
+  "country": "Bahrain",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 46,
+   "accommodation": 25,
+   "food": 12,
+   "local_transport": 4,
+   "activities": 5
+  },
+  "standard": {
+   "total": 109,
+   "accommodation": 70,
+   "food": 22,
+   "local_transport": 7,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 182,
+   "accommodation": 120,
+   "food": 35,
+   "local_transport": 12,
+   "activities": 15
+  },
+  "notes": "Few budget rooms; taxis needed",
+  "levels_notes": "Few hostels"
+ },
+ {
+  "code": "BN",
+  "country": "Brunei",
+  "variant": "",
+  "blocks": 4,
+  "backpacker": {
+   "total": 41,
+   "accommodation": 25,
+   "food": 10,
+   "local_transport": 3,
+   "activities": 3
+  },
+  "standard": {
+   "total": 102,
+   "accommodation": 70,
+   "food": 18,
+   "local_transport": 6,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 170,
+   "accommodation": 120,
+   "food": 30,
+   "local_transport": 10,
+   "activities": 10
+  },
+  "notes": "Few cheap beds; most sights free",
+  "levels_notes": "Few hostels; cheapest budget hotel"
+ },
+ {
+  "code": "BT",
+  "country": "Bhutan",
+  "variant": "",
+  "blocks": 2,
+  "backpacker": {
+   "total": 46,
+   "accommodation": 30,
+   "food": 10,
+   "local_transport": 3,
+   "activities": 3
+  },
+  "standard": {
+   "total": 88,
+   "accommodation": 55,
+   "food": 20,
+   "local_transport": 5,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 160,
+   "accommodation": 110,
+   "food": 30,
+   "local_transport": 10,
+   "activities": 10
+  },
+  "notes": "Excludes the USD 100/night SDF (~EUR 89) and mandatory guide/car; independent travel not allowed so see variant for realistic rate",
+  "levels_notes": "Excludes SDF and mandatory guide; see package variant"
+ },
+ {
+  "code": "BT",
+  "country": "Bhutan",
+  "variant": "tour package incl. SDF",
+  "blocks": 2,
+  "backpacker": {
+   "total": 179,
+   "accommodation": 129,
+   "food": 20,
+   "local_transport": 20,
+   "activities": 10
+  },
+  "standard": {
+   "total": 225,
+   "accommodation": 150,
+   "food": 35,
+   "local_transport": 25,
+   "activities": 15
+  },
+  "comfort": {
+   "total": 290,
+   "accommodation": 200,
+   "food": 40,
+   "local_transport": 30,
+   "activities": 20
+  },
+  "notes": "Realistic rate: 3* hotel + SDF USD 100 (~EUR 89) + mandatory guide/car in local transport; app median likely this package",
+  "levels_notes": "SDF ~EUR 89 inside accommodation; backpacker = budget guesthouse + shared car/guide"
+ },
+ {
+  "code": "MN",
+  "country": "Mongolia",
+  "variant": "",
+  "blocks": 4,
+  "backpacker": {
+   "total": 25,
+   "accommodation": 8,
+   "food": 10,
+   "local_transport": 3,
+   "activities": 4
+  },
+  "standard": {
+   "total": 64,
+   "accommodation": 35,
+   "food": 15,
+   "local_transport": 6,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 127,
+   "accommodation": 80,
+   "food": 25,
+   "local_transport": 10,
+   "activities": 12
+  },
+  "notes": "Ulaanbaatar-centered; ger camp touring excluded (multi-day tours)",
+  "levels_notes": "Ulaanbaatar guesthouse dorms"
+ },
+ {
+  "code": "MV",
+  "country": "Maldives",
+  "variant": "",
+  "blocks": 1,
+  "backpacker": {
+   "total": 83,
+   "accommodation": 55,
+   "food": 15,
+   "local_transport": 8,
+   "activities": 5
+  },
+  "standard": {
+   "total": 130,
+   "accommodation": 80,
+   "food": 25,
+   "local_transport": 10,
+   "activities": 15
+  },
+  "comfort": {
+   "total": 230,
+   "accommodation": 150,
+   "food": 40,
+   "local_transport": 15,
+   "activities": 25
+  },
+  "notes": "Local island guesthouse; ferry transfers in local_transport",
+  "levels_notes": "No hostels; cheapest guesthouse room"
+ },
+ {
+  "code": "MV",
+  "country": "Maldives",
+  "variant": "resort island",
+  "blocks": 1,
+  "backpacker": {
+   "total": 290,
+   "accommodation": 200,
+   "food": 40,
+   "local_transport": 40,
+   "activities": 10
+  },
+  "standard": {
+   "total": 640,
+   "accommodation": 450,
+   "food": 100,
+   "local_transport": 60,
+   "activities": 30
+  },
+  "comfort": {
+   "total": 1280,
+   "accommodation": 990,
+   "food": 150,
+   "local_transport": 90,
+   "activities": 50
+  },
+  "notes": "Resort incl. half board food estimate; speedboat/seaplane transfers prorated",
+  "levels_notes": "Backpacker = cheapest 3* resort half board; comfort = 5* resort"
+ },
+ {
+  "code": "OM",
+  "country": "Oman",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 41,
+   "accommodation": 20,
+   "food": 10,
+   "local_transport": 6,
+   "activities": 5
+  },
+  "standard": {
+   "total": 103,
+   "accommodation": 65,
+   "food": 18,
+   "local_transport": 10,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 161,
+   "accommodation": 100,
+   "food": 28,
+   "local_transport": 18,
+   "activities": 15
+  },
+  "notes": "Hotels pricey; taxis needed",
+  "levels_notes": "Few hostels"
+ },
+ {
+  "code": "QA",
+  "country": "Qatar",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 56,
+   "accommodation": 35,
+   "food": 12,
+   "local_transport": 4,
+   "activities": 5
+  },
+  "standard": {
+   "total": 128,
+   "accommodation": 85,
+   "food": 25,
+   "local_transport": 8,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 217,
+   "accommodation": 150,
+   "food": 38,
+   "local_transport": 14,
+   "activities": 15
+  },
+  "notes": "Doha 3* priced high",
+  "levels_notes": "Few hostels"
+ },
+ {
+  "code": "TJ",
+  "country": "Tajikistan",
+  "variant": "",
+  "blocks": 4,
+  "backpacker": {
+   "total": 22,
+   "accommodation": 8,
+   "food": 9,
+   "local_transport": 2,
+   "activities": 3
+  },
+  "standard": {
+   "total": 48,
+   "accommodation": 28,
+   "food": 12,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "comfort": {
+   "total": 89,
+   "accommodation": 55,
+   "food": 20,
+   "local_transport": 6,
+   "activities": 8
+  },
+  "notes": "Dushanbe/Khorog guesthouses",
+  "levels_notes": ""
+ },
+ {
+  "code": "TL",
+  "country": "East Timor",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 30,
+   "accommodation": 15,
+   "food": 9,
+   "local_transport": 3,
+   "activities": 3
+  },
+  "standard": {
+   "total": 63,
+   "accommodation": 40,
+   "food": 12,
+   "local_transport": 6,
+   "activities": 5
+  },
+  "comfort": {
+   "total": 122,
+   "accommodation": 80,
+   "food": 22,
+   "local_transport": 12,
+   "activities": 8
+  },
+  "notes": "Dili is expensive for the region",
+  "levels_notes": "Few hostels in Dili"
+ },
+ {
+  "code": "AO",
+  "country": "Angola",
+  "variant": "",
+  "blocks": 2,
+  "backpacker": {
+   "total": 55,
+   "accommodation": 35,
+   "food": 12,
+   "local_transport": 5,
+   "activities": 3
+  },
+  "standard": {
+   "total": 120,
+   "accommodation": 80,
+   "food": 22,
+   "local_transport": 10,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 230,
+   "accommodation": 160,
+   "food": 40,
+   "local_transport": 18,
+   "activities": 12
+  },
+  "notes": "Luanda very expensive (hotels 150+), provinces cheaper; expat price level",
+  "levels_notes": "Luanda hostels barely exist; cheapest private rooms"
+ },
+ {
+  "code": "BJ",
+  "country": "Benin",
+  "variant": "",
+  "blocks": 2,
+  "backpacker": {
+   "total": 25,
+   "accommodation": 12,
+   "food": 7,
+   "local_transport": 3,
+   "activities": 3
+  },
+  "standard": {
+   "total": 48,
+   "accommodation": 28,
+   "food": 9,
+   "local_transport": 5,
+   "activities": 6
+  },
+  "comfort": {
+   "total": 95,
+   "accommodation": 60,
+   "food": 18,
+   "local_transport": 10,
+   "activities": 7
+  },
+  "notes": "Cotonou/Ouidah/Abomey guesthouses; zemidjan moto-taxis cheap",
+  "levels_notes": "guesthouse/dorm; zemidjan"
+ }
+]

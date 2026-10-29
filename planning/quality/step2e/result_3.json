@@ -1,0 +1,502 @@
+[
+ {
+  "code": "XK",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 26,
+   "accommodation": 12,
+   "food": 9,
+   "local_transport": 2,
+   "activities": 3
+  },
+  "standard": {
+   "total": 48,
+   "accommodation": 28,
+   "food": 11,
+   "local_transport": 3,
+   "activities": 6
+  },
+  "comfort": {
+   "total": 72,
+   "accommodation": 42,
+   "food": 18,
+   "local_transport": 4,
+   "activities": 8
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.hostelz.com/backpacker-budget/kosovo"
+  ],
+  "note": "Hostelz model ~$35/day for dorm backpacker (~EUR31 incl activities); no explicit dorm/meal prices; raised bp +18%, std/cf slightly"
+ },
+ {
+  "code": "AE",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 52,
+   "accommodation": 30,
+   "food": 12,
+   "local_transport": 5,
+   "activities": 5
+  },
+  "standard": {
+   "total": 120,
+   "accommodation": 75,
+   "food": 22,
+   "local_transport": 8,
+   "activities": 15
+  },
+  "comfort": {
+   "total": 210,
+   "accommodation": 130,
+   "food": 40,
+   "local_transport": 15,
+   "activities": 25
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://thebettervacation.com/dubai/dubai-trip-cost/amp/",
+   "https://simbye.com/blogs/blog/how-much-does-a-dubai-vacation-cost-in-2025-the-ultimate-price-guide",
+   "https://www.gotripzi.com/destinations/dubai-ae/cost"
+  ],
+  "note": "Budget EUR50-80/day, mid EUR100-150 (4* AED350-750); dorm AED80-120 (~EUR25-30)"
+ },
+ {
+  "code": "BH",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 56,
+   "accommodation": 32,
+   "food": 14,
+   "local_transport": 5,
+   "activities": 5
+  },
+  "standard": {
+   "total": 117,
+   "accommodation": 72,
+   "food": 24,
+   "local_transport": 9,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 178,
+   "accommodation": 110,
+   "food": 36,
+   "local_transport": 14,
+   "activities": 18
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.travelwithhello.com/blog/bahrain-travel-budget-guide",
+   "https://travelcostcalculator.org/cost/bahrain/state/capital"
+  ],
+  "note": "BudgetYourTrip budget ~$88/day (double room ~$48), 3-4* ~$109/night, dinner ~$21; bp raised (no hostels, cheapest room ~EUR32)"
+ },
+ {
+  "code": "BN",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 41,
+   "accommodation": 25,
+   "food": 10,
+   "local_transport": 3,
+   "activities": 3
+  },
+  "standard": {
+   "total": 102,
+   "accommodation": 70,
+   "food": 18,
+   "local_transport": 6,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 170,
+   "accommodation": 120,
+   "food": 30,
+   "local_transport": 10,
+   "activities": 10
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://sologuides.com/brunei",
+   "https://southeastasiabackpacker.com/cost-of-travel/brunei/",
+   "https://www.travelwithhello.com/guide/brunei"
+  ],
+  "note": "Budget BND50-90/day (~EUR33-60), hostel bed BND20, mid-range BND60-150 (~EUR40-100)"
+ },
+ {
+  "code": "BT",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 46,
+   "accommodation": 30,
+   "food": 10,
+   "local_transport": 3,
+   "activities": 3
+  },
+  "standard": {
+   "total": 88,
+   "accommodation": 55,
+   "food": 20,
+   "local_transport": 5,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 160,
+   "accommodation": 110,
+   "food": 30,
+   "local_transport": 10,
+   "activities": 10
+  },
+  "confidence": "low",
+  "sources": [
+   "https://littlebhutan.com/bhutan-trip-cost/"
+  ],
+  "note": "Independent travel not possible; base row stays as an excl.-SDF reference only (see package variant)"
+ },
+ {
+  "code": "BT",
+  "variant": "tour package incl. SDF",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 179,
+   "accommodation": 129,
+   "food": 20,
+   "local_transport": 20,
+   "activities": 10
+  },
+  "standard": {
+   "total": 225,
+   "accommodation": 150,
+   "food": 35,
+   "local_transport": 25,
+   "activities": 15
+  },
+  "comfort": {
+   "total": 340,
+   "accommodation": 240,
+   "food": 40,
+   "local_transport": 35,
+   "activities": 25
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://littlebhutan.com/bhutan-trip-cost/",
+   "https://littlebhutan.com/travel-guide/bhutan-sdf/",
+   "https://www.langtangtreks.com/blog/?p=1731"
+  ],
+  "note": "Private 3* tours ~$230-330/day all-in incl SDF/visa/guide/car (~EUR205-295) -> bp/std kept; 4*/mid-range $380-550 (~EUR340-490) -> comfort raised to 340"
+ },
+ {
+  "code": "MN",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 27,
+   "accommodation": 9,
+   "food": 11,
+   "local_transport": 3,
+   "activities": 4
+  },
+  "standard": {
+   "total": 64,
+   "accommodation": 35,
+   "food": 15,
+   "local_transport": 6,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 127,
+   "accommodation": 80,
+   "food": 25,
+   "local_transport": 10,
+   "activities": 12
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://sologuides.com/?p=6141",
+   "https://viatravelers.com/budget/mongolia.md",
+   "https://www.hostelz.com/en/hostels-in/Mongolia"
+  ],
+  "note": "Budget $25-45/day (~EUR22-40), dorm $6-12; bp nudged +2"
+ },
+ {
+  "code": "MV",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 83,
+   "accommodation": 55,
+   "food": 15,
+   "local_transport": 8,
+   "activities": 5
+  },
+  "standard": {
+   "total": 130,
+   "accommodation": 80,
+   "food": 25,
+   "local_transport": 10,
+   "activities": 15
+  },
+  "comfort": {
+   "total": 230,
+   "accommodation": 150,
+   "food": 40,
+   "local_transport": 15,
+   "activities": 25
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://maldives-magazine.com/budget/",
+   "https://amaldives.com/plan-your-trip/maldives-budget-guide-2026"
+  ],
+  "note": "Guesthouse budget $60-100/day (~EUR54-89), comfortable $100-150; rooms $40-80, ferries $1.5-6, speedboat $25-50"
+ },
+ {
+  "code": "MV",
+  "variant": "resort island",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 340,
+   "accommodation": 240,
+   "food": 50,
+   "local_transport": 40,
+   "activities": 10
+  },
+  "standard": {
+   "total": 640,
+   "accommodation": 450,
+   "food": 100,
+   "local_transport": 60,
+   "activities": 30
+  },
+  "comfort": {
+   "total": 1280,
+   "accommodation": 990,
+   "food": 150,
+   "local_transport": 90,
+   "activities": 50
+  },
+  "confidence": "low",
+  "sources": [
+   "https://loudavymkrokem.cz/en/where-stay-maldives-islands/",
+   "https://euholidaysshop.rezdy.com/760339/4d3n-avani-fares-maldives?lang=fr"
+  ],
+  "note": "3* half-board ~$400-700/night, Avani+ ~$400 pp/night incl seaplane, 4* ~EUR330-530 pp, 5* $1200-2500; bp raised to 340, std/cf kept"
+ },
+ {
+  "code": "OM",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 41,
+   "accommodation": 20,
+   "food": 10,
+   "local_transport": 6,
+   "activities": 5
+  },
+  "standard": {
+   "total": 103,
+   "accommodation": 65,
+   "food": 18,
+   "local_transport": 10,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 161,
+   "accommodation": 100,
+   "food": 28,
+   "local_transport": 18,
+   "activities": 15
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://gotripzi.com/destinations/muscat-om/cost",
+   "https://www.hostelz.com/backpacker-budget/oman",
+   "https://travelcostcalculator.org/budget-guide/muscat/30-days"
+  ],
+  "note": "Muscat solo budget ~$45, backpacker $73-82, mid ~$96; guesthouses ~$20-31; bp may sit at low end"
+ },
+ {
+  "code": "QA",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 56,
+   "accommodation": 35,
+   "food": 12,
+   "local_transport": 4,
+   "activities": 5
+  },
+  "standard": {
+   "total": 128,
+   "accommodation": 85,
+   "food": 25,
+   "local_transport": 8,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 217,
+   "accommodation": 150,
+   "food": 38,
+   "local_transport": 14,
+   "activities": 15
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://gotripzi.com/destinations/doha-qa/cost",
+   "https://www.trip.com/guide/info/trip-to-qatar-cost.html",
+   "https://travelcostcalculator.org/budget-guide/doha"
+  ],
+  "note": "Budget $55-110/day, hotels from $50, 3-4* $140-220, budget meal ~$10, metro $2-5"
+ },
+ {
+  "code": "TJ",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 25,
+   "accommodation": 8,
+   "food": 9,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 48,
+   "accommodation": 28,
+   "food": 12,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "comfort": {
+   "total": 89,
+   "accommodation": 55,
+   "food": 20,
+   "local_transport": 6,
+   "activities": 8
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hostelz.com/en/backpacker-budget/tajikistan"
+  ],
+  "note": "Hostelz ~$35/day incl activities/nightlife; dorm ~$9, private room ~$27-28; bp nudged +3"
+ },
+ {
+  "code": "TL",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 30,
+   "accommodation": 15,
+   "food": 9,
+   "local_transport": 3,
+   "activities": 3
+  },
+  "standard": {
+   "total": 63,
+   "accommodation": 40,
+   "food": 12,
+   "local_transport": 6,
+   "activities": 5
+  },
+  "comfort": {
+   "total": 122,
+   "accommodation": 80,
+   "food": 22,
+   "local_transport": 12,
+   "activities": 8
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.whereandwhen.net/budget/timor-leste/dili/",
+   "https://www.travelwithhello.com/blog/timor-leste-10-day-itinerary",
+   "https://explore.atmfeesaver.com/community/money-travel-in-south-east-asia-travel-budgets/daily-travel-budget-for-timor-leste/"
+  ],
+  "note": "Shoestring $25-35, frugal $35-50, mid $50-100; guesthouse $15-30, street meal $1-3"
+ },
+ {
+  "code": "AO",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 55,
+   "accommodation": 35,
+   "food": 12,
+   "local_transport": 5,
+   "activities": 3
+  },
+  "standard": {
+   "total": 120,
+   "accommodation": 80,
+   "food": 22,
+   "local_transport": 10,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 230,
+   "accommodation": 160,
+   "food": 40,
+   "local_transport": 18,
+   "activities": 12
+  },
+  "confidence": "low",
+  "sources": [
+   "https://championtraveler.com/price/cost-of-a-trip-to-luanda-ao",
+   "https://travelcostcalculator.org/cost/angola/luanda"
+  ],
+  "note": "Luanda hotels $84-355 (avg $152); TCC backpacker $39, std $110, lux $321; provinces cheaper; expat prices"
+ },
+ {
+  "code": "BJ",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 28,
+   "accommodation": 14,
+   "food": 7,
+   "local_transport": 3,
+   "activities": 4
+  },
+  "standard": {
+   "total": 59,
+   "accommodation": 38,
+   "food": 10,
+   "local_transport": 5,
+   "activities": 6
+  },
+  "comfort": {
+   "total": 111,
+   "accommodation": 75,
+   "food": 18,
+   "local_transport": 10,
+   "activities": 8
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.milehacker.com/travel/benin/littoral/cotonou/best-time-to-visit-cotonou-weather-seasons-climate/",
+   "https://www.tripbase.com/destinations/cotonou-benin/budget/",
+   "https://hotel.routard.com/guest-house/city/bj/cotonou.en-gb.html?aid=304142"
+  ],
+  "note": "Guesthouse XOF8-20k, mid hotel XOF25-60k (~EUR38-91), meal XOF1-4k; backpacker ~$31, mid ~$79; std/cf raised"
+ }
+]

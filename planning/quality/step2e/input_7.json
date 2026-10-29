@@ -1,0 +1,437 @@
+[
+ {
+  "code": "GD",
+  "country": "Grenada",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 71,
+   "accommodation": 45,
+   "food": 18,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 128,
+   "accommodation": 80,
+   "food": 28,
+   "local_transport": 8,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 206,
+   "accommodation": 140,
+   "food": 38,
+   "local_transport": 10,
+   "activities": 18
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "GP",
+  "country": "Guadeloupe",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 66,
+   "accommodation": 40,
+   "food": 18,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 135,
+   "accommodation": 85,
+   "food": 30,
+   "local_transport": 8,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 227,
+   "accommodation": 150,
+   "food": 45,
+   "local_transport": 12,
+   "activities": 20
+  },
+  "notes": "Euro prices",
+  "levels_notes": ""
+ },
+ {
+  "code": "GT",
+  "country": "Guatemala",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 21,
+   "accommodation": 8,
+   "food": 7,
+   "local_transport": 2,
+   "activities": 4
+  },
+  "standard": {
+   "total": 53,
+   "accommodation": 28,
+   "food": 12,
+   "local_transport": 4,
+   "activities": 9
+  },
+  "comfort": {
+   "total": 95,
+   "accommodation": 55,
+   "food": 20,
+   "local_transport": 8,
+   "activities": 12
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "GY",
+  "country": "Guyana",
+  "variant": "",
+  "blocks": 1,
+  "backpacker": {
+   "total": 50,
+   "accommodation": 30,
+   "food": 12,
+   "local_transport": 4,
+   "activities": 4
+  },
+  "standard": {
+   "total": 91,
+   "accommodation": 55,
+   "food": 18,
+   "local_transport": 8,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 167,
+   "accommodation": 110,
+   "food": 30,
+   "local_transport": 12,
+   "activities": 15
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "HN",
+  "country": "Honduras",
+  "variant": "",
+  "blocks": 2,
+  "backpacker": {
+   "total": 21,
+   "accommodation": 8,
+   "food": 7,
+   "local_transport": 2,
+   "activities": 4
+  },
+  "standard": {
+   "total": 50,
+   "accommodation": 28,
+   "food": 11,
+   "local_transport": 3,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 84,
+   "accommodation": 50,
+   "food": 18,
+   "local_transport": 6,
+   "activities": 10
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "JM",
+  "country": "Jamaica",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 43,
+   "accommodation": 20,
+   "food": 12,
+   "local_transport": 5,
+   "activities": 6
+  },
+  "standard": {
+   "total": 120,
+   "accommodation": 70,
+   "food": 25,
+   "local_transport": 10,
+   "activities": 15
+  },
+  "comfort": {
+   "total": 186,
+   "accommodation": 120,
+   "food": 32,
+   "local_transport": 14,
+   "activities": 20
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "LC",
+  "country": "Saint Lucia",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 72,
+   "accommodation": 45,
+   "food": 18,
+   "local_transport": 4,
+   "activities": 5
+  },
+  "standard": {
+   "total": 140,
+   "accommodation": 85,
+   "food": 30,
+   "local_transport": 10,
+   "activities": 15
+  },
+  "comfort": {
+   "total": 222,
+   "accommodation": 150,
+   "food": 40,
+   "local_transport": 14,
+   "activities": 18
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "MX",
+  "country": "Mexico",
+  "variant": "",
+  "blocks": 2,
+  "backpacker": {
+   "total": 32,
+   "accommodation": 14,
+   "food": 10,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 82,
+   "accommodation": 45,
+   "food": 18,
+   "local_transport": 5,
+   "activities": 14
+  },
+  "comfort": {
+   "total": 138,
+   "accommodation": 80,
+   "food": 28,
+   "local_transport": 10,
+   "activities": 20
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "NI",
+  "country": "Nicaragua",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 21,
+   "accommodation": 8,
+   "food": 7,
+   "local_transport": 2,
+   "activities": 4
+  },
+  "standard": {
+   "total": 47,
+   "accommodation": 25,
+   "food": 11,
+   "local_transport": 3,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 79,
+   "accommodation": 45,
+   "food": 18,
+   "local_transport": 6,
+   "activities": 10
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "PA",
+  "country": "Panama",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 31,
+   "accommodation": 14,
+   "food": 10,
+   "local_transport": 2,
+   "activities": 5
+  },
+  "standard": {
+   "total": 83,
+   "accommodation": 50,
+   "food": 18,
+   "local_transport": 5,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 135,
+   "accommodation": 85,
+   "food": 26,
+   "local_transport": 8,
+   "activities": 16
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "PE",
+  "country": "Peru",
+  "variant": "",
+  "blocks": 8,
+  "backpacker": {
+   "total": 25,
+   "accommodation": 9,
+   "food": 8,
+   "local_transport": 2,
+   "activities": 6
+  },
+  "standard": {
+   "total": 60,
+   "accommodation": 30,
+   "food": 13,
+   "local_transport": 4,
+   "activities": 13
+  },
+  "comfort": {
+   "total": 99,
+   "accommodation": 55,
+   "food": 20,
+   "local_transport": 6,
+   "activities": 18
+  },
+  "notes": "Excludes Machu Picchu/treks",
+  "levels_notes": ""
+ },
+ {
+  "code": "SR",
+  "country": "Suriname",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 42,
+   "accommodation": 25,
+   "food": 10,
+   "local_transport": 3,
+   "activities": 4
+  },
+  "standard": {
+   "total": 81,
+   "accommodation": 50,
+   "food": 16,
+   "local_transport": 5,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 138,
+   "accommodation": 90,
+   "food": 26,
+   "local_transport": 8,
+   "activities": 14
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "SV",
+  "country": "El Salvador",
+  "variant": "",
+  "blocks": 2,
+  "backpacker": {
+   "total": 26,
+   "accommodation": 12,
+   "food": 8,
+   "local_transport": 2,
+   "activities": 4
+  },
+  "standard": {
+   "total": 53,
+   "accommodation": 30,
+   "food": 12,
+   "local_transport": 3,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 91,
+   "accommodation": 55,
+   "food": 20,
+   "local_transport": 6,
+   "activities": 10
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "US",
+  "country": "United States",
+  "variant": "",
+  "blocks": 26,
+  "backpacker": {
+   "total": 86,
+   "accommodation": 32,
+   "food": 24,
+   "local_transport": 12,
+   "activities": 18
+  },
+  "standard": {
+   "total": 168,
+   "accommodation": 100,
+   "food": 38,
+   "local_transport": 10,
+   "activities": 20
+  },
+  "comfort": {
+   "total": 298,
+   "accommodation": 190,
+   "food": 60,
+   "local_transport": 18,
+   "activities": 30
+  },
+  "notes": "Mixed cities/smaller towns; excludes car",
+  "levels_notes": ""
+ },
+ {
+  "code": "US",
+  "country": "United States",
+  "variant": "big cities (NYC/SF)",
+  "blocks": 26,
+  "backpacker": {
+   "total": 105,
+   "accommodation": 45,
+   "food": 28,
+   "local_transport": 12,
+   "activities": 20
+  },
+  "standard": {
+   "total": 240,
+   "accommodation": 150,
+   "food": 45,
+   "local_transport": 15,
+   "activities": 30
+  },
+  "comfort": {
+   "total": 417,
+   "accommodation": 280,
+   "food": 75,
+   "local_transport": 22,
+   "activities": 40
+  },
+  "notes": "43% above base",
+  "levels_notes": ""
+ }
+]

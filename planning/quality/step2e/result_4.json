@@ -1,0 +1,499 @@
+[
+ {
+  "code": "CI",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 40,
+   "accommodation": 20,
+   "food": 11,
+   "local_transport": 4,
+   "activities": 5
+  },
+  "standard": {
+   "total": 80,
+   "accommodation": 50,
+   "food": 17,
+   "local_transport": 7,
+   "activities": 6
+  },
+  "comfort": {
+   "total": 130,
+   "accommodation": 85,
+   "food": 25,
+   "local_transport": 12,
+   "activities": 8
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.amigosim.com/blog/how-much-does-it-cost-to-visit-ivory-coast",
+   "https://www.travelwithhello.com/blog/cote-divoire-travel-budget-guide"
+  ],
+  "note": "Budget $40-60/day, hostels/guesthouses $20-40, mid-range $106-128/day; interior cheaper"
+ },
+ {
+  "code": "CM",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 32,
+   "accommodation": 16,
+   "food": 9,
+   "local_transport": 4,
+   "activities": 3
+  },
+  "standard": {
+   "total": 62,
+   "accommodation": 35,
+   "food": 13,
+   "local_transport": 7,
+   "activities": 7
+  },
+  "comfort": {
+   "total": 105,
+   "accommodation": 70,
+   "food": 20,
+   "local_transport": 10,
+   "activities": 5
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.bootsnall.com/cameroon",
+   "https://www.amigosim.com/blog/what-is-the-cost-of-a-vacation-to-cameroon"
+  ],
+  "note": "Forum: $30-40 AC hotel, $30-40/day doable, $60-75 comfortable; Douala 10-15% above Yaounde"
+ },
+ {
+  "code": "CV",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 44,
+   "accommodation": 18,
+   "food": 14,
+   "local_transport": 4,
+   "activities": 8
+  },
+  "standard": {
+   "total": 85,
+   "accommodation": 50,
+   "food": 18,
+   "local_transport": 6,
+   "activities": 11
+  },
+  "comfort": {
+   "total": 150,
+   "accommodation": 100,
+   "food": 32,
+   "local_transport": 8,
+   "activities": 10
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hostelz.com/backpacker-budget/cape-verde",
+   "https://www.amigosim.com/blog/what-is-the-average-cost-to-travel-to-cape-verde"
+  ],
+  "note": "Hostelz modeled ~$75/day backpacker (dorm $15, food/activities $21 each); meals EUR 15-25 per Amigosim; imported food pricey"
+ },
+ {
+  "code": "ET",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 24,
+   "accommodation": 10,
+   "food": 7,
+   "local_transport": 3,
+   "activities": 4
+  },
+  "standard": {
+   "total": 45,
+   "accommodation": 25,
+   "food": 8,
+   "local_transport": 4,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 90,
+   "accommodation": 55,
+   "food": 18,
+   "local_transport": 8,
+   "activities": 9
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.travelwithhello.com/blog/ethiopia-travel-budget-guide"
+  ],
+  "note": "Sources conflict ($9-15 vs $40-60 budget); dorm/guesthouse $10-20, local meal $3-6; current within range, kept"
+ },
+ {
+  "code": "GA",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 85,
+   "accommodation": 50,
+   "food": 22,
+   "local_transport": 8,
+   "activities": 5
+  },
+  "standard": {
+   "total": 150,
+   "accommodation": 95,
+   "food": 32,
+   "local_transport": 13,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 260,
+   "accommodation": 170,
+   "food": 50,
+   "local_transport": 24,
+   "activities": 16
+  },
+  "confidence": "low",
+  "sources": [
+   "https://explore.atmfeesaver.com/community/money-travel-in-africa-travel-budgets/daily-travel-budget-for-gabon/",
+   "https://www.amigosim.com/blog/how-much-money-is-it-to-go-to-gabon"
+  ],
+  "note": "Budget hotel $30-60, careful traveller ~$100/day, budget lodge from $80, 3* Libreville ~GBP93; street meal 2-3k CFA"
+ },
+ {
+  "code": "GH",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 40,
+   "accommodation": 16,
+   "food": 11,
+   "local_transport": 6,
+   "activities": 7
+  },
+  "standard": {
+   "total": 90,
+   "accommodation": 55,
+   "food": 16,
+   "local_transport": 9,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 150,
+   "accommodation": 95,
+   "food": 30,
+   "local_transport": 14,
+   "activities": 11
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://gotripzi.com/destinations/accra-gh/cost",
+   "https://www.hostelz.com/en/backpacker-budget/ghana",
+   "https://www.amigosim.com/blog/how-much-does-a-good-trip-to-ghana-cost"
+  ],
+  "note": "Hostel from $16, budget $40-60 (Amigosim) / $77 (Gotripzi), mid-range EUR 158 (Gotripzi), 2-3* Accra $72-100"
+ },
+ {
+  "code": "GM",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 30,
+   "accommodation": 14,
+   "food": 9,
+   "local_transport": 3,
+   "activities": 4
+  },
+  "standard": {
+   "total": 62,
+   "accommodation": 38,
+   "food": 12,
+   "local_transport": 5,
+   "activities": 7
+  },
+  "comfort": {
+   "total": 110,
+   "accommodation": 70,
+   "food": 20,
+   "local_transport": 8,
+   "activities": 12
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.travelwithhello.com/blog/gambia-travel-budget-guide",
+   "https://travelcostcalculator.org/cost/the-gambia"
+  ],
+  "note": "Guesthouses $14-22, budget $25-40/day, mid-range $60-100/day"
+ },
+ {
+  "code": "LS",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 32,
+   "accommodation": 16,
+   "food": 9,
+   "local_transport": 3,
+   "activities": 4
+  },
+  "standard": {
+   "total": 75,
+   "accommodation": 45,
+   "food": 13,
+   "local_transport": 6,
+   "activities": 11
+  },
+  "comfort": {
+   "total": 125,
+   "accommodation": 75,
+   "food": 24,
+   "local_transport": 10,
+   "activities": 16
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.amigosim.com/blog/how-much-does-it-cost-to-go-to-lesotho-on-holiday",
+   "https://explore.atmfeesaver.com/community/money-travel-in-africa-travel-budgets/daily-travel-budget-for-lesotho/"
+  ],
+  "note": "Budget ~$35-39/day, mid-range ~$89-90/day, guesthouses $32-65/night"
+ },
+ {
+  "code": "MG",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 27,
+   "accommodation": 12,
+   "food": 8,
+   "local_transport": 4,
+   "activities": 3
+  },
+  "standard": {
+   "total": 52,
+   "accommodation": 28,
+   "food": 10,
+   "local_transport": 6,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 105,
+   "accommodation": 65,
+   "food": 20,
+   "local_transport": 10,
+   "activities": 10
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.amigosim.com/blog/how-much-money-is-it-to-go-to-madagascar",
+   "https://theworldtravelindex.com/en/africa/madagascar/madagascar-island/is-madagascar-expensive"
+  ],
+  "note": "Hostels/guesthouses $10-20, street plates $1-3; aggregate $90-111/day includes park fees/insurance so not a backpacker figure; kept"
+ },
+ {
+  "code": "MU",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 45,
+   "accommodation": 22,
+   "food": 12,
+   "local_transport": 5,
+   "activities": 6
+  },
+  "standard": {
+   "total": 84,
+   "accommodation": 55,
+   "food": 15,
+   "local_transport": 6,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 170,
+   "accommodation": 115,
+   "food": 32,
+   "local_transport": 10,
+   "activities": 13
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.budgetyourtrip.com/mauritius",
+   "https://www.trip.com/guide/info/trip-to-mauritius-cost.html",
+   "https://gotripzi.com/destinations/mauritius-mu/cost"
+  ],
+  "note": "Guesthouse $30-35, meals $5-10, bus ~$1; backpacker $32-76/day across sources; kept"
+ },
+ {
+  "code": "MW",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 27,
+   "accommodation": 12,
+   "food": 8,
+   "local_transport": 4,
+   "activities": 3
+  },
+  "standard": {
+   "total": 53,
+   "accommodation": 30,
+   "food": 10,
+   "local_transport": 5,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 105,
+   "accommodation": 65,
+   "food": 20,
+   "local_transport": 8,
+   "activities": 12
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.travelwithhello.com/blog/malawi-travel-budget-guide"
+  ],
+  "note": "Only old independent figure: basic double $9, mid $19; no solid 2026 source; kept"
+ },
+ {
+  "code": "MW",
+  "variant": "safari (lodge/tented camp + game drives + park fees)",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 140,
+   "accommodation": 60,
+   "food": 20,
+   "local_transport": 5,
+   "activities": 55
+  },
+  "standard": {
+   "total": 210,
+   "accommodation": 115,
+   "food": 25,
+   "local_transport": 5,
+   "activities": 65
+  },
+  "comfort": {
+   "total": 340,
+   "accommodation": 210,
+   "food": 40,
+   "local_transport": 5,
+   "activities": 85
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://safarifind.com/blog/malawi-safari-cost-2026-daily-rates-by-park-operator",
+   "https://www.safari.co.za/Malawi_Safari_Lodges-travel/pricing_safari-lodge-mvuu-camp-liwonde-park.html",
+   "https://www.chaloafrica.com/accommodation/mkulumadzi-lodge-majete-malawi/"
+  ],
+  "note": "Liwonde budget camps $150-180/day, mid lodges $200-230, premium $250+; Mvuu $305-345 pp, Mkulumadzi $395-540 all-incl."
+ },
+ {
+  "code": "MZ",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 46,
+   "accommodation": 18,
+   "food": 15,
+   "local_transport": 5,
+   "activities": 8
+  },
+  "standard": {
+   "total": 95,
+   "accommodation": 55,
+   "food": 20,
+   "local_transport": 8,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 150,
+   "accommodation": 95,
+   "food": 32,
+   "local_transport": 10,
+   "activities": 13
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://explore.atmfeesaver.com/community/money-travel-in-africa-travel-budgets/daily-travel-budget-for-mozambique/",
+   "https://www.travelwithhello.com/blog/mozambique-travel-budget-guide",
+   "https://www.bootsnall.com/articles/indie-travel-in-mozambique-for-45-per-day.html"
+  ],
+  "note": "Hostels $16-22, budget $45-70/day, mid $100-150/day, Tofo seafood $15-20, chapa $1-3"
+ },
+ {
+  "code": "MZ",
+  "variant": "safari (lodge/tented camp + game drives + park fees)",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 135,
+   "accommodation": 50,
+   "food": 20,
+   "local_transport": 5,
+   "activities": 60
+  },
+  "standard": {
+   "total": 380,
+   "accommodation": 290,
+   "food": 30,
+   "local_transport": 5,
+   "activities": 55
+  },
+  "comfort": {
+   "total": 700,
+   "accommodation": 560,
+   "food": 45,
+   "local_transport": 5,
+   "activities": 90
+  },
+  "confidence": "low",
+  "sources": [
+   "https://safarifind.com/accommodations/explore-gorongosa-tented-camp",
+   "https://www.chaloafrica.com/accommodation/chicari-camp-gorongosa-national-park-mozambique/"
+  ],
+  "note": "Gorongosa Chicari/Muzimu $850-950 pp sharing, Explore tented camp $550-975, park fee $20-30/day; cheaper camping exists, tented camps far above old std"
+ },
+ {
+  "code": "RW",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 45,
+   "accommodation": 20,
+   "food": 12,
+   "local_transport": 5,
+   "activities": 8
+  },
+  "standard": {
+   "total": 85,
+   "accommodation": 55,
+   "food": 14,
+   "local_transport": 6,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 165,
+   "accommodation": 105,
+   "food": 30,
+   "local_transport": 12,
+   "activities": 18
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.trip.com/guide/info/trip-to-rwanda-cost.html",
+   "https://explore.atmfeesaver.com/community/money-travel-in-africa-travel-budgets/cash-per-day-in-rwanda/"
+  ],
+  "note": "Budget $40-70/day, hostels/hotels $20-50, Kigali hotels avg $66, mid $100-150; moto $1-2; current within range"
+ }
+]

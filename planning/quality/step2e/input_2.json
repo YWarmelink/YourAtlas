@@ -1,0 +1,437 @@
+[
+ {
+  "code": "JE",
+  "country": "Jersey",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 95,
+   "accommodation": 55,
+   "food": 24,
+   "local_transport": 6,
+   "activities": 10
+  },
+  "standard": {
+   "total": 166,
+   "accommodation": 110,
+   "food": 34,
+   "local_transport": 8,
+   "activities": 14
+  },
+  "comfort": {
+   "total": 237,
+   "accommodation": 165,
+   "food": 45,
+   "local_transport": 9,
+   "activities": 18
+  },
+  "notes": "Limited stock",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "LI",
+  "country": "Liechtenstein",
+  "variant": "",
+  "blocks": 4,
+  "backpacker": {
+   "total": 91,
+   "accommodation": 50,
+   "food": 30,
+   "local_transport": 6,
+   "activities": 5
+  },
+  "standard": {
+   "total": 157,
+   "accommodation": 105,
+   "food": 38,
+   "local_transport": 6,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 226,
+   "accommodation": 160,
+   "food": 50,
+   "local_transport": 6,
+   "activities": 10
+  },
+  "notes": "Tiny; often visited as day trip; Swiss price level",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "LT",
+  "country": "Lithuania",
+  "variant": "",
+  "blocks": 5,
+  "backpacker": {
+   "total": 34,
+   "accommodation": 15,
+   "food": 11,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 81,
+   "accommodation": 50,
+   "food": 18,
+   "local_transport": 4,
+   "activities": 9
+  },
+  "comfort": {
+   "total": 123,
+   "accommodation": 80,
+   "food": 26,
+   "local_transport": 6,
+   "activities": 11
+  },
+  "notes": "Vilnius/Kaunas",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "LU",
+  "country": "Luxembourg",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 66,
+   "accommodation": 36,
+   "food": 22,
+   "local_transport": 2,
+   "activities": 6
+  },
+  "standard": {
+   "total": 131,
+   "accommodation": 90,
+   "food": 28,
+   "local_transport": 3,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 194,
+   "accommodation": 135,
+   "food": 42,
+   "local_transport": 3,
+   "activities": 14
+  },
+  "notes": "Public transport free nationally; hotels pricey",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "LV",
+  "country": "Latvia",
+  "variant": "",
+  "blocks": 5,
+  "backpacker": {
+   "total": 34,
+   "accommodation": 15,
+   "food": 11,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 81,
+   "accommodation": 50,
+   "food": 18,
+   "local_transport": 4,
+   "activities": 9
+  },
+  "comfort": {
+   "total": 123,
+   "accommodation": 80,
+   "food": 26,
+   "local_transport": 6,
+   "activities": 11
+  },
+  "notes": "Riga",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "MC",
+  "country": "Monaco",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 107,
+   "accommodation": 70,
+   "food": 28,
+   "local_transport": 3,
+   "activities": 6
+  },
+  "standard": {
+   "total": 250,
+   "accommodation": 190,
+   "food": 45,
+   "local_transport": 5,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 354,
+   "accommodation": 270,
+   "food": 65,
+   "local_transport": 5,
+   "activities": 14
+  },
+  "notes": "Extremely pricey; usually base in Nice/Menton adjacent which is cheaper",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "MD",
+  "country": "Moldova",
+  "variant": "",
+  "blocks": 4,
+  "backpacker": {
+   "total": 24,
+   "accommodation": 11,
+   "food": 8,
+   "local_transport": 2,
+   "activities": 3
+  },
+  "standard": {
+   "total": 53,
+   "accommodation": 32,
+   "food": 12,
+   "local_transport": 3,
+   "activities": 6
+  },
+  "comfort": {
+   "total": 79,
+   "accommodation": 48,
+   "food": 18,
+   "local_transport": 5,
+   "activities": 8
+  },
+  "notes": "Chisinau",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "MK",
+  "country": "North Macedonia",
+  "variant": "",
+  "blocks": 13,
+  "backpacker": {
+   "total": 25,
+   "accommodation": 12,
+   "food": 8,
+   "local_transport": 2,
+   "activities": 3
+  },
+  "standard": {
+   "total": 46,
+   "accommodation": 26,
+   "food": 11,
+   "local_transport": 3,
+   "activities": 6
+  },
+  "comfort": {
+   "total": 73,
+   "accommodation": 42,
+   "food": 18,
+   "local_transport": 5,
+   "activities": 8
+  },
+  "notes": "Skopje/Ohrid",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "MT",
+  "country": "Malta",
+  "variant": "",
+  "blocks": 7,
+  "backpacker": {
+   "total": 48,
+   "accommodation": 24,
+   "food": 15,
+   "local_transport": 3,
+   "activities": 6
+  },
+  "standard": {
+   "total": 111,
+   "accommodation": 70,
+   "food": 24,
+   "local_transport": 5,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 152,
+   "accommodation": 100,
+   "food": 34,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "notes": "Valletta/Sliema",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "NL",
+  "country": "Netherlands",
+  "variant": "",
+  "blocks": 1,
+  "backpacker": {
+   "total": 76,
+   "accommodation": 40,
+   "food": 20,
+   "local_transport": 6,
+   "activities": 10
+  },
+  "standard": {
+   "total": 148,
+   "accommodation": 95,
+   "food": 28,
+   "local_transport": 9,
+   "activities": 16
+  },
+  "comfort": {
+   "total": 215,
+   "accommodation": 145,
+   "food": 40,
+   "local_transport": 12,
+   "activities": 18
+  },
+  "notes": "Amsterdam high; elsewhere lower",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "PL",
+  "country": "Poland",
+  "variant": "",
+  "blocks": 12,
+  "backpacker": {
+   "total": 33,
+   "accommodation": 14,
+   "food": 11,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 72,
+   "accommodation": 45,
+   "food": 15,
+   "local_transport": 3,
+   "activities": 9
+  },
+  "comfort": {
+   "total": 112,
+   "accommodation": 70,
+   "food": 24,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "notes": "Krakow/Warsaw/Gdansk",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "RO",
+  "country": "Romania",
+  "variant": "",
+  "blocks": 9,
+  "backpacker": {
+   "total": 28,
+   "accommodation": 13,
+   "food": 9,
+   "local_transport": 2,
+   "activities": 4
+  },
+  "standard": {
+   "total": 63,
+   "accommodation": 38,
+   "food": 14,
+   "local_transport": 3,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 93,
+   "accommodation": 58,
+   "food": 20,
+   "local_transport": 5,
+   "activities": 10
+  },
+  "notes": "Bucharest/Transylvania",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "RS",
+  "country": "Serbia",
+  "variant": "",
+  "blocks": 8,
+  "backpacker": {
+   "total": 28,
+   "accommodation": 13,
+   "food": 9,
+   "local_transport": 2,
+   "activities": 4
+  },
+  "standard": {
+   "total": 56,
+   "accommodation": 32,
+   "food": 13,
+   "local_transport": 3,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 85,
+   "accommodation": 52,
+   "food": 18,
+   "local_transport": 5,
+   "activities": 10
+  },
+  "notes": "Belgrade",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "SK",
+  "country": "Slovakia",
+  "variant": "",
+  "blocks": 7,
+  "backpacker": {
+   "total": 34,
+   "accommodation": 15,
+   "food": 11,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 71,
+   "accommodation": 45,
+   "food": 15,
+   "local_transport": 3,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 107,
+   "accommodation": 70,
+   "food": 22,
+   "local_transport": 5,
+   "activities": 10
+  },
+  "notes": "Bratislava/Kosice",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "SM",
+  "country": "San Marino",
+  "variant": "",
+  "blocks": 5,
+  "backpacker": {
+   "total": 61,
+   "accommodation": 35,
+   "food": 18,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 107,
+   "accommodation": 70,
+   "food": 25,
+   "local_transport": 4,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 148,
+   "accommodation": 100,
+   "food": 34,
+   "local_transport": 4,
+   "activities": 10
+  },
+  "notes": "Often stayed in nearby Rimini; limited stock",
+  "levels_notes": "Dorm bed/cheapest room"
+ }
+]

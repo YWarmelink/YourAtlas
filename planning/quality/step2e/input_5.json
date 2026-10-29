@@ -1,0 +1,437 @@
+[
+ {
+  "code": "RW",
+  "country": "Rwanda",
+  "variant": "safari (lodge/tented camp + game drives + park fees)",
+  "blocks": 3,
+  "backpacker": {
+   "total": 130,
+   "accommodation": 40,
+   "food": 15,
+   "local_transport": 5,
+   "activities": 70
+  },
+  "standard": {
+   "total": 191,
+   "accommodation": 110,
+   "food": 15,
+   "local_transport": 6,
+   "activities": 60
+  },
+  "comfort": {
+   "total": 340,
+   "accommodation": 210,
+   "food": 35,
+   "local_transport": 5,
+   "activities": 90
+  },
+  "notes": "Akagera/Nyungwe lodge + fees; gorilla permit (USD 1500) NOT included, extra (web cross-check done, no change)",
+  "levels_notes": "bp = budget guesthouse + Akagera fees; no gorilla permit"
+ },
+ {
+  "code": "SC",
+  "country": "Seychelles",
+  "variant": "",
+  "blocks": 1,
+  "backpacker": {
+   "total": 85,
+   "accommodation": 55,
+   "food": 18,
+   "local_transport": 6,
+   "activities": 6
+  },
+  "standard": {
+   "total": 145,
+   "accommodation": 100,
+   "food": 25,
+   "local_transport": 10,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 280,
+   "accommodation": 190,
+   "food": 50,
+   "local_transport": 20,
+   "activities": 20
+  },
+  "notes": "BYT budget USD 104-134, mid 236-306 per person; guesthouse solo room Mahe/Praslin ~EUR 90-110",
+  "levels_notes": "cheapest guesthouse; no dorms basically"
+ },
+ {
+  "code": "SN",
+  "country": "Senegal",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 30,
+   "accommodation": 14,
+   "food": 9,
+   "local_transport": 4,
+   "activities": 3
+  },
+  "standard": {
+   "total": 59,
+   "accommodation": 35,
+   "food": 11,
+   "local_transport": 6,
+   "activities": 7
+  },
+  "comfort": {
+   "total": 120,
+   "accommodation": 75,
+   "food": 26,
+   "local_transport": 12,
+   "activities": 7
+  },
+  "notes": "Dakar/Saint-Louis/Saly guesthouses",
+  "levels_notes": ""
+ },
+ {
+  "code": "ST",
+  "country": "Sao Tome and Principe",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 33,
+   "accommodation": 17,
+   "food": 10,
+   "local_transport": 3,
+   "activities": 3
+  },
+  "standard": {
+   "total": 63,
+   "accommodation": 40,
+   "food": 12,
+   "local_transport": 5,
+   "activities": 6
+  },
+  "comfort": {
+   "total": 120,
+   "accommodation": 80,
+   "food": 22,
+   "local_transport": 10,
+   "activities": 8
+  },
+  "notes": "Guesthouse level; few options",
+  "levels_notes": ""
+ },
+ {
+  "code": "SZ",
+  "country": "Eswatini",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 33,
+   "accommodation": 18,
+   "food": 9,
+   "local_transport": 3,
+   "activities": 3
+  },
+  "standard": {
+   "total": 64,
+   "accommodation": 40,
+   "food": 11,
+   "local_transport": 5,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 125,
+   "accommodation": 80,
+   "food": 25,
+   "local_transport": 10,
+   "activities": 10
+  },
+  "notes": "Mbabane/Ezulwini guesthouses; park fees modest",
+  "levels_notes": ""
+ },
+ {
+  "code": "TG",
+  "country": "Togo",
+  "variant": "",
+  "blocks": 2,
+  "backpacker": {
+   "total": 22,
+   "accommodation": 10,
+   "food": 7,
+   "local_transport": 3,
+   "activities": 2
+  },
+  "standard": {
+   "total": 42,
+   "accommodation": 25,
+   "food": 8,
+   "local_transport": 4,
+   "activities": 5
+  },
+  "comfort": {
+   "total": 85,
+   "accommodation": 50,
+   "food": 18,
+   "local_transport": 10,
+   "activities": 7
+  },
+  "notes": "Lome/Kpalime; cheap guesthouses",
+  "levels_notes": ""
+ },
+ {
+  "code": "TN",
+  "country": "Tunisia",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 25,
+   "accommodation": 11,
+   "food": 8,
+   "local_transport": 2,
+   "activities": 4
+  },
+  "standard": {
+   "total": 48,
+   "accommodation": 28,
+   "food": 9,
+   "local_transport": 3,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 98,
+   "accommodation": 60,
+   "food": 20,
+   "local_transport": 8,
+   "activities": 10
+  },
+  "notes": "Tunis/Sousse/Djerba hotels; louage/train intercity excluded",
+  "levels_notes": ""
+ },
+ {
+  "code": "UG",
+  "country": "Uganda",
+  "variant": "safari (lodge/tented camp + game drives + park fees)",
+  "blocks": 2,
+  "backpacker": {
+   "total": 125,
+   "accommodation": 40,
+   "food": 15,
+   "local_transport": 5,
+   "activities": 65
+  },
+  "standard": {
+   "total": 187,
+   "accommodation": 100,
+   "food": 12,
+   "local_transport": 5,
+   "activities": 70
+  },
+  "comfort": {
+   "total": 330,
+   "accommodation": 200,
+   "food": 35,
+   "local_transport": 5,
+   "activities": 90
+  },
+  "notes": "Queen Elizabeth/Murchison lodge + fees; gorilla permit (USD 800) NOT included, extra (web cross-check done, no change)",
+  "levels_notes": "bp = budget camp + fees; no gorilla permit"
+ },
+ {
+  "code": "ZA",
+  "country": "South Africa",
+  "variant": "safari (lodge/tented camp + game drives + park fees)",
+  "blocks": 4,
+  "backpacker": {
+   "total": 100,
+   "accommodation": 30,
+   "food": 18,
+   "local_transport": 5,
+   "activities": 47
+  },
+  "standard": {
+   "total": 160,
+   "accommodation": 90,
+   "food": 20,
+   "local_transport": 5,
+   "activities": 45
+  },
+  "comfort": {
+   "total": 300,
+   "accommodation": 170,
+   "food": 40,
+   "local_transport": 5,
+   "activities": 85
+  },
+  "notes": "Kruger rest camps/budget lodges + SANParks fees and guided drives; private reserves much higher (web cross-check done, no change)",
+  "levels_notes": "bp = Kruger camping/rest camp + fees"
+ },
+ {
+  "code": "ZM",
+  "country": "Zambia",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 38,
+   "accommodation": 15,
+   "food": 11,
+   "local_transport": 5,
+   "activities": 7
+  },
+  "standard": {
+   "total": 72,
+   "accommodation": 40,
+   "food": 14,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 145,
+   "accommodation": 90,
+   "food": 28,
+   "local_transport": 12,
+   "activities": 15
+  },
+  "notes": "Lusaka/Livingstone; Victoria Falls entry averaged (web cross-check done, no change)",
+  "levels_notes": ""
+ },
+ {
+  "code": "ZM",
+  "country": "Zambia",
+  "variant": "safari (lodge/tented camp + game drives + park fees)",
+  "blocks": 3,
+  "backpacker": {
+   "total": 150,
+   "accommodation": 45,
+   "food": 15,
+   "local_transport": 5,
+   "activities": 85
+  },
+  "standard": {
+   "total": 230,
+   "accommodation": 130,
+   "food": 15,
+   "local_transport": 5,
+   "activities": 80
+  },
+  "comfort": {
+   "total": 420,
+   "accommodation": 250,
+   "food": 40,
+   "local_transport": 5,
+   "activities": 125
+  },
+  "notes": "South Luangwa budget-mid lodge incl. drives and fees (web cross-check done, no change)",
+  "levels_notes": "bp = camping + shared drives South Luangwa"
+ },
+ {
+  "code": "ZW",
+  "country": "Zimbabwe",
+  "variant": "",
+  "blocks": 4,
+  "backpacker": {
+   "total": 40,
+   "accommodation": 16,
+   "food": 11,
+   "local_transport": 5,
+   "activities": 8
+  },
+  "standard": {
+   "total": 77,
+   "accommodation": 45,
+   "food": 14,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 150,
+   "accommodation": 95,
+   "food": 28,
+   "local_transport": 12,
+   "activities": 15
+  },
+  "notes": "Harare/Bulawayo/Victoria Falls; USD economy; falls entry USD 50 (web cross-check done, no change)",
+  "levels_notes": ""
+ },
+ {
+  "code": "ZW",
+  "country": "Zimbabwe",
+  "variant": "safari (lodge/tented camp + game drives + park fees)",
+  "blocks": 4,
+  "backpacker": {
+   "total": 140,
+   "accommodation": 40,
+   "food": 15,
+   "local_transport": 5,
+   "activities": 80
+  },
+  "standard": {
+   "total": 210,
+   "accommodation": 120,
+   "food": 15,
+   "local_transport": 5,
+   "activities": 70
+  },
+  "comfort": {
+   "total": 380,
+   "accommodation": 230,
+   "food": 40,
+   "local_transport": 5,
+   "activities": 105
+  },
+  "notes": "Hwange/Mana Pools camps incl. drives and fees (web cross-check done, no change)",
+  "levels_notes": "bp = camping + fees"
+ },
+ {
+  "code": "AR",
+  "country": "Argentina",
+  "variant": "",
+  "blocks": 8,
+  "backpacker": {
+   "total": 33,
+   "accommodation": 16,
+   "food": 10,
+   "local_transport": 3,
+   "activities": 4
+  },
+  "standard": {
+   "total": 82,
+   "accommodation": 45,
+   "food": 20,
+   "local_transport": 5,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 125,
+   "accommodation": 65,
+   "food": 32,
+   "local_transport": 10,
+   "activities": 18
+  },
+  "notes": "BA + provincial mix; app median likely includes Patagonia/domestic costs",
+  "levels_notes": ""
+ },
+ {
+  "code": "AR",
+  "country": "Argentina",
+  "variant": "Patagonia",
+  "blocks": 8,
+  "backpacker": {
+   "total": 54,
+   "accommodation": 24,
+   "food": 15,
+   "local_transport": 5,
+   "activities": 10
+  },
+  "standard": {
+   "total": 138,
+   "accommodation": 75,
+   "food": 30,
+   "local_transport": 8,
+   "activities": 25
+  },
+  "comfort": {
+   "total": 199,
+   "accommodation": 110,
+   "food": 45,
+   "local_transport": 14,
+   "activities": 30
+  },
+  "notes": "Tourist-town premium",
+  "levels_notes": ""
+ }
+]

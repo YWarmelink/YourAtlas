@@ -1,0 +1,437 @@
+[
+ {
+  "code": "CI",
+  "country": "Ivory Coast",
+  "variant": "",
+  "blocks": 2,
+  "backpacker": {
+   "total": 30,
+   "accommodation": 15,
+   "food": 9,
+   "local_transport": 3,
+   "activities": 3
+  },
+  "standard": {
+   "total": 59,
+   "accommodation": 35,
+   "food": 12,
+   "local_transport": 6,
+   "activities": 6
+  },
+  "comfort": {
+   "total": 120,
+   "accommodation": 75,
+   "food": 25,
+   "local_transport": 12,
+   "activities": 8
+  },
+  "notes": "Abidjan pricey, interior cheaper",
+  "levels_notes": ""
+ },
+ {
+  "code": "CM",
+  "country": "Cameroon",
+  "variant": "",
+  "blocks": 2,
+  "backpacker": {
+   "total": 26,
+   "accommodation": 13,
+   "food": 8,
+   "local_transport": 3,
+   "activities": 2
+  },
+  "standard": {
+   "total": 49,
+   "accommodation": 28,
+   "food": 10,
+   "local_transport": 6,
+   "activities": 5
+  },
+  "comfort": {
+   "total": 100,
+   "accommodation": 65,
+   "food": 20,
+   "local_transport": 10,
+   "activities": 5
+  },
+  "notes": "Douala/Yaounde hotels pricey for quality; moto-taxis cheap",
+  "levels_notes": ""
+ },
+ {
+  "code": "CV",
+  "country": "Cape Verde",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 38,
+   "accommodation": 20,
+   "food": 11,
+   "local_transport": 3,
+   "activities": 4
+  },
+  "standard": {
+   "total": 70,
+   "accommodation": 45,
+   "food": 14,
+   "local_transport": 4,
+   "activities": 7
+  },
+  "comfort": {
+   "total": 135,
+   "accommodation": 90,
+   "food": 28,
+   "local_transport": 8,
+   "activities": 9
+  },
+  "notes": "Guesthouse level; inter-island ferries/flights excluded",
+  "levels_notes": ""
+ },
+ {
+  "code": "ET",
+  "country": "Ethiopia",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 24,
+   "accommodation": 10,
+   "food": 7,
+   "local_transport": 3,
+   "activities": 4
+  },
+  "standard": {
+   "total": 45,
+   "accommodation": 25,
+   "food": 8,
+   "local_transport": 4,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 90,
+   "accommodation": 55,
+   "food": 18,
+   "local_transport": 8,
+   "activities": 9
+  },
+  "notes": "Addis/Lalibela/Gondar; birr devaluation made it cheap; foreigner sight fees high",
+  "levels_notes": ""
+ },
+ {
+  "code": "GA",
+  "country": "Gabon",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 60,
+   "accommodation": 35,
+   "food": 15,
+   "local_transport": 6,
+   "activities": 4
+  },
+  "standard": {
+   "total": 125,
+   "accommodation": 80,
+   "food": 25,
+   "local_transport": 12,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 240,
+   "accommodation": 160,
+   "food": 45,
+   "local_transport": 20,
+   "activities": 15
+  },
+  "notes": "Very expensive for Africa, Libreville hotels; national park trips excluded",
+  "levels_notes": "no hostels; cheapest private room"
+ },
+ {
+  "code": "GH",
+  "country": "Ghana",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 30,
+   "accommodation": 14,
+   "food": 9,
+   "local_transport": 4,
+   "activities": 3
+  },
+  "standard": {
+   "total": 58,
+   "accommodation": 35,
+   "food": 11,
+   "local_transport": 6,
+   "activities": 6
+  },
+  "comfort": {
+   "total": 115,
+   "accommodation": 70,
+   "food": 24,
+   "local_transport": 12,
+   "activities": 9
+  },
+  "notes": "Accra/Kumasi/Cape Coast guesthouses",
+  "levels_notes": ""
+ },
+ {
+  "code": "GM",
+  "country": "Gambia",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 24,
+   "accommodation": 11,
+   "food": 7,
+   "local_transport": 3,
+   "activities": 3
+  },
+  "standard": {
+   "total": 46,
+   "accommodation": 28,
+   "food": 9,
+   "local_transport": 4,
+   "activities": 5
+  },
+  "comfort": {
+   "total": 90,
+   "accommodation": 55,
+   "food": 17,
+   "local_transport": 8,
+   "activities": 10
+  },
+  "notes": "Coastal Serrekunda/Kololi guesthouses; cheap eats",
+  "levels_notes": ""
+ },
+ {
+  "code": "LS",
+  "country": "Lesotho",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 30,
+   "accommodation": 15,
+   "food": 8,
+   "local_transport": 3,
+   "activities": 4
+  },
+  "standard": {
+   "total": 58,
+   "accommodation": 35,
+   "food": 10,
+   "local_transport": 5,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 115,
+   "accommodation": 70,
+   "food": 22,
+   "local_transport": 10,
+   "activities": 13
+  },
+  "notes": "Maseru/Semonkong; pony trekking excluded",
+  "levels_notes": ""
+ },
+ {
+  "code": "MG",
+  "country": "Madagascar",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 27,
+   "accommodation": 12,
+   "food": 8,
+   "local_transport": 4,
+   "activities": 3
+  },
+  "standard": {
+   "total": 52,
+   "accommodation": 28,
+   "food": 10,
+   "local_transport": 6,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 105,
+   "accommodation": 65,
+   "food": 20,
+   "local_transport": 10,
+   "activities": 10
+  },
+  "notes": "Tana/Nosy Be/Ranomafana; park fees averaged; 4x4 and taxi-brousse excluded",
+  "levels_notes": ""
+ },
+ {
+  "code": "MU",
+  "country": "Mauritius",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 45,
+   "accommodation": 22,
+   "food": 12,
+   "local_transport": 5,
+   "activities": 6
+  },
+  "standard": {
+   "total": 84,
+   "accommodation": 55,
+   "food": 15,
+   "local_transport": 6,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 170,
+   "accommodation": 115,
+   "food": 32,
+   "local_transport": 10,
+   "activities": 13
+  },
+  "notes": "Guesthouse/budget hotel level, not resorts; buses cheap (web cross-check done, no change)",
+  "levels_notes": "budget guesthouse, not resort"
+ },
+ {
+  "code": "MW",
+  "country": "Malawi",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 27,
+   "accommodation": 12,
+   "food": 8,
+   "local_transport": 4,
+   "activities": 3
+  },
+  "standard": {
+   "total": 53,
+   "accommodation": 30,
+   "food": 10,
+   "local_transport": 5,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 105,
+   "accommodation": 65,
+   "food": 20,
+   "local_transport": 8,
+   "activities": 12
+  },
+  "notes": "Lilongwe/Lake Malawi guesthouses",
+  "levels_notes": ""
+ },
+ {
+  "code": "MW",
+  "country": "Malawi",
+  "variant": "safari (lodge/tented camp + game drives + park fees)",
+  "blocks": 3,
+  "backpacker": {
+   "total": 110,
+   "accommodation": 40,
+   "food": 15,
+   "local_transport": 5,
+   "activities": 50
+  },
+  "standard": {
+   "total": 175,
+   "accommodation": 100,
+   "food": 10,
+   "local_transport": 5,
+   "activities": 60
+  },
+  "comfort": {
+   "total": 300,
+   "accommodation": 180,
+   "food": 35,
+   "local_transport": 5,
+   "activities": 80
+  },
+  "notes": "Liwonde/Majete lodge incl. boat/game drives",
+  "levels_notes": "bp = camping/budget lodge with shared drives"
+ },
+ {
+  "code": "MZ",
+  "country": "Mozambique",
+  "variant": "",
+  "blocks": 4,
+  "backpacker": {
+   "total": 36,
+   "accommodation": 16,
+   "food": 12,
+   "local_transport": 4,
+   "activities": 4
+  },
+  "standard": {
+   "total": 68,
+   "accommodation": 40,
+   "food": 14,
+   "local_transport": 6,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 135,
+   "accommodation": 85,
+   "food": 28,
+   "local_transport": 10,
+   "activities": 12
+  },
+  "notes": "Maputo/Tofo/Vilankulos; diving excluded",
+  "levels_notes": ""
+ },
+ {
+  "code": "MZ",
+  "country": "Mozambique",
+  "variant": "safari (lodge/tented camp + game drives + park fees)",
+  "blocks": 4,
+  "backpacker": {
+   "total": 125,
+   "accommodation": 45,
+   "food": 15,
+   "local_transport": 5,
+   "activities": 60
+  },
+  "standard": {
+   "total": 187,
+   "accommodation": 110,
+   "food": 12,
+   "local_transport": 5,
+   "activities": 60
+  },
+  "comfort": {
+   "total": 330,
+   "accommodation": 200,
+   "food": 35,
+   "local_transport": 5,
+   "activities": 90
+  },
+  "notes": "Gorongosa-type camp, park fees; excl. flights",
+  "levels_notes": "bp = camping in park with fees"
+ },
+ {
+  "code": "RW",
+  "country": "Rwanda",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 45,
+   "accommodation": 20,
+   "food": 12,
+   "local_transport": 5,
+   "activities": 8
+  },
+  "standard": {
+   "total": 85,
+   "accommodation": 55,
+   "food": 14,
+   "local_transport": 6,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 165,
+   "accommodation": 105,
+   "food": 30,
+   "local_transport": 12,
+   "activities": 18
+  },
+  "notes": "Kigali/Musanze/Kibuye; moto-taxi cheap. Gorilla permit (USD 1500) EXCLUDED here (web cross-check done, no change)",
+  "levels_notes": "gorilla permit excluded"
+ }
+]

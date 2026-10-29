@@ -104,3 +104,31 @@ Total Step 2 if all sub-steps run: roughly 1-1.2M tokens; 2a alone is cheap and 
   Small leftovers to fold in: Ballina flight (~€80, Sydney/Byron) and the ~€60 Southern Cone backtrack still in its
   costs; the 5 unclear statements; Moldova + Transnistria route now goes against red advice (rethink?); Pan-American
   Grand Tour has the same Iquique→San Pedro backtrack inside the expedition.
+
+## Option D — batch tracker (resume here)
+
+Run in small batches so a session can stop between any two. State lives in files, not in chat.
+
+**2e — country daily rates** (118 rows = every row not web-checked or low confidence; variants included):
+`planning/quality/step2e/` → `BRIEF.md` (fixed agent brief), `batches.json` (8 batches, `status` todo/done),
+`input_N.json`, and per finished batch `result_N.json` + `REVIEW_N.md`. One Sonnet agent per batch, writes only
+its own result files. Resume: launch the batches whose `result_N.json` is missing.
+After all 8: merge into the CSV (`replace`/`adjusted` rows only) → `build_daily_rates_reference.js` →
+re-run My plan budgets where a rate moved >15% → review → Sheet push on Youri's OK → commit + push.
+
+**2b — estimated fares**: not split yet (after 2e).
+
+**Leftovers** (one small me-only batch, after 2e): Ballina ~€80 + Southern Cone ~€60 cost fixes, Pan-American
+Iquique→San Pedro backtrack, 5 unclear statements (Lima airport, Öresund ID checks, Rail Baltica, UK ETA
+Jersey/IoM), unpriced tours (Milford Sound, whale swims, DMZ, Wadi Rum, ...). Moldova + Transnistria = Youri's call.
+
+| Batch | Rows | Status | Agent tokens |
+|---|---|---|---|
+| 2e-1 | AD BE BG CY CZ DK EE FI FO GG GI HU IE IM IS | done (11 confirmed, 4 adjusted: BG CY EE GI; 16 searches) | 84,113 |
+| 2e-2 | JE LI LT LU LV MC MD MK MT NL PL RO RS SK SM | done (14 confirmed, 1 adjusted: MD; 15 searches) | 77,423 |
+| 2e-3 | XK AE BH BN BT BT/tour MN MV MV/resort OM QA TJ TL AO BJ | done (10 confirmed, 5 adjusted: BT/tour BJ BH XK MV/resort; 16 searches) | 79,467 |
+| 2e-4 | CI CM CV ET GA GH GM LS MG MU MW MW/safari MZ MZ/safari RW | done (5 confirmed, 10 adjusted, mostly aggregator sources; MZ/safari flagged; 12 searches) | 83,962 |
+| 2e-5 | RW/safari SC SN ST SZ TG TN UG/safari ZA/safari ZM ZM/safari ZW ZW/safari AR AR/Patagonia | todo | |
+| 2e-6 | AW BO BQ BR BZ CA CL CL/Patagonia CO CR CU CW DM EC EC/Galápagos | todo | |
+| 2e-7 | GD GP GT GY HN JM LC MX NI PA PE SR SV US US/big | todo | |
+| 2e-8 | UY AU CK FJ NZ PG PW TO VU WS GL SJ AQ | todo | |

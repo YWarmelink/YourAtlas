@@ -1,0 +1,437 @@
+[
+ {
+  "code": "AD",
+  "country": "Andorra",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 62,
+   "accommodation": 32,
+   "food": 18,
+   "local_transport": 6,
+   "activities": 6
+  },
+  "standard": {
+   "total": 125,
+   "accommodation": 75,
+   "food": 30,
+   "local_transport": 8,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 180,
+   "accommodation": 110,
+   "food": 42,
+   "local_transport": 10,
+   "activities": 18
+  },
+  "notes": "Mountain ski/hike country; French/Spanish price level",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "BE",
+  "country": "Belgium",
+  "variant": "",
+  "blocks": 8,
+  "backpacker": {
+   "total": 69,
+   "accommodation": 35,
+   "food": 20,
+   "local_transport": 6,
+   "activities": 8
+  },
+  "standard": {
+   "total": 129,
+   "accommodation": 80,
+   "food": 28,
+   "local_transport": 7,
+   "activities": 14
+  },
+  "comfort": {
+   "total": 195,
+   "accommodation": 125,
+   "food": 42,
+   "local_transport": 10,
+   "activities": 18
+  },
+  "notes": "Brussels/Bruges/Ghent private rooms pricey",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "BG",
+  "country": "Bulgaria",
+  "variant": "",
+  "blocks": 6,
+  "backpacker": {
+   "total": 25,
+   "accommodation": 11,
+   "food": 9,
+   "local_transport": 2,
+   "activities": 3
+  },
+  "standard": {
+   "total": 55,
+   "accommodation": 32,
+   "food": 13,
+   "local_transport": 3,
+   "activities": 7
+  },
+  "comfort": {
+   "total": 93,
+   "accommodation": 55,
+   "food": 22,
+   "local_transport": 6,
+   "activities": 10
+  },
+  "notes": "Sofia/Plovdiv/Black Sea",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "CY",
+  "country": "Cyprus",
+  "variant": "",
+  "blocks": 5,
+  "backpacker": {
+   "total": 50,
+   "accommodation": 25,
+   "food": 15,
+   "local_transport": 4,
+   "activities": 6
+  },
+  "standard": {
+   "total": 100,
+   "accommodation": 60,
+   "food": 22,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 164,
+   "accommodation": 100,
+   "food": 36,
+   "local_transport": 10,
+   "activities": 18
+  },
+  "notes": "Larnaca/Paphos/Nicosia",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "CZ",
+  "country": "Czechia",
+  "variant": "",
+  "blocks": 11,
+  "backpacker": {
+   "total": 40,
+   "accommodation": 18,
+   "food": 13,
+   "local_transport": 3,
+   "activities": 6
+  },
+  "standard": {
+   "total": 89,
+   "accommodation": 55,
+   "food": 18,
+   "local_transport": 4,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 155,
+   "accommodation": 95,
+   "food": 34,
+   "local_transport": 8,
+   "activities": 18
+  },
+  "notes": "Prague higher than rest",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "DK",
+  "country": "Denmark",
+  "variant": "",
+  "blocks": 7,
+  "backpacker": {
+   "total": 80,
+   "accommodation": 38,
+   "food": 24,
+   "local_transport": 8,
+   "activities": 10
+  },
+  "standard": {
+   "total": 161,
+   "accommodation": 100,
+   "food": 34,
+   "local_transport": 9,
+   "activities": 18
+  },
+  "comfort": {
+   "total": 251,
+   "accommodation": 165,
+   "food": 52,
+   "local_transport": 12,
+   "activities": 22
+  },
+  "notes": "Copenhagen hostels private rooms ~90",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "EE",
+  "country": "Estonia",
+  "variant": "",
+  "blocks": 5,
+  "backpacker": {
+   "total": 41,
+   "accommodation": 20,
+   "food": 13,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 98,
+   "accommodation": 60,
+   "food": 22,
+   "local_transport": 6,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 158,
+   "accommodation": 100,
+   "food": 35,
+   "local_transport": 8,
+   "activities": 15
+  },
+  "notes": "Tallinn/Tartu",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "FI",
+  "country": "Finland",
+  "variant": "",
+  "blocks": 9,
+  "backpacker": {
+   "total": 67,
+   "accommodation": 33,
+   "food": 20,
+   "local_transport": 6,
+   "activities": 8
+  },
+  "standard": {
+   "total": 130,
+   "accommodation": 80,
+   "food": 28,
+   "local_transport": 7,
+   "activities": 15
+  },
+  "comfort": {
+   "total": 195,
+   "accommodation": 125,
+   "food": 42,
+   "local_transport": 10,
+   "activities": 18
+  },
+  "notes": "Helsinki; Lapland winter higher",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "FO",
+  "country": "Faroe Islands",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 101,
+   "accommodation": 55,
+   "food": 28,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "standard": {
+   "total": 192,
+   "accommodation": 115,
+   "food": 42,
+   "local_transport": 10,
+   "activities": 25
+  },
+  "comfort": {
+   "total": 290,
+   "accommodation": 190,
+   "food": 60,
+   "local_transport": 12,
+   "activities": 28
+  },
+  "notes": "Very limited accommodation; mostly knowledge",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "GG",
+  "country": "Guernsey",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 95,
+   "accommodation": 55,
+   "food": 24,
+   "local_transport": 6,
+   "activities": 10
+  },
+  "standard": {
+   "total": 163,
+   "accommodation": 105,
+   "food": 34,
+   "local_transport": 8,
+   "activities": 16
+  },
+  "comfort": {
+   "total": 252,
+   "accommodation": 170,
+   "food": 50,
+   "local_transport": 10,
+   "activities": 22
+  },
+  "notes": "Small island, limited stock",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "GI",
+  "country": "Gibraltar",
+  "variant": "",
+  "blocks": 1,
+  "backpacker": {
+   "total": 72,
+   "accommodation": 45,
+   "food": 18,
+   "local_transport": 3,
+   "activities": 6
+  },
+  "standard": {
+   "total": 135,
+   "accommodation": 95,
+   "food": 26,
+   "local_transport": 4,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 194,
+   "accommodation": 140,
+   "food": 36,
+   "local_transport": 4,
+   "activities": 14
+  },
+  "notes": "Limited hotels; day trips from Spain cheaper",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "HU",
+  "country": "Hungary",
+  "variant": "",
+  "blocks": 11,
+  "backpacker": {
+   "total": 35,
+   "accommodation": 15,
+   "food": 11,
+   "local_transport": 3,
+   "activities": 6
+  },
+  "standard": {
+   "total": 79,
+   "accommodation": 50,
+   "food": 16,
+   "local_transport": 4,
+   "activities": 9
+  },
+  "comfort": {
+   "total": 124,
+   "accommodation": 80,
+   "food": 26,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "notes": "Budapest",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "IE",
+  "country": "Ireland",
+  "variant": "",
+  "blocks": 9,
+  "backpacker": {
+   "total": 74,
+   "accommodation": 38,
+   "food": 20,
+   "local_transport": 7,
+   "activities": 9
+  },
+  "standard": {
+   "total": 158,
+   "accommodation": 105,
+   "food": 30,
+   "local_transport": 9,
+   "activities": 14
+  },
+  "comfort": {
+   "total": 230,
+   "accommodation": 160,
+   "food": 40,
+   "local_transport": 12,
+   "activities": 18
+  },
+  "notes": "Dublin pricey; regional B&Bs; B&B EUR90-140, 3* EUR120-180 per room found, solo room raised",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "IM",
+  "country": "Isle of Man",
+  "variant": "",
+  "blocks": 4,
+  "backpacker": {
+   "total": 74,
+   "accommodation": 40,
+   "food": 20,
+   "local_transport": 6,
+   "activities": 8
+  },
+  "standard": {
+   "total": 142,
+   "accommodation": 95,
+   "food": 28,
+   "local_transport": 7,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 201,
+   "accommodation": 138,
+   "food": 38,
+   "local_transport": 9,
+   "activities": 16
+  },
+  "notes": "Limited stock",
+  "levels_notes": "Dorm bed/cheapest room"
+ },
+ {
+  "code": "IS",
+  "country": "Iceland",
+  "variant": "",
+  "blocks": 7,
+  "backpacker": {
+   "total": 96,
+   "accommodation": 48,
+   "food": 28,
+   "local_transport": 8,
+   "activities": 12
+  },
+  "standard": {
+   "total": 192,
+   "accommodation": 120,
+   "food": 42,
+   "local_transport": 10,
+   "activities": 20
+  },
+  "comfort": {
+   "total": 286,
+   "accommodation": 190,
+   "food": 58,
+   "local_transport": 12,
+   "activities": 26
+  },
+  "notes": "Expensive throughout; excludes car/tours",
+  "levels_notes": "Dorm bed/cheapest room"
+ }
+]

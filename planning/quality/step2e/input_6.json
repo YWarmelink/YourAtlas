@@ -1,0 +1,437 @@
+[
+ {
+  "code": "AW",
+  "country": "Aruba",
+  "variant": "",
+  "blocks": 1,
+  "backpacker": {
+   "total": 85,
+   "accommodation": 55,
+   "food": 20,
+   "local_transport": 5,
+   "activities": 5
+  },
+  "standard": {
+   "total": 153,
+   "accommodation": 100,
+   "food": 30,
+   "local_transport": 8,
+   "activities": 15
+  },
+  "comfort": {
+   "total": 242,
+   "accommodation": 160,
+   "food": 45,
+   "local_transport": 12,
+   "activities": 25
+  },
+  "notes": "Guesthouse level; app median likely resort-level",
+  "levels_notes": ""
+ },
+ {
+  "code": "BO",
+  "country": "Bolivia",
+  "variant": "",
+  "blocks": 7,
+  "backpacker": {
+   "total": 18,
+   "accommodation": 7,
+   "food": 6,
+   "local_transport": 2,
+   "activities": 3
+  },
+  "standard": {
+   "total": 40,
+   "accommodation": 20,
+   "food": 10,
+   "local_transport": 3,
+   "activities": 7
+  },
+  "comfort": {
+   "total": 76,
+   "accommodation": 40,
+   "food": 18,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "BQ",
+  "country": "Bonaire",
+  "variant": "",
+  "blocks": 4,
+  "backpacker": {
+   "total": 93,
+   "accommodation": 60,
+   "food": 22,
+   "local_transport": 3,
+   "activities": 8
+  },
+  "standard": {
+   "total": 160,
+   "accommodation": 100,
+   "food": 35,
+   "local_transport": 10,
+   "activities": 15
+  },
+  "comfort": {
+   "total": 257,
+   "accommodation": 170,
+   "food": 50,
+   "local_transport": 12,
+   "activities": 25
+  },
+  "notes": "Guesthouse/studio; marine park tag amortised; no car",
+  "levels_notes": ""
+ },
+ {
+  "code": "BR",
+  "country": "Brazil",
+  "variant": "",
+  "blocks": 5,
+  "backpacker": {
+   "total": 32,
+   "accommodation": 15,
+   "food": 10,
+   "local_transport": 3,
+   "activities": 4
+  },
+  "standard": {
+   "total": 81,
+   "accommodation": 45,
+   "food": 18,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 136,
+   "accommodation": 80,
+   "food": 28,
+   "local_transport": 10,
+   "activities": 18
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "BZ",
+  "country": "Belize",
+  "variant": "",
+  "blocks": 2,
+  "backpacker": {
+   "total": 41,
+   "accommodation": 20,
+   "food": 12,
+   "local_transport": 3,
+   "activities": 6
+  },
+  "standard": {
+   "total": 113,
+   "accommodation": 70,
+   "food": 20,
+   "local_transport": 8,
+   "activities": 15
+  },
+  "comfort": {
+   "total": 170,
+   "accommodation": 110,
+   "food": 30,
+   "local_transport": 10,
+   "activities": 20
+  },
+  "notes": "Expensive for Central America",
+  "levels_notes": ""
+ },
+ {
+  "code": "CA",
+  "country": "Canada",
+  "variant": "",
+  "blocks": 8,
+  "backpacker": {
+   "total": 70,
+   "accommodation": 30,
+   "food": 20,
+   "local_transport": 8,
+   "activities": 12
+  },
+  "standard": {
+   "total": 197,
+   "accommodation": 120,
+   "food": 45,
+   "local_transport": 12,
+   "activities": 20
+  },
+  "comfort": {
+   "total": 298,
+   "accommodation": 190,
+   "food": 60,
+   "local_transport": 18,
+   "activities": 30
+  },
+  "notes": "Mix of cities and towns; excludes car",
+  "levels_notes": ""
+ },
+ {
+  "code": "CL",
+  "country": "Chile",
+  "variant": "",
+  "blocks": 8,
+  "backpacker": {
+   "total": 37,
+   "accommodation": 17,
+   "food": 12,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 92,
+   "accommodation": 55,
+   "food": 22,
+   "local_transport": 5,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 166,
+   "accommodation": 100,
+   "food": 38,
+   "local_transport": 10,
+   "activities": 18
+  },
+  "notes": "Santiago + north/central mix",
+  "levels_notes": ""
+ },
+ {
+  "code": "CL",
+  "country": "Chile",
+  "variant": "Patagonia",
+  "blocks": 8,
+  "backpacker": {
+   "total": 54,
+   "accommodation": 24,
+   "food": 15,
+   "local_transport": 5,
+   "activities": 10
+  },
+  "standard": {
+   "total": 128,
+   "accommodation": 70,
+   "food": 28,
+   "local_transport": 8,
+   "activities": 22
+  },
+  "comfort": {
+   "total": 199,
+   "accommodation": 110,
+   "food": 45,
+   "local_transport": 14,
+   "activities": 30
+  },
+  "notes": "Puerto Natales/Punta Arenas; excludes park fees above 30 and treks",
+  "levels_notes": ""
+ },
+ {
+  "code": "CO",
+  "country": "Colombia",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 26,
+   "accommodation": 11,
+   "food": 8,
+   "local_transport": 3,
+   "activities": 4
+  },
+  "standard": {
+   "total": 56,
+   "accommodation": 30,
+   "food": 13,
+   "local_transport": 4,
+   "activities": 9
+  },
+  "comfort": {
+   "total": 104,
+   "accommodation": 60,
+   "food": 22,
+   "local_transport": 8,
+   "activities": 14
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "CR",
+  "country": "Costa Rica",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 42,
+   "accommodation": 18,
+   "food": 12,
+   "local_transport": 4,
+   "activities": 8
+  },
+  "standard": {
+   "total": 104,
+   "accommodation": 60,
+   "food": 22,
+   "local_transport": 6,
+   "activities": 16
+  },
+  "comfort": {
+   "total": 169,
+   "accommodation": 105,
+   "food": 32,
+   "local_transport": 10,
+   "activities": 22
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "CU",
+  "country": "Cuba",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 34,
+   "accommodation": 18,
+   "food": 10,
+   "local_transport": 3,
+   "activities": 3
+  },
+  "standard": {
+   "total": 57,
+   "accommodation": 30,
+   "food": 15,
+   "local_transport": 6,
+   "activities": 6
+  },
+  "comfort": {
+   "total": 95,
+   "accommodation": 55,
+   "food": 22,
+   "local_transport": 8,
+   "activities": 10
+  },
+  "notes": "Informal exchange rate volatile; app median likely overstated",
+  "levels_notes": ""
+ },
+ {
+  "code": "CW",
+  "country": "Curaçao",
+  "variant": "",
+  "blocks": 4,
+  "backpacker": {
+   "total": 83,
+   "accommodation": 55,
+   "food": 20,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 143,
+   "accommodation": 90,
+   "food": 30,
+   "local_transport": 8,
+   "activities": 15
+  },
+  "comfort": {
+   "total": 222,
+   "accommodation": 150,
+   "food": 42,
+   "local_transport": 10,
+   "activities": 20
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "DM",
+  "country": "Dominica",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 71,
+   "accommodation": 45,
+   "food": 18,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 131,
+   "accommodation": 80,
+   "food": 28,
+   "local_transport": 8,
+   "activities": 15
+  },
+  "comfort": {
+   "total": 208,
+   "accommodation": 140,
+   "food": 38,
+   "local_transport": 10,
+   "activities": 20
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "EC",
+  "country": "Ecuador",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 22,
+   "accommodation": 9,
+   "food": 7,
+   "local_transport": 2,
+   "activities": 4
+  },
+  "standard": {
+   "total": 54,
+   "accommodation": 30,
+   "food": 12,
+   "local_transport": 3,
+   "activities": 9
+  },
+  "comfort": {
+   "total": 90,
+   "accommodation": 50,
+   "food": 20,
+   "local_transport": 6,
+   "activities": 14
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "EC",
+  "country": "Ecuador",
+  "variant": "Galápagos",
+  "blocks": 3,
+  "backpacker": {
+   "total": 72,
+   "accommodation": 35,
+   "food": 18,
+   "local_transport": 4,
+   "activities": 15
+  },
+  "standard": {
+   "total": 168,
+   "accommodation": 90,
+   "food": 30,
+   "local_transport": 8,
+   "activities": 40
+  },
+  "comfort": {
+   "total": 262,
+   "accommodation": 160,
+   "food": 45,
+   "local_transport": 12,
+   "activities": 45
+  },
+  "notes": "Excludes park fee 100 USD and cruises",
+  "levels_notes": ""
+ }
+]

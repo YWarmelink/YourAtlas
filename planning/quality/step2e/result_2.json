@@ -1,0 +1,498 @@
+[
+ {
+  "code": "JE",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 95,
+   "accommodation": 55,
+   "food": 24,
+   "local_transport": 6,
+   "activities": 10
+  },
+  "standard": {
+   "total": 166,
+   "accommodation": 110,
+   "food": 34,
+   "local_transport": 8,
+   "activities": 14
+  },
+  "comfort": {
+   "total": 237,
+   "accommodation": 165,
+   "food": 45,
+   "local_transport": 9,
+   "activities": 18
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.travelwithhello.com/blog/jersey-travel-budget-guide",
+   "https://travelcostcalculator.org/cost/jersey"
+  ],
+  "note": "Budget £80-120/day (~€92-138), hostel bed ~£40, LibertyBus day pass £9, mid-range £150-200; current values sit in range"
+ },
+ {
+  "code": "LI",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 91,
+   "accommodation": 50,
+   "food": 30,
+   "local_transport": 6,
+   "activities": 5
+  },
+  "standard": {
+   "total": 157,
+   "accommodation": 105,
+   "food": 38,
+   "local_transport": 6,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 226,
+   "accommodation": 160,
+   "food": 50,
+   "local_transport": 6,
+   "activities": 10
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.amigosim.com/blog/how-much-does-it-cost-to-go-to-liechtenstein-on-holiday",
+   "https://www.thetripverdict.com/liechtenstein-travel-costs"
+  ],
+  "note": "Strict budget CHF 85-125/day, Schaan hostel CHF 40-95, Vaduz private room >CHF170; sources noisy but consistent with current"
+ },
+ {
+  "code": "LT",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 36,
+   "accommodation": 16,
+   "food": 12,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 81,
+   "accommodation": 50,
+   "food": 18,
+   "local_transport": 4,
+   "activities": 9
+  },
+  "comfort": {
+   "total": 123,
+   "accommodation": 80,
+   "food": 26,
+   "local_transport": 6,
+   "activities": 11
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hostelz.com/backpacker-budget/lithuania",
+   "https://allinmap.app/en/comparisons/london-vs-vilnius"
+  ],
+  "note": "Vilnius dorm €15-25, food €10-20/day, local meal €8-15, ticket ~€1; backpacker €32-55/day"
+ },
+ {
+  "code": "LU",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 66,
+   "accommodation": 36,
+   "food": 22,
+   "local_transport": 2,
+   "activities": 6
+  },
+  "standard": {
+   "total": 131,
+   "accommodation": 90,
+   "food": 28,
+   "local_transport": 3,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 194,
+   "accommodation": 135,
+   "food": 42,
+   "local_transport": 3,
+   "activities": 14
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://radicalstorage.com/travel/is-luxembourg-expensive/",
+   "https://www.travelwithhello.com/blog/luxembourg-travel-budget-guide"
+  ],
+  "note": "Dorm €25-40, budget €55-75 up to €70-120/day, mid-range €110-170, transport free nationally"
+ },
+ {
+  "code": "LV",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 36,
+   "accommodation": 16,
+   "food": 12,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 81,
+   "accommodation": 50,
+   "food": 18,
+   "local_transport": 4,
+   "activities": 9
+  },
+  "comfort": {
+   "total": 123,
+   "accommodation": 80,
+   "food": 26,
+   "local_transport": 6,
+   "activities": 11
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.amigosim.com/blog/how-much-does-it-cost-to-go-to-latvia",
+   "https://thesavvybackpacker.com/daily-costs-visit-riga-latvia/"
+  ],
+  "note": "Riga dorm €15-25, backpacker €30-40/day, 2* hotel/apartment tier €70-100 incl. accommodation"
+ },
+ {
+  "code": "MC",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 107,
+   "accommodation": 70,
+   "food": 28,
+   "local_transport": 3,
+   "activities": 6
+  },
+  "standard": {
+   "total": 250,
+   "accommodation": 190,
+   "food": 45,
+   "local_transport": 5,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 354,
+   "accommodation": 270,
+   "food": 65,
+   "local_transport": 5,
+   "activities": 14
+  },
+  "confidence": "low",
+  "sources": [
+   "https://chasingwhereabouts.com/blog/is-monaco-expensive-to-visit",
+   "https://viatravelers.com/budget/monaco/"
+  ],
+  "note": "No hostels; budget $100-150/day, cheapest hotels ~$70-80, mid-range ~$295/day; consistent with current"
+ },
+ {
+  "code": "MD",
+  "variant": "",
+  "verdict": "adjusted",
+  "replace": false,
+  "backpacker": {
+   "total": 30,
+   "accommodation": 13,
+   "food": 10,
+   "local_transport": 2,
+   "activities": 5
+  },
+  "standard": {
+   "total": 59,
+   "accommodation": 35,
+   "food": 14,
+   "local_transport": 3,
+   "activities": 7
+  },
+  "comfort": {
+   "total": 86,
+   "accommodation": 52,
+   "food": 20,
+   "local_transport": 5,
+   "activities": 9
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.travelwithhello.com/blog/moldova-travel-budget-guide",
+   "https://www.ou-et-quand.net/budget/moldavie/chisinau/"
+  ],
+  "note": "Dorm ~250 MDL (~€13), budget ~700 MDL/day (~€36); raised backpacker, standard/comfort modestly"
+ },
+ {
+  "code": "MK",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 28,
+   "accommodation": 13,
+   "food": 9,
+   "local_transport": 2,
+   "activities": 4
+  },
+  "standard": {
+   "total": 50,
+   "accommodation": 28,
+   "food": 12,
+   "local_transport": 3,
+   "activities": 7
+  },
+  "comfort": {
+   "total": 76,
+   "accommodation": 44,
+   "food": 18,
+   "local_transport": 5,
+   "activities": 9
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.hostelz.com/backpacker-budget/north-macedonia",
+   "https://www.machupicchu.org/north-macedonia-budget-guide-2026-complete-cost-breakdown.htm",
+   "https://gotripzi.com/destinations/skopje-mk/cost"
+  ],
+  "note": "Dorm €10-18, budget $35-55/day (aggregators, likely inflated), Ohrid +10-15% in summer; small bump"
+ },
+ {
+  "code": "MT",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 52,
+   "accommodation": 28,
+   "food": 15,
+   "local_transport": 3,
+   "activities": 6
+  },
+  "standard": {
+   "total": 111,
+   "accommodation": 70,
+   "food": 24,
+   "local_transport": 5,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 152,
+   "accommodation": 100,
+   "food": 34,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://radicalstorage.com/travel/is-malta-expensive/",
+   "https://www.theworldwasherefirst.com/is-malta-expensive-budget/"
+  ],
+  "note": "Dorm €20-35 (Valletta/Floriana ~€35), hotels €60-120, pastizzi €0.5-2.5, tourist tax max €5"
+ },
+ {
+  "code": "NL",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 76,
+   "accommodation": 40,
+   "food": 20,
+   "local_transport": 6,
+   "activities": 10
+  },
+  "standard": {
+   "total": 148,
+   "accommodation": 95,
+   "food": 28,
+   "local_transport": 9,
+   "activities": 16
+  },
+  "comfort": {
+   "total": 215,
+   "accommodation": 145,
+   "food": 40,
+   "local_transport": 12,
+   "activities": 18
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.amsterdamtourism.org/amsterdam-trip-cost-budget-breakdown/",
+   "https://www.hostelz.com/backpacker-budget/cities/amsterdam-netherlands"
+  ],
+  "note": "Amsterdam budget €80-120/day, mid-range €150-250; elsewhere in NL cheaper so keep national blend"
+ },
+ {
+  "code": "PL",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 33,
+   "accommodation": 14,
+   "food": 11,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 72,
+   "accommodation": 45,
+   "food": 15,
+   "local_transport": 3,
+   "activities": 9
+  },
+  "comfort": {
+   "total": 112,
+   "accommodation": 70,
+   "food": 24,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.hostelz.com/en/backpacker-budget/cities/krakow-poland",
+   "https://www.expatspoland.com/?p=58606",
+   "https://www.machupicchu.org/poland-budget-guide-2026-complete-cost-breakdown.htm"
+  ],
+  "note": "Hostel budget $31-50/day, dorm $12-18, Krakow mid-range $70-125/day"
+ },
+ {
+  "code": "RO",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 30,
+   "accommodation": 13,
+   "food": 10,
+   "local_transport": 2,
+   "activities": 5
+  },
+  "standard": {
+   "total": 63,
+   "accommodation": 38,
+   "food": 14,
+   "local_transport": 3,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 93,
+   "accommodation": 58,
+   "food": 20,
+   "local_transport": 5,
+   "activities": 10
+  },
+  "confidence": "medium",
+  "sources": [
+   "https://www.romanianfriend.com/blog/romania-budget-travel-costs"
+  ],
+  "note": "Dorm 50-80 RON (€10-16), budget ~300 RON/day, mid-range 400-600 RON, 24h Bucharest pass 8 RON"
+ },
+ {
+  "code": "RS",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 30,
+   "accommodation": 14,
+   "food": 10,
+   "local_transport": 2,
+   "activities": 4
+  },
+  "standard": {
+   "total": 56,
+   "accommodation": 32,
+   "food": 13,
+   "local_transport": 3,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 85,
+   "accommodation": 52,
+   "food": 18,
+   "local_transport": 5,
+   "activities": 10
+  },
+  "confidence": "low",
+  "sources": [
+   "https://gotripzi.com/destinations/belgrade-rs/cost",
+   "https://theworldtravelindex.com/en/europe/serbia/belgrade/is-belgrade-expensive"
+  ],
+  "note": "Hostel budget $49-61/day per aggregators (high), dorm ~€14; Belgrade public transport reportedly free since 2025 (unverified)"
+ },
+ {
+  "code": "SK",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 39,
+   "accommodation": 19,
+   "food": 12,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 76,
+   "accommodation": 48,
+   "food": 17,
+   "local_transport": 3,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 107,
+   "accommodation": 70,
+   "food": 22,
+   "local_transport": 5,
+   "activities": 10
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.travelwithhello.com/blog/slovakia-travel-budget-guide",
+   "https://www.amigosim.com/blog/what-is-the-average-cost-of-a-trip-to-slovakia"
+  ],
+  "note": "Bratislava dorm €18-35 (cheaper sources €12-20), 2-3* double €45-70, city ticket ~€1, food €25-40/day (high); slight bump"
+ },
+ {
+  "code": "SM",
+  "variant": "",
+  "verdict": "confirmed",
+  "replace": false,
+  "backpacker": {
+   "total": 61,
+   "accommodation": 35,
+   "food": 18,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 107,
+   "accommodation": 70,
+   "food": 25,
+   "local_transport": 4,
+   "activities": 8
+  },
+  "comfort": {
+   "total": 148,
+   "accommodation": 100,
+   "food": 34,
+   "local_transport": 4,
+   "activities": 10
+  },
+  "confidence": "low",
+  "sources": [
+   "https://www.thetripverdict.com/san-marino-travel-costs",
+   "https://travelcostcalculator.org/cost/san-marino"
+  ],
+  "note": "Budget €45-70/day, 3* with breakfast €100-150/day; current within range"
+ }
+]

@@ -1,0 +1,379 @@
+[
+ {
+  "code": "UY",
+  "country": "Uruguay",
+  "variant": "",
+  "blocks": 1,
+  "backpacker": {
+   "total": 40,
+   "accommodation": 18,
+   "food": 14,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 98,
+   "accommodation": 55,
+   "food": 25,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 159,
+   "accommodation": 95,
+   "food": 38,
+   "local_transport": 10,
+   "activities": 16
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "AU",
+  "country": "Australia",
+  "variant": "",
+  "blocks": 18,
+  "backpacker": {
+   "total": 66,
+   "accommodation": 26,
+   "food": 20,
+   "local_transport": 8,
+   "activities": 12
+  },
+  "standard": {
+   "total": 165,
+   "accommodation": 100,
+   "food": 35,
+   "local_transport": 10,
+   "activities": 20
+  },
+  "comfort": {
+   "total": 269,
+   "accommodation": 170,
+   "food": 55,
+   "local_transport": 16,
+   "activities": 28
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "CK",
+  "country": "Cook Islands",
+  "variant": "",
+  "blocks": 2,
+  "backpacker": {
+   "total": 68,
+   "accommodation": 40,
+   "food": 18,
+   "local_transport": 4,
+   "activities": 6
+  },
+  "standard": {
+   "total": 133,
+   "accommodation": 85,
+   "food": 28,
+   "local_transport": 6,
+   "activities": 14
+  },
+  "comfort": {
+   "total": 218,
+   "accommodation": 150,
+   "food": 40,
+   "local_transport": 8,
+   "activities": 20
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "FJ",
+  "country": "Fiji",
+  "variant": "",
+  "blocks": 4,
+  "backpacker": {
+   "total": 33,
+   "accommodation": 12,
+   "food": 12,
+   "local_transport": 3,
+   "activities": 6
+  },
+  "standard": {
+   "total": 93,
+   "accommodation": 55,
+   "food": 20,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 154,
+   "accommodation": 100,
+   "food": 28,
+   "local_transport": 8,
+   "activities": 18
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "NZ",
+  "country": "New Zealand",
+  "variant": "",
+  "blocks": 6,
+  "backpacker": {
+   "total": 66,
+   "accommodation": 28,
+   "food": 20,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "standard": {
+   "total": 143,
+   "accommodation": 85,
+   "food": 30,
+   "local_transport": 8,
+   "activities": 20
+  },
+  "comfort": {
+   "total": 230,
+   "accommodation": 140,
+   "food": 48,
+   "local_transport": 12,
+   "activities": 30
+  },
+  "notes": "Excludes campervan/car",
+  "levels_notes": ""
+ },
+ {
+  "code": "PG",
+  "country": "Papua New Guinea",
+  "variant": "",
+  "blocks": 1,
+  "backpacker": {
+   "total": 68,
+   "accommodation": 45,
+   "food": 12,
+   "local_transport": 6,
+   "activities": 5
+  },
+  "standard": {
+   "total": 120,
+   "accommodation": 80,
+   "food": 20,
+   "local_transport": 10,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 196,
+   "accommodation": 140,
+   "food": 30,
+   "local_transport": 14,
+   "activities": 12
+  },
+  "notes": "Few budget rooms; high for region",
+  "levels_notes": ""
+ },
+ {
+  "code": "PW",
+  "country": "Palau",
+  "variant": "",
+  "blocks": 1,
+  "backpacker": {
+   "total": 76,
+   "accommodation": 50,
+   "food": 18,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 143,
+   "accommodation": 90,
+   "food": 30,
+   "local_transport": 8,
+   "activities": 15
+  },
+  "comfort": {
+   "total": 216,
+   "accommodation": 150,
+   "food": 38,
+   "local_transport": 8,
+   "activities": 20
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "TO",
+  "country": "Tonga",
+  "variant": "",
+  "blocks": 2,
+  "backpacker": {
+   "total": 37,
+   "accommodation": 20,
+   "food": 10,
+   "local_transport": 3,
+   "activities": 4
+  },
+  "standard": {
+   "total": 83,
+   "accommodation": 50,
+   "food": 18,
+   "local_transport": 5,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 136,
+   "accommodation": 90,
+   "food": 26,
+   "local_transport": 6,
+   "activities": 14
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "VU",
+  "country": "Vanuatu",
+  "variant": "",
+  "blocks": 3,
+  "backpacker": {
+   "total": 38,
+   "accommodation": 18,
+   "food": 12,
+   "local_transport": 3,
+   "activities": 5
+  },
+  "standard": {
+   "total": 93,
+   "accommodation": 55,
+   "food": 20,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "comfort": {
+   "total": 142,
+   "accommodation": 95,
+   "food": 26,
+   "local_transport": 6,
+   "activities": 15
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "WS",
+  "country": "Samoa",
+  "variant": "",
+  "blocks": 2,
+  "backpacker": {
+   "total": 37,
+   "accommodation": 20,
+   "food": 10,
+   "local_transport": 3,
+   "activities": 4
+  },
+  "standard": {
+   "total": 83,
+   "accommodation": 50,
+   "food": 18,
+   "local_transport": 5,
+   "activities": 10
+  },
+  "comfort": {
+   "total": 134,
+   "accommodation": 90,
+   "food": 26,
+   "local_transport": 6,
+   "activities": 12
+  },
+  "notes": "",
+  "levels_notes": ""
+ },
+ {
+  "code": "GL",
+  "country": "Greenland",
+  "variant": "",
+  "blocks": 2,
+  "backpacker": {
+   "total": 131,
+   "accommodation": 85,
+   "food": 30,
+   "local_transport": 6,
+   "activities": 10
+  },
+  "standard": {
+   "total": 267,
+   "accommodation": 170,
+   "food": 55,
+   "local_transport": 12,
+   "activities": 30
+  },
+  "comfort": {
+   "total": 354,
+   "accommodation": 230,
+   "food": 70,
+   "local_transport": 14,
+   "activities": 40
+  },
+  "notes": "Expensive towns; excludes flights/boats between towns",
+  "levels_notes": ""
+ },
+ {
+  "code": "SJ",
+  "country": "Svalbard",
+  "variant": "",
+  "blocks": 1,
+  "backpacker": {
+   "total": 160,
+   "accommodation": 110,
+   "food": 35,
+   "local_transport": 5,
+   "activities": 10
+  },
+  "standard": {
+   "total": 290,
+   "accommodation": 190,
+   "food": 55,
+   "local_transport": 10,
+   "activities": 35
+  },
+  "comfort": {
+   "total": 395,
+   "accommodation": 260,
+   "food": 75,
+   "local_transport": 10,
+   "activities": 50
+  },
+  "notes": "Longyearbyen guesthouse; excludes guided tours",
+  "levels_notes": ""
+ },
+ {
+  "code": "AQ",
+  "country": "Antarctica",
+  "variant": "",
+  "blocks": 2,
+  "backpacker": {
+   "total": 600,
+   "accommodation": 330,
+   "food": 110,
+   "local_transport": 0,
+   "activities": 160
+  },
+  "standard": {
+   "total": 800,
+   "accommodation": 450,
+   "food": 150,
+   "local_transport": 0,
+   "activities": 200
+  },
+  "comfort": {
+   "total": 1100,
+   "accommodation": 650,
+   "food": 220,
+   "local_transport": 0,
+   "activities": 230
+  },
+  "notes": "Whole cruise cost per day (berth, meals, landings); excludes flights to Ushuaia",
+  "levels_notes": ""
+ }
+]
