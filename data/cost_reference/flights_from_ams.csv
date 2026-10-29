@@ -229,7 +229,7 @@ AMM,Amman,JO,back,240,1 stop,estimate from out fare,2026-10-29,low,est
 TYO,Tokyo (HND/NRT),JP,out,520,KLM/Air France/SAS direct or 1 stop,WebSearch 2026-10-29 (Skyscanner EUR 361 / Expedia USD 420-432 floors; route notes EUR 900-1300 return),2026-10-29,medium,typical above floors
 ALA,Almaty,KZ,out,300,via Istanbul (Turkish) / Frankfurt,route notes EUR 250-650 return; est,2026-10-29,low,est
 FRU,Bishkek,KG,out,330,via Istanbul (Turkish/Pegasus),route notes EUR 450-700 return; est,2026-10-29,low,est
-FRU,Bishkek,KG,back,320,via Istanbul,estimate from out fare,2026-10-29,low,est
+FRU,Bishkek,KG,back,290,Turkish/Pegasus via Istanbul,Step 2b web check: https://www.expedia.com/lp/flights/647585083286372352/1115/manas-to-eindhoven https://www.booking.com/flights/route/city-to-city/kg-bishkek-to-nl-amsterdam.html,2026-10-29,medium,"One-way $328 Expedia, ~$237 Booking, $173-251 Travelocity floors; typical ~€290; June/September similar."
 ICN,Seoul Incheon,KR,out,480,KLM/Korean Air direct,WebSearch 2026-10-29 (Expedia EUR 314 / Skyscanner EUR 370 / Cheapflights USD 406-458 floors; route notes EUR 700-1100 return),2026-10-29,medium,typical above floors
 ICN,Seoul Incheon,KR,back,450,KLM/Korean Air direct,WebSearch 2026-10-29 (Skyscanner EUR 426 floor),2026-10-29,medium,
 CMB,Colombo,LK,out,500,1 stop via Gulf hub,estimate (no search),2026-10-29,low,est
@@ -251,7 +251,7 @@ DYU,Dushanbe,TJ,back,350,1 stop via Istanbul,estimate (no search),2026-10-29,low
 BJV,Bodrum,TR,out,170,seasonal direct/1 stop,estimate (no search),2026-10-29,low,est
 BJV,Bodrum,TR,back,160,seasonal direct/1 stop,estimate from out fare,2026-10-29,low,est
 ADB,Izmir,TR,back,160,Transavia/Pegasus/KLM,estimate from ADB out fare,2026-10-29,low,est
-TAS,Tashkent,UZ,out,330,via Istanbul (Turkish),route notes EUR 500-700 return; est,2026-10-29,low,est
+TAS,Tashkent,UZ,out,370,Turkish/AJet via Istanbul (or Air Astana/Qatar),Step 2b web check: https://www.expedia.com/lp/flights/ams/tas/amsterdam-to-tashkent https://www.expedia.ie/lp/flights/ams/tas/amsterdam-to-tashkent,2026-10-29,medium,"Expedia one-way floor $347 (~€310), IE page €576 (Air Astana); typical ~€370. September is cheapest month, June slightly higher (<15% difference)."
 SGN,Ho Chi Minh City,VN,back,480,1 stop,estimate (HAN out 520 reused as benchmark),2026-10-29,low,est
 PNH,Phnom Penh,KH,back,520,1-2 stops via Bangkok/Singapore/Doha,estimate (no search),2026-10-29,low,est
 BBK,Kasane,BW,out,750,KLM/Air France to JNB + Airlink JNB-BBK,Step 2b web check: https://www.skyscanner.com/routes/bbk/nl/kasane-to-netherlands.html https://us.jetcost.com/en/flights/amsterdam-schiphol/kasane/AMS-BBK,2026-10-29,medium,"BBK->NL one-way from USD 689 (Skyscanner), USD 751 (Booking); Jetcost AMS->BBK Qatar USD 1,098."
@@ -267,13 +267,13 @@ NBO,Nairobi,KE,back,420,KLM direct NBO-AMS,Step 2b web check: https://www.klm.nl
 TNG,Tangier,MA,out,120,Transavia/Ryanair direct (seasonal),estimate; no web search,2026-10-29,low,est
 RAK,Marrakech,MA,back,120,Transavia/easyJet direct,route notes (return ±EUR 100-280),2026-10-29,medium,est
 TNR,Antananarivo,MG,out,700,1 stop (Addis/Nairobi/Paris/Istanbul),Step 2b web check: https://www.travelocity.com/lp/flights/ams/tnr/amsterdam-to-antananarivo https://www.expedia.com/lp/flight-routes/klm-from-schiphol-to-ivato-intl/kl/ams/tnr,2026-10-29,medium,"One-way: Ethiopian $657, Travelocity $648, KLM $1,105-1,222, Skyscanner 472 EUR (stale); ~700"
-TNR,Antananarivo,MG,back,650,1 stop via Paris/Nairobi,same as out,2026-10-29,low,est
-MRU,Mauritius,MU,out,600,1 stop via Paris/Dubai/Istanbul,route notes (return ±EUR 600-1500),2026-10-29,low,est
-MRU,Mauritius,MU,back,600,1 stop,same as out,2026-10-29,low,est
-MPM,Maputo,MZ,out,600,via Doha or Lisbon,route notes (return ±EUR 610-1200),2026-10-29,low,est
+TNR,Antananarivo,MG,back,640,Air Mauritius/Ethiopian/Kenya Airways/Emirates 1 stop,Step 2b web check: https://www.expedia.com/lp/flights/tnr/ams/antananarivo-to-amsterdam,2026-10-29,medium,"Expedia one-way floor $688 (~€615); another page showed CA$1,298; October is mid-season, lower-middle ~€640."
+MRU,Mauritius,MU,out,380,"1 stop (Saudia via JED, Emirates, Qatar etc.)",Step 2b web check: https://www.farecompare.com/flights/Amsterdam-AMS/Mauritius-MRU/market.html https://www.secretflying.com/posts/amsterdam-netherlands-to-mauritius-for-only-e496-roundtrip/,2026-10-29,medium,"Average one-way $480, Trip.com one-way PLN 1,144-1,179 (~€270) in September; return deals €460-490; September is the cheapest month."
+MRU,Mauritius,MU,back,410,"1 stop (Saudia via JED, Emirates, Qatar etc.)",Step 2b web check: https://www.skyscanner.co.za/routes/mru/ams/mauritius-to-amsterdam-schiphol.html https://au.trip.com/flights/mauritius-to-amsterdam/airfares-mru-ams,2026-10-29,medium,"Same airport/direction as L53, same fare; September is low season."
+MPM,Maputo,MZ,out,560,TAP via Lisbon,Step 2b web check: https://www.expedia.com/cn/lp/flights/ams/mpm/amsterdam-to-maputo https://ae.trip.com/flights/amsterdam-to-maputo/airfares-ams-mpm,2026-10-29,medium,"Same airport/direction as L56, same fare; April shoulder season."
 MPM,Maputo,MZ,back,600,via Doha,same as out,2026-10-29,low,est
-WDH,Windhoek,NA,out,650,1 connection (FRA/ZRH/JNB),route notes (return ±EUR 700-1200),2026-10-29,low,est
-WDH,Windhoek,NA,back,620,1 connection,same as out,2026-10-29,low,est
+WDH,Windhoek,NA,out,620,1 stop (Qatar/Lufthansa-Eurowings/Ethiopian/Airlink via JNB),Step 2b web check: https://www.expedia.ie/lp/flights/ams/wdh/amsterdam-to-windhoek https://skyscanner.ie/routes/ams/wdha/amsterdam-schiphol-to-windhoek.html,2026-10-29,medium,"One-way floors €473-520 (Skyscanner/Expedia IE), $618 Expedia; July is the most expensive month (Cheapflights), so ~€620."
+WDH,Windhoek,NA,back,540,1 stop via JNB/Doha/Addis,Step 2b web check: https://www.expedia.com/lp/flights/wdh/ams/windhoek-to-amsterdam https://www.skyscanner.ie/routes/wdha/ams/windhoek-to-amsterdam-schiphol.html,2026-10-29,medium,"Expedia one-way $490-507 (~€450); Skyscanner IE shows €764 (probably higher/return); July peak adjustment, ~€540."
 KGL,Kigali,RW,out,500,KLM direct,route notes (return ±EUR 800-1000),2026-10-29,low,est
 KGL,Kigali,RW,back,470,KLM direct,same as out,2026-10-29,low,est
 SEZ,Mahe,SC,out,600,1 stop via Doha/Abu Dhabi/Nairobi,route notes (return ±EUR 680-900),2026-10-29,low,est
@@ -284,7 +284,7 @@ JRO,Kilimanjaro,TZ,out,700,KLM direct,Step 2b web check: https://www.expedia.com
 DAR,Dar es Salaam,TZ,back,600,1 stop (Doha/Addis/Nairobi),estimate; JRO direct would need an extra domestic flight,2026-10-29,low,est
 JNB,Johannesburg,ZA,back,560,KLM direct,estimate; no web search,2026-10-29,low,est
 MTS,Manzini,SZ,back,680,Airlink to JNB (~EUR 120) + KLM JNB-AMS (~EUR 560),estimate,2026-10-29,low,est
-HRE,Harare,ZW,out,650,via Addis (Ethiopian),route notes (return ±EUR 700-1000),2026-10-29,low,est
+HRE,Harare,ZW,out,600,Ethiopian via Addis Ababa,Step 2b web check: https://www.expedia.com/es/lp/vuelos/ams/hre/amsterdam-a-harare https://www.skyscanner.ie/routes/ams/hre/amsterdam-schiphol-to-harare.html,2026-10-29,medium,"Expedia one-way floor $647 (~€575), Skyscanner IE one-way €346 low; July peak-ish season, ~€600."
 VFA,Victoria Falls,ZW,back,600,via Addis (Ethiopian),route notes,2026-10-29,low,est
 LUN,Lusaka,ZM,out,600,1 connection (Nairobi/Doha/Addis),route notes (return ±EUR 600-1250),2026-10-29,low,est
 LLW,Lilongwe,MW,back,680,1 connection (ADD/NBO/JNB),Step 2b web check: https://www.travelocity.com/lp/flight-routes/ethiopian-airlines-from-kamuzu-intl-to-schiphol/et/llw/ams https://www.booking.com/flights/route/city-to-city/mw-lilongwe-to-nl-amsterdam.html?aid=898224,2026-10-29,medium,"One-way Ethiopian $807 (~720 EUR), Booking.com late Oct ~$711-716 (~640 EUR); ~680"
@@ -309,7 +309,7 @@ CUR,Curacao,CW,out,440,KLM direct,estimate from route notes (650-750 return),202
 CUR,Curacao,CW,back,445,direct CUR-AMS ~350 + Bonaire-Curacao hop 95,Step 2b web check: https://www.expedia.com/lp/flights/cur/ams/willemstad-to-amsterdam https://skyscanner.ie/routes/cur/ams/curacao-to-amsterdam-schiphol.html,2026-10-29,medium,"One-way direct: Expedia $319, Skyscanner 294 EUR, Trip.com $357; ~350 plus unverified 95 Bonaire hop from the note"
 AUA,Aruba,AW,out,450,KLM direct,estimate from route notes (740-820 return),2026-10-29,low,
 PTP,Pointe-a-Pitre,GP,out,420,Air France/KLM via Paris,estimate from route notes (650-1700 return),2026-10-29,low,
-DOM,Dominica,DM,back,650,1-2 stops,estimate,2026-10-29,low,
+DOM,Dominica,DM,back,700,"Winair/Air Caraibes via SXM/PTP + Air France/KLM, 1-2 stops",Step 2b web check: https://www.farecompare.com/flights/Dominica-DOM/Amsterdam-AMS/market.html https://nz.trip.com/flights/cheap-flights-to-netherlands-43/217-dm-to-nl,2026-10-29,low,"Averages only: ~$783 one-way (FareCompare), Trip.com cheapest NZD 1,751 (~€900, 2025). February is Caribbean peak season; rough."
 UVF,Saint Lucia,LC,out,500,via US hub,estimate from route notes (700-1000 return),2026-10-29,low,
 GND,Grenada,GD,back,620,1 stop,Step 2b web check: https://www.farecompare.com/flights/Grenada-GND/Amsterdam-AMS/market.html https://nz.trip.com/flights/grenada-to-amsterdam/airfares-gnd-ams,2026-10-29,medium,"Farecompare avg one-way $687 (~610 EUR); Trip.com NZD 1,084 (~600 EUR)"
 UIO,Quito,EC,out,520,Iberia via Madrid,estimate from route notes (800-1000 return),2026-10-29,low,
@@ -329,7 +329,7 @@ HBA,Hobart,AU,back,750,2 stops,Step 2b web check: https://www.expedia.com/es/lp/
 PER,Perth,AU,out,600,1 stop via Gulf/Singapore,Step 2b web check: https://www.skyscanner.ie/routes/ams/per/amsterdam-schiphol-to-perth.html https://www.orbitz.com/lp/flights/178229/180013/amsterdam-to-perth,2026-10-29,medium,"Skyscanner low EUR 434, Orbitz one-way from USD 716; typical ~EUR 600."
 YYC,Calgary,CA,out,450,1 stop (KLM/Air Canada/WestJet),estimate from route notes (return EUR 650-950),2026-10-29,low,est
 YYZ,Toronto,CA,back,380,KLM/Air Canada direct,estimate (similar to SFO/YHZ rows),2026-10-29,low,est
-ANC,Anchorage,US,back,650,via Seattle/Vancouver (no direct),estimate,2026-10-29,low,est
+ANC,Anchorage,US,back,520,Icelandair via KEF or Delta/Air Canada via SEA/YVR + KLM,Step 2b web check: https://expedia.com/lp/flights/anc/ams/anchorage-to-amsterdam https://www.momondo.com/flights/anchorage/amsterdam,2026-10-29,medium,"One-way quotes $405 (momondo), $480 (Kayak), $505 (Icelandair), $582 (Expedia); July is peak, ~€520."
 NAN,Nadi,FJ,out,800,2 stops via Middle East/Asia or LAX (Fiji Airways),Step 2b web check: https://Kiwi.com/en/cheap-flights/amsterdam-netherlands/nadi-fiji/ https://www.travelocity.com/lp/flight-routes/etihad-airways-from-schiphol-to-nadi-intl/ey/ams/nan,2026-10-29,medium,"Kiwi one-way GBP 665 (~EUR 770), Etihad one-way from USD 838 (~EUR 750)."
 NAN,Nadi,FJ,back,750,multi-stop via Asia/Gulf or LAX,Step 2b web check: https://www.skyscanner.ie/routes/nan/ams/nadi-to-amsterdam-schiphol.html https://expedia.com/lp/flights/nan/ams/nadi-to-amsterdam,2026-10-29,medium,"Skyscanner one-way 702 EUR, Expedia $778; typical ~750"
 RAR,Rarotonga,CK,back,1500,"via AKL/LAX/PPT, 2+ stops",Step 2b web check: https://www.farecompare.com/flights/Amsterdam-AMS/Rarotonga-RAR/market.html https://www.rome2rio.com/s/Rarotonga/Amsterdam,2026-10-29,low,"Farecompare avg one-way $946; Rome2Rio $1,100-4,100; no solid quote; ~1,500"
@@ -354,7 +354,7 @@ USH,Ushuaia,AR,out,1250,AMS-EZE/AEP + domestic to USH,Step 2b web check: https:/
 FTE,El Calafate,AR,out,900,KLM/Iberia/ITA to EZE/AEP + Aerolineas domestic to FTE,Step 2b web check: https://www.expedia.com/es/lp/vuelos/ams/fte/amsterdam-a-el-calafate https://uk.trip.com/flights/amsterdam-to-el-calafate/airfares-ams-fte,2026-10-29,medium,"Expedia one-way from USD 861, Trip.com one-way GBP 1,021-1,617; typical one-stop ~EUR 900-1,000."
 PUQ,Punta Arenas,CL,back,950,LATAM PUQ-SCL + KLM/Iberia/Air France SCL-AMS,Step 2b web check: https://www.expedia.com/cn/lp/flights/ams/puq/amsterdam-to-punta-arenas https://www.rome2rio.com/s/America/Punta-Arenas,2026-10-29,low,"Expedia AMS->PUQ one-way from USD 1,055 (~EUR 940, Iberia); reverse direction assumed similar; Rome2Rio USD 650-2,700."
 COO,Cotonou,BJ,back,550,via hub (Air France/Brussels/Royal Air Maroc/Turkish),estimate (no search),2026-10-29,low,
-GEO,Georgetown,GY,out,650,KLM (technical stop Sint Maarten),notes return EUR 740-1460; est,2026-10-29,low,2x/week
+GEO,Georgetown,GY,out,600,KLM direct (weekly) or 1-stop BA/other,Step 2b web check: https://english.ctrip.com/flights/amsterdam-to-georgetown/airfares-ams-geo/ https://www.skyscanner.ie/routes/ams/geo/amsterdam-schiphol-to-georgetown.html,2026-10-29,low,"Sources inconsistent: $560 Ctrip, €797 Skyscanner IE, $1,166 Skyscanner NZ; return ~$926-1,640. February (Mashramani/winter) is busy; ~€600."
 GEO,Georgetown,GY,back,600,KLM nonstop,estimate (no search),2026-10-29,low,2x/week
 DSS,Dakar,SN,out,350,TUI fly direct winter / via hub otherwise,notes return EUR 500-900; est,2026-10-29,low,
 BJL,Banjul,GM,back,320,TUI fly/Corendon winter / via hub,estimate (no search),2026-10-29,low,

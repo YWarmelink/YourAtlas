@@ -1,0 +1,104 @@
+[
+ {
+  "id": "L41",
+  "leg": "Manzini-AMS: Airlink Eswatini-JNB ~€120",
+  "eur_total": 680,
+  "uses": [
+   {
+    "route_id": "gt_seed_south-africa-mountain-kingdoms",
+    "route": "South Africa & Mountain Kingdoms 👑",
+    "field": "flight_out_cost",
+    "cost": 680,
+    "note": "Manzini-AMS: Airlink Eswatini-JNB ~€120 (est) + KLM JNB-AMS ~€560 (est)",
+    "best_starting_month": "April",
+    "route_days": 35,
+    "travel_month": "May"
+   }
+  ]
+ },
+ {
+  "id": "L43",
+  "leg": "Ilulissat-Reykjavik",
+  "eur_total": 650,
+  "uses": [
+   {
+    "route_id": "gt_seed_nordic-arctic-expedition",
+    "route": "Nordic Arctic Expedition ❄️",
+    "field": "flight_out_cost",
+    "cost": 650,
+    "note": "Ilulissat-Reykjavik (~500, est) + Reykjavik-AMS (~150); no through fare found",
+    "best_starting_month": "June",
+    "route_days": 67,
+    "travel_month": "August"
+   }
+  ]
+ },
+ {
+  "id": "L52",
+  "leg": "Varanasi-Delhi ~55",
+  "eur_total": 605,
+  "uses": [
+   {
+    "route_id": "gt_seed_north-india",
+    "route": "North India 🕌",
+    "field": "flight_out_cost",
+    "cost": 605,
+    "note": "Varanasi-Delhi ~55 (est, notes: flight ~1h20) + Delhi-AMS 550 (est from out fare / notes EUR 350-550 return)",
+    "best_starting_month": "October",
+    "route_days": 22,
+    "travel_month": "October"
+   }
+  ]
+ },
+ {
+  "id": "L58",
+  "leg": "AMS-Mahé 1 stop",
+  "eur_total": 600,
+  "uses": [
+   {
+    "route_id": "gt_seed_seychelles",
+    "route": "Seychelles 🌺",
+    "field": "flight_in_cost",
+    "cost": 600,
+    "note": "AMS-Mahé 1 stop (notes return ±€680-900; est)",
+    "best_starting_month": "April",
+    "route_days": 11,
+    "travel_month": "April"
+   }
+  ]
+ },
+ {
+  "id": "L59",
+  "leg": "Dar es Salaam-AMS 1 stop",
+  "eur_total": 600,
+  "uses": [
+   {
+    "route_id": "gt_seed_tanzania",
+    "route": "Tanzania 🦁",
+    "field": "flight_out_cost",
+    "cost": 600,
+    "note": "Dar es Salaam-AMS 1 stop (route ends in Dar; est)",
+    "best_starting_month": "November",
+    "route_days": 24,
+    "travel_month": "November"
+   }
+  ]
+ },
+ {
+  "id": "L60",
+  "leg": "AMS-Lusaka 1 connection",
+  "eur_total": 600,
+  "uses": [
+   {
+    "route_id": "gt_seed_zambia-malawi",
+    "route": "Zambia & Malawi 💦",
+    "field": "flight_in_cost",
+    "cost": 600,
+    "note": "AMS-Lusaka 1 connection (notes return ±€600-1,250; est)",
+    "best_starting_month": "September",
+    "route_days": 30,
+    "travel_month": "September"
+   }
+  ]
+ }
+]

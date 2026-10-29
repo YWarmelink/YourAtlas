@@ -9,7 +9,10 @@
     "route": "Rwanda 🦍",
     "field": "flight_in_cost",
     "cost": 500,
-    "note": "AMS-Kigali direct KLM (notes return ±€800-1,000; est)"
+    "note": "AMS-Kigali direct KLM (notes return ±€800-1,000; est)",
+    "best_starting_month": "November",
+    "route_days": 10,
+    "travel_month": "November"
    }
   ]
  },
@@ -23,7 +26,10 @@
     "route": "Cuba 🎷",
     "field": "flight_out_cost",
     "cost": 500,
-    "note": "Havana-AMS (est)"
+    "note": "Havana-AMS (est)",
+    "best_starting_month": "December",
+    "route_days": 18,
+    "travel_month": "December"
    }
   ]
  },
@@ -37,7 +43,10 @@
     "route": "Ecuador 🐢",
     "field": "flight_out_cost",
     "cost": 500,
-    "note": "Quito-AMS (est)"
+    "note": "Quito-AMS (est)",
+    "best_starting_month": "March",
+    "route_days": 24,
+    "travel_month": "March"
    }
   ]
  },
@@ -51,7 +60,10 @@
     "route": "Saint Lucia & Grenada 🌰",
     "field": "flight_in_cost",
     "cost": 500,
-    "note": "AMS-St Lucia (UVF) via US; notes 700-1000 return (est, low)"
+    "note": "AMS-St Lucia (UVF) via US; notes 700-1000 return (est, low)",
+    "best_starting_month": "December",
+    "route_days": 14,
+    "travel_month": "December"
    }
   ]
  },
@@ -65,7 +77,10 @@
     "route": "Peru 🦙",
     "field": "flight_in_cost",
     "cost": 500,
-    "note": "AMS-Lima KLM direct; notes 800-950 return (est)"
+    "note": "AMS-Lima KLM direct; notes 800-950 return (est)",
+    "best_starting_month": "April",
+    "route_days": 35,
+    "travel_month": "April"
    }
   ]
  },
@@ -79,7 +94,10 @@
     "route": "Philippines 🏖️",
     "field": "flight_out_cost",
     "cost": 495,
-    "note": "Cebu-Manila ~45 (est) + Manila-AMS 450 (est)"
+    "note": "Cebu-Manila ~45 (est) + Manila-AMS 450 (est)",
+    "best_starting_month": "February",
+    "route_days": 21,
+    "travel_month": "February"
    }
   ]
  },
@@ -93,7 +111,10 @@
     "route": "Maldives 🏝️",
     "field": "flight_out_cost",
     "cost": 480,
-    "note": "Male-AMS (est)"
+    "note": "Male-AMS (est)",
+    "best_starting_month": "February",
+    "route_days": 10,
+    "travel_month": "February"
    }
   ]
  },
@@ -107,7 +128,10 @@
     "route": "Nepal 🏔️",
     "field": "flight_in_cost",
     "cost": 480,
-    "note": "AMS-Kathmandu one way, 1 stop (notes EUR 550-950 return, Nov peak; est)"
+    "note": "AMS-Kathmandu one way, 1 stop (notes EUR 550-950 return, Nov peak; est)",
+    "best_starting_month": "November",
+    "route_days": 21,
+    "travel_month": "November"
    }
   ]
  },
@@ -121,7 +145,10 @@
     "route": "Philippines 🏖️",
     "field": "flight_in_cost",
     "cost": 480,
-    "note": "AMS-Manila one way KLM direct (notes EUR 700-900 return; est)"
+    "note": "AMS-Manila one way KLM direct (notes EUR 700-900 return; est)",
+    "best_starting_month": "February",
+    "route_days": 21,
+    "travel_month": "February"
    }
   ]
  },
@@ -135,7 +162,10 @@
     "route": "Vietnam 🛵",
     "field": "flight_out_cost",
     "cost": 480,
-    "note": "HCMC-AMS, 1 stop (est; low)"
+    "note": "HCMC-AMS, 1 stop (est; low)",
+    "best_starting_month": "December",
+    "route_days": 17,
+    "travel_month": "December"
    }
   ]
  },
@@ -149,7 +179,10 @@
     "route": "Kenya 🦒",
     "field": "flight_in_cost",
     "cost": 480,
-    "note": "AMS-Nairobi direct KLM (notes return ±€700-1,100; est)"
+    "note": "AMS-Nairobi direct KLM (notes return ±€700-1,100; est)",
+    "best_starting_month": "November",
+    "route_days": 18,
+    "travel_month": "November"
    }
   ]
  },
@@ -163,7 +196,10 @@
     "route": "Northern Brazil 🪁",
     "field": "flight_in_cost",
     "cost": 480,
-    "note": "AMS-Belem via Lisbon (TAP); notes 650-950 return (est, low)"
+    "note": "AMS-Belem via Lisbon (TAP); notes 650-950 return (est, low)",
+    "best_starting_month": "April",
+    "route_days": 14,
+    "travel_month": "April"
    }
   ]
  },
@@ -177,7 +213,10 @@
     "route": "Guatemala 🦜",
     "field": "flight_out_cost",
     "cost": 480,
-    "note": "Guatemala City-AMS (est)"
+    "note": "Guatemala City-AMS (est)",
+    "best_starting_month": "October",
+    "route_days": 16,
+    "travel_month": "October"
    }
   ]
  },
@@ -191,7 +230,10 @@
     "route": "Jamaica 🎵",
     "field": "flight_in_cost",
     "cost": 480,
-    "note": "AMS-Kingston with stopover; notes 750-900 return (est)"
+    "note": "AMS-Kingston with stopover; notes 750-900 return (est)",
+    "best_starting_month": "December",
+    "route_days": 12,
+    "travel_month": "December"
    }
   ]
  },
@@ -205,7 +247,10 @@
     "route": "Peru 🦙",
     "field": "flight_out_cost",
     "cost": 480,
-    "note": ""
+    "note": "",
+    "best_starting_month": "April",
+    "route_days": 35,
+    "travel_month": "May"
    }
   ]
  },
@@ -219,7 +264,10 @@
     "route": "Central Africa & Islands 🦛",
     "field": "flight_in_cost",
     "cost": 480,
-    "note": "AMS-Douala one way via Paris/Brussels (notes: return EUR 700-1,150; est)"
+    "note": "AMS-Douala one way via Paris/Brussels (notes: return EUR 700-1,150; est)",
+    "best_starting_month": "January",
+    "route_days": 26,
+    "travel_month": "January"
    }
   ]
  },
@@ -233,7 +281,10 @@
     "route": "Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧",
     "field": "flight_out_cost",
     "cost": 472,
-    "note": "Kota Kinabalu-KL ~52 (notes EUR 35-70) + KL-AMS 420 (est)"
+    "note": "Kota Kinabalu-KL ~52 (notes EUR 35-70) + KL-AMS 420 (est)",
+    "best_starting_month": "April",
+    "route_days": 21,
+    "travel_month": "April"
    }
   ]
  },
@@ -247,7 +298,10 @@
     "route": "Sri Lanka 🐆",
     "field": "flight_out_cost",
     "cost": 470,
-    "note": "Colombo-AMS (est)"
+    "note": "Colombo-AMS (est)",
+    "best_starting_month": "February",
+    "route_days": 15,
+    "travel_month": "February"
    }
   ]
  },
@@ -261,7 +315,10 @@
     "route": "Rwanda 🦍",
     "field": "flight_out_cost",
     "cost": 470,
-    "note": "Kigali-AMS direct KLM (est)"
+    "note": "Kigali-AMS direct KLM (est)",
+    "best_starting_month": "November",
+    "route_days": 10,
+    "travel_month": "November"
    }
   ]
  },
@@ -275,7 +332,10 @@
     "route": "Costa Rica 🦥",
     "field": "flight_in_cost",
     "cost": 470,
-    "note": "AMS-San Jose KLM direct; notes 730-850 return (est)"
+    "note": "AMS-San Jose KLM direct; notes 730-850 return (est)",
+    "best_starting_month": "January",
+    "route_days": 21,
+    "travel_month": "January"
    }
   ]
  }

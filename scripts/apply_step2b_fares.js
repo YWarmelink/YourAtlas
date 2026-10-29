@@ -34,7 +34,7 @@ for (const r of result) {
   if (!leg) { console.log(`?? ${r.id} not in input`); continue; }
   for (const u of leg.uses) {
     before += u.cost;
-    const verified = r.confidence === 'unverified' ? u.cost : r.eur_one_way;
+    const verified = r.confidence === 'unverified' ? u.cost : ((r.by_month || {})[u.travel_month] || r.eur_one_way);
     after += Math.abs(verified - u.cost) / u.cost > 0.15 ? verified : u.cost;
     if (r.confidence === 'unverified' || Math.abs(verified - u.cost) / u.cost <= 0.15) continue;
     const line = `  [${JSON.stringify(u.route_id)}, '${u.field}', ${u.cost}, ${verified}],  // ${r.leg} (${r.confidence}, 2b-${N})`;

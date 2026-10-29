@@ -9,7 +9,10 @@
     "route": "Andes Grand Traverse 🦙",
     "field": "flight_in_cost",
     "cost": 460,
-    "note": "AMS-Cartagena 1 stop; notes 650-900 return (est, low)"
+    "note": "AMS-Cartagena 1 stop; notes 650-900 return (est, low)",
+    "best_starting_month": "February",
+    "route_days": 111,
+    "travel_month": "February"
    }
   ]
  },
@@ -23,7 +26,10 @@
     "route": "Colombia ☕",
     "field": "flight_in_cost",
     "cost": 460,
-    "note": "AMS-Cartagena (as Andes; est, low)"
+    "note": "AMS-Cartagena (as Andes; est, low)",
+    "best_starting_month": "February",
+    "route_days": 35,
+    "travel_month": "February"
    }
   ]
  },
@@ -37,7 +43,10 @@
     "route": "Jamaica 🎵",
     "field": "flight_out_cost",
     "cost": 460,
-    "note": "Kingston-AMS (est)"
+    "note": "Kingston-AMS (est)",
+    "best_starting_month": "December",
+    "route_days": 12,
+    "travel_month": "December"
    }
   ]
  },
@@ -51,7 +60,10 @@
     "route": "South Korea 🏯",
     "field": "flight_out_cost",
     "cost": 450,
-    "note": "Seoul-AMS (Skyscanner EUR 426 floor; est)"
+    "note": "Seoul-AMS (Skyscanner EUR 426 floor; est)",
+    "best_starting_month": "October",
+    "route_days": 13,
+    "travel_month": "October"
    }
   ]
  },
@@ -65,7 +77,10 @@
     "route": "Mongolia 🦅",
     "field": "flight_in_cost",
     "cost": 450,
-    "note": "AMS-Ulaanbaatar one way via Istanbul (notes EUR 600-800 return; est)"
+    "note": "AMS-Ulaanbaatar one way via Istanbul (notes EUR 600-800 return; est)",
+    "best_starting_month": "September",
+    "route_days": 12,
+    "travel_month": "September"
    }
   ]
  },
@@ -79,7 +94,10 @@
     "route": "Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧",
     "field": "flight_in_cost",
     "cost": 450,
-    "note": "AMS-Kuala Lumpur one way KLM direct (notes EUR 650-950 return; est)"
+    "note": "AMS-Kuala Lumpur one way KLM direct (notes EUR 650-950 return; est)",
+    "best_starting_month": "April",
+    "route_days": 21,
+    "travel_month": "April"
    }
   ]
  },
@@ -93,7 +111,10 @@
     "route": "Malaysia 🦋",
     "field": "flight_in_cost",
     "cost": 450,
-    "note": "AMS-KL one way KLM direct (est)"
+    "note": "AMS-KL one way KLM direct (est)",
+    "best_starting_month": "August",
+    "route_days": 10,
+    "travel_month": "August"
    }
   ]
  },
@@ -107,7 +128,10 @@
     "route": "Horn of Africa & Egypt 🏺",
     "field": "flight_in_cost",
     "cost": 450,
-    "note": "AMS-Addis Ababa direct Ethiopian (notes return ±€500-700; typical one-way; est)"
+    "note": "AMS-Addis Ababa direct Ethiopian (notes return ±€500-700; typical one-way; est)",
+    "best_starting_month": "February",
+    "route_days": 41,
+    "travel_month": "February"
    }
   ]
  },
@@ -121,7 +145,10 @@
     "route": "Ethiopia ⛪",
     "field": "flight_in_cost",
     "cost": 450,
-    "note": "AMS-Addis Ababa one way with a connection (notes return ±€700-900; est)"
+    "note": "AMS-Addis Ababa one way with a connection (notes return ±€700-900; est)",
+    "best_starting_month": "September",
+    "route_days": 20,
+    "travel_month": "September"
    }
   ]
  },
@@ -135,7 +162,10 @@
     "route": "Ethiopia ⛪",
     "field": "flight_out_cost",
     "cost": 450,
-    "note": "Addis Ababa-AMS one way, 1 connection (est)"
+    "note": "Addis Ababa-AMS one way, 1 connection (est)",
+    "best_starting_month": "September",
+    "route_days": 20,
+    "travel_month": "September"
    }
   ]
  },
@@ -149,7 +179,10 @@
     "route": "Ghana 🥥",
     "field": "flight_in_cost",
     "cost": 450,
-    "note": "AMS-Accra direct KLM (notes return ±€700-1,100; typical one-way; est)"
+    "note": "AMS-Accra direct KLM (notes return ±€700-1,100; typical one-way; est)",
+    "best_starting_month": "March",
+    "route_days": 15,
+    "travel_month": "March"
    }
   ]
  },
@@ -163,7 +196,10 @@
     "route": "Colombia ☕",
     "field": "flight_out_cost",
     "cost": 450,
-    "note": "Bogota-AMS one way (est, low)"
+    "note": "Bogota-AMS one way (est, low)",
+    "best_starting_month": "February",
+    "route_days": 35,
+    "travel_month": "March"
    }
   ]
  },
@@ -177,7 +213,10 @@
     "route": "Central America Loop 🌋",
     "field": "flight_out_cost",
     "cost": 450,
-    "note": "Panama City-AMS KLM direct (est). Route ends Panama City, NOT the San Blas sailboat to Cartagena in the last b"
+    "note": "Panama City-AMS KLM direct (est). Route ends Panama City, NOT the San Blas sailboat to Cartagena in the last b",
+    "best_starting_month": "December",
+    "route_days": 101,
+    "travel_month": "March"
    }
   ]
  },
@@ -191,7 +230,10 @@
     "route": "Costa Rica 🦥",
     "field": "flight_out_cost",
     "cost": 450,
-    "note": "San Jose-AMS (est)"
+    "note": "San Jose-AMS (est)",
+    "best_starting_month": "January",
+    "route_days": 21,
+    "travel_month": "January"
    }
   ]
  },
@@ -205,7 +247,10 @@
     "route": "ABC Islands 🦩",
     "field": "flight_in_cost",
     "cost": 450,
-    "note": "AMS-Aruba KLM direct; notes 740-820 return (est)"
+    "note": "AMS-Aruba KLM direct; notes 740-820 return (est)",
+    "best_starting_month": "December",
+    "route_days": 18,
+    "travel_month": "December"
    }
   ]
  },
@@ -219,7 +264,10 @@
     "route": "Mexico 🌵",
     "field": "flight_out_cost",
     "cost": 450,
-    "note": "Cancun-AMS (est); route ends Bacalar, bus to Cancun in local"
+    "note": "Cancun-AMS (est); route ends Bacalar, bus to Cancun in local",
+    "best_starting_month": "November",
+    "route_days": 28,
+    "travel_month": "November"
    }
   ]
  },
@@ -233,7 +281,10 @@
     "route": "Panama 🚢",
     "field": "flight_in_cost",
     "cost": 450,
-    "note": "AMS-Panama City KLM direct; notes 700-900 return (est)"
+    "note": "AMS-Panama City KLM direct; notes 700-900 return (est)",
+    "best_starting_month": "August",
+    "route_days": 15,
+    "travel_month": "August"
    }
   ]
  },
@@ -247,7 +298,10 @@
     "route": "Panama 🚢",
     "field": "flight_out_cost",
     "cost": 450,
-    "note": ""
+    "note": "",
+    "best_starting_month": "August",
+    "route_days": 15,
+    "travel_month": "August"
    }
   ]
  },
@@ -261,7 +315,10 @@
     "route": "Western Canada: Rockies & Vancouver 🏔️",
     "field": "flight_in_cost",
     "cost": 450,
-    "note": "AMS-Calgary one way, 1 stop (notes: return EUR 650-950; est)"
+    "note": "AMS-Calgary one way, 1 stop (notes: return EUR 650-950; est)",
+    "best_starting_month": "June",
+    "route_days": 32,
+    "travel_month": "June"
    }
   ]
  },
@@ -275,7 +332,10 @@
     "route": "California 🌲",
     "field": "flight_in_cost",
     "cost": 450,
-    "note": "AMS-San Francisco one way, KLM/United direct (est from SFO back 380; summer out higher)"
+    "note": "AMS-San Francisco one way, KLM/United direct (est from SFO back 380; summer out higher)",
+    "best_starting_month": "July",
+    "route_days": 14,
+    "travel_month": "July"
    }
   ]
  }

@@ -9,7 +9,10 @@
     "route": "Caucasus 🍷",
     "field": "flight_in_cost",
     "cost": 260,
-    "note": "AMS-Tbilisi one way, 1 stop (notes EUR 250-400 return; est)"
+    "note": "AMS-Tbilisi one way, 1 stop (notes EUR 250-400 return; est)",
+    "best_starting_month": "June",
+    "route_days": 28,
+    "travel_month": "June"
    }
   ]
  },
@@ -23,7 +26,10 @@
     "route": "Jordan 🏺",
     "field": "flight_in_cost",
     "cost": 260,
-    "note": "AMS-Amman one way, 1 stop (notes EUR 300-700 return; est)"
+    "note": "AMS-Amman one way, 1 stop (notes EUR 300-700 return; est)",
+    "best_starting_month": "December",
+    "route_days": 10,
+    "travel_month": "December"
    }
   ]
  },
@@ -37,7 +43,10 @@
     "route": "West Africa Overland 🥁",
     "field": "flight_in_cost",
     "cost": 250,
-    "note": "AMS-Sao Vicente one way via Lisbon (flights_from_ams.csv VXE out, low)"
+    "note": "AMS-Sao Vicente one way via Lisbon (flights_from_ams.csv VXE out, low)",
+    "best_starting_month": "November",
+    "route_days": 67,
+    "travel_month": "November"
    }
   ]
  },
@@ -51,7 +60,10 @@
     "route": "Jordan 🏺",
     "field": "flight_out_cost",
     "cost": 240,
-    "note": "Amman-AMS (est)"
+    "note": "Amman-AMS (est)",
+    "best_starting_month": "December",
+    "route_days": 10,
+    "travel_month": "December"
    }
   ]
  },
@@ -65,7 +77,10 @@
     "route": "Cape Verde 🎶",
     "field": "flight_out_cost",
     "cost": 240,
-    "note": "Praia-AMS via Lisbon (TAP ~€240; est)"
+    "note": "Praia-AMS via Lisbon (TAP ~€240; est)",
+    "best_starting_month": "December",
+    "route_days": 13,
+    "travel_month": "December"
    }
   ]
  },
@@ -79,7 +94,10 @@
     "route": "Corsica + Sardinia: South Corsica & North Sardinia (5 days) 🏝️",
     "field": "flight_in_cost",
     "cost": 200,
-    "note": "AMS-Figari one-way, 1 stop via Paris/Geneva/Basel (Farecompare avg USD 167, floors USD 208-290; est)"
+    "note": "AMS-Figari one-way, 1 stop via Paris/Geneva/Basel (Farecompare avg USD 167, floors USD 208-290; est)",
+    "best_starting_month": "September",
+    "route_days": 5,
+    "travel_month": "September"
    }
   ]
  },
@@ -93,7 +111,10 @@
     "route": "Bodrum + Aegean Coast (6 days) 🏰",
     "field": "flight_in_cost",
     "cost": 170,
-    "note": "AMS-Bodrum one way, seasonal direct/1 stop (est; low)"
+    "note": "AMS-Bodrum one way, seasonal direct/1 stop (est; low)",
+    "best_starting_month": "June",
+    "route_days": 6,
+    "travel_month": "June"
    }
   ]
  },
@@ -107,7 +128,10 @@
     "route": "Bodrum + Aegean Coast (6 days) 🏰",
     "field": "flight_out_cost",
     "cost": 160,
-    "note": "Bodrum-AMS (est)"
+    "note": "Bodrum-AMS (est)",
+    "best_starting_month": "June",
+    "route_days": 6,
+    "travel_month": "June"
    }
   ]
  },
@@ -121,7 +145,10 @@
     "route": "Izmir + Aegean Coast: Ephesus & Çeşme (5 days) 📜",
     "field": "flight_out_cost",
     "cost": 160,
-    "note": "Izmir-AMS (est from out fare)"
+    "note": "Izmir-AMS (est from out fare)",
+    "best_starting_month": "April",
+    "route_days": 5,
+    "travel_month": "April"
    }
   ]
  },
@@ -135,7 +162,10 @@
     "route": "Florence + Tuscany (4 days) 🎨",
     "field": "flight_in_cost",
     "cost": 140,
-    "note": "AMS-Florence one way (KLM/ITA/Vueling; Expedia/Skyscanner floors USD 136-168; est)"
+    "note": "AMS-Florence one way (KLM/ITA/Vueling; Expedia/Skyscanner floors USD 136-168; est)",
+    "best_starting_month": "May",
+    "route_days": 4,
+    "travel_month": "May"
    }
   ]
  },
@@ -149,7 +179,10 @@
     "route": "Malta + Gozo + Sicily (9 days) 🐚",
     "field": "flight_in_cost",
     "cost": 140,
-    "note": "AMS-Catania one way (Expedia USD 109-190; est)"
+    "note": "AMS-Catania one way (Expedia USD 109-190; est)",
+    "best_starting_month": "May",
+    "route_days": 9,
+    "travel_month": "May"
    }
   ]
  },
@@ -163,7 +196,10 @@
     "route": "Corsica + Sardinia: South Corsica & North Sardinia (5 days) 🏝️",
     "field": "flight_out_cost",
     "cost": 130,
-    "note": "Olbia-AMS direct, seasonal Aug-Oct (Omio easyJet GBP 119 / Transavia GBP 160; est)"
+    "note": "Olbia-AMS direct, seasonal Aug-Oct (Omio easyJet GBP 119 / Transavia GBP 160; est)",
+    "best_starting_month": "September",
+    "route_days": 5,
+    "travel_month": "September"
    }
   ]
  },
@@ -177,7 +213,10 @@
     "route": "Florence + Tuscany (4 days) 🎨",
     "field": "flight_out_cost",
     "cost": 130,
-    "note": "Florence-AMS one way (est)"
+    "note": "Florence-AMS one way (est)",
+    "best_starting_month": "May",
+    "route_days": 4,
+    "travel_month": "May"
    }
   ]
  },
@@ -191,7 +230,10 @@
     "route": "Sardinia (9 days) ⛵",
     "field": "flight_in_cost",
     "cost": 130,
-    "note": "AMS-Olbia (reuse back fare; seasonal; est)"
+    "note": "AMS-Olbia (reuse back fare; seasonal; est)",
+    "best_starting_month": "June",
+    "route_days": 9,
+    "travel_month": "June"
    }
   ]
  },
@@ -205,7 +247,10 @@
     "route": "Sardinia South (4-5 days) 🏝️",
     "field": "flight_in_cost",
     "cost": 130,
-    "note": "AMS-Zurich one way (KLM/Swiss direct; WebSearch 2026-10-28: floors $103-141, nonstop typical higher; est)"
+    "note": "AMS-Zurich one way (KLM/Swiss direct; WebSearch 2026-10-28: floors $103-141, nonstop typical higher; est)",
+    "best_starting_month": "May",
+    "route_days": 5,
+    "travel_month": "May"
    }
   ]
  },
@@ -219,7 +264,10 @@
     "route": "Dolomites (6 days) ⛰️",
     "field": "flight_in_cost",
     "cost": 120,
-    "note": "AMS-Innsbruck one way (Transavia direct, seasonal; Skyscanner floor €84, typical higher; est)"
+    "note": "AMS-Innsbruck one way (Transavia direct, seasonal; Skyscanner floor €84, typical higher; est)",
+    "best_starting_month": "July",
+    "route_days": 6,
+    "travel_month": "July"
    }
   ]
  },
@@ -233,7 +281,10 @@
     "route": "Malta + Gozo + Sicily (9 days) 🐚",
     "field": "flight_out_cost",
     "cost": 120,
-    "note": "Malta-AMS one way (KM Malta €87-113 floors, typical higher; est)"
+    "note": "Malta-AMS one way (KM Malta €87-113 floors, typical higher; est)",
+    "best_starting_month": "May",
+    "route_days": 9,
+    "travel_month": "May"
    }
   ]
  },
@@ -247,7 +298,10 @@
     "route": "San Marino + Emilia-Romagna (4 days) 🍝",
     "field": "flight_out_cost",
     "cost": 120,
-    "note": "Bologna-AMS (est, same as in; Lufthansa USD 143)"
+    "note": "Bologna-AMS (est, same as in; Lufthansa USD 143)",
+    "best_starting_month": "May",
+    "route_days": 4,
+    "travel_month": "May"
    }
   ]
  },
@@ -261,7 +315,10 @@
     "route": "Sardinia South (4-5 days) 🏝️",
     "field": "flight_out_cost",
     "cost": 120,
-    "note": "Cagliari-AMS (est, slightly below out)"
+    "note": "Cagliari-AMS (est, slightly below out)",
+    "best_starting_month": "May",
+    "route_days": 5,
+    "travel_month": "May"
    }
   ]
  },
@@ -275,7 +332,10 @@
     "route": "Morocco 🕌",
     "field": "flight_in_cost",
     "cost": 120,
-    "note": "AMS-Tangier (Transavia/Ryanair, est); notes say Marrakech but route starts in Tangier"
+    "note": "AMS-Tangier (Transavia/Ryanair, est); notes say Marrakech but route starts in Tangier",
+    "best_starting_month": "September",
+    "route_days": 10,
+    "travel_month": "September"
    }
   ]
  }

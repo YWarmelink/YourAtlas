@@ -20,6 +20,13 @@ direction, give them the same fare. Do NOT read any other repo file; edit nothin
    prices, airline fare pages (KLM, TAP, Turkish, Qatar, Emirates, LATAM, Air NZ, ...), recent fare-tracker
    pages. **One-way** fares only: when a source only gives return fares, a one-way long-haul is usually
    ~55-70% of the return on full-service carriers, say so and lower the confidence.
+   **Season (from batch 3 on):** each use has a `travel_month` (the month that flight is flown: the
+   route's `best_starting_month` for `flight_in_cost`, start + `route_days` for `flight_out_cost`). Price the
+   fare for that month: look for month-specific quotes ("cheapest month", "fares in July", Google Flights
+   price-graph snippets) and adjust for high/low season (e.g. Christmas/New Year, European summer holidays
+   July-August, local peak seasons). If uses of one leg fall in different seasons and the fares differ >15%,
+   report a fare per month in `by_month` (e.g. `{ "July": 950, "November": 780 }`) and put the most common
+   one in `eur_one_way`. Say in `note` how seasonal the fare is.
 2. Use a typical fare for that booking window, not a promo floor ("from €X") and not a last-minute peak.
    When sources give a range, take the lower-middle of the realistic range. Convert to EUR (USD ≈ 1.12/EUR).
 3. `confidence`: high (dated one-way quotes from 2+ sources agree), medium (one solid one-way quote or a clear

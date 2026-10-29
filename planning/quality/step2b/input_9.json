@@ -9,7 +9,10 @@
     "route": "Morocco 🕌",
     "field": "flight_out_cost",
     "cost": 120,
-    "note": "Marrakech-AMS direct Transavia/easyJet (notes return ±€100-280; est)"
+    "note": "Marrakech-AMS direct Transavia/easyJet (notes return ±€100-280; est)",
+    "best_starting_month": "September",
+    "route_days": 10,
+    "travel_month": "September"
    }
   ]
  },
@@ -23,7 +26,10 @@
     "route": "Puglia (6 days) 🏘️",
     "field": "flight_in_cost",
     "cost": 110,
-    "note": "AMS-Bari: Skyscanner floor 80, Expedia USD 103, typical higher (WebSearch 2026-10-28; est)"
+    "note": "AMS-Bari: Skyscanner floor 80, Expedia USD 103, typical higher (WebSearch 2026-10-28; est)",
+    "best_starting_month": "May",
+    "route_days": 6,
+    "travel_month": "May"
    }
   ]
  },
@@ -37,7 +43,10 @@
     "route": "Dolomites (6 days) ⛰️",
     "field": "flight_out_cost",
     "cost": 100,
-    "note": "Innsbruck-AMS one way (Expedia floor USD 74; est)"
+    "note": "Innsbruck-AMS one way (Expedia floor USD 74; est)",
+    "best_starting_month": "July",
+    "route_days": 6,
+    "travel_month": "July"
    }
   ]
  },
@@ -51,7 +60,10 @@
     "route": "Italy Roadtrip (12 days) 🧀",
     "field": "flight_in_cost",
     "cost": 100,
-    "note": "AMS-Milan Malpensa one way (easyJet/KLM; Skyscanner floor €63; est)"
+    "note": "AMS-Milan Malpensa one way (easyJet/KLM; Skyscanner floor €63; est)",
+    "best_starting_month": "May",
+    "route_days": 12,
+    "travel_month": "May"
    }
   ]
  },
@@ -65,7 +77,10 @@
     "route": "Italy: North to Central (12 days) 🚄",
     "field": "flight_out_cost",
     "cost": 100,
-    "note": "Rome FCO-AMS one way (Expedia €78 floor; est)"
+    "note": "Rome FCO-AMS one way (Expedia €78 floor; est)",
+    "best_starting_month": "May",
+    "route_days": 12,
+    "travel_month": "May"
    }
   ]
  },
@@ -79,7 +94,10 @@
     "route": "Northern Italy (6 days) 🚤",
     "field": "flight_out_cost",
     "cost": 100,
-    "note": "Malpensa-AMS (reuse out fare; est)"
+    "note": "Malpensa-AMS (reuse out fare; est)",
+    "best_starting_month": "May",
+    "route_days": 6,
+    "travel_month": "May"
    }
   ]
  },
@@ -93,7 +111,10 @@
     "route": "Campania + Puglia (9 days) 🧭",
     "field": "flight_out_cost",
     "cost": 90,
-    "note": "Bari-AMS one way (Expedia/Ratepunk USD 64-76 floors, typical higher; est)"
+    "note": "Bari-AMS one way (Expedia/Ratepunk USD 64-76 floors, typical higher; est)",
+    "best_starting_month": "June",
+    "route_days": 9,
+    "travel_month": "June"
    }
   ]
  }

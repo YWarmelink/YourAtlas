@@ -9,7 +9,10 @@
     "route": "Zimbabwe 🐆",
     "field": "flight_out_cost",
     "cost": 600,
-    "note": "Victoria Falls-AMS via Addis (est)"
+    "note": "Victoria Falls-AMS via Addis (est)",
+    "best_starting_month": "July",
+    "route_days": 14,
+    "travel_month": "July"
    }
   ]
  },
@@ -23,7 +26,10 @@
     "route": "Bolivia 🧂",
     "field": "flight_in_cost",
     "cost": 600,
-    "note": "AMS-La Paz one way via Madrid/Bogota (notes: 700-1300 return; est, low)"
+    "note": "AMS-La Paz one way via Madrid/Bogota (notes: 700-1300 return; est, low)",
+    "best_starting_month": "June",
+    "route_days": 17,
+    "travel_month": "June"
    }
   ]
  },
@@ -37,7 +43,10 @@
     "route": "Guyana 🦦",
     "field": "flight_out_cost",
     "cost": 600,
-    "note": "KLM Georgetown-AMS nonstop one way (est)"
+    "note": "KLM Georgetown-AMS nonstop one way (est)",
+    "best_starting_month": "February",
+    "route_days": 9,
+    "travel_month": "February"
    }
   ]
  },
@@ -51,14 +60,20 @@
     "route": "Kazakhstan & Kyrgyzstan ⛺",
     "field": "flight_in_cost",
     "cost": 300,
-    "note": "AMS-Almaty one way via Istanbul (notes EUR 250-650 return; est)"
+    "note": "AMS-Almaty one way via Istanbul (notes EUR 250-650 return; est)",
+    "best_starting_month": "June",
+    "route_days": 20,
+    "travel_month": "June"
    },
    {
     "route_id": "gt_seed_central-asia",
     "route": "Central Asia 🐎",
     "field": "flight_in_cost",
     "cost": 300,
-    "note": "AMS-Almaty one way via Istanbul (est)"
+    "note": "AMS-Almaty one way via Istanbul (est)",
+    "best_starting_month": "June",
+    "route_days": 45,
+    "travel_month": "June"
    }
   ]
  },
@@ -72,7 +87,10 @@
     "route": "Seychelles 🌺",
     "field": "flight_out_cost",
     "cost": 580,
-    "note": "Mahé-AMS 1 stop (est)"
+    "note": "Mahé-AMS 1 stop (est)",
+    "best_starting_month": "April",
+    "route_days": 11,
+    "travel_month": "April"
    }
   ]
  },
@@ -86,7 +104,10 @@
     "route": "South Africa 🦓",
     "field": "flight_out_cost",
     "cost": 560,
-    "note": "Johannesburg-AMS direct KLM (notes: back via CT or JNB; route ends near JNB; est)"
+    "note": "Johannesburg-AMS direct KLM (notes: back via CT or JNB; route ends near JNB; est)",
+    "best_starting_month": "June",
+    "route_days": 24,
+    "travel_month": "June"
    }
   ]
  },
@@ -100,7 +121,10 @@
     "route": "US Southwest 🏜️",
     "field": "flight_in_cost",
     "cost": 560,
-    "note": "AMS-Las Vegas one way, 1 stop (est; notes: connecting, 13-15 h)"
+    "note": "AMS-Las Vegas one way, 1 stop (est; notes: connecting, 13-15 h)",
+    "best_starting_month": "September",
+    "route_days": 12,
+    "travel_month": "September"
    }
   ]
  },
@@ -114,7 +138,10 @@
     "route": "US Southwest 🏜️",
     "field": "flight_out_cost",
     "cost": 560,
-    "note": "Phoenix-AMS one way, 1 stop (est)"
+    "note": "Phoenix-AMS one way, 1 stop (est)",
+    "best_starting_month": "September",
+    "route_days": 12,
+    "travel_month": "September"
    }
   ]
  },
@@ -128,7 +155,10 @@
     "route": "Uruguay 🧉",
     "field": "flight_in_cost",
     "cost": 560,
-    "note": "AMS-Montevideo one way, one stop (notes: return EUR 850-1,100; est)"
+    "note": "AMS-Montevideo one way, one stop (notes: return EUR 850-1,100; est)",
+    "best_starting_month": "November",
+    "route_days": 10,
+    "travel_month": "November"
    }
   ]
  },
@@ -142,7 +172,10 @@
     "route": "São Tomé & Príncipe 🍫",
     "field": "flight_in_cost",
     "cost": 550,
-    "note": "AMS-São Tomé via Lisbon TAP (notes return ±€700-2,500; est)"
+    "note": "AMS-São Tomé via Lisbon TAP (notes return ±€700-2,500; est)",
+    "best_starting_month": "June",
+    "route_days": 11,
+    "travel_month": "June"
    }
   ]
  },
@@ -156,7 +189,10 @@
     "route": "São Tomé & Príncipe 🍫",
     "field": "flight_out_cost",
     "cost": 550,
-    "note": "São Tomé-AMS via Lisbon (est)"
+    "note": "São Tomé-AMS via Lisbon (est)",
+    "best_starting_month": "June",
+    "route_days": 11,
+    "travel_month": "June"
    }
   ]
  },
@@ -170,7 +206,10 @@
     "route": "West Africa Overland 🥁",
     "field": "flight_out_cost",
     "cost": 550,
-    "note": "Cotonou-AMS one way via hub (flights_batch26.csv COO back, est)"
+    "note": "Cotonou-AMS one way via hub (flights_batch26.csv COO back, est)",
+    "best_starting_month": "November",
+    "route_days": 67,
+    "travel_month": "January"
    }
   ]
  },
@@ -184,7 +223,10 @@
     "route": "Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂",
     "field": "flight_in_cost",
     "cost": 550,
-    "note": "AMS-Lima one way with a connection (notes: return EUR 800-950; est)"
+    "note": "AMS-Lima one way with a connection (notes: return EUR 800-950; est)",
+    "best_starting_month": "June",
+    "route_days": 20,
+    "travel_month": "June"
    }
   ]
  },
@@ -198,7 +240,10 @@
     "route": "Maldives 🏝️",
     "field": "flight_in_cost",
     "cost": 520,
-    "note": "AMS-Male one way, 1 stop via Gulf hub (est; low)"
+    "note": "AMS-Male one way, 1 stop via Gulf hub (est; low)",
+    "best_starting_month": "February",
+    "route_days": 10,
+    "travel_month": "February"
    }
   ]
  },
@@ -212,7 +257,10 @@
     "route": "Vietnam & Cambodia 🛺",
     "field": "flight_out_cost",
     "cost": 520,
-    "note": "Phnom Penh-AMS, 1-2 stops (est; low)"
+    "note": "Phnom Penh-AMS, 1-2 stops (est; low)",
+    "best_starting_month": "September",
+    "route_days": 29,
+    "travel_month": "September"
    }
   ]
  },
@@ -226,7 +274,10 @@
     "route": "Southern Cone & Brazil Finale 🧉",
     "field": "flight_in_cost",
     "cost": 520,
-    "note": "AMS-Santiago (KLM) + domestic to Calama; notes 800-900 return incl. domestic (est, low)"
+    "note": "AMS-Santiago (KLM) + domestic to Calama; notes 800-900 return incl. domestic (est, low)",
+    "best_starting_month": "June",
+    "route_days": 42,
+    "travel_month": "June"
    }
   ]
  },
@@ -240,7 +291,10 @@
     "route": "Ecuador 🐢",
     "field": "flight_in_cost",
     "cost": 520,
-    "note": "AMS-Quito via Madrid; notes 800-1000 return (est)"
+    "note": "AMS-Quito via Madrid; notes 800-1000 return (est)",
+    "best_starting_month": "March",
+    "route_days": 24,
+    "travel_month": "March"
    }
   ]
  },
@@ -254,7 +308,10 @@
     "route": "Uruguay 🧉",
     "field": "flight_out_cost",
     "cost": 520,
-    "note": "Montevideo-AMS one way (est)"
+    "note": "Montevideo-AMS one way (est)",
+    "best_starting_month": "November",
+    "route_days": 10,
+    "travel_month": "November"
    }
   ]
  },
@@ -268,7 +325,10 @@
     "route": "Sri Lanka 🐆",
     "field": "flight_in_cost",
     "cost": 500,
-    "note": "AMS-Colombo one way, 1 stop via Gulf hub (est; low)"
+    "note": "AMS-Colombo one way, 1 stop via Gulf hub (est; low)",
+    "best_starting_month": "February",
+    "route_days": 15,
+    "travel_month": "February"
    }
   ]
  },
@@ -282,7 +342,10 @@
     "route": "Gulf States Trio 🛢️",
     "field": "flight_in_cost",
     "cost": 500,
-    "note": "AMS-Muscat one way KLM direct (notes EUR 1190-1300 return, raised by regional tensions; est, low)"
+    "note": "AMS-Muscat one way KLM direct (notes EUR 1190-1300 return, raised by regional tensions; est, low)",
+    "best_starting_month": "November",
+    "route_days": 13,
+    "travel_month": "November"
    }
   ]
  }

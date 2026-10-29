@@ -33856,6 +33856,10 @@ const RB_QUALITY_2B_FARES = [
   ["gt_seed_us-west-coast-roadtrip", 'flight_in_cost', 420, 500],  // AMS-Seattle (medium, 2b-2)
   ["gt_seed_tropicaloutback-australia", 'flight_in_cost', 800, 600],  // AMS-Perth (medium, 2b-2)
   ["gt_seed_hawaii", 'flight_out_cost', 800, 650],  // Lihue-AMS (low, 2b-2)
+  ["gt_seed_western-canada-rockies-vancouver", 'flight_out_cost', 650, 520],  // Anchorage-AMS (medium, 2b-3)
+  ["gt_seed_african-islands", 'flight_out_cost', 600, 410],  // Mauritius-AMS (medium, 2b-3)
+  ["gt_seed_mauritius", 'flight_in_cost', 600, 380],  // AMS-Mauritius 1 stop (medium, 2b-3)
+  ["gt_seed_mauritius", 'flight_out_cost', 600, 410],  // Mauritius-AMS 1 stop (medium, 2b-3)
   // step2b:end
 ];
 

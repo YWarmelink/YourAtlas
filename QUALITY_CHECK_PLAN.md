@@ -151,3 +151,9 @@ Per batch: agent writes `result_N.json` → `node scripts/apply_step2b_fares.js 
 |---|---|---|---|
 | 2b-1 | 30,040 | done: 16 fares in 13 routes changed (−€2,210; Oceania −25-30%, La Paz +€150-220, Kilimanjaro +€100), live + pushed | 89,207 |
 | 2b-2 | 17,340 | done: 10 fares in 9 routes changed (−€890; Australia −25-30%, Guatemala City + Seattle +€80-100), live + pushed | 88,128 |
+| 2b-3 | 12,555 | done: 4 fares in 3 routes changed (−€730; Mauritius −€190-220, Anchorage −€130), live + pushed. Web-search budget ran out: 6 legs unverified → `input_3r.json` (re-run first next session) | 79,261 |
+
+**Resume 2b (next session):** the shared web-search budget (~200 calls/session) ran out during 2b-3. Next session: first
+`input_3r.json` (6 legs: Manzini, Ilulissat, Varanasi-Delhi, Mahé, Dar es Salaam, Lusaka; write `result_3r.json`, apply with
+`apply_step2b_fares.js 3r`), then batches 4-9 (seasonal brief). Optional at the end: season re-check of batches 1-2.
+Also still open: 4 unclear statements (Öresund, UK ETA Jersey/IoM ×2, Lima/Cusco).

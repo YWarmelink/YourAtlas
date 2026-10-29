@@ -9,7 +9,10 @@
     "route": "South Africa & Mountain Kingdoms 👑",
     "field": "flight_out_cost",
     "cost": 680,
-    "note": "Manzini-AMS: Airlink Eswatini-JNB ~€120 (est) + KLM JNB-AMS ~€560 (est)"
+    "note": "Manzini-AMS: Airlink Eswatini-JNB ~€120 (est) + KLM JNB-AMS ~€560 (est)",
+    "best_starting_month": "April",
+    "route_days": 35,
+    "travel_month": "May"
    }
   ]
  },
@@ -23,14 +26,20 @@
     "route": "Uzbekistan & Tajikistan 🌄",
     "field": "flight_in_cost",
     "cost": 330,
-    "note": "AMS-Tashkent one way via Istanbul (notes EUR 500-700 return; est)"
+    "note": "AMS-Tashkent one way via Istanbul (notes EUR 500-700 return; est)",
+    "best_starting_month": "June",
+    "route_days": 25,
+    "travel_month": "June"
    },
    {
     "route_id": "gt_seed_uzbekistan",
     "route": "Uzbekistan 🐪",
     "field": "flight_in_cost",
     "cost": 330,
-    "note": "AMS-Tashkent one way via Istanbul (est)"
+    "note": "AMS-Tashkent one way via Istanbul (est)",
+    "best_starting_month": "September",
+    "route_days": 11,
+    "travel_month": "September"
    }
   ]
  },
@@ -44,7 +53,10 @@
     "route": "Nordic Arctic Expedition ❄️",
     "field": "flight_out_cost",
     "cost": 650,
-    "note": "Ilulissat-Reykjavik (~500, est) + Reykjavik-AMS (~150); no through fare found"
+    "note": "Ilulissat-Reykjavik (~500, est) + Reykjavik-AMS (~150); no through fare found",
+    "best_starting_month": "June",
+    "route_days": 67,
+    "travel_month": "August"
    }
   ]
  },
@@ -58,7 +70,10 @@
     "route": "Madagascar 🦎",
     "field": "flight_out_cost",
     "cost": 650,
-    "note": "Antananarivo-AMS 1 stop (est)"
+    "note": "Antananarivo-AMS 1 stop (est)",
+    "best_starting_month": "October",
+    "route_days": 24,
+    "travel_month": "October"
    }
   ]
  },
@@ -72,7 +87,10 @@
     "route": "Namibia 🏜️",
     "field": "flight_in_cost",
     "cost": 650,
-    "note": "AMS-Windhoek, 1 connection (notes return ±€700-1,200; est)"
+    "note": "AMS-Windhoek, 1 connection (notes return ±€700-1,200; est)",
+    "best_starting_month": "July",
+    "route_days": 20,
+    "travel_month": "July"
    }
   ]
  },
@@ -86,7 +104,10 @@
     "route": "Zimbabwe 🐆",
     "field": "flight_in_cost",
     "cost": 650,
-    "note": "AMS-Harare via Addis (notes return ±€700-1,000; est)"
+    "note": "AMS-Harare via Addis (notes return ±€700-1,000; est)",
+    "best_starting_month": "July",
+    "route_days": 14,
+    "travel_month": "July"
    }
   ]
  },
@@ -100,7 +121,10 @@
     "route": "Guadeloupe & Dominica 🍃",
     "field": "flight_out_cost",
     "cost": 650,
-    "note": "Dominica-AMS 1-2 stops (est, low)"
+    "note": "Dominica-AMS 1-2 stops (est, low)",
+    "best_starting_month": "February",
+    "route_days": 15,
+    "travel_month": "February"
    }
   ]
  },
@@ -114,7 +138,10 @@
     "route": "Western Canada: Rockies & Vancouver 🏔️",
     "field": "flight_out_cost",
     "cost": 650,
-    "note": "Anchorage-AMS one way via Seattle/Vancouver (est)"
+    "note": "Anchorage-AMS one way via Seattle/Vancouver (est)",
+    "best_starting_month": "June",
+    "route_days": 32,
+    "travel_month": "July"
    }
   ]
  },
@@ -128,7 +155,10 @@
     "route": "Guyana 🦦",
     "field": "flight_in_cost",
     "cost": 650,
-    "note": "KLM AMS-Georgetown one way (notes: return ~EUR 740-1,460; est)"
+    "note": "KLM AMS-Georgetown one way (notes: return ~EUR 740-1,460; est)",
+    "best_starting_month": "February",
+    "route_days": 9,
+    "travel_month": "February"
    }
   ]
  },
@@ -142,14 +172,20 @@
     "route": "Kazakhstan & Kyrgyzstan ⛺",
     "field": "flight_out_cost",
     "cost": 320,
-    "note": "Bishkek-AMS one way via Istanbul (est)"
+    "note": "Bishkek-AMS one way via Istanbul (est)",
+    "best_starting_month": "June",
+    "route_days": 20,
+    "travel_month": "June"
    },
    {
     "route_id": "gt_seed_kyrgyzstan",
     "route": "Kyrgyzstan 🐴",
     "field": "flight_out_cost",
     "cost": 320,
-    "note": "Bishkek-AMS (est)"
+    "note": "Bishkek-AMS (est)",
+    "best_starting_month": "September",
+    "route_days": 12,
+    "travel_month": "September"
    }
   ]
  },
@@ -163,7 +199,10 @@
     "route": "Namibia 🏜️",
     "field": "flight_out_cost",
     "cost": 620,
-    "note": "Windhoek-AMS, 1 connection (est)"
+    "note": "Windhoek-AMS, 1 connection (est)",
+    "best_starting_month": "July",
+    "route_days": 20,
+    "travel_month": "July"
    }
   ]
  },
@@ -177,7 +216,10 @@
     "route": "North India 🕌",
     "field": "flight_out_cost",
     "cost": 605,
-    "note": "Varanasi-Delhi ~55 (est, notes: flight ~1h20) + Delhi-AMS 550 (est from out fare / notes EUR 350-550 return)"
+    "note": "Varanasi-Delhi ~55 (est, notes: flight ~1h20) + Delhi-AMS 550 (est from out fare / notes EUR 350-550 return)",
+    "best_starting_month": "October",
+    "route_days": 22,
+    "travel_month": "October"
    }
   ]
  },
@@ -191,7 +233,10 @@
     "route": "African Islands 🏝️",
     "field": "flight_out_cost",
     "cost": 600,
-    "note": "Mauritius-AMS one way, 1 stop (notes return ±€600-1,500; est)"
+    "note": "Mauritius-AMS one way, 1 stop (notes return ±€600-1,500; est)",
+    "best_starting_month": "October",
+    "route_days": 31,
+    "travel_month": "November"
    }
   ]
  },
@@ -205,7 +250,10 @@
     "route": "Mauritius 🦤",
     "field": "flight_in_cost",
     "cost": 600,
-    "note": "AMS-Mauritius 1 stop (notes return ±€600-1,500; est)"
+    "note": "AMS-Mauritius 1 stop (notes return ±€600-1,500; est)",
+    "best_starting_month": "September",
+    "route_days": 9,
+    "travel_month": "September"
    }
   ]
  },
@@ -219,7 +267,10 @@
     "route": "Mauritius 🦤",
     "field": "flight_out_cost",
     "cost": 600,
-    "note": "Mauritius-AMS 1 stop (est)"
+    "note": "Mauritius-AMS 1 stop (est)",
+    "best_starting_month": "September",
+    "route_days": 9,
+    "travel_month": "September"
    }
   ]
  },
@@ -233,7 +284,10 @@
     "route": "Mozambique 🐋",
     "field": "flight_in_cost",
     "cost": 600,
-    "note": "AMS-Maputo via Doha (notes return ±€610-900; est)"
+    "note": "AMS-Maputo via Doha (notes return ±€610-900; est)",
+    "best_starting_month": "May",
+    "route_days": 20,
+    "travel_month": "May"
    }
   ]
  },
@@ -247,7 +301,10 @@
     "route": "Victoria Falls & Kalahari Loop 🦏",
     "field": "flight_in_cost",
     "cost": 600,
-    "note": "AMS-Maputo via Lisbon TAP (notes return ±€750-1,200; est)"
+    "note": "AMS-Maputo via Lisbon TAP (notes return ±€750-1,200; est)",
+    "best_starting_month": "April",
+    "route_days": 50,
+    "travel_month": "April"
    }
   ]
  },
@@ -261,7 +318,10 @@
     "route": "Seychelles 🌺",
     "field": "flight_in_cost",
     "cost": 600,
-    "note": "AMS-Mahé 1 stop (notes return ±€680-900; est)"
+    "note": "AMS-Mahé 1 stop (notes return ±€680-900; est)",
+    "best_starting_month": "April",
+    "route_days": 11,
+    "travel_month": "April"
    }
   ]
  },
@@ -275,7 +335,10 @@
     "route": "Tanzania 🦁",
     "field": "flight_out_cost",
     "cost": 600,
-    "note": "Dar es Salaam-AMS 1 stop (route ends in Dar; est)"
+    "note": "Dar es Salaam-AMS 1 stop (route ends in Dar; est)",
+    "best_starting_month": "November",
+    "route_days": 24,
+    "travel_month": "November"
    }
   ]
  },
@@ -289,7 +352,10 @@
     "route": "Zambia & Malawi 💦",
     "field": "flight_in_cost",
     "cost": 600,
-    "note": "AMS-Lusaka 1 connection (notes return ±€600-1,250; est)"
+    "note": "AMS-Lusaka 1 connection (notes return ±€600-1,250; est)",
+    "best_starting_month": "September",
+    "route_days": 30,
+    "travel_month": "September"
    }
   ]
  }
