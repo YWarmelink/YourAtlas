@@ -33867,7 +33867,8 @@ const RB_QUALITY_2B_FARES = [
   ["gt_seed_north-india", 'flight_out_cost', 605, 360],  // Varanasi-Delhi-AMS (medium, 2b-3r)
   ["gt_seed_seychelles", 'flight_in_cost', 600, 500],  // AMS-Mahe (medium, 2b-3r)
   ["gt_seed_tanzania", 'flight_out_cost', 600, 400],  // Dar es Salaam-AMS (medium, 2b-3r)
-  ["gt_seed_florida", 'flight_out_cost', 360, 440],  // Miami-AMS (low, 2b-7)
+  ["gt_seed_florida", 'flight_out_cost', 360, 300],  // Miami-AMS (medium, 2b-7 re-check r2)
+  ["gt_seed_florida", 'flight_out_cost', 440, 300],  // Miami-AMS: undoes a first-pass 440 that briefly went live
   ["gt_seed_south-africa", 'flight_out_cost', 560, 420],  // Johannesburg-AMS direct KLM (medium, 2b-4)
   ["gt_seed_us-southwest", 'flight_in_cost', 560, 420],  // AMS-Las Vegas (medium, 2b-4)
   ["gt_seed_us-southwest", 'flight_out_cost', 560, 430],  // Phoenix-AMS (low, 2b-4)
