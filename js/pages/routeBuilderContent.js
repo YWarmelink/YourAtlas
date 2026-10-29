@@ -33712,3 +33712,115 @@ function rbMigrateQuality202610Fixes() {
   rbRoutes.forEach(r => { if (rbFixQuality202610Route(r)) touched = true; });
   if (touched) rbSave();
 }
+
+// ---- Quality check, option D (2026-10-29): 2e budget moves + Phase-4 leftovers ----
+// Every change is guarded by the value it replaces, so it is idempotent and skips hand edits.
+
+// 2e (planning/quality/step2e): blocks whose My-plan budget moved >15% after the web-checked daily rates.
+// [route id, block index, country, old budget, new budget]
+const RB_QUALITY_2026_10B_BUDGETS = [
+  ['gt_seed_pan-american-grand-tour', 11, 'BO', 459, 595],
+  ['gt_seed_andes-grand-traverse', 3, 'BO', 459, 595],
+  ['gt_seed_bolivia', 0, 'BO', 459, 595],
+  ['gt_seed_peru-bolivia-andes-salt-flats-20-days', 5, 'BO', 50, 70],
+  ['gt_seed_peru-bolivia-andes-salt-flats-20-days', 6, 'BO', 54, 70],
+  ['gt_seed_peru-bolivia-andes-salt-flats-20-days', 7, 'BO', 100, 140],
+  ['gt_seed_west-central-africa-expedition', 8, 'ST', 378, 549],
+  ['gt_seed_central-africa-islands', 1, 'ST', 378, 549],
+  ['gt_seed_sao-tome-principe', 0, 'ST', 462, 671],
+];
+
+// Cost fields that no longer matched the fixed route text: [route id, block index, country, field, old, new]
+const RB_QUALITY_2026_10B_COSTS = [
+  // Southern Cone: Iquique → Antofagasta → San Pedro is now one-way (2d), no backtrack bus
+  ['gt_seed_southern-cone-brazil-finale', 0, 'CL', 'transport_cost', 75, 45],
+  ['gt_seed_southern-cone-brazil-finale', 0, 'CL', 'local_transport_cost', 35, 37],
+  // Sydney/Byron: one Sydney → Ballina flight instead of a bus/flight there and back
+  ['gt_seed_sydneybyron-great-ocean-road', 0, 'AU', 'local_transport_cost', 140, 80],
+  // Pan-American: back from Iquique to San Pedro for the Paso de Jama bus (~€30)
+  ['gt_seed_pan-american-grand-tour', 12, 'CL', 'transport_cost', 65, 95],
+];
+
+// Existing extras re-priced: [route id, block index, country, old label prefix, new label, new cost]
+const RB_QUALITY_2026_10B_EXTRA_FIXES = [
+  ['gt_seed_sydneybyron-great-ocean-road', 0, 'AU', 'Car: rental 12 days (Sydney→Melbourne',
+    'Car: rental 12 days (Ballina/Byron→Sydney→Melbourne + Great Ocean Road/Grampians) × €55 + fuel ≈2,350 km + one-way drop ≈€150 (est, flagged)', 1050],
+];
+
+// New extras (planning/quality/leftovers/result.json): [route id, block index, country, label, cost, category, optional]
+const RB_QUALITY_2026_10B_EXTRAS_ADD = [
+  ["gt_seed_southeast-asia-grand-loop", 0, "VN", "Ha Long/Lan Ha Bay 2-day 1-night shared cruise from Hanoi (~USD 140)", 120, "tour", false],
+  ["gt_seed_central-america-loop", 0, "GT", "Tikal entry Q150 + sunrise surcharge Q100 + shared guided sunrise tour from Flores (~USD 54, est)", 75, "tour", false],
+  ["gt_seed_southern-cone-brazil-finale", 2, "BR", "Iguazu Falls Brazilian side park entry (~USD 39)", 34, "entry", false],
+  ["gt_seed_southern-cone-brazil-finale", 2, "BR", "Iguazu Falls Argentine side park entry (~USD 45; if crossing)", 39, "entry", true],
+  ["gt_seed_egypt-arabian-peninsula", 1, "JO", "Wadi Rum half-day jeep tour, shared (JOD 55-65 per jeep; entry free with Jordan Pass)", 35, "tour", true],
+  ["gt_seed_western-canada-rockies-vancouver", 4, "US", "Kenai Fjords 6-hour glacier & wildlife cruise from Seward (USD 269)", 232, "tour", false],
+  ["gt_seed_pacific-islands", 0, "VU", "Mount Yasur entry 9,750 VT + driver 1,000 VT (landowner fee; tour on top is extra)", 80, "entry", false],
+  ["gt_seed_pacific-islands", 0, "VU", "SS President Coolidge + Million Dollar Point dive, no gear (AUD ~150)", 91, "tour", true],
+  ["gt_seed_pacific-islands", 2, "TO", "Vava'u humpback whale swim, shared day tour (NZD ~530)", 265, "tour", false],
+  ["gt_seed_tropicaloutback-australia", 2, "AU", "Great Barrier Reef outer-reef snorkel day trip from Cairns (AUD ~230 incl. levy)", 140, "tour", false],
+  ["gt_seed_tropicaloutback-australia", 2, "AU", "Whitehaven Beach & Hill Inlet full-day boat tour from Airlie Beach (AUD ~217)", 132, "tour", true],
+  ["gt_seed_new-zealand", 0, "NZ", "Milford Sound cruise, self-drive (NZD ~120, est; coach+cruise from Te Anau NZD 217-285)", 60, "tour", false],
+  ["gt_seed_new-zealand", 0, "NZ", "Kaikoura whale watch boat tour (NZD ~175)", 88, "tour", true],
+  ["gt_seed_vietnam", 0, "VN", "Ha Long/Lan Ha Bay 2-day 1-night shared cruise from Hanoi (~USD 140)", 120, "tour", false],
+  ["gt_seed_new-zealand-south-island", 0, "NZ", "Milford Sound cruise, self-drive (NZD ~120, est; coach+cruise from Te Anau NZD 217-285)", 60, "tour", false],
+  ["gt_seed_jordan", 0, "JO", "Wadi Rum half-day jeep tour, shared (JOD 55-65 per jeep; entry free with Jordan Pass)", 35, "tour", true],
+  ["gt_seed_cairns-great-barrier-reef", 0, "AU", "Great Barrier Reef outer-reef snorkel day trip from Cairns (AUD ~230 incl. levy)", 140, "tour", false],
+  ["gt_seed_cairns-great-barrier-reef", 0, "AU", "Whitehaven Beach & Hill Inlet full-day boat tour from Airlie Beach (AUD ~217)", 132, "tour", true],
+  ["gt_seed_vietnam-cambodia", 0, "VN", "Ha Long/Lan Ha Bay 2-day 1-night shared cruise from Hanoi (~USD 140)", 120, "tour", false],
+  ["gt_seed_guatemala", 0, "GT", "Tikal entry Q150 + sunrise surcharge Q100 + shared guided sunrise tour from Flores (~USD 54, est)", 75, "tour", false],
+  ["gt_seed_fiji-vanuatu", 0, "VU", "Mount Yasur entry 9,750 VT + driver 1,000 VT (landowner fee; tour on top is extra)", 80, "entry", false],
+  ["gt_seed_fiji-vanuatu", 0, "VU", "SS President Coolidge + Million Dollar Point dive, no gear (AUD ~150)", 91, "tour", true],
+  ["gt_seed_south-korea", 0, "KR", "DMZ half-day guided tour from Seoul (~USD 50-57)", 45, "tour", false],
+];
+
+// Text fixes, same format as rbApplyBlockTextFixes()
+const RB_QUALITY_2026_10B_TEXT_FIXES = [
+  ['gt_seed_pan-american-grand-tour', 12, 'Overland bus via the Paso de Jama border crossing to Salta/Jujuy, Argentina.',
+    'Antofagasta and Iquique are an out-and-back from San Pedro de Atacama: overnight bus Iquique → San Pedro (~7 hours), then the Paso de Jama overland bus to Salta/Jujuy, Argentina.', 'transport_to_next'],
+  ["gt_seed_tallinn-riga-vilnius-7-10-days", 2, "Web check (2026-08): the Rail Baltica high-speed line is not yet operational (target 2030, with the Latvian section possibly not until 2035), so this route travels entirely by bus (Lux Express/Ecolines, not train) — book ahead in high season, prices roughly $11-60 per leg.",
+    "Web check (2026-10): the Rail Baltica high-speed line is not yet operational (target Q4 2030, with the Latvian section possibly not until 2035), so this route travels entirely by bus (Lux Express/Ecolines, not train) — book ahead in high season, prices roughly $11-60 per leg."],
+];
+
+/** Applies the option-D fix lists to one route; true when it changed something. Shared by
+ *  rbMigrateQuality202610bFixes() (localStorage) and scripts/fix_route_texts_in_sheet.js qualityb (Sheet). */
+function rbFixQuality202610bRoute(route) {
+  let changed = rbApplyBlockTextFixes(route, RB_QUALITY_2026_10B_TEXT_FIXES);
+  const blockOf = (id, i, code) => {
+    const b = route.id === id && (route.blocks || [])[i];
+    return b && b.country_code === code ? b : null;
+  };
+  RB_QUALITY_2026_10B_BUDGETS.forEach(([id, i, code, from, to]) => {
+    const b = blockOf(id, i, code);
+    if (b && Number(b.budget) === from) { b.budget = to; changed = true; }
+  });
+  RB_QUALITY_2026_10B_COSTS.forEach(([id, i, code, field, from, to]) => {
+    const b = blockOf(id, i, code);
+    if (b && Number(b[field]) === from) { b[field] = to; changed = true; }
+  });
+  RB_QUALITY_2026_10B_EXTRA_FIXES.forEach(([id, i, code, prefix, label, cost]) => {
+    const x = ((blockOf(id, i, code) || {}).extras || []).find(e => (e.label || '').startsWith(prefix));
+    if (x && (x.label !== label || x.cost !== cost)) { x.label = label; x.cost = cost; changed = true; }
+  });
+  RB_QUALITY_2026_10B_EXTRAS_ADD.forEach(([id, i, code, label, cost, category, optional]) => {
+    const b = blockOf(id, i, code);
+    if (!b || (b.extras || []).some(e => e.label === label)) return;
+    b.extras = [...(b.extras || []), { label, cost, category, optional }];
+    changed = true;
+  });
+  return changed;
+}
+
+/** Route ids touched by any option-D list (scripts/fix_route_texts_in_sheet.js qualityb). */
+function rbQuality202610bRouteIds() {
+  return [...new Set([RB_QUALITY_2026_10B_BUDGETS, RB_QUALITY_2026_10B_COSTS, RB_QUALITY_2026_10B_EXTRA_FIXES,
+                      RB_QUALITY_2026_10B_EXTRAS_ADD, RB_QUALITY_2026_10B_TEXT_FIXES].flat().map(x => x[0]))];
+}
+
+function rbMigrateQuality202610bFixes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_10_QUALITY_FIXES_B)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_10_QUALITY_FIXES_B, '1');
+  let touched = false;
+  rbRoutes.forEach(r => { if (rbFixQuality202610bRoute(r)) touched = true; });
+  if (touched) rbSave();
+}

@@ -1,0 +1,12 @@
+[{"code":"BG","variant":"","verdict":"confirmed","replace":false,
+"backpacker":{"total":27,"accommodation":13,"food":9,"local_transport":2,"activities":3},
+"standard":{"total":55,"accommodation":32,"food":13,"local_transport":3,"activities":7},
+"comfort":{"total":93,"accommodation":55,"food":22,"local_transport":6,"activities":10},
+"confidence":"medium","sources":["https://www.booking.com/hostels/city/bg/sofia.html","https://sites.google.com/view/10-coins-hostel-sofia","https://nomadranker.pages.dev/cities/sofia/cost-of-living","https://www.mylifeelsewhere.com/cost-of-living/sofia-c5622"],
+"note":"Disagree with previous proposal (bp 36 leaned on gotripzi/hostelz model). Observed: Sofia dorm EUR15 (10 Coins own site), EUR10-12 elsewhere, cheap meal ~EUR6-10, monthly transit ~EUR25; bp ~27 is within 15% of 25. Std/cf unchanged."},
+{"code":"BJ","variant":"","verdict":"confirmed","replace":false,
+"backpacker":{"total":25,"accommodation":12,"food":7,"local_transport":3,"activities":3},
+"standard":{"total":48,"accommodation":28,"food":9,"local_transport":5,"activities":6},
+"comfort":{"total":95,"accommodation":60,"food":18,"local_transport":10,"activities":7},
+"confidence":"low","sources":["https://www.hostelworld.com/hosteldetails.php/guesthouse-cocotiers-cotonou/cotonou/63717/","https://explore.atmfeesaver.com/community/money-travel-in-africa-travel-budgets/daily-travel-budget-for-benin/","https://nomadranker.pages.dev/cities/cotonou/cost-of-living","https://championtraveler.com/price/cost-of-a-trip-to-cotonou-bj"],
+"note":"Disagree with previous proposal. Observed: Cocotiers dorm CFA5500 (~EUR9), guesthouse room CFA15-25k (~EUR23-38), local meal CFA2.5-4k (EUR4-6), cheap meal ~$3, shared taxi Cotonou-Ouidah CFA1500, Cotonou hotels avg ~$61; current values hold."}]

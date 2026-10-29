@@ -1,0 +1,128 @@
+[
+ {
+  "code": "BG",
+  "country": "Bulgaria",
+  "variant": "",
+  "blocks": 6,
+  "backpacker": {
+   "total": 25,
+   "accommodation": 11,
+   "food": 9,
+   "local_transport": 2,
+   "activities": 3
+  },
+  "standard": {
+   "total": 55,
+   "accommodation": 32,
+   "food": 13,
+   "local_transport": 3,
+   "activities": 7
+  },
+  "comfort": {
+   "total": 93,
+   "accommodation": 55,
+   "food": 22,
+   "local_transport": 6,
+   "activities": 10
+  },
+  "notes": "Sofia/Plovdiv/Black Sea",
+  "levels_notes": "Dorm bed/cheapest room",
+  "previous_proposal": {
+   "code": "BG",
+   "variant": "",
+   "verdict": "adjusted",
+   "replace": false,
+   "backpacker": {
+    "total": 36,
+    "accommodation": 13,
+    "food": 13,
+    "local_transport": 3,
+    "activities": 7
+   },
+   "standard": {
+    "total": 58,
+    "accommodation": 34,
+    "food": 15,
+    "local_transport": 3,
+    "activities": 6
+   },
+   "comfort": {
+    "total": 93,
+    "accommodation": 55,
+    "food": 22,
+    "local_transport": 6,
+    "activities": 10
+   },
+   "confidence": "medium",
+   "sources": [
+    "https://gotripzi.com/destinations/sofia-bg/cost",
+    "https://www.hostelz.com/backpacker-budget/bulgaria",
+    "https://www.machupicchu.org/sofia-on-a-budget-2026-free-things-to-do-money-saving-tips.htm"
+   ],
+   "note": "Budget day USD35-53 (EUR31-47), dorm EUR10-15 (BGN20-30), Sofia prices rose with euro adoption 2026; bp 25 too low, std nudged up."
+  }
+ },
+ {
+  "code": "BJ",
+  "country": "Benin",
+  "variant": "",
+  "blocks": 2,
+  "backpacker": {
+   "total": 25,
+   "accommodation": 12,
+   "food": 7,
+   "local_transport": 3,
+   "activities": 3
+  },
+  "standard": {
+   "total": 48,
+   "accommodation": 28,
+   "food": 9,
+   "local_transport": 5,
+   "activities": 6
+  },
+  "comfort": {
+   "total": 95,
+   "accommodation": 60,
+   "food": 18,
+   "local_transport": 10,
+   "activities": 7
+  },
+  "notes": "Cotonou/Ouidah/Abomey guesthouses; zemidjan moto-taxis cheap",
+  "levels_notes": "guesthouse/dorm; zemidjan",
+  "previous_proposal": {
+   "code": "BJ",
+   "variant": "",
+   "verdict": "adjusted",
+   "replace": false,
+   "backpacker": {
+    "total": 28,
+    "accommodation": 14,
+    "food": 7,
+    "local_transport": 3,
+    "activities": 4
+   },
+   "standard": {
+    "total": 59,
+    "accommodation": 38,
+    "food": 10,
+    "local_transport": 5,
+    "activities": 6
+   },
+   "comfort": {
+    "total": 111,
+    "accommodation": 75,
+    "food": 18,
+    "local_transport": 10,
+    "activities": 8
+   },
+   "confidence": "low",
+   "sources": [
+    "https://www.milehacker.com/travel/benin/littoral/cotonou/best-time-to-visit-cotonou-weather-seasons-climate/",
+    "https://www.tripbase.com/destinations/cotonou-benin/budget/",
+    "https://hotel.routard.com/guest-house/city/bj/cotonou.en-gb.html?aid=304142"
+   ],
+   "note": "Guesthouse XOF8-20k, mid hotel XOF25-60k (~EUR38-91), meal XOF1-4k; backpacker ~$31, mid ~$79; std/cf raised"
+  }
+ }
+]

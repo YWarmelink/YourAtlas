@@ -133,4 +133,10 @@ Jersey/IoM), unpriced tours (Milford Sound, whale swims, DMZ, Wadi Rum, ...). Mo
 | 2e-7 | GD GP GT GY HN JM LC MX NI PA PE SR SV US US/big | done (14 confirmed, 1 adjusted: GT; 28 searches) | 107,756 |
 | 2e-8 | UY AU CK FJ NZ PG PW TO VU WS GL SJ AQ | done (10 confirmed, 3 adjusted: CK PW VU; 34 searches) | 116,963 |
 | 2e-4b | re-check of batch 4's 10 adjusted rows (CI CM CV GA GH GM LS MW/safari MZ MZ/safari) | done (8 confirmed = batch-4 proposals rejected, 2 adjusted: GH MZ/safari 215/430; 21 searches) | 95,064 |
-**2e status (2026-10-29):** all 9 batches done, 118 rows checked (95 confirmed, 23 adjusted), merged into the CSV + reference (`2e9af43`, local). Effect on My plan budgets (r2d_style_budgets.js --plan, diff before/after): only 15 blocks move >15%: BO 6, ST 3, BG 4, BJ 2 = +€1,327 total. NEXT: Youri's OK on those → migration + Sheet push. (34 older budget drifts were already in the plan before 2e; not part of this.)
+**2e status (2026-10-29):** all batches done incl. re-checks 4b (Africa) and 9r (BG+BJ: proposals rejected, 59,015 tokens); 118 rows checked, 21 adjusted, merged into the CSV + reference. My plan effect: 9 blocks (BO 6, ST 3) = +€1,035, applied as `RB_QUALITY_2026_10B_BUDGETS` (option-D fix set, `rbMigrateQuality202610bFixes()`, Sheet: `fix_route_texts_in_sheet.js qualityb`). Leftovers in the same set: Southern Cone CL costs 75/35→45/37, Sydney/Byron Ballina (local 140→80, car 971→1,050), Pan-American Iquique→San Pedro text + €30; tour prices + 5 statements via `planning/quality/leftovers/` (1 agent).
+
+**Option D status 2026-10-29 (end of session): 2e + leftovers DONE, live in the Sheet (25 routes, verified), pushed.**
+Agent tokens: 2e round 1 324,965 + round 2 533,788 + BG/BJ re-check 59,015 + leftovers 94,945 ≈ 1.01M.
+Still open: S1 (Öresund ID checks), S3/S4 (UK ETA start date for Jersey/IoM), S5 (Lima: emergency + single terminal; Cusco
+"no direct international flight" looks doubtful): the agent's web-search budget ran out, so unchecked. Moldova + Transnistria (red
+advice) = Youri's call. **NEXT: 2b (estimated fares) — only on Youri's go.**

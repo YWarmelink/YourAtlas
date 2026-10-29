@@ -59,6 +59,8 @@ const FIXES = {
   ] },
   // quality check 2026-10: texts, destination order and visa extras; the id list lives in the app
   quality: { fn: 'rbFixQuality202610Route', idsFn: 'rbQuality202610RouteIds' },
+  // quality check option D 2026-10-29: 2e budgets, leftover costs/extras/texts
+  qualityb: { fn: 'rbFixQuality202610bRoute', idsFn: 'rbQuality202610bRouteIds' },
 };
 
 function loadApp() {

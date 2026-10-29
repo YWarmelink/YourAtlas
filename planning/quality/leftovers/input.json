@@ -1,0 +1,783 @@
+{
+ "tours": [
+  {
+   "id": "T1",
+   "route_id": "gt_seed_africa-grand-tour",
+   "route": "Africa Grand Tour 🌍",
+   "block": 13,
+   "country": "RW",
+   "days": 10,
+   "budget": 2470,
+   "tours": [
+    "Gorilla"
+   ],
+   "destinations": [
+    "Kigali",
+    "Volcanoes NP (gorilla trekking)",
+    "Lake Kivu (Kibuye/Karongi)",
+    "Nyungwe Forest"
+   ],
+   "sentences": [
+    "Price correction (2026-07): €225→€247/day — the gorilla permit itself ($1,500 p.p., unchanged since 2017) remains the dominant cost, the correction is in the remaining 9 days that were previously on the tight side of the range.",
+    "Volcanoes NP (gorilla trekking): Beyond gorillas, golden monkey trekking is a much cheaper add-on (~$100 vs.",
+    "the gorilla permit) through bamboo forest, and you can hike to Dian Fossey's grave/former research camp (Karisoke) as a half-day trek.",
+    "Lake Kivu (Kibuye/Karongi): Quiet lakeside town with boat trips to Napoleon Island (fruit bat colony) and Amahoro Island; good spot to decompress for a day between gorilla trekking and onward travel, not a \"sight\" destination itself.",
+    "Nyungwe Forest: The canopy walkway (suspension bridge ~70m above the forest floor) is the signature activity alongside chimp trekking, which is less reliably successful than gorilla trekking since chimps range farther and move faster."
+   ],
+   "existing_extras": [
+    "Rwanda e-visa / VOA (USD 50) €45"
+   ],
+   "local_transport_cost": 15
+  },
+  {
+   "id": "T2",
+   "route_id": "gt_seed_africa-grand-tour",
+   "route": "Africa Grand Tour 🌍",
+   "block": 14,
+   "country": "UG",
+   "days": 18,
+   "budget": 2400,
+   "tours": [
+    "Gorilla"
+   ],
+   "destinations": [
+    "Bwindi Impenetrable Forest (gorillas)",
+    "Queen Elizabeth NP",
+    "Kibale Forest",
+    "Murchison Falls",
+    "Kampala",
+    "Jinja"
+   ],
+   "sentences": [
+    "Price stays almost the same (2026-07): €129→€133/day, a small buffer for the new non-refundable booking rule below — the gorilla permit ($800 high season/$600 low season Apr/May/Nov) and the chimpanzee trekking permit in Kibale ($250 p.p.) were already well accounted for in the existing budget.",
+    "Bwindi Impenetrable Forest (gorillas): Four separate trailheads (Buhoma, Ruhija, Rushaga, Nkuringo) serve different gorilla families — Rushaga also offers the pricier full-day habituation experience instead of the standard one-hour visit."
+   ],
+   "existing_extras": [
+    "Uganda e-visa (USD 50) €45"
+   ],
+   "local_transport_cost": 90
+  },
+  {
+   "id": "T3",
+   "route_id": "gt_seed_oceania-grand-expedition",
+   "route": "Oceania Grand Expedition 🌊",
+   "block": 5,
+   "country": "AU",
+   "days": 21,
+   "budget": 1806,
+   "tours": [
+    "Great Barrier Reef"
+   ],
+   "destinations": [
+    "Perth",
+    "Ningaloo Reef (whale sharks)",
+    "Kimberley & Bungle Bungles",
+    "Gibb River Road",
+    "Broome"
+   ],
+   "sentences": [
+    "Ningaloo Reef (whale sharks): Whale shark season runs roughly March–July (peak April–June); unlike the GBR, the reef sits close to shore so there's no long boat transfer."
+   ],
+   "existing_extras": [
+    "Car: compact 20 days x 55 + fuel ~3,050 km + one-way fee Perth-Broome ~250 €1662",
+    "Ningaloo whale shark swim (AUD ~450, est) €275",
+    "Bungle Bungles scenic flight from Broome (AUD ~1,000, est; no Kununurra on this variant) €610",
+    "Rottnest Island ferry (est) €73",
+    "Cable Beach camel ride (est) €30 (optional)"
+   ],
+   "local_transport_cost": 0
+  },
+  {
+   "id": "T4",
+   "route_id": "gt_seed_southeast-asia-grand-loop",
+   "route": "Southeast Asia Grand Loop 🛕",
+   "block": 0,
+   "country": "VN",
+   "days": 17,
+   "budget": 544,
+   "tours": [
+    "Ha Long"
+   ],
+   "destinations": [
+    "Hanoi",
+    "Ha Giang Loop",
+    "Ha Long Bay",
+    "Ho Chi Minh City",
+    "Da Lat",
+    "Phu Quoc"
+   ],
+   "sentences": [
+    "Ha Long Bay: Overnight boat quality varies hugely by operator and cheap tours get crowded and rushed; Lan Ha Bay (same karst scenery, based from Cat Ba) is a quieter, less touristy alternative to the main bay itself."
+   ],
+   "existing_extras": [
+    "Ha Giang Loop guide + motorbike 3 days (est) × €40 (notes 35-45) €120"
+   ],
+   "local_transport_cost": 175
+  },
+  {
+   "id": "T5",
+   "route_id": "gt_seed_central-america-loop",
+   "route": "Central America Loop 🌋",
+   "block": 0,
+   "country": "GT",
+   "days": 16,
+   "budget": 544,
+   "tours": [
+    "Tikal"
+   ],
+   "destinations": [
+    "Quetzaltenango (Xela)",
+    "Lake Atitlán",
+    "Antigua",
+    "Guatemala City",
+    "Semuc Champey",
+    "Flores & Tikal"
+   ],
+   "sentences": [
+    "Flores & Tikal: Tikal's sunrise tour (climbing Temple IV before dawn to watch mist and howler monkeys over the jungle canopy) is the signature experience; it requires a separate advance permit/booking beyond the standard entry ticket."
+   ],
+   "existing_extras": [],
+   "local_transport_cost": 80
+  },
+  {
+   "id": "T6",
+   "route_id": "gt_seed_andes-grand-traverse",
+   "route": "Andes Grand Traverse 🦙",
+   "block": 1,
+   "country": "EC",
+   "days": 24,
+   "budget": 1650,
+   "tours": [
+    "Galapagos cruise"
+   ],
+   "destinations": [
+    "Quito",
+    "Otavalo",
+    "Mindo",
+    "Baños",
+    "Cuenca",
+    "Galápagos Islands"
+   ],
+   "sentences": [
+    "Galápagos alone has cost $200 park entrance + $20 transit card p.p.",
+    "Galápagos Islands: Santa Cruz (Charles Darwin Research Station, giant tortoises) is the main hub; Isabela and San Cristóbal are quieter alternatives with their own wildlife (marine iguanas, blue-footed boobies, sea lions underfoot in town)."
+   ],
+   "existing_extras": [],
+   "local_transport_cost": 434
+  },
+  {
+   "id": "T7",
+   "route_id": "gt_seed_southern-cone-brazil-finale",
+   "route": "Southern Cone & Brazil Finale 🧉",
+   "block": 2,
+   "country": "BR",
+   "days": 22,
+   "budget": 1166,
+   "tours": [
+    "Iguazu"
+   ],
+   "destinations": [
+    "Foz do Iguaçu (Iguazu Falls)",
+    "Curitiba",
+    "Ilha do Mel",
+    "Florianópolis",
+    "São Paulo",
+    "Paraty",
+    "Rio de Janeiro"
+   ],
+   "sentences": [
+    "Foz do Iguaçu (Iguazu Falls): The Brazilian side gives sweeping panoramic views of the falls as a whole, while the close-up walkways and the Devil's Throat viewpoint are mainly accessed from the Argentine side — worth doing both if the route allows crossing."
+   ],
+   "existing_extras": [],
+   "local_transport_cost": 125
+  },
+  {
+   "id": "T8",
+   "route_id": "gt_seed_east-africa-safari-classic",
+   "route": "East Africa Safari Classic 🦒",
+   "block": 1,
+   "country": "RW",
+   "days": 10,
+   "budget": 2470,
+   "tours": [
+    "Gorilla"
+   ],
+   "destinations": [
+    "Kigali",
+    "Volcanoes NP (gorilla trekking)",
+    "Lake Kivu (Kibuye/Karongi)",
+    "Nyungwe Forest"
+   ],
+   "sentences": [
+    "Price correction (2026-07): €225→€247/day — the gorilla permit itself ($1,500 p.p., unchanged since 2017) remains the dominant cost, the correction is in the remaining 9 days that were previously on the tight side of the range.",
+    "Volcanoes NP (gorilla trekking): Beyond gorillas, golden monkey trekking is a much cheaper add-on (~$100 vs.",
+    "the gorilla permit) through bamboo forest, and you can hike to Dian Fossey's grave/former research camp (Karisoke) as a half-day trek.",
+    "Lake Kivu (Kibuye/Karongi): Quiet lakeside town with boat trips to Napoleon Island (fruit bat colony) and Amahoro Island; good spot to decompress for a day between gorilla trekking and onward travel, not a \"sight\" destination itself.",
+    "Nyungwe Forest: The canopy walkway (suspension bridge ~70m above the forest floor) is the signature activity alongside chimp trekking, which is less reliably successful than gorilla trekking since chimps range farther and move faster."
+   ],
+   "existing_extras": [
+    "Rwanda visa on arrival/e-visa ($50) €45"
+   ],
+   "local_transport_cost": 35
+  },
+  {
+   "id": "T9",
+   "route_id": "gt_seed_east-africa-safari-classic",
+   "route": "East Africa Safari Classic 🦒",
+   "block": 2,
+   "country": "UG",
+   "days": 18,
+   "budget": 2400,
+   "tours": [
+    "Gorilla"
+   ],
+   "destinations": [
+    "Bwindi Impenetrable Forest (gorillas)",
+    "Queen Elizabeth NP",
+    "Kibale Forest",
+    "Murchison Falls",
+    "Kampala",
+    "Jinja"
+   ],
+   "sentences": [
+    "Price stays almost the same (2026-07): €129→€133/day, a small buffer for the new non-refundable booking rule below — the gorilla permit ($800 high season/$600 low season Apr/May/Nov) and the chimpanzee trekking permit in Kibale ($250 p.p.) were already well accounted for in the existing budget.",
+    "Bwindi Impenetrable Forest (gorillas): Four separate trailheads (Buhoma, Ruhija, Rushaga, Nkuringo) serve different gorilla families — Rushaga also offers the pricier full-day habituation experience instead of the standard one-hour visit."
+   ],
+   "existing_extras": [
+    "Uganda e-visa ($50 per file) €45"
+   ],
+   "local_transport_cost": 120
+  },
+  {
+   "id": "T10",
+   "route_id": "gt_seed_egypt-arabian-peninsula",
+   "route": "Egypt & Arabian Peninsula 🐪",
+   "block": 1,
+   "country": "JO",
+   "days": 8,
+   "budget": 500,
+   "tours": [
+    "Wadi Rum",
+    "Petra"
+   ],
+   "destinations": [
+    "Amman",
+    "Jerash",
+    "Petra",
+    "Wadi Rum",
+    "Dead Sea"
+   ],
+   "sentences": [
+    "Nabataean trade routes (Petra), Roman history (Jerash) and the Wadi Rum desert.",
+    "December gives pleasant daytime temperatures for the hike to the Treasury and for camping in Wadi Rum.",
+    "Practical tip: the Jordan Pass (~50-60 JOD, buy online well in advance) bundles entry to Petra/Jerash/Wadi Rum/40 other sites and waives the separate 40 JOD visa fee for a stay of 3+ nights.",
+    "Petra: Arrive right at the 6:00 gate opening — the Siq and Treasury are dramatically emptier and better lit in the first hour before tour buses arrive at mid-morning; the most commonly skipped highlight is the Monastery (Ad Deir), a ~45-min uphill climb of 800+ steps past the Treasury that's actually larger and far less crowded, so don't treat the Treasury alone as \"done.\" Wadi Rum: Beyond just camping, a half-day jeep tour typically strings together Khazali Canyon (a narrow slot canyon with Nabataean rock inscriptions on its walls), Lawrence's Spring, and a dune climb, ending with sunset tea at a spot like Um Sabatah — ask if your driver is an actual camp-staff Bedouin guide (who narrates the sites) rather than a hired driver who just waits in the car."
+   ],
+   "existing_extras": [
+    "Jordan Pass 55 JOD (notes 50-60; also waives the 40 JOD visa fee) €69"
+   ],
+   "local_transport_cost": 80
+  },
+  {
+   "id": "T11",
+   "route_id": "gt_seed_western-canada-rockies-vancouver",
+   "route": "Western Canada: Rockies & Vancouver 🏔️",
+   "block": 4,
+   "country": "US",
+   "days": 4,
+   "budget": 408,
+   "tours": [
+    "Kenai Fjords"
+   ],
+   "destinations": [
+    "Kenai Fjords National Park (glacier and wildlife boat tour)",
+    "Exit Glacier"
+   ],
+   "sentences": [
+    "Kenai Fjords National Park (glacier and wildlife boat tour): Best experienced by boat tour out of Seward — glacier calving, plus reliable sightings of orcas, sea lions and puffins along the way; the park's interior is otherwise almost entirely inaccessible except by boat or small plane.",
+    "Exit Glacier: The one part of Kenai Fjords reachable by road, with a short, easy trail leading right up to the glacier's face; roadside signs mark past ice extents along the walk, tracking the glacier's rapid retreat over the past century."
+   ],
+   "existing_extras": [],
+   "local_transport_cost": 70
+  },
+  {
+   "id": "T12",
+   "route_id": "gt_seed_pacific-islands",
+   "route": "Pacific Islands 🌺",
+   "block": 0,
+   "country": "VU",
+   "days": 11,
+   "budget": 1045,
+   "tours": [
+    "Mount Yasur",
+    "Coolidge"
+   ],
+   "destinations": [
+    "Port Vila",
+    "Mount Yasur (Tanna)",
+    "SS President Coolidge wreck (Espiritu Santo)",
+    "Blue Holes"
+   ],
+   "sentences": [
+    "One of the most accessible active volcanoes in the world — right up to the crater rim of Mount Yasur.",
+    "World-class wreck diving on the SS President Coolidge.",
+    "Price correction (2026-07): €70→€95/day (domestic flights to Tanna/Santo + the Yasur tour weren't covered; Air Vanuatu went bankrupt in 2024, flights have become scarcer/more expensive).",
+    "Mount Yasur (Tanna): Local Ni-Vanuatu landowners run the guided 4WD-plus-short-walk trips to the crater rim (a custom landowner fee applies on top of any tour price); it's one of the few volcanoes on Earth you can stand at the active rim of after dark and watch lava bursts.",
+    "SS President Coolidge wreck (Espiritu Santo): A former US troopship sunk in 1942, dived directly from the beach at Luganville with no boat needed; look for \"the Lady,\" a relief carving above a fireplace mantel, and the helmets/jeeps still visible in the cargo holds."
+   ],
+   "existing_extras": [],
+   "local_transport_cost": 0
+  },
+  {
+   "id": "T13",
+   "route_id": "gt_seed_pacific-islands",
+   "route": "Pacific Islands 🌺",
+   "block": 2,
+   "country": "TO",
+   "days": 8,
+   "budget": 408,
+   "tours": [
+    "Tonga whale swim"
+   ],
+   "destinations": [
+    "Nuku'alofa",
+    "Vava'u (swimming with humpback whales)",
+    "Ha'apai"
+   ],
+   "sentences": [
+    "One of the few places in the world where you can legally swim with humpback whales — the best season for that is July-October, so check the exact timing when planning the start date.",
+    "Price correction (2026-07): €67.50→€100/day, the biggest correction on the route — flight to Vava'u + the whale-swim tour itself weren't covered.",
+    "Vava'u (swimming with humpback whales): Port of Refuge is a well-protected natural harbor that makes this the yachting/sailing hub of Tonga; Swallow's Cave and Mariner's Cave are specific boat-accessible sea caves worth seeking out beyond the whale swims."
+   ],
+   "existing_extras": [],
+   "local_transport_cost": 260
+  },
+  {
+   "id": "T14",
+   "route_id": "gt_seed_tropicaloutback-australia",
+   "route": "Tropical/Outback Australia 🐊",
+   "block": 0,
+   "country": "AU",
+   "days": 21,
+   "budget": 1806,
+   "tours": [
+    "Great Barrier Reef"
+   ],
+   "destinations": [
+    "Perth",
+    "Ningaloo Reef (whale sharks)",
+    "Kimberley & Bungle Bungles",
+    "Gibb River Road",
+    "Broome"
+   ],
+   "sentences": [
+    "Ningaloo Reef (whale sharks): Whale shark season runs roughly March–July (peak April–June); unlike the GBR, the reef sits close to shore so there's no long boat transfer."
+   ],
+   "existing_extras": [
+    "Car: compact rental 18 days Perth-Broome × €55 + fuel ≈2,800 km (incl. Ningaloo) + one-way fee Perth→Broome ≈€250 (est, flagged) €1526"
+   ],
+   "local_transport_cost": 0
+  },
+  {
+   "id": "T15",
+   "route_id": "gt_seed_tropicaloutback-australia",
+   "route": "Tropical/Outback Australia 🐊",
+   "block": 2,
+   "country": "AU",
+   "days": 21,
+   "budget": 1806,
+   "tours": [
+    "Great Barrier Reef",
+    "Whitsundays"
+   ],
+   "destinations": [
+    "Cairns",
+    "Daintree Rainforest",
+    "Great Barrier Reef",
+    "Whitsundays & Whitehaven Beach",
+    "Fraser Island / K'gari"
+   ],
+   "sentences": [
+    "Great Barrier Reef: Coral health varies significantly by specific site and year with bleaching events, so it's worth asking your operator which reef sections are currently in best condition.",
+    "Whitsundays & Whitehaven Beach: The pure silica sand stays cool underfoot even in full sun; Hill Inlet lookout (short walk from a boat drop-off) is the classic swirling-sand photo."
+   ],
+   "existing_extras": [
+    "Car: rental 4 days (Cairns/Daintree only) × €55 + fuel ≈300 km €251"
+   ],
+   "local_transport_cost": 285
+  },
+  {
+   "id": "T16",
+   "route_id": "gt_seed_new-zealand",
+   "route": "New Zealand 🥝",
+   "block": 0,
+   "country": "NZ",
+   "days": 21,
+   "budget": 1701,
+   "tours": [
+    "Milford Sound",
+    "Kaikoura whale"
+   ],
+   "destinations": [
+    "Christchurch",
+    "Franz Josef & Fox Glaciers",
+    "Queenstown",
+    "Milford Sound & Fiordland",
+    "Dunedin & Catlins",
+    "Kaikoura",
+    "Abel Tasman"
+   ],
+   "sentences": [
+    "Route-logic fix (2026-08): order reversed so Kaikoura/Abel Tasman are visited last, right before the Picton ferry, instead of an unmentioned backtrack of ≈692 km from Dunedin.",
+    "Milford Sound & Fiordland: Take the first morning cruise departure if you can — tour buses converge mid-morning and the sound is calmer and less crowded at dawn; it's also one of the wettest inhabited places on Earth, and rain actually multiplies the waterfalls rather than ruining the visit.",
+    "Kaikoura: Whale watching here targets resident sperm whales year-round thanks to a deep offshore canyon close to shore, but tours are frequently cancelled/rescheduled for swell — build in a spare day if seeing them matters."
+   ],
+   "existing_extras": [
+    "NZeTA + International Visitor Levy (NZD ~123; per VISA file) €63",
+    "Car: rental 21 days South Island × €60 + fuel ≈2,000 km + one-way drop Christchurch→Picton ≈€60 (est, flagged) €1580"
+   ],
+   "local_transport_cost": 0
+  },
+  {
+   "id": "T17",
+   "route_id": "gt_seed_vietnam",
+   "route": "Vietnam 🛵",
+   "block": 0,
+   "country": "VN",
+   "days": 17,
+   "budget": 544,
+   "tours": [
+    "Ha Long"
+   ],
+   "destinations": [
+    "Hanoi",
+    "Ha Giang Loop",
+    "Ha Long Bay",
+    "Ho Chi Minh City",
+    "Da Lat",
+    "Phu Quoc"
+   ],
+   "sentences": [
+    "Ha Long Bay: Overnight boat quality varies hugely by operator and cheap tours get crowded and rushed; Lan Ha Bay (same karst scenery, based from Cat Ba) is a quieter, less touristy alternative to the main bay itself."
+   ],
+   "existing_extras": [
+    "Ha Giang Loop easy-rider: assumed 3 days x EUR 40 (notes EUR 35-45/day; day count is my assumption) €120"
+   ],
+   "local_transport_cost": 180
+  },
+  {
+   "id": "T18",
+   "route_id": "gt_seed_new-zealand-south-island",
+   "route": "New Zealand South Island 🏔️",
+   "block": 0,
+   "country": "NZ",
+   "days": 23,
+   "budget": 1863,
+   "tours": [
+    "Milford Sound"
+   ],
+   "destinations": [
+    "Christchurch",
+    "Franz Josef & Fox Glaciers",
+    "Queenstown",
+    "Milford Sound & Fiordland",
+    "Dunedin & Catlins",
+    "Kaikoura",
+    "Abel Tasman"
+   ],
+   "sentences": [
+    "Milford Sound & Fiordland: Take the first morning cruise departure if you can — tour buses converge mid-morning and the sound is calmer and less crowded at dawn; it's also one of the wettest inhabited places on Earth, and rain actually multiplies the waterfalls rather than ruining the visit."
+   ],
+   "existing_extras": [
+    "NZeTA (NZD 17 app) + International Visitor Levy NZD 100 = NZD 117 (VISA_VACCINATION_RESEARCH.md, NZD at ~EUR 0.50) €58",
+    "Car: rental 21 days (23 minus 2 buffer days) × €60 + fuel ≈2,700 km (loop CHC-Franz Josef-Queenstown-Milford-Dunedin-Catlins-Kaikoura-Abel Tasman-CHC, est) × €0.13/km + no tolls, no drop fee (return to Christchurch) €1611"
+   ],
+   "local_transport_cost": 0
+  },
+  {
+   "id": "T19",
+   "route_id": "gt_seed_jordan",
+   "route": "Jordan 🏺",
+   "block": 0,
+   "country": "JO",
+   "days": 10,
+   "budget": 625,
+   "tours": [
+    "Wadi Rum"
+   ],
+   "destinations": [
+    "Amman",
+    "Jerash",
+    "Petra",
+    "Wadi Rum",
+    "Dead Sea"
+   ],
+   "sentences": [
+    "Nabataean trade routes (Petra), Roman history (Jerash) and the Wadi Rum desert.",
+    "December gives pleasant daytime temperatures for the hike to the Treasury and for camping in Wadi Rum.",
+    "Practical tip: the Jordan Pass (~50-60 JOD, buy online well in advance) bundles entry to Petra/Jerash/Wadi Rum/40 other sites and waives the separate 40 JOD visa fee for a stay of 3+ nights.",
+    "Petra: Arrive right at the 6:00 gate opening — the Siq and Treasury are dramatically emptier and better lit in the first hour before tour buses arrive at mid-morning; the most commonly skipped highlight is the Monastery (Ad Deir), a ~45-min uphill climb of 800+ steps past the Treasury that's actually larger and far less crowded, so don't treat the Treasury alone as \"done.\" Wadi Rum: Beyond just camping, a half-day jeep tour typically strings together Khazali Canyon (a narrow slot canyon with Nabataean rock inscriptions on its walls), Lawrence's Spring, and a dune climb, ending with sunset tea at a spot like Um Sabatah — ask if your driver is an actual camp-staff Bedouin guide (who narrates the sites) rather than a hired driver who just waits in the car."
+   ],
+   "existing_extras": [
+    "Jordan Pass (notes ~50-60 JOD, midpoint 55 JOD; includes visa + Petra) €69"
+   ],
+   "local_transport_cost": 70
+  },
+  {
+   "id": "T20",
+   "route_id": "gt_seed_cairns-great-barrier-reef",
+   "route": "Cairns & Great Barrier Reef 🐠",
+   "block": 0,
+   "country": "AU",
+   "days": 23,
+   "budget": 1978,
+   "tours": [
+    "Great Barrier Reef",
+    "Whitsundays"
+   ],
+   "destinations": [
+    "Cairns",
+    "Daintree Rainforest",
+    "Great Barrier Reef",
+    "Whitsundays & Whitehaven Beach",
+    "Fraser Island / K'gari"
+   ],
+   "sentences": [
+    "Great Barrier Reef: Coral health varies significantly by specific site and year with bleaching events, so it's worth asking your operator which reef sections are currently in best condition.",
+    "Whitsundays & Whitehaven Beach: The pure silica sand stays cool underfoot even in full sun; Hill Inlet lookout (short walk from a boat drop-off) is the classic swirling-sand photo."
+   ],
+   "existing_extras": [
+    "Car: rental 4 days (Cairns/Daintree only) × €55 + fuel ≈300 km (no tolls) €251"
+   ],
+   "local_transport_cost": 285
+  },
+  {
+   "id": "T21",
+   "route_id": "gt_seed_rwanda",
+   "route": "Rwanda 🦍",
+   "block": 0,
+   "country": "RW",
+   "days": 10,
+   "budget": 2470,
+   "tours": [
+    "Gorilla"
+   ],
+   "destinations": [
+    "Kigali",
+    "Volcanoes NP (gorilla trekking)",
+    "Lake Kivu (Kibuye/Karongi)",
+    "Nyungwe Forest"
+   ],
+   "sentences": [
+    "Price correction (2026-07): €225→€247/day — the gorilla permit itself ($1,500 p.p., unchanged since 2017) remains the dominant cost, the correction is in the remaining 9 days that were previously on the tight side of the range.",
+    "Volcanoes NP (gorilla trekking): Beyond gorillas, golden monkey trekking is a much cheaper add-on (~$100 vs.",
+    "the gorilla permit) through bamboo forest, and you can hike to Dian Fossey's grave/former research camp (Karisoke) as a half-day trek.",
+    "Lake Kivu (Kibuye/Karongi): Quiet lakeside town with boat trips to Napoleon Island (fruit bat colony) and Amahoro Island; good spot to decompress for a day between gorilla trekking and onward travel, not a \"sight\" destination itself.",
+    "Nyungwe Forest: The canopy walkway (suspension bridge ~70m above the forest floor) is the signature activity alongside chimp trekking, which is less reliably successful than gorilla trekking since chimps range farther and move faster."
+   ],
+   "existing_extras": [
+    "Rwanda visa on arrival/e-visa ($50) €45"
+   ],
+   "local_transport_cost": 35
+  },
+  {
+   "id": "T22",
+   "route_id": "gt_seed_vietnam-cambodia",
+   "route": "Vietnam & Cambodia 🛺",
+   "block": 0,
+   "country": "VN",
+   "days": 17,
+   "budget": 544,
+   "tours": [
+    "Ha Long"
+   ],
+   "destinations": [
+    "Hanoi",
+    "Ha Giang Loop",
+    "Ha Long Bay",
+    "Ho Chi Minh City",
+    "Da Lat",
+    "Phu Quoc"
+   ],
+   "sentences": [
+    "Ha Long Bay: Overnight boat quality varies hugely by operator and cheap tours get crowded and rushed; Lan Ha Bay (same karst scenery, based from Cat Ba) is a quieter, less touristy alternative to the main bay itself."
+   ],
+   "existing_extras": [
+    "Ha Giang Loop easy-rider: assumed 3 days x EUR 40 (notes EUR 35-45/day; day count is my assumption) €120"
+   ],
+   "local_transport_cost": 180
+  },
+  {
+   "id": "T23",
+   "route_id": "gt_seed_guatemala",
+   "route": "Guatemala 🦜",
+   "block": 0,
+   "country": "GT",
+   "days": 16,
+   "budget": 544,
+   "tours": [
+    "Tikal"
+   ],
+   "destinations": [
+    "Quetzaltenango (Xela)",
+    "Lake Atitlán",
+    "Antigua",
+    "Guatemala City",
+    "Semuc Champey",
+    "Flores & Tikal"
+   ],
+   "sentences": [
+    "Flores & Tikal: Tikal's sunrise tour (climbing Temple IV before dawn to watch mist and howler monkeys over the jungle canopy) is the signature experience; it requires a separate advance permit/booking beyond the standard entry ticket."
+   ],
+   "existing_extras": [],
+   "local_transport_cost": 135
+  },
+  {
+   "id": "T24",
+   "route_id": "gt_seed_fiji-vanuatu",
+   "route": "Fiji & Vanuatu 🐚",
+   "block": 0,
+   "country": "VU",
+   "days": 13,
+   "budget": 715,
+   "tours": [
+    "Mount Yasur",
+    "Coolidge"
+   ],
+   "destinations": [
+    "Port Vila",
+    "Mount Yasur (Tanna)",
+    "SS President Coolidge wreck (Espiritu Santo)",
+    "Blue Holes"
+   ],
+   "sentences": [
+    "One of the most accessible active volcanoes in the world — right up to the crater rim of Mount Yasur.",
+    "World-class wreck diving on the SS President Coolidge.",
+    "Mount Yasur (Tanna): Local Ni-Vanuatu landowners run the guided 4WD-plus-short-walk trips to the crater rim (a custom landowner fee applies on top of any tour price); it's one of the few volcanoes on Earth you can stand at the active rim of after dark and watch lava bursts.",
+    "SS President Coolidge wreck (Espiritu Santo): A former US troopship sunk in 1942, dived directly from the beach at Luganville with no boat needed; look for \"the Lady,\" a relief carving above a fireplace mantel, and the helmets/jeeps still visible in the cargo holds."
+   ],
+   "existing_extras": [],
+   "local_transport_cost": 500
+  },
+  {
+   "id": "T25",
+   "route_id": "gt_seed_south-korea",
+   "route": "South Korea 🏯",
+   "block": 0,
+   "country": "KR",
+   "days": 13,
+   "budget": 845,
+   "tours": [
+    "DMZ"
+   ],
+   "destinations": [
+    "Seoul",
+    "DMZ / Imjingak",
+    "Gyeongju",
+    "Busan",
+    "Jeju Island"
+   ],
+   "sentences": [
+    "Hyper-modern Seoul, the DMZ's frozen Cold War tension, the 1,000-year-old Silla capital Gyeongju, port city Busan and Jeju's volcanic coastline.",
+    "The DMZ can only be visited on an organized/guided tour (no independent access) — book one from Seoul.",
+    "Dutch travel advisory (2026-09 snapshot): red for the DMZ border strip itself, yellow for the area just south of it (guided tours only), green for the rest of the route (Seoul, Gyeongju, Busan, Jeju) — check nederlandwereldwijd.nl before departure.",
+    "DMZ / Imjingak: The Korean Demilitarized Zone, one of the most heavily fortified borders on Earth, paradoxically also an accidental wildlife sanctuary due to decades without human development; Imjingak park nearby has memorials and a viewing platform toward North Korea, and deeper DMZ tours (including infiltration tunnels) require advance booking and passport ID."
+   ],
+   "existing_extras": [],
+   "local_transport_cost": 120
+  },
+  {
+   "id": "T26",
+   "route_id": "gt_seed_cyprus-roadtrip-including-northern-cyprus-9-days",
+   "route": "Cyprus Roadtrip including Northern Cyprus (9 days) 🚙",
+   "block": 0,
+   "country": "CY",
+   "days": 9,
+   "budget": 1125,
+   "tours": [
+    "Petra"
+   ],
+   "destinations": [
+    "Larnaca",
+    "Nicosia / Ledra Street",
+    "North Nicosia (Lefkoşa)",
+    "Troodos wine villages",
+    "Paphos, Akamas/Avakas Gorge & Blue Lagoon",
+    "Limassol, Kourion & Aphrodite's Rock",
+    "Ayia Napa / Protaras"
+   ],
+   "sentences": [
+    "Limassol, Kourion & Aphrodite's Rock: Cyprus's second city near the ancient Greco-Roman theatre at Kourion (still used for performances, sea views from the seats) and Petra tou Romiou, the sea rock tied to Aphrodite's mythical birth."
+   ],
+   "existing_extras": [],
+   "local_transport_cost": 0
+  }
+ ],
+ "stale": [
+  {
+   "id": "S1",
+   "text": "Web check (2026-08): check just before departure whether Sweden's temporary ID checks on the Öresund crossing are currently active — these have been extended repeatedly since 2015, same caveat as noted on the Stockholm/Skåne routes above.",
+   "places": [
+    {
+     "route_id": "gt_seed_denmark-south-sweden-9-days",
+     "route": "Denmark + South Sweden (9 days) 🌉",
+     "block": 1,
+     "field": "notes"
+    }
+   ],
+   "previous_note": "No reliable current end date found; text is already a generic 'check before departure'."
+  },
+  {
+   "id": "S2",
+   "text": "Web check (2026-08): the Rail Baltica high-speed line is not yet operational (target 2030, with the Latvian section possibly not until 2035), so this route travels entirely by bus (Lux Express/Ecolines, not train) — book ahead in high season, prices roughly $11-60 per leg.",
+   "places": [
+    {
+     "route_id": "gt_seed_tallinn-riga-vilnius-7-10-days",
+     "route": "Tallinn + Riga + Vilnius (7-10 days) 🚌",
+     "block": 2,
+     "field": "notes"
+    }
+   ],
+   "previous_note": "No reliable 2026 source; one unverified claim of a Tallinn-Riga train launch (April 2026) not corroborated, so keep original."
+  },
+  {
+   "id": "S3",
+   "text": "UK ETA mandatory (£20, valid 2 years or until passport expiry) — since 23 April 2026 this single ETA also covers Jersey and Isle of Man, so a combined UK+Channel Islands+Isle of Man trip needs only one ETA.",
+   "places": [
+    {
+     "route_id": "gt_seed_jersey-guernsey-channel-islands-4-5-days",
+     "route": "Jersey + Guernsey (Channel Islands) (4-5 days) 🏝️",
+     "block": 0,
+     "field": "notes"
+    }
+   ],
+   "previous_note": "£20 fee confirmed; Crown Dependencies start date unverified (one source ~9 April, text says 23 April). Not changed; check gov.uk."
+  },
+  {
+   "id": "S4",
+   "text": "UK ETA mandatory (£20, valid 2 years or until passport expiry) — since 23 April 2026 covers the UK + Jersey + Guernsey + Isle of Man together, no separate application per island needed.",
+   "places": [
+    {
+     "route_id": "gt_seed_isle-of-man-3-4-days",
+     "route": "Isle of Man (3-4 days) 🏝️",
+     "block": 0,
+     "field": "notes"
+    }
+   ],
+   "previous_note": "Same as S24."
+  },
+  {
+   "id": "S5",
+   "text": "Deliberately just an overnight transit here, not a sightseeing stop — there's no direct international flight into Cusco (all arrivals route through Lima's Jorge Chávez airport, single-terminal since June 2026), but Lima itself is skippable as a destination: it's currently under a local state of emergency for rising violent crime (tourist zones Miraflores/San Isidro/Barranco are explicitly called low-risk even so, but there's no reason to linger).",
+   "places": [
+    {
+     "route_id": "gt_seed_peru-bolivia-andes-salt-flats-20-days",
+     "route": "Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂",
+     "block": 0,
+     "field": "notes"
+    }
+   ],
+   "previous_note": "Search only found the emergency extended through Dec 2025; no 2026 source for current status or the single-terminal claim. Kept original."
+  }
+ ]
+}
