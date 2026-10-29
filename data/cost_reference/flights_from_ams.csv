@@ -92,8 +92,8 @@ AJA,Ajaccio,FR,back,210,1-2 stops (Air France via Paris),WebSearch 2026-10-28 (E
 FSC,Figari,FR,back,200,1 stop via Paris/Geneva/Basel,reuse FSC out fare (batch 2; no separate search),2026-10-28,low,est
 NCE,Nice,FR,back,90,easyJet/Transavia/KLM/Air France direct,WebSearch 2026-10-28 (Expedia UK GBP 43+; Kayak USD 47; Expedia US easyJet USD 58 floors; typical higher),2026-10-28,medium,
 ZRH,Zurich,CH,out,130,KLM/Swiss direct,"WebSearch 2026-10-28 (ZRH-AMS floors USD 81-141, nonstop typical USD 150-300; AMS-ZRH Swiss ~USD 168; est)",2026-10-28,medium,
-ZRH,Zurich,CH,back,140,SWISS/KLM direct,estimate from out fare (no separate search),2026-10-28
-MUC,Munich,DE,back,120,Lufthansa/KLM direct,"WebSearch 2026-10-28 (Expedia USD 121 / GBP 89 floors; Ratepunk median USD 199)",2026-10-28
+ZRH,Zurich,CH,back,140,SWISS/KLM direct,estimate from out fare (no separate search),2026-10-28,low,
+MUC,Munich,DE,back,120,Lufthansa/KLM direct,"WebSearch 2026-10-28 (Expedia USD 121 / GBP 89 floors; Ratepunk median USD 199)",2026-10-28,medium,
 TIA,Tirana,AL,out,110,Transavia/Ryanair/Air Serbia,WebSearch 2026-10-28 (Expedia EUR 89 floor),2026-10-28,medium,
 TIA,Tirana,AL,back,100,Air Serbia/Transavia/Ryanair,WebSearch 2026-10-28 (Air Serbia EUR 70 floor),2026-10-28,medium,
 DBV,Dubrovnik,HR,out,120,KLM direct/easyJet,WebSearch 2026-10-28 (aggregator USD 109 / GBP 91 floors),2026-10-28,medium,
