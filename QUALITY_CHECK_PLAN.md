@@ -96,3 +96,11 @@ Total Step 2 if all sub-steps run: roughly 1-1.2M tokens; 2a alone is cheap and 
   - 2d: Uzbekistan & Tajikistan and Southern Cone stop order, Thailand/Sydney/California/West Coast wording (migration only;
     the shared source text is right for the expeditions).
   - Faeröer 🐑 / IJsland ❄️: Sheet-only leftovers (already in RB_REMOVED_ROUTE_IDS); `scripts/delete_removed_routes_from_sheet.js`.
+- 2026-10-29: Youri chose **option D** for the next session: 2b (all estimated fares) + a new **2e** = web-verify the
+  country daily rates (backpacker/standard/comfort in `data/cost_reference/daily_rates_by_country.csv`) for all 105
+  countries resting on own knowledge / low confidence (€282k of the €554k ground budget), then re-run the
+  "My plan" budgets (`scripts/r2d_style_budgets.js` logic) where a rate moves >15%, review, Sheet push on OK.
+  Countries first (they change budgets everywhere), then fares. Estimated 1.1-1.3M tokens over 1-2 sessions.
+  Small leftovers to fold in: Ballina flight (~€80, Sydney/Byron) and the ~€60 Southern Cone backtrack still in its
+  costs; the 5 unclear statements; Moldova + Transnistria route now goes against red advice (rethink?); Pan-American
+  Grand Tour has the same Iquique→San Pedro backtrack inside the expedition.

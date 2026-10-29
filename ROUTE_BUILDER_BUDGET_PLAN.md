@@ -1,8 +1,8 @@
 # Route Builder — Full-Cost Budget Plan
 
-Status: **Phases 0-3 DONE, Phase 4 started (2026-10-27)**: data model + Sheet plumbing, UI,
-the Asia Grand Tour pilot (live in the Sheet). Phase 4 = backfill all routes in batches; method
-and progress under Phase 4 below. Started after the long-haul buffer budget fix (see `CHANGELOG.md`).
+Status: **Phases 0-4 DONE (2026-10-29)**: all 452 routes have full-cost fields, in the code and live in the
+Sheet. Only the optional Phase 5 export button is left. Follow-up quality work (fare and daily-rate
+verification) lives in `QUALITY_CHECK_PLAN.md`.
 
 ## Why
 
@@ -189,7 +189,7 @@ Progress:
   notes carry the rules that matter: southern-African cross-border letters + one-way fees, rentals
   barred from MZ (partly ZW), car-with-driver countries (AO/MG/ET/RW/EG/LK).
 - [x] Inventory fix: "NOT included" was matching "included" (3 routes misflagged)
-- [ ] Route batches
+- [x] Route batches
   - [x] **Batch 1: the 13 Grand Expeditions** (174 blocks), extracted 2026-10-27, 596k tokens,
     reviewed by Youri (`planning/budget_batch1/REVIEW.md`): Oceania compact car Perth-Broome + flight
     Broome-Darwin instead of a 4x4 to Darwin; ZA/LS/SZ car stays "in the rate" until R2; Eurasia's
@@ -198,7 +198,7 @@ Progress:
     refers to the old region budgets; block 1 would drop to €71/day incl. a car otherwise). In
     `RB_ROUTE_COSTS`, fares in `data/cost_reference/flights_from_ams.csv`, dry run clean (174
     blocks, 13 routes). **Pushed to the Sheet 2026-10-27 (Youri's OK), verified.**
-- [ ] **R2 daily-rate check** (after batch 1 is applied, before the standalone batches; agreed with
+- [x] **R2 daily-rate check** (after batch 1 is applied, before the standalone batches; agreed with
   Youri 2026-10-27). Ground budgets are ~70% of the all-in total, and the ~440 standalone routes
   reuse their parent's rates, so check them once per country, not per route:
   1. `data/cost_reference/daily_rates_by_country.csv`: Standard €/day per country (accommodation +
@@ -267,7 +267,7 @@ Progress:
       blocks that are below backpacker level; review blocks far above Standard (safari days, Borneo,
       resorts). Youri reviews the list, then a migration + Sheet push (`budget` only, never `days`).
     - Then the standalone route batches, which automatically fit all three levels.
-  - [ ] Standalone routes by family (after R2b-R2d): split 2026-10-28 into **batches 2-26 of ~200k tokens each** (`planning/budget_batches/BATCHES.md`), and Youri says go per batch. Batch 2 (Italy 1/3) started 2026-10-28.
+  - [x] Standalone routes by family (after R2b-R2d): split 2026-10-28 into **batches 2-26 of ~200k tokens each** (`planning/budget_batches/BATCHES.md`), and Youri says go per batch. Batch 2 (Italy 1/3) started 2026-10-28.
 
 Original plan:
 
